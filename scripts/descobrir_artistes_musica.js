@@ -4,6 +4,7 @@ const fs = require('fs');
 const path = require('path');
 
 const OUTPUT = path.join(process.cwd(), 'data', 'artistes-musica.json');
+const EXCLUSIONS_FILE = path.join(process.cwd(), 'data', 'music-exclusions.json');
 const WIKIDATA_ENDPOINT = 'https://query.wikidata.org/sparql';
 const CATALAN = 'Q7026';
 const USER_AGENT = 'Segueix-Musica/0.1 (https://github.com/segueix/musica)';
@@ -122,6 +123,12 @@ UNION
     return batches;
 }
 
+function loadExclusions() {
+    if (!fs.existsSync(EXCLUSIONS_FILE)) return new Set();
+    const data = JSON.parse(fs.readFileSync(EXCLUSIONS_FILE, 'utf8'));
+    return new Set((data.exclusions || []).map((item) => item.wikidataId).filter(Boolean));
+}
+
 function loadDatabase() {
     if (!fs.existsSync(OUTPUT)) {
         return { schemaVersion: 1, updatedAt: null, artists: [] };
@@ -207,6 +214,7 @@ function mergeCandidate(artist, candidate, now) {
 async function main() {
     const candidates = await discover();
     const data = loadDatabase();
+    const exclusions = loadExclusions();
     const now = new Date().toISOString();
 
     const byQid = new Map(data.artists.filter((artist) => artist.wikidataId).map((artist) => [artist.wikidataId, artist]));
@@ -215,6 +223,7 @@ async function main() {
 
     for (const candidate of candidates) {
         if (PSEUDO_ARTIST_MBIDS.has(candidate.musicbrainzId)) continue;
+        if (exclusions.has(candidate.wikidataId)) continue;
         const existing = byQid.get(candidate.wikidataId);
         if (!existing) {
             const artist = newArtist(candidate, now);
@@ -232,6 +241,7 @@ async function main() {
     ]);
     const beforePrune = data.artists.length;
     data.artists = data.artists.filter((artist) => {
+        if (exclusions.has(artist.wikidataId)) return false;
         if (PSEUDO_ARTIST_MBIDS.has(artist.musicbrainzId) && artist.reviewStatus === 'pendent' && !artist.active) return false;
         if (artist.reviewStatus !== 'pendent' || artist.active || artist.notes) return true;
         const evidence = artist.sources.filter((source) => source.startsWith('wikidata:'));
