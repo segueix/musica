@@ -12,8 +12,8 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: descobrir-musica
-  cancel-in-progress: true
+  group: music-data-writer
+  cancel-in-progress: false
 
 jobs:
   descobrir:
