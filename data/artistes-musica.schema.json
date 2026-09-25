@@ -177,6 +177,73 @@
                     }
                   }
                 }
+              },
+              "searchCandidates": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "id",
+                    "title",
+                    "handle",
+                    "description",
+                    "subscriberCount",
+                    "thumbnail",
+                    "score",
+                    "reasons",
+                    "suggestedType",
+                    "discoveredAt"
+                  ],
+                  "additionalProperties": false,
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "pattern": "^UC[A-Za-z0-9_-]{22}$"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "handle": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "subscriberCount": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "thumbnail": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "score": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "reasons": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "suggestedType": {
+                      "enum": [
+                        "official",
+                        "topic"
+                      ]
+                    },
+                    "discoveredAt": {
+                      "type": "string",
+                      "format": "date-time"
+                    }
+                  }
+                }
               }
             }
           },
@@ -245,6 +312,52 @@
                   "relationCount": {
                     "type": "integer",
                     "minimum": 0
+                  },
+                  "error": {
+                    "type": "string"
+                  }
+                }
+              },
+              "youtubeSearch": {
+                "type": "object",
+                "required": [
+                  "checkedAt",
+                  "status",
+                  "query",
+                  "resultCount",
+                  "bestScore",
+                  "autoAcceptedId"
+                ],
+                "additionalProperties": true,
+                "properties": {
+                  "checkedAt": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "status": {
+                    "enum": [
+                      "autoacceptat",
+                      "candidats",
+                      "sense-resultats",
+                      "error"
+                    ]
+                  },
+                  "query": {
+                    "type": "string"
+                  },
+                  "resultCount": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "bestScore": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "autoAcceptedId": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
                   },
                   "error": {
                     "type": "string"
