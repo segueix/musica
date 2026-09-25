@@ -29,6 +29,11 @@ jobs:
         with:
           node-version: "20"
 
+      - name: Sincronitza amb l'últim main
+        run: |
+          git fetch origin main
+          git reset --hard origin/main
+
       - name: Descobreix candidats
         run: node scripts/descobrir_artistes_musica.js
 
@@ -47,5 +52,4 @@ jobs:
           fi
 
           git commit -m "data: actualitza candidats musicals"
-          git pull --rebase origin main
           git push origin HEAD:main
