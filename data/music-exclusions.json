@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-25T17:27:49.619Z",
+  "updatedAt": "2026-09-25T18:15:42.564Z",
   "exclusions": [
     {
       "wikidataId": "Q2838792",
@@ -13,6 +13,138 @@
       "name": "Marcel·lí Antúnez Roca",
       "reason": "Artista de performance i instal·lació; l'activitat musical és secundària i no defineix l'entitat com a artista musical.",
       "source": "eligibility-audit"
+    },
+    {
+      "wikidataId": "Q3021184",
+      "name": "Def Con Dos",
+      "aliases": [],
+      "reason": "Criteri editorial d'idioma: repertori principal en castellà.",
+      "source": "editorial-language-policy"
+    },
+    {
+      "wikidataId": "Q52606759",
+      "name": "El Niño de la Hipoteca",
+      "aliases": [],
+      "reason": "Criteri editorial d'idioma: repertori principal en castellà.",
+      "source": "editorial-language-policy"
+    },
+    {
+      "wikidataId": "Q9023950",
+      "name": "Los Chikos del Maíz",
+      "aliases": [],
+      "reason": "Criteri editorial d'idioma: repertori principal en castellà.",
+      "source": "editorial-language-policy"
+    },
+    {
+      "wikidataId": "Q230544",
+      "name": "Massiel",
+      "aliases": [],
+      "reason": "Criteri editorial d'idioma: repertori principal en castellà.",
+      "source": "editorial-language-policy"
+    },
+    {
+      "wikidataId": "Q109681442",
+      "name": "Rojuu",
+      "aliases": [],
+      "reason": "Criteri editorial d'idioma: repertori principal en castellà.",
+      "source": "editorial-language-policy"
+    },
+    {
+      "wikidataId": "Q25400561",
+      "name": "Sara Hebe",
+      "aliases": [],
+      "reason": "Criteri editorial d'idioma: repertori principal en castellà.",
+      "source": "editorial-language-policy"
+    },
+    {
+      "wikidataId": "Q151814",
+      "name": "Sarah Brightman",
+      "aliases": [],
+      "reason": "Criteri editorial d'idioma: repertori principal no català.",
+      "source": "editorial-language-policy"
+    },
+    {
+      "wikidataId": "Q34424",
+      "name": "Shakira",
+      "aliases": [],
+      "reason": "Criteri editorial d'idioma: repertori principal en castellà/anglès.",
+      "source": "editorial-language-policy"
+    },
+    {
+      "wikidataId": "Q61389754",
+      "name": "Tanxugueiras",
+      "aliases": [],
+      "reason": "Criteri editorial d'idioma: repertori principal en gallec.",
+      "source": "editorial-language-policy"
+    },
+    {
+      "wikidataId": "Q4890058",
+      "name": "Dyango",
+      "aliases": [],
+      "reason": "Criteri editorial d'idioma: repertori majoritàriament en castellà, encara que tingui obra en català.",
+      "source": "editorial-language-policy"
+    },
+    {
+      "wikidataId": "Q1156342",
+      "name": "Miguel Poveda",
+      "aliases": [],
+      "reason": "Criteri editorial d'idioma: repertori majoritàriament en castellà, encara que tingui obra en català.",
+      "source": "editorial-language-policy"
+    },
+    {
+      "wikidataId": "Q28843759",
+      "name": "Rosalía",
+      "aliases": [
+        "ROSALÍA"
+      ],
+      "reason": "Criteri editorial d'idioma: repertori majoritàriament en castellà, encara que tingui obra en català.",
+      "source": "editorial-language-policy"
+    },
+    {
+      "wikidataId": null,
+      "name": "Rigoberta Bandini",
+      "aliases": [],
+      "reason": "Criteri editorial d'idioma: repertori majoritàriament en castellà, encara que tingui obra en català.",
+      "source": "editorial-language-policy"
+    },
+    {
+      "wikidataId": "Q1813924",
+      "name": "La Pegatina",
+      "aliases": [],
+      "reason": "Criteri editorial d'idioma: repertori majoritàriament en castellà i multilingüe.",
+      "source": "editorial-language-policy"
+    },
+    {
+      "wikidataId": "Q90712655",
+      "name": "Stay Homas",
+      "aliases": [],
+      "reason": "Criteri editorial d'idioma: repertori multilingüe, no principalment català.",
+      "source": "editorial-language-policy"
+    },
+    {
+      "wikidataId": "Q123503941",
+      "name": "Chiara Oliver Williams",
+      "aliases": [
+        "Chiara Oliver"
+      ],
+      "reason": "Criteri editorial d'idioma: repertori majoritàriament en castellà, encara que tingui obra en català.",
+      "source": "editorial-language-policy"
+    },
+    {
+      "wikidataId": "Q236034",
+      "name": "Susanne Georgi",
+      "aliases": [],
+      "reason": "Criteri editorial d'idioma: repertori principalment en anglès, encara que tingui obra en català.",
+      "source": "editorial-language-policy"
+    },
+    {
+      "wikidataId": "Q312753",
+      "name": "Joan Manuel Serrat i Teresa",
+      "aliases": [
+        "Joan Manuel Serrat"
+      ],
+      "reason": "Criteri editorial d'idioma: catàleg majoritàriament no català segons l'abast editorial de Segueix Música.",
+      "source": "editorial-language-policy"
     }
   ]
 }

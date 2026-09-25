@@ -123,10 +123,32 @@ UNION
     return batches;
 }
 
+function normalizeExclusionName(value) {
+    return String(value || '')
+        .normalize('NFD')
+        .replace(/\p{Diacritic}/gu, '')
+        .toLowerCase()
+        .trim();
+}
+
 function loadExclusions() {
-    if (!fs.existsSync(EXCLUSIONS_FILE)) return new Set();
+    if (!fs.existsSync(EXCLUSIONS_FILE)) return { qids: new Set(), names: new Set() };
     const data = JSON.parse(fs.readFileSync(EXCLUSIONS_FILE, 'utf8'));
-    return new Set((data.exclusions || []).map((item) => item.wikidataId).filter(Boolean));
+    const qids = new Set();
+    const names = new Set();
+    for (const item of data.exclusions || []) {
+        if (item.wikidataId) qids.add(item.wikidataId);
+        for (const value of [item.name, ...(item.aliases || [])]) {
+            const normalized = normalizeExclusionName(value);
+            if (normalized) names.add(normalized);
+        }
+    }
+    return { qids, names };
+}
+
+function isExcluded(exclusions, entity) {
+    return exclusions.qids.has(entity?.wikidataId)
+        || exclusions.names.has(normalizeExclusionName(entity?.name));
 }
 
 function loadDatabase() {
@@ -223,7 +245,7 @@ async function main() {
 
     for (const candidate of candidates) {
         if (PSEUDO_ARTIST_MBIDS.has(candidate.musicbrainzId)) continue;
-        if (exclusions.has(candidate.wikidataId)) continue;
+        if (isExcluded(exclusions, candidate)) continue;
         const existing = byQid.get(candidate.wikidataId);
         if (!existing) {
             const artist = newArtist(candidate, now);
@@ -241,7 +263,7 @@ async function main() {
     ]);
     const beforePrune = data.artists.length;
     data.artists = data.artists.filter((artist) => {
-        if (exclusions.has(artist.wikidataId)) return false;
+        if (isExcluded(exclusions, artist)) return false;
         if (PSEUDO_ARTIST_MBIDS.has(artist.musicbrainzId) && artist.reviewStatus === 'pendent' && !artist.active) return false;
         if (artist.reviewStatus !== 'pendent' || artist.active || artist.notes) return true;
         const evidence = artist.sources.filter((source) => source.startsWith('wikidata:'));
