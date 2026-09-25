@@ -32,6 +32,14 @@ describe('cerca controlada de canals YouTube', () => {
         expect(decideAutoAccept(artist, candidates)?.id).toBe('UC123');
     });
 
+    it('no autoaccepta una etiqueta desambiguadora com si fos part del canal', () => {
+        const artist = { name: 'Anonymous (grup)', aliases: [] };
+        const candidates = scored(artist, [
+            { id: 'UC999', title: 'Anonymous Official', handle: '@-anonymous', description: '' }
+        ]);
+        expect(decideAutoAccept(artist, candidates)).toBe(null);
+    });
+
     it('no autoaccepta noms genèrics curts', () => {
         const artist = { name: 'Berta', aliases: [] };
         const candidates = scored(artist, [
