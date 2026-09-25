@@ -9,14 +9,14 @@ on:
       - "scripts/enriquir_artistes_musicbrainz.js"
       - "tests/musicbrainz-enrichment.test.js"
       - ".github/workflows/validar-musica.yml"
-      - "scripts/enriquir_artistes_musicbrainz.js"
-      - "tests/musicbrainz-enrichment.test.js"
-      - ".github/workflows/validar-musica.yml"
   pull_request:
     paths:
       - "data/artistes-musica.json"
       - "data/artistes-musica.schema.json"
       - "scripts/validar_artistes_musica.js"
+      - "scripts/enriquir_artistes_musicbrainz.js"
+      - "tests/musicbrainz-enrichment.test.js"
+      - ".github/workflows/validar-musica.yml"
   workflow_dispatch:
 
 jobs:
