@@ -81,15 +81,19 @@ async function discover() {
             where: `
 ?artist wdt:P103 wd:${CATALAN}.
 {
-  ?artist wdt:P31/wdt:P279* wd:Q215380.
+  ?artist wdt:P31 wd:Q215380.
 }
 UNION
 {
-  ?artist wdt:P106/wdt:P279* wd:Q639669.
-}
-UNION
-{
-  ?artist wdt:P106/wdt:P279* wd:Q177220.
+  ?artist wdt:P106 ?occupation.
+  VALUES ?occupation {
+    wd:Q639669
+    wd:Q177220
+    wd:Q488205
+    wd:Q2252262
+    wd:Q36834
+    wd:Q753110
+  }
 }
 `,
         },
