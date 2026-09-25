@@ -241,37 +241,3 @@ function removeCategoryFromChannel(channelId, categoryName) {
     }
 }
 
-// Migració puntual: incorpora Els Descontrolats al Canal Jove una sola vegada.
-(function migrateElsDescontrolatsToCanalJove() {
-    if (typeof localStorage === 'undefined') return;
-
-    const migrationKey = 'catube_canal_jove_descontrolats_v1';
-    if (localStorage.getItem(migrationKey) === '1') return;
-
-    const channelId = 'UCjHC7XWMTEupRwBQAW_MLTQ';
-    const tag = '"Canal Jove"';
-    const normalizeTag = value => String(value || '').trim().replace(/^"(.*)"$/, '$1').toLowerCase();
-    const normalizedTag = normalizeTag(tag);
-
-    try {
-        const storedTags = JSON.parse(localStorage.getItem('catube_custom_tags') || '[]');
-        const tags = Array.isArray(storedTags) ? storedTags : [];
-        if (!tags.some(item => normalizeTag(item) === normalizedTag)) {
-            tags.push(tag);
-            localStorage.setItem('catube_custom_tags', JSON.stringify(tags));
-        }
-
-        const storedCategories = JSON.parse(localStorage.getItem('catube_channel_custom_categories') || '{}');
-        const categories = storedCategories && typeof storedCategories === 'object' ? storedCategories : {};
-        const channelCategories = Array.isArray(categories[channelId]) ? categories[channelId] : [];
-        if (!channelCategories.some(item => normalizeTag(item) === normalizedTag)) {
-            channelCategories.push(tag);
-            categories[channelId] = channelCategories;
-            localStorage.setItem('catube_channel_custom_categories', JSON.stringify(categories));
-        }
-
-        localStorage.setItem(migrationKey, '1');
-    } catch (error) {
-        console.warn('No es pot afegir Els Descontrolats al Canal Jove', error);
-    }
-})();

@@ -80,50 +80,68 @@ function mergeDefaultPrograms(existingPrograms) {
     return merged;
 }
 
-// Migracions de categories intel·ligents que s'han d'aplicar abans que app.js
-// marqui la nova versió de defaults com a instal·lada.
-function applyDefaultSmartCategoryStorageMigrations() {
-    if (localStorage.getItem(DEFAULTS_VERSION_KEY) === DEFAULTS_VERSION_VALUE) return;
+// Neteja definitiva de categories heretades de Segueix que no pertanyen a Segueix Música.
+function removeLegacyMusicCategories() {
+    const migrationKey = 'catube_music_remove_legacy_channels_v1';
+    if (localStorage.getItem(migrationKey) === '1') return;
 
-    const canalJoveTag = '"Canal Jove"';
-    const canalJoveChannelIds = ['UCX1IoIAglHKX8lifwNU7nCQ']; // La Heavy
-    const normalizeTag = value =>
+    const normalize = value =>
         String(value || '')
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '')
             .trim()
             .replace(/^"(.*)"$/, '$1')
             .toLowerCase();
-    const normalizedCanalJove = normalizeTag(canalJoveTag);
+
+    const removed = new Set(['canal jove', 'canal historia']);
+    const keep = value => !removed.has(normalize(value));
 
     try {
-        const storedTags = JSON.parse(localStorage.getItem(CUSTOM_TAGS_STORAGE_KEY) || '[]');
-        const tags = Array.isArray(storedTags) ? storedTags : [];
-        if (!tags.some(tag => normalizeTag(tag) === normalizedCanalJove)) {
-            tags.push(canalJoveTag);
-            localStorage.setItem(CUSTOM_TAGS_STORAGE_KEY, JSON.stringify(tags));
+        const tags = JSON.parse(localStorage.getItem(CUSTOM_TAGS_STORAGE_KEY) || '[]');
+        if (Array.isArray(tags)) {
+            localStorage.setItem(CUSTOM_TAGS_STORAGE_KEY, JSON.stringify(tags.filter(keep)));
         }
     } catch (_) {}
 
     try {
-        const storedCategories = JSON.parse(localStorage.getItem(CHANNEL_CUSTOM_CATEGORIES_KEY) || '{}');
-        const categories = storedCategories && typeof storedCategories === 'object' ? storedCategories : {};
-        let changed = false;
-
-        for (const channelId of canalJoveChannelIds) {
-            const channelCategories = Array.isArray(categories[channelId]) ? categories[channelId] : [];
-            if (!channelCategories.some(tag => normalizeTag(tag) === normalizedCanalJove)) {
-                channelCategories.push(canalJoveTag);
-                categories[channelId] = channelCategories;
-                changed = true;
+        const categories = JSON.parse(localStorage.getItem(CHANNEL_CUSTOM_CATEGORIES_KEY) || '{}');
+        if (categories && typeof categories === 'object') {
+            for (const [channelId, values] of Object.entries(categories)) {
+                if (!Array.isArray(values)) continue;
+                const filtered = values.filter(keep);
+                if (filtered.length) categories[channelId] = filtered;
+                else delete categories[channelId];
             }
-        }
-
-        if (changed) {
             localStorage.setItem(CHANNEL_CUSTOM_CATEGORIES_KEY, JSON.stringify(categories));
         }
     } catch (_) {}
+
+    try {
+        const order = JSON.parse(localStorage.getItem(CHIPS_ORDER_STORAGE_KEY) || '[]');
+        if (Array.isArray(order)) {
+            localStorage.setItem(CHIPS_ORDER_STORAGE_KEY, JSON.stringify(order.filter(keep)));
+        }
+    } catch (_) {}
+
+    for (const key of [CATEGORY_KEYWORDS_STORAGE_KEY, EXACT_CATEGORIES_STORAGE_KEY]) {
+        try {
+            const value = JSON.parse(localStorage.getItem(key) || '{}');
+            if (Array.isArray(value)) {
+                localStorage.setItem(key, JSON.stringify(value.filter(keep)));
+            } else if (value && typeof value === 'object') {
+                for (const name of Object.keys(value)) {
+                    if (!keep(name)) delete value[name];
+                }
+                localStorage.setItem(key, JSON.stringify(value));
+            }
+        } catch (_) {}
+    }
+
+    localStorage.removeItem(CHIPS_HTML_CACHE_KEY);
+    localStorage.setItem(migrationKey, '1');
 }
 
-applyDefaultSmartCategoryStorageMigrations();
+removeLegacyMusicCategories();
 
 // Configuració visual
 const BACKGROUND_STORAGE_KEY = 'catube_background_color';
