@@ -2,6 +2,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const { classifyMusicContent } = require('./lib/classificar_contingut_musical');
 
 const API_KEY = process.env.YOUTUBE_API_KEY_SERVER || process.env.YOUTUBE_API_KEY;
 if (!API_KEY) {
@@ -13,6 +14,8 @@ const ARTISTS_FILE = path.join(process.cwd(), 'data', 'artistes-musica.json');
 const FEED_FILE = path.join(process.cwd(), 'data', 'feed.json');
 const CHANNELS_FILE = path.join(process.cwd(), 'js', 'channels-ca.json');
 const AUDIT_FILE = path.join(process.cwd(), 'data', 'music-feed-audit.json');
+const CONTENT_AUDIT_FILE = path.join(process.cwd(), 'data', 'music-content-audit.json');
+const REVIEW_FILE = path.join(process.cwd(), 'data', 'music-content-review.json');
 const VIDEOS_PER_CHANNEL = Math.max(1, Math.min(25, Number.parseInt(process.env.MUSIC_VIDEOS_PER_CHANNEL || '15', 10)));
 const API = 'https://www.googleapis.com/youtube/v3';
 
@@ -128,13 +131,21 @@ async function main(){
       part:'snippet,contentDetails,statistics,status',
       id:batch.join(',')
     });
-    for(const item of payload.items||[]) detailsById.set(item.id,item);
+    for(const item of payload.items||[]){
+      item.durationSeconds=durationSeconds(item.contentDetails?.duration||'');
+      detailsById.set(item.id,item);
+    }
   }
 
   const channels={};
   const channelIndex=[];
   const videos=[];
+  const review=[];
+  const rejectedSamples=[];
   const channelsWithoutVideos=[];
+  const channelsWithoutAcceptedMusic=[];
+  const typeCounts={song:0,'live-song':0,album:0,other:0,review:0};
+  let publicVideoCount=0;
 
   for(const id of ids){
     const meta=indexed.get(id);
@@ -167,13 +178,23 @@ async function main(){
     };
     channelIndex.push(channel);
 
-    let channelVideoCount=0;
+    let channelPublicCount=0;
+    let channelAcceptedCount=0;
+
     for(const videoId of playlistVideoIds.get(id)||[]){
       const item=detailsById.get(videoId);
       if(!item || item.status?.privacyStatus!=='public') continue;
+      channelPublicCount++;
+      publicVideoCount++;
+
+      const classification=classifyMusicContent({
+        item,
+        channelMeta:{...meta,channelTitle:channel.name}
+      });
+      typeCounts[classification.contentType]=(typeCounts[classification.contentType]||0)+1;
+
       const vs=item.snippet||{};
-      const duration=item.contentDetails?.duration||'';
-      videos.push({
+      const base={
         id:item.id,
         title:vs.title||'',
         description:vs.description||'',
@@ -181,8 +202,8 @@ async function main(){
         channelId:id,
         channelTitle:channel.name,
         publishedAt:vs.publishedAt||null,
-        duration,
-        durationSeconds:durationSeconds(duration),
+        duration:item.contentDetails?.duration||'',
+        durationSeconds:item.durationSeconds,
         isShort:false,
         viewCount:Number(item.statistics?.viewCount||0),
         likeCount:Number(item.statistics?.likeCount||0),
@@ -190,34 +211,71 @@ async function main(){
         categories,
         genres:meta.genres,
         sourceChannelId:id,
-        liveBroadcastContent:vs.liveBroadcastContent||'none'
-      });
-      channelVideoCount++;
+        liveBroadcastContent:vs.liveBroadcastContent||'none',
+        contentType:classification.contentType,
+        musicConfidence:classification.confidence,
+        musicReason:classification.reason
+      };
+
+      if(classification.accepted){
+        videos.push(base);
+        channelAcceptedCount++;
+      } else if(classification.contentType==='review'){
+        review.push({
+          id:base.id,title:base.title,channelId:id,channelTitle:channel.name,
+          durationSeconds:base.durationSeconds,publishedAt:base.publishedAt,
+          musicConfidence:classification.confidence,musicReason:classification.reason,
+          youtubeCategoryId:String(vs.categoryId||'')
+        });
+      } else if(rejectedSamples.length<120){
+        rejectedSamples.push({
+          id:base.id,title:base.title,channelTitle:channel.name,
+          durationSeconds:base.durationSeconds,musicReason:classification.reason
+        });
+      }
     }
-    if(channelVideoCount===0) channelsWithoutVideos.push(id);
+
+    if(channelPublicCount===0) channelsWithoutVideos.push(id);
+    else if(channelAcceptedCount===0) channelsWithoutAcceptedMusic.push(id);
   }
 
   videos.sort((a,b)=>(Date.parse(b.publishedAt||'')||0)-(Date.parse(a.publishedAt||'')||0));
+  review.sort((a,b)=>(Date.parse(b.publishedAt||'')||0)-(Date.parse(a.publishedAt||'')||0));
   channelIndex.sort((a,b)=>a.name.localeCompare(b.name,'ca',{sensitivity:'base'}));
   const generatedAt=new Date().toISOString();
 
   fs.writeFileSync(FEED_FILE,JSON.stringify({generatedAt,channels,videos},null,2)+'\n');
   fs.writeFileSync(CHANNELS_FILE,JSON.stringify({updatedAt:generatedAt,channels:channelIndex},null,2)+'\n');
+  fs.writeFileSync(REVIEW_FILE,JSON.stringify({generatedAt,count:review.length,videos:review},null,2)+'\n');
+  fs.writeFileSync(CONTENT_AUDIT_FILE,JSON.stringify({
+    generatedAt,
+    rawPublicVideoCount:publicVideoCount,
+    acceptedVideoCount:videos.length,
+    rejectedOrReviewCount:publicVideoCount-videos.length,
+    reviewCount:review.length,
+    typeCounts,
+    channelsWithoutAcceptedMusic,
+    rejectedSamples
+  },null,2)+'\n');
   fs.writeFileSync(AUDIT_FILE,JSON.stringify({
     generatedAt,
     indexedChannelCount:ids.length,
     resolvedChannelCount:channelDetails.size,
     feedChannelCount:Object.keys(channels).length,
+    rawPublicVideoCount:publicVideoCount,
     feedVideoCount:videos.length,
+    contentReviewCount:review.length,
+    contentTypeCounts:typeCounts,
     unresolvedChannelIds:unresolved,
     channelsWithoutUploads,
     channelsWithoutVideos,
+    channelsWithoutAcceptedMusic,
     allIndexedChannelsVisible:unresolved.length===0 && Object.keys(channels).length===ids.length
   },null,2)+'\n');
 
-  console.log('✅ Feed musical:',Object.keys(channels).length,'canals,',videos.length,'vídeos.');
-  if(unresolved.length) console.log('⚠️ IDs no resolts:',unresolved.join(', '));
-  if(channelsWithoutVideos.length) console.log('ℹ️ Canals sense vídeos públics recents:',channelsWithoutVideos.length);
+  console.log('✅ Feed musical:',Object.keys(channels).length,'canals,',videos.length,'cançons/àlbums de',publicVideoCount,'vídeos públics.');
+  console.log('🧪 Revisió manual:',review.length,'vídeos ambigus.');
+  console.log('📦 Tipus:',typeCounts);
 }
 
 main().catch(error=>{console.error('❌',error.stack||error.message);process.exit(1);});
