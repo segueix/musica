@@ -492,6 +492,47 @@
                       "type": "string"
                     },
                     "uniqueItems": true
+                  },
+                  "musicbrainzReleaseCheckedAt": {
+                    "type": [
+                      "string",
+                      "null"
+                    ],
+                    "format": "date-time"
+                  },
+                  "musicbrainzReleaseRaw": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "uniqueItems": true
+                  },
+                  "musicbrainzReleaseGroupCount": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "musicbrainzReleaseEvidence": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "label",
+                        "releaseGroupCount"
+                      ],
+                      "additionalProperties": false,
+                      "properties": {
+                        "label": {
+                          "type": "string"
+                        },
+                        "releaseGroupCount": {
+                          "type": "integer",
+                          "minimum": 2
+                        }
+                      }
+                    }
+                  },
+                  "musicbrainzReleaseError": {
+                    "type": "string"
                   }
                 }
               }
