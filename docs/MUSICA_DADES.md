@@ -54,3 +54,14 @@ Després de la descoberta de Wikidata, `scripts/enriquir_artistes_musicbrainz.js
 - ignora artistes rebutjats.
 
 No necessita cap clau API de YouTube.
+
+## Resolució amb YouTube Data API
+
+`scripts/resoldre_canals_youtube.js` només treballa amb URLs ja conegudes:
+
+- `@handle` → `channels.list?forHandle=...`;
+- `/user/nom` → `channels.list?forUsername=...`.
+
+Cada consulta usa `channels.list`, que costa 1 unitat de quota general. La clau només es llegeix des del secret `YOUTUBE_API_KEY_SERVER` de GitHub Actions i no s'escriu mai al repositori.
+
+Les cerques generals per nom d'artista queden expressament fora d'aquesta fase.

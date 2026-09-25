@@ -16,7 +16,9 @@
     "search:index:hybrid:rebuild": "node scripts/generar_index_cerca.js",
     "sw:version": "node scripts/actualitzar_versio_sw.js",
     "music:enrich:musicbrainz": "node scripts/enriquir_artistes_musicbrainz.js",
-    "music:enrich:musicbrainz:dry": "node scripts/enriquir_artistes_musicbrainz.js --dry-run"
+    "music:enrich:musicbrainz:dry": "node scripts/enriquir_artistes_musicbrainz.js --dry-run",
+    "music:resolve:youtube": "node scripts/resoldre_canals_youtube.js",
+    "music:resolve:youtube:dry": "node scripts/resoldre_canals_youtube.js --dry-run"
   },
   "devDependencies": {
     "eslint": "^8.57.0",
