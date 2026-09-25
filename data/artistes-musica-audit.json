@@ -1,0 +1,1364 @@
+{
+  "generatedAt": "2026-09-25T17:26:49.166Z",
+  "summary": {
+    "total": 52,
+    "musicalClar": 50,
+    "revisar": 2,
+    "possibleFalsPositiu": 0
+  },
+  "artists": [
+    {
+      "name": "Ai Ai Ai",
+      "wikidataId": "Q20646496",
+      "musicbrainzId": "233e32f2-c083-4a49-a5d4-d52df62cdbd3",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q20646496",
+        "wikidata:performed-catalan-work"
+      ],
+      "youtubeChannels": 0,
+      "instances": [
+        "grup de música"
+      ],
+      "occupations": [],
+      "musicOccupations": [],
+      "musicTypes": [
+        "http://www.wikidata.org/entity/Q215380"
+      ],
+      "verdict": "musical-clar",
+      "reasons": [
+        "Wikidata: tipus de conjunt/entitat musical"
+      ]
+    },
+    {
+      "name": "Andreu Rifé i Oro",
+      "wikidataId": "Q930586",
+      "musicbrainzId": "7dfe5902-5fdf-423a-bbe6-c2426c80b27f",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q930586",
+        "wikidata:languages-spoken-catalan",
+        "wikidata:native-language-catalan",
+        "wikidata:native-language-catalan-musician"
+      ],
+      "youtubeChannels": 0,
+      "instances": [
+        "ésser humà"
+      ],
+      "occupations": [
+        "músic",
+        "cantant",
+        "actor",
+        "compositor",
+        "cantautor"
+      ],
+      "musicOccupations": [
+        "http://www.wikidata.org/entity/Q177220",
+        "http://www.wikidata.org/entity/Q488205",
+        "http://www.wikidata.org/entity/Q639669",
+        "http://www.wikidata.org/entity/Q36834"
+      ],
+      "musicTypes": [],
+      "verdict": "musical-clar",
+      "reasons": [
+        "Wikidata: ocupació musical explícita"
+      ]
+    },
+    {
+      "name": "Asstrio",
+      "wikidataId": "Q11907056",
+      "musicbrainzId": "3aa69692-a3c3-4e01-90aa-22ca4d958218",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q11907056",
+        "wikidata:performed-catalan-work"
+      ],
+      "youtubeChannels": 0,
+      "instances": [
+        "grup de música"
+      ],
+      "occupations": [
+        "músic"
+      ],
+      "musicOccupations": [
+        "http://www.wikidata.org/entity/Q639669"
+      ],
+      "musicTypes": [
+        "http://www.wikidata.org/entity/Q215380"
+      ],
+      "verdict": "musical-clar",
+      "reasons": [
+        "Wikidata: ocupació musical explícita",
+        "Wikidata: tipus de conjunt/entitat musical"
+      ]
+    },
+    {
+      "name": "Berta",
+      "wikidataId": "Q8247042",
+      "musicbrainzId": "5a945027-735d-4008-b4d3-b3d82c90ecac",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q8247042",
+        "wikidata:native-language-catalan",
+        "wikidata:native-language-catalan-musician"
+      ],
+      "youtubeChannels": 0,
+      "instances": [
+        "ésser humà"
+      ],
+      "occupations": [
+        "cantautor",
+        "compositor"
+      ],
+      "musicOccupations": [
+        "http://www.wikidata.org/entity/Q36834",
+        "http://www.wikidata.org/entity/Q488205"
+      ],
+      "musicTypes": [],
+      "verdict": "musical-clar",
+      "reasons": [
+        "Wikidata: ocupació musical explícita"
+      ]
+    },
+    {
+      "name": "Bonobos",
+      "wikidataId": "Q20103866",
+      "musicbrainzId": "cb9bbe05-cece-45e8-874c-d0ba14d7c4e1",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q20103866",
+        "wikidata:performed-catalan-work"
+      ],
+      "youtubeChannels": 0,
+      "instances": [
+        "grup de música"
+      ],
+      "occupations": [],
+      "musicOccupations": [],
+      "musicTypes": [
+        "http://www.wikidata.org/entity/Q215380"
+      ],
+      "verdict": "musical-clar",
+      "reasons": [
+        "Wikidata: tipus de conjunt/entitat musical"
+      ]
+    },
+    {
+      "name": "Bradien",
+      "wikidataId": "Q21568872",
+      "musicbrainzId": "be4dce5f-2dd2-457e-a81b-8c0bd8c89e57",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q21568872",
+        "wikidata:performed-catalan-work"
+      ],
+      "youtubeChannels": 0,
+      "instances": [
+        "grup de música"
+      ],
+      "occupations": [],
+      "musicOccupations": [],
+      "musicTypes": [
+        "http://www.wikidata.org/entity/Q215380"
+      ],
+      "verdict": "musical-clar",
+      "reasons": [
+        "Wikidata: tipus de conjunt/entitat musical"
+      ]
+    },
+    {
+      "name": "Carmen Amaya",
+      "wikidataId": "Q242023",
+      "musicbrainzId": "9f8667df-17af-4d8d-9d80-3174c1177bbb",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q242023",
+        "wikidata:languages-spoken-catalan",
+        "wikidata:native-language-catalan",
+        "wikidata:native-language-catalan-musician"
+      ],
+      "youtubeChannels": 0,
+      "instances": [
+        "ésser humà"
+      ],
+      "occupations": [
+        "ballador de flamenc",
+        "cantant",
+        "actor",
+        "ballarí"
+      ],
+      "musicOccupations": [
+        "http://www.wikidata.org/entity/Q177220"
+      ],
+      "musicTypes": [],
+      "verdict": "musical-clar",
+      "reasons": [
+        "Wikidata: ocupació musical explícita"
+      ]
+    },
+    {
+      "name": "Carol Rovira",
+      "wikidataId": "Q64373644",
+      "musicbrainzId": "0680f1d8-9036-4a93-a3b3-ac62f32ad1d2",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q64373644",
+        "wikidata:native-language-catalan",
+        "wikidata:native-language-catalan-musician"
+      ],
+      "youtubeChannels": 0,
+      "instances": [
+        "ésser humà"
+      ],
+      "occupations": [
+        "actor de cinema",
+        "cantant",
+        "actor",
+        "presentador de televisió"
+      ],
+      "musicOccupations": [
+        "http://www.wikidata.org/entity/Q177220"
+      ],
+      "musicTypes": [],
+      "verdict": "musical-clar",
+      "reasons": [
+        "Wikidata: ocupació musical explícita"
+      ]
+    },
+    {
+      "name": "Cobla Mediterrània",
+      "wikidataId": "Q113006288",
+      "musicbrainzId": "82d790da-2672-489e-9c42-110302c43e5b",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q113006288",
+        "wikidata:performed-catalan-work"
+      ],
+      "youtubeChannels": 0,
+      "instances": [
+        "grup de música"
+      ],
+      "occupations": [],
+      "musicOccupations": [],
+      "musicTypes": [
+        "http://www.wikidata.org/entity/Q215380"
+      ],
+      "verdict": "musical-clar",
+      "reasons": [
+        "Wikidata: tipus de conjunt/entitat musical"
+      ]
+    },
+    {
+      "name": "Concepció Supervia i Pascual",
+      "wikidataId": "Q440133",
+      "musicbrainzId": "7a5ed032-1c64-47ee-9628-94d7e3e88718",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q440133",
+        "wikidata:languages-spoken-catalan",
+        "wikidata:performed-catalan-work"
+      ],
+      "youtubeChannels": 0,
+      "instances": [
+        "ésser humà"
+      ],
+      "occupations": [
+        "cantant d'òpera"
+      ],
+      "musicOccupations": [
+        "http://www.wikidata.org/entity/Q2865819"
+      ],
+      "musicTypes": [],
+      "verdict": "musical-clar",
+      "reasons": [
+        "Wikidata: ocupació musical explícita"
+      ]
+    },
+    {
+      "name": "Dagoll Dagom",
+      "wikidataId": "Q2838792",
+      "musicbrainzId": "6675e84e-ad9e-4100-89dc-5170c8f609ed",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q2838792",
+        "wikidata:languages-spoken-catalan",
+        "wikidata:performed-catalan-work"
+      ],
+      "youtubeChannels": 0,
+      "instances": [
+        "grup de teatre"
+      ],
+      "occupations": [],
+      "musicOccupations": [],
+      "musicTypes": [],
+      "verdict": "revisar",
+      "reasons": [
+        "Consta com a intèrpret d’obra en català però sense ocupació/tipus musical explícit"
+      ]
+    },
+    {
+      "name": "Enric Madriguera i Rodon",
+      "wikidataId": "Q447599",
+      "musicbrainzId": "4eaaa457-b736-4315-8e3d-34cb674bb900",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q447599",
+        "wikidata:languages-spoken-catalan",
+        "wikidata:native-language-catalan",
+        "wikidata:native-language-catalan-musician"
+      ],
+      "youtubeChannels": 0,
+      "instances": [
+        "ésser humà"
+      ],
+      "occupations": [
+        "director d'orquestra",
+        "violinista",
+        "empresari",
+        "líder de conjunt",
+        "compositor"
+      ],
+      "musicOccupations": [
+        "http://www.wikidata.org/entity/Q36834",
+        "http://www.wikidata.org/entity/Q158852",
+        "http://www.wikidata.org/entity/Q806349",
+        "http://www.wikidata.org/entity/Q1259917"
+      ],
+      "musicTypes": [],
+      "verdict": "musical-clar",
+      "reasons": [
+        "Wikidata: ocupació musical explícita"
+      ]
+    },
+    {
+      "name": "Francesca Madriguera i Rodon",
+      "wikidataId": "Q15729292",
+      "musicbrainzId": "8ce0fefd-51fe-40f2-8761-a9654d493bc1",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q15729292",
+        "wikidata:native-language-catalan",
+        "wikidata:native-language-catalan-musician"
+      ],
+      "youtubeChannels": 0,
+      "instances": [
+        "ésser humà"
+      ],
+      "occupations": [
+        "compositor",
+        "pianista"
+      ],
+      "musicOccupations": [
+        "http://www.wikidata.org/entity/Q36834",
+        "http://www.wikidata.org/entity/Q486748"
+      ],
+      "musicTypes": [],
+      "verdict": "musical-clar",
+      "reasons": [
+        "Wikidata: ocupació musical explícita"
+      ]
+    },
+    {
+      "name": "Guillamino",
+      "wikidataId": "Q11924866",
+      "musicbrainzId": "a43b3d79-438d-4011-9b18-4a1ed55193c8",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q11924866",
+        "wikidata:languages-spoken-catalan",
+        "wikidata:performed-catalan-work"
+      ],
+      "youtubeChannels": 0,
+      "instances": [
+        "ésser humà"
+      ],
+      "occupations": [
+        "músic",
+        "productor musical"
+      ],
+      "musicOccupations": [
+        "http://www.wikidata.org/entity/Q639669",
+        "http://www.wikidata.org/entity/Q3922505"
+      ],
+      "musicTypes": [],
+      "verdict": "musical-clar",
+      "reasons": [
+        "Wikidata: ocupació musical explícita"
+      ]
+    },
+    {
+      "name": "Guillem Gisbert i Puig",
+      "wikidataId": "Q62020002",
+      "musicbrainzId": "33d6da31-3518-42f9-b371-7509e93ec0bd",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q62020002",
+        "wikidata:performed-catalan-work"
+      ],
+      "youtubeChannels": 0,
+      "instances": [
+        "ésser humà"
+      ],
+      "occupations": [
+        "músic"
+      ],
+      "musicOccupations": [
+        "http://www.wikidata.org/entity/Q639669"
+      ],
+      "musicTypes": [],
+      "verdict": "musical-clar",
+      "reasons": [
+        "Wikidata: ocupació musical explícita"
+      ]
+    },
+    {
+      "name": "Guillermina Motta",
+      "wikidataId": "Q9001292",
+      "musicbrainzId": "f962cece-5c70-4b77-a56c-7a0b6cb199ea",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q9001292",
+        "wikidata:performed-catalan-work"
+      ],
+      "youtubeChannels": 0,
+      "instances": [
+        "ésser humà"
+      ],
+      "occupations": [
+        "cantant",
+        "actor",
+        "compositor"
+      ],
+      "musicOccupations": [
+        "http://www.wikidata.org/entity/Q36834",
+        "http://www.wikidata.org/entity/Q177220"
+      ],
+      "musicTypes": [],
+      "verdict": "musical-clar",
+      "reasons": [
+        "Wikidata: ocupació musical explícita"
+      ]
+    },
+    {
+      "name": "Jaume Arnella i París",
+      "wikidataId": "Q11927225",
+      "musicbrainzId": "44c786f4-0b24-45c8-afef-916435ab0e64",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q11927225",
+        "wikidata:languages-spoken-catalan",
+        "wikidata:native-language-catalan",
+        "wikidata:native-language-catalan-musician"
+      ],
+      "youtubeChannels": 0,
+      "instances": [
+        "ésser humà"
+      ],
+      "occupations": [
+        "cantant",
+        "etnòleg"
+      ],
+      "musicOccupations": [
+        "http://www.wikidata.org/entity/Q177220"
+      ],
+      "musicTypes": [],
+      "verdict": "musical-clar",
+      "reasons": [
+        "Wikidata: ocupació musical explícita"
+      ]
+    },
+    {
+      "name": "Jaume Balius i Vila",
+      "wikidataId": "Q11927234",
+      "musicbrainzId": "1c0d06b7-c9b5-4086-a118-016aa49d4830",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q11927234",
+        "wikidata:languages-spoken-catalan",
+        "wikidata:native-language-catalan",
+        "wikidata:native-language-catalan-musician"
+      ],
+      "youtubeChannels": 0,
+      "instances": [
+        "ésser humà"
+      ],
+      "occupations": [
+        "compositor",
+        "mestre de capella"
+      ],
+      "musicOccupations": [
+        "http://www.wikidata.org/entity/Q215793",
+        "http://www.wikidata.org/entity/Q36834"
+      ],
+      "musicTypes": [],
+      "verdict": "musical-clar",
+      "reasons": [
+        "Wikidata: ocupació musical explícita"
+      ]
+    },
+    {
+      "name": "Joan Crosas i Casadesús",
+      "wikidataId": "Q9011900",
+      "musicbrainzId": "a6862ab2-1bc7-47e6-9ca8-7ee5dbe27b78",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q9011900",
+        "wikidata:native-language-catalan",
+        "wikidata:native-language-catalan-musician"
+      ],
+      "youtubeChannels": 0,
+      "instances": [
+        "ésser humà"
+      ],
+      "occupations": [
+        "actor de teatre",
+        "actor de televisió",
+        "actor de cinema",
+        "cantant",
+        "actor de doblatge",
+        "actor de teatre musical",
+        "director de doblatge"
+      ],
+      "musicOccupations": [
+        "http://www.wikidata.org/entity/Q177220"
+      ],
+      "musicTypes": [],
+      "verdict": "musical-clar",
+      "reasons": [
+        "Wikidata: ocupació musical explícita"
+      ]
+    },
+    {
+      "name": "Joan Dausà",
+      "wikidataId": "Q21950809",
+      "musicbrainzId": "d092fbf7-131e-4b67-be05-e0a4e896e311",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q21950809",
+        "wikidata:performed-catalan-work",
+        "musicbrainz:youtube-candidate",
+        "youtube:channels-list"
+      ],
+      "youtubeChannels": 1,
+      "instances": [
+        "ésser humà"
+      ],
+      "occupations": [
+        "presentador",
+        "músic",
+        "actor"
+      ],
+      "musicOccupations": [
+        "http://www.wikidata.org/entity/Q639669"
+      ],
+      "musicTypes": [],
+      "verdict": "musical-clar",
+      "reasons": [
+        "Wikidata: ocupació musical explícita"
+      ]
+    },
+    {
+      "name": "Jofre Bardagí Grima",
+      "wikidataId": "Q11928196",
+      "musicbrainzId": "bcd26626-7079-45f4-8c6a-f8cdd7368ba0",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q11928196",
+        "wikidata:performed-catalan-work"
+      ],
+      "youtubeChannels": 1,
+      "instances": [
+        "ésser humà"
+      ],
+      "occupations": [
+        "músic"
+      ],
+      "musicOccupations": [
+        "http://www.wikidata.org/entity/Q639669"
+      ],
+      "musicTypes": [],
+      "verdict": "musical-clar",
+      "reasons": [
+        "Wikidata: ocupació musical explícita"
+      ]
+    },
+    {
+      "name": "La Carrau",
+      "wikidataId": "Q11930337",
+      "musicbrainzId": "4e25984b-be49-4dd0-87cd-ed422a4c245d",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q11930337",
+        "wikidata:performed-catalan-work"
+      ],
+      "youtubeChannels": 0,
+      "instances": [
+        "grup de música"
+      ],
+      "occupations": [
+        "músic"
+      ],
+      "musicOccupations": [
+        "http://www.wikidata.org/entity/Q639669"
+      ],
+      "musicTypes": [
+        "http://www.wikidata.org/entity/Q215380"
+      ],
+      "verdict": "musical-clar",
+      "reasons": [
+        "Wikidata: ocupació musical explícita",
+        "Wikidata: tipus de conjunt/entitat musical"
+      ]
+    },
+    {
+      "name": "La Troba Kung-Fú",
+      "wikidataId": "Q1817487",
+      "musicbrainzId": "c52e82c6-e3fa-4643-b553-efa44cd68af1",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q1817487",
+        "wikidata:performed-catalan-work"
+      ],
+      "youtubeChannels": 0,
+      "instances": [
+        "grup de música"
+      ],
+      "occupations": [],
+      "musicOccupations": [],
+      "musicTypes": [
+        "http://www.wikidata.org/entity/Q215380"
+      ],
+      "verdict": "musical-clar",
+      "reasons": [
+        "Wikidata: tipus de conjunt/entitat musical"
+      ]
+    },
+    {
+      "name": "Llum",
+      "wikidataId": "Q112292911",
+      "musicbrainzId": "e292d0ec-aafe-4f20-9d87-5df30bea528d",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q112292911",
+        "wikidata:native-language-catalan",
+        "wikidata:native-language-catalan-musician",
+        "musicbrainz:youtube-candidate",
+        "youtube:channels-list"
+      ],
+      "youtubeChannels": 1,
+      "instances": [
+        "ésser humà"
+      ],
+      "occupations": [
+        "podcaster",
+        "artista musical",
+        "cantant"
+      ],
+      "musicOccupations": [
+        "http://www.wikidata.org/entity/Q177220"
+      ],
+      "musicTypes": [],
+      "verdict": "musical-clar",
+      "reasons": [
+        "Wikidata: ocupació musical explícita"
+      ]
+    },
+    {
+      "name": "Mama Dousha",
+      "wikidataId": "Q115940783",
+      "musicbrainzId": "fbb36024-f22f-4331-8a08-534fe5305590",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q115940783",
+        "wikidata:performed-catalan-work"
+      ],
+      "youtubeChannels": 1,
+      "instances": [
+        "ésser humà"
+      ],
+      "occupations": [
+        "productor musical",
+        "locutor de ràdio",
+        "músic"
+      ],
+      "musicOccupations": [
+        "http://www.wikidata.org/entity/Q639669",
+        "http://www.wikidata.org/entity/Q3922505"
+      ],
+      "musicTypes": [],
+      "verdict": "musical-clar",
+      "reasons": [
+        "Wikidata: ocupació musical explícita"
+      ]
+    },
+    {
+      "name": "Manu Guix",
+      "wikidataId": "Q6752273",
+      "musicbrainzId": "40290a50-f1ae-45a0-a219-0350b7b29695",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q6752273",
+        "wikidata:native-language-catalan",
+        "wikidata:native-language-catalan-musician"
+      ],
+      "youtubeChannels": 0,
+      "instances": [
+        "ésser humà"
+      ],
+      "occupations": [
+        "director musical",
+        "compositor",
+        "productor musical",
+        "pianista",
+        "músic"
+      ],
+      "musicOccupations": [
+        "http://www.wikidata.org/entity/Q486748",
+        "http://www.wikidata.org/entity/Q639669",
+        "http://www.wikidata.org/entity/Q3922505",
+        "http://www.wikidata.org/entity/Q36834"
+      ],
+      "musicTypes": [],
+      "verdict": "musical-clar",
+      "reasons": [
+        "Wikidata: ocupació musical explícita"
+      ]
+    },
+    {
+      "name": "Manuel Espona",
+      "wikidataId": "Q110226635",
+      "musicbrainzId": "debd76a7-09aa-4db5-8300-2e30cbe797dc",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q110226635",
+        "wikidata:native-language-catalan",
+        "wikidata:native-language-catalan-musician"
+      ],
+      "youtubeChannels": 0,
+      "instances": [
+        "ésser humà"
+      ],
+      "occupations": [
+        "músic",
+        "mestre de capella",
+        "compositor"
+      ],
+      "musicOccupations": [
+        "http://www.wikidata.org/entity/Q36834",
+        "http://www.wikidata.org/entity/Q215793",
+        "http://www.wikidata.org/entity/Q639669"
+      ],
+      "musicTypes": [],
+      "verdict": "musical-clar",
+      "reasons": [
+        "Wikidata: ocupació musical explícita"
+      ]
+    },
+    {
+      "name": "Manuel García Morante",
+      "wikidataId": "Q105407739",
+      "musicbrainzId": "30cc57c1-0eee-49b2-9b4d-3f70e1319b42",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q105407739",
+        "wikidata:performed-catalan-work"
+      ],
+      "youtubeChannels": 0,
+      "instances": [
+        "ésser humà"
+      ],
+      "occupations": [
+        "compositor"
+      ],
+      "musicOccupations": [
+        "http://www.wikidata.org/entity/Q36834"
+      ],
+      "musicTypes": [],
+      "verdict": "musical-clar",
+      "reasons": [
+        "Wikidata: ocupació musical explícita"
+      ]
+    },
+    {
+      "name": "Marcel·lí Antúnez Roca",
+      "wikidataId": "Q3845733",
+      "musicbrainzId": "73d824e7-eeba-482f-ab63-b0497b775b77",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q3845733",
+        "wikidata:languages-spoken-catalan",
+        "wikidata:performed-catalan-work"
+      ],
+      "youtubeChannels": 0,
+      "instances": [
+        "ésser humà"
+      ],
+      "occupations": [
+        "artista",
+        "actor de veu",
+        "director de cinema",
+        "actor de cinema",
+        "guionista de cinema"
+      ],
+      "musicOccupations": [],
+      "musicTypes": [],
+      "verdict": "revisar",
+      "reasons": [
+        "Consta com a intèrpret d’obra en català però sense ocupació/tipus musical explícit"
+      ]
+    },
+    {
+      "name": "Marina Rossell",
+      "wikidataId": "Q452094",
+      "musicbrainzId": "208ba7b5-cf9e-4660-976b-0e7a7855aa46",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q452094",
+        "wikidata:languages-spoken-catalan",
+        "wikidata:performed-catalan-work"
+      ],
+      "youtubeChannels": 1,
+      "instances": [
+        "ésser humà"
+      ],
+      "occupations": [
+        "guitarrista",
+        "músic",
+        "músic d'estudi",
+        "cantant"
+      ],
+      "musicOccupations": [
+        "http://www.wikidata.org/entity/Q177220",
+        "http://www.wikidata.org/entity/Q639669",
+        "http://www.wikidata.org/entity/Q855091",
+        "http://www.wikidata.org/entity/Q55960555"
+      ],
+      "musicTypes": [],
+      "verdict": "musical-clar",
+      "reasons": [
+        "Wikidata: ocupació musical explícita"
+      ]
+    },
+    {
+      "name": "Mariona Escoda i Sendra",
+      "wikidataId": "Q112660609",
+      "musicbrainzId": "938564b6-c3a0-4824-8f3d-86423832b80a",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q112660609",
+        "wikidata:performed-catalan-work"
+      ],
+      "youtubeChannels": 1,
+      "instances": [
+        "ésser humà"
+      ],
+      "occupations": [
+        "cantant"
+      ],
+      "musicOccupations": [
+        "http://www.wikidata.org/entity/Q177220"
+      ],
+      "musicTypes": [],
+      "verdict": "musical-clar",
+      "reasons": [
+        "Wikidata: ocupació musical explícita"
+      ]
+    },
+    {
+      "name": "Mariona Sagarra",
+      "wikidataId": "Q118390775",
+      "musicbrainzId": "649f0733-a5a2-40c6-9b2d-22847788bd0f",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q118390775",
+        "wikidata:performed-catalan-work"
+      ],
+      "youtubeChannels": 0,
+      "instances": [
+        "ésser humà"
+      ],
+      "occupations": [
+        "músic"
+      ],
+      "musicOccupations": [
+        "http://www.wikidata.org/entity/Q639669"
+      ],
+      "musicTypes": [],
+      "verdict": "musical-clar",
+      "reasons": [
+        "Wikidata: ocupació musical explícita"
+      ]
+    },
+    {
+      "name": "Miquela Lladó i Vidal",
+      "wikidataId": "Q9033533",
+      "musicbrainzId": "ee5f8ef9-36cb-4968-9a16-81c4ca154089",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q9033533",
+        "wikidata:native-language-catalan",
+        "wikidata:languages-spoken-catalan",
+        "wikidata:native-language-catalan-musician"
+      ],
+      "youtubeChannels": 0,
+      "instances": [
+        "ésser humà"
+      ],
+      "occupations": [
+        "compositor",
+        "cantant"
+      ],
+      "musicOccupations": [
+        "http://www.wikidata.org/entity/Q36834",
+        "http://www.wikidata.org/entity/Q177220"
+      ],
+      "musicTypes": [],
+      "verdict": "musical-clar",
+      "reasons": [
+        "Wikidata: ocupació musical explícita"
+      ]
+    },
+    {
+      "name": "Nerea Rodríguez i Rodríguez",
+      "wikidataId": "Q59616984",
+      "musicbrainzId": "68c9e00b-b9dd-47c4-a8d5-4c306abc3e15",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q59616984",
+        "wikidata:native-language-catalan",
+        "wikidata:native-language-catalan-musician"
+      ],
+      "youtubeChannels": 1,
+      "instances": [
+        "ésser humà"
+      ],
+      "occupations": [
+        "cantant"
+      ],
+      "musicOccupations": [
+        "http://www.wikidata.org/entity/Q177220"
+      ],
+      "musicTypes": [],
+      "verdict": "musical-clar",
+      "reasons": [
+        "Wikidata: ocupació musical explícita"
+      ]
+    },
+    {
+      "name": "Núria López i Fàbrega",
+      "wikidataId": "Q113137519",
+      "musicbrainzId": "ae47baa1-fdf6-493f-91ba-5e171079f6b1",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q113137519",
+        "wikidata:performed-catalan-work"
+      ],
+      "youtubeChannels": 1,
+      "instances": [
+        "ésser humà"
+      ],
+      "occupations": [
+        "actor de teatre musical",
+        "cantant"
+      ],
+      "musicOccupations": [
+        "http://www.wikidata.org/entity/Q177220"
+      ],
+      "musicTypes": [],
+      "verdict": "musical-clar",
+      "reasons": [
+        "Wikidata: ocupació musical explícita"
+      ]
+    },
+    {
+      "name": "Orfeó Català",
+      "wikidataId": "Q1779639",
+      "musicbrainzId": "cac214c9-ccce-4b77-b4cb-0cf75d8852a2",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q1779639",
+        "wikidata:languages-spoken-catalan",
+        "wikidata:performed-catalan-work"
+      ],
+      "youtubeChannels": 0,
+      "instances": [
+        "cor simfònic",
+        "conjunt musical"
+      ],
+      "occupations": [],
+      "musicOccupations": [],
+      "musicTypes": [
+        "http://www.wikidata.org/entity/Q2088357",
+        "http://www.wikidata.org/entity/Q19190659"
+      ],
+      "verdict": "musical-clar",
+      "reasons": [
+        "Wikidata: tipus de conjunt/entitat musical"
+      ]
+    },
+    {
+      "name": "Orfeó Gracienc",
+      "wikidataId": "Q7333940",
+      "musicbrainzId": "769c027a-ecad-4307-be3f-74886d0fb396",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q7333940",
+        "wikidata:performed-catalan-work"
+      ],
+      "youtubeChannels": 1,
+      "instances": [
+        "cor"
+      ],
+      "occupations": [],
+      "musicOccupations": [],
+      "musicTypes": [
+        "http://www.wikidata.org/entity/Q131186"
+      ],
+      "verdict": "musical-clar",
+      "reasons": [
+        "Wikidata: tipus de conjunt/entitat musical"
+      ]
+    },
+    {
+      "name": "Orquestra de Cadaqués",
+      "wikidataId": "Q1993300",
+      "musicbrainzId": "430891c0-4f98-47c9-bc02-8861b4352d78",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q1993300",
+        "wikidata:performed-catalan-work"
+      ],
+      "youtubeChannels": 0,
+      "instances": [
+        "orquestra"
+      ],
+      "occupations": [],
+      "musicOccupations": [],
+      "musicTypes": [
+        "http://www.wikidata.org/entity/Q42998"
+      ],
+      "verdict": "musical-clar",
+      "reasons": [
+        "Wikidata: tipus de conjunt/entitat musical"
+      ]
+    },
+    {
+      "name": "Orquestra Simfònica del Gran Teatre del Liceu",
+      "wikidataId": "Q3331363",
+      "musicbrainzId": "04a82da3-9abb-4e64-90fb-77e0244c46f2",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q3331363",
+        "wikidata:performed-catalan-work"
+      ],
+      "youtubeChannels": 0,
+      "instances": [
+        "orquestra simfònica"
+      ],
+      "occupations": [],
+      "musicOccupations": [],
+      "musicTypes": [
+        "http://www.wikidata.org/entity/Q239582"
+      ],
+      "verdict": "musical-clar",
+      "reasons": [
+        "Wikidata: tipus de conjunt/entitat musical"
+      ]
+    },
+    {
+      "name": "Orquestra Simfònica del Vallès",
+      "wikidataId": "Q4888219",
+      "musicbrainzId": "f9ea5d80-d797-4520-8737-5671d6348a22",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q4888219",
+        "wikidata:performed-catalan-work"
+      ],
+      "youtubeChannels": 0,
+      "instances": [
+        "orquestra simfònica"
+      ],
+      "occupations": [],
+      "musicOccupations": [],
+      "musicTypes": [
+        "http://www.wikidata.org/entity/Q239582"
+      ],
+      "verdict": "musical-clar",
+      "reasons": [
+        "Wikidata: tipus de conjunt/entitat musical"
+      ]
+    },
+    {
+      "name": "Pastorets Rock",
+      "wikidataId": "Q19716150",
+      "musicbrainzId": "66ab5f76-fddb-4a90-bc0c-d112242c9659",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q19716150",
+        "wikidata:performed-catalan-work"
+      ],
+      "youtubeChannels": 1,
+      "instances": [
+        "grup de música"
+      ],
+      "occupations": [],
+      "musicOccupations": [],
+      "musicTypes": [
+        "http://www.wikidata.org/entity/Q215380"
+      ],
+      "verdict": "musical-clar",
+      "reasons": [
+        "Wikidata: tipus de conjunt/entitat musical"
+      ]
+    },
+    {
+      "name": "Pulpopop",
+      "wikidataId": "Q23500597",
+      "musicbrainzId": "d11d9538-5606-4617-99c6-d84e58bda168",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q23500597",
+        "wikidata:performed-catalan-work"
+      ],
+      "youtubeChannels": 0,
+      "instances": [
+        "grup de música"
+      ],
+      "occupations": [],
+      "musicOccupations": [],
+      "musicTypes": [
+        "http://www.wikidata.org/entity/Q215380"
+      ],
+      "verdict": "musical-clar",
+      "reasons": [
+        "Wikidata: tipus de conjunt/entitat musical"
+      ]
+    },
+    {
+      "name": "Quartet Glinka",
+      "wikidataId": "Q130459394",
+      "musicbrainzId": "c9d1895f-1b7c-4c39-bbd0-0481e1723095",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q130459394",
+        "wikidata:performed-catalan-work"
+      ],
+      "youtubeChannels": 0,
+      "instances": [
+        "grup de música"
+      ],
+      "occupations": [],
+      "musicOccupations": [],
+      "musicTypes": [
+        "http://www.wikidata.org/entity/Q215380"
+      ],
+      "verdict": "musical-clar",
+      "reasons": [
+        "Wikidata: tipus de conjunt/entitat musical"
+      ]
+    },
+    {
+      "name": "Ramon Calduch i Gimeno",
+      "wikidataId": "Q11217761",
+      "musicbrainzId": "66c40982-784a-46a4-9fef-ff0b1fa4cfdc",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q11217761",
+        "wikidata:languages-spoken-catalan",
+        "wikidata:native-language-catalan",
+        "wikidata:native-language-catalan-musician"
+      ],
+      "youtubeChannels": 0,
+      "instances": [
+        "ésser humà"
+      ],
+      "occupations": [
+        "cantant"
+      ],
+      "musicOccupations": [
+        "http://www.wikidata.org/entity/Q177220"
+      ],
+      "musicTypes": [],
+      "verdict": "musical-clar",
+      "reasons": [
+        "Wikidata: ocupació musical explícita"
+      ]
+    },
+    {
+      "name": "Remigi Palmero i Ruà",
+      "wikidataId": "Q17362838",
+      "musicbrainzId": "27e02def-cbdf-445d-9e02-4d37f55e5dc5",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q17362838",
+        "wikidata:performed-catalan-work"
+      ],
+      "youtubeChannels": 0,
+      "instances": [
+        "ésser humà"
+      ],
+      "occupations": [
+        "músic de sessió",
+        "cantautor",
+        "guitarrista",
+        "iogui"
+      ],
+      "musicOccupations": [
+        "http://www.wikidata.org/entity/Q488205",
+        "http://www.wikidata.org/entity/Q855091",
+        "http://www.wikidata.org/entity/Q10666486"
+      ],
+      "musicTypes": [],
+      "verdict": "musical-clar",
+      "reasons": [
+        "Wikidata: ocupació musical explícita"
+      ]
+    },
+    {
+      "name": "Strombers",
+      "wikidataId": "Q20107159",
+      "musicbrainzId": "e72a6e4c-e72f-4acc-b765-0de32cb0b4f3",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q20107159",
+        "wikidata:performed-catalan-work"
+      ],
+      "youtubeChannels": 0,
+      "instances": [
+        "grup de música"
+      ],
+      "occupations": [],
+      "musicOccupations": [],
+      "musicTypes": [
+        "http://www.wikidata.org/entity/Q215380"
+      ],
+      "verdict": "musical-clar",
+      "reasons": [
+        "Wikidata: tipus de conjunt/entitat musical"
+      ]
+    },
+    {
+      "name": "Teresa Rebull",
+      "wikidataId": "Q3384297",
+      "musicbrainzId": "44f5193a-1d9f-4597-83cc-45e647f30eb7",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q3384297",
+        "wikidata:languages-spoken-catalan",
+        "wikidata:native-language-catalan",
+        "wikidata:native-language-catalan-musician"
+      ],
+      "youtubeChannels": 0,
+      "instances": [
+        "ésser humà"
+      ],
+      "occupations": [
+        "cantant",
+        "funcionari",
+        "infermer",
+        "obrer"
+      ],
+      "musicOccupations": [
+        "http://www.wikidata.org/entity/Q177220"
+      ],
+      "musicTypes": [],
+      "verdict": "musical-clar",
+      "reasons": [
+        "Wikidata: ocupació musical explícita"
+      ]
+    },
+    {
+      "name": "Tomàs Molina i Bosch",
+      "wikidataId": "Q6745025",
+      "musicbrainzId": "c5b85f15-c1e9-45d9-aa5e-511af903cfd9",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q6745025",
+        "wikidata:native-language-catalan",
+        "wikidata:native-language-catalan-musician"
+      ],
+      "youtubeChannels": 0,
+      "instances": [
+        "ésser humà"
+      ],
+      "occupations": [
+        "divulgador científic",
+        "professor universitari",
+        "presentador de televisió",
+        "físic",
+        "polític",
+        "locutor",
+        "meteoròleg",
+        "cantant",
+        "escriptor"
+      ],
+      "musicOccupations": [
+        "http://www.wikidata.org/entity/Q177220"
+      ],
+      "musicTypes": [],
+      "verdict": "musical-clar",
+      "reasons": [
+        "Wikidata: ocupació musical explícita"
+      ]
+    },
+    {
+      "name": "Toni Cruz",
+      "wikidataId": "Q581645",
+      "musicbrainzId": "d0ab6657-5b18-47c0-9000-58895110fd03",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q581645",
+        "wikidata:languages-spoken-catalan",
+        "wikidata:native-language-catalan",
+        "wikidata:native-language-catalan-musician"
+      ],
+      "youtubeChannels": 0,
+      "instances": [
+        "ésser humà"
+      ],
+      "occupations": [
+        "cantant",
+        "actor",
+        "director de cinema",
+        "productor de televisió"
+      ],
+      "musicOccupations": [
+        "http://www.wikidata.org/entity/Q177220"
+      ],
+      "musicTypes": [],
+      "verdict": "musical-clar",
+      "reasons": [
+        "Wikidata: ocupació musical explícita"
+      ]
+    },
+    {
+      "name": "Triquell",
+      "wikidataId": "Q112663470",
+      "musicbrainzId": "f2c3ced8-424f-4f71-b6c2-4ea2c2c812db",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q112663470",
+        "wikidata:performed-catalan-work",
+        "musicbrainz:youtube-candidate",
+        "youtube:channels-list"
+      ],
+      "youtubeChannels": 1,
+      "instances": [
+        "ésser humà"
+      ],
+      "occupations": [
+        "cantant",
+        "compositor",
+        "productor musical",
+        "professor"
+      ],
+      "musicOccupations": [
+        "http://www.wikidata.org/entity/Q177220",
+        "http://www.wikidata.org/entity/Q3922505",
+        "http://www.wikidata.org/entity/Q36834"
+      ],
+      "musicTypes": [],
+      "verdict": "musical-clar",
+      "reasons": [
+        "Wikidata: ocupació musical explícita"
+      ]
+    },
+    {
+      "name": "Xavier de Bétera",
+      "wikidataId": "Q28971615",
+      "musicbrainzId": "73c09cd4-5f83-4ba7-b6e7-00bcf9bc72eb",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q28971615",
+        "wikidata:native-language-catalan",
+        "wikidata:native-language-catalan-musician"
+      ],
+      "youtubeChannels": 1,
+      "instances": [
+        "ésser humà"
+      ],
+      "occupations": [
+        "cantautor"
+      ],
+      "musicOccupations": [
+        "http://www.wikidata.org/entity/Q488205"
+      ],
+      "musicTypes": [],
+      "verdict": "musical-clar",
+      "reasons": [
+        "Wikidata: ocupació musical explícita"
+      ]
+    },
+    {
+      "name": "Yacine & The Oriental Groove",
+      "wikidataId": "Q21569206",
+      "musicbrainzId": "34318901-fbc6-40f9-9aa6-6536f592b7dc",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q21569206",
+        "wikidata:performed-catalan-work"
+      ],
+      "youtubeChannels": 0,
+      "instances": [
+        "grup de música"
+      ],
+      "occupations": [],
+      "musicOccupations": [],
+      "musicTypes": [
+        "http://www.wikidata.org/entity/Q215380"
+      ],
+      "verdict": "musical-clar",
+      "reasons": [
+        "Wikidata: tipus de conjunt/entitat musical"
+      ]
+    }
+  ]
+}
