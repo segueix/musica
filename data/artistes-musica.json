@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-25T16:21:19.095Z",
+  "updatedAt": "2026-09-25T16:32:11.998Z",
   "artists": [
     {
       "name": "31 FAM",
@@ -45,7 +45,49 @@
       "musicbrainzId": "233e32f2-c083-4a49-a5d4-d52df62cdbd3",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UCFfI28XhzCmCwsev6aE3Tgg",
+            "title": "ai*ai",
+            "handle": "@aiai4773",
+            "description": "都内で活動するアイドルグループです。\n\n王道×エモーショナルな楽曲を中心に笑って泣ける全力ライブをお届けします‼︎\n\nX⇒\nhttps://x.com/aiai_info_aiai?\ns=21&t=Vscbh4Hvs7Pln4KEW-yMsA\n\n\n▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱\n\n2023.10.17 新宿BLAZEにて\nワンマンライブ開催🎉\n\n▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱\n\nWEBチケット\ntiget.net/events/248764\n\n詳細\nhttps://ameblo.jp/aiai-info-aiai/entry-12803406097.html",
+            "subscriberCount": 1140,
+            "thumbnail": "https://yt3.ggpht.com/nUnDbI5IhIXcG1MD5f4LVWOlXaUP7lT2KfdX-aMEPt7XlI8EZbwcW3dZj0Wc9b3u21jB1e_R7Q=s240-c-k-c0x00ffffff-no-rj",
+            "score": 35,
+            "reasons": [
+              "nom parcial"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-25T16:32:03.278Z"
+          },
+          {
+            "id": "UCGRVf9bcf8LR2XOHuSw_d4A",
+            "title": "aiai - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 1160,
+            "thumbnail": "https://yt3.ggpht.com/xOTXaVL9b7bYQniy1xqBOTDrVu3WpiIQYbpgevbjZ2IN3rxGNlZ04xwgDTh5-6wDTO6ez1Zh=s240-c-k-c0x00ffffff-no-rj",
+            "score": 5,
+            "reasons": [
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-25T16:32:03.278Z"
+          },
+          {
+            "id": "UCQTDvJQ-d_J1GGncOuyVchg",
+            "title": "ぁぃぁぃ（aiai）",
+            "handle": "@ii2u2",
+            "description": "\n\n廣田あいかだったりする\nଘ꒰ ⸝⸝ᴗ͈ ̫ ᴗ͈⸝⸝꒱ \n\nお仕事のお問い合わせ\n出演依頼など\nymzkii0131@gmail.com\n",
+            "subscriberCount": 140000,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_nRgh-un31BFp5OVhCIRV6yT6zle-9QMWfGX2zSn14Wi0o=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-25T16:32:03.278Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -61,6 +103,14 @@
           "checkedAt": "2026-09-25T15:53:51.152Z",
           "status": "sense-youtube",
           "relationCount": 0
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-25T16:32:03.278Z",
+          "status": "candidats",
+          "query": "Ai Ai Ai",
+          "resultCount": 3,
+          "bestScore": 35,
+          "autoAcceptedId": null
         }
       }
     },
@@ -76,7 +126,53 @@
       "musicbrainzId": "3ad2965d-fcfa-4b91-ae93-e6ec8e32c1c1",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UCrQY3EI5TJXNbCwkXcDLp7A",
+            "title": "Al Tall - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 1110,
+            "thumbnail": "https://yt3.ggpht.com/zcZJdY1vSjRHo6vc1JCA_kRPYED6p8sFXyMKSlWLxtWTNvB4MQB7E8OCP1BTZuVhMsQci4hyqg=s240-c-k-c0x00ffffff-no-rj",
+            "score": 85,
+            "reasons": [
+              "nom exacte de canal Topic",
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-25T16:32:03.907Z"
+          },
+          {
+            "id": "UC3q9_T_BgjSNB0h2IViA-Sw",
+            "title": "Sempre al Tall ",
+            "handle": "@semprealtall",
+            "description": "This channel is dedicated to Rally videos. own recordings. We are rally fans and we travel all over Europe. \nFrom the iconic corners of RACC Rally to the twisty road of Rally Monte Carlo, wherever there is a road, I will be there to take you into action. Enjoy my best rally videos for rally lovers like you and me.\nFrom Catalunya Spain\n\n",
+            "subscriberCount": 10700,
+            "thumbnail": "https://yt3.ggpht.com/9NIvfooOwAQLpZwOSapfnJw-xIVRD2PdtYv5TEFpscKdRkhrDlgMvnVe89-5O5k_vD58pLx7Hw=s240-c-k-c0x00ffffff-no-rj",
+            "score": 53,
+            "reasons": [
+              "nom parcial",
+              "handle coincident"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-25T16:32:03.907Z"
+          },
+          {
+            "id": "UCtOB8PP6pOEP5A7VCtVLhAA",
+            "title": "Altall",
+            "handle": "@altallmus",
+            "description": "",
+            "subscriberCount": 4,
+            "thumbnail": "https://yt3.ggpht.com/CuQOgsqNWVgCbTOKkakEjJqI_yPDNl-vX7JOvDlzLbzpq7S5hsl3YGOWlFRUOdrp6F-WROmN-A=s240-c-k-c0x00ffffff-no-rj",
+            "score": 18,
+            "reasons": [
+              "handle coincident"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-25T16:32:03.907Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -92,6 +188,14 @@
           "checkedAt": "2026-09-25T15:53:52.918Z",
           "status": "sense-youtube",
           "relationCount": 0
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-25T16:32:03.907Z",
+          "status": "candidats",
+          "query": "Al Tall",
+          "resultCount": 3,
+          "bestScore": 85,
+          "autoAcceptedId": null
         }
       }
     },
@@ -107,7 +211,48 @@
       "musicbrainzId": "a007220e-6f15-462c-bf25-914940c8aec3",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UCUrzrs-DokOpPZR6u8BIogw",
+            "title": "albert guinovart",
+            "handle": "@albertguinovart8231",
+            "description": "",
+            "subscriberCount": 1210,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_lRcOjEiMVBj1BB0cTkDfKAtITxawD7qUnJpEdA-suGqA=s240-c-k-c0x00ffffff-no-rj",
+            "score": 40,
+            "reasons": [
+              "nom parcial",
+              "primer resultat"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-25T16:32:04.230Z"
+          },
+          {
+            "id": "UCswhIDGfTrgDzLuo8Kla8Dw",
+            "title": "Albert Guinovart - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 350,
+            "thumbnail": "https://yt3.ggpht.com/IAfZTJ9MQoRYEAkwOoPvDwBL5l97ZSoxAfZXakrJfkdordhKlOuIhkANJbvY7xUUyjoQK0-Xtg=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-25T16:32:04.230Z"
+          },
+          {
+            "id": "UCt8Oax60LvR1Ol0OlWWMKXw",
+            "title": "Fabiola Massino - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 1,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_nwfT50htsthWKbQG8XZyTVXCJKIY_cr3d_ec0f87HyoTEKTHQKJHAeBtG6dhmYybmTcg=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-25T16:32:04.230Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -124,6 +269,14 @@
           "checkedAt": "2026-09-25T15:53:54.375Z",
           "status": "sense-youtube",
           "relationCount": 0
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-25T16:32:04.230Z",
+          "status": "candidats",
+          "query": "Albert Guinovart i Mingacho",
+          "resultCount": 3,
+          "bestScore": 40,
+          "autoAcceptedId": null
         }
       }
     },
@@ -139,7 +292,48 @@
       "musicbrainzId": "ba77d3af-37d0-466f-875a-3240f4403f7e",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UCqaEtRht2jakBhGFLzS617w",
+            "title": "ALBERT PLA",
+            "handle": "@albertplaok",
+            "description": "Canciones que cuentan historias trágicas y delirantes, cotidianas y sorprendentes, delicadas y brutales, crudas y surreales en las cuales el verdugo es también víctima, la calma se transforma en tormenta, la comedia convive con la tragedia y la serenidad desemboca en el desenfreno. Todo para hacer evidente la estrecha línea que separa el bien del m",
+            "subscriberCount": 40500,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_ncd6xCjimO1Vftt5jnQcRILLGcaiworx55jWxF2nIaI2E=s240-c-k-c0x00ffffff-no-rj",
+            "score": 40,
+            "reasons": [
+              "nom parcial",
+              "primer resultat"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-25T16:32:04.619Z"
+          },
+          {
+            "id": "UCd2So3hzPhKQs2Vdoo6FJuA",
+            "title": "Albert Pla - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 6710,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_ncd6xCjimO1Vftt5jnQcRILLGcaiworx55jWxF2nIaI2E=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-25T16:32:04.619Z"
+          },
+          {
+            "id": "UCfvdDLRkPF301GmLvtFXp1A",
+            "title": "Albert Pla & Pascal Comelade - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 375,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_li0yM6cYLIOWjD11MRFrJBTyO1UpGuxl0HXyI_Shaix_AohWC1X6iVYA2plRVEmtsyaw=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-25T16:32:04.619Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -156,6 +350,14 @@
           "checkedAt": "2026-09-25T15:53:55.882Z",
           "status": "sense-youtube",
           "relationCount": 0
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-25T16:32:04.619Z",
+          "status": "candidats",
+          "query": "Albert Pla i Álvarez",
+          "resultCount": 3,
+          "bestScore": 40,
+          "autoAcceptedId": null
         }
       }
     },
@@ -202,7 +404,49 @@
       "musicbrainzId": "7dfe5902-5fdf-423a-bbe6-c2426c80b27f",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UCUz_7jy7Q9qyJ1x9CIGccyA",
+            "title": "Andreu Rifé",
+            "handle": "@andreurife",
+            "description": "concert a la sala beckett de barcelona, febrer 2007",
+            "subscriberCount": 2230,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_kdri9OnsaQcz0NmzaVmUQxze8VnRGxSoq3xXv1r4CBRww=s240-c-k-c0x00ffffff-no-rj",
+            "score": 58,
+            "reasons": [
+              "nom parcial",
+              "handle coincident",
+              "primer resultat"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-25T16:32:04.929Z"
+          },
+          {
+            "id": "UCOuye30wynoiY9VfWM8BFWg",
+            "title": "Andreu Rifé - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 216,
+            "thumbnail": "https://yt3.ggpht.com/qHfeD2FbjsQDCTeXpdCaaJtmcKWsDHBwpWuYSPG6iroQXyuMh18QGYAbZtG7pR1jXksPpTUy=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-25T16:32:04.929Z"
+          },
+          {
+            "id": "UCEa7iZaPesXmzHrbK18_awA",
+            "title": "Lluís Inarejos Vendrell",
+            "handle": "@ewisttt",
+            "description": "Penjo coses. Cançons de l'Ismael Clark. I vídeos meus. ",
+            "subscriberCount": 213,
+            "thumbnail": "https://yt3.ggpht.com/mTrEYPdmQXQoaVmc5Iy1iH_QsQXfaOiEjG-H5qZmh0K-QtPKrOas0qNRu7uBB35CWBWfq7jG6Q=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-25T16:32:04.929Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -220,6 +464,14 @@
           "checkedAt": "2026-09-25T15:53:57.303Z",
           "status": "sense-youtube",
           "relationCount": 0
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-25T16:32:04.929Z",
+          "status": "candidats",
+          "query": "Andreu Rifé i Oro",
+          "resultCount": 3,
+          "bestScore": 58,
+          "autoAcceptedId": null
         }
       }
     },
@@ -267,23 +519,89 @@
       "wikidataId": "Q567632",
       "musicbrainzId": "86637bc3-4663-4ba9-bf50-a21e4f6fa150",
       "youtube": {
-        "channels": [],
-        "candidates": []
+        "channels": [
+          {
+            "id": "UCA071Pllf2wk-B8Rkwt47bQ",
+            "handle": "@-anonymous",
+            "name": "Anonymous Official",
+            "type": "official",
+            "primary": true
+          }
+        ],
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UCA071Pllf2wk-B8Rkwt47bQ",
+            "title": "Anonymous Official",
+            "handle": "@-anonymous",
+            "description": "Subscribe to stay up-to-date with the latest.\n\nUnless otherwise stated, licenses have been obtained for the images and footage on this Channel.\n",
+            "subscriberCount": 3700000,
+            "thumbnail": "https://yt3.ggpht.com/-vs5UgHAV6JUmriRbjr0m_c6EZPJ-Aj9MHPufluXAgBCOKYZpHCB_Dy701339s1GDaIQdMze=s240-c-k-c0x00ffffff-no-rj",
+            "score": 105,
+            "reasons": [
+              "nom exacte traient oficial",
+              "handle exacte",
+              "marca oficial",
+              "primer resultat"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-25T16:32:05.250Z"
+          },
+          {
+            "id": "UCpdBjDN2rqcLEwc4N9JnijA",
+            "title": "Anonymous Group",
+            "handle": "@anonymoustvnews",
+            "description": "",
+            "subscriberCount": 5990,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_kSFy1FPV7a9eOORq69jlwjSMy96_00HCwa2BE8UVI7_w=s240-c-k-c0x00ffffff-no-rj",
+            "score": 53,
+            "reasons": [
+              "nom parcial",
+              "handle coincident"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-25T16:32:05.250Z"
+          },
+          {
+            "id": "UCKJu-JyUJQ4ilnjz5ANF2KA",
+            "title": "Anonymous Music Group -AMG-",
+            "handle": "@anonymousmusicgroup-amg-2836",
+            "description": "We are Anonymous Music! The most captivating brothers you'd ever meet. Our music, it's Hip-Hop, R&B, and still in a different genre of it's own. Listen, like, share, follow, and support.\n\nCheck out our SoundCloud:\n\nhttps://soundcloud.com/user-680320525\n\nFollow us on social media:\n\nIG: xxl_trees (Dom)\nIG: know.trouble (Tyshaun)\nSC: dwatson378910 (Do",
+            "subscriberCount": 2,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_nYu9NctUC4qMkoMlUULNYdtbIRUu0K0ESiIPtgmt-KcQ=s240-c-k-c0x00ffffff-no-rj",
+            "score": 53,
+            "reasons": [
+              "nom parcial",
+              "handle coincident"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-25T16:32:05.250Z"
+          }
+        ]
       },
-      "confidence": "pendent",
+      "confidence": "alta",
       "reviewStatus": "pendent",
       "active": false,
       "sources": [
         "https://www.wikidata.org/wiki/Q567632",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "youtube:search-auto"
       ],
-      "lastChecked": "2026-09-25T15:53:58.744Z",
+      "lastChecked": "2026-09-25T16:32:05.250Z",
       "notes": "",
       "enrichment": {
         "musicbrainz": {
           "checkedAt": "2026-09-25T15:53:58.744Z",
           "status": "sense-youtube",
           "relationCount": 0
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-25T16:32:05.250Z",
+          "status": "autoacceptat",
+          "query": "Anonymous (grup)",
+          "resultCount": 3,
+          "bestScore": 105,
+          "autoAcceptedId": "UCA071Pllf2wk-B8Rkwt47bQ"
         }
       }
     },
@@ -299,7 +617,49 @@
       "musicbrainzId": "907b33a8-ea95-44ed-9231-3dc5d2afdb6a",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UCyloU7k-gZuTN05XqKdX6Rw",
+            "title": "Antonio Martin ",
+            "handle": "@antoniomartin",
+            "description": "Bienvenido al canal oficial de Antonio Martín, artista sevillano que vive el flamenco a su manera, mezclando sus raíces con sonidos actuales para crear un estilo propio.\n\nAquí podrás encontrar videoclips oficiales, canciones originales, versiones flamencas y colaboraciones. Temas que hablan del amor, del desamor, de las noches que dejan huella y de",
+            "subscriberCount": 86900,
+            "thumbnail": "https://yt3.ggpht.com/5AQdssq7N0cpvz8iLBqrCVN2jyILV4oW9qR7PWdsTjMyezWRDlIOOupBkeoAgnMR3DKqzRK6=s240-c-k-c0x00ffffff-no-rj",
+            "score": 10,
+            "reasons": [
+              "marca oficial"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-25T16:32:05.521Z"
+          },
+          {
+            "id": "UCzSmDlupr6sKAZ7yQ9WQ1ow",
+            "title": "Antonio Martín y Coll - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 6,
+            "thumbnail": "http://yt3.ggpht.com/W1nkOHRxXcYtEVQ6ctXzRF2FnG3fHPZvrXNcMDYKh2OOyvjYIIgIhUYagG9ZREnLvUGlNHCK_0xumehKZw=s240-c-k-c0x00ffffff-no-rj",
+            "score": 5,
+            "reasons": [
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-25T16:32:05.521Z"
+          },
+          {
+            "id": "UCvq7JV3YzQacdzSuCbwHNLA",
+            "title": "Antonio Martin - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 8970,
+            "thumbnail": "https://yt3.ggpht.com/5AQdssq7N0cpvz8iLBqrCVN2jyILV4oW9qR7PWdsTjMyezWRDlIOOupBkeoAgnMR3DKqzRK6=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-25T16:32:05.521Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -317,6 +677,14 @@
           "checkedAt": "2026-09-25T15:54:00.182Z",
           "status": "sense-youtube",
           "relationCount": 0
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-25T16:32:05.521Z",
+          "status": "candidats",
+          "query": "Antoni Martín i Coll",
+          "resultCount": 3,
+          "bestScore": 10,
+          "autoAcceptedId": null
         }
       }
     },
@@ -394,7 +762,51 @@
       "musicbrainzId": "3aa69692-a3c3-4e01-90aa-22ca4d958218",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UCPUw05lV8qx0x7_hR5wb96A",
+            "title": "Asstrio - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 46,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_lImVEFshLCzwKPwsKil_wI44W3fLO5VgHisdM_-Jtm5ZMsPSMXFTRot9-tSU3zW38Ftw=s240-c-k-c0x00ffffff-no-rj",
+            "score": 80,
+            "reasons": [
+              "nom exacte de canal Topic"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-25T16:32:06.002Z"
+          },
+          {
+            "id": "UC6vmfEz71NJXwOsKsRzLWpQ",
+            "title": "ASS Trio",
+            "handle": "@asstrio-69",
+            "description": "",
+            "subscriberCount": 9,
+            "thumbnail": "https://yt3.ggpht.com/qkLmFnXqVh99uZAPSEhGAE5YIErRcNr2KZYgicdSi4PeN6pBSXm2xTssu2FLBiT3voLxJ_eIhPw=s240-c-k-c0x00ffffff-no-rj",
+            "score": 18,
+            "reasons": [
+              "handle coincident"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-25T16:32:06.002Z"
+          },
+          {
+            "id": "UCg9CfBwE6zntoAIsWTOZUww",
+            "title": "Astrio - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 65,
+            "thumbnail": "https://yt3.ggpht.com/93ggCuVAbkuYx-mSn01QM2qm9iZ9JaELUmLmj3QQqN7DD7SrUPZblRo5-a5AS25asevQZnKgTQ=s240-c-k-c0x00ffffff-no-rj",
+            "score": 5,
+            "reasons": [
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-25T16:32:06.002Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -410,6 +822,14 @@
           "checkedAt": "2026-09-25T15:54:01.732Z",
           "status": "sense-youtube",
           "relationCount": 0
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-25T16:32:06.002Z",
+          "status": "candidats",
+          "query": "Asstrio",
+          "resultCount": 3,
+          "bestScore": 80,
+          "autoAcceptedId": null
         }
       }
     },
@@ -425,7 +845,53 @@
       "musicbrainzId": "7a71e5a4-6603-45f1-982e-f1f80a8a114c",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UC9Jl8t6coSIfgUhSfL1Uhng",
+            "title": "At Versaris",
+            "handle": "@atversaristv",
+            "description": "Allà on, com deia Gramsci, la cultura no és una pila de dades enciclopèdicament (des)ordenades, sinó un graó cap a la consciència de classe, nacional i anticapitalista. Allà comença At Versaris.\n\nPau aka LaPupil·la\nRodrigo\nDj Singu\n\ncontractació\n(+34) 93 878 74 71\ncontractacio@propaganda-pel-fet.info\n\npromoció\n(+34) 93 878 74 82\n\ndiscogràfica i adm",
+            "subscriberCount": 1850,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_luH1l7NInII131ABvSg6BrnzAp0XyJGiQ84gtOhr9OGg=s240-c-k-c0x00ffffff-no-rj",
+            "score": 88,
+            "reasons": [
+              "nom exacte",
+              "handle coincident"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-25T16:32:06.345Z"
+          },
+          {
+            "id": "UC_4h20lXMl3TWMt65tWbrSg",
+            "title": "At Versaris - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 100,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_luH1l7NInII131ABvSg6BrnzAp0XyJGiQ84gtOhr9OGg=s240-c-k-c0x00ffffff-no-rj",
+            "score": 85,
+            "reasons": [
+              "nom exacte de canal Topic",
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-25T16:32:06.345Z"
+          },
+          {
+            "id": "UC3UznCp08iMzKt41WMDAa7Q",
+            "title": "At Versaris i Asstrio - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 14,
+            "thumbnail": "http://yt3.ggpht.com/jhWU7bPUtTQQhdHSr1VByGT2t4RE5VKTe3VJScW60ag77sNC5Ry3Gv1_9yB81L3-yq6fhRPyTz7so5Ylnw=s240-c-k-c0x00ffffff-no-rj",
+            "score": 35,
+            "reasons": [
+              "nom parcial"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-25T16:32:06.345Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -441,6 +907,14 @@
           "checkedAt": "2026-09-25T15:54:03.168Z",
           "status": "sense-youtube",
           "relationCount": 0
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-25T16:32:06.345Z",
+          "status": "candidats",
+          "query": "At Versaris",
+          "resultCount": 3,
+          "bestScore": 88,
+          "autoAcceptedId": null
         }
       }
     },
@@ -518,7 +992,49 @@
       "musicbrainzId": "5a945027-735d-4008-b4d3-b3d82c90ecac",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UChBiCxQQj17WFIre_LKnxZQ",
+            "title": "berta",
+            "handle": "@bertamusiikki",
+            "description": "Ennakkotilaa Musakirja unelmoijille🧡--> https://tinyurl.com/55x5568m\n\nMoikka!:) Tervetuloa seuraamaan mun musaunelmia ja laulujuttuja! Teen myös arkisisältöä välillä. Kiva ku eksyit tänne!!\n\nMut löytää myös täältä → \nTiktok: @bertarr\nIG: @bertamusiikki\nSpotify: berta\n",
+            "subscriberCount": 29500,
+            "thumbnail": "https://yt3.ggpht.com/phs0JvDW1rP5K_UPp911K5vzGDcBl9BNwW8TK0tu5dMZiDFPHJDELHCXVE5Pa7OL8kWI_WZx0A=s240-c-k-c0x00ffffff-no-rj",
+            "score": 70,
+            "reasons": [
+              "nom exacte"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-25T16:32:06.623Z"
+          },
+          {
+            "id": "UCz74WCGrXmY3On0l96NNaVA",
+            "title": "BERTA.BERLIN",
+            "handle": "@berta.berlin",
+            "description": "We believe that great diverse musical content has the power to make each life richer and happier, and our society stronger and more tolerant. No matter what genre or discipline we are looking for meaning, blood, sweat and tears. All berta.berlin shows focus 100% on music and capture an authentic live performance of the artists.\n\nSupport these artis",
+            "subscriberCount": 22400,
+            "thumbnail": "https://yt3.ggpht.com/2iDAlNcEtVGlogqA0IFKVPXh3puxDIIuBb_CWOmlxv6gO2iGRkmx96PBOVVqkYNgbQHQv7evMg=s240-c-k-c0x00ffffff-no-rj",
+            "score": 5,
+            "reasons": [
+              "primer resultat"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-25T16:32:06.623Z"
+          },
+          {
+            "id": "UCQjlr0Q3POBrYM1CL-yfRrQ",
+            "title": "Berta Jay",
+            "handle": "@bertajay",
+            "description": "My objective for this channel is to share with others what I have learned over the last 30+ years about living and eating healthier. I share my knowledge with my small circle of friends all the time. I am not a doctor, nor do I hold any type of medical degree, but I believe that my tried experiences may help someone else.  \n\nFor over 30 years I hav",
+            "subscriberCount": 64300,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_lEWk-xO5WzLafXVK2QLEODmd3BzBoW1YORuSAiIPefp-Y=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-25T16:32:06.623Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -535,6 +1051,14 @@
           "checkedAt": "2026-09-25T15:54:04.644Z",
           "status": "sense-youtube",
           "relationCount": 0
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-25T16:32:06.623Z",
+          "status": "candidats",
+          "query": "Berta",
+          "resultCount": 3,
+          "bestScore": 70,
+          "autoAcceptedId": null
         }
       }
     },
@@ -550,7 +1074,53 @@
       "musicbrainzId": "0aae7e5e-0bee-4225-a5b5-4d183666e219",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UCERWl0XvpvDTDgKoNv6INGg",
+            "title": "Betagarri - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 945,
+            "thumbnail": "https://yt3.ggpht.com/Wll1Yq9KGV8QzQjzBpTaN1r90wP3YzdqVnS8PZtb_l_zbEHVAQJAa7_6KhNqoLmXh9euAao0=s240-c-k-c0x00ffffff-no-rj",
+            "score": 85,
+            "reasons": [
+              "nom exacte de canal Topic",
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-25T16:32:06.977Z"
+          },
+          {
+            "id": "UC_oBw3W_zxZWcRSXQbR1XuQ",
+            "title": "Betagarri Liburuak",
+            "handle": "@betagarriliburuak",
+            "description": "",
+            "subscriberCount": 0,
+            "thumbnail": "https://yt3.ggpht.com/7mMkcrPXmml927QXrwGuUIvDywCKBChHgPm_XdOIgMp46tTdO5aOE1_-bwsR-DYBVkj8DTnNEg=s240-c-k-c0x00ffffff-no-rj",
+            "score": 53,
+            "reasons": [
+              "nom parcial",
+              "handle coincident"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-25T16:32:06.977Z"
+          },
+          {
+            "id": "UCd-zpwTau6drCswVTan2zAA",
+            "title": "Iñaki Ortiz (Betagarri) - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 1,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_lwipGrMtw03q9rRS3u-wAHkA12LD8UeCn7-UUk93gUoG_7iN7OhFsK3V58eudoVYMMPA=s240-c-k-c0x00ffffff-no-rj",
+            "score": 35,
+            "reasons": [
+              "nom parcial"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-25T16:32:06.977Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -566,6 +1136,14 @@
           "checkedAt": "2026-09-25T15:54:06.028Z",
           "status": "sense-youtube",
           "relationCount": 0
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-25T16:32:06.977Z",
+          "status": "candidats",
+          "query": "Betagarri",
+          "resultCount": 3,
+          "bestScore": 85,
+          "autoAcceptedId": null
         }
       }
     },
@@ -581,7 +1159,53 @@
       "musicbrainzId": "cb9bbe05-cece-45e8-874c-d0ba14d7c4e1",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UCtUpDC31RMZBHOzwf0UiFAA",
+            "title": "bonobos - Topic",
+            "handle": null,
+            "description": "bonobos（ボノボ）- 2001年結成。2015年に蔡忠浩（V,G）小池龍平（G）田中佑司（Key）森本夏子（B）梅本浩亘（D）の5人体制に。蔡の作曲センスと音楽的探究心から生み出される楽曲を、バンドの圧倒的な演奏力と伸びやかなボーカルが奏でることにより、唯一無二のポップ・ミュージックとして国内外のリスナーから高く評価され続けている。結成20年を迎える今なお、バンドが持つ創造力を現在進行形で更新する。 2022年11月2日アルバム「.jp」をリリース。\n\nbonobos - Formed in 2001, the five-member band consists of Chungho Sai (V,G), Ryuhei Koike (G), Yuji Tanaka (Key), Nat",
+            "subscriberCount": 303,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_mZWTjGzLridzgWBwC2FyuZaXx2ekPUwxFG7n40LdUVug=s240-c-k-c0x00ffffff-no-rj",
+            "score": 80,
+            "reasons": [
+              "nom exacte de canal Topic"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-25T16:32:07.304Z"
+          },
+          {
+            "id": "UCgyl5xVlLLUZVpgfMGw-ETA",
+            "title": "Bonobo",
+            "handle": "@bonobo",
+            "description": "Welcome to the official YouTube channel of Simon Green, AKA Bonobo.\nNew album ‘Distance In Static’ out 11th September: https://bonobo.lnk.to/disYO\n\n",
+            "subscriberCount": 342000,
+            "thumbnail": "https://yt3.ggpht.com/RgnbWKtyDsvlFhtWPaKlzCIlQEoWWsBiHNvZt-v3r37ecdlf9GkRoo842sLBCui88VwPRfUR=s240-c-k-c0x00ffffff-no-rj",
+            "score": 63,
+            "reasons": [
+              "nom parcial",
+              "handle coincident",
+              "marca oficial"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-25T16:32:07.304Z"
+          },
+          {
+            "id": "UCWBqhkfK4YT2OI3mJRQnNXg",
+            "title": "Bonobo - Topic",
+            "handle": null,
+            "description": "Since Simon Green started Bonobo the expansion and acceleration has been constant, from his beginning in small clubs as a solo DJ / producer, to working with Erykah Badu, Ólafur Arnalds and Jon Hopkins to remixing Michael Kiwanuka, Gorillaz, George Fitzgerald and London Grammar. He has received three GRAMMY nominations, played huge arenas and festi",
+            "subscriberCount": 11900,
+            "thumbnail": "https://yt3.ggpht.com/RgnbWKtyDsvlFhtWPaKlzCIlQEoWWsBiHNvZt-v3r37ecdlf9GkRoo842sLBCui88VwPRfUR=s240-c-k-c0x00ffffff-no-rj",
+            "score": 5,
+            "reasons": [
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-25T16:32:07.304Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -597,6 +1221,14 @@
           "checkedAt": "2026-09-25T15:54:07.519Z",
           "status": "sense-youtube",
           "relationCount": 0
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-25T16:32:07.304Z",
+          "status": "candidats",
+          "query": "Bonobos",
+          "resultCount": 3,
+          "bestScore": 80,
+          "autoAcceptedId": null
         }
       }
     },
@@ -612,7 +1244,47 @@
       "musicbrainzId": "be4dce5f-2dd2-457e-a81b-8c0bd8c89e57",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UCpc576jz701Yp109jIsM-5Q",
+            "title": "Braeden",
+            "handle": "@gtbgringo",
+            "description": "LIVE ON TWITCH EVERY DAY",
+            "subscriberCount": 160000,
+            "thumbnail": "https://yt3.ggpht.com/NuvECBuHs-x3eMM3Eqtf_mqIL23navQZovT8ELnJxtMPrh9DhOOCxZXr6ypPjRPXmwY59DvCtg=s240-c-k-c0x00ffffff-no-rj",
+            "score": 5,
+            "reasons": [
+              "primer resultat"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-25T16:32:07.637Z"
+          },
+          {
+            "id": "UC97KRktbADiyjxfmDDnNgKQ",
+            "title": "Braden S. 2",
+            "handle": "@bradens.2",
+            "description": "Welcome to the new channel of \"Braden S.\" Here, I will continue to make trailers, requests, promos, DVD openings, and all that based on the previous channel. And still, there will be no dislikes allowed on this channel.",
+            "subscriberCount": 10000,
+            "thumbnail": "https://yt3.ggpht.com/7TBBhBIDbenfTnUxsSFOaYhrrVEySS-vzUEWBo4VE7ld05pInMHUasjfIabSdS6zzvqkz3nDeg=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-25T16:32:07.637Z"
+          },
+          {
+            "id": "UC8VpjPEAwycAp2ZcUFWY-uA",
+            "title": "Braden S.",
+            "handle": "@bradens.",
+            "description": "Hello everypony! Welcome to my channel! Here you can enjoy my fan made videos I made. And please no dislikes allowed on my channel.",
+            "subscriberCount": 16400,
+            "thumbnail": "https://yt3.ggpht.com/jhdpY38uFu5mszOUarJreqkBLHzCy3SIugTIFNkVDUNuYsOtOlhZ1hZ_yoEfcTSccwRoowxmaRA=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-25T16:32:07.637Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -628,6 +1300,14 @@
           "checkedAt": "2026-09-25T15:54:08.990Z",
           "status": "sense-youtube",
           "relationCount": 0
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-25T16:32:07.637Z",
+          "status": "candidats",
+          "query": "Bradien",
+          "resultCount": 3,
+          "bestScore": 5,
+          "autoAcceptedId": null
         }
       }
     },
@@ -643,7 +1323,49 @@
       "musicbrainzId": "ce9eceac-f252-457e-992e-cc2e60290ce1",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UCuk-lO3FpbukFk5lcPx29_g",
+            "title": "Brams - Topic",
+            "handle": null,
+            "description": "Brams va ser fundat espiritualment a Valls la revetlla de Sant Joan de 1990 per Francesc Ribera Titot, Txema Gómez i Sergi Valero i es va posar en funcionament a Berga l'estiu d'aquell mateix any. Des d'aleshores Brams va començar a fer-se conegut arreu dels Països Catalans fins ser un dels referents del rock combatiu català, atès que les seves can",
+            "subscriberCount": 539,
+            "thumbnail": "https://yt3.ggpht.com/0tD-4jGhF9ZEVwtsLW7ChFzu2412oqKD6wbPUF_NiqHYeLAGFHto1qhc_4NX3zEs01zVAB16=s240-c-k-c0x00ffffff-no-rj",
+            "score": 80,
+            "reasons": [
+              "nom exacte de canal Topic"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-25T16:32:07.986Z"
+          },
+          {
+            "id": "UCawmgaWs8T0S5Our6WcQNxA",
+            "title": "Brams 1.2",
+            "handle": "@brams1.2",
+            "description": "Gallet au Sommet ☝🏿",
+            "subscriberCount": 2420,
+            "thumbnail": "https://yt3.ggpht.com/ABufba5YPAN7ag3roe4RgFXc1v9uuricpDtw_VLctPLFQPwDhDbKfZbFqYRS_ko0jJG85RDswA=s240-c-k-c0x00ffffff-no-rj",
+            "score": 5,
+            "reasons": [
+              "primer resultat"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-25T16:32:07.986Z"
+          },
+          {
+            "id": "UCGL2iQ3mpPCStQOsLWCe7XA",
+            "title": "Brams Le drôle",
+            "handle": "@bramsledrole",
+            "description": "Mes réseaux : \nSnapchat : bramsledrole_18\nInstagram : bramsledrole \nTikTok :bramsledrole \n\nLaisser un petit commentaire❤️👌🏽",
+            "subscriberCount": 20100,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_nK6AlhaYL0yONli9P7C9jSgIM7IPZSvJabn6c3caik9Q=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-25T16:32:07.986Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -660,6 +1382,14 @@
           "checkedAt": "2026-09-25T15:54:10.306Z",
           "status": "sense-youtube",
           "relationCount": 0
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-25T16:32:07.986Z",
+          "status": "candidats",
+          "query": "Brams",
+          "resultCount": 3,
+          "bestScore": 80,
+          "autoAcceptedId": null
         }
       }
     },
@@ -820,7 +1550,54 @@
       "musicbrainzId": "9f8667df-17af-4d8d-9d80-3174c1177bbb",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UCOqHMvqnMCLRr7So5wlJTDg",
+            "title": "Carmen Amaya",
+            "handle": "@carmenamaya7846",
+            "description": "",
+            "subscriberCount": 50,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_laDg3NLyMjQIeAaIH3B90y-Gb7nbauv3E9GQBCdEeAgw=s240-c-k-c0x00ffffff-no-rj",
+            "score": 88,
+            "reasons": [
+              "nom exacte",
+              "handle coincident"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-25T16:32:08.399Z"
+          },
+          {
+            "id": "UCDEoLRn4zPOagonIHayGK1Q",
+            "title": "Carmen Amaya - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 1030,
+            "thumbnail": "https://yt3.ggpht.com/bBGNNgSK5n9PcswkNq5nbYX0q_70p_Zy1-zakcItCTbumxpkI1hCvKM6mOlHsLkpvxD3xAhs=s240-c-k-c0x00ffffff-no-rj",
+            "score": 85,
+            "reasons": [
+              "nom exacte de canal Topic",
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-25T16:32:08.399Z"
+          },
+          {
+            "id": "UCBptqHQQvmcV9QpoRJ4DtDw",
+            "title": "CPD Carmen Amaya",
+            "handle": "@cpdcarmenamaya1249",
+            "description": "CONSERVATORIO PROFESIONAL DE DANZA CARMEN AMAYA\r\nPertenece a la Consejería de Educación, Juventud y Deporte (COMUNIDAD DE MADRID)",
+            "subscriberCount": 822,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_nVOzGVBHOakvd8mX8AFypKfhvZn8sbHkC8b3T7HU0b-Hw=s240-c-k-c0x00ffffff-no-rj",
+            "score": 53,
+            "reasons": [
+              "nom parcial",
+              "handle coincident"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-25T16:32:08.399Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -838,6 +1615,14 @@
           "checkedAt": "2026-09-25T15:54:13.104Z",
           "status": "sense-youtube",
           "relationCount": 0
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-25T16:32:08.399Z",
+          "status": "candidats",
+          "query": "Carmen Amaya",
+          "resultCount": 3,
+          "bestScore": 88,
+          "autoAcceptedId": null
         }
       }
     },
@@ -853,7 +1638,51 @@
       "musicbrainzId": "0680f1d8-9036-4a93-a3b3-ac62f32ad1d2",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UCsosIU7KGAIQbXxTrsJi87g",
+            "title": "Carol Rovira",
+            "handle": "@carolrovira1560",
+            "description": "",
+            "subscriberCount": 7040,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_mTUBwDOe8DWYq_w_S6rfjWMFwWdlAbyWPkwmMWfMcA7kk=s240-c-k-c0x00ffffff-no-rj",
+            "score": 93,
+            "reasons": [
+              "nom exacte",
+              "handle coincident",
+              "primer resultat"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-25T16:32:08.761Z"
+          },
+          {
+            "id": "UC351nJLXv8KVe4Xf8MlKwLQ",
+            "title": "Carol Rovira - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 2220,
+            "thumbnail": "https://yt3.ggpht.com/SCmyXeqGmeaYyboP6Q7V0ClfrIv-koVdTF9-yNG8e3I8s7119ZdT259BEoJlADgHX2n4Tq4WjBQ=s240-c-k-c0x00ffffff-no-rj",
+            "score": 80,
+            "reasons": [
+              "nom exacte de canal Topic"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-25T16:32:08.761Z"
+          },
+          {
+            "id": "UCyYMhkhJ2F4AyZyJfE-IzjA",
+            "title": "Carolina Rovira",
+            "handle": "@mydailylifeover50",
+            "description": "Bienvenida al Movimiento AhoraYo, una revolución silenciosa de las mujeres que vuelven a elegirse. \nTe invito a que construyas tu vida plena",
+            "subscriberCount": 52,
+            "thumbnail": "https://yt3.ggpht.com/H-2b92NsPpGHiGQqSIAe4GF0HH2U41fzhPFXTJVzRVlh0R6q5CR5r5Txy_gTcfO_PocKH9Ard7I=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-25T16:32:08.761Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -870,6 +1699,14 @@
           "checkedAt": "2026-09-25T15:54:14.435Z",
           "status": "sense-youtube",
           "relationCount": 0
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-25T16:32:08.761Z",
+          "status": "candidats",
+          "query": "Carol Rovira",
+          "resultCount": 3,
+          "bestScore": 93,
+          "autoAcceptedId": null
         }
       }
     },
@@ -957,7 +1794,53 @@
       "musicbrainzId": "82d790da-2672-489e-9c42-110302c43e5b",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UCtVhi0aoQwwY7LEuHThw_MA",
+            "title": "Cobla Mediterrania",
+            "handle": "@coblamediterrania",
+            "description": "",
+            "subscriberCount": 19,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_lI5aDxWDIVwQWn2Dun0faVxVMFYeD0rw9iq9KQ0ltN2dR9pCPWY0WuJ6rPOPQusko1-w=s240-c-k-c0x00ffffff-no-rj",
+            "score": 95,
+            "reasons": [
+              "nom exacte",
+              "handle exacte"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-25T16:32:09.051Z"
+          },
+          {
+            "id": "UCR-SUvRT_b3VYsO63YY97dg",
+            "title": "Cobla Mediterrània - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 115,
+            "thumbnail": "https://yt3.ggpht.com/sb9HWt-YlzPOjFZyiNb4xBwGImB_rwo9dOYYRJaGaNOwT8jsfrOxCbeeZrIgpXP71acZ5Fmz-A=s240-c-k-c0x00ffffff-no-rj",
+            "score": 85,
+            "reasons": [
+              "nom exacte de canal Topic",
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-25T16:32:09.051Z"
+          },
+          {
+            "id": "UCQ0ClVTy_O-PWRfaoDyf9AQ",
+            "title": "Companyia Elèctrica Dharma, Cobla Mediterrània - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 8,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_l8L0TJqZB5vy_wSoWnPUp41hZqjFKi2vrB8iGXThNWdbedSaomLTqHOwXLKh-b_8ECSQ=s240-c-k-c0x00ffffff-no-rj",
+            "score": 35,
+            "reasons": [
+              "nom parcial"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-25T16:32:09.051Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -973,6 +1856,14 @@
           "checkedAt": "2026-09-25T15:54:15.855Z",
           "status": "sense-youtube",
           "relationCount": 0
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-25T16:32:09.051Z",
+          "status": "candidats",
+          "query": "Cobla Mediterrània",
+          "resultCount": 3,
+          "bestScore": 95,
+          "autoAcceptedId": null
         }
       }
     },
@@ -1020,7 +1911,35 @@
       "musicbrainzId": "7a5ed032-1c64-47ee-9628-94d7e3e88718",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UCr56ZbEkMjWx1sIY7XCYGVw",
+            "title": "Conchita Supervia - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 417,
+            "thumbnail": "https://yt3.ggpht.com/NdU4o0RtKwjv7jYrrHm-nPvLVnz0DWcFxcEHwAo9zxYHKT544uPMtd04gqnN6xAKbxuN8jsycQ=s240-c-k-c0x00ffffff-no-rj",
+            "score": 5,
+            "reasons": [
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-25T16:32:09.468Z"
+          },
+          {
+            "id": "UCDIyJ7p4Lmy-DC6D8C7GB8Q",
+            "title": "Supervia - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 310,
+            "thumbnail": "https://yt3.ggpht.com/l508NpVOQgJzE1rO3xV4MOyAASc7GoGiqEGcYxscVateA0_9X6IQaWK89QlayQIh2hIyPMTX=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-25T16:32:09.468Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -1037,6 +1956,14 @@
           "checkedAt": "2026-09-25T15:54:17.161Z",
           "status": "sense-youtube",
           "relationCount": 0
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-25T16:32:09.468Z",
+          "status": "candidats",
+          "query": "Concepció Supervia i Pascual",
+          "resultCount": 2,
+          "bestScore": 5,
+          "autoAcceptedId": null
         }
       }
     },
@@ -1083,7 +2010,51 @@
       "musicbrainzId": "6675e84e-ad9e-4100-89dc-5170c8f609ed",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UC1oT6mLnFR1-vVK_EGAdp-g",
+            "title": "Dagoll Dagom",
+            "handle": "@dagolldagomdd",
+            "description": "Canal de la companyia de teatre musical Dagoll Dagom, fundada l'any 1975. Ha creat espectacles com 'Nit de Sant Joan', 'Mar i Cel', 'Flor de Nit', 'Cop de Rock' o 'Maremar'.",
+            "subscriberCount": 4370,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_ni1nBdGo6U4oExnk9KEUTLCU0Qxe_dxIXwi0qP1Wv25rI=s240-c-k-c0x00ffffff-no-rj",
+            "score": 93,
+            "reasons": [
+              "nom exacte",
+              "handle coincident",
+              "primer resultat"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-25T16:32:09.813Z"
+          },
+          {
+            "id": "UCo7npu8pAD99dAsZzt9beBQ",
+            "title": "Dagoll Dagom - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 844,
+            "thumbnail": "https://yt3.ggpht.com/Zi_HMpHM1yHqVEtWnBxPjIyJgPt8ue4M6FO7ZM71O-X7tPaD42jsI6FhLQ1rhy_9dwGlqE8r=s240-c-k-c0x00ffffff-no-rj",
+            "score": 80,
+            "reasons": [
+              "nom exacte de canal Topic"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-25T16:32:09.813Z"
+          },
+          {
+            "id": "UCMnvYFUYyZjSGmZtY2HnZVQ",
+            "title": "Canal clàssic Òpera / Teatre / Música",
+            "handle": "@classicoperateatremusica",
+            "description": "",
+            "subscriberCount": 2110,
+            "thumbnail": "https://yt3.ggpht.com/atEHu3V-p40V9_IVU-YvdPaRmNCuRpkkUQsiG0XZu2b6te4E8dd1lgkgk9w5gCGa00xcHfGht-4=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-25T16:32:09.813Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -1100,6 +2071,14 @@
           "checkedAt": "2026-09-25T15:54:18.589Z",
           "status": "sense-youtube",
           "relationCount": 0
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-25T16:32:09.813Z",
+          "status": "candidats",
+          "query": "Dagoll Dagom",
+          "resultCount": 3,
+          "bestScore": 93,
+          "autoAcceptedId": null
         }
       }
     },
@@ -1484,7 +2463,54 @@
       "musicbrainzId": "9a571eaa-cffe-4b39-9290-875de7adf280",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UCw7KmA_BqoKikmfKom4ciBw",
+            "title": "Dr. Calypso",
+            "handle": "@drcalypso",
+            "description": "Am I supposed to put something wise here?",
+            "subscriberCount": 33,
+            "thumbnail": "https://yt3.ggpht.com/NIpFZDk6v0tHL8VGSfA2zfc9fUpVww62baMNrNq9AnCYryPutnFLAWHS6Nw6-Mso8fApxgv6BgI=s240-c-k-c0x00ffffff-no-rj",
+            "score": 95,
+            "reasons": [
+              "nom exacte",
+              "handle exacte"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-25T16:32:10.126Z"
+          },
+          {
+            "id": "UCoctABS3KWupPfffQsVyGuQ",
+            "title": "Dr Calypso",
+            "handle": "@drcalypso715",
+            "description": "",
+            "subscriberCount": 0,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_mQzcg5hanTmuV-8XEGuUu99ReXhfPLcRS1kS11884=s240-c-k-c0x00ffffff-no-rj",
+            "score": 88,
+            "reasons": [
+              "nom exacte",
+              "handle coincident"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-25T16:32:10.126Z"
+          },
+          {
+            "id": "UCX95O_Gs_2ob3p86_MgldhA",
+            "title": "Dr. Calypso - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 840,
+            "thumbnail": "https://yt3.ggpht.com/3AmEmDdcewrDeAbbjIYd5xbe8NLlZdXPGGbev-Uz7ug29E5jDpuV0GSx3TsWHcoq_GzoAq71Sck=s240-c-k-c0x00ffffff-no-rj",
+            "score": 85,
+            "reasons": [
+              "nom exacte de canal Topic",
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-25T16:32:10.126Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -1500,6 +2526,14 @@
           "checkedAt": "2026-09-25T15:54:19.897Z",
           "status": "sense-youtube",
           "relationCount": 0
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-25T16:32:10.126Z",
+          "status": "candidats",
+          "query": "Dr. Calypso",
+          "resultCount": 3,
+          "bestScore": 95,
+          "autoAcceptedId": null
         }
       }
     },
@@ -1515,7 +2549,51 @@
       "musicbrainzId": "703109f6-19ba-45d4-b7f5-1791ee0feb79",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UCU1eUJDhuxK2wGF21vhpNzQ",
+            "title": "Duble Buble - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 87,
+            "thumbnail": "https://yt3.ggpht.com/Jan-WuLUUxKFqggeVHuMtXYbbPWRyKZ_eJ55HDX39DQ8rRwZFdcsZ-OPeVF1TlgFlAFrHAZhUw=s240-c-k-c0x00ffffff-no-rj",
+            "score": 80,
+            "reasons": [
+              "nom exacte de canal Topic"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-25T16:32:10.509Z"
+          },
+          {
+            "id": "UCHqQruhGENdmWy_oeH1f8QA",
+            "title": "Michael Bublé",
+            "handle": "@michaelbuble",
+            "description": "The Official YouTube Channel of Michael Bublé. Subscribe for the latest music videos, performances, and more.\n\nMichael's album 'LIVE! Caught in the Act' available now! https://michaelbuble.lnk.to/caughtintheact_live\n",
+            "subscriberCount": 4390000,
+            "thumbnail": "https://yt3.ggpht.com/BIbMb6Bt7DZmTJc7-rtjqv6O59VwHZoQFXzimz3F5u_4Qm9qmvklKfEXCuYmyV2T-k_bkpjnZg=s240-c-k-c0x00ffffff-no-rj",
+            "score": 10,
+            "reasons": [
+              "marca oficial"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-25T16:32:10.509Z"
+          },
+          {
+            "id": "UCgFFMzzYIYYn3T6M-v8Kfsw",
+            "title": "Double Bubble",
+            "handle": "@doublebubbleanny",
+            "description": "Привет я Аня и ты на Double Bubble! ❤️ Подписывайся, тут много интересного ;)\nПо рекламе, сотрудничеству и мероприятиям - double_bubble@wildjam.ru\nhttps://knd.gov.ru/license?id=674a53168945180a7d3dda84&amp;registryType=bloggersPerm\nission\n70c81ea8-85cf-47da-9215-5e4a358c7f4e\n",
+            "subscriberCount": 8000000,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_kCItMlpZc31-DiXxZjN6q6Mc78p8QXrC_IDSmEFtXdcw=s240-c-k-c0x00ffffff-no-rj",
+            "score": 5,
+            "reasons": [
+              "primer resultat"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-25T16:32:10.509Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -1532,6 +2610,14 @@
           "checkedAt": "2026-09-25T15:54:21.303Z",
           "status": "sense-youtube",
           "relationCount": 0
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-25T16:32:10.509Z",
+          "status": "candidats",
+          "query": "Duble Buble",
+          "resultCount": 3,
+          "bestScore": 80,
+          "autoAcceptedId": null
         }
       }
     },
@@ -1628,7 +2714,8 @@
       "musicbrainzId": "e493a7d2-951a-4847-91e8-2158903df219",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -1644,6 +2731,14 @@
           "checkedAt": "2026-09-25T15:54:24.135Z",
           "status": "sense-youtube",
           "relationCount": 0
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-25T16:32:10.907Z",
+          "status": "sense-resultats",
+          "query": "Eduard Giménez i Gràcia",
+          "resultCount": 0,
+          "bestScore": 0,
+          "autoAcceptedId": null
         }
       }
     },
@@ -1721,7 +2816,48 @@
       "musicbrainzId": "afd9e0e5-6c1c-4560-9350-64fec5731bc2",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UChRlRycsUvrvZZ-upnGunLw",
+            "title": "El Pont d'Arcalís - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 550,
+            "thumbnail": "https://yt3.ggpht.com/Jy82LrtyPIxTgweirYzcVOTAGGvW8TdVhxVjIEbDkSWEt98p-WUh-YjzXs21zSAkHC04Xpl7Pw=s240-c-k-c0x00ffffff-no-rj",
+            "score": 85,
+            "reasons": [
+              "nom exacte de canal Topic",
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-25T16:32:11.068Z"
+          },
+          {
+            "id": "UCJSAh07gtJGwbAEuWAFCUPw",
+            "title": "discmedipontarcalis",
+            "handle": "@discmedipontarcalis",
+            "description": "",
+            "subscriberCount": 73,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_nU_vZCdUDf8yodGDmLAYuosnE8JQHSwSHuOGGl4SLliA=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-25T16:32:11.068Z"
+          },
+          {
+            "id": "UCXN-0gF2H8PKbMmld26iQjQ",
+            "title": "aocastells",
+            "handle": "@aocastells",
+            "description": "",
+            "subscriberCount": 4,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_k5fmQxZBudmW3Pm6iHK6UQENcfEqokJOvLCxa1fmc=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-25T16:32:11.068Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -1737,6 +2873,14 @@
           "checkedAt": "2026-09-25T15:54:25.465Z",
           "status": "sense-youtube",
           "relationCount": 0
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-25T16:32:11.068Z",
+          "status": "candidats",
+          "query": "El Pont d'Arcalís",
+          "resultCount": 3,
+          "bestScore": 85,
+          "autoAcceptedId": null
         }
       }
     },
@@ -1783,7 +2927,54 @@
       "musicbrainzId": "a8b6eecf-1bad-465e-a806-4179c4e436e6",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UCJBjeooTiRRtZI003r2yuZQ",
+            "title": "El Último De La Fila",
+            "handle": "@elultimodelafilaoficial",
+            "description": "",
+            "subscriberCount": 76900,
+            "thumbnail": "https://yt3.ggpht.com/rmXkkFAPqlhw065bWORSQdEkFCHFVbuEoaRhvtIrHo1in5kj0NXtTxJk37FwD5xgksHc2Sgqrw=s240-c-k-c0x00ffffff-no-rj",
+            "score": 88,
+            "reasons": [
+              "nom exacte",
+              "handle coincident"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-25T16:32:11.372Z"
+          },
+          {
+            "id": "UCaG8r2pSHvyrmbSxb7x96RQ",
+            "title": "El último de la fila",
+            "handle": "@elultimodelafila6222",
+            "description": "",
+            "subscriberCount": 82,
+            "thumbnail": "https://yt3.ggpht.com/aIOdOmHPiLI4NfexZ2TJe9OillE91ShXDiD0eY41meZkF5Jau4Jtu9wsyhMJPVtlQ4Mup3cdK2w=s240-c-k-c0x00ffffff-no-rj",
+            "score": 88,
+            "reasons": [
+              "nom exacte",
+              "handle coincident"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-25T16:32:11.372Z"
+          },
+          {
+            "id": "UCTpc04nv5GbJBYpukHtcrdA",
+            "title": "El Último de la Fila - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 40100,
+            "thumbnail": "https://yt3.ggpht.com/rmXkkFAPqlhw065bWORSQdEkFCHFVbuEoaRhvtIrHo1in5kj0NXtTxJk37FwD5xgksHc2Sgqrw=s240-c-k-c0x00ffffff-no-rj",
+            "score": 85,
+            "reasons": [
+              "nom exacte de canal Topic",
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-25T16:32:11.372Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -1799,6 +2990,14 @@
           "checkedAt": "2026-09-25T15:54:26.927Z",
           "status": "sense-youtube",
           "relationCount": 0
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-25T16:32:11.372Z",
+          "status": "candidats",
+          "query": "El Último de la Fila",
+          "resultCount": 3,
+          "bestScore": 88,
+          "autoAcceptedId": null
         }
       }
     },
@@ -1814,7 +3013,51 @@
       "musicbrainzId": "b7f91315-c3d6-4a3a-b10b-a927f8766ebd",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UC0wCu-Zl3xnutIszJm4eSKA",
+            "title": "Elphomega - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 4300,
+            "thumbnail": "https://yt3.ggpht.com/RLRC0C2idwZH34w-GCs6e2p-gOiTr3BQJL0bUmc9H--7Mc7siPe1WWIk-UpY-oKaRBlKa9XSWg=s240-c-k-c0x00ffffff-no-rj",
+            "score": 80,
+            "reasons": [
+              "nom exacte de canal Topic"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-25T16:32:11.682Z"
+          },
+          {
+            "id": "UC6nuYLLYSkQ69SjA4rPMjjg",
+            "title": "ElphomegaTV",
+            "handle": "@elphomegatv",
+            "description": "Elphomega TV",
+            "subscriberCount": 10400,
+            "thumbnail": "https://yt3.ggpht.com/RLRC0C2idwZH34w-GCs6e2p-gOiTr3BQJL0bUmc9H--7Mc7siPe1WWIk-UpY-oKaRBlKa9XSWg=s240-c-k-c0x00ffffff-no-rj",
+            "score": 58,
+            "reasons": [
+              "nom parcial",
+              "handle coincident",
+              "primer resultat"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-25T16:32:11.682Z"
+          },
+          {
+            "id": "UCO5V42aTDJqPJMkU-J21v_Q",
+            "title": "ALUMBRADO AKA RAPSODA",
+            "handle": "@alumbradoakarapsoda",
+            "description": "JOSIAS ATAHUALPA VALLEJO MARIATEGUI",
+            "subscriberCount": 2,
+            "thumbnail": "https://yt3.ggpht.com/DHYp6RP0GnvmYFV5yUMfOepXPpLX5bYXJVAD0RFbmBwb2XIb910sbNuzsRgYVu2bPJ-sukO3oQ=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-25T16:32:11.682Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -1830,6 +3073,14 @@
           "checkedAt": "2026-09-25T15:54:28.235Z",
           "status": "sense-youtube",
           "relationCount": 0
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-25T16:32:11.682Z",
+          "status": "candidats",
+          "query": "Elphomega",
+          "resultCount": 3,
+          "bestScore": 80,
+          "autoAcceptedId": null
         }
       }
     },
