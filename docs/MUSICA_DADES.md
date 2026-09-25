@@ -65,3 +65,20 @@ No necessita cap clau API de YouTube.
 Cada consulta usa `channels.list`, que costa 1 unitat de quota general. La clau només es llegeix des del secret `YOUTUBE_API_KEY_SERVER` de GitHub Actions i no s'escriu mai al repositori.
 
 Les cerques generals per nom d'artista queden expressament fora d'aquesta fase.
+
+## Cerca general de canals YouTube
+
+Quan Wikidata i MusicBrainz no donen cap canal conegut, `scripts/cercar_canals_youtube.js` utilitza `search.list` només sobre artistes encara sense ID.
+
+Proteccions de quota i qualitat:
+
+- màxim 25 artistes per execució;
+- màxim intern de 80 `search.list` per dia del Pacífic, deixant marge respecte del límit per defecte de 100;
+- una sola pàgina de 3 canals per artista;
+- els detalls dels 3 canals es consulten en un únic `channels.list`;
+- cada artista queda marcat i no es torna a cercar abans de 30 dies;
+- noms curts o genèrics no s'autoaccepten;
+- només s'autoaccepten coincidències molt fortes de nom + handle o canals Topic inequívocs;
+- la resta queda a `youtube.searchCandidates` per revisió editorial.
+
+La tasca `Cercar canals YouTube` s'executa cada dia a les 08:17 UTC, després del reinici diari de quota de mitjanit PT.
