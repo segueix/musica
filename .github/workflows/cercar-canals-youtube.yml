@@ -1,0 +1,60 @@
+name: Cercar canals YouTube
+
+on:
+  push:
+    paths:
+      - "scripts/cercar_canals_youtube.js"
+      - "tests/youtube-search-candidates.test.js"
+      - ".github/workflows/cercar-canals-youtube.yml"
+  schedule:
+    # 08:17 UTC: després del reinici de quota a mitjanit PT tant a l'estiu com a l'hivern.
+    - cron: "17 8 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: music-data-writer
+  cancel-in-progress: false
+
+jobs:
+  cerca:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Setup Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: "20"
+
+      - name: Sincronitza amb l'últim main
+        run: |
+          git fetch origin main
+          git reset --hard origin/main
+
+      - name: Cerca canals candidats
+        env:
+          YOUTUBE_API_KEY_SERVER: ${{ secrets.YOUTUBE_API_KEY_SERVER }}
+        run: node scripts/cercar_canals_youtube.js --limit=25
+
+      - name: Valida la base
+        run: node scripts/validar_artistes_musica.js
+
+      - name: Publica canvis
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/artistes-musica.json
+
+          if git diff --cached --quiet; then
+            echo "Sense canvis de cerca."
+            exit 0
+          fi
+
+          git commit -m "data: cerca canals YouTube candidats"
+          git push origin HEAD:main
