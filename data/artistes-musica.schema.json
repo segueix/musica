@@ -444,6 +444,40 @@
                   },
                   "musicbrainzError": {
                     "type": "string"
+                  },
+                  "wikidataWorkCheckedAt": {
+                    "type": [
+                      "string",
+                      "null"
+                    ],
+                    "format": "date-time"
+                  },
+                  "wikidataWorkRaw": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "uniqueItems": true
+                  },
+                  "wikidataWorkEvidence": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "genre",
+                        "workCount"
+                      ],
+                      "additionalProperties": false,
+                      "properties": {
+                        "genre": {
+                          "type": "string"
+                        },
+                        "workCount": {
+                          "type": "integer",
+                          "minimum": 1
+                        }
+                      }
+                    }
                   }
                 }
               }
