@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-25T17:19:33.397Z",
+  "updatedAt": "2026-09-25T17:27:49.610Z",
   "artists": [
     {
       "name": "31 FAM",
@@ -2839,108 +2839,6 @@
           "wikidataWorkEvidence": []
         }
       }
-    },
-    {
-      "name": "Dagoll Dagom",
-      "aliases": [],
-      "genres": [],
-      "territories": [],
-      "languages": [
-        "ca"
-      ],
-      "wikidataId": "Q2838792",
-      "musicbrainzId": "6675e84e-ad9e-4100-89dc-5170c8f609ed",
-      "youtube": {
-        "channels": [],
-        "candidates": [],
-        "searchCandidates": [
-          {
-            "id": "UC1oT6mLnFR1-vVK_EGAdp-g",
-            "title": "Dagoll Dagom",
-            "handle": "@dagolldagomdd",
-            "description": "Canal de la companyia de teatre musical Dagoll Dagom, fundada l'any 1975. Ha creat espectacles com 'Nit de Sant Joan', 'Mar i Cel', 'Flor de Nit', 'Cop de Rock' o 'Maremar'.",
-            "subscriberCount": 4370,
-            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_ni1nBdGo6U4oExnk9KEUTLCU0Qxe_dxIXwi0qP1Wv25rI=s240-c-k-c0x00ffffff-no-rj",
-            "score": 93,
-            "reasons": [
-              "nom exacte",
-              "handle coincident",
-              "primer resultat"
-            ],
-            "suggestedType": "official",
-            "discoveredAt": "2026-09-25T16:32:09.813Z"
-          },
-          {
-            "id": "UCo7npu8pAD99dAsZzt9beBQ",
-            "title": "Dagoll Dagom - Topic",
-            "handle": null,
-            "description": "",
-            "subscriberCount": 844,
-            "thumbnail": "https://yt3.ggpht.com/Zi_HMpHM1yHqVEtWnBxPjIyJgPt8ue4M6FO7ZM71O-X7tPaD42jsI6FhLQ1rhy_9dwGlqE8r=s240-c-k-c0x00ffffff-no-rj",
-            "score": 80,
-            "reasons": [
-              "nom exacte de canal Topic"
-            ],
-            "suggestedType": "topic",
-            "discoveredAt": "2026-09-25T16:32:09.813Z"
-          },
-          {
-            "id": "UCMnvYFUYyZjSGmZtY2HnZVQ",
-            "title": "Canal clàssic Òpera / Teatre / Música",
-            "handle": "@classicoperateatremusica",
-            "description": "",
-            "subscriberCount": 2110,
-            "thumbnail": "https://yt3.ggpht.com/atEHu3V-p40V9_IVU-YvdPaRmNCuRpkkUQsiG0XZu2b6te4E8dd1lgkgk9w5gCGa00xcHfGht-4=s240-c-k-c0x00ffffff-no-rj",
-            "score": 0,
-            "reasons": [],
-            "suggestedType": "official",
-            "discoveredAt": "2026-09-25T16:32:09.813Z"
-          }
-        ]
-      },
-      "confidence": "pendent",
-      "reviewStatus": "pendent",
-      "active": false,
-      "sources": [
-        "https://www.wikidata.org/wiki/Q2838792",
-        "wikidata:languages-spoken-catalan",
-        "wikidata:performed-catalan-work"
-      ],
-      "lastChecked": "2026-09-25T15:54:18.589Z",
-      "notes": "",
-      "enrichment": {
-        "musicbrainz": {
-          "checkedAt": "2026-09-25T15:54:18.589Z",
-          "status": "sense-youtube",
-          "relationCount": 0
-        },
-        "youtubeSearch": {
-          "checkedAt": "2026-09-25T16:32:09.813Z",
-          "status": "candidats",
-          "query": "Dagoll Dagom",
-          "resultCount": 3,
-          "bestScore": 93,
-          "autoAcceptedId": null
-        },
-        "genres": {
-          "checkedAt": "2026-09-25T17:19:33.277Z",
-          "musicbrainzCheckedAt": "2026-09-25T17:11:31.101Z",
-          "wikidataRaw": [],
-          "musicbrainzRaw": [],
-          "unmappedRaw": [],
-          "status": "sense-dades",
-          "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-25T17:19:33.277Z",
-          "wikidataWorkEvidence": [],
-          "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:31.101Z",
-          "musicbrainzReleaseCheckedAt": "2026-09-25T17:17:55.454Z",
-          "musicbrainzReleaseRaw": [],
-          "musicbrainzReleaseEvidence": [],
-          "musicbrainzReleaseGroupCount": 7
-        }
-      },
-      "genresRaw": []
     },
     {
       "name": "Dàmaris Gelabert",
@@ -9559,56 +9457,6 @@
           "musicbrainzReleaseRaw": [],
           "musicbrainzReleaseEvidence": [],
           "musicbrainzReleaseGroupCount": 1
-        }
-      },
-      "genresRaw": []
-    },
-    {
-      "name": "Marcel·lí Antúnez Roca",
-      "aliases": [],
-      "genres": [],
-      "territories": [],
-      "languages": [
-        "ca"
-      ],
-      "wikidataId": "Q3845733",
-      "musicbrainzId": "73d824e7-eeba-482f-ab63-b0497b775b77",
-      "youtube": {
-        "channels": [],
-        "candidates": []
-      },
-      "confidence": "pendent",
-      "reviewStatus": "pendent",
-      "active": false,
-      "sources": [
-        "https://www.wikidata.org/wiki/Q3845733",
-        "wikidata:languages-spoken-catalan",
-        "wikidata:performed-catalan-work"
-      ],
-      "lastChecked": "2026-09-25T15:55:35.802Z",
-      "notes": "",
-      "enrichment": {
-        "musicbrainz": {
-          "checkedAt": "2026-09-25T15:55:35.802Z",
-          "status": "sense-youtube",
-          "relationCount": 0
-        },
-        "genres": {
-          "checkedAt": "2026-09-25T17:19:33.330Z",
-          "musicbrainzCheckedAt": "2026-09-25T17:12:08.331Z",
-          "wikidataRaw": [],
-          "musicbrainzRaw": [],
-          "unmappedRaw": [],
-          "status": "sense-dades",
-          "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-25T17:19:33.330Z",
-          "wikidataWorkEvidence": [],
-          "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:08.331Z",
-          "musicbrainzReleaseCheckedAt": "2026-09-25T17:18:32.778Z",
-          "musicbrainzReleaseRaw": [],
-          "musicbrainzReleaseEvidence": [],
-          "musicbrainzReleaseGroupCount": 0
         }
       },
       "genresRaw": []
