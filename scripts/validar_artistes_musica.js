@@ -95,6 +95,35 @@ if (!Array.isArray(data.artists)) {
             });
         }
 
+        const searchCandidates = artist.youtube?.searchCandidates;
+        if (searchCandidates !== undefined && !Array.isArray(searchCandidates)) {
+            fail(`${where}.youtube.searchCandidates ha de ser un array si existeix.`);
+        }
+        if (Array.isArray(searchCandidates)) {
+            const searchIds = new Set();
+            searchCandidates.forEach((candidate, candidateIndex) => {
+                const candidateWhere = `${where}.youtube.searchCandidates[${candidateIndex}]`;
+                if (!CHANNEL_ID_RE.test(candidate?.id || '')) fail(`${candidateWhere}.id no és vàlid.`);
+                if (searchIds.has(candidate.id)) fail(`${candidateWhere}.id està duplicat.`);
+                searchIds.add(candidate.id);
+                if (typeof candidate.title !== 'string') fail(`${candidateWhere}.title no és vàlid.`);
+                if (!(candidate.handle === null || typeof candidate.handle === 'string')) fail(`${candidateWhere}.handle no és vàlid.`);
+                if (!Number.isInteger(candidate.subscriberCount) || candidate.subscriberCount < 0) fail(`${candidateWhere}.subscriberCount no és vàlid.`);
+                if (!Number.isInteger(candidate.score) || candidate.score < 0) fail(`${candidateWhere}.score no és vàlid.`);
+                if (!Array.isArray(candidate.reasons)) fail(`${candidateWhere}.reasons ha de ser un array.`);
+                if (!['official', 'topic'].includes(candidate.suggestedType)) fail(`${candidateWhere}.suggestedType no és vàlid.`);
+            });
+        }
+
+        const ys = artist.enrichment?.youtubeSearch;
+        if (ys !== undefined) {
+            if (!ys || typeof ys !== 'object') fail(`${where}.enrichment.youtubeSearch no és vàlid.`);
+            if (typeof ys.checkedAt !== 'string') fail(`${where}.enrichment.youtubeSearch.checkedAt és obligatori.`);
+            if (!['autoacceptat', 'candidats', 'sense-resultats', 'error'].includes(ys.status)) fail(`${where}.enrichment.youtubeSearch.status no és vàlid.`);
+            if (typeof ys.query !== 'string') fail(`${where}.enrichment.youtubeSearch.query no és vàlid.`);
+            if (!Number.isInteger(ys.resultCount) || ys.resultCount < 0) fail(`${where}.enrichment.youtubeSearch.resultCount no és vàlid.`);
+        }
+
         const mb = artist.enrichment?.musicbrainz;
         if (mb !== undefined) {
             if (!mb || typeof mb !== 'object') fail(`${where}.enrichment.musicbrainz no és vàlid.`);
