@@ -59,12 +59,21 @@ function esc(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&l
 function save(){localStorage.setItem(STORAGE,JSON.stringify(db));render()}
 function download(name,text,type){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([text],{type}));a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}
 function setStatus(qid,status){const a=db.artists.find(x=>x.wikidataId===qid);if(!a)return;a.reviewStatus=status;a.active=status==='aprovat';save()}
+function useSearchCandidate(qid,channelId){
+ const a=db.artists.find(x=>x.wikidataId===qid);if(!a)return;
+ const c=(a.youtube?.searchCandidates||[]).find(x=>x.id===channelId);if(!c)return;
+ a.youtube.channels=[{id:c.id,handle:c.handle||null,name:c.title||null,type:c.suggestedType||'official',primary:true}];
+ a.sources=[...new Set([...(a.sources||[]),'youtube:search-manual'])];
+ a.confidence='mitjana';
+ save();
+}
 function stats(){
  const a=db.artists;const n=s=>a.filter(x=>x.reviewStatus===s).length;
  document.getElementById('stats').innerHTML=[
   ['Total',a.length],['Pendents',n('pendent')],['Aprovats',n('aprovat')],['Rebutjats',n('rebutjat')],
   ['Amb YouTube',a.filter(x=>x.youtube?.channels?.length).length],['Sense YouTube',a.filter(x=>!x.youtube?.channels?.length).length],
-  ['Candidats MB',a.filter(x=>x.youtube?.candidates?.length).length]
+  ['Candidats MB',a.filter(x=>x.youtube?.candidates?.length).length],
+  ['Candidats cerca',a.filter(x=>x.youtube?.searchCandidates?.length && !x.youtube?.channels?.length).length]
  ].map(x=>'<div class="stat"><b>'+x[1]+'</b><br><span class="muted">'+x[0]+'</span></div>').join('');
 }
 function render(){
@@ -80,11 +89,19 @@ function render(){
  }).map(a=>{
   const chans=a.youtube?.channels||[];
   const mbCandidates=a.youtube?.candidates||[];
+  const searchCandidates=a.youtube?.searchCandidates||[];
+  const searchHtml=searchCandidates.map(c=>{
+   const subs=c.subscriberCount?(' · '+Number(c.subscriberCount).toLocaleString('ca-ES')+' subs'):'';
+   return '<div><a href="https://www.youtube.com/channel/'+esc(c.id)+'" target="_blank">'+esc(c.title)+'</a> <span class="tag">score '+esc(c.score)+'</span>'+subs+
+    ' <button onclick="useSearchCandidate(\''+esc(a.wikidataId)+'\',\''+esc(c.id)+'\')">Usa</button></div>';
+  }).join('');
   const ytHtml=chans.length
-   ? chans.map(c=>'<a href="https://www.youtube.com/channel/'+esc(c.id)+'" target="_blank">'+esc(c.id)+'</a>').join('<br>')
-   : mbCandidates.length
-     ? mbCandidates.map(c=>'<a href="'+esc(c.url)+'" target="_blank">'+esc(c.handle||'candidat MusicBrainz')+'</a>').join('<br>')
-     : '<span class="missing">pendent</span>';
+   ? chans.map(c=>'<a href="https://www.youtube.com/channel/'+esc(c.id)+'" target="_blank">'+esc(c.name||c.id)+'</a>').join('<br>')
+   : searchCandidates.length
+     ? searchHtml
+     : mbCandidates.length
+       ? mbCandidates.map(c=>'<a href="'+esc(c.url)+'" target="_blank">'+esc(c.handle||'candidat MusicBrainz')+'</a>').join('<br>')
+       : '<span class="missing">pendent</span>';
   const evidence=(a.sources||[]).filter(s=>s.startsWith('wikidata:')).map(s=>'<span class="tag">'+esc(s.replace('wikidata:',''))+'</span>').join(' ');
   const stateClass=a.reviewStatus==='aprovat'?'approved':a.reviewStatus==='rebutjat'?'rejected':'';
   return '<tr><td><b>'+esc(a.name)+'</b><br><a href="https://www.wikidata.org/wiki/'+esc(a.wikidataId)+'" target="_blank">'+esc(a.wikidataId)+'</a></td>'+
@@ -112,8 +129,8 @@ document.getElementById('youtube').addEventListener('change',render);
 document.getElementById('reset').addEventListener('click',()=>{localStorage.removeItem(STORAGE);location.reload()});
 document.getElementById('exportJson').addEventListener('click',()=>{db.updatedAt=new Date().toISOString();download('artistes-musica.json',JSON.stringify(db,null,2)+'\n','application/json')});
 document.getElementById('exportCsv').addEventListener('click',()=>{
- const cols=['name','reviewStatus','active','wikidataId','musicbrainzId','youtubeIds','youtubeCandidates','confidence'];
- const lines=[cols.join(',')].concat(db.artists.map(a=>[a.name,a.reviewStatus,a.active,a.wikidataId,a.musicbrainzId||'',(a.youtube?.channels||[]).map(c=>c.id).join('|'),(a.youtube?.candidates||[]).map(c=>c.url).join('|'),a.confidence].map(v=>'"'+String(v).replaceAll('"','""')+'"').join(',')));
+ const cols=['name','reviewStatus','active','wikidataId','musicbrainzId','youtubeIds','youtubeCandidates','searchCandidates','confidence'];
+ const lines=[cols.join(',')].concat(db.artists.map(a=>[a.name,a.reviewStatus,a.active,a.wikidataId,a.musicbrainzId||'',(a.youtube?.channels||[]).map(c=>c.id).join('|'),(a.youtube?.candidates||[]).map(c=>c.url).join('|'),(a.youtube?.searchCandidates||[]).map(c=>c.id+':'+c.score).join('|'),a.confidence].map(v=>'"'+String(v).replaceAll('"','""')+'"').join(',')));
  download('artistes-musica.csv',lines.join('\n')+'\n','text/csv;charset=utf-8');
 });
 load().catch(e=>document.getElementById('rows').innerHTML='<tr><td colspan="6">Error carregant la base: '+esc(e.message)+'</td></tr>');
