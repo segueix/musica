@@ -4,11 +4,12 @@ La font canònica és `data/artistes-musica.json`. No cal mantenir un Excel para
 
 ## Descoberta automàtica
 
-`scripts/descobrir_artistes_musica.js` consulta Wikidata i combina tres senyals:
+`scripts/descobrir_artistes_musica.js` consulta Wikidata i combina dos senyals forts:
 
-1. artistes que declaren català entre les llengües;
-2. artistes amb català com a llengua nativa;
-3. artistes vinculats com a intèrprets d'una obra catalogada en català.
+1. artistes amb català com a llengua nativa que, a més, Wikidata classifica com a músic, cantant o grup musical;
+2. artistes vinculats com a intèrprets d'una obra catalogada en català.
+
+El simple fet de parlar català no és suficient per entrar a la base, perquè generava massa falsos positius.
 
 Per reduir falsos positius, el candidat ha de tenir un MusicBrainz Artist ID a Wikidata. Si Wikidata també té un YouTube Channel ID, s'incorpora directament.
 
