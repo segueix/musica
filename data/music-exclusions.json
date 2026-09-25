@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-25T18:15:42.564Z",
+  "updatedAt": "2026-09-25T18:32:35.380Z",
   "exclusions": [
     {
       "wikidataId": "Q2838792",
@@ -145,6 +145,16 @@
       ],
       "reason": "Criteri editorial d'idioma: catàleg majoritàriament no català segons l'abast editorial de Segueix Música.",
       "source": "editorial-language-policy"
+    },
+    {
+      "wikidataId": "Q90757946",
+      "name": "Sofia Coll i Benito",
+      "aliases": [
+        "Sofia Coll",
+        "Sofía Coll"
+      ],
+      "reason": "Exclusió editorial sol·licitada per a Segueix Música.",
+      "source": "editorial-exclusion"
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-25T18:16:55.928Z",
+  "updatedAt": "2026-09-25T18:32:35.380Z",
   "artists": [
     {
       "name": "31 FAM",
@@ -12588,75 +12588,6 @@
             "indie pop"
           ],
           "musicbrainzRaw": [],
-          "unmappedRaw": [],
-          "status": "classificat",
-          "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": null,
-          "musicbrainzReleaseCheckedAt": null,
-          "wikidataWorkCheckedAt": null,
-          "musicbrainzReleaseRaw": [],
-          "wikidataWorkEvidence": []
-        }
-      }
-    },
-    {
-      "name": "Sofia Coll i Benito",
-      "aliases": [],
-      "genres": [
-        "Pop",
-        "Electrònica",
-        "Jazz / Blues",
-        "Funk / Soul / R&B"
-      ],
-      "territories": [],
-      "languages": [
-        "ca"
-      ],
-      "wikidataId": "Q90757946",
-      "musicbrainzId": "60a41942-b973-4dfd-af61-74c67d180d8b",
-      "youtube": {
-        "channels": [
-          {
-            "id": "UC9r_7K4445c2oVssxXsNjcg",
-            "handle": null,
-            "name": null,
-            "type": "official",
-            "primary": true
-          }
-        ]
-      },
-      "confidence": "alta",
-      "reviewStatus": "pendent",
-      "active": false,
-      "sources": [
-        "https://www.wikidata.org/wiki/Q90757946",
-        "wikidata:performed-catalan-work"
-      ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": "",
-      "genresRaw": [
-        "pop",
-        "rhythm and blues",
-        "electrònica",
-        "soul",
-        "r&b"
-      ],
-      "enrichment": {
-        "genres": {
-          "checkedAt": "2026-09-25T18:16:55.918Z",
-          "musicbrainzCheckedAt": "2026-09-25T16:50:29.340Z",
-          "wikidataRaw": [
-            "pop",
-            "rhythm and blues",
-            "electrònica",
-            "soul"
-          ],
-          "musicbrainzRaw": [
-            "pop",
-            "r&b",
-            "soul"
-          ],
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
