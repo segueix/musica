@@ -140,6 +140,18 @@ if (!Array.isArray(data.artists)) {
             if (!(genreState.checkedAt === null || typeof genreState.checkedAt === 'string')) fail(`${where}.enrichment.genres.checkedAt no és vàlid.`);
             if (!(genreState.musicbrainzCheckedAt === null || typeof genreState.musicbrainzCheckedAt === 'string')) fail(`${where}.enrichment.genres.musicbrainzCheckedAt no és vàlid.`);
             if (!(genreState.musicbrainzTagsCheckedAt === undefined || genreState.musicbrainzTagsCheckedAt === null || typeof genreState.musicbrainzTagsCheckedAt === 'string')) fail(`${where}.enrichment.genres.musicbrainzTagsCheckedAt no és vàlid.`);
+            if (!(genreState.musicbrainzReleaseCheckedAt === undefined || genreState.musicbrainzReleaseCheckedAt === null || typeof genreState.musicbrainzReleaseCheckedAt === 'string')) fail(`${where}.enrichment.genres.musicbrainzReleaseCheckedAt no és vàlid.`);
+            if (genreState.musicbrainzReleaseRaw !== undefined && !isStringArray(genreState.musicbrainzReleaseRaw)) {
+                fail(`${where}.enrichment.genres.musicbrainzReleaseRaw ha de ser un array de textos si existeix.`);
+            }
+            if (genreState.musicbrainzReleaseEvidence !== undefined) {
+                if (!Array.isArray(genreState.musicbrainzReleaseEvidence)) fail(`${where}.enrichment.genres.musicbrainzReleaseEvidence ha de ser un array.`);
+                else genreState.musicbrainzReleaseEvidence.forEach((evidence, evidenceIndex) => {
+                    if (!evidence || typeof evidence.label !== 'string' || !Number.isInteger(evidence.releaseGroupCount) || evidence.releaseGroupCount < 2) {
+                        fail(`${where}.enrichment.genres.musicbrainzReleaseEvidence[${evidenceIndex}] no és vàlid.`);
+                    }
+                });
+            }
             if (!(genreState.wikidataWorkCheckedAt === undefined || genreState.wikidataWorkCheckedAt === null || typeof genreState.wikidataWorkCheckedAt === 'string')) fail(`${where}.enrichment.genres.wikidataWorkCheckedAt no és vàlid.`);
             if (genreState.wikidataWorkEvidence !== undefined) {
                 if (!Array.isArray(genreState.wikidataWorkEvidence)) fail(`${where}.enrichment.genres.wikidataWorkEvidence ha de ser un array.`);
