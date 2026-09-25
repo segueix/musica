@@ -5,6 +5,7 @@ on:
     paths:
       - "scripts/descobrir_artistes_musica.js"
       - "scripts/enriquir_artistes_musicbrainz.js"
+      - "scripts/enriquir_generes_musica.js"
       - "scripts/resoldre_canals_youtube.js"
       - ".github/workflows/descobrir-musica.yml"
   schedule:
@@ -46,6 +47,9 @@ jobs:
         env:
           YOUTUBE_API_KEY_SERVER: ${{ secrets.YOUTUBE_API_KEY_SERVER }}
         run: node scripts/resoldre_canals_youtube.js
+
+      - name: Enriqueix gèneres musicals
+        run: node scripts/enriquir_generes_musica.js
 
       - name: Valida la base
         run: node scripts/validar_artistes_musica.js
