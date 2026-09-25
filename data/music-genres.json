@@ -1,0 +1,293 @@
+{
+  "schemaVersion": 1,
+  "categories": [
+    {
+      "id": "pop",
+      "label": "Pop",
+      "match": [
+        "pop",
+        "pop rock",
+        "synth-pop",
+        "synthpop",
+        "electropop",
+        "dream pop",
+        "art pop",
+        "chamber pop",
+        "power pop",
+        "dance-pop",
+        "teen pop"
+      ]
+    },
+    {
+      "id": "rock",
+      "label": "Rock",
+      "match": [
+        "rock",
+        "rock and roll",
+        "rock'n'roll",
+        "folk rock",
+        "hard rock",
+        "progressive rock",
+        "psychedelic rock",
+        "garage rock",
+        "post-rock",
+        "rock català",
+        "catalan rock"
+      ]
+    },
+    {
+      "id": "indie-alternativa",
+      "label": "Indie / Alternativa",
+      "match": [
+        "indie",
+        "indie rock",
+        "indie pop",
+        "alternative",
+        "alternative rock",
+        "alternative pop",
+        "shoegaze",
+        "post-rock",
+        "dream pop",
+        "lo-fi"
+      ]
+    },
+    {
+      "id": "urbana",
+      "label": "Urbana",
+      "match": [
+        "urban music",
+        "música urbana",
+        "musica urbana",
+        "reggaeton",
+        "reguetón",
+        "regueton",
+        "latin trap",
+        "trap",
+        "drill"
+      ]
+    },
+    {
+      "id": "rap-hiphop",
+      "label": "Rap / Hip-hop",
+      "match": [
+        "hip hop",
+        "hip-hop",
+        "rap",
+        "trap",
+        "boom bap",
+        "conscious hip hop",
+        "alternative hip hop"
+      ]
+    },
+    {
+      "id": "electronica",
+      "label": "Electrònica",
+      "match": [
+        "electronic",
+        "electronica",
+        "electrònica",
+        "electronica music",
+        "electro",
+        "techno",
+        "house",
+        "ambient",
+        "edm",
+        "dance music",
+        "synthwave",
+        "downtempo",
+        "trip hop",
+        "trip-hop"
+      ]
+    },
+    {
+      "id": "folk-arrel",
+      "label": "Folk i arrel",
+      "match": [
+        "folk",
+        "folk music",
+        "traditional music",
+        "música tradicional",
+        "musica tradicional",
+        "roots music",
+        "world music",
+        "celtic",
+        "mediterranean music",
+        "folk rock",
+        "ethnic music"
+      ]
+    },
+    {
+      "id": "canco-autor",
+      "label": "Cançó d'autor",
+      "match": [
+        "singer-songwriter",
+        "singer songwriter",
+        "cantautor",
+        "cantautora",
+        "cançó d'autor",
+        "canco d'autor",
+        "nova cançó",
+        "nova canco",
+        "nueva canción",
+        "nueva cancion",
+        "chanson"
+      ]
+    },
+    {
+      "id": "ska-reggae",
+      "label": "Ska / Reggae",
+      "match": [
+        "ska",
+        "reggae",
+        "dub",
+        "dancehall",
+        "rocksteady",
+        "ska punk",
+        "reggae fusion"
+      ]
+    },
+    {
+      "id": "punk",
+      "label": "Punk",
+      "match": [
+        "punk",
+        "punk rock",
+        "hardcore punk",
+        "hardcore",
+        "post-punk",
+        "ska punk",
+        "anarcho-punk",
+        "oi!"
+      ]
+    },
+    {
+      "id": "metal",
+      "label": "Metal",
+      "match": [
+        "metal",
+        "heavy metal",
+        "thrash metal",
+        "death metal",
+        "black metal",
+        "doom metal",
+        "power metal",
+        "progressive metal",
+        "metalcore"
+      ]
+    },
+    {
+      "id": "rumba-mestissatge",
+      "label": "Rumba / Mestissatge",
+      "match": [
+        "rumba",
+        "rumba catalana",
+        "catalan rumba",
+        "mestissatge",
+        "mestizaje",
+        "world fusion",
+        "latin fusion"
+      ]
+    },
+    {
+      "id": "flamenc",
+      "label": "Flamenc",
+      "match": [
+        "flamenco",
+        "flamenc",
+        "nuevo flamenco",
+        "flamenco fusion"
+      ]
+    },
+    {
+      "id": "jazz-blues",
+      "label": "Jazz / Blues",
+      "match": [
+        "jazz",
+        "blues",
+        "jazz fusion",
+        "smooth jazz",
+        "free jazz",
+        "bebop",
+        "swing music",
+        "swing"
+      ]
+    },
+    {
+      "id": "funk-soul-rnb",
+      "label": "Funk / Soul / R&B",
+      "match": [
+        "funk",
+        "soul",
+        "rhythm and blues",
+        "r&b",
+        "neo soul",
+        "neo-soul",
+        "contemporary r&b"
+      ]
+    },
+    {
+      "id": "classica",
+      "label": "Clàssica i contemporània",
+      "match": [
+        "classical",
+        "classical music",
+        "música clàssica",
+        "musica classica",
+        "contemporary classical",
+        "opera",
+        "operatic",
+        "orchestral",
+        "chamber music",
+        "baroque music",
+        "romantic music",
+        "modern classical"
+      ]
+    },
+    {
+      "id": "coral",
+      "label": "Coral / Vocal",
+      "match": [
+        "choral",
+        "choir",
+        "coral music",
+        "música coral",
+        "musica coral",
+        "vocal ensemble",
+        "a cappella",
+        "acapella"
+      ]
+    },
+    {
+      "id": "experimental",
+      "label": "Experimental / Avantguarda",
+      "match": [
+        "experimental",
+        "avant-garde",
+        "avant garde",
+        "noise",
+        "electroacoustic",
+        "musique concrète",
+        "musique concrete",
+        "free improvisation",
+        "experimental music"
+      ]
+    },
+    {
+      "id": "infantil",
+      "label": "Infantil",
+      "match": [
+        "children's music",
+        "childrens music",
+        "kids music",
+        "música infantil",
+        "musica infantil",
+        "children music"
+      ]
+    },
+    {
+      "id": "altres",
+      "label": "Altres",
+      "match": []
+    }
+  ]
+}
