@@ -47,6 +47,9 @@ const YouTubeAPI = {
         this.loadUserChannels();
         this.loadResolvedChannelIds();
         
+        // Carregar primer la taxonomia d'artistes perquè el feed ja neixi amb estils musicals.
+        await window.SegueixMusicCategories?.init?.();
+
         // Intentar carregar el feed
         await this.loadFeed();
         
@@ -74,7 +77,9 @@ const YouTubeAPI = {
             return false;
         }
 
-        this.feedVideos = this.filterHiddenVideos(feedItems);
+        this.feedVideos = this.filterHiddenVideos(feedItems).map(video =>
+            window.SegueixMusicCategories?.decorateVideo?.(video) || video
+        );
 
         if (feedChannelsMap) {
             this.feedChannels = Object.entries(feedChannelsMap).map(([id, channel]) => ({
@@ -84,7 +89,10 @@ const YouTubeAPI = {
                 description: channel.description || '',
                 handle: channel.handle || '',
                 subscriberCount: channel.subscriberCount ?? null,
-                categories: this.normalizeCategories(channel.categories || [])
+                categories: this.normalizeCategories([
+                    ...(channel.categories || []),
+                    ...(window.SegueixMusicCategories?.categoriesForChannel?.(id) || [])
+                ])
             }));
         } else {
             const channelsMap = {};
@@ -158,7 +166,10 @@ const YouTubeAPI = {
                 description: channel.description || '',
                 handle: channel.handle || '',
                 subscriberCount: channel.subscriberCount ?? null,
-                categories: this.normalizeCategories(channel.categories || channel.category || [])
+                categories: this.normalizeCategories([
+                    ...(Array.isArray(channel.categories) ? channel.categories : (channel.category ? [channel.category] : [])),
+                    ...(window.SegueixMusicCategories?.categoriesForChannel?.(channel.id) || [])
+                ])
             }));
             console.log(`iuTube: Carregats ${this.feedChannels.length} canals des de fallback local`);
         } catch (error) {

@@ -11,15 +11,26 @@
     const DEDUPE_MS = 900;
     const BUILTIN_CATEGORIES = new Map([
         ['novetats', 'novetats'],
-        ['vida', 'vida'],
-        ['cultura', 'cultura'],
-        ['diversio', 'diversio'],
-        ['diversió', 'diversio'],
-        ['el mon', 'el_mon'],
-        ['el món', 'el_mon'],
-        ['gaming', 'gaming'],
+        ['descobreix', 'descobreix'],
+        ['pop', 'pop'],
+        ['rock', 'rock'],
+        ['indie', 'indie'],
+        ['urbana', 'urbana'],
+        ['rap / hip-hop', 'rap_hiphop'],
+        ['folk i arrel', 'folk_arrel'],
+        ["cançó d'autor", 'canco_autor'],
+        ["canco d'autor", 'canco_autor'],
+        ['electrònica', 'electronica'],
+        ['electronica', 'electronica'],
+        ['ska / reggae', 'ska_reggae'],
+        ['rumba / mestissatge', 'rumba_mestissatge'],
+        ['punk / metal', 'punk_metal'],
+        ['jazz / blues', 'jazz_blues'],
+        ['clàssica', 'classica'],
+        ['classica', 'classica'],
+        ['infantil', 'infantil'],
+        ['altres estils', 'altres_estils'],
         ['seguint', 'seguint'],
-        ['radar', 'radar'],
         ['tot', 'tot'],
         ['recomanat per a tu', 'tot'],
     ]);
@@ -114,7 +125,7 @@
             .toLowerCase();
 
         if (!raw) return 'other';
-        if (raw === 'segueix tv') return 'other';
+        if (raw === 'segueix tv' || raw === 'música tv' || raw === 'musica tv') return 'other';
         if (BUILTIN_CATEGORIES.has(raw)) return BUILTIN_CATEGORIES.get(raw);
 
         const original = String(value || '').trim().toLowerCase();

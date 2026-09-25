@@ -7,63 +7,24 @@ const VIDEO_LIMIT = 24;
 const CREATOR_LIMIT = 18;
 
 export const SEO_SECTIONS = {
-  novetats: {
-    path: '/novetats',
-    label: 'Novetats',
-    shortTitle: 'Novetats',
-    title: 'Novetats en vídeo en català',
-    description: 'Descobreix els vídeos més recents publicats en català pels creadors de Segueix.cat.',
-    category: '',
-  },
-  vida: {
-    path: '/vida',
-    label: 'Vida',
-    shortTitle: 'Vida',
-    title: 'Vídeos de vida en català',
-    description: 'Vídeos en català sobre vida quotidiana, viatges, cuina, esport, benestar i experiències personals.',
-    category: 'vida',
-  },
-  cultura: {
-    path: '/cultura',
-    label: 'Cultura',
-    shortTitle: 'Cultura',
-    title: 'Vídeos de cultura en català',
-    description: 'Vídeos en català sobre cultura, història, llengua, llibres, música, art, patrimoni i divulgació.',
-    category: 'cultura',
-  },
-  diversio: {
-    path: '/diversio',
-    label: 'Diversió',
-    shortTitle: 'Diversió',
-    title: 'Vídeos de diversió en català',
-    description: 'Humor, entreteniment, reptes, espectacle i continguts per passar una bona estona en català.',
-    category: 'diversio',
-  },
-  'el-mon': {
-    path: '/el-mon',
-    label: 'El Món',
-    shortTitle: 'El Món',
-    title: 'Vídeos d’actualitat i món en català',
-    description: 'Vídeos en català sobre actualitat, societat, territori, internacional i qüestions que expliquen el món.',
-    category: 'el mon',
-  },
-  gaming: {
-    path: '/gaming',
-    label: 'Gaming',
-    shortTitle: 'Gaming',
-    title: 'Gaming i videojocs en català',
-    description: 'Gameplays, anàlisi, directes, guies i creadors de videojocs que publiquen contingut en català.',
-    category: 'gaming',
-  },
-  'segueix-tv': {
-    path: '/segueix-tv',
-    label: 'Segueix TV',
-    shortTitle: 'Segueix TV',
-    title: 'Segueix TV · vídeos en català en reproducció contínua',
-    description: 'Descobreix Segueix TV, una selecció contínua de vídeos en català de creadors diversos de Segueix.cat.',
-    category: '',
-    tv: true,
-  },
+  novetats: { path:'/novetats', label:'Novetats', shortTitle:'Novetats', title:'Novetats de música en català', description:'Les últimes cançons, videoclips, directes i sessions dels artistes de Segueix Música.', category:'' },
+  descobreix: { path:'/descobreix', label:'Descobreix', shortTitle:'Descobreix', title:'Descobreix música en català', description:'Descobreix artistes i música en català de diferents estils.', category:'' },
+  pop: { path:'/pop', label:'Pop', shortTitle:'Pop', title:'Pop en català', description:'Artistes, cançons i videoclips de pop en català.', category:'Pop' },
+  rock: { path:'/rock', label:'Rock', shortTitle:'Rock', title:'Rock en català', description:'Rock en català: grups, cançons, videoclips i directes.', category:'Rock' },
+  indie: { path:'/indie', label:'Indie', shortTitle:'Indie', title:'Indie en català', description:'Música indie i alternativa en català.', category:'Indie' },
+  urbana: { path:'/urbana', label:'Urbana', shortTitle:'Urbana', title:'Música urbana en català', description:'Música urbana en català i artistes de l’escena actual.', category:'Urbana' },
+  'rap-hip-hop': { path:'/rap-hip-hop', label:'Rap / Hip-hop', shortTitle:'Rap / Hip-hop', title:'Rap i hip-hop en català', description:'Rap i hip-hop en català.', category:'Rap / Hip-hop' },
+  'folk-arrel': { path:'/folk-arrel', label:'Folk i arrel', shortTitle:'Folk i arrel', title:'Folk i música d’arrel en català', description:'Folk, música tradicional i música d’arrel en català.', category:'Folk i arrel' },
+  'canco-autor': { path:'/canco-autor', label:"Cançó d'autor", shortTitle:"Cançó d'autor", title:"Cançó d'autor en català", description:"Cantautors i cançó d'autor en català.", category:"Cançó d'autor" },
+  electronica: { path:'/electronica', label:'Electrònica', shortTitle:'Electrònica', title:'Música electrònica en català', description:'Electrònica, sessions i producció musical en català.', category:'Electrònica' },
+  'ska-reggae': { path:'/ska-reggae', label:'Ska / Reggae', shortTitle:'Ska / Reggae', title:'Ska i reggae en català', description:'Ska i reggae en català.', category:'Ska / Reggae' },
+  'rumba-mestissatge': { path:'/rumba-mestissatge', label:'Rumba / Mestissatge', shortTitle:'Rumba / Mestissatge', title:'Rumba i mestissatge en català', description:'Rumba i mestissatge de l’escena catalana.', category:'Rumba / Mestissatge' },
+  'punk-metal': { path:'/punk-metal', label:'Punk / Metal', shortTitle:'Punk / Metal', title:'Punk i metal en català', description:'Punk i metal en català.', category:'Punk / Metal' },
+  'jazz-blues': { path:'/jazz-blues', label:'Jazz / Blues', shortTitle:'Jazz / Blues', title:'Jazz i blues en català', description:'Jazz i blues de l’escena musical catalana.', category:'Jazz / Blues' },
+  classica: { path:'/classica', label:'Clàssica', shortTitle:'Clàssica', title:'Música clàssica catalana', description:'Música clàssica, contemporània, coral i vocal.', category:'Clàssica' },
+  infantil: { path:'/infantil', label:'Infantil', shortTitle:'Infantil', title:'Música infantil en català', description:'Cançons i artistes de música infantil en català.', category:'Infantil' },
+  'altres-estils': { path:'/altres-estils', label:'Altres estils', shortTitle:'Altres estils', title:'Altres estils de música en català', description:'Funk, soul, R&B, experimental i altres estils.', category:'Altres estils' },
+  'musica-tv': { path:'/musica-tv', label:'Música TV', shortTitle:'Música TV', title:'Música TV · música en català en reproducció contínua', description:'Una selecció contínua de música en català per descobrir artistes i cançons.', category:'', tv:true }
 };
 
 function escapeHtml(value) {
@@ -226,19 +187,40 @@ export async function renderSeoSection(context, key) {
   const section = SEO_SECTIONS[key];
   if (!section) return new Response('Not Found', { status: 404 });
 
-  const [feedData, channelsData] = await Promise.all([
+  const [feedData, channelsData, artistsData] = await Promise.all([
     fetchJsonAsset(context, '/data/feed.json'),
     fetchJsonAsset(context, '/js/channels-ca.json'),
+    fetchJsonAsset(context, '/data/artistes-musica.json'),
   ]);
 
   const rawChannels = Array.isArray(channelsData?.channels) ? channelsData.channels : [];
-  const channelsById = new Map(rawChannels.map((channel) => [String(channel?.id || ''), channel]));
+  const artistCategoriesByChannel = new Map();
+  const genreGroups = {
+    'Pop':['Pop'], 'Rock':['Rock'], 'Indie':['Indie / Alternativa'], 'Urbana':['Urbana'],
+    'Rap / Hip-hop':['Rap / Hip-hop'], 'Folk i arrel':['Folk i arrel'], "Cançó d'autor":["Cançó d'autor"],
+    'Electrònica':['Electrònica'], 'Ska / Reggae':['Ska / Reggae'], 'Rumba / Mestissatge':['Rumba / Mestissatge'],
+    'Punk / Metal':['Punk','Metal'], 'Jazz / Blues':['Jazz / Blues'],
+    'Clàssica':['Clàssica i contemporània','Coral / Vocal'], 'Infantil':['Infantil'],
+    'Altres estils':['Funk / Soul / R&B','Experimental / Avantguarda','Altres']
+  };
+  for (const artist of artistsData?.artists || []) {
+    const genres = new Set(artist.genres || []);
+    const categories = Object.entries(genreGroups).filter(([,source]) => source.some(genre => genres.has(genre))).map(([label]) => label);
+    for (const channel of artist.youtube?.channels || []) {
+      artistCategoriesByChannel.set(String(channel.id || ''), categories);
+    }
+  }
+  const enrichedChannels = rawChannels.map(channel => ({
+    ...channel,
+    categories: [...new Set([...(Array.isArray(channel.categories) ? channel.categories : []), ...(artistCategoriesByChannel.get(String(channel.id || '')) || [])])]
+  }));
+  const channelsById = new Map(enrichedChannels.map((channel) => [String(channel?.id || ''), channel]));
   const allVideos = feedVideos(feedData)
     .filter((video) => VIDEO_ID_PATTERN.test(String(video?.id || '')))
     .filter((video) => matchesSection(video, section, channelsById));
   const videos = sortVideos(allVideos).slice(0, VIDEO_LIMIT);
   const creators = relatedCreators(
-    buildCreatorRecords(rawChannels),
+    buildCreatorRecords(enrichedChannels),
     videos,
     section
   );
@@ -339,7 +321,7 @@ export async function renderSeoSection(context, key) {
   </style>
 </head>
 <body>
-  <header><div class="shell"><a class="brand" href="/">Segueix!</a><nav class="top"><a href="/creadors">Creadors</a><a href="/novetats">Novetats</a><a href="/cultura">Cultura</a><a href="/gaming">Gaming</a></nav></div></header>
+  <header><div class="shell"><a class="brand" href="/">Segueix!</a><nav class="top"><a href="/creadors">Artistes</a><a href="/novetats">Novetats</a><a href="/pop">Pop</a><a href="/rock">Rock</a></nav></div></header>
   <main class="shell">
     <section class="intro">
       <p class="eyebrow">Vídeos i creadors en català</p>

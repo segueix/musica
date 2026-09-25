@@ -4,7 +4,7 @@
     const app = window.SegueixApp || (window.SegueixApp = {});
     app.features = app.features || {};
 
-    const LABEL = 'Segueix TV';
+    const LABEL = 'Música TV';
     const TV_PLAYLIST_ID = '__segueix_tv_discovery__';
     const ARCHIVE_CHANNEL_LIMIT = 60;
     const RENDER_LIMIT = 30;
@@ -68,7 +68,7 @@
             .segueix-tv-chip:hover::before,.segueix-tv-chip:hover::after,.segueix-tv-chip.is-active::before,.segueix-tv-chip.is-active::after{color:#0f0f0f!important}
             .segueix-tv-chip:hover::after,.segueix-tv-chip.is-active::after,.segueix-tv-chip:hover .segueix-tv-chip-icon,.segueix-tv-chip.is-active .segueix-tv-chip-icon{border-color:#0f0f0f!important}
             .segueix-tv-chip>*{display:none!important}
-            .segueix-tv-chip::before{content:'Segueix';order:1;display:inline-block}
+            .segueix-tv-chip::before{content:'Música';order:1;display:inline-block}
             .segueix-tv-chip::after{content:'TV';order:2;display:inline-flex;align-items:center;justify-content:center;min-width:25px;height:18px;padding:0 4px;border:1.5px solid currentColor;border-radius:4px;box-sizing:border-box;font-size:9px;font-weight:900;line-height:1;letter-spacing:.04em}
             .segueix-tv-chip-icon{display:none!important}
             .segueix-tv-badge{position:absolute;top:8px;right:8px;z-index:6;display:inline-flex;align-items:center;justify-content:center;min-width:30px;height:22px;padding:0 6px;border-radius:6px;background:rgba(10,10,10,.88);color:#fff;border:1px solid rgba(255,255,255,.72);font-size:10px;font-weight:900;letter-spacing:.08em;box-shadow:0 2px 8px rgba(0,0,0,.28);pointer-events:none}
@@ -708,21 +708,21 @@
         pageTitle.dataset.title = LABEL;
         pageTitle.innerHTML = `
             <span class="segueix-tv-title-label">
-                <span class="page-title__query">Segueix TV</span>
+                <span class="page-title__query">Música TV</span>
                 <span class="radar-info-wrap">
-                    <button type="button" class="btn-round-icon radar-info-btn" data-action="radar-info" aria-label="Què és Segueix TV?" aria-expanded="false" title="Què és Segueix TV?">
+                    <button type="button" class="btn-round-icon radar-info-btn" data-action="radar-info" aria-label="Què és Música TV?" aria-expanded="false" title="Què és Música TV?">
                         <span class="chip-info-icon" aria-hidden="true">i</span>
                     </button>
                     <div class="radar-info-popover" role="tooltip" hidden>
                         <button type="button" class="chip-info-popover-close" data-action="radar-info-close" aria-label="Tancar">×</button>
-                        <p><strong>Segueix TV</strong> és una televisió de <strong>descoberta contínua</strong>: crea una programació de vídeos de creadors que encara no segueixes.</p>
+                        <p><strong>Música TV</strong> és una televisió de <strong>descoberta contínua</strong>: crea una programació de vídeos de creadors que encara no segueixes.</p>
                         <p>La selecció té en compte els teus <strong>❤️</strong>, les <strong>categories</strong>, l'èxit relatiu de cada vídeo dins del seu canal, la interacció i el que acostumes a mirar fins al final o saltar.</p>
                         <p>L'ordre també busca una <strong>seqüència més enganxosa</strong>: relaciona temes, alterna durades i evita una programació massa repetitiva. Una de cada quatre posicions conserva més descoberta. Prem <strong>↻</strong> per generar-ne una de nova.</p>
                     </div>
                 </span>
             </span>
             <span class="page-title__actions">
-                <button type="button" class="btn-round-icon radar-info-btn segueix-tv-refresh-btn" data-action="segueix-tv-refresh" aria-label="Genera una nova selecció de Segueix TV" title="Refresca Segueix TV">
+                <button type="button" class="btn-round-icon radar-info-btn segueix-tv-refresh-btn" data-action="segueix-tv-refresh" aria-label="Genera una nova selecció de Música TV" title="Refresca Música TV">
                     <i data-lucide="refresh-cw" aria-hidden="true"></i>
                 </button>
             </span>`;
@@ -735,7 +735,7 @@
             const badge = document.createElement('span');
             badge.className = 'segueix-tv-badge';
             badge.textContent = 'TV';
-            badge.setAttribute('aria-label', 'Seleccionat per Segueix TV');
+            badge.setAttribute('aria-label', 'Seleccionat per Música TV');
             thumbnail.appendChild(badge);
         });
     }
@@ -930,7 +930,7 @@
         button.dataset.cat = LABEL;
         button.dataset.fixed = 'true';
         button.setAttribute('aria-label', LABEL);
-        button.innerHTML = '<span>Segueix</span><span class="segueix-tv-chip-icon" aria-hidden="true">TV</span>';
+        button.innerHTML = '<span>Música</span><span class="segueix-tv-chip-icon" aria-hidden="true">TV</span>';
         button.removeEventListener('click', handleSegueixTVChipClick);
         button.addEventListener('click', handleSegueixTVChipClick);
 

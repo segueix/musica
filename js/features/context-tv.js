@@ -407,7 +407,7 @@
         const activeCategory = String(activeChip?.dataset?.cat || '').trim();
         const existing = pageTitle.querySelector('[data-context-tv="category"]');
         const hidden = homePage.classList.contains('hidden');
-        if (!category || category === 'Segueix TV' || hidden || activeCategory !== category) {
+        if (!category || category === 'Música TV' || hidden || activeCategory !== category) {
             existing?.remove();
             return;
         }

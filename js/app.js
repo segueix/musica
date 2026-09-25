@@ -2489,7 +2489,7 @@ function getStandardChipLabels() {
     const configLabels = Array.isArray(CONFIG?.categories)
         ? CONFIG.categories.map(cat => cat.name).filter(Boolean)
         : [];
-    return ['Novetats', 'Radar', ...configLabels, 'Seguint'];
+    return ['Novetats', 'Descobreix', ...configLabels, 'Seguint'];
 }
 
 function isStandardCategory(tag) {
@@ -6197,6 +6197,15 @@ function filterVideosByCategory(videos, feed) {
     const visibleVideos = removeHiddenChannelVideos(videos);
 
     if (!selectedCategory || selectedCategory === 'Tot' || selectedCategory === 'Novetats') return visibleVideos;
+    if (selectedCategory === 'Descobreix') {
+        const followedIds = new Set(getFollowedChannelIds().map(id => String(id)));
+        return visibleVideos.filter(video => {
+            const channelId = String(video?.channelId || '');
+            if (!channelId || followedIds.has(channelId)) return false;
+            const music = window.SegueixMusicCategories;
+            return !music?.isReady?.() || music.isMusicChannel(channelId);
+        });
+    }
     if (selectedCategory === 'Radar') {
         const activeTags = getCustomTags();
         if (activeTags.length === 0) return [];
@@ -7377,7 +7386,7 @@ function setupChipsBarOrdering() {
 
     const activeValue = selectedCategory;
     chipsBar.innerHTML = '';
-    const fixedChips = ['Entitats', 'Digitals', 'Mitjans'];
+    const fixedChips = [];
     const sortableChips = orderedChips.filter(chip => !fixedChips.includes(chip.value));
     sortableChips.forEach(chip => {
         const button = document.createElement('button');

@@ -18,7 +18,7 @@ const ALLOWED_EVENTS = new Set([
 const ALLOWED_CONTEXT_VALUES = {
   surface: new Set(['home', 'watch', 'tv', 'search', 'follow', 'library', 'history', 'channel', 'other']),
   device: new Set(['mobile', 'desktop']),
-  category: new Set(['novetats', 'vida', 'cultura', 'diversio', 'el_mon', 'gaming', 'seguint', 'radar', 'tot', 'custom', 'other']),
+  category: new Set(['novetats','descobreix','pop','rock','indie','urbana','rap_hiphop','folk_arrel','canco_autor','electronica','ska_reggae','rumba_mestissatge','punk_metal','jazz_blues','classica','infantil','altres_estils','seguint','tot','custom','other']),
   tvMode: new Set(['segueix', 'category', 'channel', 'program', 'playlist', 'other']),
   state: new Set(['on', 'off']),
 };

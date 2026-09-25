@@ -56,14 +56,21 @@ const CONFIG = {
     
     // Categories personalitzades
     categories: [
-        { id: "el-mon", name: "El Món", icon: "users" },
-        { id: "cultura", name: "Cultura", icon: "book-open" },
-        { id: "diversio", name: "Diversió", icon: "laugh" },
-        { id: "gaming", name: "Gaming", icon: "gamepad-2" },
-        { id: "vida", name: "Vida", icon: "heart" },
-        { id: "mitjans", name: "Mitjans", icon: "tv" },
-        { id: "entitats", name: "Entitats", icon: "monitor" },
-        { id: "digitals", name: "Digitals", icon: "monitor" }
+        { id: "pop", name: "Pop", icon: "music" },
+        { id: "rock", name: "Rock", icon: "guitar" },
+        { id: "indie", name: "Indie", icon: "sparkles" },
+        { id: "urbana", name: "Urbana", icon: "audio-waveform" },
+        { id: "rap-hip-hop", name: "Rap / Hip-hop", icon: "mic-2" },
+        { id: "folk-arrel", name: "Folk i arrel", icon: "trees" },
+        { id: "canco-autor", name: "Cançó d'autor", icon: "pen-line" },
+        { id: "electronica", name: "Electrònica", icon: "radio" },
+        { id: "ska-reggae", name: "Ska / Reggae", icon: "waves" },
+        { id: "rumba-mestissatge", name: "Rumba / Mestissatge", icon: "drum" },
+        { id: "punk-metal", name: "Punk / Metal", icon: "zap" },
+        { id: "jazz-blues", name: "Jazz / Blues", icon: "music-2" },
+        { id: "classica", name: "Clàssica", icon: "music" },
+        { id: "infantil", name: "Infantil", icon: "baby" },
+        { id: "altres-estils", name: "Altres estils", icon: "disc-3" }
     ],
     
     navigation: {

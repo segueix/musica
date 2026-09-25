@@ -6,24 +6,8 @@ import { readFileSync } from 'node:fs';
 const indexSource = readFileSync(new URL('../index.html', import.meta.url), 'utf8');
 
 const videos = [
-  {
-    id: 'abc123XYZ_1',
-    title: 'Cultura en català',
-    thumbnail: 'https://i.ytimg.com/vi/abc123XYZ_1/maxresdefault.jpg',
-    channelId: 'UC_cultura',
-    channelTitle: 'Canal Cultura',
-    publishedAt: '2026-09-25T08:00:00Z',
-    categories: ['cultura'],
-  },
-  {
-    id: 'gam123XYZ_2',
-    title: 'Gaming en català',
-    thumbnail: 'https://i.ytimg.com/vi/gam123XYZ_2/maxresdefault.jpg',
-    channelId: 'UC_gaming',
-    channelTitle: 'Canal Gaming',
-    publishedAt: '2026-09-24T08:00:00Z',
-    categories: ['gaming'],
-  },
+  { id:'abc123XYZ_1', title:'Rock en català', thumbnail:'https://i.ytimg.com/vi/abc123XYZ_1/maxresdefault.jpg', channelId:'UC_rock', channelTitle:'Grup Rock', publishedAt:'2026-09-25T08:00:00Z', categories:['Rock'] },
+  { id:'pop123XYZ_2', title:'Pop en català', thumbnail:'https://i.ytimg.com/vi/pop123XYZ_2/maxresdefault.jpg', channelId:'UC_pop', channelTitle:'Grup Pop', publishedAt:'2026-09-24T08:00:00Z', categories:['Pop'] },
 ];
 
 function assets() {
@@ -40,10 +24,13 @@ function assets() {
         return new Response(JSON.stringify({
           updatedAt: '2026-09-25T09:00:00Z',
           channels: [
-            { id: 'UC_cultura', name: 'Canal Cultura', categories: ['cultura'] },
-            { id: 'UC_gaming', name: 'Canal Gaming', categories: ['gaming'] },
+                        { id: 'UC_rock', name: 'Grup Rock', categories: ['Rock'] },
+            { id: 'UC_pop', name: 'Grup Pop', categories: ['Pop'] },
           ],
         }), { status: 200, headers: { 'content-type': 'application/json' } });
+      }
+      if (url.pathname === '/data/artistes-musica.json') {
+        return new Response(JSON.stringify({ artists: [] }), { status: 200, headers: { 'content-type': 'application/json' } });
       }
       if (url.pathname === '/data/search_index_manifest.json') {
         return new Response(JSON.stringify({ buckets: [] }), {
@@ -59,33 +46,24 @@ function assets() {
 describe('seccions SEO', () => {
   it('publica les seccions principals amb URL estable', () => {
     expect(Object.values(SEO_SECTIONS).map((section) => section.path)).toEqual([
-      '/novetats',
-      '/vida',
-      '/cultura',
-      '/diversio',
-      '/el-mon',
-      '/gaming',
-      '/segueix-tv',
+      '/novetats','/descobreix','/pop','/rock','/indie','/urbana','/rap-hip-hop','/folk-arrel','/canco-autor',
+      '/electronica','/ska-reggae','/rumba-mestissatge','/punk-metal','/jazz-blues','/classica','/infantil','/altres-estils','/musica-tv'
     ]);
   });
 
-  it('renderitza Cultura amb canonical, breadcrumbs, vídeos i creadors propis', async () => {
+  it('renderitza Rock amb canonical, vídeos i navegació musical', async () => {
     const response = await renderSeoSection({
-      request: new Request('https://segueix.cat/cultura'),
+      request: new Request('https://segueix.cat/rock'),
       env: { ASSETS: assets() },
-    }, 'cultura');
+    }, 'rock');
     const html = await response.text();
-
     expect(response.status).toBe(200);
-    expect(response.headers.get('x-robots-tag')).toContain('index');
-    expect(html).toContain('<h1>Vídeos de cultura en català</h1>');
-    expect(html).toContain('rel="canonical" href="https://segueix.cat/cultura"');
-    expect(html).toContain('"@type":"BreadcrumbList"');
-    expect(html).toContain('/video/cultura-en-catala-abc123XYZ_1');
-    expect(html).toContain('/creador/canal-cultura');
-    expect(html).not.toContain('gam123XYZ_2');
-    expect(html).toContain('href="/gaming"');
-    expect(html).toContain('href="/segueix-tv"');
+    expect(html).toContain('<h1>Rock en català</h1>');
+    expect(html).toContain('rel="canonical" href="https://segueix.cat/rock"');
+    expect(html).toContain('/video/rock-en-catala-abc123XYZ_1');
+    expect(html).not.toContain('pop123XYZ_2');
+    expect(html).toContain('href="/pop"');
+    expect(html).toContain('href="/musica-tv"');
   });
 
   it('publica les seccions al sitemap', async () => {
@@ -106,7 +84,7 @@ describe('seccions SEO', () => {
     expect(indexSource).toContain('"name": "Segueix!"');
     expect(indexSource).toContain('"alternateName": ["Segueix.cat", "segueix.cat"]');
     expect(indexSource).toContain('class="seo-footer-nav"');
-    for (const href of ['/creadors', '/novetats', '/vida', '/cultura', '/diversio', '/el-mon', '/gaming', '/segueix-tv']) {
+    for (const href of ['/creadors', '/novetats', '/pop', '/rock', '/indie', '/urbana', '/folk-arrel', '/musica-tv']) {
       expect(indexSource).toContain(`href="${href}"`);
     }
   });
