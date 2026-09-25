@@ -77,12 +77,21 @@ LIMIT ${LIMIT}
 async function discover() {
     const queries = [
         {
-            evidence: 'wikidata:languages-spoken-catalan',
-            where: `?artist wdt:P1412 wd:${CATALAN}.`,
-        },
-        {
-            evidence: 'wikidata:native-language-catalan',
-            where: `?artist wdt:P103 wd:${CATALAN}.`,
+            evidence: 'wikidata:native-language-catalan-musician',
+            where: `
+?artist wdt:P103 wd:${CATALAN}.
+{
+  ?artist wdt:P31/wdt:P279* wd:Q215380.
+}
+UNION
+{
+  ?artist wdt:P106/wdt:P279* wd:Q639669.
+}
+UNION
+{
+  ?artist wdt:P106/wdt:P279* wd:Q177220.
+}
+`,
         },
         {
             evidence: 'wikidata:performed-catalan-work',
@@ -211,15 +220,28 @@ async function main() {
         }
     }
 
+    const strongSources = new Set([
+        'wikidata:native-language-catalan-musician',
+        'wikidata:performed-catalan-work',
+        'wikidata:native-language-catalan',
+    ]);
+    const beforePrune = data.artists.length;
+    data.artists = data.artists.filter((artist) => {
+        if (artist.reviewStatus !== 'pendent' || artist.active || artist.notes) return true;
+        const evidence = artist.sources.filter((source) => source.startsWith('wikidata:'));
+        return evidence.some((source) => strongSources.has(source));
+    });
+    const pruned = beforePrune - data.artists.length;
+
     data.artists.sort((a, b) => a.name.localeCompare(b.name, 'ca', { sensitivity: 'base' }));
 
-    if (created === 0 && updated === 0) {
+    if (created === 0 && updated === 0 && pruned === 0) {
         console.log(`✅ Sense canvis. Base actual: ${data.artists.length} artistes.`);
         return;
     }
 
     data.updatedAt = now;
-    console.log(`✅ Descoberta: +${created} artistes, ${updated} actualitzats; total ${data.artists.length}.`);
+    console.log(`✅ Descoberta: +${created} artistes, ${updated} actualitzats, -${pruned} candidats febles; total ${data.artists.length}.`);
 
     if (DRY_RUN) {
         console.log('🧪 Dry-run: no s’escriu cap fitxer.');
