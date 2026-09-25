@@ -82,3 +82,39 @@ Proteccions de quota i qualitat:
 - la resta queda a `youtube.searchCandidates` per revisió editorial.
 
 La tasca `Cercar canals YouTube` s'executa cada dia a les 08:17 UTC, després del reinici diari de quota de mitjanit PT.
+
+## Taxonomia de gèneres
+
+Segueix Música conserva dues capes:
+
+- `genresRaw`: etiquetes originals recuperades de Wikidata i MusicBrainz;
+- `genres`: categories normalitzades i pensades per navegar pel producte.
+
+La taxonomia oficial és a `data/music-genres.json`. Un artista pot tenir més d'una categoria.
+
+Categories actuals:
+
+- Pop
+- Rock
+- Indie / Alternativa
+- Urbana
+- Rap / Hip-hop
+- Electrònica
+- Folk i arrel
+- Cançó d'autor
+- Ska / Reggae
+- Punk
+- Metal
+- Rumba / Mestissatge
+- Flamenc
+- Jazz / Blues
+- Funk / Soul / R&B
+- Clàssica i contemporània
+- Coral / Vocal
+- Experimental / Avantguarda
+- Infantil
+- Altres
+
+`Altres` no s'assigna automàticament: si una etiqueta no es pot normalitzar amb prou claredat, queda a `enrichment.genres.unmappedRaw` per revisió.
+
+L'enriquiment usa Wikidata P136 i MusicBrainz `inc=genres`. MusicBrainz es torna a consultar com a màxim cada 90 dies, respectant el límit d'una petició per segon.
