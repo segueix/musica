@@ -1,68 +1,40 @@
-name: Actualitzador feed (manual)
+name: Actualitzador feed musical (manual)
 
-# Temporalment desactivat com a tasca programada.
-# Es reactivarà quan el pipeline de Música i els secrets propis estiguin configurats.
 on:
   workflow_dispatch:
+
+concurrency:
+  group: music-data-writer
+  cancel-in-progress: false
 
 jobs:
   actualitza:
     runs-on: ubuntu-latest
-
+    timeout-minutes: 20
     permissions:
       contents: write
-
     steps:
-      - name: Checkout
-        uses: actions/checkout@v5
-
-      - name: Setup Node
-        uses: actions/setup-node@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: "20"
-
-      - name: Genera feed
+      - name: Sincronitza main
+        run: |
+          git fetch origin main
+          git reset --hard origin/main
+      - name: Genera feed musical
         env:
-          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY_SERVER }}
-          GOOGLE_SHEET_CSV_URL: ${{ secrets.GOOGLE_SHEET_CSV_URL }}
-          VIDEOS_PER_CHANNEL: "50"
-        run: node scripts/update_feed.js
-
-      - name: Sincronitza índex de canals i Service Worker
-        env:
-          GOOGLE_SHEET_CSV_URL: ${{ secrets.GOOGLE_SHEET_CSV_URL }}
-        run: node scripts/sincronitzar_tot.js
-
-      - name: Neteja vídeos privats o suprimits
-        env:
-          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY_SERVER }}
-        run: node scripts/netejar_feed.js
-
-      - name: Depura vídeos no catalans
-        run: node scripts/depurar_videos_catala.js
-
-      - name: Genera índex de cerca
-        run: node scripts/generar_index_cerca.js
-
-      - name: Actualitza versió del Service Worker
-        run: node scripts/actualitzar_versio_sw.js
-
-      - name: Commit i push si hi ha canvis
+          YOUTUBE_API_KEY_SERVER: ${{ secrets.YOUTUBE_API_KEY_SERVER }}
+          MUSIC_VIDEOS_PER_CHANNEL: "15"
+        run: node scripts/update_music_feed.js
+      - name: Publica feed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-
-          git add -f data/feed.json
-          git add -f js/channels-ca.json
-          git add sw.js
-          git rm -q data/search_index.json || true
-          git add -A data
-          git add -f data/channel_map.json 2>/dev/null || true
-
+          git add data/feed.json js/channels-ca.json data/music-feed-audit.json
           if git diff --cached --quiet; then
-            echo "No hi ha canvis per publicar"
+            echo "Feed sense canvis."
             exit 0
           fi
-
-          git commit -m "chore: update feed and search index"
-          git push
+          git commit -m "data: actualitza feed musical"
+          git push origin HEAD:main

@@ -1,0 +1,53 @@
+name: Actualitzar Service Worker Música
+
+on:
+  push:
+    paths:
+      - "index.html"
+      - "js/config.js"
+      - "js/music-categories.js"
+      - "js/youtube.js"
+      - "js/data.js"
+      - "js/app.js"
+      - "js/utils/storage.js"
+      - "js/features/**"
+      - "css/**"
+      - "scripts/actualitzar_versio_sw.js"
+      - ".github/workflows/actualitzar-sw-musica.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: music-data-writer
+  cancel-in-progress: false
+
+jobs:
+  actualitza:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "20"
+
+      - name: Sincronitza main
+        run: |
+          git fetch origin main
+          git reset --hard origin/main
+
+      - name: Regenera versió del Service Worker
+        run: node scripts/actualitzar_versio_sw.js
+
+      - name: Publica si canvia
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add sw.js
+          if git diff --cached --quiet; then
+            echo "Service Worker ja al dia."
+            exit 0
+          fi
+          git commit -m "chore: refresh music service worker"
+          git push origin HEAD:main
