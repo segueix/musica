@@ -55,7 +55,29 @@
           "genres": {
             "type": "array",
             "items": {
-              "type": "string"
+              "type": "string",
+              "enum": [
+                "Pop",
+                "Rock",
+                "Indie / Alternativa",
+                "Urbana",
+                "Rap / Hip-hop",
+                "Electrònica",
+                "Folk i arrel",
+                "Cançó d'autor",
+                "Ska / Reggae",
+                "Punk",
+                "Metal",
+                "Rumba / Mestissatge",
+                "Flamenc",
+                "Jazz / Blues",
+                "Funk / Soul / R&B",
+                "Clàssica i contemporània",
+                "Coral / Vocal",
+                "Experimental / Avantguarda",
+                "Infantil",
+                "Altres"
+              ]
             },
             "uniqueItems": true
           },
@@ -363,8 +385,76 @@
                     "type": "string"
                   }
                 }
+              },
+              "genres": {
+                "type": "object",
+                "required": [
+                  "checkedAt",
+                  "musicbrainzCheckedAt",
+                  "wikidataRaw",
+                  "musicbrainzRaw",
+                  "unmappedRaw",
+                  "status"
+                ],
+                "additionalProperties": true,
+                "properties": {
+                  "checkedAt": {
+                    "type": [
+                      "string",
+                      "null"
+                    ],
+                    "format": "date-time"
+                  },
+                  "musicbrainzCheckedAt": {
+                    "type": [
+                      "string",
+                      "null"
+                    ],
+                    "format": "date-time"
+                  },
+                  "wikidataRaw": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "uniqueItems": true
+                  },
+                  "musicbrainzRaw": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "uniqueItems": true
+                  },
+                  "unmappedRaw": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "uniqueItems": true
+                  },
+                  "status": {
+                    "enum": [
+                      "pendent",
+                      "classificat",
+                      "parcial",
+                      "per-revisar",
+                      "sense-dades"
+                    ]
+                  },
+                  "musicbrainzError": {
+                    "type": "string"
+                  }
+                }
               }
             }
+          },
+          "genresRaw": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
           }
         }
       }
