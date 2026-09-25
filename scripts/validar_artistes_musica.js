@@ -149,9 +149,12 @@ if (!Array.isArray(data.artists)) {
                     }
                 });
             }
-            ['wikidataRaw', 'wikidataWorkRaw', 'musicbrainzRaw', 'musicbrainzTagsRaw', 'unmappedRaw'].forEach((field) => {
+            ['wikidataRaw', 'wikidataWorkRaw', 'musicbrainzRaw', 'unmappedRaw'].forEach((field) => {
                 if (!isStringArray(genreState[field])) fail(`${where}.enrichment.genres.${field} ha de ser un array de textos.`);
             });
+            if (genreState.musicbrainzTagsRaw !== undefined && !isStringArray(genreState.musicbrainzTagsRaw)) {
+                fail(`${where}.enrichment.genres.musicbrainzTagsRaw ha de ser un array de textos si existeix.`);
+            }
             if (!['pendent', 'classificat', 'parcial', 'per-revisar', 'sense-dades'].includes(genreState.status)) {
                 fail(`${where}.enrichment.genres.status no és vàlid.`);
             }
