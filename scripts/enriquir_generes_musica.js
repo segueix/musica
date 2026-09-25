@@ -279,6 +279,11 @@ async function main() {
             unmappedRaw: [],
             status: 'pendent'
         };
+        artist.enrichment.genres.wikidataRaw ||= [];
+        artist.enrichment.genres.wikidataWorkRaw ||= [];
+        artist.enrichment.genres.musicbrainzRaw ||= [];
+        artist.enrichment.genres.musicbrainzTagsRaw ||= [];
+        artist.enrichment.genres.unmappedRaw ||= [];
     }
 
     console.log('🏷️ Wikidata: recuperant gèneres per ' + data.artists.length + ' artistes...');
