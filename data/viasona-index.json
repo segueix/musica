@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "name": "Viasona",
+    "section": "Enciclopèdia",
+    "baseUrl": "https://www.viasona.cat/enciclopedia",
+    "scope": "Artistes i grups que han cantat en català des de 1960",
+    "accessNote": "La indexació es fa progressivament. L'accés automatitzat directe de Viasona pot retornar 403; només s'incorporen entrades amb presència verificable per fonts públiques o revisió manual."
+  },
+  "updatedAt": "2026-09-25T18:40:00Z",
+  "statuses": {
+    "pending-review": "Descobert a Viasona o amb presència verificable; pendent de decidir si compleix els criteris de Segueix Música.",
+    "already-indexed": "Ja existeix a data/artistes-musica.json.",
+    "accepted": "Revisat i acceptat per incorporar a la base principal.",
+    "excluded": "Revisat i exclòs; ha de constar també a data/music-exclusions.json i docs/ARTISTES_EXCLOSOS.md.",
+    "needs-review": "Cas dubtós que necessita revisió manual."
+  },
+  "batches": [
+    {
+      "id": "A-01",
+      "letter": "A",
+      "status": "in-progress",
+      "targetSize": 50,
+      "entries": [
+        {
+          "name": "Al Tall",
+          "viasonaUrl": "https://www.viasona.cat/grup/al-tall",
+          "evidenceUrl": "https://www.viasona.cat/grup/al-tall/deixeu-que-rode-la-roda/tio-canya",
+          "status": "already-indexed",
+          "inMainDatabase": true,
+          "notes": "Presència a Viasona verificada mitjançant URL de cançó; ja existeix a artistes-musica.json."
+        },
+        {
+          "name": "Antònia Font",
+          "viasonaUrl": "https://www.viasona.cat/grup/antonia-font",
+          "evidenceUrl": "https://www.viasona.cat/grup/antonia-font/alegria",
+          "status": "already-indexed",
+          "inMainDatabase": true,
+          "notes": "Presència a Viasona verificada mitjançant URL d'àlbum; ja existeix a artistes-musica.json."
+        },
+        {
+          "name": "Aspencat",
+          "viasonaUrl": "https://www.viasona.cat/grup/aspencat",
+          "evidenceUrl": "https://www.viasona.cat/grup/aspencat",
+          "status": "already-indexed",
+          "inMainDatabase": true,
+          "notes": "Presència a Viasona verificada per referència pública directa; ja existeix a artistes-musica.json."
+        },
+        {
+          "name": "Atupa",
+          "viasonaUrl": "https://www.viasona.cat/grup/atupa",
+          "evidenceUrl": "https://www.viasona.cat/grup/atupa#albums",
+          "status": "already-indexed",
+          "inMainDatabase": true,
+          "notes": "Presència a Viasona verificada per referència pública directa; ja existeix a artistes-musica.json."
+        },
+        {
+          "name": "Auxili",
+          "viasonaUrl": "https://www.viasona.cat/grup/auxili",
+          "evidenceUrl": "https://www.viasona.cat/grup/auxili/instants-cremant/com-el-foc",
+          "status": "already-indexed",
+          "inMainDatabase": true,
+          "notes": "Presència a Viasona verificada mitjançant URL de cançó; ja existeix a artistes-musica.json."
+        },
+        {
+          "name": "Aucell Cantaire",
+          "viasonaUrl": "https://www.viasona.cat/grup/aucell-cantaire",
+          "evidenceUrl": "https://www.viasona.cat/grup/aucell-cantaire/poetes/la-font",
+          "status": "pending-review",
+          "inMainDatabase": false,
+          "notes": "Presència a Viasona verificada mitjançant URL de cançó. Pendent de revisar criteri editorial i completar identificadors."
+        },
+        {
+          "name": "Atzembla",
+          "viasonaUrl": "https://www.viasona.cat/grup/atzembla",
+          "evidenceUrl": "http://www.viasona.cat/grup/atzembla",
+          "status": "pending-review",
+          "inMainDatabase": false,
+          "notes": "Presència a Viasona verificada per referència pública directa. Pendent de revisar i completar."
+        },
+        {
+          "name": "Anegats",
+          "viasonaUrl": null,
+          "evidenceUrl": "https://illasonora.cat/grups/anegats",
+          "status": "pending-review",
+          "inMainDatabase": false,
+          "notes": "Illa Sonora enllaça explícitament la fitxa de Viasona d'Anegats. Cal confirmar l'URL canònica de Viasona abans de marcar la fitxa com a completament verificada."
+        }
+      ]
+    }
+  ]
+}
