@@ -1,7 +1,7 @@
 {
-  "name": "segueix",
+  "name": "segueix-musica",
   "private": true,
-  "description": "Segueix — PWA de continguts",
+  "description": "Segueix Música — PWA per descobrir música en català",
   "scripts": {
     "lint": "eslint 'js/**/*.js'",
     "lint:fix": "eslint --fix 'js/**/*.js'",
@@ -9,6 +9,7 @@
     "format:check": "prettier --check 'js/**/*.js' '*.js' '*.json' 'css/**/*.css'",
     "test": "vitest run",
     "test:watch": "vitest",
+    "music:validate": "node scripts/validar_artistes_musica.js",
     "search:index": "node scripts/generar_index_cerca.js",
     "search:index:hybrid:rebuild": "node scripts/generar_index_cerca.js",
     "sw:version": "node scripts/actualitzar_versio_sw.js"

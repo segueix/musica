@@ -1,19 +1,13 @@
-name: Depurador català
+name: Depurador català (manual)
 
+# El trigger per push del projecte original queda desactivat temporalment.
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - "scripts/depurar_videos_catala.js"
-      - "tests/depurador-idioma.test.js"
-      - ".github/workflows/depurador-catala.yml"
   workflow_dispatch:
     inputs:
       dry_run:
         description: "Simula la depuració sense modificar fitxers"
         required: false
-        default: false
+        default: true
         type: boolean
 
 jobs:

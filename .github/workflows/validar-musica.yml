@@ -1,0 +1,29 @@
+name: Validar base musical
+
+on:
+  push:
+    paths:
+      - "data/artistes-musica.json"
+      - "data/artistes-musica.schema.json"
+      - "scripts/validar_artistes_musica.js"
+  pull_request:
+    paths:
+      - "data/artistes-musica.json"
+      - "data/artistes-musica.schema.json"
+      - "scripts/validar_artistes_musica.js"
+  workflow_dispatch:
+
+jobs:
+  valida:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Setup Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: "20"
+
+      - name: Valida la base d'artistes
+        run: node scripts/validar_artistes_musica.js

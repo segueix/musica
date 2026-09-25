@@ -1,15 +1,13 @@
-name: Revisar Shorts
+name: Revisar Shorts (manual)
+
+# Sense schedule fins que Música tingui feed i API propis.
 on:
-  workflow_dispatch: # Permet executar-ho manualment des de GitHub
-  schedule:
-    - cron: '0 3 * * *' # Executa cada dia a les 03:00 UTC
+  workflow_dispatch:
 
 jobs:
   revisar_i_corregir:
     runs-on: ubuntu-latest
-    # S'executa tant manualment com en execució programada
-    if: ${{ github.event_name == 'workflow_dispatch' || github.event_name == 'schedule' }}
-    
+
     steps:
       - name: Checkout del codi
         uses: actions/checkout@v4
@@ -31,11 +29,10 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add data/feed.json data/falsos-shorts.json
 
-          # Només fa el commit si hi ha canvis preparats
           if git diff --staged --quiet; then
             echo "Sense canvis a publicar."
           else
-            git commit -m "🤖 Auto-correcció de falsos Shorts"
+            git commit -m "chore: revisa falsos Shorts"
             git pull --rebase origin "${GITHUB_REF_NAME}"
             git push origin "HEAD:${GITHUB_REF_NAME}"
           fi

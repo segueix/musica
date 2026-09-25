@@ -1,0 +1,174 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Base d'artistes de Segueix Música",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "updatedAt",
+    "artists"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "updatedAt": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "artists": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "aliases",
+          "genres",
+          "territories",
+          "languages",
+          "wikidataId",
+          "musicbrainzId",
+          "youtube",
+          "confidence",
+          "active",
+          "sources",
+          "lastChecked",
+          "notes"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "aliases": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          },
+          "genres": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          },
+          "territories": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          },
+          "languages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          },
+          "wikidataId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "pattern": "^Q[0-9]+$"
+          },
+          "musicbrainzId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "pattern": "^[0-9a-fA-F-]{36}$"
+          },
+          "youtube": {
+            "type": "object",
+            "required": [
+              "channels"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "channels": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "id",
+                    "handle",
+                    "name",
+                    "type",
+                    "primary"
+                  ],
+                  "additionalProperties": false,
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "pattern": "^UC[A-Za-z0-9_-]{22}$"
+                    },
+                    "handle": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "pattern": "^@.+"
+                    },
+                    "name": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "type": {
+                      "enum": [
+                        "official",
+                        "topic",
+                        "label",
+                        "other"
+                      ]
+                    },
+                    "primary": {
+                      "type": "boolean"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "confidence": {
+            "enum": [
+              "alta",
+              "mitjana",
+              "baixa",
+              "pendent"
+            ]
+          },
+          "active": {
+            "type": "boolean"
+          },
+          "sources": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          },
+          "lastChecked": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

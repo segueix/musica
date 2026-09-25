@@ -1,10 +1,8 @@
-name: Actualitzador feed
+name: Actualitzador feed (manual)
 
+# Temporalment desactivat com a tasca programada.
+# Es reactivarà quan el pipeline de Música i els secrets propis estiguin configurats.
 on:
-  schedule:
-    # Execució a les 8, 12, 18 i 22 (hora UTC). Ajusta els valors si vols
-    # fer-ho coincidir amb una altra zona horària (GitHub Actions no gestiona DST).
-    - cron: "0 8,12,18,22 * * *"
   workflow_dispatch:
 
 jobs:
@@ -46,7 +44,7 @@ jobs:
       - name: Genera índex de cerca
         run: node scripts/generar_index_cerca.js
 
-      - name: Actualitza versió del Service Worker (només si canvia el codi)
+      - name: Actualitza versió del Service Worker
         run: node scripts/actualitzar_versio_sw.js
 
       - name: Commit i push si hi ha canvis
@@ -54,16 +52,6 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          echo "=== Debug: ls data ==="
-          ls -la data || true
-
-          echo "=== Debug: git check-ignore data/feed.json ==="
-          git check-ignore -v data/feed.json || true
-
-          echo "=== Debug: git status abans ==="
-          git status --ignored --porcelain || true
-
-          echo "=== Forca add del feed ==="
           git add -f data/feed.json
           git add -f js/channels-ca.json
           git add sw.js
@@ -71,11 +59,8 @@ jobs:
           git add -A data
           git add -f data/channel_map.json 2>/dev/null || true
 
-          echo "=== Debug: git status despres ==="
-          git status --porcelain || true
-
           if git diff --cached --quiet; then
-            echo "No hi ha canvis staged (feed igual o encara ignorat)"
+            echo "No hi ha canvis per publicar"
             exit 0
           fi
 
