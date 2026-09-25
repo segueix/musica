@@ -7,7 +7,9 @@ on:
       - "data/artistes-musica.schema.json"
       - "scripts/validar_artistes_musica.js"
       - "scripts/enriquir_artistes_musicbrainz.js"
+      - "scripts/cercar_canals_youtube.js"
       - "tests/musicbrainz-enrichment.test.js"
+      - "tests/youtube-search-candidates.test.js"
       - ".github/workflows/validar-musica.yml"
   pull_request:
     paths:
@@ -15,7 +17,9 @@ on:
       - "data/artistes-musica.schema.json"
       - "scripts/validar_artistes_musica.js"
       - "scripts/enriquir_artistes_musicbrainz.js"
+      - "scripts/cercar_canals_youtube.js"
       - "tests/musicbrainz-enrichment.test.js"
+      - "tests/youtube-search-candidates.test.js"
       - ".github/workflows/validar-musica.yml"
   workflow_dispatch:
 
@@ -36,6 +40,9 @@ jobs:
 
       - name: Test parser MusicBrainz
         run: npx vitest run tests/musicbrainz-enrichment.test.js
+
+      - name: Test puntuació cerca YouTube
+        run: npx vitest run tests/youtube-search-candidates.test.js
 
       - name: Valida la base d'artistes
         run: node scripts/validar_artistes_musica.js
