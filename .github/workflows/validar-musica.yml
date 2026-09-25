@@ -6,6 +6,12 @@ on:
       - "data/artistes-musica.json"
       - "data/artistes-musica.schema.json"
       - "scripts/validar_artistes_musica.js"
+      - "scripts/enriquir_artistes_musicbrainz.js"
+      - "tests/musicbrainz-enrichment.test.js"
+      - ".github/workflows/validar-musica.yml"
+      - "scripts/enriquir_artistes_musicbrainz.js"
+      - "tests/musicbrainz-enrichment.test.js"
+      - ".github/workflows/validar-musica.yml"
   pull_request:
     paths:
       - "data/artistes-musica.json"
@@ -24,6 +30,12 @@ jobs:
         uses: actions/setup-node@v5
         with:
           node-version: "20"
+
+      - name: Instal·la dependències
+        run: npm ci
+
+      - name: Test parser MusicBrainz
+        run: npx vitest run tests/musicbrainz-enrichment.test.js
 
       - name: Valida la base d'artistes
         run: node scripts/validar_artistes_musica.js
