@@ -7,6 +7,7 @@ const OUTPUT = path.join(process.cwd(), 'data', 'artistes-musica.json');
 const WIKIDATA_ENDPOINT = 'https://query.wikidata.org/sparql';
 const CATALAN = 'Q7026';
 const USER_AGENT = 'Segueix-Musica/0.1 (https://github.com/segueix/musica)';
+const PSEUDO_ARTIST_MBIDS = new Set(['89ad4ac3-39f7-470e-963a-56509c546377']);
 
 function argNumber(name, fallback) {
     const prefix = `--${name}=`;
@@ -213,6 +214,7 @@ async function main() {
     let updated = 0;
 
     for (const candidate of candidates) {
+        if (PSEUDO_ARTIST_MBIDS.has(candidate.musicbrainzId)) continue;
         const existing = byQid.get(candidate.wikidataId);
         if (!existing) {
             const artist = newArtist(candidate, now);
@@ -230,6 +232,7 @@ async function main() {
     ]);
     const beforePrune = data.artists.length;
     data.artists = data.artists.filter((artist) => {
+        if (PSEUDO_ARTIST_MBIDS.has(artist.musicbrainzId) && artist.reviewStatus === 'pendent' && !artist.active) return false;
         if (artist.reviewStatus !== 'pendent' || artist.active || artist.notes) return true;
         const evidence = artist.sources.filter((source) => source.startsWith('wikidata:'));
         return evidence.some((source) => strongSources.has(source));
