@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-25T16:33:15.848Z",
+  "updatedAt": "2026-09-25T16:34:12.009Z",
   "artists": [
     {
       "name": "31 FAM",
@@ -3151,7 +3151,66 @@
       "musicbrainzId": "0e263fb1-3145-4b61-b3fc-3d99a515baec",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UC0EB-hSs5R5X4DGiSkY_-mw",
+            "title": "Els Pets - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 2990,
+            "thumbnail": "https://yt3.ggpht.com/vu9JWT-6iuA2_IW374nlyg0DgBEiZelU2kigWVK6osbbOvMlCzH73LSjnwhQzDMNN1vNFou45A=s240-c-k-c0x00ffffff-no-rj",
+            "score": 85,
+            "reasons": [
+              "nom exacte de canal Topic",
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-25T16:34:01.560Z"
+          },
+          {
+            "id": "UCLyS6_AjQKIbL4C2BByWjmQ",
+            "title": "阿亚伊奥",
+            "handle": "@阿亚伊奥",
+            "description": "\n",
+            "subscriberCount": 10600,
+            "thumbnail": "https://yt3.ggpht.com/vu9JWT-6iuA2_IW374nlyg0DgBEiZelU2kigWVK6osbbOvMlCzH73LSjnwhQzDMNN1vNFou45A=s240-c-k-c0x00ffffff-no-rj",
+            "score": 35,
+            "reasons": [
+              "nom parcial"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-25T16:34:01.560Z"
+          },
+          {
+            "id": "UCV4rGI-t1ehir__UXavnbZg",
+            "title": "discmedielspets",
+            "handle": "@discmedielspets",
+            "description": "",
+            "subscriberCount": 3880,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_n5zviQST45aCR7-nTXI9qHlBOdxhBiUuEH0UhNMvB_bQ=s240-c-k-c0x00ffffff-no-rj",
+            "score": 18,
+            "reasons": [
+              "handle coincident"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-25T16:34:01.560Z"
+          },
+          {
+            "id": "UCYLw9esbkWTiWH9PoSlnjXw",
+            "title": "elspetsoficial",
+            "handle": "@elspetsoficial",
+            "description": "",
+            "subscriberCount": 187,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_lkaNAjMLL16eciFdlGySIMrwdb-9mDKMb1fKO0kdM=s240-c-k-c0x00ffffff-no-rj",
+            "score": 18,
+            "reasons": [
+              "handle coincident"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-25T16:34:01.560Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -3167,6 +3226,14 @@
           "checkedAt": "2026-09-25T15:54:29.662Z",
           "status": "sense-youtube",
           "relationCount": 0
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-25T16:34:01.560Z",
+          "status": "candidats",
+          "query": "Els Pets",
+          "resultCount": 4,
+          "bestScore": 85,
+          "autoAcceptedId": null
         }
       }
     },
@@ -3182,7 +3249,8 @@
       "musicbrainzId": "d128bfee-0f2a-4f82-a87e-86a29c9a35d2",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -3198,6 +3266,14 @@
           "checkedAt": "2026-09-25T15:54:31.068Z",
           "status": "sense-youtube",
           "relationCount": 0
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-25T16:34:02.131Z",
+          "status": "sense-resultats",
+          "query": "Emili Vendrell i Coutier",
+          "resultCount": 0,
+          "bestScore": 0,
+          "autoAcceptedId": null
         }
       }
     },
@@ -3213,7 +3289,35 @@
       "musicbrainzId": "9111a47c-732b-46b9-84a3-5a9dc3ed8306",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UCWMYyK5fZ3sV7RVNUYkfJdA",
+            "title": "Emili Vendrell - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 140,
+            "thumbnail": "https://yt3.ggpht.com/oJysBmBOco42nEJQEs6nw4ssbIzWVsFTV7eXfQMTuun4SSzjPQNxpMiwpGG2SItcjWOg-nwin28=s240-c-k-c0x00ffffff-no-rj",
+            "score": 5,
+            "reasons": [
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-25T16:34:02.409Z"
+          },
+          {
+            "id": "UC64a4OZG_WRSZboHcwaJjmA",
+            "title": "musica",
+            "handle": "@musica-jp5cd",
+            "description": "",
+            "subscriberCount": 190,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_ncCExnH0gaMfUUoAzXZAJF3EtRapuNuAXG_qj5b0F_OQ=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-25T16:34:02.409Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -3229,6 +3333,14 @@
           "checkedAt": "2026-09-25T15:54:32.448Z",
           "status": "sense-youtube",
           "relationCount": 0
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-25T16:34:02.409Z",
+          "status": "candidats",
+          "query": "Emili Vendrell i Ibars",
+          "resultCount": 2,
+          "bestScore": 5,
+          "autoAcceptedId": null
         }
       }
     },
@@ -3244,7 +3356,23 @@
       "musicbrainzId": "4eaaa457-b736-4315-8e3d-34cb674bb900",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UCKiAFx9q4UNwKWB2IxSV0Fw",
+            "title": "Enric Madriguera - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 61,
+            "thumbnail": "https://yt3.ggpht.com/XsokFjbXroxj-VeAd2kRsZZIDMdenkP_MfNnva0iJfdw8UzA3fEwLtYtvhWV9vZEA3k8PzOb=s240-c-k-c0x00ffffff-no-rj",
+            "score": 5,
+            "reasons": [
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-25T16:34:03.069Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -3262,6 +3390,14 @@
           "checkedAt": "2026-09-25T15:54:33.895Z",
           "status": "sense-youtube",
           "relationCount": 0
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-25T16:34:03.069Z",
+          "status": "candidats",
+          "query": "Enric Madriguera i Rodon",
+          "resultCount": 1,
+          "bestScore": 5,
+          "autoAcceptedId": null
         }
       }
     },
@@ -3277,7 +3413,53 @@
       "musicbrainzId": "d5ef76d8-e91e-4499-803e-3143813b04e5",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UCv6aLx9OL9Qzc2nmNT5_IdA",
+            "title": "Esquirols - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 747,
+            "thumbnail": "https://yt3.ggpht.com/MXhBUH5tRhUNC4AOKJntBNvLLOO_ckOqVa6aMikS0NH8oT_uGVeN_nZh0-hoFMapZtzpZoRKVQ=s240-c-k-c0x00ffffff-no-rj",
+            "score": 85,
+            "reasons": [
+              "nom exacte de canal Topic",
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-25T16:34:03.706Z"
+          },
+          {
+            "id": "UCZwzEdnuOt7xN3tdUYS9UIw",
+            "title": "els esquirols",
+            "handle": "@elsesquirols4769",
+            "description": "",
+            "subscriberCount": 928,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_nxVdgNn0OcAJcpXwYeI9rawHMNR7kY1oXFSVR6-lAHew=s240-c-k-c0x00ffffff-no-rj",
+            "score": 53,
+            "reasons": [
+              "nom parcial",
+              "handle coincident"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-25T16:34:03.706Z"
+          },
+          {
+            "id": "UC1tgu9zSi50HAX_4FXvgQ-Q",
+            "title": "Esquirol",
+            "handle": "@esquirol-kawaii",
+            "description": "Chanel VS Rolex 🫦🔥",
+            "subscriberCount": 184,
+            "thumbnail": "https://yt3.ggpht.com/96oLufuE6JkxCrkHJ3lreBA9SQm2boVWuhx6ejE-Xnk1UA1-8z39NGaDAJSdI1qeJqEXLXhg=s240-c-k-c0x00ffffff-no-rj",
+            "score": 35,
+            "reasons": [
+              "nom parcial"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-25T16:34:03.706Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -3294,6 +3476,14 @@
           "checkedAt": "2026-09-25T15:54:35.362Z",
           "status": "sense-youtube",
           "relationCount": 0
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-25T16:34:03.706Z",
+          "status": "candidats",
+          "query": "Esquirols",
+          "resultCount": 3,
+          "bestScore": 85,
+          "autoAcceptedId": null
         }
       }
     },
@@ -3309,7 +3499,47 @@
       "musicbrainzId": "2ee83e5a-15c1-4239-96ce-47074f1f827f",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UCS52L7FhuL9P1ZvXxDJwv4g",
+            "title": "ESTHER - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 183,
+            "thumbnail": "https://yt3.ggpht.com/ZsY7eZoCdI8dgIq0Ac6UaskR-heAhQ-yZ5fytFB-XfOIbW9GaeWrIA-UtEF6_TuYJhU4R1dNPTo=s240-c-k-c0x00ffffff-no-rj",
+            "score": 5,
+            "reasons": [
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-25T16:34:04.119Z"
+          },
+          {
+            "id": "UCouw5jG-XQKAuUA4FHGDwGw",
+            "title": "ESTHER - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 22,
+            "thumbnail": "https://yt3.ggpht.com/E1oOEh1w92EvugcFJ-i-qjQ6kKLIctKllzVeJaf0BEcV-EPUeYgatMw8WNhwVgGG1Q2tT1AWWg=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-25T16:34:04.119Z"
+          },
+          {
+            "id": "UC32gk92YUs2xI91_LAS9DHw",
+            "title": "esssthxr",
+            "handle": "@esssthxr",
+            "description": "\n",
+            "subscriberCount": 339,
+            "thumbnail": "https://yt3.ggpht.com/rtbByH1vHUMV0WOGIukiE4ySLZBrIwjllUP-T4dQXFzSQ2fDibnUzm9ad8mAFQKc-6Fw9iev=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-25T16:34:04.119Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -3327,6 +3557,14 @@
           "checkedAt": "2026-09-25T15:54:36.662Z",
           "status": "sense-youtube",
           "relationCount": 0
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-25T16:34:04.119Z",
+          "status": "candidats",
+          "query": "Esther Querol Forner",
+          "resultCount": 3,
+          "bestScore": 5,
+          "autoAcceptedId": null
         }
       }
     },
@@ -3466,7 +3704,53 @@
       "musicbrainzId": "47f9bd13-ca39-408b-b467-f25eb56de3d7",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UCemRvkxHIe6M0528tlf2Gpw",
+            "title": "Franca Masu - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 159,
+            "thumbnail": "https://yt3.ggpht.com/oyxDQmChxo55lzTiRvkisjIx8U9Gd8opBDsBMhl1p8LBkcOQ1h2Q9YJQ4TamMVjxlIXLwx2eyQ=s240-c-k-c0x00ffffff-no-rj",
+            "score": 85,
+            "reasons": [
+              "nom exacte de canal Topic",
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-25T16:34:04.504Z"
+          },
+          {
+            "id": "UCABUQTyv7xvrDL-CXpqj6rA",
+            "title": "Franca Masu",
+            "handle": "@musicantme",
+            "description": "Franca Masu Official Youtube Channel",
+            "subscriberCount": 938,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_kAhx8Wt7vwqb5EaQX830eWuYsQLgEwO7DkUFKNs-S3lA=s240-c-k-c0x00ffffff-no-rj",
+            "score": 80,
+            "reasons": [
+              "nom exacte",
+              "marca oficial"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-25T16:34:04.504Z"
+          },
+          {
+            "id": "UC6Md27ZZOIr6Qvr1-nC1ARw",
+            "title": "Franca Masu - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 10,
+            "thumbnail": "https://yt3.ggpht.com/Qcu1XpXQ_va1tKyYK7JVn-gE4FrziVxLbkjKZL42ReUiNXQ3G6FyuczOs9XPGQbWq4ORiJBX=s240-c-k-c0x00ffffff-no-rj",
+            "score": 80,
+            "reasons": [
+              "nom exacte de canal Topic"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-25T16:34:04.504Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -3484,6 +3768,14 @@
           "checkedAt": "2026-09-25T15:54:37.999Z",
           "status": "sense-youtube",
           "relationCount": 0
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-25T16:34:04.504Z",
+          "status": "candidats",
+          "query": "Franca Masu",
+          "resultCount": 3,
+          "bestScore": 85,
+          "autoAcceptedId": null
         }
       }
     },
@@ -3499,7 +3791,47 @@
       "musicbrainzId": "8ce0fefd-51fe-40f2-8761-a9654d493bc1",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UCFdgkATOLy45MTxZuN6lRyw",
+            "title": "Paquita Madriguera - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 33,
+            "thumbnail": "https://yt3.ggpht.com/L85GRCLx0NWuUOB6fFLPA9EQNyOt9FOEpywfwuABikM2nC24aCNGS_ovR9U7DgmqXmb5wVmS=s240-c-k-c0x00ffffff-no-rj",
+            "score": 5,
+            "reasons": [
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-25T16:34:04.823Z"
+          },
+          {
+            "id": "UCKiAFx9q4UNwKWB2IxSV0Fw",
+            "title": "Enric Madriguera - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 61,
+            "thumbnail": "https://yt3.ggpht.com/XsokFjbXroxj-VeAd2kRsZZIDMdenkP_MfNnva0iJfdw8UzA3fEwLtYtvhWV9vZEA3k8PzOb=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-25T16:34:04.823Z"
+          },
+          {
+            "id": "UC7mop0YGBLYyLrWZFS-SFxA",
+            "title": "Paquita Madriguera Segovia - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 3,
+            "thumbnail": "https://yt3.ggpht.com/ZTFxSN6ymL5NgruLck5ReelQZXMd-qCThV4Ni1fpsWRJeLIgqZcDi6kh_1PwoUV4B29KXScVtQk=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-25T16:34:04.823Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -3516,6 +3848,14 @@
           "checkedAt": "2026-09-25T15:54:39.313Z",
           "status": "sense-youtube",
           "relationCount": 0
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-25T16:34:04.823Z",
+          "status": "candidats",
+          "query": "Francesca Madriguera i Rodon",
+          "resultCount": 3,
+          "bestScore": 5,
+          "autoAcceptedId": null
         }
       }
     },
@@ -3531,7 +3871,53 @@
       "musicbrainzId": "575f99fa-81a8-48ee-b27d-92ca62c32b2e",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UCM2VCmr1GbyXNO0Uu8h_p8A",
+            "title": "Geoffrey Parsons",
+            "handle": "@geoffreyparsons8089",
+            "description": "",
+            "subscriberCount": 0,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_nZgpbX_IVChJqGSXrCoUTWO0HdnWE1bomNU-F80A4=s240-c-k-c0x00ffffff-no-rj",
+            "score": 88,
+            "reasons": [
+              "nom exacte",
+              "handle coincident"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-25T16:34:05.195Z"
+          },
+          {
+            "id": "UClmjUFrWdbWRPt_YU6QhyJA",
+            "title": "Geoffrey Parsons - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 237,
+            "thumbnail": "https://yt3.ggpht.com/Yapl1MAeGCQ3sSI3Jzs2ZhR53LmUY4yGVhpnEEwM43rGlkshm2JGTVgcWGXBxU_gcK07P-4l=s240-c-k-c0x00ffffff-no-rj",
+            "score": 85,
+            "reasons": [
+              "nom exacte de canal Topic",
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-25T16:34:05.195Z"
+          },
+          {
+            "id": "UCQ1gbDFRftm8DJdiIAlClRQ",
+            "title": "Olaf Bär/Geoffrey Parsons - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 14,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_mty4LOIvUzXpPrsED6aRD1v7R5qvwb1KztYpQ1HWrVAfcTt6_MSzSZmCzyuxdJ9P4pHg=s240-c-k-c0x00ffffff-no-rj",
+            "score": 35,
+            "reasons": [
+              "nom parcial"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-25T16:34:05.195Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -3547,6 +3933,14 @@
           "checkedAt": "2026-09-25T15:54:40.738Z",
           "status": "sense-youtube",
           "relationCount": 0
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-25T16:34:05.195Z",
+          "status": "candidats",
+          "query": "Geoffrey Parsons",
+          "resultCount": 3,
+          "bestScore": 88,
+          "autoAcceptedId": null
         }
       }
     },
@@ -3562,7 +3956,53 @@
       "musicbrainzId": "62a7f13f-3359-4e9d-a408-687d835a21ec",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UC_nlyjkIdPSWKkzbWK7Q-0w",
+            "title": "Germà Negre",
+            "handle": "@germanegre",
+            "description": "Germà Negre és l'essència de la Festa Major en estat pur. La seva fórmula és una selecció de cançons pròpies i tot tipus d’adaptacions de repertori popular amb un clar aire festiu. Perversió de les lletres i un espectacle participatiu, creen un espai popular i festiu perquè suïn d’alegria tots els participants del recital. Sis banyolins sobre l’esc",
+            "subscriberCount": 943,
+            "thumbnail": "https://yt3.ggpht.com/DCWjF2k4gBD7DE5khIfh9OfUY_4WqfWCHuNsEO2vefNqAJgOtxeJqz0lG0xtT_zX_m3jLSuC=s240-c-k-c0x00ffffff-no-rj",
+            "score": 95,
+            "reasons": [
+              "nom exacte",
+              "handle exacte"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-25T16:34:05.676Z"
+          },
+          {
+            "id": "UCFI6QGe27kctP5lGeugsrhA",
+            "title": "Germà Negre - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 112,
+            "thumbnail": "https://yt3.ggpht.com/B4yhMDgLCBOk668Z2L-RRRq-k9eXGG0T7rHvEz6-gy8O2fbW5doUhTdqe43YH-ic34eumJdyDQ=s240-c-k-c0x00ffffff-no-rj",
+            "score": 85,
+            "reasons": [
+              "nom exacte de canal Topic",
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-25T16:34:05.676Z"
+          },
+          {
+            "id": "UC2u_DiA1-XcqwkcOtaA0mWA",
+            "title": "Germà Negre - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 11,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_k677mSp99eQLr7FsOn8SbJzT1Sa1nMUvkJX4qCvn0aPNaZ3xuiM4eKIIzArYaFWYy_8g=s240-c-k-c0x00ffffff-no-rj",
+            "score": 80,
+            "reasons": [
+              "nom exacte de canal Topic"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-25T16:34:05.676Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -3578,6 +4018,14 @@
           "checkedAt": "2026-09-25T15:54:42.196Z",
           "status": "sense-youtube",
           "relationCount": 0
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-25T16:34:05.676Z",
+          "status": "candidats",
+          "query": "Germà Negre",
+          "resultCount": 3,
+          "bestScore": 95,
+          "autoAcceptedId": null
         }
       }
     },
@@ -3725,7 +4173,53 @@
       "musicbrainzId": "a43b3d79-438d-4011-9b18-4a1ed55193c8",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UCmHet2Of06yJ17i-21GB9aQ",
+            "title": "Guillamino - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 0,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_mJUxkkmi665AmRCz4ilJfPTAan1TU452g2UM5ek9PklkcAAb7dnzzInZhXZe_Ftp4s2g=s240-c-k-c0x00ffffff-no-rj",
+            "score": 80,
+            "reasons": [
+              "nom exacte de canal Topic"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-25T16:34:06.082Z"
+          },
+          {
+            "id": "UCbDDrmxgYp9c8wNLjMaDM4A",
+            "title": "Guillamino - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 67,
+            "thumbnail": "https://yt3.ggpht.com/ylaONIKZ-SUercnpK73GSRWmihAOuo4KL_PxuWarlnrTARt3za3TzEeTRlzza3B4S0fCXnhnuA=s240-c-k-c0x00ffffff-no-rj",
+            "score": 80,
+            "reasons": [
+              "nom exacte de canal Topic"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-25T16:34:06.082Z"
+          },
+          {
+            "id": "UCjhhWN8qpUARZlfUd61G-5Q",
+            "title": "𝒢𝒖𝒊𝓁𝓁𝒶𝓂𝒾𝒏𝒐",
+            "handle": "@guillaminoofficial",
+            "description": "\n\n",
+            "subscriberCount": 1200,
+            "thumbnail": "https://yt3.ggpht.com/ylaONIKZ-SUercnpK73GSRWmihAOuo4KL_PxuWarlnrTARt3za3TzEeTRlzza3B4S0fCXnhnuA=s240-c-k-c0x00ffffff-no-rj",
+            "score": 58,
+            "reasons": [
+              "nom parcial",
+              "handle coincident",
+              "primer resultat"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-25T16:34:06.082Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -3742,6 +4236,14 @@
           "checkedAt": "2026-09-25T15:54:43.736Z",
           "status": "sense-youtube",
           "relationCount": 0
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-25T16:34:06.082Z",
+          "status": "candidats",
+          "query": "Guillamino",
+          "resultCount": 3,
+          "bestScore": 80,
+          "autoAcceptedId": null
         }
       }
     },
@@ -3757,7 +4259,49 @@
       "musicbrainzId": "33d6da31-3518-42f9-b371-7509e93ec0bd",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UCWqkDJA-JbPHz_0WC2wouqg",
+            "title": "Guillem Gisbert",
+            "handle": "@guillemgisbert",
+            "description": "",
+            "subscriberCount": 2010,
+            "thumbnail": "https://yt3.ggpht.com/nd3EH4XXDvD6laJ3l3x9scx8N62g5YnKxhUbKnhm_0bjBxCKcgOYYnDupnFr-xsW9bccDZAn3kU=s240-c-k-c0x00ffffff-no-rj",
+            "score": 58,
+            "reasons": [
+              "nom parcial",
+              "handle coincident",
+              "primer resultat"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-25T16:34:06.551Z"
+          },
+          {
+            "id": "UC31YQMpvgYhx9QLHypLtQpw",
+            "title": "Guillem Gisbert - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 101,
+            "thumbnail": "https://yt3.ggpht.com/nd3EH4XXDvD6laJ3l3x9scx8N62g5YnKxhUbKnhm_0bjBxCKcgOYYnDupnFr-xsW9bccDZAn3kU=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-25T16:34:06.551Z"
+          },
+          {
+            "id": "UCNSmn5NLUDrV_paFZl--7qw",
+            "title": "La Sotana",
+            "handle": "@lasotana",
+            "description": "",
+            "subscriberCount": 69000,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_mO0v5nKplUkfqSab7DdXQSvTWrnqIgF1CafWsUG4IvAec=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-25T16:34:06.551Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -3773,6 +4317,14 @@
           "checkedAt": "2026-09-25T15:54:45.205Z",
           "status": "sense-youtube",
           "relationCount": 0
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-25T16:34:06.551Z",
+          "status": "candidats",
+          "query": "Guillem Gisbert i Puig",
+          "resultCount": 3,
+          "bestScore": 58,
+          "autoAcceptedId": null
         }
       }
     },
@@ -3788,7 +4340,53 @@
       "musicbrainzId": "f962cece-5c70-4b77-a56c-7a0b6cb199ea",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UChtbVT33y40DoINPhxpavhQ",
+            "title": "Guillermina Motta",
+            "handle": "@guillerminamotta-e4r",
+            "description": "",
+            "subscriberCount": 0,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_nxD7eTXBA5iUaLZmCQrPDXyKw9eMZ7JKRriegncRoCnn_XRrAEQ7ckpgil4YDZdF1_DQ=s240-c-k-c0x00ffffff-no-rj",
+            "score": 88,
+            "reasons": [
+              "nom exacte",
+              "handle coincident"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-25T16:34:06.930Z"
+          },
+          {
+            "id": "UCyhZSV8Dh0pQi09p1vECRVA",
+            "title": "Guillermina Motta - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 611,
+            "thumbnail": "https://yt3.ggpht.com/qmIhZBXbdr3l24qGgvptpS6ADZut6_JBVrTRo-GYA2drDd08OINA0PGhhehalFMAMtrE-VxC=s240-c-k-c0x00ffffff-no-rj",
+            "score": 85,
+            "reasons": [
+              "nom exacte de canal Topic",
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-25T16:34:06.930Z"
+          },
+          {
+            "id": "UCaztkiwT4Zy2h1GZMBEesKw",
+            "title": "Guillermina Motta & La Trinca - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 80,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_khmeWaPqEFFNXiWHgSHpRCJDmCuWJlirCk_lVQBtJeUPF1q8TvwiBHuhZs6LI5d8ldPg=s240-c-k-c0x00ffffff-no-rj",
+            "score": 35,
+            "reasons": [
+              "nom parcial"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-25T16:34:06.930Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -3804,6 +4402,14 @@
           "checkedAt": "2026-09-25T15:54:46.584Z",
           "status": "sense-youtube",
           "relationCount": 0
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-25T16:34:06.930Z",
+          "status": "candidats",
+          "query": "Guillermina Motta",
+          "resultCount": 3,
+          "bestScore": 88,
+          "autoAcceptedId": null
         }
       }
     },
@@ -3851,7 +4457,50 @@
       "musicbrainzId": "6a5cd215-edf8-434b-a622-1213a2d80b3d",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UCLYiX7Vx35o6pgn-qEXtyAA",
+            "title": "Isaac Ulam - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 28,
+            "thumbnail": "https://yt3.ggpht.com/RN4aZ2Tamx2f7p69j7o7KyOpq6mHFUCUwSu3viv5RZJaiuU--Gsz3Le43UTUvQwkT9GeyFIy=s240-c-k-c0x00ffffff-no-rj",
+            "score": 85,
+            "reasons": [
+              "nom exacte de canal Topic",
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-25T16:34:07.322Z"
+          },
+          {
+            "id": "UCYXnrlhPbB478Bg9F5eTY6A",
+            "title": "isaaculam",
+            "handle": "@isaaculam",
+            "description": "",
+            "subscriberCount": 6,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_nuXRkxIkecJGUpScR-m8qYPGzOfVsOzrgfWRTW_Ng=s240-c-k-c0x00ffffff-no-rj",
+            "score": 25,
+            "reasons": [
+              "handle exacte"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-25T16:34:07.322Z"
+          },
+          {
+            "id": "UCgZa0b9Fj3oI7VXr8SQjo3A",
+            "title": "Ataxia Neon",
+            "handle": "@ataxianeon3970",
+            "description": "",
+            "subscriberCount": 36,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_mHt5g_J7sPXWytewb0rTCuPekpiUQKDptPOSNSF-0TQg=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-25T16:34:07.322Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -3867,6 +4516,14 @@
           "checkedAt": "2026-09-25T15:54:48.051Z",
           "status": "sense-youtube",
           "relationCount": 0
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-25T16:34:07.322Z",
+          "status": "candidats",
+          "query": "Isaac Ulam",
+          "resultCount": 3,
+          "bestScore": 85,
+          "autoAcceptedId": null
         }
       }
     },
@@ -3882,7 +4539,47 @@
       "musicbrainzId": "ba035096-ed3c-47b7-b812-5ae78ba77db5",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UCaMhZMH6_ioEQfOx24nf1Bg",
+            "title": "Jaume Aragall - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 723,
+            "thumbnail": "https://yt3.ggpht.com/6DFfzMqr9Uemzryq2zXkzuu3alZJdyOY4zAJfoswmeIlFlHP-LM6Tt_MGEIDeIYIK4_CyvPVvYI=s240-c-k-c0x00ffffff-no-rj",
+            "score": 5,
+            "reasons": [
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-25T16:34:07.751Z"
+          },
+          {
+            "id": "UC717Vsr7-8ZDj_Ooz8KOg7g",
+            "title": "Giacomo Aragall - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 552,
+            "thumbnail": "https://yt3.ggpht.com/wFR2b4z-z6UmmXVTMF_JuwzhUryfNlEH-5iFyq06HJcNwOXFypqyQY12tOtKrBvBUk34suJX2g=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-25T16:34:07.751Z"
+          },
+          {
+            "id": "UCjuDr_iCnU3trB7LjuwKE8g",
+            "title": "Jaume Aragall & Edelmiro Arnaltes - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 25,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_mZTaHB_dUrjdxVPzWHPSBBiQ8yLcuryhd4EkW86K1c1ICS_z_qpEkyUfbcf4p_XGWlCw=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-25T16:34:07.751Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -3899,6 +4596,14 @@
           "checkedAt": "2026-09-25T15:54:49.582Z",
           "status": "sense-youtube",
           "relationCount": 0
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-25T16:34:07.751Z",
+          "status": "candidats",
+          "query": "Jaume Aragall i Garriga",
+          "resultCount": 3,
+          "bestScore": 5,
+          "autoAcceptedId": null
         }
       }
     },
@@ -3914,7 +4619,48 @@
       "musicbrainzId": "44c786f4-0b24-45c8-afef-916435ab0e64",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UCo7tLPDmXYxpcWQrm-1DGkQ",
+            "title": "Jaume Arnella",
+            "handle": "@jaumearnella9362",
+            "description": "Jaume Arnella, l'últim romancer dels Països Catalans. Canal de videos del youtube.",
+            "subscriberCount": 278,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_n4qJ9aWSW2DzX5-aFG0kqa9rGSBzE4Yw2DLARRo9ZGCw=s240-c-k-c0x00ffffff-no-rj",
+            "score": 40,
+            "reasons": [
+              "nom parcial",
+              "primer resultat"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-25T16:34:08.186Z"
+          },
+          {
+            "id": "UCjiOLFPzmyq2Sd5Kx9ZxKVQ",
+            "title": "Jaume Arnella - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 289,
+            "thumbnail": "https://yt3.ggpht.com/FIAz1R8jj1me8N_c5cMgLaFe_TQa995cBF_z_cVTB_QosP-4NT-9RnIFE2YJwZd7bCfY-VOIKw=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-25T16:34:08.186Z"
+          },
+          {
+            "id": "UCoq8-Mp5ZkeqMo4KMlkqPeA",
+            "title": "Jordi Teixidor - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 0,
+            "thumbnail": "https://yt3.ggpht.com/eVC8BixWVGwZSZnd89EDct10dJ9hmpEc8Ikai22IwPNTuRtenQ6O8bOn7Gxt75KNwmZIApN54Q=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-25T16:34:08.186Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -3932,6 +4678,14 @@
           "checkedAt": "2026-09-25T15:54:50.936Z",
           "status": "sense-youtube",
           "relationCount": 0
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-25T16:34:08.186Z",
+          "status": "candidats",
+          "query": "Jaume Arnella i París",
+          "resultCount": 3,
+          "bestScore": 40,
+          "autoAcceptedId": null
         }
       }
     },
@@ -3947,7 +4701,23 @@
       "musicbrainzId": "1c0d06b7-c9b5-4086-a118-016aa49d4830",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UCKgY6uGLwm0Yjy9p93VbDDw",
+            "title": "Coro Ziryab Córdoba",
+            "handle": "@coroziryab",
+            "description": "",
+            "subscriberCount": 653,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_ny-tYhwvVaC4bkivnWsux6NDUmsbPd0b8yE-aNhVSLPA=s240-c-k-c0x00ffffff-no-rj",
+            "score": 5,
+            "reasons": [
+              "primer resultat"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-25T16:34:08.581Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -3965,6 +4735,14 @@
           "checkedAt": "2026-09-25T15:54:52.383Z",
           "status": "sense-youtube",
           "relationCount": 0
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-25T16:34:08.581Z",
+          "status": "candidats",
+          "query": "Jaume Balius i Vila",
+          "resultCount": 1,
+          "bestScore": 5,
+          "autoAcceptedId": null
         }
       }
     },
@@ -3980,7 +4758,23 @@
       "musicbrainzId": "ec68cb5d-8dad-4804-b637-9634567eb136",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UCr9ukjgwk2JtABN23sPiPGQ",
+            "title": "Sisa - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 478,
+            "thumbnail": "https://yt3.ggpht.com/uBmtAYo8xquaF4SesKlUhp3cvqXgILLkROxxY2nIzKIPFo8N9CHiFfdjORnVEz0PIjA9xA9J=s240-c-k-c0x00ffffff-no-rj",
+            "score": 5,
+            "reasons": [
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-25T16:34:08.978Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -3997,6 +4791,14 @@
           "checkedAt": "2026-09-25T15:54:53.779Z",
           "status": "sense-youtube",
           "relationCount": 0
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-25T16:34:08.978Z",
+          "status": "candidats",
+          "query": "Jaume Sisa i Mestres",
+          "resultCount": 1,
+          "bestScore": 5,
+          "autoAcceptedId": null
         }
       }
     },
@@ -4074,7 +4876,8 @@
       "musicbrainzId": "a6862ab2-1bc7-47e6-9ca8-7ee5dbe27b78",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -4091,6 +4894,14 @@
           "checkedAt": "2026-09-25T15:54:55.255Z",
           "status": "sense-youtube",
           "relationCount": 0
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-25T16:34:09.314Z",
+          "status": "sense-resultats",
+          "query": "Joan Crosas i Casadesús",
+          "resultCount": 0,
+          "bestScore": 0,
+          "autoAcceptedId": null
         }
       }
     },
@@ -4187,7 +4998,37 @@
       "musicbrainzId": "a379ad24-6df4-434a-a810-a0057d4705fa",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UCibMSrtwCbLNTlfQL23z4FQ",
+            "title": "Joan Miquel Oliver",
+            "handle": "@joan_miquel_oliver",
+            "description": "L'art és la lluita constant de l'artista per ser feliç.",
+            "subscriberCount": 5940,
+            "thumbnail": "https://yt3.ggpht.com/9fnux69HoG7hlbRzmDAmomadYVNhJ11MdOQONpMkH5e0D426eW2yUoiPsIqK-e6UoZYdYsTaPo8=s240-c-k-c0x00ffffff-no-rj",
+            "score": 58,
+            "reasons": [
+              "nom parcial",
+              "handle coincident",
+              "primer resultat"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-25T16:34:09.562Z"
+          },
+          {
+            "id": "UCEV_8wEQansDoZnwNW1Z1Vw",
+            "title": "Joan Miquel Oliver - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 996,
+            "thumbnail": "https://yt3.ggpht.com/9fnux69HoG7hlbRzmDAmomadYVNhJ11MdOQONpMkH5e0D426eW2yUoiPsIqK-e6UoZYdYsTaPo8=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-25T16:34:09.562Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -4204,6 +5045,14 @@
           "checkedAt": "2026-09-25T15:54:58.228Z",
           "status": "sense-youtube",
           "relationCount": 0
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-25T16:34:09.562Z",
+          "status": "candidats",
+          "query": "Joan Miquel Oliver Ripoll",
+          "resultCount": 2,
+          "bestScore": 58,
+          "autoAcceptedId": null
         }
       }
     },
@@ -4219,7 +5068,53 @@
       "musicbrainzId": "351cbe05-41eb-48c1-b612-31720797cbd3",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UCzSKifGnw5JXHUjYBBQKybg",
+            "title": "JOANA SERRAT",
+            "handle": "@joanaserratmusic",
+            "description": "“a gem of haunted reflection” 9/10 UNCUT\n“An amazing artist. I’m a huge fan of hers. She just has an astonishing voice. I love her songwriting\" LAUREN LAVERNE, BBC 6 MUSIC\n“You’re going to fall deeply in love with her...just amazing” GUY GARVEY BBC6 MUSIC\n“It’s like Glasvegas and War On Drugs had a little musical baby and what a bonny wee thing it ",
+            "subscriberCount": 1860,
+            "thumbnail": "https://yt3.ggpht.com/XEQiJ88YL7UCfxOCJusD28OQdQR_KQH0QSuGalVazozDyLI4e7aDNJC7ermipXqILEHwNcj6sg=s240-c-k-c0x00ffffff-no-rj",
+            "score": 88,
+            "reasons": [
+              "nom exacte",
+              "handle coincident"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-25T16:34:09.936Z"
+          },
+          {
+            "id": "UCyMSX0egeAmENu6v_6F-H0Q",
+            "title": "JOANA SERRAT - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 352,
+            "thumbnail": "https://yt3.ggpht.com/XEQiJ88YL7UCfxOCJusD28OQdQR_KQH0QSuGalVazozDyLI4e7aDNJC7ermipXqILEHwNcj6sg=s240-c-k-c0x00ffffff-no-rj",
+            "score": 85,
+            "reasons": [
+              "nom exacte de canal Topic",
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-25T16:34:09.936Z"
+          },
+          {
+            "id": "UC_Nnb8-ChPovsIw8egJwskQ",
+            "title": "joana serrat",
+            "handle": "@9jooana",
+            "description": "",
+            "subscriberCount": 0,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_k5PCfCeolTqSfse-2nBSTv1UxcG1CnXQAjBtGpNzBdXQ=s240-c-k-c0x00ffffff-no-rj",
+            "score": 70,
+            "reasons": [
+              "nom exacte"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-25T16:34:09.936Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -4237,6 +5132,14 @@
           "checkedAt": "2026-09-25T15:54:59.732Z",
           "status": "sense-youtube",
           "relationCount": 0
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-25T16:34:09.936Z",
+          "status": "candidats",
+          "query": "Joana Serrat",
+          "resultCount": 3,
+          "bestScore": 88,
+          "autoAcceptedId": null
         }
       }
     },
@@ -4252,7 +5155,47 @@
       "musicbrainzId": "d4692241-0d7d-45ae-8c22-7276f653b8a1",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UCOGnV4w9fR4vsedQ8YUBOkA",
+            "title": "Joaquim Homs - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 7,
+            "thumbnail": "http://yt3.ggpht.com/T15e3hc5qlhoDZQZgr0sHSTucF_Hqro8BQs1PnA1ZL6NEe7F0qwQstduHf0gjACfjKDK2eiJe69iy5Q398o=s240-c-k-c0x00ffffff-no-rj",
+            "score": 5,
+            "reasons": [
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-25T16:34:10.387Z"
+          },
+          {
+            "id": "UCzLRsPnbMQfMJxMoBjMmEIg",
+            "title": "CAROLA CUYPERS",
+            "handle": "@carolacuypers7145",
+            "description": "",
+            "subscriberCount": 7,
+            "thumbnail": "https://yt3.ggpht.com/t02lK4dSXGPvWXFw-uW2ixoB5ULY8qX48b3ypBXxppg_wM9oiU30B-qc198sde4SPiRa0PNObw=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-25T16:34:10.387Z"
+          },
+          {
+            "id": "UCOwDegDyBjcBFXlVG0nWQLQ",
+            "title": "Cor A Cappella",
+            "handle": "@coracappella7997",
+            "description": "",
+            "subscriberCount": 58,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_n9VHO1IheZF18EsSiKpzpvEc8ENxq1rm36LzIFzZ3n1A=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-25T16:34:10.387Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -4269,6 +5212,14 @@
           "checkedAt": "2026-09-25T15:55:01.181Z",
           "status": "sense-youtube",
           "relationCount": 0
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-25T16:34:10.387Z",
+          "status": "candidats",
+          "query": "Joaquim Homs i Oller",
+          "resultCount": 3,
+          "bestScore": 5,
+          "autoAcceptedId": null
         }
       }
     },
@@ -4315,7 +5266,53 @@
       "musicbrainzId": "f3545e61-19b3-4b2d-bcc8-4c7e18e9d80e",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UCVAhMHeOyFcMkvNZ3ObWYrA",
+            "title": "Jordi Barre",
+            "handle": "@jordibarre5610",
+            "description": "X la mañana cantab",
+            "subscriberCount": 0,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_mwJsGvQcxo61ZBvAMB0j20YzDADlc_-E4M4JGeJhc=s240-c-k-c0x00ffffff-no-rj",
+            "score": 88,
+            "reasons": [
+              "nom exacte",
+              "handle coincident"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-25T16:34:10.754Z"
+          },
+          {
+            "id": "UCs9uFGVOXA5wSSJrERWEhCw",
+            "title": "Jordi Barre - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 427,
+            "thumbnail": "https://yt3.ggpht.com/QTaglVjLwDw5IImCvbp7WIoQdv_k03V8KjvlU1NAGF6E2CzWUVYsKbxF_akwLy7l4sw-yMY6Lac=s240-c-k-c0x00ffffff-no-rj",
+            "score": 85,
+            "reasons": [
+              "nom exacte de canal Topic",
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-25T16:34:10.754Z"
+          },
+          {
+            "id": "UCfe5350Ioq3gF5GZ0VQ8xqw",
+            "title": "jordi Barre ",
+            "handle": "@yordybarre",
+            "description": "",
+            "subscriberCount": 1,
+            "thumbnail": "https://yt3.ggpht.com/_w75x3Wa_KcVGX2_UmswbLiWnD1Nw_6V5YsMmPSioN4ZdNtHdBJngyc_KG1l2G5Uhi8BQUt-Tw=s240-c-k-c0x00ffffff-no-rj",
+            "score": 70,
+            "reasons": [
+              "nom exacte"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-25T16:34:10.754Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -4332,6 +5329,14 @@
           "checkedAt": "2026-09-25T15:55:02.524Z",
           "status": "sense-youtube",
           "relationCount": 0
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-25T16:34:10.754Z",
+          "status": "candidats",
+          "query": "Jordi Barre",
+          "resultCount": 3,
+          "bestScore": 88,
+          "autoAcceptedId": null
         }
       }
     },
@@ -4347,7 +5352,53 @@
       "musicbrainzId": "d8ce0cb2-d6f0-496e-984d-fade807c5ba4",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UCVfyjoAReV5pOqwHFwZPrnA",
+            "title": "José Domingo ",
+            "handle": "@josedomingo5327",
+            "description": "Músico Cantautor",
+            "subscriberCount": 8,
+            "thumbnail": "https://yt3.ggpht.com/fFAVuYdHpl7AtGlqSPAVRRUlT21bb_vknVczidI8jyb5nNCoOd7TzBbFgtd-58ZF8IZrtU74VA=s240-c-k-c0x00ffffff-no-rj",
+            "score": 88,
+            "reasons": [
+              "nom exacte",
+              "handle coincident"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-25T16:34:11.163Z"
+          },
+          {
+            "id": "UCiv56vfvJ8goUWdOwTaFWlg",
+            "title": "José Domingo - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 9380,
+            "thumbnail": "https://yt3.ggpht.com/Nzqa6W2FK_VLGOt6eLwIprxLGnrNKoAX1rA5nreTYJ4qi06Dfwe7dUD1eKr46lPY1NQfsfmUEQ=s240-c-k-c0x00ffffff-no-rj",
+            "score": 85,
+            "reasons": [
+              "nom exacte de canal Topic",
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-25T16:34:11.163Z"
+          },
+          {
+            "id": "UCNXCfPhm_ViwxQ-3rXqF5jw",
+            "title": "Jose Domingo - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 4,
+            "thumbnail": "https://yt3.ggpht.com/1vbAqehRnKYjCd5NPnyDey38WOVKwprfb-EfZfpZBge1T4tBJkTKsc4S3ufBjuM4XP26sMWhUg=s240-c-k-c0x00ffffff-no-rj",
+            "score": 80,
+            "reasons": [
+              "nom exacte de canal Topic"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-25T16:34:11.163Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -4363,6 +5414,14 @@
           "checkedAt": "2026-09-25T15:55:03.929Z",
           "status": "sense-youtube",
           "relationCount": 0
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-25T16:34:11.163Z",
+          "status": "candidats",
+          "query": "Jose Domingo",
+          "resultCount": 3,
+          "bestScore": 88,
+          "autoAcceptedId": null
         }
       }
     },
@@ -4378,7 +5437,47 @@
       "musicbrainzId": "7716ddac-2f24-44fa-81b1-bfa920811445",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UCXzZ2wbK4jv4iu8uJ17Np3w",
+            "title": "José A Carreras Cruz - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 68,
+            "thumbnail": "https://yt3.ggpht.com/QDkRtthnl3n8cMGwJzsGfy0qcJBVQkXyWqJd5k0bMOUrN3tSqSNfxY86dfbed9sLMz0JunO8Dg=s240-c-k-c0x00ffffff-no-rj",
+            "score": 5,
+            "reasons": [
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-25T16:34:11.591Z"
+          },
+          {
+            "id": "UCcs50Y-opUGAsyb7hqye18Q",
+            "title": "José Carreras - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 14200,
+            "thumbnail": "https://yt3.ggpht.com/Ux2rOu-XjXH1TB0IHpnstQjDp6BWfZv3ouaEffRL6SaTtPc2qyZ-RKrGaE7kjPyatzBf-BTs6w=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-25T16:34:11.591Z"
+          },
+          {
+            "id": "UCpgxwDdd8JqfhWLK1bix7tg",
+            "title": "Jose Carreras",
+            "handle": "@josecarreras7050",
+            "description": "",
+            "subscriberCount": 5500,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_k7cYPTottr7SCSXzVfchvRGXIjUdUw6P9A2-o_RcWLSbA=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-25T16:34:11.591Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -4395,6 +5494,14 @@
           "checkedAt": "2026-09-25T15:55:05.348Z",
           "status": "sense-youtube",
           "relationCount": 0
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-25T16:34:11.591Z",
+          "status": "candidats",
+          "query": "Josep Carreras i Coll",
+          "resultCount": 3,
+          "bestScore": 5,
+          "autoAcceptedId": null
         }
       }
     },
