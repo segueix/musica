@@ -41,6 +41,7 @@ a{color:#9cc9ff}.missing{color:#ffbd66}.approved{color:#80db91}.rejected{color:#
 </select>
 <select id="genre">
 <option value="">Tots els gèneres</option>
+<option value="__none__">Sense categoria</option>
 </select>
 <button id="exportJson">Descarrega JSON revisat</button>
 <button id="exportCsv">Descarrega CSV</button>
@@ -76,7 +77,9 @@ function stats(){
   ['Total',a.length],['Pendents',n('pendent')],['Aprovats',n('aprovat')],['Rebutjats',n('rebutjat')],
   ['Amb YouTube',a.filter(x=>x.youtube?.channels?.length).length],['Sense YouTube',a.filter(x=>!x.youtube?.channels?.length).length],
   ['Candidats MB',a.filter(x=>x.youtube?.candidates?.length).length],
-  ['Candidats cerca',a.filter(x=>x.youtube?.searchCandidates?.length && !x.youtube?.channels?.length).length]
+  ['Candidats cerca',a.filter(x=>x.youtube?.searchCandidates?.length && !x.youtube?.channels?.length).length],
+  ['Classificats',a.filter(x=>(x.genres||[]).length).length],
+  ['Sense categoria',a.filter(x=>!(x.genres||[]).length).length]
  ].map(x=>'<div class="stat"><b>'+x[1]+'</b><br><span class="muted">'+x[0]+'</span></div>').join('');
 }
 function render(){
@@ -91,7 +94,8 @@ function render(){
   const has=!!a.youtube?.channels?.length;
   if(yt==='yes'&&!has)return false;
   if(yt==='no'&&has)return false;
-  if(genre && !(a.genres||[]).includes(genre)) return false;
+  if(genre==='__none__' && (a.genres||[]).length) return false;
+  if(genre && genre!=='__none__' && !(a.genres||[]).includes(genre)) return false;
   return true;
  }).map(a=>{
   const chans=a.youtube?.channels||[];
