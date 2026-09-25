@@ -10,6 +10,9 @@ on:
       - "scripts/cercar_canals_youtube.js"
       - "tests/musicbrainz-enrichment.test.js"
       - "tests/youtube-search-candidates.test.js"
+      - "data/music-genres.json"
+      - "scripts/enriquir_generes_musica.js"
+      - "tests/music-genres.test.js"
       - ".github/workflows/validar-musica.yml"
   pull_request:
     paths:
@@ -20,6 +23,9 @@ on:
       - "scripts/cercar_canals_youtube.js"
       - "tests/musicbrainz-enrichment.test.js"
       - "tests/youtube-search-candidates.test.js"
+      - "data/music-genres.json"
+      - "scripts/enriquir_generes_musica.js"
+      - "tests/music-genres.test.js"
       - ".github/workflows/validar-musica.yml"
   workflow_dispatch:
 
@@ -43,6 +49,9 @@ jobs:
 
       - name: Test puntuació cerca YouTube
         run: npx vitest run tests/youtube-search-candidates.test.js
+
+      - name: Test normalització de gèneres
+        run: npx vitest run tests/music-genres.test.js
 
       - name: Valida la base d'artistes
         run: node scripts/validar_artistes_musica.js
