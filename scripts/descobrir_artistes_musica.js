@@ -227,7 +227,6 @@ async function main() {
     const strongSources = new Set([
         'wikidata:native-language-catalan-musician',
         'wikidata:performed-catalan-work',
-        'wikidata:native-language-catalan',
     ]);
     const beforePrune = data.artists.length;
     data.artists = data.artists.filter((artist) => {
