@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-25T17:12:50.636Z",
+  "updatedAt": "2026-09-25T17:19:14.959Z",
   "artists": [
     {
       "name": "31 FAM",
@@ -41,7 +41,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.552Z",
+          "checkedAt": "2026-09-25T17:19:14.759Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:10.717Z",
           "wikidataRaw": [
             "trap",
@@ -51,7 +51,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
@@ -135,17 +140,21 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.552Z",
+          "checkedAt": "2026-09-25T17:19:14.759Z",
           "musicbrainzCheckedAt": "2026-09-25T17:11:16.208Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-25T17:12:50.552Z",
+          "wikidataWorkCheckedAt": "2026-09-25T17:19:14.759Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:16.208Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:16.208Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:17:39.926Z",
+          "musicbrainzReleaseRaw": [],
+          "musicbrainzReleaseEvidence": [],
+          "musicbrainzReleaseGroupCount": 6
         }
       },
       "genresRaw": []
@@ -236,7 +245,7 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.552Z",
+          "checkedAt": "2026-09-25T17:19:14.759Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:13.253Z",
           "wikidataRaw": [
             "música tradicional"
@@ -245,7 +254,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       },
       "genresRaw": [
@@ -335,7 +349,7 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.554Z",
+          "checkedAt": "2026-09-25T17:19:14.763Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:14.515Z",
           "wikidataRaw": [
             "sardana",
@@ -353,7 +367,12 @@
           ],
           "status": "parcial",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       },
       "genresRaw": [
@@ -448,7 +467,7 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.554Z",
+          "checkedAt": "2026-09-25T17:19:14.765Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:15.777Z",
           "wikidataRaw": [
             "rock",
@@ -458,7 +477,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       },
       "genresRaw": [
@@ -506,7 +530,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.554Z",
+          "checkedAt": "2026-09-25T17:19:14.766Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:17.051Z",
           "wikidataRaw": [
             "pop-rock",
@@ -516,7 +540,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
@@ -602,17 +631,21 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.554Z",
+          "checkedAt": "2026-09-25T17:19:14.766Z",
           "musicbrainzCheckedAt": "2026-09-25T17:11:17.450Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-25T17:12:50.554Z",
+          "wikidataWorkCheckedAt": "2026-09-25T17:19:14.766Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:17.450Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:17.450Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:17:41.152Z",
+          "musicbrainzReleaseRaw": [],
+          "musicbrainzReleaseEvidence": [],
+          "musicbrainzReleaseGroupCount": 2
         }
       },
       "genresRaw": []
@@ -658,7 +691,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.555Z",
+          "checkedAt": "2026-09-25T17:19:14.767Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:19.704Z",
           "wikidataRaw": [
             "jazz",
@@ -668,7 +701,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
@@ -762,7 +800,7 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.555Z",
+          "checkedAt": "2026-09-25T17:19:14.767Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:20.957Z",
           "wikidataRaw": [
             "punk rock"
@@ -771,7 +809,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       },
       "genresRaw": [
@@ -862,7 +905,7 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.555Z",
+          "checkedAt": "2026-09-25T17:19:14.768Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:22.653Z",
           "wikidataRaw": [
             "música clàssica"
@@ -871,7 +914,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       },
       "genresRaw": [
@@ -920,7 +968,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.556Z",
+          "checkedAt": "2026-09-25T17:19:14.771Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:23.983Z",
           "wikidataRaw": [
             "pop-rock",
@@ -932,7 +980,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
@@ -976,7 +1029,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.557Z",
+          "checkedAt": "2026-09-25T17:19:14.773Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:25.245Z",
           "wikidataRaw": [
             "reggae"
@@ -989,7 +1042,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
@@ -1075,17 +1133,21 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.557Z",
+          "checkedAt": "2026-09-25T17:19:14.773Z",
           "musicbrainzCheckedAt": "2026-09-25T17:11:18.691Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-25T17:12:50.557Z",
+          "wikidataWorkCheckedAt": "2026-09-25T17:19:14.773Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:18.691Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:18.691Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:17:42.483Z",
+          "musicbrainzReleaseRaw": [],
+          "musicbrainzReleaseEvidence": [],
+          "musicbrainzReleaseGroupCount": 2
         }
       },
       "genresRaw": []
@@ -1177,7 +1239,7 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.558Z",
+          "checkedAt": "2026-09-25T17:19:14.776Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:28.032Z",
           "wikidataRaw": [
             "tecno",
@@ -1193,7 +1255,12 @@
           ],
           "status": "parcial",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       },
       "genresRaw": [
@@ -1207,7 +1274,9 @@
     {
       "name": "Atupa",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Rap / Hip-hop"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -1234,20 +1303,33 @@
       ],
       "lastChecked": "2026-09-25T15:44:05.402Z",
       "notes": "",
-      "genresRaw": [],
+      "genresRaw": [
+        "rap"
+      ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.558Z",
+          "checkedAt": "2026-09-25T17:19:14.777Z",
           "musicbrainzCheckedAt": "2026-09-25T17:11:19.932Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades",
-          "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-25T17:12:50.558Z",
-          "wikidataWorkEvidence": [],
+          "status": "classificat",
+          "wikidataWorkRaw": [
+            "rap"
+          ],
+          "wikidataWorkCheckedAt": "2026-09-25T17:19:14.777Z",
+          "wikidataWorkEvidence": [
+            {
+              "genre": "rap",
+              "workCount": 3
+            }
+          ],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:19.932Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:19.932Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:17:43.710Z",
+          "musicbrainzReleaseRaw": [],
+          "musicbrainzReleaseEvidence": [],
+          "musicbrainzReleaseGroupCount": 2
         }
       }
     },
@@ -1288,7 +1370,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.558Z",
+          "checkedAt": "2026-09-25T17:19:14.777Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:30.688Z",
           "wikidataRaw": [
             "reggae"
@@ -1297,7 +1379,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
@@ -1382,17 +1469,21 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.558Z",
+          "checkedAt": "2026-09-25T17:19:14.777Z",
           "musicbrainzCheckedAt": "2026-09-25T17:11:21.173Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-25T17:12:50.558Z",
+          "wikidataWorkCheckedAt": "2026-09-25T17:19:14.777Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:21.173Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:21.173Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:17:45.068Z",
+          "musicbrainzReleaseRaw": [],
+          "musicbrainzReleaseEvidence": [],
+          "musicbrainzReleaseGroupCount": 3
         }
       },
       "genresRaw": []
@@ -1484,7 +1575,7 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.558Z",
+          "checkedAt": "2026-09-25T17:19:14.778Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:33.227Z",
           "wikidataRaw": [
             "rock",
@@ -1494,7 +1585,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       },
       "genresRaw": [
@@ -1586,17 +1682,21 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.558Z",
+          "checkedAt": "2026-09-25T17:19:14.778Z",
           "musicbrainzCheckedAt": "2026-09-25T17:11:22.417Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-25T17:12:50.558Z",
+          "wikidataWorkCheckedAt": "2026-09-25T17:19:14.778Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:22.417Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:22.417Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:17:46.365Z",
+          "musicbrainzReleaseRaw": [],
+          "musicbrainzReleaseEvidence": [],
+          "musicbrainzReleaseGroupCount": 1
         }
       },
       "genresRaw": []
@@ -1679,17 +1779,21 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.558Z",
+          "checkedAt": "2026-09-25T17:19:14.778Z",
           "musicbrainzCheckedAt": "2026-09-25T17:11:23.658Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-25T17:12:50.558Z",
+          "wikidataWorkCheckedAt": "2026-09-25T17:19:14.778Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:23.658Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:23.658Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:17:47.592Z",
+          "musicbrainzReleaseRaw": [],
+          "musicbrainzReleaseEvidence": [],
+          "musicbrainzReleaseGroupCount": 3
         }
       },
       "genresRaw": []
@@ -1778,7 +1882,7 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.559Z",
+          "checkedAt": "2026-09-25T17:19:14.779Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:37.011Z",
           "wikidataRaw": [
             "rock",
@@ -1791,7 +1895,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       },
       "genresRaw": [
@@ -1844,7 +1953,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.560Z",
+          "checkedAt": "2026-09-25T17:19:14.781Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:38.276Z",
           "wikidataRaw": [
             "ska",
@@ -1857,14 +1966,21 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
     {
       "name": "Cabosanroque",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Electrònica"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -1909,20 +2025,39 @@
           "relationCount": 1
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.560Z",
+          "checkedAt": "2026-09-25T17:19:14.782Z",
           "musicbrainzCheckedAt": "2026-09-25T17:11:24.898Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades",
+          "status": "classificat",
           "wikidataWorkRaw": [],
           "wikidataWorkCheckedAt": "2026-09-25T17:12:50.560Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:24.898Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:24.898Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:17:48.846Z",
+          "musicbrainzReleaseRaw": [
+            "dark ambient",
+            "deep house",
+            "electronic",
+            "house"
+          ],
+          "musicbrainzReleaseEvidence": [
+            {
+              "label": "Electrònica",
+              "releaseGroupCount": 4
+            }
+          ],
+          "musicbrainzReleaseGroupCount": 5
         }
       },
-      "genresRaw": []
+      "genresRaw": [
+        "dark ambient",
+        "deep house",
+        "electronic",
+        "house"
+      ]
     },
     {
       "name": "Cactus Troop",
@@ -1965,7 +2100,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.560Z",
+          "checkedAt": "2026-09-25T17:19:14.783Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:40.832Z",
           "wikidataRaw": [
             "reggae",
@@ -1976,7 +2111,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
@@ -2020,7 +2160,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.560Z",
+          "checkedAt": "2026-09-25T17:19:14.784Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:42.495Z",
           "wikidataRaw": [
             "òpera"
@@ -2029,7 +2169,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
@@ -2120,17 +2265,21 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.560Z",
+          "checkedAt": "2026-09-25T17:19:14.784Z",
           "musicbrainzCheckedAt": "2026-09-25T17:11:26.138Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-25T17:12:50.560Z",
+          "wikidataWorkCheckedAt": "2026-09-25T17:19:14.784Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:26.138Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:26.138Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:17:50.165Z",
+          "musicbrainzReleaseRaw": [],
+          "musicbrainzReleaseEvidence": [],
+          "musicbrainzReleaseGroupCount": 5
         }
       },
       "genresRaw": []
@@ -2218,17 +2367,21 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.560Z",
+          "checkedAt": "2026-09-25T17:19:14.784Z",
           "musicbrainzCheckedAt": "2026-09-25T17:11:27.377Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-25T17:12:50.560Z",
+          "wikidataWorkCheckedAt": "2026-09-25T17:19:14.784Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:27.377Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:27.377Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:17:51.459Z",
+          "musicbrainzReleaseRaw": [],
+          "musicbrainzReleaseEvidence": [],
+          "musicbrainzReleaseGroupCount": 0
         }
       },
       "genresRaw": []
@@ -2274,7 +2427,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.561Z",
+          "checkedAt": "2026-09-25T17:19:14.786Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:46.530Z",
           "wikidataRaw": [
             "música tradicional",
@@ -2287,7 +2440,12 @@
           ],
           "status": "parcial",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
@@ -2339,7 +2497,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.561Z",
+          "checkedAt": "2026-09-25T17:19:14.786Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:47.796Z",
           "wikidataRaw": [
             "pop-rock",
@@ -2352,7 +2510,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
@@ -2440,17 +2603,21 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.561Z",
+          "checkedAt": "2026-09-25T17:19:14.786Z",
           "musicbrainzCheckedAt": "2026-09-25T17:11:28.620Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-25T17:12:50.561Z",
+          "wikidataWorkCheckedAt": "2026-09-25T17:19:14.786Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:28.620Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:28.620Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:17:52.801Z",
+          "musicbrainzReleaseRaw": [],
+          "musicbrainzReleaseEvidence": [],
+          "musicbrainzReleaseGroupCount": 3
         }
       },
       "genresRaw": []
@@ -2502,7 +2669,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.563Z",
+          "checkedAt": "2026-09-25T17:19:14.790Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:50.334Z",
           "wikidataRaw": [
             "jazz rock",
@@ -2522,7 +2689,12 @@
           ],
           "status": "parcial",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
@@ -2593,17 +2765,21 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.563Z",
+          "checkedAt": "2026-09-25T17:19:14.790Z",
           "musicbrainzCheckedAt": "2026-09-25T17:11:29.861Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-25T17:12:50.563Z",
+          "wikidataWorkCheckedAt": "2026-09-25T17:19:14.790Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:29.861Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:29.861Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:17:54.040Z",
+          "musicbrainzReleaseRaw": [],
+          "musicbrainzReleaseEvidence": [],
+          "musicbrainzReleaseGroupCount": 6
         }
       },
       "genresRaw": []
@@ -2646,7 +2822,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.563Z",
+          "checkedAt": "2026-09-25T17:19:14.790Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:53.138Z",
           "wikidataRaw": [
             "punk rock"
@@ -2655,7 +2831,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
@@ -2742,17 +2923,21 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.563Z",
+          "checkedAt": "2026-09-25T17:19:14.790Z",
           "musicbrainzCheckedAt": "2026-09-25T17:11:31.101Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-25T17:12:50.563Z",
+          "wikidataWorkCheckedAt": "2026-09-25T17:19:14.790Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:31.101Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:31.101Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:17:55.454Z",
+          "musicbrainzReleaseRaw": [],
+          "musicbrainzReleaseEvidence": [],
+          "musicbrainzReleaseGroupCount": 7
         }
       },
       "genresRaw": []
@@ -2794,7 +2979,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.564Z",
+          "checkedAt": "2026-09-25T17:19:14.791Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:55.679Z",
           "wikidataRaw": [
             "música infantil"
@@ -2803,7 +2988,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
@@ -2845,7 +3035,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.564Z",
+          "checkedAt": "2026-09-25T17:19:14.792Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:57.045Z",
           "wikidataRaw": [
             "Q3930216"
@@ -2858,7 +3048,12 @@
           ],
           "status": "parcial",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
@@ -2907,7 +3102,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.565Z",
+          "checkedAt": "2026-09-25T17:19:14.794Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:59.570Z",
           "wikidataRaw": [
             "funk",
@@ -2920,7 +3115,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
@@ -3012,7 +3212,7 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.566Z",
+          "checkedAt": "2026-09-25T17:19:14.795Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:00.831Z",
           "wikidataRaw": [
             "ska",
@@ -3028,7 +3228,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       },
       "genresRaw": [
@@ -3124,7 +3329,7 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.566Z",
+          "checkedAt": "2026-09-25T17:19:14.796Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:02.350Z",
           "wikidataRaw": [
             "pop-rock",
@@ -3134,7 +3339,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       },
       "genresRaw": [
@@ -3193,7 +3403,7 @@
           "relationCount": 1
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.566Z",
+          "checkedAt": "2026-09-25T17:19:14.797Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:03.613Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [
@@ -3202,7 +3412,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       },
       "genresRaw": [
@@ -3249,7 +3464,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.567Z",
+          "checkedAt": "2026-09-25T17:19:14.797Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:04.874Z",
           "wikidataRaw": [
             "folk rock"
@@ -3260,14 +3475,21 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
     {
       "name": "Eduard Giménez i Gràcia",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Clàssica i contemporània"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -3303,20 +3525,35 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.567Z",
+          "checkedAt": "2026-09-25T17:19:14.798Z",
           "musicbrainzCheckedAt": "2026-09-25T17:11:32.343Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades",
+          "status": "classificat",
           "wikidataWorkRaw": [],
           "wikidataWorkCheckedAt": "2026-09-25T17:12:50.567Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:32.343Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:32.343Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:17:56.695Z",
+          "musicbrainzReleaseRaw": [
+            "classical",
+            "opera"
+          ],
+          "musicbrainzReleaseEvidence": [
+            {
+              "label": "Clàssica i contemporània",
+              "releaseGroupCount": 3
+            }
+          ],
+          "musicbrainzReleaseGroupCount": 4
         }
       },
-      "genresRaw": []
+      "genresRaw": [
+        "classical",
+        "opera"
+      ]
     },
     {
       "name": "El Diluvi",
@@ -3355,7 +3592,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.567Z",
+          "checkedAt": "2026-09-25T17:19:14.798Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:07.399Z",
           "wikidataRaw": [
             "folk"
@@ -3364,14 +3601,24 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
     {
       "name": "El Niño de la Hipoteca",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Pop",
+        "Rock",
+        "Ska / Reggae",
+        "Rumba / Mestissatge"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -3398,20 +3645,51 @@
       ],
       "lastChecked": "2026-09-25T15:44:05.402Z",
       "notes": "",
-      "genresRaw": [],
+      "genresRaw": [
+        "pop",
+        "rock",
+        "reggae",
+        "rumba"
+      ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.567Z",
+          "checkedAt": "2026-09-25T17:19:14.799Z",
           "musicbrainzCheckedAt": "2026-09-25T17:11:33.583Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades",
+          "status": "classificat",
           "wikidataWorkRaw": [],
           "wikidataWorkCheckedAt": "2026-09-25T17:12:50.567Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:33.583Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:33.583Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:17:57.929Z",
+          "musicbrainzReleaseRaw": [
+            "pop",
+            "rock",
+            "reggae",
+            "rumba"
+          ],
+          "musicbrainzReleaseEvidence": [
+            {
+              "label": "Pop",
+              "releaseGroupCount": 2
+            },
+            {
+              "label": "Rock",
+              "releaseGroupCount": 2
+            },
+            {
+              "label": "Ska / Reggae",
+              "releaseGroupCount": 2
+            },
+            {
+              "label": "Rumba / Mestissatge",
+              "releaseGroupCount": 2
+            }
+          ],
+          "musicbrainzReleaseGroupCount": 9
         }
       }
     },
@@ -3496,7 +3774,7 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.568Z",
+          "checkedAt": "2026-09-25T17:19:14.801Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:09.914Z",
           "wikidataRaw": [
             "folk",
@@ -3510,7 +3788,12 @@
           ],
           "status": "parcial",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       },
       "genresRaw": [
@@ -3563,7 +3846,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.569Z",
+          "checkedAt": "2026-09-25T17:19:14.805Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:11.214Z",
           "wikidataRaw": [
             "iòdel",
@@ -3584,14 +3867,22 @@
           ],
           "status": "parcial",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
     {
       "name": "El Último de la Fila",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Pop",
+        "Rock"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -3673,20 +3964,41 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.569Z",
+          "checkedAt": "2026-09-25T17:19:14.805Z",
           "musicbrainzCheckedAt": "2026-09-25T17:11:34.825Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades",
+          "status": "classificat",
           "wikidataWorkRaw": [],
           "wikidataWorkCheckedAt": "2026-09-25T17:12:50.569Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:34.825Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:34.825Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:17:59.266Z",
+          "musicbrainzReleaseRaw": [
+            "rock",
+            "pop rock",
+            "pop"
+          ],
+          "musicbrainzReleaseEvidence": [
+            {
+              "label": "Rock",
+              "releaseGroupCount": 9
+            },
+            {
+              "label": "Pop",
+              "releaseGroupCount": 5
+            }
+          ],
+          "musicbrainzReleaseGroupCount": 17
         }
       },
-      "genresRaw": []
+      "genresRaw": [
+        "rock",
+        "pop rock",
+        "pop"
+      ]
     },
     {
       "name": "Elphomega",
@@ -3772,7 +4084,7 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.570Z",
+          "checkedAt": "2026-09-25T17:19:14.806Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:13.850Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [
@@ -3781,7 +4093,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       },
       "genresRaw": [
@@ -3832,7 +4149,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.571Z",
+          "checkedAt": "2026-09-25T17:19:14.808Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:15.687Z",
           "wikidataRaw": [
             "folk",
@@ -3850,7 +4167,12 @@
           ],
           "status": "parcial",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
@@ -3893,7 +4215,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.571Z",
+          "checkedAt": "2026-09-25T17:19:14.808Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:17.507Z",
           "wikidataRaw": [
             "folk rock"
@@ -3902,7 +4224,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
@@ -4006,7 +4333,7 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.571Z",
+          "checkedAt": "2026-09-25T17:19:14.809Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:18.767Z",
           "wikidataRaw": [
             "pop-rock"
@@ -4015,7 +4342,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       },
       "genresRaw": [
@@ -4025,7 +4357,10 @@
     {
       "name": "Emili Vendrell i Coutier",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Pop",
+        "Folk i arrel"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -4061,20 +4396,39 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.571Z",
+          "checkedAt": "2026-09-25T17:19:14.809Z",
           "musicbrainzCheckedAt": "2026-09-25T17:11:36.065Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades",
+          "status": "classificat",
           "wikidataWorkRaw": [],
           "wikidataWorkCheckedAt": "2026-09-25T17:12:50.571Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:36.065Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:36.065Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:18:00.503Z",
+          "musicbrainzReleaseRaw": [
+            "pop",
+            "folk"
+          ],
+          "musicbrainzReleaseEvidence": [
+            {
+              "label": "Pop",
+              "releaseGroupCount": 2
+            },
+            {
+              "label": "Folk i arrel",
+              "releaseGroupCount": 4
+            }
+          ],
+          "musicbrainzReleaseGroupCount": 7
         }
       },
-      "genresRaw": []
+      "genresRaw": [
+        "pop",
+        "folk"
+      ]
     },
     {
       "name": "Emili Vendrell i Ibars",
@@ -4145,7 +4499,7 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.572Z",
+          "checkedAt": "2026-09-25T17:19:14.811Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:21.601Z",
           "wikidataRaw": [
             "òpera",
@@ -4158,7 +4512,12 @@
           ],
           "status": "parcial",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       },
       "genresRaw": [
@@ -4223,17 +4582,21 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.572Z",
+          "checkedAt": "2026-09-25T17:19:14.811Z",
           "musicbrainzCheckedAt": "2026-09-25T17:11:37.306Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-25T17:12:50.572Z",
+          "wikidataWorkCheckedAt": "2026-09-25T17:19:14.811Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:37.306Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:37.306Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:18:01.802Z",
+          "musicbrainzReleaseRaw": [],
+          "musicbrainzReleaseEvidence": [],
+          "musicbrainzReleaseGroupCount": 1
         }
       },
       "genresRaw": []
@@ -4241,7 +4604,9 @@
     {
       "name": "Esquirols",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Folk i arrel"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -4323,20 +4688,41 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.572Z",
+          "checkedAt": "2026-09-25T17:19:14.811Z",
           "musicbrainzCheckedAt": "2026-09-25T17:11:38.554Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
-          "unmappedRaw": [],
-          "status": "sense-dades",
-          "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-25T17:12:50.572Z",
-          "wikidataWorkEvidence": [],
+          "unmappedRaw": [
+            "country"
+          ],
+          "status": "parcial",
+          "wikidataWorkRaw": [
+            "folk",
+            "country"
+          ],
+          "wikidataWorkCheckedAt": "2026-09-25T17:19:14.811Z",
+          "wikidataWorkEvidence": [
+            {
+              "genre": "folk",
+              "workCount": 6
+            },
+            {
+              "genre": "country",
+              "workCount": 5
+            }
+          ],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:38.554Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:38.554Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:18:03.038Z",
+          "musicbrainzReleaseRaw": [],
+          "musicbrainzReleaseEvidence": [],
+          "musicbrainzReleaseGroupCount": 6
         }
       },
-      "genresRaw": []
+      "genresRaw": [
+        "folk",
+        "country"
+      ]
     },
     {
       "name": "Esther Querol Forner",
@@ -4420,7 +4806,7 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.572Z",
+          "checkedAt": "2026-09-25T17:19:14.812Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:25.663Z",
           "wikidataRaw": [
             "pop"
@@ -4429,7 +4815,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       },
       "genresRaw": [
@@ -4477,7 +4868,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.572Z",
+          "checkedAt": "2026-09-25T17:19:14.813Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:27.035Z",
           "wikidataRaw": [
             "música urbana",
@@ -4488,14 +4879,21 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
     {
       "name": "Ferran Palau",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Pop"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -4522,20 +4920,33 @@
       ],
       "lastChecked": "2026-09-25T15:44:05.402Z",
       "notes": "",
-      "genresRaw": [],
+      "genresRaw": [
+        "pop"
+      ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.572Z",
+          "checkedAt": "2026-09-25T17:19:14.813Z",
           "musicbrainzCheckedAt": "2026-09-25T17:11:39.795Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades",
+          "status": "classificat",
           "wikidataWorkRaw": [],
           "wikidataWorkCheckedAt": "2026-09-25T17:12:50.572Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:39.795Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:39.795Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:18:04.273Z",
+          "musicbrainzReleaseRaw": [
+            "pop"
+          ],
+          "musicbrainzReleaseEvidence": [
+            {
+              "label": "Pop",
+              "releaseGroupCount": 5
+            }
+          ],
+          "musicbrainzReleaseGroupCount": 8
         }
       }
     },
@@ -4580,7 +4991,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.573Z",
+          "checkedAt": "2026-09-25T17:19:14.815Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:29.779Z",
           "wikidataRaw": [
             "pop",
@@ -4594,7 +5005,12 @@
           ],
           "status": "parcial",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
@@ -4635,7 +5051,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.573Z",
+          "checkedAt": "2026-09-25T17:19:14.815Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:31.320Z",
           "wikidataRaw": [
             "música urbana"
@@ -4644,7 +5060,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
@@ -4737,7 +5158,7 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.574Z",
+          "checkedAt": "2026-09-25T17:19:14.817Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:32.721Z",
           "wikidataRaw": [
             "música mediterrània",
@@ -4751,7 +5172,12 @@
           ],
           "status": "parcial",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       },
       "genresRaw": [
@@ -4840,17 +5266,21 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.574Z",
+          "checkedAt": "2026-09-25T17:19:14.817Z",
           "musicbrainzCheckedAt": "2026-09-25T17:11:41.035Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-25T17:12:50.574Z",
+          "wikidataWorkCheckedAt": "2026-09-25T17:19:14.817Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:41.035Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:41.035Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:18:05.538Z",
+          "musicbrainzReleaseRaw": [],
+          "musicbrainzReleaseEvidence": [],
+          "musicbrainzReleaseGroupCount": 1
         }
       },
       "genresRaw": []
@@ -4941,7 +5371,7 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.575Z",
+          "checkedAt": "2026-09-25T17:19:14.818Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:35.501Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [
@@ -4950,7 +5380,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       },
       "genresRaw": [
@@ -5043,7 +5478,7 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.575Z",
+          "checkedAt": "2026-09-25T17:19:14.818Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:36.763Z",
           "wikidataRaw": [
             "folk"
@@ -5052,7 +5487,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       },
       "genresRaw": [
@@ -5096,7 +5536,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.575Z",
+          "checkedAt": "2026-09-25T17:19:14.819Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:38.143Z",
           "wikidataRaw": [
             "rumba catalana"
@@ -5105,7 +5545,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
@@ -5147,7 +5592,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.575Z",
+          "checkedAt": "2026-09-25T17:19:14.819Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:39.406Z",
           "wikidataRaw": [
             "pop-folk"
@@ -5156,7 +5601,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
@@ -5205,7 +5655,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.575Z",
+          "checkedAt": "2026-09-25T17:19:14.819Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:40.969Z",
           "wikidataRaw": [
             "pop"
@@ -5214,7 +5664,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
@@ -5262,7 +5717,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.576Z",
+          "checkedAt": "2026-09-25T17:19:14.822Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:42.353Z",
           "wikidataRaw": [
             "música de cantautor",
@@ -5275,7 +5730,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
@@ -5364,17 +5824,21 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.576Z",
+          "checkedAt": "2026-09-25T17:19:14.822Z",
           "musicbrainzCheckedAt": "2026-09-25T17:11:42.279Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-25T17:12:50.576Z",
+          "wikidataWorkCheckedAt": "2026-09-25T17:19:14.822Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:42.279Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:42.279Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:18:06.840Z",
+          "musicbrainzReleaseRaw": [],
+          "musicbrainzReleaseEvidence": [],
+          "musicbrainzReleaseGroupCount": 20
         }
       },
       "genresRaw": []
@@ -5459,17 +5923,21 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.576Z",
+          "checkedAt": "2026-09-25T17:19:14.822Z",
           "musicbrainzCheckedAt": "2026-09-25T17:11:43.519Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-25T17:12:50.576Z",
+          "wikidataWorkCheckedAt": "2026-09-25T17:19:14.822Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:43.519Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:43.519Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:18:08.078Z",
+          "musicbrainzReleaseRaw": [],
+          "musicbrainzReleaseEvidence": [],
+          "musicbrainzReleaseGroupCount": 3
         }
       },
       "genresRaw": []
@@ -5558,17 +6026,21 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.576Z",
+          "checkedAt": "2026-09-25T17:19:14.822Z",
           "musicbrainzCheckedAt": "2026-09-25T17:11:44.759Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-25T17:12:50.576Z",
+          "wikidataWorkCheckedAt": "2026-09-25T17:19:14.822Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:44.759Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:44.759Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:18:09.307Z",
+          "musicbrainzReleaseRaw": [],
+          "musicbrainzReleaseEvidence": [],
+          "musicbrainzReleaseGroupCount": 2
         }
       },
       "genresRaw": []
@@ -5612,7 +6084,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.577Z",
+          "checkedAt": "2026-09-25T17:19:14.823Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:47.870Z",
           "wikidataRaw": [
             "oi!",
@@ -5624,7 +6096,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
@@ -5714,7 +6191,7 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.578Z",
+          "checkedAt": "2026-09-25T17:19:14.824Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:49.235Z",
           "wikidataRaw": [
             "cançó d'autor",
@@ -5726,7 +6203,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       },
       "genresRaw": [
@@ -5817,7 +6299,7 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.578Z",
+          "checkedAt": "2026-09-25T17:19:14.825Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:50.505Z",
           "wikidataRaw": [
             "òpera"
@@ -5826,7 +6308,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       },
       "genresRaw": [
@@ -5914,17 +6401,21 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.578Z",
+          "checkedAt": "2026-09-25T17:19:14.825Z",
           "musicbrainzCheckedAt": "2026-09-25T17:11:46.000Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-25T17:12:50.578Z",
+          "wikidataWorkCheckedAt": "2026-09-25T17:19:14.825Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:46.000Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:46.000Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:18:10.539Z",
+          "musicbrainzReleaseRaw": [],
+          "musicbrainzReleaseEvidence": [],
+          "musicbrainzReleaseGroupCount": 7
         }
       },
       "genresRaw": []
@@ -5985,17 +6476,21 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.578Z",
+          "checkedAt": "2026-09-25T17:19:14.825Z",
           "musicbrainzCheckedAt": "2026-09-25T17:11:47.243Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-25T17:12:50.578Z",
+          "wikidataWorkCheckedAt": "2026-09-25T17:19:14.825Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:47.243Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:47.243Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:18:11.761Z",
+          "musicbrainzReleaseRaw": [],
+          "musicbrainzReleaseEvidence": [],
+          "musicbrainzReleaseGroupCount": 0
         }
       },
       "genresRaw": []
@@ -6003,7 +6498,10 @@
     {
       "name": "Jaume Sisa i Mestres",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Rock",
+        "Folk i arrel"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -6055,20 +6553,41 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.578Z",
+          "checkedAt": "2026-09-25T17:19:14.826Z",
           "musicbrainzCheckedAt": "2026-09-25T17:11:48.484Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades",
+          "status": "classificat",
           "wikidataWorkRaw": [],
           "wikidataWorkCheckedAt": "2026-09-25T17:12:50.578Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:48.484Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:48.484Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:18:12.994Z",
+          "musicbrainzReleaseRaw": [
+            "folk rock",
+            "rock",
+            "folk"
+          ],
+          "musicbrainzReleaseEvidence": [
+            {
+              "label": "Rock",
+              "releaseGroupCount": 2
+            },
+            {
+              "label": "Folk i arrel",
+              "releaseGroupCount": 2
+            }
+          ],
+          "musicbrainzReleaseGroupCount": 18
         }
       },
-      "genresRaw": []
+      "genresRaw": [
+        "folk rock",
+        "rock",
+        "folk"
+      ]
     },
     {
       "name": "Jo Jet i Maria Ribot",
@@ -6110,7 +6629,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.578Z",
+          "checkedAt": "2026-09-25T17:19:14.827Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:55.902Z",
           "wikidataRaw": [
             "lo-fi",
@@ -6121,7 +6640,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
@@ -6169,7 +6693,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.579Z",
+          "checkedAt": "2026-09-25T17:19:14.829Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:57.292Z",
           "wikidataRaw": [
             "música de cantautor",
@@ -6184,7 +6708,12 @@
           ],
           "status": "parcial",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
@@ -6228,17 +6757,21 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.580Z",
+          "checkedAt": "2026-09-25T17:19:14.829Z",
           "musicbrainzCheckedAt": "2026-09-25T17:11:49.724Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-25T17:12:50.580Z",
+          "wikidataWorkCheckedAt": "2026-09-25T17:19:14.829Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:49.724Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:49.724Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:18:14.222Z",
+          "musicbrainzReleaseRaw": [],
+          "musicbrainzReleaseEvidence": [],
+          "musicbrainzReleaseGroupCount": 1
         }
       },
       "genresRaw": []
@@ -6291,17 +6824,21 @@
           "relationCount": 1
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.580Z",
+          "checkedAt": "2026-09-25T17:19:14.830Z",
           "musicbrainzCheckedAt": "2026-09-25T17:11:50.965Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-25T17:12:50.580Z",
+          "wikidataWorkCheckedAt": "2026-09-25T17:19:14.830Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:50.965Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:50.965Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:18:15.468Z",
+          "musicbrainzReleaseRaw": [],
+          "musicbrainzReleaseEvidence": [],
+          "musicbrainzReleaseGroupCount": 24
         }
       },
       "genresRaw": []
@@ -6350,7 +6887,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.581Z",
+          "checkedAt": "2026-09-25T17:19:14.832Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:01.458Z",
           "wikidataRaw": [
             "Nova Cançó",
@@ -6368,7 +6905,12 @@
           ],
           "status": "parcial",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
@@ -6445,7 +6987,7 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.582Z",
+          "checkedAt": "2026-09-25T17:19:14.834Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:02.716Z",
           "wikidataRaw": [
             "pop"
@@ -6459,7 +7001,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       },
       "genresRaw": [
@@ -6557,7 +7104,7 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.582Z",
+          "checkedAt": "2026-09-25T17:19:14.834Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:04.117Z",
           "wikidataRaw": [
             "folk"
@@ -6566,7 +7113,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       },
       "genresRaw": [
@@ -6654,7 +7206,7 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.582Z",
+          "checkedAt": "2026-09-25T17:19:14.835Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:05.500Z",
           "wikidataRaw": [
             "sardana"
@@ -6663,7 +7215,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       },
       "genresRaw": [
@@ -6703,17 +7260,21 @@
       "genresRaw": [],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.582Z",
+          "checkedAt": "2026-09-25T17:19:14.835Z",
           "musicbrainzCheckedAt": "2026-09-25T17:11:52.205Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-25T17:12:50.582Z",
+          "wikidataWorkCheckedAt": "2026-09-25T17:19:14.835Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:52.205Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:52.205Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:18:16.701Z",
+          "musicbrainzReleaseRaw": [],
+          "musicbrainzReleaseEvidence": [],
+          "musicbrainzReleaseGroupCount": 2
         }
       }
     },
@@ -6804,7 +7365,7 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.582Z",
+          "checkedAt": "2026-09-25T17:19:14.836Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:08.052Z",
           "wikidataRaw": [
             "sardana",
@@ -6816,7 +7377,12 @@
           ],
           "status": "parcial",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       },
       "genresRaw": [
@@ -6827,7 +7393,10 @@
     {
       "name": "Jose Domingo",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Rock",
+        "Folk i arrel"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -6908,20 +7477,41 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.582Z",
+          "checkedAt": "2026-09-25T17:19:14.836Z",
           "musicbrainzCheckedAt": "2026-09-25T17:11:53.445Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades",
+          "status": "classificat",
           "wikidataWorkRaw": [],
           "wikidataWorkCheckedAt": "2026-09-25T17:12:50.582Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:53.445Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:53.445Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:18:17.943Z",
+          "musicbrainzReleaseRaw": [
+            "anti-folk",
+            "folk",
+            "rock"
+          ],
+          "musicbrainzReleaseEvidence": [
+            {
+              "label": "Folk i arrel",
+              "releaseGroupCount": 2
+            },
+            {
+              "label": "Rock",
+              "releaseGroupCount": 2
+            }
+          ],
+          "musicbrainzReleaseGroupCount": 5
         }
       },
-      "genresRaw": []
+      "genresRaw": [
+        "anti-folk",
+        "folk",
+        "rock"
+      ]
     },
     {
       "name": "Josep Carreras i Coll",
@@ -7004,7 +7594,7 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.583Z",
+          "checkedAt": "2026-09-25T17:19:14.837Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:10.594Z",
           "wikidataRaw": [
             "òpera"
@@ -7015,7 +7605,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       },
       "genresRaw": [
@@ -7056,7 +7651,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.583Z",
+          "checkedAt": "2026-09-25T17:19:14.838Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:11.869Z",
           "wikidataRaw": [
             "música electroacústica"
@@ -7065,7 +7660,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       },
       "genresRaw": [
@@ -7105,7 +7705,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.584Z",
+          "checkedAt": "2026-09-25T17:19:14.839Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:13.282Z",
           "wikidataRaw": [
             "música contemporània",
@@ -7119,7 +7719,12 @@
           ],
           "status": "parcial",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       },
       "genresRaw": [
@@ -7169,7 +7774,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.584Z",
+          "checkedAt": "2026-09-25T17:19:14.841Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:14.671Z",
           "wikidataRaw": [
             "folk",
@@ -7182,14 +7787,21 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
     {
       "name": "Juli Bustamante",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Pop"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -7217,20 +7829,33 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.584Z",
+          "checkedAt": "2026-09-25T17:19:14.841Z",
           "musicbrainzCheckedAt": "2026-09-25T17:11:54.684Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades",
+          "status": "classificat",
           "wikidataWorkRaw": [],
           "wikidataWorkCheckedAt": "2026-09-25T17:12:50.584Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:54.684Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:54.684Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:18:19.179Z",
+          "musicbrainzReleaseRaw": [
+            "pop"
+          ],
+          "musicbrainzReleaseEvidence": [
+            {
+              "label": "Pop",
+              "releaseGroupCount": 2
+            }
+          ],
+          "musicbrainzReleaseGroupCount": 4
         }
       },
-      "genresRaw": []
+      "genresRaw": [
+        "pop"
+      ]
     },
     {
       "name": "Julieta",
@@ -7276,7 +7901,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.586Z",
+          "checkedAt": "2026-09-25T17:19:14.844Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:17.197Z",
           "wikidataRaw": [
             "música electrònica",
@@ -7292,7 +7917,12 @@
           ],
           "status": "parcial",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
@@ -7328,7 +7958,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.586Z",
+          "checkedAt": "2026-09-25T17:19:14.845Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:18.542Z",
           "wikidataRaw": [
             "jazz",
@@ -7345,7 +7975,12 @@
           ],
           "status": "parcial",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       },
       "genresRaw": [
@@ -7393,7 +8028,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.587Z",
+          "checkedAt": "2026-09-25T17:19:14.846Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:19.897Z",
           "wikidataRaw": [
             "thrash metal"
@@ -7402,7 +8037,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
@@ -7439,7 +8079,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.587Z",
+          "checkedAt": "2026-09-25T17:19:14.847Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:21.264Z",
           "wikidataRaw": [
             "punk rock",
@@ -7450,7 +8090,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       },
       "genresRaw": [
@@ -7492,7 +8137,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.587Z",
+          "checkedAt": "2026-09-25T17:19:14.847Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:22.676Z",
           "wikidataRaw": [
             "indie rock"
@@ -7501,7 +8146,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       },
       "genresRaw": [
@@ -7511,7 +8161,11 @@
     {
       "name": "La Brigada",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Pop",
+        "Indie / Alternativa",
+        "Folk i arrel"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -7538,20 +8192,45 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.587Z",
+          "checkedAt": "2026-09-25T17:19:14.848Z",
           "musicbrainzCheckedAt": "2026-09-25T17:11:55.924Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades",
-          "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-25T17:12:50.587Z",
-          "wikidataWorkEvidence": [],
+          "status": "classificat",
+          "wikidataWorkRaw": [
+            "pop",
+            "folk",
+            "indie pop"
+          ],
+          "wikidataWorkCheckedAt": "2026-09-25T17:19:14.848Z",
+          "wikidataWorkEvidence": [
+            {
+              "genre": "pop",
+              "workCount": 3
+            },
+            {
+              "genre": "folk",
+              "workCount": 3
+            },
+            {
+              "genre": "indie pop",
+              "workCount": 3
+            }
+          ],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:55.924Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:55.924Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:18:20.414Z",
+          "musicbrainzReleaseRaw": [],
+          "musicbrainzReleaseEvidence": [],
+          "musicbrainzReleaseGroupCount": 1
         }
       },
-      "genresRaw": []
+      "genresRaw": [
+        "pop",
+        "folk",
+        "indie pop"
+      ]
     },
     {
       "name": "La Carrau",
@@ -7583,17 +8262,21 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.587Z",
+          "checkedAt": "2026-09-25T17:19:14.848Z",
           "musicbrainzCheckedAt": "2026-09-25T17:11:57.164Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-25T17:12:50.587Z",
+          "wikidataWorkCheckedAt": "2026-09-25T17:19:14.848Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:57.164Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:57.164Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:18:21.646Z",
+          "musicbrainzReleaseRaw": [],
+          "musicbrainzReleaseEvidence": [],
+          "musicbrainzReleaseGroupCount": 4
         }
       },
       "genresRaw": []
@@ -7636,7 +8319,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.587Z",
+          "checkedAt": "2026-09-25T17:19:14.849Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:26.840Z",
           "wikidataRaw": [
             "pop-rock"
@@ -7645,7 +8328,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
@@ -7683,7 +8371,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.588Z",
+          "checkedAt": "2026-09-25T17:19:14.850Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:28.219Z",
           "wikidataRaw": [
             "ska punk"
@@ -7696,7 +8384,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       },
       "genresRaw": [
@@ -7748,7 +8441,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.589Z",
+          "checkedAt": "2026-09-25T17:19:14.851Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:29.484Z",
           "wikidataRaw": [
             "indie folk",
@@ -7759,7 +8452,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
@@ -7802,7 +8500,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.589Z",
+          "checkedAt": "2026-09-25T17:19:14.852Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:30.738Z",
           "wikidataRaw": [
             "pop",
@@ -7812,7 +8510,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
@@ -7854,7 +8557,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.590Z",
+          "checkedAt": "2026-09-25T17:19:14.853Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:32.167Z",
           "wikidataRaw": [
             "rumba catalana",
@@ -7866,14 +8569,22 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
     {
       "name": "La Trinca",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Pop",
+        "Rock"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -7900,7 +8611,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.590Z",
+          "checkedAt": "2026-09-25T17:19:14.854Z",
           "musicbrainzCheckedAt": "2026-09-25T17:11:58.405Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [
@@ -7909,16 +8620,34 @@
           "unmappedRaw": [
             "comedy"
           ],
-          "status": "per-revisar",
+          "status": "parcial",
           "wikidataWorkRaw": [],
           "wikidataWorkCheckedAt": "2026-09-25T17:12:50.590Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:58.405Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:58.405Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:18:22.894Z",
+          "musicbrainzReleaseRaw": [
+            "pop",
+            "rock"
+          ],
+          "musicbrainzReleaseEvidence": [
+            {
+              "label": "Pop",
+              "releaseGroupCount": 6
+            },
+            {
+              "label": "Rock",
+              "releaseGroupCount": 3
+            }
+          ],
+          "musicbrainzReleaseGroupCount": 24
         }
       },
       "genresRaw": [
-        "comedy"
+        "comedy",
+        "pop",
+        "rock"
       ]
     },
     {
@@ -7951,17 +8680,21 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.590Z",
+          "checkedAt": "2026-09-25T17:19:14.854Z",
           "musicbrainzCheckedAt": "2026-09-25T17:11:59.647Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-25T17:12:50.590Z",
+          "wikidataWorkCheckedAt": "2026-09-25T17:19:14.854Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:59.647Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:59.647Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:18:24.127Z",
+          "musicbrainzReleaseRaw": [],
+          "musicbrainzReleaseEvidence": [],
+          "musicbrainzReleaseGroupCount": 5
         }
       },
       "genresRaw": []
@@ -8003,7 +8736,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.590Z",
+          "checkedAt": "2026-09-25T17:19:14.855Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:36.142Z",
           "wikidataRaw": [
             "música urbana"
@@ -8012,7 +8745,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
@@ -8050,7 +8788,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.590Z",
+          "checkedAt": "2026-09-25T17:19:14.855Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:37.560Z",
           "wikidataRaw": [
             "pop-rock",
@@ -8062,7 +8800,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       },
       "genresRaw": [
@@ -8109,7 +8852,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.591Z",
+          "checkedAt": "2026-09-25T17:19:14.856Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:38.815Z",
           "wikidataRaw": [
             "rap",
@@ -8119,14 +8862,21 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
     {
       "name": "Llorenç de Santamaria",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Pop"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -8155,20 +8905,33 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.591Z",
+          "checkedAt": "2026-09-25T17:19:14.857Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:00.888Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades",
+          "status": "classificat",
           "wikidataWorkRaw": [],
           "wikidataWorkCheckedAt": "2026-09-25T17:12:50.591Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:00.888Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:00.888Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:18:25.361Z",
+          "musicbrainzReleaseRaw": [
+            "pop"
+          ],
+          "musicbrainzReleaseEvidence": [
+            {
+              "label": "Pop",
+              "releaseGroupCount": 2
+            }
+          ],
+          "musicbrainzReleaseGroupCount": 4
         }
       },
-      "genresRaw": []
+      "genresRaw": [
+        "pop"
+      ]
     },
     {
       "name": "Lluís Llach i Grande",
@@ -8210,7 +8973,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.591Z",
+          "checkedAt": "2026-09-25T17:19:14.857Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:41.458Z",
           "wikidataRaw": [
             "cançó protesta"
@@ -8219,7 +8982,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
@@ -8272,17 +9040,21 @@
           "relationCount": 1
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.591Z",
+          "checkedAt": "2026-09-25T17:19:14.857Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:02.130Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-25T17:12:50.591Z",
+          "wikidataWorkCheckedAt": "2026-09-25T17:19:14.857Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:02.130Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:02.130Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:18:26.616Z",
+          "musicbrainzReleaseRaw": [],
+          "musicbrainzReleaseEvidence": [],
+          "musicbrainzReleaseGroupCount": 2
         }
       },
       "genresRaw": []
@@ -8324,7 +9096,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.591Z",
+          "checkedAt": "2026-09-25T17:19:14.858Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:44.250Z",
           "wikidataRaw": [
             "hip hop polític"
@@ -8333,7 +9105,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
@@ -8369,7 +9146,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.592Z",
+          "checkedAt": "2026-09-25T17:19:14.858Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:45.626Z",
           "wikidataRaw": [
             "rumba catalana"
@@ -8378,7 +9155,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       },
       "genresRaw": [
@@ -8420,7 +9202,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.592Z",
+          "checkedAt": "2026-09-25T17:19:14.860Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:46.952Z",
           "wikidataRaw": [
             "nadala",
@@ -8434,7 +9216,12 @@
           ],
           "status": "parcial",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       },
       "genresRaw": [
@@ -8477,7 +9264,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.593Z",
+          "checkedAt": "2026-09-25T17:19:14.862Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:48.216Z",
           "wikidataRaw": [
             "jazz contemporani"
@@ -8490,7 +9277,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       },
       "genresRaw": [
@@ -8533,17 +9325,21 @@
       "genresRaw": [],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.593Z",
+          "checkedAt": "2026-09-25T17:19:14.862Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:03.370Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-25T17:12:50.593Z",
+          "wikidataWorkCheckedAt": "2026-09-25T17:19:14.862Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:03.370Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:03.370Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:18:27.846Z",
+          "musicbrainzReleaseRaw": [],
+          "musicbrainzReleaseEvidence": [],
+          "musicbrainzReleaseGroupCount": 3
         }
       }
     },
@@ -8593,7 +9389,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.594Z",
+          "checkedAt": "2026-09-25T17:19:14.864Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:51.072Z",
           "wikidataRaw": [
             "música mediterrània",
@@ -8609,7 +9405,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
@@ -8644,17 +9445,21 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.594Z",
+          "checkedAt": "2026-09-25T17:19:14.864Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:04.610Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-25T17:12:50.594Z",
+          "wikidataWorkCheckedAt": "2026-09-25T17:19:14.864Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:04.610Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:04.610Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:18:29.082Z",
+          "musicbrainzReleaseRaw": [],
+          "musicbrainzReleaseEvidence": [],
+          "musicbrainzReleaseGroupCount": 8
         }
       },
       "genresRaw": []
@@ -8690,17 +9495,21 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.594Z",
+          "checkedAt": "2026-09-25T17:19:14.864Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:05.850Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-25T17:12:50.594Z",
+          "wikidataWorkCheckedAt": "2026-09-25T17:19:14.864Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:05.850Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:05.850Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:18:30.320Z",
+          "musicbrainzReleaseRaw": [],
+          "musicbrainzReleaseEvidence": [],
+          "musicbrainzReleaseGroupCount": 2
         }
       },
       "genresRaw": []
@@ -8735,17 +9544,21 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.594Z",
+          "checkedAt": "2026-09-25T17:19:14.864Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:07.090Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-25T17:12:50.594Z",
+          "wikidataWorkCheckedAt": "2026-09-25T17:19:14.864Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:07.090Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:07.090Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:18:31.554Z",
+          "musicbrainzReleaseRaw": [],
+          "musicbrainzReleaseEvidence": [],
+          "musicbrainzReleaseGroupCount": 1
         }
       },
       "genresRaw": []
@@ -8781,17 +9594,21 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.594Z",
+          "checkedAt": "2026-09-25T17:19:14.864Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:08.331Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-25T17:12:50.594Z",
+          "wikidataWorkCheckedAt": "2026-09-25T17:19:14.864Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:08.331Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:08.331Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:18:32.778Z",
+          "musicbrainzReleaseRaw": [],
+          "musicbrainzReleaseEvidence": [],
+          "musicbrainzReleaseGroupCount": 0
         }
       },
       "genresRaw": []
@@ -8833,7 +9650,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.595Z",
+          "checkedAt": "2026-09-25T17:19:14.865Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:58.639Z",
           "wikidataRaw": [
             "cant valencià d'estil"
@@ -8842,7 +9659,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
@@ -8880,7 +9702,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.596Z",
+          "checkedAt": "2026-09-25T17:19:14.867Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:01.257Z",
           "wikidataRaw": [
             "música mediterrània",
@@ -8893,7 +9715,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       },
       "genresRaw": [
@@ -8906,7 +9733,9 @@
     {
       "name": "Maria Hein",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Pop"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -8933,25 +9762,41 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.596Z",
+          "checkedAt": "2026-09-25T17:19:14.867Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:09.571Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades",
-          "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-25T17:12:50.596Z",
-          "wikidataWorkEvidence": [],
+          "status": "classificat",
+          "wikidataWorkRaw": [
+            "pop"
+          ],
+          "wikidataWorkCheckedAt": "2026-09-25T17:19:14.867Z",
+          "wikidataWorkEvidence": [
+            {
+              "genre": "pop",
+              "workCount": 2
+            }
+          ],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:09.571Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:09.571Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:18:34.018Z",
+          "musicbrainzReleaseRaw": [],
+          "musicbrainzReleaseEvidence": [],
+          "musicbrainzReleaseGroupCount": 5
         }
       },
-      "genresRaw": []
+      "genresRaw": [
+        "pop"
+      ]
     },
     {
       "name": "Maria Jaume",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Pop",
+        "Indie / Alternativa"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -8998,20 +9843,33 @@
           "relationCount": 1
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.596Z",
+          "checkedAt": "2026-09-25T17:19:14.868Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:10.812Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades",
-          "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-25T17:12:50.596Z",
-          "wikidataWorkEvidence": [],
+          "status": "classificat",
+          "wikidataWorkRaw": [
+            "indie pop"
+          ],
+          "wikidataWorkCheckedAt": "2026-09-25T17:19:14.867Z",
+          "wikidataWorkEvidence": [
+            {
+              "genre": "indie pop",
+              "workCount": 4
+            }
+          ],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:10.812Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:10.812Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:18:35.254Z",
+          "musicbrainzReleaseRaw": [],
+          "musicbrainzReleaseEvidence": [],
+          "musicbrainzReleaseGroupCount": 10
         }
       },
-      "genresRaw": []
+      "genresRaw": [
+        "indie pop"
+      ]
     },
     {
       "name": "Marina Rossell",
@@ -9047,17 +9905,21 @@
       "genresRaw": [],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.596Z",
+          "checkedAt": "2026-09-25T17:19:14.868Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:12.052Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-25T17:12:50.596Z",
+          "wikidataWorkCheckedAt": "2026-09-25T17:19:14.868Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:12.052Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:12.052Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:18:36.703Z",
+          "musicbrainzReleaseRaw": [],
+          "musicbrainzReleaseEvidence": [],
+          "musicbrainzReleaseGroupCount": 16
         }
       }
     },
@@ -9094,17 +9956,21 @@
       "genresRaw": [],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.596Z",
+          "checkedAt": "2026-09-25T17:19:14.868Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:13.292Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-25T17:12:50.596Z",
+          "wikidataWorkCheckedAt": "2026-09-25T17:19:14.868Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:13.292Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:13.292Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:18:37.926Z",
+          "musicbrainzReleaseRaw": [],
+          "musicbrainzReleaseEvidence": [],
+          "musicbrainzReleaseGroupCount": 3
         }
       }
     },
@@ -9138,17 +10004,21 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.596Z",
+          "checkedAt": "2026-09-25T17:19:14.868Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:14.532Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-25T17:12:50.596Z",
+          "wikidataWorkCheckedAt": "2026-09-25T17:19:14.868Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:14.532Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:14.532Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:18:39.152Z",
+          "musicbrainzReleaseRaw": [],
+          "musicbrainzReleaseEvidence": [],
+          "musicbrainzReleaseGroupCount": 1
         }
       },
       "genresRaw": []
@@ -9190,7 +10060,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.596Z",
+          "checkedAt": "2026-09-25T17:19:14.868Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:09.293Z",
           "wikidataRaw": [
             "pop"
@@ -9199,7 +10069,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
@@ -9254,7 +10129,7 @@
           "relationCount": 1
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.596Z",
+          "checkedAt": "2026-09-25T17:19:14.868Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:10.691Z",
           "wikidataRaw": [
             "flamenc"
@@ -9263,7 +10138,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       },
       "genresRaw": [
@@ -9312,7 +10192,7 @@
           "relationCount": 1
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.597Z",
+          "checkedAt": "2026-09-25T17:19:14.870Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:12.220Z",
           "wikidataRaw": [
             "rock psicodèlic",
@@ -9324,7 +10204,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       },
       "genresRaw": [
@@ -9367,7 +10252,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.597Z",
+          "checkedAt": "2026-09-25T17:19:14.870Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:13.588Z",
           "wikidataRaw": [
             "pop-rock"
@@ -9376,7 +10261,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       },
       "genresRaw": [
@@ -9415,17 +10305,21 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.597Z",
+          "checkedAt": "2026-09-25T17:19:14.870Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:15.774Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-25T17:12:50.597Z",
+          "wikidataWorkCheckedAt": "2026-09-25T17:19:14.870Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:15.774Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:15.774Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:18:40.371Z",
+          "musicbrainzReleaseRaw": [],
+          "musicbrainzReleaseEvidence": [],
+          "musicbrainzReleaseGroupCount": 0
         }
       },
       "genresRaw": []
@@ -9482,7 +10376,7 @@
           "relationCount": 1
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.597Z",
+          "checkedAt": "2026-09-25T17:19:14.871Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:16.309Z",
           "wikidataRaw": [
             "pop-rock",
@@ -9494,7 +10388,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       },
       "genresRaw": [
@@ -9534,7 +10433,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.598Z",
+          "checkedAt": "2026-09-25T17:19:14.872Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:17.580Z",
           "wikidataRaw": [
             "música tradicional",
@@ -9546,7 +10445,12 @@
           ],
           "status": "parcial",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       },
       "genresRaw": [
@@ -9591,7 +10495,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.599Z",
+          "checkedAt": "2026-09-25T17:19:14.875Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:18.849Z",
           "wikidataRaw": [
             "reggaeton",
@@ -9604,7 +10508,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       },
       "genresRaw": [
@@ -9660,7 +10569,7 @@
           "relationCount": 1
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.600Z",
+          "checkedAt": "2026-09-25T17:19:14.878Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:20.218Z",
           "wikidataRaw": [
             "punk rock",
@@ -9678,7 +10587,12 @@
           ],
           "status": "parcial",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       },
       "genresRaw": [
@@ -9724,7 +10638,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.600Z",
+          "checkedAt": "2026-09-25T17:19:14.878Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:21.492Z",
           "wikidataRaw": [
             "sardana"
@@ -9733,7 +10647,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       },
       "genresRaw": [
@@ -9774,17 +10693,21 @@
       "genresRaw": [],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.600Z",
+          "checkedAt": "2026-09-25T17:19:14.878Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:17.018Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-25T17:12:50.600Z",
+          "wikidataWorkCheckedAt": "2026-09-25T17:19:14.878Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:17.018Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:17.018Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:18:41.679Z",
+          "musicbrainzReleaseRaw": [],
+          "musicbrainzReleaseEvidence": [],
+          "musicbrainzReleaseGroupCount": 9
         }
       }
     },
@@ -9822,7 +10745,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.601Z",
+          "checkedAt": "2026-09-25T17:19:14.879Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:24.150Z",
           "wikidataRaw": [
             "pop"
@@ -9831,7 +10754,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       },
       "genresRaw": [
@@ -9880,7 +10808,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.601Z",
+          "checkedAt": "2026-09-25T17:19:14.880Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:25.588Z",
           "wikidataRaw": [
             "folk",
@@ -9895,7 +10823,12 @@
           ],
           "status": "parcial",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
@@ -9932,17 +10865,21 @@
       "genresRaw": [],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.601Z",
+          "checkedAt": "2026-09-25T17:19:14.880Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:18.258Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-25T17:12:50.601Z",
+          "wikidataWorkCheckedAt": "2026-09-25T17:19:14.880Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:18.258Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:18.258Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:18:42.892Z",
+          "musicbrainzReleaseRaw": [],
+          "musicbrainzReleaseEvidence": [],
+          "musicbrainzReleaseGroupCount": 0
         }
       }
     },
@@ -9995,7 +10932,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.603Z",
+          "checkedAt": "2026-09-25T17:19:14.883Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:28.323Z",
           "wikidataRaw": [
             "hardcore punk",
@@ -10016,7 +10953,12 @@
           ],
           "status": "parcial",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
@@ -10063,7 +11005,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.604Z",
+          "checkedAt": "2026-09-25T17:19:14.886Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:29.652Z",
           "wikidataRaw": [
             "música del món",
@@ -10079,7 +11021,12 @@
           ],
           "status": "parcial",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
@@ -10114,17 +11061,21 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.604Z",
+          "checkedAt": "2026-09-25T17:19:14.886Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:19.498Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-25T17:12:50.604Z",
+          "wikidataWorkCheckedAt": "2026-09-25T17:19:14.886Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:19.498Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:19.498Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:18:44.126Z",
+          "musicbrainzReleaseRaw": [],
+          "musicbrainzReleaseEvidence": [],
+          "musicbrainzReleaseGroupCount": 4
         }
       },
       "genresRaw": []
@@ -10162,17 +11113,21 @@
       "genresRaw": [],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.604Z",
+          "checkedAt": "2026-09-25T17:19:14.886Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:20.738Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-25T17:12:50.604Z",
+          "wikidataWorkCheckedAt": "2026-09-25T17:19:14.886Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:20.738Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:20.738Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:18:45.343Z",
+          "musicbrainzReleaseRaw": [],
+          "musicbrainzReleaseEvidence": [],
+          "musicbrainzReleaseGroupCount": 0
         }
       }
     },
@@ -10206,17 +11161,21 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.604Z",
+          "checkedAt": "2026-09-25T17:19:14.886Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:21.979Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-25T17:12:50.604Z",
+          "wikidataWorkCheckedAt": "2026-09-25T17:19:14.886Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:21.979Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:21.979Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:18:46.578Z",
+          "musicbrainzReleaseRaw": [],
+          "musicbrainzReleaseEvidence": [],
+          "musicbrainzReleaseGroupCount": 5
         }
       },
       "genresRaw": []
@@ -10251,17 +11210,21 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.604Z",
+          "checkedAt": "2026-09-25T17:19:14.886Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:23.218Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-25T17:12:50.604Z",
+          "wikidataWorkCheckedAt": "2026-09-25T17:19:14.886Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:23.218Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:23.218Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:18:47.803Z",
+          "musicbrainzReleaseRaw": [],
+          "musicbrainzReleaseEvidence": [],
+          "musicbrainzReleaseGroupCount": 1
         }
       },
       "genresRaw": []
@@ -10296,17 +11259,21 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.604Z",
+          "checkedAt": "2026-09-25T17:19:14.886Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:24.459Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-25T17:12:50.604Z",
+          "wikidataWorkCheckedAt": "2026-09-25T17:19:14.886Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:24.459Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:24.459Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:18:49.033Z",
+          "musicbrainzReleaseRaw": [],
+          "musicbrainzReleaseEvidence": [],
+          "musicbrainzReleaseGroupCount": 3
         }
       },
       "genresRaw": []
@@ -10314,7 +11281,12 @@
     {
       "name": "Orxata Sound System",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Urbana",
+        "Rap / Hip-hop",
+        "Electrònica",
+        "Punk"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -10360,20 +11332,51 @@
           "relationCount": 1
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.604Z",
+          "checkedAt": "2026-09-25T17:19:14.888Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:25.706Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades",
+          "status": "classificat",
           "wikidataWorkRaw": [],
           "wikidataWorkCheckedAt": "2026-09-25T17:12:50.604Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:25.706Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:25.706Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:18:50.369Z",
+          "musicbrainzReleaseRaw": [
+            "hip hop",
+            "trap",
+            "electro",
+            "electronic",
+            "techno",
+            "punk"
+          ],
+          "musicbrainzReleaseEvidence": [
+            {
+              "label": "Rap / Hip-hop",
+              "releaseGroupCount": 5
+            },
+            {
+              "label": "Electrònica",
+              "releaseGroupCount": 5
+            },
+            {
+              "label": "Punk",
+              "releaseGroupCount": 2
+            }
+          ],
+          "musicbrainzReleaseGroupCount": 7
         }
       },
-      "genresRaw": []
+      "genresRaw": [
+        "hip hop",
+        "trap",
+        "electro",
+        "electronic",
+        "techno",
+        "punk"
+      ]
     },
     {
       "name": "Ovidi Montllor i Mengual",
@@ -10408,7 +11411,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.604Z",
+          "checkedAt": "2026-09-25T17:19:14.888Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:39.195Z",
           "wikidataRaw": [
             "Nova Cançó"
@@ -10417,7 +11420,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       },
       "genresRaw": [
@@ -10458,7 +11466,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.605Z",
+          "checkedAt": "2026-09-25T17:19:14.889Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:40.565Z",
           "wikidataRaw": [
             "electropop",
@@ -10468,7 +11476,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       },
       "genresRaw": [
@@ -10509,17 +11522,21 @@
       "genresRaw": [],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.605Z",
+          "checkedAt": "2026-09-25T17:19:14.889Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:26.950Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-25T17:12:50.605Z",
+          "wikidataWorkCheckedAt": "2026-09-25T17:19:14.889Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:26.950Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:26.950Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:18:51.600Z",
+          "musicbrainzReleaseRaw": [],
+          "musicbrainzReleaseEvidence": [],
+          "musicbrainzReleaseGroupCount": 4
         }
       }
     },
@@ -10555,7 +11572,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.605Z",
+          "checkedAt": "2026-09-25T17:19:14.890Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:43.100Z",
           "wikidataRaw": [
             "folk",
@@ -10567,7 +11584,12 @@
           ],
           "status": "parcial",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       },
       "genresRaw": [
@@ -10626,7 +11648,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.607Z",
+          "checkedAt": "2026-09-25T17:19:14.896Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:44.358Z",
           "wikidataRaw": [
             "rock",
@@ -10647,7 +11669,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
@@ -10692,7 +11719,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.608Z",
+          "checkedAt": "2026-09-25T17:19:14.897Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:45.611Z",
           "wikidataRaw": [
             "música de cantautor",
@@ -10703,7 +11730,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
@@ -10751,7 +11783,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.609Z",
+          "checkedAt": "2026-09-25T17:19:14.899Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:47.023Z",
           "wikidataRaw": [
             "pop llatí",
@@ -10763,14 +11795,21 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
     {
       "name": "Pep Gimeno \"Botifarra\"",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Folk i arrel"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -10797,25 +11836,49 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.609Z",
+          "checkedAt": "2026-09-25T17:19:14.899Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:28.192Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
-          "unmappedRaw": [],
-          "status": "sense-dades",
-          "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-25T17:12:50.609Z",
-          "wikidataWorkEvidence": [],
+          "unmappedRaw": [
+            "música valenciana"
+          ],
+          "status": "parcial",
+          "wikidataWorkRaw": [
+            "música tradicional",
+            "música valenciana"
+          ],
+          "wikidataWorkCheckedAt": "2026-09-25T17:19:14.899Z",
+          "wikidataWorkEvidence": [
+            {
+              "genre": "música tradicional",
+              "workCount": 2
+            },
+            {
+              "genre": "música valenciana",
+              "workCount": 2
+            }
+          ],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:28.192Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:28.192Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:18:52.849Z",
+          "musicbrainzReleaseRaw": [],
+          "musicbrainzReleaseEvidence": [],
+          "musicbrainzReleaseGroupCount": 10
         }
       },
-      "genresRaw": []
+      "genresRaw": [
+        "música tradicional",
+        "música valenciana"
+      ]
     },
     {
       "name": "Pep Laguarda",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Rock",
+        "Folk i arrel"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -10842,25 +11905,44 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.609Z",
+          "checkedAt": "2026-09-25T17:19:14.900Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:29.433Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades",
+          "status": "classificat",
           "wikidataWorkRaw": [],
           "wikidataWorkCheckedAt": "2026-09-25T17:12:50.609Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:29.433Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:29.433Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:18:54.166Z",
+          "musicbrainzReleaseRaw": [
+            "folk rock",
+            "rock"
+          ],
+          "musicbrainzReleaseEvidence": [
+            {
+              "label": "Rock",
+              "releaseGroupCount": 2
+            }
+          ],
+          "musicbrainzReleaseGroupCount": 2
         }
       },
-      "genresRaw": []
+      "genresRaw": [
+        "folk rock",
+        "rock"
+      ]
     },
     {
       "name": "Pepet i Marieta",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Pop",
+        "Rock",
+        "Ska / Reggae"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -10887,20 +11969,47 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.609Z",
+          "checkedAt": "2026-09-25T17:19:14.901Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:30.673Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
-          "unmappedRaw": [],
-          "status": "sense-dades",
-          "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-25T17:12:50.609Z",
-          "wikidataWorkEvidence": [],
+          "unmappedRaw": [
+            "patxanga"
+          ],
+          "status": "parcial",
+          "wikidataWorkRaw": [
+            "ska-rock",
+            "patxanga",
+            "pop-rock"
+          ],
+          "wikidataWorkCheckedAt": "2026-09-25T17:19:14.900Z",
+          "wikidataWorkEvidence": [
+            {
+              "genre": "ska-rock",
+              "workCount": 3
+            },
+            {
+              "genre": "patxanga",
+              "workCount": 6
+            },
+            {
+              "genre": "pop-rock",
+              "workCount": 6
+            }
+          ],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:30.673Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:30.673Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:18:55.402Z",
+          "musicbrainzReleaseRaw": [],
+          "musicbrainzReleaseEvidence": [],
+          "musicbrainzReleaseGroupCount": 8
         }
       },
-      "genresRaw": []
+      "genresRaw": [
+        "ska-rock",
+        "patxanga",
+        "pop-rock"
+      ]
     },
     {
       "name": "Pilseners",
@@ -10940,7 +12049,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.609Z",
+          "checkedAt": "2026-09-25T17:19:14.902Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:52.327Z",
           "wikidataRaw": [
             "oi!",
@@ -10950,7 +12059,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
@@ -10986,7 +12100,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.610Z",
+          "checkedAt": "2026-09-25T17:19:14.903Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:53.590Z",
           "wikidataRaw": [
             "reggae",
@@ -11000,7 +12114,12 @@
           ],
           "status": "parcial",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       },
       "genresRaw": [
@@ -11040,17 +12159,21 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.610Z",
+          "checkedAt": "2026-09-25T17:19:14.903Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:31.913Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-25T17:12:50.610Z",
+          "wikidataWorkCheckedAt": "2026-09-25T17:19:14.903Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:31.913Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:31.913Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:18:56.735Z",
+          "musicbrainzReleaseRaw": [],
+          "musicbrainzReleaseEvidence": [],
+          "musicbrainzReleaseGroupCount": 0
         }
       },
       "genresRaw": []
@@ -11091,7 +12214,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.612Z",
+          "checkedAt": "2026-09-25T17:19:14.906Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:56.174Z",
           "wikidataRaw": [
             "balada romàntica",
@@ -11112,7 +12235,12 @@
           ],
           "status": "parcial",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       },
       "genresRaw": [
@@ -11157,7 +12285,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.612Z",
+          "checkedAt": "2026-09-25T17:19:14.907Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:57.434Z",
           "wikidataRaw": [
             "pop"
@@ -11166,7 +12294,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       },
       "genresRaw": [
@@ -11203,17 +12336,21 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.612Z",
+          "checkedAt": "2026-09-25T17:19:14.907Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:33.156Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-25T17:12:50.612Z",
+          "wikidataWorkCheckedAt": "2026-09-25T17:19:14.907Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:33.156Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:33.156Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:18:57.987Z",
+          "musicbrainzReleaseRaw": [],
+          "musicbrainzReleaseEvidence": [],
+          "musicbrainzReleaseGroupCount": 1
         }
       },
       "genresRaw": []
@@ -11250,17 +12387,21 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.612Z",
+          "checkedAt": "2026-09-25T17:19:14.907Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:34.397Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-25T17:12:50.612Z",
+          "wikidataWorkCheckedAt": "2026-09-25T17:19:14.907Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:34.397Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:34.397Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:18:59.223Z",
+          "musicbrainzReleaseRaw": [],
+          "musicbrainzReleaseEvidence": [],
+          "musicbrainzReleaseGroupCount": 0
         }
       },
       "genresRaw": []
@@ -11300,7 +12441,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.612Z",
+          "checkedAt": "2026-09-25T17:19:14.908Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:01.361Z",
           "wikidataRaw": [
             "cançó d'autor"
@@ -11312,7 +12453,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       },
       "genresRaw": [
@@ -11353,7 +12499,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.613Z",
+          "checkedAt": "2026-09-25T17:19:14.909Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:02.609Z",
           "wikidataRaw": [
             "rap"
@@ -11362,7 +12508,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       },
       "genresRaw": [
@@ -11404,7 +12555,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.613Z",
+          "checkedAt": "2026-09-25T17:19:14.910Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:04.100Z",
           "wikidataRaw": [
             "indie pop",
@@ -11418,7 +12569,12 @@
           ],
           "status": "parcial",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       },
       "genresRaw": [
@@ -11458,17 +12614,21 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.613Z",
+          "checkedAt": "2026-09-25T17:19:14.910Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:35.636Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-25T17:12:50.613Z",
+          "wikidataWorkCheckedAt": "2026-09-25T17:19:14.910Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:35.636Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:35.636Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:19:00.591Z",
+          "musicbrainzReleaseRaw": [],
+          "musicbrainzReleaseEvidence": [],
+          "musicbrainzReleaseGroupCount": 1
         }
       },
       "genresRaw": []
@@ -11511,7 +12671,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.614Z",
+          "checkedAt": "2026-09-25T17:19:14.910Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:06.727Z",
           "wikidataRaw": [
             "pop-rock"
@@ -11520,14 +12680,21 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
     {
       "name": "Roger Mas i Solé",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Cançó d'autor"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -11555,20 +12722,33 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.614Z",
+          "checkedAt": "2026-09-25T17:19:14.911Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:36.876Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades",
-          "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-25T17:12:50.614Z",
-          "wikidataWorkEvidence": [],
+          "status": "classificat",
+          "wikidataWorkRaw": [
+            "cançó d'autor"
+          ],
+          "wikidataWorkCheckedAt": "2026-09-25T17:19:14.911Z",
+          "wikidataWorkEvidence": [
+            {
+              "genre": "cançó d'autor",
+              "workCount": 11
+            }
+          ],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:36.876Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:36.876Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:19:01.827Z",
+          "musicbrainzReleaseRaw": [],
+          "musicbrainzReleaseEvidence": [],
+          "musicbrainzReleaseGroupCount": 12
         }
       },
-      "genresRaw": []
+      "genresRaw": [
+        "cançó d'autor"
+      ]
     },
     {
       "name": "Rojuu",
@@ -11614,7 +12794,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.615Z",
+          "checkedAt": "2026-09-25T17:19:14.913Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:09.563Z",
           "wikidataRaw": [
             "emo trap",
@@ -11632,7 +12812,12 @@
           ],
           "status": "parcial",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
@@ -11668,7 +12853,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.615Z",
+          "checkedAt": "2026-09-25T17:19:14.914Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:10.933Z",
           "wikidataRaw": [
             "òpera"
@@ -11679,7 +12864,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       },
       "genresRaw": [
@@ -11750,7 +12940,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.618Z",
+          "checkedAt": "2026-09-25T17:19:14.921Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:12.216Z",
           "wikidataRaw": [
             "reggaeton",
@@ -11780,7 +12970,12 @@
           ],
           "status": "parcial",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
@@ -11818,7 +13013,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.619Z",
+          "checkedAt": "2026-09-25T17:19:14.921Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:13.483Z",
           "wikidataRaw": [
             "pop"
@@ -11827,7 +13022,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       },
       "genresRaw": [
@@ -11837,7 +13037,10 @@
     {
       "name": "Sara Hebe",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Pop",
+        "Punk"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -11873,20 +13076,39 @@
           "relationCount": 1
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.619Z",
+          "checkedAt": "2026-09-25T17:19:14.922Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:38.116Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades",
+          "status": "classificat",
           "wikidataWorkRaw": [],
           "wikidataWorkCheckedAt": "2026-09-25T17:12:50.619Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:38.116Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:38.116Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:19:03.070Z",
+          "musicbrainzReleaseRaw": [
+            "pop punk",
+            "punk"
+          ],
+          "musicbrainzReleaseEvidence": [
+            {
+              "label": "Pop",
+              "releaseGroupCount": 5
+            },
+            {
+              "label": "Punk",
+              "releaseGroupCount": 5
+            }
+          ],
+          "musicbrainzReleaseGroupCount": 9
         }
       },
-      "genresRaw": []
+      "genresRaw": [
+        "pop punk",
+        "punk"
+      ]
     },
     {
       "name": "Sarah Brightman",
@@ -11938,7 +13160,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.621Z",
+          "checkedAt": "2026-09-25T17:19:14.927Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:16.193Z",
           "wikidataRaw": [
             "musical",
@@ -11967,7 +13189,12 @@
           ],
           "status": "parcial",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
@@ -12004,7 +13231,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.621Z",
+          "checkedAt": "2026-09-25T17:19:14.928Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:17.492Z",
           "wikidataRaw": [
             "pop-rock"
@@ -12013,7 +13240,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       },
       "genresRaw": [
@@ -12023,7 +13255,9 @@
     {
       "name": "Scorpio",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Urbana"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -12050,27 +13284,42 @@
       ],
       "lastChecked": "2026-09-25T15:44:05.402Z",
       "notes": "",
-      "genresRaw": [],
+      "genresRaw": [
+        "música urbana"
+      ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.621Z",
+          "checkedAt": "2026-09-25T17:19:14.928Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:39.358Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades",
-          "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-25T17:12:50.621Z",
-          "wikidataWorkEvidence": [],
+          "status": "classificat",
+          "wikidataWorkRaw": [
+            "música urbana"
+          ],
+          "wikidataWorkCheckedAt": "2026-09-25T17:19:14.928Z",
+          "wikidataWorkEvidence": [
+            {
+              "genre": "música urbana",
+              "workCount": 2
+            }
+          ],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:39.358Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:39.358Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:19:04.353Z",
+          "musicbrainzReleaseRaw": [],
+          "musicbrainzReleaseEvidence": [],
+          "musicbrainzReleaseGroupCount": 0
         }
       }
     },
     {
       "name": "Sense Sal",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Pop"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -12097,20 +13346,33 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.621Z",
+          "checkedAt": "2026-09-25T17:19:14.928Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:40.597Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades",
-          "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-25T17:12:50.621Z",
-          "wikidataWorkEvidence": [],
+          "status": "classificat",
+          "wikidataWorkRaw": [
+            "pop"
+          ],
+          "wikidataWorkCheckedAt": "2026-09-25T17:19:14.928Z",
+          "wikidataWorkEvidence": [
+            {
+              "genre": "pop",
+              "workCount": 4
+            }
+          ],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:40.597Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:40.597Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:19:05.649Z",
+          "musicbrainzReleaseRaw": [],
+          "musicbrainzReleaseEvidence": [],
+          "musicbrainzReleaseGroupCount": 5
         }
       },
-      "genresRaw": []
+      "genresRaw": [
+        "pop"
+      ]
     },
     {
       "name": "Senyor Oca",
@@ -12150,7 +13412,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.622Z",
+          "checkedAt": "2026-09-25T17:19:14.929Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:21.275Z",
           "wikidataRaw": [
             "drum and bass",
@@ -12162,7 +13424,12 @@
           ],
           "status": "parcial",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
@@ -12205,7 +13472,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.622Z",
+          "checkedAt": "2026-09-25T17:19:14.930Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:22.534Z",
           "wikidataRaw": [
             "música urbana",
@@ -12215,7 +13482,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
@@ -12271,7 +13543,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.625Z",
+          "checkedAt": "2026-09-25T17:19:14.935Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:23.910Z",
           "wikidataRaw": [
             "rock llatí",
@@ -12298,7 +13570,12 @@
           ],
           "status": "parcial",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
@@ -12341,7 +13618,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.627Z",
+          "checkedAt": "2026-09-25T17:19:14.940Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:25.290Z",
           "wikidataRaw": [
             "flamenc",
@@ -12364,7 +13641,12 @@
           ],
           "status": "parcial",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       },
       "genresRaw": [
@@ -12418,7 +13700,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.627Z",
+          "checkedAt": "2026-09-25T17:19:14.940Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:26.654Z",
           "wikidataRaw": [
             "rock"
@@ -12427,7 +13709,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
@@ -12469,7 +13756,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.627Z",
+          "checkedAt": "2026-09-25T17:19:14.941Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:28.060Z",
           "wikidataRaw": [
             "indie pop"
@@ -12478,7 +13765,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
@@ -12526,7 +13818,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.628Z",
+          "checkedAt": "2026-09-25T17:19:14.943Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:29.340Z",
           "wikidataRaw": [
             "pop",
@@ -12542,7 +13834,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
@@ -12585,7 +13882,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.629Z",
+          "checkedAt": "2026-09-25T17:19:14.944Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:30.746Z",
           "wikidataRaw": [
             "pop-rock",
@@ -12597,7 +13894,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
@@ -12639,7 +13941,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.629Z",
+          "checkedAt": "2026-09-25T17:19:14.944Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:32.000Z",
           "wikidataRaw": [
             "pop-rock"
@@ -12648,7 +13950,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
@@ -12682,17 +13989,21 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.629Z",
+          "checkedAt": "2026-09-25T17:19:14.944Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:41.838Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-25T17:12:50.629Z",
+          "wikidataWorkCheckedAt": "2026-09-25T17:19:14.944Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:41.838Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:41.838Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:19:06.969Z",
+          "musicbrainzReleaseRaw": [],
+          "musicbrainzReleaseEvidence": [],
+          "musicbrainzReleaseGroupCount": 10
         }
       },
       "genresRaw": []
@@ -12735,7 +14046,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.629Z",
+          "checkedAt": "2026-09-25T17:19:14.944Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:34.564Z",
           "wikidataRaw": [
             "pop"
@@ -12744,7 +14055,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
@@ -12786,7 +14102,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.630Z",
+          "checkedAt": "2026-09-25T17:19:14.945Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:35.839Z",
           "wikidataRaw": [
             "pandeireteiras",
@@ -12798,7 +14114,12 @@
           ],
           "status": "parcial",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
@@ -12834,17 +14155,21 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.630Z",
+          "checkedAt": "2026-09-25T17:19:14.945Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:43.078Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-25T17:12:50.630Z",
+          "wikidataWorkCheckedAt": "2026-09-25T17:19:14.945Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:43.078Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:43.078Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:19:08.285Z",
+          "musicbrainzReleaseRaw": [],
+          "musicbrainzReleaseEvidence": [],
+          "musicbrainzReleaseGroupCount": 1
         }
       },
       "genresRaw": []
@@ -12888,7 +14213,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.630Z",
+          "checkedAt": "2026-09-25T17:19:14.946Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:38.465Z",
           "wikidataRaw": [
             "oi!",
@@ -12898,7 +14223,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
@@ -12943,7 +14273,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.631Z",
+          "checkedAt": "2026-09-25T17:19:14.947Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:39.729Z",
           "wikidataRaw": [
             "reggaeton",
@@ -12954,7 +14284,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
@@ -12989,17 +14324,21 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.631Z",
+          "checkedAt": "2026-09-25T17:19:14.947Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:44.318Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-25T17:12:50.631Z",
+          "wikidataWorkCheckedAt": "2026-09-25T17:19:14.947Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:44.318Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:44.318Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:19:09.585Z",
+          "musicbrainzReleaseRaw": [],
+          "musicbrainzReleaseEvidence": [],
+          "musicbrainzReleaseGroupCount": 0
         }
       },
       "genresRaw": []
@@ -13037,7 +14376,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.631Z",
+          "checkedAt": "2026-09-25T17:19:14.948Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:42.244Z",
           "wikidataRaw": [
             "música tradicional",
@@ -13049,7 +14388,12 @@
           ],
           "status": "parcial",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       },
       "genresRaw": [
@@ -13089,17 +14433,21 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.631Z",
+          "checkedAt": "2026-09-25T17:19:14.948Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:45.559Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-25T17:12:50.631Z",
+          "wikidataWorkCheckedAt": "2026-09-25T17:19:14.948Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:45.559Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:45.559Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:19:10.923Z",
+          "musicbrainzReleaseRaw": [],
+          "musicbrainzReleaseEvidence": [],
+          "musicbrainzReleaseGroupCount": 0
         }
       },
       "genresRaw": []
@@ -13137,7 +14485,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.631Z",
+          "checkedAt": "2026-09-25T17:19:14.949Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:44.791Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [
@@ -13146,7 +14494,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       },
       "genresRaw": [
@@ -13201,17 +14554,21 @@
           "relationCount": 1
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.631Z",
+          "checkedAt": "2026-09-25T17:19:14.949Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:46.799Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-25T17:12:50.631Z",
+          "wikidataWorkCheckedAt": "2026-09-25T17:19:14.949Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:46.799Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:46.799Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:19:12.160Z",
+          "musicbrainzReleaseRaw": [],
+          "musicbrainzReleaseEvidence": [],
+          "musicbrainzReleaseGroupCount": 12
         }
       },
       "genresRaw": []
@@ -13259,7 +14616,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.632Z",
+          "checkedAt": "2026-09-25T17:19:14.951Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:47.530Z",
           "wikidataRaw": [
             "salsa",
@@ -13282,7 +14639,12 @@
           ],
           "status": "parcial",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
@@ -13336,7 +14698,7 @@
           "relationCount": 1
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.633Z",
+          "checkedAt": "2026-09-25T17:19:14.952Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:48.798Z",
           "wikidataRaw": [
             "electropop",
@@ -13346,7 +14708,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       },
       "genresRaw": [
@@ -13387,7 +14754,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.633Z",
+          "checkedAt": "2026-09-25T17:19:14.953Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:50.052Z",
           "wikidataRaw": [
             "òpera"
@@ -13398,7 +14765,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       },
       "genresRaw": [
@@ -13452,7 +14824,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.634Z",
+          "checkedAt": "2026-09-25T17:19:14.955Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:51.366Z",
           "wikidataRaw": [
             "rumba catalana",
@@ -13465,7 +14837,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
@@ -13511,7 +14888,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.635Z",
+          "checkedAt": "2026-09-25T17:19:14.956Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:52.728Z",
           "wikidataRaw": [
             "folk rock",
@@ -13522,7 +14899,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
@@ -13559,7 +14941,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.635Z",
+          "checkedAt": "2026-09-25T17:19:14.956Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:54.067Z",
           "wikidataRaw": [
             "òpera"
@@ -13568,7 +14950,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       },
       "genresRaw": [
@@ -13609,17 +14996,21 @@
       "genresRaw": [],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.635Z",
+          "checkedAt": "2026-09-25T17:19:14.956Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:48.039Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-25T17:12:50.635Z",
+          "wikidataWorkCheckedAt": "2026-09-25T17:19:14.956Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:48.039Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:48.039Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:19:13.408Z",
+          "musicbrainzReleaseRaw": [],
+          "musicbrainzReleaseEvidence": [],
+          "musicbrainzReleaseGroupCount": 1
         }
       }
     },
@@ -13660,7 +15051,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.635Z",
+          "checkedAt": "2026-09-25T17:19:14.957Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:56.776Z",
           "wikidataRaw": [
             "pop"
@@ -13669,7 +15060,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
@@ -13710,7 +15106,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.635Z",
+          "checkedAt": "2026-09-25T17:19:14.957Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:58.044Z",
           "wikidataRaw": [
             "rock"
@@ -13719,7 +15115,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     },
@@ -13753,17 +15154,21 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.635Z",
+          "checkedAt": "2026-09-25T17:19:14.957Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:49.280Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-25T17:12:50.635Z",
+          "wikidataWorkCheckedAt": "2026-09-25T17:19:14.957Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:49.280Z"
+          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:49.280Z",
+          "musicbrainzReleaseCheckedAt": "2026-09-25T17:19:14.626Z",
+          "musicbrainzReleaseRaw": [],
+          "musicbrainzReleaseEvidence": [],
+          "musicbrainzReleaseGroupCount": 0
         }
       },
       "genresRaw": []
@@ -13801,7 +15206,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.636Z",
+          "checkedAt": "2026-09-25T17:19:14.958Z",
           "musicbrainzCheckedAt": "2026-09-25T16:51:00.583Z",
           "wikidataRaw": [
             "música electrònica",
@@ -13811,7 +15216,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       },
       "genresRaw": [
@@ -13860,7 +15270,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T17:12:50.636Z",
+          "checkedAt": "2026-09-25T17:19:14.959Z",
           "musicbrainzCheckedAt": "2026-09-25T16:51:01.855Z",
           "wikidataRaw": [
             "rock",
@@ -13871,7 +15281,12 @@
           "unmappedRaw": [],
           "status": "classificat",
           "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": []
+          "musicbrainzTagsRaw": [],
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "musicbrainzReleaseRaw": [],
+          "wikidataWorkEvidence": []
         }
       }
     }
