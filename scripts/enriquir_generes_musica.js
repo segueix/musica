@@ -222,7 +222,7 @@ async function fetchAllWikidataWorkGenres(artists) {
 
 async function fetchMusicBrainzGenres(mbid, attempt = 1) {
     const url = new URL(MUSICBRAINZ_BASE + '/' + encodeURIComponent(mbid));
-    url.searchParams.set('inc', 'genres');
+    url.searchParams.set('inc', 'genres+tags');
     url.searchParams.set('fmt', 'json');
 
     const response = await fetch(url, {
@@ -248,9 +248,14 @@ async function fetchMusicBrainzGenres(mbid, attempt = 1) {
     }
 
     const payload = await response.json();
-    return unique((payload.genres || [])
-        .filter((genre) => Number(genre.count || 0) > 0)
-        .map((genre) => genre.name));
+    return {
+        genres: unique((payload.genres || [])
+            .filter((genre) => Number(genre.count || 0) > 0)
+            .map((genre) => genre.name)),
+        tags: unique((payload.tags || [])
+            .filter((tag) => Number(tag.count || 0) >= 2)
+            .map((tag) => tag.name))
+    };
 }
 
 async function main() {
@@ -265,10 +270,12 @@ async function main() {
         artist.enrichment.genres ||= {
             checkedAt: null,
             musicbrainzCheckedAt: null,
+            musicbrainzTagsCheckedAt: null,
             wikidataWorkCheckedAt: null,
             wikidataRaw: [],
             wikidataWorkRaw: [],
             musicbrainzRaw: [],
+            musicbrainzTagsRaw: [],
             unmappedRaw: [],
             status: 'pendent'
         };
@@ -287,8 +294,10 @@ async function main() {
     const mbTargets = data.artists.filter((artist) => {
         if (artist.reviewStatus === 'rebutjat') return false;
         if (!artist.musicbrainzId) return false;
-        const checkedAt = artist.enrichment?.genres?.musicbrainzCheckedAt;
-        return FORCE || daysSince(checkedAt) >= MB_RECHECK_DAYS;
+        const state = artist.enrichment?.genres;
+        const needsGenre = !(artist.genres || []).length;
+        const tagsCheckedAt = state?.musicbrainzTagsCheckedAt;
+        return FORCE || (needsGenre && daysSince(tagsCheckedAt) >= MB_RECHECK_DAYS);
     });
 
     console.log('🎼 MusicBrainz: ' + mbTargets.length + ' artistes a revisar.');
@@ -297,8 +306,11 @@ async function main() {
         const artist = mbTargets[index];
         const state = artist.enrichment.genres;
         try {
-            state.musicbrainzRaw = await fetchMusicBrainzGenres(artist.musicbrainzId);
+            const mbSignals = await fetchMusicBrainzGenres(artist.musicbrainzId);
+            state.musicbrainzRaw = mbSignals.genres;
+            state.musicbrainzTagsRaw = mbSignals.tags;
             state.musicbrainzCheckedAt = new Date().toISOString();
+            state.musicbrainzTagsCheckedAt = new Date().toISOString();
             delete state.musicbrainzError;
             mbChecked += 1;
         } catch (error) {
@@ -319,7 +331,11 @@ async function main() {
     const workTargets = data.artists.filter((artist) => {
         if (artist.reviewStatus === 'rebutjat') return false;
         const state = artist.enrichment.genres;
-        const directRaw = unique([...(state.wikidataRaw || []), ...(state.musicbrainzRaw || [])]);
+        const directRaw = unique([
+            ...(state.wikidataRaw || []),
+            ...(state.musicbrainzRaw || []),
+            ...(state.musicbrainzTagsRaw || [])
+        ]);
         return mapRawGenres(directRaw, taxonomy).labels.length === 0;
     });
 
@@ -338,7 +354,11 @@ async function main() {
 
     for (const artist of data.artists) {
         const state = artist.enrichment.genres;
-        const directRaw = unique([...(state.wikidataRaw || []), ...(state.musicbrainzRaw || [])]);
+        const directRaw = unique([
+            ...(state.wikidataRaw || []),
+            ...(state.musicbrainzRaw || []),
+            ...(state.musicbrainzTagsRaw || [])
+        ]);
         const directMapped = mapRawGenres(directRaw, taxonomy);
 
         if (directMapped.labels.length === 0) {
