@@ -1,0 +1,40 @@
+name: Reindexar search index híbrid
+
+on:
+  workflow_dispatch:
+
+jobs:
+  reindexar:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Setup Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: "20"
+
+      - name: Instal·lar dependències
+        run: npm ci
+
+      - name: Regenerar índex híbrid
+        run: npm run search:index:hybrid:rebuild
+
+      - name: Commit i push si hi ha canvis
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add -A data
+
+          if git diff --cached --quiet; then
+            echo "No hi ha canvis per pujar"
+            exit 0
+          fi
+
+          git commit -m "chore: rebuild hybrid search index"
+          git push

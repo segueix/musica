@@ -1,0 +1,65 @@
+name: Depurador català
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "scripts/depurar_videos_catala.js"
+      - "tests/depurador-idioma.test.js"
+      - ".github/workflows/depurador-catala.yml"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Simula la depuració sense modificar fitxers"
+        required: false
+        default: false
+        type: boolean
+
+jobs:
+  depura:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Setup Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Instal·la dependències
+        run: npm ci
+
+      - name: Comprova les regles de llengua
+        run: npx vitest run tests/depurador-idioma.test.js
+
+      - name: Depura vídeos no catalans
+        run: |
+          if [ "${{ inputs.dry_run }}" = "true" ]; then
+            node scripts/depurar_videos_catala.js --dry-run
+          else
+            node scripts/depurar_videos_catala.js
+          fi
+
+      - name: Regenera índex de cerca
+        if: ${{ inputs.dry_run != true }}
+        run: node scripts/generar_index_cerca.js
+
+      - name: Commit i push si hi ha canvis
+        if: ${{ inputs.dry_run != true }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A data
+          if git diff --cached --quiet; then
+            echo "No hi ha vídeos per depurar."
+            exit 0
+          fi
+          git commit -m "chore: depura vídeos no catalans"
+          git push

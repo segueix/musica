@@ -1,0 +1,37 @@
+{
+  "env": {
+    "browser": true,
+    "es2022": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "prettier"
+  ],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "script"
+  },
+  "globals": {
+    "SegueixApp": "writable",
+    "lucide": "readonly",
+    "YT": "readonly"
+  },
+  "rules": {
+    "no-undef": "off",
+    "no-unused-vars": ["warn", {
+      "argsIgnorePattern": "^_",
+      "varsIgnorePattern": "^_"
+    }],
+    "no-console": ["warn", {
+      "allow": ["warn", "error", "log"]
+    }],
+    "eqeqeq": ["warn", "always"],
+    "no-var": "warn",
+    "no-empty": "warn",
+    "prefer-const": "warn",
+    "no-implicit-globals": "off",
+    "no-redeclare": "warn",
+    "curly": ["warn", "multi-line"],
+    "no-throw-literal": "error"
+  }
+}

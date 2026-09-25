@@ -1,0 +1,64 @@
+/* Contracte visual conservador per a les categories de la pàgina principal.
+   Objectiu: reservar el blanc per a la categoria seleccionada i mantenir
+   la resta d'estats dins la mateixa família cromàtica de l'accent. */
+
+.home-categories .chip:not(.is-active):not(.chip-info):not(.chip-add) {
+    background: var(--color-button-accent);
+    color: #ffffff !important;
+    opacity: 0.85;
+}
+
+/* El blanc té un únic significat: categoria seleccionada. */
+.home-categories .chip.is-active:not(.chip-info):not(.chip-add) {
+    background: #ffffff !important;
+    color: #0f0f0f !important;
+    opacity: 1 !important;
+    border-color: transparent !important;
+}
+
+/* En escriptori, el hover només aclareix lleugerament l'accent. */
+@media (hover: hover) and (pointer: fine) {
+    .home-categories .chip:not(.is-active):not(.chip-info):not(.chip-add):hover {
+        background: color-mix(in srgb, var(--color-button-accent) 88%, white);
+        color: #ffffff !important;
+        opacity: 1;
+    }
+}
+
+/* Feedback de pressió discret, sense convertir el botó en blanc abans d'hora. */
+.home-categories .chip:not(.is-active):not(.chip-info):not(.chip-add):active {
+    background: color-mix(in srgb, var(--color-button-accent) 82%, white);
+    color: #ffffff !important;
+    opacity: 1;
+    transform: scale(0.97);
+}
+
+/* Les variants mantenen només el seu tret semàntic, no un sistema de color propi. */
+.home-categories .chip.is-custom:not(.is-active),
+.home-categories .chip.is-exact:not(.is-active) {
+    background: var(--color-button-accent);
+    color: #ffffff !important;
+}
+
+.home-categories .chip.is-exact.is-active {
+    border: 1.5px dashed rgba(0, 0, 0, 0.7) !important;
+}
+
+/* Focus visible només per navegació de teclat. */
+.home-categories .chip:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.92);
+    outline-offset: 3px;
+}
+
+.home-categories .chip.is-active:focus-visible {
+    outline-color: var(--color-button-accent);
+}
+
+/* Neutralitza l'antic estat de càrrega blanc si reapareix en algun flux mòbil. */
+@media (max-width: 768px) {
+    .home-categories .chip.chip-loading:not(.is-active):not(.chip-info):not(.chip-add) {
+        background: var(--color-button-accent) !important;
+        color: #ffffff !important;
+        opacity: 0.85 !important;
+    }
+}

@@ -1,0 +1,83 @@
+name: Actualitzador feed
+
+on:
+  schedule:
+    # Execució a les 8, 12, 18 i 22 (hora UTC). Ajusta els valors si vols
+    # fer-ho coincidir amb una altra zona horària (GitHub Actions no gestiona DST).
+    - cron: "0 8,12,18,22 * * *"
+  workflow_dispatch:
+
+jobs:
+  actualitza:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Setup Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: "20"
+
+      - name: Genera feed
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY_SERVER }}
+          GOOGLE_SHEET_CSV_URL: ${{ secrets.GOOGLE_SHEET_CSV_URL }}
+          VIDEOS_PER_CHANNEL: "50"
+        run: node scripts/update_feed.js
+
+      - name: Sincronitza índex de canals i Service Worker
+        env:
+          GOOGLE_SHEET_CSV_URL: ${{ secrets.GOOGLE_SHEET_CSV_URL }}
+        run: node scripts/sincronitzar_tot.js
+
+      - name: Neteja vídeos privats o suprimits
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY_SERVER }}
+        run: node scripts/netejar_feed.js
+
+      - name: Depura vídeos no catalans
+        run: node scripts/depurar_videos_catala.js
+
+      - name: Genera índex de cerca
+        run: node scripts/generar_index_cerca.js
+
+      - name: Actualitza versió del Service Worker (només si canvia el codi)
+        run: node scripts/actualitzar_versio_sw.js
+
+      - name: Commit i push si hi ha canvis
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          echo "=== Debug: ls data ==="
+          ls -la data || true
+
+          echo "=== Debug: git check-ignore data/feed.json ==="
+          git check-ignore -v data/feed.json || true
+
+          echo "=== Debug: git status abans ==="
+          git status --ignored --porcelain || true
+
+          echo "=== Forca add del feed ==="
+          git add -f data/feed.json
+          git add -f js/channels-ca.json
+          git add sw.js
+          git rm -q data/search_index.json || true
+          git add -A data
+          git add -f data/channel_map.json 2>/dev/null || true
+
+          echo "=== Debug: git status despres ==="
+          git status --porcelain || true
+
+          if git diff --cached --quiet; then
+            echo "No hi ha canvis staged (feed igual o encara ignorat)"
+            exit 0
+          fi
+
+          git commit -m "chore: update feed and search index"
+          git push

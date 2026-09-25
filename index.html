@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+    <meta name="description" content="Busques vídeos en català? A Segueix! tens la millor selecció de YouTubers i creadors de contingut. Explora el catàleg, mira les novetats i dona'ls suport.">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-video-preview:-1">
+    <link rel="canonical" href="https://segueix.cat/">
+    <meta property="og:title" content="Segueix! · Vídeos i creadors en català">
+    <meta property="og:description" content="Busques vídeos en català? A Segueix! tens la millor selecció de YouTubers i creadors de contingut. Explora el catàleg, mira les novetats i dona'ls suport.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://segueix.cat/img/caratula.png">
+    <meta property="og:image:alt" content="Segueix! · Vídeos i creadors en català">
+    <meta property="og:image:width" content="1280">
+    <meta property="og:image:height" content="720">
+    <meta property="og:url" content="https://segueix.cat/">
+    <meta property="og:site_name" content="Segueix!">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Segueix! · Vídeos i creadors en català">
+    <meta name="twitter:description" content="Busques vídeos en català? A Segueix! tens la millor selecció de YouTubers i creadors de contingut. Explora el catàleg, mira les novetats i dona'ls suport.">
+    <meta name="twitter:image" content="https://segueix.cat/img/caratula.png">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://segueix.cat/#website",
+      "url": "https://segueix.cat/",
+      "name": "Segueix!",
+      "alternateName": ["Segueix.cat", "segueix.cat"],
+      "inLanguage": "ca"
+    }
+    </script>
+    <meta name="application-name" content="Segueix!">
+    <meta name="apple-mobile-web-app-title" content="Segueix!">
+    <meta name="theme-color" content="#FF0000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <title>Segueix! · Vídeos i creadors en català</title>
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap">
+    
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="img/icon-192.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="img/icon-192.png">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css?v=20260925-seo-sections-v1">
+    
+    <!-- Icons (Lucide via CDN) -->
+    <script src="https://unpkg.com/lucide@0.563.0"></script>
+    <!-- lz-string: compressió per a compartició ràpida per URL (Canal A) -->
+    <script src="https://cdn.jsdelivr.net/npm/lz-string@1.5.0/libs/lz-string.min.js"></script>
+    <!-- qr-code-styling: generació QR amb branding (Fase 4) -->
+    <script src="https://cdn.jsdelivr.net/npm/qr-code-styling@1.8.4/lib/qr-code-styling.js"></script>
+</head>
+<body>
+    <div id="cookieBanner" class="cookie-banner hidden" role="dialog" aria-live="polite" aria-label="Avís de cookies" data-nosnippet>
+        <div class="cookie-banner__content">
+            <p class="cookie-banner__text">
+                Segueix! fa servir emmagatzematge local per recordar les teves preferències i, quan carregues vídeos o Shorts incrustats,
+                YouTube pot instal·lar cookies o tractar dades per reproducció, seguretat i mesura. Pots acceptar el reproductor de YouTube
+                o continuar només amb les funcionalitats necessàries. Si l'acceptes, l'autorització quedarà activa per a tots els vídeos i Shorts
+                de Segueix! fins que la canviïs des de la configuració.
+            </p>
+            <div class="cookie-banner__actions">
+                <button id="cookieAcceptBtn" class="cookie-banner__btn cookie-banner__btn--primary" type="button">Accepta YouTube</button>
+                <button id="cookieRejectBtn" class="cookie-banner__btn cookie-banner__btn--secondary" type="button">Només necessàries</button>
+                <button id="cookieInfoBtn" class="cookie-banner__link" type="button">Més informació</button>
+            </div>
+        </div>
+    </div>
+    <button id="cookiePreferencesBtn" class="cookie-preferences-btn hidden" type="button" aria-label="Configura les cookies">
+        Cookies
+    </button>
+
+
+    <div id="youtubeConsentModal" class="playlist-modal hidden" aria-hidden="true">
+        <div class="playlist-modal-backdrop" data-youtube-consent-close></div>
+        <div class="playlist-modal-panel youtube-consent-modal-panel" role="dialog" aria-modal="true" aria-labelledby="youtubeConsentModalTitle">
+            <div class="playlist-modal-header">
+                <h2 id="youtubeConsentModalTitle">Activa el contingut extern</h2>
+                <button class="playlist-modal-close" id="youtubeConsentModalClose" type="button" aria-label="Tancar modal">×</button>
+            </div>
+            <div class="playlist-modal-body youtube-consent-modal-body">
+                <p id="youtubeConsentModalText" class="youtube-consent-modal-text"></p>
+                <div class="youtube-consent-modal-actions">
+                    <button id="youtubeConsentModalAccept" class="cookie-banner__btn cookie-banner__btn--primary" type="button">Accepta i continua</button>
+                    <button id="youtubeConsentModalCancel" class="cookie-banner__btn cookie-banner__btn--secondary" type="button">Ara no</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="intro-splash" aria-hidden="true">
+        <div class="intro-splash-content">
+            <h1 class="intro-splash-title">Segueix<span>!</span></h1>
+            <p class="intro-splash-tagline">Els nostres YouTubers</p>
+        </div>
+    </div>
+    <!-- Header -->
+    <header class="app-header">
+        <a class="brand" href="./" aria-label="Segueix!">
+            <img class="brand-logo" src="img/icon-192.png" alt="">
+            <span class="brand-name">Segueix!</span>
+        </a>
+
+        <form class="search" role="search" action="/search">
+            <button class="mobile-search-toggle" type="button" aria-label="Obrir cerca" title="Cercar">
+                <i data-lucide="search"></i>
+            </button>
+            <input
+                class="search-input"
+                type="search"
+                name="q"
+                placeholder="Cerca..."
+                autocomplete="off"
+                aria-label="Cerca vídeos">
+            <button class="search-btn" type="submit" aria-label="Cercar" title="Cercar">
+                <i data-lucide="search"></i>
+            </button>
+        </form>
+
+        <nav class="actions" aria-label="Navegació">
+            <a class="icon-btn nav-trigger active" href="#" data-page="home" aria-label="Inici" title="Inici">
+                <i data-lucide="home"></i>
+            </a>
+            <a class="icon-btn nav-trigger" href="#" data-page="llistes" aria-label="Biblioteca" title="Biblioteca">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+            </a>
+            <a class="icon-btn nav-trigger" href="#" data-page="historial" aria-label="Historial" title="Historial">
+                <i data-lucide="history"></i>
+            </a>
+            <a class="icon-btn nav-trigger" href="#" data-page="segueix" aria-label="Segueix!" title="Segueix!">
+                <i data-lucide="users"></i>
+            </a>
+            <button class="icon-btn" id="backgroundBtn" type="button" aria-label="Configuració" title="Configuració">
+                <i data-lucide="settings"></i>
+            </button>
+            <button class="icon-btn" id="addYoutuberBtn" type="button" aria-label="Afegeix un YouTuber" title="Afegeix un YouTuber" style="position:relative;">
+                <i data-lucide="at-sign" class="add-youtuber-icon"></i>
+                <span id="updateBadge" style="display:none;position:absolute;top:5px;right:5px;width:10px;height:10px;border-radius:999px;background:#ff3b30;box-shadow:0 0 0 2px rgba(0,0,0,0.35);"></span>
+            </button>
+        </nav>
+    </header>
+    <div class="mobile-search-overlay" aria-hidden="true"></div>
+
+    <!-- Zona d'eliminació de categories (drag-to-delete) -->
+    <div id="delete-dropzone" class="delete-dropzone" aria-hidden="true">
+        <span class="delete-dropzone-icon" aria-hidden="true">×</span>
+        <span class="delete-dropzone-label">Deixa anar per eliminar</span>
+    </div>
+
+    <section class="chips-bar home-categories" aria-label="Categories">
+        <button class="chip is-active" data-cat="Novetats" type="button">Novetats</button>
+        <button class="chip" data-cat="Vida" type="button">Vida</button>
+        <button class="chip" data-cat="Cultura" type="button">Cultura</button>
+        <button class="chip" data-cat="Diversió" type="button">Diversió</button>
+        <button class="chip" data-cat="El Món" type="button">El Món</button>
+        <button class="chip" data-cat="Gaming" type="button">Gaming</button>
+        <button class="chip" data-cat="Seguint" type="button">Seguint</button>
+    </section>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <nav class="sidebar-nav">
+            <a href="#" class="nav-item active" data-page="home">
+                <i data-lucide="home"></i>
+                <span>Tot</span>
+            </a>
+            <a href="#" class="nav-item" data-page="segueix">
+                <i data-lucide="users"></i>
+                <span>Segueix!</span>
+            </a>
+            <a href="#" class="nav-item" data-page="library">
+                <i data-lucide="library"></i>
+                <span>Biblioteca</span>
+            </a>
+            <a href="#" class="nav-item" data-page="historial">
+                <i data-lucide="history"></i>
+                <span>Historial</span>
+            </a>
+        </nav>
+        
+        <div class="sidebar-divider"></div>
+        
+        <div class="sidebar-section">
+            <h3 class="sidebar-title">Categories</h3>
+            <div id="categoriesList"></div>
+        </div>
+
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content" id="mainContent">
+        <!-- Home Page -->
+        <div class="page" id="homePage">
+            <h1 class="page-title" id="pageTitle">Recomanat per a tu</h1>
+            <div class="category-keywords-inline" id="categoryKeywordsInline" style="display: none;"></div>
+            <section class="hero" id="heroSection">
+                <div class="hero-content">
+                    <span class="hero-eyebrow" id="heroEyebrow">Destacat de la setmana</span>
+                    <h2 class="hero-title" id="heroTitle"></h2>
+                    <p class="hero-description" id="heroDescription"></p>
+                    <div class="hero-actions">
+                        <button class="hero-button" id="heroButton">Veure ara</button>
+                        <span class="hero-channel" id="heroChannel"></span>
+                    </div>
+                </div>
+                <div class="hero-thumbnail">
+                    <img id="heroImage" alt="Vídeo destacat" decoding="async" fetchpriority="high">
+                    <span class="hero-duration" id="heroDuration"></span>
+                </div>
+            </section>
+            <div class="videos-grid" id="videosGrid"></div>
+        </div>
+
+        <!-- Watch Page -->
+        <div class="page hidden" id="watchPage">
+            <div class="watch-container">
+                <div class="watch-main">
+                    <div id="videoPlaceholder" class="video-placeholder hidden">
+                        <img id="placeholderImage" src="" alt="" decoding="async">
+                    </div>
+                    <div class="video-info">
+                        <h1 class="video-title" id="videoTitle"></h1>
+
+                        <div class="video-meta-row">
+                            <div class="meta-left">
+                                <span id="videoDate" class="meta-stat"></span>
+                                <span class="meta-dot">•</span>
+                                <span id="videoViews" class="meta-views meta-stat"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="channel-info" id="channelInfo"></div>
+                    <div id="tvProgrammingPanel" class="tv-programming-panel hidden" aria-live="polite"></div>
+                    <div id="playlistQueueContainer" class="playlist-queue-container hidden"></div>
+                    <h2 class="extra-related-title">Altres vídeos relacionats</h2>
+                    <div id="extraVideosGrid" class="extra-videos-grid"></div>
+                </div>
+                <div class="watch-sidebar">
+                    <div id="sidebarChannelInfo" class="sidebar-channel-info"></div>
+                    <div id="sidebarChannelVideos" class="sidebar-channel-videos"></div>
+                    <h2 class="related-title">Vídeos relacionats</h2>
+                    <div id="relatedVideos"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page hidden" id="channelPage">
+            <div class="channel-profile-header">
+                <button class="channel-back-btn" id="channelBackBtn" type="button" aria-label="Tornar enrere">
+                    <i data-lucide="arrow-left"></i>
+                </button>
+                <div class="channel-profile-meta">
+                    <img class="channel-profile-avatar" id="channelProfileAvatar" alt="">
+                    <div class="channel-profile-text">
+                        <div class="channel-profile-title-row">
+                            <h1 class="channel-profile-name" id="channelProfileName"></h1>
+                            <div class="channel-profile-actions">
+                                <button class="follow-channel-btn channel-profile-follow-btn" id="channelProfileFollowBtn" type="button" data-follow-channel="" aria-pressed="false">
+                                    Segueix
+                                </button>
+                                <button class="btn-round-icon channel-profile-hide-btn" id="channelProfileHideBtn" type="button" data-hide-channel="" aria-pressed="false" title="Amaga aquest canal del feed">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                        <path d="M1.5 12s3.5-7 10.5-7 10.5 7 10.5 7-3.5 7-10.5 7S1.5 12 1.5 12Z"></path>
+                                        <circle cx="12" cy="12" r="3.5"></circle>
+                                    </svg>
+                                </button>
+                                <button class="btn-round-icon channel-profile-share-btn" id="channelProfileShareBtn" type="button" data-share-channel-id="" title="Compartir canal">
+                                    <i data-lucide="share-2"></i>
+                                </button>
+                                <div class="channel-search-wrap channel-search-wrap--desktop">
+                                    <input id="channelSearchInputDesktop" class="channel-search-input" type="search" placeholder="Cerca dins del canal..." aria-label="Cerca vídeos dins del canal">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="channel-profile-info-row">
+                            <div class="channel-profile-info-left">
+                                <p class="channel-profile-handle" id="channelProfileHandle"></p>
+                                <p class="channel-profile-subscribers" id="channelProfileSubscribers"></p>
+                            </div>
+                            <div id="channelSupportBtn" class="channel-support-wrap hidden"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="channel-profile-description" id="channelProfileDescription"></div>
+            <div id="channelProfileTags"></div>
+            <div class="channel-search-wrap channel-search-wrap--mobile">
+                <input id="channelSearchInputMobile" class="channel-search-input" type="search" placeholder="Cerca dins del canal..." aria-label="Cerca vídeos dins del canal">
+            </div>
+            <div id="channelVideosGrid" class="videos-grid"></div>
+        </div>
+    </main>
+
+    <div class="video-player" id="videoPlayer"></div>
+
+    <div id="historyPage" class="main-content hidden">
+        <h1 class="page-title">Historial</h1>
+        <section class="chips-bar history-filters" id="historyFilters" aria-label="Filtres d'historial">
+            <button class="chip is-active" data-history-cat="Tot" type="button" aria-pressed="true">Tot</button>
+            <button class="chip" data-history-cat="Vida" type="button" aria-pressed="false">Vida</button>
+            <button class="chip" data-history-cat="Cultura" type="button" aria-pressed="false">Cultura</button>
+            <button class="chip" data-history-cat="Diversió" type="button" aria-pressed="false">Diversió</button>
+            <button class="chip" data-history-cat="El Món" type="button" aria-pressed="false">El Món</button>
+            <button class="chip" data-history-cat="Gaming" type="button" aria-pressed="false">Gaming</button>
+            <button class="chip" data-history-cat="Shorts" type="button" aria-pressed="false">Shorts</button>
+            <button class="chip" data-history-filter="liked" type="button" aria-pressed="false" aria-label="Només m'agrada">
+                <i data-lucide="heart"></i>
+            </button>
+        </section>
+        <div class="videos-grid" id="historyGrid"></div>
+    </div>
+
+    <div id="playlistsPage" class="main-content hidden">
+        <h1 class="page-title">Biblioteca</h1>
+        <p class="page-subtitle">Crea i gestiona les teves llistes i categories personalitzades.</p>
+        <div class="library-tabs" id="libraryTabs" role="tablist">
+            <button class="library-tab is-active" type="button" role="tab" data-library-tab="playlists">Llistes de Reproducció</button>
+            <button class="library-tab" type="button" role="tab" data-library-tab="smart-categories">Categories Intel·ligents</button>
+        </div>
+        <div id="libraryTabPlaylists" class="library-tab-panel">
+            <div class="playlist-create">
+                <input id="playlistNameInput" class="playlist-input" type="text" placeholder="Nom de la llista" aria-label="Nom de la llista">
+                <button id="createPlaylistBtn" class="playlist-create-btn" type="button">Crear nova llista</button>
+            </div>
+            <div id="playlistsList" class="playlists-list"></div>
+        </div>
+        <div id="libraryTabSmartCategories" class="library-tab-panel hidden">
+            <div id="smartCategoriesList" class="smart-categories-list"></div>
+        </div>
+    </div>
+
+    <div id="followPage" class="main-content hidden" aria-labelledby="followPageTitle">
+        <h1 class="page-title" id="followPageTitle">Segueix!</h1>
+        <p class="page-subtitle follow-subtitle">✨ Els nostres YouTubers, més a prop que mai</p>
+        <div class="follow-tabs" id="followTabs" role="tablist" aria-label="Filtres de canals">
+            <button class="follow-tab" type="button" role="tab" aria-selected="false" data-follow-tab="all">
+                Tots els canals
+            </button>
+            <button class="follow-tab" type="button" role="tab" aria-selected="false" data-follow-tab="programes">
+                Programes
+            </button>
+            <button class="follow-tab is-active" type="button" role="tab" aria-selected="true" data-follow-tab="following">
+                Seguint
+            </button>
+        </div>
+        <div id="followGrid" class="follow-grid"></div>
+    </div>
+
+
+    <div id="short-modal" class="short-modal hidden" aria-hidden="true">
+        <div class="short-modal-backdrop" id="short-modal-backdrop"></div>
+        <div class="short-modal-panel" role="dialog" aria-modal="true">
+            <!-- Botó tancar -->
+            <button class="short-modal-close" type="button" id="short-modal-close-btn">
+                <i data-lucide="x"></i>
+            </button>
+
+            <!-- Indicador de scroll -->
+            <div id="shortScrollHint" class="short-scroll-hint" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="12" y1="4" x2="12" y2="20" stroke="white" stroke-width="3.5" stroke-linecap="round"/>
+                    <polyline points="5 11 12 4 19 11" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+
+            <!-- Reproductor -->
+            <div class="short-player-wrap" id="shortPlayerWrap">
+                <!-- Strip de 3 panells (anterior / actual / següent) per a la transició contínua -->
+                <div class="short-strip" id="shortStrip">
+                    <div class="short-pane short-pane-prev">
+                        <img class="short-pane-poster is-empty" id="shortPosterPrev" src="" alt="" aria-hidden="true" loading="lazy">
+                    </div>
+                    <div class="short-pane short-pane-current">
+                        <iframe id="short-iframe"
+                            src=""
+                            title="Short"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen
+                            referrerpolicy="strict-origin-when-cross-origin">
+                        </iframe>
+                        <img class="short-pane-poster short-pane-poster-current is-empty" id="shortPosterCurrent" src="" alt="" aria-hidden="true">
+                    </div>
+                    <div class="short-pane short-pane-next">
+                        <img class="short-pane-poster is-empty" id="shortPosterNext" src="" alt="" aria-hidden="true" loading="lazy">
+                    </div>
+                </div>
+                <div id="shortGestureOverlay" class="short-gesture-overlay" aria-hidden="true"></div>
+            </div>
+
+            <div class="short-actions-sidebar">
+                <button class="short-action-btn short-channel-btn hidden" id="shortChannelBtn" type="button" aria-label="Veure canal">
+                    <img class="short-channel-avatar" id="shortChannelAvatar" src="" alt="" loading="lazy">
+                </button>
+                <button class="short-action-btn" id="shortLikeBtn" type="button" aria-label="M'agrada">
+                    <i data-lucide="heart"></i>
+                </button>
+                <button class="short-action-btn" id="shortShareBtn" type="button" aria-label="Compartir">
+                    <i data-lucide="share-2"></i>
+                    <span>Compartir</span>
+                </button>
+            </div>
+
+            <!-- Informació del Short (opcional) -->
+            <div class="short-info">
+                <h3 id="shortTitle"></h3>
+                <p id="shortChannel"></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="playlistModal" class="playlist-modal hidden" aria-hidden="true">
+        <div class="playlist-modal-backdrop"></div>
+        <div class="playlist-modal-panel" role="dialog" aria-modal="true" aria-labelledby="playlistModalTitle">
+            <div class="playlist-modal-header">
+                <h2 id="playlistModalTitle">Afegir a una llista</h2>
+                <button class="playlist-modal-close" type="button" aria-label="Tancar modal">×</button>
+            </div>
+            <div class="playlist-modal-body" id="playlistModalBody"></div>
+        </div>
+    </div>
+
+    <!-- Loading -->
+    <div class="loading" id="loading">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Modal Afegeix un YouTuber -->
+    <div class="modal-overlay" id="addYoutuberModal">
+        <div class="modal modal-small" role="dialog" aria-modal="true" aria-labelledby="addYoutuberModalTitle">
+            <div class="modal-header">
+                <h2 class="modal-title" id="addYoutuberModalTitle">
+                    <i data-lucide="at-sign" class="add-youtuber-icon"></i>
+                    Afegeix un YouTuber
+                </h2>
+                <button class="modal-close" id="closeAddYoutuberModal" type="button" aria-label="Tancar modal">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="ecosistema-tooltip-wrapper">
+                    <a href="info-youtubers.html#ecosistema" class="ecosistema-tooltip-trigger" target="_blank" rel="noopener noreferrer">
+                        <i data-lucide="globe" style="width:14px;height:14px;"></i>
+                        Fonts de l'indexació de Segueix!
+                    </a>
+                    <h2>Afegeix un Youtuber</h2>
+                    <div class="ecosistema-tooltip">
+                        <div class="ecosistema-tooltip-title">L'ecosistema digital en català</div>
+                        <p class="ecosistema-tooltip-desc">Segueix! beu de la feina de curació d'aquests portals. Consulta'ls abans de suggerir un canal:</p>
+                        <div class="ecosistema-tooltip-links">
+                            <a href="https://llista.cat" target="_blank" rel="noopener noreferrer"><span style="color:#d32f2f;">📊</span> Llista.cat</a>
+                            <a href="https://clapclap.cat" target="_blank" rel="noopener noreferrer"><span style="color:#2e7d32;">🔍</span> ClapClap.cat</a>
+                            <a href="https://poblet.info" target="_blank" rel="noopener noreferrer"><span style="color:#ef6c00;">🍊</span> Poblet.info</a>
+                            <a href="https://vlogs.cat" target="_blank" rel="noopener noreferrer"><span style="color:#1565c0;">✍️</span> Vlogs.cat</a>
+                        </div>
+                    </div>
+                </div>
+                <p class="page-subtitle add-youtuber-subtitle" style="margin-top:0;margin-bottom:12px;">Suggereix un nou canal de YouTube perquè l'afegim a la plataforma.</p>
+                <div class="add-youtuber-cta">
+                    <button type="button" class="playlist-create-btn add-youtuber-submit-btn" id="addYoutuberSubmitBtn">Obrir formulari</button>
+                    <p class="add-youtuber-help">Per trobar el nom d'usuari <strong>@</strong>, entra al canal de YouTube i copia el text que surt al perfil, per exemple <strong>@nomdelcanal</strong>.</p>
+                    <section class="afegeix-youtuber">
+                        <h2>Coneix-nos</h2>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/ioqwbBr-JkY?si=RN8CtQOawmkB0DWR&controls=0" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+                    </section>
+                </div>
+                <div id="addYoutuberMessage" class="add-youtuber-message hidden"></div>
+
+                <hr class="modal-divider">
+
+                <div class="about-modal-body">
+                    <div class="about-contact-row">
+                        <p>Vols enviar-nos un comentari?<br>Uneix-te a l'espai de Segueix!</p>
+                        <div class="about-contact-cta-stack">
+                            <a href="https://xiuxiuejar.com/espai/segueix-els-nostres-youtubers" target="_blank" rel="noopener noreferrer">
+                                <img src="img/Xiuxiuajar_icona.png" alt="Xiuxiuejar" class="about-xiuxiuejar-icon">
+                            </a>
+                            <a href="https://xiuxiuejar.com/entrar" class="about-signup-btn" target="_blank" rel="noopener noreferrer">
+                                Dona't d'alta
+                            </a>
+                        </div>
+                    </div>
+                    <hr class="modal-divider">
+                    <div class="about-contact-row">
+                        <p>Ets YouTuber i vols contactar amb nosaltres?</p>
+                        <div class="about-contact-cta-stack">
+                            <a href="http://t.me/segueix" target="_blank" rel="noopener noreferrer">
+                                <img src="img/Telegram-icona.png" alt="Telegram" class="about-telegram-icon">
+                            </a>
+                            <a
+                                href="https://web.telegram.org/a/"
+                                class="about-telegram-btn"
+                                data-telegram-desktop-url="https://web.telegram.org/a/"
+                                data-telegram-android-url="https://play.google.com/store/apps/details?id=org.telegram.messenger"
+                                data-telegram-ios-url="https://apps.apple.com/app/telegram-messenger/id686449807"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Descarrega Telegram
+                            </a>
+                        </div>
+                    </div>
+                    <div class="about-contact-row">
+                        <a href="info-youtubers.html" class="about-youtuber-info-link" target="_blank" rel="noopener noreferrer">
+                            Informació YouTubers
+                        </a>
+                    </div>
+                    <div class="project-credit">
+                        <p class="project-credit-line">Des de la Garriga amb <span class="project-credit-icon" aria-hidden="true">🤍</span></p>
+                        <p class="project-credit-subline">
+                            Projecte de <span class="project-credit-highlight">Can Nyero</span> amb
+                            <a href="https://agenciacapture.com/" class="project-credit-link" target="_blank" rel="noopener noreferrer">Capture</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Crear Programa -->
+    <div class="modal-overlay" id="createProgramModal">
+        <div class="modal modal-small" role="dialog" aria-modal="true" aria-labelledby="createProgramModalTitle">
+            <div class="modal-header">
+                <h2 class="modal-title" id="createProgramModalTitle">
+                    <i data-lucide="clapperboard" class="create-program-icon"></i>
+                    Crear programa
+                </h2>
+                <button class="modal-close" id="closeCreateProgramModal" type="button" aria-label="Tancar modal">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p class="create-program-help">
+                    Tria un canal i escriu les paraules que apareixen al títol dels vídeos per delimitar el programa. Després el podràs afegir a les teves categories personalitzades.
+                </p>
+                <form id="createProgramForm" onsubmit="return false;">
+                    <div class="create-program-fields">
+                        <div class="create-program-field">
+                            <label for="programCreatorSearch">Creador</label>
+                            <div class="program-creator-search-wrap">
+                                <input id="programCreatorSearch" class="playlist-input" type="text" placeholder="Cerca un canal..." autocomplete="off">
+                                <div id="programCreatorResults" class="program-creator-results hidden"></div>
+                            </div>
+                        </div>
+                        <div class="create-program-field">
+                            <label for="programNameInput">Nom</label>
+                            <input id="programNameInput" class="playlist-input" type="text" placeholder="Nom del programa" autocomplete="off">
+                        </div>
+                        <div class="create-program-field">
+                            <label for="programDescriptionInput">Descripció</label>
+                            <textarea id="programDescriptionInput" class="playlist-input program-textarea" placeholder="Descripció del programa" rows="3"></textarea>
+                        </div>
+                    </div>
+                    <button type="button" class="playlist-create-btn" id="createProgramSubmitBtn">Crear</button>
+                </form>
+                <div id="createProgramMessage" class="add-youtuber-message hidden"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de suport econòmic -->
+    <div class="modal-overlay" id="supportModal">
+        <div class="modal modal-small" role="dialog" aria-modal="true" aria-labelledby="supportModalTitle">
+            <div class="modal-header">
+                <h2 class="modal-title" id="supportModalTitle">
+                    <span class="support-modal-heart">🤍</span>
+                    <span id="supportModalChannelName">Dona suport!</span>
+                </h2>
+                <button class="modal-close" id="supportModalClose" type="button" aria-label="Tancar">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="supportModalBody">
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Configuració -->
+    <div class="modal-overlay" id="backgroundModal">
+        <div class="modal modal-small" role="dialog" aria-modal="true" aria-labelledby="backgroundModalTitle">
+            <div class="modal-header">
+                <h2 class="modal-title" id="backgroundModalTitle">
+                    <i data-lucide="settings"></i>
+                    Configuració
+                </h2>
+                <button class="modal-close" id="closeBackgroundModal">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <div class="settings-section">
+                    <div class="lucky-row">
+                        <span class="setting-label lucky-label">Sóc usuari de YouTube Premium</span>
+                        <label class="toggle-switch" for="youtubePremiumToggle">
+                            <input type="checkbox" id="youtubePremiumToggle">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    <p class="modal-description" style="margin-top: 8px; font-size: 0.85rem; color: var(--text-secondary);">
+                        Activa aquesta opció si tens una subscripció a YouTube Premium. YouTube reconeixerà la teva subscripció i evitaràs rebre anuncis.
+                    </p>
+                </div>
+                <div class="settings-section lucky-section">
+                    <div class="lucky-row">
+                        <span class="setting-label lucky-label">Sempre tinc sort</span>
+                        <label class="toggle-switch" for="luckyToggle">
+                            <input type="checkbox" id="luckyToggle">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="settings-section">
+                    <p class="setting-label">Fons</p>
+                    <button class="background-option current-color-display" id="currentColorDisplay" type="button" aria-label="Mostrar selector de fons"></button>
+                    <div class="expanded-color-picker hidden" id="expandedColorPicker">
+                        <div class="background-options" id="backgroundOptions">
+                            <button class="background-option" type="button" data-color="#333333" aria-label="Negre carbó"></button>
+                            <button class="background-option" type="button" data-color="#3d3d3d" aria-label="Gris fosc"></button>
+                            <button class="background-option" type="button" data-color="#224262" aria-label="Blau nit"></button>
+                            <button class="background-option" type="button" data-color="#33533d" aria-label="Verd avet"></button>
+                            <button class="background-option" type="button" data-color="#5a3f29" aria-label="Marró cacau"></button>
+                            <button class="background-option" type="button" data-color="#513359" aria-label="Pruna fosca"></button>
+                        </div>
+                        <button class="expanded-color-close" id="closeExpandedColorPicker" type="button" aria-label="Tancar selector de colors">
+                            <i data-lucide="x"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="settings-section">
+                    <p class="setting-label">Botons</p>
+                    <button class="background-option current-color-display" id="currentButtonColorDisplay" type="button" aria-label="Mostrar selector de botons"></button>
+                    <div class="expanded-color-picker hidden" id="expandedButtonColorPicker">
+                        <div class="background-options" id="buttonColorOptions">
+                            <button class="background-option" type="button" data-color="#9B72CF" aria-label="Lila"></button>
+                            <button class="background-option" type="button" data-color="#4A90D9" aria-label="Blau elèctric"></button>
+                            <button class="background-option" type="button" data-color="#2ECC8F" aria-label="Verd menta"></button>
+                            <button class="background-option" type="button" data-color="#D94F8A" aria-label="Rosa magenta"></button>
+                            <button class="background-option" type="button" data-color="#E8922A" aria-label="Taronja ambre"></button>
+                            <button class="background-option" type="button" data-color="#4A4A6A" aria-label="Gris pla"></button>
+                        </div>
+                        <button class="expanded-color-close" id="closeExpandedButtonColorPicker" type="button" aria-label="Tancar selector de colors">
+                            <i data-lucide="x"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="settings-section">
+                    <p class="setting-label">Font</p>
+                    <div class="font-size-controls">
+                        <button class="font-size-btn" id="fontDecreaseBtn" type="button" aria-label="Reduir mida de la font">
+                            <i data-lucide="minus"></i>
+                        </button>
+                        <span class="font-size-display" id="fontSizeDisplay">Font 16px</span>
+                        <button class="font-size-btn" id="fontIncreaseBtn" type="button" aria-label="Augmentar mida de la font">
+                            <i data-lucide="plus"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="settings-section">
+                    <p class="setting-label">Configuració completa</p>
+                    <div class="config-sync-row">
+                        <button class="config-sync-btn" id="exportConfigManualBtn" type="button">Exportar tot</button>
+                        <button class="config-sync-btn" id="importConfigManualBtn" type="button">Importar tot</button>
+                    </div>
+                    <input type="file" id="configManualFileInput" accept=".json" class="hidden">
+                    <div class="config-sync-feedback hidden" id="configManualFeedback"></div>
+                </div>
+                <div class="settings-section">
+                    <p class="setting-label">Sincronització entre dispositius</p>
+                    <div id="syncPairingSection">
+                        <div class="config-sync-row">
+                            <button class="config-sync-btn" id="generatePairCodeBtn" type="button">Generar Codi de Vinculació</button>
+                        </div>
+                        <div class="config-sync-feedback hidden" id="pairingCodeFeedback"></div>
+                        <div class="config-sync-row">
+                            <input class="config-sync-input" id="pairingCodeInput" type="text" maxlength="4" inputmode="numeric" pattern="[0-9]*" placeholder="Codi de 4 dígits" aria-label="Codi de vinculació">
+                            <button class="config-sync-btn" id="redeemPairCodeBtn" type="button">Introduir Codi</button>
+                        </div>
+                        <div class="config-sync-feedback hidden" id="pairingRedeemFeedback"></div>
+                    </div>
+                    <div class="hidden" id="linkedSyncActions">
+                        <div class="config-sync-row">
+                            <button class="config-sync-btn" id="uploadCloudSyncBtn" type="button">Pujar dades al núvol</button>
+                            <button class="config-sync-btn" id="downloadCloudSyncBtn" type="button">Descarregar dades del núvol</button>
+                        </div>
+                        <div class="config-sync-row">
+                            <button class="config-sync-btn config-reset-btn" id="unlinkCloudSyncBtn" type="button">Desvincular dispositiu</button>
+                        </div>
+                        <div class="config-sync-feedback hidden" id="linkedSyncFeedback"></div>
+                    </div>
+                    <div class="config-sync-row">
+                        <button class="config-sync-btn config-legal-link" type="button" data-open-legal-modal>Privacitat i Avís Legal</button>
+                    </div>
+                </div>
+                <div class="settings-section">
+                    <p class="setting-label">Dades</p>
+                    <div class="config-sync-row">
+                        <button class="config-sync-btn config-reset-btn" id="clearAllDataBtn" type="button">Esborrar historial</button>
+                    </div>
+                    <div class="config-sync-feedback hidden" id="clearDataFeedback"></div>
+                </div>
+                <div class="settings-section" id="youtubeConsentSettingsSection">
+                    <p class="setting-label">Privacitat i YouTube</p>
+                    <p class="modal-description youtube-consent-settings-summary" id="youtubeConsentSettingsSummary"></p>
+                    <div class="config-sync-row youtube-consent-settings-actions">
+                        <button class="config-sync-btn" id="youtubeConsentEnableBtn" type="button">Activar YouTube</button>
+                        <button class="config-sync-btn config-reset-btn" id="youtubeConsentDisableBtn" type="button">Desactivar YouTube</button>
+                        <button class="config-sync-btn" id="youtubeConsentInfoSettingsBtn" type="button">Més informació</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal-overlay" id="customCategoryModal" aria-hidden="true">
+        <div class="modal modal-small" role="dialog" aria-modal="true" aria-labelledby="customCategoryModalTitle">
+            <div class="modal-header">
+                <h2 class="modal-title" id="customCategoryModalTitle">
+                    <i data-lucide="plus-circle"></i>
+                    Nova categoria
+                </h2>
+                <button class="modal-close" id="customCategoryModalClose" type="button" aria-label="Tancar modal">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="category-create">
+                    <input
+                        class="playlist-input"
+                        id="customCategoryInput"
+                        type="text"
+                        placeholder="Nom de la categoria"
+                        autocomplete="off"
+                        aria-label="Nom de la categoria nova">
+                    <button class="category-create-btn" id="customCategoryAddBtn" type="button" aria-label="Afegir categoria"><span class="category-create-plus" aria-hidden="true">+</span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal etiquetes de categoria -->
+    <div class="modal-overlay" id="categoryKeywordsModal" aria-hidden="true">
+        <div class="modal modal-small" role="dialog" aria-modal="true" aria-labelledby="categoryKeywordsModalTitle">
+            <div class="modal-header">
+                <h2 class="modal-title" id="categoryKeywordsModalTitle">
+                    <i data-lucide="tags"></i>
+                    <span id="categoryKeywordsModalName">Etiquetes</span>
+                </h2>
+                <button class="modal-close" id="categoryKeywordsModalClose" type="button" aria-label="Tancar modal">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p class="category-keywords-description">Afegeix paraules clau per ampliar els resultats d'aquesta categoria.</p>
+                <div class="category-create">
+                    <input
+                        class="playlist-input"
+                        id="categoryKeywordInput"
+                        type="text"
+                        placeholder="Nova paraula clau..."
+                        autocomplete="off"
+                        aria-label="Nova paraula clau per la categoria">
+                    <button class="category-create-btn" id="categoryKeywordAddBtn" type="button" aria-label="Afegir paraula clau"><span class="category-create-plus" aria-hidden="true">+</span></button>
+                </div>
+                <div class="category-keywords-list" id="categoryKeywordsList"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="legalModal" aria-hidden="true">
+        <div class="modal legal-modal" role="dialog" aria-modal="true" aria-labelledby="legalModalTitle">
+            <div class="modal-header">
+                <h2 class="modal-title" id="legalModalTitle">Privacitat i Avís Legal</h2>
+                <button class="modal-close" id="legalModalClose" type="button" aria-label="Tancar modal">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <div class="modal-body legal-modal-body">
+                <h3>Política de Privacitat i Avís Legal - Segueix!</h3>
+                <p>Aquesta aplicació està allotjada a Cloudflare Pages. El nostre objectiu és oferir una eina útil per seguir contingut de YouTube en català respectant al màxim la privacitat de l'usuari.</p>
+
+                <p><strong>1. Responsable del tractament</strong><br>Per a qualsevol dubte o consulta sobre aquesta aplicació, pots contactar amb nosaltres a través de l'adreça de correu electrònic: info.segueix@gmail.com.</p>
+
+                <p><strong>2. Recollida de dades i Registre</strong><br>Segueix! no requereix la creació de cap compte d'usuari ni registre. No recollim el teu nom, cognoms, telèfon ni cap altra dada d'identificació personal directa.</p>
+
+                <p><strong>3. Emmagatzematge Local (localStorage)</strong><br>L'aplicació utilitza la memòria interna del teu navegador (localStorage) per desar les teves preferències, llistes de reproducció personalitzades i l'historial de vídeos vistos.</p>
+                <p>Aquesta informació resideix exclusivament al teu dispositiu.</p>
+                <p>Si esborres les dades del navegador o la memòria cau, aquesta configuració es perdrà tret que n'hagis fet una còpia de seguretat manual.</p>
+
+                <p><strong>4. Funcionalitat de Sincronització entre dispositius</strong><br>Si decideixes utilitzar voluntàriament la funció de "Sincronitzar dispositius", l'aplicació funciona de la següent manera:</p>
+                <ul>
+                    <li><strong>Identificador Anònim:</strong> Es genera un codi únic i secret (UUID) per vincular els teus dispositius de forma segura.</li>
+                    <li><strong>Transferència temporal:</strong> En prémer "Sincronitzar", la teva configuració s'envia als servidors de Cloudflare, Inc. (mitjançant el servei Workers KV).</li>
+                    <li><strong>Privacitat i Caducitat:</strong> Les dades viatgen de forma xifrada i s'emmagatzemen només el temps estrictament necessari (pocs minuts) per permetre la descàrrega des de l'altre dispositiu. Un cop finalitzada la sessió o passat el temps límit, les dades s'eliminen automàticament i de forma permanent dels servidors.</li>
+                </ul>
+
+                <p><strong>5. Galetes (Cookies), analítica i rastreig</strong></p>
+                <ul>
+                    <li>No utilitzem galetes de tercers per a finalitats publicitàries ni de màrqueting.</li>
+                    <li>No realitzem perfils d'usuari al servidor ni venem dades a cap empresa externa.</li>
+                    <li>Segueix! pot enviar comptadors d'ús agregables de funcions de l'aplicació (per exemple, obrir un vídeo, usar la cerca, iniciar una TV o regenerar-la) per entendre quines parts del producte funcionen millor.</li>
+                    <li>Per calcular usuaris únics, el navegador crea un identificador aleatori que rota cada 90 dies. El servidor no en conserva el valor original: només un hash no reversible per fer el recompte. No utilitzem IP, user-agent ni fingerprinting per identificar usuaris, i no enviem identificadors de vídeos o canals, text de cerca ni historial de reproducció. Els registres es conserven com a màxim 90 dies.</li>
+                    <li>Pots desactivar aquesta analítica en qualsevol moment des de Configuració &gt; Analítica anònima.</li>
+                </ul>
+
+                <p><strong>6. Drets de l'usuari</strong><br>Com que les dades són locals, tens el control total sobre elles:</p>
+                <ul>
+                    <li>Pots esborrar tota la teva informació en qualsevol moment des de l'apartat de configuració de l'aplicació o des de les opcions del teu navegador.</li>
+                    <li>Pots desvincular els teus dispositius eliminant el codi de sincronització des de l'app.</li>
+                </ul>
+
+                <p><strong>7. Enllaços a Tercers (YouTube)</strong><br>Aquesta aplicació mostra contingut allotjat a YouTube. En reproduir els vídeos, se t'aplicaran les Condicions de Servei i la Política de Privacitat de Google/YouTube. L'aplicació "Segueix!" no té control sobre el rastreig que Google pugui fer des del seu reproductor incrustat.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-credit-footer" id="siteCreditFooter">
+        <div class="project-credit project-credit--page-end">
+            <nav class="seo-footer-nav" aria-label="Explora Segueix">
+                <a href="/creadors">Creadors</a>
+                <a href="/novetats">Novetats</a>
+                <a href="/vida">Vida</a>
+                <a href="/cultura">Cultura</a>
+                <a href="/diversio">Diversió</a>
+                <a href="/el-mon">El Món</a>
+                <a href="/gaming">Gaming</a>
+                <a href="/segueix-tv">Segueix TV</a>
+            </nav>
+            <button class="project-credit-legal-btn" type="button" data-open-legal-modal>Privacitat i Avís Legal</button>
+            <p class="project-credit-subline">
+                Projecte de <span class="project-credit-highlight">Can Nyero</span> amb
+                <a href="https://agenciacapture.com/" class="project-credit-link" target="_blank" rel="noopener noreferrer">Capture</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <!-- Base runtime/config -->
+    <script src="js/config.js"></script>
+    <script src="js/youtube.js"></script>
+    <script src="js/data.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.6/Sortable.min.js"></script>
+
+    <!-- Core namespace (must load before utils/features/app) -->
+    <script src="js/core/segueix-app.js"></script>
+    <script src="js/core/state.js"></script>
+    <script src="js/core/dom-registry.js"></script>
+
+    <!-- Shared utils used by features and app.js -->
+    <script src="js/utils/helpers.js"></script>
+    <script src="js/utils/storage.js"></script>
+    <script src="js/utils/id-codecs.js"></script>
+    <script src="js/utils/share-codecs.js"></script>
+    <script src="js/utils/backup-codecs.js"></script>
+    <script src="js/utils/qr-share.js"></script>
+    <script src="js/utils/config-feedback.js"></script>
+
+    <!-- Feature modules consumed by app.js -->
+    <script src="js/features/navigation.js?v=20260919-segueix-tv-label-final-1"></script>
+    <script src="js/features/library.js"></script>
+    <script src="js/features/feed.js"></script>
+    <script src="js/features/search.js"></script>
+    <script src="js/features/channel.js"></script>
+    <script src="js/features/player.js"></script>
+    <script src="js/features/shorts.js"></script>
+    <script src="js/features/support.js"></script>
+    <script src="js/features/likes.js"></script>
+    <script src="js/features/shared-playlists.js"></script>
+    <script src="js/features/config-sync.js"></script>
+    <script src="js/features/analytics.js?v=20260925-unique-users-v1"></script>
+    <script src="js/features/analytics-pdf.js?v=20260925-unique-users-v1"></script>
+    <script src="js/features/analytics-admin.js?v=20260925-unique-users-v1"></script>
+
+    <!-- Main app entrypoint -->
+    <script src="js/app.js?v=20260919-mobile-category-drag-gap-1"></script>
+    <script src="js/features/tv-learning.js?v=20260924-learning-v1"></script>
+    <script src="js/features/smart-feed.js?v=20260924-smart-feed-v1"></script>
+    <script src="js/features/tv-live-queue.js?v=20260924-live-session-v1"></script>
+    <script src="js/features/tv-programming.js?v=20260924-ara-continuacio-1"></script>
+    
+    <script>
+        // Inicialitzar icons Lucide
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
+    </script>
+    
+
+</body>
+</html>

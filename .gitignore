@@ -1,0 +1,11 @@
+.env
+node_modules/
+.DS_Store
+feed_updates.js
+!data/
+!data/feed.json
+!data/channel_map.json
+
+# Feed reduït generat pel pipeline però no llegit per cap client (només l'usen els
+# scripts que el generen). Es manté al disc, fora de git.
+data/recent-feed.json

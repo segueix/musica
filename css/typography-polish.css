@@ -1,0 +1,68 @@
+/* Proposta tipogràfica conservadora per a la PWA de Segueix.
+   No canvia mides, espais ni colors: només defineix pesos reals i jerarquia. */
+
+html {
+    font-synthesis: none;
+}
+
+body {
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+/* Títols principals: més autoritat, sense augmentar mida. */
+.page-title,
+.history-group-title,
+.category-history-title,
+.shorts-title,
+.video-title,
+.hero-title {
+    font-weight: 700;
+    letter-spacing: -0.012em;
+}
+
+/* Títols de contingut: una mica menys pesats que els títols de secció. */
+.video-card-title,
+.archive-video-title,
+.short-title {
+    font-weight: 500;
+    letter-spacing: -0.006em;
+}
+
+/* Metadades i informació secundària: pes regular real. */
+.video-metadata,
+.archive-video-meta,
+.short-channel,
+.hero-description,
+.page-title__label {
+    font-weight: 400;
+}
+
+/* Controls i elements interactius: semibold real i consistent. */
+.chip,
+.hero-button,
+.section-load-more-btn,
+.video-duration,
+.video-duration-badge,
+.short-action-btn span {
+    font-weight: 600;
+}
+
+/* El nom de canal té una presència intermèdia: visible però subordinada al títol. */
+.channel-name,
+.channel-name-large,
+.sidebar-channel-name {
+    font-weight: 500;
+}
+
+/* Ajust mínim de lectura als títols llargs, sense tocar dimensions del layout. */
+.video-card-title,
+.archive-video-title {
+    line-height: 1.35;
+}
+
+.video-title {
+    line-height: 1.25;
+}

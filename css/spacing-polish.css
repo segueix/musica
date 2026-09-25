@@ -1,0 +1,415 @@
+/* Proposta conservadora de ritme d'espaiat per a la PWA de Segueix.
+   Aplica una escala 4/8/12/16/24/32 només als espais de layout.
+   No normalitza paddings òptics interns de controls ni mides tàctils. */
+
+:root {
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 24px;
+    --space-6: 32px;
+}
+
+/* Pull-to-refresh: bloquejat per defecte i disponible només a la portada.
+   Així el gest natural d'actualitzar funciona a Inici sense provocar
+   recàrregues accidentals al reproductor, Shorts o altres modals. */
+html,
+body {
+    overscroll-behavior-x: none;
+    overscroll-behavior-y: contain;
+}
+
+html:has(#homePage:not(.hidden)),
+html:has(#homePage:not(.hidden)) body {
+    overscroll-behavior-y: auto;
+}
+
+html:has(body.watch-page-active),
+body.watch-page-active,
+html:has(body.no-scroll),
+body.no-scroll {
+    overscroll-behavior-y: contain;
+}
+
+/* Barra de categories: separació lleugerament més compacta i regular.
+   El desplaçament horitzontal és lliure: sense scroll-snap, que al mòbil
+   frenava la inèrcia entre botons i feia que el gest semblés pesant. */
+.chips-bar {
+    gap: var(--space-2);
+    padding-top: var(--space-2);
+    padding-bottom: var(--space-2);
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+}
+
+.chips-bar .chip {
+    scroll-snap-align: none;
+}
+
+/* Segueix TV ja té la seva cua pròpia. Al reproductor amaguem la segona
+   secció redundant "Resultats de la cerca: Segueix TV · Descoberta". */
+body.segueix-tv-playback .extra-related-title,
+body.segueix-tv-playback #extraVideosGrid {
+    display: none !important;
+}
+
+/* Els selectors de 2/3 columnes de la pàgina de reproducció no aporten
+   utilitat i, en mode llista, quedaven visualment penjats sota la cua. */
+.watch-grid-controls {
+    display: none !important;
+}
+
+/* ======================================================================
+   EXPERIÈNCIA TV
+   Segueix TV, TV de categoria i TV de canal comparteixen
+   body.segueix-tv-playback. La pàgina de vídeo normal queda intacta.
+   ====================================================================== */
+
+/* En TV la programació substitueix les recomanacions laterals del reproductor
+   convencional. El vídeo, la identitat del canal i la cua formen una sola peça. */
+body.segueix-tv-playback #watchPage .watch-container {
+    grid-template-columns: minmax(0, 1fr) !important;
+    max-width: 1180px;
+    gap: 0;
+}
+
+body.segueix-tv-playback #watchPage .watch-main {
+    width: 100%;
+    min-width: 0;
+}
+
+body.segueix-tv-playback #watchPage .watch-sidebar {
+    display: none !important;
+}
+
+body.segueix-tv-playback #watchPage .video-placeholder {
+    max-width: none;
+    margin-bottom: 0;
+    border-radius: 18px 18px 0 0;
+    overflow: hidden;
+}
+
+body.segueix-tv-playback #videoPlayer:not(.mini-player-active) {
+    border-radius: 18px 18px 0 0;
+    overflow: hidden;
+    /* El reproductor no viu dins del flux: es col·loca damunt del seu forat amb
+       top/left/width/height per JS. Amb la `transition: all 0.3s` de .video-player cada
+       reposicionament s'animava, i en obrir una TV el vídeo lliscava des de dalt de tot
+       fins al seu lloc —semblava surar per damunt del header— i anava sempre un pas per
+       darrere de la transició que col·lapsa la filera d'icones. En TV la imatge s'ha de
+       veure de seguida al seu lloc; l'animació es reserva per a la finestreta flotant. */
+    transition: none;
+}
+
+/* "Ara reproduint": el títol és la primera dada editorial sota la imatge.
+   Traiem data/visualitzacions perquè no competeixin amb la programació TV. */
+body.segueix-tv-playback #watchPage .video-info {
+    position: relative;
+    margin: 0;
+    padding: 30px 22px 8px;
+    background: rgba(15, 15, 15, 0.82);
+    border-inline: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+body.segueix-tv-playback #watchPage .video-info::before {
+    content: 'ARA REPRODUINT';
+    position: absolute;
+    top: 10px;
+    left: 22px;
+    color: rgba(255, 255, 255, 0.58);
+    font-size: 0.66rem;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: 0.13em;
+}
+
+body.segueix-tv-playback #watchPage .video-title {
+    margin: 0;
+    max-width: 980px;
+    font-size: clamp(1.2rem, 1.8vw, 1.7rem);
+    font-weight: 750;
+    line-height: 1.28;
+    letter-spacing: -0.015em;
+}
+
+body.segueix-tv-playback #watchPage .video-meta-row {
+    display: none !important;
+}
+
+/* La targeta ordinària del canal es simplifica radicalment en TV. La identitat
+   (avatar + nom) es conserva i continua sent .channel-link, per tant obre la
+   fitxa interna del canal. Seguiment, m'agrada, suport, YouTube i comenta queden
+   fora d'aquesta experiència perquè no sembli un reproductor convencional. */
+body.segueix-tv-playback #watchPage #channelInfo .video-info-modern {
+    margin: 0;
+    padding: 8px 22px 18px;
+    gap: 0;
+    background: rgba(15, 15, 15, 0.82);
+    border: 0;
+    border-inline: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 0;
+}
+
+body.segueix-tv-playback #watchPage #channelInfo .channel-header-row {
+    justify-content: flex-start;
+    gap: 0;
+}
+
+body.segueix-tv-playback #watchPage #channelInfo .channel-identity-modern {
+    width: max-content;
+    max-width: 100%;
+    min-height: 44px;
+    padding: 5px 9px 5px 5px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background 0.16s ease, transform 0.16s ease;
+}
+
+body.segueix-tv-playback #watchPage #channelInfo .channel-identity-modern:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+body.segueix-tv-playback #watchPage #channelInfo .channel-identity-modern:active {
+    transform: scale(0.98);
+}
+
+body.segueix-tv-playback #watchPage #channelInfo .channel-avatar-small {
+    width: 34px;
+    height: 34px;
+}
+
+body.segueix-tv-playback #watchPage #channelInfo .channel-name-modern {
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+body.segueix-tv-playback #watchPage #channelInfo .channel-program-context,
+body.segueix-tv-playback #watchPage #channelInfo .channel-subs-modern {
+    font-size: 0.75rem;
+    line-height: 1.25;
+}
+
+body.segueix-tv-playback #watchPage #channelInfo .channel-actions-inline,
+body.segueix-tv-playback #watchPage #channelInfo .channel-action-row,
+body.segueix-tv-playback #watchPage #channelInfo .video-metadata-bar {
+    display: none !important;
+}
+
+/* La cua és la continuació física d'"Ara reproduint", no una caixa nova. */
+body.segueix-tv-playback #watchPage .playlist-queue-container {
+    margin-top: 0;
+    padding: 0 16px 18px;
+    background: rgba(15, 15, 15, 0.82);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-top: 0;
+    border-radius: 0 0 18px 18px;
+}
+
+body.segueix-tv-playback #watchPage .playlist-queue-title {
+    min-height: 50px;
+    margin: 0;
+    padding: 14px 4px 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.09);
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 0.92rem;
+    font-weight: 700;
+}
+
+body.segueix-tv-playback #watchPage .playlist-queue-title > span:last-child {
+    color: rgba(255, 255, 255, 0.48);
+    font-variant-numeric: tabular-nums;
+}
+
+body.segueix-tv-playback #watchPage .playlist-queue-list {
+    display: grid;
+    gap: 4px;
+    padding-right: 0;
+}
+
+body.segueix-tv-playback #watchPage .playlist-queue-item {
+    position: relative;
+    min-height: 74px;
+    padding: 8px 10px;
+    gap: 12px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background: transparent;
+    cursor: pointer;
+    transition: background 0.16s ease, border-color 0.16s ease, transform 0.16s ease;
+}
+
+body.segueix-tv-playback #watchPage .playlist-queue-item:hover {
+    background: rgba(255, 255, 255, 0.055);
+}
+
+body.segueix-tv-playback #watchPage .playlist-queue-item:active {
+    transform: scale(0.995);
+}
+
+body.segueix-tv-playback #watchPage .playlist-queue-item.is-active {
+    background: rgba(255, 255, 255, 0.095);
+    border-color: rgba(255, 255, 255, 0.15);
+    box-shadow: inset 3px 0 0 var(--color-primary);
+}
+
+body.segueix-tv-playback #watchPage .playlist-queue-item.is-active::after {
+    content: 'ARA';
+    position: absolute;
+    top: 7px;
+    right: 9px;
+    padding: 3px 6px;
+    border-radius: 999px;
+    background: rgba(204, 0, 0, 0.94);
+    color: #fff;
+    font-size: 0.58rem;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: 0.08em;
+}
+
+body.segueix-tv-playback #watchPage .playlist-queue-item img {
+    width: 112px;
+    height: 63px;
+    border-radius: 7px;
+}
+
+body.segueix-tv-playback #watchPage .playlist-queue-item.is-active .playlist-queue-meta {
+    padding-right: 42px;
+}
+
+body.segueix-tv-playback #watchPage .playlist-queue-item.is-active .playlist-queue-meta > div:first-child {
+    white-space: normal !important;
+    line-height: 1.25;
+}
+
+/* En TV la cua no s'edita: eliminem agafadors i accions d'edició, però mantenim
+   intacte el clic sobre qualsevol vídeo per saltar-hi. */
+body.segueix-tv-playback #watchPage .playlist-queue-handle,
+body.segueix-tv-playback #watchPage .playlist-queue-actions {
+    display: none !important;
+}
+
+/* A l'ordinador la cua forma part del flux normal de la pàgina: tot el llistat
+   queda visible i l'únic scroll és el de la pàgina. */
+@media (min-width: 1025px) {
+    .playlist-queue-container {
+        background: transparent;
+        border: 0;
+        border-radius: 0;
+        padding: 0;
+    }
+
+    .playlist-queue-list {
+        max-height: none;
+        overflow-y: visible;
+        padding-right: 0;
+    }
+
+    .playlist-queue-list::-webkit-scrollbar {
+        display: none;
+    }
+
+    body.segueix-tv-playback #watchPage .playlist-queue-container {
+        padding: 0 18px 22px;
+        background: rgba(15, 15, 15, 0.82);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-top: 0;
+        border-radius: 0 0 18px 18px;
+    }
+}
+
+/* Mòbil/tablet: mateix llenguatge visual, però la cua continua compacta i amb
+   scroll intern per no convertir el reproductor en una pàgina interminable. */
+@media (max-width: 1024px) {
+    body.segueix-tv-playback #watchPage .video-placeholder,
+    body.segueix-tv-playback #videoPlayer:not(.mini-player-active) {
+        border-radius: 14px 14px 0 0;
+    }
+
+    body.segueix-tv-playback #watchPage .video-info {
+        padding: 28px 16px 6px;
+    }
+
+    body.segueix-tv-playback #watchPage .video-info::before {
+        top: 9px;
+        left: 16px;
+    }
+
+    body.segueix-tv-playback #watchPage #channelInfo .video-info-modern {
+        padding: 6px 16px 14px;
+    }
+
+    body.segueix-tv-playback #watchPage .playlist-queue-container {
+        padding-inline: 10px;
+        padding-bottom: 12px;
+        border-radius: 0 0 14px 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    body.segueix-tv-playback #watchPage .video-placeholder,
+    body.segueix-tv-playback #videoPlayer:not(.mini-player-active) {
+        border-radius: 0;
+    }
+
+    body.segueix-tv-playback #watchPage .video-info {
+        margin-top: 0;
+    }
+
+    body.segueix-tv-playback #watchPage .video-title {
+        font-size: 1.16rem;
+        line-height: 1.3;
+    }
+
+    body.segueix-tv-playback #watchPage .playlist-queue-item {
+        min-height: 68px;
+        padding: 7px 8px;
+        gap: 9px;
+    }
+
+    body.segueix-tv-playback #watchPage .playlist-queue-item img {
+        width: 92px;
+        height: 52px;
+    }
+
+    body.segueix-tv-playback #watchPage .playlist-queue-item.is-active .playlist-queue-meta {
+        padding-right: 34px;
+    }
+}
+
+/* Hero principal: elimina el padding intermedi de 28 px. */
+.hero {
+    padding: var(--space-5);
+}
+
+/* Històric i targetes secundàries: alineem separacions internes. */
+.archive-video-card {
+    gap: var(--space-3);
+}
+
+.archive-video-meta {
+    gap: var(--space-2);
+}
+
+/* Accions de continuació: mateix salt vertical que la resta de seccions. */
+.section-load-more-btn {
+    margin-top: var(--space-5);
+}
+
+/* Carrusels: mateix ritme horitzontal que les targetes. */
+.shorts-history-carousel {
+    gap: var(--space-3);
+}
+
+/* Mòbil: 12 px entre targetes, en lloc del valor intermedi de 10 px. */
+@media (max-width: 768px) {
+    .videos-grid,
+    .category-history-wrapper .videos-grid,
+    .category-history-wrapper .extra-videos-grid {
+        gap: var(--space-3);
+    }
+}
