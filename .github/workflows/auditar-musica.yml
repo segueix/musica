@@ -1,1 +1,37 @@
-name: Auditar elegibilitat musical\n\non:\n  push:\n    paths:\n      - "scripts/auditar_elegibilitat_musica.js"\n      - ".github/workflows/auditar-musica.yml"\n  workflow_dispatch:\n\nconcurrency:\n  group: music-data-writer\n  cancel-in-progress: false\n\njobs:\n  audita:\n    runs-on: ubuntu-latest\n    permissions:\n      contents: write\n    steps:\n      - uses: actions/checkout@v5\n      - uses: actions/setup-node@v5\n        with:\n          node-version: "20"\n      - name: Sincronitza main\n        run: |\n          git fetch origin main\n          git reset --hard origin/main\n      - name: Genera auditoria\n        run: node scripts/auditar_elegibilitat_musica.js\n      - name: Publica auditoria\n        run: |\n          git config user.name "github-actions[bot]"\n          git config user.email "github-actions[bot]@users.noreply.github.com"\n          git add data/artistes-musica-audit.json\n          if git diff --cached --quiet; then exit 0; fi\n          git commit -m "data: audita elegibilitat musical"\n          git push origin HEAD:main\n
+name: Auditar elegibilitat musical
+
+on:
+  push:
+    paths:
+      - "scripts/auditar_elegibilitat_musica.js"
+      - ".github/workflows/auditar-musica.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: music-data-writer
+  cancel-in-progress: false
+
+jobs:
+  audita:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "20"
+      - name: Sincronitza main
+        run: |
+          git fetch origin main
+          git reset --hard origin/main
+      - name: Genera auditoria
+        run: node scripts/auditar_elegibilitat_musica.js
+      - name: Publica auditoria
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/artistes-musica-audit.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "data: audita elegibilitat musical"
+          git push origin HEAD:main
