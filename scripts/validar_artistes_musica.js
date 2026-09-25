@@ -10,6 +10,8 @@ const MUSICBRAINZ_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]
 const CONFIDENCE = new Set(['alta', 'mitjana', 'baixa', 'pendent']);
 const REVIEW = new Set(['pendent', 'aprovat', 'rebutjat']);
 const CHANNEL_TYPES = new Set(['official', 'topic', 'label', 'other']);
+const TAXONOMY = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'data', 'music-genres.json'), 'utf8'));
+const GENRES = new Set(TAXONOMY.categories.map((category) => category.label));
 
 function fail(message) {
     console.error(`❌ ${message}`);
@@ -54,6 +56,14 @@ if (!Array.isArray(data.artists)) {
         ['aliases', 'genres', 'territories', 'languages', 'sources'].forEach((field) => {
             if (!isStringArray(artist[field])) fail(`${where}.${field} ha de ser un array de textos.`);
         });
+
+        if (artist.genresRaw !== undefined && !isStringArray(artist.genresRaw)) {
+            fail(`${where}.genresRaw ha de ser un array de textos si existeix.`);
+        }
+
+        for (const genre of artist.genres || []) {
+            if (!GENRES.has(genre)) fail(`${where}.genres conté una categoria no oficial: ${genre}`);
+        }
 
         if (!(artist.wikidataId === null || (typeof artist.wikidataId === 'string' && WIKIDATA_RE.test(artist.wikidataId)))) {
             fail(`${where}.wikidataId no és vàlid.`);
@@ -122,6 +132,19 @@ if (!Array.isArray(data.artists)) {
             if (!['autoacceptat', 'candidats', 'sense-resultats', 'error'].includes(ys.status)) fail(`${where}.enrichment.youtubeSearch.status no és vàlid.`);
             if (typeof ys.query !== 'string') fail(`${where}.enrichment.youtubeSearch.query no és vàlid.`);
             if (!Number.isInteger(ys.resultCount) || ys.resultCount < 0) fail(`${where}.enrichment.youtubeSearch.resultCount no és vàlid.`);
+        }
+
+        const genreState = artist.enrichment?.genres;
+        if (genreState !== undefined) {
+            if (!genreState || typeof genreState !== 'object') fail(`${where}.enrichment.genres no és vàlid.`);
+            if (!(genreState.checkedAt === null || typeof genreState.checkedAt === 'string')) fail(`${where}.enrichment.genres.checkedAt no és vàlid.`);
+            if (!(genreState.musicbrainzCheckedAt === null || typeof genreState.musicbrainzCheckedAt === 'string')) fail(`${where}.enrichment.genres.musicbrainzCheckedAt no és vàlid.`);
+            ['wikidataRaw', 'musicbrainzRaw', 'unmappedRaw'].forEach((field) => {
+                if (!isStringArray(genreState[field])) fail(`${where}.enrichment.genres.${field} ha de ser un array de textos.`);
+            });
+            if (!['pendent', 'classificat', 'parcial', 'per-revisar', 'sense-dades'].includes(genreState.status)) {
+                fail(`${where}.enrichment.genres.status no és vàlid.`);
+            }
         }
 
         const mb = artist.enrichment?.musicbrainz;
