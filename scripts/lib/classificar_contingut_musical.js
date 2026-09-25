@@ -63,6 +63,9 @@ function classifyMusicContent({ item, channelMeta }) {
   const title = String(snippet.title || '');
   const description = String(snippet.description || '');
   const tags = Array.isArray(snippet.tags) ? snippet.tags : [];
+  const titleText = normalize(title);
+  const descriptionText = normalize(description.slice(0, 1200));
+  const tagText = normalize(tags.join(' '));
   const text = normalize([title, description.slice(0, 1200), tags.join(' ')].join(' '));
   const durationSeconds = Number(item?.durationSeconds || 0);
   const categoryId = String(snippet.categoryId || '');
@@ -71,20 +74,25 @@ function classifyMusicContent({ item, channelMeta }) {
 
   const topicChannel = channelTypes.has('topic') || /\s-\s*topic$/i.test(String(channelMeta?.channelTitle || ''));
   const providedToYoutube = /provided to youtube by/i.test(description);
-  const negative = containsAny(text, NEGATIVE_TERMS);
-  const albumMarker = containsAny(text, ALBUM_TERMS);
-  const songMarker = containsAny(text, SONG_MARKERS);
-  const liveMarker = containsAny(text, LIVE_MARKERS);
+  const negativeTitle = containsAny(titleText, NEGATIVE_TERMS);
+  const strongNegativeDescription = containsAny(descriptionText, [
+    'entrevista', 'interview', 'podcast', 'making of', 'making-of',
+    'behind the scenes', 'backstage', 'documental', 'documentary',
+    'roda de premsa', 'press conference', 'q&a'
+  ]);
+  const albumMarker = containsAny(titleText, ALBUM_TERMS) || containsAny(tagText, ALBUM_TERMS);
+  const songMarker = containsAny(titleText, SONG_MARKERS) || containsAny(tagText, SONG_MARKERS);
+  const liveMarker = containsAny(titleText, LIVE_MARKERS);
   const musicCategory = categoryId === '10';
   const musicTags = tags.some(tag => containsAny(normalize(tag), MUSIC_TAG_TERMS));
   const titlePattern = looksLikeArtistTrackTitle(title, artistNames);
 
-  if (albumMarker && durationSeconds >= 600 && !negative) {
+  if (albumMarker && durationSeconds >= 600 && !negativeTitle) {
     return { accepted: true, contentType: 'album', confidence: 0.98, reason: 'àlbum/EP complet identificat' };
   }
 
   if (topicChannel || providedToYoutube) {
-    if (negative && !songMarker) {
+    if (negativeTitle && !songMarker) {
       return { accepted: false, contentType: 'other', confidence: 0.95, reason: 'contingut no musical explícit' };
     }
     return {
@@ -95,20 +103,33 @@ function classifyMusicContent({ item, channelMeta }) {
     };
   }
 
-  if (negative) {
-    return { accepted: false, contentType: 'other', confidence: 0.96, reason: 'entrevista/podcast/promoció o contingut auxiliar' };
-  }
-
-  if (liveMarker && durationSeconds > 900) {
-    return { accepted: false, contentType: 'other', confidence: 0.9, reason: 'concert o sessió llarga, no una sola cançó' };
+  if (negativeTitle) {
+    return { accepted: false, contentType: 'other', confidence: 0.96, reason: 'títol d’entrevista/podcast/promoció o contingut auxiliar' };
   }
 
   if (songMarker && durationSeconds >= 45 && durationSeconds <= 900) {
     return {
       accepted: true,
       contentType: liveMarker ? 'live-song' : 'song',
-      confidence: 0.97,
+      confidence: 0.98,
       reason: 'marcador explícit de cançó/videoclip'
+    };
+  }
+
+  if (strongNegativeDescription) {
+    return { accepted: false, contentType: 'other', confidence: 0.94, reason: 'descripció inequívoca de contingut no musical' };
+  }
+
+  if (liveMarker && durationSeconds > 900) {
+    return { accepted: false, contentType: 'other', confidence: 0.9, reason: 'concert o sessió llarga, no una sola cançó' };
+  }
+
+  if (liveMarker && titlePattern && durationSeconds >= 60 && durationSeconds <= 900) {
+    return {
+      accepted: true,
+      contentType: 'live-song',
+      confidence: 0.92,
+      reason: 'títol de cançó + versió en directe/acústica'
     };
   }
 
