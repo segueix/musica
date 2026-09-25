@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-25T15:49:45.930Z",
+  "updatedAt": "2026-09-25T15:56:53.766Z",
   "artists": [
     {
       "name": "31 FAM",
@@ -44,7 +44,8 @@
       "wikidataId": "Q20646496",
       "musicbrainzId": "233e32f2-c083-4a49-a5d4-d52df62cdbd3",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -53,8 +54,15 @@
         "https://www.wikidata.org/wiki/Q20646496",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:53:51.152Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:53:51.152Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Al Tall",
@@ -67,7 +75,8 @@
       "wikidataId": "Q2306388",
       "musicbrainzId": "3ad2965d-fcfa-4b91-ae93-e6ec8e32c1c1",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -76,8 +85,15 @@
         "https://www.wikidata.org/wiki/Q2306388",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:53:52.918Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:53:52.918Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Albert Guinovart i Mingacho",
@@ -90,7 +106,8 @@
       "wikidataId": "Q2831227",
       "musicbrainzId": "a007220e-6f15-462c-bf25-914940c8aec3",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -100,8 +117,15 @@
         "wikidata:languages-spoken-catalan",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:53:54.375Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:53:54.375Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Albert Pla i Álvarez",
@@ -114,7 +138,8 @@
       "wikidataId": "Q942636",
       "musicbrainzId": "ba77d3af-37d0-466f-875a-3240f4403f7e",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -124,8 +149,15 @@
         "wikidata:languages-spoken-catalan",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:53:55.882Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:53:55.882Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Al·lèrgiques al Pol·len",
@@ -169,7 +201,8 @@
       "wikidataId": "Q930586",
       "musicbrainzId": "7dfe5902-5fdf-423a-bbe6-c2426c80b27f",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -180,8 +213,15 @@
         "wikidata:native-language-catalan",
         "wikidata:native-language-catalan-musician"
       ],
-      "lastChecked": "2026-09-25T15:47:57.997Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:53:57.303Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:53:57.303Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Anna Lola",
@@ -227,7 +267,8 @@
       "wikidataId": "Q567632",
       "musicbrainzId": "86637bc3-4663-4ba9-bf50-a21e4f6fa150",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -236,8 +277,15 @@
         "https://www.wikidata.org/wiki/Q567632",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:53:58.744Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:53:58.744Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Antoni Martín i Coll",
@@ -250,7 +298,8 @@
       "wikidataId": "Q650225",
       "musicbrainzId": "907b33a8-ea95-44ed-9231-3dc5d2afdb6a",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -261,8 +310,15 @@
         "wikidata:native-language-catalan",
         "wikidata:native-language-catalan-musician"
       ],
-      "lastChecked": "2026-09-25T15:47:57.997Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:54:00.182Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:54:00.182Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Antònia Font",
@@ -337,7 +393,8 @@
       "wikidataId": "Q11907056",
       "musicbrainzId": "3aa69692-a3c3-4e01-90aa-22ca4d958218",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -346,8 +403,15 @@
         "https://www.wikidata.org/wiki/Q11907056",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:54:01.732Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:54:01.732Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "At Versaris",
@@ -360,7 +424,8 @@
       "wikidataId": "Q11907071",
       "musicbrainzId": "7a71e5a4-6603-45f1-982e-f1f80a8a114c",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -369,8 +434,15 @@
         "https://www.wikidata.org/wiki/Q11907071",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:54:03.168Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:54:03.168Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Atupa",
@@ -445,7 +517,8 @@
       "wikidataId": "Q8247042",
       "musicbrainzId": "5a945027-735d-4008-b4d3-b3d82c90ecac",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -455,8 +528,15 @@
         "wikidata:native-language-catalan",
         "wikidata:native-language-catalan-musician"
       ],
-      "lastChecked": "2026-09-25T15:47:57.997Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:54:04.644Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:54:04.644Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Betagarri",
@@ -469,7 +549,8 @@
       "wikidataId": "Q830929",
       "musicbrainzId": "0aae7e5e-0bee-4225-a5b5-4d183666e219",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -478,8 +559,15 @@
         "https://www.wikidata.org/wiki/Q830929",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:54:06.028Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:54:06.028Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Bonobos",
@@ -492,7 +580,8 @@
       "wikidataId": "Q20103866",
       "musicbrainzId": "cb9bbe05-cece-45e8-874c-d0ba14d7c4e1",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -501,8 +590,15 @@
         "https://www.wikidata.org/wiki/Q20103866",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:54:07.519Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:54:07.519Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Bradien",
@@ -515,7 +611,8 @@
       "wikidataId": "Q21568872",
       "musicbrainzId": "be4dce5f-2dd2-457e-a81b-8c0bd8c89e57",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -524,8 +621,15 @@
         "https://www.wikidata.org/wiki/Q21568872",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:54:08.990Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:54:08.990Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Brams",
@@ -538,7 +642,8 @@
       "wikidataId": "Q581587",
       "musicbrainzId": "ce9eceac-f252-457e-992e-cc2e60290ce1",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -548,8 +653,15 @@
         "wikidata:languages-spoken-catalan",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:54:10.306Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:54:10.306Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Buhos",
@@ -593,17 +705,34 @@
       "wikidataId": "Q21530074",
       "musicbrainzId": "6f4e7969-5088-45c1-9725-4b910883796d",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": [
+          {
+            "url": "https://www.youtube.com/user/cabosanroque",
+            "handle": null,
+            "relationType": "youtube",
+            "source": "musicbrainz",
+            "discoveredAt": "2026-09-25T15:54:11.735Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
       "active": false,
       "sources": [
         "https://www.wikidata.org/wiki/Q21530074",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "musicbrainz:youtube-candidate"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:54:11.735Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:54:11.735Z",
+          "status": "trobat",
+          "relationCount": 1
+        }
+      }
     },
     {
       "name": "Cactus Troop",
@@ -681,7 +810,8 @@
       "wikidataId": "Q242023",
       "musicbrainzId": "9f8667df-17af-4d8d-9d80-3174c1177bbb",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -692,8 +822,15 @@
         "wikidata:native-language-catalan",
         "wikidata:native-language-catalan-musician"
       ],
-      "lastChecked": "2026-09-25T15:47:57.997Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:54:13.104Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:54:13.104Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Carol Rovira",
@@ -706,7 +843,8 @@
       "wikidataId": "Q64373644",
       "musicbrainzId": "0680f1d8-9036-4a93-a3b3-ac62f32ad1d2",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -716,8 +854,15 @@
         "wikidata:native-language-catalan",
         "wikidata:native-language-catalan-musician"
       ],
-      "lastChecked": "2026-09-25T15:47:57.997Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:54:14.435Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:54:14.435Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Cesk Freixas",
@@ -802,7 +947,8 @@
       "wikidataId": "Q113006288",
       "musicbrainzId": "82d790da-2672-489e-9c42-110302c43e5b",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -811,8 +957,15 @@
         "https://www.wikidata.org/wiki/Q113006288",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:54:15.855Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:54:15.855Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Companyia Elèctrica Dharma",
@@ -857,7 +1010,8 @@
       "wikidataId": "Q440133",
       "musicbrainzId": "7a5ed032-1c64-47ee-9628-94d7e3e88718",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -867,8 +1021,15 @@
         "wikidata:languages-spoken-catalan",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:54:17.161Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:54:17.161Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Crim",
@@ -912,7 +1073,8 @@
       "wikidataId": "Q2838792",
       "musicbrainzId": "6675e84e-ad9e-4100-89dc-5170c8f609ed",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -922,8 +1084,15 @@
         "wikidata:languages-spoken-catalan",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:54:18.589Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:54:18.589Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Dàmaris Gelabert",
@@ -1305,7 +1474,8 @@
       "wikidataId": "Q612657",
       "musicbrainzId": "9a571eaa-cffe-4b39-9290-875de7adf280",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -1314,8 +1484,15 @@
         "https://www.wikidata.org/wiki/Q612657",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:54:19.897Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:54:19.897Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Duble Buble",
@@ -1328,7 +1505,8 @@
       "wikidataId": "Q11917802",
       "musicbrainzId": "703109f6-19ba-45d4-b7f5-1791ee0feb79",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -1338,8 +1516,15 @@
         "wikidata:languages-spoken-catalan",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:54:21.303Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:54:21.303Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Dyango",
@@ -1352,7 +1537,16 @@
       "wikidataId": "Q4890058",
       "musicbrainzId": "e8472e4c-e899-43cf-8e66-70eafbcf750d",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": [
+          {
+            "url": "https://www.youtube.com/user/dyangooficial",
+            "handle": null,
+            "relationType": "youtube",
+            "source": "musicbrainz",
+            "discoveredAt": "2026-09-25T15:54:22.726Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -1360,10 +1554,18 @@
       "sources": [
         "https://www.wikidata.org/wiki/Q4890058",
         "wikidata:languages-spoken-catalan",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "musicbrainz:youtube-candidate"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:54:22.726Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:54:22.726Z",
+          "status": "trobat",
+          "relationCount": 1
+        }
+      }
     },
     {
       "name": "Ebri Knight",
@@ -1407,7 +1609,8 @@
       "wikidataId": "Q19256719",
       "musicbrainzId": "e493a7d2-951a-4847-91e8-2158903df219",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -1416,8 +1619,15 @@
         "https://www.wikidata.org/wiki/Q19256719",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:54:24.135Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:54:24.135Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "El Diluvi",
@@ -1492,7 +1702,8 @@
       "wikidataId": "Q192427",
       "musicbrainzId": "afd9e0e5-6c1c-4560-9350-64fec5731bc2",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -1501,8 +1712,15 @@
         "https://www.wikidata.org/wiki/Q192427",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:54:25.465Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:54:25.465Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "El Pony Pisador",
@@ -1546,7 +1764,8 @@
       "wikidataId": "Q3312233",
       "musicbrainzId": "a8b6eecf-1bad-465e-a806-4179c4e436e6",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -1555,8 +1774,15 @@
         "https://www.wikidata.org/wiki/Q3312233",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:54:26.927Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:54:26.927Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Elphomega",
@@ -1569,7 +1795,8 @@
       "wikidataId": "Q8775115",
       "musicbrainzId": "b7f91315-c3d6-4a3a-b10b-a927f8766ebd",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -1578,8 +1805,15 @@
         "https://www.wikidata.org/wiki/Q8775115",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:54:28.235Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:54:28.235Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Els Amics de les Arts",
@@ -1656,7 +1890,8 @@
       "wikidataId": "Q1333372",
       "musicbrainzId": "0e263fb1-3145-4b61-b3fc-3d99a515baec",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -1665,8 +1900,15 @@
         "https://www.wikidata.org/wiki/Q1333372",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:54:29.662Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:54:29.662Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Emili Vendrell i Coutier",
@@ -1679,7 +1921,8 @@
       "wikidataId": "Q15621300",
       "musicbrainzId": "d128bfee-0f2a-4f82-a87e-86a29c9a35d2",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -1688,8 +1931,15 @@
         "https://www.wikidata.org/wiki/Q15621300",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:54:31.068Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:54:31.068Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Emili Vendrell i Ibars",
@@ -1702,7 +1952,8 @@
       "wikidataId": "Q8775502",
       "musicbrainzId": "9111a47c-732b-46b9-84a3-5a9dc3ed8306",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -1711,8 +1962,15 @@
         "https://www.wikidata.org/wiki/Q8775502",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:54:32.448Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:54:32.448Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Enric Madriguera i Rodon",
@@ -1725,7 +1983,8 @@
       "wikidataId": "Q447599",
       "musicbrainzId": "4eaaa457-b736-4315-8e3d-34cb674bb900",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -1736,8 +1995,15 @@
         "wikidata:native-language-catalan",
         "wikidata:native-language-catalan-musician"
       ],
-      "lastChecked": "2026-09-25T15:47:57.997Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:54:33.895Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:54:33.895Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Esquirols",
@@ -1750,7 +2016,8 @@
       "wikidataId": "Q11920737",
       "musicbrainzId": "d5ef76d8-e91e-4499-803e-3143813b04e5",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -1760,8 +2027,15 @@
         "wikidata:languages-spoken-catalan",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:54:35.362Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:54:35.362Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Esther Querol Forner",
@@ -1774,7 +2048,8 @@
       "wikidataId": "Q116727730",
       "musicbrainzId": "2ee83e5a-15c1-4239-96ce-47074f1f827f",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -1785,8 +2060,15 @@
         "wikidata:performed-catalan-work",
         "wikidata:native-language-catalan-musician"
       ],
-      "lastChecked": "2026-09-25T15:47:57.997Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:54:36.662Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:54:36.662Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Fades",
@@ -1923,7 +2205,8 @@
       "wikidataId": "Q568158",
       "musicbrainzId": "47f9bd13-ca39-408b-b467-f25eb56de3d7",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -1934,8 +2217,15 @@
         "wikidata:native-language-catalan",
         "wikidata:native-language-catalan-musician"
       ],
-      "lastChecked": "2026-09-25T15:47:57.997Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:54:37.999Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:54:37.999Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Francesca Madriguera i Rodon",
@@ -1948,7 +2238,8 @@
       "wikidataId": "Q15729292",
       "musicbrainzId": "8ce0fefd-51fe-40f2-8761-a9654d493bc1",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -1958,8 +2249,15 @@
         "wikidata:native-language-catalan",
         "wikidata:native-language-catalan-musician"
       ],
-      "lastChecked": "2026-09-25T15:47:57.997Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:54:39.313Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:54:39.313Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Geoffrey Parsons",
@@ -1972,7 +2270,8 @@
       "wikidataId": "Q326911",
       "musicbrainzId": "575f99fa-81a8-48ee-b27d-92ca62c32b2e",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -1981,8 +2280,15 @@
         "https://www.wikidata.org/wiki/Q326911",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:54:40.738Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:54:40.738Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Germà Negre",
@@ -1995,7 +2301,8 @@
       "wikidataId": "Q20875980",
       "musicbrainzId": "62a7f13f-3359-4e9d-a408-687d835a21ec",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -2004,8 +2311,15 @@
         "https://www.wikidata.org/wiki/Q20875980",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:54:42.196Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:54:42.196Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Gertrudis",
@@ -2150,7 +2464,8 @@
       "wikidataId": "Q11924866",
       "musicbrainzId": "a43b3d79-438d-4011-9b18-4a1ed55193c8",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -2160,8 +2475,15 @@
         "wikidata:languages-spoken-catalan",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:54:43.736Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:54:43.736Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Guillem Gisbert i Puig",
@@ -2174,7 +2496,8 @@
       "wikidataId": "Q62020002",
       "musicbrainzId": "33d6da31-3518-42f9-b371-7509e93ec0bd",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -2183,8 +2506,15 @@
         "https://www.wikidata.org/wiki/Q62020002",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:54:45.205Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:54:45.205Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Guillermina Motta",
@@ -2197,7 +2527,8 @@
       "wikidataId": "Q9001292",
       "musicbrainzId": "f962cece-5c70-4b77-a56c-7a0b6cb199ea",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -2206,8 +2537,15 @@
         "https://www.wikidata.org/wiki/Q9001292",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:54:46.584Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:54:46.584Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Inadaptats",
@@ -2252,7 +2590,8 @@
       "wikidataId": "Q118780390",
       "musicbrainzId": "6a5cd215-edf8-434b-a622-1213a2d80b3d",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -2261,8 +2600,15 @@
         "https://www.wikidata.org/wiki/Q118780390",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:54:48.051Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:54:48.051Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Jaume Aragall i Garriga",
@@ -2275,7 +2621,8 @@
       "wikidataId": "Q701353",
       "musicbrainzId": "ba035096-ed3c-47b7-b812-5ae78ba77db5",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -2285,8 +2632,15 @@
         "wikidata:languages-spoken-catalan",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:54:49.582Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:54:49.582Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Jaume Arnella i París",
@@ -2299,7 +2653,8 @@
       "wikidataId": "Q11927225",
       "musicbrainzId": "44c786f4-0b24-45c8-afef-916435ab0e64",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -2310,8 +2665,15 @@
         "wikidata:native-language-catalan",
         "wikidata:native-language-catalan-musician"
       ],
-      "lastChecked": "2026-09-25T15:47:57.997Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:54:50.936Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:54:50.936Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Jaume Balius i Vila",
@@ -2324,7 +2686,8 @@
       "wikidataId": "Q11927234",
       "musicbrainzId": "1c0d06b7-c9b5-4086-a118-016aa49d4830",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -2335,8 +2698,15 @@
         "wikidata:native-language-catalan",
         "wikidata:native-language-catalan-musician"
       ],
-      "lastChecked": "2026-09-25T15:47:57.997Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:54:52.383Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:54:52.383Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Jaume Sisa i Mestres",
@@ -2349,7 +2719,8 @@
       "wikidataId": "Q3110913",
       "musicbrainzId": "ec68cb5d-8dad-4804-b637-9634567eb136",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -2359,8 +2730,15 @@
         "wikidata:languages-spoken-catalan",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:54:53.779Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:54:53.779Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Jo Jet i Maria Ribot",
@@ -2435,7 +2813,8 @@
       "wikidataId": "Q9011900",
       "musicbrainzId": "a6862ab2-1bc7-47e6-9ca8-7ee5dbe27b78",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -2445,8 +2824,15 @@
         "wikidata:native-language-catalan",
         "wikidata:native-language-catalan-musician"
       ],
-      "lastChecked": "2026-09-25T15:47:57.997Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:54:55.255Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:54:55.255Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Joan Dausà",
@@ -2459,17 +2845,34 @@
       "wikidataId": "Q21950809",
       "musicbrainzId": "d092fbf7-131e-4b67-be05-e0a4e896e311",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": [
+          {
+            "url": "https://www.youtube.com/user/JoanDausa",
+            "handle": null,
+            "relationType": "youtube",
+            "source": "musicbrainz",
+            "discoveredAt": "2026-09-25T15:54:56.724Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
       "active": false,
       "sources": [
         "https://www.wikidata.org/wiki/Q21950809",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "musicbrainz:youtube-candidate"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:54:56.724Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:54:56.724Z",
+          "status": "trobat",
+          "relationCount": 1
+        }
+      }
     },
     {
       "name": "Joan Manuel Serrat i Teresa",
@@ -2514,7 +2917,8 @@
       "wikidataId": "Q4895645",
       "musicbrainzId": "a379ad24-6df4-434a-a810-a0057d4705fa",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -2524,8 +2928,15 @@
         "wikidata:languages-spoken-catalan",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:54:58.228Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:54:58.228Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Joana Serrat",
@@ -2538,7 +2949,8 @@
       "wikidataId": "Q11928044",
       "musicbrainzId": "351cbe05-41eb-48c1-b612-31720797cbd3",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -2549,8 +2961,15 @@
         "wikidata:native-language-catalan",
         "wikidata:native-language-catalan-musician"
       ],
-      "lastChecked": "2026-09-25T15:47:57.997Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:54:59.732Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:54:59.732Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Joaquim Homs i Oller",
@@ -2563,7 +2982,8 @@
       "wikidataId": "Q1367950",
       "musicbrainzId": "d4692241-0d7d-45ae-8c22-7276f653b8a1",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -2573,8 +2993,15 @@
         "wikidata:performed-catalan-work",
         "wikidata:languages-spoken-catalan"
       ],
-      "lastChecked": "2026-09-25T15:44:36.421Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:55:01.181Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:55:01.181Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Jofre Bardagí Grima",
@@ -2618,7 +3045,8 @@
       "wikidataId": "Q3183739",
       "musicbrainzId": "f3545e61-19b3-4b2d-bcc8-4c7e18e9d80e",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -2628,8 +3056,15 @@
         "wikidata:languages-spoken-catalan",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:55:02.524Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:55:02.524Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Jose Domingo",
@@ -2642,7 +3077,8 @@
       "wikidataId": "Q125526852",
       "musicbrainzId": "d8ce0cb2-d6f0-496e-984d-fade807c5ba4",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -2651,8 +3087,15 @@
         "https://www.wikidata.org/wiki/Q125526852",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:55:03.929Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:55:03.929Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Josep Carreras i Coll",
@@ -2665,7 +3108,8 @@
       "wikidataId": "Q485165",
       "musicbrainzId": "7716ddac-2f24-44fa-81b1-bfa920811445",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -2675,8 +3119,15 @@
         "wikidata:languages-spoken-catalan",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:55:05.348Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:55:05.348Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Josep Maria Mestres Quadreny",
@@ -2689,7 +3140,8 @@
       "wikidataId": "Q3098833",
       "musicbrainzId": "e63299c3-35ef-42c4-baa8-d607d9ff4641",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -2699,8 +3151,15 @@
         "wikidata:languages-spoken-catalan",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:55:06.793Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:55:06.793Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Josep Soler i Sardà",
@@ -2713,7 +3172,8 @@
       "wikidataId": "Q3184122",
       "musicbrainzId": "a31e89ce-7fbf-4805-a272-0c06c86252ce",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -2723,8 +3183,15 @@
         "wikidata:languages-spoken-catalan",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:55:08.218Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:55:08.218Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Judit Neddermann",
@@ -2768,7 +3235,8 @@
       "wikidataId": "Q9016478",
       "musicbrainzId": "6bd663d4-d912-447d-bc66-442424100fde",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -2778,8 +3246,15 @@
         "wikidata:performed-catalan-work",
         "wikidata:languages-spoken-catalan"
       ],
-      "lastChecked": "2026-09-25T15:44:36.421Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:55:09.732Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:55:09.732Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Julieta",
@@ -2823,7 +3298,8 @@
       "wikidataId": "Q356782",
       "musicbrainzId": "c376498a-cdf6-422b-9055-3fce84424402",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -2832,8 +3308,15 @@
         "https://www.wikidata.org/wiki/Q356782",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:55:11.043Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:55:11.043Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "KOP",
@@ -2878,7 +3361,8 @@
       "wikidataId": "Q3394814",
       "musicbrainzId": "096f4d98-a2af-40f3-8673-5ff267247331",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -2887,8 +3371,15 @@
         "https://www.wikidata.org/wiki/Q3394814",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:55:12.681Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:55:12.681Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "La Bien Querida",
@@ -2901,7 +3392,8 @@
       "wikidataId": "Q11687587",
       "musicbrainzId": "dbaf66c4-3014-4eb4-af25-12bf2cdefbfe",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -2910,8 +3402,15 @@
         "https://www.wikidata.org/wiki/Q11687587",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:55:14.173Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:55:14.173Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "La Brigada",
@@ -2924,7 +3423,8 @@
       "wikidataId": "Q11930298",
       "musicbrainzId": "d8a037f6-8716-4771-8f69-dc516e278070",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -2933,8 +3433,15 @@
         "https://www.wikidata.org/wiki/Q11930298",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:55:15.594Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:55:15.594Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "La Carrau",
@@ -2947,7 +3454,8 @@
       "wikidataId": "Q11930337",
       "musicbrainzId": "4e25984b-be49-4dd0-87cd-ed422a4c245d",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -2956,8 +3464,15 @@
         "https://www.wikidata.org/wiki/Q11930337",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:55:17.012Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:55:17.012Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "La Fúmiga",
@@ -3001,7 +3516,8 @@
       "wikidataId": "Q3174522",
       "musicbrainzId": "b84d2b3b-fae2-490c-b406-8ce0fc184460",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -3010,8 +3526,15 @@
         "https://www.wikidata.org/wiki/Q3174522",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:55:18.406Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:55:18.406Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "La Iaia",
@@ -3117,7 +3640,8 @@
       "wikidataId": "Q4895526",
       "musicbrainzId": "e811f1d4-9d6f-47a0-a8c0-352dd7c71312",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -3126,8 +3650,15 @@
         "https://www.wikidata.org/wiki/Q4895526",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:55:19.770Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:55:19.770Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "La Troba Kung-Fú",
@@ -3140,7 +3671,8 @@
       "wikidataId": "Q1817487",
       "musicbrainzId": "c52e82c6-e3fa-4643-b553-efa44cd68af1",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -3149,8 +3681,15 @@
         "https://www.wikidata.org/wiki/Q1817487",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:55:21.158Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:55:21.158Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Lal'ba",
@@ -3194,7 +3733,8 @@
       "wikidataId": "Q3075731",
       "musicbrainzId": "c2da04f0-77e2-404c-b881-f188fbfa47a0",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -3204,8 +3744,15 @@
         "wikidata:languages-spoken-catalan",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:55:22.716Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:55:22.716Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Lildami",
@@ -3249,7 +3796,8 @@
       "wikidataId": "Q9023776",
       "musicbrainzId": "79c3d497-1c7c-4561-b23b-691f51f59813",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -3260,8 +3808,15 @@
         "wikidata:languages-spoken-catalan",
         "wikidata:native-language-catalan-musician"
       ],
-      "lastChecked": "2026-09-25T15:47:57.997Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:55:24.132Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:55:24.132Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Lluís Llach i Grande",
@@ -3308,7 +3863,16 @@
       "wikidataId": "Q112292911",
       "musicbrainzId": "e292d0ec-aafe-4f20-9d87-5df30bea528d",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": [
+          {
+            "url": "https://www.youtube.com/@llumllumllumllumllum",
+            "handle": "@llumllumllumllumllum",
+            "relationType": "youtube",
+            "source": "musicbrainz",
+            "discoveredAt": "2026-09-25T15:55:25.444Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -3316,10 +3880,18 @@
       "sources": [
         "https://www.wikidata.org/wiki/Q112292911",
         "wikidata:native-language-catalan",
-        "wikidata:native-language-catalan-musician"
+        "wikidata:native-language-catalan-musician",
+        "musicbrainz:youtube-candidate"
       ],
-      "lastChecked": "2026-09-25T15:47:57.997Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:55:25.444Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:55:25.444Z",
+          "status": "trobat",
+          "relationCount": 1
+        }
+      }
     },
     {
       "name": "Los Chikos del Maíz",
@@ -3363,7 +3935,8 @@
       "wikidataId": "Q11689555",
       "musicbrainzId": "2b671f8e-5660-400d-99b2-fe4de44d647a",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -3372,8 +3945,15 @@
         "https://www.wikidata.org/wiki/Q11689555",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:55:26.875Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:55:26.875Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Macedònia",
@@ -3386,7 +3966,8 @@
       "wikidataId": "Q11924757",
       "musicbrainzId": "7e45893f-77ec-4fcf-a58b-571723f4292e",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -3396,8 +3977,15 @@
         "wikidata:performed-catalan-work",
         "wikidata:languages-spoken-catalan"
       ],
-      "lastChecked": "2026-09-25T15:44:36.421Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:55:28.441Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:55:28.441Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Magalí Sare",
@@ -3410,7 +3998,8 @@
       "wikidataId": "Q64760623",
       "musicbrainzId": "7877f283-89e5-4491-b11c-4477c02cb1bd",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -3419,8 +4008,15 @@
         "https://www.wikidata.org/wiki/Q64760623",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:55:29.858Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:55:29.858Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Mama Dousha",
@@ -3495,7 +4091,8 @@
       "wikidataId": "Q6752273",
       "musicbrainzId": "40290a50-f1ae-45a0-a219-0350b7b29695",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -3505,8 +4102,15 @@
         "wikidata:native-language-catalan",
         "wikidata:native-language-catalan-musician"
       ],
-      "lastChecked": "2026-09-25T15:47:57.997Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:55:31.318Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:55:31.318Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Manuel Espona",
@@ -3519,7 +4123,8 @@
       "wikidataId": "Q110226635",
       "musicbrainzId": "debd76a7-09aa-4db5-8300-2e30cbe797dc",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -3529,8 +4134,15 @@
         "wikidata:native-language-catalan",
         "wikidata:native-language-catalan-musician"
       ],
-      "lastChecked": "2026-09-25T15:47:57.997Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:55:32.781Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:55:32.781Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Manuel García Morante",
@@ -3543,7 +4155,8 @@
       "wikidataId": "Q105407739",
       "musicbrainzId": "30cc57c1-0eee-49b2-9b4d-3f70e1319b42",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -3552,8 +4165,15 @@
         "https://www.wikidata.org/wiki/Q105407739",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:55:34.209Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:55:34.209Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Marcel·lí Antúnez Roca",
@@ -3566,7 +4186,8 @@
       "wikidataId": "Q3845733",
       "musicbrainzId": "73d824e7-eeba-482f-ab63-b0497b775b77",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -3576,8 +4197,15 @@
         "wikidata:languages-spoken-catalan",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:55:35.802Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:55:35.802Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Maria Bertomeu i Soria",
@@ -3621,7 +4249,8 @@
       "wikidataId": "Q237042",
       "musicbrainzId": "f9b438e7-2930-4a09-902d-cd7b65bb452f",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -3631,8 +4260,15 @@
         "wikidata:languages-spoken-catalan",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:55:37.273Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:55:37.273Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Maria Hein",
@@ -3645,7 +4281,8 @@
       "wikidataId": "Q123680157",
       "musicbrainzId": "1cf59efa-c17c-4369-b8e2-bfd2984c6ab4",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -3654,8 +4291,15 @@
         "https://www.wikidata.org/wiki/Q123680157",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:55:38.674Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:55:38.674Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Maria Jaume",
@@ -3668,7 +4312,16 @@
       "wikidataId": "Q99654322",
       "musicbrainzId": "fa9fd345-4620-4f12-9ce7-e1bd5ce0bd63",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": [
+          {
+            "url": "https://www.youtube.com/@mariajaume_",
+            "handle": "@mariajaume_",
+            "relationType": "youtube",
+            "source": "musicbrainz",
+            "discoveredAt": "2026-09-25T15:55:40.094Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -3677,10 +4330,18 @@
         "https://www.wikidata.org/wiki/Q99654322",
         "wikidata:native-language-catalan",
         "wikidata:performed-catalan-work",
-        "wikidata:native-language-catalan-musician"
+        "wikidata:native-language-catalan-musician",
+        "musicbrainz:youtube-candidate"
       ],
-      "lastChecked": "2026-09-25T15:47:57.997Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:55:40.094Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:55:40.094Z",
+          "status": "trobat",
+          "relationCount": 1
+        }
+      }
     },
     {
       "name": "Marina Rossell",
@@ -3756,7 +4417,8 @@
       "wikidataId": "Q118390775",
       "musicbrainzId": "649f0733-a5a2-40c6-9b2d-22847788bd0f",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -3765,8 +4427,15 @@
         "https://www.wikidata.org/wiki/Q118390775",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:55:41.726Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:55:41.726Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Massiel",
@@ -3810,7 +4479,16 @@
       "wikidataId": "Q1156342",
       "musicbrainzId": "e0cffbb8-b5ee-44a9-a40b-ccdf55a2b0c2",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": [
+          {
+            "url": "https://www.youtube.com/user/CanalMiguelPoveda",
+            "handle": null,
+            "relationType": "youtube",
+            "source": "musicbrainz",
+            "discoveredAt": "2026-09-25T15:55:43.160Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -3818,10 +4496,18 @@
       "sources": [
         "https://www.wikidata.org/wiki/Q1156342",
         "wikidata:languages-spoken-catalan",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "musicbrainz:youtube-candidate"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:55:43.160Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:55:43.160Z",
+          "status": "trobat",
+          "relationCount": 1
+        }
+      }
     },
     {
       "name": "Minibús intergalàctic",
@@ -3834,17 +4520,34 @@
       "wikidataId": "Q132131698",
       "musicbrainzId": "a61057cd-2544-4963-9d28-2377880ba4b7",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": [
+          {
+            "url": "https://www.youtube.com/@minibusintergalactic6161",
+            "handle": "@minibusintergalactic6161",
+            "relationType": "youtube",
+            "source": "musicbrainz",
+            "discoveredAt": "2026-09-25T15:55:44.663Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
       "active": false,
       "sources": [
         "https://www.wikidata.org/wiki/Q132131698",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "musicbrainz:youtube-candidate"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:55:44.663Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:55:44.663Z",
+          "status": "trobat",
+          "relationCount": 1
+        }
+      }
     },
     {
       "name": "Miquel Abras",
@@ -3857,7 +4560,8 @@
       "wikidataId": "Q11936864",
       "musicbrainzId": "4a14adfa-40d5-468f-af96-8feeec0dbf7d",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -3866,8 +4570,15 @@
         "https://www.wikidata.org/wiki/Q11936864",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:55:46.052Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:55:46.052Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Miquela Lladó i Vidal",
@@ -3880,7 +4591,8 @@
       "wikidataId": "Q9033533",
       "musicbrainzId": "ee5f8ef9-36cb-4968-9a16-81c4ca154089",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -3891,8 +4603,15 @@
         "wikidata:languages-spoken-catalan",
         "wikidata:native-language-catalan-musician"
       ],
-      "lastChecked": "2026-09-25T15:47:57.997Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:55:47.349Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:55:47.349Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Mishima",
@@ -3905,17 +4624,34 @@
       "wikidataId": "Q4888175",
       "musicbrainzId": "71efb810-13b7-4943-9734-1be68260ddfa",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": [
+          {
+            "url": "https://www.youtube.com/user/MishimaBarcelona",
+            "handle": null,
+            "relationType": "youtube",
+            "source": "musicbrainz",
+            "discoveredAt": "2026-09-25T15:55:48.653Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
       "active": false,
       "sources": [
         "https://www.wikidata.org/wiki/Q4888175",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "musicbrainz:youtube-candidate"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:55:48.653Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:55:48.653Z",
+          "status": "trobat",
+          "relationCount": 1
+        }
+      }
     },
     {
       "name": "Muluk El Hwa",
@@ -3928,7 +4664,8 @@
       "wikidataId": "Q116745980",
       "musicbrainzId": "32b8fef9-da5c-49eb-b7fa-c243af02f980",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -3937,8 +4674,15 @@
         "https://www.wikidata.org/wiki/Q116745980",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:55:50.212Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:55:50.212Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Mushkaa",
@@ -3951,7 +4695,8 @@
       "wikidataId": "Q113500634",
       "musicbrainzId": "931b0693-edd6-4ec2-90aa-df602c3aa95b",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -3962,8 +4707,15 @@
         "wikidata:performed-catalan-work",
         "wikidata:native-language-catalan-musician"
       ],
-      "lastChecked": "2026-09-25T15:47:57.997Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:55:51.506Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:55:51.506Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Muyayo Rif",
@@ -3976,17 +4728,34 @@
       "wikidataId": "Q21569069",
       "musicbrainzId": "ddf93f6c-3a5b-45c2-8b71-c40257045b00",
       "youtube": {
-        "channels": []
+        "channels": [
+          {
+            "id": "UCKyyi4qBKOJpeV2iZROTQaw",
+            "handle": null,
+            "name": null,
+            "type": "official",
+            "primary": true
+          }
+        ],
+        "candidates": []
       },
-      "confidence": "pendent",
+      "confidence": "alta",
       "reviewStatus": "pendent",
       "active": false,
       "sources": [
         "https://www.wikidata.org/wiki/Q21569069",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "musicbrainz:youtube"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:55:52.929Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:55:52.929Z",
+          "status": "trobat",
+          "relationCount": 1
+        }
+      }
     },
     {
       "name": "Narcís Perich i Serra",
@@ -3999,7 +4768,8 @@
       "wikidataId": "Q11938399",
       "musicbrainzId": "967dc430-c377-4087-9900-0837fa076967",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -4009,8 +4779,15 @@
         "wikidata:native-language-catalan",
         "wikidata:native-language-catalan-musician"
       ],
-      "lastChecked": "2026-09-25T15:47:57.997Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:55:54.391Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:55:54.391Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Nerea Rodríguez i Rodríguez",
@@ -4055,7 +4832,8 @@
       "wikidataId": "Q440138",
       "musicbrainzId": "29716de2-e3bb-4c61-a52f-fcea7e45c941",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -4066,8 +4844,15 @@
         "wikidata:native-language-catalan",
         "wikidata:native-language-catalan-musician"
       ],
-      "lastChecked": "2026-09-25T15:47:57.997Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:55:55.709Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:55:55.709Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Núria Feliu i Mestres",
@@ -4206,7 +4991,8 @@
       "wikidataId": "Q1779639",
       "musicbrainzId": "cac214c9-ccce-4b77-b4cb-0cf75d8852a2",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -4216,8 +5002,15 @@
         "wikidata:languages-spoken-catalan",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:55:57.142Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:55:57.142Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Orfeó Gracienc",
@@ -4261,7 +5054,8 @@
       "wikidataId": "Q1993300",
       "musicbrainzId": "430891c0-4f98-47c9-bc02-8861b4352d78",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -4270,8 +5064,15 @@
         "https://www.wikidata.org/wiki/Q1993300",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:55:58.442Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:55:58.442Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Orquestra Simfònica del Gran Teatre del Liceu",
@@ -4284,7 +5085,8 @@
       "wikidataId": "Q3331363",
       "musicbrainzId": "04a82da3-9abb-4e64-90fb-77e0244c46f2",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -4293,8 +5095,15 @@
         "https://www.wikidata.org/wiki/Q3331363",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:55:59.836Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:55:59.836Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Orquestra Simfònica del Vallès",
@@ -4307,7 +5116,8 @@
       "wikidataId": "Q4888219",
       "musicbrainzId": "f9ea5d80-d797-4520-8737-5671d6348a22",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -4316,8 +5126,15 @@
         "https://www.wikidata.org/wiki/Q4888219",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:56:01.293Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:56:01.293Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Orxata Sound System",
@@ -4330,7 +5147,16 @@
       "wikidataId": "Q9053350",
       "musicbrainzId": "ddd4b8f5-5d12-4d98-a7ef-b57b982276cd",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": [
+          {
+            "url": "https://www.youtube.com/user/orxataTV",
+            "handle": null,
+            "relationType": "youtube",
+            "source": "musicbrainz",
+            "discoveredAt": "2026-09-25T15:56:02.733Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -4338,10 +5164,18 @@
       "sources": [
         "https://www.wikidata.org/wiki/Q9053350",
         "wikidata:performed-catalan-work",
-        "wikidata:languages-spoken-catalan"
+        "wikidata:languages-spoken-catalan",
+        "musicbrainz:youtube-candidate"
       ],
-      "lastChecked": "2026-09-25T15:44:36.421Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:56:02.733Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:56:02.733Z",
+          "status": "trobat",
+          "relationCount": 1
+        }
+      }
     },
     {
       "name": "Ovidi Montllor i Mengual",
@@ -4354,7 +5188,8 @@
       "wikidataId": "Q2734296",
       "musicbrainzId": "f0eb59b3-e3c4-4cb7-92d2-5efeba3edb1c",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -4364,8 +5199,15 @@
         "wikidata:languages-spoken-catalan",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:56:04.220Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:56:04.220Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Pastora",
@@ -4378,7 +5220,8 @@
       "wikidataId": "Q3106392",
       "musicbrainzId": "0932271a-c89e-4093-800a-75b015e2b0a3",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -4388,8 +5231,15 @@
         "wikidata:languages-spoken-catalan",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:56:05.664Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:56:05.664Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Pastorets Rock",
@@ -4433,7 +5283,8 @@
       "wikidataId": "Q17028530",
       "musicbrainzId": "281e69bc-601a-4f12-b0ea-455dfff7b32e",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -4442,8 +5293,15 @@
         "https://www.wikidata.org/wiki/Q17028530",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:56:07.069Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:56:07.069Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Pau Riba i Romeva",
@@ -4552,7 +5410,8 @@
       "wikidataId": "Q11940861",
       "musicbrainzId": "a97c71ca-73a5-4aaf-ac1b-137eb8daaf30",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -4561,8 +5420,15 @@
         "https://www.wikidata.org/wiki/Q11940861",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:56:08.518Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:56:08.518Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Pep Laguarda",
@@ -4575,7 +5441,8 @@
       "wikidataId": "Q11940860",
       "musicbrainzId": "e3e6ab78-ff47-444a-9f6e-e87624f39bbf",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -4584,8 +5451,15 @@
         "https://www.wikidata.org/wiki/Q11940860",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:56:09.963Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:56:09.963Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Pepet i Marieta",
@@ -4598,7 +5472,8 @@
       "wikidataId": "Q20104300",
       "musicbrainzId": "a87d45e2-2d41-41c1-9bbb-d958d0096657",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -4607,8 +5482,15 @@
         "https://www.wikidata.org/wiki/Q20104300",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:56:11.498Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:56:11.498Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Pilseners",
@@ -4652,7 +5534,8 @@
       "wikidataId": "Q11941698",
       "musicbrainzId": "089a0280-9aaf-4d0f-8bc2-f0f0cba5d449",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -4661,8 +5544,15 @@
         "https://www.wikidata.org/wiki/Q11941698",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:56:12.967Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:56:12.967Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Pulpopop",
@@ -4675,7 +5565,8 @@
       "wikidataId": "Q23500597",
       "musicbrainzId": "d11d9538-5606-4617-99c6-d84e58bda168",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -4684,8 +5575,15 @@
         "https://www.wikidata.org/wiki/Q23500597",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:56:14.374Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:56:14.374Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Q1029506",
@@ -4698,7 +5596,8 @@
       "wikidataId": "Q1029506",
       "musicbrainzId": "138fe36a-0888-40d2-9390-3d9be0d74f07",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -4709,8 +5608,15 @@
         "wikidata:native-language-catalan",
         "wikidata:native-language-catalan-musician"
       ],
-      "lastChecked": "2026-09-25T15:47:57.997Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:56:15.786Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:56:15.786Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Quart Primera",
@@ -4723,7 +5629,8 @@
       "wikidataId": "Q11944187",
       "musicbrainzId": "cf39930b-f5f9-4daa-9c2b-4098971bc843",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -4732,8 +5639,15 @@
         "https://www.wikidata.org/wiki/Q11944187",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:56:17.318Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:56:17.318Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Quartet Glinka",
@@ -4746,7 +5660,8 @@
       "wikidataId": "Q130459394",
       "musicbrainzId": "c9d1895f-1b7c-4c39-bbd0-0481e1723095",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -4755,8 +5670,15 @@
         "https://www.wikidata.org/wiki/Q130459394",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:56:18.977Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:56:18.977Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Ramon Calduch i Gimeno",
@@ -4769,7 +5691,8 @@
       "wikidataId": "Q11217761",
       "musicbrainzId": "66c40982-784a-46a4-9fef-ff0b1fa4cfdc",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -4780,8 +5703,15 @@
         "wikidata:native-language-catalan",
         "wikidata:native-language-catalan-musician"
       ],
-      "lastChecked": "2026-09-25T15:47:57.997Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:56:20.407Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:56:20.407Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Ramon Muntaner i Torruella",
@@ -4794,7 +5724,8 @@
       "wikidataId": "Q9066293",
       "musicbrainzId": "6cf5c400-3341-464c-b91c-24742cb88230",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -4806,8 +5737,15 @@
         "wikidata:languages-spoken-catalan",
         "wikidata:native-language-catalan-musician"
       ],
-      "lastChecked": "2026-09-25T15:47:57.997Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:56:21.813Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:56:21.813Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Rapsusklei",
@@ -4820,7 +5758,8 @@
       "wikidataId": "Q3419713",
       "musicbrainzId": "bd332160-9c5e-40c2-bf28-08077d4da9aa",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -4829,8 +5768,15 @@
         "https://www.wikidata.org/wiki/Q3419713",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:56:23.241Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:56:23.241Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Remei de Ca la Fresca",
@@ -4843,7 +5789,8 @@
       "wikidataId": "Q126096871",
       "musicbrainzId": "5b984b79-2504-463f-b668-9abedc0ec4ae",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -4852,8 +5799,15 @@
         "https://www.wikidata.org/wiki/Q126096871",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:56:24.708Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:56:24.708Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Remigi Palmero i Ruà",
@@ -4866,7 +5820,8 @@
       "wikidataId": "Q17362838",
       "musicbrainzId": "27e02def-cbdf-445d-9e02-4d37f55e5dc5",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -4875,8 +5830,15 @@
         "https://www.wikidata.org/wiki/Q17362838",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:56:26.110Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:56:26.110Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Renaldo & Clara",
@@ -4920,7 +5882,8 @@
       "wikidataId": "Q1629629",
       "musicbrainzId": "2769d6bb-3c8a-4376-b5dd-cfdf82a15325",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -4930,8 +5893,15 @@
         "wikidata:languages-spoken-catalan",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:56:27.487Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:56:27.487Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Rojuu",
@@ -4976,7 +5946,8 @@
       "wikidataId": "Q445311",
       "musicbrainzId": "74e9b4e0-cee6-4959-a535-ec5d07d14c36",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -4985,8 +5956,15 @@
         "https://www.wikidata.org/wiki/Q445311",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:56:29.049Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:56:29.049Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Rosalía",
@@ -5032,7 +6010,8 @@
       "wikidataId": "Q231266",
       "musicbrainzId": "7fa32778-1021-4f46-93bd-596545f2b50c",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -5043,8 +6022,15 @@
         "wikidata:native-language-catalan",
         "wikidata:native-language-catalan-musician"
       ],
-      "lastChecked": "2026-09-25T15:47:57.997Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:56:30.598Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:56:30.598Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Sara Hebe",
@@ -5057,17 +6043,34 @@
       "wikidataId": "Q25400561",
       "musicbrainzId": "d7741af8-d0a4-410d-afeb-36c60889fab4",
       "youtube": {
-        "channels": []
+        "channels": [
+          {
+            "id": "UC4_up7DP4nqJKX5uC-uqH1g",
+            "handle": null,
+            "name": null,
+            "type": "official",
+            "primary": true
+          }
+        ],
+        "candidates": []
       },
-      "confidence": "pendent",
+      "confidence": "alta",
       "reviewStatus": "pendent",
       "active": false,
       "sources": [
         "https://www.wikidata.org/wiki/Q25400561",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "musicbrainz:youtube"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:56:32.076Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:56:32.076Z",
+          "status": "trobat",
+          "relationCount": 1
+        }
+      }
     },
     {
       "name": "Sarah Brightman",
@@ -5111,7 +6114,8 @@
       "wikidataId": "Q2786919",
       "musicbrainzId": "c4114fc7-96c0-4654-889e-281f62a243ed",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -5120,8 +6124,15 @@
         "https://www.wikidata.org/wiki/Q2786919",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:56:33.535Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:56:33.535Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Scorpio",
@@ -5165,7 +6176,8 @@
       "wikidataId": "Q11948184",
       "musicbrainzId": "3da1a961-aa59-4872-8143-4072334d34e3",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -5174,8 +6186,15 @@
         "https://www.wikidata.org/wiki/Q11948184",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:56:34.949Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:56:34.949Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Senyor Oca",
@@ -5282,7 +6301,8 @@
       "wikidataId": "Q9081084",
       "musicbrainzId": "c532c746-29b7-46a1-b37e-705a62827bab",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -5292,8 +6312,15 @@
         "wikidata:performed-catalan-work",
         "wikidata:languages-spoken-catalan"
       ],
-      "lastChecked": "2026-09-25T15:44:36.421Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:56:36.472Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:56:36.472Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Smoking Souls",
@@ -5461,7 +6488,8 @@
       "wikidataId": "Q20107159",
       "musicbrainzId": "e72a6e4c-e72f-4acc-b765-0de32cb0b4f3",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -5470,8 +6498,15 @@
         "https://www.wikidata.org/wiki/Q20107159",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:56:37.967Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:56:37.967Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Susanne Georgi",
@@ -5547,7 +6582,8 @@
       "wikidataId": "Q3384297",
       "musicbrainzId": "44f5193a-1d9f-4597-83cc-45e647f30eb7",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -5558,8 +6594,15 @@
         "wikidata:native-language-catalan",
         "wikidata:native-language-catalan-musician"
       ],
-      "lastChecked": "2026-09-25T15:47:57.997Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:56:39.395Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:56:39.395Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "The Demencials",
@@ -5634,7 +6677,8 @@
       "wikidataId": "Q6745025",
       "musicbrainzId": "c5b85f15-c1e9-45d9-aa5e-511af903cfd9",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -5644,8 +6688,15 @@
         "wikidata:native-language-catalan",
         "wikidata:native-language-catalan-musician"
       ],
-      "lastChecked": "2026-09-25T15:47:57.997Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:56:40.717Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:56:40.717Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Tomeu Penya",
@@ -5658,7 +6709,8 @@
       "wikidataId": "Q2917088",
       "musicbrainzId": "256e45e8-aaf2-447e-a866-68662d89caf8",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -5668,8 +6720,15 @@
         "wikidata:languages-spoken-catalan",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:56:42.136Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:56:42.136Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Toni Cruz",
@@ -5682,7 +6741,8 @@
       "wikidataId": "Q581645",
       "musicbrainzId": "d0ab6657-5b18-47c0-9000-58895110fd03",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -5693,8 +6753,15 @@
         "wikidata:native-language-catalan",
         "wikidata:native-language-catalan-musician"
       ],
-      "lastChecked": "2026-09-25T15:47:57.997Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:56:43.536Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:56:43.536Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Toti Soler",
@@ -5707,7 +6774,8 @@
       "wikidataId": "Q2618737",
       "musicbrainzId": "63166874-1bab-4226-97c2-bbed48589de0",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -5717,8 +6785,15 @@
         "wikidata:languages-spoken-catalan",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:56:44.971Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:56:44.971Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Triquell",
@@ -5731,17 +6806,34 @@
       "wikidataId": "Q112663470",
       "musicbrainzId": "f2c3ced8-424f-4f71-b6c2-4ea2c2c812db",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": [
+          {
+            "url": "https://www.youtube.com/@_triquell",
+            "handle": "@_triquell",
+            "relationType": "youtube",
+            "source": "musicbrainz",
+            "discoveredAt": "2026-09-25T15:56:46.285Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
       "active": false,
       "sources": [
         "https://www.wikidata.org/wiki/Q112663470",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "musicbrainz:youtube-candidate"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:56:46.285Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:56:46.285Z",
+          "status": "trobat",
+          "relationCount": 1
+        }
+      }
     },
     {
       "name": "Txarango",
@@ -5785,17 +6877,34 @@
       "wikidataId": "Q109467090",
       "musicbrainzId": "a6606a8a-468c-4797-ad06-b72c565f9aea",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": [
+          {
+            "url": "https://www.youtube.com/@ei.vennus",
+            "handle": "@ei.vennus",
+            "relationType": "youtube",
+            "source": "musicbrainz",
+            "discoveredAt": "2026-09-25T15:56:47.783Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
       "active": false,
       "sources": [
         "https://www.wikidata.org/wiki/Q109467090",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "musicbrainz:youtube-candidate"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:56:47.783Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:56:47.783Z",
+          "status": "trobat",
+          "relationCount": 1
+        }
+      }
     },
     {
       "name": "Victòria dels Àngels",
@@ -5808,7 +6917,8 @@
       "wikidataId": "Q231608",
       "musicbrainzId": "6f10f924-50bd-4492-ba08-5777ffa51ca6",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -5818,8 +6928,15 @@
         "wikidata:languages-spoken-catalan",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:56:49.235Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:56:49.235Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Xanguito",
@@ -5894,7 +7011,8 @@
       "wikidataId": "Q1714220",
       "musicbrainzId": "ff3ef96f-cc95-4aff-843d-1658b345b5a3",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -5904,8 +7022,15 @@
         "wikidata:languages-spoken-catalan",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:56:50.599Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:56:50.599Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Xavier de Bétera",
@@ -6012,7 +7137,8 @@
       "wikidataId": "Q21569206",
       "musicbrainzId": "34318901-fbc6-40f9-9aa6-6536f592b7dc",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -6021,8 +7147,15 @@
         "https://www.wikidata.org/wiki/Q21569206",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:56:51.987Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:56:51.987Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "Zetak",
@@ -6035,7 +7168,8 @@
       "wikidataId": "Q79326958",
       "musicbrainzId": "ae018bee-0a64-4595-b4b8-60aaf3394e22",
       "youtube": {
-        "channels": []
+        "channels": [],
+        "candidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -6044,8 +7178,15 @@
         "https://www.wikidata.org/wiki/Q79326958",
         "wikidata:performed-catalan-work"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": ""
+      "lastChecked": "2026-09-25T15:56:53.395Z",
+      "notes": "",
+      "enrichment": {
+        "musicbrainz": {
+          "checkedAt": "2026-09-25T15:56:53.395Z",
+          "status": "sense-youtube",
+          "relationCount": 0
+        }
+      }
     },
     {
       "name": "ZOO",
