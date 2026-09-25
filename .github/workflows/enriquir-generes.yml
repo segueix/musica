@@ -54,4 +54,22 @@ jobs:
           fi
 
           git commit -m "data: actualitza gèneres musicals"
+
+          if git push origin HEAD:main; then
+            exit 0
+          fi
+
+          echo "Main ha avançat; recalculant gèneres sobre l'últim estat..."
+          git fetch origin main
+          git reset --hard origin/main
+          node scripts/enriquir_generes_musica.js
+          node scripts/validar_artistes_musica.js
+          git add data/artistes-musica.json
+
+          if git diff --cached --quiet; then
+            echo "Sense canvis després de resincronitzar."
+            exit 0
+          fi
+
+          git commit -m "data: actualitza gèneres musicals"
           git push origin HEAD:main
