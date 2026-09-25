@@ -11,6 +11,7 @@ const USER_AGENT = 'Segueix-Musica/0.3 (https://segueix.cat)';
 const MB_DELAY_MS = 1100;
 const MB_RECHECK_DAYS = 90;
 const WIKIDATA_CHUNK = 80;
+const WIKIDATA_WORK_CHUNK = 40;
 const FORCE = process.argv.includes('--force');
 const DRY_RUN = process.argv.includes('--dry-run');
 
@@ -142,6 +143,60 @@ async function fetchAllWikidataGenres(artists) {
     return byQid;
 }
 
+async function fetchWikidataWorkGenreChunk(qids) {
+    if (!qids.length) return [];
+    const values = qids.map((qid) => 'wd:' + qid).join(' ');
+    const query = [
+        'SELECT DISTINCT ?artist ?genre ?genreLabel WHERE {',
+        '  VALUES ?artist { ' + values + ' }',
+        '  { ?work wdt:P175 ?artist. } UNION { ?work wdt:P86 ?artist. }',
+        '  ?work wdt:P136 ?genre.',
+        '  SERVICE wikibase:label { bd:serviceParam wikibase:language "ca,en,es". }',
+        '}'
+    ].join('\n');
+
+    const url = new URL(WIKIDATA_ENDPOINT);
+    url.searchParams.set('query', query);
+    url.searchParams.set('format', 'json');
+
+    const response = await fetch(url, {
+        headers: {
+            Accept: 'application/sparql-results+json',
+            'User-Agent': USER_AGENT
+        }
+    });
+
+    if (!response.ok) {
+        const body = await response.text().catch(() => '');
+        throw new Error('Wikidata obres HTTP ' + response.status + ': ' + body.slice(0, 250));
+    }
+
+    const payload = await response.json();
+    return (payload.results?.bindings || []).map((binding) => ({
+        wikidataId: qidFromUri(binding.artist?.value),
+        genre: binding.genreLabel?.value || binding.genre?.value || null
+    })).filter((row) => row.wikidataId && row.genre);
+}
+
+async function fetchAllWikidataWorkGenres(artists) {
+    const qids = artists.map((artist) => artist.wikidataId).filter(Boolean);
+    const byQid = new Map();
+
+    for (let offset = 0; offset < qids.length; offset += WIKIDATA_WORK_CHUNK) {
+        const chunk = qids.slice(offset, offset + WIKIDATA_WORK_CHUNK);
+        const rows = await fetchWikidataWorkGenreChunk(chunk);
+        for (const row of rows) {
+            if (!byQid.has(row.wikidataId)) byQid.set(row.wikidataId, []);
+            byQid.get(row.wikidataId).push(row.genre);
+        }
+    }
+
+    for (const [qid, genres] of byQid.entries()) {
+        byQid.set(qid, unique(genres));
+    }
+    return byQid;
+}
+
 async function fetchMusicBrainzGenres(mbid, attempt = 1) {
     const url = new URL(MUSICBRAINZ_BASE + '/' + encodeURIComponent(mbid));
     url.searchParams.set('inc', 'genres');
@@ -187,7 +242,9 @@ async function main() {
         artist.enrichment.genres ||= {
             checkedAt: null,
             musicbrainzCheckedAt: null,
+            wikidataWorkCheckedAt: null,
             wikidataRaw: [],
+            wikidataWorkRaw: [],
             musicbrainzRaw: [],
             unmappedRaw: [],
             status: 'pendent'
@@ -230,15 +287,46 @@ async function main() {
         if (index < mbTargets.length - 1) await wait(MB_DELAY_MS);
     }
 
-    let mappedArtists = 0;
-    let rawArtists = 0;
-    let unmappedArtists = 0;
-
     for (const artist of data.artists) {
         const state = artist.enrichment.genres;
         state.wikidataRaw = unique(wikidataMap.get(artist.wikidataId) || state.wikidataRaw || []);
+        state.wikidataWorkRaw ||= [];
+    }
 
-        const raw = unique([...(state.wikidataRaw || []), ...(state.musicbrainzRaw || [])]);
+    const workTargets = data.artists.filter((artist) => {
+        if (artist.reviewStatus === 'rebutjat') return false;
+        const state = artist.enrichment.genres;
+        const directRaw = unique([...(state.wikidataRaw || []), ...(state.musicbrainzRaw || [])]);
+        return mapRawGenres(directRaw, taxonomy).labels.length === 0;
+    });
+
+    console.log('🎵 Wikidata obres: ' + workTargets.length + ' artistes sense gènere directe.');
+    let wikidataWorkMap = new Map();
+    try {
+        wikidataWorkMap = await fetchAllWikidataWorkGenres(workTargets);
+    } catch (error) {
+        console.warn('⚠️ Wikidata gèneres d’obres: ' + error.message);
+    }
+
+    let mappedArtists = 0;
+    let rawArtists = 0;
+    let unmappedArtists = 0;
+    let mappedFromWorks = 0;
+
+    for (const artist of data.artists) {
+        const state = artist.enrichment.genres;
+        const directRaw = unique([...(state.wikidataRaw || []), ...(state.musicbrainzRaw || [])]);
+        const directMapped = mapRawGenres(directRaw, taxonomy);
+
+        if (directMapped.labels.length === 0) {
+            state.wikidataWorkRaw = unique(wikidataWorkMap.get(artist.wikidataId) || state.wikidataWorkRaw || []);
+            state.wikidataWorkCheckedAt = new Date().toISOString();
+        }
+
+        const raw = unique([
+            ...directRaw,
+            ...(directMapped.labels.length === 0 ? (state.wikidataWorkRaw || []) : [])
+        ]);
         artist.genresRaw = raw;
         const mapped = mapRawGenres(raw, taxonomy);
         state.unmappedRaw = mapped.unmappedRaw;
@@ -255,6 +343,9 @@ async function main() {
 
         if (raw.length) rawArtists += 1;
         if (artist.genres.length) mappedArtists += 1;
+        if (directMapped.labels.length === 0 && artist.genres.length && (state.wikidataWorkRaw || []).length) {
+            mappedFromWorks += 1;
+        }
         if (state.unmappedRaw.length) unmappedArtists += 1;
     }
 
@@ -263,6 +354,7 @@ async function main() {
         '✅ Gèneres: ' + mappedArtists + ' artistes classificats; '
         + rawArtists + ' amb dades originals; '
         + unmappedArtists + ' amb alguna etiqueta per revisar; '
+        + mappedFromWorks + ' classificats a partir d’obres; '
         + mbChecked + ' consultes MusicBrainz; '
         + mbErrors + ' errors.'
     );
