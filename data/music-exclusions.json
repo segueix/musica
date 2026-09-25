@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-09-25T17:27:49.619Z",
+  "exclusions": [
+    {
+      "wikidataId": "Q2838792",
+      "name": "Dagoll Dagom",
+      "reason": "Companyia teatral especialitzada en teatre musical; no és un artista o conjunt musical.",
+      "source": "eligibility-audit"
+    },
+    {
+      "wikidataId": "Q3845733",
+      "name": "Marcel·lí Antúnez Roca",
+      "reason": "Artista de performance i instal·lació; l'activitat musical és secundària i no defineix l'entitat com a artista musical.",
+      "source": "eligibility-audit"
+    }
+  ]
+}
