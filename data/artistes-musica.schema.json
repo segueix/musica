@@ -137,6 +137,46 @@
                     }
                   }
                 }
+              },
+              "candidates": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "url",
+                    "handle",
+                    "relationType",
+                    "source",
+                    "discoveredAt"
+                  ],
+                  "additionalProperties": false,
+                  "properties": {
+                    "url": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "handle": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "relationType": {
+                      "enum": [
+                        "youtube",
+                        "youtube-music",
+                        "video-channel"
+                      ]
+                    },
+                    "source": {
+                      "const": "musicbrainz"
+                    },
+                    "discoveredAt": {
+                      "type": "string",
+                      "format": "date-time"
+                    }
+                  }
+                }
               }
             }
           },
@@ -174,6 +214,44 @@
           },
           "notes": {
             "type": "string"
+          },
+          "enrichment": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "musicbrainz": {
+                "type": "object",
+                "required": [
+                  "checkedAt",
+                  "status"
+                ],
+                "additionalProperties": true,
+                "properties": {
+                  "checkedAt": {
+                    "type": [
+                      "string",
+                      "null"
+                    ],
+                    "format": "date-time"
+                  },
+                  "status": {
+                    "enum": [
+                      "pendent",
+                      "trobat",
+                      "sense-youtube",
+                      "error"
+                    ]
+                  },
+                  "relationCount": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "error": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
           }
         }
       }

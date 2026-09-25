@@ -40,3 +40,17 @@ npm run music:validate
 - Wikidata: identificadors i evidència de vinculació amb el català.
 - MusicBrainz: identificador canònic de l'artista; l'enriquiment de relacions es pot afegir posteriorment.
 - YouTube: encara no es consulta des d'aquest procés; només s'aprofiten IDs de canal ja presents a Wikidata.
+
+## Enriquiment amb MusicBrainz
+
+Després de la descoberta de Wikidata, `scripts/enriquir_artistes_musicbrainz.js` consulta només artistes sense YouTube ID.
+
+- usa `/ws/2/artist/{MBID}?inc=url-rels&fmt=json`;
+- manté 1,1 segons entre peticions;
+- reintenta 429/503 amb espera progressiva;
+- extreu directament IDs de URLs `/channel/UC...`;
+- conserva `@handles` i altres URLs oficials a `youtube.candidates`;
+- no torna a consultar un artista sense resultat fins passats 90 dies, excepte amb `--force`;
+- ignora artistes rebutjats.
+
+No necessita cap clau API de YouTube.

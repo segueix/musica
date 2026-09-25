@@ -75,6 +75,33 @@ if (!Array.isArray(data.artists)) {
         if (typeof artist.notes !== 'string') fail(`${where}.notes ha de ser text.`);
 
         const channels = artist.youtube?.channels;
+        const candidates = artist.youtube?.candidates;
+        if (candidates !== undefined && !Array.isArray(candidates)) {
+            fail(`${where}.youtube.candidates ha de ser un array si existeix.`);
+        }
+        if (Array.isArray(candidates)) {
+            const candidateUrls = new Set();
+            candidates.forEach((candidate, candidateIndex) => {
+                const candidateWhere = `${where}.youtube.candidates[${candidateIndex}]`;
+                if (!candidate || typeof candidate.url !== 'string' || !candidate.url.startsWith('http')) {
+                    fail(`${candidateWhere}.url no és vàlid.`);
+                }
+                if (candidateUrls.has(candidate.url)) fail(`${candidateWhere}.url està duplicat.`);
+                candidateUrls.add(candidate.url);
+                if (!(candidate.handle === null || typeof candidate.handle === 'string')) fail(`${candidateWhere}.handle no és vàlid.`);
+                if (!['youtube', 'youtube-music', 'video-channel'].includes(candidate.relationType)) fail(`${candidateWhere}.relationType no és vàlid.`);
+                if (candidate.source !== 'musicbrainz') fail(`${candidateWhere}.source ha de ser musicbrainz.`);
+                if (typeof candidate.discoveredAt !== 'string') fail(`${candidateWhere}.discoveredAt és obligatori.`);
+            });
+        }
+
+        const mb = artist.enrichment?.musicbrainz;
+        if (mb !== undefined) {
+            if (!mb || typeof mb !== 'object') fail(`${where}.enrichment.musicbrainz no és vàlid.`);
+            if (!(mb.checkedAt === null || typeof mb.checkedAt === 'string')) fail(`${where}.enrichment.musicbrainz.checkedAt no és vàlid.`);
+            if (!['pendent', 'trobat', 'sense-youtube', 'error'].includes(mb.status)) fail(`${where}.enrichment.musicbrainz.status no és vàlid.`);
+        }
+
         if (!Array.isArray(channels)) {
             fail(`${where}.youtube.channels ha de ser un array.`);
             return;

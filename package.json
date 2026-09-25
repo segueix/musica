@@ -14,7 +14,9 @@
     "music:discover:dry": "node scripts/descobrir_artistes_musica.js --dry-run --limit=100",
     "search:index": "node scripts/generar_index_cerca.js",
     "search:index:hybrid:rebuild": "node scripts/generar_index_cerca.js",
-    "sw:version": "node scripts/actualitzar_versio_sw.js"
+    "sw:version": "node scripts/actualitzar_versio_sw.js",
+    "music:enrich:musicbrainz": "node scripts/enriquir_artistes_musicbrainz.js",
+    "music:enrich:musicbrainz:dry": "node scripts/enriquir_artistes_musicbrainz.js --dry-run"
   },
   "devDependencies": {
     "eslint": "^8.57.0",

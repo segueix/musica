@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - "scripts/descobrir_artistes_musica.js"
+      - "scripts/enriquir_artistes_musicbrainz.js"
       - ".github/workflows/descobrir-musica.yml"
   schedule:
     - cron: "17 4 * * 1"
@@ -16,7 +17,7 @@ concurrency:
 jobs:
   descobrir:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     permissions:
       contents: write
 
@@ -36,6 +37,9 @@ jobs:
 
       - name: Descobreix candidats
         run: node scripts/descobrir_artistes_musica.js
+
+      - name: Enriqueix YouTube des de MusicBrainz
+        run: node scripts/enriquir_artistes_musicbrainz.js
 
       - name: Valida la base
         run: node scripts/validar_artistes_musica.js
