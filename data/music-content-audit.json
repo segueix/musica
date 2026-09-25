@@ -1,26 +1,20 @@
 {
-  "generatedAt": "2026-09-25T18:10:25.151Z",
+  "generatedAt": "2026-09-25T18:12:11.978Z",
   "rawPublicVideoCount": 1439,
-  "acceptedVideoCount": 873,
-  "rejectedOrReviewCount": 566,
-  "reviewCount": 145,
+  "acceptedVideoCount": 1036,
+  "rejectedOrReviewCount": 403,
+  "reviewCount": 163,
   "typeCounts": {
-    "song": 742,
-    "live-song": 111,
-    "album": 20,
-    "other": 421,
-    "review": 145
+    "song": 945,
+    "live-song": 67,
+    "album": 24,
+    "other": 240,
+    "review": 163
   },
   "channelsWithoutAcceptedMusic": [
     "UCUSjRkF72RR1E8Rl4SWtVsQ",
-    "UC5nvjukz73UjS-GpzieyTxw",
     "UCr8kBnuIa6LPmhZSxbwVs7w",
-    "UCXtHe2sa6eEgcAkQWa4Iwww",
-    "UCaJimA2MVhvTOyTVcvUdzSg",
-    "UCifCAnA0yoCuJUz8SdYOrfw",
-    "UCEsJPKUDXuB2vGzfVY6bQuw",
-    "UC--8TyZ2PM0NFHWXCzQrUqw",
-    "UCvh8nurHojZHGiQy532Bn2w"
+    "UCEsJPKUDXuB2vGzfVY6bQuw"
   ],
   "rejectedSamples": [
     {
@@ -36,20 +30,6 @@
       "channelTitle": "31 FAM",
       "durationSeconds": 32,
       "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "gPs3ATyTWX0",
-      "title": "AL·LÈRGIQUES AL POL·LEN - Bombolles (amb Maria Jaume)",
-      "channelTitle": "Al·lèrgiques al pol·len",
-      "durationSeconds": 179,
-      "musicReason": "entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "y7bptzSpUgg",
-      "title": "15 dies - Alérgicas al polen (videoclip oficial)",
-      "channelTitle": "Al·lèrgiques al pol·len",
-      "durationSeconds": 235,
-      "musicReason": "entrevista/podcast/promoció o contingut auxiliar"
     },
     {
       "id": "FmcEK17AJW4",
@@ -77,84 +57,63 @@
       "title": "Teaser Un minut estroboscòpica",
       "channelTitle": "Antònia Font",
       "durationSeconds": 15,
-      "musicReason": "entrevista/podcast/promoció o contingut auxiliar"
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
     },
     {
       "id": "FA95j1s4eWk",
       "title": "Antònia Font - Teaser del single Una daixona de pols",
       "channelTitle": "Antònia Font",
       "durationSeconds": 122,
-      "musicReason": "entrevista/podcast/promoció o contingut auxiliar"
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
     },
     {
       "id": "x6j6i4WbL2k",
       "title": "Aspencat entrevista a Enric Duran - Docuclip \"Som Moviment\"",
       "channelTitle": "Aspencat Oficial",
       "durationSeconds": 853,
-      "musicReason": "entrevista/podcast/promoció o contingut auxiliar"
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
     },
     {
       "id": "jRuj8lE6n38",
       "title": "Aspencat entrevista a Ester Quintana - Docuclip \"Som Moviment\"",
       "channelTitle": "Aspencat Oficial",
       "durationSeconds": 1028,
-      "musicReason": "entrevista/podcast/promoció o contingut auxiliar"
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
     },
     {
       "id": "F85n_XaE4Hs",
       "title": "Aspencat entrevista a Diego Cañamero - Docuclip \"Som Moviment\".",
       "channelTitle": "Aspencat Oficial",
       "durationSeconds": 1423,
-      "musicReason": "entrevista/podcast/promoció o contingut auxiliar"
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
     },
     {
       "id": "8jCH1VIY52E",
       "title": "ASPENCAT - Teaser del nou videoclip 'Som moviment' (2017)",
       "channelTitle": "Aspencat Oficial",
       "durationSeconds": 30,
-      "musicReason": "entrevista/podcast/promoció o contingut auxiliar"
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
     },
     {
       "id": "PcgVA7yjhxU",
       "title": "ASPENCAT - Teaser del nou videoclip 'Som moviment' amb Enric Duran (2017)",
       "channelTitle": "Aspencat Oficial",
       "durationSeconds": 73,
-      "musicReason": "entrevista/podcast/promoció o contingut auxiliar"
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
     },
     {
       "id": "BCLoApXyNXg",
       "title": "ASPENCAT - Teaser del nou videoclip 'Som moviment' amb Ester Quintana (2017)",
       "channelTitle": "Aspencat Oficial",
       "durationSeconds": 52,
-      "musicReason": "entrevista/podcast/promoció o contingut auxiliar"
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
     },
     {
       "id": "RKYqfkdHXEk",
       "title": "ASPENCAT - Teaser del nou videoclip 'Som moviment' amb Diego Cañamero (2017)",
       "channelTitle": "Aspencat Oficial",
       "durationSeconds": 67,
-      "musicReason": "entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "F9GyGIbJosU",
-      "title": "Atupa - Me cago dentro",
-      "channelTitle": "Atupa",
-      "durationSeconds": 275,
-      "musicReason": "entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "FvcdNYQxe-s",
-      "title": "Atupa - Gran",
-      "channelTitle": "Atupa",
-      "durationSeconds": 183,
-      "musicReason": "entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "4HAnKzma9YA",
-      "title": "AUXILI - NOU DISC - PRIMAVERA 2025",
-      "channelTitle": "AUXILI",
-      "durationSeconds": 69,
-      "musicReason": "entrevista/podcast/promoció o contingut auxiliar"
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
     },
     {
       "id": "MZZoKww_158",
@@ -245,126 +204,49 @@
       "title": "FLOWERS AND JOURNEYS. cabo san roque. TRAILER",
       "channelTitle": "cabosanroque",
       "durationSeconds": 41,
-      "musicReason": "entrevista/podcast/promoció o contingut auxiliar"
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
     },
     {
       "id": "ZGwq50KRbz4",
       "title": "FLORS I VIATGES. cabosanroque. teaser 2023 (cat)",
       "channelTitle": "cabosanroque",
       "durationSeconds": 40,
-      "musicReason": "entrevista/podcast/promoció o contingut auxiliar"
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
     },
     {
       "id": "ORHu87oGni0",
       "title": "FLORES Y VIAJES. cabosanroque. teaser 2023",
       "channelTitle": "cabosanroque",
       "durationSeconds": 40,
-      "musicReason": "entrevista/podcast/promoció o contingut auxiliar"
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
     },
     {
       "id": "3wUXYz0ISZY",
       "title": "DIMONIS (trailer2). cabosanroque. feat El niño de elche, Rocío Molina.",
       "channelTitle": "cabosanroque",
       "durationSeconds": 68,
-      "musicReason": "entrevista/podcast/promoció o contingut auxiliar"
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
     },
     {
       "id": "oMyKhGv1s-c",
       "title": "DIMONIS. (trailer1) cabosanroque (11/2019). feat. El niño de Elche and Rocío Molina.",
       "channelTitle": "cabosanroque",
       "durationSeconds": 66,
-      "musicReason": "entrevista/podcast/promoció o contingut auxiliar"
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
     },
     {
       "id": "fpkCwtyxpV8",
       "title": "NOCHE LOCA EN BENIDORM (MAKING-OFF)",
       "channelTitle": "CACTUS",
       "durationSeconds": 543,
-      "musicReason": "entrevista/podcast/promoció o contingut auxiliar"
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
     },
     {
       "id": "YAa-OB9xLf8",
       "title": "no fue real behind the scenes: in the studio",
       "channelTitle": "chiara oliver",
       "durationSeconds": 1833,
-      "musicReason": "entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "wXSCX0_6yqU",
-      "title": "Chiara Oliver - es mejor así",
-      "channelTitle": "chiara oliver",
-      "durationSeconds": 224,
-      "musicReason": "entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "b38JMgHY6T8",
-      "title": "Chiara Oliver - 2+2=5",
-      "channelTitle": "chiara oliver",
-      "durationSeconds": 174,
-      "musicReason": "entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "bBC7PkwznJY",
-      "title": "Chiara Oliver  - calle luna",
-      "channelTitle": "chiara oliver",
-      "durationSeconds": 193,
-      "musicReason": "entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "VAG-UjEJJ7I",
-      "title": "Chiara Oliver - me puse a escribir (intro)",
-      "channelTitle": "chiara oliver",
-      "durationSeconds": 103,
-      "musicReason": "entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "TDN2DJj_eP8",
-      "title": "Chiara Oliver  - un minuto +",
-      "channelTitle": "chiara oliver",
-      "durationSeconds": 221,
-      "musicReason": "entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "NLpZ_hQ2Yho",
-      "title": "Chiara Oliver - lo siento x ser yo",
-      "channelTitle": "chiara oliver",
-      "durationSeconds": 231,
-      "musicReason": "entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "LsbEFZsVCR8",
-      "title": "Chiara Oliver - si te tuviera aquí",
-      "channelTitle": "chiara oliver",
-      "durationSeconds": 158,
-      "musicReason": "entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "R-Y38m0hjqw",
-      "title": "Chiara Oliver - una más",
-      "channelTitle": "chiara oliver",
-      "durationSeconds": 197,
-      "musicReason": "entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "Ne91v6dyUjU",
-      "title": "Chiara Oliver - me & my girls",
-      "channelTitle": "chiara oliver",
-      "durationSeconds": 208,
-      "musicReason": "entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "9gXM6_zLfyg",
-      "title": "Chiara Oliver - parte de mí",
-      "channelTitle": "chiara oliver",
-      "durationSeconds": 216,
-      "musicReason": "entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "xQHA9mAHw98",
-      "title": "CRIM - ESTIU DE MERDA (Videoclip)",
-      "channelTitle": "CrimPunkRock",
-      "durationSeconds": 351,
-      "musicReason": "entrevista/podcast/promoció o contingut auxiliar"
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
     },
     {
       "id": "qzrM90fCI1M",
@@ -406,7 +288,7 @@
       "title": "(1995) Promocionando ALZHEIMER en Telemadrid",
       "channelTitle": "Def Con Dos",
       "durationSeconds": 59,
-      "musicReason": "entrevista/podcast/promoció o contingut auxiliar"
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
     },
     {
       "id": "NkyaIUzMUhQ",
@@ -679,14 +561,7 @@
       "title": "Figa Flawas - Tot Aquest Espectacle (Documental 'a la freSka')",
       "channelTitle": "Figa Flawas",
       "durationSeconds": 1288,
-      "musicReason": "entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "kGhnoECBKBs",
-      "title": "Figa Flawas - a la freSka (Videoclip Oficial)",
-      "channelTitle": "Figa Flawas",
-      "durationSeconds": 179,
-      "musicReason": "entrevista/podcast/promoció o contingut auxiliar"
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
     },
     {
       "id": "dGUGBy-CNHU",
@@ -703,67 +578,11 @@
       "musicReason": "massa curt: probable teaser/fragment"
     },
     {
-      "id": "WakP10DXiD0",
-      "title": "Figa Flawas - LA MARINA STA MORENA (Videoclip Oficial)",
-      "channelTitle": "Figa Flawas",
-      "durationSeconds": 139,
-      "musicReason": "entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "Be99eXgOzjE",
-      "title": "Figa Flawas - IL MIO CANTO D'AMORE",
-      "channelTitle": "Figa Flawas",
-      "durationSeconds": 105,
-      "musicReason": "entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "nSgiy5_dxQo",
-      "title": "Figa Flawas - XAMPANY i GALETES",
-      "channelTitle": "Figa Flawas",
-      "durationSeconds": 159,
-      "musicReason": "entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "YSz3s-Jw_mo",
-      "title": "Figa Flawas ft. Alba Armengou - FILET",
-      "channelTitle": "Figa Flawas",
-      "durationSeconds": 131,
-      "musicReason": "entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "_boOy1LG6-k",
-      "title": "Figa Flawas - LA SALSA",
-      "channelTitle": "Figa Flawas",
-      "durationSeconds": 175,
-      "musicReason": "entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "luU2qbNDRHY",
-      "title": "Figa Flawas - UMAMI",
-      "channelTitle": "Figa Flawas",
-      "durationSeconds": 123,
-      "musicReason": "entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "7iA2NPWG4ys",
-      "title": "Gertrudis - Gira de comiat 'Ens veiem a les places'",
-      "channelTitle": "Gertrudis",
-      "durationSeconds": 54,
-      "musicReason": "entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
       "id": "MH9mjubLyJU",
       "title": "Gertrudis - The real power belongs to the people (Lyric Video)",
       "channelTitle": "Gertrudis",
       "durationSeconds": 38,
       "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "HBoR8YBHLS8",
-      "title": "GINESTÀ amb NIL MOLINER - Amb qui estaràs?",
-      "channelTitle": "Ginestà Oficial",
-      "durationSeconds": 188,
-      "musicReason": "entrevista/podcast/promoció o contingut auxiliar"
     },
     {
       "id": "bNRd1yc7d2U",
@@ -773,95 +592,270 @@
       "musicReason": "massa curt: probable teaser/fragment"
     },
     {
-      "id": "cCOk0H7P5CU",
-      "title": "GINESTÀ - Amb tu i per tu",
-      "channelTitle": "Ginestà Oficial",
-      "durationSeconds": 189,
-      "musicReason": "entrevista/podcast/promoció o contingut auxiliar"
+      "id": "kiGqNkvpbaw",
+      "title": "EL LIBRO MÁGICO VERSUS LA VIDA RESUELTA!",
+      "channelTitle": "giselaworld",
+      "durationSeconds": 25,
+      "musicReason": "massa curt: probable teaser/fragment"
     },
     {
-      "id": "yhtBriJbiY8",
-      "title": "GINESTÀ - MUAMUAMUA",
-      "channelTitle": "Ginestà Oficial",
-      "durationSeconds": 199,
-      "musicReason": "entrevista/podcast/promoció o contingut auxiliar"
+      "id": "Il46k90VFQ0",
+      "title": "Making of de turu-turu oficial + videoclip",
+      "channelTitle": "giselaworld",
+      "durationSeconds": 1275,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
     },
     {
-      "id": "l4YMTN5GkX4",
-      "title": "GINESTÀ - La casualitat",
-      "channelTitle": "Ginestà Oficial",
-      "durationSeconds": 173,
-      "musicReason": "entrevista/podcast/promoció o contingut auxiliar"
+      "id": "CATiiy7Zwdo",
+      "title": "Sugarwood Gisela: Making Of 2",
+      "channelTitle": "giselaworld",
+      "durationSeconds": 151,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
     },
     {
-      "id": "t_LnVZjF6_M",
-      "title": "GINESTÀ - El mirall",
-      "channelTitle": "Ginestà Oficial",
-      "durationSeconds": 199,
-      "musicReason": "entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "KbUds660yJk",
-      "title": "GINESTÀ amb ERNEST CRUSATS - Finestres",
-      "channelTitle": "Ginestà Oficial",
-      "durationSeconds": 252,
-      "musicReason": "entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "kzyNG2-XzX0",
-      "title": "GINESTÀ - Pau",
-      "channelTitle": "Ginestà Oficial",
-      "durationSeconds": 322,
-      "musicReason": "entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "IpLhljc4R90",
-      "title": "GINESTÀ - Gira tot igual, però diferent",
-      "channelTitle": "Ginestà Oficial",
-      "durationSeconds": 180,
-      "musicReason": "entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "AFynaLWFmvM",
-      "title": "GINESTÀ - Perdre el cap (Videoclip oficial)",
-      "channelTitle": "Ginestà Oficial",
-      "durationSeconds": 155,
-      "musicReason": "entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "wI2U-MY3wrI",
-      "title": "GINESTÀ - Les coses senzilles",
-      "channelTitle": "Ginestà Oficial",
-      "durationSeconds": 159,
-      "musicReason": "entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "NVGMUZSS_1M",
-      "title": "GINESTÀ amb ALBA ARMENGOU - T'estimo tant (Videoclip oficial)",
-      "channelTitle": "Ginestà Oficial",
-      "durationSeconds": 181,
-      "musicReason": "entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "sjG2QOJErcQ",
-      "title": "«NOMÉS VIURE»",
-      "channelTitle": "Ginestà Oficial",
-      "durationSeconds": 49,
-      "musicReason": "entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "PHZOxr-b2mE",
-      "title": "GINESTÀ - TOT EL QUE ENS QUEDA",
-      "channelTitle": "Ginestà Oficial",
-      "durationSeconds": 155,
-      "musicReason": "entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "zOesRrOmQ_U",
-      "title": "GINESTÀ - LES MOSQUES",
-      "channelTitle": "Ginestà Oficial",
+      "id": "IHEqrwgFdRY",
+      "title": "Sugarwood Gisela: Making Of 1",
+      "channelTitle": "giselaworld",
       "durationSeconds": 167,
-      "musicReason": "entrevista/podcast/promoció o contingut auxiliar"
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "otexlxwv4sM",
+      "title": "RED DE FAVORES",
+      "channelTitle": "Gisela Vlog",
+      "durationSeconds": 0,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "j2_zVXAgyPE",
+      "title": "PREGUNTAS Y RESPUESTAS By Gisela",
+      "channelTitle": "Gisela Vlog",
+      "durationSeconds": 749,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "nq5obPTu7xA",
+      "title": "GossosVEVO Live Stream",
+      "channelTitle": "GOSSOS",
+      "durationSeconds": 0,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "gxzxYjBb72M",
+      "title": "JJMR - RIBERA (disc comentat a L'ESCOLTADISSA amb Laura Grau i Sr.Chen, 10/10/2024)",
+      "channelTitle": "Jo Jet i Maria Ribot",
+      "durationSeconds": 5697,
+      "musicReason": "descripció inequívoca de contingut no musical"
+    },
+    {
+      "id": "Clse-MF4vvc",
+      "title": "PUJOLET - La història de la cançó",
+      "channelTitle": "Jo Jet i Maria Ribot",
+      "durationSeconds": 28,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "qcK8Ain1Dsg",
+      "title": "JOAN DAUSÀ: LA GRAN BOGERIA (documental complet)",
+      "channelTitle": "Joan Dausà",
+      "durationSeconds": 4498,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "jo2_CypYeC0",
+      "title": "Mediterráneo de Joan Manuel Serrat",
+      "channelTitle": "Joan Manuel Serrat",
+      "durationSeconds": 37,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "zEWWPbk3uGs",
+      "title": "Julieta - Vlog rodatges de 23",
+      "channelTitle": "Julieta",
+      "durationSeconds": 328,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "F6l9PVdfKaE",
+      "title": "Julieta - Vlog rodatge de Taxi",
+      "channelTitle": "Julieta",
+      "durationSeconds": 97,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "kXaVXZo7ogE",
+      "title": "La Fúmiga - TOT ESTAVA PER FER - Making Of",
+      "channelTitle": "La Fúmiga",
+      "durationSeconds": 957,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "J_a6YxeRHUE",
+      "title": "¿Quién se sabe esta parte de \"Con este fuego\"? ❤️‍🔥",
+      "channelTitle": "La Pegatina",
+      "durationSeconds": 26,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "GZ4RQN9YKcY",
+      "title": "🔥 UNA SETMANA PER LA MERCÈ! 🔥",
+      "channelTitle": "La Pegatina",
+      "durationSeconds": 23,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "j4LiSNWd27U",
+      "title": "¿Quién más quiere vivir sin límites, como Lupita? ❤️‍🔥",
+      "channelTitle": "La Pegatina",
+      "durationSeconds": 12,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "0w_ZhK_7V1Y",
+      "title": "Yo can't trust everyone.",
+      "channelTitle": "La Pegatina",
+      "durationSeconds": 21,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "M-KJmM-KiQA",
+      "title": "🔥 NUEVOS CONCIERTOS CONFIRMADOS 🔥",
+      "channelTitle": "La Pegatina",
+      "durationSeconds": 24,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "xD3eg9mhOdc",
+      "title": "Venpayá - La Pegatina",
+      "channelTitle": "La Pegatina",
+      "durationSeconds": 36,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "6WXVBuzAcMs",
+      "title": "Los vídeos verticales no hacen justicia",
+      "channelTitle": "La Pegatina",
+      "durationSeconds": 22,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "pTQ0R7jE4Zo",
+      "title": "Estas son nuestras reacciones al acabar el concierto en el Sonorama",
+      "channelTitle": "La Pegatina",
+      "durationSeconds": 67,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "OArDY2XExZU",
+      "title": "¿Dónde está Maricarmen?",
+      "channelTitle": "La Pegatina",
+      "durationSeconds": 18,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "hP9mewaVZMc",
+      "title": "¿DÓNDE NOS VEMOS? ❤️‍🔥",
+      "channelTitle": "La Pegatina",
+      "durationSeconds": 11,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "iCQsz5cQkIo",
+      "title": "Lo que a veces no nos explicamos es cómo hemos llegado hasta aquí 😮‍💨",
+      "channelTitle": "La Pegatina",
+      "durationSeconds": 16,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "XT_wly8pSBw",
+      "title": "El momento favorito de Rubén!",
+      "channelTitle": "La Pegatina",
+      "durationSeconds": 32,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "KnmWBgvWUGI",
+      "title": "Lupita y Silvino",
+      "channelTitle": "La Pegatina",
+      "durationSeconds": 27,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "stc5o1SaNd0",
+      "title": "Estic per Tu - 22/02/2023 #lalba #musicacatalana #musicaencatala #esticpertu",
+      "channelTitle": "LAL'BA MUSIC",
+      "durationSeconds": 9,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "0pRB5SaycsM",
+      "title": "Ultimament la gent… #lildami #català  #catalunya",
+      "channelTitle": "Lildami",
+      "durationSeconds": 18,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "CowkTzDU5c8",
+      "title": "Dona el pego??? #newmusic #rap #music #clips",
+      "channelTitle": "Lildami",
+      "durationSeconds": 19,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "V3OJ6n8m0n4",
+      "title": "3 d’abril del 2025",
+      "channelTitle": "Lildami",
+      "durationSeconds": 21,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "yFzSxrFFoVE",
+      "title": "A contracorrent ja disponible 🫡",
+      "channelTitle": "Lildami",
+      "durationSeconds": 14,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "hKQiYNMLiyc",
+      "title": "Ja disponible!! DR SMITH ❤️💝",
+      "channelTitle": "Lildami",
+      "durationSeconds": 34,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "ZkFC-i-lElc",
+      "title": "Avui passen coses 🥺",
+      "channelTitle": "Lildami",
+      "durationSeconds": 11,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "Ch_l04ocQVI",
+      "title": "Ulleres de sol🕶️",
+      "channelTitle": "Lildami",
+      "durationSeconds": 20,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "CwORt5oIsk8",
+      "title": "Lluís Llach - Entrevista i Concert de \"Porrera\" (Canal Oficial)",
+      "channelTitle": "Lluís Llach",
+      "durationSeconds": 4184,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "ntM708S1y6I",
+      "title": "Lluís Llach - Un pont de mar blava",
+      "channelTitle": "Lluís Llach",
+      "durationSeconds": 8353,
+      "musicReason": "descripció inequívoca de contingut no musical"
+    },
+    {
+      "id": "3_B5Mr_v32E",
+      "title": "ja disponible ​⁠@MiaBadgyalMusic !! CATALUNYA ❤️🇧🇷 BRASIL",
+      "channelTitle": "Llum",
+      "durationSeconds": 16,
+      "musicReason": "massa curt: probable teaser/fragment"
     }
   ]
 }

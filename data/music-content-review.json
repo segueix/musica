@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-25T18:10:25.151Z",
-  "count": 145,
+  "generatedAt": "2026-09-25T18:12:11.978Z",
+  "count": 163,
   "videos": [
     {
       "id": "s5LOMt_ZkEM",
@@ -11,17 +11,6 @@
       "publishedAt": "2026-09-24T19:03:55Z",
       "musicConfidence": 0.45,
       "musicReason": "durada compatible",
-      "youtubeCategoryId": "26"
-    },
-    {
-      "id": "Bwvmi-0SRQ8",
-      "title": "Shakira & Laura Pausini - Antología (Live from LMYNL World Tour)",
-      "channelId": "UCYLNGLIzMhRTi6ZOLjAPSmw",
-      "channelTitle": "Shakira",
-      "durationSeconds": 296,
-      "publishedAt": "2026-09-24T18:59:22Z",
-      "musicConfidence": 0.65,
-      "musicReason": "títol amb patró artista/cançó + durada pròpia d’una cançó + versió en directe/acústica",
       "youtubeCategoryId": "26"
     },
     {
@@ -168,28 +157,6 @@
       "youtubeCategoryId": "10"
     },
     {
-      "id": "mapfegnAXOg",
-      "title": "Shakira & Ghetto Kids - Dai Dai (Live from LMYNL World Tour)",
-      "channelId": "UCYLNGLIzMhRTi6ZOLjAPSmw",
-      "channelTitle": "Shakira",
-      "durationSeconds": 206,
-      "publishedAt": "2026-07-31T22:19:34Z",
-      "musicConfidence": 0.65,
-      "musicReason": "títol amb patró artista/cançó + durada pròpia d’una cançó + versió en directe/acústica",
-      "youtubeCategoryId": "26"
-    },
-    {
-      "id": "ncmYqND278Q",
-      "title": "Shakira & Ed Sheeran - Underneath your Clothes (Live from LMYNL World Tour)",
-      "channelId": "UCYLNGLIzMhRTi6ZOLjAPSmw",
-      "channelTitle": "Shakira",
-      "durationSeconds": 223,
-      "publishedAt": "2026-07-31T22:19:25Z",
-      "musicConfidence": 0.65,
-      "musicReason": "títol amb patró artista/cançó + durada pròpia d’una cançó + versió en directe/acústica",
-      "youtubeCategoryId": "26"
-    },
-    {
       "id": "NehZ7SaBlPE",
       "title": "The Ghetto Kids have been the true kings and queens of this World Cup!",
       "channelId": "UCYLNGLIzMhRTi6ZOLjAPSmw",
@@ -221,6 +188,39 @@
       "musicConfidence": 0.7250000000000001,
       "musicReason": "categoria Music de YouTube + títol amb patró artista/cançó",
       "youtubeCategoryId": "10"
+    },
+    {
+      "id": "yjRjyXn0tKw",
+      "title": "David Carabén amb l'OCT48 \"Por de mi\"",
+      "channelId": "UCG2FXKF44MdeDbLb66yb-rQ",
+      "channelTitle": "Mishima",
+      "durationSeconds": 345,
+      "publishedAt": "2026-07-05T19:22:10Z",
+      "musicConfidence": 0.7250000000000001,
+      "musicReason": "categoria Music de YouTube + durada pròpia d’una cançó",
+      "youtubeCategoryId": "10"
+    },
+    {
+      "id": "cnfwv410d2Y",
+      "title": "What does Sunset Boulevard mean to Sarah Brightman? ",
+      "channelId": "UCriL6-sBup_Tis7trjOALnw",
+      "channelTitle": "Sarah Brightman",
+      "durationSeconds": 141,
+      "publishedAt": "2026-07-03T17:34:26Z",
+      "musicConfidence": 0.7250000000000001,
+      "musicReason": "categoria Music de YouTube + durada pròpia d’una cançó",
+      "youtubeCategoryId": "10"
+    },
+    {
+      "id": "Y-KmxGFpCOE",
+      "title": "SARA HEBE - NEGOCIONISMO (Sesiones de Grabación)",
+      "channelId": "UC4_up7DP4nqJKX5uC-uqH1g",
+      "channelTitle": "Sara Hebe",
+      "durationSeconds": 64,
+      "publishedAt": "2026-07-03T15:15:09Z",
+      "musicConfidence": 0.65,
+      "musicReason": "tags musicals + títol amb patró artista/cançó + durada compatible",
+      "youtubeCategoryId": "22"
     },
     {
       "id": "aB3c-jEH24M",
@@ -317,8 +317,19 @@
       "channelTitle": "Dàmaris Gelabert",
       "durationSeconds": 60,
       "publishedAt": "2026-05-04T06:18:23Z",
+      "musicConfidence": 0.675,
+      "musicReason": "categoria Music de YouTube + durada compatible",
+      "youtubeCategoryId": "10"
+    },
+    {
+      "id": "OqaBV5grpsk",
+      "title": "PAU VALLVÉ @ Sant Jordi Club (25/04/2026)",
+      "channelId": "UCNzFLySm2-AVSBe_hyiY5Vw",
+      "channelTitle": "PAU VALLVÉ",
+      "durationSeconds": 252,
+      "publishedAt": "2026-04-29T09:32:07Z",
       "musicConfidence": 0.7250000000000001,
-      "musicReason": "categoria Music de YouTube + durada compatible + versió en directe/acústica",
+      "musicReason": "categoria Music de YouTube + durada pròpia d’una cançó",
       "youtubeCategoryId": "10"
     },
     {
@@ -350,6 +361,17 @@
       "channelTitle": "Els Amics de les Arts",
       "durationSeconds": 63,
       "publishedAt": "2026-04-22T05:04:56Z",
+      "musicConfidence": 0.675,
+      "musicReason": "categoria Music de YouTube + durada compatible",
+      "youtubeCategoryId": "10"
+    },
+    {
+      "id": "66aMfn7bQRg",
+      "title": "JA HAN ARRIBAT! 🎉🌺🎊🌸",
+      "channelId": "UCNzFLySm2-AVSBe_hyiY5Vw",
+      "channelTitle": "PAU VALLVÉ",
+      "durationSeconds": 50,
+      "publishedAt": "2026-04-21T07:57:20Z",
       "musicConfidence": 0.675,
       "musicReason": "categoria Music de YouTube + durada compatible",
       "youtubeCategoryId": "10"
@@ -418,6 +440,28 @@
       "publishedAt": "2026-03-25T10:06:30Z",
       "musicConfidence": 0.7250000000000001,
       "musicReason": "categoria Music de YouTube + durada pròpia d’una cançó",
+      "youtubeCategoryId": "10"
+    },
+    {
+      "id": "-32RFdSIRvU",
+      "title": "JA HA SORTIT! 🎁🎂🥳😍🎉",
+      "channelId": "UCNzFLySm2-AVSBe_hyiY5Vw",
+      "channelTitle": "PAU VALLVÉ",
+      "durationSeconds": 60,
+      "publishedAt": "2026-03-20T07:46:59Z",
+      "musicConfidence": 0.675,
+      "musicReason": "categoria Music de YouTube + durada compatible",
+      "youtubeCategoryId": "10"
+    },
+    {
+      "id": "kcdZLQhSmLw",
+      "title": "DIVENDRES DISC EN DIRECTE!",
+      "channelId": "UCNzFLySm2-AVSBe_hyiY5Vw",
+      "channelTitle": "PAU VALLVÉ",
+      "durationSeconds": 60,
+      "publishedAt": "2026-03-16T11:47:19Z",
+      "musicConfidence": 0.7250000000000001,
+      "musicReason": "categoria Music de YouTube + durada compatible + versió en directe/acústica",
       "youtubeCategoryId": "10"
     },
     {
@@ -553,6 +597,17 @@
       "youtubeCategoryId": "10"
     },
     {
+      "id": "aA-siEzU8gU",
+      "title": "PAU VALLVÉ @ REUS (28/11/2025)",
+      "channelId": "UCNzFLySm2-AVSBe_hyiY5Vw",
+      "channelTitle": "PAU VALLVÉ",
+      "durationSeconds": 60,
+      "publishedAt": "2025-12-04T09:42:37Z",
+      "musicConfidence": 0.675,
+      "musicReason": "categoria Music de YouTube + durada compatible",
+      "youtubeCategoryId": "10"
+    },
+    {
       "id": "51NVLvUHDvM",
       "title": "VESPPREIG MEDITERRANI (17/10/2025)",
       "channelId": "UCyR3Vf_s-Mo30j6oqN4Aq_w",
@@ -575,6 +630,17 @@
       "youtubeCategoryId": "10"
     },
     {
+      "id": "6YxQqDv4LHw",
+      "title": "PAU VALLVÉ @ GIRONA (21/11/2025)",
+      "channelId": "UCNzFLySm2-AVSBe_hyiY5Vw",
+      "channelTitle": "PAU VALLVÉ",
+      "durationSeconds": 100,
+      "publishedAt": "2025-11-25T08:46:44Z",
+      "musicConfidence": 0.7250000000000001,
+      "musicReason": "categoria Music de YouTube + durada pròpia d’una cançó",
+      "youtubeCategoryId": "10"
+    },
+    {
       "id": "sBLrYsqQfQo",
       "title": "qui s'enamori perd - ven'nus",
       "channelId": "UCvh8nurHojZHGiQy532Bn2w",
@@ -584,6 +650,17 @@
       "musicConfidence": 0.6000000000000001,
       "musicReason": "títol amb patró artista/cançó + durada pròpia d’una cançó",
       "youtubeCategoryId": "22"
+    },
+    {
+      "id": "NywsgMYYHmo",
+      "title": "PAU VALLVÉ @ TERRASSA (15/11/2025)",
+      "channelId": "UCNzFLySm2-AVSBe_hyiY5Vw",
+      "channelTitle": "PAU VALLVÉ",
+      "durationSeconds": 60,
+      "publishedAt": "2025-11-18T11:36:34Z",
+      "musicConfidence": 0.675,
+      "musicReason": "categoria Music de YouTube + durada compatible",
+      "youtubeCategoryId": "10"
     },
     {
       "id": "dX8dywP0jPk",
@@ -658,6 +735,17 @@
       "channelTitle": "La Maria",
       "durationSeconds": 172,
       "publishedAt": "2025-09-15T19:45:58Z",
+      "musicConfidence": 0.6000000000000001,
+      "musicReason": "títol amb patró artista/cançó + durada pròpia d’una cançó",
+      "youtubeCategoryId": "22"
+    },
+    {
+      "id": "Hw3bbocSIvE",
+      "title": "Triquell - Memòria sobre la necessitat d’entrar en una fase de relaxació de consciència absoluta...",
+      "channelId": "UCIE6UEv7aCNJq-Jw9F0mJ7A",
+      "channelTitle": "Triquell",
+      "durationSeconds": 182,
+      "publishedAt": "2025-09-04T22:00:29Z",
       "musicConfidence": 0.6000000000000001,
       "musicReason": "títol amb patró artista/cançó + durada pròpia d’una cançó",
       "youtubeCategoryId": "22"
@@ -762,6 +850,17 @@
       "youtubeCategoryId": "22"
     },
     {
+      "id": "sjG2QOJErcQ",
+      "title": "«NOMÉS VIURE»",
+      "channelId": "UC5nvjukz73UjS-GpzieyTxw",
+      "channelTitle": "Ginestà Oficial",
+      "durationSeconds": 49,
+      "publishedAt": "2025-05-07T15:24:46Z",
+      "musicConfidence": 0.675,
+      "musicReason": "categoria Music de YouTube + durada compatible",
+      "youtubeCategoryId": "10"
+    },
+    {
       "id": "oUUXbgL9oI4",
       "title": "Mamis love Tomàs Molina (skit)",
       "channelId": "UC9X30uS2tBqnVwEqpmA32xQ",
@@ -823,8 +922,8 @@
       "channelTitle": "La Maria",
       "durationSeconds": 161,
       "publishedAt": "2025-02-28T11:01:24Z",
-      "musicConfidence": 0.65,
-      "musicReason": "títol amb patró artista/cançó + durada pròpia d’una cançó + versió en directe/acústica",
+      "musicConfidence": 0.6000000000000001,
+      "musicReason": "títol amb patró artista/cançó + durada pròpia d’una cançó",
       "youtubeCategoryId": "22"
     },
     {
@@ -867,8 +966,8 @@
       "channelTitle": "Dàmaris Gelabert",
       "durationSeconds": 60,
       "publishedAt": "2024-10-08T11:38:32Z",
-      "musicConfidence": 0.7250000000000001,
-      "musicReason": "categoria Music de YouTube + durada compatible + versió en directe/acústica",
+      "musicConfidence": 0.675,
+      "musicReason": "categoria Music de YouTube + durada compatible",
       "youtubeCategoryId": "10"
     },
     {
@@ -878,8 +977,8 @@
       "channelTitle": "Dàmaris Gelabert",
       "durationSeconds": 60,
       "publishedAt": "2024-10-01T09:58:54Z",
-      "musicConfidence": 0.7250000000000001,
-      "musicReason": "categoria Music de YouTube + durada compatible + versió en directe/acústica",
+      "musicConfidence": 0.675,
+      "musicReason": "categoria Music de YouTube + durada compatible",
       "youtubeCategoryId": "10"
     },
     {
@@ -903,28 +1002,6 @@
       "musicConfidence": 0.675,
       "musicReason": "categoria Music de YouTube + durada compatible",
       "youtubeCategoryId": "10"
-    },
-    {
-      "id": "lthqxctRsTQ",
-      "title": "VEN'NUS - I JAZZ WANT MY G BACK (livesession)",
-      "channelId": "UCvh8nurHojZHGiQy532Bn2w",
-      "channelTitle": "VEN'NUS",
-      "durationSeconds": 222,
-      "publishedAt": "2024-05-30T10:03:27Z",
-      "musicConfidence": 0.65,
-      "musicReason": "títol amb patró artista/cançó + durada pròpia d’una cançó + versió en directe/acústica",
-      "youtubeCategoryId": "22"
-    },
-    {
-      "id": "q8fm4L_GUs8",
-      "title": "VEN'NUS - CAP TROSSET DE MI (livesession)",
-      "channelId": "UCvh8nurHojZHGiQy532Bn2w",
-      "channelTitle": "VEN'NUS",
-      "durationSeconds": 176,
-      "publishedAt": "2024-05-24T16:39:52Z",
-      "musicConfidence": 0.65,
-      "musicReason": "títol amb patró artista/cançó + durada pròpia d’una cançó + versió en directe/acústica",
-      "youtubeCategoryId": "22"
     },
     {
       "id": "_K0iJBeFHsk",
@@ -958,6 +1035,17 @@
       "musicConfidence": 0.675,
       "musicReason": "categoria Music de YouTube + durada compatible",
       "youtubeCategoryId": "10"
+    },
+    {
+      "id": "PgFmC14pgdc",
+      "title": "LAL'BA | X Una Nit",
+      "channelId": "UC2WMiCvYBSXvRjYIB0yrpEg",
+      "channelTitle": "LAL'BA MUSIC",
+      "durationSeconds": 170,
+      "publishedAt": "2023-11-16T09:00:11Z",
+      "musicConfidence": 0.6000000000000001,
+      "musicReason": "títol amb patró artista/cançó + durada pròpia d’una cançó",
+      "youtubeCategoryId": "22"
     },
     {
       "id": "yN0U-HqdRr4",
@@ -1002,6 +1090,72 @@
       "musicConfidence": 0.625,
       "musicReason": "categoria Music de YouTube",
       "youtubeCategoryId": "10"
+    },
+    {
+      "id": "B3sApvb5eBM",
+      "title": "LAL'BA | Parella Imperfecta (Videolyric)",
+      "channelId": "UC2WMiCvYBSXvRjYIB0yrpEg",
+      "channelTitle": "LAL'BA MUSIC",
+      "durationSeconds": 219,
+      "publishedAt": "2023-04-13T22:20:56Z",
+      "musicConfidence": 0.6000000000000001,
+      "musicReason": "títol amb patró artista/cançó + durada pròpia d’una cançó",
+      "youtubeCategoryId": "22"
+    },
+    {
+      "id": "sINVwMsIhWk",
+      "title": "LAL'BA | El que no vaig dir (Videolyric)",
+      "channelId": "UC2WMiCvYBSXvRjYIB0yrpEg",
+      "channelTitle": "LAL'BA MUSIC",
+      "durationSeconds": 176,
+      "publishedAt": "2023-04-13T22:20:51Z",
+      "musicConfidence": 0.6000000000000001,
+      "musicReason": "títol amb patró artista/cançó + durada pròpia d’una cançó",
+      "youtubeCategoryId": "22"
+    },
+    {
+      "id": "iOGblePT0yE",
+      "title": "LAL'BA | No hi ha dies dolents (Videolyric)",
+      "channelId": "UC2WMiCvYBSXvRjYIB0yrpEg",
+      "channelTitle": "LAL'BA MUSIC",
+      "durationSeconds": 179,
+      "publishedAt": "2023-04-13T22:20:46Z",
+      "musicConfidence": 0.6000000000000001,
+      "musicReason": "títol amb patró artista/cançó + durada pròpia d’una cançó",
+      "youtubeCategoryId": "22"
+    },
+    {
+      "id": "0TqzmNLTpKs",
+      "title": "LAL'BA feat. ROBA ESTESA | Mil preguntes (Videolyric)",
+      "channelId": "UC2WMiCvYBSXvRjYIB0yrpEg",
+      "channelTitle": "LAL'BA MUSIC",
+      "durationSeconds": 181,
+      "publishedAt": "2023-04-13T22:20:41Z",
+      "musicConfidence": 0.6000000000000001,
+      "musicReason": "títol amb patró artista/cançó + durada pròpia d’una cançó",
+      "youtubeCategoryId": "22"
+    },
+    {
+      "id": "c5DzWW3CEZI",
+      "title": "LALBA | NANANA (Videolyric)",
+      "channelId": "UC2WMiCvYBSXvRjYIB0yrpEg",
+      "channelTitle": "LAL'BA MUSIC",
+      "durationSeconds": 170,
+      "publishedAt": "2023-04-13T22:20:36Z",
+      "musicConfidence": 0.5,
+      "musicReason": "durada pròpia d’una cançó",
+      "youtubeCategoryId": "22"
+    },
+    {
+      "id": "mdJYRIMUXO8",
+      "title": "LAL'BA | Massa normal (Videolyric)",
+      "channelId": "UC2WMiCvYBSXvRjYIB0yrpEg",
+      "channelTitle": "LAL'BA MUSIC",
+      "durationSeconds": 170,
+      "publishedAt": "2023-04-13T22:20:32Z",
+      "musicConfidence": 0.6000000000000001,
+      "musicReason": "títol amb patró artista/cançó + durada pròpia d’una cançó",
+      "youtubeCategoryId": "22"
     },
     {
       "id": "JEoWosR9KGE",
@@ -1081,6 +1235,17 @@
       "youtubeCategoryId": "10"
     },
     {
+      "id": "snRt2qvOmBY",
+      "title": "LAL'BA | Abella Reina (videolyric)",
+      "channelId": "UC2WMiCvYBSXvRjYIB0yrpEg",
+      "channelTitle": "LAL'BA MUSIC",
+      "durationSeconds": 189,
+      "publishedAt": "2022-09-29T22:00:12Z",
+      "musicConfidence": 0.6000000000000001,
+      "musicReason": "títol amb patró artista/cançó + durada pròpia d’una cançó",
+      "youtubeCategoryId": "22"
+    },
+    {
       "id": "tCzLmVX-6Bw",
       "title": "Resum Collites d'estiu en 15 minuts!",
       "channelId": "UC7uVuUVNeWD3DpaxoAYVMLg",
@@ -1122,6 +1287,28 @@
       "publishedAt": "2022-06-15T09:12:26Z",
       "musicConfidence": 0.7250000000000001,
       "musicReason": "categoria Music de YouTube + durada pròpia d’una cançó",
+      "youtubeCategoryId": "10"
+    },
+    {
+      "id": "HBPfkxpQ10k",
+      "title": "RECOGEDOR CON PEINE By Gisela",
+      "channelId": "UCUN2FUzI0Z7cDDaxV2mTzPQ",
+      "channelTitle": "Gisela Vlog",
+      "durationSeconds": 126,
+      "publishedAt": "2022-02-19T10:45:01Z",
+      "musicConfidence": 0.5,
+      "musicReason": "durada pròpia d’una cançó",
+      "youtubeCategoryId": "26"
+    },
+    {
+      "id": "4UqUPL5aYwk",
+      "title": "Orfeó Gracienc - Concert d'estiu 2021: \"Entre el dolor i l'esperança... la vida canta!\"",
+      "channelId": "UC7uVuUVNeWD3DpaxoAYVMLg",
+      "channelTitle": "Orfeó Gracienc",
+      "durationSeconds": 2762,
+      "publishedAt": "2021-07-14T12:46:10Z",
+      "musicConfidence": 0.7250000000000001,
+      "musicReason": "categoria Music de YouTube + títol amb patró artista/cançó",
       "youtubeCategoryId": "10"
     },
     {
@@ -1332,6 +1519,17 @@
       "musicConfidence": 0.5,
       "musicReason": "durada pròpia d’una cançó",
       "youtubeCategoryId": "19"
+    },
+    {
+      "id": "RY76HF7j6PE",
+      "title": "Batman y yo, una historia de amor By Gisela #GourmetLoveStories",
+      "channelId": "UCUN2FUzI0Z7cDDaxV2mTzPQ",
+      "channelTitle": "Gisela Vlog",
+      "durationSeconds": 399,
+      "publishedAt": "2018-07-03T18:27:27Z",
+      "musicConfidence": 0.6000000000000001,
+      "musicReason": "títol amb patró artista/cançó + durada pròpia d’una cançó",
+      "youtubeCategoryId": "26"
     },
     {
       "id": "npXN4yH6g9E",
