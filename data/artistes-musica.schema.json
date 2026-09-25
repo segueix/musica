@@ -33,6 +33,7 @@
           "musicbrainzId",
           "youtube",
           "confidence",
+          "reviewStatus",
           "active",
           "sources",
           "lastChecked",
@@ -145,6 +146,13 @@
               "mitjana",
               "baixa",
               "pendent"
+            ]
+          },
+          "reviewStatus": {
+            "enum": [
+              "pendent",
+              "aprovat",
+              "rebutjat"
             ]
           },
           "active": {

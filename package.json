@@ -10,6 +10,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "music:validate": "node scripts/validar_artistes_musica.js",
+    "music:discover": "node scripts/descobrir_artistes_musica.js",
+    "music:discover:dry": "node scripts/descobrir_artistes_musica.js --dry-run --limit=100",
     "search:index": "node scripts/generar_index_cerca.js",
     "search:index:hybrid:rebuild": "node scripts/generar_index_cerca.js",
     "sw:version": "node scripts/actualitzar_versio_sw.js"

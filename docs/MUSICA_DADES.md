@@ -1,43 +1,41 @@
 # Base de dades de Segueix Música
 
-La font canònica d'artistes és `data/artistes-musica.json`.
+La font canònica és `data/artistes-musica.json`. No cal mantenir un Excel paral·lel.
 
-## Principis
+## Descoberta automàtica
 
-- Un artista pot tenir més d'un canal de YouTube (oficial, Topic, discogràfica o altres).
-- Només hi pot haver un canal marcat com a `primary: true` per artista.
-- L'artista i la llengua de cada peça són conceptes separats: ser a la base d'artistes no implica que tots els seus vídeos entrin al feed.
-- `confidence` indica la confiança amb què hem relacionat l'artista amb les seves identitats externes.
-- Wikidata i MusicBrainz serviran per automatitzar la descoberta inicial; YouTube completarà els casos que faltin.
+`scripts/descobrir_artistes_musica.js` consulta Wikidata i combina tres senyals:
 
-## Camps principals
+1. artistes que declaren català entre les llengües;
+2. artistes amb català com a llengua nativa;
+3. artistes vinculats com a intèrprets d'una obra catalogada en català.
 
-`name`: nom canònic de l'artista o grup.
+Per reduir falsos positius, el candidat ha de tenir un MusicBrainz Artist ID a Wikidata. Si Wikidata també té un YouTube Channel ID, s'incorpora directament.
 
-`aliases`: variants del nom.
+L'Action `Descobrir artistes de música` s'executa els dilluns i també es pot executar manualment. No necessita cap clau de YouTube.
 
-`genres`: gèneres musicals.
+## Revisió editorial
 
-`territories`: territoris vinculats a l'artista.
+Cada artista té `reviewStatus`:
 
-`languages`: llengües habituals del repertori; no substitueix el filtre vídeo per vídeo.
+- `pendent`: descobert automàticament, encara no validat;
+- `aprovat`: acceptat per al projecte i `active: true`;
+- `rebutjat`: exclòs i `active: false`.
 
-`wikidataId` i `musicbrainzId`: identificadors externs.
+L'automatisme conserva aquestes decisions.
 
-`youtube.channels`: canals relacionats. Cada entrada inclou `id`, `handle`, `name`, `type` i `primary`.
+La pàgina `admin-musica.html` permet filtrar, aprovar i rebutjar candidats. Els canvis queden temporalment al navegador i es poden exportar com a JSON o CSV. El JSON exportat està preparat per substituir `data/artistes-musica.json`.
 
-`confidence`: `alta`, `mitjana`, `baixa` o `pendent`.
-
-`sources`: fonts que justifiquen la identificació.
-
-`lastChecked`: darrera verificació automàtica o manual.
-
-## Validació
-
-Executa:
+## Ordres
 
 ```bash
+npm run music:discover
+npm run music:discover:dry
 npm run music:validate
 ```
 
-També hi ha un workflow de GitHub que valida automàticament la base quan aquesta canvia. No utilitza cap API externa ni consumeix quota de YouTube.
+## Fonts externes
+
+- Wikidata: identificadors i evidència de vinculació amb el català.
+- MusicBrainz: identificador canònic de l'artista; l'enriquiment de relacions es pot afegir posteriorment.
+- YouTube: encara no es consulta des d'aquest procés; només s'aprofiten IDs de canal ja presents a Wikidata.

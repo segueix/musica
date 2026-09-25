@@ -2,33 +2,30 @@
 
 Projecte independent derivat de Segueix per descobrir i reproduir música en català.
 
-## Estat inicial
+## Estat
 
-La base funcional de `segueix/Segueix` s'ha clonat sense arrossegar el feed, l'arxiu històric ni els índexs del projecte general.
+La PWA conserva la base funcional de `segueix/Segueix`, però el feed i les dades editorials del projecte general s'han reinicialitzat.
 
-Els automatismes heretats que podien actualitzar dades o consumir quota s'han deixat temporalment en execució manual. No es reactivaran fins que Música tingui:
-
-- base d'artistes pròpia;
-- pipeline musical propi;
-- projecte i clau de YouTube propis;
-- desplegament propi.
-
-## Base d'artistes
-
-La font canònica és:
+La nova base canònica d'artistes és:
 
 `data/artistes-musica.json`
 
-L'estructura permet diversos canals de YouTube per artista i enllaços amb Wikidata i MusicBrainz.
+Els candidats es poden descobrir automàticament des de Wikidata sense consumir quota de YouTube:
 
-Valida-la amb:
+```bash
+npm run music:discover
+```
+
+La base es valida amb:
 
 ```bash
 npm run music:validate
 ```
 
-Consulta `docs/MUSICA_DADES.md` per a l'esquema i criteris.
+Per revisar candidats visualment, obre `admin-musica.html`.
 
-## Aplicació
+Consulta `docs/MUSICA_DADES.md` per als criteris i el flux editorial.
 
-La resta de la PWA encara conserva la base funcional de Segueix i s'anirà adaptant progressivament al producte musical.
+## Seguretat de quota
+
+Els workflows heretats que consultaven YouTube continuen en mode manual fins que Música tingui claus i pipeline propis. El workflow setmanal de descoberta actual només consulta Wikidata.
