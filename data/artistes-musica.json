@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-25T16:32:11.998Z",
+  "updatedAt": "2026-09-25T16:33:15.848Z",
   "artists": [
     {
       "name": "31 FAM",
@@ -519,15 +519,7 @@
       "wikidataId": "Q567632",
       "musicbrainzId": "86637bc3-4663-4ba9-bf50-a21e4f6fa150",
       "youtube": {
-        "channels": [
-          {
-            "id": "UCA071Pllf2wk-B8Rkwt47bQ",
-            "handle": "@-anonymous",
-            "name": "Anonymous Official",
-            "type": "official",
-            "primary": true
-          }
-        ],
+        "channels": [],
         "candidates": [],
         "searchCandidates": [
           {
@@ -579,13 +571,12 @@
           }
         ]
       },
-      "confidence": "alta",
+      "confidence": "pendent",
       "reviewStatus": "pendent",
       "active": false,
       "sources": [
         "https://www.wikidata.org/wiki/Q567632",
-        "wikidata:performed-catalan-work",
-        "youtube:search-auto"
+        "wikidata:performed-catalan-work"
       ],
       "lastChecked": "2026-09-25T16:32:05.250Z",
       "notes": "",
@@ -597,11 +588,11 @@
         },
         "youtubeSearch": {
           "checkedAt": "2026-09-25T16:32:05.250Z",
-          "status": "autoacceptat",
+          "status": "candidats",
           "query": "Anonymous (grup)",
           "resultCount": 3,
           "bestScore": 105,
-          "autoAcceptedId": "UCA071Pllf2wk-B8Rkwt47bQ"
+          "autoAcceptedId": null
         }
       }
     },
