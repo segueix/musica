@@ -139,7 +139,16 @@ if (!Array.isArray(data.artists)) {
             if (!genreState || typeof genreState !== 'object') fail(`${where}.enrichment.genres no és vàlid.`);
             if (!(genreState.checkedAt === null || typeof genreState.checkedAt === 'string')) fail(`${where}.enrichment.genres.checkedAt no és vàlid.`);
             if (!(genreState.musicbrainzCheckedAt === null || typeof genreState.musicbrainzCheckedAt === 'string')) fail(`${where}.enrichment.genres.musicbrainzCheckedAt no és vàlid.`);
-            ['wikidataRaw', 'musicbrainzRaw', 'unmappedRaw'].forEach((field) => {
+            if (!(genreState.wikidataWorkCheckedAt === undefined || genreState.wikidataWorkCheckedAt === null || typeof genreState.wikidataWorkCheckedAt === 'string')) fail(`${where}.enrichment.genres.wikidataWorkCheckedAt no és vàlid.`);
+            if (genreState.wikidataWorkEvidence !== undefined) {
+                if (!Array.isArray(genreState.wikidataWorkEvidence)) fail(`${where}.enrichment.genres.wikidataWorkEvidence ha de ser un array.`);
+                else genreState.wikidataWorkEvidence.forEach((evidence, evidenceIndex) => {
+                    if (!evidence || typeof evidence.genre !== 'string' || !Number.isInteger(evidence.workCount) || evidence.workCount < 1) {
+                        fail(`${where}.enrichment.genres.wikidataWorkEvidence[${evidenceIndex}] no és vàlid.`);
+                    }
+                });
+            }
+            ['wikidataRaw', 'wikidataWorkRaw', 'musicbrainzRaw', 'unmappedRaw'].forEach((field) => {
                 if (!isStringArray(genreState[field])) fail(`${where}.enrichment.genres.${field} ha de ser un array de textos.`);
             });
             if (!['pendent', 'classificat', 'parcial', 'per-revisar', 'sense-dades'].includes(genreState.status)) {
