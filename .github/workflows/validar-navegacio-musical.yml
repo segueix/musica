@@ -1,0 +1,40 @@
+name: Validar navegació musical
+
+on:
+  push:
+    paths:
+      - "index.html"
+      - "js/config.js"
+      - "js/music-categories.js"
+      - "js/youtube.js"
+      - "js/app.js"
+      - "js/features/segueix-tv.js"
+      - "js/features/context-tv.js"
+      - "js/features/analytics.js"
+      - "js/features/analytics-admin.js"
+      - "js/features/analytics-pdf.js"
+      - "functions/_lib/section-seo.js"
+      - "functions/api/analytics.js"
+      - "tests/music-categories.test.js"
+      - "tests/section-seo.test.js"
+      - ".github/workflows/validar-navegacio-musical.yml"
+  workflow_dispatch:
+
+jobs:
+  valida:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "20"
+      - run: npm ci
+      - name: Comprova sintaxi
+        run: |
+          node --check js/music-categories.js
+          node --check js/youtube.js
+          node --check js/app.js
+          node --check js/features/segueix-tv.js
+          node --check js/features/context-tv.js
+      - name: Prova taxonomia i SEO
+        run: npx vitest run tests/music-categories.test.js tests/section-seo.test.js
