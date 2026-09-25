@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-25T16:58:31.679Z",
+  "updatedAt": "2026-09-25T17:01:21.351Z",
   "artists": [
     {
       "name": "31 FAM",
@@ -41,7 +41,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.588Z",
+          "checkedAt": "2026-09-25T17:01:21.117Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:10.717Z",
           "wikidataRaw": [
             "trap",
@@ -49,7 +49,8 @@
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       }
     },
@@ -133,12 +134,14 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.588Z",
+          "checkedAt": "2026-09-25T17:01:21.117Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:11.973Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades"
+          "status": "sense-dades",
+          "wikidataWorkRaw": [],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.117Z"
         }
       },
       "genresRaw": []
@@ -229,14 +232,15 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.589Z",
+          "checkedAt": "2026-09-25T17:01:21.118Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:13.253Z",
           "wikidataRaw": [
             "música tradicional"
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       },
       "genresRaw": [
@@ -247,6 +251,7 @@
       "name": "Albert Guinovart i Mingacho",
       "aliases": [],
       "genres": [
+        "Folk i arrel",
         "Clàssica i contemporània"
       ],
       "territories": [],
@@ -325,7 +330,7 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.591Z",
+          "checkedAt": "2026-09-25T17:01:21.120Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:14.515Z",
           "wikidataRaw": [
             "sardana",
@@ -337,13 +342,13 @@
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [
-            "sardana",
             "música simfònica",
             "lied",
             "musical",
             "banda sonora"
           ],
-          "status": "parcial"
+          "status": "parcial",
+          "wikidataWorkRaw": []
         }
       },
       "genresRaw": [
@@ -438,7 +443,7 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.593Z",
+          "checkedAt": "2026-09-25T17:01:21.121Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:15.777Z",
           "wikidataRaw": [
             "rock",
@@ -446,7 +451,8 @@
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       },
       "genresRaw": [
@@ -494,7 +500,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.594Z",
+          "checkedAt": "2026-09-25T17:01:21.122Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:17.051Z",
           "wikidataRaw": [
             "pop-rock",
@@ -502,7 +508,8 @@
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       }
     },
@@ -588,12 +595,14 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.594Z",
+          "checkedAt": "2026-09-25T17:01:21.122Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:18.421Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades"
+          "status": "sense-dades",
+          "wikidataWorkRaw": [],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.122Z"
         }
       },
       "genresRaw": []
@@ -639,7 +648,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.595Z",
+          "checkedAt": "2026-09-25T17:01:21.123Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:19.704Z",
           "wikidataRaw": [
             "jazz",
@@ -647,7 +656,8 @@
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       }
     },
@@ -741,14 +751,15 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.595Z",
+          "checkedAt": "2026-09-25T17:01:21.123Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:20.957Z",
           "wikidataRaw": [
             "punk rock"
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       },
       "genresRaw": [
@@ -839,14 +850,15 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.596Z",
+          "checkedAt": "2026-09-25T17:01:21.124Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:22.653Z",
           "wikidataRaw": [
             "música clàssica"
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       },
       "genresRaw": [
@@ -895,7 +907,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.596Z",
+          "checkedAt": "2026-09-25T17:01:21.126Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:23.983Z",
           "wikidataRaw": [
             "pop-rock",
@@ -904,10 +916,9 @@
             "música mediterrània"
           ],
           "musicbrainzRaw": [],
-          "unmappedRaw": [
-            "música mediterrània"
-          ],
-          "status": "parcial"
+          "unmappedRaw": [],
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       }
     },
@@ -951,7 +962,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.596Z",
+          "checkedAt": "2026-09-25T17:01:21.127Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:25.245Z",
           "wikidataRaw": [
             "reggae"
@@ -962,14 +973,17 @@
             "ska"
           ],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       }
     },
     {
       "name": "Asstrio",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Rap / Hip-hop"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -1048,15 +1062,21 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.597Z",
+          "checkedAt": "2026-09-25T17:01:21.127Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:26.676Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades"
+          "status": "classificat",
+          "wikidataWorkRaw": [
+            "rap"
+          ],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.127Z"
         }
       },
-      "genresRaw": []
+      "genresRaw": [
+        "rap"
+      ]
     },
     {
       "name": "At Versaris",
@@ -1145,7 +1165,7 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.598Z",
+          "checkedAt": "2026-09-25T17:01:21.129Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:28.032Z",
           "wikidataRaw": [
             "tecno",
@@ -1160,7 +1180,8 @@
             "tecno",
             "rapejar"
           ],
-          "status": "parcial"
+          "status": "parcial",
+          "wikidataWorkRaw": []
         }
       },
       "genresRaw": [
@@ -1174,7 +1195,9 @@
     {
       "name": "Atupa",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Rap / Hip-hop"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -1201,15 +1224,21 @@
       ],
       "lastChecked": "2026-09-25T15:44:05.402Z",
       "notes": "",
-      "genresRaw": [],
+      "genresRaw": [
+        "rap"
+      ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.598Z",
+          "checkedAt": "2026-09-25T17:01:21.129Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:29.425Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades"
+          "status": "classificat",
+          "wikidataWorkRaw": [
+            "rap"
+          ],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.129Z"
         }
       }
     },
@@ -1250,14 +1279,15 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.598Z",
+          "checkedAt": "2026-09-25T17:01:21.130Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:30.688Z",
           "wikidataRaw": [
             "reggae"
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       }
     },
@@ -1342,12 +1372,14 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.598Z",
+          "checkedAt": "2026-09-25T17:01:21.130Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:31.956Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades"
+          "status": "sense-dades",
+          "wikidataWorkRaw": [],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.130Z"
         }
       },
       "genresRaw": []
@@ -1439,7 +1471,7 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.599Z",
+          "checkedAt": "2026-09-25T17:01:21.130Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:33.227Z",
           "wikidataRaw": [
             "rock",
@@ -1447,7 +1479,8 @@
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       },
       "genresRaw": [
@@ -1539,15 +1572,23 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.599Z",
+          "checkedAt": "2026-09-25T17:01:21.130Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:34.489Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
-          "unmappedRaw": [],
-          "status": "sense-dades"
+          "unmappedRaw": [
+            "rapejar"
+          ],
+          "status": "per-revisar",
+          "wikidataWorkRaw": [
+            "rapejar"
+          ],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.130Z"
         }
       },
-      "genresRaw": []
+      "genresRaw": [
+        "rapejar"
+      ]
     },
     {
       "name": "Bradien",
@@ -1627,12 +1668,14 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.599Z",
+          "checkedAt": "2026-09-25T17:01:21.130Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:35.750Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades"
+          "status": "sense-dades",
+          "wikidataWorkRaw": [],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.130Z"
         }
       },
       "genresRaw": []
@@ -1721,7 +1764,7 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.599Z",
+          "checkedAt": "2026-09-25T17:01:21.132Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:37.011Z",
           "wikidataRaw": [
             "rock",
@@ -1732,7 +1775,8 @@
             "rock"
           ],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       },
       "genresRaw": [
@@ -1785,7 +1829,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.601Z",
+          "checkedAt": "2026-09-25T17:01:21.134Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:38.276Z",
           "wikidataRaw": [
             "ska",
@@ -1796,7 +1840,8 @@
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       }
     },
@@ -1848,12 +1893,14 @@
           "relationCount": 1
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.601Z",
+          "checkedAt": "2026-09-25T17:01:21.134Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:39.535Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades"
+          "status": "sense-dades",
+          "wikidataWorkRaw": [],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.134Z"
         }
       },
       "genresRaw": []
@@ -1898,7 +1945,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.601Z",
+          "checkedAt": "2026-09-25T17:01:21.135Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:40.832Z",
           "wikidataRaw": [
             "reggae",
@@ -1909,7 +1956,8 @@
           "unmappedRaw": [
             "rapejar"
           ],
-          "status": "parcial"
+          "status": "parcial",
+          "wikidataWorkRaw": []
         }
       }
     },
@@ -1953,14 +2001,15 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.602Z",
+          "checkedAt": "2026-09-25T17:01:21.135Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:42.495Z",
           "wikidataRaw": [
             "òpera"
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       }
     },
@@ -2051,12 +2100,14 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.602Z",
+          "checkedAt": "2026-09-25T17:01:21.135Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:44.021Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades"
+          "status": "sense-dades",
+          "wikidataWorkRaw": [],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.135Z"
         }
       },
       "genresRaw": []
@@ -2144,12 +2195,14 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.602Z",
+          "checkedAt": "2026-09-25T17:01:21.135Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:45.273Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades"
+          "status": "sense-dades",
+          "wikidataWorkRaw": [],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.135Z"
         }
       },
       "genresRaw": []
@@ -2158,7 +2211,8 @@
       "name": "Cesk Freixas",
       "aliases": [],
       "genres": [
-        "Folk i arrel"
+        "Folk i arrel",
+        "Cançó d'autor"
       ],
       "territories": [],
       "languages": [
@@ -2194,7 +2248,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.603Z",
+          "checkedAt": "2026-09-25T17:01:21.137Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:46.530Z",
           "wikidataRaw": [
             "música tradicional",
@@ -2203,10 +2257,10 @@
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [
-            "música popular",
-            "cançó protesta"
+            "música popular"
           ],
-          "status": "parcial"
+          "status": "parcial",
+          "wikidataWorkRaw": []
         }
       }
     },
@@ -2258,7 +2312,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.603Z",
+          "checkedAt": "2026-09-25T17:01:21.137Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:47.796Z",
           "wikidataRaw": [
             "pop-rock",
@@ -2269,14 +2323,18 @@
             "pop rock"
           ],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       }
     },
     {
       "name": "Cobla Mediterrània",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Rock",
+        "Folk i arrel"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -2357,15 +2415,23 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.603Z",
+          "checkedAt": "2026-09-25T17:01:21.137Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:49.068Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades"
+          "status": "classificat",
+          "wikidataWorkRaw": [
+            "rock",
+            "folk-country"
+          ],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.137Z"
         }
       },
-      "genresRaw": []
+      "genresRaw": [
+        "rock",
+        "folk-country"
+      ]
     },
     {
       "name": "Companyia Elèctrica Dharma",
@@ -2414,7 +2480,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.605Z",
+          "checkedAt": "2026-09-25T17:01:21.140Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:50.334Z",
           "wikidataRaw": [
             "jazz rock",
@@ -2432,7 +2498,8 @@
           "unmappedRaw": [
             "música laietana"
           ],
-          "status": "parcial"
+          "status": "parcial",
+          "wikidataWorkRaw": []
         }
       }
     },
@@ -2503,12 +2570,14 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.605Z",
+          "checkedAt": "2026-09-25T17:01:21.140Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:51.738Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades"
+          "status": "sense-dades",
+          "wikidataWorkRaw": [],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.140Z"
         }
       },
       "genresRaw": []
@@ -2551,14 +2620,15 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.606Z",
+          "checkedAt": "2026-09-25T17:01:21.140Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:53.138Z",
           "wikidataRaw": [
             "punk rock"
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       }
     },
@@ -2645,15 +2715,23 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.606Z",
+          "checkedAt": "2026-09-25T17:01:21.140Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:54.407Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
-          "unmappedRaw": [],
-          "status": "sense-dades"
+          "unmappedRaw": [
+            "musical"
+          ],
+          "status": "per-revisar",
+          "wikidataWorkRaw": [
+            "musical"
+          ],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.140Z"
         }
       },
-      "genresRaw": []
+      "genresRaw": [
+        "musical"
+      ]
     },
     {
       "name": "Dàmaris Gelabert",
@@ -2692,14 +2770,15 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.606Z",
+          "checkedAt": "2026-09-25T17:01:21.141Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:55.679Z",
           "wikidataRaw": [
             "música infantil"
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       }
     },
@@ -2741,7 +2820,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.606Z",
+          "checkedAt": "2026-09-25T17:01:21.141Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:57.045Z",
           "wikidataRaw": [
             "Q3930216"
@@ -2752,14 +2831,34 @@
           "unmappedRaw": [
             "Q3930216"
           ],
-          "status": "parcial"
+          "status": "parcial",
+          "wikidataWorkRaw": []
         }
       }
     },
     {
       "name": "diversos artistes",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Pop",
+        "Rock",
+        "Indie / Alternativa",
+        "Urbana",
+        "Rap / Hip-hop",
+        "Electrònica",
+        "Folk i arrel",
+        "Cançó d'autor",
+        "Ska / Reggae",
+        "Punk",
+        "Metal",
+        "Flamenc",
+        "Jazz / Blues",
+        "Funk / Soul / R&B",
+        "Clàssica i contemporània",
+        "Coral / Vocal",
+        "Experimental / Avantguarda",
+        "Infantil"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -3031,15 +3130,1540 @@
       ],
       "lastChecked": "2026-09-25T15:44:05.402Z",
       "notes": "",
-      "genresRaw": [],
+      "genresRaw": [
+        "banda sonora",
+        "jazz",
+        "reggae",
+        "comèdia",
+        "chanson",
+        "música de videojocs",
+        "Chicago blues",
+        "cinema per a adolescents",
+        "Jangle pop",
+        "roots reggae",
+        "cinema familiar",
+        "nyahbinghi",
+        "trance",
+        "tecno",
+        "indie rock",
+        "drum and bass",
+        "drama",
+        "rockabilly",
+        "música del món",
+        "trip-hop",
+        "rock psicodèlic",
+        "metal industrial",
+        "two-tone",
+        "lovers rock",
+        "pop dance",
+        "dub",
+        "country-pop",
+        "nu metal",
+        "oi!",
+        "comèdia dramàtica",
+        "New Wave of British Heavy Metal",
+        "cinema de ciència-ficció",
+        "dancehall",
+        "pop-rock",
+        "rocksteady",
+        "post-punk",
+        "skiffle",
+        "teen pop",
+        "glam rock",
+        "calipso",
+        "rock dur",
+        "indie pop",
+        "big beat",
+        "rock industrial",
+        "pop",
+        "grunge",
+        "rock alternatiu",
+        "rock",
+        "rap",
+        "house",
+        "ciència-ficció",
+        "punk rock",
+        "teatre i cinema",
+        "heavy metal",
+        "rhythm and blues",
+        "ska",
+        "blues",
+        "background music",
+        "cinema romàntic",
+        "electrònica",
+        "J-Pop",
+        "black metal",
+        "synthpop",
+        "vispop",
+        "música nadalenca",
+        "cinema fantàstic",
+        "electropop",
+        "melodrama",
+        "blues rock",
+        "cançó de bressol",
+        "reggaeton",
+        "rock àcid",
+        "garage rock",
+        "música per ballar",
+        "cinema d'aventures",
+        "pop llatí",
+        "anison",
+        "grupera",
+        "Gangsta rap",
+        "R&B contemporani",
+        "banda sonora de pel·lícula",
+        "mètal clàssic",
+        "ficció especulativa",
+        "metal alternatiu",
+        "proto-punk",
+        "folk",
+        "música electrònica",
+        "rapejar",
+        "música pop tradicional",
+        "soul",
+        "hip hop francès",
+        "Tropicalisme",
+        "funk",
+        "salsa",
+        "crossover",
+        "música infantil",
+        "música popular",
+        "música de varietats",
+        "música industrial",
+        "country",
+        "power-pop",
+        "blus tuareg",
+        "telenovel·la",
+        "novelty",
+        "rock còmic",
+        "comèdia musical",
+        "image song",
+        "happy hardcore",
+        "techno hardcore",
+        "death metal",
+        "thrash metal",
+        "early hardcore",
+        "gabber",
+        "rock and roll",
+        "música dance",
+        "new wave",
+        "ambient",
+        "soft rock",
+        "German hip-hop",
+        "Andean music",
+        "música per a cinema",
+        "nova cançó xilena",
+        "cançó protesta",
+        "hardcore punk",
+        "rock progressiu",
+        "música disco",
+        "cinema d'esports",
+        "concert benèfic",
+        "música urbana",
+        "bossa nova",
+        "pop punk",
+        "hip house",
+        "skate punk",
+        "crossover thrash",
+        "bubblegum pop",
+        "emocore",
+        "Visual Kei",
+        "música cristiana contemporània",
+        "Madchester",
+        "música tradicional",
+        "hip-hop de la Costa Oest",
+        "intelligent dance music",
+        "dark ambient",
+        "old school rap",
+        "rap rock",
+        "rap hardcore",
+        "old-time music",
+        "musical",
+        "K-pop",
+        "música jueva",
+        "post-rock",
+        "outsider music",
+        "rock del sud",
+        "new jack swing",
+        "música neoclàssica",
+        "música clàssica",
+        "romanticisme musical",
+        "death metal melòdic",
+        "Q3930216",
+        "swing",
+        "Shibuya-kei",
+        "pub rock",
+        "electro",
+        "música surf",
+        "tango",
+        "progressive bluegrass",
+        "hip-hop alternatiu",
+        "stoner rock",
+        "Bollywood film music",
+        "rap metal",
+        "original Pilipino music",
+        "cor",
+        "música de cambra",
+        "deep funk",
+        "freak folk",
+        "Acid Jazz",
+        "downtempo",
+        "música de les Filipines",
+        "rock gòtic",
+        "country rock",
+        "música instrumental",
+        "blues tradicional",
+        "Manila sound",
+        "East Coast hip hop",
+        "òpera",
+        "música clàssica otomana",
+        "música experimental",
+        "cançó revolucionària",
+        "Pinoy rock",
+        "Italo disco",
+        "mandopop",
+        "poesia",
+        "enregistrament de paraules parlades",
+        "sèrie de televisió de temàtica LGBTI+",
+        "música folklòrica estatunidenca",
+        "rock experimental",
+        "música clàssica hindustànica",
+        "Mbaqanga",
+        "música new age",
+        "post-hardcore",
+        "American primitive guitar",
+        "programa de televisió sobre homes llop",
+        "programa de televisió sobre vampirs",
+        "sèrie de televisió postapocalíptica",
+        "gòspel",
+        "música sertaneja",
+        "eurodance",
+        "rock espacial",
+        "rock brasiler",
+        "Krautrock",
+        "samba-enredo",
+        "música llatinoamericana",
+        "könsrock",
+        "enka",
+        "música popular brasilera",
+        "fulletó",
+        "dubstep",
+        "dansband",
+        "G-funk",
+        "burlesc",
+        "boogie",
+        "post-disco",
+        "metalcore",
+        "folk rock",
+        "groove metal",
+        "anarcopunk",
+        "mathcore",
+        "blues britànic",
+        "garage house",
+        "nadala",
+        "no-música",
+        "paròdia musical",
+        "acid techno",
+        "post-grunge",
+        "Detroit techno",
+        "psytrance",
+        "chill out",
+        "hard trance",
+        "música política",
+        "hard house",
+        "bebop",
+        "post-bop",
+        "jazz modal",
+        "Minimal techno",
+        "música lleugera",
+        "hard bop",
+        "Ragtime",
+        "grindcore",
+        "microhouse",
+        "Dunedin sound",
+        "música acústica",
+        "ràdio parlada",
+        "jazz d'avantguarda",
+        "free-jazz",
+        "smooth jazz",
+        "música independent",
+        "música de big band",
+        "sound effects recording",
+        "Glitch (música)",
+        "monòleg còmic",
+        "sunshine pop",
+        "indigenous music of North America",
+        "música llatina",
+        "neopsicodèlia",
+        "música celta",
+        "cumbia",
+        "southern hip hop",
+        "paraula parlada",
+        "música medieval",
+        "stride piano",
+        "doom metal",
+        "bugui-bugui",
+        "deathcore",
+        "sludge metal",
+        "women's music",
+        "britpop",
+        "mètal",
+        "mashup",
+        "adult contemporary",
+        "Album-oriented rock",
+        "rock xicano",
+        "Folk metal",
+        "ranxera",
+        "neofolk",
+        "no wave",
+        "electrònica en viu",
+        "bluegrass",
+        "òpera rock",
+        "rock en castellà",
+        "outsider house",
+        "Australian hip-hop",
+        "música cristiana",
+        "outlaw country",
+        "anime",
+        "tema musical",
+        "documental",
+        "metal gòtic",
+        "pel·lícula concert",
+        "hip-hop italià",
+        "metal progressiu",
+        "jazz fusió",
+        "C-pop",
+        "hokkien",
+        "Umeå hardcore",
+        "Hakkapop",
+        "pop cantonès",
+        "schlager",
+        "glam metal",
+        "dark wave",
+        "música apalachee",
+        "electro house",
+        "breakbeat",
+        "noise",
+        "cançons marineres",
+        "fantasia",
+        "rock rus",
+        "música beat",
+        "audio drama",
+        "J-Rock",
+        "techno-pop",
+        "partyschlager",
+        "yass",
+        "electro industrial",
+        "sung poetry",
+        "ragga",
+        "Cajun music",
+        "zydeco",
+        "freakbeat",
+        "acid-house",
+        "Twee pop",
+        "rock cristià",
+        "Eurobeat",
+        "flamenc",
+        "dark cabaret",
+        "West Bengal rock music",
+        "doo-wop",
+        "Música criolla i afroperuana",
+        "batxata",
+        "Texas blues",
+        "Hi-NRG",
+        "Riot Grrrl",
+        "house progressiu",
+        "música de Macedònia",
+        "jazz llatí",
+        "moviment punk",
+        "speed metal",
+        "radioteatre",
+        "Finnish rock",
+        "National Socialist black metal",
+        "música francesa",
+        "hip-hop",
+        "funk carioca",
+        "metal medieval",
+        "sèrie de televisió infantil",
+        "fado",
+        "hip-hop cristià",
+        "Rock clàssic",
+        "sèrie de televisió d'aventures",
+        "música tradicional persa",
+        "soul jazz",
+        "pop psicodèlic",
+        "pop francès",
+        "jazz vocal",
+        "Midwest hip-hop",
+        "country alternatiu",
+        "hip-hop underground",
+        "grime",
+        "progg",
+        "Miami bass",
+        "sèrie de televisió romàntica",
+        "sèrie de televisió de drama",
+        "sèrie de televisió de fantasia",
+        "música avantguardista",
+        "música africana",
+        "meca",
+        "sèrie de televisió històrica",
+        "Iranian pop",
+        "shidaiqu",
+        "música d'Indonèsia",
+        "arabesque",
+        "lounge",
+        "art rock",
+        "Turkish hip-hop",
+        "Nueva trova",
+        "Sahrawi music",
+        "turntablism",
+        "música de culte contemporània",
+        "urban contemporary gospel",
+        "comèdia de situació",
+        "horrorcore",
+        "dangdut",
+        "himne cristià",
+        "trønder rock",
+        "cassida",
+        "música tradicional irlandesa",
+        "Chinese rock",
+        "comèdia romàntica",
+        "música norteña",
+        "afrobeat",
+        "music in advertising",
+        "música contemporània",
+        "música psicodèlica",
+        "highlife",
+        "sàtira",
+        "música islàmica",
+        "psychobilly",
+        "bolero",
+        "vuelie",
+        "Movida madrileña",
+        "música alternativa",
+        "leudd",
+        "cançó de beure",
+        "gravació de camp",
+        "joik",
+        "kayōkyoku",
+        "therapy music",
+        "cançó infantil",
+        "música coral",
+        "estudiantina",
+        "Sami music",
+        "música folk contemporània",
+        "Hari Raya music",
+        "rock instrumental",
+        "sèrie juvenil",
+        "pop-rap",
+        "sèrie de televisió de terror",
+        "luk thung",
+        "Fantezi",
+        "luk krung",
+        "telecomèdia",
+        "cinema musical",
+        "mambo",
+        "merengue",
+        "Indian film music",
+        "Chabad niggunim",
+        "rock electrònic",
+        "music of Bengal",
+        "balada sentimental",
+        "música gitana",
+        "new music",
+        "hatecore",
+        "balada",
+        "música d'Etiòpia",
+        "música pop russa",
+        "Rock Against Communism",
+        "cançó de musical",
+        "música gekiban",
+        "brass band music",
+        "electrònic experimental",
+        "estrada music",
+        "drift phonk",
+        "chicha",
+        "cançó napolitana",
+        "livđe",
+        "art sonor",
+        "hardstyle",
+        "Djent",
+        "música basca",
+        "Rabindra Sangeet",
+        "cumbia amazónica",
+        "Peruvian cumbia",
+        "power metal",
+        "French folk song",
+        "pop-folk",
+        "pel·lícula basada en un conte de fades",
+        "pop tailandès",
+        "música hassídica",
+        "hip-hop iranià",
+        "city pop",
+        "música clàssica per a cinema",
+        "estrada",
+        "arena rock",
+        "satirical music",
+        "Feminejo",
+        "encreuament clàssic",
+        "música clàssica moderna",
+        "rima de guarderia",
+        "ràdio infantil",
+        "Dixieland",
+        "zouk",
+        "cool-jazz",
+        "group sounds",
+        "smooth soul",
+        "jazz contemporani",
+        "nu jazz",
+        "jazz-funk",
+        "slack-key guitar",
+        "Gamelan",
+        "German punk",
+        "nu-disco",
+        "synthwave",
+        "ryūkōka",
+        "eurodisco",
+        "coldwave",
+        "crust punk",
+        "frat rock",
+        "hands up",
+        "teenage tragedy song",
+        "Eurohouse",
+        "pop barroc",
+        "indigenous Australian music",
+        "sèrie de televisió de drama juvenil",
+        "Bhangra",
+        "vallenato",
+        "kawaii metal",
+        "canzone genovese",
+        "música popular africana",
+        "forma dramàtica",
+        "illustrative music",
+        "visa",
+        "jungle",
+        "Northern soul",
+        "Nova Cançó",
+        "ambient house",
+        "cançó bretona",
+        "drama legal",
+        "música de Bretanya",
+        "cinema nadalenc",
+        "cinema de ficció criminal",
+        "ambient techno",
+        "biografia",
+        "western music",
+        "oberkrainer",
+        "forró",
+        "piosenka aktorska",
+        "jazz afrocubà",
+        "europop",
+        "música vocal",
+        "música militar",
+        "Italo dance",
+        "breaks",
+        "folklore",
+        "black metal atmosfèric",
+        "cinema de misteri",
+        "televisió educativa",
+        "nigun",
+        "Wallonne chanson",
+        "Canadian hip-hop",
+        "muziki wa dansi",
+        "bongo flava",
+        "avant-garde metal",
+        "nasheed",
+        "math rock",
+        "post-metal",
+        "Waiata",
+        "holiday music",
+        "Māori showband",
+        "cinema infantil",
+        "go-go",
+        "horror punk",
+        "disc de remescles",
+        "mor lam",
+        "New Orleans jazz",
+        "música mizrahí",
+        "sèrie de televisió d'acció",
+        "Maghreb pop",
+        "African hip-hop",
+        "shaabi",
+        "coupé-décalé",
+        "list of songs about cities",
+        "música concreta",
+        "raï",
+        "música religiosa",
+        "Música Hawaiana",
+        "nederpop",
+        "Pinoy hip hop",
+        "hip hop polític",
+        "rock francès",
+        "anime music",
+        "videojoc de futbol associatiu",
+        "poesia religiosa",
+        "hot rod music",
+        "Música d'Uganda",
+        "escena de Canterbury",
+        "deep house",
+        "drama romàntic",
+        "venjança",
+        "villancet",
+        "indie folk",
+        "música culta",
+        "sageuk",
+        "tokusatsu",
+        "punk pathetique",
+        "Neue Deutsche Welle",
+        "worldbeat"
+      ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.606Z",
+          "checkedAt": "2026-09-25T17:01:21.231Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:58.307Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
-          "unmappedRaw": [],
-          "status": "sense-dades"
+          "unmappedRaw": [
+            "banda sonora",
+            "comèdia",
+            "música de videojocs",
+            "cinema per a adolescents",
+            "cinema familiar",
+            "nyahbinghi",
+            "trance",
+            "tecno",
+            "drum and bass",
+            "drama",
+            "rockabilly",
+            "música del món",
+            "two-tone",
+            "comèdia dramàtica",
+            "cinema de ciència-ficció",
+            "skiffle",
+            "calipso",
+            "big beat",
+            "grunge",
+            "ciència-ficció",
+            "teatre i cinema",
+            "background music",
+            "cinema romàntic",
+            "vispop",
+            "música nadalenca",
+            "cinema fantàstic",
+            "melodrama",
+            "cançó de bressol",
+            "música per ballar",
+            "cinema d'aventures",
+            "anison",
+            "grupera",
+            "banda sonora de pel·lícula",
+            "ficció especulativa",
+            "rapejar",
+            "Tropicalisme",
+            "salsa",
+            "crossover",
+            "música popular",
+            "música de varietats",
+            "música industrial",
+            "country",
+            "blus tuareg",
+            "telenovel·la",
+            "novelty",
+            "comèdia musical",
+            "image song",
+            "gabber",
+            "música dance",
+            "new wave",
+            "Andean music",
+            "música per a cinema",
+            "música disco",
+            "cinema d'esports",
+            "concert benèfic",
+            "bossa nova",
+            "crossover thrash",
+            "emocore",
+            "Visual Kei",
+            "música cristiana contemporània",
+            "Madchester",
+            "old-time music",
+            "musical",
+            "música jueva",
+            "outsider music",
+            "música neoclàssica",
+            "romanticisme musical",
+            "Q3930216",
+            "Shibuya-kei",
+            "música surf",
+            "tango",
+            "progressive bluegrass",
+            "Bollywood film music",
+            "original Pilipino music",
+            "cor",
+            "música de cambra",
+            "música de les Filipines",
+            "música instrumental",
+            "Manila sound",
+            "cançó revolucionària",
+            "Italo disco",
+            "mandopop",
+            "poesia",
+            "enregistrament de paraules parlades",
+            "sèrie de televisió de temàtica LGBTI+",
+            "música folklòrica estatunidenca",
+            "Mbaqanga",
+            "música new age",
+            "American primitive guitar",
+            "programa de televisió sobre homes llop",
+            "programa de televisió sobre vampirs",
+            "sèrie de televisió postapocalíptica",
+            "gòspel",
+            "música sertaneja",
+            "eurodance",
+            "Krautrock",
+            "samba-enredo",
+            "música llatinoamericana",
+            "könsrock",
+            "enka",
+            "música popular brasilera",
+            "fulletó",
+            "dubstep",
+            "dansband",
+            "burlesc",
+            "boogie",
+            "post-disco",
+            "anarcopunk",
+            "mathcore",
+            "nadala",
+            "no-música",
+            "paròdia musical",
+            "post-grunge",
+            "psytrance",
+            "chill out",
+            "hard trance",
+            "música política",
+            "post-bop",
+            "música lleugera",
+            "hard bop",
+            "Ragtime",
+            "grindcore",
+            "microhouse",
+            "Dunedin sound",
+            "música acústica",
+            "ràdio parlada",
+            "música independent",
+            "música de big band",
+            "sound effects recording",
+            "Glitch (música)",
+            "monòleg còmic",
+            "indigenous music of North America",
+            "música llatina",
+            "neopsicodèlia",
+            "música celta",
+            "cumbia",
+            "paraula parlada",
+            "música medieval",
+            "stride piano",
+            "bugui-bugui",
+            "deathcore",
+            "women's music",
+            "britpop",
+            "mashup",
+            "adult contemporary",
+            "ranxera",
+            "neofolk",
+            "no wave",
+            "bluegrass",
+            "música cristiana",
+            "outlaw country",
+            "anime",
+            "tema musical",
+            "documental",
+            "pel·lícula concert",
+            "hokkien",
+            "Hakkapop",
+            "schlager",
+            "dark wave",
+            "música apalachee",
+            "breakbeat",
+            "cançons marineres",
+            "fantasia",
+            "música beat",
+            "audio drama",
+            "partyschlager",
+            "yass",
+            "sung poetry",
+            "ragga",
+            "Cajun music",
+            "zydeco",
+            "freakbeat",
+            "Eurobeat",
+            "dark cabaret",
+            "doo-wop",
+            "Música criolla i afroperuana",
+            "batxata",
+            "Hi-NRG",
+            "Riot Grrrl",
+            "música de Macedònia",
+            "radioteatre",
+            "música francesa",
+            "sèrie de televisió infantil",
+            "fado",
+            "sèrie de televisió d'aventures",
+            "country alternatiu",
+            "grime",
+            "progg",
+            "Miami bass",
+            "sèrie de televisió romàntica",
+            "sèrie de televisió de drama",
+            "sèrie de televisió de fantasia",
+            "música avantguardista",
+            "música africana",
+            "meca",
+            "sèrie de televisió històrica",
+            "shidaiqu",
+            "música d'Indonèsia",
+            "arabesque",
+            "lounge",
+            "Nueva trova",
+            "Sahrawi music",
+            "turntablism",
+            "música de culte contemporània",
+            "urban contemporary gospel",
+            "comèdia de situació",
+            "horrorcore",
+            "dangdut",
+            "himne cristià",
+            "cassida",
+            "comèdia romàntica",
+            "música norteña",
+            "afrobeat",
+            "music in advertising",
+            "música contemporània",
+            "música psicodèlica",
+            "highlife",
+            "sàtira",
+            "música islàmica",
+            "psychobilly",
+            "bolero",
+            "vuelie",
+            "Movida madrileña",
+            "música alternativa",
+            "leudd",
+            "cançó de beure",
+            "gravació de camp",
+            "joik",
+            "kayōkyoku",
+            "therapy music",
+            "cançó infantil",
+            "estudiantina",
+            "Sami music",
+            "Hari Raya music",
+            "sèrie juvenil",
+            "sèrie de televisió de terror",
+            "luk thung",
+            "Fantezi",
+            "luk krung",
+            "telecomèdia",
+            "cinema musical",
+            "mambo",
+            "merengue",
+            "Indian film music",
+            "Chabad niggunim",
+            "music of Bengal",
+            "balada sentimental",
+            "música gitana",
+            "new music",
+            "hatecore",
+            "balada",
+            "música d'Etiòpia",
+            "cançó de musical",
+            "música gekiban",
+            "brass band music",
+            "estrada music",
+            "drift phonk",
+            "chicha",
+            "cançó napolitana",
+            "livđe",
+            "art sonor",
+            "hardstyle",
+            "Djent",
+            "música basca",
+            "Rabindra Sangeet",
+            "cumbia amazónica",
+            "Peruvian cumbia",
+            "pel·lícula basada en un conte de fades",
+            "música hassídica",
+            "estrada",
+            "satirical music",
+            "Feminejo",
+            "encreuament clàssic",
+            "rima de guarderia",
+            "ràdio infantil",
+            "Dixieland",
+            "zouk",
+            "group sounds",
+            "slack-key guitar",
+            "Gamelan",
+            "nu-disco",
+            "ryūkōka",
+            "eurodisco",
+            "coldwave",
+            "hands up",
+            "teenage tragedy song",
+            "Eurohouse",
+            "indigenous Australian music",
+            "sèrie de televisió de drama juvenil",
+            "Bhangra",
+            "vallenato",
+            "canzone genovese",
+            "música popular africana",
+            "forma dramàtica",
+            "illustrative music",
+            "visa",
+            "jungle",
+            "cançó bretona",
+            "drama legal",
+            "música de Bretanya",
+            "cinema nadalenc",
+            "cinema de ficció criminal",
+            "biografia",
+            "western music",
+            "oberkrainer",
+            "forró",
+            "piosenka aktorska",
+            "europop",
+            "música vocal",
+            "música militar",
+            "Italo dance",
+            "breaks",
+            "folklore",
+            "cinema de misteri",
+            "televisió educativa",
+            "nigun",
+            "muziki wa dansi",
+            "bongo flava",
+            "nasheed",
+            "Waiata",
+            "holiday music",
+            "Māori showband",
+            "cinema infantil",
+            "go-go",
+            "disc de remescles",
+            "mor lam",
+            "música mizrahí",
+            "sèrie de televisió d'acció",
+            "shaabi",
+            "coupé-décalé",
+            "list of songs about cities",
+            "música concreta",
+            "raï",
+            "música religiosa",
+            "Música Hawaiana",
+            "nederpop",
+            "anime music",
+            "videojoc de futbol associatiu",
+            "poesia religiosa",
+            "hot rod music",
+            "Música d'Uganda",
+            "escena de Canterbury",
+            "drama romàntic",
+            "venjança",
+            "villancet",
+            "música culta",
+            "sageuk",
+            "tokusatsu",
+            "Neue Deutsche Welle",
+            "worldbeat"
+          ],
+          "status": "parcial",
+          "wikidataWorkRaw": [
+            "banda sonora",
+            "jazz",
+            "reggae",
+            "comèdia",
+            "chanson",
+            "música de videojocs",
+            "Chicago blues",
+            "cinema per a adolescents",
+            "Jangle pop",
+            "roots reggae",
+            "cinema familiar",
+            "nyahbinghi",
+            "trance",
+            "tecno",
+            "indie rock",
+            "drum and bass",
+            "drama",
+            "rockabilly",
+            "música del món",
+            "trip-hop",
+            "rock psicodèlic",
+            "metal industrial",
+            "two-tone",
+            "lovers rock",
+            "pop dance",
+            "dub",
+            "country-pop",
+            "nu metal",
+            "oi!",
+            "comèdia dramàtica",
+            "New Wave of British Heavy Metal",
+            "cinema de ciència-ficció",
+            "dancehall",
+            "pop-rock",
+            "rocksteady",
+            "post-punk",
+            "skiffle",
+            "teen pop",
+            "glam rock",
+            "calipso",
+            "rock dur",
+            "indie pop",
+            "big beat",
+            "rock industrial",
+            "pop",
+            "grunge",
+            "rock alternatiu",
+            "rock",
+            "rap",
+            "house",
+            "ciència-ficció",
+            "punk rock",
+            "teatre i cinema",
+            "heavy metal",
+            "rhythm and blues",
+            "ska",
+            "blues",
+            "background music",
+            "cinema romàntic",
+            "electrònica",
+            "J-Pop",
+            "black metal",
+            "synthpop",
+            "vispop",
+            "música nadalenca",
+            "cinema fantàstic",
+            "electropop",
+            "melodrama",
+            "blues rock",
+            "cançó de bressol",
+            "reggaeton",
+            "rock àcid",
+            "garage rock",
+            "música per ballar",
+            "cinema d'aventures",
+            "pop llatí",
+            "anison",
+            "grupera",
+            "Gangsta rap",
+            "R&B contemporani",
+            "banda sonora de pel·lícula",
+            "mètal clàssic",
+            "ficció especulativa",
+            "metal alternatiu",
+            "proto-punk",
+            "folk",
+            "música electrònica",
+            "rapejar",
+            "música pop tradicional",
+            "soul",
+            "hip hop francès",
+            "Tropicalisme",
+            "funk",
+            "salsa",
+            "crossover",
+            "música infantil",
+            "música popular",
+            "música de varietats",
+            "música industrial",
+            "country",
+            "power-pop",
+            "blus tuareg",
+            "telenovel·la",
+            "novelty",
+            "rock còmic",
+            "comèdia musical",
+            "image song",
+            "happy hardcore",
+            "techno hardcore",
+            "death metal",
+            "thrash metal",
+            "early hardcore",
+            "gabber",
+            "rock and roll",
+            "música dance",
+            "new wave",
+            "ambient",
+            "soft rock",
+            "German hip-hop",
+            "Andean music",
+            "música per a cinema",
+            "nova cançó xilena",
+            "cançó protesta",
+            "hardcore punk",
+            "rock progressiu",
+            "música disco",
+            "cinema d'esports",
+            "concert benèfic",
+            "música urbana",
+            "bossa nova",
+            "pop punk",
+            "hip house",
+            "skate punk",
+            "crossover thrash",
+            "bubblegum pop",
+            "emocore",
+            "Visual Kei",
+            "música cristiana contemporània",
+            "Madchester",
+            "música tradicional",
+            "hip-hop de la Costa Oest",
+            "intelligent dance music",
+            "dark ambient",
+            "old school rap",
+            "rap rock",
+            "rap hardcore",
+            "old-time music",
+            "musical",
+            "K-pop",
+            "música jueva",
+            "post-rock",
+            "outsider music",
+            "rock del sud",
+            "new jack swing",
+            "música neoclàssica",
+            "música clàssica",
+            "romanticisme musical",
+            "death metal melòdic",
+            "Q3930216",
+            "swing",
+            "Shibuya-kei",
+            "pub rock",
+            "electro",
+            "música surf",
+            "tango",
+            "progressive bluegrass",
+            "hip-hop alternatiu",
+            "stoner rock",
+            "Bollywood film music",
+            "rap metal",
+            "original Pilipino music",
+            "cor",
+            "música de cambra",
+            "deep funk",
+            "freak folk",
+            "Acid Jazz",
+            "downtempo",
+            "música de les Filipines",
+            "rock gòtic",
+            "country rock",
+            "música instrumental",
+            "blues tradicional",
+            "Manila sound",
+            "East Coast hip hop",
+            "òpera",
+            "música clàssica otomana",
+            "música experimental",
+            "cançó revolucionària",
+            "Pinoy rock",
+            "Italo disco",
+            "mandopop",
+            "poesia",
+            "enregistrament de paraules parlades",
+            "sèrie de televisió de temàtica LGBTI+",
+            "música folklòrica estatunidenca",
+            "rock experimental",
+            "música clàssica hindustànica",
+            "Mbaqanga",
+            "música new age",
+            "post-hardcore",
+            "American primitive guitar",
+            "programa de televisió sobre homes llop",
+            "programa de televisió sobre vampirs",
+            "sèrie de televisió postapocalíptica",
+            "gòspel",
+            "música sertaneja",
+            "eurodance",
+            "rock espacial",
+            "rock brasiler",
+            "Krautrock",
+            "samba-enredo",
+            "música llatinoamericana",
+            "könsrock",
+            "enka",
+            "música popular brasilera",
+            "fulletó",
+            "dubstep",
+            "dansband",
+            "G-funk",
+            "burlesc",
+            "boogie",
+            "post-disco",
+            "metalcore",
+            "folk rock",
+            "groove metal",
+            "anarcopunk",
+            "mathcore",
+            "blues britànic",
+            "garage house",
+            "nadala",
+            "no-música",
+            "paròdia musical",
+            "acid techno",
+            "post-grunge",
+            "Detroit techno",
+            "psytrance",
+            "chill out",
+            "hard trance",
+            "música política",
+            "hard house",
+            "bebop",
+            "post-bop",
+            "jazz modal",
+            "Minimal techno",
+            "música lleugera",
+            "hard bop",
+            "Ragtime",
+            "grindcore",
+            "microhouse",
+            "Dunedin sound",
+            "música acústica",
+            "ràdio parlada",
+            "jazz d'avantguarda",
+            "free-jazz",
+            "smooth jazz",
+            "música independent",
+            "música de big band",
+            "sound effects recording",
+            "Glitch (música)",
+            "monòleg còmic",
+            "sunshine pop",
+            "indigenous music of North America",
+            "música llatina",
+            "neopsicodèlia",
+            "música celta",
+            "cumbia",
+            "southern hip hop",
+            "paraula parlada",
+            "música medieval",
+            "stride piano",
+            "doom metal",
+            "bugui-bugui",
+            "deathcore",
+            "sludge metal",
+            "women's music",
+            "britpop",
+            "mètal",
+            "mashup",
+            "adult contemporary",
+            "Album-oriented rock",
+            "rock xicano",
+            "Folk metal",
+            "ranxera",
+            "neofolk",
+            "no wave",
+            "electrònica en viu",
+            "bluegrass",
+            "òpera rock",
+            "rock en castellà",
+            "outsider house",
+            "Australian hip-hop",
+            "música cristiana",
+            "outlaw country",
+            "anime",
+            "tema musical",
+            "documental",
+            "metal gòtic",
+            "pel·lícula concert",
+            "hip-hop italià",
+            "metal progressiu",
+            "jazz fusió",
+            "C-pop",
+            "hokkien",
+            "Umeå hardcore",
+            "Hakkapop",
+            "pop cantonès",
+            "schlager",
+            "glam metal",
+            "dark wave",
+            "música apalachee",
+            "electro house",
+            "breakbeat",
+            "noise",
+            "cançons marineres",
+            "fantasia",
+            "rock rus",
+            "música beat",
+            "audio drama",
+            "J-Rock",
+            "techno-pop",
+            "partyschlager",
+            "yass",
+            "electro industrial",
+            "sung poetry",
+            "ragga",
+            "Cajun music",
+            "zydeco",
+            "freakbeat",
+            "acid-house",
+            "Twee pop",
+            "rock cristià",
+            "Eurobeat",
+            "flamenc",
+            "dark cabaret",
+            "West Bengal rock music",
+            "doo-wop",
+            "Música criolla i afroperuana",
+            "batxata",
+            "Texas blues",
+            "Hi-NRG",
+            "Riot Grrrl",
+            "house progressiu",
+            "música de Macedònia",
+            "jazz llatí",
+            "moviment punk",
+            "speed metal",
+            "radioteatre",
+            "Finnish rock",
+            "National Socialist black metal",
+            "música francesa",
+            "hip-hop",
+            "funk carioca",
+            "metal medieval",
+            "sèrie de televisió infantil",
+            "fado",
+            "hip-hop cristià",
+            "Rock clàssic",
+            "sèrie de televisió d'aventures",
+            "música tradicional persa",
+            "soul jazz",
+            "pop psicodèlic",
+            "pop francès",
+            "jazz vocal",
+            "Midwest hip-hop",
+            "country alternatiu",
+            "hip-hop underground",
+            "grime",
+            "progg",
+            "Miami bass",
+            "sèrie de televisió romàntica",
+            "sèrie de televisió de drama",
+            "sèrie de televisió de fantasia",
+            "música avantguardista",
+            "música africana",
+            "meca",
+            "sèrie de televisió històrica",
+            "Iranian pop",
+            "shidaiqu",
+            "música d'Indonèsia",
+            "arabesque",
+            "lounge",
+            "art rock",
+            "Turkish hip-hop",
+            "Nueva trova",
+            "Sahrawi music",
+            "turntablism",
+            "música de culte contemporània",
+            "urban contemporary gospel",
+            "comèdia de situació",
+            "horrorcore",
+            "dangdut",
+            "himne cristià",
+            "trønder rock",
+            "cassida",
+            "música tradicional irlandesa",
+            "Chinese rock",
+            "comèdia romàntica",
+            "música norteña",
+            "afrobeat",
+            "music in advertising",
+            "música contemporània",
+            "música psicodèlica",
+            "highlife",
+            "sàtira",
+            "música islàmica",
+            "psychobilly",
+            "bolero",
+            "vuelie",
+            "Movida madrileña",
+            "música alternativa",
+            "leudd",
+            "cançó de beure",
+            "gravació de camp",
+            "joik",
+            "kayōkyoku",
+            "therapy music",
+            "cançó infantil",
+            "música coral",
+            "estudiantina",
+            "Sami music",
+            "música folk contemporània",
+            "Hari Raya music",
+            "rock instrumental",
+            "sèrie juvenil",
+            "pop-rap",
+            "sèrie de televisió de terror",
+            "luk thung",
+            "Fantezi",
+            "luk krung",
+            "telecomèdia",
+            "cinema musical",
+            "mambo",
+            "merengue",
+            "Indian film music",
+            "Chabad niggunim",
+            "rock electrònic",
+            "music of Bengal",
+            "balada sentimental",
+            "música gitana",
+            "new music",
+            "hatecore",
+            "balada",
+            "música d'Etiòpia",
+            "música pop russa",
+            "Rock Against Communism",
+            "cançó de musical",
+            "música gekiban",
+            "brass band music",
+            "electrònic experimental",
+            "estrada music",
+            "drift phonk",
+            "chicha",
+            "cançó napolitana",
+            "livđe",
+            "art sonor",
+            "hardstyle",
+            "Djent",
+            "música basca",
+            "Rabindra Sangeet",
+            "cumbia amazónica",
+            "Peruvian cumbia",
+            "power metal",
+            "French folk song",
+            "pop-folk",
+            "pel·lícula basada en un conte de fades",
+            "pop tailandès",
+            "música hassídica",
+            "hip-hop iranià",
+            "city pop",
+            "música clàssica per a cinema",
+            "estrada",
+            "arena rock",
+            "satirical music",
+            "Feminejo",
+            "encreuament clàssic",
+            "música clàssica moderna",
+            "rima de guarderia",
+            "ràdio infantil",
+            "Dixieland",
+            "zouk",
+            "cool-jazz",
+            "group sounds",
+            "smooth soul",
+            "jazz contemporani",
+            "nu jazz",
+            "jazz-funk",
+            "slack-key guitar",
+            "Gamelan",
+            "German punk",
+            "nu-disco",
+            "synthwave",
+            "ryūkōka",
+            "eurodisco",
+            "coldwave",
+            "crust punk",
+            "frat rock",
+            "hands up",
+            "teenage tragedy song",
+            "Eurohouse",
+            "pop barroc",
+            "indigenous Australian music",
+            "sèrie de televisió de drama juvenil",
+            "Bhangra",
+            "vallenato",
+            "kawaii metal",
+            "canzone genovese",
+            "música popular africana",
+            "forma dramàtica",
+            "illustrative music",
+            "visa",
+            "jungle",
+            "Northern soul",
+            "Nova Cançó",
+            "ambient house",
+            "cançó bretona",
+            "drama legal",
+            "música de Bretanya",
+            "cinema nadalenc",
+            "cinema de ficció criminal",
+            "ambient techno",
+            "biografia",
+            "western music",
+            "oberkrainer",
+            "forró",
+            "piosenka aktorska",
+            "jazz afrocubà",
+            "europop",
+            "música vocal",
+            "música militar",
+            "Italo dance",
+            "breaks",
+            "folklore",
+            "black metal atmosfèric",
+            "cinema de misteri",
+            "televisió educativa",
+            "nigun",
+            "Wallonne chanson",
+            "Canadian hip-hop",
+            "muziki wa dansi",
+            "bongo flava",
+            "avant-garde metal",
+            "nasheed",
+            "math rock",
+            "post-metal",
+            "Waiata",
+            "holiday music",
+            "Māori showband",
+            "cinema infantil",
+            "go-go",
+            "horror punk",
+            "disc de remescles",
+            "mor lam",
+            "New Orleans jazz",
+            "música mizrahí",
+            "sèrie de televisió d'acció",
+            "Maghreb pop",
+            "African hip-hop",
+            "shaabi",
+            "coupé-décalé",
+            "list of songs about cities",
+            "música concreta",
+            "raï",
+            "música religiosa",
+            "Música Hawaiana",
+            "nederpop",
+            "Pinoy hip hop",
+            "hip hop polític",
+            "rock francès",
+            "anime music",
+            "videojoc de futbol associatiu",
+            "poesia religiosa",
+            "hot rod music",
+            "Música d'Uganda",
+            "escena de Canterbury",
+            "deep house",
+            "drama romàntic",
+            "venjança",
+            "villancet",
+            "indie folk",
+            "música culta",
+            "sageuk",
+            "tokusatsu",
+            "punk pathetique",
+            "Neue Deutsche Welle",
+            "worldbeat"
+          ],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.142Z"
         }
       }
     },
@@ -3088,7 +4712,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.608Z",
+          "checkedAt": "2026-09-25T17:01:21.232Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:59.570Z",
           "wikidataRaw": [
             "funk",
@@ -3099,7 +4723,8 @@
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       }
     },
@@ -3191,7 +4816,7 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.609Z",
+          "checkedAt": "2026-09-25T17:01:21.233Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:00.831Z",
           "wikidataRaw": [
             "ska",
@@ -3205,7 +4830,8 @@
             "ska"
           ],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       },
       "genresRaw": [
@@ -3301,7 +4927,7 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.609Z",
+          "checkedAt": "2026-09-25T17:01:21.234Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:02.350Z",
           "wikidataRaw": [
             "pop-rock",
@@ -3309,7 +4935,8 @@
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       },
       "genresRaw": [
@@ -3320,7 +4947,9 @@
     {
       "name": "Dyango",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Pop"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -3366,16 +4995,15 @@
           "relationCount": 1
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.609Z",
+          "checkedAt": "2026-09-25T17:01:21.234Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:03.613Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [
             "latin ballad"
           ],
-          "unmappedRaw": [
-            "latin ballad"
-          ],
-          "status": "per-revisar"
+          "unmappedRaw": [],
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       },
       "genresRaw": [
@@ -3422,7 +5050,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.610Z",
+          "checkedAt": "2026-09-25T17:01:21.235Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:04.874Z",
           "wikidataRaw": [
             "folk rock"
@@ -3431,7 +5059,8 @@
             "celtic punk"
           ],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       }
     },
@@ -3474,12 +5103,14 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.610Z",
+          "checkedAt": "2026-09-25T17:01:21.235Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:06.147Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades"
+          "status": "sense-dades",
+          "wikidataWorkRaw": [],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.235Z"
         }
       },
       "genresRaw": []
@@ -3521,14 +5152,15 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.610Z",
+          "checkedAt": "2026-09-25T17:01:21.235Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:07.399Z",
           "wikidataRaw": [
             "folk"
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       }
     },
@@ -3562,15 +5194,23 @@
       ],
       "lastChecked": "2026-09-25T15:44:05.402Z",
       "notes": "",
-      "genresRaw": [],
+      "genresRaw": [
+        "rapejar"
+      ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.610Z",
+          "checkedAt": "2026-09-25T17:01:21.235Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:08.650Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
-          "unmappedRaw": [],
-          "status": "sense-dades"
+          "unmappedRaw": [
+            "rapejar"
+          ],
+          "status": "per-revisar",
+          "wikidataWorkRaw": [
+            "rapejar"
+          ],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.235Z"
         }
       }
     },
@@ -3655,7 +5295,7 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.611Z",
+          "checkedAt": "2026-09-25T17:01:21.236Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:09.914Z",
           "wikidataRaw": [
             "folk",
@@ -3665,10 +5305,10 @@
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [
-            "música mediterrània",
             "cançó popular"
           ],
-          "status": "parcial"
+          "status": "parcial",
+          "wikidataWorkRaw": []
         }
       },
       "genresRaw": [
@@ -3721,7 +5361,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.613Z",
+          "checkedAt": "2026-09-25T17:01:21.239Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:11.214Z",
           "wikidataRaw": [
             "iòdel",
@@ -3741,14 +5381,17 @@
             "havanera",
             "cançons marineres"
           ],
-          "status": "parcial"
+          "status": "parcial",
+          "wikidataWorkRaw": []
         }
       }
     },
     {
       "name": "El Último de la Fila",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Rock"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -3830,15 +5473,23 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.613Z",
+          "checkedAt": "2026-09-25T17:01:21.239Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:12.570Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades"
+          "status": "classificat",
+          "wikidataWorkRaw": [
+            "rock en castellà",
+            "rock"
+          ],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.239Z"
         }
       },
-      "genresRaw": []
+      "genresRaw": [
+        "rock en castellà",
+        "rock"
+      ]
     },
     {
       "name": "Elphomega",
@@ -3924,14 +5575,15 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.614Z",
+          "checkedAt": "2026-09-25T17:01:21.239Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:13.850Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [
             "hip hop"
           ],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       },
       "genresRaw": [
@@ -3982,7 +5634,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.615Z",
+          "checkedAt": "2026-09-25T17:01:21.241Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:15.687Z",
           "wikidataRaw": [
             "folk",
@@ -3998,7 +5650,8 @@
             "música d'autor",
             "música avantguardista"
           ],
-          "status": "parcial"
+          "status": "parcial",
+          "wikidataWorkRaw": []
         }
       }
     },
@@ -4041,14 +5694,15 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.615Z",
+          "checkedAt": "2026-09-25T17:01:21.241Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:17.507Z",
           "wikidataRaw": [
             "folk rock"
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       }
     },
@@ -4152,14 +5806,15 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.615Z",
+          "checkedAt": "2026-09-25T17:01:21.241Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:18.767Z",
           "wikidataRaw": [
             "pop-rock"
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       },
       "genresRaw": [
@@ -4205,12 +5860,14 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.615Z",
+          "checkedAt": "2026-09-25T17:01:21.241Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:20.154Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades"
+          "status": "sense-dades",
+          "wikidataWorkRaw": [],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.241Z"
         }
       },
       "genresRaw": []
@@ -4284,7 +5941,7 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.616Z",
+          "checkedAt": "2026-09-25T17:01:21.242Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:21.601Z",
           "wikidataRaw": [
             "òpera",
@@ -4295,7 +5952,8 @@
           "unmappedRaw": [
             "sarsuela"
           ],
-          "status": "parcial"
+          "status": "parcial",
+          "wikidataWorkRaw": []
         }
       },
       "genresRaw": [
@@ -4360,12 +6018,14 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.616Z",
+          "checkedAt": "2026-09-25T17:01:21.242Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:22.924Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades"
+          "status": "sense-dades",
+          "wikidataWorkRaw": [],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.242Z"
         }
       },
       "genresRaw": []
@@ -4373,7 +6033,9 @@
     {
       "name": "Esquirols",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Folk i arrel"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -4455,15 +6117,25 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.616Z",
+          "checkedAt": "2026-09-25T17:01:21.242Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:24.396Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
-          "unmappedRaw": [],
-          "status": "sense-dades"
+          "unmappedRaw": [
+            "country"
+          ],
+          "status": "parcial",
+          "wikidataWorkRaw": [
+            "country",
+            "folk"
+          ],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.242Z"
         }
       },
-      "genresRaw": []
+      "genresRaw": [
+        "country",
+        "folk"
+      ]
     },
     {
       "name": "Esther Querol Forner",
@@ -4547,14 +6219,15 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.616Z",
+          "checkedAt": "2026-09-25T17:01:21.243Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:25.663Z",
           "wikidataRaw": [
             "pop"
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       },
       "genresRaw": [
@@ -4602,7 +6275,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.617Z",
+          "checkedAt": "2026-09-25T17:01:21.243Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:27.035Z",
           "wikidataRaw": [
             "música urbana",
@@ -4611,14 +6284,18 @@
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       }
     },
     {
       "name": "Ferran Palau",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Pop",
+        "Indie / Alternativa"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -4645,15 +6322,21 @@
       ],
       "lastChecked": "2026-09-25T15:44:05.402Z",
       "notes": "",
-      "genresRaw": [],
+      "genresRaw": [
+        "indie pop"
+      ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.617Z",
+          "checkedAt": "2026-09-25T17:01:21.244Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:28.406Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades"
+          "status": "classificat",
+          "wikidataWorkRaw": [
+            "indie pop"
+          ],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.243Z"
         }
       }
     },
@@ -4698,7 +6381,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.618Z",
+          "checkedAt": "2026-09-25T17:01:21.245Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:29.779Z",
           "wikidataRaw": [
             "pop",
@@ -4710,7 +6393,8 @@
           "unmappedRaw": [
             "música llatina"
           ],
-          "status": "parcial"
+          "status": "parcial",
+          "wikidataWorkRaw": []
         }
       }
     },
@@ -4751,14 +6435,15 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.618Z",
+          "checkedAt": "2026-09-25T17:01:21.245Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:31.320Z",
           "wikidataRaw": [
             "música urbana"
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       }
     },
@@ -4851,7 +6536,7 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.619Z",
+          "checkedAt": "2026-09-25T17:01:21.246Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:32.721Z",
           "wikidataRaw": [
             "música mediterrània",
@@ -4861,10 +6546,10 @@
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [
-            "música mediterrània",
             "música del món"
           ],
-          "status": "parcial"
+          "status": "parcial",
+          "wikidataWorkRaw": []
         }
       },
       "genresRaw": [
@@ -4953,12 +6638,14 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.619Z",
+          "checkedAt": "2026-09-25T17:01:21.246Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:34.239Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades"
+          "status": "sense-dades",
+          "wikidataWorkRaw": [],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.246Z"
         }
       },
       "genresRaw": []
@@ -5049,14 +6736,15 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.620Z",
+          "checkedAt": "2026-09-25T17:01:21.247Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:35.501Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [
             "classical"
           ],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       },
       "genresRaw": [
@@ -5149,14 +6837,15 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.620Z",
+          "checkedAt": "2026-09-25T17:01:21.247Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:36.763Z",
           "wikidataRaw": [
             "folk"
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       },
       "genresRaw": [
@@ -5200,14 +6889,15 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.620Z",
+          "checkedAt": "2026-09-25T17:01:21.247Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:38.143Z",
           "wikidataRaw": [
             "rumba catalana"
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       }
     },
@@ -5249,14 +6939,15 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.620Z",
+          "checkedAt": "2026-09-25T17:01:21.248Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:39.406Z",
           "wikidataRaw": [
             "pop-folk"
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       }
     },
@@ -5305,14 +6996,15 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.621Z",
+          "checkedAt": "2026-09-25T17:01:21.248Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:40.969Z",
           "wikidataRaw": [
             "pop"
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       }
     },
@@ -5360,7 +7052,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.622Z",
+          "checkedAt": "2026-09-25T17:01:21.250Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:42.353Z",
           "wikidataRaw": [
             "música de cantautor",
@@ -5371,7 +7063,8 @@
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       }
     },
@@ -5460,12 +7153,14 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.622Z",
+          "checkedAt": "2026-09-25T17:01:21.250Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:43.702Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades"
+          "status": "sense-dades",
+          "wikidataWorkRaw": [],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.250Z"
         }
       },
       "genresRaw": []
@@ -5473,7 +7168,10 @@
     {
       "name": "Guillem Gisbert i Puig",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Pop",
+        "Indie / Alternativa"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -5550,20 +7248,32 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.622Z",
+          "checkedAt": "2026-09-25T17:01:21.250Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:45.148Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
-          "unmappedRaw": [],
-          "status": "sense-dades"
+          "unmappedRaw": [
+            "música independent"
+          ],
+          "status": "parcial",
+          "wikidataWorkRaw": [
+            "música independent",
+            "indie pop"
+          ],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.250Z"
         }
       },
-      "genresRaw": []
+      "genresRaw": [
+        "música independent",
+        "indie pop"
+      ]
     },
     {
       "name": "Guillermina Motta",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Cançó d'autor"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -5644,15 +7354,25 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.622Z",
+          "checkedAt": "2026-09-25T17:01:21.250Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:46.528Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
-          "unmappedRaw": [],
-          "status": "sense-dades"
+          "unmappedRaw": [
+            "cuplet"
+          ],
+          "status": "parcial",
+          "wikidataWorkRaw": [
+            "Nova Cançó",
+            "cuplet"
+          ],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.250Z"
         }
       },
-      "genresRaw": []
+      "genresRaw": [
+        "Nova Cançó",
+        "cuplet"
+      ]
     },
     {
       "name": "Inadaptats",
@@ -5693,7 +7413,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.623Z",
+          "checkedAt": "2026-09-25T17:01:21.251Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:47.870Z",
           "wikidataRaw": [
             "oi!",
@@ -5703,7 +7423,8 @@
             "hardcore punk"
           ],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       }
     },
@@ -5793,7 +7514,7 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.624Z",
+          "checkedAt": "2026-09-25T17:01:21.252Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:49.235Z",
           "wikidataRaw": [
             "cançó d'autor",
@@ -5803,7 +7524,8 @@
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       },
       "genresRaw": [
@@ -5894,14 +7616,15 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.625Z",
+          "checkedAt": "2026-09-25T17:01:21.252Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:50.505Z",
           "wikidataRaw": [
             "òpera"
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       },
       "genresRaw": [
@@ -5989,12 +7712,14 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.625Z",
+          "checkedAt": "2026-09-25T17:01:21.252Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:51.855Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades"
+          "status": "sense-dades",
+          "wikidataWorkRaw": [],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.252Z"
         }
       },
       "genresRaw": []
@@ -6055,12 +7780,14 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.625Z",
+          "checkedAt": "2026-09-25T17:01:21.252Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:53.213Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades"
+          "status": "sense-dades",
+          "wikidataWorkRaw": [],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.252Z"
         }
       },
       "genresRaw": []
@@ -6120,12 +7847,14 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.625Z",
+          "checkedAt": "2026-09-25T17:01:21.252Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:54.468Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades"
+          "status": "sense-dades",
+          "wikidataWorkRaw": [],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.252Z"
         }
       },
       "genresRaw": []
@@ -6170,7 +7899,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.625Z",
+          "checkedAt": "2026-09-25T17:01:21.253Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:55.902Z",
           "wikidataRaw": [
             "lo-fi",
@@ -6179,7 +7908,8 @@
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       }
     },
@@ -6227,7 +7957,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.627Z",
+          "checkedAt": "2026-09-25T17:01:21.255Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:57.292Z",
           "wikidataRaw": [
             "música de cantautor",
@@ -6240,7 +7970,8 @@
           "unmappedRaw": [
             "música independent"
           ],
-          "status": "parcial"
+          "status": "parcial",
+          "wikidataWorkRaw": []
         }
       }
     },
@@ -6284,12 +8015,14 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.627Z",
+          "checkedAt": "2026-09-25T17:01:21.255Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:58.640Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades"
+          "status": "sense-dades",
+          "wikidataWorkRaw": [],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.255Z"
         }
       },
       "genresRaw": []
@@ -6342,15 +8075,29 @@
           "relationCount": 1
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.627Z",
+          "checkedAt": "2026-09-25T17:01:21.255Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:00.042Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
-          "unmappedRaw": [],
-          "status": "sense-dades"
+          "unmappedRaw": [
+            "comèdia",
+            "cinema romàntic",
+            "comèdia romàntica"
+          ],
+          "status": "per-revisar",
+          "wikidataWorkRaw": [
+            "comèdia",
+            "cinema romàntic",
+            "comèdia romàntica"
+          ],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.255Z"
         }
       },
-      "genresRaw": []
+      "genresRaw": [
+        "comèdia",
+        "cinema romàntic",
+        "comèdia romàntica"
+      ]
     },
     {
       "name": "Joan Manuel Serrat i Teresa",
@@ -6396,7 +8143,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.630Z",
+          "checkedAt": "2026-09-25T17:01:21.257Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:01.458Z",
           "wikidataRaw": [
             "Nova Cançó",
@@ -6412,7 +8159,8 @@
           "unmappedRaw": [
             "trova"
           ],
-          "status": "parcial"
+          "status": "parcial",
+          "wikidataWorkRaw": []
         }
       }
     },
@@ -6489,7 +8237,7 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.631Z",
+          "checkedAt": "2026-09-25T17:01:21.258Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:02.716Z",
           "wikidataRaw": [
             "pop"
@@ -6501,7 +8249,8 @@
             "pop"
           ],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       },
       "genresRaw": [
@@ -6599,14 +8348,15 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.631Z",
+          "checkedAt": "2026-09-25T17:01:21.259Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:04.117Z",
           "wikidataRaw": [
             "folk"
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       },
       "genresRaw": [
@@ -6616,7 +8366,9 @@
     {
       "name": "Joaquim Homs i Oller",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Folk i arrel"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -6692,16 +8444,15 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.631Z",
+          "checkedAt": "2026-09-25T17:01:21.259Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:05.500Z",
           "wikidataRaw": [
             "sardana"
           ],
           "musicbrainzRaw": [],
-          "unmappedRaw": [
-            "sardana"
-          ],
-          "status": "per-revisar"
+          "unmappedRaw": [],
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       },
       "genresRaw": [
@@ -6711,7 +8462,9 @@
     {
       "name": "Jofre Bardagí Grima",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Pop"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -6738,22 +8491,30 @@
       ],
       "lastChecked": "2026-09-25T15:44:05.402Z",
       "notes": "",
-      "genresRaw": [],
+      "genresRaw": [
+        "pop"
+      ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.631Z",
+          "checkedAt": "2026-09-25T17:01:21.259Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:06.749Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades"
+          "status": "classificat",
+          "wikidataWorkRaw": [
+            "pop"
+          ],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.259Z"
         }
       }
     },
     {
       "name": "Jordi Barre",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Folk i arrel"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -6835,7 +8596,7 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.632Z",
+          "checkedAt": "2026-09-25T17:01:21.260Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:08.052Z",
           "wikidataRaw": [
             "sardana",
@@ -6843,10 +8604,10 @@
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [
-            "sardana",
             "cançó"
           ],
-          "status": "per-revisar"
+          "status": "parcial",
+          "wikidataWorkRaw": []
         }
       },
       "genresRaw": [
@@ -6938,12 +8699,14 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.632Z",
+          "checkedAt": "2026-09-25T17:01:21.260Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:09.321Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades"
+          "status": "sense-dades",
+          "wikidataWorkRaw": [],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.260Z"
         }
       },
       "genresRaw": []
@@ -7029,7 +8792,7 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.632Z",
+          "checkedAt": "2026-09-25T17:01:21.260Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:10.594Z",
           "wikidataRaw": [
             "òpera"
@@ -7038,7 +8801,8 @@
             "classical"
           ],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       },
       "genresRaw": [
@@ -7049,7 +8813,9 @@
     {
       "name": "Josep Maria Mestres Quadreny",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Experimental / Avantguarda"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -7077,16 +8843,15 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.632Z",
+          "checkedAt": "2026-09-25T17:01:21.261Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:11.869Z",
           "wikidataRaw": [
             "música electroacústica"
           ],
           "musicbrainzRaw": [],
-          "unmappedRaw": [
-            "música electroacústica"
-          ],
-          "status": "per-revisar"
+          "unmappedRaw": [],
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       },
       "genresRaw": [
@@ -7126,7 +8891,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.633Z",
+          "checkedAt": "2026-09-25T17:01:21.262Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:13.282Z",
           "wikidataRaw": [
             "música contemporània",
@@ -7138,7 +8903,8 @@
           "unmappedRaw": [
             "música contemporània"
           ],
-          "status": "parcial"
+          "status": "parcial",
+          "wikidataWorkRaw": []
         }
       },
       "genresRaw": [
@@ -7188,7 +8954,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.634Z",
+          "checkedAt": "2026-09-25T17:01:21.263Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:14.671Z",
           "wikidataRaw": [
             "folk",
@@ -7199,14 +8965,18 @@
             "jazz"
           ],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       }
     },
     {
       "name": "Juli Bustamante",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Pop",
+        "Folk i arrel"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -7234,15 +9004,23 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.634Z",
+          "checkedAt": "2026-09-25T17:01:21.263Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:15.935Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades"
+          "status": "classificat",
+          "wikidataWorkRaw": [
+            "pop",
+            "folk"
+          ],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.263Z"
         }
       },
-      "genresRaw": []
+      "genresRaw": [
+        "pop",
+        "folk"
+      ]
     },
     {
       "name": "Julieta",
@@ -7288,7 +9066,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.636Z",
+          "checkedAt": "2026-09-25T17:01:21.265Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:17.197Z",
           "wikidataRaw": [
             "música electrònica",
@@ -7302,7 +9080,8 @@
           "unmappedRaw": [
             "música vocal"
           ],
-          "status": "parcial"
+          "status": "parcial",
+          "wikidataWorkRaw": []
         }
       }
     },
@@ -7338,7 +9117,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.637Z",
+          "checkedAt": "2026-09-25T17:01:21.266Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:18.542Z",
           "wikidataRaw": [
             "jazz",
@@ -7353,7 +9132,8 @@
             "8 bit",
             "chiptune"
           ],
-          "status": "parcial"
+          "status": "parcial",
+          "wikidataWorkRaw": []
         }
       },
       "genresRaw": [
@@ -7401,14 +9181,15 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.637Z",
+          "checkedAt": "2026-09-25T17:01:21.266Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:19.897Z",
           "wikidataRaw": [
             "thrash metal"
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       }
     },
@@ -7445,7 +9226,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.637Z",
+          "checkedAt": "2026-09-25T17:01:21.267Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:21.264Z",
           "wikidataRaw": [
             "punk rock",
@@ -7454,7 +9235,8 @@
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       },
       "genresRaw": [
@@ -7496,14 +9278,15 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.638Z",
+          "checkedAt": "2026-09-25T17:01:21.267Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:22.676Z",
           "wikidataRaw": [
             "indie rock"
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       },
       "genresRaw": [
@@ -7513,7 +9296,11 @@
     {
       "name": "La Brigada",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Pop",
+        "Indie / Alternativa",
+        "Folk i arrel"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -7540,15 +9327,25 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.638Z",
+          "checkedAt": "2026-09-25T17:01:21.268Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:24.026Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades"
+          "status": "classificat",
+          "wikidataWorkRaw": [
+            "indie pop",
+            "pop",
+            "folk"
+          ],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.267Z"
         }
       },
-      "genresRaw": []
+      "genresRaw": [
+        "indie pop",
+        "pop",
+        "folk"
+      ]
     },
     {
       "name": "La Carrau",
@@ -7580,12 +9377,14 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.638Z",
+          "checkedAt": "2026-09-25T17:01:21.268Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:25.467Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades"
+          "status": "sense-dades",
+          "wikidataWorkRaw": [],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.268Z"
         }
       },
       "genresRaw": []
@@ -7628,14 +9427,15 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.638Z",
+          "checkedAt": "2026-09-25T17:01:21.268Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:26.840Z",
           "wikidataRaw": [
             "pop-rock"
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       }
     },
@@ -7673,7 +9473,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.639Z",
+          "checkedAt": "2026-09-25T17:01:21.269Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:28.219Z",
           "wikidataRaw": [
             "ska punk"
@@ -7684,7 +9484,8 @@
             "ska"
           ],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       },
       "genresRaw": [
@@ -7736,7 +9537,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.640Z",
+          "checkedAt": "2026-09-25T17:01:21.270Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:29.484Z",
           "wikidataRaw": [
             "indie folk",
@@ -7745,7 +9546,8 @@
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       }
     },
@@ -7788,7 +9590,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.640Z",
+          "checkedAt": "2026-09-25T17:01:21.270Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:30.738Z",
           "wikidataRaw": [
             "pop",
@@ -7796,7 +9598,8 @@
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       }
     },
@@ -7838,7 +9641,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.640Z",
+          "checkedAt": "2026-09-25T17:01:21.271Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:32.167Z",
           "wikidataRaw": [
             "rumba catalana",
@@ -7848,14 +9651,17 @@
             "rumba catalana"
           ],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       }
     },
     {
       "name": "La Trinca",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Rumba / Mestissatge"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -7882,20 +9688,34 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.641Z",
+          "checkedAt": "2026-09-25T17:01:21.272Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:33.508Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [
             "comedy"
           ],
           "unmappedRaw": [
-            "comedy"
+            "comedy",
+            "teatre i cinema",
+            "música popular",
+            "cançó humorística"
           ],
-          "status": "per-revisar"
+          "status": "parcial",
+          "wikidataWorkRaw": [
+            "teatre i cinema",
+            "rumba catalana",
+            "música popular",
+            "cançó humorística"
+          ],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.271Z"
         }
       },
       "genresRaw": [
-        "comedy"
+        "comedy",
+        "teatre i cinema",
+        "rumba catalana",
+        "música popular",
+        "cançó humorística"
       ]
     },
     {
@@ -7928,12 +9748,14 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.641Z",
+          "checkedAt": "2026-09-25T17:01:21.272Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:34.886Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades"
+          "status": "sense-dades",
+          "wikidataWorkRaw": [],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.272Z"
         }
       },
       "genresRaw": []
@@ -7975,14 +9797,15 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.641Z",
+          "checkedAt": "2026-09-25T17:01:21.272Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:36.142Z",
           "wikidataRaw": [
             "música urbana"
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       }
     },
@@ -8020,7 +9843,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.641Z",
+          "checkedAt": "2026-09-25T17:01:21.273Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:37.560Z",
           "wikidataRaw": [
             "pop-rock",
@@ -8030,7 +9853,8 @@
             "rock"
           ],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       },
       "genresRaw": [
@@ -8077,7 +9901,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.642Z",
+          "checkedAt": "2026-09-25T17:01:21.273Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:38.815Z",
           "wikidataRaw": [
             "rap",
@@ -8085,7 +9909,8 @@
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       }
     },
@@ -8121,12 +9946,14 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.642Z",
+          "checkedAt": "2026-09-25T17:01:21.273Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:40.074Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades"
+          "status": "sense-dades",
+          "wikidataWorkRaw": [],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.273Z"
         }
       },
       "genresRaw": []
@@ -8134,7 +9961,9 @@
     {
       "name": "Lluís Llach i Grande",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Cançó d'autor"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -8169,16 +9998,15 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.642Z",
+          "checkedAt": "2026-09-25T17:01:21.274Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:41.458Z",
           "wikidataRaw": [
             "cançó protesta"
           ],
           "musicbrainzRaw": [],
-          "unmappedRaw": [
-            "cançó protesta"
-          ],
-          "status": "per-revisar"
+          "unmappedRaw": [],
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       }
     },
@@ -8231,12 +10059,14 @@
           "relationCount": 1
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.642Z",
+          "checkedAt": "2026-09-25T17:01:21.274Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:42.869Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades"
+          "status": "sense-dades",
+          "wikidataWorkRaw": [],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.274Z"
         }
       },
       "genresRaw": []
@@ -8278,14 +10108,15 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.642Z",
+          "checkedAt": "2026-09-25T17:01:21.274Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:44.250Z",
           "wikidataRaw": [
             "hip hop polític"
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       }
     },
@@ -8321,14 +10152,15 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.643Z",
+          "checkedAt": "2026-09-25T17:01:21.274Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:45.626Z",
           "wikidataRaw": [
             "rumba catalana"
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       },
       "genresRaw": [
@@ -8370,7 +10202,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.644Z",
+          "checkedAt": "2026-09-25T17:01:21.276Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:46.952Z",
           "wikidataRaw": [
             "nadala",
@@ -8382,7 +10214,8 @@
           "unmappedRaw": [
             "nadala"
           ],
-          "status": "parcial"
+          "status": "parcial",
+          "wikidataWorkRaw": []
         }
       },
       "genresRaw": [
@@ -8425,7 +10258,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.644Z",
+          "checkedAt": "2026-09-25T17:01:21.277Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:48.216Z",
           "wikidataRaw": [
             "jazz contemporani"
@@ -8436,7 +10269,8 @@
             "pop"
           ],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       },
       "genresRaw": [
@@ -8449,7 +10283,10 @@
     {
       "name": "Mama Dousha",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Urbana",
+        "Electrònica"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -8476,15 +10313,23 @@
       ],
       "lastChecked": "2026-09-25T15:44:05.402Z",
       "notes": "",
-      "genresRaw": [],
+      "genresRaw": [
+        "música electrònica",
+        "música urbana"
+      ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.644Z",
+          "checkedAt": "2026-09-25T17:01:21.277Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:49.676Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades"
+          "status": "classificat",
+          "wikidataWorkRaw": [
+            "música electrònica",
+            "música urbana"
+          ],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.277Z"
         }
       }
     },
@@ -8534,7 +10379,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.646Z",
+          "checkedAt": "2026-09-25T17:01:21.279Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:51.072Z",
           "wikidataRaw": [
             "música mediterrània",
@@ -8547,10 +10392,9 @@
             "folk pop",
             "pop"
           ],
-          "unmappedRaw": [
-            "música mediterrània"
-          ],
-          "status": "parcial"
+          "unmappedRaw": [],
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       }
     },
@@ -8585,15 +10429,29 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.646Z",
+          "checkedAt": "2026-09-25T17:01:21.279Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:52.647Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
-          "unmappedRaw": [],
-          "status": "sense-dades"
+          "unmappedRaw": [
+            "drama",
+            "musical",
+            "telenovel·la"
+          ],
+          "status": "per-revisar",
+          "wikidataWorkRaw": [
+            "drama",
+            "musical",
+            "telenovel·la"
+          ],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.279Z"
         }
       },
-      "genresRaw": []
+      "genresRaw": [
+        "drama",
+        "musical",
+        "telenovel·la"
+      ]
     },
     {
       "name": "Manuel Espona",
@@ -8626,12 +10484,14 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.646Z",
+          "checkedAt": "2026-09-25T17:01:21.279Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:54.233Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades"
+          "status": "sense-dades",
+          "wikidataWorkRaw": [],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.279Z"
         }
       },
       "genresRaw": []
@@ -8666,12 +10526,14 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.646Z",
+          "checkedAt": "2026-09-25T17:01:21.279Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:55.635Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades"
+          "status": "sense-dades",
+          "wikidataWorkRaw": [],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.279Z"
         }
       },
       "genresRaw": []
@@ -8707,12 +10569,14 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.646Z",
+          "checkedAt": "2026-09-25T17:01:21.279Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:57.069Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades"
+          "status": "sense-dades",
+          "wikidataWorkRaw": [],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.279Z"
         }
       },
       "genresRaw": []
@@ -8720,7 +10584,9 @@
     {
       "name": "Maria Bertomeu i Soria",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Folk i arrel"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -8752,16 +10618,15 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.646Z",
+          "checkedAt": "2026-09-25T17:01:21.280Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:58.639Z",
           "wikidataRaw": [
             "cant valencià d'estil"
           ],
           "musicbrainzRaw": [],
-          "unmappedRaw": [
-            "cant valencià d'estil"
-          ],
-          "status": "per-revisar"
+          "unmappedRaw": [],
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       }
     },
@@ -8799,7 +10664,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.647Z",
+          "checkedAt": "2026-09-25T17:01:21.281Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:01.257Z",
           "wikidataRaw": [
             "música mediterrània",
@@ -8809,10 +10674,9 @@
           "musicbrainzRaw": [
             "folk"
           ],
-          "unmappedRaw": [
-            "música mediterrània"
-          ],
-          "status": "parcial"
+          "unmappedRaw": [],
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       },
       "genresRaw": [
@@ -8825,7 +10689,11 @@
     {
       "name": "Maria Hein",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Pop",
+        "Urbana",
+        "Electrònica"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -8852,20 +10720,35 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.647Z",
+          "checkedAt": "2026-09-25T17:01:21.281Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:02.522Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades"
+          "status": "classificat",
+          "wikidataWorkRaw": [
+            "música urbana",
+            "pop",
+            "música electrònica"
+          ],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.281Z"
         }
       },
-      "genresRaw": []
+      "genresRaw": [
+        "música urbana",
+        "pop",
+        "música electrònica"
+      ]
     },
     {
       "name": "Maria Jaume",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Pop",
+        "Indie / Alternativa",
+        "Folk i arrel",
+        "Cançó d'autor"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -8912,15 +10795,31 @@
           "relationCount": 1
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.647Z",
+          "checkedAt": "2026-09-25T17:01:21.282Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:03.909Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades"
+          "status": "classificat",
+          "wikidataWorkRaw": [
+            "art pop",
+            "indie pop",
+            "cançó d'autor",
+            "synthpop",
+            "electropop",
+            "pop-folk"
+          ],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.281Z"
         }
       },
-      "genresRaw": []
+      "genresRaw": [
+        "art pop",
+        "indie pop",
+        "cançó d'autor",
+        "synthpop",
+        "electropop",
+        "pop-folk"
+      ]
     },
     {
       "name": "Marina Rossell",
@@ -8953,22 +10852,33 @@
       ],
       "lastChecked": "2026-09-25T15:44:05.402Z",
       "notes": "",
-      "genresRaw": [],
+      "genresRaw": [
+        "havanera"
+      ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.647Z",
+          "checkedAt": "2026-09-25T17:01:21.282Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:05.239Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
-          "unmappedRaw": [],
-          "status": "sense-dades"
+          "unmappedRaw": [
+            "havanera"
+          ],
+          "status": "per-revisar",
+          "wikidataWorkRaw": [
+            "havanera"
+          ],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.282Z"
         }
       }
     },
     {
       "name": "Mariona Escoda i Sendra",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Pop",
+        "Cançó d'autor"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -8995,15 +10905,23 @@
       ],
       "lastChecked": "2026-09-25T15:44:05.402Z",
       "notes": "",
-      "genresRaw": [],
+      "genresRaw": [
+        "pop",
+        "cançó d'autor"
+      ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.647Z",
+          "checkedAt": "2026-09-25T17:01:21.283Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:06.565Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades"
+          "status": "classificat",
+          "wikidataWorkRaw": [
+            "pop",
+            "cançó d'autor"
+          ],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.282Z"
         }
       }
     },
@@ -9037,12 +10955,14 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.647Z",
+          "checkedAt": "2026-09-25T17:01:21.283Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:07.942Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades"
+          "status": "sense-dades",
+          "wikidataWorkRaw": [],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.283Z"
         }
       },
       "genresRaw": []
@@ -9084,14 +11004,15 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.647Z",
+          "checkedAt": "2026-09-25T17:01:21.283Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:09.293Z",
           "wikidataRaw": [
             "pop"
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       }
     },
@@ -9146,14 +11067,15 @@
           "relationCount": 1
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.647Z",
+          "checkedAt": "2026-09-25T17:01:21.283Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:10.691Z",
           "wikidataRaw": [
             "flamenc"
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       },
       "genresRaw": [
@@ -9202,7 +11124,7 @@
           "relationCount": 1
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.648Z",
+          "checkedAt": "2026-09-25T17:01:21.284Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:12.220Z",
           "wikidataRaw": [
             "rock psicodèlic",
@@ -9212,7 +11134,8 @@
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       },
       "genresRaw": [
@@ -9255,14 +11178,15 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.649Z",
+          "checkedAt": "2026-09-25T17:01:21.285Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:13.588Z",
           "wikidataRaw": [
             "pop-rock"
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       },
       "genresRaw": [
@@ -9301,12 +11225,14 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.649Z",
+          "checkedAt": "2026-09-25T17:01:21.285Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:15.035Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades"
+          "status": "sense-dades",
+          "wikidataWorkRaw": [],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.285Z"
         }
       },
       "genresRaw": []
@@ -9363,7 +11289,7 @@
           "relationCount": 1
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.649Z",
+          "checkedAt": "2026-09-25T17:01:21.285Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:16.309Z",
           "wikidataRaw": [
             "pop-rock",
@@ -9373,7 +11299,8 @@
             "indie pop"
           ],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       },
       "genresRaw": [
@@ -9413,7 +11340,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.649Z",
+          "checkedAt": "2026-09-25T17:01:21.286Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:17.580Z",
           "wikidataRaw": [
             "música tradicional",
@@ -9423,7 +11350,8 @@
           "unmappedRaw": [
             "música africana"
           ],
-          "status": "parcial"
+          "status": "parcial",
+          "wikidataWorkRaw": []
         }
       },
       "genresRaw": [
@@ -9468,7 +11396,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.651Z",
+          "checkedAt": "2026-09-25T17:01:21.288Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:18.849Z",
           "wikidataRaw": [
             "reggaeton",
@@ -9479,7 +11407,8 @@
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       },
       "genresRaw": [
@@ -9535,7 +11464,7 @@
           "relationCount": 1
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.652Z",
+          "checkedAt": "2026-09-25T17:01:21.290Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:20.218Z",
           "wikidataRaw": [
             "punk rock",
@@ -9551,7 +11480,8 @@
             "música llatina",
             "fusió musical"
           ],
-          "status": "parcial"
+          "status": "parcial",
+          "wikidataWorkRaw": []
         }
       },
       "genresRaw": [
@@ -9567,7 +11497,9 @@
     {
       "name": "Narcís Perich i Serra",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Folk i arrel"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -9595,16 +11527,15 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.653Z",
+          "checkedAt": "2026-09-25T17:01:21.290Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:21.492Z",
           "wikidataRaw": [
             "sardana"
           ],
           "musicbrainzRaw": [],
-          "unmappedRaw": [
-            "sardana"
-          ],
-          "status": "per-revisar"
+          "unmappedRaw": [],
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       },
       "genresRaw": [
@@ -9614,7 +11545,9 @@
     {
       "name": "Nerea Rodríguez i Rodríguez",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Pop"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -9642,15 +11575,21 @@
       ],
       "lastChecked": "2026-09-25T15:47:57.997Z",
       "notes": "",
-      "genresRaw": [],
+      "genresRaw": [
+        "pop"
+      ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.653Z",
+          "checkedAt": "2026-09-25T17:01:21.290Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:22.776Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades"
+          "status": "classificat",
+          "wikidataWorkRaw": [
+            "pop"
+          ],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.290Z"
         }
       }
     },
@@ -9688,14 +11627,15 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.653Z",
+          "checkedAt": "2026-09-25T17:01:21.291Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:24.150Z",
           "wikidataRaw": [
             "pop"
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       },
       "genresRaw": [
@@ -9744,7 +11684,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.654Z",
+          "checkedAt": "2026-09-25T17:01:21.291Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:25.588Z",
           "wikidataRaw": [
             "folk",
@@ -9757,14 +11697,17 @@
           "unmappedRaw": [
             "bolero"
           ],
-          "status": "parcial"
+          "status": "parcial",
+          "wikidataWorkRaw": []
         }
       }
     },
     {
       "name": "Núria López i Fàbrega",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Pop"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -9791,15 +11734,21 @@
       ],
       "lastChecked": "2026-09-25T15:44:05.402Z",
       "notes": "",
-      "genresRaw": [],
+      "genresRaw": [
+        "pop"
+      ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.654Z",
+          "checkedAt": "2026-09-25T17:01:21.292Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:27.053Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades"
+          "status": "classificat",
+          "wikidataWorkRaw": [
+            "pop"
+          ],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.291Z"
         }
       }
     },
@@ -9852,7 +11801,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.655Z",
+          "checkedAt": "2026-09-25T17:01:21.294Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:28.323Z",
           "wikidataRaw": [
             "hardcore punk",
@@ -9871,7 +11820,8 @@
           "unmappedRaw": [
             "fusió musical"
           ],
-          "status": "parcial"
+          "status": "parcial",
+          "wikidataWorkRaw": []
         }
       }
     },
@@ -9918,7 +11868,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.656Z",
+          "checkedAt": "2026-09-25T17:01:21.295Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:29.652Z",
           "wikidataRaw": [
             "música del món",
@@ -9932,7 +11882,8 @@
             "música del món",
             "fusió musical"
           ],
-          "status": "parcial"
+          "status": "parcial",
+          "wikidataWorkRaw": []
         }
       }
     },
@@ -9967,12 +11918,14 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.656Z",
+          "checkedAt": "2026-09-25T17:01:21.295Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:31.028Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades"
+          "status": "sense-dades",
+          "wikidataWorkRaw": [],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.295Z"
         }
       },
       "genresRaw": []
@@ -10010,19 +11963,23 @@
       "genresRaw": [],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.656Z",
+          "checkedAt": "2026-09-25T17:01:21.295Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:32.410Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades"
+          "status": "sense-dades",
+          "wikidataWorkRaw": [],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.295Z"
         }
       }
     },
     {
       "name": "Orquestra de Cadaqués",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Infantil"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -10049,15 +12006,21 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.656Z",
+          "checkedAt": "2026-09-25T17:01:21.295Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:33.867Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades"
+          "status": "classificat",
+          "wikidataWorkRaw": [
+            "música infantil"
+          ],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.295Z"
         }
       },
-      "genresRaw": []
+      "genresRaw": [
+        "música infantil"
+      ]
     },
     {
       "name": "Orquestra Simfònica del Gran Teatre del Liceu",
@@ -10089,12 +12052,14 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.656Z",
+          "checkedAt": "2026-09-25T17:01:21.295Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:35.135Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades"
+          "status": "sense-dades",
+          "wikidataWorkRaw": [],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.295Z"
         }
       },
       "genresRaw": []
@@ -10102,7 +12067,9 @@
     {
       "name": "Orquestra Simfònica del Vallès",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Infantil"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -10129,20 +12096,34 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.656Z",
+          "checkedAt": "2026-09-25T17:01:21.296Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:36.400Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
-          "unmappedRaw": [],
-          "status": "sense-dades"
+          "unmappedRaw": [
+            "música simfònica"
+          ],
+          "status": "parcial",
+          "wikidataWorkRaw": [
+            "música infantil",
+            "música simfònica"
+          ],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.295Z"
         }
       },
-      "genresRaw": []
+      "genresRaw": [
+        "música infantil",
+        "música simfònica"
+      ]
     },
     {
       "name": "Orxata Sound System",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Electrònica",
+        "Folk i arrel",
+        "Ska / Reggae"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -10188,15 +12169,32 @@
           "relationCount": 1
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.656Z",
+          "checkedAt": "2026-09-25T17:01:21.297Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:37.820Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
-          "unmappedRaw": [],
-          "status": "sense-dades"
+          "unmappedRaw": [
+            "drum and bass",
+            "ragga"
+          ],
+          "status": "parcial",
+          "wikidataWorkRaw": [
+            "música electrònica",
+            "drum and bass",
+            "cant valencià d'estil",
+            "dub",
+            "ragga"
+          ],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.296Z"
         }
       },
-      "genresRaw": []
+      "genresRaw": [
+        "música electrònica",
+        "drum and bass",
+        "cant valencià d'estil",
+        "dub",
+        "ragga"
+      ]
     },
     {
       "name": "Ovidi Montllor i Mengual",
@@ -10231,14 +12229,15 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.657Z",
+          "checkedAt": "2026-09-25T17:01:21.297Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:39.195Z",
           "wikidataRaw": [
             "Nova Cançó"
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       },
       "genresRaw": [
@@ -10279,7 +12278,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.657Z",
+          "checkedAt": "2026-09-25T17:01:21.298Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:40.565Z",
           "wikidataRaw": [
             "electropop",
@@ -10287,7 +12286,8 @@
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       },
       "genresRaw": [
@@ -10325,15 +12325,23 @@
       ],
       "lastChecked": "2026-09-25T15:44:05.402Z",
       "notes": "",
-      "genresRaw": [],
+      "genresRaw": [
+        "rockabilly"
+      ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.657Z",
+          "checkedAt": "2026-09-25T17:01:21.298Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:41.837Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
-          "unmappedRaw": [],
-          "status": "sense-dades"
+          "unmappedRaw": [
+            "rockabilly"
+          ],
+          "status": "per-revisar",
+          "wikidataWorkRaw": [
+            "rockabilly"
+          ],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.298Z"
         }
       }
     },
@@ -10369,7 +12377,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.658Z",
+          "checkedAt": "2026-09-25T17:01:21.298Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:43.100Z",
           "wikidataRaw": [
             "folk",
@@ -10379,7 +12387,8 @@
           "unmappedRaw": [
             "cançó"
           ],
-          "status": "parcial"
+          "status": "parcial",
+          "wikidataWorkRaw": []
         }
       },
       "genresRaw": [
@@ -10438,7 +12447,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.660Z",
+          "checkedAt": "2026-09-25T17:01:21.302Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:44.358Z",
           "wikidataRaw": [
             "rock",
@@ -10456,10 +12465,9 @@
             "psychedelic rock",
             "singer-songwriter"
           ],
-          "unmappedRaw": [
-            "música mediterrània"
-          ],
-          "status": "parcial"
+          "unmappedRaw": [],
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       }
     },
@@ -10504,7 +12512,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.661Z",
+          "checkedAt": "2026-09-25T17:01:21.302Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:45.611Z",
           "wikidataRaw": [
             "música de cantautor",
@@ -10513,7 +12521,8 @@
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       }
     },
@@ -10561,7 +12570,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.662Z",
+          "checkedAt": "2026-09-25T17:01:21.304Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:47.023Z",
           "wikidataRaw": [
             "pop llatí",
@@ -10571,14 +12580,17 @@
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       }
     },
     {
       "name": "Pep Gimeno \"Botifarra\"",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Folk i arrel"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -10605,20 +12617,39 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.662Z",
+          "checkedAt": "2026-09-25T17:01:21.304Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:48.283Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
-          "unmappedRaw": [],
-          "status": "sense-dades"
+          "unmappedRaw": [
+            "música valenciana",
+            "romanç"
+          ],
+          "status": "parcial",
+          "wikidataWorkRaw": [
+            "música valenciana",
+            "romanç",
+            "música tradicional",
+            "folk"
+          ],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.304Z"
         }
       },
-      "genresRaw": []
+      "genresRaw": [
+        "música valenciana",
+        "romanç",
+        "música tradicional",
+        "folk"
+      ]
     },
     {
       "name": "Pep Laguarda",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Pop",
+        "Folk i arrel",
+        "Ska / Reggae"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -10645,20 +12676,35 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.662Z",
+          "checkedAt": "2026-09-25T17:01:21.305Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:49.613Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades"
+          "status": "classificat",
+          "wikidataWorkRaw": [
+            "pop",
+            "folk",
+            "ska"
+          ],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.304Z"
         }
       },
-      "genresRaw": []
+      "genresRaw": [
+        "pop",
+        "folk",
+        "ska"
+      ]
     },
     {
       "name": "Pepet i Marieta",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Pop",
+        "Rock",
+        "Urbana",
+        "Ska / Reggae"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -10685,15 +12731,33 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.662Z",
+          "checkedAt": "2026-09-25T17:01:21.306Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:50.999Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
-          "unmappedRaw": [],
-          "status": "sense-dades"
+          "unmappedRaw": [
+            "patxanga"
+          ],
+          "status": "parcial",
+          "wikidataWorkRaw": [
+            "reggaeton",
+            "patxanga",
+            "ska-rock",
+            "pop-rock",
+            "rock",
+            "reggae"
+          ],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.305Z"
         }
       },
-      "genresRaw": []
+      "genresRaw": [
+        "reggaeton",
+        "patxanga",
+        "ska-rock",
+        "pop-rock",
+        "rock",
+        "reggae"
+      ]
     },
     {
       "name": "Pilseners",
@@ -10733,7 +12797,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.663Z",
+          "checkedAt": "2026-09-25T17:01:21.306Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:52.327Z",
           "wikidataRaw": [
             "oi!",
@@ -10741,7 +12805,8 @@
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       }
     },
@@ -10777,7 +12842,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.663Z",
+          "checkedAt": "2026-09-25T17:01:21.307Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:53.590Z",
           "wikidataRaw": [
             "reggae",
@@ -10789,7 +12854,8 @@
           "unmappedRaw": [
             "ragga"
           ],
-          "status": "parcial"
+          "status": "parcial",
+          "wikidataWorkRaw": []
         }
       },
       "genresRaw": [
@@ -10829,12 +12895,14 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.663Z",
+          "checkedAt": "2026-09-25T17:01:21.307Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:54.841Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades"
+          "status": "sense-dades",
+          "wikidataWorkRaw": [],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.307Z"
         }
       },
       "genresRaw": []
@@ -10875,7 +12943,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.664Z",
+          "checkedAt": "2026-09-25T17:01:21.309Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:56.174Z",
           "wikidataRaw": [
             "balada romàntica",
@@ -10892,10 +12960,10 @@
           "unmappedRaw": [
             "balada romàntica",
             "canción melódica",
-            "latin",
-            "latin ballad"
+            "latin"
           ],
-          "status": "parcial"
+          "status": "parcial",
+          "wikidataWorkRaw": []
         }
       },
       "genresRaw": [
@@ -10940,14 +13008,15 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.664Z",
+          "checkedAt": "2026-09-25T17:01:21.309Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:57.434Z",
           "wikidataRaw": [
             "pop"
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       },
       "genresRaw": [
@@ -10984,12 +13053,14 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.664Z",
+          "checkedAt": "2026-09-25T17:01:21.310Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:58.707Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades"
+          "status": "sense-dades",
+          "wikidataWorkRaw": [],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.309Z"
         }
       },
       "genresRaw": []
@@ -11026,12 +13097,14 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.664Z",
+          "checkedAt": "2026-09-25T17:01:21.310Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:00.089Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades"
+          "status": "sense-dades",
+          "wikidataWorkRaw": [],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.310Z"
         }
       },
       "genresRaw": []
@@ -11071,7 +13144,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.665Z",
+          "checkedAt": "2026-09-25T17:01:21.310Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:01.361Z",
           "wikidataRaw": [
             "cançó d'autor"
@@ -11081,7 +13154,8 @@
             "singer-songwriter"
           ],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       },
       "genresRaw": [
@@ -11122,14 +13196,15 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.665Z",
+          "checkedAt": "2026-09-25T17:01:21.311Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:02.609Z",
           "wikidataRaw": [
             "rap"
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       },
       "genresRaw": [
@@ -11171,7 +13246,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.665Z",
+          "checkedAt": "2026-09-25T17:01:21.312Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:04.100Z",
           "wikidataRaw": [
             "folk rock",
@@ -11183,7 +13258,8 @@
           "unmappedRaw": [
             "electrofolk"
           ],
-          "status": "parcial"
+          "status": "parcial",
+          "wikidataWorkRaw": []
         }
       },
       "genresRaw": [
@@ -11196,7 +13272,9 @@
     {
       "name": "Remigi Palmero i Ruà",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Folk i arrel"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -11223,15 +13301,21 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.665Z",
+          "checkedAt": "2026-09-25T17:01:21.312Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:05.370Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades"
+          "status": "classificat",
+          "wikidataWorkRaw": [
+            "folk"
+          ],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.312Z"
         }
       },
-      "genresRaw": []
+      "genresRaw": [
+        "folk"
+      ]
     },
     {
       "name": "Renaldo & Clara",
@@ -11271,21 +13355,25 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.665Z",
+          "checkedAt": "2026-09-25T17:01:21.312Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:06.727Z",
           "wikidataRaw": [
             "pop-rock"
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       }
     },
     {
       "name": "Roger Mas i Solé",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Folk i arrel",
+        "Cançó d'autor"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -11313,15 +13401,30 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.665Z",
+          "checkedAt": "2026-09-25T17:01:21.313Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:08.177Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
-          "unmappedRaw": [],
-          "status": "sense-dades"
+          "unmappedRaw": [
+            "cançó popular",
+            "música de cobla"
+          ],
+          "status": "parcial",
+          "wikidataWorkRaw": [
+            "cançó popular",
+            "música tradicional dels Països Catalans",
+            "música de cobla",
+            "cançó d'autor"
+          ],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.312Z"
         }
       },
-      "genresRaw": []
+      "genresRaw": [
+        "cançó popular",
+        "música tradicional dels Països Catalans",
+        "música de cobla",
+        "cançó d'autor"
+      ]
     },
     {
       "name": "Rojuu",
@@ -11367,7 +13470,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.666Z",
+          "checkedAt": "2026-09-25T17:01:21.314Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:09.563Z",
           "wikidataRaw": [
             "emo trap",
@@ -11383,7 +13486,8 @@
             "Type Beat",
             "hyperpop"
           ],
-          "status": "parcial"
+          "status": "parcial",
+          "wikidataWorkRaw": []
         }
       }
     },
@@ -11419,7 +13523,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.666Z",
+          "checkedAt": "2026-09-25T17:01:21.315Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:10.933Z",
           "wikidataRaw": [
             "òpera"
@@ -11428,7 +13532,8 @@
             "classical"
           ],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       },
       "genresRaw": [
@@ -11499,7 +13604,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.668Z",
+          "checkedAt": "2026-09-25T17:01:21.320Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:12.216Z",
           "wikidataRaw": [
             "reggaeton",
@@ -11527,7 +13632,8 @@
             "avantguardisme",
             "latin"
           ],
-          "status": "parcial"
+          "status": "parcial",
+          "wikidataWorkRaw": []
         }
       }
     },
@@ -11565,14 +13671,15 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.669Z",
+          "checkedAt": "2026-09-25T17:01:21.320Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:13.483Z",
           "wikidataRaw": [
             "pop"
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       },
       "genresRaw": [
@@ -11618,15 +13725,23 @@
           "relationCount": 1
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.669Z",
+          "checkedAt": "2026-09-25T17:01:21.320Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:14.820Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
-          "unmappedRaw": [],
-          "status": "sense-dades"
+          "unmappedRaw": [
+            "rapejar"
+          ],
+          "status": "per-revisar",
+          "wikidataWorkRaw": [
+            "rapejar"
+          ],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.320Z"
         }
       },
-      "genresRaw": []
+      "genresRaw": [
+        "rapejar"
+      ]
     },
     {
       "name": "Sarah Brightman",
@@ -11678,7 +13793,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.670Z",
+          "checkedAt": "2026-09-25T17:01:21.324Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:16.193Z",
           "wikidataRaw": [
             "musical",
@@ -11705,7 +13820,8 @@
             "new age",
             "space disco"
           ],
-          "status": "parcial"
+          "status": "parcial",
+          "wikidataWorkRaw": []
         }
       }
     },
@@ -11742,14 +13858,15 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.670Z",
+          "checkedAt": "2026-09-25T17:01:21.324Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:17.492Z",
           "wikidataRaw": [
             "pop-rock"
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       },
       "genresRaw": [
@@ -11759,7 +13876,10 @@
     {
       "name": "Scorpio",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Pop",
+        "Urbana"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -11786,22 +13906,34 @@
       ],
       "lastChecked": "2026-09-25T15:44:05.402Z",
       "notes": "",
-      "genresRaw": [],
+      "genresRaw": [
+        "reggaeton",
+        "música urbana",
+        "pop"
+      ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.670Z",
+          "checkedAt": "2026-09-25T17:01:21.325Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:18.753Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades"
+          "status": "classificat",
+          "wikidataWorkRaw": [
+            "reggaeton",
+            "música urbana",
+            "pop"
+          ],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.324Z"
         }
       }
     },
     {
       "name": "Sense Sal",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Pop"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -11828,15 +13960,21 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.670Z",
+          "checkedAt": "2026-09-25T17:01:21.325Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:20.024Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades"
+          "status": "classificat",
+          "wikidataWorkRaw": [
+            "pop"
+          ],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.325Z"
         }
       },
-      "genresRaw": []
+      "genresRaw": [
+        "pop"
+      ]
     },
     {
       "name": "Senyor Oca",
@@ -11876,7 +14014,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.671Z",
+          "checkedAt": "2026-09-25T17:01:21.325Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:21.275Z",
           "wikidataRaw": [
             "drum and bass",
@@ -11886,7 +14024,8 @@
           "unmappedRaw": [
             "drum and bass"
           ],
-          "status": "parcial"
+          "status": "parcial",
+          "wikidataWorkRaw": []
         }
       }
     },
@@ -11929,7 +14068,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.671Z",
+          "checkedAt": "2026-09-25T17:01:21.326Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:22.534Z",
           "wikidataRaw": [
             "música urbana",
@@ -11937,7 +14076,8 @@
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       }
     },
@@ -11993,7 +14133,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.672Z",
+          "checkedAt": "2026-09-25T17:01:21.330Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:23.910Z",
           "wikidataRaw": [
             "rock llatí",
@@ -12018,7 +14158,8 @@
             "música per ballar",
             "latin"
           ],
-          "status": "parcial"
+          "status": "parcial",
+          "wikidataWorkRaw": []
         }
       }
     },
@@ -12061,7 +14202,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.674Z",
+          "checkedAt": "2026-09-25T17:01:21.334Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:25.290Z",
           "wikidataRaw": [
             "flamenc",
@@ -12080,10 +14221,10 @@
             "singer-songwriter"
           ],
           "unmappedRaw": [
-            "música mediterrània",
             "fusió musical"
           ],
-          "status": "parcial"
+          "status": "parcial",
+          "wikidataWorkRaw": []
         }
       },
       "genresRaw": [
@@ -12137,14 +14278,15 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.674Z",
+          "checkedAt": "2026-09-25T17:01:21.335Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:26.654Z",
           "wikidataRaw": [
             "rock"
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       }
     },
@@ -12186,14 +14328,15 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.674Z",
+          "checkedAt": "2026-09-25T17:01:21.335Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:28.060Z",
           "wikidataRaw": [
             "indie pop"
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       }
     },
@@ -12241,7 +14384,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.675Z",
+          "checkedAt": "2026-09-25T17:01:21.338Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:29.340Z",
           "wikidataRaw": [
             "pop",
@@ -12255,7 +14398,8 @@
             "soul"
           ],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       }
     },
@@ -12298,7 +14442,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.675Z",
+          "checkedAt": "2026-09-25T17:01:21.339Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:30.746Z",
           "wikidataRaw": [
             "pop-rock",
@@ -12308,7 +14452,8 @@
             "rock"
           ],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       }
     },
@@ -12350,14 +14495,15 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.675Z",
+          "checkedAt": "2026-09-25T17:01:21.339Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:32.000Z",
           "wikidataRaw": [
             "pop-rock"
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       }
     },
@@ -12391,12 +14537,14 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.675Z",
+          "checkedAt": "2026-09-25T17:01:21.339Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:33.303Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades"
+          "status": "sense-dades",
+          "wikidataWorkRaw": [],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.339Z"
         }
       },
       "genresRaw": []
@@ -12439,14 +14587,15 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.675Z",
+          "checkedAt": "2026-09-25T17:01:21.340Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:34.564Z",
           "wikidataRaw": [
             "pop"
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       }
     },
@@ -12488,7 +14637,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.675Z",
+          "checkedAt": "2026-09-25T17:01:21.341Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:35.839Z",
           "wikidataRaw": [
             "pandeireteiras",
@@ -12498,7 +14647,8 @@
           "unmappedRaw": [
             "pandeireteiras"
           ],
-          "status": "parcial"
+          "status": "parcial",
+          "wikidataWorkRaw": []
         }
       }
     },
@@ -12534,12 +14684,14 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.675Z",
+          "checkedAt": "2026-09-25T17:01:21.341Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:37.101Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades"
+          "status": "sense-dades",
+          "wikidataWorkRaw": [],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.341Z"
         }
       },
       "genresRaw": []
@@ -12583,7 +14735,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.676Z",
+          "checkedAt": "2026-09-25T17:01:21.341Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:38.465Z",
           "wikidataRaw": [
             "oi!",
@@ -12591,7 +14743,8 @@
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       }
     },
@@ -12636,7 +14789,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.676Z",
+          "checkedAt": "2026-09-25T17:01:21.342Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:39.729Z",
           "wikidataRaw": [
             "reggaeton",
@@ -12645,7 +14798,8 @@
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       }
     },
@@ -12680,12 +14834,14 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.676Z",
+          "checkedAt": "2026-09-25T17:01:21.342Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:40.991Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades"
+          "status": "sense-dades",
+          "wikidataWorkRaw": [],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.342Z"
         }
       },
       "genresRaw": []
@@ -12723,7 +14879,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.676Z",
+          "checkedAt": "2026-09-25T17:01:21.343Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:42.244Z",
           "wikidataRaw": [
             "música tradicional",
@@ -12733,7 +14889,8 @@
           "unmappedRaw": [
             "country"
           ],
-          "status": "parcial"
+          "status": "parcial",
+          "wikidataWorkRaw": []
         }
       },
       "genresRaw": [
@@ -12773,15 +14930,23 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.676Z",
+          "checkedAt": "2026-09-25T17:01:21.343Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:43.506Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
-          "unmappedRaw": [],
-          "status": "sense-dades"
+          "unmappedRaw": [
+            "comèdia"
+          ],
+          "status": "per-revisar",
+          "wikidataWorkRaw": [
+            "comèdia"
+          ],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.343Z"
         }
       },
-      "genresRaw": []
+      "genresRaw": [
+        "comèdia"
+      ]
     },
     {
       "name": "Toti Soler",
@@ -12816,14 +14981,15 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.676Z",
+          "checkedAt": "2026-09-25T17:01:21.344Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:44.791Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [
             "folk"
           ],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       },
       "genresRaw": [
@@ -12878,12 +15044,14 @@
           "relationCount": 1
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.676Z",
+          "checkedAt": "2026-09-25T17:01:21.344Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:46.148Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades"
+          "status": "sense-dades",
+          "wikidataWorkRaw": [],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.344Z"
         }
       },
       "genresRaw": []
@@ -12931,7 +15099,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.677Z",
+          "checkedAt": "2026-09-25T17:01:21.345Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:47.530Z",
           "wikidataRaw": [
             "salsa",
@@ -12952,7 +15120,8 @@
             "cúmbia",
             "dubstep"
           ],
-          "status": "parcial"
+          "status": "parcial",
+          "wikidataWorkRaw": []
         }
       }
     },
@@ -13006,7 +15175,7 @@
           "relationCount": 1
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.677Z",
+          "checkedAt": "2026-09-25T17:01:21.346Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:48.798Z",
           "wikidataRaw": [
             "electropop",
@@ -13014,7 +15183,8 @@
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       },
       "genresRaw": [
@@ -13055,7 +15225,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.678Z",
+          "checkedAt": "2026-09-25T17:01:21.346Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:50.052Z",
           "wikidataRaw": [
             "òpera"
@@ -13064,7 +15234,8 @@
             "classical"
           ],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       },
       "genresRaw": [
@@ -13118,7 +15289,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.678Z",
+          "checkedAt": "2026-09-25T17:01:21.348Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:51.366Z",
           "wikidataRaw": [
             "rumba catalana",
@@ -13129,7 +15300,8 @@
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       }
     },
@@ -13175,7 +15347,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.678Z",
+          "checkedAt": "2026-09-25T17:01:21.348Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:52.728Z",
           "wikidataRaw": [
             "folk rock",
@@ -13184,7 +15356,8 @@
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       }
     },
@@ -13221,14 +15394,15 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.679Z",
+          "checkedAt": "2026-09-25T17:01:21.349Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:54.067Z",
           "wikidataRaw": [
             "òpera"
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       },
       "genresRaw": [
@@ -13269,12 +15443,14 @@
       "genresRaw": [],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.679Z",
+          "checkedAt": "2026-09-25T17:01:21.349Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:55.365Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades"
+          "status": "sense-dades",
+          "wikidataWorkRaw": [],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.349Z"
         }
       }
     },
@@ -13315,14 +15491,15 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.679Z",
+          "checkedAt": "2026-09-25T17:01:21.349Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:56.776Z",
           "wikidataRaw": [
             "pop"
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       }
     },
@@ -13363,14 +15540,15 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.679Z",
+          "checkedAt": "2026-09-25T17:01:21.349Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:58.044Z",
           "wikidataRaw": [
             "rock"
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       }
     },
@@ -13404,12 +15582,14 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.679Z",
+          "checkedAt": "2026-09-25T17:01:21.349Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:59.295Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "sense-dades"
+          "status": "sense-dades",
+          "wikidataWorkRaw": [],
+          "wikidataWorkCheckedAt": "2026-09-25T17:01:21.349Z"
         }
       },
       "genresRaw": []
@@ -13447,7 +15627,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.679Z",
+          "checkedAt": "2026-09-25T17:01:21.350Z",
           "musicbrainzCheckedAt": "2026-09-25T16:51:00.583Z",
           "wikidataRaw": [
             "música electrònica",
@@ -13455,7 +15635,8 @@
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
-          "status": "classificat"
+          "status": "classificat",
+          "wikidataWorkRaw": []
         }
       },
       "genresRaw": [
@@ -13503,7 +15684,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-25T16:58:31.679Z",
+          "checkedAt": "2026-09-25T17:01:21.351Z",
           "musicbrainzCheckedAt": "2026-09-25T16:51:01.855Z",
           "wikidataRaw": [
             "rock",
@@ -13514,7 +15695,8 @@
           "unmappedRaw": [
             "rapejar"
           ],
-          "status": "parcial"
+          "status": "parcial",
+          "wikidataWorkRaw": []
         }
       }
     }
