@@ -120,8 +120,9 @@ async function fetchWikidataChunk(qids) {
     const payload = await response.json();
     return (payload.results?.bindings || []).map((binding) => ({
         wikidataId: qidFromUri(binding.artist?.value),
-        genre: binding.genreLabel?.value || binding.genre?.value || null
-    })).filter((row) => row.wikidataId && row.genre);
+        genre: binding.genreLabel?.value || binding.genre?.value || null,
+        workCount: Number.parseInt(binding.workCount?.value || '0', 10) || 0
+    })).filter((row) => row.wikidataId && row.genre && row.workCount > 0);
 }
 
 async function fetchAllWikidataGenres(artists) {
@@ -133,26 +134,48 @@ async function fetchAllWikidataGenres(artists) {
         const rows = await fetchWikidataChunk(chunk);
         for (const row of rows) {
             if (!byQid.has(row.wikidataId)) byQid.set(row.wikidataId, []);
-            byQid.get(row.wikidataId).push(row.genre);
+            byQid.get(row.wikidataId).push({ genre: row.genre, workCount: row.workCount });
         }
     }
 
-    for (const [qid, genres] of byQid.entries()) {
-        byQid.set(qid, unique(genres));
+    for (const [qid, rows] of byQid.entries()) {
+        const merged = new Map();
+        for (const row of rows) {
+            const key = normalize(row.genre);
+            const current = merged.get(key);
+            if (!current || row.workCount > current.workCount) merged.set(key, row);
+        }
+        byQid.set(qid, [...merged.values()]);
     }
     return byQid;
+}
+
+function selectReliableWorkGenres(rows, taxonomy) {
+    const candidates = (rows || []).filter((row) => row.workCount >= 2);
+    if (!candidates.length) return [];
+
+    const maxCount = Math.max(...candidates.map((row) => row.workCount));
+    const threshold = Math.max(2, Math.ceil(maxCount * 0.4));
+    const reliable = candidates.filter((row) => row.workCount >= threshold);
+
+    const raw = reliable.map((row) => row.genre);
+    const mapped = mapRawGenres(raw, taxonomy);
+    if (!mapped.labels.length) return raw;
+
+    return raw;
 }
 
 async function fetchWikidataWorkGenreChunk(qids) {
     if (!qids.length) return [];
     const values = qids.map((qid) => 'wd:' + qid).join(' ');
     const query = [
-        'SELECT DISTINCT ?artist ?genre ?genreLabel WHERE {',
+        'SELECT ?artist ?genre ?genreLabel (COUNT(DISTINCT ?work) AS ?workCount) WHERE {',
         '  VALUES ?artist { ' + values + ' }',
         '  { ?work wdt:P175 ?artist. } UNION { ?work wdt:P86 ?artist. }',
         '  ?work wdt:P136 ?genre.',
         '  SERVICE wikibase:label { bd:serviceParam wikibase:language "ca,en,es". }',
-        '}'
+        '}',
+        'GROUP BY ?artist ?genre ?genreLabel'
     ].join('\n');
 
     const url = new URL(WIKIDATA_ENDPOINT);
@@ -319,7 +342,11 @@ async function main() {
         const directMapped = mapRawGenres(directRaw, taxonomy);
 
         if (directMapped.labels.length === 0) {
-            state.wikidataWorkRaw = unique(wikidataWorkMap.get(artist.wikidataId) || state.wikidataWorkRaw || []);
+            const workRows = wikidataWorkMap.get(artist.wikidataId) || [];
+            state.wikidataWorkRaw = unique(selectReliableWorkGenres(workRows, taxonomy));
+            state.wikidataWorkEvidence = workRows
+                .filter((row) => state.wikidataWorkRaw.some((raw) => normalize(raw) === normalize(row.genre)))
+                .map((row) => ({ genre: row.genre, workCount: row.workCount }));
             state.wikidataWorkCheckedAt = new Date().toISOString();
         }
 
