@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-27T11:59:19.912Z",
+  "updatedAt": "2026-09-27T14:01:23.560Z",
   "artists": [
     {
       "name": "31 FAM",
@@ -10982,7 +10982,8 @@
       "musicbrainzId": "32b8fef9-da5c-49eb-b7fa-c243af02f980",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -11018,6 +11019,14 @@
           "wikidataWorkCheckedAt": null,
           "musicbrainzReleaseRaw": [],
           "wikidataWorkEvidence": []
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-27T14:01:15.736Z",
+          "status": "sense-resultats",
+          "query": "Muluk El Hwa",
+          "resultCount": 0,
+          "bestScore": 0,
+          "autoAcceptedId": null
         }
       },
       "genresRaw": [
@@ -11042,7 +11051,53 @@
       "musicbrainzId": "931b0693-edd6-4ec2-90aa-df602c3aa95b",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UC9Jl8Rcjs5ZUi8Wf1JnFzlw",
+            "title": "Mushkaa",
+            "handle": "@mushkaa5785",
+            "description": "",
+            "subscriberCount": 24900,
+            "thumbnail": "https://yt3.ggpht.com/ImAIC0rgcEcIDXGOHg2uL8YhA61XvWFUdk-4dUAXvHVZ5Wq6pPIAbW1ZE1U4S9uxtsKg6Q5K=s240-c-k-c0x00ffffff-no-rj",
+            "score": 93,
+            "reasons": [
+              "nom exacte",
+              "handle coincident",
+              "primer resultat"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-27T14:01:16.045Z"
+          },
+          {
+            "id": "UCQAWPZGGc_4JqXq53ATaSBQ",
+            "title": "Mushkaa - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 635,
+            "thumbnail": "https://yt3.ggpht.com/ImAIC0rgcEcIDXGOHg2uL8YhA61XvWFUdk-4dUAXvHVZ5Wq6pPIAbW1ZE1U4S9uxtsKg6Q5K=s240-c-k-c0x00ffffff-no-rj",
+            "score": 80,
+            "reasons": [
+              "nom exacte de canal Topic"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-27T14:01:16.045Z"
+          },
+          {
+            "id": "UC-0ByIer-XMOz_9onUncLYg",
+            "title": "Mushka Film",
+            "handle": "@mushkafilm",
+            "description": "Official Channel for Mushka is a story of love & sacrifice between a young girl and a tiger cub set in Russia. Created by Disney Legend Andreas Deja.\n\n",
+            "subscriberCount": 3500,
+            "thumbnail": "https://yt3.ggpht.com/PSYSdJu7g6pIi9M9xaXjRiH_l1TNIafz51Q08i1L1Kkp1S1GVW6oUeUNUBi8xUesWdEzeHgPcw=s240-c-k-c0x00ffffff-no-rj",
+            "score": 10,
+            "reasons": [
+              "marca oficial"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-27T14:01:16.045Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -11081,6 +11136,14 @@
           "wikidataWorkCheckedAt": null,
           "musicbrainzReleaseRaw": [],
           "wikidataWorkEvidence": []
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-27T14:01:16.045Z",
+          "status": "candidats",
+          "query": "Mushkaa",
+          "resultCount": 3,
+          "bestScore": 93,
+          "autoAcceptedId": null
         }
       },
       "genresRaw": [
@@ -11186,7 +11249,49 @@
       "musicbrainzId": "967dc430-c377-4087-9900-0837fa076967",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UC__N_gchc_T_NC56KrahpiQ",
+            "title": "Narcís Perich",
+            "handle": "@narcisperich",
+            "description": "Músic, cantautor.\n\nAl 2004 vaig publicar el meu primer àlbum \"El sol surt per tothom\". Des d'aleshores, n'he publicat 12. L'últim \"Cançons d'amor i lluita\", on per primer cop canto cançons d'altres.  Entre mig hi ha la Gira per places i carrers que vaig fer amb la Caravana de la Bona Sort per tot Catalunya i un bon grapat de cançons!\nAl 2009 també ",
+            "subscriberCount": 313,
+            "thumbnail": "https://yt3.ggpht.com/58gQXwgTQKetvwbIXuvXJd0jMV_xh1M_Jb6AO4kOZfmL6LSa2ymtEwNTe0j2e-CP8ptzHvEAVWk=s240-c-k-c0x00ffffff-no-rj",
+            "score": 58,
+            "reasons": [
+              "nom parcial",
+              "handle coincident",
+              "primer resultat"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-27T14:01:16.383Z"
+          },
+          {
+            "id": "UClTnemrSxNR8znkw8Q0VEEg",
+            "title": "Narcís Perich - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 7,
+            "thumbnail": "https://yt3.ggpht.com/9u7l39QDD9AXgN_HxdZkl1jfw7Elp8CJFafdOa0Rje4dzvZbHD5V-DU_FT4YiFL-ePAJb3YHmg=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-27T14:01:16.383Z"
+          },
+          {
+            "id": "UCrENOrBZCwW7Q-PFVAFHLhw",
+            "title": "Narcís Perich - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 32,
+            "thumbnail": "https://yt3.ggpht.com/KfszRNT6_LAb9wwOXoP1gH8j7t0fflNwEQWQWPap9T3meEZrVMiM4if0TbASMeATNS6JMFCwZw=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-27T14:01:16.383Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -11220,6 +11325,14 @@
           "wikidataWorkCheckedAt": null,
           "musicbrainzReleaseRaw": [],
           "wikidataWorkEvidence": []
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-27T14:01:16.383Z",
+          "status": "candidats",
+          "query": "Narcís Perich i Serra",
+          "resultCount": 3,
+          "bestScore": 58,
+          "autoAcceptedId": null
         }
       },
       "genresRaw": [
@@ -11292,7 +11405,50 @@
       "musicbrainzId": "29716de2-e3bb-4c61-a52f-fcea7e45c941",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UCOaiv_I4I0XA3dWqsMHojUA",
+            "title": "Nina",
+            "handle": "@nina21708",
+            "description": "沖縄に移住したシングルマザー\nリアルな生活と日常のvlog\n\nwith family 👩🏽👧🏽👧🏽🌺\n\n",
+            "subscriberCount": 1800,
+            "thumbnail": "https://yt3.ggpht.com/5Ghmp8NFH890itpj_CUbgUaJDcjoZOCw_pCsKnzh444AxtVnmK31w9qSqpBC0W4AsVO_Qc0C=s240-c-k-c0x00ffffff-no-rj",
+            "score": 75,
+            "reasons": [
+              "nom exacte",
+              "primer resultat"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-27T14:01:16.685Z"
+          },
+          {
+            "id": "UCOjqUSVvAy9aBMDivPgYw2A",
+            "title": "Nina",
+            "handle": "@ninajwt",
+            "description": "hi bestie!💌 yo soy Nina y estoy muy feliz de que estes aquí, en este canal encontrarás un poco de todo… lo que amo\n\nmaneras de contactarme:\n•gmail: jwtnina@gmail.com\n•instagram DM: @nina_jwt\n\nredes:\ninstagram: @nina_jwt\ntiktok: @ninajwt\ntwitter: @nina_jwt\npinterest: @nina_jwt\nspotify: @nina_jwt\n\nte amo con todo todo todo mi corazón, cuídate mucho,",
+            "subscriberCount": 444000,
+            "thumbnail": "https://yt3.ggpht.com/DXmgIb9dF5JVfIs3CeNE6IjbILnC45uU866lejd3DkeCUawYW2oFEYRxxOR7g4wtxndP4rqD=s240-c-k-c0x00ffffff-no-rj",
+            "score": 70,
+            "reasons": [
+              "nom exacte"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-27T14:01:16.685Z"
+          },
+          {
+            "id": "UCzhx7fgMPEYyLhfn5W73OGQ",
+            "title": "Nina Simone <3",
+            "handle": "@thelifeofninasimone",
+            "description": "a better look on things as i go through this journey called life✨..",
+            "subscriberCount": 30800,
+            "thumbnail": "https://yt3.ggpht.com/FeQdYl4xw6mx1ZhCuICieDrqDrs44z3QlJzwzyPEYSXSl4iqCPoqZmsw0Jj98pEjVfvaWpzzlQ=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-27T14:01:16.685Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -11327,6 +11483,14 @@
           "wikidataWorkCheckedAt": null,
           "musicbrainzReleaseRaw": [],
           "wikidataWorkEvidence": []
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-27T14:01:16.685Z",
+          "status": "candidats",
+          "query": "Nina",
+          "resultCount": 3,
+          "bestScore": 75,
+          "autoAcceptedId": null
         }
       },
       "genresRaw": [
@@ -11609,7 +11773,54 @@
       "musicbrainzId": "cac214c9-ccce-4b77-b4cb-0cf75d8852a2",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UChOiJNrdtzLm0_n16O55BZQ",
+            "title": "Orfeó Català",
+            "handle": "@orfeocatala",
+            "description": "",
+            "subscriberCount": 29,
+            "thumbnail": "https://yt3.ggpht.com/eOV7hW4Cp3Q5pLNoU2Zf7yCQ0BpJsxKOiIiB0oy0P9vBBaZzGiaHy7-p4NQ2ev8uq-c6ClYkT7M=s240-c-k-c0x00ffffff-no-rj",
+            "score": 95,
+            "reasons": [
+              "nom exacte",
+              "handle exacte"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-27T14:01:16.992Z"
+          },
+          {
+            "id": "UCTCZ7tIoWVvBUWTSAoqU_Gw",
+            "title": "Orfeó Català",
+            "handle": "@orfeocatala1435",
+            "description": "És un dels cors amateurs de referència del país. Amb més de 125 anys d’història, fundat el 1891 per Lluís Millet i Amadeu Vives per difondre el repertori coral català i universal amb la màxima excel·lència artística. Actualment, Simon Halsey n’és el director artístic, Pablo Larraz el director principal i Pau Casan el pianista. Té la seu al Palau de",
+            "subscriberCount": 185,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_mJYvNecRtYIj-NmiA29UaW-W1AYhYCbm6Hjd4k329hnA=s240-c-k-c0x00ffffff-no-rj",
+            "score": 88,
+            "reasons": [
+              "nom exacte",
+              "handle coincident"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-27T14:01:16.992Z"
+          },
+          {
+            "id": "UCWY7dnLjMI8xRHpY-RX_bIw",
+            "title": "Orfeó Català - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 352,
+            "thumbnail": "https://yt3.ggpht.com/2qmvLPSFCTYGMYvk3SRD9ebndMkUV7JhbixBfk5R7z5RO6DtMnf5yFHwALj1bZKa0FArVuHLngQ=s240-c-k-c0x00ffffff-no-rj",
+            "score": 85,
+            "reasons": [
+              "nom exacte de canal Topic",
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-27T14:01:16.992Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -11643,6 +11854,14 @@
           "musicbrainzReleaseRaw": [],
           "musicbrainzReleaseEvidence": [],
           "musicbrainzReleaseGroupCount": 4
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-27T14:01:16.992Z",
+          "status": "candidats",
+          "query": "Orfeó Català",
+          "resultCount": 3,
+          "bestScore": 95,
+          "autoAcceptedId": null
         }
       },
       "genresRaw": []
@@ -11710,7 +11929,48 @@
       "musicbrainzId": "430891c0-4f98-47c9-bc02-8861b4352d78",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UCua-dGzEXoKC925dTFR2lng",
+            "title": "orquestradecadaques",
+            "handle": "@orquestradecadaques",
+            "description": "",
+            "subscriberCount": 186,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_lHrYl8in3Q9-c5sPGJEoWiqhRAb9vsbIYqj8Paoi2obA=s240-c-k-c0x00ffffff-no-rj",
+            "score": 30,
+            "reasons": [
+              "handle exacte",
+              "primer resultat"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-27T14:01:17.349Z"
+          },
+          {
+            "id": "UCOubGU3SRro-VmHRDLW2JZA",
+            "title": "Cadaqués Orchestra - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 454,
+            "thumbnail": "https://yt3.ggpht.com/M-7dgpsNcvcb5DHkiOiw2EpaIzdTFE81wXxHS6RGpcUFvzIbTxt_7w9Jbp7yV0fxvXsv0r-I_w=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-27T14:01:17.349Z"
+          },
+          {
+            "id": "UCMhU8rJzY5E5evLkir6M0Cg",
+            "title": "Festival Internacional de Musica de Cadaqués",
+            "handle": "@festivalinternacionaldemus1739",
+            "description": "",
+            "subscriberCount": 39,
+            "thumbnail": "https://yt3.ggpht.com/kchMy8ytEmnOXdo8tQXP9smgY7Jq6sR_vi9IDsKuLcIbxzo5xOjpWj3qDbpast46vftMJE3dcA=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-27T14:01:17.349Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -11743,6 +12003,14 @@
           "musicbrainzReleaseRaw": [],
           "musicbrainzReleaseEvidence": [],
           "musicbrainzReleaseGroupCount": 5
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-27T14:01:17.349Z",
+          "status": "candidats",
+          "query": "Orquestra de Cadaqués",
+          "resultCount": 3,
+          "bestScore": 30,
+          "autoAcceptedId": null
         }
       },
       "genresRaw": []
@@ -11759,7 +12027,49 @@
       "musicbrainzId": "04a82da3-9abb-4e64-90fb-77e0244c46f2",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UCMnS6m_jcjviiTYVYK687Jg",
+            "title": "Orquestra Simfònica del Gran Teatre del Liceu, Ernesto Halffter, Andr... - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 0,
+            "thumbnail": "https://yt3.ggpht.com/K2X2P2Jn6bMGA3WQrNLHgdwgM9lsn1nqYDmootJNpYgZri2AR90pORoWaYheV-GAeyMGWkB5eA=s240-c-k-c0x00ffffff-no-rj",
+            "score": 35,
+            "reasons": [
+              "nom parcial"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-27T14:01:17.663Z"
+          },
+          {
+            "id": "UC1HCW5-MR-MLYAeWy13EvyQ",
+            "title": "Orquesta Sinfónica del Gran Teatre del Liceu - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 66,
+            "thumbnail": "https://yt3.ggpht.com/Thapjwyu_U8Qkf5RmPx6IuKMpba22HqxzQ3Quec5fuAlyNgyJckrsHossVbPT_tZBsNV1suafw=s240-c-k-c0x00ffffff-no-rj",
+            "score": 5,
+            "reasons": [
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-27T14:01:17.663Z"
+          },
+          {
+            "id": "UCRsrbeQ9BactZCiMnOjjP4w",
+            "title": "Victoria de los Ángeles, Orquestra Simfònica del Gran Teatre del Lice... - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 0,
+            "thumbnail": "https://yt3.ggpht.com/BlPliJJD-M2CrWXNXWBrlU2B1s_GaOvnRfXDHvOfdF5k4xhYeIJy6kl_0hxqd0uT49J_WPKv5w=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-27T14:01:17.663Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -11792,6 +12102,14 @@
           "musicbrainzReleaseRaw": [],
           "musicbrainzReleaseEvidence": [],
           "musicbrainzReleaseGroupCount": 1
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-27T14:01:17.663Z",
+          "status": "candidats",
+          "query": "Orquestra Simfònica del Gran Teatre del Liceu",
+          "resultCount": 3,
+          "bestScore": 35,
+          "autoAcceptedId": null
         }
       },
       "genresRaw": []
@@ -11808,7 +12126,52 @@
       "musicbrainzId": "f9ea5d80-d797-4520-8737-5671d6348a22",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UCwYJ8F3naiiq52ca_3MS44Q",
+            "title": "Orquestra Simfònica del Vallès - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 332,
+            "thumbnail": "https://yt3.ggpht.com/2b5QjwGNvVBcHzUKDM7bFcNinnjXh3RDlgdClG-agKtM_mWAejPDD--_fjd58GsYZpHreELwa0U=s240-c-k-c0x00ffffff-no-rj",
+            "score": 80,
+            "reasons": [
+              "nom exacte de canal Topic"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-27T14:01:17.979Z"
+          },
+          {
+            "id": "UC5-xnKD1D4LyVd-EPJXGdPA",
+            "title": "Orquestra Simfònica Del Vallès - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 5,
+            "thumbnail": "https://yt3.ggpht.com/jvKmY06rE8FaLiPhRIssBJ1Y2AlXPmF5joxUFp7UV6V1DqVtat4FkN2ua4skDgCqo97o5DhVAA=s240-c-k-c0x00ffffff-no-rj",
+            "score": 80,
+            "reasons": [
+              "nom exacte de canal Topic"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-27T14:01:17.979Z"
+          },
+          {
+            "id": "UCG_P8n9Kt9Mw7gqXeoBRKTg",
+            "title": "Orquestra Simfònica del Vallès",
+            "handle": "@simfonicavalles",
+            "description": "L'Orquestra Simfònica del Vallès (OSV) és un projecte artístic i empresarial amb vocació social, fundat l'any 1987.\n\nPer això, el nostre projecte té aquesta triple dimensió: artística, social i empresarial.\n\n· Palau de la Música Catalana \n· Teatre Municipal La Faràndula (Sabadell)\n· Factoria Cultural Terrassa\n· Fundació Òpera a Catalunya\n\nProjectes",
+            "subscriberCount": 1210,
+            "thumbnail": "https://yt3.ggpht.com/WYZOo8ZysdtP6lRN4OG28Gd2-5i2ZMDM7ijcPz_ehGbQ6cJ4-Vt09JTFZnad5Jy0vU29j2-tPw=s240-c-k-c0x00ffffff-no-rj",
+            "score": 75,
+            "reasons": [
+              "nom exacte",
+              "primer resultat"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-27T14:01:17.979Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -11841,6 +12204,14 @@
           "musicbrainzReleaseRaw": [],
           "musicbrainzReleaseEvidence": [],
           "musicbrainzReleaseGroupCount": 3
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-27T14:01:17.979Z",
+          "status": "candidats",
+          "query": "Orquestra Simfònica del Vallès",
+          "resultCount": 3,
+          "bestScore": 80,
+          "autoAcceptedId": null
         }
       },
       "genresRaw": []
@@ -11959,7 +12330,49 @@
       "musicbrainzId": "f0eb59b3-e3c4-4cb7-92d2-5efeba3edb1c",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UC7gikhC4WQB8NzG3Q8m7VIw",
+            "title": "Ovidi Montllor",
+            "handle": "@ovidimontllor2194",
+            "description": "www.ovidimontllor.com",
+            "subscriberCount": 62,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_lGu8J2MlFKcdaqDZXagNYrovrbzWjtubl9VT6gCqt8Fg=s240-c-k-c0x00ffffff-no-rj",
+            "score": 35,
+            "reasons": [
+              "nom parcial"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-27T14:01:18.298Z"
+          },
+          {
+            "id": "UC4Ub0k-i6pWS76AUXOBf_6w",
+            "title": "Ovidi Montllor - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 1160,
+            "thumbnail": "https://yt3.ggpht.com/mwaGDq28Q1EndWYw_u0tB5eGa6NMEuwlsTYcy0lxymWhRt0wveO9ohCTk4581AZ82ffCeJod8Q=s240-c-k-c0x00ffffff-no-rj",
+            "score": 5,
+            "reasons": [
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-27T14:01:18.298Z"
+          },
+          {
+            "id": "UCCJAOiLoJssqRQCQWuJkz-g",
+            "title": "Ovidi4 - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 81,
+            "thumbnail": "https://yt3.ggpht.com/sNGqwfWE08_LZR-kchNlrGVoyONnX-G7jeZYrlrLAY3TiKCJ5fM5a-WCIbLBUKZdivTWERJL=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-27T14:01:18.298Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -11993,6 +12406,14 @@
           "wikidataWorkCheckedAt": null,
           "musicbrainzReleaseRaw": [],
           "wikidataWorkEvidence": []
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-27T14:01:18.298Z",
+          "status": "candidats",
+          "query": "Ovidi Montllor i Mengual",
+          "resultCount": 3,
+          "bestScore": 35,
+          "autoAcceptedId": null
         }
       },
       "genresRaw": [
@@ -12014,7 +12435,55 @@
       "musicbrainzId": "0932271a-c89e-4093-800a-75b015e2b0a3",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UCnG1cWc1-boHyIctRxrnUtg",
+            "title": "Pastora Mazzei",
+            "handle": "@pastoramazzei",
+            "description": "",
+            "subscriberCount": 5950,
+            "thumbnail": "https://yt3.ggpht.com/cPdr9T18jmeKP0uoc-lAw0qI2jLzOu-uUlh2-NkBHIsWPLmrBhPQGcvUqAVcVWZ4YkBGnHf51w=s240-c-k-c0x00ffffff-no-rj",
+            "score": 58,
+            "reasons": [
+              "nom parcial",
+              "handle coincident",
+              "primer resultat"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-27T14:01:18.628Z"
+          },
+          {
+            "id": "UCrK6tFhDcvqvSB765clfpew",
+            "title": "pastora araselis sanches",
+            "handle": "@pastoraaraseli.oficial",
+            "description": "",
+            "subscriberCount": 20400,
+            "thumbnail": "https://yt3.ggpht.com/sGrHJgxYMmFk7XFocxbA9Ljaocx9fAoj5wtpJl2AVaiKryal69zIgYLvALhp8VcR0UurbrR2XX0=s240-c-k-c0x00ffffff-no-rj",
+            "score": 53,
+            "reasons": [
+              "nom parcial",
+              "handle coincident"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-27T14:01:18.628Z"
+          },
+          {
+            "id": "UC0pahAEuUb0Vut3ebiwJGNg",
+            "title": " Lupita PASTORA Martinez. Historias",
+            "handle": "@lupitamartinezpastora",
+            "description": "Este es un canal para hablar de historias de todo tipo, para compartir experiencias, pensamientos.  Para hablar de lo que sucede en el mundo y nos sucede a nosotros.  ",
+            "subscriberCount": 29100,
+            "thumbnail": "https://yt3.ggpht.com/P_syHobLJxj9XeyYU8kiHgl4uMMSqBzCEgh-8OiDRjYNe-Gyle4DYqIUIlyvTDAfoS1PFVrP=s240-c-k-c0x00ffffff-no-rj",
+            "score": 53,
+            "reasons": [
+              "nom parcial",
+              "handle coincident"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-27T14:01:18.628Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -12049,6 +12518,14 @@
           "wikidataWorkCheckedAt": null,
           "musicbrainzReleaseRaw": [],
           "wikidataWorkEvidence": []
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-27T14:01:18.628Z",
+          "status": "candidats",
+          "query": "Pastora",
+          "resultCount": 3,
+          "bestScore": 58,
+          "autoAcceptedId": null
         }
       },
       "genresRaw": [
@@ -12121,7 +12598,39 @@
       "musicbrainzId": "281e69bc-601a-4f12-b0ea-455dfff7b32e",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UCB4azUWPUwPmtC9xZ8_-vqw",
+            "title": "Pau Alabajos",
+            "handle": "@paualabajos",
+            "description": "Canal oficial de Pau Alabajos.",
+            "subscriberCount": 3230,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_llMUpr3mBG9Byo3nEhfluOxEBdqWswKOJlQGuRkJLCyk4=s240-c-k-c0x00ffffff-no-rj",
+            "score": 63,
+            "reasons": [
+              "nom parcial",
+              "handle coincident",
+              "marca oficial"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-27T14:01:18.905Z"
+          },
+          {
+            "id": "UC1Duy1xPwFJsyDJkZjSNGQQ",
+            "title": "Pau Alabajos - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 26,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_llMUpr3mBG9Byo3nEhfluOxEBdqWswKOJlQGuRkJLCyk4=s240-c-k-c0x00ffffff-no-rj",
+            "score": 5,
+            "reasons": [
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-27T14:01:18.905Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -12157,6 +12666,14 @@
           "wikidataWorkCheckedAt": null,
           "musicbrainzReleaseRaw": [],
           "wikidataWorkEvidence": []
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-27T14:01:18.905Z",
+          "status": "candidats",
+          "query": "Pau Alabajos i Ferrer",
+          "resultCount": 2,
+          "bestScore": 63,
+          "autoAcceptedId": null
         }
       },
       "genresRaw": [
@@ -12385,7 +12902,54 @@
       "musicbrainzId": "a97c71ca-73a5-4aaf-ac1b-137eb8daaf30",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UC9UnAoSg3Ggj1eId_80ZxBQ",
+            "title": "Pep Gimeno Botifarra",
+            "handle": "@pepgimenobotifarraoficial",
+            "description": "Canal Oficial\n\nPep Gimeno \"Botifarra\" és sens dubte, un personatge irrepetible. No té telèfon mòbil, ni cotxe. En canvi, sap el nom de tots els estris dels llaurador, els refranys de molts pobles i les característiques fonètiques de les parles del nostre poble. Recita de memòria centenars de frases fetes, embarbussaments, romanços, contes, etc.",
+            "subscriberCount": 3630,
+            "thumbnail": "https://yt3.ggpht.com/m074oAfaihoGKI3KYLnN7Z6FEW8jOOzG_Yji6KJF-b4_LJERzsxJ8rg-UOO2bh0oYAOCPi_wKw=s240-c-k-c0x00ffffff-no-rj",
+            "score": 98,
+            "reasons": [
+              "nom exacte",
+              "handle coincident",
+              "marca oficial"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-27T14:01:19.313Z"
+          },
+          {
+            "id": "UCWCQuXM1nSspVzpoWamgCgw",
+            "title": "Pep Gimeno \"Botifarra\" - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 2180,
+            "thumbnail": "https://yt3.ggpht.com/Wz5oQDvkQNZFhzXPSa2avHV6bHemuBxjkPT7B02rWE1rWWPOqJnG_kGWYLLMNrTSrsqjMrfagOk=s240-c-k-c0x00ffffff-no-rj",
+            "score": 85,
+            "reasons": [
+              "nom exacte de canal Topic",
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-27T14:01:19.313Z"
+          },
+          {
+            "id": "UC6hjkn4k3PUGHk2c39lDkCQ",
+            "title": "Pep Gimeno ”Botifarra” - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 59,
+            "thumbnail": "https://yt3.ggpht.com/9ZZeZCXvhMlJEoUSGBCjxpH8BsN4SJfgipnlEo5m7W5EkyCQcDNhFvjp1uZAYT7Vo0A-aep5=s240-c-k-c0x00ffffff-no-rj",
+            "score": 80,
+            "reasons": [
+              "nom exacte de canal Topic"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-27T14:01:19.313Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -12432,6 +12996,14 @@
           "musicbrainzReleaseRaw": [],
           "musicbrainzReleaseEvidence": [],
           "musicbrainzReleaseGroupCount": 10
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-27T14:01:19.313Z",
+          "status": "candidats",
+          "query": "Pep Gimeno \"Botifarra\"",
+          "resultCount": 3,
+          "bestScore": 98,
+          "autoAcceptedId": null
         }
       },
       "genresRaw": [
@@ -12454,7 +13026,50 @@
       "musicbrainzId": "e3e6ab78-ff47-444a-9f6e-e87624f39bbf",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UCoyW5xyote7Z28N2pk8XYew",
+            "title": "Pep Laguarda - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 81,
+            "thumbnail": "https://yt3.ggpht.com/B_2ZhQAU74h0rH_eNQkJp-SV9KmKrdk57a8b0oohaui1f6QTYcbGwbCgRVkKqR11kvz_3Hd5HA=s240-c-k-c0x00ffffff-no-rj",
+            "score": 85,
+            "reasons": [
+              "nom exacte de canal Topic",
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-27T14:01:19.711Z"
+          },
+          {
+            "id": "UC38AgBkeKdBuKjLSuRlxksg",
+            "title": "Pep Laguarda & Tapineria - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 30,
+            "thumbnail": "https://yt3.ggpht.com/ihkn2xNzTbSYp-_A9BOLlzq75gDrmrVG6a5KxAcfyUCAHbuDmpCWdld4aYspVvQLI1dHj9xK-A=s240-c-k-c0x00ffffff-no-rj",
+            "score": 35,
+            "reasons": [
+              "nom parcial"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-27T14:01:19.711Z"
+          },
+          {
+            "id": "UCDwW2bYCQZwABW7wRY9fTzA",
+            "title": "xmp",
+            "handle": "@pinetnoetvolen",
+            "description": "",
+            "subscriberCount": 35,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_nC5dELZhBgln01PpTyuizhPmzOC8WDVn6usmHTs6s=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-27T14:01:19.711Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -12495,6 +13110,14 @@
             }
           ],
           "musicbrainzReleaseGroupCount": 2
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-27T14:01:19.711Z",
+          "status": "candidats",
+          "query": "Pep Laguarda",
+          "resultCount": 3,
+          "bestScore": 85,
+          "autoAcceptedId": null
         }
       },
       "genresRaw": [
@@ -12518,7 +13141,54 @@
       "musicbrainzId": "a87d45e2-2d41-41c1-9bbb-d958d0096657",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UCT59tXHgcrnLCerfyEGDghw",
+            "title": "Pepet i marieta",
+            "handle": "@pepetimarieta",
+            "description": "Pepet i marieta som una banda de reggae pop en català i amb lletres properes, descarades i crítiques.\n\nCompanys de carretera de bandes com Oques Grasses Els Catarres Txarango Buhos Zoo Auxili Doctor Prats Ebri Knight La Fúmiga El Diluvi Gertrudis o Roba Estesa som capaços d'armar una festa brutal a base de reggae, ska, pop, rock, música urbana o jo",
+            "subscriberCount": 7020,
+            "thumbnail": "https://yt3.ggpht.com/qfSKzvUd4dO0c1LvY1LCSvyEJc6gNr9Yf_foOD9EU2XVDnPXdlQ6r0-43PyQErB8YfrqP-Xe=s240-c-k-c0x00ffffff-no-rj",
+            "score": 100,
+            "reasons": [
+              "nom exacte",
+              "handle exacte",
+              "primer resultat"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-27T14:01:20.014Z"
+          },
+          {
+            "id": "UCR4OWoPER7Ac1rltN_WKVMA",
+            "title": "Pepet i marieta",
+            "handle": "@pepetimarieta6801",
+            "description": "",
+            "subscriberCount": 11,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_m6tPBtQcdIVRAqjHcigH6itJKKdSzQ23hbl0GU7b8=s240-c-k-c0x00ffffff-no-rj",
+            "score": 88,
+            "reasons": [
+              "nom exacte",
+              "handle coincident"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-27T14:01:20.014Z"
+          },
+          {
+            "id": "UCPzFXRl5ozCmX7i4CjI3Odw",
+            "title": "Pepet i Marieta - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 416,
+            "thumbnail": "https://yt3.ggpht.com/txH7Imxj1LH-gRbBF6Cg905a6OVe24na7bDqwlTaHqXS_BgtAKZrfAKtKRPQv85H5S-kp885=s240-c-k-c0x00ffffff-no-rj",
+            "score": 80,
+            "reasons": [
+              "nom exacte de canal Topic"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-27T14:01:20.014Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -12570,6 +13240,14 @@
           "musicbrainzReleaseRaw": [],
           "musicbrainzReleaseEvidence": [],
           "musicbrainzReleaseGroupCount": 8
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-27T14:01:20.014Z",
+          "status": "candidats",
+          "query": "Pepet i Marieta",
+          "resultCount": 3,
+          "bestScore": 100,
+          "autoAcceptedId": null
         }
       },
       "genresRaw": [
@@ -12649,7 +13327,50 @@
       "musicbrainzId": "089a0280-9aaf-4d0f-8bc2-f0f0cba5d449",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UC8r4joFv4Q0LczFyYvW7Lsg",
+            "title": "Pirat's Sound Sistema - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 670,
+            "thumbnail": "https://yt3.ggpht.com/0UnqKkb-6IFW1lnf2QYEnGiCsBmETLt2-MT5Y7dcqqKfJJix3vRjpn9fdQDmCLgA73wyKHDh1Q=s240-c-k-c0x00ffffff-no-rj",
+            "score": 85,
+            "reasons": [
+              "nom exacte de canal Topic",
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-27T14:01:20.291Z"
+          },
+          {
+            "id": "UCsca4-7BcbpfNzhoIhYMxGg",
+            "title": "Pirats SoundSistema",
+            "handle": "@piratssoundsistema7515",
+            "description": "Pirat's Sound Sistema (Soto, Pep i Sergi) és una sound system de músiques jamaicanes, #reggae, #ska, #dancehall, #dub i #soca ... Remena remena la Pirata és aquí !!!\nOriginal #sound #system #music",
+            "subscriberCount": 171,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_kbg544cbkfww9OM8uK1TV8CkFxqbfn4s4iUZWoNm24rNg=s240-c-k-c0x00ffffff-no-rj",
+            "score": 18,
+            "reasons": [
+              "handle coincident"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-27T14:01:20.291Z"
+          },
+          {
+            "id": "UCjE6QgcDBedFJKFiJLe11ow",
+            "title": "Joan Soto",
+            "handle": "@sotulagarto",
+            "description": "",
+            "subscriberCount": 56,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_nKW3Gp31LSygLPsOnT0ldmJp6SHIHAiA_uIZXItlKIQUc=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-27T14:01:20.291Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -12687,6 +13408,14 @@
           "wikidataWorkCheckedAt": null,
           "musicbrainzReleaseRaw": [],
           "wikidataWorkEvidence": []
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-27T14:01:20.291Z",
+          "status": "candidats",
+          "query": "Pirat's Sound Sistema",
+          "resultCount": 3,
+          "bestScore": 85,
+          "autoAcceptedId": null
         }
       },
       "genresRaw": [
@@ -12708,7 +13437,51 @@
       "musicbrainzId": "d11d9538-5606-4617-99c6-d84e58bda168",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UC1ER_HbxROAhOEgbh5b1g7g",
+            "title": "Pulpopop - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 10,
+            "thumbnail": "https://yt3.ggpht.com/sIscQimtx3akCZSkXjPFco5BMY8BNOwMZCLjp1gYjHF0lJDggr0ZiWyvlTs9hC9b4LCx4b5gPMQ=s240-c-k-c0x00ffffff-no-rj",
+            "score": 85,
+            "reasons": [
+              "nom exacte de canal Topic",
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-27T14:01:20.579Z"
+          },
+          {
+            "id": "UCd0Cyvt_qXF5KhYt23pRG7Q",
+            "title": "PulpoPop pulpopop",
+            "handle": "@pulpopop",
+            "description": "http://www.pulpopop.cat/",
+            "subscriberCount": 95,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_kVP4r-NlZqQcRcuqX_uJoD6v0az6i_FuTU3ebqoXYl-cQ=s240-c-k-c0x00ffffff-no-rj",
+            "score": 60,
+            "reasons": [
+              "nom parcial",
+              "handle exacte"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-27T14:01:20.579Z"
+          },
+          {
+            "id": "UCjVTywIp8kH6UJiz6cFanqA",
+            "title": "Pulpo pop cr1",
+            "handle": "@josue6054",
+            "description": "El que repite amores,repite errores ❤️‍🩹👣",
+            "subscriberCount": 3,
+            "thumbnail": "https://yt3.ggpht.com/kpEBk2EynmHlmpU2WdP-JBaGvO_quKCON4ujoreAsA905Wz3nZTnpTd88OG_JYHoQjU0oksE=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-27T14:01:20.579Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -12741,6 +13514,14 @@
           "musicbrainzReleaseRaw": [],
           "musicbrainzReleaseEvidence": [],
           "musicbrainzReleaseGroupCount": 0
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-27T14:01:20.579Z",
+          "status": "candidats",
+          "query": "Pulpopop",
+          "resultCount": 3,
+          "bestScore": 85,
+          "autoAcceptedId": null
         }
       },
       "genresRaw": []
@@ -12761,7 +13542,8 @@
       "musicbrainzId": "138fe36a-0888-40d2-9390-3d9be0d74f07",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": []
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -12808,6 +13590,14 @@
           "wikidataWorkCheckedAt": null,
           "musicbrainzReleaseRaw": [],
           "wikidataWorkEvidence": []
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-27T14:01:20.936Z",
+          "status": "sense-resultats",
+          "query": "Q1029506",
+          "resultCount": 0,
+          "bestScore": 0,
+          "autoAcceptedId": null
         }
       },
       "genresRaw": [
@@ -12834,7 +13624,49 @@
       "musicbrainzId": "cf39930b-f5f9-4daa-9c2b-4098971bc843",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UC40hYRYUSwHalAFo_PbydEw",
+            "title": "Quart Primera",
+            "handle": "@4t1avideos",
+            "description": "Canal Oficial de Quart Primera",
+            "subscriberCount": 836,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_k1j6iJii9hfR3KRio1c7W2NJ9ec33Oby3OB1Ca1h0_xg=s240-c-k-c0x00ffffff-no-rj",
+            "score": 85,
+            "reasons": [
+              "nom exacte",
+              "marca oficial",
+              "primer resultat"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-27T14:01:21.117Z"
+          },
+          {
+            "id": "UCyJWBezlE1uSH6GwbkzlKwQ",
+            "title": "4t1a - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 23,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_k1j6iJii9hfR3KRio1c7W2NJ9ec33Oby3OB1Ca1h0_xg=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-27T14:01:21.117Z"
+          },
+          {
+            "id": "UCG-pxg6-SOE6NCiUcnSRYEw",
+            "title": "PRIMERA IGLESIA EVANGÉLICA BAUTISTA DE VALÈNCIA",
+            "handle": "@primeraiglesiaevangelicaba759",
+            "description": "Creemos que el mensaje del evangelio tiene poder renovador y transformador para cambiar las vidas de las personas, por eso te invitamos a disfrutar de la alabanza al Señor, escuchar la exposición de su palabra y compartir después cualquier duda o pregunta que desees.\n\nGracias por visitarnos y esperamos que el tiempo aquí te haya servido para compre",
+            "subscriberCount": 1880,
+            "thumbnail": "https://yt3.ggpht.com/kr5kXU2QM5sOoIWIg3WMltjcd5E9yNl8VDyVz9YaJvO5dTeQCZbNeO86As-28rqnVvyktie4D7U=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-27T14:01:21.117Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -12867,6 +13699,14 @@
           "wikidataWorkCheckedAt": null,
           "musicbrainzReleaseRaw": [],
           "wikidataWorkEvidence": []
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-27T14:01:21.117Z",
+          "status": "candidats",
+          "query": "Quart Primera",
+          "resultCount": 3,
+          "bestScore": 85,
+          "autoAcceptedId": null
         }
       },
       "genresRaw": [
@@ -12885,7 +13725,48 @@
       "musicbrainzId": "c9d1895f-1b7c-4c39-bbd0-0481e1723095",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UCkEa-grVig91ReSLTR5crIQ",
+            "title": "Quartet Glinka - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 6,
+            "thumbnail": "https://yt3.ggpht.com/WlsGzAEE-rgg7BpxbcoBSs57FQqLKoFZUd0Uh45awQUpR3g8aoz7XLepVQqlFEJG70XKZOuoBQ=s240-c-k-c0x00ffffff-no-rj",
+            "score": 85,
+            "reasons": [
+              "nom exacte de canal Topic",
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-27T14:01:21.402Z"
+          },
+          {
+            "id": "UCQ3Yz5_NcA27j-y3NZ2uwmw",
+            "title": "Glinka Quartet",
+            "handle": "@glinkaquartet8495",
+            "description": "",
+            "subscriberCount": 17,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_nfyp5ehMhMz5dc5p3VVKIeKi5gBoIdOhJLp-R4S2g=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-27T14:01:21.402Z"
+          },
+          {
+            "id": "UCV7UTiEk6rUGeamrCW2EcAg",
+            "title": "Glinka Quartet",
+            "handle": "@glinkaquartet161",
+            "description": "",
+            "subscriberCount": 10,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_nHpK6PNs-NA5poPq79y4Y8pl4Z5A60uDEnDuZQ8YmiAw=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-27T14:01:21.402Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -12918,6 +13799,14 @@
           "musicbrainzReleaseRaw": [],
           "musicbrainzReleaseEvidence": [],
           "musicbrainzReleaseGroupCount": 1
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-27T14:01:21.402Z",
+          "status": "candidats",
+          "query": "Quartet Glinka",
+          "resultCount": 3,
+          "bestScore": 85,
+          "autoAcceptedId": null
         }
       },
       "genresRaw": []
@@ -12934,7 +13823,23 @@
       "musicbrainzId": "66c40982-784a-46a4-9fef-ff0b1fa4cfdc",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UChmA9i22MAyjD_SlaO7TbdA",
+            "title": "Ramón Calduch - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 1330,
+            "thumbnail": "https://yt3.ggpht.com/MJGloJTPfy5HlRCAyWhxvExqls6cyvX3EhnDKJFZrKk9V_-mT2bAyNgqjdNvo8KY84Q-_TjWXQ=s240-c-k-c0x00ffffff-no-rj",
+            "score": 5,
+            "reasons": [
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-27T14:01:21.715Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -12969,6 +13874,14 @@
           "musicbrainzReleaseRaw": [],
           "musicbrainzReleaseEvidence": [],
           "musicbrainzReleaseGroupCount": 0
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-27T14:01:21.715Z",
+          "status": "candidats",
+          "query": "Ramon Calduch i Gimeno",
+          "resultCount": 1,
+          "bestScore": 5,
+          "autoAcceptedId": null
         }
       },
       "genresRaw": []
@@ -12987,7 +13900,23 @@
       "musicbrainzId": "6cf5c400-3341-464c-b91c-24742cb88230",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UCn4V6rDw7Gz1R6F2qyt2IrQ",
+            "title": "Ramon Muntaner - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 408,
+            "thumbnail": "https://yt3.ggpht.com/8gmAYxzartfoxYOHslX5c0ivuSYjF6h5QfxRg0ODWD-wHVjvCAuQK5pJsTyiGa_rVbmsdQRI=s240-c-k-c0x00ffffff-no-rj",
+            "score": 5,
+            "reasons": [
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-27T14:01:21.999Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -13026,6 +13955,14 @@
           "wikidataWorkCheckedAt": null,
           "musicbrainzReleaseRaw": [],
           "wikidataWorkEvidence": []
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-27T14:01:21.999Z",
+          "status": "candidats",
+          "query": "Ramon Muntaner i Torruella",
+          "resultCount": 1,
+          "bestScore": 5,
+          "autoAcceptedId": null
         }
       },
       "genresRaw": [
@@ -13048,7 +13985,55 @@
       "musicbrainzId": "bd332160-9c5e-40c2-bf28-08077d4da9aa",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UCvun0B8asidmLiPzLTRpftg",
+            "title": "Rapsusklei",
+            "handle": "@rapsuskleitv",
+            "description": "Página oficial de Rapsusklei en YouTube. \nDescubre tanto el nuevo material, como entrevistas, Acapellas, grabaciones antiguas y todo lo referente a \"El niño de la selva\"\nSUSCRÍBETE a RAPSUSKLEITV,  para estar informado de las novedades de uno de los cantantes más importantes de la música urbana hispano parlante y referente del Hip Hop español.\n\nMÁS",
+            "subscriberCount": 404000,
+            "thumbnail": "https://yt3.ggpht.com/OEvl4Hpjd63fJTbMO70USZsb5H-RoGY0LN2fTZ6xNoCi4lHocLZAxhvrEMhVjrLJaSRue2dAhQ=s240-c-k-c0x00ffffff-no-rj",
+            "score": 98,
+            "reasons": [
+              "nom exacte",
+              "handle coincident",
+              "marca oficial"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-27T14:01:22.265Z"
+          },
+          {
+            "id": "UCZrt2i1ThMAgwCKE2WMI07w",
+            "title": "Rapsusklei - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 2670,
+            "thumbnail": "https://yt3.ggpht.com/OEvl4Hpjd63fJTbMO70USZsb5H-RoGY0LN2fTZ6xNoCi4lHocLZAxhvrEMhVjrLJaSRue2dAhQ=s240-c-k-c0x00ffffff-no-rj",
+            "score": 85,
+            "reasons": [
+              "nom exacte de canal Topic",
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-27T14:01:22.265Z"
+          },
+          {
+            "id": "UC7qP4fLuanNeihRczQ7fJmQ",
+            "title": "RapsusKlei RAP Poetico",
+            "handle": "@rapsuskleirappoetico9024",
+            "description": "Music video Rap poetico!\n\nWarnings for Administrators, Moderators, Facebook Admin, YouTube, etc ... Photo, Video is Everything about the material produced by Sig Diego Gil Fernandez (RAPSUSKLEI) I acquired from the same owner the consent to publish in respect, all the above mentioned material.",
+            "subscriberCount": 4,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_kBpGQF7-0VGepJmaIHSk8mZasANxZqFOwh_s6jqH1zsw=s240-c-k-c0x00ffffff-no-rj",
+            "score": 53,
+            "reasons": [
+              "nom parcial",
+              "handle coincident"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-27T14:01:22.265Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -13081,6 +14066,14 @@
           "wikidataWorkCheckedAt": null,
           "musicbrainzReleaseRaw": [],
           "wikidataWorkEvidence": []
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-27T14:01:22.265Z",
+          "status": "candidats",
+          "query": "Rapsusklei",
+          "resultCount": 3,
+          "bestScore": 98,
+          "autoAcceptedId": null
         }
       },
       "genresRaw": [
@@ -13103,17 +14096,70 @@
       "wikidataId": "Q126096871",
       "musicbrainzId": "5b984b79-2504-463f-b668-9abedc0ec4ae",
       "youtube": {
-        "channels": [],
-        "candidates": []
+        "channels": [
+          {
+            "id": "UCIpVysRnHTbek1TON9dIF6Q",
+            "handle": "@remeidecalafresca",
+            "name": "REMEI DE CA LA FRESCA",
+            "type": "official",
+            "primary": true
+          }
+        ],
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UCIpVysRnHTbek1TON9dIF6Q",
+            "title": "REMEI DE CA LA FRESCA",
+            "handle": "@remeidecalafresca",
+            "description": "@remeifresca a Instagram\nRemei de Ca la Fresca a Facebook.\nLa Reme a casa nostra.",
+            "subscriberCount": 1760,
+            "thumbnail": "https://yt3.ggpht.com/V7bBXjYy3_OjuNlnnKvkJ2z-ntSzUsTy65k1nEKbmDbk_P3YKlwCwce7WAB2cLaJu8e5uROisw=s240-c-k-c0x00ffffff-no-rj",
+            "score": 100,
+            "reasons": [
+              "nom exacte",
+              "handle exacte",
+              "primer resultat"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-27T14:01:22.618Z"
+          },
+          {
+            "id": "UCPLzO9EvgvibAyZCgJDxwyg",
+            "title": "Remei de Ca la Fresca - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 21,
+            "thumbnail": "https://yt3.ggpht.com/V7bBXjYy3_OjuNlnnKvkJ2z-ntSzUsTy65k1nEKbmDbk_P3YKlwCwce7WAB2cLaJu8e5uROisw=s240-c-k-c0x00ffffff-no-rj",
+            "score": 80,
+            "reasons": [
+              "nom exacte de canal Topic"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-27T14:01:22.618Z"
+          },
+          {
+            "id": "UCh2GprPzIkJJ_AkJIHVJBMA",
+            "title": "Katalanisches Filmwochenende",
+            "handle": "@katalanischesfilmwochenend2295",
+            "description": "[DE]\nSeit 2017 wird das Katalanische Filmwochenende jedes Jahr von Student:innen der Universität Regensburg mit Unterstützung des Institut Ramon Llull organisiert. \nHier präsentieren wir verschiedene Debatten, Gespräche und Interviews, die im Rahmen dieses Projekts entstanden sind.\n\n[CAT]\nDes de 2017, el Cap de Setmana de Cinema Català és organitza",
+            "subscriberCount": 12,
+            "thumbnail": "https://yt3.ggpht.com/v9dz25mVLNeZKgqj0V-4Pn3ikykjc0JFKZY1kSKCbk4GVHDJ5xh5je5xpQh45BoE_s5p5LoERPE=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-27T14:01:22.618Z"
+          }
+        ]
       },
-      "confidence": "pendent",
+      "confidence": "alta",
       "reviewStatus": "pendent",
       "active": false,
       "sources": [
         "https://www.wikidata.org/wiki/Q126096871",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "youtube:search-auto"
       ],
-      "lastChecked": "2026-09-25T15:56:24.708Z",
+      "lastChecked": "2026-09-27T14:01:22.618Z",
       "notes": "",
       "enrichment": {
         "musicbrainz": {
@@ -13142,6 +14188,14 @@
           "wikidataWorkCheckedAt": null,
           "musicbrainzReleaseRaw": [],
           "wikidataWorkEvidence": []
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-27T14:01:22.618Z",
+          "status": "autoacceptat",
+          "query": "Remei de Ca la Fresca",
+          "resultCount": 3,
+          "bestScore": 100,
+          "autoAcceptedId": "UCIpVysRnHTbek1TON9dIF6Q"
         }
       },
       "genresRaw": [
@@ -13163,7 +14217,23 @@
       "musicbrainzId": "27e02def-cbdf-445d-9e02-4d37f55e5dc5",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UClgrsyeJWc9_8e-T24YGPpA",
+            "title": "Remigi Palmero - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 77,
+            "thumbnail": "https://yt3.ggpht.com/EUCoELKuw8DbC3ywpt4SmX6pByCO7aoxPH_adfxV9zy54XLrMuO1of7xsButMMfRn974HaRHXg=s240-c-k-c0x00ffffff-no-rj",
+            "score": 5,
+            "reasons": [
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-27T14:01:22.896Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -13196,6 +14266,14 @@
           "musicbrainzReleaseRaw": [],
           "musicbrainzReleaseEvidence": [],
           "musicbrainzReleaseGroupCount": 1
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-27T14:01:22.896Z",
+          "status": "candidats",
+          "query": "Remigi Palmero i Ruà",
+          "resultCount": 1,
+          "bestScore": 5,
+          "autoAcceptedId": null
         }
       },
       "genresRaw": []
@@ -13270,7 +14348,50 @@
       "musicbrainzId": "2769d6bb-3c8a-4376-b5dd-cfdf82a15325",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UCTnoklTTyDXYYtT5_nmxUVQ",
+            "title": "Roger Mas",
+            "handle": "@rogermas",
+            "description": "",
+            "subscriberCount": 1930,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_kCVYmxrzTbrf0wsfrFl2IoRom-x2Fk70-FPzWe70w19g=s240-c-k-c0x00ffffff-no-rj",
+            "score": 53,
+            "reasons": [
+              "nom parcial",
+              "handle coincident"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-27T14:01:23.210Z"
+          },
+          {
+            "id": "UC7kOHFUIoTiH9RrPznoJDEQ",
+            "title": "Roger Mas - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 627,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_kCVYmxrzTbrf0wsfrFl2IoRom-x2Fk70-FPzWe70w19g=s240-c-k-c0x00ffffff-no-rj",
+            "score": 5,
+            "reasons": [
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-27T14:01:23.210Z"
+          },
+          {
+            "id": "UCs2vNAZHhtRD75rN0IvtuuQ",
+            "title": "Roger Mas 5et - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 0,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_ktgf3psRkAgKqgtBrHqhFCpTwn8CtlBGMPzkRqQ28gVAm_OArHXAgXv_ztPUnBWg1sIA=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-27T14:01:23.210Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -13311,6 +14432,14 @@
           "musicbrainzReleaseRaw": [],
           "musicbrainzReleaseEvidence": [],
           "musicbrainzReleaseGroupCount": 12
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-27T14:01:23.210Z",
+          "status": "candidats",
+          "query": "Roger Mas i Solé",
+          "resultCount": 3,
+          "bestScore": 53,
+          "autoAcceptedId": null
         }
       },
       "genresRaw": [
