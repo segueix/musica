@@ -12,6 +12,12 @@ describe('neteja i feed musical', () => {
     expect(data).not.toContain('migrateElsDescontrolatsToCanalJove');
   });
 
+  it('treu el sufix Topic dels noms mostrats sense perdre la detecció interna', () => {
+    expect(updater).toContain('function cleanChannelDisplayName(');
+    expect(updater).toContain("replace(/\\s*-\\s*(?:topic|tòpic)\\s*$/i,'')");
+    expect(updater).toContain('channelTitle:rawChannelName');
+  });
+
   it('genera el feed des de artistes-musica.json i no des de Google Sheets', () => {
     expect(updater).toContain("artistes-musica.json");
     expect(updater).not.toContain('GOOGLE_SHEET_CSV_URL');
