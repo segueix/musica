@@ -41,6 +41,9 @@ La revisió de Viasona s'anirà fent progressivament. Quan es decideixi excloure
 | 23 | Gisela | Carrera discogràfica principalment en castellà, encara que tingui enregistraments en català. | Idioma |
 | 24 | Nerea Rodríguez | Discografia principalment en castellà, amb alguna obra en català. | Idioma |
 | 25 | Muyayo Rif | Repertori principalment en castellà. | Idioma |
+| 26 | Atupa | Exclusió editorial sol·licitada per a Segueix Música. | Exclusió editorial |
+| 27 | Cabosanroque | Exclusió editorial sol·licitada per a Segueix Música. | Exclusió editorial |
+| 28 | Núria López i Fàbrega | Exclusió editorial sol·licitada per a Segueix Música. | Exclusió editorial |
 
 ## Manteniment
 

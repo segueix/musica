@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-28T09:51:01.524Z",
+  "updatedAt": "2026-09-28T10:18:07.275Z",
   "exclusions": [
     {
       "wikidataId": "Q2838792",
@@ -192,6 +192,31 @@
       "aliases": [],
       "reason": "Criteri editorial d'idioma: repertori principalment en castellà.",
       "source": "editorial-language-policy"
+    },
+    {
+      "wikidataId": "Q21262827",
+      "name": "Atupa",
+      "aliases": [],
+      "reason": "Exclusió editorial sol·licitada per a Segueix Música.",
+      "source": "editorial-exclusion"
+    },
+    {
+      "wikidataId": "Q21530074",
+      "name": "Cabosanroque",
+      "aliases": [
+        "cabosanroque"
+      ],
+      "reason": "Exclusió editorial sol·licitada per a Segueix Música.",
+      "source": "editorial-exclusion"
+    },
+    {
+      "wikidataId": "Q113137519",
+      "name": "Núria López i Fàbrega",
+      "aliases": [
+        "Núria López Fàbrega"
+      ],
+      "reason": "Exclusió editorial sol·licitada per a Segueix Música.",
+      "source": "editorial-exclusion"
     }
   ]
 }

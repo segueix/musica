@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-28T09:50:40.193Z",
+  "updatedAt": "2026-09-28T10:18:07.271Z",
   "artists": [
     {
       "name": "31 FAM",
@@ -1212,68 +1212,6 @@
       ]
     },
     {
-      "name": "Atupa",
-      "aliases": [],
-      "genres": [
-        "Rap / Hip-hop"
-      ],
-      "territories": [],
-      "languages": [
-        "ca"
-      ],
-      "wikidataId": "Q21262827",
-      "musicbrainzId": "ba74a90c-a944-48d5-9627-bb6ec905fcfe",
-      "youtube": {
-        "channels": [
-          {
-            "id": "UCvS1bHC_x3hqOwrYTY2bLIA",
-            "handle": null,
-            "name": null,
-            "type": "official",
-            "primary": true
-          }
-        ]
-      },
-      "confidence": "alta",
-      "reviewStatus": "pendent",
-      "active": false,
-      "sources": [
-        "https://www.wikidata.org/wiki/Q21262827",
-        "wikidata:performed-catalan-work"
-      ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": "",
-      "genresRaw": [
-        "rap"
-      ],
-      "enrichment": {
-        "genres": {
-          "checkedAt": "2026-09-27T11:59:19.841Z",
-          "musicbrainzCheckedAt": "2026-09-25T17:11:19.932Z",
-          "wikidataRaw": [],
-          "musicbrainzRaw": [],
-          "unmappedRaw": [],
-          "status": "classificat",
-          "wikidataWorkRaw": [
-            "rap"
-          ],
-          "wikidataWorkCheckedAt": "2026-09-27T11:59:19.841Z",
-          "wikidataWorkEvidence": [
-            {
-              "genre": "rap",
-              "workCount": 3
-            }
-          ],
-          "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:19.932Z",
-          "musicbrainzReleaseCheckedAt": "2026-09-25T17:17:43.710Z",
-          "musicbrainzReleaseRaw": [],
-          "musicbrainzReleaseEvidence": [],
-          "musicbrainzReleaseGroupCount": 2
-        }
-      }
-    },
-    {
       "name": "Auxili",
       "aliases": [],
       "genres": [
@@ -1914,90 +1852,6 @@
           "wikidataWorkEvidence": []
         }
       }
-    },
-    {
-      "name": "Cabosanroque",
-      "aliases": [],
-      "genres": [
-        "Electrònica"
-      ],
-      "territories": [],
-      "languages": [
-        "ca"
-      ],
-      "wikidataId": "Q21530074",
-      "musicbrainzId": "6f4e7969-5088-45c1-9725-4b910883796d",
-      "youtube": {
-        "channels": [
-          {
-            "id": "UCN-mBrTkh8fwc0S-Bxldt2w",
-            "handle": "@cabosanroque",
-            "name": "cabosanroque",
-            "type": "official",
-            "primary": true
-          }
-        ],
-        "candidates": [
-          {
-            "url": "https://www.youtube.com/user/cabosanroque",
-            "handle": null,
-            "relationType": "youtube",
-            "source": "musicbrainz",
-            "discoveredAt": "2026-09-25T15:54:11.735Z"
-          }
-        ]
-      },
-      "confidence": "alta",
-      "reviewStatus": "pendent",
-      "active": false,
-      "sources": [
-        "https://www.wikidata.org/wiki/Q21530074",
-        "wikidata:performed-catalan-work",
-        "musicbrainz:youtube-candidate",
-        "youtube:channels-list"
-      ],
-      "lastChecked": "2026-09-25T16:21:18.310Z",
-      "notes": "",
-      "enrichment": {
-        "musicbrainz": {
-          "checkedAt": "2026-09-25T15:54:11.735Z",
-          "status": "trobat",
-          "relationCount": 1
-        },
-        "genres": {
-          "checkedAt": "2026-09-27T11:59:19.844Z",
-          "musicbrainzCheckedAt": "2026-09-25T17:11:24.898Z",
-          "wikidataRaw": [],
-          "musicbrainzRaw": [],
-          "unmappedRaw": [],
-          "status": "classificat",
-          "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-25T17:12:50.560Z",
-          "wikidataWorkEvidence": [],
-          "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:11:24.898Z",
-          "musicbrainzReleaseCheckedAt": "2026-09-25T17:17:48.846Z",
-          "musicbrainzReleaseRaw": [
-            "dark ambient",
-            "deep house",
-            "electronic",
-            "house"
-          ],
-          "musicbrainzReleaseEvidence": [
-            {
-              "label": "Electrònica",
-              "releaseGroupCount": 4
-            }
-          ],
-          "musicbrainzReleaseGroupCount": 5
-        }
-      },
-      "genresRaw": [
-        "dark ambient",
-        "deep house",
-        "electronic",
-        "house"
-      ]
     },
     {
       "name": "Cactus Troop",
@@ -11304,57 +11158,6 @@
           "wikidataWorkCheckedAt": null,
           "musicbrainzReleaseRaw": [],
           "wikidataWorkEvidence": []
-        }
-      }
-    },
-    {
-      "name": "Núria López i Fàbrega",
-      "aliases": [],
-      "genres": [],
-      "territories": [],
-      "languages": [
-        "ca"
-      ],
-      "wikidataId": "Q113137519",
-      "musicbrainzId": "ae47baa1-fdf6-493f-91ba-5e171079f6b1",
-      "youtube": {
-        "channels": [
-          {
-            "id": "UCaPTbRYC8DqFNKrRTVuE1eA",
-            "handle": null,
-            "name": null,
-            "type": "official",
-            "primary": true
-          }
-        ]
-      },
-      "confidence": "alta",
-      "reviewStatus": "pendent",
-      "active": false,
-      "sources": [
-        "https://www.wikidata.org/wiki/Q113137519",
-        "wikidata:performed-catalan-work"
-      ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": "",
-      "genresRaw": [],
-      "enrichment": {
-        "genres": {
-          "checkedAt": "2026-09-27T11:59:19.886Z",
-          "musicbrainzCheckedAt": "2026-09-25T17:12:18.258Z",
-          "wikidataRaw": [],
-          "musicbrainzRaw": [],
-          "unmappedRaw": [],
-          "status": "sense-dades",
-          "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-27T11:59:19.886Z",
-          "wikidataWorkEvidence": [],
-          "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:18.258Z",
-          "musicbrainzReleaseCheckedAt": "2026-09-25T17:18:42.892Z",
-          "musicbrainzReleaseRaw": [],
-          "musicbrainzReleaseEvidence": [],
-          "musicbrainzReleaseGroupCount": 0
         }
       }
     },
