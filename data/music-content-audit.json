@@ -1,18 +1,22 @@
 {
-  "generatedAt": "2026-09-28T15:54:49.883Z",
-  "rawPublicVideoCount": 1195,
-  "acceptedVideoCount": 888,
-  "rejectedOrReviewCount": 307,
-  "reviewCount": 132,
+  "generatedAt": "2026-09-28T15:57:02.543Z",
+  "rawPublicVideoCount": 1542,
+  "acceptedVideoCount": 1093,
+  "rejectedOrReviewCount": 449,
+  "reviewCount": 209,
   "typeCounts": {
-    "song": 829,
-    "live-song": 40,
-    "album": 19,
-    "other": 175,
-    "review": 132
+    "song": 1022,
+    "live-song": 50,
+    "album": 21,
+    "other": 240,
+    "review": 209
   },
   "channelsWithoutAcceptedMusic": [
-    "UCUSjRkF72RR1E8Rl4SWtVsQ"
+    "UCnmFh1j3xvDfrw20AqVgegw",
+    "UCUSjRkF72RR1E8Rl4SWtVsQ",
+    "UC_eW1AyvwaPsQA5YAuOC3YQ",
+    "UC57d8FV0O8sOiK6-K-gWNHA",
+    "UC9NDkhmm_3ZBjxnIh2d2paA"
   ],
   "rejectedSamples": [
     {
@@ -27,6 +31,20 @@
       "title": "La sintonia (skit) [Visualizer]",
       "channelTitle": "31 FAM",
       "durationSeconds": 32,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "Oe2MXafylxU",
+      "title": "MANRESA. 10 DE GENER. THE WOW CLUB. Entrades a wowclubmanresa.com",
+      "channelTitle": "alfredgarcia",
+      "durationSeconds": 21,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "T2iLnJrvJuE",
+      "title": "T’estimo es te quiero. El meu tercer disc. Ja disponible.",
+      "channelTitle": "alfredgarcia",
+      "durationSeconds": 16,
       "musicReason": "massa curt: probable teaser/fragment"
     },
     {
@@ -91,6 +109,20 @@
       "channelTitle": "Aspencat Oficial",
       "durationSeconds": 67,
       "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "R-XkZ6VyvTY",
+      "title": "No Hi Ha Temps - Au Rora feat. Vernat",
+      "channelTitle": "Au Rora",
+      "durationSeconds": 41,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "F3sxCm14O7E",
+      "title": "No hi ha temps - Au Rora feat. Vernat",
+      "channelTitle": "Au Rora",
+      "durationSeconds": 12,
+      "musicReason": "massa curt: probable teaser/fragment"
     },
     {
       "id": "MZZoKww_158",
@@ -233,6 +265,20 @@
       "musicReason": "massa curt: probable teaser/fragment"
     },
     {
+      "id": "U5L-kJNvxZg",
+      "title": "6/05 videoclip “SI TE’N VAS”",
+      "channelTitle": "Cloe Riembau",
+      "durationSeconds": 16,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "Z4ko6aHkFUc",
+      "title": "20/01 “DE MAIG A JUNY”",
+      "channelTitle": "Cloe Riembau",
+      "durationSeconds": 10,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
       "id": "qzrM90fCI1M",
       "title": "CRIM 10 ANYS Live Streaming (03/01/2021) @ Estraperlo Club",
       "channelTitle": "CrimPunkRock",
@@ -266,6 +312,13 @@
       "channelTitle": "Dan Peralbo i El Comboi",
       "durationSeconds": 20,
       "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "r_wADL0d2Ug",
+      "title": "ENDING (MI PEAK) - TEASER VIDEO",
+      "channelTitle": "DAVEU))",
+      "durationSeconds": 75,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
     },
     {
       "id": "NkyaIUzMUhQ",
@@ -399,6 +452,13 @@
       "channelTitle": "El Pony Pisador",
       "durationSeconds": 21,
       "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "W3XwngqEPvc",
+      "title": "elo - L'escriptori del Valle  // Live Session @ El Valle Estudio",
+      "channelTitle": "elo",
+      "durationSeconds": 1117,
+      "musicReason": "concert o sessió llarga, no una sola cançó"
     },
     {
       "id": "iX3VX2SfbZc",
@@ -548,6 +608,27 @@
       "musicReason": "massa curt: probable teaser/fragment"
     },
     {
+      "id": "RBSNBOfdbSg",
+      "title": "VEUS - gusset",
+      "channelTitle": "gusset",
+      "durationSeconds": 25,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "AD1LZNlvf58",
+      "title": "Hey Zuri - roselleta shiny (You&Me Song)",
+      "channelTitle": "Hey Zuri",
+      "durationSeconds": 44,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "ceucYwuQof0",
+      "title": "Un curt documental de HEY ZURI | Sala Loco Club - València",
+      "channelTitle": "Hey Zuri",
+      "durationSeconds": 638,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
       "id": "gxzxYjBb72M",
       "title": "JJMR - RIBERA (disc comentat a L'ESCOLTADISSA amb Laura Grau i Sr.Chen, 10/10/2024)",
       "channelTitle": "Jo Jet i Maria Ribot",
@@ -583,11 +664,46 @@
       "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
     },
     {
+      "id": "0792FRBpfrg",
+      "title": "Turmarí - L'arannà (teaser)",
+      "channelTitle": "L'arannà",
+      "durationSeconds": 66,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
       "id": "kXaVXZo7ogE",
       "title": "La Fúmiga - TOT ESTAVA PER FER - Making Of",
       "channelTitle": "La Fúmiga",
       "durationSeconds": 957,
       "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "Efp1Qg2K1Pc",
+      "title": "Blue Monday en català #lamousse #electronicmusic",
+      "channelTitle": "La Mousse",
+      "durationSeconds": 15,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "Jq5qNxVtzM0",
+      "title": "Blue Monday (New Order) en català (La Mousse) #lamousse #electronicmusic",
+      "channelTitle": "La Mousse",
+      "durationSeconds": 24,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "YRmNCc66Xvs",
+      "title": "Blue Monday en català #lamousse #electronicmusic",
+      "channelTitle": "La Mousse",
+      "durationSeconds": 18,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "ULN-Exgji9U",
+      "title": "Blue Monday (New Order) en català (La Mousse) #lamousse #electronicmusic",
+      "channelTitle": "La Mousse",
+      "durationSeconds": 16,
+      "musicReason": "massa curt: probable teaser/fragment"
     },
     {
       "id": "stc5o1SaNd0",
@@ -730,130 +846,18 @@
       "musicReason": "massa curt: probable teaser/fragment"
     },
     {
-      "id": "flsBMAMSrV4",
-      "title": "VLOG - RAZZMATAZZ - Presentació Maig 'PROU' 🧡",
-      "channelTitle": "Maig",
-      "durationSeconds": 436,
-      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "0cz-Tlkntq0",
-      "title": "Making of ''Aquella part de tu / Contes d'estiu'' | Maig",
-      "channelTitle": "Maig",
-      "durationSeconds": 395,
-      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "-kCWG3C3cWo",
-      "title": "NOVES SAMARRETES ROBINA😛😛😛😛😛😛😛😛😛😛😛😛😛 als concerts i pròximament al web",
-      "channelTitle": "La Maria",
-      "durationSeconds": 32,
+      "id": "eXZpRQYJfTw",
+      "title": "‼️BALLO SENSE TU‼️ Disponible ja a totes les plataformes!!",
+      "channelTitle": "Mai Halis",
+      "durationSeconds": 30,
       "musicReason": "massa curt: probable teaser/fragment"
     },
     {
-      "id": "tAoVy0lh2co",
-      "title": "Vinils ROBINA ja disponibles ❣️ a https://propagandapelfet.com/producte/la-maria-robina-2025-vinil/",
-      "channelTitle": "La Maria",
-      "durationSeconds": 37,
+      "id": "Jfvvj8YGNbE",
+      "title": "‼️‼️BALLO SENSE TU DISPONIBLE A TOTES LES PLATAFORMES‼️‼️",
+      "channelTitle": "Mai Halis",
+      "durationSeconds": 30,
       "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "f4Y2nvnXpTs",
-      "title": "Sant Domingo Forever📀💘 dia 27 de febrer nou disc!!!",
-      "channelTitle": "Maria Jaume",
-      "durationSeconds": 33,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "p7XfJA18FVg",
-      "title": "Cari tu estàs fet a mida, això no s'oblida 🥺",
-      "channelTitle": "Maria Jaume",
-      "durationSeconds": 31,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "NNUPeAPWE9Q",
-      "title": "Xin xin i bye bye 🥂👋",
-      "channelTitle": "Maria Jaume",
-      "durationSeconds": 32,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "4ZWYORW10dM",
-      "title": "Tenc encara es vídeos i ses fotos, corason roto 💔💔💔",
-      "channelTitle": "Maria Jaume",
-      "durationSeconds": 18,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "r_0cdAnD150",
-      "title": "De tornar a aquell febrer d'abans que tot fes massa via... | Maria Jaume #musicacatalana",
-      "channelTitle": "Maria Jaume",
-      "durationSeconds": 15,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "jd_dqo9471o",
-      "title": "Trista a Miami, la cançó on colaborem Julieta i Maria Jaume 🔥",
-      "channelTitle": "Maria Jaume",
-      "durationSeconds": 24,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "kGFxDUzmVos",
-      "title": "Pura geografia, això no s'oblida ✈️🌍",
-      "channelTitle": "Maria Jaume",
-      "durationSeconds": 14,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "antMsSruPpM",
-      "title": "Donaria més de lo que tenc... ❤️ MALA VIA",
-      "channelTitle": "Maria Jaume",
-      "durationSeconds": 14,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "ogzenYbtrYk",
-      "title": "Marina Rossell - Entrevista al programa \"Al cotxe\" per Eloi Vila. 3cat, 23 abril 2025",
-      "channelTitle": "Marina Rossell",
-      "durationSeconds": 1752,
-      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "93WoSp5cPUM",
-      "title": "Marina Rossell - Entrevista amb Albert Om a \"Cafè d'idees\" de La 2 TVE de Gemma Nierga (3/04/2025)",
-      "channelTitle": "Marina Rossell",
-      "durationSeconds": 1116,
-      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "7OV7wWKS-08",
-      "title": "Marina Rossell - Entrevista amb Albert Om al \"Més 324\" de 3cat de Marina Romero (1 abril 2025)",
-      "channelTitle": "Marina Rossell",
-      "durationSeconds": 891,
-      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "WqRH5EXrAfk",
-      "title": "Marina Rossell - Entrevista amb Albert Om a \"La Selva\" de 3cat de Xavier Grasset (27 març 2025)",
-      "channelTitle": "Marina Rossell",
-      "durationSeconds": 2264,
-      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "3PO9oPJhyCQ",
-      "title": "Marina Rossell - Interview with Albert Om and Marina Rossell at \"Col·lapse\"  (22/03/2025)",
-      "channelTitle": "Marina Rossell",
-      "durationSeconds": 1610,
-      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "G9cp35_skLI",
-      "title": "Marina Rossell - Entrevista a Marina Rossell i Albert OM a Diari Ara: No faré cap més llibre",
-      "channelTitle": "Marina Rossell",
-      "durationSeconds": 962,
-      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
     }
   ]
 }
