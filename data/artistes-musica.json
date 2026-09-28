@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-28T10:52:15.515Z",
+  "updatedAt": "2026-09-28T15:53:50.745Z",
   "artists": [
     {
       "name": "31 FAM",
@@ -488,6 +488,35 @@
       "genresRaw": [
         "rock",
         "música de cantautor"
+      ]
+    },
+    {
+      "name": "Alfred Garcia",
+      "aliases": [],
+      "genres": [
+        "Pop"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [],
+        "candidates": []
+      },
+      "confidence": "mitjana",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "https://www.enderrock.cat/noticia/30487/premis-primera-fila-2025-premien-vintena-artistes-catalans",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": "2026-09-28T15:53:50.745Z",
+      "notes": "Apareix com a pop en català, però convé revisar si el repertori és principalment en català.",
+      "genresRaw": [
+        "Pop"
       ]
     },
     {
@@ -1212,6 +1241,36 @@
       ]
     },
     {
+      "name": "Au Rora",
+      "aliases": [],
+      "genres": [
+        "Pop",
+        "Indie / Alternativa"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [],
+        "candidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "https://www.enderrock.cat/noticia/30783/festa-dels-premis-enderrock-2026-comptara-amb-maig-enmatu-minova-au-rora",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": "2026-09-28T15:53:50.745Z",
+      "notes": "Nova etapa més pop i en català.",
+      "genresRaw": [
+        "Indie-pop / pop"
+      ]
+    },
+    {
       "name": "Auxili",
       "aliases": [],
       "genres": [
@@ -1265,6 +1324,36 @@
           "wikidataWorkEvidence": []
         }
       }
+    },
+    {
+      "name": "Bèrnia",
+      "aliases": [],
+      "genres": [
+        "Pop",
+        "Rumba / Mestissatge"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [],
+        "candidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": "2026-09-28T15:53:50.745Z",
+      "notes": "Classificat al Sona9 2026 com a mestissatge pop.",
+      "genresRaw": [
+        "Mestissatge pop"
+      ]
     },
     {
       "name": "Berta",
@@ -2181,6 +2270,44 @@
       "genresRaw": []
     },
     {
+      "name": "Celobert",
+      "aliases": [],
+      "genres": [
+        "Pop",
+        "Indie / Alternativa"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCwjV0xSIDOp3SqY9A9dCsZA",
+            "handle": "@Celobert",
+            "name": null,
+            "type": "official",
+            "primary": true
+          }
+        ],
+        "candidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "https://www.enderrock.cat/noticia/31880/celobert-posa-veu-ruptura-ulls-bruns",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": "2026-09-28T15:53:50.745Z",
+      "notes": "EPs 2025-26; indie-pop en català.",
+      "genresRaw": [
+        "Indie-pop"
+      ]
+    },
+    {
       "name": "Cesk Freixas",
       "aliases": [],
       "genres": [
@@ -2242,6 +2369,36 @@
           "wikidataWorkEvidence": []
         }
       }
+    },
+    {
+      "name": "Cloe Riembau",
+      "aliases": [],
+      "genres": [
+        "Pop",
+        "Indie / Alternativa"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [],
+        "candidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "https://www.enderrock.cat/noticia/30628/nous-discos-catala-2026",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": "2026-09-28T15:53:50.745Z",
+      "notes": "Guanyadora del Sona9; debut indie-pop el 2026.",
+      "genresRaw": [
+        "Indie-pop"
+      ]
     },
     {
       "name": "Cobla Mediterrània",
@@ -2565,6 +2722,44 @@
       }
     },
     {
+      "name": "Cristina Monllau",
+      "aliases": [],
+      "genres": [
+        "Pop",
+        "Indie / Alternativa"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCw1jsv2eynibpElkwzdJa2g",
+            "handle": null,
+            "name": null,
+            "type": "official",
+            "primary": true
+          }
+        ],
+        "candidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": "2026-09-28T15:53:50.745Z",
+      "notes": "Classificada al Sona9 2026 com a pop-indie.",
+      "genresRaw": [
+        "Pop-indie"
+      ]
+    },
+    {
       "name": "Dàmaris Gelabert",
       "aliases": [],
       "genres": [
@@ -2618,6 +2813,105 @@
           "wikidataWorkEvidence": []
         }
       }
+    },
+    {
+      "name": "Dan Peralbo & El Comboi",
+      "aliases": [],
+      "genres": [
+        "Pop",
+        "Rock"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCwtCbak4LIxDWURhumzu7Ng",
+            "handle": "@danperalbo_elcomboi",
+            "name": null,
+            "type": "official",
+            "primary": true
+          }
+        ],
+        "candidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "https://www.3cat.cat/3cat/catorze-veus-per-entendre-el-futur-del-pop-catala/audio/1244294/",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": "2026-09-28T15:53:50.745Z",
+      "notes": "Inclòs entre les noves veus del pop català.",
+      "genresRaw": [
+        "Power pop / rock"
+      ]
+    },
+    {
+      "name": "Daveu",
+      "aliases": [],
+      "genres": [
+        "Pop",
+        "Electrònica",
+        "Urbana"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [],
+        "candidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": "2026-09-28T15:53:50.745Z",
+      "notes": "Projecte creat el 2025; Sona9 el defineix com pop en català.",
+      "genresRaw": [
+        "Pop / EDM / urbà"
+      ]
+    },
+    {
+      "name": "Derbi Junior",
+      "aliases": [],
+      "genres": [
+        "Pop",
+        "Indie / Alternativa"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [],
+        "candidates": []
+      },
+      "confidence": "mitjana",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "https://www.3cat.cat/3cat/catorze-veus-per-entendre-el-futur-del-pop-catala/audio/1244294/",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": "2026-09-28T15:53:50.745Z",
+      "notes": "Inclòs per 3Cat en el mapa de futur del pop.",
+      "genresRaw": [
+        "Pop / indie"
+      ]
     },
     {
       "name": "Doctor Prats",
@@ -3408,6 +3702,36 @@
       ]
     },
     {
+      "name": "Elo",
+      "aliases": [],
+      "genres": [
+        "Pop",
+        "Urbana"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [],
+        "candidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": "2026-09-28T15:53:50.745Z",
+      "notes": "Sona9 2026: pop urbà.",
+      "genresRaw": [
+        "Pop urbà"
+      ]
+    },
+    {
       "name": "Elphomega",
       "aliases": [],
       "genres": [
@@ -3931,6 +4255,36 @@
         "òpera",
         "folk",
         "sarsuela"
+      ]
+    },
+    {
+      "name": "En Rick",
+      "aliases": [],
+      "genres": [
+        "Pop",
+        "Electrònica"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [],
+        "candidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": "2026-09-28T15:53:50.745Z",
+      "notes": "Sona9 2026: pop electrònic.",
+      "genresRaw": [
+        "Pop electrònic"
       ]
     },
     {
@@ -5388,6 +5742,95 @@
         }
       },
       "genresRaw": []
+    },
+    {
+      "name": "GUINEU",
+      "aliases": [],
+      "genres": [
+        "Pop",
+        "Indie / Alternativa"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [],
+        "candidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "https://icec.gencat.cat/ca/actualitat/noticies/detall/Noticia_PrimaveraPro25",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": "2026-09-28T15:53:50.745Z",
+      "notes": "Font oficial la descriu com indie-pop català.",
+      "genresRaw": [
+        "Indie-pop"
+      ]
+    },
+    {
+      "name": "Gusset",
+      "aliases": [],
+      "genres": [
+        "Pop"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [],
+        "candidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "https://www.enderrock.cat/noticia/30487/premis-primera-fila-2025-premien-vintena-artistes-catalans",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": "2026-09-28T15:53:50.745Z",
+      "notes": "Premiat dins la gala dedicada a artistes de pop en català.",
+      "genresRaw": [
+        "Pop"
+      ]
+    },
+    {
+      "name": "Hey Zuri",
+      "aliases": [],
+      "genres": [
+        "Pop",
+        "Rock"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [],
+        "candidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": "2026-09-28T15:53:50.745Z",
+      "notes": "Classificat al Sona9 2026 com a pop-rock.",
+      "genresRaw": [
+        "Pop-rock"
+      ]
     },
     {
       "name": "Inadaptats",
@@ -7283,6 +7726,35 @@
       ]
     },
     {
+      "name": "Júlia Cruz",
+      "aliases": [],
+      "genres": [
+        "Pop"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [],
+        "candidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "https://www.3cat.cat/3cat/catorze-veus-per-entendre-el-futur-del-pop-catala/audio/1244294/",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": "2026-09-28T15:53:50.745Z",
+      "notes": "Inclosa entre les noves veus del pop català.",
+      "genresRaw": [
+        "Pop"
+      ]
+    },
+    {
       "name": "Julieta",
       "aliases": [],
       "genres": [
@@ -7523,6 +7995,36 @@
           "wikidataWorkEvidence": []
         }
       }
+    },
+    {
+      "name": "L'arannà",
+      "aliases": [],
+      "genres": [
+        "Pop",
+        "Cançó d'autor"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [],
+        "candidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "https://www.3cat.cat/3cat/catorze-veus-per-entendre-el-futur-del-pop-catala/audio/1244294/",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": "2026-09-28T15:53:50.745Z",
+      "notes": "Inclòs entre les noves veus del pop català.",
+      "genresRaw": [
+        "Pop / cançó"
+      ]
     },
     {
       "name": "La Banda Trapera del Río",
@@ -8268,6 +8770,36 @@
           "wikidataWorkEvidence": []
         }
       }
+    },
+    {
+      "name": "La Mousse",
+      "aliases": [],
+      "genres": [
+        "Pop",
+        "Electrònica"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [],
+        "candidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": "2026-09-28T15:53:50.745Z",
+      "notes": "Classificat al Sona9 2026 com a pop electrònic.",
+      "genresRaw": [
+        "Pop electrònic"
+      ]
     },
     {
       "name": "La Trinca",
@@ -9306,6 +9838,73 @@
       ]
     },
     {
+      "name": "Mai Halis",
+      "aliases": [],
+      "genres": [
+        "Pop",
+        "Rock"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [],
+        "candidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": "2026-09-28T15:53:50.745Z",
+      "notes": "Classificat al Sona9 2026 com a pop-rock.",
+      "genresRaw": [
+        "Pop-rock"
+      ]
+    },
+    {
+      "name": "Maig",
+      "aliases": [],
+      "genres": [
+        "Pop"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCiJN7Igpjbpar_06XNFubcg",
+            "handle": null,
+            "name": null,
+            "type": "official",
+            "primary": true
+          }
+        ],
+        "candidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "https://www.enderrock.cat/noticia/30783/festa-dels-premis-enderrock-2026-comptara-amb-maig-enmatu-minova-au-rora",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": "2026-09-28T15:53:50.745Z",
+      "notes": "Debut 2025 i projecció 2026.",
+      "genresRaw": [
+        "Pop"
+      ]
+    },
+    {
       "name": "Mama Dousha",
       "aliases": [],
       "genres": [],
@@ -9732,6 +10331,66 @@
         }
       },
       "genresRaw": []
+    },
+    {
+      "name": "Mar Grimalt",
+      "aliases": [],
+      "genres": [
+        "Pop",
+        "Folk i arrel"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [],
+        "candidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "https://www.3cat.cat/3cat/catorze-veus-per-entendre-el-futur-del-pop-catala/audio/1244294/",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": "2026-09-28T15:53:50.745Z",
+      "notes": "Inclosa entre les noves veus del pop català.",
+      "genresRaw": [
+        "Pop / folk"
+      ]
+    },
+    {
+      "name": "Mar Pujol",
+      "aliases": [],
+      "genres": [
+        "Pop",
+        "Cançó d'autor"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [],
+        "candidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "https://www.3cat.cat/3cat/catorze-veus-per-entendre-el-futur-del-pop-catala/audio/1244294/",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": "2026-09-28T15:53:50.745Z",
+      "notes": "Inclosa entre les noves veus del pop català.",
+      "genresRaw": [
+        "Pop d'autor"
+      ]
     },
     {
       "name": "Maria Bertomeu i Soria",
@@ -10310,6 +10969,35 @@
       "genresRaw": []
     },
     {
+      "name": "Miki Núñez",
+      "aliases": [],
+      "genres": [
+        "Pop"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [],
+        "candidates": []
+      },
+      "confidence": "mitjana",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "https://www.enderrock.cat/noticia/30487/premis-primera-fila-2025-premien-vintena-artistes-catalans",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": "2026-09-28T15:53:50.745Z",
+      "notes": "Apareix com a pop en català, però convé revisar si el repertori és principalment en català.",
+      "genresRaw": [
+        "Pop"
+      ]
+    },
+    {
       "name": "Minibús intergalàctic",
       "aliases": [],
       "genres": [
@@ -10437,6 +11125,35 @@
         "garage rock",
         "rock",
         "punk rock"
+      ]
+    },
+    {
+      "name": "miquel",
+      "aliases": [],
+      "genres": [
+        "Pop"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [],
+        "candidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "https://www.3cat.cat/3cat/catorze-veus-per-entendre-el-futur-del-pop-catala/audio/1244294/",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": "2026-09-28T15:53:50.745Z",
+      "notes": "Inclòs entre les noves veus del pop català.",
+      "genresRaw": [
+        "Pop"
       ]
     },
     {
@@ -10886,6 +11603,35 @@
       ]
     },
     {
+      "name": "Naina",
+      "aliases": [],
+      "genres": [
+        "Pop"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [],
+        "candidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "https://www.enderrock.cat/noticia/30628/nous-discos-catala-2026",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": "2026-09-28T15:53:50.745Z",
+      "notes": "Artista valenciana amb nou disc en català el 2026.",
+      "genresRaw": [
+        "Pop"
+      ]
+    },
+    {
       "name": "Narcís Perich i Serra",
       "aliases": [],
       "genres": [
@@ -11241,6 +11987,44 @@
       }
     },
     {
+      "name": "okdw",
+      "aliases": [],
+      "genres": [
+        "Pop",
+        "Funk / Soul / R&B"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCVJ3B4L5NoSuarmZKopumzQ",
+            "handle": "@okdw",
+            "name": null,
+            "type": "official",
+            "primary": true
+          }
+        ],
+        "candidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "https://icec.gencat.cat/ca/actualitat/noticies/detall/Noticia_PrimaveraPro25",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": "2026-09-28T15:53:50.745Z",
+      "notes": "Font oficial: fusió de R&B, soul i pop en català.",
+      "genresRaw": [
+        "R&B / soul / pop"
+      ]
+    },
+    {
       "name": "Oques Grasses",
       "aliases": [],
       "genres": [
@@ -11307,6 +12091,36 @@
           "wikidataWorkEvidence": []
         }
       }
+    },
+    {
+      "name": "Orella d'Ós",
+      "aliases": [],
+      "genres": [
+        "Pop",
+        "Rock"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [],
+        "candidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": "2026-09-28T15:53:50.745Z",
+      "notes": "Classificat al Sona9 2026 com a pop-rock.",
+      "genresRaw": [
+        "Pop-rock"
+      ]
     },
     {
       "name": "Orfeó Català",
@@ -11864,6 +12678,43 @@
       ]
     },
     {
+      "name": "Ouineta",
+      "aliases": [],
+      "genres": [
+        "Pop"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCn_A4CBnBwlD8OTXSz0_FHQ",
+            "handle": "@ouineta",
+            "name": null,
+            "type": "official",
+            "primary": true
+          }
+        ],
+        "candidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "https://icec.gencat.cat/ca/actualitat/noticies/detall/Noticia_PrimaveraPro26",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": "2026-09-28T15:53:50.745Z",
+      "notes": "Pop experimental en català; forta presència 2025-26.",
+      "genresRaw": [
+        "Pop experimental"
+      ]
+    },
+    {
       "name": "Ovidi Montllor i Mengual",
       "aliases": [],
       "genres": [
@@ -11965,6 +12816,36 @@
       },
       "genresRaw": [
         "Nova Cançó"
+      ]
+    },
+    {
+      "name": "Palau",
+      "aliases": [],
+      "genres": [
+        "Pop",
+        "Indie / Alternativa"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [],
+        "candidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": "2026-09-28T15:53:50.745Z",
+      "notes": "Grup nascut el 2025; indie-pop en català.",
+      "genresRaw": [
+        "Indie-pop"
       ]
     },
     {
@@ -12369,6 +13250,36 @@
           "wikidataWorkEvidence": []
         }
       }
+    },
+    {
+      "name": "Paula Montalbán",
+      "aliases": [],
+      "genres": [
+        "Pop",
+        "Indie / Alternativa"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [],
+        "candidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": "2026-09-28T15:53:50.745Z",
+      "notes": "Classificada al Sona9 2026 com a pop alternatiu.",
+      "genresRaw": [
+        "Pop alternatiu"
+      ]
     },
     {
       "name": "Pep Gimeno \"Botifarra\"",
@@ -12905,6 +13816,36 @@
         "roots reggae",
         "dancehall",
         "ragga"
+      ]
+    },
+    {
+      "name": "Pla Moguda",
+      "aliases": [],
+      "genres": [
+        "Pop",
+        "Rock"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [],
+        "candidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": "2026-09-28T15:53:50.745Z",
+      "notes": "Guanyador Sona9 2026; pop-rock.",
+      "genresRaw": [
+        "Pop-rock"
       ]
     },
     {
@@ -13563,6 +14504,35 @@
       ]
     },
     {
+      "name": "Reïna",
+      "aliases": [],
+      "genres": [
+        "Pop"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [],
+        "candidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "https://www.3cat.cat/3cat/catorze-veus-per-entendre-el-futur-del-pop-catala/audio/1244294/",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": "2026-09-28T15:53:50.745Z",
+      "notes": "Inclòs entre les noves veus del pop català.",
+      "genresRaw": [
+        "Pop"
+      ]
+    },
+    {
       "name": "Remei de Ca la Fresca",
       "aliases": [],
       "genres": [
@@ -13985,6 +14955,36 @@
       ]
     },
     {
+      "name": "Roser Dresaire",
+      "aliases": [],
+      "genres": [
+        "Pop",
+        "Cançó d'autor"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [],
+        "candidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": "2026-09-28T15:53:50.745Z",
+      "notes": "Classificada al Sona9 2026 com a pop d'autor.",
+      "genresRaw": [
+        "Pop d'autor"
+      ]
+    },
+    {
       "name": "Salomé",
       "aliases": [],
       "genres": [
@@ -14037,6 +15037,65 @@
       },
       "genresRaw": [
         "pop"
+      ]
+    },
+    {
+      "name": "Sandra Monfort",
+      "aliases": [],
+      "genres": [
+        "Pop",
+        "Folk i arrel"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [],
+        "candidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "https://www.3cat.cat/3cat/catorze-veus-per-entendre-el-futur-del-pop-catala/audio/1244294/",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": "2026-09-28T15:53:50.745Z",
+      "notes": "Inclosa entre les noves veus del pop català.",
+      "genresRaw": [
+        "Pop / folk"
+      ]
+    },
+    {
+      "name": "Sara Roy",
+      "aliases": [],
+      "genres": [
+        "Pop"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [],
+        "candidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "https://www.enderrock.cat/noticia/30487/premis-primera-fila-2025-premien-vintena-artistes-catalans",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": "2026-09-28T15:53:50.745Z",
+      "notes": "Premiada dins la gala dedicada a artistes de pop en català.",
+      "genresRaw": [
+        "Pop"
       ]
     },
     {
@@ -14333,6 +15392,35 @@
       }
     },
     {
+      "name": "Siderland",
+      "aliases": [],
+      "genres": [
+        "Pop"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [],
+        "candidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "https://www.3cat.cat/3cat/17072026/video/6415833/",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": "2026-09-28T15:53:50.745Z",
+      "notes": "3Cat: el pop català que més balla.",
+      "genresRaw": [
+        "Pop"
+      ]
+    },
+    {
       "name": "Sílvia Pérez Cruz",
       "aliases": [],
       "genres": [
@@ -14528,6 +15616,36 @@
       }
     },
     {
+      "name": "Sodi",
+      "aliases": [],
+      "genres": [
+        "Pop",
+        "Rock"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [],
+        "candidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "https://www.enderrock.cat/noticia/31101/vine-enderrock-sona-maig-amb-quinto-vittara-sodi-ginesta",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": "2026-09-28T15:53:50.745Z",
+      "notes": "Guanyador de premis Sona9 2025; debut discogràfic 2026.",
+      "genresRaw": [
+        "Brit-pop / pop-rock"
+      ]
+    },
+    {
       "name": "Sopa de Cabra",
       "aliases": [],
       "genres": [
@@ -14635,6 +15753,81 @@
         }
       },
       "genresRaw": []
+    },
+    {
+      "name": "Suu",
+      "aliases": [],
+      "genres": [
+        "Pop"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UClVTg1yrfwH3ku46CPlO7xg",
+            "handle": "@suuventura",
+            "name": null,
+            "type": "official",
+            "primary": true
+          }
+        ],
+        "candidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "https://www.enderrock.cat/noticia/30487/premis-primera-fila-2025-premien-vintena-artistes-catalans",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": "2026-09-28T15:53:50.745Z",
+      "notes": "Premiada el 2025.",
+      "genresRaw": [
+        "Pop"
+      ]
+    },
+    {
+      "name": "Svetlana",
+      "aliases": [],
+      "genres": [
+        "Pop",
+        "Electrònica"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCCo52K6zPcI8QXDKr2DgjBg",
+            "handle": "@SVETLANAMARRANA",
+            "name": null,
+            "type": "official",
+            "primary": true
+          }
+        ],
+        "candidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "https://www.enderrock.cat/noticia/30487/premis-primera-fila-2025-premien-vintena-artistes-catalans",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": "2026-09-28T15:53:50.745Z",
+      "notes": "Premiats el 2025 i presents en cartells 2026.",
+      "genresRaw": [
+        "Pop / electrònica"
+      ]
     },
     {
       "name": "Teresa Rebull",
@@ -15289,6 +16482,36 @@
       "genresRaw": [
         "òpera",
         "classical"
+      ]
+    },
+    {
+      "name": "Vittara",
+      "aliases": [],
+      "genres": [
+        "Pop",
+        "Indie / Alternativa"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [],
+        "candidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "https://www.enderrock.cat/noticia/31101/vine-enderrock-sona-maig-amb-quinto-vittara-sodi-ginesta",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": "2026-09-28T15:53:50.745Z",
+      "notes": "Grup indie-pop barceloní amb disc 2026.",
+      "genresRaw": [
+        "Indie-pop"
       ]
     },
     {
