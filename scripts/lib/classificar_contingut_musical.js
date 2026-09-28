@@ -97,7 +97,7 @@ function classifyMusicContent({ item, channelMeta }) {
     }
     return {
       accepted: true,
-      contentType: liveMarker && durationSeconds >= 60 && durationSeconds <= 900 ? 'live-song' : 'song',
+      contentType: liveMarker && durationSeconds >= 60 && durationSeconds <= 900 ? 'live_song' : 'song',
       confidence: 0.99,
       reason: topicChannel ? 'canal Topic de YouTube' : 'Provided to YouTube by'
     };
@@ -110,7 +110,7 @@ function classifyMusicContent({ item, channelMeta }) {
   if (songMarker && durationSeconds >= 45 && durationSeconds <= 900) {
     return {
       accepted: true,
-      contentType: liveMarker ? 'live-song' : 'song',
+      contentType: liveMarker ? 'live_song' : 'song',
       confidence: 0.98,
       reason: 'marcador explícit de cançó/videoclip'
     };
@@ -127,7 +127,7 @@ function classifyMusicContent({ item, channelMeta }) {
   if (liveMarker && titlePattern && durationSeconds >= 60 && durationSeconds <= 900) {
     return {
       accepted: true,
-      contentType: 'live-song',
+      contentType: 'live_song',
       confidence: 0.92,
       reason: 'títol de cançó + versió en directe/acústica'
     };
@@ -149,7 +149,7 @@ function classifyMusicContent({ item, channelMeta }) {
   if (score >= 75) {
     return {
       accepted: true,
-      contentType: liveMarker ? 'live-song' : 'song',
+      contentType: liveMarker ? 'live_song' : 'song',
       confidence: Math.min(0.94, 0.65 + score / 300),
       reason: reasons.join(' + ')
     };

@@ -149,8 +149,10 @@ async function main(){
   const rejectedSamples=[];
   const channelsWithoutVideos=[];
   const channelsWithoutAcceptedMusic=[];
-  const typeCounts={song:0,'live-song':0,album:0,other:0,review:0};
+  const typeCounts={song:0,live_song:0,album:0,other:0,review:0};
   let publicVideoCount=0;
+  let acceptedMusicCount=0;
+  let categoryEligibleVideoCount=0;
 
   for(const id of ids){
     const meta=indexed.get(id);
@@ -224,17 +226,26 @@ async function main(){
         musicReason:classification.reason
       };
 
+      // Tots els vídeos públics es conserven al feed. La vista de categories
+      // decideix després si són cançó o actuació en directe.
+      videos.push(base);
+
       if(classification.accepted){
-        videos.push(base);
+        acceptedMusicCount++;
         channelAcceptedCount++;
-      } else if(classification.contentType==='review'){
+      }
+      if(classification.contentType==='song' || classification.contentType==='live_song'){
+        categoryEligibleVideoCount++;
+      }
+
+      if(classification.contentType==='review'){
         review.push({
           id:base.id,title:base.title,channelId:id,channelTitle:channel.name,
           durationSeconds:base.durationSeconds,publishedAt:base.publishedAt,
           musicConfidence:classification.confidence,musicReason:classification.reason,
           youtubeCategoryId:String(vs.categoryId||'')
         });
-      } else if(rejectedSamples.length<120){
+      } else if(!classification.accepted && rejectedSamples.length<120){
         rejectedSamples.push({
           id:base.id,title:base.title,channelTitle:channel.name,
           durationSeconds:base.durationSeconds,musicReason:classification.reason
@@ -257,8 +268,10 @@ async function main(){
   fs.writeFileSync(CONTENT_AUDIT_FILE,JSON.stringify({
     generatedAt,
     rawPublicVideoCount:publicVideoCount,
-    acceptedVideoCount:videos.length,
-    rejectedOrReviewCount:publicVideoCount-videos.length,
+    feedVideoCount:videos.length,
+    acceptedMusicCount,
+    categoryEligibleVideoCount,
+    rejectedOrReviewCount:publicVideoCount-acceptedMusicCount,
     reviewCount:review.length,
     typeCounts,
     channelsWithoutAcceptedMusic,
@@ -271,6 +284,8 @@ async function main(){
     feedChannelCount:Object.keys(channels).length,
     rawPublicVideoCount:publicVideoCount,
     feedVideoCount:videos.length,
+    acceptedMusicCount,
+    categoryEligibleVideoCount,
     contentReviewCount:review.length,
     contentTypeCounts:typeCounts,
     unresolvedChannelIds:unresolved,
@@ -280,7 +295,7 @@ async function main(){
     allIndexedChannelsVisible:unresolved.length===0 && Object.keys(channels).length===ids.length
   },null,2)+'\n');
 
-  console.log('✅ Feed musical:',Object.keys(channels).length,'canals,',videos.length,'cançons/àlbums de',publicVideoCount,'vídeos públics.');
+  console.log('✅ Feed musical:',Object.keys(channels).length,'canals,',videos.length,'vídeos públics conservats; ',categoryEligibleVideoCount,'cançons/directes elegibles per categories.');
   console.log('🧪 Revisió manual:',review.length,'vídeos ambigus.');
   console.log('📦 Tipus:',typeCounts);
 }

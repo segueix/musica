@@ -6257,6 +6257,8 @@ function filterVideosByCategory(videos, feed) {
 
     const wanted = selectedCategory.toLowerCase();
     return visibleVideos.filter(video => {
+        const music = window.SegueixMusicCategories;
+        if (music?.isCategoryEligibleVideo && !music.isCategoryEligibleVideo(video)) return false;
         const cats = map.get(video.channelId) || [];
         return cats.includes(wanted);
     });

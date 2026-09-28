@@ -15,7 +15,7 @@ assert.equal(classifyMusicContent({item:item('Alegria (Official Video)','','10',
 assert.equal(classifyMusicContent({item:item('Concert complet - Primavera','','10',5400),channelMeta:official}).accepted,false);
 assert.equal(classifyMusicContent({item:item('Entrevista a Antònia Font','','10',420),channelMeta:official}).accepted,false);
 assert.equal(classifyMusicContent({item:item('Lamparetes - Full Album','','10',2700),channelMeta:official}).contentType,'album');
-assert.equal(classifyMusicContent({item:item('Alegria - Live Session','','10',260),channelMeta:official}).contentType,'live-song');
+assert.equal(classifyMusicContent({item:item('Alegria - Live Session','','10',260),channelMeta:official}).contentType,'live_song');
 assert.equal(classifyMusicContent({item:item('Teaser nou disc','','10',20),channelMeta:official}).accepted,false);
 
 console.log('✅ Classificador de contingut musical correcte.');

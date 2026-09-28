@@ -10,5 +10,16 @@ describe('taxonomia de navegació musical', () => {
   });
   it('manté els estils principals separats', () => {
     expect(music.navigationCategoriesForGenres(['Pop', 'Rock', 'Indie / Alternativa'])).toEqual(['Pop','Rock','Indie']);
+  });  it('només considera song i live_song elegibles dins les categories musicals', () => {
+    expect(music.isCategoryEligibleVideo({ contentType: 'song' })).toBe(true);
+    expect(music.isCategoryEligibleVideo({ contentType: 'live_song' })).toBe(true);
+    expect(music.isCategoryEligibleVideo({ contentType: 'live-song' })).toBe(true);
+    expect(music.isCategoryEligibleVideo({ contentType: 'album' })).toBe(false);
+    expect(music.isCategoryEligibleVideo({ contentType: 'other' })).toBe(false);
+    expect(music.isCategoryEligibleVideo({ contentType: 'review' })).toBe(false);
+  });
+
+  it('manté compatibles els vídeos antics sense contentType fins regenerar el feed', () => {
+    expect(music.isCategoryEligibleVideo({})).toBe(true);
   });
 });

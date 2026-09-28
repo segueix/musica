@@ -40,6 +40,13 @@
             .map(group => group.label);
     }
 
+    function isCategoryEligibleVideo(video) {
+        const raw = String(video?.contentType || '').trim().toLowerCase().replace(/-/g, '_');
+        // Compatibilitat amb snapshots antics: abans el feed només contenia música acceptada.
+        if (!raw) return true;
+        return raw === 'song' || raw === 'live_song';
+    }
+
     function registerArtist(artist) {
         if (!artist || artist.reviewStatus === 'rebutjat') return;
         const categories = navigationCategoriesForGenres(artist.genres || []);
@@ -114,6 +121,7 @@
         isReady: () => ready,
         categoriesForChannel,
         navigationCategoriesForGenres,
+        isCategoryEligibleVideo,
         isMusicChannel,
         decorateChannel,
         decorateVideo

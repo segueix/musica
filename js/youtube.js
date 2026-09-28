@@ -796,6 +796,8 @@ const YouTubeAPI = {
     getVideosByCategories(videos, categoryId) {
         const normalizedCategory = categoryId.toLowerCase();
         return videos.filter(video => {
+            const music = window.SegueixMusicCategories;
+            if (music?.isCategoryEligibleVideo && !music.isCategoryEligibleVideo(video)) return false;
             const categories = video.categories || [];
             return categories.some(cat => cat.toLowerCase() === normalizedCategory);
         });
