@@ -1,38 +1,44 @@
-name: Revisar Shorts (manual)
+name: Revisar Shorts
 
-# Sense schedule fins que Música tingui feed i API propis.
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '0 3 * * *'
+
+concurrency:
+  group: music-data-writer
+  cancel-in-progress: false
 
 jobs:
   revisar_i_corregir:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout del codi
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: '20'
 
-      - name: Instal·lar dependències si n'hi ha
-        run: npm ci || echo "No package-lock.json, saltant instal·lació"
+      - name: Instal·lar dependències
+        run: npm ci
 
       - name: Executar verificació de Shorts
         run: node scripts/revisar_shorts.js
 
-      - name: Fer Commit i Push dels canvis
+      - name: Fer commit i push dels canvis
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/feed.json data/falsos-shorts.json
-
           if git diff --staged --quiet; then
             echo "Sense canvis a publicar."
-          else
-            git commit -m "chore: revisa falsos Shorts"
-            git pull --rebase origin "${GITHUB_REF_NAME}"
-            git push origin "HEAD:${GITHUB_REF_NAME}"
+            exit 0
           fi
+          git commit -m "chore: revisa falsos Shorts"
+          git pull --rebase origin main
+          git push origin HEAD:main

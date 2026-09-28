@@ -16,6 +16,7 @@ const CHANNELS_FILE = path.join(process.cwd(), 'js', 'channels-ca.json');
 const AUDIT_FILE = path.join(process.cwd(), 'data', 'music-feed-audit.json');
 const CONTENT_AUDIT_FILE = path.join(process.cwd(), 'data', 'music-content-audit.json');
 const REVIEW_FILE = path.join(process.cwd(), 'data', 'music-content-review.json');
+const FALSE_SHORTS_FILE = path.join(process.cwd(), 'data', 'falsos-shorts.json');
 const VIDEOS_PER_CHANNEL = Math.max(1, Math.min(25, Number.parseInt(process.env.MUSIC_VIDEOS_PER_CHANNEL || '15', 10)));
 const API = 'https://www.googleapis.com/youtube/v3';
 
@@ -52,6 +53,34 @@ function durationSeconds(iso){
   const m=String(iso||'').match(/^P(?:(\d+)D)?T?(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?$/);
   if(!m) return 0;
   return (Number(m[1]||0)*86400)+(Number(m[2]||0)*3600)+(Number(m[3]||0)*60)+Number(m[4]||0);
+}
+
+function isShortByDuration(seconds){
+  const value=Number(seconds||0);
+  return value>0 && value<=120;
+}
+function loadFalseShortIds(){
+  if(!fs.existsSync(FALSE_SHORTS_FILE)) return new Set();
+  try{
+    const registry=JSON.parse(fs.readFileSync(FALSE_SHORTS_FILE,'utf8'));
+    return new Set(Array.isArray(registry.falseShorts)?registry.falseShorts:[]);
+  }catch(error){
+    console.warn('⚠️ No s’ha pogut llegir falsos-shorts.json:',error.message);
+    return new Set();
+  }
+}
+function applyFalseShortsOverrides(videos){
+  const falseShortIds=loadFalseShortIds();
+  if(!falseShortIds.size) return 0;
+  let applied=0;
+  for(const video of videos||[]){
+    if(video?.isShort===true && falseShortIds.has(video.id)){
+      video.isShort=false;
+      applied++;
+    }
+  }
+  if(applied) console.log('🔁 Reaplicades',applied,'correccions de falsos Shorts.');
+  return applied;
 }
 function bestThumb(snippet){
   const t=snippet?.thumbnails||{};
@@ -213,7 +242,7 @@ async function main(){
         publishedAt:vs.publishedAt||null,
         duration:item.contentDetails?.duration||'',
         durationSeconds:item.durationSeconds,
-        isShort:false,
+        isShort:isShortByDuration(item.durationSeconds),
         viewCount:Number(item.statistics?.viewCount||0),
         likeCount:Number(item.statistics?.likeCount||0),
         commentCount:Number(item.statistics?.commentCount||0),
@@ -257,9 +286,11 @@ async function main(){
     else if(channelAcceptedCount===0) channelsWithoutAcceptedMusic.push(id);
   }
 
+  applyFalseShortsOverrides(videos);
   videos.sort((a,b)=>(Date.parse(b.publishedAt||'')||0)-(Date.parse(a.publishedAt||'')||0));
   review.sort((a,b)=>(Date.parse(b.publishedAt||'')||0)-(Date.parse(a.publishedAt||'')||0));
   channelIndex.sort((a,b)=>a.name.localeCompare(b.name,'ca',{sensitivity:'base'}));
+  const shortVideoCount=videos.filter(v=>v.isShort===true).length;
   const generatedAt=new Date().toISOString();
 
   fs.writeFileSync(FEED_FILE,JSON.stringify({generatedAt,channels,videos},null,2)+'\n');
@@ -271,6 +302,7 @@ async function main(){
     feedVideoCount:videos.length,
     acceptedMusicCount,
     categoryEligibleVideoCount,
+    shortVideoCount,
     rejectedOrReviewCount:publicVideoCount-acceptedMusicCount,
     reviewCount:review.length,
     typeCounts,
@@ -286,6 +318,7 @@ async function main(){
     feedVideoCount:videos.length,
     acceptedMusicCount,
     categoryEligibleVideoCount,
+    shortVideoCount,
     contentReviewCount:review.length,
     contentTypeCounts:typeCounts,
     unresolvedChannelIds:unresolved,
@@ -296,6 +329,7 @@ async function main(){
   },null,2)+'\n');
 
   console.log('✅ Feed musical:',Object.keys(channels).length,'canals,',videos.length,'vídeos públics conservats; ',categoryEligibleVideoCount,'cançons/directes elegibles per categories.');
+  console.log('📱 Shorts detectats:',shortVideoCount);
   console.log('🧪 Revisió manual:',review.length,'vídeos ambigus.');
   console.log('📦 Tipus:',typeCounts);
 }
