@@ -39,7 +39,6 @@ dialog::backdrop{background:rgba(0,0,0,.72)}
 <option value="">Tots els estats</option>
 <option value="pendent">Pendents</option>
 <option value="aprovat">Aprovats</option>
-<option value="rebutjat">Rebutjats</option>
 </select>
 <select id="youtube">
 <option value="">Amb i sense YouTube</option>
@@ -51,7 +50,8 @@ dialog::backdrop{background:rgba(0,0,0,.72)}
 <option value="__none__">Sense categoria</option>
 </select>
 <input id="adminToken" type="password" autocomplete="current-password" placeholder="Token admin" title="ANALYTICS_ADMIN_TOKEN; només es desa durant la sessió">
-<button id="saveGithub" class="ok">Desa canvis a GitHub</button>\n<button id="exportJson">Descarrega JSON revisat</button>
+<button id="saveGithub" class="ok">Desa canvis a GitHub</button>
+<button id="exportJson">Descarrega JSON revisat</button>
 <button id="exportCsv">Descarrega CSV</button>
 <button id="reset">Descarta canvis locals</button>
 </div>
@@ -67,6 +67,15 @@ dialog::backdrop{background:rgba(0,0,0,.72)}
   <div class="modal-body"><p class="muted">Pots assignar més d'una categoria. Els canvis es guarden a l'esborrany local fins que exportis el JSON.</p><div class="genre-grid" id="genreChoices"></div></div>
   <div class="modal-actions"><button type="button" id="cancelGenres">Cancel·la</button><button type="button" class="ok" id="saveGenres">Desa categories</button></div>
 </dialog>
+<dialog id="youtubeDialog">
+  <div class="modal-head"><div><b>Edita YouTube ID</b><br><span class="muted" id="youtubeArtist"></span></div><button type="button" id="closeYoutubeDialog" aria-label="Tanca">✕</button></div>
+  <div class="modal-body">
+    <p class="muted">Introdueix l'ID del canal, amb format UC… Deixa'l buit per treure el canal assignat.</p>
+    <input id="youtubeIdInput" type="text" autocomplete="off" placeholder="UCxxxxxxxxxxxxxxxxxxxxxx" style="width:100%;box-sizing:border-box">
+    <div id="youtubeIdError" class="rejected" style="margin-top:8px"></div>
+  </div>
+  <div class="modal-actions"><button type="button" id="cancelYoutube">Cancel·la</button><button type="button" class="ok" id="saveYoutube">Desa YouTube ID</button></div>
+</dialog>
 <script>
 const DATA_URL='data/artistes-musica.json';
 const GENRES_URL='data/music-genres.json';
@@ -75,6 +84,7 @@ let db=null;
 let originalDb=null;
 let genreTaxonomy=[];
 let editingArtistIndex=null;
+let editingYoutubeIndex=null;
 const ADMIN_TOKEN_KEY='segueix_music_admin_token';
 
 function clone(value){return JSON.parse(JSON.stringify(value))}
@@ -85,19 +95,34 @@ function artistKey(a){
  return 'name:'+String(a?.name||'').trim().toLocaleLowerCase('ca');
 }
 function sameJson(a,b){return JSON.stringify(a??null)===JSON.stringify(b??null)}
+function artistKeysForAdmin(a){
+ const keys=[];
+ if(a?.wikidataId)keys.push('wikidata:'+a.wikidataId);
+ for(const channel of a?.youtube?.channels||[])if(channel?.id)keys.push('youtube:'+channel.id);
+ if(a?.name)keys.push('name:'+String(a.name).trim().toLocaleLowerCase('ca'));
+ return keys;
+}
+function validYoutubeId(value){return /^UC[A-Za-z0-9_-]{22}$/.test(String(value||'').trim())}
 function buildChanges(){
- const originalByKey=new Map((originalDb?.artists||[]).map(a=>[artistKey(a),a]));
- return (db?.artists||[]).flatMap(a=>{
-  const before=originalByKey.get(artistKey(a));
-  if(!before)return [];
-  const change={key:artistKey(a),name:a.name};
+ const currentByKey=new Map((db?.artists||[]).flatMap(a=>artistKeysForAdmin(a).map(key=>[key,a])));
+ const currentByName=new Map((db?.artists||[]).map(a=>[String(a.name||'').trim().toLocaleLowerCase('ca'),a]));
+ const changes=[];
+ for(const before of originalDb?.artists||[]){
+  const originalKey=artistKey(before);
+  const current=currentByKey.get(originalKey)||currentByName.get(String(before.name||'').trim().toLocaleLowerCase('ca'));
+  if(!current){
+   changes.push({key:originalKey,name:before.name,delete:true});
+   continue;
+  }
+  const change={key:originalKey,name:before.name};
   let dirty=false;
-  if(!sameJson(a.genres||[],before.genres||[])){change.genres=a.genres||[];dirty=true}
-  if(a.reviewStatus!==before.reviewStatus){change.reviewStatus=a.reviewStatus;dirty=true}
-  if(Boolean(a.active)!==Boolean(before.active)){change.active=Boolean(a.active);dirty=true}
-  if(!sameJson(a.youtube?.channels||[],before.youtube?.channels||[])){change.youtubeChannels=a.youtube?.channels||[];dirty=true}
-  return dirty?[change]:[];
- });
+  if(!sameJson(current.genres||[],before.genres||[])){change.genres=current.genres||[];dirty=true}
+  if(current.reviewStatus!==before.reviewStatus){change.reviewStatus=current.reviewStatus;dirty=true}
+  if(Boolean(current.active)!==Boolean(before.active)){change.active=Boolean(current.active);dirty=true}
+  if(!sameJson(current.youtube?.channels||[],before.youtube?.channels||[])){change.youtubeChannels=current.youtube?.channels||[];dirty=true}
+  if(dirty)changes.push(change);
+ }
+ return changes;
 }
 function setSaveMessage(message,isError=false){
  const button=document.getElementById('saveGithub');
@@ -142,6 +167,49 @@ function save(){localStorage.setItem(STORAGE,JSON.stringify(db));render()}
 function download(name,text,type){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([text],{type}));a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}
 function artistAt(index){return Number.isInteger(index)&&index>=0?db.artists[index]:null}
 function setStatus(index,status){const a=artistAt(index);if(!a)return;a.reviewStatus=status;a.active=status==='aprovat';save()}
+function deleteArtist(index){
+ const a=artistAt(index);if(!a)return;
+ if(!confirm('Eliminar "'+a.name+'" de la base de Segueix Música?'))return;
+ db.artists.splice(index,1);
+ save();
+}
+function editYoutube(index){
+ const a=artistAt(index);if(!a)return;
+ editingYoutubeIndex=index;
+ document.getElementById('youtubeArtist').textContent=a.name;
+ document.getElementById('youtubeIdInput').value=a.youtube?.channels?.[0]?.id||'';
+ document.getElementById('youtubeIdError').textContent='';
+ document.getElementById('youtubeDialog').showModal();
+ setTimeout(()=>document.getElementById('youtubeIdInput').focus(),0);
+}
+function closeYoutubeEditor(){
+ editingYoutubeIndex=null;
+ const d=document.getElementById('youtubeDialog');
+ if(d.open)d.close();
+}
+function saveYoutubeEditor(){
+ const a=artistAt(editingYoutubeIndex);if(!a)return closeYoutubeEditor();
+ const id=String(document.getElementById('youtubeIdInput').value||'').trim();
+ if(id&&!validYoutubeId(id)){
+  document.getElementById('youtubeIdError').textContent='ID no vàlid. Ha de començar per UC i tenir 24 caràcters.';
+  return;
+ }
+ a.youtube ||= {};
+ if(!id){
+  a.youtube.channels=[];
+ }else{
+  const current=a.youtube.channels?.[0]||{};
+  a.youtube.channels=[{
+   id,
+   handle:current.handle||null,
+   name:current.name||a.name,
+   type:current.type||'official',
+   primary:true
+  }];
+ }
+ save();
+ closeYoutubeEditor();
+}
 function useSearchCandidate(index,channelId){
  const a=artistAt(index);if(!a)return;
  const c=(a.youtube?.searchCandidates||[]).find(x=>x.id===channelId);if(!c)return;
@@ -168,7 +236,7 @@ function saveGenreEditor(){
 function stats(){
  const a=db.artists;const n=s=>a.filter(x=>x.reviewStatus===s).length;
  document.getElementById('stats').innerHTML=[
-  ['Total',a.length],['Pendents',n('pendent')],['Aprovats',n('aprovat')],['Rebutjats',n('rebutjat')],
+  ['Total',a.length],['Pendents',n('pendent')],['Aprovats',n('aprovat')],
   ['Amb YouTube',a.filter(x=>x.youtube?.channels?.length).length],['Sense YouTube',a.filter(x=>!x.youtube?.channels?.length).length],
   ['Candidats MB',a.filter(x=>x.youtube?.candidates?.length).length],
   ['Candidats cerca',a.filter(x=>x.youtube?.searchCandidates?.length && !x.youtube?.channels?.length).length],
@@ -215,15 +283,15 @@ function render(){
   const rawHtml=(a.genresRaw||[]).length
    ? '<br><span class="muted">Originals: '+esc((a.genresRaw||[]).join(', '))+'</span>'
    : '';
-  const stateClass=a.reviewStatus==='aprovat'?'approved':a.reviewStatus==='rebutjat'?'rejected':'';
+  const stateClass=a.reviewStatus==='aprovat'?'approved':'';
   const wd=a.wikidataId?'<a href="https://www.wikidata.org/wiki/'+esc(a.wikidataId)+'" target="_blank">'+esc(a.wikidataId)+'</a>':'<span class="muted">sense Wikidata</span>';
   return '<tr><td><b>'+esc(a.name)+'</b><br>'+wd+'</td>'+
-  '<td class="'+stateClass+'">'+esc(a.reviewStatus)+'</td><td>'+genreHtml+rawHtml+'<div class="genre-edit"><button onclick="editGenres('+artistIndex+')">Edita categories</button></div></td><td>'+ytHtml+'</td>'+
+  '<td class="'+stateClass+'">'+esc(a.reviewStatus)+'</td><td>'+genreHtml+rawHtml+'<div class="genre-edit"><button onclick="editGenres('+artistIndex+')">Edita categories</button></div></td><td>'+ytHtml+'<div class="genre-edit"><button onclick="editYoutube('+artistIndex+')">Edita ID</button></div></td>'+
   '<td class="hide-mobile">'+(a.musicbrainzId?'<a href="https://musicbrainz.org/artist/'+esc(a.musicbrainzId)+'" target="_blank">'+esc(a.musicbrainzId)+'</a>':'—')+'</td>'+
   '<td class="hide-mobile">'+evidence+'</td><td><div class="actions">'+
   '<button class="ok" onclick="setStatus('+artistIndex+',\'aprovat\')">Aprova</button>'+
   '<button onclick="setStatus('+artistIndex+',\'pendent\')">Pendent</button>'+
-  '<button class="bad" onclick="setStatus('+artistIndex+',\'rebutjat\')">Rebutja</button>'+
+  '<button class="bad" onclick="deleteArtist('+artistIndex+')">Elimina</button>'+
   '</div></td></tr>';
  }).join('');
  document.getElementById('rows').innerHTML=rows||'<tr><td colspan="7">No hi ha resultats.</td></tr>';
@@ -258,6 +326,11 @@ document.getElementById('closeGenreDialog').addEventListener('click',closeGenreE
 document.getElementById('cancelGenres').addEventListener('click',closeGenreEditor);
 document.getElementById('saveGenres').addEventListener('click',saveGenreEditor);
 document.getElementById('genreDialog').addEventListener('cancel',e=>{e.preventDefault();closeGenreEditor()});
+document.getElementById('closeYoutubeDialog').addEventListener('click',closeYoutubeEditor);
+document.getElementById('cancelYoutube').addEventListener('click',closeYoutubeEditor);
+document.getElementById('saveYoutube').addEventListener('click',saveYoutubeEditor);
+document.getElementById('youtubeDialog').addEventListener('cancel',e=>{e.preventDefault();closeYoutubeEditor()});
+document.getElementById('youtubeIdInput').addEventListener('keydown',e=>{if(e.key==='Enter')saveYoutubeEditor()});
 document.getElementById('exportCsv').addEventListener('click',()=>{
  const cols=['name','genres','genresRaw','reviewStatus','active','wikidataId','musicbrainzId','youtubeIds','youtubeCandidates','searchCandidates','confidence'];
  const lines=[cols.join(',')].concat(db.artists.map(a=>[a.name,(a.genres||[]).join('|'),(a.genresRaw||[]).join('|'),a.reviewStatus,a.active,a.wikidataId,a.musicbrainzId||'',(a.youtube?.channels||[]).map(c=>c.id).join('|'),(a.youtube?.candidates||[]).map(c=>c.url).join('|'),(a.youtube?.searchCandidates||[]).map(c=>c.id+':'+c.score).join('|'),a.confidence].map(v=>'"'+String(v).replaceAll('"','""')+'"').join(',')));

@@ -157,6 +157,13 @@ export async function onRequestPost({ request, env }) {
       continue;
     }
 
+    if (change.delete === true) {
+      const index = db.artists.indexOf(artist);
+      if (index >= 0) db.artists.splice(index, 1);
+      applied += 1;
+      continue;
+    }
+
     if ('genres' in change) {
       if (!Array.isArray(change.genres) || change.genres.some(value => !allowedGenres.has(value))) {
         return jsonResponse({ error: 'Invalid genre for ' + artist.name }, 400);

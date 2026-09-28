@@ -79,6 +79,69 @@ describe('administració musical remota', () => {
     expect(saved.artists[0].youtube.searchCandidates).toEqual([{ id: 'keep' }]);
   });
 
+  it('permet eliminar un artista de la base', async () => {
+    const current = {
+      artists: [
+        { name: 'Un', wikidataId: 'Q1', genres: [], youtube: { channels: [] } },
+        { name: 'Dos', wikidataId: 'Q2', genres: [], youtube: { channels: [] } },
+      ],
+    };
+    const taxonomy = { categories: [{ label: 'Pop' }] };
+    let writeBody = null;
+    vi.stubGlobal('fetch', vi.fn(async (url, options = {}) => {
+      if (String(url).includes('artistes-musica.json') && (!options.method || options.method === 'GET')) {
+        return new Response(JSON.stringify({ sha: 'current-sha', content: encode(current) }), { status: 200 });
+      }
+      if (String(url).includes('music-genres.json')) {
+        return new Response(JSON.stringify({ content: encode(taxonomy) }), { status: 200 });
+      }
+      if (options.method === 'PUT') {
+        writeBody = JSON.parse(options.body);
+        return new Response(JSON.stringify({ commit: { sha: 'deleted' } }), { status: 200 });
+      }
+      return new Response('{}', { status: 404 });
+    }));
+    const response = await onRequestPost({
+      request: adminRequest({ changes: [{ key: 'wikidata:Q1', name: 'Un', delete: true }] }),
+      env: { ANALYTICS_ADMIN_TOKEN: 'admin', GITHUB_MUSIC_ADMIN_TOKEN: 'gh' },
+    });
+    expect(response.status).toBe(200);
+    const saved = JSON.parse(Buffer.from(writeBody.content, 'base64').toString('utf8'));
+    expect(saved.artists.map(a => a.name)).toEqual(['Dos']);
+  });
+
+  it('permet substituir el YouTube ID amb un canal vàlid', async () => {
+    const current = {
+      artists: [{ name: 'Artista', wikidataId: 'Q1', genres: [], youtube: { channels: [] } }],
+    };
+    const taxonomy = { categories: [{ label: 'Pop' }] };
+    let writeBody = null;
+    vi.stubGlobal('fetch', vi.fn(async (url, options = {}) => {
+      if (String(url).includes('artistes-musica.json') && (!options.method || options.method === 'GET')) {
+        return new Response(JSON.stringify({ sha: 'current-sha', content: encode(current) }), { status: 200 });
+      }
+      if (String(url).includes('music-genres.json')) {
+        return new Response(JSON.stringify({ content: encode(taxonomy) }), { status: 200 });
+      }
+      if (options.method === 'PUT') {
+        writeBody = JSON.parse(options.body);
+        return new Response(JSON.stringify({ commit: { sha: 'youtube' } }), { status: 200 });
+      }
+      return new Response('{}', { status: 404 });
+    }));
+    const response = await onRequestPost({
+      request: adminRequest({ changes: [{
+        key: 'wikidata:Q1',
+        name: 'Artista',
+        youtubeChannels: [{ id: 'UC1234567890123456789012', type: 'official', primary: true }],
+      }] }),
+      env: { ANALYTICS_ADMIN_TOKEN: 'admin', GITHUB_MUSIC_ADMIN_TOKEN: 'gh' },
+    });
+    expect(response.status).toBe(200);
+    const saved = JSON.parse(Buffer.from(writeBody.content, 'base64').toString('utf8'));
+    expect(saved.artists[0].youtube.channels[0].id).toBe('UC1234567890123456789012');
+  });
+
   it('rebutja categories fora de la taxonomia', async () => {
     vi.stubGlobal('fetch', vi.fn(async (url) => {
       if (String(url).includes('artistes-musica.json')) {
