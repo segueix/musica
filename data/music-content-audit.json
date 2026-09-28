@@ -1,12 +1,14 @@
 {
-  "generatedAt": "2026-09-28T15:57:02.543Z",
+  "generatedAt": "2026-09-28T16:44:45.007Z",
   "rawPublicVideoCount": 1542,
-  "acceptedVideoCount": 1093,
+  "feedVideoCount": 1542,
+  "acceptedMusicCount": 1093,
+  "categoryEligibleVideoCount": 1072,
   "rejectedOrReviewCount": 449,
   "reviewCount": 209,
   "typeCounts": {
     "song": 1022,
-    "live-song": 50,
+    "live_song": 50,
     "album": 21,
     "other": 240,
     "review": 209
