@@ -18,6 +18,7 @@ on:
       - "functions/api/music-admin.js"
       - "admin-musica.html"
       - "tests/music-admin.test.js"
+      - "tests/admin-musica.test.js"
       - "tests/music-categories.test.js"
       - "tests/section-seo.test.js"
       - ".github/workflows/validar-navegacio-musical.yml"
@@ -40,4 +41,4 @@ jobs:
           node --check js/features/segueix-tv.js
           node --check js/features/context-tv.js
       - name: Prova taxonomia i SEO
-        run: npx vitest run tests/music-categories.test.js tests/section-seo.test.js tests/music-admin.test.js
+        run: npx vitest run tests/music-categories.test.js tests/section-seo.test.js tests/music-admin.test.js tests/admin-musica.test.js

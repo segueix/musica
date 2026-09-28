@@ -50,7 +50,8 @@ dialog::backdrop{background:rgba(0,0,0,.72)}
 <option value="">Tots els gèneres</option>
 <option value="__none__">Sense categoria</option>
 </select>
-<input id="adminToken" type="password" autocomplete="current-password" placeholder="Token admin" title="ANALYTICS_ADMIN_TOKEN; només es desa durant la sessió">\n<button id="saveGithub" class="ok">Desa canvis a GitHub</button>\n<button id="exportJson">Descarrega JSON revisat</button>
+<input id="adminToken" type="password" autocomplete="current-password" placeholder="Token admin" title="ANALYTICS_ADMIN_TOKEN; només es desa durant la sessió">
+<button id="saveGithub" class="ok">Desa canvis a GitHub</button>\n<button id="exportJson">Descarrega JSON revisat</button>
 <button id="exportCsv">Descarrega CSV</button>
 <button id="reset">Descarta canvis locals</button>
 </div>
@@ -232,7 +233,9 @@ async function load(){
   fetch(DATA_URL,{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error(r.status);return r.json()}),
   fetch(GENRES_URL,{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error(r.status);return r.json()})
  ]);
- genreTaxonomy=(taxonomy.categories||[]).map(x=>x.label).filter(Boolean);\n originalDb=clone(remote);\n const draft=localStorage.getItem(STORAGE);
+ genreTaxonomy=(taxonomy.categories||[]).map(x=>x.label).filter(Boolean);
+ originalDb=clone(remote);
+ const draft=localStorage.getItem(STORAGE);
  if(draft){
   try{const parsed=JSON.parse(draft);db=parsed.schemaVersion===remote.schemaVersion?parsed:remote}catch{db=remote}
  }else db=remote;
