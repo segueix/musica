@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-09-27T14:15:29.574Z",
-  "rawPublicVideoCount": 1198,
-  "acceptedVideoCount": 867,
-  "rejectedOrReviewCount": 331,
-  "reviewCount": 143,
+  "generatedAt": "2026-09-28T09:52:08.444Z",
+  "rawPublicVideoCount": 1110,
+  "acceptedVideoCount": 820,
+  "rejectedOrReviewCount": 290,
+  "reviewCount": 125,
   "typeCounts": {
-    "song": 808,
+    "song": 762,
     "live-song": 39,
-    "album": 20,
-    "other": 188,
-    "review": 143
+    "album": 19,
+    "other": 165,
+    "review": 125
   },
   "channelsWithoutAcceptedMusic": [
     "UCUSjRkF72RR1E8Rl4SWtVsQ"
@@ -27,27 +27,6 @@
       "title": "La sintonia (skit) [Visualizer]",
       "channelTitle": "31 FAM",
       "durationSeconds": 32,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "FmcEK17AJW4",
-      "title": "\"Imagina\" en castellano feat. Pol Tudela",
-      "channelTitle": "Anna Lola",
-      "durationSeconds": 32,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "a9u2WFK_qCE",
-      "title": "Gravant \"Imagina\"",
-      "channelTitle": "Anna Lola",
-      "durationSeconds": 44,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "7VPNLW87_wU",
-      "title": "Gravant \"Nosotros\" feat. Aimen",
-      "channelTitle": "Anna Lola",
-      "durationSeconds": 13,
       "musicReason": "massa curt: probable teaser/fragment"
     },
     {
@@ -317,6 +296,13 @@
       "musicReason": "massa curt: probable teaser/fragment"
     },
     {
+      "id": "eeTsMkABw5E",
+      "title": "Fart de tocar",
+      "channelTitle": "El Pony Pisador",
+      "durationSeconds": 9,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
       "id": "aE6v5VirQSA",
       "title": "ei algú sap com d'antiga és la sardana? Més que el tektonik segur ajsjasj",
       "channelTitle": "El Pony Pisador",
@@ -384,13 +370,6 @@
       "title": "comenta \"salut Josep Puigdollers\" si vols que pugui deixar de tossir",
       "channelTitle": "El Pony Pisador",
       "durationSeconds": 21,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "biKdYWhX0CE",
-      "title": "Finger technique vs pick",
-      "channelTitle": "El Pony Pisador",
-      "durationSeconds": 16,
       "musicReason": "massa curt: probable teaser/fragment"
     },
     {
@@ -532,48 +511,6 @@
       "channelTitle": "Ginestà Oficial",
       "durationSeconds": 18,
       "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "kiGqNkvpbaw",
-      "title": "EL LIBRO MÁGICO VERSUS LA VIDA RESUELTA!",
-      "channelTitle": "giselaworld",
-      "durationSeconds": 25,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "Il46k90VFQ0",
-      "title": "Making of de turu-turu oficial + videoclip",
-      "channelTitle": "giselaworld",
-      "durationSeconds": 1275,
-      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "CATiiy7Zwdo",
-      "title": "Sugarwood Gisela: Making Of 2",
-      "channelTitle": "giselaworld",
-      "durationSeconds": 151,
-      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "IHEqrwgFdRY",
-      "title": "Sugarwood Gisela: Making Of 1",
-      "channelTitle": "giselaworld",
-      "durationSeconds": 167,
-      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "otexlxwv4sM",
-      "title": "RED DE FAVORES",
-      "channelTitle": "Gisela Vlog",
-      "durationSeconds": 0,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "j2_zVXAgyPE",
-      "title": "PREGUNTAS Y RESPUESTAS By Gisela",
-      "channelTitle": "Gisela Vlog",
-      "durationSeconds": 749,
-      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
     },
     {
       "id": "nq5obPTu7xA",
@@ -853,6 +790,69 @@
       "title": "Marina Rossell - Entrevista amb Albert Om al \"Més 324\" de 3cat de Marina Romero (1 abril 2025)",
       "channelTitle": "Marina Rossell",
       "durationSeconds": 891,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "WqRH5EXrAfk",
+      "title": "Marina Rossell - Entrevista amb Albert Om a \"La Selva\" de 3cat de Xavier Grasset (27 març 2025)",
+      "channelTitle": "Marina Rossell",
+      "durationSeconds": 2264,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "3PO9oPJhyCQ",
+      "title": "Marina Rossell - Interview with Albert Om and Marina Rossell at \"Col·lapse\"  (22/03/2025)",
+      "channelTitle": "Marina Rossell",
+      "durationSeconds": 1610,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "G9cp35_skLI",
+      "title": "Marina Rossell - Entrevista a Marina Rossell i Albert OM a Diari Ara: No faré cap més llibre",
+      "channelTitle": "Marina Rossell",
+      "durationSeconds": 962,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "eYltq-BfaoY",
+      "title": "Marina Rossell - Entrevista de Toni Puntí per Telenotícies 3cat,13 de març de 2025",
+      "channelTitle": "Marina Rossell",
+      "durationSeconds": 114,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "D29YoROqBh0",
+      "title": "Marina Rossell - Interview at \"La Trampa\" (November 2024, TVE)",
+      "channelTitle": "Marina Rossell",
+      "durationSeconds": 1234,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "-N29mbxsmGY",
+      "title": "Marina Rossell - Interview at \"Irrepetibles\" (Radio 4, 2024)",
+      "channelTitle": "Marina Rossell",
+      "durationSeconds": 3327,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "EtO60Yfr8-E",
+      "title": "Marina Rossell - Interview at \"No es un día cualquiera\" (RNE, 2024)",
+      "channelTitle": "Marina Rossell",
+      "durationSeconds": 1388,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "HLJILKP9OKg",
+      "title": "\"D'UNA ALTRA MANERA\" ja disponible! ♣️♥️ #shorts",
+      "channelTitle": "Mariona Escoda",
+      "durationSeconds": 16,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "KW41vIiIglw",
+      "title": "Teaser \"D'UNA ALTRA MANERA\" ♣️♥️ #shorts",
+      "channelTitle": "Mariona Escoda",
+      "durationSeconds": 16,
       "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
     }
   ]
