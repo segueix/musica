@@ -4,6 +4,8 @@ on:
   push:
     paths:
       - "scripts/cercar_canals_youtube.js"
+      - "scripts/resoldre_canals_verificats.js"
+      - "data/youtube-verified-handles.json"
       - "tests/youtube-search-candidates.test.js"
       - ".github/workflows/cercar-canals-youtube.yml"
   schedule:
@@ -37,6 +39,11 @@ jobs:
           git fetch origin main
           git reset --hard origin/main
 
+      - name: Resol canals verificats
+        env:
+          YOUTUBE_API_KEY_SERVER: ${{ secrets.YOUTUBE_API_KEY_SERVER }}
+        run: node scripts/resoldre_canals_verificats.js
+
       - name: Cerca canals candidats
         env:
           YOUTUBE_API_KEY_SERVER: ${{ secrets.YOUTUBE_API_KEY_SERVER }}
@@ -56,5 +63,5 @@ jobs:
             exit 0
           fi
 
-          git commit -m "data: cerca canals YouTube candidats"
+          git commit -m "data: resol canals YouTube verificats"
           git push origin HEAD:main
