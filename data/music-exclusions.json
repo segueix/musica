@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-25T18:32:35.380Z",
+  "updatedAt": "2026-09-28T09:51:01.524Z",
   "exclusions": [
     {
       "wikidataId": "Q2838792",
@@ -101,9 +101,12 @@
       "source": "editorial-language-policy"
     },
     {
-      "wikidataId": null,
+      "wikidataId": "Q6067393",
       "name": "Rigoberta Bandini",
-      "aliases": [],
+      "aliases": [
+        "Paula Ribó González",
+        "Paula Ribó"
+      ],
       "reason": "Criteri editorial d'idioma: repertori majoritàriament en castellà, encara que tingui obra en català.",
       "source": "editorial-language-policy"
     },
@@ -155,6 +158,40 @@
       ],
       "reason": "Exclusió editorial sol·licitada per a Segueix Música.",
       "source": "editorial-exclusion"
+    },
+    {
+      "wikidataId": "Q139229274",
+      "name": "Anna Lola",
+      "aliases": [],
+      "reason": "Criteri editorial d'idioma: repertori principal majoritàriament en castellà; no compleix el criteri de repertori principalment en català.",
+      "source": "editorial-language-policy"
+    },
+    {
+      "wikidataId": "Q236085",
+      "name": "Gisela",
+      "aliases": [
+        "Gisela Vlog",
+        "giselaworld"
+      ],
+      "reason": "Criteri editorial d'idioma: carrera discogràfica principalment en castellà, encara que tingui enregistraments en català.",
+      "source": "editorial-language-policy"
+    },
+    {
+      "wikidataId": "Q59616984",
+      "name": "Nerea Rodríguez i Rodríguez",
+      "aliases": [
+        "NEREA",
+        "Nerea Rodríguez"
+      ],
+      "reason": "Criteri editorial d'idioma: discografia principalment en castellà, amb alguna obra en català.",
+      "source": "editorial-language-policy"
+    },
+    {
+      "wikidataId": "Q21569069",
+      "name": "Muyayo Rif",
+      "aliases": [],
+      "reason": "Criteri editorial d'idioma: repertori principalment en castellà.",
+      "source": "editorial-language-policy"
     }
   ]
 }

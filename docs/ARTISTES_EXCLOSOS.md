@@ -37,6 +37,10 @@ La revisió de Viasona s'anirà fent progressivament. Quan es decideixi excloure
 | 19 | Susanne Georgi | Repertori principalment en anglès, encara que tingui obra en català. | Idioma |
 | 20 | Joan Manuel Serrat | Catàleg majoritàriament no català segons l'abast editorial de Segueix Música. | Idioma |
 | 21 | Sofia Coll | Exclusió editorial sol·licitada per a Segueix Música. | Exclusió editorial |
+| 22 | Anna Lola | Repertori principal majoritàriament en castellà; no compleix el criteri de repertori principalment en català. | Idioma |
+| 23 | Gisela | Carrera discogràfica principalment en castellà, encara que tingui enregistraments en català. | Idioma |
+| 24 | Nerea Rodríguez | Discografia principalment en castellà, amb alguna obra en català. | Idioma |
+| 25 | Muyayo Rif | Repertori principalment en castellà. | Idioma |
 
 ## Manteniment
 

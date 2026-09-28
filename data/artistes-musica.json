@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-27T14:01:23.560Z",
+  "updatedAt": "2026-09-28T09:50:40.193Z",
   "artists": [
     {
       "name": "31 FAM",
@@ -649,66 +649,6 @@
         }
       },
       "genresRaw": []
-    },
-    {
-      "name": "Anna Lola",
-      "aliases": [],
-      "genres": [
-        "Pop",
-        "Jazz / Blues"
-      ],
-      "territories": [],
-      "languages": [
-        "ca"
-      ],
-      "wikidataId": "Q139229274",
-      "musicbrainzId": "c42a7a7c-75f0-4881-bece-4b6be5b1e117",
-      "youtube": {
-        "channels": [
-          {
-            "id": "UCwLYRfgKcdmJR5ayoraOEtg",
-            "handle": null,
-            "name": null,
-            "type": "official",
-            "primary": true
-          }
-        ]
-      },
-      "confidence": "alta",
-      "reviewStatus": "pendent",
-      "active": false,
-      "sources": [
-        "https://www.wikidata.org/wiki/Q139229274",
-        "wikidata:native-language-catalan",
-        "wikidata:performed-catalan-work",
-        "wikidata:native-language-catalan-musician"
-      ],
-      "lastChecked": "2026-09-25T15:47:57.997Z",
-      "notes": "",
-      "genresRaw": [
-        "jazz",
-        "pop llatí"
-      ],
-      "enrichment": {
-        "genres": {
-          "checkedAt": "2026-09-27T11:59:19.837Z",
-          "musicbrainzCheckedAt": "2026-09-25T16:46:19.704Z",
-          "wikidataRaw": [
-            "jazz",
-            "pop llatí"
-          ],
-          "musicbrainzRaw": [],
-          "unmappedRaw": [],
-          "status": "classificat",
-          "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": null,
-          "musicbrainzReleaseCheckedAt": null,
-          "wikidataWorkCheckedAt": null,
-          "musicbrainzReleaseRaw": [],
-          "wikidataWorkEvidence": []
-        }
-      }
     },
     {
       "name": "Anonymous (grup)",
@@ -5209,69 +5149,6 @@
           "musicbrainzCheckedAt": "2026-09-25T16:47:39.406Z",
           "wikidataRaw": [
             "pop-folk"
-          ],
-          "musicbrainzRaw": [],
-          "unmappedRaw": [],
-          "status": "classificat",
-          "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": null,
-          "musicbrainzReleaseCheckedAt": null,
-          "wikidataWorkCheckedAt": null,
-          "musicbrainzReleaseRaw": [],
-          "wikidataWorkEvidence": []
-        }
-      }
-    },
-    {
-      "name": "Gisela",
-      "aliases": [],
-      "genres": [
-        "Pop"
-      ],
-      "territories": [],
-      "languages": [
-        "ca"
-      ],
-      "wikidataId": "Q236085",
-      "musicbrainzId": "7f6a63cb-ca40-4b01-9126-b6dbad4b8a2c",
-      "youtube": {
-        "channels": [
-          {
-            "id": "UCQchKm6yDHxuA_ly0TkRCbw",
-            "handle": null,
-            "name": null,
-            "type": "official",
-            "primary": true
-          },
-          {
-            "id": "UCUN2FUzI0Z7cDDaxV2mTzPQ",
-            "handle": null,
-            "name": null,
-            "type": "official",
-            "primary": false
-          }
-        ]
-      },
-      "confidence": "alta",
-      "reviewStatus": "pendent",
-      "active": false,
-      "sources": [
-        "https://www.wikidata.org/wiki/Q236085",
-        "wikidata:languages-spoken-catalan",
-        "wikidata:performed-catalan-work"
-      ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": "",
-      "genresRaw": [
-        "pop"
-      ],
-      "enrichment": {
-        "genres": {
-          "checkedAt": "2026-09-27T11:59:19.861Z",
-          "musicbrainzCheckedAt": "2026-09-25T16:47:40.969Z",
-          "wikidataRaw": [
-            "pop"
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
@@ -11155,87 +11032,6 @@
       ]
     },
     {
-      "name": "Muyayo Rif",
-      "aliases": [],
-      "genres": [
-        "Rock",
-        "Folk i arrel",
-        "Ska / Reggae",
-        "Punk",
-        "Rumba / Mestissatge"
-      ],
-      "territories": [],
-      "languages": [
-        "ca"
-      ],
-      "wikidataId": "Q21569069",
-      "musicbrainzId": "ddf93f6c-3a5b-45c2-8b71-c40257045b00",
-      "youtube": {
-        "channels": [
-          {
-            "id": "UCKyyi4qBKOJpeV2iZROTQaw",
-            "handle": null,
-            "name": null,
-            "type": "official",
-            "primary": true
-          }
-        ],
-        "candidates": []
-      },
-      "confidence": "alta",
-      "reviewStatus": "pendent",
-      "active": false,
-      "sources": [
-        "https://www.wikidata.org/wiki/Q21569069",
-        "wikidata:performed-catalan-work",
-        "musicbrainz:youtube"
-      ],
-      "lastChecked": "2026-09-25T15:55:52.929Z",
-      "notes": "",
-      "enrichment": {
-        "musicbrainz": {
-          "checkedAt": "2026-09-25T15:55:52.929Z",
-          "status": "trobat",
-          "relationCount": 1
-        },
-        "genres": {
-          "checkedAt": "2026-09-27T11:59:19.885Z",
-          "musicbrainzCheckedAt": "2026-09-25T16:49:20.218Z",
-          "wikidataRaw": [
-            "punk rock",
-            "ska",
-            "folk-country",
-            "reggae",
-            "world fusion",
-            "música llatina",
-            "fusió musical"
-          ],
-          "musicbrainzRaw": [],
-          "unmappedRaw": [
-            "música llatina",
-            "fusió musical"
-          ],
-          "status": "parcial",
-          "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": null,
-          "musicbrainzReleaseCheckedAt": null,
-          "wikidataWorkCheckedAt": null,
-          "musicbrainzReleaseRaw": [],
-          "wikidataWorkEvidence": []
-        }
-      },
-      "genresRaw": [
-        "punk rock",
-        "ska",
-        "folk-country",
-        "reggae",
-        "world fusion",
-        "música llatina",
-        "fusió musical"
-      ]
-    },
-    {
       "name": "Narcís Perich i Serra",
       "aliases": [],
       "genres": [
@@ -11338,58 +11134,6 @@
       "genresRaw": [
         "sardana"
       ]
-    },
-    {
-      "name": "Nerea Rodríguez i Rodríguez",
-      "aliases": [],
-      "genres": [],
-      "territories": [],
-      "languages": [
-        "ca"
-      ],
-      "wikidataId": "Q59616984",
-      "musicbrainzId": "68c9e00b-b9dd-47c4-a8d5-4c306abc3e15",
-      "youtube": {
-        "channels": [
-          {
-            "id": "UCjyRiDo6i3qlDa_Zoo6fyCQ",
-            "handle": null,
-            "name": null,
-            "type": "official",
-            "primary": true
-          }
-        ]
-      },
-      "confidence": "alta",
-      "reviewStatus": "pendent",
-      "active": false,
-      "sources": [
-        "https://www.wikidata.org/wiki/Q59616984",
-        "wikidata:native-language-catalan",
-        "wikidata:native-language-catalan-musician"
-      ],
-      "lastChecked": "2026-09-25T15:47:57.997Z",
-      "notes": "",
-      "genresRaw": [],
-      "enrichment": {
-        "genres": {
-          "checkedAt": "2026-09-27T11:59:19.885Z",
-          "musicbrainzCheckedAt": "2026-09-25T17:12:17.018Z",
-          "wikidataRaw": [],
-          "musicbrainzRaw": [],
-          "unmappedRaw": [],
-          "status": "sense-dades",
-          "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-27T11:59:19.885Z",
-          "wikidataWorkEvidence": [],
-          "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": "2026-09-25T17:12:17.018Z",
-          "musicbrainzReleaseCheckedAt": "2026-09-25T17:18:41.679Z",
-          "musicbrainzReleaseRaw": [],
-          "musicbrainzReleaseEvidence": [],
-          "musicbrainzReleaseGroupCount": 9
-        }
-      }
     },
     {
       "name": "Nina",
@@ -12824,71 +12568,6 @@
       }
     },
     {
-      "name": "Paula Ribó González",
-      "aliases": [],
-      "genres": [
-        "Pop",
-        "Indie / Alternativa",
-        "Electrònica"
-      ],
-      "territories": [],
-      "languages": [
-        "ca"
-      ],
-      "wikidataId": "Q6067393",
-      "musicbrainzId": "671e0cc5-bb2b-430d-946f-aa0ebb38e1af",
-      "youtube": {
-        "channels": [
-          {
-            "id": "UCaJimA2MVhvTOyTVcvUdzSg",
-            "handle": null,
-            "name": null,
-            "type": "official",
-            "primary": true
-          }
-        ]
-      },
-      "confidence": "alta",
-      "reviewStatus": "pendent",
-      "active": false,
-      "sources": [
-        "https://www.wikidata.org/wiki/Q6067393",
-        "wikidata:native-language-catalan",
-        "wikidata:languages-spoken-catalan",
-        "wikidata:native-language-catalan-musician"
-      ],
-      "lastChecked": "2026-09-25T15:47:57.997Z",
-      "notes": "",
-      "genresRaw": [
-        "pop llatí",
-        "indie pop",
-        "pop",
-        "música electrònica"
-      ],
-      "enrichment": {
-        "genres": {
-          "checkedAt": "2026-09-27T11:59:19.894Z",
-          "musicbrainzCheckedAt": "2026-09-25T16:49:47.023Z",
-          "wikidataRaw": [
-            "pop llatí",
-            "indie pop",
-            "pop",
-            "música electrònica"
-          ],
-          "musicbrainzRaw": [],
-          "unmappedRaw": [],
-          "status": "classificat",
-          "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": null,
-          "musicbrainzReleaseCheckedAt": null,
-          "wikidataWorkCheckedAt": null,
-          "musicbrainzReleaseRaw": [],
-          "wikidataWorkEvidence": []
-        }
-      }
-    },
-    {
       "name": "Pep Gimeno \"Botifarra\"",
       "aliases": [],
       "genres": [
@@ -13269,15 +12948,7 @@
       "wikidataId": "Q20104364",
       "musicbrainzId": "9c5b4dbe-cbcf-48d8-913a-4f123ec921b9",
       "youtube": {
-        "channels": [
-          {
-            "id": "UCfMqjIyA0G1cVGNlFXXoJhA",
-            "handle": null,
-            "name": null,
-            "type": "official",
-            "primary": true
-          }
-        ]
+        "channels": []
       },
       "confidence": "alta",
       "reviewStatus": "pendent",
@@ -15003,15 +14674,7 @@
       "wikidataId": "Q109644522",
       "musicbrainzId": "1337a33d-4b99-4eab-b607-50f656737b48",
       "youtube": {
-        "channels": [
-          {
-            "id": "UC7IUL5Ba9dhBVPnTLe9RHhQ",
-            "handle": null,
-            "name": null,
-            "type": "official",
-            "primary": true
-          }
-        ]
+        "channels": []
       },
       "confidence": "alta",
       "reviewStatus": "pendent",
