@@ -38,6 +38,11 @@ const GROUPS = [
 ];
 
 function unique(values){ return [...new Set((values||[]).map(v=>String(v||'').trim()).filter(Boolean))]; }
+function cleanChannelDisplayName(value, fallback=''){
+  const raw=String(value||fallback||'').trim();
+  const cleaned=raw.replace(/\s*-\s*(?:topic|tòpic)\s*$/i,'').trim();
+  return cleaned || String(fallback||'').trim();
+}
 function chunks(items,size){ const out=[]; for(let i=0;i<items.length;i+=size) out.push(items.slice(i,i+size)); return out; }
 function categoriesForGenres(genres){
   const set=new Set(genres||[]);
@@ -153,9 +158,11 @@ async function main(){
     if(!detail) continue;
     const snippet=detail.snippet||{};
     const categories=meta.categories||[];
+    const rawChannelName=snippet.title || meta.artistNames[0] || id;
+    const displayChannelName=cleanChannelDisplayName(rawChannelName,meta.artistNames[0]||id);
     const channel={
       id,
-      name:snippet.title || meta.artistNames[0] || id,
+      name:displayChannelName,
       avatar:bestThumb(snippet),
       description:snippet.description || '',
       handle:snippet.customUrl || '',
@@ -189,7 +196,7 @@ async function main(){
 
       const classification=classifyMusicContent({
         item,
-        channelMeta:{...meta,channelTitle:channel.name}
+        channelMeta:{...meta,channelTitle:rawChannelName}
       });
       typeCounts[classification.contentType]=(typeCounts[classification.contentType]||0)+1;
 
