@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-28T15:53:50.745Z",
+  "updatedAt": "2026-09-28T15:55:26.396Z",
   "artists": [
     {
       "name": "31 FAM",
@@ -503,7 +503,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCego8MWd7DkJXnGl9WQAbTQ",
+            "handle": "@alfredgarciamusic",
+            "name": "alfredgarcia",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "candidates": []
       },
       "confidence": "mitjana",
@@ -513,7 +521,7 @@
         "https://www.enderrock.cat/noticia/30487/premis-primera-fila-2025-premien-vintena-artistes-catalans",
         "youtube:manual-verified"
       ],
-      "lastChecked": "2026-09-28T15:53:50.745Z",
+      "lastChecked": "2026-09-28T15:55:21.005Z",
       "notes": "Apareix com a pop en català, però convé revisar si el repertori és principalment en català.",
       "genresRaw": [
         "Pop"
@@ -1254,7 +1262,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCDdlTgzfniVZApbfmtGpUPg",
+            "handle": "@au_rora_music",
+            "name": "Au Rora",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "candidates": []
       },
       "confidence": "alta",
@@ -1264,7 +1280,7 @@
         "https://www.enderrock.cat/noticia/30783/festa-dels-premis-enderrock-2026-comptara-amb-maig-enmatu-minova-au-rora",
         "youtube:manual-verified"
       ],
-      "lastChecked": "2026-09-28T15:53:50.745Z",
+      "lastChecked": "2026-09-28T15:55:19.331Z",
       "notes": "Nova etapa més pop i en català.",
       "genresRaw": [
         "Indie-pop / pop"
@@ -1339,7 +1355,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UC7Y0TrjWk-TcCLcoCXulf0Q",
+            "handle": "@sombernia",
+            "name": "Bèrnia",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "candidates": []
       },
       "confidence": "alta",
@@ -1349,7 +1373,7 @@
         "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026",
         "youtube:manual-verified"
       ],
-      "lastChecked": "2026-09-28T15:53:50.745Z",
+      "lastChecked": "2026-09-28T15:55:20.040Z",
       "notes": "Classificat al Sona9 2026 com a mestissatge pop.",
       "genresRaw": [
         "Mestissatge pop"
@@ -2384,7 +2408,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCE5UIlWPKCJ-9LJXlQB-05g",
+            "handle": "@cloeriembau",
+            "name": "Cloe Riembau",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "candidates": []
       },
       "confidence": "alta",
@@ -2394,7 +2426,7 @@
         "https://www.enderrock.cat/noticia/30628/nous-discos-catala-2026",
         "youtube:manual-verified"
       ],
-      "lastChecked": "2026-09-28T15:53:50.745Z",
+      "lastChecked": "2026-09-28T15:55:19.249Z",
       "notes": "Guanyadora del Sona9; debut indie-pop el 2026.",
       "genresRaw": [
         "Indie-pop"
@@ -2867,7 +2899,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCFRzEt990b8xiMQ9soWNegw",
+            "handle": "@soc.daveuu",
+            "name": "DAVEU))",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "candidates": []
       },
       "confidence": "alta",
@@ -2877,7 +2917,7 @@
         "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026",
         "youtube:manual-verified"
       ],
-      "lastChecked": "2026-09-28T15:53:50.745Z",
+      "lastChecked": "2026-09-28T15:55:18.341Z",
       "notes": "Projecte creat el 2025; Sona9 el defineix com pop en català.",
       "genresRaw": [
         "Pop / EDM / urbà"
@@ -2897,7 +2937,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCnmFh1j3xvDfrw20AqVgegw",
+            "handle": "@derbi.junior",
+            "name": "Derbi Junior",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "candidates": []
       },
       "confidence": "mitjana",
@@ -2907,7 +2955,7 @@
         "https://www.3cat.cat/3cat/catorze-veus-per-entendre-el-futur-del-pop-catala/audio/1244294/",
         "youtube:manual-verified"
       ],
-      "lastChecked": "2026-09-28T15:53:50.745Z",
+      "lastChecked": "2026-09-28T15:55:18.709Z",
       "notes": "Inclòs per 3Cat en el mapa de futur del pop.",
       "genresRaw": [
         "Pop / indie"
@@ -3715,7 +3763,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCBUcv--dB2dFkl6qhRO3JKA",
+            "handle": "@elodiepagador",
+            "name": "elo",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "candidates": []
       },
       "confidence": "alta",
@@ -3725,7 +3781,7 @@
         "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026",
         "youtube:manual-verified"
       ],
-      "lastChecked": "2026-09-28T15:53:50.745Z",
+      "lastChecked": "2026-09-28T15:55:20.497Z",
       "notes": "Sona9 2026: pop urbà.",
       "genresRaw": [
         "Pop urbà"
@@ -4271,7 +4327,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UC6qcca_Zv5qzn-Iw32etw1A",
+            "handle": "@en_rick",
+            "name": "En Rick",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "candidates": []
       },
       "confidence": "alta",
@@ -4281,7 +4345,7 @@
         "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026",
         "youtube:manual-verified"
       ],
-      "lastChecked": "2026-09-28T15:53:50.745Z",
+      "lastChecked": "2026-09-28T15:55:20.407Z",
       "notes": "Sona9 2026: pop electrònic.",
       "genresRaw": [
         "Pop electrònic"
@@ -5757,7 +5821,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UC_IYrpsrhfYwUw70rJAqzvA",
+            "handle": "@guineupop4382",
+            "name": "GUINEU POP",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "candidates": []
       },
       "confidence": "alta",
@@ -5767,7 +5839,7 @@
         "https://icec.gencat.cat/ca/actualitat/noticies/detall/Noticia_PrimaveraPro25",
         "youtube:manual-verified"
       ],
-      "lastChecked": "2026-09-28T15:53:50.745Z",
+      "lastChecked": "2026-09-28T15:55:18.252Z",
       "notes": "Font oficial la descriu com indie-pop català.",
       "genresRaw": [
         "Indie-pop"
@@ -5786,7 +5858,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCUFf95lc9BoH8zy0Tn1Tm9w",
+            "handle": "@gussetgusset",
+            "name": "gusset",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "candidates": []
       },
       "confidence": "alta",
@@ -5796,7 +5876,7 @@
         "https://www.enderrock.cat/noticia/30487/premis-primera-fila-2025-premien-vintena-artistes-catalans",
         "youtube:manual-verified"
       ],
-      "lastChecked": "2026-09-28T15:53:50.745Z",
+      "lastChecked": "2026-09-28T15:55:20.721Z",
       "notes": "Premiat dins la gala dedicada a artistes de pop en català.",
       "genresRaw": [
         "Pop"
@@ -5816,7 +5896,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCFYeKYCzLGjyCuVW12j07Hg",
+            "handle": "@heyzuri",
+            "name": "Hey Zuri ",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "candidates": []
       },
       "confidence": "alta",
@@ -5826,7 +5914,7 @@
         "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026",
         "youtube:manual-verified"
       ],
-      "lastChecked": "2026-09-28T15:53:50.745Z",
+      "lastChecked": "2026-09-28T15:55:19.975Z",
       "notes": "Classificat al Sona9 2026 com a pop-rock.",
       "genresRaw": [
         "Pop-rock"
@@ -7738,7 +7826,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCAwpv0YEBlWCi9OeqTCw4FA",
+            "handle": "@juliacruzmusica",
+            "name": "Júlia Cruz ",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "candidates": []
       },
       "confidence": "alta",
@@ -7748,7 +7844,7 @@
         "https://www.3cat.cat/3cat/catorze-veus-per-entendre-el-futur-del-pop-catala/audio/1244294/",
         "youtube:manual-verified"
       ],
-      "lastChecked": "2026-09-28T15:53:50.745Z",
+      "lastChecked": "2026-09-28T15:55:19.084Z",
       "notes": "Inclosa entre les noves veus del pop català.",
       "genresRaw": [
         "Pop"
@@ -8010,7 +8106,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCmmjpWToEL-YuLqYEenGS0A",
+            "handle": "@laranna1979",
+            "name": "L'arannà",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "candidates": []
       },
       "confidence": "alta",
@@ -8020,7 +8124,7 @@
         "https://www.3cat.cat/3cat/catorze-veus-per-entendre-el-futur-del-pop-catala/audio/1244294/",
         "youtube:manual-verified"
       ],
-      "lastChecked": "2026-09-28T15:53:50.745Z",
+      "lastChecked": "2026-09-28T15:55:19.166Z",
       "notes": "Inclòs entre les noves veus del pop català.",
       "genresRaw": [
         "Pop / cançó"
@@ -8785,7 +8889,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCdobjCKfq5FbF7eQL6C1VLw",
+            "handle": "@somlamousse",
+            "name": "La Mousse",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "candidates": []
       },
       "confidence": "alta",
@@ -8795,7 +8907,7 @@
         "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026",
         "youtube:manual-verified"
       ],
-      "lastChecked": "2026-09-28T15:53:50.745Z",
+      "lastChecked": "2026-09-28T15:55:20.173Z",
       "notes": "Classificat al Sona9 2026 com a pop electrònic.",
       "genresRaw": [
         "Pop electrònic"
@@ -9851,7 +9963,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCelei-fP98dp5R8j-tLBnNw",
+            "handle": "@maihalis",
+            "name": "Mai Halis",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "candidates": []
       },
       "confidence": "alta",
@@ -9861,7 +9981,7 @@
         "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026",
         "youtube:manual-verified"
       ],
-      "lastChecked": "2026-09-28T15:53:50.745Z",
+      "lastChecked": "2026-09-28T15:55:20.258Z",
       "notes": "Classificat al Sona9 2026 com a pop-rock.",
       "genresRaw": [
         "Pop-rock"
@@ -10346,7 +10466,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UC_eW1AyvwaPsQA5YAuOC3YQ",
+            "handle": "@margrimalt_",
+            "name": "Mar Grimalt",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "candidates": []
       },
       "confidence": "alta",
@@ -10356,7 +10484,7 @@
         "https://www.3cat.cat/3cat/catorze-veus-per-entendre-el-futur-del-pop-catala/audio/1244294/",
         "youtube:manual-verified"
       ],
-      "lastChecked": "2026-09-28T15:53:50.745Z",
+      "lastChecked": "2026-09-28T15:55:18.991Z",
       "notes": "Inclosa entre les noves veus del pop català.",
       "genresRaw": [
         "Pop / folk"
@@ -10376,7 +10504,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UC57d8FV0O8sOiK6-K-gWNHA",
+            "handle": "@marpujolruiz",
+            "name": "Mar Pujol",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "candidates": []
       },
       "confidence": "alta",
@@ -10386,7 +10522,7 @@
         "https://www.3cat.cat/3cat/catorze-veus-per-entendre-el-futur-del-pop-catala/audio/1244294/",
         "youtube:manual-verified"
       ],
-      "lastChecked": "2026-09-28T15:53:50.745Z",
+      "lastChecked": "2026-09-28T15:55:18.493Z",
       "notes": "Inclosa entre les noves veus del pop català.",
       "genresRaw": [
         "Pop d'autor"
@@ -10981,7 +11117,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCSw_OmWJnY0Dz311MEzdHFA",
+            "handle": "@mikinunezoficial",
+            "name": "Miki Nuñez",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "candidates": []
       },
       "confidence": "mitjana",
@@ -10991,7 +11135,7 @@
         "https://www.enderrock.cat/noticia/30487/premis-primera-fila-2025-premien-vintena-artistes-catalans",
         "youtube:manual-verified"
       ],
-      "lastChecked": "2026-09-28T15:53:50.745Z",
+      "lastChecked": "2026-09-28T15:55:20.892Z",
       "notes": "Apareix com a pop en català, però convé revisar si el repertori és principalment en català.",
       "genresRaw": [
         "Pop"
@@ -11140,7 +11284,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UC7Hb62h0GUUgaPe0v0kdY3A",
+            "handle": "@miquelnafria",
+            "name": "miquel",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "candidates": []
       },
       "confidence": "alta",
@@ -11150,7 +11302,7 @@
         "https://www.3cat.cat/3cat/catorze-veus-per-entendre-el-futur-del-pop-catala/audio/1244294/",
         "youtube:manual-verified"
       ],
-      "lastChecked": "2026-09-28T15:53:50.745Z",
+      "lastChecked": "2026-09-28T15:55:18.614Z",
       "notes": "Inclòs entre les noves veus del pop català.",
       "genresRaw": [
         "Pop"
@@ -11615,7 +11767,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCJCUdj8MStJsApyF1oiFTVA",
+            "handle": "@naina_msk",
+            "name": "NAINA",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "candidates": []
       },
       "confidence": "alta",
@@ -11625,7 +11785,7 @@
         "https://www.enderrock.cat/noticia/30628/nous-discos-catala-2026",
         "youtube:manual-verified"
       ],
-      "lastChecked": "2026-09-28T15:53:50.745Z",
+      "lastChecked": "2026-09-28T15:55:19.710Z",
       "notes": "Artista valenciana amb nou disc en català el 2026.",
       "genresRaw": [
         "Pop"
@@ -12106,7 +12266,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCy3TyYTl8wJh8Ana3CP0QeA",
+            "handle": "@orella2",
+            "name": "Orella d'Ós",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "candidates": []
       },
       "confidence": "alta",
@@ -12116,7 +12284,7 @@
         "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026",
         "youtube:manual-verified"
       ],
-      "lastChecked": "2026-09-28T15:53:50.745Z",
+      "lastChecked": "2026-09-28T15:55:20.327Z",
       "notes": "Classificat al Sona9 2026 com a pop-rock.",
       "genresRaw": [
         "Pop-rock"
@@ -12832,7 +13000,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCkGNJczVoESUwmJ3oejyM5w",
+            "handle": "@ferranpalauoficial",
+            "name": "Ferran Palau",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "candidates": []
       },
       "confidence": "alta",
@@ -12842,7 +13018,7 @@
         "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026",
         "youtube:manual-verified"
       ],
-      "lastChecked": "2026-09-28T15:53:50.745Z",
+      "lastChecked": "2026-09-28T15:55:18.417Z",
       "notes": "Grup nascut el 2025; indie-pop en català.",
       "genresRaw": [
         "Indie-pop"
@@ -13265,7 +13441,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCZJX-lH3Hs2EfgNigx7F0Hg",
+            "handle": "@paulamontalbangay",
+            "name": "Paula Montalban Gay",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "candidates": []
       },
       "confidence": "alta",
@@ -13275,7 +13459,7 @@
         "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026",
         "youtube:manual-verified"
       ],
-      "lastChecked": "2026-09-28T15:53:50.745Z",
+      "lastChecked": "2026-09-28T15:55:19.892Z",
       "notes": "Classificada al Sona9 2026 com a pop alternatiu.",
       "genresRaw": [
         "Pop alternatiu"
@@ -13832,7 +14016,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCEMQa0poTrwLZPEbB0HGJTA",
+            "handle": "@plamoguda",
+            "name": "PLA MOGUDA",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "candidates": []
       },
       "confidence": "alta",
@@ -13842,7 +14034,7 @@
         "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026",
         "youtube:manual-verified"
       ],
-      "lastChecked": "2026-09-28T15:53:50.745Z",
+      "lastChecked": "2026-09-28T15:55:20.588Z",
       "notes": "Guanyador Sona9 2026; pop-rock.",
       "genresRaw": [
         "Pop-rock"
@@ -14516,7 +14708,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCC5cC2LyXLOPVR5jh25IBCA",
+            "handle": "@reiinagrup000",
+            "name": "REÏNA",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "candidates": []
       },
       "confidence": "alta",
@@ -14526,7 +14726,7 @@
         "https://www.3cat.cat/3cat/catorze-veus-per-entendre-el-futur-del-pop-catala/audio/1244294/",
         "youtube:manual-verified"
       ],
-      "lastChecked": "2026-09-28T15:53:50.745Z",
+      "lastChecked": "2026-09-28T15:55:18.792Z",
       "notes": "Inclòs entre les noves veus del pop català.",
       "genresRaw": [
         "Pop"
@@ -14912,7 +15112,51 @@
       "musicbrainzId": "74e9b4e0-cee6-4959-a535-ec5d07d14c36",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UCgCM0__cwJJsT2M84qF6bJw",
+            "title": "Rolando Villazón - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 8160,
+            "thumbnail": "https://yt3.ggpht.com/Z1EbPrCxW3YpNc3AGnoSOGyOD2MjllzYp0IzNEq3BeDYo2dTp704D87mK9jxBqsUxq-7sttbgQ=s240-c-k-c0x00ffffff-no-rj",
+            "score": 85,
+            "reasons": [
+              "nom exacte de canal Topic",
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-28T15:55:21.088Z"
+          },
+          {
+            "id": "UCqpAybwx-lrGj9Cmt8mbhJA",
+            "title": "Rolando Villazón",
+            "handle": "@villazonmusic",
+            "description": "Welcome to Rolando Villazón's official YouTube Channel.",
+            "subscriberCount": 4440,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_lWlLFJ_SM3nY62gVsAqtI_odb_Y134jjb0mXqXXKCRoQ=s240-c-k-c0x00ffffff-no-rj",
+            "score": 80,
+            "reasons": [
+              "nom exacte",
+              "marca oficial"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-28T15:55:21.088Z"
+          },
+          {
+            "id": "UCU_vQNlry3odEmCaN4E9gBg",
+            "title": "Voice & Stage Archive",
+            "handle": "@voice_and_stagearchive",
+            "description": "Operas • Concerts • Films\nA curated archive of vocal performances — operatic productions, live concerts, and documentaries.\nThis channel is a non-commercial archive. No monetization. All rights belong to their respective owners.\n\nMy main channel is here: \nhttps://www.youtube.com/channel/UCdelWDJQf5rTknbPGLljKRQ\n\nOn this channel, I publish my lesson",
+            "subscriberCount": 518,
+            "thumbnail": "https://yt3.ggpht.com/SUwmDtBhT5ebDJ5ZxNPc5blQsMZxDdECY7-p17hiv6oJWkJ3oozqFgtTN3qJRsC7qnE5Ig0rCA=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-28T15:55:21.088Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -14947,6 +15191,14 @@
           "wikidataWorkCheckedAt": null,
           "musicbrainzReleaseRaw": [],
           "wikidataWorkEvidence": []
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-28T15:55:21.088Z",
+          "status": "candidats",
+          "query": "Rolando Villazón",
+          "resultCount": 3,
+          "bestScore": 85,
+          "autoAcceptedId": null
         }
       },
       "genresRaw": [
@@ -14968,7 +15220,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCweQDbLnNXxU6M14_vSP7KQ",
+            "handle": "@roser.dresaire",
+            "name": "Roser Dresaire",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "candidates": []
       },
       "confidence": "alta",
@@ -14978,7 +15238,7 @@
         "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026",
         "youtube:manual-verified"
       ],
-      "lastChecked": "2026-09-28T15:53:50.745Z",
+      "lastChecked": "2026-09-28T15:55:19.804Z",
       "notes": "Classificada al Sona9 2026 com a pop d'autor.",
       "genresRaw": [
         "Pop d'autor"
@@ -14998,7 +15258,55 @@
       "musicbrainzId": "7fa32778-1021-4f46-93bd-596545f2b50c",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UCBxqQb0GjucBAR75qo5NRcA",
+            "title": "Salomé Brimhall",
+            "handle": "@salomeandreaaa",
+            "description": "SALOMÉ ANDREA \nLife with my twins Luca & Rue \n\nFind more below \n🖤TIKTOK https://www.tiktok.com/@salomeandreaa?_t=ZT-8swYor7Wm4c&_r=1 \n\n❤️ INSTAGRAM https://www.instagram.com/salomeandreaa?igsh=MWNoNGo3dDFqcWkzNw%3D%3D&utm_source=qr\n\n❤️‍🔥 LINKS \n\nhttps://linktr.ee/salomeandreaa",
+            "subscriberCount": 40800,
+            "thumbnail": "https://yt3.ggpht.com/nxgjT8cZDQYoWO1yMEfoJjeHvt3dn7zgl5PD7iuB3cFVDxZAh4S9AHnUR0COdheoYhkCVCM2Mw=s240-c-k-c0x00ffffff-no-rj",
+            "score": 58,
+            "reasons": [
+              "nom parcial",
+              "handle coincident",
+              "primer resultat"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-28T15:55:21.519Z"
+          },
+          {
+            "id": "UCMjqpvB38qoyxCr-afvI4NA",
+            "title": "Salome Emani",
+            "handle": "@salomeemani",
+            "description": "it's Suh-Lawm 🎀\n\nFollow my social media accounts:\nIG: @salome.emani\nTWITTER: @suhlawm\nSNAPCHAT: @suhlawm \n\nMy ONLY business email is thesalomebrand@gmail.com 💌\n",
+            "subscriberCount": 354000,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_lgjyUqzkkR3ZJUowrSXqMeTN4osP1WHPbXCQgzbis_Arw=s240-c-k-c0x00ffffff-no-rj",
+            "score": 53,
+            "reasons": [
+              "nom parcial",
+              "handle coincident"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-28T15:55:21.519Z"
+          },
+          {
+            "id": "UCOPCqt3TWsBO0H1u-_Lw9CQ",
+            "title": "Le monde de Salomé",
+            "handle": "@lemondedesalome",
+            "description": "SALOMÉ - 27 ans \n• Lyon \n• Vlog & déco \n• Make up cruelty free\n\n●●●●●●\n\nTIK TOK - Le monde de Salomé https://www.tiktok.com/@lemondedesalome?lang=fr \nINSTAGRAM : @lemondedesalome\nCONTACT (Pro) : lemondedesalomeyt@gmail.com\n\n📸 Matériel vidéo : https://www.amazon.fr/shop/lemondedesalome  (lien affilié)\n\nLogiciel de montage : Final Cut Pro\nMiniatures",
+            "subscriberCount": 318000,
+            "thumbnail": "https://yt3.ggpht.com/U_qTBYqAndBUCORAzRDcnpYsH9_4bDZGSRIXXNyrDUDw2XlmsLZFYWR8vVsRqKb7G7AJPERdBA=s240-c-k-c0x00ffffff-no-rj",
+            "score": 53,
+            "reasons": [
+              "nom parcial",
+              "handle coincident"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-28T15:55:21.519Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -15033,6 +15341,14 @@
           "wikidataWorkCheckedAt": null,
           "musicbrainzReleaseRaw": [],
           "wikidataWorkEvidence": []
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-28T15:55:21.519Z",
+          "status": "candidats",
+          "query": "Salomé",
+          "resultCount": 3,
+          "bestScore": 58,
+          "autoAcceptedId": null
         }
       },
       "genresRaw": [
@@ -15053,7 +15369,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCIO1gtVvX9gixocD0TvfSYw",
+            "handle": "@sandramonfortoliver",
+            "name": "Sandra Monfort",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "candidates": []
       },
       "confidence": "alta",
@@ -15063,7 +15387,7 @@
         "https://www.3cat.cat/3cat/catorze-veus-per-entendre-el-futur-del-pop-catala/audio/1244294/",
         "youtube:manual-verified"
       ],
-      "lastChecked": "2026-09-28T15:53:50.745Z",
+      "lastChecked": "2026-09-28T15:55:18.901Z",
       "notes": "Inclosa entre les noves veus del pop català.",
       "genresRaw": [
         "Pop / folk"
@@ -15082,7 +15406,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UC4tHQwYKnZ0frCoqwMmgMkQ",
+            "handle": "@heysararoy",
+            "name": "Sara Roy",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "candidates": []
       },
       "confidence": "alta",
@@ -15092,7 +15424,7 @@
         "https://www.enderrock.cat/noticia/30487/premis-primera-fila-2025-premien-vintena-artistes-catalans",
         "youtube:manual-verified"
       ],
-      "lastChecked": "2026-09-28T15:53:50.745Z",
+      "lastChecked": "2026-09-28T15:55:20.799Z",
       "notes": "Premiada dins la gala dedicada a artistes de pop en català.",
       "genresRaw": [
         "Pop"
@@ -15113,7 +15445,50 @@
       "musicbrainzId": "c4114fc7-96c0-4654-889e-281f62a243ed",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UC0njIX_vDoAZaqKR5N8AavA",
+            "title": "Sau - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 3580,
+            "thumbnail": "https://yt3.ggpht.com/O8hO96CIA0PvA1un2WKlo7xect4WA8mOJq5fxHuo7GHXpK0i1JdUI4sgoTnHslBZ4F1oObeU=s240-c-k-c0x00ffffff-no-rj",
+            "score": 80,
+            "reasons": [
+              "nom exacte de canal Topic"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-28T15:55:21.789Z"
+          },
+          {
+            "id": "UCZXphXWoAlyJhrWkVMFsVog",
+            "title": "SAU",
+            "handle": "@saunocap",
+            "description": "Posadas - Misiones\ninstagram: @prod_sau\nPosadas - Misiones - Argentina\n",
+            "subscriberCount": 1390,
+            "thumbnail": "https://yt3.ggpht.com/ZluaN_d31CBj4dTh5wVNkwn0sMrnQ0_GoItOUPWbH8lXCidRXMHI6zVuoFrehFP2KuTDmDtMpg=s240-c-k-c0x00ffffff-no-rj",
+            "score": 75,
+            "reasons": [
+              "nom exacte",
+              "primer resultat"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-28T15:55:21.789Z"
+          },
+          {
+            "id": "UC-0zDyf0aTF_tqyW4KM9OQQ",
+            "title": "SauEvents",
+            "handle": "@sauevents",
+            "description": "",
+            "subscriberCount": 657,
+            "thumbnail": "https://yt3.ggpht.com/A0NoJZQS5I1y3ZZ01iNaACcnHpUgSEeTNVse_5cVzMYo5uhiX3nuEMN4G_0DDheU_6cdvnqb=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-28T15:55:21.789Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -15146,6 +15521,14 @@
           "wikidataWorkCheckedAt": null,
           "musicbrainzReleaseRaw": [],
           "wikidataWorkEvidence": []
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-28T15:55:21.789Z",
+          "status": "candidats",
+          "query": "Sau",
+          "resultCount": 3,
+          "bestScore": 80,
+          "autoAcceptedId": null
         }
       },
       "genresRaw": [
@@ -15228,7 +15611,54 @@
       "musicbrainzId": "3da1a961-aa59-4872-8143-4072334d34e3",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UCOkIGVfu3W-Xzuyh-esacsg",
+            "title": "Sense Sal",
+            "handle": "@sensesal",
+            "description": "",
+            "subscriberCount": 5670,
+            "thumbnail": "https://yt3.ggpht.com/_GtIlvy4yqkzXoXo_Q0sqmSTkwz8xweVG1r9x0HukS0SzzWoRmMYtP4HKb8TNwyfdatoU_xdtg=s240-c-k-c0x00ffffff-no-rj",
+            "score": 100,
+            "reasons": [
+              "nom exacte",
+              "handle exacte",
+              "primer resultat"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-28T15:55:22.108Z"
+          },
+          {
+            "id": "UCQdYxPBE_1N-KFNFPbgPa1Q",
+            "title": "Sense Sal",
+            "handle": "@sensesalband",
+            "description": "",
+            "subscriberCount": 4,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_lxLFQkpN6bcqKZZOllh8sokFx3qZvzHsK0HvacVVuFxLo=s240-c-k-c0x00ffffff-no-rj",
+            "score": 88,
+            "reasons": [
+              "nom exacte",
+              "handle coincident"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-28T15:55:22.108Z"
+          },
+          {
+            "id": "UCEOjwllkTYUqljRethReusQ",
+            "title": "Sense Sal - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 381,
+            "thumbnail": "https://yt3.ggpht.com/JNcqQgDXIuSz70lVufXqxRBsgnP-DJFcSYLyn5BMk5xG_6maz_Wp27zZwsrbU_A9KxeNV6jXJmo=s240-c-k-c0x00ffffff-no-rj",
+            "score": 80,
+            "reasons": [
+              "nom exacte de canal Topic"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-28T15:55:22.108Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -15268,6 +15698,14 @@
           "musicbrainzReleaseRaw": [],
           "musicbrainzReleaseEvidence": [],
           "musicbrainzReleaseGroupCount": 5
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-28T15:55:22.108Z",
+          "status": "candidats",
+          "query": "Sense Sal",
+          "resultCount": 3,
+          "bestScore": 100,
+          "autoAcceptedId": null
         }
       },
       "genresRaw": [
@@ -15404,7 +15842,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UC9NDkhmm_3ZBjxnIh2d2paA",
+            "handle": "@siderlandmusic",
+            "name": "Siderland",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "candidates": []
       },
       "confidence": "alta",
@@ -15414,7 +15860,7 @@
         "https://www.3cat.cat/3cat/17072026/video/6415833/",
         "youtube:manual-verified"
       ],
-      "lastChecked": "2026-09-28T15:53:50.745Z",
+      "lastChecked": "2026-09-28T15:55:19.404Z",
       "notes": "3Cat: el pop català que més balla.",
       "genresRaw": [
         "Pop"
@@ -15440,7 +15886,53 @@
       "musicbrainzId": "c532c746-29b7-46a1-b37e-705a62827bab",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UCuGp-QCOQb_Ra4X5-hqGGAw",
+            "title": "Sílvia Pérez Cruz",
+            "handle": "@silviaperezcruzoficial",
+            "description": "Sílvia Pérez Cruz (Palafrugell, Girona, 1983) es una de las voces más sobrecogedoras de su generación. Cantante y compositora, creció entre la canción popular ibérica y latinoamericana, el jazz, la música clásica y el flamenco, construyendo un lenguaje propio, versátil e inconfundible. \n\nA lo largo de su carrera ha colaborado con artistas como Jorg",
+            "subscriberCount": 79800,
+            "thumbnail": "https://yt3.ggpht.com/9MftA08lLvRDpmlH53FUB0JoMlmFnFSWwqPeql1jmv-ctXg-qHV0xaQzAU_M9NW0NUNO6kzksw=s240-c-k-c0x00ffffff-no-rj",
+            "score": 88,
+            "reasons": [
+              "nom exacte",
+              "handle coincident"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-28T15:55:22.530Z"
+          },
+          {
+            "id": "UCXoDEBc8CPWptFtzb_mmLiQ",
+            "title": "Sílvia Pérez Cruz - Topic",
+            "handle": null,
+            "description": "Sílvia Pérez Cruz (Palafrugell, Girona, 1983) es una de las voces más sobrecogedoras de su generación. Cantante y compositora, creció entre la canción popular ibérica y latinoamericana, el jazz, la música clásica y el flamenco, construyendo un lenguaje propio, versátil e inconfundible. \n\nA lo largo de su carrera ha colaborado con artistas como Jorg",
+            "subscriberCount": 4250,
+            "thumbnail": "https://yt3.ggpht.com/9MftA08lLvRDpmlH53FUB0JoMlmFnFSWwqPeql1jmv-ctXg-qHV0xaQzAU_M9NW0NUNO6kzksw=s240-c-k-c0x00ffffff-no-rj",
+            "score": 85,
+            "reasons": [
+              "nom exacte de canal Topic",
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-28T15:55:22.530Z"
+          },
+          {
+            "id": "UCTv6umNI36WAkbk2yJB_AYA",
+            "title": "SilviaPerezCruzVEVO",
+            "handle": "@silviaperezcruzvevo4187",
+            "description": "",
+            "subscriberCount": 117,
+            "thumbnail": "https://yt3.ggpht.com/9MftA08lLvRDpmlH53FUB0JoMlmFnFSWwqPeql1jmv-ctXg-qHV0xaQzAU_M9NW0NUNO6kzksw=s240-c-k-c0x00ffffff-no-rj",
+            "score": 18,
+            "reasons": [
+              "handle coincident"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-28T15:55:22.530Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -15488,6 +15980,14 @@
           "wikidataWorkCheckedAt": null,
           "musicbrainzReleaseRaw": [],
           "wikidataWorkEvidence": []
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-28T15:55:22.530Z",
+          "status": "candidats",
+          "query": "Sílvia Pérez Cruz",
+          "resultCount": 3,
+          "bestScore": 88,
+          "autoAcceptedId": null
         }
       },
       "genresRaw": [
@@ -15629,7 +16129,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UComWnHwPvgdPBmjYs10aG-A",
+            "handle": "@sodi_oficial",
+            "name": "SODI",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "candidates": []
       },
       "confidence": "alta",
@@ -15639,7 +16147,7 @@
         "https://www.enderrock.cat/noticia/31101/vine-enderrock-sona-maig-amb-quinto-vittara-sodi-ginesta",
         "youtube:manual-verified"
       ],
-      "lastChecked": "2026-09-28T15:53:50.745Z",
+      "lastChecked": "2026-09-28T15:55:19.594Z",
       "notes": "Guanyador de premis Sona9 2025; debut discogràfic 2026.",
       "genresRaw": [
         "Brit-pop / pop-rock"
@@ -15717,7 +16225,52 @@
       "musicbrainzId": "e72a6e4c-e72f-4acc-b765-0de32cb0b4f3",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UCST0S1BVk9ROa0h88cyh50g",
+            "title": "Strombers",
+            "handle": "@stromberstv",
+            "description": "Canal oficial de youtube del grup Strombers. \n\nSi vols descarregar-te el nostre disc, fes-ho a: \n\nwww.strombers.com\n\nAquí hi trobareu els vídeos i cançons que anem fent.",
+            "subscriberCount": 6470,
+            "thumbnail": "https://yt3.ggpht.com/AOYjmmesb0iohkk-yEGh-gSfZqDFQJQJRjdJJd5cSSKioKXPYEMX79G0ADi6cUECIeEGrCk6mQ=s240-c-k-c0x00ffffff-no-rj",
+            "score": 103,
+            "reasons": [
+              "nom exacte",
+              "handle coincident",
+              "marca oficial",
+              "primer resultat"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-28T15:55:22.882Z"
+          },
+          {
+            "id": "UCAOEMP5dLDFxFCYNhdb1WCQ",
+            "title": "Strombers - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 213,
+            "thumbnail": "https://yt3.ggpht.com/AOYjmmesb0iohkk-yEGh-gSfZqDFQJQJRjdJJd5cSSKioKXPYEMX79G0ADi6cUECIeEGrCk6mQ=s240-c-k-c0x00ffffff-no-rj",
+            "score": 80,
+            "reasons": [
+              "nom exacte de canal Topic"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-28T15:55:22.882Z"
+          },
+          {
+            "id": "UCdbvIE2uQzpQu9fEkDSsrdQ",
+            "title": "WESLEY",
+            "handle": "@wesleystromberg",
+            "description": "Hi, I’m WESLEY\n\nhttps://daisypay.io/yt/QNSX7G",
+            "subscriberCount": 72100,
+            "thumbnail": "https://yt3.ggpht.com/1xutodJCiqud7AMUAW6Q5ItZ_nLFXPv517yXdnzP27anjR6KDygptetvYKjSE9-BcLA_sSFuUMY=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-28T15:55:22.882Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -15750,6 +16303,14 @@
           "musicbrainzReleaseRaw": [],
           "musicbrainzReleaseEvidence": [],
           "musicbrainzReleaseGroupCount": 10
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-28T15:55:22.882Z",
+          "status": "candidats",
+          "query": "Strombers",
+          "resultCount": 3,
+          "bestScore": 103,
+          "autoAcceptedId": null
         }
       },
       "genresRaw": []
@@ -15841,7 +16402,48 @@
       "musicbrainzId": "44f5193a-1d9f-4597-83cc-45e647f30eb7",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UCgSfdyodqsEbvQMMjrv36Bw",
+            "title": "Teresa Rebull - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 88,
+            "thumbnail": "https://yt3.ggpht.com/YTOZYHYgkq5LCiKluhyDnozU9TPCxhbbwv4x8KL9FpC1V_kQb09brJhin1fRbFeiOHPbdP62ig=s240-c-k-c0x00ffffff-no-rj",
+            "score": 85,
+            "reasons": [
+              "nom exacte de canal Topic",
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-28T15:55:23.301Z"
+          },
+          {
+            "id": "UCONWI1oMlZbf8exnMkS6EYQ",
+            "title": "M.TERESA FARRE REBULL",
+            "handle": "@m.teresafarrerebull",
+            "description": "",
+            "subscriberCount": 1,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_m-wvAwKyNneCMdoErnw329VPrjfATdBmyawkiFTmB0Tmcb0mbPWFH98RzurWL1m0u29A=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-28T15:55:23.301Z"
+          },
+          {
+            "id": "UCEIFPBhMhV2FbNWsviDOHZA",
+            "title": "L'Agram - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 89,
+            "thumbnail": "http://yt3.ggpht.com/rN5sTRspimsx9HOfHAvPUs9lYUyvUqBJrZteuC-6mYdb5InS4IVGX2oeOKdFPbav2_0PivV-WYZ6iB65=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-28T15:55:23.301Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -15876,6 +16478,14 @@
           "musicbrainzReleaseRaw": [],
           "musicbrainzReleaseEvidence": [],
           "musicbrainzReleaseGroupCount": 1
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-28T15:55:23.301Z",
+          "status": "candidats",
+          "query": "Teresa Rebull",
+          "resultCount": 3,
+          "bestScore": 85,
+          "autoAcceptedId": null
         }
       },
       "genresRaw": []
@@ -16011,7 +16621,36 @@
       "musicbrainzId": "c5b85f15-c1e9-45d9-aa5e-511af903cfd9",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UCeKoSVLoLWJobkpbUNQ4zFQ",
+            "title": "Emir Abdul Gani",
+            "handle": "@emirabdulgani",
+            "description": "¡Bienvenidos a mi canal oficial! 🎤 \nSoy Emir Abdul, y aquí comparto mi pasión por la música y la danza, fusionando ritmos, estilos y culturas para crear experiencias únicas. Junto a Ayman Crew (mi crew digital) desarrollamos contenido original que te llevará detrás de las cámaras en cada uno de nuestros proyectos, desde la creación de coreografías",
+            "subscriberCount": 13100000,
+            "thumbnail": "https://yt3.ggpht.com/RqD_Wqh8PCBgRHIltmxIZdO2KBZ4oX8hy5-9DPCPQW_XDAAdfBAzvbtsXZfiCcFLmc0TzrZyNPI=s240-c-k-c0x00ffffff-no-rj",
+            "score": 15,
+            "reasons": [
+              "marca oficial",
+              "primer resultat"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-28T15:55:23.616Z"
+          },
+          {
+            "id": "UC-BifSp_XiWebA5Tf_diq0w",
+            "title": "Flor Pileña - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 54200,
+            "thumbnail": "https://yt3.ggpht.com/dXFyG2BKMfjGi_NcevUea_mbdL06r_2tlDs3ZzE4nSg7Mw9VZUYcUKLAY6QZB04StKINgRwPaA=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-28T15:55:23.616Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -16045,6 +16684,14 @@
           "musicbrainzReleaseRaw": [],
           "musicbrainzReleaseEvidence": [],
           "musicbrainzReleaseGroupCount": 0
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-28T15:55:23.616Z",
+          "status": "candidats",
+          "query": "Tomàs Molina i Bosch",
+          "resultCount": 2,
+          "bestScore": 15,
+          "autoAcceptedId": null
         }
       },
       "genresRaw": []
@@ -16063,7 +16710,53 @@
       "musicbrainzId": "256e45e8-aaf2-447e-a866-68662d89caf8",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UCk00j1VFA88UeGCO9laFdLg",
+            "title": "Tomeu Penya",
+            "handle": "@tomeupenya5407",
+            "description": "La millor musica del meu pais, catalunya, i potser la millor del mon!\n\nContancte: tomeupenyavevo@gmail.com",
+            "subscriberCount": 3,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_nbTtPviYg688z5B8Ui1RL-aHV5SUuBYnPDrtofDYwecA=s240-c-k-c0x00ffffff-no-rj",
+            "score": 88,
+            "reasons": [
+              "nom exacte",
+              "handle coincident"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-28T15:55:23.988Z"
+          },
+          {
+            "id": "UCsOxXt5l7XmAc6AvMQDRV4A",
+            "title": "Tomeu Penya - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 2460,
+            "thumbnail": "https://yt3.ggpht.com/oGgkTcSbt5C0OnwmYUrKph9yElhCiGgiULFjr49elpbTLIhHd5cfi-FmCW-RapMaDOWDmsGPsOc=s240-c-k-c0x00ffffff-no-rj",
+            "score": 85,
+            "reasons": [
+              "nom exacte de canal Topic",
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-28T15:55:23.988Z"
+          },
+          {
+            "id": "UCRt0jmw8bQ0XMVWk9sj_oMA",
+            "title": "Tomeu Penya",
+            "handle": "@tomeupenyistes",
+            "description": "",
+            "subscriberCount": 4,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_mPq3gsg7JBFNGqhxi31HRzo16f8ErNpciBcJQAHLiP3A=s240-c-k-c0x00ffffff-no-rj",
+            "score": 70,
+            "reasons": [
+              "nom exacte"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-28T15:55:23.988Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -16100,6 +16793,14 @@
           "wikidataWorkCheckedAt": null,
           "musicbrainzReleaseRaw": [],
           "wikidataWorkEvidence": []
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-28T15:55:23.988Z",
+          "status": "candidats",
+          "query": "Tomeu Penya",
+          "resultCount": 3,
+          "bestScore": 88,
+          "autoAcceptedId": null
         }
       },
       "genresRaw": [
@@ -16119,7 +16820,52 @@
       "musicbrainzId": "d0ab6657-5b18-47c0-9000-58895110fd03",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UCzLRftCKzfzZvO9XKxnAz1Q",
+            "title": "TONI CRUZ",
+            "handle": "@tonicruz3449",
+            "description": "",
+            "subscriberCount": 174,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_muO7EACZTI5Ux1qJC5PE3A7H-_ZS5oyrvlQ2gmccD94KM=s240-c-k-c0x00ffffff-no-rj",
+            "score": 93,
+            "reasons": [
+              "nom exacte",
+              "handle coincident",
+              "primer resultat"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-28T15:55:24.350Z"
+          },
+          {
+            "id": "UCnmOpM6H83mYK-TliklJUDw",
+            "title": "Toni Cruz",
+            "handle": "@tonicruzgon",
+            "description": "Vídeos sobre las narraciones y viajes del narrador deportivo de COPE Córdoba Toni Cruz",
+            "subscriberCount": 1070,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_mq-NvnwcAEqfUTXGgWS10gzx4ILhBmmY9pTFwwqww2iA=s240-c-k-c0x00ffffff-no-rj",
+            "score": 88,
+            "reasons": [
+              "nom exacte",
+              "handle coincident"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-28T15:55:24.350Z"
+          },
+          {
+            "id": "UC0FFA49Y7dFUJiw3D_bb7vg",
+            "title": "Tony Cruize International",
+            "handle": "@tonycruizeinternational6368",
+            "description": "All gifts are God given and everyone has a chance to exercise and grow it to higher levels. Your gift will make you dine with kings. God's favour will sustain you there and His anointing will make you glorious. Let everything that has breath PRAISE THE LORD.",
+            "subscriberCount": 47000,
+            "thumbnail": "https://yt3.ggpht.com/tfSrIi4BTuiv2tnkl9B-hO7HvjYWZhzAQJ6Al9G3Oq6a-IwkFfSs7EawEYwsvxTnmJ1EiZ7Ukg=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-28T15:55:24.350Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -16154,6 +16900,14 @@
           "musicbrainzReleaseRaw": [],
           "musicbrainzReleaseEvidence": [],
           "musicbrainzReleaseGroupCount": 0
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-28T15:55:24.350Z",
+          "status": "candidats",
+          "query": "Toni Cruz",
+          "resultCount": 3,
+          "bestScore": 93,
+          "autoAcceptedId": null
         }
       },
       "genresRaw": []
@@ -16172,7 +16926,53 @@
       "musicbrainzId": "63166874-1bab-4226-97c2-bbed48589de0",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UC8RrEDfmV-rQsQpURsY6krA",
+            "title": "Toti Soler",
+            "handle": "@totisolervideos",
+            "description": "",
+            "subscriberCount": 1210,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_mRf57oyPj02iezltvye49kUIgfIWBieWchT8qU13vRtU4=s240-c-k-c0x00ffffff-no-rj",
+            "score": 93,
+            "reasons": [
+              "nom exacte",
+              "handle coincident",
+              "primer resultat"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-28T15:55:24.635Z"
+          },
+          {
+            "id": "UCGCmSXoJ_f046wxT7OHUDMA",
+            "title": "Toti Soler - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 540,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_mRf57oyPj02iezltvye49kUIgfIWBieWchT8qU13vRtU4=s240-c-k-c0x00ffffff-no-rj",
+            "score": 80,
+            "reasons": [
+              "nom exacte de canal Topic"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-28T15:55:24.635Z"
+          },
+          {
+            "id": "UC4pYIVfi4KzmtIc0JCF32CA",
+            "title": "Jordi Sabatés & Toti Soler - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 21,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_nbdc5AzjivOkOVFs1t3A1g2QWi7OLsMZHV2ihZTqZmqltNd7G5En2x7TJbw2Ac3mb2Bw=s240-c-k-c0x00ffffff-no-rj",
+            "score": 35,
+            "reasons": [
+              "nom parcial"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-28T15:55:24.635Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -16206,6 +17006,14 @@
           "wikidataWorkCheckedAt": null,
           "musicbrainzReleaseRaw": [],
           "wikidataWorkEvidence": []
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-28T15:55:24.635Z",
+          "status": "candidats",
+          "query": "Toti Soler",
+          "resultCount": 3,
+          "bestScore": 93,
+          "autoAcceptedId": null
         }
       },
       "genresRaw": [
@@ -16441,7 +17249,47 @@
       "musicbrainzId": "6f10f924-50bd-4492-ba08-5777ffa51ca6",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UCSmgNQL_fha5R9Ma1MoRulA",
+            "title": "Victoria de los Ángeles - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 3410,
+            "thumbnail": "https://yt3.ggpht.com/A-o9t8lBWIEKa-wIe1jGdxFFyKeD0UQXnY9jRsJHNFlaRXymZIAc5FjSiVnAqU3kI3zMXCjz5g=s240-c-k-c0x00ffffff-no-rj",
+            "score": 5,
+            "reasons": [
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-28T15:55:24.925Z"
+          },
+          {
+            "id": "UC_YDD107DjG7GQeWdmv0P_Q",
+            "title": "Victoria Angeles - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 43,
+            "thumbnail": "https://yt3.ggpht.com/a_giDEYF5qC8Nhqm05AtpU0z0kg9jnGgoC1DVvSce6jDM2Hh6-OQ9oQ8DajaoG3mGVvtmraGdA=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-28T15:55:24.925Z"
+          },
+          {
+            "id": "UCWGUlf3lT6xRkxB-iwLc_lg",
+            "title": "Fundació Victoria de los Ángeles",
+            "handle": "@fund_vda",
+            "description": "",
+            "subscriberCount": 684,
+            "thumbnail": "https://yt3.ggpht.com/iVTEuFxZCMnVeQ0MJW_UWfs9YHSp9Yhz5tkTzVS4IaR-IAUBTYNrMO8mJwFwEQ3GTzQBywbFTw=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-28T15:55:24.925Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -16477,6 +17325,14 @@
           "wikidataWorkCheckedAt": null,
           "musicbrainzReleaseRaw": [],
           "wikidataWorkEvidence": []
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-28T15:55:24.925Z",
+          "status": "candidats",
+          "query": "Victòria dels Àngels",
+          "resultCount": 3,
+          "bestScore": 5,
+          "autoAcceptedId": null
         }
       },
       "genresRaw": [
@@ -16498,7 +17354,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCbGPnNJlInAmzdWNFmLzwjw",
+            "handle": "@vittara2007",
+            "name": "VITTARA",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "candidates": []
       },
       "confidence": "alta",
@@ -16508,7 +17372,7 @@
         "https://www.enderrock.cat/noticia/31101/vine-enderrock-sona-maig-amb-quinto-vittara-sodi-ginesta",
         "youtube:manual-verified"
       ],
-      "lastChecked": "2026-09-28T15:53:50.745Z",
+      "lastChecked": "2026-09-28T15:55:19.508Z",
       "notes": "Grup indie-pop barceloní amb disc 2026.",
       "genresRaw": [
         "Indie-pop"
@@ -16658,7 +17522,23 @@
       "musicbrainzId": "ff3ef96f-cc95-4aff-843d-1658b345b5a3",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UCgHipcss6CJOF8Pq8xoBn9Q",
+            "title": "Xavier Benguerel - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 5,
+            "thumbnail": "https://yt3.ggpht.com/mYj349pNtYuOdxqR2KdleNckGCXaKzCkYSL-DzLpIIfXe06AX9GoENveOT9l6RusSnuK2x-yejg=s240-c-k-c0x00ffffff-no-rj",
+            "score": 5,
+            "reasons": [
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-28T15:55:25.249Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -16692,6 +17572,14 @@
           "wikidataWorkCheckedAt": null,
           "musicbrainzReleaseRaw": [],
           "wikidataWorkEvidence": []
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-28T15:55:25.249Z",
+          "status": "candidats",
+          "query": "Xavier Benguerel i Godó",
+          "resultCount": 1,
+          "bestScore": 5,
+          "autoAcceptedId": null
         }
       },
       "genresRaw": [
@@ -16872,7 +17760,50 @@
       "musicbrainzId": "34318901-fbc6-40f9-9aa6-6536f592b7dc",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UCIk7Y_3qZnogtaGuoz_f4MA",
+            "title": "Yacine & The Oriental Groove - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 36,
+            "thumbnail": "https://yt3.ggpht.com/T98xGzgtNN7A89i51RnUtwbN2p_tmNsU5kLjT6l019_PDoTv_Qqj3raZ3317hEKzBsFX6jnIIn0=s240-c-k-c0x00ffffff-no-rj",
+            "score": 85,
+            "reasons": [
+              "nom exacte de canal Topic",
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-28T15:55:25.583Z"
+          },
+          {
+            "id": "UC5kfPhe-61lb1HRuC76ljBw",
+            "title": "Yacine i The Oriental Groove - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 0,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_nGcme0aUep4oXTMEZ96rOe2QLR4MfLi_qc3FWKofrzZxyQTLkT6aO53ObuurhWH70Sgg=s240-c-k-c0x00ffffff-no-rj",
+            "score": 80,
+            "reasons": [
+              "nom exacte de canal Topic"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-28T15:55:25.583Z"
+          },
+          {
+            "id": "UCYF9_K_c0sxGmVPN9RPczkA",
+            "title": "YacineOrientalGroove",
+            "handle": "@yacineorientalgroove",
+            "description": "",
+            "subscriberCount": 65,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_l42xTPaQM70ZHOQfOgHbRfO9DB-d61h4_kSRtP9m06FQ=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-28T15:55:25.583Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -16905,6 +17836,14 @@
           "musicbrainzReleaseRaw": [],
           "musicbrainzReleaseEvidence": [],
           "musicbrainzReleaseGroupCount": 0
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-28T15:55:25.583Z",
+          "status": "candidats",
+          "query": "Yacine & The Oriental Groove",
+          "resultCount": 3,
+          "bestScore": 85,
+          "autoAcceptedId": null
         }
       },
       "genresRaw": []
@@ -16924,7 +17863,50 @@
       "musicbrainzId": "ae018bee-0a64-4595-b4b8-60aaf3394e22",
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UCOGpGpFiyDykGhvuZdQcRrg",
+            "title": "ZETAK - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 247,
+            "thumbnail": "https://yt3.ggpht.com/yN5_SHbaUNVZNd0GtwGYCW5Kb8MMjscYc70UxSMDfKTvxNhzLxhY2V_Y1IVJQClyfoIyiCye1g=s240-c-k-c0x00ffffff-no-rj",
+            "score": 80,
+            "reasons": [
+              "nom exacte de canal Topic"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-28T15:55:26.082Z"
+          },
+          {
+            "id": "UCWcZaXaC_AFU-3L8bBlLEGA",
+            "title": "ZETAK",
+            "handle": "@zetak_org",
+            "description": "AAZTIYEN out now\nwww.zetak.org",
+            "subscriberCount": 43700,
+            "thumbnail": "https://yt3.ggpht.com/yN5_SHbaUNVZNd0GtwGYCW5Kb8MMjscYc70UxSMDfKTvxNhzLxhY2V_Y1IVJQClyfoIyiCye1g=s240-c-k-c0x00ffffff-no-rj",
+            "score": 75,
+            "reasons": [
+              "nom exacte",
+              "primer resultat"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-28T15:55:26.082Z"
+          },
+          {
+            "id": "UCFv7UTEG2CJSIjE_BIE-8GA",
+            "title": "Dennis Zetak",
+            "handle": "@denniszetak",
+            "description": "Please support me by click on subscribe those channels.\n\nYOUTUBE https://www.youtube.com/denniszetak\nINSTAGRAM https://www.instagram.com/denniszetak/\nTWITCH https://www.twitch.tv/denniszetak\n\nMy tools:\nWheel Direct Drive from VRS\naddon Cube Controls Formula Pro // GT rim - DCD Simulation\nPedals DIY (like heusinkveld)\nHandbrake DIY\nShifter Heusinkve",
+            "subscriberCount": 1650,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_lsqQE6W-1f1UD8gTBJiWbuC6vcQTIXfyb9jJ8PnexJNw=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-28T15:55:26.082Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -16958,6 +17940,14 @@
           "wikidataWorkCheckedAt": null,
           "musicbrainzReleaseRaw": [],
           "wikidataWorkEvidence": []
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-09-28T15:55:26.082Z",
+          "status": "candidats",
+          "query": "Zetak",
+          "resultCount": 3,
+          "bestScore": 80,
+          "autoAcceptedId": null
         }
       },
       "genresRaw": [
