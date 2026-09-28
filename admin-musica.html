@@ -18,7 +18,14 @@ th{position:sticky;top:0;background:#222;z-index:1}
 .tag{display:inline-block;border:1px solid #444;border-radius:999px;padding:2px 7px;margin:1px;font-size:.8rem}
 .actions{display:flex;gap:5px;flex-wrap:wrap}
 a{color:#9cc9ff}.missing{color:#ffbd66}.approved{color:#80db91}.rejected{color:#ff8f8f}
-@media(max-width:850px){.hide-mobile{display:none}main{padding:12px}th,td{padding:8px 5px;font-size:.9rem}}
+.genre-edit{margin-top:7px}
+dialog{border:1px solid #444;border-radius:14px;background:#171717;color:#eee;max-width:720px;width:min(92vw,720px);padding:0}
+dialog::backdrop{background:rgba(0,0,0,.72)}
+.modal-head{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:16px 18px;border-bottom:1px solid #333}
+.modal-body{padding:18px}.genre-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:8px}
+.genre-choice{display:flex;gap:8px;align-items:center;border:1px solid #3a3a3a;border-radius:9px;padding:9px 10px;background:#1d1d1d}
+.genre-choice input{margin:0}.modal-actions{display:flex;justify-content:flex-end;gap:8px;padding:14px 18px;border-top:1px solid #333}
+@media(max-width:850px){.hide-mobile{display:none}main{padding:12px}th,td{padding:8px 5px;font-size:.9rem}.genre-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -54,22 +61,46 @@ a{color:#9cc9ff}.missing{color:#ffbd66}.approved{color:#80db91}.rejected{color:#
 </table>
 </div>
 </main>
+<dialog id="genreDialog">
+  <div class="modal-head"><div><b>Edita categories</b><br><span class="muted" id="genreArtist"></span></div><button type="button" id="closeGenreDialog" aria-label="Tanca">✕</button></div>
+  <div class="modal-body"><p class="muted">Pots assignar més d'una categoria. Els canvis es guarden a l'esborrany local fins que exportis el JSON.</p><div class="genre-grid" id="genreChoices"></div></div>
+  <div class="modal-actions"><button type="button" id="cancelGenres">Cancel·la</button><button type="button" class="ok" id="saveGenres">Desa categories</button></div>
+</dialog>
 <script>
 const DATA_URL='data/artistes-musica.json';
+const GENRES_URL='data/music-genres.json';
 const STORAGE='segueix_musica_admin_draft_v1';
 let db=null;
+let genreTaxonomy=[];
+let editingArtistIndex=null;
 
 function esc(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function save(){localStorage.setItem(STORAGE,JSON.stringify(db));render()}
 function download(name,text,type){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([text],{type}));a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}
-function setStatus(qid,status){const a=db.artists.find(x=>x.wikidataId===qid);if(!a)return;a.reviewStatus=status;a.active=status==='aprovat';save()}
-function useSearchCandidate(qid,channelId){
- const a=db.artists.find(x=>x.wikidataId===qid);if(!a)return;
+function artistAt(index){return Number.isInteger(index)&&index>=0?db.artists[index]:null}
+function setStatus(index,status){const a=artistAt(index);if(!a)return;a.reviewStatus=status;a.active=status==='aprovat';save()}
+function useSearchCandidate(index,channelId){
+ const a=artistAt(index);if(!a)return;
  const c=(a.youtube?.searchCandidates||[]).find(x=>x.id===channelId);if(!c)return;
  a.youtube.channels=[{id:c.id,handle:c.handle||null,name:c.title||null,type:c.suggestedType||'official',primary:true}];
  a.sources=[...new Set([...(a.sources||[]),'youtube:search-manual'])];
  a.confidence='mitjana';
  save();
+}
+function editGenres(index){
+ const a=artistAt(index);if(!a)return;
+ editingArtistIndex=index;
+ document.getElementById('genreArtist').textContent=a.name;
+ const selected=new Set(a.genres||[]);
+ document.getElementById('genreChoices').innerHTML=genreTaxonomy.map(g=>'<label class="genre-choice"><input type="checkbox" value="'+esc(g)+'" '+(selected.has(g)?'checked':'')+'> <span>'+esc(g)+'</span></label>').join('');
+ document.getElementById('genreDialog').showModal();
+}
+function closeGenreEditor(){editingArtistIndex=null;const d=document.getElementById('genreDialog');if(d.open)d.close()}
+function saveGenreEditor(){
+ const a=artistAt(editingArtistIndex);if(!a)return closeGenreEditor();
+ const selected=[...document.querySelectorAll('#genreChoices input[type="checkbox"]:checked')].map(x=>x.value);
+ a.genres=genreTaxonomy.filter(g=>selected.includes(g));
+ save();closeGenreEditor();
 }
 function stats(){
  const a=db.artists;const n=s=>a.filter(x=>x.reviewStatus===s).length;
@@ -98,13 +129,14 @@ function render(){
   if(genre && genre!=='__none__' && !(a.genres||[]).includes(genre)) return false;
   return true;
  }).map(a=>{
+  const artistIndex=db.artists.indexOf(a);
   const chans=a.youtube?.channels||[];
   const mbCandidates=a.youtube?.candidates||[];
   const searchCandidates=a.youtube?.searchCandidates||[];
   const searchHtml=searchCandidates.map(c=>{
    const subs=c.subscriberCount?(' · '+Number(c.subscriberCount).toLocaleString('ca-ES')+' subs'):'';
    return '<div><a href="https://www.youtube.com/channel/'+esc(c.id)+'" target="_blank">'+esc(c.title)+'</a> <span class="tag">score '+esc(c.score)+'</span>'+subs+
-    ' <button onclick="useSearchCandidate(\''+esc(a.wikidataId)+'\',\''+esc(c.id)+'\')">Usa</button></div>';
+    ' <button onclick="useSearchCandidate('+artistIndex+',\''+esc(c.id)+'\')">Usa</button></div>';
   }).join('');
   const ytHtml=chans.length
    ? chans.map(c=>'<a href="https://www.youtube.com/channel/'+esc(c.id)+'" target="_blank">'+esc(c.name||c.id)+'</a>').join('<br>')
@@ -121,25 +153,30 @@ function render(){
    ? '<br><span class="muted">Originals: '+esc((a.genresRaw||[]).join(', '))+'</span>'
    : '';
   const stateClass=a.reviewStatus==='aprovat'?'approved':a.reviewStatus==='rebutjat'?'rejected':'';
-  return '<tr><td><b>'+esc(a.name)+'</b><br><a href="https://www.wikidata.org/wiki/'+esc(a.wikidataId)+'" target="_blank">'+esc(a.wikidataId)+'</a></td>'+
-  '<td class="'+stateClass+'">'+esc(a.reviewStatus)+'</td><td>'+genreHtml+rawHtml+'</td><td>'+ytHtml+'</td>'+
+  const wd=a.wikidataId?'<a href="https://www.wikidata.org/wiki/'+esc(a.wikidataId)+'" target="_blank">'+esc(a.wikidataId)+'</a>':'<span class="muted">sense Wikidata</span>';
+  return '<tr><td><b>'+esc(a.name)+'</b><br>'+wd+'</td>'+
+  '<td class="'+stateClass+'">'+esc(a.reviewStatus)+'</td><td>'+genreHtml+rawHtml+'<div class="genre-edit"><button onclick="editGenres('+artistIndex+')">Edita categories</button></div></td><td>'+ytHtml+'</td>'+
   '<td class="hide-mobile">'+(a.musicbrainzId?'<a href="https://musicbrainz.org/artist/'+esc(a.musicbrainzId)+'" target="_blank">'+esc(a.musicbrainzId)+'</a>':'—')+'</td>'+
   '<td class="hide-mobile">'+evidence+'</td><td><div class="actions">'+
-  '<button class="ok" onclick="setStatus(\''+esc(a.wikidataId)+'\',\'aprovat\')">Aprova</button>'+
-  '<button onclick="setStatus(\''+esc(a.wikidataId)+'\',\'pendent\')">Pendent</button>'+
-  '<button class="bad" onclick="setStatus(\''+esc(a.wikidataId)+'\',\'rebutjat\')">Rebutja</button>'+
+  '<button class="ok" onclick="setStatus('+artistIndex+',\'aprovat\')">Aprova</button>'+
+  '<button onclick="setStatus('+artistIndex+',\'pendent\')">Pendent</button>'+
+  '<button class="bad" onclick="setStatus('+artistIndex+',\'rebutjat\')">Rebutja</button>'+
   '</div></td></tr>';
  }).join('');
  document.getElementById('rows').innerHTML=rows||'<tr><td colspan="7">No hi ha resultats.</td></tr>';
 }
 async function load(){
- const remote=await fetch(DATA_URL,{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error(r.status);return r.json()});
+ const [remote,taxonomy]=await Promise.all([
+  fetch(DATA_URL,{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error(r.status);return r.json()}),
+  fetch(GENRES_URL,{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error(r.status);return r.json()})
+ ]);
+ genreTaxonomy=(taxonomy.categories||[]).map(x=>x.label).filter(Boolean);
  const draft=localStorage.getItem(STORAGE);
  if(draft){
   try{const parsed=JSON.parse(draft);db=parsed.schemaVersion===remote.schemaVersion?parsed:remote}catch{db=remote}
  }else db=remote;
  const genreSelect=document.getElementById('genre');
- const genres=[...new Set(db.artists.flatMap(a=>a.genres||[]))].sort((a,b)=>a.localeCompare(b,'ca'));
+ const genres=[...genreTaxonomy];
  for(const g of genres){
   const opt=document.createElement('option');opt.value=g;opt.textContent=g;genreSelect.appendChild(opt);
  }
@@ -151,6 +188,10 @@ document.getElementById('youtube').addEventListener('change',render);
 document.getElementById('genre').addEventListener('change',render);
 document.getElementById('reset').addEventListener('click',()=>{localStorage.removeItem(STORAGE);location.reload()});
 document.getElementById('exportJson').addEventListener('click',()=>{db.updatedAt=new Date().toISOString();download('artistes-musica.json',JSON.stringify(db,null,2)+'\n','application/json')});
+document.getElementById('closeGenreDialog').addEventListener('click',closeGenreEditor);
+document.getElementById('cancelGenres').addEventListener('click',closeGenreEditor);
+document.getElementById('saveGenres').addEventListener('click',saveGenreEditor);
+document.getElementById('genreDialog').addEventListener('cancel',e=>{e.preventDefault();closeGenreEditor()});
 document.getElementById('exportCsv').addEventListener('click',()=>{
  const cols=['name','genres','genresRaw','reviewStatus','active','wikidataId','musicbrainzId','youtubeIds','youtubeCandidates','searchCandidates','confidence'];
  const lines=[cols.join(',')].concat(db.artists.map(a=>[a.name,(a.genres||[]).join('|'),(a.genresRaw||[]).join('|'),a.reviewStatus,a.active,a.wikidataId,a.musicbrainzId||'',(a.youtube?.channels||[]).map(c=>c.id).join('|'),(a.youtube?.candidates||[]).map(c=>c.url).join('|'),(a.youtube?.searchCandidates||[]).map(c=>c.id+':'+c.score).join('|'),a.confidence].map(v=>'"'+String(v).replaceAll('"','""')+'"').join(',')));
