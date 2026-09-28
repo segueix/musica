@@ -50,7 +50,7 @@ dialog::backdrop{background:rgba(0,0,0,.72)}
 <option value="">Tots els gèneres</option>
 <option value="__none__">Sense categoria</option>
 </select>
-<button id="exportJson">Descarrega JSON revisat</button>
+<input id="adminToken" type="password" autocomplete="current-password" placeholder="Token admin" title="ANALYTICS_ADMIN_TOKEN; només es desa durant la sessió">\n<button id="saveGithub" class="ok">Desa canvis a GitHub</button>\n<button id="exportJson">Descarrega JSON revisat</button>
 <button id="exportCsv">Descarrega CSV</button>
 <button id="reset">Descarta canvis locals</button>
 </div>
@@ -71,8 +71,70 @@ const DATA_URL='data/artistes-musica.json';
 const GENRES_URL='data/music-genres.json';
 const STORAGE='segueix_musica_admin_draft_v1';
 let db=null;
+let originalDb=null;
 let genreTaxonomy=[];
 let editingArtistIndex=null;
+const ADMIN_TOKEN_KEY='segueix_music_admin_token';
+
+function clone(value){return JSON.parse(JSON.stringify(value))}
+function artistKey(a){
+ if(a?.wikidataId)return 'wikidata:'+a.wikidataId;
+ const channel=(a?.youtube?.channels||[])[0]?.id;
+ if(channel)return 'youtube:'+channel;
+ return 'name:'+String(a?.name||'').trim().toLocaleLowerCase('ca');
+}
+function sameJson(a,b){return JSON.stringify(a??null)===JSON.stringify(b??null)}
+function buildChanges(){
+ const originalByKey=new Map((originalDb?.artists||[]).map(a=>[artistKey(a),a]));
+ return (db?.artists||[]).flatMap(a=>{
+  const before=originalByKey.get(artistKey(a));
+  if(!before)return [];
+  const change={key:artistKey(a),name:a.name};
+  let dirty=false;
+  if(!sameJson(a.genres||[],before.genres||[])){change.genres=a.genres||[];dirty=true}
+  if(a.reviewStatus!==before.reviewStatus){change.reviewStatus=a.reviewStatus;dirty=true}
+  if(Boolean(a.active)!==Boolean(before.active)){change.active=Boolean(a.active);dirty=true}
+  if(!sameJson(a.youtube?.channels||[],before.youtube?.channels||[])){change.youtubeChannels=a.youtube?.channels||[];dirty=true}
+  return dirty?[change]:[];
+ });
+}
+function setSaveMessage(message,isError=false){
+ const button=document.getElementById('saveGithub');
+ button.textContent=message||'Desa canvis a GitHub';
+ button.classList.toggle('bad',Boolean(isError));
+ if(!isError)button.classList.add('ok');
+}
+async function saveGithub(){
+ const changes=buildChanges();
+ if(!changes.length){setSaveMessage('No hi ha canvis');setTimeout(()=>setSaveMessage('Desa canvis a GitHub'),1600);return}
+ const token=String(document.getElementById('adminToken').value||'').trim();
+ if(!token){setSaveMessage('Falta el token admin',true);document.getElementById('adminToken').focus();return}
+ sessionStorage.setItem(ADMIN_TOKEN_KEY,token);
+ setSaveMessage('Desant…');
+ document.getElementById('saveGithub').disabled=true;
+ try{
+  const response=await fetch('/api/music-admin',{
+   method:'POST',
+   headers:{'content-type':'application/json',authorization:'Bearer '+token},
+   credentials:'same-origin',
+   cache:'no-store',
+   body:JSON.stringify({changes})
+  });
+  const body=await response.json().catch(()=>({}));
+  if(response.status===401)throw new Error('Token admin incorrecte');
+  if(!response.ok)throw new Error(body.error||('HTTP '+response.status));
+  originalDb=clone(db);
+  db.updatedAt=body.updatedAt||db.updatedAt;
+  localStorage.setItem(STORAGE,JSON.stringify(db));
+  setSaveMessage('Desat ✓');
+  setTimeout(()=>setSaveMessage('Desa canvis a GitHub'),2200);
+ }catch(error){
+  setSaveMessage('Error en desar',true);
+  alert('No s’han pogut desar els canvis a GitHub: '+error.message);
+ }finally{
+  document.getElementById('saveGithub').disabled=false;
+ }
+}
 
 function esc(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function save(){localStorage.setItem(STORAGE,JSON.stringify(db));render()}
@@ -170,8 +232,7 @@ async function load(){
   fetch(DATA_URL,{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error(r.status);return r.json()}),
   fetch(GENRES_URL,{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error(r.status);return r.json()})
  ]);
- genreTaxonomy=(taxonomy.categories||[]).map(x=>x.label).filter(Boolean);
- const draft=localStorage.getItem(STORAGE);
+ genreTaxonomy=(taxonomy.categories||[]).map(x=>x.label).filter(Boolean);\n originalDb=clone(remote);\n const draft=localStorage.getItem(STORAGE);
  if(draft){
   try{const parsed=JSON.parse(draft);db=parsed.schemaVersion===remote.schemaVersion?parsed:remote}catch{db=remote}
  }else db=remote;
@@ -182,6 +243,8 @@ async function load(){
  }
  render();
 }
+document.getElementById('adminToken').value=sessionStorage.getItem(ADMIN_TOKEN_KEY)||sessionStorage.getItem('segueix_analytics_admin_token')||'';
+document.getElementById('saveGithub').addEventListener('click',saveGithub);
 document.getElementById('q').addEventListener('input',render);
 document.getElementById('status').addEventListener('change',render);
 document.getElementById('youtube').addEventListener('change',render);

@@ -14,7 +14,7 @@ on:
       - "js/features/analytics-admin.js"
       - "js/features/analytics-pdf.js"
       - "functions/_lib/section-seo.js"
-      - "functions/api/analytics.js"
+      - "functions/api/analytics.js"\n      - "functions/api/music-admin.js"\n      - "admin-musica.html"\n      - "tests/music-admin.test.js"
       - "tests/music-categories.test.js"
       - "tests/section-seo.test.js"
       - ".github/workflows/validar-navegacio-musical.yml"
@@ -37,4 +37,4 @@ jobs:
           node --check js/features/segueix-tv.js
           node --check js/features/context-tv.js
       - name: Prova taxonomia i SEO
-        run: npx vitest run tests/music-categories.test.js tests/section-seo.test.js
+        run: npx vitest run tests/music-categories.test.js tests/section-seo.test.js tests/music-admin.test.js
