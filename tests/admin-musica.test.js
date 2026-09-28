@@ -13,9 +13,9 @@ describe('admin musical', () => {
     expect(source).toContain('function editYoutube(index)');
     expect(source).toContain('function saveYoutubeEditor()');
     expect(source).toContain('validYoutubeId');
-    expect(source).toContain("onclick=\\"editYoutube('+artistIndex+')\\">Edita ID");
+    expect(source).toContain(`onclick="editYoutube('+artistIndex+')">Edita ID`);
     expect(source).toContain('function deleteArtist(index)');
-    expect(source).toContain("onclick=\\"deleteArtist('+artistIndex+')\\">Elimina");
+    expect(source).toContain(`onclick="deleteArtist('+artistIndex+')">Elimina`);
     expect(source).not.toContain('>Rebutja</button>');
   });
 
