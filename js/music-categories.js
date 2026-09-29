@@ -40,11 +40,16 @@
             .map(group => group.label);
     }
 
+    const MIN_SONG_SECONDS = 60;
+
     function isCategoryEligibleVideo(video) {
         const raw = String(video?.contentType || '').trim().toLowerCase().replace(/-/g, '_');
         // Compatibilitat amb snapshots antics: abans el feed només contenia música acceptada.
         if (!raw) return true;
-        return raw === 'song' || raw === 'live_song';
+        if (raw !== 'song' && raw !== 'live_song') return false;
+        // Una cançó de menys d'un minut és un teaser/fragment mal classificat.
+        const seconds = Number(video?.durationSeconds) || 0;
+        return !(seconds > 0 && seconds < MIN_SONG_SECONDS);
     }
 
     function registerArtist(artist) {

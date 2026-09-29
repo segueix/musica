@@ -6196,7 +6196,13 @@ function filterVideosByCategory(videos, feed) {
         (Array.isArray(list) ? list : []).filter(video => !hiddenIds.has(String(video?.channelId || '')));
     const visibleVideos = removeHiddenChannelVideos(videos);
 
-    if (!selectedCategory || selectedCategory === 'Tot' || selectedCategory === 'Novetats') return visibleVideos;
+    if (!selectedCategory || selectedCategory === 'Tot' || selectedCategory === 'Novetats') {
+        // Només cançons (song / live_song): fora entrevistes, concerts complets, teasers, etc.
+        const music = window.SegueixMusicCategories;
+        return music?.isCategoryEligibleVideo
+            ? visibleVideos.filter(video => video.isShort || music.isCategoryEligibleVideo(video))
+            : visibleVideos;
+    }
     if (selectedCategory === 'Descobreix') {
         const followedIds = new Set(getFollowedChannelIds().map(id => String(id)));
         return visibleVideos.filter(video => {

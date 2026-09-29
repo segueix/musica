@@ -107,7 +107,7 @@ function classifyMusicContent({ item, channelMeta }) {
     return { accepted: false, contentType: 'other', confidence: 0.96, reason: 'títol d’entrevista/podcast/promoció o contingut auxiliar' };
   }
 
-  if (songMarker && durationSeconds >= 45 && durationSeconds <= 900) {
+  if (songMarker && durationSeconds >= 60 && durationSeconds <= 900) {
     return {
       accepted: true,
       contentType: liveMarker ? 'live_song' : 'song',
@@ -144,6 +144,11 @@ function classifyMusicContent({ item, channelMeta }) {
 
   if (durationSeconds < 45) {
     return { accepted: false, contentType: 'other', confidence: 0.85, reason: 'massa curt: probable teaser/fragment' };
+  }
+
+  // Entre 45 s i 90 s sense cap marcador explícit no és una cançó (anuncis, fragments, previs de concert).
+  if (durationSeconds < 90) {
+    return { accepted: false, contentType: 'review', confidence: 0.7, reason: 'massa curt per ser una cançó sense marcador explícit' };
   }
 
   if (score >= 75) {

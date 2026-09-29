@@ -13,6 +13,16 @@
 
 **Fitxers Afectats:**
 
+## [2026-09-29] - A la pàgina principal sortien vídeos no musicals (concerts, teasers, anuncis) d'un canal com Els Amics de les Arts
+
+**Símptoma:** A Novetats, al hero i a les files de la pàgina principal apareixien vídeos que no són cançons ("Un concert com els d'abans", "La Mercè 2026", fragments de 47-55 s), tot i que el feed ja els marcava com `review`/`other`.
+
+**Causa Arrel:** Hi ha un classificador a build time (`scripts/lib/classificar_contingut_musical.js`, cridat per `scripts/update_music_feed.js`) que escriu `contentType` (`song`, `live_song`, `album`, `review`, `other`) i `musicReason` a `data/feed.json`, i el client té `SegueixMusicCategories.isCategoryEligibleVideo()`. Però: (1) `YouTubeAPI.getPopularVideos()` (`js/youtube.js`) reconstruïa cada vídeo i **descartava `contentType`**, de manera que al client tot semblava "snapshot antic" i passava el filtre; (2) `filterVideosByCategory()` no aplicava el filtre a `Novetats`/`Tot`, només a les categories d'estil; (3) el classificador acceptava com a `song` fragments de 45-89 s amb només categoria Music + patró de títol.
+
+**Solució Implementada:** `js/youtube.js` conserva `contentType`, `musicReason` i `description`. `filterVideosByCategory()` filtra `Novetats`/`Tot` amb `isCategoryEligibleVideo` (els Shorts hi passen). `isCategoryEligibleVideo` rebutja cançons de menys de 60 s. El classificador exigeix ≥60 s amb marcador explícit i ≥90 s per la via de puntuació (test afegit a `scripts/test_music_content_classifier.js`). Nota: `data/feed.json` es regenera amb el workflow `actualitzar-feed-musica.yml`; fins llavors el guard de 60 s del client cobreix els casos curts.
+
+**Fitxers Afectats:** `js/youtube.js`, `js/app.js`, `js/music-categories.js`, `scripts/lib/classificar_contingut_musical.js`, `scripts/test_music_content_classifier.js`, `index.html` (també un `\n` literal que es veia com a text a la pàgina).
+
 ## [2026-09-18] - Els programes de l'usuari no tenien TV, i les TV es quedaven sense arxiu des del reproductor
 
 **Context / Millora:** Es demanava el botó TV als programes que crea l'usuari i que en generessin la televisió encara que el canal sigui un mitjà, un digital o una entitat. Pel camí va aparèixer un error de fons que buidava qualsevol TV engegada des del reproductor.

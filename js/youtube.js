@@ -937,7 +937,11 @@ const YouTubeAPI = {
             viewCount: v.viewCount || 0,
             likeCount: v.likeCount || 0,
             commentCount: v.commentCount || 0,
-            categories: v.categories || []
+            categories: v.categories || [],
+            // Classificació del feed musical (song, live_song, review, other, album...)
+            contentType: v.contentType || '',
+            musicReason: v.musicReason || '',
+            description: v.description || ''
         }));
         
     return { items: videos, error: null, fromFeed: true };
