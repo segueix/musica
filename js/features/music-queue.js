@@ -32,6 +32,10 @@
         close: '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M6 6l12 12M18 6 6 18"/></svg>',
     };
 
+    // Categories que no són una "categoria" a efectes del nom de la llista (són vistes generals).
+    const GENERAL_VIEWS = new Set(['novetats', 'tot', 'descobreix', 'seguint', 'radar', 'recomanat per a tu']);
+    let radioCategory = '';
+
     let sortable = null;
     let bar = null;
 
@@ -143,6 +147,10 @@
         const queue = buildQueue(video);
         if (queue.length < 2) return false;
 
+        // Si la ràdio neix dins d'una categoria (Jazz, Rumba...) la llista es dirà com ella.
+        const category = String(typeof selectedCategory === 'string' ? selectedCategory : '').trim();
+        radioCategory = category && !GENERAL_VIEWS.has(category.toLowerCase()) ? category : '';
+
         clearEmbeddedYouTubeSession();
         isPlaylistMode = true;
         activePlaylistId = QUEUE_ID;
@@ -167,18 +175,39 @@
 
     // Enllaç a YouTube Music amb la cua tal com és ara: des de la cançó que sona fins al final,
     // en el mateix ordre (inclou els canvis fets arrossegant). Només vídeos amb ID de YouTube.
+    // Nom de la llista a YouTube: «Llista <categoria>» si la ràdio ve d'una categoria; si no,
+    // «Llista <primer grup de la llista>» (el canal de la cançó que sona / primera de la cua).
+    function buildListName() {
+        if (activePlaylistId !== QUEUE_ID) {
+            const own = String(activePlaylistName || '').trim();
+            if (own) return `Llista ${own}`;
+        }
+        if (activePlaylistId === QUEUE_ID && radioCategory) return `Llista ${radioCategory}`;
+        const first = activePlaylistQueue[Math.max(0, currentPlaylistIndex)];
+        const group = String(first?.channelTitle || '').trim();
+        return group ? `Llista ${group}` : 'Llista';
+    }
+
     function buildYouTubeMusicUrl() {
         const ids = activePlaylistQueue
             .slice(Math.max(0, currentPlaylistIndex))
             .map(item => String(item?.id || ''))
             .filter(id => /^[A-Za-z0-9_-]{11}$/.test(id))
             .slice(0, YTM_MAX_VIDEOS);
-        return ids.length ? YTM_QUEUE_URL + ids.join(',') : '';
+        if (!ids.length) return '';
+        // `title` posa nom a la llista (si YouTube l'ignora, el nom es copia al porta-retalls).
+        return `${YTM_QUEUE_URL}${ids.join(',')}&title=${encodeURIComponent(buildListName())}`;
     }
 
     function openInYouTubeMusic() {
         const url = buildYouTubeMusicUrl();
         if (!url) return;
+        // Còpia del nom: si en desar la llista YouTube la deixa sense títol, només cal enganxar-lo.
+        try {
+            navigator.clipboard?.writeText?.(buildListName());
+        } catch (error) {
+            // Sense porta-retalls: no és imprescindible
+        }
         // Enllaç temporal amb target=_blank: obre pestanya nova dins del gest de l'usuari i no
         // mou l'app (window.open amb 'noopener' retorna sempre null i no permet detectar bloquejos).
         const link = document.createElement('a');
@@ -443,6 +472,7 @@
         regenerate,
         buildQueue,
         buildYouTubeMusicUrl,
+        buildListName,
         updateTransport,
         QUEUE_ID,
     };
