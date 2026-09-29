@@ -206,6 +206,22 @@ La finestreta flotant en fer scroll cap avall es manté tal com era: és el comp
 
 **Fitxers Afectats:** `js/features/shorts.js` (funció `setupShortScroll`), `sw.js` (bump de `CACHE_VERSION` per contingut via `npm run sw:version`), `docs/PROBLEMES_I_SOLUCIONS.md`.
 
+## [2026-09-29] - La pestanya normal no rebia mai les actualitzacions (només l'incògnit)
+
+**Símptoma:** En una pestanya normal l'app es quedava a una versió antiga; en incògnit (sense SW previ) sí que es veia la nova. Sortia el punt vermell d'actualització però no feia res.
+
+**Causa Arrel:** Des de 2026-04-14 el SW nou no fa `skipWaiting()` i queda *waiting* mentre hi hagi pestanyes obertes. `initAppUpdater()` només mostrava el badge (`#updateBadge`), però **cap codi enviava `SKIP_WAITING`**, ni el badge era clicable, ni es cridava mai `registration.update()`. Una pestanya que es manté oberta o restaurada no s'actualitzava mai.
+
+**Solució Implementada:** `js/app.js` (`initAppUpdater`): registre amb `updateViaCache: 'none'`; si en obrir l'app ja hi ha un SW en espera s'activa de seguida (abans de cap interacció, així no reapareix el bug del refresc durant l'scroll); si la pàgina és en segon pla s'activa sola; si és visible es mostra el badge i el clic aplica l'actualització (`SKIP_WAITING` → `controllerchange` → reload); es força `registration.update()` en obrir, en tornar a la pestanya i cada 30 min.
+
+**Fitxers Afectats:** `js/app.js`, `sw.js` (bump de versió per contingut).
+
+## [2026-09-29] - Ràdio sense artistes repetits i feeds amb varietat
+
+**Canvi:** La cua generada es diu ara **Ràdio**, té una sola cançó per artista (canal) i, si cal repetir per arribar al mínim, mai dues seguides. Sota el reproductor ja no surt "Resultats de la cerca: Cua" sinó vídeos de la mateixa categoria que el vídeo que sona. Els feeds passen per `spreadVideosByArtist()` (`js/utils/helpers.js`) perquè no hi hagi dos vídeos seguits del mateix grup.
+
+**Fitxers Afectats:** `js/utils/helpers.js`, `js/features/music-queue.js`, `js/app.js` (`renderFeedLegacyImpl`, `renderCategoryVideosBelowLegacyImpl`, `renderPlaylistRelatedVideosLegacyImpl`), `tests/helpers.test.js`.
+
 ## [2026-07-11] - Filera d'icones del header visible en obrir un vídeo al mòbil
 
 **Símptoma:** Al mòbil, en clicar un vídeo del feed i obrir-se la pàgina del reproductor, la filera d'icones del header (Inici, Biblioteca, Historial, Segueix...) es mostrava a sobre del reproductor, ocupant espai vertical útil mentre l'usuari volia veure el vídeo.

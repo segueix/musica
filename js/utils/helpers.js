@@ -382,3 +382,39 @@ function batchRenderCards(container, items, createCardFn, options = {}) {
         setTimeout(renderNextBatch, 16);
     }
 }
+
+// ========== VARIETAT PER ARTISTA ==========
+
+// Clau d'artista d'un vídeo: el canal (grup) que el publica.
+function getVideoArtistKey(video) {
+    const key = video?.channelId || video?.snippet?.channelId || video?.channelTitle || video?.snippet?.channelTitle;
+    return String(key || '').trim().toLowerCase();
+}
+
+// Reordena la llista perquè no hi hagi dos vídeos seguits del mateix artista.
+// Conserva l'ordre original tant com és possible: a cada posició pren el primer
+// vídeo (dins una finestra de cerca) que no coincideix amb l'artista anterior.
+// `previousArtist` permet enllaçar amb un element que ja hi ha just abans (p. ex. "Ara sona").
+// Si no queda cap alternativa (tot és del mateix artista) es manté l'ordre.
+function spreadVideosByArtist(videos, { previousArtist = '', window: lookahead = 60 } = {}) {
+    if (!Array.isArray(videos) || videos.length < 2) return Array.isArray(videos) ? videos : [];
+    const remaining = videos.slice();
+    const result = [];
+    let last = String(previousArtist || '').trim().toLowerCase();
+    while (remaining.length > 0) {
+        const limit = Math.min(remaining.length, lookahead);
+        let pick = -1;
+        for (let i = 0; i < limit; i++) {
+            const key = getVideoArtistKey(remaining[i]);
+            if (!key || key !== last) {
+                pick = i;
+                break;
+            }
+        }
+        if (pick < 0) pick = 0;
+        const [item] = remaining.splice(pick, 1);
+        result.push(item);
+        last = getVideoArtistKey(item);
+    }
+    return result;
+}

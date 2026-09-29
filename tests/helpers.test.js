@@ -189,3 +189,28 @@ describe('addTripleTapDeleteGuard', () => {
         expect(attrs.has('data-delete-taps')).toBe(false);
     });
 });
+
+// ==================== spreadVideosByArtist ====================
+describe('spreadVideosByArtist', () => {
+    const v = (id, channelId) => ({ id, channelId });
+    const ids = list => list.map(item => item.id).join('');
+
+    it('separa vídeos seguits del mateix artista', () => {
+        const out = ctx.spreadVideosByArtist([v('a', 1), v('b', 1), v('c', 2), v('d', 2), v('e', 3)]);
+        for (let i = 1; i < out.length; i++) expect(out[i].channelId).not.toBe(out[i - 1].channelId);
+        expect(out).toHaveLength(5);
+    });
+
+    it('conserva l\'ordre si ja hi ha varietat', () => {
+        expect(ids(ctx.spreadVideosByArtist([v('a', 1), v('b', 2), v('c', 3)]))).toBe('abc');
+    });
+
+    it('evita repetir l\'artista anterior indicat', () => {
+        const out = ctx.spreadVideosByArtist([v('a', 1), v('b', 2)], { previousArtist: '1' });
+        expect(ids(out)).toBe('ba');
+    });
+
+    it('no falla si tot és del mateix artista', () => {
+        expect(ids(ctx.spreadVideosByArtist([v('a', 1), v('b', 1)]))).toBe('ab');
+    });
+});
