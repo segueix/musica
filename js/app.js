@@ -1913,10 +1913,7 @@ function buildWatchChannelInfoHtml(channel, avatar, watchUrl, video) {
                         <i data-lucide="share-2"></i>
                     </button>
                     <button class="btn-round-icon" id="miniPlayerToggle" type="button" title="Mini reproductor" aria-label="Mini reproductor">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <rect x="2" y="3" width="20" height="14" rx="2"></rect>
-                            <rect x="4" y="12" width="6" height="4" rx="1" fill="white" stroke="none"></rect>
-                        </svg>
+                        ${MINI_PLAYER_ICON_SVG}
                     </button>
                 </div>
             </div>
@@ -11912,6 +11909,10 @@ function handlePlayerVisibilityOnNavigation() {
     stopVideoPlayback();
 }
 
+// Icona del botó de finestra flotant: fletxes d'esquerra a dreta i de dalt a baix, amb les puntes al centre.
+const MINI_PLAYER_ICON_SVG =
+    '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12h6M5.5 9.5 8 12 5.5 14.5"></path><path d="M22 12h-6M18.5 9.5 16 12 18.5 14.5"></path><path d="M12 2v6M9.5 5.5 12 8 14.5 5.5"></path><path d="M12 22v-6M9.5 18.5 12 16 14.5 18.5"></path></svg>';
+
 function updateMiniPlayerToggleIcon(isActive) {
     const miniToggle = document.getElementById('miniPlayerToggle');
     if (!miniToggle) {
@@ -11920,15 +11921,10 @@ function updateMiniPlayerToggleIcon(isActive) {
     miniToggle.disabled = isActive;
     miniToggle.setAttribute('aria-pressed', isActive ? 'true' : 'false');
     miniToggle.setAttribute('aria-label', isActive ? 'Restaurar reproductor' : 'Mini reproductor');
-    if (isActive) {
-        miniToggle.innerHTML = `<i data-lucide="minimize-2"></i>`;
-    } else {
-        // Restaurar icona PiP original
-        miniToggle.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"></rect><rect x="4" y="12" width="6" height="4" rx="1" fill="white" stroke="none"></rect></svg>`;
-    }
+    // Mateixa icona (quatre fletxes que apunten al centre) tant amb la finestreta activa com sense
+    miniToggle.innerHTML = MINI_PLAYER_ICON_SVG;
     // Diferir refreshIcons i setupVideoCardActionButtons
     requestAnimationFrame(() => {
-        if (isActive) refreshIcons(miniToggle);
         setupVideoCardActionButtons();
     });
 }
