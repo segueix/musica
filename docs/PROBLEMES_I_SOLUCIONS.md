@@ -308,7 +308,7 @@ La finestreta flotant en fer scroll cap avall es manté tal com era: és el comp
 
 **Causa Arrel:** L'artista «Lluc» es va donar d'alta amb el handle `@lluc` (`youtube-verified-handles.json`), que a YouTube pertany a una església adventista. `resoldre_canals_verificats.js` el va resoldre sense cap validació semàntica.
 
-**Solució Implementada:** L'artista queda `rebutjat` amb el canal buit i una nota; s'elimina l'entrada de `youtube-verified-handles.json` (si no, el resolutor la tornaria a afegir, ja que no mira `reviewStatus`); s'esborren el canal i els seus 15 vídeos de `feed.json` i `channels-ca.json`. Si es vol l'artista Lluc real, cal trobar el seu canal i tornar-lo a donar d'alta amb l'ID `UC…` (no amb un handle ambigu).
+**Solució Implementada:** L'artista queda `rebutjat` amb el canal buit i una nota; s'elimina l'entrada de `youtube-verified-handles.json` (si no, el resolutor la tornaria a afegir, ja que no mira `reviewStatus`); el canal i els seus vídeos desapareixen de `feed.json` i `channels-ca.json` en regenerar-se el feed (el workflow «Actualitzar feed musical» s'executa en fer push d'`artistes-musica.json`). **No s'editen a mà els fitxers generats en una branca:** el bot els actualitza cada poques hores a `main` i provoquen conflicte de merge a cada PR (va passar aquí tres cops). Si es vol l'artista Lluc real, cal trobar el seu canal i tornar-lo a donar d'alta amb l'ID `UC…` (no amb un handle ambigu).
 
 **Fitxers Afectats:** `data/artistes-musica.json`, `data/youtube-verified-handles.json`, `data/feed.json`, `js/channels-ca.json`.
 
