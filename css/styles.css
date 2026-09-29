@@ -8967,7 +8967,8 @@ body {
 
 .mq-head {
     display: flex;
-    align-items: baseline;
+    flex-wrap: wrap;
+    align-items: center;
     gap: 10px;
     padding: 8px 8px 4px;
 }
@@ -9001,6 +9002,10 @@ body {
     font-size: 0.8125rem;
     font-weight: 700;
     cursor: pointer;
+}
+
+.mq-regenerate {
+    flex-shrink: 0;
 }
 
 .mq-regenerate:hover {

@@ -13,6 +13,9 @@
     const QUEUE_NAME = 'Ràdio';
     const MIN_QUEUE_LENGTH = 12;
     const MAX_QUEUE_LENGTH = 40;
+    // YouTube crea una cua temporal amb els vídeos de l'enllaç, en l'ordre indicat (màx. ~50).
+    const YTM_QUEUE_URL = 'https://music.youtube.com/watch_videos?video_ids=';
+    const YTM_MAX_VIDEOS = 50;
 
     const ICONS = {
         prev: '<svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path fill="currentColor" d="M6 5h2v14H6zM20 5v14L9.5 12z"/></svg>',
@@ -22,6 +25,8 @@
         shuffle:
             '<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M16 3h5v5M4 20 21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg>',
         grip: '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M9 6a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0 6a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0 6a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm9-12a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0 6a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0 6a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/></svg>',
+        external:
+            '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M14 4h6v6M20 4 10 14M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>',
         close: '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M6 6l12 12M18 6 6 18"/></svg>',
     };
 
@@ -158,6 +163,31 @@
         refresh();
     }
 
+    // Enllaç a YouTube Music amb la cua tal com és ara: des de la cançó que sona fins al final,
+    // en el mateix ordre (inclou els canvis fets arrossegant). Només vídeos amb ID de YouTube.
+    function buildYouTubeMusicUrl() {
+        const ids = activePlaylistQueue
+            .slice(Math.max(0, currentPlaylistIndex))
+            .map(item => String(item?.id || ''))
+            .filter(id => /^[A-Za-z0-9_-]{11}$/.test(id))
+            .slice(0, YTM_MAX_VIDEOS);
+        return ids.length ? YTM_QUEUE_URL + ids.join(',') : '';
+    }
+
+    function openInYouTubeMusic() {
+        const url = buildYouTubeMusicUrl();
+        if (!url) return;
+        // Enllaç temporal amb target=_blank: obre pestanya nova dins del gest de l'usuari i no
+        // mou l'app (window.open amb 'noopener' retorna sempre null i no permet detectar bloquejos).
+        const link = document.createElement('a');
+        link.href = url;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+    }
+
     function refresh() {
         updatePlaylistModeBadge?.();
         syncQueueNextOverlay?.();
@@ -224,6 +254,7 @@
                 <div class="mq-head">
                     <h2 class="mq-heading">Ràdio</h2>
                     <span class="mq-source">${activePlaylistId === QUEUE_ID ? `Basada en ${escapeText(current.channelTitle || 'aquesta cançó')}` : escapeText(activePlaylistName || '')}</span>
+                    ${canRegenerate || activePlaylistQueue.length > 1 ? `<button type="button" class="mq-regenerate mq-open-ytm" data-mq-open-ytm title="Obre aquesta cua, en el mateix ordre, a YouTube Music">${ICONS.external}<span>YouTube Music</span></button>` : ''}
                     ${canRegenerate ? `<button type="button" class="mq-regenerate" data-mq-regenerate title="Genera de nou la ràdio">${ICONS.shuffle}<span>Barreja</span></button>` : ''}
                 </div>
                 <div class="mq-section">Ara sona</div>
@@ -248,6 +279,10 @@
             if (remove) {
                 event.stopPropagation();
                 removeAt(Number(remove.dataset.mqRemove));
+                return;
+            }
+            if (event.target.closest('[data-mq-open-ytm]')) {
+                openInYouTubeMusic();
                 return;
             }
             if (event.target.closest('[data-mq-regenerate]')) {
@@ -400,5 +435,13 @@
         initTransport();
     }
 
-    app.features.musicQueue = { startFrom, render, regenerate, buildQueue, updateTransport, QUEUE_ID };
+    app.features.musicQueue = {
+        startFrom,
+        render,
+        regenerate,
+        buildQueue,
+        buildYouTubeMusicUrl,
+        updateTransport,
+        QUEUE_ID,
+    };
 })(window);
