@@ -1,18 +1,18 @@
 {
-  "generatedAt": "2026-09-29T16:56:40.536Z",
-  "rawPublicVideoCount": 1881,
-  "feedVideoCount": 1881,
-  "acceptedMusicCount": 1342,
-  "categoryEligibleVideoCount": 1319,
-  "shortVideoCount": 369,
-  "rejectedOrReviewCount": 539,
-  "reviewCount": 255,
+  "generatedAt": "2026-09-29T17:04:39.945Z",
+  "rawPublicVideoCount": 2036,
+  "feedVideoCount": 2036,
+  "acceptedMusicCount": 1484,
+  "categoryEligibleVideoCount": 1465,
+  "shortVideoCount": 388,
+  "rejectedOrReviewCount": 552,
+  "reviewCount": 264,
   "typeCounts": {
-    "song": 1265,
-    "live_song": 54,
-    "album": 23,
-    "other": 284,
-    "review": 255
+    "song": 1398,
+    "live_song": 67,
+    "album": 19,
+    "other": 288,
+    "review": 264
   },
   "channelsWithoutAcceptedMusic": [
     "UCnmFh1j3xvDfrw20AqVgegw",
@@ -780,20 +780,6 @@
       "musicReason": "massa curt: probable teaser/fragment"
     },
     {
-      "id": "CwORt5oIsk8",
-      "title": "Lluís Llach - Entrevista i Concert de \"Porrera\" (Canal Oficial)",
-      "channelTitle": "Lluís Llach",
-      "durationSeconds": 4184,
-      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "ntM708S1y6I",
-      "title": "Lluís Llach - Un pont de mar blava",
-      "channelTitle": "Lluís Llach",
-      "durationSeconds": 8353,
-      "musicReason": "descripció inequívoca de contingut no musical"
-    },
-    {
       "id": "3_B5Mr_v32E",
       "title": "ja disponible ​⁠@MiaBadgyalMusic !! CATALUNYA ❤️🇧🇷 BRASIL",
       "channelTitle": "Llum",
@@ -861,6 +847,20 @@
       "title": "EL FINAL… EN SHOCK?🧐😳 #boomerang #unexpected #lalliga #truco",
       "channelTitle": "Llum",
       "durationSeconds": 10,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "eXZpRQYJfTw",
+      "title": "‼️BALLO SENSE TU‼️ Disponible ja a totes les plataformes!!",
+      "channelTitle": "Mai Halis",
+      "durationSeconds": 30,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "Jfvvj8YGNbE",
+      "title": "‼️‼️BALLO SENSE TU DISPONIBLE A TOTES LES PLATAFORMES‼️‼️",
+      "channelTitle": "Mai Halis",
+      "durationSeconds": 30,
       "musicReason": "massa curt: probable teaser/fragment"
     }
   ]
