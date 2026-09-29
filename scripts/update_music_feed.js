@@ -3,6 +3,7 @@
 const fs = require('fs');
 const path = require('path');
 const { classifyMusicContent } = require('./lib/classificar_contingut_musical');
+const { resolveChannelDisplayName } = require('./lib/nom_canal');
 
 const API_KEY = process.env.YOUTUBE_API_KEY_SERVER || process.env.YOUTUBE_API_KEY;
 if (!API_KEY) {
@@ -190,7 +191,12 @@ async function main(){
     const snippet=detail.snippet||{};
     const categories=meta.categories||[];
     const rawChannelName=snippet.title || meta.artistNames[0] || id;
-    const displayChannelName=cleanChannelDisplayName(rawChannelName,meta.artistNames[0]||id);
+    // Si el títol de YouTube és només el handle, s'aplica el nom real de l'artista.
+    const displayChannelName=resolveChannelDisplayName(
+      cleanChannelDisplayName(rawChannelName,meta.artistNames[0]||id),
+      snippet.customUrl,
+      meta.artistNames
+    );
     const channel={
       id,
       name:displayChannelName,
