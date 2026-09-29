@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-29T11:22:49.642Z",
+  "updatedAt": "2026-09-29T11:23:51.101Z",
   "artists": [
     {
       "name": "31 FAM",
@@ -3162,7 +3162,15 @@
       "wikidataId": "Q11917802",
       "musicbrainzId": "703109f6-19ba-45d4-b7f5-1791ee0feb79",
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCU1eUJDhuxK2wGF21vhpNzQ",
+            "handle": null,
+            "name": "Duble Buble - Topic",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "candidates": [],
         "searchCandidates": [
           {
@@ -3209,16 +3217,17 @@
           }
         ]
       },
-      "confidence": "pendent",
+      "confidence": "alta",
       "reviewStatus": "pendent",
       "active": false,
       "sources": [
         "https://www.wikidata.org/wiki/Q11917802",
         "wikidata:languages-spoken-catalan",
         "wikidata:performed-catalan-work",
-        "manual-user-2026-09-29"
+        "manual-user-2026-09-29",
+        "youtube:manual-verified"
       ],
-      "lastChecked": "2026-09-29T11:22:49.642Z",
+      "lastChecked": "2026-09-29T11:23:49.445Z",
       "notes": "",
       "enrichment": {
         "musicbrainz": {
@@ -4036,7 +4045,15 @@
       "wikidataId": "Q1333372",
       "musicbrainzId": "0e263fb1-3145-4b61-b3fc-3d99a515baec",
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCYLw9esbkWTiWH9PoSlnjXw",
+            "handle": "@elspetsoficial",
+            "name": "elspetsoficial",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "candidates": [],
         "searchCandidates": [
           {
@@ -4098,15 +4115,16 @@
           }
         ]
       },
-      "confidence": "pendent",
+      "confidence": "alta",
       "reviewStatus": "pendent",
       "active": false,
       "sources": [
         "https://www.wikidata.org/wiki/Q1333372",
         "wikidata:performed-catalan-work",
-        "manual-user-2026-09-29"
+        "manual-user-2026-09-29",
+        "youtube:manual-verified"
       ],
-      "lastChecked": "2026-09-29T11:22:49.642Z",
+      "lastChecked": "2026-09-29T11:23:49.557Z",
       "notes": "",
       "enrichment": {
         "musicbrainz": {
@@ -11654,7 +11672,15 @@
       "wikidataId": "Q113500634",
       "musicbrainzId": "931b0693-edd6-4ec2-90aa-df602c3aa95b",
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCuhtfjW8tIjqkh7rS9T_KEQ",
+            "handle": "@mushkaa",
+            "name": "Мушка",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "candidates": [],
         "searchCandidates": [
           {
@@ -11703,7 +11729,7 @@
           }
         ]
       },
-      "confidence": "pendent",
+      "confidence": "alta",
       "reviewStatus": "pendent",
       "active": false,
       "sources": [
@@ -11711,9 +11737,10 @@
         "wikidata:native-language-catalan",
         "wikidata:performed-catalan-work",
         "wikidata:native-language-catalan-musician",
-        "manual-user-2026-09-29"
+        "manual-user-2026-09-29",
+        "youtube:manual-verified"
       ],
-      "lastChecked": "2026-09-29T11:22:49.642Z",
+      "lastChecked": "2026-09-29T11:23:48.975Z",
       "notes": "",
       "enrichment": {
         "musicbrainz": {
@@ -18035,16 +18062,25 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCRgcGfe-4b4n3quUIKZa_AA",
+            "handle": "@_ayryn_",
+            "name": "AYRYN",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "candidates": []
       },
       "confidence": "mitjana",
       "reviewStatus": "pendent",
       "active": false,
       "sources": [
-        "manual-user-2026-09-29"
+        "manual-user-2026-09-29",
+        "youtube:manual-verified"
       ],
-      "lastChecked": "2026-09-29T11:22:49.642Z",
+      "lastChecked": "2026-09-29T11:23:48.235Z",
       "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
       "genresRaw": [
         "Urbana"
@@ -18063,16 +18099,25 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UC2rhPnAmAa_Sa9XlK0whmDA",
+            "handle": "@bayabayemgt",
+            "name": "BAYA BAYE",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "candidates": []
       },
       "confidence": "mitjana",
       "reviewStatus": "pendent",
       "active": false,
       "sources": [
-        "manual-user-2026-09-29"
+        "manual-user-2026-09-29",
+        "youtube:manual-verified"
       ],
-      "lastChecked": "2026-09-29T11:22:49.642Z",
+      "lastChecked": "2026-09-29T11:23:48.383Z",
       "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
       "genresRaw": [
         "Urbana"
@@ -18092,7 +18137,51 @@
       "musicbrainzId": null,
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UCFlTYMjWNCVU6G4aOkQfeKA",
+            "title": "calagher pooh",
+            "handle": "@calagherpooh",
+            "description": "musician",
+            "subscriberCount": 611,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_k5kgmVGiqQMHuosHn5Gmd6n3-5IpL-ocwrmMIyikGqPQ=s240-c-k-c0x00ffffff-no-rj",
+            "score": 58,
+            "reasons": [
+              "nom parcial",
+              "handle coincident",
+              "primer resultat"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-29T11:23:50.307Z"
+          },
+          {
+            "id": "UClrKJFmFnznC9AO3EV5zjkw",
+            "title": "Gallagher",
+            "handle": "@gallagherflexboyofficial",
+            "description": "\nOfficial GALLAGHER YouTube channel!\n\n",
+            "subscriberCount": 60600,
+            "thumbnail": "https://yt3.ggpht.com/8IHrD1gnaZ0Jcozw9XxSkEL6XEWUeuBKjbqoAgT8DkBh34PvsqXN-eFVd2y1HZ5CUumDY88qEw0=s240-c-k-c0x00ffffff-no-rj",
+            "score": 10,
+            "reasons": [
+              "marca oficial"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-29T11:23:50.307Z"
+          },
+          {
+            "id": "UCCPhzWi8hJfJULiU_PoMNnw",
+            "title": "Gallagher - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 4270,
+            "thumbnail": "https://yt3.ggpht.com/8IHrD1gnaZ0Jcozw9XxSkEL6XEWUeuBKjbqoAgT8DkBh34PvsqXN-eFVd2y1HZ5CUumDY88qEw0=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-29T11:23:50.307Z"
+          }
+        ]
       },
       "confidence": "mitjana",
       "reviewStatus": "pendent",
@@ -18104,7 +18193,17 @@
       "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
       "genresRaw": [
         "Urbana"
-      ]
+      ],
+      "enrichment": {
+        "youtubeSearch": {
+          "checkedAt": "2026-09-29T11:23:50.307Z",
+          "status": "candidats",
+          "query": "Calagher",
+          "resultCount": 3,
+          "bestScore": 58,
+          "autoAcceptedId": null
+        }
+      }
     },
     {
       "name": "Ceaxe",
@@ -18119,16 +18218,25 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCBKjT0edCSrQhqufwWaX5Zw",
+            "handle": "@ceaxe",
+            "name": "Ceaxe",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "candidates": []
       },
       "confidence": "mitjana",
       "reviewStatus": "pendent",
       "active": false,
       "sources": [
-        "manual-user-2026-09-29"
+        "manual-user-2026-09-29",
+        "youtube:manual-verified"
       ],
-      "lastChecked": "2026-09-29T11:22:49.642Z",
+      "lastChecked": "2026-09-29T11:23:48.558Z",
       "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
       "genresRaw": [
         "Urbana"
@@ -18147,16 +18255,25 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UClDOnKVw4NDr-UyX7nnhlBw",
+            "handle": "@dani6ix_izzkid",
+            "name": "dani6ix & IZZKID",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "candidates": []
       },
       "confidence": "mitjana",
       "reviewStatus": "pendent",
       "active": false,
       "sources": [
-        "manual-user-2026-09-29"
+        "manual-user-2026-09-29",
+        "youtube:manual-verified"
       ],
-      "lastChecked": "2026-09-29T11:22:49.642Z",
+      "lastChecked": "2026-09-29T11:23:48.627Z",
       "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
       "genresRaw": [
         "Urbana"
@@ -18175,16 +18292,25 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCt7sVSd8TURhAqiI_M6eCwQ",
+            "handle": "@enmatu",
+            "name": "enMatu",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "candidates": []
       },
       "confidence": "mitjana",
       "reviewStatus": "pendent",
       "active": false,
       "sources": [
-        "manual-user-2026-09-29"
+        "manual-user-2026-09-29",
+        "youtube:manual-verified"
       ],
-      "lastChecked": "2026-09-29T11:22:49.642Z",
+      "lastChecked": "2026-09-29T11:23:48.746Z",
       "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
       "genresRaw": [
         "Urbana"
@@ -18203,16 +18329,25 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCsASzIhIgjrLSRrI33QSSxw",
+            "handle": "@lluc",
+            "name": "Loma Linda University Church",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "candidates": []
       },
       "confidence": "mitjana",
       "reviewStatus": "pendent",
       "active": false,
       "sources": [
-        "manual-user-2026-09-29"
+        "manual-user-2026-09-29",
+        "youtube:manual-verified"
       ],
-      "lastChecked": "2026-09-29T11:22:49.642Z",
+      "lastChecked": "2026-09-29T11:23:48.827Z",
       "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
       "genresRaw": [
         "Urbana"
@@ -18231,16 +18366,25 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCoY7AABv-Ib80j5RiyH4PIA",
+            "handle": "@marlenaoficial",
+            "name": "MARLENA",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "candidates": []
       },
       "confidence": "mitjana",
       "reviewStatus": "pendent",
       "active": false,
       "sources": [
-        "manual-user-2026-09-29"
+        "manual-user-2026-09-29",
+        "youtube:manual-verified"
       ],
-      "lastChecked": "2026-09-29T11:22:49.642Z",
+      "lastChecked": "2026-09-29T11:23:48.882Z",
       "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
       "genresRaw": [
         "Urbana"
@@ -18259,16 +18403,25 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCEK-KX24tmXR1bDCfhE_hgw",
+            "handle": "@nusar3000",
+            "name": "nusar3000",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "candidates": []
       },
       "confidence": "mitjana",
       "reviewStatus": "pendent",
       "active": false,
       "sources": [
-        "manual-user-2026-09-29"
+        "manual-user-2026-09-29",
+        "youtube:manual-verified"
       ],
-      "lastChecked": "2026-09-29T11:22:49.642Z",
+      "lastChecked": "2026-09-29T11:23:49.045Z",
       "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
       "genresRaw": [
         "Urbana"
@@ -18287,16 +18440,25 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCK3HgaeRN0-5mJkqvyB1hBA",
+            "handle": "@pawnganghustlas",
+            "name": "PAWNGANG HUSTLAS",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "candidates": []
       },
       "confidence": "mitjana",
       "reviewStatus": "pendent",
       "active": false,
       "sources": [
-        "manual-user-2026-09-29"
+        "manual-user-2026-09-29",
+        "youtube:manual-verified"
       ],
-      "lastChecked": "2026-09-29T11:22:49.642Z",
+      "lastChecked": "2026-09-29T11:23:49.125Z",
       "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
       "genresRaw": [
         "Urbana"
@@ -18315,16 +18477,25 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCgTB-WFdzE-byKvUR5QVnFQ",
+            "handle": "@polbordas",
+            "name": "Pol Bordas",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "candidates": []
       },
       "confidence": "mitjana",
       "reviewStatus": "pendent",
       "active": false,
       "sources": [
-        "manual-user-2026-09-29"
+        "manual-user-2026-09-29",
+        "youtube:manual-verified"
       ],
-      "lastChecked": "2026-09-29T11:22:49.642Z",
+      "lastChecked": "2026-09-29T11:23:49.201Z",
       "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
       "genresRaw": [
         "Urbana"
@@ -18343,16 +18514,25 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCMNP5PWXks1_Es7e5Fs2LOg",
+            "handle": "@scottydk",
+            "name": "Scottydk",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "candidates": []
       },
       "confidence": "mitjana",
       "reviewStatus": "pendent",
       "active": false,
       "sources": [
-        "manual-user-2026-09-29"
+        "manual-user-2026-09-29",
+        "youtube:manual-verified"
       ],
-      "lastChecked": "2026-09-29T11:22:49.642Z",
+      "lastChecked": "2026-09-29T11:23:49.295Z",
       "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
       "genresRaw": [
         "Urbana"
@@ -18372,16 +18552,25 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCixgCOsYckV_5zjYJpb5GGg",
+            "handle": null,
+            "name": "Ja T'ho Dire - Topic",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "candidates": []
       },
       "confidence": "mitjana",
       "reviewStatus": "pendent",
       "active": false,
       "sources": [
-        "manual-user-2026-09-29"
+        "manual-user-2026-09-29",
+        "youtube:manual-verified"
       ],
-      "lastChecked": "2026-09-29T11:22:49.642Z",
+      "lastChecked": "2026-09-29T11:23:49.623Z",
       "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
       "genresRaw": [
         "Pop",
@@ -18401,16 +18590,25 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UC3Z-76-_uT1IbUU9c8fP2mg",
+            "handle": "@kitschvideos",
+            "name": "KitschVideos",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "candidates": []
       },
       "confidence": "mitjana",
       "reviewStatus": "pendent",
       "active": false,
       "sources": [
-        "manual-user-2026-09-29"
+        "manual-user-2026-09-29",
+        "youtube:manual-verified"
       ],
-      "lastChecked": "2026-09-29T11:22:49.642Z",
+      "lastChecked": "2026-09-29T11:23:49.663Z",
       "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
       "genresRaw": [
         "Rock"
@@ -18429,16 +18627,25 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCCjTaOHQqmy0VD2vkZVxxoA",
+            "handle": null,
+            "name": "La Madam - Topic",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "candidates": []
       },
       "confidence": "mitjana",
       "reviewStatus": "pendent",
       "active": false,
       "sources": [
-        "manual-user-2026-09-29"
+        "manual-user-2026-09-29",
+        "youtube:manual-verified"
       ],
-      "lastChecked": "2026-09-29T11:22:49.642Z",
+      "lastChecked": "2026-09-29T11:23:49.715Z",
       "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
       "genresRaw": [
         "Rock"
@@ -18458,16 +18665,25 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCUDIBEazNh-20moPTsT_f2w",
+            "handle": null,
+            "name": "N'Gai N'Gai - Topic",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "candidates": []
       },
       "confidence": "mitjana",
       "reviewStatus": "pendent",
       "active": false,
       "sources": [
-        "manual-user-2026-09-29"
+        "manual-user-2026-09-29",
+        "youtube:manual-verified"
       ],
-      "lastChecked": "2026-09-29T11:22:49.642Z",
+      "lastChecked": "2026-09-29T11:23:49.878Z",
       "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
       "genresRaw": [
         "Pop",
@@ -18488,16 +18704,25 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCgoAYxK_KHyGjHQ50pgUq0Q",
+            "handle": null,
+            "name": "Ocults - Topic",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "candidates": []
       },
       "confidence": "mitjana",
       "reviewStatus": "pendent",
       "active": false,
       "sources": [
-        "manual-user-2026-09-29"
+        "manual-user-2026-09-29",
+        "youtube:manual-verified"
       ],
-      "lastChecked": "2026-09-29T11:22:49.642Z",
+      "lastChecked": "2026-09-29T11:23:49.943Z",
       "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
       "genresRaw": [
         "Pop",
@@ -18518,7 +18743,53 @@
       "musicbrainzId": null,
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UC6a_paoSt1YYKOFZwPGdEYw",
+            "title": "Sangtraït - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 1900,
+            "thumbnail": "https://yt3.ggpht.com/9MsWGwrDQiHyzC3DWRvWaU3JGDl3T3xHsiD-zQEMpKDDcd5_A4aqMNVjs2EbqzHoztHUcMyM4b4=s240-c-k-c0x00ffffff-no-rj",
+            "score": 85,
+            "reasons": [
+              "nom exacte de canal Topic",
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-09-29T11:23:50.760Z"
+          },
+          {
+            "id": "UCwCwh5Fm8PGFDVC-YVDiuNQ",
+            "title": "Sangtrait Sancho",
+            "handle": "@sangtraitsancho8125",
+            "description": "",
+            "subscriberCount": 7,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_mqVXUVSKrwlOm_Ki89bkWDVT5oSXmJU34n7tb3H08=s240-c-k-c0x00ffffff-no-rj",
+            "score": 53,
+            "reasons": [
+              "nom parcial",
+              "handle coincident"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-29T11:23:50.760Z"
+          },
+          {
+            "id": "UCR9Jbk0RavlKy3B408D2uZA",
+            "title": "L'últim Segell",
+            "handle": "@sangtrait",
+            "description": "L'últim Segell som una banda de tribut a Sangtraït.\n\nCristina Alcaraz - SAXO, FLAUTA I COROS\nFerran Cardona - BAIX I VEU\nJoan Figueras - BATERIA\nChristian Flores - GUITARRA I COROS\nRaúl Rodríguez - GUITARRA\n\nLes notres xarxes:\nFacebook: https://www.facebook.com/lultimsegell\nInstagram: https://www.instagram.com/lultimsegel...\nEmail: sangtraitcovers@",
+            "subscriberCount": 110,
+            "thumbnail": "https://yt3.ggpht.com/yNdzLZsSkLohMPNe1oXRqEyLbHfBbY9sSUnzkYI8222Ca67RVovLGda30LDUthNv17UV2c-u5xQ=s240-c-k-c0x00ffffff-no-rj",
+            "score": 25,
+            "reasons": [
+              "handle exacte"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-09-29T11:23:50.760Z"
+          }
+        ]
       },
       "confidence": "mitjana",
       "reviewStatus": "pendent",
@@ -18530,7 +18801,17 @@
       "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
       "genresRaw": [
         "Rock"
-      ]
+      ],
+      "enrichment": {
+        "youtubeSearch": {
+          "checkedAt": "2026-09-29T11:23:50.760Z",
+          "status": "candidats",
+          "query": "Sangtraït",
+          "resultCount": 3,
+          "bestScore": 85,
+          "autoAcceptedId": null
+        }
+      }
     },
     {
       "name": "Umpah-Pah",
@@ -18545,16 +18826,25 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCeza8RPly8qpRBT2VyPBhRQ",
+            "handle": null,
+            "name": "Umpah Pah - Topic",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "candidates": []
       },
       "confidence": "mitjana",
       "reviewStatus": "pendent",
       "active": false,
       "sources": [
-        "manual-user-2026-09-29"
+        "manual-user-2026-09-29",
+        "youtube:manual-verified"
       ],
-      "lastChecked": "2026-09-29T11:22:49.642Z",
+      "lastChecked": "2026-09-29T11:23:50.137Z",
       "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
       "genresRaw": [
         "Rock"
@@ -18574,16 +18864,25 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCFjpMGciAkOrjXrjxduOPog",
+            "handle": null,
+            "name": "Whiskyn's - Topic",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "candidates": []
       },
       "confidence": "mitjana",
       "reviewStatus": "pendent",
       "active": false,
       "sources": [
-        "manual-user-2026-09-29"
+        "manual-user-2026-09-29",
+        "youtube:manual-verified"
       ],
-      "lastChecked": "2026-09-29T11:22:49.642Z",
+      "lastChecked": "2026-09-29T11:23:50.221Z",
       "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
       "genresRaw": [
         "Pop",
