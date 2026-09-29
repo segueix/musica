@@ -380,6 +380,14 @@ La finestreta flotant en fer scroll cap avall es manté tal com era: és el comp
 
 **Fitxers Afectats:** `scripts/ocultar_titols_castella.js`, `scripts/update_music_feed.js`, `data/hidden-videos.json`, `tests/ocultar-titols-castella.test.js`.
 
+## [2026-09-29] - Fora la barra anterior/play/següent sota el reproductor; MARLENA descartada
+
+**Canvi 1:** Els controls anterior / play-pausa / següent ja són dins del reproductor, així que s'elimina la barra pròpia `#nowPlayingBar` (`music-queue.js`, `initTransport`; CSS `.now-playing-bar` / `.np-btn`). Es conserven els controls del sistema (Media Session). **Atenció a la graella d'escriptori:** la barra era una de les files que abasta la ràdio; ara la ràdio abasta **3 files** (reproductor, títol, canal; 4 si el panell de TV és visible). Verificat: final de la ràdio = final del bloc del canal (0 px de diferència) a 1200/1440/1920 px.
+
+**Canvi 2:** MARLENA (repertori en castellà) queda `rebutjada` a `artistes-musica.json` amb el canal buit, sense l'entrada a `youtube-verified-handles.json` (si no, el resolutor la tornaria a afegir) i tots els seus vídeos a `hidden-videos.json`. El canal desapareix del feed i de `channels-ca.json` quan es regeneri (el push d'`artistes-musica.json` dispara «Actualitzar feed musical»).
+
+**Fitxers Afectats:** `js/features/music-queue.js`, `css/styles.css`, `data/artistes-musica.json`, `data/youtube-verified-handles.json`, `data/hidden-videos.json`, `sw.js`.
+
 ## [2026-07-11] - Filera d'icones del header visible en obrir un vídeo al mòbil
 
 **Símptoma:** Al mòbil, en clicar un vídeo del feed i obrir-se la pàgina del reproductor, la filera d'icones del header (Inici, Biblioteca, Historial, Segueix...) es mostrava a sobre del reproductor, ocupant espai vertical útil mentre l'usuari volia veure el vídeo.

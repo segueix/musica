@@ -18435,26 +18435,18 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [
-          {
-            "id": "UCoY7AABv-Ib80j5RiyH4PIA",
-            "handle": "@marlenaoficial",
-            "name": "MARLENA",
-            "type": "official",
-            "primary": true
-          }
-        ],
+        "channels": [],
         "candidates": []
       },
       "confidence": "mitjana",
-      "reviewStatus": "pendent",
+      "reviewStatus": "rebutjat",
       "active": false,
       "sources": [
         "manual-user-2026-09-29",
         "youtube:manual-verified"
       ],
       "lastChecked": "2026-09-29T11:23:48.882Z",
-      "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
+      "notes": "Descartada (2026-09-29): repertori i títols en castellà. No tornar a resoldre @marlenaoficial.",
       "genresRaw": [
         "Urbana"
       ]

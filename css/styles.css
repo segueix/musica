@@ -8905,52 +8905,6 @@ body {
     padding: 8px 0;
 }
 
-/* Barra de controls */
-.now-playing-bar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    padding: 12px 0 4px;
-}
-
-.np-btn {
-    display: grid;
-    place-items: center;
-    width: 48px;
-    height: 48px;
-    border: 0;
-    border-radius: 50%;
-    background: transparent;
-    color: #ffffff;
-    cursor: pointer;
-    transition:
-        transform 0.15s ease,
-        background 0.15s ease,
-        opacity 0.15s ease;
-}
-
-.np-btn:hover:not(:disabled) {
-    background: #2a2a2a;
-}
-
-.np-btn:disabled {
-    opacity: 0.35;
-    cursor: default;
-}
-
-.np-btn--main {
-    width: 60px;
-    height: 60px;
-    background: #ffffff;
-    color: #000000;
-}
-
-.np-btn--main:hover:not(:disabled) {
-    background: #ffffff;
-    transform: scale(1.06);
-}
-
 /* Cua */
 #playlistQueueContainer:has(.mq) {
     margin-top: 16px;
@@ -9203,7 +9157,6 @@ body {
 
     #watchPage .watch-main > .video-placeholder,
     #watchPage .watch-main > .video-info,
-    #watchPage .watch-main > .now-playing-bar,
     #watchPage .watch-main > .channel-info,
     #watchPage .watch-main > .tv-programming-panel {
         grid-column: 1;
@@ -9213,15 +9166,11 @@ body {
         margin-inline: 0;
     }
 
-    #watchPage .watch-main > .now-playing-bar {
-        justify-content: flex-start;
-    }
-
     #watchPage .watch-main > #playlistQueueContainer {
         grid-column: 2;
-        /* 4 files: reproductor, títol, controls i canal (la 5a és el panell de programació de TV
+        /* 3 files: reproductor, títol i canal (la 4a és el panell de programació de TV
            o la capçalera dels relacionats, que han de quedar per sota) */
-        grid-row: 1 / span 4;
+        grid-row: 1 / span 3;
         margin-top: 0;
         /* = margin-bottom de .channel-info: la cua acaba on acaben els botons, no el marge */
         margin-bottom: 24px;
@@ -9256,7 +9205,7 @@ body {
 
     /* Amb el panell de programació de TV visible, la cua també l'abasta */
     #watchPage .watch-main:has(> .tv-programming-panel:not(.hidden)) > #playlistQueueContainer {
-        grid-row: 1 / span 5;
+        grid-row: 1 / span 4;
     }
 
     #watchPage .watch-main > .extra-related-title,
