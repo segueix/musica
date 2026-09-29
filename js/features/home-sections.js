@@ -6,6 +6,7 @@
 
     const ROW_SIZE = 16;
     const MIN_ROW_ITEMS = 4;
+    const TOP_STYLES = 3;
     const POPULAR_WINDOW_DAYS = 21;
     const STYLE_ROWS = [
         'Pop',
@@ -62,6 +63,42 @@
         return limitPerChannel(matches, 2).slice(0, ROW_SIZE);
     }
 
+    // Estils que l'usuari més escolta: historial (1 punt) i M'agrada (2 punts), via categories del canal.
+    function getTopStyles(feed, count) {
+        const channelCats = new Map();
+        (Array.isArray(feed?.channels) ? feed.channels : []).forEach(channel => {
+            channelCats.set(
+                String(channel.id),
+                (Array.isArray(channel.categories) ? channel.categories : []).map(c => String(c).toLowerCase())
+            );
+        });
+        const byLower = new Map(STYLE_ROWS.map(name => [name.toLowerCase(), name]));
+        const scores = new Map();
+        const add = (video, points) => {
+            if (!video || video.isShort) return;
+            const cats = channelCats.get(String(video.channelId)) || [];
+            const own = Array.isArray(video.categories) ? video.categories.map(c => String(c).toLowerCase()) : [];
+            new Set([...cats, ...own]).forEach(cat => {
+                const style = byLower.get(cat);
+                if (style) scores.set(style, (scores.get(style) || 0) + points);
+            });
+        };
+        try {
+            (typeof getHistoryItems === 'function' ? getHistoryItems() : []).forEach(video => add(video, 1));
+        } catch (error) {
+            // Sense historial
+        }
+        try {
+            (typeof getLikedVideos === 'function' ? getLikedVideos() : []).forEach(video => add(video, 2));
+        } catch (error) {
+            // Sense m'agrada
+        }
+        return [...scores.entries()]
+            .sort((a, b) => b[1] - a[1])
+            .map(([style]) => style)
+            .slice(0, count);
+    }
+
     function buildSections(videos, feed) {
         const byDate = [...videos].sort((a, b) => timestampOf(b) - timestampOf(a));
         const sections = [];
@@ -82,8 +119,30 @@
             sections.push({ title: 'El més escoltat', subtitle: 'Últimes setmanes', videos: popular });
         }
 
+        // Els 3 estils que més escolta l'usuari sempre hi són (si no n'hi ha prou, s'omple amb els per defecte).
+        const topStyles = [];
+        const styleRows = new Map();
+        const styleList = category => {
+            if (!styleRows.has(category)) styleRows.set(category, buildStyleRow(byDate, feed, category));
+            return styleRows.get(category);
+        };
+        [...getTopStyles(feed, TOP_STYLES), ...STYLE_ROWS].forEach(category => {
+            if (topStyles.length < TOP_STYLES && !topStyles.includes(category) && styleList(category).length > 0) {
+                topStyles.push(category);
+            }
+        });
+        topStyles.forEach(category => {
+            sections.push({
+                title: category,
+                subtitle: 'Dels teus estils',
+                category,
+                videos: styleList(category),
+            });
+        });
+
         STYLE_ROWS.forEach(category => {
-            const list = buildStyleRow(byDate, feed, category);
+            if (topStyles.includes(category)) return;
+            const list = styleList(category);
             if (list.length >= MIN_ROW_ITEMS) {
                 sections.push({ title: category, category, videos: list });
             }
