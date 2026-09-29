@@ -360,6 +360,16 @@ La finestreta flotant en fer scroll cap avall es manté tal com era: és el comp
 
 **Fitxers Afectats:** `css/styles.css`, `sw.js`.
 
+## [2026-09-29] - Ràdio: escriptori sense relacionats i la llista es conserva amb la finestra flotant
+
+**Canvi 1 (escriptori):** Amb una ràdio sonant no es mostren «Altres vídeos relacionats» ni els vídeos de l'artista (`.watch-sidebar`, `.extra-related-header`, `.extra-videos-grid`): CSS amb `#watchPage:has(#playlistQueueContainer:not(.hidden) .mq--radio)` (`css/styles.css`, ≥1025 px). `music-queue.js` afegeix la classe `mq--radio` quan la cua és la ràdio; a `app.js` tampoc es pinten (`renderPlaylistRelatedVideosLegacyImpl`, `showVideoFromAPILegacyImpl`).
+
+**Canvi 2 (finestra flotant):** **Causa:** `showHome/showHistory/showPlaylists/showFollow` (navigation.js), `openChannelProfile` i `openProgramProfile` cridaven sempre `exitPlaylistMode()`, així que en navegar amb la ràdio en mini el vídeo seguia sonant però la cua es perdia (en expandir, sense llista; i sense avanç automàtic). **Solució:** `exitPlaylistModeForNavigation()` (app.js) no surt del mode llista si la finestra flotant és activa i no és TV; el hook de navegació hi apunta. Perquè l'avanç automàtic amb l'usuari en una altra secció no el porti a la pàgina del reproductor, `showVideoFromAPILegacyImpl` calcula `keepPage` (avanç automàtic + mini + watchPage amagada) i llavors no canvia de pàgina, no fa `pushState` ni `scrollTo`; la cançó nova es carrega a la finestreta. En tancar la finestreta fora de la pàgina del vídeo, se surt del mode llista. Verificat en Chromium: ràdio → flotant → portada (cua conservada) → següent (la portada continua visible, índex 1) → expandir (pàgina del vídeo amb la ràdio a la dreta, «Ràdio 2/40»).
+
+**Nota:** `tests/browser/verificar-tv.js` ja fallava 4 comprovacions abans d'aquests canvis (entorn sense YouTube real); `verificar-reproductor.js` passa.
+
+**Fitxers Afectats:** `js/app.js`, `js/features/music-queue.js`, `css/styles.css`, `sw.js`.
+
 ## [2026-07-11] - Filera d'icones del header visible en obrir un vídeo al mòbil
 
 **Símptoma:** Al mòbil, en clicar un vídeo del feed i obrir-se la pàgina del reproductor, la filera d'icones del header (Inici, Biblioteca, Historial, Segueix...) es mostrava a sobre del reproductor, ocupant espai vertical útil mentre l'usuari volia veure el vídeo.

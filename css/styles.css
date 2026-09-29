@@ -9245,6 +9245,15 @@ body {
         border-radius: 12px 12px 0 0;
     }
 
+    /* Ràdio a escriptori: a sota no hi ha «Altres vídeos relacionats» ni els vídeos de l'artista;
+       només el reproductor i la ràdio. */
+    #watchPage:has(#playlistQueueContainer:not(.hidden) .mq--radio) .watch-sidebar,
+    #watchPage:has(#playlistQueueContainer:not(.hidden) .mq--radio) .extra-related-header,
+    #watchPage:has(#playlistQueueContainer:not(.hidden) .mq--radio) .extra-related-title,
+    #watchPage:has(#playlistQueueContainer:not(.hidden) .mq--radio) .extra-videos-grid {
+        display: none;
+    }
+
     /* Amb el panell de programació de TV visible, la cua també l'abasta */
     #watchPage .watch-main:has(> .tv-programming-panel:not(.hidden)) > #playlistQueueContainer {
         grid-row: 1 / span 5;

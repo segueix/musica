@@ -333,7 +333,7 @@
         const canRegenerate = activePlaylistId === QUEUE_ID;
 
         container.innerHTML = `
-            <div class="mq">
+            <div class="mq${activePlaylistId === QUEUE_ID ? ' mq--radio' : ''}">
                 <div class="mq-head">
                     <h2 class="mq-heading">Ràdio</h2>
                     <span class="mq-source">${activePlaylistId === QUEUE_ID ? `Basada en ${escapeText(current.channelTitle || 'aquesta cançó')}` : escapeText(activePlaylistName || '')}</span>

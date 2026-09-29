@@ -2185,7 +2185,7 @@ async function openProgramProfile(programId) {
     if (!channelId) return;
 
     handlePlayerVisibilityOnNavigation();
-    exitPlaylistMode();
+    exitPlaylistModeForNavigation();
 
     const normalizedId = String(channelId);
     const channels = Array.isArray(YouTubeAPI?.getAllChannels?.()) ? YouTubeAPI.getAllChannels() : [];
@@ -10308,6 +10308,15 @@ function updatePlaylistModeBadge() {
     }
     refreshIcons(badge);
 }
+// En navegar a una altra secció, la llista/ràdio que sona en la finestra flotant es conserva:
+// en tornar a expandir el vídeo, la llista continua apareixent a la dreta (i avança sola).
+function exitPlaylistModeForNavigation() {
+    if (isPlaylistMode && isMiniPlayerActive() && activePlaylistId !== '__segueix_tv_discovery__') {
+        return;
+    }
+    exitPlaylistMode();
+}
+
 function exitPlaylistMode({ showQueueMessage = false } = {}) {
     stopTVViewportHold();
     isPlaylistMode = false;
@@ -11808,6 +11817,7 @@ function setupDragHandle() {
             }
         } else {
             stopVideoPlayback();
+            if (isPlaylistMode) exitPlaylistMode();
         }
     };
 
@@ -12586,6 +12596,11 @@ async function renderPlaylistRelatedVideosLegacyImpl(playlistName) {
     // La ràdio (cua generada) no és una cerca: es mostren vídeos de la mateixa categoria
     // que el vídeo que sona, sense cap "resultat de cua".
     if (isPlaylistMode && activePlaylistId === '__music_queue__') {
+        // A escriptori la ràdio no mostra vídeos relacionats (queden amagats per CSS): no cal pintar-los
+        if (isDesktopView()) {
+            extraContainer.innerHTML = '';
+            return;
+        }
         const playing = activePlaylistQueue[currentPlaylistIndex];
         renderCategoryVideosBelowLegacyImpl(playing?.channelId || null, playing?.id || currentVideoId);
         return;
@@ -12632,17 +12647,24 @@ async function showVideoFromAPILegacyImpl(videoId, options = {}) {
         keepTVPosition && document.body.classList.contains('segueix-tv-active');
     exitMiniPlayerForNewVideo();
     const isMini = videoPlayer?.classList.contains('mini-player-active');
+    // Avanç automàtic de la llista/ràdio amb la finestra flotant mentre l'usuari és en una altra
+    // secció: la cançó següent es carrega a la finestreta sense portar-lo a la pàgina del vídeo.
+    const keepPage = Boolean(
+        isAutoPlayNavigating && isPlaylistNavigation && isMini && watchPage.classList.contains('hidden')
+    );
     if (!isPlaylistNavigation) {
         exitPlaylistMode();
     }
     currentVideoId = videoId;
     currentVideoSource = 'api';
-    showLoading();
+    if (!keepPage) showLoading();
 
     // Actualitzar URL
     const startAt = Math.max(0, Math.floor(Number(options.startAt) || 0));
     const videoUrl = `?v=${videoId}${startAt > 0 ? `&t=${startAt}` : ''}`;
-    if (options.replaceHistory) {
+    if (keepPage) {
+        // La URL i l'historial es queden a la secció on és l'usuari
+    } else if (options.replaceHistory) {
         history.replaceState({ videoId }, '', videoUrl);
     } else {
         history.pushState({ videoId }, '', videoUrl);
@@ -12650,30 +12672,32 @@ async function showVideoFromAPILegacyImpl(videoId, options = {}) {
 
     const launchedFromHistoryPage = Boolean(historyPage && !historyPage.classList.contains('hidden'));
 
-    if (mainContent) {
-        mainContent.classList.remove('hidden');
-    }
-    if (historyPage) {
-        historyPage.classList.add('hidden');
-    }
-    if (playlistsPage) {
-        playlistsPage.classList.add('hidden');
-    }
-    if (followPage) {
-        followPage.classList.add('hidden');
-    }
-    if (channelPage) {
-        channelPage.classList.add('hidden');
-    }
-    if (chipsBar) {
-        chipsBar.classList.toggle('hidden', !keepSegueixTVCategoriesVisible);
-        if (keepSegueixTVCategoriesVisible) {
-            resetSegueixTVCategoriesScrollState({ show: true });
+    if (!keepPage) {
+        if (mainContent) {
+            mainContent.classList.remove('hidden');
         }
+        if (historyPage) {
+            historyPage.classList.add('hidden');
+        }
+        if (playlistsPage) {
+            playlistsPage.classList.add('hidden');
+        }
+        if (followPage) {
+            followPage.classList.add('hidden');
+        }
+        if (channelPage) {
+            channelPage.classList.add('hidden');
+        }
+        if (chipsBar) {
+            chipsBar.classList.toggle('hidden', !keepSegueixTVCategoriesVisible);
+            if (keepSegueixTVCategoriesVisible) {
+                resetSegueixTVCategoriesScrollState({ show: true });
+            }
+        }
+        homePage.classList.add('hidden');
+        watchPage.classList.remove('hidden');
+        collapseMobileHeaderForWatchPage();
     }
-    homePage.classList.add('hidden');
-    watchPage.classList.remove('hidden');
-    collapseMobileHeaderForWatchPage();
 
     const sidebarChannelInfo = document.getElementById('sidebarChannelInfo');
     if (sidebarChannelInfo) {
@@ -12894,7 +12918,7 @@ async function showVideoFromAPILegacyImpl(videoId, options = {}) {
     }
 
     // Mostrar la pàgina immediatament, renderitzar vídeos relacionats de forma diferida
-    if (!keepTVPosition) {
+    if (!keepTVPosition && !keepPage) {
         window.scrollTo(0, 0);
     }
     hideLoading();
@@ -12906,7 +12930,8 @@ async function showVideoFromAPILegacyImpl(videoId, options = {}) {
     requestAnimationFrame(() => {
         if (isPlaylistMode) {
             renderPlaylistQueue();
-            if (channelId) {
+            // Ràdio a escriptori: sense vídeos de l'artista (la barra lateral queda amagada)
+            if (channelId && !(activePlaylistId === '__music_queue__' && isDesktopView())) {
                 renderChannelSidebarFromApi(
                     channelId,
                     videoId,
@@ -13880,7 +13905,7 @@ async function openChannelProfileLegacyImpl(channelId) {
         segueixScrollYBeforeChannel = null;
     }
     handlePlayerVisibilityOnNavigation();
-    exitPlaylistMode();
+    exitPlaylistModeForNavigation();
     const normalizedId = String(channelId);
     const channels = Array.isArray(YouTubeAPI?.getAllChannels?.()) ? YouTubeAPI.getAllChannels() : [];
     const channel = channels.find(item => String(item.id) === normalizedId);
@@ -14733,7 +14758,7 @@ var SupportModule = {
 function configureFeatureRuntimes() {
     SegueixApp.features.navigation?.registerRuntime?.({
         handlePlayerVisibilityOnNavigation,
-        exitPlaylistMode,
+        exitPlaylistMode: exitPlaylistModeForNavigation,
         isMiniPlayerActive,
         resetCurrentVideoState: () => {
             currentVideoId = null;
