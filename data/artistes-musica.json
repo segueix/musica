@@ -18406,26 +18406,18 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [
-          {
-            "id": "UCsASzIhIgjrLSRrI33QSSxw",
-            "handle": "@lluc",
-            "name": "Loma Linda University Church",
-            "type": "official",
-            "primary": true
-          }
-        ],
+        "channels": [],
         "candidates": []
       },
       "confidence": "mitjana",
-      "reviewStatus": "pendent",
+      "reviewStatus": "rebutjat",
       "active": false,
       "sources": [
         "manual-user-2026-09-29",
         "youtube:manual-verified"
       ],
       "lastChecked": "2026-09-29T11:23:48.827Z",
-      "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
+      "notes": "Canal @lluc descartat (2026-09-29): és Loma Linda University Church, una església; no és l'artista. No tornar a resoldre @lluc.",
       "genresRaw": [
         "Urbana"
       ]

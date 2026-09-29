@@ -18,7 +18,7 @@
 //   2) Offline: amb la xarxa tallada, l'app arrenca sencera des del cache.
 //   3) Migració: un cache antic (mytube-v417) i l'static vell s'eliminen a l'activate.
 //   4) Stale-while-revalidate: 1r load serveix stale, 2n load ja serveix fresc.
-//   5) Actualització de codi: apareix l'avís i hi ha UNA sola recàrrega (sense bucle).
+//   5) Actualització de codi: s'aplica sola, amb UNA sola recàrrega (sense bucle).
 //   6) El feed es carrega i renderitza.
 
 const http = require('http');
@@ -101,6 +101,7 @@ const EXPECTED_SCRIPTS = [
     const context = await browser.newContext();
     await context.addInitScript(() => {
         try {
+            if (window.top !== window) return; // només la frame principal (els iframes no són recàrregues)
             const n = Number(sessionStorage.getItem('__loadCount') || '0') + 1;
             sessionStorage.setItem('__loadCount', String(n));
         } catch (_) {}
@@ -163,19 +164,22 @@ const EXPECTED_SCRIPTS = [
         await page.evaluate(async () => { await (await caches.open('mytube-v417')).put('/dummy-old', new Response('old')); });
 
         const NEWVER = 'testupdate99';
+        const countA = await loadCount();
         await page.evaluate((b) => fetch(b + '/__ctl?swver=testupdate99'), BASE);
         await page.evaluate(async () => { const r = await navigator.serviceWorker.getRegistration(); await r.update(); });
 
-        let badgeShown = false;
-        try { await page.waitForFunction(() => document.getElementById('updateBadge')?.style.display === 'block', null, { timeout: 15000 }); badgeShown = true; } catch (_) {}
-        check('5a. Apareix l\'avís d\'actualització', badgeShown);
-
-        const countA = await loadCount();
-        await page.evaluate(async () => { const r = await navigator.serviceWorker.getRegistration(); if (r && r.waiting) r.waiting.postMessage({ type: 'SKIP_WAITING' }); }).catch(() => {});
-        await page.waitForTimeout(4000);
+        // Una actualització (ja hi havia un SW actiu) s'aplica sola: el SW nou fa skipWaiting a
+        // l'install i la pàgina antiga recarrega en el 'controllerchange'. Sense això, una pestanya
+        // normal oberta es quedava amb el codi vell fins tancar-la (el badge no feia res).
+        await page.waitForTimeout(5000);
         const countB = await loadCount();
         await page.waitForTimeout(2000);
         const countC = await loadCount();
+        const applied = await page.evaluate(async () => {
+            const r = await navigator.serviceWorker.getRegistration();
+            return !r.waiting && !!r.active;
+        });
+        check('5a. L\'actualització s\'aplica sola (cap SW en espera)', applied);
         check('5b. Una sola recàrrega, sense bucle', countB - countA === 1 && countC === countB, `recàrregues=${countB - countA}, extra=${countC - countB}`);
 
         const afterKeys = await page.evaluate(() => caches.keys());
