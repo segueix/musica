@@ -3,7 +3,7 @@
 const fs = require('fs');
 const path = require('path');
 const { classifyMusicContent } = require('./lib/classificar_contingut_musical');
-const { resolveChannelDisplayName } = require('./lib/nom_canal');
+const { resolveChannelDisplayName, findNameOverride, loadNameOverrides } = require('./lib/nom_canal');
 
 const API_KEY = process.env.YOUTUBE_API_KEY_SERVER || process.env.YOUTUBE_API_KEY;
 if (!API_KEY) {
@@ -14,6 +14,7 @@ if (!API_KEY) {
 const ARTISTS_FILE = path.join(process.cwd(), 'data', 'artistes-musica.json');
 const FEED_FILE = path.join(process.cwd(), 'data', 'feed.json');
 const CHANNELS_FILE = path.join(process.cwd(), 'js', 'channels-ca.json');
+const CHANNEL_NAMES_FILE = path.join(process.cwd(), 'data', 'noms-canals.json');
 const AUDIT_FILE = path.join(process.cwd(), 'data', 'music-feed-audit.json');
 const CONTENT_AUDIT_FILE = path.join(process.cwd(), 'data', 'music-content-audit.json');
 const REVIEW_FILE = path.join(process.cwd(), 'data', 'music-content-review.json');
@@ -123,6 +124,7 @@ function collectIndexedChannels(db){
 async function main(){
   const db=JSON.parse(fs.readFileSync(ARTISTS_FILE,'utf8'));
   const indexed=collectIndexedChannels(db);
+  const channelNameOverrides=loadNameOverrides(CHANNEL_NAMES_FILE);
   const ids=[...indexed.keys()];
   console.log('🎵 Canals indexats:',ids.length);
 
@@ -192,7 +194,7 @@ async function main(){
     const categories=meta.categories||[];
     const rawChannelName=snippet.title || meta.artistNames[0] || id;
     // Si el títol de YouTube és només el handle, s'aplica el nom real de l'artista.
-    const displayChannelName=resolveChannelDisplayName(
+    const displayChannelName=findNameOverride(channelNameOverrides,id,snippet.customUrl) || resolveChannelDisplayName(
       cleanChannelDisplayName(rawChannelName,meta.artistNames[0]||id),
       snippet.customUrl,
       meta.artistNames

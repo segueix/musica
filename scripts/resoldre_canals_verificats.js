@@ -12,6 +12,10 @@ function normalizeName(value) {
     return String(value || '').trim().toLocaleLowerCase('ca');
 }
 
+function normalizeHandle(value) {
+    return String(value || '').trim().replace(/^@/, '').toLocaleLowerCase('ca');
+}
+
 async function apiJson(url, apiKey) {
     url.searchParams.set('key', apiKey);
     const response = await fetch(url);
@@ -58,7 +62,14 @@ async function main() {
         artist.youtube ||= { channels: [], candidates: [] };
         artist.youtube.channels ||= [];
 
-        if (artist.youtube.channels.length && artist.youtube.channels.some((c) => CHANNEL_ID_RE.test(c.id || ''))) {
+        // Ja resolt = un canal amb ID vàlid que coincideix amb l'entrada verificada:
+        // l'ID indicat, o el handle indicat (un handle verificat corregeix un ID erroni).
+        const existing = artist.youtube.channels.filter((c) => CHANNEL_ID_RE.test(c.id || ''));
+        const sameHandle = (c) => normalizeHandle(c.handle) && normalizeHandle(c.handle) === normalizeHandle(entry.handle);
+        const alreadyResolved = entry.channelId
+            ? existing.some((c) => c.id === entry.channelId)
+            : existing.length > 0 && (!entry.handle || existing.some(sameHandle));
+        if (alreadyResolved) {
             skipped += 1;
             continue;
         }
