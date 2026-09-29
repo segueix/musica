@@ -7,6 +7,9 @@
     const ROW_SIZE = 16;
     const MIN_ROW_ITEMS = 4;
     const TOP_STYLES = 3;
+    // Estils per defecte quan encara no hi ha prou historial. 'Pop / Rock' agrupa les dues categories.
+    const DEFAULT_STYLES = ['Urbana', 'Pop / Rock', "Cançó d'autor"];
+    const COMBINED_STYLES = { 'Pop / Rock': ['Pop', 'Rock'] };
     const POPULAR_WINDOW_DAYS = 21;
     const STYLE_ROWS = [
         'Pop',
@@ -54,11 +57,12 @@
             const cats = Array.isArray(channel.categories) ? channel.categories.map(c => String(c).toLowerCase()) : [];
             channels.set(channel.id, cats);
         });
-        const wanted = category.toLowerCase();
+        const wanted = (COMBINED_STYLES[category] || [category]).map(name => name.toLowerCase());
         const music = window.SegueixMusicCategories;
         const matches = videos.filter(video => {
             if (music?.isCategoryEligibleVideo && !music.isCategoryEligibleVideo(video)) return false;
-            return (channels.get(video.channelId) || []).includes(wanted);
+            const cats = channels.get(video.channelId) || [];
+            return wanted.some(name => cats.includes(name));
         });
         return limitPerChannel(matches, 2).slice(0, ROW_SIZE);
     }
@@ -99,7 +103,21 @@
             .slice(0, count);
     }
 
-    function buildSections(videos, feed) {
+    // Vídeos candidats per a les files d'estil: tot el feed (no només la finestra de novetats),
+    // sense Shorts ni canals amagats.
+    function getStylePool(videos, allVideos) {
+        if (!Array.isArray(allVideos) || allVideos.length === 0) return videos;
+        let hidden = new Set();
+        try {
+            hidden = new Set((typeof getHiddenChannelIds === 'function' ? getHiddenChannelIds() : []).map(String));
+        } catch (error) {
+            // Sense canals amagats
+        }
+        return allVideos.filter(video => video?.id && !video.isShort && !hidden.has(String(video.channelId || '')));
+    }
+
+    function buildSections(videos, feed, allVideos) {
+        const stylePool = getStylePool(videos, allVideos).sort((a, b) => timestampOf(b) - timestampOf(a));
         const byDate = [...videos].sort((a, b) => timestampOf(b) - timestampOf(a));
         const sections = [];
 
@@ -123,11 +141,20 @@
         const topStyles = [];
         const styleRows = new Map();
         const styleList = category => {
-            if (!styleRows.has(category)) styleRows.set(category, buildStyleRow(byDate, feed, category));
+            if (!styleRows.has(category)) styleRows.set(category, buildStyleRow(stylePool, feed, category));
             return styleRows.get(category);
         };
-        [...getTopStyles(feed, TOP_STYLES), ...STYLE_ROWS].forEach(category => {
-            if (topStyles.length < TOP_STYLES && !topStyles.includes(category) && styleList(category).length > 0) {
+        [...getTopStyles(feed, TOP_STYLES), ...DEFAULT_STYLES, ...STYLE_ROWS].forEach(category => {
+            const parts = COMBINED_STYLES[category] || [];
+            const overlaps =
+                parts.some(name => topStyles.includes(name)) ||
+                topStyles.some(item => (COMBINED_STYLES[item] || []).includes(category));
+            if (
+                topStyles.length < TOP_STYLES &&
+                !topStyles.includes(category) &&
+                !overlaps &&
+                styleList(category).length > 0
+            ) {
                 topStyles.push(category);
             }
         });
@@ -142,6 +169,8 @@
 
         STYLE_ROWS.forEach(category => {
             if (topStyles.includes(category)) return;
+            // Pop i Rock ja surten dins la fila combinada.
+            if (topStyles.includes('Pop / Rock') && COMBINED_STYLES['Pop / Rock'].includes(category)) return;
             const list = styleList(category);
             if (list.length >= MIN_ROW_ITEMS) {
                 sections.push({ title: category, category, videos: list });
@@ -182,7 +211,8 @@
             }
             const more = event.target.closest('[data-open-category]');
             if (more) {
-                const category = more.dataset.openCategory;
+                const requested = more.dataset.openCategory;
+                const category = COMBINED_STYLES[requested]?.[0] || requested;
                 const chip = Array.from(document.querySelectorAll('.chips-bar .chip[data-cat]')).find(
                     item => item.dataset.cat === category
                 );
@@ -195,7 +225,7 @@
     // Retorna true si ha renderitzat seccions (si no, l'app fa servir la graella clàssica).
     function render(container, videos, options = {}) {
         if (!container || typeof createVideoCardAPI !== 'function') return false;
-        const sections = buildSections(Array.isArray(videos) ? videos : [], options.feed);
+        const sections = buildSections(Array.isArray(videos) ? videos : [], options.feed, options.all);
         if (sections.length === 0) return false;
 
         const wrapper = document.createElement('div');

@@ -9097,7 +9097,11 @@ function renderVideos(videos) {
     // Pàgina principal (Novetats): seccions horitzontals en lloc de la graella plana
     if (
         selectedCategory === 'Novetats' &&
-        SegueixApp.features.homeSections?.render(videosGrid, normal, { feed: currentFeedData, prepend: shortsSection })
+        SegueixApp.features.homeSections?.render(videosGrid, normal, {
+            feed: currentFeedData,
+            all: currentFeedVideos,
+            prepend: shortsSection,
+        })
     ) {
         if (_batchRenderAbort) _batchRenderAbort.aborted = true;
         refreshIcons(videosGrid);
