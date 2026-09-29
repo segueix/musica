@@ -515,7 +515,23 @@ function setYouTubePremiumPreference(enabled) {
     localStorage.setItem(YOUTUBE_PREMIUM_STORAGE_KEY, String(Boolean(enabled)));
 }
 
+function initCaptionsToggle() {
+    const toggle = document.getElementById('captionsCaToggle');
+    if (!toggle) return;
+    toggle.checked = isCatalanCaptionsEnabled();
+    if (toggle.dataset.bound === 'true') return;
+    toggle.dataset.bound = 'true';
+    toggle.addEventListener('change', () => {
+        try {
+            localStorage.setItem(CAPTIONS_CA_STORAGE_KEY, String(toggle.checked));
+        } catch (error) {
+            // Sense emmagatzematge: l'opció només val per aquesta sessió
+        }
+    });
+}
+
 function syncYouTubePremiumToggle() {
+    initCaptionsToggle();
     const premiumToggle = document.getElementById('youtubePremiumToggle');
     if (!premiumToggle) return;
     premiumToggle.checked = getYouTubePremiumPreference();
@@ -11134,6 +11150,18 @@ function addAutoplayParam(url) {
         const separator = newUrl.includes('?') ? '&' : '?';
         newUrl = `${newUrl}${separator}enablejsapi=1&origin=${origin}`;
     }
+    // Llengua catalana (interfície i subtítols) també per als vídeos estàtics
+    const langParams = {
+        hl: YouTubeAPI?.language || 'ca',
+        cc_lang_pref: YouTubeAPI?.language || 'ca',
+        cc_load_policy: isCatalanCaptionsEnabled() ? '1' : '0',
+        gl: YouTubeAPI?.regionCode || 'AD',
+    };
+    Object.entries(langParams).forEach(([key, value]) => {
+        if (!new RegExp(`[?&]${key}=`).test(newUrl)) {
+            newUrl += `${newUrl.includes('?') ? '&' : '?'}${key}=${encodeURIComponent(value)}`;
+        }
+    });
     if (!newUrl.includes('playsinline=1')) {
         const separator = newUrl.includes('?') ? '&' : '?';
         newUrl = `${newUrl}${separator}playsinline=1`;

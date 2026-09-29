@@ -250,6 +250,9 @@ async function main(){
         genres:meta.genres,
         sourceChannelId:id,
         liveBroadcastContent:vs.liveBroadcastContent||'none',
+        // Llengua declarada pel canal: confirmació positiva per a scripts/depurar_videos_catala.js
+        defaultAudioLanguage:vs.defaultAudioLanguage||'',
+        defaultLanguage:vs.defaultLanguage||'',
         contentType:classification.contentType,
         musicConfidence:classification.confidence,
         musicReason:classification.reason

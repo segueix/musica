@@ -222,6 +222,15 @@ function getYouTubeEmbedBaseUrl() {
     return isYouTubePremiumEnabled() ? 'https://www.youtube.com/embed/' : 'https://www.youtube-nocookie.com/embed/';
 }
 
+// Subtítols en català per defecte (opció de Configuració). Només es veuen si el vídeo en té.
+function isCatalanCaptionsEnabled() {
+    try {
+        return localStorage.getItem(CAPTIONS_CA_STORAGE_KEY) === 'true';
+    } catch (error) {
+        return false;
+    }
+}
+
 function applyYouTubeIframePolicy(iframe) {
     if (!iframe) return;
 
@@ -240,7 +249,7 @@ function buildYoutubeEmbedUrl(videoId, { startAt = 0 } = {}) {
         origin: window.location.origin || '',
         hl: YouTubeAPI?.language || 'ca',
         cc_lang_pref: YouTubeAPI?.language || 'ca',
-        cc_load_policy: '0',
+        cc_load_policy: isCatalanCaptionsEnabled() ? '1' : '0',
         gl: YouTubeAPI?.regionCode || 'AD'
     });
 
