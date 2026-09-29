@@ -370,6 +370,16 @@ La finestreta flotant en fer scroll cap avall es manté tal com era: és el comp
 
 **Fitxers Afectats:** `js/app.js`, `js/features/music-queue.js`, `css/styles.css`, `sw.js`.
 
+## [2026-09-29] - Cançons amb títol en castellà al feed
+
+**Símptoma:** Apareixien cançons amb títol en castellà (MARLENA, Ceaxe, Umpah Pah, les actuacions de Serrat a TVE, etc.).
+
+**Causa Arrel:** El feed musical (`update_music_feed.js`) no aplica cap filtre d'idioma; el depurador antic (`scripts/depurar_videos_catala.js`) mira també la **descripció** i marca com a castellà títols catalans (Pau Riba, Guillem Ramisa, Cesk Freixas...: 60 marcats, la majoria falsos positius), per això no es pot fer servir sense revisió.
+
+**Solució Implementada:** Es van revisar a mà els 1.458 títols de cançons i `scripts/ocultar_titols_castella.js` (regles per canal, idempotent, `--dry-run`) n'afegeix 97 IDs a `data/hidden-videos.json`. El client ja el respecta a tot (feed, arxiu, cerques, ràdio) i `update_music_feed.js` ara també descarta els IDs ocults en regenerar el feed. **No s'ha tocat `feed.json`** (generat pel bot). Criteri: es conserven els títols catalans encara que l'artista sigui castellanoparlant o el títol tingui paraules compartides (p. ex. «Per al Meu Amic (Concierto…)» de Serrat, «AQUELLA NIT» de Ceaxe, els de miquel en català). Per ocultar-ne de nous, afegeix la regla a `REGLES` i executa el script.
+
+**Fitxers Afectats:** `scripts/ocultar_titols_castella.js`, `scripts/update_music_feed.js`, `data/hidden-videos.json`, `tests/ocultar-titols-castella.test.js`.
+
 ## [2026-07-11] - Filera d'icones del header visible en obrir un vídeo al mòbil
 
 **Símptoma:** Al mòbil, en clicar un vídeo del feed i obrir-se la pàgina del reproductor, la filera d'icones del header (Inici, Biblioteca, Historial, Segueix...) es mostrava a sobre del reproductor, ocupant espai vertical útil mentre l'usuari volia veure el vídeo.
