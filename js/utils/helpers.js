@@ -81,32 +81,48 @@ function addLongPressOrDblClick(element, callback) {
     let pressTimer = null;
     let didLongPress = false;
 
-    element.addEventListener('dblclick', (e) => {
+    element.addEventListener('dblclick', e => {
         e.preventDefault();
         e.stopPropagation();
         callback(e);
     });
 
-    element.addEventListener('touchstart', (e) => {
-        didLongPress = false;
-        pressTimer = setTimeout(() => {
-            didLongPress = true;
-            if (navigator.vibrate) navigator.vibrate(30);
-            callback(e);
-        }, 500);
-    }, { passive: true });
+    element.addEventListener(
+        'touchstart',
+        e => {
+            didLongPress = false;
+            pressTimer = setTimeout(() => {
+                didLongPress = true;
+                if (navigator.vibrate) navigator.vibrate(30);
+                callback(e);
+            }, 500);
+        },
+        { passive: true }
+    );
 
-    element.addEventListener('touchend', () => {
-        clearTimeout(pressTimer);
-    }, { passive: true });
+    element.addEventListener(
+        'touchend',
+        () => {
+            clearTimeout(pressTimer);
+        },
+        { passive: true }
+    );
 
-    element.addEventListener('touchmove', () => {
-        clearTimeout(pressTimer);
-    }, { passive: true });
+    element.addEventListener(
+        'touchmove',
+        () => {
+            clearTimeout(pressTimer);
+        },
+        { passive: true }
+    );
 
-    element.addEventListener('touchcancel', () => {
-        clearTimeout(pressTimer);
-    }, { passive: true });
+    element.addEventListener(
+        'touchcancel',
+        () => {
+            clearTimeout(pressTimer);
+        },
+        { passive: true }
+    );
 }
 
 // Evita esborrats accidentals: calen 3 tocs/clics seguits per confirmar eliminació
@@ -132,7 +148,7 @@ function addTripleTapDeleteGuard(element, callback, options = {}) {
         }
     };
 
-    const onTap = (event) => {
+    const onTap = event => {
         const now = Date.now();
         if (now - lastTapTs > intervalMs) {
             tapCount = 0;
@@ -205,13 +221,15 @@ function buildArchiveThumbnail(videoId) {
 }
 
 function getPreferredThumbnail(video) {
-    return video.thumbnail
-        || video.snippet?.thumbnails?.maxres?.url
-        || video.snippet?.thumbnails?.standard?.url
-        || video.snippet?.thumbnails?.high?.url
-        || video.snippet?.thumbnails?.medium?.url
-        || video.snippet?.thumbnails?.default?.url
-        || '';
+    return (
+        video.thumbnail ||
+        video.snippet?.thumbnails?.maxres?.url ||
+        video.snippet?.thumbnails?.standard?.url ||
+        video.snippet?.thumbnails?.high?.url ||
+        video.snippet?.thumbnails?.medium?.url ||
+        video.snippet?.thumbnails?.default?.url ||
+        ''
+    );
 }
 
 function isYouTubePremiumEnabled() {
@@ -250,7 +268,7 @@ function buildYoutubeEmbedUrl(videoId, { startAt = 0 } = {}) {
         hl: YouTubeAPI?.language || 'ca',
         cc_lang_pref: YouTubeAPI?.language || 'ca',
         cc_load_policy: isCatalanCaptionsEnabled() ? '1' : '0',
-        gl: YouTubeAPI?.regionCode || 'AD'
+        gl: YouTubeAPI?.regionCode || 'AD',
     });
 
     if (safeStartAt > 0) {
@@ -272,7 +290,7 @@ function refreshIcons(el) {
 // ==================== BATCH RENDERING ====================
 // Renderitza elements en lots per no bloquejar el main thread
 const BATCH_INITIAL = 12; // Primeres targetes visibles immediatament
-const BATCH_SIZE = 20;    // Lot incremental
+const BATCH_SIZE = 20; // Lot incremental
 const FEED_PAGE_SIZE = 32; // Màxim de targetes visibles abans de "Mostra'n més"
 
 let _batchRenderAbort = null;
@@ -320,9 +338,7 @@ function batchRenderCards(container, items, createCardFn, options = {}) {
                 loading = true;
                 sentinel.remove();
 
-                const fragment = document.createRange().createContextualFragment(
-                    next.map(createCardFn).join('')
-                );
+                const fragment = document.createRange().createContextualFragment(next.map(createCardFn).join(''));
                 container.appendChild(fragment);
                 totalLoaded += next.length;
 
@@ -334,11 +350,14 @@ function batchRenderCards(container, items, createCardFn, options = {}) {
                 } else {
                     observer.disconnect();
                 }
-            }
+            };
 
-            const observer = new IntersectionObserver((entries) => {
-                if (entries[0].isIntersecting) loadMore();
-            }, { rootMargin: '0px 0px 400px 0px' });
+            const observer = new IntersectionObserver(
+                entries => {
+                    if (entries[0].isIntersecting) loadMore();
+                },
+                { rootMargin: '0px 0px 400px 0px' }
+            );
 
             observer.observe(sentinel);
         }
@@ -359,9 +378,7 @@ function batchRenderCards(container, items, createCardFn, options = {}) {
             finishBatch();
             return;
         }
-        const fragment = document.createRange().createContextualFragment(
-            batch.map(createCardFn).join('')
-        );
+        const fragment = document.createRange().createContextualFragment(batch.map(createCardFn).join(''));
         container.appendChild(fragment);
         offset += BATCH_SIZE;
         if (offset < rest.length) {
@@ -388,7 +405,9 @@ function batchRenderCards(container, items, createCardFn, options = {}) {
 // Clau d'artista d'un vídeo: el canal (grup) que el publica.
 function getVideoArtistKey(video) {
     const key = video?.channelId || video?.snippet?.channelId || video?.channelTitle || video?.snippet?.channelTitle;
-    return String(key || '').trim().toLowerCase();
+    return String(key || '')
+        .trim()
+        .toLowerCase();
 }
 
 // Reordena la llista perquè no hi hagi dos vídeos seguits del mateix artista.
@@ -399,22 +418,38 @@ function getVideoArtistKey(video) {
 function spreadVideosByArtist(videos, { previousArtist = '', window: lookahead = 60 } = {}) {
     if (!Array.isArray(videos) || videos.length < 2) return Array.isArray(videos) ? videos : [];
     const remaining = videos.slice();
+    const counts = new Map();
+    remaining.forEach(video => {
+        const key = getVideoArtistKey(video);
+        counts.set(key, (counts.get(key) || 0) + 1);
+    });
     const result = [];
-    let last = String(previousArtist || '').trim().toLowerCase();
+    let last = String(previousArtist || '')
+        .trim()
+        .toLowerCase();
     while (remaining.length > 0) {
-        const limit = Math.min(remaining.length, lookahead);
+        // Un artista amb més de la meitat del que queda s'ha de col·locar ara (si no, acabaria enganxat).
+        let forced = null;
+        counts.forEach((count, key) => {
+            if (key && key !== last && count * 2 > remaining.length) forced = key;
+        });
         let pick = -1;
-        for (let i = 0; i < limit; i++) {
-            const key = getVideoArtistKey(remaining[i]);
-            if (!key || key !== last) {
-                pick = i;
-                break;
+        if (forced) pick = remaining.findIndex(video => getVideoArtistKey(video) === forced);
+        if (pick < 0) {
+            const limit = Math.min(remaining.length, lookahead);
+            for (let i = 0; i < limit; i++) {
+                const key = getVideoArtistKey(remaining[i]);
+                if (!key || key !== last) {
+                    pick = i;
+                    break;
+                }
             }
         }
         if (pick < 0) pick = 0;
         const [item] = remaining.splice(pick, 1);
         result.push(item);
         last = getVideoArtistKey(item);
+        counts.set(last, counts.get(last) - 1);
     }
     return result;
 }

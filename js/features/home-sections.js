@@ -26,8 +26,10 @@
         'Jazz / Blues',
     ];
 
-    const ARROW_LEFT = '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="m15 6-6 6 6 6"/></svg>';
-    const ARROW_RIGHT = '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="m9 6 6 6-6 6"/></svg>';
+    const ARROW_LEFT =
+        '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="m15 6-6 6 6 6"/></svg>';
+    const ARROW_RIGHT =
+        '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="m9 6 6 6-6 6"/></svg>';
 
     function escapeText(value) {
         const div = document.createElement('div');
@@ -60,16 +62,23 @@
         return new Date(video?.publishedAt || video?.uploadDate || 0).getTime() || 0;
     }
 
-    // Intercala canals perquè una fila no la copi un sol creador.
-    function limitPerChannel(videos, maxPerChannel) {
-        const counts = new Map();
-        return videos.filter(video => {
-            const key = String(video.channelId || '');
-            const count = counts.get(key) || 0;
-            if (count >= maxPerChannel) return false;
-            counts.set(key, count + 1);
-            return true;
+    // Fila amb varietat: primer el vídeo més bo (el primer de la llista, ja ordenada per
+    // actualitat o popularitat) de CADA artista, perquè tots tinguin oportunitat. Només si la
+    // fila no s'omple es repeteix algun artista, i mai dos seguits.
+    function pickVarietyRow(videos, size) {
+        const seen = new Set();
+        const firsts = [];
+        const rest = [];
+        videos.forEach(video => {
+            const key = getVideoArtistKey(video);
+            if (key && seen.has(key)) {
+                rest.push(video);
+            } else {
+                if (key) seen.add(key);
+                firsts.push(video);
+            }
         });
+        return spreadVideosByArtist([...firsts, ...rest].slice(0, size));
     }
 
     function buildStyleRow(videos, feed, category) {
@@ -85,7 +94,7 @@
             const cats = channels.get(video.channelId) || [];
             return wanted.some(name => cats.includes(name));
         });
-        return limitPerChannel(matches, 2).slice(0, ROW_SIZE);
+        return pickVarietyRow(matches, ROW_SIZE);
     }
 
     // Estils que l'usuari més escolta: historial (1 punt) i M'agrada (2 punts), via categories del canal.
@@ -142,23 +151,23 @@
         const byDate = [...videos].sort((a, b) => timestampOf(b) - timestampOf(a));
         const sections = [];
 
-        const latest = limitPerChannel(byDate, 2).slice(0, ROW_SIZE);
+        const latest = pickVarietyRow(byDate, ROW_SIZE);
         if (latest.length >= MIN_ROW_ITEMS) {
             sections.push({ title: 'Últimes novetats', videos: latest });
         }
 
-        const clips = limitPerChannel(stylePool.filter(isOfficialClip), 2).slice(0, ROW_SIZE);
+        const clips = pickVarietyRow(stylePool.filter(isOfficialClip), ROW_SIZE);
         if (clips.length >= MIN_ROW_ITEMS) {
             sections.push({ title: 'Videoclips oficials', subtitle: 'Només videoclips dels artistes', videos: clips });
         }
 
         const cutoff = Date.now() - POPULAR_WINDOW_DAYS * 24 * 60 * 60 * 1000;
-        const popular = limitPerChannel(
+        const popular = pickVarietyRow(
             byDate
                 .filter(video => timestampOf(video) >= cutoff)
                 .sort((a, b) => Number(b.viewCount || b.views || 0) - Number(a.viewCount || a.views || 0)),
-            2
-        ).slice(0, ROW_SIZE);
+            ROW_SIZE
+        );
         if (popular.length >= MIN_ROW_ITEMS) {
             sections.push({ title: 'El més escoltat', subtitle: 'Últimes setmanes', videos: popular });
         }
@@ -256,7 +265,9 @@
 
         const wrapper = document.createElement('div');
         wrapper.className = 'home-sections';
-        wrapper.innerHTML = sections.map((section, index) => renderSection(section, index, createVideoCardAPI)).join('');
+        wrapper.innerHTML = sections
+            .map((section, index) => renderSection(section, index, createVideoCardAPI))
+            .join('');
         bindControls(wrapper);
 
         container.innerHTML = options.prepend || '';
