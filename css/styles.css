@@ -8231,3 +8231,308 @@ body {
     text-decoration: underline;
     text-underline-offset: 3px;
 }
+
+/* ========== REDISSENY MÚSICA (estil YouTube Music / Spotify) ========== */
+:root {
+    --color-background: #121212;
+    --color-surface: #181818;
+    --color-surface-border: #2a2a2a;
+    --color-surface-button: #242424;
+    --color-button-accent: #2a2a2a;
+    --music-accent: #1ed760;
+    --music-card: #181818;
+    --music-card-hover: #282828;
+}
+
+/* Capçalera i cerca */
+.app-header {
+    background: rgba(18, 18, 18, 0.92);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+}
+
+.brand-name {
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+.search-input {
+    background: #242424;
+    border-color: transparent;
+    padding: 12px 18px;
+}
+
+.search-input:hover {
+    background: #2a2a2a;
+}
+
+.search-input:focus {
+    background: #2a2a2a;
+    border-color: #ffffff;
+}
+
+.icon-btn {
+    border-radius: 999px;
+    background: transparent;
+}
+
+.icon-btn:hover {
+    background: #2a2a2a;
+    filter: none;
+}
+
+.icon-btn.active {
+    background: #2a2a2a;
+    color: var(--music-accent);
+}
+
+/* Xips d'estils */
+.chips-bar {
+    border-bottom: 0;
+    gap: 8px;
+    background: rgba(18, 18, 18, 0.92);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+}
+
+.chip {
+    min-height: 36px;
+    padding: 6px 16px;
+    background: #2a2a2a;
+    opacity: 1;
+    font-weight: 600;
+    transition:
+        background 0.15s ease,
+        color 0.15s ease;
+}
+
+.home-categories .chip:not(.is-active) {
+    opacity: 1;
+    color: #ffffff;
+}
+
+.chip:hover,
+.home-categories .chip:hover {
+    background: #3a3a3a;
+    color: #ffffff;
+}
+
+.chip.is-active,
+.home-categories .chip.is-active {
+    background: #ffffff;
+    color: #121212;
+}
+
+/* Pàgina principal */
+#homePage .page-title {
+    font-size: 1.75rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin: 8px 0 16px;
+}
+
+/* Hero */
+#homePage .hero {
+    position: relative;
+    padding: 24px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #3a3a3a 0%, #232323 45%, #181818 100%);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    overflow: hidden;
+}
+
+#homePage .hero-eyebrow {
+    color: var(--music-accent);
+    letter-spacing: 0.14em;
+}
+
+#homePage .hero-title {
+    font-size: clamp(1.4rem, 3.2vw, 2.4rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+#homePage .hero-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 28px;
+    background: var(--music-accent);
+    color: #000000;
+    font-weight: 700;
+    transition:
+        transform 0.15s ease,
+        background 0.15s ease;
+}
+
+#homePage .hero-button::before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 10px solid #000000;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+}
+
+#homePage .hero-button:hover {
+    background: #3be477;
+    transform: scale(1.04);
+}
+
+#homePage .hero-channel {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #b3b3b3;
+}
+
+#homePage .hero-thumbnail {
+    border-radius: 8px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.55);
+}
+
+/* Targetes de vídeo tipus Spotify */
+#homePage .video-card {
+    background: var(--music-card);
+    padding: 12px;
+    border-radius: 8px;
+    transition: background 0.2s ease;
+}
+
+#homePage .video-card:hover {
+    background: var(--music-card-hover);
+}
+
+#homePage .video-thumbnail {
+    border-radius: 6px;
+    margin-bottom: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+}
+
+/* El ::after passa a ser el botó de reproducció verd que apareix en fer hover */
+#homePage .video-thumbnail::after {
+    content: '';
+    top: auto;
+    left: auto;
+    right: 10px;
+    bottom: 10px;
+    width: 44px;
+    height: 44px;
+    transform: translateY(8px);
+    border-radius: 50%;
+    background: var(--music-accent)
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M8 5.5v13l11-6.5z'/%3E%3C/svg%3E")
+        center / 22px no-repeat;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    z-index: 4;
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+}
+
+@media (hover: hover) {
+    #homePage .video-card:hover .video-thumbnail::after {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    #homePage .video-card:hover .video-thumbnail img {
+        transform: none;
+    }
+}
+
+#homePage .video-duration-badge {
+    bottom: auto;
+    top: 8px;
+    right: 8px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 999px;
+    padding: 4px 8px;
+}
+
+#homePage .video-card .channel-avatar {
+    display: none;
+}
+
+#homePage .video-card-title {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+#homePage .video-metadata,
+#homePage .channel-name,
+#homePage .video-stats {
+    color: #b3b3b3;
+    font-size: 0.8125rem;
+}
+
+#homePage .channel-name:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+#homePage .video-action-btn {
+    border: 0;
+    background: transparent;
+    color: #b3b3b3;
+}
+
+#homePage .video-action-btn:hover {
+    background: transparent;
+    color: #ffffff;
+}
+
+/* Mòbil: llista horitzontal com YouTube Music */
+@media (max-width: 768px) {
+    #homePage .hero {
+        grid-template-columns: 1fr;
+        padding: 16px;
+    }
+
+    #homePage .hero-thumbnail {
+        order: -1;
+    }
+
+    #homePage .videos-grid {
+        gap: 4px;
+    }
+
+    #homePage .video-card {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 8px;
+        background: transparent;
+    }
+
+    #homePage .video-card:hover {
+        background: transparent;
+    }
+
+    #homePage .video-card .video-thumbnail {
+        flex: 0 0 132px;
+        width: 132px;
+        padding-bottom: 74px;
+        margin-bottom: 0;
+        box-shadow: none;
+    }
+
+    #homePage .video-card .video-thumbnail::after {
+        display: none;
+    }
+
+    #homePage .video-card .video-details {
+        flex: 1;
+        min-width: 0;
+    }
+
+    #homePage .video-card-title {
+        font-size: 0.9375rem;
+    }
+}

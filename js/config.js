@@ -36,7 +36,7 @@ const CONFIG = {
     theme: {
         primaryColor: "#FF0000",
         secondaryColor: "#282828",
-        backgroundColor: "#333333",
+        backgroundColor: "#121212",
         textColor: "#FFFFFF"
     },
     

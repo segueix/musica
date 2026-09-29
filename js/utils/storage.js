@@ -147,6 +147,7 @@ removeLegacyMusicCategories();
 const BACKGROUND_STORAGE_KEY = 'catube_background_color';
 const FONT_SIZE_STORAGE_KEY = 'catube_font_size';
 const BACKGROUND_COLORS = [
+    '#121212',
     '#333333',
     '#3d3d3d',
     '#224262',
@@ -157,6 +158,7 @@ const BACKGROUND_COLORS = [
 
 const BUTTON_COLOR_STORAGE_KEY = 'catube_button_color';
 const BUTTON_COLORS = [
+    '#2A2A2A',
     '#9B72CF',
     '#4A90D9',
     '#2ECC8F',
