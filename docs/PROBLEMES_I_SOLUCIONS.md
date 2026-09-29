@@ -280,6 +280,16 @@ La finestreta flotant en fer scroll cap avall es manté tal com era: és el comp
 
 **Fitxers Afectats:** `data/artistes-musica.json`, `data/youtube-verified-handles.json`, `scripts/resoldre_canals_verificats.js`.
 
+## [2026-09-29] - Obrir la ràdio a YouTube Music amb el mateix ordre
+
+**Canvi:** Botó **«YouTube Music»** al capçal de la ràdio (`music-queue.js`). Genera `https://music.youtube.com/watch_videos?video_ids=ID1,ID2,...` amb la cua actual (des de la cançó que sona fins al final, mateix ordre que la llista, arrossegaments inclosos; màx. 50 IDs) i l'obre en pestanya nova. YouTube crea una cua temporal (no queda desada al compte).
+
+**Trampa evitada:** `window.open(url, '_blank', 'noopener')` retorna sempre `null`, de manera que un fallback `if (!opened) location.href = url` navegava també l'app. S'usa un `<a target="_blank" rel="noopener">` temporal dins del gest de l'usuari.
+
+**Pendent de verificar en real:** no hem pogut provar que `music.youtube.com/watch_videos` (en lloc de `www.youtube.com/watch_videos`) conservi l'ordre; per canviar d'host només cal tocar `YTM_QUEUE_URL`.
+
+**Fitxers Afectats:** `js/features/music-queue.js`, `css/styles.css`, `tests/music-queue-ytm.test.js`, `sw.js`.
+
 ## [2026-07-11] - Filera d'icones del header visible en obrir un vídeo al mòbil
 
 **Símptoma:** Al mòbil, en clicar un vídeo del feed i obrir-se la pàgina del reproductor, la filera d'icones del header (Inici, Biblioteca, Historial, Segueix...) es mostrava a sobre del reproductor, ocupant espai vertical útil mentre l'usuari volia veure el vídeo.
