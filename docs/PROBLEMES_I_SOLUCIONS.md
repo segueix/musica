@@ -350,6 +350,16 @@ La finestreta flotant en fer scroll cap avall es manté tal com era: és el comp
 
 **Fitxers Afectats:** `js/features/music-queue.js`, `js/features/home-sections.js`, `sw.js`.
 
+## [2026-09-29] - Escriptori: la finestra de la ràdio sobrepassava els botons del canal
+
+**Símptoma:** Amb el reproductor obert a escriptori, el panell de la ràdio (a la dreta) baixava més enllà de l'última fila de botons de l'esquerra (Canal YouTube, comentaris...).
+
+**Causa Arrel:** `#playlistQueueContainer` s'estenia sobre **5** files de la graella de `.watch-main`, però la 5a la ocupa la capçalera «Altres vídeos relacionats» (o el panell de programació de TV), i a més tenia una alçada pròpia (`max-height: 100vh - …`). Quedava 89 px més llarga, i 24 px més pel `margin-bottom` de `.channel-info`.
+
+**Solució Implementada:** `css/styles.css` (escriptori, ≥1025 px): la cua abasta **4 files** (`grid-row: 1 / span 4`; 5 només si el panell de TV és visible), `align-self: stretch` + `contain: size` perquè no aporti alçada pròpia i s'estiri a l'àrea de la columna de l'esquerra, `margin-bottom: 24px` (= el de `.channel-info`) i `overflow-y: auto` amb el capçal de la ràdio enganxat a dalt (`position: sticky`). La capçalera de relacionats passa a ocupar les dues columnes (`.extra-related-header`). Mesurat en Chromium a 1100/1200/1440/1920 px: diferència 0 px entre el final de la cua i el del bloc del canal.
+
+**Fitxers Afectats:** `css/styles.css`, `sw.js`.
+
 ## [2026-07-11] - Filera d'icones del header visible en obrir un vídeo al mòbil
 
 **Símptoma:** Al mòbil, en clicar un vídeo del feed i obrir-se la pàgina del reproductor, la filera d'icones del header (Inici, Biblioteca, Historial, Segueix...) es mostrava a sobre del reproductor, ocupant espai vertical útil mentre l'usuari volia veure el vídeo.

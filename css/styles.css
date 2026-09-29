@@ -9219,13 +9219,39 @@ body {
 
     #watchPage .watch-main > #playlistQueueContainer {
         grid-column: 2;
-        grid-row: 1 / span 5;
+        /* 4 files: reproductor, títol, controls i canal (la 5a és el panell de programació de TV
+           o la capçalera dels relacionats, que han de quedar per sota) */
+        grid-row: 1 / span 4;
         margin-top: 0;
-        max-height: calc(100vh - var(--header-height) - 48px);
+        /* = margin-bottom de .channel-info: la cua acaba on acaben els botons, no el marge */
+        margin-bottom: 24px;
+        /* La cua/ràdio arriba just fins on acaba la columna de l'esquerra (botons del canal):
+           amb contain:size no aporta alçada pròpia a les files, s'estira a l'àrea que ocupen
+           el reproductor, el títol, els controls i el canal, i la llista fa scroll a dins. */
+        align-self: stretch;
+        contain: size;
         overflow-y: auto;
+        overscroll-behavior: contain;
+    }
+
+    /* El capçal de la ràdio (Obre a YouTube / Barreja) es queda fix mentre es fa scroll de la llista */
+    #watchPage .watch-main > #playlistQueueContainer .mq-head {
+        position: sticky;
+        top: 0;
+        z-index: 2;
+        margin: -8px -8px 0;
+        padding: 12px 16px 8px;
+        background: #181818;
+        border-radius: 12px 12px 0 0;
+    }
+
+    /* Amb el panell de programació de TV visible, la cua també l'abasta */
+    #watchPage .watch-main:has(> .tv-programming-panel:not(.hidden)) > #playlistQueueContainer {
+        grid-row: 1 / span 5;
     }
 
     #watchPage .watch-main > .extra-related-title,
+    #watchPage .watch-main > .extra-related-header,
     #watchPage .watch-main > .extra-videos-grid {
         grid-column: 1 / -1;
     }
