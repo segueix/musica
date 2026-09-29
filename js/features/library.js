@@ -28,6 +28,7 @@
 
     function savePlaylists(playlists) {
         localStorage.setItem(runtime.playlistStorageKey, JSON.stringify(playlists));
+        window.dispatchEvent(new CustomEvent('segueix:playlists-changed'));
     }
 
     function getPlaylistVideoData(video) {

@@ -16,7 +16,7 @@
 // migrant els clients automàticament.
 
 // === AUTO-GENERAT per scripts/actualitzar_versio_sw.js — NO EDITAR MANUALMENT ===
-const CACHE_VERSION = 'e7df23391af0';
+const CACHE_VERSION = 'd78efd61b608';
 const STATIC_ASSETS = [
     './',
     './index.html',
@@ -51,6 +51,7 @@ const STATIC_ASSETS = [
     './js/features/home-sections.js',
     './js/features/category-selector.js',
     './js/features/music-queue.js',
+    './js/features/home-playlists.js',
     './js/features/shared-playlists.js',
     './js/features/config-sync.js',
     './js/features/analytics.js',
