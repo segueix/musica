@@ -270,6 +270,16 @@ La finestreta flotant en fer scroll cap avall es manté tal com era: és el comp
 
 **Fitxers Afectats:** `data/noms-canals.json`, `scripts/lib/nom_canal.js`, `scripts/update_music_feed.js`, `scripts/corregir_noms_canals.js`, `.github/workflows/actualitzar-feed-musica.yml`, `data/feed.json`, `js/channels-ca.json`, `tests/nom-canal.test.js`.
 
+## [2026-09-29] - Alta de 16 artistes de cançó d'autor / Nova Cançó amb els seus canals
+
+**Canvi:** Afegits/actualitzats a `data/artistes-musica.json` (gènere manual `genre:manual` = «Cançó d'autor»; «Nova Cançó» i «Galàctic» es recullen a `notes`, no són gèneres de la taxonomia; Pau Riba també «Rock») i a `data/youtube-verified-handles.json`. Molts ja existien amb el nom llarg (Lluís Llach **i Grande**, Jaume Sisa **i Mestres**, Ovidi Montllor **i Mengual**, Pau Riba **i Romeva**, Roger Mas **i Solé**): el resolutor emparella per nom exacte, així que s'ha usat el nom de la BD. Amb ID (`UC...`) s'han escrit directament; amb handle queden pendents de resoldre l'ID amb l'API.
+
+**Resolutor:** `scripts/resoldre_canals_verificats.js` abans saltava qualsevol artista que ja tingués un ID vàlid, de manera que un ID erroni no es corregia mai. Ara un canal es considera resolt només si coincideix amb l'ID indicat o amb el handle indicat; si no, es torna a resoldre i es substitueix (cas de Lluís Llach: `UCqkZBX…` → `UCRorZV…`; Marina Rossell i Cesk Freixas es validen per handle).
+
+**Després de l'alta:** el workflow «Cercar canals YouTube» resol els handles (s'executa en fer push del fitxer de handles). Com que aquest commit el fa el bot amb `GITHUB_TOKEN`, **cal executar manualment «Actualitzar feed musical»** perquè el feed incorpori els vídeos.
+
+**Fitxers Afectats:** `data/artistes-musica.json`, `data/youtube-verified-handles.json`, `scripts/resoldre_canals_verificats.js`.
+
 ## [2026-07-11] - Filera d'icones del header visible en obrir un vídeo al mòbil
 
 **Símptoma:** Al mòbil, en clicar un vídeo del feed i obrir-se la pàgina del reproductor, la filera d'icones del header (Inici, Biblioteca, Historial, Segueix...) es mostrava a sobre del reproductor, ocupant espai vertical útil mentre l'usuari volia veure el vídeo.

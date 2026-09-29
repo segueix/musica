@@ -2345,7 +2345,6 @@
       "name": "Cesk Freixas",
       "aliases": [],
       "genres": [
-        "Folk i arrel",
         "Cançó d'autor"
       ],
       "territories": [],
@@ -2371,7 +2370,9 @@
       "sources": [
         "https://www.wikidata.org/wiki/Q2947051",
         "wikidata:languages-spoken-catalan",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "genre:manual",
+        "youtube:manual-verified"
       ],
       "lastChecked": "2026-09-25T15:44:05.402Z",
       "notes": "",
@@ -6404,8 +6405,7 @@
       "name": "Jaume Sisa i Mestres",
       "aliases": [],
       "genres": [
-        "Rock",
-        "Folk i arrel"
+        "Cançó d'autor"
       ],
       "territories": [],
       "languages": [
@@ -6414,7 +6414,15 @@
       "wikidataId": "Q3110913",
       "musicbrainzId": "ec68cb5d-8dad-4804-b637-9634567eb136",
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCr9ukjgwk2JtABN23sPiPGQ",
+            "handle": null,
+            "name": null,
+            "type": "official",
+            "primary": true
+          }
+        ],
         "candidates": [],
         "searchCandidates": [
           {
@@ -6439,10 +6447,12 @@
       "sources": [
         "https://www.wikidata.org/wiki/Q3110913",
         "wikidata:languages-spoken-catalan",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "genre:manual",
+        "youtube:manual-verified"
       ],
       "lastChecked": "2026-09-25T15:54:53.779Z",
-      "notes": "",
+      "notes": "Jaume Sisa. Cançó d'autor / Galàctic.",
       "enrichment": {
         "musicbrainz": {
           "checkedAt": "2026-09-25T15:54:53.779Z",
@@ -9537,7 +9547,7 @@
       "youtube": {
         "channels": [
           {
-            "id": "UCqkZBXlCnTsfff_xxEyaTMA",
+            "id": "UCRorZVV2oAZON-OvXaQQD2g",
             "handle": null,
             "name": null,
             "type": "official",
@@ -9553,10 +9563,12 @@
         "wikidata:languages-spoken-catalan",
         "wikidata:native-language-catalan",
         "wikidata:performed-catalan-work",
-        "wikidata:native-language-catalan-musician"
+        "wikidata:native-language-catalan-musician",
+        "genre:manual",
+        "youtube:manual-verified"
       ],
       "lastChecked": "2026-09-25T15:47:57.997Z",
-      "notes": "",
+      "notes": "Lluís Llach. Nova Cançó.",
       "genresRaw": [
         "cançó protesta"
       ],
@@ -10627,7 +10639,6 @@
       "name": "Maria del Mar Bonet",
       "aliases": [],
       "genres": [
-        "Folk i arrel",
         "Cançó d'autor"
       ],
       "territories": [],
@@ -10694,10 +10705,12 @@
       "sources": [
         "https://www.wikidata.org/wiki/Q237042",
         "wikidata:languages-spoken-catalan",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "genre:manual",
+        "youtube:manual-verified"
       ],
       "lastChecked": "2026-09-25T15:55:37.273Z",
-      "notes": "",
+      "notes": "Nova Cançó.",
       "enrichment": {
         "musicbrainz": {
           "checkedAt": "2026-09-25T15:55:37.273Z",
@@ -10940,7 +10953,9 @@
     {
       "name": "Marina Rossell",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Cançó d'autor"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -10964,7 +10979,9 @@
       "sources": [
         "https://www.wikidata.org/wiki/Q452094",
         "wikidata:languages-spoken-catalan",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "genre:manual",
+        "youtube:manual-verified"
       ],
       "lastChecked": "2026-09-25T15:44:05.402Z",
       "notes": "",
@@ -12946,7 +12963,15 @@
       "wikidataId": "Q2734296",
       "musicbrainzId": "f0eb59b3-e3c4-4cb7-92d2-5efeba3edb1c",
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UC4Ub0k-i6pWS76AUXOBf_6w",
+            "handle": null,
+            "name": null,
+            "type": "official",
+            "primary": true
+          }
+        ],
         "candidates": [],
         "searchCandidates": [
           {
@@ -12997,10 +13022,12 @@
       "sources": [
         "https://www.wikidata.org/wiki/Q2734296",
         "wikidata:languages-spoken-catalan",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "genre:manual",
+        "youtube:manual-verified"
       ],
       "lastChecked": "2026-09-25T15:56:04.220Z",
-      "notes": "",
+      "notes": "Ovidi Montllor. Nova Cançó.",
       "enrichment": {
         "musicbrainz": {
           "checkedAt": "2026-09-25T15:56:04.220Z",
@@ -13340,10 +13367,8 @@
       "name": "Pau Riba i Romeva",
       "aliases": [],
       "genres": [
-        "Pop",
-        "Rock",
-        "Folk i arrel",
-        "Cançó d'autor"
+        "Cançó d'autor",
+        "Rock"
       ],
       "territories": [],
       "languages": [
@@ -13368,10 +13393,12 @@
       "sources": [
         "https://www.wikidata.org/wiki/Q9056991",
         "wikidata:performed-catalan-work",
-        "wikidata:languages-spoken-catalan"
+        "wikidata:languages-spoken-catalan",
+        "genre:manual",
+        "youtube:manual-verified"
       ],
       "lastChecked": "2026-09-25T15:44:36.421Z",
-      "notes": "",
+      "notes": "Pau Riba.",
       "genresRaw": [
         "rock",
         "música mediterrània",
@@ -15102,7 +15129,9 @@
       "sources": [
         "https://www.wikidata.org/wiki/Q1629629",
         "wikidata:languages-spoken-catalan",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "genre:manual",
+        "youtube:manual-verified"
       ],
       "lastChecked": "2026-09-25T15:56:27.487Z",
       "notes": "",
@@ -15931,13 +15960,7 @@
       "name": "Sílvia Pérez Cruz",
       "aliases": [],
       "genres": [
-        "Folk i arrel",
-        "Cançó d'autor",
-        "Rumba / Mestissatge",
-        "Flamenc",
-        "Jazz / Blues",
-        "Clàssica i contemporània",
-        "Experimental / Avantguarda"
+        "Cançó d'autor"
       ],
       "territories": [],
       "languages": [
@@ -16001,7 +16024,9 @@
       "sources": [
         "https://www.wikidata.org/wiki/Q9081084",
         "wikidata:performed-catalan-work",
-        "wikidata:languages-spoken-catalan"
+        "wikidata:languages-spoken-catalan",
+        "genre:manual",
+        "youtube:manual-verified"
       ],
       "lastChecked": "2026-09-25T15:56:36.472Z",
       "notes": "",
@@ -18924,6 +18949,248 @@
       "genresRaw": [
         "Pop",
         "Rock"
+      ]
+    },
+    {
+      "name": "Anna Andreu",
+      "aliases": [],
+      "genres": [
+        "Cançó d'autor"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [],
+        "candidates": []
+      },
+      "confidence": "mitjana",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "manual-user-2026-09-29",
+        "genre:manual",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": null,
+      "notes": "",
+      "genresRaw": [
+        "Cançó d'autor"
+      ]
+    },
+    {
+      "name": "Feliu Ventura",
+      "aliases": [],
+      "genres": [
+        "Cançó d'autor"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [],
+        "candidates": []
+      },
+      "confidence": "mitjana",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "manual-user-2026-09-29",
+        "genre:manual",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": null,
+      "notes": "",
+      "genresRaw": [
+        "Cançó d'autor"
+      ]
+    },
+    {
+      "name": "Joan Manuel Serrat",
+      "aliases": [],
+      "genres": [
+        "Cançó d'autor"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [],
+        "candidates": []
+      },
+      "confidence": "mitjana",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "manual-user-2026-09-29",
+        "genre:manual",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": null,
+      "notes": "Nova Cançó / Cançó d'autor.",
+      "genresRaw": [
+        "Cançó d'autor"
+      ]
+    },
+    {
+      "name": "Paul Fuster",
+      "aliases": [],
+      "genres": [
+        "Cançó d'autor"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCCYgQLqvl_nmSk4-WPDGPIg",
+            "handle": null,
+            "name": null,
+            "type": "official",
+            "primary": true
+          }
+        ],
+        "candidates": []
+      },
+      "confidence": "mitjana",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "manual-user-2026-09-29",
+        "genre:manual",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": null,
+      "notes": "",
+      "genresRaw": [
+        "Cançó d'autor"
+      ]
+    },
+    {
+      "name": "Quico Pi de la Serra",
+      "aliases": [],
+      "genres": [
+        "Cançó d'autor"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCerj0bWFVJdAmPWVti9Uhlw",
+            "handle": null,
+            "name": null,
+            "type": "official",
+            "primary": true
+          }
+        ],
+        "candidates": []
+      },
+      "confidence": "mitjana",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "manual-user-2026-09-29",
+        "genre:manual",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": null,
+      "notes": "Nova Cançó.",
+      "genresRaw": [
+        "Cançó d'autor"
+      ]
+    },
+    {
+      "name": "Raimon",
+      "aliases": [],
+      "genres": [
+        "Cançó d'autor"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCljKJq4zWfaxTUdptZgtTQA",
+            "handle": null,
+            "name": null,
+            "type": "official",
+            "primary": true
+          }
+        ],
+        "candidates": []
+      },
+      "confidence": "mitjana",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "manual-user-2026-09-29",
+        "genre:manual",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": null,
+      "notes": "Nova Cançó.",
+      "genresRaw": [
+        "Cançó d'autor"
+      ]
+    },
+    {
+      "name": "Guillem Ramisa",
+      "aliases": [],
+      "genres": [
+        "Cançó d'autor"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCtEZ1MK5EscjssXcqEYGOng",
+            "handle": null,
+            "name": null,
+            "type": "official",
+            "primary": true
+          }
+        ],
+        "candidates": []
+      },
+      "confidence": "mitjana",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "manual-user-2026-09-29",
+        "genre:manual",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": null,
+      "notes": "",
+      "genresRaw": [
+        "Cançó d'autor"
       ]
     }
   ]
