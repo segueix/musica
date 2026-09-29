@@ -302,6 +302,16 @@ La finestreta flotant en fer scroll cap avall es manté tal com era: és el comp
 
 **Fitxers Afectats:** `sw.js`, `js/app.js` (`initAppUpdater`), `tests/browser/verificar-sw.js`, `CLAUDE.md`.
 
+## [2026-09-29] - Canal equivocat: «Lluc» resolt a Loma Linda University Church
+
+**Símptoma:** A la ràdio i al feed apareixien vídeos d'una església (LLUC | Church Services…) del canal Loma Linda University Church.
+
+**Causa Arrel:** L'artista «Lluc» es va donar d'alta amb el handle `@lluc` (`youtube-verified-handles.json`), que a YouTube pertany a una església adventista. `resoldre_canals_verificats.js` el va resoldre sense cap validació semàntica.
+
+**Solució Implementada:** L'artista queda `rebutjat` amb el canal buit i una nota; s'elimina l'entrada de `youtube-verified-handles.json` (si no, el resolutor la tornaria a afegir, ja que no mira `reviewStatus`); s'esborren el canal i els seus 15 vídeos de `feed.json` i `channels-ca.json`. Si es vol l'artista Lluc real, cal trobar el seu canal i tornar-lo a donar d'alta amb l'ID `UC…` (no amb un handle ambigu).
+
+**Fitxers Afectats:** `data/artistes-musica.json`, `data/youtube-verified-handles.json`, `data/feed.json`, `js/channels-ca.json`.
+
 ## [2026-07-11] - Filera d'icones del header visible en obrir un vídeo al mòbil
 
 **Símptoma:** Al mòbil, en clicar un vídeo del feed i obrir-se la pàgina del reproductor, la filera d'icones del header (Inici, Biblioteca, Historial, Segueix...) es mostrava a sobre del reproductor, ocupant espai vertical útil mentre l'usuari volia veure el vídeo.
