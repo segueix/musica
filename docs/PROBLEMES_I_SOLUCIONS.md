@@ -330,6 +330,46 @@ La finestreta flotant en fer scroll cap avall es manté tal com era: és el comp
 
 **Fitxers Afectats:** `js/features/music-queue.js`, `tests/music-queue-ytm.test.js`, `sw.js`.
 
+## [2026-09-29] - Vídeos que no són cançons (concert, pel·lícula, making-of) arribaven a vistes sense filtre
+
+**Símptoma:** Del canal d'Els Amics de les Arts sortien «UN CONCERT COM ELS D'ABANS» (pel·lícula del concert), «ENCARA SOM AQUÍ (Una cançó basada en fets reals)» (explicació) i «FESTES DE LA MERCÈ» (55 s), tot i que el feed ja els classifica com `review`.
+
+**Causa Arrel:** El filtre `isCategoryEligibleVideo` (només `song`/`live_song`) només s'aplicava a Novetats/Tot, a les categories d'estil i a les files de la portada. **No** passaven pel filtre: la vista **Seguint**, **Descobreix**, el **perfil del canal**, la branca sense categoria dels «vídeos relacionats» i la **ràdio** (`buildQueue`).
+
+**Solució Implementada:** Helper `isSongOrShort()` (`app.js`) aplicat a Seguint, Descobreix, perfil de canal i relacionats; la ràdio filtra amb `isCategoryEligibleVideo`. Els Shorts i els vídeos sense `contentType` (canals afegits a mà, snapshots antics) hi passen. Al classificador (`scripts/lib/classificar_contingut_musical.js`) s'afegeixen a la descripció negativa «pel·lícula», «cortometratge», «short film» i «d'on surt la cançó». **Regla:** qualsevol vista nova que llisti vídeos ha de passar pel filtre de cançons.
+
+**Fitxers Afectats:** `js/app.js`, `js/features/music-queue.js`, `scripts/lib/classificar_contingut_musical.js`, `sw.js`.
+
+## [2026-09-29] - La ràdio d'una fila/categoria no era de la categoria (Cançó d'autor, etc.)
+
+**Símptoma:** A la portada, en clicar una cançó de la fila «Cançó d'autor», la ràdio generada barrejava tots els estils.
+
+**Causa Arrel:** (1) `startFrom()` només mirava `selectedCategory`, que a la portada és «Novetats» (vista general), així que no sabia de quina fila venia el clic. (2) Encara que hi hagués categoria, `buildQueue()` només en canviava el *nom* de la llista: els candidats eren tot el feed.
+
+**Solució Implementada:** Les seccions de la portada porten `data-category`; un listener de clic en captura (`music-queue.js`) recorda la categoria de la fila clicada (`clickCategory`) i `startFrom()` la consumeix (si no, usa `selectedCategory` fora de vistes generals). `buildQueue(video, category)` filtra els candidats amb `matchesCategory()` (categories del vídeo o del canal al feed, `Pop / Rock` = Pop+Rock, categories personalitzades amb `matchesCustomCategory`). Si la categoria té menys de 2 cançons, cau a ràdio general perquè la reproducció no s'aturi. «Barreja» conserva la categoria (`radioCategory`). Verificat en Chromium: Cançó d'autor (20/20 de la categoria), Rap / Hip-hop (12/12), Jazz / Blues (12/12).
+
+**Fitxers Afectats:** `js/features/music-queue.js`, `js/features/home-sections.js`, `sw.js`.
+
+## [2026-09-29] - Escriptori: la finestra de la ràdio sobrepassava els botons del canal
+
+**Símptoma:** Amb el reproductor obert a escriptori, el panell de la ràdio (a la dreta) baixava més enllà de l'última fila de botons de l'esquerra (Canal YouTube, comentaris...).
+
+**Causa Arrel:** `#playlistQueueContainer` s'estenia sobre **5** files de la graella de `.watch-main`, però la 5a la ocupa la capçalera «Altres vídeos relacionats» (o el panell de programació de TV), i a més tenia una alçada pròpia (`max-height: 100vh - …`). Quedava 89 px més llarga, i 24 px més pel `margin-bottom` de `.channel-info`.
+
+**Solució Implementada:** `css/styles.css` (escriptori, ≥1025 px): la cua abasta **4 files** (`grid-row: 1 / span 4`; 5 només si el panell de TV és visible), `align-self: stretch` + `contain: size` perquè no aporti alçada pròpia i s'estiri a l'àrea de la columna de l'esquerra, `margin-bottom: 24px` (= el de `.channel-info`) i `overflow-y: auto` amb el capçal de la ràdio enganxat a dalt (`position: sticky`). La capçalera de relacionats passa a ocupar les dues columnes (`.extra-related-header`). Mesurat en Chromium a 1100/1200/1440/1920 px: diferència 0 px entre el final de la cua i el del bloc del canal.
+
+**Fitxers Afectats:** `css/styles.css`, `sw.js`.
+
+## [2026-09-29] - Ràdio: escriptori sense relacionats i la llista es conserva amb la finestra flotant
+
+**Canvi 1 (escriptori):** Amb una ràdio sonant no es mostren «Altres vídeos relacionats» ni els vídeos de l'artista (`.watch-sidebar`, `.extra-related-header`, `.extra-videos-grid`): CSS amb `#watchPage:has(#playlistQueueContainer:not(.hidden) .mq--radio)` (`css/styles.css`, ≥1025 px). `music-queue.js` afegeix la classe `mq--radio` quan la cua és la ràdio; a `app.js` tampoc es pinten (`renderPlaylistRelatedVideosLegacyImpl`, `showVideoFromAPILegacyImpl`).
+
+**Canvi 2 (finestra flotant):** **Causa:** `showHome/showHistory/showPlaylists/showFollow` (navigation.js), `openChannelProfile` i `openProgramProfile` cridaven sempre `exitPlaylistMode()`, així que en navegar amb la ràdio en mini el vídeo seguia sonant però la cua es perdia (en expandir, sense llista; i sense avanç automàtic). **Solució:** `exitPlaylistModeForNavigation()` (app.js) no surt del mode llista si la finestra flotant és activa i no és TV; el hook de navegació hi apunta. Perquè l'avanç automàtic amb l'usuari en una altra secció no el porti a la pàgina del reproductor, `showVideoFromAPILegacyImpl` calcula `keepPage` (avanç automàtic + mini + watchPage amagada) i llavors no canvia de pàgina, no fa `pushState` ni `scrollTo`; la cançó nova es carrega a la finestreta. En tancar la finestreta fora de la pàgina del vídeo, se surt del mode llista. Verificat en Chromium: ràdio → flotant → portada (cua conservada) → següent (la portada continua visible, índex 1) → expandir (pàgina del vídeo amb la ràdio a la dreta, «Ràdio 2/40»).
+
+**Nota:** `tests/browser/verificar-tv.js` ja fallava 4 comprovacions abans d'aquests canvis (entorn sense YouTube real); `verificar-reproductor.js` passa.
+
+**Fitxers Afectats:** `js/app.js`, `js/features/music-queue.js`, `css/styles.css`, `sw.js`.
+
 ## [2026-07-11] - Filera d'icones del header visible en obrir un vídeo al mòbil
 
 **Símptoma:** Al mòbil, en clicar un vídeo del feed i obrir-se la pàgina del reproductor, la filera d'icones del header (Inici, Biblioteca, Historial, Segueix...) es mostrava a sobre del reproductor, ocupant espai vertical útil mentre l'usuari volia veure el vídeo.

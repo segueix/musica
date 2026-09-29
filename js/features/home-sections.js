@@ -237,7 +237,7 @@
             ? `<button type="button" class="home-section-more" data-open-category="${escapeText(section.category)}">Veure-ho tot</button>`
             : '';
         return `
-            <section class="home-section${section.large ? ' home-section--large' : ''}" data-section-index="${index}">
+            <section class="home-section${section.large ? ' home-section--large' : ''}" data-section-index="${index}"${section.category ? ` data-category="${escapeText(section.category)}"` : ''}>
                 <header class="home-section-header">
                     <div class="home-section-heading">
                         <h2 class="home-section-title">${escapeText(section.title)}</h2>
