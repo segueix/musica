@@ -1,18 +1,18 @@
 {
-  "generatedAt": "2026-09-29T18:30:32.018Z",
+  "generatedAt": "2026-09-29T19:39:56.205Z",
   "rawPublicVideoCount": 2021,
   "feedVideoCount": 2021,
-  "acceptedMusicCount": 1484,
-  "categoryEligibleVideoCount": 1465,
+  "acceptedMusicCount": 1477,
+  "categoryEligibleVideoCount": 1458,
   "shortVideoCount": 384,
-  "rejectedOrReviewCount": 537,
-  "reviewCount": 264,
+  "rejectedOrReviewCount": 544,
+  "reviewCount": 262,
   "typeCounts": {
-    "song": 1398,
+    "song": 1391,
     "live_song": 67,
     "album": 19,
-    "other": 273,
-    "review": 264
+    "other": 282,
+    "review": 262
   },
   "channelsWithoutAcceptedMusic": [
     "UCnmFh1j3xvDfrw20AqVgegw",
@@ -471,6 +471,20 @@
       "musicReason": "massa curt: probable teaser/fragment"
     },
     {
+      "id": "URr5_zlVJtc",
+      "title": "UN CONCERT COM ELS D'ABANS",
+      "channelTitle": "Els Amics de les Arts",
+      "durationSeconds": 316,
+      "musicReason": "descripció inequívoca de contingut no musical"
+    },
+    {
+      "id": "FtPzCkh0k_Q",
+      "title": "ENCARA SOM AQUÍ (Una cançó basada en fets reals)",
+      "channelTitle": "Els Amics de les Arts",
+      "durationSeconds": 167,
+      "musicReason": "descripció inequívoca de contingut no musical"
+    },
+    {
       "id": "Bk838x0xKs0",
       "title": "ENCARA SOM AQUÍ",
       "channelTitle": "Els Amics de les Arts",
@@ -846,20 +860,6 @@
       "title": "EL FINAL… EN SHOCK?🧐😳 #boomerang #unexpected #lalliga #truco",
       "channelTitle": "Llum",
       "durationSeconds": 10,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "eXZpRQYJfTw",
-      "title": "‼️BALLO SENSE TU‼️ Disponible ja a totes les plataformes!!",
-      "channelTitle": "Mai Halis",
-      "durationSeconds": 30,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "Jfvvj8YGNbE",
-      "title": "‼️‼️BALLO SENSE TU DISPONIBLE A TOTES LES PLATAFORMES‼️‼️",
-      "channelTitle": "Mai Halis",
-      "durationSeconds": 30,
       "musicReason": "massa curt: probable teaser/fragment"
     }
   ]
