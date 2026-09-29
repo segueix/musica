@@ -71,6 +71,15 @@ function loadFalseShortIds(){
     return new Set();
   }
 }
+function loadHiddenVideoIds(){
+  try{
+    const payload=JSON.parse(fs.readFileSync(path.join(process.cwd(),'data','hidden-videos.json'),'utf8'));
+    return new Set((Array.isArray(payload?.videoIds)?payload.videoIds:[]).map(id=>String(id||'').trim()).filter(Boolean));
+  }catch(error){
+    return new Set();
+  }
+}
+
 function applyFalseShortsOverrides(videos){
   const falseShortIds=loadFalseShortIds();
   if(!falseShortIds.size) return 0;
@@ -298,6 +307,11 @@ async function main(){
   }
 
   applyFalseShortsOverrides(videos);
+  // Vídeos ocults manualment (p. ex. cançons amb títol en castellà): no entren al feed
+  const hiddenIds=loadHiddenVideoIds();
+  if(hiddenIds.size){
+    for(let i=videos.length-1;i>=0;i--) if(hiddenIds.has(String(videos[i].id))) videos.splice(i,1);
+  }
   videos.sort((a,b)=>(Date.parse(b.publishedAt||'')||0)-(Date.parse(a.publishedAt||'')||0));
   review.sort((a,b)=>(Date.parse(b.publishedAt||'')||0)-(Date.parse(a.publishedAt||'')||0));
   channelIndex.sort((a,b)=>a.name.localeCompare(b.name,'ca',{sensitivity:'base'}));

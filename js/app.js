@@ -11512,8 +11512,8 @@ function updatePlayerIframeLegacyImpl({ source, videoId, videoUrl, startAt = 0 }
         ">
             <button class="expand-mini-player-btn" type="button" aria-label="Restaurar" style="pointer-events: auto; background: none; border: none; color: white;">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="14" y1="10" x2="21" y2="3"></line><polyline points="21 10 21 3 14 3"></polyline>
-                    <line x1="3" y1="21" x2="10" y2="14"></line><polyline points="3 14 3 21 10 21"></polyline>
+                    <path d="M8 12H2.5M5 9.5 2.5 12 5 14.5"></path><path d="M16 12h5.5M19 9.5l2.5 2.5-2.5 2.5"></path>
+                    <path d="M12 8V2.5M9.5 5 12 2.5 14.5 5"></path><path d="M12 16v5.5M9.5 19l2.5 2.5 2.5-2.5"></path>
                 </svg>
             </button>
             <button class="close-mini-player-btn" type="button" aria-label="Tancar" style="pointer-events: auto; background: none; border: none; color: white;">
