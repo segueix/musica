@@ -9292,3 +9292,77 @@ body {
         padding: 10px;
     }
 }
+
+/* Botó "+" per crear llistes */
+.hp-add {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-width: 120px;
+    padding: 12px;
+    scroll-snap-align: start;
+}
+
+.hp-add-btn {
+    display: grid;
+    place-items: center;
+    width: 72px;
+    height: 72px;
+    border: 0;
+    border-radius: 50%;
+    background: #2a2a2a;
+    color: #b3b3b3;
+    cursor: pointer;
+    transition:
+        background 0.15s ease,
+        color 0.15s ease,
+        transform 0.15s ease;
+}
+
+.hp-add-btn:hover {
+    background: #3a3a3a;
+    color: #ffffff;
+    transform: scale(1.06);
+}
+
+.hp-add-label {
+    color: #b3b3b3;
+    font-size: 0.8125rem;
+    font-weight: 600;
+}
+
+.hp-add-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 180px;
+}
+
+.hp-add-input {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    background: #2a2a2a;
+    color: #ffffff;
+    font: inherit;
+    outline: none;
+}
+
+.hp-add-input:focus {
+    border-color: #ffffff;
+}
+
+.hp-add-ok {
+    padding: 8px 16px;
+    border: 0;
+    border-radius: 999px;
+    background: var(--music-accent);
+    color: #000000;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}

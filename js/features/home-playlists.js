@@ -28,17 +28,22 @@
         return `<img class="hp-single" src="${escapeText(src)}" alt="" loading="lazy" decoding="async">`;
     }
 
+    function addCardMarkup() {
+        return `
+            <div class="hp-add" data-hp-add-wrap>
+                <button type="button" class="hp-add-btn" data-hp-add aria-label="Crea una llista nova">
+                    <svg viewBox="0 0 24 24" width="32" height="32" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" d="M12 5v14M5 12h14"/></svg>
+                </button>
+                <span class="hp-add-label">Nova llista</span>
+            </div>`;
+    }
+
     function render() {
         container = container || document.getElementById('homePlaylists');
         if (!container) return;
         const playlists = (app.features.library?.getPlaylists?.() || []).filter(
-            list => list && Array.isArray(list.videos) && list.videos.length > 0
+            list => list && Array.isArray(list.videos)
         );
-        if (playlists.length === 0) {
-            container.classList.add('hidden');
-            container.innerHTML = '';
-            return;
-        }
         container.classList.remove('hidden');
         container.innerHTML = `
             <header class="home-section-header">
@@ -46,16 +51,14 @@
                     <h2 class="home-section-title">Les teves llistes</h2>
                     <span class="home-section-subtitle">Biblioteca</span>
                 </div>
-                <div class="home-section-controls">
-                    <button type="button" class="home-section-more" data-hp-all>Veure-ho tot</button>
-                </div>
+                ${playlists.length ? '<div class="home-section-controls"><button type="button" class="home-section-more" data-hp-all>Veure-ho tot</button></div>' : ''}
             </header>
             <div class="home-section-row hp-row">
                 ${playlists
                     .slice(0, MAX_LISTS)
                     .map(
                         list => `
-                    <button type="button" class="hp-card" data-hp-play="${escapeText(list.id)}" aria-label="Reprodueix ${escapeText(list.name)}">
+                    <button type="button" class="hp-card" data-hp-play="${escapeText(list.id)}" data-hp-count="${list.videos.length}" aria-label="Reprodueix ${escapeText(list.name)}">
                         <span class="hp-cover">
                             ${coverMarkup(list.videos)}
                             <span class="hp-play" aria-hidden="true"></span>
@@ -65,19 +68,52 @@
                     </button>`
                     )
                     .join('')}
+                ${addCardMarkup()}
             </div>
         `;
     }
 
+    function openCreateForm(wrap) {
+        wrap.innerHTML = `
+            <form class="hp-add-form" data-hp-form>
+                <input class="hp-add-input" type="text" maxlength="60" placeholder="Nom de la llista" aria-label="Nom de la nova llista" autocomplete="off">
+                <button type="submit" class="hp-add-ok">Crea</button>
+            </form>`;
+        const input = wrap.querySelector('input');
+        input.focus();
+        input.addEventListener('keydown', event => {
+            if (event.key === 'Escape') render();
+        });
+        wrap.querySelector('form').addEventListener('submit', event => {
+            event.preventDefault();
+            const name = input.value.trim();
+            if (!name || typeof createPlaylist !== 'function') return render();
+            createPlaylist(name); // desa i dispara segueix:playlists-changed
+            render();
+        });
+    }
+
     function scheduleRender() {
         clearTimeout(renderTimer);
-        renderTimer = setTimeout(render, 60);
+        renderTimer = setTimeout(() => {
+            // No trepitgem el formulari de nova llista si l'usuari l'està escrivint.
+            if (container?.querySelector('[data-hp-form] input:focus')) return;
+            render();
+        }, 60);
     }
 
     function onClick(event) {
+        const add = event.target.closest('[data-hp-add]');
+        if (add) {
+            openCreateForm(add.closest('[data-hp-add-wrap]'));
+            return;
+        }
         const play = event.target.closest('[data-hp-play]');
         if (play) {
-            if (typeof startPlaylistPlayback === 'function') startPlaylistPlayback(play.dataset.hpPlay);
+            // Una llista buida no té res per reproduir: portem l'usuari a la Biblioteca.
+            if (play.dataset.hpCount === '0') {
+                document.querySelector('.nav-trigger[data-page="llistes"]')?.click();
+            } else if (typeof startPlaylistPlayback === 'function') startPlaylistPlayback(play.dataset.hpPlay);
             return;
         }
         if (event.target.closest('[data-hp-all]')) {
