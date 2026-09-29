@@ -222,6 +222,16 @@ La finestreta flotant en fer scroll cap avall es manté tal com era: és el comp
 
 **Fitxers Afectats:** `js/utils/helpers.js`, `js/features/music-queue.js`, `js/app.js` (`renderFeedLegacyImpl`, `renderCategoryVideosBelowLegacyImpl`, `renderPlaylistRelatedVideosLegacyImpl`), `tests/helpers.test.js`.
 
+## [2026-09-29] - Files de la portada amb el mateix artista repetit
+
+**Símptoma:** A les files per estil (Novetats, Cançó d'autor...) sortien 2 cançons seguides del mateix artista (CACTUS, Pau Riba, Xanguito).
+
+**Causa Arrel:** `home-sections.js` usava `limitPerChannel(..., 2)`, que permetia 2 vídeos per canal i en respectava l'ordre per data, de manera que quedaven junts.
+
+**Solució Implementada:** `pickVarietyRow()`: primer el vídeo més actual (o més escoltat) de CADA artista i només si la fila no s'omple es repeteix algun. Després `spreadVideosByArtist()` (`js/utils/helpers.js`) reparteix els artistes que queden en majoria perquè no quedin enganxats al final.
+
+**Fitxers Afectats:** `js/features/home-sections.js`, `js/utils/helpers.js`, `tests/home-sections-variety.test.js`, `sw.js`.
+
 ## [2026-07-11] - Filera d'icones del header visible en obrir un vídeo al mòbil
 
 **Símptoma:** Al mòbil, en clicar un vídeo del feed i obrir-se la pàgina del reproductor, la filera d'icones del header (Inici, Biblioteca, Historial, Segueix...) es mostrava a sobre del reproductor, ocupant espai vertical útil mentre l'usuari volia veure el vídeo.
