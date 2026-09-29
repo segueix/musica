@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-29T11:23:51.101Z",
+  "updatedAt": "2026-09-29T11:25:49.833Z",
   "artists": [
     {
       "name": "31 FAM",
@@ -1803,7 +1803,15 @@
       "wikidataId": "Q581587",
       "musicbrainzId": "ce9eceac-f252-457e-992e-cc2e60290ce1",
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCuk-lO3FpbukFk5lcPx29_g",
+            "handle": null,
+            "name": "Brams - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
         "candidates": [],
         "searchCandidates": [
           {
@@ -1848,16 +1856,17 @@
           }
         ]
       },
-      "confidence": "pendent",
+      "confidence": "alta",
       "reviewStatus": "pendent",
       "active": false,
       "sources": [
         "https://www.wikidata.org/wiki/Q581587",
         "wikidata:languages-spoken-catalan",
         "wikidata:performed-catalan-work",
-        "manual-user-2026-09-29"
+        "manual-user-2026-09-29",
+        "youtube:api-candidate-verified"
       ],
-      "lastChecked": "2026-09-29T11:22:49.642Z",
+      "lastChecked": "2026-09-29T11:25:49.831Z",
       "notes": "",
       "enrichment": {
         "musicbrainz": {
@@ -9239,7 +9248,15 @@
       "wikidataId": "Q3075731",
       "musicbrainzId": "c2da04f0-77e2-404c-b881-f188fbfa47a0",
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCHiwFlJ6-Ggj_mG0Okfq_HQ",
+            "handle": "@discmedilaxnbusto",
+            "name": "discmedilaxnbusto",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "candidates": [],
         "searchCandidates": [
           {
@@ -9285,16 +9302,17 @@
           }
         ]
       },
-      "confidence": "pendent",
+      "confidence": "alta",
       "reviewStatus": "pendent",
       "active": false,
       "sources": [
         "https://www.wikidata.org/wiki/Q3075731",
         "wikidata:languages-spoken-catalan",
         "wikidata:performed-catalan-work",
-        "manual-user-2026-09-29"
+        "manual-user-2026-09-29",
+        "youtube:api-candidate-verified"
       ],
-      "lastChecked": "2026-09-29T11:22:49.642Z",
+      "lastChecked": "2026-09-29T11:25:49.832Z",
       "notes": "",
       "enrichment": {
         "musicbrainz": {
@@ -15476,7 +15494,15 @@
       "wikidataId": "Q2786919",
       "musicbrainzId": "c4114fc7-96c0-4654-889e-281f62a243ed",
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UC0njIX_vDoAZaqKR5N8AavA",
+            "handle": null,
+            "name": "Sau - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
         "candidates": [],
         "searchCandidates": [
           {
@@ -15522,15 +15548,16 @@
           }
         ]
       },
-      "confidence": "pendent",
+      "confidence": "alta",
       "reviewStatus": "pendent",
       "active": false,
       "sources": [
         "https://www.wikidata.org/wiki/Q2786919",
         "wikidata:performed-catalan-work",
-        "manual-user-2026-09-29"
+        "manual-user-2026-09-29",
+        "youtube:api-candidate-verified"
       ],
-      "lastChecked": "2026-09-29T11:22:49.642Z",
+      "lastChecked": "2026-09-29T11:25:49.833Z",
       "notes": "",
       "enrichment": {
         "musicbrainz": {
@@ -18742,7 +18769,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UC6a_paoSt1YYKOFZwPGdEYw",
+            "handle": null,
+            "name": "Sangtraït - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
         "candidates": [],
         "searchCandidates": [
           {
@@ -18795,9 +18830,10 @@
       "reviewStatus": "pendent",
       "active": false,
       "sources": [
-        "manual-user-2026-09-29"
+        "manual-user-2026-09-29",
+        "youtube:api-candidate-verified"
       ],
-      "lastChecked": "2026-09-29T11:22:49.642Z",
+      "lastChecked": "2026-09-29T11:25:49.833Z",
       "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
       "genresRaw": [
         "Rock"
