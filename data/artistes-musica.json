@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-28T16:47:01.608Z",
+  "updatedAt": "2026-09-29T11:22:49.642Z",
   "artists": [
     {
       "name": "31 FAM",
@@ -1854,9 +1854,10 @@
       "sources": [
         "https://www.wikidata.org/wiki/Q581587",
         "wikidata:languages-spoken-catalan",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "manual-user-2026-09-29"
       ],
-      "lastChecked": "2026-09-25T15:54:10.306Z",
+      "lastChecked": "2026-09-29T11:22:49.642Z",
       "notes": "",
       "enrichment": {
         "musicbrainz": {
@@ -3214,9 +3215,10 @@
       "sources": [
         "https://www.wikidata.org/wiki/Q11917802",
         "wikidata:languages-spoken-catalan",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "manual-user-2026-09-29"
       ],
-      "lastChecked": "2026-09-25T15:54:21.303Z",
+      "lastChecked": "2026-09-29T11:22:49.642Z",
       "notes": "",
       "enrichment": {
         "musicbrainz": {
@@ -4101,9 +4103,10 @@
       "active": false,
       "sources": [
         "https://www.wikidata.org/wiki/Q1333372",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "manual-user-2026-09-29"
       ],
-      "lastChecked": "2026-09-25T15:54:29.662Z",
+      "lastChecked": "2026-09-29T11:22:49.642Z",
       "notes": "",
       "enrichment": {
         "musicbrainz": {
@@ -9270,9 +9273,10 @@
       "sources": [
         "https://www.wikidata.org/wiki/Q3075731",
         "wikidata:languages-spoken-catalan",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "manual-user-2026-09-29"
       ],
-      "lastChecked": "2026-09-25T15:55:22.716Z",
+      "lastChecked": "2026-09-29T11:22:49.642Z",
       "notes": "",
       "enrichment": {
         "musicbrainz": {
@@ -11706,9 +11710,10 @@
         "https://www.wikidata.org/wiki/Q113500634",
         "wikidata:native-language-catalan",
         "wikidata:performed-catalan-work",
-        "wikidata:native-language-catalan-musician"
+        "wikidata:native-language-catalan-musician",
+        "manual-user-2026-09-29"
       ],
-      "lastChecked": "2026-09-25T15:55:51.506Z",
+      "lastChecked": "2026-09-29T11:22:49.642Z",
       "notes": "",
       "enrichment": {
         "musicbrainz": {
@@ -15495,9 +15500,10 @@
       "active": false,
       "sources": [
         "https://www.wikidata.org/wiki/Q2786919",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "manual-user-2026-09-29"
       ],
-      "lastChecked": "2026-09-25T15:56:33.535Z",
+      "lastChecked": "2026-09-29T11:22:49.642Z",
       "notes": "",
       "enrichment": {
         "musicbrainz": {
@@ -18015,6 +18021,574 @@
           "wikidataWorkEvidence": []
         }
       }
+    },
+    {
+      "name": "Ayryn",
+      "aliases": [],
+      "genres": [
+        "Urbana"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [],
+        "candidates": []
+      },
+      "confidence": "mitjana",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "manual-user-2026-09-29"
+      ],
+      "lastChecked": "2026-09-29T11:22:49.642Z",
+      "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
+      "genresRaw": [
+        "Urbana"
+      ]
+    },
+    {
+      "name": "Baya Baye",
+      "aliases": [],
+      "genres": [
+        "Urbana"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [],
+        "candidates": []
+      },
+      "confidence": "mitjana",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "manual-user-2026-09-29"
+      ],
+      "lastChecked": "2026-09-29T11:22:49.642Z",
+      "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
+      "genresRaw": [
+        "Urbana"
+      ]
+    },
+    {
+      "name": "Calagher",
+      "aliases": [],
+      "genres": [
+        "Urbana"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [],
+        "candidates": []
+      },
+      "confidence": "mitjana",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "manual-user-2026-09-29"
+      ],
+      "lastChecked": "2026-09-29T11:22:49.642Z",
+      "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
+      "genresRaw": [
+        "Urbana"
+      ]
+    },
+    {
+      "name": "Ceaxe",
+      "aliases": [],
+      "genres": [
+        "Urbana"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [],
+        "candidates": []
+      },
+      "confidence": "mitjana",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "manual-user-2026-09-29"
+      ],
+      "lastChecked": "2026-09-29T11:22:49.642Z",
+      "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
+      "genresRaw": [
+        "Urbana"
+      ]
+    },
+    {
+      "name": "dani6ix & IZZKID",
+      "aliases": [],
+      "genres": [
+        "Urbana"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [],
+        "candidates": []
+      },
+      "confidence": "mitjana",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "manual-user-2026-09-29"
+      ],
+      "lastChecked": "2026-09-29T11:22:49.642Z",
+      "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
+      "genresRaw": [
+        "Urbana"
+      ]
+    },
+    {
+      "name": "enMatu",
+      "aliases": [],
+      "genres": [
+        "Urbana"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [],
+        "candidates": []
+      },
+      "confidence": "mitjana",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "manual-user-2026-09-29"
+      ],
+      "lastChecked": "2026-09-29T11:22:49.642Z",
+      "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
+      "genresRaw": [
+        "Urbana"
+      ]
+    },
+    {
+      "name": "Lluc",
+      "aliases": [],
+      "genres": [
+        "Urbana"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [],
+        "candidates": []
+      },
+      "confidence": "mitjana",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "manual-user-2026-09-29"
+      ],
+      "lastChecked": "2026-09-29T11:22:49.642Z",
+      "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
+      "genresRaw": [
+        "Urbana"
+      ]
+    },
+    {
+      "name": "MARLENA",
+      "aliases": [],
+      "genres": [
+        "Urbana"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [],
+        "candidates": []
+      },
+      "confidence": "mitjana",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "manual-user-2026-09-29"
+      ],
+      "lastChecked": "2026-09-29T11:22:49.642Z",
+      "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
+      "genresRaw": [
+        "Urbana"
+      ]
+    },
+    {
+      "name": "nusar3000",
+      "aliases": [],
+      "genres": [
+        "Urbana"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [],
+        "candidates": []
+      },
+      "confidence": "mitjana",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "manual-user-2026-09-29"
+      ],
+      "lastChecked": "2026-09-29T11:22:49.642Z",
+      "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
+      "genresRaw": [
+        "Urbana"
+      ]
+    },
+    {
+      "name": "Pawn Gang",
+      "aliases": [],
+      "genres": [
+        "Urbana"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [],
+        "candidates": []
+      },
+      "confidence": "mitjana",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "manual-user-2026-09-29"
+      ],
+      "lastChecked": "2026-09-29T11:22:49.642Z",
+      "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
+      "genresRaw": [
+        "Urbana"
+      ]
+    },
+    {
+      "name": "Pol Bordas",
+      "aliases": [],
+      "genres": [
+        "Urbana"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [],
+        "candidates": []
+      },
+      "confidence": "mitjana",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "manual-user-2026-09-29"
+      ],
+      "lastChecked": "2026-09-29T11:22:49.642Z",
+      "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
+      "genresRaw": [
+        "Urbana"
+      ]
+    },
+    {
+      "name": "Scotty DK",
+      "aliases": [],
+      "genres": [
+        "Urbana"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [],
+        "candidates": []
+      },
+      "confidence": "mitjana",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "manual-user-2026-09-29"
+      ],
+      "lastChecked": "2026-09-29T11:22:49.642Z",
+      "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
+      "genresRaw": [
+        "Urbana"
+      ]
+    },
+    {
+      "name": "Ja t'ho diré",
+      "aliases": [],
+      "genres": [
+        "Pop",
+        "Rock"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [],
+        "candidates": []
+      },
+      "confidence": "mitjana",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "manual-user-2026-09-29"
+      ],
+      "lastChecked": "2026-09-29T11:22:49.642Z",
+      "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
+      "genresRaw": [
+        "Pop",
+        "Rock"
+      ]
+    },
+    {
+      "name": "Kitsch",
+      "aliases": [],
+      "genres": [
+        "Rock"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [],
+        "candidates": []
+      },
+      "confidence": "mitjana",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "manual-user-2026-09-29"
+      ],
+      "lastChecked": "2026-09-29T11:22:49.642Z",
+      "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
+      "genresRaw": [
+        "Rock"
+      ]
+    },
+    {
+      "name": "La Madam",
+      "aliases": [],
+      "genres": [
+        "Rock"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [],
+        "candidates": []
+      },
+      "confidence": "mitjana",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "manual-user-2026-09-29"
+      ],
+      "lastChecked": "2026-09-29T11:22:49.642Z",
+      "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
+      "genresRaw": [
+        "Rock"
+      ]
+    },
+    {
+      "name": "N'Gai N'Gai",
+      "aliases": [],
+      "genres": [
+        "Pop",
+        "Rock"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [],
+        "candidates": []
+      },
+      "confidence": "mitjana",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "manual-user-2026-09-29"
+      ],
+      "lastChecked": "2026-09-29T11:22:49.642Z",
+      "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
+      "genresRaw": [
+        "Pop",
+        "Rock"
+      ]
+    },
+    {
+      "name": "Ocults",
+      "aliases": [],
+      "genres": [
+        "Pop",
+        "Rock"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [],
+        "candidates": []
+      },
+      "confidence": "mitjana",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "manual-user-2026-09-29"
+      ],
+      "lastChecked": "2026-09-29T11:22:49.642Z",
+      "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
+      "genresRaw": [
+        "Pop",
+        "Rock"
+      ]
+    },
+    {
+      "name": "Sangtraït",
+      "aliases": [],
+      "genres": [
+        "Rock"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [],
+        "candidates": []
+      },
+      "confidence": "mitjana",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "manual-user-2026-09-29"
+      ],
+      "lastChecked": "2026-09-29T11:22:49.642Z",
+      "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
+      "genresRaw": [
+        "Rock"
+      ]
+    },
+    {
+      "name": "Umpah-Pah",
+      "aliases": [],
+      "genres": [
+        "Rock"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [],
+        "candidates": []
+      },
+      "confidence": "mitjana",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "manual-user-2026-09-29"
+      ],
+      "lastChecked": "2026-09-29T11:22:49.642Z",
+      "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
+      "genresRaw": [
+        "Rock"
+      ]
+    },
+    {
+      "name": "Whiskyn's",
+      "aliases": [],
+      "genres": [
+        "Pop",
+        "Rock"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [],
+        "candidates": []
+      },
+      "confidence": "mitjana",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "manual-user-2026-09-29"
+      ],
+      "lastChecked": "2026-09-29T11:22:49.642Z",
+      "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
+      "genresRaw": [
+        "Pop",
+        "Rock"
+      ]
     }
   ]
 }
