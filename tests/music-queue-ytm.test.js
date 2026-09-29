@@ -17,7 +17,7 @@ describe('enllaç de la ràdio a YouTube Music', () => {
 
     it('conserva l\'ordre exacte des de la cançó que sona', () => {
         const url = build(queue.slice(0, 5), 2);
-        expect(url).toBe('https://music.youtube.com/watch_videos?video_ids=' + ids.slice(2, 5).join(','));
+        expect(url).toBe('https://www.youtube.com/watch_videos?video_ids=' + ids.slice(2, 5).join(','));
     });
 
     it('limita a 50 vídeos i ignora IDs que no són de YouTube', () => {

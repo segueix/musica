@@ -14,7 +14,9 @@
     const MIN_QUEUE_LENGTH = 12;
     const MAX_QUEUE_LENGTH = 40;
     // YouTube crea una cua temporal amb els vídeos de l'enllaç, en l'ordre indicat (màx. ~50).
-    const YTM_QUEUE_URL = 'https://music.youtube.com/watch_videos?video_ids=';
+    // Ha de ser www.youtube.com: music.youtube.com obre l'app però ignora `watch_videos`
+    // (no importa la llista). Un cop oberta a YouTube, «Desa» la deixa a la biblioteca de YouTube Music.
+    const YTM_QUEUE_URL = 'https://www.youtube.com/watch_videos?video_ids=';
     const YTM_MAX_VIDEOS = 50;
 
     const ICONS = {
@@ -254,7 +256,7 @@
                 <div class="mq-head">
                     <h2 class="mq-heading">Ràdio</h2>
                     <span class="mq-source">${activePlaylistId === QUEUE_ID ? `Basada en ${escapeText(current.channelTitle || 'aquesta cançó')}` : escapeText(activePlaylistName || '')}</span>
-                    ${canRegenerate || activePlaylistQueue.length > 1 ? `<button type="button" class="mq-regenerate mq-open-ytm" data-mq-open-ytm title="Obre aquesta cua, en el mateix ordre, a YouTube Music">${ICONS.external}<span>YouTube Music</span></button>` : ''}
+                    ${canRegenerate || activePlaylistQueue.length > 1 ? `<button type="button" class="mq-regenerate mq-open-ytm" data-mq-open-ytm title="Obre aquesta cua, en el mateix ordre, a YouTube (pots desar-la i tornar-la a trobar a YouTube Music)">${ICONS.external}<span>Obre a YouTube</span></button>` : ''}
                     ${canRegenerate ? `<button type="button" class="mq-regenerate" data-mq-regenerate title="Genera de nou la ràdio">${ICONS.shuffle}<span>Barreja</span></button>` : ''}
                 </div>
                 <div class="mq-section">Ara sona</div>

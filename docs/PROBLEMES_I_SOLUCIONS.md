@@ -312,6 +312,16 @@ La finestreta flotant en fer scroll cap avall es manté tal com era: és el comp
 
 **Fitxers Afectats:** `data/artistes-musica.json`, `data/youtube-verified-handles.json`, `data/feed.json`, `js/channels-ca.json`.
 
+## [2026-09-29] - `music.youtube.com/watch_videos` no importa la llista
+
+**Símptoma:** El botó obria YouTube Music però sense la cua (només l'app).
+
+**Causa Arrel:** `watch_videos?video_ids=...` és una funció de `www.youtube.com` (crea una llista temporal `TL...`); `music.youtube.com` no la implementa i la ignora. La suposició de l'entrada anterior («Pendent de verificar») era errònia.
+
+**Solució Implementada:** `YTM_QUEUE_URL` apunta a `https://www.youtube.com/watch_videos?video_ids=`. El botó passa a dir «Obre a YouTube»: obre la cua en l'ordre exacte i, amb «Desa», la llista queda a la biblioteca i es pot obrir des de YouTube Music. **Si es vol importar directament a YouTube Music** cal crear una llista real amb l'API de YouTube (OAuth + ~50 unitats de quota per vídeo).
+
+**Fitxers Afectats:** `js/features/music-queue.js`, `tests/music-queue-ytm.test.js`.
+
 ## [2026-07-11] - Filera d'icones del header visible en obrir un vídeo al mòbil
 
 **Símptoma:** Al mòbil, en clicar un vídeo del feed i obrir-se la pàgina del reproductor, la filera d'icones del header (Inici, Biblioteca, Historial, Segueix...) es mostrava a sobre del reproductor, ocupant espai vertical útil mentre l'usuari volia veure el vídeo.
