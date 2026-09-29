@@ -169,6 +169,7 @@ const BUTTON_COLORS = [
 
 const LUCKY_STORAGE_KEY = 'catube_lucky_mode';
 const YOUTUBE_PREMIUM_STORAGE_KEY = 'iutube_is_premium';
+const CAPTIONS_CA_STORAGE_KEY = 'catube_captions_ca';
 
 // Paleta ampliada de colors foscos per al mode "Sempre tinc sort"
 const LUCKY_BG_COLORS = [
