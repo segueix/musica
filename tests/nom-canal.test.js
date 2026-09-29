@@ -1,7 +1,7 @@
 import { createRequire } from 'node:module';
 import { describe, expect, it } from 'vitest';
 
-const { resolveChannelDisplayName, isHandleName } = createRequire(import.meta.url)('../scripts/lib/nom_canal.js');
+const { resolveChannelDisplayName, isHandleName, findNameOverride } = createRequire(import.meta.url)('../scripts/lib/nom_canal.js');
 
 describe('nom real del canal enlloc del handle', () => {
     it('substitueix el títol que és només el handle pel nom de l\'artista', () => {
@@ -21,5 +21,12 @@ describe('nom real del canal enlloc del handle', () => {
     it('detecta el handle ignorant majúscules i símbols', () => {
         expect(isHandleName('DemencialWeare', '@demencialweare')).toBe(true);
         expect(isHandleName('Els Pets', '@elspets')).toBe(false);
+    });
+
+    it('les correccions manuals manen, per ID o per handle', () => {
+        const overrides = { UCabc: 'Pawn Gang', '@elspetsoficial': 'Els Pets' };
+        expect(findNameOverride(overrides, 'UCabc', '@x')).toBe('Pawn Gang');
+        expect(findNameOverride(overrides, 'UCzzz', '@ElsPetsOficial')).toBe('Els Pets');
+        expect(findNameOverride(overrides, 'UCzzz', '@altre')).toBe('');
     });
 });

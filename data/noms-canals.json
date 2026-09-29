@@ -1,0 +1,6 @@
+{
+  "_ajuda": "Nom que es mostra per a un canal, per sobre del títol de YouTube. Clau: ID de canal (UC...) o handle (@...). Valor: el nom que vols veure. Després executa 'node scripts/corregir_noms_canals.js' (o espera la propera actualització del feed).",
+  "overrides": {
+    "UCK3HgaeRN0-5mJkqvyB1hBA": "Pawn Gang"
+  }
+}

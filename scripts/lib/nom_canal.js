@@ -34,4 +34,27 @@ function resolveChannelDisplayName(name, handle, artistNames) {
   return raw;
 }
 
-module.exports = { normalizeToken, isHandleName, resolveChannelDisplayName };
+// Correccions manuals (data/noms-canals.json): manen sobre qualsevol regla automàtica.
+// Es busquen per ID de canal i, si no, per handle (sense @, en minúscules).
+function findNameOverride(overrides, channelId, handle) {
+  if (!overrides || typeof overrides !== 'object') return '';
+  const byId = overrides[String(channelId || '')];
+  if (byId) return String(byId).trim();
+  const wanted = normalizeToken(handle);
+  if (!wanted) return '';
+  for (const [key, value] of Object.entries(overrides)) {
+    if (String(key).startsWith('@') && normalizeToken(key) === wanted) return String(value || '').trim();
+  }
+  return '';
+}
+
+function loadNameOverrides(file) {
+  try {
+    const data = JSON.parse(require('fs').readFileSync(file, 'utf8'));
+    return data && typeof data.overrides === 'object' ? data.overrides : {};
+  } catch (error) {
+    return {};
+  }
+}
+
+module.exports = { normalizeToken, isHandleName, resolveChannelDisplayName, findNameOverride, loadNameOverrides };
