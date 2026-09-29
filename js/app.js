@@ -9094,6 +9094,17 @@ function renderVideos(videos) {
     setupDelegatedVideoCardClicks(videosGrid, 'api');
     bindChannelLinks(videosGrid);
 
+    // Pàgina principal (Novetats): seccions horitzontals en lloc de la graella plana
+    if (
+        selectedCategory === 'Novetats' &&
+        SegueixApp.features.homeSections?.render(videosGrid, normal, { feed: currentFeedData, prepend: shortsSection })
+    ) {
+        if (_batchRenderAbort) _batchRenderAbort.aborted = true;
+        refreshIcons(videosGrid);
+        setupVideoCardActionButtons(videosGrid);
+        return;
+    }
+
     // Batch rendering: primeres 12 targetes immediates, resta en lots
     // A Desktop, mostrar tots els vídeos sense infinite scroll per evitar que
     // les seccions d'historial quedin intercalades amb els vídeos nous.
