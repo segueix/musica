@@ -20,10 +20,6 @@
     const YTM_MAX_VIDEOS = 50;
 
     const ICONS = {
-        prev: '<svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path fill="currentColor" d="M6 5h2v14H6zM20 5v14L9.5 12z"/></svg>',
-        next: '<svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path fill="currentColor" d="M16 5h2v14h-2zM4 5v14l10.5-7z"/></svg>',
-        play: '<svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path fill="currentColor" d="M8 5.5v13l11-6.5z"/></svg>',
-        pause: '<svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path fill="currentColor" d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg>',
         shuffle:
             '<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M16 3h5v5M4 20 21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg>',
         grip: '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M9 6a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0 6a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0 6a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm9-12a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0 6a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0 6a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/></svg>',
@@ -47,7 +43,6 @@
     );
 
     let sortable = null;
-    let bar = null;
 
     function escapeText(value) {
         const div = document.createElement('div');
@@ -451,57 +446,19 @@
         });
     }
 
-    // ---------- Barra de controls simplificada ----------
+    // ---------- Estat de reproducció ----------
+    // Els controls (anterior / play-pausa / següent) ja són dins del reproductor: no hi ha barra
+    // pròpia sota el vídeo. Només mantenim els controls del sistema (Media Session).
     function isPlaying() {
         return document.getElementById('videoPlayer')?.dataset?.playerState === '1';
     }
 
     function updateTransport() {
         updateMediaSession();
-        if (!bar) return;
-        const inQueue = isPlaylistMode && activePlaylistQueue.length > 0;
-        const prev = bar.querySelector('[data-np="prev"]');
-        const next = bar.querySelector('[data-np="next"]');
-        const toggle = bar.querySelector('[data-np="toggle"]');
-        prev.disabled = !inQueue || currentPlaylistIndex <= 0;
-        next.disabled = !inQueue || currentPlaylistIndex >= activePlaylistQueue.length - 1;
-        toggle.innerHTML = isPlaying() ? ICONS.pause : ICONS.play;
-        toggle.setAttribute('aria-label', isPlaying() ? 'Pausa' : 'Reprodueix');
-    }
-
-    function onTransportClick(event) {
-        const button = event.target.closest('[data-np]');
-        if (!button || button.disabled) return;
-        const action = button.dataset.np;
-        if (action === 'toggle') {
-            toggleMainPlayerPlayback?.();
-        } else if (action === 'prev' && currentPlaylistIndex > 0) {
-            currentPlaylistIndex -= 1;
-            loadVideoInSequence();
-        } else if (action === 'next' && currentPlaylistIndex < activePlaylistQueue.length - 1) {
-            currentPlaylistIndex += 1;
-            loadVideoInSequence();
-        }
-        setTimeout(updateTransport, 250);
     }
 
     function initTransport() {
         initMediaSession();
-        const info = document.querySelector('#watchPage .video-info');
-        if (!info || document.getElementById('nowPlayingBar')) return;
-        bar = document.createElement('div');
-        bar.id = 'nowPlayingBar';
-        bar.className = 'now-playing-bar';
-        bar.setAttribute('role', 'group');
-        bar.setAttribute('aria-label', 'Controls de reproducció');
-        bar.innerHTML = `
-            <button type="button" class="np-btn" data-np="prev" aria-label="Anterior">${ICONS.prev}</button>
-            <button type="button" class="np-btn np-btn--main" data-np="toggle" aria-label="Reprodueix">${ICONS.play}</button>
-            <button type="button" class="np-btn" data-np="next" aria-label="Següent">${ICONS.next}</button>
-        `;
-        info.after(bar);
-        bar.addEventListener('click', onTransportClick);
-
         const player = document.getElementById('videoPlayer');
         if (player && typeof MutationObserver === 'function') {
             new MutationObserver(updateTransport).observe(player, {
