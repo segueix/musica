@@ -252,6 +252,14 @@ La finestreta flotant en fer scroll cap avall es manté tal com era: és el comp
 
 **Fitxers Afectats:** `js/app.js` (`renderCategoryHistorySection`, `renderVideos`, `appendWatchedVideosSection`), `tests/helpers.test.js`, `sw.js`.
 
+## [2026-09-29] - Portada: «Destacat per tu» i Novetats diferenciades de les categories
+
+**Canvi:** La caixa del vídeo destacat de la portada té ara la capçalera **«Destacat per tu»** (abans «Destacat del moment/de la setmana»; `index.html` i `updateHero()`). A `home-sections.js`, «Últimes novetats» és una fila **gran** (`.home-section--large`, targetes de 300-460 px) i **cronològica pura**, mentre que les files d'estil s'ordenen per `styleScore()` (escoltes amb decaïment d'actualitat, semivida 30 dies) i un vídeo per artista. Així la portada no té totes les files amb el mateix aspecte i ordre.
+
+**Nota per provar:** amb el feed local només queden pocs vídeos a Novetats després dels filtres; per veure la fila cal injectar vídeos a `homeSections.render()` (o esperar a tenir un feed recent).
+
+**Fitxers Afectats:** `index.html`, `css/styles.css`, `js/app.js` (`updateHero`), `js/features/home-sections.js`, `tests/home-sections-variety.test.js`, `sw.js`.
+
 ## [2026-07-11] - Filera d'icones del header visible en obrir un vídeo al mòbil
 
 **Símptoma:** Al mòbil, en clicar un vídeo del feed i obrir-se la pàgina del reproductor, la filera d'icones del header (Inici, Biblioteca, Historial, Segueix...) es mostrava a sobre del reproductor, ocupant espai vertical útil mentre l'usuari volia veure el vídeo.

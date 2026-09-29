@@ -62,6 +62,23 @@
         return new Date(video?.publishedAt || video?.uploadDate || 0).getTime() || 0;
     }
 
+    // Ordre de les files d'estil (diferent de Novetats, que és cronològic pur): barreja
+    // actualitat i escoltes. Cada vídeo perd la meitat del seu pes cada STYLE_HALF_LIFE_DAYS,
+    // així que mana l'actualitat però una cançó molt escoltada una mica més antiga puja.
+    const STYLE_HALF_LIFE_DAYS = 30;
+    function styleScore(video, now) {
+        const ageDays = Math.max(0, (now - timestampOf(video)) / 86400000);
+        const views = Number(video?.viewCount || video?.views || 0);
+        return (1 + Math.log10(1 + views)) * Math.pow(0.5, ageDays / STYLE_HALF_LIFE_DAYS);
+    }
+    function sortByStyleScore(videos) {
+        const now = Date.now();
+        return videos
+            .map(video => ({ video, score: styleScore(video, now) }))
+            .sort((a, b) => b.score - a.score)
+            .map(item => item.video);
+    }
+
     // Fila amb varietat: primer el vídeo més bo (el primer de la llista, ja ordenada per
     // actualitat o popularitat) de CADA artista, perquè tots tinguin oportunitat. Només si la
     // fila no s'omple es repeteix algun artista, i mai dos seguits.
@@ -147,13 +164,14 @@
     }
 
     function buildSections(videos, feed, allVideos) {
-        const stylePool = getStylePool(videos, allVideos).sort((a, b) => timestampOf(b) - timestampOf(a));
+        const stylePool = sortByStyleScore(getStylePool(videos, allVideos));
         const byDate = [...videos].sort((a, b) => timestampOf(b) - timestampOf(a));
         const sections = [];
 
         const latest = pickVarietyRow(byDate, ROW_SIZE);
         if (latest.length >= MIN_ROW_ITEMS) {
-            sections.push({ title: 'Últimes novetats', videos: latest });
+            // Novetats: cronològic pur i targetes grans, per distingir-les de les files d'estil.
+            sections.push({ title: 'Últimes novetats', subtitle: 'Les més noves', videos: latest, large: true });
         }
 
         const clips = pickVarietyRow(stylePool.filter(isOfficialClip), ROW_SIZE);
@@ -219,7 +237,7 @@
             ? `<button type="button" class="home-section-more" data-open-category="${escapeText(section.category)}">Veure-ho tot</button>`
             : '';
         return `
-            <section class="home-section" data-section-index="${index}">
+            <section class="home-section${section.large ? ' home-section--large' : ''}" data-section-index="${index}">
                 <header class="home-section-header">
                     <div class="home-section-heading">
                         <h2 class="home-section-title">${escapeText(section.title)}</h2>

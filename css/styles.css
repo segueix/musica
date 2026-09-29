@@ -8800,6 +8800,44 @@ body {
     }
 }
 
+/* Novetats: fila destacada amb targetes grans (les files d'estil mantenen la mida normal) */
+#homePage .home-section--large .home-section-title {
+    font-size: 1.75rem;
+}
+
+#homePage .home-section--large .home-section-row {
+    gap: 16px;
+}
+
+#homePage .home-section--large .home-section-row .video-card {
+    flex: 0 0 clamp(300px, 34vw, 460px);
+    padding: 14px;
+}
+
+#homePage .home-section--large .video-card .video-title,
+#homePage .home-section--large .video-card h3 {
+    font-size: 1.05rem;
+}
+
+@media (max-width: 768px) {
+    #homePage .home-section--large .home-section-title {
+        font-size: 1.4rem;
+    }
+
+    #homePage .home-section--large .home-section-row .video-card {
+        flex-basis: 86vw;
+        max-width: 380px;
+    }
+}
+
+/* Capçalera de la caixa destacada: «Destacat per tu» */
+#homePage .hero-eyebrow {
+    font-size: 1.05rem;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    text-transform: none;
+}
+
 /* Els selectors de columnes no tenen sentit amb seccions horitzontals */
 #homePage:has(.home-sections) .grid-layout-controls {
     display: none !important;

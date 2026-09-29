@@ -6006,7 +6006,7 @@ function updateHero(video, source = 'static') {
     }
 
     if (heroEyebrow) {
-        heroEyebrow.textContent = source === 'api' ? 'Destacat del moment' : 'Destacat de la setmana';
+        heroEyebrow.textContent = 'Destacat per tu';
     }
 
     if (heroChannel) {
