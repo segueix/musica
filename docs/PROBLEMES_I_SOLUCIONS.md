@@ -242,6 +242,16 @@ La finestreta flotant en fer scroll cap avall es manté tal com era: és el comp
 
 **Fitxers Afectats:** `scripts/lib/nom_canal.js`, `scripts/corregir_noms_canals.js`, `scripts/update_music_feed.js`, `data/feed.json`, `js/channels-ca.json`, `tests/nom-canal.test.js`.
 
+## [2026-09-29] - Categories d'estil (Jazz, Rumba, Cançó d'autor, Hip hop) amb el mateix artista seguit
+
+**Símptoma:** A les pàgines d'estil encara sortien dues cançons seguides del mateix artista, tot i tenir el reparteix al feed.
+
+**Causa Arrel:** (1) `renderCategoryHistorySection()` (secció d'arxiu sota la llista) ordenava només per data, així que les tongades d'un artista quedaven juntes. (2) `renderVideos()` treu el hero de la llista (i els Shorts al mòbil) *després* del reparteix: en eliminar un element del mig podia quedar junt amb un altre de l'mateix artista, o el primer igual al hero. (3) La secció "Ja vistos" tampoc es repartia.
+
+**Solució Implementada:** `spreadVideosByArtist()` s'aplica també a l'arxiu (finestra de 400, enllaçant amb l'últim vídeo del feed), a `renderVideos()` després de treure el hero (amb el seu artista com a `previousArtist`) i a "Ja vistos". Regla general: **qualsevol llista que es pinti s'ha de repartir en l'últim pas, després d'ordenar/filtrar/treure elements.**
+
+**Fitxers Afectats:** `js/app.js` (`renderCategoryHistorySection`, `renderVideos`, `appendWatchedVideosSection`), `tests/helpers.test.js`, `sw.js`.
+
 ## [2026-07-11] - Filera d'icones del header visible en obrir un vídeo al mòbil
 
 **Símptoma:** Al mòbil, en clicar un vídeo del feed i obrir-se la pàgina del reproductor, la filera d'icones del header (Inici, Biblioteca, Historial, Segueix...) es mostrava a sobre del reproductor, ocupant espai vertical útil mentre l'usuari volia veure el vídeo.
