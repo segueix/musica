@@ -10,7 +10,7 @@
 
     const QUEUE_ID = '__music_queue__';
     const TV_ID = '__segueix_tv_discovery__';
-    const QUEUE_NAME = 'Cua';
+    const QUEUE_NAME = 'Ràdio';
     const MIN_QUEUE_LENGTH = 12;
     const MAX_QUEUE_LENGTH = 40;
 
@@ -36,6 +36,7 @@
 
     const isEphemeral = id => id === QUEUE_ID || id === TV_ID;
     const channelOf = video => String(video?.channelId || '');
+    const artistOf = video => getVideoArtistKey(video);
 
     function findVideo(videoId) {
         const id = String(videoId);
@@ -81,24 +82,36 @@
             ordered = [];
         }
 
-        const queue = [video, ...ordered];
-        if (queue.length < MIN_QUEUE_LENGTH) {
-            const used = new Set(queue.map(item => String(item.id)));
-            const usedChannels = new Set(queue.map(channelOf));
-            const rest = candidates
-                .filter(item => !used.has(String(item.id)))
-                .sort(
-                    (a, b) =>
-                        new Date(b.publishedAt || 0).getTime() - new Date(a.publishedAt || 0).getTime()
-                );
-            // Primer canals nous, després la resta.
-            const fresh = rest.filter(item => !usedChannels.has(channelOf(item)));
-            const others = rest.filter(item => usedChannels.has(channelOf(item)));
-            [...fresh, ...others].forEach(item => {
-                if (queue.length < MIN_QUEUE_LENGTH) queue.push(item);
+        // Ràdio: una sola cançó per artista (i cap del mateix artista que la que sona).
+        // Si no arriba al mínim, es completa amb repeticions, però mai dues seguides.
+        const seenArtists = new Set([artistOf(video)]);
+        const unique = [];
+        const repeated = [];
+        const used = new Set([String(video.id)]);
+        const byRecency = [...candidates].sort(
+            (a, b) => new Date(b.publishedAt || 0).getTime() - new Date(a.publishedAt || 0).getTime()
+        );
+        [...ordered, ...byRecency].forEach(item => {
+            const id = String(item?.id || '');
+            if (!id || used.has(id)) return;
+            used.add(id);
+            const artist = artistOf(item);
+            if (artist && seenArtists.has(artist)) {
+                repeated.push(item);
+            } else {
+                if (artist) seenArtists.add(artist);
+                unique.push(item);
+            }
+        });
+
+        let upcoming = unique;
+        if (upcoming.length + 1 < MIN_QUEUE_LENGTH) {
+            const missing = MIN_QUEUE_LENGTH - 1 - upcoming.length;
+            upcoming = spreadVideosByArtist([...upcoming, ...repeated.slice(0, missing)], {
+                previousArtist: artistOf(video),
             });
         }
-        return queue.slice(0, MAX_QUEUE_LENGTH);
+        return [video, ...upcoming].slice(0, MAX_QUEUE_LENGTH);
     }
 
     // Retorna true si ha engegat la reproducció amb cua (si no, l'app segueix el camí normal).
@@ -191,7 +204,7 @@
                     </span>
                     <span class="mq-duration">${escapeText(duration || '')}</span>
                 </button>
-                ${draggable ? `<button type="button" class="mq-remove" data-mq-remove="${index}" aria-label="Treu de la cua">${ICONS.close}</button>` : ''}
+                ${draggable ? `<button type="button" class="mq-remove" data-mq-remove="${index}" aria-label="Treu de la ràdio">${ICONS.close}</button>` : ''}
             </div>
         `;
     }
@@ -209,15 +222,15 @@
         container.innerHTML = `
             <div class="mq">
                 <div class="mq-head">
-                    <h2 class="mq-heading">Cua</h2>
-                    <span class="mq-source">${activePlaylistId === QUEUE_ID ? 'Segons Música TV' : escapeText(activePlaylistName || '')}</span>
-                    ${canRegenerate ? `<button type="button" class="mq-regenerate" data-mq-regenerate title="Genera de nou la cua amb l'ordenació de Música TV">${ICONS.shuffle}<span>Barreja</span></button>` : ''}
+                    <h2 class="mq-heading">Ràdio</h2>
+                    <span class="mq-source">${activePlaylistId === QUEUE_ID ? `Basada en ${escapeText(current.channelTitle || 'aquesta cançó')}` : escapeText(activePlaylistName || '')}</span>
+                    ${canRegenerate ? `<button type="button" class="mq-regenerate" data-mq-regenerate title="Genera de nou la ràdio">${ICONS.shuffle}<span>Barreja</span></button>` : ''}
                 </div>
                 <div class="mq-section">Ara sona</div>
                 ${renderItem(current, currentPlaylistIndex, { active: true, draggable: false })}
                 <div class="mq-section">A continuació${upcoming.length ? ` · ${upcoming.length}` : ''}</div>
                 <div class="mq-list" role="list">
-                    ${upcoming.map((video, i) => renderItem(video, currentPlaylistIndex + 1 + i)).join('') || '<div class="mq-empty">No hi ha més cançons a la cua.</div>'}
+                    ${upcoming.map((video, i) => renderItem(video, currentPlaylistIndex + 1 + i)).join('') || '<div class="mq-empty">No hi ha més cançons a la ràdio.</div>'}
                 </div>
             </div>
         `;

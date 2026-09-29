@@ -5191,13 +5191,33 @@ async function initAppUpdater() {
         //     passar si l'usuari ha demanat explícitament l'actualització.
         const hadControllerOnLoad = Boolean(navigator.serviceWorker.controller);
 
-        swRegistration = await navigator.serviceWorker.register('./sw.js');
+        swRegistration = await navigator.serviceWorker.register('./sw.js', { updateViaCache: 'none' });
+
+        // Activa el SW en espera: en prendre el control, 'controllerchange' recarrega la pàgina.
+        const applyUpdate = () => {
+            const waiting = swRegistration?.waiting;
+            if (!waiting) return false;
+            waiting.postMessage({ type: 'SKIP_WAITING' });
+            return true;
+        };
+
+        // Un SW nou queda "en espera" mentre hi ha pestanyes obertes (la pestanya normal
+        // en manté una d'antiga per sempre). Si l'usuari no hi està interactuant
+        // (pàgina en segon pla) l'apliquem sense demanar res; si no, mostrem l'avís.
+        const handleWaitingWorker = () => {
+            if (!swRegistration?.waiting || !hadControllerOnLoad) return;
+            if (document.visibilityState === 'hidden') {
+                applyUpdate();
+            } else {
+                showUpdateNotice();
+            }
+        };
 
         const bindInstallingWorker = worker => {
             if (!worker) return;
             worker.addEventListener('statechange', () => {
                 if (worker.state === 'installed' && navigator.serviceWorker.controller) {
-                    showUpdateNotice();
+                    handleWaitingWorker();
                 }
             });
         };
@@ -5207,9 +5227,39 @@ async function initAppUpdater() {
             bindInstallingWorker(swRegistration.installing);
         });
 
-        if (swRegistration.waiting) {
-            showUpdateNotice();
+        // Un SW ja en espera en obrir l'app (actualització baixada en una visita anterior):
+        // s'aplica ara mateix, abans que l'usuari hi interactuï, perquè no quedi mai desfasada.
+        if (swRegistration.waiting && hadControllerOnLoad) {
+            applyUpdate();
         }
+
+        // El badge d'actualització ara és clicable: aplica l'actualització.
+        const updateBadgeButton = updateBadge?.closest('button');
+        updateBadgeButton?.addEventListener(
+            'click',
+            event => {
+                if (updateBadge.style.display === 'none' || !swRegistration?.waiting) return;
+                event.preventDefault();
+                event.stopImmediatePropagation();
+                applyUpdate();
+            },
+            true
+        );
+
+        // Comprova si hi ha versió nova en tornar a la pestanya i cada 30 minuts.
+        const checkForUpdate = () => {
+            swRegistration?.update().catch(() => {});
+        };
+        document.addEventListener('visibilitychange', () => {
+            if (document.visibilityState === 'visible') {
+                checkForUpdate();
+                handleWaitingWorker();
+            } else {
+                handleWaitingWorker();
+            }
+        });
+        setInterval(checkForUpdate, 30 * 60 * 1000);
+        checkForUpdate();
 
         navigator.serviceWorker.addEventListener('controllerchange', () => {
             if (isSwRefreshing) return;
@@ -7051,6 +7101,9 @@ function renderFeedLegacyImpl() {
         const seconds = getVideoDurationSeconds(video);
         return seconds !== null && seconds > 0;
     });
+
+    // Varietat: mai dues cançons seguides del mateix grup/artista.
+    filtered = spreadVideosByArtist(filtered);
 
     lastRenderedFeedList = filtered;
     currentFeedRenderer(filtered);
@@ -12476,7 +12529,7 @@ function renderCategoryVideosBelowLegacyImpl(currentChannelId, currentVideoId) {
         return;
     }
 
-    batchRenderCards(extraContainer, videos, createVideoCardAPI, {
+    batchRenderCards(extraContainer, spreadVideosByArtist(videos), createVideoCardAPI, {
         onComplete: () => {
             ensureWatchGridLayoutControls();
             applyWatchGridLayoutPreference();
@@ -12495,6 +12548,13 @@ async function renderPlaylistRelatedVideos(playlistName) {
 async function renderPlaylistRelatedVideosLegacyImpl(playlistName) {
     const extraContainer = extraVideosGrid || document.getElementById('extraVideosGrid');
     if (!extraContainer) {
+        return;
+    }
+    // La ràdio (cua generada) no és una cerca: es mostren vídeos de la mateixa categoria
+    // que el vídeo que sona, sense cap "resultat de cua".
+    if (isPlaylistMode && activePlaylistId === '__music_queue__') {
+        const playing = activePlaylistQueue[currentPlaylistIndex];
+        renderCategoryVideosBelowLegacyImpl(playing?.channelId || null, playing?.id || currentVideoId);
         return;
     }
     const trimmedName = String(playlistName || '').trim();
