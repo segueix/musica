@@ -340,6 +340,16 @@ La finestreta flotant en fer scroll cap avall es manté tal com era: és el comp
 
 **Fitxers Afectats:** `js/app.js`, `js/features/music-queue.js`, `scripts/lib/classificar_contingut_musical.js`, `sw.js`.
 
+## [2026-09-29] - La ràdio d'una fila/categoria no era de la categoria (Cançó d'autor, etc.)
+
+**Símptoma:** A la portada, en clicar una cançó de la fila «Cançó d'autor», la ràdio generada barrejava tots els estils.
+
+**Causa Arrel:** (1) `startFrom()` només mirava `selectedCategory`, que a la portada és «Novetats» (vista general), així que no sabia de quina fila venia el clic. (2) Encara que hi hagués categoria, `buildQueue()` només en canviava el *nom* de la llista: els candidats eren tot el feed.
+
+**Solució Implementada:** Les seccions de la portada porten `data-category`; un listener de clic en captura (`music-queue.js`) recorda la categoria de la fila clicada (`clickCategory`) i `startFrom()` la consumeix (si no, usa `selectedCategory` fora de vistes generals). `buildQueue(video, category)` filtra els candidats amb `matchesCategory()` (categories del vídeo o del canal al feed, `Pop / Rock` = Pop+Rock, categories personalitzades amb `matchesCustomCategory`). Si la categoria té menys de 2 cançons, cau a ràdio general perquè la reproducció no s'aturi. «Barreja» conserva la categoria (`radioCategory`). Verificat en Chromium: Cançó d'autor (20/20 de la categoria), Rap / Hip-hop (12/12), Jazz / Blues (12/12).
+
+**Fitxers Afectats:** `js/features/music-queue.js`, `js/features/home-sections.js`, `sw.js`.
+
 ## [2026-07-11] - Filera d'icones del header visible en obrir un vídeo al mòbil
 
 **Símptoma:** Al mòbil, en clicar un vídeo del feed i obrir-se la pàgina del reproductor, la filera d'icones del header (Inici, Biblioteca, Historial, Segueix...) es mostrava a sobre del reproductor, ocupant espai vertical útil mentre l'usuari volia veure el vídeo.

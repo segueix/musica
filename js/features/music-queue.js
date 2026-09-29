@@ -35,6 +35,16 @@
     // Categories que no són una "categoria" a efectes del nom de la llista (són vistes generals).
     const GENERAL_VIEWS = new Set(['novetats', 'tot', 'descobreix', 'seguint', 'radar', 'recomanat per a tu']);
     let radioCategory = '';
+    // Categoria de la fila de la portada on l'usuari ha clicat una cançó (null = fora de files).
+    let clickCategory = null;
+    document.addEventListener(
+        'click',
+        event => {
+            const row = event.target?.closest?.('.home-section[data-category]');
+            clickCategory = row ? row.dataset.category || '' : null;
+        },
+        true
+    );
 
     let sortable = null;
     let bar = null;
@@ -71,7 +81,31 @@
 
     // Cua = vídeo inicial + ordenació de Música TV; si TV en dona pocs (només descobreix
     // canals no seguits, un vídeo per canal) s'ompl amb els vídeos més recents restants.
-    function buildQueue(video) {
+    // Categories que agrupen diverses (com la fila «Pop / Rock» de la portada).
+    const COMBINED_CATEGORIES = { 'pop / rock': ['pop', 'rock'] };
+
+    // Categoria d'estil del vídeo: les del vídeo/canal al feed (com filterVideosByCategory).
+    function matchesCategory(video, category) {
+        const wanted = COMBINED_CATEGORIES[category.toLowerCase()] || [category.toLowerCase()];
+        try {
+            if (typeof isCustomCategory === 'function' && isCustomCategory(category)) {
+                return typeof matchesCustomCategory === 'function' ? matchesCustomCategory(video, category) : true;
+            }
+        } catch (error) {
+            return true;
+        }
+        let own = Array.isArray(video?.categories) ? video.categories : [];
+        if (!own.length) {
+            const feed = (typeof getFeedDataForFilter === 'function' && getFeedDataForFilter()) || currentFeedData;
+            const channel = (Array.isArray(feed?.channels) ? feed.channels : []).find(
+                item => String(item?.id) === channelOf(video)
+            );
+            own = Array.isArray(channel?.categories) ? channel.categories : [];
+        }
+        return own.some(name => wanted.includes(String(name).toLowerCase()));
+    }
+
+    function buildQueue(video, category = '') {
         let pool = Array.isArray(currentFeedVideos) ? currentFeedVideos : [];
         try {
             if (typeof filterOutWatchedVideos === 'function') pool = filterOutWatchedVideos(pool) || pool;
@@ -88,7 +122,9 @@
                 !item.isShort &&
                 isSong(item) &&
                 item.source !== 'static' &&
-                !hidden.has(channelOf(item))
+                !hidden.has(channelOf(item)) &&
+                // Ràdio d'una categoria: només cançons d'aquella categoria
+                (!category || matchesCategory(item, category))
         );
 
         const tv = app.features.segueixTV;
@@ -150,12 +186,22 @@
         const video = findVideo(videoId);
         if (!video || video.isShort) return false;
 
-        const queue = buildQueue(video);
-        if (queue.length < 2) return false;
+        // Categoria de la ràdio: la de la fila de la portada on s'ha clicat (Cançó d'autor, Jazz...) o,
+        // a la pàgina d'una categoria, la categoria seleccionada. A Novetats/Tot/... és una ràdio general.
+        const fromRow = clickCategory;
+        clickCategory = null;
+        const selected = String(typeof selectedCategory === 'string' ? selectedCategory : '').trim();
+        let category = fromRow !== null ? fromRow : selected;
+        if (!category || GENERAL_VIEWS.has(category.toLowerCase())) category = '';
 
-        // Si la ràdio neix dins d'una categoria (Jazz, Rumba...) la llista es dirà com ella.
-        const category = String(typeof selectedCategory === 'string' ? selectedCategory : '').trim();
-        radioCategory = category && !GENERAL_VIEWS.has(category.toLowerCase()) ? category : '';
+        let queue = buildQueue(video, category);
+        if (category && queue.length < 2) {
+            // Categoria amb massa poques cançons: ràdio general perquè la reproducció no s'aturi
+            category = '';
+            queue = buildQueue(video);
+        }
+        if (queue.length < 2) return false;
+        radioCategory = category;
 
         clearEmbeddedYouTubeSession();
         isPlaylistMode = true;
@@ -174,7 +220,7 @@
         if (!current) return;
         const played = activePlaylistQueue.slice(0, currentPlaylistIndex + 1);
         const playedIds = new Set(played.map(item => String(item.id)));
-        const fresh = buildQueue(current).filter(item => !playedIds.has(String(item.id)));
+        const fresh = buildQueue(current, radioCategory).filter(item => !playedIds.has(String(item.id)));
         activePlaylistQueue = [...played, ...fresh].slice(0, MAX_QUEUE_LENGTH + played.length);
         refresh();
     }
