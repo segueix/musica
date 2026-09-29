@@ -7117,7 +7117,7 @@ function appendWatchedVideosSection(container, videos) {
     wrapper.className = 'category-history-wrapper category-watched-wrapper';
     wrapper.innerHTML = `
         <h2 class="category-history-title">Ja vistos</h2>
-        <div class="videos-grid">${videos.map(video => createVideoCardAPI(video)).join('')}</div>
+        <div class="videos-grid">${spreadVideosByArtist(videos).map(video => createVideoCardAPI(video)).join('')}</div>
     `;
     container.appendChild(wrapper);
 
@@ -7238,7 +7238,7 @@ function renderCategoryHistorySection(categoryTag) {
             .filter(video => video.id);
     }
 
-    const historicVideos = archiveCandidates
+    const historicByDate = archiveCandidates
         .filter(video => !watchedIds.has(String(video.id)))
         .filter(notInFeed)
         .sort((a, b) => {
@@ -7246,6 +7246,13 @@ function renderCategoryHistorySection(categoryTag) {
             const dateB = new Date(b.publishedAt || b.uploadDate || 0).getTime();
             return dateB - dateA;
         });
+    // Varietat: l'arxiu ordenat per data agrupa tongades del mateix artista; es reparteixen
+    // (mantenint l'actualitat) i s'enllaça amb l'últim vídeo del feed que hi ha just a sobre.
+    const lastFeedVideo = lastRenderedFeedList[lastRenderedFeedList.length - 1];
+    const historicVideos = spreadVideosByArtist(historicByDate, {
+        previousArtist: getVideoArtistKey(lastFeedVideo),
+        window: 400,
+    });
 
     if (historicVideos.length === 0) return;
 
@@ -9151,7 +9158,9 @@ function renderVideos(videos) {
     const shorts = isMobile ? listVideos.filter(video => video.isShort) : [];
     const normal = listVideos.filter(video => !video.isShort);
 
-    let freshVideos = normal;
+    // El hero surt de la llista (i els Shorts al mòbil): en treure elements del mig poden quedar
+    // junts dos vídeos del mateix artista, o el primer igual que el hero. Es torna a repartir.
+    let freshVideos = spreadVideosByArtist(normal, { previousArtist: getVideoArtistKey(featured) });
 
     const shortsSection =
         shorts.length > 0

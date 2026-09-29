@@ -213,4 +213,18 @@ describe('spreadVideosByArtist', () => {
     it('no falla si tot és del mateix artista', () => {
         expect(ids(ctx.spreadVideosByArtist([v('a', 1), v('b', 1)]))).toBe('ab');
     });
+
+    it('reparteix tongades llargues del mateix artista (arxiu ordenat per data)', () => {
+        const list = [];
+        // 30 vídeos de A seguits, després 10 de B, 8 de C i 12 més d'artistes diferents
+        for (let i = 0; i < 30; i++) list.push(v(`a${i}`, 'A'));
+        for (let i = 0; i < 10; i++) list.push(v(`b${i}`, 'B'));
+        for (let i = 0; i < 8; i++) list.push(v(`c${i}`, 'C'));
+        for (let i = 0; i < 12; i++) list.push(v(`x${i}`, `X${i}`));
+        const out = ctx.spreadVideosByArtist(list, { window: 400 });
+        expect(out).toHaveLength(list.length);
+        const adjacent = out.filter((item, i) => i > 0 && item.channelId === out[i - 1].channelId);
+        // A té 30 de 60: l'alternança perfecta és possible, però mai més de 1-2 parelles per l'excés
+        expect(adjacent.length).toBeLessThanOrEqual(1);
+    });
 });

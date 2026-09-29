@@ -232,6 +232,26 @@ La finestreta flotant en fer scroll cap avall es manté tal com era: és el comp
 
 **Fitxers Afectats:** `js/features/home-sections.js`, `js/utils/helpers.js`, `tests/home-sections-variety.test.js`, `sw.js`.
 
+## [2026-09-29] - El nom del canal era el handle en comptes del nom real
+
+**Símptoma:** Canals que es mostraven com `elspetsoficial`, `discmedilaxnbusto`, `DemencialWeare`, `CrimPunkRock` o `KitschVideos` en lloc d'Els Pets, Lax'n'Busto, The Demencials, Crim o Kitsch.
+
+**Causa Arrel:** `update_music_feed.js` usava el títol de YouTube (`snippet.title`) tal qual, i per a aquests canals el títol és literalment el handle. El nom real de l'artista (a `artistes-musica.json`) no s'aplicava mai.
+
+**Solució Implementada:** `scripts/lib/nom_canal.js` (`resolveChannelDisplayName`): si el nom és una sola paraula que coincideix amb el handle (o comença per `@`) i el canal té un únic artista, s'usa el nom de l'artista. No toca noms reals amb espais (p. ex. "Lluís Llach"). S'aplica a `update_music_feed.js` i, per corregir ja les dades existents sense API, `node scripts/corregir_noms_canals.js` (idempotent) actualitza `feed.json` i `channels-ca.json`.
+
+**Fitxers Afectats:** `scripts/lib/nom_canal.js`, `scripts/corregir_noms_canals.js`, `scripts/update_music_feed.js`, `data/feed.json`, `js/channels-ca.json`, `tests/nom-canal.test.js`.
+
+## [2026-09-29] - Categories d'estil (Jazz, Rumba, Cançó d'autor, Hip hop) amb el mateix artista seguit
+
+**Símptoma:** A les pàgines d'estil encara sortien dues cançons seguides del mateix artista, tot i tenir el reparteix al feed.
+
+**Causa Arrel:** (1) `renderCategoryHistorySection()` (secció d'arxiu sota la llista) ordenava només per data, així que les tongades d'un artista quedaven juntes. (2) `renderVideos()` treu el hero de la llista (i els Shorts al mòbil) *després* del reparteix: en eliminar un element del mig podia quedar junt amb un altre de l'mateix artista, o el primer igual al hero. (3) La secció "Ja vistos" tampoc es repartia.
+
+**Solució Implementada:** `spreadVideosByArtist()` s'aplica també a l'arxiu (finestra de 400, enllaçant amb l'últim vídeo del feed), a `renderVideos()` després de treure el hero (amb el seu artista com a `previousArtist`) i a "Ja vistos". Regla general: **qualsevol llista que es pinti s'ha de repartir en l'últim pas, després d'ordenar/filtrar/treure elements.**
+
+**Fitxers Afectats:** `js/app.js` (`renderCategoryHistorySection`, `renderVideos`, `appendWatchedVideosSection`), `tests/helpers.test.js`, `sw.js`.
+
 ## [2026-07-11] - Filera d'icones del header visible en obrir un vídeo al mòbil
 
 **Símptoma:** Al mòbil, en clicar un vídeo del feed i obrir-se la pàgina del reproductor, la filera d'icones del header (Inici, Biblioteca, Historial, Segueix...) es mostrava a sobre del reproductor, ocupant espai vertical útil mentre l'usuari volia veure el vídeo.
