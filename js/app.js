@@ -6196,7 +6196,13 @@ function filterVideosByCategory(videos, feed) {
         (Array.isArray(list) ? list : []).filter(video => !hiddenIds.has(String(video?.channelId || '')));
     const visibleVideos = removeHiddenChannelVideos(videos);
 
-    if (!selectedCategory || selectedCategory === 'Tot' || selectedCategory === 'Novetats') return visibleVideos;
+    if (!selectedCategory || selectedCategory === 'Tot' || selectedCategory === 'Novetats') {
+        // Només cançons (song / live_song): fora entrevistes, concerts complets, teasers, etc.
+        const music = window.SegueixMusicCategories;
+        return music?.isCategoryEligibleVideo
+            ? visibleVideos.filter(video => video.isShort || music.isCategoryEligibleVideo(video))
+            : visibleVideos;
+    }
     if (selectedCategory === 'Descobreix') {
         const followedIds = new Set(getFollowedChannelIds().map(id => String(id)));
         return visibleVideos.filter(video => {
@@ -9889,6 +9895,31 @@ function hasQueueNextVideo() {
     return Boolean(currentVideo && !currentVideo.isShort);
 }
 
+function hasQueuePrevVideo() {
+    if (!isPlaylistMode || !Array.isArray(activePlaylistQueue) || activePlaylistQueue.length < 2) {
+        return false;
+    }
+    if (currentPlaylistIndex <= 0 || currentPlaylistIndex >= activePlaylistQueue.length) {
+        return false;
+    }
+    const currentVideo = activePlaylistQueue[currentPlaylistIndex];
+    return Boolean(currentVideo && !currentVideo.isShort);
+}
+
+// Hi ha algun control (anterior o següent) per mostrar sobre el reproductor.
+function hasQueueNavigation() {
+    return hasQueueNextVideo() || hasQueuePrevVideo();
+}
+
+// Mostra només els botons que tenen sentit (a la primera cançó no hi ha "anterior", a l'última no hi ha "següent").
+function updateQueueOverlayButtons(overlay) {
+    if (!overlay) return;
+    const next = overlay.querySelector('.queue-next-button');
+    const prev = overlay.querySelector('.queue-prev-button');
+    if (next) next.hidden = !hasQueueNextVideo();
+    if (prev) prev.hidden = !hasQueuePrevVideo();
+}
+
 function getQueueNextOverlay() {
     return videoPlayer?.querySelector('.queue-next-overlay') || null;
 }
@@ -9909,8 +9940,9 @@ function hideQueueNextOverlay({ remove = false } = {}) {
     }
     overlay.classList.remove('is-visible');
     overlay.setAttribute('aria-hidden', 'true');
-    const button = overlay.querySelector('.queue-next-button');
-    if (button) button.tabIndex = -1;
+    overlay.querySelectorAll('.queue-next-button, .queue-prev-button').forEach(button => {
+        button.tabIndex = -1;
+    });
 }
 
 function isQueuePlayerPaused() {
@@ -9920,13 +9952,15 @@ function isQueuePlayerPaused() {
 function showQueueNextOverlay({ duration = 3000 } = {}) {
     syncQueueNextOverlay();
     const overlay = getQueueNextOverlay();
-    if (!overlay || !hasQueueNextVideo()) return;
+    if (!overlay || !hasQueueNavigation()) return;
 
     clearQueueNextOverlayTimer();
+    updateQueueOverlayButtons(overlay);
     overlay.classList.add('is-visible');
     overlay.setAttribute('aria-hidden', 'false');
-    const button = overlay.querySelector('.queue-next-button');
-    if (button) button.tabIndex = 0;
+    overlay.querySelectorAll('.queue-next-button, .queue-prev-button').forEach(button => {
+        button.tabIndex = 0;
+    });
 
     // En pausa el control de següent queda sempre visible, com els controls del player.
     if (isQueuePlayerPaused()) return;
@@ -9950,12 +9984,29 @@ function advanceQueueFromOverlay(event) {
     loadVideoInSequence();
 }
 
+function goToPreviousFromOverlay(event) {
+    event?.preventDefault?.();
+    event?.stopPropagation?.();
+
+    if (!hasQueuePrevVideo()) {
+        syncQueueNextOverlay();
+        return;
+    }
+
+    currentPlaylistIndex -= 1;
+    hideQueueNextOverlay({ remove: true });
+    loadVideoInSequence();
+}
+
 function createQueueNextOverlay() {
     const overlay = document.createElement('div');
     overlay.className = 'queue-next-overlay';
     overlay.setAttribute('aria-hidden', 'true');
     overlay.innerHTML = `
         <div class="queue-next-touch-layer" aria-hidden="true"></div>
+        <button class="queue-prev-button" type="button" aria-label="Vídeo anterior" title="Vídeo anterior" tabindex="-1">
+            <span class="queue-prev-icon" aria-hidden="true"></span>
+        </button>
         <button class="queue-next-button" type="button" aria-label="Vídeo següent" title="Vídeo següent" tabindex="-1">
             <span class="queue-next-icon" aria-hidden="true"></span>
         </button>
@@ -9969,13 +10020,15 @@ function createQueueNextOverlay() {
     });
 
     overlay.querySelector('.queue-next-button')?.addEventListener('click', advanceQueueFromOverlay);
+    overlay.querySelector('.queue-prev-button')?.addEventListener('click', goToPreviousFromOverlay);
+    updateQueueOverlayButtons(overlay);
     return overlay;
 }
 
 function syncQueueNextOverlay() {
     if (!videoPlayer) return;
 
-    if (!hasQueueNextVideo()) {
+    if (!hasQueueNavigation()) {
         hideQueueNextOverlay({ remove: true });
         return;
     }
@@ -9983,6 +10036,7 @@ function syncQueueNextOverlay() {
     if (!getQueueNextOverlay()) {
         videoPlayer.appendChild(createQueueNextOverlay());
     }
+    updateQueueOverlayButtons(getQueueNextOverlay());
 }
 
 function scheduleQueueNextOverlaySync() {
@@ -10000,19 +10054,19 @@ function initQueueNextOverlay() {
     queueNextOverlayObserver.observe(videoPlayer, { childList: true });
 
     videoPlayer.addEventListener('pointerenter', event => {
-        if (event.pointerType === 'mouse' && hasQueueNextVideo()) {
+        if (event.pointerType === 'mouse' && hasQueueNavigation()) {
             showQueueNextOverlay({ duration: 10000 });
         }
     });
 
     videoPlayer.addEventListener('pointermove', event => {
-        if (event.pointerType === 'mouse' && hasQueueNextVideo()) {
+        if (event.pointerType === 'mouse' && hasQueueNavigation()) {
             showQueueNextOverlay({ duration: 10000 });
         }
     });
 
     videoPlayer.addEventListener('focusin', event => {
-        if (event.target?.closest?.('.queue-next-button')) {
+        if (event.target?.closest?.('.queue-next-button, .queue-prev-button')) {
             showQueueNextOverlay({ duration: 10000 });
         }
     });
@@ -11146,7 +11200,7 @@ function handleYouTubeMessageLegacyImpl(event) {
     // Guardem l'estat del reproductor (1 = Playing, 2 = Paused, etc.)
     if (payload?.event === 'onStateChange' && videoPlayer) {
         videoPlayer.dataset.playerState = payload.info;
-        if (payload?.info === 2 && hasQueueNextVideo()) {
+        if (payload?.info === 2 && hasQueueNavigation()) {
             showQueueNextOverlay();
         } else if (payload?.info === 1) {
             const overlay = getQueueNextOverlay();

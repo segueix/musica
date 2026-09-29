@@ -277,12 +277,56 @@
         });
     }
 
+    // ---------- Media Session (controls del sistema: pantalla de bloqueig, auriculars, notificació) ----------
+    function updateMediaSession() {
+        if (!('mediaSession' in navigator) || typeof MediaMetadata !== 'function') return;
+        const video = isPlaylistMode ? activePlaylistQueue[currentPlaylistIndex] : null;
+        if (!video) return;
+        try {
+            navigator.mediaSession.metadata = new MediaMetadata({
+                title: video.title || '',
+                artist: video.channelTitle || '',
+                album: activePlaylistName || 'Segueix!',
+                artwork: video.thumbnail ? [{ src: video.thumbnail, sizes: '480x360', type: 'image/jpeg' }] : [],
+            });
+            navigator.mediaSession.playbackState = isPlaying() ? 'playing' : 'paused';
+        } catch (error) {
+            // Navegador sense suport complet: la reproducció no en depèn
+        }
+    }
+
+    function initMediaSession() {
+        if (!('mediaSession' in navigator)) return;
+        const set = (action, handler) => {
+            try {
+                navigator.mediaSession.setActionHandler(action, handler);
+            } catch (error) {
+                // Acció no suportada en aquest navegador
+            }
+        };
+        set('play', () => !isPlaying() && toggleMainPlayerPlayback?.());
+        set('pause', () => isPlaying() && toggleMainPlayerPlayback?.());
+        set('previoustrack', () => {
+            if (isPlaylistMode && currentPlaylistIndex > 0) {
+                currentPlaylistIndex -= 1;
+                loadVideoInSequence();
+            }
+        });
+        set('nexttrack', () => {
+            if (isPlaylistMode && currentPlaylistIndex < activePlaylistQueue.length - 1) {
+                currentPlaylistIndex += 1;
+                loadVideoInSequence();
+            }
+        });
+    }
+
     // ---------- Barra de controls simplificada ----------
     function isPlaying() {
         return document.getElementById('videoPlayer')?.dataset?.playerState === '1';
     }
 
     function updateTransport() {
+        updateMediaSession();
         if (!bar) return;
         const inQueue = isPlaylistMode && activePlaylistQueue.length > 0;
         const prev = bar.querySelector('[data-np="prev"]');
@@ -311,6 +355,7 @@
     }
 
     function initTransport() {
+        initMediaSession();
         const info = document.querySelector('#watchPage .video-info');
         if (!info || document.getElementById('nowPlayingBar')) return;
         bar = document.createElement('div');

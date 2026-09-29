@@ -18,4 +18,7 @@ assert.equal(classifyMusicContent({item:item('Lamparetes - Full Album','','10',2
 assert.equal(classifyMusicContent({item:item('Alegria - Live Session','','10',260),channelMeta:official}).contentType,'live_song');
 assert.equal(classifyMusicContent({item:item('Teaser nou disc','','10',20),channelMeta:official}).accepted,false);
 
+assert.equal(classifyMusicContent({item:item('Els Amics de les Arts - Festes de la Mercè 2026','','10',55),channelMeta:official}).accepted,false);
+assert.equal(classifyMusicContent({item:item('Un concert com els d\'abans','','10',316),channelMeta:official}).accepted,false);
+
 console.log('✅ Classificador de contingut musical correcte.');
