@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-29T13:01:45.117Z",
+  "updatedAt": "2026-09-29T17:07:12.736Z",
   "artists": [
     {
       "name": "31 FAM",
@@ -10648,7 +10648,15 @@
       "wikidataId": "Q237042",
       "musicbrainzId": "f9b438e7-2930-4a09-902d-cd7b65bb452f",
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCJtO_dvu5AOSjtz1cWWpV0Q",
+            "handle": "@mariadelmarbonetoficial",
+            "name": "Maria del Mar Bonet",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "candidates": [],
         "searchCandidates": [
           {
@@ -10699,7 +10707,7 @@
           }
         ]
       },
-      "confidence": "pendent",
+      "confidence": "alta",
       "reviewStatus": "pendent",
       "active": false,
       "sources": [
@@ -10709,7 +10717,7 @@
         "genre:manual",
         "youtube:manual-verified"
       ],
-      "lastChecked": "2026-09-25T15:55:37.273Z",
+      "lastChecked": "2026-09-29T17:03:27.454Z",
       "notes": "Nova Cançó.",
       "enrichment": {
         "musicbrainz": {
@@ -10966,8 +10974,8 @@
         "channels": [
           {
             "id": "UCtFrz4JJnpJq7dhxLNRwkdA",
-            "handle": null,
-            "name": null,
+            "handle": "@marinarossell",
+            "name": "Marina Rossell",
             "type": "official",
             "primary": true
           }
@@ -10983,7 +10991,7 @@
         "genre:manual",
         "youtube:manual-verified"
       ],
-      "lastChecked": "2026-09-25T15:44:05.402Z",
+      "lastChecked": "2026-09-29T17:03:27.531Z",
       "notes": "",
       "genresRaw": [],
       "enrichment": {
@@ -15077,7 +15085,15 @@
       "wikidataId": "Q1629629",
       "musicbrainzId": "2769d6bb-3c8a-4376-b5dd-cfdf82a15325",
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCTnoklTTyDXYYtT5_nmxUVQ",
+            "handle": "@rogermas",
+            "name": "Roger Mas",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "candidates": [],
         "searchCandidates": [
           {
@@ -15123,7 +15139,7 @@
           }
         ]
       },
-      "confidence": "pendent",
+      "confidence": "alta",
       "reviewStatus": "pendent",
       "active": false,
       "sources": [
@@ -15133,7 +15149,7 @@
         "genre:manual",
         "youtube:manual-verified"
       ],
-      "lastChecked": "2026-09-25T15:56:27.487Z",
+      "lastChecked": "2026-09-29T17:03:27.603Z",
       "notes": "",
       "enrichment": {
         "musicbrainz": {
@@ -15969,7 +15985,15 @@
       "wikidataId": "Q9081084",
       "musicbrainzId": "c532c746-29b7-46a1-b37e-705a62827bab",
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCXa6Mb5QgzYjRV_D1VlYoKQ",
+            "handle": "@silviaperezcruz",
+            "name": "silviaperezcruz",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "candidates": [],
         "searchCandidates": [
           {
@@ -16018,7 +16042,7 @@
           }
         ]
       },
-      "confidence": "pendent",
+      "confidence": "alta",
       "reviewStatus": "pendent",
       "active": false,
       "sources": [
@@ -16028,7 +16052,7 @@
         "genre:manual",
         "youtube:manual-verified"
       ],
-      "lastChecked": "2026-09-25T15:56:36.472Z",
+      "lastChecked": "2026-09-29T17:03:27.683Z",
       "notes": "",
       "enrichment": {
         "musicbrainz": {
@@ -18964,7 +18988,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCSDuvSwql52flui2567reQw",
+            "handle": "@annaandreu",
+            "name": "Anna Andreu",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "candidates": []
       },
       "confidence": "mitjana",
@@ -18975,7 +19007,7 @@
         "genre:manual",
         "youtube:manual-verified"
       ],
-      "lastChecked": null,
+      "lastChecked": "2026-09-29T17:03:26.977Z",
       "notes": "",
       "genresRaw": [
         "Cançó d'autor"
@@ -18994,7 +19026,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCqjjCCORy-B_NznEv8LqU-g",
+            "handle": "@feliuventura",
+            "name": "Feliu Ventura",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "candidates": []
       },
       "confidence": "mitjana",
@@ -19005,7 +19045,7 @@
         "genre:manual",
         "youtube:manual-verified"
       ],
-      "lastChecked": null,
+      "lastChecked": "2026-09-29T17:03:27.133Z",
       "notes": "",
       "genresRaw": [
         "Cançó d'autor"
@@ -19024,7 +19064,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UC9twmdozj_iXRhX_FRZMwzw",
+            "handle": "@joanmanuelserrat",
+            "name": "Joan Manuel Serrat",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "candidates": []
       },
       "confidence": "mitjana",
@@ -19035,7 +19083,7 @@
         "genre:manual",
         "youtube:manual-verified"
       ],
-      "lastChecked": null,
+      "lastChecked": "2026-09-29T17:03:27.206Z",
       "notes": "Nova Cançó / Cançó d'autor.",
       "genresRaw": [
         "Cançó d'autor"
