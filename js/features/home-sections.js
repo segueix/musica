@@ -35,6 +35,27 @@
         return div.innerHTML;
     }
 
+    // Videoclips oficials: cançons amb marca explícita de videoclip / vídeo oficial al títol
+    // (o marcades així pel classificador del feed). Exclou portades (covers), lyrics, àudios
+    // amb imatge fixa, directes, versions, karaokes, remixos, teasers i contingut auxiliar.
+    const OFFICIAL_CLIP_RE =
+        /(v[ií]deo\s*-?\s*clip|clip\s+oficial|official\s+(music\s+)?video|official\s+clip|v[ií]deo\s+oficial|[(\[]\s*(oficial|official)\s*[)\]]|official\s+mv)/i;
+    const NOT_OFFICIAL_CLIP_RE =
+        /(cover|versi[óo]|karaoke|lyric|letra|lletra|audio|àudio|en\s+directe|\blive\b|ac[uú]stic|reacci|making\s+of|teaser|tr[àa]iler|entrevista|podcast|remix|sessi[óo]|behind|darrere|shorts?\b|#shorts)/i;
+
+    function isOfficialClip(video) {
+        if (!video || video.isShort) return false;
+        if (video.contentType && video.contentType !== 'song') return false;
+        const title = String(video.title || '');
+        // Ho descartem tot i que el títol digui "oficial" si té marques de cover/directe/lyric...
+        if (NOT_OFFICIAL_CLIP_RE.test(title.replace(/official\s+audio/gi, 'audio'))) return false;
+        if (/provided to youtube by/i.test(String(video.description || ''))) return false; // pistes Topic (imatge fixa)
+        const seconds = Number(video.durationSeconds) || 0;
+        if (seconds && (seconds < 100 || seconds > 720)) return false;
+        if (OFFICIAL_CLIP_RE.test(title)) return true;
+        return /marcador expl[ií]cit/i.test(String(video.musicReason || '')) && /video|v[ií]deo|clip/i.test(title);
+    }
+
     function timestampOf(video) {
         return new Date(video?.publishedAt || video?.uploadDate || 0).getTime() || 0;
     }
@@ -124,6 +145,11 @@
         const latest = limitPerChannel(byDate, 2).slice(0, ROW_SIZE);
         if (latest.length >= MIN_ROW_ITEMS) {
             sections.push({ title: 'Últimes novetats', videos: latest });
+        }
+
+        const clips = limitPerChannel(stylePool.filter(isOfficialClip), 2).slice(0, ROW_SIZE);
+        if (clips.length >= MIN_ROW_ITEMS) {
+            sections.push({ title: 'Videoclips oficials', subtitle: 'Només videoclips dels artistes', videos: clips });
         }
 
         const cutoff = Date.now() - POPULAR_WINDOW_DAYS * 24 * 60 * 60 * 1000;
@@ -238,5 +264,5 @@
         return true;
     }
 
-    app.features.homeSections = { render, buildSections };
+    app.features.homeSections = { render, buildSections, isOfficialClip };
 })(window);
