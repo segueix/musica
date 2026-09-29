@@ -1,25 +1,27 @@
 {
-  "generatedAt": "2026-09-29T11:23:30.792Z",
-  "rawPublicVideoCount": 1542,
-  "feedVideoCount": 1542,
-  "acceptedMusicCount": 1057,
-  "categoryEligibleVideoCount": 1036,
-  "shortVideoCount": 330,
-  "rejectedOrReviewCount": 485,
-  "reviewCount": 245,
+  "generatedAt": "2026-09-29T11:26:46.768Z",
+  "rawPublicVideoCount": 1867,
+  "feedVideoCount": 1867,
+  "acceptedMusicCount": 1327,
+  "categoryEligibleVideoCount": 1304,
+  "shortVideoCount": 369,
+  "rejectedOrReviewCount": 540,
+  "reviewCount": 256,
   "typeCounts": {
-    "song": 986,
-    "live_song": 50,
-    "album": 21,
-    "other": 240,
-    "review": 245
+    "song": 1250,
+    "live_song": 54,
+    "album": 23,
+    "other": 284,
+    "review": 256
   },
   "channelsWithoutAcceptedMusic": [
     "UCnmFh1j3xvDfrw20AqVgegw",
     "UCUSjRkF72RR1E8Rl4SWtVsQ",
     "UC_eW1AyvwaPsQA5YAuOC3YQ",
     "UC57d8FV0O8sOiK6-K-gWNHA",
-    "UC9NDkhmm_3ZBjxnIh2d2paA"
+    "UCuhtfjW8tIjqkh7rS9T_KEQ",
+    "UC9NDkhmm_3ZBjxnIh2d2paA",
+    "UCsASzIhIgjrLSRrI33QSSxw"
   ],
   "rejectedSamples": [
     {
@@ -520,6 +522,20 @@
       "musicReason": "massa curt: probable teaser/fragment"
     },
     {
+      "id": "lb8DfPfv3zk",
+      "title": "Tan fart :: www.elspets.cat/fanzone",
+      "channelTitle": "elspetsoficial",
+      "durationSeconds": 31,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "mxGkw6IbZ54",
+      "title": "Els Pets - Presentació vídeo \"El que val la pena de veritat\"",
+      "channelTitle": "elspetsoficial",
+      "durationSeconds": 27,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
       "id": "FaWHA3YlwOQ",
       "title": "Collbató",
       "channelTitle": "Ferran Palau",
@@ -846,20 +862,6 @@
       "title": "EL FINAL… EN SHOCK?🧐😳 #boomerang #unexpected #lalliga #truco",
       "channelTitle": "Llum",
       "durationSeconds": 10,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "eXZpRQYJfTw",
-      "title": "‼️BALLO SENSE TU‼️ Disponible ja a totes les plataformes!!",
-      "channelTitle": "Mai Halis",
-      "durationSeconds": 30,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "Jfvvj8YGNbE",
-      "title": "‼️‼️BALLO SENSE TU DISPONIBLE A TOTES LES PLATAFORMES‼️‼️",
-      "channelTitle": "Mai Halis",
-      "durationSeconds": 30,
       "musicReason": "massa curt: probable teaser/fragment"
     }
   ]
