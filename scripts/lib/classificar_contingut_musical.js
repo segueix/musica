@@ -78,7 +78,9 @@ function classifyMusicContent({ item, channelMeta }) {
   const strongNegativeDescription = containsAny(descriptionText, [
     'entrevista', 'interview', 'podcast', 'making of', 'making-of',
     'behind the scenes', 'backstage', 'documental', 'documentary',
-    'roda de premsa', 'press conference', 'q&a'
+    'roda de premsa', 'press conference', 'q&a',
+    // normalize() treu accents i signes: «pel·lícula» → «pel licula»
+    'pel licula', 'pellicula', 'pelicula', 'cortometratge', 'short film', "d'on surt la canco"
   ]);
   const albumMarker = containsAny(titleText, ALBUM_TERMS) || containsAny(tagText, ALBUM_TERMS);
   const songMarker = containsAny(titleText, SONG_MARKERS) || containsAny(tagText, SONG_MARKERS);

@@ -6269,6 +6269,13 @@ async function refreshCustomCategorySearch(category) {
     }
 }
 
+// Només cançons: fora entrevistes, concerts complets, pel·lícules, teasers... (els Shorts hi passen).
+// Els vídeos sense `contentType` (snapshots antics o canals afegits a mà) es consideren vàlids.
+function isSongOrShort(video) {
+    const music = window.SegueixMusicCategories;
+    return !music?.isCategoryEligibleVideo || Boolean(video?.isShort) || music.isCategoryEligibleVideo(video);
+}
+
 function filterVideosByCategory(videos, feed) {
     const hiddenIds = new Set(getHiddenChannelIds().map(id => String(id)));
     const removeHiddenChannelVideos = list =>
@@ -6287,6 +6294,7 @@ function filterVideosByCategory(videos, feed) {
         return visibleVideos.filter(video => {
             const channelId = String(video?.channelId || '');
             if (!channelId || followedIds.has(channelId)) return false;
+            if (!isSongOrShort(video)) return false;
             const music = window.SegueixMusicCategories;
             return !music?.isReady?.() || music.isMusicChannel(channelId);
         });
@@ -6327,7 +6335,7 @@ function filterVideosByCategory(videos, feed) {
         if (followedIds.size === 0) {
             return [];
         }
-        return visibleVideos.filter(video => followedIds.has(String(video.channelId)));
+        return visibleVideos.filter(video => followedIds.has(String(video.channelId)) && isSongOrShort(video));
     }
     if (!feed || !Array.isArray(feed.channels)) return visibleVideos;
 
@@ -12534,6 +12542,9 @@ function renderCategoryVideosBelowLegacyImpl(currentChannelId, currentVideoId) {
             videos = [...allVideos];
         }
 
+        // Només cançons (abans, sense categoria efectiva, entrava tot el feed)
+        videos = videos.filter(isSongOrShort);
+
         // Excloure vídeo actual, canal actual, shorts
         videos = videos.filter(
             v =>
@@ -14032,7 +14043,8 @@ function renderChannelVideosLegacyImpl(query = '') {
     };
 
     const filteredShorts = currentChannelShorts.filter(filterByQuery);
-    const filteredLongVideos = currentChannelLongVideos.filter(filterByQuery);
+    // Al perfil del canal també només cançons (no concerts complets, pel·lícules, entrevistes...).
+    const filteredLongVideos = currentChannelLongVideos.filter(isSongOrShort).filter(filterByQuery);
     const isMobile = window.matchMedia('(max-width: 768px)').matches;
 
     if (normalizedQuery && filteredShorts.length === 0 && filteredLongVideos.length === 0) {

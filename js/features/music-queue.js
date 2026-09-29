@@ -48,6 +48,11 @@
     const isEphemeral = id => id === QUEUE_ID || id === TV_ID;
     const channelOf = video => String(video?.channelId || '');
     const artistOf = video => getVideoArtistKey(video);
+    // La ràdio només ha de portar cançons (fora concerts complets, pel·lícules, entrevistes...).
+    const isSong = video => {
+        const music = window.SegueixMusicCategories;
+        return !music?.isCategoryEligibleVideo || music.isCategoryEligibleVideo(video);
+    };
 
     function findVideo(videoId) {
         const id = String(videoId);
@@ -81,6 +86,7 @@
                 item?.id &&
                 String(item.id) !== String(video.id) &&
                 !item.isShort &&
+                isSong(item) &&
                 item.source !== 'static' &&
                 !hidden.has(channelOf(item))
         );

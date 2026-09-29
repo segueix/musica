@@ -330,6 +330,16 @@ La finestreta flotant en fer scroll cap avall es manté tal com era: és el comp
 
 **Fitxers Afectats:** `js/features/music-queue.js`, `tests/music-queue-ytm.test.js`, `sw.js`.
 
+## [2026-09-29] - Vídeos que no són cançons (concert, pel·lícula, making-of) arribaven a vistes sense filtre
+
+**Símptoma:** Del canal d'Els Amics de les Arts sortien «UN CONCERT COM ELS D'ABANS» (pel·lícula del concert), «ENCARA SOM AQUÍ (Una cançó basada en fets reals)» (explicació) i «FESTES DE LA MERCÈ» (55 s), tot i que el feed ja els classifica com `review`.
+
+**Causa Arrel:** El filtre `isCategoryEligibleVideo` (només `song`/`live_song`) només s'aplicava a Novetats/Tot, a les categories d'estil i a les files de la portada. **No** passaven pel filtre: la vista **Seguint**, **Descobreix**, el **perfil del canal**, la branca sense categoria dels «vídeos relacionats» i la **ràdio** (`buildQueue`).
+
+**Solució Implementada:** Helper `isSongOrShort()` (`app.js`) aplicat a Seguint, Descobreix, perfil de canal i relacionats; la ràdio filtra amb `isCategoryEligibleVideo`. Els Shorts i els vídeos sense `contentType` (canals afegits a mà, snapshots antics) hi passen. Al classificador (`scripts/lib/classificar_contingut_musical.js`) s'afegeixen a la descripció negativa «pel·lícula», «cortometratge», «short film» i «d'on surt la cançó». **Regla:** qualsevol vista nova que llisti vídeos ha de passar pel filtre de cançons.
+
+**Fitxers Afectats:** `js/app.js`, `js/features/music-queue.js`, `scripts/lib/classificar_contingut_musical.js`, `sw.js`.
+
 ## [2026-07-11] - Filera d'icones del header visible en obrir un vídeo al mòbil
 
 **Símptoma:** Al mòbil, en clicar un vídeo del feed i obrir-se la pàgina del reproductor, la filera d'icones del header (Inici, Biblioteca, Historial, Segueix...) es mostrava a sobre del reproductor, ocupant espai vertical útil mentre l'usuari volia veure el vídeo.
