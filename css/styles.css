@@ -8805,3 +8805,386 @@ body {
 #homePage:has(.home-sections) .grid-layout-controls {
     display: none !important;
 }
+
+/* ========== REPRODUCTOR QUADRAT (estil Spotify / YouTube Music) ========== */
+#watchPage .video-placeholder {
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    max-width: 520px;
+    margin: 0 auto 16px;
+    border-radius: 12px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+}
+
+#watchPage .video-placeholder img {
+    filter: none;
+}
+
+#watchPage #videoPlayer:not(.mini-player-active) {
+    margin: 0;
+    border-radius: 12px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+    background: #000;
+}
+
+@media (max-width: 768px) {
+    #watchPage .video-placeholder {
+        width: 100%;
+        max-width: none;
+        margin: 0 0 12px;
+        border-radius: 12px;
+    }
+
+    #watchPage #videoPlayer:not(.mini-player-active) {
+        width: auto;
+        max-width: none;
+        margin: 0;
+        border-radius: 12px;
+    }
+}
+
+/* Informació de la cançó simplificada */
+#watchPage .video-info {
+    margin-block: 4px 0;
+}
+
+#watchPage .video-title {
+    font-size: clamp(1.25rem, 2vw, 1.75rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 4px;
+}
+
+#watchPage .video-meta-row,
+#watchPage .meta-stat,
+#watchPage .meta-dot {
+    color: #b3b3b3;
+    font-size: 0.8125rem;
+}
+
+#watchPage .video-info-modern {
+    border: 0;
+    background: transparent;
+    padding: 8px 0;
+}
+
+/* Barra de controls */
+.now-playing-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 12px 0 4px;
+}
+
+.np-btn {
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    color: #ffffff;
+    cursor: pointer;
+    transition:
+        transform 0.15s ease,
+        background 0.15s ease,
+        opacity 0.15s ease;
+}
+
+.np-btn:hover:not(:disabled) {
+    background: #2a2a2a;
+}
+
+.np-btn:disabled {
+    opacity: 0.35;
+    cursor: default;
+}
+
+.np-btn--main {
+    width: 60px;
+    height: 60px;
+    background: #ffffff;
+    color: #000000;
+}
+
+.np-btn--main:hover:not(:disabled) {
+    background: #ffffff;
+    transform: scale(1.06);
+}
+
+/* Cua */
+#playlistQueueContainer:has(.mq) {
+    margin-top: 16px;
+    padding: 0;
+    background: transparent;
+    border: 0;
+}
+
+.mq {
+    background: #181818;
+    border-radius: 12px;
+    padding: 8px 8px 12px;
+}
+
+.mq-head {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    padding: 8px 8px 4px;
+}
+
+.mq-heading {
+    font-size: 1.25rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+.mq-source {
+    min-width: 0;
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #b3b3b3;
+    font-size: 0.8125rem;
+}
+
+.mq-regenerate {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border: 0;
+    border-radius: 999px;
+    background: #2a2a2a;
+    color: #ffffff;
+    font: inherit;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.mq-regenerate:hover {
+    background: #3a3a3a;
+}
+
+.mq-section {
+    padding: 12px 8px 4px;
+    color: #b3b3b3;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.mq-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    border-radius: 8px;
+    transition: background 0.15s ease;
+}
+
+.mq-item:hover {
+    background: #282828;
+}
+
+.mq-item.is-active .mq-title {
+    color: var(--music-accent);
+}
+
+.mq-item.is-chosen,
+.mq-item.is-ghost {
+    background: #333333;
+}
+
+.mq-item.is-ghost {
+    opacity: 0.5;
+}
+
+.mq-handle {
+    display: grid;
+    place-items: center;
+    flex: 0 0 28px;
+    height: 44px;
+    color: #6f6f6f;
+    cursor: grab;
+    touch-action: none;
+}
+
+.mq-handle--placeholder {
+    cursor: default;
+}
+
+.mq-item:hover .mq-handle:not(.mq-handle--placeholder) {
+    color: #ffffff;
+}
+
+.mq-play {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 6px 4px 6px 0;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+}
+
+.mq-cover {
+    position: relative;
+    flex: 0 0 48px;
+    width: 48px;
+    height: 48px;
+    border-radius: 4px;
+    overflow: hidden;
+    background: #2a2a2a;
+}
+
+.mq-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.mq-eq {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 3px;
+    padding-bottom: 12px;
+    background: rgba(0, 0, 0, 0.55);
+}
+
+.mq-eq i {
+    width: 3px;
+    height: 14px;
+    border-radius: 2px;
+    background: var(--music-accent);
+    transform-origin: bottom;
+    animation: mq-eq 0.9s ease-in-out infinite;
+}
+
+.mq-eq i:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.mq-eq i:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes mq-eq {
+    0%,
+    100% {
+        transform: scaleY(0.3);
+    }
+    50% {
+        transform: scaleY(1);
+    }
+}
+
+.mq-text {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    flex: 1;
+}
+
+.mq-title,
+.mq-artist {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.mq-title {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.mq-artist {
+    font-size: 0.8125rem;
+    color: #b3b3b3;
+}
+
+.mq-duration {
+    flex: 0 0 auto;
+    color: #b3b3b3;
+    font-size: 0.8125rem;
+    font-variant-numeric: tabular-nums;
+}
+
+.mq-remove {
+    display: grid;
+    place-items: center;
+    flex: 0 0 32px;
+    height: 32px;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    color: #b3b3b3;
+    cursor: pointer;
+}
+
+.mq-remove:hover {
+    background: #3a3a3a;
+    color: #ffffff;
+}
+
+.mq-empty {
+    padding: 16px 8px;
+    color: #b3b3b3;
+    font-size: 0.875rem;
+}
+
+/* Escriptori: reproductor quadrat a l'esquerra, cua a la dreta */
+@media (min-width: 1025px) {
+    #watchPage .watch-container {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    #watchPage .watch-main {
+        display: grid;
+        grid-template-columns: minmax(320px, 520px) minmax(0, 1fr);
+        column-gap: clamp(24px, 3vw, 48px);
+        align-items: start;
+    }
+
+    #watchPage .watch-main > .video-placeholder,
+    #watchPage .watch-main > .video-info,
+    #watchPage .watch-main > .now-playing-bar,
+    #watchPage .watch-main > .channel-info,
+    #watchPage .watch-main > .tv-programming-panel {
+        grid-column: 1;
+    }
+
+    #watchPage .watch-main > .video-placeholder {
+        margin-inline: 0;
+    }
+
+    #watchPage .watch-main > .now-playing-bar {
+        justify-content: flex-start;
+    }
+
+    #watchPage .watch-main > #playlistQueueContainer {
+        grid-column: 2;
+        grid-row: 1 / span 5;
+        margin-top: 0;
+        max-height: calc(100vh - var(--header-height) - 48px);
+        overflow-y: auto;
+    }
+
+    #watchPage .watch-main > .extra-related-title,
+    #watchPage .watch-main > .extra-videos-grid {
+        grid-column: 1 / -1;
+    }
+}
