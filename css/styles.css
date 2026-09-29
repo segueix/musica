@@ -8536,3 +8536,272 @@ body {
         font-size: 0.9375rem;
     }
 }
+
+/* ========== SELECTOR DE CATEGORIES ========== */
+/* La barra de xips continua al DOM (és la font de veritat) però no es veu. */
+.chips-bar.home-categories:not(.hidden) {
+    position: fixed;
+    left: -9999px;
+    top: 0;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.category-selector {
+    position: -webkit-sticky;
+    position: sticky;
+    top: var(--header-height);
+    z-index: 900;
+    padding: 8px calc(24px + var(--safe-right)) 8px calc(24px + var(--safe-left));
+    background: rgba(18, 18, 18, 0.92);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+}
+
+.category-selector-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    max-width: 100%;
+    min-height: 40px;
+    padding: 6px 14px 6px 16px;
+    border: 0;
+    border-radius: 999px;
+    background: #2a2a2a;
+    color: #ffffff;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.15s ease;
+}
+
+.category-selector-btn:hover,
+.category-selector.is-open .category-selector-btn {
+    background: #3a3a3a;
+}
+
+.category-selector-label {
+    color: #b3b3b3;
+    font-weight: 500;
+    font-size: 0.8125rem;
+}
+
+.category-selector-value {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.category-selector-chevron {
+    flex: 0 0 auto;
+    transition: transform 0.2s ease;
+}
+
+.category-selector.is-open .category-selector-chevron {
+    transform: rotate(180deg);
+}
+
+.category-selector-panel {
+    position: absolute;
+    top: calc(100% - 2px);
+    left: calc(24px + var(--safe-left));
+    width: min(320px, calc(100vw - 32px));
+    max-height: min(70vh, 480px);
+    overflow-y: auto;
+    padding: 6px;
+    border-radius: 12px;
+    background: #282828;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+}
+
+.category-selector-panel[hidden] {
+    display: none;
+}
+
+.category-selector-option {
+    display: block;
+    width: 100%;
+    padding: 11px 14px;
+    border: 0;
+    border-radius: 8px;
+    background: transparent;
+    color: #ffffff;
+    font: inherit;
+    font-weight: 500;
+    text-align: left;
+    cursor: pointer;
+}
+
+.category-selector-option:hover {
+    background: #3a3a3a;
+}
+
+.category-selector-option.is-selected {
+    color: var(--music-accent);
+    font-weight: 700;
+}
+
+.category-selector-add {
+    margin-top: 4px;
+    border-top: 1px solid #3a3a3a;
+    border-radius: 0 0 8px 8px;
+    color: #b3b3b3;
+}
+
+@media (max-width: 768px) {
+    .category-selector {
+        padding-left: calc(16px + var(--safe-left));
+        padding-right: calc(16px + var(--safe-right));
+    }
+
+    .category-selector-panel {
+        left: calc(16px + var(--safe-left));
+    }
+}
+
+/* ========== SECCIONS HORITZONTALS ========== */
+.home-sections {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    min-width: 0;
+}
+
+.home-section {
+    min-width: 0;
+}
+
+.home-section-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.home-section-heading {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.home-section-subtitle {
+    color: #b3b3b3;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.home-section-title {
+    font-size: 1.375rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+}
+
+.home-section-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.home-section-more {
+    border: 0;
+    background: transparent;
+    color: #b3b3b3;
+    font: inherit;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.home-section-more:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.home-section-arrow {
+    display: none;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    border: 0;
+    border-radius: 50%;
+    background: #2a2a2a;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.home-section-arrow:hover {
+    background: #3a3a3a;
+}
+
+@media (hover: hover) and (min-width: 769px) {
+    .home-section-arrow {
+        display: grid;
+    }
+}
+
+.home-section-row {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    padding: 4px 2px 8px;
+    scroll-snap-type: x proximity;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+}
+
+.home-section-row::-webkit-scrollbar {
+    display: none;
+}
+
+#homePage .home-section-row .video-card {
+    flex: 0 0 clamp(200px, 22vw, 260px);
+    width: auto;
+    display: block;
+    padding: 12px;
+    background: var(--music-card);
+    scroll-snap-align: start;
+}
+
+#homePage .home-section-row .video-card:hover {
+    background: var(--music-card-hover);
+}
+
+@media (max-width: 768px) {
+    .home-sections {
+        gap: 20px;
+    }
+
+    .home-section-title {
+        font-size: 1.1875rem;
+    }
+
+    #homePage .home-section-row .video-card {
+        flex-basis: 68vw;
+        max-width: 280px;
+        padding: 10px;
+    }
+
+    #homePage .home-section-row .video-card .video-thumbnail {
+        flex: none;
+        width: 100%;
+        padding-bottom: 56.25%;
+        margin-bottom: 10px;
+    }
+
+    #homePage .home-section-row .video-card:hover {
+        background: var(--music-card);
+    }
+}
+
+/* Els selectors de columnes no tenen sentit amb seccions horitzontals */
+#homePage:has(.home-sections) .grid-layout-controls {
+    display: none !important;
+}
