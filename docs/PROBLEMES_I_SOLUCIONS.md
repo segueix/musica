@@ -322,6 +322,14 @@ La finestreta flotant en fer scroll cap avall es manté tal com era: és el comp
 
 **Fitxers Afectats:** `js/features/music-queue.js`, `tests/music-queue-ytm.test.js`.
 
+## [2026-09-29] - Nom de la llista exportada a YouTube
+
+**Canvi:** L'enllaç `watch_videos` porta `&title=` amb el nom de la llista: **«Llista <categoria>»** si la ràdio va néixer dins d'una categoria d'estil (`selectedCategory`, excloent vistes generals: Novetats, Tot, Descobreix, Seguint, Radar), si no **«Llista <primer grup>»** (canal de la cançó que sona) i, en una llista pròpia, «Llista <nom de la llista>». El nom també es copia al porta-retalls en prémer el botó. `music-queue.js` (`buildListName`, `radioCategory`).
+
+**No verificat amb YouTube real:** no tenim confirmació que `watch_videos` accepti `title` (és un paràmetre no documentat); per això el nom es copia al porta-retalls, perquè en «Desar» només calgui enganxar-lo. Si YouTube l'ignora, l'única via garantida per posar nom és crear la llista amb l'API (OAuth).
+
+**Fitxers Afectats:** `js/features/music-queue.js`, `tests/music-queue-ytm.test.js`, `sw.js`.
+
 ## [2026-07-11] - Filera d'icones del header visible en obrir un vídeo al mòbil
 
 **Símptoma:** Al mòbil, en clicar un vídeo del feed i obrir-se la pàgina del reproductor, la filera d'icones del header (Inici, Biblioteca, Historial, Segueix...) es mostrava a sobre del reproductor, ocupant espai vertical útil mentre l'usuari volia veure el vídeo.
