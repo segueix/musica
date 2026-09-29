@@ -10381,6 +10381,12 @@ function renderPlaylistQueue() {
 
     queueContainer.classList.remove('hidden');
 
+    // Cua estil Spotify (Ara sona / A continuació, reordenable): js/features/music-queue.js
+    if (SegueixApp.features.musicQueue?.render?.(queueContainer)) {
+        refreshIcons(queueContainer);
+        return;
+    }
+
     queueContainer.innerHTML = `
         <div class="playlist-queue-title">
             <span>Reprodueix: ${escapeHtml(activePlaylistName)}</span>
@@ -12884,6 +12890,8 @@ function showHome(options) {
 
 // Reproduir i navegar: inicia la reproducció de l'iframe i després obre la pàgina del vídeo
 function playThenNavigate(videoId, source) {
+    // Cua de cançons amb l'ordenació de Música TV (js/features/music-queue.js)
+    if (SegueixApp.features.musicQueue?.startFrom?.(videoId, source)) return;
     return SegueixApp.features.player?.playThenNavigate?.(videoId, source);
 }
 
