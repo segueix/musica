@@ -290,6 +290,18 @@ La finestreta flotant en fer scroll cap avall es manté tal com era: és el comp
 
 **Fitxers Afectats:** `js/features/music-queue.js`, `css/styles.css`, `tests/music-queue-ytm.test.js`, `sw.js`.
 
+## [2026-09-29] - Forçar que Chrome apliqui la versió nova (pestanya normal amb codi vell)
+
+**Símptoma:** Després d'un desplegament la pestanya normal de Chrome (o la PWA) seguia amb el codi antic; només l'incògnit veia els canvis.
+
+**Causa Arrel:** El SW nou quedava *waiting* (sense `skipWaiting`) i les pestanyes ja obertes tenien el codi vell, que no sap enviar `SKIP_WAITING`; la correcció del client (auto-aplicar, badge clicable) només l'executa qui ja té la versió nova, així que no arribava a qui més la necessitava.
+
+**Solució Implementada:** `sw.js` fa `self.skipWaiting()` a l'`install` **només si `self.registration.active`** (és una actualització, no la primera instal·lació, on l'espera evita el refresc enmig de l'scroll de 2026-04-14). El `controllerchange` de les pestanyes velles ja recarregava si hi havia controller previ, així que s'actualitzen soles (una recàrrega). `initAppUpdater` (versió nova) ajorna la recàrrega mentre sona un vídeo i la fa en amagar la pestanya. Test: `tests/browser/verificar-sw.js` (5a/5b adaptats: s'aplica sola, una sola recàrrega; el comptador ara ignora iframes: abans un sol reload sumava 3 per les 3 frames).
+
+**Nota:** Per a l'usuari que ja té un SW *waiting* d'una versió anterior, cal que Chrome descarregui aquest `sw.js` (ho fa en navegar/recarregar o cada ≤24 h); si no, tancar totes les pestanyes o *Application → Service Workers → Update*.
+
+**Fitxers Afectats:** `sw.js`, `js/app.js` (`initAppUpdater`), `tests/browser/verificar-sw.js`, `CLAUDE.md`.
+
 ## [2026-07-11] - Filera d'icones del header visible en obrir un vídeo al mòbil
 
 **Símptoma:** Al mòbil, en clicar un vídeo del feed i obrir-se la pàgina del reproductor, la filera d'icones del header (Inici, Biblioteca, Historial, Segueix...) es mostrava a sobre del reproductor, ocupant espai vertical útil mentre l'usuari volia veure el vídeo.

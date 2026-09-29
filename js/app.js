@@ -5271,6 +5271,19 @@ async function initAppUpdater() {
             }
             isSwRefreshing = true;
             hideUpdateNotice();
+            // Si s'està reproduint un vídeo amb la pàgina visible, no tallem la música: el
+            // codi nou ja controla la pàgina i es recarrega en sortir de la pestanya.
+            const playing = document.getElementById('videoPlayer')?.dataset?.playerState === '1';
+            if (playing && document.visibilityState === 'visible') {
+                document.addEventListener(
+                    'visibilitychange',
+                    () => {
+                        if (document.visibilityState === 'hidden') window.location.reload();
+                    },
+                    { once: false }
+                );
+                return;
+            }
             window.location.reload();
         });
     } catch (error) {

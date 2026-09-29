@@ -271,7 +271,7 @@ const likes = ctx2.SegueixApp.features.likes;
 - **Navegació (shell HTML):** network-first amb fallback al precache.
 - **Altres orígens** (CDN, fonts, YouTube): no interceptats, els gestiona el navegador.
 - `feed_updates.js` està **exclòs** del cache (artefacte de build, no usat en runtime).
-- **Migració/actualització:** l'`activate` esborra qualsevol cache que no sigui `static-<hash>` ni `data-v1` (migra automàticament els clients de `mytube-vNNN`). **No** es crida `skipWaiting()` a `install` (bug de refresc — veure `docs/PROBLEMES_I_SOLUCIONS.md`, 2026-04-14); el SW nou espera fins a tancar les pestanyes. `app.js` (`initAppUpdater`) mostra el badge d'update i només recarrega si ja hi havia controller.
+- **Migració/actualització:** l'`activate` esborra qualsevol cache que no sigui `static-<hash>` ni `data-v1` (migra automàticament els clients de `mytube-vNNN`). `install` crida `skipWaiting()` **només si ja hi ha un SW actiu** (`self.registration.active`): així una actualització arriba també a les pestanyes velles (2026-09-29); a la primera instal·lació NO s'omet l'espera (bug de refresc, `docs/PROBLEMES_I_SOLUCIONS.md`, 2026-04-14). `app.js` (`initAppUpdater`) només recarrega si ja hi havia controller, i ajorna la recàrrega mentre sona un vídeo.
 - **En canviar qualsevol asset estàtic** (JS/CSS/HTML/icones): executa `npm run sw:version` per refrescar `CACHE_VERSION`. El workflow `actualitzador.yml` també ho fa com a xarxa de seguretat abans de cada commit.
 
 ---

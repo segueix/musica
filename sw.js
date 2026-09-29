@@ -16,7 +16,7 @@
 // migrant els clients automàticament.
 
 // === AUTO-GENERAT per scripts/actualitzar_versio_sw.js — NO EDITAR MANUALMENT ===
-const CACHE_VERSION = '62dcfa413e3c';
+const CACHE_VERSION = 'eb8f092a1756';
 const STATIC_ASSETS = [
     './',
     './index.html',
@@ -88,11 +88,15 @@ self.addEventListener('install', (event) => {
     event.waitUntil(
         caches.open(STATIC_CACHE).then((cache) => cache.addAll(STATIC_ASSETS))
     );
-    // NOTA: NO cridem self.skipWaiting() aquí. Si el SW nou s'activés durant la
-    // sessió, el `controllerchange` del client faria window.location.reload() enmig
-    // de l'scroll de l'usuari (bug documentat a docs/PROBLEMES_I_SOLUCIONS.md,
-    // 2026-04-14). El SW nou es queda en estat "waiting" fins que es tanquin totes
-    // les pestanyes o el client enviï SKIP_WAITING explícitament.
+    // Actualització (ja hi ha un SW actiu): s'activa de seguida. És l'únic mecanisme que arriba
+    // també a les pestanyes antigues, que no saben enviar SKIP_WAITING i, si no, es quedarien
+    // per sempre amb el codi vell (una pestanya normal oberta dies). El client recarrega en
+    // 'controllerchange' només si ja estava controlat (initAppUpdater a app.js).
+    // Primera instal·lació (cap SW actiu): NO s'omet l'espera, per no provocar el refresc
+    // enmig de l'scroll documentat a docs/PROBLEMES_I_SOLUCIONS.md (2026-04-14).
+    if (self.registration.active) {
+        self.skipWaiting();
+    }
 });
 
 // ==================== ACTIVATE ====================
