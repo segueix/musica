@@ -1,12 +1,12 @@
 {
-    "name": "Segueix! - Plataforma de Vídeos",
-    "short_name": "Segueix!",
-    "description": "Plataforma de vídeos personalitzable en català",
+    "name": "Segueix Música · La teva plaça musical",
+    "short_name": "Segueix Música",
+    "description": "Escolta, retroba i descobreix música en català.",
     "start_url": "./",
     "scope": "./",
     "display": "standalone",
-    "background_color": "#0F0F0F",
-    "theme_color": "#FF0000",
+    "background_color": "#141615",
+    "theme_color": "#141615",
     "orientation": "portrait-primary",
     "icons": [
         {

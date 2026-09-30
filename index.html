@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
-    <meta name="description" content="Busques vídeos en català? A Segueix! tens la millor selecció de YouTubers i creadors de contingut. Explora el catàleg, mira les novetats i dona'ls suport.">
+    <meta name="description" content="Segueix Música és la teva plaça musical en català: escolta novetats i directes, retroba artistes, descobreix escenes noves i desa les teves llistes.">
     <meta name="robots" content="index,follow,max-image-preview:large,max-video-preview:-1">
     <link rel="canonical" href="https://segueix.cat/">
-    <meta property="og:title" content="Segueix! · Vídeos i creadors en català">
-    <meta property="og:description" content="Busques vídeos en català? A Segueix! tens la millor selecció de YouTubers i creadors de contingut. Explora el catàleg, mira les novetats i dona'ls suport.">
+    <meta property="og:title" content="Segueix Música · La teva plaça musical en català">
+    <meta property="og:description" content="Escolta novetats i directes, retroba artistes, descobreix escenes noves i desa les teves llistes. La música en català, tota en un lloc.">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://segueix.cat/img/caratula.png">
-    <meta property="og:image:alt" content="Segueix! · Vídeos i creadors en català">
+    <meta property="og:image:alt" content="Segueix Música · La teva plaça musical en català">
     <meta property="og:image:width" content="1280">
     <meta property="og:image:height" content="720">
     <meta property="og:url" content="https://segueix.cat/">
-    <meta property="og:site_name" content="Segueix!">
+    <meta property="og:site_name" content="Segueix Música">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Segueix! · Vídeos i creadors en català">
-    <meta name="twitter:description" content="Busques vídeos en català? A Segueix! tens la millor selecció de YouTubers i creadors de contingut. Explora el catàleg, mira les novetats i dona'ls suport.">
+    <meta name="twitter:title" content="Segueix Música · La teva plaça musical en català">
+    <meta name="twitter:description" content="Escolta novetats i directes, retroba artistes, descobreix escenes noves i desa les teves llistes. La música en català, tota en un lloc.">
     <meta name="twitter:image" content="https://segueix.cat/img/caratula.png">
     <script type="application/ld+json">
     {
@@ -25,22 +25,25 @@
       "@type": "WebSite",
       "@id": "https://segueix.cat/#website",
       "url": "https://segueix.cat/",
-      "name": "Segueix!",
-      "alternateName": ["Segueix.cat", "segueix.cat"],
+      "name": "Segueix Música",
+      "alternateName": ["Segueix!", "Segueix.cat", "segueix.cat"],
       "inLanguage": "ca"
     }
     </script>
-    <meta name="application-name" content="Segueix!">
-    <meta name="apple-mobile-web-app-title" content="Segueix!">
-    <meta name="theme-color" content="#FF0000">
+    <meta name="application-name" content="Segueix Música">
+    <meta name="apple-mobile-web-app-title" content="Segueix Música">
+    <meta name="theme-color" content="#141615">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     
-    <title>Segueix! · Vídeos i creadors en català</title>
+    <title>Segueix Música · La teva plaça musical en català</title>
 
     <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap">
     
     <!-- PWA -->
     <link rel="manifest" href="manifest.json">
@@ -49,6 +52,7 @@
     
     <!-- CSS -->
     <link rel="stylesheet" href="css/styles.css?v=20260929-home-playlists-4">
+    <link rel="stylesheet" href="css/portada.css?v=20260930-portada-1">
     
     <!-- Icons (Lucide via CDN) -->
     <script src="https://unpkg.com/lucide@0.563.0"></script>
@@ -58,6 +62,7 @@
     <script src="https://cdn.jsdelivr.net/npm/qr-code-styling@1.8.4/lib/qr-code-styling.js"></script>
 </head>
 <body>
+    <a class="pt-skip" href="#mainContent">Salta al contingut</a>
     <div id="cookieBanner" class="cookie-banner hidden" role="dialog" aria-live="polite" aria-label="Avís de cookies" data-nosnippet>
         <div class="cookie-banner__content">
             <p class="cookie-banner__text">
@@ -73,9 +78,6 @@
             </div>
         </div>
     </div>
-    <button id="cookiePreferencesBtn" class="cookie-preferences-btn hidden" type="button" aria-label="Configura les cookies">
-        Cookies
-    </button>
 
 
     <div id="youtubeConsentModal" class="playlist-modal hidden" aria-hidden="true">
@@ -98,54 +100,54 @@
     <div id="intro-splash" aria-hidden="true">
         <div class="intro-splash-content">
             <h1 class="intro-splash-title">Segueix<span>!</span></h1>
-            <p class="intro-splash-tagline">Els nostres YouTubers</p>
+            <p class="intro-splash-tagline">Música en català</p>
         </div>
     </div>
-    <!-- Header -->
+    <!-- Capçalera compacta: marca, cercador i accessos -->
     <header class="app-header">
-        <a class="brand" href="./" aria-label="Segueix!">
-            <img class="brand-logo" src="img/icon-192.png" alt="">
-            <span class="brand-name">Segueix!</span>
+        <a class="brand" href="./" aria-label="Segueix Música, inici">
+            <img class="brand-logo" src="img/icon-192.png" alt="" width="32" height="32">
+            <span class="brand-name">Segueix<span class="brand-bang">!</span><span class="brand-tag">Música</span></span>
         </a>
 
         <form class="search" role="search" action="/search">
-            <button class="mobile-search-toggle" type="button" aria-label="Obrir cerca" title="Cercar">
-                <i data-lucide="search"></i>
+            <button class="mobile-search-toggle" type="button" aria-label="Obre la cerca" title="Cerca">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="m21 21-4.3-4.3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
             </button>
             <input
                 class="search-input"
                 type="search"
                 name="q"
-                placeholder="Cerca..."
+                placeholder="Què vols escoltar?"
                 autocomplete="off"
-                aria-label="Cerca vídeos">
-            <button class="search-btn" type="submit" aria-label="Cercar" title="Cercar">
-                <i data-lucide="search"></i>
+                aria-label="Què vols escoltar? Cerca cançons i artistes">
+            <button class="search-btn" type="submit" aria-label="Cerca" title="Cerca">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="m21 21-4.3-4.3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </button>
+            <button class="pt-search-close" type="button" aria-label="Tanca la cerca" title="Tanca la cerca">
+                <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M6 6l12 12M18 6 6 18"/></svg>
             </button>
         </form>
 
-        <nav class="actions" aria-label="Navegació">
+        <nav class="actions" aria-label="Accessos ràpids">
             <a class="icon-btn nav-trigger active" href="#" data-page="home" aria-label="Inici" title="Inici">
                 <i data-lucide="home"></i>
             </a>
-            <a class="icon-btn nav-trigger" href="#" data-page="llistes" aria-label="Biblioteca" title="Biblioteca">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="12" y1="5" x2="12" y2="19"></line>
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                </svg>
+            <a class="icon-btn nav-trigger" href="#" data-page="llistes" aria-label="La teva música" title="La teva música">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M21 15V6M18.5 18a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM12 12H3M16 6H3M12 18H3"/></svg>
             </a>
             <a class="icon-btn nav-trigger" href="#" data-page="historial" aria-label="Historial" title="Historial">
                 <i data-lucide="history"></i>
             </a>
-            <a class="icon-btn nav-trigger" href="#" data-page="segueix" aria-label="Segueix!" title="Segueix!">
-                <i data-lucide="users"></i>
+            <a class="icon-btn nav-trigger" href="#" data-page="segueix" aria-label="Artistes" title="Artistes">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
             </a>
-            <button class="icon-btn" id="backgroundBtn" type="button" aria-label="Configuració" title="Configuració">
-                <i data-lucide="settings"></i>
+            <button class="icon-btn" id="backgroundBtn" type="button" aria-label="Configuració" title="Configuració" style="position:relative;">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06A1.7 1.7 0 0 0 15 19.4a1.7 1.7 0 0 0-1 .6 1.7 1.7 0 0 0-.4 1.1V21a2 2 0 1 1-4 0v-.09A1.7 1.7 0 0 0 8.5 19.4a1.7 1.7 0 0 0-1.88.34l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.7 1.7 0 0 0 4.6 15a1.7 1.7 0 0 0-.6-1 1.7 1.7 0 0 0-1.1-.4H3a2 2 0 1 1 0-4h.09A1.7 1.7 0 0 0 4.6 8.5a1.7 1.7 0 0 0-.34-1.88l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.7 1.7 0 0 0 9 4.6a1.7 1.7 0 0 0 1-.6 1.7 1.7 0 0 0 .4-1.1V3a2 2 0 1 1 4 0v.09A1.7 1.7 0 0 0 15.5 4.6a1.7 1.7 0 0 0 1.88-.34l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.7 1.7 0 0 0 19.4 9c.14.37.35.7.6 1 .3.3.69.47 1.1.5H21a2 2 0 1 1 0 4h-.09a1.7 1.7 0 0 0-1.51.5Z"/></svg>
+                <span id="updateBadge" class="pt-update-dot" role="img" aria-label="Hi ha una versió nova: prem per actualitzar" style="display:none;"></span>
             </button>
-            <button class="icon-btn" id="addYoutuberBtn" type="button" aria-label="Afegeix un YouTuber" title="Afegeix un YouTuber" style="position:relative;">
-                <i data-lucide="at-sign" class="add-youtuber-icon"></i>
-                <span id="updateBadge" style="display:none;position:absolute;top:5px;right:5px;width:10px;height:10px;border-radius:999px;background:#ff3b30;box-shadow:0 0 0 2px rgba(0,0,0,0.35);"></span>
+            <button class="icon-btn" id="addYoutuberBtn" type="button" aria-label="Suggereix un artista" title="Suggereix un artista">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM19 8v6M22 11h-6"/></svg>
             </button>
         </nav>
     </header>
@@ -178,45 +180,67 @@
         <button class="chip" data-cat="Seguint" type="button">Seguint</button>
     </section>
 
-    <!-- Sidebar -->
-    <aside class="sidebar" id="sidebar">
-        <nav class="sidebar-nav">
-            <a href="#" class="nav-item active" data-page="home">
-                <i data-lucide="home"></i>
-                <span>Tot</span>
+    <!-- Navegació lateral (escriptori i tauleta) -->
+    <aside class="sidebar" id="sidebar" aria-label="Navegació principal">
+        <nav class="sidebar-nav" aria-label="Seccions">
+            <a href="#" class="nav-item pt-nav-item is-current" data-page="home" data-pt-nav="home" aria-current="page">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1Z"/></svg>
+                <span>Inici</span>
             </a>
-            <a href="#" class="nav-item" data-page="segueix">
-                <i data-lucide="users"></i>
-                <span>Segueix!</span>
+            <a href="#" class="pt-nav-item" data-pt-nav="discover">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="m15.5 8.5-2 5-5 2 2-5 5-2Z"/></svg>
+                <span>Descobreix</span>
             </a>
-            <a href="#" class="nav-item" data-page="library">
-                <i data-lucide="library"></i>
-                <span>Biblioteca</span>
+            <a href="#" class="nav-item pt-nav-item" data-page="segueix" data-pt-nav="artists">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                <span>Artistes</span>
             </a>
-            <a href="#" class="nav-item" data-page="historial">
-                <i data-lucide="history"></i>
-                <span>Historial</span>
+            <a href="#" class="nav-item pt-nav-item" data-page="library" data-pt-nav="library">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M21 15V6M18.5 18a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM12 12H3M16 6H3M12 18H3"/></svg>
+                <span>La teva música</span>
             </a>
         </nav>
-        
-        <div class="sidebar-divider"></div>
-        
-        <div class="sidebar-section">
-            <h3 class="sidebar-title">Estils</h3>
+
+        <!-- Llista d'estils heretada: app.js l'omple en carregar, però ja no es mostra (els estils són a «Tria el teu so») -->
+        <div class="sidebar-section" hidden>
             <div id="categoriesList"></div>
         </div>
-
     </aside>
 
     <!-- Main Content -->
-    <main class="main-content" id="mainContent">
+    <main class="main-content" id="mainContent" tabindex="-1">
         <!-- Home Page -->
-        <div class="page" id="homePage">
+        <div class="page is-portada" id="homePage">
+            <!-- B · Entrada directa a la música -->
+            <section class="pt-entry" id="portadaEntry" aria-labelledby="ptEntryTitle" aria-busy="true">
+                <h1 class="pt-sr-only">Segueix Música · La teva plaça musical</h1>
+                <div class="pt-entry__main">
+                    <p class="pt-eyebrow pt-eyebrow--brand">La teva plaça musical</p>
+                    <h2 class="pt-entry__title" id="ptEntryTitle">Avui, què et ve de gust?</h2>
+                    <div class="pt-entry__cta">
+                        <button type="button" class="pt-btn pt-btn--primary" id="ptPlayBtn" data-pt-mix disabled>
+                            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 5.6v12.8a1 1 0 0 0 1.5.86l10.4-6.4a1 1 0 0 0 0-1.72L9.5 4.74A1 1 0 0 0 8 5.6Z"/></svg>
+                            <span>Fes-la sonar</span>
+                        </button>
+                    </div>
+                    <fieldset class="pt-mode">
+                        <legend class="pt-mode__legend">Quant vols descobrir?</legend>
+                        <div class="pt-mode__options">
+                            <label class="pt-mode__opt"><input type="radio" name="ptMode" value="home"><span>A casa</span></label>
+                            <label class="pt-mode__opt"><input type="radio" name="ptMode" value="mix" checked><span>Una mica de tot</span></label>
+                            <label class="pt-mode__opt"><input type="radio" name="ptMode" value="surprise"><span>Sorprèn-me</span></label>
+                        </div>
+                        <p class="pt-mode__hint" id="ptModeHint">Combina música coneguda i descoberta.</p>
+                    </fieldset>
+                    <p class="pt-note" id="ptNote" role="status" aria-live="polite"></p>
+                </div>
+                <div class="pt-entry__feature" id="ptFeature"></div>
+            </section>
             <h1 class="page-title" id="pageTitle">Recomanat per a tu</h1>
             <div class="category-keywords-inline" id="categoryKeywordsInline" style="display: none;"></div>
             <section class="hero" id="heroSection">
                 <div class="hero-content">
-                    <span class="hero-eyebrow" id="heroEyebrow">Destacat per tu</span>
+                    <span class="hero-eyebrow" id="heroEyebrow">Cançó destacada</span>
                     <h2 class="hero-title" id="heroTitle"></h2>
                     <p class="hero-description" id="heroDescription"></p>
                     <div class="hero-actions">
@@ -229,8 +253,13 @@
                     <span class="hero-duration" id="heroDuration"></span>
                 </div>
             </section>
-            <div class="videos-grid" id="videosGrid"></div>
-            <section class="home-playlists hidden" id="homePlaylists" aria-label="Les teves llistes de reproducció"></section>
+            <div class="videos-grid" id="videosGrid" aria-busy="true">
+                <div class="pt-skeleton" aria-hidden="true">
+                    <div class="pt-skeleton__head"></div>
+                    <div class="pt-skeleton__row"><i></i><i></i><i></i><i></i></div>
+                </div>
+            </div>
+            <section class="home-playlists hidden" id="homePlaylists" aria-label="Les teves llistes"></section>
         </div>
 
         <!-- Watch Page -->
@@ -334,10 +363,14 @@
     </div>
 
     <div id="playlistsPage" class="main-content hidden">
-        <h1 class="page-title">Biblioteca</h1>
-        <p class="page-subtitle">Crea i gestiona les teves llistes i categories personalitzades.</p>
+        <h1 class="page-title">La teva música</h1>
+        <p class="page-subtitle">Les teves llistes i categories, i tot el que has escoltat.</p>
+        <div class="pt-page-links">
+            <button type="button" class="pt-btn pt-btn--ghost pt-btn--sm" data-pt-nav="history">Historial</button>
+            <button type="button" class="pt-btn pt-btn--ghost pt-btn--sm" data-pt-nav="artists">Artistes</button>
+        </div>
         <div class="library-tabs" id="libraryTabs" role="tablist">
-            <button class="library-tab is-active" type="button" role="tab" data-library-tab="playlists">Llistes de Reproducció</button>
+            <button class="library-tab is-active" type="button" role="tab" data-library-tab="playlists">Llistes</button>
             <button class="library-tab" type="button" role="tab" data-library-tab="smart-categories">Categories Intel·ligents</button>
         </div>
         <div id="libraryTabPlaylists" class="library-tab-panel">
@@ -353,11 +386,11 @@
     </div>
 
     <div id="followPage" class="main-content hidden" aria-labelledby="followPageTitle">
-        <h1 class="page-title" id="followPageTitle">Segueix!</h1>
-        <p class="page-subtitle follow-subtitle">✨ Els nostres YouTubers, més a prop que mai</p>
-        <div class="follow-tabs" id="followTabs" role="tablist" aria-label="Filtres de canals">
+        <h1 class="page-title" id="followPageTitle">Artistes</h1>
+        <p class="page-subtitle follow-subtitle">Retroba els teus artistes i segueix-ne de nous</p>
+        <div class="follow-tabs" id="followTabs" role="tablist" aria-label="Filtres d'artistes">
             <button class="follow-tab" type="button" role="tab" aria-selected="false" data-follow-tab="all">
-                Tots els canals
+                Tots els artistes
             </button>
             <button class="follow-tab" type="button" role="tab" aria-selected="false" data-follow-tab="programes">
                 Programes
@@ -447,13 +480,13 @@
         <div class="spinner"></div>
     </div>
 
-    <!-- Modal Afegeix un YouTuber -->
+    <!-- Modal Suggereix un artista -->
     <div class="modal-overlay" id="addYoutuberModal">
         <div class="modal modal-small" role="dialog" aria-modal="true" aria-labelledby="addYoutuberModalTitle">
             <div class="modal-header">
                 <h2 class="modal-title" id="addYoutuberModalTitle">
                     <i data-lucide="at-sign" class="add-youtuber-icon"></i>
-                    Afegeix un YouTuber
+                    Suggereix un artista
                 </h2>
                 <button class="modal-close" id="closeAddYoutuberModal" type="button" aria-label="Tancar modal">
                     <i data-lucide="x"></i>
@@ -463,12 +496,12 @@
                 <div class="ecosistema-tooltip-wrapper">
                     <a href="info-youtubers.html#ecosistema" class="ecosistema-tooltip-trigger" target="_blank" rel="noopener noreferrer">
                         <i data-lucide="globe" style="width:14px;height:14px;"></i>
-                        Fonts de l'indexació de Segueix!
+                        Fonts d'indexació de Segueix Música
                     </a>
-                    <h2>Afegeix un Youtuber</h2>
+                    <h2>Suggereix un artista</h2>
                     <div class="ecosistema-tooltip">
                         <div class="ecosistema-tooltip-title">L'ecosistema digital en català</div>
-                        <p class="ecosistema-tooltip-desc">Segueix! beu de la feina de curació d'aquests portals. Consulta'ls abans de suggerir un canal:</p>
+                        <p class="ecosistema-tooltip-desc">Segueix Música beu de la feina de curació d'aquests portals. Consulta'ls abans de suggerir un artista:</p>
                         <div class="ecosistema-tooltip-links">
                             <a href="https://llista.cat" target="_blank" rel="noopener noreferrer"><span style="color:#d32f2f;">📊</span> Llista.cat</a>
                             <a href="https://clapclap.cat" target="_blank" rel="noopener noreferrer"><span style="color:#2e7d32;">🔍</span> ClapClap.cat</a>
@@ -477,7 +510,7 @@
                         </div>
                     </div>
                 </div>
-                <p class="page-subtitle add-youtuber-subtitle" style="margin-top:0;margin-bottom:12px;">Suggereix un nou canal de YouTube perquè l'afegim a la plataforma.</p>
+                <p class="page-subtitle add-youtuber-subtitle" style="margin-top:0;margin-bottom:12px;">Suggereix un artista o grup i n'afegirem el canal de YouTube a Segueix Música.</p>
                 <div class="add-youtuber-cta">
                     <button type="button" class="playlist-create-btn add-youtuber-submit-btn" id="addYoutuberSubmitBtn">Obrir formulari</button>
                     <p class="add-youtuber-help">Per trobar el nom d'usuari <strong>@</strong>, entra al canal de YouTube i copia el text que surt al perfil, per exemple <strong>@nomdelcanal</strong>.</p>
@@ -492,7 +525,7 @@
 
                 <div class="about-modal-body">
                     <div class="about-contact-row">
-                        <p>Vols enviar-nos un comentari?<br>Uneix-te a l'espai de Segueix!</p>
+                        <p>Vols enviar-nos un comentari?<br>Uneix-te a l'espai de Segueix Música</p>
                         <div class="about-contact-cta-stack">
                             <a href="https://xiuxiuejar.com/espai/segueix-els-nostres-youtubers" target="_blank" rel="noopener noreferrer">
                                 <img src="img/Xiuxiuajar_icona.png" alt="Xiuxiuejar" class="about-xiuxiuejar-icon">
@@ -504,7 +537,7 @@
                     </div>
                     <hr class="modal-divider">
                     <div class="about-contact-row">
-                        <p>Ets YouTuber i vols contactar amb nosaltres?</p>
+                        <p>Ets artista i vols contactar amb nosaltres?</p>
                         <div class="about-contact-cta-stack">
                             <a href="http://t.me/segueix" target="_blank" rel="noopener noreferrer">
                                 <img src="img/Telegram-icona.png" alt="Telegram" class="about-telegram-icon">
@@ -524,7 +557,7 @@
                     </div>
                     <div class="about-contact-row">
                         <a href="info-youtubers.html" class="about-youtuber-info-link" target="_blank" rel="noopener noreferrer">
-                            Informació YouTubers
+                            Informació per a artistes
                         </a>
                     </div>
                     <div class="project-credit">
@@ -649,6 +682,7 @@
                     <button class="background-option current-color-display" id="currentColorDisplay" type="button" aria-label="Mostrar selector de fons"></button>
                     <div class="expanded-color-picker hidden" id="expandedColorPicker">
                         <div class="background-options" id="backgroundOptions">
+                            <button class="background-option" type="button" data-color="#141615" aria-label="Carbó"></button>
                             <button class="background-option" type="button" data-color="#121212" aria-label="Negre"></button>
                             <button class="background-option" type="button" data-color="#333333" aria-label="Negre carbó"></button>
                             <button class="background-option" type="button" data-color="#3d3d3d" aria-label="Gris fosc"></button>
@@ -667,7 +701,7 @@
                     <button class="background-option current-color-display" id="currentButtonColorDisplay" type="button" aria-label="Mostrar selector de botons"></button>
                     <div class="expanded-color-picker hidden" id="expandedButtonColorPicker">
                         <div class="background-options" id="buttonColorOptions">
-                            <button class="background-option" type="button" data-color="#2A2A2A" aria-label="Grafit"></button>
+                            <button class="background-option" type="button" data-color="#2B302C" aria-label="Grafit"></button>
                             <button class="background-option" type="button" data-color="#9B72CF" aria-label="Lila"></button>
                             <button class="background-option" type="button" data-color="#4A90D9" aria-label="Blau elèctric"></button>
                             <button class="background-option" type="button" data-color="#2ECC8F" aria-label="Verd menta"></button>
@@ -863,6 +897,9 @@
             <a href="/folk-arrel">Folk i arrel</a>
             <a href="/musica-tv">Música TV</a>
         </nav>
+            <button id="cookiePreferencesBtn" class="cookie-preferences-btn hidden" type="button" aria-label="Configura les cookies">
+                Cookies
+            </button>
             <button class="project-credit-legal-btn" type="button" data-open-legal-modal>Privacitat i Avís Legal</button>
             <p class="project-credit-subline">
                 Projecte de <span class="project-credit-highlight">Can Nyero</span> amb
@@ -870,6 +907,26 @@
             </p>
         </div>
     </footer>
+
+    <!-- Navegació inferior (mòbil) -->
+    <nav class="pt-bottom-nav" id="ptBottomNav" aria-label="Navegació principal">
+        <button type="button" class="pt-nav-item is-current" data-pt-nav="home" aria-current="page">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1Z"/></svg>
+            <span>Inici</span>
+        </button>
+        <button type="button" class="pt-nav-item" data-pt-nav="discover">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="m15.5 8.5-2 5-5 2 2-5 5-2Z"/></svg>
+            <span>Descobreix</span>
+        </button>
+        <button type="button" class="pt-nav-item" data-pt-nav="search">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="m21 21-4.3-4.3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <span>Cerca</span>
+        </button>
+        <button type="button" class="pt-nav-item" data-pt-nav="library">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M21 15V6M18.5 18a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM12 12H3M16 6H3M12 18H3"/></svg>
+            <span>La teva música</span>
+        </button>
+    </nav>
 
     <!-- Scripts -->
     <!-- Base runtime/config -->
@@ -905,8 +962,11 @@
     <script src="js/features/likes.js"></script>
     <script src="js/features/home-sections.js"></script>
     <script src="js/features/category-selector.js"></script>
-    <script src="js/features/music-queue.js"></script>
-    <script src="js/features/home-playlists.js"></script>
+    <script src="js/features/discovery.js?v=20260930-portada-1"></script>
+    <script src="js/features/music-queue.js?v=20260930-portada-1"></script>
+    <script src="js/features/home-playlists.js?v=20260930-portada-1"></script>
+    <script src="js/features/shell-nav.js?v=20260930-portada-1"></script>
+    <script src="js/features/portada.js?v=20260930-portada-1"></script>
     <script src="js/features/shared-playlists.js"></script>
     <script src="js/features/config-sync.js"></script>
     <script src="js/features/analytics.js?v=20260925-unique-users-v1"></script>
@@ -914,7 +974,7 @@
     <script src="js/features/analytics-admin.js?v=20260925-unique-users-v1"></script>
 
     <!-- Main app entrypoint -->
-    <script src="js/app.js?v=20260929-music-queue-7"></script>
+    <script src="js/app.js?v=20260930-portada-1"></script>
     <script src="js/features/tv-learning.js?v=20260924-learning-v1"></script>
     <script src="js/features/smart-feed.js?v=20260924-smart-feed-v1"></script>
     <script src="js/features/tv-live-queue.js?v=20260924-live-session-v1"></script>

@@ -31,6 +31,14 @@
     // Categories que no són una "categoria" a efectes del nom de la llista (són vistes generals).
     const GENERAL_VIEWS = new Set(['novetats', 'tot', 'descobreix', 'seguint', 'radar', 'recomanat per a tu']);
     let radioCategory = '';
+    // Pla de descoberta aplicat a l'última cua generada: { mode, requested, note } (veure discovery.js).
+    let radioMeta = null;
+    // Nom de la selecció que s'ha engegat tal com és (p. ex. «Acabades de sortir»); buit en una ràdio normal.
+    let radioLabel = '';
+    // Cançons afegides a la cua quan encara no sona cap ràdio: sonen just després de la primera que s'engegui.
+    let pendingQueue = [];
+    // Ids de la cua activa que l'usuari ha afegit a mà (es conserven en regenerar la ràdio).
+    let queuedIds = new Set();
     // Categoria de la fila de la portada on l'usuari ha clicat una cançó (null = fora de files).
     let clickCategory = null;
     document.addEventListener(
@@ -101,7 +109,8 @@
         return own.some(name => wanted.includes(String(name).toLowerCase()));
     }
 
-    function buildQueue(video, category = '') {
+    // Candidates de la ràdio: només cançons del feed, sense vistes, ni amagades, ni de l'artista excloent-se.
+    function getCandidates(exclude, category = '') {
         let pool = Array.isArray(currentFeedVideos) ? currentFeedVideos : [];
         try {
             if (typeof filterOutWatchedVideos === 'function') pool = filterOutWatchedVideos(pool) || pool;
@@ -111,10 +120,10 @@
         const hidden = new Set(
             (typeof getHiddenChannelIds === 'function' ? getHiddenChannelIds() : []).map(id => String(id))
         );
-        const candidates = pool.filter(
+        return pool.filter(
             item =>
                 item?.id &&
-                String(item.id) !== String(video.id) &&
+                (!exclude || String(item.id) !== String(exclude.id)) &&
                 !item.isShort &&
                 isSong(item) &&
                 item.source !== 'static' &&
@@ -122,25 +131,56 @@
                 // Ràdio d'una categoria: només cançons d'aquella categoria
                 (!category || matchesCategory(item, category))
         );
+    }
 
+    // Perfil d'escolta de l'usuari (historial, m'agrada, seguits) per al mode de descoberta.
+    function getDiscoveryProfile() {
+        const discovery = app.features.discovery;
+        if (!discovery) return null;
+        try {
+            const feed = (typeof getFeedDataForFilter === 'function' && getFeedDataForFilter()) || currentFeedData;
+            return discovery.getProfile(feed?.channels);
+        } catch (error) {
+            return null;
+        }
+    }
+
+    // Base de qualsevol cua: ordre de Música TV i, si falla, el més recent.
+    function rankCandidates(candidates, avoidChannel = '') {
         const tv = app.features.segueixTV;
         let ordered = [];
         try {
-            ordered = tv?.rank?.(candidates, { avoidChannels: new Set([channelOf(video)]) }) || [];
+            ordered = tv?.rank?.(candidates, { avoidChannels: new Set(avoidChannel ? [avoidChannel] : []) }) || [];
         } catch (error) {
             ordered = [];
         }
+        const byRecency = [...candidates].sort(
+            (a, b) => new Date(b.publishedAt || 0).getTime() - new Date(a.publishedAt || 0).getTime()
+        );
+        return [...ordered, ...byRecency];
+    }
 
-        // Ràdio: una sola cançó per artista (i cap del mateix artista que la que sona).
-        // Si no arriba al mínim, es completa amb repeticions, però mai dues seguides.
+    // Aplica el mode de descoberta (A casa / Una mica de tot / Sorprèn-me) a una llista ja ordenada.
+    // Sense el mòdul de descoberta la llista queda com és.
+    function applyDiscoveryMode(list, options = {}) {
+        const discovery = app.features.discovery;
+        if (!discovery) return { ordered: list, mode: 'none', requested: '', note: '' };
+        const requested = options.mode || discovery.getMode();
+        return discovery.orderForMode(list, options.profile || getDiscoveryProfile(), requested, {
+            after: options.after || null,
+        });
+    }
+
+    // Cua = vídeo inicial + ordenació de Música TV, repartida segons el mode de descoberta.
+    // Una sola cançó per artista (i cap del mateix artista que la que sona); si no arriba al mínim,
+    // es completa amb repeticions, però mai dues seguides.
+    function buildQueue(video, category = '', options = {}) {
+        const candidates = getCandidates(video, category);
         const seenArtists = new Set([artistOf(video)]);
         const unique = [];
         const repeated = [];
         const used = new Set([String(video.id)]);
-        const byRecency = [...candidates].sort(
-            (a, b) => new Date(b.publishedAt || 0).getTime() - new Date(a.publishedAt || 0).getTime()
-        );
-        [...ordered, ...byRecency].forEach(item => {
+        rankCandidates(candidates, channelOf(video)).forEach(item => {
             const id = String(item?.id || '');
             if (!id || used.has(id)) return;
             used.add(id);
@@ -153,9 +193,13 @@
             }
         });
 
+        // Mode de descoberta: reordena els artistes; les notes expliquen si no hi ha historial suficient.
+        const plan = applyDiscoveryMode(unique, { ...options, after: video });
+        radioMeta = { mode: plan.mode, requested: plan.requested, note: plan.note || '' };
+
         // La música realment antiga surt amb menys freqüència (1 de cada 5; 1 de cada 2 si la cançó
         // que sona ja és antiga: qui escolta clàssics vol clàssics).
-        let upcoming = limitClassicFrequency(unique, { every: isClassicSong(video) ? 2 : 5 });
+        let upcoming = limitClassicFrequency(plan.ordered, { every: isClassicSong(video) ? 2 : 5 });
         if (upcoming.length + 1 < MIN_QUEUE_LENGTH) {
             const missing = MIN_QUEUE_LENGTH - 1 - upcoming.length;
             upcoming = spreadVideosByArtist([...upcoming, ...repeated.slice(0, missing)], {
@@ -163,6 +207,69 @@
             });
         }
         return [video, ...upcoming].slice(0, MAX_QUEUE_LENGTH);
+    }
+
+    // Engega la ràdio amb `video` de primera cançó. Retorna true si ha començat (si no, l'app segueix el camí normal).
+    function launch(video, category = '', options = {}) {
+        let queue = buildQueue(video, category, options);
+        if (category && queue.length < 2) {
+            // Categoria amb massa poques cançons: ràdio general perquè la reproducció no s'aturi
+            category = '';
+            queue = buildQueue(video, '', options);
+        }
+        if (queue.length < 2) return false;
+        radioCategory = category;
+        radioLabel = '';
+
+        // Les cançons afegides a la cua abans d'engegar sonen just després de la primera.
+        const waiting = pendingQueue.filter(item => String(item?.id) !== String(video.id));
+        pendingQueue = [];
+        queuedIds = new Set(waiting.map(item => String(item.id)));
+        if (waiting.length) {
+            const rest = queue.slice(1).filter(item => !queuedIds.has(String(item?.id)));
+            queue = [video, ...waiting, ...rest].slice(0, MAX_QUEUE_LENGTH + waiting.length);
+        }
+
+        clearEmbeddedYouTubeSession();
+        isPlaylistMode = true;
+        activePlaylistId = QUEUE_ID;
+        activePlaylistName = QUEUE_NAME;
+        activePlaylistQueue = queue;
+        currentPlaylistIndex = 0;
+        loadVideoInSequence();
+        return true;
+    }
+
+    // Reprodueix una selecció (p. ex. «Acabades de sortir») tal com és, en el seu ordre, com a cua.
+    // Després, «Regenera la cua» la converteix en una ràdio normal.
+    function playSelection(videos, label = '') {
+        if (typeof loadVideoInSequence !== 'function' || document.body.classList.contains('segueix-tv-active')) {
+            return false;
+        }
+        const seen = new Set();
+        const queue = (Array.isArray(videos) ? videos : [])
+            .filter(item => {
+                const id = String(item?.id || '');
+                if (!id || seen.has(id) || item.isShort || item.source === 'static') return false;
+                seen.add(id);
+                return true;
+            })
+            .slice(0, MAX_QUEUE_LENGTH);
+        if (!queue.length) return false;
+
+        radioCategory = '';
+        radioMeta = { mode: 'none', requested: '', note: '' };
+        radioLabel = String(label || '');
+        queuedIds = new Set();
+        pendingQueue = [];
+        clearEmbeddedYouTubeSession();
+        isPlaylistMode = true;
+        activePlaylistId = QUEUE_ID;
+        activePlaylistName = QUEUE_NAME;
+        activePlaylistQueue = queue;
+        currentPlaylistIndex = 0;
+        loadVideoInSequence();
+        return true;
     }
 
     // Retorna true si ha engegat la reproducció amb cua (si no, l'app segueix el camí normal).
@@ -191,36 +298,111 @@
         const selected = String(typeof selectedCategory === 'string' ? selectedCategory : '').trim();
         let category = fromRow !== null ? fromRow : selected;
         if (!category || GENERAL_VIEWS.has(category.toLowerCase())) category = '';
-
-        let queue = buildQueue(video, category);
-        if (category && queue.length < 2) {
-            // Categoria amb massa poques cançons: ràdio general perquè la reproducció no s'aturi
-            category = '';
-            queue = buildQueue(video);
-        }
-        if (queue.length < 2) return false;
-        radioCategory = category;
-
-        clearEmbeddedYouTubeSession();
-        isPlaylistMode = true;
-        activePlaylistId = QUEUE_ID;
-        activePlaylistName = QUEUE_NAME;
-        activePlaylistQueue = queue;
-        currentPlaylistIndex = 0;
-        loadVideoInSequence();
-        return true;
+        return launch(video, category);
     }
 
-    // Torna a generar la part pendent de la cua amb l'ordenació de TV (manté el que sona).
+    // «Fes-la sonar»: tria la primera cançó segons el mode de descoberta i engega la ràdio.
+    // No canvia res mentre l'usuari no ho demana: només s'invoca des d'un gest de l'usuari.
+    // Retorna { started, note, mode } perquè la interfície pugui explicar què s'ha fet.
+    function startDiscovery(options = {}) {
+        const none = { started: false, note: '', mode: 'none', seed: null };
+        if (document.body.classList.contains('segueix-tv-active')) return none;
+        if (typeof loadVideoInSequence !== 'function') return none;
+        const candidates = getCandidates(null, '');
+        if (!candidates.length) return none;
+
+        const unique = [];
+        const seen = new Set();
+        rankCandidates(candidates).forEach(item => {
+            const artist = artistOf(item);
+            if (artist && seen.has(artist)) return;
+            if (artist) seen.add(artist);
+            unique.push(item);
+        });
+        const plan = applyDiscoveryMode(unique, options);
+        const seed = plan.ordered[0];
+        if (!seed) return none;
+        clickCategory = null;
+        const started = launch(seed, '', options);
+        return { started, note: started ? radioMeta?.note || '' : '', mode: radioMeta?.mode || plan.mode, seed };
+    }
+
+    // Torna a generar la part pendent de la cua amb l'ordenació de TV i el mode de descoberta actual
+    // (manté el que sona i el que l'usuari hi ha afegit a mà).
     function regenerate() {
         if (!isPlaylistMode || activePlaylistId !== QUEUE_ID) return;
         const current = activePlaylistQueue[currentPlaylistIndex];
         if (!current) return;
+        radioLabel = '';
         const played = activePlaylistQueue.slice(0, currentPlaylistIndex + 1);
         const playedIds = new Set(played.map(item => String(item.id)));
-        const fresh = buildQueue(current, radioCategory).filter(item => !playedIds.has(String(item.id)));
-        activePlaylistQueue = [...played, ...fresh].slice(0, MAX_QUEUE_LENGTH + played.length);
+        const kept = activePlaylistQueue
+            .slice(currentPlaylistIndex + 1)
+            .filter(item => queuedIds.has(String(item?.id)));
+        const keptIds = new Set(kept.map(item => String(item.id)));
+        const fresh = buildQueue(current, radioCategory).filter(
+            item => !playedIds.has(String(item.id)) && !keptIds.has(String(item.id))
+        );
+        activePlaylistQueue = [...played, ...kept, ...fresh].slice(0, MAX_QUEUE_LENGTH + played.length + kept.length);
         refresh();
+    }
+
+    // «Afegeix a la cua». Si la ràdio sona, la cançó entra després de la que sona (i de les que l'usuari
+    // ja hi havia afegit); si encara no sona res, espera i sonarà just després de la primera que s'engegui.
+    // Retorna { status: 'queued' | 'pending' | 'exists' | 'unsupported', position }.
+    function enqueue(video) {
+        if (!video?.id || video.isShort) return { status: 'unsupported', position: 0 };
+        const id = String(video.id);
+        if (isPlaylistMode && activePlaylistId === QUEUE_ID && activePlaylistQueue.length) {
+            const upcomingIndex = activePlaylistQueue.findIndex(
+                (item, index) => index > currentPlaylistIndex && String(item?.id) === id
+            );
+            if (String(activePlaylistQueue[currentPlaylistIndex]?.id) === id || upcomingIndex >= 0) {
+                return { status: 'exists', position: Math.max(1, upcomingIndex - currentPlaylistIndex) };
+            }
+            let insertAt = currentPlaylistIndex + 1;
+            while (insertAt < activePlaylistQueue.length && queuedIds.has(String(activePlaylistQueue[insertAt]?.id))) {
+                insertAt += 1;
+            }
+            const list = [...activePlaylistQueue];
+            list.splice(insertAt, 0, video);
+            activePlaylistQueue = list;
+            queuedIds.add(id);
+            refresh();
+            notifyQueueChanged();
+            return { status: 'queued', position: insertAt - currentPlaylistIndex };
+        }
+        if (isPlaylistMode && activePlaylistId && !isEphemeral(activePlaylistId)) {
+            // Una llista de l'usuari no es modifica sense que ho demani: cal desar-la a una llista.
+            return { status: 'unsupported', position: 0 };
+        }
+        if (pendingQueue.some(item => String(item?.id) === id)) {
+            return { status: 'exists', position: pendingQueue.findIndex(item => String(item?.id) === id) + 1 };
+        }
+        pendingQueue = [...pendingQueue, video];
+        notifyQueueChanged();
+        return { status: 'pending', position: pendingQueue.length };
+    }
+
+    function notifyQueueChanged() {
+        try {
+            window.dispatchEvent(new CustomEvent('segueix:queue-changed'));
+        } catch (error) {
+            // Entorn sense esdeveniments (proves)
+        }
+    }
+
+    // Estat de la cua per a la interfície (portada): què sona, què ve després i què espera.
+    function getState() {
+        const active = isPlaylistMode && activePlaylistQueue.length > 0;
+        return {
+            active,
+            isRadio: active && activePlaylistId === QUEUE_ID,
+            current: active ? activePlaylistQueue[currentPlaylistIndex] || null : null,
+            next: active ? activePlaylistQueue[currentPlaylistIndex + 1] || null : null,
+            pending: pendingQueue.length,
+            meta: radioMeta,
+        };
     }
 
     // Enllaç a YouTube Music amb la cua tal com és ara: des de la cançó que sona fins al final,
@@ -311,7 +493,7 @@
                     </span>
                     <span class="mq-text">
                         <span class="mq-title">${escapeText(video.title)}</span>
-                        <span class="mq-artist">${escapeText(video.channelTitle || '')}</span>
+                        <span class="mq-artist">${escapeText(video.channelTitle || '')}${queuedIds.has(String(video.id)) && !active ? ' · <span class="mq-added">Afegida per tu</span>' : ''}</span>
                     </span>
                     <span class="mq-duration">${escapeText(duration || '')}</span>
                 </button>
@@ -329,15 +511,24 @@
 
         const upcoming = activePlaylistQueue.slice(currentPlaylistIndex + 1);
         const canRegenerate = activePlaylistId === QUEUE_ID;
+        // Mode de descoberta aplicat a aquesta ràdio (o l'explicació si no hi havia historial suficient).
+        const discovery = app.features.discovery;
+        const applied = canRegenerate ? radioMeta : null;
+        const modeLabel =
+            applied && applied.mode !== 'variety' && applied.mode !== 'none'
+                ? discovery?.MODES?.find(item => item.id === applied.mode)?.label || ''
+                : '';
+        const modeNote = applied?.note ? `<p class="mq-note" role="status">${escapeText(applied.note)}</p>` : '';
 
         container.innerHTML = `
             <div class="mq${activePlaylistId === QUEUE_ID ? ' mq--radio' : ''}">
                 <div class="mq-head">
                     <h2 class="mq-heading">Ràdio</h2>
-                    <span class="mq-source">${activePlaylistId === QUEUE_ID ? `Basada en ${escapeText(current.channelTitle || 'aquesta cançó')}` : escapeText(activePlaylistName || '')}</span>
+                    <span class="mq-source">${activePlaylistId === QUEUE_ID ? (radioLabel ? `Selecció: ${escapeText(radioLabel)}` : `Basada en ${escapeText(current.channelTitle || 'aquesta cançó')}${modeLabel ? ` · ${escapeText(modeLabel)}` : ''}`) : escapeText(activePlaylistName || '')}</span>
                     ${canRegenerate || activePlaylistQueue.length > 1 ? `<button type="button" class="mq-regenerate mq-open-ytm" data-mq-open-ytm title="Obre aquesta cua, en el mateix ordre, a YouTube (pots desar-la i tornar-la a trobar a YouTube Music)">${ICONS.external}<span>Obre a YouTube</span></button>` : ''}
                     ${canRegenerate ? `<button type="button" class="mq-regenerate" data-mq-regenerate title="Genera de nou la ràdio">${ICONS.shuffle}<span>Barreja</span></button>` : ''}
                 </div>
+                ${modeNote}
                 <div class="mq-section">Ara sona</div>
                 ${renderItem(current, currentPlaylistIndex, { active: true, draggable: false })}
                 <div class="mq-section">A continuació${upcoming.length ? ` · ${upcoming.length}` : ''}</div>
@@ -480,6 +671,10 @@
 
     app.features.musicQueue = {
         startFrom,
+        startDiscovery,
+        playSelection,
+        enqueue,
+        getState,
         render,
         regenerate,
         buildQueue,

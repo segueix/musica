@@ -8,7 +8,7 @@
     const app = window.SegueixApp || (window.SegueixApp = {});
     app.utils = app.utils || {};
 
-    const BRAND_SUBTITLE = 'Els nostres YouTubers';
+    const BRAND_SUBTITLE = 'La teva plaça musical';
 
     // Logo SVG oficial integrat al centre (Cor negre + Play blanc sobre cercle blanc)
     const LOGO_BASE64 = 'data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTkyIDE5MiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiI+PGNpcmNsZSBjeD0iOTYiIGN5PSI5NiIgcj0iOTYiIGZpbGw9IndoaXRlIi8+PHBhdGggZD0iTTk2IDE2OCBDOTYgMTY4IDIwIDExOCAyMCA2OCBDMjAgNDMgNDAgMjYgNjIgMjYgQzc1IDI2IDg2IDMzIDk2IDQzIEMxMDYgMzMgMTE3IDI2IDEzMCAyNiBDMTUyIDI2IDE3MiA0MyAxNzIgNjggQzE3MiAxMTggOTYgMTY4IDk2IDE2OFoiIGZpbGw9ImJsYWNrIi8+PHBvbHlnb24gcG9pbnRzPSI3OCw3NiA3OCwxMzIgMTMyLDEwNCIgZmlsbD0id2hpdGUiLz48L3N2Zz4=';

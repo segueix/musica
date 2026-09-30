@@ -29,15 +29,15 @@
 // Configuració de l'aplicació
 const CONFIG = {
     branding: {
-        name: "Segueix!",
-        tagline: "La teva plataforma de vídeos personalitzada"
+        name: "Segueix Música",
+        tagline: "La teva plaça musical en català"
     },
     
     theme: {
-        primaryColor: "#FF0000",
-        secondaryColor: "#282828",
-        backgroundColor: "#121212",
-        textColor: "#FFFFFF"
+        primaryColor: "#D6ED84",
+        secondaryColor: "#202421",
+        backgroundColor: "#141615",
+        textColor: "#F4F0E8"
     },
     
     features: {
