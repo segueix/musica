@@ -238,39 +238,9 @@
     }
 
     function ensureContinueWatchingSection() {
-        const document = window.document;
-        let section = document?.getElementById?.(CONTINUE_SECTION_ID);
-        if (section) return section;
-        const homePage = document?.getElementById?.('homePage');
-        if (!homePage) return null;
-
-        section = document.createElement('section');
-        section.id = CONTINUE_SECTION_ID;
-        section.className = 'continue-watching-section hidden';
-        section.setAttribute('aria-labelledby', 'continueWatchingTitle');
-        section.innerHTML = `
-            <div class="continue-watching-header">
-                <h2 class="continue-watching-title" id="continueWatchingTitle">Continua mirant</h2>
-            </div>
-            <div class="continue-watching-list" id="${CONTINUE_LIST_ID}"></div>
-        `;
-
-        const hero = homePage.querySelector?.('#heroSection');
-        if (hero) hero.before(section);
-        else homePage.appendChild(section);
-
-        section.addEventListener?.('click', event => {
-            const removeButton = event.target?.closest?.('[data-continue-remove]');
-            if (removeButton) {
-                event.preventDefault();
-                event.stopPropagation();
-                dismissContinueWatching(removeButton.dataset.continueRemove);
-                return;
-            }
-            const openButton = event.target?.closest?.('[data-continue-open]');
-            if (openButton) openContinueWatching(openButton.dataset.continueOpen);
-        });
-        return section;
+        const section = window.document?.getElementById?.(CONTINUE_SECTION_ID);
+        section?.remove?.();
+        return null;
     }
 
     function renderContinueWatching() {

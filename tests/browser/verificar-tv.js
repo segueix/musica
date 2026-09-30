@@ -148,10 +148,12 @@ async function seguirTransicio(page, mostres = 22, pas = 60) {
 }
 
 async function engegarTVdeCategoria(page) {
-    const teBoto = await page.evaluate(() => Boolean(document.querySelector('[data-context-tv="category"]')));
-    if (!teBoto) return false;
-    await page.evaluate(() => document.querySelector('[data-context-tv="category"]').click());
-    return true;
+    return page.evaluate(async () => {
+        const categoria = String(window.SegueixApp?.state?.selectedCategory || '').trim();
+        const startCategoryTV = window.SegueixApp?.features?.contextTV?.startCategoryTV;
+        if (!categoria || typeof startCategoryTV !== 'function') return false;
+        return Boolean(await startCategoryTV(categoria));
+    });
 }
 
 (async () => {
@@ -212,7 +214,7 @@ async function engegarTVdeCategoria(page) {
         await page.evaluate(() => window.scrollTo(0, 1200));
         await page.waitForTimeout(400);
         const engegada = await engegarTVdeCategoria(page);
-        comprovar('El botó TV de la categoria és a la pàgina', engegada);
+        comprovar('La TV de categoria es pot iniciar sense mostrar cap botó TV al feed', engegada);
 
         const obertura = await seguirTransicio(page);
         comprovar(

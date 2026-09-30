@@ -3,8 +3,15 @@ import { describe, expect, it } from 'vitest';
 
 const navigationSource = readFileSync(new URL('../js/features/navigation.js', import.meta.url), 'utf8');
 const feedSource = readFileSync(new URL('../js/features/feed.js', import.meta.url), 'utf8');
+const playerSource = readFileSync(new URL('../js/features/player.js', import.meta.url), 'utf8');
 
 describe('context de Continua mirant a la portada', () => {
+    it('no renderitza la fila Continua mirant dins dels feeds', () => {
+        expect(playerSource).toContain("section?.remove?.();");
+        expect(playerSource).toContain("return null;");
+        expect(playerSource).not.toContain("hero.before(section);");
+    });
+
     it('manté visible la capçalera de categoria encara que hi hagi Continua mirant', () => {
         expect(navigationSource).not.toContain('installContinueWatchingRecommendationSwitch');
         expect(navigationSource).not.toContain("hero?.classList?.toggle?.('continue-watching-recommendation-hidden'");

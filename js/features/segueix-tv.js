@@ -64,14 +64,7 @@
                 color:#fff;background:var(--color-button-accent);opacity:.95
             }
             .segueix-tv-chip:hover,.segueix-tv-chip.is-active{background:#fff!important;color:#0f0f0f!important;opacity:1}
-            .segueix-tv-chip:hover > *,.segueix-tv-chip.is-active > *{color:#0f0f0f!important}
-            .segueix-tv-chip:hover::before,.segueix-tv-chip:hover::after,.segueix-tv-chip.is-active::before,.segueix-tv-chip.is-active::after{color:#0f0f0f!important}
-            .segueix-tv-chip:hover::after,.segueix-tv-chip.is-active::after,.segueix-tv-chip:hover .segueix-tv-chip-icon,.segueix-tv-chip.is-active .segueix-tv-chip-icon{border-color:#0f0f0f!important}
-            .segueix-tv-chip>*{display:none!important}
-            .segueix-tv-chip::before{content:'Música';order:1;display:inline-block}
-            .segueix-tv-chip::after{content:'TV';order:2;display:inline-flex;align-items:center;justify-content:center;min-width:25px;height:18px;padding:0 4px;border:1.5px solid currentColor;border-radius:4px;box-sizing:border-box;font-size:9px;font-weight:900;line-height:1;letter-spacing:.04em}
-            .segueix-tv-chip-icon{display:none!important}
-            .segueix-tv-badge{position:absolute;top:8px;right:8px;z-index:6;display:inline-flex;align-items:center;justify-content:center;min-width:30px;height:22px;padding:0 6px;border-radius:6px;background:rgba(10,10,10,.88);color:#fff;border:1px solid rgba(255,255,255,.72);font-size:10px;font-weight:900;letter-spacing:.08em;box-shadow:0 2px 8px rgba(0,0,0,.28);pointer-events:none}
+            .segueix-tv-chip::before,.segueix-tv-chip::after{content:none!important;display:none!important}
             .segueix-tv-title-label{display:inline-flex;align-items:center;gap:6px;min-width:0}
             .segueix-tv-title-label .radar-info-wrap{display:inline-flex;align-items:center;flex:0 0 auto}
             .segueix-tv-title-label .radar-info-btn{width:26px;height:26px}
@@ -729,15 +722,7 @@
     }
 
     function decorateCards() {
-        if (!document.body.classList.contains('segueix-tv-active')) return;
-        document.querySelectorAll('#videosGrid .video-thumbnail, #heroSection .hero-thumbnail').forEach(thumbnail => {
-            if (thumbnail.querySelector('.segueix-tv-badge')) return;
-            const badge = document.createElement('span');
-            badge.className = 'segueix-tv-badge';
-            badge.textContent = 'TV';
-            badge.setAttribute('aria-label', 'Seleccionat per Música TV');
-            thumbnail.appendChild(badge);
-        });
+        document.querySelectorAll('.segueix-tv-badge').forEach(badge => badge.remove());
     }
 
     function render(videos) {
@@ -930,7 +915,7 @@
         button.dataset.cat = LABEL;
         button.dataset.fixed = 'true';
         button.setAttribute('aria-label', LABEL);
-        button.innerHTML = '<span>Música</span><span class="segueix-tv-chip-icon" aria-hidden="true">TV</span>';
+        button.textContent = LABEL;
         button.removeEventListener('click', handleSegueixTVChipClick);
         button.addEventListener('click', handleSegueixTVChipClick);
 
