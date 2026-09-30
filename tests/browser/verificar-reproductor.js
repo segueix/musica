@@ -131,11 +131,11 @@ async function reproduir(page) {
 
     try {
         await page.goto(`http://localhost:${PORT}/`, { waitUntil: 'domcontentloaded' });
-        await page.waitForSelector('#videosGrid .video-card', { timeout: 30000 });
+        await page.waitForSelector('#videosGrid .video-card, #videosGrid .pt-card__media', { timeout: 30000 });
         await page.waitForTimeout(1200);
 
         // 1) Obrir un vídeo des del llistat i reproduir-lo.
-        await page.evaluate(() => document.querySelector('#videosGrid .video-card')?.click());
+        await page.evaluate(() => document.querySelector('#videosGrid .video-card, #videosGrid .pt-card__media')?.click());
         await page.waitForFunction(() => !document.getElementById('watchPage')?.classList.contains('hidden'), {
             timeout: 20000,
         });
@@ -170,7 +170,7 @@ async function reproduir(page) {
         await page.waitForTimeout(900);
         await page.evaluate(() => document.querySelector('.nav-item')?.click());
         await page.waitForTimeout(1200);
-        await page.evaluate(() => document.querySelectorAll('#videosGrid .video-card')[2]?.click());
+        await page.evaluate(() => document.querySelectorAll('#videosGrid .video-card, #videosGrid .pt-card__media')[2]?.click());
         await page.waitForTimeout(2000);
 
         const seguent = await llegirEstat(page);

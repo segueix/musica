@@ -205,7 +205,7 @@ async function engegarTVdeCategoria(page) {
 
     try {
         await page.goto(`http://localhost:${PORT}/`, { waitUntil: 'domcontentloaded' });
-        await page.waitForSelector('#videosGrid .video-card', { timeout: 30000 });
+        await page.waitForSelector('#videosGrid .video-card, #videosGrid .pt-card__media', { timeout: 30000 });
         await page.waitForTimeout(1500);
 
         // 1) L'usuari ha baixat pel feed i engega la TV de la categoria activa.
@@ -268,7 +268,7 @@ async function engegarTVdeCategoria(page) {
         await page.evaluate(() => exitPlaylistMode());
         await page.evaluate(() => document.querySelector('.nav-item')?.click());
         await page.waitForTimeout(1200);
-        await page.evaluate(() => document.querySelector('#videosGrid .video-card')?.click());
+        await page.evaluate(() => document.querySelector('#videosGrid .video-card, #videosGrid .pt-card__media')?.click());
         await page.waitForTimeout(1800);
         await page.evaluate(() => document.querySelector('.play-overlay')?.click());
         await page.waitForTimeout(600);
@@ -303,7 +303,7 @@ async function engegarTVdeCategoria(page) {
         );
 
         await page.goto(`http://localhost:${PORT}/`, { waitUntil: 'domcontentloaded' });
-        await page.waitForSelector('#videosGrid .video-card', { state: 'attached', timeout: 30000 });
+        await page.waitForSelector('#videosGrid .video-card, #videosGrid .pt-card__media', { state: 'attached', timeout: 30000 });
         await page.waitForTimeout(1500);
         // En recarregar, l'app pot restaurar la pàgina del reproductor: tornem a Inici
         // perquè hi hagi el botó TV de la categoria.
@@ -392,7 +392,7 @@ async function engegarTVdeCategoria(page) {
         await page.waitForTimeout(500);
         await page.evaluate(() => exitPlaylistMode());
         await page.goto(`http://localhost:${PORT}/`, { waitUntil: 'domcontentloaded' });
-        await page.waitForSelector('#videosGrid .video-card', { state: 'attached', timeout: 30000 });
+        await page.waitForSelector('#videosGrid .video-card, #videosGrid .pt-card__media', { state: 'attached', timeout: 30000 });
         await page.waitForTimeout(1500);
 
         // Pàgina "Seguint" → pestanya "Programes"

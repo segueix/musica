@@ -129,8 +129,9 @@
             const key = String(id || channel?.id || '')
                 .trim()
                 .toLowerCase();
-            if (key && channel && typeof channel === 'object')
+            if (key && channel && typeof channel === 'object') {
                 map.set(key, { ...channel, id: String(id || channel.id) });
+            }
         };
         if (Array.isArray(source)) source.forEach(channel => add(channel?.id, channel));
         else if (source && typeof source === 'object') Object.keys(source).forEach(id => add(id, source[id]));

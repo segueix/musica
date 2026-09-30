@@ -49,14 +49,20 @@ js/
 │   ├── config-sync.js       # Sync configuració (IIFE + registerRuntime)
 │   ├── shorts.js            # Shorts — REFACTORITZAT (implementació directa, sense hooks)
 │   ├── support.js           # Suport canals — REFACTORITZAT (implementació directa)
-│   └── likes.js             # Likes/favorits — REFACTORITZAT (implementació directa)
+│   ├── likes.js             # Likes/favorits — REFACTORITZAT (implementació directa)
+│   ├── discovery.js         # Descoberta (mode A casa/Una mica de tot/Sorprèn-me, radar, Torna-hi) — funcions pures
+│   ├── portada.js           # Portada «La teva plaça musical» (model pur + HTML + esdeveniments), pinta dins #videosGrid
+│   ├── shell-nav.js         # Navegació lateral/inferior i avisos breus (toast)
+│   ├── music-queue.js       # Ràdio/cua: mode de descoberta, «Afegeix a la cua», reproduir una selecció
+│   └── home-playlists.js    # «Les teves llistes» de la portada
 ├── config.js                # Constants CONFIG (branding, theme, features, layout, categories)
 ├── youtube.js               # YouTubeAPI object — feed fetch, cache, parsers
 ├── data.js                  # VIDEOS[], CHANNELS[], formatViews(), formatDate()
 ├── channels-ca.json         # Mapatge canals
 └── app.js                   # Runtime principal (~9.400 línies) — veure secció dedicada
 css/
-└── styles.css               # Full únic (112KB)
+├── styles.css               # Full base (grans blocs; es manté)
+└── portada.css              # Identitat de Segueix Música: tokens --pt-*, capçalera, navegació, portada (es carrega després de styles.css)
 data/
 ├── feed.json                # Feed actiu (font principal de vídeos)
 ├── support.json             # Mètodes de suport per canal
@@ -251,6 +257,14 @@ const ctx2 = loadScript('js/features/likes.js', { localStorage: createMockLocalS
 const likes = ctx2.SegueixApp.features.likes;
 ```
 
+### Portada de Segueix Música (2026-09-30)
+
+- La vista «Novetats» és **Inici** (la interfície no diu «Novetats»; l'id intern es conserva). `renderVideos()` crida `SegueixApp.features.portada.render(videosGrid, videos, { feed, all })`; si no hi és, cau a `homeSections` i a la graella.
+- Paleta: `#141615` fons, `#202421` superfícies, `#F4F0E8` text, `#D6ED84` accent, `#D98A70` terracota. Els valors per defecte viuen a `js/config.js` (`CONFIG.theme`) i `js/utils/storage.js` perquè `applyTheme()` posa variables **inline**; els tokens propis són a `css/portada.css` (`--pt-*`).
+- Preferència de descoberta: `catube_discovery_mode` (`home` | `mix` | `surprise`). S'aplica només en engegar o regenerar la cua.
+- Verificació: `npm test` (tests de descoberta, portada i recursos) i, opt-in, `node tests/browser/verificar-portada.js`.
+- Trampes conegudes: veure `docs/PROBLEMES_I_SOLUCIONS.md` (2026-09-30, «Nova portada»).
+
 ### Cobertura actual
 
 | Fitxer | Funcions testades |
@@ -258,6 +272,10 @@ const likes = ctx2.SegueixApp.features.likes;
 | `helpers.js` | isMatch, getVideoDisplayDuration, buildArchiveThumbnail, getPreferredThumbnail |
 | `id-codecs.js` | encode/decode per Playlist, Category, Config (roundtrip) |
 | `likes.js` | normalizeLikedVideo, getLikedVideos, setLikedVideos, isLiked, getLikedVideoIds |
+| `discovery.js` | mode persistit, perfil, ordenació per mode, radar, Torna-hi, Comença per aquí, estils |
+| `portada.js` | model de la portada, HTML de seccions i targetes, dates honestes, escapament |
+| `music-queue.js` | «Fes-la sonar», canvi de mode sense interrompre, afegir a la cua, reproduir selecció |
+| `portada.css` / `index.html` | contrast real dels tokens, cantonades 12–16 px, mides tàctils, ordre de scripts, precache |
 
 ---
 

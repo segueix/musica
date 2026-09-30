@@ -13,6 +13,26 @@
 
 **Fitxers Afectats:**
 
+## [2026-09-30] - Nova portada «La teva plaça musical» (Segueix Música): trampes trobades
+
+**Canvi:** Redisseny de la pàgina principal (vista «Novetats», que a la interfície és «Inici»). Fitxers nous: `js/features/discovery.js` (lògica pura de descoberta: mode A casa / Una mica de tot / Sorprèn-me, «Fora del teu radar», «Torna-hi», «Comença per aquí»), `js/features/portada.js` (model + HTML + esdeveniments), `js/features/shell-nav.js` (navegació lateral/inferior i avisos), `css/portada.css` (tokens i estils). La cua (`music-queue.js`) rep `startDiscovery`, `enqueue`, `playSelection` i el mode. La preferència es desa a `catube_discovery_mode` (viatja amb l'exportació/sincronització perquè copien tot el localStorage). La portada es pinta dins `#videosGrid`; l'entrada («Fes-la sonar», selector, destacat/«Ara sona») és HTML estàtic a `index.html` (`#portadaEntry`).
+
+**Trampes que cal recordar:**
+- **«Recomanat per a tu» retallava el feed.** `renderFeedLegacyImpl` deixa només vídeos ≥ 240 s quan el títol de la pàgina és «Recomanat per a tu» (el títol inicial de `#pageTitle`), de manera que a Inici quedaven 5-6 cançons. La portada fa la seva pròpia tria: `isRecommendedPage` és fals si hi ha `features.portada`.
+- **Les variables de tema són inline.** `applyTheme()` (config.js) i `initBackgroundPicker()`/`initButtonColorPicker()` posen `--color-background`, `--color-text`, `--color-button-accent`... a `documentElement.style`, que guanya sobre qualsevol `:root` d'un full d'estils. La paleta per defecte es canvia a `CONFIG.theme` i a `BACKGROUND_COLORS[0]`/`BUTTON_COLORS[0]` (`storage.js`), no només a la CSS.
+- **`backdrop-filter` crea un bloc contenidor per als `position: fixed`.** El desplegable de resultats de la cerca mòbil és `fixed`; amb `backdrop-filter` a `.app-header` es calculava respecte de la capçalera i quedava com una barra buida. A mòbil la capçalera és sòlida.
+- **Un absolut dins un grid es calcula sobre l'àrea del grid**, no sobre el contenidor: la cerca oberta al mòbil (`.search.is-open`) ha de tenir `grid-area: 1 / 1 / 2 / -1`.
+- **`document` tanca la cerca mòbil amb qualsevol clic fora del formulari** (app.js, `bindNavigationEvents`/`bindHomeEvents`). «Cerca» de la navegació inferior obre la cerca amb `setTimeout(..., 0)` perquè s'obri *després* d'aquest gestor.
+- **`showHomeNovetatsLegacyImpl` decideix si recarrega mirant `videosGrid.children.length`.** Per això la portada pinta dins `#videosGrid` i no en un contenidor propi.
+- **Sense feed, `loadVideosLegacyImpl` acaba a `renderStaticVideos([])`,** que buidava la graella sense dir res. Ara la portada hi pinta l'estat d'error amb «Torna-ho a provar» (i un rellotge de 15 s per si res no arriba a pintar).
+- **El mini-reproductor mòbil és `fixed; bottom: 0 !important`:** perquè no es solapi amb la navegació inferior s'aixeca amb `body #videoPlayer.mini-player-active { bottom: calc(var(--pt-nav-h) + safe) !important }` i el `body` guanya un `padding-bottom` extra amb `:has(#videoPlayer.mini-player-active)`.
+- **El botó flotant «Cookies» solapava el contingut i la navegació:** viu ara al peu de pàgina (i sempre a Configuració › Privacitat i YouTube).
+- **La sincronització de tema `--header-height`** la fa `syncHeaderHeightVar()` amb un ResizeObserver: la capçalera d'una sola fila (mòbil) no requereix cap ajust.
+
+**Verificació:** `tests/discovery.test.js`, `tests/portada.test.js`, `tests/music-queue-discovery.test.js`, `tests/portada-assets.test.js` (contrast real dels tokens, mides tàctils, ordre de scripts, precache del SW) i l'eina opt-in `node tests/browser/verificar-portada.js` (Chromium: desbordaments a 360/390/768/1440, zones tàctils, reproductor únic en canviar de secció, teclat, estat d'error).
+
+**Fitxers Afectats:** `index.html`, `css/portada.css`, `js/features/discovery.js`, `js/features/portada.js`, `js/features/shell-nav.js`, `js/features/music-queue.js`, `js/features/home-playlists.js`, `js/features/category-selector.js`, `js/features/player.js` (fallback de miniatures), `js/app.js`, `js/config.js`, `js/utils/storage.js`, `manifest.json`, `sw.js`, `tests/section-seo.test.js`.
+
 ## [2026-09-29] - A la pàgina principal sortien vídeos no musicals (concerts, teasers, anuncis) d'un canal com Els Amics de les Arts
 
 **Símptoma:** A Novetats, al hero i a les files de la pàgina principal apareixien vídeos que no són cançons ("Un concert com els d'abans", "La Mercè 2026", fragments de 47-55 s), tot i que el feed ja els marcava com `review`/`other`.

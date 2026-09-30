@@ -614,8 +614,9 @@
         if (!state.rendered || !state.lastInput || signature() === state.lastSignature) return;
         const input = { ...state.lastInput };
         try {
-            if (typeof filterOutWatchedVideos === 'function')
+            if (typeof filterOutWatchedVideos === 'function') {
                 input.recent = filterOutWatchedVideos(input.recent) || input.recent;
+            }
         } catch (error) {
             // Sense historial: es queda com estava
         }
@@ -982,12 +983,13 @@
             });
         }
         const title = $('videoTitle');
-        if (title)
+        if (title) {
             new window.MutationObserver(schedule).observe(title, {
                 childList: true,
                 characterData: true,
                 subtree: true,
             });
+        }
         const chips = window.document.querySelector('.chips-bar');
         if (chips) {
             new window.MutationObserver(syncActiveClass).observe(chips, {

@@ -1988,6 +1988,52 @@ body .follow-btn-pill.is-followed:hover {
 }
 
 /* Cua: «Ara sona» i «A continuació» */
+.mq {
+    border: 1px solid var(--pt-line);
+    border-radius: var(--pt-radius);
+    background: var(--pt-surface);
+}
+
+.mq-section {
+    color: var(--pt-muted);
+}
+
+.mq-item {
+    border-radius: var(--pt-radius-sm);
+}
+
+.mq-item:hover {
+    background: var(--pt-surface-2);
+}
+
+.mq-item.is-chosen,
+.mq-item.is-ghost {
+    background: var(--pt-surface-3);
+}
+
+.mq-source {
+    color: var(--pt-muted);
+}
+
+.mq-regenerate {
+    border: 1px solid var(--pt-line);
+    border-radius: var(--pt-radius-sm);
+    background: var(--pt-surface-2);
+}
+
+.mq-regenerate:hover {
+    background: var(--pt-surface-3);
+}
+
+@media (max-width: 768px) {
+    /* Amb els dos botons, l'origen de la ràdio (mode inclòs) passa a la fila de sota */
+    .mq-source {
+        order: 3;
+        flex: 1 0 100%;
+        white-space: normal;
+    }
+}
+
 .mq-note {
     margin: 0 0 8px;
     color: var(--pt-terracotta);
