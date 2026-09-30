@@ -54,7 +54,7 @@ js/
 │   ├── portada.js           # Portada «La teva plaça musical» (model pur + HTML + esdeveniments), pinta dins #videosGrid
 │   ├── shell-nav.js         # Navegació lateral/inferior i avisos breus (toast)
 │   ├── music-selection.js   # Motor de selecció musical compartit (funcions pures): antiguitat real, puntuació, restriccions
-│   ├── music-signals.js     # Observador únic d'escolta, estadístiques i preferències («Menys com aquesta»)
+│   ├── music-signals.js     # Observador únic d'escolta, estadístiques i preferències («(+) com aquesta (−)»)
 │   ├── music-queue.js       # Ràdio/cua: motor de selecció, mode de descoberta, «Afegeix a la cua», reproduir una selecció
 │   └── home-playlists.js    # «Les teves llistes» de la portada
 ├── config.js                # Constants CONFIG (branding, theme, features, layout, categories)

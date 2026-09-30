@@ -60,7 +60,8 @@
         const normalizedIds = [...new Set(ids.map(id => String(id)))];
         localStorage.setItem('user_liked_videos', JSON.stringify(normalizedIds));
         const existing = getLikedVideos();
-        const next = normalizedIds.map(id => existing.find(video => String(video.id) === id) || normalizeLikedVideo({ id }))
+        const next = normalizedIds
+            .map(id => existing.find(video => String(video.id) === id) || normalizeLikedVideo({ id }))
             .filter(Boolean);
         setLikedVideos(next);
     }
@@ -84,7 +85,7 @@
             channelId: video.channelId || video.snippet?.channelId || '',
             channelTitle: video.channelTitle || video.channel?.name || video.snippet?.channelTitle || '',
             publishedAt: video.publishedAt || video.uploadDate || '',
-            viewCount: video.viewCount || video.views || 0
+            viewCount: video.viewCount || video.views || 0,
         };
     }
 
@@ -116,7 +117,9 @@
             // El cor compta ja per a les decisions següents de la ràdio (music-queue / music-signals).
             try {
                 window.dispatchEvent(
-                    new CustomEvent('segueix:music-prefs-changed', { detail: { type: 'like', key: normalizedId, on: nowLiked } })
+                    new CustomEvent('segueix:music-prefs-changed', {
+                        detail: { type: 'like', key: normalizedId, on: nowLiked },
+                    })
                 );
             } catch (error) {
                 // Entorn sense esdeveniments (proves)
@@ -150,7 +153,7 @@
         const liked = isLikedImpl(video.id);
         updateLikeButtonStateImpl(likeButton, liked);
 
-        const handleLike = (event) => {
+        const handleLike = event => {
             if (event.type === 'keydown' && event.key !== 'Enter' && event.key !== ' ') {
                 return;
             }
@@ -186,7 +189,7 @@
             likeBadge.removeEventListener('keydown', likeBadge._likeHandler);
         }
 
-        likeBadge._likeHandler = (event) => {
+        likeBadge._likeHandler = event => {
             if (event.type === 'keydown' && event.key !== 'Enter' && event.key !== ' ') {
                 return;
             }
@@ -196,20 +199,122 @@
 
             const ids = getLikedVideoIds();
             const wasLiked = ids.includes(normalizedId);
-            const nextIds = wasLiked
-                ? ids.filter(id => id !== normalizedId)
-                : [...ids, normalizedId];
+            const nextIds = wasLiked ? ids.filter(id => id !== normalizedId) : [...ids, normalizedId];
             setLikedVideoIds(nextIds);
 
             const isNowLiked = !wasLiked;
             likeBadge.classList.toggle('liked', isNowLiked);
             likeBadge.classList.toggle('is-liked', isNowLiked);
             likeBadge.setAttribute('aria-pressed', isNowLiked ? 'true' : 'false');
-
+            // El cor compta ja per a les decisions següents de la ràdio (i el cor de sobre el reproductor s'actualitza).
+            try {
+                window.dispatchEvent(
+                    new CustomEvent('segueix:music-prefs-changed', {
+                        detail: { type: 'like', key: normalizedId, on: isNowLiked },
+                    })
+                );
+            } catch (error) {
+                // Entorn sense esdeveniments (proves)
+            }
         };
 
         likeBadge.addEventListener('click', likeBadge._likeHandler);
         likeBadge.addEventListener('keydown', likeBadge._likeHandler);
+    }
+
+    // ==================== COR SOBRE EL REPRODUCTOR ====================
+    // Cor clicable a dalt a la dreta del reproductor: fa el mateix que el cor de sota (m'agrada) i compta per a
+    // l'algorisme de la ràdio. Els dos cors es mantenen sincronitzats (el de sota es posa vermell).
+
+    function findPlayingVideo(id) {
+        const pools = [];
+        try {
+            if (typeof activePlaylistQueue !== 'undefined') pools.push(activePlaylistQueue);
+            if (typeof currentFeedVideos !== 'undefined') pools.push(currentFeedVideos);
+            if (typeof cachedAPIVideos !== 'undefined') pools.push(cachedAPIVideos);
+        } catch (error) {
+            // Globals d'app.js encara no disponibles
+        }
+        for (const pool of pools) {
+            const found = (Array.isArray(pool) ? pool : []).find(video => String(video?.id) === id);
+            if (found) return found;
+        }
+        try {
+            if (typeof getHistoryVideoById === 'function') return getHistoryVideoById(id) || { id };
+        } catch (error) {
+            // Sense historial
+        }
+        return { id };
+    }
+
+    function paintPlayerHeart(button, liked) {
+        button.classList.toggle('is-liked', liked);
+        button.setAttribute('aria-pressed', liked ? 'true' : 'false');
+        button.setAttribute('aria-label', liked ? 'Treu de les que t’agraden' : 'M’agrada');
+        button.title = liked ? 'Treu de les que t’agraden' : 'M’agrada';
+    }
+
+    // Deixa el cor de sota el reproductor (#likeToggle) en vermell (o buit) segons l'estat.
+    function syncUnderPlayerHeart(liked) {
+        const under = document.getElementById('likeToggle');
+        if (!under) return;
+        under.classList.toggle('liked', liked);
+        under.classList.toggle('is-liked', liked);
+        under.setAttribute('aria-pressed', liked ? 'true' : 'false');
+    }
+
+    function initPlayerHeart() {
+        const player = typeof document?.getElementById === 'function' ? document.getElementById('videoPlayer') : null;
+        if (!player || typeof MutationObserver !== 'function' || player.dataset.playerHeartBound === 'true') return;
+        player.dataset.playerHeartBound = 'true';
+
+        const ensure = () => {
+            const id = String(player.dataset.playingVideoId || '');
+            let button = player.querySelector(':scope > .player-heart');
+            if (!id || !player.querySelector('iframe')) {
+                button?.remove();
+                return;
+            }
+            if (!button) {
+                button = document.createElement('button');
+                button.type = 'button';
+                button.className = 'player-heart';
+                button.innerHTML = HEART_TOGGLE_SVG;
+                button.addEventListener('click', event => {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    const videoId = String(player.dataset.playingVideoId || '');
+                    if (!videoId) return;
+                    const nowLiked = toggleLikeVideoImpl(findPlayingVideo(videoId));
+                    paintPlayerHeart(button, nowLiked);
+                    syncUnderPlayerHeart(nowLiked);
+                });
+                player.appendChild(button);
+            }
+            const liked = isLikedImpl(id);
+            paintPlayerHeart(button, liked);
+            syncUnderPlayerHeart(liked);
+        };
+
+        new MutationObserver(ensure).observe(player, {
+            childList: true,
+            attributes: true,
+            attributeFilter: ['data-playing-video-id'],
+        });
+        // El cor de sota (o el d'una targeta) també actualitza el de sobre
+        document.addEventListener('click', event => {
+            if (event.target?.closest?.('#likeToggle, .like-action')) window.setTimeout(ensure, 60);
+        });
+        window.addEventListener('segueix:music-prefs-changed', event => {
+            if (event?.detail?.type === 'like') ensure();
+        });
+        ensure();
+    }
+
+    if (typeof document !== 'undefined' && document.readyState) {
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initPlayerHeart, { once: true });
+        } else initPlayerHeart();
     }
 
     // ==================== REGISTRE ====================
@@ -224,7 +329,8 @@
         updateLikeButtonState: updateLikeButtonStateImpl,
         bindLikeButton: bindLikeButtonImpl,
         setupLikeBadge: setupLikeBadgeImpl,
+        initPlayerHeart,
         HEART_TOGGLE_SVG,
-        PLAYLIST_ICON_SVG
+        PLAYLIST_ICON_SVG,
     };
 })(window);

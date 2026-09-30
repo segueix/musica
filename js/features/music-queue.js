@@ -26,6 +26,8 @@
         external:
             '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M14 4h6v6M20 4 10 14M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>',
         close: '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M6 6l12 12M18 6 6 18"/></svg>',
+        plus: '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" d="M12 5v14M5 12h14"/></svg>',
+        minus: '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" d="M5 12h14"/></svg>',
         more: '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M5 10.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm7 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm7 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3z"/></svg>',
     };
 
@@ -310,7 +312,12 @@
         try {
             window.localStorage?.setItem?.(
                 LAST_RADIO_KEY,
-                JSON.stringify({ id: String(video.id), title: video.title || '', category: category || '', at: Date.now() })
+                JSON.stringify({
+                    id: String(video.id),
+                    title: video.title || '',
+                    category: category || '',
+                    at: Date.now(),
+                })
             );
         } catch (error) {
             // Sense emmagatzematge: simplement no es pot continuar
@@ -321,7 +328,9 @@
         try {
             const raw = JSON.parse(window.localStorage?.getItem?.(LAST_RADIO_KEY) || 'null');
             if (!raw?.id || Date.now() - Number(raw.at) > LAST_RADIO_MAX_AGE) return null;
-            return findVideo(raw.id) ? { id: raw.id, title: raw.title, category: raw.category || '', at: raw.at } : null;
+            return findVideo(raw.id)
+                ? { id: raw.id, title: raw.title, category: raw.category || '', at: raw.at }
+                : null;
         } catch (error) {
             return null;
         }
@@ -331,7 +340,11 @@
     function resumeLast() {
         const last = getLastRadio();
         const video = last ? findVideo(last.id) : null;
-        if (!video || document.body.classList.contains('segueix-tv-active') || typeof loadVideoInSequence !== 'function') {
+        if (
+            !video ||
+            document.body.classList.contains('segueix-tv-active') ||
+            typeof loadVideoInSequence !== 'function'
+        ) {
             return false;
         }
         clickCategory = null;
@@ -477,7 +490,9 @@
     function dropRejectedUpcoming() {
         if (!isPlaylistMode || activePlaylistId !== QUEUE_ID) return false;
         const before = activePlaylistQueue.length;
-        activePlaylistQueue = activePlaylistQueue.filter((item, index) => index <= currentPlaylistIndex || !isRejected(item));
+        activePlaylistQueue = activePlaylistQueue.filter(
+            (item, index) => index <= currentPlaylistIndex || !isRejected(item)
+        );
         return activePlaylistQueue.length !== before;
     }
 
@@ -496,7 +511,11 @@
     }
 
     window.addEventListener?.('segueix:music-prefs-changed', event => {
-        if (dropRejectedUpcoming()) refresh();
+        // Repinta la cua perquè l'estat dels cercles (+/−) es vegi; treu el que s'acaba de rebutjar.
+        const dropped = dropRejectedUpcoming();
+        if (dropped || event?.detail?.type === 'lessLike' || event?.detail?.type === 'moreLike') {
+            if (!document.querySelector('.mq-item.is-chosen')) refresh();
+        }
         // Cor, seguiment i controls: la preferència compta ja per a les decisions següents.
         if (event?.detail?.on !== false) scheduleTailRefresh();
     });
@@ -655,9 +674,10 @@
                 ${
                     signalsApi()
                         ? `<button type="button" class="mq-more" data-mq-more aria-expanded="${active ? 'true' : 'false'}" aria-label="Preferències d’aquesta cançó" title="Preferències">${ICONS.more}</button>
-                <div class="mq-prefs" role="group" aria-label="Preferències d’aquesta cançó">
-                    <button type="button" class="mq-pref" data-mq-less="${index}">Menys com aquesta</button>
-                    <button type="button" class="mq-pref" data-mq-block="${index}">No em recomanis aquest artista</button>
+                <div class="mq-prefs" role="group" aria-label="Com aquesta cançó">
+                    <button type="button" class="mq-circle mq-circle--plus" data-mq-plus="${index}" aria-pressed="${signalsApi().isMoreLike(video.id)}" aria-label="Més com aquesta" title="Més com aquesta">${ICONS.plus}</button>
+                    <span class="mq-prefs__label" aria-hidden="true">com aquesta</span>
+                    <button type="button" class="mq-circle mq-circle--minus" data-mq-minus="${index}" aria-pressed="${signalsApi().isLessLike(video.id)}" aria-label="Menys com aquesta" title="Menys com aquesta">${ICONS.minus}</button>
                 </div>`
                         : ''
                 }
@@ -706,23 +726,36 @@
         return true;
     }
 
-    // «Menys com aquesta» / «No em recomanis aquest artista»: persistents i reversibles (Desfés).
-    function applyPreference(video, wholeArtist) {
+    // «+ com aquesta» / «− com aquesta»: persistents, excloents i reversibles (tornar-hi a prémer, o Desfés).
+    // Compten per a l'algorisme: la cançó i, més lleugerament, l'artista i l'estil.
+    function getPreference(video) {
+        const signals = signalsApi();
+        if (!video || !signals) return '';
+        if (signals.isMoreLike(video.id)) return 'more';
+        return signals.isLessLike(video.id) ? 'less' : '';
+    }
+
+    function applyPreference(video, direction) {
         const signals = signalsApi();
         if (!video || !signals) return;
         const toast = app.features.shellNav?.toast;
-        const artist = video.channelTitle || 'aquest artista';
-        if (wholeArtist) {
-            const key = artistOf(video);
-            signals.blockArtist(video);
-            toast?.(`No et recomanarem més ${artist}.`, { action: { label: 'Desfés', onClick: () => signals.unblockArtist(key) } });
-        } else {
-            const id = String(video.id);
-            signals.lessLikeThis(video);
-            toast?.(`Et recomanarem menys cançons com «${video.title}».`, {
-                action: { label: 'Desfés', onClick: () => signals.undoLessLike(id) },
-            });
+        const id = String(video.id);
+        const more = direction === 'more';
+        const wasOn = getPreference(video) === (more ? 'more' : 'less');
+        const undo = () => (more ? signals.undoMoreLike(id) : signals.undoLessLike(id));
+        if (wasOn) {
+            undo();
+            toast?.('Preferència desfeta.');
+            return;
         }
+        if (more) signals.moreLikeThis(video);
+        else signals.lessLikeThis(video);
+        toast?.(
+            more
+                ? `Et recomanarem més cançons com «${video.title}».`
+                : `Et recomanarem menys cançons com «${video.title}».`,
+            { action: { label: 'Desfés', onClick: undo } }
+        );
     }
 
     function bindContainer(container) {
@@ -738,11 +771,12 @@
                 more.setAttribute('aria-expanded', String(open));
                 return;
             }
-            const less = event.target.closest('[data-mq-less]');
-            const block = event.target.closest('[data-mq-block]');
-            if (less || block) {
+            const plus = event.target.closest('[data-mq-plus]');
+            const minus = event.target.closest('[data-mq-minus]');
+            if (plus || minus) {
                 event.stopPropagation();
-                applyPreference(activePlaylistQueue[Number((less || block).dataset.mqLess ?? (less || block).dataset.mqBlock)], Boolean(block));
+                const index = Number((plus || minus).dataset.mqPlus ?? (plus || minus).dataset.mqMinus);
+                applyPreference(activePlaylistQueue[index], plus ? 'more' : 'less');
                 return;
             }
             const remove = event.target.closest('[data-mq-remove]');
@@ -878,6 +912,7 @@
         render,
         regenerate,
         applyPreference,
+        getPreference,
         buildQueue,
         buildYouTubeMusicUrl,
         buildListName,

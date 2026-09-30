@@ -16,7 +16,7 @@
 // migrant els clients automàticament.
 
 // === AUTO-GENERAT per scripts/actualitzar_versio_sw.js — NO EDITAR MANUALMENT ===
-const CACHE_VERSION = '2d5aa2c94c74';
+const CACHE_VERSION = '0850ace6b576';
 const STATIC_ASSETS = [
     './',
     './index.html',

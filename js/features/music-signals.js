@@ -64,7 +64,7 @@
     }
 
     const emptyStats = () => ({ v: 1, songs: {}, artists: {}, recent: [] });
-    const emptyPrefs = () => ({ v: 1, lessLike: {}, blocked: {} });
+    const emptyPrefs = () => ({ v: 1, lessLike: {}, moreLike: {}, blocked: {} });
 
     function normalizeStats(raw) {
         const base = emptyStats();
@@ -146,7 +146,7 @@
     // Preferències explícites: cada entrada {at, on}; guanya la més recent (permet desfer i sincronitzar-ho).
     function mergePrefs(local, incoming) {
         const out = emptyPrefs();
-        ['lessLike', 'blocked'].forEach(kind => {
+        ['lessLike', 'moreLike', 'blocked'].forEach(kind => {
             const keys = new Set([...Object.keys(local?.[kind] || {}), ...Object.keys(incoming?.[kind] || {})]);
             keys.forEach(key => {
                 const x = local?.[kind]?.[key];
@@ -395,6 +395,7 @@
         return {
             v: 1,
             lessLike: raw.lessLike && typeof raw.lessLike === 'object' ? raw.lessLike : base.lessLike,
+            moreLike: raw.moreLike && typeof raw.moreLike === 'object' ? raw.moreLike : base.moreLike,
             blocked: raw.blocked && typeof raw.blocked === 'object' ? raw.blocked : base.blocked,
         };
     }
@@ -409,7 +410,13 @@
 
     function setPref(kind, key, on, detail = {}) {
         if (!key) return false;
-        prefs[kind][key] = { at: Date.now(), on: Boolean(on) };
+        const at = Date.now();
+        // «+ com aquesta» i «− com aquesta» són excloents: activar-ne una desactiva l'altra.
+        if (on && (kind === 'lessLike' || kind === 'moreLike')) {
+            const other = kind === 'lessLike' ? 'moreLike' : 'lessLike';
+            if (prefs[other][key]?.on) prefs[other][key] = { at, on: false };
+        }
+        prefs[kind][key] = { at, on: Boolean(on) };
         writeJson(PREFS_KEY, prefs);
         notifyPrefs({ type: kind, key, on: Boolean(on), ...detail });
         return true;
@@ -524,6 +531,9 @@
             likedVideos[0]?.id || '',
             followedIds.length,
             Object.keys(prefs.lessLike).length,
+            Object.keys(prefs.moreLike).length,
+            Object.values(prefs.moreLike).filter(entry => entry?.on).length,
+            Object.values(prefs.lessLike).filter(entry => entry?.on).length,
             Object.keys(prefs.blocked).length,
             stats.recent.length,
         ].join('|');
@@ -589,6 +599,7 @@
                 .filter(Boolean)
         );
         const lessLike = new Set(Object.keys(p?.lessLike || {}).filter(id => p.lessLike[id]?.on));
+        const moreLike = new Set(Object.keys(p?.moreLike || {}).filter(id => p.moreLike[id]?.on));
         const blocked = new Set(Object.keys(p?.blocked || {}).filter(key => p.blocked[key]?.on));
         // «Menys com aquesta»: reforç negatiu lleu per a l'artista (el motor l'aplica com a penalització).
         lessLike.forEach(id => {
@@ -597,7 +608,14 @@
                 artists[artistKey] = { ...(artists[artistKey] || {}), ll: (artists[artistKey]?.ll || 0) + 1 };
             }
         });
-        // Punts d'estil: artistes seguits, cors i escoltes qualificades.
+        // «+ com aquesta»: reforç lleu per a l'artista i punts d'estil (com un cor, però menys).
+        moreLike.forEach(id => {
+            const artistKey = songs[id]?.a || keyOf(lookup?.(id) || {});
+            if (artistKey) {
+                artists[artistKey] = { ...(artists[artistKey] || {}), ml: (artists[artistKey]?.ml || 0) + 1 };
+            }
+        });
+        // Punts d'estil: artistes seguits, cors, «+ com aquesta» i escoltes qualificades.
         const styles = {};
         const addStyles = (video, points) => {
             const list = stylesOf && video ? safe(() => stylesOf(video)) : null;
@@ -607,6 +625,7 @@
             });
         };
         toArray(liked).forEach(video => addStyles(lookup?.(video?.id) || video, 2));
+        moreLike.forEach(id => addStyles(lookup?.(id), 2));
         Object.keys(songs).forEach(id => {
             const q = songs[id]?.q || 0;
             if (q) addStyles(lookup?.(id), Math.min(q, 3));
@@ -618,6 +637,7 @@
             likedArtists,
             followed,
             lessLike,
+            moreLike,
             blockedArtists: blocked,
             recent: toArray(stats?.recent),
             sessionStyles: sessionStyles || {},
@@ -759,6 +779,10 @@
         lessLikeThis: video =>
             setPref('lessLike', String(video?.id || ''), true, { artist: artistKeyOfVideo(video || {}) }),
         undoLessLike: id => setPref('lessLike', String(id || ''), false),
+        moreLikeThis: video =>
+            setPref('moreLike', String(video?.id || ''), true, { artist: artistKeyOfVideo(video || {}) }),
+        undoMoreLike: id => setPref('moreLike', String(id || ''), false),
+        isMoreLike: id => Boolean(prefs.moreLike[String(id)]?.on),
         blockArtist: video =>
             setPref('blocked', artistKeyOfVideo(video || {}), true, { name: video?.channelTitle || '' }),
         unblockArtist: key => setPref('blocked', lower(key), false),

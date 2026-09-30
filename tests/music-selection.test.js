@@ -410,6 +410,24 @@ describe('gust, seguiments, cors i escoltes', () => {
         }
     });
 
+    it('«+ com aquesta» puja el gust de la cançó (menys que un cor) i l’artista lleument', () => {
+        const target = catalog.find(v => v.channelId === 'cur3');
+        const sigs = E.emptySignals();
+        const base = E.songTaste(target.id, sigs, NOW, ctx.config);
+        sigs.moreLike.add(target.id);
+        const more = E.songTaste(target.id, sigs, NOW, ctx.config);
+        sigs.liked.add(target.id);
+        const both = E.songTaste(target.id, sigs, NOW, ctx.config);
+        expect(more).toBeGreaterThan(base);
+        expect(both).toBeGreaterThanOrEqual(more);
+        const heartOnly = E.emptySignals();
+        heartOnly.liked.add(target.id);
+        expect(E.songTaste(target.id, heartOnly, NOW, ctx.config)).toBeGreaterThan(more);
+        sigs.artists.cur3 = { ml: 2 };
+        expect(E.artistTaste('cur3', sigs, NOW, ctx.config)).toBeGreaterThan(0);
+        expect(E.reasonFor(target, ctx, { moreLike: new Set([target.id]) })).toBe('Has demanat més com aquesta');
+    });
+
     it('«A casa» potencia preferides i «Sorprèn-me» la descoberta', () => {
         const sigs = E.emptySignals();
         const known = Array.from({ length: 14 }, (_, i) => `cur${i + 1}`);

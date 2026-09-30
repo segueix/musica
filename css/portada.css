@@ -2147,21 +2147,55 @@ body .follow-btn-pill.is-followed:hover {
     display: flex;
 }
 
-.mq-pref {
-    min-height: 44px;
-    padding: 0 14px;
-    border: 1px solid var(--pt-line);
-    border-radius: var(--pt-radius-sm);
+/* Cercles «+» i «−» (com aquesta): clicables, excloents i amb estat premut */
+.mq-circle,
+.pt-circle {
+    display: inline-grid;
+    place-items: center;
+    flex: none;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 2px solid var(--pt-line);
+    border-radius: 50%;
     background: var(--pt-surface-2);
     color: var(--pt-text);
-    font: inherit;
-    font-size: 0.8125rem;
     cursor: pointer;
+    transition:
+        background 0.15s ease,
+        border-color 0.15s ease,
+        color 0.15s ease;
 }
 
-.mq-pref:hover,
-.mq-pref:focus-visible {
+.mq-circle:hover,
+.mq-circle:focus-visible,
+.pt-circle:hover,
+.pt-circle:focus-visible {
+    border-color: var(--pt-text);
     background: var(--pt-surface-3);
+}
+
+.mq-circle[aria-pressed='true'],
+.pt-circle[aria-pressed='true'] {
+    border-color: var(--pt-accent);
+    background: var(--pt-accent);
+    color: var(--pt-on-accent);
+}
+
+.mq-prefs__label,
+.pt-prefs__label {
+    color: var(--pt-muted);
+    font-size: 0.8125rem;
+}
+
+.mq-prefs {
+    align-items: center;
+}
+
+.pt-prefs {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .pt-card__reason {
@@ -2186,4 +2220,58 @@ body .follow-btn-pill.is-followed:hover {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+
+/* ---------- Cor sobre el reproductor (a dalt a la dreta): m'agrada, sincronitzat amb el de sota ---------- */
+.player-heart {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 2103;
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(20, 22, 21, 0.62);
+    color: #ffffff;
+    cursor: pointer;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    transition:
+        transform 0.15s ease,
+        background 0.15s ease;
+}
+
+.player-heart:hover,
+.player-heart:focus-visible {
+    background: rgba(20, 22, 21, 0.85);
+    transform: scale(1.06);
+}
+
+.player-heart svg {
+    width: 24px;
+    height: 24px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 14;
+    transition: fill 0.2s ease;
+}
+
+.player-heart.is-liked svg {
+    fill: #cc0000;
+    stroke: #cc0000;
+}
+
+/* A la finestreta flotant no hi ha lloc: només al reproductor gran */
+#videoPlayer.mini-player-active .player-heart {
+    display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .player-heart {
+        transition: none;
+    }
 }

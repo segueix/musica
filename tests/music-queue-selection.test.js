@@ -202,25 +202,36 @@ describe('cua, regeneració i preferències', () => {
         expect(ctx.activePlaylistQueue[1].id).toBe(announced.id);
     });
 
-    it('«Menys com aquesta» treu la cançó de la part pendent però no la que sona', () => {
-        const { queue, ctx, signals, bus } = started();
+    it('«−» treu la cançó de la part pendent però no la que sona i es pot desfer prement-lo de nou', () => {
+        const { queue, ctx, signals } = started();
         const upcoming = ctx.activePlaylistQueue[3];
         const playing = ctx.activePlaylistQueue[0];
-        queue.applyPreference(upcoming, false);
+        queue.applyPreference(upcoming, 'less');
         expect(signals.isLessLike(upcoming.id)).toBe(true);
+        expect(queue.getPreference(upcoming)).toBe('less');
         expect(ctx.activePlaylistQueue.some(v => v.id === upcoming.id)).toBe(false);
-        queue.applyPreference(playing, false);
+        queue.applyPreference(playing, 'less');
         expect(ctx.activePlaylistQueue[0].id).toBe(playing.id);
-        expect(bus).toBeTruthy();
+        queue.applyPreference(upcoming, 'less');
+        expect(signals.isLessLike(upcoming.id)).toBe(false);
     });
 
-    it('«No em recomanis aquest artista» treu tot l’artista de la part pendent i és reversible', () => {
-        const { queue, ctx, signals } = started();
+    it('«+» compta per a l’algorisme i és excloent amb «−»', () => {
+        const { queue, ctx, signals, selection } = started();
         const target = ctx.activePlaylistQueue[5];
-        queue.applyPreference(target, true);
-        expect(ctx.activePlaylistQueue.slice(1).some(v => v.channelId === target.channelId)).toBe(false);
-        signals.unblockArtist(target.channelId);
-        expect(signals.isArtistBlocked(target.channelId)).toBe(false);
+        const before = selection.songTaste(String(target.id), signals.snapshot(), Date.now(), selection.getConfig());
+        queue.applyPreference(target, 'more');
+        expect(queue.getPreference(target)).toBe('more');
+        expect(signals.isMoreLike(target.id)).toBe(true);
+        expect(
+            selection.songTaste(String(target.id), signals.snapshot(), Date.now(), selection.getConfig())
+        ).toBeGreaterThan(before);
+        queue.applyPreference(target, 'less');
+        expect(signals.isMoreLike(target.id)).toBe(false);
+        expect(signals.isLessLike(target.id)).toBe(true);
+        queue.applyPreference(target, 'more');
+        expect(signals.isLessLike(target.id)).toBe(false);
+        expect(signals.isMoreLike(target.id)).toBe(true);
     });
 
     it('un cor o un seguiment compta ja per a les cues següents (snapshot)', () => {
