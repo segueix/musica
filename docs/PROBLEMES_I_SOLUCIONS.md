@@ -13,6 +13,18 @@
 
 **Fitxers Afectats:**
 
+## [2026-09-30] - Al mòbil, després d'una ràdio o d'una llista sortien «Altres vídeos relacionats» (9.700 px de graella)
+
+**Símptoma:** Al mòbil, sota la cua d'una ràdio o d'una llista hi havia «Altres vídeos relacionats» i una graella de 33 vídeos de l'artista (la pàgina feia 13.400 px), que es perdia en comptes d'acabar a l'última cançó.
+
+**Causa Arrel:** L'amagada dels relacionats només existia a escriptori (`@media (min-width: 1025px)` de `styles.css`, només per a `.mq--radio`): el mòbil i la tauleta no tenien cap regla, i una llista en reproducció tampoc.
+
+**Solució Implementada:** A `css/portada.css`, `@media (max-width: 1024px)`: `#watchPage:has(#playlistQueueContainer:not(.hidden) .mq)` amaga `.watch-sidebar`, `.extra-related-header`, `.extra-related-title` i `.extra-videos-grid`. `.mq` és la cua d'una ràdio **o** d'una llista (la TV té el seu panell i no pinta `.mq`), i `.hidden` fa que un vídeo sol (en sortir de la cua) recuperi els relacionats. A escriptori no s'ha tocat res. Prova: `tests/browser/verificar-relacionats.js` (390 i 820 px: ràdio, llista i vídeo sol; 1440 px: ràdio).
+
+**Trampes conegudes:** (1) El mini-reproductor afegeix `56.25vw` de `padding-bottom` al `body` només quan s'activa (en fer scroll): una prova que baixi fins al final ha de tornar a baixar després d'activar-lo. (2) Els vídeos de l'artista continuen carregant-se al DOM (només s'amaguen); si mai pesa, no els pintis quan hi ha cua.
+
+**Fitxers Afectats:** `css/portada.css`, `sw.js`, `tests/music-queue-share.test.js`, `tests/browser/verificar-relacionats.js`, `tests/browser/README.md`.
+
 ## [2026-09-30] - Compartir una ràdio o una llista: capçalera descompensada, QR de Segueix youtubers i enllaços a segueix.cat
 
 **Símptoma:** (1) A la capçalera de la ràdio, «Ràdio» quedava centrat verticalment respecte a un grup «xip + «+» + desar» que s'embolcallava en dues files (en la columna lateral d'escriptori el nom s'aclaparava fins a 77 px i els símbols quedaven apilats). (2) Només les targetes de la biblioteca es podien compartir; ni la ràdio ni la llista que sona ni les targetes de la portada. (3) El QR era el de Segueix youtubers (fons blau fosc, «SEGUEIX» blanc i «!» vermell, logo antic) i els enllaços apuntaven a `segueix.cat`, que obre l'app de youtubers. (4) Compartir per WhatsApp enviava només un enllaç llarg.
