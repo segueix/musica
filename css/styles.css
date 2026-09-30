@@ -3219,6 +3219,33 @@ body.segueix-tv-playback.segueix-tv-active .chips-bar.home-categories.segueix-tv
     display: none;
 }
 
+/* Finestra flotant: al costat dels controls, sense moure el play/pausa del centre */
+.queue-controls .queue-mini-button {
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    margin-left: clamp(14px, 3vw, 32px);
+    transform: translateY(-50%);
+    width: calc(var(--qc-side) * 0.7);
+    height: calc(var(--qc-side) * 0.7);
+}
+
+.queue-controls .queue-mini-button:hover,
+.queue-controls .queue-mini-button:focus-visible {
+    transform: translateY(-50%) scale(1.08);
+}
+
+.queue-controls .queue-mini-button svg {
+    width: 52%;
+    height: 52%;
+    fill: none;
+    stroke: currentColor;
+}
+
+#videoPlayer.mini-player-active .queue-mini-button {
+    display: none;
+}
+
 .queue-controls button:hover,
 .queue-controls button:focus-visible {
     transform: scale(1.08);

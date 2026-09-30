@@ -414,6 +414,12 @@ La finestreta flotant en fer scroll cap avall es manté tal com era: és el comp
 
 **Fitxers Afectats:** `data/musica-classica.json`, `js/music-categories.js`, `js/utils/helpers.js`, `js/app.js`, `js/features/home-sections.js`, `js/features/music-queue.js`, `tests/helpers.test.js`, `tests/home-sections-variety.test.js`, `sw.js`.
 
+## [2026-09-30] - Botó de finestra flotant dins dels controls del reproductor
+
+**Canvi:** Al grup de controls sobre el reproductor (anterior · play/pausa · següent) s'hi afegeix el botó de **finestra flotant** (`.queue-mini-button`, la mateixa icona de quatre fletxes que el de sota el reproductor), a la dreta de «següent». Va en posició absoluta (`left: 100%`) perquè el play/pausa continuï exactament al centre; fa el 70 % de la mida dels altres, i s'amaga quan la finestreta ja és activa (té el seu propi botó d'expandir). En clicar-lo: `hideQueueNextOverlay()` + `setMiniPlayerState(true)`. Verificat en Chromium (centrat 0 px, la finestreta s'activa).
+
+**Fitxers Afectats:** `js/app.js` (`createQueueNextOverlay`), `css/styles.css`, `sw.js`.
+
 ## [2026-07-11] - Filera d'icones del header visible en obrir un vídeo al mòbil
 
 **Símptoma:** Al mòbil, en clicar un vídeo del feed i obrir-se la pàgina del reproductor, la filera d'icones del header (Inici, Biblioteca, Historial, Segueix...) es mostrava a sobre del reproductor, ocupant espai vertical útil mentre l'usuari volia veure el vídeo.

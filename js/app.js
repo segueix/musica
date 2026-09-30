@@ -10124,6 +10124,7 @@ function createQueueNextOverlay() {
             <button class="queue-prev-button" type="button" aria-label="Vídeo anterior" title="Vídeo anterior" tabindex="-1">${QUEUE_ICON_PREV}</button>
             <button class="queue-toggle-button" type="button" aria-label="Reprodueix" title="Reprodueix" tabindex="-1">${QUEUE_ICON_PLAY}</button>
             <button class="queue-next-button" type="button" aria-label="Vídeo següent" title="Vídeo següent" tabindex="-1">${QUEUE_ICON_NEXT}</button>
+            <button class="queue-mini-button" type="button" aria-label="Finestra flotant" title="Finestra flotant" tabindex="-1">${MINI_PLAYER_ICON_SVG}</button>
         </div>
     `;
 
@@ -10142,6 +10143,12 @@ function createQueueNextOverlay() {
         const toggle = event.currentTarget;
         const willPlay = videoPlayer?.dataset?.playerState !== '1';
         toggle.innerHTML = willPlay ? QUEUE_ICON_PAUSE : QUEUE_ICON_PLAY;
+    });
+    overlay.querySelector('.queue-mini-button')?.addEventListener('click', event => {
+        event.preventDefault();
+        event.stopPropagation();
+        hideQueueNextOverlay();
+        setMiniPlayerState(true);
     });
     overlay.querySelector('.queue-next-button')?.addEventListener('click', advanceQueueFromOverlay);
     overlay.querySelector('.queue-prev-button')?.addEventListener('click', goToPreviousFromOverlay);
