@@ -111,6 +111,41 @@ const temps = (currentTime, playerState = 1, duration = 200) => ({
     info: { currentTime, playerState, duration },
 });
 
+// Finestra flotant: la cantonada inferior dreta ha de ser del vídeo (per clicar «Omet l'anunci» de YouTube)
+// i la resta de la finestra ha de continuar servint per arrossegar-la.
+async function comprovarZonaLliure(page, etiqueta) {
+    await page.evaluate(() => {
+        setMiniPlayerState(true);
+        // Simula el que fan els controls quan són visibles (toc/ratolí): no han de tapar la cantonada
+        showQueueNextOverlay({ sticky: true });
+        showMiniPlayerControls();
+    });
+    await page.waitForTimeout(500);
+    const mesura = await page.evaluate(() => {
+        const player = document.getElementById('videoPlayer');
+        const r = player.getBoundingClientRect();
+        const at = (fx, fy) => {
+            const el = document.elementFromPoint(r.left + r.width * fx, r.top + r.height * fy);
+            return el ? el.id || (typeof el.className === 'string' ? el.className : el.tagName) : null;
+        };
+        return {
+            mini: player.classList.contains('mini-player-active'),
+            cantonada: [at(0.9, 0.9), at(0.75, 0.8), at(0.6, 0.7), at(0.95, 0.65)],
+            arrossegar: [at(0.2, 0.9), at(0.7, 0.2), at(0.1, 0.5)],
+        };
+    });
+    comprovar(
+        `${etiqueta}: la cantonada inferior dreta de la finestra flotant és del vídeo (Omet l'anunci)`,
+        mesura.mini && mesura.cantonada.every(id => id === 'catube-player'),
+        mesura
+    );
+    comprovar(
+        `${etiqueta}: la resta de la finestra continua servint per arrossegar`,
+        mesura.arrossegar.every(id => /drag-surface/.test(id)),
+        mesura.arrossegar
+    );
+}
+
 async function main() {
     const server = await serve();
     const browser = await chromium.launch({ executablePath: CHROMIUM_PATH, args: ['--no-sandbox'] });
@@ -331,31 +366,58 @@ async function main() {
             await page.evaluate(() => !document.getElementById('provaCua').textContent.includes('No em recomanis'))
         );
 
-        // 3b) Cor a dalt a la dreta del reproductor: m'agrada, sincronitzat amb el de sota (vermell)
+        // 3b) Cor a la línia central, tot a la dreta del reproductor: surt i desapareix amb els controls de pausa
+        await page.evaluate(() => {
+            const player = document.getElementById('videoPlayer');
+            player.classList.remove('is-heart-awake');
+            player.dataset.playerState = '1';
+            player.querySelector('.queue-next-overlay')?.classList.remove('is-visible');
+        });
+        await page.waitForTimeout(400);
         const cor2 = await page.evaluate(() => {
             const player = document.getElementById('videoPlayer');
             const heart = player.querySelector(':scope > .player-heart');
             if (!heart) return { existeix: false };
             const p = player.getBoundingClientRect();
             const r = heart.getBoundingClientRect();
+            const opacity = () => Number(getComputedStyle(heart).opacity);
+            const amagat = opacity();
+            player.dataset.playerState = '2';
+            const enPausa = getComputedStyle(heart).pointerEvents;
             return {
                 existeix: true,
-                dalt: Math.round(r.top - p.top),
+                centreVertical: Math.round(r.top + r.height / 2 - (p.top + p.height / 2)),
                 dreta: Math.round(p.right - r.right),
                 mida: [Math.round(r.width), Math.round(r.height)],
+                amagatEnMarxa: amagat,
+                clicableEnPausa: enPausa === 'auto',
                 id: player.dataset.playingVideoId,
-                pressed: heart.getAttribute('aria-pressed'),
             };
         });
+        await page.waitForTimeout(300);
+        const visiblePausa = await page.evaluate(() =>
+            Number(getComputedStyle(document.querySelector('#videoPlayer .player-heart')).opacity)
+        );
+        await page.evaluate(() => {
+            document.getElementById('videoPlayer').dataset.playerState = '1';
+        });
+        await page.waitForTimeout(300);
+        const iAmagatDeNou = await page.evaluate(() =>
+            Number(getComputedStyle(document.querySelector('#videoPlayer .player-heart')).opacity)
+        );
         comprovar(
-            'hi ha un cor a dalt a la dreta del reproductor (≥ 44 px)',
+            'el cor és a la línia central, tot a la dreta, i fa ≥ 56 px',
             cor2.existeix &&
-                cor2.dalt >= 0 &&
-                cor2.dalt <= 20 &&
+                Math.abs(cor2.centreVertical) <= 3 &&
                 cor2.dreta >= 0 &&
-                cor2.dreta <= 20 &&
-                cor2.mida[0] >= 44,
+                cor2.dreta <= 12 &&
+                cor2.mida[0] >= 56,
             cor2
+        );
+        comprovar(
+            'el cor s’amaga amb els controls (en marxa) i surt en pausa, i torna a amagar-se en reprendre',
+            cor2.amagatEnMarxa === 0 && cor2.clicableEnPausa && visiblePausa === 1 && iAmagatDeNou === 0,
+            { enMarxa: cor2.amagatEnMarxa, enPausa: visiblePausa, alReprendre: iAmagatDeNou }
         );
         await page.evaluate(() => {
             // El cor de sota (fitxa del vídeo) es crea igual que ho fa l'app; les icones de Lucide (CDN) no hi són
@@ -520,6 +582,7 @@ async function main() {
         await client.send('Emulation.setCPUThrottlingRate', { rate: 1 });
         await nova.context.close();
 
+        await comprovarZonaLliure(page, 'escriptori');
         comprovar('sense errors de JavaScript', errors.length === 0, errors);
         await context.close();
 
@@ -550,6 +613,47 @@ async function main() {
             mesura.pref.length === 2 && mesura.pref.every(([w, h]) => h >= 44 && w >= 44) && mesura.overflow <= 0,
             mesura
         );
+        // El cor de la dreta no tapa cap control (anterior, pausa, següent, finestra flotant) ni a 360 ni a 390 px
+        for (const amplada of [360, 390]) {
+            await mobil.page.setViewportSize({ width: amplada, height: 800 });
+            await mobil.page.waitForTimeout(300);
+            const solapa = await mobil.page.evaluate(() => {
+                showQueueNextOverlay({ sticky: true });
+                document.getElementById('videoPlayer').dataset.playerState = '2';
+                const rect = selector => document.querySelector(selector).getBoundingClientRect();
+                const heart = rect('.player-heart');
+                const player = rect('#videoPlayer');
+                const controls = [
+                    '.queue-prev-button',
+                    '.queue-toggle-button',
+                    '.queue-next-button',
+                    '.queue-mini-button',
+                ].map(rect);
+                return {
+                    solapa: controls.some(
+                        r =>
+                            r.left < heart.right && r.right > heart.left && r.top < heart.bottom && r.bottom > heart.top
+                    ),
+                    mida: Math.round(heart.width),
+                    dins: heart.right <= player.right + 0.5,
+                    // (l'anterior és amagat a la primera cançó: només compten els botons visibles)
+                    controlsMin: Math.round(
+                        Math.min(
+                            ...controls
+                                .slice(0, 3)
+                                .map(r => r.width)
+                                .filter(w => w > 0)
+                        )
+                    ),
+                };
+            });
+            comprovar(
+                `mòbil (${amplada} px): el cor (≥ 44 px) no tapa cap control i els controls mantenen 44 px`,
+                !solapa.solapa && solapa.mida >= 44 && solapa.dins && solapa.controlsMin >= 44,
+                solapa
+            );
+        }
+        await comprovarZonaLliure(mobil.page, 'mòbil (390 px)');
         comprovar('mòbil: sense errors de JavaScript', mobil.errors.length === 0, mobil.errors);
         await mobil.context.close();
     } finally {
