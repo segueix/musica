@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-29T20:33:58.297Z",
+  "updatedAt": "2026-09-30T12:15:00.000Z",
   "artists": [
     {
       "name": "31 FAM",
@@ -19239,6 +19239,177 @@
       "genresRaw": [
         "Cançó d'autor"
       ]
+    },
+    {
+      "name": "Alosa",
+      "aliases": [],
+      "genres": [
+        "Folk i arrel"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCmSxzoNUcVfwLgrwt97QASA",
+            "handle": "@alosamusica",
+            "name": "Alosa",
+            "type": "official",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://www.youtube.com/channel/UCmSxzoNUcVfwLgrwt97QASA",
+        "https://www.enderrock.cat/disc/11297/primer-cant-mati"
+      ],
+      "lastChecked": "2026-09-30T12:15:00.000Z",
+      "notes": "Alta manual verificada: duet de folk d'arrel catalana i canal oficial de YouTube."
+    },
+    {
+      "name": "Júlia Colom",
+      "aliases": [],
+      "genres": [
+        "Pop",
+        "Cançó d'autor",
+        "Folk i arrel"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCx4dYUR3m6jehjW7mYdSX7g",
+            "handle": null,
+            "name": "Júlia Colom",
+            "type": "official",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://www.youtube.com/channel/UCx4dYUR3m6jehjW7mYdSX7g",
+        "https://www.enderrock.cat/disc/11440"
+      ],
+      "lastChecked": "2026-09-30T12:15:00.000Z",
+      "notes": "Alta manual verificada: cançó-pop d'arrel mallorquina i canal oficial de YouTube."
+    },
+    {
+      "name": "Gavina.mp3",
+      "aliases": [],
+      "genres": [
+        "Pop",
+        "Electrònica",
+        "Indie / Alternativa"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCUTFIQKXld2UO6NRCxiM8qw",
+            "handle": null,
+            "name": "GAVINA.MP3",
+            "type": "official",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://www.youtube.com/channel/UCUTFIQKXld2UO6NRCxiM8qw",
+        "https://www.enderrock.cat/sona9/grup2024/86/gavinamp3"
+      ],
+      "lastChecked": "2026-09-30T12:15:00.000Z",
+      "notes": "Alta manual verificada: projecte de pop electrònic contemporani en català, guanyador del Sona9 2024."
+    },
+    {
+      "name": "Anna Ferrer",
+      "aliases": [],
+      "genres": [
+        "Folk i arrel"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCsoJ33SEemrtWrM5hTqPKYQ",
+            "handle": "@annaferrermusic",
+            "name": "Anna Ferrer",
+            "type": "official",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://www.youtube.com/channel/UCsoJ33SEemrtWrM5hTqPKYQ",
+        "https://www.enderrock.cat/noticies/etiqueta/Anna%2BFerrer"
+      ],
+      "lastChecked": "2026-09-30T12:15:00.000Z",
+      "notes": "Alta manual verificada: artista menorquina de folk i arrel amb repertori en català i canal oficial d'artista."
+    },
+    {
+      "name": "La Tour de Carol",
+      "aliases": [],
+      "genres": [
+        "Pop",
+        "Rock",
+        "Indie / Alternativa"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UC5CGdoxqbma-pqkAHPjkq9w",
+            "handle": "@latourdecarol",
+            "name": "La Tour de Carol",
+            "type": "official",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://www.youtube.com/channel/UC5CGdoxqbma-pqkAHPjkq9w",
+        "https://www.enderrock.cat/noticies/etiqueta/La%2BTour%2Bde%2BCarol"
+      ],
+      "lastChecked": "2026-09-30T12:15:00.000Z",
+      "notes": "Alta manual verificada: banda barcelonina de pop-rock/alternativa en català; Channel ID confirmat manualment."
     }
   ]
 }
