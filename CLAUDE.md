@@ -42,7 +42,8 @@ js/
 │   ├── navigation.js        # Navegació SPA (IIFE + registerRuntime)
 │   ├── library.js           # Playlists (IIFE + registerRuntime)
 │   ├── feed.js              # Feed/categories (IIFE + registerRuntime)
-│   ├── search.js            # Cerca (IIFE + registerRuntime)
+│   ├── search.js            # Menú de cerca i índex d'arxiu (IIFE + registerRuntime)
+│   ├── search-results.js    # Cerca: model pur (artistes primer, després cançons) + HTML del menú i de la pàgina
 │   ├── channel.js           # Perfil canal (IIFE + registerRuntime)
 │   ├── player.js            # Reproductor (IIFE + registerRuntime)
 │   ├── shared-playlists.js  # Playlists compartides (IIFE + registerRuntime)
@@ -267,6 +268,12 @@ const likes = ctx2.SegueixApp.features.likes;
 - Una cançó de l'historial **ja no** queda exclosa de la ràdio (tornen amb descans de 12 cançons i 60 min). Novetats i les categories continuen ocultant-les.
 - Un vídeo pujat fa poc **no** és una estrena si té any original antic (`originalYear`) o és d'un artista de `musica-classica.json` sense any verificat (`data/musica-dates.json` per excepcions).
 
+### Cerca de Segueix Música (2026-09-30)
+
+- La cerca (menú i pàgina de resultats) és **només del feed de música** i passa per `buildSearchModel()` (app.js) → `SegueixApp.features.searchResults.buildModel()`: **primer artistes, després cançons**, coincidència pel títol, l'artista (i àlies) i els crèdits (mai per la descripció). No hi tornis a posar la cerca de l'API de YouTube, l'índex d'arxiu, «Ja vistos», canals/programes ni accions de categoria personalitzada (herència de Segueix youtubers, eliminada).
+- «Genera una ràdio amb aquests resultats» (a dalt de tot) crida `musicQueue.startFromSearch(model.songs, { query })`: ràdio amb les cançons trobades, **sense restricció d'estil** (`policy: 'search'` al motor), sense «+» d'estils; «Barreja» es queda dins dels resultats. Detall a `docs/MUSICA_SELECCIO.md` («Ràdio d'una cerca»).
+- Els clics de la pàgina de resultats es lliguen al contenidor nou (`bindSearchResults`), mai a `#videosGrid`. Verificació opt-in: `node tests/browser/verificar-cerca.js`.
+
 ### Portada de Segueix Música (2026-09-30)
 
 - La vista «Novetats» és **Inici** (la interfície no diu «Novetats»; l'id intern es conserva). `renderVideos()` crida `SegueixApp.features.portada.render(videosGrid, videos, { feed, all })`; si no hi és, cau a `homeSections` i a la graella.
@@ -284,7 +291,8 @@ const likes = ctx2.SegueixApp.features.likes;
 | `likes.js` | normalizeLikedVideo, getLikedVideos, setLikedVideos, isLiked, getLikedVideoIds |
 | `discovery.js` | mode persistit, perfil, ordenació per mode, radar, Torna-hi, Comença per aquí, estils |
 | `portada.js` | model de la portada, HTML de seccions i targetes, dates honestes, escapament |
-| `music-queue.js` | «La teva ràdio», canvi de mode sense interrompre, afegir a la cua, reproduir selecció |
+| `music-queue.js` | «La teva ràdio», canvi de mode sense interrompre, afegir a la cua, reproduir selecció, ràdio d'una cerca |
+| `search-results.js` | Model de cerca (artistes primer), coincidències sense soroll, HTML del menú/pàgina, dedupe, no-herència |
 | `music-selection.js` | antiguitat real, estrenes, puntuació, límits d'antigues/artista/descans, duplicats, preferència per música antiga, «Torna-hi» |
 | `music-signals.js` | progrés efectiu, escolta qualificada, finalització, repeticions voluntàries, salts, fusió idempotent, migració feble |
 | `scripts/lib/cataleg_musical.js`, `any_original_musical.js` | catàleg incremental, pàgines profundes, any original amb evidència |

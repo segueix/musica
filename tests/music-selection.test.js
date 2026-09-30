@@ -515,6 +515,35 @@ describe('música antiga: només amb gust explícit', () => {
         expect(result.queue.length).toBeGreaterThan(10);
         expect(result.queue.every(v => ctx.features.get(v.id).tier === 'historic')).toBe(true);
     });
+
+    it('la política de cerca no aplica la mescla d’antiguitat: entren totes les cançons trobades', () => {
+        // Resultats d'una cerca: només cançons antigues, de pocs artistes (la política general en deixaria molt fora)
+        const candidates = catalog.filter(v => v.channelId.startsWith('old'));
+        const general = E.selectRadio({
+            ctx,
+            candidates,
+            seed: candidates[0],
+            signals: E.emptySignals(),
+            count: candidates.length,
+            rng: mulberry(4),
+        });
+        const search = E.selectRadio({
+            ctx,
+            candidates,
+            seed: candidates[0],
+            signals: E.emptySignals(),
+            policy: 'search',
+            count: candidates.length,
+            rng: mulberry(4),
+        });
+        // La general ha de compensar la manca de música actual (i ho avisa); la de cerca usa el que hi ha, tal qual
+        const littleRecent = note => note.includes('poca música dels darrers anys');
+        expect(general.meta.notes.some(littleRecent)).toBe(true);
+        expect(search.meta.notes.some(littleRecent)).toBe(false);
+        expect(search.queue.length).toBeGreaterThanOrEqual(candidates.length - 1);
+        expect(new Set(search.queue.map(v => v.id)).size).toBe(search.queue.length);
+        expect(search.queue.every(v => ctx.features.get(v.id).tier === 'historic')).toBe(true);
+    });
 });
 
 // ---------- Ràdio amb diversos estils ----------

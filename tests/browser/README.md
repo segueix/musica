@@ -7,6 +7,7 @@ Eines **opt-in**, cap dins de `npm test`:
 | `verificar-sw.js` | Service Worker: caches, offline, migració, avís d'actualització | Després de tocar `sw.js` o `scripts/actualitzar_versio_sw.js` |
 | `verificar-reproductor.js` | Reproductor al mòbil: posició en obrir el vídeo, finestreta flotant i filera d'icones del header | Després de tocar el reproductor, `updatePlayerPosition()` o el comportament del header |
 | `verificar-portada.js` | Portada «La teva plaça musical»: desbordaments a 360/390/768/1440 px, zones tàctils de 44 px, música a la primera pantalla, reproductor únic en canviar de secció, mode de descoberta, teclat, moviment reduït i estat d'error | Després de tocar `portada.js`, `discovery.js`, `shell-nav.js`, `portada.css` o la capçalera/navegació |
+| `verificar-cerca.js` | Cerca: menú (ràdio → artistes → vídeos), pàgina de resultats, absència d'herència de youtubers, un sol listener, ràdio de cerca (pàgina i menú) i mòbil a 390 px | Després de tocar `search-results.js`, `search.js`, `navigateToSearchResults()`, `startFromSearch()` o el CSS `search-*` |
 | `verificar-tv.js` | Experiència TV: vista ancorada al reproductor, pantalla completa mantinguda entre vídeos i TV dels programes de l'usuari | Després de tocar les TV, `focusTVPlayerViewport()`, `swapLivePlayerVideo()`, `buildProgramQueue()` o el mode llista |
 
 Totes comparteixen requisits (`playwright-core` + un Chromium) i s'ometen amb codi

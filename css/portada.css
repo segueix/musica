@@ -2453,3 +2453,133 @@ body .follow-btn-pill.is-followed:hover {
     background: var(--pt-surface-3);
     color: var(--pt-accent);
 }
+
+/* ---------- Cerca: ràdio, artistes i vídeos ---------- */
+.search-dropdown .search-result-item {
+    min-height: 44px;
+}
+
+.search-dropdown .search-result-item:focus-visible,
+.search-radio-btn:focus-visible {
+    outline: 2px solid var(--pt-accent);
+    outline-offset: 2px;
+}
+
+.search-radio-icon {
+    display: inline-grid;
+    place-items: center;
+    flex: 0 0 44px;
+    width: 44px;
+    height: 44px;
+    border-radius: var(--pt-radius-sm);
+    background: var(--pt-accent);
+    color: var(--pt-on-accent);
+}
+
+/* Fila «Genera una ràdio» a dalt de tot del menú */
+.search-section--radio {
+    margin-bottom: 6px;
+}
+
+.search-radio-item {
+    min-height: 56px;
+    background: var(--pt-surface-2);
+}
+
+.search-radio-item:hover,
+.search-radio-item.is-active {
+    background: var(--pt-surface-3);
+}
+
+.search-radio-item .search-result-info .name {
+    color: var(--pt-accent);
+}
+
+.search-more-item {
+    justify-content: center;
+}
+
+.search-more-item .name {
+    color: var(--pt-accent);
+}
+
+/* Botó gran a dalt de la pàgina de resultats */
+.search-results {
+    grid-column: 1 / -1;
+    width: 100%;
+}
+
+.search-radio-bar {
+    margin: 0 0 24px;
+}
+
+.search-radio-btn {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    min-height: 64px;
+    padding: 10px 16px 10px 10px;
+    border: 1px solid var(--pt-line);
+    border-radius: var(--pt-radius-lg);
+    background: var(--pt-surface);
+    color: var(--pt-text);
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+    transition:
+        background 0.15s ease,
+        border-color 0.15s ease;
+}
+
+.search-radio-btn:hover {
+    background: var(--pt-surface-2);
+    border-color: var(--pt-accent);
+}
+
+.search-radio-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.search-radio-title {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.search-radio-meta {
+    color: var(--pt-muted);
+    font-size: 0.8125rem;
+}
+
+.search-artist-style {
+    margin-top: -2px;
+    color: var(--pt-muted);
+    font-size: 0.75rem;
+}
+
+.search-error__hint {
+    color: var(--pt-muted);
+    font-size: 0.875rem;
+}
+
+@media (min-width: 769px) {
+    .search-radio-btn {
+        width: auto;
+        min-width: 420px;
+    }
+}
+
+/* Els artistes trobats: targetes compactes (una sola no s'estén a tota l'amplada) */
+.search-channel-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 190px));
+    justify-content: start;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.search-channel-card {
+    height: auto;
+}

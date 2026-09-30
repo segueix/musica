@@ -4655,25 +4655,22 @@ function initDragToDelete(buttonEl, onDelete) {
     });
 }
 
-// Gestió unificada dels popovers d'informació (cerca + chips)
+// Gestió unificada dels popovers d'informació (chips i Radar)
 // Delegat a document per ser robust davant re-renders de DOM.
 function initInfoPopovers() {
     if (window.__infoPopoversInited) return;
     window.__infoPopoversInited = true;
 
-    const TRIGGER_SELECTOR =
-        '[data-action="search-info"], [data-action="chips-info"], [data-action="radar-info"]';
+    const TRIGGER_SELECTOR = '[data-action="chips-info"], [data-action="radar-info"]';
     const CLOSE_SELECTOR = '[data-action="chips-info-close"], [data-action="radar-info-close"]';
 
-    const POPOVER_SELECTOR = '.search-info-popover, .chip-info-popover, .radar-info-popover';
-    const WRAP_SELECTOR = '.search-info-wrap, .chip-info-wrap, .radar-info-wrap';
+    const POPOVER_SELECTOR = '.chip-info-popover, .radar-info-popover';
+    const WRAP_SELECTOR = '.chip-info-wrap, .radar-info-wrap';
 
     const mountPopoverToBody = popover => {
         if (!popover) return;
         const shouldMount =
-            popover.classList?.contains('radar-info-popover') ||
-            popover.classList?.contains('chip-info-popover') ||
-            popover.classList?.contains('search-info-popover');
+            popover.classList?.contains('radar-info-popover') || popover.classList?.contains('chip-info-popover');
         if (!shouldMount) return;
         if (popover.__portalMounted) return;
         popover.__originParent = popover.parentNode;
@@ -4712,10 +4709,9 @@ function initInfoPopovers() {
     // Al mòbil, es mantenen centrats via CSS.
     const positionFixedPopover = (popover, trigger) => {
         const isMobile = window.matchMedia('(max-width: 768px)').matches;
-        const isSearchInfo = popover.classList.contains('search-info-popover');
         const isChipInfo = popover.classList.contains('chip-info-popover');
         const isRadarInfo = popover.classList.contains('radar-info-popover');
-        if (!isSearchInfo && !isChipInfo && !isRadarInfo) return;
+        if (!isChipInfo && !isRadarInfo) return;
 
         if (isMobile) {
             popover.style.cssText = '';
@@ -4874,13 +4870,13 @@ function bindHomeEvents() {
                 return;
             }
             const requestId = ++activeSearchRequestId;
-            searchDebounceTimeout = setTimeout(async () => {
-                const results = await performDualSearch(query);
+            // La cerca és local i síncrona (feed de música): no cal esperar cap índex ni cap xarxa.
+            searchDebounceTimeout = setTimeout(() => {
                 if (requestId !== activeSearchRequestId || searchInput.value.trim() !== query) {
                     return;
                 }
-                showSearchDropdown(results);
-            }, 300);
+                showSearchDropdown(buildSearchModel(query));
+            }, 120);
         });
 
         searchInput.addEventListener('keydown', event => {
@@ -7947,121 +7943,33 @@ function getMatchScore(text, query) {
     return 0;
 }
 
+// Model de cerca (js/features/search-results.js): primer els possibles artistes i després les cançons.
+// Només mira el feed de música: cap resultat d'arxiu, d'API de YouTube ni de contingut estàtic.
+function buildSearchModel(query, options = {}) {
+    const searchResults = SegueixApp.features.searchResults;
+    if (!searchResults) {
+        return { query: String(query || '').trim(), artists: [], songs: [], hasResults: false, radio: { available: false } };
+    }
+    const music = window.SegueixMusicCategories;
+    const selection = SegueixApp.features.musicSelection;
+    return searchResults.buildModel(query, {
+        channels: Array.isArray(YouTubeAPI?.feedChannels) ? YouTubeAPI.feedChannels : [],
+        videos: Array.isArray(YouTubeAPI?.feedVideos) ? YouTubeAPI.feedVideos : [],
+        artistKeyOf: channelId => music?.artistKeyForChannel?.(channelId) || '',
+        primaryCategoryOf: channelId => music?.primaryCategoryForChannel?.(channelId) || '',
+        isEligible: video => !music?.isCategoryEligibleVideo || music.isCategoryEligibleVideo(video),
+        recordingKeysOf: selection?.titleKeys
+            ? video => selection.titleKeys(video.title, getVideoArtistKey(video), video.durationSeconds)
+            : null,
+        sameRecording: selection?.isSameRecording,
+        ...options,
+    });
+}
+
+// Compatibilitat (llistes per nom, categories personalitzades): mateixes coincidències, sense límit de cançons.
 function performLocalSearch(query) {
-    const normalizedQuery = query.trim().toLowerCase();
-    if (!normalizedQuery) {
-        return { channels: [], videos: [] };
-    }
-
-    const channelsMap = new Map();
-    const feedChannels = Array.isArray(YouTubeAPI?.feedChannels) ? YouTubeAPI.feedChannels : [];
-    feedChannels.forEach(channel => {
-        if (!channel?.id) {
-            return;
-        }
-        channelsMap.set(String(channel.id), {
-            id: channel.id,
-            name: channel.name || channel.title || '',
-            avatar: channel.avatar || channel.thumbnail || '',
-            subscriberCount: channel.subscriberCount ?? null,
-        });
-    });
-
-    Object.values(cachedChannels || {}).forEach(channel => {
-        if (!channel?.id) {
-            return;
-        }
-        const normalizedId = String(channel.id);
-        if (!channelsMap.has(normalizedId)) {
-            channelsMap.set(normalizedId, {
-                id: channel.id,
-                name: channel.name || channel.title || '',
-                avatar: channel.thumbnail || '',
-                subscriberCount: channel.subscriberCount ?? null,
-            });
-        }
-    });
-
-    const channelResults = Array.from(channelsMap.values())
-        .map(channel => ({
-            ...channel,
-            score: getMatchScore(channel.name, normalizedQuery),
-        }))
-        .filter(channel => channel.score > 0)
-        .sort((a, b) => {
-            if (b.score !== a.score) {
-                return b.score - a.score;
-            }
-            return (a.name || '').localeCompare(b.name || '', 'ca', { sensitivity: 'base' });
-        });
-
-    const videosMap = new Map();
-    const feedVideos = Array.isArray(YouTubeAPI?.feedVideos) ? YouTubeAPI.feedVideos : [];
-    feedVideos.forEach(video => {
-        if (!video?.id) {
-            return;
-        }
-        videosMap.set(String(video.id), { ...video, source: 'api' });
-    });
-
-    cachedAPIVideos.forEach(video => {
-        if (!video?.id) {
-            return;
-        }
-        const normalizedId = String(video.id);
-        if (!videosMap.has(normalizedId)) {
-            videosMap.set(normalizedId, { ...video, source: 'api' });
-        }
-    });
-
-    if (videosMap.size === 0 && Array.isArray(VIDEOS)) {
-        VIDEOS.forEach(video => {
-            if (!video?.id) {
-                return;
-            }
-            const channel = getChannelById(video.channelId);
-            videosMap.set(String(video.id), {
-                id: video.id,
-                title: video.title,
-                description: video.description || '',
-                thumbnail: video.thumbnail,
-                channelId: video.channelId,
-                channelTitle: channel?.name || '',
-                viewCount: video.views || 0,
-                publishedAt: video.uploadDate,
-                duration: video.duration,
-                videoUrl: video.videoUrl,
-                source: 'static',
-            });
-        });
-    }
-
-    const videoResults = Array.from(videosMap.values())
-        .map(video => {
-            const titleScore = getMatchScore(video.title, normalizedQuery);
-            const descriptionScore = getMatchScore(video.description, normalizedQuery);
-            const tagsValue = video.tags ?? video.snippet?.tags;
-            const tags = Array.isArray(tagsValue) ? tagsValue : tagsValue ? [String(tagsValue)] : [];
-            const tagScore = tags.reduce((total, tag) => total + getMatchScore(tag, normalizedQuery), 0);
-            return {
-                ...video,
-                score: titleScore * 2 + descriptionScore + tagScore,
-            };
-        })
-        .filter(video => video.score > 0 && !video.isShort)
-        .sort((a, b) => {
-            if (b.score !== a.score) {
-                return b.score - a.score;
-            }
-            const viewA = a.viewCount ?? a.views ?? 0;
-            const viewB = b.viewCount ?? b.views ?? 0;
-            if (viewA !== viewB) {
-                return viewB - viewA;
-            }
-            return (a.title || '').localeCompare(b.title || '', 'ca', { sensitivity: 'base' });
-        });
-
-    return { channels: channelResults, videos: videoResults };
+    const model = buildSearchModel(String(query || ''), { limit: Infinity });
+    return { channels: model.artists, videos: model.songs };
 }
 
 async function loadSearchArchiveManifest() {
@@ -8286,116 +8194,18 @@ function focusSearchDropdownItem(index) {
     searchDropdownItems[normalizedIndex].focus();
 }
 
-function showSearchDropdown(results) {
-    return SegueixApp.features.search?.showSearchDropdown?.(results);
+function showSearchDropdown(model) {
+    return SegueixApp.features.search?.showSearchDropdown?.(model);
 }
 
-function showSearchDropdownLegacyImpl(results) {
+function showSearchDropdownLegacyImpl(model) {
     if (!searchDropdown || !searchInput) {
         return;
     }
-    const channels = Array.isArray(results?.channels) ? results.channels.slice(0, 5) : [];
-    const videos = Array.isArray(results?.videos) ? results.videos.slice(0, 8) : [];
-    const archiveVideos = Array.isArray(results?.archiveVideos) ? results.archiveVideos.slice(0, 8) : [];
-
-    if (channels.length === 0 && videos.length === 0 && archiveVideos.length === 0) {
-        searchDropdown.innerHTML = `
-            <div class="search-no-results" role="status">No s'han trobat resultats.</div>
-        `;
-    } else {
-        const channelMarkup = channels.length
-            ? `
-            <div class="search-section" role="group" aria-label="Canals">
-                <h4>Canals</h4>
-                ${channels
-                    .map(channel => {
-                        const avatar = channel.avatar || getFollowChannelAvatar(channel.id) || 'img/icon-192.png';
-                        const subscriberText =
-                            channel.subscriberCount != null
-                                ? `${formatViews(channel.subscriberCount)} subscriptors`
-                                : 'Subscriptors no disponibles';
-                        return `
-                        <button type="button" class="search-result-item" data-result-type="channel" data-channel-id="${channel.id}">
-                            <img class="search-result-avatar" src="${avatar}" alt="${escapeHtml(channel.name || 'Canal')}">
-                            <div class="search-result-info">
-                                <span class="name">${escapeHtml(channel.name || 'Canal')}</span>
-                                <span class="meta">${subscriberText}</span>
-                            </div>
-                        </button>
-                    `;
-                    })
-                    .join('')}
-            </div>
-        `
-            : '';
-
-        const videoMarkup = videos.length
-            ? `
-            <div class="search-section" role="group" aria-label="Vídeos">
-                <h4>Vídeos</h4>
-                ${videos
-                    .map(video => {
-                        const channelName = video.channelTitle || '';
-                        const isArchiveVideo = video.source === 'archive';
-                        const viewCount = video.viewCount ?? video.views ?? 0;
-                        const archiveDateLabel = video.publishedAt ? formatDate(video.publishedAt) : 'Històric';
-                        const meta = isArchiveVideo
-                            ? channelName
-                                ? `${escapeHtml(channelName)} • ${archiveDateLabel}`
-                                : archiveDateLabel
-                            : channelName
-                              ? `${escapeHtml(channelName)} • ${formatViews(viewCount)} vis.`
-                              : `${formatViews(viewCount)} vis.`;
-                        const archiveClass = isArchiveVideo ? ' is-archive' : '';
-                        return `
-                        <button type="button" class="search-result-item${archiveClass}" data-result-type="video" data-video-id="${video.id}" data-video-source="${video.source || 'api'}">
-                            <img class="search-result-thumb" src="${video.thumbnail}" alt="${escapeHtml(video.title)}">
-                            <div class="search-result-info">
-                                <span class="title">${escapeHtml(video.title)}</span>
-                                <span class="meta">${meta}</span>
-                            </div>
-                        </button>
-                    `;
-                    })
-                    .join('')}
-            </div>
-        `
-            : '';
-
-        const archiveMarkup = archiveVideos.length
-            ? `
-            <div class="search-section" role="group" aria-label="Històric">
-                <h4>Històric</h4>
-                ${archiveVideos
-                    .map(video => {
-                        const thumbnail = video.thumbnail || buildArchiveThumbnail(video.id);
-                        const channelName = video.channelTitle || '';
-                        const archiveDateLabel = video.publishedAt ? formatDate(video.publishedAt) : 'Històric';
-                        const meta = channelName
-                            ? `${escapeHtml(channelName)} • ${archiveDateLabel}`
-                            : archiveDateLabel;
-                        return `
-                    <button type="button" class="search-result-item search-result-item--archive" data-result-type="video" data-video-id="${video.id}" data-video-source="archive">
-                        <img class="search-result-thumb" src="${thumbnail}" alt="${escapeHtml(video.title)}" loading="lazy" decoding="async">
-                        <div class="search-result-info">
-                            <span class="title">${escapeHtml(video.title)}</span>
-                            <span class="meta">${meta}</span>
-                        </div>
-                    </button>
-                `;
-                    })
-                    .join('')}
-            </div>
-        `
-            : '';
-
-        searchDropdown.innerHTML = `
-            ${channelMarkup}
-            ${videoMarkup}
-            ${archiveMarkup}
-        `;
-    }
-
+    const searchResults = SegueixApp.features.searchResults;
+    searchDropdown.innerHTML = searchResults
+        ? searchResults.dropdownHtml(model)
+        : `<div class="search-no-results" role="status">No hem trobat cap artista ni cançó.</div>`;
     searchDropdown.hidden = false;
     searchDropdown.setAttribute('aria-hidden', 'false');
     searchDropdown.classList.add('is-visible');
@@ -8462,7 +8272,7 @@ function handleSearchResultSelection(item) {
         return;
     }
     const resultType = item.dataset.resultType;
-    if (resultType === 'channel') {
+    if (resultType === 'artist') {
         const channelId = item.dataset.channelId;
         if (channelId) {
             openChannelProfile(channelId);
@@ -8473,9 +8283,32 @@ function handleSearchResultSelection(item) {
         if (videoId) {
             openVideoFromUserGesture(videoId, source);
         }
+    } else if (resultType === 'radio') {
+        startSearchRadio(item.dataset.searchQuery);
+    } else if (resultType === 'all') {
+        navigateToSearchResults(item.dataset.searchQuery || '');
+        return;
     }
     hideSearchDropdown();
     if (isMobileView()) closeMobileSearch();
+}
+
+// Ràdio amb les cançons que ha trobat la cerca (barreja d'estils permesa: cap restricció de categoria).
+function startSearchRadio(query) {
+    const model = buildSearchModel(query);
+    const toast = SegueixApp.features.shellNav?.toast;
+    const queue = SegueixApp.features.musicQueue;
+    if (!model.radio.available || !queue?.startFromSearch) {
+        toast?.('No hi ha prou cançons als resultats per crear una ràdio.');
+        return false;
+    }
+    const started = queue.startFromSearch(model.songs, { query: model.query });
+    if (started) {
+        toast?.(`Ràdio creada amb ${model.radio.count} cançons de la cerca «${model.query}».`);
+    } else {
+        toast?.("No s'ha pogut engegar la ràdio de la cerca.");
+    }
+    return started;
 }
 
 async function handleCategoryShare(categoryName) {
@@ -8683,104 +8516,6 @@ function openManageCategoryYoutubersModal(categoryName) {
     refreshIcons(modal);
 }
 
-function renderSearchCategoryActions(query) {
-    if (!pageTitle) {
-        return;
-    }
-    const normalizedQuery = normalizeCustomTag(query);
-    if (!normalizedQuery) {
-        setPageTitle(`Resultats per: "${query}"`);
-        return;
-    }
-    const isSaved = isCustomCategory(normalizedQuery);
-    pageTitle.classList.add('page-title--with-actions');
-    pageTitle.dataset.title = `Resultats per: "${normalizedQuery}"`;
-    const toggleButtonHtml = isSaved
-        ? ''
-        : `
-            <button class="btn-round-icon category-toggle" type="button" data-action="toggle-search-category" aria-label="Guardar">
-                <i data-lucide="plus"></i>
-            </button>
-        `;
-    const manageYoutubersHtml = isSaved
-        ? `
-            <button class="hero-button" type="button" data-action="manage-category-youtubers" style="padding: 6px 14px; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 6px; background-color: var(--color-surface-button); color: var(--color-text);">
-                <i data-lucide="users" style="width: 16px; height: 16px;"></i> Artistes
-            </button>
-        `
-        : '';
-    // Detectar si la cerca original és entre cometes (categoria intel·ligent)
-    const rawQuery = String(query || '').trim();
-    const isQuotedSearch = rawQuery.startsWith('"') && rawQuery.endsWith('"');
-    // No mostrar etiquetes a categories intel·ligents (cerca entre cometes "")
-    const keywordsButtonHtml =
-        isSaved && !isQuotedSearch && !isExactCategory(normalizedQuery)
-            ? `
-            <button class="hero-button" type="button" data-action="manage-category-keywords" style="padding: 6px 14px; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 6px; background-color: var(--color-surface-button); color: var(--color-text);">
-                <i data-lucide="tags" style="width: 16px; height: 16px;"></i> Etiquetes
-            </button>
-        `
-            : '';
-
-    pageTitle.innerHTML = `
-        <span class="page-title__label">Resultats per:</span>
-        <span class="page-title__query">"${escapeHtml(normalizedQuery)}"</span>
-        <span class="page-title__actions">
-            ${toggleButtonHtml}
-            ${manageYoutubersHtml}
-            ${keywordsButtonHtml}
-            <span class="search-info-wrap">
-                <button class="btn-round-icon search-info-btn" type="button" data-action="search-info" aria-label="Com funciona la cerca" aria-expanded="false">
-                    <span class="chip-info-icon" aria-hidden="true">i</span>
-                </button>
-                <div class="search-info-popover" role="tooltip" hidden>
-                    <p><strong>Categoria personalitzada:</strong> escriu una paraula sense cometes per veure tots els vídeos que la contenen.</p>
-                    <p><strong>Categoria intel·ligent:</strong> escriu l'expressió entre cometes (per exemple <code>"Canal Jove"</code>) per limitar els resultats a aquesta frase exacta. Un cop guardada, si hi assignes els teus artistes només hi veuràs els vídeos d'aquests canals.</p>
-                </div>
-            </span>
-            <button class="btn-round-icon search-category-share" type="button" data-action="share-search" aria-label="Compartir">
-                <i data-lucide="share-2"></i>
-            </button>
-        </span>
-    `;
-
-    const toggleButton = pageTitle.querySelector('[data-action="toggle-search-category"]');
-    const manageYoutubersButton = pageTitle.querySelector('[data-action="manage-category-youtubers"]');
-    const keywordsButton = pageTitle.querySelector('[data-action="manage-category-keywords"]');
-    const shareButton = pageTitle.querySelector('[data-action="share-search"]');
-
-    toggleButton?.addEventListener('click', async () => {
-        const savedTag = addCustomTag(normalizedQuery);
-        if (!savedTag) {
-            return;
-        }
-        // Marcar com a categoria exacta si la cerca original tenia cometes
-        if (isQuotedSearch) {
-            markExactCategory(normalizedQuery);
-        }
-        const dualResults = await performDualSearch(normalizedQuery);
-        const seedVideos = mergeUniqueVideos(dualResults?.videos || [], dualResults?.archiveVideos || []);
-        setCustomCategorySearchResults(normalizedQuery, seedVideos);
-        setupChipsBarOrdering();
-        renderSearchCategoryActions(query);
-    });
-
-    shareButton?.addEventListener('click', async () => {
-        await handleCategoryShare(normalizedQuery);
-    });
-
-    manageYoutubersButton?.addEventListener('click', () => {
-        openManageCategoryYoutubersModal(normalizedQuery);
-    });
-
-    keywordsButton?.addEventListener('click', () => {
-        openCategoryKeywordsModal(normalizedQuery);
-    });
-
-    refreshIcons(pageTitle);
-    renderInlineKeywords(normalizedQuery);
-}
-
 function renderCategoryActions(category) {
     if (!pageTitle) {
         return;
@@ -8886,8 +8621,9 @@ function renderCategoryActions(category) {
     renderInlineKeywords(normalizedCategory);
 }
 
+// Pàgina de resultats: a dalt de tot la ràdio de la cerca, després els artistes i després els vídeos.
 async function navigateToSearchResults(query) {
-    const trimmedQuery = query.trim();
+    const trimmedQuery = String(query || '').trim();
     if (!trimmedQuery) {
         return;
     }
@@ -8906,14 +8642,9 @@ async function navigateToSearchResults(query) {
     }
     selectedCategory = null;
 
-    if (useYouTubeAPI && !YouTubeAPI?.feedLoaded) {
-        searchVideos(trimmedQuery);
-        return;
-    }
-
-    const results = await performDualSearch(trimmedQuery);
+    const model = buildSearchModel(trimmedQuery);
     showHome();
-    renderSearchCategoryActions(trimmedQuery);
+    setPageTitle(`Resultats per: "${trimmedQuery}"`);
     featuredVideoBySection.delete(getHeroSectionKey());
     updateHero(null);
 
@@ -8921,243 +8652,41 @@ async function navigateToSearchResults(query) {
         return;
     }
 
-    if (
-        results.channels.length === 0 &&
-        results.videos.length === 0 &&
-        (!Array.isArray(results.archiveVideos) || results.archiveVideos.length === 0)
-    ) {
-        videosGrid.innerHTML = `
-            <div class="search-error">
-                <i data-lucide="search-x"></i>
-                <p>No s'han trobat resultats locals.</p>
-            </div>
-        `;
-        refreshIcons(videosGrid);
-        return;
-    }
+    videosGrid.innerHTML = SegueixApp.features.searchResults.pageHtml(model, { cardHtml: createVideoCardAPI });
+    const container = videosGrid.querySelector('[data-search-results]');
+    bindSearchResults(container);
+    bindFollowButtons(container);
+    bindChannelLinks(container);
+    refreshIcons(container);
+    setupVideoCardActionButtons(container);
+}
 
-    const channelSection = results.channels.length
-        ? `
-        <section class="search-results-section">
-            <h2 class="search-results-title">Canals</h2>
-            <div class="follow-grid search-channel-grid">
-                ${results.channels
-                    .map(channel => {
-                        const avatar = channel.avatar || getFollowChannelAvatar(channel.id) || 'img/icon-192.png';
-                        const isMitjans = isMitjansOrDigitalsChannel(channel.id);
-                        const followButtonHtml = isMitjans
-                            ? ''
-                            : `
-                            <button class="follow-toggle-btn" type="button" data-follow-channel="${channel.id}" aria-pressed="false">
-                                Segueix
-                            </button>
-                        `;
-                        return `
-                        <div class="follow-card search-channel-card" data-channel-id="${channel.id}">
-                            <div class="follow-avatar-wrap">
-                                <img class="follow-avatar" src="${avatar}" alt="${escapeHtml(channel.name || 'Canal')}" loading="lazy">
-                            </div>
-                            <div class="follow-name">${escapeHtml(channel.name || 'Canal')}</div>
-                            ${followButtonHtml}
-                        </div>
-                    `;
-                    })
-                    .join('')}
-            </div>
-        </section>
-    `
-        : '';
-
-    const sortedSearchVideos = sortVideosByRoundRobin(results.videos);
-    // A Desktop, separar vídeos ja vistos i mostrar-los a la part inferior
-    let freshSearchVideos = sortedSearchVideos;
-    let watchedSearchVideos = [];
-    if (isDesktopView()) {
-        const watchedIds = getHistoryVideoIdSet();
-        if (watchedIds.size > 0) {
-            freshSearchVideos = sortedSearchVideos.filter(video => !watchedIds.has(String(video.id)));
-            watchedSearchVideos = sortedSearchVideos.filter(video => watchedIds.has(String(video.id)));
-        }
-    }
-    const videoSection = freshSearchVideos.length
-        ? `
-        <section class="search-results-section">
-            <h2 class="search-results-title">Vídeos</h2>
-            <div class="videos-grid">
-                ${freshSearchVideos.map(video => createVideoCardAPI(video)).join('')}
-            </div>
-        </section>
-    `
-        : '';
-    const watchedSection = watchedSearchVideos.length
-        ? `
-        <section class="search-results-section">
-            <h2 class="category-history-title">Ja vistos</h2>
-            <div class="videos-grid">
-                ${watchedSearchVideos.map(video => createVideoCardAPI(video)).join('')}
-            </div>
-        </section>
-    `
-        : '';
-
-    const archiveVideos = Array.isArray(results.archiveVideos) ? results.archiveVideos.slice(0, 40) : [];
-    const archiveSection = archiveVideos.length
-        ? `
-        <section class="search-results-section">
-            <h2 class="search-results-title">Històric</h2>
-            <div class="videos-grid archive-videos-grid">
-                ${archiveVideos.map(video => createArchiveVideoCard(video)).join('')}
-            </div>
-        </section>
-    `
-        : '';
-
-    videosGrid.innerHTML = `
-        ${channelSection}
-        ${videoSection}
-        ${archiveSection}
-        ${watchedSection}
-    `;
-    // Delegació única per tots els clics de resultats de cerca
-    videosGrid.addEventListener('click', e => {
-        // Accions de playlist en arxiu
-        const playlistBtn = e.target.closest('.archive-playlist-action');
-        if (playlistBtn) {
-            e.stopPropagation();
-            const payload = playlistBtn.dataset.playlistVideo;
-            if (payload) openPlaylistModal(JSON.parse(decodeURIComponent(payload)));
+// Un sol listener per pàgina de resultats (el contenidor és nou a cada cerca: no s'acumulen listeners a
+// #videosGrid, que també pinta la portada). Atura la propagació perquè els delegats de la graella no
+// tornin a obrir el mateix vídeo.
+function bindSearchResults(container) {
+    if (!container) return;
+    container.addEventListener('click', event => {
+        const radioButton = event.target.closest('[data-search-radio]');
+        if (radioButton) {
+            event.stopPropagation();
+            startSearchRadio(radioButton.dataset.searchQuery);
             return;
         }
-        // Ignorar follow buttons i channel links
-        if (e.target.closest('[data-follow-channel], .channel-link')) return;
-        // Channel cards
-        const channelCard = e.target.closest('.search-channel-card');
-        if (channelCard) {
-            openChannelProfile(channelCard.dataset.channelId);
+        // Accions pròpies de cada element (seguir, m'agrada, llista, enllaç d'artista): tenen el seu listener.
+        if (event.target.closest('[data-follow-channel], .channel-link, .playlist-action, .like-action')) return;
+        const artistCard = event.target.closest('.search-channel-card');
+        if (artistCard) {
+            event.stopPropagation();
+            openChannelProfile(artistCard.dataset.channelId);
             return;
         }
-        // Video cards i archive cards
-        const card = e.target.closest('.video-card, .archive-video-card');
-        if (card) {
-            const videoId = card.dataset.videoId;
-            if (!videoId) return;
-            const video = sortedSearchVideos.find(item => String(item.id) === String(videoId));
-            openVideoFromUserGesture(videoId, video?.source);
+        const card = event.target.closest('.video-card');
+        if (card?.dataset.videoId) {
+            event.stopPropagation();
+            openVideoFromUserGesture(card.dataset.videoId, 'api');
         }
     });
-
-    bindFollowButtons(videosGrid);
-    bindChannelLinks(videosGrid);
-
-    refreshIcons(videosGrid);
-    setupVideoCardActionButtons(videosGrid);
-}
-
-// Cercar vídeos
-async function searchVideos(query) {
-    return SegueixApp.features.search?.searchVideos?.(query);
-}
-
-async function searchVideosLegacyImpl(query) {
-    showLoading();
-
-    // Desseleccionar totes les categories — cap chip actiu durant la cerca
-    if (chipsBar) {
-        chipsBar.querySelectorAll('.chip.is-active').forEach(c => c.classList.remove('is-active'));
-    }
-    selectedCategory = null;
-
-    renderSearchCategoryActions(query);
-    showHome();
-
-    const result = await YouTubeAPI.searchVideos(query, CONFIG.layout.videosPerPage);
-
-    if (result.error) {
-        hideLoading();
-        featuredVideoBySection.delete(getHeroSectionKey());
-        updateHero(null);
-        // Mostrar missatge d'error
-        videosGrid.innerHTML = `
-            <div class="search-error">
-                <i data-lucide="alert-circle"></i>
-                <p>${result.error}</p>
-            </div>
-        `;
-        refreshIcons(videosGrid);
-        return;
-    }
-
-    if (result.items.length === 0) {
-        featuredVideoBySection.delete(getHeroSectionKey());
-        updateHero(null);
-        videosGrid.innerHTML = `
-            <div class="search-error">
-                <i data-lucide="video-off"></i>
-                <p>No s'han trobat vídeos per aquesta cerca.</p>
-            </div>
-        `;
-        refreshIcons(videosGrid);
-        hideLoading();
-        return;
-    }
-
-    // Per cerques, obtenim més detalls dels vídeos
-    const videoIds = result.items.map(v => v.id).join(',');
-    const detailsResult = await fetchVideoDetails(videoIds);
-
-    if (detailsResult.length > 0) {
-        const filteredResults = detailsResult.filter(video => {
-            if (video.isShort) {
-                return false;
-            }
-            const seconds = getVideoDurationSeconds(video);
-            return Number.isFinite(seconds) && seconds >= 180;
-        });
-        if (filteredResults.length > 0) {
-            const sortedResults = sortVideosByRoundRobin(filteredResults);
-            renderVideos(sortedResults);
-        } else {
-            featuredVideoBySection.delete(getHeroSectionKey());
-            updateHero(null);
-            videosGrid.innerHTML = `
-                <div class="search-error">
-                    <i data-lucide="video-off"></i>
-                    <p>No s'han trobat vídeos per aquesta cerca.</p>
-                </div>
-            `;
-            refreshIcons(videosGrid);
-        }
-    } else {
-        featuredVideoBySection.delete(getHeroSectionKey());
-        updateHero(null);
-        videosGrid.innerHTML = `
-            <div class="search-error">
-                <i data-lucide="video-off"></i>
-                <p>No s'han trobat vídeos per aquesta cerca.</p>
-            </div>
-        `;
-        refreshIcons(videosGrid);
-    }
-
-    hideLoading();
-}
-
-// Obtenir detalls de múltiples vídeos
-async function fetchVideoDetails(videoIds) {
-    const apiKey = YouTubeAPI.getApiKey();
-    if (!apiKey) return [];
-
-    try {
-        const response = await fetch(
-            `${YouTubeAPI.BASE_URL}/videos?part=snippet,statistics,contentDetails&id=${videoIds}&key=${apiKey}`
-        );
-        if (!response.ok) return [];
-
-        const data = await response.json();
-        return YouTubeAPI.transformVideoResults(data.items);
-    } catch (error) {
-        return [];
-    }
 }
 
 // Renderitzar vídeos de l'API
@@ -12192,60 +11721,7 @@ function setupMiniPlayerToggle() {
     setMiniPlayerState(isMiniPlayerActive());
 }
 
-// Renderitzar resultats de cerca (sense estadístiques)
-// Resultats de cerca i targetes d'arxiu
-function renderSearchResults(videos) {
-    const featured = getFeaturedVideoForSection(videos, getHeroSectionKey());
-    updateHero(featured, 'api');
-
-    const likedIds = getLikedVideoIds();
-    videosGrid.innerHTML = videos
-        .map(video => {
-            const isLiked = likedIds.includes(String(video.id));
-            const duration = getVideoDisplayDuration(video);
-            const payload = encodeURIComponent(JSON.stringify(getPlaylistVideoData(video)));
-            return `
-        <div class="video-card" data-video-id="${video.id}">
-            <div class="video-thumbnail${video.isShort ? ' is-short' : ''}${video.source === 'archive' ? ' is-archive-source' : ''}">
-                <img src="${video.thumbnail}" alt="${escapeHtml(video.title)}" loading="lazy">
-                ${video.isShort ? '<span class="video-short-badge">SHORT</span>' : ''}
-                ${duration ? `<span class="video-duration-badge">${duration}</span>` : ''}
-            </div>
-            <div class="video-details">
-                <div class="video-info-container">
-                    <div class="video-info-header">
-                        <h3 class="video-card-title">${escapeHtml(video.title)}</h3>
-                        <div class="video-card-actions">
-                            <button class="video-action-btn like-action${isLiked ? ' is-liked' : ''}" type="button" data-video-id="${video.id}" aria-label="Preferit">
-                                <i data-lucide="heart"></i>
-                            </button>
-                            <button class="video-action-btn playlist-action" type="button" data-playlist-video="${payload}" aria-label="Afegir a una llista">
-                                ${PLAYLIST_ICON_SVG}
-                            </button>
-                        </div>
-                    </div>
-                    <div class="video-metadata">
-                        <div class="channel-name channel-link" data-channel-id="${video.channelId}">${escapeHtml(video.channelTitle)}</div>
-                        <div class="video-stats">
-                            <!-- Si hi ha comptador de vistes, fes servir "vis." -->
-                            <!-- Exemple si s'afegeix: <span>${formatViews(video.viewCount)} vis.</span> -->
-                            <span>${formatDate(video.publishedAt)}</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    `;
-        })
-        .join('');
-
-    setupDelegatedVideoCardClicks(videosGrid, 'api');
-    bindChannelLinks(videosGrid);
-
-    refreshIcons(videosGrid);
-    setupVideoCardActionButtons();
-}
-
+// Targetes d'arxiu
 function createArchiveVideoCard(video) {
     const payload = encodeURIComponent(JSON.stringify(getPlaylistVideoData(video)));
     const thumbnail = video.thumbnail || buildArchiveThumbnail(video.id);
@@ -14909,7 +14385,6 @@ function configureFeatureRuntimes() {
         searchArchiveVideosImpl: searchArchiveVideosLegacyImpl,
         showSearchDropdownImpl: showSearchDropdownLegacyImpl,
         hideSearchDropdownImpl: hideSearchDropdownLegacyImpl,
-        searchVideosImpl: searchVideosLegacyImpl,
     });
 
     SegueixApp.features.channel?.registerRuntime?.({

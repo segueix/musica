@@ -10,7 +10,8 @@ Segueix Música tria les cançons de la ràdio, del feed personalitzat i de la p
 |---|---|
 | `js/features/music-selection.js` | Motor: antiguitat real, puntuació, restriccions conjuntes, ràdio, feed, «Torna-hi». Funcions pures amb `now` i `rng` injectables |
 | `js/features/music-signals.js` | Observador únic del reproductor, estadístiques compactes, preferències explícites, fusió amb la còpia de configuració |
-| `js/features/music-queue.js` | Ràdio real: `buildQueue`, «La teva ràdio», regeneració, recàlcul segur, controls de preferència |
+| `js/features/music-queue.js` | Ràdio real: `buildQueue`, «La teva ràdio», regeneració, recàlcul segur, controls de preferència, ràdio d'una cerca (`startFromSearch`) |
+| `js/features/search-results.js` | Cerca: model pur (artistes primer, després cançons) i HTML del menú i de la pàgina de resultats |
 | `js/utils/helpers.js` | `arrangeMusicList()` (passada final de límits per a llistes), `isHistoricVideo()`, `getVideoArtistKey()` amb identitat d'artista |
 | `js/music-categories.js` | `artistKeyForChannel()` (identitat persistent) i `isClassicArtistVideo()` |
 | `js/features/portada.js` / `discovery.js` | «Torna-hi» amb preferides, «Acabades de sortir» només amb estrenes reals, explicacions |
@@ -109,6 +110,15 @@ Un cor, un «+», un «−» o un seguiment compta ja per a les decisions següe
 - **Nom fix**: la capçalera de la cua mostra l'estil (o «Pop + Rock»; «La teva ràdio» a la general) i **no canvia amb la cançó que sona** (abans deia «Basada en <artista>»). El mode de descoberta surt com a text petit al costat.
 - **«+»**: al costat del nom hi ha un cercle «+» (44 px) que obre un selector amb els estils que encara no hi són. En escollir-ne un, la part pendent de la ràdio es **regenera barrejant tots els estils a parts iguals** (`selectRadio({ mix })`: repartiment per estil amb `gain.style`, comptant el que ja hi ha a la cua; conserva la cançó que sona i els afegits a mà). Es poden sumar més estils; cada estil sumat té una × per treure'l (sempre en queda un). Sumar un estil a la ràdio general la converteix en una ràdio d'aquell estil. El nom de la llista de YouTube porta tots els estils («Llista Pop + Rock»).
 
+## Ràdio d'una cerca
+
+La cerca (`js/features/search-results.js`) posa **primer els possibles artistes i després les cançons**, i a dalt de tot ofereix «Genera una ràdio amb aquests resultats» (fila del menú i botó de la pàgina de resultats). La ràdio es genera amb `musicQueue.startFromSearch(songs, { query })`:
+
+- **El conjunt són els resultats** (fins a 60 cançons; les dels artistes trobats hi són perquè una cançó també coincideix pel nom de l'artista). No es filtra per categoria: **els estils es barregen** tal com surten. Queden fora els artistes amagats, els Shorts, el contingut estàtic i el que l'usuari ha rebutjat («− com aquesta», artista bloquejat).
+- **Ordre**: la primera cançó és la millor coincidència; la resta les ordena el motor amb `policy: 'search'` (gust de l'usuari, artistes no seguits i sense repetir artista seguit si es pot; **sense** mescla d'antiguitat 65/25/10 ni límit de música antiga, perquè els resultats són el que l'usuari ha demanat). Totes les cançons trobades hi entren, encara que el motor en deixi alguna fora. Amb `engine: 'legacy'` s'ordenen per rellevància repartint artistes.
+- **Nom i controls**: la capçalera diu «Cerca: <consulta> · estils barrejats»; no té «+» d'estils. «Barreja» (`regenerate`) reordena la part pendent **dins dels mateixos resultats**; si ja han sonat totes, torna a començar-les. Els recàlculs silenciosos (cor, seguiment, ± com aquesta) també es queden dins dels resultats. Obrir una cançó amb un clic normal torna a una ràdio d'estil.
+- **Coincidències**: sense accents, ela geminada ni apòstrofs; títol, artista (i àlies de la base d'artistes) i crèdits de la descripció «Provided to YouTube», mai la resta de la descripció; les paraules han de ser senceres (l'última pot ser incompleta); canals oficial i «Topic» = un artista; duplicats de la mateixa gravació fora.
+
 ## Tornar a Segueix Música
 
 La portada ofereix «La teva ràdio» i, si en hi ha una de recent (14 dies), «Continua la ràdio: <cançó>» (`catube_last_radio`: només la cançó inicial i la categoria; la cua es torna a generar amb el que ja saps). Cap dels dos botons sona sols en carregar: cal un toc. «Torna-hi» porta preferides i repeticions reals amb explicació; «Acabades de sortir» només amb estrenes reals; «Fora del teu radar» només amb artistes de música recent o mitjana; el que has rebutjat no surt a la portada.
@@ -123,9 +133,9 @@ El context (antiguitat, popularitat, claus) es calcula una vegada per feed i es 
 
 ## Verificació
 
-- `npm test`: `tests/music-selection.test.js` (motor, 42 casos incloent simulació sobre el catàleg real), `tests/music-signals.test.js`, `tests/music-queue-selection.test.js`, `tests/cataleg-musical.test.js`, `tests/any-original.test.js`.
+- `npm test`: `tests/music-selection.test.js` (motor, 43 casos incloent simulació sobre el catàleg real i la política `search`), `tests/music-signals.test.js`, `tests/music-queue-selection.test.js` (inclou la ràdio de cerca), `tests/search-results.test.js`, `tests/cataleg-musical.test.js`, `tests/any-original.test.js`.
 - `node scripts/simular_seleccio_musical.js --write` → `docs/MUSICA_SELECCIO_SIMULACIO.md`.
-- Opt-in: `node tests/browser/verificar-seleccio.js` (ràdio real, observador amb missatges del reproductor, controls, cor a «Torna-hi», fusió), `verificar-portada.js`, `verificar-reproductor.js`, `verificar-sw.js`.
+- Opt-in: `node tests/browser/verificar-seleccio.js` (ràdio real, observador amb missatges del reproductor, controls, cor a «Torna-hi», fusió), `verificar-cerca.js` (menú, pàgina i ràdio de cerca, escriptori i mòbil), `verificar-portada.js`, `verificar-reproductor.js`, `verificar-sw.js`.
 
 ## Limitacions i pendent de mesurar
 

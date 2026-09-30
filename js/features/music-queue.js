@@ -13,6 +13,8 @@
     const QUEUE_NAME = 'Ràdio';
     const MIN_QUEUE_LENGTH = 12;
     const MAX_QUEUE_LENGTH = 40;
+    // Una ràdio de cerca pot portar totes les cançons trobades (la pàgina de resultats en mostra com a màxim 60).
+    const SEARCH_RADIO_MAX = 60;
     // YouTube crea una cua temporal amb els vídeos de l'enllaç, en l'ordre indicat (màx. ~50).
     // Ha de ser www.youtube.com: music.youtube.com obre l'app però ignora `watch_videos`
     // (no importa la llista). Un cop oberta a YouTube, «Desa» la deixa a la biblioteca de YouTube Music.
@@ -44,6 +46,9 @@
     let radioMeta = null;
     // Nom de la selecció que s'ha engegat tal com és (p. ex. «Acabades de sortir»); buit en una ràdio normal.
     let radioLabel = '';
+    // Ràdio generada amb els resultats d'una cerca: { videos, query }. Les cançons trobades són el conjunt de la
+    // ràdio (mai s'hi filtra per estil) i «Barreja» el torna a ordenar sense sortir-ne.
+    let searchRadio = null;
     // Cançons afegides a la cua quan encara no sona cap ràdio: sonen just després de la primera que s'engegui.
     let pendingQueue = [];
     // Ids de la cua activa que l'usuari ha afegit a mà (es conserven en regenerar la ràdio).
@@ -329,6 +334,7 @@
         radioExtra = categories.slice(1);
         stylePickerOpen = false;
         radioLabel = '';
+        searchRadio = null;
         pendingQueue = [];
         queuedIds = new Set(waiting.map(item => String(item.id)));
         if (waiting.length) {
@@ -424,6 +430,7 @@
         stylePickerOpen = false;
         radioMeta = { mode: 'none', requested: '', note: '' };
         radioLabel = String(label || '');
+        searchRadio = null;
         queuedIds = new Set();
         pendingQueue = [];
         clearEmbeddedYouTubeSession();
@@ -433,6 +440,96 @@
         activePlaylistQueue = queue;
         currentPlaylistIndex = 0;
         loadVideoInSequence();
+        return true;
+    }
+
+    // ---------- Ràdio d'una cerca ----------
+
+    // Cançons trobades que poden sonar: sense repetits, Shorts, contingut estàtic, artistes amagats ni el que
+    // l'usuari ha rebutjat («− com aquesta», artista bloquejat).
+    function searchPool(videos) {
+        const hidden = new Set(
+            (typeof getHiddenChannelIds === 'function' ? getHiddenChannelIds() : []).map(id => String(id))
+        );
+        const seen = new Set();
+        return (Array.isArray(videos) ? videos : [])
+            .filter(item => {
+                const id = String(item?.id || '');
+                if (!id || seen.has(id) || item.isShort || item.source === 'static') return false;
+                if (hidden.has(channelOf(item)) || !isSong(item) || isRejected(item)) return false;
+                seen.add(id);
+                return true;
+            })
+            .slice(0, SEARCH_RADIO_MAX);
+    }
+
+    // Part automàtica d'una ràdio de cerca: les cançons trobades que no sonen ni han sonat, ordenades pel motor
+    // (gust de l'usuari i artistes no seguits, SENSE mescla d'antiguitat ni restricció d'estil: els estils es
+    // barregen tal com surten als resultats) o, sense motor, en ordre de rellevància repartint els artistes.
+    // Totes les cançons trobades hi entren, encara que el motor en deixi alguna fora.
+    function buildSearchTail(pool, seed, options = {}) {
+        const preceding = options.preceding?.length ? options.preceding : [seed];
+        const taken = new Set(preceding.map(item => String(item?.id)));
+        const candidates = pool.filter(item => !taken.has(String(item.id)));
+        if (!candidates.length) return [];
+        let ordered = [];
+        if (engineOn()) {
+            const sel = engine();
+            const played = (options.playedIds || []).slice().reverse();
+            ordered = sel.selectRadio({
+                ctx: sel.getAppContext(Array.isArray(currentFeedVideos) ? currentFeedVideos : pool),
+                candidates,
+                seed,
+                signals: selectionSignals(played),
+                mode: app.features.discovery?.getMode?.() || 'mix',
+                policy: 'search',
+                preceding,
+                count: Math.min(candidates.length, SEARCH_RADIO_MAX),
+                now: Date.now(),
+                rng: options.rng || Math.random,
+            }).queue;
+        } else {
+            ordered = spreadVideosByArtist(candidates, { previousArtist: artistOf(seed) });
+        }
+        const picked = new Set(ordered.map(item => String(item.id)));
+        return [...ordered, ...candidates.filter(item => !picked.has(String(item.id)))];
+    }
+
+    // «Genera una ràdio amb aquests resultats»: la primera cançó és la millor coincidència i la resta són les
+    // altres cançons trobades. Només s'invoca des d'un gest de l'usuari. Retorna true si ha començat.
+    function startFromSearch(videos, options = {}) {
+        if (typeof loadVideoInSequence !== 'function' || document.body.classList.contains('segueix-tv-active')) {
+            return false;
+        }
+        const pool = searchPool(videos);
+        if (pool.length < 2) return false;
+        const seed = pool[0];
+        // Les cançons afegides a la cua abans d'engegar sonen just després de la primera.
+        const waiting = pendingQueue.filter(item => String(item?.id) !== String(seed.id));
+        const waitingIds = new Set(waiting.map(item => String(item.id)));
+        const tail = buildSearchTail(pool, seed, { ...options, preceding: [seed, ...waiting] }).filter(
+            item => !waitingIds.has(String(item.id))
+        );
+        const queue = [seed, ...waiting, ...tail];
+
+        clickCategory = null;
+        radioCategory = '';
+        radioExtra = [];
+        stylePickerOpen = false;
+        radioMeta = { mode: 'none', requested: '', note: '' };
+        const query = String(options.query || '').trim();
+        searchRadio = { videos: pool, query };
+        radioLabel = query ? `Cerca «${query}»` : 'Cerca';
+        queuedIds = waitingIds;
+        pendingQueue = [];
+        clearEmbeddedYouTubeSession();
+        isPlaylistMode = true;
+        activePlaylistId = QUEUE_ID;
+        activePlaylistName = QUEUE_NAME;
+        activePlaylistQueue = queue;
+        currentPlaylistIndex = 0;
+        loadVideoInSequence();
+        notifyQueueChanged();
         return true;
     }
 
@@ -520,7 +617,7 @@
         if (!isPlaylistMode || activePlaylistId !== QUEUE_ID) return;
         const current = activePlaylistQueue[currentPlaylistIndex];
         if (!current) return;
-        if (!keepNext) {
+        if (!keepNext && !searchRadio) {
             // Una selecció (p. ex. «Acabades de sortir») es converteix en una ràdio de l'estil de la cançó que sona
             if (radioLabel && !radioStyles().length) radioCategory = primaryCategoryOf(current);
             radioLabel = '';
@@ -531,11 +628,24 @@
             .slice(currentPlaylistIndex + 1)
             .filter((item, index) => queuedIds.has(String(item?.id)) || (keepNext && index === 0 && !isRejected(item)));
         const keptIds = new Set(kept.map(item => String(item.id)));
-        const fresh = buildQueue(current, radioStyles(), {
-            preceding: [...played, ...kept],
-            playedIds: played.map(item => String(item.id)),
-        }).filter(item => !playedIds.has(String(item.id)) && !keptIds.has(String(item.id)));
-        activePlaylistQueue = [...played, ...kept, ...fresh].slice(0, MAX_QUEUE_LENGTH + played.length + kept.length);
+        let fresh = [];
+        if (searchRadio) {
+            // Ràdio de cerca: sempre amb les cançons trobades. Si ja han sonat totes, torna a començar-les
+            // (sense la que sona ni les afegides a mà) perquè «Barreja» no deixi la cua buida.
+            const options = { preceding: [...played, ...kept], playedIds: played.map(item => String(item.id)) };
+            fresh = buildSearchTail(searchRadio.videos, current, options);
+            if (!fresh.length) {
+                fresh = buildSearchTail(searchRadio.videos, current, { preceding: [current, ...kept] });
+            }
+            fresh = fresh.filter(item => !keptIds.has(String(item.id)));
+        } else {
+            fresh = buildQueue(current, radioStyles(), {
+                preceding: [...played, ...kept],
+                playedIds: played.map(item => String(item.id)),
+            }).filter(item => !playedIds.has(String(item.id)) && !keptIds.has(String(item.id)));
+        }
+        const maxLength = searchRadio ? SEARCH_RADIO_MAX : MAX_QUEUE_LENGTH;
+        activePlaylistQueue = [...played, ...kept, ...fresh].slice(0, maxLength + played.length + kept.length);
         refresh();
     }
 
@@ -635,6 +745,7 @@
             pending: pendingQueue.length,
             categories: radioStyles(),
             meta: radioMeta,
+            search: searchRadio && activePlaylistId === QUEUE_ID ? searchRadio.query : '',
         };
     }
 
@@ -647,6 +758,7 @@
             const own = String(activePlaylistName || '').trim();
             if (own) return `Llista ${own}`;
         }
+        if (activePlaylistId === QUEUE_ID && searchRadio?.query) return `Llista ${searchRadio.query}`;
         if (activePlaylistId === QUEUE_ID && radioStyles().length) return `Llista ${radioStyles().join(' + ')}`;
         const first = activePlaylistQueue[Math.max(0, currentPlaylistIndex)];
         const group = String(first?.channelTitle || '').trim();
@@ -762,6 +874,9 @@
     function radioNameHtml(modeLabel) {
         if (activePlaylistId !== QUEUE_ID) {
             return `<span class="mq-source">${escapeText(activePlaylistName || '')}</span>`;
+        }
+        if (searchRadio) {
+            return `<span class="mq-source">Cerca: ${escapeText(searchRadio.query)} · estils barrejats</span>`;
         }
         if (radioLabel) return `<span class="mq-source">Selecció: ${escapeText(radioLabel)}</span>`;
         const styles = radioStyles();
@@ -1085,6 +1200,7 @@
         getLastRadio,
         resumeLast,
         playSelection,
+        startFromSearch,
         enqueue,
         getState,
         render,
