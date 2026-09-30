@@ -113,6 +113,14 @@
         (requestIdleCallback || setTimeout)(() => {
             setLikedVideos(likedCopy);
             setLikedVideoIds(likedCopy.map(item => String(item.id)));
+            // El cor compta ja per a les decisions següents de la ràdio (music-queue / music-signals).
+            try {
+                window.dispatchEvent(
+                    new CustomEvent('segueix:music-prefs-changed', { detail: { type: 'like', key: normalizedId, on: nowLiked } })
+                );
+            } catch (error) {
+                // Entorn sense esdeveniments (proves)
+            }
         });
         return nowLiked;
     }

@@ -8,6 +8,12 @@ on:
       - "js/music-categories.js"
       - "js/youtube.js"
       - "js/app.js"
+      - "js/utils/helpers.js"
+      - "js/features/music-selection.js"
+      - "js/features/music-signals.js"
+      - "js/features/music-queue.js"
+      - "js/features/portada.js"
+      - "js/features/discovery.js"
       - "js/features/segueix-tv.js"
       - "js/features/context-tv.js"
       - "js/features/analytics.js"
@@ -21,6 +27,9 @@ on:
       - "tests/admin-musica.test.js"
       - "tests/music-categories.test.js"
       - "tests/section-seo.test.js"
+      - "tests/music-selection.test.js"
+      - "tests/music-signals.test.js"
+      - "tests/music-queue-selection.test.js"
       - ".github/workflows/validar-navegacio-musical.yml"
   workflow_dispatch:
 
@@ -40,5 +49,10 @@ jobs:
           node --check js/app.js
           node --check js/features/segueix-tv.js
           node --check js/features/context-tv.js
+          node --check js/features/music-selection.js
+          node --check js/features/music-signals.js
+          node --check js/features/music-queue.js
+      - name: Prova el motor de selecció musical
+        run: npx vitest run tests/music-selection.test.js tests/music-signals.test.js tests/music-queue-selection.test.js
       - name: Prova taxonomia i SEO
         run: npx vitest run tests/music-categories.test.js tests/section-seo.test.js tests/music-admin.test.js tests/admin-musica.test.js

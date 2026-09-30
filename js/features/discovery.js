@@ -248,7 +248,7 @@
         return stylesOf(video, profile.channels).reduce((sum, style) => sum + (profile.styles.get(style) || 0), 0);
     }
 
-    // ---------- Ordenació per mode (cua de «Fes-la sonar») ----------
+    // ---------- Ordenació per mode (cua de «La teva ràdio») ----------
 
     function noteFor(reason) {
         return reason === 'none'
@@ -380,7 +380,7 @@
     }
 
     // Novetat destacada de l'entrada: cançó recent amb bona imatge; si el seu artista és conegut ho diu.
-    function pickFeatured({ videos, profile, exclude, isClip, now = Date.now() } = {}) {
+    function pickFeatured({ videos, profile, exclude, isClip, isNew, now = Date.now() } = {}) {
         const blocked = exclude instanceof Set ? exclude : new Set();
         const pool = toArray(videos).filter(
             video => isStudioSong(video) && video.thumbnail && !blocked.has(String(video.id))
@@ -400,7 +400,15 @@
         const best = scored[0];
         const entry = profile?.artists?.get(artistKeyOf(best.video));
         let eyebrow = 'Novetat';
-        if (best.known) {
+        // Una reedició o un arxiu pujat fa poc no és una estrena (només es diu «Novetat» amb base).
+        const genuinelyNew = typeof isNew === 'function' ? Boolean(isNew(best.video)) : true;
+        if (!genuinelyNew) {
+            eyebrow = best.known
+                ? entry?.followed
+                    ? 'Un artista que segueixes'
+                    : 'Un artista que has escoltat'
+                : 'Per començar';
+        } else if (best.known) {
             eyebrow = entry?.followed ? 'Novetat d’un artista que segueixes' : 'Novetat d’un artista que has escoltat';
         } else if (now - timestampOf(best.video) > 90 * DAY_MS) {
             eyebrow = 'Per començar';
@@ -501,13 +509,29 @@
     }
 
     // «Torna-hi»: cançons, artistes i llistes recents. Només si hi ha historial.
-    function pickReturnItems({ history, playlists, channels, limit = 6 } = {}) {
+    function pickReturnItems({ history, playlists, channels, limit = 6, preferred = [] } = {}) {
         const channelMap = normalizeChannels(channels);
         const recent = toArray(history).filter(video => video?.id && !video.isShort);
-        if (!recent.length) return [];
+        if (!recent.length && !toArray(preferred).length) return [];
 
         const songs = [];
         const songIds = new Set();
+        // Preferides i repeticions reals (motor de selecció): van primer, amb la seva explicació.
+        toArray(preferred).forEach(entry => {
+            const video = entry?.video;
+            const id = String(video?.id || '');
+            if (!id || songIds.has(id) || !isPlayable(video)) return;
+            songIds.add(id);
+            songs.push({
+                type: 'song',
+                id,
+                video,
+                title: video.title || '',
+                subtitle: video.channelTitle || channelMap.get(artistKeyOf(video))?.name || '',
+                image: video.thumbnail || '',
+                reason: entry.reason || '',
+            });
+        });
         recent.forEach(video => {
             const id = String(video.id);
             if (songIds.has(id) || !isPlayable(video)) return;

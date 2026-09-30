@@ -1505,6 +1505,12 @@ function getFollowedChannelIds() {
 
 function saveFollowedChannelIds(ids) {
     localStorage.setItem(FOLLOW_STORAGE_KEY, JSON.stringify(ids));
+    // Seguir un artista compta ja per a les decisions següents de la ràdio.
+    try {
+        window.dispatchEvent(new CustomEvent('segueix:music-prefs-changed', { detail: { type: 'follow' } }));
+    } catch (error) {
+        // Entorn sense esdeveniments (proves)
+    }
 }
 
 function getHiddenChannelIds() {
@@ -7030,8 +7036,11 @@ function renderFeedLegacyImpl() {
         });
     }
 
-    // Filtrar vídeos ja vistos dels feeds
-    filtered = filterOutWatchedVideos(filtered);
+    // Filtrar vídeos ja vistos dels feeds. «Recomanat per a tu» no: una cançó que t'agrada pot tornar
+    // (el motor de selecció ja aplica descans i rotació); Novetats i les categories continuen ocultant-les.
+    if (!(isRecommendedPage && SegueixApp.features.musicSelection?.isEnabled?.())) {
+        filtered = filterOutWatchedVideos(filtered);
+    }
 
     if (isCustomCategory(selectedCategory)) {
         // A la llista principal d'una categoria personalitzada mostrem primer els vídeos actuals
@@ -7060,11 +7069,19 @@ function renderFeedLegacyImpl() {
         // «Recomanat per a tu» deixa de ser només un filtre de durada:
         // combina afinitat, seguits, qualitat relativa i descoberta.
         try {
-            const ranked = SegueixApp.features.smartFeed?.rank?.(filtered, {
-                reason: 'home-recommended',
-            });
-            if (Array.isArray(ranked) && ranked.length === filtered.length) {
-                filtered = ranked;
+            // Amb el motor de selecció, el feed personalitzat fa servir la mateixa puntuació i restriccions que la ràdio.
+            const engineRanked = SegueixApp.features.musicSelection?.isEnabled?.()
+                ? rankRecommendedWithEngine(filtered)
+                : null;
+            if (Array.isArray(engineRanked) && engineRanked.length > 0) {
+                filtered = engineRanked;
+            } else {
+                const ranked = SegueixApp.features.smartFeed?.rank?.(filtered, {
+                    reason: 'home-recommended',
+                });
+                if (Array.isArray(ranked) && ranked.length === filtered.length) {
+                    filtered = ranked;
+                }
             }
         } catch (error) {
             console.warn('No s’ha pogut aplicar el feed intel·ligent:', error);
@@ -7124,10 +7141,9 @@ function renderFeedLegacyImpl() {
         return seconds !== null && seconds > 0;
     });
 
-    // Música realment antiga: com a molt 1 de cada 5 entre la dels darrers anys.
-    filtered = limitClassicFrequency(filtered);
-    // Varietat: mai dues cançons seguides del mateix grup/artista.
-    filtered = spreadVideosByArtist(filtered);
+    // Música realment antiga (com a molt 2 de cada 20, mai dues seguides) i varietat d'artista: una sola
+    // passada final amb el motor de selecció compartit (o l'alternança anterior amb `engine: 'legacy'`).
+    filtered = arrangeMusicList(filtered);
 
     lastRenderedFeedList = filtered;
     currentFeedRenderer(filtered);
@@ -13407,6 +13423,20 @@ function getArchiveIndexVideoById(videoId) {
         thumbnail: buildArchiveThumbnail(normalizedId),
         source: 'archive',
     };
+}
+
+// «Recomanat per a tu» amb el motor de selecció compartit (music-selection.js): gust, actualitat,
+// popularitat, rotació i afinitat, amb límits d'antiguitat i d'artista aplicats al resultat.
+function rankRecommendedWithEngine(videos) {
+    const selection = SegueixApp.features.musicSelection;
+    const ctx = selection.getAppContext(
+        Array.isArray(currentFeedVideos) && currentFeedVideos.length ? currentFeedVideos : videos
+    );
+    return selection.rankFeed(videos, {
+        ctx,
+        signals: SegueixApp.features.musicSignals?.snapshot?.(),
+        mode: SegueixApp.features.discovery?.getMode?.(),
+    });
 }
 
 function filterOutWatchedVideos(videos) {

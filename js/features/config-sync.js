@@ -52,8 +52,13 @@
             throw new Error('Dades locals no vàlides');
         }
 
+        const signals = window.SegueixApp?.features?.musicSignals;
         for (const key in configData) {
             if (LOCAL_ONLY_STORAGE_KEYS.has(key)) continue;
+            // Estadístiques i preferències musicals: fusió idempotent (màxim per comptador, la més recent
+            // per preferència). Importar dues vegades el mateix fitxer no suma dues vegades les escoltes.
+            if (signals && key === signals.STATS_KEY && signals.importMerged(configData[key])) continue;
+            if (signals && key === signals.PREFS_KEY && signals.importPrefs(configData[key])) continue;
             localStorage.setItem(key, configData[key]);
         }
     }

@@ -27,6 +27,20 @@ L'automatisme conserva aquestes decisions.
 
 La pàgina `admin-musica.html` permet filtrar, aprovar i rebutjar candidats. Els canvis queden temporalment al navegador i es poden exportar com a JSON o CSV. El JSON exportat està preparat per substituir `data/artistes-musica.json`.
 
+## Revisió de vídeos ambigus
+
+El classificador de contingut deixa a `data/music-content-review.json` els vídeos que no pot decidir (`contentType: "review"`). Mentre hi són, no surten a categories ni a Novetats. Per resoldre'ls, afegeix-los a `data/music-content-overrides.json` amb el tipus correcte (`song`, `live_song`, `album` o `other`) i una nota; el pipeline (`scripts/update_music_feed.js`) ho reaplica a cada generació. Per veure el resultat sense esperar el workflow:
+
+```bash
+node scripts/aplicar_revisio_manual_musical.js
+```
+
+## Any original i catàleg incremental
+
+- `update_music_feed.js` estampa `originalYear`, `originalDate`, `originalYearSource` i `originalYearConfidence` als vídeos del feed **només amb evidència**: «Released on» de la descripció automàtica (alta), «℗ AAAA» (mitjana) o una excepció verificada a `data/musica-dates.json` (alta, mana sobre la resta). Sense evidència no hi ha any. Per aplicar-ho al feed actual sense API: `node scripts/estampar_any_original.js`.
+- El feed conserva el repertori que ja no cap a les darreres 50 pujades (els més populars de cada canal, fins a 100) i el torna a verificar a cada execució; només se'n va un vídeo confirmat com a privat o eliminat. Per als canals de `musica-classica.json` es consulten pàgines més profundes amb pressupost (`MUSIC_DEEP_PAGE_BUDGET`) i cursors a `data/music-catalog-state.json`.
+- Detall i criteris: `docs/MUSICA_SELECCIO.md`.
+
 ## Ordres
 
 ```bash

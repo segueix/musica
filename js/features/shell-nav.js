@@ -19,7 +19,8 @@
 
     // ---------- Avisos breus (role=status, no interrompen ni prenen el focus) ----------
 
-    function toast(message, { duration = 4200 } = {}) {
+    // `action`: { label, onClick } opcional (p. ex. «Desfés»); el botó és accessible amb teclat.
+    function toast(message, { duration = 4200, action = null } = {}) {
         const doc = window.document;
         if (!doc?.body || !message) return;
         let element = $('ptToast');
@@ -35,6 +36,17 @@
         element.textContent = '';
         window.setTimeout(() => {
             element.textContent = message;
+            if (action?.label && typeof action.onClick === 'function') {
+                const button = doc.createElement('button');
+                button.type = 'button';
+                button.className = 'pt-toast__action';
+                button.textContent = action.label;
+                button.addEventListener('click', () => {
+                    action.onClick();
+                    element.classList.remove('is-visible');
+                });
+                element.appendChild(button);
+            }
             element.classList.add('is-visible');
         }, 30);
         window.clearTimeout(toastTimer);

@@ -17,7 +17,7 @@
 //   3) A la primera pantalla ja es veu música per explorar.
 //   4) En carregar no sona res (cap iframe del reproductor).
 //   I un recorregut complet (escriptori i mòbil):
-//   5) «Fes-la sonar» engega la ràdio; hi ha un sol reproductor i canviar de secció no el recrea.
+//   5) «La teva ràdio» engega la ràdio; hi ha un sol reproductor i canviar de secció no el recrea.
 //   6) Canviar el mode de descoberta no interromp la cançó; «Ara sona» surt a Inici.
 //   7) Teclat: fletxes al selector de mode, anell de focus visible, activar amb Enter.
 //   8) Sense catàleg: missatge d'error i «Torna-ho a provar» recupera la portada.
@@ -200,9 +200,9 @@ async function recorregut(browser, width, height) {
     await obrir(page);
     const nav = clau => page.click(`${mobile ? '.pt-bottom-nav' : '#sidebar'} [data-pt-nav="${clau}"]`);
 
-    // 5) «Fes-la sonar»: una ràdio, un sol reproductor
+    // 5) «La teva ràdio»: una ràdio, un sol reproductor
     comprovar(
-        `${nom}: «Fes-la sonar» està actiu`,
+        `${nom}: «La teva ràdio» està actiu`,
         await page.evaluate(() => !document.getElementById('ptPlayBtn').disabled)
     );
     await page.click('#ptPlayBtn');
@@ -362,7 +362,7 @@ async function estatError(browser) {
         await page.evaluate(() => /Torna-ho a provar/.test(document.querySelector('.pt-state').innerText))
     );
     comprovar(
-        'error: «Fes-la sonar» no s’activa sense música',
+        'error: «La teva ràdio» no s’activa sense música',
         await page.evaluate(() => document.getElementById('ptPlayBtn').disabled)
     );
     bloquejat = false;

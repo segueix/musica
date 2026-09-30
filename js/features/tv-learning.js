@@ -368,6 +368,14 @@
     }
 
     function init() {
+        // Un únic observador del reproductor: si music-signals hi és, l'aprenentatge de la TV rep d'ell les
+        // sessions acabades (mateixa mesura de progrés efectiu) en comptes de crear-ne un altre.
+        const shared = app.features.musicSignals;
+        if (shared?.registerSessionSink?.(summary => {
+            if (isTVPlayback() && summary?.video) recordSession(summary);
+        })) {
+            return;
+        }
         window.addEventListener('message', onPlayerMessage);
         document.addEventListener('click', markManualSkip, true);
         window.addEventListener('pagehide', () => {
