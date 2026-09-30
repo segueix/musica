@@ -3009,6 +3009,17 @@ async function buildShareData(type, label, url, title = '') {
     return { data, text };
 }
 
+// Text per compartir una cançó: «Artista - Cançó». Els títols que es mostren ja no porten l'artista
+// (js/song-title.js), però en un missatge sí que cal.
+function getShareLabel(videoData) {
+    const title = String(videoData?.title || '').trim() || 'Segueix!';
+    const id = String(videoData?.id || '');
+    const known = Array.isArray(YouTubeAPI?.feedVideos) ? YouTubeAPI.feedVideos.find(v => String(v?.id) === id) : null;
+    const artist = String(videoData?.channelTitle || known?.channelTitle || '').trim();
+    if (!artist || title.toLowerCase().includes(artist.toLowerCase())) return title;
+    return `${artist} - ${title}`;
+}
+
 // Function to handle custom sharing logic
 async function shareVideo(videoData) {
     const shareUrl = buildAppShareUrl(`v=${encodeURIComponent(videoData.id)}`);
@@ -3017,7 +3028,7 @@ async function shareVideo(videoData) {
     if (navigator.share) {
         // Passem títol i text (com a les llistes i categories): si l'app receptora no pot
         // llegir les meta Open Graph, el missatge ja porta el nom del vídeo.
-        const shareTitle = String(videoData.title || 'Segueix!').trim();
+        const shareTitle = getShareLabel(videoData);
         navigator
             .share({ title: shareTitle, text: shareTitle, url: shareUrl })
             .catch(err => console.log('Share dismissed', err));
@@ -3037,7 +3048,7 @@ async function shareVideo(videoData) {
                 </div>
                 <div class="modal-body" style="text-align:center; padding-top:0;">
                     <p class="modal-description" style="margin-bottom:20px;">
-                        Comparteix el vídeo: <br><strong>${videoData.title}</strong>
+                        Comparteix la cançó: <br><strong>${escapeHtml(getShareLabel(videoData))}</strong>
                     </p>
                     <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
                         <button class="hero-button" onclick="window.open('https://wa.me/?text=${encodeURIComponent(shareUrl)}', '_blank')">
@@ -8901,7 +8912,7 @@ async function renderPlaylistsPageLegacyImpl() {
                         </button>
                     </div>
                     <button class="btn-round-icon library-share-btn"
-                            onclick="event.stopPropagation(); shareSegueixPlaylist('${escapeHtml(list.name)}')"
+                            onclick="event.stopPropagation(); shareSegueixPlaylistById('${escapeHtml(list.id)}')"
                             title="Compartir llista">
                         <i data-lucide="share-2"></i>
                     </button>
@@ -12439,7 +12450,9 @@ function getHistoryItems() {
     }
     try {
         const parsed = JSON.parse(stored);
-        _historyItemsCache = Array.isArray(parsed) ? parsed : [];
+        // Les cançons escoltades abans de netejar els títols es mostren amb el títol net (l'original es conserva)
+        const clean = video => window.SegueixMusicCategories?.cleanVideoTitle?.(video) || video;
+        _historyItemsCache = Array.isArray(parsed) ? parsed.map(clean) : [];
     } catch (error) {
         console.warn('No es pot llegir catube_history', error);
         _historyItemsCache = [];
@@ -13385,34 +13398,30 @@ async function shareCategoryWithYoutubers(categoryName, channelIds) {
         return;
     }
 
-    _showShareOptionsModal('Categoria', categoryName, shareUrl, payload);
+    _showShareOptionsModal('Categoria', categoryName, shareUrl, { type: 'category' });
 }
 
-async function shareSegueixPlaylist(playlistName, videoIds) {
-    let allPlaylists = [];
-    try {
-        const stored = localStorage.getItem('catube_playlists');
-        allPlaylists = stored ? JSON.parse(stored) : [];
-    } catch (err) {
-        console.warn('[shareSegueixPlaylist] localStorage no disponible:', err);
-        return alert('Compartició no disponible en mode incògnit.');
+// Una ràdio compartida porta només les primeres cançons de la cua: l'enllaç (i el QR) s'han de poder llegir des d'una
+// pantalla, i el que importa és que qui l'obre sent la mateixa ràdio, no tota la cua.
+const MAX_RADIO_SHARE_SONGS = 30;
+
+// Comparteix una ràdio o una llista de reproducció: enllaç (amb les cançons dins) + targeta amb QR.
+// type: 'radio' | 'playlist'. items: ID de vídeo o objectes vídeo.
+async function _shareVideoList(type, name, items) {
+    const videoIdsOnly = [
+        ...new Set(
+            (Array.isArray(items) ? items : [])
+                .map(v => (typeof v === 'string' ? v : v?.id))
+                .filter(Boolean)
+                .map(String)
+        ),
+    ].slice(0, type === 'radio' ? MAX_RADIO_SHARE_SONGS : undefined);
+    if (!videoIdsOnly.length) {
+        return alert(type === 'radio' ? 'Aquesta ràdio és buida.' : 'Aquesta llista és buida o no existeix.');
     }
-    const targetPlaylist = allPlaylists.find(p => p.name === playlistName);
-
-    const playlistVideos = Array.isArray(videoIds) && videoIds.length > 0 ? videoIds : targetPlaylist?.videos;
-
-    if (!targetPlaylist || !Array.isArray(playlistVideos) || playlistVideos.length === 0) {
-        return alert('Aquesta llista és buida o no existeix.');
-    }
-
-    const videoIdsOnly = playlistVideos.map(v => (typeof v === 'string' ? v : v.id)).filter(Boolean);
 
     const shareCodecs = SegueixApp.utils.shareCodecs;
-    const payload = shareCodecs.buildImportPayload({
-        type: 'playlist',
-        name: playlistName,
-        items: videoIdsOnly,
-    });
+    const payload = shareCodecs.buildImportPayload({ type, name, items: videoIdsOnly });
     const shareUrl = shareCodecs.buildImportUrl(payload);
 
     if (!shareUrl) {
@@ -13420,17 +13429,71 @@ async function shareSegueixPlaylist(playlistName, videoIds) {
         return;
     }
 
-    // Caràtula representativa: hqdefault del primer vídeo (fallback img/caratula.png via onerror)
+    // Caràtula representativa: hqdefault del primer vídeo (si no carrega, la icona de Segueix Música)
     const thumbnailUrl = videoIdsOnly[0] ? buildArchiveThumbnail(videoIdsOnly[0]) : '';
 
-    // Mostrar modal amb opcions: Compartir + Generar QR
-    _showShareOptionsModal('Llista', playlistName, shareUrl, { thumbnailUrl });
+    _showShareOptionsModal(type === 'radio' ? 'Ràdio' : 'Llista', name, shareUrl, {
+        type,
+        count: videoIdsOnly.length,
+        thumbnailUrl,
+    });
 }
 
-// Modal amb opcions de compartició: Compartir (link net) + Generar QR
+function _readStoredPlaylists() {
+    try {
+        const stored = localStorage.getItem('catube_playlists');
+        return stored ? JSON.parse(stored) : [];
+    } catch (err) {
+        console.warn('[share] localStorage no disponible:', err);
+        return null;
+    }
+}
+
+async function shareSegueixPlaylist(playlistName, videoIds) {
+    const allPlaylists = _readStoredPlaylists();
+    if (!allPlaylists) return alert('Compartició no disponible en mode incògnit.');
+    const targetPlaylist = allPlaylists.find(p => p.name === playlistName);
+    const playlistVideos = Array.isArray(videoIds) && videoIds.length > 0 ? videoIds : targetPlaylist?.videos;
+
+    if (!targetPlaylist || !Array.isArray(playlistVideos) || playlistVideos.length === 0) {
+        return alert('Aquesta llista és buida o no existeix.');
+    }
+    return _shareVideoList('playlist', playlistName, playlistVideos);
+}
+
+// Igual que shareSegueixPlaylist però per ID: els noms amb cometes o apòstrofs no trenquen cap atribut HTML.
+async function shareSegueixPlaylistById(playlistId) {
+    const allPlaylists = _readStoredPlaylists();
+    if (!allPlaylists) return alert('Compartició no disponible en mode incògnit.');
+    const list = allPlaylists.find(p => p.id === playlistId);
+    if (!list || !Array.isArray(list.videos) || !list.videos.length) {
+        return alert('Aquesta llista és buida o no existeix.');
+    }
+    return _shareVideoList('playlist', list.name, list.videos);
+}
+
+// Comparteix la ràdio que sona (o la cua d'una llista en reproducció) tal com és ara.
+async function shareSegueixRadio() {
+    const share = SegueixApp.features.musicQueue?.getShareData?.();
+    if (!share || !share.ids.length) return alert('No hi ha cap ràdio o llista per compartir.');
+    if (share.type === 'playlist' && share.playlistId) return shareSegueixPlaylistById(share.playlistId);
+    return _shareVideoList(share.type, share.name, share.ids);
+}
+
+const SHARE_TYPE_BY_LABEL = { Llista: 'playlist', Ràdio: 'radio', Categoria: 'category', Visualitzacions: 'history' };
+
+// Modal amb opcions de compartició: Compartir (targeta amb icona + tipus + nom, sense enllaç escrit) + Generar QR
 async function _showShareOptionsModal(typeLabel, name, shareUrl, options = {}) {
     const thumbnailUrl = options && typeof options === 'object' ? options.thumbnailUrl || '' : '';
+    const type = options?.type || SHARE_TYPE_BY_LABEL[typeLabel] || 'playlist';
+    const card = SegueixApp.utils?.shareCard;
+    const model = card?.buildShareModel({ type, name, count: options?.count });
+    // Ràdios i llistes es comparteixen com a imatge amb un QR; la resta (categories...) continuen sent un enllaç.
+    // Una llista tan llarga que no hi cap en un QR només es pot compartir com a enllaç.
+    const qrPossible = !!card?.canEncode?.(shareUrl);
+    const asImage = !!model && (type === 'radio' || type === 'playlist') && qrPossible;
     const hasNativeShare = !!navigator.share;
+    const headingLabel = model?.kindLabel || typeLabel;
 
     const modal = document.createElement('div');
     modal.className = 'modal-overlay active';
@@ -13439,7 +13502,7 @@ async function _showShareOptionsModal(typeLabel, name, shareUrl, options = {}) {
         <div class="modal modal-small">
             <div class="modal-header">
                 <h2 class="modal-title" style="display:flex; align-items:center; gap:12px;">
-                    Comparteix ${typeLabel.toLowerCase()}
+                    Comparteix ${escapeHtml(headingLabel.toLowerCase())}
                 </h2>
                 <button class="modal-close" onclick="this.closest('.modal-overlay').remove()">
                     <i data-lucide="x"></i>
@@ -13448,7 +13511,7 @@ async function _showShareOptionsModal(typeLabel, name, shareUrl, options = {}) {
             <div class="modal-body" style="text-align:center; padding: 20px;">
                 ${
                     thumbnailUrl
-                        ? `<img src="${escapeHtml(thumbnailUrl)}" alt="" style="width:180px; aspect-ratio:16/9; object-fit:cover; border-radius:12px; margin:0 auto 14px; display:block;" onerror="this.onerror=null; this.src='img/caratula.png';">`
+                        ? `<img src="${escapeHtml(thumbnailUrl)}" alt="" style="width:180px; aspect-ratio:16/9; object-fit:cover; border-radius:12px; margin:0 auto 14px; display:block;" onerror="this.onerror=null; this.style.objectFit='contain'; this.src='${escapeHtml(card?.ICON_URL || 'img/icon-512.png')}';">`
                         : ''
                 }
                 <p style="font-size:1rem; font-weight:600; margin-bottom:16px;">${escapeHtml(name)}</p>
@@ -13456,9 +13519,21 @@ async function _showShareOptionsModal(typeLabel, name, shareUrl, options = {}) {
                     <button class="hero-button" id="shareOptShare" style="width:100%; display:inline-flex; align-items:center; justify-content:center; gap:14px; font-size:1.25rem; line-height:1.2; background:var(--color-button-accent); color:#ffffff;">
                         <i data-lucide="share-2"></i><span>Compartir</span>
                     </button>
-                    <button class="hero-button" id="shareOptQr" style="width:100%; display:inline-flex; align-items:center; justify-content:center; gap:14px; font-size:1.25rem; line-height:1.2; background:#ffffff; color:#1a1a2e;">
+                    ${
+                        qrPossible || !model
+                            ? `<button class="hero-button" id="shareOptQr" style="width:100%; display:inline-flex; align-items:center; justify-content:center; gap:14px; font-size:1.25rem; line-height:1.2; background:#ffffff; color:#141615;">
                         <i data-lucide="qr-code"></i><span>Generar QR</span>
+                    </button>`
+                            : `<p style="font-size:0.78rem; opacity:0.6; margin:0;">Aquesta llista és massa llarga per a un QR: comparteix-ne l'enllaç.</p>`
+                    }
+                    ${
+                        asImage
+                            ? `<button class="hero-button" id="shareOptLink" style="width:100%; display:inline-flex; align-items:center; justify-content:center; gap:10px; font-size:0.95rem; line-height:1.2; background:rgba(255,255,255,0.12); color:#ffffff;">
+                        <i data-lucide="link"></i><span>Només l'enllaç</span>
                     </button>
+                    <p style="font-size:0.78rem; opacity:0.6; margin:0;">«Compartir» envia una imatge amb un QR (sense cap enllaç escrit). Si vols un enllaç que s'obri d'un toc, tria «Només l'enllaç».</p>`
+                            : ''
+                    }
                 </div>
             </div>
         </div>
@@ -13471,10 +13546,10 @@ async function _showShareOptionsModal(typeLabel, name, shareUrl, options = {}) {
     });
 
     // Per evitar trencar la previsualització Open Graph en apps com WhatsApp,
-    // la compartició nativa envia només URL + title (sense camp text).
-    const shareText = `${typeLabel}: ${name}`;
+    // la compartició nativa de l'enllaç envia només URL + title (sense camp text).
+    const shareText = model?.caption || `${typeLabel}: ${name}`;
 
-    modal.querySelector('#shareOptShare').addEventListener('click', async () => {
+    async function shareLink() {
         if (hasNativeShare) {
             try {
                 await navigator.share({ title: shareText, url: shareUrl });
@@ -13495,14 +13570,30 @@ async function _showShareOptionsModal(typeLabel, name, shareUrl, options = {}) {
         } catch (_err) {
             alert("No s'ha pogut copiar l'enllaç.");
         }
+    }
+
+    // La targeta es dibuixa d'entrada: Safari només deixa compartir just després del toc, sense esperes llargues.
+    const cardPromise = asImage ? card.renderCard(model, shareUrl).catch(() => null) : null;
+
+    modal.querySelector('#shareOptShare').addEventListener('click', async () => {
+        if (!asImage) return shareLink();
+        const blob = await cardPromise;
+        if (blob) {
+            const result = await card.shareImage(blob, model);
+            if (result === 'shared') return modal.remove();
+            if (result === 'cancelled') return;
+        }
+        // Sense menú de compartir d'imatges (escriptori...): es copia l'enllaç
+        return shareLink();
     });
 
-    modal.querySelector('#shareOptQr').addEventListener('click', () => {
+    modal.querySelector('#shareOptLink')?.addEventListener('click', shareLink);
+
+    modal.querySelector('#shareOptQr')?.addEventListener('click', () => {
         modal.remove();
         const qrShare = SegueixApp.utils?.qrShare;
         if (qrShare) {
-            const typeMap = { Llista: 'playlist', Categoria: 'category', Visualitzacions: 'history' };
-            qrShare.showQrModal({ type: typeMap[typeLabel] || 'playlist', name: name, url: shareUrl });
+            qrShare.showQrModal({ type, name: name, url: shareUrl, count: options?.count });
         }
     });
 }
@@ -13569,14 +13660,20 @@ function handleImportDataParam() {
 
     console.log('[importData] Payload rebut:', payload);
 
-    const typeLabels = { playlist: 'Llista', category: 'Categoria', history: 'Visualitzacions' };
+    const typeLabels = {
+        playlist: 'Llista de reproducció',
+        radio: 'Ràdio',
+        category: 'Categoria',
+        history: 'Visualitzacions',
+    };
     const typeLabel = typeLabels[payload.type] || payload.type;
     const itemCount = payload.items?.length || 0;
+    const isRadio = payload.type === 'radio';
 
     // Previsualització dels elements
     let previewHtml = '';
-    if (payload.type === 'playlist' && itemCount > 0) {
-        previewHtml = `<p style="font-size:0.85rem; opacity:0.7; margin-bottom:12px;">${itemCount} vídeos</p>`;
+    if ((payload.type === 'playlist' || isRadio) && itemCount > 0) {
+        previewHtml = `<p style="font-size:0.85rem; opacity:0.7; margin-bottom:12px;">${itemCount} ${itemCount === 1 ? 'cançó' : 'cançons'}</p>`;
     } else if (payload.type === 'category' && itemCount > 0) {
         previewHtml = `<p style="font-size:0.85rem; opacity:0.7; margin-bottom:12px;">${itemCount} artistes assignats</p>`;
     } else if (payload.type === 'history') {
@@ -13590,8 +13687,8 @@ function handleImportDataParam() {
     modal.innerHTML = `
         <div class="modal modal-small">
             <div class="modal-header" style="text-align:center; padding:20px 20px 0;">
-                <h2 class="modal-title" style="justify-content:center; font-size:1.2rem;">
-                    <span style="color:#e94560; font-weight:900;">SEGUEIX!</span>
+                <h2 class="modal-title" style="justify-content:center; font-size:1.4rem;">
+                    <span style="font-family:var(--pt-display, Georgia, serif); font-weight:700; color:var(--pt-text, #F4F0E8);">SEGUEIX<span style="color:var(--pt-accent, #D6ED84);">!</span></span>
                 </h2>
                 <button class="modal-close" onclick="this.closest('.modal-overlay').remove()">
                     <i data-lucide="x"></i>
@@ -13604,7 +13701,7 @@ function handleImportDataParam() {
                 ${previewHtml}
                 <div style="display:flex; gap:10px; justify-content:center; margin-top:16px;">
                     <button class="hero-button" id="importDataAcceptBtn">
-                        <i data-lucide="download"></i> Importar
+                        <i data-lucide="${isRadio ? 'play' : 'download'}"></i> ${isRadio ? 'Escolta-la' : 'Importar'}
                     </button>
                     <button class="hero-button" id="importDataCancelBtn" style="background:rgba(255,255,255,0.15);">
                         Tancar
@@ -13634,6 +13731,24 @@ function handleImportDataParam() {
 
 // Executa la importació real des d'un payload rebut per URL
 function _executeImportFromPayload(payload, resultDiv, modal) {
+    if (payload.type === 'radio') {
+        // Una ràdio compartida no es desa: es posa a sonar tal com la van enviar (amb les cançons que tenim al feed).
+        const known = new Map(
+            [
+                ...(typeof YouTubeAPI !== 'undefined' && Array.isArray(YouTubeAPI.feedVideos)
+                    ? YouTubeAPI.feedVideos
+                    : []),
+                ...(window.cachedAPIVideos || []),
+                ...(window.VIDEOS || []),
+            ].map(video => [String(video.id), video])
+        );
+        const videos = (payload.items || []).map(id => known.get(String(id))).filter(Boolean);
+        if (!videos.length) throw new Error('Ara mateix no he trobat cap d’aquestes cançons. Torna-ho a provar.');
+        const started = SegueixApp.features.musicQueue?.playSelection?.(videos, payload.name || 'Ràdio compartida');
+        if (!started) throw new Error('No s’ha pogut posar la ràdio a sonar.');
+        modal.remove();
+        return;
+    }
     if (payload.type === 'playlist') {
         // Afegir la llista a les playlists existents (mode merge per defecte)
         const stored = localStorage.getItem('catube_playlists');

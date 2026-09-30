@@ -238,6 +238,35 @@ describe('middleware de compartició', () => {
         expect(res.__meta['og:url']).toBe('https://segueix.cat/?v=AlFeedVideo1');
     });
 
+    // Payloads comprimits amb lz-string (els mateixos que genera l'app):
+    //   {v:1,type:'radio',name:'Pop + Rock',items:['a1b2c3d4e5f','z9y8x7w6v5u']}
+    //   {v:1,type:'playlist',name:'Música d’estiu',items:['a1b2c3d4e5f']}
+    const RADIO_IMPORT =
+        'N4IgbiBcCMA0IBcCeAHAplEAnAhgEwEsB7EeAOxwFsNIQAFIlAAgGomAlIgYwGtSQCCNJQDOUANogc0AEYAmLgGY8AFjQBWAGb8AXgE4kADgAeAdgDuANjDqAriAC6AXyA';
+    const PLAYLIST_IMPORT =
+        'N4IgbiBcCMA0IBcCeAHAplEKA2BDJ2AlgM4IjwB2uAthpCALIBfxhAxrgAQAmgmARqlCAV3IhCCNNWJQA2iFzQARgCY2AZm4AWNAFYAZiAC6AXyA';
+
+    it('una ràdio compartida surt com «Ràdio · nom» amb la imatge de Segueix Música', async () => {
+        const res = await onRequest(buildContext(`https://segueix.github.io/musica/?importData=${RADIO_IMPORT}`));
+        expect(res.__meta['og:title']).toBe('Ràdio · Pop + Rock');
+        expect(res.__title).toBe('Ràdio · Pop + Rock');
+        expect(res.__meta['og:image']).toBe('https://segueix.github.io/img/compartir.png');
+        expect(res.__meta['og:image:width']).toBe('1200');
+        expect(res.__meta['og:image:height']).toBe('630');
+        expect(res.__meta['og:description']).toContain('2 cançons');
+        expect(res.__meta['og:description']).toContain('Segueix Música');
+        // Sense marca de Segueix youtubers ni avatar de cap canal
+        expect(JSON.stringify(res.__meta)).not.toMatch(/Segueix\.cat|avatar/);
+    });
+
+    it('una llista compartida surt com «Llista de reproducció · nom»', async () => {
+        const res = await onRequest(buildContext(`https://segueix.cat/?importData=${PLAYLIST_IMPORT}`));
+        expect(res.__meta['og:title']).toBe('Llista de reproducció · Música d’estiu');
+        expect(res.__meta['og:image']).toBe('https://segueix.cat/img/compartir.png');
+        expect(res.__meta['og:description']).toContain('1 cançó');
+        expect(res.__meta['og:description']).not.toContain('1 cançons');
+    });
+
     it('no toca les meta de la portada (ni llegeix el feed) sense paràmetres', async () => {
         const context = buildContext('https://segueix.cat/');
         const assetsFetch = vi.fn(context.env.ASSETS.fetch);

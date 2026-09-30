@@ -19,7 +19,10 @@
         if (!stored) return [];
         try {
             const parsed = JSON.parse(stored);
-            return Array.isArray(parsed) ? parsed : [];
+            if (!Array.isArray(parsed)) return [];
+            // Les cançons desades abans de netejar els títols es mostren amb el títol net
+            const clean = video => window.SegueixMusicCategories?.cleanVideoTitle?.(video) || video;
+            return parsed.map(list => (Array.isArray(list?.videos) ? { ...list, videos: list.videos.map(clean) } : list));
         } catch (error) {
             console.warn('No es pot llegir playlists', error);
             return [];

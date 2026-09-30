@@ -16,7 +16,7 @@
 // migrant els clients automàticament.
 
 // === AUTO-GENERAT per scripts/actualitzar_versio_sw.js — NO EDITAR MANUALMENT ===
-const CACHE_VERSION = '5aeff3ae1a29';
+const CACHE_VERSION = '95788a06a4cd';
 const STATIC_ASSETS = [
     './',
     './index.html',
@@ -27,6 +27,7 @@ const STATIC_ASSETS = [
     './img/Xiuxiuajar_icona.png',
     './img/Telegram-icona.png',
     './js/config.js',
+    './js/song-title.js',
     './js/music-categories.js',
     './js/youtube.js',
     './js/data.js',
@@ -38,6 +39,7 @@ const STATIC_ASSETS = [
     './js/utils/id-codecs.js',
     './js/utils/share-codecs.js',
     './js/utils/backup-codecs.js',
+    './js/utils/share-card.js',
     './js/utils/qr-share.js',
     './js/utils/config-feedback.js',
     './js/features/navigation.js',

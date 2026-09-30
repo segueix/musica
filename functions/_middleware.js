@@ -626,6 +626,24 @@ export async function onRequest(context) {
       const payload = decodeImportPayload(importDataParam);
       if (!payload) return res;
 
+      // Ràdios i llistes de reproducció de Segueix Música: «Ràdio · nom» / «Llista de reproducció · nom»
+      // amb la imatge de marca (icona + «Segueix!»), sense dependre de l'avatar de cap canal.
+      const musicShareLabels = { radio: 'Ràdio', playlist: 'Llista de reproducció' };
+      if (musicShareLabels[payload.type]) {
+        const musicName = String(payload.name || '').trim() || 'Sense nom';
+        const songs = Array.isArray(payload.items) ? payload.items.length : 0;
+        const musicTags = buildMetaTags({
+          title: `${musicShareLabels[payload.type]} · ${musicName}`,
+          description: `${songs} ${songs === 1 ? 'cançó' : 'cançons'} · Escolta-ho a Segueix Música, la teva plaça musical en català`,
+          image: new URL('/img/compartir.png', url.origin).toString(),
+          imageWidth: '1200',
+          imageHeight: '630',
+          url: url.toString(),
+          type: 'website',
+        });
+        return injectMetaTags(res, musicTags);
+      }
+
       const typeLabels = {
         playlist: 'Llista',
         category: 'Categoria',

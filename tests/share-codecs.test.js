@@ -6,7 +6,7 @@ const shareCodecs = ctx.SegueixApp.utils.shareCodecs;
 
 describe('buildAppShareUrl', () => {
     it("genera l'enllaç d'un vídeo apuntant a segueix.cat", () => {
-        expect(shareCodecs.buildAppShareUrl('v=Jwj-SJMm93M')).toBe('https://segueix.cat/?v=Jwj-SJMm93M');
+        expect(shareCodecs.buildAppShareUrl('v=Jwj-SJMm93M')).toBe('https://segueix.github.io/musica/?v=Jwj-SJMm93M');
     });
 
     it("no afegeix cap paràmetre extra (el cache buster trencava el segon d'inici)", () => {
@@ -21,15 +21,15 @@ describe('buildAppShareUrl', () => {
 
     it('afegeix el hash normalitzat', () => {
         expect(shareCodecs.buildAppShareUrl('channel=UC123', 'segueix')).toBe(
-            'https://segueix.cat/?channel=UC123#segueix'
+            'https://segueix.github.io/musica/?channel=UC123#segueix'
         );
         expect(shareCodecs.buildAppShareUrl('channel=UC123', '#segueix')).toBe(
-            'https://segueix.cat/?channel=UC123#segueix'
+            'https://segueix.github.io/musica/?channel=UC123#segueix'
         );
     });
 
     it('retorna la portada quan no hi ha query', () => {
-        expect(shareCodecs.buildAppShareUrl()).toBe('https://segueix.cat/');
+        expect(shareCodecs.buildAppShareUrl()).toBe('https://segueix.github.io/musica/');
     });
 });
 
