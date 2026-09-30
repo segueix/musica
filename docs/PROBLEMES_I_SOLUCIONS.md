@@ -388,6 +388,16 @@ La finestreta flotant en fer scroll cap avall es manté tal com era: és el comp
 
 **Fitxers Afectats:** `js/features/music-queue.js`, `css/styles.css`, `data/artistes-musica.json`, `data/youtube-verified-handles.json`, `data/hidden-videos.json`, `sw.js`.
 
+## [2026-09-30] - Controls de la cua sobre el reproductor: grans, centrats i amb play/pausa
+
+**Canvi:** El mini-control anterior/següent (a baix a l'esquerra, 48 px) passa a ser un grup **centrat** dins el reproductor: anterior · **play/pausa** · següent (72/92/72 px; 56/72 a mòbil; 34/44 a la finestreta flotant). `createQueueNextOverlay()` (`app.js`) + CSS `.queue-controls`. Visibilitat: amb el ratolí sobre el reproductor són **fixos** (`sticky`, sense temporitzador; `pointerenter`/`pointermove`); en marxar es queden ~3 s (`pointerleave`) i s'amaguen; en pausa són sempre visibles; en tàctil, el toc al vídeo els mostra 3 s. Només els botons capturen clics (el grup té `pointer-events: none`), així que la resta del vídeo continua responent a YouTube. La icona play/pausa segueix `data-player-state` (MutationObserver) i la classe `.queue-next-button` es conserva perquè analytics/tv-learning l'escolten.
+
+**Limitació tècnica:** el ratolí sobre un `<iframe>` de YouTube no envia `mousemove` a la pàgina pare (només `pointerenter`/`pointerleave`), per això la lògica és «fix mentre és a sobre + 3 s en marxar» i no «3 s des de l'últim moviment».
+
+**Verificat en Chromium:** amagats sense ratolí; visibles amb ratolí a sobre (i encara fixos 4 s després); 0,8 s després de marxar visibles; 3,8 s després amagats; centrats (0 px de desviació); «anterior» amagat a la primera cançó.
+
+**Fitxers Afectats:** `js/app.js`, `css/styles.css`, `sw.js`.
+
 ## [2026-07-11] - Filera d'icones del header visible en obrir un vídeo al mòbil
 
 **Símptoma:** Al mòbil, en clicar un vídeo del feed i obrir-se la pàgina del reproductor, la filera d'icones del header (Inici, Biblioteca, Historial, Segueix...) es mostrava a sobre del reproductor, ocupant espai vertical útil mentre l'usuari volia veure el vídeo.
