@@ -4,6 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const { classifyMusicContent } = require('./lib/classificar_contingut_musical');
 const { loadContentOverrides, applyContentOverride } = require('./lib/revisio_manual_musical');
+const { loadChannelVideoAllowlist, isChannelVideoAllowed } = require('./lib/filtre_videos_canal');
 const { parseManualDates, stampOriginalYear } = require('./lib/any_original_musical');
 const catalog = require('./lib/cataleg_musical');
 const { resolveChannelDisplayName, findNameOverride, loadNameOverrides, stripOfficialWord } = require('./lib/nom_canal');
@@ -23,6 +24,7 @@ const CONTENT_AUDIT_FILE = path.join(process.cwd(), 'data', 'music-content-audit
 const REVIEW_FILE = path.join(process.cwd(), 'data', 'music-content-review.json');
 const FALSE_SHORTS_FILE = path.join(process.cwd(), 'data', 'falsos-shorts.json');
 const CONTENT_OVERRIDES_FILE = path.join(process.cwd(), 'data', 'music-content-overrides.json');
+const CHANNEL_VIDEO_ALLOWLIST_FILE = path.join(process.cwd(), 'data', 'music-channel-video-allowlist.json');
 const ORIGINAL_DATES_FILE = path.join(process.cwd(), 'data', 'musica-dates.json');
 const CLASSIC_FILE = path.join(process.cwd(), 'data', 'musica-classica.json');
 const CATALOG_STATE_FILE = path.join(process.cwd(), 'data', 'music-catalog-state.json');
@@ -180,6 +182,8 @@ async function main(){
 
   const contentOverrides=loadContentOverrides(CONTENT_OVERRIDES_FILE);
   if(contentOverrides.size) console.log('✍️ Revisions manuals de contingut:',contentOverrides.size);
+  const channelVideoAllowlist=loadChannelVideoAllowlist(CHANNEL_VIDEO_ALLOWLIST_FILE);
+  if(channelVideoAllowlist.size) console.log('🎯 Canals amb llista blanca de vídeos:',channelVideoAllowlist.size);
 
   // Catàleg incremental: el feed anterior és la base. Es conserva (i es torna a verificar) el repertori que ja
   // no cap a la finestra de pujades recents; només un vídeo confirmat com a privat/eliminat se'n va.
@@ -367,6 +371,8 @@ async function main(){
       const carried=!item && unverified.has(videoId) ? previousById.get(videoId) : null;
       const verdict=carried ? 'unverified' : catalog.verdict({requested:videoId,returned:item,batchFailed:false});
       if(verdict==='removed' || (!item && !carried)) continue;
+      const candidateTitle=item?.snippet?.title || carried?.title || '';
+      if(!isChannelVideoAllowed(channelVideoAllowlist,id,candidateTitle)) continue;
       channelPublicCount++;
       publicVideoCount++;
 
