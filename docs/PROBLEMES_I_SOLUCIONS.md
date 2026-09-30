@@ -398,6 +398,12 @@ La finestreta flotant en fer scroll cap avall es manté tal com era: és el comp
 
 **Fitxers Afectats:** `js/app.js`, `css/styles.css`, `sw.js`.
 
+## [2026-09-30] - Noms de grup sense «Oficial»
+
+**Canvi:** El nom mostrat d'un grup no porta mai «Oficial»/«Official» (Aspencat, Buhos, Ginestà, KOP, Txarango). `stripOfficialWord()` a `scripts/lib/nom_canal.js`, aplicada a `cleanChannelDisplayName()` d'`update_music_feed.js` (cada regeneració del feed, per a `feed.json`, `channels-ca.json` i el `channelTitle` dels vídeos) i a `resoldre…` via `resolveChannelDisplayName`. Un nom que només fos «Oficial» es conserva. Les **correccions manuals** de `data/noms-canals.json` continuen manant. Els fitxers generats no s'editen a mà: el canvi arriba amb el proper «Actualitzar feed musical» (es dispara en fer push d'`update_music_feed.js`), o executant `node scripts/corregir_noms_canals.js` en local.
+
+**Fitxers Afectats:** `scripts/lib/nom_canal.js`, `scripts/update_music_feed.js`, `tests/nom-canal.test.js`.
+
 ## [2026-07-11] - Filera d'icones del header visible en obrir un vídeo al mòbil
 
 **Símptoma:** Al mòbil, en clicar un vídeo del feed i obrir-se la pàgina del reproductor, la filera d'icones del header (Inici, Biblioteca, Historial, Segueix...) es mostrava a sobre del reproductor, ocupant espai vertical útil mentre l'usuari volia veure el vídeo.

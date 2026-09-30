@@ -1,7 +1,7 @@
 import { createRequire } from 'node:module';
 import { describe, expect, it } from 'vitest';
 
-const { resolveChannelDisplayName, isHandleName, findNameOverride } = createRequire(import.meta.url)('../scripts/lib/nom_canal.js');
+const { resolveChannelDisplayName, isHandleName, findNameOverride, stripOfficialWord } = createRequire(import.meta.url)('../scripts/lib/nom_canal.js');
 
 describe('nom real del canal enlloc del handle', () => {
     it('substitueix el títol que és només el handle pel nom de l\'artista', () => {
@@ -28,5 +28,13 @@ describe('nom real del canal enlloc del handle', () => {
         expect(findNameOverride(overrides, 'UCabc', '@x')).toBe('Pawn Gang');
         expect(findNameOverride(overrides, 'UCzzz', '@ElsPetsOficial')).toBe('Els Pets');
         expect(findNameOverride(overrides, 'UCzzz', '@altre')).toBe('');
+    });
+
+    it('treu «Oficial»/«Official» del nom del grup', () => {
+        expect(stripOfficialWord('Txarango Oficial')).toBe('Txarango');
+        expect(stripOfficialWord('KOP Official')).toBe('KOP');
+        expect(stripOfficialWord('Buhos (Oficial)')).toBe('Buhos');
+        expect(stripOfficialWord('Oficial')).toBe('Oficial');
+        expect(resolveChannelDisplayName('Ginestà Oficial', '@ginestaoficial', ['Ginestà'])).toBe('Ginestà');
     });
 });
