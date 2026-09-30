@@ -3167,19 +3167,21 @@ body.segueix-tv-playback.segueix-tv-active .chips-bar.home-categories.segueix-tv
 }
 
 .queue-controls {
-    /* anterior/següent: cercles petits. Play/pausa: mateixa mida i forma que el botó gran del centre
-       del reproductor de YouTube (68×48, cantonades arrodonides), per quedar-li exactament a sobre. */
-    --qc-side: 42px;
-    --qc-main-w: 68px;
-    --qc-main-h: 48px;
+    /* Tots els botons són rodons. El play/pausa és sempre al centre exacte del reproductor: la graella
+       té tres columnes (1fr · botó · 1fr) d'amplada simètrica, així que si «anterior» o «següent» no hi
+       són (primera/última cançó) el del mig no es desplaça. */
+    --qc-side: 50px;
+    --qc-main: 66px;
+    --qc-gap: 16px;
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr var(--qc-main) 1fr;
     align-items: center;
-    justify-content: center;
-    gap: clamp(12px, 2vw, 20px);
+    column-gap: var(--qc-gap);
+    width: calc(var(--qc-main) + 2 * (var(--qc-side) + var(--qc-gap)));
     opacity: 0;
     transition: opacity 160ms ease;
     pointer-events: none;
@@ -3205,26 +3207,33 @@ body.segueix-tv-playback.segueix-tv-active .chips-bar.home-categories.segueix-tv
         background 140ms ease;
 }
 
-.queue-controls .queue-toggle-button {
-    width: var(--qc-main-w);
-    height: var(--qc-main-h);
-    border-radius: 12px;
-    background: rgba(33, 33, 33, 0.8);
-    color: #ffffff;
-    box-shadow: none;
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
+.queue-controls .queue-prev-button {
+    grid-column: 1;
+    justify-self: end;
 }
 
-.queue-controls .queue-toggle-button:hover,
-.queue-controls .queue-toggle-button:focus-visible {
-    background: #f00;
-    transform: none;
+.queue-controls .queue-toggle-button {
+    grid-column: 2;
+    width: var(--qc-main);
+    height: var(--qc-main);
+    background: rgba(0, 0, 0, 0.66);
+    box-shadow:
+        0 0 0 2px rgba(255, 255, 255, 0.85),
+        0 6px 24px rgba(0, 0, 0, 0.4);
+}
+
+.queue-controls .queue-toggle-button:hover:not(:focus-visible) {
+    background: rgba(0, 0, 0, 0.82);
 }
 
 .queue-controls .queue-toggle-button svg {
-    width: 26px;
-    height: 26px;
+    width: 30px;
+    height: 30px;
+}
+
+.queue-controls .queue-next-button {
+    grid-column: 3;
+    justify-self: start;
 }
 
 .queue-controls svg {
@@ -3265,8 +3274,8 @@ body.segueix-tv-playback.segueix-tv-active .chips-bar.home-categories.segueix-tv
 }
 
 #videoPlayer.mini-player-active .queue-controls .queue-toggle-button svg {
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
 }
 
 .queue-controls button:hover,
@@ -3311,16 +3320,17 @@ body.segueix-tv-playback.segueix-tv-active .chips-bar.home-categories.segueix-tv
 
 @media (max-width: 768px) {
     .queue-controls {
-        --qc-side: 40px;
+        --qc-side: 44px;
+        --qc-main: 58px;
+        --qc-gap: 12px;
     }
 }
 
 /* A la finestreta flotant els controls són més petits */
 #videoPlayer.mini-player-active .queue-controls {
     --qc-side: 28px;
-    --qc-main-w: 46px;
-    --qc-main-h: 32px;
-    gap: 8px;
+    --qc-main: 38px;
+    --qc-gap: 8px;
 }
 
 @media (prefers-reduced-motion: reduce) {

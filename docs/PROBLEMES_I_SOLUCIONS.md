@@ -438,6 +438,12 @@ La finestreta flotant en fer scroll cap avall es manté tal com era: és el comp
 
 **Fitxers Afectats:** `css/styles.css`, `sw.js`.
 
+## [2026-09-30] - Controls del reproductor: play/pausa rodó, centrat sempre i sense vermell
+
+**Canvi:** Anterior/següent 50 px (44 a mòbil, 28 a la finestreta), play/pausa **rodó** de 66 px (58/38) amb anell blanc, fons fosc i **sense vermell** (en passar-hi el ratolí només s'enfosqueix). **Centrat:** `.queue-controls` és una graella `1fr · var(--qc-main) · 1fr` d'amplada simètrica; abans era un `flex` centrat, i quan «anterior» s'amagava (primera cançó) el grup es re-centrava i el play/pausa quedava desplaçat mitja mida de botó a la dreta. Ara «anterior» (columna 1, `justify-self: end`) i «següent» (columna 3, `start`) no mouen el del mig; el botó de finestra flotant continua fora de flux (`left: 100%`). Mesurat en Chromium: desviació 0 px del play/pausa respecte del centre del reproductor amb i sense «anterior». (Substitueix el rectangle 68×48 de l'entrada anterior.)
+
+**Fitxers Afectats:** `css/styles.css`, `sw.js`.
+
 ## [2026-07-11] - Filera d'icones del header visible en obrir un vídeo al mòbil
 
 **Símptoma:** Al mòbil, en clicar un vídeo del feed i obrir-se la pàgina del reproductor, la filera d'icones del header (Inici, Biblioteca, Historial, Segueix...) es mostrava a sobre del reproductor, ocupant espai vertical útil mentre l'usuari volia veure el vídeo.
