@@ -2222,38 +2222,52 @@ body .follow-btn-pill.is-followed:hover {
     white-space: nowrap;
 }
 
-/* ---------- Cor sobre el reproductor (a dalt a la dreta): m'agrada, sincronitzat amb el de sota ---------- */
+/* ---------- Cor sobre el reproductor: a la línia central, tot a la dreta ----------
+   Surt i desapareix amb els controls de pausa / anterior / següent (mateixes condicions: ratolí sobre el
+   reproductor, en pausa i en tocar el vídeo). Fora d'això no tapa la imatge ni captura clics. */
 .player-heart {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 50%;
+    right: 8px;
     z-index: 2103;
     display: grid;
     place-items: center;
-    width: 44px;
-    height: 44px;
+    width: 56px;
+    height: 56px;
     padding: 0;
     border: 0;
     border-radius: 50%;
     background: rgba(20, 22, 21, 0.62);
     color: #ffffff;
     cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-50%);
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
     transition:
+        opacity 160ms ease,
         transform 0.15s ease,
         background 0.15s ease;
+}
+
+#videoPlayer:has(.queue-next-overlay.is-visible) .player-heart,
+#videoPlayer[data-player-state='2'] .player-heart,
+#videoPlayer.is-heart-awake .player-heart,
+.player-heart:focus-visible {
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .player-heart:hover,
 .player-heart:focus-visible {
     background: rgba(20, 22, 21, 0.85);
-    transform: scale(1.06);
+    transform: translateY(-50%) scale(1.06);
 }
 
 .player-heart svg {
-    width: 24px;
-    height: 24px;
+    width: 30px;
+    height: 30px;
     fill: none;
     stroke: currentColor;
     stroke-width: 14;
@@ -2273,5 +2287,30 @@ body .follow-btn-pill.is-followed:hover {
 @media (prefers-reduced-motion: reduce) {
     .player-heart {
         transition: none;
+    }
+}
+
+/* Mòbil estret: els controls es compacten (botons de 44 px) perquè el cor de la dreta no tapi el botó de
+   finestra flotant, i el cor creix una mica respecte de la versió anterior (46 px). */
+@media (max-width: 460px) {
+    .queue-controls {
+        --qc-side: 44px;
+        --qc-main: 56px;
+        --qc-gap: 8px;
+    }
+
+    .queue-controls .queue-mini-button {
+        margin-left: 4px;
+    }
+
+    .player-heart {
+        right: 0;
+        width: 46px;
+        height: 46px;
+    }
+
+    .player-heart svg {
+        width: 26px;
+        height: 26px;
     }
 }

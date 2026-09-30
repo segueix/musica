@@ -301,6 +301,19 @@
             attributes: true,
             attributeFilter: ['data-playing-video-id'],
         });
+        // Amb un sol vídeo (sense controls de cua) el cor surt en tocar/passar el ratolí i s'amaga als ~3 s,
+        // com els controls de pausa/anterior/següent. Amb cua, el CSS l'acompanya amb els seus controls.
+        let awakeTimer = 0;
+        const wake = (sticky = false) => {
+            player.classList.add('is-heart-awake');
+            window.clearTimeout(awakeTimer);
+            if (!sticky) awakeTimer = window.setTimeout(() => player.classList.remove('is-heart-awake'), 3000);
+        };
+        player.addEventListener('pointerdown', () => wake());
+        player.addEventListener('pointerenter', event => event.pointerType === 'mouse' && wake(true));
+        player.addEventListener('pointermove', event => event.pointerType === 'mouse' && wake(true));
+        player.addEventListener('pointerleave', event => event.pointerType === 'mouse' && wake());
+
         // El cor de sota (o el d'una targeta) també actualitza el de sobre
         document.addEventListener('click', event => {
             if (event.target?.closest?.('#likeToggle, .like-action')) window.setTimeout(ensure, 60);
