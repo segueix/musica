@@ -10546,7 +10546,6 @@
       "name": "Mar Pujol",
       "aliases": [],
       "genres": [
-        "Pop",
         "Cançó d'autor"
       ],
       "territories": [],
@@ -10572,10 +10571,11 @@
       "active": false,
       "sources": [
         "https://www.3cat.cat/3cat/catorze-veus-per-entendre-el-futur-del-pop-catala/audio/1244294/",
-        "youtube:manual-verified"
+        "youtube:manual-verified",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-28T15:55:18.493Z",
-      "notes": "Inclosa entre les noves veus del pop català.",
+      "notes": "Inclosa entre les noves veus del pop català. Cantautora: el gènere és manual (Cançó d'autor).",
       "genresRaw": [
         "Pop d'autor"
       ]
