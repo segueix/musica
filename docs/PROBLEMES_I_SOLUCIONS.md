@@ -430,6 +430,14 @@ La finestreta flotant en fer scroll cap avall es manté tal com era: és el comp
 
 **Fitxers Afectats:** `js/app.js`, `sw.js`.
 
+## [2026-09-30] - Controls del reproductor més petits i play/pausa com el de YouTube
+
+**Canvi:** `.queue-controls` (css/styles.css): anterior/següent passen de 72 a **42 px** (40 a mòbil, 28 a la finestreta) i el mini-botó de finestra flotant a 0,7×. El play/pausa deixa de ser un cercle blanc de 92 px i copia el **botó gran central de l'embed de YouTube**: rectangle **68×48 px**, cantonades de 12 px, fons `rgba(33,33,33,.8)` i vermell `#f00` en passar-hi el ratolí, icona blanca de 26 px, al centre exacte del reproductor, de manera que en pausa queda just a sobre del de YouTube i no es veuen dos botons.
+
+**Suposició:** «el pause del reproductor original» s'ha interpretat com aquest botó central (no la barra de controls de baix, que és dins l'iframe i no es pot moure). Les mides/colors són les de la interfície pública de YouTube i **no s'han pogut comparar amb l'embed real** (aquí no es carrega YouTube): si no coincideix al mil·límetre, els valors són `--qc-main-w`, `--qc-main-h` i `border-radius` de `.queue-toggle-button`.
+
+**Fitxers Afectats:** `css/styles.css`, `sw.js`.
+
 ## [2026-07-11] - Filera d'icones del header visible en obrir un vídeo al mòbil
 
 **Símptoma:** Al mòbil, en clicar un vídeo del feed i obrir-se la pàgina del reproductor, la filera d'icones del header (Inici, Biblioteca, Historial, Segueix...) es mostrava a sobre del reproductor, ocupant espai vertical útil mentre l'usuari volia veure el vídeo.
