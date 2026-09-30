@@ -53,6 +53,7 @@
     const isEphemeral = id => id === QUEUE_ID || id === TV_ID;
     const channelOf = video => String(video?.channelId || '');
     const artistOf = video => getVideoArtistKey(video);
+    const isClassicSong = video => Boolean(window.SegueixMusicCategories?.isClassicVideo?.(video));
     // La ràdio només ha de portar cançons (fora concerts complets, pel·lícules, entrevistes...).
     const isSong = video => {
         const music = window.SegueixMusicCategories;
@@ -152,7 +153,9 @@
             }
         });
 
-        let upcoming = unique;
+        // La música realment antiga surt amb menys freqüència (1 de cada 5; 1 de cada 2 si la cançó
+        // que sona ja és antiga: qui escolta clàssics vol clàssics).
+        let upcoming = limitClassicFrequency(unique, { every: isClassicSong(video) ? 2 : 5 });
         if (upcoming.length + 1 < MIN_QUEUE_LENGTH) {
             const missing = MIN_QUEUE_LENGTH - 1 - upcoming.length;
             upcoming = spreadVideosByArtist([...upcoming, ...repeated.slice(0, missing)], {

@@ -66,10 +66,13 @@
     // actualitat i escoltes. Cada vídeo perd la meitat del seu pes cada STYLE_HALF_LIFE_DAYS,
     // així que mana l'actualitat però una cançó molt escoltada una mica més antiga puja.
     const STYLE_HALF_LIFE_DAYS = 30;
+    const CLASSIC_SCORE_FACTOR = 0.2;
     function styleScore(video, now) {
         const ageDays = Math.max(0, (now - timestampOf(video)) / 86400000);
         const views = Number(video?.viewCount || video?.views || 0);
-        return (1 + Math.log10(1 + views)) * Math.pow(0.5, ageDays / STYLE_HALF_LIFE_DAYS);
+        const score = (1 + Math.log10(1 + views)) * Math.pow(0.5, ageDays / STYLE_HALF_LIFE_DAYS);
+        // La música realment antiga puntua molt menys perquè no eclipsi la dels darrers anys
+        return window.SegueixMusicCategories?.isClassicVideo?.(video) ? score * CLASSIC_SCORE_FACTOR : score;
     }
     function sortByStyleScore(videos) {
         const now = Date.now();
@@ -95,7 +98,8 @@
                 firsts.push(video);
             }
         });
-        return spreadVideosByArtist([...firsts, ...rest].slice(0, size));
+        // Com a molt 1 de cada 5 és música realment antiga (abans de retallar la fila)
+        return spreadVideosByArtist(limitClassicFrequency([...firsts, ...rest]).slice(0, size));
     }
 
     function buildStyleRow(videos, feed, category) {

@@ -7120,6 +7120,8 @@ function renderFeedLegacyImpl() {
         return seconds !== null && seconds > 0;
     });
 
+    // Música realment antiga: com a molt 1 de cada 5 entre la dels darrers anys.
+    filtered = limitClassicFrequency(filtered);
     // Varietat: mai dues cançons seguides del mateix grup/artista.
     filtered = spreadVideosByArtist(filtered);
 

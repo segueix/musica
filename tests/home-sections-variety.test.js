@@ -6,6 +6,7 @@ const ctx = loadScript('js/features/home-sections.js', {
     SegueixApp: { features: {}, state: {} },
     getVideoArtistKey: helpers.getVideoArtistKey,
     spreadVideosByArtist: helpers.spreadVideosByArtist,
+    limitClassicFrequency: helpers.limitClassicFrequency,
 });
 const sections = (ctx.SegueixApp || ctx.window?.SegueixApp).features.homeSections;
 

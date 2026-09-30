@@ -404,6 +404,16 @@ La finestreta flotant en fer scroll cap avall es manté tal com era: és el comp
 
 **Fitxers Afectats:** `scripts/lib/nom_canal.js`, `scripts/update_music_feed.js`, `tests/nom-canal.test.js`.
 
+## [2026-09-30] - La música realment antiga sortia massa entre la dels darrers anys
+
+**Símptoma:** Cançons de fa dècades (Nova Cançó, rock dels 80-90) apareixien amb la mateixa freqüència que les novetats.
+
+**Causa Arrel:** `publishedAt` no serveix per detectar-les: el catàleg clàssic (Raimon, Llach, Ovidi, Serrat...) es va pujar fa poc (canals Topic), així que semblaven recents. Només el 7 % tenia 8+ anys per data.
+
+**Solució Implementada:** «Antic» = artista de `data/musica-classica.json` (22 artistes, editable; nom d'`artistes-musica.json` sense accents/majúscules) **o** vídeo de fa 8+ anys (`anysAntic`). `SegueixMusicCategories.isClassicVideo()` (`js/music-categories.js`) i `limitClassicFrequency()` (`js/utils/helpers.js`): com a molt **1 de cada 5** és antic, conservant l'ordre de cada grup (els antics que sobren van al final). S'aplica a les llistes de categoria (`renderFeedLegacyImpl`), a les files de la portada (`pickVarietyRow`, a més de `CLASSIC_SCORE_FACTOR = 0.2` a `styleScore`) i a la ràdio (`buildQueue`: 1 de cada 5, o 1 de cada 2 si la cançó que sona ja és antiga). Amb el feed actual (23 % d'antigues) el top 20 d'una categoria en porta ~4. Per ajustar: canvia `every` o afegeix/treu artistes del JSON. **No afecta** l'arxiu de sota les categories (és antic per naturalesa).
+
+**Fitxers Afectats:** `data/musica-classica.json`, `js/music-categories.js`, `js/utils/helpers.js`, `js/app.js`, `js/features/home-sections.js`, `js/features/music-queue.js`, `tests/helpers.test.js`, `tests/home-sections-variety.test.js`, `sw.js`.
+
 ## [2026-07-11] - Filera d'icones del header visible en obrir un vídeo al mòbil
 
 **Símptoma:** Al mòbil, en clicar un vídeo del feed i obrir-se la pàgina del reproductor, la filera d'icones del header (Inici, Biblioteca, Historial, Segueix...) es mostrava a sobre del reproductor, ocupant espai vertical útil mentre l'usuari volia veure el vídeo.
