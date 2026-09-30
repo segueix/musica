@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-09-25T17:26:49.166Z",
+  "generatedAt": "2026-09-30T10:40:24.171Z",
   "summary": {
-    "total": 52,
-    "musicalClar": 50,
-    "revisar": 2,
+    "total": 47,
+    "musicalClar": 47,
+    "revisar": 0,
     "possibleFalsPositiu": 0
   },
   "artists": [
@@ -262,27 +262,6 @@
       "verdict": "musical-clar",
       "reasons": [
         "Wikidata: ocupació musical explícita"
-      ]
-    },
-    {
-      "name": "Dagoll Dagom",
-      "wikidataId": "Q2838792",
-      "musicbrainzId": "6675e84e-ad9e-4100-89dc-5170c8f609ed",
-      "sources": [
-        "https://www.wikidata.org/wiki/Q2838792",
-        "wikidata:languages-spoken-catalan",
-        "wikidata:performed-catalan-work"
-      ],
-      "youtubeChannels": 0,
-      "instances": [
-        "grup de teatre"
-      ],
-      "occupations": [],
-      "musicOccupations": [],
-      "musicTypes": [],
-      "verdict": "revisar",
-      "reasons": [
-        "Consta com a intèrpret d’obra en català però sense ocupació/tipus musical explícit"
       ]
     },
     {
@@ -752,64 +731,6 @@
       ]
     },
     {
-      "name": "Marcel·lí Antúnez Roca",
-      "wikidataId": "Q3845733",
-      "musicbrainzId": "73d824e7-eeba-482f-ab63-b0497b775b77",
-      "sources": [
-        "https://www.wikidata.org/wiki/Q3845733",
-        "wikidata:languages-spoken-catalan",
-        "wikidata:performed-catalan-work"
-      ],
-      "youtubeChannels": 0,
-      "instances": [
-        "ésser humà"
-      ],
-      "occupations": [
-        "artista",
-        "actor de veu",
-        "director de cinema",
-        "actor de cinema",
-        "guionista de cinema"
-      ],
-      "musicOccupations": [],
-      "musicTypes": [],
-      "verdict": "revisar",
-      "reasons": [
-        "Consta com a intèrpret d’obra en català però sense ocupació/tipus musical explícit"
-      ]
-    },
-    {
-      "name": "Marina Rossell",
-      "wikidataId": "Q452094",
-      "musicbrainzId": "208ba7b5-cf9e-4660-976b-0e7a7855aa46",
-      "sources": [
-        "https://www.wikidata.org/wiki/Q452094",
-        "wikidata:languages-spoken-catalan",
-        "wikidata:performed-catalan-work"
-      ],
-      "youtubeChannels": 1,
-      "instances": [
-        "ésser humà"
-      ],
-      "occupations": [
-        "guitarrista",
-        "músic",
-        "músic d'estudi",
-        "cantant"
-      ],
-      "musicOccupations": [
-        "http://www.wikidata.org/entity/Q177220",
-        "http://www.wikidata.org/entity/Q639669",
-        "http://www.wikidata.org/entity/Q855091",
-        "http://www.wikidata.org/entity/Q55960555"
-      ],
-      "musicTypes": [],
-      "verdict": "musical-clar",
-      "reasons": [
-        "Wikidata: ocupació musical explícita"
-      ]
-    },
-    {
       "name": "Mariona Escoda i Sendra",
       "wikidataId": "Q112660609",
       "musicbrainzId": "938564b6-c3a0-4824-8f3d-86423832b80a",
@@ -877,56 +798,6 @@
       ],
       "musicOccupations": [
         "http://www.wikidata.org/entity/Q36834",
-        "http://www.wikidata.org/entity/Q177220"
-      ],
-      "musicTypes": [],
-      "verdict": "musical-clar",
-      "reasons": [
-        "Wikidata: ocupació musical explícita"
-      ]
-    },
-    {
-      "name": "Nerea Rodríguez i Rodríguez",
-      "wikidataId": "Q59616984",
-      "musicbrainzId": "68c9e00b-b9dd-47c4-a8d5-4c306abc3e15",
-      "sources": [
-        "https://www.wikidata.org/wiki/Q59616984",
-        "wikidata:native-language-catalan",
-        "wikidata:native-language-catalan-musician"
-      ],
-      "youtubeChannels": 1,
-      "instances": [
-        "ésser humà"
-      ],
-      "occupations": [
-        "cantant"
-      ],
-      "musicOccupations": [
-        "http://www.wikidata.org/entity/Q177220"
-      ],
-      "musicTypes": [],
-      "verdict": "musical-clar",
-      "reasons": [
-        "Wikidata: ocupació musical explícita"
-      ]
-    },
-    {
-      "name": "Núria López i Fàbrega",
-      "wikidataId": "Q113137519",
-      "musicbrainzId": "ae47baa1-fdf6-493f-91ba-5e171079f6b1",
-      "sources": [
-        "https://www.wikidata.org/wiki/Q113137519",
-        "wikidata:performed-catalan-work"
-      ],
-      "youtubeChannels": 1,
-      "instances": [
-        "ésser humà"
-      ],
-      "occupations": [
-        "actor de teatre musical",
-        "cantant"
-      ],
-      "musicOccupations": [
         "http://www.wikidata.org/entity/Q177220"
       ],
       "musicTypes": [],
