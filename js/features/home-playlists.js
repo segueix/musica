@@ -43,6 +43,9 @@
     const ARROW_RIGHT =
         '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="m9 6 6 6-6 6"/></svg>';
 
+    const SHARE_ICON =
+        '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M18 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM6 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM18 22a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>';
+
     function render() {
         container = container || document.getElementById('homePlaylists');
         if (!container) return;
@@ -68,14 +71,17 @@
                     .slice(0, MAX_LISTS)
                     .map(
                         list => `
-                    <button type="button" class="hp-card" data-hp-play="${escapeText(list.id)}" data-hp-count="${list.videos.length}" aria-label="Reprodueix ${escapeText(list.name)}">
-                        <span class="hp-cover">
-                            ${coverMarkup(list.videos)}
-                            <span class="hp-play" aria-hidden="true"></span>
-                        </span>
-                        <span class="hp-name">${escapeText(list.name || 'Llista')}</span>
-                        <span class="hp-meta">${list.videos.length} ${list.videos.length === 1 ? 'cançó' : 'cançons'}</span>
-                    </button>`
+                    <div class="hp-item">
+                        <button type="button" class="hp-card" data-hp-play="${escapeText(list.id)}" data-hp-count="${list.videos.length}" aria-label="Reprodueix ${escapeText(list.name)}">
+                            <span class="hp-cover">
+                                ${coverMarkup(list.videos)}
+                                <span class="hp-play" aria-hidden="true"></span>
+                            </span>
+                            <span class="hp-name">${escapeText(list.name || 'Llista')}</span>
+                            <span class="hp-meta">${list.videos.length} ${list.videos.length === 1 ? 'cançó' : 'cançons'}</span>
+                        </button>
+                        ${list.videos.length ? `<button type="button" class="hp-share" data-hp-share="${escapeText(list.id)}" aria-label="Comparteix ${escapeText(list.name)}" title="Comparteix la llista">${SHARE_ICON}</button>` : ''}
+                    </div>`
                     )
                     .join('')}
             </div>
@@ -126,6 +132,11 @@
         const add = event.target.closest('[data-hp-add]');
         if (add) {
             openCreateForm(add.closest('[data-hp-add-wrap]'));
+            return;
+        }
+        const share = event.target.closest('[data-hp-share]');
+        if (share) {
+            if (typeof shareSegueixPlaylistById === 'function') shareSegueixPlaylistById(share.dataset.hpShare);
             return;
         }
         const play = event.target.closest('[data-hp-play]');

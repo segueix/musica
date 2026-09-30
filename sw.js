@@ -16,7 +16,7 @@
 // migrant els clients automàticament.
 
 // === AUTO-GENERAT per scripts/actualitzar_versio_sw.js — NO EDITAR MANUALMENT ===
-const CACHE_VERSION = '136a0a379e63';
+const CACHE_VERSION = '95788a06a4cd';
 const STATIC_ASSETS = [
     './',
     './index.html',
@@ -39,6 +39,7 @@ const STATIC_ASSETS = [
     './js/utils/id-codecs.js',
     './js/utils/share-codecs.js',
     './js/utils/backup-codecs.js',
+    './js/utils/share-card.js',
     './js/utils/qr-share.js',
     './js/utils/config-feedback.js',
     './js/features/navigation.js',

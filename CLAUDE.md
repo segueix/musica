@@ -37,6 +37,9 @@ js/
 │   ├── helpers.js           # Funcions pures globals (isMatch, getVideoDisplayDuration, batchRenderCards...)
 │   ├── storage.js           # Constants localStorage + funcions cache (saveFeedCache, loadFeedCache...)
 │   ├── id-codecs.js         # Encode/decode IDs ofuscats (SegueixApp.utils.idCodecs)
+│   ├── share-codecs.js      # Enllaços de compartició (?importData=, base segueix.github.io/musica/)
+│   ├── share-card.js        # Targeta de compartir: model pur + dibuix en canvas + QR amb la icona (UMD)
+│   ├── qr-share.js          # Finestra del QR (mostra la targeta; descarrega/comparteix/copia)
 │   └── config-feedback.js   # showConfigFeedback/hideConfigFeedback (DOM)
 ├── features/
 │   ├── navigation.js        # Navegació SPA (IIFE + registerRuntime)
@@ -287,6 +290,14 @@ const likes = ctx2.SegueixApp.features.likes;
 - `#playlistsPage` es pinta per aquest ordre: **Historial** (tres últimes cançons amb quan s'han escoltat + símbol d'expandir per períodes), **Artistes** (només els seguits) i **Llistes de reproducció**. L'historial i els artistes els pinta `SegueixApp.features.myMusic.render()` a `#myMusic` (hook `renderMyMusic` de `navigation.showPlaylists()`); les llistes, `renderPlaylistsPage()`.
 - **No existeixen** les pestanyes de biblioteca, les categories intel·ligents (categoria exacta per cometes) ni la pestanya/creació de programes a Artistes: no els hi tornis a posar. `setActiveFollowTab()` només accepta `all` | `following`. Verificació opt-in: `node tests/browser/verificar-la-teva-musica.js`.
 
+### Compartir ràdios i llistes (2026-09-30)
+
+- Hi ha botó de compartir (`[data-mq-share]`, icona `share-2`) a la ràdio, a la llista que sona, a les targetes de «Les teves llistes» (`.hp-share`) i a la biblioteca. Tot passa per `_shareVideoList()` (app.js) → `_showShareOptionsModal()`; les llistes es comparteixen **per ID** (`shareSegueixPlaylistById`), mai posant el nom dins d'un atribut HTML.
+- Els enllaços són `SHARE_BASE_URL = 'https://segueix.github.io/musica/'` (`share-codecs.js`); payload `radio` (30 primeres cançons) o `playlist`. **No hi tornis a posar `segueix.cat`** (és Segueix youtubers).
+- «Compartir» envia **només una imatge** (targeta de `js/utils/share-card.js`: icona, «Segueix!» com l'obertura, «Ràdio» / «Llista de reproducció», nom i QR), sense text ni enllaç; «Només l'enllaç» envia l'URL amb el títol «Ràdio · nom». WhatsApp sempre escriu el text d'un enllaç: no el tornis a posar a la imatge ni al `text` del missatge.
+- El QR es genera a la mida en què es dibuixa i amb mòduls d'un nombre enter de píxels; mòduls foscos sobre crema, icona al mig. No el reescalis. Per sobre de `MAX_QR_URL_LENGTH` no hi ha QR.
+- Les imatges que carrega `share-card.js` es resolen respecte al seu `<script>` (l'app canvia la ruta de la URL en reproduir). Verificació opt-in: `node tests/browser/verificar-compartir.js`. Detall i trampes: `docs/PROBLEMES_I_SOLUCIONS.md` (2026-09-30, «Compartir una ràdio o una llista»).
+
 ### Portada de Segueix Música (2026-09-30)
 
 - La vista «Novetats» és **Inici** (la interfície no diu «Novetats»; l'id intern es conserva). `renderVideos()` crida `SegueixApp.features.portada.render(videosGrid, videos, { feed, all })`; si no hi és, cau a `homeSections` i a la graella.
@@ -307,6 +318,8 @@ const likes = ctx2.SegueixApp.features.likes;
 | `music-queue.js` | «La teva ràdio», canvi de mode sense interrompre, afegir a la cua, reproduir selecció, ràdio d'una cerca, desar la ràdio com a llista |
 | `song-title.js` | Títols nets: marques de videoclip/oficial, artista al davant/darrere, conservador, idempotent sobre tot el feed |
 | `my-music.js` | Historial (tres últimes + períodes), artistes seguits, temps relatiu en català, HTML, no-herència |
+| `share-card.js` | model (Ràdio / Llista de reproducció), tall de línies, ajust de mida, QR (correcció d'errors, contrast), marca |
+| `music-queue.js` (compartir) | dades que es comparteixen, botó i grup de símbols, capçalera alineada (CSS) |
 | `search-results.js` | Model de cerca (artistes primer), coincidències sense soroll, HTML del menú/pàgina, dedupe, no-herència |
 | `music-selection.js` | antiguitat real, estrenes, puntuació, límits d'antigues/artista/descans, duplicats, preferència per música antiga, «Torna-hi» |
 | `music-signals.js` | progrés efectiu, escolta qualificada, finalització, repeticions voluntàries, salts, fusió idempotent, migració feble |
@@ -344,6 +357,7 @@ const likes = ctx2.SegueixApp.features.likes;
 ## Fitxers generats (no editar manualment)
 
 - `feed_updates.js` — generat per `scripts/update_feed.js` (al `.gitignore`, **no trackejat**: viu al disc però fora de git)
+- `img/compartir.png` — imatge de les previsualitzacions d'enllaç (1200×630), generada per `scripts/generar_imatge_compartir.js` (Playwright + Google Fonts); **sí que és versionat** i només es regenera si canvia la marca
 - `data/feed.json` — generat pel pipeline de sync
 - `data/recent-feed.json` — feed reduït generat pel pipeline; al `.gitignore`, **no trackejat** ni llegit per cap client (només l'usen els scripts que el generen)
 - `data/support.json` — generat per `scripts/extreure_suport.js`

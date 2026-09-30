@@ -1765,6 +1765,44 @@ body:has(#homePage.is-portada) .category-selector {
     scroll-padding-inline: calc(var(--pt-gutter) + var(--safe-left));
 }
 
+/* Cada targeta de llista va dins un contenidor perquè el botó de compartir no quedi dins del botó de reproduir */
+.hp-item {
+    position: relative;
+    display: flex;
+    flex: 0 0 156px;
+    scroll-snap-align: start;
+}
+
+.hp-item > .hp-card {
+    flex: 1 1 auto;
+    min-width: 0;
+    max-width: none;
+}
+
+.hp-share {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 1px solid var(--pt-line);
+    border-radius: 50%;
+    background: rgba(20, 22, 21, 0.78);
+    color: var(--pt-text);
+    cursor: pointer;
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+}
+
+.hp-share:hover,
+.hp-share:focus-visible {
+    border-color: var(--pt-accent);
+    color: var(--pt-accent);
+}
+
 .hp-card {
     flex-basis: 156px;
     max-width: none;
@@ -2039,15 +2077,6 @@ body .follow-btn-pill.is-followed:hover {
 
 .mq-regenerate:hover {
     background: var(--pt-surface-3);
-}
-
-@media (max-width: 768px) {
-    /* Amb els dos botons, l'origen de la ràdio (amb els controls d'estil i el desar com a llista) passa a la fila de sota */
-    .mq-source {
-        order: 3;
-        flex: 1 0 100%;
-        white-space: normal;
-    }
 }
 
 .mq-note {
@@ -2335,16 +2364,31 @@ body .follow-btn-pill.is-followed:hover {
     flex-wrap: wrap;
     align-items: center;
     gap: 8px;
+    min-height: 44px;
     overflow: visible;
+    line-height: normal;
     white-space: normal;
     color: var(--pt-text);
     font-size: 0.9375rem;
+}
+
+/* Els símbols (afegir estil, desar com a llista, compartir) van sempre junts: mai un de sol a la fila de sota */
+.mq-tools:empty {
+    display: none;
+}
+
+.mq-tools {
+    display: inline-flex;
+    flex: none;
+    align-items: center;
+    gap: 8px;
 }
 
 .mq-style {
     display: inline-flex;
     align-items: center;
     gap: 4px;
+    max-width: 100%;
     min-height: 36px;
     padding: 0 14px;
     border: 1px solid var(--pt-accent);
@@ -2388,7 +2432,8 @@ body .follow-btn-pill.is-followed:hover {
 }
 
 .mq-add-style,
-.mq-save-list {
+.mq-save-list,
+.mq-share {
     display: inline-grid;
     place-items: center;
     width: 44px;
@@ -2405,7 +2450,9 @@ body .follow-btn-pill.is-followed:hover {
 .mq-add-style:focus-visible,
 .mq-add-style[aria-expanded='true'],
 .mq-save-list:hover,
-.mq-save-list:focus-visible {
+.mq-save-list:focus-visible,
+.mq-share:hover,
+.mq-share:focus-visible {
     border-color: var(--pt-accent);
     background: var(--pt-surface-3);
     color: var(--pt-accent);
@@ -2415,6 +2462,38 @@ body .follow-btn-pill.is-followed:hover {
 .mq-save-list.is-saved {
     border-color: var(--pt-accent);
     color: var(--pt-accent);
+}
+
+/* Capçalera de la ràdio: el títol («Ràdio» / «Llista») s'alinea amb la primera fila del nom i dels botons, mai centrat
+   respecte a un nom que s'embolcalla. El panell mesura el seu propi ample (a escriptori viu en una columna estreta). */
+.mq {
+    container: mq / inline-size;
+}
+
+.mq-head {
+    align-items: flex-start;
+}
+
+.mq-heading {
+    margin: 0;
+    line-height: 44px;
+}
+
+.mq-source {
+    line-height: 44px;
+}
+
+@container mq (max-width: 639px) {
+    /* Títol i botons a la primera fila; el nom de la ràdio (amb els símbols) a tot l'ample de la segona */
+    .mq-heading {
+        flex: 1;
+    }
+
+    .mq-source {
+        order: 3;
+        flex: 1 0 100%;
+        white-space: normal;
+    }
 }
 
 .mq-style-picker {

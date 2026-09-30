@@ -9,7 +9,9 @@
     const app = window.SegueixApp || (window.SegueixApp = {});
     app.utils = app.utils || {};
 
-    const SHARE_BASE_URL = 'https://segueix.cat/';
+    // Els enllaços de compartició obren Segueix Música, no la web de Segueix youtubers.
+    // De moment, allotjat a GitHub Pages; si canvia el domini, només cal tocar aquesta constant.
+    const SHARE_BASE_URL = 'https://segueix.github.io/musica/';
     const PAYLOAD_VERSION = 1;
     const MAX_SHARE_START_SECONDS = 24 * 60 * 60;
 
@@ -40,7 +42,8 @@
     }
 
     // Construeix el payload mínim per a compartició ràpida
-    // data: { type: 'playlist'|'category'|'history', name: string, items: Array }
+    // data: { type: 'playlist'|'radio'|'category'|'history', name: string, items: Array }
+    //       («radio» i «playlist» porten ID de vídeos; la ràdio es reprodueix tal com va, la llista es desa)
     function buildImportPayload(data) {
         const sourceItems = Array.isArray(data.items) ? data.items : [];
         const normalizedItems =
