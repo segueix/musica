@@ -77,8 +77,9 @@ const YouTubeAPI = {
             return false;
         }
 
+        // Categories de la base d'artistes i títol net (l'original queda a `originalTitle`)
         this.feedVideos = this.filterHiddenVideos(feedItems).map(video =>
-            window.SegueixMusicCategories?.decorateVideo?.(video) || video
+            window.SegueixMusicCategories?.decorateVideo?.(video, this.artistNamesOf(feedChannelsMap?.[video.channelId])) || video
         );
 
         if (feedChannelsMap) {
@@ -132,6 +133,12 @@ const YouTubeAPI = {
         return true;
     },
 
+    // Noms de l'artista d'un canal del feed (nom del canal i noms de la base d'artistes).
+    artistNamesOf(channel) {
+        if (!channel) return [];
+        return [channel.name, ...(Array.isArray(channel.artists) ? channel.artists : [])].filter(Boolean);
+    },
+
     restoreFeedSnapshot() {
         try {
             const raw = localStorage.getItem(FEED_SNAPSHOT_KEY);
@@ -141,7 +148,11 @@ const YouTubeAPI = {
             const videos = this.filterHiddenVideos(Array.isArray(parsed?.videos) ? parsed.videos : []);
             if (channels.length === 0 || videos.length === 0) return false;
             this.feedChannels = channels;
-            this.feedVideos = videos;
+            // Un snapshot d'una versió anterior pot portar els títols sense netejar
+            const names = new Map(channels.map(channel => [String(channel?.id), this.artistNamesOf(channel)]));
+            this.feedVideos = videos.map(
+                video => window.SegueixMusicCategories?.cleanVideoTitle?.(video, names.get(String(video?.channelId))) || video
+            );
             this.feedLoaded = true;
             console.log(`iuTube: Feed recuperat des de snapshot local (${videos.length} vídeos)`);
             return true;

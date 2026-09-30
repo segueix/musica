@@ -60,6 +60,7 @@ js/
 │   ├── music-queue.js       # Ràdio/cua: motor de selecció, mode de descoberta, «Afegeix a la cua», reproduir una selecció
 │   └── home-playlists.js    # «Les teves llistes» de la portada
 ├── config.js                # Constants CONFIG (branding, theme, features, layout, categories)
+├── song-title.js            # Títols nets: treu l'artista i «videoclip / vídeo / oficial» (UMD, funcions pures)
 ├── youtube.js               # YouTubeAPI object — feed fetch, cache, parsers
 ├── data.js                  # VIDEOS[], CHANNELS[], formatViews(), formatDate()
 ├── channels-ca.json         # Mapatge canals
@@ -276,6 +277,11 @@ const likes = ctx2.SegueixApp.features.likes;
 - «Genera una ràdio amb aquests resultats» (a dalt de tot) crida `musicQueue.startFromSearch(model.songs, { query })`: ràdio amb les cançons trobades, **sense restricció d'estil** (`policy: 'search'` al motor), sense «+» d'estils; «Barreja» es queda dins dels resultats. Detall a `docs/MUSICA_SELECCIO.md` («Ràdio d'una cerca»).
 - Els clics de la pàgina de resultats es lliguen al contenidor nou (`bindSearchResults`), mai a `#videosGrid`. Verificació opt-in: `node tests/browser/verificar-cerca.js`.
 
+### Títols de cançó (2026-09-30)
+
+- Els títols que es **mostren** no porten el nom de l'artista ni «videoclip / vídeo / oficial»: `js/song-title.js` (`SegueixSongTitle.cleanTitle/cleanVideo`) els neteja al carregar el feed (`decorateVideo`) i en llegir historial, llistes i m'agrades. El títol de YouTube és a `video.originalTitle`.
+- **Si necessites les marques del títol** (videoclip oficial, lyric, directe…) llegeix `video.originalTitle || video.title` (com fa `home-sections.isOfficialClip`). Per compartir, usa `getShareLabel()` («Artista - Cançó»). Regles, casos i trampes: `docs/PROBLEMES_I_SOLUCIONS.md` (2026-09-30, «Els títols de les cançons»). Verificació opt-in: `node tests/browser/verificar-titols.js`.
+
 ### La teva música (2026-09-30)
 
 - `#playlistsPage` es pinta per aquest ordre: **Historial** (tres últimes cançons amb quan s'han escoltat + símbol d'expandir per períodes), **Artistes** (només els seguits) i **Llistes de reproducció**. L'historial i els artistes els pinta `SegueixApp.features.myMusic.render()` a `#myMusic` (hook `renderMyMusic` de `navigation.showPlaylists()`); les llistes, `renderPlaylistsPage()`.
@@ -299,6 +305,7 @@ const likes = ctx2.SegueixApp.features.likes;
 | `discovery.js` | mode persistit, perfil, ordenació per mode, radar, Torna-hi, Comença per aquí, estils |
 | `portada.js` | model de la portada, HTML de seccions i targetes, dates honestes, escapament |
 | `music-queue.js` | «La teva ràdio», canvi de mode sense interrompre, afegir a la cua, reproduir selecció, ràdio d'una cerca, desar la ràdio com a llista |
+| `song-title.js` | Títols nets: marques de videoclip/oficial, artista al davant/darrere, conservador, idempotent sobre tot el feed |
 | `my-music.js` | Historial (tres últimes + períodes), artistes seguits, temps relatiu en català, HTML, no-herència |
 | `search-results.js` | Model de cerca (artistes primer), coincidències sense soroll, HTML del menú/pàgina, dedupe, no-herència |
 | `music-selection.js` | antiguitat real, estrenes, puntuació, límits d'antigues/artista/descans, duplicats, preferència per música antiga, «Torna-hi» |

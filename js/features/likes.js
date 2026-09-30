@@ -21,6 +21,9 @@
 
     // ==================== FUNCIONS INTERNES ====================
 
+    // Les cançons desades abans de netejar els títols porten «Artista - Cançó (Videoclip Oficial)»: es neteja en llegir.
+    const withCleanTitle = video => window.SegueixMusicCategories?.cleanVideoTitle?.(video) || video;
+
     function getLikedVideos() {
         const stored = localStorage.getItem(LIKED_VIDEOS_STORAGE_KEY);
         if (!stored) {
@@ -28,7 +31,7 @@
         }
         try {
             const parsed = JSON.parse(stored);
-            return Array.isArray(parsed) ? parsed : [];
+            return Array.isArray(parsed) ? parsed.map(withCleanTitle) : [];
         } catch (error) {
             console.warn('No es pot llegir catube_liked_videos', error);
             return [];

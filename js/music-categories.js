@@ -32,6 +32,8 @@
     // Categoria principal de l'artista per canal: la del PRIMER gènere de la base d'artistes (l'ordre de
     // `categories` és el de CATEGORY_GROUPS, no el de prioritat de l'artista).
     const primaryByChannel = new Map();
+    // Noms de l'artista per canal (nom de la base d'artistes i àlies): per treure'l dels títols de les cançons.
+    const namesByChannel = new Map();
     let ready = false;
     let initPromise = null;
 
@@ -107,6 +109,7 @@
                 if (primary) primaryByChannel.set(id, primary);
             }
             byChannel.set(id, unique([...(byChannel.get(id) || []), ...categories]));
+            namesByChannel.set(id, unique([artist.name, channel.name, ...(Array.isArray(artist.aliases) ? artist.aliases : [])]));
             artistByChannel.set(id, {
                 name: artist.name || channel.name || '',
                 genres: unique(artist.genres || []),
@@ -129,6 +132,7 @@
                 artistKeyByChannel.clear();
                 primaryByChannel.clear();
                 artistByChannel.clear();
+                namesByChannel.clear();
                 for (const artist of data.artists || []) registerArtist(artist);
                 ready = true;
                 return true;
@@ -187,8 +191,18 @@
         };
     }
 
-    function decorateVideo(video) {
-        if (!video) return video;
+    // Títol net: sense el nom de l'artista ni «videoclip / vídeo / oficial» (l'original queda a `originalTitle`).
+    // `extraNames`: altres noms de l'artista (p. ex. els del canal al feed).
+    function cleanVideoTitle(video, extraNames = []) {
+        const cleaner = root?.SegueixSongTitle;
+        if (!video || !cleaner?.cleanVideo) return video;
+        const id = String(video.channelId || video.sourceChannelId || video.snippet?.channelId || '');
+        return cleaner.cleanVideo(video, [...(namesByChannel.get(id) || []), ...(Array.isArray(extraNames) ? extraNames : [])]);
+    }
+
+    function decorateVideo(rawVideo, extraNames = []) {
+        if (!rawVideo) return rawVideo;
+        const video = cleanVideoTitle(rawVideo, extraNames);
         return {
             ...video,
             categories: unique([
@@ -212,6 +226,7 @@
         artistKeyForChannel,
         primaryCategoryForChannel,
         decorateChannel,
-        decorateVideo
+        decorateVideo,
+        cleanVideoTitle
     };
 });

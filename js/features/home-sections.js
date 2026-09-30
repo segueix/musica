@@ -48,7 +48,8 @@
     function isOfficialClip(video) {
         if (!video || video.isShort) return false;
         if (video.contentType && video.contentType !== 'song') return false;
-        const title = String(video.title || '');
+        // El títol que es mostra ja no porta «videoclip / oficial»: les marques són al títol original de YouTube.
+        const title = String(video.originalTitle || video.title || '');
         // Ho descartem tot i que el títol digui "oficial" si té marques de cover/directe/lyric...
         if (NOT_OFFICIAL_CLIP_RE.test(title.replace(/official\s+audio/gi, 'audio'))) return false;
         if (/provided to youtube by/i.test(String(video.description || ''))) return false; // pistes Topic (imatge fixa)

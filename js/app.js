@@ -3009,6 +3009,17 @@ async function buildShareData(type, label, url, title = '') {
     return { data, text };
 }
 
+// Text per compartir una cançó: «Artista - Cançó». Els títols que es mostren ja no porten l'artista
+// (js/song-title.js), però en un missatge sí que cal.
+function getShareLabel(videoData) {
+    const title = String(videoData?.title || '').trim() || 'Segueix!';
+    const id = String(videoData?.id || '');
+    const known = Array.isArray(YouTubeAPI?.feedVideos) ? YouTubeAPI.feedVideos.find(v => String(v?.id) === id) : null;
+    const artist = String(videoData?.channelTitle || known?.channelTitle || '').trim();
+    if (!artist || title.toLowerCase().includes(artist.toLowerCase())) return title;
+    return `${artist} - ${title}`;
+}
+
 // Function to handle custom sharing logic
 async function shareVideo(videoData) {
     const shareUrl = buildAppShareUrl(`v=${encodeURIComponent(videoData.id)}`);
@@ -3017,7 +3028,7 @@ async function shareVideo(videoData) {
     if (navigator.share) {
         // Passem títol i text (com a les llistes i categories): si l'app receptora no pot
         // llegir les meta Open Graph, el missatge ja porta el nom del vídeo.
-        const shareTitle = String(videoData.title || 'Segueix!').trim();
+        const shareTitle = getShareLabel(videoData);
         navigator
             .share({ title: shareTitle, text: shareTitle, url: shareUrl })
             .catch(err => console.log('Share dismissed', err));
@@ -3037,7 +3048,7 @@ async function shareVideo(videoData) {
                 </div>
                 <div class="modal-body" style="text-align:center; padding-top:0;">
                     <p class="modal-description" style="margin-bottom:20px;">
-                        Comparteix el vídeo: <br><strong>${videoData.title}</strong>
+                        Comparteix la cançó: <br><strong>${escapeHtml(getShareLabel(videoData))}</strong>
                     </p>
                     <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
                         <button class="hero-button" onclick="window.open('https://wa.me/?text=${encodeURIComponent(shareUrl)}', '_blank')">
@@ -12439,7 +12450,9 @@ function getHistoryItems() {
     }
     try {
         const parsed = JSON.parse(stored);
-        _historyItemsCache = Array.isArray(parsed) ? parsed : [];
+        // Les cançons escoltades abans de netejar els títols es mostren amb el títol net (l'original es conserva)
+        const clean = video => window.SegueixMusicCategories?.cleanVideoTitle?.(video) || video;
+        _historyItemsCache = Array.isArray(parsed) ? parsed.map(clean) : [];
     } catch (error) {
         console.warn('No es pot llegir catube_history', error);
         _historyItemsCache = [];
