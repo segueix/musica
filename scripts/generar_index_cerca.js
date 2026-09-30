@@ -63,8 +63,15 @@ async function main() {
             .filter(Boolean)
     );
 
-    const archiveFiles = (await fs.readdir(ARCHIVE_DIR))
-        .filter(file => file.endsWith('.json'));
+    let archiveFiles;
+    try {
+        archiveFiles = (await fs.readdir(ARCHIVE_DIR))
+            .filter(file => file.endsWith('.json'));
+    } catch (error) {
+        if (error?.code !== 'ENOENT') throw error;
+        console.log('ℹ️ No existeix data/archive/channels; es conserven els índexs de cerca existents i es continua sense arxiu.');
+        return;
+    }
 
     const compactByBucket = new Map();
     const seenArchiveIds = new Set();
