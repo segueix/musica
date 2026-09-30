@@ -71,7 +71,8 @@
         preference: { minWeight: 6, priorWeight: 8, maxHistoricShare: 0.6 },
         queue: { min: 12, max: 40, pool: 260 },
         // Força amb què els objectius d'antiguitat i familiaritat corregeixen la puntuació base.
-        gain: { era: 1.6, familiarity: 0.5 },
+        // `style`: força del repartiment igual entre els estils sumats a una ràdio («Pop + Rock»).
+        gain: { era: 1.6, familiarity: 0.5, style: 1.4 },
         noise: 0.06,
         historicNoiseFactor: 3,
     });
@@ -657,6 +658,7 @@
             keepAll = false,
             useCooldown = true,
             lookahead = Infinity,
+            mix = null,
         } = options;
         const top = cfg.general.top;
         const sequence = preceding.map(video => ({
@@ -674,6 +676,24 @@
         sequence.forEach(item => {
             eraCount[item.tier] += 1;
         });
+        // Ràdio amb diversos estils: es reparteixen a parts iguals (el que ja hi ha a la cua també compta).
+        const mixCount = {};
+        let mixTotal = 0;
+        const mixTarget = mix ? 1 / mix.labels.length : 0;
+        if (mix) {
+            mix.labels.forEach(label => {
+                mixCount[label] = 0;
+            });
+            preceding.forEach(video => {
+                const tags = mix.tagOf(video);
+                if (!tags.length) return;
+                const tag = tags.reduce((best, t) => (mixCount[t] < mixCount[best] ? t : best), tags[0]);
+                mixCount[tag] += 1;
+                mixTotal += 1;
+            });
+        }
+        const mixDeficit = c =>
+            c.tags && c.tags.length ? Math.max(...c.tags.map(tag => mixTarget - mixCount[tag] / (mixTotal || 1))) : 0;
         const remaining = items.slice();
         const picked = [];
         let maxLevel = 0;
@@ -722,6 +742,7 @@
                         // El repartiment coneguda/descoberta orienta però no domina la puntuació (marge acotat).
                         s += cfg.gain.familiarity * clamp(famTargets[c.fam] - famCount[c.fam] / used, -0.25, 0.25);
                     }
+                    if (mix) s += cfg.gain.style * clamp(mixDeficit(c), -0.4, 0.4);
                     if (c.f.artist) s -= 0.05 * win.filter(item => item.artist === c.f.artist).length;
                     if (
                         c.f.primaryStyle &&
@@ -748,8 +769,16 @@
             sequence.push({ id: c.f.id, artist: c.f.artist, tier: c.f.tier, style: c.f.primaryStyle, fam: c.fam });
             eraCount[c.f.tier] += 1;
             famCount[c.fam] += 1;
+            if (mix && c.tags && c.tags.length) {
+                const tag = c.tags.reduce(
+                    (best, t) => (mixCount[t] / (mixTotal || 1) < mixCount[best] / (mixTotal || 1) ? t : best),
+                    c.tags[0]
+                );
+                mixCount[tag] += 1;
+                mixTotal += 1;
+            }
         }
-        return { picked, level: maxLevel, leftover: remaining };
+        return { picked, level: maxLevel, leftover: remaining, mixCount };
     }
     function shares(picked) {
         const count = { recent: 0, mid: 0, historic: 0 };
@@ -799,12 +828,15 @@
         if (items.length <= size) return items;
         const keep = new Set(items.slice(0, size));
         const perGroup = Math.max(20, Math.floor(size / 6));
-        ['tier', 'fam'].forEach(key => {
+        ['tier', 'fam', 'tag'].forEach(key => {
             const groups = new Map();
             items.forEach(item => {
-                const name = key === 'tier' ? item.f.tier : item.fam;
-                if (!groups.has(name)) groups.set(name, []);
-                if (groups.get(name).length < perGroup) groups.get(name).push(item);
+                // Amb estils barrejats cada estil ha de tenir candidates al conjunt de treball.
+                const names = key === 'tag' ? item.tags || [] : [key === 'tier' ? item.f.tier : item.fam];
+                names.forEach(name => {
+                    if (!groups.has(name)) groups.set(name, []);
+                    if (groups.get(name).length < perGroup) groups.get(name).push(item);
+                });
             });
             groups.forEach(list => list.forEach(item => keep.add(item)));
         });
@@ -843,7 +875,11 @@
         const notes = [];
 
         const hasEnough = knownArtistCount(signals) >= 3;
-        const items = trimPool(buildItems(toArray(options.candidates), ctx, signals, seed, rng), cfg.queue.pool);
+        // `mix`: { labels, tagOf } perquè la ràdio barregi diversos estils a parts iguals.
+        const mix = options.mix && toArray(options.mix.labels).length > 1 ? options.mix : null;
+        const built = buildItems(toArray(options.candidates), ctx, signals, seed, rng);
+        if (mix) built.forEach(item => (item.tags = mix.tagOf(item.video)));
+        const items = trimPool(built, cfg.queue.pool);
         const pref = eraPreference(ctx, signals, { policy });
 
         // Objectius d'antiguitat: 65/25/10 per defecte, adaptats a una preferència forta i al que hi ha.
@@ -909,6 +945,7 @@
             now: ctx.now,
             signals,
             useCooldown: options.useCooldown !== false,
+            mix,
             artistOf: ctx.artistKeyOf,
         });
         if (result.level >= 4) {
@@ -932,6 +969,7 @@
                 historicCap: maxHistoric,
                 pref,
                 supply,
+                mix: mix ? result.mixCount : null,
                 artists: new Set(result.picked.map(c => c.f.artist)).size,
                 fam: result.picked.reduce(
                     (acc, c) => {

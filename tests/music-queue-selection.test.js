@@ -51,7 +51,7 @@ function makeBus() {
     };
 }
 
-function setup({ catalog, history = [], liked = [], followed = [], mode = 'mix' } = {}) {
+function setup({ catalog, history = [], liked = [], followed = [], mode = 'mix', music = null, extra = {} } = {}) {
     const app = { features: {}, state: {}, utils: {} };
     const localStorage = createMockLocalStorage();
     localStorage.setItem('catube_discovery_mode', mode);
@@ -68,6 +68,7 @@ function setup({ catalog, history = [], liked = [], followed = [], mode = 'mix' 
         currentFeedVideos: catalog,
         cachedAPIVideos: [],
         activePlaylistQueue: [],
+        ...(music ? { SegueixMusicCategories: music } : {}),
         currentFeedData: {
             channels: [...new Set(catalog.map(v => v.channelId))].map(id => ({ id, categories: ['Pop'] })),
         },
@@ -75,7 +76,14 @@ function setup({ catalog, history = [], liked = [], followed = [], mode = 'mix' 
             readyState: 'loading',
             addEventListener() {},
             querySelector: () => null,
-            createElement: () => ({}),
+            createElement: () => ({
+                set textContent(value) {
+                    this.text = String(value ?? '');
+                },
+                get innerHTML() {
+                    return (this.text || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+                },
+            }),
             body: { classList: { contains: () => false } },
         },
     };
@@ -102,6 +110,7 @@ function setup({ catalog, history = [], liked = [], followed = [], mode = 'mix' 
         activePlaylistName: '',
         currentPlaylistIndex: 0,
         selectedCategory: 'Novetats',
+        ...extra,
     });
     return {
         app,
@@ -242,5 +251,195 @@ describe('cua, regeneració i preferències', () => {
         expect(env.signals.snapshot().liked.has(target.id)).toBe(false);
         liked.push({ id: target.id, channelId: target.channelId });
         expect(env.signals.snapshot().liked.has(target.id)).toBe(true);
+    });
+});
+
+// ---------- Ràdios d'estil: categoria respectada, nom fix i «+» per barrejar estils ----------
+
+function styledCatalog() {
+    const list = [];
+    const add = (prefix, count, style, extra = {}) => {
+        for (let a = 0; a < count; a++) {
+            for (let i = 0; i < 3; i++)
+                list.push(song(`${prefix}${a}`, 0.2 + i * 0.7, { categories: [style], ...extra }));
+        }
+    };
+    add('pop', 10, 'Pop');
+    add('rock', 10, 'Rock');
+    add('jazz', 8, 'Jazz / Blues');
+    return list;
+}
+
+const GROUPS = ['Pop', 'Rock', 'Indie', 'Jazz / Blues'].map(label => ({ label }));
+const musicStub = {
+    CATEGORY_GROUPS: GROUPS,
+    // L'artista «mixed» té Rock com a categoria principal (però també Pop)
+    primaryCategoryForChannel: id =>
+        id.startsWith('rock') || id === 'mixed' ? 'Rock' : id.startsWith('jazz') ? 'Jazz / Blues' : 'Pop',
+    isCategoryEligibleVideo: () => true,
+};
+
+const fakeContainer = () => ({
+    innerHTML: '',
+    _mqBound: true,
+    addEventListener() {},
+    querySelector: () => null,
+});
+
+const stylesOf = list => list.map(v => v.categories[0]);
+const share = (list, style) => list.filter(v => v.categories[0] === style).length / list.length;
+
+describe('ràdio d’un artista o d’una categoria', () => {
+    it('sense categoria clara (Novetats, fitxa d’artista) la ràdio és de la categoria principal de l’artista', () => {
+        const catalog = styledCatalog();
+        const env = setup({ catalog, music: musicStub });
+        const rockSong = catalog.find(v => v.channelId === 'rock3');
+        expect(env.queue.startFrom(rockSong.id, 'api')).toBe(true);
+        expect(env.queue.getState().categories).toEqual(['Rock']);
+        expect(new Set(stylesOf(env.ctx.activePlaylistQueue))).toEqual(new Set(['Rock']));
+    });
+
+    it('la categoria de la pàgina o de la fila clicada mana sobre la de l’artista', () => {
+        const catalog = styledCatalog();
+        const env = setup({ catalog, music: musicStub, extra: { selectedCategory: 'Jazz / Blues' } });
+        const popSong = catalog.find(v => v.channelId === 'pop2');
+        env.queue.startFrom(popSong.id, 'api');
+        expect(env.queue.getState().categories).toEqual(['Jazz / Blues']);
+    });
+
+    it('una ràdio d’estil no barreja altres estils encara que regeneris', () => {
+        const catalog = styledCatalog();
+        const env = setup({ catalog, music: musicStub });
+        env.queue.startFrom(catalog.find(v => v.channelId === 'pop1').id, 'api');
+        for (let i = 0; i < 4; i++) {
+            env.queue.regenerate();
+            expect(new Set(stylesOf(env.ctx.activePlaylistQueue))).toEqual(new Set(['Pop']));
+        }
+    });
+
+    it('«La teva ràdio» (general) continua sense categoria', () => {
+        const env = setup({ catalog: styledCatalog(), music: musicStub });
+        env.queue.startDiscovery();
+        expect(env.queue.getState().categories).toEqual([]);
+    });
+});
+
+describe('nom fix de la ràdio', () => {
+    it('porta el nom de l’estil i no canvia amb la cançó que sona', () => {
+        const catalog = styledCatalog();
+        const env = setup({ catalog, music: musicStub });
+        env.queue.startFrom(catalog.find(v => v.channelId === 'rock0').id, 'api');
+        const nameOf = () => {
+            const container = fakeContainer();
+            env.queue.render(container);
+            const html = container.innerHTML;
+            const from = html.indexOf('<span class="mq-source');
+            return html.slice(from, html.indexOf('<button type="button" class="mq-regenerate', from));
+        };
+        const first = nameOf();
+        expect(first).toContain('mq-style');
+        expect(first).toContain('Rock');
+        expect(first).not.toContain('Basada en');
+        // Avança per tres cançons d'artistes diferents: el nom és exactament el mateix
+        for (let i = 0; i < 3; i++) {
+            env.ctx.currentPlaylistIndex += 1;
+            expect(nameOf()).toBe(first);
+        }
+    });
+
+    it('la ràdio general es diu «La teva ràdio»', () => {
+        const env = setup({ catalog: styledCatalog(), music: musicStub });
+        env.queue.startDiscovery();
+        const container = fakeContainer();
+        env.queue.render(container);
+        expect(container.innerHTML).toContain('La teva ràdio');
+        expect(container.innerHTML).not.toContain('Basada en');
+    });
+});
+
+describe('«+»: sumar un estil a la ràdio', () => {
+    function radioOf(style = 'pop1') {
+        const catalog = styledCatalog();
+        const env = setup({ catalog, music: musicStub });
+        env.queue.startFrom(catalog.find(v => v.channelId === style).id, 'api');
+        return { ...env, catalog };
+    }
+
+    it('el selector ofereix els estils que encara no hi són i mostra el «+» al costat del nom', () => {
+        const env = radioOf();
+        const container = fakeContainer();
+        env.queue.render(container);
+        expect(container.innerHTML).toContain('data-mq-add-style');
+        expect(container.innerHTML).toContain('aria-expanded="false"');
+        expect(container.innerHTML).not.toContain('data-mq-pick-style');
+    });
+
+    it('en sumar un estil la ràdio es regenera barrejant els dos a parts iguals i el nom porta els dos estils', () => {
+        const env = radioOf();
+        const current = env.ctx.activePlaylistQueue[0];
+        const manual = env.catalog.find(v => v.categories[0] === 'Jazz / Blues');
+        env.queue.enqueue(manual);
+        expect(env.queue.addStyle('Rock')).toBe(true);
+        expect(env.queue.getState().categories).toEqual(['Pop', 'Rock']);
+        const queue = env.ctx.activePlaylistQueue;
+        // Es conserva el que sona i el que l'usuari havia afegit
+        expect(queue[0].id).toBe(current.id);
+        expect(queue[1].id).toBe(manual.id);
+        const auto = queue.slice(2, 22);
+        expect(new Set(stylesOf(auto))).toEqual(new Set(['Pop', 'Rock']));
+        expect(share(auto, 'Rock')).toBeGreaterThanOrEqual(0.35);
+        expect(share(auto, 'Rock')).toBeLessThanOrEqual(0.65);
+        expect(auto.some(v => v.categories[0] === 'Jazz / Blues')).toBe(false);
+        const container = fakeContainer();
+        env.queue.render(container);
+        expect(container.innerHTML).toContain('Pop');
+        expect(container.innerHTML).toContain('Rock');
+        expect(container.innerHTML).toContain('data-mq-remove-style');
+    });
+
+    it('«Barreja» manté els dos estils; es pot sumar-ne un tercer i treure’n un', () => {
+        const env = radioOf();
+        env.queue.addStyle('Rock');
+        env.queue.regenerate();
+        expect(new Set(stylesOf(env.ctx.activePlaylistQueue.slice(1)))).toEqual(new Set(['Pop', 'Rock']));
+        env.queue.addStyle('Jazz / Blues');
+        expect(env.queue.getState().categories).toEqual(['Pop', 'Rock', 'Jazz / Blues']);
+        expect(new Set(stylesOf(env.ctx.activePlaylistQueue.slice(1, 25)))).toEqual(
+            new Set(['Pop', 'Rock', 'Jazz / Blues'])
+        );
+        expect(env.queue.removeStyle('Rock')).toBe(true);
+        expect(env.queue.getState().categories).toEqual(['Pop', 'Jazz / Blues']);
+        expect(env.ctx.activePlaylistQueue.slice(1).some(v => v.categories[0] === 'Rock')).toBe(false);
+    });
+
+    it('no es pot sumar dues vegades el mateix estil ni treure l’últim que queda', () => {
+        const env = radioOf();
+        expect(env.queue.addStyle('Pop')).toBe(false);
+        expect(env.queue.removeStyle('Pop')).toBe(false);
+        expect(env.queue.getState().categories).toEqual(['Pop']);
+    });
+
+    it('el nom de la llista de YouTube porta els dos estils', () => {
+        const env = radioOf();
+        env.queue.addStyle('Rock');
+        expect(env.queue.buildListName()).toBe('Llista Pop + Rock');
+    });
+
+    it('sumar un estil a la ràdio general la converteix en una ràdio d’aquell estil', () => {
+        const env = setup({ catalog: styledCatalog(), music: musicStub });
+        env.queue.startDiscovery();
+        env.queue.addStyle('Jazz / Blues');
+        expect(env.queue.getState().categories).toEqual(['Jazz / Blues']);
+        expect(new Set(stylesOf(env.ctx.activePlaylistQueue.slice(1)))).toEqual(new Set(['Jazz / Blues']));
+    });
+
+    it('una selecció (Acabades de sortir...) que es regenera passa a ser una ràdio de l’estil de la cançó que sona', () => {
+        const catalog = styledCatalog();
+        const env = setup({ catalog, music: musicStub });
+        const selection = catalog.filter(v => v.channelId === 'rock2');
+        env.queue.playSelection(selection, 'Acabades de sortir');
+        expect(env.queue.getState().categories).toEqual([]);
+        env.queue.regenerate();
+        expect(env.queue.getState().categories).toEqual(['Rock']);
     });
 });

@@ -200,6 +200,119 @@ async function main() {
         );
         comprovar('la ràdio declara que fa servir el motor', cua.meta.engine === 'v1', cua.meta.mode);
 
+        // 1b) Ràdio d'un artista: sempre de la seva categoria principal, amb un nom fix i «+» per barrejar un estil
+        const estil = await page.evaluate(() => {
+            const music = window.SegueixMusicCategories;
+            const queueApi = SegueixApp.features.musicQueue;
+            selectedCategory = 'Novetats';
+            const song = currentFeedVideos.find(
+                v => v.contentType === 'song' && !v.isShort && music.primaryCategoryForChannel(v.channelId) === 'Rock'
+            );
+            queueApi.startFrom(song.id, 'api');
+            const state = queueApi.getState();
+            const inCategory = video => {
+                const own = Array.isArray(video.categories) ? video.categories : [];
+                return own.some(name => String(name).toLowerCase() === 'rock');
+            };
+            const nameOf = () => {
+                const host = document.createElement('div');
+                queueApi.render(host);
+                const html = host.innerHTML;
+                const from = html.indexOf('<span class="mq-source');
+                return html.slice(from, html.indexOf('<button type="button" class="mq-regenerate', from));
+            };
+            const first = nameOf();
+            const names = [];
+            for (let i = 0; i < 4; i++) {
+                currentPlaylistIndex = Math.min(currentPlaylistIndex + 1, activePlaylistQueue.length - 1);
+                names.push(nameOf() === first);
+            }
+            currentPlaylistIndex = 0;
+            return {
+                categories: state.categories,
+                primary: music.primaryCategoryForChannel(song.channelId),
+                totesDeLaCategoria: activePlaylistQueue.every(inCategory),
+                longitud: activePlaylistQueue.length,
+                nomFix: names.every(Boolean),
+                nom: first
+                    .replace(/<[^>]+>/g, ' ')
+                    .replace(/\s+/g, ' ')
+                    .trim(),
+            };
+        });
+        comprovar(
+            'una ràdio d’un artista és de la seva categoria principal (i només d’ella)',
+            estil.categories[0] === estil.primary && estil.totesDeLaCategoria && estil.longitud >= 12,
+            estil
+        );
+        comprovar(
+            'el nom de la ràdio és l’estil i no canvia amb la cançó que sona',
+            estil.nomFix && /Rock/.test(estil.nom),
+            estil.nom
+        );
+
+        const barreja = await page.evaluate(() => {
+            const queueApi = SegueixApp.features.musicQueue;
+            const host = document.createElement('div');
+            host.id = 'provaEstils';
+            document.body.appendChild(host);
+            queueApi.render(host);
+            const abans = {
+                mes: Boolean(host.querySelector('[data-mq-add-style]')),
+                selector: Boolean(host.querySelector('[data-mq-pick-style]')),
+            };
+            host.querySelector('[data-mq-add-style]').click();
+            queueApi.render(host);
+            const opcions = [...host.querySelectorAll('[data-mq-pick-style]')].map(b => b.dataset.mqPickStyle);
+            const boto = host.querySelector('[data-mq-add-style]');
+            const mida = boto.getBoundingClientRect();
+            const rock = host.querySelector('[data-mq-pick-style="Rock"]');
+            const escollit = 'Pop';
+            const pop = host.querySelector(`[data-mq-pick-style="${escollit}"]`);
+            pop.click();
+            queueApi.render(host);
+            const state = queueApi.getState();
+            const auto = activePlaylistQueue.slice(1, 21);
+            const conte = (video, name) =>
+                (video.categories || []).some(x => String(x).toLowerCase() === name.toLowerCase());
+            const nomHtml = host.innerHTML;
+            return {
+                abans,
+                opcions,
+                rockNoEsOfereix: !rock,
+                midaBoto: [Math.round(mida.width), Math.round(mida.height)],
+                categories: state.categories,
+                soloRock: auto.filter(v => conte(v, 'Rock') && !conte(v, 'Pop')).length,
+                soloPop: auto.filter(v => conte(v, 'Pop') && !conte(v, 'Rock')).length,
+                totes: auto.every(v => conte(v, 'Rock') || conte(v, 'Pop')),
+                nomPortaEls2: /Rock/.test(nomHtml) && /Pop/.test(nomHtml) && nomHtml.includes('data-mq-remove-style'),
+                selectorTancat: !host.querySelector('[data-mq-pick-style]'),
+            };
+        });
+        comprovar(
+            'al costat del nom hi ha un «+» (≥ 44 px) que obre el selector amb els altres estils',
+            barreja.abans.mes &&
+                !barreja.abans.selector &&
+                barreja.opcions.length >= 5 &&
+                barreja.rockNoEsOfereix &&
+                barreja.midaBoto[0] >= 44,
+            { abans: barreja.abans, opcions: barreja.opcions, mida: barreja.midaBoto }
+        );
+        comprovar(
+            'en escollir un estil la ràdio es regenera barrejant els dos (i el nom els porta)',
+            barreja.categories.length === 2 &&
+                barreja.soloRock >= 4 &&
+                barreja.soloPop >= 4 &&
+                barreja.totes &&
+                barreja.nomPortaEls2 &&
+                barreja.selectorTancat,
+            barreja
+        );
+        // Torna a la ràdio general per continuar amb la resta de proves
+        await page.evaluate(() => {
+            document.getElementById('provaEstils')?.remove();
+        });
+
         // 2) Senyals d'escolta amb l'observador únic
         const primer = await page.evaluate(() => {
             const id = activePlaylistQueue[currentPlaylistIndex].id;

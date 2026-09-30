@@ -2330,3 +2330,126 @@ body .follow-btn-pill.is-followed:hover {
 #videoPlayer.mini-player-active .mini-player-controls-overlay.visible {
     pointer-events: none;
 }
+
+/* ---------- Nom de la ràdio: estil/s fixos i «+» per sumar-ne un altre ---------- */
+.mq-source.mq-styles {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    overflow: visible;
+    white-space: normal;
+    color: var(--pt-text);
+    font-size: 0.9375rem;
+}
+
+.mq-style {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    min-height: 36px;
+    padding: 0 14px;
+    border: 1px solid var(--pt-accent);
+    border-radius: 16px;
+    background: rgba(214, 237, 132, 0.12);
+    color: var(--pt-accent);
+    font-weight: 700;
+}
+
+.mq-style--extra {
+    border-color: var(--pt-terracotta);
+    background: rgba(217, 138, 112, 0.14);
+    color: var(--pt-terracotta);
+}
+
+.mq-style__remove {
+    display: grid;
+    place-items: center;
+    width: 28px;
+    height: 28px;
+    margin-right: -8px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+    position: relative;
+}
+
+/* Àrea tàctil de 44 px sense fer el xip més gran */
+.mq-style__remove::after {
+    content: '';
+    position: absolute;
+    inset: -8px;
+}
+
+.mq-style__remove:hover,
+.mq-style__remove:focus-visible {
+    background: rgba(244, 240, 232, 0.16);
+}
+
+.mq-add-style {
+    display: inline-grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 2px solid var(--pt-line);
+    border-radius: 50%;
+    background: var(--pt-surface-2);
+    color: var(--pt-text);
+    cursor: pointer;
+}
+
+.mq-add-style:hover,
+.mq-add-style:focus-visible,
+.mq-add-style[aria-expanded='true'] {
+    border-color: var(--pt-accent);
+    background: var(--pt-surface-3);
+    color: var(--pt-accent);
+}
+
+.mq-mode {
+    color: var(--pt-muted);
+    font-size: 0.8125rem;
+}
+
+.mq-style-picker {
+    margin: 4px 8px 10px;
+    padding: 12px;
+    border: 1px solid var(--pt-line);
+    border-radius: var(--pt-radius);
+    background: var(--pt-surface-2);
+}
+
+.mq-style-picker__title {
+    margin: 0 0 10px;
+    color: var(--pt-muted);
+    font-size: 0.8125rem;
+}
+
+.mq-style-picker__options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.mq-style-option {
+    min-height: 44px;
+    padding: 0 16px;
+    border: 1px solid var(--pt-line);
+    border-radius: 16px;
+    background: var(--pt-surface);
+    color: var(--pt-text);
+    font: inherit;
+    font-size: 0.875rem;
+    cursor: pointer;
+}
+
+.mq-style-option:hover,
+.mq-style-option:focus-visible {
+    border-color: var(--pt-accent);
+    background: var(--pt-surface-3);
+    color: var(--pt-accent);
+}

@@ -13,6 +13,18 @@
 
 **Fitxers Afectats:**
 
+## [2026-09-30] - La ràdio d'un artista no respectava l'estil, es reanomenava a cada cançó i no es podien barrejar estils
+
+**Símptoma:** Una ràdio engegada des d'una cançó (Inici, fitxa d'artista) era general i barrejava tots els estils; la capçalera deia «Basada en <artista de la cançó que sona>» i canviava a cada cançó; no hi havia manera de barrejar dos estils.
+
+**Causa Arrel:** `startFrom()` només feia servir la categoria de la fila clicada o la pàgina; a Novetats/Tot/fitxa d'artista la categoria quedava buida (ràdio general). La capçalera es calculava amb `current.channelTitle`. `radioCategory` era un sol text.
+
+**Solució Implementada:** `startFrom()` cau a la categoria principal de l'artista (`primaryCategoryOf()` → `SegueixMusicCategories.primaryCategoryForChannel()`, primer gènere de la base d'artistes). `radioCategory` + `radioExtra` (estils sumats); `getCandidates()` accepta diversos estils; `selectRadio({ mix: { labels, tagOf } })` els reparteix a parts iguals. La capçalera mostra l'estil fix i un «+» amb selector (`addStyle`/`removeStyle`); sumar/treure regenera la part pendent conservant el que sona i els afegits a mà. Proves: `tests/music-queue-selection.test.js`, `tests/music-selection.test.js`, `tests/music-categories.test.js` i `tests/browser/verificar-seleccio.js`.
+
+**Trampes conegudes:** (1) `escapeText()` depèn de `document.createElement`: els mocks de proves han de tenir `textContent`/`innerHTML`. (2) `css/portada.css`: els radis literals només poden ser 2/8/10/12–16 px (test `portada-assets`), per això els xips fan 16 px i no 999 px.
+
+**Fitxers Afectats:** `js/features/music-queue.js`, `js/features/music-selection.js`, `js/music-categories.js`, `css/portada.css`, `docs/MUSICA_SELECCIO.md`, tests.
+
 ## [2026-09-30] - A la finestra flotant no es podia clicar «Omet l'anunci» de YouTube
 
 **Símptoma:** Amb un anunci sonant a la finestra flotant, el botó «Omet l'anunci» (baix a la dreta del vídeo) no responia.

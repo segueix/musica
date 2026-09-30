@@ -517,6 +517,70 @@ describe('música antiga: només amb gust explícit', () => {
     });
 });
 
+// ---------- Ràdio amb diversos estils ----------
+
+describe('estils barrejats', () => {
+    const videos = [];
+    for (let a = 0; a < 12; a++)
+        for (let i = 0; i < 3; i++)
+            videos.push(song(`p${a}`, { years: 0.3 + i * 0.4, style: 'Pop', views: 9000 - a * 300 }));
+    for (let a = 0; a < 12; a++)
+        for (let i = 0; i < 3; i++)
+            videos.push(song(`r${a}`, { years: 0.3 + i * 0.4, style: 'Rock', views: 900 + a * 10 }));
+    const ctx = makeCtx(videos);
+    const mix = { labels: ['Pop', 'Rock'], tagOf: v => (v.categories || []).filter(x => ['Pop', 'Rock'].includes(x)) };
+
+    it('reparteix els estils a parts iguals encara que un sigui molt més popular', () => {
+        for (let i = 0; i < 10; i++) {
+            const rng = mulberry(30 + i);
+            const seed = videos[i];
+            const result = E.selectRadio({
+                ctx,
+                candidates: videos.filter(v => v.id !== seed.id),
+                seed,
+                signals: E.emptySignals(),
+                rng,
+                mix,
+            });
+            const queue = [seed, ...result.queue].slice(0, 20);
+            const rock = queue.filter(v => v.categories[0] === 'Rock').length / queue.length;
+            expect(rock).toBeGreaterThanOrEqual(0.4);
+            expect(rock).toBeLessThanOrEqual(0.6);
+        }
+    });
+
+    it('sense «mix» la popularitat mana i no hi ha repartiment', () => {
+        const seed = videos[0];
+        const result = E.selectRadio({
+            ctx,
+            candidates: videos.filter(v => v.id !== seed.id),
+            seed,
+            signals: E.emptySignals(),
+            rng: mulberry(1),
+        });
+        const queue = [seed, ...result.queue].slice(0, 20);
+        expect(queue.filter(v => v.categories[0] === 'Rock').length / queue.length).toBeLessThan(0.4);
+    });
+
+    it('el que ja hi ha a la cua compta per al repartiment', () => {
+        const pops = videos.filter(v => v.categories[0] === 'Pop').slice(0, 6);
+        const rest = videos.filter(v => !pops.includes(v));
+        const result = E.selectRadio({
+            ctx,
+            candidates: rest,
+            seed: pops[0],
+            preceding: pops,
+            signals: E.emptySignals(),
+            rng: mulberry(2),
+            mix,
+            count: 12,
+        });
+        // Ja hi ha 6 de Pop: els nous s'han d'inclinar cap a Rock
+        expect(result.queue.filter(v => v.categories[0] === 'Rock').length).toBeGreaterThan(result.queue.length / 2);
+        expect(result.meta.mix).toBeTruthy();
+    });
+});
+
 // ---------- Categories petites ----------
 
 describe('categories amb poca música actual', () => {
