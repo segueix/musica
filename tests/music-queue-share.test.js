@@ -124,4 +124,20 @@ describe('capçalera de la ràdio ben alineada (CSS)', () => {
         expect(css).toMatch(/\.mq-tools \{\s*display: inline-flex;\s*flex: none;/);
         expect(css).toMatch(/\.mq-add-style,\s*\.mq-save-list,\s*\.mq-share \{[^}]*width: 44px;[^}]*height: 44px;/);
     });
+
+    it('al mòbil i a la tauleta, després d’una ràdio o d’una llista no hi ha vídeos relacionats', () => {
+        const block = css.match(
+            /@media \(max-width: 1024px\) \{\s*#watchPage:has\(#playlistQueueContainer:not\(\.hidden\) \.mq\)[\s\S]*?\n\}/
+        );
+        expect(block).not.toBeNull();
+        for (const selector of [
+            '.watch-sidebar',
+            '.extra-related-header',
+            '.extra-related-title',
+            '.extra-videos-grid',
+        ]) {
+            expect(block[0]).toContain(`#watchPage:has(#playlistQueueContainer:not(.hidden) .mq) ${selector}`);
+        }
+        expect(block[0]).toContain('display: none');
+    });
 });

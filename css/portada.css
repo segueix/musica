@@ -2483,6 +2483,17 @@ body .follow-btn-pill.is-followed:hover {
     line-height: 44px;
 }
 
+/* Mòbil i tauleta: després d'una ràdio o d'una llista no hi ha «Altres vídeos relacionats» ni vídeos de l'artista
+   (a escriptori, a partir de 1025 px, ja s'amaguen a styles.css per a la ràdio). La TV té el seu propi panell. */
+@media (max-width: 1024px) {
+    #watchPage:has(#playlistQueueContainer:not(.hidden) .mq) .watch-sidebar,
+    #watchPage:has(#playlistQueueContainer:not(.hidden) .mq) .extra-related-header,
+    #watchPage:has(#playlistQueueContainer:not(.hidden) .mq) .extra-related-title,
+    #watchPage:has(#playlistQueueContainer:not(.hidden) .mq) .extra-videos-grid {
+        display: none;
+    }
+}
+
 @container mq (max-width: 639px) {
     /* Títol i botons a la primera fila; el nom de la ràdio (amb els símbols) a tot l'ample de la segona */
     .mq-heading {
