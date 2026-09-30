@@ -30,6 +30,11 @@
         close: '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M6 6l12 12M18 6 6 18"/></svg>',
         plus: '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" d="M12 5v14M5 12h14"/></svg>',
         minus: '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" d="M5 12h14"/></svg>',
+        // Llista amb un «+» (desa la ràdio com a llista) i llista amb una marca (ja desada)
+        saveList:
+            '<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M11 12H3M16 6H3M11 18H3M18 9v6M21 12h-6"/></svg>',
+        savedList:
+            '<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M11 18H3M15 18l2 2 4-4M16 12H3M16 6H3"/></svg>',
         more: '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M5 10.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm7 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm7 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3z"/></svg>',
     };
 
@@ -49,6 +54,9 @@
     // Ràdio generada amb els resultats d'una cerca: { videos, query }. Les cançons trobades són el conjunt de la
     // ràdio (mai s'hi filtra per estil) i «Barreja» el torna a ordenar sense sortir-ne.
     let searchRadio = null;
+    // Id de la llista de reproducció on s'ha desat la ràdio actual (buit = encara no desada). Tornar a prémer el
+    // botó actualitza aquella llista en lloc de crear-ne una altra.
+    let savedListId = '';
     // Cançons afegides a la cua quan encara no sona cap ràdio: sonen just després de la primera que s'engegui.
     let pendingQueue = [];
     // Ids de la cua activa que l'usuari ha afegit a mà (es conserven en regenerar la ràdio).
@@ -335,6 +343,7 @@
         stylePickerOpen = false;
         radioLabel = '';
         searchRadio = null;
+        savedListId = '';
         pendingQueue = [];
         queuedIds = new Set(waiting.map(item => String(item.id)));
         if (waiting.length) {
@@ -431,6 +440,7 @@
         radioMeta = { mode: 'none', requested: '', note: '' };
         radioLabel = String(label || '');
         searchRadio = null;
+        savedListId = '';
         queuedIds = new Set();
         pendingQueue = [];
         clearEmbeddedYouTubeSession();
@@ -519,6 +529,7 @@
         radioMeta = { mode: 'none', requested: '', note: '' };
         const query = String(options.query || '').trim();
         searchRadio = { videos: pool, query };
+        savedListId = '';
         radioLabel = query ? `Cerca «${query}»` : 'Cerca';
         queuedIds = waitingIds;
         pendingQueue = [];
@@ -746,6 +757,7 @@
             categories: radioStyles(),
             meta: radioMeta,
             search: searchRadio && activePlaylistId === QUEUE_ID ? searchRadio.query : '',
+            savedListId: activePlaylistId === QUEUE_ID ? savedListId : '',
         };
     }
 
@@ -857,6 +869,117 @@
         `;
     }
 
+    // ---------- Desar la ràdio com a llista de reproducció ----------
+
+    const PLAYLIST_NAME_MAX = 60;
+
+    // Nom de la llista desada: el de la ràdio (estil/estils, cerca o selecció), mai el de la cançó que sona.
+    function playlistName() {
+        if (searchRadio?.query) return `Cerca: ${searchRadio.query}`;
+        if (radioLabel) return radioLabel;
+        const styles = radioStyles();
+        return styles.length ? `Ràdio ${styles.join(' + ')}` : 'La teva ràdio';
+    }
+
+    // Si ja hi ha una llista amb aquest nom (d'una altra ràdio), s'hi afegeix un número: «Ràdio Pop (2)».
+    function uniquePlaylistName(base, playlists) {
+        const taken = new Set(
+            playlists.map(list =>
+                String(list?.name || '')
+                    .trim()
+                    .toLowerCase()
+            )
+        );
+        const root = base.slice(0, PLAYLIST_NAME_MAX).trim();
+        if (!taken.has(root.toLowerCase())) return root;
+        for (let n = 2; n < 1000; n++) {
+            const suffix = ` (${n})`;
+            const name = `${root.slice(0, PLAYLIST_NAME_MAX - suffix.length).trim()}${suffix}`;
+            if (!taken.has(name.toLowerCase())) return name;
+        }
+        return root;
+    }
+
+    const isSavedList = () => {
+        if (!savedListId) return false;
+        try {
+            return Boolean(app.features.library?.getPlaylists?.().some(list => list?.id === savedListId));
+        } catch (error) {
+            return false;
+        }
+    };
+
+    // Cançons de la cua tal com s'emmagatzemen a les llistes (mateix format que «Afegeix a una llista»).
+    function queueSnapshot() {
+        const library = app.features.library;
+        const seen = new Set();
+        return activePlaylistQueue
+            .filter(item => {
+                const id = String(item?.id || '');
+                if (!id || item.isShort || item.source === 'static' || seen.has(id)) return false;
+                seen.add(id);
+                return true;
+            })
+            .map(item => (library?.getPlaylistVideoData ? library.getPlaylistVideoData(item) : item));
+    }
+
+    function openLibrary() {
+        document.querySelector?.('.nav-trigger[data-page="llistes"]')?.click();
+    }
+
+    // Desa tota la ràdio (el que ja ha sonat, el que sona i el que ve) a «La teva música» com a llista de
+    // reproducció. Tornar-hi a prémer, amb la ràdio ja desada, actualitza aquella mateixa llista.
+    // Retorna { status: 'saved' | 'updated' | 'unsupported', id, name, count }.
+    function saveAsPlaylist() {
+        const library = app.features.library;
+        const toast = app.features.shellNav?.toast;
+        const none = { status: 'unsupported', id: '', name: '', count: 0 };
+        if (
+            !isPlaylistMode ||
+            activePlaylistId !== QUEUE_ID ||
+            !activePlaylistQueue.length ||
+            typeof library?.getPlaylists !== 'function' ||
+            typeof library?.savePlaylists !== 'function'
+        ) {
+            return none;
+        }
+        const videos = queueSnapshot();
+        if (!videos.length) return none;
+        const playlists = library.getPlaylists();
+        const existing = savedListId ? playlists.find(list => list?.id === savedListId) : null;
+        let result;
+        if (existing) {
+            existing.videos = videos;
+            library.savePlaylists(playlists);
+            result = { status: 'updated', id: existing.id, name: existing.name, count: videos.length };
+            toast?.(`Llista «${existing.name}» actualitzada.`, { action: { label: 'Obre', onClick: openLibrary } });
+        } else {
+            const name = uniquePlaylistName(playlistName(), playlists);
+            let id = `pl_${Date.now()}`;
+            while (playlists.some(list => list?.id === id)) id += '_';
+            playlists.push({ id, name, videos });
+            library.savePlaylists(playlists);
+            savedListId = id;
+            result = { status: 'saved', id, name, count: videos.length };
+            toast?.(`Llista «${name}» desada a les teves llistes.`, {
+                action: { label: 'Obre', onClick: openLibrary },
+            });
+        }
+        pendingFocus = '[data-mq-save-list]';
+        refresh();
+        return result;
+    }
+
+    // Símbol de desar com a llista (antigament aquí hi havia el text del mode de descoberta).
+    function saveButtonHtml() {
+        if (activePlaylistId !== QUEUE_ID) return '';
+        const saved = isSavedList();
+        const label = saved
+            ? 'Ràdio desada com a llista. Torna-hi a prémer per actualitzar-la'
+            : 'Desa la ràdio com a llista de reproducció';
+        return `<button type="button" class="mq-save-list${saved ? ' is-saved' : ''}" data-mq-save-list aria-label="${label}" title="${label}">${saved ? ICONS.savedList : ICONS.saveList}</button>`;
+    }
+
     // ---------- Nom de la ràdio: l'estil (o estils) i el «+» per barrejar-ne un altre ----------
 
     function availableStyles() {
@@ -871,14 +994,16 @@
 
     // Capçalera: mai «Basada en <artista>» (canviava a cada cançó). Una ràdio d'estil porta el nom de l'estil
     // (o «Pop + Rock»); la general, «La teva ràdio»; una selecció, el seu nom.
-    function radioNameHtml(modeLabel) {
+    function radioNameHtml() {
         if (activePlaylistId !== QUEUE_ID) {
             return `<span class="mq-source">${escapeText(activePlaylistName || '')}</span>`;
         }
         if (searchRadio) {
-            return `<span class="mq-source">Cerca: ${escapeText(searchRadio.query)} · estils barrejats</span>`;
+            return `<span class="mq-source mq-styles" role="group" aria-label="Origen de la ràdio"><span class="mq-style">Cerca: ${escapeText(searchRadio.query)} · estils barrejats</span>${saveButtonHtml()}</span>`;
         }
-        if (radioLabel) return `<span class="mq-source">Selecció: ${escapeText(radioLabel)}</span>`;
+        if (radioLabel) {
+            return `<span class="mq-source mq-styles" role="group" aria-label="Origen de la ràdio"><span class="mq-style">Selecció: ${escapeText(radioLabel)}</span>${saveButtonHtml()}</span>`;
+        }
         const styles = radioStyles();
         const chips = styles.length
             ? styles
@@ -895,7 +1020,7 @@
         const add = availableStyles().length
             ? `<button type="button" class="mq-add-style" data-mq-add-style aria-haspopup="true" aria-expanded="${stylePickerOpen}" aria-label="Afegeix un estil a la ràdio" title="Afegeix un estil a la ràdio">${ICONS.plus}</button>`
             : '';
-        return `<span class="mq-source mq-styles" role="group" aria-label="Estil de la ràdio">${chips}${add}${modeLabel ? `<span class="mq-mode">· ${escapeText(modeLabel)}</span>` : ''}</span>`;
+        return `<span class="mq-source mq-styles" role="group" aria-label="Estil de la ràdio">${chips}${add}${saveButtonHtml()}</span>`;
     }
 
     function stylePickerHtml() {
@@ -958,20 +1083,15 @@
 
         const upcoming = activePlaylistQueue.slice(currentPlaylistIndex + 1);
         const canRegenerate = activePlaylistId === QUEUE_ID;
-        // Mode de descoberta aplicat a aquesta ràdio (o l'explicació si no hi havia historial suficient).
-        const discovery = app.features.discovery;
+        // L'explicació del mode de descoberta (p. ex. si no hi havia historial suficient); el nom del mode ja no es mostra.
         const applied = canRegenerate ? radioMeta : null;
-        const modeLabel =
-            applied && applied.mode !== 'variety' && applied.mode !== 'none'
-                ? discovery?.MODES?.find(item => item.id === applied.mode)?.label || ''
-                : '';
         const modeNote = applied?.note ? `<p class="mq-note" role="status">${escapeText(applied.note)}</p>` : '';
 
         container.innerHTML = `
             <div class="mq${activePlaylistId === QUEUE_ID ? ' mq--radio' : ''}">
                 <div class="mq-head">
                     <h2 class="mq-heading">Ràdio</h2>
-                    ${radioNameHtml(modeLabel)}
+                    ${radioNameHtml()}
                     ${canRegenerate || activePlaylistQueue.length > 1 ? `<button type="button" class="mq-regenerate mq-open-ytm" data-mq-open-ytm title="Obre aquesta cua, en el mateix ordre, a YouTube (pots desar-la i tornar-la a trobar a YouTube Music)">${ICONS.external}<span>Obre a YouTube</span></button>` : ''}
                     ${canRegenerate ? `<button type="button" class="mq-regenerate" data-mq-regenerate title="Genera de nou la ràdio">${ICONS.shuffle}<span>Barreja</span></button>` : ''}
                 </div>
@@ -1076,6 +1196,11 @@
             if (remove) {
                 event.stopPropagation();
                 removeAt(Number(remove.dataset.mqRemove));
+                return;
+            }
+            if (event.target.closest('[data-mq-save-list]')) {
+                event.stopPropagation();
+                saveAsPlaylist();
                 return;
             }
             if (event.target.closest('[data-mq-open-ytm]')) {
@@ -1201,6 +1326,8 @@
         resumeLast,
         playSelection,
         startFromSearch,
+        saveAsPlaylist,
+        playlistName,
         enqueue,
         getState,
         render,

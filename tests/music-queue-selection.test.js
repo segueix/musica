@@ -571,3 +571,182 @@ describe('ràdio generada amb els resultats d’una cerca', () => {
         expect(ids(ctx.activePlaylistQueue).every(id => ids(results).includes(id))).toBe(true);
     });
 });
+
+describe('desar la ràdio com a llista de reproducció', () => {
+    // Biblioteca i avisos simulats: les llistes viuen a «store» i cada desat avisa com el real
+    function withLibrary(env) {
+        const store = { playlists: [], saves: 0, toasts: [] };
+        env.app.features.library = {
+            getPlaylists: () => JSON.parse(JSON.stringify(store.playlists)),
+            savePlaylists: playlists => {
+                store.playlists = JSON.parse(JSON.stringify(playlists));
+                store.saves += 1;
+            },
+            getPlaylistVideoData: video => ({
+                id: video.id,
+                title: video.title,
+                thumbnail: video.thumbnail,
+                channelTitle: video.channelTitle,
+                channelId: video.channelId,
+                source: 'api',
+            }),
+        };
+        env.app.features.shellNav = { toast: (message, options) => store.toasts.push({ message, options }) };
+        return store;
+    }
+    function radio(style = 'pop1') {
+        const catalog = styledCatalog();
+        const env = setup({ catalog, music: musicStub });
+        const store = withLibrary(env);
+        env.queue.startFrom(catalog.find(v => v.channelId === style).id, 'api');
+        return { ...env, catalog, store };
+    }
+    const ids = list => list.map(v => v.id);
+
+    it('el mode de descoberta ja no es mostra a la capçalera: hi ha el símbol de desar com a llista', () => {
+        for (const mode of ['home', 'mix', 'surprise']) {
+            const catalog = styledCatalog();
+            const history = catalog.slice(0, 30).map(v => ({ ...v, viewedAt: new Date().toISOString() }));
+            const env = setup({ catalog, music: musicStub, mode, history, liked: catalog.slice(40, 46) });
+            env.queue.startDiscovery();
+            const container = fakeContainer();
+            env.queue.render(container);
+            expect(container.innerHTML).not.toContain('mq-mode');
+            expect(container.innerHTML).not.toContain('Sorprèn-me');
+            expect(container.innerHTML).not.toContain('Una mica de tot');
+            expect(container.innerHTML).toContain('data-mq-save-list');
+        }
+    });
+
+    it('el símbol és un botó accessible, amb nom i sense text visible', () => {
+        const env = radio();
+        const container = fakeContainer();
+        env.queue.render(container);
+        const button = container.innerHTML.match(/<button[^>]*data-mq-save-list[^>]*>([\s\S]*?)<\/button>/);
+        expect(button[0]).toContain('aria-label="Desa la ràdio com a llista de reproducció"');
+        expect(button[1]).toContain('<svg');
+        expect(button[1].replace(/<svg[\s\S]*<\/svg>/, '').trim()).toBe('');
+    });
+
+    it('desa tota la ràdio (ja sonat, sona i ve) a les llistes amb el nom de l’estil', () => {
+        const env = radio('rock1');
+        env.ctx.currentPlaylistIndex = 3;
+        const queue = ids(env.ctx.activePlaylistQueue);
+        const result = env.queue.saveAsPlaylist();
+        expect(result).toMatchObject({ status: 'saved', name: 'Ràdio Rock', count: queue.length });
+        expect(env.store.playlists).toHaveLength(1);
+        const list = env.store.playlists[0];
+        expect(list.name).toBe('Ràdio Rock');
+        expect(list.id).toMatch(/^pl_/);
+        expect(ids(list.videos)).toEqual(queue);
+        expect(list.videos[0]).toMatchObject({ title: expect.any(String), source: 'api' });
+        expect(env.store.toasts[0].message).toBe('Llista «Ràdio Rock» desada a les teves llistes.');
+        expect(env.store.toasts[0].options.action.label).toBe('Obre');
+    });
+
+    it('el nom és el de la ràdio: estils barrejats, general, cerca i selecció', () => {
+        const a = radio('pop1');
+        a.queue.addStyle('Rock');
+        expect(a.queue.playlistName()).toBe('Ràdio Pop + Rock');
+
+        const catalog = styledCatalog();
+        const b = setup({ catalog, music: musicStub });
+        withLibrary(b);
+        b.queue.startDiscovery();
+        expect(b.queue.playlistName()).toBe('La teva ràdio');
+
+        b.queue.startFromSearch(catalog.slice(0, 12), { query: 'nit' });
+        expect(b.queue.playlistName()).toBe('Cerca: nit');
+
+        b.queue.playSelection(catalog.slice(0, 12), 'Acabades de sortir');
+        expect(b.queue.playlistName()).toBe('Acabades de sortir');
+    });
+
+    it('tornar a prémer actualitza la mateixa llista en lloc de crear-ne una altra', () => {
+        const env = radio();
+        env.queue.saveAsPlaylist();
+        const extra = env.catalog.find(v => !env.ctx.activePlaylistQueue.some(q => q.id === v.id));
+        env.queue.enqueue(extra);
+        const result = env.queue.saveAsPlaylist();
+        expect(result.status).toBe('updated');
+        expect(env.store.playlists).toHaveLength(1);
+        expect(ids(env.store.playlists[0].videos)).toContain(extra.id);
+        expect(env.store.toasts[1].message).toBe('Llista «Ràdio Pop» actualitzada.');
+        expect(env.queue.getState().savedListId).toBe(env.store.playlists[0].id);
+    });
+
+    it('si l’usuari esborra la llista desada, el botó en crea una de nova', () => {
+        const env = radio();
+        env.queue.saveAsPlaylist();
+        env.store.playlists = [];
+        const container = fakeContainer();
+        env.queue.render(container);
+        expect(container.innerHTML).not.toContain('is-saved');
+        expect(env.queue.saveAsPlaylist().status).toBe('saved');
+        expect(env.store.playlists).toHaveLength(1);
+    });
+
+    it('una altra ràdio amb el mateix nom rep un número, sense trepitjar la llista de l’usuari', () => {
+        const env = radio();
+        env.store.playlists = [{ id: 'pl_a', name: 'Ràdio Pop', videos: [] }];
+        expect(env.queue.saveAsPlaylist().name).toBe('Ràdio Pop (2)');
+        // Una ràdio nova (la d'abans s'ha parat) de Pop: mateix nom, número següent
+        env.ctx.isPlaylistMode = false;
+        env.ctx.activePlaylistId = null;
+        env.queue.startFrom(env.catalog.find(v => v.channelId === 'pop3').id, 'api');
+        expect(env.queue.saveAsPlaylist().name).toBe('Ràdio Pop (3)');
+        expect(env.store.playlists.map(l => l.name)).toEqual(['Ràdio Pop', 'Ràdio Pop (2)', 'Ràdio Pop (3)']);
+        // La llista que ja hi era continua intacta
+        expect(env.store.playlists[0]).toEqual({ id: 'pl_a', name: 'Ràdio Pop', videos: [] });
+    });
+
+    it('el símbol canvia a «desada» (accent) quan la ràdio ja és una llista, i torna a no desada en una ràdio nova', () => {
+        const env = radio();
+        const html = () => {
+            const container = fakeContainer();
+            env.queue.render(container);
+            return container.innerHTML;
+        };
+        expect(html()).not.toContain('is-saved');
+        env.queue.saveAsPlaylist();
+        expect(html()).toContain('is-saved');
+        expect(html()).toContain('Ràdio desada com a llista');
+        env.queue.startFrom(env.catalog.find(v => v.channelId === 'rock2').id, 'api');
+        expect(html()).not.toContain('is-saved');
+        expect(env.queue.getState().savedListId).toBe('');
+    });
+
+    it('la ràdio d’una cerca i una selecció també es poden desar, amb el seu nom', () => {
+        const catalog = styledCatalog();
+        const env = setup({ catalog, music: musicStub });
+        const store = withLibrary(env);
+        env.queue.startFromSearch(catalog.slice(0, 15), { query: 'nit' });
+        const container = fakeContainer();
+        env.queue.render(container);
+        expect(container.innerHTML).toContain('data-mq-save-list');
+        expect(env.queue.saveAsPlaylist()).toMatchObject({ status: 'saved', name: 'Cerca: nit' });
+        expect(store.playlists[0].videos.length).toBeGreaterThan(2);
+        env.queue.playSelection(catalog.slice(20, 30), 'Acabades de sortir');
+        expect(env.queue.saveAsPlaylist()).toMatchObject({ status: 'saved', name: 'Acabades de sortir' });
+    });
+
+    it('no desa Shorts ni repetits i no fa res si no sona cap ràdio', () => {
+        const catalog = styledCatalog();
+        const env = setup({ catalog, music: musicStub });
+        const store = withLibrary(env);
+        expect(env.queue.saveAsPlaylist().status).toBe('unsupported');
+        expect(store.saves).toBe(0);
+        env.queue.playSelection([catalog[0], catalog[0], { ...catalog[1], isShort: true }, catalog[2]], 'Prova');
+        env.queue.saveAsPlaylist();
+        expect(ids(store.playlists[0].videos)).toEqual([catalog[0].id, catalog[2].id]);
+    });
+
+    it('una llista de l’usuari (no ràdio) no mostra el símbol ni es desa', () => {
+        const env = radio();
+        env.ctx.activePlaylistId = 'pl_meva';
+        const container = fakeContainer();
+        env.queue.render(container);
+        expect(container.innerHTML).not.toContain('data-mq-save-list');
+        expect(env.queue.saveAsPlaylist().status).toBe('unsupported');
+    });
+});

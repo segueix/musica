@@ -687,6 +687,9 @@
     // Si l'usuari ha escoltat coses mentre era a un altre lloc, en tornar a Inici es refà «Torna-hi».
     function refreshIfStale() {
         if (!state.rendered || !state.lastInput || signature() === state.lastSignature) return;
+        // La graella pot mostrar una altra vista (p. ex. els resultats d'una cerca): si ja no hi ha la portada,
+        // no es trepitja. En tornar a Inici, renderVideos() la pinta de nou.
+        if (!state.container?.querySelector?.('.pt-sections')) return;
         const input = { ...state.lastInput };
         try {
             if (typeof filterOutWatchedVideos === 'function') {

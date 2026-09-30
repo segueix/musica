@@ -313,6 +313,44 @@ async function main() {
             document.getElementById('provaEstils')?.remove();
         });
 
+        // 1c) El text del mode («Sorprèn-me»…) ja no és a la capçalera: hi ha el símbol de desar com a llista
+        const capcalera = await page.evaluate(() => {
+            const queueApi = SegueixApp.features.musicQueue;
+            const host = document.createElement('div');
+            document.body.appendChild(host);
+            const resultat = {};
+            for (const mode of ['home', 'mix', 'surprise']) {
+                localStorage.setItem('catube_discovery_mode', mode);
+                queueApi.regenerate();
+                queueApi.render(host);
+                const head = host.querySelector('.mq-head');
+                const boto = host.querySelector('[data-mq-save-list]');
+                const r = boto?.getBoundingClientRect();
+                resultat[mode] = {
+                    modeVisible: /Sorprèn-me|Una mica de tot|A casa/.test(head?.textContent || ''),
+                    botoMida: r ? [Math.round(r.width), Math.round(r.height)] : null,
+                    nom: boto?.getAttribute('aria-label') || '',
+                    alCostatDelNom: Boolean(boto?.closest('.mq-source')),
+                };
+            }
+            localStorage.setItem('catube_discovery_mode', 'mix');
+            host.remove();
+            return resultat;
+        });
+        comprovar(
+            'a la capçalera de la ràdio no hi ha el nom del mode (Sorprèn-me…) sinó el símbol de desar com a llista (≥ 44 px)',
+            Object.values(capcalera).every(
+                item =>
+                    !item.modeVisible &&
+                    item.botoMida &&
+                    item.botoMida[0] >= 44 &&
+                    item.botoMida[1] >= 44 &&
+                    item.alCostatDelNom &&
+                    /Desa la ràdio com a llista/.test(item.nom)
+            ),
+            capcalera
+        );
+
         // 2) Senyals d'escolta amb l'observador únic
         const primer = await page.evaluate(() => {
             const id = activePlaylistQueue[currentPlaylistIndex].id;
@@ -663,6 +701,87 @@ async function main() {
             longitud: activePlaylistQueue.length,
         }));
         comprovar('continuar engega una cua nova amb un toc', reprès.radio && reprès.longitud >= 12, reprès);
+
+        // 4b) Desar la ràdio com a llista: surt a «Les teves llistes» i a la biblioteca i persisteix en recarregar
+        const llistaDesada = await nova.page.evaluate(() => {
+            const host = document.createElement('div');
+            document.body.appendChild(host);
+            SegueixApp.features.musicQueue.render(host);
+            const boto = host.querySelector('[data-mq-save-list]');
+            const abans = JSON.parse(localStorage.getItem('catube_playlists') || '[]').length;
+            boto.click();
+            const llistes = JSON.parse(localStorage.getItem('catube_playlists') || '[]');
+            const llista = llistes[llistes.length - 1] || {};
+            host.remove();
+            return {
+                abans,
+                despres: llistes.length,
+                id: llista.id,
+                nom: llista.name,
+                cancons: (llista.videos || []).length,
+                ids: new Set((llista.videos || []).map(v => String(v.id))).size,
+                cua: activePlaylistQueue.length,
+                formatOk: (llista.videos || []).every(v => v.id && v.title && v.source),
+            };
+        });
+        await nova.page.waitForTimeout(400);
+        const avis = await nova.page.evaluate(() => ({
+            text: document.getElementById('ptToast')?.textContent || '',
+            visible: document.getElementById('ptToast')?.classList.contains('is-visible') || false,
+            accio: document.querySelector('#ptToast .pt-toast__action')?.textContent || '',
+        }));
+        comprovar(
+            'el símbol desa la ràdio sencera com a llista de reproducció (una sola llista, sense repetits)',
+            llistaDesada.despres === llistaDesada.abans + 1 &&
+                /^Ràdio|^La teva ràdio/.test(llistaDesada.nom) &&
+                llistaDesada.cancons === llistaDesada.cua &&
+                llistaDesada.ids === llistaDesada.cancons &&
+                llistaDesada.formatOk,
+            llistaDesada
+        );
+        comprovar(
+            'un avís confirma que s’ha desat a les llistes i ofereix obrir-les',
+            avis.visible && /desada a les teves llistes/.test(avis.text) && avis.accio === 'Obre',
+            avis
+        );
+        const botoDesat = await nova.page.evaluate(() => {
+            const host = document.createElement('div');
+            document.body.appendChild(host);
+            SegueixApp.features.musicQueue.render(host);
+            const boto = host.querySelector('[data-mq-save-list]');
+            const estat = { desada: boto.classList.contains('is-saved'), nom: boto.getAttribute('aria-label') };
+            boto.click();
+            const llistes = JSON.parse(localStorage.getItem('catube_playlists') || '[]');
+            host.remove();
+            return { ...estat, llistes: llistes.length };
+        });
+        comprovar(
+            'el símbol mostra que ja és desada i tornar-hi a prémer actualitza la mateixa llista',
+            botoDesat.desada &&
+                /Ràdio desada com a llista/.test(botoDesat.nom) &&
+                botoDesat.llistes === llistaDesada.despres,
+            botoDesat
+        );
+        // «Les teves llistes» de la portada la mostra i la biblioteca també (en tocar «Obre» de l'avís)
+        await nova.page.click('#ptToast .pt-toast__action').catch(() => {});
+        await nova.page.waitForTimeout(800);
+        const biblioteca = await nova.page.evaluate(id => {
+            const nom = JSON.parse(localStorage.getItem('catube_playlists') || '[]').find(l => l.id === id)?.name || '';
+            const visible = el => Boolean(el && el.getClientRects().length);
+            return {
+                nom,
+                alPaginaDeLlistes: [...document.querySelectorAll('#playlistsPage *')].some(
+                    el => visible(el) && el.children.length === 0 && el.textContent.trim() === nom
+                ),
+                alaPortada: Boolean(document.querySelector(`#homePlaylists [data-hp-play="${id}"]`)),
+            };
+        }, llistaDesada.id);
+        comprovar(
+            'la llista desada és a «Les teves llistes» de la portada i a la pàgina de llistes',
+            biblioteca.alaPortada && biblioteca.alPaginaDeLlistes,
+            biblioteca
+        );
+        comprovar('sense errors de JavaScript (desar com a llista)', nova.errors.length === 0, nova.errors);
 
         // Rendiment amb la CPU frenada 4× (aproximació d'un mòbil de gamma mitjana)
         const client = await nova.context.newCDPSession(nova.page);

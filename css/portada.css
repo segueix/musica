@@ -2044,7 +2044,7 @@ body .follow-btn-pill.is-followed:hover {
 }
 
 @media (max-width: 768px) {
-    /* Amb els dos botons, l'origen de la ràdio (mode inclòs) passa a la fila de sota */
+    /* Amb els dos botons, l'origen de la ràdio (amb els controls d'estil i el desar com a llista) passa a la fila de sota */
     .mq-source {
         order: 3;
         flex: 1 0 100%;
@@ -2389,7 +2389,8 @@ body .follow-btn-pill.is-followed:hover {
     background: rgba(244, 240, 232, 0.16);
 }
 
-.mq-add-style {
+.mq-add-style,
+.mq-save-list {
     display: inline-grid;
     place-items: center;
     width: 44px;
@@ -2404,15 +2405,18 @@ body .follow-btn-pill.is-followed:hover {
 
 .mq-add-style:hover,
 .mq-add-style:focus-visible,
-.mq-add-style[aria-expanded='true'] {
+.mq-add-style[aria-expanded='true'],
+.mq-save-list:hover,
+.mq-save-list:focus-visible {
     border-color: var(--pt-accent);
     background: var(--pt-surface-3);
     color: var(--pt-accent);
 }
 
-.mq-mode {
-    color: var(--pt-muted);
-    font-size: 0.8125rem;
+/* Ràdio ja desada com a llista: el símbol queda en llima */
+.mq-save-list.is-saved {
+    border-color: var(--pt-accent);
+    color: var(--pt-accent);
 }
 
 .mq-style-picker {

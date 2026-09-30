@@ -334,10 +334,13 @@ async function main() {
             delMenu
         );
 
-        // 5c) Sense resultats: missatge clar i cap ràdio
+        // 5c) Sense resultats: missatge clar i cap ràdio. La portada ha quedat «vella» (hi ha escoltes i una llista
+        // nova des que es va pintar): en tornar a Inici es refaria a #videosGrid i trepitjaria els resultats.
+        await page.evaluate(() => SegueixApp.features.musicQueue.saveAsPlaylist());
         await escriure(page, 'zzzzqxw');
         await page.press('.search-input', 'Enter');
         await page.waitForSelector('#videosGrid [data-search-results]', { timeout: 5000 });
+        await page.waitForTimeout(1200);
         const buida = await page.evaluate(() => ({
             text: document.querySelector('#videosGrid [data-search-results]').textContent.replace(/\s+/g, ' ').trim(),
             radio: Boolean(document.querySelector('.search-radio-btn')),
