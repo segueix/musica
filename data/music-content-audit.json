@@ -1,23 +1,23 @@
 {
-  "generatedAt": "2026-09-30T12:26:46.949Z",
-  "rawPublicVideoCount": 6520,
-  "feedVideoCount": 6431,
-  "acceptedMusicCount": 5358,
-  "categoryEligibleVideoCount": 5293,
-  "shortVideoCount": 1016,
-  "rejectedOrReviewCount": 1162,
-  "reviewCount": 452,
+  "generatedAt": "2026-09-30T15:06:21.794Z",
+  "rawPublicVideoCount": 6677,
+  "feedVideoCount": 6588,
+  "acceptedMusicCount": 5529,
+  "categoryEligibleVideoCount": 5464,
+  "shortVideoCount": 1002,
+  "rejectedOrReviewCount": 1148,
+  "reviewCount": 449,
   "typeCounts": {
-    "song": 5006,
-    "live_song": 287,
+    "song": 5164,
+    "live_song": 300,
     "album": 65,
-    "other": 710,
-    "review": 452
+    "other": 699,
+    "review": 449
   },
   "channelsWithoutAcceptedMusic": [
     "UCUSjRkF72RR1E8Rl4SWtVsQ",
-    "UC_eW1AyvwaPsQA5YAuOC3YQ",
-    "UC5CGdoxqbma-pqkAHPjkq9w"
+    "UC5CGdoxqbma-pqkAHPjkq9w",
+    "UC_eW1AyvwaPsQA5YAuOC3YQ"
   ],
   "rejectedSamples": [
     {
@@ -53,6 +53,34 @@
       "title": "Vídeo de \"Els teus ulls\" ja disponible. Gràcies a tots per l’acollida 🤍 #shorts",
       "channelTitle": "alfredgarcia",
       "durationSeconds": 19,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "e_-I29a-5J4",
+      "title": "1 d’abril del 2026",
+      "channelTitle": "Anna Ferrer",
+      "durationSeconds": 32,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "Ne0bfgSmfYg",
+      "title": "New release OUT",
+      "channelTitle": "Anna Ferrer",
+      "durationSeconds": 34,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "k70NrvbaUQE",
+      "title": "25 de febrer del 2026",
+      "channelTitle": "Anna Ferrer",
+      "durationSeconds": 17,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "IDu_j6REV7w",
+      "title": "24 de gener del 2025",
+      "channelTitle": "Anna Ferrer",
+      "durationSeconds": 16,
       "musicReason": "massa curt: probable teaser/fragment"
     },
     {
@@ -214,6 +242,13 @@
       "title": "AUXILI - Hui la liem (Teaser)",
       "channelTitle": "AUXILI",
       "durationSeconds": 21,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "SfKr5W0YnCA",
+      "title": "TEASER TREMOLAR",
+      "channelTitle": "AYRYN",
+      "durationSeconds": 23,
       "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
     },
     {
@@ -658,6 +693,83 @@
       "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
     },
     {
+      "id": "S2yoacJp8oM",
+      "title": "comença l’estiu🔗💙☀️ #estiu #viral #music #catalunya",
+      "channelTitle": "dani6ix & IZZKID",
+      "durationSeconds": 21,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "eTgv6JC1FSY",
+      "title": "ja heu escoltat “que s’aturi el temps”? #fyp #viral #catalunya #estiu",
+      "channelTitle": "dani6ix & IZZKID",
+      "durationSeconds": 18,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "UibSWPT-ZGc",
+      "title": "“tantes” ja disponible a tot arreu⛓️‍💥🖇️🎼🧘🏽‍♂️❤️ #barcelona #viral #barcelona #catalunya",
+      "channelTitle": "dani6ix & IZZKID",
+      "durationSeconds": 17,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "2JRyJc5dJCs",
+      "title": "ja heu vist el videoclip de kit kat?🤍🖇️⭐️  #music #barcelona",
+      "channelTitle": "dani6ix & IZZKID",
+      "durationSeconds": 29,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "kRlbrAvVl2w",
+      "title": "em fa la bronca si li robo cacau… 🤒 #morena #catalunya #newmusic #musica",
+      "channelTitle": "dani6ix & IZZKID",
+      "durationSeconds": 9,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "V7wCr0ghg2U",
+      "title": "li dic Maria🤫🤫🤫 #newmusic #catalunya #peratu #morena",
+      "channelTitle": "dani6ix & IZZKID",
+      "durationSeconds": 26,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "MvFNzuOHbXk",
+      "title": "diu que no m’estima però realment ho sent🫣 #perstu #morena #newmusic #catalunya",
+      "channelTitle": "dani6ix & IZZKID",
+      "durationSeconds": 10,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "zqqwj70vqnc",
+      "title": "si et desfaig les trenes…!✴️ #morena #peratu #newmusic #catalunya",
+      "channelTitle": "dani6ix & IZZKID",
+      "durationSeconds": 21,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "an_igmBHIjI",
+      "title": "que us sta semblant m’enamOra?🐎 #music #peratu",
+      "channelTitle": "dani6ix & IZZKID",
+      "durationSeconds": 35,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "jrJ-xbdx_-s",
+      "title": "i em va deixar marcat el lipstick👩🏻‍❤️‍💋‍👨🏻⭐️☝🏽#music #catalunya",
+      "channelTitle": "dani6ix & IZZKID",
+      "durationSeconds": 15,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "PWmXVjGYYVQ",
+      "title": "xocOcrispy 🥣⭐️🤒 primer avançament del q ve, fOra💋",
+      "channelTitle": "dani6ix & IZZKID",
+      "durationSeconds": 22,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
       "id": "r_wADL0d2Ug",
       "title": "ENDING (MI PEAK) - TEASER VIDEO",
       "channelTitle": "DAVEU))",
@@ -746,118 +858,6 @@
       "title": "CARRER, nou disc d'Ebri Knight aquesta tardor // CARRER, nuevo disco de Ebri Knight este otoño",
       "channelTitle": "Ebri Knight",
       "durationSeconds": 31,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "1XIjLF5UTP0",
-      "title": "Making of Videoclip 'La Voz Dormida' (Ebri Knight)",
-      "channelTitle": "Ebri Knight",
-      "durationSeconds": 158,
-      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "LoShoRXsTd8",
-      "title": "1939 | Ebri Knight [EP La Voz Dormida]",
-      "channelTitle": "Ebri Knight",
-      "durationSeconds": 29,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "cSsW2Nzs8FA",
-      "title": "Viva la Quinta Brigada [TEASER] Ebri Knight",
-      "channelTitle": "Ebri Knight",
-      "durationSeconds": 32,
-      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "xm5WmUiG2-0",
-      "title": "Emisión en directo de el Diluvi",
-      "channelTitle": "el Diluvi",
-      "durationSeconds": 0,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "eeTsMkABw5E",
-      "title": "Fart de tocar",
-      "channelTitle": "El Pony Pisador",
-      "durationSeconds": 9,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "aE6v5VirQSA",
-      "title": "ei algú sap com d'antiga és la sardana? Més que el tektonik segur ajsjasj",
-      "channelTitle": "El Pony Pisador",
-      "durationSeconds": 28,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "nQ6I-rbAHM0",
-      "title": "MOLTES FELICITATS MIQUEL!!",
-      "channelTitle": "El Pony Pisador",
-      "durationSeconds": 29,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "7BGZ-HD8s5I",
-      "title": "Thank you Lowlands Festival we had such a great time with all of you!! Hope to see you again 🤞",
-      "channelTitle": "El Pony Pisador",
-      "durationSeconds": 16,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "qYNFos0HW10",
-      "title": "Ossos Bruce",
-      "channelTitle": "El Pony Pisador",
-      "durationSeconds": 22,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "nR_0YEu4LFA",
-      "title": "ei sabeu quin és el truc preferit dels detectius? el trucrime ajsjajjsjas",
-      "channelTitle": "El Pony Pisador",
-      "durationSeconds": 11,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "wij8john1uA",
-      "title": "comenta mario si has arribat fins al sonic",
-      "channelTitle": "El Pony Pisador",
-      "durationSeconds": 28,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "lKv6h6VjdNc",
-      "title": "com digué Hegel, què sou més de la vall de Nuremberg o Aigüestortemberg? ajsjajs",
-      "channelTitle": "El Pony Pisador",
-      "durationSeconds": 27,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "7X51gBrmewM",
-      "title": "aquest vídeo està editat tirant aigua al teclat 👍",
-      "channelTitle": "El Pony Pisador",
-      "durationSeconds": 13,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "LF-YizRPHH4",
-      "title": "qui respongui correctament a la pregunta té premi!",
-      "channelTitle": "El Pony Pisador",
-      "durationSeconds": 23,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "e9wYEf5_-aE",
-      "title": "comenta \"salut Josep Puigdollers\" si vols que pugui deixar de tossir",
-      "channelTitle": "El Pony Pisador",
-      "durationSeconds": 21,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "biKdYWhX0CE",
-      "title": "Finger technique vs pick",
-      "channelTitle": "El Pony Pisador",
-      "durationSeconds": 16,
       "musicReason": "massa curt: probable teaser/fragment"
     }
   ]
