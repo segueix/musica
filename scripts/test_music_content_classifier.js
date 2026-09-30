@@ -9,6 +9,7 @@ function item(title, description, categoryId, seconds, tags=[]){
 
 const official={types:['official'],artistNames:['Antònia Font'],channelTitle:'Antònia Font'};
 const topic={types:['topic'],artistNames:['Antònia Font'],channelTitle:'Antònia Font - Topic'};
+const marPujol={types:['official'],artistNames:['Mar Pujol'],channelTitle:'Mar Pujol'};
 
 assert.equal(classifyMusicContent({item:item('Alegria','','10',230),channelMeta:topic}).contentType,'song');
 assert.equal(classifyMusicContent({item:item('Alegria (Official Video)','','10',240),channelMeta:official}).accepted,true);
@@ -20,5 +21,13 @@ assert.equal(classifyMusicContent({item:item('Teaser nou disc','','10',20),chann
 
 assert.equal(classifyMusicContent({item:item('Els Amics de les Arts - Festes de la Mercè 2026','','10',55),channelMeta:official}).accepted,false);
 assert.equal(classifyMusicContent({item:item('Un concert com els d\'abans','','10',316),channelMeta:official}).accepted,false);
+
+// Un canal musical oficial no ha de perdre cançons perquè YouTube les classifiqui
+// en una categoria no musical (cas real: Mar Pujol, categoryId 23).
+assert.equal(classifyMusicContent({item:item('Mar Pujol - Ploranera (Audio)','','23',249),channelMeta:marPujol}).contentType,'song');
+assert.equal(classifyMusicContent({item:item('Batall (Mar Pujol i Gèls)','','23',186),channelMeta:marPujol}).contentType,'song');
+assert.equal(classifyMusicContent({item:item('Gelimar (Mar Pujol i Gèls)','','23',311),channelMeta:marPujol}).contentType,'song');
+assert.equal(classifyMusicContent({item:item('Mar Pujol - Cançons de rebost (Audio complet)','','23',1609),channelMeta:marPujol}).contentType,'album');
+assert.equal(classifyMusicContent({item:item('Entrevista a Mar Pujol','','23',300),channelMeta:marPujol}).accepted,false);
 
 console.log('✅ Classificador de contingut musical correcte.');
