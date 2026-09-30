@@ -4,6 +4,8 @@ const fs = require('fs');
 const path = require('path');
 const { classifyMusicContent } = require('./lib/classificar_contingut_musical');
 const { loadContentOverrides, applyContentOverride } = require('./lib/revisio_manual_musical');
+const { parseManualDates, stampOriginalYear } = require('./lib/any_original_musical');
+const catalog = require('./lib/cataleg_musical');
 const { resolveChannelDisplayName, findNameOverride, loadNameOverrides, stripOfficialWord } = require('./lib/nom_canal');
 
 const API_KEY = process.env.YOUTUBE_API_KEY_SERVER || process.env.YOUTUBE_API_KEY;
@@ -21,6 +23,11 @@ const CONTENT_AUDIT_FILE = path.join(process.cwd(), 'data', 'music-content-audit
 const REVIEW_FILE = path.join(process.cwd(), 'data', 'music-content-review.json');
 const FALSE_SHORTS_FILE = path.join(process.cwd(), 'data', 'falsos-shorts.json');
 const CONTENT_OVERRIDES_FILE = path.join(process.cwd(), 'data', 'music-content-overrides.json');
+const ORIGINAL_DATES_FILE = path.join(process.cwd(), 'data', 'musica-dates.json');
+const CLASSIC_FILE = path.join(process.cwd(), 'data', 'musica-classica.json');
+const CATALOG_STATE_FILE = path.join(process.cwd(), 'data', 'music-catalog-state.json');
+const DEEP_PAGE_BUDGET = Math.max(0, Number.parseInt(process.env.MUSIC_DEEP_PAGE_BUDGET || String(catalog.DEFAULTS.deepPageBudget), 10));
+const EXTRA_DEEP_CHANNELS = String(process.env.MUSIC_DEEP_CHANNELS || '').split(',').map(v=>v.trim()).filter(Boolean);
 const VIDEOS_PER_CHANNEL = Math.max(1, Math.min(50, Number.parseInt(process.env.MUSIC_VIDEOS_PER_CHANNEL || '50', 10)));
 const API = 'https://www.googleapis.com/youtube/v3';
 
@@ -113,6 +120,23 @@ async function api(resource, params){
   return res.json();
 }
 
+function readJsonSafe(file,fallback){
+  try{ return JSON.parse(fs.readFileSync(file,'utf8')); }catch(error){ return fallback; }
+}
+function foldName(value){
+  return String(value||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim();
+}
+// Canals dels artistes de la llista d'antics: el seu repertori representatiu es busca més enllà de les darreres pujades.
+function collectDeepChannels(db){
+  const classic=new Set((readJsonSafe(CLASSIC_FILE,{}).artistes||[]).map(foldName));
+  const out=new Set(EXTRA_DEEP_CHANNELS);
+  for(const artist of db.artists||[]){
+    if(artist.reviewStatus==='rebutjat' || !classic.has(foldName(artist.name))) continue;
+    for(const ch of artist.youtube?.channels||[]) if(ch?.id) out.add(String(ch.id).trim());
+  }
+  return out;
+}
+
 function collectIndexedChannels(db){
   const byId=new Map();
   for(const artist of db.artists||[]){
@@ -152,6 +176,24 @@ async function main(){
   const unresolved=ids.filter(id=>!channelDetails.has(id));
   const playlistVideoIds=new Map();
   const channelsWithoutUploads=[];
+  const uploadsByChannel=new Map();
+
+  const contentOverrides=loadContentOverrides(CONTENT_OVERRIDES_FILE);
+  if(contentOverrides.size) console.log('✍️ Revisions manuals de contingut:',contentOverrides.size);
+
+  // Catàleg incremental: el feed anterior és la base. Es conserva (i es torna a verificar) el repertori que ja
+  // no cap a la finestra de pujades recents; només un vídeo confirmat com a privat/eliminat se'n va.
+  const previousFeed=readJsonSafe(FEED_FILE,{channels:{},videos:[]});
+  const previousById=new Map((previousFeed.videos||[]).map(v=>[v.id,v]));
+  const previousByChannel=new Map();
+  for(const v of previousFeed.videos||[]){
+    if(!previousByChannel.has(v.channelId)) previousByChannel.set(v.channelId,[]);
+    previousByChannel.get(v.channelId).push(v);
+  }
+  const deepState=readJsonSafe(CATALOG_STATE_FILE,{channels:{}}).channels||{};
+  const deepChannels=collectDeepChannels(db);
+  const freshIdsByChannel=new Map();
+  const deepIdsByChannel=new Map();
 
   for(const id of ids){
     const detail=channelDetails.get(id);
@@ -160,34 +202,98 @@ async function main(){
       channelsWithoutUploads.push(id);
       continue;
     }
+    uploadsByChannel.set(id,uploads);
     try{
       const payload=await api('playlistItems',{
         part:'contentDetails',
         playlistId:uploads,
         maxResults:VIDEOS_PER_CHANNEL
       });
-      playlistVideoIds.set(id,unique((payload.items||[]).map(x=>x.contentDetails?.videoId)));
+      const fresh=unique((payload.items||[]).map(x=>x.contentDetails?.videoId));
+      freshIdsByChannel.set(id,fresh);
+      catalog.seedDeepState(deepState,id,payload.nextPageToken);
     }catch(error){
+      // Fallada transitòria: no se n'esborra el repertori (es conserva el del feed anterior, verificat més avall).
       console.warn('⚠️ '+id+': '+error.message);
-      playlistVideoIds.set(id,[]);
+      freshIdsByChannel.set(id,[]);
     }
   }
 
-  const allVideoIds=unique([...playlistVideoIds.values()].flat());
+  // Pàgines profundes (només canals de la llista d'antics), amb pressupost de quota acotat i rotatiu.
+  let deepPagesFetched=0;
+  for(const step of catalog.planDeepPages(deepState,[...deepChannels].filter(id=>uploadsByChannel.has(id)),{budget:DEEP_PAGE_BUDGET})){
+    try{
+      const payload=await api('playlistItems',{
+        part:'contentDetails',
+        playlistId:uploadsByChannel.get(step.channelId),
+        maxResults:50,
+        pageToken:step.pageToken
+      });
+      deepPagesFetched++;
+      const ids2=(payload.items||[]).map(x=>x.contentDetails?.videoId).filter(Boolean);
+      deepIdsByChannel.set(step.channelId,unique([...(deepIdsByChannel.get(step.channelId)||[]),...ids2]));
+      catalog.applyDeepResult(deepState,step.channelId,{ok:true,nextPageToken:payload.nextPageToken});
+    }catch(error){
+      console.warn('⚠️ Pàgina profunda '+step.channelId+': '+error.message);
+      catalog.applyDeepResult(deepState,step.channelId,{ok:false});
+    }
+  }
+
+  // Repertori conservat: vídeos del feed anterior fora de la finestra actual (els més populars de cada canal).
+  const retainedIdsByChannel=new Map();
+  for(const id of ids){
+    const fresh=new Set([...(freshIdsByChannel.get(id)||[]),...(deepIdsByChannel.get(id)||[])]);
+    retainedIdsByChannel.set(id,catalog.pickRetained(previousByChannel.get(id),fresh).map(v=>v.id));
+  }
+  const retainedSet=new Set([...retainedIdsByChannel.values()].flat());
+  const allVideoIds=unique([
+    ...[...freshIdsByChannel.values()].flat(),
+    ...[...deepIdsByChannel.values()].flat(),
+    ...retainedSet
+  ]);
   const detailsById=new Map();
+  const unverified=new Set();
   for(const batch of chunks(allVideoIds,50)){
-    const payload=await api('videos',{
-      part:'snippet,contentDetails,statistics,status',
-      id:batch.join(',')
-    });
+    let payload;
+    try{
+      payload=await api('videos',{
+        part:'snippet,contentDetails,statistics,status',
+        id:batch.join(',')
+      });
+    }catch(error){
+      // Si només hi ha repertori conservat, una fallada no el retira: es queda tal com estava.
+      if(batch.some(id=>!retainedSet.has(id))) throw error;
+      console.warn('⚠️ No s\'ha pogut verificar un lot de repertori conservat:',error.message);
+      batch.forEach(id=>unverified.add(id));
+      continue;
+    }
     for(const item of payload.items||[]){
       item.durationSeconds=durationSeconds(item.contentDetails?.duration||'');
       detailsById.set(item.id,item);
     }
   }
 
-  const contentOverrides=loadContentOverrides(CONTENT_OVERRIDES_FILE);
-  if(contentOverrides.size) console.log('✍️ Revisions manuals de contingut:',contentOverrides.size);
+  // Vídeos antics més populars per canal profund (només cançons acceptades pel classificador).
+  const deepAllowed=new Set();
+  for(const [id,deepIds] of deepIdsByChannel){
+    const meta=indexed.get(id);
+    const known=new Set([...(freshIdsByChannel.get(id)||[]),...(retainedIdsByChannel.get(id)||[])]);
+    const candidates=[];
+    for(const videoId of deepIds){
+      const item=detailsById.get(videoId);
+      if(!item || known.has(videoId) || item.status?.privacyStatus!=='public') continue;
+      const cls=applyContentOverride(classifyMusicContent({item,channelMeta:{...meta,channelTitle:channelDetails.get(id)?.snippet?.title||''}}),contentOverrides.get(videoId));
+      candidates.push({id:videoId,viewCount:Number(item.statistics?.viewCount||0),contentType:item.durationSeconds>120?cls.contentType:'other'});
+    }
+    catalog.selectDeepKeep(candidates).forEach(videoId=>deepAllowed.add(videoId));
+  }
+  for(const id of ids){
+    const carriedIds=retainedIdsByChannel.get(id)||[];
+    const keepDeep=(deepIdsByChannel.get(id)||[]).filter(videoId=>deepAllowed.has(videoId));
+    playlistVideoIds.set(id,unique([...(freshIdsByChannel.get(id)||[]),...keepDeep,...carriedIds]));
+  }
+
+  const manualDates=fs.existsSync(ORIGINAL_DATES_FILE)?parseManualDates(JSON.parse(fs.readFileSync(ORIGINAL_DATES_FILE,'utf8'))):new Map();
   const channels={};
   const channelIndex=[];
   const videos=[];
@@ -203,7 +309,21 @@ async function main(){
   for(const id of ids){
     const meta=indexed.get(id);
     const detail=channelDetails.get(id);
-    if(!detail) continue;
+    if(!detail){
+      // Canal no resolt (possible fallada transitòria): es conserva el que ja hi havia al feed anterior.
+      const before=previousByChannel.get(id)||[];
+      if(previousFeed.channels?.[id] && before.length){
+        channels[id]=previousFeed.channels[id];
+        for(const v of before){
+          videos.push(v);
+          publicVideoCount++;
+          typeCounts[v.contentType]=(typeCounts[v.contentType]||0)+1;
+          if(['song','live_song','album'].includes(v.contentType)) acceptedMusicCount++;
+          if(v.contentType==='song' || v.contentType==='live_song') categoryEligibleVideoCount++;
+        }
+      }
+      continue;
+    }
     const snippet=detail.snippet||{};
     const categories=meta.categories||[];
     const rawChannelName=snippet.title || meta.artistNames[0] || id;
@@ -243,19 +363,37 @@ async function main(){
 
     for(const videoId of playlistVideoIds.get(id)||[]){
       const item=detailsById.get(videoId);
-      if(!item || item.status?.privacyStatus!=='public') continue;
+      // Repertori conservat que no s'ha pogut tornar a verificar (fallada transitòria de l'API): es queda com estava.
+      const carried=!item && unverified.has(videoId) ? previousById.get(videoId) : null;
+      const verdict=carried ? 'unverified' : catalog.verdict({requested:videoId,returned:item,batchFailed:false});
+      if(verdict==='removed' || (!item && !carried)) continue;
       channelPublicCount++;
       publicVideoCount++;
 
       // La decisió manual (data/music-content-overrides.json) preval sobre el classificador automàtic.
-      const classification=applyContentOverride(classifyMusicContent({
-        item,
-        channelMeta:{...meta,channelTitle:rawChannelName}
-      }),contentOverrides.get(item.id));
+      const classification=carried
+        ? applyContentOverride({
+            accepted:['song','live_song','album'].includes(carried.contentType),
+            contentType:carried.contentType||'review',
+            confidence:carried.musicConfidence,
+            reason:carried.musicReason
+          },contentOverrides.get(videoId))
+        : applyContentOverride(classifyMusicContent({
+            item,
+            channelMeta:{...meta,channelTitle:rawChannelName}
+          }),contentOverrides.get(item.id));
       typeCounts[classification.contentType]=(typeCounts[classification.contentType]||0)+1;
 
-      const vs=item.snippet||{};
-      const base={
+      const vs=item?.snippet||{};
+      const base=carried ? {
+        ...carried,
+        channelTitle:channel.name,
+        categories,
+        genres:meta.genres,
+        contentType:classification.contentType,
+        musicConfidence:classification.confidence,
+        musicReason:classification.reason
+      } : {
         id:item.id,
         title:vs.title||'',
         description:vs.description||'',
@@ -280,6 +418,9 @@ async function main(){
         musicConfidence:classification.confidence,
         musicReason:classification.reason
       };
+
+      // Any original només amb evidència (descripció automàtica o excepció manual); mai s'inventa.
+      stampOriginalYear(base,manualDates);
 
       // Tots els vídeos públics es conserven al feed. La vista de categories
       // decideix després si són cançó o actuació en directe.
@@ -340,8 +481,13 @@ async function main(){
     channelsWithoutAcceptedMusic,
     rejectedSamples
   },null,2)+'\n');
+  fs.writeFileSync(CATALOG_STATE_FILE,JSON.stringify({updatedAt:generatedAt,channels:deepState},null,2)+'\n');
   fs.writeFileSync(AUDIT_FILE,JSON.stringify({
     generatedAt,
+    retainedVideoCount:retainedSet.size,
+    unverifiedVideoCount:unverified.size,
+    deepPagesFetched,
+    deepChannelCount:deepChannels.size,
     indexedChannelCount:ids.length,
     resolvedChannelCount:channelDetails.size,
     feedChannelCount:Object.keys(channels).length,

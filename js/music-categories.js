@@ -27,6 +27,8 @@
 
     const byChannel = new Map();
     const artistByChannel = new Map();
+    // Identitat persistent de l'artista per canal: canals oficials i Topic d'un mateix artista comparteixen clau.
+    const artistKeyByChannel = new Map();
     let ready = false;
     let initPromise = null;
 
@@ -88,6 +90,15 @@
             const id = String(channel?.id || '').trim();
             if (!id) continue;
             if (classicNames.has(normalizeName(artist.name))) classicChannels.add(id);
+            // Clau estable: Wikidata > MusicBrainz > nom normalitzat (mai el canal, que pot canviar o duplicar-se).
+            if (!artistKeyByChannel.has(id)) {
+                const stable = artist.wikidataId
+                    ? 'wd:' + artist.wikidataId
+                    : artist.musicbrainzId
+                      ? 'mb:' + artist.musicbrainzId
+                      : 'n:' + normalizeName(artist.name);
+                artistKeyByChannel.set(id, stable.toLowerCase());
+            }
             byChannel.set(id, unique([...(byChannel.get(id) || []), ...categories]));
             artistByChannel.set(id, {
                 name: artist.name || channel.name || '',
@@ -108,6 +119,7 @@
                 const data = await response.json();
                 await loadClassic();
                 byChannel.clear();
+                artistKeyByChannel.clear();
                 artistByChannel.clear();
                 for (const artist of data.artists || []) registerArtist(artist);
                 ready = true;
@@ -127,6 +139,16 @@
 
     function isClassicChannel(channelId) {
         return classicChannels.has(String(channelId || ''));
+    }
+
+    // Clau d'artista persistent d'un canal (buit si el canal no és a la base d'artistes).
+    function artistKeyForChannel(channelId) {
+        return artistKeyByChannel.get(String(channelId || '')) || '';
+    }
+
+    // Vídeo d'un artista de la llista d'antics (aproximació conservadora quan no se'n sap l'any original).
+    function isClassicArtistVideo(video) {
+        return isClassicChannel(video?.channelId || video?.sourceChannelId);
     }
 
     // Antic = artista clàssic o vídeo publicat fa `classicYears` anys o més.
@@ -173,6 +195,8 @@
         isMusicChannel,
         isClassicChannel,
         isClassicVideo,
+        isClassicArtistVideo,
+        artistKeyForChannel,
         decorateChannel,
         decorateVideo
     };

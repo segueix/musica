@@ -53,7 +53,9 @@ js/
 │   ├── discovery.js         # Descoberta (mode A casa/Una mica de tot/Sorprèn-me, radar, Torna-hi) — funcions pures
 │   ├── portada.js           # Portada «La teva plaça musical» (model pur + HTML + esdeveniments), pinta dins #videosGrid
 │   ├── shell-nav.js         # Navegació lateral/inferior i avisos breus (toast)
-│   ├── music-queue.js       # Ràdio/cua: mode de descoberta, «Afegeix a la cua», reproduir una selecció
+│   ├── music-selection.js   # Motor de selecció musical compartit (funcions pures): antiguitat real, puntuació, restriccions
+│   ├── music-signals.js     # Observador únic d'escolta, estadístiques i preferències («Menys com aquesta»)
+│   ├── music-queue.js       # Ràdio/cua: motor de selecció, mode de descoberta, «Afegeix a la cua», reproduir una selecció
 │   └── home-playlists.js    # «Les teves llistes» de la portada
 ├── config.js                # Constants CONFIG (branding, theme, features, layout, categories)
 ├── youtube.js               # YouTubeAPI object — feed fetch, cache, parsers
@@ -257,6 +259,13 @@ const ctx2 = loadScript('js/features/likes.js', { localStorage: createMockLocalS
 const likes = ctx2.SegueixApp.features.likes;
 ```
 
+### Selecció musical (2026-09-30)
+
+- La ràdio, «Recomanat per a tu», les files i «Torna-hi» fan servir `SegueixApp.features.musicSelection` amb els senyals de `musicSignals`. **No afegeixis una ordenació més** a un flux que ja passa pel motor: les restriccions d'antigues i d'artista s'apliquen al resultat final (`arrangeMusicList()` per a llistes). Ordre de scripts: `discovery.js` → `music-selection.js` → `music-signals.js` → `music-queue.js`.
+- Tornar a la política anterior: `localStorage.catube_selection_engine = 'legacy'`. Tot el detall (paràmetres, senyals, limitacions) és a `docs/MUSICA_SELECCIO.md`; la simulació és a `docs/MUSICA_SELECCIO_SIMULACIO.md`.
+- Una cançó de l'historial **ja no** queda exclosa de la ràdio (tornen amb descans de 12 cançons i 60 min). Novetats i les categories continuen ocultant-les.
+- Un vídeo pujat fa poc **no** és una estrena si té any original antic (`originalYear`) o és d'un artista de `musica-classica.json` sense any verificat (`data/musica-dates.json` per excepcions).
+
 ### Portada de Segueix Música (2026-09-30)
 
 - La vista «Novetats» és **Inici** (la interfície no diu «Novetats»; l'id intern es conserva). `renderVideos()` crida `SegueixApp.features.portada.render(videosGrid, videos, { feed, all })`; si no hi és, cau a `homeSections` i a la graella.
@@ -274,7 +283,10 @@ const likes = ctx2.SegueixApp.features.likes;
 | `likes.js` | normalizeLikedVideo, getLikedVideos, setLikedVideos, isLiked, getLikedVideoIds |
 | `discovery.js` | mode persistit, perfil, ordenació per mode, radar, Torna-hi, Comença per aquí, estils |
 | `portada.js` | model de la portada, HTML de seccions i targetes, dates honestes, escapament |
-| `music-queue.js` | «Fes-la sonar», canvi de mode sense interrompre, afegir a la cua, reproduir selecció |
+| `music-queue.js` | «La teva ràdio», canvi de mode sense interrompre, afegir a la cua, reproduir selecció |
+| `music-selection.js` | antiguitat real, estrenes, puntuació, límits d'antigues/artista/descans, duplicats, preferència per música antiga, «Torna-hi» |
+| `music-signals.js` | progrés efectiu, escolta qualificada, finalització, repeticions voluntàries, salts, fusió idempotent, migració feble |
+| `scripts/lib/cataleg_musical.js`, `any_original_musical.js` | catàleg incremental, pàgines profundes, any original amb evidència |
 | `portada.css` / `index.html` | contrast real dels tokens, cantonades 12–16 px, mides tàctils, ordre de scripts, precache |
 
 ---
@@ -315,6 +327,8 @@ const likes = ctx2.SegueixApp.features.likes;
 - `data/search_index_*.json` — generats per `scripts/generar_index_cerca.js` (mode híbrid anual/mensual)
 - `data/search_index_manifest.json` — manifest generat per `scripts/generar_index_cerca.js`
 - `data/music-content-overrides.json` — decisions **manuals** (no generat) sobre el `contentType` de vídeos concrets: manen sobre el classificador i `scripts/update_music_feed.js` les reaplica a cada generació. `node scripts/aplicar_revisio_manual_musical.js` les aplica al feed actual sense API. Veure `docs/MUSICA_DADES.md`.
+- `data/musica-dates.json` — excepcions **manuals** (verificades) de l'any original per vídeo; `originalYear*` del feed el genera `update_music_feed.js` amb `scripts/lib/any_original_musical.js`.
+- `data/music-catalog-state.json` — cursors de les pàgines profundes de `update_music_feed.js` (generat).
 - `data/falsos-shorts.json` — registre de falsos Shorts generat per `scripts/revisar_shorts.js` (workflow `revisar_shorts.yml`) i reaplicat per `scripts/update_feed.js`. **Sí que és versionat**: si es perd, les correccions de `isShort` es desfan a la propera reconstrucció del feed.
 
 ---

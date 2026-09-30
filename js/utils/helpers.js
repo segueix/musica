@@ -404,7 +404,11 @@ function batchRenderCards(container, items, createCardFn, options = {}) {
 
 // Clau d'artista d'un vídeo: el canal (grup) que el publica.
 function getVideoArtistKey(video) {
-    const key = video?.channelId || video?.snippet?.channelId || video?.channelTitle || video?.snippet?.channelTitle;
+    const channelId = video?.channelId || video?.snippet?.channelId || video?.sourceChannelId;
+    // Identitat persistent de la base d'artistes: el canal oficial i el Topic d'un artista són el mateix.
+    const identity =
+        channelId && typeof window !== 'undefined' ? window.SegueixMusicCategories?.artistKeyForChannel?.(channelId) : '';
+    const key = identity || channelId || video?.channelTitle || video?.snippet?.channelTitle;
     return String(key || '')
         .trim()
         .toLowerCase();
@@ -479,4 +483,51 @@ function limitClassicFrequency(videos, { every = 5, isClassic = null } = {}) {
         if ((index + 1) % gap === 0 && nextClassic < classic.length) result.push(classic[nextClassic++]);
     });
     return result.concat(classic.slice(nextClassic));
+}
+
+// ========== SELECCIÓ MUSICAL COMPARTIDA ==========
+
+// Antiguitat real (evidència d'any original > llista d'artistes antics > data de pujada) amb el motor de
+// selecció; sense el motor (o amb `engine: 'legacy'`) es manté el criteri anterior d'isClassicVideo().
+function isHistoricVideo(video) {
+    const selection = typeof window !== 'undefined' ? window.SegueixApp?.features?.musicSelection : null;
+    if (selection?.isEnabled?.()) {
+        try {
+            const music = window.SegueixMusicCategories;
+            return (
+                selection.eraOf(video, {
+                    isClassicArtist: music?.isClassicArtistVideo ? item => music.isClassicArtistVideo(item) : null,
+                }).tier === 'historic'
+            );
+        } catch (error) {
+            // Segueix amb el criteri anterior
+        }
+    }
+    return Boolean(typeof window !== 'undefined' && window.SegueixMusicCategories?.isClassicVideo?.(video));
+}
+
+// Resultat FINAL d'una llista: límits d'antiguitat i d'artista aplicats una sola vegada, després de totes les
+// altres ordenacions (una segona reordenació no els pot desfer). Sense el motor, l'alternança anterior.
+function arrangeMusicList(videos, options = {}) {
+    const list = Array.isArray(videos) ? videos : [];
+    const selection = typeof window !== 'undefined' ? window.SegueixApp?.features?.musicSelection : null;
+    if (selection?.isEnabled?.() && list.length > 1) {
+        try {
+            let feed = [];
+            try {
+                feed = typeof currentFeedVideos !== 'undefined' && Array.isArray(currentFeedVideos) ? currentFeedVideos : [];
+            } catch (error) {
+                feed = [];
+            }
+            const ctx = selection.getAppContext(feed.length ? feed : list);
+            const signals = window.SegueixApp?.features?.musicSignals?.snapshot?.() || undefined;
+            const preceding = options.previousVideo ? [options.previousVideo] : [];
+            return selection.arrange(list, { ctx, signals, preceding });
+        } catch (error) {
+            console.warn('No s’ha pogut aplicar el motor de selecció:', error);
+        }
+    }
+    return spreadVideosByArtist(limitClassicFrequency(list, { every: options.every || 5 }), {
+        previousArtist: options.previousArtist || '',
+    });
 }

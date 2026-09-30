@@ -102,7 +102,9 @@
         const now = ctx.now ?? Date.now();
         const rng = ctx.rng || Math.random;
         const hidden = ctx.hiddenIds instanceof Set ? ctx.hiddenIds : new Set();
-        const usable = video => video?.id && !video.isShort && !hidden.has(String(video.channelId || ''));
+        // Preferències explícites: «Menys com aquesta» i «No em recomanis aquest artista» també valen a la portada.
+        const rejected = typeof ctx.isRejected === 'function' ? ctx.isRejected : () => false;
+        const usable = video => video?.id && !video.isShort && !hidden.has(String(video.channelId || '')) && !rejected(video);
 
         const all = toArray(ctx.all).filter(usable);
         const recent = toArray(ctx.recent)
@@ -138,11 +140,17 @@
             return true;
         };
 
+        // Una reedició o un arxiu pujat fa poc NO és una estrena: «Acabades de sortir» només porta novetats
+        // reals (motor de selecció: any original, llista d'artistes antics i data de pujada).
+        const isNew = typeof ctx.isNewRelease === 'function' ? ctx.isNewRelease : null;
+        const newest = isNew ? recent.filter(video => isNew(video)) : recent;
+
         // B · novetat destacada de l'entrada
         const featured = discovery.pickFeatured({
-            videos: recent.length ? recent : all,
+            videos: newest.length ? newest : recent.length ? recent : all,
             profile,
             isClip: ctx.isClip,
+            isNew,
             now,
         });
         if (featured) {
@@ -153,7 +161,7 @@
         // D · acabades de sortir: cronològic, un vídeo per artista a la fila
         const seenFresh = new Set();
         const freshRow = [];
-        recent.forEach(video => {
+        newest.forEach(video => {
             const key = discovery.artistKeyOf(video);
             if (freshRow.length >= FRESH_ROW || (key && seenFresh.has(key)) || taken.has(String(video.id))) return;
             if (!take(video)) return;
@@ -192,19 +200,36 @@
             };
         }
 
-        // C · «Torna-hi» (només amb historial) o «Comença per aquí»
-        if (model.hasHistory) {
+        // Explicacions honestes («Perquè segueixes…»): només amb senyals reals de l'usuari.
+        model.reasons = new Map();
+        const selection = ctx.selection || null;
+        const explain = video => {
+            if (!selection || !ctx.signals || !video?.id) return;
+            const reason = selection.reasonFor(video, ctx.selectionCtx, ctx.signals);
+            if (reason) model.reasons.set(String(video.id), reason);
+        };
+        // Preferides i repeticions reals amb varietat (cors, escoltes voluntàries, finalitzacions).
+        const preferred =
+            selection && ctx.signals
+                ? selection.pickReturn({ ctx: ctx.selectionCtx, candidates: all, signals: ctx.signals, limit: 4, rng, now })
+                : [];
+
+        // C · «Torna-hi» (amb historial o amb preferides reals) o «Comença per aquí»
+        if (model.hasHistory || preferred.length) {
             const items = discovery.pickReturnItems({
                 history,
                 playlists: ctx.playlists,
                 channels,
                 limit: 6,
+                preferred,
             });
             if (items.length) {
                 model.lead = {
                     kind: 'return',
                     title: 'Torna-hi',
-                    subtitle: 'Cançons, artistes i llistes que has escoltat fa poc',
+                    subtitle: preferred.length
+                        ? 'Les teves preferides, el que has tornat a triar i llistes'
+                        : 'Cançons, artistes i llistes que has escoltat fa poc',
                     items,
                 };
             }
@@ -240,8 +265,10 @@
             const key = discovery.artistKeyOf(video);
             if (key && placement.count(key) >= MAX_PER_ARTIST) capped.add(key);
         });
+        // Descoberta actual: els artistes per descobrir són de música recent o mitjana (no reedicions antigues).
+        const isCurrent = typeof ctx.isCurrent === 'function' ? ctx.isCurrent : () => true;
         const radar = discovery.pickRadar({
-            videos: all.filter(video => !taken.has(String(video.id))),
+            videos: all.filter(video => !taken.has(String(video.id)) && isCurrent(video)),
             profile,
             limit: RADAR_ROW,
             rng,
@@ -262,11 +289,14 @@
         // F · estils reals
         model.styles = discovery.summarizeStyles({ videos: all, channels });
 
+        freshRow.forEach(explain);
+        model.radar?.items.forEach(item => explain(item.video));
+
         // «Veure-ho tot» de les novetats: totes les recents cronològicament, sense repetir cap cançó que ja
         // surt en una altra fila (es calcula al final perquè les altres files ja han triat les seves).
         if (model.fresh) {
             const rowIds = new Set(freshRow.map(video => String(video.id)));
-            model.fresh.all = recent
+            model.fresh.all = newest
                 .filter(video => rowIds.has(String(video.id)) || !taken.has(String(video.id)))
                 .slice(0, FRESH_ALL);
         }
@@ -293,6 +323,7 @@
                     <div class="pt-card__text">
                         <h3 class="pt-card__title" data-pt-play="${id}">${title}</h3>
                         <button type="button" class="pt-artist" data-pt-artist="${esc(video.channelId)}" aria-label="Obre l’artista: ${artist}">${artist}</button>
+                        ${opts.reason ? `<p class="pt-card__reason">${esc(opts.reason)}</p>` : ''}
                         ${meta ? `<p class="pt-card__meta">${esc(meta)}</p>` : ''}
                     </div>
                     <div class="pt-card__actions">
@@ -363,7 +394,7 @@
         return `
             <button type="button" class="pt-quick__main" data-pt-play="${esc(item.id)}" aria-label="Reprodueix ${title}, de ${artist}">
                 <span class="pt-quick__thumb"><img src="${esc(item.image)}" alt="" loading="lazy" decoding="async" width="96" height="54"></span>
-                <span class="pt-quick__text"><span class="pt-quick__kicker">Cançó</span><span class="pt-quick__title">${title}</span><span class="pt-quick__sub">${artist}</span></span>
+                <span class="pt-quick__text"><span class="pt-quick__kicker">${esc(item.reason || 'Cançó')}</span><span class="pt-quick__title">${title}</span><span class="pt-quick__sub">${artist}</span></span>
             </button>`;
     }
 
@@ -397,7 +428,7 @@
             </section>`;
     }
 
-    function freshHtml(fresh, expanded, now) {
+    function freshHtml(fresh, expanded, now, reasons = null) {
         const videos = expanded ? fresh.all : fresh.videos;
         const canExpand = fresh.all.length > fresh.videos.length;
         const tools = `
@@ -408,7 +439,7 @@
             <section class="pt-section pt-section--fresh${expanded ? ' is-expanded' : ''}" aria-labelledby="ptH-fresh" data-pt-section="fresh">
                 ${headHtml({ id: 'ptH-fresh', title: fresh.title, subtitle: fresh.subtitle, tools })}
                 <ul class="pt-row">
-                    ${videos.map(video => `<li class="pt-cell">${cardHtml(video, { now })}</li>`).join('')}
+                    ${videos.map(video => `<li class="pt-cell">${cardHtml(video, { now, reason: reasons?.get?.(String(video.id)) })}</li>`).join('')}
                 </ul>
             </section>`;
     }
@@ -500,7 +531,7 @@
         return `
             <div class="pt-sections">
                 ${model.lead ? leadHtml(model.lead) : ''}
-                ${model.fresh ? freshHtml(model.fresh, Boolean(options.freshExpanded), now) : ''}
+                ${model.fresh ? freshHtml(model.fresh, Boolean(options.freshExpanded), now, model.reasons) : ''}
                 ${model.radar ? radarHtml(model.radar) : ''}
                 ${stylesHtml(model.styles, Boolean(options.stylesExpanded))}
                 ${model.live ? liveHtml(model.live, now) : ''}
@@ -521,7 +552,33 @@
         }
         const music = window.SegueixMusicCategories;
         const homeSections = app.features.homeSections;
+        // Motor de selecció compartit (music-selection.js): mateixes senyals que la ràdio i el feed.
+        const selection = app.features.musicSelection?.isEnabled?.() ? app.features.musicSelection : null;
+        const classicArtist = music?.isClassicArtistVideo ? video => music.isClassicArtistVideo(video) : null;
+        let selectionCtx = null;
+        let signals = null;
+        if (selection) {
+            try {
+                const catalog = toArray(input.all).length ? input.all : input.recent;
+                selectionCtx = selection.getAppContext(catalog);
+                signals = app.features.musicSignals?.snapshot?.() || selection.emptySignals();
+            } catch (error) {
+                selectionCtx = null;
+            }
+        }
         return {
+            selection: selectionCtx ? selection : null,
+            selectionCtx,
+            signals,
+            isRejected: signals
+                ? video => signals.lessLike.has(String(video?.id)) || signals.blockedArtists.has(selectionCtx.artistKeyOf(video))
+                : null,
+            isCurrent: selectionCtx
+                ? video => selection.eraOf(video, { now: selectionCtx.now, isClassicArtist: classicArtist }).tier !== 'historic'
+                : null,
+            isNewRelease: selectionCtx
+                ? video => selection.isNewRelease(video, { now: selectionCtx.now, isClassicArtist: classicArtist })
+                : null,
             discovery,
             recent: input.recent,
             all: input.all,
@@ -532,7 +589,7 @@
             hiddenIds: context.hiddenIds,
             playlists,
             isClip: video => Boolean(homeSections?.isOfficialClip?.(video)),
-            isClassic: video => Boolean(music?.isClassicVideo?.(video)),
+            isClassic: video => (typeof isHistoricVideo === 'function' ? isHistoricVideo(video) : Boolean(music?.isClassicVideo?.(video))),
         };
     }
 
@@ -548,7 +605,9 @@
         } catch (error) {
             lists = 0;
         }
-        return `${context.history.length}:${context.history[0]?.id || ''}:${context.liked.length}:${context.followedIds.length}:${lists}`;
+        // Les escoltes reals (music-signals) també refresquen «Torna-hi».
+        const listened = app.features.musicSignals?.getStats?.()?.recent?.[0]?.id || '';
+        return `${context.history.length}:${context.history[0]?.id || ''}:${context.liked.length}:${context.followedIds.length}:${lists}:${listened}`;
     }
 
     // ---------- DOM ----------
@@ -689,6 +748,7 @@
                         <div class="pt-feature__actions">
                             <button type="button" class="pt-btn pt-btn--primary pt-btn--sm" data-pt-continue>Continua</button>
                             <button type="button" class="pt-act" data-pt-toggle aria-label="${now.playing ? 'Pausa' : 'Reprèn'}" title="${now.playing ? 'Pausa' : 'Reprèn'}">${now.playing ? ICONS.pause : ICONS.play}</button>
+                            ${video && app.features.musicSignals ? `<button type="button" class="pt-tool" data-pt-less="${esc(video.id)}" title="No et tornarem a proposar aquesta cançó i en triarem menys d’aquest tipus">Menys com aquesta</button><button type="button" class="pt-tool" data-pt-block="${esc(video.id)}" title="No et proposarem més aquest artista">No em recomanis aquest artista</button>` : ''}
                             ${now.isRadio ? `<button type="button" class="pt-tool" data-pt-regenerate title="Genera de nou la part pendent de la cua amb el mode triat">${ICONS.shuffle}<span>Regenera la cua</span></button>` : ''}
                         </div>
                     </div>
@@ -737,6 +797,14 @@
             const ready = Boolean(state.model && state.model.status === 'ready');
             play.disabled = !ready;
             entry?.setAttribute('aria-busy', ready ? 'false' : 'true');
+        }
+        // «Continua la ràdio»: només si n'hi ha una de recent i ara no sona res; mai sona sola.
+        const resume = $('ptResumeBtn');
+        if (resume) {
+            const last = !now && state.model?.status === 'ready' ? app.features.musicQueue?.getLastRadio?.() : null;
+            resume.hidden = !last;
+            const label = resume.querySelector('span');
+            if (last && label) label.textContent = `Continua la ràdio: ${last.title || 'l’última cançó'}`;
         }
         syncModeInputs();
     }
@@ -875,7 +943,7 @@
         }
         if ((el = pick('[data-pt-more]'))) {
             state.expanded.fresh = !state.expanded.fresh;
-            swapSection('fresh', freshHtml(state.model.fresh, state.expanded.fresh, Date.now()));
+            swapSection('fresh', freshHtml(state.model.fresh, state.expanded.fresh, Date.now(), state.model.reasons));
             state.container.querySelector('[data-pt-more="fresh"]')?.focus?.({ preventScroll: true });
             return undefined;
         }
@@ -886,6 +954,15 @@
         if (pick('[data-pt-retry]')) {
             setNote('');
             if (typeof loadVideosFromAPI === 'function') loadVideosFromAPI();
+            return undefined;
+        }
+        if ((el = pick('[data-pt-less]') || pick('[data-pt-block]'))) {
+            const video = videoById(el.dataset.ptLess || el.dataset.ptBlock);
+            app.features.musicQueue?.applyPreference?.(video, Boolean(el.dataset.ptBlock));
+            return undefined;
+        }
+        if (pick('[data-pt-resume]')) {
+            if (!app.features.musicQueue?.resumeLast?.()) toast('No s’ha pogut continuar la ràdio. Prova «La teva ràdio».');
             return undefined;
         }
         if (pick('[data-pt-mix]')) return startMix();

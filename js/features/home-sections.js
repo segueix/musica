@@ -72,7 +72,11 @@
         const views = Number(video?.viewCount || video?.views || 0);
         const score = (1 + Math.log10(1 + views)) * Math.pow(0.5, ageDays / STYLE_HALF_LIFE_DAYS);
         // La música realment antiga puntua molt menys perquè no eclipsi la dels darrers anys
-        return window.SegueixMusicCategories?.isClassicVideo?.(video) ? score * CLASSIC_SCORE_FACTOR : score;
+        const historic =
+            typeof isHistoricVideo === 'function'
+                ? isHistoricVideo(video)
+                : Boolean(window.SegueixMusicCategories?.isClassicVideo?.(video));
+        return historic ? score * CLASSIC_SCORE_FACTOR : score;
     }
     function sortByStyleScore(videos) {
         const now = Date.now();
@@ -99,7 +103,10 @@
             }
         });
         // Com a molt 1 de cada 5 és música realment antiga (abans de retallar la fila)
-        return spreadVideosByArtist(limitClassicFrequency([...firsts, ...rest]).slice(0, size));
+        const ordered = [...firsts, ...rest];
+        // Motor de selecció compartit (helpers.js); sense ell, l'alternança anterior d'antigues i artistes.
+        if (typeof arrangeMusicList === 'function') return arrangeMusicList(ordered).slice(0, size);
+        return spreadVideosByArtist(limitClassicFrequency(ordered).slice(0, size));
     }
 
     function buildStyleRow(videos, feed, category) {

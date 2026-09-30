@@ -17,8 +17,12 @@ on:
       - "data/music-content-overrides.json"
       - "data/falsos-shorts.json"
       - "data/hidden-videos.json"
+      - "data/musica-dates.json"
+      - "data/musica-classica.json"
       - "scripts/lib/classificar_contingut_musical.js"
       - "scripts/lib/revisio_manual_musical.js"
+      - "scripts/lib/any_original_musical.js"
+      - "scripts/lib/cataleg_musical.js"
       - "scripts/test_music_content_classifier.js"
       - ".github/workflows/actualitzar-feed-musica.yml"
   schedule:
@@ -63,6 +67,9 @@ jobs:
 
       - name: Prova classificador musical
         run: node scripts/test_music_content_classifier.js
+
+      - name: Prova catàleg, any original i revisions manuals
+        run: npx vitest run tests/cataleg-musical.test.js tests/any-original.test.js tests/music-content-overrides.test.js
 
       - name: Genera feed des de la base musical
         env:

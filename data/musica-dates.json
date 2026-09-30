@@ -1,0 +1,4 @@
+{
+  "_ajuda": "Excepcions verificades de l'any original d'una cançó, per identificador de vídeo de YouTube. Manen sobre l'evidència automàtica (Released on / ℗ de la descripció) i sobre la llista d'artistes antics de musica-classica.json: serveixen, per exemple, per marcar com a música actual una cançó nova d'un artista veterà, o com a antiga una pujada recent d'un arxiu. Format: \"<videoId>\": { \"year\": 2024, \"date\": \"2024-05-03\" (opcional), \"note\": \"on s'ha verificat\" }. No s'hi inventa cap any: si no es pot verificar, no hi va.",
+  "songs": {}
+}
