@@ -420,6 +420,16 @@ La finestreta flotant en fer scroll cap avall es manté tal com era: és el comp
 
 **Fitxers Afectats:** `js/app.js` (`createQueueNextOverlay`), `css/styles.css`, `sw.js`.
 
+## [2026-09-30] - La ràdio no continuava sola amb la finestra flotant
+
+**Símptoma:** Amb una ràdio en finestra flotant, en acabar la cançó la següent no arrencava.
+
+**Causa Arrel:** En mode flotant `showVideoFromAPILegacyImpl` crida `queuePlayback()`, que (a diferència de `prepareWatchPlaybackPreview`, que rep `autoPlay`) només deixava preparat el placeholder i esperava un **clic** a `.play-overlay`, que queda amagat darrere la finestreta. `shouldAutoPlay` mai hi arribava.
+
+**Solució Implementada:** `queuePlayback`/`queuePlaybackLegacyImpl` accepten `autoPlay`; si és avanç automàtic i YouTube està acceptat (`hasAcceptedYouTubeCookies()`), carreguen la cançó directament amb `loadNewVideoInMiniPlayer()`. Només la 1a crida de `showVideoFromAPI` porta `autoPlay` (la 2a, d'enriquiment amb l'API, no, per no recarregar l'iframe dues vegades). `keepPage` passa a ser «avanç automàtic amb finestra flotant» (abans només amb la pàgina del vídeo amagada): no canvia de pàgina ni fa `scrollTo`; si la pàgina del vídeo és visible s'actualitza la URL amb `replaceState`. Sense consentiment de YouTube continua demanant el clic (no es pot forçar). Verificat en Chromium (stub de `loadNewVideoInMiniPlayer`): amb la pàgina del vídeo i amb la portada, la cançó següent es carrega sola, la finestreta continua activa i l'scroll es manté.
+
+**Fitxers Afectats:** `js/app.js`, `sw.js`.
+
 ## [2026-07-11] - Filera d'icones del header visible en obrir un vídeo al mòbil
 
 **Símptoma:** Al mòbil, en clicar un vídeo del feed i obrir-se la pàgina del reproductor, la filera d'icones del header (Inici, Biblioteca, Historial, Segueix...) es mostrava a sobre del reproductor, ocupant espai vertical útil mentre l'usuari volia veure el vídeo.

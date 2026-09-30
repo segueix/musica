@@ -11248,17 +11248,23 @@ function prepareWatchPlaybackPreview({ videoId, source, videoUrl, thumbnail, tit
     requestAnimationFrame(updatePlayerPosition);
 }
 
-function queuePlayback({ videoId, source, videoUrl, thumbnail, title }) {
-    return SegueixApp.features.player?.queuePlayback?.({ videoId, source, videoUrl, thumbnail, title });
+function queuePlayback({ videoId, source, videoUrl, thumbnail, title, autoPlay = false }) {
+    return SegueixApp.features.player?.queuePlayback?.({ videoId, source, videoUrl, thumbnail, title, autoPlay });
 }
 
-function queuePlaybackLegacyImpl({ videoId, source, videoUrl, thumbnail, title }) {
+function queuePlaybackLegacyImpl({ videoId, source, videoUrl, thumbnail, title, autoPlay = false }) {
     if (!videoPlaceholder) {
         return;
     }
     videoPlaceholder.classList.remove('hidden');
     videoPlaceholder.classList.remove('is-placeholder-hidden');
     setPlaceholderImage(thumbnail, title);
+    // Avanç automàtic d'una ràdio/llista amb la finestra flotant: la cançó següent arrenca
+    // sola, sense esperar un clic al placeholder (que queda darrere la finestreta).
+    if (autoPlay && hasAcceptedYouTubeCookies()) {
+        loadNewVideoInMiniPlayer(videoId, source, videoUrl, thumbnail, title);
+        return;
+    }
     ensurePlayOverlay(() => loadNewVideoInMiniPlayer(videoId, source, videoUrl, thumbnail, title));
 }
 
@@ -12691,11 +12697,10 @@ async function showVideoFromAPILegacyImpl(videoId, options = {}) {
         keepTVPosition && document.body.classList.contains('segueix-tv-active');
     exitMiniPlayerForNewVideo();
     const isMini = videoPlayer?.classList.contains('mini-player-active');
-    // Avanç automàtic de la llista/ràdio amb la finestra flotant mentre l'usuari és en una altra
-    // secció: la cançó següent es carrega a la finestreta sense portar-lo a la pàgina del vídeo.
-    const keepPage = Boolean(
-        isAutoPlayNavigating && isPlaylistNavigation && isMini && watchPage.classList.contains('hidden')
-    );
+    // Avanç automàtic de la llista/ràdio amb la finestra flotant: la cançó següent es carrega a la
+    // finestreta sense portar l'usuari a la pàgina del vídeo ni moure-li l'scroll.
+    const keepPage = Boolean(isAutoPlayNavigating && isPlaylistNavigation && isMini);
+    const watchWasHidden = watchPage.classList.contains('hidden');
     if (!isPlaylistNavigation) {
         exitPlaylistMode();
     }
@@ -12707,7 +12712,9 @@ async function showVideoFromAPILegacyImpl(videoId, options = {}) {
     const startAt = Math.max(0, Math.floor(Number(options.startAt) || 0));
     const videoUrl = `?v=${videoId}${startAt > 0 ? `&t=${startAt}` : ''}`;
     if (keepPage) {
-        // La URL i l'historial es queden a la secció on és l'usuari
+        // Fora de la pàgina del vídeo, la URL es queda a la secció on és l'usuari; a la pàgina del
+        // vídeo només s'actualitza (sense afegir entrades a l'historial)
+        if (!watchWasHidden) history.replaceState({ videoId }, '', videoUrl);
     } else if (options.replaceHistory) {
         history.replaceState({ videoId }, '', videoUrl);
     } else {
@@ -12837,6 +12844,7 @@ async function showVideoFromAPILegacyImpl(videoId, options = {}) {
             source: 'api',
             thumbnail: cachedVideo?.thumbnail || '',
             title: cachedVideo?.title || '',
+            autoPlay: shouldAutoPlay,
         });
     } else {
         prepareWatchPlaybackPreview({
@@ -13243,6 +13251,7 @@ function showVideoLegacyImpl(videoId, options = {}) {
             videoUrl: video.videoUrl,
             thumbnail: video.thumbnail,
             title: video.title,
+            autoPlay: shouldAutoPlay,
         });
     } else {
         prepareWatchPlaybackPreview({
