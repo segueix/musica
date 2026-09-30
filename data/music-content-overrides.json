@@ -1,0 +1,21 @@
+{
+  "updatedAt": "2026-09-30",
+  "description": "Decisions manuals sobre el tipus de contingut de vídeos concrets. Manen sobre el classificador automàtic (scripts/lib/classificar_contingut_musical.js) i el pipeline (scripts/update_music_feed.js) les reaplica a cada generació del feed. Tipus permesos: song, live_song, album, other. Un vídeo revisat aquí surt de data/music-content-review.json.",
+  "videos": [
+    { "id": "wCY1LX1zYhc", "contentType": "song", "title": "Mar Pujol - Ploranera (Audio)", "note": "cançó de Mar Pujol (àudio oficial del seu canal)" },
+    { "id": "lrrP4tF26i0", "contentType": "song", "title": "Mar Pujol - L'hora justa (Audio)", "note": "cançó de Mar Pujol (àudio oficial del seu canal)" },
+    { "id": "nXEXHnY7gnU", "contentType": "song", "title": "Mar Pujol - Princesa de sal (Audio)", "note": "cançó de Mar Pujol (àudio oficial del seu canal); no és un Short (YouTube redirigeix /shorts/ a /watch)" },
+    { "id": "d8YRyHyK2gI", "contentType": "song", "title": "Mar Pujol - Tots els racons (Audio)", "note": "cançó de Mar Pujol (àudio oficial del seu canal)" },
+    { "id": "RT3MaUFkqrs", "contentType": "song", "title": "Mar Pujol - Amor en conserva (audio)", "note": "cançó de Mar Pujol (àudio oficial del seu canal)" },
+    { "id": "E249Bqwepbk", "contentType": "song", "title": "Mar Pujol - ìí (Audio)", "note": "cançó de Mar Pujol (àudio oficial del seu canal)" },
+    { "id": "10i-782qNA8", "contentType": "song", "title": "Mar Pujol - Verd avellaner (Audio)", "note": "cançó de Mar Pujol (àudio oficial del seu canal)" },
+    { "id": "aXKUh3OQiQQ", "contentType": "song", "title": "Mar Pujol - Cabell d'àngel (Audio)", "note": "cançó de Mar Pujol (àudio oficial del seu canal)" },
+    { "id": "a2vY2W3yMRw", "contentType": "song", "title": "Mar Pujol - Flor de nit (Audio)", "note": "cançó de Mar Pujol (àudio oficial del seu canal); no és un Short (YouTube redirigeix /shorts/ a /watch)" },
+    { "id": "eivIkBwRdDE", "contentType": "song", "title": "Mar Pujol - Per cada u (Audio)", "note": "cançó de Mar Pujol (àudio oficial del seu canal)" },
+    { "id": "3qN-t1aXQR0", "contentType": "song", "title": "Batall (Mar Pujol i Gèls)", "note": "cançó de Mar Pujol i Gèls publicada al canal de Mar Pujol" },
+    { "id": "9U-M4Ftu6ns", "contentType": "song", "title": "Gelimar (Mar Pujol i Gèls)", "note": "cançó de Mar Pujol i Gèls publicada al canal de Mar Pujol" },
+    { "id": "s_xIl382aio", "contentType": "album", "title": "EP Gelimar (Mar Pujol i Gèls)", "note": "EP sencer en un sol vídeo (8 min)" },
+    { "id": "8Lts1nZu4So", "contentType": "album", "title": "Mar Pujol - Cançons de rebost (Audio complet)", "note": "disc sencer en un sol vídeo (27 min)" },
+    { "id": "orn4mGO5vVg", "contentType": "live_song", "title": "\"Pometes té el pomer\" amb Mar Pujol, Bruna González i El Pony Pisador", "note": "interpretació enregistrada en directe amb altres músics (sessió de Hidden Track Records)" }
+  ]
+}

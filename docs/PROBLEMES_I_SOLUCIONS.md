@@ -13,6 +13,22 @@
 
 **Fitxers Afectats:**
 
+## [2026-09-30] - Tots els vídeos d'una artista (Mar Pujol) quedaven en «revisió» i no sortien enlloc de l'app
+
+**Símptoma:** Mar Pujol tenia el gènere correcte (Cançó d'autor) però cap dels seus 15 vídeos apareixia a categories, Novetats ni a la portada. A `data/feed.json` tots tenien `contentType: "review"`; el seu canal figurava a `channelsWithoutAcceptedMusic`.
+
+**Causa Arrel:** El classificador (`scripts/lib/classificar_contingut_musical.js`) només accepta un vídeo sense marcador explícit si suma ≥75 punts. Els àudios d'una cantautora publicats al seu propi canal (`Mar Pujol - Ploranera (Audio)`) no són categoria YouTube Music, no tenen tags musicals i el marcador «(Audio)» sol no compta (només «official audio»): sumen 60 i queden a `review` per sempre. A més, dues cançons de 85 i 103 s quedaven marcades `isShort: true` per la regla ≤120 s, tot i que YouTube no les tracta com a Shorts (`/shorts/<id>` respon 303 cap a `/watch`), i el client amagava els Shorts de les seccions.
+
+**Solució Implementada:**
+1. **Decisions manuals persistents: `data/music-content-overrides.json`** (versionat, escrit a mà). Cada entrada `{id, contentType, title, note}` (tipus permesos: `song`, `live_song`, `album`, `other`; mai `review`). `scripts/update_music_feed.js` les aplica després del classificador (`applyContentOverride`, `scripts/lib/revisio_manual_musical.js`), de manera que manen a cada regeneració del feed i el vídeo surt de `music-content-review.json`. El workflow `actualitzar-feed-musica.yml` s'executa quan canvia aquest fitxer.
+2. **`node scripts/aplicar_revisio_manual_musical.js`** aplica les mateixes decisions (i `falsos-shorts.json`) a `feed.json`, al fitxer de revisió i a les dues auditories sense YouTube API, per veure el canvi a l'instant. És idempotent i deixa el mateix resultat que la propera generació.
+3. **Mar Pujol:** 12 `song`, 2 `album` (EP *Gelimar* i *Cançons de rebost* sencers: acceptats però, com la resta d'àlbums, no entren a les categories de cançons) i 1 `live_song` (*Pometes té el pomer*, sessió enregistrada en directe). `nXEXHnY7gnU` i `a2vY2W3yMRw` s'afegeixen a `data/falsos-shorts.json` després de comprovar la redirecció de YouTube.
+4. **Per revisar un altre vídeo:** afegeix-lo a `music-content-overrides.json`, executa l'script d'aplicació i, si dura ≤120 s, comprova amb `curl -sI https://www.youtube.com/shorts/<id>` si respon 200 (Short real) o 303 (afegeix-lo a `falsos-shorts.json`).
+
+**Nota:** No s'ha canviat el classificador general: els vídeos nous de Mar Pujol tornaran a `review` fins que s'afegeixin a `music-content-overrides.json`. Ara mateix cap dels 247 vídeos pendents té «(Audio)» al títol i els 30 vídeos del feed amb aquest marcador ja són `song`; si es vol que «(Audio)» compti com a marcador de cançó a `SONG_MARKERS` (`scripts/lib/classificar_contingut_musical.js`), és un canvi petit però afecta tots els canals i cal decidir-lo a part.
+
+**Fitxers Afectats:** `data/music-content-overrides.json` (nou), `scripts/lib/revisio_manual_musical.js` (nou), `scripts/aplicar_revisio_manual_musical.js` (nou), `scripts/update_music_feed.js`, `.github/workflows/actualitzar-feed-musica.yml`, `data/falsos-shorts.json`, `data/feed.json`, `data/music-content-review.json`, `data/music-content-audit.json`, `data/music-feed-audit.json`, `tests/music-content-overrides.test.js` (nou).
+
 ## [2026-09-29] - A la pàgina principal sortien vídeos no musicals (concerts, teasers, anuncis) d'un canal com Els Amics de les Arts
 
 **Símptoma:** A Novetats, al hero i a les files de la pàgina principal apareixien vídeos que no són cançons ("Un concert com els d'abans", "La Mercè 2026", fragments de 47-55 s), tot i que el feed ja els marcava com `review`/`other`.

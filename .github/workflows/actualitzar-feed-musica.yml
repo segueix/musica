@@ -7,7 +7,9 @@ on:
       - "data/artistes-musica.json"
       - "data/music-exclusions.json"
       - "data/noms-canals.json"
+      - "data/music-content-overrides.json"
       - "scripts/lib/classificar_contingut_musical.js"
+      - "scripts/lib/revisio_manual_musical.js"
       - "scripts/test_music_content_classifier.js"
       - ".github/workflows/actualitzar-feed-musica.yml"
   schedule:

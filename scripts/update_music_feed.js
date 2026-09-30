@@ -3,6 +3,7 @@
 const fs = require('fs');
 const path = require('path');
 const { classifyMusicContent } = require('./lib/classificar_contingut_musical');
+const { loadContentOverrides, applyContentOverride } = require('./lib/revisio_manual_musical');
 const { resolveChannelDisplayName, findNameOverride, loadNameOverrides, stripOfficialWord } = require('./lib/nom_canal');
 
 const API_KEY = process.env.YOUTUBE_API_KEY_SERVER || process.env.YOUTUBE_API_KEY;
@@ -19,6 +20,7 @@ const AUDIT_FILE = path.join(process.cwd(), 'data', 'music-feed-audit.json');
 const CONTENT_AUDIT_FILE = path.join(process.cwd(), 'data', 'music-content-audit.json');
 const REVIEW_FILE = path.join(process.cwd(), 'data', 'music-content-review.json');
 const FALSE_SHORTS_FILE = path.join(process.cwd(), 'data', 'falsos-shorts.json');
+const CONTENT_OVERRIDES_FILE = path.join(process.cwd(), 'data', 'music-content-overrides.json');
 const VIDEOS_PER_CHANNEL = Math.max(1, Math.min(25, Number.parseInt(process.env.MUSIC_VIDEOS_PER_CHANNEL || '15', 10)));
 const API = 'https://www.googleapis.com/youtube/v3';
 
@@ -184,6 +186,8 @@ async function main(){
     }
   }
 
+  const contentOverrides=loadContentOverrides(CONTENT_OVERRIDES_FILE);
+  if(contentOverrides.size) console.log('✍️ Revisions manuals de contingut:',contentOverrides.size);
   const channels={};
   const channelIndex=[];
   const videos=[];
@@ -243,10 +247,11 @@ async function main(){
       channelPublicCount++;
       publicVideoCount++;
 
-      const classification=classifyMusicContent({
+      // La decisió manual (data/music-content-overrides.json) preval sobre el classificador automàtic.
+      const classification=applyContentOverride(classifyMusicContent({
         item,
         channelMeta:{...meta,channelTitle:rawChannelName}
-      });
+      }),contentOverrides.get(item.id));
       typeCounts[classification.contentType]=(typeCounts[classification.contentType]||0)+1;
 
       const vs=item.snippet||{};

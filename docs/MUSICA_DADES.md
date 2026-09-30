@@ -27,6 +27,14 @@ L'automatisme conserva aquestes decisions.
 
 La pàgina `admin-musica.html` permet filtrar, aprovar i rebutjar candidats. Els canvis queden temporalment al navegador i es poden exportar com a JSON o CSV. El JSON exportat està preparat per substituir `data/artistes-musica.json`.
 
+## Revisió de vídeos ambigus
+
+El classificador de contingut deixa a `data/music-content-review.json` els vídeos que no pot decidir (`contentType: "review"`). Mentre hi són, no surten a categories ni a Novetats. Per resoldre'ls, afegeix-los a `data/music-content-overrides.json` amb el tipus correcte (`song`, `live_song`, `album` o `other`) i una nota; el pipeline (`scripts/update_music_feed.js`) ho reaplica a cada generació. Per veure el resultat sense esperar el workflow:
+
+```bash
+node scripts/aplicar_revisio_manual_musical.js
+```
+
 ## Ordres
 
 ```bash
