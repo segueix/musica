@@ -9,9 +9,9 @@ const { parseContentOverrides, applyContentOverride, applyOverridesToSnapshot } 
 const readData = (name) => JSON.parse(readFileSync(new URL(`../data/${name}`, import.meta.url), 'utf8'));
 
 describe('revisió manual del tipus de contingut', () => {
-    it('el classificador automàtic deixa en revisió un àudio de cantautora sense marcadors', () => {
+    it('el classificador automàtic deixa en revisió un vídeo ambigu sense marcadors', () => {
         const result = classifyMusicContent({
-            item: { snippet: { title: 'Mar Pujol - Ploranera (Audio)', description: '', categoryId: '22', tags: [] }, durationSeconds: 249 },
+            item: { snippet: { title: 'Una cosa qualsevol', description: '', categoryId: '22', tags: [] }, durationSeconds: 249 },
             channelMeta: { types: ['official'], artistNames: ['Mar Pujol'], channelTitle: 'Mar Pujol' },
         });
         expect(result.contentType).toBe('review');
