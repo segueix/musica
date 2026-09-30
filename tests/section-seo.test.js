@@ -81,8 +81,8 @@ describe('seccions SEO', () => {
   it('reforça portada amb canonical, WebSite i navegació rastrejable', () => {
     expect(indexSource).toContain('<link rel="canonical" href="https://segueix.cat/">');
     expect(indexSource).toContain('"@type": "WebSite"');
-    expect(indexSource).toContain('"name": "Segueix!"');
-    expect(indexSource).toContain('"alternateName": ["Segueix.cat", "segueix.cat"]');
+    expect(indexSource).toContain('"name": "Segueix Música"');
+    expect(indexSource).toContain('"alternateName": ["Segueix!", "Segueix.cat", "segueix.cat"]');
     expect(indexSource).toContain('class="seo-footer-nav"');
     for (const href of ['/creadors', '/novetats', '/pop', '/rock', '/indie', '/urbana', '/folk-arrel', '/musica-tv']) {
       expect(indexSource).toContain(`href="${href}"`);

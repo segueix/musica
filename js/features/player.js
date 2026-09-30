@@ -151,7 +151,10 @@
             img.closest?.('.archive-video-thumb-wrap') ||
             img.closest?.('.playlist-card-thumb') ||
             img.closest?.('.smart-cat-thumb') ||
-            img.closest?.('.continue-watching-thumb-wrap')
+            img.closest?.('.continue-watching-thumb-wrap') ||
+            img.closest?.('.pt-card__media') ||
+            img.closest?.('.pt-feature__media') ||
+            img.closest?.('.pt-quick__thumb:not(.pt-quick__thumb--round)')
         );
     }
 

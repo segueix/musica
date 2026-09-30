@@ -16,13 +16,14 @@
 // migrant els clients automàticament.
 
 // === AUTO-GENERAT per scripts/actualitzar_versio_sw.js — NO EDITAR MANUALMENT ===
-const CACHE_VERSION = '820d0b74b442';
+const CACHE_VERSION = '1b324978bd89';
 const STATIC_ASSETS = [
     './',
     './index.html',
     './manifest.json',
     './img/icon-192.png',
     './css/styles.css',
+    './css/portada.css',
     './img/Xiuxiuajar_icona.png',
     './img/Telegram-icona.png',
     './js/config.js',
@@ -50,8 +51,11 @@ const STATIC_ASSETS = [
     './js/features/likes.js',
     './js/features/home-sections.js',
     './js/features/category-selector.js',
+    './js/features/discovery.js',
     './js/features/music-queue.js',
     './js/features/home-playlists.js',
+    './js/features/shell-nav.js',
+    './js/features/portada.js',
     './js/features/shared-playlists.js',
     './js/features/config-sync.js',
     './js/features/analytics.js',
