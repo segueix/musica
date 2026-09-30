@@ -2,14 +2,19 @@ name: Actualitzar feed musical
 
 on:
   push:
+    branches:
+      - main
     paths:
       - "scripts/update_music_feed.js"
+      - "scripts/generar_index_cerca.js"
       - "data/artistes-musica.json"
+      - "data/artistes-musica.schema.json"
       - "data/music-exclusions.json"
       - "data/noms-canals.json"
+      - "data/falsos-shorts.json"
+      - "data/hidden-videos.json"
       - "scripts/lib/classificar_contingut_musical.js"
       - "scripts/test_music_content_classifier.js"
-      - ".github/workflows/actualitzar-feed-musica.yml"
   schedule:
     - cron: "37 8 * * *"
   workflow_dispatch:
@@ -21,7 +26,7 @@ concurrency:
 jobs:
   actualitza:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
     permissions:
       contents: write
 
@@ -36,6 +41,12 @@ jobs:
         run: |
           git fetch origin main
           git reset --hard origin/main
+
+      - name: Instal·la dependències
+        run: npm ci
+
+      - name: Valida la base d'artistes
+        run: npm run music:validate
 
       - name: Prova classificador musical
         run: node scripts/test_music_content_classifier.js
@@ -58,14 +69,22 @@ jobs:
           console.log(`Cobertura: ${a.feedChannelCount}/${a.indexedChannelCount} canals; ${a.feedVideoCount} vídeos`);
           NODE
 
-      - name: Publica feed
+      - name: Regenera índex de cerca després del feed
+        run: npm run search:index:hybrid:rebuild
+
+      - name: Publica feed i índex en un sol commit
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/feed.json js/channels-ca.json data/music-feed-audit.json data/music-content-audit.json data/music-content-review.json
+
+          # El checkout és net i aquests scripts només generen dades derivades.
+          # -A és necessari perquè el generador de l'índex pot eliminar fragments orfes.
+          git add -A data js/channels-ca.json
+
           if git diff --cached --quiet; then
-            echo "Feed sense canvis."
+            echo "Feed i índex sense canvis."
             exit 0
           fi
-          git commit -m "data: actualitza feed musical"
+
+          git commit -m "data: actualitza feed i índex musical"
           git push origin HEAD:main
