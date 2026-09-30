@@ -21,7 +21,7 @@ const CONTENT_AUDIT_FILE = path.join(process.cwd(), 'data', 'music-content-audit
 const REVIEW_FILE = path.join(process.cwd(), 'data', 'music-content-review.json');
 const FALSE_SHORTS_FILE = path.join(process.cwd(), 'data', 'falsos-shorts.json');
 const CONTENT_OVERRIDES_FILE = path.join(process.cwd(), 'data', 'music-content-overrides.json');
-const VIDEOS_PER_CHANNEL = Math.max(1, Math.min(25, Number.parseInt(process.env.MUSIC_VIDEOS_PER_CHANNEL || '15', 10)));
+const VIDEOS_PER_CHANNEL = Math.max(1, Math.min(50, Number.parseInt(process.env.MUSIC_VIDEOS_PER_CHANNEL || '50', 10)));
 const API = 'https://www.googleapis.com/youtube/v3';
 
 const GROUPS = [

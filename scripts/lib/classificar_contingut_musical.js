@@ -27,7 +27,8 @@ const NEGATIVE_TERMS = [
 
 const ALBUM_TERMS = [
   'full album', 'album complet', 'album completo', 'disc complet', 'disco completo',
-  'full ep', 'ep complet', 'ep completo', 'mixtape completa', 'mixtape complet'
+  'full ep', 'ep complet', 'ep completo', 'mixtape completa', 'mixtape complet',
+  'audio complet', 'audio completo'
 ];
 
 const SONG_MARKERS = [
@@ -88,6 +89,12 @@ function classifyMusicContent({ item, channelMeta }) {
   const musicCategory = categoryId === '10';
   const musicTags = tags.some(tag => containsAny(normalize(tag), MUSIC_TAG_TERMS));
   const titlePattern = looksLikeArtistTrackTitle(title, artistNames);
+  const officialChannel = channelTypes.has('official');
+  const artistNamedInTitle = artistNames.some(name => {
+    const normalizedName = normalize(name);
+    return normalizedName.length >= 4 && titleText.includes(normalizedName);
+  });
+  const plainAudioMarker = /(^|\s)audio($|\s)/.test(titleText);
 
   if (albumMarker && durationSeconds >= 600 && !negativeTitle) {
     return { accepted: true, contentType: 'album', confidence: 0.98, reason: 'àlbum/EP complet identificat' };
@@ -109,12 +116,12 @@ function classifyMusicContent({ item, channelMeta }) {
     return { accepted: false, contentType: 'other', confidence: 0.96, reason: 'títol d’entrevista/podcast/promoció o contingut auxiliar' };
   }
 
-  if (songMarker && durationSeconds >= 60 && durationSeconds <= 900) {
+  if ((songMarker || plainAudioMarker) && durationSeconds >= 60 && durationSeconds <= 900) {
     return {
       accepted: true,
       contentType: liveMarker ? 'live_song' : 'song',
-      confidence: 0.98,
-      reason: 'marcador explícit de cançó/videoclip'
+      confidence: songMarker ? 0.98 : 0.96,
+      reason: songMarker ? 'marcador explícit de cançó/videoclip' : 'marcador explícit d’àudio'
     };
   }
 
@@ -132,6 +139,18 @@ function classifyMusicContent({ item, channelMeta }) {
       contentType: 'live_song',
       confidence: 0.92,
       reason: 'títol de cançó + versió en directe/acústica'
+    };
+  }
+
+  // En canals oficials indexats, YouTube pot assignar una categoria incorrecta
+  // (p. ex. 23) a àudios/cançons. Si el títol identifica explícitament l'artista
+  // i la durada és pròpia d'una peça, el canal oficial és una evidència suficient.
+  if (officialChannel && artistNamedInTitle && titlePattern && durationSeconds >= 90 && durationSeconds <= 600) {
+    return {
+      accepted: true,
+      contentType: liveMarker ? 'live_song' : 'song',
+      confidence: 0.93,
+      reason: 'canal oficial + artista al títol + patró de cançó + durada musical'
     };
   }
 

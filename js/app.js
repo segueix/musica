@@ -3224,7 +3224,7 @@ async function getShareImageFile() {
 }
 
 function buildShareText(type, label, url) {
-    return `Segueix! Els nostres YouTubers.\n${type}: ${label}\n${url}`;
+    return `Segueix Música · La teva plaça musical.\n${type}: ${label}\n${url}`;
 }
 
 async function buildShareData(type, label, url, title = '') {
@@ -6016,7 +6016,7 @@ function updateHero(video, source = 'static') {
     }
 
     if (heroEyebrow) {
-        heroEyebrow.textContent = 'Destacat per tu';
+        heroEyebrow.textContent = 'Cançó destacada';
     }
 
     if (heroChannel) {
@@ -6927,7 +6927,11 @@ function renderFeedLegacyImpl() {
         renderCategoryActions(getCategoryPageTitle(selectedCategory));
     }
 
-    const isRecommendedPage = pageTitle?.textContent === 'Recomanat per a tu';
+    // «Recomanat per a tu» retalla la llista (només vídeos de 4 minuts o més) i la reordena. La portada
+    // musical fa la seva pròpia tria a partir de totes les novetats: una cançó de 3 minuts també compta.
+    const isRecommendedPage =
+        pageTitle?.textContent === 'Recomanat per a tu' &&
+        !(selectedCategory === 'Novetats' && SegueixApp.features.portada);
     let videosToFilter = currentFeedVideos;
 
     // Radar i categories personalitzades: cercar en TOTS els vídeos locals (Feed + Cached)
@@ -7089,7 +7093,7 @@ function renderFeedLegacyImpl() {
                 videosGrid.innerHTML = `
                     <div class="empty-state empty-state-custom">
                         <button class="empty-state-action" type="button" data-follow-cta>
-                            Afegeix aquesta categoria als teus YouTubers preferits
+                            Afegeix aquesta categoria als teus artistes preferits
                         </button>
                         <button class="empty-state-plus" type="button" data-follow-cta aria-label="Afegir categoria a Segueix!">+</button>
                     </div>
@@ -8489,7 +8493,7 @@ function openManageCategoryYoutubersModal(categoryName) {
         );
 
         if (channelIds.length === 0 && categoryPrograms.length === 0) {
-            return '<div class="playlist-empty" data-role="empty-state">Aquesta categoria no té YouTubers ni programes assignats.</div>';
+            return '<div class="playlist-empty" data-role="empty-state">Aquesta categoria no té artistes ni programes assignats.</div>';
         }
 
         // Renderitzar canals normals
@@ -8685,7 +8689,7 @@ function renderSearchCategoryActions(query) {
     const manageYoutubersHtml = isSaved
         ? `
             <button class="hero-button" type="button" data-action="manage-category-youtubers" style="padding: 6px 14px; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 6px; background-color: var(--color-surface-button); color: var(--color-text);">
-                <i data-lucide="users" style="width: 16px; height: 16px;"></i> YouTubers
+                <i data-lucide="users" style="width: 16px; height: 16px;"></i> Artistes
             </button>
         `
         : '';
@@ -8715,7 +8719,7 @@ function renderSearchCategoryActions(query) {
                 </button>
                 <div class="search-info-popover" role="tooltip" hidden>
                     <p><strong>Categoria personalitzada:</strong> escriu una paraula sense cometes per veure tots els vídeos que la contenen.</p>
-                    <p><strong>Categoria intel·ligent:</strong> escriu l'expressió entre cometes (per exemple <code>"Canal Jove"</code>) per limitar els resultats a aquesta frase exacta. Un cop guardada, si hi assignes els teus YouTubers només hi veuràs els vídeos d'aquests canals.</p>
+                    <p><strong>Categoria intel·ligent:</strong> escriu l'expressió entre cometes (per exemple <code>"Canal Jove"</code>) per limitar els resultats a aquesta frase exacta. Un cop guardada, si hi assignes els teus artistes només hi veuràs els vídeos d'aquests canals.</p>
                 </div>
             </span>
             <button class="btn-round-icon search-category-share" type="button" data-action="share-search" aria-label="Compartir">
@@ -8779,7 +8783,7 @@ function renderCategoryActions(category) {
                     </button>
                     <div class="radar-info-popover" role="tooltip" hidden>
                         <button type="button" class="chip-info-popover-close" data-action="radar-info-close" aria-label="Tancar">×</button>
-                        <p>Quan deses una cerca com a <strong>categoria personalitzada</strong>, les paraules clau s'afegeixen automàticament al Radar, juntament amb els YouTubers que hi has vinculat.</p>
+                        <p>Quan deses una cerca com a <strong>categoria personalitzada</strong>, les paraules clau s'afegeixen automàticament al Radar, juntament amb els artistes que hi has vinculat.</p>
                         <p>Aquí hi trobaràs tots els <strong>vídeos nous</strong> de les teves temàtiques i creadors preferits, agrupats en un únic feed.</p>
                     </div>
                 </span>
@@ -8809,7 +8813,7 @@ function renderCategoryActions(category) {
     const manageYoutubersHtml = isSaved
         ? `
             <button class="hero-button" type="button" data-action="manage-category-youtubers" style="padding: 6px 14px; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 6px; background-color: var(--color-surface-button); color: var(--color-text);">
-                <i data-lucide="users" style="width: 16px; height: 16px;"></i> YouTubers
+                <i data-lucide="users" style="width: 16px; height: 16px;"></i> Artistes
             </button>
         `
         : '';
@@ -9198,7 +9202,20 @@ function renderVideos(videos) {
     setupDelegatedVideoCardClicks(videosGrid, 'api');
     bindChannelLinks(videosGrid);
 
-    // Pàgina principal (Novetats): seccions horitzontals en lloc de la graella plana
+    // Inici (Novetats): la portada «La teva plaça musical» (js/features/portada.js). Rep tota la llista
+    // (inclòs el vídeo del hero) perquè decideix ella mateixa què destaca i què va a cada fila.
+    if (
+        selectedCategory === 'Novetats' &&
+        SegueixApp.features.portada?.render(videosGrid, videos, {
+            feed: currentFeedData,
+            all: currentFeedVideos,
+        })
+    ) {
+        if (_batchRenderAbort) _batchRenderAbort.aborted = true;
+        return;
+    }
+
+    // Sense portada: seccions horitzontals clàssiques en lloc de la graella plana
     if (
         selectedCategory === 'Novetats' &&
         SegueixApp.features.homeSections?.render(videosGrid, normal, {
@@ -13035,6 +13052,15 @@ async function loadVideosLegacyImpl() {
 }
 
 function renderStaticVideos(videos) {
+    // Sense catàleg (sense xarxa, feed caigut): la portada mostra el seu estat d'error amb «Torna-ho a provar»
+    if (
+        selectedCategory === 'Novetats' &&
+        (!Array.isArray(videos) || videos.length === 0) &&
+        SegueixApp.features.portada?.render(videosGrid, [], { feed: currentFeedData, all: [] })
+    ) {
+        updateHero(null);
+        return;
+    }
     ensureGridLayoutControls();
     applyGridLayoutPreference();
     const featured = getFeaturedVideoForSection(videos, getHeroSectionKey());
@@ -14570,7 +14596,7 @@ function handleImportDataParam() {
     if (payload.type === 'playlist' && itemCount > 0) {
         previewHtml = `<p style="font-size:0.85rem; opacity:0.7; margin-bottom:12px;">${itemCount} vídeos</p>`;
     } else if (payload.type === 'category' && itemCount > 0) {
-        previewHtml = `<p style="font-size:0.85rem; opacity:0.7; margin-bottom:12px;">${itemCount} YouTubers assignats</p>`;
+        previewHtml = `<p style="font-size:0.85rem; opacity:0.7; margin-bottom:12px;">${itemCount} artistes assignats</p>`;
     } else if (payload.type === 'history') {
         previewHtml = `<p style="font-size:0.85rem; opacity:0.7; margin-bottom:12px;">${itemCount} visualitzacions</p>`;
     }
@@ -14590,7 +14616,7 @@ function handleImportDataParam() {
                 </button>
             </div>
             <div class="modal-body" style="text-align:center; padding: 10px 20px 25px;">
-                <p style="font-size:0.75rem; opacity:0.5; margin-bottom:12px;">Els nostres YouTubers</p>
+                <p style="font-size:0.75rem; opacity:0.5; margin-bottom:12px;">La teva plaça musical</p>
                 <p style="font-size:0.85rem; opacity:0.6; margin-bottom:4px;">${escapeHtml(typeLabel)}</p>
                 <p style="font-size:1.15rem; font-weight:700; margin-bottom:8px;">${escapeHtml(payload.name || 'Sense nom')}</p>
                 ${previewHtml}
@@ -14694,7 +14720,7 @@ function _executeImportFromPayload(payload, resultDiv, modal) {
 
         if (typeof setupChipsBarOrdering === 'function') setupChipsBarOrdering();
 
-        resultDiv.innerHTML = `<p style="color:#2ecc71; font-size:0.9rem;">✔ Categoria "${escapeHtml(tagName)}" importada amb ${channelIds.length} YouTubers</p>`;
+        resultDiv.innerHTML = `<p style="color:#2ecc71; font-size:0.9rem;">✔ Categoria "${escapeHtml(tagName)}" importada amb ${channelIds.length} artistes</p>`;
         _disableImportBtn(modal);
     } else if (payload.type === 'history') {
         const stored = localStorage.getItem('catube_history');

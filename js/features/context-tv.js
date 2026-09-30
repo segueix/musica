@@ -398,34 +398,9 @@
     }
 
     function ensureCategoryButton() {
-        const pageTitle = document.getElementById('pageTitle');
-        const homePage = document.getElementById('homePage');
-        if (!pageTitle || !homePage) return;
-
-        const category = String(app.state?.selectedCategory || '').trim();
-        const activeChip = document.querySelector('.chips-bar .chip.is-active[data-cat]');
-        const activeCategory = String(activeChip?.dataset?.cat || '').trim();
-        const existing = pageTitle.querySelector('[data-context-tv="category"]');
-        const hidden = homePage.classList.contains('hidden');
-        if (!category || category === 'Música TV' || hidden || activeCategory !== category) {
-            existing?.remove();
-            return;
-        }
-
-        // Mantén el nom de la categoria i el botó TV al capdamunt, encara que
-        // «Continua mirant» es torni a inserir dinàmicament abans del títol.
-        const continueWatching = homePage.querySelector('.continue-watching-section');
-        if (continueWatching && (pageTitle.compareDocumentPosition(continueWatching) & Node.DOCUMENT_POSITION_PRECEDING)) {
-            continueWatching.before(pageTitle);
-        }
-        const label = `Veure ${category} com a TV`;
-        const actions = pageTitle.querySelector('.page-title__actions');
-        const host = actions || pageTitle;
-        const button = existing || makeButton('category', category, label);
-        button.dataset.contextValue = category;
-        button.setAttribute('aria-label', label);
-        button.setAttribute('title', label);
-        if (button.parentNode !== host) host.appendChild(button);
+        document
+            .querySelectorAll('[data-context-tv="category"]')
+            .forEach(button => button.remove());
     }
 
     function activeProgramId() {
@@ -448,52 +423,9 @@
     }
 
     function ensureChannelButton() {
-        const channelPage = document.getElementById('channelPage');
-        const nameElement = document.getElementById('channelProfileName');
-        const row = nameElement?.closest('.channel-profile-title-row');
-        if (!channelPage || !nameElement || !row) return;
-
-        const program = activeProgramOnProfile();
-        const existingChannel = row.querySelector('[data-context-tv="channel"]');
-        const existingProgram = row.querySelector('[data-context-tv="program"]');
-        const id = String(app.state?.currentChannelId || '').trim();
-        const name = String(nameElement.textContent || '').trim();
-        const nonYoutuber = Boolean(id && app.features.segueixTV?.isNonYoutuber?.(id));
-        const hidden = channelPage.classList.contains('hidden');
-
-        // Un programa l'ha creat l'usuari: la seva TV existeix encara que el canal sigui
-        // un mitjà, un digital o una entitat, que és el que exclou isNonYoutuber().
-        if (program) {
-            existingChannel?.remove();
-            const label = `Veure ${program.name || 'aquest programa'} com a TV`;
-            const button = existingProgram || makeButton('program', program.id, label);
-            button.dataset.contextValue = program.id;
-            button.dataset.contextName = program.name || '';
-            button.setAttribute('aria-label', label);
-            button.setAttribute('title', label);
-            if (button.parentNode !== row) {
-                const actions = row.querySelector('.channel-profile-actions');
-                row.insertBefore(button, actions || null);
-            }
-            return;
-        }
-
-        existingProgram?.remove();
-        if (!id || nonYoutuber || hidden) {
-            existingChannel?.remove();
-            return;
-        }
-
-        const label = `Veure ${name || 'aquest YouTuber'} com a TV`;
-        const button = existingChannel || makeButton('channel', id, label);
-        button.dataset.contextValue = id;
-        button.dataset.contextName = name;
-        button.setAttribute('aria-label', label);
-        button.setAttribute('title', label);
-        if (button.parentNode !== row) {
-            const actions = row.querySelector('.channel-profile-actions');
-            row.insertBefore(button, actions || null);
-        }
+        document
+            .querySelectorAll('[data-context-tv="channel"], [data-context-tv="program"]')
+            .forEach(button => button.remove());
     }
 
     function scheduleSync() {

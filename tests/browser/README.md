@@ -1,14 +1,15 @@
 # Verificacions en navegador
 
-Dues eines **opt-in**, cap de les dues dins de `npm test`:
+Eines **opt-in**, cap dins de `npm test`:
 
 | Eina | Què verifica | Quan executar-la |
 |---|---|---|
 | `verificar-sw.js` | Service Worker: caches, offline, migració, avís d'actualització | Després de tocar `sw.js` o `scripts/actualitzar_versio_sw.js` |
 | `verificar-reproductor.js` | Reproductor al mòbil: posició en obrir el vídeo, finestreta flotant i filera d'icones del header | Després de tocar el reproductor, `updatePlayerPosition()` o el comportament del header |
+| `verificar-portada.js` | Portada «La teva plaça musical»: desbordaments a 360/390/768/1440 px, zones tàctils de 44 px, música a la primera pantalla, reproductor únic en canviar de secció, mode de descoberta, teclat, moviment reduït i estat d'error | Després de tocar `portada.js`, `discovery.js`, `shell-nav.js`, `portada.css` o la capçalera/navegació |
 | `verificar-tv.js` | Experiència TV: vista ancorada al reproductor, pantalla completa mantinguda entre vídeos i TV dels programes de l'usuari | Després de tocar les TV, `focusTVPlayerViewport()`, `swapLivePlayerVideo()`, `buildProgramQueue()` o el mode llista |
 
-Totes tres comparteixen requisits (`playwright-core` + un Chromium) i s'ometen amb codi
+Totes comparteixen requisits (`playwright-core` + un Chromium) i s'ometen amb codi
 de sortida 0 si `playwright-core` no està instal·lat.
 
 ```bash
@@ -91,3 +92,16 @@ tocar cap fitxer real) i, en un context de navegador net:
 ## Quan executar-la
 
 Després de qualsevol canvi a `sw.js` o a `scripts/actualitzar_versio_sw.js`.
+
+```bash
+node tests/browser/verificar-portada.js
+PORTADA_SHOTS=/ruta/captures node tests/browser/verificar-portada.js   # desa una captura per amplada i estat
+```
+
+Comprova la portada amb i sense historial a 360, 390, 768 i 1440 px (seccions, cap desplaçament
+lateral de la pàgina, controls tàctils de 44 × 44 px, música visible a la primera pantalla, navegació
+inferior només a mòbil, res sona en carregar) i un recorregut complet a escriptori i mòbil: «Fes-la
+sonar» engega una ràdio, hi ha un sol reproductor i canviar de secció no el recrea, canviar el mode no
+interromp la cançó, «Afegeix a la cua» respecta l'ordre, en acabar una cançó continua la següent.
+També verifica el teclat, el moviment reduït i l'estat d'error amb «Torna-ho a provar». Les peticions
+externes s'avorten: no cal xarxa.

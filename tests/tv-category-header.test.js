@@ -27,9 +27,17 @@ describe('títols de TV i capçalera de Segueix TV', () => {
         expect(segueixTVSource).toContain('Què és Segueix TV?');
         expect(segueixTVSource).toContain('descoberta contínua');
     });
-    it('manté l hover de Segueix TV amb fons blanc i text negre', () => {
+    it('manté Música TV com a text sense una icona TV separada', () => {
         expect(segueixTVSource).toContain('.segueix-tv-chip:hover,.segueix-tv-chip.is-active{background:#fff!important;color:#0f0f0f!important;opacity:1}');
-        expect(segueixTVSource).toContain('.segueix-tv-chip:hover::before,.segueix-tv-chip:hover::after');
+        expect(segueixTVSource).toContain('.segueix-tv-chip::before,.segueix-tv-chip::after{content:none!important;display:none!important}');
+        expect(segueixTVSource).toContain('button.textContent = LABEL;');
+        expect(segueixTVSource).not.toContain('button.innerHTML = \'<span>Música</span><span class="segueix-tv-chip-icon"');
+    });
+
+    it('no mostra botons TV contextuals ni insígnies TV als feeds', () => {
+        expect(contextTVSource).toContain('.querySelectorAll(\'[data-context-tv="category"]\')');
+        expect(contextTVSource).toContain('.querySelectorAll(\'[data-context-tv="channel"], [data-context-tv="program"]\')');
+        expect(segueixTVSource).toContain("document.querySelectorAll('.segueix-tv-badge').forEach(badge => badge.remove());");
     });
 
 });

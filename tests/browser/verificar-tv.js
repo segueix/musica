@@ -148,10 +148,12 @@ async function seguirTransicio(page, mostres = 22, pas = 60) {
 }
 
 async function engegarTVdeCategoria(page) {
-    const teBoto = await page.evaluate(() => Boolean(document.querySelector('[data-context-tv="category"]')));
-    if (!teBoto) return false;
-    await page.evaluate(() => document.querySelector('[data-context-tv="category"]').click());
-    return true;
+    return page.evaluate(async () => {
+        const categoria = String(window.SegueixApp?.state?.selectedCategory || '').trim();
+        const startCategoryTV = window.SegueixApp?.features?.contextTV?.startCategoryTV;
+        if (!categoria || typeof startCategoryTV !== 'function') return false;
+        return Boolean(await startCategoryTV(categoria));
+    });
 }
 
 (async () => {
@@ -205,14 +207,14 @@ async function engegarTVdeCategoria(page) {
 
     try {
         await page.goto(`http://localhost:${PORT}/`, { waitUntil: 'domcontentloaded' });
-        await page.waitForSelector('#videosGrid .video-card', { timeout: 30000 });
+        await page.waitForSelector('#videosGrid .video-card, #videosGrid .pt-card__media', { timeout: 30000 });
         await page.waitForTimeout(1500);
 
         // 1) L'usuari ha baixat pel feed i engega la TV de la categoria activa.
         await page.evaluate(() => window.scrollTo(0, 1200));
         await page.waitForTimeout(400);
         const engegada = await engegarTVdeCategoria(page);
-        comprovar('El botó TV de la categoria és a la pàgina', engegada);
+        comprovar('La TV de categoria es pot iniciar sense mostrar cap botó TV al feed', engegada);
 
         const obertura = await seguirTransicio(page);
         comprovar(
@@ -268,7 +270,7 @@ async function engegarTVdeCategoria(page) {
         await page.evaluate(() => exitPlaylistMode());
         await page.evaluate(() => document.querySelector('.nav-item')?.click());
         await page.waitForTimeout(1200);
-        await page.evaluate(() => document.querySelector('#videosGrid .video-card')?.click());
+        await page.evaluate(() => document.querySelector('#videosGrid .video-card, #videosGrid .pt-card__media')?.click());
         await page.waitForTimeout(1800);
         await page.evaluate(() => document.querySelector('.play-overlay')?.click());
         await page.waitForTimeout(600);
@@ -303,7 +305,7 @@ async function engegarTVdeCategoria(page) {
         );
 
         await page.goto(`http://localhost:${PORT}/`, { waitUntil: 'domcontentloaded' });
-        await page.waitForSelector('#videosGrid .video-card', { state: 'attached', timeout: 30000 });
+        await page.waitForSelector('#videosGrid .video-card, #videosGrid .pt-card__media', { state: 'attached', timeout: 30000 });
         await page.waitForTimeout(1500);
         // En recarregar, l'app pot restaurar la pàgina del reproductor: tornem a Inici
         // perquè hi hagi el botó TV de la categoria.
@@ -392,7 +394,7 @@ async function engegarTVdeCategoria(page) {
         await page.waitForTimeout(500);
         await page.evaluate(() => exitPlaylistMode());
         await page.goto(`http://localhost:${PORT}/`, { waitUntil: 'domcontentloaded' });
-        await page.waitForSelector('#videosGrid .video-card', { state: 'attached', timeout: 30000 });
+        await page.waitForSelector('#videosGrid .video-card, #videosGrid .pt-card__media', { state: 'attached', timeout: 30000 });
         await page.waitForTimeout(1500);
 
         // Pàgina "Seguint" → pestanya "Programes"

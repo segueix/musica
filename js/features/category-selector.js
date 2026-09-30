@@ -16,7 +16,9 @@
 
     function getChipLabel(chip) {
         if (chip.classList.contains('segueix-tv-chip')) return 'Música TV';
-        return (chip.dataset.cat || chip.textContent || '').trim();
+        const value = (chip.dataset.cat || chip.textContent || '').trim();
+        // «Novetats» és l'identificador intern de la portada: a la interfície és «Inici»
+        return value === 'Novetats' ? 'Inici' : value;
     }
 
     function getSelectableChips() {
@@ -35,7 +37,7 @@
     function updateValue() {
         if (!valueEl || !bar) return;
         const active = bar.querySelector('.chip.is-active[data-cat], .chip.chip-loading[data-cat]');
-        valueEl.textContent = active ? getChipLabel(active) : 'Tot';
+        valueEl.textContent = active ? getChipLabel(active) : 'Inici';
         root.classList.toggle('hidden', bar.classList.contains('hidden'));
     }
 
@@ -93,7 +95,7 @@
         root.innerHTML = `
             <button type="button" class="category-selector-btn" aria-haspopup="listbox" aria-expanded="false">
                 <span class="category-selector-label">Estil</span>
-                <span class="category-selector-value">Novetats</span>
+                <span class="category-selector-value">Inici</span>
                 ${CHEVRON}
             </button>
             <div class="category-selector-panel" role="listbox" aria-label="Estils musicals" hidden></div>

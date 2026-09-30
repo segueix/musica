@@ -1,20 +1,20 @@
 {
-  "generatedAt": "2026-09-30T06:03:59.903Z",
-  "indexedChannelCount": 149,
-  "resolvedChannelCount": 149,
-  "feedChannelCount": 149,
-  "rawPublicVideoCount": 2006,
-  "feedVideoCount": 1917,
-  "acceptedMusicCount": 1484,
-  "categoryEligibleVideoCount": 1463,
-  "shortVideoCount": 370,
-  "contentReviewCount": 247,
+  "generatedAt": "2026-09-30T11:08:22.156Z",
+  "indexedChannelCount": 151,
+  "resolvedChannelCount": 151,
+  "feedChannelCount": 151,
+  "rawPublicVideoCount": 5426,
+  "feedVideoCount": 5337,
+  "acceptedMusicCount": 4340,
+  "categoryEligibleVideoCount": 4277,
+  "shortVideoCount": 941,
+  "contentReviewCount": 436,
   "contentTypeCounts": {
-    "song": 1395,
-    "live_song": 68,
-    "album": 21,
-    "other": 275,
-    "review": 247
+    "song": 4087,
+    "live_song": 190,
+    "album": 63,
+    "other": 650,
+    "review": 436
   },
   "unresolvedChannelIds": [],
   "channelsWithoutUploads": [],
@@ -25,10 +25,8 @@
     "UCMNP5PWXks1_Es7e5Fs2LOg"
   ],
   "channelsWithoutAcceptedMusic": [
-    "UCnmFh1j3xvDfrw20AqVgegw",
     "UCUSjRkF72RR1E8Rl4SWtVsQ",
-    "UC_eW1AyvwaPsQA5YAuOC3YQ",
-    "UC9NDkhmm_3ZBjxnIh2d2paA"
+    "UC_eW1AyvwaPsQA5YAuOC3YQ"
   ],
   "allIndexedChannelsVisible": true
 }

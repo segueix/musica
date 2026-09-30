@@ -4062,6 +4062,20 @@
             "name": "elspetsoficial",
             "type": "official",
             "primary": true
+          },
+          {
+            "id": "UC0EB-hSs5R5X4DGiSkY_-mw",
+            "handle": null,
+            "name": "Els Pets - Topic",
+            "type": "topic",
+            "primary": false
+          },
+          {
+            "id": "UCV4rGI-t1ehir__UXavnbZg",
+            "handle": "@discmedielspets",
+            "name": "discmedielspets",
+            "type": "official",
+            "primary": false
           }
         ],
         "candidates": [],
@@ -4132,9 +4146,10 @@
         "https://www.wikidata.org/wiki/Q1333372",
         "wikidata:performed-catalan-work",
         "manual-user-2026-09-29",
-        "youtube:manual-verified"
+        "youtube:manual-verified",
+        "manual-user-2026-09-30"
       ],
-      "lastChecked": "2026-09-29T11:23:49.557Z",
+      "lastChecked": "2026-09-30T11:01:00.000Z",
       "notes": "",
       "enrichment": {
         "musicbrainz": {

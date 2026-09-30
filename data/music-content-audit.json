@@ -1,24 +1,22 @@
 {
-  "generatedAt": "2026-09-30T06:03:59.903Z",
-  "rawPublicVideoCount": 2006,
-  "feedVideoCount": 1917,
-  "acceptedMusicCount": 1484,
-  "categoryEligibleVideoCount": 1463,
-  "shortVideoCount": 370,
-  "rejectedOrReviewCount": 522,
-  "reviewCount": 247,
+  "generatedAt": "2026-09-30T11:08:22.156Z",
+  "rawPublicVideoCount": 5426,
+  "feedVideoCount": 5337,
+  "acceptedMusicCount": 4340,
+  "categoryEligibleVideoCount": 4277,
+  "shortVideoCount": 941,
+  "rejectedOrReviewCount": 1086,
+  "reviewCount": 436,
   "typeCounts": {
-    "song": 1395,
-    "live_song": 68,
-    "album": 21,
-    "other": 275,
-    "review": 247
+    "song": 4087,
+    "live_song": 190,
+    "album": 63,
+    "other": 650,
+    "review": 436
   },
   "channelsWithoutAcceptedMusic": [
-    "UCnmFh1j3xvDfrw20AqVgegw",
     "UCUSjRkF72RR1E8Rl4SWtVsQ",
-    "UC_eW1AyvwaPsQA5YAuOC3YQ",
-    "UC9NDkhmm_3ZBjxnIh2d2paA"
+    "UC_eW1AyvwaPsQA5YAuOC3YQ"
   ],
   "rejectedSamples": [
     {
@@ -50,6 +48,13 @@
       "musicReason": "massa curt: probable teaser/fragment"
     },
     {
+      "id": "YbQfnmSW12c",
+      "title": "Vídeo de \"Els teus ulls\" ja disponible. Gràcies a tots per l’acollida 🤍 #shorts",
+      "channelTitle": "alfredgarcia",
+      "durationSeconds": 19,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
       "id": "hBlJlwDrxiQ",
       "title": "Teaser Un minut estroboscòpica",
       "channelTitle": "Antònia Font",
@@ -61,6 +66,34 @@
       "title": "Antònia Font - Teaser del single Una daixona de pols",
       "channelTitle": "Antònia Font",
       "durationSeconds": 122,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "mqq3GrW7TdM",
+      "title": "Antònia Font - Un Minut Estroboscòpica (Teaser)",
+      "channelTitle": "Antònia Font",
+      "durationSeconds": 38,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "lhaWreUpnqc",
+      "title": "Antònia Font 2022",
+      "channelTitle": "Antònia Font",
+      "durationSeconds": 33,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "2wYnPVnAWE4",
+      "title": "Teaser 2022",
+      "channelTitle": "Antònia Font",
+      "durationSeconds": 24,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "0oDacVrziR0",
+      "title": "Teaser Videoclip \"Per Jo i Tots es Ciclistes\"",
+      "channelTitle": "Antònia Font",
+      "durationSeconds": 28,
       "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
     },
     {
@@ -113,6 +146,34 @@
       "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
     },
     {
+      "id": "KXJcTCEdvxc",
+      "title": "Teaser Aspencat - Nou Single i Videoclip - 2 de Setembre",
+      "channelTitle": "Aspencat",
+      "durationSeconds": 27,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "_nhMwm0Lfwk",
+      "title": "Aspencat nou disc 2013 Promo 3",
+      "channelTitle": "Aspencat",
+      "durationSeconds": 101,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "r1O10k1AFUM",
+      "title": "Aspencat nou disc 2013 Promo 2",
+      "channelTitle": "Aspencat",
+      "durationSeconds": 89,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "nzlc0WHuHsI",
+      "title": "Aspencat nou disc 2013 Promo 1",
+      "channelTitle": "Aspencat",
+      "durationSeconds": 82,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
       "id": "R-XkZ6VyvTY",
       "title": "No Hi Ha Temps - Au Rora feat. Vernat",
       "channelTitle": "Au Rora",
@@ -125,6 +186,34 @@
       "channelTitle": "Au Rora",
       "durationSeconds": 12,
       "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "SeVKKIr7d14",
+      "title": "Making of Diga-li!",
+      "channelTitle": "AUXILI",
+      "durationSeconds": 152,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "lufmDesv5Nw",
+      "title": "VENIM DE NOU",
+      "channelTitle": "AUXILI",
+      "durationSeconds": 16,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "P-K1hFghSx8",
+      "title": "AUXILI - EL FRONT (teaser)",
+      "channelTitle": "AUXILI",
+      "durationSeconds": 16,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "Jm77S7qgr1Q",
+      "title": "AUXILI - Hui la liem (Teaser)",
+      "channelTitle": "AUXILI",
+      "durationSeconds": 21,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
     },
     {
       "id": "MZZoKww_158",
@@ -211,6 +300,118 @@
       "musicReason": "massa curt: probable teaser/fragment"
     },
     {
+      "id": "UKhG2K90yjc",
+      "title": "CUBELLS (23/08/2025)",
+      "channelTitle": "Buhos",
+      "durationSeconds": 27,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "YKG15tmPENs",
+      "title": "ARBOÇ (23/08/2025)",
+      "channelTitle": "Buhos",
+      "durationSeconds": 40,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "V92PADrhJV0",
+      "title": "LA FONT D'EN CARRÒS · VALÈNCIA (21/08/2025)",
+      "channelTitle": "Buhos",
+      "durationSeconds": 21,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "Ba21FovsVg4",
+      "title": "SITGES (16/08/2025)",
+      "channelTitle": "Buhos",
+      "durationSeconds": 17,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "Wx7vj3eEQcg",
+      "title": "SANT VICENÇ DE MONTALT (14/08/2025)",
+      "channelTitle": "Buhos",
+      "durationSeconds": 27,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "zgsFp6Ew834",
+      "title": "SOLIVELLA (08/09/2025)",
+      "channelTitle": "Buhos",
+      "durationSeconds": 40,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "qWnmxSqYHsk",
+      "title": "SANT JULIÀ DE LÒRIA • ANDORRA (28/07/2025)",
+      "channelTitle": "Buhos",
+      "durationSeconds": 30,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "03t3-ienYMg",
+      "title": "BLANES (25/07/2025)",
+      "channelTitle": "Buhos",
+      "durationSeconds": 36,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "BcDZ4cczheY",
+      "title": "VILABERTRAN (19/07/2025)",
+      "channelTitle": "Buhos",
+      "durationSeconds": 16,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "SXliAnBhyvc",
+      "title": "FESTIUET • SALOU (18/07/2025)",
+      "channelTitle": "Buhos",
+      "durationSeconds": 37,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "VDNXptwCb1E",
+      "title": "PAUPATERRES • TÀRREGA (11/07/2026)",
+      "channelTitle": "Buhos",
+      "durationSeconds": 22,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "26UcykonTSA",
+      "title": "PIRATA BEACH FESTIVAL (09/07/2025)",
+      "channelTitle": "Buhos",
+      "durationSeconds": 34,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "jY1_-WO9SBE",
+      "title": "FESTIVALL CAMPRODON (26/4/2025)",
+      "channelTitle": "Buhos",
+      "durationSeconds": 28,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "goD0J1zD6Vc",
+      "title": "20È ANIVERSARI ETS - BILBAO EXHIBITION CENTRE (22/3/2025)",
+      "channelTitle": "Buhos",
+      "durationSeconds": 43,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "itj_MaTyxDM",
+      "title": "LA MIRONA (SALT) • 14/03/2025",
+      "channelTitle": "Buhos",
+      "durationSeconds": 34,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "djNvl0EUg6A",
+      "title": "Vilanova i La Geltrú (01/03/2025)",
+      "channelTitle": "Buhos",
+      "durationSeconds": 29,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
       "id": "fpkCwtyxpV8",
       "title": "NOCHE LOCA EN BENIDORM (MAKING-OFF)",
       "channelTitle": "CACTUS",
@@ -267,6 +468,69 @@
       "musicReason": "massa curt: probable teaser/fragment"
     },
     {
+      "id": "u-X6ecAug_E",
+      "title": "Hi seré - Celobert #shorts",
+      "channelTitle": "Celobert",
+      "durationSeconds": 25,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "BnvJLNCxab8",
+      "title": "🎨 16/2 : Hi seré #shorts",
+      "channelTitle": "Celobert",
+      "durationSeconds": 13,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "seu6TvK-SK4",
+      "title": "No t'esperava (Making-of del videoclip) #shorts",
+      "channelTitle": "Celobert",
+      "durationSeconds": 28,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "4XsBcmtBgws",
+      "title": "No t'esperava - Celobert #shorts",
+      "channelTitle": "Celobert",
+      "durationSeconds": 43,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "OTOBeOYEREc",
+      "title": "🌤 La teva vida pot canviar en qualsevol moment #shorts",
+      "channelTitle": "Celobert",
+      "durationSeconds": 20,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "jY6XPJQrb7Y",
+      "title": "✨ La Jordina ha entrat al Celobert",
+      "channelTitle": "Celobert",
+      "durationSeconds": 14,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "ci5WUaYuw8Y",
+      "title": "Celobert (Making-of del videoclip) #shorts",
+      "channelTitle": "Celobert",
+      "durationSeconds": 60,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "6DC737u8S3Q",
+      "title": "Celobert (Making-of a l'estudi) #shorts",
+      "channelTitle": "Celobert",
+      "durationSeconds": 59,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "PqKzAm-ujr0",
+      "title": "Celobert - Celobert #shorts",
+      "channelTitle": "Celobert",
+      "durationSeconds": 40,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
       "id": "U5L-kJNvxZg",
       "title": "6/05 videoclip “SI TE’N VAS”",
       "channelTitle": "Cloe Riembau",
@@ -281,11 +545,32 @@
       "musicReason": "massa curt: probable teaser/fragment"
     },
     {
+      "id": "IF3npGq6a7I",
+      "title": "doleeeermeeee",
+      "channelTitle": "Cloe Riembau",
+      "durationSeconds": 31,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
       "id": "qzrM90fCI1M",
       "title": "CRIM 10 ANYS Live Streaming (03/01/2021) @ Estraperlo Club",
       "channelTitle": "Crim",
       "durationSeconds": 5667,
       "musicReason": "concert o sessió llarga, no una sola cançó"
+    },
+    {
+      "id": "G32YjVWyTKU",
+      "title": "Emisión en directo de CrimPunkRock",
+      "channelTitle": "Crim",
+      "durationSeconds": 0,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "qbDSBHUZ3RY",
+      "title": "Concurs de versions de CRIM (BASES)",
+      "channelTitle": "Crim",
+      "durationSeconds": 32,
+      "musicReason": "massa curt: probable teaser/fragment"
     },
     {
       "id": "Naxp7dsNjtM",
@@ -314,6 +599,62 @@
       "channelTitle": "Dan Peralbo i El Comboi",
       "durationSeconds": 20,
       "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "gD28BD_wwWA",
+      "title": "🔥 Divendres 24 NOU SINGLE 🔥 NO EM FEU CAS!",
+      "channelTitle": "Dan Peralbo i El Comboi",
+      "durationSeconds": 36,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "bYjWSahW9A8",
+      "title": "Angelina Jolie (miniclip) Dan Peralbo i El Comboi",
+      "channelTitle": "Dan Peralbo i El Comboi",
+      "durationSeconds": 16,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "Sj3W4QokQW8",
+      "title": "La cita amb l'Angelina Jolie",
+      "channelTitle": "Dan Peralbo i El Comboi",
+      "durationSeconds": 16,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "e0TgbJXAiIs",
+      "title": "Nou single. 03/03/2023",
+      "channelTitle": "Dan Peralbo i El Comboi",
+      "durationSeconds": 16,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "GR1dcuiEJRM",
+      "title": "03/03/2023 ANGELINA JOLIE. Nou single",
+      "channelTitle": "Dan Peralbo i El Comboi",
+      "durationSeconds": 16,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "_CpjtNurnX4",
+      "title": "EL COMBOI / En directe a la Salamandra",
+      "channelTitle": "Dan Peralbo i El Comboi",
+      "durationSeconds": 18,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "2M5oGYIpkco",
+      "title": "Dan Peralbo i El Comboi / Spot TV3",
+      "channelTitle": "Dan Peralbo i El Comboi",
+      "durationSeconds": 21,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "Z45c8O-SN6I",
+      "title": "Teaser Quin Panorama - Dan Peralbo i El Comboi",
+      "channelTitle": "Dan Peralbo i El Comboi",
+      "durationSeconds": 29,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
     },
     {
       "id": "r_wADL0d2Ug",
@@ -351,6 +692,27 @@
       "musicReason": "massa curt: probable teaser/fragment"
     },
     {
+      "id": "AiEgmqz4sOw",
+      "title": "TEASER - MORIAGATTE!",
+      "channelTitle": "Doctor Prats",
+      "durationSeconds": 56,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "a3SVxqvYRvU",
+      "title": "POV: Escoltes el primer acord d'una cançó i ja saps que serà la teva nova obsessió.",
+      "channelTitle": "Doctor Prats",
+      "durationSeconds": 36,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "9XwNfTqLKl8",
+      "title": "Tràiler \"El Festribalet\"",
+      "channelTitle": "Doctor Prats",
+      "durationSeconds": 52,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
       "id": "hGa5y7iE3LI",
       "title": "Escolteu JALEO! #Shorts",
       "channelTitle": "Ebri Knight",
@@ -376,6 +738,41 @@
       "title": "Ebri Knight a la UdG 2022 [RESUM]",
       "channelTitle": "Ebri Knight",
       "durationSeconds": 31,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "jLb0q91h9ZE",
+      "title": "CARRER, nou disc d'Ebri Knight aquesta tardor // CARRER, nuevo disco de Ebri Knight este otoño",
+      "channelTitle": "Ebri Knight",
+      "durationSeconds": 31,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "1XIjLF5UTP0",
+      "title": "Making of Videoclip 'La Voz Dormida' (Ebri Knight)",
+      "channelTitle": "Ebri Knight",
+      "durationSeconds": 158,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "LoShoRXsTd8",
+      "title": "1939 | Ebri Knight [EP La Voz Dormida]",
+      "channelTitle": "Ebri Knight",
+      "durationSeconds": 29,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "cSsW2Nzs8FA",
+      "title": "Viva la Quinta Brigada [TEASER] Ebri Knight",
+      "channelTitle": "Ebri Knight",
+      "durationSeconds": 32,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "xm5WmUiG2-0",
+      "title": "Emisión en directo de el Diluvi",
+      "channelTitle": "el Diluvi",
+      "durationSeconds": 0,
       "musicReason": "massa curt: probable teaser/fragment"
     },
     {
@@ -456,409 +853,10 @@
       "musicReason": "massa curt: probable teaser/fragment"
     },
     {
-      "id": "W3XwngqEPvc",
-      "title": "elo - L'escriptori del Valle  // Live Session @ El Valle Estudio",
-      "channelTitle": "elo",
-      "durationSeconds": 1117,
-      "musicReason": "concert o sessió llarga, no una sola cançó"
-    },
-    {
-      "id": "iX3VX2SfbZc",
-      "title": "La Mercè 2026",
-      "channelTitle": "Els Amics de les Arts",
-      "durationSeconds": 15,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "URr5_zlVJtc",
-      "title": "UN CONCERT COM ELS D'ABANS",
-      "channelTitle": "Els Amics de les Arts",
-      "durationSeconds": 316,
-      "musicReason": "descripció inequívoca de contingut no musical"
-    },
-    {
-      "id": "FtPzCkh0k_Q",
-      "title": "ENCARA SOM AQUÍ (Una cançó basada en fets reals)",
-      "channelTitle": "Els Amics de les Arts",
-      "durationSeconds": 167,
-      "musicReason": "descripció inequívoca de contingut no musical"
-    },
-    {
-      "id": "Bk838x0xKs0",
-      "title": "ENCARA SOM AQUÍ",
-      "channelTitle": "Els Amics de les Arts",
-      "durationSeconds": 37,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "HgVX-7qRHrw",
-      "title": "Caiguda Ferran😭",
-      "channelTitle": "Els Amics de les Arts",
-      "durationSeconds": 6,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "tj-bAkbeTXY",
-      "title": "Segurament t’estimo. 28.05.26 - 20:00",
-      "channelTitle": "Els Amics de les Arts",
-      "durationSeconds": 22,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "EivzRZCYhzY",
-      "title": "JEAN-LUC des de l'escenari del Palau de la Música",
-      "channelTitle": "Els Amics de les Arts",
-      "durationSeconds": 30,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "glDuog4aQVk",
-      "title": "Vosaltres cantant al Palau 2",
-      "channelTitle": "Els Amics de les Arts",
-      "durationSeconds": 39,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "p7MICMSxysc",
-      "title": "Vosaltres cantant al Palau",
-      "channelTitle": "Els Amics de les Arts",
-      "durationSeconds": 13,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "XR-yfbb3kfY",
-      "title": "🪂🪂🪂🪂",
-      "channelTitle": "Els Catarres",
+      "id": "biKdYWhX0CE",
+      "title": "Finger technique vs pick",
+      "channelTitle": "El Pony Pisador",
       "durationSeconds": 16,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "lb8DfPfv3zk",
-      "title": "Tan fart :: www.elspets.cat/fanzone",
-      "channelTitle": "Els Pets",
-      "durationSeconds": 31,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "mxGkw6IbZ54",
-      "title": "Els Pets - Presentació vídeo \"El que val la pena de veritat\"",
-      "channelTitle": "Els Pets",
-      "durationSeconds": 27,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "FaWHA3YlwOQ",
-      "title": "Collbató",
-      "channelTitle": "Ferran Palau",
-      "durationSeconds": 11,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "uqhTAtBh0Ko",
-      "title": "@theorchard destaquen avui el meu nou disc al seu canal @RadialES 💕💕💕",
-      "channelTitle": "Ferran Palau",
-      "durationSeconds": 2,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "RDdCxCzDhwI",
-      "title": "\"Plora Aquí\" és el nou àlbum de Ferran Palau ❤️",
-      "channelTitle": "Ferran Palau",
-      "durationSeconds": 6,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "YJcM2amhmmw",
-      "title": "Qui per la Mercè?🥹",
-      "channelTitle": "Figa Flawas",
-      "durationSeconds": 18,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "vYgyDLKTuKE",
-      "title": "ALDAIA, qui hi va ser?",
-      "channelTitle": "Figa Flawas",
-      "durationSeconds": 18,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "6ZSZPxbKrhw",
-      "title": "Qui per Vila-seca?",
-      "channelTitle": "Figa Flawas",
-      "durationSeconds": 19,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "2YyjfKG2vBU",
-      "title": "a al freSka ja disponible!",
-      "channelTitle": "Figa Flawas",
-      "durationSeconds": 12,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "lfo-YVy6Pn8",
-      "title": "Figa Flawas - Tot Aquest Espectacle (Documental 'a la freSka')",
-      "channelTitle": "Figa Flawas",
-      "durationSeconds": 1288,
-      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "dGUGBy-CNHU",
-      "title": "“a la freSka” 🍃🦦 demà 3 de juliol a les 21:00 🦋",
-      "channelTitle": "Figa Flawas",
-      "durationSeconds": 30,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "YbHsqhq4-q8",
-      "title": "\"a la freSka\" nova cançó aquest 3 de Juliol a les 21:00",
-      "channelTitle": "Figa Flawas",
-      "durationSeconds": 32,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "MH9mjubLyJU",
-      "title": "Gertrudis - The real power belongs to the people (Lyric Video)",
-      "channelTitle": "Gertrudis",
-      "durationSeconds": 38,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "bNRd1yc7d2U",
-      "title": "Aquesta nit a les 12: Ginestà amb @NilMoliner",
-      "channelTitle": "Ginestà",
-      "durationSeconds": 18,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "nq5obPTu7xA",
-      "title": "GossosVEVO Live Stream",
-      "channelTitle": "GOSSOS",
-      "durationSeconds": 0,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "RBSNBOfdbSg",
-      "title": "VEUS - gusset",
-      "channelTitle": "gusset",
-      "durationSeconds": 25,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "AD1LZNlvf58",
-      "title": "Hey Zuri - roselleta shiny (You&Me Song)",
-      "channelTitle": "Hey Zuri",
-      "durationSeconds": 44,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "ceucYwuQof0",
-      "title": "Un curt documental de HEY ZURI | Sala Loco Club - València",
-      "channelTitle": "Hey Zuri",
-      "durationSeconds": 638,
-      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "gxzxYjBb72M",
-      "title": "JJMR - RIBERA (disc comentat a L'ESCOLTADISSA amb Laura Grau i Sr.Chen, 10/10/2024)",
-      "channelTitle": "Jo Jet i Maria Ribot",
-      "durationSeconds": 5697,
-      "musicReason": "descripció inequívoca de contingut no musical"
-    },
-    {
-      "id": "Clse-MF4vvc",
-      "title": "PUJOLET - La història de la cançó",
-      "channelTitle": "Jo Jet i Maria Ribot",
-      "durationSeconds": 28,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "qcK8Ain1Dsg",
-      "title": "JOAN DAUSÀ: LA GRAN BOGERIA (documental complet)",
-      "channelTitle": "Joan Dausà",
-      "durationSeconds": 4498,
-      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "zEWWPbk3uGs",
-      "title": "Julieta - Vlog rodatges de 23",
-      "channelTitle": "Julieta",
-      "durationSeconds": 328,
-      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "F6l9PVdfKaE",
-      "title": "Julieta - Vlog rodatge de Taxi",
-      "channelTitle": "Julieta",
-      "durationSeconds": 97,
-      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "0792FRBpfrg",
-      "title": "Turmarí - L'arannà (teaser)",
-      "channelTitle": "L'arannà",
-      "durationSeconds": 66,
-      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "kXaVXZo7ogE",
-      "title": "La Fúmiga - TOT ESTAVA PER FER - Making Of",
-      "channelTitle": "La Fúmiga",
-      "durationSeconds": 957,
-      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "Efp1Qg2K1Pc",
-      "title": "Blue Monday en català #lamousse #electronicmusic",
-      "channelTitle": "La Mousse",
-      "durationSeconds": 15,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "Jq5qNxVtzM0",
-      "title": "Blue Monday (New Order) en català (La Mousse) #lamousse #electronicmusic",
-      "channelTitle": "La Mousse",
-      "durationSeconds": 24,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "YRmNCc66Xvs",
-      "title": "Blue Monday en català #lamousse #electronicmusic",
-      "channelTitle": "La Mousse",
-      "durationSeconds": 18,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "ULN-Exgji9U",
-      "title": "Blue Monday (New Order) en català (La Mousse) #lamousse #electronicmusic",
-      "channelTitle": "La Mousse",
-      "durationSeconds": 16,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "stc5o1SaNd0",
-      "title": "Estic per Tu - 22/02/2023 #lalba #musicacatalana #musicaencatala #esticpertu",
-      "channelTitle": "LAL'BA MUSIC",
-      "durationSeconds": 9,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "0pRB5SaycsM",
-      "title": "Ultimament la gent… #lildami #català  #catalunya",
-      "channelTitle": "Lildami",
-      "durationSeconds": 18,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "CowkTzDU5c8",
-      "title": "Dona el pego??? #newmusic #rap #music #clips",
-      "channelTitle": "Lildami",
-      "durationSeconds": 19,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "V3OJ6n8m0n4",
-      "title": "3 d’abril del 2025",
-      "channelTitle": "Lildami",
-      "durationSeconds": 21,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "yFzSxrFFoVE",
-      "title": "A contracorrent ja disponible 🫡",
-      "channelTitle": "Lildami",
-      "durationSeconds": 14,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "hKQiYNMLiyc",
-      "title": "Ja disponible!! DR SMITH ❤️💝",
-      "channelTitle": "Lildami",
-      "durationSeconds": 34,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "ZkFC-i-lElc",
-      "title": "Avui passen coses 🥺",
-      "channelTitle": "Lildami",
-      "durationSeconds": 11,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "Ch_l04ocQVI",
-      "title": "Ulleres de sol🕶️",
-      "channelTitle": "Lildami",
-      "durationSeconds": 20,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "3_B5Mr_v32E",
-      "title": "ja disponible ​⁠@MiaBadgyalMusic !! CATALUNYA ❤️🇧🇷 BRASIL",
-      "channelTitle": "Llum",
-      "durationSeconds": 16,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "Q1OA7UTjnW8",
-      "title": "92 at PRIMAVERA SOUND🥹⭐️ vull tornar jaaaaa😔🫂 #barcelonaconcert #primavera #barcelona",
-      "channelTitle": "Llum",
-      "durationSeconds": 40,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "jAovtqExfE0",
-      "title": "barra warra com va dir una sabia☝🏻😘📝 #barcelona #newsong #newsupdate #telediario",
-      "channelTitle": "Llum",
-      "durationSeconds": 14,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "tBeXSyzAb8Y",
-      "title": "TOT CANVIA A BARCELONA DESDE QUE PENSES EN…🤨🤨🤨 #92 #barcelona #musiclover",
-      "channelTitle": "Llum",
-      "durationSeconds": 16,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "eZmDClzeesM",
-      "title": "PILLADA !!👩🏻‍⚖️ ROBONA  #policia #festival #barcelona #artist #newmusic #kpop #gol",
-      "channelTitle": "Llum",
-      "durationSeconds": 14,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "6s1ahBalpJk",
-      "title": "NO SE SI M’ESTIC PASSANT… pero ho vull de veritat 🤐🤐🤍🤍#barcelona #newmusic #concert #artist",
-      "channelTitle": "Llum",
-      "durationSeconds": 16,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "-QRa-Un1KOE",
-      "title": "QUIEN ÉS ESTA CHICA???😩🩵🤍🩵🩷🤍🩷🩵🩷🤍🩷",
-      "channelTitle": "Llum",
-      "durationSeconds": 33,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "RGLjlUUC0VA",
-      "title": "NO TINDREM LA CHAMPIONS PERO… 😳",
-      "channelTitle": "Llum",
-      "durationSeconds": 14,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "99sBIUoTTcI",
-      "title": "MÚSICA PARA HACERLO…😳👍🏻 #barcelona #music #heymrdj jsjdja aquests titols que poso… help",
-      "channelTitle": "Llum",
-      "durationSeconds": 16,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "E8hT1n1drcc",
-      "title": "EL FINAL… EN SHOCK?🧐😳 #boomerang #unexpected #lalliga #truco",
-      "channelTitle": "Llum",
-      "durationSeconds": 10,
       "musicReason": "massa curt: probable teaser/fragment"
     }
   ]

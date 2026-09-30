@@ -25,7 +25,7 @@ jobs:
       - name: Genera feed musical
         env:
           YOUTUBE_API_KEY_SERVER: ${{ secrets.YOUTUBE_API_KEY_SERVER }}
-          MUSIC_VIDEOS_PER_CHANNEL: "15"
+          MUSIC_VIDEOS_PER_CHANNEL: "50"
         run: node scripts/update_music_feed.js
       - name: Publica feed
         run: |
