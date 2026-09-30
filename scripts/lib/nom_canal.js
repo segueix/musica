@@ -12,6 +12,16 @@ function normalizeToken(value) {
     .replace(/[^a-z0-9]/g, '');
 }
 
+// El nom d'un grup mai porta «Oficial»/«Official» (p. ex. «Txarango Oficial» → «Txarango»).
+function stripOfficialWord(name) {
+  const raw = String(name || '').trim();
+  const cleaned = raw
+    .replace(/\s*[(\[]\s*(?:oficial|official)\s*[)\]]\s*$/i, '')
+    .replace(/\s+(?:oficial|official)\s*$/i, '')
+    .trim();
+  return cleaned || raw;
+}
+
 // Un nom "és el handle" si és una sola paraula (un nom real acostuma a tenir espais) que
 // coincideix amb el handle (ignorant @, majúscules, accents i símbols), o comença per @.
 function isHandleName(name, handle) {
@@ -24,7 +34,7 @@ function isHandleName(name, handle) {
 
 // name: títol de YouTube · handle: customUrl · artistNames: artistes assignats al canal.
 function resolveChannelDisplayName(name, handle, artistNames) {
-  const raw = String(name || '').trim();
+  const raw = stripOfficialWord(name);
   const artists = Array.isArray(artistNames) ? artistNames.filter(Boolean) : [];
   // Només si el canal és d'un únic artista: amb diversos no sabem quin nom pertoca.
   if (artists.length !== 1) return raw || String(artists[0] || '').trim();
@@ -57,4 +67,11 @@ function loadNameOverrides(file) {
   }
 }
 
-module.exports = { normalizeToken, isHandleName, resolveChannelDisplayName, findNameOverride, loadNameOverrides };
+module.exports = {
+  normalizeToken,
+  isHandleName,
+  stripOfficialWord,
+  resolveChannelDisplayName,
+  findNameOverride,
+  loadNameOverrides,
+};

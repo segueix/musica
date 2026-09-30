@@ -3,7 +3,7 @@
 const fs = require('fs');
 const path = require('path');
 const { classifyMusicContent } = require('./lib/classificar_contingut_musical');
-const { resolveChannelDisplayName, findNameOverride, loadNameOverrides } = require('./lib/nom_canal');
+const { resolveChannelDisplayName, findNameOverride, loadNameOverrides, stripOfficialWord } = require('./lib/nom_canal');
 
 const API_KEY = process.env.YOUTUBE_API_KEY_SERVER || process.env.YOUTUBE_API_KEY;
 if (!API_KEY) {
@@ -44,7 +44,8 @@ function unique(values){ return [...new Set((values||[]).map(v=>String(v||'').tr
 function cleanChannelDisplayName(value, fallback=''){
   const raw=String(value||fallback||'').trim();
   const cleaned=raw.replace(/\s*-\s*(?:topic|tòpic)\s*$/i,'').trim();
-  return cleaned || String(fallback||'').trim();
+  // Mai «Oficial»/«Official» al nom del grup
+  return stripOfficialWord(cleaned) || String(fallback||'').trim();
 }
 function chunks(items,size){ const out=[]; for(let i=0;i<items.length;i+=size) out.push(items.slice(i,i+size)); return out; }
 function categoriesForGenres(genres){

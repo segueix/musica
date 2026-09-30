@@ -228,3 +228,31 @@ describe('spreadVideosByArtist', () => {
         expect(adjacent.length).toBeLessThanOrEqual(1);
     });
 });
+
+// ==================== limitClassicFrequency ====================
+describe('limitClassicFrequency', () => {
+    const v = (id, classic) => ({ id, classic });
+    const isClassic = video => video.classic;
+    const ids = list => list.map(item => item.id).join('');
+
+    it('no deixa més d\'1 antic de cada 5 i conserva l\'ordre de cada grup', () => {
+        const list = [v('a1', true), v('a2', true), v('a3', true)];
+        for (let i = 1; i <= 8; i++) list.unshift(v('m' + (9 - i), false));
+        // moderns m1..m8 (ordre) + antics a1..a3 al final
+        const out = ctx.limitClassicFrequency(list, { every: 5, isClassic });
+        expect(ids(out)).toBe('m1m2m3m4a1m5m6m7m8a2a3'.replace(/m/g, 'm'));
+    });
+
+    it('si no hi ha antics o només n\'hi ha, deixa la llista igual', () => {
+        const onlyModern = [v('a', false), v('b', false)];
+        expect(ctx.limitClassicFrequency(onlyModern, { isClassic })).toBe(onlyModern);
+        const onlyOld = [v('a', true), v('b', true)];
+        expect(ctx.limitClassicFrequency(onlyOld, { isClassic })).toBe(onlyOld);
+    });
+
+    it('amb every=2 alterna modern i antic', () => {
+        const list = [v('m1', false), v('m2', false), v('a1', true), v('a2', true)];
+        expect(ids(ctx.limitClassicFrequency(list, { every: 2, isClassic }))).toBe('m1a1m2a2');
+    });
+});
+

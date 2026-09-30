@@ -3149,6 +3149,9 @@ body.segueix-tv-playback.segueix-tv-active .chips-bar.home-categories.segueix-tv
     width: 100%;
 }
 
+/* Controls de la cua sobre el reproductor: anterior · play/pausa · següent, grans i centrats.
+   Surten en passar el ratolí (i s'hi queden mentre és sobre el reproductor; en marxar, ~3 s més),
+   sempre en pausa, i en tocar el vídeo a pantalles tàctils. Mai capturen clics fora dels botons. */
 .queue-next-overlay {
     position: absolute;
     inset: 0;
@@ -3163,81 +3166,118 @@ body.segueix-tv-playback.segueix-tv-active .chips-bar.home-categories.segueix-tv
     touch-action: manipulation;
 }
 
-.queue-next-button,
-.queue-prev-button {
+.queue-controls {
+    --qc-side: 72px;
+    --qc-main: 92px;
     position: absolute;
-    left: 144px;
-    bottom: 0;
-    width: 48px;
-    height: 48px;
-    display: inline-flex;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
     align-items: center;
     justify-content: center;
+    gap: clamp(20px, 4vw, 44px);
+    opacity: 0;
+    transition: opacity 160ms ease;
+    pointer-events: none;
+}
+
+.queue-controls button {
+    display: grid;
+    place-items: center;
+    width: var(--qc-side);
+    height: var(--qc-side);
     padding: 0;
     border: 0;
-    border-radius: 0;
-    background: transparent;
-    color: #fff;
-    box-shadow: none;
-    opacity: 0;
-    transform: scale(0.92);
-    transition: opacity 140ms ease, transform 140ms ease, background 140ms ease;
-    pointer-events: none;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.58);
+    color: #ffffff;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
     cursor: pointer;
-}.queue-next-overlay.is-visible .queue-next-button,
-.queue-next-overlay.is-visible .queue-prev-button,
-#videoPlayer[data-player-state="2"] .queue-next-overlay .queue-next-button,
-#videoPlayer[data-player-state="2"] .queue-next-overlay .queue-prev-button {
+    pointer-events: none;
+    transition:
+        transform 140ms ease,
+        background 140ms ease;
+}
+
+.queue-controls .queue-toggle-button {
+    width: var(--qc-main);
+    height: var(--qc-main);
+    background: rgba(255, 255, 255, 0.92);
+    color: #000000;
+}
+
+.queue-controls svg {
+    width: 46%;
+    height: 46%;
+    fill: currentColor;
+}
+
+.queue-controls button[hidden] {
+    display: none;
+}
+
+/* Finestra flotant: al costat dels controls, sense moure el play/pausa del centre */
+.queue-controls .queue-mini-button {
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    margin-left: clamp(14px, 3vw, 32px);
+    transform: translateY(-50%);
+    width: calc(var(--qc-side) * 0.7);
+    height: calc(var(--qc-side) * 0.7);
+}
+
+.queue-controls .queue-mini-button:hover,
+.queue-controls .queue-mini-button:focus-visible {
+    transform: translateY(-50%) scale(1.08);
+}
+
+.queue-controls .queue-mini-button svg {
+    width: 52%;
+    height: 52%;
+    fill: none;
+    stroke: currentColor;
+}
+
+#videoPlayer.mini-player-active .queue-mini-button {
+    display: none;
+}
+
+.queue-controls button:hover,
+.queue-controls button:focus-visible {
+    transform: scale(1.08);
+    outline: none;
+}
+
+.queue-controls button:not(.queue-toggle-button):hover {
+    background: rgba(0, 0, 0, 0.78);
+}
+
+.queue-controls button:focus-visible {
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.75);
+}
+
+.queue-next-overlay.is-visible .queue-controls,
+#videoPlayer[data-player-state='2'] .queue-next-overlay .queue-controls {
     opacity: 1;
-    transform: scale(1);
+}
+
+.queue-next-overlay.is-visible .queue-controls button,
+#videoPlayer[data-player-state='2'] .queue-next-overlay .queue-controls button {
     pointer-events: auto;
 }
 
-@media (hover: hover) and (pointer: fine) {#videoPlayer:hover .queue-next-overlay .queue-next-button,
-#videoPlayer:hover .queue-next-overlay .queue-prev-button {
+@media (hover: hover) and (pointer: fine) {
+    #videoPlayer:hover .queue-next-overlay .queue-controls {
         opacity: 1;
-        transform: scale(1);
+    }
+
+    #videoPlayer:hover .queue-next-overlay .queue-controls button {
         pointer-events: auto;
     }
-}.queue-next-button:hover,
-.queue-prev-button:hover,
-.queue-next-button:focus-visible,
-.queue-prev-button:focus-visible {
-    background: rgba(0, 0, 0, 0.26);
-    outline: none;
-}.queue-next-button:focus-visible,
-.queue-prev-button:focus-visible {
-    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.72);
-}
-
-.queue-next-icon {
-    position: relative;
-    display: block;
-    width: 22px;
-    height: 20px;
-}
-
-.queue-next-icon::before {
-    content: '';
-    position: absolute;
-    top: 3px;
-    left: 2px;
-    width: 0;
-    height: 0;
-    border-top: 7px solid transparent;
-    border-bottom: 7px solid transparent;
-    border-left: 11px solid #fff;
-}
-
-.queue-next-icon::after {
-    content: '';
-    position: absolute;
-    top: 2px;
-    right: 2px;
-    width: 3px;
-    height: 16px;
-    border-radius: 2px;
-    background: #fff;
 }
 
 @media (hover: none), (pointer: coarse) {
@@ -3246,29 +3286,23 @@ body.segueix-tv-playback.segueix-tv-active .chips-bar.home-categories.segueix-tv
     }
 }
 
-@media (max-width: 768px) {.queue-next-button,
-.queue-prev-button {
-        top: 50%;
-        left: auto;
-        right: 12px;
-        bottom: auto;
-        width: 50px;
-        height: 50px;
-        border: 1px solid rgba(255, 255, 255, 0.36);
-        border-radius: 50%;
-        background: rgba(0, 0, 0, 0.58);
-        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.34);
-        backdrop-filter: blur(5px);
-        -webkit-backdrop-filter: blur(5px);
-        transform: translateY(-50%) scale(0.92);
-    }.queue-next-overlay.is-visible .queue-next-button,
-.queue-next-overlay.is-visible .queue-prev-button {
-        transform: translateY(-50%) scale(1);
+@media (max-width: 768px) {
+    .queue-controls {
+        --qc-side: 56px;
+        --qc-main: 72px;
     }
 }
 
-@media (prefers-reduced-motion: reduce) {.queue-next-button,
-.queue-prev-button {
+/* A la finestreta flotant els controls són més petits */
+#videoPlayer.mini-player-active .queue-controls {
+    --qc-side: 34px;
+    --qc-main: 44px;
+    gap: 10px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .queue-controls,
+    .queue-controls button {
         transition: none;
     }
 }
@@ -9391,51 +9425,4 @@ body {
     font: inherit;
     font-weight: 700;
     cursor: pointer;
-}
-
-/* Botó "anterior" sobre el reproductor: al costat del "següent" */
-.queue-prev-button {
-    left: 96px;
-}
-
-.queue-prev-button[hidden],
-.queue-next-button[hidden] {
-    display: none;
-}
-
-.queue-prev-icon {
-    position: relative;
-    display: block;
-    width: 22px;
-    height: 20px;
-}
-
-.queue-prev-icon::before {
-    content: '';
-    position: absolute;
-    top: 3px;
-    right: 2px;
-    width: 0;
-    height: 0;
-    border-top: 7px solid transparent;
-    border-bottom: 7px solid transparent;
-    border-right: 11px solid #fff;
-}
-
-.queue-prev-icon::after {
-    content: '';
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    width: 3px;
-    height: 16px;
-    border-radius: 2px;
-    background: #fff;
-}
-
-@media (max-width: 768px) {
-    .queue-prev-button {
-        left: 12px;
-        right: auto;
-    }
 }

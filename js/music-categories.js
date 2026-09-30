@@ -6,6 +6,7 @@
     'use strict';
 
     const DATA_URL = 'data/artistes-musica.json';
+    const CLASSIC_URL = 'data/musica-classica.json';
     const CATEGORY_GROUPS = [
         { label: 'Pop', genres: ['Pop'] },
         { label: 'Rock', genres: ['Rock'] },
@@ -28,6 +29,34 @@
     const artistByChannel = new Map();
     let ready = false;
     let initPromise = null;
+
+    // Música «realment antiga»: artistes de data/musica-classica.json + vídeos de fa `classicYears` anys o més.
+    const classicNames = new Set();
+    const classicChannels = new Set();
+    let classicYears = 8;
+
+    function normalizeName(value) {
+        return String(value || '')
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '')
+            .toLowerCase()
+            .trim();
+    }
+
+    async function loadClassic() {
+        classicNames.clear();
+        classicChannels.clear();
+        try {
+            const response = await fetch(root?.appDataUrl?.(CLASSIC_URL) || CLASSIC_URL, { cache: 'no-store' });
+            if (!response.ok) return;
+            const data = await response.json();
+            (Array.isArray(data?.artistes) ? data.artistes : []).forEach(name => classicNames.add(normalizeName(name)));
+            const years = Number(data?.anysAntic);
+            if (Number.isFinite(years) && years > 0) classicYears = years;
+        } catch (error) {
+            // Sense la llista simplement no hi ha artistes clàssics (l'edat del vídeo continua comptant)
+        }
+    }
 
     function unique(values) {
         return [...new Set((values || []).map(v => String(v || '').trim()).filter(Boolean))];
@@ -58,6 +87,7 @@
         for (const channel of artist.youtube?.channels || []) {
             const id = String(channel?.id || '').trim();
             if (!id) continue;
+            if (classicNames.has(normalizeName(artist.name))) classicChannels.add(id);
             byChannel.set(id, unique([...(byChannel.get(id) || []), ...categories]));
             artistByChannel.set(id, {
                 name: artist.name || channel.name || '',
@@ -76,6 +106,7 @@
                 const response = await fetch(url, { cache: 'no-store' });
                 if (!response.ok) throw new Error('HTTP ' + response.status);
                 const data = await response.json();
+                await loadClassic();
                 byChannel.clear();
                 artistByChannel.clear();
                 for (const artist of data.artists || []) registerArtist(artist);
@@ -92,6 +123,18 @@
 
     function categoriesForChannel(channelId) {
         return [...(byChannel.get(String(channelId || '')) || [])];
+    }
+
+    function isClassicChannel(channelId) {
+        return classicChannels.has(String(channelId || ''));
+    }
+
+    // Antic = artista clàssic o vídeo publicat fa `classicYears` anys o més.
+    function isClassicVideo(video) {
+        if (isClassicChannel(video?.channelId || video?.sourceChannelId)) return true;
+        const published = new Date(video?.publishedAt || video?.uploadDate || '').getTime();
+        if (!Number.isFinite(published) || published <= 0) return false;
+        return Date.now() - published >= classicYears * 365.25 * 24 * 3600 * 1000;
     }
 
     function isMusicChannel(channelId) {
@@ -128,6 +171,8 @@
         navigationCategoriesForGenres,
         isCategoryEligibleVideo,
         isMusicChannel,
+        isClassicChannel,
+        isClassicVideo,
         decorateChannel,
         decorateVideo
     };

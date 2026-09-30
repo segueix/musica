@@ -453,3 +453,30 @@ function spreadVideosByArtist(videos, { previousArtist = '', window: lookahead =
     }
     return result;
 }
+
+// ========== MÚSICA ANTIGA ==========
+
+// La música realment antiga (artistes clàssics o vídeos de fa 8+ anys, veure
+// SegueixMusicCategories.isClassicVideo) no ha de barrejar-se amb la dels darrers anys amb la mateixa
+// freqüència: com a molt 1 de cada `every` elements. Conserva l'ordre relatiu de cada grup; quan es
+// gasten els moderns, els antics que queden van al final.
+function limitClassicFrequency(videos, { every = 5, isClassic = null } = {}) {
+    if (!Array.isArray(videos) || videos.length < 2) return Array.isArray(videos) ? videos : [];
+    const test =
+        isClassic ||
+        (typeof window !== 'undefined' && window.SegueixMusicCategories?.isClassicVideo
+            ? video => window.SegueixMusicCategories.isClassicVideo(video)
+            : () => false);
+    const modern = [];
+    const classic = [];
+    videos.forEach(video => (test(video) ? classic : modern).push(video));
+    if (classic.length === 0 || modern.length === 0) return videos;
+    const gap = Math.max(1, every - 1);
+    const result = [];
+    let nextClassic = 0;
+    modern.forEach((video, index) => {
+        result.push(video);
+        if ((index + 1) % gap === 0 && nextClassic < classic.length) result.push(classic[nextClassic++]);
+    });
+    return result.concat(classic.slice(nextClassic));
+}

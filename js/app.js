@@ -7120,6 +7120,8 @@ function renderFeedLegacyImpl() {
         return seconds !== null && seconds > 0;
     });
 
+    // Música realment antiga: com a molt 1 de cada 5 entre la dels darrers anys.
+    filtered = limitClassicFrequency(filtered);
     // Varietat: mai dues cançons seguides del mateix grup/artista.
     filtered = spreadVideosByArtist(filtered);
 
@@ -10014,6 +10016,22 @@ function updateQueueOverlayButtons(overlay) {
     const prev = overlay.querySelector('.queue-prev-button');
     if (next) next.hidden = !hasQueueNextVideo();
     if (prev) prev.hidden = !hasQueuePrevVideo();
+    updateQueueToggleIcon(overlay);
+}
+
+const QUEUE_ICON_PLAY = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>';
+const QUEUE_ICON_PAUSE = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg>';
+const QUEUE_ICON_PREV = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h2v14H6zM20 5v14L9.5 12z"/></svg>';
+const QUEUE_ICON_NEXT = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 5h2v14h-2zM4 5v14l10.5-7z"/></svg>';
+
+// Icona del botó del mig: pausa mentre sona, play si no.
+function updateQueueToggleIcon(overlay) {
+    const toggle = overlay?.querySelector('.queue-toggle-button');
+    if (!toggle) return;
+    const playing = videoPlayer?.dataset?.playerState === '1';
+    toggle.innerHTML = playing ? QUEUE_ICON_PAUSE : QUEUE_ICON_PLAY;
+    toggle.setAttribute('aria-label', playing ? 'Pausa' : 'Reprodueix');
+    toggle.title = playing ? 'Pausa' : 'Reprodueix';
 }
 
 function getQueueNextOverlay() {
@@ -10036,7 +10054,7 @@ function hideQueueNextOverlay({ remove = false } = {}) {
     }
     overlay.classList.remove('is-visible');
     overlay.setAttribute('aria-hidden', 'true');
-    overlay.querySelectorAll('.queue-next-button, .queue-prev-button').forEach(button => {
+    overlay.querySelectorAll('.queue-controls button').forEach(button => {
         button.tabIndex = -1;
     });
 }
@@ -10045,7 +10063,9 @@ function isQueuePlayerPaused() {
     return videoPlayer?.dataset?.playerState === '2';
 }
 
-function showQueueNextOverlay({ duration = 3000 } = {}) {
+// sticky: es queda visible sense cap temporitzador (ratolí sobre el reproductor);
+// si no, es queda `duration` ms i s'amaga.
+function showQueueNextOverlay({ duration = 3000, sticky = false } = {}) {
     syncQueueNextOverlay();
     const overlay = getQueueNextOverlay();
     if (!overlay || !hasQueueNavigation()) return;
@@ -10054,12 +10074,12 @@ function showQueueNextOverlay({ duration = 3000 } = {}) {
     updateQueueOverlayButtons(overlay);
     overlay.classList.add('is-visible');
     overlay.setAttribute('aria-hidden', 'false');
-    overlay.querySelectorAll('.queue-next-button, .queue-prev-button').forEach(button => {
+    overlay.querySelectorAll('.queue-controls button').forEach(button => {
         button.tabIndex = 0;
     });
 
-    // En pausa el control de següent queda sempre visible, com els controls del player.
-    if (isQueuePlayerPaused()) return;
+    // En pausa els controls queden sempre visibles, com els del player; amb el ratolí a sobre, també.
+    if (sticky || isQueuePlayerPaused()) return;
 
     queueNextOverlayHideTimer = setTimeout(() => {
         hideQueueNextOverlay();
@@ -10100,12 +10120,12 @@ function createQueueNextOverlay() {
     overlay.setAttribute('aria-hidden', 'true');
     overlay.innerHTML = `
         <div class="queue-next-touch-layer" aria-hidden="true"></div>
-        <button class="queue-prev-button" type="button" aria-label="Vídeo anterior" title="Vídeo anterior" tabindex="-1">
-            <span class="queue-prev-icon" aria-hidden="true"></span>
-        </button>
-        <button class="queue-next-button" type="button" aria-label="Vídeo següent" title="Vídeo següent" tabindex="-1">
-            <span class="queue-next-icon" aria-hidden="true"></span>
-        </button>
+        <div class="queue-controls" role="group" aria-label="Controls de reproducció">
+            <button class="queue-prev-button" type="button" aria-label="Vídeo anterior" title="Vídeo anterior" tabindex="-1">${QUEUE_ICON_PREV}</button>
+            <button class="queue-toggle-button" type="button" aria-label="Reprodueix" title="Reprodueix" tabindex="-1">${QUEUE_ICON_PLAY}</button>
+            <button class="queue-next-button" type="button" aria-label="Vídeo següent" title="Vídeo següent" tabindex="-1">${QUEUE_ICON_NEXT}</button>
+            <button class="queue-mini-button" type="button" aria-label="Finestra flotant" title="Finestra flotant" tabindex="-1">${MINI_PLAYER_ICON_SVG}</button>
+        </div>
     `;
 
     const touchLayer = overlay.querySelector('.queue-next-touch-layer');
@@ -10115,6 +10135,21 @@ function createQueueNextOverlay() {
         showQueueNextOverlay({ duration: 3000 });
     });
 
+    overlay.querySelector('.queue-toggle-button')?.addEventListener('click', event => {
+        event.preventDefault();
+        event.stopPropagation();
+        toggleMainPlayerPlayback();
+        // Canvi immediat de la icona; l'estat real arriba després del reproductor
+        const toggle = event.currentTarget;
+        const willPlay = videoPlayer?.dataset?.playerState !== '1';
+        toggle.innerHTML = willPlay ? QUEUE_ICON_PAUSE : QUEUE_ICON_PLAY;
+    });
+    overlay.querySelector('.queue-mini-button')?.addEventListener('click', event => {
+        event.preventDefault();
+        event.stopPropagation();
+        hideQueueNextOverlay();
+        setMiniPlayerState(true);
+    });
     overlay.querySelector('.queue-next-button')?.addEventListener('click', advanceQueueFromOverlay);
     overlay.querySelector('.queue-prev-button')?.addEventListener('click', goToPreviousFromOverlay);
     updateQueueOverlayButtons(overlay);
@@ -10149,22 +10184,35 @@ function initQueueNextOverlay() {
     queueNextOverlayObserver = new MutationObserver(scheduleQueueNextOverlaySync);
     queueNextOverlayObserver.observe(videoPlayer, { childList: true });
 
+    // Ratolí sobre el reproductor: controls fixos. En marxar, es queden ~3 s i s'amaguen.
     videoPlayer.addEventListener('pointerenter', event => {
         if (event.pointerType === 'mouse' && hasQueueNavigation()) {
-            showQueueNextOverlay({ duration: 10000 });
+            showQueueNextOverlay({ sticky: true });
         }
     });
 
     videoPlayer.addEventListener('pointermove', event => {
         if (event.pointerType === 'mouse' && hasQueueNavigation()) {
-            showQueueNextOverlay({ duration: 10000 });
+            showQueueNextOverlay({ sticky: true });
+        }
+    });
+
+    videoPlayer.addEventListener('pointerleave', event => {
+        if (event.pointerType === 'mouse' && hasQueueNavigation()) {
+            showQueueNextOverlay({ duration: 3000 });
         }
     });
 
     videoPlayer.addEventListener('focusin', event => {
-        if (event.target?.closest?.('.queue-next-button, .queue-prev-button')) {
+        if (event.target?.closest?.('.queue-controls button')) {
             showQueueNextOverlay({ duration: 10000 });
         }
+    });
+
+    // La icona play/pausa segueix l'estat real del reproductor
+    new MutationObserver(() => updateQueueToggleIcon(getQueueNextOverlay())).observe(videoPlayer, {
+        attributes: true,
+        attributeFilter: ['data-player-state'],
     });
 
     syncQueueNextOverlay();
@@ -11200,17 +11248,23 @@ function prepareWatchPlaybackPreview({ videoId, source, videoUrl, thumbnail, tit
     requestAnimationFrame(updatePlayerPosition);
 }
 
-function queuePlayback({ videoId, source, videoUrl, thumbnail, title }) {
-    return SegueixApp.features.player?.queuePlayback?.({ videoId, source, videoUrl, thumbnail, title });
+function queuePlayback({ videoId, source, videoUrl, thumbnail, title, autoPlay = false }) {
+    return SegueixApp.features.player?.queuePlayback?.({ videoId, source, videoUrl, thumbnail, title, autoPlay });
 }
 
-function queuePlaybackLegacyImpl({ videoId, source, videoUrl, thumbnail, title }) {
+function queuePlaybackLegacyImpl({ videoId, source, videoUrl, thumbnail, title, autoPlay = false }) {
     if (!videoPlaceholder) {
         return;
     }
     videoPlaceholder.classList.remove('hidden');
     videoPlaceholder.classList.remove('is-placeholder-hidden');
     setPlaceholderImage(thumbnail, title);
+    // Avanç automàtic d'una ràdio/llista amb la finestra flotant: la cançó següent arrenca
+    // sola, sense esperar un clic al placeholder (que queda darrere la finestreta).
+    if (autoPlay && hasAcceptedYouTubeCookies()) {
+        loadNewVideoInMiniPlayer(videoId, source, videoUrl, thumbnail, title);
+        return;
+    }
     ensurePlayOverlay(() => loadNewVideoInMiniPlayer(videoId, source, videoUrl, thumbnail, title));
 }
 
@@ -12643,11 +12697,10 @@ async function showVideoFromAPILegacyImpl(videoId, options = {}) {
         keepTVPosition && document.body.classList.contains('segueix-tv-active');
     exitMiniPlayerForNewVideo();
     const isMini = videoPlayer?.classList.contains('mini-player-active');
-    // Avanç automàtic de la llista/ràdio amb la finestra flotant mentre l'usuari és en una altra
-    // secció: la cançó següent es carrega a la finestreta sense portar-lo a la pàgina del vídeo.
-    const keepPage = Boolean(
-        isAutoPlayNavigating && isPlaylistNavigation && isMini && watchPage.classList.contains('hidden')
-    );
+    // Avanç automàtic de la llista/ràdio amb la finestra flotant: la cançó següent es carrega a la
+    // finestreta sense portar l'usuari a la pàgina del vídeo ni moure-li l'scroll.
+    const keepPage = Boolean(isAutoPlayNavigating && isPlaylistNavigation && isMini);
+    const watchWasHidden = watchPage.classList.contains('hidden');
     if (!isPlaylistNavigation) {
         exitPlaylistMode();
     }
@@ -12659,7 +12712,9 @@ async function showVideoFromAPILegacyImpl(videoId, options = {}) {
     const startAt = Math.max(0, Math.floor(Number(options.startAt) || 0));
     const videoUrl = `?v=${videoId}${startAt > 0 ? `&t=${startAt}` : ''}`;
     if (keepPage) {
-        // La URL i l'historial es queden a la secció on és l'usuari
+        // Fora de la pàgina del vídeo, la URL es queda a la secció on és l'usuari; a la pàgina del
+        // vídeo només s'actualitza (sense afegir entrades a l'historial)
+        if (!watchWasHidden) history.replaceState({ videoId }, '', videoUrl);
     } else if (options.replaceHistory) {
         history.replaceState({ videoId }, '', videoUrl);
     } else {
@@ -12789,6 +12844,7 @@ async function showVideoFromAPILegacyImpl(videoId, options = {}) {
             source: 'api',
             thumbnail: cachedVideo?.thumbnail || '',
             title: cachedVideo?.title || '',
+            autoPlay: shouldAutoPlay,
         });
     } else {
         prepareWatchPlaybackPreview({
@@ -13195,6 +13251,7 @@ function showVideoLegacyImpl(videoId, options = {}) {
             videoUrl: video.videoUrl,
             thumbnail: video.thumbnail,
             title: video.title,
+            autoPlay: shouldAutoPlay,
         });
     } else {
         prepareWatchPlaybackPreview({

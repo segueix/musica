@@ -388,6 +388,48 @@ La finestreta flotant en fer scroll cap avall es manté tal com era: és el comp
 
 **Fitxers Afectats:** `js/features/music-queue.js`, `css/styles.css`, `data/artistes-musica.json`, `data/youtube-verified-handles.json`, `data/hidden-videos.json`, `sw.js`.
 
+## [2026-09-30] - Controls de la cua sobre el reproductor: grans, centrats i amb play/pausa
+
+**Canvi:** El mini-control anterior/següent (a baix a l'esquerra, 48 px) passa a ser un grup **centrat** dins el reproductor: anterior · **play/pausa** · següent (72/92/72 px; 56/72 a mòbil; 34/44 a la finestreta flotant). `createQueueNextOverlay()` (`app.js`) + CSS `.queue-controls`. Visibilitat: amb el ratolí sobre el reproductor són **fixos** (`sticky`, sense temporitzador; `pointerenter`/`pointermove`); en marxar es queden ~3 s (`pointerleave`) i s'amaguen; en pausa són sempre visibles; en tàctil, el toc al vídeo els mostra 3 s. Només els botons capturen clics (el grup té `pointer-events: none`), així que la resta del vídeo continua responent a YouTube. La icona play/pausa segueix `data-player-state` (MutationObserver) i la classe `.queue-next-button` es conserva perquè analytics/tv-learning l'escolten.
+
+**Limitació tècnica:** el ratolí sobre un `<iframe>` de YouTube no envia `mousemove` a la pàgina pare (només `pointerenter`/`pointerleave`), per això la lògica és «fix mentre és a sobre + 3 s en marxar» i no «3 s des de l'últim moviment».
+
+**Verificat en Chromium:** amagats sense ratolí; visibles amb ratolí a sobre (i encara fixos 4 s després); 0,8 s després de marxar visibles; 3,8 s després amagats; centrats (0 px de desviació); «anterior» amagat a la primera cançó.
+
+**Fitxers Afectats:** `js/app.js`, `css/styles.css`, `sw.js`.
+
+## [2026-09-30] - Noms de grup sense «Oficial»
+
+**Canvi:** El nom mostrat d'un grup no porta mai «Oficial»/«Official» (Aspencat, Buhos, Ginestà, KOP, Txarango). `stripOfficialWord()` a `scripts/lib/nom_canal.js`, aplicada a `cleanChannelDisplayName()` d'`update_music_feed.js` (cada regeneració del feed, per a `feed.json`, `channels-ca.json` i el `channelTitle` dels vídeos) i a `resoldre…` via `resolveChannelDisplayName`. Un nom que només fos «Oficial» es conserva. Les **correccions manuals** de `data/noms-canals.json` continuen manant. Els fitxers generats no s'editen a mà: el canvi arriba amb el proper «Actualitzar feed musical» (es dispara en fer push d'`update_music_feed.js`), o executant `node scripts/corregir_noms_canals.js` en local.
+
+**Fitxers Afectats:** `scripts/lib/nom_canal.js`, `scripts/update_music_feed.js`, `tests/nom-canal.test.js`.
+
+## [2026-09-30] - La música realment antiga sortia massa entre la dels darrers anys
+
+**Símptoma:** Cançons de fa dècades (Nova Cançó, rock dels 80-90) apareixien amb la mateixa freqüència que les novetats.
+
+**Causa Arrel:** `publishedAt` no serveix per detectar-les: el catàleg clàssic (Raimon, Llach, Ovidi, Serrat...) es va pujar fa poc (canals Topic), així que semblaven recents. Només el 7 % tenia 8+ anys per data.
+
+**Solució Implementada:** «Antic» = artista de `data/musica-classica.json` (22 artistes, editable; nom d'`artistes-musica.json` sense accents/majúscules) **o** vídeo de fa 8+ anys (`anysAntic`). `SegueixMusicCategories.isClassicVideo()` (`js/music-categories.js`) i `limitClassicFrequency()` (`js/utils/helpers.js`): com a molt **1 de cada 5** és antic, conservant l'ordre de cada grup (els antics que sobren van al final). S'aplica a les llistes de categoria (`renderFeedLegacyImpl`), a les files de la portada (`pickVarietyRow`, a més de `CLASSIC_SCORE_FACTOR = 0.2` a `styleScore`) i a la ràdio (`buildQueue`: 1 de cada 5, o 1 de cada 2 si la cançó que sona ja és antiga). Amb el feed actual (23 % d'antigues) el top 20 d'una categoria en porta ~4. Per ajustar: canvia `every` o afegeix/treu artistes del JSON. **No afecta** l'arxiu de sota les categories (és antic per naturalesa).
+
+**Fitxers Afectats:** `data/musica-classica.json`, `js/music-categories.js`, `js/utils/helpers.js`, `js/app.js`, `js/features/home-sections.js`, `js/features/music-queue.js`, `tests/helpers.test.js`, `tests/home-sections-variety.test.js`, `sw.js`.
+
+## [2026-09-30] - Botó de finestra flotant dins dels controls del reproductor
+
+**Canvi:** Al grup de controls sobre el reproductor (anterior · play/pausa · següent) s'hi afegeix el botó de **finestra flotant** (`.queue-mini-button`, la mateixa icona de quatre fletxes que el de sota el reproductor), a la dreta de «següent». Va en posició absoluta (`left: 100%`) perquè el play/pausa continuï exactament al centre; fa el 70 % de la mida dels altres, i s'amaga quan la finestreta ja és activa (té el seu propi botó d'expandir). En clicar-lo: `hideQueueNextOverlay()` + `setMiniPlayerState(true)`. Verificat en Chromium (centrat 0 px, la finestreta s'activa).
+
+**Fitxers Afectats:** `js/app.js` (`createQueueNextOverlay`), `css/styles.css`, `sw.js`.
+
+## [2026-09-30] - La ràdio no continuava sola amb la finestra flotant
+
+**Símptoma:** Amb una ràdio en finestra flotant, en acabar la cançó la següent no arrencava.
+
+**Causa Arrel:** En mode flotant `showVideoFromAPILegacyImpl` crida `queuePlayback()`, que (a diferència de `prepareWatchPlaybackPreview`, que rep `autoPlay`) només deixava preparat el placeholder i esperava un **clic** a `.play-overlay`, que queda amagat darrere la finestreta. `shouldAutoPlay` mai hi arribava.
+
+**Solució Implementada:** `queuePlayback`/`queuePlaybackLegacyImpl` accepten `autoPlay`; si és avanç automàtic i YouTube està acceptat (`hasAcceptedYouTubeCookies()`), carreguen la cançó directament amb `loadNewVideoInMiniPlayer()`. Només la 1a crida de `showVideoFromAPI` porta `autoPlay` (la 2a, d'enriquiment amb l'API, no, per no recarregar l'iframe dues vegades). `keepPage` passa a ser «avanç automàtic amb finestra flotant» (abans només amb la pàgina del vídeo amagada): no canvia de pàgina ni fa `scrollTo`; si la pàgina del vídeo és visible s'actualitza la URL amb `replaceState`. Sense consentiment de YouTube continua demanant el clic (no es pot forçar). Verificat en Chromium (stub de `loadNewVideoInMiniPlayer`): amb la pàgina del vídeo i amb la portada, la cançó següent es carrega sola, la finestreta continua activa i l'scroll es manté.
+
+**Fitxers Afectats:** `js/app.js`, `sw.js`.
+
 ## [2026-07-11] - Filera d'icones del header visible en obrir un vídeo al mòbil
 
 **Símptoma:** Al mòbil, en clicar un vídeo del feed i obrir-se la pàgina del reproductor, la filera d'icones del header (Inici, Biblioteca, Historial, Segueix...) es mostrava a sobre del reproductor, ocupant espai vertical útil mentre l'usuari volia veure el vídeo.
