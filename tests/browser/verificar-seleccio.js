@@ -111,6 +111,41 @@ const temps = (currentTime, playerState = 1, duration = 200) => ({
     info: { currentTime, playerState, duration },
 });
 
+// Finestra flotant: la cantonada inferior dreta ha de ser del vídeo (per clicar «Omet l'anunci» de YouTube)
+// i la resta de la finestra ha de continuar servint per arrossegar-la.
+async function comprovarZonaLliure(page, etiqueta) {
+    await page.evaluate(() => {
+        setMiniPlayerState(true);
+        // Simula el que fan els controls quan són visibles (toc/ratolí): no han de tapar la cantonada
+        showQueueNextOverlay({ sticky: true });
+        showMiniPlayerControls();
+    });
+    await page.waitForTimeout(500);
+    const mesura = await page.evaluate(() => {
+        const player = document.getElementById('videoPlayer');
+        const r = player.getBoundingClientRect();
+        const at = (fx, fy) => {
+            const el = document.elementFromPoint(r.left + r.width * fx, r.top + r.height * fy);
+            return el ? el.id || (typeof el.className === 'string' ? el.className : el.tagName) : null;
+        };
+        return {
+            mini: player.classList.contains('mini-player-active'),
+            cantonada: [at(0.9, 0.9), at(0.75, 0.8), at(0.6, 0.7), at(0.95, 0.65)],
+            arrossegar: [at(0.2, 0.9), at(0.7, 0.2), at(0.1, 0.5)],
+        };
+    });
+    comprovar(
+        `${etiqueta}: la cantonada inferior dreta de la finestra flotant és del vídeo (Omet l'anunci)`,
+        mesura.mini && mesura.cantonada.every(id => id === 'catube-player'),
+        mesura
+    );
+    comprovar(
+        `${etiqueta}: la resta de la finestra continua servint per arrossegar`,
+        mesura.arrossegar.every(id => /drag-surface/.test(id)),
+        mesura.arrossegar
+    );
+}
+
 async function main() {
     const server = await serve();
     const browser = await chromium.launch({ executablePath: CHROMIUM_PATH, args: ['--no-sandbox'] });
@@ -547,6 +582,7 @@ async function main() {
         await client.send('Emulation.setCPUThrottlingRate', { rate: 1 });
         await nova.context.close();
 
+        await comprovarZonaLliure(page, 'escriptori');
         comprovar('sense errors de JavaScript', errors.length === 0, errors);
         await context.close();
 
@@ -617,6 +653,7 @@ async function main() {
                 solapa
             );
         }
+        await comprovarZonaLliure(mobil.page, 'mòbil (390 px)');
         comprovar('mòbil: sense errors de JavaScript', mobil.errors.length === 0, mobil.errors);
         await mobil.context.close();
     } finally {

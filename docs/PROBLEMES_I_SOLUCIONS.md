@@ -13,6 +13,16 @@
 
 **Fitxers Afectats:**
 
+## [2026-09-30] - A la finestra flotant no es podia clicar «Omet l'anunci» de YouTube
+
+**Símptoma:** Amb un anunci sonant a la finestra flotant, el botó «Omet l'anunci» (baix a la dreta del vídeo) no responia.
+
+**Causa Arrel:** Sobre l'iframe hi ha capes a pantalla completa: `.drag-surface` (arrossegar i pausar/reprendre; `pointer-events: auto`), la capa de toc dels controls de cua (`.queue-next-touch-layer`, en tàctil) i `.mini-player-controls-overlay.visible` (amb `pointer-events: auto` durant 3 s en tocar o passar el ratolí). Cap clic no arribava al vídeo.
+
+**Solució Implementada:** `css/portada.css`: amb `#videoPlayer.mini-player-active`, `.drag-surface` i `.queue-next-touch-layer` es retallen amb `clip-path` (la meitat dreta de la meitat inferior queda fora de la capa i el clic arriba a l'iframe) i la capa de restaurar/tancar mai captura clics fora dels seus botons. La resta de la finestra continua servint per arrossegar, pausar i mostrar controls. Comprovat amb `elementFromPoint` en escriptori i mòbil (`tests/browser/verificar-seleccio.js`). El mànec de redimensionar (20 × 20 px, només escriptori) es manté a la cantonada.
+
+**Fitxers Afectats:** `css/portada.css`, `tests/browser/verificar-seleccio.js`.
+
 ## [2026-09-30] - La ràdio, el feed i la portada barrejaven massa música antiga, excloïen les cançons escoltades i no aprenien de l'escolta real
 
 **Símptoma:** Amb 20 cançons actuals d'un mateix canal i 80 d'antigues de canals diferents, `limitClassicFrequency` deixava 4 antigues al top 20 però `spreadVideosByArtist` (que s'aplicava després) les augmentava a 10. Una cançó registrada a l'historial (encara que t'agradés molt) quedava fora per sempre de la ràdio i del feed personalitzat; la ràdio ignorava els artistes seguits (`segueixTV.rank` els exclou); «Acabades de sortir» presentava com a estrena reedicions Topic d'una gravació de fa 15 anys pujades ahir; obrir un vídeo comptava com a escolta.

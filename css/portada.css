@@ -2314,3 +2314,19 @@ body .follow-btn-pill.is-followed:hover {
         height: 26px;
     }
 }
+
+/* ---------- Finestra flotant: cantonada inferior dreta lliure ----------
+   La capa d'arrossegament (i la de toc dels controls) cobria tota la finestra i impedia clicar el botó
+   «Omet l'anunci» de YouTube, que és a baix a la dreta. Aquesta zona (la meitat dreta de la meitat inferior)
+   es retalla de la capa perquè els clics arribin al vídeo. La resta continua servint per arrossegar, per
+   pausar/reprendre i per mostrar els controls. */
+#videoPlayer.mini-player-active .drag-surface,
+#videoPlayer.mini-player-active .queue-next-touch-layer {
+    clip-path: polygon(0 0, 100% 0, 100% 56%, 50% 56%, 50% 100%, 0 100%);
+}
+
+/* La capa de botons (restaurar/tancar) mai captura clics fora dels seus botons */
+#videoPlayer.mini-player-active .mini-player-controls-overlay,
+#videoPlayer.mini-player-active .mini-player-controls-overlay.visible {
+    pointer-events: none;
+}
