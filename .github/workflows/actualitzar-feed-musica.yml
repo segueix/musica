@@ -15,6 +15,7 @@ on:
       - "data/music-exclusions.json"
       - "data/noms-canals.json"
       - "data/music-content-overrides.json"
+      - "data/music-channel-video-allowlist.json"
       - "data/falsos-shorts.json"
       - "data/hidden-videos.json"
       - "data/musica-dates.json"
@@ -69,7 +70,7 @@ jobs:
         run: node scripts/test_music_content_classifier.js
 
       - name: Prova catàleg, any original i revisions manuals
-        run: npx vitest run tests/cataleg-musical.test.js tests/any-original.test.js tests/music-content-overrides.test.js
+        run: npx vitest run tests/cataleg-musical.test.js tests/any-original.test.js tests/music-content-overrides.test.js tests/channel-video-allowlist.test.js
 
       - name: Genera feed des de la base musical
         env:

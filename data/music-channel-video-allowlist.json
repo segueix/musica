@@ -1,0 +1,18 @@
+{
+  "updatedAt": "2026-09-30",
+  "description": "Llista blanca per a canals on Segueix Música només ha d'ingerir vídeos concrets. Els títols es comparen normalitzats i de manera exacta.",
+  "channels": {
+    "UCz35Q7e_ulwY_uRqg5zDxeQ": {
+      "artist": "Subliminal",
+      "note": "Canal antic/mixt de Subliminal: només es conserven aquestes sis cançons seleccionades manualment.",
+      "allowedTitles": [
+        "Subliminal - PIKIN",
+        "Subliminal - Presumit (Miki Hernandez & Tony D. Mambo Remix)",
+        "Subliminal - Presumit (Akaparson Remix)",
+        "Subliminal - Foto Familiar",
+        "Subliminal - Radios i TVs",
+        "Subliminal - Presumit"
+      ]
+    }
+  }
+}
