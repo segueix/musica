@@ -24,7 +24,6 @@
     const stateDefaults = {
         navigation: {
             selectedCategory: null,
-            activeLibraryTab: 'playlists',
             activeFollowTab: 'all',
             currentPage: 'home'
         },

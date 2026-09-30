@@ -18,7 +18,6 @@ const CHANNEL_CUSTOM_CATEGORIES_KEY = 'catube_channel_custom_categories';
 const CHIPS_HTML_CACHE_KEY = 'catube_chips_html_cache';
 const PROGRAMS_STORAGE_KEY = 'catube_programs';
 const CATEGORY_KEYWORDS_STORAGE_KEY = 'catube_category_keywords';
-const EXACT_CATEGORIES_STORAGE_KEY = 'catube_exact_categories';
 const DEFAULTS_VERSION_KEY = 'catube_defaults_v1';
 const DEFAULTS_VERSION_VALUE = '10';
 const WATCH_SIDEBAR_VIDEOS_LIMIT = 55;
@@ -123,7 +122,7 @@ function removeLegacyMusicCategories() {
         }
     } catch (_) {}
 
-    for (const key of [CATEGORY_KEYWORDS_STORAGE_KEY, EXACT_CATEGORIES_STORAGE_KEY]) {
+    for (const key of [CATEGORY_KEYWORDS_STORAGE_KEY]) {
         try {
             const value = JSON.parse(localStorage.getItem(key) || '{}');
             if (Array.isArray(value)) {

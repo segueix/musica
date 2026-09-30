@@ -1933,14 +1933,12 @@ body:has(#homePage.is-portada) .category-selector {
     background: var(--pt-surface-2);
 }
 
-.follow-tab,
-.library-tab {
+.follow-tab {
     min-height: 44px;
     border-radius: var(--pt-radius-sm);
 }
 
-.follow-tab.is-active,
-.library-tab.is-active {
+.follow-tab.is-active {
     background: var(--pt-accent);
     border-color: var(--pt-accent);
     color: var(--pt-on-accent);
@@ -2586,4 +2584,359 @@ body .follow-btn-pill.is-followed:hover {
 
 .search-channel-card {
     height: auto;
+}
+
+/* ---------- La teva música: historial, artistes seguits i llistes ---------- */
+.my-music {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin: 8px 0 32px;
+}
+
+.mm-section {
+    min-width: 0;
+}
+
+.mm-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 0 0 12px;
+}
+
+.mm-title {
+    margin: 0;
+    font-family: var(--pt-display);
+    font-size: 1.375rem;
+}
+
+#myMusicPlaylists .mm-head {
+    margin-top: 0;
+}
+
+.mm-link {
+    min-height: 44px;
+    padding: 0 12px;
+    border: 0;
+    border-radius: var(--pt-radius-sm);
+    background: transparent;
+    color: var(--pt-accent);
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.mm-link:hover,
+.mm-link:focus-visible {
+    background: var(--pt-surface-2);
+}
+
+.mm-link--block {
+    display: block;
+    margin: 12px auto 0;
+}
+
+.mm-empty {
+    margin: 0 0 8px;
+    color: var(--pt-muted);
+}
+
+/* Les tres últimes cançons, de costat, i el símbol per expandir l'historial */
+.mm-history-row {
+    display: flex;
+    gap: 12px;
+    padding-bottom: 4px;
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+}
+
+.mm-card {
+    display: flex;
+    flex: 1 1 0;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 220px;
+    padding: 10px;
+    border: 1px solid var(--pt-line);
+    border-radius: var(--pt-radius);
+    background: var(--pt-surface);
+    color: var(--pt-text);
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+    scroll-snap-align: start;
+    transition:
+        background 0.15s ease,
+        border-color 0.15s ease;
+}
+
+.mm-card:hover,
+.mm-card:focus-visible {
+    border-color: var(--pt-accent);
+    background: var(--pt-surface-2);
+}
+
+.mm-card__thumb {
+    display: block;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: var(--pt-radius-sm);
+    background: var(--pt-surface-3);
+}
+
+.mm-card__thumb img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.mm-card__body {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.mm-card__title {
+    display: -webkit-box;
+    overflow: hidden;
+    font-weight: 700;
+    line-height: 1.25;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.mm-card__meta {
+    overflow: hidden;
+    color: var(--pt-muted);
+    font-size: 0.8125rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.mm-card__when {
+    color: var(--pt-accent);
+    font-size: 0.8125rem;
+    font-weight: 700;
+}
+
+.mm-expand {
+    display: grid;
+    flex: 0 0 64px;
+    place-items: center;
+    align-self: stretch;
+    min-height: 64px;
+    border: 2px solid var(--pt-line);
+    border-radius: var(--pt-radius);
+    background: var(--pt-surface-2);
+    color: var(--pt-text);
+    cursor: pointer;
+    scroll-snap-align: end;
+}
+
+.mm-expand:hover,
+.mm-expand:focus-visible,
+.mm-expand.is-open {
+    border-color: var(--pt-accent);
+    background: var(--pt-surface-3);
+    color: var(--pt-accent);
+}
+
+.mm-expand svg {
+    transition: transform 0.2s ease;
+}
+
+.mm-expand.is-open svg {
+    transform: rotate(180deg);
+}
+
+/* Historial expandit: períodes per anar ampliant i cançons agrupades per dia */
+.mm-panel:empty {
+    display: none;
+}
+
+.mm-panel {
+    margin-top: 16px;
+    padding: 12px;
+    border: 1px solid var(--pt-line);
+    border-radius: var(--pt-radius);
+    background: var(--pt-surface);
+}
+
+.mm-ranges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.mm-range {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 44px;
+    padding: 0 16px;
+    border: 1px solid var(--pt-line);
+    border-radius: var(--pt-radius-lg);
+    background: var(--pt-surface-2);
+    color: var(--pt-text);
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.mm-range:hover,
+.mm-range:focus-visible {
+    border-color: var(--pt-accent);
+}
+
+.mm-range.is-active {
+    border-color: var(--pt-accent);
+    background: var(--pt-accent);
+    color: var(--pt-on-accent);
+}
+
+.mm-range__n {
+    font-size: 0.75rem;
+    font-weight: 700;
+    opacity: 0.8;
+}
+
+.mm-day {
+    margin: 18px 0 6px;
+    color: var(--pt-muted);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.mm-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    min-height: 56px;
+    padding: 6px 8px;
+    border: 0;
+    border-radius: var(--pt-radius-sm);
+    background: transparent;
+    color: var(--pt-text);
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+}
+
+.mm-row:hover,
+.mm-row:focus-visible {
+    background: var(--pt-surface-2);
+}
+
+.mm-row__thumb {
+    flex: none;
+    width: 64px;
+    height: 36px;
+    border-radius: 8px;
+    background: var(--pt-surface-3);
+    object-fit: cover;
+}
+
+.mm-row__text {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.mm-row__title,
+.mm-row__meta {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.mm-row__title {
+    font-weight: 600;
+}
+
+.mm-row__meta,
+.mm-row__time,
+.mm-more-note {
+    color: var(--pt-muted);
+    font-size: 0.8125rem;
+}
+
+.mm-row__time {
+    font-variant-numeric: tabular-nums;
+}
+
+.mm-more-note {
+    margin: 12px 8px 0;
+}
+
+/* Artistes que segueixes */
+.mm-artists {
+    display: flex;
+    gap: 12px;
+    padding: 4px 2px 8px;
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+}
+
+.mm-artist {
+    display: flex;
+    flex: 0 0 96px;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    min-height: 44px;
+    padding: 6px;
+    border: 0;
+    border-radius: var(--pt-radius);
+    background: transparent;
+    color: var(--pt-text);
+    font: inherit;
+    cursor: pointer;
+    scroll-snap-align: start;
+}
+
+.mm-artist:hover,
+.mm-artist:focus-visible {
+    background: var(--pt-surface-2);
+}
+
+.mm-artist__avatar {
+    display: block;
+    width: 72px;
+    height: 72px;
+    overflow: hidden;
+    border: 2px solid var(--pt-line);
+    border-radius: 50%;
+    background: var(--pt-surface-3);
+}
+
+.mm-artist__avatar img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.mm-artist__name {
+    display: -webkit-box;
+    overflow: hidden;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    line-height: 1.2;
+    text-align: center;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+@media (max-width: 768px) {
+    .mm-card {
+        min-width: 240px;
+    }
 }

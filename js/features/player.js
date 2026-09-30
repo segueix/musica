@@ -141,6 +141,7 @@
             'playlist-video-thumb',
             'short-thumb',
             'continue-watching-thumb',
+            'mm-row__thumb',
         ];
         if (imageClasses.some(className => img.classList?.contains?.(className))) return true;
         return Boolean(
@@ -150,7 +151,7 @@
             img.closest?.('.related-thumbnail') ||
             img.closest?.('.archive-video-thumb-wrap') ||
             img.closest?.('.playlist-card-thumb') ||
-            img.closest?.('.smart-cat-thumb') ||
+            img.closest?.('.mm-card__thumb') ||
             img.closest?.('.continue-watching-thumb-wrap') ||
             img.closest?.('.pt-card__media') ||
             img.closest?.('.pt-feature__media') ||

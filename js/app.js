@@ -29,10 +29,9 @@ let categoryKeywordsModal, categoryKeywordInput, categoryKeywordAddBtn, category
 let categoryKeywordsModalName, categoryKeywordsList;
 let categoryKeywordsCurrentCategory = null;
 let isCategoryKeywordsModalScrollLocked = false;
-let playlistsPage, playlistsList, playlistNameInput, createPlaylistBtn, smartCategoriesList, libraryTabs;
-let activeLibraryTab = 'playlists';
+let playlistsPage, playlistsList, playlistNameInput, createPlaylistBtn;
 let followPage, followGrid, followTabs;
-let addYoutuberModal, createProgramModal;
+let addYoutuberModal;
 let heroSection, heroTitle, heroDescription, heroImage, heroDuration, heroButton, heroEyebrow, heroChannel;
 let pageTitle;
 let backgroundModal, backgroundBtn, backgroundOptions, buttonColorOptions;
@@ -187,14 +186,6 @@ function bridgeSegueixAppState() {
         () => selectedCategory,
         value => {
             selectedCategory = value;
-        }
-    );
-    defineNestedStateProxy(
-        'navigation',
-        'activeLibraryTab',
-        () => activeLibraryTab,
-        value => {
-            activeLibraryTab = value;
         }
     );
     defineNestedStateProxy(
@@ -1987,199 +1978,6 @@ function ensureRepositionSupportResizeListener() {
     });
 }
 
-function openCreateProgramModal() {
-    if (!createProgramModal) return;
-    const wasActive = createProgramModal.classList.contains('active');
-    createProgramModal.classList.add('active');
-    if (!wasActive) {
-        history.pushState({ ...(history.state || {}), modal: 'create-program' }, '', window.location.href);
-    }
-    // Netejar formulari
-    const creatorSearch = document.getElementById('programCreatorSearch');
-    const nameInput = document.getElementById('programNameInput');
-    const descInput = document.getElementById('programDescriptionInput');
-    const results = document.getElementById('programCreatorResults');
-    const msg = document.getElementById('createProgramMessage');
-    if (creatorSearch) {
-        creatorSearch.value = '';
-        creatorSearch.dataset.selectedChannelId = '';
-        creatorSearch.style.display = '';
-    }
-    if (nameInput) nameInput.value = '';
-    if (descInput) descInput.value = '';
-    if (results) {
-        results.innerHTML = '';
-        results.classList.add('hidden');
-    }
-    if (msg) {
-        msg.classList.add('hidden');
-        msg.textContent = '';
-    }
-    // Eliminar selecció prèvia si existeix
-    const prevSelected = createProgramModal.querySelector('.program-selected-creator');
-    if (prevSelected) prevSelected.remove();
-
-    setTimeout(() => {
-        requestAnimationFrame(() => refreshIcons(createProgramModal));
-    }, 50);
-}
-
-function closeCreateProgramModal(fromPopstate = false) {
-    if (!createProgramModal) return;
-    const wasActive = createProgramModal.classList.contains('active');
-    createProgramModal.classList.remove('active');
-    if (wasActive && !fromPopstate && history.state && history.state.modal === 'create-program') {
-        suppressNextPopstateNavigation = true;
-        history.back();
-    }
-}
-
-function initCreateProgramModal() {
-    createProgramModal = document.getElementById('createProgramModal');
-    if (!createProgramModal) return;
-
-    const closeBtn = document.getElementById('closeCreateProgramModal');
-    if (closeBtn) {
-        closeBtn.addEventListener('click', () => closeCreateProgramModal());
-    }
-    createProgramModal.addEventListener('click', e => {
-        if (e.target === createProgramModal) closeCreateProgramModal();
-    });
-
-    const creatorSearch = document.getElementById('programCreatorSearch');
-    const resultsContainer = document.getElementById('programCreatorResults');
-    const submitBtn = document.getElementById('createProgramSubmitBtn');
-
-    // Cerca de creadors (només Youtubers, Mitjans, Entitats, Digitals)
-    if (creatorSearch && resultsContainer) {
-        let debounceTimer = null;
-        creatorSearch.addEventListener('input', () => {
-            clearTimeout(debounceTimer);
-            const query = creatorSearch.value.trim().toLowerCase();
-            if (query.length < 2) {
-                resultsContainer.classList.add('hidden');
-                resultsContainer.innerHTML = '';
-                return;
-            }
-            debounceTimer = setTimeout(() => {
-                const allChannels = Array.isArray(YouTubeAPI?.getAllChannels?.()) ? YouTubeAPI.getAllChannels() : [];
-                const filtered = allChannels
-                    .filter(ch => {
-                        const name = (ch.name || ch.title || '').toLowerCase();
-                        const handle = (ch.handle || '').toLowerCase();
-                        return name.includes(query) || handle.includes(query);
-                    })
-                    .slice(0, 15);
-
-                if (filtered.length === 0) {
-                    resultsContainer.innerHTML = '<div class="program-creator-item"><span>Cap resultat</span></div>';
-                } else {
-                    resultsContainer.innerHTML = filtered
-                        .map(ch => {
-                            const avatar = ch.avatar || ch.thumbnail || 'img/icon-192.png';
-                            const name = escapeHtml(ch.name || ch.title || 'Canal');
-                            return `<div class="program-creator-item" data-channel-id="${ch.id}">
-                            <img src="${avatar}" alt="${name}" loading="lazy">
-                            <span>${name}</span>
-                        </div>`;
-                        })
-                        .join('');
-                }
-                resultsContainer.classList.remove('hidden');
-
-                // Clicks als resultats
-                resultsContainer.querySelectorAll('.program-creator-item[data-channel-id]').forEach(item => {
-                    item.addEventListener('click', () => {
-                        const chId = item.dataset.channelId;
-                        const chName = item.querySelector('span')?.textContent || '';
-                        const chAvatar = item.querySelector('img')?.src || 'img/icon-192.png';
-                        selectProgramCreator(chId, chName, chAvatar);
-                        resultsContainer.classList.add('hidden');
-                    });
-                });
-            }, 200);
-        });
-
-        // Tancar resultats si es clica fora
-        document.addEventListener('click', e => {
-            if (!creatorSearch.contains(e.target) && !resultsContainer.contains(e.target)) {
-                resultsContainer.classList.add('hidden');
-            }
-        });
-    }
-
-    // Botó crear
-    if (submitBtn) {
-        submitBtn.addEventListener('click', () => {
-            const creatorSearch2 = document.getElementById('programCreatorSearch');
-            const channelId = creatorSearch2?.dataset.selectedChannelId;
-            const nameInput = document.getElementById('programNameInput');
-            const descInput = document.getElementById('programDescriptionInput');
-            const msg = document.getElementById('createProgramMessage');
-
-            const name = (nameInput?.value || '').trim();
-            if (!channelId) {
-                if (msg) {
-                    msg.textContent = 'Has de seleccionar un creador.';
-                    msg.className = 'add-youtuber-message add-youtuber-message--error';
-                    msg.classList.remove('hidden');
-                }
-                return;
-            }
-            if (!name) {
-                if (msg) {
-                    msg.textContent = 'Has de posar un nom al programa.';
-                    msg.className = 'add-youtuber-message add-youtuber-message--error';
-                    msg.classList.remove('hidden');
-                }
-                return;
-            }
-
-            createProgram(channelId, name, descInput?.value || '');
-            if (msg) {
-                msg.textContent = `Programa "${escapeHtml(name)}" creat!`;
-                msg.className = 'add-youtuber-message add-youtuber-message--success';
-                msg.classList.remove('hidden');
-            }
-            setTimeout(() => {
-                closeCreateProgramModal();
-                if (activeFollowTab === 'programes') {
-                    renderFollowPage();
-                }
-            }, 800);
-        });
-    }
-}
-
-function selectProgramCreator(channelId, channelName, channelAvatar) {
-    const creatorSearch = document.getElementById('programCreatorSearch');
-    if (!creatorSearch) return;
-    creatorSearch.dataset.selectedChannelId = channelId;
-    creatorSearch.style.display = 'none';
-
-    // Mostrar selecció
-    const wrap = creatorSearch.closest('.program-creator-search-wrap');
-    if (!wrap) return;
-    const prevSelected = wrap.querySelector('.program-selected-creator');
-    if (prevSelected) prevSelected.remove();
-
-    const selectedDiv = document.createElement('div');
-    selectedDiv.className = 'program-selected-creator';
-    selectedDiv.innerHTML = `
-        <img src="${channelAvatar}" alt="${escapeHtml(channelName)}">
-        <span>${escapeHtml(channelName)}</span>
-        <button type="button" aria-label="Canviar creador">&times;</button>
-    `;
-    wrap.appendChild(selectedDiv);
-
-    selectedDiv.querySelector('button').addEventListener('click', () => {
-        creatorSearch.dataset.selectedChannelId = '';
-        creatorSearch.style.display = '';
-        creatorSearch.value = '';
-        selectedDiv.remove();
-    });
-}
-
 async function openProgramProfile(programId) {
     const program = getProgramById(programId);
     if (!program) return;
@@ -2954,52 +2752,12 @@ function removeCustomTag(tag) {
         return false;
     }
     saveCustomTags(nextTags);
-    unmarkExactCategory(normalized);
 
     const storedOrder = getStoredChipOrder();
     if (storedOrder) {
         saveChipOrder(storedOrder.filter(value => value.toLowerCase() !== normalized.toLowerCase()));
     }
     return true;
-}
-
-// Gestió de categories exactes (creades amb cerca entre cometes "")
-function _getExactCategories() {
-    const stored = localStorage.getItem(EXACT_CATEGORIES_STORAGE_KEY);
-    if (!stored) return [];
-    try {
-        const parsed = JSON.parse(stored);
-        return Array.isArray(parsed) ? parsed : [];
-    } catch (_e) {
-        return [];
-    }
-}
-
-function _saveExactCategories(list) {
-    localStorage.setItem(EXACT_CATEGORIES_STORAGE_KEY, JSON.stringify(list));
-}
-
-function markExactCategory(categoryName) {
-    const normalized = normalizeCustomTag(categoryName).toLowerCase();
-    if (!normalized) return;
-    const list = _getExactCategories();
-    if (!list.some(c => c.toLowerCase() === normalized)) {
-        list.push(normalized);
-        _saveExactCategories(list);
-    }
-}
-
-function unmarkExactCategory(categoryName) {
-    const normalized = normalizeCustomTag(categoryName).toLowerCase();
-    if (!normalized) return;
-    const list = _getExactCategories().filter(c => c.toLowerCase() !== normalized);
-    _saveExactCategories(list);
-}
-
-function isExactCategory(categoryName) {
-    const normalized = normalizeCustomTag(categoryName).toLowerCase();
-    if (!normalized) return false;
-    return _getExactCategories().some(c => c.toLowerCase() === normalized);
 }
 
 function isCustomCategory(category) {
@@ -3454,6 +3212,7 @@ function isVideoThumbnailImage(img) {
         'sidebar-video-thumb',
         'playlist-video-thumb',
         'short-thumb',
+        'mm-row__thumb',
     ];
     for (const cls of imgThumbClasses) {
         if (img.classList.contains(cls)) return true;
@@ -3465,7 +3224,7 @@ function isVideoThumbnailImage(img) {
             img.closest('.related-thumbnail') ||
             img.closest('.archive-video-thumb-wrap') ||
             img.closest('.playlist-card-thumb') ||
-            img.closest('.smart-cat-thumb')
+            img.closest('.mm-card__thumb')
     );
 }
 
@@ -3605,7 +3364,6 @@ function saveViewState() {
             historySelectedCategory,
             historyFilterLiked,
             activeFollowTab,
-            activeLibraryTab,
             currentVideoId: isWatchPage ? currentVideoId || '' : '',
             currentVideoSource: isWatchPage ? currentVideoSource || '' : '',
             playbackSeconds: isWatchPage ? Math.max(0, Math.floor(lastKnownPlayerTime || 0)) : 0,
@@ -3664,9 +3422,6 @@ async function restoreSavedViewState() {
         showHistory();
     } else if (page === 'llistes' || page === 'playlists') {
         showPlaylists();
-        if (saved.activeLibraryTab) {
-            setActiveLibraryTab(saved.activeLibraryTab);
-        }
     } else if (page === 'segueix' || page === 'follow') {
         showFollow(saved.activeFollowTab || 'all');
     } else {
@@ -3876,33 +3631,8 @@ function initPlaylistElements() {
     playlistsList = document.getElementById('playlistsList');
     playlistNameInput = document.getElementById('playlistNameInput');
     createPlaylistBtn = document.getElementById('createPlaylistBtn');
-    smartCategoriesList = document.getElementById('smartCategoriesList');
-    libraryTabs = document.getElementById('libraryTabs');
     playlistModal = document.getElementById('playlistModal');
     playlistModalBody = document.getElementById('playlistModalBody');
-
-    if (smartCategoriesList) {
-        smartCategoriesList.addEventListener('click', e => {
-            const shareBtn = e.target.closest('.smart-cat-share-btn');
-            if (shareBtn) {
-                const categoryName = shareBtn.dataset.category;
-                const channelIds = shareBtn.dataset.channels.split(',').map(decodeURIComponent).filter(Boolean);
-                shareCategoryWithYoutubers(categoryName, channelIds);
-                return;
-            }
-            const deleteBtn = e.target.closest('.smart-cat-delete-btn');
-            if (deleteBtn) {
-                const categoryName = deleteBtn.dataset.category;
-                if (removeCustomTag(categoryName)) renderSmartCategoriesTab();
-                return;
-            }
-            const removeBtn = e.target.closest('.smart-cat-channel-remove');
-            if (removeBtn) {
-                removeCategoryFromChannel(removeBtn.dataset.channelId, removeBtn.dataset.category);
-                renderSmartCategoriesTab();
-            }
-        });
-    }
 }
 
 function initChannelElements() {
@@ -4054,7 +3784,6 @@ function initElements() {
     initWatchElements();
     initPlaylistElements();
     initChannelElements();
-    initCreateProgramModal();
     initHistoryElements();
     initConfigElements();
 }
@@ -4510,16 +4239,6 @@ function bindNavigationEvents() {
             navigateTo(trigger.dataset.page);
         });
     });
-
-    if (libraryTabs) {
-        libraryTabs.querySelectorAll('.library-tab').forEach(tab => {
-            tab.addEventListener('click', event => {
-                event.preventDefault();
-                const tabId = tab.dataset.libraryTab;
-                if (tabId) requestAnimationFrame(() => setActiveLibraryTab(tabId));
-            });
-        });
-    }
 
     if (followTabs) {
         followTabs.querySelectorAll('.follow-tab').forEach(tab => {
@@ -5712,8 +5431,7 @@ function renderInlineKeywords(categoryName) {
     const container = document.getElementById('categoryKeywordsInline');
     if (!container) return;
     const normalized = normalizeCustomTag(categoryName);
-    // Amagar etiquetes a categories intel·ligents (creades amb cerca entre cometes "")
-    if (!normalized || isExactCategory(normalized) || !isCustomCategory(normalized)) {
+    if (!normalized || !isCustomCategory(normalized)) {
         container.style.display = 'none';
         container.innerHTML = '';
         return;
@@ -5786,10 +5504,6 @@ function handleCustomCategoryCreation() {
     const addedTag = addCustomTag(normalized);
     if (!addedTag) {
         return;
-    }
-    // Marcar com a categoria exacta si l'usuari ha escrit entre cometes
-    if (rawValue.startsWith('"') && rawValue.endsWith('"')) {
-        markExactCategory(normalized);
     }
     selectedCategory = addedTag;
     localStorage.setItem(LAST_CATEGORY_STORAGE_KEY, selectedCategory);
@@ -6105,22 +5819,6 @@ function getVideoChannelNameForMatch(video) {
     return channelMeta.name || video.channelTitle || video.snippet?.channelTitle || '';
 }
 
-function isQuotedChannelQuery(videos, query) {
-    const normalizedQuery = String(query || '').trim();
-    const hasQuotes = normalizedQuery.startsWith('"') && normalizedQuery.endsWith('"');
-    if (!hasQuotes) {
-        return null;
-    }
-    const exactPhrase = normalizedQuery.slice(1, -1).trim().toLowerCase();
-    if (!exactPhrase) {
-        return null;
-    }
-    const hasChannelMatch = videos.some(
-        video => getVideoChannelNameForMatch(video).trim().toLowerCase() === exactPhrase
-    );
-    return hasChannelMatch ? exactPhrase : null;
-}
-
 function matchesCustomCategory(video, categoryName) {
     // Comprovar si el vídeo pertany a un programa amb aquesta categoria
     if (videoBelongsToProgram(video, categoryName)) return true;
@@ -6314,13 +6012,6 @@ function filterVideosByCategory(videos, feed) {
         const categoryName = normalizeCustomTag(rawCategoryName);
         if (!categoryName) {
             return visibleVideos;
-        }
-
-        const quotedChannelName = isQuotedChannelQuery(visibleVideos, rawCategoryName);
-        if (quotedChannelName) {
-            return visibleVideos.filter(
-                video => getVideoChannelNameForMatch(video).trim().toLowerCase() === quotedChannelName
-            );
         }
 
         const matched = visibleVideos.filter(video => matchesCustomCategory(video, rawCategoryName));
@@ -6982,8 +6673,7 @@ function renderFeedLegacyImpl() {
             for (const tag of activeTags) {
                 const normalized = normalizeCustomTag(tag);
                 if (!normalized) continue;
-                const exact = isExactCategory(normalized);
-                radarSearchTerms.push({ term: normalized, forceExact: exact });
+                radarSearchTerms.push({ term: normalized, forceExact: normalized.includes(' ') });
                 const keywords = getCategoryKeywords(normalized);
                 for (const kw of keywords) {
                     const kwTrimmed = kw.trim();
@@ -7178,7 +6868,7 @@ function renderCategoryHistorySection(categoryTag) {
         // Categories personalitzades: cercar per títol i resultats previs
         const rawTag = normalizeCustomTag(categoryTag);
         if (!rawTag) return;
-        const forceExact = isExactCategory(rawTag);
+        const forceExact = rawTag.includes(' ');
         const isTitleMatch = video => {
             const title = video?.title || video?.snippet?.title || '';
             return isMatch(title, rawTag, forceExact);
@@ -7216,8 +6906,7 @@ function renderCategoryHistorySection(categoryTag) {
         for (const tag of activeTags) {
             const normalized = normalizeCustomTag(tag);
             if (!normalized) continue;
-            const exact = isExactCategory(normalized);
-            searchTerms.push({ term: normalized, forceExact: exact });
+            searchTerms.push({ term: normalized, forceExact: normalized.includes(' ') });
             const keywords = getCategoryKeywords(normalized);
             for (const kw of keywords) {
                 const kwTrimmed = kw.trim();
@@ -8568,9 +8257,8 @@ function renderCategoryActions(category) {
             </button>
         `
         : '';
-    // No mostrar etiquetes a categories intel·ligents (creades amb cerca entre cometes "")
     const keywordsButtonHtml =
-        isSaved && !isExactCategory(normalizedCategory)
+        isSaved
             ? `
             <button class="hero-button" type="button" data-action="manage-category-keywords" style="padding: 6px 14px; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 6px; background-color: var(--color-surface-button); color: var(--color-text);">
                 <i data-lucide="tags" style="width: 16px; height: 16px;"></i> Etiquetes
@@ -9250,18 +8938,12 @@ async function renderFollowPage() {
         return;
     }
 
-    // Tab de programes
-    if (activeFollowTab === 'programes') {
-        renderProgramesTab();
-        return;
-    }
-
-    followGrid.innerHTML = '<div class="empty-state">Carregant canals...</div>';
+    followGrid.innerHTML = '<div class="empty-state">Carregant artistes...</div>';
 
     const allChannels = Array.isArray(YouTubeAPI?.getAllChannels?.()) ? YouTubeAPI.getAllChannels() : [];
 
     if (!allChannels.length) {
-        followGrid.innerHTML = '<div class="empty-state">No hi ha canals disponibles ara mateix.</div>';
+        followGrid.innerHTML = '<div class="empty-state">No hi ha artistes disponibles ara mateix.</div>';
         return;
     }
 
@@ -9330,103 +9012,6 @@ async function renderFollowPage() {
     _bindFollowGridDelegated();
 }
 
-function renderProgramesTab() {
-    if (!followGrid) return;
-    const programs = getPrograms();
-    const allChannels = Array.isArray(YouTubeAPI?.getAllChannels?.()) ? YouTubeAPI.getAllChannels() : [];
-    const channelsById = {};
-    allChannels.forEach(ch => {
-        channelsById[String(ch.id)] = ch;
-    });
-
-    // Botó de crear programa
-    const createBtnHtml = `
-        <div class="follow-card follow-card--create-program" data-action="create-program">
-            <div class="follow-avatar-wrap">
-                <span style="font-size:2rem;color:var(--color-primary);">+</span>
-            </div>
-            <div class="follow-name">Crear programa</div>
-        </div>
-    `;
-
-    if (programs.length === 0) {
-        followGrid.innerHTML =
-            createBtnHtml +
-            '<div class="empty-state" style="grid-column:1/-1;">Encara no has creat cap programa.</div>';
-        _bindProgramGridEvents();
-        return;
-    }
-
-    const cardsHtml = programs
-        .map(prog => {
-            const channel = channelsById[String(prog.channelId)];
-            const avatar = channel?.avatar || channel?.thumbnail || 'img/icon-192.png';
-            const name = escapeHtml(prog.name);
-            // El botó TV engega la televisió del programa (context-tv.js el captura sol).
-            return `
-            <div class="follow-card follow-card--program" data-program-id="${prog.id}">
-                <button class="program-delete-btn" type="button" data-delete-program="${prog.id}" aria-label="Eliminar programa">Eliminar</button>
-                <button class="context-tv-btn context-tv-btn--program-card" type="button"
-                    data-context-tv="program" data-context-value="${prog.id}" data-context-name="${name}"
-                    aria-label="Veure ${name} com a TV" title="Veure ${name} com a TV">
-                    <span aria-hidden="true">TV</span>
-                </button>
-                <div class="follow-avatar-wrap">
-                    <img class="follow-avatar" src="${avatar}" alt="${name}" loading="lazy">
-                </div>
-                <div class="follow-name">${name}</div>
-                <div class="program-badge">${escapeHtml(channel?.name || '')}</div>
-            </div>
-        `;
-        })
-        .join('');
-
-    followGrid.innerHTML = createBtnHtml + cardsHtml;
-    _bindProgramGridEvents();
-}
-
-function _bindProgramGridEvents() {
-    if (!followGrid) return;
-    // Reset delegated flag per re-bind
-    followGrid.dataset.delegated = 'false';
-    followGrid.dataset.delegated = 'true';
-
-    // Eliminar listeners anteriors i afegir nous
-    const newGrid = followGrid.cloneNode(true);
-    followGrid.parentNode.replaceChild(newGrid, followGrid);
-    followGrid = newGrid;
-
-    followGrid.addEventListener('click', event => {
-        // Botó eliminar programa
-        const deleteBtn = event.target.closest('[data-delete-program]');
-        if (deleteBtn) {
-            event.stopPropagation();
-            const progId = deleteBtn.dataset.deleteProgram;
-            deleteProgram(progId);
-            renderProgramesTab();
-            return;
-        }
-        // Botó crear programa
-        const createCard = event.target.closest('[data-action="create-program"]');
-        if (createCard) {
-            openCreateProgramModal();
-            return;
-        }
-        // Clic a programa
-        const programCard = event.target.closest('[data-program-id]');
-        if (programCard) {
-            openProgramProfile(programCard.dataset.programId);
-            return;
-        }
-        // Clic a canal normal (fallback)
-        if (event.target.closest('[data-follow-channel], [data-hide-channel]')) return;
-        const card = event.target.closest('.follow-card');
-        if (card && card.dataset.channelId) {
-            openChannelProfile(card.dataset.channelId);
-        }
-    });
-}
-
 // Listener delegat persistent per followGrid (1 sol listener en lloc de N)
 function _bindFollowGridDelegated() {
     if (!followGrid || followGrid.dataset.delegated === 'true') return;
@@ -9447,8 +9032,8 @@ function renderFollowEmptyState() {
     if (activeFollowTab === 'following') {
         followGrid.innerHTML = `
             <div class="empty-state">
-                Encara no segueixes cap canal.
-                <button class="follow-empty-link" type="button" data-follow-tab-link="all">Veure tots els canals</button>
+                Encara no segueixes cap artista.
+                <button class="follow-empty-link" type="button" data-follow-tab-link="all">Veure tots els artistes</button>
             </div>
         `;
         const link = followGrid.querySelector('[data-follow-tab-link="all"]');
@@ -9459,12 +9044,15 @@ function renderFollowEmptyState() {
             });
         }
     } else {
-        followGrid.innerHTML = '<div class="empty-state">No hi ha canals disponibles ara mateix.</div>';
+        followGrid.innerHTML = '<div class="empty-state">No hi ha artistes disponibles ara mateix.</div>';
     }
 }
 
+// Pestanyes d'Artistes: tots els artistes o només els que segueixes (els «programes» ja no existeixen).
+const FOLLOW_TABS = ['all', 'following'];
+
 function setActiveFollowTab(tabId) {
-    activeFollowTab = tabId;
+    activeFollowTab = FOLLOW_TABS.includes(tabId) ? tabId : 'all';
     if (followTabs) {
         followTabs.querySelectorAll('.follow-tab').forEach(tab => {
             const isActive = tab.dataset.followTab === activeFollowTab;
@@ -13260,117 +12848,10 @@ function showHistory() {
     }
 }
 
-// Vistes de biblioteca (playlists, seguits, smart categories)
-function setActiveLibraryTab(tabId) {
-    activeLibraryTab = tabId;
-    if (libraryTabs) {
-        libraryTabs.querySelectorAll('.library-tab').forEach(tab => {
-            tab.classList.toggle('is-active', tab.dataset.libraryTab === tabId);
-        });
-    }
-    const panelPlaylists = document.getElementById('libraryTabPlaylists');
-    const panelSmartCats = document.getElementById('libraryTabSmartCategories');
-    if (panelPlaylists) panelPlaylists.classList.toggle('hidden', tabId !== 'playlists');
-    if (panelSmartCats) panelSmartCats.classList.toggle('hidden', tabId !== 'smart-categories');
-
-    if (tabId === 'smart-categories') {
-        renderSmartCategoriesTab();
-    } else {
-        renderPlaylistsPage();
-    }
-}
-
-function renderSmartCategoriesTab() {
-    if (!smartCategoriesList) return;
-
-    const allTags = getCustomTags();
-    const channelCatsRaw = JSON.parse(localStorage.getItem(CHANNEL_CUSTOM_CATEGORIES_KEY) || '{}');
-
-    const categoriesWithChannels = allTags
-        .map(tag => {
-            const channelIds = Object.entries(channelCatsRaw)
-                .filter(([, cats]) => cats.some(c => normalizeCustomTag(String(c)).toLowerCase() === tag.toLowerCase()))
-                .map(([id]) => id);
-            return { tag, channelIds };
-        })
-        .filter(({ channelIds }) => channelIds.length > 0);
-
-    if (categoriesWithChannels.length === 0) {
-        smartCategoriesList.innerHTML =
-            '<div class="playlist-empty">No tens cap categoria intel·ligent amb canals assignats.</div>';
-        return;
-    }
-
-    // Mapa id→canal des de feedChannels (font amb avatar real)
-    const feedChannelMap = new Map(
-        (Array.isArray(YouTubeAPI?.getAllChannels?.()) ? YouTubeAPI.getAllChannels() : []).map(ch => [
-            String(ch.id),
-            ch,
-        ])
-    );
-
-    smartCategoriesList.innerHTML = categoriesWithChannels
-        .map(({ tag, channelIds }) => {
-            // Portada: vídeo amb més visualitzacions entre tots els canals de la categoria
-            const categoryVideos = (cachedAPIVideos || []).filter(v => channelIds.includes(String(v.channelId)));
-            const topViewedResult = getMostViewedVideoFromList(categoryVideos);
-
-            const fallbackFeedChannel = feedChannelMap.get(String(channelIds[0]));
-            const fallbackAvatar =
-                fallbackFeedChannel?.avatar ||
-                fallbackFeedChannel?.thumbnail ||
-                resolveChannelAvatar(channelIds[0], cachedChannels[channelIds[0]] || {}) ||
-                'img/icon-192.png';
-            const thumbUrl = escapeHtml(topViewedResult?.video?.thumbnail || fallbackAvatar);
-
-            const channelsMarkup = channelIds
-                .map(channelId => {
-                    const feedCh = feedChannelMap.get(String(channelId));
-                    const avatar =
-                        feedCh?.avatar ||
-                        feedCh?.thumbnail ||
-                        resolveChannelAvatar(channelId, cachedChannels[channelId] || {}) ||
-                        'img/icon-192.png';
-                    const name = feedCh?.name || cachedChannels[channelId]?.name || channelId;
-                    return `
-                <div class="smart-cat-channel-row">
-                    <img class="smart-cat-channel-avatar" src="${escapeHtml(avatar)}" alt="${escapeHtml(name)}" loading="lazy">
-                    <span class="smart-cat-channel-name">${escapeHtml(name)}</span>
-                    <button class="smart-cat-channel-remove"
-                            data-category="${escapeHtml(tag)}"
-                            data-channel-id="${escapeHtml(channelId)}"
-                            title="Eliminar ${escapeHtml(name)} d'aquesta categoria"
-                            aria-label="Eliminar ${escapeHtml(name)}">×</button>
-                </div>`;
-                })
-                .join('');
-
-            const count = channelIds.length;
-            return `
-            <div class="smart-category-card">
-                <button class="smart-cat-delete-btn"
-                        data-category="${escapeHtml(tag)}"
-                        title="Eliminar categoria"
-                        aria-label="Eliminar categoria ${escapeHtml(tag)}">×</button>
-                <div class="smart-cat-thumb">
-                    <img src="${thumbUrl}" alt="" loading="lazy">
-                </div>
-                <div class="smart-cat-body">
-                    <div class="smart-category-name">${escapeHtml(tag)}</div>
-                    <button class="btn-round-icon library-share-btn smart-cat-share-btn"
-                            data-category="${escapeHtml(tag)}"
-                            data-channels="${channelIds.map(encodeURIComponent).join(',')}"
-                            title="Compartir categoria">
-                        <i data-lucide="share-2"></i>
-                    </button>
-                    <div class="smart-category-meta">${count} canal${count !== 1 ? 's' : ''}</div>
-                    <div class="smart-cat-channels-list">${channelsMarkup}</div>
-                </div>
-            </div>`;
-        })
-        .join('');
-
-    refreshIcons(smartCategoriesList);
+// «La teva música»: historial, artistes seguits (js/features/my-music.js) i llistes de reproducció.
+function renderMyMusic() {
+    SegueixApp.features.myMusic?.render?.();
+    renderPlaylistsPage();
 }
 
 function showPlaylists() {
@@ -13824,11 +13305,6 @@ window.addEventListener('popstate', e => {
 
     if (addYoutuberModal?.classList.contains('active')) {
         closeAddYoutuberModal(true);
-        return;
-    }
-
-    if (createProgramModal?.classList.contains('active')) {
-        closeCreateProgramModal(true);
         return;
     }
 
@@ -14355,8 +13831,7 @@ function configureFeatureRuntimes() {
         },
         updateHistoryFilterUI,
         renderHistory,
-        setActiveLibraryTab,
-        getActiveLibraryTab: () => activeLibraryTab,
+        renderMyMusic,
         setActiveFollowTab,
         showHomeNovetats,
     });

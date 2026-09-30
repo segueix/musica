@@ -367,25 +367,17 @@
 
     <div id="playlistsPage" class="main-content hidden">
         <h1 class="page-title">La teva música</h1>
-        <p class="page-subtitle">Les teves llistes i categories, i tot el que has escoltat.</p>
-        <div class="pt-page-links">
-            <button type="button" class="pt-btn pt-btn--ghost pt-btn--sm" data-pt-nav="history">Historial</button>
-            <button type="button" class="pt-btn pt-btn--ghost pt-btn--sm" data-pt-nav="artists">Artistes</button>
-        </div>
-        <div class="library-tabs" id="libraryTabs" role="tablist">
-            <button class="library-tab is-active" type="button" role="tab" data-library-tab="playlists">Llistes</button>
-            <button class="library-tab" type="button" role="tab" data-library-tab="smart-categories">Categories Intel·ligents</button>
-        </div>
-        <div id="libraryTabPlaylists" class="library-tab-panel">
+        <p class="page-subtitle">El que has escoltat, els teus artistes i les teves llistes.</p>
+        <!-- Historial i artistes que segueixes (js/features/my-music.js) -->
+        <div id="myMusic" class="my-music"></div>
+        <section class="mm-section" id="myMusicPlaylists" aria-labelledby="mmPlaylistsTitle">
+            <header class="mm-head"><h2 class="mm-title" id="mmPlaylistsTitle">Llistes de reproducció</h2></header>
             <div class="playlist-create">
                 <input id="playlistNameInput" class="playlist-input" type="text" placeholder="Nom de la llista" aria-label="Nom de la llista">
                 <button id="createPlaylistBtn" class="playlist-create-btn" type="button">Crear nova llista</button>
             </div>
             <div id="playlistsList" class="playlists-list"></div>
-        </div>
-        <div id="libraryTabSmartCategories" class="library-tab-panel hidden">
-            <div id="smartCategoriesList" class="smart-categories-list"></div>
-        </div>
+        </section>
     </div>
 
     <div id="followPage" class="main-content hidden" aria-labelledby="followPageTitle">
@@ -394,9 +386,6 @@
         <div class="follow-tabs" id="followTabs" role="tablist" aria-label="Filtres d'artistes">
             <button class="follow-tab" type="button" role="tab" aria-selected="false" data-follow-tab="all">
                 Tots els artistes
-            </button>
-            <button class="follow-tab" type="button" role="tab" aria-selected="false" data-follow-tab="programes">
-                Programes
             </button>
             <button class="follow-tab is-active" type="button" role="tab" aria-selected="true" data-follow-tab="following">
                 Seguint
@@ -571,47 +560,6 @@
                         </p>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal Crear Programa -->
-    <div class="modal-overlay" id="createProgramModal">
-        <div class="modal modal-small" role="dialog" aria-modal="true" aria-labelledby="createProgramModalTitle">
-            <div class="modal-header">
-                <h2 class="modal-title" id="createProgramModalTitle">
-                    <i data-lucide="clapperboard" class="create-program-icon"></i>
-                    Crear programa
-                </h2>
-                <button class="modal-close" id="closeCreateProgramModal" type="button" aria-label="Tancar modal">
-                    <i data-lucide="x"></i>
-                </button>
-            </div>
-            <div class="modal-body">
-                <p class="create-program-help">
-                    Tria un canal i escriu les paraules que apareixen al títol dels vídeos per delimitar el programa. Després el podràs afegir a les teves categories personalitzades.
-                </p>
-                <form id="createProgramForm" onsubmit="return false;">
-                    <div class="create-program-fields">
-                        <div class="create-program-field">
-                            <label for="programCreatorSearch">Creador</label>
-                            <div class="program-creator-search-wrap">
-                                <input id="programCreatorSearch" class="playlist-input" type="text" placeholder="Cerca un canal..." autocomplete="off">
-                                <div id="programCreatorResults" class="program-creator-results hidden"></div>
-                            </div>
-                        </div>
-                        <div class="create-program-field">
-                            <label for="programNameInput">Nom</label>
-                            <input id="programNameInput" class="playlist-input" type="text" placeholder="Nom del programa" autocomplete="off">
-                        </div>
-                        <div class="create-program-field">
-                            <label for="programDescriptionInput">Descripció</label>
-                            <textarea id="programDescriptionInput" class="playlist-input program-textarea" placeholder="Descripció del programa" rows="3"></textarea>
-                        </div>
-                    </div>
-                    <button type="button" class="playlist-create-btn" id="createProgramSubmitBtn">Crear</button>
-                </form>
-                <div id="createProgramMessage" class="add-youtuber-message hidden"></div>
             </div>
         </div>
     </div>
@@ -971,6 +919,7 @@
     <script src="js/features/music-signals.js?v=20260930-seleccio-1"></script>
     <script src="js/features/music-queue.js?v=20260930-portada-1"></script>
     <script src="js/features/home-playlists.js?v=20260930-portada-1"></script>
+    <script src="js/features/my-music.js?v=20260930-la-teva-musica-1"></script>
     <script src="js/features/shell-nav.js?v=20260930-portada-1"></script>
     <script src="js/features/portada.js?v=20260930-portada-1"></script>
     <script src="js/features/shared-playlists.js"></script>

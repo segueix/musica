@@ -40,9 +40,7 @@
         };
 
         app.dom.library = {
-            tabs: query('libraryTabs'),
-            playlistsList: query('playlistsList'),
-            smartCategoriesList: query('smartCategoriesList')
+            playlistsList: query('playlistsList')
         };
 
         app.dom.history = {
