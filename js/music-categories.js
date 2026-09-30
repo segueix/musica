@@ -29,6 +29,9 @@
     const artistByChannel = new Map();
     // Identitat persistent de l'artista per canal: canals oficials i Topic d'un mateix artista comparteixen clau.
     const artistKeyByChannel = new Map();
+    // Categoria principal de l'artista per canal: la del PRIMER gènere de la base d'artistes (l'ordre de
+    // `categories` és el de CATEGORY_GROUPS, no el de prioritat de l'artista).
+    const primaryByChannel = new Map();
     let ready = false;
     let initPromise = null;
 
@@ -99,6 +102,10 @@
                       : 'n:' + normalizeName(artist.name);
                 artistKeyByChannel.set(id, stable.toLowerCase());
             }
+            if (!primaryByChannel.has(id)) {
+                const primary = navigationCategoriesForGenres((artist.genres || []).slice(0, 1))[0] || categories[0] || '';
+                if (primary) primaryByChannel.set(id, primary);
+            }
             byChannel.set(id, unique([...(byChannel.get(id) || []), ...categories]));
             artistByChannel.set(id, {
                 name: artist.name || channel.name || '',
@@ -120,6 +127,7 @@
                 await loadClassic();
                 byChannel.clear();
                 artistKeyByChannel.clear();
+                primaryByChannel.clear();
                 artistByChannel.clear();
                 for (const artist of data.artists || []) registerArtist(artist);
                 ready = true;
@@ -139,6 +147,11 @@
 
     function isClassicChannel(channelId) {
         return classicChannels.has(String(channelId || ''));
+    }
+
+    // Categoria principal assignada a l'artista d'un canal (buit si el canal no és a la base d'artistes).
+    function primaryCategoryForChannel(channelId) {
+        return primaryByChannel.get(String(channelId || '')) || '';
     }
 
     // Clau d'artista persistent d'un canal (buit si el canal no és a la base d'artistes).
@@ -197,6 +210,7 @@
         isClassicVideo,
         isClassicArtistVideo,
         artistKeyForChannel,
+        primaryCategoryForChannel,
         decorateChannel,
         decorateVideo
     };
