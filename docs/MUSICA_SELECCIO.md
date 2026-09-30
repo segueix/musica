@@ -92,9 +92,12 @@ Un únic observador (`music-signals.js`) escolta el reproductor per a ràdio, TV
 
 Emmagatzematge (`localStorage`, viatja amb l'exportació/sincronització): `catube_music_signals_v1` (per cançó i artista: `q,f,r,s,l,sl,lq`, mesos de l'artista i les darreres 60 cançons; límits de 1.200 cançons, 400 artistes i 12 mesos) i `catube_music_prefs_v1` (preferències amb data i estat, per poder-les desfer i sincronitzar). En importar una còpia es **fusiona** (màxim per comptador i per data, la preferència més recent guanya): importar dues vegades no suma dues vegades. Els cors, seguiments i historial existents no es toquen; l'historial entra al snapshot com a informació feble (`h`), sense inventar reproduccions ni durades. Les escoltes de YouTube fora de Segueix Música no es poden inferir.
 
-## Preferències explícites
+## Preferències explícites i cor
 
-«Menys com aquesta» i «No em recomanis aquest artista» són a la cua (botó ⋯) i a «Ara sona» de la portada; són persistents i reversibles (Desfés). Treuen de la part pendent el que toca però no la cançó que sona. Un cor o un seguiment compta ja per a les decisions següents: es recalcula **només** la part automàtica després d'un punt segur (600 ms, sense arrossegament en curs), conservant la cançó actual, la següent ja anunciada i els afegits/reordenacions manuals.
+- **«(+) com aquesta (−)»**: dos cercles clicables (44 px) a la cua (botó ⋯; a «Ara sona» sempre visibles) i a «Ara sona» de la portada. Són **excloents** (activar-ne un desactiva l'altre), persistents (`catube_music_prefs_v1`, `moreLike`/`lessLike` amb data i estat), reversibles (tornar-hi a prémer o Desfés) i **compten per a l'algorisme**: «+» suma 0,5 al gust de la cançó (menys que un cor, 0,7), una mica a l'artista i punts d'estil, i la cançó surt a «Torna-hi» com «Has demanat més com aquesta»; «−» la treu de la part pendent i de les cues següents i penalitza lleument l'artista. «No em recomanis aquest artista» ja no és a la cua: es fa des del llistat d'artistes (l'API `blockArtist` continua existint).
+- **Cor sobre el reproductor**: botó rodó a dalt a la dreta del reproductor gran (`.player-heart`, `likes.js`). Fa el mateix que el cor de sota (`#likeToggle`): desa el m'agrada, compta per a l'algorisme i deixa el de sota en vermell; tots dos es mantenen sincronitzats. No es mostra a la finestreta flotant.
+
+Un cor, un «+», un «−» o un seguiment compta ja per a les decisions següents: es recalcula **només** la part automàtica pendent després d'un punt segur (600 ms, sense arrossegament en curs), conservant la cançó actual, la següent ja anunciada i els afegits/reordenacions manuals.
 
 ## Catàleg i dades
 

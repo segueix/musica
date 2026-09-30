@@ -7,8 +7,8 @@
 //   1) El motor és actiu i «La teva ràdio» genera una cua que compleix els límits (antigues, artista, duplicats).
 //   2) Un únic observador del reproductor compta escoltes qualificades i finalitzacions amb progrés efectiu:
 //      pausa, seek, fallada de xarxa i canvi de pàgina no compten; un salt manual ràpid suma un salt.
-//   3) «Menys com aquesta» i «No em recomanis aquest artista» treuen el que toca de la cua, són reversibles
-//      (Desfés) i persisteixen; els controls fan almenys 44 px.
+//   3) «(+) com aquesta (−)»: dos cercles de 44 px que compten per a l'algorisme, són excloents i reversibles
+//      (Desfés) i persisteixen; el cor a dalt a la dreta del reproductor desa el m'agrada i deixa el de sota en vermell.
 //   4) Un cor fa que la cançó torni a «Torna-hi» amb la seva explicació.
 //   5) La còpia de configuració fusiona les estadístiques sense duplicar-les en importar-les dues vegades.
 
@@ -248,7 +248,7 @@ async function main() {
             }
         );
 
-        // 3) Preferències explícites a la cua
+        // 3) «(+) com aquesta (−)» a la cua: dos cercles clicables que compten per a l'algorisme
         const preferencies = await page.evaluate(() => {
             const host = document.createElement('div');
             host.id = 'provaCua';
@@ -258,17 +258,20 @@ async function main() {
             const before = activePlaylistQueue.length;
             const target = activePlaylistQueue[currentPlaylistIndex + 3];
             item.querySelector('[data-mq-more]').click();
-            const buttons = [...item.querySelectorAll('.mq-pref')].map(b => {
+            const cercles = [...item.querySelectorAll('.mq-circle')].map(b => {
                 const r = b.getBoundingClientRect();
-                return { text: b.textContent, h: Math.round(r.height), visible: r.height > 0 };
+                const radi = getComputedStyle(b).borderTopLeftRadius;
+                return { label: b.getAttribute('aria-label'), w: Math.round(r.width), h: Math.round(r.height), radi };
             });
-            item.querySelector('[data-mq-less]').click();
+            const text = item.querySelector('.mq-prefs').textContent.replace(/\s+/g, ' ').trim();
+            item.querySelector('[data-mq-minus]').click();
             return {
                 before,
                 after: activePlaylistQueue.length,
                 removed: !activePlaylistQueue.some(v => v.id === target.id),
                 id: target.id,
-                buttons,
+                cercles,
+                text,
                 stored: JSON.parse(localStorage.getItem('catube_music_prefs_v1')),
             };
         });
@@ -276,17 +279,16 @@ async function main() {
         await page.waitForTimeout(150);
         preferencies.toast = await page.evaluate(() => document.getElementById('ptToast')?.textContent || '');
         comprovar(
-            '«Menys com aquesta» treu la cançó de la cua pendent',
+            '«−» treu la cançó de la cua pendent',
             preferencies.removed && preferencies.after === preferencies.before - 1,
-            {
-                abans: preferencies.before,
-                despres: preferencies.after,
-            }
+            { abans: preferencies.before, despres: preferencies.after }
         );
         comprovar(
-            'els controls de preferència fan ≥ 44 px d’alt',
-            preferencies.buttons.length === 2 && preferencies.buttons.every(b => b.h >= 44),
-            preferencies.buttons
+            'hi ha un «+» i un «−» rodons de ≥ 44 px, amb el text «com aquesta»',
+            preferencies.cercles.length === 2 &&
+                preferencies.cercles.every(c => c.w >= 44 && c.h >= 44 && parseFloat(c.radi) >= 22) &&
+                /com aquesta/.test(preferencies.text),
+            preferencies
         );
         comprovar(
             'l’avís ofereix «Desfés» i la preferència és persistent',
@@ -298,34 +300,111 @@ async function main() {
             '«Desfés» és reversible',
             await page.evaluate(id => !SegueixApp.features.musicSignals.isLessLike(id), preferencies.id)
         );
-        const artista = await page.evaluate(() => {
+        // «+»: compta per a l'algorisme (gust de la cançó) i és excloent amb «−»
+        const mes = await page.evaluate(() => {
+            const signals = SegueixApp.features.musicSignals;
+            const sel = SegueixApp.features.musicSelection;
+            const host = document.getElementById('provaCua');
             const target = activePlaylistQueue[currentPlaylistIndex + 4];
-            const key = getVideoArtistKey(target);
-            SegueixApp.features.musicQueue.applyPreference(target, true);
+            const index = activePlaylistQueue.indexOf(target);
+            const before = sel.songTaste(String(target.id), signals.snapshot(), Date.now(), sel.getConfig());
+            SegueixApp.features.musicQueue.render(host);
+            host.querySelector(`[data-mq-plus="${index}"]`).click();
+            const after = sel.songTaste(String(target.id), signals.snapshot(), Date.now(), sel.getConfig());
+            // L'app repinta la cua real; aquí es repinta el contenidor de prova per veure l'estat premut
+            SegueixApp.features.musicQueue.render(host);
+            const premut = host.querySelector(`[data-mq-plus="${index}"]`).getAttribute('aria-pressed');
+            SegueixApp.features.musicQueue.applyPreference(target, 'less');
             return {
-                key,
-                queda: activePlaylistQueue.slice(currentPlaylistIndex + 1).some(v => getVideoArtistKey(v) === key),
-                bloquejat: SegueixApp.features.musicSignals.isArtistBlocked(key),
+                id: target.id,
+                before,
+                after,
+                premut,
+                moreQuedaOff: !signals.isMoreLike(target.id),
+                lessOn: signals.isLessLike(target.id),
+            };
+        });
+        comprovar('«+» puja el gust de la cançó i es veu premut', mes.after > mes.before && mes.premut === 'true', mes);
+        comprovar('«+» i «−» són excloents', mes.moreQuedaOff && mes.lessOn, mes);
+        comprovar(
+            'ja no hi ha cap opció «No em recomanis aquest artista» a la cua',
+            await page.evaluate(() => !document.getElementById('provaCua').textContent.includes('No em recomanis'))
+        );
+
+        // 3b) Cor a dalt a la dreta del reproductor: m'agrada, sincronitzat amb el de sota (vermell)
+        const cor2 = await page.evaluate(() => {
+            const player = document.getElementById('videoPlayer');
+            const heart = player.querySelector(':scope > .player-heart');
+            if (!heart) return { existeix: false };
+            const p = player.getBoundingClientRect();
+            const r = heart.getBoundingClientRect();
+            return {
+                existeix: true,
+                dalt: Math.round(r.top - p.top),
+                dreta: Math.round(p.right - r.right),
+                mida: [Math.round(r.width), Math.round(r.height)],
+                id: player.dataset.playingVideoId,
+                pressed: heart.getAttribute('aria-pressed'),
             };
         });
         comprovar(
-            '«No em recomanis aquest artista» el treu de la cua i queda bloquejat',
-            !artista.queda && artista.bloquejat,
-            artista
+            'hi ha un cor a dalt a la dreta del reproductor (≥ 44 px)',
+            cor2.existeix &&
+                cor2.dalt >= 0 &&
+                cor2.dalt <= 20 &&
+                cor2.dreta >= 0 &&
+                cor2.dreta <= 20 &&
+                cor2.mida[0] >= 44,
+            cor2
         );
-        // Una nova ràdio no el torna a programar
-        const noTorna = await page.evaluate(key => {
-            const seed = currentFeedVideos.find(
-                v => getVideoArtistKey(v) !== key && v.contentType === 'song' && !v.isShort
-            );
-            let apareix = 0;
-            for (let i = 0; i < 6; i++) {
-                const queue = SegueixApp.features.musicQueue.buildQueue(seed, '');
-                if (queue.slice(1).some(v => getVideoArtistKey(v) === key)) apareix += 1;
+        await page.evaluate(() => {
+            // El cor de sota (fitxa del vídeo) es crea igual que ho fa l'app; les icones de Lucide (CDN) no hi són
+            // en aquesta prova, així que se li posa la mateixa icona SVG que fa servir el cor de la fitxa.
+            let under = document.getElementById('likeToggle');
+            if (!under) {
+                under = document.createElement('button');
+                under.id = 'likeToggle';
+                under.className = 'btn-heart';
+                document.body.appendChild(under);
             }
-            return apareix;
-        }, artista.key);
-        comprovar('les cues noves no programen l’artista bloquejat', noTorna === 0, noTorna);
+            under.innerHTML =
+                '<svg viewBox="0 0 256 256"><path d="M128 224s-96-54-96-118c0-36 28-58 56-58 24 0 40 18 40 18s16-18 40-18c28 0 56 22 56 58 0 64-96 118-96 118z"></path></svg>';
+            document.querySelector('#videoPlayer .player-heart').click();
+        });
+        await page.waitForTimeout(300);
+        const liked = await page.evaluate(id => {
+            const heart = document.querySelector('#videoPlayer .player-heart');
+            const under = document.getElementById('likeToggle');
+            const likedIds = JSON.parse(localStorage.getItem('catube_liked_videos') || '[]').map(v => String(v.id));
+            return {
+                guardat: likedIds.includes(String(id)),
+                sobre: heart.classList.contains('is-liked'),
+                sobreVermell: getComputedStyle(heart.querySelector('svg')).fill,
+                sota: under.classList.contains('is-liked'),
+                sotaVermell: getComputedStyle(under.querySelector('svg')).fill,
+                snapshot: SegueixApp.features.musicSignals.snapshot().liked.has(String(id)),
+            };
+        }, cor2.id);
+        comprovar(
+            'el cor del reproductor desa el m’agrada, compta per a l’algorisme i posa el de sota en vermell',
+            liked.guardat &&
+                liked.sobre &&
+                liked.sota &&
+                liked.snapshot &&
+                liked.sobreVermell === 'rgb(204, 0, 0)' &&
+                liked.sotaVermell === 'rgb(204, 0, 0)',
+            liked
+        );
+        await page.evaluate(() => document.querySelector('#videoPlayer .player-heart').click());
+        await page.waitForTimeout(300);
+        comprovar(
+            'tornar-hi a prémer el treu (els dos cors queden buits)',
+            await page.evaluate(
+                () =>
+                    !document.querySelector('#videoPlayer .player-heart').classList.contains('is-liked') &&
+                    !document.getElementById('likeToggle').classList.contains('is-liked')
+            )
+        );
 
         // 5) Fusió idempotent en importar la còpia
         const fusio = await page.evaluate(() => {
@@ -462,13 +541,13 @@ async function main() {
                 return [Math.round(r.width), Math.round(r.height)];
             };
             return {
-                pref: [...item.querySelectorAll('.mq-pref')].map(rect),
+                pref: [...item.querySelectorAll('.mq-circle')].map(rect),
                 overflow: document.documentElement.scrollWidth - window.innerWidth,
             };
         });
         comprovar(
             'mòbil (390 px): controls ≥ 44 px i sense desbordament',
-            mesura.pref.every(([w, h]) => h >= 44) && mesura.overflow <= 0,
+            mesura.pref.length === 2 && mesura.pref.every(([w, h]) => h >= 44 && w >= 44) && mesura.overflow <= 0,
             mesura
         );
         comprovar('mòbil: sense errors de JavaScript', mobil.errors.length === 0, mobil.errors);

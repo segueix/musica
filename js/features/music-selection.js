@@ -57,6 +57,9 @@
         taste: {
             halfLifeDays: 120,
             likedBonus: 0.7,
+            // «+ com aquesta»: reforç explícit a la cançó (menor que el cor) i lleu a l'artista.
+            moreLikeBonus: 0.5,
+            moreLikeArtist: 0.12,
             followedArtist: 0.6,
             savedSongCount: 5,
             artistCount: 12,
@@ -382,6 +385,7 @@
             likedArtists: {},
             followed: new Set(),
             lessLike: new Set(),
+            moreLike: new Set(),
             blockedArtists: new Set(),
             recent: [],
             sessionStyles: {},
@@ -405,6 +409,7 @@
             likedArtists: s.likedArtists || base.likedArtists,
             followed: asSet(s.followed),
             lessLike: asSet(s.lessLike),
+            moreLike: asSet(s.moreLike),
             blockedArtists: asSet(s.blockedArtists),
             recent: toArray(s.recent),
             sessionStyles: s.sessionStyles || base.sessionStyles,
@@ -426,6 +431,7 @@
             value = raw * decay(now, entry.l, cfg.taste.halfLifeDays);
         }
         if (signals.liked.has(id)) value = Math.min(1, value + cfg.taste.likedBonus);
+        if (signals.moreLike?.has(id)) value = Math.min(1, value + cfg.taste.moreLikeBonus);
         return value;
     }
 
@@ -445,6 +451,8 @@
         }
         const hearts = signals.likedArtists[artist] || 0;
         if (hearts) value += 0.15 * sat(hearts, 3);
+        const more = entry?.ml || 0;
+        if (more) value += cfg.taste.moreLikeArtist * sat(more, 3);
         return clamp(value);
     }
 
@@ -499,6 +507,10 @@
         sig.liked.forEach(id => {
             const tier = tierOfSong(id);
             if (tier) add(tier, 3);
+        });
+        sig.moreLike.forEach(id => {
+            const tier = tierOfSong(id);
+            if (tier) add(tier, 2);
         });
         Object.keys(sig.songs).forEach(id => {
             const tier = tierOfSong(id);
@@ -606,7 +618,14 @@
 
     function familiarityClass(f, signals) {
         // Una visita antiga a l'historial (informació feble) no fa «coneguda» una cançó: cal cor o escoltes reals.
-        if (isKnownArtist(f.artist, signals) || signals.songs[f.id]?.q || signals.liked.has(f.id)) return 'known';
+        if (
+            isKnownArtist(f.artist, signals) ||
+            signals.songs[f.id]?.q ||
+            signals.liked.has(f.id) ||
+            signals.moreLike.has(f.id)
+        ) {
+            return 'known';
+        }
         return styleAffinityOf(f, signals) > 0.15 ? 'affine' : 'surprise';
     }
 
@@ -1025,8 +1044,9 @@
             if (!id || signals.lessLike.has(id) || (f.artist && signals.blockedArtists.has(f.artist))) return;
             const entry = signals.songs[id];
             const liked = signals.liked.has(id);
-            // Només amb evidència real: cor, escoltes qualificades/finalitzades o repeticions voluntàries.
-            const evidence = liked || (entry && (entry.r > 0 || entry.f > 0 || entry.q >= 2));
+            const asked = signals.moreLike.has(id);
+            // Només amb evidència real: cor, «+ com aquesta», escoltes qualificades/finalitzades o repeticions voluntàries.
+            const evidence = liked || asked || (entry && (entry.r > 0 || entry.f > 0 || entry.q >= 2));
             if (!evidence) return;
             if (entry?.l && ctx.now - entry.l < minRestMs) return;
             const taste = songTaste(id, signals, ctx.now, cfg);
@@ -1036,7 +1056,7 @@
                 rest * 0.25 -
                 skipPenalty(entry, cfg.taste.skipsToPenalize, ctx.now, cfg) +
                 (rng() - 0.5) * 0.05;
-            scored.push({ video, f, s, liked, entry });
+            scored.push({ video, f, s, liked, asked, entry });
         });
         scored.sort((a, b) => b.s - a.s);
         const chosen = [];
@@ -1054,9 +1074,11 @@
                 score: item.s,
                 reason: item.liked
                     ? 'Una de les teves preferides'
-                    : item.entry?.r > 0
-                      ? 'L’has tornat a triar'
-                      : 'Perquè l’escoltes',
+                    : item.asked
+                      ? 'Has demanat més com aquesta'
+                      : item.entry?.r > 0
+                        ? 'L’has tornat a triar'
+                        : 'Perquè l’escoltes',
             });
         });
         return chosen;
@@ -1068,6 +1090,7 @@
         const f = featuresOf(ctx, video);
         const name = video?.channelTitle || '';
         if (signals.liked.has(f.id)) return 'Una de les teves preferides';
+        if (signals.moreLike.has(f.id)) return 'Has demanat més com aquesta';
         if (signals.followed.has(f.artist) && name) return `Perquè segueixes ${name}`;
         if (isKnownArtist(f.artist, signals) && name) return `Perquè escoltes ${name}`;
         return '';

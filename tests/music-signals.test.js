@@ -295,6 +295,28 @@ describe('preferències explícites', () => {
         expect(S.mergePrefs(merged, a).lessLike.x.on).toBe(false);
     });
 
+    it('«+ com aquesta» es reflecteix al snapshot (cançó, artista i estil) i és excloent amb «−»', () => {
+        const snap = S.buildSnapshot({
+            stats: { songs: { s1: { a: 'artA', q: 1 } }, artists: {}, recent: [] },
+            prefs: { lessLike: {}, moreLike: { s1: { at: 1, on: true }, s2: { at: 1, on: false } }, blocked: {} },
+            history: [],
+            liked: [],
+            followedIds: [],
+            artistKeyOf: v => String(v.channelId || ''),
+            stylesOf: () => ['pop'],
+            videoById: id => ({ id, channelId: 'artA' }),
+        });
+        expect(snap.moreLike.has('s1')).toBe(true);
+        expect(snap.moreLike.has('s2')).toBe(false);
+        expect(snap.artists.artA.ml).toBe(1);
+        expect(snap.styles.pop).toBeGreaterThanOrEqual(2);
+        const merged = S.mergePrefs(
+            { lessLike: {}, moreLike: { x: { at: 5, on: true } }, blocked: {} },
+            { lessLike: {}, moreLike: { x: { at: 9, on: false } }, blocked: {} }
+        );
+        expect(merged.moreLike.x.on).toBe(false);
+    });
+
     it('«menys com aquesta» i «no em recomanis» es reflecteixen al snapshot', () => {
         const snap = S.buildSnapshot({
             stats: { songs: { s1: { a: 'artA', q: 1 } }, artists: {}, recent: [] },

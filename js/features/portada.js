@@ -33,6 +33,7 @@
         shuffle:
             '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M16 3h5v5M4 20 21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg>',
         plus: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" d="M12 5v14M5 12h14"/></svg>',
+        minus: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" d="M5 12h14"/></svg>',
         list: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h10"/></svg>',
     };
 
@@ -104,7 +105,8 @@
         const hidden = ctx.hiddenIds instanceof Set ? ctx.hiddenIds : new Set();
         // Preferències explícites: «Menys com aquesta» i «No em recomanis aquest artista» també valen a la portada.
         const rejected = typeof ctx.isRejected === 'function' ? ctx.isRejected : () => false;
-        const usable = video => video?.id && !video.isShort && !hidden.has(String(video.channelId || '')) && !rejected(video);
+        const usable = video =>
+            video?.id && !video.isShort && !hidden.has(String(video.channelId || '')) && !rejected(video);
 
         const all = toArray(ctx.all).filter(usable);
         const recent = toArray(ctx.recent)
@@ -211,7 +213,14 @@
         // Preferides i repeticions reals amb varietat (cors, escoltes voluntàries, finalitzacions).
         const preferred =
             selection && ctx.signals
-                ? selection.pickReturn({ ctx: ctx.selectionCtx, candidates: all, signals: ctx.signals, limit: 4, rng, now })
+                ? selection.pickReturn({
+                      ctx: ctx.selectionCtx,
+                      candidates: all,
+                      signals: ctx.signals,
+                      limit: 4,
+                      rng,
+                      now,
+                  })
                 : [];
 
         // C · «Torna-hi» (amb historial o amb preferides reals) o «Comença per aquí»
@@ -571,10 +580,14 @@
             selectionCtx,
             signals,
             isRejected: signals
-                ? video => signals.lessLike.has(String(video?.id)) || signals.blockedArtists.has(selectionCtx.artistKeyOf(video))
+                ? video =>
+                      signals.lessLike.has(String(video?.id)) ||
+                      signals.blockedArtists.has(selectionCtx.artistKeyOf(video))
                 : null,
             isCurrent: selectionCtx
-                ? video => selection.eraOf(video, { now: selectionCtx.now, isClassicArtist: classicArtist }).tier !== 'historic'
+                ? video =>
+                      selection.eraOf(video, { now: selectionCtx.now, isClassicArtist: classicArtist }).tier !==
+                      'historic'
                 : null,
             isNewRelease: selectionCtx
                 ? video => selection.isNewRelease(video, { now: selectionCtx.now, isClassicArtist: classicArtist })
@@ -589,7 +602,10 @@
             hiddenIds: context.hiddenIds,
             playlists,
             isClip: video => Boolean(homeSections?.isOfficialClip?.(video)),
-            isClassic: video => (typeof isHistoricVideo === 'function' ? isHistoricVideo(video) : Boolean(music?.isClassicVideo?.(video))),
+            isClassic: video =>
+                typeof isHistoricVideo === 'function'
+                    ? isHistoricVideo(video)
+                    : Boolean(music?.isClassicVideo?.(video)),
         };
     }
 
@@ -725,6 +741,17 @@
         };
     }
 
+    // «(+) com aquesta (−)»: dos cercles clicables que compten per a l'algorisme (excloents, reversibles).
+    function prefsHtml(video) {
+        const signals = app.features.musicSignals;
+        const id = esc(video.id);
+        return `<span class="pt-prefs" role="group" aria-label="Com aquesta cançó">
+            <button type="button" class="pt-circle" data-pt-plus="${id}" aria-pressed="${signals.isMoreLike(video.id)}" aria-label="Més com aquesta" title="Més com aquesta">${ICONS.plus}</button>
+            <span class="pt-prefs__label" aria-hidden="true">com aquesta</span>
+            <button type="button" class="pt-circle" data-pt-minus="${id}" aria-pressed="${signals.isLessLike(video.id)}" aria-label="Menys com aquesta" title="Menys com aquesta">${ICONS.minus}</button>
+        </span>`;
+    }
+
     function featureHtml(now) {
         if (now) {
             const video = now.video;
@@ -748,7 +775,7 @@
                         <div class="pt-feature__actions">
                             <button type="button" class="pt-btn pt-btn--primary pt-btn--sm" data-pt-continue>Continua</button>
                             <button type="button" class="pt-act" data-pt-toggle aria-label="${now.playing ? 'Pausa' : 'Reprèn'}" title="${now.playing ? 'Pausa' : 'Reprèn'}">${now.playing ? ICONS.pause : ICONS.play}</button>
-                            ${video && app.features.musicSignals ? `<button type="button" class="pt-tool" data-pt-less="${esc(video.id)}" title="No et tornarem a proposar aquesta cançó i en triarem menys d’aquest tipus">Menys com aquesta</button><button type="button" class="pt-tool" data-pt-block="${esc(video.id)}" title="No et proposarem més aquest artista">No em recomanis aquest artista</button>` : ''}
+                            ${video && app.features.musicSignals ? prefsHtml(video) : ''}
                             ${now.isRadio ? `<button type="button" class="pt-tool" data-pt-regenerate title="Genera de nou la part pendent de la cua amb el mode triat">${ICONS.shuffle}<span>Regenera la cua</span></button>` : ''}
                         </div>
                     </div>
@@ -956,13 +983,14 @@
             if (typeof loadVideosFromAPI === 'function') loadVideosFromAPI();
             return undefined;
         }
-        if ((el = pick('[data-pt-less]') || pick('[data-pt-block]'))) {
-            const video = videoById(el.dataset.ptLess || el.dataset.ptBlock);
-            app.features.musicQueue?.applyPreference?.(video, Boolean(el.dataset.ptBlock));
+        if ((el = pick('[data-pt-plus]') || pick('[data-pt-minus]'))) {
+            const video = videoById(el.dataset.ptPlus || el.dataset.ptMinus);
+            app.features.musicQueue?.applyPreference?.(video, el.dataset.ptPlus ? 'more' : 'less');
             return undefined;
         }
         if (pick('[data-pt-resume]')) {
-            if (!app.features.musicQueue?.resumeLast?.()) toast('No s’ha pogut continuar la ràdio. Prova «La teva ràdio».');
+            if (!app.features.musicQueue?.resumeLast?.())
+                toast('No s’ha pogut continuar la ràdio. Prova «La teva ràdio».');
             return undefined;
         }
         if (pick('[data-pt-mix]')) return startMix();
@@ -1025,6 +1053,7 @@
         window.addEventListener('resize', () => syncRowControls(), { passive: true });
         window.addEventListener('segueix:queue-changed', updateEntry);
         window.addEventListener('segueix:discovery-mode-changed', syncModeInputs);
+        window.addEventListener('segueix:music-prefs-changed', updateEntry);
         observeLive();
     }
 
