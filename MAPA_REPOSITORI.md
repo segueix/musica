@@ -250,6 +250,7 @@ Aquest document llista **tot el contingut versionat** del repositori (sortida de
 │   │   ├── player.js
 │   │   ├── search.js
 │   │   ├── search-results.js
+│   │   ├── my-music.js
 │   │   ├── shared-playlists.js
 │   │   ├── shorts.js
 │   │   └── support.js

@@ -208,7 +208,7 @@
         if (chipsBar) chipsBar.classList.add('hidden');
         setSiteCreditHidden(true);
 
-        runtime.hooks.setActiveLibraryTab?.(runtime.hooks.getActiveLibraryTab?.() || 'playlists');
+        runtime.hooks.renderMyMusic?.();
         history.pushState({ ...(history.state || {}), appPage: 'llistes' }, '', '#llistes');
         window.scrollTo(0, 0);
     }
