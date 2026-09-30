@@ -10,7 +10,7 @@ Segueix Música tria les cançons de la ràdio, del feed personalitzat i de la p
 |---|---|
 | `js/features/music-selection.js` | Motor: antiguitat real, puntuació, restriccions conjuntes, ràdio, feed, «Torna-hi». Funcions pures amb `now` i `rng` injectables |
 | `js/features/music-signals.js` | Observador únic del reproductor, estadístiques compactes, preferències explícites, fusió amb la còpia de configuració |
-| `js/features/music-queue.js` | Ràdio real: `buildQueue`, «La teva ràdio», regeneració, recàlcul segur, controls de preferència, ràdio d'una cerca (`startFromSearch`) |
+| `js/features/music-queue.js` | Ràdio real: `buildQueue`, «La teva ràdio», regeneració, recàlcul segur, controls de preferència, ràdio d'una cerca (`startFromSearch`), desar la ràdio com a llista (`saveAsPlaylist`) |
 | `js/features/search-results.js` | Cerca: model pur (artistes primer, després cançons) i HTML del menú i de la pàgina de resultats |
 | `js/utils/helpers.js` | `arrangeMusicList()` (passada final de límits per a llistes), `isHistoricVideo()`, `getVideoArtistKey()` amb identitat d'artista |
 | `js/music-categories.js` | `artistKeyForChannel()` (identitat persistent) i `isClassicArtistVideo()` |
@@ -109,6 +109,15 @@ Un cor, un «+», un «−» o un seguiment compta ja per a les decisions següe
 - **Sempre l'estil**: una ràdio engegada des d'una categoria (fila o pàgina d'estil) és d'aquella categoria; engegada des d'una cançó o un artista (Inici, fitxa d'artista, cerca…) és de la **categoria principal de l'artista**, és a dir, la del **primer gènere** de la base d'artistes (`SegueixMusicCategories.primaryCategoryForChannel()`; l'ordre de `categories` és el de la taxonomia, no el de prioritat de l'artista). Barrejar, regenerar i els recàlculs silenciosos conserven l'estil. Una selecció («Acabades de sortir»…) que es regenera passa a ser una ràdio de l'estil de la cançó que sona. Només «La teva ràdio» (general, personalitzada) no té categoria. Si l'estil té menys de 2 cançons, la ràdio passa a general i s'avisa.
 - **Nom fix**: la capçalera de la cua mostra l'estil (o «Pop + Rock»; «La teva ràdio» a la general) i **no canvia amb la cançó que sona** (abans deia «Basada en <artista>»). El mode de descoberta surt com a text petit al costat.
 - **«+»**: al costat del nom hi ha un cercle «+» (44 px) que obre un selector amb els estils que encara no hi són. En escollir-ne un, la part pendent de la ràdio es **regenera barrejant tots els estils a parts iguals** (`selectRadio({ mix })`: repartiment per estil amb `gain.style`, comptant el que ja hi ha a la cua; conserva la cançó que sona i els afegits a mà). Es poden sumar més estils; cada estil sumat té una × per treure'l (sempre en queda un). Sumar un estil a la ràdio general la converteix en una ràdio d'aquell estil. El nom de la llista de YouTube porta tots els estils («Llista Pop + Rock»).
+
+## Desar la ràdio com a llista
+
+A la capçalera de la ràdio, al costat del nom (abans hi havia el text del mode de descoberta, p. ex. «· Sorprèn-me»), hi ha un **símbol de llista amb un «+»** (cercle de 44 px, `data-mq-save-list`). `musicQueue.saveAsPlaylist()` desa **tota la ràdio** (el que ja ha sonat, el que sona i el que ve; sense Shorts ni repetits) com a llista de reproducció a `catube_playlists` amb el mateix format que «Afegeix a una llista» (`library.getPlaylistVideoData`) i dispara `segueix:playlists-changed`: surt de seguida a «Les teves llistes» de la portada i a la biblioteca.
+
+- **Nom**: el de la ràdio, mai el de la cançó que sona: «Ràdio Pop», «Ràdio Pop + Rock», «La teva ràdio», «Cerca: nit» o el nom de la selecció («Acabades de sortir»). Si ja hi ha una llista amb aquest nom (d'una altra ràdio o de l'usuari) s'hi afegeix un número: «Ràdio Pop (2)». Mai es trepitja una llista existent.
+- **Desada**: el símbol passa a una llista amb una marca (llima) i l'etiqueta diu que ja és desada. Tornar-hi a prémer **actualitza aquella mateixa llista** amb la cua actual (no en crea una altra); si l'usuari l'ha esborrada, en crea una de nova. Començar una altra ràdio (o una cerca, o una selecció) torna a «no desada».
+- Un avís confirma «Llista «…» desada a les teves llistes.» amb l'acció «Obre» (porta a la biblioteca). Una llista de l'usuari que sona en mode llista no mostra el símbol (ja és una llista).
+- El mode de descoberta segueix aplicant-se (selector de la portada); només ha deixat de mostrar-se el seu nom a la capçalera. Si no hi havia historial suficient, la nota explicativa continua sortint sota la capçalera.
 
 ## Ràdio d'una cerca
 

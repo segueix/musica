@@ -265,6 +265,7 @@ const likes = ctx2.SegueixApp.features.likes;
 - La ràdio, «Recomanat per a tu», les files i «Torna-hi» fan servir `SegueixApp.features.musicSelection` amb els senyals de `musicSignals`. **No afegeixis una ordenació més** a un flux que ja passa pel motor: les restriccions d'antigues i d'artista s'apliquen al resultat final (`arrangeMusicList()` per a llistes). Ordre de scripts: `discovery.js` → `music-selection.js` → `music-signals.js` → `music-queue.js`.
 - Tornar a la política anterior: `localStorage.catube_selection_engine = 'legacy'`. Tot el detall (paràmetres, senyals, limitacions) és a `docs/MUSICA_SELECCIO.md`; la simulació és a `docs/MUSICA_SELECCIO_SIMULACIO.md`.
 - Una ràdio d'artista/categoria **sempre** és d'un estil (el de la fila/pàgina o la categoria principal de l'artista) i porta el nom fix de l'estil; el «+» del nom hi suma estils que es barregen a parts iguals (`radioCategory` + `radioExtra` a `music-queue.js`). Només «La teva ràdio» és general.
+- A la capçalera de la ràdio **no es mostra el nom del mode de descoberta** (abans «· Sorprèn-me»): hi ha el símbol «desa com a llista» (`[data-mq-save-list]`). `musicQueue.saveAsPlaylist()` desa tota la cua a `catube_playlists` (nom de la ràdio, «Ràdio Pop (2)» si ja existeix; tornar-hi a prémer actualitza la mateixa llista). No hi tornis a posar el text del mode: detall a `docs/MUSICA_SELECCIO.md` («Desar la ràdio com a llista»).
 - Una cançó de l'historial **ja no** queda exclosa de la ràdio (tornen amb descans de 12 cançons i 60 min). Novetats i les categories continuen ocultant-les.
 - Un vídeo pujat fa poc **no** és una estrena si té any original antic (`originalYear`) o és d'un artista de `musica-classica.json` sense any verificat (`data/musica-dates.json` per excepcions).
 
@@ -291,7 +292,7 @@ const likes = ctx2.SegueixApp.features.likes;
 | `likes.js` | normalizeLikedVideo, getLikedVideos, setLikedVideos, isLiked, getLikedVideoIds |
 | `discovery.js` | mode persistit, perfil, ordenació per mode, radar, Torna-hi, Comença per aquí, estils |
 | `portada.js` | model de la portada, HTML de seccions i targetes, dates honestes, escapament |
-| `music-queue.js` | «La teva ràdio», canvi de mode sense interrompre, afegir a la cua, reproduir selecció, ràdio d'una cerca |
+| `music-queue.js` | «La teva ràdio», canvi de mode sense interrompre, afegir a la cua, reproduir selecció, ràdio d'una cerca, desar la ràdio com a llista |
 | `search-results.js` | Model de cerca (artistes primer), coincidències sense soroll, HTML del menú/pàgina, dedupe, no-herència |
 | `music-selection.js` | antiguitat real, estrenes, puntuació, límits d'antigues/artista/descans, duplicats, preferència per música antiga, «Torna-hi» |
 | `music-signals.js` | progrés efectiu, escolta qualificada, finalització, repeticions voluntàries, salts, fusió idempotent, migració feble |

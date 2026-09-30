@@ -13,6 +13,30 @@
 
 **Fitxers Afectats:**
 
+## [2026-09-30] - La portada es repintava sobre els resultats d'una cerca després d'escoltar música o desar una llista
+
+**Símptoma:** Després d'escoltar una cançó (o desar una llista) i fer una cerca, el títol deia «Resultats per: …» però la graella tornava a mostrar la portada (`.pt-sections`) al cap d'un instant, i els resultats desapareixien.
+
+**Causa Arrel:** `navigateToSearchResults()` fa `showHome()` i escriu els resultats a `#videosGrid` de manera síncrona. `portada.js` observa la classe de `#homePage` amb un `MutationObserver` i, en tornar a ser visible, crida `refreshIfStale()`; si la `signature()` (historial, cors, seguits, llistes, darrera escolta) ha canviat des de l'últim pintat, `paint()` escrivia la portada a `state.container` (el mateix `#videosGrid`). El callback s'executa després del codi síncron de la cerca, així que trepitjava els resultats.
+
+**Solució Implementada:** `refreshIfStale()` només repinta si el contenidor encara té la portada (`.pt-sections`); si la graella mostra una altra vista no la toca (en tornar a Inici, `renderVideos()` la pinta de nou). Comprovat a `tests/browser/verificar-cerca.js` (5c: escolta + llista desada i cerca, falla sense el canvi).
+
+**Trampes conegudes:** (1) Qualsevol vista que pinti dins `#videosGrid` (cerca, etc.) ha de suposar que la portada és un observador actiu de `#homePage`/`#videoPlayer`. (2) `signature()` compta les llistes: desar una ràdio com a llista també la fa «vella».
+
+**Fitxers Afectats:** `js/features/portada.js`, `tests/browser/verificar-cerca.js`.
+
+## [2026-09-30] - A la capçalera de la ràdio sortia el nom del mode («Sorprèn-me») i no es podia desar la ràdio com a llista
+
+**Símptoma:** Al costat del nom de la ràdio hi havia un text amb el mode de descoberta (p. ex. «· Sorprèn-me», només quan hi havia historial suficient) que no feia res, i la ràdio que t'agradava no es podia conservar: només es podia «Obrir a YouTube».
+
+**Causa Arrel:** `render()` de `music-queue.js` calculava `modeLabel` i `radioNameHtml(modeLabel)` l'afegia com a `<span class="mq-mode">`. No hi havia cap camí de la cua cap a `catube_playlists`.
+
+**Solució Implementada:** S'ha tret `modeLabel` i `.mq-mode`; al seu lloc hi ha el botó-símbol `[data-mq-save-list]` (llista amb «+», 44 px, al costat del nom en qualsevol ràdio: d'estil, general, cerca o selecció). `musicQueue.saveAsPlaylist()` desa tota la cua com a llista (`library.getPlaylists/savePlaylists`, format de `getPlaylistVideoData`, sense Shorts ni repetits), amb el nom de la ràdio (`playlistName()`; «Ràdio Pop (2)» si ja existeix); tornar-hi a prémer actualitza la mateixa llista (`savedListId`, que es reinicia a `launch`, `playSelection` i `startFromSearch`). `library.savePlaylists` dispara `segueix:playlists-changed`, així que «Les teves llistes» de la portada la mostra sense fer res més. Proves: `tests/music-queue-selection.test.js` («desar la ràdio com a llista…») i `tests/browser/verificar-seleccio.js` (1c i 4b).
+
+**Trampes conegudes:** (1) `startFrom()` amb una cançó que ja és a la cua de la ràdio només salta a aquella cançó (no és una ràdio nova): `savedListId` es manté. (2) `isSavedList()` llegeix les llistes a cada repintat de la cua: no hi facis més feina. (3) Si es torna a mostrar el nom del mode, els tests `mq-mode`/«Sorprèn-me» fallen a propòsit; el mode ja es tria al selector de la portada.
+
+**Fitxers Afectats:** `js/features/music-queue.js`, `css/portada.css`, `docs/MUSICA_SELECCIO.md`, `CLAUDE.md`, tests.
+
 ## [2026-09-30] - Cerca de Segueix Música: resultats amb soroll, herència de Segueix youtubers i cap ràdio a partir dels resultats
 
 **Símptoma:** Buscar «pop» o «ovella» tornava desenes de cançons que només coincidien per la descripció; la pàgina mostrava «Canals» abans que res (amb «Subscriptors no disponibles»), una secció «Històric» i «Ja vistos», el títol arrossegava el text de l'antic popover de «Categoria personalitzada» i hi havia botons de guardar la cerca com a categoria, «Artistes», «Etiquetes» i «Compartir». El menú esperava fins a 650 ms un índex d'arxiu que ja no existeix. Cada cerca afegia un listener més a `#videosGrid`, que també pinta la portada: un clic obria el vídeo diverses vegades. No hi havia manera de convertir els resultats en una ràdio.
