@@ -20,16 +20,12 @@
         return runtime.hooks.searchArchiveVideosImpl?.(query);
     }
 
-    function showSearchDropdown(results) {
-        return runtime.hooks.showSearchDropdownImpl?.(results);
+    function showSearchDropdown(model) {
+        return runtime.hooks.showSearchDropdownImpl?.(model);
     }
 
     function hideSearchDropdown() {
         return runtime.hooks.hideSearchDropdownImpl?.();
-    }
-
-    async function searchVideos(query) {
-        return runtime.hooks.searchVideosImpl?.(query);
     }
 
     app.features.search = {
@@ -38,7 +34,6 @@
         loadSearchArchiveIndex,
         searchArchiveVideos,
         showSearchDropdown,
-        hideSearchDropdown,
-        searchVideos
+        hideSearchDropdown
     };
 })(window);

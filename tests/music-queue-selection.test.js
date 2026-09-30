@@ -443,3 +443,131 @@ describe('«+»: sumar un estil a la ràdio', () => {
         expect(env.queue.getState().categories).toEqual(['Rock']);
     });
 });
+
+describe('ràdio generada amb els resultats d’una cerca', () => {
+    // Resultats que barregen estils i artistes, com els d'una cerca
+    function found(catalog) {
+        const pick = prefix => catalog.filter(v => v.channelId.startsWith(prefix)).slice(0, 6);
+        return [...pick('pop'), ...pick('rock'), ...pick('jazz')].filter((v, i, list) => list.indexOf(v) === i);
+    }
+    function searchRadio(options = {}) {
+        const catalog = styledCatalog();
+        const env = setup({ catalog, music: musicStub, ...options });
+        const results = options.results ? options.results(catalog) : found(catalog);
+        const started = env.queue.startFromSearch(results, { query: 'nit' });
+        return { ...env, catalog, results, started };
+    }
+    const ids = list => list.map(v => v.id);
+
+    it('engega una ràdio només amb les cançons trobades, encara que barregin estils', () => {
+        const { started, results, ctx, calls } = searchRadio();
+        expect(started).toBe(true);
+        expect(calls.loaded).toBe(1);
+        expect(ctx.activePlaylistId).toBe('__music_queue__');
+        expect(new Set(ids(ctx.activePlaylistQueue))).toEqual(new Set(ids(results)));
+        expect(new Set(ctx.activePlaylistQueue.map(v => v.categories[0]))).toEqual(
+            new Set(['Pop', 'Rock', 'Jazz / Blues'])
+        );
+    });
+
+    it('la primera cançó és la millor coincidència i cap cançó es repeteix', () => {
+        const { results, ctx } = searchRadio();
+        expect(ctx.activePlaylistQueue[0].id).toBe(results[0].id);
+        expect(new Set(ids(ctx.activePlaylistQueue)).size).toBe(ctx.activePlaylistQueue.length);
+    });
+
+    it('no la restringeix a la categoria seleccionada ni li assigna un estil', () => {
+        const { queue, ctx } = searchRadio({ extra: { selectedCategory: 'Jazz / Blues' } });
+        expect(queue.getStyles()).toEqual([]);
+        expect(queue.getState()).toMatchObject({ search: 'nit', isRadio: true, categories: [] });
+        expect(new Set(ctx.activePlaylistQueue.map(v => v.categories[0])).size).toBe(3);
+    });
+
+    it('no té «+» d’estils: el nom és el de la cerca i addStyle no la canvia', () => {
+        const { queue, ctx } = searchRadio();
+        expect(queue.addStyle('Rock')).toBe(false);
+        expect(queue.getStyles()).toEqual([]);
+        expect(queue.buildListName()).toBe('Llista nit');
+        expect(ctx.activePlaylistQueue.length).toBeGreaterThan(2);
+    });
+
+    it('regenerar («Barreja») manté el que sona i el ja sonat, i només fa servir els resultats', () => {
+        const { queue, ctx, results } = searchRadio();
+        ctx.currentPlaylistIndex = 2;
+        const played = ids(ctx.activePlaylistQueue.slice(0, 3));
+        queue.regenerate();
+        expect(ids(ctx.activePlaylistQueue.slice(0, 3))).toEqual(played);
+        expect(ids(ctx.activePlaylistQueue).every(id => ids(results).includes(id))).toBe(true);
+        expect(queue.getState().search).toBe('nit');
+        expect(new Set(ids(ctx.activePlaylistQueue)).size).toBe(ctx.activePlaylistQueue.length);
+    });
+
+    it('si ja han sonat totes les cançons trobades, «Barreja» no deixa la cua buida', () => {
+        const { queue, ctx } = searchRadio();
+        ctx.currentPlaylistIndex = ctx.activePlaylistQueue.length - 1;
+        queue.regenerate();
+        expect(ctx.activePlaylistQueue.length).toBeGreaterThan(ctx.currentPlaylistIndex + 1);
+    });
+
+    it('amb el motor antic (legacy) també entren totes i no hi ha dos artistes seguits si es pot evitar', () => {
+        const catalog = styledCatalog();
+        const env = setup({ catalog, music: musicStub });
+        env.selection.setConfigOverrides({ engine: 'legacy' });
+        const results = found(catalog);
+        expect(env.queue.startFromSearch(results, { query: 'nit' })).toBe(true);
+        const queue = env.ctx.activePlaylistQueue;
+        expect(new Set(ids(queue))).toEqual(new Set(ids(results)));
+        queue.forEach((v, i) => {
+            if (i > 0) expect(v.channelId).not.toBe(queue[i - 1].channelId);
+        });
+    });
+
+    it('deixa fora els artistes amagats i el que l’usuari ha rebutjat', () => {
+        const catalog = styledCatalog();
+        const results = found(catalog);
+        const hiddenChannel = results[0].channelId;
+        const env = setup({ catalog, music: musicStub, extra: { getHiddenChannelIds: () => [hiddenChannel] } });
+        env.signals.lessLikeThis(results[10]);
+        expect(env.queue.startFromSearch(results, { query: 'nit' })).toBe(true);
+        const queued = env.ctx.activePlaylistQueue;
+        expect(queued.some(v => v.channelId === hiddenChannel)).toBe(false);
+        expect(queued.some(v => v.id === results[10].id)).toBe(false);
+    });
+
+    it('amb menys de 2 cançons reproduïbles no engega res', () => {
+        const catalog = styledCatalog();
+        const env = setup({ catalog, music: musicStub });
+        expect(env.queue.startFromSearch([catalog[0]], { query: 'nit' })).toBe(false);
+        expect(env.queue.startFromSearch([{ ...catalog[1], isShort: true }, catalog[2]], { query: 'nit' })).toBe(false);
+        expect(env.queue.startFromSearch([], { query: 'nit' })).toBe(false);
+        expect(env.calls.loaded).toBe(0);
+    });
+
+    it('les cançons afegides abans a la cua sonen just després de la primera', () => {
+        const catalog = styledCatalog();
+        const env = setup({ catalog, music: musicStub });
+        const extra = catalog[catalog.length - 1];
+        env.queue.enqueue(extra);
+        const results = found(catalog);
+        env.queue.startFromSearch(results, { query: 'nit' });
+        expect(env.ctx.activePlaylistQueue[1].id).toBe(extra.id);
+    });
+
+    it('obrir una cançó després (clic normal) torna a una ràdio d’estil i esborra la cerca', () => {
+        const { queue, ctx, catalog } = searchRadio();
+        queue.startFrom(catalog[catalog.length - 1].id, 'api');
+        expect(queue.getState().search).toBe('');
+        expect(queue.getState().categories.length).toBe(1);
+        expect(ctx.activePlaylistQueue.length).toBeGreaterThan(2);
+    });
+
+    it('un «+ com aquesta» durant la ràdio de cerca continua dins dels resultats', () => {
+        const { queue, signals, ctx, results, bus } = searchRadio();
+        signals.moreLikeThis(ctx.activePlaylistQueue[0]);
+        bus.dispatchEvent(
+            new bus.CustomEvent('segueix:music-prefs-changed', { detail: { type: 'moreLike', on: true } })
+        );
+        queue.regenerate({ keepNext: true });
+        expect(ids(ctx.activePlaylistQueue).every(id => ids(results).includes(id))).toBe(true);
+    });
+});

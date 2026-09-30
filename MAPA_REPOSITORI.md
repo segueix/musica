@@ -249,6 +249,7 @@ Aquest document llista **tot el contingut versionat** del repositori (sortida de
 │   │   ├── navigation.js
 │   │   ├── player.js
 │   │   ├── search.js
+│   │   ├── search-results.js
 │   │   ├── shared-playlists.js
 │   │   ├── shorts.js
 │   │   └── support.js

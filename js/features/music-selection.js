@@ -874,6 +874,9 @@
         const preceding = toArray(options.preceding).length ? options.preceding : seed ? [seed] : [];
         const notes = [];
 
+        // «historic»: només música antiga. «search»: ràdio d'una cerca; usa les cançons trobades tal com són
+        // (sense mescla d'antiguitat), només ordenades pel gust de l'usuari i sense repetir artista seguit.
+        const eraFree = policy === 'historic' || policy === 'search';
         const hasEnough = knownArtistCount(signals) >= 3;
         // `mix`: { labels, tagOf } perquè la ràdio barregi diversos estils a parts iguals.
         const mix = options.mix && toArray(options.mix.labels).length > 1 ? options.mix : null;
@@ -893,14 +896,14 @@
                       mid: restTarget * (cfg.era.target.mid / (cfg.era.target.recent + cfg.era.target.mid)),
                       historic: historicTarget,
                   };
-        let maxHistoric = policy === 'historic' ? 999 : pref.maxHistoricTop;
+        let maxHistoric = eraFree ? 999 : pref.maxHistoricTop;
         const supply = { recent: 0, mid: 0, historic: 0 };
         const supplyArtists = { recent: new Set(), mid: new Set(), historic: new Set() };
         items.forEach(item => {
             supply[item.f.tier] += 1;
             supplyArtists[item.f.tier].add(item.f.artist);
         });
-        if (policy !== 'historic') {
+        if (!eraFree) {
             // Categoria amb poca música actual: es conserva la categoria i s'amplia amb catàleg històric.
             const modernSupport = Math.min(
                 supply.recent + supply.mid,
@@ -936,10 +939,10 @@
             ctx,
             count,
             preceding,
-            eraTargets: policy === 'historic' ? null : eraTargets,
+            eraTargets: eraFree ? null : eraTargets,
             famTargets: useFam ? famTargets : null,
             maxHistoric,
-            allowConsecutive: pref.allowConsecutive || policy === 'historic',
+            allowConsecutive: pref.allowConsecutive || eraFree,
             recentIds,
             recentTimes: recentTimesFrom(signals),
             now: ctx.now,

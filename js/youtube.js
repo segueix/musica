@@ -89,6 +89,8 @@ const YouTubeAPI = {
                 description: channel.description || '',
                 handle: channel.handle || '',
                 subscriberCount: channel.subscriberCount ?? null,
+                // Noms de l'artista a la base d'artistes: la cerca hi troba «Alfred Garcia» pel canal «alfredgarcia»
+                artists: Array.isArray(channel.artists) ? channel.artists : [],
                 categories: this.normalizeCategories([
                     ...(channel.categories || []),
                     ...(window.SegueixMusicCategories?.categoriesForChannel?.(id) || [])
