@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#141615">
+<title>Revisió d'artistes · Segueix Música</title>
+<style>
+:root{
+  --bg:#141615;--surface:#202421;--surface-2:#2a2f2b;--surface-3:#353b36;--text:#f4f0e8;--muted:#b9b5ac;
+  --accent:#d6ed84;--on-accent:#141615;--terracotta:#d98a70;--line:rgba(244,240,232,.14);--radius:14px;
+  color-scheme:dark;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text)}
+main{max-width:1100px;margin:0 auto;padding:20px 16px 90px}
+h1{margin:0 0 6px;font-family:Fraunces,"Iowan Old Style",Georgia,serif;font-size:clamp(1.7rem,6vw,2.4rem);letter-spacing:-.02em}
+.muted{color:var(--muted)}
+.steps{margin:10px 0 18px;padding:14px 16px 14px 34px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);line-height:1.55}
+.steps b{color:var(--accent)}
+.stats{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 14px}
+.stat{padding:10px 14px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);min-width:96px}
+.stat b{display:block;font-size:1.35rem}
+.toolbar{position:sticky;top:0;z-index:5;display:flex;flex-wrap:wrap;gap:8px;padding:10px 0;background:var(--bg)}
+button,input,select{font:inherit;color:var(--text)}
+input[type=search],input[type=text],select{min-height:44px;padding:0 12px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+input[type=search]{flex:1 1 200px}
+button{min-height:44px;padding:0 16px;border:1px solid var(--line);border-radius:12px;background:var(--surface);cursor:pointer;font-weight:700}
+button:hover{background:var(--surface-2)}
+button.primary{border-color:var(--accent);background:var(--accent);color:var(--on-accent)}
+button.primary:hover{background:#e2f49a}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.head,.row{display:grid;grid-template-columns:minmax(180px,1fr) minmax(240px,1.8fr) 76px;gap:12px;align-items:center}
+.head{padding:8px 14px;color:var(--muted);font-size:.8125rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.row{padding:12px 14px;margin-bottom:8px;border:1px solid var(--line);border-left:4px solid transparent;border-radius:var(--radius);background:var(--surface)}
+.row.changed{border-left-color:var(--terracotta)}
+.row.is-ok{border-left-color:var(--accent)}
+.row input[type=text]{width:100%;font-weight:700}
+.row .orig{margin-top:4px;font-size:.8125rem;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.chip{padding:5px 11px;border:1px solid var(--line);border-radius:999px;background:var(--surface-2);font-size:.8125rem;font-weight:700}
+.chip.none{border-style:dashed;color:var(--terracotta)}
+.edit-genres{min-height:36px;padding:0 12px;font-size:.8125rem}
+.okcell{display:flex;justify-content:center}
+.okcell label{display:grid;place-items:center;width:52px;height:44px;border:1px solid var(--line);border-radius:12px;cursor:pointer;background:var(--surface-2)}
+.okcell input{width:22px;height:22px;accent-color:var(--accent);cursor:pointer}
+.empty{padding:28px;text-align:center;color:var(--muted)}
+dialog{width:min(92vw,720px);padding:0;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);color:var(--text)}
+dialog::backdrop{background:rgba(0,0,0,.72)}
+.dhead,.dbody,.dfoot{padding:16px 18px}
+.dhead{display:flex;justify-content:space-between;gap:12px;align-items:center;border-bottom:1px solid var(--line)}
+.dfoot{display:flex;justify-content:flex-end;gap:8px;border-top:1px solid var(--line)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px}
+.choice{display:flex;gap:10px;align-items:center;min-height:44px;padding:0 12px;border:1px solid var(--line);border-radius:12px;background:var(--surface-2);cursor:pointer}
+.choice input{width:20px;height:20px;accent-color:var(--accent)}
+@media(max-width:760px){
+  .toolbar{position:static}
+  .head{display:none}
+  .row{grid-template-columns:1fr 64px;grid-template-areas:'name ok' 'genres genres'}
+  .row .namecell{grid-area:name}.row .genrescell{grid-area:genres}.row .okcell{grid-area:ok}
+}
+</style>
+</head>
+<body>
+<main>
+<h1>Revisió d'artistes</h1>
+<p class="muted">Només els artistes ben indexats (els que tenen canal de YouTube assignat). El nom que edites és <b>el que es veu a l'app</b>.</p>
+<ol class="steps">
+  <li><b>Edita</b> el nom i les categories del que calgui.</li>
+  <li>Marca <b>OK</b> els que ja estan bé tal com són.</li>
+  <li>Prem <b>Descarrega la revisió</b> i passa'm el fitxer: ho aplico jo.</li>
+</ol>
+<p class="muted" style="margin-top:-6px">El que fas es guarda en aquest navegador mentre treballes: pots tancar la pàgina i continuar més tard.</p>
+<div class="stats" id="stats"></div>
+<div class="toolbar">
+  <input id="q" type="search" placeholder="Cerca un artista…" aria-label="Cerca un artista">
+  <select id="filter" aria-label="Filtre">
+    <option value="">Tots</option>
+    <option value="pending">Sense OK</option>
+    <option value="changed">Amb canvis</option>
+    <option value="nogenres">Sense categoria</option>
+  </select>
+  <button id="download" class="primary" type="button">Descarrega la revisió</button>
+  <button id="csv" type="button">CSV</button>
+  <button id="reset" type="button">Esborra els canvis</button>
+</div>
+<div class="head" aria-hidden="true"><div>Nom</div><div>Categories</div><div style="text-align:center">OK</div></div>
+<div id="rows" role="list"></div>
+</main>
+
+<dialog id="dialog">
+  <div class="dhead"><div><b>Categories</b><br><span class="muted" id="dialogName"></span></div><button type="button" id="dialogClose" aria-label="Tanca">✕</button></div>
+  <div class="dbody"><p class="muted" style="margin-top:0">Pots triar-ne més d'una.</p><div class="grid" id="choices"></div></div>
+  <div class="dfoot"><button type="button" id="dialogCancel">Cancel·la</button><button type="button" class="primary" id="dialogSave">Desa</button></div>
+</dialog>
+
+<script src="js/revisio-artistes.js"></script>
+<script>
+const R=window.SegueixRevisioArtistes;
+const STORAGE='segueix_revisio_artistes_v1';
+let db=null,taxonomy=[],rows=[],editing=null,channelNames=new Map();
+
+const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function readDrafts(){try{return JSON.parse(localStorage.getItem(STORAGE)||'{}')||{}}catch(e){return {}}}
+function persist(){
+  const drafts={};
+  rows.forEach(r=>{const d=R.draftOf(r);if(d)drafts[r.key]=d});
+  try{localStorage.setItem(STORAGE,JSON.stringify(drafts))}catch(e){}
+}
+function rowByKey(key){return rows.find(r=>r.key===key)}
+
+function renderStats(){
+  const s=R.summarize(rows);
+  document.getElementById('stats').innerHTML=[
+    ['Artistes',s.total],['OK',s.ok+' / '+s.total],['Noms canviats',s.renamed],['Categories canviades',s.recategorized],['Sense categoria',s.withoutGenres]
+  ].map(x=>'<div class="stat"><b>'+x[1]+'</b><span class="muted">'+x[0]+'</span></div>').join('');
+}
+
+function visible(row){
+  const q=document.getElementById('q').value.trim().toLocaleLowerCase('ca');
+  const f=document.getElementById('filter').value;
+  const st=R.rowState(row);
+  if(q&&!(row.name.toLocaleLowerCase('ca').includes(q)||row.currentName.toLocaleLowerCase('ca').includes(q)||row.originalName.toLocaleLowerCase('ca').includes(q)))return false;
+  if(f==='pending'&&row.ok)return false;
+  if(f==='changed'&&!(st.nameChanged||st.genresChanged))return false;
+  if(f==='nogenres'&&row.genres.length)return false;
+  return true;
+}
+
+function rowHtml(row){
+  const st=R.rowState(row);
+  const changed=st.nameChanged||st.genresChanged;
+  const chips=row.genres.length?row.genres.map(g=>'<span class="chip">'+esc(g)+'</span>').join(''):'<span class="chip none">sense categoria</span>';
+  return '<div class="row'+(changed?' changed':'')+(row.ok?' is-ok':'')+'" role="listitem" data-key="'+esc(row.key)+'">'+
+    '<div class="namecell"><input type="text" class="name" value="'+esc(row.name)+'" maxlength="100" aria-label="Nom de l\'artista">'+
+      (st.nameChanged?'<div class="orig">Abans: '+esc(row.currentName)+'</div>':'')+'</div>'+
+    '<div class="genrescell"><div class="chips">'+chips+'<button type="button" class="edit-genres">Edita</button></div></div>'+
+    '<div class="okcell"><label title="Marca OK si ja està bé"><input type="checkbox" class="ok"'+(row.ok?' checked':'')+' aria-label="OK: '+esc(row.name)+'"></label></div></div>';
+}
+
+function render(){
+  renderStats();
+  const list=rows.filter(visible);
+  document.getElementById('rows').innerHTML=list.length?list.map(rowHtml).join(''):'<div class="empty">Cap artista amb aquest filtre.</div>';
+}
+
+function refreshRow(key){
+  // Repinta només la fila (així no es perd el focus d'un camp en teclejar)
+  renderStats();
+  const el=document.querySelector('.row[data-key="'+CSS.escape(key)+'"]');
+  const row=rowByKey(key);
+  if(!el||!row)return;
+  const st=R.rowState(row);
+  el.classList.toggle('changed',st.nameChanged||st.genresChanged);
+  el.classList.toggle('is-ok',row.ok);
+  const cell=el.querySelector('.namecell');
+  let orig=cell.querySelector('.orig');
+  if(st.nameChanged){if(!orig){orig=document.createElement('div');orig.className='orig';cell.appendChild(orig)}orig.textContent='Abans: '+row.currentName}
+  else if(orig)orig.remove();
+}
+
+document.getElementById('rows').addEventListener('input',e=>{
+  const rowEl=e.target.closest('.row');if(!rowEl)return;
+  const row=rowByKey(rowEl.dataset.key);if(!row)return;
+  if(e.target.classList.contains('name'))row.name=R.cleanName(e.target.value)||row.currentName;
+  persist();refreshRow(row.key);
+});
+document.getElementById('rows').addEventListener('change',e=>{
+  const rowEl=e.target.closest('.row');if(!rowEl)return;
+  const row=rowByKey(rowEl.dataset.key);if(!row)return;
+  if(e.target.classList.contains('ok')){row.ok=e.target.checked;persist();
+    if(document.getElementById('filter').value==='pending')render();else refreshRow(row.key)}
+});
+document.getElementById('rows').addEventListener('click',e=>{
+  if(!e.target.classList.contains('edit-genres'))return;
+  const row=rowByKey(e.target.closest('.row').dataset.key);if(!row)return;
+  editing=row;
+  document.getElementById('dialogName').textContent=row.name;
+  document.getElementById('choices').innerHTML=taxonomy.map(g=>'<label class="choice"><input type="checkbox" value="'+esc(g)+'"'+(row.genres.includes(g)?' checked':'')+'> <span>'+esc(g)+'</span></label>').join('');
+  document.getElementById('dialog').showModal();
+});
+function closeDialog(){editing=null;const d=document.getElementById('dialog');if(d.open)d.close()}
+document.getElementById('dialogClose').addEventListener('click',closeDialog);
+document.getElementById('dialogCancel').addEventListener('click',closeDialog);
+document.getElementById('dialog').addEventListener('cancel',e=>{e.preventDefault();closeDialog()});
+document.getElementById('dialogSave').addEventListener('click',()=>{
+  if(!editing)return closeDialog();
+  const picked=[...document.querySelectorAll('#choices input:checked')].map(x=>x.value);
+  editing.genres=R.normalizeGenres(picked,taxonomy);
+  persist();closeDialog();render();
+});
+
+function download(name,content,type){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([content],{type}));a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}
+const stamp=()=>new Date().toISOString().slice(0,10);
+document.getElementById('download').addEventListener('click',()=>{
+  const doc=R.buildExport(rows,{baseUpdatedAt:db.updatedAt});
+  download('revisio-artistes-'+stamp()+'.json',JSON.stringify(doc,null,2)+'\n','application/json');
+});
+document.getElementById('csv').addEventListener('click',()=>{
+  const q=v=>'"'+String(v).replaceAll('"','""')+'"';
+  const lines=[['nom','nom_actual','categories','ok'].join(',')].concat(rows.map(r=>[r.name,r.currentName,r.genres.join('|'),r.ok?'sí':''].map(q).join(',')));
+  download('revisio-artistes-'+stamp()+'.csv','﻿'+lines.join('\n')+'\n','text/csv;charset=utf-8');
+});
+document.getElementById('reset').addEventListener('click',()=>{
+  if(!confirm('Vols esborrar tots els canvis que has fet en aquest navegador?'))return;
+  try{localStorage.removeItem(STORAGE)}catch(e){}
+  rows=R.buildRows(db,{},taxonomy,channelNames);render();
+});
+document.getElementById('q').addEventListener('input',render);
+document.getElementById('filter').addEventListener('change',render);
+
+Promise.all([
+  fetch('data/artistes-musica.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('artistes '+r.status);return r.json()}),
+  fetch('data/music-genres.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('categories '+r.status);return r.json()}),
+  // Noms dels canals tal com els veu l'app (sense cap nom editat)
+  fetch('js/channels-ca.json',{cache:'no-store'}).then(r=>r.ok?r.json():{channels:[]}).catch(()=>({channels:[]}))
+]).then(([base,genres,channels])=>{
+  db=base;taxonomy=(genres.categories||[]).map(c=>c.label).filter(Boolean);
+  channelNames=new Map((channels.channels||[]).map(c=>[c.id,c.name]));
+  rows=R.buildRows(db,readDrafts(),taxonomy,channelNames);render();
+}).catch(e=>{document.getElementById('rows').innerHTML='<div class="empty">No s’han pogut carregar les dades: '+esc(e.message)+'</div>'});
+</script>
+</body>
+</html>

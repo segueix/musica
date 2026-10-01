@@ -27,7 +27,7 @@ L'automatisme conserva aquestes decisions.
 
 La pàgina `admin-musica.html` permet filtrar, aprovar i rebutjar candidats. Els canvis queden temporalment al navegador i es poden exportar com a JSON o CSV. El JSON exportat està preparat per substituir `data/artistes-musica.json`.
 
-## Revisió de noms i categories (`revisio-artistes.html`)
+## Revisió de noms i categories (`revisio-noms-artistes.html`)
 
 Pàgina senzilla per repassar només els artistes **ben indexats** (amb canal de YouTube assignat i no rebutjats; ara 155): una fila per artista amb el **nom que es veu a l'app** (editable; per defecte el del canal de YouTube: «alfredgarcia», «AUXILI»…), les **categories** (botó «Edita», es poden triar-ne diverses de la taxonomia `data/music-genres.json`) i una columna **OK** per marcar els que ja estan bé. El que es fa es desa al navegador (`segueix_revisio_artistes_v1`) fins que es prem **«Descarrega la revisió»** (JSON; també hi ha CSV). No escriu res al repositori ni demana cap token. Els noms dels canals els llegeix de `js/channels-ca.json`.
 
@@ -148,3 +148,7 @@ Categories actuals:
 `Altres` no s'assigna automàticament: si una etiqueta no es pot normalitzar amb prou claredat, queda a `enrichment.genres.unmappedRaw` per revisió.
 
 L'enriquiment usa Wikidata P136 i MusicBrainz `inc=genres`. MusicBrainz es torna a consultar com a màxim cada 90 dies, respectant el límit d'una petició per segon.
+
+## Revisió de títols de cançons (`revisio-cancons.html`)
+
+Llista totes les cançons publicades amb el títol que es veu a l'app, per editar-lo i baixar només els canvis (`revisio-cancons-AAAA-MM-DD.json`). `revisio-artistes.html` redirigeix a aquesta pàgina. Els canvis s'apliquen a mà (regla a `js/song-title.js` o excepció per vídeo); el feed no es toca.

@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#141615">
+<title>Revisió de cançons · Segueix Música</title>
+<style>
+:root{
+  --bg:#141615;--surface:#202421;--surface-2:#2a2f2b;--surface-3:#353b36;--text:#f4f0e8;--muted:#b9b5ac;
+  --accent:#d6ed84;--on-accent:#141615;--terracotta:#d98a70;--line:rgba(244,240,232,.14);--radius:14px;
+  color-scheme:dark;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text)}
+main{max-width:980px;margin:0 auto;padding:20px 16px 90px}
+h1{margin:0 0 6px;font-family:Fraunces,"Iowan Old Style",Georgia,serif;font-size:clamp(1.7rem,6vw,2.4rem);letter-spacing:-.02em}
+.muted{color:var(--muted)}
+.steps{margin:10px 0 18px;padding:14px 16px 14px 34px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);line-height:1.55}
+.steps b{color:var(--accent)}
+.stats{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 14px}
+.stat{padding:10px 14px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);min-width:96px}
+.stat b{display:block;font-size:1.35rem}
+.toolbar{position:sticky;top:0;z-index:5;display:flex;flex-wrap:wrap;gap:8px;padding:10px 0;background:var(--bg)}
+button,input,select{font:inherit;color:var(--text)}
+input[type=search],input[type=text],select{min-height:44px;padding:0 12px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+input[type=search]{flex:1 1 220px}
+button{min-height:44px;padding:0 16px;border:1px solid var(--line);border-radius:12px;background:var(--surface);cursor:pointer;font-weight:700}
+button:hover:not(:disabled){background:var(--surface-2)}
+button:disabled{opacity:.45;cursor:default}
+button.primary{border-color:var(--accent);background:var(--accent);color:var(--on-accent)}
+button.primary:hover:not(:disabled){background:#e2f49a}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.row{display:grid;grid-template-columns:minmax(0,1fr);gap:4px;padding:10px 14px;margin-bottom:8px;border:1px solid var(--line);border-left:4px solid transparent;border-radius:var(--radius);background:var(--surface)}
+.row.changed{border-left-color:var(--terracotta)}
+.row input[type=text]{width:100%;font-weight:700}
+.row .meta{font-size:.8125rem;color:var(--muted);overflow-wrap:anywhere}
+.row .meta b{color:var(--text);font-weight:600}
+.pager{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;margin:14px 0}
+.empty{padding:28px;text-align:center;color:var(--muted)}
+.status{margin:10px 0;color:var(--muted)}
+</style>
+</head>
+<body>
+<main>
+    <h1>Revisió de cançons</h1>
+    <p class="muted">Totes les cançons publicades a Segueix Música, amb el títol <b>tal com es veu a l'app</b>.</p>
+    <ol class="steps">
+        <li>Cerca una cançó o una artista i <b>edita el títol</b> a la caixa. Els canvis es desen sols en aquest navegador.</li>
+        <li>Quan acabis, prem <b>«Descarrega els canvis»</b>: es baixa un fitxer <code>revisio-cancons-AAAA-MM-DD.json</code> només amb les cançons que has editat.</li>
+        <li>Passa'm el fitxer i rectificaré els casos necessaris.</li>
+    </ol>
+    <div class="stats" id="stats" aria-live="polite"></div>
+    <div class="toolbar">
+        <input type="search" id="q" placeholder="Cerca per títol o artista…" aria-label="Cerca per títol o artista" autocomplete="off">
+        <select id="filter" aria-label="Filtre">
+            <option value="all">Totes</option>
+            <option value="changed">Només editades</option>
+        </select>
+        <select id="sort" aria-label="Ordre">
+            <option value="title">Ordena per títol</option>
+            <option value="artist">Ordena per artista</option>
+        </select>
+        <button type="button" class="primary" id="download">Descarrega els canvis</button>
+        <button type="button" id="reset">Esborra els canvis</button>
+    </div>
+    <p class="status" id="status" role="status">Carregant les cançons…</p>
+    <div id="list"></div>
+    <div class="pager" id="pager" hidden>
+        <button type="button" id="prev">← Anterior</button>
+        <span id="pageInfo" class="muted"></span>
+        <button type="button" id="next">Següent →</button>
+    </div>
+</main>
+<script src="js/song-title.js"></script>
+<script src="js/music-categories.js"></script>
+<script src="js/revisio-cancons.js"></script>
+<script>
+(function () {
+    'use strict';
+    const Rev = window.SegueixRevisioCancons;
+    const STORAGE_KEY = 'segueix_revisio_cancons_v1';
+    const PAGE_SIZE = 100;
+
+    const $ = id => document.getElementById(id);
+    let baseRows = [];
+    let drafts = {};
+    let page = 0;
+
+    function loadDrafts() {
+        try {
+            const value = JSON.parse(window.localStorage.getItem(STORAGE_KEY) || '{}');
+            return value && typeof value === 'object' ? value : {};
+        } catch (error) {
+            return {};
+        }
+    }
+
+    function saveDrafts() {
+        try {
+            window.localStorage.setItem(STORAGE_KEY, JSON.stringify(drafts));
+        } catch (error) {
+            /* sense emmagatzematge: els canvis es perden en tancar la pàgina */
+        }
+    }
+
+    const rows = () => Rev.withDrafts(baseRows, drafts);
+
+    function escapeHtml(value) {
+        return String(value ?? '').replace(/[&<>"']/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[ch]);
+    }
+
+    function renderStats() {
+        const s = Rev.summarize(rows());
+        $('stats').innerHTML = `<div class="stat"><b>${s.total}</b>cançons</div><div class="stat"><b>${s.changed}</b>editades</div>`;
+        $('download').disabled = s.changed === 0;
+        $('reset').disabled = s.changed === 0;
+    }
+
+    function render() {
+        const all = rows();
+        const list = Rev.filterRows(all, { query: $('q').value, filter: $('filter').value, sort: $('sort').value });
+        const pages = Math.max(1, Math.ceil(list.length / PAGE_SIZE));
+        page = Math.min(page, pages - 1);
+        const slice = list.slice(page * PAGE_SIZE, (page + 1) * PAGE_SIZE);
+        $('list').innerHTML = slice.length
+            ? slice
+                  .map(
+                      row => `<div class="row${Rev.isChanged(row) ? ' changed' : ''}" data-id="${escapeHtml(row.id)}">
+                <input type="text" value="${escapeHtml(row.title)}" data-id="${escapeHtml(row.id)}" aria-label="Títol de la cançó de ${escapeHtml(row.artist)}" spellcheck="false">
+                <div class="meta"><b>${escapeHtml(row.artist)}</b>${Rev.isChanged(row) ? ` · abans: ${escapeHtml(row.currentTitle)}` : ''}</div>
+            </div>`
+                  )
+                  .join('')
+            : '<div class="empty">No hi ha cap cançó amb aquest filtre.</div>';
+        $('pager').hidden = list.length <= PAGE_SIZE;
+        $('pageInfo').textContent = `Pàgina ${page + 1} de ${pages} · ${list.length} cançons`;
+        $('prev').disabled = page === 0;
+        $('next').disabled = page >= pages - 1;
+        $('status').textContent = list.length === all.length ? '' : `${list.length} de ${all.length} cançons`;
+        renderStats();
+    }
+
+    function onEdit(event) {
+        const input = event.target.closest('input[data-id]');
+        if (!input) return;
+        const id = input.dataset.id;
+        const base = baseRows.find(row => row.id === id);
+        if (!base) return;
+        if (Rev.cleanTitle(input.value) === base.currentTitle) delete drafts[id];
+        else drafts[id] = input.value;
+        saveDrafts();
+        const changed = Rev.cleanTitle(input.value) !== base.currentTitle;
+        const row = input.closest('.row');
+        row.classList.toggle('changed', changed);
+        const meta = row.querySelector('.meta');
+        meta.innerHTML = `<b>${escapeHtml(base.artist)}</b>${changed ? ` · abans: ${escapeHtml(base.currentTitle)}` : ''}`;
+        renderStats();
+    }
+
+    function download() {
+        const doc = Rev.buildExport(rows());
+        const blob = new Blob([JSON.stringify(doc, null, 2)], { type: 'application/json' });
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = `revisio-cancons-${new Date().toISOString().slice(0, 10)}.json`;
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+        setTimeout(() => URL.revokeObjectURL(link.href), 1000);
+    }
+
+    async function load() {
+        const music = window.SegueixMusicCategories;
+        const [feed, hidden] = await Promise.all([
+            fetch('data/feed.json', { cache: 'no-store' }).then(response => {
+                if (!response.ok) throw new Error('feed.json: HTTP ' + response.status);
+                return response.json();
+            }),
+            fetch('data/hidden-videos.json', { cache: 'no-store' })
+                .then(response => (response.ok ? response.json() : { videoIds: [] }))
+                .catch(() => ({ videoIds: [] })),
+            music.init(),
+        ]);
+        const channels = feed.channels && typeof feed.channels === 'object' ? feed.channels : {};
+        const hiddenIds = new Set((hidden.videoIds || []).map(id => String(id)));
+        // El mateix que fa l'app en carregar el feed (youtube.js): títol net i nom de l'artista que es veu
+        baseRows = Rev.buildRows({
+            videos: Array.isArray(feed.videos) ? feed.videos : [],
+            hiddenIds,
+            isEligible: music.isCategoryEligibleVideo,
+            decorate: video => {
+                const channel = channels[video.channelId];
+                const names = channel ? [channel.name, ...(Array.isArray(channel.artists) ? channel.artists : [])].filter(Boolean) : [];
+                return music.decorateVideo(video, names);
+            },
+        });
+        drafts = loadDrafts();
+        const known = new Set(baseRows.map(row => row.id));
+        Object.keys(drafts).forEach(id => !known.has(id) && delete drafts[id]);
+        render();
+    }
+
+    $('list').addEventListener('input', onEdit);
+    $('q').addEventListener('input', () => { page = 0; render(); });
+    $('filter').addEventListener('change', () => { page = 0; render(); });
+    $('sort').addEventListener('change', () => { page = 0; render(); });
+    $('prev').addEventListener('click', () => { page -= 1; render(); window.scrollTo({ top: 0 }); });
+    $('next').addEventListener('click', () => { page += 1; render(); window.scrollTo({ top: 0 }); });
+    $('download').addEventListener('click', download);
+    $('reset').addEventListener('click', () => {
+        if (!window.confirm('Esborrar tots els canvis d\'aquest navegador?')) return;
+        drafts = {};
+        saveDrafts();
+        render();
+    });
+    window.addEventListener('beforeunload', event => {
+        if (Object.keys(drafts).length) { event.preventDefault(); event.returnValue = ''; }
+    });
+
+    load().catch(error => {
+        $('status').textContent = 'No s\'ha pogut carregar el llistat: ' + error.message + '. Obre la pàgina des del web, no com a fitxer local.';
+    });
+})();
+</script>
+</body>
+</html>
