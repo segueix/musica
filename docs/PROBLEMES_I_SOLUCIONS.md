@@ -77,6 +77,18 @@
 
 **Fitxers Afectats:** `js/features/music-queue.js`, `css/portada.css`, `sw.js`, `CLAUDE.md`, tests.
 
+## [2026-10-01] - Judit Neddermann: cançons en castellà i en basc
+
+**Símptoma:** Al feed de Judit Neddermann hi havia cançons en castellà (l'àlbum *Aire* i part de *LAR*) i en basc (l'àlbum *Artean*).
+
+**Solució Implementada:** Revisats els 44 vídeos del seu canal; 19 nous a `data/hidden-videos.json` amb la regla `Judit Neddermann` de `scripts/ocultar_titols_castella.js`. **Castellà (12):** la alegría de vivir, Siento Que Vuela (×2), Como Un Amuleto, La Llave De La Alegría (×2), Llévame Contigo (×2), Vivo Viva, Canta, Luna, Celebrar (*Aire* és el seu primer disc en castellà; la lletra de «Celebrar» també ho és). **Basc (7):** Mendien Artean, Zure Ostean / Després de tu, Gorantza / Amunt, Ahizpa / Germana, Neurean / La Meva Llengua (×2), Lamiak / Dones d'aigua.
+
+**Trampes conegudes:** (1) Les cançons d'*Artean* tenen el títol en basc i en català (duets amb artistes bascos): s'han amagat totes perquè són bascos; per recuperar-ne alguna, treu-ne l'ID de `hidden-videos.json` i la paraula de la regla. (2) **No** s'ha tocat «Esperar» (*LAR*): no s'ha pogut verificar en quin idioma és. «misterio do som» és en gallec i no es va demanar. (3) `defaultAudioLanguage` no és fiable (Luna i Celebrar hi consten com `en`); el criteri ha estat l'àlbum i la lletra. (4) L'accent de «alegría» pot venir descomposat: la regla fa servir `alegr\S{1,2}a`.
+
+**Fitxers Afectats:** `data/hidden-videos.json`, `scripts/ocultar_titols_castella.js`, `tests/ocultar-titols-castella.test.js`.
+
+---
+
 ## [2026-10-01] - Mòbil: tocar qualsevol part d'una targeta de cançó la reprodueix
 
 **Símptoma:** Al mòbil, tocar el nom de l'artista d'una targeta obria la fitxa de l'artista en lloc de reproduir la cançó; a la portada, a més, només la imatge i el títol reproduïen (la resta de la targeta no feia res). Les files de les llistes desades no reproduïen en tocar-les.
