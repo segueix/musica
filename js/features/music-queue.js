@@ -593,7 +593,12 @@
         const pool = searchPool(videos, ARTIST_RADIO_POOL);
         const name = String(options.name || '').trim() || String(pool[0]?.channelTitle || '').trim();
         if (pool.length < 2 || !name) return false;
-        return launchPoolRadio(pool, pickPoolSeed(pool, options), { artist: name, channelId: options.channelId }, options);
+        return launchPoolRadio(
+            pool,
+            pickPoolSeed(pool, options),
+            { artist: name, channelId: options.channelId },
+            options
+        );
     }
 
     // Ràdio de l'estil (o de la combinació d'estils) d'un artista: la mateixa ràdio d'estil de la resta de l'app
@@ -644,7 +649,49 @@
         return launch(video, category);
     }
 
-    // «La teva ràdio»: tria la primera cançó segons el mode de descoberta i engega la ràdio.
+    // Gust recent de l'usuari (la darrera setmana o dies d'historial + m'agrades + seguits), o null sense el mòdul.
+    function feedChannels() {
+        try {
+            const feed = (typeof getFeedDataForFilter === 'function' && getFeedDataForFilter()) || currentFeedData;
+            return feed?.channels;
+        } catch (error) {
+            return undefined;
+        }
+    }
+
+    function recentTasteNow() {
+        const discovery = app.features.discovery;
+        if (!discovery?.recentTaste) return null;
+        try {
+            return discovery.recentTaste({ ...discovery.readAppContext(), channels: feedChannels() });
+        } catch (error) {
+            return null;
+        }
+    }
+
+    // Cançons d'on surt la PRIMERA cançó de «La teva ràdio», segons el mode: «Els meus de sempre» → artistes que has
+    // escoltat/agradat/seguit; «Una mica de tot» → aquests més els del seu estil; «Sorprèn-me» → el seu estil, però
+    // d'altres artistes. Amb poques cançons (< 5) es torna a un conjunt més ampli. La resta de la cua la fa el motor.
+    const MIN_SEED_POOL = 5;
+    function recentSeedPool(candidates, mode, taste) {
+        const discovery = app.features.discovery;
+        if (!taste?.hasAny || !taste.artistKeys?.size || !discovery?.artistKeyOf) return candidates;
+        const channels = discovery.normalizeChannels?.(feedChannels());
+        const known = item => taste.artistKeys.has(discovery.artistKeyOf(item));
+        const own = candidates.filter(known);
+        const styled = taste.styles.length
+            ? candidates.filter(item => discovery.stylesOf(item, channels).some(style => taste.styles.includes(style)))
+            : [];
+        let pool = own;
+        if (mode === 'mix') pool = [...new Set([...own, ...styled])];
+        else if (mode === 'surprise') pool = styled.filter(item => !known(item));
+        if (pool.length >= MIN_SEED_POOL) return pool;
+        return own.length >= MIN_SEED_POOL ? own : candidates;
+    }
+
+    // «La teva ràdio»: tria la primera cançó segons el que has escoltat aquests dies, el que t'agrada i segueixes
+    // (i el mode de descoberta) i engega la ràdio. La PRIMERA vegada —sense historial, m'agrades ni seguits— es fa
+    // amb els estils que l'usuari va triar (`catube_first_styles`).
     // No canvia res mentre l'usuari no ho demana: només s'invoca des d'un gest de l'usuari.
     // Retorna { started, note, mode } perquè la interfície pugui explicar què s'ha fet.
     function startDiscovery(options = {}) {
@@ -654,15 +701,32 @@
         const candidates = getCandidates(null, '');
         if (!candidates.length) return none;
 
+        const taste = recentTasteNow();
+        // Amb molt poques dades (menys de 3 artistes coneguts) manen els estils que va triar la primera vegada.
+        if (taste && taste.artistKeys.size < (app.features.discovery.MIN_KNOWN_ARTISTS || 3)) {
+            const chosen = app.features.discovery.getFirstStyles?.() || [];
+            if (chosen.length) {
+                const started = startStyleRadio(chosen, options);
+                return {
+                    started,
+                    note: started ? 'Ràdio amb els estils que vas triar: s’adaptarà a tu quan escoltis música.' : '',
+                    mode: 'none',
+                    seed: started ? activePlaylistQueue[0] || null : null,
+                };
+            }
+        }
+
         if (engineOn()) {
-            // «La teva ràdio»: la primera cançó també la tria el motor (gust, actualitat, rotació i mode).
+            // «La teva ràdio»: la primera cançó també la tria el motor (gust, actualitat, rotació i mode),
+            // entre les cançons del gust recent.
             const sel = engine();
             const ctx = sel.getAppContext(Array.isArray(currentFeedVideos) ? currentFeedVideos : candidates);
+            const mode = options.mode || app.features.discovery?.getMode?.() || 'mix';
             const first = sel.selectRadio({
                 ctx,
-                candidates,
+                candidates: recentSeedPool(candidates, mode, taste),
                 signals: selectionSignals(),
-                mode: options.mode || app.features.discovery?.getMode?.() || 'mix',
+                mode,
                 count: 1,
                 now: Date.now(),
                 rng: options.rng || Math.random,
@@ -813,7 +877,6 @@
             // Entorn sense esdeveniments (proves)
         }
     }
-
 
     // Nom de la ràdio d'un conjunt tancat: «Ràdio de <artista>» o «Cerca: <text>» (buit si no n'és cap).
     function searchRadioName() {

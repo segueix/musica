@@ -56,7 +56,11 @@ describe('preferència del mode de descoberta', () => {
     it('per defecte és «Una mica de tot»', () => {
         const { discovery } = load();
         expect(discovery.getMode()).toBe('mix');
-        expect(discovery.MODES.map(mode => mode.label)).toEqual(['Els meus de sempre', 'Una mica de tot', 'Sorprèn-me']);
+        expect(discovery.MODES.map(mode => mode.label)).toEqual([
+            'Els meus de sempre',
+            'Una mica de tot',
+            'Sorprèn-me',
+        ]);
     });
 
     it('es desa a localStorage amb el prefix catube_ (així viatja amb la configuració)', () => {
@@ -373,5 +377,81 @@ describe('«Tria el teu so»', () => {
         });
         expect(styles.map(style => style.label)).toEqual(['Pop', 'Jazz / Blues']);
         expect(styles[1].primary).toBe(false);
+    });
+});
+
+describe('gust recent (La teva ràdio)', () => {
+    const played = (channelId, daysAgo) =>
+        song(channelId, 5, { viewedAt: new Date(NOW - daysAgo * DAY).toISOString() });
+
+    it('fa servir la darrera setmana i compta escoltes, m’agrades i seguits', () => {
+        const { discovery } = load();
+        const history = [played('A', 1), played('B', 2), played('C', 3), played('D', 20)];
+        const taste = discovery.recentTaste({
+            history,
+            liked: [song('E')],
+            followedIds: ['F'],
+            channels,
+            now: NOW,
+        });
+        expect(taste.windowDays).toBe(7);
+        expect(taste.plays).toBe(3);
+        expect(taste.liked).toBe(1);
+        expect(taste.followed).toBe(1);
+        expect([...taste.artistKeys].sort()).toEqual(['a', 'b', 'c', 'e', 'f']);
+        expect(taste.hasAny).toBe(true);
+        expect(taste.styles.length).toBeGreaterThan(0);
+    });
+
+    it('amplia la finestra a un mes i, si encara hi ha poca cosa, a tot l’historial', () => {
+        const { discovery } = load();
+        const month = discovery.recentTaste({
+            history: [played('A', 10), played('B', 15), played('C', 25)],
+            channels,
+            now: NOW,
+        });
+        expect(month.windowDays).toBe(30);
+        expect(month.plays).toBe(3);
+        const all = discovery.recentTaste({ history: [played('A', 90), played('B', 120)], channels, now: NOW });
+        expect(all.windowDays).toBe(0);
+        expect(all.plays).toBe(2);
+    });
+
+    it('sense res (primera vegada) no hi ha gust', () => {
+        const { discovery } = load();
+        const taste = discovery.recentTaste({ history: [], liked: [], followedIds: [], channels, now: NOW });
+        expect(taste.hasAny).toBe(false);
+        expect(taste.artistKeys.size).toBe(0);
+        expect(discovery.tasteSummary(taste)).toBe('');
+    });
+
+    it('el resum diu de què està feta la ràdio, amb els recomptes reals', () => {
+        const { discovery } = load();
+        const text = discovery.tasteSummary({ hasAny: true, windowDays: 7, plays: 14, liked: 5, followed: 3 });
+        expect(text).toBe(
+            'Feta amb el que has escoltat aquesta setmana (14 cançons), els teus m’agrades (5) i els artistes que segueixes (3).'
+        );
+        expect(discovery.tasteSummary({ hasAny: true, windowDays: 30, plays: 1, liked: 0, followed: 0 })).toBe(
+            'Feta amb el que has escoltat aquest mes (1 cançó).'
+        );
+        expect(discovery.tasteSummary({ hasAny: true, windowDays: 0, plays: 0, liked: 2, followed: 1 })).toBe(
+            'Feta amb els teus m’agrades (2) i els artistes que segueixes (1).'
+        );
+    });
+
+    it('els estils de la primera vegada es desen, es normalitzen i no passen de tres', () => {
+        const { discovery, localStorage } = load();
+        expect(discovery.getFirstStyles()).toEqual([]);
+        expect(discovery.setFirstStyles(['pop', 'Rock', 'inventat', 'Indie', 'Urbana'])).toEqual([
+            'Pop',
+            'Rock',
+            'Indie',
+        ]);
+        expect(JSON.parse(localStorage.getItem('catube_first_styles'))).toEqual(['Pop', 'Rock', 'Indie']);
+        expect(discovery.getFirstStyles()).toEqual(['Pop', 'Rock', 'Indie']);
+        expect(discovery.setFirstStyles([])).toEqual([]);
+        expect(localStorage.getItem('catube_first_styles')).toBeNull();
+        expect(discovery.choosableStyles()).not.toContain('Altres estils');
+        expect(discovery.choosableStyles()).toContain('Pop');
     });
 });

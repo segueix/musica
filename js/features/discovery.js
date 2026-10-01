@@ -670,6 +670,127 @@
         return { history, liked, followedIds, hiddenIds: new Set(hidden.map(id => String(id))) };
     }
 
+    // ---------- Gust recent: de què es fa «La teva ràdio» ----------
+
+    // Estils que tria l'usuari la PRIMERA vegada (quan encara no hi ha historial, m'agrades ni seguits). Es desen
+    // (viatgen amb l'exportació) i només s'usen mentre no hi hagi cap altra dada.
+    const FIRST_STYLES_KEY = 'catube_first_styles';
+    const MAX_FIRST_STYLES = 3;
+    // Finestra de l'historial per a la ràdio: la darrera setmana; si hi ha poca cosa, l'últim mes; si encara
+    // n'hi ha menys, tot l'historial. Els m'agrades i els artistes seguits no tenen data: sempre compten.
+    const RECENT_DAYS = 7;
+    const WIDE_DAYS = 30;
+    const MIN_RECENT_PLAYS = 3;
+
+    // Estils que es poden triar (sense «Altres estils», que és un calaix).
+    const choosableStyles = () => styleLabels().filter(label => label !== 'Altres estils');
+
+    function getFirstStyles() {
+        try {
+            const raw = JSON.parse(window.localStorage?.getItem?.(FIRST_STYLES_KEY) || '[]');
+            return unique(toArray(raw).map(canonicalStyle).filter(Boolean)).slice(0, MAX_FIRST_STYLES);
+        } catch (error) {
+            return [];
+        }
+    }
+
+    function setFirstStyles(list) {
+        const styles = unique(toArray(list).map(canonicalStyle).filter(Boolean)).slice(0, MAX_FIRST_STYLES);
+        try {
+            if (styles.length) window.localStorage?.setItem?.(FIRST_STYLES_KEY, JSON.stringify(styles));
+            else window.localStorage?.removeItem?.(FIRST_STYLES_KEY);
+        } catch (error) {
+            // Sense emmagatzematge: només val per a aquesta sessió
+        }
+        return styles;
+    }
+
+    // Què ha escoltat, agradat i seguit l'usuari «aquests dies». Pur (el temps entra per `now`).
+    // → { windowDays (7 | 30 | 0 = tot), plays, liked, followed, artistKeys, styles, topArtists, hasAny, hasRecent }
+    function recentTaste({ history, liked, followedIds, channels, now = Date.now() } = {}) {
+        const channelMap = normalizeChannels(channels);
+        const played = toArray(history).filter(video => video && !video.isShort);
+        const timeOf = video => new Date(video.viewedAt || 0).getTime() || 0;
+        const within = days => played.filter(video => timeOf(video) > 0 && now - timeOf(video) <= days * DAY_MS);
+        let windowDays = RECENT_DAYS;
+        let recent = within(RECENT_DAYS);
+        if (recent.length < MIN_RECENT_PLAYS) {
+            windowDays = WIDE_DAYS;
+            recent = within(WIDE_DAYS);
+        }
+        if (recent.length < MIN_RECENT_PLAYS) {
+            windowDays = 0;
+            recent = played;
+        }
+        const likedVideos = toArray(liked).filter(video => video && !video.isShort);
+        const followed = unique(
+            toArray(followedIds)
+                .map(id =>
+                    String(id || '')
+                        .trim()
+                        .toLowerCase()
+                )
+                .filter(Boolean)
+        );
+
+        const weight = new Map();
+        const names = new Map();
+        const addArtist = (key, points, name) => {
+            if (!key) return;
+            weight.set(key, (weight.get(key) || 0) + points);
+            if (name && !names.has(key)) names.set(key, String(name));
+        };
+        const stylePoints = new Map();
+        const addStyles = (list, points) =>
+            list.forEach(style => stylePoints.set(style, (stylePoints.get(style) || 0) + points));
+        recent.forEach(video => {
+            addArtist(artistKeyOf(video), 1, video.channelTitle || video.snippet?.channelTitle);
+            addStyles(stylesOf(video, channelMap), 1);
+        });
+        likedVideos.forEach(video => {
+            addArtist(artistKeyOf(video), 2, video.channelTitle || video.snippet?.channelTitle);
+            addStyles(stylesOf(video, channelMap), 2);
+        });
+        followed.forEach(key => {
+            const channel = channelMap.get(key);
+            addArtist(key, 3, channel?.name || channel?.title);
+            addStyles(toArray(channel?.categories).map(canonicalStyle).filter(Boolean), 2);
+        });
+
+        const byWeight = list => [...list].sort((a, b) => b[1] - a[1]);
+        return {
+            windowDays,
+            plays: recent.length,
+            liked: likedVideos.length,
+            followed: followed.length,
+            artistKeys: new Set(weight.keys()),
+            styles: byWeight(stylePoints)
+                .slice(0, 3)
+                .map(([style]) => style),
+            topArtists: byWeight(weight)
+                .map(([key]) => names.get(key))
+                .filter(Boolean)
+                .slice(0, 3),
+            hasAny: recent.length > 0 || likedVideos.length > 0 || followed.length > 0,
+            hasRecent: recent.length > 0,
+        };
+    }
+
+    // Text de la targeta «La teva ràdio»: de què està feta (en català, amb els recomptes reals).
+    function tasteSummary(taste) {
+        if (!taste?.hasAny) return '';
+        const parts = [];
+        if (taste.plays > 0) {
+            const count = taste.plays === 1 ? '1 cançó' : `${taste.plays} cançons`;
+            const when = taste.windowDays === 7 ? ' aquesta setmana' : taste.windowDays === 30 ? ' aquest mes' : '';
+            parts.push(`el que has escoltat${when} (${count})`);
+        }
+        if (taste.liked > 0) parts.push(`els teus m’agrades (${taste.liked})`);
+        if (taste.followed > 0) parts.push(`els artistes que segueixes (${taste.followed})`);
+        const joined = parts.length > 1 ? `${parts.slice(0, -1).join(', ')} i ${parts[parts.length - 1]}` : parts[0];
+        return `Feta amb ${joined}.`;
+    }
+
     // Perfil de l'usuari a partir del que hi ha desat al dispositiu.
     function getProfile(channels) {
         const context = readAppContext();
@@ -696,6 +817,13 @@
         buildProfile,
         getProfile,
         readAppContext,
+        recentTaste,
+        tasteSummary,
+        choosableStyles,
+        getFirstStyles,
+        setFirstStyles,
+        FIRST_STYLES_KEY,
+        MAX_FIRST_STYLES,
         familiarity,
         styleAffinity,
         orderForMode,

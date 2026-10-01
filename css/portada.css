@@ -923,9 +923,9 @@ body:has(#homePage.is-portada) .category-selector {
 }
 
 .pt-radio__covers img {
-    width: 64px;
-    height: 64px;
-    margin-left: -26px;
+    width: 56px;
+    height: 56px;
+    margin-left: -22px;
     border: 2px solid var(--pt-surface);
     border-radius: var(--pt-radius-sm);
     object-fit: cover;
@@ -938,7 +938,7 @@ body:has(#homePage.is-portada) .category-selector {
 }
 
 .pt-radio__covers img:nth-child(2) {
-    transform: translateY(8px) rotate(2deg);
+    transform: translateY(4px) rotate(2deg);
 }
 
 .pt-radio__covers img:nth-child(3) {
@@ -967,6 +967,91 @@ body:has(#homePage.is-portada) .category-selector {
     color: var(--pt-muted);
     font-size: 0.9375rem;
     line-height: 1.45;
+}
+
+/* Primera vegada: estils per començar (només es demanen aquest cop) */
+.pt-first {
+    margin: 0 0 14px;
+}
+
+.pt-first[hidden] {
+    display: none;
+}
+
+.pt-first__chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.pt-chip {
+    min-height: 44px;
+    padding: 0 16px;
+    border: 1px solid var(--pt-line);
+    border-radius: var(--pt-radius-sm);
+    background: rgba(20, 22, 21, 0.55);
+    color: var(--pt-text);
+    font: inherit;
+    font-size: 0.875rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition:
+        background 0.15s ease,
+        border-color 0.15s ease,
+        color 0.15s ease;
+}
+
+.pt-chip[hidden] {
+    display: none;
+}
+
+.pt-chip--more {
+    border-style: dashed;
+    color: var(--pt-muted);
+}
+
+.pt-chip:hover {
+    border-color: rgba(244, 240, 232, 0.4);
+    background: var(--pt-surface-2);
+}
+
+.pt-chip[aria-pressed='true'] {
+    border-color: var(--pt-accent);
+    background: var(--pt-accent);
+    color: var(--pt-on-accent);
+}
+
+.pt-chip:focus-visible,
+.pt-link:focus-visible {
+    outline: 3px solid var(--pt-accent);
+    outline-offset: 3px;
+}
+
+.pt-first__note {
+    margin: 10px 0 0;
+    color: var(--pt-muted);
+    font-size: 0.8125rem;
+    line-height: 1.4;
+}
+
+/* Enllaç discret (text subratllat) */
+.pt-link {
+    min-height: 44px;
+    margin: 6px 0 0;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--pt-accent);
+    font: inherit;
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+}
+
+.pt-link[hidden] {
+    display: none;
 }
 
 .pt-entry__cta {
@@ -3649,7 +3734,8 @@ body .follow-btn-pill.is-followed:hover {
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .ap-radio {
+    .ap-radio,
+    .pt-chip {
         transition: none;
     }
 }

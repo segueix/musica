@@ -17,6 +17,7 @@
 //   5) Una ràdio compartida s'obre i es posa a sonar; una llista amb apòstrof al nom es comparteix per ID.
 
 const http = require('http');
+const { ambGustRecent } = require('./gust-recent');
 const fs = require('fs');
 const os = require('os');
 const path = require('path');
@@ -177,6 +178,7 @@ async function sembrar(page) {
 }
 
 async function engegarRadio(page) {
+    await ambGustRecent(page);
     await page.click('#ptPlayBtn');
     await page.waitForFunction(() => document.querySelectorAll('#videoPlayer iframe').length === 1, null, {
         timeout: 20000,

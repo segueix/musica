@@ -9,6 +9,7 @@
 // Ús:  node tests/browser/verificar-play-pausa.js
 
 const http = require('http');
+const { ambGustRecent } = require('./gust-recent');
 const fs = require('fs');
 const path = require('path');
 
@@ -117,6 +118,7 @@ async function novaPagina(browser, width, errors) {
             if (dades?.event === '__command') window.__ordres.push(dades.func);
         });
     });
+    await ambGustRecent(page);
     await page.click('#ptPlayBtn');
     await page.waitForSelector('#videoPlayer iframe', { timeout: 20000 });
     await page.waitForFunction(() => document.getElementById('videoPlayer')?.dataset?.playerState === '1', null, {

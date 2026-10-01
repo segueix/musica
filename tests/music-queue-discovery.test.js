@@ -234,3 +234,51 @@ describe('reproduir una selecció', () => {
         expect(ctx.activePlaylistQueue[0].id).toBe(catalog[0].id);
     });
 });
+
+describe('«La teva ràdio»: gust recent i primera vegada', () => {
+    const recent = id => ({ ...catalog.find(v => v.channelId === id), viewedAt: new Date().toISOString() });
+
+    it('la primera vegada, amb estils triats, fa una ràdio d’aquells estils', () => {
+        const env = setup({ mode: 'home' });
+        env.discovery.setFirstStyles(['Pop']);
+        const result = env.queue.startDiscovery();
+        expect(result.started).toBe(true);
+        expect(result.mode).toBe('none');
+        expect(result.note).toMatch(/estils que vas triar/);
+        expect(env.queue.getState().categories).toEqual(['Pop']);
+        expect(env.calls.loaded).toBe(1);
+    });
+
+    it('amb molt poques dades (< 3 artistes) continuen manant els estils triats', () => {
+        const env = setup({ history: [recent('A'), recent('B')], mode: 'mix' });
+        env.discovery.setFirstStyles(['Pop']);
+        env.queue.startDiscovery();
+        expect(env.queue.getState().categories).toEqual(['Pop']);
+    });
+
+    it('amb prou historial ja no mana l’elecció: la ràdio és general i es fa del gust recent', () => {
+        const env = setup({ history: knownHistory, mode: 'home' });
+        env.discovery.setFirstStyles(['Pop']);
+        const result = env.queue.startDiscovery();
+        expect(result.started).toBe(true);
+        expect(result.mode).toBe('home');
+        expect(env.queue.getState().categories).toEqual([]);
+        expect(known).toContain(env.ctx.activePlaylistQueue[0].channelId);
+    });
+
+    it('«Els meus de sempre» comença per un artista de la darrera setmana', () => {
+        const env = setup({ history: knownHistory, mode: 'home' });
+        for (let i = 0; i < 6; i++) {
+            const { ctx, queue } = setup({ history: knownHistory, mode: 'home' });
+            queue.startDiscovery();
+            expect(known).toContain(ctx.activePlaylistQueue[0].channelId);
+        }
+        expect(env.queue.startDiscovery().started).toBe(true);
+    });
+
+    it('un artista seguit compta per al gust encara que no s’hagi escoltat', () => {
+        const { ctx, queue } = setup({ history: knownHistory.slice(0, 3), followed: ['D'], mode: 'home' });
+        queue.startDiscovery();
+        expect(known).toContain(ctx.activePlaylistQueue[0].channelId);
+    });
+});
