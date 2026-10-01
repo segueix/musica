@@ -13,6 +13,16 @@
 
 **Fitxers Afectats:**
 
+## [2026-10-01] - Desplaçament més fluid dels Shorts al mòbil
+
+**Causa:** Cada `touchmove` escrivia directament al panell. Els gestos molt ràpids sense `touchmove` passaven per una navegació discreta amb bloqueig de 800 ms. Les animacions de retorn i de canvi deixaven temporitzadors vius: després de tancar/reobrir el visor o començar un altre gest, un callback anterior podia moure el panell o canviar l'índex. Els gestos horitzontals sense `touchmove` podien navegar.
+
+**Solució:** `shorts.js` agrupa les posicions amb `requestAnimationFrame`, memoritza l'alçada al començament del gest i usa `translate3d`. En deixar anar, anul·la el frame pendent abans de l'aterratge; la distància i la velocitat recent decideixen el canvi i una durada de 120–240 ms. La roda i els gestos sense `touchmove` passen per la mateixa navegació animada, sense l'espera fixa de 800 ms. Hi ha un únic controlador cancel·lable d'animació (listener i temporitzador), netejat en tancar el visor; el destapat no afegeix 120 ms quan el vídeo ja sona. Es manté un sol iframe reutilitzat, amb `loadVideoById` dins del gest, el consentiment, la pausa per toc, el guard del ratolí emulat i la continuació de llistes mixtes. Els senyals de reproducció només es prenen de l'iframe dels Shorts.
+
+**Validació:** `tests/shorts-scroll.test.js`: 13 proves de comportament; amb `shorts-polish.test.js`, 16 proves passen. `tests/browser/verificar-shorts-scroll.js`: Chromium amb gestos tàctils via CDP, viewport 390×844, animacions normals i moviment reduït; seguiment del dit, dos canvis consecutius, cancel·lació, pausa i reobertura passen sense errors de JavaScript. La prova usa un succedani de YouTube i no mesura el buffering de la xarxa ni el rendiment d'un telèfon físic. ESLint de `shorts.js`: cap error ni avís. La bateria general i el lint global continuen trobant errors previs en altres mòduls, reproduïts amb el codi original (incloent tests que exigeixen versions antigues fixes del service worker).
+
+**Fitxers:** `js/features/shorts.js`, `css/styles.css`, `sw.js` (hash regenerat amb `npm run sw:version`), les dues proves noves i aquest document.
+
 ## [2026-10-01] - El play/pausa del reproductor (normal i flotant) sovint no reaccionava
 
 **Símptoma:** Tocar o clicar per pausar/reprendre el vídeo, al reproductor gran i a la finestra flotant, sovint no feia res.

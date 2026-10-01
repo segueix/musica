@@ -149,7 +149,9 @@
     // conté l'iframe real; els panells veïns i el pòster del panell central mostren
     // la caràtula del Short mentre dura la transició, tapant el canvi de vídeo perquè
     // no es vegi cap salt.
-    const SHORT_SLIDE_MS = 280;
+    const SHORT_SLIDE_MS = 240;
+    let cancelStripAnimation = null;
+    let cancelShortGesture = null;
     let stripEls = null;
     let currentPosterTimer = null;
     // Bloqueja el destapat del pòster mentre el strip llisca (perquè el vídeo nou, que
@@ -212,7 +214,6 @@
         setPanelPoster(els.posterCurrent, video);
         els.posterCurrent.style.transition = 'none';
         els.posterCurrent.style.opacity = '1';
-        void els.posterCurrent.offsetWidth; // reflow perquè el fade posterior s'animi
     }
 
     // Destapa el vídeo (fon el pòster central) quan el Short ja s'està reproduint.
@@ -229,10 +230,45 @@
 
     // Recol·loca el strip al panell central sense animació.
     function resetStripPosition() {
+        cancelStripAnimation?.();
+        cancelShortGesture?.();
         const els = getStripEls();
         if (!els.strip) return;
         els.strip.classList.remove('is-sliding');
-        els.strip.style.transform = 'translateY(0)';
+        els.strip.style.transform = 'translate3d(0, 0, 0)';
+    }
+
+    // Una sola animació viva: en tancar o reprendre un gest no queda cap callback
+    // antic que recol·loqui el panell o canviï l'índex de la nova sessió.
+    function animateStripTo(transform, duration, onFinish = () => {}) {
+        const { strip } = getStripEls();
+        if (!strip) return;
+        cancelStripAnimation?.();
+        const reducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+        const slideMs = reducedMotion ? 0 : duration;
+        strip.style.setProperty('--short-slide-ms', `${slideMs}ms`);
+        // Consolida l'últim frame del dit abans d'activar la transició. Aquesta lectura
+        // es fa només en deixar anar, mai a cada touchmove.
+        void strip.offsetWidth;
+        const cancel = () => {
+            clearTimeout(timer);
+            strip.removeEventListener('transitionend', onEnd);
+            strip.classList.remove('is-sliding');
+            if (cancelStripAnimation === cancel) cancelStripAnimation = null;
+        };
+        const finish = () => {
+            if (cancelStripAnimation !== cancel) return;
+            cancel();
+            onFinish();
+        };
+        const onEnd = (event) => {
+            if (event.target === strip && event.propertyName === 'transform') finish();
+        };
+        cancelStripAnimation = cancel;
+        strip.addEventListener('transitionend', onEnd);
+        strip.classList.add('is-sliding');
+        strip.style.transform = transform;
+        const timer = setTimeout(finish, slideMs + 50);
     }
 
     // Carrega i reprodueix el vídeo del Short a l'iframe (NOMÉS reproducció, sense UI).
@@ -403,32 +439,7 @@
 
     function handleScrollIntent(direction) {
         if (isNavigatingShort) return;
-
-        const newIndex = currentShortIndex + direction;
-
-        if (newIndex >= 0 && newIndex < currentShortsQueue.length) {
-            isNavigatingShort = true;
-
-            if (isPlaylistMode) {
-                currentPlaylistIndex = newIndex;
-                const nextVideo = currentShortsQueue[newIndex];
-
-                if (nextVideo && !nextVideo.isShort) {
-                    closeShortModalImpl();
-                    loadVideoInSequence();
-                    setTimeout(() => {
-                        isNavigatingShort = false;
-                    }, 800);
-                    return;
-                }
-            }
-
-            currentShortIndex = newIndex;
-            loadShort(currentShortIndex);
-            setTimeout(() => {
-                isNavigatingShort = false;
-            }, 800);
-        }
+        if (direction === 1 || direction === -1) commitSlide(direction);
     }
 
     function triggerShortScrollHint() {
@@ -463,6 +474,7 @@
         shortMessageBound = true;
         window.addEventListener('message', (event) => {
             if (!event.origin || !/youtube(-nocookie)?\.com/.test(event.origin)) return;
+            if (event.source !== document.getElementById('short-iframe')?.contentWindow) return;
             const modal = document.getElementById('short-modal');
             if (!modal || modal.classList.contains('hidden')) return;
             let data = event.data;
@@ -487,7 +499,7 @@
 
     // Confirma la transició cap al Short veí: anima el strip fins al panell destí,
     // recol·loca el central darrere del pòster i carrega el nou vídeo.
-    function commitSlide(direction) {
+    function commitSlide(direction, duration = SHORT_SLIDE_MS) {
         const els = getStripEls();
         const newIndex = currentShortIndex + direction;
 
@@ -538,21 +550,12 @@
             return;
         }
 
-        els.strip.classList.add('is-sliding');
-        els.strip.style.transform = `translateY(${direction < 0 ? '100%' : '-100%'})`;
-
-        let done = false;
         const finish = () => {
-            if (done) return;
-            done = true;
-            els.strip.removeEventListener('transitionend', onEnd);
-
             // Tapa el panell central amb la caràtula del nou Short abans de recol·locar-lo,
             // de manera que el reajust al centre sigui imperceptible.
             coverWithPoster(targetShort);
             els.strip.classList.remove('is-sliding');
-            els.strip.style.transform = 'translateY(0)';
-            void els.strip.offsetWidth; // reflow
+            els.strip.style.transform = 'translate3d(0, 0, 0)';
 
             currentShortIndex = newIndex;
             if (isPlaylistMode) currentPlaylistIndex = newIndex;
@@ -562,16 +565,11 @@
             revealLocked = false;
             // Si ja reprodueix, destapa de seguida; si encara no, el listener de
             // reproducció el destaparà (amb aquest timeout de recanvi).
-            scheduleReveal(shortIsPlaying ? 120 : 650);
+            if (shortIsPlaying) revealCurrentVideo();
+            else scheduleReveal(650);
             isNavigatingShort = false;
         };
-        const onEnd = (ev) => {
-            if (ev && ev.target !== els.strip) return;
-            finish();
-        };
-        els.strip.addEventListener('transitionend', onEnd);
-        // Xarxa de seguretat si transitionend no es dispara.
-        setTimeout(finish, SHORT_SLIDE_MS + 120);
+        animateStripTo(`translate3d(0, ${direction < 0 ? '100%' : '-100%'}, 0)`, duration, finish);
     }
 
     function setupShortScroll() {
@@ -590,6 +588,13 @@
         let isDragging = false;
         let axisLocked = false;
         let isVerticalDrag = false;
+        let gestureHeight = 1;
+        let frameId = null;
+        let pendingOffset = 0;
+        let lastY = 0;
+        let lastMoveAt = 0;
+        let velocity = 0;
+        let activeTouchId = null;
         // Timestamp de l'últim esdeveniment tàctil. Els navegadors mòbils (Android/iOS)
         // disparen esdeveniments de ratolí "emulats" (mousedown/mouseup) uns ~300ms
         // després d'un touchend no cancel·lat. Com que els listeners tàctils són passius
@@ -602,7 +607,7 @@
         const AXIS_LOCK_PX = 8;
         const FLICK_MS = 320;
         const FLICK_DISTANCE = 40;
-        const commitDistance = () => Math.max(60, playerWrap.clientHeight * 0.16);
+        const commitDistance = () => Math.max(60, gestureHeight * 0.16);
 
         const isEmulatedMouseEvent = (e) =>
             (e.type === 'mousedown' || e.type === 'mouseup') &&
@@ -620,27 +625,59 @@
         const setStripOffset = (offsetPx) => {
             const els = getStripEls();
             if (!els.strip) return;
-            els.strip.classList.remove('is-sliding');
-            els.strip.style.transform = `translateY(${offsetPx}px)`;
+            els.strip.style.transform = `translate3d(0, ${offsetPx}px, 0)`;
+        };
+
+        // Els mòbils poden enviar més touchmove que frames. Pinta només l'última
+        // posició de cada frame i cancel·la'l abans d'iniciar l'animació d'aterratge.
+        const flushOffset = () => {
+            if (frameId !== null) window.cancelAnimationFrame(frameId);
+            frameId = null;
+            setStripOffset(pendingOffset);
+        };
+        const queueOffset = (offset) => {
+            pendingOffset = withBoundaryResistance(Math.max(-gestureHeight, Math.min(gestureHeight, offset)));
+            if (frameId !== null) return;
+            frameId = window.requestAnimationFrame(() => {
+                frameId = null;
+                setStripOffset(pendingOffset);
+            });
+        };
+        cancelShortGesture = () => {
+            if (frameId !== null) window.cancelAnimationFrame(frameId);
+            frameId = null;
+            isDragging = false;
+            activeTouchId = null;
         };
 
         const springBack = () => {
             const els = getStripEls();
             if (!els.strip) return;
-            els.strip.classList.add('is-sliding');
-            els.strip.style.transform = 'translateY(0)';
-            setTimeout(() => {
-                if (els.strip) els.strip.classList.remove('is-sliding');
-            }, SHORT_SLIDE_MS + 40);
+            flushOffset();
+            animateStripTo('translate3d(0, 0, 0)', 180);
         };
 
         const handleStart = (e) => {
             if (isEmulatedMouseEvent(e)) return;
             if (e.type === 'touchstart') lastTouchTime = Date.now();
             if (isNavigatingShort) return; // hi ha una transició en curs
+            if (e.touches && e.touches.length !== 1) {
+                cancelShortGesture();
+                springBack();
+                return;
+            }
+            // Una recuperació anterior no pot treure la classe de la nova animació.
+            cancelStripAnimation?.();
+            getStripEls().strip?.classList.remove('is-sliding');
             startY = e.touches ? e.touches[0].clientY : e.clientY;
             startX = e.touches ? e.touches[0].clientX : e.clientX;
+            activeTouchId = e.touches ? e.touches[0].identifier : null;
             startTime = Date.now();
+            gestureHeight = Math.max(1, playerWrap.clientHeight);
+            pendingOffset = 0;
+            lastY = startY;
+            lastMoveAt = startTime;
+            velocity = 0;
             isDragging = true;
             axisLocked = false;
             isVerticalDrag = false;
@@ -650,8 +687,19 @@
         // la navegació es fa amb la roda (wheel) i el clic serveix per pausar.
         const handleMove = (e) => {
             if (!isDragging || !e.touches) return;
-            const y = e.touches[0].clientY;
-            const x = e.touches[0].clientX;
+            if (e.touches.length !== 1) {
+                cancelShortGesture();
+                springBack();
+                return;
+            }
+            const touch = Array.from(e.touches).find(item => item.identifier === activeTouchId);
+            if (!touch) return;
+            const y = touch.clientY;
+            const x = touch.clientX;
+            const now = Date.now();
+            if (now > lastMoveAt) velocity = (y - lastY) / (now - lastMoveAt);
+            lastY = y;
+            lastMoveAt = now;
             const dy = y - startY;
             const dx = x - startX;
             if (!axisLocked) {
@@ -660,27 +708,31 @@
                 isVerticalDrag = Math.abs(dy) >= Math.abs(dx);
             }
             if (!isVerticalDrag) return;
-            setStripOffset(withBoundaryResistance(dy));
+            queueOffset(dy);
         };
 
         const handleEnd = (e) => {
             if (e.type === 'touchend') lastTouchTime = Date.now();
             if (isEmulatedMouseEvent(e)) return;
             if (!isDragging) return;
+            const touch = e.changedTouches
+                ? Array.from(e.changedTouches).find(item => item.identifier === activeTouchId)
+                : e;
+            if (!touch) return;
             isDragging = false;
 
-            const endY = e.changedTouches ? e.changedTouches[0].clientY : e.clientY;
-            const endX = e.changedTouches ? e.changedTouches[0].clientX : e.clientX;
+            const endY = touch.clientY;
+            const endX = touch.clientX;
             const dy = endY - startY;
             const dx = endX - startX;
             const elapsed = Date.now() - startTime;
             const isTap = Math.abs(dy) < 10 && Math.abs(dx) < 10 && elapsed < 250;
 
-            if (isTap) {
+            if (isTap && !axisLocked) {
                 toggleShortPlaybackImpl();
                 return;
             }
-            if (!isVerticalDrag && axisLocked) {
+            if ((!isVerticalDrag && axisLocked) || Math.abs(dx) > Math.abs(dy)) {
                 // Gest predominantment horitzontal: ignora'l i torna al centre.
                 springBack();
                 return;
@@ -689,21 +741,27 @@
                 // Sense seguiment del dit (ratolí a l'escriptori, o un toc molt ràpid
                 // que no ha disparat touchmove): navegació discreta clàssica per llindar.
                 if (dy < -50) {
-                    handleScrollIntent(1);
+                    commitSlide(1);
                 } else if (dy > 50) {
-                    handleScrollIntent(-1);
+                    commitSlide(-1);
                 }
                 return;
             }
 
             const distance = Math.abs(dy);
-            const isFlick = elapsed < FLICK_MS && distance > FLICK_DISTANCE;
+            const releaseVelocity = Date.now() - lastMoveAt <= 100 ? velocity : 0;
+            const isFlick = (elapsed < FLICK_MS && distance > FLICK_DISTANCE)
+                || (distance > 28 && Math.abs(releaseVelocity) > 0.45 && releaseVelocity * dy > 0);
             const shouldCommit = distance >= commitDistance() || isFlick;
+            pendingOffset = withBoundaryResistance(Math.max(-gestureHeight, Math.min(gestureHeight, dy)));
+            flushOffset();
+            const remaining = Math.max(0, gestureHeight - Math.abs(pendingOffset));
+            const slideMs = Math.max(120, Math.min(SHORT_SLIDE_MS, remaining / Math.max(2.5, Math.abs(releaseVelocity))));
 
             if (dy < 0 && shouldCommit && hasShortAt(currentShortIndex + 1)) {
-                commitSlide(1);
+                commitSlide(1, slideMs);
             } else if (dy > 0 && shouldCommit && hasShortAt(currentShortIndex - 1)) {
-                commitSlide(-1);
+                commitSlide(-1, slideMs);
             } else {
                 springBack();
             }
@@ -714,7 +772,7 @@
         gestureOverlay.addEventListener('touchend', handleEnd, { passive: true });
         gestureOverlay.addEventListener('touchcancel', () => {
             if (isDragging) {
-                isDragging = false;
+                cancelShortGesture();
                 springBack();
             }
         }, { passive: true });
@@ -723,6 +781,7 @@
 
         gestureOverlay.addEventListener('wheel', (e) => {
             e.preventDefault();
+            if (Math.abs(e.deltaY) < 1) return;
             const direction = e.deltaY > 0 ? 1 : -1;
             handleScrollIntent(direction);
         }, { passive: false });

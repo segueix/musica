@@ -2176,6 +2176,8 @@ body.segueix-tv-playback.segueix-tv-active .chips-bar.home-categories.segueix-tv
     inset: 0;
     z-index: 5;
     background: transparent;
+    touch-action: none;
+    overscroll-behavior: none;
 }
 
 /* Strip vertical de Shorts: panells anterior/actual/següent per a una transició
@@ -2184,12 +2186,12 @@ body.segueix-tv-playback.segueix-tv-active .chips-bar.home-categories.segueix-tv
     position: absolute;
     inset: 0;
     z-index: 1;
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
     will-change: transform;
 }
 
 .short-strip.is-sliding {
-    transition: transform 0.28s cubic-bezier(0.22, 0.61, 0.36, 1);
+    transition: transform var(--short-slide-ms, 240ms) cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
 .short-pane {
