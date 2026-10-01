@@ -77,6 +77,18 @@
 
 **Fitxers Afectats:** `js/features/music-queue.js`, `css/portada.css`, `sw.js`, `CLAUDE.md`, tests.
 
+## [2026-10-01] - Mòbil: la part superior de la portada era confusa
+
+**Símptoma:** A 390 px l'entrada de la portada ocupava més de la meitat de la primera pantalla (≈ 515 de 844 px) i no s'hi veia música: el títol «Avui, què et ve de gust?» es partia en dues línies amb l'altra meitat buida (`max-width: 16ch`), el botó «La teva ràdio» era a mitja amplada i flotava, el selector de mode apareixia sota amb el text d'ajuda i la targeta destacada era alta. A més, a les capçaleres de secció, «Reprodueix-ho» / «Veure-ho tot» baixaven a una fila pròpia però quedaven **tirats a la dreta** (`margin-left: auto`), desconnectats del títol.
+
+**Solució Implementada:** `css/portada.css`, bloc `@media (max-width: 768px)` just abans de «Seccions» (només CSS, sense tocar l'HTML ni el JS): títol d'una línia (`font-size: clamp(1.5rem, 6.8vw, 1.9rem)`, sense `max-width`, `text-wrap: balance`); botó principal a tota l'amplada amb el selector enganxat a sota (marges de 12 px); llegenda i ajuda del selector més petites; targeta destacada més baixa (miniatura 34 %, títol 1 rem, botons a 8 px); gaps de 12 px. Les eines de secció s'alineen a l'esquerra (`.pt-head .pt-head__tools { margin-left: 0 }`, amb especificitat doble perquè la regla base és posterior al bloc). L'entrada passa a ≈ 450 px a 390 px (la targeta destacada acaba a ≈ 450 px) i «Comença per aquí» és a la primera pantalla.
+
+**Trampes conegudes:** (1) Els controls tàctils continuen fent ≥ 44 px (`.pt-mode__opt span { min-height: 44px }` no s'ha tocat): `tests/browser/verificar-portada.js` ho comprova. (2) Una regla de mòbil situada **abans** de la regla base amb la mateixa especificitat perd: per això el `margin-left: 0` va amb `.pt-head .pt-head__tools`. (3) Per fer captures cal esperar que l'splash d'intro (`.intro-splash`) acabi; si no, hi surt el logotip «SEGUEIX!» enganxat al fons. (4) La capçalera (marca, cerca, artistes, configuració) no s'ha tocat; la cerca hi surt també a la navegació inferior («Cerca»).
+
+**Fitxers Afectats:** `css/portada.css`, `sw.js`, `tests/portada-entrada-mobil.test.js`.
+
+---
+
 ## [2026-10-01] - Llista d'artistes vigilats per castellà i prompt de revisió
 
 **Símptoma:** Les cançons en castellà tornen a aparèixer cada vegada que el feed incorpora vídeos nous dels mateixos artistes, i no hi havia cap lloc que dixés quins artistes cal repassar primer ni com.
