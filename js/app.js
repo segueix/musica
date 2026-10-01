@@ -8573,7 +8573,12 @@ function savePlaylists(playlists) {
 function mergePlaylistVideoSnapshot(baseVideo, resolvedVideo) {
     if (!baseVideo && !resolvedVideo) return null;
     if (!baseVideo) return getPlaylistVideoData(resolvedVideo);
-    if (!resolvedVideo) return baseVideo;
+    if (!resolvedVideo) {
+        if (baseVideo.artistName) return baseVideo;
+        // Cançó desada abans que es guardés l'artista: se li afegeix el nom (canal registrat o títol del canal).
+        const artistName = SegueixApp.features.library?.resolveArtistName?.(baseVideo, getArtistNamesById()) || '';
+        return artistName ? { ...baseVideo, artistName } : baseVideo;
+    }
 
     const normalizedResolved = getPlaylistVideoData(resolvedVideo);
     return {
@@ -8847,6 +8852,15 @@ function renamePlaylist(playlistId) {
     startPlaylistNameEdit(playlistId);
 }
 
+// Nom de l'artista sota la cançó d'una llista; si en sabem el canal, és un enllaç a la seva fitxa d'artista.
+function renderPlaylistVideoArtist(video) {
+    const name = String(video?.artistName || video?.channelTitle || '').trim();
+    if (!name) return '';
+    const channelId = String(video?.channelId || '').trim();
+    if (!channelId) return `<div class="playlist-video-artist">${escapeHtml(name)}</div>`;
+    return `<div class="playlist-video-artist channel-link" data-channel-id="${escapeHtml(channelId)}" role="link" tabindex="0">${escapeHtml(name)}</div>`;
+}
+
 async function renderPlaylistsPageLegacyImpl() {
     if (!playlistsList) return;
     const storedPlaylists = getPlaylists();
@@ -8880,7 +8894,10 @@ async function renderPlaylistsPageLegacyImpl() {
                                 <i data-lucide="grip-vertical"></i>
                             </span>
                             <img class="playlist-video-thumb" src="${video.thumbnail || 'img/icon-192.png'}" alt="" loading="lazy">
-                            <div class="playlist-video-title">${escapeHtml(video.title || 'Vídeo')}</div>
+                            <div class="playlist-video-text">
+                                <div class="playlist-video-title">${escapeHtml(video.title || 'Vídeo')}</div>
+                                ${renderPlaylistVideoArtist(video)}
+                            </div>
                             <button class="playlist-video-remove" type="button" data-playlist-id="${list.id}" data-video-id="${video.id}" aria-label="Eliminar vídeo">
                                 <i data-lucide="trash-2"></i>
                             </button>
@@ -8926,12 +8943,14 @@ async function renderPlaylistsPageLegacyImpl() {
     batchRenderCards(playlistsList, playlists, createPlaylistCard, {
         maxVisible: 0,
         onComplete: () => {
+            bindChannelLinks(playlistsList);
             bindPlaylistListInteractions();
             refreshIcons(playlistsList);
         },
     });
 
     // Primer lot d'icones + interaccions
+    bindChannelLinks(playlistsList);
     bindPlaylistListInteractions();
     requestAnimationFrame(() => refreshIcons(playlistsList));
 }
@@ -9618,6 +9637,12 @@ function renderPlaylistModal() {
     refreshIcons(playlistModalBody);
 }
 
+// Nom de cada canal/artista registrat (id → nom), per desar l'artista a cada cançó d'una llista.
+function getArtistNamesById() {
+    const channels = Array.isArray(YouTubeAPI?.getAllChannels?.()) ? YouTubeAPI.getAllChannels() : [];
+    return new Map(channels.map(channel => [String(channel.id), channel.name || channel.title || '']));
+}
+
 function getPlaylistVideoDataLegacyImpl(video) {
     const source = video.historySource || (video.videoUrl ? 'static' : 'api');
     return {
@@ -9626,6 +9651,7 @@ function getPlaylistVideoDataLegacyImpl(video) {
         thumbnail: getPreferredThumbnail(video),
         channelTitle: video.channelTitle || video.snippet?.channelTitle || '',
         channelId: video.channelId || video.snippet?.channelId || '',
+        artistName: SegueixApp.features.library?.resolveArtistName?.(video, getArtistNamesById()) || '',
         duration: video.duration || video.contentDetails?.duration || '',
         source,
     };

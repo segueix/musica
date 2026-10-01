@@ -34,6 +34,15 @@
         window.dispatchEvent(new CustomEvent('segueix:playlists-changed'));
     }
 
+    // Nom de l'artista d'una cançó desada: el nom del canal registrat (la fitxa d'artista) i, si no hi és, el
+    // títol del canal del vídeo. channelNames: Map(channelId → nom).
+    function resolveArtistName(video, channelNames) {
+        const channelId = String(video?.channelId || video?.snippet?.channelId || '').trim();
+        const registered = channelId && channelNames?.get ? channelNames.get(channelId) : '';
+        const name = registered || video?.artistName || video?.channelTitle || video?.snippet?.channelTitle || '';
+        return String(name).trim();
+    }
+
     function getPlaylistVideoData(video) {
         if (typeof runtime.hooks.getPlaylistVideoDataImpl === 'function') {
             return runtime.hooks.getPlaylistVideoDataImpl(video);
@@ -58,6 +67,7 @@
         getPlaylists,
         savePlaylists,
         getPlaylistVideoData,
+        resolveArtistName,
         renderPlaylistsPage
     };
 })(window);

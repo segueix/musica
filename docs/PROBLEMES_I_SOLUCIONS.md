@@ -77,6 +77,18 @@
 
 **Fitxers Afectats:** `js/features/music-queue.js`, `css/portada.css`, `sw.js`, `CLAUDE.md`, tests.
 
+## [2026-10-01] - Artista a cada cançó d'una llista, amb enllaç a la fitxa d'artista
+
+**Símptoma:** Com que els títols que es mostren ja no porten el nom de l'artista (`song-title.js`), les cançons d'una llista de reproducció es veien només pel títol: no se sabia de qui eren i no es podia anar a la seva fitxa.
+
+**Solució Implementada:** (1) `getPlaylistVideoDataLegacyImpl()` (app.js) desa a cada cançó `artistName`, resolt per `library.resolveArtistName()` (js/features/library.js, pur): el nom del canal registrat (el de la fitxa d'artista) i, si no n'hi ha, `channelTitle`. Hi passen totes les vies de desar (afegir a una llista, desar la ràdio, cançons noves a una llista existent). (2) Les llistes ja desades s'arreglen soles: `hydrateStoredPlaylist()` compara l'instantània i, si ha canviat, la torna a desar; `mergePlaylistVideoSnapshot()` també hi posa l'artista quan el vídeo ja no és a cap cau. (3) `renderPlaylistsPageLegacyImpl()` mostra sota el títol de cada cançó `renderPlaylistVideoArtist()`: un `.channel-link[data-channel-id]` que obre la fitxa (`bindChannelLinks(playlistsList)`), o text pla si no hi ha `channelId`.
+
+**Trampes conegudes:** (1) La fila de la llista és `draggable`: l'enllaç és un `div role="link"`, no un `<a>`, perquè arrossegar-lo no obri res. (2) L'artista és el **canal** que publica el vídeo (com a `getVideoArtistKey`); en un col·laboratiu surt el canal, no tots els artistes. (3) La cua de la ràdio (`.mq-artist`) ja mostrava `channelTitle` i no s'ha tocat. (4) El canvi toca `css/styles.css` i `app.js`: calia `npm run sw:version`.
+
+**Fitxers Afectats:** `js/app.js`, `js/features/library.js`, `css/styles.css`, `sw.js`, `tests/library-artist.test.js`.
+
+---
+
 ## [2026-10-01] - Cançons amb títol 100 % en castellà a la categoria Urbana
 
 **Símptoma:** A Urbana (la categoria amb més cançons de rap/trap/pop urbà) hi havia cançons amb el títol íntegrament en castellà (31 FAM, Julieta, Sexenni, Mushkaa, BAYA BAYE, Scorpio, DAVEU, Yung Mare).
