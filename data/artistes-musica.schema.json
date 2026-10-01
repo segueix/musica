@@ -544,6 +544,21 @@
               "type": "string"
             },
             "uniqueItems": true
+          },
+          "revisioEditorial": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "ok"
+            ],
+            "properties": {
+              "ok": {
+                "type": "boolean"
+              },
+              "at": {
+                "type": "string"
+              }
+            }
           }
         }
       }

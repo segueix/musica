@@ -27,6 +27,22 @@ L'automatisme conserva aquestes decisions.
 
 La pàgina `admin-musica.html` permet filtrar, aprovar i rebutjar candidats. Els canvis queden temporalment al navegador i es poden exportar com a JSON o CSV. El JSON exportat està preparat per substituir `data/artistes-musica.json`.
 
+## Revisió de noms i categories (`revisio-artistes.html`)
+
+Pàgina senzilla per repassar només els artistes **ben indexats** (amb canal de YouTube assignat i no rebutjats; ara 155): una fila per artista amb el **nom** (editable), les **categories** (botó «Edita», es poden triar-ne diverses de la taxonomia `data/music-genres.json`) i una columna **OK** per marcar els que ja estan bé. El que es fa es desa al navegador (`segueix_revisio_artistes_v1`) fins que es prem **«Descarrega la revisió»** (JSON; també hi ha CSV per llegir-lo en un full de càlcul). No escriu res al repositori ni demana cap token.
+
+Per aplicar el fitxer descarregat:
+
+```bash
+node scripts/aplicar_revisio_artistes.js revisio-artistes-AAAA-MM-DD.json --dry-run   # simula i ensenya què canviarà
+node scripts/aplicar_revisio_artistes.js revisio-artistes-AAAA-MM-DD.json             # escriu data/artistes-musica.json
+node scripts/validar_artistes_musica.js
+```
+
+Què fa en aplicar-lo (lògica a `js/revisio-artistes.js`, provada a `tests/revisio-artistes.test.js`): el **nom** nou substitueix `name` i l'anterior passa a `aliases`; les **categories** substitueixen `genres` i s'afegeix `genre:manual` a `sources` perquè `scripts/enriquir_generes_musica.js` no les trepitgi; l'**OK** es desa com a `revisioEditorial: { ok: true, at }` (camp permès a l'esquema). No toca YouTube, MusicBrainz, l'enriquiment ni `reviewStatus`/`active`.
+
+**Compte:** el nom que es veu a l'app (targetes, fitxa, cerca) és el del canal de YouTube (`channel.name` del feed), no `artist.name`. Canviar-lo aquí només afecta l'app quan el pipeline fa servir `artist.name` com a nom a mostrar (cal una passada a `scripts/update_music_feed.js` en aplicar la revisió).
+
 ## Revisió de vídeos ambigus
 
 El classificador de contingut deixa a `data/music-content-review.json` els vídeos que no pot decidir (`contentType: "review"`). Mentre hi són, no surten a categories ni a Novetats. Per resoldre'ls, afegeix-los a `data/music-content-overrides.json` amb el tipus correcte (`song`, `live_song`, `album` o `other`) i una nota; el pipeline (`scripts/update_music_feed.js`) ho reaplica a cada generació. Per veure el resultat sense esperar el workflow:

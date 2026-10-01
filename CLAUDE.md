@@ -313,6 +313,11 @@ const likes = ctx2.SegueixApp.features.likes;
 4. **Actualitza `docs/ARTISTES_CASTELLA.md`**: artistes nous, recomptes, notes i la data de «Última revisió», i afegeix l'entrada a `docs/PROBLEMES_I_SOLUCIONS.md`. Si un artista apareix a la llista per primera vegada, afegeix-lo amb la primera columna `**Nom exacte al feed**`.
 5. Digues a l'usuari quines cançons has amagat i quines dubtoses has deixat.
 
+### Revisió d'artistes: noms i categories (2026-10-01)
+
+- `revisio-artistes.html` (pàgina estàtica, sense token) deixa editar el **nom** i les **categories** dels artistes ben indexats (canal de YouTube assignat, no rebutjats) i marcar-los **OK**; baixa un document `revisio-artistes-AAAA-MM-DD.json`. **Quan l'usuari et passi aquest fitxer:** `node scripts/aplicar_revisio_artistes.js <fitxer> --dry-run`, ensenya-li què canviarà i, si ho confirma o ho demana, executa'l sense `--dry-run` i `node scripts/validar_artistes_musica.js`. La lògica és a `js/revisio-artistes.js` (`applyExport()`): el nom anterior passa a `aliases`, les categories es marquen `genre:manual` i l'OK es desa a `revisioEditorial`.
+- **Trampa:** l'app mostra el nom del **canal de YouTube** (`channel.name` del feed), no `artist.name`. Un canvi de nom només es veu a l'app si el pipeline (`update_music_feed.js`) fa servir `artist.name` com a nom a mostrar: si l'usuari espera veure els noms nous, fes-ho (i prova-ho) abans de donar la feina per acabada. Detall: `docs/MUSICA_DADES.md` («Revisió de noms i categories»).
+
 ### Play/pausa del reproductor (2026-10-01)
 
 - El play/pausa és **el del reproductor de YouTube**: no hi ha botó propi (`.queue-toggle-button` eliminat) ni cap capa que cobreixi el vídeo. Sobre l'iframe només hi ha anterior · següent · finestra flotant (`.queue-controls`, amb el centre lliure) i, a la finestreta flotant, un **mànec d'arrossegar de 36 px a dalt** (`.drag-handle-container`; al mòbil no hi és). **No tornis a posar capes sobre l'iframe** per detectar tocs ni per fer de botó: es mengen els tocs. Per detectar un toc en tàctil es fa servir el `blur` de la finestra (`initQueueNextOverlay`).

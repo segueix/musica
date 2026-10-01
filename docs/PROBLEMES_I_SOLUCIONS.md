@@ -77,6 +77,18 @@
 
 **Fitxers Afectats:** `js/features/music-queue.js`, `css/portada.css`, `sw.js`, `CLAUDE.md`, tests.
 
+## [2026-10-01] - Pàgina per revisar noms i categories dels artistes (`revisio-artistes.html`)
+
+**Necessitat:** Poder repassar amb calma el nom i les categories dels artistes ben indexats, marcar quins ja estan bé i passar el resultat per aplicar-lo, sense la pàgina d'administració completa (`admin-musica.html`, amb token, estats, YouTube ID, MusicBrainz…).
+
+**Solució Implementada:** `revisio-artistes.html` (155 artistes: els amb canal i no rebutjats) amb nom editable, categories (diàleg de caselles amb la taxonomia de `music-genres.json`), columna OK, cercador i filtres (sense OK, amb canvis, sense categoria), recomptes i **desat automàtic al navegador** (`segueix_revisio_artistes_v1`, només els canvis). «Descarrega la revisió» baixa un JSON amb totes les files i què ha canviat en cadascuna (+ CSV). `scripts/aplicar_revisio_artistes.js` l'aplica (`--dry-run` per veure'n l'efecte). La lògica comuna és a `js/revisio-artistes.js` (UMD) i `tests/revisio-artistes.test.js` la prova, incloent-hi les dades reals (un document sense canvis no modifica res). L'esquema (`data/artistes-musica.schema.json`, `additionalProperties: false`) accepta el camp nou `revisioEditorial`.
+
+**Trampes conegudes:** (1) El nom que mostra l'app és el del canal de YouTube, no `artist.name`: un canvi de nom no es veu a l'app fins que el pipeline faci servir `artist.name` per mostrar (pendent d'aplicar quan arribi la revisió). (2) `scripts/enriquir_generes_musica.js` sobreescriu `genres` tret que `sources` inclogui `genre:manual`: l'aplicació ho afegeix. (`admin-musica.html` no ho fa: les categories editades allà es poden perdre en el proper enriquiment.) (3) L'esborrany és per navegador: «Esborra els canvis» els descarta. (4) La pàgina porta `noindex` però és pública, igual que les dades que carrega.
+
+**Fitxers Afectats:** `revisio-artistes.html`, `js/revisio-artistes.js`, `scripts/aplicar_revisio_artistes.js`, `data/artistes-musica.schema.json`, `docs/MUSICA_DADES.md`, `README.md`, `CLAUDE.md`, `tests/revisio-artistes.test.js`.
+
+---
+
 ## [2026-10-01] - SUU i altres artistes vigilats: cançons en castellà noves
 
 **Símptoma:** Al feed de SUU hi havia 19 cançons amb el títol en castellà (la regla antiga només en cobria 7 i, amb els títols tal com surten al feed —«Suu - Soy (Videolyric Oficial)»—, no en coincidia cap de les nou). Repassant la resta d'artistes de `docs/ARTISTES_CASTELLA.md` n'han sortit 43 més.
