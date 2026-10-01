@@ -13,6 +13,18 @@
 
 **Fitxers Afectats:**
 
+## [2026-10-01] - El play/pausa del reproductor (normal i flotant) sovint no reaccionava
+
+**Símptoma:** Tocar o clicar per pausar/reprendre el vídeo, al reproductor gran i a la finestra flotant, sovint no feia res.
+
+**Causa Arrel (reproduïda amb un succedani de l'embed, `tests/browser/verificar-play-pausa.js`):** (1) **Normal, tàctil:** `.queue-next-touch-layer` cobria tot el vídeo quan els controls eren amagats (`pointer-events: auto` a `(hover: none)`/`(pointer: coarse)`) i es menjava el primer toc (mostrava els controls i res més): el toc mai arribava al reproductor de YouTube. (2) **Botó propi** (`.queue-toggle-button`): decidia entre `playVideo` i `pauseVideo` segons `data-player-state`, que només s'actualitza amb `onStateChange` i pot ser `''` (després de canviar de vídeo), `3` (buffering) o desfasat: amb estat 3 enviava `playVideo` a un vídeo que ja volia sonar i «no passava res». A més, només existia si la cua tenia anterior/següent, i a la finestreta flotant feia 28–38 px. (3) **Flotant:** `.drag-surface` cobria tot el vídeo (menys un quadrant) i l'app **emulava** el play/pausa amb un toc (< 10 px i < 300 ms a escriptori; un `click` al mòbil): un toc una mica llarg o amb un tremolor ja no es comptava, i la barra de YouTube i el seu botó de pausa eren inaccessibles.
+
+**Solució Implementada:** el play/pausa és **el del reproductor de YouTube** i res no el cobreix. `createQueueNextOverlay()` ja només té anterior, següent i finestra flotant (`.queue-controls` deixa el centre lliure per al botó de YouTube); fora `.queue-toggle-button`, `.queue-next-touch-layer` i `updateQueueToggleIcon`. **Finestra flotant:** la capa d'arrossegament és un mànec de 36 px a dalt (`.drag-handle-container`); la resta del vídeo rep tots els tocs. Al mòbil (≤ 768 px, ancorada a baix) no hi ha mànec i la barra de dalt (restaurar/tancar) és sempre visible (degradat, no enfosqueix el vídeo); restaurar/tancar tenen 44 px mínims i el tancar ja no depèn de Lucide. `makeDraggable()` només arrossega. **Controls de la cua en tàctil:** un toc al vídeo no arriba a la pàgina (iframe d'un altre origen), però en prendre-li el focus la finestra dispara `blur`: `initQueueNextOverlay()` mostra els controls 3 s i torna el focus a la pàgina (`window.focus(); iframe.blur()`) perquè el toc següent també es detecti; només amb `(pointer: coarse)` (a escriptori hi ha el ratolí i no es toca el focus, perquè l'espai de YouTube continuï pausant). **Ordres:** `playMainPlayer()` / `pauseMainPlayer()` (`sendMainPlayerCommand`) i `isMainPlayerPlaying()` (estat 1 **o 3**); la Media Session (pantalla de bloqueig) i `toggleMainPlayerPlayback()` (targeta «Ara sona» de la portada) les fan servir.
+
+**Trampes conegudes:** (1) Qualsevol capa sobre un `<iframe>` de YouTube (per detectar tocs, arrossegar o fer de botó) es menja els tocs: si cal detectar-los sense cobrir el vídeo, fes servir el focus (`blur`) i no tornis a posar capes. (2) La detecció per `blur` s'ha comprovat en Chromium (tàctil i ratolí); en iOS Safari no s'ha pogut provar: si no es dispara, els controls de la cua surten igualment en pausa i uns segons després d'un canvi d'estat. (3) A la finestreta flotant d'escriptori ja no es pot arrossegar des del mig del vídeo: només pel mànec de dalt. (4) No es poden provar els tocs sobre l'embed real de YouTube des d'aquí: la verificació usa un succedani local.
+
+**Fitxers Afectats:** `js/app.js`, `js/features/music-queue.js`, `css/styles.css`, `css/portada.css`, `sw.js`, `tests/player-controls.test.js`, `tests/browser/verificar-play-pausa.js`, `tests/browser/verificar-seleccio.js`.
+
 ## [2026-10-01] - Mode de descoberta dins de cada ràdio (i «A casa» passa a «Els meus de sempre»)
 
 **Petició:** una expressió més personal que «A casa» i el selector del mode a cada ràdio, amb un canvi automàtic i visible de la llista.
@@ -584,6 +596,8 @@ La finestreta flotant en fer scroll cap avall es manté tal com era: és el comp
 **Fitxers Afectats:** `js/features/music-queue.js`, `css/styles.css`, `data/artistes-musica.json`, `data/youtube-verified-handles.json`, `data/hidden-videos.json`, `sw.js`.
 
 ## [2026-09-30] - Controls de la cua sobre el reproductor: grans, centrats i amb play/pausa
+
+> **Actualització (2026-10-01):** el botó de play/pausa propi i la capa tàctil s'han tret (feien que el play/pausa no reaccionés); vegeu «El play/pausa del reproductor (normal i flotant) sovint no reaccionava». Queden anterior · següent · finestra flotant.
 
 **Canvi:** El mini-control anterior/següent (a baix a l'esquerra, 48 px) passa a ser un grup **centrat** dins el reproductor: anterior · **play/pausa** · següent (72/92/72 px; 56/72 a mòbil; 34/44 a la finestreta flotant). `createQueueNextOverlay()` (`app.js`) + CSS `.queue-controls`. Visibilitat: amb el ratolí sobre el reproductor són **fixos** (`sticky`, sense temporitzador; `pointerenter`/`pointermove`); en marxar es queden ~3 s (`pointerleave`) i s'amaguen; en pausa són sempre visibles; en tàctil, el toc al vídeo els mostra 3 s. Només els botons capturen clics (el grup té `pointer-events: none`), així que la resta del vídeo continua responent a YouTube. La icona play/pausa segueix `data-player-state` (MutationObserver) i la classe `.queue-next-button` es conserva perquè analytics/tv-learning l'escolten.
 

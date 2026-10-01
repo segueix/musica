@@ -2345,15 +2345,11 @@ body .follow-btn-pill.is-followed:hover {
     }
 }
 
-/* ---------- Finestra flotant: cantonada inferior dreta lliure ----------
-   La capa d'arrossegament (i la de toc dels controls) cobria tota la finestra i impedia clicar el botó
-   «Omet l'anunci» de YouTube, que és a baix a la dreta. Aquesta zona (la meitat dreta de la meitat inferior)
-   es retalla de la capa perquè els clics arribin al vídeo. La resta continua servint per arrossegar, per
-   pausar/reprendre i per mostrar els controls. */
-#videoPlayer.mini-player-active .drag-surface,
-#videoPlayer.mini-player-active .queue-next-touch-layer {
-    clip-path: polygon(0 0, 100% 0, 100% 56%, 50% 56%, 50% 100%, 0 100%);
-}
+/* ---------- Finestra flotant: el vídeo és del reproductor de YouTube ----------
+   Abans la capa d'arrossegament (i la de toc dels controls) cobria tota la finestra: impedia clicar «Omet l'anunci»,
+   la barra de progrés i el play/pausa de YouTube, i per això l'app n'emulava un amb un toc que sovint no es detectava.
+   Ara només hi ha un mànec de 36 px a dalt per arrossegar (styles.css, `.drag-handle-container`); la resta del vídeo
+   rep tots els tocs. */
 
 /* La capa de botons (restaurar/tancar) mai captura clics fora dels seus botons */
 #videoPlayer.mini-player-active .mini-player-controls-overlay,

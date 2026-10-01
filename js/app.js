@@ -9177,23 +9177,10 @@ function updateQueueOverlayButtons(overlay) {
     const prev = overlay.querySelector('.queue-prev-button');
     if (next) next.hidden = !hasQueueNextVideo();
     if (prev) prev.hidden = !hasQueuePrevVideo();
-    updateQueueToggleIcon(overlay);
 }
 
-const QUEUE_ICON_PLAY = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>';
-const QUEUE_ICON_PAUSE = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg>';
 const QUEUE_ICON_PREV = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h2v14H6zM20 5v14L9.5 12z"/></svg>';
 const QUEUE_ICON_NEXT = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 5h2v14h-2zM4 5v14l10.5-7z"/></svg>';
-
-// Icona del botó del mig: pausa mentre sona, play si no.
-function updateQueueToggleIcon(overlay) {
-    const toggle = overlay?.querySelector('.queue-toggle-button');
-    if (!toggle) return;
-    const playing = videoPlayer?.dataset?.playerState === '1';
-    toggle.innerHTML = playing ? QUEUE_ICON_PAUSE : QUEUE_ICON_PLAY;
-    toggle.setAttribute('aria-label', playing ? 'Pausa' : 'Reprodueix');
-    toggle.title = playing ? 'Pausa' : 'Reprodueix';
-}
 
 function getQueueNextOverlay() {
     return videoPlayer?.querySelector('.queue-next-overlay') || null;
@@ -9275,36 +9262,21 @@ function goToPreviousFromOverlay(event) {
     loadVideoInSequence();
 }
 
+// Controls de la cua sobre el reproductor: anterior, següent i finestra flotant. El play/pausa NO hi és: és el del
+// reproductor de YouTube (un botó propi depenia de l'estat que reportava l'iframe i fallava sovint), i res no cobreix
+// el vídeo: tots els tocs arriben al reproductor.
 function createQueueNextOverlay() {
     const overlay = document.createElement('div');
     overlay.className = 'queue-next-overlay';
     overlay.setAttribute('aria-hidden', 'true');
     overlay.innerHTML = `
-        <div class="queue-next-touch-layer" aria-hidden="true"></div>
-        <div class="queue-controls" role="group" aria-label="Controls de reproducció">
+        <div class="queue-controls" role="group" aria-label="Controls de la cua">
             <button class="queue-prev-button" type="button" aria-label="Vídeo anterior" title="Vídeo anterior" tabindex="-1">${QUEUE_ICON_PREV}</button>
-            <button class="queue-toggle-button" type="button" aria-label="Reprodueix" title="Reprodueix" tabindex="-1">${QUEUE_ICON_PLAY}</button>
             <button class="queue-next-button" type="button" aria-label="Vídeo següent" title="Vídeo següent" tabindex="-1">${QUEUE_ICON_NEXT}</button>
             <button class="queue-mini-button" type="button" aria-label="Finestra flotant" title="Finestra flotant" tabindex="-1">${MINI_PLAYER_ICON_SVG}</button>
         </div>
     `;
 
-    const touchLayer = overlay.querySelector('.queue-next-touch-layer');
-    touchLayer?.addEventListener('pointerdown', event => {
-        event.preventDefault();
-        event.stopPropagation();
-        showQueueNextOverlay({ duration: 3000 });
-    });
-
-    overlay.querySelector('.queue-toggle-button')?.addEventListener('click', event => {
-        event.preventDefault();
-        event.stopPropagation();
-        toggleMainPlayerPlayback();
-        // Canvi immediat de la icona; l'estat real arriba després del reproductor
-        const toggle = event.currentTarget;
-        const willPlay = videoPlayer?.dataset?.playerState !== '1';
-        toggle.innerHTML = willPlay ? QUEUE_ICON_PAUSE : QUEUE_ICON_PLAY;
-    });
     overlay.querySelector('.queue-mini-button')?.addEventListener('click', event => {
         event.preventDefault();
         event.stopPropagation();
@@ -9370,11 +9342,25 @@ function initQueueNextOverlay() {
         }
     });
 
-    // La icona play/pausa segueix l'estat real del reproductor
-    new MutationObserver(() => updateQueueToggleIcon(getQueueNextOverlay())).observe(videoPlayer, {
-        attributes: true,
-        attributeFilter: ['data-player-state'],
-    });
+    // Tàctil: un toc al vídeo no arriba a la pàgina (l'iframe és d'un altre origen i no es pot cobrir sense menjar-se el
+    // toc), però en prendre-li el focus la finestra dispara `blur`: aleshores es mostren els controls i es torna el
+    // focus a la pàgina perquè el toc següent també es detecti. A escriptori no cal (hi ha el ratolí).
+    if (window.matchMedia?.('(pointer: coarse)')?.matches) {
+        window.addEventListener('blur', () => {
+            const active = document.activeElement;
+            if (!active || active.tagName !== 'IFRAME' || !videoPlayer.contains(active)) return;
+            if (hasQueueNavigation()) showQueueNextOverlay({ duration: 3000 });
+            if (isMiniPlayerActive()) showMiniPlayerControls();
+            setTimeout(() => {
+                try {
+                    window.focus();
+                    active.blur();
+                } catch (error) {
+                    // El navegador no deixa tornar el focus: només es perd la detecció del toc següent
+                }
+            }, 0);
+        });
+    }
 
     syncQueueNextOverlay();
 }
@@ -10661,23 +10647,31 @@ function setupYouTubeIframeMessaging(iframe) {
     setTimeout(sendListenerCommand, 300);
 }
 
+// Ordres explícites al reproductor de YouTube (no depenen de l'estat que l'iframe hagi reportat).
+function sendMainPlayerCommand(func) {
+    const iframe = videoPlayer?.querySelector('iframe');
+    if (!iframe?.contentWindow) return false;
+    iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func, args: [] }), '*');
+    return true;
+}
+
+function playMainPlayer() {
+    return sendMainPlayerCommand('playVideo');
+}
+
+function pauseMainPlayer() {
+    return sendMainPlayerCommand('pauseVideo');
+}
+
+// Sona o està a punt de sonar: reproduint (1) o carregant/buffering (3). En buffering el vídeo «vol» sonar, i un
+// canvi de pausa en aquest estat ha de pausar (abans enviava playVideo i semblava que no feia res).
+function isMainPlayerPlaying() {
+    const state = String(videoPlayer?.dataset?.playerState ?? '');
+    return state === '1' || state === '3';
+}
+
 function toggleMainPlayerPlayback() {
-    if (!videoPlayer) return;
-    const iframe = videoPlayer.querySelector('iframe');
-    if (!iframe || !iframe.contentWindow) return;
-
-    // Estat 1 vol dir "Playing". Si està sonant, pausem. Si no, play.
-    const isPlaying = videoPlayer.dataset.playerState == '1';
-    const command = isPlaying ? 'pauseVideo' : 'playVideo';
-
-    iframe.contentWindow.postMessage(
-        JSON.stringify({
-            event: 'command',
-            func: command,
-            args: [],
-        }),
-        '*'
-    );
+    return isMainPlayerPlaying() ? pauseMainPlayer() : playMainPlayer();
 }
 
 function updatePlayerIframe({ source, videoId, videoUrl, startAt = 0 }) {
@@ -10721,7 +10715,7 @@ function updatePlayerIframeLegacyImpl({ source, videoId, videoUrl, startAt = 0 }
             <div class="drag-surface" style="position:absolute; inset:0; cursor:grab;"></div>
         </div>
         <div class="mini-player-controls-overlay" style="
-            position: absolute; inset: 0; z-index: 2002; pointer-events: none;
+            position: absolute; inset: 0 0 auto 0; height: 56px; z-index: 2002; pointer-events: none;
             display: flex; justify-content: space-between; padding: 8px;
             transition: opacity 0.3s ease;
         ">
@@ -10732,7 +10726,7 @@ function updatePlayerIframeLegacyImpl({ source, videoId, videoUrl, startAt = 0 }
                 </svg>
             </button>
             <button class="close-mini-player-btn" type="button" aria-label="Tancar" style="pointer-events: auto; background: none; border: none; color: white;">
-                <i data-lucide="x"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"></path></svg>
             </button>
         </div>
         <div class="video-embed-wrap" style="position: absolute; inset: 0; z-index: 2000;">
@@ -10765,18 +10759,13 @@ function makeDraggable(element, handle) {
     if (handle._dragHandlers) {
         handle.removeEventListener('mousedown', handle._dragHandlers.onStart);
         handle.removeEventListener('touchstart', handle._dragHandlers.onStart);
-        handle.removeEventListener('click', handle._dragHandlers.onClick);
     }
 
-    const isMobile = window.innerWidth <= 768;
-
-    if (isMobile) {
+    // Al mòbil la finestreta va ancorada a baix: no s'arrossega (la capa d'arrossegament s'amaga per CSS) i tots els
+    // tocs són del reproductor de YouTube.
+    if (window.innerWidth <= 768) {
         handle.style.cursor = 'default';
-        const onClick = () => {
-            toggleMainPlayerPlayback();
-        };
-        handle._dragHandlers = { onClick };
-        handle.addEventListener('click', onClick);
+        handle._dragHandlers = {};
         return;
     }
 
@@ -10785,7 +10774,6 @@ function makeDraggable(element, handle) {
     let initialLeft;
     let initialTop;
     let isDragging = false;
-    let startTime = 0; // Per calcular si és un click ràpid
     let cachedWidth = 0;
     let cachedHeight = 0;
 
@@ -10811,7 +10799,7 @@ function makeDraggable(element, handle) {
         }
     };
 
-    const onEnd = event => {
+    const onEnd = () => {
         isDragging = false;
         document.removeEventListener('mousemove', onMove);
         document.removeEventListener('touchmove', onMove);
@@ -10819,39 +10807,14 @@ function makeDraggable(element, handle) {
         document.removeEventListener('touchend', onEnd);
         document.removeEventListener('touchcancel', onEnd);
         element.style.transition = 'all 0.2s ease-out';
-
-        // Detectar si ha sigut un click (poc moviment i poc temps)
-        const touch = event.changedTouches ? event.changedTouches[0] : event;
-        const endX = touch.clientX;
-        const endY = touch.clientY;
-        const dist = Math.hypot(endX - startX, endY - startY);
-        const elapsed = Date.now() - startTime;
-
-        if (dist < 10 && elapsed < 300) {
-            toggleMainPlayerPlayback();
-        }
     };
 
     const onStart = event => {
         const touch = event.type === 'touchstart' ? event.touches[0] : event;
         const rect = element.getBoundingClientRect();
-        const offsetX = touch.clientX - rect.left;
-        const offsetY = touch.clientY - rect.top;
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-        const distFromCenter = Math.hypot(offsetX - centerX, offsetY - centerY);
-        if (distFromCenter < 40) {
-            toggleMainPlayerPlayback();
-            if (event.cancelable) {
-                event.preventDefault();
-            }
-            return;
-        }
-
         isDragging = true;
         startX = touch.clientX;
         startY = touch.clientY;
-        startTime = Date.now(); // Guardem l'hora d'inici
         initialLeft = rect.left;
         initialTop = rect.top;
         cachedWidth = rect.width;

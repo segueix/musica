@@ -1450,8 +1450,9 @@
                 // Acció no suportada en aquest navegador
             }
         };
-        set('play', () => !isPlaying() && toggleMainPlayerPlayback?.());
-        set('pause', () => isPlaying() && toggleMainPlayerPlayback?.());
+        // Ordres explícites: la pantalla de bloqueig diu què vol, no depenen de l'estat que l'iframe hagi reportat
+        set('play', () => window.playMainPlayer?.());
+        set('pause', () => window.pauseMainPlayer?.());
         set('previoustrack', () => {
             if (isPlaylistMode && currentPlaylistIndex > 0) {
                 currentPlaylistIndex -= 1;

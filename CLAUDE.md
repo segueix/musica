@@ -295,6 +295,11 @@ const likes = ctx2.SegueixApp.features.likes;
 
 - Les cançons que **declaren** subtítols en castellà/espanyol al títol o a la descripció no són al feed: `update_music_feed.js` les descarta a cada generació (el workflow «Actualitzar feed musical» corre cada dia) amb `scripts/lib/subtitols_castella.js`, i `node scripts/ocultar_subtitols_castella.js` n'afegeix les del feed actual a `data/hidden-videos.json`. No es poden llegir les pistes reals de YouTube (cal OAuth). Detall, regles i trampes: `docs/PROBLEMES_I_SOLUCIONS.md` (2026-10-01).
 
+### Play/pausa del reproductor (2026-10-01)
+
+- El play/pausa és **el del reproductor de YouTube**: no hi ha botó propi (`.queue-toggle-button` eliminat) ni cap capa que cobreixi el vídeo. Sobre l'iframe només hi ha anterior · següent · finestra flotant (`.queue-controls`, amb el centre lliure) i, a la finestreta flotant, un **mànec d'arrossegar de 36 px a dalt** (`.drag-handle-container`; al mòbil no hi és). **No tornis a posar capes sobre l'iframe** per detectar tocs ni per fer de botó: es mengen els tocs. Per detectar un toc en tàctil es fa servir el `blur` de la finestra (`initQueueNextOverlay`).
+- Per reproduir/pausar des del codi (Media Session, targeta «Ara sona»): `playMainPlayer()` / `pauseMainPlayer()` (ordres explícites) o `toggleMainPlayerPlayback()` (estat 1 o 3 = sona). Verificació opt-in: `node tests/browser/verificar-play-pausa.js` (succedani d'embed); detall i trampes a `docs/PROBLEMES_I_SOLUCIONS.md` (2026-10-01).
+
 ### Ràdio i llistes: sense relacionats (2026-09-30)
 
 - Després d'una ràdio o d'una llista (qualsevol cua `.mq` visible) **no es mostren** «Altres vídeos relacionats» ni els vídeos de l'artista: a escriptori (≥ 1025 px) per a la ràdio (`styles.css`) i a mòbil/tauleta (≤ 1024 px) per a ràdio i llistes (`portada.css`). Un vídeo sol sí que els té. No hi tornis a posar cap relacionat sota la cua. Verificació opt-in: `node tests/browser/verificar-relacionats.js`.
