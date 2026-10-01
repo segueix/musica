@@ -7443,6 +7443,8 @@ function buildSearchModel(query, options = {}) {
     return searchResults.buildModel(query, {
         channels: Array.isArray(YouTubeAPI?.feedChannels) ? YouTubeAPI.feedChannels : [],
         videos: Array.isArray(YouTubeAPI?.feedVideos) ? YouTubeAPI.feedVideos : [],
+        genres: music?.CATEGORY_GROUPS || [],
+        categoriesOfChannel: channelId => music?.categoriesForChannel?.(channelId) || [],
         artistKeyOf: channelId => music?.artistKeyForChannel?.(channelId) || '',
         primaryCategoryOf: channelId => music?.primaryCategoryForChannel?.(channelId) || '',
         isEligible: video => !music?.isCategoryEligibleVideo || music.isCategoryEligibleVideo(video),
@@ -7771,6 +7773,9 @@ function handleSearchResultSelection(item) {
         if (videoId) {
             openVideoFromUserGesture(videoId, source);
         }
+    } else if (resultType === 'genre') {
+        openGenreFromSearch(item.dataset.genre);
+        return;
     } else if (resultType === 'radio') {
         startSearchRadio(item.dataset.searchQuery);
     } else if (resultType === 'all') {
@@ -7779,6 +7784,28 @@ function handleSearchResultSelection(item) {
     }
     hideSearchDropdown();
     if (isMobileView()) closeMobileSearch();
+}
+
+// Un estil trobat a la cerca: obre la categoria (la mateixa que el xip de la barra d'estils).
+function openGenreFromSearch(label) {
+    const category = String(label || '').trim();
+    if (!category) return false;
+    hideSearchDropdown();
+    if (isMobileView()) closeMobileSearch();
+    if (searchInput) searchInput.value = '';
+    const chip = chipsBar?.querySelector(`.chip[data-cat="${CSS.escape(category)}"]`);
+    if (!chip) return false;
+    chip.click();
+    window.scrollTo?.({ top: 0 });
+    return true;
+}
+
+// Ràdio d'un estil trobat a la cerca.
+function startGenreRadio(label) {
+    const toast = SegueixApp.features.shellNav?.toast;
+    const started = SegueixApp.features.musicQueue?.startStyleRadio?.([label]) === true;
+    if (!started) toast?.(`No hi ha prou cançons per fer una ràdio de ${label}.`);
+    return started;
 }
 
 // Ràdio amb les cançons que ha trobat la cerca (barreja d'estils permesa: cap restricció de categoria).
@@ -8158,6 +8185,18 @@ function bindSearchResults(container) {
         if (radioButton) {
             event.stopPropagation();
             startSearchRadio(radioButton.dataset.searchQuery);
+            return;
+        }
+        const styleRadio = event.target.closest('[data-search-style-radio]');
+        if (styleRadio) {
+            event.stopPropagation();
+            startGenreRadio(styleRadio.dataset.searchStyleRadio);
+            return;
+        }
+        const genreButton = event.target.closest('[data-search-genre]');
+        if (genreButton) {
+            event.stopPropagation();
+            openGenreFromSearch(genreButton.dataset.searchGenre);
             return;
         }
         // Accions pròpies de cada element (seguir, m'agrada, llista, enllaç d'artista): tenen el seu listener.

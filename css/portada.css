@@ -2977,6 +2977,90 @@ body .follow-btn-pill.is-followed:hover {
     height: auto;
 }
 
+/* Estils (categories i gèneres) trobats a la cerca */
+.search-genre-icon {
+    display: inline-grid;
+    place-items: center;
+    flex: 0 0 44px;
+    width: 44px;
+    height: 44px;
+    border-radius: var(--pt-radius-sm);
+    background: var(--pt-surface-3);
+    color: var(--pt-accent);
+}
+
+.search-genre-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.search-genre-card {
+    display: flex;
+    align-items: stretch;
+    gap: 8px;
+}
+
+.search-genre-open {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+    min-height: 60px;
+    padding: 8px 12px 8px 8px;
+    border: 1px solid var(--pt-line);
+    border-radius: var(--pt-radius);
+    background: var(--pt-surface);
+    color: var(--pt-text);
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+}
+
+.search-genre-open:hover {
+    background: var(--pt-surface-2);
+    border-color: var(--pt-accent);
+}
+
+.search-genre-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.search-genre-name {
+    font-weight: 700;
+}
+
+.search-genre-meta {
+    color: var(--pt-muted);
+    font-size: 0.8125rem;
+}
+
+.search-genre-radio {
+    display: inline-grid;
+    place-items: center;
+    flex: 0 0 60px;
+    border: 1px solid var(--pt-line);
+    border-radius: var(--pt-radius);
+    background: var(--pt-accent);
+    color: var(--pt-on-accent);
+    cursor: pointer;
+}
+
+.search-genre-radio:hover {
+    background: #e4f59d;
+}
+
+.search-genre-open:focus-visible,
+.search-genre-radio:focus-visible {
+    outline: 2px solid var(--pt-accent);
+    outline-offset: 2px;
+}
+
 /* ---------- La teva música: historial, artistes seguits i llistes ---------- */
 .my-music {
     display: flex;
