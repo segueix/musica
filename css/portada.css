@@ -3490,21 +3490,6 @@ body .follow-btn-pill.is-followed:hover {
     font-weight: 700;
 }
 
-#channelPage .channel-category-add {
-    width: 36px;
-    height: 36px;
-    flex-basis: 36px;
-    border: 1px solid var(--pt-line);
-    background: transparent;
-    color: var(--pt-text);
-}
-
-#channelPage .channel-category-add[aria-expanded='true'] {
-    border-color: var(--pt-accent);
-    background: var(--pt-accent);
-    color: var(--pt-on-accent);
-}
-
 /* ---------- Cançons de l'artista ---------- */
 .ap-songs-head {
     display: flex;

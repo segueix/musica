@@ -77,6 +77,18 @@
 
 **Fitxers Afectats:** `js/features/music-queue.js`, `css/portada.css`, `sw.js`, `CLAUDE.md`, tests.
 
+## [2026-10-01] - Fitxa d'artista: el «+» de categories personalitzades ja no hi és
+
+**Símptoma:** Sota l'artista (i el programa) hi havia un botó rodó «+» que obria un selector per sumar-li categories personalitzades. A Segueix Música no n'hi ha cap ni es poden crear (herència de Segueix youtubers), així que el selector sempre deia «No hi ha categories personalitzades.» i el botó no feia res útil.
+
+**Solució Implementada:** `renderChannelProfileCategories()` i `renderProgramCategories()` (app.js) només pinten les etiquetes (`<span class="channel-category-btn">`; les d'estil del feed i, si n'hi ha d'antigues, les assignades) i amaguen el contenidor si no n'hi ha. S'han tret el botó, el selector, el tancament en clicar fora (`channelCategoryPickerCleanup`) i el doble clic/pulsació llarga per esborrar-les, i el CSS corresponent (`.channel-category-add*`, `.channel-category-picker`, `.channel-category-option*`, `.channel-category-empty`). Prova: `tests/artist-page.test.js`.
+
+**Trampes conegudes:** (1) No hi tornis a posar un «+» a la fitxa: les categories d'un artista vénen de la base d'artistes (`data/artistes-musica.json`) i la ràdio de l'estil les fa servir. (2) Les funcions `addChannelCustomCategory()` / `removeCategoryFromChannel()` continuen existint a app.js per a dades antigues i la importació; ja no tenen cap interfície a la fitxa.
+
+**Fitxers Afectats:** `js/app.js`, `css/styles.css`, `css/portada.css`, `sw.js`, `tests/artist-page.test.js`.
+
+---
+
 ## [2026-10-01] - Fitxa d'artista nova: foto gran, presentació curta i dues ràdios
 
 **Símptoma:** La fitxa d'artista era herència de la fitxa de canal de YouTube: avatar petit a l'esquerra (a desktop el nom, «Segueix», ull, compartir i cercador en una sola fila), la descripció de YouTube **sencera** (sovint en castellà i de desenes de línies) abans de veure cap cançó, etiquetes amb un «+» blanc fora de la paleta i cap manera d'engegar una ràdio de l'artista.
