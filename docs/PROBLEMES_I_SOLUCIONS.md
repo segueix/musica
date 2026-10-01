@@ -89,6 +89,12 @@
 
 ---
 
+## [2026-10-01] - Júlia Cruz: cançons en castellà i en anglès
+
+**Símptoma:** Al feed de Júlia Cruz (3 cançons) n'hi havia una en castellà («El baile del querer», del Cabal Musical del Taller de Músics) i una en anglès (el cover «One Night Only» de Jennifer Hudson).
+
+**Solució Implementada:** Seguint el procediment de `CLAUDE.md` («Revisar cançons en castellà»): repàs dels artistes vigilats (`node scripts/revisar_castella_vigilats.js --since=2026-09-30`, només «Mou-te» de Judit Neddermann, en català) i de Júlia Cruz. Els dos IDs s'han afegit a mà a `data/hidden-videos.json` (casos puntuals; la regla de `ocultar_titols_castella.js` és per a títols castellans, no per a l'anglès). Es manté «Enyor». Júlia Cruz és a `docs/ARTISTES_CASTELLA.md`.
+
 ## [2026-10-01] - SUU i altres artistes vigilats: cançons en castellà noves
 
 **Símptoma:** Al feed de SUU hi havia 19 cançons amb el títol en castellà (la regla antiga només en cobria 7 i, amb els títols tal com surten al feed —«Suu - Soy (Videolyric Oficial)»—, no en coincidia cap de les nou). Repassant la resta d'artistes de `docs/ARTISTES_CASTELLA.md` n'han sortit 43 més.
