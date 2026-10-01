@@ -13,6 +13,16 @@
 
 **Fitxers Afectats:**
 
+## [2026-10-01] - El botó «Barreja» de la ràdio deixava una fila amb només «Barreja»
+
+**Símptoma:** A la capçalera de la ràdio, el botó amb text «Barreja» (i «Obre a YouTube») s'embolcallava segons l'ample i, en alguns casos, quedava sol a una fila.
+
+**Causa Arrel:** Eren dos botons de text de 99–190 px a la fila del títol, fora del grup de símbols del nom; amb poc espai (mòbil estret, columna lateral d'escriptori) un dels dos queia a la fila següent.
+
+**Solució Implementada:** «Barreja» passa a ser només el símbol de barrejar (`.mq-shuffle[data-mq-regenerate]`, 44 px, amb `aria-label` i `title` «Barreja la ràdio: genera’n una de nova») dins `.mq-tools`, entre el «+» i el desar com a llista (`regenerateButtonHtml()`); només les ràdios el porten (una llista no es pot regenerar). Al capçal només queda «Obre a YouTube». Espais del grup de 8 a 6 px i xip amb 12 px de padding perquè xip + 4 símbols càpiguen a 390–393 px en una sola fila (a 360 px els símbols passen sencers a la fila de sota). Proves: `tests/music-queue-share.test.js` i `tests/browser/verificar-compartir.js`.
+
+**Fitxers Afectats:** `js/features/music-queue.js`, `css/portada.css`, `sw.js`, `CLAUDE.md`, tests.
+
 ## [2026-10-01] - Cançons que ofereixen subtítols en castellà al feed
 
 **Símptoma:** Hi havia cançons que oferien subtítols en castellà/espanyol (Pau Vallvé, ZOO Posse, Xavi Sarrià, Dàmaris Gelabert, Kitsch…) i es volien fora del feed, també les que s'afegeixin més endavant.

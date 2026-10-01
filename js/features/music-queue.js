@@ -1021,6 +1021,14 @@
         return `<button type="button" class="mq-share" data-mq-share aria-label="${label}" title="${label}">${ICONS.share}</button>`;
     }
 
+    // Símbol de barrejar («Genera de nou la ràdio»): sense text, dins el grup de símbols del nom de la ràdio, perquè
+    // mai quedi sol a una fila del capçal. Només les ràdios es poden regenerar.
+    function regenerateButtonHtml() {
+        if (activePlaylistId !== QUEUE_ID) return '';
+        const label = 'Barreja la ràdio: genera’n una de nova';
+        return `<button type="button" class="mq-shuffle" data-mq-regenerate aria-label="${label}" title="${label}">${ICONS.shuffle}</button>`;
+    }
+
     // ---------- Nom de la ràdio: l'estil (o estils) i el «+» per barrejar-ne un altre ----------
 
     function availableStyles() {
@@ -1042,10 +1050,10 @@
             return `<span class="mq-source mq-styles" role="group" aria-label="Llista de reproducció"><span class="mq-style mq-style--list">${escapeText(activePlaylistName || '')}</span><span class="mq-tools">${share}</span></span>`;
         }
         if (searchRadio) {
-            return `<span class="mq-source mq-styles" role="group" aria-label="Origen de la ràdio"><span class="mq-style">Cerca: ${escapeText(searchRadio.query)} · estils barrejats</span><span class="mq-tools">${saveButtonHtml()}${shareButtonHtml()}</span></span>`;
+            return `<span class="mq-source mq-styles" role="group" aria-label="Origen de la ràdio"><span class="mq-style">Cerca: ${escapeText(searchRadio.query)} · estils barrejats</span><span class="mq-tools">${regenerateButtonHtml()}${saveButtonHtml()}${shareButtonHtml()}</span></span>`;
         }
         if (radioLabel) {
-            return `<span class="mq-source mq-styles" role="group" aria-label="Origen de la ràdio"><span class="mq-style">Selecció: ${escapeText(radioLabel)}</span><span class="mq-tools">${saveButtonHtml()}${shareButtonHtml()}</span></span>`;
+            return `<span class="mq-source mq-styles" role="group" aria-label="Origen de la ràdio"><span class="mq-style">Selecció: ${escapeText(radioLabel)}</span><span class="mq-tools">${regenerateButtonHtml()}${saveButtonHtml()}${shareButtonHtml()}</span></span>`;
         }
         const styles = radioStyles();
         const chips = styles.length
@@ -1063,7 +1071,7 @@
         const add = availableStyles().length
             ? `<button type="button" class="mq-add-style" data-mq-add-style aria-haspopup="true" aria-expanded="${stylePickerOpen}" aria-label="Afegeix un estil a la ràdio" title="Afegeix un estil a la ràdio">${ICONS.plus}</button>`
             : '';
-        return `<span class="mq-source mq-styles" role="group" aria-label="Estil de la ràdio">${chips}<span class="mq-tools">${add}${saveButtonHtml()}${shareButtonHtml()}</span></span>`;
+        return `<span class="mq-source mq-styles" role="group" aria-label="Estil de la ràdio">${chips}<span class="mq-tools">${add}${regenerateButtonHtml()}${saveButtonHtml()}${shareButtonHtml()}</span></span>`;
     }
 
     function stylePickerHtml() {
@@ -1136,7 +1144,6 @@
                     <h2 class="mq-heading">${activePlaylistId === QUEUE_ID ? 'Ràdio' : 'Llista'}</h2>
                     ${radioNameHtml()}
                     ${canRegenerate || activePlaylistQueue.length > 1 ? `<button type="button" class="mq-regenerate mq-open-ytm" data-mq-open-ytm title="Obre aquesta cua, en el mateix ordre, a YouTube (pots desar-la i tornar-la a trobar a YouTube Music)">${ICONS.external}<span>Obre a YouTube</span></button>` : ''}
-                    ${canRegenerate ? `<button type="button" class="mq-regenerate" data-mq-regenerate title="Genera de nou la ràdio">${ICONS.shuffle}<span>Barreja</span></button>` : ''}
                 </div>
                 ${stylePickerHtml()}
                 ${modeNote}

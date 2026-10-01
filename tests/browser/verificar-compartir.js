@@ -248,12 +248,12 @@ async function main() {
                 };
                 const head = document.querySelector('.mq-head');
                 const heading = head.querySelector('.mq-heading');
-                const barreja = head.querySelector('[data-mq-regenerate]');
+                const barreja = head.querySelector('[data-mq-open-ytm]');
                 const chip = head.querySelector('.mq-style');
                 const tools = [...head.querySelectorAll('.mq-tools button')];
                 const share = head.querySelector('[data-mq-share]');
                 return {
-                    headingVsBarreja: Math.abs(centre(heading) - centre(barreja)),
+                    headingVsBotons: Math.abs(centre(heading) - centre(barreja)),
                     chipRow: r(chip).top,
                     headingRow: r(heading).top,
                     sameRowAsChip: Math.abs(centre(heading) - centre(chip)),
@@ -267,12 +267,12 @@ async function main() {
                 };
             });
             comprovar(
-                `${width} px: «Ràdio» queda alineat amb els botons de la mateixa fila`,
-                m.headingVsBarreja <= 3,
-                m.headingVsBarreja
+                `${width} px: «Ràdio» queda alineat amb el botó d’obrir a YouTube de la mateixa fila`,
+                m.headingVsBotons <= 3,
+                m.headingVsBotons
             );
             comprovar(
-                `${width} px: els símbols (+, desar, compartir) són a la mateixa fila i fan ≥ 44 px`,
+                `${width} px: els símbols (+, barrejar, desar, compartir) són a la mateixa fila i fan ≥ 44 px`,
                 new Set(m.toolTops).size === 1 && m.toolSizes.every(([w, h]) => w >= 44 && h >= 44) && !!m.shareSize,
                 { tops: m.toolTops, sizes: m.toolSizes }
             );

@@ -2363,7 +2363,7 @@ body .follow-btn-pill.is-followed:hover {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     min-height: 44px;
     overflow: visible;
     line-height: normal;
@@ -2381,7 +2381,7 @@ body .follow-btn-pill.is-followed:hover {
     display: inline-flex;
     flex: none;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
 }
 
 .mq-style {
@@ -2390,7 +2390,7 @@ body .follow-btn-pill.is-followed:hover {
     gap: 4px;
     max-width: 100%;
     min-height: 36px;
-    padding: 0 14px;
+    padding: 0 12px;
     border: 1px solid var(--pt-accent);
     border-radius: 16px;
     background: rgba(214, 237, 132, 0.12);
@@ -2432,6 +2432,7 @@ body .follow-btn-pill.is-followed:hover {
 }
 
 .mq-add-style,
+.mq-shuffle,
 .mq-save-list,
 .mq-share {
     display: inline-grid;
@@ -2449,6 +2450,8 @@ body .follow-btn-pill.is-followed:hover {
 .mq-add-style:hover,
 .mq-add-style:focus-visible,
 .mq-add-style[aria-expanded='true'],
+.mq-shuffle:hover,
+.mq-shuffle:focus-visible,
 .mq-save-list:hover,
 .mq-save-list:focus-visible,
 .mq-share:hover,
