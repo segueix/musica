@@ -2227,6 +2227,19 @@ function bindChannelLinks(container = document) {
                 return;
             }
 
+            // Al mòbil, tocar qualsevol part d'una targeta de cançó (també el nom de l'artista) la reprodueix.
+            const songItem = isMobileView() ? link.closest('.video-card, .archive-video-card, .playlist-video-row') : null;
+            if (songItem) {
+                if (songItem.classList.contains('playlist-video-row')) return; // ho gestiona la pàgina de llistes
+                const songId = songItem.dataset.videoId;
+                if (songId) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    playThenNavigate(songId, songItem.dataset.videoSource || container._videoCardDefaultSource || 'api');
+                    return;
+                }
+            }
+
             const programId = String(link.dataset.programId || '').trim();
             if (programId) {
                 event.preventDefault();
@@ -9097,14 +9110,14 @@ function playPlaylist(playlistId) {
     startPlaylistPlayback(playlistId);
 }
 
-async function startPlaylistPlayback(playlistId) {
+async function startPlaylistPlayback(playlistId, startIndex = 0) {
     const playlist = await hydrateStoredPlaylist(playlistId);
     if (!playlist || !Array.isArray(playlist.videos) || playlist.videos.length === 0) {
         return;
     }
     isPlaylistMode = true;
     activePlaylistQueue = [...playlist.videos];
-    currentPlaylistIndex = 0;
+    currentPlaylistIndex = Number.isInteger(startIndex) && startIndex >= 0 && startIndex < playlist.videos.length ? startIndex : 0;
     activePlaylistId = playlist.id;
     activePlaylistName = playlist.name || 'Llista';
     loadVideoInSequence();
@@ -9705,8 +9718,9 @@ function setupVideoCardActionButtons(container) {
 function setupDelegatedVideoCardClicks(container, defaultSource) {
     if (!container || container._videoCardDelegated) return;
     container._videoCardDelegated = true;
+    container._videoCardDefaultSource = defaultSource;
     container.addEventListener('click', e => {
-        // Ignorar clics en accions (playlist, like, channel-link, etc.)
+        // Ignorar clics en accions (playlist, like, etc.); el channel-link al mòbil el reprodueix bindChannelLinks()
         if (
             e.target.closest(
                 '.playlist-action, .like-action, .channel-link, [data-follow-channel], .archive-playlist-action, .delete-history-btn, [data-share-channel-id]'
@@ -9832,7 +9846,15 @@ function bindPlaylistListInteractions() {
 
     playlistsList.addEventListener('click', event => {
         const removeButton = event.target.closest('.playlist-video-remove');
-        if (!removeButton) return;
+        if (!removeButton) {
+            // Al mòbil, tocar qualsevol part d'una cançó de la llista (també el nom de l'artista) la reprodueix.
+            const row = isMobileView() ? event.target.closest('.playlist-video-row') : null;
+            if (row) {
+                event.stopPropagation();
+                startPlaylistPlayback(row.dataset.playlistId, Number(row.dataset.videoIndex));
+            }
+            return;
+        }
         event.stopPropagation();
         removeVideoFromPlaylist(removeButton.dataset.playlistId, removeButton.dataset.videoId);
         renderPlaylistsPage();
