@@ -13,6 +13,7 @@
 //   5) La còpia de configuració fusiona les estadístiques sense duplicar-les en importar-les dues vegades.
 
 const http = require('http');
+const { ambGustRecent } = require('./gust-recent');
 const fs = require('fs');
 const path = require('path');
 
@@ -164,6 +165,7 @@ async function main() {
                 () => SegueixApp.features.musicSelection.isEnabled() && Boolean(SegueixApp.features.musicSignals)
             )
         );
+        await ambGustRecent(page);
         await page.click('#ptPlayBtn');
         await page.waitForFunction(() => document.querySelectorAll('#videoPlayer iframe').length === 1, null, {
             timeout: 15000,
@@ -830,6 +832,7 @@ async function main() {
         // Mòbil: controls de preferència accessibles
         const mobil = await novaPagina(browser, { width: 390, height: 800 });
         await obrir(mobil.page);
+        await ambGustRecent(mobil.page);
         await mobil.page.click('#ptPlayBtn');
         await mobil.page.waitForFunction(() => document.querySelectorAll('#videoPlayer iframe').length === 1, null, {
             timeout: 15000,

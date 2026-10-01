@@ -47,6 +47,10 @@
         bound: false,
         featured: null,
         model: null,
+        // Estils triats a la targeta de la primera vegada (encara sense desar)
+        firstPick: new Set(),
+        // «Més estils» desplegat a la targeta de la primera vegada
+        firstMore: false,
     };
 
     // ---------- Utilitats pures ----------
@@ -818,6 +822,79 @@
             .join('')}</span>`;
     }
 
+    // ---------- «La teva ràdio»: gust recent i primera vegada ----------
+
+    function tasteNow() {
+        const discovery = app.features.discovery;
+        if (!discovery?.recentTaste) return null;
+        try {
+            return discovery.recentTaste({ ...discovery.readAppContext() });
+        } catch (error) {
+            return null;
+        }
+    }
+
+    // chooser: primera vegada de debò (cap dada i cap estil triat) → s'ensenyen els estils per triar.
+    // savedOnly: ja va triar estils però encara no hi ha cap altra dada.
+    function firstTimeState(taste) {
+        const discovery = app.features.discovery;
+        const saved = discovery?.getFirstStyles?.() || [];
+        const empty = Boolean(taste && !taste.hasAny);
+        // Amb molt poques dades (menys de 3 artistes coneguts) manen els estils triats: encara no hi ha gust que seguir.
+        const thin = Boolean(taste && taste.artistKeys.size < (discovery?.MIN_KNOWN_ARTISTS || 3));
+        return { saved, chooser: empty && saved.length === 0, savedOnly: thin && saved.length > 0 };
+    }
+
+    // Què diu la targeta de la ràdio: de què està feta (mai «des de zero»).
+    function radioLead(taste, first, showsContinue) {
+        if (first.chooser) return 'Tria fins a tres estils per començar.';
+        if (first.savedOnly) {
+            return `Feta amb els estils que vas triar: ${first.saved.join(', ')}. S’adaptarà al que escoltis.`;
+        }
+        const summary = taste?.hasAny ? app.features.discovery.tasteSummary(taste) : '';
+        if (summary) return showsContinue ? `Una ràdio nova. ${summary}` : summary;
+        return 'Barreja el que t’agrada amb música nova, sense parar.';
+    }
+
+    function syncFirstTime(first) {
+        const box = $('ptFirst');
+        const chips = $('ptFirstChips');
+        const doc = window.document;
+        if (box) box.hidden = !first.chooser;
+        if (chips && first.chooser) {
+            if (!chips.children.length) {
+                const discovery = app.features.discovery;
+                const main = new Set(toArray(discovery?.PRIMARY_STYLES));
+                const chip = label =>
+                    `<button type="button" class="pt-chip${main.has(label) ? '' : ' pt-chip--extra'}" data-pt-first-style="${esc(label)}" aria-pressed="false">${esc(label)}</button>`;
+                chips.innerHTML = `${toArray(discovery?.choosableStyles?.()).map(chip).join('')}<button type="button" class="pt-chip pt-chip--more" data-pt-first-more aria-expanded="false">Més estils</button>`;
+            }
+            chips.querySelectorAll('[data-pt-first-style]').forEach(button => {
+                const picked = state.firstPick.has(button.dataset.ptFirstStyle);
+                button.setAttribute('aria-pressed', String(picked));
+                // Els estils menys habituals surten sota «Més estils» (però no s'amaga el que ja s'ha triat)
+                if (button.classList.contains('pt-chip--extra')) button.hidden = !state.firstMore && !picked;
+            });
+            const more = chips.querySelector('[data-pt-first-more]');
+            if (more) {
+                more.setAttribute('aria-expanded', String(state.firstMore));
+                more.textContent = state.firstMore ? 'Menys estils' : 'Més estils';
+            }
+        }
+        const mode = doc?.querySelector?.('#ptRadio .pt-mode');
+        if (mode) mode.hidden = first.chooser || first.savedOnly;
+        const reset = $('ptFirstReset');
+        if (reset) reset.hidden = !first.savedOnly;
+    }
+
+    function toggleFirstStyle(label) {
+        const max = app.features.discovery?.MAX_FIRST_STYLES || 3;
+        if (state.firstPick.has(label)) state.firstPick.delete(label);
+        else if (state.firstPick.size >= max) toast(`Pots triar-ne fins a ${max}.`);
+        else state.firstPick.add(label);
+        updateEntry();
+    }
+
     function updateEntry() {
         const slot = $('ptFeature');
         const now = nowPlaying();
@@ -848,15 +925,18 @@
                 art._html = html;
             }
         }
+        // «La teva ràdio» es fa amb el gust recent (escoltat aquests dies, m'agrades i seguits). La primera vegada
+        // —sense res d'això— es demanen els estils, i només aquesta vegada.
+        const taste = tasteNow();
+        const first = firstTimeState(taste);
+        entry?.classList.toggle('is-first-time', first.chooser);
         const lead = $('ptRadioLead');
-        if (lead) {
-            lead.textContent = showsContinue
-                ? 'O comença una ràdio nova, amb el mode que triïs.'
-                : 'Barreja el que t’agrada amb música nova, sense parar.';
-        }
+        if (lead) lead.textContent = radioLead(taste, first, showsContinue);
+        syncFirstTime(first);
         const play = $('ptPlayBtn');
         if (play) {
-            play.disabled = !ready;
+            play.disabled = !ready || (first.chooser && state.firstPick.size === 0);
+            play.title = first.chooser && state.firstPick.size === 0 ? 'Tria almenys un estil per començar' : '';
             const text = play.querySelector('span');
             if (text) text.textContent = showsContinue ? 'Ràdio nova' : 'Engega la ràdio';
             // Hi ha una acció principal a la pantalla: si ja es pot continuar, «Ràdio nova» és la secundària
@@ -909,6 +989,15 @@
     function startMix() {
         const queue = app.features.musicQueue;
         if (!queue?.startDiscovery) return;
+        // La primera vegada la ràdio es fa amb els estils triats: es desen i ja no es tornen a demanar.
+        const first = firstTimeState(tasteNow());
+        if (first.chooser) {
+            if (!state.firstPick.size) {
+                toast('Tria almenys un estil per començar.');
+                return;
+            }
+            app.features.discovery.setFirstStyles([...state.firstPick]);
+        }
         const result = queue.startDiscovery();
         if (!result.started) {
             toast('Encara no hi ha música carregada. Torna-ho a provar d’aquí a un moment.');
@@ -1021,6 +1110,18 @@
         if (pick('[data-pt-resume]')) {
             if (!app.features.musicQueue?.resumeLast?.())
                 toast('No s’ha pogut continuar la ràdio. Prova «La teva ràdio».');
+            return undefined;
+        }
+        if ((el = pick('[data-pt-first-style]'))) return toggleFirstStyle(el.dataset.ptFirstStyle);
+        if (pick('[data-pt-first-more]')) {
+            state.firstMore = !state.firstMore;
+            updateEntry();
+            return undefined;
+        }
+        if (pick('[data-pt-first-reset]')) {
+            app.features.discovery?.setFirstStyles?.([]);
+            state.firstPick = new Set();
+            updateEntry();
             return undefined;
         }
         if (pick('[data-pt-mix]')) return startMix();
@@ -1180,6 +1281,8 @@
         updateEntry,
         continueHtml,
         radioCovers,
+        radioLead,
+        firstTimeState,
         refreshIfStale,
         isActive: () => state.rendered,
         getModel: () => state.model,

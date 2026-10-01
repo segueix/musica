@@ -223,6 +223,11 @@
                         <p class="pt-eyebrow pt-eyebrow--brand">Ràdio personal</p>
                         <h2 class="pt-radio__title" id="ptEntryTitle">La teva ràdio</h2>
                         <p class="pt-radio__lead" id="ptRadioLead">Barreja el que t’agrada amb música nova, sense parar.</p>
+                        <!-- Només la primera vegada (sense historial, m'agrades ni seguits): estils per començar -->
+                        <div class="pt-first" id="ptFirst" hidden>
+                            <div class="pt-first__chips" id="ptFirstChips" role="group" aria-label="Estils per començar (fins a tres)"></div>
+                            <p class="pt-first__note">Només t’ho demanem aquesta primera vegada: després la ràdio s’adapta al que escoltis, t’agradi i segueixis.</p>
+                        </div>
                         <div class="pt-entry__cta">
                             <button type="button" class="pt-btn pt-btn--primary" id="ptPlayBtn" data-pt-mix disabled>
                                 <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 5.6v12.8a1 1 0 0 0 1.5.86l10.4-6.4a1 1 0 0 0 0-1.72L9.5 4.74A1 1 0 0 0 8 5.6Z"/></svg>
@@ -238,6 +243,7 @@
                             </div>
                             <p class="pt-mode__hint" id="ptModeHint">Combina música coneguda i descoberta.</p>
                         </fieldset>
+                        <button type="button" class="pt-link" id="ptFirstReset" data-pt-first-reset hidden>Canvia els estils que vas triar</button>
                         <p class="pt-note" id="ptNote" role="status" aria-live="polite"></p>
                     </div>
                 </article>

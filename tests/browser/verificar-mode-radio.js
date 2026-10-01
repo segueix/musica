@@ -5,6 +5,7 @@
 // Ús:  node tests/browser/verificar-mode-radio.js     (MUSICA_TEST_SHOTS=/ruta per desar captures)
 
 const http = require('http');
+const { ambGustRecent } = require('./gust-recent');
 const fs = require('fs');
 const path = require('path');
 
@@ -142,6 +143,7 @@ async function main() {
         const coneguts = new Set(await sembrarHistorial(page));
         await page.goto('about:blank');
         await obrir(page);
+        await ambGustRecent(page);
         await page.click('#ptPlayBtn');
         await page.waitForSelector('.mq--radio .mq-head .mq-mode', { timeout: 20000 });
         await page.waitForTimeout(800);
@@ -309,6 +311,7 @@ async function main() {
         await sembrarHistorial(page);
         await page.goto('about:blank');
         await obrir(page);
+        await ambGustRecent(page);
         await page.click('#ptPlayBtn');
         await page.waitForSelector('.mq--radio .mq-head .mq-mode', { timeout: 20000 });
         await page.waitForTimeout(800);

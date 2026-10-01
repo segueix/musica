@@ -5,6 +5,7 @@
 // Ús:  node tests/browser/verificar-relacionats.js
 
 const http = require('http');
+const { ambGustRecent } = require('./gust-recent');
 const fs = require('fs');
 const path = require('path');
 
@@ -130,6 +131,7 @@ async function main() {
         for (const width of [390, 820]) {
             // Ràdio
             let { context, page } = await novaPagina(browser, width, errors);
+            await ambGustRecent(page);
             await page.click('#ptPlayBtn');
             await esperarCua(page);
             const radio = await relacionats(page);
@@ -177,6 +179,7 @@ async function main() {
 
         // Escriptori: la ràdio continua sense relacionats (regla existent) i no s'hi ha tocat
         const { context, page } = await novaPagina(browser, 1440, errors);
+        await ambGustRecent(page);
         await page.click('#ptPlayBtn');
         await esperarCua(page);
         const escriptori = await relacionats(page);

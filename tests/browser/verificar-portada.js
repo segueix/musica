@@ -23,6 +23,7 @@
 //   8) Sense catàleg: missatge d'error i «Torna-ho a provar» recupera la portada.
 
 const http = require('http');
+const { ambGustRecent } = require('./gust-recent');
 const fs = require('fs');
 const path = require('path');
 
@@ -205,6 +206,7 @@ async function recorregut(browser, width, height) {
         `${nom}: «La teva ràdio» està actiu`,
         await page.evaluate(() => !document.getElementById('ptPlayBtn').disabled)
     );
+    await ambGustRecent(page);
     await page.click('#ptPlayBtn');
     await page.waitForFunction(() => document.querySelectorAll('#videoPlayer iframe').length === 1, null, {
         timeout: 15000,
@@ -300,6 +302,7 @@ async function teclat(browser) {
         consent: 'rejected',
     });
     await obrir(page);
+    await ambGustRecent(page);
     await page.focus('input[value="mix"]');
     await page.keyboard.press('ArrowRight');
     comprovar(
@@ -368,6 +371,7 @@ async function estatError(browser) {
     bloquejat = false;
     await page.click('[data-pt-retry]');
     await page.waitForSelector('.pt-section', { timeout: 30000 });
+    await ambGustRecent(page);
     comprovar(
         'error: «Torna-ho a provar» recupera la portada',
         await page.evaluate(() => !document.getElementById('ptPlayBtn').disabled)

@@ -77,6 +77,18 @@
 
 **Fitxers Afectats:** `js/features/music-queue.js`, `css/portada.css`, `sw.js`, `CLAUDE.md`, tests.
 
+## [2026-10-01] - «La teva ràdio» semblava que començava de zero i no deia de què estava feta
+
+**Símptoma:** La targeta deia «Barreja el que t'agrada amb música nova, sense parar» i la primera cançó la triava el motor entre tot el catàleg: no es veia que la ràdio partís del que l'usuari ha escoltat, agradat i seguit, ni què passava la primera vegada (sense cap dada).
+
+**Solució Implementada:** (1) `discovery.recentTaste()` (pur): historial dels **últims 7 dies**; si en té menys de 3, l'últim mes; si encara menys, tot; més els m'agrades i els artistes seguits (sense data: sempre compten); retorna recomptes, claus d'artista, estils principals i `hasAny`. `discovery.tasteSummary()` el converteix en text: «Feta amb el que has escoltat aquesta setmana (14 cançons), els teus m'agrades (5) i els artistes que segueixes (3).». (2) `musicQueue.startDiscovery()` tria la **primera cançó** del gust recent segons el mode (`recentSeedPool()`: de sempre → els seus artistes; una mica de tot → ells + el seu estil; sorprèn-me → el seu estil d'altres artistes; amb < 5 cançons torna al conjunt ampli). (3) **Primera vegada** (`!hasAny`): la targeta ensenya els estils (`#ptFirst`: els 8 principals + «Més estils», fins a 3) amb «Només t'ho demanem aquesta primera vegada»; el selector de mode s'amaga; es desen a `catube_first_styles` (`discovery.setFirstStyles()`) i `startDiscovery()` fa una ràdio d'aquells estils (`startStyleRadio`) mentre hi hagi < 3 artistes coneguts; després la ràdio ja és del gust i no es torna a demanar. «Canvia els estils que vas triar» (`#ptFirstReset`) els esborra. Amb estils desats i poques dades el text diu «Feta amb els estils que vas triar: …».
+
+**Trampes conegudes:** (1) Els m'agrades no tenen data (`likedAt` no existeix): la «darrera setmana» només val per a l'historial. (2) El botó de la ràdio és desactivat fins que es tria un estil (només a la primera vegada); les proves de navegador n'hi posen un gust recent amb `ambGustRecent(page)` (`tests/browser/gust-recent.js`, respecta un historial ja preparat). (3) Amb menys de 3 artistes coneguts manen els estils triats encara que hi hagi 1–2 escoltes; a partir de 3 passa al gust recent. (4) El conjunt d'estils triables surt de `SegueixMusicCategories.CATEGORY_GROUPS` sense «Altres estils». (5) La clau `catube_first_styles` viatja amb l'exportació (es copia tot el localStorage).
+
+**Fitxers Afectats:** `js/features/discovery.js`, `js/features/music-queue.js`, `js/features/portada.js`, `index.html`, `css/portada.css`, `sw.js`, `CLAUDE.md`, `tests/discovery.test.js`, `tests/music-queue-discovery.test.js`, `tests/portada-entrada-mobil.test.js`, `tests/browser/gust-recent.js` (nou) i les proves de navegador que engeguen la ràdio.
+
+---
+
 ## [2026-10-01] - Entrada de la portada: «La teva ràdio» i «Continua» no s'entenien i era massa carregada
 
 **Símptoma:** A dalt de la portada hi havia un títol gran, un botó «La teva ràdio» sense explicació, a vegades un segon botó només de text («Continua la ràdio: <títol>»), el selector de mode, una targeta «Novetat» i, mentre sonava alguna cosa, una targeta «Ara sona» amb cercles (+/−) i «Regenera la cua». No quedava clar què feia cada botó ni que «Continua» i «La teva ràdio» eren coses diferents, i no hi havia gairebé imatge.
