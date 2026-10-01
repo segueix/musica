@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-01T15:29:04.395Z",
+  "updatedAt": "2026-10-01T17:45:58.803Z",
   "artists": [
     {
       "name": "31 FAM",
@@ -494,7 +494,8 @@
       "name": "Alfred Garcia",
       "aliases": [],
       "genres": [
-        "Pop"
+        "Pop",
+        "Cançó d'autor"
       ],
       "territories": [],
       "languages": [
@@ -519,7 +520,8 @@
       "active": false,
       "sources": [
         "https://www.enderrock.cat/noticia/30487/premis-primera-fila-2025-premien-vintena-artistes-catalans",
-        "youtube:manual-verified"
+        "youtube:manual-verified",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-28T15:55:21.005Z",
       "notes": "Apareix com a pop en català, però convé revisar si el repertori és principalment en català.",
@@ -532,8 +534,7 @@
       "aliases": [],
       "genres": [
         "Pop",
-        "Rock",
-        "Indie / Alternativa"
+        "Rock"
       ],
       "territories": [],
       "languages": [
@@ -557,7 +558,8 @@
       "active": false,
       "sources": [
         "https://www.wikidata.org/wiki/Q117714888",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-25T15:44:05.402Z",
       "notes": "",
@@ -724,6 +726,7 @@
       "name": "Anna Andreu",
       "aliases": [],
       "genres": [
+        "Pop",
         "Cançó d'autor"
       ],
       "territories": [],
@@ -1012,8 +1015,7 @@
       "aliases": [],
       "genres": [
         "Pop",
-        "Rock",
-        "Folk i arrel"
+        "Rock"
       ],
       "territories": [],
       "languages": [
@@ -1037,7 +1039,8 @@
       "active": false,
       "sources": [
         "https://www.wikidata.org/wiki/Q2733436",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-25T15:44:05.402Z",
       "notes": "",
@@ -1357,7 +1360,7 @@
       "aliases": [],
       "genres": [
         "Pop",
-        "Indie / Alternativa"
+        "Cançó d'autor"
       ],
       "territories": [],
       "languages": [
@@ -1382,7 +1385,8 @@
       "active": false,
       "sources": [
         "https://www.enderrock.cat/noticia/30783/festa-dels-premis-enderrock-2026-comptara-amb-maig-enmatu-minova-au-rora",
-        "youtube:manual-verified"
+        "youtube:manual-verified",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-28T15:55:19.331Z",
       "notes": "Nova etapa més pop i en català.",
@@ -1449,6 +1453,7 @@
       "name": "Ayryn",
       "aliases": [],
       "genres": [
+        "Pop",
         "Urbana"
       ],
       "territories": [],
@@ -1474,7 +1479,8 @@
       "active": false,
       "sources": [
         "manual-user-2026-09-29",
-        "youtube:manual-verified"
+        "youtube:manual-verified",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-29T11:23:48.235Z",
       "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
@@ -1486,7 +1492,8 @@
       "name": "Baya Baye",
       "aliases": [],
       "genres": [
-        "Urbana"
+        "Urbana",
+        "Rap / Hip-hop"
       ],
       "territories": [],
       "languages": [
@@ -1511,7 +1518,8 @@
       "active": false,
       "sources": [
         "manual-user-2026-09-29",
-        "youtube:manual-verified"
+        "youtube:manual-verified",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-29T11:23:48.383Z",
       "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
@@ -1524,7 +1532,7 @@
       "aliases": [],
       "genres": [
         "Pop",
-        "Rumba / Mestissatge"
+        "Rock"
       ],
       "territories": [],
       "languages": [
@@ -1549,7 +1557,8 @@
       "active": false,
       "sources": [
         "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026",
-        "youtube:manual-verified"
+        "youtube:manual-verified",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-28T15:55:20.040Z",
       "notes": "Classificat al Sona9 2026 com a mestissatge pop.",
@@ -2093,9 +2102,7 @@
       "aliases": [],
       "genres": [
         "Pop",
-        "Rock",
-        "Ska / Reggae",
-        "Punk"
+        "Rock"
       ],
       "territories": [],
       "languages": [
@@ -2119,7 +2126,8 @@
       "active": false,
       "sources": [
         "https://www.wikidata.org/wiki/Q3354889",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-25T15:44:05.402Z",
       "notes": "",
@@ -2158,9 +2166,8 @@
       "name": "Cactus Troop",
       "aliases": [],
       "genres": [
-        "Pop",
-        "Rap / Hip-hop",
-        "Ska / Reggae"
+        "Urbana",
+        "Rap / Hip-hop"
       ],
       "territories": [],
       "languages": [
@@ -2184,7 +2191,8 @@
       "active": false,
       "sources": [
         "https://www.wikidata.org/wiki/Q96692189",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-25T15:44:05.402Z",
       "notes": "",
@@ -2213,7 +2221,8 @@
           "musicbrainzReleaseRaw": [],
           "wikidataWorkEvidence": []
         }
-      }
+      },
+      "displayName": "Cactus"
     },
     {
       "name": "Calagher",
@@ -2353,7 +2362,8 @@
           "musicbrainzReleaseRaw": [],
           "wikidataWorkEvidence": []
         }
-      }
+      },
+      "displayName": "Carles Santos"
     },
     {
       "name": "Carmen Amaya",
@@ -2848,8 +2858,7 @@
       "aliases": [],
       "genres": [
         "Rock",
-        "Folk i arrel",
-        "Jazz / Blues"
+        "Folk i arrel"
       ],
       "territories": [],
       "languages": [
@@ -2874,7 +2883,8 @@
       "sources": [
         "https://www.wikidata.org/wiki/Q4894861",
         "wikidata:languages-spoken-catalan",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-25T15:44:05.402Z",
       "notes": "",
@@ -3190,12 +3200,14 @@
       "notes": "Inclòs entre les noves veus del pop català.",
       "genresRaw": [
         "Power pop / rock"
-      ]
+      ],
+      "displayName": "Dan Peralbo i El Comboi"
     },
     {
       "name": "dani6ix & IZZKID",
       "aliases": [],
       "genres": [
+        "Pop",
         "Urbana"
       ],
       "territories": [],
@@ -3221,7 +3233,8 @@
       "active": false,
       "sources": [
         "manual-user-2026-09-29",
-        "youtube:manual-verified"
+        "youtube:manual-verified",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-29T11:23:48.627Z",
       "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
@@ -3234,8 +3247,7 @@
       "aliases": [],
       "genres": [
         "Pop",
-        "Electrònica",
-        "Urbana"
+        "Electrònica"
       ],
       "territories": [],
       "languages": [
@@ -3260,7 +3272,8 @@
       "active": false,
       "sources": [
         "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026",
-        "youtube:manual-verified"
+        "youtube:manual-verified",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-28T15:55:18.341Z",
       "notes": "Projecte creat el 2025; Sona9 el defineix com pop en català.",
@@ -3272,7 +3285,7 @@
       "name": "Derbi Junior",
       "aliases": [],
       "genres": [
-        "Pop",
+        "Rock",
         "Indie / Alternativa"
       ],
       "territories": [],
@@ -3298,7 +3311,8 @@
       "active": false,
       "sources": [
         "https://www.3cat.cat/3cat/catorze-veus-per-entendre-el-futur-del-pop-catala/audio/1244294/",
-        "youtube:manual-verified"
+        "youtube:manual-verified",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-28T15:55:18.709Z",
       "notes": "Inclòs per 3Cat en el mapa de futur del pop.",
@@ -3311,10 +3325,7 @@
       "aliases": [],
       "genres": [
         "Pop",
-        "Rock",
-        "Electrònica",
-        "Ska / Reggae",
-        "Funk / Soul / R&B"
+        "Rock"
       ],
       "territories": [],
       "languages": [
@@ -3338,7 +3349,8 @@
       "active": false,
       "sources": [
         "https://www.wikidata.org/wiki/Q24074759",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-25T15:44:05.402Z",
       "notes": "",
@@ -3615,7 +3627,6 @@
       "name": "Ebri Knight",
       "aliases": [],
       "genres": [
-        "Rock",
         "Folk i arrel",
         "Punk"
       ],
@@ -3641,7 +3652,8 @@
       "active": false,
       "sources": [
         "https://www.wikidata.org/wiki/Q20105693",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-25T15:44:05.402Z",
       "notes": "",
@@ -3746,7 +3758,8 @@
       "name": "El Diluvi",
       "aliases": [],
       "genres": [
-        "Folk i arrel"
+        "Folk i arrel",
+        "Rumba / Mestissatge"
       ],
       "territories": [],
       "languages": [
@@ -3770,7 +3783,8 @@
       "active": false,
       "sources": [
         "https://www.wikidata.org/wiki/Q56402663",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-25T15:44:05.402Z",
       "notes": "",
@@ -4252,8 +4266,7 @@
       "aliases": [],
       "genres": [
         "Pop",
-        "Rock",
-        "Folk i arrel"
+        "Rock"
       ],
       "territories": [],
       "languages": [
@@ -4278,7 +4291,8 @@
       "sources": [
         "https://www.wikidata.org/wiki/Q3324333",
         "wikidata:languages-spoken-catalan",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-25T15:44:05.402Z",
       "notes": "",
@@ -4322,8 +4336,8 @@
       "name": "Els Catarres",
       "aliases": [],
       "genres": [
-        "Rock",
-        "Folk i arrel"
+        "Pop",
+        "Rock"
       ],
       "territories": [],
       "languages": [
@@ -4348,7 +4362,8 @@
       "sources": [
         "https://www.wikidata.org/wiki/Q3774740",
         "wikidata:languages-spoken-catalan",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-25T15:44:05.402Z",
       "notes": "",
@@ -4735,6 +4750,7 @@
       "name": "enMatu",
       "aliases": [],
       "genres": [
+        "Pop",
         "Urbana"
       ],
       "territories": [],
@@ -4760,7 +4776,8 @@
       "active": false,
       "sources": [
         "manual-user-2026-09-29",
-        "youtube:manual-verified"
+        "youtube:manual-verified",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-29T11:23:48.746Z",
       "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
@@ -5074,8 +5091,7 @@
       "aliases": [],
       "genres": [
         "Pop",
-        "Urbana",
-        "Electrònica"
+        "Urbana"
       ],
       "territories": [],
       "languages": [
@@ -5099,7 +5115,8 @@
       "active": false,
       "sources": [
         "https://www.wikidata.org/wiki/Q65969348",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-25T15:44:05.402Z",
       "notes": "",
@@ -5172,7 +5189,8 @@
       "name": "Ferran Palau",
       "aliases": [],
       "genres": [
-        "Pop"
+        "Pop",
+        "Indie / Alternativa"
       ],
       "territories": [],
       "languages": [
@@ -5196,7 +5214,8 @@
       "active": false,
       "sources": [
         "https://www.wikidata.org/wiki/Q56163087",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-25T15:44:05.402Z",
       "notes": "",
@@ -5298,7 +5317,8 @@
       "name": "Flashy Ice Cream",
       "aliases": [],
       "genres": [
-        "Urbana"
+        "Urbana",
+        "Rap / Hip-hop"
       ],
       "territories": [],
       "languages": [
@@ -5322,7 +5342,8 @@
       "active": false,
       "sources": [
         "https://www.wikidata.org/wiki/Q97190892",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-25T15:44:05.402Z",
       "notes": "",
@@ -5570,8 +5591,7 @@
       "aliases": [],
       "genres": [
         "Pop",
-        "Electrònica",
-        "Indie / Alternativa"
+        "Electrònica"
       ],
       "territories": [],
       "languages": [
@@ -5595,7 +5615,8 @@
       "active": true,
       "sources": [
         "https://www.youtube.com/channel/UCUTFIQKXld2UO6NRCxiM8qw",
-        "https://www.enderrock.cat/sona9/grup2024/86/gavinamp3"
+        "https://www.enderrock.cat/sona9/grup2024/86/gavinamp3",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-30T12:15:00.000Z",
       "notes": "Alta manual verificada: projecte de pop electrònic contemporani en català, guanyador del Sona9 2024."
@@ -5930,9 +5951,7 @@
       "aliases": [],
       "genres": [
         "Pop",
-        "Rock",
-        "Folk i arrel",
-        "Cançó d'autor"
+        "Rock"
       ],
       "territories": [],
       "languages": [
@@ -5956,7 +5975,8 @@
       "active": false,
       "sources": [
         "https://www.wikidata.org/wiki/Q3315896",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-25T15:44:05.402Z",
       "notes": "",
@@ -6371,13 +6391,15 @@
       "notes": "Font oficial la descriu com indie-pop català.",
       "genresRaw": [
         "Indie-pop"
-      ]
+      ],
+      "displayName": "Guineu"
     },
     {
       "name": "Gusset",
       "aliases": [],
       "genres": [
-        "Pop"
+        "Pop",
+        "Urbana"
       ],
       "territories": [],
       "languages": [
@@ -6402,7 +6424,8 @@
       "active": false,
       "sources": [
         "https://www.enderrock.cat/noticia/30487/premis-primera-fila-2025-premien-vintena-artistes-catalans",
-        "youtube:manual-verified"
+        "youtube:manual-verified",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-28T15:55:20.721Z",
       "notes": "Premiat dins la gala dedicada a artistes de pop en català.",
@@ -7038,14 +7061,15 @@
         "folk rock",
         "rock",
         "folk"
-      ]
+      ],
+      "displayName": "Sisa"
     },
     {
       "name": "Jo Jet i Maria Ribot",
       "aliases": [],
       "genres": [
         "Pop",
-        "Indie / Alternativa"
+        "Folk i arrel"
       ],
       "territories": [],
       "languages": [
@@ -7069,7 +7093,8 @@
       "active": false,
       "sources": [
         "https://www.wikidata.org/wiki/Q114963738",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-25T15:44:05.402Z",
       "notes": "",
@@ -7104,9 +7129,7 @@
       "name": "Joan Colomo",
       "aliases": [],
       "genres": [
-        "Pop",
         "Rock",
-        "Folk i arrel",
         "Cançó d'autor"
       ],
       "territories": [],
@@ -7131,7 +7154,8 @@
       "active": false,
       "sources": [
         "https://www.wikidata.org/wiki/Q16189612",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-25T15:44:05.402Z",
       "notes": "",
@@ -7230,7 +7254,10 @@
     {
       "name": "Joan Dausà",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Pop",
+        "Cançó d'autor"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -7264,7 +7291,8 @@
         "https://www.wikidata.org/wiki/Q21950809",
         "wikidata:performed-catalan-work",
         "musicbrainz:youtube-candidate",
-        "youtube:channels-list"
+        "youtube:channels-list",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-25T16:21:18.460Z",
       "notes": "",
@@ -7648,7 +7676,10 @@
     {
       "name": "Jofre Bardagí Grima",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Pop",
+        "Cançó d'autor"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -7671,7 +7702,8 @@
       "active": false,
       "sources": [
         "https://www.wikidata.org/wiki/Q11928196",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-25T15:44:05.402Z",
       "notes": "",
@@ -7694,7 +7726,8 @@
           "musicbrainzReleaseEvidence": [],
           "musicbrainzReleaseGroupCount": 2
         }
-      }
+      },
+      "displayName": "Jofre Bardagí"
     },
     {
       "name": "Jordi Barre",
@@ -8253,8 +8286,7 @@
       "name": "Judit Neddermann",
       "aliases": [],
       "genres": [
-        "Pop",
-        "Folk i arrel",
+        "Cançó d'autor",
         "Jazz / Blues"
       ],
       "territories": [],
@@ -8279,7 +8311,8 @@
       "active": false,
       "sources": [
         "https://www.wikidata.org/wiki/Q17338014",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-25T15:44:05.402Z",
       "notes": "",
@@ -8432,7 +8465,6 @@
       "aliases": [],
       "genres": [
         "Pop",
-        "Cançó d'autor",
         "Folk i arrel"
       ],
       "territories": [],
@@ -8457,7 +8489,8 @@
       "active": true,
       "sources": [
         "https://www.youtube.com/channel/UCx4dYUR3m6jehjW7mYdSX7g",
-        "https://www.enderrock.cat/disc/11440"
+        "https://www.enderrock.cat/disc/11440",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-30T12:15:00.000Z",
       "notes": "Alta manual verificada: cançó-pop d'arrel mallorquina i canal oficial de YouTube."
@@ -8466,7 +8499,8 @@
       "name": "Júlia Cruz",
       "aliases": [],
       "genres": [
-        "Pop"
+        "Folk i arrel",
+        "Cançó d'autor"
       ],
       "territories": [],
       "languages": [
@@ -8491,7 +8525,8 @@
       "active": false,
       "sources": [
         "https://www.3cat.cat/3cat/catorze-veus-per-entendre-el-futur-del-pop-catala/audio/1244294/",
-        "youtube:manual-verified"
+        "youtube:manual-verified",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-28T15:55:19.084Z",
       "notes": "Inclosa entre les noves veus del pop català.",
@@ -8504,8 +8539,7 @@
       "aliases": [],
       "genres": [
         "Pop",
-        "Urbana",
-        "Electrònica"
+        "Urbana"
       ],
       "territories": [],
       "languages": [
@@ -8529,7 +8563,8 @@
       "active": false,
       "sources": [
         "https://www.wikidata.org/wiki/Q115388935",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-25T15:44:05.402Z",
       "notes": "",
@@ -8572,7 +8607,8 @@
       "name": "Kitsch",
       "aliases": [],
       "genres": [
-        "Rock"
+        "Rock",
+        "Indie / Alternativa"
       ],
       "territories": [],
       "languages": [
@@ -8597,7 +8633,8 @@
       "active": false,
       "sources": [
         "manual-user-2026-09-29",
-        "youtube:manual-verified"
+        "youtube:manual-verified",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-29T11:23:49.663Z",
       "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
@@ -8782,7 +8819,7 @@
       "name": "L'arannà",
       "aliases": [],
       "genres": [
-        "Pop",
+        "Folk i arrel",
         "Cançó d'autor"
       ],
       "territories": [],
@@ -8808,7 +8845,8 @@
       "active": false,
       "sources": [
         "https://www.3cat.cat/3cat/catorze-veus-per-entendre-el-futur-del-pop-catala/audio/1244294/",
-        "youtube:manual-verified"
+        "youtube:manual-verified",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-28T15:55:19.166Z",
       "notes": "Inclòs entre les noves veus del pop català.",
@@ -9272,7 +9310,7 @@
       "aliases": [],
       "genres": [
         "Pop",
-        "Rock"
+        "Rumba / Mestissatge"
       ],
       "territories": [],
       "languages": [
@@ -9296,7 +9334,8 @@
       "active": false,
       "sources": [
         "https://www.wikidata.org/wiki/Q63641972",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-25T15:44:05.402Z",
       "notes": "",
@@ -9445,8 +9484,6 @@
       "name": "La Iaia",
       "aliases": [],
       "genres": [
-        "Pop",
-        "Rock",
         "Indie / Alternativa",
         "Folk i arrel"
       ],
@@ -9472,7 +9509,8 @@
       "active": false,
       "sources": [
         "https://www.wikidata.org/wiki/Q20103096",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-25T15:44:05.402Z",
       "notes": "",
@@ -9501,13 +9539,14 @@
           "musicbrainzReleaseRaw": [],
           "wikidataWorkEvidence": []
         }
-      }
+      },
+      "displayName": "Ernest Crusats"
     },
     {
       "name": "La Ludwig Band",
       "aliases": [],
       "genres": [
-        "Pop",
+        "Rock",
         "Folk i arrel"
       ],
       "territories": [],
@@ -9532,7 +9571,8 @@
       "active": false,
       "sources": [
         "https://www.wikidata.org/wiki/Q109441792",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-25T15:44:05.402Z",
       "notes": "",
@@ -9565,6 +9605,7 @@
       "name": "La Madam",
       "aliases": [],
       "genres": [
+        "Pop",
         "Rock"
       ],
       "territories": [],
@@ -9590,7 +9631,8 @@
       "active": false,
       "sources": [
         "manual-user-2026-09-29",
-        "youtube:manual-verified"
+        "youtube:manual-verified",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-29T11:23:49.715Z",
       "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
@@ -9640,7 +9682,6 @@
       "name": "La Tour de Carol",
       "aliases": [],
       "genres": [
-        "Pop",
         "Rock",
         "Indie / Alternativa"
       ],
@@ -9666,7 +9707,8 @@
       "active": true,
       "sources": [
         "https://www.youtube.com/channel/UC5CGdoxqbma-pqkAHPjkq9w",
-        "https://www.enderrock.cat/noticies/etiqueta/La%2BTour%2Bde%2BCarol"
+        "https://www.enderrock.cat/noticies/etiqueta/La%2BTour%2Bde%2BCarol",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-30T12:15:00.000Z",
       "notes": "Alta manual verificada: banda barcelonina de pop-rock/alternativa en català; Channel ID confirmat manualment."
@@ -9911,6 +9953,7 @@
       "name": "Lal'ba",
       "aliases": [],
       "genres": [
+        "Pop",
         "Urbana"
       ],
       "territories": [],
@@ -9935,7 +9978,8 @@
       "active": false,
       "sources": [
         "https://www.wikidata.org/wiki/Q118175642",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-25T15:44:05.402Z",
       "notes": "",
@@ -9960,7 +10004,8 @@
           "musicbrainzReleaseRaw": [],
           "wikidataWorkEvidence": []
         }
-      }
+      },
+      "displayName": "Lal'Ba"
     },
     {
       "name": "Lax'n'Busto",
@@ -10337,12 +10382,15 @@
           "musicbrainzReleaseRaw": [],
           "wikidataWorkEvidence": []
         }
-      }
+      },
+      "displayName": "Lluís Llach"
     },
     {
       "name": "Llum",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Pop"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -10377,7 +10425,8 @@
         "wikidata:native-language-catalan",
         "wikidata:native-language-catalan-musician",
         "musicbrainz:youtube-candidate",
-        "youtube:channels-list"
+        "youtube:channels-list",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-25T16:21:18.539Z",
       "notes": "",
@@ -10790,7 +10839,8 @@
       "name": "Maig",
       "aliases": [],
       "genres": [
-        "Pop"
+        "Pop",
+        "Urbana"
       ],
       "territories": [],
       "languages": [
@@ -10815,7 +10865,8 @@
       "active": false,
       "sources": [
         "https://www.enderrock.cat/noticia/30783/festa-dels-premis-enderrock-2026-comptara-amb-maig-enmatu-minova-au-rora",
-        "youtube:manual-verified"
+        "youtube:manual-verified",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-28T15:53:50.745Z",
       "notes": "Debut 2025 i projecció 2026.",
@@ -10826,7 +10877,10 @@
     {
       "name": "Mama Dousha",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Pop",
+        "Electrònica"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -10849,7 +10903,8 @@
       "active": false,
       "sources": [
         "https://www.wikidata.org/wiki/Q115940783",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-25T15:44:05.402Z",
       "notes": "",
@@ -10879,8 +10934,6 @@
       "aliases": [],
       "genres": [
         "Pop",
-        "Rock",
-        "Indie / Alternativa",
         "Folk i arrel"
       ],
       "territories": [],
@@ -10905,7 +10958,8 @@
       "active": false,
       "sources": [
         "https://www.wikidata.org/wiki/Q3131908",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-25T15:44:05.402Z",
       "notes": "",
@@ -11255,7 +11309,7 @@
       "name": "Mar Grimalt",
       "aliases": [],
       "genres": [
-        "Pop",
+        "Electrònica",
         "Folk i arrel"
       ],
       "territories": [],
@@ -11281,7 +11335,8 @@
       "active": false,
       "sources": [
         "https://www.3cat.cat/3cat/catorze-veus-per-entendre-el-futur-del-pop-catala/audio/1244294/",
-        "youtube:manual-verified"
+        "youtube:manual-verified",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-28T15:55:18.991Z",
       "notes": "Inclosa entre les noves veus del pop català.",
@@ -11380,7 +11435,8 @@
           "musicbrainzReleaseRaw": [],
           "wikidataWorkEvidence": []
         }
-      }
+      },
+      "displayName": "La Maria"
     },
     {
       "name": "Maria del Mar Bonet",
@@ -11629,7 +11685,7 @@
       "aliases": [],
       "genres": [
         "Pop",
-        "Indie / Alternativa"
+        "Cançó d'autor"
       ],
       "territories": [],
       "languages": [
@@ -11666,7 +11722,8 @@
         "wikidata:performed-catalan-work",
         "wikidata:native-language-catalan-musician",
         "musicbrainz:youtube-candidate",
-        "youtube:channels-list"
+        "youtube:channels-list",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-25T16:21:18.629Z",
       "notes": "",
@@ -11764,7 +11821,9 @@
     {
       "name": "Mariona Escoda i Sendra",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Pop"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -11787,7 +11846,8 @@
       "active": false,
       "sources": [
         "https://www.wikidata.org/wiki/Q112660609",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-25T15:44:05.402Z",
       "notes": "",
@@ -11810,7 +11870,8 @@
           "musicbrainzReleaseEvidence": [],
           "musicbrainzReleaseGroupCount": 3
         }
-      }
+      },
+      "displayName": "Mariona Escoda"
     },
     {
       "name": "Mariona Sagarra",
@@ -11949,7 +12010,8 @@
       "name": "Miki Núñez",
       "aliases": [],
       "genres": [
-        "Pop"
+        "Pop",
+        "Cançó d'autor"
       ],
       "territories": [],
       "languages": [
@@ -11974,7 +12036,8 @@
       "active": false,
       "sources": [
         "https://www.enderrock.cat/noticia/30487/premis-primera-fila-2025-premien-vintena-artistes-catalans",
-        "youtube:manual-verified"
+        "youtube:manual-verified",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-28T15:55:20.892Z",
       "notes": "Apareix com a pop en català, però convé revisar si el repertori és principalment en català.",
@@ -11987,7 +12050,7 @@
       "aliases": [],
       "genres": [
         "Rock",
-        "Punk"
+        "Indie / Alternativa"
       ],
       "territories": [],
       "languages": [
@@ -12066,7 +12129,8 @@
         "https://www.wikidata.org/wiki/Q132131698",
         "wikidata:performed-catalan-work",
         "musicbrainz:youtube-candidate",
-        "youtube:search-auto"
+        "youtube:search-auto",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-26T13:09:06.023Z",
       "notes": "",
@@ -12337,7 +12401,6 @@
       "aliases": [],
       "genres": [
         "Pop",
-        "Rock",
         "Indie / Alternativa"
       ],
       "territories": [],
@@ -12373,7 +12436,8 @@
         "https://www.wikidata.org/wiki/Q4888175",
         "wikidata:performed-catalan-work",
         "musicbrainz:youtube-candidate",
-        "youtube:channels-list"
+        "youtube:channels-list",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-25T16:21:18.854Z",
       "notes": "",
@@ -12480,9 +12544,7 @@
       "aliases": [],
       "genres": [
         "Urbana",
-        "Rap / Hip-hop",
-        "Ska / Reggae",
-        "Funk / Soul / R&B"
+        "Rap / Hip-hop"
       ],
       "territories": [],
       "languages": [
@@ -12558,7 +12620,8 @@
         "wikidata:native-language-catalan-musician",
         "manual-user-2026-09-29",
         "youtube:manual-verified",
-        "youtube:search-manual"
+        "youtube:search-manual",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-29T12:59:55.322Z",
       "notes": "",
@@ -12649,7 +12712,8 @@
       "name": "Naina",
       "aliases": [],
       "genres": [
-        "Pop"
+        "Pop",
+        "Urbana"
       ],
       "territories": [],
       "languages": [
@@ -12674,7 +12738,8 @@
       "active": false,
       "sources": [
         "https://www.enderrock.cat/noticia/30628/nous-discos-catala-2026",
-        "youtube:manual-verified"
+        "youtube:manual-verified",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-28T15:55:19.710Z",
       "notes": "Artista valenciana amb nou disc en català el 2026.",
@@ -12896,7 +12961,6 @@
       "name": "Núria Feliu i Mestres",
       "aliases": [],
       "genres": [
-        "Folk i arrel",
         "Jazz / Blues"
       ],
       "territories": [],
@@ -12922,7 +12986,8 @@
       "sources": [
         "https://www.wikidata.org/wiki/Q9051329",
         "wikidata:performed-catalan-work",
-        "wikidata:languages-spoken-catalan"
+        "wikidata:languages-spoken-catalan",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-25T15:44:36.421Z",
       "notes": "",
@@ -12956,7 +13021,8 @@
           "musicbrainzReleaseRaw": [],
           "wikidataWorkEvidence": []
         }
-      }
+      },
+      "displayName": "Núria Feliu"
     },
     {
       "name": "nusar3000",
@@ -12991,11 +13057,8 @@
       "name": "Obrint Pas",
       "aliases": [],
       "genres": [
-        "Pop",
         "Rock",
-        "Folk i arrel",
-        "Ska / Reggae",
-        "Punk"
+        "Ska / Reggae"
       ],
       "territories": [],
       "languages": [
@@ -13020,7 +13083,8 @@
       "sources": [
         "https://www.wikidata.org/wiki/Q673364",
         "wikidata:languages-spoken-catalan",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-25T15:44:05.402Z",
       "notes": "",
@@ -13148,7 +13212,6 @@
       "aliases": [],
       "genres": [
         "Pop",
-        "Ska / Reggae",
         "Rumba / Mestissatge"
       ],
       "territories": [],
@@ -13173,7 +13236,8 @@
       "active": false,
       "sources": [
         "https://www.wikidata.org/wiki/Q20108558",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-25T15:44:05.402Z",
       "notes": "",
@@ -13215,8 +13279,8 @@
       "name": "Orella d'Ós",
       "aliases": [],
       "genres": [
-        "Pop",
-        "Rock"
+        "Rock",
+        "Indie / Alternativa"
       ],
       "territories": [],
       "languages": [
@@ -13241,7 +13305,8 @@
       "active": false,
       "sources": [
         "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026",
-        "youtube:manual-verified"
+        "youtube:manual-verified",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-28T15:55:20.327Z",
       "notes": "Classificat al Sona9 2026 com a pop-rock.",
@@ -13357,7 +13422,9 @@
     {
       "name": "Orfeó Gracienc",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Clàssica i contemporània"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -13380,7 +13447,8 @@
       "active": false,
       "sources": [
         "https://www.wikidata.org/wiki/Q7333940",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-25T15:44:05.402Z",
       "notes": "",
@@ -13709,9 +13777,7 @@
       "aliases": [],
       "genres": [
         "Urbana",
-        "Rap / Hip-hop",
-        "Electrònica",
-        "Punk"
+        "Electrònica"
       ],
       "territories": [],
       "languages": [
@@ -13747,7 +13813,8 @@
         "wikidata:performed-catalan-work",
         "wikidata:languages-spoken-catalan",
         "musicbrainz:youtube-candidate",
-        "youtube:channels-list"
+        "youtube:channels-list",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-25T16:21:18.946Z",
       "notes": "",
@@ -13808,7 +13875,8 @@
       "name": "Ouineta",
       "aliases": [],
       "genres": [
-        "Pop"
+        "Pop",
+        "Electrònica"
       ],
       "territories": [],
       "languages": [
@@ -13833,7 +13901,8 @@
       "active": false,
       "sources": [
         "https://icec.gencat.cat/ca/actualitat/noticies/detall/Noticia_PrimaveraPro26",
-        "youtube:manual-verified"
+        "youtube:manual-verified",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-28T15:53:50.745Z",
       "notes": "Pop experimental en català; forta presència 2025-26.",
@@ -13953,7 +14022,8 @@
       },
       "genresRaw": [
         "Nova Cançó"
-      ]
+      ],
+      "displayName": "Ovidi Montllor"
     },
     {
       "name": "Palau",
@@ -14109,7 +14179,10 @@
     {
       "name": "Pastorets Rock",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Rock",
+        "Folk i arrel"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -14132,7 +14205,8 @@
       "active": false,
       "sources": [
         "https://www.wikidata.org/wiki/Q19716150",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-25T15:44:05.402Z",
       "notes": "",
@@ -14258,8 +14332,8 @@
       "name": "Pau Riba i Romeva",
       "aliases": [],
       "genres": [
-        "Cançó d'autor",
-        "Rock"
+        "Rock",
+        "Cançó d'autor"
       ],
       "territories": [],
       "languages": [
@@ -14333,14 +14407,14 @@
           "musicbrainzReleaseRaw": [],
           "wikidataWorkEvidence": []
         }
-      }
+      },
+      "displayName": "Pau Riba"
     },
     {
       "name": "Pau Vallvé Navarro",
       "aliases": [],
       "genres": [
         "Pop",
-        "Rock",
         "Cançó d'autor"
       ],
       "territories": [],
@@ -14365,7 +14439,8 @@
       "active": false,
       "sources": [
         "https://www.wikidata.org/wiki/Q11940577",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-25T15:44:05.402Z",
       "notes": "",
@@ -14394,7 +14469,8 @@
           "musicbrainzReleaseRaw": [],
           "wikidataWorkEvidence": []
         }
-      }
+      },
+      "displayName": "Pau Vallvé"
     },
     {
       "name": "Paul Fuster",
@@ -14476,7 +14552,8 @@
       "name": "Pawn Gang",
       "aliases": [],
       "genres": [
-        "Urbana"
+        "Urbana",
+        "Rap / Hip-hop"
       ],
       "territories": [],
       "languages": [
@@ -14501,13 +14578,15 @@
       "active": false,
       "sources": [
         "manual-user-2026-09-29",
-        "youtube:manual-verified"
+        "youtube:manual-verified",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-29T11:23:49.125Z",
       "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
       "genresRaw": [
         "Urbana"
-      ]
+      ],
+      "displayName": "P.A.W.N. Gang"
     },
     {
       "name": "Pep Gimeno \"Botifarra\"",
@@ -15050,8 +15129,8 @@
       "name": "Pla Moguda",
       "aliases": [],
       "genres": [
-        "Pop",
-        "Rock"
+        "Rock",
+        "Indie / Alternativa"
       ],
       "territories": [],
       "languages": [
@@ -15076,7 +15155,8 @@
       "active": false,
       "sources": [
         "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026",
-        "youtube:manual-verified"
+        "youtube:manual-verified",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-28T15:55:20.588Z",
       "notes": "Guanyador Sona9 2026; pop-rock.",
@@ -15088,6 +15168,7 @@
       "name": "Pol Bordas",
       "aliases": [],
       "genres": [
+        "Pop",
         "Urbana"
       ],
       "territories": [],
@@ -15113,7 +15194,8 @@
       "active": false,
       "sources": [
         "manual-user-2026-09-29",
-        "youtube:manual-verified"
+        "youtube:manual-verified",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-29T11:23:49.201Z",
       "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
@@ -15893,10 +15975,8 @@
       "name": "Remei de Ca la Fresca",
       "aliases": [],
       "genres": [
-        "Pop",
         "Rock",
-        "Indie / Alternativa",
-        "Folk i arrel"
+        "Indie / Alternativa"
       ],
       "territories": [],
       "languages": [
@@ -15966,7 +16046,8 @@
       "sources": [
         "https://www.wikidata.org/wiki/Q126096871",
         "wikidata:performed-catalan-work",
-        "youtube:search-auto"
+        "youtube:search-auto",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-27T14:01:22.618Z",
       "notes": "",
@@ -16092,7 +16173,7 @@
       "aliases": [],
       "genres": [
         "Pop",
-        "Rock"
+        "Indie / Alternativa"
       ],
       "territories": [],
       "languages": [
@@ -16116,7 +16197,8 @@
       "active": false,
       "sources": [
         "https://www.wikidata.org/wiki/Q21089255",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-25T15:44:05.402Z",
       "notes": "",
@@ -16263,7 +16345,8 @@
       },
       "genresRaw": [
         "cançó d'autor"
-      ]
+      ],
+      "displayName": "Roger Mas"
     },
     {
       "name": "Rolando Villazón",
@@ -16526,7 +16609,7 @@
       "name": "Sandra Monfort",
       "aliases": [],
       "genres": [
-        "Pop",
+        "Electrònica",
         "Folk i arrel"
       ],
       "territories": [],
@@ -16552,7 +16635,8 @@
       "active": false,
       "sources": [
         "https://www.3cat.cat/3cat/catorze-veus-per-entendre-el-futur-del-pop-catala/audio/1244294/",
-        "youtube:manual-verified"
+        "youtube:manual-verified",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-28T15:55:18.901Z",
       "notes": "Inclosa entre les noves veus del pop català.",
@@ -16564,7 +16648,8 @@
       "name": "Sangtraït",
       "aliases": [],
       "genres": [
-        "Rock"
+        "Rock",
+        "Metal"
       ],
       "territories": [],
       "languages": [
@@ -16635,7 +16720,8 @@
       "active": false,
       "sources": [
         "manual-user-2026-09-29",
-        "youtube:api-candidate-verified"
+        "youtube:api-candidate-verified",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-29T11:25:49.833Z",
       "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
@@ -17083,7 +17169,7 @@
       "aliases": [],
       "genres": [
         "Pop",
-        "Urbana"
+        "Rock"
       ],
       "territories": [],
       "languages": [
@@ -17107,7 +17193,8 @@
       "active": false,
       "sources": [
         "https://www.wikidata.org/wiki/Q118593752",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-25T15:44:05.402Z",
       "notes": "",
@@ -17177,6 +17264,7 @@
       "name": "Sílvia Pérez Cruz",
       "aliases": [],
       "genres": [
+        "Folk i arrel",
         "Cançó d'autor"
       ],
       "territories": [],
@@ -17897,8 +17985,7 @@
       "aliases": [],
       "genres": [
         "Pop",
-        "Urbana",
-        "Rap / Hip-hop"
+        "Urbana"
       ],
       "territories": [],
       "languages": [
@@ -17922,7 +18009,8 @@
       "active": false,
       "sources": [
         "https://www.wikidata.org/wiki/Q101461756",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-25T15:44:05.402Z",
       "notes": "",
@@ -18367,7 +18455,10 @@
     {
       "name": "Triquell",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Pop",
+        "Rock"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -18401,7 +18492,8 @@
         "https://www.wikidata.org/wiki/Q112663470",
         "wikidata:performed-catalan-work",
         "musicbrainz:youtube-candidate",
-        "youtube:channels-list"
+        "youtube:channels-list",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-25T16:21:19.009Z",
       "notes": "",
@@ -18803,10 +18895,6 @@
       "aliases": [],
       "genres": [
         "Pop",
-        "Rock",
-        "Rap / Hip-hop",
-        "Electrònica",
-        "Folk i arrel",
         "Rumba / Mestissatge"
       ],
       "territories": [],
@@ -18831,7 +18919,8 @@
       "active": false,
       "sources": [
         "https://www.wikidata.org/wiki/Q109692476",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-25T15:44:05.402Z",
       "notes": "",
@@ -18871,9 +18960,7 @@
       "aliases": [],
       "genres": [
         "Rock",
-        "Folk i arrel",
-        "Ska / Reggae",
-        "Punk"
+        "Rumba / Mestissatge"
       ],
       "territories": [],
       "languages": [
@@ -18897,7 +18984,8 @@
       "active": false,
       "sources": [
         "https://www.wikidata.org/wiki/Q11955284",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-25T15:44:05.402Z",
       "notes": "",
@@ -19009,7 +19097,9 @@
     {
       "name": "Xavier de Bétera",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Folk i arrel"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -19033,7 +19123,8 @@
       "sources": [
         "https://www.wikidata.org/wiki/Q28971615",
         "wikidata:native-language-catalan",
-        "wikidata:native-language-catalan-musician"
+        "wikidata:native-language-catalan-musician",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-25T15:47:57.997Z",
       "notes": "",
@@ -19379,9 +19470,8 @@
       "name": "ZOO",
       "aliases": [],
       "genres": [
-        "Rock",
-        "Rap / Hip-hop",
-        "Ska / Reggae"
+        "Urbana",
+        "Rap / Hip-hop"
       ],
       "territories": [],
       "languages": [
@@ -19405,7 +19495,8 @@
       "active": false,
       "sources": [
         "https://www.wikidata.org/wiki/Q19832676",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-25T15:44:05.402Z",
       "notes": "",
