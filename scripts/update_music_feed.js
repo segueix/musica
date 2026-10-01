@@ -9,6 +9,7 @@ const { parseManualDates, stampOriginalYear } = require('./lib/any_original_musi
 const catalog = require('./lib/cataleg_musical');
 const { teSubtitolsCastella } = require('./lib/subtitols_castella');
 const { resolveChannelDisplayName, findNameOverride, loadNameOverrides, stripOfficialWord } = require('./lib/nom_canal');
+const { esCancoAutorCastella } = require('./ocultar_titols_castella');
 
 const API_KEY = process.env.YOUTUBE_API_KEY_SERVER || process.env.YOUTUBE_API_KEY;
 if (!API_KEY) {
@@ -466,6 +467,14 @@ async function main(){
   if(hiddenIds.size){
     for(let i=videos.length-1;i>=0;i--) if(hiddenIds.has(String(videos[i].id))) videos.splice(i,1);
   }
+  // Cançó d'autor: elimina cançons i directes amb títol clarament castellà.
+  // És un filtre conservador basat només en el títol; els casos ambigus es conserven.
+  let withSpanishTitle=0;
+  for(let i=videos.length-1;i>=0;i--){
+    if(esCancoAutorCastella(videos[i])){ videos.splice(i,1); withSpanishTitle++; }
+  }
+  if(withSpanishTitle) console.log(`🙈 ${withSpanishTitle} cançons de Cançó d'autor amb títol castellà descartades`);
+
   // Cançons que ofereixen subtítols en castellà (segons el títol o la descripció): no entren al feed. Es repeteix a
   // cada generació (cada dia), així que les cançons noves hi queden filtrades sense cap llista manual.
   let withSpanishSubtitles=0;
