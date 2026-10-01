@@ -80,25 +80,25 @@ vigilen amb la regla del script.
 
 | Artista (nom al feed) | Ocultes | Notes |
 | --- | --- | --- |
-| **miquel** | n/d | Només els títols castellans (Tu Forma de Amar, Mediterráneo…); la resta és catalana. |
-| **Umpah Pah** | n/d | |
+| **miquel** | 1 + n/d | Revisió del 2026-10-01: «Mi bisabuelo Jaume». **Dubtós, es manté:** «El toro Olé». |
+| **Umpah Pah** | 4 + n/d | Revisió del 2026-10-01: Con premeditación y alevosía, Entre tu y yo, Un compendio en mi menor, Sed de mal. |
 | **Ceaxe** | n/d | «AQUELLA NIT» és en català i es manté. |
-| **SUU** | n/d | |
-| **Miki Nuñez** | n/d | |
-| **alfredgarcia** | n/d | |
-| **CACTUS** | n/d | |
-| **Txarango** | 1 | «BENDITA VIDA» (ocultada el 2026-10-01: la regla duia el nom antic `Txarango Oficial` i no coincidia). |
+| **SUU** | 19 + n/d | Revisió del 2026-10-01: 19 títols castellans (Eres un temazo, Ojalá, Soy, Algo de mi, Mi casa, Súbete, A solas, Reinas, Tranqüilo, A tomar, Me gusta, Nota de voz, De ti para mí, Creo…). Es mantenen els catalans (Diuen, Tant de bo, Passen coses…) i els títols compartits (Natural, Laura, Boom, Pur, Karaoke, Material sensible, Postal barata). |
+| **Miki Nuñez** | 15 + n/d | Revisió del 2026-10-01: Viento y vida, Celébrate, Mi lugar, Beberte lento, Sin noticias de Gurb, Eterno verano, Coral del arrecife, 10 minutos, De ida y vuelta, Me vale, Todo lo que llevo dentro, La venda (Eurovisió, 2 vídeos) i el cover «Prefiero». Es mantenen els catalans i les versions en altres llengües (Trevo, en portuguès). |
+| **alfredgarcia** | 14 + n/d | Revisió del 2026-10-01: Mi canción, Corazón, Si algún día (3), Los Espabilados (2), Desde que tú estás, Volver a empezar, Por si te hace falta, Lo que puedo dar, Que nos sigan las luces, Comunicado oficial, De la tierra hasta Marte, «Detrás de las cámaras de Londres». **Dubtós, es manté:** «1997» (amb Niño de Elche). |
+| **CACTUS** | 3 + n/d | Revisió del 2026-10-01: Fuego, No osaríais vestir mi piel, Cabrona de mí. Es mantenen els mixtos (Un besito ràndom, No sabia lo que fer). |
+| **Txarango** | 2 | «BENDITA VIDA» i «Bendita la vida» (la regla duia el nom antic `Txarango Oficial` i no coincidia). |
 | **elo** | n/d | |
 | **Joan Colomo** | n/d | |
 | **Cristina Monllau** | n/d | |
-| **Joan Dausà** | n/d | |
-| **Sandra Monfort** | n/d | |
+| **Joan Dausà** | 1 + n/d | Revisió del 2026-10-01: «Nunca es tarde». |
+| **Sandra Monfort** | 3 + n/d | Revisió del 2026-10-01: Niño reptil ángel (2), Nana para Enzo. |
 | **Triquell** | n/d | |
 | **Sangtraït** | n/d | |
 | **Xavier de Bétera** | n/d | |
 | **Ocults** | n/d | Canal amb cançons de procedència diversa. |
 | **KOP** | n/d | La regla duia el nom antic `KOP Oficial`; ara coincideix amb el `channelTitle` real. |
-| **La Madam** | n/d | |
+| **La Madam** | 1 + n/d | Revisió del 2026-10-01: «Prende ese fuego». |
 
 ## Artistes rebutjats del feed
 

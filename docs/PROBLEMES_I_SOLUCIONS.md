@@ -77,6 +77,18 @@
 
 **Fitxers Afectats:** `js/features/music-queue.js`, `css/portada.css`, `sw.js`, `CLAUDE.md`, tests.
 
+## [2026-10-01] - SUU i altres artistes vigilats: cançons en castellà noves
+
+**Símptoma:** Al feed de SUU hi havia 19 cançons amb el títol en castellà (la regla antiga només en cobria 7 i, amb els títols tal com surten al feed —«Suu - Soy (Videolyric Oficial)»—, no en coincidia cap de les nou). Repassant la resta d'artistes de `docs/ARTISTES_CASTELLA.md` n'han sortit 43 més.
+
+**Solució Implementada:** Seguint el procediment de `CLAUDE.md` («Revisar cançons en castellà»): `node scripts/revisar_castella_vigilats.js --artista="SUU"` (38 visibles) i revisió dels títols. **SUU (19 amagades):** Eres un temazo (2), Ojalá, Soy, Algo de mi, Si no saltas, Todo lo que canto, Mi casa, No eres tan especial, Súbete, Me gusta, A solas, Reinas, Tranqüilo, A tomar, Nota de voz, De ti para mí, Creo (que tk), Enamorada de la moda juvenil (versió de Radio Futura). Es mantenen els catalans i els títols compartits (Natural, Laura, Boom, Pur, Karaoke, Material sensible, Postal barata). **Resta d'artistes (43):** Miki Núñez 15, Alfred García 14, Umpah Pah 4, Sandra Monfort 3, CACTUS 3, i 1 de miquel, Joan Dausà, Txarango i La Madam (detall a la taula del document). Regles per canal a `REGLES` de `scripts/ocultar_titols_castella.js`; IDs a `data/hidden-videos.json`.
+
+**Trampes conegudes:** (1) Els regex de `REGLES` s'apliquen al títol **brut** del feed (amb «Suu - …» i els accents poden venir descomposats): per això s'usa `.{1,2}` en lloc de `[aá]` en paraules amb accent. (2) Dubtosos que es mantenen: «1997» d'Alfred García amb Niño de Elche, «El toro Olé» de miquel, «Mi broda» de DAVEU, i els títols que pertanyen a les dues llengües. (3) «Trevo (Tu)» de Miki Núñez és en portuguès: no es va demanar amagar-lo. (4) La revisió de la resta d'artistes s'ha fet **només pels títols** (heurística de paraules castellanes + criteri manual): una cançó amb títol català i lletra castellana continua al feed.
+
+**Fitxers Afectats:** `scripts/ocultar_titols_castella.js`, `data/hidden-videos.json`, `docs/ARTISTES_CASTELLA.md`, `tests/ocultar-titols-castella.test.js`.
+
+---
+
 ## [2026-10-01] - «La teva ràdio» semblava que començava de zero i no deia de què estava feta
 
 **Símptoma:** La targeta deia «Barreja el que t'agrada amb música nova, sense parar» i la primera cançó la triava el motor entre tot el catàleg: no es veia que la ràdio partís del que l'usuari ha escoltat, agradat i seguit, ni què passava la primera vegada (sense cap dada).
