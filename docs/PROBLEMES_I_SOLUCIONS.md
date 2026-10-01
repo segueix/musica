@@ -77,6 +77,18 @@
 
 **Fitxers Afectats:** `js/features/music-queue.js`, `css/portada.css`, `sw.js`, `CLAUDE.md`, tests.
 
+## [2026-10-01] - Pàgina per revisar noms i categories dels artistes (`revisio-artistes.html`)
+
+**Necessitat:** Poder repassar amb calma el **nom que es veu a l'app** i les categories dels artistes ben indexats, marcar quins ja estan bé i passar el resultat per aplicar-lo, sense la pàgina d'administració completa (`admin-musica.html`, amb token, estats, YouTube ID, MusicBrainz…). La primera versió editava `artist.name` (el de la base d'artistes), que **l'app no mostra**: l'app mostra el nom del canal de YouTube («alfredgarcia»).
+
+**Solució Implementada:** (1) **Pàgina:** `revisio-artistes.html` (155 artistes: els amb canal i no rebutjats) amb el nom que es veu a l'app editable (inicial: el del canal a `js/channels-ca.json`, o el `displayName` ja desat), categories (diàleg amb la taxonomia de `music-genres.json`), columna OK, cercador, filtres, recomptes i **desat automàtic al navegador**; «Descarrega la revisió» baixa un JSON (+ CSV). (2) **Aplicar:** `scripts/aplicar_revisio_artistes.js` (`--dry-run`): el nom va a `displayName` (si torna a ser el del canal, s'esborra), categories a `genres` amb `genre:manual`, OK a `revisioEditorial`; l'esquema (`additionalProperties: false`) accepta `displayName` i `revisioEditorial`. (3) **A l'app:** `music-categories.js` guarda `displayName` per canal i el posa a `channelTitle` dels vídeos (`cleanVideoTitle`, que també passa per historial, m'agrades i llistes) i a `name` dels canals (`decorateChannel`); `YouTubeAPI.withDisplayName()` ho fa a `feedChannels` i `getAllChannels()` i hi afegeix el nom antic a `artists` perquè la cerca el trobi. Comprovat a Chromium amb un nom de prova: canal, vídeos, fitxa, targetes de la fitxa, historial i cerca (pel nom nou i pel de YouTube). La lògica comuna és a `js/revisio-artistes.js` (UMD) i `tests/revisio-artistes.test.js` la prova, també amb les dades reals (un document sense canvis no modifica res).
+
+**Trampes conegudes:** (1) **`feed.json` i els scripts continuen amb el nom de YouTube** a propòsit: les regles de `ocultar_titols_castella.js` i el llistat d'artistes vigilats van per `channelTitle` exacte; el canvi de nom és només del client. (2) El títol es neteja amb el nom de YouTube **abans** de posar el nom editat (`applyDisplayName` va al final de `cleanVideoTitle`); si no, un «alfredgarcia - Cançó» ja no perdria el prefix. (3) Les cançons desades abans a llistes poden dur `artistName` antic: `resolveArtistName()` dóna prioritat al nom registrat, que ja és el nou. (4) `scripts/enriquir_generes_musica.js` sobreescriu `genres` tret que `sources` inclogui `genre:manual`: l'aplicació ho afegeix (`admin-musica.html` no ho fa: les categories editades allà es poden perdre en el proper enriquiment). (5) L'esborrany és per navegador: «Esborra els canvis» el descarta. (6) La pàgina porta `noindex` però és pública, igual que les dades que carrega. (7) Un artista amb diversos canals mostra el mateix nom a tots.
+
+**Fitxers Afectats:** `revisio-artistes.html`, `js/revisio-artistes.js`, `js/music-categories.js`, `js/youtube.js`, `scripts/aplicar_revisio_artistes.js`, `data/artistes-musica.schema.json`, `sw.js`, `docs/MUSICA_DADES.md`, `README.md`, `CLAUDE.md`, `tests/revisio-artistes.test.js`.
+
+---
+
 ## [2026-10-01] - SUU i altres artistes vigilats: cançons en castellà noves
 
 **Símptoma:** Al feed de SUU hi havia 19 cançons amb el títol en castellà (la regla antiga només en cobria 7 i, amb els títols tal com surten al feed —«Suu - Soy (Videolyric Oficial)»—, no en coincidia cap de les nou). Repassant la resta d'artistes de `docs/ARTISTES_CASTELLA.md` n'han sortit 43 més.

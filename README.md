@@ -22,7 +22,7 @@ La base es valida amb:
 npm run music:validate
 ```
 
-Per revisar candidats visualment, obre `admin-musica.html`.
+Per revisar candidats visualment, obre `admin-musica.html`. Per revisar només noms i categories dels artistes ben indexats (i marcar-los OK), obre `revisio-artistes.html` (veure `docs/MUSICA_DADES.md`).
 
 Consulta `docs/MUSICA_DADES.md` per als criteris i el flux editorial.
 

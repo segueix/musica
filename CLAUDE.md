@@ -313,6 +313,11 @@ const likes = ctx2.SegueixApp.features.likes;
 4. **Actualitza `docs/ARTISTES_CASTELLA.md`**: artistes nous, recomptes, notes i la data de «Última revisió», i afegeix l'entrada a `docs/PROBLEMES_I_SOLUCIONS.md`. Si un artista apareix a la llista per primera vegada, afegeix-lo amb la primera columna `**Nom exacte al feed**`.
 5. Digues a l'usuari quines cançons has amagat i quines dubtoses has deixat.
 
+### Revisió d'artistes: noms i categories (2026-10-01)
+
+- `revisio-artistes.html` (pàgina estàtica, sense token) deixa editar el **nom que es veu a l'app** i les **categories** dels artistes ben indexats (canal de YouTube assignat, no rebutjats) i marcar-los **OK**; baixa un document `revisio-artistes-AAAA-MM-DD.json`. **Quan l'usuari et passi aquest fitxer:** `node scripts/aplicar_revisio_artistes.js <fitxer> --dry-run`, ensenya-li què canviarà i, si ho confirma o ho demana, executa'l sense `--dry-run` i `node scripts/validar_artistes_musica.js`. La lògica és a `js/revisio-artistes.js` (`applyExport()`).
+- **El nom editat és `displayName`** de l'artista a `data/artistes-musica.json` (no `name`, que és el de la base d'artistes). El client el posa a `channelTitle`/`channel.name` a `music-categories.js` (`cleanVideoTitle`, `decorateChannel`, `displayNameForChannel`) i a `YouTubeAPI.withDisplayName()`; el nom de YouTube queda a `originalChannelTitle`/`originalName`. **`feed.json` i els scripts continuen duent el nom de YouTube** (`channelTitle` exacte per a `REGLES` de `ocultar_titols_castella.js` i `docs/ARTISTES_CASTELLA.md`): no hi posis `displayName`. Les categories editades es marquen `genre:manual`. Detall: `docs/MUSICA_DADES.md` («Revisió de noms i categories»).
+
 ### Play/pausa del reproductor (2026-10-01)
 
 - El play/pausa és **el del reproductor de YouTube**: no hi ha botó propi (`.queue-toggle-button` eliminat) ni cap capa que cobreixi el vídeo. Sobre l'iframe només hi ha anterior · següent · finestra flotant (`.queue-controls`, amb el centre lliure) i, a la finestreta flotant, un **mànec d'arrossegar de 36 px a dalt** (`.drag-handle-container`; al mòbil no hi és). **No tornis a posar capes sobre l'iframe** per detectar tocs ni per fer de botó: es mengen els tocs. Per detectar un toc en tàctil es fa servir el `blur` de la finestra (`initQueueNextOverlay`).
