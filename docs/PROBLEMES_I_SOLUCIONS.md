@@ -13,6 +13,16 @@
 
 **Fitxers Afectats:**
 
+## [2026-10-01] - Artista nusar3000 eliminat
+
+**Símptoma/Petició:** Treure l'artista nusar3000 (canal `UCEK-KX24tmXR1bDCfhE_hgw`, 14 vídeos al feed) de Segueix Música.
+
+**Solució Implementada:** Com amb MARLENA (2026-09-29): a `data/artistes-musica.json` queda `rebutjat` (`active: false`, sense canals, nota «No tornar a resoldre @nusar3000»); fora de `data/youtube-verified-handles.json` (si no, el resolutor el tornaria a afegir); els 14 vídeos a `data/hidden-videos.json` (també filtra `update_music_feed.js`); la regla de títols en castellà de `scripts/ocultar_titols_castella.js` ja no cal. A més, perquè desaparegui de seguida i no calgui esperar el bot, el canal i els seus vídeos s'han tret directament de `data/feed.json` i `js/channels-ca.json` (el mateix resultat que donarà la propera generació; hi ha precedent al commit del canal «Subliminal»). Les auditories (`music-feed-audit.json`, `music-content-audit.json`, `music-content-review.json`) s'han ajustat a mà restant-hi els 14 vídeos (12 cançons, 1 àlbum, 1 revisió, 5 Shorts) perquè continuïn coherents amb el feed (`tests/music-content-overrides.test.js` ho comprova); els números exactes es refresquen amb la propera generació.
+
+**Per tornar-lo a afegir:** canvia'n l'`reviewStatus`, torna a posar el canal a `youtube.channels` i a `youtube-verified-handles.json`, i treu-ne els IDs de `hidden-videos.json`.
+
+**Fitxers Afectats:** `data/artistes-musica.json`, `data/youtube-verified-handles.json`, `data/hidden-videos.json`, `data/feed.json`, `js/channels-ca.json`, `data/music-*-audit.json`, `data/music-content-review.json`, `scripts/ocultar_titols_castella.js`.
+
 ## [2026-10-01] - El botó «Barreja» de la ràdio deixava una fila amb només «Barreja»
 
 **Símptoma:** A la capçalera de la ràdio, el botó amb text «Barreja» (i «Obre a YouTube») s'embolcallava segons l'ample i, en alguns casos, quedava sol a una fila.
