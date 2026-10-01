@@ -898,3 +898,80 @@ describe('mode de descoberta dins de cada ràdio', () => {
         expect(env.container.innerHTML).not.toContain('data-mq-mode');
     });
 });
+
+describe('ràdios de la fitxa d’artista', () => {
+    function artistCatalog() {
+        const list = catalogWithClassics();
+        // Un artista amb vuit cançons, de Pop i Folk i arrel
+        for (let i = 0; i < 8; i++) {
+            list.push(
+                song('art', 0.3 + i * 0.5, {
+                    channelTitle: 'Artista Fitxa',
+                    categories: i % 2 ? ['Pop'] : ['Folk i arrel'],
+                })
+            );
+        }
+        for (let a = 0; a < 6; a++) {
+            for (let i = 0; i < 3; i++) list.push(song(`f${a}`, 1 + i, { categories: ['Folk i arrel'] }));
+        }
+        return list;
+    }
+
+    it('la ràdio de l’artista només porta cançons seves, seguides i sense límit d’un per artista', () => {
+        const catalog = artistCatalog();
+        const { queue, ctx, calls } = setup({ catalog });
+        const own = catalog.filter(v => v.channelId === 'art');
+        expect(queue.startArtistRadio(own, { name: 'Artista Fitxa', channelId: 'art' })).toBe(true);
+        expect(calls.loaded).toBe(1);
+        expect(ctx.activePlaylistId).toBe('__music_queue__');
+        expect(ctx.activePlaylistQueue).toHaveLength(own.length);
+        expect(ctx.activePlaylistQueue.every(v => v.channelId === 'art')).toBe(true);
+        expect(new Set(ctx.activePlaylistQueue.map(v => v.id)).size).toBe(own.length);
+        expect(queue.getState()).toMatchObject({ isRadio: true, artist: 'Artista Fitxa', search: '' });
+        expect(queue.playlistName()).toBe('Ràdio de Artista Fitxa');
+        expect(queue.getShareData().name).toBe('Ràdio de Artista Fitxa');
+    });
+
+    it('«Barreja» d’una ràdio d’artista es queda dins les seves cançons', () => {
+        const catalog = artistCatalog();
+        const { queue, ctx } = setup({ catalog });
+        const own = catalog.filter(v => v.channelId === 'art');
+        queue.startArtistRadio(own, { name: 'Artista Fitxa', channelId: 'art' });
+        queue.regenerate();
+        expect(ctx.activePlaylistQueue.length).toBeGreaterThan(1);
+        expect(ctx.activePlaylistQueue.every(v => v.channelId === 'art')).toBe(true);
+    });
+
+    it('no engega una ràdio d’artista amb una sola cançó ni sense nom', () => {
+        const catalog = artistCatalog();
+        const { queue, calls } = setup({ catalog });
+        const own = catalog.filter(v => v.channelId === 'art');
+        expect(queue.startArtistRadio(own.slice(0, 1), { name: 'Artista Fitxa' })).toBe(false);
+        expect(queue.startArtistRadio([], { name: 'Artista Fitxa' })).toBe(false);
+        expect(calls.loaded).toBe(0);
+    });
+
+    it('la ràdio de l’estil porta els estils de l’artista, barrejats, amb el nom fix i el límit d’artista', () => {
+        const catalog = artistCatalog();
+        const { queue, ctx, calls, selection } = setup({ catalog });
+        expect(queue.startStyleRadio(['Pop', 'Folk i arrel'])).toBe(true);
+        expect(calls.loaded).toBe(1);
+        expect(queue.getState().categories).toEqual(['Pop', 'Folk i arrel']);
+        expect(queue.getState().artist).toBe('');
+        const top = ctx.activePlaylistQueue.slice(0, 20);
+        expect(top.every(v => v.categories.some(name => ['Pop', 'Folk i arrel'].includes(name)))).toBe(true);
+        top.forEach((v, index) => {
+            if (index > 0) expect(v.channelId).not.toBe(top[index - 1].channelId);
+        });
+        expect(top.filter(v => eraOf(selection, v) === 'historic').length).toBeLessThanOrEqual(2);
+        expect(queue.playlistName()).toBe('Ràdio Pop + Folk i arrel');
+    });
+
+    it('la ràdio de l’estil no s’engega sense estils o sense prou cançons', () => {
+        const catalog = artistCatalog();
+        const { queue, calls } = setup({ catalog });
+        expect(queue.startStyleRadio([])).toBe(false);
+        expect(queue.startStyleRadio(['Estil inexistent'])).toBe(false);
+        expect(calls.loaded).toBe(0);
+    });
+});

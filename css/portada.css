@@ -3181,3 +3181,430 @@ body .follow-btn-pill.is-followed:hover {
         min-width: 240px;
     }
 }
+
+/* ==========================================================================
+   Fitxa d'artista (#channelPage)
+   Barra superior amb «enrere» i les dues ràdios; capçalera amb el nom a l'esquerra i la foto gran a la dreta;
+   presentació curta (tres línies) que s'expandeix. Mobile first. Substitueix el disseny antic
+   (.channel-profile-* de styles.css) amb selectors més específics.
+   ========================================================================== */
+
+/* ---------- Barra superior: enrere + ràdios ---------- */
+#channelPage .ap-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+#channelPage .channel-back-btn {
+    flex: none;
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--pt-line);
+    background: var(--pt-surface);
+    color: var(--pt-text);
+    transition: background 0.15s ease;
+}
+
+#channelPage .channel-back-btn:hover {
+    background: var(--pt-surface-2);
+}
+
+#channelPage .ap-radios {
+    display: flex;
+    flex: 1;
+    gap: 8px;
+    min-width: 0;
+    justify-content: flex-end;
+}
+
+#channelPage .ap-radios[hidden] {
+    display: none;
+}
+
+.ap-radio {
+    display: inline-flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-width: 0;
+    min-height: 44px;
+    padding: 0 12px;
+    border: 1px solid var(--pt-line);
+    border-radius: var(--pt-radius);
+    background: var(--pt-surface);
+    color: var(--pt-text);
+    font: inherit;
+    font-size: 0.8125rem;
+    font-weight: 800;
+    line-height: 1.1;
+    white-space: nowrap;
+    cursor: pointer;
+    transition:
+        background 0.15s ease,
+        border-color 0.15s ease,
+        transform 0.15s ease;
+}
+
+.ap-radio svg {
+    width: 20px;
+    height: 20px;
+    flex: none;
+}
+
+.ap-radio:hover:not(:disabled) {
+    background: var(--pt-surface-2);
+    border-color: rgba(244, 240, 232, 0.32);
+}
+
+.ap-radio:active:not(:disabled) {
+    transform: scale(0.98);
+}
+
+/* La ràdio de l'artista és l'acció principal; la de l'estil és la secundària */
+.ap-radio--artist {
+    border-color: var(--pt-accent);
+    background: var(--pt-accent);
+    color: var(--pt-on-accent);
+}
+
+.ap-radio--artist:hover:not(:disabled) {
+    border-color: #e2f49a;
+    background: #e2f49a;
+}
+
+.ap-radio:disabled {
+    border-color: var(--pt-line);
+    background: var(--pt-surface);
+    color: var(--pt-muted);
+    opacity: 0.7;
+    cursor: default;
+}
+
+.ap-radio:focus-visible,
+.ap-bio__toggle:focus-visible,
+#channelPage .channel-back-btn:focus-visible {
+    outline: 3px solid var(--pt-accent);
+    outline-offset: 3px;
+}
+
+.ap-radio__long {
+    display: none;
+}
+
+/* ---------- Capçalera: nom a l'esquerra, foto gran a la dreta ---------- */
+#channelPage .ap-hero {
+    display: block;
+    padding: 0;
+    text-align: left;
+}
+
+#channelPage .ap-hero__meta {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+        'eyebrow photo'
+        'name photo'
+        'info photo'
+        'actions actions';
+    align-items: center;
+    column-gap: 16px;
+    row-gap: 6px;
+    width: 100%;
+    min-width: 0;
+    padding: 18px 16px 16px;
+    border: 1px solid var(--pt-line);
+    border-radius: var(--pt-radius-lg);
+    background: radial-gradient(90% 120% at 100% 0%, rgba(214, 237, 132, 0.1), transparent 60%), var(--pt-surface);
+}
+
+#channelPage .ap-hero__text {
+    display: contents;
+}
+
+#channelPage .ap-hero__eyebrow {
+    grid-area: eyebrow;
+    align-self: end;
+}
+
+#channelPage .channel-profile-title-row {
+    grid-area: name;
+    min-width: 0;
+}
+
+#channelPage .channel-profile-name {
+    margin: 0;
+    font-family: var(--pt-display);
+    font-size: clamp(1.75rem, 8vw, 3.4rem);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    overflow-wrap: anywhere;
+    text-wrap: balance;
+    color: var(--pt-text);
+}
+
+#channelPage .channel-profile-avatar {
+    grid-area: photo;
+    justify-self: end;
+    width: clamp(104px, 30vw, 208px);
+    height: clamp(104px, 30vw, 208px);
+    border: 3px solid var(--pt-surface-3);
+    border-radius: 50%;
+    object-fit: cover;
+    background: var(--pt-surface-2);
+    box-shadow:
+        0 0 0 1px var(--pt-line),
+        0 18px 40px rgba(0, 0, 0, 0.45);
+}
+
+#channelPage .channel-profile-info-row {
+    grid-area: info;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    min-width: 0;
+}
+
+#channelPage .channel-profile-info-left {
+    gap: 2px;
+}
+
+#channelPage .channel-profile-handle,
+#channelPage .channel-profile-subscribers {
+    font-size: 0.875rem;
+    color: var(--pt-muted);
+}
+
+#channelPage .channel-profile-handle-link {
+    color: var(--pt-accent);
+    font-weight: 600;
+}
+
+#channelPage .channel-profile-handle-link:hover,
+#channelPage .channel-profile-handle-link:focus-visible {
+    color: #e2f49a;
+}
+
+#channelPage .channel-profile-actions {
+    grid-area: actions;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+#channelPage .channel-profile-follow-btn {
+    min-height: 44px;
+    padding: 0 22px;
+}
+
+#channelPage .channel-profile-hide-btn.btn-round-icon,
+#channelPage .channel-profile-share-btn.btn-round-icon {
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--pt-line);
+    background: transparent;
+    color: var(--pt-text);
+}
+
+#channelPage .channel-profile-hide-btn.btn-round-icon:hover,
+#channelPage .channel-profile-share-btn.btn-round-icon:hover {
+    background: var(--pt-surface-2);
+}
+
+#channelPage .channel-profile-hide-btn.is-hidden {
+    background: var(--pt-surface-2);
+    border-color: rgba(244, 240, 232, 0.4);
+}
+
+#channelPage .channel-profile-hide-btn.is-hidden::after {
+    background: var(--pt-text);
+}
+
+/* ---------- Presentació curta, expandible ---------- */
+.ap-bio {
+    max-width: 68ch;
+    margin: 16px 0 0;
+}
+
+.ap-bio[hidden] {
+    display: none;
+}
+
+#channelPage .channel-profile-description {
+    max-width: none;
+    margin: 0;
+    color: var(--pt-muted);
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    white-space: pre-line;
+    overflow-wrap: anywhere;
+}
+
+#channelPage .channel-profile-description.is-collapsed {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.ap-bio__toggle {
+    min-height: 44px;
+    margin-top: 2px;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--pt-accent);
+    font: inherit;
+    font-size: 0.9375rem;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.ap-bio__toggle[hidden] {
+    display: none;
+}
+
+.ap-bio__toggle:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+/* ---------- Estils de l'artista ---------- */
+#channelPage #channelProfileTags {
+    margin: 14px 0 0;
+}
+
+#channelPage .channel-category-btn {
+    padding: 8px 14px;
+    border: 1px solid var(--pt-line);
+    background: var(--pt-surface);
+    color: var(--pt-text);
+    font-size: 0.8125rem;
+    font-weight: 700;
+}
+
+#channelPage .channel-category-add {
+    width: 36px;
+    height: 36px;
+    flex-basis: 36px;
+    border: 1px solid var(--pt-line);
+    background: transparent;
+    color: var(--pt-text);
+}
+
+#channelPage .channel-category-add[aria-expanded='true'] {
+    border-color: var(--pt-accent);
+    background: var(--pt-accent);
+    color: var(--pt-on-accent);
+}
+
+/* ---------- Cançons de l'artista ---------- */
+.ap-songs-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px 16px;
+    margin: 22px 0 14px;
+}
+
+.ap-songs-title {
+    margin: 0;
+    font-family: var(--pt-display);
+    font-size: clamp(1.4rem, 4.6vw, 1.85rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--pt-text);
+}
+
+#channelPage .channel-search-wrap--mobile {
+    flex: 1 1 100%;
+    margin: 0;
+}
+
+#channelPage .channel-search-input {
+    width: 100%;
+    min-height: 44px;
+    padding: 0 16px;
+    border: 1px solid var(--pt-line);
+    border-radius: var(--pt-radius);
+    background: var(--pt-surface);
+    color: var(--pt-text);
+    font-size: 0.9375rem;
+}
+
+#channelPage .channel-search-input::placeholder {
+    color: var(--pt-muted);
+}
+
+#channelPage .channel-search-input:focus {
+    border-color: var(--pt-accent);
+    box-shadow: 0 0 0 2px rgba(214, 237, 132, 0.25);
+}
+
+@media (min-width: 769px) {
+    #channelPage .channel-search-wrap--desktop {
+        flex: 0 1 340px;
+    }
+
+    #channelPage .ap-top {
+        margin-bottom: 18px;
+    }
+
+    #channelPage .ap-radios {
+        flex: 0 1 auto;
+        margin-left: auto;
+    }
+
+    .ap-radio {
+        flex: 0 1 auto;
+        padding: 0 20px;
+        font-size: 0.9375rem;
+    }
+
+    .ap-radio__long {
+        display: inline;
+    }
+
+    .ap-radio__short {
+        display: none;
+    }
+
+    #channelPage .ap-hero__meta {
+        grid-template-areas:
+            'eyebrow photo'
+            'name photo'
+            'info photo'
+            'actions photo';
+        column-gap: 32px;
+        padding: 28px 32px;
+    }
+
+    #channelPage .channel-profile-avatar {
+        width: clamp(168px, 17vw, 232px);
+        height: clamp(168px, 17vw, 232px);
+    }
+
+    .ap-bio {
+        margin-top: 20px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ap-radio {
+        transition: none;
+    }
+}
+
+/* Un programa (herència de la fitxa de canal) no té ràdios ni «Artista» */
+#channelPage.channel-page--program-profile .ap-hero__eyebrow {
+    display: none;
+}

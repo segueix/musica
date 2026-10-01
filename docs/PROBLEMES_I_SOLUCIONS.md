@@ -77,6 +77,18 @@
 
 **Fitxers Afectats:** `js/features/music-queue.js`, `css/portada.css`, `sw.js`, `CLAUDE.md`, tests.
 
+## [2026-10-01] - Fitxa d'artista nova: foto gran, presentació curta i dues ràdios
+
+**Símptoma:** La fitxa d'artista era herència de la fitxa de canal de YouTube: avatar petit a l'esquerra (a desktop el nom, «Segueix», ull, compartir i cercador en una sola fila), la descripció de YouTube **sencera** (sovint en castellà i de desenes de línies) abans de veure cap cançó, etiquetes amb un «+» blanc fora de la paleta i cap manera d'engegar una ràdio de l'artista.
+
+**Solució Implementada:** (1) **HTML** (`index.html`, `#channelPage`): `.ap-top` (enrere + les dues ràdios), `.ap-hero` (nom a l'esquerra, foto a la dreta), `.ap-bio` (presentació plegada a tres línies amb `#apBioToggle`), estils, i «Cançons» amb el cercador. S'han mantingut tots els ids que fa servir `app.js`. (2) **CSS** (`css/portada.css`, final): grid `eyebrow/name/info/actions` + `photo` (foto de 104–232 px, circular, amb ombra), targeta amb degradat llima, ràdio de l'artista en llima i la de l'estil en contorn, mides tàctils de 44 px, etiquetes curtes de les ràdios a mòbil. (3) **`js/features/artist-page.js`** (nou, patró 2): funcions pures (`artistStyles`, `radiosModel`, `bioModel`) i DOM (`showProfile`, `setSongs`, mesura de la presentació, clics). (4) **`music-queue.js`**: `startArtistRadio()` (ràdio d'un conjunt tancat, refactor de `startFromSearch()` a `launchPoolRadio()`; `searchRadio` guarda `artist`) i `startStyleRadio()` (`launch()` amb els estils de l'artista). (5) `app.js`: crida `showProfile()`/`setSongs()`; `syncChannelProfileActionsLayout()` queda buida. Verificat amb Chromium a 360/390/1280 px.
+
+**Trampes conegudes:** (1) El feed duu les categories d'alguns canals en minúscules («folk i arrel»): `artistStyles()` les porta al nom canònic de `SegueixMusicCategories.CATEGORY_GROUPS` (si no, la ràdio dir «folk i arrel»). (2) La presentació només mostra «Llegeix-ne més» si no hi cap (`scrollHeight > clientHeight`), es mesura després del primer frame i en canviar de mida; una presentació curta no en porta. (3) Una ràdio d'artista necessita ≥ 2 cançons i la d'estil ≥ 1 estil (si no, el botó és desactivat amb el motiu al `title`); mentre arriben les cançons del canal (`getChannelVideosWithHistory`) els dos són desactivats. (4) Un artista pot tenir centenars de cançons: el motor n'ordena fins a 500 (`ARTIST_RADIO_POOL`) i la cua en porta les primeres 60. (5) La presentació ve de YouTube (sovint en castellà): no es tradueix ni es filtra. (6) Un programa (`channel-page--program-profile`) amaga les ràdios i l'etiqueta «Artista». (7) Les icones d'enrere i compartir són SVG inline: amb lucide (CDN) bloquejat la fitxa quedava amb cercles buits.
+
+**Fitxers Afectats:** `index.html`, `css/portada.css`, `js/features/artist-page.js` (nou), `js/features/music-queue.js`, `js/app.js`, `sw.js`, `CLAUDE.md`, `tests/artist-page.test.js` (nou), `tests/music-queue-selection.test.js`.
+
+---
+
 ## [2026-10-01] - Mòbil: la part superior de la portada era confusa
 
 **Símptoma:** A 390 px l'entrada de la portada ocupava més de la meitat de la primera pantalla (≈ 515 de 844 px) i no s'hi veia música: el títol «Avui, què et ve de gust?» es partia en dues línies amb l'altra meitat buida (`max-width: 16ch`), el botó «La teva ràdio» era a mitja amplada i flotava, el selector de mode apareixia sota amb el text d'ajuda i la targeta destacada era alta. A més, a les capçaleres de secció, «Reprodueix-ho» / «Veure-ho tot» baixaven a una fila pròpia però quedaven **tirats a la dreta** (`margin-left: auto`), desconnectats del títol.
