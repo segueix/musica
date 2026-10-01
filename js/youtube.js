@@ -83,7 +83,7 @@ const YouTubeAPI = {
         );
 
         if (feedChannelsMap) {
-            this.feedChannels = Object.entries(feedChannelsMap).map(([id, channel]) => ({
+            this.feedChannels = Object.entries(feedChannelsMap).map(([id, channel]) => this.withDisplayName({
                 id,
                 name: channel.name || '',
                 avatar: channel.avatar || '',
@@ -131,6 +131,20 @@ const YouTubeAPI = {
 
         console.log(`iuTube: Carregats ${this.feedVideos.length} vídeos i ${this.feedChannels.length} canals des del feed`);
         return true;
+    },
+
+    // Nom a mostrar de l'artista (editat a revisio-artistes.html) en lloc del nom del canal de YouTube. El nom del canal
+    // es conserva a `originalName` i a `artists`, perquè la cerca continuï trobant-lo.
+    withDisplayName(channel) {
+        const display = window.SegueixMusicCategories?.displayNameForChannel?.(channel?.id) || '';
+        if (!display || channel.name === display) return channel;
+        const original = channel.originalName || channel.name || '';
+        return {
+            ...channel,
+            name: display,
+            originalName: original,
+            artists: [...new Set([...(Array.isArray(channel.artists) ? channel.artists : []), original].filter(Boolean))]
+        };
     },
 
     // Noms de l'artista d'un canal del feed (nom del canal i noms de la base d'artistes).
@@ -792,14 +806,14 @@ const YouTubeAPI = {
             if (!channel?.id) return;
             const key = String(channel.id);
             const prev = merged.get(key) || {};
-            merged.set(key, {
+            merged.set(key, this.withDisplayName({
                 ...prev,
                 ...channel,
                 categories: this.normalizeCategories([
                     ...(Array.isArray(prev.categories) ? prev.categories : []),
                     ...(Array.isArray(channel.categories) ? channel.categories : (channel.category ? [channel.category] : []))
                 ])
-            });
+            }));
         });
 
         return Array.from(merged.values());

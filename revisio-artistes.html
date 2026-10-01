@@ -65,7 +65,7 @@ dialog::backdrop{background:rgba(0,0,0,.72)}
 <body>
 <main>
 <h1>Revisió d'artistes</h1>
-<p class="muted">Només els artistes ben indexats (els que tenen canal de YouTube assignat).</p>
+<p class="muted">Només els artistes ben indexats (els que tenen canal de YouTube assignat). El nom que edites és <b>el que es veu a l'app</b>.</p>
 <ol class="steps">
   <li><b>Edita</b> el nom i les categories del que calgui.</li>
   <li>Marca <b>OK</b> els que ja estan bé tal com són.</li>
@@ -99,7 +99,7 @@ dialog::backdrop{background:rgba(0,0,0,.72)}
 <script>
 const R=window.SegueixRevisioArtistes;
 const STORAGE='segueix_revisio_artistes_v1';
-let db=null,taxonomy=[],rows=[],editing=null;
+let db=null,taxonomy=[],rows=[],editing=null,channelNames=new Map();
 
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function readDrafts(){try{return JSON.parse(localStorage.getItem(STORAGE)||'{}')||{}}catch(e){return {}}}
@@ -121,7 +121,7 @@ function visible(row){
   const q=document.getElementById('q').value.trim().toLocaleLowerCase('ca');
   const f=document.getElementById('filter').value;
   const st=R.rowState(row);
-  if(q&&!(row.name.toLocaleLowerCase('ca').includes(q)||row.originalName.toLocaleLowerCase('ca').includes(q)))return false;
+  if(q&&!(row.name.toLocaleLowerCase('ca').includes(q)||row.currentName.toLocaleLowerCase('ca').includes(q)||row.originalName.toLocaleLowerCase('ca').includes(q)))return false;
   if(f==='pending'&&row.ok)return false;
   if(f==='changed'&&!(st.nameChanged||st.genresChanged))return false;
   if(f==='nogenres'&&row.genres.length)return false;
@@ -134,7 +134,7 @@ function rowHtml(row){
   const chips=row.genres.length?row.genres.map(g=>'<span class="chip">'+esc(g)+'</span>').join(''):'<span class="chip none">sense categoria</span>';
   return '<div class="row'+(changed?' changed':'')+(row.ok?' is-ok':'')+'" role="listitem" data-key="'+esc(row.key)+'">'+
     '<div class="namecell"><input type="text" class="name" value="'+esc(row.name)+'" maxlength="100" aria-label="Nom de l\'artista">'+
-      (st.nameChanged?'<div class="orig">Abans: '+esc(row.originalName)+'</div>':'')+'</div>'+
+      (st.nameChanged?'<div class="orig">Abans: '+esc(row.currentName)+'</div>':'')+'</div>'+
     '<div class="genrescell"><div class="chips">'+chips+'<button type="button" class="edit-genres">Edita</button></div></div>'+
     '<div class="okcell"><label title="Marca OK si ja està bé"><input type="checkbox" class="ok"'+(row.ok?' checked':'')+' aria-label="OK: '+esc(row.name)+'"></label></div></div>';
 }
@@ -156,14 +156,14 @@ function refreshRow(key){
   el.classList.toggle('is-ok',row.ok);
   const cell=el.querySelector('.namecell');
   let orig=cell.querySelector('.orig');
-  if(st.nameChanged){if(!orig){orig=document.createElement('div');orig.className='orig';cell.appendChild(orig)}orig.textContent='Abans: '+row.originalName}
+  if(st.nameChanged){if(!orig){orig=document.createElement('div');orig.className='orig';cell.appendChild(orig)}orig.textContent='Abans: '+row.currentName}
   else if(orig)orig.remove();
 }
 
 document.getElementById('rows').addEventListener('input',e=>{
   const rowEl=e.target.closest('.row');if(!rowEl)return;
   const row=rowByKey(rowEl.dataset.key);if(!row)return;
-  if(e.target.classList.contains('name'))row.name=R.cleanName(e.target.value)||row.originalName;
+  if(e.target.classList.contains('name'))row.name=R.cleanName(e.target.value)||row.currentName;
   persist();refreshRow(row.key);
 });
 document.getElementById('rows').addEventListener('change',e=>{
@@ -199,23 +199,26 @@ document.getElementById('download').addEventListener('click',()=>{
 });
 document.getElementById('csv').addEventListener('click',()=>{
   const q=v=>'"'+String(v).replaceAll('"','""')+'"';
-  const lines=[['nom','nom_original','categories','ok'].join(',')].concat(rows.map(r=>[r.name,r.originalName,r.genres.join('|'),r.ok?'sí':''].map(q).join(',')));
+  const lines=[['nom','nom_actual','categories','ok'].join(',')].concat(rows.map(r=>[r.name,r.currentName,r.genres.join('|'),r.ok?'sí':''].map(q).join(',')));
   download('revisio-artistes-'+stamp()+'.csv','﻿'+lines.join('\n')+'\n','text/csv;charset=utf-8');
 });
 document.getElementById('reset').addEventListener('click',()=>{
   if(!confirm('Vols esborrar tots els canvis que has fet en aquest navegador?'))return;
   try{localStorage.removeItem(STORAGE)}catch(e){}
-  rows=R.buildRows(db,{},taxonomy);render();
+  rows=R.buildRows(db,{},taxonomy,channelNames);render();
 });
 document.getElementById('q').addEventListener('input',render);
 document.getElementById('filter').addEventListener('change',render);
 
 Promise.all([
   fetch('data/artistes-musica.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('artistes '+r.status);return r.json()}),
-  fetch('data/music-genres.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('categories '+r.status);return r.json()})
-]).then(([base,genres])=>{
+  fetch('data/music-genres.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('categories '+r.status);return r.json()}),
+  // Noms dels canals tal com els veu l'app (sense cap nom editat)
+  fetch('js/channels-ca.json',{cache:'no-store'}).then(r=>r.ok?r.json():{channels:[]}).catch(()=>({channels:[]}))
+]).then(([base,genres,channels])=>{
   db=base;taxonomy=(genres.categories||[]).map(c=>c.label).filter(Boolean);
-  rows=R.buildRows(db,readDrafts(),taxonomy);render();
+  channelNames=new Map((channels.channels||[]).map(c=>[c.id,c.name]));
+  rows=R.buildRows(db,readDrafts(),taxonomy,channelNames);render();
 }).catch(e=>{document.getElementById('rows').innerHTML='<div class="empty">No s’han pogut carregar les dades: '+esc(e.message)+'</div>'});
 </script>
 </body>

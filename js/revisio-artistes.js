@@ -1,9 +1,12 @@
-// Revisió editorial d'artistes: nom, categories i marca «OK». Funcions pures (UMD) que fan servir la pàgina
+// Revisió editorial d'artistes: nom que es veu a l'app, categories i marca «OK». Funcions pures (UMD) que fan servir la pàgina
 // revisio-artistes.html (editar i baixar el document) i el script scripts/aplicar_revisio_artistes.js (aplicar-lo a
 // data/artistes-musica.json), i que es proven a tests/revisio-artistes.test.js.
 //
 // Flux: es edita a la pàgina → es baixa el document (JSON) → s'aplica amb `node scripts/aplicar_revisio_artistes.js`.
 // «Ben indexat» = té almenys un canal de YouTube assignat (és el que fa que sonin al feed) i no està rebutjat.
+// El nom que s'edita és el que **es veu a l'app** (per defecte, el del canal de YouTube: «alfredgarcia»): es desa a
+// `displayName` de l'artista i substitueix el del canal a targetes, fitxa, cerca, llistes i historial
+// (js/music-categories.js). `name` (el de la base d'artistes) no es toca.
 (function (root, factory) {
     const api = factory();
     if (typeof module !== 'undefined' && module.exports) module.exports = api;
@@ -56,31 +59,46 @@
         return (Array.isArray(taxonomy) ? taxonomy : []).filter(label => wanted.has(label));
     }
 
+    // Nom del canal de YouTube de l'artista (el que l'app mostra si no hi ha cap nom editat); sense dades, el de la base.
+    // channelNames: Map(channelId → nom del canal) o objecte.
+    function youtubeName(artist, channelNames) {
+        const lookup = id => (channelNames instanceof Map ? channelNames.get(id) : channelNames?.[id]);
+        for (const channel of channelsOf(artist)) {
+            const name = text(lookup(channel.id));
+            if (name) return name;
+        }
+        return text(artist?.name);
+    }
+
     // Files de la pàgina: artistes ben indexats, en ordre alfabètic, amb l'esborrany (només els canvis) aplicat.
-    // drafts: { [key]: { name?, genres?, ok? } }
-    function buildRows(db, drafts = {}, taxonomy = []) {
+    // drafts: { [key]: { name?, genres?, ok? } }. Les files porten `originalName` (el del canal de YouTube),
+    // `currentName` (el que es veu ara a l'app) i `name` (el que s'està editant).
+    function buildRows(db, drafts = {}, taxonomy = [], channelNames = new Map()) {
         return (Array.isArray(db?.artists) ? db.artists : [])
             .filter(isIndexed)
             .map(artist => {
                 const key = artistKey(artist);
                 const draft = drafts[key] || {};
+                const originalName = youtubeName(artist, channelNames);
+                const currentName = text(artist.displayName) || originalName;
                 const originalGenres = normalizeGenres(artist.genres, taxonomy);
                 return {
                     key,
-                    originalName: artist.name,
-                    name: draft.name !== undefined ? cleanName(draft.name) : artist.name,
+                    originalName,
+                    currentName,
+                    name: draft.name !== undefined ? cleanName(draft.name) || currentName : currentName,
                     originalGenres,
                     genres: draft.genres !== undefined ? normalizeGenres(draft.genres, taxonomy) : originalGenres,
                     ok: draft.ok !== undefined ? Boolean(draft.ok) : Boolean(artist.revisioEditorial?.ok),
                     originalOk: Boolean(artist.revisioEditorial?.ok),
                 };
             })
-            .sort((a, b) => a.originalName.localeCompare(b.originalName, 'ca', { sensitivity: 'base' }));
+            .sort((a, b) => a.currentName.localeCompare(b.currentName, 'ca', { sensitivity: 'base' }));
     }
 
     function rowState(row) {
         return {
-            nameChanged: row.name !== row.originalName,
+            nameChanged: row.name !== row.currentName,
             genresChanged: !sameList(row.genres, row.originalGenres),
             okChanged: row.ok !== row.originalOk,
         };
@@ -108,6 +126,7 @@
             artists: rows.map(row => ({
                 key: row.key,
                 originalName: row.originalName,
+                currentName: row.currentName,
                 name: cleanName(row.name),
                 genres: row.genres,
                 ok: Boolean(row.ok),
@@ -128,7 +147,7 @@
         };
     }
 
-    // Aplica un document baixat a la base. No toca res més que nom (l'anterior passa a àlies), categories (i les
+    // Aplica un document baixat a la base. No toca res més que el nom a mostrar (`displayName`), les categories (i les
     // marca com a manuals perquè l'enriquiment automàtic no les trepitgi) i la marca `revisioEditorial`.
     // Retorna { db, report } sense modificar l'original.
     function applyExport(db, doc, taxonomy, now = new Date().toISOString()) {
@@ -152,17 +171,16 @@
             }
             let touched = false;
 
+            // El nom que es veu a l'app: `displayName`. Si torna a ser el del canal de YouTube, l'edició es treu.
             const name = cleanName(entry.name);
-            if (entry.nameChanged !== false && name && name !== artist.name) {
-                const previous = artist.name;
-                artist.aliases = unique(
-                    [...(artist.aliases || []), previous].filter(alias => alias && lowerKey(alias) !== lowerKey(name))
-                );
-                artist.name = name;
-                report.renamed.push(`${previous} → ${name}`);
+            const shown = text(artist.displayName) || text(entry.originalName) || artist.name;
+            if (entry.nameChanged !== false && name && name !== shown) {
+                if (name === text(entry.originalName)) delete artist.displayName;
+                else artist.displayName = name;
+                report.renamed.push(`${shown} → ${name}`);
                 touched = true;
             } else if (entry.nameChanged && !name) {
-                report.invalid.push(`${artist.name}: el nom nou és buit`);
+                report.invalid.push(`${shown}: el nom nou és buit`);
             }
 
             if (Array.isArray(entry.genres) && entry.genresChanged !== false) {
@@ -197,6 +215,7 @@
         DOC_TYPE,
         DOC_VERSION,
         cleanName,
+        youtubeName,
         isIndexed,
         artistKey,
         keysOf,

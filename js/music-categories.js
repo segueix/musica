@@ -22,7 +22,7 @@
         { label: 'Jazz / Blues', genres: ['Jazz / Blues'] },
         { label: 'Clàssica', genres: ['Clàssica i contemporània', 'Coral / Vocal'] },
         { label: 'Infantil', genres: ['Infantil'] },
-        { label: 'Altres estils', genres: ['Funk / Soul / R&B', 'Experimental / Avantguarda', 'Altres'] }
+        { label: 'Altres estils', genres: ['Funk / Soul / R&B', 'Experimental / Avantguarda', 'Altres'] },
     ];
 
     const byChannel = new Map();
@@ -34,6 +34,9 @@
     const primaryByChannel = new Map();
     // Noms de l'artista per canal (nom de la base d'artistes i àlies): per treure'l dels títols de les cançons.
     const namesByChannel = new Map();
+    // Nom que es mostra a l'app per canal (`displayName` de l'artista, editat a revisio-artistes.html): substitueix el nom
+    // del canal de YouTube («alfredgarcia» → «Alfred García»). El del canal es conserva a `originalChannelTitle`.
+    const displayByChannel = new Map();
     let ready = false;
     let initPromise = null;
 
@@ -71,15 +74,16 @@
 
     function navigationCategoriesForGenres(genres) {
         const source = new Set(unique(genres));
-        return CATEGORY_GROUPS
-            .filter(group => group.genres.some(genre => source.has(genre)))
-            .map(group => group.label);
+        return CATEGORY_GROUPS.filter(group => group.genres.some(genre => source.has(genre))).map(group => group.label);
     }
 
     const MIN_SONG_SECONDS = 60;
 
     function isCategoryEligibleVideo(video) {
-        const raw = String(video?.contentType || '').trim().toLowerCase().replace(/-/g, '_');
+        const raw = String(video?.contentType || '')
+            .trim()
+            .toLowerCase()
+            .replace(/-/g, '_');
         // Compatibilitat amb snapshots antics: abans el feed només contenia música acceptada.
         if (!raw) return true;
         if (raw !== 'song' && raw !== 'live_song') return false;
@@ -105,15 +109,21 @@
                 artistKeyByChannel.set(id, stable.toLowerCase());
             }
             if (!primaryByChannel.has(id)) {
-                const primary = navigationCategoriesForGenres((artist.genres || []).slice(0, 1))[0] || categories[0] || '';
+                const primary =
+                    navigationCategoriesForGenres((artist.genres || []).slice(0, 1))[0] || categories[0] || '';
                 if (primary) primaryByChannel.set(id, primary);
             }
             byChannel.set(id, unique([...(byChannel.get(id) || []), ...categories]));
-            namesByChannel.set(id, unique([artist.name, channel.name, ...(Array.isArray(artist.aliases) ? artist.aliases : [])]));
+            namesByChannel.set(
+                id,
+                unique([artist.name, channel.name, ...(Array.isArray(artist.aliases) ? artist.aliases : [])])
+            );
+            const display = String(artist.displayName || '').trim();
+            if (display) displayByChannel.set(id, display);
             artistByChannel.set(id, {
                 name: artist.name || channel.name || '',
                 genres: unique(artist.genres || []),
-                categories: unique([...(byChannel.get(id) || [])])
+                categories: unique([...(byChannel.get(id) || [])]),
             });
         }
     }
@@ -133,6 +143,7 @@
                 primaryByChannel.clear();
                 artistByChannel.clear();
                 namesByChannel.clear();
+                displayByChannel.clear();
                 for (const artist of data.artists || []) registerArtist(artist);
                 ready = true;
                 return true;
@@ -180,14 +191,42 @@
         return artistByChannel.has(String(channelId || ''));
     }
 
+    // Nom a mostrar d'un canal (buit si no n'hi ha cap d'editat).
+    function displayNameForChannel(channelId) {
+        return displayByChannel.get(String(channelId || '')) || '';
+    }
+
     function decorateChannel(channel) {
         if (!channel) return channel;
+        const id = channel.id || channel.channelId;
+        const display = displayNameForChannel(id);
         return {
             ...channel,
+            ...(display && channel.name !== display
+                ? { name: display, originalName: channel.originalName || channel.name }
+                : {}),
             categories: unique([
-                ...(Array.isArray(channel.categories) ? channel.categories : (channel.category ? [channel.category] : [])),
-                ...categoriesForChannel(channel.id || channel.channelId)
-            ])
+                ...(Array.isArray(channel.categories)
+                    ? channel.categories
+                    : channel.category
+                      ? [channel.category]
+                      : []),
+                ...categoriesForChannel(id),
+            ]),
+        };
+    }
+
+    // Posa a un vídeo el nom a mostrar de l'artista (`channelTitle`); el de YouTube queda a `originalChannelTitle`.
+    function applyDisplayName(video) {
+        if (!video) return video;
+        const id = String(video.channelId || video.sourceChannelId || video.snippet?.channelId || '');
+        const display = displayNameForChannel(id);
+        if (!display || video.channelTitle === display) return video;
+        return {
+            ...video,
+            channelTitle: display,
+            originalChannelTitle: video.originalChannelTitle || video.channelTitle || video.snippet?.channelTitle || '',
+            ...(video.snippet ? { snippet: { ...video.snippet, channelTitle: display } } : {}),
         };
     }
 
@@ -195,9 +234,16 @@
     // `extraNames`: altres noms de l'artista (p. ex. els del canal al feed).
     function cleanVideoTitle(video, extraNames = []) {
         const cleaner = root?.SegueixSongTitle;
-        if (!video || !cleaner?.cleanVideo) return video;
+        if (!video) return video;
+        if (!cleaner?.cleanVideo) return applyDisplayName(video);
         const id = String(video.channelId || video.sourceChannelId || video.snippet?.channelId || '');
-        return cleaner.cleanVideo(video, [...(namesByChannel.get(id) || []), ...(Array.isArray(extraNames) ? extraNames : [])]);
+        // El títol es neteja amb el nom de YouTube i, després, el nom de l'artista passa al nom a mostrar
+        return applyDisplayName(
+            cleaner.cleanVideo(video, [
+                ...(namesByChannel.get(id) || []),
+                ...(Array.isArray(extraNames) ? extraNames : []),
+            ])
+        );
     }
 
     function decorateVideo(rawVideo, extraNames = []) {
@@ -206,9 +252,9 @@
         return {
             ...video,
             categories: unique([
-                ...(Array.isArray(video.categories) ? video.categories : (video.category ? [video.category] : [])),
-                ...categoriesForChannel(video.channelId || video.sourceChannelId || video.snippet?.channelId)
-            ])
+                ...(Array.isArray(video.categories) ? video.categories : video.category ? [video.category] : []),
+                ...categoriesForChannel(video.channelId || video.sourceChannelId || video.snippet?.channelId),
+            ]),
         };
     }
 
@@ -225,8 +271,9 @@
         isClassicArtistVideo,
         artistKeyForChannel,
         primaryCategoryForChannel,
+        displayNameForChannel,
         decorateChannel,
         decorateVideo,
-        cleanVideoTitle
+        cleanVideoTitle,
     };
 });

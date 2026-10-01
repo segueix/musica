@@ -1,6 +1,6 @@
 'use strict';
 
-// Aplica el document baixat de revisio-artistes.html a data/artistes-musica.json: noms (l'anterior passa a àlies),
+// Aplica el document baixat de revisio-artistes.html a data/artistes-musica.json: noms a mostrar a l'app (`displayName`),
 // categories (marcades com a manuals) i la marca «OK» (`revisioEditorial`). La lògica és a js/revisio-artistes.js.
 // Ús: node scripts/aplicar_revisio_artistes.js revisio-artistes-AAAA-MM-DD.json [--dry-run]
 

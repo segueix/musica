@@ -29,7 +29,7 @@ La pàgina `admin-musica.html` permet filtrar, aprovar i rebutjar candidats. Els
 
 ## Revisió de noms i categories (`revisio-artistes.html`)
 
-Pàgina senzilla per repassar només els artistes **ben indexats** (amb canal de YouTube assignat i no rebutjats; ara 155): una fila per artista amb el **nom** (editable), les **categories** (botó «Edita», es poden triar-ne diverses de la taxonomia `data/music-genres.json`) i una columna **OK** per marcar els que ja estan bé. El que es fa es desa al navegador (`segueix_revisio_artistes_v1`) fins que es prem **«Descarrega la revisió»** (JSON; també hi ha CSV per llegir-lo en un full de càlcul). No escriu res al repositori ni demana cap token.
+Pàgina senzilla per repassar només els artistes **ben indexats** (amb canal de YouTube assignat i no rebutjats; ara 155): una fila per artista amb el **nom que es veu a l'app** (editable; per defecte el del canal de YouTube: «alfredgarcia», «AUXILI»…), les **categories** (botó «Edita», es poden triar-ne diverses de la taxonomia `data/music-genres.json`) i una columna **OK** per marcar els que ja estan bé. El que es fa es desa al navegador (`segueix_revisio_artistes_v1`) fins que es prem **«Descarrega la revisió»** (JSON; també hi ha CSV). No escriu res al repositori ni demana cap token. Els noms dels canals els llegeix de `js/channels-ca.json`.
 
 Per aplicar el fitxer descarregat:
 
@@ -39,9 +39,9 @@ node scripts/aplicar_revisio_artistes.js revisio-artistes-AAAA-MM-DD.json       
 node scripts/validar_artistes_musica.js
 ```
 
-Què fa en aplicar-lo (lògica a `js/revisio-artistes.js`, provada a `tests/revisio-artistes.test.js`): el **nom** nou substitueix `name` i l'anterior passa a `aliases`; les **categories** substitueixen `genres` i s'afegeix `genre:manual` a `sources` perquè `scripts/enriquir_generes_musica.js` no les trepitgi; l'**OK** es desa com a `revisioEditorial: { ok: true, at }` (camp permès a l'esquema). No toca YouTube, MusicBrainz, l'enriquiment ni `reviewStatus`/`active`.
+Què fa en aplicar-lo (lògica a `js/revisio-artistes.js`, provada a `tests/revisio-artistes.test.js`): el **nom** es desa a `displayName` de l'artista (si torna a ser el del canal, s'esborra; `name` i `aliases`, els de la base d'artistes, no es toquen); les **categories** substitueixen `genres` i s'afegeix `genre:manual` a `sources` perquè `scripts/enriquir_generes_musica.js` no les trepitgi; l'**OK** es desa com a `revisioEditorial: { ok: true, at }`. No toca YouTube, MusicBrainz, l'enriquiment ni `reviewStatus`/`active`.
 
-**Compte:** el nom que es veu a l'app (targetes, fitxa, cerca) és el del canal de YouTube (`channel.name` del feed), no `artist.name`. Canviar-lo aquí només afecta l'app quan el pipeline fa servir `artist.name` com a nom a mostrar (cal una passada a `scripts/update_music_feed.js` en aplicar la revisió).
+**Com es veu el nom a l'app:** `js/music-categories.js` llegeix `displayName` en carregar `data/artistes-musica.json` i el posa a `channelTitle` dels vídeos (`originalChannelTitle` conserva el de YouTube) i a `name` dels canals (`originalName`), a `cleanVideoTitle()` i `decorateChannel()`; `YouTubeAPI.withDisplayName()` ho fa a `feedChannels` i `getAllChannels()`. Així el canvi arriba a targetes, fitxa d'artista, cerca, ràdio, llistes, historial i m'agrades **sense regenerar el feed**, i la cerca continua trobant el nom antic (queda a `artists` del canal). El feed (`data/feed.json`) i els scripts continuen duent el nom de YouTube: les regles de `scripts/ocultar_titols_castella.js` (`channelTitle` exacte) no es veuen afectades.
 
 ## Revisió de vídeos ambigus
 

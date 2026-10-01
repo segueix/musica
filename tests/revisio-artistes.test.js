@@ -1,6 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import fs from 'node:fs';
 import { createRequire } from 'node:module';
+import { loadScript } from './setup.js';
 
 const require = createRequire(import.meta.url);
 const R = require('../js/revisio-artistes.js');
@@ -30,26 +31,53 @@ const db = () => ({
     ],
 });
 
-describe('revisió d’artistes: quins surten', () => {
+const channelNames = new Map();
+const base = () => {
+    const data = db();
+    data.artists.forEach(item => channelNames.set(item.youtube.channels[0]?.id, `canal-${item.name.toLowerCase()}`));
+    return data;
+};
+
+describe('revisió d’artistes: quins surten i quin nom es veu', () => {
     it('només els ben indexats (amb canal de YouTube i no rebutjats), en ordre alfabètic', () => {
-        const rows = R.buildRows(db(), {}, taxonomy);
-        expect(rows.map(row => row.originalName)).toEqual(['Alosa', 'Bruixa']);
+        const rows = R.buildRows(base(), {}, taxonomy, channelNames);
+        expect(rows.map(row => row.currentName)).toEqual(['canal-alosa', 'canal-bruixa']);
         expect(R.isIndexed({ youtube: { channels: [] } })).toBe(false);
         expect(R.isIndexed(null)).toBe(false);
     });
 
+    it('el nom editable és el que es veu a l’app: el del canal de YouTube o el nom a mostrar ja editat', () => {
+        const data = base();
+        data.artists[1].displayName = 'Alosa (oficial)';
+        const rows = R.buildRows(data, {}, taxonomy, channelNames);
+        const alosa = rows.find(row => row.originalName === 'canal-alosa');
+        expect(alosa).toMatchObject({
+            currentName: 'Alosa (oficial)',
+            name: 'Alosa (oficial)',
+            originalName: 'canal-alosa',
+        });
+        expect(rows.find(row => row.originalName === 'canal-bruixa')).toMatchObject({ currentName: 'canal-bruixa' });
+        // sense dades del canal, cau al nom de la base d'artistes
+        expect(R.buildRows(base(), {}, taxonomy)[0].originalName).toBe('Alosa');
+    });
+
     it('les categories es mostren en l’ordre de la taxonomia i només les que hi són', () => {
-        const rows = R.buildRows(db(), {}, taxonomy);
+        const rows = R.buildRows(base(), {}, taxonomy, channelNames);
         expect(rows[0].genres).toEqual(['Pop', 'Folk i arrel']);
         expect(R.normalizeGenres(['Metal', 'inventada', 'Pop'], taxonomy)).toEqual(['Pop', 'Metal']);
     });
 
     it('aplica l’esborrany (només els canvis) i el resum ho compta', () => {
-        const base = db();
-        const key = R.artistKey(base.artists[0]);
-        const rows = R.buildRows(base, { [key]: { name: '  Bruixa   Nova ', genres: ['Rock'], ok: true } }, taxonomy);
+        const data = base();
+        const key = R.artistKey(data.artists[0]);
+        const rows = R.buildRows(
+            data,
+            { [key]: { name: '  Bruixa   Nova ', genres: ['Rock'], ok: true } },
+            taxonomy,
+            channelNames
+        );
         const row = rows.find(item => item.key === key);
-        expect(row).toMatchObject({ name: 'Bruixa Nova', genres: ['Rock'], ok: true, originalName: 'Bruixa' });
+        expect(row).toMatchObject({ name: 'Bruixa Nova', genres: ['Rock'], ok: true, currentName: 'canal-bruixa' });
         expect(R.summarize(rows)).toMatchObject({ total: 2, ok: 1, renamed: 1, recategorized: 1 });
         expect(R.draftOf(row)).toEqual({ name: 'Bruixa Nova', genres: ['Rock'], ok: true });
         expect(R.draftOf(rows.find(item => item.key !== key))).toBeNull();
@@ -57,10 +85,10 @@ describe('revisió d’artistes: quins surten', () => {
 });
 
 describe('revisió d’artistes: document i aplicació', () => {
-    it('el document porta totes les files amb què ha canviat cadascuna', () => {
-        const base = db();
-        const key = R.artistKey(base.artists[0]);
-        const rows = R.buildRows(base, { [key]: { ok: true } }, taxonomy);
+    it('el document porta totes les files amb el nom actual, el del canal i què ha canviat', () => {
+        const data = base();
+        const key = R.artistKey(data.artists[0]);
+        const rows = R.buildRows(data, { [key]: { ok: true } }, taxonomy, channelNames);
         const doc = R.buildExport(rows, { baseUpdatedAt: 'abans', now: '2026-10-01T10:00:00.000Z' });
         expect(doc).toMatchObject({ type: 'revisio-artistes', version: 1, baseUpdatedAt: 'abans' });
         expect(doc.artists).toHaveLength(2);
@@ -68,21 +96,24 @@ describe('revisió d’artistes: document i aplicació', () => {
             ok: true,
             okChanged: true,
             nameChanged: false,
+            originalName: 'canal-bruixa',
+            currentName: 'canal-bruixa',
         });
     });
 
-    it('aplica noms (l’anterior passa a àlies), categories (manuals) i OK, sense tocar la resta ni l’original', () => {
-        const base = db();
-        const before = JSON.stringify(base);
-        const keyA = R.artistKey(base.artists[1]);
-        const keyB = R.artistKey(base.artists[0]);
+    it('desa el nom a mostrar (displayName) sense tocar name ni àlies; categories manuals; OK', () => {
+        const data = base();
+        const before = JSON.stringify(data);
+        const keyA = R.artistKey(data.artists[1]);
+        const keyB = R.artistKey(data.artists[0]);
         const doc = {
             type: 'revisio-artistes',
             version: 1,
             artists: [
                 {
                     key: keyA,
-                    originalName: 'Alosa',
+                    originalName: 'canal-alosa',
+                    currentName: 'canal-alosa',
                     name: 'Alosa Band',
                     genres: ['Rock'],
                     ok: true,
@@ -91,8 +122,9 @@ describe('revisió d’artistes: document i aplicació', () => {
                 },
                 {
                     key: keyB,
-                    originalName: 'Bruixa',
-                    name: 'Bruixa',
+                    originalName: 'canal-bruixa',
+                    currentName: 'canal-bruixa',
+                    name: 'canal-bruixa',
                     genres: ['Pop'],
                     ok: true,
                     nameChanged: false,
@@ -100,29 +132,52 @@ describe('revisió d’artistes: document i aplicació', () => {
                 },
             ],
         };
-        const { db: next, report } = R.applyExport(base, doc, taxonomy, '2026-10-01T10:00:00.000Z');
-        expect(JSON.stringify(base)).toBe(before);
+        const { db: next, report } = R.applyExport(data, doc, taxonomy, '2026-10-01T10:00:00.000Z');
+        expect(JSON.stringify(data)).toBe(before);
         const alosa = next.artists[1];
-        expect(alosa).toMatchObject({ name: 'Alosa Band', aliases: ['Alosa'], genres: ['Rock'] });
+        expect(alosa).toMatchObject({ name: 'Alosa', displayName: 'Alosa Band', aliases: [], genres: ['Rock'] });
         expect(alosa.sources).toContain('genre:manual');
         expect(alosa.revisioEditorial).toEqual({ ok: true, at: '2026-10-01T10:00:00.000Z' });
+        expect(next.artists[0].displayName).toBeUndefined();
         expect(next.artists[0].revisioEditorial.ok).toBe(true);
-        expect(next.artists[0].genres).toEqual(['Pop']);
         expect(next.artists[0].sources).not.toContain('genre:manual');
         expect(next.updatedAt).toBe('2026-10-01T10:00:00.000Z');
-        expect(report.renamed).toEqual(['Alosa → Alosa Band']);
+        expect(report.renamed).toEqual(['canal-alosa → Alosa Band']);
         expect(report.marked).toBe(2);
     });
 
-    it('treu la marca OK si es desmarca i informa dels artistes no trobats i de les categories desconegudes', () => {
-        const base = db();
-        base.artists[0].revisioEditorial = { ok: true, at: 'x' };
+    it('tornar al nom del canal de YouTube treu el nom editat', () => {
+        const data = base();
+        data.artists[0].displayName = 'Bruixa Nova';
         const doc = {
             type: 'revisio-artistes',
             version: 1,
             artists: [
                 {
-                    key: R.artistKey(base.artists[0]),
+                    key: R.artistKey(data.artists[0]),
+                    originalName: 'canal-bruixa',
+                    currentName: 'Bruixa Nova',
+                    name: 'canal-bruixa',
+                    genres: ['Pop'],
+                    ok: false,
+                    nameChanged: true,
+                },
+            ],
+        };
+        const { db: next, report } = R.applyExport(data, doc, taxonomy);
+        expect(next.artists[0].displayName).toBeUndefined();
+        expect(report.renamed).toEqual(['Bruixa Nova → canal-bruixa']);
+    });
+
+    it('treu la marca OK si es desmarca i informa dels artistes no trobats i de les categories desconegudes', () => {
+        const data = base();
+        data.artists[0].revisioEditorial = { ok: true, at: 'x' };
+        const doc = {
+            type: 'revisio-artistes',
+            version: 1,
+            artists: [
+                {
+                    key: R.artistKey(data.artists[0]),
                     originalName: 'Bruixa',
                     name: 'Bruixa',
                     genres: ['Pop', 'Inventada'],
@@ -132,39 +187,59 @@ describe('revisió d’artistes: document i aplicació', () => {
                 { key: 'wikidata:Q0', originalName: 'Ningú', name: 'Ningú', genres: [], ok: true },
             ],
         };
-        const { db: next, report } = R.applyExport(base, doc, taxonomy);
+        const { db: next, report } = R.applyExport(data, doc, taxonomy);
         expect(next.artists[0].revisioEditorial).toBeUndefined();
         expect(report.missing).toEqual(['Ningú']);
         expect(report.invalid.join(' ')).toMatch(/Inventada/);
     });
 
     it('un document que no és de revisió no toca res', () => {
-        const base = db();
-        const { db: next, report } = R.applyExport(base, { type: 'altre' }, taxonomy);
-        expect(next).toBe(base);
+        const data = base();
+        const { db: next, report } = R.applyExport(data, { type: 'altre' }, taxonomy);
+        expect(next).toBe(data);
         expect(report.invalid).toHaveLength(1);
     });
+});
 
-    it('si el nom nou torna a ser un àlies existent no el duplica ni afegeix el nom actual com a àlies', () => {
-        const base = db();
-        base.artists[0].aliases = ['Bruixeta'];
-        const doc = {
-            type: 'revisio-artistes',
-            version: 1,
+describe('el nom editat es veu a l’app', () => {
+    const load = extra =>
+        loadScript('js/music-categories.js', { fetch: undefined, ...extra }).SegueixMusicCategories || null;
+
+    it('music-categories substitueix channelTitle i el nom del canal, i conserva el de YouTube', async () => {
+        const data = {
             artists: [
                 {
-                    key: R.artistKey(base.artists[0]),
-                    originalName: 'Bruixa',
-                    name: 'Bruixeta',
+                    name: 'Alfred Garcia',
                     genres: ['Pop'],
-                    ok: false,
-                    nameChanged: true,
+                    displayName: 'Alfred García',
+                    youtube: { channels: [{ id: 'UCabc', name: null }] },
+                    reviewStatus: 'pendent',
                 },
             ],
         };
-        const { db: next } = R.applyExport(base, doc, taxonomy);
-        expect(next.artists[0].name).toBe('Bruixeta');
-        expect(next.artists[0].aliases).toEqual(['Bruixa']);
+        const ctx = loadScript('js/music-categories.js', {
+            SegueixSongTitle: loadScript('js/song-title.js').SegueixSongTitle,
+            fetch: async url => ({
+                ok: true,
+                json: async () => (String(url).includes('musica-classica') ? { artists: [] } : data),
+            }),
+        });
+        const music = ctx.SegueixMusicCategories;
+        await music.init();
+        expect(music.displayNameForChannel('UCabc')).toBe('Alfred García');
+        const video = music.decorateVideo({
+            id: 'v1',
+            channelId: 'UCabc',
+            channelTitle: 'alfredgarcia',
+            title: 'alfredgarcia - Cançó (Videoclip)',
+        });
+        expect(video.channelTitle).toBe('Alfred García');
+        expect(video.originalChannelTitle).toBe('alfredgarcia');
+        expect(video.title).toBe('Cançó');
+        const channel = music.decorateChannel({ id: 'UCabc', name: 'alfredgarcia' });
+        expect(channel).toMatchObject({ name: 'Alfred García', originalName: 'alfredgarcia' });
+        // sense nom editat no es toca res
+        expect(music.decorateVideo({ id: 'v2', channelId: 'UCaltre', channelTitle: 'X' }).channelTitle).toBe('X');
     });
 });
 
