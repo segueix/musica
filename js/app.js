@@ -1174,7 +1174,6 @@ const cachedChannels = {};
 const cachedAPIVideos = [];
 const CACHED_API_VIDEOS_MAX = 800;
 let activeFollowTab = 'all';
-let channelCategoryPickerCleanup = null;
 let suppressNextPopstateNavigation = false;
 
 function isAuxiliaryPageVisible() {
@@ -2101,99 +2100,16 @@ async function openProgramProfile(programId) {
 // La fitxa d'artista (grid de portada.css) col·loca sola les accions a escriptori i a mòbil: res a moure.
 function syncChannelProfileActionsLayout() {}
 
+// Categories d'un programa: només es mostren (no n'hi ha cap que sumar-hi).
 function renderProgramCategories(program) {
     if (!channelProfileTags) return;
-
     const customCats = Array.isArray(program.customCategories) ? program.customCategories : [];
-    const assignedSet = new Set(customCats.map(c => c.toLowerCase()));
-
-    // Obtenir categories personalitzades de l'usuari que no estiguin ja assignades
-    const availableTags = getCustomTags()
-        .filter(tag => !assignedSet.has(tag.toLowerCase()))
-        .sort((a, b) => a.localeCompare(b));
-
-    const addButtonHtml = `
-        <button class="channel-category-add" type="button" data-action="add-program-category" aria-label="Afegir categoria">
-            <span class="channel-category-add-plus" aria-hidden="true">+</span>
-        </button>
-    `;
-
-    const customButtonsHtml = customCats
-        .map(
-            cat => `
-        <button class="channel-category-btn channel-category-btn--custom" type="button" data-program-category="${escapeHtml(cat)}">${escapeHtml(cat)}</button>
-    `
-        )
-        .join('');
-
-    const pickerOptionsHtml =
-        availableTags.length > 0
-            ? availableTags
-                  .map(
-                      tag => `
-            <button class="channel-category-option" type="button" data-program-category-option="${escapeHtml(tag)}">${escapeHtml(tag)}</button>
-        `
-                  )
-                  .join('')
-            : '<span class="channel-category-empty">No hi ha categories personalitzades.</span>';
-
-    channelProfileTags.classList.remove('hidden');
-    channelProfileTags.innerHTML = `
-        <div class="channel-profile-categories">
-            ${customButtonsHtml}
-            ${addButtonHtml}
-            <div class="channel-category-picker hidden" data-program-category-picker>
-                ${pickerOptionsHtml}
-            </div>
-        </div>
-    `;
-
-    const addButton = channelProfileTags.querySelector('[data-action="add-program-category"]');
-    const picker = channelProfileTags.querySelector('[data-program-category-picker]');
-
-    if (addButton && picker) {
-        addButton.addEventListener('click', event => {
-            event.stopPropagation();
-            const isOpen = !picker.classList.contains('hidden');
-            picker.classList.toggle('hidden', isOpen);
-            addButton.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
-        });
-    }
-
-    // Seleccionar categoria del picker
-    channelProfileTags.querySelectorAll('[data-program-category-option]').forEach(button => {
-        button.addEventListener('click', () => {
-            const selected = button.dataset.programCategoryOption;
-            if (!selected) return;
-            if (!program.customCategories) program.customCategories = [];
-            if (!program.customCategories.includes(selected)) {
-                program.customCategories.push(selected);
-                updateProgram(program.id, { customCategories: program.customCategories });
-                renderProgramCategories(program);
-            }
-        });
-    });
-
-    // Tancar picker si es clica fora
-    const onDocClick = e => {
-        if (!channelProfileTags.contains(e.target)) {
-            picker?.classList.add('hidden');
-            addButton?.setAttribute('aria-expanded', 'false');
-        }
-    };
-    document.addEventListener('click', onDocClick);
-
-    // Doble clic / long press per eliminar categories
-    const customButtons = channelProfileTags.querySelectorAll('[data-program-category]');
-    customButtons.forEach(button => {
-        const cat = button.dataset.programCategory;
-        button.style.cursor = 'pointer';
-        addLongPressOrDblClick(button, () => {
-            program.customCategories = (program.customCategories || []).filter(c => c !== cat);
-            updateProgram(program.id, { customCategories: program.customCategories });
-            renderProgramCategories(program);
-        });
-    });
+    channelProfileTags.classList.toggle('hidden', customCats.length === 0);
+    channelProfileTags.innerHTML = customCats.length
+        ? `<div class="channel-profile-categories">${customCats
+              .map(cat => `<span class="channel-category-btn">${escapeHtml(cat)}</span>`)
+              .join('')}</div>`
+        : '';
 }
 
 function bindChannelLinks(container = document) {
@@ -2580,153 +2496,29 @@ function getCategoryLabel(category) {
     return matched ? matched.name : normalized;
 }
 
+// Estils de l'artista a la fitxa: només es mostren (no hi ha categories personalitzades que sumar-hi ni crear).
 function renderChannelProfileCategories(channel, channelId) {
     if (!channelProfileTags) {
         return;
     }
     const baseCategories = Array.isArray(channel?.categories) ? channel.categories : [];
-    const baseLabels = baseCategories.map(getCategoryLabel).filter(Boolean);
-    const customAssignments = getChannelCustomCategories(channelId);
-    const customEntries = customAssignments
-        .map(tag => ({ tag, label: getCategoryLabel(tag) }))
-        .filter(entry => entry.label);
+    const customLabels = getChannelCustomCategories(channelId).map(getCategoryLabel);
     const seen = new Set();
-    const uniqueBaseLabels = baseLabels.filter(label => {
-        const key = label.toLowerCase();
-        if (seen.has(key)) {
-            return false;
-        }
-        seen.add(key);
-        return true;
-    });
-    const uniqueCustomEntries = customEntries.filter(entry => {
-        const key = entry.label.toLowerCase();
-        if (seen.has(key)) {
+    const labels = [...baseCategories.map(getCategoryLabel), ...customLabels].filter(label => {
+        const key = String(label || '').toLowerCase();
+        if (!key || seen.has(key)) {
             return false;
         }
         seen.add(key);
         return true;
     });
 
-    const addButtonHtml = `
-        <button class="channel-category-add" type="button" data-action="add-channel-category" aria-label="Afegir categoria personalitzada">
-            <span class="channel-category-add-plus" aria-hidden="true">+</span>
-        </button>
-    `;
-
-    const baseButtonsHtml = uniqueBaseLabels
-        .map(
-            label => `
-            <button class="channel-category-btn" type="button">${escapeHtml(label)}</button>
-        `
-        )
-        .join('');
-
-    const customButtonsHtml = uniqueCustomEntries
-        .map(
-            entry => `
-            <button class="channel-category-btn channel-category-btn--custom" type="button" data-channel-category="${escapeHtml(entry.tag)}">${escapeHtml(entry.label)}</button>
-        `
-        )
-        .join('');
-
-    const availableCustomTags = getCustomTags()
-        .filter(tag => !seen.has(tag.toLowerCase()))
-        .sort((a, b) => a.localeCompare(b));
-
-    const pickerOptionsHtml =
-        availableCustomTags.length > 0
-            ? availableCustomTags
-                  .map(
-                      tag => `
-            <button class="channel-category-option" type="button" data-channel-category-option="${escapeHtml(tag)}">${escapeHtml(tag)}</button>
-        `
-                  )
-                  .join('')
-            : '<span class="channel-category-empty">No hi ha categories personalitzades.</span>';
-
-    const shouldShowAdd = uniqueBaseLabels.length > 0 || availableCustomTags.length > 0;
-    const addButtonFallback = shouldShowAdd ? addButtonHtml : '';
-
-    channelProfileTags.classList.toggle(
-        'hidden',
-        uniqueBaseLabels.length === 0 && uniqueCustomEntries.length === 0 && !shouldShowAdd
-    );
-    channelProfileTags.innerHTML = `
-        <div class="channel-profile-categories">
-            ${baseButtonsHtml}
-            ${customButtonsHtml}
-            ${addButtonFallback}
-            <div class="channel-category-picker hidden" data-channel-category-picker>
-                ${pickerOptionsHtml}
-            </div>
-        </div>
-    `;
-
-    const addButton = channelProfileTags.querySelector('[data-action="add-channel-category"]');
-    const picker = channelProfileTags.querySelector('[data-channel-category-picker]');
-    const optionButtons = channelProfileTags.querySelectorAll('[data-channel-category-option]');
-    const customButtons = channelProfileTags.querySelectorAll('.channel-category-btn--custom');
-    const customCategories = getCustomTags();
-
-    if (channelCategoryPickerCleanup) {
-        channelCategoryPickerCleanup();
-        channelCategoryPickerCleanup = null;
-    }
-
-    const closePicker = () => {
-        picker?.classList.add('hidden');
-        addButton?.setAttribute('aria-expanded', 'false');
-    };
-
-    addButton?.addEventListener('click', event => {
-        event.stopPropagation();
-        if (!picker) {
-            return;
-        }
-        const isOpen = !picker.classList.contains('hidden');
-        picker.classList.toggle('hidden', isOpen);
-        addButton.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
-    });
-
-    optionButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const selected = button.dataset.channelCategoryOption;
-            if (!selected) {
-                return;
-            }
-            addChannelCustomCategory(channelId, selected);
-            renderChannelProfileCategories(channel, channelId);
-        });
-    });
-
-    customButtons.forEach(button => {
-        const tagValue = button.dataset.channelCategory || button.textContent;
-        const normalizedTag = normalizeCustomTag(tagValue).toLowerCase();
-        const isCustom = customCategories.some(cat => cat.toLowerCase() === normalizedTag);
-        if (!isCustom) {
-            return;
-        }
-        button.style.cursor = 'pointer';
-        addLongPressOrDblClick(button, () => {
-            removeCategoryFromChannel(channelId, tagValue);
-            renderChannelProfileCategories(channel, channelId);
-
-            if (selectedCategory && normalizeCustomTag(selectedCategory).toLowerCase() === normalizedTag) {
-                updateFeed();
-            }
-        });
-    });
-
-    const onDocumentClick = event => {
-        if (!channelProfileTags.contains(event.target)) {
-            closePicker();
-        }
-    };
-    document.addEventListener('click', onDocumentClick);
-    channelCategoryPickerCleanup = () => {
-        document.removeEventListener('click', onDocumentClick);
-    };
+    channelProfileTags.classList.toggle('hidden', labels.length === 0);
+    channelProfileTags.innerHTML = labels.length
+        ? `<div class="channel-profile-categories">${labels
+              .map(label => `<span class="channel-category-btn">${escapeHtml(label)}</span>`)
+              .join('')}</div>`
+        : '';
 }
 
 function isCustomCategoryTag(tag) {

@@ -104,3 +104,27 @@ describe('fitxa d’artista: HTML i CSS', () => {
         expect(html.indexOf('js/app.js')).toBeGreaterThan(order('artist-page'));
     });
 });
+
+describe('fitxa d’artista: sense categories personalitzades', () => {
+    const app = fs.readFileSync('js/app.js', 'utf8');
+    const styles = fs.readFileSync('css/styles.css', 'utf8');
+
+    it('no hi ha el «+» per sumar categories ni el seu selector (a l’artista ni al programa)', () => {
+        expect(app).not.toContain('add-channel-category');
+        expect(app).not.toContain('add-program-category');
+        expect(app).not.toContain('data-channel-category-picker');
+        expect(app).not.toContain('channelCategoryPickerCleanup');
+        expect(css).not.toContain('.channel-category-add');
+        expect(styles).not.toContain('.channel-category-add');
+        expect(styles).not.toContain('.channel-category-picker');
+    });
+
+    it('els estils de l’artista es mostren com a etiquetes sense botó', () => {
+        const fn = app.slice(
+            app.indexOf('function renderChannelProfileCategories'),
+            app.indexOf('function isCustomCategoryTag')
+        );
+        expect(fn).toContain('<span class="channel-category-btn">');
+        expect(fn).not.toContain('<button');
+    });
+});
