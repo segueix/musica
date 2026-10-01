@@ -38,7 +38,7 @@ describe('revisió de cançons', () => {
 
     it('només exporta les cançons editades i un títol igual a l’actual no és un canvi', () => {
         const rows = rev.withDrafts(build(), { a1: 'Zeta (en directe)', a2: ' Àlbum ' });
-        expect(rev.summarize(rows)).toEqual({ total: 2, changed: 1 });
+        expect(rev.summarize(rows)).toEqual({ total: 2, changed: 1, ok: 0, pending: 2 });
         const doc = rev.buildExport(rows, { now: '2026-10-01T00:00:00Z' });
         expect(doc.type).toBe('revisio-cancons');
         expect(doc.songs).toEqual([
@@ -48,6 +48,7 @@ describe('revisió de cançons', () => {
                 originalTitle: 'Artista X - Zeta',
                 currentTitle: 'Zeta',
                 title: 'Zeta (en directe)',
+                ok: false,
             },
         ]);
     });
@@ -65,5 +66,29 @@ describe('revisió de cançons', () => {
         expect(page).toContain('js/music-categories.js');
         expect(page).toContain('Descarrega els canvis');
         expect(read('revisio-artistes.html')).toContain('url=revisio-cancons.html');
+    });
+
+    it('una cançó marcada OK surt dels pendents però la seva edició es continua exportant', () => {
+        const rows = rev.withDrafts(build(), { a1: 'Zeta nova' }, new Set(['a1']));
+        expect(rev.summarize(rows)).toEqual({ total: 2, changed: 1, ok: 1, pending: 1 });
+        expect(rev.filterRows(rows, { filter: 'pending' }).map(row => row.id)).toEqual(['a2']);
+        expect(rev.filterRows(rows, { filter: 'ok' }).map(row => row.id)).toEqual(['a1']);
+        const doc = rev.buildExport(rows);
+        expect(doc.ok).toBe(1);
+        expect(doc.songs).toHaveLength(1);
+        expect(doc.songs[0]).toMatchObject({ id: 'a1', title: 'Zeta nova', ok: true });
+    });
+
+    it('treure la marca OK la torna als pendents', () => {
+        const marked = rev.withDrafts(build(), {}, ['a1']);
+        const unmarked = rev.withDrafts(marked, {}, []);
+        expect(rev.filterRows(unmarked, { filter: 'pending' })).toHaveLength(2);
+    });
+
+    it('la pàgina té la casella OK i el filtre de pendents per defecte', () => {
+        const page = read('revisio-cancons.html');
+        expect(page).toContain('data-ok=');
+        expect(page).toMatch(/<select id="filter"[^>]*>\s*<option value="pending">Pendents<\/option>/);
+        expect(page).toContain('Marca aquesta pàgina com a OK');
     });
 });
