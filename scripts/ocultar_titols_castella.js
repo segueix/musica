@@ -67,7 +67,7 @@ const MOTS_ES_FORTS = new Set([
   'hoy','manana','siempre','nunca','mujer','mujeres','hombre','hombres','nino','nina','ninos','ninas',
   'sueno','suenos','suerte','verdad','mentira','volver','fiesta','pueblo','blanco','blanca','negro',
   'negra','rojo','roja','cielo','tiempo','camino','caminos','flores','ojos','manos','libertad',
-  'despedida','recuerdo','recuerdos','pequeno','pequena','pequenos','pequenas','locos','locas',
+  'despedida','recuerdo','recuerdos','pequeno','pequena','pequenos','pequenas','locos','locas','pies',
   'bajitos','bajitas','senora','senor','cantares','vez','veces','corazon','corazones','cancion',
   'canciones','basura','brillo','carceles','desalojos','disturbios'
 ]);
