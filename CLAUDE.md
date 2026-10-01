@@ -322,6 +322,10 @@ const likes = ctx2.SegueixApp.features.likes;
 
 - `#addYoutuberModal` («Suggereix un artista», botó `#addYoutuberBtn` amb icona de nota musical amb «+») porta, amb l'estil de `portada.css` (`.pt-contact*`): **formulari** (`#addYoutuberSubmitBtn` → `CONFIG.forms.suggestYoutuberUrl`), **Telegram** (`t.me/segueix`), **correu** (`info.segueix@gmail.com`), «Informació per a artistes» i els crèdits. No hi tornis a posar el vídeo de YouTube «Coneix-nos» ni Xiuxiuejar (eliminats, com les seves imatges). **Pendent:** `suggestYoutuberUrl` encara és el formulari antic de Segueix youtubers; cal substituir-lo pel nou (per grups de música). Prova: `tests/contacte.test.js`.
 
+### Les cançons comencen de zero (2026-10-01)
+
+- Tocar una cançó (portada, «Continua la ràdio», historial, ràdio, llistes) la fa començar **de zero**: `resolvePlaybackOptions()` (`player.js`) ja no reprèn el progrés desat de `catube_continue_watching_v1`. Només mana un temps explícit (`?t=` d'un enllaç compartit o `startAt > 0`). La restauració de la sessió en tornar a obrir l'app (`app.js`, `playbackSeconds`) és un altre camí i es manté. Prova: `tests/continue-watching.test.js`.
+
 ### Play/pausa del reproductor (2026-10-01)
 
 - El play/pausa és **el del reproductor de YouTube**: no hi ha botó propi (`.queue-toggle-button` eliminat) ni cap capa que cobreixi el vídeo. Sobre l'iframe només hi ha anterior · següent · finestra flotant (`.queue-controls`, amb el centre lliure) i, a la finestreta flotant, un **mànec d'arrossegar de 36 px a dalt** (`.drag-handle-container`; al mòbil no hi és). **No tornis a posar capes sobre l'iframe** per detectar tocs ni per fer de botó: es mengen els tocs. Per detectar un toc en tàctil es fa servir el `blur` de la finestra (`initQueueNextOverlay`).

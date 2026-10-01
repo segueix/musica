@@ -164,14 +164,14 @@ describe('represa del reproductor', () => {
         expect(resolved.resumed).toBe(false);
     });
 
-    it('reprèn des del progrés desat quan no hi ha temps explícit', () => {
+    it('comença de zero encara que hi hagi progrés desat i no hi hagi temps explícit', () => {
         const videoId = 'AbCdEf12345';
         const { window, entries } = bootPlayer();
         entries.set(videoId, { id: videoId, position: 120, duration: 300, updatedAt: 1 });
 
         const resolved = window.SegueixApp.features.continueWatching._test.resolvePlaybackOptions(videoId, {});
-        expect(resolved.options.startAt).toBe(120);
-        expect(resolved.resumed).toBe(true);
+        expect(resolved.options.startAt).toBe(0);
+        expect(resolved.resumed).toBe(false);
     });
 
     it('desa en reproducció, desa en canvi de vídeo i elimina en finalitzar', () => {
