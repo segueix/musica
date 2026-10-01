@@ -4090,3 +4090,40 @@ body .follow-btn-pill.is-followed:hover {
 .pt-contact__sources[open] summary::after {
     transform: rotate(-135deg);
 }
+
+/* ---------- Cançó que sona a la cua: ressaltada a primer cop d'ull ----------
+   A escriptori el títol i l'artista de sota el vídeo queden tallats; la cua és el lloc on sempre es veu què sona. */
+.mq-item.is-active {
+    position: relative;
+    margin: 4px 0 8px;
+    padding: 8px 8px 8px 12px;
+    border: 1px solid rgba(214, 237, 132, 0.45);
+    border-radius: var(--pt-radius);
+    background: rgba(214, 237, 132, 0.12);
+    box-shadow: inset 4px 0 0 var(--pt-accent);
+}
+
+.mq-item.is-active:hover {
+    background: rgba(214, 237, 132, 0.16);
+}
+
+.mq-item.is-active .mq-title {
+    color: var(--pt-accent);
+    font-size: 1.0625rem;
+    font-weight: 800;
+    line-height: 1.25;
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.mq-item.is-active .mq-artist {
+    color: var(--pt-text);
+    font-size: 0.9375rem;
+    font-weight: 600;
+}
+
+.mq-item.is-active .mq-duration {
+    color: var(--pt-text);
+}
