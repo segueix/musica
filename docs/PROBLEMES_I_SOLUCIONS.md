@@ -77,6 +77,18 @@
 
 **Fitxers Afectats:** `js/features/music-queue.js`, `css/portada.css`, `sw.js`, `CLAUDE.md`, tests.
 
+## [2026-10-01] - Cançons de Serrat en castellà que quedaven al feed
+
+**Símptoma:** Al feed de Joan Manuel Serrat hi havia contingut en castellà: «Tarres (Actuación TVE)» (cançó), «Mediterráneo» (Short del 1975) i l'àlbum «Mediterráneo (ÁLBUM COMPLETO)».
+
+**Causa Arrel:** «Tarres» va entrar al feed després de l'última passada d'`ocultar_titols_castella.js`; el Short i l'àlbum no són `song`/`live_song`, així que la regla per títols no els mira. A més, la regla `totes` de Serrat (excepte «Per al Meu Amic») hauria amagat «Paraules D'Amor», que és en català.
+
+**Solució Implementada:** s'han revisat els 6 vídeos del feed de Serrat (el criteri és la lletra, no `defaultAudioLanguage`: «Paraules D'Amor» hi consta com a `es` i és en català). S'han afegit a `data/hidden-videos.json` `gd0MONP5lGs` (Tarres), `jo2_CypYeC0` (Short) i `-0pnXAl1Pko` (àlbum). Es conserven «Per al Meu Amic» i «Paraules D'Amor» (català) i el directe de VEVO (no és una cançó). L'excepció de la regla de Serrat inclou ara «Paraules d'Amor».
+
+**Fitxers Afectats:** `data/hidden-videos.json`, `scripts/ocultar_titols_castella.js`, `tests/ocultar-titols-castella.test.js`.
+
+---
+
 ## [2026-10-01] - Cançons que ofereixen subtítols en castellà al feed
 
 **Símptoma:** Hi havia cançons que oferien subtítols en castellà/espanyol (Pau Vallvé, ZOO Posse, Xavi Sarrià, Dàmaris Gelabert, Kitsch…) i es volien fora del feed, també les que s'afegeixin més endavant.

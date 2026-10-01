@@ -16,7 +16,7 @@ const HIDDEN_FILE = path.join(process.cwd(), 'data', 'hidden-videos.json');
 const REGLES = {
   MARLENA: { totes: true },
   miquel: { titols: /Tu Forma de Amar|¡Es el rey|Machom[eé]n|espectro de Francisco|Isabel y Fernando|Luis, s[eé] fuerte|Mediterr[aá]neo/i },
-  'Joan Manuel Serrat': { totes: true, excepte: /Per al Meu Amic/i },
+  'Joan Manuel Serrat': { totes: true, excepte: /Per al Meu Amic|Paraules d['’]Amor/i },
   'Umpah Pah': {
     titols: /Sin Jaleos|Circunspecci|Despu[eé]s|Sonrisita|Preludio del Adios|Sue[ñn]o Dormido|Dedo de la Llaga|Tocayo|Te Odio|Color de Higado|Gitanillo de Tiana/i,
   },
