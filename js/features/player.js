@@ -94,11 +94,7 @@
             return { options: nextOptions, saved, resumed: false, explicit: true };
         }
 
-        if (saved && Number(saved.position) >= Number(storage?.minSeconds || 30)) {
-            nextOptions.startAt = Math.floor(Number(saved.position) || 0);
-            return { options: nextOptions, saved, resumed: true, explicit: false };
-        }
-
+        // Una cançó sempre comença de zero (portada, historial, ràdio…): el progrés desat ja no la fa represa.
         nextOptions.startAt = Math.max(0, Math.floor(Number(nextOptions.startAt) || 0));
         return { options: nextOptions, saved, resumed: false, explicit: false };
     }

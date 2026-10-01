@@ -7,6 +7,8 @@
 // - Una cançó coincideix pel títol, pel nom de l'artista (i els seus àlies) i pels crèdits de la descripció
 //   («Provided to YouTube»: cançó · artista · col·laboradors). MAI per la resta de la descripció ni per les
 //   etiquetes: «pop» o «música» coincidirien amb gairebé tot el feed.
+// - Un estil (categoria o gènere: «rock», «blues», «hip hop», «cançó d'autor»…) coincideix pel nom de la categoria i
+//   pels gèneres que agrupa; surt entre els artistes i les cançons.
 // - Un artista coincideix pel nom del canal, els noms de la base d'artistes i l'identificador (@handle).
 (function (window) {
     const app = window.SegueixApp;
@@ -14,9 +16,11 @@
 
     const MIN_QUERY_LENGTH = 2;
     const MAX_ARTISTS = 12;
+    const MAX_GENRES = 4;
     // Cançons de la pàgina de resultats; és també el màxim de la ràdio que es pot generar amb la cerca.
     const MAX_SONGS = 60;
     const DROPDOWN_ARTISTS = 4;
+    const DROPDOWN_GENRES = 3;
     const DROPDOWN_SONGS = 6;
     const MIN_SCORE = 0.3;
     const FALLBACK_AVATAR = 'img/icon-192.png';
@@ -169,6 +173,37 @@
             });
     }
 
+    // ---------- Estils (categories i gèneres) ----------
+
+    // Paraules d'una categoria: l'etiqueta sencera, cada tros separat per «/» i els gèneres que agrupa
+    // («Punk / Metal» → punk, metal; «Clàssica» → clàssica i contemporània, coral / vocal).
+    function genreTerms(group) {
+        const labels = [group?.label, ...(Array.isArray(group?.genres) ? group.genres : [])];
+        const terms = [];
+        labels.forEach(label => {
+            const text = String(label || '');
+            terms.push(normalize(text));
+            text.split('/').forEach(part => terms.push(normalize(part)));
+        });
+        return unique(terms);
+    }
+
+    function buildGenres(query, options) {
+        const groups = Array.isArray(options.genres) ? options.genres : [];
+        const songCounts = options.songCountByGenre || new Map();
+        return groups
+            .map(group => {
+                let score = 0;
+                genreTerms(group).forEach(term => {
+                    score = Math.max(score, scoreField(term, query));
+                });
+                return { label: String(group.label || ''), score, songs: songCounts.get(group.label) || 0 };
+            })
+            .filter(genre => genre.label && genre.score >= MIN_SCORE)
+            .sort((a, b) => b.score - a.score || b.songs - a.songs || a.label.localeCompare(b.label, 'ca'))
+            .slice(0, MAX_GENRES);
+    }
+
     // ---------- Cançons ----------
 
     const fieldCache = typeof WeakMap === 'function' ? new WeakMap() : null;
@@ -268,12 +303,19 @@
 
     // ---------- Model ----------
 
-    // options: { channels, videos, artistKeyOf(id), primaryCategoryOf(id), isEligible(video),
-    //            recordingKeysOf(video), sameRecording(a, b), limit }
-    // Retorna { query, artists, songs, hasResults, radio: { available, count, artists } }.
+    // options: { channels, videos, genres: [{ label, genres }], categoriesOfChannel(id), artistKeyOf(id),
+    //            primaryCategoryOf(id), isEligible(video), recordingKeysOf(video), sameRecording(a, b), limit }
+    // Retorna { query, artists, genres, songs, hasResults, radio: { available, count, artists } }.
     function buildModel(rawQuery, options = {}) {
         const query = parseQuery(rawQuery);
-        const empty = { query: query.raw, artists: [], songs: [], hasResults: false, radio: unavailableRadio() };
+        const empty = {
+            query: query.raw,
+            artists: [],
+            genres: [],
+            songs: [],
+            hasResults: false,
+            radio: unavailableRadio(),
+        };
         if (!query.valid) return empty;
 
         const channels = Array.isArray(options.channels) ? options.channels : [];
@@ -291,6 +333,16 @@
         });
 
         const artists = buildArtists(query, channels, { ...options, songCountByChannel });
+        // Cançons per estil (només dels estils que coincideixen): el que veuràs en obrir-lo.
+        const categoriesOfChannel =
+            typeof options.categoriesOfChannel === 'function' ? options.categoriesOfChannel : () => [];
+        const songCountByGenre = new Map();
+        songCountByChannel.forEach((count, channelId) => {
+            (categoriesOfChannel(channelId) || []).forEach(label => {
+                songCountByGenre.set(label, (songCountByGenre.get(label) || 0) + count);
+            });
+        });
+        const genres = buildGenres(query, { ...options, songCountByGenre });
         const songs = buildSongs(query, videos, {
             ...options,
             aliasesByChannel,
@@ -300,8 +352,9 @@
         return {
             query: query.raw,
             artists,
+            genres,
             songs,
-            hasResults: artists.length > 0 || songs.length > 0,
+            hasResults: artists.length > 0 || genres.length > 0 || songs.length > 0,
             radio: {
                 available: songs.length >= 2,
                 count: songs.length,
@@ -370,6 +423,13 @@
             </div>`;
     }
 
+    const GENRE_ICON =
+        '<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><circle cx="7" cy="17" r="3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17" cy="15" r="3" fill="none" stroke="currentColor" stroke-width="2"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M10 17V5l10-2v12"/></svg>';
+
+    function genreMeta(genre) {
+        return genre.songs ? `Estil · ${plural(genre.songs, 'cançó', 'cançons')}` : 'Estil';
+    }
+
     function artistMeta(artist) {
         return artist.style ? `${artist.style} · Artista` : 'Artista';
     }
@@ -377,7 +437,7 @@
     // Menú desplegable: ràdio, artistes, vídeos i, si en falten, «Veure tots els resultats».
     function dropdownHtml(model) {
         if (!model?.hasResults) {
-            return `<div class="search-no-results" role="status">No hem trobat cap artista ni cançó.</div>`;
+            return `<div class="search-no-results" role="status">No hem trobat cap artista, estil ni cançó.</div>`;
         }
         const artists = model.artists.slice(0, DROPDOWN_ARTISTS);
         const songs = model.songs.slice(0, DROPDOWN_SONGS);
@@ -393,6 +453,25 @@
                     <div class="search-result-info">
                         <span class="name">${escapeHtml(artist.name || 'Artista')}</span>
                         <span class="meta">${escapeHtml(artistMeta(artist))}</span>
+                    </div>
+                </button>`
+                    )
+                    .join('')}
+            </div>`
+            : '';
+        const genres = (model.genres || []).slice(0, DROPDOWN_GENRES);
+        const genreMarkup = genres.length
+            ? `
+            <div class="search-section" role="group" aria-label="Estils">
+                <h4>Estils</h4>
+                ${genres
+                    .map(
+                        genre => `
+                <button type="button" class="search-result-item search-genre-item" data-result-type="genre" data-genre="${escapeHtml(genre.label)}">
+                    <span class="search-genre-icon" aria-hidden="true">${GENRE_ICON}</span>
+                    <div class="search-result-info">
+                        <span class="name">${escapeHtml(genre.label)}</span>
+                        <span class="meta">${escapeHtml(genreMeta(genre))}</span>
                     </div>
                 </button>`
                     )
@@ -419,7 +498,10 @@
                     .join('')}
             </div>`
             : '';
-        const hasMore = model.artists.length > artists.length || model.songs.length > songs.length;
+        const hasMore =
+            model.artists.length > artists.length ||
+            (model.genres || []).length > genres.length ||
+            model.songs.length > songs.length;
         const moreMarkup = hasMore
             ? `
             <div class="search-section search-section--more" role="group" aria-label="Més resultats">
@@ -430,15 +512,15 @@
                 </button>
             </div>`
             : '';
-        return `${radioButtonHtml(model, 'dropdown')}${artistMarkup}${songMarkup}${moreMarkup}`;
+        return `${radioButtonHtml(model, 'dropdown')}${artistMarkup}${genreMarkup}${songMarkup}${moreMarkup}`;
     }
 
     function emptyHtml(model) {
         return `
             <div class="search-error" role="status">
                 <i data-lucide="search-x"></i>
-                <p>No hem trobat cap artista ni cançó per «${escapeHtml(model?.query || '')}».</p>
-                <p class="search-error__hint">Prova amb el nom d'un artista o el títol d'una cançó.</p>
+                <p>No hem trobat cap artista, estil ni cançó per «${escapeHtml(model?.query || '')}».</p>
+                <p class="search-error__hint">Prova amb el nom d'un artista, un estil o el títol d'una cançó.</p>
             </div>`;
     }
 
@@ -468,6 +550,29 @@
                 </div>
             </section>`
             : '';
+        const genreSection = (model.genres || []).length
+            ? `
+            <section class="search-results-section" aria-label="Estils">
+                <h2 class="search-results-title">Estils</h2>
+                <div class="search-genre-list">
+                    ${model.genres
+                        .map(
+                            genre => `
+                    <div class="search-genre-card" data-genre="${escapeHtml(genre.label)}">
+                        <button type="button" class="search-genre-open" data-search-genre="${escapeHtml(genre.label)}">
+                            <span class="search-genre-icon" aria-hidden="true">${GENRE_ICON}</span>
+                            <span class="search-genre-text">
+                                <span class="search-genre-name">${escapeHtml(genre.label)}</span>
+                                <span class="search-genre-meta">${escapeHtml(genreMeta(genre))}</span>
+                            </span>
+                        </button>
+                        <button type="button" class="search-genre-radio" data-search-style-radio="${escapeHtml(genre.label)}" aria-label="Ràdio de ${escapeHtml(genre.label)}" title="Ràdio de ${escapeHtml(genre.label)}">${RADIO_ICON}</button>
+                    </div>`
+                        )
+                        .join('')}
+                </div>
+            </section>`
+            : '';
         const songSection = model.songs.length
             ? `
             <section class="search-results-section" aria-label="Vídeos">
@@ -477,14 +582,16 @@
                 </div>
             </section>`
             : '';
-        return `<div class="search-results" data-search-results data-search-query="${escapeHtml(model.query)}">${radioButtonHtml(model, 'page')}${artistSection}${songSection}</div>`;
+        return `<div class="search-results" data-search-results data-search-query="${escapeHtml(model.query)}">${radioButtonHtml(model, 'page')}${artistSection}${genreSection}${songSection}</div>`;
     }
 
     app.features.searchResults = {
         MIN_QUERY_LENGTH,
         MAX_ARTISTS,
+        MAX_GENRES,
         MAX_SONGS,
         DROPDOWN_ARTISTS,
+        DROPDOWN_GENRES,
         DROPDOWN_SONGS,
         normalize,
         parseQuery,

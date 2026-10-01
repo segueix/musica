@@ -251,8 +251,8 @@ describe('HTML del menú i de la pàgina', () => {
 
     it('sense resultats explica què cal provar', () => {
         const html = search.pageHtml(model('zzzzzz'));
-        expect(html).toContain('No hem trobat cap artista ni cançó per «zzzzzz»');
-        expect(search.dropdownHtml(model('zzzzzz'))).toContain('No hem trobat cap artista ni cançó');
+        expect(html).toContain('No hem trobat cap artista, estil ni cançó per «zzzzzz»');
+        expect(search.dropdownHtml(model('zzzzzz'))).toContain('No hem trobat cap artista, estil ni cançó');
     });
 });
 
@@ -295,5 +295,62 @@ describe('sense herència de Segueix youtubers', () => {
         const block = app.slice(start, app.indexOf("searchInput.addEventListener('keydown'", start));
         expect(block).not.toContain('performDualSearch');
         expect(block).toContain('buildSearchModel(query)');
+    });
+});
+
+describe('estils (categories i gèneres)', () => {
+    const groups = [
+        { label: 'Pop', genres: ['Pop'] },
+        { label: 'Rock', genres: ['Rock'] },
+        { label: "Cançó d'autor", genres: ["Cançó d'autor"] },
+        { label: 'Rap / Hip-hop', genres: ['Rap / Hip-hop'] },
+        { label: 'Punk / Metal', genres: ['Punk', 'Metal'] },
+        { label: 'Jazz / Blues', genres: ['Jazz / Blues'] },
+        { label: 'Clàssica', genres: ['Clàssica i contemporània', 'Coral / Vocal'] },
+    ];
+    const withGenres = query =>
+        model(query, {
+            genres: groups,
+            categoriesOfChannel: id => (id === 'c-judit' ? ["Cançó d'autor"] : ['Pop']),
+        });
+
+    it('troba una categoria pel nom, sense accents ni majúscules', () => {
+        expect(withGenres('rock').genres.map(item => item.label)).toEqual(['Rock']);
+        expect(withGenres('CANCO').genres.map(item => item.label)).toEqual(["Cançó d'autor"]);
+        expect(withGenres('hip hop').genres.map(item => item.label)).toEqual(['Rap / Hip-hop']);
+    });
+
+    it('troba una categoria pels gèneres que agrupa («blues», «metal», «coral»)', () => {
+        expect(withGenres('blues').genres.map(item => item.label)).toContain('Jazz / Blues');
+        expect(withGenres('metal').genres.map(item => item.label)).toContain('Punk / Metal');
+        expect(withGenres('coral').genres.map(item => item.label)).toContain('Clàssica');
+    });
+
+    it('compta les cançons de l’estil i les posa en el resum', () => {
+        const pop = withGenres('pop').genres.find(item => item.label === 'Pop');
+        expect(pop.songs).toBeGreaterThan(0);
+        expect(search.dropdownHtml(withGenres('pop'))).toContain(`Estil · ${pop.songs} cançons`);
+    });
+
+    it('només hi ha estils si se li passen: sense ells el model és el de sempre', () => {
+        expect(model('rock').genres).toEqual([]);
+    });
+
+    it('un estil compta com a resultat i surt entre els artistes i els vídeos', () => {
+        const result = withGenres('blues');
+        expect(result.hasResults).toBe(true);
+        const html = search.pageHtml(result, { cardHtml: () => '' });
+        expect(html).toContain('data-search-genre="Jazz / Blues"');
+        expect(html).toContain('data-search-style-radio="Jazz / Blues"');
+        expect(search.dropdownHtml(result)).toContain('data-result-type="genre"');
+        expect(search.dropdownHtml(result)).toContain('data-genre="Jazz / Blues"');
+    });
+
+    it('escapa el nom de l’estil dins els atributs', () => {
+        const html = search.pageHtml(
+            { query: 'x', artists: [], songs: [], genres: [{ label: 'A"B', songs: 0 }], hasResults: true, radio: {} },
+            {}
+        );
+        expect(html).toContain('data-search-genre="A&quot;B"');
     });
 });

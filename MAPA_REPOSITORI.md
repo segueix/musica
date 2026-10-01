@@ -229,8 +229,6 @@ Aquest document llista **tot el contingut versionat** del repositori (sortida de
 │   └── validacio-consentiment-youtube.md
 ├── img/
 │   ├── LLEGEIX.txt
-│   ├── Telegram-icona.png
-│   ├── Xiuxiuajar_icona.png
 │   ├── caratula.png
 │   ├── icon-192.png
 │   ├── icon-512.png
