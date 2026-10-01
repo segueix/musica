@@ -1,18 +1,18 @@
 {
-  "generatedAt": "2026-10-01T15:39:08.315Z",
-  "rawPublicVideoCount": 6617,
-  "feedVideoCount": 6424,
-  "acceptedMusicCount": 5455,
-  "categoryEligibleVideoCount": 5391,
-  "shortVideoCount": 1009,
-  "rejectedOrReviewCount": 1162,
-  "reviewCount": 451,
+  "generatedAt": "2026-10-01T16:29:11.435Z",
+  "rawPublicVideoCount": 6215,
+  "feedVideoCount": 5974,
+  "acceptedMusicCount": 5143,
+  "categoryEligibleVideoCount": 5081,
+  "shortVideoCount": 922,
+  "rejectedOrReviewCount": 1072,
+  "reviewCount": 433,
   "typeCounts": {
-    "song": 5091,
-    "live_song": 300,
-    "album": 64,
-    "other": 711,
-    "review": 451
+    "song": 4789,
+    "live_song": 292,
+    "album": 62,
+    "other": 639,
+    "review": 433
   },
   "channelsWithoutAcceptedMusic": [
     "UCUSjRkF72RR1E8Rl4SWtVsQ",
@@ -53,34 +53,6 @@
       "title": "Vídeo de \"Els teus ulls\" ja disponible. Gràcies a tots per l’acollida 🤍 #shorts",
       "channelTitle": "alfredgarcia",
       "durationSeconds": 19,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "e_-I29a-5J4",
-      "title": "1 d’abril del 2026",
-      "channelTitle": "Anna Ferrer",
-      "durationSeconds": 32,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "Ne0bfgSmfYg",
-      "title": "New release OUT",
-      "channelTitle": "Anna Ferrer",
-      "durationSeconds": 34,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "k70NrvbaUQE",
-      "title": "25 de febrer del 2026",
-      "channelTitle": "Anna Ferrer",
-      "durationSeconds": 17,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "IDu_j6REV7w",
-      "title": "24 de gener del 2025",
-      "channelTitle": "Anna Ferrer",
-      "durationSeconds": 16,
       "musicReason": "massa curt: probable teaser/fragment"
     },
     {
@@ -250,104 +222,6 @@
       "channelTitle": "AYRYN",
       "durationSeconds": 23,
       "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "MZZoKww_158",
-      "title": "CALÇOFEST (22/11/2025)",
-      "channelTitle": "Buhos",
-      "durationSeconds": 31,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "8xd79gZLYIs",
-      "title": "LA CASTANYADA (01/11/2025)",
-      "channelTitle": "Buhos",
-      "durationSeconds": 23,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "DqYY9jamOMc",
-      "title": "MÓRA LA NOVA (25/10/2025)",
-      "channelTitle": "Buhos",
-      "durationSeconds": 20,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "jcWxvE5K3g4",
-      "title": "GAVÀ (19/10/2025)",
-      "channelTitle": "Buhos",
-      "durationSeconds": 20,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "BXSSQJN5vwU",
-      "title": "MOLINS DE REI (28/09/2025)",
-      "channelTitle": "Buhos",
-      "durationSeconds": 27,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "vJz7j25lzPw",
-      "title": "SANTA COLOMA DE FARNERS (26/09/2025)",
-      "channelTitle": "Buhos",
-      "durationSeconds": 32,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "Mkh-0CWqyqQ",
-      "title": "LA MERCÈ (26/09/2025)",
-      "channelTitle": "Buhos",
-      "durationSeconds": 28,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "Q2yG-_72et4",
-      "title": "AVINYÓ (20/09/2025)",
-      "channelTitle": "Buhos",
-      "durationSeconds": 34,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "6HP4osY0V3E",
-      "title": "CALELLA (19/09/2025)",
-      "channelTitle": "Buhos",
-      "durationSeconds": 43,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "AbTxORbGhkY",
-      "title": "TAVERNES DE VALLDIGNA (13/09/2025)",
-      "channelTitle": "Buhos",
-      "durationSeconds": 25,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "LnfPBSOW09k",
-      "title": "VIDRERES (06/09/2025)",
-      "channelTitle": "Buhos",
-      "durationSeconds": 37,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "-3fTO4fF3NE",
-      "title": "CUBELLES (06/09/2025)",
-      "channelTitle": "Buhos",
-      "durationSeconds": 26,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "UKhG2K90yjc",
-      "title": "CUBELLS (23/08/2025)",
-      "channelTitle": "Buhos",
-      "durationSeconds": 27,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "YKG15tmPENs",
-      "title": "ARBOÇ (23/08/2025)",
-      "channelTitle": "Buhos",
-      "durationSeconds": 40,
-      "musicReason": "massa curt: probable teaser/fragment"
     },
     {
       "id": "V92PADrhJV0",
@@ -593,20 +467,6 @@
       "channelTitle": "Crim",
       "durationSeconds": 5667,
       "musicReason": "concert o sessió llarga, no una sola cançó"
-    },
-    {
-      "id": "G32YjVWyTKU",
-      "title": "Emisión en directo de CrimPunkRock",
-      "channelTitle": "Crim",
-      "durationSeconds": 0,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "qbDSBHUZ3RY",
-      "title": "Concurs de versions de CRIM (BASES)",
-      "channelTitle": "Crim",
-      "durationSeconds": 32,
-      "musicReason": "massa curt: probable teaser/fragment"
     },
     {
       "id": "Naxp7dsNjtM",
@@ -858,6 +718,146 @@
       "title": "CARRER, nou disc d'Ebri Knight aquesta tardor // CARRER, nuevo disco de Ebri Knight este otoño",
       "channelTitle": "Ebri Knight",
       "durationSeconds": 31,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "1XIjLF5UTP0",
+      "title": "Making of Videoclip 'La Voz Dormida' (Ebri Knight)",
+      "channelTitle": "Ebri Knight",
+      "durationSeconds": 158,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "LoShoRXsTd8",
+      "title": "1939 | Ebri Knight [EP La Voz Dormida]",
+      "channelTitle": "Ebri Knight",
+      "durationSeconds": 29,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "cSsW2Nzs8FA",
+      "title": "Viva la Quinta Brigada [TEASER] Ebri Knight",
+      "channelTitle": "Ebri Knight",
+      "durationSeconds": 32,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "xm5WmUiG2-0",
+      "title": "Emisión en directo de el Diluvi",
+      "channelTitle": "el Diluvi",
+      "durationSeconds": 0,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "eeTsMkABw5E",
+      "title": "Fart de tocar",
+      "channelTitle": "El Pony Pisador",
+      "durationSeconds": 9,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "aE6v5VirQSA",
+      "title": "ei algú sap com d'antiga és la sardana? Més que el tektonik segur ajsjasj",
+      "channelTitle": "El Pony Pisador",
+      "durationSeconds": 28,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "nQ6I-rbAHM0",
+      "title": "MOLTES FELICITATS MIQUEL!!",
+      "channelTitle": "El Pony Pisador",
+      "durationSeconds": 29,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "7BGZ-HD8s5I",
+      "title": "Thank you Lowlands Festival we had such a great time with all of you!! Hope to see you again 🤞",
+      "channelTitle": "El Pony Pisador",
+      "durationSeconds": 16,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "qYNFos0HW10",
+      "title": "Ossos Bruce",
+      "channelTitle": "El Pony Pisador",
+      "durationSeconds": 22,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "nR_0YEu4LFA",
+      "title": "ei sabeu quin és el truc preferit dels detectius? el trucrime ajsjajjsjas",
+      "channelTitle": "El Pony Pisador",
+      "durationSeconds": 11,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "wij8john1uA",
+      "title": "comenta mario si has arribat fins al sonic",
+      "channelTitle": "El Pony Pisador",
+      "durationSeconds": 28,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "lKv6h6VjdNc",
+      "title": "com digué Hegel, què sou més de la vall de Nuremberg o Aigüestortemberg? ajsjajs",
+      "channelTitle": "El Pony Pisador",
+      "durationSeconds": 27,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "7X51gBrmewM",
+      "title": "aquest vídeo està editat tirant aigua al teclat 👍",
+      "channelTitle": "El Pony Pisador",
+      "durationSeconds": 13,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "LF-YizRPHH4",
+      "title": "qui respongui correctament a la pregunta té premi!",
+      "channelTitle": "El Pony Pisador",
+      "durationSeconds": 23,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "e9wYEf5_-aE",
+      "title": "comenta \"salut Josep Puigdollers\" si vols que pugui deixar de tossir",
+      "channelTitle": "El Pony Pisador",
+      "durationSeconds": 21,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "biKdYWhX0CE",
+      "title": "Finger technique vs pick",
+      "channelTitle": "El Pony Pisador",
+      "durationSeconds": 16,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "7BU2CHz3aQs",
+      "title": "dm si vols un 3x2 paga’n 3 te n’emportes 2 ajsajsaj",
+      "channelTitle": "El Pony Pisador",
+      "durationSeconds": 29,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "uRXEO2-uwEU",
+      "title": "Creieu que el tècnic de so de @LaLudwigBand també pregunta com se senten?",
+      "channelTitle": "El Pony Pisador",
+      "durationSeconds": 12,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "IYIWtbp9gS4",
+      "title": "si arribem a 10000 likes aguantem la última nota durant un quart d'hora a un bolo",
+      "channelTitle": "El Pony Pisador",
+      "durationSeconds": 43,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "7PolR4Jx1I4",
+      "title": "estos chicos bailaron una polka como una xampanya pero mal y no se creerán lo que sucedió después 😱",
+      "channelTitle": "El Pony Pisador",
+      "durationSeconds": 34,
       "musicReason": "massa curt: probable teaser/fragment"
     }
   ]
