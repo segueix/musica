@@ -18,7 +18,7 @@
 
     // Preferència explícita de descoberta (no és un estat d'ànim).
     const MODES = Object.freeze([
-        { id: 'home', label: 'A casa', hint: 'Dona prioritat als artistes que segueixes o ja has escoltat.' },
+        { id: 'home', label: 'Els meus de sempre', hint: 'Dona prioritat als artistes que segueixes o ja has escoltat.' },
         { id: 'mix', label: 'Una mica de tot', hint: 'Combina música coneguda i descoberta.' },
         { id: 'surprise', label: 'Sorprèn-me', hint: 'Dona més pes als artistes que encara no has escoltat.' },
     ]);

@@ -164,4 +164,15 @@ describe('capçalera de la ràdio ben alineada (CSS)', () => {
         }
         expect(block[0]).toContain('display: none');
     });
+
+    it('el selector de mode va dins del capçal, té opcions de 44 px i la llista renovada s’anima (però no amb moviment reduït)', () => {
+        expect(css).toMatch(/\.mq-mode \{\s*order: 5;\s*flex: 1 0 100%;/);
+        expect(css).toMatch(/\.mq-mode__opt \{[^}]*min-height: 44px;/);
+        expect(css).toMatch(/\.mq-mode__opt\.is-active \{\s*background: var\(--pt-accent\);/);
+        expect(css).toMatch(
+            /\.mq-list\.is-renewed \.mq-item \{\s*animation: mq-renew 0\.5s ease both;\s*animation-delay: calc\(var\(--i, 0\) \* 35ms\);/
+        );
+        const reduced = css.slice(css.indexOf('@media (prefers-reduced-motion: reduce)'));
+        expect(reduced).toMatch(/\.mq-list\.is-renewed \.mq-item \{?[^}]*animation: none !important;/);
+    });
 });

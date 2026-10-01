@@ -48,6 +48,14 @@
     // Selector d'estils obert (es conserva en repintar la cua) i element que ha de recuperar el focus.
     let stylePickerOpen = false;
     let pendingFocus = '';
+    // Canvi de mode des de la ràdio: la llista pendent es pinta amb una animació breu i un avís de quantes cançons han
+    // canviat (el text es manté uns segons i després torna a l'explicació del mode).
+    let animateNextRender = false;
+    let modeStatus = { text: '', until: 0 };
+    let modeStatusTimer = null;
+    // Contenidor on s'ha pintat la cua per última vegada (per actualitzar-hi l'avís del mode sense repintar-ho tot)
+    let lastContainer = null;
+    const MODE_STATUS_MS = 7000;
     // Pla de descoberta aplicat a l'última cua generada: { mode, requested, note } (veure discovery.js).
     let radioMeta = null;
     // Nom de la selecció que s'ha engegat tal com és (p. ex. «Acabades de sortir»); buit en una ràdio normal.
@@ -216,7 +224,7 @@
         return [...ordered, ...byRecency];
     }
 
-    // Aplica el mode de descoberta (A casa / Una mica de tot / Sorprèn-me) a una llista ja ordenada.
+    // Aplica el mode de descoberta (Els meus de sempre / Una mica de tot / Sorprèn-me) a una llista ja ordenada.
     // Sense el mòdul de descoberta la llista queda com és.
     function applyDiscoveryMode(list, options = {}) {
         const discovery = app.features.discovery;
@@ -1021,6 +1029,105 @@
         return `<button type="button" class="mq-share" data-mq-share aria-label="${label}" title="${label}">${ICONS.share}</button>`;
     }
 
+    // ---------- Mode de descoberta a cada ràdio ----------
+
+    // El mode s'aplica a les ràdios generades (general, d'estil i de cerca; `radioLabel` també porta el nom de la
+    // cerca). Una selecció («Acabades de sortir»…) es reprodueix tal com és i no el té.
+    function modeApplies() {
+        return Boolean(
+            isPlaylistMode &&
+            activePlaylistId === QUEUE_ID &&
+            (!radioLabel || searchRadio) &&
+            activePlaylistQueue.length &&
+            app.features.discovery?.MODES
+        );
+    }
+
+    // El mode amb què s'ha generat la cua que es veu (no necessàriament el de la portada, que s'aplica a la ràdio
+    // següent): així el selector mai diu una cosa i la llista una altra.
+    function appliedMode() {
+        const discovery = app.features.discovery;
+        const requested = radioMeta?.requested;
+        return discovery?.MODES?.some(mode => mode.id === requested) ? requested : discovery?.getMode?.() || 'mix';
+    }
+
+    function modeSelectorHtml() {
+        if (!modeApplies()) return '';
+        const discovery = app.features.discovery;
+        const current = appliedMode();
+        const hint = discovery.MODES.find(mode => mode.id === current)?.hint || '';
+        const status = Date.now() < modeStatus.until && modeStatus.text ? modeStatus.text : hint;
+        const options = discovery.MODES.map(
+            mode =>
+                `<button type="button" role="radio" class="mq-mode__opt${mode.id === current ? ' is-active' : ''}" data-mq-mode="${mode.id}" aria-checked="${mode.id === current}" title="${escapeText(mode.hint)}">${escapeText(mode.label)}</button>`
+        ).join('');
+        return `<div class="mq-mode">
+                        <div class="mq-mode__options" role="radiogroup" aria-label="Quant vols descobrir?">${options}</div>
+                        <p class="mq-mode__hint" role="status" aria-live="polite">${escapeText(status)}</p>
+                    </div>`;
+    }
+
+    // Ids de la part pendent que no són afegits a mà (la que el motor torna a triar en canviar de mode).
+    function pendingAutoIds() {
+        return activePlaylistQueue
+            .slice(currentPlaylistIndex + 1)
+            .filter(item => !queuedIds.has(String(item?.id)))
+            .map(item => String(item?.id));
+    }
+
+    function setModeStatus(text) {
+        modeStatus = { text, until: Date.now() + MODE_STATUS_MS };
+        const hint = (lastContainer || document.getElementById?.('playlistQueueContainer'))?.querySelector?.(
+            '.mq-mode__hint'
+        );
+        if (hint) hint.textContent = text;
+        clearTimeout(modeStatusTimer);
+        modeStatusTimer = setTimeout(() => {
+            modeStatus = { text: '', until: 0 };
+            const node = (lastContainer || document.getElementById?.('playlistQueueContainer'))?.querySelector?.(
+                '.mq-mode__hint'
+            );
+            const label = app.features.discovery?.MODES?.find(mode => mode.id === appliedMode())?.hint;
+            if (node && label) node.textContent = label;
+        }, MODE_STATUS_MS);
+    }
+
+    // Canvia el mode de descoberta des de la ràdio: es desa (la portada s'hi sincronitza), la part pendent de la cua es
+    // torna a triar d'immediat amb el mode nou —sense tocar la cançó que sona ni el que s'hi ha afegit a mà— i es veu què
+    // ha canviat. Retorna { changed, mode } o null si no s'ha fet res.
+    function setDiscoveryMode(value) {
+        const discovery = app.features.discovery;
+        const mode = discovery?.MODES?.find(item => item.id === value)?.id;
+        if (!mode || !modeApplies()) return null;
+        if (appliedMode() === mode) return null;
+        discovery.setMode(mode);
+        const before = new Set(pendingAutoIds());
+        animateNextRender = true;
+        pendingFocus = `[data-mq-mode="${mode}"]`;
+        regenerate();
+        animateNextRender = false;
+        const after = pendingAutoIds();
+        const changed = after.filter(id => !before.has(id)).length;
+        const label = discovery.MODES.find(item => item.id === mode)?.label || '';
+        // Sense prou historial (< 3 artistes coneguts) el mode no pot afinar res: la ràdio queda variada i ho diem
+        let variety = radioMeta?.mode === 'variety';
+        try {
+            if (engineOn() && engine().knownArtistCount(selectionSignals()) < 3) variety = true;
+        } catch (error) {
+            // Sense motor (proves): es fa servir el que diu la ràdio
+        }
+        const songs = changed === 1 ? '1 cançó nova' : `${changed} cançons noves`;
+        setModeStatus(
+            variety
+                ? `«${label}» desat. Amb tan poc historial la ràdio es manté variada (${songs} a la llista).`
+                : changed
+                  ? `Ràdio adaptada a «${label}»: ${songs} a la llista.`
+                  : `La llista ja encaixava amb «${label}».`
+        );
+        notifyQueueChanged();
+        return { changed, mode };
+    }
+
     // Símbol de barrejar («Genera de nou la ràdio»): sense text, dins el grup de símbols del nom de la ràdio, perquè
     // mai quedi sol a una fila del capçal. Només les ràdios es poden regenerar.
     function regenerateButtonHtml() {
@@ -1144,20 +1251,28 @@
                     <h2 class="mq-heading">${activePlaylistId === QUEUE_ID ? 'Ràdio' : 'Llista'}</h2>
                     ${radioNameHtml()}
                     ${canRegenerate || activePlaylistQueue.length > 1 ? `<button type="button" class="mq-regenerate mq-open-ytm" data-mq-open-ytm title="Obre aquesta cua, en el mateix ordre, a YouTube (pots desar-la i tornar-la a trobar a YouTube Music)">${ICONS.external}<span>Obre a YouTube</span></button>` : ''}
+                    ${modeSelectorHtml()}
                 </div>
                 ${stylePickerHtml()}
                 ${modeNote}
                 <div class="mq-section">Ara sona</div>
                 ${renderItem(current, currentPlaylistIndex, { active: true, draggable: false })}
                 <div class="mq-section">A continuació${upcoming.length ? ` · ${upcoming.length}` : ''}</div>
-                <div class="mq-list" role="list">
+                <div class="mq-list${animateNextRender ? ' is-renewed' : ''}" role="list">
                     ${upcoming.map((video, i) => renderItem(video, currentPlaylistIndex + 1 + i)).join('') || '<div class="mq-empty">No hi ha més cançons a la ràdio.</div>'}
                 </div>
             </div>
         `;
+        lastContainer = container;
         bindContainer(container);
         setupSortable(container);
         updateTransport();
+        if (animateNextRender) {
+            // L'animació escalona les cançons noves: es veu com la llista es renova de dalt a baix
+            container.querySelectorAll?.('.mq-list .mq-item').forEach((item, index) => {
+                item.style?.setProperty?.('--i', String(Math.min(index, 14)));
+            });
+        }
         if (pendingFocus) {
             const target = container.querySelector(pendingFocus);
             pendingFocus = '';
@@ -1246,6 +1361,12 @@
             if (remove) {
                 event.stopPropagation();
                 removeAt(Number(remove.dataset.mqRemove));
+                return;
+            }
+            const modeButton = event.target.closest('[data-mq-mode]');
+            if (modeButton) {
+                event.stopPropagation();
+                setDiscoveryMode(modeButton.dataset.mqMode);
                 return;
             }
             if (event.target.closest('[data-mq-share]')) {
@@ -1384,6 +1505,8 @@
         saveAsPlaylist,
         playlistName,
         getShareData,
+        setDiscoveryMode,
+        getAppliedMode: appliedMode,
         enqueue,
         getState,
         render,

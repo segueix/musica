@@ -13,6 +13,16 @@
 
 **Fitxers Afectats:**
 
+## [2026-10-01] - Mode de descoberta dins de cada ràdio (i «A casa» passa a «Els meus de sempre»)
+
+**Petició:** una expressió més personal que «A casa» i el selector del mode a cada ràdio, amb un canvi automàtic i visible de la llista.
+
+**Solució Implementada:** `discovery.js` (`MODES`), `index.html` i els tests passen a «Els meus de sempre» (id intern `home`). `music-queue.js`: `modeSelectorHtml()` (radiogroup de tres botons dins `.mq-head`, `order: 5`), `setDiscoveryMode(mode)` (desa el mode, torna a fer `regenerate()` sense tocar la cançó que sona ni els afegits a mà, compta les cançons noves i en posa l'avís a `.mq-mode__hint`), `getAppliedMode()` i `radioMeta.requested` com a font del que marca el selector. CSS a `css/portada.css` (`.mq-mode*`, animació `mq-renew` amb `--i` per cançó). Proves: `tests/music-queue-selection.test.js` (mode dins de cada ràdio), `tests/music-queue-share.test.js` (CSS) i `tests/browser/verificar-mode-radio.js`.
+
+**Trampes conegudes:** (1) `radioLabel` també porta el nom d'una ràdio de cerca (`Cerca «…»`): per distingir una selecció de debò cal mirar `searchRadio`. (2) El selector no ha de dir el mode global (el de la portada s'aplica a la ràdio següent): mostra `radioMeta.requested`, que els recàlculs silenciosos (cor, seguiment, ±) tornen a posar al mode global. (3) L'avís es posa directament al DOM després de `regenerate()` (`lastContainer`) perquè el nombre de cançons noves no es coneix fins que la cua s'ha tornat a triar; `render()` el torna a pintar si és vigent. (4) L'efecte del mode és suau (vegeu `docs/MUSICA_SELECCIO.md`): no s'ha tocat cap pes del motor. (5) Aquesta peça substitueix l'acord anterior de no mostrar el mode a la capçalera: el que no s'ha de tornar a posar és el text del mode enganxat al nom de la ràdio.
+
+**Fitxers Afectats:** `js/features/discovery.js`, `js/features/music-queue.js`, `css/portada.css`, `index.html`, `sw.js`, tests, `CLAUDE.md`, `docs/MUSICA_SELECCIO.md`.
+
 ## [2026-10-01] - Artista nusar3000 eliminat
 
 **Símptoma/Petició:** Treure l'artista nusar3000 (canal `UCEK-KX24tmXR1bDCfhE_hgw`, 14 vídeos al feed) de Segueix Música.

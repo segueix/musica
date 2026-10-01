@@ -109,6 +109,7 @@ body {
 .app-header .icon-btn:focus-visible,
 .search-input:focus-visible,
 .hp-card:focus-visible,
+.mq-mode__opt:focus-visible,
 .hp-add-btn:focus-visible {
     outline: 3px solid var(--pt-accent);
     outline-offset: 3px;
@@ -2115,6 +2116,7 @@ body .follow-btn-pill.is-followed:hover {
     .pt-card__media img,
     .pt-card__play,
     .pt-mode__opt span,
+    .mq-mode__opt,
     .pt-style,
     .pt-quick,
     .hp-card,
@@ -2124,7 +2126,8 @@ body .follow-btn-pill.is-followed:hover {
 
     .pt-eq.is-playing i,
     .pt-skeleton__head,
-    .pt-skeleton__row i {
+    .pt-skeleton__row i,
+    .mq-list.is-renewed .mq-item {
         animation: none !important;
     }
 
@@ -2484,6 +2487,81 @@ body .follow-btn-pill.is-followed:hover {
 
 .mq-source {
     line-height: 44px;
+}
+
+/* ---------- Mode de descoberta dins de cada ràdio ---------- */
+/* Va dins del capçal (a escriptori es queda fix) perquè es vegi la llista renovar-se mentre es canvia de mode. */
+.mq-mode {
+    order: 5;
+    flex: 1 0 100%;
+    display: grid;
+    gap: 6px;
+    min-width: 0;
+}
+
+.mq-mode__options {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 4px;
+    padding: 4px;
+    border: 1px solid var(--pt-line);
+    border-radius: var(--pt-radius-lg);
+    background: var(--pt-surface);
+}
+
+.mq-mode__opt {
+    min-width: 0;
+    min-height: 44px;
+    padding: 4px 6px;
+    border: 0;
+    border-radius: var(--pt-radius-sm);
+    background: transparent;
+    color: var(--pt-text);
+    font: inherit;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    line-height: 1.15;
+    text-align: center;
+    cursor: pointer;
+    transition:
+        background 0.15s ease,
+        color 0.15s ease;
+}
+
+.mq-mode__opt:hover {
+    background: var(--pt-surface-2);
+}
+
+.mq-mode__opt.is-active {
+    background: var(--pt-accent);
+    color: var(--pt-on-accent);
+}
+
+.mq-mode__hint {
+    margin: 0;
+    color: var(--pt-muted);
+    font-size: 0.8125rem;
+    line-height: 1.35;
+}
+
+/* Quan canvia el mode, les cançons pendents entren de dalt a baix: es veu que la llista s'ha renovat */
+@keyframes mq-renew {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+        background: rgba(214, 237, 132, 0.18);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+        background: transparent;
+    }
+}
+
+.mq-list.is-renewed .mq-item {
+    animation: mq-renew 0.5s ease both;
+    animation-delay: calc(var(--i, 0) * 35ms);
 }
 
 /* Mòbil i tauleta: després d'una ràdio o d'una llista no hi ha «Altres vídeos relacionats» ni vídeos de l'artista

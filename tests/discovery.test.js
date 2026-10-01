@@ -56,7 +56,7 @@ describe('preferència del mode de descoberta', () => {
     it('per defecte és «Una mica de tot»', () => {
         const { discovery } = load();
         expect(discovery.getMode()).toBe('mix');
-        expect(discovery.MODES.map(mode => mode.label)).toEqual(['A casa', 'Una mica de tot', 'Sorprèn-me']);
+        expect(discovery.MODES.map(mode => mode.label)).toEqual(['Els meus de sempre', 'Una mica de tot', 'Sorprèn-me']);
     });
 
     it('es desa a localStorage amb el prefix catube_ (així viatja amb la configuració)', () => {
@@ -141,7 +141,7 @@ describe('ordenació de la cua segons el mode', () => {
         expect(plan.note).toMatch(/poc historial/);
     });
 
-    it('«A casa» comença per artistes escoltats', () => {
+    it('«Els meus de sempre» comença per artistes escoltats', () => {
         const { discovery } = load();
         const plan = discovery.orderForMode(candidates, withHistory(discovery), 'home', { rng: seeded() });
         expect(plan.mode).toBe('home');

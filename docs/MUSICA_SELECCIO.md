@@ -51,7 +51,7 @@ Amb el catàleg actual: 1.282 de 3.991 cançons tenen any d'evidència i 854 só
 - **Afinitat**: estil de la cançó inicial i de la sessió.
 - **Penalitzacions**: salts manuals ràpids (≥ 2 de la cançó o ≥ 3 de l'artista, amb decaïment de 7 dies), exposició de les darreres 24 h, «Menys com aquesta» (lleu a l'artista).
 
-Familiaritat (segon eix, compatible amb l'antiguitat): «A casa» 75/20/5, «Una mica de tot» 60/30/10, «Sorprèn-me» 25/45/30 (coneguda/descoberta afí/sorpresa). Sense almenys 3 artistes coneguts, la ràdio és variada i ho diu.
+Familiaritat (segon eix, compatible amb l'antiguitat): «Els meus de sempre» 75/20/5, «Una mica de tot» 60/30/10, «Sorprèn-me» 25/45/30 (coneguda/descoberta afí/sorpresa). Sense almenys 3 artistes coneguts, la ràdio és variada i ho diu.
 
 ## Restriccions sobre el resultat final
 
@@ -117,7 +117,16 @@ A la capçalera de la ràdio, al costat del nom (abans hi havia el text del mode
 - **Nom**: el de la ràdio, mai el de la cançó que sona: «Ràdio Pop», «Ràdio Pop + Rock», «La teva ràdio», «Cerca: nit» o el nom de la selecció («Acabades de sortir»). Si ja hi ha una llista amb aquest nom (d'una altra ràdio o de l'usuari) s'hi afegeix un número: «Ràdio Pop (2)». Mai es trepitja una llista existent.
 - **Desada**: el símbol passa a una llista amb una marca (llima) i l'etiqueta diu que ja és desada. Tornar-hi a prémer **actualitza aquella mateixa llista** amb la cua actual (no en crea una altra); si l'usuari l'ha esborrada, en crea una de nova. Començar una altra ràdio (o una cerca, o una selecció) torna a «no desada».
 - Un avís confirma «Llista «…» desada a les teves llistes.» amb l'acció «Obre» (porta a la biblioteca). Una llista de l'usuari que sona en mode llista no mostra el símbol (ja és una llista).
-- El mode de descoberta segueix aplicant-se (selector de la portada); només ha deixat de mostrar-se el seu nom a la capçalera. Si no hi havia historial suficient, la nota explicativa continua sortint sota la capçalera.
+- El mode de descoberta segueix aplicant-se (selector de la portada i, des del 2026-10-01, també el de cada ràdio: vegeu «Mode de descoberta dins de cada ràdio»); només ha deixat de mostrar-se el seu nom enganxat al nom de la ràdio. Si no hi havia historial suficient, la nota explicativa continua sortint sota la capçalera.
+
+## Mode de descoberta dins de cada ràdio
+
+Cada ràdio generada (general, d'estil o de cerca) porta a la capçalera el selector **«Els meus de sempre» / «Una mica de tot» / «Sorprèn-me»** (abans, el primer es deia «A casa»). Una selecció («Acabades de sortir») o una llista de l'usuari no en tenen: es reprodueixen tal com són.
+
+- **Efecte immediat.** `musicQueue.setDiscoveryMode(mode)` desa el mode (`catube_discovery_mode`; la portada s'hi sincronitza) i torna a triar **només la part pendent** de la cua amb el mode nou: la cançó que sona i el que l'usuari hi ha afegit a mà es conserven. En una ràdio de cerca es reordenen les mateixes cançons trobades.
+- **Es veu.** Les cançons pendents entren escalonades de dalt a baix (`.mq-list.is-renewed`, desactivat amb «moviment reduït») i una línia sota el selector diu «Ràdio adaptada a «Sorprèn-me»: 28 cançons noves a la llista.» durant uns 7 s. Si l'historial no arriba a 3 artistes coneguts, diu que el mode s'ha desat però la ràdio es manté variada.
+- **El selector diu la veritat.** Marca el mode amb què s'ha generat la llista que es veu (`radioMeta.requested`), no el de la portada, que (com abans) s'aplica a la ràdio següent; prémer el mode ja aplicat no fa res.
+- **L'efecte és suau.** El mode és un objectiu de repartiment coneguda/afí/sorpresa que corregeix la puntuació (`gain.familiarity` 0,5), i el gust de l'usuari pesa més. En una prova al navegador amb 30 artistes escoltats, «Els meus de sempre» va donar ~74 % d'artistes coneguts i «Sorprèn-me» ~58 % (objectius 75 % i 25 %); a la llista canvien unes 28–31 de 39 cançons, en part per la tria aleatòria. Cap d'aquestes xifres és de producció.
 
 ## Ràdio d'una cerca
 

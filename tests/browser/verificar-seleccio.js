@@ -327,7 +327,10 @@ async function main() {
                 const boto = host.querySelector('[data-mq-save-list]');
                 const r = boto?.getBoundingClientRect();
                 resultat[mode] = {
-                    modeVisible: /Sorprèn-me|Una mica de tot|A casa/.test(head?.textContent || ''),
+                    modeVisible: /Sorprèn-me|Una mica de tot|Els meus de sempre/.test(
+                        head?.querySelector('.mq-source')?.textContent || ''
+                    ),
+                    selector: host.querySelectorAll('.mq-head .mq-mode [data-mq-mode]').length,
                     botoMida: r ? [Math.round(r.width), Math.round(r.height)] : null,
                     nom: boto?.getAttribute('aria-label') || '',
                     alCostatDelNom: Boolean(boto?.closest('.mq-source')),
@@ -338,10 +341,11 @@ async function main() {
             return resultat;
         });
         comprovar(
-            'a la capçalera de la ràdio no hi ha el nom del mode (Sorprèn-me…) sinó el símbol de desar com a llista (≥ 44 px)',
+            'el nom de la ràdio no porta el text del mode (Sorprèn-me…) sinó el símbol de desar com a llista (≥ 44 px); el mode és al seu selector',
             Object.values(capcalera).every(
                 item =>
                     !item.modeVisible &&
+                    item.selector === 3 &&
                     item.botoMida &&
                     item.botoMida[0] >= 44 &&
                     item.botoMida[1] >= 44 &&
