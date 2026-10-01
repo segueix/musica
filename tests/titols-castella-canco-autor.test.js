@@ -1,11 +1,12 @@
-'use strict';
+import { createRequire } from 'node:module';
+import { describe, it, expect } from 'vitest';
 
-const { describe, it, expect } = require('vitest');
+const require = createRequire(import.meta.url);
 const {
   esTitolClaramentCastella,
   esCancoAutorCastella,
   netejaTitol,
-} = require('../scripts/ocultar_titols_castella');
+} = require('../scripts/ocultar_titols_castella.js');
 
 describe("filtre de títols castellans a Cançó d'autor", () => {
   it('detecta títols clarament castellans', () => {
