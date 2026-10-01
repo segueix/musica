@@ -20,7 +20,10 @@ const REGLES = {
   'Umpah Pah': {
     titols: /Sin Jaleos|Circunspecci|Despu[eé]s|Sonrisita|Preludio del Adios|Sue[ñn]o Dormido|Dedo de la Llaga|Tocayo|Te Odio|Color de Higado|Gitanillo de Tiana/i,
   },
-  'Judit Neddermann': { titols: /canci[oó]n que me cura|d[oó]nde dormir|hace un tiempo|alegr[ií]a de vivir|^Velas$|la respuesta/i },
+  'Judit Neddermann': {
+    titols:
+      /canci[oó]n que me cura|d[oó]nde dormir|hace un tiempo|alegr\S{1,2}a de vivir|^Velas$|la respuesta|Siento Que Vuela|Como Un Amuleto|La Llave De La Alegr|Ll[eé]vame Contigo|Vivo Viva|^Canta$|^Luna$|^Celebrar$|Mendien Artean|Zure Ostean|Gorantza|Ahizpa|Neurean|Lamiak/i,
+  },
   Ceaxe: { titols: /POR PRIMERA VEZ|PA SIEMPRE|TE ENCONTR|SE SIENTE|MUERO X ESA/i },
   SUU: { titols: /los d[ií]as como hoy|Me siento mejor|Si me est[aá]s rondando|[UÚ]limamente|Cantando goles|^Un poco|Uno de Septiembre/i },
   'Miki Nuñez': { titols: /M[aá]s De La Cuenta|- Suerte|- La Mitad|Entre Un Mill[oó]n|Dime Que No Duele/i },
