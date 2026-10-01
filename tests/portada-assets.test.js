@@ -130,7 +130,7 @@ describe('index.html de Segueix Música', () => {
         expect(html).toContain('placeholder="Què vols escoltar?"');
         expect(html).toContain('Avui, què et ve de gust?');
         expect(html).toContain('La teva ràdio');
-        for (const label of ['A casa', 'Una mica de tot', 'Sorprèn-me'])
+        for (const label of ['Els meus de sempre', 'Una mica de tot', 'Sorprèn-me'])
             expect(html).toContain(`<span>${label}</span>`);
         expect(html).toContain('type="radio" name="ptMode"');
         expect(html).toContain('Quant vols descobrir?');

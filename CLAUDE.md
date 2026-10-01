@@ -54,7 +54,7 @@ js/
 │   ├── shorts.js            # Shorts — REFACTORITZAT (implementació directa, sense hooks)
 │   ├── support.js           # Suport canals — REFACTORITZAT (implementació directa)
 │   ├── likes.js             # Likes/favorits — REFACTORITZAT (implementació directa)
-│   ├── discovery.js         # Descoberta (mode A casa/Una mica de tot/Sorprèn-me, radar, Torna-hi) — funcions pures
+│   ├── discovery.js         # Descoberta (mode Els meus de sempre/Una mica de tot/Sorprèn-me, radar, Torna-hi) — funcions pures
 │   ├── my-music.js          # «La teva música»: historial (3 últimes + períodes), artistes seguits (model pur + HTML)
 │   ├── portada.js           # Portada «La teva plaça musical» (model pur + HTML + esdeveniments), pinta dins #videosGrid
 │   ├── shell-nav.js         # Navegació lateral/inferior i avisos breus (toast)
@@ -270,7 +270,8 @@ const likes = ctx2.SegueixApp.features.likes;
 - La ràdio, «Recomanat per a tu», les files i «Torna-hi» fan servir `SegueixApp.features.musicSelection` amb els senyals de `musicSignals`. **No afegeixis una ordenació més** a un flux que ja passa pel motor: les restriccions d'antigues i d'artista s'apliquen al resultat final (`arrangeMusicList()` per a llistes). Ordre de scripts: `discovery.js` → `music-selection.js` → `music-signals.js` → `music-queue.js`.
 - Tornar a la política anterior: `localStorage.catube_selection_engine = 'legacy'`. Tot el detall (paràmetres, senyals, limitacions) és a `docs/MUSICA_SELECCIO.md`; la simulació és a `docs/MUSICA_SELECCIO_SIMULACIO.md`.
 - Una ràdio d'artista/categoria **sempre** és d'un estil (el de la fila/pàgina o la categoria principal de l'artista) i porta el nom fix de l'estil; el «+» del nom hi suma estils que es barregen a parts iguals (`radioCategory` + `radioExtra` a `music-queue.js`). Només «La teva ràdio» és general.
-- A la capçalera de la ràdio **no es mostra el nom del mode de descoberta** (abans «· Sorprèn-me»): hi ha el símbol «desa com a llista» (`[data-mq-save-list]`). `musicQueue.saveAsPlaylist()` desa tota la cua a `catube_playlists` (nom de la ràdio, «Ràdio Pop (2)» si ja existeix; tornar-hi a prémer actualitza la mateixa llista). No hi tornis a posar el text del mode: detall a `docs/MUSICA_SELECCIO.md` («Desar la ràdio com a llista»).
+- Cada ràdio generada (general, d'estil i de cerca; no una selecció ni una llista) porta a la capçalera el **selector del mode de descoberta** (`.mq-mode`: «Els meus de sempre» / «Una mica de tot» / «Sorprèn-me», `musicQueue.setDiscoveryMode()`): en canviar-lo, la part pendent de la cua es torna a triar d'immediat amb el mode nou (sense tocar la cançó que sona ni el que s'hi ha afegit a mà), les cançons entren amb una animació i un avís diu quantes han canviat. El selector mostra el mode amb què s'ha generat la llista que es veu (`radioMeta.requested`), no el de la portada. El nom de la ràdio **no** porta el text del mode (abans «· Sorprèn-me»): hi ha el símbol «desa com a llista» (`[data-mq-save-list]`). `musicQueue.saveAsPlaylist()` desa tota la cua a `catube_playlists` (nom de la ràdio, «Ràdio Pop (2)» si ja existeix; tornar-hi a prémer actualitza la mateixa llista). No hi tornis a posar el text del mode: detall a `docs/MUSICA_SELECCIO.md` («Desar la ràdio com a llista»).
+- A la capçalera de la ràdio, **«Barreja» és només un símbol** (`.mq-shuffle[data-mq-regenerate]`, amb `aria-label`) dins el grup `.mq-tools`, junt amb «+», desar i compartir: no hi tornis a posar la paraula ni el botó fora del grup (a mòbil quedava una fila amb només «Barreja»). Al capçal només queda «Obre a YouTube».
 - Una cançó de l'historial **ja no** queda exclosa de la ràdio (tornen amb descans de 12 cançons i 60 min). Novetats i les categories continuen ocultant-les.
 - Un vídeo pujat fa poc **no** és una estrena si té any original antic (`originalYear`) o és d'un artista de `musica-classica.json` sense any verificat (`data/musica-dates.json` per excepcions).
 
@@ -289,6 +290,15 @@ const likes = ctx2.SegueixApp.features.likes;
 
 - `#playlistsPage` es pinta per aquest ordre: **Historial** (tres últimes cançons amb quan s'han escoltat + símbol d'expandir per períodes), **Artistes** (només els seguits) i **Llistes de reproducció**. L'historial i els artistes els pinta `SegueixApp.features.myMusic.render()` a `#myMusic` (hook `renderMyMusic` de `navigation.showPlaylists()`); les llistes, `renderPlaylistsPage()`.
 - **No existeixen** les pestanyes de biblioteca, les categories intel·ligents (categoria exacta per cometes) ni la pestanya/creació de programes a Artistes: no els hi tornis a posar. `setActiveFollowTab()` només accepta `all` | `following`. Verificació opt-in: `node tests/browser/verificar-la-teva-musica.js`.
+
+### Cançons amb subtítols en castellà (2026-10-01)
+
+- Les cançons que **declaren** subtítols en castellà/espanyol al títol o a la descripció no són al feed: `update_music_feed.js` les descarta a cada generació (el workflow «Actualitzar feed musical» corre cada dia) amb `scripts/lib/subtitols_castella.js`, i `node scripts/ocultar_subtitols_castella.js` n'afegeix les del feed actual a `data/hidden-videos.json`. No es poden llegir les pistes reals de YouTube (cal OAuth). Detall, regles i trampes: `docs/PROBLEMES_I_SOLUCIONS.md` (2026-10-01).
+
+### Play/pausa del reproductor (2026-10-01)
+
+- El play/pausa és **el del reproductor de YouTube**: no hi ha botó propi (`.queue-toggle-button` eliminat) ni cap capa que cobreixi el vídeo. Sobre l'iframe només hi ha anterior · següent · finestra flotant (`.queue-controls`, amb el centre lliure) i, a la finestreta flotant, un **mànec d'arrossegar de 36 px a dalt** (`.drag-handle-container`; al mòbil no hi és). **No tornis a posar capes sobre l'iframe** per detectar tocs ni per fer de botó: es mengen els tocs. Per detectar un toc en tàctil es fa servir el `blur` de la finestra (`initQueueNextOverlay`).
+- Per reproduir/pausar des del codi (Media Session, targeta «Ara sona»): `playMainPlayer()` / `pauseMainPlayer()` (ordres explícites) o `toggleMainPlayerPlayback()` (estat 1 o 3 = sona). Verificació opt-in: `node tests/browser/verificar-play-pausa.js` (succedani d'embed); detall i trampes a `docs/PROBLEMES_I_SOLUCIONS.md` (2026-10-01).
 
 ### Ràdio i llistes: sense relacionats (2026-09-30)
 

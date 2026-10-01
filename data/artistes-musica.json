@@ -12971,26 +12971,18 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [
-          {
-            "id": "UCEK-KX24tmXR1bDCfhE_hgw",
-            "handle": "@nusar3000",
-            "name": "nusar3000",
-            "type": "official",
-            "primary": true
-          }
-        ],
+        "channels": [],
         "candidates": []
       },
       "confidence": "mitjana",
-      "reviewStatus": "pendent",
+      "reviewStatus": "rebutjat",
       "active": false,
       "sources": [
         "manual-user-2026-09-29",
         "youtube:manual-verified"
       ],
-      "lastChecked": "2026-09-29T11:23:49.045Z",
-      "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
+      "lastChecked": "2026-10-01T05:49:45.927Z",
+      "notes": "Eliminat (2026-10-01) a petició de l'editor. No tornar a resoldre @nusar3000.",
       "genresRaw": [
         "Urbana"
       ]

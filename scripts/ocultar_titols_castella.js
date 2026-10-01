@@ -30,7 +30,6 @@ const REGLES = {
   CACTUS: { titols: /NOCHE LOCA|DIUEN X AH[IÍ]/i },
   'BAYA BAYE': { titols: /JUERGA Y REBELD|CUMBIA DEL PAPU/i },
   'Txarango Oficial': { titols: /BENDITA VIDA/i },
-  nusar3000: { titols: /BENDECIDO|ROSA DE JERIC|DESPECH/i },
   elo: { titols: /De Casi Nada/i },
   'Joan Colomo': { titols: /Tus Pies|Enmienda a la totalidad/i },
   'Cristina Monllau': { titols: /Una Vez M[aá]s/i },

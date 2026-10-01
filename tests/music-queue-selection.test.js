@@ -603,7 +603,7 @@ describe('desar la ràdio com a llista de reproducció', () => {
     }
     const ids = list => list.map(v => v.id);
 
-    it('el mode de descoberta ja no es mostra a la capçalera: hi ha el símbol de desar com a llista', () => {
+    it('el nom de la ràdio ja no porta el text del mode («· Sorprèn-me»): hi ha el símbol de desar com a llista', () => {
         for (const mode of ['home', 'mix', 'surprise']) {
             const catalog = styledCatalog();
             const history = catalog.slice(0, 30).map(v => ({ ...v, viewedAt: new Date().toISOString() }));
@@ -611,10 +611,13 @@ describe('desar la ràdio com a llista de reproducció', () => {
             env.queue.startDiscovery();
             const container = fakeContainer();
             env.queue.render(container);
-            expect(container.innerHTML).not.toContain('mq-mode');
-            expect(container.innerHTML).not.toContain('Sorprèn-me');
-            expect(container.innerHTML).not.toContain('Una mica de tot');
-            expect(container.innerHTML).toContain('data-mq-save-list');
+            const html = container.innerHTML;
+            // El mode surt només al selector propi (després del nom), mai enganxat al nom de la ràdio
+            const name = html.slice(html.indexOf('<span class="mq-source'), html.indexOf('<div class="mq-mode">'));
+            expect(name).not.toContain('Sorprèn-me');
+            expect(name).not.toContain('Una mica de tot');
+            expect(name).not.toContain('Els meus de sempre');
+            expect(html).toContain('data-mq-save-list');
         }
     });
 
@@ -748,5 +751,150 @@ describe('desar la ràdio com a llista de reproducció', () => {
         env.queue.render(container);
         expect(container.innerHTML).not.toContain('data-mq-save-list');
         expect(env.queue.saveAsPlaylist().status).toBe('unsupported');
+    });
+});
+
+// ---------- Mode de descoberta dins de cada ràdio ----------
+
+describe('mode de descoberta dins de cada ràdio', () => {
+    // 12 artistes escoltats: n'hi ha prou (≥ 3) perquè el mode es pugui aplicar
+    function withHistory() {
+        const catalog = catalogWithClassics();
+        const history = [];
+        for (let a = 0; a < 12; a++) {
+            history.push({ ...catalog.find(v => v.channelId === `c${a}`), viewedAt: new Date().toISOString() });
+        }
+        return { catalog, history };
+    }
+
+    function radioWithMode(options = {}) {
+        const { catalog, history } = withHistory();
+        const container = fakeContainer();
+        const holder = {};
+        const env = setup({
+            catalog,
+            history: options.noHistory ? [] : history,
+            mode: options.mode || 'mix',
+            extra: { renderPlaylistQueue: () => holder.env?.queue.render(container) },
+        });
+        holder.env = env;
+        env.queue.startDiscovery();
+        return { ...env, catalog, container };
+    }
+
+    const modeButtons = html =>
+        [...html.matchAll(/data-mq-mode="(\w+)" aria-checked="(true|false)"/g)].map(m => [m[1], m[2]]);
+
+    it('cada ràdio mostra el selector amb les tres opcions i el mode amb què s’ha generat', () => {
+        const env = radioWithMode({ mode: 'surprise' });
+        env.queue.render(env.container);
+        expect(modeButtons(env.container.innerHTML)).toEqual([
+            ['home', 'false'],
+            ['mix', 'false'],
+            ['surprise', 'true'],
+        ]);
+        expect(env.container.innerHTML).toContain('role="radiogroup" aria-label="Quant vols descobrir?"');
+        expect(env.container.innerHTML).toContain('Els meus de sempre');
+        expect(env.container.innerHTML).not.toContain('A casa');
+        // És dins del capçal (a escriptori el capçal es queda fix)
+        const head = env.container.innerHTML.slice(
+            env.container.innerHTML.indexOf('<div class="mq-head">'),
+            env.container.innerHTML.indexOf('<div class="mq-section">')
+        );
+        expect(head).toContain('mq-mode');
+    });
+
+    it('en canviar el mode la part pendent es renova d’immediat sense tocar la cançó que sona', () => {
+        const env = radioWithMode();
+        const current = env.ctx.activePlaylistQueue[0].id;
+        const before = env.ctx.activePlaylistQueue.slice(1).map(v => v.id);
+        const result = env.queue.setDiscoveryMode('surprise');
+        const after = env.ctx.activePlaylistQueue.slice(1).map(v => v.id);
+        expect(result.mode).toBe('surprise');
+        expect(result.changed).toBeGreaterThan(5);
+        expect(after.filter(id => !before.includes(id)).length).toBe(result.changed);
+        expect(env.ctx.activePlaylistQueue[0].id).toBe(current);
+        expect(env.queue.getAppliedMode()).toBe('surprise');
+        expect(env.localStorage.getItem('catube_discovery_mode')).toBe('surprise');
+        expect(new Set(env.ctx.activePlaylistQueue.map(v => v.id)).size).toBe(env.ctx.activePlaylistQueue.length);
+    });
+
+    it('es veu: la llista es repinta amb l’animació i un avís diu quantes cançons han canviat', () => {
+        const env = radioWithMode();
+        env.queue.render(env.container);
+        expect(env.container.innerHTML).not.toContain('is-renewed');
+        const result = env.queue.setDiscoveryMode('home');
+        const html = env.container.innerHTML;
+        expect(html).toContain('class="mq-list is-renewed"');
+        expect(html).toContain('data-mq-mode="home" aria-checked="true"');
+        // L'avís es posa just després (sense repintar-ho tot) i es conserva en repintar la cua uns segons
+        env.queue.render(env.container);
+        expect(env.container.innerHTML).toMatch(
+            new RegExp(`Ràdio adaptada a «Els meus de sempre»: ${result.changed} cançons noves a la llista\\.`)
+        );
+        // L'animació només es fa en canviar de mode: un repintat posterior ja no la porta
+        expect(env.container.innerHTML).not.toContain('is-renewed');
+    });
+
+    it('el mode és un event: la portada s’hi sincronitza', () => {
+        const env = radioWithMode();
+        const seen = [];
+        env.bus.addEventListener('segueix:discovery-mode-changed', event => seen.push(event.detail.mode));
+        env.queue.setDiscoveryMode('home');
+        expect(seen).toEqual(['home']);
+    });
+
+    it('conserva el que l’usuari ha afegit a mà', () => {
+        const env = radioWithMode();
+        const manual = env.catalog.find(v => !env.ctx.activePlaylistQueue.some(q => q.id === v.id));
+        env.queue.enqueue(manual);
+        env.queue.setDiscoveryMode('surprise');
+        expect(env.ctx.activePlaylistQueue.some(v => v.id === manual.id)).toBe(true);
+    });
+
+    it('prémer el mode que ja s’aplica, o un mode inventat, no fa res', () => {
+        const env = radioWithMode();
+        const before = env.ctx.activePlaylistQueue.map(v => v.id);
+        const refreshed = env.calls.refreshed;
+        expect(env.queue.setDiscoveryMode('mix')).toBeNull();
+        expect(env.queue.setDiscoveryMode('a-casa')).toBeNull();
+        expect(env.ctx.activePlaylistQueue.map(v => v.id)).toEqual(before);
+        expect(env.calls.refreshed).toBe(refreshed);
+    });
+
+    it('el selector diu el mode de la llista que es veu, no el de la portada (que s’aplica a la ràdio següent)', () => {
+        const env = radioWithMode();
+        env.app.features.discovery.setMode('home');
+        env.queue.render(env.container);
+        expect(modeButtons(env.container.innerHTML).find(([, checked]) => checked === 'true')[0]).toBe('mix');
+        // I el botó del mode de la portada sí que l’aplica, encara que ja fos el mode desat
+        expect(env.queue.setDiscoveryMode('home').mode).toBe('home');
+    });
+
+    it('amb poc historial el mode no pot afinar res: ho diu', () => {
+        const env = radioWithMode({ noHistory: true });
+        env.queue.setDiscoveryMode('surprise');
+        env.queue.render(env.container);
+        expect(env.container.innerHTML).toMatch(/«Sorprèn-me» desat\. Amb tan poc historial la ràdio es manté variada/);
+    });
+
+    it('una ràdio de cerca té el selector; una selecció o una llista, no', () => {
+        const env = radioWithMode();
+        env.queue.startFromSearch(env.catalog.slice(0, 20), { query: 'nit' });
+        env.queue.render(env.container);
+        expect(env.container.innerHTML).toContain('data-mq-mode="surprise"');
+        const before = env.ctx.activePlaylistQueue.slice(1).map(v => v.id);
+        expect(env.queue.setDiscoveryMode('surprise').mode).toBe('surprise');
+        const after = env.ctx.activePlaylistQueue.slice(1).map(v => v.id);
+        expect([...after].sort()).toEqual([...before].sort());
+
+        env.queue.playSelection(env.catalog.slice(30, 40), 'Acabades de sortir');
+        env.queue.render(env.container);
+        expect(env.container.innerHTML).not.toContain('data-mq-mode');
+        expect(env.queue.setDiscoveryMode('home')).toBeNull();
+
+        env.ctx.activePlaylistId = 'pl_meva';
+        env.queue.render(env.container);
+        expect(env.container.innerHTML).not.toContain('data-mq-mode');
     });
 });

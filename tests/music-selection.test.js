@@ -428,7 +428,7 @@ describe('gust, seguiments, cors i escoltes', () => {
         expect(E.reasonFor(target, ctx, { moreLike: new Set([target.id]) })).toBe('Has demanat més com aquesta');
     });
 
-    it('«A casa» potencia preferides i «Sorprèn-me» la descoberta', () => {
+    it('«Els meus de sempre» potencia preferides i «Sorprèn-me» la descoberta', () => {
         const sigs = E.emptySignals();
         const known = Array.from({ length: 14 }, (_, i) => `cur${i + 1}`);
         known.forEach(key => sigs.followed.add(key));

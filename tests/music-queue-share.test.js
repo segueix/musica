@@ -81,7 +81,29 @@ describe('botó de compartir a la capçalera', () => {
         expect(tools[1]).toContain('data-mq-add-style');
         expect(tools[1]).toContain('data-mq-save-list');
         expect(tools[1]).toContain('data-mq-share');
+        expect(tools[1]).toContain('data-mq-regenerate');
         expect(html).toContain('<h2 class="mq-heading">Ràdio</h2>');
+    });
+
+    it('«Barreja» és només un símbol (sense la paraula) dins el grup de símbols, mai al capçal ni en una llista', () => {
+        const html = render(load());
+        expect(html).not.toContain('<span>Barreja</span>');
+        expect(html).not.toMatch(/>\s*Barreja\s*</);
+        const shuffle = html.match(/<button type="button" class="mq-shuffle"[^>]*>/)[0];
+        expect(shuffle).toContain('data-mq-regenerate');
+        expect(shuffle).toContain('aria-label="Barreja la ràdio');
+        expect(shuffle).toContain('title="Barreja la ràdio');
+        // El capçal només té el botó d'obrir a YouTube (a la dreta): cap altre botó pot quedar sol a una fila
+        const head = html.slice(html.indexOf('<div class="mq-head">'), html.indexOf('<div class="mq-section">'));
+        const outsideTools = head.replace(/<span class="mq-source[\s\S]*?<\/span><\/span>/, '');
+        expect(outsideTools.match(/<button/g)).toHaveLength(1);
+        expect(outsideTools).toContain('data-mq-open-ytm');
+
+        // Una llista en reproducció no es pot regenerar: no té el símbol
+        const library = { getPlaylists: () => [{ id: 'pl_7', name: 'X', videos: queue }] };
+        expect(render(load({ activePlaylistId: 'pl_7', activePlaylistName: 'X' }, library))).not.toContain(
+            'data-mq-regenerate'
+        );
     });
 
     it('una llista desada en reproducció es titula «Llista» i també es pot compartir', () => {
@@ -122,7 +144,9 @@ describe('capçalera de la ràdio ben alineada (CSS)', () => {
 
     it('els símbols (afegir, desar, compartir) fan 44 px i no se separen', () => {
         expect(css).toMatch(/\.mq-tools \{\s*display: inline-flex;\s*flex: none;/);
-        expect(css).toMatch(/\.mq-add-style,\s*\.mq-save-list,\s*\.mq-share \{[^}]*width: 44px;[^}]*height: 44px;/);
+        expect(css).toMatch(
+            /\.mq-add-style,\s*\.mq-shuffle,\s*\.mq-save-list,\s*\.mq-share \{[^}]*width: 44px;[^}]*height: 44px;/
+        );
     });
 
     it('al mòbil i a la tauleta, després d’una ràdio o d’una llista no hi ha vídeos relacionats', () => {
@@ -139,5 +163,16 @@ describe('capçalera de la ràdio ben alineada (CSS)', () => {
             expect(block[0]).toContain(`#watchPage:has(#playlistQueueContainer:not(.hidden) .mq) ${selector}`);
         }
         expect(block[0]).toContain('display: none');
+    });
+
+    it('el selector de mode va dins del capçal, té opcions de 44 px i la llista renovada s’anima (però no amb moviment reduït)', () => {
+        expect(css).toMatch(/\.mq-mode \{\s*order: 5;\s*flex: 1 0 100%;/);
+        expect(css).toMatch(/\.mq-mode__opt \{[^}]*min-height: 44px;/);
+        expect(css).toMatch(/\.mq-mode__opt\.is-active \{\s*background: var\(--pt-accent\);/);
+        expect(css).toMatch(
+            /\.mq-list\.is-renewed \.mq-item \{\s*animation: mq-renew 0\.5s ease both;\s*animation-delay: calc\(var\(--i, 0\) \* 35ms\);/
+        );
+        const reduced = css.slice(css.indexOf('@media (prefers-reduced-motion: reduce)'));
+        expect(reduced).toMatch(/\.mq-list\.is-renewed \.mq-item \{?[^}]*animation: none !important;/);
     });
 });

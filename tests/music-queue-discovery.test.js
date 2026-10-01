@@ -101,7 +101,7 @@ describe('«Fes-la sonar» (startDiscovery)', () => {
         expect(queue.getState().meta.note).toMatch(/historial/);
     });
 
-    it('«A casa» comença per un artista que ja ha escoltat', () => {
+    it('«Els meus de sempre» comença per un artista que ja ha escoltat', () => {
         const { ctx, queue } = setup({ history: knownHistory, mode: 'home' });
         const result = queue.startDiscovery();
         expect(result.started).toBe(true);

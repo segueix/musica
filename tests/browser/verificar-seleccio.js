@@ -130,8 +130,11 @@ async function comprovarZonaLliure(page, etiqueta) {
         };
         return {
             mini: player.classList.contains('mini-player-active'),
+            ancorada: window.innerWidth <= 768,
             cantonada: [at(0.9, 0.9), at(0.75, 0.8), at(0.6, 0.7), at(0.95, 0.65)],
-            arrossegar: [at(0.2, 0.9), at(0.7, 0.2), at(0.1, 0.5)],
+            // Mànec d'arrossegar (només a escriptori) i la resta del vídeo, que és del reproductor de YouTube
+            mànec: [at(0.5, 0.06), at(0.3, 0.05)],
+            video: [at(0.2, 0.9), at(0.7, 0.5), at(0.1, 0.5), at(0.5, 0.5)],
         };
     });
     comprovar(
@@ -140,9 +143,10 @@ async function comprovarZonaLliure(page, etiqueta) {
         mesura
     );
     comprovar(
-        `${etiqueta}: la resta de la finestra continua servint per arrossegar`,
-        mesura.arrossegar.every(id => /drag-surface/.test(id)),
-        mesura.arrossegar
+        `${etiqueta}: el vídeo de la finestra flotant rep tots els tocs (play/pausa i barra de YouTube); només s'arrossega pel mànec de dalt (escriptori)`,
+        mesura.video.every(id => id === 'catube-player') &&
+            mesura.mànec.every(id => (mesura.ancorada ? id === 'catube-player' : /drag-surface/.test(id))),
+        { video: mesura.video, mànec: mesura.mànec, ancorada: mesura.ancorada }
     );
 }
 
@@ -327,7 +331,10 @@ async function main() {
                 const boto = host.querySelector('[data-mq-save-list]');
                 const r = boto?.getBoundingClientRect();
                 resultat[mode] = {
-                    modeVisible: /Sorprèn-me|Una mica de tot|A casa/.test(head?.textContent || ''),
+                    modeVisible: /Sorprèn-me|Una mica de tot|Els meus de sempre/.test(
+                        head?.querySelector('.mq-source')?.textContent || ''
+                    ),
+                    selector: host.querySelectorAll('.mq-head .mq-mode [data-mq-mode]').length,
                     botoMida: r ? [Math.round(r.width), Math.round(r.height)] : null,
                     nom: boto?.getAttribute('aria-label') || '',
                     alCostatDelNom: Boolean(boto?.closest('.mq-source')),
@@ -338,10 +345,11 @@ async function main() {
             return resultat;
         });
         comprovar(
-            'a la capçalera de la ràdio no hi ha el nom del mode (Sorprèn-me…) sinó el símbol de desar com a llista (≥ 44 px)',
+            'el nom de la ràdio no porta el text del mode (Sorprèn-me…) sinó el símbol de desar com a llista (≥ 44 px); el mode és al seu selector',
             Object.values(capcalera).every(
                 item =>
                     !item.modeVisible &&
+                    item.selector === 3 &&
                     item.botoMida &&
                     item.botoMida[0] >= 44 &&
                     item.botoMida[1] >= 44 &&
@@ -845,7 +853,7 @@ async function main() {
             mesura.pref.length === 2 && mesura.pref.every(([w, h]) => h >= 44 && w >= 44) && mesura.overflow <= 0,
             mesura
         );
-        // El cor de la dreta no tapa cap control (anterior, pausa, següent, finestra flotant) ni a 360 ni a 390 px
+        // El cor de la dreta no tapa cap control (anterior, següent, finestra flotant) ni a 360 ni a 390 px
         for (const amplada of [360, 390]) {
             await mobil.page.setViewportSize({ width: amplada, height: 800 });
             await mobil.page.waitForTimeout(300);
@@ -855,12 +863,7 @@ async function main() {
                 const rect = selector => document.querySelector(selector).getBoundingClientRect();
                 const heart = rect('.player-heart');
                 const player = rect('#videoPlayer');
-                const controls = [
-                    '.queue-prev-button',
-                    '.queue-toggle-button',
-                    '.queue-next-button',
-                    '.queue-mini-button',
-                ].map(rect);
+                const controls = ['.queue-prev-button', '.queue-next-button', '.queue-mini-button'].map(rect);
                 return {
                     solapa: controls.some(
                         r =>
@@ -872,7 +875,7 @@ async function main() {
                     controlsMin: Math.round(
                         Math.min(
                             ...controls
-                                .slice(0, 3)
+                                .slice(0, 2)
                                 .map(r => r.width)
                                 .filter(w => w > 0)
                         )

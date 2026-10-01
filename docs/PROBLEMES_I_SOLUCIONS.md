@@ -13,6 +13,60 @@
 
 **Fitxers Afectats:**
 
+## [2026-10-01] - El play/pausa del reproductor (normal i flotant) sovint no reaccionava
+
+**Símptoma:** Tocar o clicar per pausar/reprendre el vídeo, al reproductor gran i a la finestra flotant, sovint no feia res.
+
+**Causa Arrel (reproduïda amb un succedani de l'embed, `tests/browser/verificar-play-pausa.js`):** (1) **Normal, tàctil:** `.queue-next-touch-layer` cobria tot el vídeo quan els controls eren amagats (`pointer-events: auto` a `(hover: none)`/`(pointer: coarse)`) i es menjava el primer toc (mostrava els controls i res més): el toc mai arribava al reproductor de YouTube. (2) **Botó propi** (`.queue-toggle-button`): decidia entre `playVideo` i `pauseVideo` segons `data-player-state`, que només s'actualitza amb `onStateChange` i pot ser `''` (després de canviar de vídeo), `3` (buffering) o desfasat: amb estat 3 enviava `playVideo` a un vídeo que ja volia sonar i «no passava res». A més, només existia si la cua tenia anterior/següent, i a la finestreta flotant feia 28–38 px. (3) **Flotant:** `.drag-surface` cobria tot el vídeo (menys un quadrant) i l'app **emulava** el play/pausa amb un toc (< 10 px i < 300 ms a escriptori; un `click` al mòbil): un toc una mica llarg o amb un tremolor ja no es comptava, i la barra de YouTube i el seu botó de pausa eren inaccessibles.
+
+**Solució Implementada:** el play/pausa és **el del reproductor de YouTube** i res no el cobreix. `createQueueNextOverlay()` ja només té anterior, següent i finestra flotant (`.queue-controls` deixa el centre lliure per al botó de YouTube); fora `.queue-toggle-button`, `.queue-next-touch-layer` i `updateQueueToggleIcon`. **Finestra flotant:** la capa d'arrossegament és un mànec de 36 px a dalt (`.drag-handle-container`); la resta del vídeo rep tots els tocs. Al mòbil (≤ 768 px, ancorada a baix) no hi ha mànec i la barra de dalt (restaurar/tancar) és sempre visible (degradat, no enfosqueix el vídeo); restaurar/tancar tenen 44 px mínims i el tancar ja no depèn de Lucide. `makeDraggable()` només arrossega. **Controls de la cua en tàctil:** un toc al vídeo no arriba a la pàgina (iframe d'un altre origen), però en prendre-li el focus la finestra dispara `blur`: `initQueueNextOverlay()` mostra els controls 3 s i torna el focus a la pàgina (`window.focus(); iframe.blur()`) perquè el toc següent també es detecti; només amb `(pointer: coarse)` (a escriptori hi ha el ratolí i no es toca el focus, perquè l'espai de YouTube continuï pausant). **Ordres:** `playMainPlayer()` / `pauseMainPlayer()` (`sendMainPlayerCommand`) i `isMainPlayerPlaying()` (estat 1 **o 3**); la Media Session (pantalla de bloqueig) i `toggleMainPlayerPlayback()` (targeta «Ara sona» de la portada) les fan servir.
+
+**Trampes conegudes:** (1) Qualsevol capa sobre un `<iframe>` de YouTube (per detectar tocs, arrossegar o fer de botó) es menja els tocs: si cal detectar-los sense cobrir el vídeo, fes servir el focus (`blur`) i no tornis a posar capes. (2) La detecció per `blur` s'ha comprovat en Chromium (tàctil i ratolí); en iOS Safari no s'ha pogut provar: si no es dispara, els controls de la cua surten igualment en pausa i uns segons després d'un canvi d'estat. (3) A la finestreta flotant d'escriptori ja no es pot arrossegar des del mig del vídeo: només pel mànec de dalt. (4) No es poden provar els tocs sobre l'embed real de YouTube des d'aquí: la verificació usa un succedani local.
+
+**Fitxers Afectats:** `js/app.js`, `js/features/music-queue.js`, `css/styles.css`, `css/portada.css`, `sw.js`, `tests/player-controls.test.js`, `tests/browser/verificar-play-pausa.js`, `tests/browser/verificar-seleccio.js`.
+
+## [2026-10-01] - Mode de descoberta dins de cada ràdio (i «A casa» passa a «Els meus de sempre»)
+
+**Petició:** una expressió més personal que «A casa» i el selector del mode a cada ràdio, amb un canvi automàtic i visible de la llista.
+
+**Solució Implementada:** `discovery.js` (`MODES`), `index.html` i els tests passen a «Els meus de sempre» (id intern `home`). `music-queue.js`: `modeSelectorHtml()` (radiogroup de tres botons dins `.mq-head`, `order: 5`), `setDiscoveryMode(mode)` (desa el mode, torna a fer `regenerate()` sense tocar la cançó que sona ni els afegits a mà, compta les cançons noves i en posa l'avís a `.mq-mode__hint`), `getAppliedMode()` i `radioMeta.requested` com a font del que marca el selector. CSS a `css/portada.css` (`.mq-mode*`, animació `mq-renew` amb `--i` per cançó). Proves: `tests/music-queue-selection.test.js` (mode dins de cada ràdio), `tests/music-queue-share.test.js` (CSS) i `tests/browser/verificar-mode-radio.js`.
+
+**Trampes conegudes:** (1) `radioLabel` també porta el nom d'una ràdio de cerca (`Cerca «…»`): per distingir una selecció de debò cal mirar `searchRadio`. (2) El selector no ha de dir el mode global (el de la portada s'aplica a la ràdio següent): mostra `radioMeta.requested`, que els recàlculs silenciosos (cor, seguiment, ±) tornen a posar al mode global. (3) L'avís es posa directament al DOM després de `regenerate()` (`lastContainer`) perquè el nombre de cançons noves no es coneix fins que la cua s'ha tornat a triar; `render()` el torna a pintar si és vigent. (4) L'efecte del mode és suau (vegeu `docs/MUSICA_SELECCIO.md`): no s'ha tocat cap pes del motor. (5) Aquesta peça substitueix l'acord anterior de no mostrar el mode a la capçalera: el que no s'ha de tornar a posar és el text del mode enganxat al nom de la ràdio.
+
+**Fitxers Afectats:** `js/features/discovery.js`, `js/features/music-queue.js`, `css/portada.css`, `index.html`, `sw.js`, tests, `CLAUDE.md`, `docs/MUSICA_SELECCIO.md`.
+
+## [2026-10-01] - Artista nusar3000 eliminat
+
+**Símptoma/Petició:** Treure l'artista nusar3000 (canal `UCEK-KX24tmXR1bDCfhE_hgw`, 14 vídeos al feed) de Segueix Música.
+
+**Solució Implementada:** Com amb MARLENA (2026-09-29): a `data/artistes-musica.json` queda `rebutjat` (`active: false`, sense canals, nota «No tornar a resoldre @nusar3000»); fora de `data/youtube-verified-handles.json` (si no, el resolutor el tornaria a afegir); els 14 vídeos a `data/hidden-videos.json` (també filtra `update_music_feed.js`); la regla de títols en castellà de `scripts/ocultar_titols_castella.js` ja no cal. A més, perquè desaparegui de seguida i no calgui esperar el bot, el canal i els seus vídeos s'han tret directament de `data/feed.json` i `js/channels-ca.json` (el mateix resultat que donarà la propera generació; hi ha precedent al commit del canal «Subliminal»). Les auditories (`music-feed-audit.json`, `music-content-audit.json`, `music-content-review.json`) s'han ajustat a mà restant-hi els 14 vídeos (12 cançons, 1 àlbum, 1 revisió, 5 Shorts) perquè continuïn coherents amb el feed (`tests/music-content-overrides.test.js` ho comprova); els números exactes es refresquen amb la propera generació.
+
+**Per tornar-lo a afegir:** canvia'n l'`reviewStatus`, torna a posar el canal a `youtube.channels` i a `youtube-verified-handles.json`, i treu-ne els IDs de `hidden-videos.json`.
+
+**Fitxers Afectats:** `data/artistes-musica.json`, `data/youtube-verified-handles.json`, `data/hidden-videos.json`, `data/feed.json`, `js/channels-ca.json`, `data/music-*-audit.json`, `data/music-content-review.json`, `scripts/ocultar_titols_castella.js`.
+
+## [2026-10-01] - El botó «Barreja» de la ràdio deixava una fila amb només «Barreja»
+
+**Símptoma:** A la capçalera de la ràdio, el botó amb text «Barreja» (i «Obre a YouTube») s'embolcallava segons l'ample i, en alguns casos, quedava sol a una fila.
+
+**Causa Arrel:** Eren dos botons de text de 99–190 px a la fila del títol, fora del grup de símbols del nom; amb poc espai (mòbil estret, columna lateral d'escriptori) un dels dos queia a la fila següent.
+
+**Solució Implementada:** «Barreja» passa a ser només el símbol de barrejar (`.mq-shuffle[data-mq-regenerate]`, 44 px, amb `aria-label` i `title` «Barreja la ràdio: genera’n una de nova») dins `.mq-tools`, entre el «+» i el desar com a llista (`regenerateButtonHtml()`); només les ràdios el porten (una llista no es pot regenerar). Al capçal només queda «Obre a YouTube». Espais del grup de 8 a 6 px i xip amb 12 px de padding perquè xip + 4 símbols càpiguen a 390–393 px en una sola fila (a 360 px els símbols passen sencers a la fila de sota). Proves: `tests/music-queue-share.test.js` i `tests/browser/verificar-compartir.js`.
+
+**Fitxers Afectats:** `js/features/music-queue.js`, `css/portada.css`, `sw.js`, `CLAUDE.md`, tests.
+
+## [2026-10-01] - Cançons que ofereixen subtítols en castellà al feed
+
+**Símptoma:** Hi havia cançons que oferien subtítols en castellà/espanyol (Pau Vallvé, ZOO Posse, Xavi Sarrià, Dàmaris Gelabert, Kitsch…) i es volien fora del feed, també les que s'afegeixin més endavant.
+
+**Causa Arrel:** No hi havia cap filtre per subtítols. A més, **no es poden llegir les pistes reals de subtítols de YouTube**: `captions.list` de l'API de dades només funciona amb OAuth del propietari, `contentDetails.caption` només diu si n'hi ha (cap idioma concret), `/api/timedtext?type=list` torna buit i la pàgina del vídeo respon HTTP 429 («google.com/sorry») des d'un servidor.
+
+**Solució Implementada:** Detecció per **declaració** al títol o a la descripció (`scripts/lib/subtitols_castella.js`, `declaracio(video)` / `teSubtitolsCastella(video)`): una paraula de subtítols (subtítols, subtítulos, subtitles, untertitel, sous-titres, `sub`…) amb «castellà / castellano / español / espanyol / spanish» a la mateixa frase (fins a 90 caràcters, sense salt de línia), l'ordre invers («Spanish subtitles») o l'abreviatura enganxada a «sub» («SUB CAST», «Subs: ESP»). No compten els crèdits («Subtítols: Maria Puig»), les sales («CC Delicias»), «Castellers», «subscriu-te», «Subtítols disponibles en català i anglès» ni les negacions («sense subtítols en castellà», «without Spanish subtitles»). **Diari:** `update_music_feed.js` descarta aquests vídeos cada vegada que genera el feed (el workflow «Actualitzar feed musical» corre cada dia a les 08:37 UTC, i també si canvia el detector), així que les cançons noves hi queden filtrades sense cap llista manual. **Immediat:** `node scripts/ocultar_subtitols_castella.js [--dry-run]` (idempotent) afegeix els IDs del feed actual a `data/hidden-videos.json`, que el client aplica de seguida; s'hi van afegir 10 cançons (Lzh5bAoDJ4M, 0Q_6oFahpos, ckY7cq-XZNc, EnwWgoIM3Xc, f7dytPY8TNQ, 3AZq1c3Ub6g, -ISx80tGzgg, znBeuIqLOP8, kVbKTsaGNpo, misomiLbq6s). Proves: `tests/subtitols-castella.test.js`.
+
+**Trampes conegudes:** (1) **Només detecta el que el vídeo declara**: una cançó que tingui pista de subtítols en castellà (manual o traduïda) sense dir-ho a la descripció no es detecta. Si cal més cobertura, la via fiable seria una llista manual per canal (com `ocultar_titols_castella.js`) o OAuth. (2) Els IDs de `hidden-videos.json` no es tornen a mostrar encara que l'artista canviï la descripció; per recuperar-ne una, treu-la d'aquest fitxer **i** corregeix la regla si és un fals positiu. (3) S'aplica a tot el feed musical, no només a `contentType: song` (n'hi havia una de `other`: una BSO). (4) Les cançons ja desades a l'historial, les llistes o els m'agrades d'un usuari no s'esborren d'allà.
+
+**Fitxers Afectats:** `scripts/lib/subtitols_castella.js` (nou), `scripts/ocultar_subtitols_castella.js` (nou), `scripts/update_music_feed.js`, `data/hidden-videos.json`, `.github/workflows/actualitzar-feed-musica.yml`, `tests/subtitols-castella.test.js`, `CLAUDE.md`.
+
 ## [2026-09-30] - Al mòbil, després d'una ràdio o d'una llista sortien «Altres vídeos relacionats» (9.700 px de graella)
 
 **Símptoma:** Al mòbil, sota la cua d'una ràdio o d'una llista hi havia «Altres vídeos relacionats» i una graella de 33 vídeos de l'artista (la pàgina feia 13.400 px), que es perdia en comptes d'acabar a l'última cançó.
@@ -542,6 +596,8 @@ La finestreta flotant en fer scroll cap avall es manté tal com era: és el comp
 **Fitxers Afectats:** `js/features/music-queue.js`, `css/styles.css`, `data/artistes-musica.json`, `data/youtube-verified-handles.json`, `data/hidden-videos.json`, `sw.js`.
 
 ## [2026-09-30] - Controls de la cua sobre el reproductor: grans, centrats i amb play/pausa
+
+> **Actualització (2026-10-01):** el botó de play/pausa propi i la capa tàctil s'han tret (feien que el play/pausa no reaccionés); vegeu «El play/pausa del reproductor (normal i flotant) sovint no reaccionava». Queden anterior · següent · finestra flotant.
 
 **Canvi:** El mini-control anterior/següent (a baix a l'esquerra, 48 px) passa a ser un grup **centrat** dins el reproductor: anterior · **play/pausa** · següent (72/92/72 px; 56/72 a mòbil; 34/44 a la finestreta flotant). `createQueueNextOverlay()` (`app.js`) + CSS `.queue-controls`. Visibilitat: amb el ratolí sobre el reproductor són **fixos** (`sticky`, sense temporitzador; `pointerenter`/`pointermove`); en marxar es queden ~3 s (`pointerleave`) i s'amaguen; en pausa són sempre visibles; en tàctil, el toc al vídeo els mostra 3 s. Només els botons capturen clics (el grup té `pointer-events: none`), així que la resta del vídeo continua responent a YouTube. La icona play/pausa segueix `data-player-state` (MutationObserver) i la classe `.queue-next-button` es conserva perquè analytics/tv-learning l'escolten.
 

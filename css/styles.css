@@ -3082,9 +3082,10 @@ body.segueix-tv-playback.segueix-tv-active .chips-bar.home-categories.segueix-tv
     width: 100%;
 }
 
-/* Controls de la cua sobre el reproductor: anterior · play/pausa · següent, grans i centrats.
-   Surten en passar el ratolí (i s'hi queden mentre és sobre el reproductor; en marxar, ~3 s més),
-   sempre en pausa, i en tocar el vídeo a pantalles tàctils. Mai capturen clics fora dels botons. */
+/* Controls de la cua sobre el reproductor: anterior · següent (+ finestra flotant), grans i flanquejant el centre.
+   El play/pausa és el del reproductor de YouTube (el centre queda lliure per a ell) i res no cobreix el vídeo.
+   Surten en passar el ratolí (i s'hi queden mentre és sobre el reproductor; en marxar, ~3 s més), sempre en pausa
+   i, a pantalles tàctils, uns segons després d'un toc al vídeo. Mai capturen clics fora dels botons. */
 .queue-next-overlay {
     position: absolute;
     inset: 0;
@@ -3092,17 +3093,10 @@ body.segueix-tv-playback.segueix-tv-active .chips-bar.home-categories.segueix-tv
     pointer-events: none;
 }
 
-.queue-next-touch-layer {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    touch-action: manipulation;
-}
-
 .queue-controls {
-    /* Tots els botons són rodons. El play/pausa és sempre al centre exacte del reproductor: la graella
-       té tres columnes (1fr · botó · 1fr) d'amplada simètrica, així que si «anterior» o «següent» no hi
-       són (primera/última cançó) el del mig no es desplaça. */
+    /* Tots els botons són rodons. «Anterior» i «següent» flanquegen el centre exacte del reproductor, que es deixa
+       lliure (`--qc-main`) per al botó de play/pausa de YouTube: la graella té tres columnes (1fr · buit · 1fr)
+       simètriques, així que si un dels dos no hi és (primera/última cançó) l'altre no es desplaça. */
     --qc-side: 50px;
     --qc-main: 66px;
     --qc-gap: 16px;
@@ -3145,25 +3139,6 @@ body.segueix-tv-playback.segueix-tv-active .chips-bar.home-categories.segueix-tv
     justify-self: end;
 }
 
-.queue-controls .queue-toggle-button {
-    grid-column: 2;
-    width: var(--qc-main);
-    height: var(--qc-main);
-    background: rgba(0, 0, 0, 0.66);
-    box-shadow:
-        0 0 0 2px rgba(255, 255, 255, 0.85),
-        0 6px 24px rgba(0, 0, 0, 0.4);
-}
-
-.queue-controls .queue-toggle-button:hover:not(:focus-visible) {
-    background: rgba(0, 0, 0, 0.82);
-}
-
-.queue-controls .queue-toggle-button svg {
-    width: 30px;
-    height: 30px;
-}
-
 .queue-controls .queue-next-button {
     grid-column: 3;
     justify-self: start;
@@ -3179,7 +3154,7 @@ body.segueix-tv-playback.segueix-tv-active .chips-bar.home-categories.segueix-tv
     display: none;
 }
 
-/* Finestra flotant: al costat dels controls, sense moure el play/pausa del centre */
+/* Finestra flotant: al costat dels controls, sense ocupar el centre */
 .queue-controls .queue-mini-button {
     position: absolute;
     left: 100%;
@@ -3206,18 +3181,13 @@ body.segueix-tv-playback.segueix-tv-active .chips-bar.home-categories.segueix-tv
     display: none;
 }
 
-#videoPlayer.mini-player-active .queue-controls .queue-toggle-button svg {
-    width: 20px;
-    height: 20px;
-}
-
 .queue-controls button:hover,
 .queue-controls button:focus-visible {
     transform: scale(1.08);
     outline: none;
 }
 
-.queue-controls button:not(.queue-toggle-button):hover {
+.queue-controls button:hover {
     background: rgba(0, 0, 0, 0.78);
 }
 
@@ -3245,12 +3215,6 @@ body.segueix-tv-playback.segueix-tv-active .chips-bar.home-categories.segueix-tv
     }
 }
 
-@media (hover: none), (pointer: coarse) {
-    .queue-next-overlay:not(.is-visible) .queue-next-touch-layer {
-        pointer-events: auto;
-    }
-}
-
 @media (max-width: 768px) {
     .queue-controls {
         --qc-side: 44px;
@@ -3259,11 +3223,11 @@ body.segueix-tv-playback.segueix-tv-active .chips-bar.home-categories.segueix-tv
     }
 }
 
-/* A la finestreta flotant els controls són més petits */
+/* A la finestreta flotant els controls són més petits (el centre continua lliure per al play/pausa de YouTube) */
 #videoPlayer.mini-player-active .queue-controls {
-    --qc-side: 28px;
-    --qc-main: 38px;
-    --qc-gap: 8px;
+    --qc-side: 34px;
+    --qc-main: 60px;
+    --qc-gap: 6px;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -3373,9 +3337,12 @@ body.segueix-tv-playback.segueix-tv-active .chips-bar.home-categories.segueix-tv
     touch-action: none;
 }
 
+/* La finestreta flotant s'arrossega pel mànec de dalt (36 px): la resta del vídeo és del reproductor de YouTube, que
+   rep tots els tocs (play/pausa, barra de progrés...). Al mòbil la finestreta va ancorada a baix i no té mànec. */
 .drag-handle-container {
     position: absolute;
-    inset: 0;
+    inset: 0 0 auto 0;
+    height: 36px;
     z-index: 2001;
     pointer-events: none;
 }
@@ -3392,6 +3359,8 @@ body.segueix-tv-playback.segueix-tv-active .chips-bar.home-categories.segueix-tv
     position: absolute;
     top: 4px;
     right: 4px;
+    min-width: 44px;
+    min-height: 44px;
     background: transparent;
     border: none;
     color: #ffffff;
@@ -3413,6 +3382,8 @@ body.segueix-tv-playback.segueix-tv-active .chips-bar.home-categories.segueix-tv
     position: absolute;
     top: 4px;
     left: 4px;
+    min-width: 44px;
+    min-height: 44px;
     background: transparent;
     border: none;
     color: #ffffff;
@@ -3462,11 +3433,17 @@ button:disabled,
         margin: 0 !important;
     }
 
+    /* Ancorada a baix: sense mànec d'arrossegar i amb la barra de dalt (restaurar / tancar) sempre visible, perquè un
+       toc al vídeo és del reproductor de YouTube i no es pot fer servir per mostrar-la. */
+    .drag-handle-container {
+        display: none;
+    }
+
     .mini-player-controls-overlay {
-        opacity: 0;
+        opacity: 1;
         transition: opacity 0.3s ease-in-out;
         pointer-events: none;
-        background: rgba(0, 0, 0, 0.4);
+        background: linear-gradient(rgba(0, 0, 0, 0.6), transparent);
         z-index: 2002;
     }
 
@@ -6771,11 +6748,18 @@ body {
 }
 
 /* --- Estils per a Escriptori (Mini Player) --- */
+/* Barra de dalt (restaurar / tancar), sobre el mànec d'arrossegar: no enfosqueix el vídeo, que és del reproductor */
 .mini-player-controls-overlay {
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
-    background: rgba(0, 0, 0, 0.4);
+    background: linear-gradient(rgba(0, 0, 0, 0.6), transparent);
     pointer-events: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    #videoPlayer.mini-player-active:hover .mini-player-controls-overlay {
+        opacity: 1;
+    }
 }
 
 .mini-player-controls-overlay.visible {
