@@ -744,97 +744,125 @@
         };
     }
 
-    // «(+) com aquesta (−)»: dos cercles clicables que compten per a l'algorisme (excloents, reversibles).
-    function prefsHtml(video) {
-        const signals = app.features.musicSignals;
-        const id = esc(video.id);
-        return `<span class="pt-prefs" role="group" aria-label="Com aquesta cançó">
-            <button type="button" class="pt-circle" data-pt-plus="${id}" aria-pressed="${signals.isMoreLike(video.id)}" aria-label="Més com aquesta" title="Més com aquesta">${ICONS.plus}</button>
-            <span class="pt-prefs__label" aria-hidden="true">com aquesta</span>
-            <button type="button" class="pt-circle" data-pt-minus="${id}" aria-pressed="${signals.isLessLike(video.id)}" aria-label="Menys com aquesta" title="Menys com aquesta">${ICONS.minus}</button>
-        </span>`;
+    // URL segura per a un `url('…')` de CSS dins un atribut style.
+    function cssUrl(value) {
+        const url = String(value || '').trim();
+        if (!/^(https?:)?\/\//.test(url) && !url.startsWith('img/') && !url.startsWith('./')) return '';
+        return encodeURI(url).replace(/'/g, '%27').replace(/\(/g, '%28').replace(/\)/g, '%29');
     }
 
-    function featureHtml(now) {
-        if (now) {
-            const video = now.video;
-            const title = esc(now.title);
-            const artist = video ? esc(artistName(video)) : '';
-            const image = video?.thumbnail || `https://i.ytimg.com/vi/${encodeURIComponent(now.id)}/hqdefault.jpg`;
-            const next = now.next
-                ? `<p class="pt-feature__next"><span>A continuació</span> ${esc(now.next.title || '')}${now.next.channelTitle ? ` · ${esc(now.next.channelTitle)}` : ''}</p>`
+    // Targeta «Continua escoltant»: la cançó que sona ara o, si no sona res, l'última ràdio que es va escoltar.
+    // Porta la caràtula (grossa i, borrosa, de fons) perquè es vegi de seguida què es continua.
+    //   now:  { id, video, playing, next, isRadio, title }   (ara sona)
+    //   last: { video, title }                              (l'última ràdio, sense que soni)
+    function continueHtml(now, last) {
+        const playing = Boolean(now);
+        const source = now || last;
+        if (!source) return '';
+        const video = source.video;
+        const title = esc(source.title || video?.title || 'Cançó');
+        const artist = video ? esc(artistName(video)) : '';
+        const image =
+            video?.thumbnail || (now?.id ? `https://i.ytimg.com/vi/${encodeURIComponent(now.id)}/hqdefault.jpg` : '');
+        const art = cssUrl(image);
+        const next =
+            playing && now.next
+                ? `<p class="pt-feature__next"><span>A continuació</span> ${esc(now.next.title || '')}</p>`
                 : '';
-            return `
-                <article class="pt-feature pt-feature--now" aria-label="Ara sona">
-                    <button type="button" class="pt-feature__media" data-pt-continue aria-label="Continua escoltant ${title}">
-                        <img src="${esc(image)}" alt="" decoding="async" width="320" height="180">
-                        <span class="pt-eq${now.playing ? ' is-playing' : ''}" aria-hidden="true"><i></i><i></i><i></i></span>
-                    </button>
-                    <div class="pt-feature__body">
-                        <p class="pt-eyebrow pt-eyebrow--now">Ara sona</p>
-                        <h3 class="pt-feature__title">${title}</h3>
-                        ${artist ? `<button type="button" class="pt-artist" data-pt-artist="${esc(video.channelId)}" aria-label="Obre l’artista: ${artist}">${artist}</button>` : ''}
-                        ${next}
-                        <div class="pt-feature__actions">
-                            <button type="button" class="pt-btn pt-btn--primary pt-btn--sm" data-pt-continue>Continua</button>
-                            <button type="button" class="pt-act" data-pt-toggle aria-label="${now.playing ? 'Pausa' : 'Reprèn'}" title="${now.playing ? 'Pausa' : 'Reprèn'}">${now.playing ? ICONS.pause : ICONS.play}</button>
-                            ${video && app.features.musicSignals ? prefsHtml(video) : ''}
-                            ${now.isRadio ? `<button type="button" class="pt-tool" data-pt-regenerate title="Genera de nou la part pendent de la cua amb el mode triat">${ICONS.shuffle}<span>Regenera la cua</span></button>` : ''}
-                        </div>
-                    </div>
-                </article>`;
-        }
-        const featured = state.featured;
-        if (!featured) return '';
-        const video = featured.video;
-        const id = esc(video.id);
-        const title = esc(video.title || 'Cançó');
-        const artist = esc(artistName(video));
-        const meta = publishedLabel(video);
+        const label = playing ? 'Ara sona' : 'Continua escoltant';
+        const action = playing
+            ? `<button type="button" class="pt-btn pt-btn--primary pt-btn--sm" data-pt-continue>Continua</button>
+               <button type="button" class="pt-act" data-pt-toggle aria-label="${now.playing ? 'Pausa' : 'Reprèn'}" title="${now.playing ? 'Pausa' : 'Reprèn'}">${now.playing ? ICONS.pause : ICONS.play}</button>`
+            : `<button type="button" class="pt-btn pt-btn--primary pt-btn--sm" id="ptResumeBtn" data-pt-resume>${ICONS.play}<span>Continua la ràdio</span></button>`;
         return `
-            <article class="pt-feature" data-video-id="${id}">
-                <button type="button" class="pt-feature__media" data-pt-play="${id}" aria-label="Reprodueix ${title}, de ${artist}">
-                    <img src="${esc(video.thumbnail)}" alt="" decoding="async" fetchpriority="high" width="320" height="180">
-                    <span class="pt-card__play" aria-hidden="true">${ICONS.play}</span>
+            <article class="pt-feature ${playing ? 'pt-feature--now' : 'pt-feature--resume'}" aria-label="${label}"${art ? ` style="--pt-art: url('${art}')"` : ''}>
+                <span class="pt-feature__bg" aria-hidden="true"></span>
+                <button type="button" class="pt-feature__media" ${playing ? 'data-pt-continue' : 'data-pt-resume'} aria-label="${playing ? 'Torna a' : 'Continua'} ${title}">
+                    ${image ? `<img src="${esc(image)}" alt="" decoding="async" width="320" height="180">` : ''}
+                    ${playing ? `<span class="pt-eq${now.playing ? ' is-playing' : ''}" aria-hidden="true"><i></i><i></i><i></i></span>` : `<span class="pt-card__play" aria-hidden="true">${ICONS.play}</span>`}
                 </button>
                 <div class="pt-feature__body">
-                    <p class="pt-eyebrow">${esc(featured.eyebrow)}</p>
-                    <h3 class="pt-feature__title" data-pt-play="${id}">${title}</h3>
-                    <button type="button" class="pt-artist" data-pt-artist="${esc(video.channelId)}" aria-label="Obre l’artista: ${artist}">${artist}</button>
-                    ${meta ? `<p class="pt-card__meta">${esc(meta)}</p>` : ''}
-                    <div class="pt-feature__actions">
-                        <button type="button" class="pt-act" data-pt-queue="${id}" aria-label="Afegeix a la cua: ${title}" title="Afegeix a la cua">${ICONS.queue}</button>
-                        <button type="button" class="pt-act" data-pt-save="${id}" aria-label="Desa en una llista: ${title}" title="Desa en una llista">${ICONS.save}</button>
-                    </div>
+                    <p class="pt-eyebrow pt-eyebrow--now">${label}</p>
+                    <h3 class="pt-feature__title">${title}</h3>
+                    ${artist ? `<button type="button" class="pt-artist" data-pt-artist="${esc(video.channelId)}" aria-label="Obre l’artista: ${artist}">${artist}</button>` : ''}
+                    ${next}
+                    <div class="pt-feature__actions">${action}</div>
                 </div>
             </article>`;
+    }
+
+    // Caràtules del collage de «La teva ràdio» (fins a tres, de cançons diferents i d'artistes diferents).
+    function radioCovers(videos, max = 3) {
+        const seen = new Set();
+        const out = [];
+        for (const video of Array.isArray(videos) ? videos : []) {
+            const image = video?.thumbnail;
+            const artist = video ? String(video.channelId || video.channelTitle || '') : '';
+            if (!image || seen.has(artist)) continue;
+            seen.add(artist);
+            out.push(video);
+            if (out.length >= max) break;
+        }
+        return out;
+    }
+
+    function coversHtml(videos) {
+        const covers = radioCovers(videos);
+        if (!covers.length) return '';
+        const bg = cssUrl(covers[0].thumbnail);
+        return `${bg ? `<span class="pt-radio__bg" style="--pt-art: url('${bg}')"></span>` : ''}<span class="pt-radio__covers">${covers
+            .map(
+                video =>
+                    `<img src="${esc(video.thumbnail)}" alt="" loading="lazy" decoding="async" width="96" height="54">`
+            )
+            .join('')}</span>`;
     }
 
     function updateEntry() {
         const slot = $('ptFeature');
         const now = nowPlaying();
         const entry = $('portadaEntry');
+        const ready = Boolean(state.model && state.model.status === 'ready');
+        // L'última ràdio només s'ofereix si ara no sona res; mai sona sola.
+        const lastRadio = !now && ready ? app.features.musicQueue?.getLastRadio?.() : null;
+        const last = lastRadio
+            ? { video: videoById(lastRadio.id), title: lastRadio.title || videoById(lastRadio.id)?.title || '' }
+            : null;
+        const showsContinue = Boolean(now || last?.video);
         entry?.classList.toggle('is-now-playing', Boolean(now));
+        entry?.classList.toggle('has-continue', showsContinue);
         if (slot) {
-            const html = featureHtml(now);
+            const html = continueHtml(now, last?.video ? last : null);
             if (slot._html !== html) {
                 slot.innerHTML = html;
                 slot._html = html;
             }
         }
+        // «La teva ràdio»: collage de caràtules i un text que explica com es relaciona amb «Continua»
+        const art = $('ptRadioArt');
+        if (art) {
+            const pool = [state.model?.featured?.video, ...(state.model?.fresh?.all || [])].filter(Boolean);
+            const html = coversHtml(pool);
+            if (art._html !== html) {
+                art.innerHTML = html;
+                art._html = html;
+            }
+        }
+        const lead = $('ptRadioLead');
+        if (lead) {
+            lead.textContent = showsContinue
+                ? 'O comença una ràdio nova, amb el mode que triïs.'
+                : 'Barreja el que t’agrada amb música nova, sense parar.';
+        }
         const play = $('ptPlayBtn');
         if (play) {
-            const ready = Boolean(state.model && state.model.status === 'ready');
             play.disabled = !ready;
+            const text = play.querySelector('span');
+            if (text) text.textContent = showsContinue ? 'Ràdio nova' : 'Engega la ràdio';
+            // Hi ha una acció principal a la pantalla: si ja es pot continuar, «Ràdio nova» és la secundària
+            play.classList.toggle('pt-btn--primary', !showsContinue);
+            play.classList.toggle('pt-btn--ghost', showsContinue);
             entry?.setAttribute('aria-busy', ready ? 'false' : 'true');
-        }
-        // «Continua la ràdio»: només si n'hi ha una de recent i ara no sona res; mai sona sola.
-        const resume = $('ptResumeBtn');
-        if (resume) {
-            const last = !now && state.model?.status === 'ready' ? app.features.musicQueue?.getLastRadio?.() : null;
-            resume.hidden = !last;
-            const label = resume.querySelector('span');
-            if (last && label) label.textContent = `Continua la ràdio: ${last.title || 'l’última cançó'}`;
         }
         syncModeInputs();
     }
@@ -954,7 +982,7 @@
         if ((el = pick('[data-pt-queue]'))) return enqueue(el.dataset.ptQueue);
         if ((el = pick('[data-pt-save]'))) return save(el.dataset.ptSave);
         // Al mòbil, tocar qualsevol part d'una targeta de cançó (també el nom de l'artista) la reprodueix.
-        if (typeof isMobileView === 'function' && isMobileView() && (el = pick('.pt-card[data-video-id], .pt-feature[data-video-id]'))) {
+        if (typeof isMobileView === 'function' && isMobileView() && (el = pick('.pt-card[data-video-id]'))) {
             return playVideo(el.dataset.videoId);
         }
         if ((el = pick('[data-pt-artist]'))) {
@@ -990,11 +1018,6 @@
             if (typeof loadVideosFromAPI === 'function') loadVideosFromAPI();
             return undefined;
         }
-        if ((el = pick('[data-pt-plus]') || pick('[data-pt-minus]'))) {
-            const video = videoById(el.dataset.ptPlus || el.dataset.ptMinus);
-            app.features.musicQueue?.applyPreference?.(video, el.dataset.ptPlus ? 'more' : 'less');
-            return undefined;
-        }
         if (pick('[data-pt-resume]')) {
             if (!app.features.musicQueue?.resumeLast?.())
                 toast('No s’ha pogut continuar la ràdio. Prova «La teva ràdio».');
@@ -1007,11 +1030,6 @@
         }
         if (pick('[data-pt-toggle]')) {
             if (typeof toggleMainPlayerPlayback === 'function') toggleMainPlayerPlayback();
-            return undefined;
-        }
-        if (pick('[data-pt-regenerate]')) {
-            app.features.musicQueue?.regenerate?.();
-            toast('Cua generada de nou amb el mode triat');
             return undefined;
         }
         return undefined;
@@ -1160,6 +1178,8 @@
         esc,
         toast,
         updateEntry,
+        continueHtml,
+        radioCovers,
         refreshIfStale,
         isActive: () => state.rendered,
         getModel: () => state.model,

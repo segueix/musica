@@ -128,7 +128,6 @@ describe('index.html de Segueix Música', () => {
 
     it('té el cercador, l’entrada directa i el selector de tres opcions', () => {
         expect(html).toContain('placeholder="Què vols escoltar?"');
-        expect(html).toContain('Avui, què et ve de gust?');
         expect(html).toContain('La teva ràdio');
         for (const label of ['Els meus de sempre', 'Una mica de tot', 'Sorprèn-me'])
             expect(html).toContain(`<span>${label}</span>`);
