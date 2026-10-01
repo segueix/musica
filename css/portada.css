@@ -1158,6 +1158,80 @@ body:has(#homePage.is-portada) .category-selector {
     }
 }
 
+/* Mòbil: l'entrada ocupava més de mitja pantalla (títol de dues línies amb l'altra meitat buida, botó a mitja amplada,
+   selector amb etiquetes de mides diferents i una targeta destacada alta) i la música no es veia fins a l'scroll.
+   Ara és un bloc compacte: títol d'una línia, botó a tota l'amplada amb el selector enganxat a sota i targeta baixa. */
+@media (max-width: 768px) {
+    .pt-entry {
+        gap: 12px;
+        padding-top: 0;
+    }
+
+    .pt-entry__title {
+        max-width: none;
+        margin-bottom: 12px;
+        font-size: clamp(1.5rem, 6.8vw, 1.9rem);
+        line-height: 1.12;
+        text-wrap: balance;
+    }
+
+    .pt-entry__cta {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .pt-entry__cta .pt-btn {
+        width: 100%;
+    }
+
+    .pt-mode {
+        margin-top: 12px;
+    }
+
+    .pt-mode__legend {
+        margin-bottom: 6px;
+        font-size: 0.75rem;
+    }
+
+    .pt-mode__options {
+        max-width: none;
+    }
+
+    .pt-mode__opt span {
+        padding: 4px 6px;
+        font-size: 0.8125rem;
+    }
+
+    .pt-mode__hint {
+        margin-top: 6px;
+        font-size: 0.75rem;
+    }
+
+    .pt-feature {
+        grid-template-columns: minmax(104px, 34%) minmax(0, 1fr);
+        gap: 12px;
+        padding: 8px;
+    }
+
+    .pt-feature__title {
+        font-size: 1rem;
+    }
+
+    .pt-feature__actions {
+        margin-top: 8px;
+    }
+
+    /* Les eines d'una secció («Reprodueix-ho», fletxes) que no caben al costat del títol baixen a la fila de sota
+       alineades a l'esquerra, com el títol, i no tirades a la dreta */
+    .pt-head {
+        align-items: flex-start;
+    }
+
+    .pt-head .pt-head__tools {
+        margin-left: 0;
+    }
+}
+
 /* ---------- Seccions ---------- */
 .pt-sections {
     display: flex;
