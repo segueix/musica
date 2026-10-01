@@ -295,6 +295,16 @@ const likes = ctx2.SegueixApp.features.likes;
 
 - Les cançons que **declaren** subtítols en castellà/espanyol al títol o a la descripció no són al feed: `update_music_feed.js` les descarta a cada generació (el workflow «Actualitzar feed musical» corre cada dia) amb `scripts/lib/subtitols_castella.js`, i `node scripts/ocultar_subtitols_castella.js` n'afegeix les del feed actual a `data/hidden-videos.json`. No es poden llegir les pistes reals de YouTube (cal OAuth). Detall, regles i trampes: `docs/PROBLEMES_I_SOLUCIONS.md` (2026-10-01).
 
+### Revisar cançons en castellà (2026-10-01)
+
+**Prompt per a l'agent — quan et demanin «revisa el castellà», «elimina cançons en castellà» o similar (d'un artista, d'una categoria o de tot el feed):**
+
+1. **Llegeix sempre `docs/ARTISTES_CASTELLA.md`** abans de res: és la llista d'artistes a qui ja hem amagat cançons en castellà o basc i on és més probable que en surtin de noves. Repassa'ls **tots**, encara que només et demanin una categoria, amb `node scripts/revisar_castella_vigilats.js [--since=AAAA-MM-DD] [--artista="Nom"]`.
+2. Després repassa l'abast que t'hagin demanat (artista/categoria). Criteri: s'amaga només el que és **100 % en castellà o basc** (el títol i, si dubtes, la lletra/descripció; `defaultAudioLanguage` no és fiable). Es conserva el català, el mixt i els títols compartits.
+3. Amaga amb una regla per canal a `REGLES` de `scripts/ocultar_titols_castella.js` (la clau és el `channelTitle` exacte) i `node scripts/ocultar_titols_castella.js`; per a casos puntuals (Short, àlbum…) afegeix l'ID a `data/hidden-videos.json`. No toquis `feed.json`.
+4. **Actualitza `docs/ARTISTES_CASTELLA.md`**: artistes nous, recomptes, notes i la data de «Última revisió», i afegeix l'entrada a `docs/PROBLEMES_I_SOLUCIONS.md`. Si un artista apareix a la llista per primera vegada, afegeix-lo amb la primera columna `**Nom exacte al feed**`.
+5. Digues a l'usuari quines cançons has amagat i quines dubtoses has deixat.
+
 ### Play/pausa del reproductor (2026-10-01)
 
 - El play/pausa és **el del reproductor de YouTube**: no hi ha botó propi (`.queue-toggle-button` eliminat) ni cap capa que cobreixi el vídeo. Sobre l'iframe només hi ha anterior · següent · finestra flotant (`.queue-controls`, amb el centre lliure) i, a la finestreta flotant, un **mànec d'arrossegar de 36 px a dalt** (`.drag-handle-container`; al mòbil no hi és). **No tornis a posar capes sobre l'iframe** per detectar tocs ni per fer de botó: es mengen els tocs. Per detectar un toc en tàctil es fa servir el `blur` de la finestra (`initQueueNextOverlay`).

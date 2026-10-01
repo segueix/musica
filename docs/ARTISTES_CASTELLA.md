@@ -1,0 +1,118 @@
+# Artistes vigilats per cançons en castellà (i basc)
+
+Llista dels artistes a qui **ja hem amagat cançons en castellà (o basc)**. Són els que més probablement en tornaran a
+tenir quan el feed musical incorpori vídeos nous: cal repassar-los primer cada vegada que es demani «revisa el
+castellà». Les cançons amagades són a `data/hidden-videos.json` (el client les filtra i `update_music_feed.js` les
+descarta en regenerar el feed).
+
+> Última revisió: 2026-10-01. Si afegeixes o treus un artista, actualitza la taula **i** la data.
+
+## Com es fa servir
+
+1. Mira les cançons visibles dels artistes d'aquesta llista (les més noves primer):
+   ```bash
+   node scripts/revisar_castella_vigilats.js                       # tots els artistes de la taula
+   node scripts/revisar_castella_vigilats.js --since=2026-10-01     # només els vídeos publicats des d'aquesta data
+   node scripts/revisar_castella_vigilats.js --artista="Sisa"       # un sol artista
+   ```
+2. Mira cada títol (i, si dubtes, la descripció: la lletra és el criteri, **no** `defaultAudioLanguage`, que és poc
+   fiable). Amaga només el que és **100 % en castellà o basc**; conserva el català, el mixt i els títols que podrien
+   ser de qualsevol llengua.
+3. Amaga'ls: afegeix la regla de l'artista a `REGLES` de `scripts/ocultar_titols_castella.js` i executa
+   `node scripts/ocultar_titols_castella.js` (o afegeix l'ID a `data/hidden-videos.json` si és un cas puntual: un
+   Short, un àlbum, etc., que la regla no mira perquè només tracta `song`/`live_song`).
+4. Actualitza aquesta taula (ocultes, motiu, notes), la data de dalt i `docs/PROBLEMES_I_SOLUCIONS.md`.
+5. Comprova amb `node scripts/ocultar_titols_castella.js --dry-run` que no queda res pendent i amb
+   `npx vitest run tests/ocultar-titols-castella.test.js`.
+
+El script llegeix els artistes d'aquesta taula: **la primera columna ha de ser `**Nom exacte al feed**`** (el
+`channelTitle`). Un artista que no és a la taula no es repassa. **Trampa:** les claus de `REGLES` també han de ser el
+`channelTitle` exacte (un canal que canvia de nom, p. ex. «Txarango Oficial» → «Txarango», deixa la regla morta sense cap
+avís).
+
+## Cançó d'autor (títols castellans, 2026-10-01)
+
+| Artista (nom al feed) | Ocultes | Notes |
+| --- | --- | --- |
+| **Joan Manuel Serrat** | 40 | Repertori majoritàriament castellà. Es mantenen «Per al Meu Amic» i «Paraules D'Amor» (català). «Tarres», el Short «Mediterráneo» i l'àlbum «Mediterráneo» amagats a mà. Excepcions a la regla: `Per al Meu Amic`, `Paraules d'Amor`. |
+| **Pi de la Serra** | 36 | Barreja català i castellà: es revisa títol a títol. |
+| **Sisa** | 31 | Barreja; la regla de l'script només cobreix «Hay mujeres» i «Te esperaré el domingo». |
+| **Marina Rossell** | 15 | Barreja català i castellà. |
+| **Anna Andreu** | 3 | |
+
+## Urbana i pop (títol 100 % en castellà, 2026-10-01)
+
+| Artista (nom al feed) | Ocultes | Notes |
+| --- | --- | --- |
+| **31 FAM** | 5 | Només els títols plenament castellans (CUANDO ME MIRAS, ASÍ ES LA VIDA, OBSESIONADO, NO LE DURA, SEPTIEMBRE) i els antics de la regla. Argot dubtós (AL CANTU, Un Bate) es manté. |
+| **Julieta** | 8 | Canvia de llengua cançó a cançó; Tornado, Taxi i Bruna es mantenen (títol de qualsevol llengua). |
+| **Sexenni** | 7 | Mescla català i castellà; s'amaguen només els títols castellans (Antipánico, Tengo, Mentalidad de Mero…). |
+| **Mushkaa** | 6 | Habibi, Xarnega, Sembla Mentida… són catalans; Turra Malvada (dubtós) es manté. |
+| **BAYA BAYE** | 5 | També publicat com «BAYA BAIE». Mixtape «Calers y Verí» en castellà. |
+| **Scorpio** | 1 | «Ya No». |
+| **DAVEU))** | 1 | «Sueños de campeón». |
+| **P.A.W.N. Gang** | 1 | «Modo avión» (Yung Mare). |
+
+## Judit Neddermann (castellà i basc, 2026-10-01)
+
+| Artista (nom al feed) | Ocultes | Notes |
+| --- | --- | --- |
+| **Judit Neddermann** | 19 | Castellà: l'àlbum *Aire* i part de *LAR*. Basc: l'àlbum *Artean* (títols basc/català, duets amb artistes bascos; es poden recuperar). **Pendent de verificar:** «Esperar» (*LAR*). «misterio do som» és en gallec i es manté. |
+
+## Subtítols en castellà (2026-10-01)
+
+Cançons que declaren subtítols en castellà a la descripció (filtre automàtic diari `scripts/lib/subtitols_castella.js`).
+No és que la cançó sigui en castellà: es treuen perquè ofereixen subtítols en aquesta llengua.
+
+| Artista (nom al feed) | Ocultes | Notes |
+| --- | --- | --- |
+| **Kitsch** | 3 | |
+| **Xavi Sarrià** | 2 | |
+| **ZOO POSSE** | 2 | |
+| **Dàmaris Gelabert** | 2 | |
+| **PAU VALLVÉ** | 1 | |
+
+## Primera passada per canal (2026-09-29)
+
+Revisió a mà de 1.458 títols de cançons (`scripts/ocultar_titols_castella.js`). Els IDs són a `hidden-videos.json`, però
+el feed s'ha regenerat des d'aleshores i **no es pot recuperar quants n'hi ha per artista** (uns 100 IDs en total). Es
+vigilen amb la regla del script.
+
+| Artista (nom al feed) | Ocultes | Notes |
+| --- | --- | --- |
+| **miquel** | n/d | Només els títols castellans (Tu Forma de Amar, Mediterráneo…); la resta és catalana. |
+| **Umpah Pah** | n/d | |
+| **Ceaxe** | n/d | «AQUELLA NIT» és en català i es manté. |
+| **SUU** | n/d | |
+| **Miki Nuñez** | n/d | |
+| **alfredgarcia** | n/d | |
+| **CACTUS** | n/d | |
+| **Txarango** | 1 | «BENDITA VIDA» (ocultada el 2026-10-01: la regla duia el nom antic `Txarango Oficial` i no coincidia). |
+| **elo** | n/d | |
+| **Joan Colomo** | n/d | |
+| **Cristina Monllau** | n/d | |
+| **Joan Dausà** | n/d | |
+| **Sandra Monfort** | n/d | |
+| **Triquell** | n/d | |
+| **Sangtraït** | n/d | |
+| **Xavier de Bétera** | n/d | |
+| **Ocults** | n/d | Canal amb cançons de procedència diversa. |
+| **KOP** | n/d | La regla duia el nom antic `KOP Oficial`; ara coincideix amb el `channelTitle` real. |
+| **La Madam** | n/d | |
+
+## Artistes rebutjats del feed
+
+Repertori en castellà: s'han tret sencers (canal fora de `data/artistes-musica.json`, vídeos a `hidden-videos.json`).
+**No tornar-los a resoldre.** El script avisa si en surt cap cançó.
+
+| Artista (nom al feed) | Ocultes | Notes |
+| --- | --- | --- |
+| **MARLENA** | n/d | `rebutjat` a `artistes-musica.json`; tots els vídeos ocults. |
+| **nusar3000** | 14 | `rebutjat`, sense canal («No tornar a resoldre @nusar3000»). |
+
+## Què no s'amaga
+
+- Títols en català, anglès o mixtos, encara que l'artista sigui castellanoparlant.
+- Paraules compartides (Tornado, Taxi, Minifalda, Frikis, Primavera, Celebrar si és d'un artista català…) quan no hi ha
+  cap altra pista.
+- Gallec, occità i la resta de llengües que no s'han demanat explícitament.
