@@ -77,6 +77,30 @@
 
 **Fitxers Afectats:** `js/features/music-queue.js`, `css/portada.css`, `sw.js`, `CLAUDE.md`, tests.
 
+## [2026-10-01] - Cançons amb títol 100 % en castellà a la categoria Urbana
+
+**Símptoma:** A Urbana (la categoria amb més cançons de rap/trap/pop urbà) hi havia cançons amb el títol íntegrament en castellà (31 FAM, Julieta, Sexenni, Mushkaa, BAYA BAYE, Scorpio, DAVEU, Yung Mare).
+
+**Solució Implementada:** Revisió a mà dels 642 títols de cançons d'Urbana (`categories` inclou «Urbana», `song`/`live_song`, no ocults). Criteri: s'oculta només si **tot** el títol és castellà. Es conserven els títols en català, en anglès, mixtos (p. ex. «Timón i Pumba», «Enamorada de tu»), paraules compartides (Tornado, Taxi, Minifalda, Frikis, «Un Bate») i argot o dialecte dubtós (AL CANTU, De Lao, Turra Malvada). Hi ha 34 cançons noves a `data/hidden-videos.json`, afegides amb regles per canal a `scripts/ocultar_titols_castella.js` (`31 FAM`, `Julieta`, `Mushkaa`, `Sexenni`, `DAVEU))`, `Scorpio`, `BAYA BAYE`, `P.A.W.N. Gang`). `defaultAudioLanguage` no s'ha fet servir: a Urbana és poc fiable.
+
+**Trampes conegudes:** (1) Alguns títols porten l'accent descomposat (I + accent combinant): una regex amb `[IÍ]` no hi coincideix, per això «ASÍ ES LA VIDA» usa `AS\S{1,2}`. (2) Només s'ha mirat el títol, no la lletra: una cançó amb títol català i lletra castellana continua al feed. (3) No s'han revisat vídeos que no siguin `song`/`live_song`.
+
+**Fitxers Afectats:** `data/hidden-videos.json`, `scripts/ocultar_titols_castella.js`, `tests/ocultar-titols-castella.test.js`.
+
+---
+
+## [2026-10-01] - Cançons de Serrat en castellà que quedaven al feed
+
+**Símptoma:** Al feed de Joan Manuel Serrat hi havia contingut en castellà: «Tarres (Actuación TVE)» (cançó), «Mediterráneo» (Short del 1975) i l'àlbum «Mediterráneo (ÁLBUM COMPLETO)».
+
+**Causa Arrel:** «Tarres» va entrar al feed després de l'última passada d'`ocultar_titols_castella.js`; el Short i l'àlbum no són `song`/`live_song`, així que la regla per títols no els mira. A més, la regla `totes` de Serrat (excepte «Per al Meu Amic») hauria amagat «Paraules D'Amor», que és en català.
+
+**Solució Implementada:** s'han revisat els 6 vídeos del feed de Serrat (el criteri és la lletra, no `defaultAudioLanguage`: «Paraules D'Amor» hi consta com a `es` i és en català). S'han afegit a `data/hidden-videos.json` `gd0MONP5lGs` (Tarres), `jo2_CypYeC0` (Short) i `-0pnXAl1Pko` (àlbum). Es conserven «Per al Meu Amic» i «Paraules D'Amor» (català) i el directe de VEVO (no és una cançó). L'excepció de la regla de Serrat inclou ara «Paraules d'Amor».
+
+**Fitxers Afectats:** `data/hidden-videos.json`, `scripts/ocultar_titols_castella.js`, `tests/ocultar-titols-castella.test.js`.
+
+---
+
 ## [2026-10-01] - Cançons que ofereixen subtítols en castellà al feed
 
 **Símptoma:** Hi havia cançons que oferien subtítols en castellà/espanyol (Pau Vallvé, ZOO Posse, Xavi Sarrià, Dàmaris Gelabert, Kitsch…) i es volien fora del feed, també les que s'afegeixin més endavant.
