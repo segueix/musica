@@ -77,6 +77,30 @@
 
 **Fitxers Afectats:** `js/features/music-queue.js`, `css/portada.css`, `sw.js`, `CLAUDE.md`, tests.
 
+## [2026-10-01] - Mòbil: tocar qualsevol part d'una targeta de cançó la reprodueix
+
+**Símptoma:** Al mòbil, tocar el nom de l'artista d'una targeta obria la fitxa de l'artista en lloc de reproduir la cançó; a la portada, a més, només la imatge i el títol reproduïen (la resta de la targeta no feia res). Les files de les llistes desades no reproduïen en tocar-les.
+
+**Solució Implementada:** Només a ≤ 768 px (`isMobileView()`): (1) `bindChannelLinks()` (app.js), abans d'obrir res, mira si l'enllaç és dins un `.video-card`, `.archive-video-card` o `.playlist-video-row`; si és una targeta, reprodueix amb `playThenNavigate()` (font: `data-video-source` o la del contenidor, `_videoCardDefaultSource`); `setupDelegatedVideoCardClicks()` continua ignorant els `.channel-link` perquè no es reprodueixi dues vegades. (2) Portada (`onClick` de `portada.js`): després de «cua» i «desa», qualsevol toc dins `.pt-card[data-video-id]` / `.pt-feature[data-video-id]` reprodueix, abans de `[data-pt-artist]`. (3) Pàgina de llistes: tocar una fila (fora del botó d'eliminar) crida `startPlaylistPlayback(llista, índex)`, que ara admet un índex d'inici. A escriptori no canvia res: el nom de l'artista segueix obrint la fitxa.
+
+**Trampes conegudes:** (1) Les accions (cua, desa, m'agrada, afegeix a llista, eliminar) han de continuar abans del toc genèric; per això a la portada la prova va després de `data-pt-queue`/`data-pt-save`. (2) Els retrats d'artista de la portada (`.pt-portrait`) no són targetes de cançó: el nom segueix obrint l'artista. (3) La ràdio i l'historial ja eren botons sencers. (4) Verificat amb Chromium a 390 i 1280 px (portada, graella de categoria i llista desada).
+
+**Fitxers Afectats:** `js/app.js`, `js/features/portada.js`, `sw.js`, `tests/mobile-card-tap.test.js`.
+
+---
+
+## [2026-10-01] - Artista a cada cançó d'una llista, amb enllaç a la fitxa d'artista
+
+**Símptoma:** Com que els títols que es mostren ja no porten el nom de l'artista (`song-title.js`), les cançons d'una llista de reproducció es veien només pel títol: no se sabia de qui eren i no es podia anar a la seva fitxa.
+
+**Solució Implementada:** (1) `getPlaylistVideoDataLegacyImpl()` (app.js) desa a cada cançó `artistName`, resolt per `library.resolveArtistName()` (js/features/library.js, pur): el nom del canal registrat (el de la fitxa d'artista) i, si no n'hi ha, `channelTitle`. Hi passen totes les vies de desar (afegir a una llista, desar la ràdio, cançons noves a una llista existent). (2) Les llistes ja desades s'arreglen soles: `hydrateStoredPlaylist()` compara l'instantània i, si ha canviat, la torna a desar; `mergePlaylistVideoSnapshot()` també hi posa l'artista quan el vídeo ja no és a cap cau. (3) `renderPlaylistsPageLegacyImpl()` mostra sota el títol de cada cançó `renderPlaylistVideoArtist()`: un `.channel-link[data-channel-id]` que obre la fitxa (`bindChannelLinks(playlistsList)`), o text pla si no hi ha `channelId`.
+
+**Trampes conegudes:** (1) La fila de la llista és `draggable`: l'enllaç és un `div role="link"`, no un `<a>`, perquè arrossegar-lo no obri res. (2) L'artista és el **canal** que publica el vídeo (com a `getVideoArtistKey`); en un col·laboratiu surt el canal, no tots els artistes. (3) La cua de la ràdio (`.mq-artist`) ja mostrava `channelTitle` i no s'ha tocat. (4) El canvi toca `css/styles.css` i `app.js`: calia `npm run sw:version`.
+
+**Fitxers Afectats:** `js/app.js`, `js/features/library.js`, `css/styles.css`, `sw.js`, `tests/library-artist.test.js`.
+
+---
+
 ## [2026-10-01] - Cançons amb títol 100 % en castellà a la categoria Urbana
 
 **Símptoma:** A Urbana (la categoria amb més cançons de rap/trap/pop urbà) hi havia cançons amb el títol íntegrament en castellà (31 FAM, Julieta, Sexenni, Mushkaa, BAYA BAYE, Scorpio, DAVEU, Yung Mare).

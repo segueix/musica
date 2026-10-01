@@ -953,6 +953,10 @@
         let el;
         if ((el = pick('[data-pt-queue]'))) return enqueue(el.dataset.ptQueue);
         if ((el = pick('[data-pt-save]'))) return save(el.dataset.ptSave);
+        // Al mòbil, tocar qualsevol part d'una targeta de cançó (també el nom de l'artista) la reprodueix.
+        if (typeof isMobileView === 'function' && isMobileView() && (el = pick('.pt-card[data-video-id], .pt-feature[data-video-id]'))) {
+            return playVideo(el.dataset.videoId);
+        }
         if ((el = pick('[data-pt-artist]'))) {
             if (typeof openChannelProfile === 'function') openChannelProfile(el.dataset.ptArtist);
             return undefined;

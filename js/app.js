@@ -2227,6 +2227,19 @@ function bindChannelLinks(container = document) {
                 return;
             }
 
+            // Al mòbil, tocar qualsevol part d'una targeta de cançó (també el nom de l'artista) la reprodueix.
+            const songItem = isMobileView() ? link.closest('.video-card, .archive-video-card, .playlist-video-row') : null;
+            if (songItem) {
+                if (songItem.classList.contains('playlist-video-row')) return; // ho gestiona la pàgina de llistes
+                const songId = songItem.dataset.videoId;
+                if (songId) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    playThenNavigate(songId, songItem.dataset.videoSource || container._videoCardDefaultSource || 'api');
+                    return;
+                }
+            }
+
             const programId = String(link.dataset.programId || '').trim();
             if (programId) {
                 event.preventDefault();
@@ -8573,7 +8586,12 @@ function savePlaylists(playlists) {
 function mergePlaylistVideoSnapshot(baseVideo, resolvedVideo) {
     if (!baseVideo && !resolvedVideo) return null;
     if (!baseVideo) return getPlaylistVideoData(resolvedVideo);
-    if (!resolvedVideo) return baseVideo;
+    if (!resolvedVideo) {
+        if (baseVideo.artistName) return baseVideo;
+        // Cançó desada abans que es guardés l'artista: se li afegeix el nom (canal registrat o títol del canal).
+        const artistName = SegueixApp.features.library?.resolveArtistName?.(baseVideo, getArtistNamesById()) || '';
+        return artistName ? { ...baseVideo, artistName } : baseVideo;
+    }
 
     const normalizedResolved = getPlaylistVideoData(resolvedVideo);
     return {
@@ -8847,6 +8865,15 @@ function renamePlaylist(playlistId) {
     startPlaylistNameEdit(playlistId);
 }
 
+// Nom de l'artista sota la cançó d'una llista; si en sabem el canal, és un enllaç a la seva fitxa d'artista.
+function renderPlaylistVideoArtist(video) {
+    const name = String(video?.artistName || video?.channelTitle || '').trim();
+    if (!name) return '';
+    const channelId = String(video?.channelId || '').trim();
+    if (!channelId) return `<div class="playlist-video-artist">${escapeHtml(name)}</div>`;
+    return `<div class="playlist-video-artist channel-link" data-channel-id="${escapeHtml(channelId)}" role="link" tabindex="0">${escapeHtml(name)}</div>`;
+}
+
 async function renderPlaylistsPageLegacyImpl() {
     if (!playlistsList) return;
     const storedPlaylists = getPlaylists();
@@ -8880,7 +8907,10 @@ async function renderPlaylistsPageLegacyImpl() {
                                 <i data-lucide="grip-vertical"></i>
                             </span>
                             <img class="playlist-video-thumb" src="${video.thumbnail || 'img/icon-192.png'}" alt="" loading="lazy">
-                            <div class="playlist-video-title">${escapeHtml(video.title || 'Vídeo')}</div>
+                            <div class="playlist-video-text">
+                                <div class="playlist-video-title">${escapeHtml(video.title || 'Vídeo')}</div>
+                                ${renderPlaylistVideoArtist(video)}
+                            </div>
                             <button class="playlist-video-remove" type="button" data-playlist-id="${list.id}" data-video-id="${video.id}" aria-label="Eliminar vídeo">
                                 <i data-lucide="trash-2"></i>
                             </button>
@@ -8926,12 +8956,14 @@ async function renderPlaylistsPageLegacyImpl() {
     batchRenderCards(playlistsList, playlists, createPlaylistCard, {
         maxVisible: 0,
         onComplete: () => {
+            bindChannelLinks(playlistsList);
             bindPlaylistListInteractions();
             refreshIcons(playlistsList);
         },
     });
 
     // Primer lot d'icones + interaccions
+    bindChannelLinks(playlistsList);
     bindPlaylistListInteractions();
     requestAnimationFrame(() => refreshIcons(playlistsList));
 }
@@ -9078,14 +9110,14 @@ function playPlaylist(playlistId) {
     startPlaylistPlayback(playlistId);
 }
 
-async function startPlaylistPlayback(playlistId) {
+async function startPlaylistPlayback(playlistId, startIndex = 0) {
     const playlist = await hydrateStoredPlaylist(playlistId);
     if (!playlist || !Array.isArray(playlist.videos) || playlist.videos.length === 0) {
         return;
     }
     isPlaylistMode = true;
     activePlaylistQueue = [...playlist.videos];
-    currentPlaylistIndex = 0;
+    currentPlaylistIndex = Number.isInteger(startIndex) && startIndex >= 0 && startIndex < playlist.videos.length ? startIndex : 0;
     activePlaylistId = playlist.id;
     activePlaylistName = playlist.name || 'Llista';
     loadVideoInSequence();
@@ -9618,6 +9650,12 @@ function renderPlaylistModal() {
     refreshIcons(playlistModalBody);
 }
 
+// Nom de cada canal/artista registrat (id → nom), per desar l'artista a cada cançó d'una llista.
+function getArtistNamesById() {
+    const channels = Array.isArray(YouTubeAPI?.getAllChannels?.()) ? YouTubeAPI.getAllChannels() : [];
+    return new Map(channels.map(channel => [String(channel.id), channel.name || channel.title || '']));
+}
+
 function getPlaylistVideoDataLegacyImpl(video) {
     const source = video.historySource || (video.videoUrl ? 'static' : 'api');
     return {
@@ -9626,6 +9664,7 @@ function getPlaylistVideoDataLegacyImpl(video) {
         thumbnail: getPreferredThumbnail(video),
         channelTitle: video.channelTitle || video.snippet?.channelTitle || '',
         channelId: video.channelId || video.snippet?.channelId || '',
+        artistName: SegueixApp.features.library?.resolveArtistName?.(video, getArtistNamesById()) || '',
         duration: video.duration || video.contentDetails?.duration || '',
         source,
     };
@@ -9679,8 +9718,9 @@ function setupVideoCardActionButtons(container) {
 function setupDelegatedVideoCardClicks(container, defaultSource) {
     if (!container || container._videoCardDelegated) return;
     container._videoCardDelegated = true;
+    container._videoCardDefaultSource = defaultSource;
     container.addEventListener('click', e => {
-        // Ignorar clics en accions (playlist, like, channel-link, etc.)
+        // Ignorar clics en accions (playlist, like, etc.); el channel-link al mòbil el reprodueix bindChannelLinks()
         if (
             e.target.closest(
                 '.playlist-action, .like-action, .channel-link, [data-follow-channel], .archive-playlist-action, .delete-history-btn, [data-share-channel-id]'
@@ -9806,7 +9846,15 @@ function bindPlaylistListInteractions() {
 
     playlistsList.addEventListener('click', event => {
         const removeButton = event.target.closest('.playlist-video-remove');
-        if (!removeButton) return;
+        if (!removeButton) {
+            // Al mòbil, tocar qualsevol part d'una cançó de la llista (també el nom de l'artista) la reprodueix.
+            const row = isMobileView() ? event.target.closest('.playlist-video-row') : null;
+            if (row) {
+                event.stopPropagation();
+                startPlaylistPlayback(row.dataset.playlistId, Number(row.dataset.videoIndex));
+            }
+            return;
+        }
         event.stopPropagation();
         removeVideoFromPlaylist(removeButton.dataset.playlistId, removeButton.dataset.videoId);
         renderPlaylistsPage();

@@ -5456,10 +5456,34 @@ body {
     object-fit: cover;
 }
 
+.playlist-video-text {
+    min-width: 0;
+}
+
 .playlist-video-title {
     font-size: 0.75rem;
     color: var(--color-text);
     line-height: 1.3;
+}
+
+.playlist-video-artist {
+    font-size: 0.7rem;
+    color: var(--color-text-secondary);
+    line-height: 1.3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.playlist-video-artist.channel-link {
+    cursor: pointer;
+    width: fit-content;
+    max-width: 100%;
+}
+
+.playlist-video-artist.channel-link:hover {
+    color: var(--color-text);
+    text-decoration: underline;
 }
 
 .playlist-video-remove {
