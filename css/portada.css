@@ -864,30 +864,109 @@ body:has(#homePage.is-portada) .category-selector {
     display: none;
 }
 
-/* ---------- B · Entrada directa a la música ---------- */
+/* ---------- B · Entrada: «Continua escoltant» + «La teva ràdio» ---------- */
+/* Dues targetes amb imatge i un sol missatge cadascuna: continuar el que sonava, o començar-ne una ràdio nova. */
 .pt-entry {
     display: grid;
-    gap: 16px;
-    padding: 4px 0 0;
-}
-
-.pt-entry__main {
-    min-width: 0;
+    gap: 14px;
+    padding: 0;
 }
 
 .pt-eyebrow--brand {
-    margin-bottom: 4px;
+    margin-bottom: 2px;
 }
 
-.pt-entry__title {
-    margin: 0 0 14px;
-    max-width: 16ch;
+/* La teva ràdio */
+.pt-radio {
+    position: relative;
+    display: flex;
+    min-width: 0;
+    overflow: hidden;
+    isolation: isolate;
+    border: 1px solid var(--pt-line);
+    border-radius: var(--pt-radius-lg);
+    background: var(--pt-surface);
+}
+
+.pt-radio__art {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Fons: la primera caràtula, borrosa i fosa a carbó perquè el text sempre es llegeixi */
+.pt-radio__bg {
+    position: absolute;
+    inset: -24px;
+    background: var(--pt-art) center / cover no-repeat;
+    filter: blur(28px) saturate(1.15);
+    opacity: 0.5;
+}
+
+.pt-radio__art::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(90deg, rgba(32, 36, 33, 0.94) 0%, rgba(32, 36, 33, 0.78) 55%, rgba(32, 36, 33, 0.5) 100%),
+        radial-gradient(80% 120% at 100% 0%, rgba(214, 237, 132, 0.12), transparent 60%);
+}
+
+/* Collage de tres caràtules, a dalt a la dreta */
+.pt-radio__covers {
+    position: absolute;
+    z-index: 1;
+    top: 16px;
+    right: 16px;
+    display: flex;
+}
+
+.pt-radio__covers img {
+    width: 64px;
+    height: 64px;
+    margin-left: -26px;
+    border: 2px solid var(--pt-surface);
+    border-radius: var(--pt-radius-sm);
+    object-fit: cover;
+    background: var(--pt-surface-2);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.pt-radio__covers img:nth-child(1) {
+    transform: rotate(-5deg);
+}
+
+.pt-radio__covers img:nth-child(2) {
+    transform: translateY(8px) rotate(2deg);
+}
+
+.pt-radio__covers img:nth-child(3) {
+    transform: rotate(7deg);
+}
+
+.pt-radio__body {
+    min-width: 0;
+    padding: 18px 16px 16px;
+}
+
+.pt-radio__title {
+    margin: 0 0 6px;
+    padding-right: 150px;
     font-family: var(--pt-display);
-    font-size: clamp(1.95rem, 7.4vw, 3.2rem);
+    font-size: clamp(1.6rem, 7vw, 2.4rem);
     font-weight: 700;
-    line-height: 1.04;
+    line-height: 1.08;
     letter-spacing: -0.02em;
     color: var(--pt-text);
+}
+
+.pt-radio__lead {
+    margin: 0 0 14px;
+    max-width: 44ch;
+    color: var(--pt-muted);
+    font-size: 0.9375rem;
+    line-height: 1.45;
 }
 
 .pt-entry__cta {
@@ -896,9 +975,13 @@ body:has(#homePage.is-portada) .category-selector {
     gap: 10px;
 }
 
+.pt-entry__cta .pt-btn {
+    width: 100%;
+}
+
 .pt-mode {
     min-width: 0;
-    margin: 16px 0 0;
+    margin: 14px 0 0;
     padding: 0;
     border: 0;
 }
@@ -983,20 +1066,46 @@ body:has(#homePage.is-portada) .category-selector {
     display: none;
 }
 
-/* Novetat destacada / Ara sona */
+/* Continua escoltant (Ara sona o l'última ràdio) */
 .pt-entry__feature:empty {
     display: none;
 }
 
-.pt-feature {
+.pt-entry__feature {
     display: grid;
-    grid-template-columns: minmax(118px, 40%) minmax(0, 1fr);
+    min-width: 0;
+}
+
+.pt-feature {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(104px, 36%) minmax(0, 1fr);
     gap: 14px;
     align-items: center;
-    padding: 10px;
+    overflow: hidden;
+    isolation: isolate;
+    padding: 12px;
     border: 1px solid var(--pt-line);
     border-radius: var(--pt-radius-lg);
     background: var(--pt-surface);
+}
+
+/* Fons: la mateixa caràtula, borrosa */
+.pt-feature__bg {
+    position: absolute;
+    inset: -24px;
+    z-index: -1;
+    background: var(--pt-art) center / cover no-repeat;
+    filter: blur(30px) saturate(1.2);
+    opacity: 0.55;
+}
+
+.pt-feature::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(90deg, rgba(32, 36, 33, 0.7) 0%, rgba(32, 36, 33, 0.9) 100%);
 }
 
 .pt-feature__media {
@@ -1010,6 +1119,7 @@ body:has(#homePage.is-portada) .category-selector {
     overflow: hidden;
     background: var(--pt-surface-2);
     cursor: pointer;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
 }
 
 .pt-feature__media img {
@@ -1027,6 +1137,7 @@ body:has(#homePage.is-portada) .category-selector {
 .pt-feature__body {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     gap: 2px;
     min-width: 0;
 }
@@ -1034,27 +1145,23 @@ body:has(#homePage.is-portada) .category-selector {
 .pt-feature__title {
     margin: 2px 0 0;
     font-family: var(--pt-display);
-    font-size: 1.125rem;
+    font-size: 1.25rem;
     font-weight: 700;
-    line-height: 1.2;
+    line-height: 1.18;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    cursor: pointer;
-}
-
-.pt-feature--now .pt-feature__title {
     cursor: default;
 }
 
 .pt-feature__next {
-    margin: 12px 0 0;
+    margin: 8px 0 0;
     color: var(--pt-muted);
     font-size: 0.8125rem;
     line-height: 1.3;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
@@ -1069,7 +1176,7 @@ body:has(#homePage.is-portada) .category-selector {
     flex-wrap: wrap;
     align-items: center;
     gap: 8px;
-    margin-top: 12px;
+    margin-top: 10px;
 }
 
 .pt-card__meta {
@@ -1077,10 +1184,6 @@ body:has(#homePage.is-portada) .category-selector {
     color: var(--pt-muted);
     font-size: 0.8125rem;
     line-height: 1.3;
-}
-
-.pt-feature .pt-card__meta {
-    display: none;
 }
 
 /* Ecualitzador d'«Ara sona» */
@@ -1137,90 +1240,52 @@ body:has(#homePage.is-portada) .category-selector {
 }
 
 @media (min-width: 769px) {
-    .pt-entry {
-        grid-template-columns: minmax(0, 1fr) minmax(320px, 500px);
-        align-items: center;
-        gap: 40px;
-        padding: 12px 0 4px;
+    /* Les dues targetes, una al costat de l'altra quan hi ha alguna cosa per continuar */
+    .pt-entry.has-continue {
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+        align-items: stretch;
     }
 
     .pt-feature {
-        grid-template-columns: 220px minmax(0, 1fr);
-        padding: 12px;
+        grid-template-columns: minmax(150px, 44%) minmax(0, 1fr);
+        padding: 16px;
     }
 
     .pt-feature__title {
-        font-size: 1.25rem;
+        font-size: 1.5rem;
     }
 
-    .pt-feature .pt-card__meta {
-        display: block;
-    }
-}
-
-/* Mòbil: l'entrada ocupava més de mitja pantalla (títol de dues línies amb l'altra meitat buida, botó a mitja amplada,
-   selector amb etiquetes de mides diferents i una targeta destacada alta) i la música no es veia fins a l'scroll.
-   Ara és un bloc compacte: títol d'una línia, botó a tota l'amplada amb el selector enganxat a sota i targeta baixa. */
-@media (max-width: 768px) {
-    .pt-entry {
-        gap: 12px;
-        padding-top: 0;
+    .pt-radio__body {
+        padding: 26px 28px 24px;
     }
 
-    .pt-entry__title {
-        max-width: none;
-        margin-bottom: 12px;
-        font-size: clamp(1.5rem, 6.8vw, 1.9rem);
-        line-height: 1.12;
-        text-wrap: balance;
+    .pt-radio__title,
+    .pt-radio__lead {
+        padding-right: 190px;
     }
 
-    .pt-entry__cta {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr);
+    .pt-radio__covers {
+        top: 24px;
+        right: 28px;
+    }
+
+    .pt-radio__covers img {
+        width: 84px;
+        height: 84px;
+        margin-left: -32px;
     }
 
     .pt-entry__cta .pt-btn {
-        width: 100%;
-    }
-
-    .pt-mode {
-        margin-top: 12px;
-    }
-
-    .pt-mode__legend {
-        margin-bottom: 6px;
-        font-size: 0.75rem;
+        width: auto;
+        min-width: 220px;
     }
 
     .pt-mode__options {
-        max-width: none;
+        max-width: 480px;
     }
+}
 
-    .pt-mode__opt span {
-        padding: 4px 6px;
-        font-size: 0.8125rem;
-    }
-
-    .pt-mode__hint {
-        margin-top: 6px;
-        font-size: 0.75rem;
-    }
-
-    .pt-feature {
-        grid-template-columns: minmax(104px, 34%) minmax(0, 1fr);
-        gap: 12px;
-        padding: 8px;
-    }
-
-    .pt-feature__title {
-        font-size: 1rem;
-    }
-
-    .pt-feature__actions {
-        margin-top: 8px;
-    }
-
+@media (max-width: 768px) {
     /* Les eines d'una secció («Reprodueix-ho», fletxes) que no caben al costat del títol baixen a la fila de sota
        alineades a l'esquerra, com el títol, i no tirades a la dreta */
     .pt-head {

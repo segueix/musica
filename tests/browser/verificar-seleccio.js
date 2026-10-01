@@ -689,7 +689,8 @@ async function main() {
             const r = button.getBoundingClientRect();
             return {
                 visible: !button.hidden && r.height > 0,
-                text: button.textContent.trim(),
+                // La targeta «Continua escoltant» porta el títol de la cançó; el botó, «Continua la ràdio»
+                text: button.closest('.pt-feature').textContent.replace(/\s+/g, ' ').trim(),
                 h: Math.round(r.height),
                 iframes: document.querySelectorAll('#videoPlayer iframe').length,
             };

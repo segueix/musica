@@ -214,30 +214,33 @@
             <!-- B · Entrada directa a la música -->
             <section class="pt-entry" id="portadaEntry" aria-labelledby="ptEntryTitle" aria-busy="true">
                 <h1 class="pt-sr-only">Segueix Música · La teva plaça musical</h1>
-                <div class="pt-entry__main">
-                    <p class="pt-eyebrow pt-eyebrow--brand">La teva plaça musical</p>
-                    <h2 class="pt-entry__title" id="ptEntryTitle">Avui, què et ve de gust?</h2>
-                    <div class="pt-entry__cta">
-                        <button type="button" class="pt-btn pt-btn--primary" id="ptPlayBtn" data-pt-mix disabled>
-                            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 5.6v12.8a1 1 0 0 0 1.5.86l10.4-6.4a1 1 0 0 0 0-1.72L9.5 4.74A1 1 0 0 0 8 5.6Z"/></svg>
-                            <span>La teva ràdio</span>
-                        </button>
-                        <button type="button" class="pt-btn pt-btn--ghost" id="ptResumeBtn" data-pt-resume hidden>
-                            <span></span>
-                        </button>
-                    </div>
-                    <fieldset class="pt-mode">
-                        <legend class="pt-mode__legend">Quant vols descobrir?</legend>
-                        <div class="pt-mode__options">
-                            <label class="pt-mode__opt"><input type="radio" name="ptMode" value="home"><span>Els meus de sempre</span></label>
-                            <label class="pt-mode__opt"><input type="radio" name="ptMode" value="mix" checked><span>Una mica de tot</span></label>
-                            <label class="pt-mode__opt"><input type="radio" name="ptMode" value="surprise"><span>Sorprèn-me</span></label>
-                        </div>
-                        <p class="pt-mode__hint" id="ptModeHint">Combina música coneguda i descoberta.</p>
-                    </fieldset>
-                    <p class="pt-note" id="ptNote" role="status" aria-live="polite"></p>
-                </div>
+                <!-- Continua escoltant: la cançó que sona ara o l'última ràdio (la pinta portada.js; buit si no n'hi ha cap) -->
                 <div class="pt-entry__feature" id="ptFeature"></div>
+                <!-- La teva ràdio: una ràdio nova, amb el mode de descoberta triat -->
+                <article class="pt-radio" id="ptRadio">
+                    <div class="pt-radio__art" id="ptRadioArt" aria-hidden="true"></div>
+                    <div class="pt-radio__body">
+                        <p class="pt-eyebrow pt-eyebrow--brand">Ràdio personal</p>
+                        <h2 class="pt-radio__title" id="ptEntryTitle">La teva ràdio</h2>
+                        <p class="pt-radio__lead" id="ptRadioLead">Barreja el que t’agrada amb música nova, sense parar.</p>
+                        <div class="pt-entry__cta">
+                            <button type="button" class="pt-btn pt-btn--primary" id="ptPlayBtn" data-pt-mix disabled>
+                                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 5.6v12.8a1 1 0 0 0 1.5.86l10.4-6.4a1 1 0 0 0 0-1.72L9.5 4.74A1 1 0 0 0 8 5.6Z"/></svg>
+                                <span>Engega la ràdio</span>
+                            </button>
+                        </div>
+                        <fieldset class="pt-mode">
+                            <legend class="pt-mode__legend">Quant vols descobrir?</legend>
+                            <div class="pt-mode__options">
+                                <label class="pt-mode__opt"><input type="radio" name="ptMode" value="home"><span>Els meus de sempre</span></label>
+                                <label class="pt-mode__opt"><input type="radio" name="ptMode" value="mix" checked><span>Una mica de tot</span></label>
+                                <label class="pt-mode__opt"><input type="radio" name="ptMode" value="surprise"><span>Sorprèn-me</span></label>
+                            </div>
+                            <p class="pt-mode__hint" id="ptModeHint">Combina música coneguda i descoberta.</p>
+                        </fieldset>
+                        <p class="pt-note" id="ptNote" role="status" aria-live="polite"></p>
+                    </div>
+                </article>
             </section>
             <h1 class="page-title" id="pageTitle">Recomanat per a tu</h1>
             <div class="category-keywords-inline" id="categoryKeywordsInline" style="display: none;"></div>

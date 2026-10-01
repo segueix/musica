@@ -77,6 +77,18 @@
 
 **Fitxers Afectats:** `js/features/music-queue.js`, `css/portada.css`, `sw.js`, `CLAUDE.md`, tests.
 
+## [2026-10-01] - Entrada de la portada: «La teva ràdio» i «Continua» no s'entenien i era massa carregada
+
+**Símptoma:** A dalt de la portada hi havia un títol gran, un botó «La teva ràdio» sense explicació, a vegades un segon botó només de text («Continua la ràdio: <títol>»), el selector de mode, una targeta «Novetat» i, mentre sonava alguna cosa, una targeta «Ara sona» amb cercles (+/−) i «Regenera la cua». No quedava clar què feia cada botó ni que «Continua» i «La teva ràdio» eren coses diferents, i no hi havia gairebé imatge.
+
+**Solució Implementada:** L'entrada són dues targetes. (1) **«Continua escoltant»** (`#ptFeature`, `continueHtml()`): la cançó que sona (`Ara sona`) o la darrera ràdio, amb la **caràtula** en gran i la mateixa caràtula borrosa de fons (`--pt-art`, degradat de carbó per al contrast), títol, artista (enllaç a la fitxa) i un únic botó principal. (2) **«La teva ràdio»** (`#ptRadio`, estàtica a `index.html`): collage de tres caràtules d'artistes diferents (`radioCovers()`), una frase que ho explica i el selector de mode **dins la mateixa targeta**, perquè es vegi que el mode és de la ràdio nova. Si hi ha alguna cosa per continuar, el text diu «O comença una ràdio nova…», el botó passa a «Ràdio nova» i és secundari (`pt-btn--ghost`); si no, «Engega la ràdio» és el principal. Es treuen el títol gran, la targeta «Novetat» (ja hi ha «Comença per aquí» i «Acabades de sortir») i els controls +/− i «Regenera la cua» de la portada (són a la cua de la ràdio). A escriptori les dues targetes van una al costat de l'altra quan hi ha res a continuar. Es recupera també l'alineació a l'esquerra de les eines de secció a mòbil (`.pt-head .pt-head__tools`).
+
+**Trampes conegudes:** (1) `#ptPlayBtn` i `#ptResumeBtn` mantenen els ids perquè hi enllacen les proves de navegador (`verificar-seleccio.js` ara comprova el text de la targeta, no el del botó). (2) L'URL de la caràtula entra en un `style` (`cssUrl()` només n'accepta de segures: https/`//`/`img/`/`./` i escapa cometes i parèntesis). (3) El collage és decoratiu (`aria-hidden`): no vol dir que la ràdio hagi de sonar aquelles cançons; la primera la tria el motor en prémer. (4) El collage i el fons s'omplen en `updateEntry()` i només es repinten si canvia l'HTML.
+
+**Fitxers Afectats:** `index.html`, `css/portada.css`, `js/features/portada.js`, `sw.js`, `tests/portada-entrada-mobil.test.js`, `tests/portada-assets.test.js`, `tests/mobile-card-tap.test.js`, `tests/browser/verificar-seleccio.js`, `CLAUDE.md`.
+
+---
+
 ## [2026-10-01] - Fitxa d'artista: el «+» de categories personalitzades ja no hi és
 
 **Símptoma:** Sota l'artista (i el programa) hi havia un botó rodó «+» que obria un selector per sumar-li categories personalitzades. A Segueix Música no n'hi ha cap ni es poden crear (herència de Segueix youtubers), així que el selector sempre deia «No hi ha categories personalitzades.» i el botó no feia res útil.

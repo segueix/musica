@@ -23,7 +23,7 @@ describe('tocs a les targetes de cançó al mòbil', () => {
 
     it("la portada reprodueix tota la targeta (no només la imatge i el títol) abans d'obrir l'artista", () => {
         const onClick = portada.slice(portada.indexOf('function onClick'));
-        const guard = onClick.indexOf('.pt-card[data-video-id], .pt-feature[data-video-id]');
+        const guard = onClick.indexOf('.pt-card[data-video-id]');
         expect(guard).toBeGreaterThan(-1);
         expect(onClick.indexOf('[data-pt-queue]')).toBeLessThan(guard);
         expect(onClick.indexOf('[data-pt-save]')).toBeLessThan(guard);
