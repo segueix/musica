@@ -13,6 +13,18 @@
 
 **Fitxers Afectats:**
 
+## [2026-10-01] - Cançons que ofereixen subtítols en castellà al feed
+
+**Símptoma:** Hi havia cançons que oferien subtítols en castellà/espanyol (Pau Vallvé, ZOO Posse, Xavi Sarrià, Dàmaris Gelabert, Kitsch…) i es volien fora del feed, també les que s'afegeixin més endavant.
+
+**Causa Arrel:** No hi havia cap filtre per subtítols. A més, **no es poden llegir les pistes reals de subtítols de YouTube**: `captions.list` de l'API de dades només funciona amb OAuth del propietari, `contentDetails.caption` només diu si n'hi ha (cap idioma concret), `/api/timedtext?type=list` torna buit i la pàgina del vídeo respon HTTP 429 («google.com/sorry») des d'un servidor.
+
+**Solució Implementada:** Detecció per **declaració** al títol o a la descripció (`scripts/lib/subtitols_castella.js`, `declaracio(video)` / `teSubtitolsCastella(video)`): una paraula de subtítols (subtítols, subtítulos, subtitles, untertitel, sous-titres, `sub`…) amb «castellà / castellano / español / espanyol / spanish» a la mateixa frase (fins a 90 caràcters, sense salt de línia), l'ordre invers («Spanish subtitles») o l'abreviatura enganxada a «sub» («SUB CAST», «Subs: ESP»). No compten els crèdits («Subtítols: Maria Puig»), les sales («CC Delicias»), «Castellers», «subscriu-te», «Subtítols disponibles en català i anglès» ni les negacions («sense subtítols en castellà», «without Spanish subtitles»). **Diari:** `update_music_feed.js` descarta aquests vídeos cada vegada que genera el feed (el workflow «Actualitzar feed musical» corre cada dia a les 08:37 UTC, i també si canvia el detector), així que les cançons noves hi queden filtrades sense cap llista manual. **Immediat:** `node scripts/ocultar_subtitols_castella.js [--dry-run]` (idempotent) afegeix els IDs del feed actual a `data/hidden-videos.json`, que el client aplica de seguida; s'hi van afegir 10 cançons (Lzh5bAoDJ4M, 0Q_6oFahpos, ckY7cq-XZNc, EnwWgoIM3Xc, f7dytPY8TNQ, 3AZq1c3Ub6g, -ISx80tGzgg, znBeuIqLOP8, kVbKTsaGNpo, misomiLbq6s). Proves: `tests/subtitols-castella.test.js`.
+
+**Trampes conegudes:** (1) **Només detecta el que el vídeo declara**: una cançó que tingui pista de subtítols en castellà (manual o traduïda) sense dir-ho a la descripció no es detecta. Si cal més cobertura, la via fiable seria una llista manual per canal (com `ocultar_titols_castella.js`) o OAuth. (2) Els IDs de `hidden-videos.json` no es tornen a mostrar encara que l'artista canviï la descripció; per recuperar-ne una, treu-la d'aquest fitxer **i** corregeix la regla si és un fals positiu. (3) S'aplica a tot el feed musical, no només a `contentType: song` (n'hi havia una de `other`: una BSO). (4) Les cançons ja desades a l'historial, les llistes o els m'agrades d'un usuari no s'esborren d'allà.
+
+**Fitxers Afectats:** `scripts/lib/subtitols_castella.js` (nou), `scripts/ocultar_subtitols_castella.js` (nou), `scripts/update_music_feed.js`, `data/hidden-videos.json`, `.github/workflows/actualitzar-feed-musica.yml`, `tests/subtitols-castella.test.js`, `CLAUDE.md`.
+
 ## [2026-09-30] - Al mòbil, després d'una ràdio o d'una llista sortien «Altres vídeos relacionats» (9.700 px de graella)
 
 **Símptoma:** Al mòbil, sota la cua d'una ràdio o d'una llista hi havia «Altres vídeos relacionats» i una graella de 33 vídeos de l'artista (la pàgina feia 13.400 px), que es perdia en comptes d'acabar a l'última cançó.

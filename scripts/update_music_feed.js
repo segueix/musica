@@ -7,6 +7,7 @@ const { loadContentOverrides, applyContentOverride } = require('./lib/revisio_ma
 const { loadChannelVideoAllowlist, isChannelVideoAllowed } = require('./lib/filtre_videos_canal');
 const { parseManualDates, stampOriginalYear } = require('./lib/any_original_musical');
 const catalog = require('./lib/cataleg_musical');
+const { teSubtitolsCastella } = require('./lib/subtitols_castella');
 const { resolveChannelDisplayName, findNameOverride, loadNameOverrides, stripOfficialWord } = require('./lib/nom_canal');
 
 const API_KEY = process.env.YOUTUBE_API_KEY_SERVER || process.env.YOUTUBE_API_KEY;
@@ -465,6 +466,13 @@ async function main(){
   if(hiddenIds.size){
     for(let i=videos.length-1;i>=0;i--) if(hiddenIds.has(String(videos[i].id))) videos.splice(i,1);
   }
+  // Cançons que ofereixen subtítols en castellà (segons el títol o la descripció): no entren al feed. Es repeteix a
+  // cada generació (cada dia), així que les cançons noves hi queden filtrades sense cap llista manual.
+  let withSpanishSubtitles=0;
+  for(let i=videos.length-1;i>=0;i--){
+    if(teSubtitolsCastella(videos[i])){ videos.splice(i,1); withSpanishSubtitles++; }
+  }
+  if(withSpanishSubtitles) console.log(`🙈 ${withSpanishSubtitles} vídeos amb subtítols en castellà descartats`);
   videos.sort((a,b)=>(Date.parse(b.publishedAt||'')||0)-(Date.parse(a.publishedAt||'')||0));
   review.sort((a,b)=>(Date.parse(b.publishedAt||'')||0)-(Date.parse(a.publishedAt||'')||0));
   channelIndex.sort((a,b)=>a.name.localeCompare(b.name,'ca',{sensitivity:'base'}));
