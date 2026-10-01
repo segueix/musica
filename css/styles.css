@@ -1386,7 +1386,9 @@ body.sidebar-collapsed .main-content {
     gap: 10px;
     overflow-x: auto;
     padding: 4px 0 16px;
-    scroll-snap-type: x mandatory;
+    scroll-snap-type: x proximity;
+    scroll-behavior: auto;
+    overscroll-behavior-x: contain;
     /* -webkit-overflow-scrolling: touch; — eliminat, deprecated des d'iOS 13 */
     scrollbar-width: none;
 }
@@ -2032,7 +2034,9 @@ body.segueix-tv-playback.segueix-tv-active .chips-bar.home-categories.segueix-tv
     gap: 12px;
     overflow-x: auto;
     padding: 8px 0;
-    scroll-snap-type: x mandatory;
+    scroll-snap-type: x proximity;
+    scroll-behavior: auto;
+    overscroll-behavior-x: contain;
 }
 
 .shorts-row::-webkit-scrollbar {

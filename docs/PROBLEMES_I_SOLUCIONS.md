@@ -13,6 +13,18 @@
 
 **Fitxers Afectats:**
 
+## [2026-10-01] - Filera lateral dels Shorts amb la mateixa resposta que el desplaçament vertical
+
+**Símptoma:** El desplaçament horitzontal de les miniatures (fila de Shorts i historial) semblava més lent que el vertical.
+
+**Causa Arrel:** Les dues files tenien `scroll-snap-type: x mandatory`: en deixar anar el gest el navegador havia d'acabar en un punt d'encaix obligatori. Aquest ajust final podia afegir una frenada perceptible.
+
+**Solució Implementada:** Les dues files passen a `x proximity`, perquè l'encaix només s'apliqui prop d'una targeta; es manté el desplaçament natiu amb inèrcia i `scroll-behavior: auto`, sense interpolació de JavaScript. `overscroll-behavior-x: contain` evita que el moviment lateral es propagui fora de la fila. Els gestos verticals continuen movent la pàgina. El visor vertical i el seu reproductor no canvien.
+
+**Validació:** `tests/browser/verificar-shorts-lateral.js` amb Chromium, gestos tàctils CDP, viewport 390×844, fila de Shorts i historial, moviment normal i reduït: els quatre casos donen 85 px laterals i 85 px verticals per al mateix recorregut de 100 px del dit; mantenen inèrcia, límits, independència dels eixos i clics (un arrossegament no obre una miniatura). És una verificació amb emulació mòbil, sense mesurar un telèfon físic.
+
+**Fitxers Afectats:** `css/styles.css`, `tests/browser/verificar-shorts-lateral.js`, `sw.js` (hash regenerat amb `npm run sw:version`) i aquest document.
+
 ## [2026-10-01] - Desplaçament més fluid dels Shorts al mòbil
 
 **Causa:** Cada `touchmove` escrivia directament al panell. Els gestos molt ràpids sense `touchmove` passaven per una navegació discreta amb bloqueig de 800 ms. Les animacions de retorn i de canvi deixaven temporitzadors vius: després de tancar/reobrir el visor o començar un altre gest, un callback anterior podia moure el panell o canviar l'índex. Els gestos horitzontals sense `touchmove` podien navegar.
