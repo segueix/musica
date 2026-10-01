@@ -2030,7 +2030,14 @@ async function openProgramProfile(programId) {
         channelProfileSubscribers.textContent = '';
         channelProfileSubscribers.classList.add('hidden');
     }
-    if (channelProfileDescription) {
+    if (SegueixApp.features.artistPage?.showProfile) {
+        SegueixApp.features.artistPage.showProfile({
+            channelId: normalizedId,
+            name: program.name,
+            description: program.description || '',
+            program: true,
+        });
+    } else if (channelProfileDescription) {
         channelProfileDescription.textContent = program.description || '';
     }
 
@@ -2091,32 +2098,8 @@ async function openProgramProfile(programId) {
     window.scrollTo(0, 0);
 }
 
-function syncChannelProfileActionsLayout() {
-    if (!channelPage) return;
-    const titleRow = channelPage.querySelector('.channel-profile-title-row');
-    const infoRow = channelPage.querySelector('.channel-profile-info-row');
-    const actions = channelPage.querySelector('.channel-profile-actions');
-    if (!titleRow || !infoRow || !actions) return;
-
-    const isMobile = window.matchMedia('(max-width: 768px)').matches;
-    const moveToInfoRow = isMobile;
-
-    if (moveToInfoRow) {
-        if (actions.parentElement !== infoRow) {
-            const supportWrap = infoRow.querySelector('#channelSupportBtn');
-            if (supportWrap) {
-                infoRow.insertBefore(actions, supportWrap);
-            } else {
-                infoRow.appendChild(actions);
-            }
-        }
-        return;
-    }
-
-    if (actions.parentElement !== titleRow) {
-        titleRow.appendChild(actions);
-    }
-}
+// La fitxa d'artista (grid de portada.css) col·loca sola les accions a escriptori i a mòbil: res a moure.
+function syncChannelProfileActionsLayout() {}
 
 function renderProgramCategories(program) {
     if (!channelProfileTags) return;
@@ -13064,7 +13047,15 @@ async function openChannelProfileLegacyImpl(channelId) {
             channelProfileSubscribers.classList.add('hidden');
         }
     }
-    if (channelProfileDescription) {
+    // Fitxa d'artista: presentació curta que s'expandeix i ràdios de dalt de tot (js/features/artist-page.js)
+    if (SegueixApp.features.artistPage?.showProfile) {
+        SegueixApp.features.artistPage.showProfile({
+            channelId: normalizedId,
+            name: channelName,
+            description: channel?.description || '',
+            categories: channel?.categories || [],
+        });
+    } else if (channelProfileDescription) {
         channelProfileDescription.textContent = channel?.description || 'No hi ha descripció disponible.';
     }
     if (channelProfileTags) {
@@ -13104,6 +13095,7 @@ async function openChannelProfileLegacyImpl(channelId) {
     currentChannelVideos = Array.isArray(channelVideos) ? channelVideos : [];
     currentChannelShorts = currentChannelVideos.filter(video => video.isShort);
     currentChannelLongVideos = currentChannelVideos.filter(video => !video.isShort);
+    SegueixApp.features.artistPage?.setSongs?.(currentChannelVideos, normalizedId);
 
     if (channelSearchInputDesktop) {
         channelSearchInputDesktop.value = '';

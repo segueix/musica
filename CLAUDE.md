@@ -57,6 +57,7 @@ js/
 │   ├── discovery.js         # Descoberta (mode Els meus de sempre/Una mica de tot/Sorprèn-me, radar, Torna-hi) — funcions pures
 │   ├── my-music.js          # «La teva música»: historial (3 últimes + períodes), artistes seguits (model pur + HTML)
 │   ├── portada.js           # Portada «La teva plaça musical» (model pur + HTML + esdeveniments), pinta dins #videosGrid
+│   ├── artist-page.js       # Fitxa d'artista: dues ràdios (artista / estil), presentació curta expandible (model pur + DOM)
 │   ├── shell-nav.js         # Navegació lateral/inferior i avisos breus (toast)
 │   ├── music-selection.js   # Motor de selecció musical compartit (funcions pures): antiguitat real, puntuació, restriccions
 │   ├── music-signals.js     # Observador únic d'escolta, estadístiques i preferències («(+) com aquesta (−)»)
@@ -294,6 +295,13 @@ const likes = ctx2.SegueixApp.features.likes;
 ### Cançons amb subtítols en castellà (2026-10-01)
 
 - Les cançons que **declaren** subtítols en castellà/espanyol al títol o a la descripció no són al feed: `update_music_feed.js` les descarta a cada generació (el workflow «Actualitzar feed musical» corre cada dia) amb `scripts/lib/subtitols_castella.js`, i `node scripts/ocultar_subtitols_castella.js` n'afegeix les del feed actual a `data/hidden-videos.json`. No es poden llegir les pistes reals de YouTube (cal OAuth). Detall, regles i trampes: `docs/PROBLEMES_I_SOLUCIONS.md` (2026-10-01).
+
+### Fitxa d'artista (2026-10-01)
+
+- `#channelPage` (la fitxa d'artista; també l'usa el perfil de programa, que no té ràdios): barra superior `.ap-top` amb «enrere» i **dues ràdios** (`#apRadioArtist` «Ràdio de l'artista» i `#apRadioStyle` «Ràdio de l'estil»), capçalera `.ap-hero` amb el nom a l'esquerra i la **foto gran a la dreta** (`.channel-profile-avatar`, grid de `portada.css`), presentació `.ap-bio` (tres línies, `.is-collapsed`, «Llegeix-ne més») i «Cançons». Tot el JS és a `js/features/artist-page.js` (`showProfile()` i `setSongs()`, que crida `openChannelProfileLegacyImpl()`); no hi tornis a posar `syncChannelProfileActionsLayout()` movent botons (ara és buida: la col·locació és CSS) ni icones `data-lucide` (CDN) a la fitxa.
+- **Ràdio de l'artista:** `musicQueue.startArtistRadio(cançons, { name, channelId })`: només cançons de l'artista, reutilitza la ràdio de cerca (`launchPoolRadio`, `policy: 'search'`: ordre del motor pel gust i mode de descoberta, es permeten cançons seguides del mateix artista, «Barreja» es queda dins seu). Nom «Ràdio de <artista>» (`searchRadio.artist`).
+- **Ràdio de l'estil:** `musicQueue.startStyleRadio(estils)`: la ràdio d'estil de sempre (estils barrejats a parts iguals, antiguitat, un artista per vegada, descans, mode) amb **els estils de l'artista** (principal primer, màxim 3, sense «Altres estils» ni vistes generals: `artistStyles()`). Comença amb la cançó que tria el motor entre les d'aquells estils.
+- Detall i trampes: `docs/PROBLEMES_I_SOLUCIONS.md` (2026-10-01, «Fitxa d'artista»). Proves: `tests/artist-page.test.js` i `tests/music-queue-selection.test.js`.
 
 ### Revisar cançons en castellà (2026-10-01)
 

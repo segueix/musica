@@ -52,7 +52,7 @@
     
     <!-- CSS -->
     <link rel="stylesheet" href="css/styles.css?v=20260929-home-playlists-4">
-    <link rel="stylesheet" href="css/portada.css?v=20260930-portada-1">
+    <link rel="stylesheet" href="css/portada.css?v=20261001-artista-1">
     
     <!-- Icons (Lucide via CDN) -->
     <script src="https://unpkg.com/lucide@0.563.0"></script>
@@ -298,33 +298,29 @@
             </div>
         </div>
 
-        <div class="page hidden" id="channelPage">
-            <div class="channel-profile-header">
+        <div class="page hidden ap-page" id="channelPage">
+            <!-- Fitxa d'artista (js/features/artist-page.js): barra superior amb enrere i les dues ràdios -->
+            <div class="ap-top">
                 <button class="channel-back-btn" id="channelBackBtn" type="button" aria-label="Tornar enrere">
-                    <i data-lucide="arrow-left"></i>
+                    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M19 12H5M12 19l-7-7 7-7"/></svg>
                 </button>
-                <div class="channel-profile-meta">
-                    <img class="channel-profile-avatar" id="channelProfileAvatar" alt="">
-                    <div class="channel-profile-text">
+                <div class="ap-radios" id="apRadios" role="group" aria-label="Ràdios de l'artista">
+                    <button class="ap-radio ap-radio--artist" id="apRadioArtist" type="button" data-ap-radio="artist" disabled>
+                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M19 21v-1.5a4.5 4.5 0 0 0-4.5-4.5h-5A4.5 4.5 0 0 0 5 19.5V21M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"/></svg>
+                        <span class="ap-radio__long">Ràdio de l'artista</span><span class="ap-radio__short">Ràdio artista</span>
+                    </button>
+                    <button class="ap-radio ap-radio--style" id="apRadioStyle" type="button" data-ap-radio="style" disabled>
+                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M9 18V5l12-2v13M9 18a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm12-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/></svg>
+                        <span class="ap-radio__long">Ràdio de l'estil</span><span class="ap-radio__short">Ràdio estil</span>
+                    </button>
+                </div>
+            </div>
+            <header class="channel-profile-header ap-hero">
+                <div class="channel-profile-meta ap-hero__meta">
+                    <div class="channel-profile-text ap-hero__text">
+                        <p class="pt-eyebrow ap-hero__eyebrow">Artista</p>
                         <div class="channel-profile-title-row">
                             <h1 class="channel-profile-name" id="channelProfileName"></h1>
-                            <div class="channel-profile-actions">
-                                <button class="follow-channel-btn channel-profile-follow-btn" id="channelProfileFollowBtn" type="button" data-follow-channel="" aria-pressed="false">
-                                    Segueix
-                                </button>
-                                <button class="btn-round-icon channel-profile-hide-btn" id="channelProfileHideBtn" type="button" data-hide-channel="" aria-pressed="false" title="Amaga aquest canal del feed">
-                                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                                        <path d="M1.5 12s3.5-7 10.5-7 10.5 7 10.5 7-3.5 7-10.5 7S1.5 12 1.5 12Z"></path>
-                                        <circle cx="12" cy="12" r="3.5"></circle>
-                                    </svg>
-                                </button>
-                                <button class="btn-round-icon channel-profile-share-btn" id="channelProfileShareBtn" type="button" data-share-channel-id="" title="Compartir canal">
-                                    <i data-lucide="share-2"></i>
-                                </button>
-                                <div class="channel-search-wrap channel-search-wrap--desktop">
-                                    <input id="channelSearchInputDesktop" class="channel-search-input" type="search" placeholder="Cerca dins del canal..." aria-label="Cerca vídeos dins del canal">
-                                </div>
-                            </div>
                         </div>
                         <div class="channel-profile-info-row">
                             <div class="channel-profile-info-left">
@@ -333,13 +329,38 @@
                             </div>
                             <div id="channelSupportBtn" class="channel-support-wrap hidden"></div>
                         </div>
+                        <div class="channel-profile-actions">
+                            <button class="follow-channel-btn channel-profile-follow-btn" id="channelProfileFollowBtn" type="button" data-follow-channel="" aria-pressed="false">
+                                Segueix
+                            </button>
+                            <button class="btn-round-icon channel-profile-hide-btn" id="channelProfileHideBtn" type="button" data-hide-channel="" aria-pressed="false" title="Amaga aquest canal del feed">
+                                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                    <path d="M1.5 12s3.5-7 10.5-7 10.5 7 10.5 7-3.5 7-10.5 7S1.5 12 1.5 12Z"></path>
+                                    <circle cx="12" cy="12" r="3.5"></circle>
+                                </svg>
+                            </button>
+                            <button class="btn-round-icon channel-profile-share-btn" id="channelProfileShareBtn" type="button" data-share-channel-id="" title="Compartir canal" aria-label="Comparteix l'artista">
+                                <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M18 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM6 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM18 22a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>
+                            </button>
+                        </div>
                     </div>
+                    <img class="channel-profile-avatar" id="channelProfileAvatar" alt="">
                 </div>
-            </div>
-            <div class="channel-profile-description" id="channelProfileDescription"></div>
+            </header>
+            <!-- Presentació curta: tres línies i «Llegeix-ne més» si no hi cap -->
+            <section class="ap-bio" id="apBio" aria-label="Presentació" hidden>
+                <div class="channel-profile-description is-collapsed" id="channelProfileDescription"></div>
+                <button class="ap-bio__toggle" id="apBioToggle" type="button" aria-expanded="false" aria-controls="channelProfileDescription" hidden>Llegeix-ne més</button>
+            </section>
             <div id="channelProfileTags"></div>
-            <div class="channel-search-wrap channel-search-wrap--mobile">
-                <input id="channelSearchInputMobile" class="channel-search-input" type="search" placeholder="Cerca dins del canal..." aria-label="Cerca vídeos dins del canal">
+            <div class="ap-songs-head">
+                <h2 class="ap-songs-title">Cançons</h2>
+                <div class="channel-search-wrap channel-search-wrap--desktop">
+                    <input id="channelSearchInputDesktop" class="channel-search-input" type="search" placeholder="Cerca dins del canal..." aria-label="Cerca vídeos dins del canal">
+                </div>
+                <div class="channel-search-wrap channel-search-wrap--mobile">
+                    <input id="channelSearchInputMobile" class="channel-search-input" type="search" placeholder="Cerca dins del canal..." aria-label="Cerca vídeos dins del canal">
+                </div>
             </div>
             <div id="channelVideosGrid" class="videos-grid"></div>
         </div>
@@ -924,6 +945,7 @@
     <script src="js/features/my-music.js?v=20260930-la-teva-musica-1"></script>
     <script src="js/features/shell-nav.js?v=20260930-portada-1"></script>
     <script src="js/features/portada.js?v=20260930-portada-1"></script>
+    <script src="js/features/artist-page.js?v=20261001-artista-1"></script>
     <script src="js/features/shared-playlists.js"></script>
     <script src="js/features/config-sync.js"></script>
     <script src="js/features/analytics.js?v=20260925-unique-users-v1"></script>
