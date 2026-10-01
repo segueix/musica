@@ -77,6 +77,18 @@
 
 **Fitxers Afectats:** `js/features/music-queue.js`, `css/portada.css`, `sw.js`, `CLAUDE.md`, tests.
 
+## [2026-10-01] - Llista d'artistes vigilats per castellà i prompt de revisió
+
+**Símptoma:** Les cançons en castellà tornen a aparèixer cada vegada que el feed incorpora vídeos nous dels mateixos artistes, i no hi havia cap lloc que dixés quins artistes cal repassar primer ni com.
+
+**Solució Implementada:** `docs/ARTISTES_CASTELLA.md` recull els 40 artistes a qui s'han amagat cançons (cançó d'autor, urbana, Judit Neddermann, subtítols en castellà, primera passada del 2026-09-29, artistes rebutjats) amb recomptes, motius i notes. `scripts/revisar_castella_vigilats.js` (només lectura) llegeix els noms de la taula i imprimeix les cançons visibles de cadascun, les més noves primer (`--since`, `--artista`). `CLAUDE.md` («Revisar cançons en castellà») porta el prompt per a l'agent: llegir sempre el document, repassar tots els artistes vigilats, amagar només el 100 % castellà/basc i actualitzar el document.
+
+**Trampes conegudes:** (1) Els recomptes per artista de la primera passada (uns 100 IDs, 2026-09-29) són `n/d`: el feed s'ha regenerat i no es poden recuperar. (2) Les claus de `REGLES` han de ser el `channelTitle` exacte: `Txarango Oficial` i `KOP Oficial` eren noms antics i les regles estaven mortes (es va trobar «BENDITA VIDA» de Txarango visible); ara són `Txarango` i `KOP`. Un test (`tests/revisar-castella-vigilats.test.js`) comprova que tots els artistes amb regla són a la taula. (3) Un artista que no és a la taula no es repassa.
+
+**Fitxers Afectats:** `docs/ARTISTES_CASTELLA.md` (nou), `scripts/revisar_castella_vigilats.js` (nou), `scripts/ocultar_titols_castella.js`, `data/hidden-videos.json`, `CLAUDE.md`, `tests/revisar-castella-vigilats.test.js` (nou).
+
+---
+
 ## [2026-10-01] - Judit Neddermann: cançons en castellà i en basc
 
 **Símptoma:** Al feed de Judit Neddermann hi havia cançons en castellà (l'àlbum *Aire* i part de *LAR*) i en basc (l'àlbum *Artean*).

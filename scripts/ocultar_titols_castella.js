@@ -39,7 +39,7 @@ const REGLES = {
   Scorpio: { titols: /^Ya No \(/i },
   'BAYA BAYE': { titols: /CANIBALISMO HUMANO|DINERO Y VENENO|EL GATO NEGRO|DE TO LOS COLORS|PA QUE ME INVITAS|JUERGA Y REBELD|CUMBIA DEL PAPU/i },
   'P.A.W.N. Gang': { titols: /MODO AVI[OÓ]N/i },
-  'Txarango Oficial': { titols: /BENDITA VIDA/i },
+  Txarango: { titols: /BENDITA VIDA/i },
   elo: { titols: /De Casi Nada/i },
   'Joan Colomo': { titols: /Tus Pies|Enmienda a la totalidad/i },
   'Cristina Monllau': { titols: /Una Vez M[aá]s/i },
@@ -50,7 +50,7 @@ const REGLES = {
   'Sangtraït': { titols: /Tentando a la Suerte/i },
   'Xavier de Bétera': { titols: /Vengo de moler morena|Fandango pide la ni[ñn]a/i },
   Ocults: { titols: /^Mi Carro|Barco de Rejilla/i },
-  'KOP Oficial': { titols: /c[aá]rceles en llamas|Desalojos son disturbios|Salta la Luna/i },
+  KOP: { titols: /c[aá]rceles en llamas|Desalojos son disturbios|Salta la Luna/i },
   'La Madam': { titols: /Habitada y Deshabitada|^Gozando/i },
 };
 
