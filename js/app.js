@@ -12697,22 +12697,10 @@ function openAddYoutuberModal() {
     }, 50);
 }
 
-function stopAddYoutuberVideo() {
-    const videoFrame = addYoutuberModal?.querySelector('.afegeix-youtuber iframe');
-    if (!videoFrame) return;
-
-    const videoSrc = videoFrame.getAttribute('src');
-    videoFrame.setAttribute('src', '');
-    videoFrame.setAttribute('src', videoSrc);
-}
-
 function closeAddYoutuberModal(fromPopstate = false) {
     if (!addYoutuberModal) return;
     const wasActive = addYoutuberModal.classList.contains('active');
     addYoutuberModal.classList.remove('active');
-    if (wasActive) {
-        stopAddYoutuberVideo();
-    }
     if (wasActive && !fromPopstate && history.state && history.state.modal === 'add-youtuber') {
         suppressNextPopstateNavigation = true;
         history.back();
