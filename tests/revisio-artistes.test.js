@@ -244,7 +244,7 @@ describe('el nom editat es veu a l’app', () => {
 });
 
 describe('revisió d’artistes: pàgina i dades reals', () => {
-    const html = fs.readFileSync('revisio-artistes.html', 'utf8');
+    const html = fs.readFileSync('revisio-noms-artistes.html', 'utf8');
     const real = JSON.parse(fs.readFileSync('data/artistes-musica.json', 'utf8'));
     const genres = JSON.parse(fs.readFileSync('data/music-genres.json', 'utf8')).categories.map(
         category => category.label
