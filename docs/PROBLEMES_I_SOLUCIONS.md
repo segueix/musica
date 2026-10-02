@@ -13,6 +13,28 @@
 
 **Fitxers Afectats:**
 
+## [2026-10-02] - Canals «Tema»: la discografia mana sobre el canal propi de l'artista
+**Símptoma:** al canal propi dels artistes hi ha vídeos que el classificador accepta com a cançó i no ho són (Els Pets: «Entrevistes Això és espectacle», «Discussió lletra El meu veí de sota», «Old McDonald had a farm»), i molts artistes no tenien indexat el canal «Tema», on hi ha tots els discos (Maria Jaume: hi faltaven els llançaments).
+
+**Causa Arrel:** el feed només llegia les 50 darreres pujades de cada canal i decidia «és cançó» pel títol i la durada. El canal «Artista - Tema» (Topic) de YouTube té la discografia editada, cançó per cançó, però no té videoclips, directes ni Shorts.
+
+**Solució Implementada:**
+- 114 canals Tema nous a `data/artistes-musica.json` (`type: 'topic'`, `primary: false`), comprovats un per un amb el RSS de YouTube (darreres 15 pistes, discos i crèdits) i els discos de MusicBrainz. N'hem deixat fora els homònims: Cactus (lo-fi i coreà), ELO (electrònica en anglès), Sisa (raper nord-americà), MIQUEL (techno), Raimon (raper nord-americà), Scorpio, SUU (piano per dormir), Manel (barrejat amb un artista vietnamita), i els dubtosos Llum, Maig i Fades. També Subliminal (llista blanca), Palau (el mateix Tema que Ferran Palau) i Serrat (vegeu les trampes).
+- `update_music_feed.js` llegeix cada Tema sencer (`playlistItems` amb `snippet`, fins a 10 pàgines; unes 850 unitats de quota més al dia) i desa els títols a `data/music-topic-catalog.json`. Si un dia falla, es fa servir la discografia de l'anterior i el repertori conservat.
+- `scripts/lib/canal_tema.js`:
+  - `songKey()`: la mateixa clau per a «Els Pets - Bon dia (Videoclip Oficial)», «Bon dia - Remastered 2015», «Bon dia (Vic 1997)» i «Bon dia». Fa servir `cleanTitle()` de `js/song-title.js` i treu els parèntesis, el «feat.», el que hi ha després d'un « - » i les extensions de fitxer.
+  - `selectTopicTracks()`: una pista per cançó (la més escoltada), sense les que ja tenen videoclip; les 40 més escoltades més les de fa menys de 180 dies.
+  - `governClassification()`: al canal oficial, el que no és al Tema passa a `other`. No toca els Shorts, els àlbums, les decisions manuals ni el que fa menys de 30 dies que s'ha publicat.
+- Una cançó amagada al canal propi (per ID, o per una regla de títols de `ocultar_titols_castella.js`) tampoc no entra des del Tema.
+- **Mode `audit` per defecte** (`MUSIC_TOPIC_GOVERNANCE`): la reclassificació del canal oficial només s'anota a `data/music-topic-review.json`. No s'ha pogut provar amb l'API real; en una simulació amb discografies parcials (RSS) videoclips bons quedaven fora («Parla», «XL», «Soroll» d'Els Pets). Es passa a `apply` quan aquest fitxer confirmi que la discografia es llegeix sencera.
+
+**Trampes:**
+- Les regles «totes» de `ocultar_titols_castella.js` (Serrat, MARLENA) són sobre un canal concret i no s'apliquen al Tema: aplicades a la discografia de Serrat amagaven «Cançó de matinada» o «La plaça del Diamant». Per això el Tema de Serrat no s'ha afegit; cal convertir la seva regla en una llista de títols en castellà.
+- Els Tema d'artistes bilingües (Albert Pla, Sílvia Pérez Cruz, Jofre Bardagí, Sandra Bautista, Marina Rossell, La Mousse, Gertrudis…) porten cançons en castellà que no tenen regla. Cal fer la revisió del castellà (`docs/ARTISTES_CASTELLA.md`) després de la primera generació.
+- Un Tema amb el mateix nom que l'artista pot ser d'un altre artista, o barrejar-ne dos. Comprova-ho sempre abans d'afegir-lo.
+
+**Fitxers Afectats:** `scripts/lib/canal_tema.js`, `scripts/update_music_feed.js`, `data/artistes-musica.json`, `.github/workflows/actualitzar-feed-musica.yml`, `tests/canal-tema.test.js`; fitxers generats nous: `data/music-topic-catalog.json` i `data/music-topic-review.json`.
+
 ## [2026-10-02] - El feed pesava massa per afegir-hi els canals «Tema»
 **Símptoma:** `data/feed.json` feia 11,6 MB (1,9 MB comprimit) amb 7.539 vídeos i cada client el baixa i el processa sencer en obrir l'app. Afegir-hi els canals «Tema» dels artistes (milers de llançaments més) l'hauria portat cap als 15–17 MB.
 
