@@ -1,6 +1,6 @@
-// Verificació en navegador real del mode conducció (mòbil): pantalla negra amb només el reproductor de YouTube
-// de 200×200, Wake Lock, botó de sortida que s'amaga als 5 s i reapareix tocant el fons. En tancar, tot torna
-// a ser com abans. El reproductor no es recrea (és el mateix iframe).
+// Verificació en navegador real del mode conducció (mòbil): pantalla negra, reproductor YouTube de 200×200,
+// Wake Lock i controls de reproducció grans però discrets que desapareixen als 3,5 s i reapareixen tocant el fons.
+// En tancar, tot torna a ser com abans. El reproductor no es recrea (és el mateix iframe).
 //
 // YouTube no es pot carregar aquí: se serveix un succedani local a la URL d'embed.
 // NO forma part de `npm test`: és una eina opt-in. Ús:  node tests/browser/verificar-mode-conduccio.js
@@ -118,6 +118,12 @@ const comprovar = (etiqueta, condicio, detall) => {
             const box = iframe.getBoundingClientRect();
             const exit = document.getElementById('driveModeExit');
             const exitBox = exit?.getBoundingClientRect();
+            const controls = document.getElementById('driveModeControls');
+            const controlButtons = [...(controls?.querySelectorAll('.dm-control') || [])];
+            const controlBoxes = controlButtons.map(button => {
+                const r = button.getBoundingClientRect();
+                return { w: Math.round(r.width), h: Math.round(r.height), label: button.getAttribute('aria-label') };
+            });
             // Què es veu en uns quants punts de la pantalla (fora del reproductor i del botó)
             const punts = [
                 [195, 400],
@@ -130,9 +136,12 @@ const comprovar = (etiqueta, condicio, detall) => {
                 return `${el.tagName}.${el.className}:${getComputedStyle(el).visibility}`;
             });
             const visibles = [...document.querySelectorAll('body *')].filter(el => {
-                if (el === exit || el.closest('#videoPlayer') === null) {
-                    if (el === exit) return false;
-                } else return false;
+                if (
+                    el === exit ||
+                    el === controls ||
+                    el.closest?.('#driveModeControls') ||
+                    el.closest?.('#videoPlayer')
+                ) return false;
                 const style = getComputedStyle(el);
                 const r = el.getBoundingClientRect();
                 return style.visibility === 'visible' && style.display !== 'none' && r.width > 0 && r.height > 0;
@@ -142,7 +151,17 @@ const comprovar = (etiqueta, condicio, detall) => {
                 classe: document.body.classList.contains('drive-mode'),
                 box: { top: Math.round(box.top), left: Math.round(box.left), width: Math.round(box.width), height: Math.round(box.height) },
                 visibleIframe: getComputedStyle(iframe).visibility,
-                exit: exit && { text: exit.textContent, h: Math.round(exitBox.height), visible: getComputedStyle(exit).visibility },
+                exit: exit && {
+                    text: exit.textContent,
+                    label: exit.getAttribute('aria-label'),
+                    h: Math.round(exitBox.height),
+                    visible: getComputedStyle(exit).visibility,
+                },
+                controls: {
+                    count: controlButtons.length,
+                    boxes: controlBoxes,
+                    visible: controls ? getComputedStyle(controls).display !== 'none' && !controls.hidden : false,
+                },
                 fons: getComputedStyle(document.body).backgroundColor,
                 punts,
                 altresVisibles: visibles.length,
@@ -166,29 +185,44 @@ const comprovar = (etiqueta, condicio, detall) => {
         );
         comprovar('és el mateix reproductor (no s’ha recreat)', dins.mateixIframe);
         comprovar('fons negre', dins.fons === 'rgb(0, 0, 0)', dins.fons);
-        comprovar('no es veu res més que el reproductor i el botó', dins.altresVisibles === 0, dins.altresVisibles);
+        comprovar('no es veu cap altre element de l’app', dins.altresVisibles === 0, dins.altresVisibles);
         comprovar(
             'la resta de la pantalla és buida',
             dins.punts.every(v => v === 'fons'),
             dins.punts
         );
-        comprovar('un sol botó gran per tancar', dins.exit?.text === 'Tanca el mode conducció' && dins.exit.h >= 48, dins.exit);
+        comprovar(
+            'el botó de sortida és compacte i només mostra una ×',
+            dins.exit?.text === '×' && dins.exit?.label === 'Tanca el mode conducció' && dins.exit.h >= 48,
+            dins.exit
+        );
+        comprovar(
+            'hi ha 4 controls grans: anterior, −10 s, +10 s i següent',
+            dins.controls.count === 4 &&
+                dins.controls.visible &&
+                dins.controls.boxes.every(box => box.w >= 60 && box.h >= 60),
+            dins.controls
+        );
         comprovar('la pantalla no s’apaga (Wake Lock)', dins.wake.requests >= 1, dins.wake);
 
-        await page.waitForTimeout(5200);
-        const exitAmagat = await page.evaluate(() => {
+        await page.waitForTimeout(3700);
+        const uiAmagada = await page.evaluate(() => {
             const e = document.getElementById('driveModeExit');
-            return Boolean(e?.hidden) || getComputedStyle(e).display === 'none';
+            const controls = document.getElementById('driveModeControls');
+            const hidden = el => Boolean(el?.hidden) || getComputedStyle(el).display === 'none';
+            return hidden(e) && hidden(controls);
         });
-        comprovar('el botó de sortida s’amaga automàticament als 5 s', exitAmagat);
+        comprovar('els controls desapareixen automàticament als 3,5 s', uiAmagada);
 
         await page.mouse.click(40, 600);
         await page.waitForTimeout(100);
-        const exitRecuperat = await page.evaluate(() => {
+        const uiRecuperada = await page.evaluate(() => {
             const e = document.getElementById('driveModeExit');
-            return Boolean(e) && !e.hidden && getComputedStyle(e).display !== 'none';
+            const controls = document.getElementById('driveModeControls');
+            const visible = el => Boolean(el) && !el.hidden && getComputedStyle(el).display !== 'none';
+            return visible(e) && visible(controls);
         });
-        comprovar('un toc a la zona negra recupera el botó', exitRecuperat);
+        comprovar('un toc a la zona negra recupera temporalment els controls', uiRecuperada);
 
         await page.click('#driveModeExit');
         await page.waitForTimeout(400);
