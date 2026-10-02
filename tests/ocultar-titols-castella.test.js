@@ -54,6 +54,8 @@ describe('ocultar cançons amb títol en castellà', () => {
         expect(esCastella(song('Mariona Escoda', 'Maniac (Acústic en directe)'))).toBe(true);
         expect(esCastella(song('Mariona Escoda - Topic', 'Maniac'))).toBe(true);
         expect(esCastella(song('Mariona Escoda', 'Et deixo la mà (Acústic en directe)'))).toBe(false);
+        expect(esCastella(song('DAVEU', 'MI BRODA'))).toBe(true);
+        expect(esCastella(song('DAVEU))', 'DAVEU)) - MI BRODA'))).toBe(true);
         expect(esCastella(song("VEN'NUS", "VEN'NUS - I JAZZ WANT MY G BACK (livesession)"))).toBe(true);
         expect(esCastella(song("Ven'nus", 'Carmen se fue'))).toBe(true);
         expect(esCastella(song("Ven'nus", "It's So Hard To Be So Funny"))).toBe(true);
