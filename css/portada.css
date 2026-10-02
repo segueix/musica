@@ -4612,3 +4612,114 @@ body.drive-mode .dm-info[hidden] {
     display: none !important;
 }
 
+
+
+/* ---------- Discos dins la fitxa d'artista ---------- */
+#channelPage .ap-albums {
+    margin: 22px 0 12px;
+}
+#channelPage .ap-albums-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+#channelPage .ap-albums-title {
+    margin: 0;
+    font-size: 1.2rem;
+}
+#channelPage .ap-albums-all {
+    min-height: 36px;
+    padding: 0 14px;
+    border: 1px solid var(--pt-line);
+    border-radius: var(--pt-radius-pill);
+    background: var(--pt-surface-2);
+    color: var(--pt-text);
+    font: inherit;
+    cursor: pointer;
+}
+#channelPage .ap-albums-all.is-active {
+    border-color: var(--pt-accent);
+    color: var(--pt-accent);
+}
+#channelPage .ap-albums-grid {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(142px, 172px);
+    gap: 12px;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+    padding: 2px 2px 8px;
+}
+#channelPage .ap-albums-grid::-webkit-scrollbar {
+    display: none;
+}
+#channelPage .ap-album-card {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    gap: 6px;
+    min-width: 0;
+    padding: 8px;
+    border: 1px solid transparent;
+    border-radius: 14px;
+    background: transparent;
+    color: var(--pt-text);
+    text-align: left;
+    cursor: pointer;
+    scroll-snap-align: start;
+}
+#channelPage .ap-album-card:is(:hover, :focus-visible, .is-active) {
+    border-color: var(--pt-line);
+    background: var(--pt-surface-2);
+}
+#channelPage .ap-album-card.is-active {
+    border-color: var(--pt-accent);
+}
+#channelPage .ap-album-cover,
+#channelPage .ap-album-other-icon {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 10px;
+}
+#channelPage .ap-album-cover {
+    display: block;
+    object-fit: cover;
+    background: var(--pt-surface-2);
+}
+#channelPage .ap-album-other-icon {
+    display: grid;
+    place-items: center;
+    background: var(--pt-surface-2);
+    font-size: 2.4rem;
+}
+#channelPage .ap-album-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: 700;
+    font-size: 0.88rem;
+}
+#channelPage .ap-album-meta {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: var(--pt-text-muted);
+    font-size: 0.74rem;
+}
+@media (max-width: 768px) {
+    #channelPage .ap-albums {
+        margin-top: 16px;
+    }
+    #channelPage .ap-albums-grid {
+        grid-auto-columns: 138px;
+        gap: 8px;
+        margin-inline: -12px;
+        padding-inline: 12px;
+    }
+    #channelPage .ap-album-card {
+        padding: 6px;
+    }
+}
