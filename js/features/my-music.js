@@ -232,19 +232,21 @@
 
     function buildArtistsModel(channels, followedIds) {
         const followed = new Set((Array.isArray(followedIds) ? followedIds : []).map(id => String(id)));
-        const byId = new Map();
-        (Array.isArray(channels) ? channels : []).forEach(channel => {
-            const id = String(channel?.id ?? '');
-            if (id && followed.has(id) && !byId.has(id)) byId.set(id, channel);
-        });
-        const artists = Array.from(byId.values())
+        const artists = (Array.isArray(channels) ? channels : [])
+            .filter(channel => {
+                const ids = Array.isArray(channel?.channelIds) && channel.channelIds.length
+                    ? channel.channelIds.map(String)
+                    : [String(channel?.id ?? '')];
+                return ids.some(id => followed.has(id));
+            })
             .map(channel => ({
                 id: String(channel.id),
                 name: String(channel.name || channel.title || '').trim() || 'Artista',
                 avatar: channel.avatar || channel.thumbnail || '',
             }))
+            .filter((artist, index, list) => artist.id && list.findIndex(item => item.id === artist.id) === index)
             .sort((a, b) => a.name.localeCompare(b.name, 'ca', { sensitivity: 'base' }));
-        return { artists, followed: followed.size };
+        return { artists, followed: artists.length };
     }
 
     function artistsHtml(model) {
@@ -286,9 +288,9 @@
         return {
             history: typeof getHistoryItems === 'function' ? getHistoryItems() : [],
             channels:
-                typeof YouTubeAPI !== 'undefined' && Array.isArray(YouTubeAPI?.feedChannels)
-                    ? YouTubeAPI.feedChannels
-                    : [],
+                typeof YouTubeAPI !== 'undefined' && typeof YouTubeAPI?.getArtistGroups === 'function'
+                    ? YouTubeAPI.getArtistGroups()
+                    : (Array.isArray(YouTubeAPI?.feedChannels) ? YouTubeAPI.feedChannels : []),
             followed: typeof getFollowedChannelIds === 'function' ? getFollowedChannelIds() : [],
         };
     }
