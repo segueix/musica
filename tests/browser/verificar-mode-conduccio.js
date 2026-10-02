@@ -38,6 +38,8 @@ setTimeout(() => send(1), 150);
 window.addEventListener('message', event => {
     let d = event.data; if (typeof d === 'string') { try { d = JSON.parse(d); } catch (_) { return; } }
     if (!d || d.event !== 'command') return;
+    parent.postMessage(JSON.stringify({ event: '__driveTestCommand', func: d.func, args: d.args || [] }), '*');
+    if (d.func === '__emitState') { send(Number(d.args?.[0])); return; }
     if (d.func === 'pauseVideo') send(2);
     if (d.func === 'playVideo') send(1);
     if (d.func === 'loadVideoById') { send(3); setTimeout(() => send(1), 120); }
@@ -204,6 +206,56 @@ const comprovar = (etiqueta, condicio, detall) => {
             dins.controls
         );
         comprovar('la pantalla no s’apaga (Wake Lock)', dins.wake.requests >= 1, dins.wake);
+
+        // Recuperació conservadora: una pausa normal no es toca; un buffering→pausa encallat es reprèn una sola vegada.
+        await page.evaluate(() => {
+            window.__driveCommands = [];
+            if (!window.__driveCommandListener) {
+                window.__driveCommandListener = true;
+                window.addEventListener('message', event => {
+                    let payload = event.data;
+                    if (typeof payload === 'string') {
+                        try {
+                            payload = JSON.parse(payload);
+                        } catch (_) {
+                            return;
+                        }
+                    }
+                    if (payload?.event === '__driveTestCommand') window.__driveCommands.push(payload.func);
+                });
+            }
+        });
+        const emitState = async state =>
+            page.evaluate(value => {
+                const iframe = document.querySelector('#videoPlayer iframe');
+                iframe?.contentWindow?.postMessage(
+                    JSON.stringify({ event: 'command', func: '__emitState', args: [value] }),
+                    '*'
+                );
+            }, state);
+
+        await emitState(2);
+        await page.waitForTimeout(2700);
+        let recovery = await page.evaluate(() => window.__driveCommands.filter(command => command === 'playVideo').length);
+        comprovar('una pausa normal no es reprèn automàticament', recovery === 0, recovery);
+
+        await emitState(1);
+        await page.waitForTimeout(100);
+        await emitState(3);
+        await page.waitForTimeout(80);
+        await emitState(2);
+        await page.waitForTimeout(2700);
+        recovery = await page.evaluate(() => window.__driveCommands.filter(command => command === 'playVideo').length);
+        comprovar('un buffering→pausa encallat es reprèn una vegada', recovery === 1, recovery);
+
+        await emitState(3);
+        await page.waitForTimeout(80);
+        await emitState(2);
+        await page.waitForTimeout(2700);
+        const recoveryFinal = await page.evaluate(
+            () => window.__driveCommands.filter(command => command === 'playVideo').length
+        );
+        comprovar('la recuperació no entra en bucle: màxim un intent per cançó', recoveryFinal === 1, recoveryFinal);
 
         await page.waitForTimeout(3700);
         const uiAmagada = await page.evaluate(() => {
