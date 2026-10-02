@@ -49,6 +49,12 @@ describe('fitxa d’artista: ràdios i presentació', () => {
         expect(page.songsOf([{ id: 'a' }, { id: 'b', isShort: true }, null, {}]).map(v => v.id)).toEqual(['a']);
     });
 
+    it('mostra el recompte com a cançons disponibles', () => {
+        expect(page.availableSongsLabel(1)).toBe('1 cançó disponible');
+        expect(page.availableSongsLabel(2)).toBe('2 cançons disponibles');
+        expect(page.availableSongsLabel(0)).toBe('0 cançons disponibles');
+    });
+
     it('relaciona només els discos que tenen cançons visibles a la fitxa', () => {
         const catalog = {
             channels: { UC1: 'Artista' },
