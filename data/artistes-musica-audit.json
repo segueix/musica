@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-10-02T07:23:36.197Z",
+  "generatedAt": "2026-10-02T10:31:43.146Z",
   "summary": {
-    "total": 38,
-    "musicalClar": 38,
+    "total": 36,
+    "musicalClar": 36,
     "revisar": 0,
     "possibleFalsPositiu": 0
   },
@@ -27,39 +27,6 @@
       "verdict": "musical-clar",
       "reasons": [
         "Wikidata: tipus de conjunt/entitat musical"
-      ]
-    },
-    {
-      "name": "Andreu Rifé i Oro",
-      "wikidataId": "Q930586",
-      "musicbrainzId": "7dfe5902-5fdf-423a-bbe6-c2426c80b27f",
-      "sources": [
-        "https://www.wikidata.org/wiki/Q930586",
-        "wikidata:languages-spoken-catalan",
-        "wikidata:native-language-catalan",
-        "wikidata:native-language-catalan-musician"
-      ],
-      "youtubeChannels": 0,
-      "instances": [
-        "ésser humà"
-      ],
-      "occupations": [
-        "músic",
-        "cantant",
-        "actor",
-        "compositor",
-        "cantautor"
-      ],
-      "musicOccupations": [
-        "http://www.wikidata.org/entity/Q177220",
-        "http://www.wikidata.org/entity/Q488205",
-        "http://www.wikidata.org/entity/Q639669",
-        "http://www.wikidata.org/entity/Q36834"
-      ],
-      "musicTypes": [],
-      "verdict": "musical-clar",
-      "reasons": [
-        "Wikidata: ocupació musical explícita"
       ]
     },
     {
@@ -311,12 +278,12 @@
         "ésser humà"
       ],
       "occupations": [
-        "pianista",
-        "compositor"
+        "compositor",
+        "pianista"
       ],
       "musicOccupations": [
-        "http://www.wikidata.org/entity/Q486748",
-        "http://www.wikidata.org/entity/Q36834"
+        "http://www.wikidata.org/entity/Q36834",
+        "http://www.wikidata.org/entity/Q486748"
       ],
       "musicTypes": [],
       "verdict": "musical-clar",
@@ -535,38 +502,6 @@
       "verdict": "musical-clar",
       "reasons": [
         "Wikidata: tipus de conjunt/entitat musical"
-      ]
-    },
-    {
-      "name": "Manu Guix",
-      "wikidataId": "Q6752273",
-      "musicbrainzId": "40290a50-f1ae-45a0-a219-0350b7b29695",
-      "sources": [
-        "https://www.wikidata.org/wiki/Q6752273",
-        "wikidata:native-language-catalan",
-        "wikidata:native-language-catalan-musician"
-      ],
-      "youtubeChannels": 0,
-      "instances": [
-        "ésser humà"
-      ],
-      "occupations": [
-        "director musical",
-        "compositor",
-        "productor musical",
-        "pianista",
-        "músic"
-      ],
-      "musicOccupations": [
-        "http://www.wikidata.org/entity/Q486748",
-        "http://www.wikidata.org/entity/Q639669",
-        "http://www.wikidata.org/entity/Q3922505",
-        "http://www.wikidata.org/entity/Q36834"
-      ],
-      "musicTypes": [],
-      "verdict": "musical-clar",
-      "reasons": [
-        "Wikidata: ocupació musical explícita"
       ]
     },
     {
