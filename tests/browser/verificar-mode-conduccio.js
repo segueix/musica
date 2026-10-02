@@ -111,18 +111,20 @@ const comprovar = (etiqueta, condicio, detall) => {
         await page.click('#ptPlayBtn');
         await page.waitForSelector('#videoPlayer iframe', { timeout: 20000 });
         await page.waitForSelector('#driveModeBtn', { timeout: 10000 });
-        await page.waitForSelector('#playlistModeBadge', { timeout: 10000 });
         const ubicacioBoto = await page.evaluate(() => {
             const button = document.getElementById('driveModeBtn');
-            const badge = document.getElementById('playlistModeBadge');
+            const nav = document.getElementById('ptBottomNav');
+            const items = [...(nav?.children || [])];
             return {
-                dinsBadge: Boolean(button && badge?.contains(button)),
-                label: badge?.querySelector('.playlist-mode-badge-label')?.textContent || '',
+                dinsNav: Boolean(button && nav?.contains(button)),
+                ultim: items.at(-1) === button,
+                label: button?.textContent?.trim() || '',
+                aria: button?.getAttribute('aria-label') || '',
             };
         });
         comprovar(
-            'el botó Conducció és al costat de «Mode llista · …» sota el reproductor',
-            ubicacioBoto.dinsBadge && ubicacioBoto.label.startsWith('Mode llista ·'),
+            'Estalvi és sempre l’últim botó de la barra inferior, a la dreta de «La teva música»',
+            ubicacioBoto.dinsNav && ubicacioBoto.ultim && ubicacioBoto.label === 'Estalvi' && ubicacioBoto.aria === 'Estalvi de bateria',
             ubicacioBoto
         );
         await page.evaluate(() => (window.__iframe = document.querySelector('#videoPlayer iframe')));
@@ -135,6 +137,7 @@ const comprovar = (etiqueta, condicio, detall) => {
             const exit = document.getElementById('driveModeExit');
             const exitBox = exit?.getBoundingClientRect();
             const controls = document.getElementById('driveModeControls');
+            const info = document.getElementById('driveModeInfo');
             const controlButtons = [...(controls?.querySelectorAll('.dm-control') || [])];
             const controlBoxes = controlButtons.map(button => {
                 const r = button.getBoundingClientRect();
@@ -155,7 +158,9 @@ const comprovar = (etiqueta, condicio, detall) => {
                 if (
                     el === exit ||
                     el === controls ||
+                    el === info ||
                     el.closest?.('#driveModeControls') ||
+                    el.closest?.('#driveModeInfo') ||
                     el.closest?.('#videoPlayer')
                 ) return false;
                 const style = getComputedStyle(el);
@@ -173,6 +178,10 @@ const comprovar = (etiqueta, condicio, detall) => {
                     h: Math.round(exitBox.height),
                     visible: getComputedStyle(exit).visibility,
                 },
+                info: info && {
+                    visible: !info.hidden && getComputedStyle(info).display !== 'none',
+                    text: info.textContent.replace(/\s+/g, ' ').trim(),
+                },
                 controls: {
                     count: controlButtons.length,
                     boxes: controlBoxes,
@@ -189,7 +198,15 @@ const comprovar = (etiqueta, condicio, detall) => {
                 })(),
             };
         });
-        comprovar('entra al mode conducció', dins.actiu && dins.classe, dins);
+        comprovar('entra directament al mode d’estalvi', dins.actiu && dins.classe, dins);
+        comprovar(
+            'explica que serveix per conduir o estalviar bateria',
+            dins.info?.visible &&
+                dins.info.text.includes('Estalvi de bateria') &&
+                dins.info.text.includes('conduir') &&
+                dins.info.text.includes('bateria'),
+            dins.info
+        );
         comprovar(
             'el reproductor es veu a dalt i fa 200×200',
             dins.visibleIframe === 'visible' &&
@@ -289,6 +306,12 @@ const comprovar = (etiqueta, condicio, detall) => {
             return visible(e) && visible(controls);
         });
         comprovar('un toc a la zona negra recupera temporalment els controls', uiRecuperada);
+        await page.waitForTimeout(2500);
+        const infoNoReapareix = await page.evaluate(() => {
+            const info = document.getElementById('driveModeInfo');
+            return Boolean(info?.hidden) || getComputedStyle(info).display === 'none';
+        });
+        comprovar('l’explicació no reapareix durant la mateixa obertura', infoNoReapareix);
 
         await page.click('#driveModeExit');
         await page.waitForTimeout(400);
