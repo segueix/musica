@@ -1862,8 +1862,6 @@ function buildWatchChannelInfoHtml(channel, avatar, watchUrl, video) {
             ? `<button class="btn-support-watch btn-support-watch--mobile js-support-btn" type="button" data-support-channel="${channel.id}" data-support-name="${escapeHtml(info.channelName || info.displayName)}"><svg viewBox="0 0 24 24" width="14" height="14" fill="#e74c3c" stroke="none"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> Dona suport</button>`
             : '';
 
-    const hasSupportMobile = !info.program && channelHasSupport(channel.id);
-    const channelActionRowHtml = hasSupportMobile ? `<div class="channel-action-row"></div>` : '';
 
     return `
         <div class="video-info-modern">
@@ -1871,20 +1869,18 @@ function buildWatchChannelInfoHtml(channel, avatar, watchUrl, video) {
                 <div class="channel-identity-modern channel-link" data-channel-id="${channel.id}" ${info.program ? `data-program-id="${escapeHtml(info.program.id)}"` : ''}>
                     <img src="${avatar}" alt="${escapeHtml(info.displayName)}" class="channel-avatar-small">
                     <div class="channel-text-modern">
-                        <h2 class="channel-name-modern">${escapeHtml(info.displayName)}</h2>
+                        <div class="channel-name-row">
+                            <h2 class="channel-name-modern">${escapeHtml(info.displayName)}</h2>
+                            ${followButtonHtml}
+                        </div>
                         ${info.secondaryText ? `<span class="channel-program-context">${escapeHtml(info.secondaryText)}</span>` : ''}
                         ${info.subscribersText ? `<span class="channel-subs-modern">${info.subscribersText}</span>` : ''}
                     </div>
                 </div>
                 <div class="channel-actions-inline">
-                    ${followButtonHtml}
                     ${supportBtnDesktop}
-                    <button class="btn-heart" id="likeToggle" type="button" aria-label="M'agrada" aria-pressed="false">
-                        <i data-lucide="heart"></i>
-                    </button>
                 </div>
             </div>
-            ${channelActionRowHtml}
             <div class="video-metadata-bar">
                 <div class="action-group action-group-left">
                     <a href="https://www.youtube.com/channel/${channel.id}" target="_blank" rel="noopener noreferrer" class="btn-pill-red">
@@ -1896,6 +1892,9 @@ function buildWatchChannelInfoHtml(channel, avatar, watchUrl, video) {
                     </a>
                 </div>
                 <div class="action-group">
+                    <button class="btn-heart btn-heart-song-action" id="likeToggle" type="button" aria-label="M'agrada aquesta cançó" aria-pressed="false" title="M'agrada">
+                        <i data-lucide="heart"></i>
+                    </button>
                     <a href="${watchUrl}" target="_blank" rel="noopener noreferrer" class="btn-round-icon btn-comment-youtube--mobile" title="Comenta" aria-label="Comenta">
                         <i data-lucide="message-circle"></i>
                     </a>
@@ -1917,40 +1916,15 @@ function buildWatchChannelInfoHtml(channel, avatar, watchUrl, video) {
     `;
 }
 
-// ==================== REPOSICIÓ DELS BOTONS DE CANAL EN MÒBIL ====================
-// En mòbil, SI el canal té "Dona suport", es mouen els botons "Dona suport" i
-// "Segueix" a una nova fila (.channel-action-row) sota la fila del canal:
-// "Dona suport" alineat a l'esquerra i "Segueix" alineat a la dreta.
-// Si el canal NO té suport, no es fa res: "Segueix" queda a la seva posició
-// original dins channel-actions-inline (stacked amb el cor, a la dreta).
-// En desktop els restaurem a les posicions canòniques generades al HTML.
+// ==================== POSICIÓ DEL BOTÓ DE SUPORT ====================
+// «Segueix» viu sempre al costat del nom de l'artista i «M'agrada» a la fila d'accions.
+// Aquest helper només garanteix que el botó mòbil de suport es mantingui al grup d'accions esquerre.
 function repositionSupportButton() {
     const videoInfoModern = document.querySelector('.video-info-modern');
     if (!videoInfoModern) return;
 
-    const isMobile = window.matchMedia('(max-width: 768px)').matches;
-    const followBtn = videoInfoModern.querySelector('.follow-btn-pill');
     const supportBtnMobile = videoInfoModern.querySelector('.btn-support-watch--mobile');
-    const channelActionRow = videoInfoModern.querySelector('.channel-action-row');
-    const channelActionsInline = videoInfoModern.querySelector('.channel-actions-inline');
     const actionGroupLeft = videoInfoModern.querySelector('.action-group-left');
-
-    // En mòbil amb suport: mou els dos botons a channel-action-row
-    if (isMobile && supportBtnMobile && channelActionRow) {
-        // Ordre DOM: suport primer (esquerra), segueix després (dreta)
-        channelActionRow.appendChild(supportBtnMobile);
-        if (followBtn) {
-            channelActionRow.appendChild(followBtn);
-        }
-        return;
-    }
-
-    // Altrament: restaurar posicions canòniques
-    // follow-btn-pill → channel-actions-inline (al principi)
-    if (followBtn && channelActionsInline && !channelActionsInline.contains(followBtn)) {
-        channelActionsInline.prepend(followBtn);
-    }
-    // btn-support-watch--mobile → action-group-left (just després del Canal YouTube)
     if (supportBtnMobile && actionGroupLeft && !actionGroupLeft.contains(supportBtnMobile)) {
         const canalBtn = actionGroupLeft.querySelector('.btn-pill-red');
         if (canalBtn) {
