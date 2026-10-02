@@ -12942,9 +12942,13 @@ function renderChannelVideosLegacyImpl(query = '') {
         );
     };
 
-    const filteredShorts = currentChannelShorts.filter(filterByQuery);
+    const albumPage = SegueixApp.features.artistPage;
+    const albumFilteredLongVideos = albumPage?.filterSongs
+        ? albumPage.filterSongs(currentChannelLongVideos, currentChannelId)
+        : currentChannelLongVideos;
+    const filteredShorts = albumPage?.isAlbumFilterActive?.() ? [] : currentChannelShorts.filter(filterByQuery);
     // Al perfil del canal també només cançons (no concerts complets, pel·lícules, entrevistes...).
-    const filteredLongVideos = currentChannelLongVideos.filter(isSongOrShort).filter(filterByQuery);
+    const filteredLongVideos = albumFilteredLongVideos.filter(isSongOrShort).filter(filterByQuery);
     const isMobile = window.matchMedia('(max-width: 768px)').matches;
 
     if (normalizedQuery && filteredShorts.length === 0 && filteredLongVideos.length === 0) {
