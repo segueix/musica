@@ -4,32 +4,11 @@ on:
   workflow_run:
     workflows:
       - "Validar base musical"
+      - "Cercar canals YouTube"
     types:
       - completed
-  push:
-    branches:
-      - main
-    paths:
-      - "scripts/update_music_feed.js"
-      - "scripts/generar_index_cerca.js"
-      - "data/music-exclusions.json"
-      - "data/noms-canals.json"
-      - "data/music-content-overrides.json"
-      - "data/music-channel-video-allowlist.json"
-      - "data/falsos-shorts.json"
-      - "data/hidden-videos.json"
-      - "data/musica-dates.json"
-      - "data/musica-classica.json"
-      - "scripts/lib/classificar_contingut_musical.js"
-      - "scripts/lib/revisio_manual_musical.js"
-      - "scripts/lib/subtitols_castella.js"
-      - "scripts/lib/any_original_musical.js"
-      - "scripts/lib/aprimar_feed.js"
-      - "tests/aprimar-feed.test.js"
-      - "scripts/lib/cataleg_musical.js"
-      - "scripts/test_music_content_classifier.js"
-      - ".github/workflows/actualitzar-feed-musica.yml"
   schedule:
+    # Actualització incremental diària de novetats dels canals existents.
     - cron: "37 8 * * *"
   workflow_dispatch:
 
@@ -41,11 +20,7 @@ jobs:
   actualitza:
     if: >-
       github.event_name != 'workflow_run' ||
-      (
-        github.event.workflow_run.conclusion == 'success' &&
-        github.event.workflow_run.event == 'push' &&
-        github.event.workflow_run.head_branch == 'main'
-      )
+      github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     timeout-minutes: 30
     permissions:
@@ -53,6 +28,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v5
+        with:
+          fetch-depth: 1
 
       - uses: actions/setup-node@v5
         with:
@@ -63,48 +40,84 @@ jobs:
           git fetch origin main
           git reset --hard origin/main
 
+      - name: Detecta si realment hi ha canals nous
+        id: scope
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          node - <<'NODE'
+          const fs=require('fs');
+          const artists=JSON.parse(fs.readFileSync('data/artistes-musica.json','utf8'));
+          const feed=JSON.parse(fs.readFileSync('data/feed.json','utf8'));
+          const current=new Set();
+          for(const artist of artists.artists||[]){
+            if(artist.reviewStatus==='rebutjat') continue;
+            for(const channel of artist.youtube?.channels||[]){
+              const id=String(channel?.id||'').trim();
+              if(/^UC[A-Za-z0-9_-]{22}$/.test(id)) current.add(id);
+            }
+          }
+          const existing=new Set(Object.keys(feed.channels||{}));
+          const added=[...current].filter(id=>!existing.has(id)).sort();
+          const workflowRun=process.env.EVENT_NAME==='workflow_run';
+          const runApi=!workflowRun || added.length>0;
+          fs.appendFileSync(process.env.GITHUB_OUTPUT,'run_api='+(runApi?'true':'false')+'\n');
+          fs.appendFileSync(process.env.GITHUB_OUTPUT,'target_ids='+(workflowRun?added.join(','):'')+'\n');
+          console.log(
+            workflowRun
+              ? added.length
+                ? '🆕 Canals nous: '+added.join(', ')
+                : '✅ Cap canal nou: no es gastarà quota de YouTube.'
+              : '🔄 Execució programada/manual: actualització incremental general.'
+          );
+          NODE
+
       - name: Instal·la dependències
+        if: steps.scope.outputs.run_api == 'true'
         run: npm ci
 
       - name: Valida la base d'artistes
+        if: steps.scope.outputs.run_api == 'true'
         run: npm run music:validate
 
       - name: Prova classificador musical
+        if: steps.scope.outputs.run_api == 'true'
         run: node scripts/test_music_content_classifier.js
 
       - name: Prova catàleg, any original i revisions manuals
+        if: steps.scope.outputs.run_api == 'true'
         run: npx vitest run tests/cataleg-musical.test.js tests/any-original.test.js tests/music-content-overrides.test.js tests/channel-video-allowlist.test.js tests/subtitols-castella.test.js tests/aprimar-feed.test.js tests/canal-tema.test.js tests/revisio-idiomes.test.js
 
-      - name: Genera feed des de la base musical
+      - name: Genera feed
+        if: steps.scope.outputs.run_api == 'true'
         env:
           YOUTUBE_API_KEY_SERVER: ${{ secrets.YOUTUBE_API_KEY_SERVER }}
           MUSIC_VIDEOS_PER_CHANNEL: "50"
-          # «audit»: el Tema no mana sobre el canal oficial, només ho anota a data/music-topic-review.json; «apply»: mana.
           MUSIC_TOPIC_GOVERNANCE: "apply"
+          # En workflow_run conté NOMÉS els canals que encara no eren al feed.
+          # En schedule/manual queda buit i fa l'actualització incremental general.
+          MUSIC_TARGET_CHANNELS: ${{ steps.scope.outputs.target_ids }}
         run: node scripts/update_music_feed.js
 
       - name: Valida cobertura
+        if: steps.scope.outputs.run_api == 'true'
         run: |
           node - <<'NODE'
           const fs=require('fs');
           const a=JSON.parse(fs.readFileSync('data/music-feed-audit.json','utf8'));
           if(!a.feedChannelCount) throw new Error('El feed no conté cap canal');
-          if(a.unresolvedChannelIds.length) {
-            console.warn('Canals no resolts:',a.unresolvedChannelIds);
-          }
           console.log(`Cobertura: ${a.feedChannelCount}/${a.indexedChannelCount} canals; ${a.feedVideoCount} vídeos`);
           NODE
 
       - name: Regenera índex de cerca després del feed
+        if: steps.scope.outputs.run_api == 'true'
         run: npm run search:index:hybrid:rebuild
 
       - name: Publica feed i índex en un sol commit
+        if: steps.scope.outputs.run_api == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-
-          # El checkout és net i aquests scripts només generen dades derivades.
-          # -A és necessari perquè el generador de l'índex pot eliminar fragments orfes.
           git add -A data js/channels-ca.json
 
           if git diff --cached --quiet; then
