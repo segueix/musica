@@ -660,9 +660,15 @@ async function main(){
   }
   if(withSpanishSubtitles) console.log(`🙈 ${withSpanishSubtitles} vídeos amb subtítols en castellà descartats`);
   // Cançons que entren al feed per primera vegada: a la llista de revisió d'idioma (amb la descripció sencera).
-  const languageReview=revisioIdiomes.updatePending(readJsonSafe(LANGUAGE_REVIEW_FILE,revisioIdiomes.emptyState()),videos,{hiddenIds});
+  // Les que tenen al títol una marca segura d'una altra llengua (ñ, ¿, á, -ción…) es descarten soles, però queden al
+  // document («descartades») per si ha estat un error. No es miren els noms dels artistes (col·laboracions).
+  const artistNamesForReview=unique((db.artists||[]).filter(a=>a.reviewStatus!=='rebutjat').flatMap(a=>[a.name,a.displayName,...(a.aliases||[])]));
+  const languageReview=revisioIdiomes.updatePending(readJsonSafe(LANGUAGE_REVIEW_FILE,revisioIdiomes.emptyState()),videos,{hiddenIds,namesOf:()=>artistNamesForReview});
   fs.writeFileSync(LANGUAGE_REVIEW_FILE,revisioIdiomes.serializeState(languageReview.state));
-  console.log(`🗣️ Revisió d'idioma: ${languageReview.added} cançons noves, ${languageReview.state.pendents.length} pendents`);
+  if(languageReview.discardedIds.size){
+    for(let i=videos.length-1;i>=0;i--) if(languageReview.discardedIds.has(String(videos[i].id))) videos.splice(i,1);
+  }
+  console.log(`🗣️ Revisió d'idioma: ${languageReview.added} cançons noves pendents, ${languageReview.discarded} descartades per l'idioma del títol (${languageReview.state.pendents.length} pendents, ${languageReview.state.descartades.length} descartades)`);
   videos.sort((a,b)=>(Date.parse(b.publishedAt||'')||0)-(Date.parse(a.publishedAt||'')||0));
   review.sort((a,b)=>(Date.parse(b.publishedAt||'')||0)-(Date.parse(a.publishedAt||'')||0));
   channelIndex.sort((a,b)=>a.name.localeCompare(b.name,'ca',{sensitivity:'base'}));

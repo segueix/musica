@@ -8,6 +8,7 @@ const {
     seedReviewed,
     applyReview,
     serializeState,
+    detectNonCatalan,
 } = require('../scripts/lib/revisio_idiomes.js');
 
 const song = (id, extra = {}) => ({
@@ -77,5 +78,55 @@ describe("revisió d'idioma de les cançons noves", () => {
         });
         expect(JSON.parse(serializeState(state))).toEqual(state);
         expect(JSON.parse(serializeState(emptyState()))).toEqual(emptyState());
+    });
+
+    it('descarta sol el títol amb marques que el català no fa servir', () => {
+        expect(detectNonCatalan('La Revolución')).toMatch(/castellà/);
+        expect(detectNonCatalan('Son tus ojos dos puñales - Anna Ferrer', ['Anna Ferrer'])).toMatch(/ñ/);
+        expect(detectNonCatalan('¡Bomba a Bomba!')).toMatch(/¿/);
+        expect(detectNonCatalan('Tres lágrimas')).toMatch(/á/);
+        expect(detectNonCatalan('Grândola, vila morena')).toMatch(/portuguès/);
+        expect(detectNonCatalan('Doraemon No Uta (ドラえもんのうた)')).toBe('');
+        expect(detectNonCatalan('ドラえもんのうた')).toMatch(/alfabet/);
+        // Català (també amb accents oberts i tancats, ela geminada i ce trencada)
+        for (const title of ['Què és el que vols', 'Sóc de la terra', 'La cançó del lladre', 'Col·lecció', 'Així']) {
+            expect(detectNonCatalan(title), title).toBe('');
+        }
+        // No es miren els artistes, les col·laboracions ni el context entre parèntesis
+        expect(detectNonCatalan('PAULA MONTALBÁN - 3. ERRORS', ['Paula Montalbán'])).toBe('');
+        expect(detectNonCatalan('Tot és més fàcil - Sara Roy ft.Miki Núñez (A)MAR', ['Sara Roy'])).toBe('');
+        expect(detectNonCatalan("Txarango - 17 Com una lluna a l'aigua_feat. Iñaki Marquiegui", ['Txarango'])).toBe('');
+        expect(detectNonCatalan("Una Lluna A L'Aigua (Operación Triunfo 2018)")).toBe('');
+        expect(detectNonCatalan('EL CAMÍ - Lildami, Miki Núñez', ['Lildami', 'Miki Núñez'])).toBe('');
+    });
+
+    it('les descartades surten del feed però queden al document per si cal recuperar-les', () => {
+        const videos = [song('ca', { title: 'Bon dia' }), song('es', { title: 'La Revolución' })];
+        const { state, added, discarded, discardedIds } = updatePending(emptyState(), videos);
+        expect(added).toBe(1);
+        expect(discarded).toBe(1);
+        expect([...discardedIds]).toEqual(['es']);
+        expect(state.descartades[0]).toMatchObject({ id: 'es', motiu: '-ción (castellà)' });
+        // A la generació següent la descartada ja no és al feed, però continua al document
+        const next = updatePending(state, [videos[0]]);
+        expect(next.state.descartades.map(item => item.id)).toEqual(['es']);
+        expect(next.discarded).toBe(0);
+    });
+
+    it('en revisar, les descartades s’amaguen menys les recuperades', () => {
+        const { state } = updatePending(emptyState(), [
+            song('ca', { title: 'Bon dia' }),
+            song('es', { title: 'La Revolución' }),
+            song('viñarock', { title: 'Al Viñarock 2014' }),
+        ]);
+        const result = applyReview(state, { videoIds: [] }, [], { rescueIds: ['viñarock'] });
+        expect(result.unknown).toEqual([]);
+        expect(result.hidden.videoIds).toEqual(['es']);
+        expect(result.rescuedCount).toBe(1);
+        expect(result.state.descartades).toEqual([]);
+        expect(result.state.revisades).toEqual(['ca', 'es', 'viñarock']);
+        // La recuperada torna al feed i ja no es descarta
+        expect(updatePending(result.state, [song('viñarock', { title: 'Al Viñarock 2014' })]).discarded).toBe(0);
+        expect(applyReview(state, { videoIds: [] }, [], { rescueIds: ['ca'] }).unknown).toEqual(['ca']);
     });
 });
