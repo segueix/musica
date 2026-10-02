@@ -179,10 +179,31 @@ function collectIndexedChannels(db){
 
 async function main(){
   const db=JSON.parse(fs.readFileSync(ARTISTS_FILE,'utf8'));
-  const indexed=collectIndexedChannels(db);
+  const allIndexed=collectIndexedChannels(db);
+  const previousFeed=readJsonSafe(FEED_FILE,{channels:{},videos:[]});
+  const requestedTargets=new Set(
+    String(process.env.MUSIC_TARGET_CHANNELS || '')
+      .split(',')
+      .map(value=>value.trim())
+      .filter(Boolean)
+  );
+  const targetMode=requestedTargets.size>0;
+  const indexed=targetMode
+    ? new Map([...allIndexed].filter(([id])=>requestedTargets.has(id)))
+    : allIndexed;
   const channelNameOverrides=loadNameOverrides(CHANNEL_NAMES_FILE);
   const ids=[...indexed.keys()];
-  console.log('🎵 Canals indexats:',ids.length);
+
+  if(targetMode && !ids.length){
+    console.log('✅ Cap canal nou vàlid pendent; no es fa cap consulta a YouTube.');
+    return;
+  }
+
+  console.log(
+    targetMode
+      ? '🆕 Canals nous a consultar: '+ids.length+' / '+allIndexed.size
+      : '🎵 Canals indexats: '+ids.length
+  );
 
   const channelDetails=new Map();
   for(const batch of chunks(ids,50)){
@@ -203,9 +224,13 @@ async function main(){
   const channelVideoAllowlist=loadChannelVideoAllowlist(CHANNEL_VIDEO_ALLOWLIST_FILE);
   if(channelVideoAllowlist.size) console.log('🎯 Canals amb llista blanca de vídeos:',channelVideoAllowlist.size);
 
-  // Catàleg incremental: el feed anterior és la base. Es conserva (i es torna a verificar) el repertori que ja
-  // no cap a la finestra de pujades recents; només un vídeo confirmat com a privat/eliminat se'n va.
-  const previousFeed=readJsonSafe(FEED_FILE,{channels:{},videos:[]});
+  // Catàleg incremental: el feed anterior és la base. En mode de canals nous, tot el que no és objectiu
+  // es conserva literalment i no provoca cap consulta a YouTube.
+  const previousChannelIndex=readJsonSafe(CHANNELS_FILE,{channels:[]}).channels||[];
+  const previousReview=readJsonSafe(REVIEW_FILE,{videos:[]}).videos||[];
+  const previousTopicReview=readJsonSafe(TOPIC_REVIEW_FILE,{videos:[]}).videos||[];
+  const previousAudit=readJsonSafe(AUDIT_FILE,{});
+  const targetIds=new Set(ids);
   const previousById=new Map((previousFeed.videos||[]).map(v=>[v.id,v]));
   const previousByChannel=new Map();
   for(const v of previousFeed.videos||[]){
@@ -344,8 +369,23 @@ async function main(){
     return unique([...meta.artistNames,...meta.aliases,raw,cleanChannelDisplayName(raw)]);
   };
   // Discografia de cada artista (claus de cançó) a partir dels seus Tema.
-  const topicCatalog={};
+  const topicCatalog=targetMode ? {...previousTopicCatalog} : {};
   const topicKeysByArtist=new Map();
+
+  // En mode de canals nous, reutilitzem la discografia Tema ja guardada dels canals antics.
+  // Això permet governar un canal oficial nou sense tornar a consultar els Topic existents.
+  if(targetMode){
+    for(const [topicId,entry] of Object.entries(previousTopicCatalog)){
+      const meta=allIndexed.get(topicId);
+      if(!meta || !(entry?.tracks||[]).length) continue;
+      const names=unique([...meta.artistNames,...meta.aliases,entry.name||'']);
+      for(const artist of meta.artistNames){
+        const keys=topicKeysByArtist.get(artist)||new Set();
+        for(const [,title] of entry.tracks||[]) for(const key of tema.topicKeys(title,names)) keys.add(key);
+        topicKeysByArtist.set(artist,keys);
+      }
+    }
+  }
   for(const id of topicIds){
     const tracks=topicTracksByChannel.get(id) || (previousTopicCatalog[id]?.tracks||[]).map(([videoId,title])=>({id:videoId,title}));
     if(!tracks.length) continue;
@@ -440,19 +480,35 @@ async function main(){
   }
 
   const manualDates=fs.existsSync(ORIGINAL_DATES_FILE)?parseManualDates(JSON.parse(fs.readFileSync(ORIGINAL_DATES_FILE,'utf8'))):new Map();
-  const channels={};
-  const channelIndex=[];
-  const videos=[];
-  const review=[];
+  const channels=targetMode ? {...(previousFeed.channels||{})} : {};
+  const channelIndex=targetMode
+    ? previousChannelIndex.filter(channel=>!targetIds.has(String(channel?.id||'')))
+    : [];
+  const videos=targetMode
+    ? (previousFeed.videos||[]).filter(video=>!targetIds.has(String(video?.channelId||'')))
+    : [];
+  const review=targetMode
+    ? previousReview.filter(video=>!targetIds.has(String(video?.channelId||'')))
+    : [];
   const rejectedSamples=[];
   const channelsWithoutVideos=[];
   const channelsWithoutAcceptedMusic=[];
   const typeCounts={song:0,live_song:0,album:0,other:0,review:0};
   const governedCounts={};
-  const topicReview=[];
-  let publicVideoCount=0;
+  const topicReview=targetMode
+    ? previousTopicReview.filter(video=>!targetIds.has(String(video?.channelId||'')))
+    : [];
+  let publicVideoCount=videos.length;
   let acceptedMusicCount=0;
   let categoryEligibleVideoCount=0;
+
+  if(targetMode){
+    for(const video of videos){
+      typeCounts[video.contentType]=(typeCounts[video.contentType]||0)+1;
+      if(['song','live_song','album'].includes(video.contentType)) acceptedMusicCount++;
+      if(video.contentType==='song' || video.contentType==='live_song') categoryEligibleVideoCount++;
+    }
+  }
 
   for(const id of ids){
     const meta=indexed.get(id);
@@ -675,8 +731,21 @@ async function main(){
   const shortVideoCount=videos.filter(v=>v.isShort===true).length;
   const generatedAt=new Date().toISOString();
 
-  // Aprimat (descripcions curtes, sense camps de depuració) i un vídeo per línia: el client se'l baixa sencer.
-  // Abans s'han fet servir les descripcions senceres (any original i subtítols en castellà).
+  const mergedTopicCoverage=targetMode
+    ? [
+        ...(previousAudit.topicCoverage||[]).filter(entry=>!targetIds.has(String(entry?.id||''))),
+        ...topicCoverage
+      ]
+    : topicCoverage;
+  const mergedTopicStats=targetMode
+    ? [
+        ...(previousAudit.topicChannels||[]).filter(entry=>!targetIds.has(String(entry?.id||''))),
+        ...topicStats
+      ]
+    : topicStats;
+  const allTopicChannelCount=[...allIndexed.values()].filter(meta=>meta.types.includes('topic')).length;
+
+  // Aprimat (sense descripció pública dels vídeos) i un vídeo per línia.
   fs.writeFileSync(FEED_FILE,serializeFeed(slimFeed({generatedAt,channels,videos})));
   fs.writeFileSync(CHANNELS_FILE,JSON.stringify({updatedAt:generatedAt,channels:channelIndex},null,2)+'\n');
   fs.writeFileSync(REVIEW_FILE,JSON.stringify({generatedAt,count:review.length,videos:review},null,2)+'\n');
@@ -709,15 +778,15 @@ async function main(){
     unverifiedVideoCount:unverified.size,
     deepPagesFetched,
     deepChannelCount:deepChannels.size,
-    topicChannelCount:topicIds.size,
-    governedChannelCount:governedKeysByChannel.size,
-    topicCoverage:topicCoverage.sort((a,b)=>b.coverage-a.coverage||a.name.localeCompare(b.name,'ca')),
+    topicChannelCount:allTopicChannelCount,
+    governedChannelCount:mergedTopicCoverage.filter(entry=>entry?.governs).length,
+    topicCoverage:mergedTopicCoverage.sort((a,b)=>b.coverage-a.coverage||String(a.name||'').localeCompare(String(b.name||''),'ca')),
     topicGovernance:TOPIC_GOVERNANCE,
     governedReclassified:governedCounts,
     topicHiddenCount:topicHidden,
-    topicChannels:topicStats.sort((a,b)=>a.name.localeCompare(b.name,'ca')),
-    indexedChannelCount:ids.length,
-    resolvedChannelCount:channelDetails.size,
+    topicChannels:mergedTopicStats.sort((a,b)=>String(a.name||'').localeCompare(String(b.name||''),'ca')),
+    indexedChannelCount:allIndexed.size,
+    resolvedChannelCount:Object.keys(channels).length,
     feedChannelCount:Object.keys(channels).length,
     rawPublicVideoCount:publicVideoCount,
     feedVideoCount:videos.length,
@@ -730,10 +799,16 @@ async function main(){
     channelsWithoutUploads,
     channelsWithoutVideos,
     channelsWithoutAcceptedMusic,
-    allIndexedChannelsVisible:unresolved.length===0 && Object.keys(channels).length===ids.length
+    allIndexedChannelsVisible:Object.keys(channels).length===allIndexed.size
   },null,2)+'\n');
 
-  console.log('✅ Feed musical:',Object.keys(channels).length,'canals,',videos.length,'vídeos públics conservats; ',categoryEligibleVideoCount,'cançons/directes elegibles per categories.');
+  console.log(
+    targetMode ? '✅ Canals nous incorporats:' : '✅ Feed musical:',
+    targetMode ? ids.length : Object.keys(channels).length,
+    targetMode ? 'nous; feed total' : 'canals,',
+    Object.keys(channels).length,'canals,',videos.length,'vídeos públics conservats; ',
+    categoryEligibleVideoCount,'cançons/directes elegibles per categories.'
+  );
   console.log('📱 Shorts detectats:',shortVideoCount);
   console.log('🧪 Revisió manual:',review.length,'vídeos ambigus.');
   console.log('📦 Tipus:',typeCounts);
