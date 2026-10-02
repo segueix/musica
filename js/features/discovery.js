@@ -36,13 +36,13 @@
 
     // Mateixes etiquetes que SegueixMusicCategories.CATEGORY_GROUPS (es fa servir aquell si és carregat).
     const FALLBACK_STYLES = Object.freeze([
+        'Urban',
         'Pop',
         'Rock',
+        "Cançó d'autor",
         'Indie',
-        'Urbana',
         'Rap / Hip-hop',
         'Folk i arrel',
-        "Cançó d'autor",
         'Electrònica',
         'Ska / Reggae',
         'Rumba / Mestissatge',
@@ -54,13 +54,13 @@
     ]);
     // Els més accessibles, en aquest ordre; la resta queden darrere «Tots els estils».
     const PRIMARY_STYLES = Object.freeze([
+        'Urban',
         'Pop',
         'Rock',
+        "Cançó d'autor",
         'Indie',
-        'Urbana',
         'Rap / Hip-hop',
         'Folk i arrel',
-        "Cançó d'autor",
         'Electrònica',
     ]);
 

@@ -30,7 +30,7 @@ const channels = [
     { id: 'A', name: 'Artista A', avatar: 'a.jpg', categories: ['Indie', 'Pop'] },
     { id: 'B', name: 'Artista B', avatar: 'b.jpg', categories: ['Indie'] },
     { id: 'C', name: 'Artista C', avatar: 'c.jpg', categories: ['Rock'] },
-    { id: 'D', name: 'Artista D', avatar: 'd.jpg', categories: ['Urbana'] },
+    { id: 'D', name: 'Artista D', avatar: 'd.jpg', categories: ['Urban'] },
     { id: 'E', name: 'Artista E', avatar: 'e.jpg', categories: ['Indie'] },
     { id: 'F', name: 'Artista F', avatar: 'f.jpg', categories: ['Rock'] },
     { id: 'G', name: 'Artista G', avatar: 'g.jpg', categories: ['Mitjans'] },
@@ -185,7 +185,7 @@ describe('ordenació de la cua segons el mode', () => {
             history: [song('A'), song('B'), song('A'), song('B')],
             liked: [song('C')],
         });
-        // E és Indie (estil escoltat); D és Urbana (no); F és Rock (m'agrada de C)
+        // E és Indie (estil escoltat); D és Urban (no); F és Rock (m'agrada de C)
         const pool = [song('D'), song('E')];
         const plan = discovery.orderForMode(pool, profile, 'surprise', { rng: seeded(), jitterStrength: 0 });
         expect(ids(plan.ordered)).toEqual(['E', 'D']);
@@ -355,7 +355,7 @@ describe('«Tria el teu so»', () => {
         const videos = channels.map(channel => song(channel.id, 4));
         const styles = discovery.summarizeStyles({ videos, channels });
         const labels = styles.map(style => style.label);
-        expect(labels).toEqual(['Pop', 'Rock', 'Indie', 'Urbana']);
+        expect(labels).toEqual(['Urban', 'Pop', 'Rock', 'Indie']);
         const indie = styles.find(style => style.label === 'Indie');
         // A, B i E són Indie: un artista compta a cada estil que té (A és també Pop)
         expect(indie.artists).toBe(3);

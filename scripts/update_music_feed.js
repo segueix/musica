@@ -35,13 +35,13 @@ const VIDEOS_PER_CHANNEL = Math.max(1, Math.min(50, Number.parseInt(process.env.
 const API = 'https://www.googleapis.com/youtube/v3';
 
 const GROUPS = [
+  { label:'Urban', genres:['Urbana'] },
   { label:'Pop', genres:['Pop'] },
   { label:'Rock', genres:['Rock'] },
+  { label:"Cançó d'autor", genres:["Cançó d'autor"] },
   { label:'Indie', genres:['Indie / Alternativa'] },
-  { label:'Urbana', genres:['Urbana'] },
   { label:'Rap / Hip-hop', genres:['Rap / Hip-hop'] },
   { label:'Folk i arrel', genres:['Folk i arrel'] },
-  { label:"Cançó d'autor", genres:["Cançó d'autor"] },
   { label:'Electrònica', genres:['Electrònica'] },
   { label:'Ska / Reggae', genres:['Ska / Reggae'] },
   { label:'Rumba / Mestissatge', genres:['Rumba / Mestissatge'] },

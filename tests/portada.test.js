@@ -24,10 +24,10 @@ function load() {
 const { discovery, portada } = load();
 
 const STYLES = [
+    'Urban',
     'Pop',
     'Rock',
     'Indie',
-    'Urbana',
     'Rap / Hip-hop',
     'Folk i arrel',
     "Cançó d'autor",
@@ -144,7 +144,7 @@ describe('model de la portada sense historial (primera visita)', () => {
 
     it('els estils són els reals del projecte, amb els accessibles primer', () => {
         const labels = model.styles.map(style => style.label);
-        expect(labels.slice(0, 3)).toEqual(['Pop', 'Rock', 'Indie']);
+        expect(labels.slice(0, 4)).toEqual(['Urban', 'Pop', 'Rock', "Cançó d'autor"]);
         expect(labels).toContain('Jazz / Blues');
         expect(model.styles.find(s => s.label === 'Jazz / Blues').primary).toBe(false);
     });

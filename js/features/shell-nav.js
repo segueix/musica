@@ -84,10 +84,65 @@
         },
     };
 
+    // Obre un estil (els xips de la barra d'estils de la portada): si no som a Inici, primer s'hi torna.
+    function openStyle(label) {
+        const doc = window.document;
+        const findChip = () =>
+            Array.from(doc.querySelectorAll('.chips-bar .chip[data-cat]')).find(chip => chip.dataset.cat === label);
+        const go = () => {
+            const chip = findChip();
+            if (!chip) return false;
+            chip.click();
+            window.scrollTo?.({ top: 0 });
+            return true;
+        };
+        if (visible('homePage') && go()) return true;
+        ACTIONS.home();
+        window.setTimeout(go, 60);
+        return true;
+    }
+
+    // Enllaços del peu amb URL pròpia (?estil=Pop, ?seccio=artistes): també funcionen en obrir-los en una pestanya nova.
+    function openFromUrl() {
+        let params;
+        try {
+            params = new window.URLSearchParams(window.location.search || '');
+        } catch (error) {
+            return;
+        }
+        const style = params.get('estil');
+        const section = params.get('seccio');
+        if (!style && section !== 'artistes') return;
+        params.delete('estil');
+        params.delete('seccio');
+        const query = params.toString();
+        window.history?.replaceState?.(
+            window.history.state,
+            '',
+            `${window.location.pathname}${query ? `?${query}` : ''}${window.location.hash || ''}`
+        );
+        // Els xips i la navegació es pinten quan el feed ja és a punt: s'espera (fins a 10 s)
+        let tries = 0;
+        const timer = window.setInterval(() => {
+            tries += 1;
+            const ready = window.document.querySelector('.chips-bar .chip[data-cat]');
+            if (!ready && tries < 50) return;
+            window.clearInterval(timer);
+            // Un moment més: l'app acaba de restaurar la vista inicial just després de pintar els xips
+            window.setTimeout(() => (section === 'artistes' ? ACTIONS.artists() : openStyle(style)), 400);
+        }, 200);
+    }
+
     function onClick(event) {
         // Botó «Tanca la cerca» de la cerca mòbil: reutilitza el tancament existent (l'overlay)
         if (event.target.closest?.('.pt-search-close')) {
             window.document.querySelector('.mobile-search-overlay')?.click();
+            return;
+        }
+        const styleLink = event.target.closest?.('[data-pt-style]');
+        if (styleLink) {
+            event.preventDefault();
+            openStyle(styleLink.dataset.ptStyle);
             return;
         }
         const item = event.target.closest?.('[data-pt-nav]');
@@ -158,6 +213,7 @@
         }
         window.addEventListener('popstate', scheduleSync);
         sync();
+        openFromUrl();
     }
 
     if (window.document?.readyState === 'loading') {
@@ -166,5 +222,5 @@
         init();
     }
 
-    app.features.shellNav = { toast, sync, currentSection, ACTIONS };
+    app.features.shellNav = { toast, sync, currentSection, openStyle, ACTIONS };
 })(window);

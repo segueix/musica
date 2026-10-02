@@ -28,7 +28,15 @@ describe('botons unificats i configuració', () => {
         const block = css.slice(start);
         for (const selector of ['.mq-shuffle', '.mq-share', '.mq-save-list', '.btn-round-icon', '.btn-heart'])
             expect(block).toContain(selector);
-        expect(block).toContain('border-radius: var(--pt-radius-sm)');
+        expect(block).toContain('border-radius: 50%');
+        expect(block).toContain('border-radius: var(--pt-radius-pill)');
         expect(block).toContain('background: var(--pt-surface-2)');
+    });
+
+    it('afegir un estil a la ràdio no fa servir el «+» (que és per afegir cançons a una llista)', () => {
+        const queue = read('js/features/music-queue.js');
+        const button = queue.match(/<button type="button" class="mq-add-style"[^\n]*<\/button>/)[0];
+        expect(button).toContain('${ICONS.blend}');
+        expect(button).not.toContain('${ICONS.plus}');
     });
 });

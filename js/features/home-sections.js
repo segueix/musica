@@ -8,17 +8,17 @@
     const MIN_ROW_ITEMS = 4;
     const TOP_STYLES = 3;
     // Estils per defecte quan encara no hi ha prou historial. 'Pop / Rock' agrupa les dues categories.
-    const DEFAULT_STYLES = ['Urbana', 'Pop / Rock', "Cançó d'autor"];
+    const DEFAULT_STYLES = ['Urban', 'Pop / Rock', "Cançó d'autor"];
     const COMBINED_STYLES = { 'Pop / Rock': ['Pop', 'Rock'] };
     const POPULAR_WINDOW_DAYS = 21;
     const STYLE_ROWS = [
+        'Urban',
         'Pop',
         'Rock',
+        "Cançó d'autor",
         'Indie',
-        'Urbana',
         'Rap / Hip-hop',
         'Folk i arrel',
-        "Cançó d'autor",
         'Electrònica',
         'Ska / Reggae',
         'Rumba / Mestissatge',

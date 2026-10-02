@@ -162,13 +162,13 @@
     <section class="chips-bar home-categories" aria-label="Estils musicals">
         <button class="chip is-active" data-cat="Novetats" type="button">Novetats</button>
         <button class="chip" data-cat="Descobreix" type="button">Descobreix</button>
+        <button class="chip" data-cat="Urban" type="button">Urban</button>
         <button class="chip" data-cat="Pop" type="button">Pop</button>
         <button class="chip" data-cat="Rock" type="button">Rock</button>
+        <button class="chip" data-cat="Cançó d'autor" type="button">Cançó d'autor</button>
         <button class="chip" data-cat="Indie" type="button">Indie</button>
-        <button class="chip" data-cat="Urbana" type="button">Urbana</button>
         <button class="chip" data-cat="Rap / Hip-hop" type="button">Rap / Hip-hop</button>
         <button class="chip" data-cat="Folk i arrel" type="button">Folk i arrel</button>
-        <button class="chip" data-cat="Cançó d'autor" type="button">Cançó d'autor</button>
         <button class="chip" data-cat="Electrònica" type="button">Electrònica</button>
         <button class="chip" data-cat="Ska / Reggae" type="button">Ska / Reggae</button>
         <button class="chip" data-cat="Rumba / Mestissatge" type="button">Rumba / Mestissatge</button>
@@ -381,13 +381,13 @@
         <h1 class="page-title">Historial</h1>
         <section class="chips-bar history-filters" id="historyFilters" aria-label="Filtres d'historial">
             <button class="chip is-active" data-history-cat="Tot" type="button" aria-pressed="true">Tot</button>
+            <button class="chip" data-history-cat="Urban" type="button" aria-pressed="false">Urban</button>
             <button class="chip" data-history-cat="Pop" type="button" aria-pressed="false">Pop</button>
             <button class="chip" data-history-cat="Rock" type="button" aria-pressed="false">Rock</button>
+            <button class="chip" data-history-cat="Cançó d'autor" type="button" aria-pressed="false">Cançó d'autor</button>
             <button class="chip" data-history-cat="Indie" type="button" aria-pressed="false">Indie</button>
-            <button class="chip" data-history-cat="Urbana" type="button" aria-pressed="false">Urbana</button>
             <button class="chip" data-history-cat="Rap / Hip-hop" type="button" aria-pressed="false">Rap / Hip-hop</button>
             <button class="chip" data-history-cat="Folk i arrel" type="button" aria-pressed="false">Folk i arrel</button>
-            <button class="chip" data-history-cat="Cançó d'autor" type="button" aria-pressed="false">Cançó d'autor</button>
             <button class="chip" data-history-cat="Electrònica" type="button" aria-pressed="false">Electrònica</button>
             <button class="chip" data-history-cat="Shorts" type="button" aria-pressed="false">Shorts</button>
             <button class="chip" data-history-filter="liked" type="button" aria-pressed="false" aria-label="Només m'agrada"><i data-lucide="heart"></i></button>
@@ -855,15 +855,14 @@
     <footer class="site-credit-footer" id="siteCreditFooter">
         <div class="project-credit project-credit--page-end">
             <nav class="seo-footer-nav" aria-label="Explora Segueix Música">
-            <a href="/creadors">Artistes</a>
-            <a href="/novetats">Novetats</a>
-            <a href="/pop">Pop</a>
-            <a href="/rock">Rock</a>
-            <a href="/indie">Indie</a>
-            <a href="/urbana">Urbana</a>
-            <a href="/folk-arrel">Folk i arrel</a>
-            <a href="/musica-tv">Música TV</a>
-        </nav>
+                <a href="./?seccio=artistes" data-pt-nav="artists">Artistes</a>
+                <a href="./?estil=Urban" data-pt-style="Urban">Urban</a>
+                <a href="./?estil=Pop" data-pt-style="Pop">Pop</a>
+                <a href="./?estil=Rock" data-pt-style="Rock">Rock</a>
+                <a href="./?estil=Can%C3%A7%C3%B3%20d%27autor" data-pt-style="Cançó d'autor">Cançó d'autor</a>
+                <a href="./?estil=Indie" data-pt-style="Indie">Indie</a>
+                <a href="./?estil=Folk%20i%20arrel" data-pt-style="Folk i arrel">Folk i arrel</a>
+            </nav>
             <button id="cookiePreferencesBtn" class="cookie-preferences-btn hidden" type="button" aria-label="Configura les cookies">
                 Cookies
             </button>
