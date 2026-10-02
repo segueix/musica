@@ -15,7 +15,9 @@ on:
       - "tests/music-genres.test.js"
       - "tests/arxiu-musical.test.js"
       - "scripts/lib/arxiu_musical.js"
+      - "scripts/lib/albums_musica.js"
       - "scripts/archivar_feed_musical.js"
+      - "tests/albums-musica.test.js"
       - "scripts/update_music_history_views.js"
       - "scripts/update_music_feed.js"
       - ".github/workflows/actualitzar-feed-musica.yml"
@@ -34,7 +36,9 @@ on:
       - "tests/music-genres.test.js"
       - "tests/arxiu-musical.test.js"
       - "scripts/lib/arxiu_musical.js"
+      - "scripts/lib/albums_musica.js"
       - "scripts/archivar_feed_musical.js"
+      - "tests/albums-musica.test.js"
       - "scripts/update_music_history_views.js"
       - ".github/workflows/validar-musica.yml"
   workflow_dispatch:
@@ -71,6 +75,9 @@ jobs:
 
       - name: Prova feed calent i historial
         run: npx vitest run tests/arxiu-musical.test.js
+
+      - name: Prova metadades de discos sense API
+        run: npx vitest run tests/albums-musica.test.js
 
       - name: Valida la base d'artistes
         run: node scripts/validar_artistes_musica.js
