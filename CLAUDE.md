@@ -305,6 +305,16 @@ const likes = ctx2.SegueixApp.features.likes;
 - **Ràdio de l'estil:** `musicQueue.startStyleRadio(estils)`: la ràdio d'estil de sempre (estils barrejats a parts iguals, antiguitat, un artista per vegada, descans, mode) amb **els estils de l'artista** (principal primer, màxim 3, sense «Altres estils» ni vistes generals: `artistStyles()`). Comença amb la cançó que tria el motor entre les d'aquells estils.
 - Detall i trampes: `docs/PROBLEMES_I_SOLUCIONS.md` (2026-10-01, «Fitxa d'artista»). Proves: `tests/artist-page.test.js` i `tests/music-queue-selection.test.js`.
 
+### Revisió d'idioma de les cançons noves (2026-10-02)
+
+**Prompt per a l'agent — quan et demanin «revisa les cançons noves», «revisa l'idioma» o similar:**
+
+1. Cada generació del feed (`update_music_feed.js`, workflow diari) afegeix a `data/revisio-idiomes.json` les cançons que hi entren **per primera vegada** («pendents»: id, artista, títol, extracte de la descripció o el disc, data). Les ja revisades (`revisades`) i les amagades no hi tornen. Mira-les amb `node scripts/aplicar_revisio_idiomes.js --llista` (fes `git pull` abans: el bot hi escriu cada dia).
+2. Decideix l'idioma de **cada** cançó: títol, disc, artista i el que sàpigues de la cançó. Criteri de l'usuari (2026-10-02): **només es queda el català** (i l'occità/aranès, les instrumentals i els títols que són noms propis). S'amaga el castellà, el basc, l'anglès, el portuguès, el gallec, l'italià… Si dubtes, no l'amaguis: posa-la a la llista de dubtoses.
+3. **Ensenya a l'usuari** les que amagaries (agrupades per artista, amb l'idioma) i les dubtoses, i **espera el seu vistiplau**. No apliquis res abans.
+4. Amb el vistiplau: `node scripts/aplicar_revisio_idiomes.js --amaga=ID1,ID2,… --dry-run` i després sense `--dry-run`. Amaga les triades (`data/hidden-videos.json`: el client les filtra i el generador ja no les posa al feed; **no toquis `feed.json`**) i passa **totes** les pendents a revisades: la llista queda buida fins que n'entrin de noves.
+5. Actualitza `docs/ARTISTES_CASTELLA.md` (artistes nous, recomptes, «Última revisió»). Si un artista té moltes cançons d'una altra llengua, proposa-li a l'usuari una regla per títols a `scripts/ocultar_titols_castella.js` (`afegeix()`): la generació la fa servir també per als canals Tema. Lògica pura: `scripts/lib/revisio_idiomes.js`; prova `tests/revisio-idiomes.test.js`.
+
 ### Revisar cançons en castellà (2026-10-01)
 
 **Prompt per a l'agent — quan et demanin «revisa el castellà», «elimina cançons en castellà» o similar (d'un artista, d'una categoria o de tot el feed):**

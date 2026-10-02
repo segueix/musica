@@ -7,6 +7,13 @@ descarta en regenerar el feed).
 
 > Última revisió: 2026-10-02. Si afegeixes o treus un artista, actualitza la taula **i** la data.
 
+## Cançons noves (des del 2026-10-02)
+
+Les cançons que entren al feed per primera vegada queden a `data/revisio-idiomes.json` fins que un agent les revisa
+amb el vistiplau de l'usuari: vegeu «Revisió d'idioma de les cançons noves» a `CLAUDE.md`
+(`node scripts/aplicar_revisio_idiomes.js --llista` / `--amaga=…`). Aquesta taula continua sent la llista d'artistes on
+és més probable que n'apareguin.
+
 ## Com es fa servir
 
 1. Mira les cançons visibles dels artistes d'aquesta llista (les més noves primer):

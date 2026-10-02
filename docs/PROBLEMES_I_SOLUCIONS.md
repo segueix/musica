@@ -13,6 +13,19 @@
 
 **Fitxers Afectats:**
 
+## [2026-10-02] - Revisió d'idioma de les cançons noves amb un LLM
+**Símptoma:** cada vegada que entraven cançons noves (de canals Tema, pàgines profundes o novetats) calia repassar tot el feed per trobar-hi les que no són en català. Els detectors automàtics per títol fallen: «Tu», «Nada», «Loca», «Ara», «Corren» poden ser de qualsevol llengua, i l'idioma declarat a YouTube no és fiable.
+
+**Causa Arrel:** no hi havia cap registre de què s'havia revisat i què era nou.
+
+**Solució Implementada:** decisió de l'usuari: la revisió la fa un LLM, amb el seu vistiplau.
+- `update_music_feed.js` afegeix a `data/revisio-idiomes.json` les cançons que entren per primera vegada (`scripts/lib/revisio_idiomes.js`: `updatePending()`; de les pistes Tema en guarda el disc).
+- L'agent les revisa i les ensenya a l'usuari. Amb el vistiplau, `scripts/aplicar_revisio_idiomes.js --amaga=…` les amaga a `hidden-videos.json` i passa totes les pendents a `revisades`, de manera que no tornen a sortir.
+- Punt de partida: les 7.998 cançons del feed del 2026-10-02 marcades com a revisades (`--inicia`), perquè ja s'havien revisat.
+- Instruccions per a l'agent: `CLAUDE.md`, «Revisió d'idioma de les cançons noves».
+
+**Fitxers Afectats:** `scripts/lib/revisio_idiomes.js`, `scripts/aplicar_revisio_idiomes.js`, `scripts/update_music_feed.js`, `data/revisio-idiomes.json`, `tests/revisio-idiomes.test.js`, `.github/workflows/actualitzar-feed-musica.yml`, `CLAUDE.md`, `docs/ARTISTES_CASTELLA.md`.
+
 ## [2026-10-02] - Castellà i altres llengües als canals «Tema» nous
 **Símptoma:** amb els canals «Tema» van entrar al feed les discografies senceres d'artistes bilingües. A Txarango, per exemple, «El Martillo», «Corazón Viajero» o «Sueña Como un Niño», quan el seu canal oficial és tot en català. També hi van entrar cançons en anglès, portuguès, gallec, italià, llatí, basc, japonès i àrab.
 
