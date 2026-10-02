@@ -105,7 +105,11 @@
 
     function findVideo(videoId) {
         const id = String(videoId);
-        const pools = [window.currentFeedVideos, window.cachedAPIVideos];
+        const pools = [
+            window.currentFeedVideos,
+            window.cachedAPIVideos,
+            window.YouTubeAPI?.historyPoolVideos,
+        ];
         try {
             pools.unshift(currentFeedVideos, cachedAPIVideos);
         } catch (error) {
@@ -175,7 +179,8 @@
     // Candidates de la ràdio: només cançons del feed, sense vistes, ni amagades, ni de l'artista excloent-se.
     function getCandidates(exclude, category = '') {
         const categories = asCategories(category);
-        let pool = Array.isArray(currentFeedVideos) ? currentFeedVideos : [];
+        let pool = window.YouTubeAPI?.getRadioPoolVideos?.()
+            || (Array.isArray(currentFeedVideos) ? currentFeedVideos : []);
         // Política anterior: una cançó de l'historial quedava fora per sempre. El motor de selecció la deixa
         // tornar (amb descans, cors i repeticions voluntàries), així que només s'exclou amb `engine: 'legacy'`.
         if (!engineOn()) {
