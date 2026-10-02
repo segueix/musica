@@ -54,6 +54,11 @@ describe('ocultar cançons amb títol en castellà', () => {
         expect(esCastella(song('Mariona Escoda', 'Maniac (Acústic en directe)'))).toBe(true);
         expect(esCastella(song('Mariona Escoda - Topic', 'Maniac'))).toBe(true);
         expect(esCastella(song('Mariona Escoda', 'Et deixo la mà (Acústic en directe)'))).toBe(false);
+        expect(esCastella(song("VEN'NUS", "VEN'NUS - I JAZZ WANT MY G BACK (livesession)"))).toBe(true);
+        expect(esCastella(song("Ven'nus", 'Carmen se fue'))).toBe(true);
+        expect(esCastella(song("Ven'nus", "It's So Hard To Be So Funny"))).toBe(true);
+        expect(esCastella(song("Ven'nus", 'TAN LEN'))).toBe(false);
+        expect(esCastella(song("VEN'NUS", 'Cabells Mullats - Ven\'nus (Videoclip Oficial)'))).toBe(false);
         // Els dos noms d'un mateix artista (canal oficial i Tema) i la regla antiga es mantenen
         expect(esCastella(song('Miki Núñez', 'Quédate En Madrid'))).toBe(true);
         expect(esCastella(song('Miki Nuñez', 'Miki Núñez - Viento Y Vida'))).toBe(true);
