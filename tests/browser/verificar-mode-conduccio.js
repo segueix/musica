@@ -1,6 +1,6 @@
-// Verificació en navegador real del mode conducció (mòbil): pantalla negra amb només el reproductor de YouTube,
-// a dalt i a la mida mínima de 200 px, un sol botó per tancar, la pantalla no s'apaga (Wake Lock) i en tancar tot
-// torna a ser com abans. El reproductor no es recrea (és el mateix iframe).
+// Verificació en navegador real del mode conducció (mòbil): pantalla negra amb només el reproductor de YouTube
+// de 200×200, Wake Lock, botó de sortida que s'amaga als 5 s i reapareix tocant el fons. En tancar, tot torna
+// a ser com abans. El reproductor no es recrea (és el mateix iframe).
 //
 // YouTube no es pot carregar aquí: se serveix un succedani local a la URL d'embed.
 // NO forma part de `npm test`: és una eina opt-in. Ús:  node tests/browser/verificar-mode-conduccio.js
@@ -156,8 +156,12 @@ const comprovar = (etiqueta, condicio, detall) => {
         });
         comprovar('entra al mode conducció', dins.actiu && dins.classe, dins);
         comprovar(
-            'el reproductor es veu a dalt, sencer i d’almenys 200 px',
-            dins.visibleIframe === 'visible' && dins.box.top >= 0 && dins.box.top < 80 && dins.box.width >= 200 && dins.box.height >= 200 * 0.56,
+            'el reproductor es veu a dalt i fa 200×200',
+            dins.visibleIframe === 'visible' &&
+                dins.box.top >= 0 &&
+                dins.box.top < 80 &&
+                Math.abs(dins.box.width - 200) <= 1 &&
+                Math.abs(dins.box.height - 200) <= 1,
             dins.box
         );
         comprovar('és el mateix reproductor (no s’ha recreat)', dins.mateixIframe);
@@ -170,6 +174,21 @@ const comprovar = (etiqueta, condicio, detall) => {
         );
         comprovar('un sol botó gran per tancar', dins.exit?.text === 'Tanca el mode conducció' && dins.exit.h >= 48, dins.exit);
         comprovar('la pantalla no s’apaga (Wake Lock)', dins.wake.requests >= 1, dins.wake);
+
+        await page.waitForTimeout(5200);
+        const exitAmagat = await page.evaluate(() => {
+            const e = document.getElementById('driveModeExit');
+            return Boolean(e?.hidden) || getComputedStyle(e).display === 'none';
+        });
+        comprovar('el botó de sortida s’amaga automàticament als 5 s', exitAmagat);
+
+        await page.mouse.click(40, 600);
+        await page.waitForTimeout(100);
+        const exitRecuperat = await page.evaluate(() => {
+            const e = document.getElementById('driveModeExit');
+            return Boolean(e) && !e.hidden && getComputedStyle(e).display !== 'none';
+        });
+        comprovar('un toc a la zona negra recupera el botó', exitRecuperat);
 
         await page.click('#driveModeExit');
         await page.waitForTimeout(400);
