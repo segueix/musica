@@ -4258,6 +4258,98 @@ body #watchPage .video-info-modern .follow-btn-pill {
     padding: 0 18px;
 }
 
+/* ---------- Capçalera del reproductor: artista + Segueix; cor com a acció de cançó ---------- */
+body #watchPage .channel-name-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+    flex-wrap: wrap;
+}
+
+body #watchPage .channel-name-row .channel-name-modern {
+    min-width: 0;
+    margin: 0;
+}
+
+body #watchPage .channel-name-row .follow-btn-pill {
+    flex: 0 0 auto;
+    min-height: 36px;
+    height: 36px;
+    padding: 0 12px;
+    border-radius: var(--pt-radius-pill);
+    font-size: 0.75rem;
+    line-height: 1;
+}
+
+body #watchPage .video-metadata-bar .btn-heart-song-action {
+    display: inline-grid;
+    place-items: center;
+    flex: 0 0 auto;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid var(--pt-line);
+    background: var(--pt-surface-2);
+    color: var(--pt-text);
+    box-shadow: none;
+}
+
+body #watchPage .video-metadata-bar .btn-heart-song-action svg {
+    width: 24px;
+    height: 24px;
+    stroke: currentColor;
+    stroke-width: 2.2;
+}
+
+body #watchPage .video-metadata-bar .btn-heart-song-action:is(:hover, :focus-visible) {
+    border-color: var(--pt-accent);
+    background: var(--pt-surface-3);
+    color: var(--pt-accent);
+}
+
+body #watchPage .video-metadata-bar .btn-heart-song-action:is(.is-liked, .liked) {
+    border-color: var(--pt-accent);
+    color: var(--pt-accent);
+}
+
+body #watchPage .video-metadata-bar .btn-heart-song-action:is(.is-liked, .liked) svg {
+    fill: var(--pt-accent);
+    stroke: var(--pt-accent);
+}
+
+@media (max-width: 768px) {
+    body #watchPage .channel-header-row {
+        align-items: center;
+    }
+
+    body #watchPage .channel-actions-inline:empty {
+        display: none;
+    }
+
+    body #watchPage .channel-name-row {
+        flex-wrap: nowrap;
+    }
+
+    body #watchPage .channel-name-row .channel-name-modern {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    body #watchPage .channel-name-row .follow-btn-pill {
+        min-height: 34px;
+        height: 34px;
+        padding-inline: 11px;
+        font-size: 0.72rem;
+    }
+
+    body #watchPage .video-metadata-bar .btn-heart-song-action {
+        width: 48px;
+        height: 48px;
+    }
+}
+
 /* ===== Estalvi de bateria (js/features/drive-mode.js) =====
    Accés permanent al mòbil: últim botó de la navegació inferior, a la dreta de «La teva música».
    La vista d'estalvi serveix tant per conducció com per reduir consum i distraccions. */
