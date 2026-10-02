@@ -73,6 +73,13 @@
         clearRecoveryTimer();
     }
 
+    function primeRecoveryState() {
+        const state = Number(document.getElementById('videoPlayer')?.dataset?.playerState);
+        if (!Number.isFinite(state)) return;
+        lastPlayerState = state;
+        if (state === 1 || state === 3) hasPlayedCurrentVideo = true;
+    }
+
     function noteInteraction() {
         lastInteractionAt = Date.now();
         clearRecoveryTimer();
@@ -223,6 +230,7 @@
         if (active || !hasPlayer()) return false;
         active = true;
         syncRecoveryVideo();
+        primeRecoveryState();
         lastInteractionAt = 0;
         document.body.classList.add('drive-mode');
         showUiTemporarily();
