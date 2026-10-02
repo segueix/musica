@@ -200,6 +200,16 @@ describe('artistes: només els que se segueixen', () => {
         expect(model.artists.some(a => a.id === 'd')).toBe(false);
     });
 
+    it('un artista agrupat surt una sola vegada encara que el canal seguit sigui el Topic', () => {
+        const grouped = [
+            { id: 'official', name: 'Artista', avatar: 'a.jpg', channelIds: ['official', 'topic'] },
+            { id: 'solo', name: 'Solista', avatar: 's.jpg', channelIds: ['solo'] },
+        ];
+        const model = mm.buildArtistsModel(grouped, ['topic', 'solo']);
+        expect(model.artists.map(a => a.id)).toEqual(['official', 'solo']);
+        expect(model.followed).toBe(2);
+    });
+
     it('la secció és «Artistes», sense programes, i cada artista obre el seu perfil', () => {
         const html = mm.artistsHtml(mm.buildArtistsModel(channels, ['a', 'c']));
         expect(html).toContain('>Artistes<');
