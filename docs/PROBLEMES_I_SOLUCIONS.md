@@ -13,6 +13,17 @@
 
 **Fitxers Afectats:**
 
+## [2026-10-02] - Finestra flotant del sistema: la cançó següent no sonava amb Chrome minimitzat
+**Símptoma:** al Chromebook, amb la finestra flotant del sistema oberta i la de Segueix Música minimitzada, en acabar una cançó la finestra flotant mostrava la següent però no sonava fins que es tornava a obrir la finestra de Chrome.
+
+**Causa Arrel:** a cada canvi de cançó, `loadVideoInSequence()` recreava l'iframe de YouTube (`prepareWatchPlaybackPreview()` buida `#videoPlayer`). Chrome no deixa engegar el so d'un reproductor nou en una pàgina que no es veu. Només la pantalla completa de les TV reutilitzava el reproductor.
+
+**Solució Implementada:** `isPlaybackInBackground()` (`app.js`): la pàgina és amagada o la finestra del sistema és oberta (`systemPlayer.isPipOpen()`). En aquest cas, `canSwapLivePlayerVideo()` i `loadVideoInSequence()` fan servir `swapLivePlayerVideo()`: el mateix iframe rep `loadVideoById`, com una llista de reproducció de YouTube, que continua sonant en segon pla. Si el reproductor no respon en 2,5 s, es recrea com sempre. La guarda de l'«ended» endarrerit del vídeo anterior (abans només en mode TV) ara també s'aplica després d'aquest canvi (`lastLiveSwapAt`, 2 s): sense la guarda, saltaria una cançó. Amb la pàgina visible no canvia res. Prova: `tests/browser/verificar-finestra-sistema.js`, que comprova la finestra oberta, la pàgina amagada, l'«ended» repetit i la pàgina visible.
+
+**Trampes:** una pàgina web no pot restaurar ni maximitzar la seva finestra (`window.focus()` demana un gest de l'usuari i no desfà el minimitzat). No es pot provar amb el YouTube real en aquest entorn; el succedani respon a `loadVideoById` amb els estats 3 i 1.
+
+**Fitxers Afectats:** `js/app.js`, `tests/browser/verificar-finestra-sistema.js`, `sw.js`, `CLAUDE.md`.
+
 ## [2026-10-02] - Canals «Tema»: la discografia mana sobre el canal propi de l'artista
 **Símptoma:** al canal propi dels artistes hi ha vídeos que el classificador accepta com a cançó i no ho són (Els Pets: «Entrevistes Això és espectacle», «Discussió lletra El meu veí de sota», «Old McDonald had a farm»), i molts artistes no tenien indexat el canal «Tema», on hi ha tots els discos (Maria Jaume: hi faltaven els llançaments).
 

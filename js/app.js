@@ -8939,7 +8939,10 @@ function loadVideoInSequence({ autoPlay = true } = {}) {
     focusTVPlayerViewport();
     // Si s'està mirant en pantalla completa, el vídeo següent hi continua: el reproductor
     // no es recrea, se li demana el vídeo nou (veure swapLivePlayerVideo).
-    const keepLivePlayer = video.source !== 'static' && isTVPlaybackMode() && canSwapLivePlayerVideo();
+    // També amb la pàgina amagada o la finestra flotant del sistema oberta: un reproductor nou en una finestra
+    // minimitzada no comença a sonar fins que es torna a veure (Chrome no deixa engegar-ne el so).
+    const keepLivePlayer =
+        video.source !== 'static' && (isTVPlaybackMode() || isPlaybackInBackground()) && canSwapLivePlayerVideo();
     lastTVAdvanceAt = Date.now();
     // Per defecte les cues continuen amb autoplay. Algunes entrades (TV de categoria
     // i Segueix TV des del xip) poden demanar que només el primer vídeo quedi en pausa.
@@ -9990,6 +9993,7 @@ const TV_ENDED_GUARD_MS = 2000;
 let liveSwapPending = null;
 let liveSwapTimer = null;
 let lastTVAdvanceAt = 0;
+let lastLiveSwapAt = 0;
 
 function getPlayerFullscreenElement() {
     const element = document.fullscreenElement || document.webkitFullscreenElement || null;
@@ -10011,10 +10015,22 @@ function getLiveYouTubeIframe() {
     return iframe;
 }
 
-// Només s'encadena en calent quan cal de debò: en pantalla completa. Fora d'ella, el camí
-// normal ja va bé i mostra la caràtula del vídeo nou mentre carrega.
+// La pàgina no es veu (finestra minimitzada, una altra pestanya) o la música es controla des de la finestra
+// flotant del sistema (system-player.js).
+function isPlaybackInBackground() {
+    if (document.visibilityState === 'hidden') {
+        return true;
+    }
+    return Boolean(window.SegueixApp?.features?.systemPlayer?.isPipOpen?.());
+}
+
+// Només s'encadena en calent quan cal de debò: en pantalla completa, o en segon pla (un iframe nou no
+// sonaria fins que es tornés a veure la pàgina). Fora d'aquests casos, el camí normal ja va bé i mostra
+// la caràtula del vídeo nou mentre carrega.
 function canSwapLivePlayerVideo() {
-    return Boolean(isPlayerFullscreen() && getLiveYouTubeIframe() && hasAcceptedYouTubeCookies());
+    return Boolean(
+        (isPlayerFullscreen() || isPlaybackInBackground()) && getLiveYouTubeIframe() && hasAcceptedYouTubeCookies()
+    );
 }
 
 function cancelLiveSwapFallback() {
@@ -10074,6 +10090,7 @@ function swapLivePlayerVideo({ videoId, startAt = 0, thumbnail = '', title = '' 
         return false;
     }
 
+    lastLiveSwapAt = Date.now();
     videoPlayer.dataset.playingVideoId = id;
     videoPlayer.dataset.playerState = '';
     // El forat continua darrere del reproductor: hi deixem la caràtula del vídeo nou per
@@ -10114,6 +10131,9 @@ function swapLivePlayerVideo({ videoId, startAt = 0, thumbnail = '', title = '' 
 // Encadenar un vídeo fa que el reproductor emeti l'estat final del vídeo anterior amb un
 // instant de retard; sense aquesta guarda, aquell 'ended' avançaria un segon vídeo.
 function shouldIgnoreDuplicateTVEnded() {
+    if (Date.now() - lastLiveSwapAt < TV_ENDED_GUARD_MS) {
+        return true;
+    }
     return Boolean(isTVPlaybackMode() && Date.now() - lastTVAdvanceAt < TV_ENDED_GUARD_MS);
 }
 
