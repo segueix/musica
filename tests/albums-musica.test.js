@@ -4,7 +4,7 @@ import albumModule from '../scripts/lib/albums_musica.js';
 const { extractAlbum, mergeAlbumCatalog } = albumModule;
 
 describe('catàleg local de discos', () => {
-  it('extreu disc i any d'una descripció Topic sense cap consulta externa', () => {
+  it("extreu disc i any d'una descripció Topic sense cap consulta externa", () => {
     expect(
       extractAlbum(
         'Provided to YouTube by Segell\n\nCançó · Artista\n\nDisc Nou\n\n℗ 2026 Segell\n\nReleased on: 2026-03-04'
