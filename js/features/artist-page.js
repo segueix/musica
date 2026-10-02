@@ -159,6 +159,11 @@
         return videoId ? `https://i.ytimg.com/vi/${encodeURIComponent(videoId)}/hqdefault.jpg` : '';
     }
 
+    function availableSongsLabel(count) {
+        const total = Math.max(0, Number(count) || 0);
+        return total === 1 ? '1 cançó disponible' : `${total} cançons disponibles`;
+    }
+
     function renderAlbums() {
         const section = $('apAlbums');
         const grid = $('apAlbumsGrid');
@@ -173,7 +178,7 @@
         grid.innerHTML = [
             ...state.albums.albums.map(album => {
                 const count = album.visibleTrackIds.length;
-                const meta = [album.year || '', `${count} ${count === 1 ? 'cançó' : 'cançons'}`].filter(Boolean).join(' · ');
+                const meta = [album.year || '', availableSongsLabel(count)].filter(Boolean).join(' · ');
                 return `
                     <button class="ap-album-card ${selected === album.id ? 'is-active' : ''}" type="button"
                         data-ap-album="${escapeHtml(album.id)}" aria-pressed="${selected === album.id}">
@@ -188,7 +193,7 @@
                         type="button" data-ap-album="${OTHER_ALBUM_ID}" aria-pressed="${selected === OTHER_ALBUM_ID}">
                         <span class="ap-album-other-icon" aria-hidden="true">♪</span>
                         <span class="ap-album-title">Singles i altres</span>
-                        <span class="ap-album-meta">${state.albums.otherIds.length} cançons</span>
+                        <span class="ap-album-meta">${availableSongsLabel(state.albums.otherIds.length)}</span>
                    </button>`
                 : '',
         ].join('');
@@ -364,6 +369,7 @@
         radiosModel,
         bioModel,
         albumsModel,
+        availableSongsLabel,
         showProfile,
         setSongs,
         selectAlbum,
