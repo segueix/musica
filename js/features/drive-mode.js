@@ -1,6 +1,6 @@
-// Mode conducció (mòbil): mode d'ultraestalvi amb fons negre, reproductor de YouTube de 200×200 i Wake Lock.
-// Els controls externs són grans però de contrast baix i només es mostren uns segons: desapareixen sols i
-// reapareixen tocant la zona negra. El reproductor no es tapa ni es mou de lloc al DOM (YouTube el recarregaria).
+// Mode d'estalvi de bateria (mòbil): fons negre, reproductor de YouTube de 200×200 i Wake Lock.
+// És útil tant conduint (menys distraccions) com quan es vol allargar la bateria. En obrir-lo mostra una explicació
+// breu una sola vegada; després només reapareixen els controls, no l'explicació, fins que es torna a obrir el mode.
 (function (window) {
     const app = window.SegueixApp;
     if (!app) return;
@@ -8,12 +8,15 @@
 
     const EXIT_ID = 'driveModeExit';
     const CONTROLS_ID = 'driveModeControls';
+    const INFO_ID = 'driveModeInfo';
     const UI_HIDE_DELAY = 3500;
+    const INFO_HIDE_DELAY = 6000;
     const RECOVERY_DELAY = 2500;
     const RECENT_INTERACTION_MS = 5000;
     let active = false;
     let wakeLock = null;
     let uiHideTimer = null;
+    let infoHideTimer = null;
     let recoveryTimer = null;
     let recoveryVideoId = '';
     let recoveryAttempted = false;
@@ -48,6 +51,13 @@
         if (uiHideTimer !== null) {
             window.clearTimeout(uiHideTimer);
             uiHideTimer = null;
+        }
+    }
+
+    function clearInfoHideTimer() {
+        if (infoHideTimer !== null) {
+            window.clearTimeout(infoHideTimer);
+            infoHideTimer = null;
         }
     }
 
@@ -154,6 +164,37 @@
         if (controls) controls.hidden = true;
     }
 
+    function infoElement() {
+        let info = document.getElementById(INFO_ID);
+        if (info) return info;
+        info = document.createElement('div');
+        info.id = INFO_ID;
+        info.className = 'dm-info';
+        info.setAttribute('role', 'status');
+        info.innerHTML = `
+            <strong>Estalvi de bateria</strong>
+            <span>Per conduir amb menys distraccions o per gastar menys bateria. Manté la música i la pantalla activa amb una vista mínima i fosca.</span>
+        `;
+        document.body.appendChild(info);
+        return info;
+    }
+
+    function showInfoForThisOpen() {
+        clearInfoHideTimer();
+        const info = infoElement();
+        info.hidden = false;
+        infoHideTimer = window.setTimeout(() => {
+            infoHideTimer = null;
+            if (active) info.hidden = true;
+        }, INFO_HIDE_DELAY);
+    }
+
+    function hideInfo() {
+        clearInfoHideTimer();
+        const info = document.getElementById(INFO_ID);
+        if (info) info.hidden = true;
+    }
+
     function scheduleUiHide() {
         clearUiHideTimer();
         uiHideTimer = window.setTimeout(() => {
@@ -177,8 +218,8 @@
         button.type = 'button';
         button.className = 'dm-exit';
         button.textContent = '×';
-        button.setAttribute('aria-label', 'Tanca el mode conducció');
-        button.title = 'Tanca el mode conducció';
+        button.setAttribute('aria-label', 'Tanca l’estalvi de bateria');
+        button.title = 'Tanca l’estalvi de bateria';
         button.addEventListener('click', event => {
             event.stopPropagation();
             exit();
@@ -227,13 +268,18 @@
     }
 
     function enter() {
-        if (active || !hasPlayer()) return false;
+        if (active) return false;
+        if (!hasPlayer()) {
+            app.features.shellNav?.toast?.('Posa una cançó abans d’activar l’estalvi de bateria.');
+            return false;
+        }
         active = true;
         syncRecoveryVideo();
         primeRecoveryState();
         lastInteractionAt = 0;
         document.body.classList.add('drive-mode');
         showUiTemporarily();
+        showInfoForThisOpen();
         requestWakeLock();
         // Pantalla completa (amaga la barra del navegador). A l'iPhone no hi és per a pàgines: no passa res.
         const root = document.documentElement;
@@ -248,6 +294,7 @@
         active = false;
         document.body.classList.remove('drive-mode');
         hideDriveUi();
+        hideInfo();
         clearUiHideTimer();
         clearRecoveryTimer();
         releaseWakeLock();
@@ -276,8 +323,8 @@
         if (active) noteInteraction();
     });
     window.addEventListener('message', handlePlayerStateForRecovery);
-    // El botó de sota el reproductor es torna a pintar a cada vídeo: el clic s'escolta al document.
-    // En mode conducció, tocar la zona negra recupera temporalment els controls.
+    // El botó d'Estalvi és fix a la navegació inferior del mòbil.
+    // Dins del mode, tocar la zona negra recupera temporalment els controls, però no torna a mostrar l'explicació.
     document.addEventListener('click', event => {
         if (event.target?.closest?.('#driveModeBtn')) {
             enter();
@@ -285,7 +332,7 @@
         }
         if (!active) return;
         noteInteraction();
-        if (!event.target?.closest?.('#videoPlayer, .dm-exit, .dm-controls')) {
+        if (!event.target?.closest?.('#videoPlayer, .dm-exit, .dm-controls, .dm-info')) {
             showUiTemporarily();
         }
     });
