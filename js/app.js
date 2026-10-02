@@ -12821,7 +12821,7 @@ async function openChannelProfileLegacyImpl(channelId) {
 
     const channelName = channel?.name || channel?.title || 'Canal';
     const channelAvatar =
-        channel?.avatar || channel?.thumbnail || getFollowChannelAvatar(normalizedId) || 'img/icon-192.png';
+        channel?.avatar || channel?.thumbnail || getFollowChannelAvatar(profileId) || 'img/icon-192.png';
     if (channelProfileAvatar) {
         channelProfileAvatar.src = channelAvatar;
         channelProfileAvatar.alt = channelName;
@@ -12879,12 +12879,12 @@ async function openChannelProfileLegacyImpl(channelId) {
         }
     }
     if (channelProfileHideBtn) {
-        channelProfileHideBtn.dataset.hideChannel = normalizedId;
+        channelProfileHideBtn.dataset.hideChannel = profileId;
         channelProfileHideBtn.dataset.hideBound = 'false';
         channelProfileHideBtn.classList.remove('hidden');
     }
     if (channelProfileShareBtn) {
-        channelProfileShareBtn.dataset.shareChannelId = normalizedId;
+        channelProfileShareBtn.dataset.shareChannelId = profileId;
         channelProfileShareBtn.dataset.shareChannelName = encodeURIComponent(channelName);
         channelProfileShareBtn.dataset.shareChannelDescription = encodeURIComponent(
             channel?.description || 'No hi ha descripció disponible.'
@@ -12904,7 +12904,7 @@ async function openChannelProfileLegacyImpl(channelId) {
     currentChannelVideos = Array.isArray(channelVideos) ? channelVideos : [];
     currentChannelShorts = currentChannelVideos.filter(video => video.isShort);
     currentChannelLongVideos = currentChannelVideos.filter(video => !video.isShort);
-    SegueixApp.features.artistPage?.setSongs?.(currentChannelVideos, normalizedId);
+    SegueixApp.features.artistPage?.setSongs?.(currentChannelVideos, profileId);
 
     if (channelSearchInputDesktop) {
         channelSearchInputDesktop.value = '';
