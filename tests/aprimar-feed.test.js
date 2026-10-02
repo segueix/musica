@@ -47,11 +47,13 @@ describe('aprimar el feed', () => {
         expect(extractOriginalYear(short)).toEqual(extractOriginalYear(TOPIC));
     });
 
-    it('és idempotent', () => {
+    it('elimina la descripció pública, conserva només la marca compacta de pista Topic i és idempotent', () => {
         const once = shortDescription(TOPIC);
         expect(shortDescription(once)).toBe(once);
         const video = slimFeedVideo({ id: 'a', channelId: 'UC1', sourceChannelId: 'UC1', description: TOPIC });
+        expect(video).toEqual({ id: 'a', channelId: 'UC1', topicTrack: true });
         expect(slimFeedVideo(video)).toEqual(video);
+        expect(slimFeedVideo({ id: 'b', description: 'Videoclip oficial.' })).toEqual({ id: 'b' });
     });
 
     it('treu els camps que el client no llegeix i conserva els que sí', () => {
@@ -85,6 +87,9 @@ describe('aprimar el feed', () => {
         });
         const text = serializeFeed(feed);
         expect(JSON.parse(text)).toEqual(feed);
+        expect(feed.videos[0]).toEqual({ id: 'a', title: 'U', topicTrack: true });
+        expect(feed.videos[1]).toEqual({ id: 'b', title: 'Dos' });
+        expect(text).not.toContain('"description"');
         const lines = text.split('\n');
         expect(lines.filter(line => line.startsWith('    {"id":'))).toHaveLength(2);
         expect(text.endsWith('}\n')).toBe(true);
