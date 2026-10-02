@@ -9,9 +9,18 @@
     const EXIT_ID = 'driveModeExit';
     const CONTROLS_ID = 'driveModeControls';
     const UI_HIDE_DELAY = 3500;
+    const RECOVERY_DELAY = 2500;
+    const RECENT_INTERACTION_MS = 5000;
     let active = false;
     let wakeLock = null;
     let uiHideTimer = null;
+    let recoveryTimer = null;
+    let recoveryVideoId = '';
+    let recoveryAttempted = false;
+    let hasPlayedCurrentVideo = false;
+    let lastPlayerState = null;
+    let pausedAfterBuffering = false;
+    let lastInteractionAt = 0;
 
     async function requestWakeLock() {
         if (!active || !window.navigator?.wakeLock?.request) return;
@@ -40,6 +49,95 @@
             window.clearTimeout(uiHideTimer);
             uiHideTimer = null;
         }
+    }
+
+    function clearRecoveryTimer() {
+        if (recoveryTimer !== null) {
+            window.clearTimeout(recoveryTimer);
+            recoveryTimer = null;
+        }
+    }
+
+    function currentVideoId() {
+        return String(document.getElementById('videoPlayer')?.dataset?.playingVideoId || '');
+    }
+
+    function syncRecoveryVideo() {
+        const videoId = currentVideoId();
+        if (videoId === recoveryVideoId) return;
+        recoveryVideoId = videoId;
+        recoveryAttempted = false;
+        hasPlayedCurrentVideo = false;
+        lastPlayerState = null;
+        pausedAfterBuffering = false;
+        clearRecoveryTimer();
+    }
+
+    function noteInteraction() {
+        lastInteractionAt = Date.now();
+        clearRecoveryTimer();
+    }
+
+    function recentlyInteracted() {
+        return Date.now() - lastInteractionAt < RECENT_INTERACTION_MS;
+    }
+
+    function shouldRecoverState(state) {
+        if (!active || recoveryAttempted || !hasPlayedCurrentVideo || recentlyInteracted()) return false;
+        if (state === -1 || state === 5) return true;
+        return state === 2 && pausedAfterBuffering;
+    }
+
+    function schedulePlaybackRecovery(state) {
+        if (!shouldRecoverState(state) || recoveryTimer !== null) return;
+        recoveryTimer = window.setTimeout(() => {
+            recoveryTimer = null;
+            syncRecoveryVideo();
+            if (!shouldRecoverState(lastPlayerState)) return;
+            recoveryAttempted = true;
+            runPlayerAction('play');
+        }, RECOVERY_DELAY);
+    }
+
+    function parseYouTubePayload(event) {
+        if (!/youtube(-nocookie)?\\.com/.test(String(event.origin || ''))) return null;
+        const iframe = document.querySelector('#videoPlayer iframe');
+        if (!iframe || (event.source && iframe.contentWindow && event.source !== iframe.contentWindow)) return null;
+        let payload = event.data;
+        if (typeof payload === 'string') {
+            try {
+                payload = JSON.parse(payload);
+            } catch (_) {
+                return null;
+            }
+        }
+        return payload && typeof payload === 'object' ? payload : null;
+    }
+
+    function handlePlayerStateForRecovery(event) {
+        if (!active) return;
+        const payload = parseYouTubePayload(event);
+        if (payload?.event !== 'onStateChange') return;
+
+        syncRecoveryVideo();
+        const state = Number(payload.info);
+        const previousState = lastPlayerState;
+        lastPlayerState = state;
+
+        if (state === 1) {
+            hasPlayedCurrentVideo = true;
+            pausedAfterBuffering = false;
+            clearRecoveryTimer();
+            return;
+        }
+        if (state === 0) {
+            pausedAfterBuffering = false;
+            clearRecoveryTimer();
+            return;
+        }
+
+        pausedAfterBuffering = state === 2 && previousState === 3;
+        schedulePlaybackRecovery(state);
     }
 
     function hideDriveUi() {
@@ -124,6 +222,8 @@
     function enter() {
         if (active || !hasPlayer()) return false;
         active = true;
+        syncRecoveryVideo();
+        lastInteractionAt = 0;
         document.body.classList.add('drive-mode');
         showUiTemporarily();
         requestWakeLock();
@@ -141,6 +241,7 @@
         document.body.classList.remove('drive-mode');
         hideDriveUi();
         clearUiHideTimer();
+        clearRecoveryTimer();
         releaseWakeLock();
         if (document.fullscreenElement && typeof document.exitFullscreen === 'function') {
             Promise.resolve(document.exitFullscreen()).catch(() => {});
@@ -157,8 +258,16 @@
         if (active && document.visibilityState === 'visible') requestWakeLock();
     });
     document.addEventListener('keydown', event => {
-        if (active && event.key === 'Escape') exit();
+        if (!active) return;
+        noteInteraction();
+        if (event.key === 'Escape') exit();
     });
+    // Un toc dins l'iframe de YouTube no propaga el clic al document, però en mòbil acostuma a fer perdre el focus
+    // a la finestra. Es tracta com una interacció recent per no desfer una pausa voluntària.
+    window.addEventListener('blur', () => {
+        if (active) noteInteraction();
+    });
+    window.addEventListener('message', handlePlayerStateForRecovery);
     // El botó de sota el reproductor es torna a pintar a cada vídeo: el clic s'escolta al document.
     // En mode conducció, tocar la zona negra recupera temporalment els controls.
     document.addEventListener('click', event => {
@@ -166,7 +275,9 @@
             enter();
             return;
         }
-        if (active && !event.target?.closest?.('#videoPlayer, .dm-exit, .dm-controls')) {
+        if (!active) return;
+        noteInteraction();
+        if (!event.target?.closest?.('#videoPlayer, .dm-exit, .dm-controls')) {
             showUiTemporarily();
         }
     });
