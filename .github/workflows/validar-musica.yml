@@ -13,6 +13,8 @@ on:
       - "data/music-genres.json"
       - "scripts/enriquir_generes_musica.js"
       - "tests/music-genres.test.js"
+      - "scripts/update_music_feed.js"
+      - ".github/workflows/actualitzar-feed-musica.yml"
       - ".github/workflows/validar-musica.yml"
   pull_request:
     paths:
@@ -52,6 +54,9 @@ jobs:
 
       - name: Test normalització de gèneres
         run: npx vitest run tests/music-genres.test.js
+
+      - name: Comprova sintaxi del generador de feed
+        run: node --check scripts/update_music_feed.js
 
       - name: Valida la base d'artistes
         run: node scripts/validar_artistes_musica.js
