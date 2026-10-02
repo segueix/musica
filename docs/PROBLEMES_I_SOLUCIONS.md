@@ -1,3 +1,12 @@
+## [2026-10-02] - Artistes duplicats per canal oficial + Topic
+**Símptoma:** la pàgina «Artistes» pintava una targeta per canal de YouTube. Un mateix artista apareixia dues o tres vegades (canal oficial, Topic i, en algun cas, un segon canal oficial), amb variants de majúscules o accents.
+
+**Causa Arrel:** `renderFollowPage()` consumia directament `YouTubeAPI.getAllChannels()`, tot i que `music-categories.js` ja disposava d'una `artistKeyForChannel()` estable compartida pels canals del mateix artista.
+
+**Solució Implementada:** `YouTubeAPI.getArtistGroups()` agrupa els canals per identitat d'artista i tria com a representant el canal `primary`, després l'oficial i finalment el Topic. El nom visible és el `displayName` editorial o el nom canònic de l'artista. «Artistes» i «La teva música» treballen amb aquests grups. La fitxa fusiona `getChannelVideosWithHistory()` de tots els `channelIds`, de manera que desapareix el duplicat visual sense perdre repertori. El seguiment existent de qualsevol canal membre continua fent que l'artista consti com a seguit.
+
+**Fitxers Afectats:** `js/music-categories.js`, `js/youtube.js`, `js/app.js`, `js/features/my-music.js`, `tests/music-categories.test.js`, `tests/my-music.test.js`.
+
 # Base de Coneixement i Resolució de Problemes
 
 > ATENCIÓ IA: Abans de proposar una solució a un nou bug, revisa les entrades d'aquest document per si hi ha patrons de fallada similars (especialment amb la memòria cau o la UI). Quan resolguis un problema complex, tens l'obligació d'afegir una nova entrada aquí seguint la plantilla.
