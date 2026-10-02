@@ -4259,9 +4259,9 @@ body #watchPage .video-info-modern .follow-btn-pill {
 }
 
 /* ===== Mode conducció (js/features/drive-mode.js) =====
-   Pantalla negra (a les pantalles OLED els píxels negres no gasten) amb només el reproductor de YouTube a dalt,
-   a la mida mínima que demana YouTube, i un sol botó per tancar. No es tapa el reproductor ni es mou al DOM:
-   només canvia el CSS. El botó per entrar-hi només surt al mòbil i a la tauleta. */
+   Ultraestalvi: pantalla negra (en OLED els píxels negres no gasten), reproductor de YouTube de 200×200,
+   Wake Lock des de JS i botó de sortida temporal. No es tapa el reproductor ni es mou al DOM: només canvia
+   el CSS. El botó per entrar-hi només surt al mòbil i a la tauleta. */
 @media (min-width: 1025px) {
     #driveModeBtn {
         display: none !important;
@@ -4277,6 +4277,8 @@ body.drive-mode {
 }
 body.drive-mode * {
     visibility: hidden !important;
+    animation-play-state: paused !important;
+    transition: none !important;
 }
 body.drive-mode #videoPlayer,
 body.drive-mode #videoPlayer iframe,
@@ -4290,11 +4292,12 @@ body.drive-mode #videoPlayer {
     right: auto !important;
     bottom: auto !important;
     transform: translateX(-50%) !important;
-    width: min(100vw, 480px) !important;
+    width: 200px !important;
     min-width: 200px !important;
-    height: auto !important;
-    max-height: none !important;
-    aspect-ratio: 16 / 9;
+    height: 200px !important;
+    min-height: 200px !important;
+    max-height: 200px !important;
+    aspect-ratio: 1 / 1;
     margin: 0 !important;
     border-radius: 0 !important;
     box-shadow: none !important;
