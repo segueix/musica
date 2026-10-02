@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-02T12:48:30.788Z",
+  "generatedAt": "2026-10-02T15:25:55.891Z",
   "retainedVideoCount": 829,
   "unverifiedVideoCount": 0,
   "deepPagesFetched": 0,
@@ -856,12 +856,12 @@
       "governs": false
     }
   ],
-  "topicGovernance": "audit",
+  "topicGovernance": "apply",
   "governedReclassified": {
     "other": 229,
     "song": 21
   },
-  "topicHiddenCount": 8,
+  "topicHiddenCount": 390,
   "topicChannels": [
     {
       "id": "UCEMDA-ZXzEUlJjZ-avy0Pvg",
@@ -1806,17 +1806,17 @@
   "resolvedChannelCount": 297,
   "feedChannelCount": 297,
   "rawPublicVideoCount": 9816,
-  "feedVideoCount": 9552,
-  "acceptedMusicCount": 8525,
-  "categoryEligibleVideoCount": 8461,
-  "shortVideoCount": 1121,
-  "contentReviewCount": 498,
+  "feedVideoCount": 9080,
+  "acceptedMusicCount": 8386,
+  "categoryEligibleVideoCount": 8322,
+  "shortVideoCount": 1118,
+  "contentReviewCount": 408,
   "contentTypeCounts": {
-    "song": 8115,
-    "live_song": 346,
+    "song": 7988,
+    "live_song": 334,
     "album": 64,
-    "other": 793,
-    "review": 498
+    "other": 1022,
+    "review": 408
   },
   "unresolvedChannelIds": [],
   "channelsWithoutUploads": [],
