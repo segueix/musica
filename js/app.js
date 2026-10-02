@@ -4679,48 +4679,37 @@ async function initAppUpdater() {
     const updateBadge = document.getElementById('updateBadge');
 
     const showUpdateNotice = () => {
-        if (updateBadge) {
-            updateBadge.style.display = 'block';
-        }
+        if (updateBadge) updateBadge.style.display = 'block';
     };
 
     const hideUpdateNotice = () => {
-        if (updateBadge) {
-            updateBadge.style.display = 'none';
-        }
+        if (updateBadge) updateBadge.style.display = 'none';
     };
 
     refreshIcons();
 
-    if (!('serviceWorker' in navigator)) {
-        return;
-    }
+    if (!('serviceWorker' in navigator)) return;
 
     try {
-        // Capturem si el client ja estava controlat ABANS de registrar el SW.
-        // Ens serveix per distingir:
-        //   - Primera instal·lació (cap controller previ) → NO s'ha de recarregar
-        //     mai, ni tan sols quan el SW prengui control via clients.claim(). Fer
-        //     reload en aquest cas provoca el bug "al mòbil, obrir l'app i fer
-        //     scroll la refresca" perquè el claim pot arribar mentre l'usuari
-        //     ja està interactuant.
-        //   - Actualització (ja hi havia controller) → el reload només ha de
-        //     passar si l'usuari ha demanat explícitament l'actualització.
+        // Si no hi havia controller en carregar, un controllerchange és la primera
+        // instal·lació del SW i MAI ha de provocar una recàrrega.
         const hadControllerOnLoad = Boolean(navigator.serviceWorker.controller);
+        let userRequestedUpdate = false;
+        let reloadWhenHidden = false;
 
         swRegistration = await navigator.serviceWorker.register('./sw.js', { updateViaCache: 'none' });
 
-        // Activa el SW en espera: en prendre el control, 'controllerchange' recarrega la pàgina.
-        const applyUpdate = () => {
+        const applyUpdate = ({ explicit = false } = {}) => {
             const waiting = swRegistration?.waiting;
             if (!waiting) return false;
+            if (explicit) userRequestedUpdate = true;
             waiting.postMessage({ type: 'SKIP_WAITING' });
             return true;
         };
 
-        // Un SW nou queda "en espera" mentre hi ha pestanyes obertes (la pestanya normal
-        // en manté una d'antiga per sempre). Si l'usuari no hi està interactuant
-        // (pàgina en segon pla) l'apliquem sense demanar res; si no, mostrem l'avís.
+        // Política anti-refresc inesperat:
+        // - visible: mai activem el SW nou; només mostrem l'avís;
+        // - ocult/segon pla: el podem activar sense interrompre l'usuari.
         const handleWaitingWorker = () => {
             if (!swRegistration?.waiting || !hadControllerOnLoad) return;
             if (document.visibilityState === 'hidden') {
@@ -4744,64 +4733,67 @@ async function initAppUpdater() {
             bindInstallingWorker(swRegistration.installing);
         });
 
-        // Un SW ja en espera en obrir l'app (actualització baixada en una visita anterior):
-        // s'aplica ara mateix, abans que l'usuari hi interactuï, perquè no quedi mai desfasada.
+        // Si ja hi havia una actualització esperant en obrir l'app, NO la forcem.
+        // L'usuari pot començar a tocar/fer scroll immediatament: simplement mostrem el punt.
         if (swRegistration.waiting && hadControllerOnLoad) {
-            applyUpdate();
+            handleWaitingWorker();
         }
 
-        // El badge d'actualització ara és clicable: aplica l'actualització.
         const updateBadgeButton = updateBadge?.closest('button');
         updateBadgeButton?.addEventListener(
             'click',
             event => {
-                if (updateBadge.style.display === 'none' || !swRegistration?.waiting) return;
+                if (updateBadge?.style.display === 'none' || !swRegistration?.waiting) return;
                 event.preventDefault();
                 event.stopImmediatePropagation();
-                applyUpdate();
+                applyUpdate({ explicit: true });
             },
             true
         );
 
-        // Comprova si hi ha versió nova en tornar a la pestanya i cada 30 minuts.
         const checkForUpdate = () => {
             swRegistration?.update().catch(() => {});
         };
+
         document.addEventListener('visibilitychange', () => {
             if (document.visibilityState === 'visible') {
                 checkForUpdate();
                 handleWaitingWorker();
-            } else {
-                handleWaitingWorker();
+                return;
             }
+
+            // Si un controllerchange inesperat ha arribat mentre érem visibles,
+            // ajornem la recàrrega fins ara. En el flux normal, el waiting s'activa aquí.
+            if (reloadWhenHidden) {
+                window.location.reload();
+                return;
+            }
+            handleWaitingWorker();
         });
+
         setInterval(checkForUpdate, 30 * 60 * 1000);
         checkForUpdate();
 
         navigator.serviceWorker.addEventListener('controllerchange', () => {
             if (isSwRefreshing) return;
-            // Si no hi havia controller en carregar la pàgina, aquest canvi és
-            // la primera presa de control del SW — no cal refrescar res.
+
             if (!hadControllerOnLoad) {
                 hideUpdateNotice();
                 return;
             }
+
             isSwRefreshing = true;
             hideUpdateNotice();
-            // Si s'està reproduint un vídeo amb la pàgina visible, no tallem la música: el
-            // codi nou ja controla la pàgina i es recarrega en sortir de la pestanya.
-            const playing = document.getElementById('videoPlayer')?.dataset?.playerState === '1';
-            if (playing && document.visibilityState === 'visible') {
-                document.addEventListener(
-                    'visibilitychange',
-                    () => {
-                        if (document.visibilityState === 'hidden') window.location.reload();
-                    },
-                    { once: false }
-                );
+
+            // Només recarreguem immediatament si l'usuari ho ha demanat o si l'app
+            // ja és en segon pla. Qualsevol altre controllerchange queda ajornat:
+            // cap toc, scroll, play o buffering pot fer "saltar" l'app.
+            if (userRequestedUpdate || document.visibilityState === 'hidden') {
+                window.location.reload();
                 return;
             }
-            window.location.reload();
+
+            reloadWhenHidden = true;
         });
     } catch (error) {
         console.warn("No s'ha pogut registrar el Service Worker", error);
