@@ -52,7 +52,7 @@
         const title = String(video.originalTitle || video.title || '');
         // Ho descartem tot i que el títol digui "oficial" si té marques de cover/directe/lyric...
         if (NOT_OFFICIAL_CLIP_RE.test(title.replace(/official\s+audio/gi, 'audio'))) return false;
-        if (/provided to youtube by/i.test(String(video.description || ''))) return false; // pistes Topic (imatge fixa)
+        if (video.topicTrack || /provided to youtube by/i.test(String(video.description || ''))) return false; // pistes Topic (imatge fixa); fallback per feeds antics
         const seconds = Number(video.durationSeconds) || 0;
         if (seconds && (seconds < 100 || seconds > 720)) return false;
         if (OFFICIAL_CLIP_RE.test(title)) return true;
