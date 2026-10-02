@@ -48,6 +48,15 @@ describe('botons unificats i configuració', () => {
         expect(layout).toContain('.btn-heart-song-action');
         expect(layout).toContain('width: 48px');
         expect(layout).toContain('width: 24px');
+        expect(layout).toContain('order: -100');
+        expect(layout).toContain('#playlistBtn');
+        expect(layout).toContain('order: -90');
+        expect(layout).toContain('#shareBtn');
+        expect(layout).toContain('order: -80');
+        expect(layout).toContain('#miniPlayerToggle');
+        expect(layout).toContain('order: -70');
+        expect(layout).toContain('scroll-padding-inline: 12px');
+        expect(layout).toContain('text-overflow: ellipsis');
     });
 
     it('afegir un estil a la ràdio no fa servir el «+» (que és per afegir cançons a una llista)', () => {
