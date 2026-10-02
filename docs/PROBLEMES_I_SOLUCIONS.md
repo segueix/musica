@@ -13,6 +13,21 @@
 
 **Fitxers Afectats:**
 
+## [2026-10-02] - L'app es recarregava sola mentre es tocava o s'engegava una cançó
+**Símptoma:** al mòbil, poc després d'obrir Segueix Música, fer scroll, tocar la pantalla o seleccionar una cançó podia coincidir amb una recàrrega sobtada de tota l'app.
+
+**Causa Arrel:** el Service Worker nou feia `skipWaiting()` automàticament quan ja n'hi havia un d'actiu. Això provocava un `controllerchange` en qualsevol moment. `initAppUpdater()` només ajornava el `reload` si el reproductor ja havia arribat exactament a `playerState === '1'`; quan una cançó s'acabava de tocar sovint encara era `buffering` (`3`) o el vídeo encara no havia començat, i la pàgina es recarregava igualment. El toc no causava el problema: només coincidia amb l'activació asíncrona del SW.
+
+**Solució Implementada:**
+- `sw.js`: cap actualització fa `skipWaiting()` automàtic durant `install`; el worker nou queda `waiting`.
+- `initAppUpdater()`: mentre la pàgina és visible, una actualització només mostra l'avís; no s'activa ni recarrega.
+- En passar l'app a segon pla, s'envia `SKIP_WAITING` i la recàrrega es pot fer sense interrompre l'ús.
+- Si l'usuari prem explícitament l'avís d'actualització, sí que s'aplica al moment.
+- Si per qualsevol motiu arriba un `controllerchange` inesperat mentre l'app és visible, el `reload` queda ajornat fins que la pàgina s'oculta.
+- `tests/browser/verificar-sw.js` comprova que amb l'app visible una versió nova queda preparada, que scroll/toc no recarreguen i que l'actualització s'aplica després en segon pla sense bucle.
+
+**Fitxers Afectats:** `sw.js`, `js/app.js` (`initAppUpdater`), `tests/browser/verificar-sw.js`, `CLAUDE.md`.
+
 ## [2026-10-02] - Mode conducció: pantalla negra sense distraccions
 **Símptoma:** al mòbil, mentre es condueix, la pantalla s'apaga (i sense YouTube Premium la música s'atura) o es queda encesa amb tota l'app, que distreu i gasta bateria.
 
