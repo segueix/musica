@@ -1,0 +1,57 @@
+name: Arxivar feed musical
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "scripts/archivar_feed_musical.js"
+      - "scripts/lib/arxiu_musical.js"
+      - "tests/arxiu-musical.test.js"
+      - ".github/workflows/arxivar-feed-musical.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: music-data-writer
+  cancel-in-progress: false
+
+jobs:
+  arxiva:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "20"
+
+      - name: Sincronitza main
+        run: |
+          git fetch origin main
+          git reset --hard origin/main
+
+      - name: Instal·la dependències
+        run: npm ci
+
+      - name: Prova l'arxiu
+        run: npx vitest run tests/arxiu-musical.test.js
+
+      - name: Mou repertori antic a l'historial
+        run: node scripts/archivar_feed_musical.js
+
+      - name: Regenera índex de cerca històric
+        run: node scripts/generar_index_cerca.js
+
+      - name: Publica feed, historial i índex
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A data
+          if git diff --cached --quiet; then
+            echo "Sense canvis d'arxiu."
+            exit 0
+          fi
+          git commit -m "data: separa feed calent i historial musical"
+          git push origin HEAD:main
