@@ -5,7 +5,7 @@ tenir quan el feed musical incorpori vídeos nous: cal repassar-los primer cada 
 castellà». Les cançons amagades són a `data/hidden-videos.json` (el client les filtra i `update_music_feed.js` les
 descarta en regenerar el feed).
 
-> Última revisió: 2026-10-01. Si afegeixes o treus un artista, actualitza la taula **i** la data.
+> Última revisió: 2026-10-02. Si afegeixes o treus un artista, actualitza la taula **i** la data.
 
 ## Com es fa servir
 
@@ -58,6 +58,23 @@ avís).
 | Artista (nom al feed) | Ocultes | Notes |
 | --- | --- | --- |
 | **Judit Neddermann** | 19 | Castellà: l'àlbum *Aire* i part de *LAR*. Basc: l'àlbum *Artean* (títols basc/català, duets amb artistes bascos; es poden recuperar). **Pendent de verificar:** «Esperar» (*LAR*). «misterio do som» és en gallec i es manté. |
+
+## Artistes nous amb repertori en castellà (alta del 2026-10-02)
+
+Artistes que s'han indexat el 2026-10-02 i que, segons la llista de l'usuari, tenen cançons en castellà. Encara no són
+al feed: quan el workflow «Actualitzar feed musical» els incorpori, cal repassar-los amb
+`node scripts/revisar_castella_vigilats.js --artista="Nom"` i amagar les cançons 100 % en castellà. El nom de la taula és
+el `channelTitle` que tindran al feed (el de YouTube, sense «- Topic» ni «Oficial»).
+
+| Artista (nom al feed) | Ocultes | Notes |
+| --- | --- | --- |
+| **Sandra Bautista** | 0 | Pendent de revisar quan entri al feed. |
+| **Frans Cuspinera** | 0 | Pendent de revisar quan entri al feed (canal «Tema»). |
+| **Manu Guix** | 0 | Pendent de revisar quan entri al feed («Manu Guix Oficial»). |
+| **Sílvia Comes** | 0 | Pendent de revisar quan entri al feed (canal «Tema»). |
+| **Lídia Pujol** | 0 | Pendent de revisar quan entri al feed (canal «Tema»). |
+| **ALBERT PLA** | 0 | No marcat per l'usuari, però bona part del repertori d'Albert Pla és en castellà: revisar-lo. A l'app es mostra «Albert Pla» (`displayName`). |
+| **Dr. Calypso** | 0 | No marcat per l'usuari; grup de ska amb temes en castellà: revisar-lo. |
 
 ## Subtítols en castellà (2026-10-01)
 

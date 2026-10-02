@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-01T17:45:58.803Z",
+  "updatedAt": "2026-10-02T09:00:00.000Z",
   "artists": [
     {
       "name": "31 FAM",
@@ -59,6 +59,42 @@
           "wikidataWorkEvidence": []
         }
       }
+    },
+    {
+      "name": "Adrià Puntí",
+      "aliases": [],
+      "genres": [
+        "Cançó d'autor",
+        "Rock"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCDiHZrbEw6zc_DaFl5wsmRA",
+            "handle": null,
+            "name": "Adrià Puntí",
+            "type": "topic",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-02",
+        "youtube:manual-verified",
+        "genre:manual",
+        "https://www.youtube.com/channel/UCDiHZrbEw6zc_DaFl5wsmRA"
+      ],
+      "lastChecked": "2026-10-02T09:00:00.000Z",
+      "notes": "Alta manual verificada (llista de l'usuari del 2026-10-02). Canal «Tema» (Topic) de YouTube."
     },
     {
       "name": "Ai Ai Ai",
@@ -267,6 +303,41 @@
       ]
     },
     {
+      "name": "Albert Fibla",
+      "aliases": [],
+      "genres": [
+        "Cançó d'autor"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCz-O8jJsp_uT_vORvd9Etbg",
+            "handle": null,
+            "name": "Albert Fibla",
+            "type": "topic",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-02",
+        "youtube:manual-verified",
+        "genre:manual",
+        "https://www.youtube.com/channel/UCz-O8jJsp_uT_vORvd9Etbg"
+      ],
+      "lastChecked": "2026-10-02T09:00:00.000Z",
+      "notes": "Alta manual verificada (llista de l'usuari del 2026-10-02). Canal «Tema» (Topic) de YouTube."
+    },
+    {
       "name": "Albert Guinovart i Mingacho",
       "aliases": [],
       "genres": [
@@ -388,7 +459,6 @@
       "name": "Albert Pla i Álvarez",
       "aliases": [],
       "genres": [
-        "Rock",
         "Cançó d'autor"
       ],
       "territories": [],
@@ -398,7 +468,15 @@
       "wikidataId": "Q942636",
       "musicbrainzId": "ba77d3af-37d0-466f-875a-3240f4403f7e",
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCqaEtRht2jakBhGFLzS617w",
+            "handle": "@ALBERTPLAok",
+            "name": "ALBERT PLA",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "candidates": [],
         "searchCandidates": [
           {
@@ -442,16 +520,19 @@
           }
         ]
       },
-      "confidence": "pendent",
-      "reviewStatus": "pendent",
-      "active": false,
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
         "https://www.wikidata.org/wiki/Q942636",
         "wikidata:languages-spoken-catalan",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "manual-user-2026-10-02",
+        "youtube:manual-verified",
+        "genre:manual"
       ],
-      "lastChecked": "2026-09-25T15:53:55.882Z",
-      "notes": "",
+      "lastChecked": "2026-10-02T09:00:00.000Z",
+      "notes": "Alta manual verificada (llista de l'usuari del 2026-10-02).",
       "enrichment": {
         "musicbrainz": {
           "checkedAt": "2026-09-25T15:53:55.882Z",
@@ -488,7 +569,8 @@
       "genresRaw": [
         "rock",
         "música de cantautor"
-      ]
+      ],
+      "displayName": "Albert Pla"
     },
     {
       "name": "Alfred Garcia",
@@ -623,9 +705,46 @@
       "notes": "Alta manual verificada: duet de folk d'arrel catalana i canal oficial de YouTube."
     },
     {
+      "name": "Anaïs Vila",
+      "aliases": [],
+      "genres": [
+        "Cançó d'autor"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCPzAMvgbZZqisrkmVSgqIHg",
+            "handle": null,
+            "name": "Anaïs Vila",
+            "type": "topic",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-02",
+        "youtube:manual-verified",
+        "genre:manual",
+        "https://www.youtube.com/channel/UCPzAMvgbZZqisrkmVSgqIHg"
+      ],
+      "lastChecked": "2026-10-02T09:00:00.000Z",
+      "notes": "Alta manual verificada (llista de l'usuari del 2026-10-02). Canal «Tema» (Topic) de YouTube."
+    },
+    {
       "name": "Andreu Rifé i Oro",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Cançó d'autor"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -633,7 +752,15 @@
       "wikidataId": "Q930586",
       "musicbrainzId": "7dfe5902-5fdf-423a-bbe6-c2426c80b27f",
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCOuye30wynoiY9VfWM8BFWg",
+            "handle": null,
+            "name": "Andreu Rifé",
+            "type": "topic",
+            "primary": true
+          }
+        ],
         "candidates": [],
         "searchCandidates": [
           {
@@ -678,17 +805,20 @@
           }
         ]
       },
-      "confidence": "pendent",
-      "reviewStatus": "pendent",
-      "active": false,
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
         "https://www.wikidata.org/wiki/Q930586",
         "wikidata:languages-spoken-catalan",
         "wikidata:native-language-catalan",
-        "wikidata:native-language-catalan-musician"
+        "wikidata:native-language-catalan-musician",
+        "manual-user-2026-10-02",
+        "youtube:manual-verified",
+        "genre:manual"
       ],
-      "lastChecked": "2026-09-25T15:53:57.303Z",
-      "notes": "",
+      "lastChecked": "2026-10-02T09:00:00.000Z",
+      "notes": "Alta manual verificada (llista de l'usuari del 2026-10-02).",
       "enrichment": {
         "musicbrainz": {
           "checkedAt": "2026-09-25T15:53:57.303Z",
@@ -721,7 +851,9 @@
           "musicbrainzReleaseGroupCount": 2
         }
       },
-      "genresRaw": []
+      "genresRaw": [
+        "Cançó d'autor"
+      ]
     },
     {
       "name": "Anna Andreu",
@@ -3391,8 +3523,7 @@
       "name": "Dr. Calypso",
       "aliases": [],
       "genres": [
-        "Ska / Reggae",
-        "Funk / Soul / R&B"
+        "Ska / Reggae"
       ],
       "territories": [],
       "languages": [
@@ -3401,7 +3532,15 @@
       "wikidataId": "Q612657",
       "musicbrainzId": "9a571eaa-cffe-4b39-9290-875de7adf280",
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCX95O_Gs_2ob3p86_MgldhA",
+            "handle": null,
+            "name": "Dr. Calypso",
+            "type": "topic",
+            "primary": true
+          }
+        ],
         "candidates": [],
         "searchCandidates": [
           {
@@ -3451,15 +3590,18 @@
           }
         ]
       },
-      "confidence": "pendent",
-      "reviewStatus": "pendent",
-      "active": false,
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
         "https://www.wikidata.org/wiki/Q612657",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "manual-user-2026-10-02",
+        "youtube:manual-verified",
+        "genre:manual"
       ],
-      "lastChecked": "2026-09-25T15:54:19.897Z",
-      "notes": "",
+      "lastChecked": "2026-10-02T09:00:00.000Z",
+      "notes": "Alta manual verificada (llista de l'usuari del 2026-10-02).",
       "enrichment": {
         "musicbrainz": {
           "checkedAt": "2026-09-25T15:54:19.897Z",
@@ -3812,6 +3954,41 @@
           "wikidataWorkEvidence": []
         }
       }
+    },
+    {
+      "name": "El Gitano de Balaguer",
+      "aliases": [],
+      "genres": [
+        "Cançó d'autor"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCfEMFCX--mYjYsAWSKvKMhA",
+            "handle": null,
+            "name": "El Gitano de Balaguer",
+            "type": "topic",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-02",
+        "youtube:manual-verified",
+        "genre:manual",
+        "https://www.youtube.com/channel/UCfEMFCX--mYjYsAWSKvKMhA"
+      ],
+      "lastChecked": "2026-10-02T09:00:00.000Z",
+      "notes": "Alta manual verificada (llista de l'usuari del 2026-10-02). Canal «Tema» (Topic) de YouTube."
     },
     {
       "name": "El Pont d'Arcalís",
@@ -4788,6 +4965,76 @@
       ]
     },
     {
+      "name": "Enric Barbat",
+      "aliases": [],
+      "genres": [
+        "Cançó d'autor"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCc-fcN1V8NLdND4zBDMBrnA",
+            "handle": null,
+            "name": "Enric Barbat",
+            "type": "topic",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-02",
+        "youtube:manual-verified",
+        "genre:manual",
+        "https://www.youtube.com/channel/UCc-fcN1V8NLdND4zBDMBrnA"
+      ],
+      "lastChecked": "2026-10-02T09:00:00.000Z",
+      "notes": "Alta manual verificada (llista de l'usuari del 2026-10-02). Canal «Tema» (Topic) de YouTube."
+    },
+    {
+      "name": "Enric Hernàez",
+      "aliases": [],
+      "genres": [
+        "Cançó d'autor"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCpdGiiitzh2ypWsOaSyvL0A",
+            "handle": null,
+            "name": "Enric Hernàez",
+            "type": "topic",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-02",
+        "youtube:manual-verified",
+        "genre:manual",
+        "https://www.youtube.com/channel/UCpdGiiitzh2ypWsOaSyvL0A"
+      ],
+      "lastChecked": "2026-10-02T09:00:00.000Z",
+      "notes": "Alta manual verificada (llista de l'usuari del 2026-10-02). Canal «Tema» (Topic) de YouTube."
+    },
+    {
       "name": "Enric Madriguera i Rodon",
       "aliases": [],
       "genres": [],
@@ -5169,20 +5416,28 @@
             "name": "Feliu Ventura",
             "type": "official",
             "primary": true
+          },
+          {
+            "id": "UC-1A04_-NE4nuEor7HG7aSg",
+            "handle": null,
+            "name": "Feliu Ventura",
+            "type": "topic",
+            "primary": false
           }
         ],
         "candidates": []
       },
-      "confidence": "mitjana",
-      "reviewStatus": "pendent",
-      "active": false,
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
         "manual-user-2026-09-29",
         "genre:manual",
-        "youtube:manual-verified"
+        "youtube:manual-verified",
+        "manual-user-2026-10-02"
       ],
-      "lastChecked": "2026-09-29T17:03:27.133Z",
-      "notes": "",
+      "lastChecked": "2026-10-02T09:00:00.000Z",
+      "notes": "Alta manual verificada (llista de l'usuari del 2026-10-02).",
       "genresRaw": [
         "Cançó d'autor"
       ]
@@ -5589,6 +5844,41 @@
       "genresRaw": []
     },
     {
+      "name": "Frans Cuspinera",
+      "aliases": [],
+      "genres": [
+        "Cançó d'autor"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCOGyDtQsutPHkVRfp0mJ_GQ",
+            "handle": null,
+            "name": "Frans Cuspinera",
+            "type": "topic",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-02",
+        "youtube:manual-verified",
+        "genre:manual",
+        "https://www.youtube.com/channel/UCOGyDtQsutPHkVRfp0mJ_GQ"
+      ],
+      "lastChecked": "2026-10-02T09:00:00.000Z",
+      "notes": "Alta manual verificada (llista de l'usuari del 2026-10-02). Canal «Tema» (Topic) de YouTube."
+    },
+    {
       "name": "Gavina.mp3",
       "aliases": [],
       "genres": [
@@ -5891,6 +6181,41 @@
           "wikidataWorkEvidence": []
         }
       }
+    },
+    {
+      "name": "Gessamí Boada",
+      "aliases": [],
+      "genres": [
+        "Cançó d'autor"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCPsEb7F9DceUz4TsdfyuiBw",
+            "handle": "@GessamiBoada",
+            "name": "Gessamí Boada",
+            "type": "official",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-02",
+        "youtube:manual-verified",
+        "genre:manual",
+        "https://www.youtube.com/channel/UCPsEb7F9DceUz4TsdfyuiBw"
+      ],
+      "lastChecked": "2026-10-02T09:00:00.000Z",
+      "notes": "Alta manual verificada (llista de l'usuari del 2026-10-02)."
     },
     {
       "name": "Ginestà",
@@ -6436,6 +6761,41 @@
       ]
     },
     {
+      "name": "Hèctor Vila",
+      "aliases": [],
+      "genres": [
+        "Cançó d'autor"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCfY137sqCUb5DJNrjiiy6iQ",
+            "handle": null,
+            "name": "Hèctor Vila",
+            "type": "topic",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-02",
+        "youtube:manual-verified",
+        "genre:manual",
+        "https://www.youtube.com/channel/UCfY137sqCUb5DJNrjiiy6iQ"
+      ],
+      "lastChecked": "2026-10-02T09:00:00.000Z",
+      "notes": "Alta manual verificada (llista de l'usuari del 2026-10-02). Canal «Tema» (Topic) de YouTube."
+    },
+    {
       "name": "Hey Zuri",
       "aliases": [],
       "genres": [
@@ -6645,6 +7005,41 @@
         "música de cantautor",
         "folk-country"
       ]
+    },
+    {
+      "name": "Isaak Aguilà",
+      "aliases": [],
+      "genres": [
+        "Cançó d'autor"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCS9aWKrOcJsSqsJqBEouqAg",
+            "handle": null,
+            "name": "Isaak Aguilà",
+            "type": "topic",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-02",
+        "youtube:manual-verified",
+        "genre:manual",
+        "https://www.youtube.com/channel/UCS9aWKrOcJsSqsJqBEouqAg"
+      ],
+      "lastChecked": "2026-10-02T09:00:00.000Z",
+      "notes": "Alta manual verificada (llista de l'usuari del 2026-10-02). Canal «Tema» (Topic) de YouTube."
     },
     {
       "name": "Ja t'ho diré",
@@ -7323,6 +7718,41 @@
         }
       },
       "genresRaw": []
+    },
+    {
+      "name": "Joan Isaac",
+      "aliases": [],
+      "genres": [
+        "Cançó d'autor"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCcDS4PowmsXc6R3ACE7Vgfg",
+            "handle": null,
+            "name": "Joan Isaac",
+            "type": "topic",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-02",
+        "youtube:manual-verified",
+        "genre:manual",
+        "https://www.youtube.com/channel/UCcDS4PowmsXc6R3ACE7Vgfg"
+      ],
+      "lastChecked": "2026-10-02T09:00:00.000Z",
+      "notes": "Alta manual verificada (llista de l'usuari del 2026-10-02). Canal «Tema» (Topic) de YouTube."
     },
     {
       "name": "Joan Manuel Serrat",
@@ -8283,6 +8713,41 @@
         "òpera",
         "contemporary classical"
       ]
+    },
+    {
+      "name": "Josep Tero",
+      "aliases": [],
+      "genres": [
+        "Cançó d'autor"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UC7ixOUPG3ydQjkUZ4pPqvhA",
+            "handle": null,
+            "name": "Josep Tero",
+            "type": "topic",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-02",
+        "youtube:manual-verified",
+        "genre:manual",
+        "https://www.youtube.com/channel/UC7ixOUPG3ydQjkUZ4pPqvhA"
+      ],
+      "lastChecked": "2026-10-02T09:00:00.000Z",
+      "notes": "Alta manual verificada (llista de l'usuari del 2026-10-02). Canal «Tema» (Topic) de YouTube."
     },
     {
       "name": "Judit Neddermann",
@@ -10130,6 +10595,41 @@
       ]
     },
     {
+      "name": "Lídia Pujol",
+      "aliases": [],
+      "genres": [
+        "Cançó d'autor"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCgAWzLHswq5VtYxCEMWGAng",
+            "handle": null,
+            "name": "Lídia Pujol",
+            "type": "topic",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-02",
+        "youtube:manual-verified",
+        "genre:manual",
+        "https://www.youtube.com/channel/UCgAWzLHswq5VtYxCEMWGAng"
+      ],
+      "lastChecked": "2026-10-02T09:00:00.000Z",
+      "notes": "Alta manual verificada (llista de l'usuari del 2026-10-02). Canal «Tema» (Topic) de YouTube."
+    },
+    {
       "name": "Lildami",
       "aliases": [],
       "genres": [
@@ -11004,7 +11504,9 @@
     {
       "name": "Manu Guix",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Cançó d'autor"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -11012,7 +11514,15 @@
       "wikidataId": "Q6752273",
       "musicbrainzId": "40290a50-f1ae-45a0-a219-0350b7b29695",
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UC__Mo7bZ2F69jnSKPmpvJfA",
+            "handle": "@ManuGuixOficial",
+            "name": "Manu Guix Oficial",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "candidates": [],
         "searchCandidates": [
           {
@@ -11062,16 +11572,19 @@
           }
         ]
       },
-      "confidence": "pendent",
-      "reviewStatus": "pendent",
-      "active": false,
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
         "https://www.wikidata.org/wiki/Q6752273",
         "wikidata:native-language-catalan",
-        "wikidata:native-language-catalan-musician"
+        "wikidata:native-language-catalan-musician",
+        "manual-user-2026-10-02",
+        "youtube:manual-verified",
+        "genre:manual"
       ],
-      "lastChecked": "2026-09-25T15:55:31.318Z",
-      "notes": "",
+      "lastChecked": "2026-10-02T09:00:00.000Z",
+      "notes": "Alta manual verificada (llista de l'usuari del 2026-10-02).",
       "enrichment": {
         "musicbrainz": {
           "checkedAt": "2026-09-25T15:55:31.318Z",
@@ -11104,7 +11617,9 @@
           "autoAcceptedId": null
         }
       },
-      "genresRaw": []
+      "genresRaw": [
+        "Cançó d'autor"
+      ]
     },
     {
       "name": "Manuel Espona",
@@ -12474,6 +12989,42 @@
         "pop-rock",
         "indie pop"
       ]
+    },
+    {
+      "name": "Montse Castellà",
+      "aliases": [],
+      "genres": [
+        "Cançó d'autor"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCCQqI6aPYDi_aGJsfDr_gqA",
+            "handle": "@MontseCastellà",
+            "name": "Montse Castellà - Cantautora",
+            "type": "official",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-02",
+        "youtube:manual-verified",
+        "genre:manual",
+        "https://www.youtube.com/channel/UCCQqI6aPYDi_aGJsfDr_gqA"
+      ],
+      "lastChecked": "2026-10-02T09:00:00.000Z",
+      "notes": "Alta manual verificada (llista de l'usuari del 2026-10-02).",
+      "displayName": "Montse Castellà"
     },
     {
       "name": "Muluk El Hwa",
@@ -14961,6 +15512,42 @@
       ]
     },
     {
+      "name": "Pere Tàpias",
+      "aliases": [],
+      "genres": [
+        "Cançó d'autor"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCYECw-23usgJzg1MnHRFFQQ",
+            "handle": null,
+            "name": "Pere Tapias",
+            "type": "topic",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-02",
+        "youtube:manual-verified",
+        "genre:manual",
+        "https://www.youtube.com/channel/UCYECw-23usgJzg1MnHRFFQQ"
+      ],
+      "lastChecked": "2026-10-02T09:00:00.000Z",
+      "notes": "Alta manual verificada (llista de l'usuari del 2026-10-02). Canal «Tema» (Topic) de YouTube.",
+      "displayName": "Pere Tàpias"
+    },
+    {
       "name": "Pilseners",
       "aliases": [],
       "genres": [
@@ -15633,6 +16220,42 @@
       "displayName": "Quico Pi de la Serra"
     },
     {
+      "name": "Quimi Portet",
+      "aliases": [],
+      "genres": [
+        "Cançó d'autor",
+        "Rock"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCWq2Sd65Q2V6PhDzOBMTb5Q",
+            "handle": "@QuimiPortet_Oficial",
+            "name": "Quimi Portet",
+            "type": "official",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-02",
+        "youtube:manual-verified",
+        "genre:manual",
+        "https://www.youtube.com/channel/UCWq2Sd65Q2V6PhDzOBMTb5Q"
+      ],
+      "lastChecked": "2026-10-02T09:00:00.000Z",
+      "notes": "Alta manual verificada (llista de l'usuari del 2026-10-02)."
+    },
+    {
       "name": "Raimon",
       "aliases": [],
       "genres": [
@@ -15758,7 +16381,15 @@
       "wikidataId": "Q9066293",
       "musicbrainzId": "6cf5c400-3341-464c-b91c-24742cb88230",
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCn4V6rDw7Gz1R6F2qyt2IrQ",
+            "handle": null,
+            "name": "Ramon Muntaner",
+            "type": "topic",
+            "primary": true
+          }
+        ],
         "candidates": [],
         "searchCandidates": [
           {
@@ -15777,18 +16408,21 @@
           }
         ]
       },
-      "confidence": "pendent",
-      "reviewStatus": "pendent",
-      "active": false,
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
         "https://www.wikidata.org/wiki/Q9066293",
         "wikidata:native-language-catalan",
         "wikidata:performed-catalan-work",
         "wikidata:languages-spoken-catalan",
-        "wikidata:native-language-catalan-musician"
+        "wikidata:native-language-catalan-musician",
+        "manual-user-2026-10-02",
+        "youtube:manual-verified",
+        "genre:manual"
       ],
-      "lastChecked": "2026-09-25T15:56:21.813Z",
-      "notes": "",
+      "lastChecked": "2026-10-02T09:00:00.000Z",
+      "notes": "Alta manual verificada (llista de l'usuari del 2026-10-02).",
       "enrichment": {
         "musicbrainz": {
           "checkedAt": "2026-09-25T15:56:21.813Z",
@@ -16611,6 +17245,41 @@
       ]
     },
     {
+      "name": "Sandra Bautista",
+      "aliases": [],
+      "genres": [
+        "Cançó d'autor"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UC_Nx-tsTDRubDg1dbd5jwAw",
+            "handle": "@_sandra.bautista_",
+            "name": "Sandra Bautista",
+            "type": "official",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-02",
+        "youtube:manual-verified",
+        "genre:manual",
+        "https://www.youtube.com/channel/UC_Nx-tsTDRubDg1dbd5jwAw"
+      ],
+      "lastChecked": "2026-10-02T09:00:00.000Z",
+      "notes": "Alta manual verificada (llista de l'usuari del 2026-10-02)."
+    },
+    {
       "name": "Sandra Monfort",
       "aliases": [],
       "genres": [
@@ -17267,6 +17936,41 @@
       ]
     },
     {
+      "name": "Sílvia Comes",
+      "aliases": [],
+      "genres": [
+        "Cançó d'autor"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCOQizv5kl-XBONzbo3RKHdw",
+            "handle": null,
+            "name": "Sílvia Comes",
+            "type": "topic",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-02",
+        "youtube:manual-verified",
+        "genre:manual",
+        "https://www.youtube.com/channel/UCOQizv5kl-XBONzbo3RKHdw"
+      ],
+      "lastChecked": "2026-10-02T09:00:00.000Z",
+      "notes": "Alta manual verificada (llista de l'usuari del 2026-10-02). Canal «Tema» (Topic) de YouTube."
+    },
+    {
       "name": "Sílvia Pérez Cruz",
       "aliases": [],
       "genres": [
@@ -17409,6 +18113,41 @@
         "singer-songwriter"
       ],
       "displayName": "Sílvia Pérez Cruz"
+    },
+    {
+      "name": "Skatalà",
+      "aliases": [],
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCUWHtSvVKAhJn-zsf38q2TQ",
+            "handle": null,
+            "name": "Skatalà",
+            "type": "topic",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-02",
+        "youtube:manual-verified",
+        "genre:manual",
+        "https://www.youtube.com/channel/UCUWHtSvVKAhJn-zsf38q2TQ"
+      ],
+      "lastChecked": "2026-10-02T09:00:00.000Z",
+      "notes": "Alta manual verificada (llista de l'usuari del 2026-10-02). Canal «Tema» (Topic) de YouTube."
     },
     {
       "name": "Smoking Souls",
@@ -18355,7 +19094,7 @@
       "name": "Toti Soler",
       "aliases": [],
       "genres": [
-        "Folk i arrel"
+        "Cançó d'autor"
       ],
       "territories": [],
       "languages": [
@@ -18364,7 +19103,15 @@
       "wikidataId": "Q2618737",
       "musicbrainzId": "63166874-1bab-4226-97c2-bbed48589de0",
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UC8RrEDfmV-rQsQpURsY6krA",
+            "handle": "@totisolervideos",
+            "name": "Toti Soler",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "candidates": [],
         "searchCandidates": [
           {
@@ -18413,16 +19160,19 @@
           }
         ]
       },
-      "confidence": "pendent",
-      "reviewStatus": "pendent",
-      "active": false,
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
         "https://www.wikidata.org/wiki/Q2618737",
         "wikidata:languages-spoken-catalan",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "manual-user-2026-10-02",
+        "youtube:manual-verified",
+        "genre:manual"
       ],
-      "lastChecked": "2026-09-25T15:56:44.971Z",
-      "notes": "",
+      "lastChecked": "2026-10-02T09:00:00.000Z",
+      "notes": "Alta manual verificada (llista de l'usuari del 2026-10-02).",
       "enrichment": {
         "musicbrainz": {
           "checkedAt": "2026-09-25T15:56:44.971Z",
@@ -19023,6 +19773,41 @@
           "wikidataWorkEvidence": []
         }
       }
+    },
+    {
+      "name": "Xavier Baró",
+      "aliases": [],
+      "genres": [
+        "Cançó d'autor"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UC40skFzEdR6EMg4FeL7U6OQ",
+            "handle": null,
+            "name": "Xavier Baró",
+            "type": "topic",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-02",
+        "youtube:manual-verified",
+        "genre:manual",
+        "https://www.youtube.com/channel/UC40skFzEdR6EMg4FeL7U6OQ"
+      ],
+      "lastChecked": "2026-10-02T09:00:00.000Z",
+      "notes": "Alta manual verificada (llista de l'usuari del 2026-10-02). Canal «Tema» (Topic) de YouTube."
     },
     {
       "name": "Xavier Benguerel i Godó",
