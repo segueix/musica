@@ -12218,6 +12218,13 @@
             "name": "Maria Jaume",
             "type": "official",
             "primary": true
+          },
+          {
+            "id": "UC3QJ1xC8aCwQdvTy-HTRwew",
+            "handle": null,
+            "name": "Maria Jaume",
+            "type": "topic",
+            "primary": false
           }
         ],
         "candidates": [
@@ -12240,10 +12247,11 @@
         "wikidata:native-language-catalan-musician",
         "musicbrainz:youtube-candidate",
         "youtube:channels-list",
-        "genre:manual"
+        "genre:manual",
+        "manual-user-2026-10-02"
       ],
-      "lastChecked": "2026-09-25T16:21:18.629Z",
-      "notes": "",
+      "lastChecked": "2026-10-02T10:00:00.000Z",
+      "notes": "Canal «Tema» afegit el 2026-10-02: hi ha els llançaments (àlbums i senzills) que no surten al canal oficial.",
       "enrichment": {
         "musicbrainz": {
           "checkedAt": "2026-09-25T15:55:40.094Z",
