@@ -38,6 +38,29 @@ describe('ocultar cançons amb títol en castellà', () => {
         );
     });
 
+    it('revisió del 2026-10-02: castellà i altres llengües dels artistes amb canal Tema', () => {
+        expect(esCastella(song('Txarango', 'Corazón Viajero'))).toBe(true);
+        expect(esCastella(song('Txarango', 'Mr. Tambourine Man'))).toBe(true);
+        expect(esCastella(song('Txarango', 'Meravellós Regal'))).toBe(false);
+        expect(esCastella(song('Txarango', 'MIL OCELLS - Txarango feat. Jarabe de Palo'))).toBe(false);
+        expect(esCastella(song('Sandra Bautista', 'Sandra Bautista - El último gol Live (Toma 3: Live Session)'))).toBe(
+            true
+        );
+        expect(esCastella(song('Sandra Bautista', 'Darrere el foc'))).toBe(false);
+        expect(esCastella(song('Sílvia Pérez Cruz', 'É triste viver sem seu amor'))).toBe(true);
+        expect(esCastella(song('Sílvia Pérez Cruz', 'Mar de Na Catalina'))).toBe(false);
+        expect(esCastella(song('El Pony Pisador', 'Wellerman'))).toBe(true);
+        expect(esCastella(song('El Pony Pisador', 'Tot és part de ser un pirata'))).toBe(false);
+        // Els dos noms d'un mateix artista (canal oficial i Tema) i la regla antiga es mantenen
+        expect(esCastella(song('Miki Núñez', 'Quédate En Madrid'))).toBe(true);
+        expect(esCastella(song('Miki Nuñez', 'Miki Núñez - Viento Y Vida'))).toBe(true);
+        expect(esCastella(song('Miki Núñez', 'Ara'))).toBe(false);
+        // Límits de paraula amb accents: «Todo» no és dins de «Tot»; «Tiempo» no toca «Temps»
+        expect(esCastella(song('Sara Roy', 'Sara Roy - Todo (Acústico)'))).toBe(true);
+        expect(esCastella(song('Sara Roy', 'Sara Roy - Roses'))).toBe(false);
+        expect(esCastella(song('Sara Roy', 'TOCAR EL CEL - Sara Roy'))).toBe(false);
+    });
+
     it('només afecta cançons i canals de la llista', () => {
         expect(esCastella({ channelTitle: 'MARLENA', title: 'entrevista', contentType: 'review' })).toBe(false);
         expect(esCastella(song('Altre canal', 'Nadie Se Muere De Amor'))).toBe(false);

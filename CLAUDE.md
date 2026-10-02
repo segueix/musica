@@ -311,7 +311,7 @@ const likes = ctx2.SegueixApp.features.likes;
 
 1. **Llegeix sempre `docs/ARTISTES_CASTELLA.md`** abans de res: és la llista d'artistes a qui ja hem amagat cançons en castellà o basc i on és més probable que en surtin de noves. Repassa'ls **tots**, encara que només et demanin una categoria, amb `node scripts/revisar_castella_vigilats.js [--since=AAAA-MM-DD] [--artista="Nom"]`.
 2. Després repassa l'abast que t'hagin demanat (artista/categoria). Criteri: s'amaga només el que és **100 % en castellà o basc** (el títol i, si dubtes, la lletra/descripció; `defaultAudioLanguage` no és fiable). Es conserva el català, el mixt i els títols compartits.
-3. Amaga amb una regla per canal a `REGLES` de `scripts/ocultar_titols_castella.js` (la clau és el `channelTitle` exacte) i `node scripts/ocultar_titols_castella.js`; per a casos puntuals (Short, àlbum…) afegeix l'ID a `data/hidden-videos.json`. No toquis `feed.json`.
+3. Amaga amb una regla per canal a `REGLES` de `scripts/ocultar_titols_castella.js` (la clau és el `channelTitle` exacte; per a una llista de títols, `afegeix(['canal oficial', 'canal Tema'], [títols])`, que hi posa límits de paraula i suma a la regla que ja hi hagi) i `node scripts/ocultar_titols_castella.js`; per a casos puntuals (Short, àlbum…) afegeix l'ID a `data/hidden-videos.json`. No toquis `feed.json`.
 4. **Actualitza `docs/ARTISTES_CASTELLA.md`**: artistes nous, recomptes, notes i la data de «Última revisió», i afegeix l'entrada a `docs/PROBLEMES_I_SOLUCIONS.md`. Si un artista apareix a la llista per primera vegada, afegeix-lo amb la primera columna `**Nom exacte al feed**`.
 5. Digues a l'usuari quines cançons has amagat i quines dubtoses has deixat.
 

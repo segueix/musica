@@ -13,6 +13,15 @@
 
 **Fitxers Afectats:**
 
+## [2026-10-02] - Castellà i altres llengües als canals «Tema» nous
+**Símptoma:** amb els canals «Tema» van entrar al feed les discografies senceres d'artistes bilingües. A Txarango, per exemple, «El Martillo», «Corazón Viajero» o «Sueña Como un Niño», quan el seu canal oficial és tot en català. També hi van entrar cançons en anglès, portuguès, gallec, italià, llatí, basc, japonès i àrab.
+
+**Causa Arrel:** les regles de `scripts/ocultar_titols_castella.js` eren per canal i per títol. Els canals Tema són canals nous, de vegades amb un altre nom («Alfred García» en lloc d'«alfredgarcia», «Miki Núñez» en lloc de «Miki Nuñez»), i porten cançons que el canal oficial no tenia.
+
+**Solució Implementada:** revisió a mà de les cançons visibles de 46 artistes, Sandra Bautista inclosa. A petició de l'usuari, en aquests artistes s'amaguen el castellà **i les altres llengües**; es mantenen el català, l'occità, les instrumentals i els títols que són noms propis. `afegeix(canals, títols)` crea o amplia la regla d'un o més canals amb una llista de títols. `llista()` hi posa límits de paraula que entenen els accents, perquè «Todo» no toqui «Tot» ni «Ara» toqui «Arabia». Les regles existents (Txarango, Ceaxe, 31 FAM, KOP…) es conserven i s'hi suma la llista nova. Com que la regla té `titols.test()`, la generació del feed també amaga la mateixa cançó des del Tema. Resultat: 472 cançons noves a `data/hidden-videos.json`; el detall per artista i els dubtosos que es mantenen són a `docs/ARTISTES_CASTELLA.md`.
+
+**Fitxers Afectats:** `scripts/ocultar_titols_castella.js`, `data/hidden-videos.json`, `docs/ARTISTES_CASTELLA.md`, `tests/ocultar-titols-castella.test.js`, `CLAUDE.md`.
+
 ## [2026-10-02] - Canals «Tema»: la primera generació real i el llindar de cobertura
 **Símptoma:** la primera generació real amb els Tema (9.711 vídeos, 8,0 MB) va funcionar, però en mode `audit` `music-topic-review.json` deia que el Tema trauria 1.084 vídeos dels canals oficials, molts d'ells cançons bones. El Tema de ZOO portava cançons d'un grup indonesi homònim.
 

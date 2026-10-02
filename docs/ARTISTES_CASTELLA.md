@@ -59,22 +59,70 @@ avís).
 | --- | --- | --- |
 | **Judit Neddermann** | 19 | Castellà: l'àlbum *Aire* i part de *LAR*. Basc: l'àlbum *Artean* (títols basc/català, duets amb artistes bascos; es poden recuperar). **Pendent de verificar:** «Esperar» (*LAR*). «misterio do som» és en gallec i es manté. |
 
-## Artistes nous amb repertori en castellà (alta del 2026-10-02)
+## Castellà i altres llengües dels canals Tema (2026-10-02)
 
-Artistes que s'han indexat el 2026-10-02 i que, segons la llista de l'usuari, tenen cançons en castellà. Encara no són
-al feed: quan el workflow «Actualitzar feed musical» els incorpori, cal repassar-los amb
-`node scripts/revisar_castella_vigilats.js --artista="Nom"` i amagar les cançons 100 % en castellà. El nom de la taula és
-el `channelTitle` que tindran al feed (el de YouTube, sense «- Topic» ni «Oficial»).
+Revisió a mà de les cançons visibles de 46 artistes després d'afegir els canals «Tema». **A petició de l'usuari, en aquests
+artistes s'amaguen també les cançons en altres llengües** (anglès, portuguès, gallec, italià, francès, llatí, basc,
+japonès, àrab), no només el castellà. L'occità (aranès) i el català es mantenen, i també les instrumentals i els títols
+que són noms propis. 472 cançons a `data/hidden-videos.json` amb `afegeix()` de `scripts/ocultar_titols_castella.js`
+(llista de títols; el canal oficial i el Tema poden tenir noms diferents i hi són tots dos).
 
 | Artista (nom al feed) | Ocultes | Notes |
 | --- | --- | --- |
-| **Sandra Bautista** | 0 | Pendent de revisar quan entri al feed. |
-| **Frans Cuspinera** | 0 | Pendent de revisar quan entri al feed (canal «Tema»). |
-| **Manu Guix** | 0 | Pendent de revisar quan entri al feed («Manu Guix Oficial»). |
-| **Sílvia Comes** | 0 | Pendent de revisar quan entri al feed (canal «Tema»). |
-| **Lídia Pujol** | 0 | Pendent de revisar quan entri al feed (canal «Tema»). |
-| **ALBERT PLA** | 0 | No marcat per l'usuari, però bona part del repertori d'Albert Pla és en castellà: revisar-lo. A l'app es mostra «Albert Pla» (`displayName`). |
-| **Dr. Calypso** | 0 | No marcat per l'usuari; grup de ska amb temes en castellà: revisar-lo. |
+| **Txarango** | 12 | Castellà del canal Tema (El Martillo, Por Ambos Lados, Atrévete a Vivir, Corazón Viajero, Sueña Como un Niño…), «500 Millas», el popurri «Tom Dooley / Verde, Verde / Esta Es Tu Tierra» i «Mr. Tambourine Man» (anglès). El canal oficial és tot en català. **Dubtosos, es mantenen:** «Aguacero», «Son, Son, Son». |
+| **Sandra Bautista** | 27 | Repertori majoritàriament castellà (Sentada en un meteorito, El último gol, Vid amurallada, GRACIAS…), italià («Mamma, rema»), gallec/portuguès («Os narradores do cinema mudo», «Silêncio») i els vídeos del micromecenatge. Es mantenen els catalans (Trencadís, Cartografia, Darrere el foc, La casa de les mil olors, Ressona la immensitat, «Mare, rema»). **Dubtosos, es mantenen:** «Pandela», «Trapezista». |
+| **Sílvia Comes** | 27 | Canal Tema: cançó en castellà (Canción de Aniversario, Cuando Muera, Bolero para Gil de Biedma…), «Peeping Tom» (anglès), «Faltando un Pedaco» (portuguès) i «Malest Cornifici Tuo Catulo» (llatí). Es manté «Amor Particular» (Llach). **Dubtosos, es mantenen:** «La Carabina», «La Locomotora». |
+| **Sílvia Pérez Cruz** | 28 | Castellà (Mañana, Loca, Vete de mí, Toda la vida un día, Cucurrucucú Paloma…), portuguès («É triste viver sem seu amor») i anglès («Sea Creature»). Es mantenen els catalans (Mar de Na Catalina, Abissal, Ben poca cosa tens, El Cant dels Ocells, Abril 74…). **Dubtosos, es mantenen:** «Chundwa», «Gelando», «Moreno», «Capitana», «Mechita», «Ai, Ai, Ai», «21 de primavera», «Verde», «Iglesias», «La flor». |
+| **Ceaxe** | 16 | Revisió del 2026-10-02: 16 més del canal Tema (Dime mi amor, Baila sola, Pa ti…). Es mantenen «Mykonos», «EXCLUSIVAAA», «NENA CATALANA». |
+| **ALBERT PLA** | 6 | Canal oficial: Mi voz, El Mortadela, Perdónenme, Todo me va bien, Experiencia Religiosa, Bombas en Madrid. |
+| **Albert Pla** | 30 | Canal Tema: gairebé tot en castellà. Es mantenen els catalans (La Fada Dormilega, Dorm, Somiatruites, Sommis, Pipi). **Dubtosos, es mantenen:** «Pepe Botika», «Alboraya», «Primer Amor», «Lola». |
+| **Miki Nuñez** | 7 | Revisió del 2026-10-02: «Mil Planes» i els covers en anglès i portuguès (Trevo, All of me, Hero, Mistletoe, Thinking out loud, Those little things). Es manté «Mil Ocells». |
+| **Miki Núñez** | 18 | Canal Tema: castellà (Encender las calles, Ahora, Quédate en Madrid…) i anglès (Some Nights, Can We Dance). **Dubtós, es manté:** «Cucu-pido». |
+| **alfredgarcia** | 13 | Revisió del 2026-10-02: castellà (Contigo, Toro de Cristal, Otra Liza…), anglès (Just A Light, Someday, For So Long, Let Me Go…) i portuguès (Praia dos Moinhos). **Dubtosos, es mantenen:** «Estrella» (amb Alvaro Soler), «1997», «2001», «Londres», «Sevilla». |
+| **Alfred García** | 21 | Canal Tema: castellà (Cuando duermes, Vete de mí, Tu canción…), anglès (City of Stars, Rock With You…) i portuguès («Amar pelos dois»). Es mantenen «Barcelona», «Madrid», «1016», «360», «Harmonic Sketch #1». |
+| **Jofre Bardagí** | 10 | Versions de Serrat i duets en castellà (Señora, Mediterráneo, Penélope…). **Dubtós, es manté:** «Menuda». |
+| **Lídia Pujol** | 12 | Castellà (Me quedaré soltera, Mi querida España, Nada de nada…), italià («Sogna fiore mio») i llatí (Ad mortem festinamus, Stella splendens, Polorum regina). Es manté l'occità («Aqueres montanhes»). **Dubtosos, es mantenen:** «Il Somiatruites», «Beatriucomtessa De Dia». |
+| **Dàmaris Gelabert** | 5 | Revisió del 2026-10-02: les versions en castellà (Los meses del año, Las estaciones…). |
+| **Marina Rossell** | 13 | Revisió del 2026-10-02: castellà (habaneres, Moustaki en castellà), portuguès («Grândola, vila morena») i italià («Va, pensiero»). **Dubtosos, es mantenen:** «Lili Marleen», «Bella Ciao», «Wiegala», «Hiroshima», «Rosina». |
+| **Sopa de Cabra** | 6 | Les cançons en castellà (Mundo Infierno, Sin Hablar, Viviendo a tu alrededor…). |
+| **Montse Castellà** | 4 | Les cançons en castellà del canal Tema. |
+| **Joan Colomo** | 7 | Revisió del 2026-10-02: 7 títols castellans més del canal Tema. |
+| **Andreu Rifé** | 5 | Canal Tema: Sácate la ternura, Mañana de ayer de hoy, Crimen, Dos rombos, Quién fuera. |
+| **Buhos** | 7 | Castellà (Cerca de ti, Vuela aunque duela…) i anglès (Today is the day, Sweet Caroline). |
+| **31 FAM** | 18 | Revisió del 2026-10-02: castellà (Te gusto, Rompe, Sincero…) i anglès (Purgatory, No Love, Touchdown…). Es mantenen l'argot i els títols mixtos (Homies, Frosti Flakes, Bandolera, Vida Gris). |
+| **KOP** | 14 | Revisió del 2026-10-02: castellà, anglès («Freedom», «We're Not Angels») i basc («Utzi Bakean»). |
+| **Manu Guix** | 10 | Castellà (Tiempo para creer, Había una vez…) i les cançons de Grease en castellà i anglès. |
+| **Adrià Puntí** | 8 | Les cançons d'Umpah-Pah en castellà del canal Tema (Tocayo, Barba Azul…). |
+| **Roger Mas** | 3 | «La Llorona», «La Bien Pagá» (castellà) i «Amore che vieni» (italià). Es manté l'occità. |
+| **The Tyets** | 7 | Castellà (Bebesita, Oye Mulata, Se queda…) i anglès («Let Me Alive»). |
+| **Brams** | 3 | «Two Girls», «¿Qué pone en tu DNI?», «Rojo Separatista». |
+| **La Tour De Carol** | 3 | «ragazza spettacolare» (italià), «A TODO TREN» (castellà), «M'aider» (francès). |
+| **Frans Cuspinera** | 2 | «Árbol Torcido», «Siempre Contigo». |
+| **Baya Baye** | 6 | Canal Tema: castellà, gallec («As Bestas»), anglès i italià. |
+| **Flashy Ice Cream** | 3 | «Toda la noche», «Forever Young», «Aleluya». |
+| **Sara Roy** | 12 | Les cançons en castellà de (A)MAR i les acústiques, i «Maybe». |
+| **Ayryn** | 3 | «Ya no lloro», «Nada», «Si tu te vas». **Dubtós, es manté:** «Cansada». |
+| **Pere Tapias** | 2 | «Oye José María», «Moreno de la Fe». |
+| **Júlia Cruz** | 1 | Revisió del 2026-10-02: «Para llegar». |
+| **Júlia Colom** | 1 | «Canta para seguir». |
+| **Gessamí Boada** | 22 | Cançons en anglès i castellà. Es mantenen les catalanes (Surto de mi, Oreneta, Mirades, Un instant…). |
+| **El Pony Pisador** | 16 | Cançons de mariners en anglès (Wellerman, Haul Away Joe…) i «El Guisote del Tío Benito». |
+| **Dr. Calypso** | 11 | Cançons en anglès i castellà. Es mantenen les instrumentals (Mr. Farlops, Plan 10, Magreb Ska…). |
+| **Crim** | 12 | Cançons i versions en anglès. |
+| **MISHIMA** | 4 | Canal Tema: les primeres cançons en anglès i «Del Montón». |
+| **Mishima** | 1 | «Hasta que lo miras». |
+| **Gossos** | 4 | «Doraemon No Uta» (japonès), «Club Tonight», «Baby Only You», «La calle 24». |
+| **Anaïs Vila** | 2 | «But We Are Still Here», «The Calm». |
+| **The Demencials** | 4 | «El Fuego del Corazón», «We Are», «You Wondering Now» i un títol en àrab. **Dubtós, es manté:** «Difícil Caminar». |
+| **Auxili** | 2 | «Rude Girl», «Imposibles». |
+| **Siderland** | 2 | «La Vida Líquida», «Let Me Love Ya». |
+| **Ebri Knight** | 10 | L'EP en castellà *La voz dormida* (El partisano, Vientos del pueblo…), «El Pueblo Unido», «Campesino» i les dues en anglès. |
+| **Toti Soler** | 2 | «Todos os sonhos do mundo» (portuguès), «El corazón es agua». Es mantenen les instrumentals. |
+| **Gertrudis** | 9 | Castellà (Carita de rosa, Almejilla, 5 minutillos…) i gallec («Rúa da Raiña»). **Dubtosos, es mantenen:** «Augurio», «Remedios», «Tontolava». |
+| **Montse Castellà - Cantautora** | 0 | Canal oficial: la regla hi és per si en surten de noves. |
+| **AYRYN** | 0 | Canal oficial (vegeu «Ayryn»). |
+| **GOSSOS** | 0 | Canal oficial (vegeu «Gossos»). |
+| **AUXILI** | 0 | Canal oficial (vegeu «Auxili»). |
 
 ## Subtítols en castellà (2026-10-01)
 
@@ -130,7 +178,7 @@ Repertori en castellà: s'han tret sencers (canal fora de `data/artistes-musica.
 
 ## Què no s'amaga
 
-- Títols en català, anglès o mixtos, encara que l'artista sigui castellanoparlant.
+- Títols en català, anglès o mixtos, encara que l'artista sigui castellanoparlant (llevat dels artistes de la secció del 2026-10-02, on l'anglès també s'amaga).
 - Paraules compartides (Tornado, Taxi, Minifalda, Frikis, Primavera, Celebrar si és d'un artista català…) quan no hi ha
   cap altra pista.
-- Gallec, occità i la resta de llengües que no s'han demanat explícitament.
+- Gallec, occità i la resta de llengües que no s'han demanat explícitament. **Excepció:** als artistes de la secció «Castellà i altres llengües dels canals Tema (2026-10-02)» s'amaguen totes les llengües que no són el català ni l'occità.
