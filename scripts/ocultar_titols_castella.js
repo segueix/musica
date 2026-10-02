@@ -44,7 +44,7 @@ const REGLES = {
     Sexenni: {
         titols: /Todas mis ex|Klk quieren|- Tengo \(|Mentalidad de Mero|Halc[oó]n Milenario|Antip[aá]nico/i,
     },
-    'DAVEU))': { titols: /SUE[ÑN]OS DE CAMPE[OÓ]N/i },
+    'DAVEU))': { titols: /SUE[ÑN]OS DE CAMPE[OÓ]N|MI BRODA/i },
     Scorpio: { titols: /^Ya No \(/i },
     'BAYA BAYE': {
         titols: /CANIBALISMO HUMANO|DINERO Y VENENO|EL GATO NEGRO|DE TO LOS COLORS|PA QUE ME INVITAS|JUERGA Y REBELD|CUMBIA DEL PAPU/i,
@@ -563,6 +563,8 @@ afegeix('Gertrudis', [
 ]);
 // Mariona Escoda — anglès: versió de «Maniac» de Michael Sembello.
 afegeix(['Mariona Escoda', 'Mariona Escoda - Topic'], ['Maniac']);
+// Daveu — «Mi broda» exclosa a petició de l'usuari; el canal Tema es diu DAVEU.
+afegeix(['DAVEU', 'DAVEU))'], ['MI BRODA']);
 
 // Ven'nus — només català: s'exclouen les peces que barregen o fan servir altres llengües.
 afegeix(["VEN'NUS", "Ven'nus"], [
