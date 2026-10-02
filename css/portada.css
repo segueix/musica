@@ -497,7 +497,7 @@ body {
 @media (max-width: 768px) {
     .pt-bottom-nav {
         display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
+        grid-template-columns: repeat(5, minmax(0, 1fr));
         position: fixed;
         left: 0;
         right: 0;
@@ -4258,43 +4258,24 @@ body #watchPage .video-info-modern .follow-btn-pill {
     padding: 0 18px;
 }
 
-/* ===== Mode conducció (js/features/drive-mode.js) =====
-   Ultraestalvi i baixa distracció: pantalla negra, reproductor YouTube de 200×200 i controls grans però foscos.
-   Els controls desapareixen sols al cap de pocs segons i només reapareixen quan l'usuari toca el fons negre. */
-@media (min-width: 1025px) {
+/* ===== Estalvi de bateria (js/features/drive-mode.js) =====
+   Accés permanent al mòbil: últim botó de la navegació inferior, a la dreta de «La teva música».
+   La vista d'estalvi serveix tant per conducció com per reduir consum i distraccions. */
+@media (min-width: 769px) {
     #driveModeBtn {
         display: none !important;
     }
 }
-
-/* En ràdio/llista, Conducció viu al mateix rengle que «Mode llista · …», just sota el reproductor. */
-#playlistModeBadge #driveModeBtn {
-    display: inline-grid;
-    place-items: center;
-    flex: 0 0 auto;
-    width: 44px;
-    height: 44px;
-    margin: 0;
-    padding: 0;
-    border: 1px solid var(--pt-line, rgba(244, 240, 232, 0.14));
-    border-radius: 50%;
-    background: var(--pt-surface-2, #2a2f2b);
-    color: var(--pt-muted, #b9b5ac);
-    box-shadow: none;
+.pt-bottom-nav #driveModeBtn {
+    color: var(--pt-accent);
 }
-#playlistModeBadge #driveModeBtn svg {
-    width: 20px;
-    height: 20px;
+.pt-bottom-nav #driveModeBtn svg {
+    width: 24px;
+    height: 24px;
 }
-#playlistModeBadge #driveModeBtn:hover,
-#playlistModeBadge #driveModeBtn:focus-visible {
-    border-color: var(--pt-accent, #d6ed84);
-    color: var(--pt-accent, #d6ed84);
-    outline: none;
-}
-
 .dm-exit,
-.dm-controls {
+.dm-controls,
+.dm-info {
     display: none;
 }
 html:has(body.drive-mode),
@@ -4311,7 +4292,9 @@ body.drive-mode #videoPlayer,
 body.drive-mode #videoPlayer iframe,
 body.drive-mode .dm-exit,
 body.drive-mode .dm-controls,
-body.drive-mode .dm-controls * {
+body.drive-mode .dm-controls *,
+body.drive-mode .dm-info,
+body.drive-mode .dm-info * {
     visibility: visible !important;
 }
 body.drive-mode #videoPlayer {
@@ -4340,6 +4323,37 @@ body.drive-mode #videoPlayer iframe {
     width: 100% !important;
     height: 100% !important;
 }
+body.drive-mode .dm-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    position: fixed;
+    top: calc(max(16px, env(safe-area-inset-top)) + 216px);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2147483001;
+    width: min(86vw, 360px);
+    padding: 12px 14px;
+    border: 1px solid #1f1f1f;
+    border-radius: 14px;
+    background: #070707;
+    color: #777;
+    font-family: inherit;
+    text-align: center;
+}
+body.drive-mode .dm-info strong {
+    color: #9a9a9a;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+body.drive-mode .dm-info span {
+    font-size: 0.78rem;
+    line-height: 1.35;
+}
+body.drive-mode .dm-info[hidden] {
+    display: none !important;
+}
+
 body.drive-mode .dm-exit {
     display: grid;
     place-items: center;
@@ -4398,7 +4412,8 @@ body.drive-mode .dm-exit:focus-visible {
     outline: none;
 }
 body.drive-mode .dm-exit[hidden],
-body.drive-mode .dm-controls[hidden] {
+body.drive-mode .dm-controls[hidden],
+body.drive-mode .dm-info[hidden] {
     display: none !important;
 }
 
