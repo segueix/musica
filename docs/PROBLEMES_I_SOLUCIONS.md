@@ -13,6 +13,15 @@
 
 **Fitxers Afectats:**
 
+## [2026-10-02] - Eliminar descripcions dels vídeos del feed públic
+**Símptoma:** cada vídeo de `data/feed.json` encara portava fins a 300 caràcters de la descripció de YouTube, per exemple crèdits, enllaços i text promocional que l'app no mostra.
+
+**Causa Arrel:** l'aprimador anterior retallava `description`, però la conservava perquè `home-sections.js` detectava amb «Provided to YouTube by…» les pistes Topic d'imatge fixa.
+
+**Solució Implementada:** `slimFeedVideo()` deriva primer `topicTrack:true` quan la descripció comença per «Provided to YouTube by…» i després elimina completament `description` del vídeo públic. `home-sections.js` usa `topicTrack` (amb compatibilitat temporal amb feeds antics). La descripció completa continua disponible durant `update_music_feed.js` abans de l'aprimat per a idioma, subtítols, suport, any original i classificació. Les rutes SEO/compartició ja tenen textos de reserva basats en títol i artista si no hi ha descripció. El workflow d'actualització del feed vigila també `scripts/lib/aprimar_feed.js` i `tests/aprimar-feed.test.js`.
+
+**Fitxers Afectats:** `scripts/lib/aprimar_feed.js`, `tests/aprimar-feed.test.js`, `js/features/home-sections.js`, `.github/workflows/actualitzar-feed-musica.yml`, `CLAUDE.md`.
+
 ## [2026-10-02] - L'app es recarregava sola mentre es tocava o s'engegava una cançó
 **Símptoma:** al mòbil, poc després d'obrir Segueix Música, fer scroll, tocar la pantalla o seleccionar una cançó podia coincidir amb una recàrrega sobtada de tota l'app.
 
