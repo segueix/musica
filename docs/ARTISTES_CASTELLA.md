@@ -57,7 +57,7 @@ avís).
 | **Mushkaa** | 6 | Habibi, Xarnega, Sembla Mentida… són catalans; Turra Malvada (dubtós) es manté. |
 | **BAYA BAYE** | 5 | També publicat com «BAYA BAIE». Mixtape «Calers y Verí» en castellà. |
 | **Scorpio** | 1 | «Ya No». |
-| **DAVEU))** | 1 | «Sueños de campeón». |
+| **DAVEU))** | 2 | «Sueños de campeón» i «Mi broda» (eliminada de la reproducció general a petició de l'usuari). |
 | **P.A.W.N. Gang** | 1 | «Modo avión» (Yung Mare). |
 
 ## Judit Neddermann (castellà i basc, 2026-10-01)
@@ -76,7 +76,7 @@ que són noms propis. 472 cançons a `data/hidden-videos.json` amb `afegeix()` d
 
 | Artista (nom al feed) | Ocultes | Notes |
 | --- | --- | --- |
-| **Mariona Escoda** | 0 | «Maniac (Acústic en directe)» identificada com a **anglès** (versió de Michael Sembello). Regla persistent perquè no entri a la reproducció general. |
+| **Mariona Escoda** | 1 | «Maniac (Acústic en directe)» identificada com a **anglès** (versió de Michael Sembello). ID `P6vnb8DQiSo` afegit directament a `hidden-videos.json` perquè desaparegui immediatament, a més de la regla persistent. |
 | **Mariona Escoda - Topic** | 0 | Mateixa exclusió al canal Tema: «Maniac» (anglès). |
 | **VEN'NUS** | 3 | Només català: s'exclouen «Carmen se fue» (català + castellà), «I Jazz Want My G Back» (català + anglès) i «It's So Hard To Be So Funny» (català + italià + anglès). «Tan Len» es manté perquè la lletra és en català. |
 | **Ven'nus** | 3 | Mateixa regla persistent al canal Tema per evitar que les versions de les tres peces no íntegrament catalanes tornin a entrar. |
