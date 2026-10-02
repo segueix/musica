@@ -15,6 +15,9 @@ const { cleanTitle } = require('../../js/song-title.js');
 const DEFAULTS = Object.freeze({
     // Un Tema amb menys cançons no mana (pot ser un senzill solt o una col·laboració).
     minTopicTracks: 5,
+    // El Tema només mana si hi és la majoria de cançons del canal propi: si no, la discografia hi és incompleta
+    // (molts artistes només hi tenen els discos recents) i en trauria cançons bones.
+    minCoverage: 0.75,
     // Pistes del Tema que entren al feed: les més escoltades i totes les publicades fa poc (novetats).
     topicKeep: 40,
     recentDays: 180,
@@ -39,28 +42,101 @@ function songKey(title, artists = []) {
         .replace(/\s(?:feat\.?|ft\.?|featuring)\s.*$/, ' ');
     const dash = text.split(/\s[-–—|]\s/);
     if (dash.length > 1 && dash[0].trim()) text = dash[0];
-    return text
+    return normalizeKey(stripNumbers(normalizeKey(text)));
+}
+
+const SEPARATORS = /\s*[|·•+]\s*|\s*\/\/\s*|\s+\/\s*|\s*\/\s+|\s+[-–—]\s*|\s*[-–—]\s+|:\s+|\s@\s/;
+const QUOTED = /['"‘’“”«»]([^'"‘’“”«»]{2,})['"‘’“”«»]/g;
+const COLLAB = /\s(?:amb|feat\.?|ft\.?|featuring|with|con|x|vs\.?|&|prod\.?)\s.*$/;
+
+function normalizeKey(text) {
+    return String(text || '')
         .replace(/[^\p{L}\p{N}]+/gu, ' ')
         .replace(/\s+/g, ' ')
         .trim();
 }
 
+function stripNumbers(text) {
+    return text.replace(/^\d{1,2}\s*[.)-]?\s+(?=\p{L})/u, '').replace(/(\p{L})\s+\d{1,2}$/u, '$1');
+}
+
+// Totes les claus possibles del títol d'un vídeo del canal propi («Aina - Dan Peralbo i El Comboi»,
+// «AUXILI - 02. Si tu vols (Tresors, 2018)», «'El Calvari' d'Anna Andreu», «FOTOSÍNTESI amb ZOO»): cada tros
+// separat per « - », «|», «:»…, el text entre cometes, sense número de pista i sense col·laboracions. N'hi ha
+// prou que una sigui al Tema.
+function songKeys(title, artists = []) {
+    const artistKeys = new Set(artists.map(name => normalizeKey(fold(name))).filter(Boolean));
+    const stripExtension = text => text.replace(/\.(?:m4v|mp4|mov|avi|wmv|mkv)\b/g, ' ');
+    const clean = stripExtension(fold(cleanTitle(String(title || ''), { artists })));
+    // El títol de YouTube sense el nom de l'artista (cleanTitle de vegades s'emporta la cançó: «SODI Temps Afegit»).
+    let raw = ` ${stripExtension(fold(title))} `;
+    for (const name of artistKeys)
+        raw = raw.split(new RegExp(`(^|[^\\p{L}\\p{N}])${escapeRegExp(name)}(?=$|[^\\p{L}\\p{N}])`, 'gu')).join(' ');
+    const texts = [clean, raw];
+    for (const text of [clean, raw]) {
+        for (const match of text.matchAll(QUOTED)) texts.push(match[1]);
+        // El que hi ha abans d'un parèntesi («Ara (videoclip) Translúcid») i el parèntesi desfet
+        // («Tan a poc a poc (que me dorm)»).
+        texts.push(text.split(/[([]/)[0], text.replace(/[()[\]]/g, ' '));
+    }
+    const keys = new Set();
+    const add = text => {
+        const key = normalizeKey(stripNumbers(normalizeKey(text)));
+        if (key.length >= 2 && !artistKeys.has(key) && !/^\d{1,2}$/.test(key)) keys.add(key);
+    };
+    for (const text of texts) {
+        const plain = text.replace(/\([^)]*\)|\[[^\]]*\]/g, ' ');
+        for (const part of [plain, ...plain.split(SEPARATORS)]) {
+            add(part);
+            add(part.replace(COLLAB, ' '));
+            add(part.replace(/\s(?:d|de)\s?['’]?\s*\p{L}.*$/u, ' '));
+        }
+    }
+    const main = songKey(title, artists);
+    if (main && !artistKeys.has(main)) keys.add(main);
+    return [...keys];
+}
+
+function escapeRegExp(text) {
+    return String(text).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+// Claus d'una pista del Tema: la principal i la del títol amb el parèntesi desfet («Tan a poc a poc (que me dorm)»).
+function topicKeys(title, artists = []) {
+    const keys = new Set([songKey(title, artists)]);
+    keys.add(normalizeKey(stripNumbers(normalizeKey(fold(String(title || '')).replace(/[()[\]]/g, ' ')))));
+    keys.delete('');
+    return [...keys];
+}
+
 function keysOf(tracks, artists) {
     const keys = new Set();
-    for (const track of tracks || []) {
-        const key = songKey(track.title, artists);
-        if (key) keys.add(key);
-    }
+    for (const track of tracks || []) for (const key of topicKeys(track.title, artists)) keys.add(key);
     return keys;
+}
+
+// El títol diu que és una cançó publicada (videoclip, lyric, àudio oficial, visualizer): es conserva encara que
+// no sigui al Tema (molts Tema no tenen els senzills ni els discos antics).
+const SONG_MARKER =
+    /video\s*-?\s*clip|v[ií]deo\s+oficial|official\s+(?:music\s+)?video|music\s+video|lyrics?\b|l[ií]ric|visuali[sz]er|videomood|(?:audio|àudio)\s+oficial|official\s+audio|\((?:audio|àudio)\)|\[(?:audio|àudio)\]/i;
+function hasSongMarker(title) {
+    return SONG_MARKER.test(String(title || ''));
+}
+
+// La clau del Tema amb què coincideix el títol (o '' si no n'hi ha cap).
+function matchedKey(title, artists, keys) {
+    if (!keys) return '';
+    return songKeys(title, artists).find(key => keys.has(key)) || '';
 }
 
 // Classificació d'un vídeo del canal propi d'un artista que té Tema.
 // keys: claus de la discografia del Tema (null si l'artista no en té prou: no mana).
-function governClassification(classification, { key, keys, overridden = false, isShort = false } = {}) {
+// key: una clau o una llista de claus possibles (songKeys); n'hi ha prou que una sigui al Tema.
+function governClassification(classification, { key, keys, overridden = false, isShort = false, marked = false } = {}) {
     if (!keys || overridden || isShort || !classification) return classification;
     const type = classification.contentType;
     if (type === 'album') return classification;
-    const matched = Boolean(key) && keys.has(key);
+    const matched = (Array.isArray(key) ? key : [key]).some(candidate => Boolean(candidate) && keys.has(candidate));
     if (matched) {
         if (SONG_TYPES.has(type)) return classification;
         if (type === 'review') {
@@ -73,6 +149,7 @@ function governClassification(classification, { key, keys, overridden = false, i
         }
         return classification;
     }
+    if (marked && SONG_TYPES.has(type)) return classification;
     if (SONG_TYPES.has(type) || type === 'review') {
         return {
             ...classification,
@@ -84,7 +161,7 @@ function governClassification(classification, { key, keys, overridden = false, i
     return classification;
 }
 
-// Pistes del Tema que entren al feed. tracks: [{ id, key, viewCount, publishedAt }]
+// Pistes del Tema que entren al feed. tracks: [{ id, key, keys?, viewCount, publishedAt }] (keys: topicKeys)
 // Una pista per cançó (la més escoltada), cap de les que ja tenen videoclip (coveredKeys) i, d'entre la resta,
 // les publicades fa menys de recentDays més les topicKeep més escoltades.
 function selectTopicTracks(tracks, { coveredKeys = new Set(), now = Date.now(), keep, recentDays } = {}) {
@@ -98,7 +175,9 @@ function selectTopicTracks(tracks, { coveredKeys = new Set(), now = Date.now(), 
         if (!previous || (Number(track.viewCount) || 0) > (Number(previous.viewCount) || 0))
             best.set(key, { ...track, key });
     }
-    const candidates = [...best.values()].filter(track => !coveredKeys.has(track.key));
+    const candidates = [...best.values()].filter(
+        track => !coveredKeys.has(track.key) && !(track.keys || []).some(key => coveredKeys.has(key))
+    );
     const byViews = [...candidates].sort(
         (a, b) => (Number(b.viewCount) || 0) - (Number(a.viewCount) || 0) || String(a.id).localeCompare(String(b.id))
     );
@@ -110,4 +189,14 @@ function selectTopicTracks(tracks, { coveredKeys = new Set(), now = Date.now(), 
     return byViews.filter(track => chosen.has(track.id)).map(track => track.id);
 }
 
-module.exports = { DEFAULTS, songKey, keysOf, governClassification, selectTopicTracks };
+module.exports = {
+    DEFAULTS,
+    songKey,
+    songKeys,
+    topicKeys,
+    matchedKey,
+    keysOf,
+    hasSongMarker,
+    governClassification,
+    selectTopicTracks,
+};

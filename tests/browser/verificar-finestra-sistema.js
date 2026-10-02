@@ -216,7 +216,12 @@ const clicPip = (page, action) =>
         );
         comprovar('no s’obre també la finestra flotant de dins la pàgina', !alLloc.mini, alLloc);
 
-        // Següent des de la finestra
+        // Següent des de la finestra: el reproductor no es recrea (un iframe nou en una finestra minimitzada no
+        // sonaria fins que es tornés a veure la pàgina), se li demana la cançó nova (loadVideoById).
+        await page.evaluate(() => {
+            window.__iframe = document.querySelector('#videoPlayer iframe');
+            window.__ordres = [];
+        });
         await clicPip(page, 'next');
         await page.waitForFunction(i => currentPlaylistIndex === i + 1, ara.index, { timeout: 5000 });
         await page.waitForTimeout(1300);
@@ -227,6 +232,17 @@ const clicPip = (page, action) =>
             finestra: estat?.title,
         });
         comprovar('ara sí que hi ha «anterior»', estat?.prevDisabled === false);
+        const encadenat = await page.evaluate(() => ({
+            mateix: document.querySelector('#videoPlayer iframe') === window.__iframe,
+            ordres: window.__ordres.slice(),
+            sona: document.getElementById('videoPlayer')?.dataset?.playingVideoId,
+            id: String(activePlaylistQueue[currentPlaylistIndex]?.id || ''),
+        }));
+        comprovar(
+            'amb la finestra del sistema oberta, la cançó canvia dins del mateix reproductor',
+            encadenat.mateix && encadenat.ordres.includes('loadVideoById') && encadenat.sona === encadenat.id,
+            encadenat
+        );
 
         // Pausa i play des de la finestra
         await page.waitForFunction(() => document.getElementById('videoPlayer')?.dataset?.playerState === '1', null, {
@@ -271,6 +287,48 @@ const clicPip = (page, action) =>
             classe: document.body.classList.contains('is-system-pip'),
         }));
         comprovar('en tancar-la, l’app ho sap', !tancada.obert && !tancada.classe, tancada);
+
+        // Finestra minimitzada (pàgina amagada): quan una cançó s'acaba, la següent es demana al mateix reproductor
+        const reproductor = () => page.frames().find(frame => /youtube/.test(frame.url()));
+        const acaba = () => reproductor()?.evaluate(() => send(0));
+        await page.waitForFunction(() => document.getElementById('videoPlayer')?.dataset?.playerState === '1', null, {
+            timeout: 8000,
+        });
+        await page.evaluate(() => {
+            Object.defineProperty(document, 'visibilityState', { get: () => 'hidden', configurable: true });
+            window.__iframe = document.querySelector('#videoPlayer iframe');
+            window.__ordres = [];
+        });
+        // Fora de la guarda de 2 s de l'últim canvi (l'«anterior» de fa un moment)
+        await page.waitForTimeout(2200);
+        const abans = await sona(page);
+        await acaba();
+        await page.waitForFunction(i => currentPlaylistIndex === i + 1, abans.index, { timeout: 5000 });
+        await acaba(); // l'«ended» endarrerit de la cançó anterior no ha de saltar-ne una altra
+        await page.waitForTimeout(800);
+        const amagada = await page.evaluate(() => ({
+            mateix: document.querySelector('#videoPlayer iframe') === window.__iframe,
+            ordres: window.__ordres.slice(),
+            index: currentPlaylistIndex,
+        }));
+        comprovar(
+            'amb la pàgina amagada, la cançó següent sona al mateix reproductor',
+            amagada.mateix && amagada.ordres.includes('loadVideoById'),
+            amagada
+        );
+        comprovar('l’«ended» repetit no salta una cançó', amagada.index === abans.index + 1, amagada.index);
+
+        // Pàgina visible: el camí de sempre (reproductor nou amb la caràtula mentre carrega)
+        await page.evaluate(() => {
+            delete document.visibilityState;
+            window.__iframe = document.querySelector('#videoPlayer iframe');
+        });
+        await page.waitForTimeout(2200);
+        await acaba();
+        await page.waitForFunction(i => currentPlaylistIndex === i + 2, abans.index, { timeout: 5000 });
+        await page.waitForTimeout(400);
+        const visible = await page.evaluate(() => document.querySelector('#videoPlayer iframe') !== window.__iframe);
+        comprovar('amb la pàgina visible, es manté el camí de sempre', visible);
 
         comprovar('cap error de JavaScript', errors.length === 0, errors);
         await context.close();

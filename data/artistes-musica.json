@@ -21185,13 +21185,6 @@
             "name": null,
             "type": "official",
             "primary": true
-          },
-          {
-            "id": "UCMH8Z2GIebt5dzzS1g32FKg",
-            "handle": null,
-            "name": "ZOO - Topic",
-            "type": "topic",
-            "primary": false
           }
         ]
       },
@@ -21201,8 +21194,7 @@
       "sources": [
         "https://www.wikidata.org/wiki/Q19832676",
         "wikidata:performed-catalan-work",
-        "genre:manual",
-        "manual-user-2026-10-02"
+        "genre:manual"
       ],
       "lastChecked": "2026-09-25T15:44:05.402Z",
       "notes": "",
