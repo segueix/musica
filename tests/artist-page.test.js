@@ -48,6 +48,29 @@ describe('fitxa d’artista: ràdios i presentació', () => {
     it('les cançons de la ràdio no inclouen Shorts', () => {
         expect(page.songsOf([{ id: 'a' }, { id: 'b', isShort: true }, null, {}]).map(v => v.id)).toEqual(['a']);
     });
+
+    it('relaciona només els discos que tenen cançons visibles a la fitxa', () => {
+        const catalog = {
+            channels: { UC1: 'Artista' },
+            artists: {
+                Artista: {
+                    albums: [
+                        { id: 'a1', title: 'Disc A', coverVideoId: 'x', trackIds: ['1', '2'] },
+                        { id: 'a2', title: 'Disc B', coverVideoId: 'y', trackIds: ['9'] },
+                    ],
+                },
+            },
+        };
+        const model = page.albumsModel(catalog, {
+            channelId: 'UC1',
+            videos: [{ id: '1' }, { id: '2' }, { id: '3' }],
+        });
+        expect(model.artist).toBe('Artista');
+        expect(model.albums).toHaveLength(1);
+        expect(model.albums[0].visibleTrackIds).toEqual(['1', '2']);
+        expect(model.otherIds).toEqual(['3']);
+        expect(model.hasAlbums).toBe(true);
+    });
 });
 
 describe('fitxa d’artista: HTML i CSS', () => {
@@ -78,6 +101,9 @@ describe('fitxa d’artista: HTML i CSS', () => {
             'channelSupportBtn',
             'channelSearchInputDesktop',
             'channelSearchInputMobile',
+            'apAlbums',
+            'apAlbumsGrid',
+            'apAlbumsAll',
         ].forEach(id => expect(channelPage, id).toContain(`id="${id}"`));
         expect(channelPage.indexOf('id="channelProfileAvatar"')).toBeGreaterThan(
             channelPage.indexOf('id="channelProfileName"')
@@ -90,6 +116,13 @@ describe('fitxa d’artista: HTML i CSS', () => {
         expect(channelPage).toContain('id="apBioToggle"');
         expect(channelPage).toContain('aria-expanded="false"');
         expect(css).toMatch(/\.channel-profile-description\.is-collapsed\s*{[^}]*-webkit-line-clamp:\s*3/);
+    });
+
+    it('mostra els discos només dins la fitxa, amb caràtules quadrades i scroll horitzontal', () => {
+        expect(channelPage).toContain('id="apAlbums"');
+        expect(channelPage).toContain('>Discos</h2>');
+        expect(css).toMatch(/\.ap-album-cover[\s\S]*aspect-ratio:\s*1/);
+        expect(css).toMatch(/\.ap-albums-grid[\s\S]*overflow-x:\s*auto/);
     });
 
     it('les icones de la fitxa no depenen de lucide (CDN) i el botó d’enrere és tàctil', () => {
