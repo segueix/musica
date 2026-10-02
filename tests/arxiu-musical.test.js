@@ -41,7 +41,7 @@ describe('arxiu musical', () => {
     expect(result.archive.map(v => v.id)).toEqual(['short']);
   });
 
-  it('l'historial és compacte i el pool només porta cançons', () => {
+  it("l'historial és compacte i el pool només porta cançons", () => {
     const archived = [
       song('a', '2018-01-01T00:00:00Z', 100),
       song('b', '2019-01-01T00:00:00Z', 900),
