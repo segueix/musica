@@ -1,0 +1,57 @@
+name: Aprima feed sense API
+
+on:
+  workflow_run:
+    workflows:
+      - "Actualitzar feed musical"
+    types:
+      - completed
+  push:
+    branches:
+      - main
+    paths:
+      - "scripts/lib/aprimar_feed.js"
+      - "scripts/aprimar_feed.js"
+      - "tests/aprimar-feed.test.js"
+      - ".github/workflows/aprimar-feed.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: music-data-writer
+  cancel-in-progress: false
+
+jobs:
+  aprima:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "20"
+
+      - name: Sincronitza main
+        run: |
+          git fetch origin main
+          git reset --hard origin/main
+
+      - name: Elimina dades innecessàries del feed
+        run: node scripts/aprimar_feed.js
+
+      - name: Publica el feed aprimat
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add data/feed.json
+
+          if git diff --cached --quiet; then
+            echo "El feed ja està aprimat."
+            exit 0
+          fi
+
+          git commit -m "data: aprima feed sense API"
+          git push origin HEAD:main
