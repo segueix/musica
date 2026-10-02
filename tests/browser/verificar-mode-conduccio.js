@@ -111,6 +111,20 @@ const comprovar = (etiqueta, condicio, detall) => {
         await page.click('#ptPlayBtn');
         await page.waitForSelector('#videoPlayer iframe', { timeout: 20000 });
         await page.waitForSelector('#driveModeBtn', { timeout: 10000 });
+        await page.waitForSelector('#playlistModeBadge', { timeout: 10000 });
+        const ubicacioBoto = await page.evaluate(() => {
+            const button = document.getElementById('driveModeBtn');
+            const badge = document.getElementById('playlistModeBadge');
+            return {
+                dinsBadge: Boolean(button && badge?.contains(button)),
+                label: badge?.querySelector('.playlist-mode-badge-label')?.textContent || '',
+            };
+        });
+        comprovar(
+            'el botó Conducció és al costat de «Mode llista · …» sota el reproductor',
+            ubicacioBoto.dinsBadge && ubicacioBoto.label.startsWith('Mode llista ·'),
+            ubicacioBoto
+        );
         await page.evaluate(() => (window.__iframe = document.querySelector('#videoPlayer iframe')));
 
         await page.click('#driveModeBtn');
