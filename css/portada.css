@@ -4319,8 +4319,30 @@ body #watchPage .video-metadata-bar .btn-heart-song-action:is(.is-liked, .liked)
 }
 
 @media (max-width: 768px) {
+    /* Capçalera compacta: avatar + (nom · Segueix), sense cap acció flotant a la dreta. */
     body #watchPage .channel-header-row {
         align-items: center;
+        gap: 10px;
+        flex-wrap: nowrap;
+        min-height: 44px;
+    }
+
+    body #watchPage .channel-identity-modern {
+        flex: 1 1 100%;
+        min-width: 0;
+        gap: 10px;
+    }
+
+    body #watchPage .channel-avatar-small {
+        width: 42px;
+        height: 42px;
+        flex: 0 0 42px;
+    }
+
+    body #watchPage .channel-text-modern {
+        flex: 1 1 auto;
+        min-width: 0;
+        gap: 2px;
     }
 
     body #watchPage .channel-actions-inline:empty {
@@ -4328,25 +4350,106 @@ body #watchPage .video-metadata-bar .btn-heart-song-action:is(.is-liked, .liked)
     }
 
     body #watchPage .channel-name-row {
+        width: 100%;
+        min-width: 0;
         flex-wrap: nowrap;
+        gap: 7px;
     }
 
     body #watchPage .channel-name-row .channel-name-modern {
+        flex: 1 1 auto;
+        min-width: 0;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
+        font-size: 0.9rem;
+        line-height: 1.2;
     }
 
     body #watchPage .channel-name-row .follow-btn-pill {
-        min-height: 34px;
-        height: 34px;
-        padding-inline: 11px;
-        font-size: 0.72rem;
+        flex: 0 0 auto;
+        min-height: 32px;
+        height: 32px;
+        padding-inline: 10px;
+        font-size: 0.7rem;
+        line-height: 1;
+    }
+
+    body #watchPage .channel-subs-modern,
+    body #watchPage .channel-program-context {
+        font-size: 0.68rem;
+        line-height: 1.25;
+    }
+
+    /* Fila d'accions de cançó: les accions musicals van primer i sempre queden a l'inici visible. */
+    body #watchPage .video-metadata-bar {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: 8px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-padding-inline: 12px;
+        overscroll-behavior-inline: contain;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding: 10px 12px 4px;
+        margin-inline: -12px;
+        mask-image: linear-gradient(to right, #000 0, #000 calc(100% - 18px), transparent 100%);
+        -webkit-mask-image: linear-gradient(to right, #000 0, #000 calc(100% - 18px), transparent 100%);
+    }
+
+    body #watchPage .video-metadata-bar::-webkit-scrollbar {
+        display: none;
+    }
+
+    body #watchPage .video-metadata-bar .action-group {
+        display: contents;
     }
 
     body #watchPage .video-metadata-bar .btn-heart-song-action {
+        order: -100;
         width: 48px;
         height: 48px;
+        flex: 0 0 48px;
+    }
+
+    body #watchPage .video-metadata-bar #playlistBtn {
+        order: -90;
+    }
+
+    body #watchPage .video-metadata-bar #shareBtn {
+        order: -80;
+    }
+
+    body #watchPage .video-metadata-bar #miniPlayerToggle {
+        order: -70;
+    }
+
+    body #watchPage .video-metadata-bar .btn-comment-youtube--mobile {
+        order: -60;
+    }
+
+    body #watchPage .video-metadata-bar .btn-pill-red {
+        order: 10;
+    }
+
+    body #watchPage .video-metadata-bar .btn-support-watch--mobile {
+        order: 20;
+    }
+
+    body #watchPage .video-metadata-bar :is(.btn-round-icon, .btn-heart-song-action) {
+        flex-shrink: 0;
+    }
+
+    body #watchPage .video-metadata-bar .btn-round-icon {
+        width: 44px;
+        height: 44px;
+    }
+
+    body #watchPage .video-metadata-bar .btn-round-icon svg {
+        width: 22px;
+        height: 22px;
     }
 }
 
