@@ -13,6 +13,10 @@ on:
       - "data/music-genres.json"
       - "scripts/enriquir_generes_musica.js"
       - "tests/music-genres.test.js"
+      - "tests/arxiu-musical.test.js"
+      - "scripts/lib/arxiu_musical.js"
+      - "scripts/archivar_feed_musical.js"
+      - "scripts/update_music_history_views.js"
       - "scripts/update_music_feed.js"
       - ".github/workflows/actualitzar-feed-musica.yml"
       - ".github/workflows/validar-musica.yml"
@@ -28,6 +32,10 @@ on:
       - "data/music-genres.json"
       - "scripts/enriquir_generes_musica.js"
       - "tests/music-genres.test.js"
+      - "tests/arxiu-musical.test.js"
+      - "scripts/lib/arxiu_musical.js"
+      - "scripts/archivar_feed_musical.js"
+      - "scripts/update_music_history_views.js"
       - ".github/workflows/validar-musica.yml"
   workflow_dispatch:
 
