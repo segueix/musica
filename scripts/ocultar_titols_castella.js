@@ -67,6 +67,525 @@ const REGLES = {
     'La Madam': { titols: /Habitada y Deshabitada|^Gozando|Prende Ese Fuego/i },
 };
 
+// Títols (o trossos del títol) sense distingir majúscules, amb límits de paraula que entenen els accents.
+function llista(...titols) {
+    const escapa = titol => titol.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    return new RegExp(`(?<![\\p{L}\\p{N}])(?:${titols.map(escapa).join('|')})(?![\\p{L}\\p{N}])`, 'iu');
+}
+
+// Afegeix títols a la regla d'un canal (la crea si no n'hi ha). Les regles «totes» no es toquen.
+function afegeix(canals, titols) {
+    const nova = llista(...titols);
+    for (const canal of [].concat(canals)) {
+        const actual = REGLES[canal];
+        if (actual?.totes) continue;
+        const abans = actual?.titols;
+        REGLES[canal] = { titols: abans ? { test: titol => abans.test(titol) || nova.test(titol) } : nova };
+    }
+}
+
+// Revisió del 2026-10-02: artistes amb canal «Tema» (o amb cançons noves al feed). A petició de l'usuari s'amaguen
+// les cançons en castellà i també les d'altres llengües (anglès, portuguès, gallec, italià, llatí, basc, japonès…).
+// L'occità (aranès) i el català no s'amaguen. La clau és el channelTitle exacte (el canal oficial i el del Tema
+// poden tenir noms diferents: s'hi posen tots dos).
+afegeix('Txarango', [
+    'Mr. Tambourine Man',
+    'El Martillo',
+    'Por Ambos Lados',
+    'Camina Derechito',
+    'Tom Dooley',
+    'Atrévete a Vivir',
+    '500 Millas',
+    'Resiste y Grita',
+    'La Vuelta al Mundo',
+    'Volveremos',
+    'Corazón Viajero',
+    'Sueña Como un Niño',
+]);
+afegeix('Sílvia Comes', [
+    'Canción de Aniversario',
+    'El Cuento de los Dos Suicidas',
+    'Faltando un Pedaco',
+    'Carta de Amor',
+    'Peeping Tom',
+    'Para Estar Contigo',
+    'Malest Cornifici Tuo Catulo',
+    'Días D',
+    'Después de Hablar',
+    'Dije Mi Amor',
+    'Como los Erizos',
+    'Canción de los Caracoles',
+    'Un Hombre Con Su Amor',
+    'Bolero para Gil de Biedma',
+    'En Retaguardia',
+    'Nana a la Nena de la Pena',
+    'Viene la Ausencia',
+    'He Dormido',
+    'Silencio de Nieve',
+    'Todo Asusta',
+    'Cuando Muera',
+    'Cuando el Eco del Eco',
+    'Versos Que Escribí Dormida',
+    'Carta Canción',
+    'Suceso',
+    'Casida a una Casada',
+    'Letanía',
+]);
+afegeix('Sílvia Pérez Cruz', [
+    'Intro: la sed',
+    'El golpe bajo',
+    'Mar muerto',
+    'El primer beso',
+    'Sea Creature',
+    'É triste viver sem seu amor',
+    'Mañana',
+    'Gallo Rojo',
+    'Loca',
+    'Tonada De Luna Llena',
+    'La Tarde',
+    'Debí Llorar',
+    'Vete De Mí',
+    'Ella Y Yo',
+    'Qué Dirías De Mi',
+    'Ya No Me Quieres',
+    'Ayuda',
+    'Salir distinto',
+    'Mi última canción triste',
+    'Pequeño Vals Vienés',
+    'No Hay Tanto Pan',
+    'Cerca De Tu Casa',
+    'Nombrar es imposible',
+    'Toda la vida, un día',
+    'Barquito de papel',
+    'Cucurrucucú Paloma',
+    'Sólo Se Trata de Vivir',
+    'La Nochera',
+]);
+afegeix('Ceaxe', [
+    'SE REVELÓ',
+    'POR LO NUESTRO',
+    'DIME MI AMOR',
+    'TE ARREPENTISTE',
+    'CUANDO EL RESTO TE FALTE',
+    'BAILA SOLA',
+    'Tu y Yo',
+    'Lo Que No Cumplimos',
+    'PA TI',
+    'PA TI II',
+    'Jodido',
+    'Tú',
+    'Si Te Preguntan X Mi',
+    'Nos Matamos',
+    'Mírame de Nuevo',
+    'Prometi',
+]);
+afegeix(
+    ['ALBERT PLA', 'Albert Pla'],
+    [
+        'Mi voz',
+        'El Mortadela',
+        'Perdónenme',
+        'Todo Me Va Bien',
+        'Experiencia Religiosa',
+        'Bombas en Madrid',
+        'Pobre Muchacha',
+        'Sufre Como Yo',
+        'No Quise Hacerle Daño',
+        'Mi Esqueleto',
+        'Mujer Mala',
+        'El Lado Mas Bestia de la Vida',
+        'Añoro',
+        "Salsa Pa'l Nene",
+        'Soy Rebelde',
+        'Que Mas Me Da Si Da O No Da',
+        'Joaquin el Necio',
+        'El Bar de la Esquina',
+        'El Camion De La Basura',
+        'Veintegenarios',
+        'Enterrador De Cementerios',
+        'Marcelino Arroyo Del Charco',
+        'Mañana Lo Dejo',
+        'La Dejo O No La Dejo',
+        'El Gallo Eduardo Montenegro',
+        'Carta Al Rey Melchor',
+        'La Dama De La Guadaña',
+        'Lola La Loca',
+        'La Colilla',
+        'La Diferencia',
+        'Ciego',
+        'Juerga Catalana',
+        'Soñando',
+        'Buscando',
+        'Hongos',
+        'Corazón',
+    ]
+);
+afegeix(
+    ['Miki Nuñez', 'Miki Núñez'],
+    [
+        'Encender Las Calles',
+        'Los 7 Males',
+        'La Escalera',
+        'Ahora',
+        'Mil Planes',
+        'La Última Palabra',
+        'Vivir Al 100',
+        'La Cabaña',
+        'Apaga La Luz',
+        'Y Escribir',
+        'Tanto Tiempo',
+        'Nadie Se Salva',
+        'Some Nights',
+        'Hijos De La Tierra',
+        'Promesas Que No Valen Nada',
+        'Can We Dance',
+        'El Patio',
+        'Quédate En Madrid',
+        'Alma Mía',
+        'Trevo (Tu)',
+        'Those little things',
+        'Hero (Family of the Year)',
+        'Mistletoe',
+        'All of me',
+        'Thinking out loud',
+    ]
+);
+afegeix(
+    ['alfredgarcia', 'Alfred García'],
+    [
+        'Contigo',
+        'Just A Light',
+        'Otra Liza',
+        'Someday',
+        'Jesus Gave Me Water',
+        'Toro De Cristal',
+        'Praia Dos Moinhos',
+        'For So Long',
+        'La Chica De Ayer',
+        'Cicatriz',
+        'Insurrección',
+        'Amar Volar Al Invierno',
+        'LET ME GO',
+        'Amar Pelos Dois',
+        'La Ciudad',
+        'Himno Del Prat',
+        'No Cuentes Conmigo',
+        'Wonder',
+        'Cuando Duermes',
+        'Get It Together',
+        "Don't Stop The Music",
+        'Rock With You',
+        'El Mismo Sol',
+        'Sign Of The Times',
+        'Vete De Mí',
+        'Maldita Dulzura',
+        'Todo Mi Amor Eres Tú',
+        'Solo Si Es Contigo',
+        'Everytime You Go Away',
+        'City Of Stars',
+        'Tu Canción',
+    ]
+);
+afegeix('Jofre Bardagí', [
+    'Señora',
+    'Es caprichoso el azar',
+    'Fiesta',
+    'Hoy puede ser un gran día',
+    'Cantares',
+    'Aquellas pequeñas cosas',
+    'Penélope',
+    'Para la libertad',
+    'Una mujer desnuda y en lo oscuro',
+    'Mediterráneo',
+]);
+afegeix('Lídia Pujol', [
+    'Me Quedaré Soltera',
+    'Mi Querida España',
+    'Ramito de Violetas',
+    'Mi Primera Comunión',
+    'Nada de Nada',
+    'Sogna fiore mio',
+    'Ad mortem festinamus',
+    'El Cristo de los piojos',
+    'Y una madre',
+    'Stella splendens',
+    'Polorum regina',
+    'Que Despierte La Novia',
+]);
+afegeix('Dàmaris Gelabert', [
+    'Los Meses del Año',
+    'El Baile de Izquierda y Derecha',
+    'Los Días de la Semana',
+    'Las Estaciones',
+    '¡A Recoger!',
+]);
+afegeix('Marina Rossell', [
+    'De Que Hablas Habanera',
+    'Yo Te Dire',
+    'Grândola, vila morena',
+    'Mi Soledad',
+    'Y una Rosa Roja',
+    'Había un Jardín',
+    'El Meteco',
+    'Va, pensiero',
+    'La Bella Lola',
+    'La Paloma',
+    'Mi Madre Fue una Mulata',
+    'Si Me Quieres Escribir',
+]);
+afegeix('Sopa de Cabra', [
+    'Todo Lo Que Se',
+    'El Sexo (Que Me Hace Feliz)',
+    'Sin Hablar',
+    'Mundo Infierno',
+    'Cardíaco y Acabado',
+    'Viviendo a Tu Alrededor',
+]);
+afegeix(
+    ['Montse Castellà - Cantautora', 'Montse Castellà'],
+    [
+        'Flor de las Bellas Ciudades del Mundo',
+        'A Orillas Del Río Ebro',
+        '¿Quién mejor que tú?',
+        'No hay poeta solitario',
+    ]
+);
+afegeix('Joan Colomo', [
+    'Solo se vive una vez',
+    'Todo es tan jodidamente relativo',
+    'El Nuevo Orden Cósmico',
+    'Reses Sociales',
+    'El abismo de uno mismo',
+    'A diestro y siniestro',
+    'Producto Interior Bruto',
+]);
+afegeix('Andreu Rifé', ['Sácate la Ternura', 'Mañana de Ayer, de Hoy', 'Crimen', 'Dos Rombos', 'Quién Fuera']);
+afegeix('Buhos', [
+    'Cerca de ti',
+    'Today is the day',
+    'Sweet Caroline',
+    'La última y Nos Vamos',
+    'Ha Sido Ramón',
+    'Vuela Aunque Duela',
+    'Se Acelera',
+]);
+afegeix('31 FAM', [
+    'CONDENAO',
+    'Por La Música',
+    'TUVE SUERTE',
+    'Te Gusto',
+    'Mente de Loco',
+    'Cuento',
+    'ROMPE',
+    'Se Lo Debo',
+    'Sincero',
+    'Sabor a Menta',
+    'Tranquila',
+    'EN LA WAVE',
+    'A Letter 2 Grandma',
+    'PURGATORY',
+    'NO LOVE',
+    'Make It Rain',
+    'Rip Hoe',
+    'Touchdown',
+]);
+afegeix('KOP', [
+    'En el medio del ring',
+    'Cicatrices',
+    'A Gasolina',
+    'No te rindas',
+    'Desalojos',
+    'Nuestros Barrios',
+    'Freedom',
+    'Golpe Radikal',
+    'Utzi Bakean',
+    'La Tormenta',
+    'Tu Voz Estalla Dentro',
+    "We're Not Angels",
+    'La Lucha Continúa',
+]);
+afegeix('Manu Guix', [
+    'Tiempo para creer',
+    'Sueños de un lunático',
+    'Para seguir en pie',
+    'Garganta con arena',
+    'En tres minutos',
+    'La compañía de la fantasía',
+    'Había una vez',
+    'Noches De Amor',
+    'Magicas Notas',
+    'Greased Lightnin',
+]);
+afegeix('Adrià Puntí', [
+    'Tocayo',
+    'El Preludio del Adiós',
+    'Un Compendio en Mi Menor',
+    'En Cuarentena',
+    'Color de Higado',
+    'Barba Azul',
+    'Peladilla Amarga',
+    'Sueño Dormido',
+    'El Gitanillo de Tiana',
+    'Entre Tu y Tu Yo',
+]);
+afegeix('Roger Mas', ['La Llorona', 'La Bien Pagá', 'Amore che vieni, amore che vai']);
+afegeix('The Tyets', [
+    'Let Me Alive',
+    'BEBESITA',
+    'Oye Mulata',
+    'Vaticano',
+    'Se Queda',
+    'Me Escapé Con un Trompetista',
+    'Bailoteo',
+]);
+afegeix('Brams', ['Two Girls', '¿Qué pone en tu DNI?', 'Rojo Separatista']);
+afegeix('La Tour De Carol', ['ragazza spettacolare', 'A TODO TREN', "M'aider"]);
+afegeix('Frans Cuspinera', ['Árbol Torcido', 'Siempre Contigo']);
+afegeix(
+    ['Baya Baye', 'BAYA BAYE'],
+    ['Fin de Año', 'Orujo de Hierbas', 'Pa Ke Me Invitas', 'AS BESTAS', 'Hustle Hard', 'Flames', 'Tutto Passa']
+);
+afegeix('Flashy Ice Cream', ['Toda la noche', 'Forever Young', 'Aleluya']);
+afegeix('Sara Roy', [
+    'PARTE DE MÍ',
+    'Una vez más',
+    'Ni tú ni yo',
+    'Desde la ventana',
+    'Todo',
+    'Jamás',
+    'Tiempo',
+    'Maybe',
+    'Día de invierno',
+]);
+afegeix(['AYRYN', 'Ayryn'], ['Ya no lloro', 'Nada', 'Si tu te vas']);
+afegeix('Pere Tapias', ['Oye José María', 'Moreno de la Fe']);
+afegeix('Júlia Cruz', ['Para llegar']);
+afegeix('Júlia Colom', ['Canta para seguir']);
+afegeix('Gessamí Boada', [
+    'Beautiful World',
+    'Moving On',
+    'Last Day on Earth',
+    'Shivering Clouds',
+    'Como ave pasajera',
+    'Oh What a Night',
+    'Beneath the Shady Water',
+    'White Flowers',
+    'Los Dos',
+    'Whispering Leaves',
+    'Unique',
+    'Use Your Imagination',
+    'Qué Más Da',
+    'Constellations',
+    'YA NO MÁS',
+    'Love Is You',
+    'In the Shadows of Your Mind',
+    'Dust in the Sky',
+    'Man in the Mirror',
+    'Blah Blah Blah',
+]);
+afegeix('El Pony Pisador', [
+    'Santianna',
+    "Sam's gone away",
+    'Lime Scurvy',
+    'Paddy Lay Back',
+    'Haul Away Joe',
+    'Rolling in the Morning',
+    'El Guisote del Tío Benito',
+    'John Kanaka',
+    "Don't Forget Your Old Shipmate",
+    'Essequibo River',
+    'Pass Around the Grog',
+    'Pay Me My Money Down',
+    'Roll the Woodpile Down',
+    'Bully in the Alley',
+    'Wellerman',
+    'Whip Jamboree',
+]);
+afegeix('Dr. Calypso', [
+    'The power of the latin soul',
+    "Let's Try Again",
+    'Mr. Happiness',
+    'Live Together',
+    'Reggae Lovers',
+    'Keep On Walkin',
+    'Slow Boat To Trinidad',
+    'Special Girl',
+    'Por Favor',
+    'Tu Rostro',
+    'Born to be alive',
+]);
+afegeix('Crim', [
+    'Blue Blood, Red Sky',
+    'Welcome My Enemy',
+    'Castles Made Of Sand',
+    'Our Father You Who Art In Hell',
+    'Watch Your Back',
+    'Eternal Cold',
+    'Prince Of The Rodeo',
+    'FREE FALLING',
+    'PAPER BOATS',
+    'A SONG AND A PROMISE',
+    'Hard Bass Attack',
+    'Bullfight',
+]);
+afegeix(
+    ['Mishima', 'MISHIMA'],
+    ['Lullaby of Barcelona', 'Del Montón', 'My Whole Life Crying', 'Every second', 'Hasta que lo miras']
+);
+afegeix(['GOSSOS', 'Gossos'], ['Doraemon No Uta', 'Club Tonight', 'Baby Only You', 'La calle 24']);
+afegeix('Anaïs Vila', ['But We Are Still Here', 'The Calm']);
+afegeix('The Demencials', ['El Fuego del Corazón', 'We Are', 'You Wondering Now', 'خالد']);
+afegeix(['AUXILI', 'Auxili'], ['Rude Girl', 'Imposibles']);
+afegeix('Siderland', ['La Vida Líquida', 'Let Me Love Ya']);
+afegeix('Ebri Knight', [
+    'VIENTOS DEL PUEBLO',
+    'EL PARTISANO',
+    'CANCIÓN DEL FRENTE UNIDO',
+    'LA VOZ DORMIDA',
+    'VIVA LA QUINTA BRIGADA',
+    'Viva la Quinta Brigada',
+    'El Pueblo Unido',
+    'Campesino',
+    'The Hills of Connemara',
+    'Global Ice',
+]);
+afegeix('Toti Soler', ['Todos Os Sonhos do Mundo', 'El Corazón Es Agua']);
+afegeix('Gertrudis', [
+    'Carita De Rosa',
+    'Bota Pa La Lambon',
+    'Almejilla',
+    'Al Sentir La Rumba',
+    'Manos Arriba',
+    'Oye',
+    '5 minutillos',
+    'Rúa da Raiña',
+    'Rua de Raiña',
+]);
+afegeix('Sandra Bautista', [
+    'Ni so que le pare',
+    'Sentada en un meteorito',
+    'Desamparada',
+    'El último gol',
+    'Vid amurallada',
+    'Cupido contra Afrodita',
+    'GRACIAS',
+    'Mamma, rema',
+    'Y si vuelve un general',
+    'La noche de la ceguera',
+    'Os narradores do cinema mudo',
+    'Mirada felina',
+    'CROWDFUNDING',
+    'Crowdfunding',
+    'La nada es para renacer',
+    'Luna (ft Ferran Exceso',
+    'Sydney de la Amazonia',
+    'Silêncio',
+    'Dejar sentirse ahogao',
+    'Canta el cuco',
+    'Un beso de esos',
+    'Horas (Jorge Drexler)',
+]);
+
 function esCastella(video) {
     const regla = REGLES[video.channelTitle];
     if (!regla) return false;
