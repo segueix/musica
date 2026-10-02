@@ -37,7 +37,7 @@
 - Les pistes repetides (videoclip i pista del Tema) es treuen a tots els canals oficials, encara que el Tema no hi mani.
 - Fora el Tema de ZOO.
 - Mesurat amb el feed i els catàlegs reals: mana en 76 canals oficials i en trauria 161 vídeos. La majoria no són cançons (resums de gira, entrevistes, actuacions a gales i a la televisió, sessions de DJ, karaoke, les versions en castellà i en altres llengües de «Només tu» d'el Diluvi i de Manu Guix). Unes 25 són cançons que no són al Tema (enMatu, alguns directes de Marina Rossell, «El Jaume i la Laia» de Mishima); es poden recuperar a `data/music-content-overrides.json`.
-- `MUSIC_TOPIC_GOVERNANCE` és ara una variable del workflow (`audit`).
+- `MUSIC_TOPIC_GOVERNANCE` és ara una variable del workflow. **Activada (`apply`) el 2026-10-02**: la generació d'aquell dia en mode `audit` (74 canals) trauria 229 vídeos: 148 classificats com a cançó, 69 dubtosos (resums de concert, karaokes de Doctor Prats, «Concert en família» de Dàmaris Gelabert, programes de ràdio) i 12 directes. Per recuperar-ne un: `data/music-content-overrides.json` (una decisió manual mana sobre el Tema).
 - `tests/song-title.test.js` («canvia una part important del feed») ja no compta les pistes «Provided to YouTube»: tenen el títol net i, amb els Tema, el percentatge baixava del 30 %.
 
 **Fitxers Afectats:** `scripts/lib/canal_tema.js`, `scripts/update_music_feed.js`, `data/artistes-musica.json`, `.github/workflows/actualitzar-feed-musica.yml`, `tests/canal-tema.test.js`, `tests/song-title.test.js`.

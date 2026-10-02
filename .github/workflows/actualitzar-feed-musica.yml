@@ -78,7 +78,7 @@ jobs:
           YOUTUBE_API_KEY_SERVER: ${{ secrets.YOUTUBE_API_KEY_SERVER }}
           MUSIC_VIDEOS_PER_CHANNEL: "50"
           # «audit»: el Tema no mana sobre el canal oficial, només ho anota a data/music-topic-review.json; «apply»: mana.
-          MUSIC_TOPIC_GOVERNANCE: "audit"
+          MUSIC_TOPIC_GOVERNANCE: "apply"
         run: node scripts/update_music_feed.js
 
       - name: Valida cobertura
