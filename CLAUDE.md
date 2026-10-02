@@ -329,6 +329,11 @@ const likes = ctx2.SegueixApp.features.likes;
 
 - `#addYoutuberModal` («Suggereix un artista», botó `#addYoutuberBtn` amb icona de nota musical amb «+») porta, amb l'estil de `portada.css` (`.pt-contact*`): **formulari** (`#addYoutuberSubmitBtn` → `CONFIG.forms.suggestYoutuberUrl`), **Telegram** (`t.me/segueix`), **correu** (`info.segueix@gmail.com`), «Informació per a artistes» i els crèdits. No hi tornis a posar el vídeo de YouTube «Coneix-nos» ni Xiuxiuejar (eliminats, com les seves imatges). **Pendent:** `suggestYoutuberUrl` encara és el formulari antic de Segueix youtubers; cal substituir-lo pel nou (per grups de música). Prova: `tests/contacte.test.js`.
 
+### Botons d'icona i colors de la configuració (2026-10-02)
+
+- Els símbols de la ràdio (`.mq-add-style`, `.mq-shuffle`, `.mq-save-list`, `.mq-share`, «Obre a YouTube») i els de sota el reproductor (`.btn-round-icon`: comentar, afegir a llista, compartir, mini reproductor; `.btn-heart`; «Canal YouTube» `.btn-pill-red`) tenen **la mateixa forma i colors**: quadrat de 44 px amb `--pt-radius-sm`, fons `--pt-surface-2`, vora `--pt-line`, text `--pt-text` i llima en passar-hi per sobre o en estat actiu (desada, m'agrada). Bloc «Botons d'icona unificats» al final de `portada.css`; no hi tornis a posar cercles ni el vermell de YouTube.
+- La configuració **només deixa triar el color de fons** (i la mida de la font): no hi ha selector de color de botons. `initButtonColorPicker()` aplica sempre el color de la marca i esborra `catube_button_color`; «Sempre tinc sort» només sorteja el fons. Prova: `tests/botons-unificats.test.js`.
+
 ### Les cançons comencen de zero (2026-10-01)
 
 - Tocar una cançó (portada, «Continua la ràdio», historial, ràdio, llistes) la fa començar **de zero**: `resolvePlaybackOptions()` (`player.js`) ja no reprèn el progrés desat de `catube_continue_watching_v1`. Només mana un temps explícit (`?t=` d'un enllaç compartit o `startAt > 0`). La restauració de la sessió en tornar a obrir l'app (`app.js`, `playbackSeconds`) és un altre camí i es manté. Prova: `tests/continue-watching.test.js`.

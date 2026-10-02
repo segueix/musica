@@ -4127,3 +4127,122 @@ body .follow-btn-pill.is-followed:hover {
 .mq-item.is-active .mq-duration {
     color: var(--pt-text);
 }
+
+/* ---------- Botons d'icona unificats: ràdio (+, barreja, desa, comparteix) i sota el reproductor ----------
+   Mateixa forma (quadrat de 44 px amb cantonades de 12 px), mateix fons, vora i color, i el llima en passar-hi per
+   sobre. El color dels botons ja no es tria a la configuració (només el fons). */
+body .mq .mq-add-style,
+body .mq .mq-shuffle,
+body .mq .mq-save-list,
+body .mq .mq-share,
+body .video-info-modern .btn-round-icon,
+body .video-info-modern .btn-heart {
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 1px solid var(--pt-line);
+    border-radius: var(--pt-radius-sm);
+    background: var(--pt-surface-2);
+    color: var(--pt-text);
+    cursor: pointer;
+    transition:
+        background-color 0.15s ease,
+        border-color 0.15s ease,
+        color 0.15s ease;
+}
+
+/* Els de la ràdio són graelles; els de sota el reproductor mantenen el seu «display» (el de comentar canvia entre
+   escriptori i mòbil) */
+body .mq .mq-add-style,
+body .mq .mq-shuffle,
+body .mq .mq-save-list,
+body .mq .mq-share {
+    display: inline-grid;
+    place-items: center;
+}
+
+body .mq .mq-add-style svg,
+body .mq .mq-shuffle svg,
+body .mq .mq-save-list svg,
+body .mq .mq-share svg,
+body .video-info-modern .btn-round-icon svg,
+body .video-info-modern .btn-heart svg {
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
+}
+
+body .mq .mq-add-style:hover,
+body .mq .mq-add-style:focus-visible,
+body .mq .mq-add-style[aria-expanded='true'],
+body .mq .mq-shuffle:hover,
+body .mq .mq-shuffle:focus-visible,
+body .mq .mq-save-list:hover,
+body .mq .mq-save-list:focus-visible,
+body .mq .mq-share:hover,
+body .mq .mq-share:focus-visible,
+body .video-info-modern .btn-round-icon:hover,
+body .video-info-modern .btn-round-icon:focus-visible,
+body .video-info-modern .btn-heart:hover,
+body .video-info-modern .btn-heart:focus-visible {
+    border-color: var(--pt-accent);
+    background: var(--pt-surface-3);
+    color: var(--pt-accent);
+}
+
+/* Estats «actius» en llima: ràdio desada com a llista, m'agrada */
+body .mq .mq-save-list.is-saved,
+body .video-info-modern .btn-heart.is-liked,
+body .video-info-modern .btn-heart.liked {
+    border-color: var(--pt-accent);
+    color: var(--pt-accent);
+}
+
+body .video-info-modern .btn-heart.is-liked svg,
+body .video-info-modern .btn-heart.liked svg {
+    fill: var(--pt-accent);
+    stroke: var(--pt-accent);
+}
+
+/* «Canal YouTube» i «Obre a YouTube»: el mateix botó amb text */
+body .video-info-modern .btn-pill-red,
+body .mq .mq-open-ytm {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 44px;
+    height: 44px;
+    padding: 0 14px;
+    border: 1px solid var(--pt-line);
+    border-radius: var(--pt-radius-sm);
+    background: var(--pt-surface-2);
+    color: var(--pt-text);
+    font-size: 0.875rem;
+    font-weight: 700;
+}
+
+body .video-info-modern .btn-pill-red:hover,
+body .video-info-modern .btn-pill-red:focus-visible,
+body .mq .mq-open-ytm:hover,
+body .mq .mq-open-ytm:focus-visible {
+    border-color: var(--pt-accent);
+    background: var(--pt-surface-3);
+    color: var(--pt-accent);
+}
+
+/* styles.css els pinta pel seu id (#playlistBtn, #shareBtn, #miniPlayerToggle) i #watchPage .btn-pill-red: mateix estil */
+body .video-info-modern :is(#playlistBtn, #shareBtn, #miniPlayerToggle),
+body #watchPage .video-info-modern .btn-pill-red {
+    border: 1px solid var(--pt-line);
+    background: var(--pt-surface-2);
+    color: var(--pt-text);
+}
+
+body .video-info-modern :is(#playlistBtn, #shareBtn, #miniPlayerToggle):is(:hover, :focus-visible),
+body #watchPage .video-info-modern .btn-pill-red:is(:hover, :focus-visible) {
+    border-color: var(--pt-accent);
+    background: var(--pt-surface-3);
+    color: var(--pt-accent);
+}
