@@ -9,6 +9,8 @@ const { parseManualDates, stampOriginalYear } = require('./lib/any_original_musi
 const catalog = require('./lib/cataleg_musical');
 const { teSubtitolsCastella } = require('./lib/subtitols_castella');
 const { slimFeed, serializeFeed } = require('./lib/aprimar_feed');
+const tema = require('./lib/canal_tema');
+const { REGLES: SPANISH_TITLE_RULES } = require('./ocultar_titols_castella');
 const { resolveChannelDisplayName, findNameOverride, loadNameOverrides, stripOfficialWord } = require('./lib/nom_canal');
 
 const API_KEY = process.env.YOUTUBE_API_KEY_SERVER || process.env.YOUTUBE_API_KEY;
@@ -30,6 +32,16 @@ const CHANNEL_VIDEO_ALLOWLIST_FILE = path.join(process.cwd(), 'data', 'music-cha
 const ORIGINAL_DATES_FILE = path.join(process.cwd(), 'data', 'musica-dates.json');
 const CLASSIC_FILE = path.join(process.cwd(), 'data', 'musica-classica.json');
 const CATALOG_STATE_FILE = path.join(process.cwd(), 'data', 'music-catalog-state.json');
+const TOPIC_CATALOG_FILE = path.join(process.cwd(), 'data', 'music-topic-catalog.json');
+// Pàgines (de 50) que es llegeixen de cada canal Tema: la discografia sencera fins a 500 pistes.
+const TOPIC_MAX_PAGES = Math.max(1, Number.parseInt(process.env.MUSIC_TOPIC_MAX_PAGES || '10', 10));
+// Un vídeo del canal propi d'un artista amb Tema publicat fa menys d'aquests dies es manté encara que la cançó
+// no sigui al Tema (el videoclip d'un senzill sol arribar abans que la distribuïdora la publiqui).
+const TOPIC_GRACE_DAYS = 30;
+// «audit»: només anota a data/music-topic-review.json què es trauria del canal propi (no ho aplica);
+// «apply»: el Tema mana. Es passa a «apply» quan la revisió confirma que la discografia es llegeix bé.
+const TOPIC_GOVERNANCE = process.env.MUSIC_TOPIC_GOVERNANCE === 'apply' ? 'apply' : 'audit';
+const TOPIC_REVIEW_FILE = path.join(process.cwd(), 'data', 'music-topic-review.json');
 const DEEP_PAGE_BUDGET = Math.max(0, Number.parseInt(process.env.MUSIC_DEEP_PAGE_BUDGET || String(catalog.DEFAULTS.deepPageBudget), 10));
 const EXTRA_DEEP_CHANNELS = String(process.env.MUSIC_DEEP_CHANNELS || '').split(',').map(v=>v.trim()).filter(Boolean);
 const VIDEOS_PER_CHANNEL = Math.max(1, Math.min(50, Number.parseInt(process.env.MUSIC_VIDEOS_PER_CHANNEL || '50', 10)));
@@ -136,7 +148,7 @@ function collectDeepChannels(db){
   const out=new Set(EXTRA_DEEP_CHANNELS);
   for(const artist of db.artists||[]){
     if(artist.reviewStatus==='rebutjat' || !classic.has(foldName(artist.name))) continue;
-    for(const ch of artist.youtube?.channels||[]) if(ch?.id) out.add(String(ch.id).trim());
+    for(const ch of artist.youtube?.channels||[]) if(ch?.id && ch.type!=='topic') out.add(String(ch.id).trim());
   }
   return out;
 }
@@ -149,8 +161,9 @@ function collectIndexedChannels(db){
     for(const ch of artist.youtube?.channels||[]){
       const id=String(ch?.id||'').trim();
       if(!/^UC[A-Za-z0-9_-]{22}$/.test(id)) continue;
-      const prev=byId.get(id)||{id,artistNames:[],genres:[],categories:[],types:[],primary:false};
+      const prev=byId.get(id)||{id,artistNames:[],aliases:[],genres:[],categories:[],types:[],primary:false};
       prev.artistNames=unique([...prev.artistNames,artist.name]);
+      prev.aliases=unique([...prev.aliases,artist.displayName,...(artist.aliases||[])]);
       prev.genres=unique([...prev.genres,...(artist.genres||[])]);
       prev.categories=unique([...prev.categories,...categories]);
       prev.types=unique([...prev.types,ch.type]);
@@ -200,6 +213,10 @@ async function main(){
   const deepChannels=collectDeepChannels(db);
   const freshIdsByChannel=new Map();
   const deepIdsByChannel=new Map();
+  // Canals Tema: discografia llegida en aquesta execució (o la de l'anterior si falla).
+  const topicIds=new Set(ids.filter(id=>indexed.get(id).types.includes('topic')));
+  const topicTracksByChannel=new Map();
+  const previousTopicCatalog=readJsonSafe(TOPIC_CATALOG_FILE,{channels:{}}).channels||{};
 
   for(const id of ids){
     const detail=channelDetails.get(id);
@@ -209,6 +226,28 @@ async function main(){
       continue;
     }
     uploadsByChannel.set(id,uploads);
+    if(topicIds.has(id)){
+      // Canal Tema: es llegeix la discografia sencera (títols per decidir què és cançó de l'artista).
+      try{
+        const tracks=[];
+        let pageToken;
+        for(let page=0;page<TOPIC_MAX_PAGES;page++){
+          const payload=await api('playlistItems',{part:'snippet,contentDetails',playlistId:uploads,maxResults:50,pageToken});
+          for(const item of payload.items||[]){
+            const videoId=item.contentDetails?.videoId;
+            if(videoId) tracks.push({id:videoId,title:item.snippet?.title||''});
+          }
+          pageToken=payload.nextPageToken;
+          if(!pageToken) break;
+        }
+        topicTracksByChannel.set(id,tracks);
+        freshIdsByChannel.set(id,unique(tracks.map(t=>t.id)));
+      }catch(error){
+        console.warn('⚠️ Tema '+id+': '+error.message);
+        freshIdsByChannel.set(id,[]);
+      }
+      continue;
+    }
     try{
       const payload=await api('playlistItems',{
         part:'contentDetails',
@@ -249,6 +288,8 @@ async function main(){
   const retainedIdsByChannel=new Map();
   for(const id of ids){
     const fresh=new Set([...(freshIdsByChannel.get(id)||[]),...(deepIdsByChannel.get(id)||[])]);
+    // Un Tema llegit sencer no necessita repertori conservat: només si la lectura ha fallat.
+    if(topicIds.has(id) && topicTracksByChannel.has(id)){ retainedIdsByChannel.set(id,[]); continue; }
     retainedIdsByChannel.set(id,catalog.pickRetained(previousByChannel.get(id),fresh).map(v=>v.id));
   }
   const retainedSet=new Set([...retainedIdsByChannel.values()].flat());
@@ -293,6 +334,79 @@ async function main(){
     }
     catalog.selectDeepKeep(candidates).forEach(videoId=>deepAllowed.add(videoId));
   }
+  // ---------- Mana el canal Tema (scripts/lib/canal_tema.js) ----------
+  const namesOfChannel=id=>{
+    const meta=indexed.get(id);
+    const raw=channelDetails.get(id)?.snippet?.title||'';
+    return unique([...meta.artistNames,...meta.aliases,raw,cleanChannelDisplayName(raw)]);
+  };
+  // Discografia de cada artista (claus de cançó) a partir dels seus Tema.
+  const topicCatalog={};
+  const topicKeysByArtist=new Map();
+  for(const id of topicIds){
+    const tracks=topicTracksByChannel.get(id) || (previousTopicCatalog[id]?.tracks||[]).map(([videoId,title])=>({id:videoId,title}));
+    if(!tracks.length) continue;
+    topicCatalog[id]={name:cleanChannelDisplayName(channelDetails.get(id)?.snippet?.title||previousTopicCatalog[id]?.name||''),tracks:tracks.map(t=>[t.id,t.title])};
+    const names=namesOfChannel(id);
+    for(const artist of indexed.get(id).artistNames){
+      const keys=topicKeysByArtist.get(artist)||new Set();
+      for(const track of tracks){ const key=tema.songKey(track.title,names); if(key) keys.add(key); }
+      topicKeysByArtist.set(artist,keys);
+    }
+  }
+  // El Tema mana sobre el canal propi (oficial) quan tots els artistes del canal tenen discografia suficient.
+  const governedKeysByChannel=new Map();
+  for(const id of ids){
+    const meta=indexed.get(id);
+    if(topicIds.has(id) || !meta.types.includes('official')) continue;
+    const sets=meta.artistNames.map(name=>topicKeysByArtist.get(name));
+    if(!sets.length || sets.some(set=>!set || set.size<tema.DEFAULTS.minTopicTracks)) continue;
+    governedKeysByChannel.set(id,new Set(sets.flatMap(set=>[...set])));
+  }
+  const graceMs=TOPIC_GRACE_DAYS*86400000;
+  const generationTime=Date.now();
+  function governed(classification,{channelId,videoId,title,durationSeconds:seconds,publishedAt}){
+    const keys=governedKeysByChannel.get(channelId);
+    if(!keys) return classification;
+    const key=tema.songKey(title,namesOfChannel(channelId));
+    const next=tema.governClassification(classification,{key,keys,overridden:contentOverrides.has(videoId),isShort:isShortByDuration(seconds)});
+    const published=Date.parse(publishedAt||'')||0;
+    if(next!==classification && next.contentType==='other' && published && generationTime-published<=graceMs) return classification;
+    return next;
+  }
+  // Cançons que ja tenen videoclip al canal propi: la pista del Tema no hi entra.
+  const coveredKeysByArtist=new Map();
+  for(const [id] of governedKeysByChannel){
+    const meta=indexed.get(id);
+    const names=namesOfChannel(id);
+    for(const videoId of unique([...(freshIdsByChannel.get(id)||[]),...(deepIdsByChannel.get(id)||[]),...(retainedIdsByChannel.get(id)||[])])){
+      const item=detailsById.get(videoId);
+      if(!item || item.status?.privacyStatus!=='public' || isShortByDuration(item.durationSeconds)) continue;
+      const cls=governed(applyContentOverride(classifyMusicContent({item,channelMeta:{...meta,channelTitle:channelDetails.get(id)?.snippet?.title||''}}),contentOverrides.get(videoId)),
+        {channelId:id,videoId,title:item.snippet?.title,durationSeconds:item.durationSeconds,publishedAt:item.snippet?.publishedAt});
+      if(cls.contentType!=='song') continue;
+      const key=tema.songKey(item.snippet?.title,names);
+      if(!key) continue;
+      for(const artist of meta.artistNames){
+        const set=coveredKeysByArtist.get(artist)||new Set();
+        set.add(key);
+        coveredKeysByArtist.set(artist,set);
+      }
+    }
+  }
+  const topicStats=[];
+  for(const id of topicIds){
+    const tracks=topicTracksByChannel.get(id);
+    if(!tracks) continue;
+    const names=namesOfChannel(id);
+    const covered=new Set(indexed.get(id).artistNames.flatMap(name=>[...(coveredKeysByArtist.get(name)||[])]));
+    const candidates=tracks.map(t=>detailsById.get(t.id)).filter(item=>item && item.status?.privacyStatus==='public' && !isShortByDuration(item.durationSeconds))
+      .map(item=>({id:item.id,key:tema.songKey(item.snippet?.title,names),viewCount:Number(item.statistics?.viewCount||0),publishedAt:item.snippet?.publishedAt}));
+    const selected=tema.selectTopicTracks(candidates,{coveredKeys:covered,now:generationTime});
+    freshIdsByChannel.set(id,selected);
+    topicStats.push({id,name:topicCatalog[id]?.name||'',tracks:tracks.length,selected:selected.length,withClip:covered.size});
+  }
+
   for(const id of ids){
     const carriedIds=retainedIdsByChannel.get(id)||[];
     const keepDeep=(deepIdsByChannel.get(id)||[]).filter(videoId=>deepAllowed.has(videoId));
@@ -308,6 +422,8 @@ async function main(){
   const channelsWithoutVideos=[];
   const channelsWithoutAcceptedMusic=[];
   const typeCounts={song:0,live_song:0,album:0,other:0,review:0};
+  const governedCounts={};
+  const topicReview=[];
   let publicVideoCount=0;
   let acceptedMusicCount=0;
   let categoryEligibleVideoCount=0;
@@ -379,7 +495,7 @@ async function main(){
       publicVideoCount++;
 
       // La decisió manual (data/music-content-overrides.json) preval sobre el classificador automàtic.
-      const classification=carried
+      let classification=carried
         ? applyContentOverride({
             accepted:['song','live_song','album'].includes(carried.contentType),
             contentType:carried.contentType||'review',
@@ -390,6 +506,17 @@ async function main(){
             item,
             channelMeta:{...meta,channelTitle:rawChannelName}
           }),contentOverrides.get(item.id));
+      const finalClassification=governed(classification,{
+        channelId:id,videoId,
+        title:item?.snippet?.title||carried?.originalTitle||carried?.title||'',
+        durationSeconds:item?.durationSeconds??carried?.durationSeconds,
+        publishedAt:item?.snippet?.publishedAt||carried?.publishedAt
+      });
+      if(finalClassification!==classification){
+        governedCounts[finalClassification.contentType]=(governedCounts[finalClassification.contentType]||0)+1;
+        topicReview.push({id:videoId,channelTitle:channel.name,title:item?.snippet?.title||carried?.title||'',from:classification.contentType,to:finalClassification.contentType});
+        if(TOPIC_GOVERNANCE==='apply') classification=finalClassification;
+      }
       typeCounts[classification.contentType]=(typeCounts[classification.contentType]||0)+1;
 
       const vs=item?.snippet||{};
@@ -464,6 +591,37 @@ async function main(){
   applyFalseShortsOverrides(videos);
   // Vídeos ocults manualment (p. ex. cançons amb títol en castellà): no entren al feed
   const hiddenIds=loadHiddenVideoIds();
+  // Una cançó amagada al canal propi d'un artista (castellà...) tampoc no entra des del seu Tema: ni la que
+  // coincideix amb una amagada per ID, ni la que compleix les regles per títol de scripts/ocultar_titols_castella.js.
+  const artistsOfChannel=id=>indexed.get(id)?.artistNames||[];
+  const rulesByArtist=new Map();
+  for(const [ruleName,rule] of Object.entries(SPANISH_TITLE_RULES)){
+    for(const id of ids){
+      if(channels[id]?.name!==ruleName && channelDetails.get(id)?.snippet?.title!==ruleName) continue;
+      for(const artist of artistsOfChannel(id)) rulesByArtist.set(artist,[...(rulesByArtist.get(artist)||[]),rule]);
+    }
+  }
+  const hiddenKeysByArtist=new Map();
+  for(const video of videos){
+    if(!hiddenIds.has(String(video.id))) continue;
+    const key=tema.songKey(video.title,namesOfChannel(video.channelId));
+    if(!key) continue;
+    for(const artist of artistsOfChannel(video.channelId)) hiddenKeysByArtist.set(artist,new Set([...(hiddenKeysByArtist.get(artist)||[]),key]));
+  }
+  let topicHidden=0;
+  const topicHiddenTitles=[];
+  for(let i=videos.length-1;i>=0;i--){
+    const video=videos[i];
+    if(!topicIds.has(video.channelId)) continue;
+    const artists=artistsOfChannel(video.channelId);
+    const key=tema.songKey(video.title,namesOfChannel(video.channelId));
+    const title=String(video.title||'');
+    const byKey=Boolean(key) && artists.some(artist=>hiddenKeysByArtist.get(artist)?.has(key));
+    // Només les regles per títol: una regla «totes» és la decisió sobre un canal concret, no sobre la discografia.
+    const byRule=artists.some(artist=>(rulesByArtist.get(artist)||[]).some(rule=>rule.titols && rule.titols.test(title)));
+    if(byKey || byRule){ videos.splice(i,1); topicHidden++; topicHiddenTitles.push(`${video.channelTitle} · ${title}`); }
+  }
+  if(topicHidden) console.log(`🙈 ${topicHidden} pistes de canals Tema amagades com la mateixa cançó del canal propi`);
   if(hiddenIds.size){
     for(let i=videos.length-1;i>=0;i--) if(hiddenIds.has(String(videos[i].id))) videos.splice(i,1);
   }
@@ -498,6 +656,15 @@ async function main(){
     channelsWithoutAcceptedMusic,
     rejectedSamples
   },null,2)+'\n');
+  fs.writeFileSync(TOPIC_REVIEW_FILE,JSON.stringify({
+    generatedAt,
+    mode:TOPIC_GOVERNANCE,
+    reclassified:governedCounts,
+    hiddenFromTopic:topicHiddenTitles.sort(),
+    videos:topicReview.sort((a,b)=>a.channelTitle.localeCompare(b.channelTitle,'ca')||a.title.localeCompare(b.title,'ca'))
+  },null,2)+'\n');
+  // Discografia dels canals Tema (no la llegeix el client): base per decidir què és cançó si l'API falla un dia.
+  fs.writeFileSync(TOPIC_CATALOG_FILE,`{\n  "updatedAt": ${JSON.stringify(generatedAt)},\n  "channels": {\n${Object.entries(topicCatalog).sort(([a],[b])=>a.localeCompare(b)).map(([id,entry])=>`    ${JSON.stringify(id)}: ${JSON.stringify(entry)}`).join(',\n')}\n  }\n}\n`);
   fs.writeFileSync(CATALOG_STATE_FILE,JSON.stringify({updatedAt:generatedAt,channels:deepState},null,2)+'\n');
   fs.writeFileSync(AUDIT_FILE,JSON.stringify({
     generatedAt,
@@ -505,6 +672,12 @@ async function main(){
     unverifiedVideoCount:unverified.size,
     deepPagesFetched,
     deepChannelCount:deepChannels.size,
+    topicChannelCount:topicIds.size,
+    governedChannelCount:governedKeysByChannel.size,
+    topicGovernance:TOPIC_GOVERNANCE,
+    governedReclassified:governedCounts,
+    topicHiddenCount:topicHidden,
+    topicChannels:topicStats.sort((a,b)=>a.name.localeCompare(b.name,'ca')),
     indexedChannelCount:ids.length,
     resolvedChannelCount:channelDetails.size,
     feedChannelCount:Object.keys(channels).length,
