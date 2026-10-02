@@ -71,7 +71,7 @@ jobs:
         run: node scripts/test_music_content_classifier.js
 
       - name: Prova catàleg, any original i revisions manuals
-        run: npx vitest run tests/cataleg-musical.test.js tests/any-original.test.js tests/music-content-overrides.test.js tests/channel-video-allowlist.test.js tests/subtitols-castella.test.js
+        run: npx vitest run tests/cataleg-musical.test.js tests/any-original.test.js tests/music-content-overrides.test.js tests/channel-video-allowlist.test.js tests/subtitols-castella.test.js tests/aprimar-feed.test.js
 
       - name: Genera feed des de la base musical
         env:

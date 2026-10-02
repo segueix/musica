@@ -13,6 +13,22 @@
 
 **Fitxers Afectats:**
 
+## [2026-10-02] - El feed pesava massa per afegir-hi els canals «Tema»
+**Símptoma:** `data/feed.json` feia 11,6 MB (1,9 MB comprimit) amb 7.539 vídeos i cada client el baixa i el processa sencer en obrir l'app. Afegir-hi els canals «Tema» dels artistes (milers de llançaments més) l'hauria portat cap als 15–17 MB.
+
+**Causa Arrel:** el generador hi copiava la descripció sencera de YouTube (el 64 % del pes), el motiu del classificador (`musicReason`), `sourceChannelId` (sempre igual que `channelId`), camps buits (`liveBroadcastContent: 'none'`, llengües buides) i ho escrivia amb `JSON.stringify(…, null, 2)` (el sagnat era una cinquena part). El client només llegeix el principi de la descripció.
+
+**Solució Implementada:** `scripts/lib/aprimar_feed.js` (`slimFeed`, `serializeFeed`) s'aplica en escriure el feed (`update_music_feed.js`, després d'haver fet servir la descripció sencera per a l'any original i els subtítols en castellà):
+- descripció retallada a 300 caràcters per un salt de línia o un espai, amb la marca ` […]` (fa que sigui idempotent) i hi afegeix les línies `Released on:` i `℗` que quedin més avall, perquè `stampOriginalYear()` d'un vídeo conservat (`carried`) o d'`estampar_any_original.js` trobi el mateix any;
+- `musicReason` només es conserva si és «marcador explícit…» (el llegeix `home-sections.isOfficialClip`); el motiu complet continua a `music-content-review.json` i a les mostres de l'auditoria;
+- fora `sourceChannelId` quan és igual que `channelId` (el client fa `channelId || sourceChannelId`) i els camps buits;
+- un vídeo per línia: sense sagnat i amb diffs de git llegibles.
+Resultat amb el feed actual: 11,6 MB → 6,1 MB, i 1,94 MB → 0,95 MB comprimit; cap vídeo canvia d'any original ni de filtre de subtítols. `node scripts/aprimar_feed.js` ho aplica al feed sense API; els altres scripts que reescriuen el feed (`estampar_any_original`, `aplicar_revisio_manual_musical`, `corregir_noms_canals`, `revisar_shorts`) ja l'escriuen amb `serializeFeed`.
+
+**Trampes:** no tornis a escriure el feed amb `JSON.stringify(feed, null, 2)`. Si un script nou necessita la descripció sencera, ha de treballar a `update_music_feed.js` abans d'aprimar (o demanar-la a l'API), no llegir-la de `feed.json`. `node scripts/ocultar_subtitols_castella.js` ara només veu les descripcions retallades: el filtre bo és el de la generació diària.
+
+**Fitxers Afectats:** `scripts/lib/aprimar_feed.js`, `scripts/aprimar_feed.js`, `scripts/update_music_feed.js`, `scripts/estampar_any_original.js`, `scripts/aplicar_revisio_manual_musical.js`, `scripts/corregir_noms_canals.js`, `scripts/revisar_shorts.js`, `.github/workflows/actualitzar-feed-musica.yml`, `tests/aprimar-feed.test.js`, `data/feed.json`.
+
 ## [2026-10-01] - Filera lateral dels Shorts amb la mateixa resposta que el desplaçament vertical
 
 **Símptoma:** El desplaçament horitzontal de les miniatures (fila de Shorts i historial) semblava més lent que el vertical.

@@ -7,6 +7,7 @@
 const fs = require('fs');
 const path = require('path');
 const { parseManualDates, stampOriginalYear } = require('./lib/any_original_musical');
+const { serializeFeed } = require('./lib/aprimar_feed');
 
 const FEED = path.join(process.cwd(), 'data', 'feed.json');
 const DATES = path.join(process.cwd(), 'data', 'musica-dates.json');
@@ -19,5 +20,5 @@ for (const video of feed.videos || []) {
   if (stampOriginalYear(video, manual)) changed++;
   if (video.originalYear) withYear++;
 }
-if (changed) fs.writeFileSync(FEED, JSON.stringify(feed, null, 2) + '\n');
+if (changed) fs.writeFileSync(FEED, serializeFeed(feed));
 console.log(`✅ ${withYear}/${feed.videos.length} vídeos amb any original (${changed} actualitzats).`);

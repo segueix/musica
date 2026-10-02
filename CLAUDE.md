@@ -315,6 +315,10 @@ const likes = ctx2.SegueixApp.features.likes;
 4. **Actualitza `docs/ARTISTES_CASTELLA.md`**: artistes nous, recomptes, notes i la data de «Última revisió», i afegeix l'entrada a `docs/PROBLEMES_I_SOLUCIONS.md`. Si un artista apareix a la llista per primera vegada, afegeix-lo amb la primera columna `**Nom exacte al feed**`.
 5. Digues a l'usuari quines cançons has amagat i quines dubtoses has deixat.
 
+### Feed aprimat (2026-10-02)
+
+- `data/feed.json` s'escriu **aprimat** i amb **un vídeo per línia** (`scripts/lib/aprimar_feed.js`: `slimFeed()` + `serializeFeed()`): descripció retallada a 300 caràcters (marca ` […]`, conserva les línies `Released on:` i `℗`), `musicReason` només si és «marcador explícit», sense `sourceChannelId` igual a `channelId` ni camps buits. 11,6 MB → 6,1 MB (0,95 MB comprimit). **No tornis a escriure el feed amb `JSON.stringify(feed, null, 2)`**: qualsevol script que el reescrigui ha de fer servir `serializeFeed()`. La descripció sencera només existeix dins `update_music_feed.js` (any original, subtítols en castellà) abans d'aprimar. Aplicar-ho sense API: `node scripts/aprimar_feed.js`. Prova: `tests/aprimar-feed.test.js`; detall a `docs/PROBLEMES_I_SOLUCIONS.md` (2026-10-02).
+
 ### Llengua declarada a YouTube (2026-10-02)
 
 - Perquè hi hagi més anuncis en català, els artistes han de declarar el català com a llengua de l'àudio i del títol a YouTube Studio (o a la distribuïdora en els temes «Provided to YouTube»). L'app no ho pot canviar. `node scripts/informe_llengua_declarada.js` genera `docs/informes/llengua-declarada.csv` (una fila per cançó publicada sense català declarat, amb l'enllaç per editar-la) i la taula per artista de `docs/LLENGUA_DECLARADA.md`, que porta també el missatge per enviar als artistes. Català, aranès (`oc`) i instrumental (`zxx`) es consideren correctes. Prova: `tests/informe-llengua-declarada.test.js`.
