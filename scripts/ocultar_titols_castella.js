@@ -564,6 +564,13 @@ afegeix('Gertrudis', [
 // Mariona Escoda — anglès: versió de «Maniac» de Michael Sembello.
 afegeix(['Mariona Escoda', 'Mariona Escoda - Topic'], ['Maniac']);
 
+// Ven'nus — només català: s'exclouen les peces que barregen o fan servir altres llengües.
+afegeix(["VEN'NUS", "Ven'nus"], [
+    'Carmen se fue',
+    'I JAZZ WANT MY G BACK',
+    "It's So Hard To Be So Funny",
+]);
+
 afegeix('Sandra Bautista', [
     'Ni so que le pare',
     'Sentada en un meteorito',
