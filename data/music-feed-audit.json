@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-02T15:25:55.891Z",
-  "retainedVideoCount": 829,
+  "generatedAt": "2026-10-02T15:58:32.155Z",
+  "retainedVideoCount": 826,
   "unverifiedVideoCount": 0,
   "deepPagesFetched": 0,
   "deepChannelCount": 20,
@@ -562,8 +562,8 @@
     {
       "id": "UCtFrz4JJnpJq7dhxLNRwkdA",
       "name": "Marina Rossell",
-      "songs": 110,
-      "matched": 87,
+      "songs": 107,
+      "matched": 85,
       "coverage": 0.79,
       "governs": true
     },
@@ -858,10 +858,10 @@
   ],
   "topicGovernance": "apply",
   "governedReclassified": {
-    "other": 229,
+    "other": 228,
     "song": 21
   },
-  "topicHiddenCount": 390,
+  "topicHiddenCount": 401,
   "topicChannels": [
     {
       "id": "UCEMDA-ZXzEUlJjZ-avy0Pvg",
@@ -1414,7 +1414,7 @@
       "name": "Marina Rossell",
       "tracks": 312,
       "selected": 40,
-      "withClip": 52
+      "withClip": 51
     },
     {
       "id": "UC82RhPbZ6uly1CbqivbZqxQ",
@@ -1805,17 +1805,17 @@
   "indexedChannelCount": 297,
   "resolvedChannelCount": 297,
   "feedChannelCount": 297,
-  "rawPublicVideoCount": 9816,
-  "feedVideoCount": 9080,
-  "acceptedMusicCount": 8386,
-  "categoryEligibleVideoCount": 8322,
+  "rawPublicVideoCount": 9813,
+  "feedVideoCount": 9062,
+  "acceptedMusicCount": 8384,
+  "categoryEligibleVideoCount": 8320,
   "shortVideoCount": 1118,
   "contentReviewCount": 408,
   "contentTypeCounts": {
-    "song": 7988,
+    "song": 7986,
     "live_song": 334,
     "album": 64,
-    "other": 1022,
+    "other": 1021,
     "review": 408
   },
   "unresolvedChannelIds": [],
