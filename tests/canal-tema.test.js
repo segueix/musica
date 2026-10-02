@@ -2,7 +2,17 @@ import { describe, it, expect } from 'vitest';
 import { createRequire } from 'module';
 
 const require = createRequire(import.meta.url);
-const { DEFAULTS, songKey, keysOf, governClassification, selectTopicTracks } = require('../scripts/lib/canal_tema.js');
+const {
+    DEFAULTS,
+    songKey,
+    songKeys,
+    topicKeys,
+    matchedKey,
+    keysOf,
+    hasSongMarker,
+    governClassification,
+    selectTopicTracks,
+} = require('../scripts/lib/canal_tema.js');
 
 const song = { accepted: true, contentType: 'song', confidence: 0.9, reason: 'marcador explícit de cançó/videoclip' };
 const review = { accepted: false, contentType: 'review', confidence: 0.5, reason: 'dubtós' };
@@ -64,5 +74,66 @@ describe('mana el canal Tema', () => {
         expect(ids).toEqual(['a2', 'b', 'e']);
         expect(selectTopicTracks([], {})).toEqual([]);
         expect(DEFAULTS.topicKeep).toBeGreaterThan(0);
+    });
+
+    it('troba la cançó dins dels títols reals dels canals oficials', () => {
+        const cases = [
+            ['Aina - Dan Peralbo i El Comboi', ['Dan Peralbo i El Comboi'], 'Aina'],
+            ['AUXILI - 02. Si tu vols (Tresors, 2018)', ['AUXILI'], 'Si tu vols'],
+            ["'El Calvari' d'Anna Andreu", ['Anna Andreu'], 'El Calvari'],
+            [
+                'La Fúmiga - FOTOSÍNTESI amb ZOO (Fotosíntesi, 2021) | Lyric Video Oficial |',
+                ['La Fúmiga'],
+                'Fotosíntesi',
+            ],
+            ['Asusena- Sandra Monfort (video lyric)', ['Sandra Monfort'], 'Asusena'],
+            ['Mishima - El tobogan (Ara i res) 10', ['Mishima'], 'El tobogan'],
+            ['SODI Temps Afegit - Nou Single', ['SODI'], 'Temps afegit'],
+            ['SMOKING SOULS - Ara (videoclip) Translúcid', ['Smoking Souls'], 'Ara'],
+            [
+                'Maria Jaume - Tan a poc a poc que me dorm [audio oficial]',
+                ['Maria Jaume'],
+                'Tan a poc a poc (que me dorm)',
+            ],
+            ['OQUES GRASSES - GOSSEJAR & AL·LÈRGIQUES AL POL·LEN', ['Oques Grasses'], 'Gossejar'],
+            ['12. arròs covat prod. Jan Aygua, bby bdass', ['Pol Bordas'], 'arròs covat'],
+        ];
+        for (const [title, artists, topicTitle] of cases) {
+            const keys = new Set(topicKeys(topicTitle, artists));
+            expect(matchedKey(title, artists, keys), title).not.toBe('');
+        }
+        const keys = keysOf([{ title: 'Bon dia' }], ['Els Pets']);
+        expect(matchedKey('Els Pets - Entrevistes Això és espectacle', ['Els Pets'], keys)).toBe('');
+        expect(matchedKey('AUXILI - GIRA TRESORS 2018 (Vídeo-resum)', ['AUXILI'], keysOf([{ title: 'Tresors' }]))).toBe(
+            ''
+        );
+        expect(songKeys('Els Pets', ['Els Pets'])).not.toContain('els pets');
+    });
+
+    it('conserva el que el títol diu que és una cançó publicada', () => {
+        for (const title of [
+            "Cabells Mullats - Ven'nus (Videoclip Oficial)",
+            'CRIM - Alerta, Alerta! (Video Lyric)',
+            'Mar Pujol - Princesa de sal (Audio)',
+            'AYRYN-Apropar-me (Visualizer)',
+            'Anna Andreu - Mentresant (Audio oficial)',
+        ]) {
+            expect(hasSongMarker(title), title).toBe(true);
+        }
+        for (const title of ['AUXILI - GIRA TRESORS 2018 (Vídeo-resum)', 'Els Pets - Entrevistes Això és espectacle']) {
+            expect(hasSongMarker(title), title).toBe(false);
+        }
+        const keys = new Set(['bon dia']);
+        expect(governClassification(song, { key: ['neptu'], keys, marked: true })).toBe(song);
+        expect(governClassification(song, { key: ['neptu'], keys }).contentType).toBe('other');
+        expect(DEFAULTS.minCoverage).toBeGreaterThan(0.5);
+    });
+
+    it('una pista del Tema amb videoclip no hi entra encara que la coincidència sigui amb el parèntesi desfet', () => {
+        const ids = selectTopicTracks(
+            [{ id: 't', key: 'tan a poc a poc', keys: topicKeys('Tan a poc a poc (que me dorm)'), viewCount: 9 }],
+            { coveredKeys: new Set(['tan a poc a poc que me dorm']) }
+        );
+        expect(ids).toEqual([]);
     });
 });

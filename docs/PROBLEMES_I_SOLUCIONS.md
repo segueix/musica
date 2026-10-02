@@ -13,6 +13,26 @@
 
 **Fitxers Afectats:**
 
+## [2026-10-02] - Canals «Tema»: la primera generació real i el llindar de cobertura
+**Símptoma:** la primera generació real amb els Tema (9.711 vídeos, 8,0 MB) va funcionar, però en mode `audit` `music-topic-review.json` deia que el Tema trauria 1.084 vídeos dels canals oficials, molts d'ells cançons bones. El Tema de ZOO portava cançons d'un grup indonesi homònim.
+
+**Causa Arrel:**
+1. Molts Tema no tenen tota la discografia, sinó només els discos recents o distribuïts digitalment: Pau Riba 28 pistes (90 cançons al canal oficial), Inadaptats 15 (70), Dan Peralbo 13, Quico Pi de la Serra 27.
+2. Els títols del canal oficial no coincidien: «Aina - Dan Peralbo i El Comboi», «AUXILI - 02. Si tu vols (Tresors, 2018)», «'El Calvari' d'Anna Andreu», «SODI Temps Afegit - Nou Single» (`cleanTitle()` s'emportava la cançó), «Ara (videoclip) Translúcid», «Tan a poc a poc (que me dorm)», «GOSSEJAR & AL·LÈRGIQUES AL POL·LEN», «arròs covat prod. Jan Aygua».
+3. El Tema de ZOO barreja un grup indonesi (es veu al catàleg sencer: «Epilog: Yang Berpulang», «Halilintar»); el RSS (15 pistes) no ho mostrava.
+
+**Solució Implementada:**
+- `songKeys()` dona totes les claus possibles del títol: cada tros separat per « - », «|», «/», «:», «@»; el text entre cometes; el que hi ha abans del parèntesi; sense número de pista, «amb / feat. / & / prod.»; també a partir del títol de YouTube sense el nom de l'artista. `topicKeys()` dona la clau principal de la pista i la del parèntesi desfet. `matchedKey()` diu amb quina clau coincideix.
+- El Tema només mana on cobreix el 75 % de les cançons del canal oficial (`minCoverage`). La cobertura de cada canal és a `topicCoverage` de `music-feed-audit.json`.
+- Es conserva tot el que el títol diu que és una cançó publicada (`hasSongMarker()`: videoclip, lyric, àudio oficial, visualizer, videomood).
+- Les pistes repetides (videoclip i pista del Tema) es treuen a tots els canals oficials, encara que el Tema no hi mani.
+- Fora el Tema de ZOO.
+- Mesurat amb el feed i els catàlegs reals: mana en 76 canals oficials i en trauria 161 vídeos. La majoria no són cançons (resums de gira, entrevistes, actuacions a gales i a la televisió, sessions de DJ, karaoke, les versions en castellà i en altres llengües de «Només tu» d'el Diluvi i de Manu Guix). Unes 25 són cançons que no són al Tema (enMatu, alguns directes de Marina Rossell, «El Jaume i la Laia» de Mishima); es poden recuperar a `data/music-content-overrides.json`.
+- `MUSIC_TOPIC_GOVERNANCE` és ara una variable del workflow (`audit`).
+- `tests/song-title.test.js` («canvia una part important del feed») ja no compta les pistes «Provided to YouTube»: tenen el títol net i, amb els Tema, el percentatge baixava del 30 %.
+
+**Fitxers Afectats:** `scripts/lib/canal_tema.js`, `scripts/update_music_feed.js`, `data/artistes-musica.json`, `.github/workflows/actualitzar-feed-musica.yml`, `tests/canal-tema.test.js`, `tests/song-title.test.js`.
+
 ## [2026-10-02] - Finestra flotant del sistema: la cançó següent no sonava amb Chrome minimitzat
 **Símptoma:** al Chromebook, amb la finestra flotant del sistema oberta i la de Segueix Música minimitzada, en acabar una cançó la finestra flotant mostrava la següent però no sonava fins que es tornava a obrir la finestra de Chrome.
 

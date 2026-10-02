@@ -251,9 +251,11 @@ describe('sobre el feed real', () => {
     });
 
     it('canvia una part important del feed i la resta queda igual', () => {
-        const changed = results.filter(({ video, cleaned }) => cleaned !== video.title).length;
-        expect(changed).toBeGreaterThan(feed.videos.length * 0.3);
-        expect(changed).toBeLessThan(feed.videos.length * 0.7);
+        // Les pistes dels canals Tema («Provided to YouTube») ja tenen el títol net: no compten.
+        const own = results.filter(({ video }) => !/^provided to youtube/i.test(String(video.description || '')));
+        const changed = own.filter(({ video, cleaned }) => cleaned !== video.title).length;
+        expect(changed).toBeGreaterThan(own.length * 0.3);
+        expect(changed).toBeLessThan(own.length * 0.7);
     });
 });
 

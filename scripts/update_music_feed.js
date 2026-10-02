@@ -350,42 +350,65 @@ async function main(){
     const names=namesOfChannel(id);
     for(const artist of indexed.get(id).artistNames){
       const keys=topicKeysByArtist.get(artist)||new Set();
-      for(const track of tracks){ const key=tema.songKey(track.title,names); if(key) keys.add(key); }
+      for(const track of tracks) for(const key of tema.topicKeys(track.title,names)) keys.add(key);
       topicKeysByArtist.set(artist,keys);
     }
   }
-  // El Tema mana sobre el canal propi (oficial) quan tots els artistes del canal tenen discografia suficient.
+  // El Tema mana sobre el canal propi (oficial) quan tots els artistes del canal tenen discografia i hi és la
+  // majoria de les seves cançons (minCoverage): molts Tema només tenen els discos recents.
+  const channelVideoIds=id=>unique([...(freshIdsByChannel.get(id)||[]),...(deepIdsByChannel.get(id)||[]),...(retainedIdsByChannel.get(id)||[])]);
+  const classifyItem=(id,item)=>applyContentOverride(classifyMusicContent({item,channelMeta:{...indexed.get(id),channelTitle:channelDetails.get(id)?.snippet?.title||''}}),contentOverrides.get(item.id));
   const governedKeysByChannel=new Map();
+  const topicCoverage=[];
   for(const id of ids){
     const meta=indexed.get(id);
     if(topicIds.has(id) || !meta.types.includes('official')) continue;
     const sets=meta.artistNames.map(name=>topicKeysByArtist.get(name));
     if(!sets.length || sets.some(set=>!set || set.size<tema.DEFAULTS.minTopicTracks)) continue;
-    governedKeysByChannel.set(id,new Set(sets.flatMap(set=>[...set])));
+    const keys=new Set(sets.flatMap(set=>[...set]));
+    const names=namesOfChannel(id);
+    let songs=0;
+    let matched=0;
+    for(const videoId of channelVideoIds(id)){
+      const item=detailsById.get(videoId);
+      if(!item || item.status?.privacyStatus!=='public' || isShortByDuration(item.durationSeconds)) continue;
+      if(!['song','live_song'].includes(classifyItem(id,item).contentType)) continue;
+      songs++;
+      if(tema.matchedKey(item.snippet?.title,names,keys)) matched++;
+    }
+    const coverage=songs ? matched/songs : 0;
+    const governs=songs>0 && coverage>=tema.DEFAULTS.minCoverage;
+    topicCoverage.push({id,name:cleanChannelDisplayName(channelDetails.get(id)?.snippet?.title||''),songs,matched,coverage:Number(coverage.toFixed(2)),governs});
+    if(governs) governedKeysByChannel.set(id,keys);
   }
   const graceMs=TOPIC_GRACE_DAYS*86400000;
   const generationTime=Date.now();
   function governed(classification,{channelId,videoId,title,durationSeconds:seconds,publishedAt}){
     const keys=governedKeysByChannel.get(channelId);
     if(!keys) return classification;
-    const key=tema.songKey(title,namesOfChannel(channelId));
-    const next=tema.governClassification(classification,{key,keys,overridden:contentOverrides.has(videoId),isShort:isShortByDuration(seconds)});
+    const key=tema.songKeys(title,namesOfChannel(channelId));
+    const next=tema.governClassification(classification,{key,keys,overridden:contentOverrides.has(videoId),isShort:isShortByDuration(seconds),marked:tema.hasSongMarker(title)});
     const published=Date.parse(publishedAt||'')||0;
     if(next!==classification && next.contentType==='other' && published && generationTime-published<=graceMs) return classification;
     return next;
   }
   // Cançons que ja tenen videoclip al canal propi: la pista del Tema no hi entra.
   const coveredKeysByArtist=new Map();
-  for(const [id] of governedKeysByChannel){
+  // Es mira a tots els canals oficials d'artistes amb Tema (encara que el Tema no hi mani): un videoclip que
+  // coincideix amb una pista del Tema fa que la pista no hi entri repetida.
+  for(const id of ids){
     const meta=indexed.get(id);
+    if(topicIds.has(id) || !meta.types.includes('official')) continue;
+    const keys=new Set(meta.artistNames.flatMap(name=>[...(topicKeysByArtist.get(name)||[])]));
+    if(!keys.size) continue;
     const names=namesOfChannel(id);
-    for(const videoId of unique([...(freshIdsByChannel.get(id)||[]),...(deepIdsByChannel.get(id)||[]),...(retainedIdsByChannel.get(id)||[])])){
+    for(const videoId of channelVideoIds(id)){
       const item=detailsById.get(videoId);
       if(!item || item.status?.privacyStatus!=='public' || isShortByDuration(item.durationSeconds)) continue;
-      const cls=governed(applyContentOverride(classifyMusicContent({item,channelMeta:{...meta,channelTitle:channelDetails.get(id)?.snippet?.title||''}}),contentOverrides.get(videoId)),
+      const cls=governed(classifyItem(id,item),
         {channelId:id,videoId,title:item.snippet?.title,durationSeconds:item.durationSeconds,publishedAt:item.snippet?.publishedAt});
       if(cls.contentType!=='song') continue;
-      const key=tema.songKey(item.snippet?.title,names);
+      const key=tema.matchedKey(item.snippet?.title,names,keys);
       if(!key) continue;
       for(const artist of meta.artistNames){
         const set=coveredKeysByArtist.get(artist)||new Set();
@@ -401,7 +424,7 @@ async function main(){
     const names=namesOfChannel(id);
     const covered=new Set(indexed.get(id).artistNames.flatMap(name=>[...(coveredKeysByArtist.get(name)||[])]));
     const candidates=tracks.map(t=>detailsById.get(t.id)).filter(item=>item && item.status?.privacyStatus==='public' && !isShortByDuration(item.durationSeconds))
-      .map(item=>({id:item.id,key:tema.songKey(item.snippet?.title,names),viewCount:Number(item.statistics?.viewCount||0),publishedAt:item.snippet?.publishedAt}));
+      .map(item=>({id:item.id,key:tema.songKey(item.snippet?.title,names),keys:tema.topicKeys(item.snippet?.title,names),viewCount:Number(item.statistics?.viewCount||0),publishedAt:item.snippet?.publishedAt}));
     const selected=tema.selectTopicTracks(candidates,{coveredKeys:covered,now:generationTime});
     freshIdsByChannel.set(id,selected);
     topicStats.push({id,name:topicCatalog[id]?.name||'',tracks:tracks.length,selected:selected.length,withClip:covered.size});
@@ -604,7 +627,8 @@ async function main(){
   const hiddenKeysByArtist=new Map();
   for(const video of videos){
     if(!hiddenIds.has(String(video.id))) continue;
-    const key=tema.songKey(video.title,namesOfChannel(video.channelId));
+    const artistKeys=new Set(artistsOfChannel(video.channelId).flatMap(name=>[...(topicKeysByArtist.get(name)||[])]));
+    const key=tema.matchedKey(video.title,namesOfChannel(video.channelId),artistKeys) || tema.songKey(video.title,namesOfChannel(video.channelId));
     if(!key) continue;
     for(const artist of artistsOfChannel(video.channelId)) hiddenKeysByArtist.set(artist,new Set([...(hiddenKeysByArtist.get(artist)||[]),key]));
   }
@@ -614,9 +638,9 @@ async function main(){
     const video=videos[i];
     if(!topicIds.has(video.channelId)) continue;
     const artists=artistsOfChannel(video.channelId);
-    const key=tema.songKey(video.title,namesOfChannel(video.channelId));
+    const keys=tema.topicKeys(video.title,namesOfChannel(video.channelId));
     const title=String(video.title||'');
-    const byKey=Boolean(key) && artists.some(artist=>hiddenKeysByArtist.get(artist)?.has(key));
+    const byKey=keys.some(key=>artists.some(artist=>hiddenKeysByArtist.get(artist)?.has(key)));
     // Només les regles per títol: una regla «totes» és la decisió sobre un canal concret, no sobre la discografia.
     const byRule=artists.some(artist=>(rulesByArtist.get(artist)||[]).some(rule=>rule.titols && rule.titols.test(title)));
     if(byKey || byRule){ videos.splice(i,1); topicHidden++; topicHiddenTitles.push(`${video.channelTitle} · ${title}`); }
@@ -674,6 +698,7 @@ async function main(){
     deepChannelCount:deepChannels.size,
     topicChannelCount:topicIds.size,
     governedChannelCount:governedKeysByChannel.size,
+    topicCoverage:topicCoverage.sort((a,b)=>b.coverage-a.coverage||a.name.localeCompare(b.name,'ca')),
     topicGovernance:TOPIC_GOVERNANCE,
     governedReclassified:governedCounts,
     topicHiddenCount:topicHidden,
