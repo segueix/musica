@@ -1,8 +1,9 @@
 'use strict';
 
 // Aprima els vídeos de data/feed.json abans d'escriure'l. El feed es baixa sencer a cada client i les descripcions de
-// YouTube en feien dos terços del pes. El generador fa servir la descripció sencera abans d'aprimar (any original,
-// subtítols en castellà); el client només en llegeix el principi (crèdits «Provided to YouTube», targeta destacada).
+// YouTube n'eren una part molt important del pes. El generador fa servir la descripció sencera abans d'aprimar
+// (any original, subtítols, suport i classificació); al feed públic s'elimina completament.
+// L'única dada derivada que necessita el client és topicTrack=true per detectar pistes «Provided to YouTube».
 
 const DESCRIPTION_LIMIT = 300;
 // Marca de descripció retallada: fa que aprimar sigui idempotent (no es torna a retallar).
@@ -43,7 +44,9 @@ function shortDescription(value, limit = DESCRIPTION_LIMIT) {
 function slimFeedVideo(video) {
     if (!video || typeof video !== 'object') return video;
     const slim = { ...video };
-    if ('description' in slim) slim.description = shortDescription(slim.description);
+    const description = String(slim.description || '');
+    if (/^\s*provided to youtube by/i.test(description)) slim.topicTrack = true;
+    delete slim.description;
     if (slim.sourceChannelId && slim.sourceChannelId === slim.channelId) delete slim.sourceChannelId;
     if ('musicReason' in slim && !CLIENT_REASON_RE.test(String(slim.musicReason || ''))) delete slim.musicReason;
     if (!slim.liveBroadcastContent || slim.liveBroadcastContent === 'none') delete slim.liveBroadcastContent;
