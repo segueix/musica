@@ -2,6 +2,7 @@
 
 const FEED_URL = 'data/feed.json';
 const HIDDEN_VIDEOS_URL = 'data/hidden-videos.json';
+const HISTORY_POOL_URL = 'data/history-pool.json';
 const CHANNELS_FALLBACK_URL = 'js/channels-ca.json';
 const FEED_SNAPSHOT_KEY = 'iutube_feed_snapshot_v1';
 
@@ -25,6 +26,7 @@ const YouTubeAPI = {
     feedChannels: [],
     feedVideos: [],
     feedLoaded: false,
+    historyPoolVideos: [],
     hiddenVideoIds: new Set(),
     channelArchiveCache: {},
     channelArchivePromises: {},
@@ -50,8 +52,9 @@ const YouTubeAPI = {
         // Carregar primer la taxonomia d'artistes perquè el feed ja neixi amb estils musicals.
         await window.SegueixMusicCategories?.init?.();
 
-        // Intentar carregar el feed
+        // Intentar carregar el feed calent i després el petit pool històric de ràdio.
         await this.loadFeed();
+        await this.loadHistoryPool();
         
         console.log(`iuTube: ${this.getAllChannels().length} canals configurats`);
         console.log(`iuTube: Cache configurat per ${this.CACHE_DURATION / 1000 / 60} minuts`);
@@ -286,6 +289,53 @@ const YouTubeAPI = {
         return false;
     },
 
+    hydrateArchiveVideo(video, fallbackChannelId = '') {
+        if (!video?.id) return video;
+        const channelId = String(video.channelId || fallbackChannelId || '');
+        const channel = this.feedChannels.find(item => String(item?.id || '') === channelId);
+        const base = {
+            ...video,
+            channelId,
+            channelTitle: video.channelTitle || channel?.name || '',
+            thumbnail: video.thumbnail || `https://i.ytimg.com/vi/${video.id}/hqdefault.jpg`,
+            categories: this.normalizeCategories([
+                ...(Array.isArray(video.categories) ? video.categories : []),
+                ...(Array.isArray(channel?.categories) ? channel.categories : [])
+            ])
+        };
+        return window.SegueixMusicCategories?.decorateVideo?.(base, channel?.artists || []) || base;
+    },
+
+    async loadHistoryPool() {
+        try {
+            const poolUrl = window.appDataUrl?.(HISTORY_POOL_URL) || HISTORY_POOL_URL;
+            const response = await fetch(poolUrl, { cache: 'no-store' });
+            if (!response.ok) {
+                this.historyPoolVideos = [];
+                return [];
+            }
+            const data = await response.json();
+            const videos = this.filterHiddenVideos(Array.isArray(data?.videos) ? data.videos : []);
+            this.historyPoolVideos = videos
+                .map(video => this.hydrateArchiveVideo(video))
+                .filter(video => video?.id && !video.isShort && ['song', 'live_song'].includes(video.contentType));
+            console.log(`iuTube: ${this.historyPoolVideos.length} clàssics carregats al pool de ràdio`);
+            return this.historyPoolVideos;
+        } catch (error) {
+            console.log('iuTube: Pool històric no disponible:', error.message);
+            this.historyPoolVideos = [];
+            return [];
+        }
+    },
+
+    getRadioPoolVideos() {
+        const merged = new Map();
+        [...(this.feedVideos || []), ...(this.historyPoolVideos || [])].forEach(video => {
+            if (video?.id) merged.set(String(video.id), video);
+        });
+        return [...merged.values()];
+    },
+
     async loadChannelArchiveVideos(channelId) {
         if (!channelId) return [];
         if (Object.prototype.hasOwnProperty.call(this.channelArchiveCache, channelId)) {
@@ -304,7 +354,8 @@ const YouTubeAPI = {
                     return [];
                 }
                 const data = await response.json();
-                const videos = this.filterHiddenVideos(Array.isArray(data?.videos) ? data.videos : []);
+                const videos = this.filterHiddenVideos(Array.isArray(data?.videos) ? data.videos : [])
+                    .map(video => this.hydrateArchiveVideo(video, channelId));
                 this.channelArchiveCache[channelId] = videos;
                 return videos;
             } catch (error) {
