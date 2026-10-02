@@ -331,6 +331,14 @@ const likes = ctx2.SegueixApp.features.likes;
 - **El Tema mana sobre el canal oficial** (només les cançons que també són al Tema, més Shorts, àlbums, decisions manuals, el que porta una marca de cançó publicada al títol — videoclip, lyric, àudio oficial, visualizer: `hasSongMarker()` — i el que s'ha publicat fa menys de 30 dies) **només on el Tema cobreix el 75 % de les cançons del canal oficial** (`minCoverage`; molts Tema només tenen els discos recents: Pau Riba 28 pistes, Inadaptats 15) amb `MUSIC_TOPIC_GOVERNANCE=apply` (variable del workflow, **activa des del 2026-10-02**; amb `audit` no canvia res). Què ha tret cada generació: `data/music-topic-review.json` (per recuperar una cançó, `data/music-content-overrides.json`); la cobertura per canal és a `topicCoverage` de `music-feed-audit.json`. Els títols es comparen amb `songKeys()` (cada tros del títol, entre cometes, sense número de pista ni col·laboracions) contra `topicKeys()`.
 - **Tema no afegits** (homònims o dubtosos): Cactus Troop, Elo, Jaume Sisa i Mestres, miquel, Raimon, Scorpio, Suu (altres artistes amb el mateix nom), Manel (barrejat amb un artista vietnamita), ZOO (barrejat amb un grup indonesi), Llum, Maig, Fades (dubtosos), Subliminal (llista blanca), Palau (és el de Ferran Palau) i Joan Manuel Serrat (la regla «totes» del seu canal no es pot aplicar a la discografia: cal una llista de títols en castellà). Abans d'afegir-ne cap altre, comprova que les pistes són de l'artista. Detall: `docs/PROBLEMES_I_SOLUCIONS.md` (2026-10-02, «canals Tema»).
 
+### Discos a la fitxa d'artista (2026-10-02)
+
+- `data/albums-musica.json` és un índex **local i lazy-load**: només es descarrega quan s'obre una fitxa d'artista. No intervé a portada, categories, Novetats ni cerca.
+- Font: descripcions de pistes Topic que **ja havia rebut** el generador (`Provided to YouTube by…`). Abans que `slimFeed()` elimini `description`, `scripts/lib/albums_musica.js` conserva nom del disc, any, una pista per construir la caràtula i els IDs de cançó. **No fa cap consulta API addicional.**
+- Només es presenta com a «Disc» un llançament amb almenys **2 títols diferents**; els senzills i les cançons sense assignació fiable van a «Singles i altres».
+- Un videoclip del canal oficial hereta el disc només si `artista + títol normalitzat` coincideix amb **un únic disc** Topic. Si és ambigu, no s'inventa cap relació.
+- UI: `js/features/artist-page.js` pinta «Discos» amb caràtules; tocar un disc filtra la graella de cançons. `Totes` restaura el repertori. Fora de `#channelPage` no es mostra cap disc.
+
 ### Feed calent + historial musical (2026-10-02)
 
 - `data/feed.json` és el **catàleg calent**: conserva tots els vídeos dels últims **365 dies** i, per canal, les **12 cançons/directes antigues amb més visualitzacions**.
