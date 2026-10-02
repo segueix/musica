@@ -30,6 +30,8 @@
         external:
             '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M14 4h6v6M20 4 10 14M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>',
         close: '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M6 6l12 12M18 6 6 18"/></svg>',
+        // Afegir un estil a la ràdio: dos cercles que es barregen (el «+» és per afegir cançons a una llista)
+        blend: '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="9" cy="9" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="15" cy="15" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/></svg>',
         plus: '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" d="M12 5v14M5 12h14"/></svg>',
         minus: '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" d="M5 12h14"/></svg>',
         // Llista amb un «+» (desa la ràdio com a llista) i llista amb una marca (ja desada)
@@ -1312,7 +1314,7 @@
                   .join('')
             : '<span class="mq-style">La teva ràdio</span>';
         const add = availableStyles().length
-            ? `<button type="button" class="mq-add-style" data-mq-add-style aria-haspopup="true" aria-expanded="${stylePickerOpen}" aria-label="Afegeix un estil a la ràdio" title="Afegeix un estil a la ràdio">${ICONS.plus}</button>`
+            ? `<button type="button" class="mq-add-style" data-mq-add-style aria-haspopup="true" aria-expanded="${stylePickerOpen}" aria-label="Afegeix un estil a la ràdio" title="Afegeix un estil a la ràdio">${ICONS.blend}</button>`
             : '';
         return `<span class="mq-source mq-styles" role="group" aria-label="Estil de la ràdio">${chips}<span class="mq-tools">${add}${regenerateButtonHtml()}${saveButtonHtml()}${shareButtonHtml()}</span></span>`;
     }

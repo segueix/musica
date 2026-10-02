@@ -32,4 +32,11 @@ describe('botons unificats i configuració', () => {
         expect(block).toContain('border-radius: var(--pt-radius-pill)');
         expect(block).toContain('background: var(--pt-surface-2)');
     });
+
+    it('afegir un estil a la ràdio no fa servir el «+» (que és per afegir cançons a una llista)', () => {
+        const queue = read('js/features/music-queue.js');
+        const button = queue.match(/<button type="button" class="mq-add-style"[^\n]*<\/button>/)[0];
+        expect(button).toContain('${ICONS.blend}');
+        expect(button).not.toContain('${ICONS.plus}');
+    });
 });
