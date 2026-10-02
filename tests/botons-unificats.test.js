@@ -28,7 +28,8 @@ describe('botons unificats i configuració', () => {
         const block = css.slice(start);
         for (const selector of ['.mq-shuffle', '.mq-share', '.mq-save-list', '.btn-round-icon', '.btn-heart'])
             expect(block).toContain(selector);
-        expect(block).toContain('border-radius: var(--pt-radius-sm)');
+        expect(block).toContain('border-radius: 50%');
+        expect(block).toContain('border-radius: var(--pt-radius-pill)');
         expect(block).toContain('background: var(--pt-surface-2)');
     });
 });

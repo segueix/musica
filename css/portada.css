@@ -23,6 +23,7 @@
     --pt-radius-sm: 12px;
     --pt-radius: 14px;
     --pt-radius-lg: 16px;
+    --pt-radius-pill: 999px; /* xips de categoria i botons amb text (forma de càpsula) */
 
     --pt-display: 'Fraunces', 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
     --pt-nav-h: 60px; /* navegació inferior (mòbil) */
@@ -4129,8 +4130,8 @@ body .follow-btn-pill.is-followed:hover {
 }
 
 /* ---------- Botons d'icona unificats: ràdio (+, barreja, desa, comparteix) i sota el reproductor ----------
-   Mateixa forma (quadrat de 44 px amb cantonades de 12 px), mateix fons, vora i color, i el llima en passar-hi per
-   sobre. El color dels botons ja no es tria a la configuració (només el fons). */
+   Mateixa forma (rodons de 44 px; els que porten text, en càpsula com els xips de categoria), mateix fons, vora i
+   color, i el llima en passar-hi per sobre. El color dels botons ja no es tria a la configuració (només el fons). */
 body .mq .mq-add-style,
 body .mq .mq-shuffle,
 body .mq .mq-save-list,
@@ -4143,7 +4144,7 @@ body .video-info-modern .btn-heart {
     height: 44px;
     padding: 0;
     border: 1px solid var(--pt-line);
-    border-radius: var(--pt-radius-sm);
+    border-radius: 50%;
     background: var(--pt-surface-2);
     color: var(--pt-text);
     cursor: pointer;
@@ -4214,9 +4215,9 @@ body .mq .mq-open-ytm {
     gap: 8px;
     min-height: 44px;
     height: 44px;
-    padding: 0 14px;
+    padding: 0 18px;
     border: 1px solid var(--pt-line);
-    border-radius: var(--pt-radius-sm);
+    border-radius: var(--pt-radius-pill);
     background: var(--pt-surface-2);
     color: var(--pt-text);
     font-size: 0.875rem;
@@ -4245,4 +4246,14 @@ body #watchPage .video-info-modern .btn-pill-red:is(:hover, :focus-visible) {
     border-color: var(--pt-accent);
     background: var(--pt-surface-3);
     color: var(--pt-accent);
+}
+
+/* styles.css fixa 12 px amb #watchPage :is(.btn-round-icon, .btn-heart): rodons. «Segueix» en càpsula com «Canal YouTube» */
+body #watchPage .video-info-modern :is(.btn-round-icon, .btn-heart) {
+    border-radius: 50%;
+}
+
+body #watchPage .video-info-modern .follow-btn-pill {
+    border-radius: var(--pt-radius-pill);
+    padding: 0 18px;
 }
