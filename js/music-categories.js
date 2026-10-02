@@ -28,6 +28,9 @@
 
     const byChannel = new Map();
     const artistByChannel = new Map();
+    // Metadades del canal dins de la identitat d'artista: permet triar un únic representant visual
+    // (primary > official > Topic) sense perdre cap canal intern.
+    const artistChannelMetaByChannel = new Map();
     // Identitat persistent de l'artista per canal: canals oficials i Topic d'un mateix artista comparteixen clau.
     const artistKeyByChannel = new Map();
     // Categoria principal de l'artista per canal: la del PRIMER gènere de la base d'artistes (l'ordre de
@@ -129,10 +132,17 @@
             );
             const display = String(artist.displayName || '').trim();
             if (display) displayByChannel.set(id, display);
+            const artistName = artist.name || channel.name || '';
             artistByChannel.set(id, {
-                name: artist.name || channel.name || '',
+                name: artistName,
                 genres: unique(artist.genres || []),
                 categories: unique([...(byChannel.get(id) || [])]),
+            });
+            artistChannelMetaByChannel.set(id, {
+                artistName,
+                displayName: display || artistName,
+                type: String(channel?.type || ''),
+                primary: Boolean(channel?.primary),
             });
         }
     }
@@ -151,6 +161,7 @@
                 artistKeyByChannel.clear();
                 primaryByChannel.clear();
                 artistByChannel.clear();
+                artistChannelMetaByChannel.clear();
                 namesByChannel.clear();
                 displayByChannel.clear();
                 for (const artist of data.artists || []) registerArtist(artist);
@@ -203,6 +214,17 @@
     // Nom a mostrar d'un canal (buit si no n'hi ha cap d'editat).
     function displayNameForChannel(channelId) {
         return displayByChannel.get(String(channelId || '')) || '';
+    }
+
+    // Nom canònic de l'artista, compartit per tots els seus canals.
+    function artistDisplayNameForChannel(channelId) {
+        const id = String(channelId || '');
+        return displayNameForChannel(id) || artistChannelMetaByChannel.get(id)?.artistName || '';
+    }
+
+    function artistChannelMeta(channelId) {
+        const meta = artistChannelMetaByChannel.get(String(channelId || ''));
+        return meta ? { ...meta } : null;
     }
 
     function decorateChannel(channel) {
@@ -285,6 +307,8 @@
         artistKeyForChannel,
         primaryCategoryForChannel,
         displayNameForChannel,
+        artistDisplayNameForChannel,
+        artistChannelMeta,
         decorateChannel,
         decorateVideo,
         cleanVideoTitle,
