@@ -561,6 +561,9 @@ afegeix('Gertrudis', [
     'Rúa da Raiña',
     'Rua de Raiña',
 ]);
+// Mariona Escoda — anglès: versió de «Maniac» de Michael Sembello.
+afegeix(['Mariona Escoda', 'Mariona Escoda - Topic'], ['Maniac']);
+
 afegeix('Sandra Bautista', [
     'Ni so que le pare',
     'Sentada en un meteorito',
