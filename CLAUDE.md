@@ -305,6 +305,16 @@ const likes = ctx2.SegueixApp.features.likes;
 - **Ràdio de l'estil:** `musicQueue.startStyleRadio(estils)`: la ràdio d'estil de sempre (estils barrejats a parts iguals, antiguitat, un artista per vegada, descans, mode) amb **els estils de l'artista** (principal primer, màxim 3, sense «Altres estils» ni vistes generals: `artistStyles()`). Comença amb la cançó que tria el motor entre les d'aquells estils.
 - Detall i trampes: `docs/PROBLEMES_I_SOLUCIONS.md` (2026-10-01, «Fitxa d'artista»). Proves: `tests/artist-page.test.js` i `tests/music-queue-selection.test.js`.
 
+### Revisió d'idioma de les cançons noves (2026-10-02)
+
+**Prompt per a l'agent — quan et demanin «revisa les cançons noves», «revisa l'idioma» o similar:**
+
+1. Cada generació del feed (`update_music_feed.js`, workflow diari) afegeix a `data/revisio-idiomes.json` les cançons que hi entren **per primera vegada**. Si el títol té una marca que el català no fa servir mai (ñ, ¿ ¡, á, -ción, ã õ â ê ô, un alfabet no llatí; sense mirar els noms d'artistes, les col·laboracions ni el que hi ha entre parèntesis: `detectNonCatalan()`), la cançó es **descarta sola** (surt del feed) però queda a `descartades` amb el motiu, per si ha estat un error. La resta van a `pendents` (id, artista, títol, extracte de la descripció o el disc, data). Les ja revisades (`revisades`) i les amagades no hi tornen. Mira-les amb `node scripts/aplicar_revisio_idiomes.js --llista` (fes `git pull` abans: el bot hi escriu cada dia).
+2. Decideix l'idioma de **cada** cançó: títol, disc, artista i el que sàpigues de la cançó. Criteri de l'usuari (2026-10-02): **només es queda el català** (i l'occità/aranès, les instrumentals i els títols que són noms propis). S'amaga el castellà, el basc, l'anglès, el portuguès, el gallec, l'italià… Si dubtes, no l'amaguis: posa-la a la llista de dubtoses.
+3. Revisa també les **descartades**: si alguna és en català (un nom de lloc com «Viñarock», un error d'escriptura com «Mai sabrás», una paraula estrangera en un títol català), proposa recuperar-la. **Ensenya a l'usuari** les pendents que amagaries (agrupades per artista, amb l'idioma), les dubtoses i les descartades que recuperaries, i **espera el seu vistiplau**. No apliquis res abans.
+4. Amb el vistiplau: `node scripts/aplicar_revisio_idiomes.js --amaga=ID1,ID2,… --recupera=ID3,… --dry-run` i després sense `--dry-run`. Amaga les pendents triades i totes les descartades menys les recuperades (que tornen al feed a la propera generació) (`data/hidden-videos.json`: el client les filtra i el generador ja no les posa al feed; **no toquis `feed.json`**) i passa **totes** les pendents a revisades: la llista queda buida fins que n'entrin de noves.
+5. Actualitza `docs/ARTISTES_CASTELLA.md` (artistes nous, recomptes, «Última revisió»). Si un artista té moltes cançons d'una altra llengua, proposa-li a l'usuari una regla per títols a `scripts/ocultar_titols_castella.js` (`afegeix()`): la generació la fa servir també per als canals Tema. Lògica pura: `scripts/lib/revisio_idiomes.js`; prova `tests/revisio-idiomes.test.js`.
+
 ### Revisar cançons en castellà (2026-10-01)
 
 **Prompt per a l'agent — quan et demanin «revisa el castellà», «elimina cançons en castellà» o similar (d'un artista, d'una categoria o de tot el feed):**
@@ -356,6 +366,11 @@ const likes = ctx2.SegueixApp.features.likes;
 ### Enllaços del peu (2026-10-02)
 
 - El peu (`.seo-footer-nav`) només porta **Artistes, Urban, Pop, Rock, Cançó d'autor, Indie i Folk i arrel**, amb rutes relatives dins l'app (`./?seccio=artistes`, `./?estil=Pop`…): l'app és a `segueix.github.io/musica/` i les rutes absolutes antigues (`/pop`, `/novetats`, `/musica-tv`…, funcions de segueix.cat) hi donaven 404. `shell-nav.js` intercepta el clic (`data-pt-style` → `openStyle()`, que clica el xip de l'estil; `data-pt-nav="artists"`) i, en obrir la URL directament, `openFromUrl()` hi porta quan els xips són a punt. No hi tornis a posar Novetats ni Música TV.
+
+### Mode conducció (2026-10-02)
+
+- Botó `#driveModeBtn` sota el reproductor (només ≤ 1024 px): `js/features/drive-mode.js` (patró 2, després de `system-player.js`) posa `body.drive-mode`: **pantalla negra amb només el reproductor de YouTube a dalt** (16:9, mínim 200 px d'ample, mida que demana YouTube) i **un sol botó, «Tanca el mode conducció»** (`#driveModeExit`). Cap altra informació ni control, per no distreure qui condueix. La pantalla no s'apaga (Screen Wake Lock, es torna a demanar en tornar a la pàgina), i es posa a pantalla completa si el navegador ho permet (a l'iPhone no).
+- **No es tapa ni es mou el reproductor:** tot és CSS (`body.drive-mode *` amb `visibility: hidden` i el reproductor `fixed`, bloc «Mode conducció» al final de `portada.css`). Moure'l al DOM el faria recarregar, i tapar-lo incompliria les normes de YouTube. No hi posis títols, caràtules ni més botons. Verificació opt-in: `node tests/browser/verificar-mode-conduccio.js`.
 
 ### Controls del sistema i finestra flotant del sistema (2026-10-02)
 

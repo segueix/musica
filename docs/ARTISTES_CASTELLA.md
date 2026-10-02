@@ -7,6 +7,13 @@ descarta en regenerar el feed).
 
 > Última revisió: 2026-10-02. Si afegeixes o treus un artista, actualitza la taula **i** la data.
 
+## Cançons noves (des del 2026-10-02)
+
+Les cançons que entren al feed per primera vegada queden a `data/revisio-idiomes.json` fins que un agent les revisa
+amb el vistiplau de l'usuari: vegeu «Revisió d'idioma de les cançons noves» a `CLAUDE.md`
+(`node scripts/aplicar_revisio_idiomes.js --llista` / `--amaga=…`). Aquesta taula continua sent la llista d'artistes on
+és més probable que n'apareguin.
+
 ## Com es fa servir
 
 1. Mira les cançons visibles dels artistes d'aquesta llista (les més noves primer):
@@ -72,14 +79,14 @@ que són noms propis. 472 cançons a `data/hidden-videos.json` amb `afegeix()` d
 | **Txarango** | 12 | Castellà del canal Tema (El Martillo, Por Ambos Lados, Atrévete a Vivir, Corazón Viajero, Sueña Como un Niño…), «500 Millas», el popurri «Tom Dooley / Verde, Verde / Esta Es Tu Tierra» i «Mr. Tambourine Man» (anglès). El canal oficial és tot en català. **Dubtosos, es mantenen:** «Aguacero», «Son, Son, Son». |
 | **Sandra Bautista** | 27 | Repertori majoritàriament castellà (Sentada en un meteorito, El último gol, Vid amurallada, GRACIAS…), italià («Mamma, rema»), gallec/portuguès («Os narradores do cinema mudo», «Silêncio») i els vídeos del micromecenatge. Es mantenen els catalans (Trencadís, Cartografia, Darrere el foc, La casa de les mil olors, Ressona la immensitat, «Mare, rema»). **Dubtosos, es mantenen:** «Pandela», «Trapezista». |
 | **Sílvia Comes** | 27 | Canal Tema: cançó en castellà (Canción de Aniversario, Cuando Muera, Bolero para Gil de Biedma…), «Peeping Tom» (anglès), «Faltando un Pedaco» (portuguès) i «Malest Cornifici Tuo Catulo» (llatí). Es manté «Amor Particular» (Llach). **Dubtosos, es mantenen:** «La Carabina», «La Locomotora». |
-| **Sílvia Pérez Cruz** | 28 | Castellà (Mañana, Loca, Vete de mí, Toda la vida un día, Cucurrucucú Paloma…), portuguès («É triste viver sem seu amor») i anglès («Sea Creature»). Es mantenen els catalans (Mar de Na Catalina, Abissal, Ben poca cosa tens, El Cant dels Ocells, Abril 74…). **Dubtosos, es mantenen:** «Chundwa», «Gelando», «Moreno», «Capitana», «Mechita», «Ai, Ai, Ai», «21 de primavera», «Verde», «Iglesias», «La flor». |
+| **Sílvia Pérez Cruz** | 35 | Castellà (Mañana, Loca, Vete de mí, Toda la vida un día, Cucurrucucú Paloma…), portuguès («É triste viver sem seu amor») i anglès («Sea Creature»). Es mantenen els catalans (Mar de Na Catalina, Abissal, Ben poca cosa tens, El Cant dels Ocells, Abril 74…). Segona passada (2026-10-02, a petició de l'usuari): «Chundwa (Chacarera)», «Gelando», «Moreno», «Capitana», «Mechita», «Verde» i «Hymne à l'amour» (francès). **Dubtosos, es mantenen:** «Ai, Ai, Ai», «Iglesias», «21 de primavera». |
 | **Ceaxe** | 16 | Revisió del 2026-10-02: 16 més del canal Tema (Dime mi amor, Baila sola, Pa ti…). Es mantenen «Mykonos», «EXCLUSIVAAA», «NENA CATALANA». |
-| **ALBERT PLA** | 6 | Canal oficial: Mi voz, El Mortadela, Perdónenme, Todo me va bien, Experiencia Religiosa, Bombas en Madrid. |
-| **Albert Pla** | 30 | Canal Tema: gairebé tot en castellà. Es mantenen els catalans (La Fada Dormilega, Dorm, Somiatruites, Sommis, Pipi). **Dubtosos, es mantenen:** «Pepe Botika», «Alboraya», «Primer Amor», «Lola». |
+| **ALBERT PLA** | 7 | Canal oficial: Mi voz, El Mortadela, Perdónenme, Todo me va bien, Experiencia Religiosa, Bombas en Madrid i el making of «Así se hizo "El Mortadela"». |
+| **Albert Pla** | 32 | Canal Tema: gairebé tot en castellà. Es mantenen els catalans (La Fada Dormilega, Dorm, Somiatruites, Sommis, Pipi). Segona passada (2026-10-02): «Pepe Botika» i «Alboraya». **Dubtosos, es mantenen:** «Primer Amor», «Lola». |
 | **Miki Nuñez** | 7 | Revisió del 2026-10-02: «Mil Planes» i els covers en anglès i portuguès (Trevo, All of me, Hero, Mistletoe, Thinking out loud, Those little things). Es manté «Mil Ocells». |
 | **Miki Núñez** | 18 | Canal Tema: castellà (Encender las calles, Ahora, Quédate en Madrid…) i anglès (Some Nights, Can We Dance). **Dubtós, es manté:** «Cucu-pido». |
-| **alfredgarcia** | 13 | Revisió del 2026-10-02: castellà (Contigo, Toro de Cristal, Otra Liza…), anglès (Just A Light, Someday, For So Long, Let Me Go…) i portuguès (Praia dos Moinhos). **Dubtosos, es mantenen:** «Estrella» (amb Alvaro Soler), «1997», «2001», «Londres», «Sevilla». |
-| **Alfred García** | 21 | Canal Tema: castellà (Cuando duermes, Vete de mí, Tu canción…), anglès (City of Stars, Rock With You…) i portuguès («Amar pelos dois»). Es mantenen «Barcelona», «Madrid», «1016», «360», «Harmonic Sketch #1». |
+| **alfredgarcia** | 19 | Revisió del 2026-10-02: castellà (Contigo, Toro de Cristal, Otra Liza…), anglès (Just A Light, Someday, For So Long, Let Me Go…) i portuguès (Praia dos Moinhos). Segona passada (2026-10-02, a petició de l'usuari): «Mateo» (2 vídeos), «2001», «1997» (amb Niño de Elche), «Londres» i «Sevilla» (BILBAO #1016Tour). **Dubtós, es manté:** «Estrella» (amb Alvaro Soler). |
+| **Alfred García** | 22 | Canal Tema: castellà (Cuando duermes, Vete de mí, Tu canción…), anglès (City of Stars, Rock With You…) i portuguès («Amar pelos dois»). Segona passada (2026-10-02): «Madrid». Es mantenen «Barcelona», «1016», «360», «Harmonic Sketch #1». |
 | **Jofre Bardagí** | 10 | Versions de Serrat i duets en castellà (Señora, Mediterráneo, Penélope…). **Dubtós, es manté:** «Menuda». |
 | **Lídia Pujol** | 12 | Castellà (Me quedaré soltera, Mi querida España, Nada de nada…), italià («Sogna fiore mio») i llatí (Ad mortem festinamus, Stella splendens, Polorum regina). Es manté l'occità («Aqueres montanhes»). **Dubtosos, es mantenen:** «Il Somiatruites», «Beatriucomtessa De Dia». |
 | **Dàmaris Gelabert** | 5 | Revisió del 2026-10-02: les versions en castellà (Los meses del año, Las estaciones…). |

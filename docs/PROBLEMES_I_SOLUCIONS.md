@@ -13,6 +13,38 @@
 
 **Fitxers Afectats:**
 
+## [2026-10-02] - Mode conducció: pantalla negra sense distraccions
+**Símptoma:** al mòbil, mentre es condueix, la pantalla s'apaga (i sense YouTube Premium la música s'atura) o es queda encesa amb tota l'app, que distreu i gasta bateria.
+
+**Causa Arrel:** no hi havia cap vista mínima, i l'app no evitava que la pantalla s'apagués.
+
+**Solució Implementada:** `js/features/drive-mode.js` i el bloc «Mode conducció» de `css/portada.css`. El botó `#driveModeBtn` (només ≤ 1024 px) posa `body.drive-mode`:
+- fons negre pur (a les pantalles OLED no gasta) i, a dalt, només el reproductor de YouTube, a 16:9 i com a mínim 200 px d'ample;
+- un sol botó, «Tanca el mode conducció»;
+- `navigator.wakeLock.request('screen')`, que es torna a demanar a `visibilitychange`, i pantalla completa si el navegador ho permet.
+
+**Trampes:**
+- Tot és CSS: `visibility: hidden` a tot el `body` menys el reproductor, que passa a `fixed`. Moure l'iframe al DOM faria que YouTube el recarregués, i tapar-lo incompliria les normes de YouTube (el reproductor ha de ser visible).
+- La lluentor no es pot controlar des d'una web.
+- A l'iPhone, el Wake Lock dins l'app instal·lada (PWA) demana iOS 18.4 o posterior, i no hi ha pantalla completa per a pàgines.
+- Comprovat amb Chromium i el succedani d'embed: `tests/browser/verificar-mode-conduccio.js`.
+
+**Fitxers Afectats:** `js/features/drive-mode.js` (nou), `js/app.js` (botó), `index.html`, `css/portada.css`, `sw.js`, `tests/browser/verificar-mode-conduccio.js`, `CLAUDE.md`.
+
+## [2026-10-02] - Revisió d'idioma de les cançons noves amb un LLM
+**Símptoma:** cada vegada que entraven cançons noves (de canals Tema, pàgines profundes o novetats) calia repassar tot el feed per trobar-hi les que no són en català. Els detectors automàtics per títol fallen: «Tu», «Nada», «Loca», «Ara», «Corren» poden ser de qualsevol llengua, i l'idioma declarat a YouTube no és fiable.
+
+**Causa Arrel:** no hi havia cap registre de què s'havia revisat i què era nou.
+
+**Solució Implementada:** decisió de l'usuari: la revisió la fa un LLM, amb el seu vistiplau.
+- `update_music_feed.js` afegeix a `data/revisio-idiomes.json` les cançons que entren per primera vegada (`scripts/lib/revisio_idiomes.js`: `updatePending()`; de les pistes Tema en guarda el disc).
+- L'agent les revisa i les ensenya a l'usuari. Amb el vistiplau, `scripts/aplicar_revisio_idiomes.js --amaga=…` les amaga a `hidden-videos.json` i passa totes les pendents a `revisades`, de manera que no tornen a sortir.
+- Punt de partida: les 7.998 cançons del feed del 2026-10-02 marcades com a revisades (`--inicia`), perquè ja s'havien revisat.
+- **Descart automàtic:** si el títol té una marca que el català no fa servir mai (ñ, ¿ ¡, á, -ción, ã õ â ê ô, alfabet no llatí), la cançó surt del feed sola i queda a `descartades` amb el motiu. `detectNonCatalan()` no mira els noms dels artistes indexats, les col·laboracions (ft., amb, con, _feat.) ni el que hi ha entre parèntesis («(Operación Triunfo 2018)», «(Sábado Noche, TVE-1)»). Sobre el feed del 2026-10-02 (7.529 cançons visibles) n'hauria marcat 28. Unes 20 són en castellà o en italià (Anna Ferrer, «La Revolución» d'Inadaptats, «Capitán Trueno», òpera de Carles Santos); la resta són falsos positius que es recuperen amb `--recupera` (noms de lloc com «Viñarock», «A Miguel Hernández», errors d'escriptura com «Mai sabrás» i «Els Ápats», «Cariñoso [al català]», «¡¡¡dancebreak!!!»). Només s'aplica a les cançons noves.
+- Instruccions per a l'agent: `CLAUDE.md`, «Revisió d'idioma de les cançons noves».
+
+**Fitxers Afectats:** `scripts/lib/revisio_idiomes.js`, `scripts/aplicar_revisio_idiomes.js`, `scripts/update_music_feed.js`, `data/revisio-idiomes.json`, `tests/revisio-idiomes.test.js`, `.github/workflows/actualitzar-feed-musica.yml`, `CLAUDE.md`, `docs/ARTISTES_CASTELLA.md`.
+
 ## [2026-10-02] - Castellà i altres llengües als canals «Tema» nous
 **Símptoma:** amb els canals «Tema» van entrar al feed les discografies senceres d'artistes bilingües. A Txarango, per exemple, «El Martillo», «Corazón Viajero» o «Sueña Como un Niño», quan el seu canal oficial és tot en català. També hi van entrar cançons en anglès, portuguès, gallec, italià, llatí, basc, japonès i àrab.
 

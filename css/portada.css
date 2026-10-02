@@ -4257,3 +4257,76 @@ body #watchPage .video-info-modern .follow-btn-pill {
     border-radius: var(--pt-radius-pill);
     padding: 0 18px;
 }
+
+/* ===== Mode conducció (js/features/drive-mode.js) =====
+   Pantalla negra (a les pantalles OLED els píxels negres no gasten) amb només el reproductor de YouTube a dalt,
+   a la mida mínima que demana YouTube, i un sol botó per tancar. No es tapa el reproductor ni es mou al DOM:
+   només canvia el CSS. El botó per entrar-hi només surt al mòbil i a la tauleta. */
+@media (min-width: 1025px) {
+    #driveModeBtn {
+        display: none !important;
+    }
+}
+.dm-exit {
+    display: none;
+}
+html:has(body.drive-mode),
+body.drive-mode {
+    background: #000 !important;
+    overflow: hidden !important;
+}
+body.drive-mode * {
+    visibility: hidden !important;
+}
+body.drive-mode #videoPlayer,
+body.drive-mode #videoPlayer iframe,
+body.drive-mode .dm-exit {
+    visibility: visible !important;
+}
+body.drive-mode #videoPlayer {
+    position: fixed !important;
+    top: max(16px, env(safe-area-inset-top)) !important;
+    left: 50% !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: translateX(-50%) !important;
+    width: min(100vw, 480px) !important;
+    min-width: 200px !important;
+    height: auto !important;
+    max-height: none !important;
+    aspect-ratio: 16 / 9;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    background: #000 !important;
+    z-index: 2147483000 !important;
+    transition: none !important;
+}
+body.drive-mode #videoPlayer iframe {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+}
+body.drive-mode .dm-exit {
+    display: block;
+    position: fixed;
+    left: 50%;
+    bottom: max(24px, env(safe-area-inset-bottom));
+    transform: translateX(-50%);
+    z-index: 2147483001;
+    min-height: 56px;
+    padding: 0 28px;
+    border: 1px solid #2a2a2a;
+    border-radius: var(--pt-radius-pill, 999px);
+    background: #111;
+    color: #8a8a8a;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+body.drive-mode .dm-exit[hidden] {
+    display: none;
+}
+

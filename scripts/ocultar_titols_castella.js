@@ -586,6 +586,11 @@ afegeix('Sandra Bautista', [
     'Horas (Jorge Drexler)',
 ]);
 
+// Revisió del 2026-10-02 (segona passada, a petició de l'usuari): Sílvia Pérez Cruz i Albert Pla.
+afegeix('Sílvia Pérez Cruz', ['Chundwa', 'Gelando', 'Moreno', 'Capitana', 'Mechita', 'Verde', "Hymne A L'Amour"]);
+afegeix(['ALBERT PLA', 'Albert Pla'], ['Pepe Botika', 'Alboraya', 'Así se hizo']);
+afegeix(['alfredgarcia', 'Alfred García'], ['Mateo', '1997', 'Madrid', '2001', 'Londres', 'SEVILLA']);
+
 function esCastella(video) {
     const regla = REGLES[video.channelTitle];
     if (!regla) return false;

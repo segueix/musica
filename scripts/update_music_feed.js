@@ -10,6 +10,7 @@ const catalog = require('./lib/cataleg_musical');
 const { teSubtitolsCastella } = require('./lib/subtitols_castella');
 const { slimFeed, serializeFeed } = require('./lib/aprimar_feed');
 const tema = require('./lib/canal_tema');
+const revisioIdiomes = require('./lib/revisio_idiomes');
 const { REGLES: SPANISH_TITLE_RULES } = require('./ocultar_titols_castella');
 const { resolveChannelDisplayName, findNameOverride, loadNameOverrides, stripOfficialWord } = require('./lib/nom_canal');
 
@@ -42,6 +43,8 @@ const TOPIC_GRACE_DAYS = 30;
 // «apply»: el Tema mana. Es passa a «apply» quan la revisió confirma que la discografia es llegeix bé.
 const TOPIC_GOVERNANCE = process.env.MUSIC_TOPIC_GOVERNANCE === 'apply' ? 'apply' : 'audit';
 const TOPIC_REVIEW_FILE = path.join(process.cwd(), 'data', 'music-topic-review.json');
+// Cançons noves pendents de revisar l'idioma (les revisa un agent amb el vistiplau de l'usuari).
+const LANGUAGE_REVIEW_FILE = path.join(process.cwd(), 'data', 'revisio-idiomes.json');
 const DEEP_PAGE_BUDGET = Math.max(0, Number.parseInt(process.env.MUSIC_DEEP_PAGE_BUDGET || String(catalog.DEFAULTS.deepPageBudget), 10));
 const EXTRA_DEEP_CHANNELS = String(process.env.MUSIC_DEEP_CHANNELS || '').split(',').map(v=>v.trim()).filter(Boolean);
 const VIDEOS_PER_CHANNEL = Math.max(1, Math.min(50, Number.parseInt(process.env.MUSIC_VIDEOS_PER_CHANNEL || '50', 10)));
@@ -656,6 +659,16 @@ async function main(){
     if(teSubtitolsCastella(videos[i])){ videos.splice(i,1); withSpanishSubtitles++; }
   }
   if(withSpanishSubtitles) console.log(`🙈 ${withSpanishSubtitles} vídeos amb subtítols en castellà descartats`);
+  // Cançons que entren al feed per primera vegada: a la llista de revisió d'idioma (amb la descripció sencera).
+  // Les que tenen al títol una marca segura d'una altra llengua (ñ, ¿, á, -ción…) es descarten soles, però queden al
+  // document («descartades») per si ha estat un error. No es miren els noms dels artistes (col·laboracions).
+  const artistNamesForReview=unique((db.artists||[]).filter(a=>a.reviewStatus!=='rebutjat').flatMap(a=>[a.name,a.displayName,...(a.aliases||[])]));
+  const languageReview=revisioIdiomes.updatePending(readJsonSafe(LANGUAGE_REVIEW_FILE,revisioIdiomes.emptyState()),videos,{hiddenIds,namesOf:()=>artistNamesForReview});
+  fs.writeFileSync(LANGUAGE_REVIEW_FILE,revisioIdiomes.serializeState(languageReview.state));
+  if(languageReview.discardedIds.size){
+    for(let i=videos.length-1;i>=0;i--) if(languageReview.discardedIds.has(String(videos[i].id))) videos.splice(i,1);
+  }
+  console.log(`🗣️ Revisió d'idioma: ${languageReview.added} cançons noves pendents, ${languageReview.discarded} descartades per l'idioma del títol (${languageReview.state.pendents.length} pendents, ${languageReview.state.descartades.length} descartades)`);
   videos.sort((a,b)=>(Date.parse(b.publishedAt||'')||0)-(Date.parse(a.publishedAt||'')||0));
   review.sort((a,b)=>(Date.parse(b.publishedAt||'')||0)-(Date.parse(a.publishedAt||'')||0));
   channelIndex.sort((a,b)=>a.name.localeCompare(b.name,'ca',{sensitivity:'base'}));
