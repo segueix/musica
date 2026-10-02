@@ -76,6 +76,8 @@ que són noms propis. 472 cançons a `data/hidden-videos.json` amb `afegeix()` d
 
 | Artista (nom al feed) | Ocultes | Notes |
 | --- | --- | --- |
+| **Mariona Escoda** | 0 | «Maniac (Acústic en directe)» identificada com a **anglès** (versió de Michael Sembello). Regla persistent perquè no entri a la reproducció general. |
+| **Mariona Escoda - Topic** | 0 | Mateixa exclusió al canal Tema: «Maniac» (anglès). |
 | **Txarango** | 12 | Castellà del canal Tema (El Martillo, Por Ambos Lados, Atrévete a Vivir, Corazón Viajero, Sueña Como un Niño…), «500 Millas», el popurri «Tom Dooley / Verde, Verde / Esta Es Tu Tierra» i «Mr. Tambourine Man» (anglès). El canal oficial és tot en català. **Dubtosos, es mantenen:** «Aguacero», «Son, Son, Son». |
 | **Sandra Bautista** | 27 | Repertori majoritàriament castellà (Sentada en un meteorito, El último gol, Vid amurallada, GRACIAS…), italià («Mamma, rema»), gallec/portuguès («Os narradores do cinema mudo», «Silêncio») i els vídeos del micromecenatge. Es mantenen els catalans (Trencadís, Cartografia, Darrere el foc, La casa de les mil olors, Ressona la immensitat, «Mare, rema»). **Dubtosos, es mantenen:** «Pandela», «Trapezista». |
 | **Sílvia Comes** | 27 | Canal Tema: cançó en castellà (Canción de Aniversario, Cuando Muera, Bolero para Gil de Biedma…), «Peeping Tom» (anglès), «Faltando un Pedaco» (portuguès) i «Malest Cornifici Tuo Catulo» (llatí). Es manté «Amor Particular» (Llach). **Dubtosos, es mantenen:** «La Carabina», «La Locomotora». |
