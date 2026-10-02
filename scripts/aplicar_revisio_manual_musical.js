@@ -10,6 +10,7 @@
 const fs = require('fs');
 const path = require('path');
 const { loadContentOverrides, applyOverridesToSnapshot } = require('./lib/revisio_manual_musical');
+const { slimFeed, serializeFeed } = require('./lib/aprimar_feed');
 
 const DATA = path.join(process.cwd(), 'data');
 const FILES = {
@@ -53,7 +54,7 @@ if (!changed) {
   process.exit(0);
 }
 
-writeJson(FILES.feed, snapshot.feed);
+fs.writeFileSync(FILES.feed, serializeFeed(slimFeed(snapshot.feed)));
 writeJson(FILES.review, snapshot.review);
 writeJson(FILES.contentAudit, snapshot.contentAudit);
 writeJson(FILES.feedAudit, snapshot.feedAudit);

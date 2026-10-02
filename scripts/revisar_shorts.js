@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const https = require('https');
+const { serializeFeed } = require('./lib/aprimar_feed');
 
 const OUTPUT_FEED_JSON = path.join(process.cwd(), 'data', 'feed.json');
 // recent-feed.json i feed_updates.js són artefactes locals (fora de git): només
@@ -208,7 +209,7 @@ async function main() {
         );
 
         if (appliedToFeed > 0) {
-            fs.writeFileSync(OUTPUT_FEED_JSON, JSON.stringify(feed, null, 2));
+            fs.writeFileSync(OUTPUT_FEED_JSON, serializeFeed(feed));
         }
 
         // Artefactes locals opcionals (no versionats): només si ja existeixen.

@@ -8,6 +8,7 @@ const { loadChannelVideoAllowlist, isChannelVideoAllowed } = require('./lib/filt
 const { parseManualDates, stampOriginalYear } = require('./lib/any_original_musical');
 const catalog = require('./lib/cataleg_musical');
 const { teSubtitolsCastella } = require('./lib/subtitols_castella');
+const { slimFeed, serializeFeed } = require('./lib/aprimar_feed');
 const { resolveChannelDisplayName, findNameOverride, loadNameOverrides, stripOfficialWord } = require('./lib/nom_canal');
 
 const API_KEY = process.env.YOUTUBE_API_KEY_SERVER || process.env.YOUTUBE_API_KEY;
@@ -479,7 +480,9 @@ async function main(){
   const shortVideoCount=videos.filter(v=>v.isShort===true).length;
   const generatedAt=new Date().toISOString();
 
-  fs.writeFileSync(FEED_FILE,JSON.stringify({generatedAt,channels,videos},null,2)+'\n');
+  // Aprimat (descripcions curtes, sense camps de depuració) i un vídeo per línia: el client se'l baixa sencer.
+  // Abans s'han fet servir les descripcions senceres (any original i subtítols en castellà).
+  fs.writeFileSync(FEED_FILE,serializeFeed(slimFeed({generatedAt,channels,videos})));
   fs.writeFileSync(CHANNELS_FILE,JSON.stringify({updatedAt:generatedAt,channels:channelIndex},null,2)+'\n');
   fs.writeFileSync(REVIEW_FILE,JSON.stringify({generatedAt,count:review.length,videos:review},null,2)+'\n');
   fs.writeFileSync(CONTENT_AUDIT_FILE,JSON.stringify({

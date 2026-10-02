@@ -5,6 +5,7 @@
 const fs = require('fs');
 const path = require('path');
 const { resolveChannelDisplayName, findNameOverride, loadNameOverrides } = require('./lib/nom_canal');
+const { serializeFeed } = require('./lib/aprimar_feed');
 
 const FEED_FILE = path.join(process.cwd(), 'data', 'feed.json');
 const CHANNELS_FILE = path.join(process.cwd(), 'js', 'channels-ca.json');
@@ -38,7 +39,7 @@ function main() {
   }
   if (!renamed.size) return console.log('✅ Cap nom per corregir.');
 
-  fs.writeFileSync(FEED_FILE, JSON.stringify(feed, null, 2) + '\n');
+  fs.writeFileSync(FEED_FILE, serializeFeed(feed));
   fs.writeFileSync(CHANNELS_FILE, JSON.stringify(index, null, 2) + '\n');
   console.log(`✅ ${renamed.size} canals corregits.`);
 }
