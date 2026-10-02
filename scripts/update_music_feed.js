@@ -11,6 +11,7 @@ const { teSubtitolsCastella } = require('./lib/subtitols_castella');
 const { slimFeed, serializeFeed } = require('./lib/aprimar_feed');
 const tema = require('./lib/canal_tema');
 const revisioIdiomes = require('./lib/revisio_idiomes');
+const albumsMusic = require('./lib/albums_musica');
 const { REGLES: SPANISH_TITLE_RULES } = require('./ocultar_titols_castella');
 const { resolveChannelDisplayName, findNameOverride, loadNameOverrides, stripOfficialWord } = require('./lib/nom_canal');
 
@@ -45,6 +46,7 @@ const TOPIC_GOVERNANCE = process.env.MUSIC_TOPIC_GOVERNANCE === 'apply' ? 'apply
 const TOPIC_REVIEW_FILE = path.join(process.cwd(), 'data', 'music-topic-review.json');
 // Cançons noves pendents de revisar l'idioma (les revisa un agent amb el vistiplau de l'usuari).
 const LANGUAGE_REVIEW_FILE = path.join(process.cwd(), 'data', 'revisio-idiomes.json');
+const ALBUMS_FILE = path.join(process.cwd(), 'data', 'albums-musica.json');
 const DEEP_PAGE_BUDGET = Math.max(0, Number.parseInt(process.env.MUSIC_DEEP_PAGE_BUDGET || String(catalog.DEFAULTS.deepPageBudget), 10));
 const EXTRA_DEEP_CHANNELS = String(process.env.MUSIC_DEEP_CHANNELS || '').split(',').map(v=>v.trim()).filter(Boolean);
 const VIDEOS_PER_CHANNEL = Math.max(1, Math.min(50, Number.parseInt(process.env.MUSIC_VIDEOS_PER_CHANNEL || '50', 10)));
@@ -744,6 +746,18 @@ async function main(){
       ]
     : topicStats;
   const allTopicChannelCount=[...allIndexed.values()].filter(meta=>meta.types.includes('topic')).length;
+
+  // Abans d'aprimar i eliminar les descripcions, conserva disc + caràtula amb les metadades Topic ja rebudes.
+  // No fa cap crida addicional a YouTube: només transforma dades que aquesta mateixa execució ja té en memòria.
+  const albumCatalog=albumsMusic.mergeAlbumCatalog(
+    readJsonSafe(ALBUMS_FILE,{version:1,channels:{},artists:{}}),
+    videos,
+    channels,
+    {hiddenIds,generatedAt}
+  );
+  fs.writeFileSync(ALBUMS_FILE,JSON.stringify(albumCatalog));
+  const albumCount=Object.values(albumCatalog.artists||{}).reduce((sum,entry)=>sum+(entry.albums||[]).length,0);
+  console.log('💿 Catàleg local de discos:',albumCount,'discos de',Object.keys(albumCatalog.artists||{}).length,'artistes.');
 
   // Aprimat (sense descripció pública dels vídeos) i un vídeo per línia.
   fs.writeFileSync(FEED_FILE,serializeFeed(slimFeed({generatedAt,channels,videos})));
