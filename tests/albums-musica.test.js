@@ -42,7 +42,7 @@ describe('catàleg local de discos', () => {
     expect(catalog.channels.UCO).toBe('Artista');
   });
 
-  it('no converteix un single d'una sola pista en un disc', () => {
+  it("no converteix un single d'una sola pista en un disc", () => {
     const catalog = mergeAlbumCatalog(
       {},
       [{
