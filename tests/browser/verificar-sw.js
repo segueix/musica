@@ -178,11 +178,14 @@ const EXPECTED_SCRIPTS = [
         const waitingVisible = await page.evaluate(async () => Boolean((await navigator.serviceWorker.getRegistration())?.waiting));
         check('5a. Visible: l\'actualització queda preparada i no recarrega', waitingVisible && countVisible === countA, `recàrregues=${countVisible - countA}`);
 
-        // En passar a segon pla, app.js envia SKIP_WAITING. Simulem la visibilitat
-        // directament perquè Chromium headless no sempre emet visibilitychange amb bringToFront.
-        await page.evaluate(async () => {
-            const r = await navigator.serviceWorker.getRegistration();
-            r?.waiting?.postMessage({ type: 'SKIP_WAITING' });
+        // En passar a segon pla, app.js envia SKIP_WAITING. Chromium headless no sempre
+        // canvia visibilityState de manera fiable, així que simulem només aquest senyal del navegador.
+        await page.evaluate(() => {
+            Object.defineProperty(document, 'visibilityState', {
+                configurable: true,
+                get: () => 'hidden',
+            });
+            document.dispatchEvent(new Event('visibilitychange'));
         });
         await page.waitForTimeout(4500);
         const countB = await loadCount();
