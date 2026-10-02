@@ -1561,70 +1561,21 @@
         });
     }
 
-    // ---------- Media Session (controls del sistema: pantalla de bloqueig, auriculars, notificació) ----------
+    // ---------- Media Session ----------
+    // Els controls del sistema (pantalla de bloqueig, notificació, tecles multimèdia) i la finestra flotant del sistema
+    // són a js/features/system-player.js.
     function updateMediaSession() {
-        if (!('mediaSession' in navigator) || typeof MediaMetadata !== 'function') return;
-        const video = isPlaylistMode ? activePlaylistQueue[currentPlaylistIndex] : null;
-        if (!video) return;
-        try {
-            navigator.mediaSession.metadata = new MediaMetadata({
-                title: video.title || '',
-                artist: video.channelTitle || '',
-                album: activePlaylistName || 'Segueix!',
-                artwork: video.thumbnail ? [{ src: video.thumbnail, sizes: '480x360', type: 'image/jpeg' }] : [],
-            });
-            navigator.mediaSession.playbackState = isPlaying() ? 'playing' : 'paused';
-        } catch (error) {
-            // Navegador sense suport complet: la reproducció no en depèn
-        }
-    }
-
-    function initMediaSession() {
-        if (!('mediaSession' in navigator)) return;
-        const set = (action, handler) => {
-            try {
-                navigator.mediaSession.setActionHandler(action, handler);
-            } catch (error) {
-                // Acció no suportada en aquest navegador
-            }
-        };
-        // Ordres explícites: la pantalla de bloqueig diu què vol, no depenen de l'estat que l'iframe hagi reportat
-        set('play', () => window.playMainPlayer?.());
-        set('pause', () => window.pauseMainPlayer?.());
-        set('previoustrack', () => {
-            if (isPlaylistMode && currentPlaylistIndex > 0) {
-                currentPlaylistIndex -= 1;
-                loadVideoInSequence();
-            }
-        });
-        set('nexttrack', () => {
-            if (isPlaylistMode && currentPlaylistIndex < activePlaylistQueue.length - 1) {
-                currentPlaylistIndex += 1;
-                loadVideoInSequence();
-            }
-        });
+        app.features.systemPlayer?.update?.();
     }
 
     // ---------- Estat de reproducció ----------
     // Els controls (anterior / play-pausa / següent) ja són dins del reproductor: no hi ha barra
     // pròpia sota el vídeo. Només mantenim els controls del sistema (Media Session).
-    function isPlaying() {
-        return document.getElementById('videoPlayer')?.dataset?.playerState === '1';
-    }
-
     function updateTransport() {
         updateMediaSession();
     }
 
     function initTransport() {
-        initMediaSession();
-        const player = document.getElementById('videoPlayer');
-        if (player && typeof MutationObserver === 'function') {
-            new MutationObserver(updateTransport).observe(player, {
-                attributes: true,
-                attributeFilter: ['data-player-state'],
-            });
-        }
         updateTransport();
     }
 

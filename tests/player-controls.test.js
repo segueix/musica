@@ -69,8 +69,9 @@ describe('ordres de play/pausa robustes', () => {
     });
 
     it('la pantalla de bloqueig (Media Session) envia l’ordre que demana, sense mirar l’estat desat', () => {
-        expect(queue).toContain("set('play', () => window.playMainPlayer?.());");
-        expect(queue).toContain("set('pause', () => window.pauseMainPlayer?.());");
+        const system = read('js/features/system-player.js');
+        expect(system).toContain("setHandler('play', () => actions.play());");
+        expect(system).toContain("setHandler('pause', () => actions.pause());");
     });
 });
 
