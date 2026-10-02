@@ -4266,6 +4266,33 @@ body #watchPage .video-info-modern .follow-btn-pill {
         display: none !important;
     }
 }
+
+/* En ràdio/llista, Conducció viu al mateix rengle que «Mode llista · …», just sota el reproductor. */
+#playlistModeBadge #driveModeBtn {
+    display: inline-grid;
+    place-items: center;
+    flex: 0 0 auto;
+    width: 44px;
+    height: 44px;
+    margin: 0;
+    padding: 0;
+    border: 1px solid var(--pt-line, rgba(244, 240, 232, 0.14));
+    border-radius: 50%;
+    background: var(--pt-surface-2, #2a2f2b);
+    color: var(--pt-muted, #b9b5ac);
+    box-shadow: none;
+}
+#playlistModeBadge #driveModeBtn svg {
+    width: 20px;
+    height: 20px;
+}
+#playlistModeBadge #driveModeBtn:hover,
+#playlistModeBadge #driveModeBtn:focus-visible {
+    border-color: var(--pt-accent, #d6ed84);
+    color: var(--pt-accent, #d6ed84);
+    outline: none;
+}
+
 .dm-exit,
 .dm-controls {
     display: none;
