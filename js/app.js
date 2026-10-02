@@ -1981,7 +1981,7 @@ async function openProgramProfile(programId) {
     channelPage.classList.add('channel-page--program-profile');
 
     const channelAvatar =
-        channel?.avatar || channel?.thumbnail || getFollowChannelAvatar(normalizedId) || 'img/icon-192.png';
+        channel?.avatar || channel?.thumbnail || getFollowChannelAvatar(profileId) || 'img/icon-192.png';
     if (channelProfileAvatar) {
         channelProfileAvatar.src = channelAvatar;
         channelProfileAvatar.alt = program.name;
@@ -2028,7 +2028,7 @@ async function openProgramProfile(programId) {
         channelProfileFollowBtn.classList.remove('hidden');
     }
     if (channelProfileHideBtn) {
-        channelProfileHideBtn.dataset.hideChannel = normalizedId;
+        channelProfileHideBtn.dataset.hideChannel = profileId;
         channelProfileHideBtn.dataset.hideBound = 'false';
         channelProfileHideBtn.classList.add('hidden');
     }
@@ -2037,7 +2037,7 @@ async function openProgramProfile(programId) {
 
     // Botó compartir
     if (channelProfileShareBtn) {
-        channelProfileShareBtn.dataset.shareChannelId = normalizedId;
+        channelProfileShareBtn.dataset.shareChannelId = profileId;
         channelProfileShareBtn.dataset.shareChannelName = encodeURIComponent(program.name);
         channelProfileShareBtn.dataset.shareChannelDescription = encodeURIComponent(program.description || '');
         channelProfileShareBtn.dataset.shareProgramName = encodeURIComponent(program.name);
@@ -8750,7 +8750,9 @@ async function renderFollowPage() {
 
     followGrid.innerHTML = '<div class="empty-state">Carregant artistes...</div>';
 
-    const allChannels = Array.isArray(YouTubeAPI?.getAllChannels?.()) ? YouTubeAPI.getAllChannels() : [];
+    const allChannels = Array.isArray(YouTubeAPI?.getArtistGroups?.())
+        ? YouTubeAPI.getArtistGroups()
+        : (Array.isArray(YouTubeAPI?.getAllChannels?.()) ? YouTubeAPI.getAllChannels() : []);
 
     if (!allChannels.length) {
         followGrid.innerHTML = '<div class="empty-state">No hi ha artistes disponibles ara mateix.</div>';
@@ -8758,9 +8760,13 @@ async function renderFollowPage() {
     }
 
     const followedIds = new Set(getFollowedChannelIds().map(id => String(id)));
+    const memberIdsOf = channel =>
+        (Array.isArray(channel?.channelIds) && channel.channelIds.length ? channel.channelIds : [channel?.id])
+            .map(id => String(id || ''))
+            .filter(Boolean);
     const channels =
         activeFollowTab === 'following'
-            ? allChannels.filter(channel => followedIds.has(String(channel.id)))
+            ? allChannels.filter(channel => memberIdsOf(channel).some(id => followedIds.has(id)))
             : allChannels;
 
     if (channels.length === 0) {
@@ -8791,10 +8797,13 @@ async function renderFollowPage() {
             const name = channel.name || 'Canal';
             const avatar =
                 channel.avatar || channel.thumbnail || getFollowChannelAvatar(channel.id) || 'img/icon-192.png';
+            const memberIds = memberIdsOf(channel);
+            const followedMemberId = memberIds.find(id => followedIds.has(id));
+            const followTargetId = followedMemberId || String(channel.id);
             const hasFollowButton = !isMitjansOrDigitalsChannel(channel.id);
             const followButtonHtml = hasFollowButton
                 ? `
-                <button class="follow-toggle-btn" type="button" data-follow-channel="${channel.id}" aria-pressed="false">
+                <button class="follow-toggle-btn" type="button" data-follow-channel="${followTargetId}" aria-pressed="false">
                     Segueix
                 </button>
             `
@@ -12774,7 +12783,9 @@ async function openChannelProfileLegacyImpl(channelId) {
     exitPlaylistModeForNavigation();
     const normalizedId = String(channelId);
     const channels = Array.isArray(YouTubeAPI?.getAllChannels?.()) ? YouTubeAPI.getAllChannels() : [];
-    const channel = channels.find(item => String(item.id) === normalizedId);
+    const artistGroup = YouTubeAPI?.getArtistGroupForChannel?.(normalizedId) || null;
+    const profileId = String(artistGroup?.id || normalizedId);
+    const channel = artistGroup || channels.find(item => String(item.id) === normalizedId);
     if (!channelPage || !channelVideosGrid) {
         return;
     }
@@ -12823,7 +12834,7 @@ async function openChannelProfileLegacyImpl(channelId) {
             const cleanHandle = String(channel.handle).trim();
             const youtubeChannelUrl = cleanHandle.startsWith('@')
                 ? `https://www.youtube.com/${cleanHandle}`
-                : `https://www.youtube.com/channel/${normalizedId}`;
+                : `https://www.youtube.com/channel/${profileId}`;
             channelProfileHandle.innerHTML = `<a href="${youtubeChannelUrl}" class="channel-profile-handle-link" target="_blank" rel="noopener noreferrer">${escapeHtml(cleanHandle)}</a>`;
             channelProfileHandle.classList.remove('hidden');
         } else {
@@ -12843,7 +12854,7 @@ async function openChannelProfileLegacyImpl(channelId) {
     // Fitxa d'artista: presentació curta que s'expandeix i ràdios de dalt de tot (js/features/artist-page.js)
     if (SegueixApp.features.artistPage?.showProfile) {
         SegueixApp.features.artistPage.showProfile({
-            channelId: normalizedId,
+            channelId: profileId,
             name: channelName,
             description: channel?.description || '',
             categories: channel?.categories || [],
@@ -12852,13 +12863,16 @@ async function openChannelProfileLegacyImpl(channelId) {
         channelProfileDescription.textContent = channel?.description || 'No hi ha descripció disponible.';
     }
     if (channelProfileTags) {
-        renderChannelProfileCategories(channel, normalizedId);
+        renderChannelProfileCategories(channel, profileId);
     }
-    SupportModule.renderChannelButton(normalizedId, channelName);
+    SupportModule.renderChannelButton(profileId, channelName);
     if (channelProfileFollowBtn) {
-        channelProfileFollowBtn.dataset.followChannel = normalizedId;
+        const followedIds = new Set(getFollowedChannelIds().map(id => String(id)));
+        const groupIds = Array.isArray(channel?.channelIds) && channel.channelIds.length ? channel.channelIds.map(String) : [profileId];
+        const followTargetId = groupIds.find(id => followedIds.has(id)) || profileId;
+        channelProfileFollowBtn.dataset.followChannel = followTargetId;
         channelProfileFollowBtn.dataset.followBound = 'false';
-        if (isMitjansOrDigitalsChannel(normalizedId)) {
+        if (isMitjansOrDigitalsChannel(profileId)) {
             channelProfileFollowBtn.classList.add('hidden');
         } else {
             channelProfileFollowBtn.classList.remove('hidden');
@@ -12882,8 +12896,10 @@ async function openChannelProfileLegacyImpl(channelId) {
     bindFollowButtons(channelPage);
     bindHideChannelButtons(channelPage);
 
-    const channelVideos = await YouTubeAPI.getChannelVideosWithHistory(normalizedId);
-    currentChannelId = normalizedId;
+    const channelVideos = YouTubeAPI?.getArtistVideosWithHistory
+        ? await YouTubeAPI.getArtistVideosWithHistory(profileId)
+        : await YouTubeAPI.getChannelVideosWithHistory(profileId);
+    currentChannelId = profileId;
     currentChannelName = channelName;
     currentChannelVideos = Array.isArray(channelVideos) ? channelVideos : [];
     currentChannelShorts = currentChannelVideos.filter(video => video.isShort);
