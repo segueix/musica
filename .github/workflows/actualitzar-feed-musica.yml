@@ -99,6 +99,10 @@ jobs:
           MUSIC_TARGET_CHANNELS: ${{ steps.scope.outputs.target_ids }}
         run: node scripts/update_music_feed.js
 
+      - name: Separa feed calent i historial
+        if: steps.scope.outputs.run_api == 'true'
+        run: node scripts/archivar_feed_musical.js
+
       - name: Valida cobertura
         if: steps.scope.outputs.run_api == 'true'
         run: |
