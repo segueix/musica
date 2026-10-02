@@ -18,7 +18,7 @@
 //   2) Offline: amb la xarxa tallada, l'app arrenca sencera des del cache.
 //   3) Migració: un cache antic (mytube-v417) i l'static vell s'eliminen a l'activate.
 //   4) Stale-while-revalidate: 1r load serveix stale, 2n load ja serveix fresc.
-//   5) Actualització de codi: s'aplica sola, amb UNA sola recàrrega (sense bucle).
+//   5) Actualització de codi: NO recarrega mentre la pàgina és visible; s'aplica en segon pla amb una sola recàrrega.
 //   6) El feed es carrega i renderitza.
 
 const http = require('http');
@@ -158,7 +158,7 @@ const EXPECTED_SCRIPTS = [
         check('2. Offline: l\'app arrenca des del cache', offlineOk);
         await context.setOffline(false);
 
-        // 3 + 5) Migració + actualització de codi + una sola recàrrega
+        // 3 + 5) Migració + actualització de codi sense refresc mentre l'usuari mira/toca l'app
         await page.reload({ waitUntil: 'domcontentloaded' });
         await page.waitForFunction(() => navigator.serviceWorker && navigator.serviceWorker.controller, null, { timeout: 20000 });
         await page.evaluate(async () => { await (await caches.open('mytube-v417')).put('/dummy-old', new Response('old')); });
@@ -168,19 +168,32 @@ const EXPECTED_SCRIPTS = [
         await page.evaluate((b) => fetch(b + '/__ctl?swver=testupdate99'), BASE);
         await page.evaluate(async () => { const r = await navigator.serviceWorker.getRegistration(); await r.update(); });
 
-        // Una actualització (ja hi havia un SW actiu) s'aplica sola: el SW nou fa skipWaiting a
-        // l'install i la pàgina antiga recarrega en el 'controllerchange'. Sense això, una pestanya
-        // normal oberta es quedava amb el codi vell fins tancar-la (el badge no feia res).
-        await page.waitForTimeout(5000);
+        // Mentre la pàgina és visible, la versió nova ha de quedar waiting i NO pot recarregar,
+        // encara que l'usuari faci scroll o interaccioni.
+        await page.waitForFunction(async () => Boolean((await navigator.serviceWorker.getRegistration())?.waiting), null, { timeout: 10000 });
+        await page.mouse.wheel(0, 500);
+        await page.mouse.click(40, 300);
+        await page.waitForTimeout(1800);
+        const countVisible = await loadCount();
+        const waitingVisible = await page.evaluate(async () => Boolean((await navigator.serviceWorker.getRegistration())?.waiting));
+        check('5a. Visible: l\'actualització queda preparada i no recarrega', waitingVisible && countVisible === countA, `recàrregues=${countVisible - countA}`);
+
+        // En passar a segon pla, app.js envia SKIP_WAITING. Simulem la visibilitat
+        // directament perquè Chromium headless no sempre emet visibilitychange amb bringToFront.
+        await page.evaluate(async () => {
+            const r = await navigator.serviceWorker.getRegistration();
+            r?.waiting?.postMessage({ type: 'SKIP_WAITING' });
+        });
+        await page.waitForTimeout(4500);
         const countB = await loadCount();
-        await page.waitForTimeout(2000);
+        await page.waitForTimeout(1500);
         const countC = await loadCount();
         const applied = await page.evaluate(async () => {
             const r = await navigator.serviceWorker.getRegistration();
             return !r.waiting && !!r.active;
         });
-        check('5a. L\'actualització s\'aplica sola (cap SW en espera)', applied);
-        check('5b. Una sola recàrrega, sense bucle', countB - countA === 1 && countC === countB, `recàrregues=${countB - countA}, extra=${countC - countB}`);
+        check('5b. En aplicar-la, el SW nou pren el control', applied);
+        check('5c. Una sola recàrrega, sense bucle', countB - countA === 1 && countC === countB, `recàrregues=${countB - countA}, extra=${countC - countB}`);
 
         const afterKeys = await page.evaluate(() => caches.keys());
         const migrated = !afterKeys.includes('mytube-v417') && afterKeys.includes('static-' + NEWVER)
