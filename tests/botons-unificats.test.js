@@ -33,6 +33,23 @@ describe('botons unificats i configuració', () => {
         expect(block).toContain('background: var(--pt-surface-2)');
     });
 
+    it('posa Segueix al costat del nom de l’artista i el cor com a primera acció de la cançó', () => {
+        const start = app.indexOf('function buildWatchChannelInfoHtml');
+        const end = app.indexOf('// ==================== POSICIÓ DEL BOTÓ DE SUPORT', start);
+        const block = app.slice(start, end);
+        expect(block).toContain('<div class="channel-name-row">');
+        expect(block.indexOf('${followButtonHtml}')).toBeGreaterThan(block.indexOf('<div class="channel-name-row">'));
+        expect(block).toContain('btn-heart btn-heart-song-action');
+        expect(block.indexOf('btn-heart btn-heart-song-action')).toBeLessThan(block.indexOf('btn-comment-youtube--mobile'));
+
+        const cssStart = css.indexOf('/* ---------- Capçalera del reproductor: artista + Segueix');
+        const layout = css.slice(cssStart);
+        expect(layout).toContain('.channel-name-row .follow-btn-pill');
+        expect(layout).toContain('.btn-heart-song-action');
+        expect(layout).toContain('width: 48px');
+        expect(layout).toContain('width: 24px');
+    });
+
     it('afegir un estil a la ràdio no fa servir el «+» (que és per afegir cançons a una llista)', () => {
         const queue = read('js/features/music-queue.js');
         const button = queue.match(/<button type="button" class="mq-add-style"[^\n]*<\/button>/)[0];
