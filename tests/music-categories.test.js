@@ -28,6 +28,36 @@ describe('taxonomia de navegació musical', () => {
         expect(music.isCategoryEligibleVideo({})).toBe(true);
     });
 
+    it('comparteix identitat i nom canònic entre canal oficial i Topic', async () => {
+        const official = 'UC' + 'D'.repeat(22);
+        const topic = 'UC' + 'E'.repeat(22);
+        const artists = {
+            artists: [{
+                name: 'Grup Exemple',
+                displayName: 'Grup exemple',
+                genres: ['Pop'],
+                youtube: { channels: [
+                    { id: official, type: 'official', primary: true },
+                    { id: topic, type: 'topic', primary: false },
+                ] },
+            }],
+        };
+        vi.stubGlobal('fetch', vi.fn(async url => ({
+            ok: !String(url).includes('musica-classica'),
+            json: async () => artists,
+        })));
+        try {
+            await music.init();
+        } finally {
+            vi.unstubAllGlobals();
+        }
+        expect(music.artistKeyForChannel(official)).toBe(music.artistKeyForChannel(topic));
+        expect(music.artistDisplayNameForChannel(official)).toBe('Grup exemple');
+        expect(music.artistDisplayNameForChannel(topic)).toBe('Grup exemple');
+        expect(music.artistChannelMeta(official)).toMatchObject({ type: 'official', primary: true });
+        expect(music.artistChannelMeta(topic)).toMatchObject({ type: 'topic', primary: false });
+    });
+
     it('la categoria principal d’un canal és la del primer gènere de l’artista (no l’ordre de la taxonomia)', async () => {
         const artists = {
             artists: [
