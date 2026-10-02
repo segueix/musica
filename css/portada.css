@@ -4259,15 +4259,15 @@ body #watchPage .video-info-modern .follow-btn-pill {
 }
 
 /* ===== Mode conducció (js/features/drive-mode.js) =====
-   Ultraestalvi: pantalla negra (en OLED els píxels negres no gasten), reproductor de YouTube de 200×200,
-   Wake Lock des de JS i botó de sortida temporal. No es tapa el reproductor ni es mou al DOM: només canvia
-   el CSS. El botó per entrar-hi només surt al mòbil i a la tauleta. */
+   Ultraestalvi i baixa distracció: pantalla negra, reproductor YouTube de 200×200 i controls grans però foscos.
+   Els controls desapareixen sols al cap de pocs segons i només reapareixen quan l'usuari toca el fons negre. */
 @media (min-width: 1025px) {
     #driveModeBtn {
         display: none !important;
     }
 }
-.dm-exit {
+.dm-exit,
+.dm-controls {
     display: none;
 }
 html:has(body.drive-mode),
@@ -4282,7 +4282,9 @@ body.drive-mode * {
 }
 body.drive-mode #videoPlayer,
 body.drive-mode #videoPlayer iframe,
-body.drive-mode .dm-exit {
+body.drive-mode .dm-exit,
+body.drive-mode .dm-controls,
+body.drive-mode .dm-controls * {
     visibility: visible !important;
 }
 body.drive-mode #videoPlayer {
@@ -4312,24 +4314,64 @@ body.drive-mode #videoPlayer iframe {
     height: 100% !important;
 }
 body.drive-mode .dm-exit {
-    display: block;
+    display: grid;
+    place-items: center;
+    position: fixed;
+    top: max(14px, env(safe-area-inset-top));
+    right: max(14px, env(safe-area-inset-right));
+    z-index: 2147483002;
+    width: 52px;
+    height: 52px;
+    padding: 0;
+    border: 1px solid #202020;
+    border-radius: 50%;
+    background: #080808;
+    color: #666;
+    font-family: inherit;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 1;
+}
+body.drive-mode .dm-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
     position: fixed;
     left: 50%;
-    bottom: max(24px, env(safe-area-inset-bottom));
+    bottom: max(22px, env(safe-area-inset-bottom));
     transform: translateX(-50%);
     z-index: 2147483001;
-    min-height: 56px;
-    padding: 0 28px;
-    border: 1px solid #2a2a2a;
-    border-radius: var(--pt-radius-pill, 999px);
-    background: #111;
-    color: #8a8a8a;
-    font-family: inherit;
-    font-size: 1rem;
-    font-weight: 600;
-    white-space: nowrap;
 }
-body.drive-mode .dm-exit[hidden] {
-    display: none;
+body.drive-mode .dm-control {
+    display: inline-grid;
+    place-items: center;
+    width: 64px;
+    height: 64px;
+    padding: 0;
+    border: 1px solid #202020;
+    border-radius: 50%;
+    background: #090909;
+    color: #696969;
+    font: 600 1.35rem/1 system-ui, sans-serif;
+    box-shadow: none;
+    -webkit-tap-highlight-color: transparent;
+}
+body.drive-mode .dm-control span {
+    font-size: 0.72rem;
+    font-weight: 700;
+}
+body.drive-mode .dm-control:active,
+body.drive-mode .dm-control:focus-visible,
+body.drive-mode .dm-exit:active,
+body.drive-mode .dm-exit:focus-visible {
+    border-color: #3a3a3a;
+    background: #111;
+    color: #999;
+    outline: none;
+}
+body.drive-mode .dm-exit[hidden],
+body.drive-mode .dm-controls[hidden] {
+    display: none !important;
 }
 
