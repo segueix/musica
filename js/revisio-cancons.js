@@ -56,11 +56,14 @@
         return rows;
     }
 
-    // Aplica els canvis desats ({ id: títol }) a les files. Un títol igual al de l'app no compta com a canvi.
-    function withDrafts(rows, drafts) {
+    // Aplica els canvis desats ({ id: títol }) i les marques «OK» (Set o llista d'IDs) a les files. Un títol igual al
+    // de l'app no compta com a canvi.
+    function withDrafts(rows, drafts, okIds) {
+        const ok = okIds instanceof Set ? okIds : new Set(Array.isArray(okIds) ? okIds.map(String) : []);
         return rows.map(row => {
             const draft = drafts && Object.prototype.hasOwnProperty.call(drafts, row.id) ? drafts[row.id] : undefined;
-            return draft === undefined ? row : { ...row, title: String(draft) };
+            const next = draft === undefined ? row : { ...row, title: String(draft) };
+            return ok.has(row.id) ? { ...next, ok: true } : next.ok ? { ...next, ok: false } : next;
         });
     }
 
@@ -69,7 +72,8 @@
     }
 
     function summarize(rows) {
-        return { total: rows.length, changed: rows.filter(isChanged).length };
+        const ok = rows.filter(row => row.ok).length;
+        return { total: rows.length, changed: rows.filter(isChanged).length, ok, pending: rows.length - ok };
     }
 
     // Només les files editades: el que s'ha de rectificar.
@@ -79,22 +83,26 @@
             version: DOC_VERSION,
             exportedAt: meta.now || new Date().toISOString(),
             total: rows.length,
+            ok: rows.filter(row => row.ok).length,
             songs: rows.filter(isChanged).map(row => ({
                 id: row.id,
                 artist: row.artist,
                 originalTitle: row.originalTitle,
                 currentTitle: row.currentTitle,
                 title: cleanTitle(row.title),
+                ok: Boolean(row.ok),
             })),
         };
     }
 
-    // filter: 'all' | 'changed'; query: text lliure (títol, artista i títol de YouTube); sort: 'title' | 'artist'.
+    // filter: 'pending' (sense «OK») | 'all' | 'changed' | 'ok'; query: text lliure (títol, artista i títol de YouTube); sort: 'title' | 'artist'.
     function filterRows(rows, { query = '', filter = 'all', sort = 'title' } = {}) {
         const text = normalize(query);
         const tokens = text ? text.split(' ') : [];
         const list = rows.filter(row => {
             if (filter === 'changed' && !isChanged(row)) return false;
+            if (filter === 'pending' && row.ok) return false;
+            if (filter === 'ok' && !row.ok) return false;
             if (!tokens.length) return true;
             const hay = normalize(`${row.title} ${row.currentTitle} ${row.artist} ${row.originalTitle}`);
             return tokens.every(token => hay.includes(token));

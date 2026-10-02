@@ -4937,29 +4937,11 @@ function initLuckyMode() {
     });
 }
 
-// Enfosquir un color hex per un factor (0.0 = negre, 1.0 = sense canvi)
-function darkenHexColor(hex, factor) {
-    const r = Math.round(parseInt(hex.slice(1, 3), 16) * factor);
-    const g = Math.round(parseInt(hex.slice(3, 5), 16) * factor);
-    const b = Math.round(parseInt(hex.slice(5, 7), 16) * factor);
-    return `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`;
-}
-
+// «Sempre tinc sort» només sorteja el fons: els botons sempre tenen el color de la marca.
 function applyLuckyColors() {
     const randomBg = LUCKY_BG_COLORS[Math.floor(Math.random() * LUCKY_BG_COLORS.length)];
-    const randomBtn = LUCKY_BTN_COLORS[Math.floor(Math.random() * LUCKY_BTN_COLORS.length)];
-
-    // Escalat de colors: categories (base) → icones (2 tons fosc) → cerca (4 tons fosc)
-    const iconColor = darkenHexColor(randomBtn, 0.7);
-    const searchColor = darkenHexColor(randomBtn, 0.5);
-
     document.documentElement.style.setProperty('--color-background', randomBg);
-    document.documentElement.style.setProperty('--color-button-accent', randomBtn);
-    document.documentElement.style.setProperty('--color-icon-accent', iconColor);
-    document.documentElement.style.setProperty('--color-search-accent', searchColor);
-
     if (currentColorDisplay) currentColorDisplay.style.backgroundColor = randomBg;
-    if (currentButtonColorDisplay) currentButtonColorDisplay.style.backgroundColor = randomBtn;
 }
 
 function initBackgroundPicker() {
@@ -5044,10 +5026,15 @@ function updateFontSizeDisplay() {
     fontSizeDisplay.textContent = `Font ${Math.round(size)}px`;
 }
 
+// El color dels botons ja no es tria a la configuració (només el fons): sempre és el de la marca. Es treu la
+// preferència antiga perquè un color triat abans no torni a aparèixer.
 function initButtonColorPicker() {
-    const stored = localStorage.getItem(BUTTON_COLOR_STORAGE_KEY);
-    const initial = BUTTON_COLORS.includes(stored) ? stored : BUTTON_COLORS[0];
-    applyButtonColor(initial, false);
+    try {
+        localStorage.removeItem(BUTTON_COLOR_STORAGE_KEY);
+    } catch (error) {
+        /* sense emmagatzematge */
+    }
+    applyButtonColor(BUTTON_COLORS[0], false);
 }
 
 function applyButtonColor(color, persist = true, collapsePicker = false) {

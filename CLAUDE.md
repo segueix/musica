@@ -317,7 +317,7 @@ const likes = ctx2.SegueixApp.features.likes;
 
 ### Revisió de títols de cançons (2026-10-01)
 
-- `revisio-cancons.html` (la URL `revisio-artistes.html` hi redirigeix) llista **totes les cançons publicades** (mateix criteri que l'app: no ocultes, ni Shorts, ni estàtic, `isCategoryEligibleVideo`; ~4.900) amb el **títol tal com es veu a l'app** (`decorateVideo`, o sigui títol net i nom de l'artista), perquè l'usuari l'editi i baixi `revisio-cancons-AAAA-MM-DD.json` (només les editades: `id`, `artist`, `originalTitle` de YouTube, `currentTitle`, `title` nou). Lògica pura a `js/revisio-cancons.js`; prova `tests/revisio-cancons.test.js`. **Quan l'usuari et passi el fitxer:** mira els casos; si responen a un patró, corregeix la regla a `js/song-title.js`; si són puntuals, cal un registre d'excepcions per vídeo (encara no existeix: crea'l, aplica'l a `decorateVideo` i documenta-ho). No toquis `feed.json`.
+- `revisio-cancons.html` (la URL `revisio-artistes.html` hi redirigeix) llista **totes les cançons publicades** (mateix criteri que l'app: no ocultes, ni Shorts, ni estàtic, `isCategoryEligibleVideo`; ~4.900) amb el **títol tal com es veu a l'app** (`decorateVideo`, o sigui títol net i nom de l'artista), perquè l'usuari l'editi i baixi `revisio-cancons-AAAA-MM-DD.json` (només les editades: `id`, `artist`, `originalTitle` de YouTube, `currentTitle`, `title` nou). Cada fila té una casella **OK** (el títol ja està bé): amb el filtre per defecte «Pendents» la cançó desapareix de la llista (marques a `localStorage` `segueix_revisio_cancons_ok_v1`, i «Marca aquesta pàgina com a OK»); l'export només porta les editades (amb `ok`) i el recompte d'OK. Lògica pura a `js/revisio-cancons.js`; prova `tests/revisio-cancons.test.js`. **Quan l'usuari et passi el fitxer:** mira els casos; si responen a un patró, corregeix la regla a `js/song-title.js`; si són puntuals, cal un registre d'excepcions per vídeo (encara no existeix: crea'l, aplica'l a `decorateVideo` i documenta-ho). No toquis `feed.json`.
 - La revisió d'artistes anterior (noms i categories) és a `revisio-noms-artistes.html`.
 
 ### Revisió d'artistes: noms i categories (2026-10-01)
@@ -328,6 +328,11 @@ const likes = ctx2.SegueixApp.features.likes;
 ### Contacte i suggeriment d'artistes (2026-10-01)
 
 - `#addYoutuberModal` («Suggereix un artista», botó `#addYoutuberBtn` amb icona de nota musical amb «+») porta, amb l'estil de `portada.css` (`.pt-contact*`): **formulari** (`#addYoutuberSubmitBtn` → `CONFIG.forms.suggestYoutuberUrl`), **Telegram** (`t.me/segueix`), **correu** (`info.segueix@gmail.com`), «Informació per a artistes» i els crèdits. No hi tornis a posar el vídeo de YouTube «Coneix-nos» ni Xiuxiuejar (eliminats, com les seves imatges). **Pendent:** `suggestYoutuberUrl` encara és el formulari antic de Segueix youtubers; cal substituir-lo pel nou (per grups de música). Prova: `tests/contacte.test.js`.
+
+### Botons d'icona i colors de la configuració (2026-10-02)
+
+- Els símbols de la ràdio (`.mq-add-style`, `.mq-shuffle`, `.mq-save-list`, `.mq-share`, «Obre a YouTube») i els de sota el reproductor (`.btn-round-icon`: comentar, afegir a llista, compartir, mini reproductor; `.btn-heart`; «Canal YouTube» `.btn-pill-red`) tenen **la mateixa forma i colors**: quadrat de 44 px amb `--pt-radius-sm`, fons `--pt-surface-2`, vora `--pt-line`, text `--pt-text` i llima en passar-hi per sobre o en estat actiu (desada, m'agrada). Bloc «Botons d'icona unificats» al final de `portada.css`; no hi tornis a posar cercles ni el vermell de YouTube.
+- La configuració **només deixa triar el color de fons** (i la mida de la font): no hi ha selector de color de botons. `initButtonColorPicker()` aplica sempre el color de la marca i esborra `catube_button_color`; «Sempre tinc sort» només sorteja el fons. Prova: `tests/botons-unificats.test.js`.
 
 ### Les cançons comencen de zero (2026-10-01)
 

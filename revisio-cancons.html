@@ -32,8 +32,16 @@ button:disabled{opacity:.45;cursor:default}
 button.primary{border-color:var(--accent);background:var(--accent);color:var(--on-accent)}
 button.primary:hover:not(:disabled){background:#e2f49a}
 :focus-visible{outline:3px solid var(--accent);outline-offset:2px}
-.row{display:grid;grid-template-columns:minmax(0,1fr);gap:4px;padding:10px 14px;margin-bottom:8px;border:1px solid var(--line);border-left:4px solid transparent;border-radius:var(--radius);background:var(--surface)}
+.row{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:'title ok' 'meta ok';column-gap:12px;row-gap:4px;align-items:center;padding:10px 14px;margin-bottom:8px;border:1px solid var(--line);border-left:4px solid transparent;border-radius:var(--radius);background:var(--surface)}
 .row.changed{border-left-color:var(--terracotta)}
+.row.is-ok{border-left-color:var(--accent);opacity:.75}
+.row.is-leaving{opacity:0;transform:translateX(16px);transition:opacity .25s ease,transform .25s ease}
+.row input[type=text]{grid-area:title}
+.row .meta{grid-area:meta}
+.okbox{grid-area:ok;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;width:56px;min-height:56px;border:1px solid var(--line);border-radius:12px;background:var(--surface-2);cursor:pointer;font-size:.75rem;font-weight:700;color:var(--muted)}
+.okbox input{width:22px;height:22px;margin:0;accent-color:var(--accent);cursor:pointer}
+.okbox:has(input:checked){border-color:var(--accent);color:var(--accent)}
+@media (prefers-reduced-motion:reduce){.row.is-leaving{transition:none}}
 .row input[type=text]{width:100%;font-weight:700}
 .row .meta{font-size:.8125rem;color:var(--muted);overflow-wrap:anywhere}
 .row .meta b{color:var(--text);font-weight:600}
@@ -47,7 +55,7 @@ button.primary:hover:not(:disabled){background:#e2f49a}
     <h1>Revisió de cançons</h1>
     <p class="muted">Totes les cançons publicades a Segueix Música, amb el títol <b>tal com es veu a l'app</b>.</p>
     <ol class="steps">
-        <li>Cerca una cançó o una artista i <b>edita el títol</b> a la caixa. Els canvis es desen sols en aquest navegador.</li>
+        <li>Si el títol ja està bé, marca <b>OK</b>: la cançó desapareix de la llista de pendents. Si no, <b>edita el títol</b> a la caixa. Tot es desa sol en aquest navegador.</li>
         <li>Quan acabis, prem <b>«Descarrega els canvis»</b>: es baixa un fitxer <code>revisio-cancons-AAAA-MM-DD.json</code> només amb les cançons que has editat.</li>
         <li>Passa'm el fitxer i rectificaré els casos necessaris.</li>
     </ol>
@@ -55,13 +63,16 @@ button.primary:hover:not(:disabled){background:#e2f49a}
     <div class="toolbar">
         <input type="search" id="q" placeholder="Cerca per títol o artista…" aria-label="Cerca per títol o artista" autocomplete="off">
         <select id="filter" aria-label="Filtre">
+            <option value="pending">Pendents</option>
             <option value="all">Totes</option>
             <option value="changed">Només editades</option>
+            <option value="ok">Marcades OK</option>
         </select>
         <select id="sort" aria-label="Ordre">
             <option value="title">Ordena per títol</option>
             <option value="artist">Ordena per artista</option>
         </select>
+        <button type="button" id="okPage">Marca aquesta pàgina com a OK</button>
         <button type="button" class="primary" id="download">Descarrega els canvis</button>
         <button type="button" id="reset">Esborra els canvis</button>
     </div>
@@ -81,11 +92,14 @@ button.primary:hover:not(:disabled){background:#e2f49a}
     'use strict';
     const Rev = window.SegueixRevisioCancons;
     const STORAGE_KEY = 'segueix_revisio_cancons_v1';
+    const OK_KEY = 'segueix_revisio_cancons_ok_v1';
     const PAGE_SIZE = 100;
 
     const $ = id => document.getElementById(id);
     let baseRows = [];
     let drafts = {};
+    let okIds = new Set();
+    let visibleIds = [];
     let page = 0;
 
     function loadDrafts() {
@@ -105,7 +119,24 @@ button.primary:hover:not(:disabled){background:#e2f49a}
         }
     }
 
-    const rows = () => Rev.withDrafts(baseRows, drafts);
+    function loadOk() {
+        try {
+            const value = JSON.parse(window.localStorage.getItem(OK_KEY) || '[]');
+            return new Set(Array.isArray(value) ? value.map(String) : []);
+        } catch (error) {
+            return new Set();
+        }
+    }
+
+    function saveOk() {
+        try {
+            window.localStorage.setItem(OK_KEY, JSON.stringify([...okIds]));
+        } catch (error) {
+            /* sense emmagatzematge */
+        }
+    }
+
+    const rows = () => Rev.withDrafts(baseRows, drafts, okIds);
 
     function escapeHtml(value) {
         return String(value ?? '').replace(/[&<>"']/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[ch]);
@@ -113,9 +144,9 @@ button.primary:hover:not(:disabled){background:#e2f49a}
 
     function renderStats() {
         const s = Rev.summarize(rows());
-        $('stats').innerHTML = `<div class="stat"><b>${s.total}</b>cançons</div><div class="stat"><b>${s.changed}</b>editades</div>`;
+        $('stats').innerHTML = `<div class="stat"><b>${s.pending}</b>pendents</div><div class="stat"><b>${s.ok}</b>OK</div><div class="stat"><b>${s.changed}</b>editades</div><div class="stat"><b>${s.total}</b>cançons</div>`;
         $('download').disabled = s.changed === 0;
-        $('reset').disabled = s.changed === 0;
+        $('reset').disabled = s.changed === 0 && s.ok === 0;
     }
 
     function render() {
@@ -124,12 +155,15 @@ button.primary:hover:not(:disabled){background:#e2f49a}
         const pages = Math.max(1, Math.ceil(list.length / PAGE_SIZE));
         page = Math.min(page, pages - 1);
         const slice = list.slice(page * PAGE_SIZE, (page + 1) * PAGE_SIZE);
+        visibleIds = slice.map(row => row.id);
+        $('okPage').disabled = !slice.some(row => !row.ok);
         $('list').innerHTML = slice.length
             ? slice
                   .map(
-                      row => `<div class="row${Rev.isChanged(row) ? ' changed' : ''}" data-id="${escapeHtml(row.id)}">
+                      row => `<div class="row${Rev.isChanged(row) ? ' changed' : ''}${row.ok ? ' is-ok' : ''}" data-id="${escapeHtml(row.id)}">
                 <input type="text" value="${escapeHtml(row.title)}" data-id="${escapeHtml(row.id)}" aria-label="Títol de la cançó de ${escapeHtml(row.artist)}" spellcheck="false">
                 <div class="meta"><b>${escapeHtml(row.artist)}</b>${Rev.isChanged(row) ? ` · abans: ${escapeHtml(row.currentTitle)}` : ''}</div>
+                <label class="okbox"><input type="checkbox" data-ok="${escapeHtml(row.id)}"${row.ok ? ' checked' : ''}>OK</label>
             </div>`
                   )
                   .join('')
@@ -140,6 +174,27 @@ button.primary:hover:not(:disabled){background:#e2f49a}
         $('next').disabled = page >= pages - 1;
         $('status').textContent = list.length === all.length ? '' : `${list.length} de ${all.length} cançons`;
         renderStats();
+    }
+
+    // Marcar OK: amb el filtre «Pendents» la cançó surt de la llista (es torna a pintar la pàgina, que s'omple amb
+    // les següents); amb els altres filtres només canvia de color.
+    function onOk(event) {
+        const box = event.target.closest('input[data-ok]');
+        if (!box) return;
+        const id = box.dataset.ok;
+        if (box.checked) okIds.add(id);
+        else okIds.delete(id);
+        saveOk();
+        const row = box.closest('.row');
+        const leaves =
+            ($('filter').value === 'pending' && box.checked) || ($('filter').value === 'ok' && !box.checked);
+        if (!leaves) {
+            row.classList.toggle('is-ok', box.checked);
+            renderStats();
+            return;
+        }
+        row.classList.add('is-leaving');
+        window.setTimeout(render, window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 250);
     }
 
     function onEdit(event) {
@@ -197,12 +252,21 @@ button.primary:hover:not(:disabled){background:#e2f49a}
             },
         });
         drafts = loadDrafts();
+        okIds = loadOk();
         const known = new Set(baseRows.map(row => row.id));
         Object.keys(drafts).forEach(id => !known.has(id) && delete drafts[id]);
+        okIds.forEach(id => !known.has(id) && okIds.delete(id));
         render();
     }
 
-    $('list').addEventListener('input', onEdit);
+    $('list').addEventListener('input', event => event.target.matches('input[data-id]') && onEdit(event));
+    $('list').addEventListener('change', onOk);
+    $('okPage').addEventListener('click', () => {
+        visibleIds.forEach(id => okIds.add(id));
+        saveOk();
+        render();
+        window.scrollTo({ top: 0 });
+    });
     $('q').addEventListener('input', () => { page = 0; render(); });
     $('filter').addEventListener('change', () => { page = 0; render(); });
     $('sort').addEventListener('change', () => { page = 0; render(); });
@@ -210,8 +274,10 @@ button.primary:hover:not(:disabled){background:#e2f49a}
     $('next').addEventListener('click', () => { page += 1; render(); window.scrollTo({ top: 0 }); });
     $('download').addEventListener('click', download);
     $('reset').addEventListener('click', () => {
-        if (!window.confirm('Esborrar tots els canvis d\'aquest navegador?')) return;
+        if (!window.confirm('Esborrar tots els canvis i les marques OK d\'aquest navegador?')) return;
         drafts = {};
+        okIds = new Set();
+        saveOk();
         saveDrafts();
         render();
     });

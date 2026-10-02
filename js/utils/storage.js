@@ -157,15 +157,8 @@ const BACKGROUND_COLORS = [
 ];
 
 const BUTTON_COLOR_STORAGE_KEY = 'catube_button_color';
-const BUTTON_COLORS = [
-    '#2B302C',
-    '#9B72CF',
-    '#4A90D9',
-    '#2ECC8F',
-    '#D94F8A',
-    '#E8922A',
-    '#4A4A6A'
-];
+// Color dels botons: fix (el de la marca). Ja no es tria a la configuració.
+const BUTTON_COLORS = ['#2B302C'];
 
 const LUCKY_STORAGE_KEY = 'catube_lucky_mode';
 const YOUTUBE_PREMIUM_STORAGE_KEY = 'iutube_is_premium';
@@ -176,11 +169,6 @@ const LUCKY_BG_COLORS = [
     '#333333', '#3d3d3d', '#224262', '#33533d', '#5a3f29', '#513359',
     '#2d2d44', '#3b2a2a', '#1e3a3a', '#3d3422', '#2a3d1e', '#44293d',
     '#1f2d3d', '#3d2d1f', '#2d1f3d', '#1f3d2d', '#3a2222', '#22333a'
-];
-const LUCKY_BTN_COLORS = [
-    '#9B72CF', '#4A90D9', '#2ECC8F', '#D94F8A', '#E8922A', '#4A4A6A',
-    '#E06C75', '#4D8BBE', '#6E9B4F', '#C678DD', '#B07D4D', '#3D949E',
-    '#BE5046', '#5A9EBB', '#8FA83D', '#D05A60', '#CC9A3D', '#5AABB5'
 ];
 
 // Identitat de client local
