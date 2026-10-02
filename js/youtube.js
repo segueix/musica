@@ -156,6 +156,79 @@ const YouTubeAPI = {
         return [channel.name, ...(Array.isArray(channel.artists) ? channel.artists : [])].filter(Boolean);
     },
 
+    // Una sola identitat visual per artista, encara que tingui canal oficial, Topic o altres canals.
+    // Internament conserva tots els channelIds.
+    getArtistGroups(channels = null) {
+        const source = Array.isArray(channels) ? channels : this.getAllChannels();
+        const music = window.SegueixMusicCategories;
+        const normalize = value => String(value || '')
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '')
+            .toLowerCase()
+            .trim();
+
+        const rank = channel => {
+            const meta = music?.artistChannelMeta?.(channel?.id) || {};
+            return (meta.primary ? 1000000 : 0)
+                + (meta.type === 'official' ? 100000 : meta.type === 'topic' ? 0 : 10000)
+                + (channel?.handle ? 1000 : 0)
+                + Math.min(999, Math.log10(Math.max(1, Number(channel?.subscriberCount) || 1)) * 100);
+        };
+
+        const groups = new Map();
+        for (const raw of source) {
+            if (!raw?.id) continue;
+            const channel = this.withDisplayName(raw);
+            const id = String(channel.id);
+            const fallbackName = channel.artists?.[0] || channel.name || channel.title || id;
+            const key = music?.artistKeyForChannel?.(id) || 'n:' + normalize(fallbackName);
+            const displayName =
+                music?.artistDisplayNameForChannel?.(id)
+                || channel.name
+                || channel.title
+                || fallbackName;
+            const existing = groups.get(key);
+            if (!existing) {
+                groups.set(key, {
+                    key,
+                    channel,
+                    rank: rank(channel),
+                    name: displayName,
+                    channelIds: [id],
+                    categories: [...(channel.categories || [])],
+                    artists: [...(channel.artists || [])],
+                });
+                continue;
+            }
+            if (!existing.channelIds.includes(id)) existing.channelIds.push(id);
+            existing.categories = this.normalizeCategories([...(existing.categories || []), ...(channel.categories || [])]);
+            existing.artists = [...new Set([...(existing.artists || []), ...(channel.artists || [])])];
+            const currentRank = rank(channel);
+            if (currentRank > existing.rank) {
+                existing.channel = channel;
+                existing.rank = currentRank;
+            }
+            const canonical = music?.artistDisplayNameForChannel?.(id);
+            if (canonical) existing.name = canonical;
+        }
+
+        return [...groups.values()].map(group => ({
+            ...group.channel,
+            id: String(group.channel.id),
+            name: group.name || group.channel.name || 'Artista',
+            artistKey: group.key,
+            channelIds: group.channelIds,
+            categories: group.categories,
+            artists: group.artists,
+        }));
+    },
+
+    getArtistGroupForChannel(channelId) {
+        const id = String(channelId || '');
+        if (!id) return null;
+        return this.getArtistGroups().find(group => (group.channelIds || [group.id]).some(item => String(item) === id)) || null;
+    },
+
     restoreFeedSnapshot() {
         try {
             const raw = localStorage.getItem(FEED_SNAPSHOT_KEY);
@@ -435,6 +508,16 @@ const YouTubeAPI = {
 
         return Array.from(mergedById.values())
             .sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt));
+    },
+    async getArtistVideosWithHistory(channelId) {
+        const group = this.getArtistGroupForChannel(channelId);
+        const channelIds = group?.channelIds?.length ? group.channelIds : [String(channelId || '')].filter(Boolean);
+        const lists = await Promise.all(channelIds.map(id => this.getChannelVideosWithHistory(id)));
+        const merged = new Map();
+        lists.flat().forEach(video => {
+            if (video?.id) merged.set(String(video.id), video);
+        });
+        return [...merged.values()].sort((a, b) => new Date(b.publishedAt || 0) - new Date(a.publishedAt || 0));
     },
     handleFeedGeneratedAt(feedGeneratedAt) {
         if (!feedGeneratedAt) {
