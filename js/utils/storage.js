@@ -142,6 +142,35 @@ function removeLegacyMusicCategories() {
 
 removeLegacyMusicCategories();
 
+// «Urbana» passa a dir-se «Urban» i va primer: es renomenen les preferències desades i es refà l'ordre dels xips
+// (l'ordre desat es reescriu a cada render, i si no es buidés el nou ordre no arribaria mai).
+function renameUrbanaCategory() {
+    const migrationKey = 'catube_music_urban_v1';
+    try {
+        if (localStorage.getItem(migrationKey) === '1') return;
+        const rename = value => (String(value || '').trim().toLowerCase() === 'urbana' ? 'Urban' : value);
+        if (String(localStorage.getItem(LAST_CATEGORY_STORAGE_KEY) || '').toLowerCase() === 'urbana') {
+            localStorage.setItem(LAST_CATEGORY_STORAGE_KEY, 'Urban');
+        }
+        const firstStyles = JSON.parse(localStorage.getItem('catube_first_styles') || 'null');
+        if (Array.isArray(firstStyles)) {
+            localStorage.setItem('catube_first_styles', JSON.stringify(firstStyles.map(rename)));
+        }
+        const lastRadio = JSON.parse(localStorage.getItem('catube_last_radio') || 'null');
+        if (lastRadio && typeof lastRadio.category === 'string') {
+            lastRadio.category = lastRadio.category.split('|').map(rename).join('|');
+            localStorage.setItem('catube_last_radio', JSON.stringify(lastRadio));
+        }
+        localStorage.removeItem(CHIPS_ORDER_STORAGE_KEY);
+        localStorage.removeItem(CHIPS_HTML_CACHE_KEY);
+        localStorage.setItem(migrationKey, '1');
+    } catch (_) {
+        /* sense emmagatzematge: no hi ha res a migrar */
+    }
+}
+
+renameUrbanaCategory();
+
 // Configuració visual
 const BACKGROUND_STORAGE_KEY = 'catube_background_color';
 const FONT_SIZE_STORAGE_KEY = 'catube_font_size';

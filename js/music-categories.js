@@ -7,14 +7,15 @@
 
     const DATA_URL = 'data/artistes-musica.json';
     const CLASSIC_URL = 'data/musica-classica.json';
+    // Ordre dels estils a tota l'app (xips, files, selectors). «Urban» agrupa el gènere «Urbana» de la base d'artistes.
     const CATEGORY_GROUPS = [
+        { label: 'Urban', genres: ['Urbana'] },
         { label: 'Pop', genres: ['Pop'] },
         { label: 'Rock', genres: ['Rock'] },
+        { label: "Cançó d'autor", genres: ["Cançó d'autor"] },
         { label: 'Indie', genres: ['Indie / Alternativa'] },
-        { label: 'Urbana', genres: ['Urbana'] },
         { label: 'Rap / Hip-hop', genres: ['Rap / Hip-hop'] },
         { label: 'Folk i arrel', genres: ['Folk i arrel'] },
-        { label: "Cançó d'autor", genres: ["Cançó d'autor"] },
         { label: 'Electrònica', genres: ['Electrònica'] },
         { label: 'Ska / Reggae', genres: ['Ska / Reggae'] },
         { label: 'Rumba / Mestissatge', genres: ['Rumba / Mestissatge'] },
@@ -66,6 +67,14 @@
         } catch (error) {
             // Sense la llista simplement no hi ha artistes clàssics (l'edat del vídeo continua comptant)
         }
+    }
+
+    // Noms antics d'una categoria que encara poden venir del feed o de dades desades: «Urbana» ara és «Urban».
+    const CATEGORY_ALIASES = { urbana: 'Urban' };
+
+    function canonicalCategory(value) {
+        const text = String(value || '').trim();
+        return CATEGORY_ALIASES[text.toLowerCase()] || text;
     }
 
     function unique(values) {
@@ -210,7 +219,8 @@
                     ? channel.categories
                     : channel.category
                       ? [channel.category]
-                      : []),
+                      : []
+                ).map(canonicalCategory),
                 ...categoriesForChannel(id),
             ]),
         };
@@ -252,7 +262,9 @@
         return {
             ...video,
             categories: unique([
-                ...(Array.isArray(video.categories) ? video.categories : video.category ? [video.category] : []),
+                ...(Array.isArray(video.categories) ? video.categories : video.category ? [video.category] : []).map(
+                    canonicalCategory
+                ),
                 ...categoriesForChannel(video.channelId || video.sourceChannelId || video.snippet?.channelId),
             ]),
         };
@@ -260,6 +272,7 @@
 
     return {
         CATEGORY_GROUPS,
+        canonicalCategory,
         init,
         isReady: () => ready,
         categoriesForChannel,

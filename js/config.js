@@ -56,13 +56,13 @@ const CONFIG = {
     
     // Categories personalitzades
     categories: [
+        { id: "urbana", name: "Urban", icon: "audio-waveform" },
         { id: "pop", name: "Pop", icon: "music" },
         { id: "rock", name: "Rock", icon: "guitar" },
+        { id: "canco-autor", name: "Cançó d'autor", icon: "pen-line" },
         { id: "indie", name: "Indie", icon: "sparkles" },
-        { id: "urbana", name: "Urbana", icon: "audio-waveform" },
         { id: "rap-hip-hop", name: "Rap / Hip-hop", icon: "mic-2" },
         { id: "folk-arrel", name: "Folk i arrel", icon: "trees" },
-        { id: "canco-autor", name: "Cançó d'autor", icon: "pen-line" },
         { id: "electronica", name: "Electrònica", icon: "radio" },
         { id: "ska-reggae", name: "Ska / Reggae", icon: "waves" },
         { id: "rumba-mestissatge", name: "Rumba / Mestissatge", icon: "drum" },

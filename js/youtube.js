@@ -400,12 +400,14 @@ const YouTubeAPI = {
     // Normalitzar categories (minúscules, sense espais extra)
     normalizeCategories(categories) {
         if (!categories) return [];
+        // Noms antics («Urbana» → «Urban») abans de passar-los a minúscules
+        const canonical = c => (window.SegueixMusicCategories?.canonicalCategory?.(c) ?? String(c)).trim().toLowerCase();
         if (typeof categories === 'string') {
             // Si és un string, separar per ;
-            return categories.split(';').map(c => c.trim().toLowerCase()).filter(c => c);
+            return categories.split(';').map(canonical).filter(c => c);
         }
         if (Array.isArray(categories)) {
-            return categories.map(c => c.trim().toLowerCase()).filter(c => c);
+            return categories.map(canonical).filter(c => c);
         }
         return [];
     },

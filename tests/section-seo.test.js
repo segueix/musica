@@ -86,7 +86,7 @@ describe('seccions SEO', () => {
     expect(indexSource).toContain('class="seo-footer-nav"');
     // L'app es publica a segueix.github.io/musica/: el peu enllaça dins l'app (rutes relatives), sense Novetats ni
     // Música TV (no existeixen com a pàgina).
-    for (const href of ['./?seccio=artistes', './?estil=Pop', './?estil=Rock', './?estil=Indie', './?estil=Urbana']) {
+    for (const href of ['./?seccio=artistes', './?estil=Pop', './?estil=Rock', './?estil=Indie', './?estil=Urban']) {
       expect(indexSource).toContain(`href="${href}"`);
     }
     const footer = indexSource.slice(indexSource.indexOf('class="seo-footer-nav"'), indexSource.indexOf('</nav>', indexSource.indexOf('class="seo-footer-nav"')));

@@ -36,7 +36,7 @@
         pop: 'Pop',
         rock: 'Rock',
         indie: 'Indie',
-        urbana: 'Urbana',
+        urbana: 'Urban',
         rap_hiphop: 'Rap / Hip-hop',
         folk_arrel: 'Folk i arrel',
         canco_autor: "Cançó d'autor",
