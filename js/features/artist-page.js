@@ -13,8 +13,17 @@
     // Una combinació de tres estils ja és una barreja prou àmplia; més la diluiria.
     const MAX_STYLES = 3;
     const MIN_SONGS = 2;
+    const ALBUMS_URL = 'data/albums-musica.json';
+    const OTHER_ALBUM_ID = '__other';
 
     const text = value => String(value ?? '').trim();
+    const escapeHtml = value =>
+        String(value ?? '')
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#039;');
 
     // Estils de l'artista per a la ràdio d'estil: el principal (base d'artistes) primer, sense repetits ni vistes
     // generals, com a màxim MAX_STYLES. `labels`: noms canònics de les categories (el feed els pot dur en minúscules).
@@ -70,6 +79,27 @@
         };
     }
 
+    // Discos visibles en aquesta fitxa. El catàleg es carrega només en obrir un artista.
+    // Un mateix disc pot tenir pistes Topic i videoclips oficials; només compten els IDs que existeixen a la fitxa.
+    function albumsModel(catalog, { channelId = '', videos = [] } = {}) {
+        const id = text(channelId);
+        const artist = text(catalog?.channels?.[id]);
+        const entry = artist ? catalog?.artists?.[artist] : null;
+        const songs = songsOf(videos);
+        const songIds = new Set(songs.map(video => String(video.id)));
+        const albums = (Array.isArray(entry?.albums) ? entry.albums : [])
+            .map(album => ({
+                ...album,
+                visibleTrackIds: (Array.isArray(album?.trackIds) ? album.trackIds : [])
+                    .map(String)
+                    .filter(trackId => songIds.has(trackId)),
+            }))
+            .filter(album => album.visibleTrackIds.length > 0);
+        const assigned = new Set(albums.flatMap(album => album.visibleTrackIds));
+        const otherIds = songs.map(video => String(video.id)).filter(videoId => !assigned.has(videoId));
+        return { artist, albums, otherIds, hasAlbums: albums.length > 0 };
+    }
+
     // Presentació: el text net (en conserva els salts de línia, però no més d'un de buit seguit).
     function bioModel(description) {
         const clean = text(description)
@@ -80,8 +110,18 @@
 
     // ---------- DOM ----------
 
-    const state = { channelId: '', name: '', styles: [], songs: [], loading: false, program: false };
+    const state = {
+        channelId: '',
+        name: '',
+        styles: [],
+        songs: [],
+        loading: false,
+        program: false,
+        albums: { artist: '', albums: [], otherIds: [], hasAlbums: false },
+        selectedAlbumId: '',
+    };
     let bound = false;
+    let albumsPromise = null;
 
     const $ = id => window.document?.getElementById?.(id) || null;
 
@@ -89,6 +129,113 @@
         const fn = app.features.shellNav?.toast;
         if (typeof fn === 'function') fn(message);
     }
+
+    function hideAlbums() {
+        const section = $('apAlbums');
+        if (section) section.hidden = true;
+        const grid = $('apAlbumsGrid');
+        if (grid) grid.innerHTML = '';
+        state.albums = { artist: '', albums: [], otherIds: [], hasAlbums: false };
+        state.selectedAlbumId = '';
+    }
+
+    async function loadAlbumsCatalog() {
+        if (albumsPromise) return albumsPromise;
+        albumsPromise = (async () => {
+            try {
+                const url = typeof window.appDataUrl === 'function' ? window.appDataUrl(ALBUMS_URL) : ALBUMS_URL;
+                const response = await window.fetch(url, { cache: 'no-store' });
+                if (!response.ok) return null;
+                return await response.json();
+            } catch (error) {
+                console.warn('Discos no disponibles:', error);
+                return null;
+            }
+        })();
+        return albumsPromise;
+    }
+
+    function albumCover(videoId) {
+        return videoId ? `https://i.ytimg.com/vi/${encodeURIComponent(videoId)}/hqdefault.jpg` : '';
+    }
+
+    function renderAlbums() {
+        const section = $('apAlbums');
+        const grid = $('apAlbumsGrid');
+        const all = $('apAlbumsAll');
+        if (!section || !grid || state.program || !state.albums.hasAlbums) {
+            if (section) section.hidden = true;
+            return;
+        }
+
+        const selected = state.selectedAlbumId;
+        if (all) all.classList.toggle('is-active', !selected);
+        grid.innerHTML = [
+            ...state.albums.albums.map(album => {
+                const count = album.visibleTrackIds.length;
+                const meta = [album.year || '', `${count} ${count === 1 ? 'cançó' : 'cançons'}`].filter(Boolean).join(' · ');
+                return `
+                    <button class="ap-album-card ${selected === album.id ? 'is-active' : ''}" type="button"
+                        data-ap-album="${escapeHtml(album.id)}" aria-pressed="${selected === album.id}">
+                        <img class="ap-album-cover" src="${albumCover(album.coverVideoId)}"
+                            alt="Caràtula de ${escapeHtml(album.title)}" loading="lazy">
+                        <span class="ap-album-title">${escapeHtml(album.title)}</span>
+                        <span class="ap-album-meta">${escapeHtml(meta)}</span>
+                    </button>`;
+            }),
+            state.albums.otherIds.length
+                ? `<button class="ap-album-card ap-album-card--other ${selected === OTHER_ALBUM_ID ? 'is-active' : ''}"
+                        type="button" data-ap-album="${OTHER_ALBUM_ID}" aria-pressed="${selected === OTHER_ALBUM_ID}">
+                        <span class="ap-album-other-icon" aria-hidden="true">♪</span>
+                        <span class="ap-album-title">Singles i altres</span>
+                        <span class="ap-album-meta">${state.albums.otherIds.length} cançons</span>
+                   </button>`
+                : '',
+        ].join('');
+        section.hidden = false;
+    }
+
+    async function loadAndRenderAlbums(channelId, videos) {
+        if (state.program) return hideAlbums();
+        const expected = text(channelId);
+        const catalog = await loadAlbumsCatalog();
+        if (expected !== state.channelId) return;
+        state.albums = albumsModel(catalog, { channelId: expected, videos });
+        state.selectedAlbumId = '';
+        renderAlbums();
+    }
+
+    function selectAlbum(albumId = '') {
+        const next = text(albumId);
+        const valid =
+            !next ||
+            next === OTHER_ALBUM_ID ||
+            state.albums.albums.some(album => String(album.id) === next);
+        if (!valid) return false;
+        state.selectedAlbumId = next;
+        renderAlbums();
+        const query =
+            text($('channelSearchInputDesktop')?.value) ||
+            text($('channelSearchInputMobile')?.value);
+        if (typeof window.renderChannelVideos === 'function') window.renderChannelVideos(query);
+        return true;
+    }
+
+    function filterSongs(videos, channelId = '') {
+        const list = Array.isArray(videos) ? videos : [];
+        if (channelId && text(channelId) !== state.channelId) return list;
+        const selected = state.selectedAlbumId;
+        if (!selected) return list;
+        const ids =
+            selected === OTHER_ALBUM_ID
+                ? new Set(state.albums.otherIds)
+                : new Set(
+                      state.albums.albums.find(album => String(album.id) === selected)?.visibleTrackIds || []
+                  );
+        return list.filter(video => ids.has(String(video?.id || '')));
+    }
+
+    const isAlbumFilterActive = () => Boolean(state.selectedAlbumId);
 
     function renderRadios() {
         const wrap = $('apRadios');
@@ -154,6 +301,7 @@
         state.program = Boolean(program);
         state.songs = [];
         state.loading = true;
+        hideAlbums();
         const music = window.SegueixMusicCategories;
         state.styles = artistStyles({
             categories: [...(music?.categoriesForChannel?.(state.channelId) || []), ...categories],
@@ -171,6 +319,7 @@
         state.songs = songsOf(videos);
         state.loading = false;
         renderRadios();
+        void loadAndRenderAlbums(state.channelId, state.songs);
     }
 
     function startArtistRadio() {
@@ -194,6 +343,8 @@
         if (radio && !radio.disabled) {
             return radio.dataset.apRadio === 'style' ? startStyleRadio() : startArtistRadio();
         }
+        const album = target?.closest?.('[data-ap-album]');
+        if (album) return selectAlbum(album.dataset.apAlbum || '');
         if (target?.closest?.('#apBioToggle')) return toggleBio();
         return undefined;
     }
@@ -212,8 +363,12 @@
         songsOf,
         radiosModel,
         bioModel,
+        albumsModel,
         showProfile,
         setSongs,
+        selectAlbum,
+        filterSongs,
+        isAlbumFilterActive,
         startArtistRadio,
         startStyleRadio,
         measureBio,
