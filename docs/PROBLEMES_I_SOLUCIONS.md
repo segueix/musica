@@ -13,6 +13,24 @@
 
 **Fitxers Afectats:**
 
+## [2026-10-02] - Mode conducció: pantalla negra sense distraccions
+**Símptoma:** al mòbil, mentre es condueix, la pantalla s'apaga (i sense YouTube Premium la música s'atura) o es queda encesa amb tota l'app, que distreu i gasta bateria.
+
+**Causa Arrel:** no hi havia cap vista mínima, i l'app no evitava que la pantalla s'apagués.
+
+**Solució Implementada:** `js/features/drive-mode.js` i el bloc «Mode conducció» de `css/portada.css`. El botó `#driveModeBtn` (només ≤ 1024 px) posa `body.drive-mode`:
+- fons negre pur (a les pantalles OLED no gasta) i, a dalt, només el reproductor de YouTube, a 16:9 i com a mínim 200 px d'ample;
+- un sol botó, «Tanca el mode conducció»;
+- `navigator.wakeLock.request('screen')`, que es torna a demanar a `visibilitychange`, i pantalla completa si el navegador ho permet.
+
+**Trampes:**
+- Tot és CSS: `visibility: hidden` a tot el `body` menys el reproductor, que passa a `fixed`. Moure l'iframe al DOM faria que YouTube el recarregués, i tapar-lo incompliria les normes de YouTube (el reproductor ha de ser visible).
+- La lluentor no es pot controlar des d'una web.
+- A l'iPhone, el Wake Lock dins l'app instal·lada (PWA) demana iOS 18.4 o posterior, i no hi ha pantalla completa per a pàgines.
+- Comprovat amb Chromium i el succedani d'embed: `tests/browser/verificar-mode-conduccio.js`.
+
+**Fitxers Afectats:** `js/features/drive-mode.js` (nou), `js/app.js` (botó), `index.html`, `css/portada.css`, `sw.js`, `tests/browser/verificar-mode-conduccio.js`, `CLAUDE.md`.
+
 ## [2026-10-02] - Revisió d'idioma de les cançons noves amb un LLM
 **Símptoma:** cada vegada que entraven cançons noves (de canals Tema, pàgines profundes o novetats) calia repassar tot el feed per trobar-hi les que no són en català. Els detectors automàtics per títol fallen: «Tu», «Nada», «Loca», «Ara», «Corren» poden ser de qualsevol llengua, i l'idioma declarat a YouTube no és fiable.
 

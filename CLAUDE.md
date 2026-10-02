@@ -367,6 +367,11 @@ const likes = ctx2.SegueixApp.features.likes;
 
 - El peu (`.seo-footer-nav`) només porta **Artistes, Urban, Pop, Rock, Cançó d'autor, Indie i Folk i arrel**, amb rutes relatives dins l'app (`./?seccio=artistes`, `./?estil=Pop`…): l'app és a `segueix.github.io/musica/` i les rutes absolutes antigues (`/pop`, `/novetats`, `/musica-tv`…, funcions de segueix.cat) hi donaven 404. `shell-nav.js` intercepta el clic (`data-pt-style` → `openStyle()`, que clica el xip de l'estil; `data-pt-nav="artists"`) i, en obrir la URL directament, `openFromUrl()` hi porta quan els xips són a punt. No hi tornis a posar Novetats ni Música TV.
 
+### Mode conducció (2026-10-02)
+
+- Botó `#driveModeBtn` sota el reproductor (només ≤ 1024 px): `js/features/drive-mode.js` (patró 2, després de `system-player.js`) posa `body.drive-mode`: **pantalla negra amb només el reproductor de YouTube a dalt** (16:9, mínim 200 px d'ample, mida que demana YouTube) i **un sol botó, «Tanca el mode conducció»** (`#driveModeExit`). Cap altra informació ni control, per no distreure qui condueix. La pantalla no s'apaga (Screen Wake Lock, es torna a demanar en tornar a la pàgina), i es posa a pantalla completa si el navegador ho permet (a l'iPhone no).
+- **No es tapa ni es mou el reproductor:** tot és CSS (`body.drive-mode *` amb `visibility: hidden` i el reproductor `fixed`, bloc «Mode conducció» al final de `portada.css`). Moure'l al DOM el faria recarregar, i tapar-lo incompliria les normes de YouTube. No hi posis títols, caràtules ni més botons. Verificació opt-in: `node tests/browser/verificar-mode-conduccio.js`.
+
 ### Controls del sistema i finestra flotant del sistema (2026-10-02)
 
 - `js/features/system-player.js` (patró 2, després de `music-queue.js`) porta **tota la Media Session** (music-queue només hi delega amb `systemPlayer.update()`): títol, artista, ràdio (`musicQueue.playlistName()` si és una ràdio) i caràtules, `playbackState` (1 o 3 = sona), `setPositionState` amb la durada de la cançó, i les accions play / pausa / atura / endavant-enrere 10 s / saltar; **anterior i següent només si la cua en té** (sense gestor, el sistema amaga el botó). Es posa al dia amb un `MutationObserver` de `#videoPlayer` (`data-player-state`, `data-playing-video-id`) i, cada 5 s, amb els avisos del reproductor.

@@ -1911,6 +1911,13 @@ function buildWatchChannelInfoHtml(channel, avatar, watchUrl, video) {
                     <button class="btn-round-icon" id="miniPlayerToggle" type="button" title="Mini reproductor" aria-label="Mini reproductor">
                         ${MINI_PLAYER_ICON_SVG}
                     </button>
+                    <button class="btn-round-icon btn-drive-mode" id="driveModeBtn" type="button" title="Mode conducció" aria-label="Mode conducció">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                            <circle cx="12" cy="12" r="9"></circle>
+                            <circle cx="12" cy="12" r="2"></circle>
+                            <path d="M3.5 10.5 10 12M14 12l6.5-1.5M12 14v7"></path>
+                        </svg>
+                    </button>
                 </div>
             </div>
         </div>
