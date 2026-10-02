@@ -17,7 +17,7 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: music-data-writer
+  group: feed-slimmer
   cancel-in-progress: false
 
 jobs:
