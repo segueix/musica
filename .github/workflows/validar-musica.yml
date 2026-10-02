@@ -55,8 +55,14 @@ jobs:
       - name: Test normalització de gèneres
         run: npx vitest run tests/music-genres.test.js
 
-      - name: Comprova sintaxi del generador de feed
-        run: node --check scripts/update_music_feed.js
+      - name: Comprova sintaxi dels generadors
+        run: |
+          node --check scripts/update_music_feed.js
+          node --check scripts/archivar_feed_musical.js
+          node --check scripts/update_music_history_views.js
+
+      - name: Prova feed calent i historial
+        run: npx vitest run tests/arxiu-musical.test.js
 
       - name: Valida la base d'artistes
         run: node scripts/validar_artistes_musica.js
