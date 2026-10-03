@@ -366,9 +366,11 @@ async function main(){
   }
   // ---------- Mana el canal Tema (scripts/lib/canal_tema.js) ----------
   const namesOfChannel=id=>{
-    const meta=indexed.get(id);
-    const raw=channelDetails.get(id)?.snippet?.title||'';
-    return unique([...meta.artistNames,...meta.aliases,raw,cleanChannelDisplayName(raw)]);
+    // En targetMode, `videos` conserva canals antics que no formen part d'`indexed`.
+    // La identitat editorial ha de sortir sempre de la base completa per no fallar en filtres globals.
+    const meta=allIndexed.get(id);
+    const raw=channelDetails.get(id)?.snippet?.title||previousFeed.channels?.[id]?.name||'';
+    return unique([...(meta?.artistNames||[]),...(meta?.aliases||[]),raw,cleanChannelDisplayName(raw)]);
   };
   // Discografia de cada artista (claus de cançó) a partir dels seus Tema.
   const topicCatalog=targetMode ? {...previousTopicCatalog} : {};
@@ -690,7 +692,7 @@ async function main(){
   }
 
   applyFalseShortsOverrides(videos);
-  const artistsOfChannel=id=>indexed.get(id)?.artistNames||[];
+  const artistsOfChannel=id=>allIndexed.get(id)?.artistNames||[];
   // Shorts: només conservem els que es poden vincular inequívocament a una cançó de la discografia
   // validada del mateix artista (canal Tema). Això evita entrevistes, promos i fragments parlats en altres llengües.
   // Els Shorts del mateix canal Tema ja són la cançó publicada i també han de coincidir amb el seu catàleg.
