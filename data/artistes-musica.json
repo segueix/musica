@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-03T19:31:00.000Z",
+  "updatedAt": "2026-10-03T19:40:00.000Z",
   "artists": [
     {
       "name": "31 FAM",
@@ -3636,6 +3636,41 @@
       "genresRaw": [
         "Pop / indie"
       ]
+    },
+    {
+      "name": "Desperta Ferro",
+      "aliases": [],
+      "genres": [
+        "Punk"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCtad7HKeiW-TwPgX-ZIOGZw",
+            "handle": null,
+            "name": "Desperta Ferro - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-03",
+        "genre:manual",
+        "youtube:manual-verified",
+        "https://www.youtube.com/channel/UCtad7HKeiW-TwPgX-ZIOGZw"
+      ],
+      "lastChecked": "2026-10-03T19:40:00.000Z",
+      "notes": "Canal Topic verificat manualment; gènere Punk."
     },
     {
       "name": "Doctor Prats",
@@ -14929,6 +14964,41 @@
       ]
     },
     {
+      "name": "Opció K-95",
+      "aliases": [],
+      "genres": [
+        "Punk"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCCBTyMmUoeGrciYMzrwWiUw",
+            "handle": null,
+            "name": "Opció K-95 - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-03",
+        "genre:manual",
+        "youtube:manual-verified",
+        "https://www.youtube.com/channel/UCCBTyMmUoeGrciYMzrwWiUw"
+      ],
+      "lastChecked": "2026-10-03T19:40:00.000Z",
+      "notes": "Canal Topic verificat manualment; gènere Punk."
+    },
+    {
       "name": "Oques Grasses",
       "aliases": [],
       "genres": [
@@ -16810,31 +16880,28 @@
       "youtube": {
         "channels": [
           {
-            "id": "UCfMqjIyA0G1cVGNlFXXoJhA",
-            "handle": null,
-            "name": null,
-            "type": "official",
-            "primary": true
-          },
-          {
             "id": "UCcCicDkn0YDxOeir49bCwPQ",
             "handle": null,
             "name": "Pilseners - Topic",
             "type": "topic",
-            "primary": false
+            "primary": true
           }
         ]
       },
       "confidence": "alta",
-      "reviewStatus": "pendent",
-      "active": false,
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
         "https://www.wikidata.org/wiki/Q20104364",
         "wikidata:performed-catalan-work",
-        "manual-user-2026-10-02"
+        "manual-user-2026-10-02",
+        "manual-user-2026-10-03",
+        "genre:manual",
+        "youtube:manual-verified",
+        "https://www.youtube.com/channel/UCcCicDkn0YDxOeir49bCwPQ"
       ],
-      "lastChecked": "2026-09-28T10:52:13.914Z",
-      "notes": "",
+      "lastChecked": "2026-10-03T19:40:00.000Z",
+      "notes": "Canal Topic verificat manualment; gènere Punk.",
       "genresRaw": [
         "oi!",
         "street punk"
