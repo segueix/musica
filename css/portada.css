@@ -5115,3 +5115,28 @@ body:has(#playerExternalControls.is-floating.is-above:not([hidden])) #videoPlaye
         padding-top: 0;
     }
 }
+
+/* ---------- Contorns verd fluorescent i espai de l'artista ---------- */
+:root {
+    --pt-icon-border: #b8ff38;
+}
+
+body #watchPage .video-info-modern {
+    padding-top: 10px;
+}
+
+body #watchPage .video-info-modern .video-metadata-bar {
+    border-top: 0;
+}
+
+/* Classes compartides: controls del reproductor (també flotant), ràdios, llistes i navegació.
+   Els controls desactivats conserven la seva opacitat i el focus de teclat continua visible. */
+body :is(.icon-btn, .icon-btn-ghost, .btn-round-icon, .btn-heart, .player-external-btn,
+    .mq-add-style, .mq-shuffle, .mq-save-list, .mq-share, .hp-share),
+body .app-header .icon-btn,
+body #channelPage :is(.channel-profile-hide-btn, .channel-profile-share-btn).btn-round-icon,
+body .mq :is(.mq-add-style, .mq-shuffle, .mq-save-list, .mq-share, .mq-open-ytm),
+body #watchPage .video-info-modern :is(.btn-round-icon, .btn-heart, .btn-pill-red,
+    #playlistBtn, #shareBtn, #miniPlayerToggle) {
+    border: 1.5px solid var(--pt-icon-border);
+}
