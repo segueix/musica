@@ -40,6 +40,7 @@ describe('llista blanca de vídeos per canal', () => {
             UCknockout: {
               allowedTitleContains: ['KnockOut'],
               acceptedMusicOnly: true,
+              allowedContentTypes: ['song', 'live_song'],
               avatarFromFirstAllowedVideo: true
             }
           }
@@ -51,6 +52,8 @@ describe('llista blanca de vídeos per canal', () => {
     expect(isChannelVideoAllowed(rules, 'UCknockout', 'Knock-Out - Directe')).toBe(true);
     expect(isChannelVideoAllowed(rules, 'UCknockout', 'Un altre grup - Cançó')).toBe(false);
     expect(rules.get('UCknockout')?.acceptedMusicOnly).toBe(true);
+    expect(rules.get('UCknockout')?.allowedContentTypes.has('song')).toBe(true);
+    expect(rules.get('UCknockout')?.allowedContentTypes.has('album')).toBe(false);
     expect(rules.get('UCknockout')?.avatarFromFirstAllowedVideo).toBe(true);
   });
 });
