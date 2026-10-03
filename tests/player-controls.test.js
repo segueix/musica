@@ -102,8 +102,10 @@ describe('reproducció visible i sense segon pla', () => {
         expect(app).toContain('isMiniPlayerActive: isPersistentPlayerActive');
     });
 
-    it('quan la pestanya queda amagada es pausa YouTube i es tanca la finestra del sistema', () => {
+    it('quan la pestanya queda amagada es pausa YouTube, es tanca la finestra del sistema i no avança sola', () => {
         expect(app).toMatch(/visibilitychange[\s\S]*?visibilityState === 'hidden'[\s\S]*?pauseMainPlayer\(\)[\s\S]*?systemPlayer\?\.closePip\?\.\(\)/);
+        expect(fn(app, 'loadVideoInSequence')).toContain("autoPlay && document.visibilityState !== 'hidden'");
+        expect(fn(app, 'handlePlaylistVideoEnded')).toContain("document.visibilityState === 'hidden'");
     });
 });
 
