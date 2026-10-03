@@ -22,15 +22,6 @@
 
 **Fitxers Afectats:**
 
-## [2026-10-03] - Fila de botons de la fitxa de la cançó tallada per la navegació inferior (mòbil)
-**Símptoma:** al mòbil, a la fitxa de la cançó, la fila de botons (afegir a llista, compartir, finestra flotant, comentar, «Canal YouTube») quedava a mitges sota la navegació inferior: calia desplaçar per veure-la sencera.
-
-**Causa Arrel:** el reproductor és quadrat i ocupa tot l'ample (`#watchPage .video-placeholder { aspect-ratio: 1 / 1; width: 100% }`), de manera que a 360 px d'ample fa 328 px d'alçada. Sumant-hi la barra de controls, el mode de llista, el títol i el canal, la fila de botons acabava uns 700 px avall; en un mòbil amb la zona del sistema (la pantalla útil és més baixa, uns 740 px) quedava per sota de la navegació.
-
-**Solució Implementada:** el costat del quadrat depèn de l'alçada lliure: `min(100%, max(200px, 100svh − --header-height − --pt-nav-h − --safe-bottom − 336px))` (amb `100vh` d'alternativa), centrat amb `margin: 0 auto`. En una pantalla de 360×738 el quadrat passa de 328 a 273 px i la fila acaba 18 px per sobre de la navegació; en pantalles altes no canvia res (el límit és l'ample). El mínim de 200 px compleix el que demana YouTube. Per a alçades ≤ 680 px es compacten els controls de sota (46/54 px, marges menors). El forat mana: `updatePlayerPosition()` posa el reproductor damunt, així que no s'ha tocat cap JS.
-
-**Fitxers Afectats:** `css/portada.css`, `tests/portada-assets.test.js`, `tests/browser/verificar-reproductor-mobil.js`, `tests/browser/README.md`.
-
 ## [2026-10-03] - Plegar la navegació lateral: la barra plegada ocupava l'espai i el contingut sortia desplaçat
 **Símptoma:** el control per plegar la barra (una fletxa ‹ › penjada a la vora de la barra) no plegava res de debò: amb la barra «plegada» quedava una columna buida de 236 px, el contingut no s'estenia, i amb la barra oberta el contingut sortia 240 px desplaçat a la dreta.
 
