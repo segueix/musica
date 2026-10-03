@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-03T19:25:00.000Z",
+  "updatedAt": "2026-10-03T19:30:00.000Z",
   "artists": [
     {
       "name": "31 FAM",
@@ -14006,7 +14006,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UC3bvpTw40rgvnsZA1wCZeIQ",
+            "handle": null,
+            "name": "Motoclus - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UCgg2wHcSDSbnKKZFNTaOvmQ",
@@ -14132,15 +14140,17 @@
           }
         ]
       },
-      "confidence": "pendent",
-      "reviewStatus": "pendent",
-      "active": false,
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
         "manual-user-2026-10-03",
-        "genre:manual"
+        "genre:manual",
+        "youtube:manual-verified",
+        "https://www.youtube.com/channel/UC3bvpTw40rgvnsZA1wCZeIQ"
       ],
-      "lastChecked": "2026-10-03T19:10:00.000Z",
-      "notes": "No s'ha trobat cap canal «Motoclus - Topic» fiable. La cerca explícita retorna «Motoclub - Topic» i canals no relacionats; no s'accepta cap candidat per evitar un fals positiu.",
+      "lastChecked": "2026-10-03T19:30:00.000Z",
+      "notes": "Canal Topic verificat manualment per l'usuari: UC3bvpTw40rgvnsZA1wCZeIQ. Gènere Rock.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-03T19:22:10.942Z",
