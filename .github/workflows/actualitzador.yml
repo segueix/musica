@@ -1,6 +1,9 @@
 name: Actualitzador feed musical (manual)
 
 on:
+  push:
+    paths:
+      - ".github/workflows/actualitzador.yml"
   workflow_dispatch:
 
 concurrency:
