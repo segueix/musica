@@ -78,6 +78,7 @@ describe('integració al pipeline', () => {
         const validationWorkflow = read('.github/workflows/validar-musica.yml');
         expect(updateWorkflow).toMatch(/cron: "\d+ \d+ \* \* \*"/);
         expect(updateWorkflow).toContain('"Validar base musical"');
+        expect(updateWorkflow).toContain('scripts/lib/subtitols_castella.js');
         expect(updateWorkflow).toContain('tests/subtitols-castella.test.js');
         expect(validationWorkflow).toContain('scripts/lib/subtitols_castella.js');
         expect(validationWorkflow).toContain('tests/subtitols-castella.test.js');
