@@ -1,6 +1,12 @@
 name: Actualitzar feed musical
 
 on:
+  push:
+    branches:
+      - main
+    paths:
+      - "scripts/lib/subtitols_castella.js"
+      - "tests/subtitols-castella.test.js"
   workflow_run:
     workflows:
       - "Validar base musical"
