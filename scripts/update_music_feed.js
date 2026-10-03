@@ -673,6 +673,28 @@ async function main(){
   }
 
   applyFalseShortsOverrides(videos);
+  // Shorts: només conservem els que es poden vincular inequívocament a una cançó de la discografia
+  // validada del mateix artista (canal Tema). Això evita entrevistes, promos i fragments parlats en altres llengües.
+  // Els Shorts del mateix canal Tema ja són la cançó publicada i també han de coincidir amb el seu catàleg.
+  let shortBeforeCatalogFilter=0;
+  let shortCatalogMatched=0;
+  let shortCatalogRejected=0;
+  for(let i=videos.length-1;i>=0;i--){
+    const video=videos[i];
+    if(video?.isShort!==true) continue;
+    shortBeforeCatalogFilter++;
+    const artists=artistsOfChannel(video.channelId);
+    const catalogKeys=new Set(artists.flatMap(name=>[...(topicKeysByArtist.get(name)||[])]));
+    const matched=catalogKeys.size>0 && Boolean(tema.matchedKey(video.title,namesOfChannel(video.channelId),catalogKeys));
+    if(matched){
+      shortCatalogMatched++;
+      continue;
+    }
+    videos.splice(i,1);
+    shortCatalogRejected++;
+  }
+  console.log(`📱 Shorts vinculats a cançons validades: ${shortCatalogMatched}/${shortBeforeCatalogFilter}; descartats: ${shortCatalogRejected}`);
+
   // Vídeos ocults manualment (p. ex. cançons amb títol en castellà): no entren al feed
   const hiddenIds=loadHiddenVideoIds();
   // Una cançó amagada al canal propi d'un artista (castellà...) tampoc no entra des del seu Tema: ni la que
@@ -731,6 +753,7 @@ async function main(){
   review.sort((a,b)=>(Date.parse(b.publishedAt||'')||0)-(Date.parse(a.publishedAt||'')||0));
   channelIndex.sort((a,b)=>a.name.localeCompare(b.name,'ca',{sensitivity:'base'}));
   const shortVideoCount=videos.filter(v=>v.isShort===true).length;
+  const shortCatalogFilter={before:shortBeforeCatalogFilter,matched:shortCatalogMatched,rejected:shortCatalogRejected};
   const generatedAt=new Date().toISOString();
 
   const mergedTopicCoverage=targetMode
@@ -770,6 +793,7 @@ async function main(){
     acceptedMusicCount,
     categoryEligibleVideoCount,
     shortVideoCount,
+    shortCatalogFilter,
     rejectedOrReviewCount:publicVideoCount-acceptedMusicCount,
     reviewCount:review.length,
     typeCounts,
@@ -807,6 +831,7 @@ async function main(){
     acceptedMusicCount,
     categoryEligibleVideoCount,
     shortVideoCount,
+    shortCatalogFilter,
     contentReviewCount:review.length,
     contentTypeCounts:typeCounts,
     unresolvedChannelIds:unresolved,
