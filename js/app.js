@@ -8965,9 +8965,9 @@ function loadVideoInSequence({ autoPlay = true } = {}) {
     // No fem aquest encadenat per mantenir àudio quan la pestanya és amagada o Chrome està minimitzat.
     const keepLivePlayer = video.source !== 'static' && isTVPlaybackMode() && canSwapLivePlayerVideo();
     lastTVAdvanceAt = Date.now();
-    // Per defecte les cues continuen amb autoplay. Algunes entrades (TV de categoria
-    // i Segueix TV des del xip) poden demanar que només el primer vídeo quedi en pausa.
-    isAutoPlayNavigating = autoPlay;
+    // Per defecte les cues continuen amb autoplay només mentre la pàgina és visible.
+    // Si queda amagada/minimitzada, qualsevol canvi de cua es prepara en pausa.
+    isAutoPlayNavigating = Boolean(autoPlay && document.visibilityState !== 'hidden');
     updatePlaylistModeBadge();
     syncQueueNextOverlay();
     isPlaylistNavigation = true;
@@ -8985,6 +8985,11 @@ function loadVideoInSequence({ autoPlay = true } = {}) {
 }
 
 function handlePlaylistVideoEnded() {
+    // No avancem automàticament la cua amb la pestanya amagada: evita reactivar
+    // reproducció en segon pla després d'un ended que arribi tard.
+    if (document.visibilityState === 'hidden') {
+        return;
+    }
     if (!isPlaylistMode || activePlaylistQueue.length === 0) {
         return;
     }
