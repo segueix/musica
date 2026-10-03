@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-03T19:40:00.000Z",
+  "updatedAt": "2026-10-03T20:15:00.000Z",
   "artists": [
     {
       "name": "31 FAM",
@@ -7090,7 +7090,9 @@
     {
       "name": "Guillermina Motta",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Cançó d'autor"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -7098,7 +7100,15 @@
       "wikidataId": "Q9001292",
       "musicbrainzId": "f962cece-5c70-4b77-a56c-7a0b6cb199ea",
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCyhZSV8Dh0pQi09p1vECRVA",
+            "handle": null,
+            "name": "Guillermina Motta - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
         "candidates": [],
         "searchCandidates": [
           {
@@ -7147,15 +7157,19 @@
           }
         ]
       },
-      "confidence": "pendent",
-      "reviewStatus": "pendent",
-      "active": false,
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
         "https://www.wikidata.org/wiki/Q9001292",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "manual-user-2026-10-03",
+        "genre:manual",
+        "youtube:manual-verified",
+        "https://www.youtube.com/channel/UCyhZSV8Dh0pQi09p1vECRVA"
       ],
-      "lastChecked": "2026-09-25T15:54:46.584Z",
-      "notes": "",
+      "lastChecked": "2026-10-03T20:15:00.000Z",
+      "notes": "Canal Topic verificat manualment; gènere Cançó d'autor.",
       "enrichment": {
         "musicbrainz": {
           "checkedAt": "2026-09-25T15:54:46.584Z",
@@ -10876,8 +10890,7 @@
       "name": "La Trinca",
       "aliases": [],
       "genres": [
-        "Pop",
-        "Rock"
+        "Cançó d'autor"
       ],
       "territories": [],
       "languages": [
@@ -10886,7 +10899,15 @@
       "wikidataId": "Q4895526",
       "musicbrainzId": "e811f1d4-9d6f-47a0-a8c0-352dd7c71312",
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCKpscwdWlVaMqcA81vLI7OA",
+            "handle": null,
+            "name": "La Trinca - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
         "candidates": [],
         "searchCandidates": [
           {
@@ -10947,15 +10968,19 @@
           }
         ]
       },
-      "confidence": "pendent",
-      "reviewStatus": "pendent",
-      "active": false,
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
         "https://www.wikidata.org/wiki/Q4895526",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "manual-user-2026-10-03",
+        "genre:manual",
+        "youtube:manual-verified",
+        "https://www.youtube.com/channel/UCKpscwdWlVaMqcA81vLI7OA"
       ],
-      "lastChecked": "2026-09-25T15:55:19.770Z",
-      "notes": "",
+      "lastChecked": "2026-10-03T20:15:00.000Z",
+      "notes": "Canal Topic verificat manualment; gènere Cançó d'autor.",
       "enrichment": {
         "musicbrainz": {
           "checkedAt": "2026-09-25T15:55:19.770Z",
@@ -16859,10 +16884,11 @@
         "manual-user-2026-10-02",
         "youtube:manual-verified",
         "genre:manual",
-        "https://www.youtube.com/channel/UCYECw-23usgJzg1MnHRFFQQ"
+        "https://www.youtube.com/channel/UCYECw-23usgJzg1MnHRFFQQ",
+        "manual-user-2026-10-03"
       ],
-      "lastChecked": "2026-10-02T09:00:00.000Z",
-      "notes": "Alta manual verificada (llista de l'usuari del 2026-10-02). Canal «Tema» (Topic) de YouTube.",
+      "lastChecked": "2026-10-03T20:15:00.000Z",
+      "notes": "Canal Topic verificat manualment; gènere Cançó d'autor.",
       "displayName": "Pere Tàpias"
     },
     {
