@@ -9393,7 +9393,7 @@ function updatePlaylistModeBadge() {
 // En navegar a una altra secció, la llista/ràdio que sona en la finestra flotant es conserva:
 // en tornar a expandir el vídeo, la llista continua apareixent a la dreta (i avança sola).
 function exitPlaylistModeForNavigation() {
-    if (isPlaylistMode && isMiniPlayerActive() && activePlaylistId !== '__segueix_tv_discovery__') {
+    if (isPlaylistMode && isPersistentPlayerActive() && activePlaylistId !== '__segueix_tv_discovery__') {
         return;
     }
     exitPlaylistMode();
@@ -10076,6 +10076,12 @@ function isPlaybackInBackground() {
         return true;
     }
     return Boolean(window.SegueixApp?.features?.systemPlayer?.isPipOpen?.());
+}
+
+// Tant la finestreta flotant pròpia com la finestra mini de Chrome/Edge són reproductors persistents:
+// navegar per l'app no ha d'aturar el vídeo, buidar la cua ni perdre l'estat de la cançó que sona.
+function isPersistentPlayerActive() {
+    return isMiniPlayerActive() || isPlaybackInBackground();
 }
 
 // Només s'encadena en calent quan cal de debò: en pantalla completa, o en segon pla (un iframe nou no
@@ -11056,7 +11062,7 @@ function handlePlayerVisibilityOnNavigation() {
     if (!videoPlayer) {
         return;
     }
-    if (isMiniPlayerActive()) {
+    if (isPersistentPlayerActive()) {
         videoPlayer.style.display = 'block';
         return;
     }
@@ -13869,7 +13875,9 @@ function configureFeatureRuntimes() {
     SegueixApp.features.navigation?.registerRuntime?.({
         handlePlayerVisibilityOnNavigation,
         exitPlaylistMode: exitPlaylistModeForNavigation,
-        isMiniPlayerActive,
+        // navigation.js només necessita saber si el reproductor s'ha de conservar.
+        // Inclou la finestra mini del sistema, no només la finestreta interna.
+        isMiniPlayerActive: isPersistentPlayerActive,
         resetCurrentVideoState: () => {
             currentVideoId = null;
             currentVideoSource = null;
