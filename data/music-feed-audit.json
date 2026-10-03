@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-03T19:07:37.616Z",
+  "generatedAt": "2026-10-03T19:25:02.554Z",
   "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
   "deepPagesFetched": 0,
   "deepChannelCount": 20,
-  "topicChannelCount": 141,
+  "topicChannelCount": 144,
   "governedChannelCount": 73,
   "topicCoverage": [
     {
@@ -1281,6 +1281,13 @@
       "withClip": 0
     },
     {
+      "id": "UCEV_8wEQansDoZnwNW1Z1Vw",
+      "name": "Joan Miquel Oliver",
+      "tracks": 171,
+      "selected": 41,
+      "withClip": 0
+    },
+    {
       "id": "UC0BpfOdqXtofFVBklStzYMA",
       "name": "Jofre Bardagí",
       "tracks": 80,
@@ -1328,6 +1335,13 @@
       "tracks": 51,
       "selected": 3,
       "withClip": 37
+    },
+    {
+      "id": "UCIw0fqxE56SUZRCVd2FI09Q",
+      "name": "La Gossa Sorda",
+      "tracks": 121,
+      "selected": 40,
+      "withClip": 0
     },
     {
       "id": "UCdtYbFDkfHhAQgY8AzDMVwQ",
@@ -1440,6 +1454,13 @@
       "tracks": 31,
       "selected": 15,
       "withClip": 6
+    },
+    {
+      "id": "UCwg6xDQi5POlksfrsjjwFyA",
+      "name": "Mazoni",
+      "tracks": 167,
+      "selected": 40,
+      "withClip": 0
     },
     {
       "id": "UCJ_erOhxsuzi3KYLngXMeJw",
@@ -1593,7 +1614,7 @@
       "name": "Quimi Portet",
       "tracks": 197,
       "selected": 40,
-      "withClip": 16
+      "withClip": 0
     },
     {
       "id": "UCn4V6rDw7Gz1R6F2qyt2IrQ",
@@ -1820,13 +1841,13 @@
       "withClip": 11
     }
   ],
-  "indexedChannelCount": 301,
-  "resolvedChannelCount": 301,
-  "feedChannelCount": 301,
-  "rawPublicVideoCount": 7222,
-  "feedVideoCount": 7219,
-  "acceptedMusicCount": 6761,
-  "categoryEligibleVideoCount": 6699,
+  "indexedChannelCount": 304,
+  "resolvedChannelCount": 304,
+  "feedChannelCount": 304,
+  "rawPublicVideoCount": 7340,
+  "feedVideoCount": 7340,
+  "acceptedMusicCount": 6879,
+  "categoryEligibleVideoCount": 6817,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
     "before": 0,
@@ -1835,8 +1856,8 @@
   },
   "contentReviewCount": 408,
   "contentTypeCounts": {
-    "song": 6500,
-    "live_song": 199,
+    "song": 6613,
+    "live_song": 204,
     "album": 62,
     "other": 330,
     "review": 131
