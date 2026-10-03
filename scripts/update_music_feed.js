@@ -602,6 +602,10 @@ async function main(){
         if(TOPIC_GOVERNANCE==='apply') classification=finalClassification;
       }
       if(channelVideoRule?.acceptedMusicOnly && !classification.accepted) continue;
+      if(
+        channelVideoRule?.allowedContentTypes?.size &&
+        !channelVideoRule.allowedContentTypes.has(classification.contentType)
+      ) continue;
       channelPublicCount++;
       publicVideoCount++;
       typeCounts[classification.contentType]=(typeCounts[classification.contentType]||0)+1;
