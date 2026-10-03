@@ -39,6 +39,7 @@ describe('llista blanca de vídeos per canal', () => {
           channels: {
             UCknockout: {
               allowedTitleContains: ['KnockOut'],
+              deniedTitleContains: ['Citylights'],
               acceptedMusicOnly: true,
               allowedContentTypes: ['song', 'live_song'],
               avatarFromFirstAllowedVideo: true
@@ -50,6 +51,8 @@ describe('llista blanca de vídeos per canal', () => {
     const rules = loadChannelVideoAllowlist('/fake.json', fakeFs);
     expect(isChannelVideoAllowed(rules, 'UCknockout', 'KNOCKOUT - La vida s atura')).toBe(true);
     expect(isChannelVideoAllowed(rules, 'UCknockout', 'Knock-Out - Directe')).toBe(true);
+    expect(isChannelVideoAllowed(rules, 'UCknockout', 'KnockOut - Citylights')).toBe(false);
+    expect(isChannelVideoAllowed(rules, 'UCknockout', 'KnockOut - City Lights')).toBe(false);
     expect(isChannelVideoAllowed(rules, 'UCknockout', 'Un altre grup - Cançó')).toBe(false);
     expect(rules.get('UCknockout')?.acceptedMusicOnly).toBe(true);
     expect(rules.get('UCknockout')?.allowedContentTypes.has('song')).toBe(true);
