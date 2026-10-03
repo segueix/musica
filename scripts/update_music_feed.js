@@ -532,6 +532,7 @@ async function main(){
     }
     const snippet=detail.snippet||{};
     const categories=meta.categories||[];
+    const channelVideoRule=channelVideoAllowlist.get(id);
     const rawChannelName=snippet.title || meta.artistNames[0] || id;
     // Si el títol de YouTube és només el handle, s'aplica el nom real de l'artista.
     const displayChannelName=findNameOverride(channelNameOverrides,id,snippet.customUrl) || resolveChannelDisplayName(
@@ -566,6 +567,7 @@ async function main(){
 
     let channelPublicCount=0;
     let channelAcceptedCount=0;
+    let channelAvatarFromAllowedVideo=false;
 
     for(const videoId of playlistVideoIds.get(id)||[]){
       const item=detailsById.get(videoId);
@@ -575,8 +577,6 @@ async function main(){
       if(verdict==='removed' || (!item && !carried)) continue;
       const candidateTitle=item?.snippet?.title || carried?.title || '';
       if(!isChannelVideoAllowed(channelVideoAllowlist,id,candidateTitle)) continue;
-      channelPublicCount++;
-      publicVideoCount++;
 
       // La decisió manual (data/music-content-overrides.json) preval sobre el classificador automàtic.
       let classification=carried
@@ -601,6 +601,9 @@ async function main(){
         topicReview.push({id:videoId,channelTitle:channel.name,title:item?.snippet?.title||carried?.title||'',from:classification.contentType,to:finalClassification.contentType});
         if(TOPIC_GOVERNANCE==='apply') classification=finalClassification;
       }
+      if(channelVideoRule?.acceptedMusicOnly && !classification.accepted) continue;
+      channelPublicCount++;
+      publicVideoCount++;
       typeCounts[classification.contentType]=(typeCounts[classification.contentType]||0)+1;
 
       const vs=item?.snippet||{};
@@ -637,6 +640,16 @@ async function main(){
         musicConfidence:classification.confidence,
         musicReason:classification.reason
       };
+
+      if(
+        !channelAvatarFromAllowedVideo &&
+        channelVideoRule?.avatarFromFirstAllowedVideo &&
+        base.thumbnail
+      ){
+        channel.avatar=base.thumbnail;
+        channels[id].avatar=base.thumbnail;
+        channelAvatarFromAllowedVideo=true;
+      }
 
       // Any original només amb evidència (descripció automàtica o excepció manual); mai s'inventa.
       stampOriginalYear(base,manualDates);
