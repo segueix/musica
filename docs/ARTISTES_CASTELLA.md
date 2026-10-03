@@ -114,7 +114,9 @@ que són noms propis. 472 cançons a `data/hidden-videos.json` amb `afegeix()` d
 | **Flashy Ice Cream** | 3 | «Toda la noche», «Forever Young», «Aleluya». |
 | **Sara Roy** | 12 | Les cançons en castellà de (A)MAR i les acústiques, i «Maybe». |
 | **Ayryn** | 3 | «Ya no lloro», «Nada», «Si tu te vas». **Dubtós, es manté:** «Cansada». |
-| **Pere Tapias** | 2 | «Oye José María», «Moreno de la Fe». |
+| **Guillermina Motta** | 18 | Versions no catalanes del repertori en castellà/anglès («Cuando Sea Muy Vieja», «Yo en Amores Soy Muy Ligera», «Aquellos Tiempos del Cuplé», «Johnny Go Home»…). **Es conserva «La Moñito»**: el títol activa falsament el filtre per la ñ, però la peça és catalana amb frases paròdiques. També es conserva «Madame» (català). |
+| **La Trinca** | 29 | Versions castellanes dels discos *Sinánimus Molestandi*, *¿Quesquesé se merdé?* i *Trinca, sexo y rocanrol*. «Mama Caca», «Vade Retro» i «Flash Reagan» es bloquegen per ID quan la versió castellana comparteix títol amb una catalana. **«La Patata» es conserva**: la lletra és catalana. |
+| **Pere Tapias** | 2 | «Oye José María» i «Moreno de la Fe» (incloses les versions duplicades/en directe). Altres títols amb mots estrangers es conserven si no hi ha prova que la lletra no sigui catalana. |
 | **Júlia Cruz** | 1 | Revisió del 2026-10-02: «Para llegar». |
 | **Júlia Colom** | 1 | «Canta para seguir». |
 | **Gessamí Boada** | 22 | Cançons en anglès i castellà. Es mantenen les catalanes (Surto de mi, Oreneta, Mirades, Un instant…). |
