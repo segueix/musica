@@ -9030,3 +9030,19 @@ body {
     font-weight: 700;
     cursor: pointer;
 }
+
+
+/* App: evita la selecció accidental de text (especialment en gestos tàctils). */
+html, body, body * {
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+/* Els controls d'edició han de continuar funcionant amb normalitat. */
+input,
+textarea,
+[contenteditable="true"],
+[contenteditable="plaintext-only"] {
+    -webkit-user-select: text;
+    user-select: text;
+}
