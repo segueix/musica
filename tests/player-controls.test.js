@@ -92,6 +92,16 @@ describe('ordres de play/pausa robustes', () => {
     });
 });
 
+describe('finestra mini de Chrome/Edge persistent', () => {
+    it('navegar per l’app no atura el reproductor ni buida la cua mentre la finestra del sistema és oberta', () => {
+        expect(fn(app, 'isPlaybackInBackground')).toContain('systemPlayer?.isPipOpen?.()');
+        expect(fn(app, 'isPersistentPlayerActive')).toContain('isMiniPlayerActive() || isPlaybackInBackground()');
+        expect(fn(app, 'handlePlayerVisibilityOnNavigation')).toContain('isPersistentPlayerActive()');
+        expect(fn(app, 'exitPlaylistModeForNavigation')).toContain('isPersistentPlayerActive()');
+        expect(app).toContain('isMiniPlayerActive: isPersistentPlayerActive');
+    });
+});
+
 describe('controls de la cua sense cobrir el vídeo', () => {
     it('el centre queda lliure per al botó de YouTube i els controls flanquegen', () => {
         expect(css).toMatch(/\.queue-controls \{[^}]*grid-template-columns: 1fr var\(--qc-main\) 1fr;/);

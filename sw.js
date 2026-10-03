@@ -86,7 +86,7 @@ const STATIC_ASSETS = [
 // La branca de preview necessita que el navegador detecti el SW nou encara que el
 // hash autogenerat es normalitzi només en executar `npm run sw:version` abans del merge.
 // Canviar aquest comentari força una nova instal·lació i refresca el mateix cache estàtic.
-// Preview refresh: usuaris únics anònims d'analytics 2026-09-25.
+// Preview refresh: reproductor mini de Chrome persistent en navegar 2026-10-03.
 
 const STATIC_CACHE = `static-${CACHE_VERSION}`;
 const DATA_CACHE = 'data-v1';
