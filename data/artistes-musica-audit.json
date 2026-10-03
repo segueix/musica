@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-10-03T18:25:33.326Z",
+  "generatedAt": "2026-10-03T19:08:28.239Z",
   "summary": {
-    "total": 36,
-    "musicalClar": 36,
+    "total": 35,
+    "musicalClar": 35,
     "revisar": 0,
     "possibleFalsPositiu": 0
   },
@@ -479,28 +479,6 @@
       "verdict": "musical-clar",
       "reasons": [
         "Wikidata: ocupació musical explícita",
-        "Wikidata: tipus de conjunt/entitat musical"
-      ]
-    },
-    {
-      "name": "La Troba Kung-Fú",
-      "wikidataId": "Q1817487",
-      "musicbrainzId": "c52e82c6-e3fa-4643-b553-efa44cd68af1",
-      "sources": [
-        "https://www.wikidata.org/wiki/Q1817487",
-        "wikidata:performed-catalan-work"
-      ],
-      "youtubeChannels": 0,
-      "instances": [
-        "grup de música"
-      ],
-      "occupations": [],
-      "musicOccupations": [],
-      "musicTypes": [
-        "http://www.wikidata.org/entity/Q215380"
-      ],
-      "verdict": "musical-clar",
-      "reasons": [
         "Wikidata: tipus de conjunt/entitat musical"
       ]
     },
