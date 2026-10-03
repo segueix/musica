@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-03T19:40:50.669Z",
+  "generatedAt": "2026-10-03T20:11:05.004Z",
   "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
   "deepPagesFetched": 0,
   "deepChannelCount": 20,
-  "topicChannelCount": 147,
+  "topicChannelCount": 149,
   "governedChannelCount": 73,
   "topicCoverage": [
     {
@@ -858,7 +858,7 @@
   ],
   "topicGovernance": "apply",
   "governedReclassified": {},
-  "topicHiddenCount": 0,
+  "topicHiddenCount": 2,
   "topicChannels": [
     {
       "id": "UCEMDA-ZXzEUlJjZ-avy0Pvg",
@@ -1225,6 +1225,13 @@
       "withClip": 11
     },
     {
+      "id": "UCyhZSV8Dh0pQi09p1vECRVA",
+      "name": "Guillermina Motta",
+      "tracks": 246,
+      "selected": 40,
+      "withClip": 0
+    },
+    {
       "id": "UCmSRj6Efnlu1ogPW_G8K4gw",
       "name": "GUINEU",
       "tracks": 35,
@@ -1368,6 +1375,13 @@
       "id": "UC8DHU0fP67z2wgVm7Lkvrzw",
       "name": "La Tour De Carol",
       "tracks": 65,
+      "selected": 40,
+      "withClip": 0
+    },
+    {
+      "id": "UCKpscwdWlVaMqcA81vLI7OA",
+      "name": "La Trinca",
+      "tracks": 299,
       "selected": 40,
       "withClip": 0
     },
@@ -1862,13 +1876,13 @@
       "withClip": 11
     }
   ],
-  "indexedChannelCount": 306,
-  "resolvedChannelCount": 307,
-  "feedChannelCount": 307,
-  "rawPublicVideoCount": 7447,
-  "feedVideoCount": 7447,
-  "acceptedMusicCount": 6986,
-  "categoryEligibleVideoCount": 6924,
+  "indexedChannelCount": 308,
+  "resolvedChannelCount": 309,
+  "feedChannelCount": 309,
+  "rawPublicVideoCount": 7529,
+  "feedVideoCount": 7490,
+  "acceptedMusicCount": 7068,
+  "categoryEligibleVideoCount": 7006,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
     "before": 0,
@@ -1877,7 +1891,7 @@
   },
   "contentReviewCount": 408,
   "contentTypeCounts": {
-    "song": 6717,
+    "song": 6799,
     "live_song": 207,
     "album": 62,
     "other": 330,
