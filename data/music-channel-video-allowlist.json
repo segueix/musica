@@ -1,6 +1,6 @@
 {
   "updatedAt": "2026-10-03",
-  "description": "Llista blanca per a canals on Segueix Música només ha d'ingerir vídeos concrets. Admet títols exactes (allowedTitles) o fragments obligatoris (allowedTitleContains).",
+  "description": "Llista blanca per a canals on Segueix Música només ha d'ingerir vídeos concrets. Admet títols exactes, fragments obligatoris i fragments exclosos.",
   "channels": {
     "UCz35Q7e_ulwY_uRqg5zDxeQ": {
       "artist": "Subliminal",
@@ -15,8 +15,8 @@
       ]
     },
     "UCqA3KzIrZxgA27NEEyVZdrQ": {
-      "artist": "KnockOut",
-      "note": "Canal mixt: només s'accepta música si el títol del vídeo conté el nom KnockOut. La imatge del canal a Segueix Música surt de la miniatura del primer vídeo acceptat.",
+      "artist": "knocKouts",
+      "note": "Canal mixt: només s'accepten cançons amb el nom KnockOut/knocKouts al títol; Citylights queda exclosa. La imatge del canal a Segueix Música surt de la miniatura del primer vídeo acceptat.",
       "allowedTitleContains": [
         "KnockOut"
       ],
@@ -25,6 +25,9 @@
       "allowedContentTypes": [
         "song",
         "live_song"
+      ],
+      "deniedTitleContains": [
+        "Citylights"
       ]
     }
   }
