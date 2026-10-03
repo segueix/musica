@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-03T18:24:49.957Z",
+  "updatedAt": "2026-10-03T18:25:00.000Z",
   "artists": [
     {
       "name": "31 FAM",
@@ -5766,7 +5766,15 @@
       "wikidataId": "Q118176928",
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCDbEp5W8Obkk2YmYtWB-F5A",
+            "handle": null,
+            "name": "Fetus - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UCDbEp5W8Obkk2YmYtWB-F5A",
@@ -5815,10 +5823,12 @@
       "sources": [
         "https://www.wikidata.org/wiki/Q118176928",
         "manual-user-2026-10-03",
-        "genre:manual"
+        "genre:manual",
+        "youtube:manual-verified",
+        "https://www.youtube.com/channel/UCDbEp5W8Obkk2YmYtWB-F5A"
       ],
-      "lastChecked": "2026-10-03T17:39:00.000Z",
-      "notes": "Alta manual sol·licitada: nom públic «Fetus», gènere Punk. Canal «Fetus - Topic» pendent de resolució automàtica de YouTube.",
+      "lastChecked": "2026-10-03T18:25:00.000Z",
+      "notes": "Alta manual verificada: nom públic «Fetus», gènere Punk. Canal «Fetus - Topic» de YouTube acceptat manualment.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-03T18:24:49.492Z",
