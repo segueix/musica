@@ -22,6 +22,15 @@
 
 **Fitxers Afectats:**
 
+## [2026-10-03] - Controls de sota el reproductor: estil de l'app i barra enganxada a la finestra flotant del mòbil
+**Símptoma:** els controls nous de sota el reproductor (`#playerExternalControls`) eren símbols de text (⏮ ▶ ⏭ ▣ ♡), grans i amb el cor vermell, diferents de la resta de botons de l'app. Amb la finestra flotant ancorada a baix del mòbil no hi havia cap control (la barra és dins `#watchPage`, que s'amaga), i en pausa encara sortien anterior/següent damunt del vídeo. La navegació inferior, a més, tapava 8 px de la finestra flotant.
+
+**Causa Arrel:** la barra es va afegir amb un estil propi a `styles.css`. `initQueueNextOverlay()` es va desactivar, però `showQueueNextOverlay()` (cridat en pausar) continuava creant `.queue-next-overlay` dins `#videoPlayer`. `--pt-nav-h` val 60 px fixos, i amb «La teva música» en dues línies la navegació en fa 68.
+
+**Solució Implementada:** icones SVG a `index.html` (play i pausa, flotant i restaura, alternats per CSS amb `.is-playing` i `aria-pressed`) i bloc «Controls sota el reproductor» a `portada.css` amb els tokens de l'app (rodons, `--pt-surface-2`, `--pt-line`, llima en actiu; play/pausa principal en llima). `initExternalPlayerControls()` passa la barra a `<body>` amb `.is-docked` quan la finestra flotant és activa a ≤ 768 px (barra de 52 px, botons de 40–44 px, a `bottom: --pt-nav-h`) i la torna al seu lloc en restaurar; la finestra puja `--pec-dock-h`. `syncQueueNextOverlay()` no crea cap control damunt de l'iframe si existeix la barra. `shell-nav.js` mesura la navegació inferior (`ResizeObserver`) i posa `--pt-nav-h` a la seva alçada real.
+
+**Fitxers Afectats:** `index.html`, `css/portada.css`, `css/styles.css`, `js/app.js`, `js/features/shell-nav.js`, `tests/browser/verificar-play-pausa.js`, `sw.js`.
+
 ## [2026-10-02] - Eliminar descripcions dels vídeos del feed públic
 **Símptoma:** cada vídeo de `data/feed.json` encara portava fins a 300 caràcters de la descripció de YouTube, per exemple crèdits, enllaços i text promocional que l'app no mostra.
 

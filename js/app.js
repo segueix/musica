@@ -9106,7 +9106,9 @@ function createQueueNextOverlay() {
 function syncQueueNextOverlay() {
     if (!videoPlayer) return;
 
-    if (!hasQueueNavigation()) {
+    // Res damunt de l'iframe de YouTube: anterior, següent i finestra flotant són a la barra de sota
+    // (#playerExternalControls, initExternalPlayerControls).
+    if (!hasQueueNavigation() || document.getElementById('playerExternalControls')) {
         hideQueueNextOverlay({ remove: true });
         return;
     }
@@ -10531,23 +10533,35 @@ function initExternalPlayerControls() {
     const like = document.getElementById('playerLikeBtn');
     if (!bar || !prev || !toggle || !next || !mini || !like || !videoPlayer) return;
 
+    // Amb la finestra flotant ancorada a baix del mòbil (styles.css, ≤ 768 px), la barra va a <body>, petita i
+    // enganxada sota la finestra (portada.css, «Controls sota el reproductor»). Moure-la no toca l'iframe.
+    const home = { parent: bar.parentNode, next: bar.nextSibling };
+    const mobileQuery = window.matchMedia('(max-width: 768px)');
+    const place = docked => {
+        bar.classList.toggle('is-docked', docked);
+        if (docked && bar.parentNode !== document.body) document.body.appendChild(bar);
+        if (!docked && bar.parentNode !== home.parent) home.parent.insertBefore(bar, home.next);
+    };
+
     const sync = () => {
         const hasIframe = Boolean(videoPlayer.querySelector('iframe'));
         const id = String(videoPlayer.dataset.playingVideoId || '');
         bar.hidden = !hasIframe || !id;
         const playing = videoPlayer.dataset.playerState === '1' || videoPlayer.dataset.playerState === '3';
-        toggle.textContent = playing ? '⏸' : '▶';
+        toggle.classList.toggle('is-playing', playing);
         toggle.setAttribute('aria-label', playing ? 'Pausa' : 'Reprodueix');
         toggle.title = playing ? 'Pausa' : 'Reprodueix';
         prev.disabled = !hasQueuePrevVideo();
         next.disabled = !hasQueueNextVideo();
         const miniActive = isMiniPlayerActive();
+        place(miniActive && mobileQuery.matches);
         mini.setAttribute('aria-pressed', miniActive ? 'true' : 'false');
         mini.title = miniActive ? 'Restaura el reproductor' : 'Reproductor flotant';
+        mini.setAttribute('aria-label', miniActive ? 'Restaura el reproductor' : 'Posa el reproductor flotant');
         const likes = window.SegueixApp?.features?.likes;
         const liked = Boolean(id && likes?.isLiked?.(id));
         like.setAttribute('aria-pressed', liked ? 'true' : 'false');
-        like.textContent = liked ? '♥' : '♡';
+        like.setAttribute('aria-label', liked ? "Treu de m'agrada" : "M'agrada");
     };
 
     prev.addEventListener('click', goToPreviousFromOverlay);
@@ -10576,6 +10590,7 @@ function initExternalPlayerControls() {
         attributeFilter: ['data-playing-video-id', 'data-player-state', 'class'],
     });
     window.addEventListener('segueix:music-prefs-changed', sync);
+    mobileQuery.addEventListener?.('change', sync);
     sync();
 }
 

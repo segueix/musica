@@ -1,6 +1,7 @@
-// Verificació en navegador real del play/pausa del reproductor (normal i flotant): el botó de play/pausa propi ja no
-// existeix i tots els tocs arriben al reproductor de YouTube (cap capa no el cobreix); la finestra flotant només
-// s'arrossega pel mànec de dalt (escriptori) i al mòbil va ancorada amb la barra de dalt sempre visible.
+// Verificació en navegador real del play/pausa del reproductor (normal i flotant): res no cobreix el reproductor de
+// YouTube (tots els tocs hi arriben) i els controls de l'app (anterior · play/pausa · següent · flotant · m'agrada) són a
+// la barra de sota (#playerExternalControls); la finestra flotant només s'arrossega pel mànec de dalt (escriptori) i al
+// mòbil va ancorada a baix amb la barra de dalt sempre visible i els controls, petits, enganxats a sota.
 //
 // YouTube no es pot carregar aquí: se serveix un succedani local a la URL d'embed que parla el mateix protocol de
 // postMessage (onStateChange, playVideo/pauseVideo) i avisa la pàgina de cada toc rebut.
@@ -142,24 +143,35 @@ const toc = async (page, mobile, x, y) => {
 const tocsRebuts = page => page.evaluate(() => window.__tocs);
 const estat = page => page.evaluate(() => document.getElementById('videoPlayer').dataset.playerState);
 
-// Amaga els controls de la cua (com passa passats uns segons sense tocar res)
+// Abans hi havia controls de la cua damunt del vídeo: ja no se'n crea cap (syncQueueNextOverlay), però s'amaguen per
+// si de cas abans de cada toc
 const amagarControls = page => page.evaluate(() => hideQueueNextOverlay());
 
 async function proves(browser, width, errors) {
     const etiqueta = width <= 768 ? `mòbil (${width} px)` : `escriptori (${width} px)`;
     const { context, page, mobile } = await novaPagina(browser, width, errors);
 
-    // 1) El play/pausa propi i la capa tàctil ja no hi són; queden anterior / següent / finestra flotant
-    const estructura = await page.evaluate(() => ({
-        toggle: document.querySelectorAll('.queue-toggle-button').length,
-        capaTactil: document.querySelectorAll('.queue-next-touch-layer').length,
-        botons: [...document.querySelectorAll('.queue-controls button')].map(button => button.className.split(' ')[0]),
-    }));
+    // 1) Res damunt del vídeo (ni play/pausa propi, ni capa tàctil, ni controls de la cua): els controls són a la barra
+    //    de sota (#playerExternalControls), sota el reproductor i sense tocar-lo
+    const estructura = await page.evaluate(() => {
+        const player = document.getElementById('videoPlayer').getBoundingClientRect();
+        const bar = document.getElementById('playerExternalControls');
+        const barBox = bar.getBoundingClientRect();
+        return {
+            damunt: document.querySelectorAll(
+                '#videoPlayer :is(.queue-toggle-button, .queue-next-touch-layer, .queue-next-overlay)'
+            ).length,
+            visible: !bar.hidden && barBox.height > 0,
+            sota: Math.round(barBox.top - player.bottom),
+            botons: [...bar.querySelectorAll('button')].map(button => button.id),
+        };
+    });
     comprovar(
-        `${etiqueta}: no hi ha botó de play/pausa propi ni capa tàctil sobre el vídeo`,
-        estructura.toggle === 0 &&
-            estructura.capaTactil === 0 &&
-            estructura.botons.join() === 'queue-prev-button,queue-next-button,queue-mini-button',
+        `${etiqueta}: res damunt del vídeo; anterior · play/pausa · següent · flotant · m'agrada a la barra de sota`,
+        estructura.damunt === 0 &&
+            estructura.visible &&
+            estructura.sota >= 0 &&
+            estructura.botons.join() === 'playerPrevBtn,playerPlayPauseBtn,playerNextBtn,playerMiniBtn,playerLikeBtn',
         estructura
     );
 
@@ -185,35 +197,19 @@ async function proves(browser, width, errors) {
         rebuts
     );
 
-    // 3) Tàctil: el toc mostra els controls de la cua (sense cobrir el vídeo) i el segon toc també es detecta
-    if (mobile) {
-        await amagarControls(page);
-        await toc(page, true, normal.l + 40, normal.t + normal.h - 40);
-        const primer = await page.evaluate(() => !!document.querySelector('.queue-next-overlay.is-visible'));
-        await amagarControls(page);
-        await toc(page, true, normal.l + 60, normal.t + normal.h - 60);
-        const segon = await page.evaluate(() => !!document.querySelector('.queue-next-overlay.is-visible'));
-        comprovar(`${etiqueta}: un toc al vídeo mostra els controls de la cua, també el segon`, primer && segon, {
-            primer,
-            segon,
-        });
-    }
-
-    // 4) El centre queda lliure per al botó de YouTube, també amb els controls visibles
-    await page.evaluate(() => showQueueNextOverlay({ sticky: true }));
-    await page.waitForTimeout(300);
+    // 4) El centre és del botó de YouTube; els botons de la barra fan ≥ 44 px
     const centre = await page.evaluate(() => {
         const box = document.getElementById('videoPlayer').getBoundingClientRect();
         const el = document.elementFromPoint(box.left + box.width / 2, box.top + box.height / 2);
-        const buttons = [...document.querySelectorAll('.queue-controls button')].map(button => {
+        const buttons = [...document.querySelectorAll('#playerExternalControls button')].map(button => {
             const r = button.getBoundingClientRect();
-            return { nom: button.className.split(' ')[0], w: Math.round(r.width), h: Math.round(r.height) };
+            return { nom: button.id, w: Math.round(r.width), h: Math.round(r.height) };
         });
         return { alCentre: el?.tagName?.toLowerCase(), buttons };
     });
     comprovar(
-        `${etiqueta}: al centre hi ha el reproductor (no cap botó nostre) i «següent» fa ≥ 44 px`,
-        centre.alCentre === 'iframe' && centre.buttons.find(item => item.nom === 'queue-next-button').w >= 44,
+        `${etiqueta}: al centre hi ha el reproductor (no cap botó nostre) i els botons de sota fan ≥ 44 px`,
+        centre.alCentre === 'iframe' && centre.buttons.every(item => item.w >= 44 && item.h >= 44),
         centre
     );
 
@@ -225,7 +221,7 @@ async function proves(browser, width, errors) {
     await page.waitForFunction(() => document.getElementById('videoPlayer').dataset.playerState === '2');
     const enPausa = await page.evaluate(() => ({
         ordres: window.__ordres.slice(),
-        visibles: getComputedStyle(document.querySelector('.queue-controls')).opacity,
+        boto: document.getElementById('playerPlayPauseBtn').getAttribute('aria-label'),
     }));
     await page.evaluate(() => {
         window.__ordres.length = 0;
@@ -252,12 +248,32 @@ async function proves(browser, width, errors) {
     comprovar(
         `${etiqueta}: pauseMainPlayer/playMainPlayer envien l'ordre explícita; amb estat 3 (buffering) el canvi pausa; sense estat reprodueix`,
         enPausa.ordres.join() === 'pauseVideo' &&
-            Number(enPausa.visibles) === 1 &&
+            enPausa.boto === 'Reprodueix' &&
             enBuffering.join() === 'pauseVideo' &&
             senseEstat.join() === 'playVideo',
         { enPausa, enBuffering, senseEstat }
     );
-    await page.evaluate(() => hideQueueNextOverlay());
+
+    // 5b) El botó de play/pausa de la barra envia l'ordre i canvia de símbol
+    await page.evaluate(() => {
+        window.__ordres.length = 0;
+    });
+    await page.click('#playerPlayPauseBtn');
+    await page.waitForFunction(() => document.getElementById('videoPlayer').dataset.playerState === '2');
+    const botoPausa = await page.evaluate(() => ({
+        ordres: window.__ordres.slice(),
+        boto: document.getElementById('playerPlayPauseBtn').getAttribute('aria-label'),
+    }));
+    await page.click('#playerPlayPauseBtn');
+    await page.waitForFunction(() => document.getElementById('videoPlayer').dataset.playerState === '1');
+    const botoPlay = await page.evaluate(() =>
+        document.getElementById('playerPlayPauseBtn').getAttribute('aria-label')
+    );
+    comprovar(
+        `${etiqueta}: el play/pausa de la barra pausa i reprèn`,
+        botoPausa.ordres.join() === 'pauseVideo' && botoPausa.boto === 'Reprodueix' && botoPlay === 'Pausa',
+        { botoPausa, botoPlay }
+    );
 
     // 6) Finestra flotant
     await page.evaluate(() => setMiniPlayerState(true, { trigger: 'test' }));
@@ -285,6 +301,18 @@ async function proves(browser, width, errors) {
             mànec: getComputedStyle(handle).display === 'none' ? null : Math.round(handleBox.height),
             barra: getComputedStyle(overlay).opacity,
             buttons,
+            controls: (() => {
+                const bar = document.getElementById('playerExternalControls');
+                const r = bar.getBoundingClientRect();
+                const nav = document.getElementById('ptBottomNav')?.getBoundingClientRect();
+                return {
+                    docked: bar.classList.contains('is-docked'),
+                    sota: Math.round(r.top - box.bottom),
+                    sobreNav: nav && nav.height ? Math.round(nav.top - r.bottom) : null,
+                    w: Math.round(r.width),
+                    botons: [...bar.querySelectorAll('button')].map(b => Math.round(b.getBoundingClientRect().width)),
+                };
+            })(),
         };
     });
     comprovar(
@@ -302,6 +330,15 @@ async function proves(browser, width, errors) {
                 mini.box[0] === 0 &&
                 mini.box[2] === width,
             mini
+        );
+        comprovar(
+            `${etiqueta}: els controls van petits enganxats sota la finestra flotant, damunt de la navegació`,
+            mini.controls.docked &&
+                Math.abs(mini.controls.sota) <= 1 &&
+                Math.abs(mini.controls.sobreNav) <= 1 &&
+                mini.controls.w === width &&
+                mini.controls.botons.every(w => w >= 40 && w < 52),
+            mini.controls
         );
     } else {
         comprovar(
@@ -352,23 +389,37 @@ async function proves(browser, width, errors) {
         );
     }
 
-    // 7) «Següent» de la cua continua funcionant (en pausa els controls són sempre visibles)
+    // 7) «Següent» de la barra funciona amb la finestra flotant (al mòbil, la barra enganxada a sota)
     await page.evaluate(() => pauseMainPlayer());
     await page.waitForFunction(() => document.getElementById('videoPlayer').dataset.playerState === '2');
     await page.waitForTimeout(400);
     const abansIndex = await page.evaluate(() => currentPlaylistIndex);
-    const next = await page.evaluate(() => {
-        const r = document.querySelector('.queue-next-button').getBoundingClientRect();
-        return { x: r.left + r.width / 2, y: r.top + r.height / 2, w: r.width };
-    });
-    await toc(page, mobile, next.x, next.y);
+    await page.click('#playerNextBtn');
     await page.waitForTimeout(500);
     const despresIndex = await page.evaluate(() => currentPlaylistIndex);
-    comprovar(`${etiqueta}: «següent» de la cua funciona a la finestra flotant`, despresIndex === abansIndex + 1, {
+    comprovar(`${etiqueta}: «següent» de la barra funciona amb la finestra flotant`, despresIndex === abansIndex + 1, {
         abansIndex,
         despresIndex,
-        mida: Math.round(next.w),
     });
+
+    // 8) Restaurar des de la barra: la finestra torna al seu lloc i la barra, sota el reproductor
+    if (mobile) {
+        await page.click('#playerMiniBtn');
+        await page.waitForTimeout(700);
+        const restaurat = await page.evaluate(() => {
+            const bar = document.getElementById('playerExternalControls');
+            return {
+                mini: isMiniPlayerActive(),
+                docked: bar.classList.contains('is-docked'),
+                aLaFitxa: Boolean(bar.closest('#watchPage .watch-main')),
+            };
+        });
+        comprovar(
+            `${etiqueta}: «restaura» de la barra torna el reproductor i la barra al seu lloc`,
+            !restaurat.mini && !restaurat.docked && restaurat.aLaFitxa,
+            restaurat
+        );
+    }
 
     await context.close();
 }
