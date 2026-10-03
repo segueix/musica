@@ -1,3 +1,12 @@
+## [2026-10-03] - La reproducció automàtica s’atura al final de la cançó
+**Símptoma:** el vídeo acaba però la ràdio o llista no passa a la cançó següent.
+
+**Causa Arrel:** el commit `a0eee3c` va eliminar `updateRestartButton()` amb el botó «Comença de nou», però en va deixar quatre crides al seguiment del progrés. En arribar a `markCurrentProgressComplete()` es llançava `ReferenceError` abans que `handleYouTubeMessage()` delegués al gestor que avança la cua. També fallaven el desat del progrés i la detecció de directes. No ho causava la protecció dels estats de play/pausa.
+
+**Solució Implementada:** eliminar les quatre crides residuals, mantenint el botó eliminat i els controls play/pausa actuals. Prova de regressió pel gestor públic amb dos vídeos consecutius, desat de progrés, pausa, represa i final: abans falla amb `ReferenceError`; després el gestor de la cua rep cada final. Regenerar el Service Worker perquè arribi el codi corregit.
+
+**Fitxers Afectats:** `js/features/player.js`, `tests/continue-watching.test.js`, `sw.js`.
+
 ## [2026-10-02] - Artistes duplicats per canal oficial + Topic
 **Símptoma:** la pàgina «Artistes» pintava una targeta per canal de YouTube. Un mateix artista apareixia dues o tres vegades (canal oficial, Topic i, en algun cas, un segon canal oficial), amb variants de majúscules o accents.
 
@@ -1260,3 +1269,4 @@ Hi havia dos problemes independents:
 **Solució aplicada:**
 1. **GitHub Actions:** S'ha afegit el pas `node scripts/sincronitzar_tot.js` a `.github/workflows/actualitzador.yml` immediatament després de generar el feed, i s'han afegit les ordres `git add -f js/channels-ca.json` i `git add -f sw.js` al commit automàtic perquè la web s'actualitzi i la memòria cau es trenqui per als usuaris.
 2. **Cloudflare Pages:** S'ha modificat la configuració de construcció (Build Configuration) de Cloudflare deixant el *Framework preset* a `None` i configurant el *Build command* com a `exit 0` perquè ignori el `package.json` i publiqui els arxius estàtics directament des de l'arrel `/`.
+

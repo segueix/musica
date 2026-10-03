@@ -314,7 +314,6 @@
             storage.remove?.(progress.videoId);
             progress.completed = true;
             renderContinueWatching();
-            updateRestartButton(progress.videoId);
             return true;
         }
         if (progress.position < Number(storage.minSeconds || 30)) return false;
@@ -336,7 +335,6 @@
             progress.channel = metadata.channel || progress.channel;
             progress.thumbnail = metadata.thumbnail || progress.thumbnail;
             renderContinueWatching();
-            updateRestartButton(progress.videoId);
         }
         return Boolean(saved);
     }
@@ -380,7 +378,6 @@
         activeProgress.completed = true;
         activeProgress.playing = false;
         renderContinueWatching();
-        updateRestartButton(activeProgress.videoId);
     }
 
     function extractPayloadVideoId(payload) {
@@ -399,7 +396,6 @@
             activeProgress.isLive = true;
             getContinueStorage()?.remove?.(activeProgress.videoId);
             renderContinueWatching();
-            updateRestartButton(activeProgress.videoId);
         }
     }
 
@@ -637,3 +633,4 @@
         renderPlaylistRelatedVideos,
     };
 })(window);
+
