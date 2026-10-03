@@ -31,10 +31,17 @@ function loadChannelVideoAllowlist(filePath, fsModule = require('fs')) {
           compact: compactNormalizedTitle(value),
         }))
         .filter(value => value.normalized);
+      const deniedTitleContains = (Array.isArray(rule?.deniedTitleContains) ? rule.deniedTitleContains : [])
+        .map(value => ({
+          normalized: normalizeVideoTitle(value),
+          compact: compactNormalizedTitle(value),
+        }))
+        .filter(value => value.normalized);
 
       const parsedRule = {
         exactTitles,
         titleContains,
+        deniedTitleContains,
         acceptedMusicOnly: rule?.acceptedMusicOnly === true,
         allowedContentTypes: new Set(
           (Array.isArray(rule?.allowedContentTypes) ? rule.allowedContentTypes : [])
@@ -47,6 +54,7 @@ function loadChannelVideoAllowlist(filePath, fsModule = require('fs')) {
 
       if (
         parsedRule.hasTitleFilter ||
+        parsedRule.deniedTitleContains.length > 0 ||
         parsedRule.acceptedMusicOnly ||
         parsedRule.allowedContentTypes.size > 0 ||
         parsedRule.avatarFromFirstAllowedVideo
@@ -63,12 +71,19 @@ function loadChannelVideoAllowlist(filePath, fsModule = require('fs')) {
 function isChannelVideoAllowed(allowlist, channelId, title) {
   const rule = allowlist.get(String(channelId || ''));
   if (!rule) return true;
-  if (!rule.hasTitleFilter) return true;
 
   const normalized = normalizeVideoTitle(title);
+  const compact = normalized.replace(/\s+/g, '');
+
+  if (
+    rule.deniedTitleContains.some(fragment =>
+      normalized.includes(fragment.normalized) || compact.includes(fragment.compact)
+    )
+  ) return false;
+
+  if (!rule.hasTitleFilter) return true;
   if (rule.exactTitles.has(normalized)) return true;
 
-  const compact = normalized.replace(/\s+/g, '');
   return rule.titleContains.some(fragment =>
     normalized.includes(fragment.normalized) || compact.includes(fragment.compact)
   );
