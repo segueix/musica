@@ -4723,3 +4723,183 @@ body.drive-mode .dm-info[hidden] {
         padding: 6px;
     }
 }
+
+/* ---------- Controls sota el reproductor (#playerExternalControls) ----------
+   Anterior · play/pausa · següent · finestra flotant · m'agrada, fora de l'iframe de YouTube (no s'hi posa res al
+   damunt). Mateix estil que els botons d'icona de l'app: rodons, superfície 2, vora fina, llima en passar-hi per
+   sobre o en estat actiu; el play/pausa és el botó principal, en llima. Amb la finestra flotant ancorada a baix del
+   mòbil (≤ 768 px), app.js els passa a <body> amb `.is-docked`: una barra petita enganxada sota la finestra, que
+   puja per deixar-hi lloc. */
+:root {
+    --pec-dock-h: 52px;
+}
+
+.player-external-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(10px, 3vw, 18px);
+    width: min(960px, 100%);
+    margin: 12px auto 16px;
+}
+
+.player-external-controls[hidden] {
+    display: none;
+}
+
+.player-external-btn {
+    display: inline-grid;
+    place-items: center;
+    flex: 0 0 auto;
+    width: 52px;
+    height: 52px;
+    padding: 0;
+    border: 1px solid var(--pt-line);
+    border-radius: 50%;
+    background: var(--pt-surface-2);
+    color: var(--pt-text);
+    box-shadow: none;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition:
+        border-color 0.15s ease,
+        background-color 0.15s ease,
+        color 0.15s ease,
+        transform 0.1s ease;
+}
+
+.player-external-btn .pec-icon {
+    width: 24px;
+    height: 24px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.player-external-btn .pec-fill {
+    fill: currentColor;
+    stroke: none;
+}
+
+.player-external-btn:hover:not(:disabled),
+.player-external-btn:focus-visible {
+    border-color: var(--pt-accent);
+    background: var(--pt-surface-3);
+    color: var(--pt-accent);
+}
+
+.player-external-btn:active:not(:disabled) {
+    transform: scale(0.94);
+}
+
+.player-external-btn:focus-visible {
+    outline: 2px solid var(--pt-accent);
+    outline-offset: 2px;
+}
+
+.player-external-btn:disabled {
+    opacity: 0.35;
+    cursor: default;
+}
+
+/* Play/pausa: el principal, en llima (com «Engega la ràdio») */
+.player-external-btn--main {
+    width: 64px;
+    height: 64px;
+    border-color: var(--pt-accent);
+    background: var(--pt-accent);
+    color: var(--pt-on-accent);
+}
+
+.player-external-btn--main .pec-icon {
+    width: 28px;
+    height: 28px;
+}
+
+.player-external-btn--main:hover:not(:disabled),
+.player-external-btn--main:focus-visible {
+    border-color: #e2f49a;
+    background: #e2f49a;
+    color: var(--pt-on-accent);
+}
+
+.player-external-btn--main .pec-icon--pause,
+.player-external-btn--main.is-playing .pec-icon--play {
+    display: none;
+}
+
+.player-external-btn--main.is-playing .pec-icon--pause {
+    display: block;
+}
+
+/* Finestra flotant: el símbol canvia a «restaura» quan ja és flotant */
+.player-external-btn--mini .pec-icon--restore,
+.player-external-btn--mini[aria-pressed='true'] .pec-icon--mini {
+    display: none;
+}
+
+.player-external-btn--mini[aria-pressed='true'] .pec-icon--restore {
+    display: block;
+}
+
+/* M'agrada: llima i ple, com el cor de sota el títol */
+.player-external-btn--heart[aria-pressed='true'] {
+    border-color: var(--pt-accent);
+    color: var(--pt-accent);
+}
+
+.player-external-btn--heart[aria-pressed='true'] .pec-icon {
+    fill: currentColor;
+}
+
+/* Barra petita enganxada sota la finestra flotant (mòbil) */
+.player-external-controls.is-docked {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: calc(var(--pt-nav-h) + var(--safe-bottom, 0px));
+    z-index: 2000; /* la de la finestra flotant */
+    width: auto;
+    height: var(--pec-dock-h);
+    margin: 0;
+    padding: 0 calc(12px + var(--safe-right, 0px)) 0 calc(12px + var(--safe-left, 0px));
+    gap: 14px;
+    border-top: 1px solid var(--pt-line);
+    background: var(--pt-surface);
+}
+
+.player-external-controls.is-docked .player-external-btn {
+    width: 40px;
+    height: 40px;
+}
+
+.player-external-controls.is-docked .player-external-btn .pec-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.player-external-controls.is-docked .player-external-btn--main {
+    width: 44px;
+    height: 44px;
+}
+
+.player-external-controls.is-docked .player-external-btn--main .pec-icon {
+    width: 22px;
+    height: 22px;
+}
+
+@media (max-width: 768px) {
+    body:has(#playerExternalControls.is-docked:not([hidden])) #videoPlayer.mini-player-active {
+        bottom: calc(var(--pt-nav-h) + var(--safe-bottom) + var(--pec-dock-h)) !important;
+    }
+
+    body:has(#playerExternalControls.is-docked:not([hidden])):has(#videoPlayer.mini-player-active) {
+        padding-bottom: calc(var(--pt-nav-h) + var(--safe-bottom) + 56.25vw + var(--pec-dock-h));
+    }
+
+    body:has(#playerExternalControls.is-docked:not([hidden])):has(#videoPlayer.mini-player-active) .pt-toast {
+        bottom: calc(var(--pt-nav-h) + var(--safe-bottom) + 56.25vw + var(--pec-dock-h) + 12px);
+    }
+}

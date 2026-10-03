@@ -192,8 +192,28 @@
         syncFrame = window.requestAnimationFrame ? window.requestAnimationFrame(sync) : window.setTimeout(sync, 16);
     }
 
+    // --pt-nav-h (portada.css) és l'alçada de la navegació inferior sense la zona segura: la finestra flotant del mòbil,
+    // la barra de controls de sota i els avisos s'hi posen a sobre. Si una etiqueta ocupa dues línies («La teva
+    // música» en un mòbil estret) la navegació és més alta que els 60 px per defecte i els tapava: es mesura.
+    function watchBottomNavHeight() {
+        const nav = $('ptBottomNav');
+        const root = window.document.documentElement;
+        if (!nav || !root?.style || typeof window.ResizeObserver !== 'function') return;
+        const measure = () => {
+            const height = nav.offsetHeight;
+            if (!height) return root.style.removeProperty('--pt-nav-h');
+            const style = window.getComputedStyle(nav);
+            // padding-bottom = 4 px + zona segura (que les fórmules ja sumen amb --safe-bottom)
+            const safe = Math.max(0, (parseFloat(style.paddingBottom) || 0) - 4);
+            root.style.setProperty('--pt-nav-h', `${Math.round(height - safe)}px`);
+        };
+        new window.ResizeObserver(measure).observe(nav);
+        measure();
+    }
+
     function init() {
         const doc = window.document;
+        watchBottomNavHeight();
         doc.addEventListener('click', onClick);
         if (typeof window.MutationObserver === 'function') {
             const observer = new window.MutationObserver(scheduleSync);
