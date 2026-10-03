@@ -625,6 +625,18 @@ afegeix('Sílvia Pérez Cruz', ['Chundwa', 'Gelando', 'Moreno', 'Capitana', 'Mec
 afegeix(['ALBERT PLA', 'Albert Pla'], ['Pepe Botika', 'Alboraya', 'Así se hizo']);
 afegeix(['alfredgarcia', 'Alfred García'], ['Mateo', '1997', 'Madrid', '2001', 'Londres', 'SEVILLA']);
 
+// Revisió del 2026-10-03: Opció K-95. Es mantenen «Oi! You!» (Cap Oportunitat és íntegrament en català)
+// i «Partisans». S'amaguen només les peces confirmades en anglès.
+afegeix(['Opció K-95', 'Opcio K-95', 'Opció K-95 - Topic', 'Opcio K-95 - Topic'], [
+    'A World To Win',
+    'Kill The Bastards',
+    'No more colours one army',
+    'We must break our chains',
+    "We're Free",
+    'Nation of Oi!',
+    'Working Class Hell',
+]);
+
 function esCastella(video) {
     const regla = REGLES[video.channelTitle];
     if (!regla) return false;
