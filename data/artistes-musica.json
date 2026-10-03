@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-03T17:39:00.000Z",
+  "updatedAt": "2026-10-03T18:24:49.957Z",
   "artists": [
     {
       "name": "31 FAM",
@@ -5766,7 +5766,48 @@
       "wikidataId": "Q118176928",
       "musicbrainzId": null,
       "youtube": {
-        "channels": []
+        "channels": [],
+        "searchCandidates": [
+          {
+            "id": "UCDbEp5W8Obkk2YmYtWB-F5A",
+            "title": "Fetus - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 314,
+            "thumbnail": "https://yt3.ggpht.com/4lcz3TIHjJIRYtRH1CEOy9aokLHxPFnzgVCxax26v1OREeKBbSklVtrgh00FhV8v_eQXunhJYg=s240-c-k-c0x00ffffff-no-rj",
+            "score": 85,
+            "reasons": [
+              "nom exacte de canal Topic",
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-03T18:24:49.492Z"
+          },
+          {
+            "id": "UCHpXSHNRlTfYcBr0mgy4YoQ",
+            "title": "Dying Fetus - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 2130,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_noJJvq4jrCmx4WE7TBQ1xkqTToxDGwB-3V80InbEpKhk4=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-03T18:24:49.492Z"
+          },
+          {
+            "id": "UCwky4uJtahETinBsjf_5pWw",
+            "title": "Baby Whisper",
+            "handle": "@babywhisper1",
+            "description": "",
+            "subscriberCount": 9590,
+            "thumbnail": "https://yt3.ggpht.com/fy9na5v0TaAjE9lG-opcLpeFqBRknxt3gU0paBybEo3B7bEwUKEVw12X5E4LSDk2h2OUplLQ7SQ=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-03T18:24:49.492Z"
+          }
+        ]
       },
       "confidence": "alta",
       "reviewStatus": "aprovat",
@@ -5777,7 +5818,17 @@
         "genre:manual"
       ],
       "lastChecked": "2026-10-03T17:39:00.000Z",
-      "notes": "Alta manual sol·licitada: nom públic «Fetus», gènere Punk. Canal «Fetus - Topic» pendent de resolució automàtica de YouTube."
+      "notes": "Alta manual sol·licitada: nom públic «Fetus», gènere Punk. Canal «Fetus - Topic» pendent de resolució automàtica de YouTube.",
+      "enrichment": {
+        "youtubeSearch": {
+          "checkedAt": "2026-10-03T18:24:49.492Z",
+          "status": "candidats",
+          "query": "Fetus",
+          "resultCount": 3,
+          "bestScore": 85,
+          "autoAcceptedId": null
+        }
+      }
     },
     {
       "name": "Figa Flawas",
