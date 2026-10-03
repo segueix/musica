@@ -216,6 +216,39 @@ const clicPip = (page, action) =>
         );
         comprovar('no s’obre també la finestra flotant de dins la pàgina', !alLloc.mini, alLloc);
 
+        // Navegar per Segueix Música amb la finestra del sistema oberta no pot aturar la música ni perdre la cua.
+        await page.evaluate(() => {
+            window.__iframeAbansNavegar = document.querySelector('#videoPlayer iframe');
+            window.__cuaAbansNavegar = {
+                index: currentPlaylistIndex,
+                length: activePlaylistQueue.length,
+                id: String(currentVideoId || ''),
+            };
+            SegueixApp.features.navigation.showHistory();
+        });
+        await page.waitForTimeout(400);
+        const navegant = await page.evaluate(() => ({
+            mateixIframe: document.querySelector('#videoPlayer iframe') === window.__iframeAbansNavegar,
+            state: document.getElementById('videoPlayer')?.dataset?.playerState,
+            index: currentPlaylistIndex,
+            length: activePlaylistQueue.length,
+            id: String(currentVideoId || ''),
+            abans: window.__cuaAbansNavegar,
+            pip: SegueixApp.features.systemPlayer.isPipOpen(),
+        }));
+        comprovar(
+            'navegar per l’app amb la finestra mini de Chrome no atura ni recrea el reproductor',
+            navegant.pip && navegant.mateixIframe && (navegant.state === '1' || navegant.state === '3'),
+            navegant
+        );
+        comprovar(
+            'navegar per l’app conserva la ràdio/llista i la cançó actual',
+            navegant.index === navegant.abans.index &&
+                navegant.length === navegant.abans.length &&
+                navegant.id === navegant.abans.id,
+            navegant
+        );
+
         // Següent des de la finestra: el reproductor no es recrea (un iframe nou en una finestra minimitzada no
         // sonaria fins que es tornés a veure la pàgina), se li demana la cançó nova (loadVideoById).
         await page.evaluate(() => {
