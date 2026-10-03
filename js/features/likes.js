@@ -329,8 +329,8 @@
 
     if (typeof document !== 'undefined' && document.readyState) {
         if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', initPlayerHeart, { once: true });
-        } else initPlayerHeart();
+            // YouTube: el M'agrada es manté sota el reproductor; no es crea cap overlay sobre l'iframe.
+        }
     }
 
     // ==================== REGISTRE ====================
