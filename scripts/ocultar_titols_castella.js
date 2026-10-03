@@ -417,16 +417,38 @@ afegeix('Manu Guix', [
     'Greased Lightnin',
 ]);
 afegeix('Adrià Puntí', [
-    'Tocayo',
+    // Umpah-Pah · Triquiñuelas al óleo (1994) — disc en castellà
     'El Preludio del Adiós',
-    'Un Compendio en Mi Menor',
-    'En Cuarentena',
-    'Color de Higado',
-    'Barba Azul',
-    'Peladilla Amarga',
-    'Sueño Dormido',
-    'El Gitanillo de Tiana',
     'Entre Tu y Tu Yo',
+    'Entre Tú y Yo',
+    'El Gitanillo de Tiana',
+    'El Dedo en la Llaga',
+    'Con Premeditación y Alevosía',
+    'Com Premeditación y Alevosía',
+    'Sed de Mal',
+    'Migajas de Almidón',
+    'Sin Jaleos de Conciencia',
+    'Peladilla Amarga',
+    'Un Compendio en Mi Menor',
+    'Testarudez',
+    // Umpah-Pah · La columna de Simeón (1996) — disc en castellà
+    'La Columna de Simeon',
+    'La Columna de Simeón',
+    'Barba Azul',
+    'Tocayo',
+    'Sueño Dormido',
+    'Color de Higado',
+    'Color de Hígado',
+    'En Cuarentena',
+    'Circunspección',
+    'Sí',
+    'Sonrisita Preñada',
+    'Te Odio',
+    'Vinculus Corruptus',
+    'Después',
+    // Col·laboracions publicades sota el nom d'Adrià Puntí
+    'Rencillas por Pasión',
+    'Sed de Vien',
 ]);
 afegeix('Roger Mas', ['La Llorona', 'La Bien Pagá', 'Amore che vieni, amore che vai']);
 afegeix('The Tyets', [
