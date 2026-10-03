@@ -73,11 +73,14 @@ describe('integració al pipeline', () => {
         expect(source).toContain('teSubtitolsCastella(videos[i])');
     });
 
-    it('el workflow diari del feed corre cada dia, es dispara si canvia el detector i el prova', () => {
-        const workflow = read('.github/workflows/actualitzar-feed-musica.yml');
-        expect(workflow).toMatch(/cron: "\d+ \d+ \* \* \*"/);
-        expect(workflow).toContain('scripts/lib/subtitols_castella.js');
-        expect(workflow).toContain('tests/subtitols-castella.test.js');
+    it('el workflow diari corre cada dia i els canvis del detector passen per validació abans d’actualitzar el feed', () => {
+        const updateWorkflow = read('.github/workflows/actualitzar-feed-musica.yml');
+        const validationWorkflow = read('.github/workflows/validar-musica.yml');
+        expect(updateWorkflow).toMatch(/cron: "\d+ \d+ \* \* \*"/);
+        expect(updateWorkflow).toContain('"Validar base musical"');
+        expect(updateWorkflow).toContain('tests/subtitols-castella.test.js');
+        expect(validationWorkflow).toContain('scripts/lib/subtitols_castella.js');
+        expect(validationWorkflow).toContain('tests/subtitols-castella.test.js');
     });
 
     it('les cançons que ja eren al feed són a hidden-videos.json (el client les amaga de seguida)', () => {
