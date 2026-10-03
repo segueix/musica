@@ -80,6 +80,9 @@ jobs:
       - name: Prova feed calent i historial
         run: npx vitest run tests/arxiu-musical.test.js
 
+      - name: Prova coherència del pipeline musical
+        run: npx vitest run tests/music-content-overrides.test.js tests/subtitols-castella.test.js
+
       - name: Prova metadades de discos sense API
         run: npx vitest run tests/albums-musica.test.js
 
