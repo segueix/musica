@@ -1294,3 +1294,16 @@ Hi havia dos problemes independents:
 - no s’utilitza `defaultLanguage` / `defaultAudioLanguage` com a prova de llengua, perquè en aquests catàlegs etiqueta erròniament diverses peces catalanes.
 
 **Fitxers afectats:** `data/hidden-videos.json`, `data/revisio-idiomes.json`, `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md`, `docs/PROBLEMES_I_SOLUCIONS.md`.
+
+
+## [2026-10-03] - La finestra mini de Chrome s'aturava en navegar per Segueix Música
+
+**Símptoma:** amb la finestra flotant del sistema (Document Picture-in-Picture de Chrome/Edge) oberta, la música podia aturar-se o perdre la ràdio/llista en anar a Inici, Historial, La teva música, Artistes o un perfil, tot i que la finestra mini continuava oberta.
+
+**Causa Arrel:** la navegació interna només considerava persistent la finestreta pròpia de Segueix Música (`isMiniPlayerActive()`). La finestra mini de Chrome no comptava com a reproductor persistent; per això `handlePlayerVisibilityOnNavigation()` podia executar `stopVideoPlayback()`, `exitPlaylistModeForNavigation()` podia buidar la cua i `navigation.js` podia esborrar l'estat de `currentVideoId`.
+
+**Solució Implementada:** `isPersistentPlayerActive()` unifica els dos casos: finestreta interna o reproducció en segon pla/finestra del sistema (`isPlaybackInBackground()`). La navegació conserva l'iframe, l'estat del vídeo i la cua mentre la finestra mini de Chrome/Edge és oberta. Això complementa la protecció anterior que ja reutilitzava el mateix iframe per canviar de cançó quan Chrome estava minimitzat.
+
+**Proves:** `tests/player-controls.test.js` comprova les tres proteccions de navegació i `tests/browser/verificar-finestra-sistema.js` navega a Historial amb la finestra del sistema oberta i verifica que l'iframe, la reproducció, la cua i la cançó actual es mantenen.
+
+**Fitxers Afectats:** `js/app.js`, `tests/player-controls.test.js`, `tests/browser/verificar-finestra-sistema.js`, `sw.js`, `docs/PROBLEMES_I_SOLUCIONS.md`.
