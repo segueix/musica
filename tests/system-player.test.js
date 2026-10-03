@@ -118,7 +118,7 @@ describe('finestra flotant del sistema', () => {
 
     it('els botons de finestra flotant obren la del sistema i no es mou el reproductor de YouTube', () => {
         const source = readFileSync(new URL('../js/features/system-player.js', import.meta.url), 'utf8');
-        expect(source).toContain("closest?.('#miniPlayerToggle, .queue-mini-button')");
+        expect(source).toContain("closest?.('#playerMiniBtn, .queue-mini-button')");
         expect(source).not.toMatch(/appendChild\([^)]*(iframe|playerElement|videoPlayer)/);
     });
 

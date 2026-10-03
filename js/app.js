@@ -1903,9 +1903,6 @@ function buildWatchChannelInfoHtml(channel, avatar, watchUrl, video) {
                     <button class="btn-round-icon" id="shareBtn" title="Compartir" aria-label="Compartir">
                         <i data-lucide="share-2"></i>
                     </button>
-                    <button class="btn-round-icon" id="miniPlayerToggle" type="button" title="Mini reproductor" aria-label="Mini reproductor">
-                        ${MINI_PLAYER_ICON_SVG}
-                    </button>
                 </div>
             </div>
         </div>

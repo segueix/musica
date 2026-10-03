@@ -182,7 +182,7 @@ const clicPip = (page, action) =>
         comprovar('la Media Session sap que sona', media.state === 'playing', media.state);
 
         // Obrir la finestra del sistema amb el botó «Mini reproductor» de sota el vídeo
-        await page.click('#miniPlayerToggle');
+        await page.click('#playerMiniBtn');
         await page.waitForFunction(() => Boolean(window.documentPictureInPicture?.window), null, { timeout: 5000 });
         await page.waitForTimeout(400);
         let estat = await pip(page);
