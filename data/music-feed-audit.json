@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-03T17:26:43.046Z",
-  "retainedVideoCount": 121,
+  "generatedAt": "2026-10-03T18:32:01.208Z",
+  "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
   "deepPagesFetched": 0,
   "deepChannelCount": 20,
-  "topicChannelCount": 138,
+  "topicChannelCount": 139,
   "governedChannelCount": 73,
   "topicCoverage": [
     {
@@ -857,11 +857,8 @@
     }
   ],
   "topicGovernance": "apply",
-  "governedReclassified": {
-    "other": 191,
-    "song": 20
-  },
-  "topicHiddenCount": 406,
+  "governedReclassified": {},
+  "topicHiddenCount": 0,
   "topicChannels": [
     {
       "id": "UCEMDA-ZXzEUlJjZ-avy0Pvg",
@@ -1156,6 +1153,13 @@
       "tracks": 103,
       "selected": 41,
       "withClip": 28
+    },
+    {
+      "id": "UCDbEp5W8Obkk2YmYtWB-F5A",
+      "name": "Fetus",
+      "tracks": 115,
+      "selected": 48,
+      "withClip": 0
     },
     {
       "id": "UCnRFXP9nR0fh9BeIH7pZsZQ",
@@ -1802,52 +1806,30 @@
       "withClip": 11
     }
   ],
-  "indexedChannelCount": 298,
-  "resolvedChannelCount": 298,
-  "feedChannelCount": 298,
-  "rawPublicVideoCount": 8976,
-  "feedVideoCount": 7326,
-  "acceptedMusicCount": 7585,
-  "categoryEligibleVideoCount": 7522,
-  "shortVideoCount": 213,
+  "indexedChannelCount": 299,
+  "resolvedChannelCount": 299,
+  "feedChannelCount": 299,
+  "rawPublicVideoCount": 7374,
+  "feedVideoCount": 7161,
+  "acceptedMusicCount": 6760,
+  "categoryEligibleVideoCount": 6698,
+  "shortVideoCount": 0,
   "shortCatalogFilter": {
-    "before": 1112,
-    "matched": 216,
-    "rejected": 896
+    "before": 213,
+    "matched": 0,
+    "rejected": 213
   },
-  "contentReviewCount": 419,
+  "contentReviewCount": 408,
   "contentTypeCounts": {
-    "song": 7287,
-    "live_song": 235,
-    "album": 63,
-    "other": 972,
-    "review": 419
+    "song": 6498,
+    "live_song": 200,
+    "album": 62,
+    "other": 431,
+    "review": 183
   },
   "unresolvedChannelIds": [],
   "channelsWithoutUploads": [],
-  "channelsWithoutVideos": [
-    "UCMj8K97SgGnI9OdJIHBH-Sw",
-    "UCOEzuNu9yvO0AFTnSVKk4LQ",
-    "UCvdm27ITzhd3bsnftrBmFUg",
-    "UCRdGqpbhydDXIl83A9E8-2Q",
-    "UCwYR6Axoc2mEKz89P8t4N5Q",
-    "UCQAWPZGGc_4JqXq53ATaSBQ",
-    "UCHXlSnGKv7tdBxMw2F-FMkw",
-    "UCLKx4vBoCOKwB2x280VFmng",
-    "UCboGC6e3sTTIO9C6lHxifnA",
-    "UCfMqjIyA0G1cVGNlFXXoJhA",
-    "UCEMQa0poTrwLZPEbB0HGJTA",
-    "UC9i1uNb0GFrISNB2pctkvRg",
-    "UCMNP5PWXks1_Es7e5Fs2LOg",
-    "UCXa6Mb5QgzYjRV_D1VlYoKQ",
-    "UC7IUL5Ba9dhBVPnTLe9RHhQ",
-    "UCHWqKBzUJqglcjVIMViPE0A",
-    "UCUsvtjzfis5NZY8qj8BY_FQ"
-  ],
-  "channelsWithoutAcceptedMusic": [
-    "UCUSjRkF72RR1E8Rl4SWtVsQ",
-    "UC5CGdoxqbma-pqkAHPjkq9w",
-    "UC_eW1AyvwaPsQA5YAuOC3YQ"
-  ],
+  "channelsWithoutVideos": [],
+  "channelsWithoutAcceptedMusic": [],
   "allIndexedChannelsVisible": true
 }
