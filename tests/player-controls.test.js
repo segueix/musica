@@ -71,6 +71,15 @@ describe('ordres de play/pausa robustes', () => {
         );
     });
 
+    it('play i pausa canvien l’estat de seguida, sense esperar l’avís de YouTube (que es pot perdre)', () => {
+        expect(fn(app, 'playMainPlayer')).toContain("videoPlayer.dataset.playerState = '1'");
+        expect(fn(app, 'pauseMainPlayer')).toContain("videoPlayer.dataset.playerState = '2'");
+        // i l'estat també es llegeix de infoDelivery / initialDelivery
+        const handler = fn(app, 'handleYouTubeMessageLegacyImpl');
+        expect(handler).toMatch(/infoDelivery' \|\| payload\?\.event === 'initialDelivery'/);
+        expect(handler).toContain('videoPlayer.dataset.playerState = payload.info.playerState');
+    });
+
     it('la pantalla de bloqueig (Media Session) envia l’ordre que demana, sense mirar l’estat desat', () => {
         const system = read('js/features/system-player.js');
         expect(system).toContain("setHandler('play', () => actions.play());");

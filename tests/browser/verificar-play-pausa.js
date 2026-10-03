@@ -296,6 +296,55 @@ async function proves(browser, width, errors) {
         { botoPausa, botoPlay }
     );
 
+    // 5c) Si YouTube no envia l'avís d'estat (o arriba tard), el botó canvia igualment en tocar-lo i el toc següent fa
+    //     el contrari: pausa → play → pausa, amb les ordres pauseVideo, playVideo, pauseVideo
+    await page.evaluate(() => {
+        // Tots els avisos del reproductor entren per SegueixApp.features.player.handleYouTubeMessage: s'hi descarten els
+        // d'estat (onStateChange, infoDelivery) com si YouTube no els enviés
+        const player = SegueixApp.features.player;
+        window.__handleOriginal = player.handleYouTubeMessage;
+        player.handleYouTubeMessage = event => {
+            let dades = event.data;
+            if (typeof dades === 'string') {
+                try {
+                    dades = JSON.parse(dades);
+                } catch (_) {
+                    dades = null;
+                }
+            }
+            if (dades?.event === 'onStateChange' || dades?.event === 'infoDelivery') return undefined;
+            return window.__handleOriginal(event);
+        };
+        window.__ordres.length = 0;
+    });
+    const senseAvis = [];
+    for (let i = 0; i < 3; i += 1) {
+        await page.click('#playerPlayPauseBtn');
+        await page.waitForTimeout(250);
+        senseAvis.push(
+            await page.evaluate(() => {
+                const button = document.getElementById('playerPlayPauseBtn');
+                const visible = [...button.querySelectorAll('svg')].find(
+                    svg => getComputedStyle(svg).display !== 'none'
+                );
+                return `${button.getAttribute('aria-label')}:${visible?.classList.contains('pec-icon--play') ? 'play' : 'pausa'}`;
+            })
+        );
+    }
+    const ordresSenseAvis = await page.evaluate(() => {
+        SegueixApp.features.player.handleYouTubeMessage = window.__handleOriginal;
+        return window.__ordres.filter(ordre => ordre === 'playVideo' || ordre === 'pauseVideo');
+    });
+    comprovar(
+        `${etiqueta}: sense avís d'estat de YouTube, el botó canvia a cada toc (pausa → play → pausa) i torna a fer sonar`,
+        senseAvis.join() === 'Reprodueix:play,Pausa:pausa,Reprodueix:play' &&
+            ordresSenseAvis.join() === 'pauseVideo,playVideo,pauseVideo',
+        { senseAvis, ordresSenseAvis }
+    );
+    // Torna a sonar per a la resta de proves
+    await page.evaluate(() => playMainPlayer());
+    await page.waitForFunction(() => document.getElementById('videoPlayer').dataset.playerState === '1');
+
     // 6) Finestra flotant
     await page.evaluate(() => setMiniPlayerState(true, { trigger: 'test' }));
     await page.waitForFunction(() => document.getElementById('videoPlayer').classList.contains('mini-player-active'));

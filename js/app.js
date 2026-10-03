@@ -10497,6 +10497,15 @@ function handleYouTubeMessageLegacyImpl(event) {
     if (payload?.event === 'infoDelivery' && payload?.info?.currentTime != null) {
         lastKnownPlayerTime = Number(payload.info.currentTime) || 0;
     }
+    // L'estat també arriba dins infoDelivery / initialDelivery (playerState): si un onStateChange es perd, el botó de
+    // play/pausa i la resta de l'app continuen sabent si sona.
+    if (
+        (payload?.event === 'infoDelivery' || payload?.event === 'initialDelivery') &&
+        Number.isInteger(payload?.info?.playerState) &&
+        videoPlayer
+    ) {
+        videoPlayer.dataset.playerState = payload.info.playerState;
+    }
 }
 
 function isYouTubeEmbed(url) {
@@ -10581,12 +10590,20 @@ function sendMainPlayerCommand(func) {
     return true;
 }
 
+// Ordres explícites amb resposta immediata: l'estat es posa de seguida al que s'ha demanat (1 = sona, 2 = pausa), de
+// manera que el botó de play/pausa de sota el reproductor (i la resta de l'app) canvia en tocar-lo i el toc següent fa
+// el contrari. L'avís real de YouTube (onStateChange / infoDelivery) el confirma o el corregeix quan arriba; abans,
+// si no arribava o arribava tard, el botó no canviava i el segon toc tornava a pausar en lloc de fer sonar.
 function playMainPlayer() {
-    return sendMainPlayerCommand('playVideo');
+    const sent = sendMainPlayerCommand('playVideo');
+    if (sent && videoPlayer) videoPlayer.dataset.playerState = '1';
+    return sent;
 }
 
 function pauseMainPlayer() {
-    return sendMainPlayerCommand('pauseVideo');
+    const sent = sendMainPlayerCommand('pauseVideo');
+    if (sent && videoPlayer) videoPlayer.dataset.playerState = '2';
+    return sent;
 }
 
 // Sona o està a punt de sonar: reproduint (1) o carregant/buffering (3). En buffering el vídeo «vol» sonar, i un
