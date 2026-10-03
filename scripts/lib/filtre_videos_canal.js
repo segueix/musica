@@ -36,6 +36,11 @@ function loadChannelVideoAllowlist(filePath, fsModule = require('fs')) {
         exactTitles,
         titleContains,
         acceptedMusicOnly: rule?.acceptedMusicOnly === true,
+        allowedContentTypes: new Set(
+          (Array.isArray(rule?.allowedContentTypes) ? rule.allowedContentTypes : [])
+            .map(value => String(value || '').trim())
+            .filter(Boolean)
+        ),
         avatarFromFirstAllowedVideo: rule?.avatarFromFirstAllowedVideo === true,
       };
       parsedRule.hasTitleFilter = exactTitles.size > 0 || titleContains.length > 0;
@@ -43,6 +48,7 @@ function loadChannelVideoAllowlist(filePath, fsModule = require('fs')) {
       if (
         parsedRule.hasTitleFilter ||
         parsedRule.acceptedMusicOnly ||
+        parsedRule.allowedContentTypes.size > 0 ||
         parsedRule.avatarFromFirstAllowedVideo
       ) {
         map.set(channelId, parsedRule);
