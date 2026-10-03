@@ -3059,6 +3059,7 @@ async function bootstrapApp() {
     initDefaultSmartCategories();
     initIntroSplash();
     initElements();
+    initDesktopSidebarPreference();
     syncHeaderHeightVar();
     observePlayerLayoutShifts();
     initExternalPlayerControls();
@@ -3558,6 +3559,54 @@ function initElements() {
     initChannelElements();
     initHistoryElements();
     initConfigElements();
+}
+
+function initDesktopSidebarPreference() {
+    if (!sidebar) return;
+    const STORAGE_KEY = 'segueix_music_desktop_sidebar_collapsed';
+    const toggle = document.getElementById('sidebarPinToggle');
+    const desktop = () => window.matchMedia('(min-width: 1025px)').matches;
+
+    const apply = collapsed => {
+        if (!desktop()) {
+            sidebar.classList.remove('collapsed', 'sidebar-peek');
+            document.body.classList.remove('sidebar-collapsed');
+            return;
+        }
+        sidebar.classList.toggle('collapsed', collapsed);
+        sidebar.classList.remove('sidebar-peek');
+        document.body.classList.toggle('sidebar-collapsed', collapsed);
+        if (toggle) {
+            toggle.textContent = collapsed ? '›' : '‹';
+            toggle.setAttribute('aria-label', collapsed ? 'Deixa oberta la navegació' : 'Plega la navegació');
+            toggle.title = collapsed ? 'Deixa oberta la navegació' : 'Plega la navegació';
+            toggle.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
+        }
+    };
+
+    let collapsed = false;
+    try { collapsed = localStorage.getItem(STORAGE_KEY) === '1'; } catch (error) {}
+    apply(collapsed);
+
+    toggle?.addEventListener('click', event => {
+        event.preventDefault();
+        event.stopPropagation();
+        const next = !document.body.classList.contains('sidebar-collapsed');
+        try { localStorage.setItem(STORAGE_KEY, next ? '1' : '0'); } catch (error) {}
+        apply(next);
+    });
+
+    sidebar.addEventListener('mouseenter', () => {
+        if (desktop() && document.body.classList.contains('sidebar-collapsed')) sidebar.classList.add('sidebar-peek');
+    });
+    sidebar.addEventListener('mouseleave', () => {
+        if (document.body.classList.contains('sidebar-collapsed')) sidebar.classList.remove('sidebar-peek');
+    });
+    window.addEventListener('resize', () => {
+        let saved = false;
+        try { saved = localStorage.getItem(STORAGE_KEY) === '1'; } catch (error) {}
+        apply(saved);
+    });
 }
 
 // ==================== EVENT BINDING ====================
