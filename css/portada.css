@@ -4997,15 +4997,15 @@ body:has(#playerExternalControls.is-floating.is-above:not([hidden])) #videoPlaye
 
 /* ---------- «La teva ràdio»: caràtules més grans i centrades (versió web) ----------
    A tauleta i escriptori la targeta ocupa tot l'ample i les tres caràtules quedaven petites, enganxades a la cantonada
-   de dalt. Ara fan servir l'espai de la dreta: la mida creix amb l'ample de la targeta (110–190 px; unitats de contenidor),
+   de dalt. Ara fan servir l'espai de la dreta: la mida creix amb l'ample de la targeta (120–215 px; unitats de contenidor),
    queden centrades en vertical i una mica separades de la vora, i el text de la targeta reserva el seu lloc perquè no
    s'hi solapi mai (els estils de la primera vegada passen a dues files si cal). Al mòbil no canvia res. */
 @supports (width: 1cqw) {
     @media (min-width: 769px) {
         .pt-radio {
             container-type: inline-size;
-            --pt-cover: clamp(110px, 12cqw, 190px);
-            --pt-cover-right: 7cqw;
+            --pt-cover: clamp(120px, 14cqw, 215px);
+            --pt-cover-right: 11cqw;
         }
 
         .pt-radio__covers {
