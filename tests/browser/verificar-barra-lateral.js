@@ -127,7 +127,7 @@ async function escriptori(browser, width, ample, errors) {
         `${etiqueta}: el botó de tres ratlles és a l'esquerra de la capçalera, abans del logo, i la barra és oberta`,
         obert.toggleDisplay !== 'none' &&
             obert.toggle.left < obert.brand.left &&
-            obert.toggle.width >= 44 &&
+            obert.toggle.width >= 40 &&
             obert.expanded === 'true' &&
             obert.sidebar.left === 0 &&
             obert.sidebar.width === ample &&

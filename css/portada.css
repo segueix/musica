@@ -4921,31 +4921,33 @@ body:has(#playerExternalControls.is-floating.is-above:not([hidden])) #videoPlaye
         grid-area: toggle;
         display: inline-grid;
         place-items: center;
-        width: 44px;
-        height: 44px;
-        margin-right: -4px;
+        width: 40px;
+        height: 40px;
         padding: 0;
-        border: 1px solid transparent;
-        border-radius: var(--pt-radius-sm);
+        /* Requadre blanc de vora fina amb les cantonades arrodonides, com el botó de menú de GitHub */
+        border: 1px solid rgba(244, 240, 232, 0.55);
+        border-radius: 8px;
         background: transparent;
         color: var(--pt-text);
         cursor: pointer;
         -webkit-tap-highlight-color: transparent;
         transition:
             background-color 0.15s ease,
+            border-color 0.15s ease,
             color 0.15s ease;
     }
 
     .sidebar-toggle svg {
-        width: 24px;
-        height: 24px;
+        width: 20px;
+        height: 20px;
         fill: none;
         stroke: currentColor;
-        stroke-width: 2.2;
+        stroke-width: 2;
         stroke-linecap: round;
     }
 
     .sidebar-toggle:hover {
+        border-color: var(--pt-text);
         background: var(--pt-surface-2);
     }
 
@@ -4956,6 +4958,7 @@ body:has(#playerExternalControls.is-floating.is-above:not([hidden])) #videoPlaye
 
     /* Amb la barra plegada el botó s'ha de veure «actiu» perquè se sàpiga que hi ha un menú amagat */
     body.sidebar-collapsed .sidebar-toggle {
+        border-color: var(--pt-accent);
         color: var(--pt-accent);
     }
 
