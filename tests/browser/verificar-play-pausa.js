@@ -412,6 +412,37 @@ async function proves(browser, width, errors) {
         );
     }
 
+    // 6d) Escriptori: amb la finestra estreta (redimensionada) contra la vora dreta, la barra no s'encongeix i «restaura» i
+    //     «tanca» queden dins la pantalla
+    if (!mobile) {
+        await page.evaluate(() => {
+            const player = document.getElementById('videoPlayer');
+            player.style.transition = 'none';
+            player.style.width = '210px';
+            player.style.height = '118px';
+            player.style.left = `${window.innerWidth - 210}px`;
+            player.style.top = '200px';
+        });
+        await page.waitForTimeout(300);
+        const estreta = await page.evaluate(() => {
+            const bar = document.getElementById('playerExternalControls').getBoundingClientRect();
+            const dins = id => {
+                const r = document.getElementById(id).getBoundingClientRect();
+                return r.left >= 0 && r.right <= window.innerWidth;
+            };
+            return {
+                barra: [Math.round(bar.left), Math.round(bar.right), window.innerWidth],
+                restaura: dins('playerMiniBtn'),
+                tanca: dins('playerCloseBtn'),
+            };
+        });
+        comprovar(
+            `${etiqueta}: amb la finestra estreta a la vora, la barra cap a la pantalla amb «restaura» i «tanca»`,
+            estreta.barra[1] <= estreta.barra[2] && estreta.barra[0] >= 0 && estreta.restaura && estreta.tanca,
+            estreta
+        );
+    }
+
     // 7) «Següent» de la barra funciona amb la finestra flotant (al mòbil, la barra enganxada a sota)
     await page.evaluate(() => pauseMainPlayer());
     await page.waitForFunction(() => document.getElementById('videoPlayer').dataset.playerState === '2');
