@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-03T19:22:11.322Z",
+  "updatedAt": "2026-10-03T19:25:00.000Z",
   "artists": [
     {
       "name": "31 FAM",
@@ -13294,7 +13294,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCwg6xDQi5POlksfrsjjwFyA",
+            "handle": null,
+            "name": "Mazoni - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UCCf4pFWTtT-bpsXWz6B5VgA",
@@ -13434,10 +13442,12 @@
       "active": true,
       "sources": [
         "manual-user-2026-10-03",
-        "genre:manual"
+        "genre:manual",
+        "youtube:manual-verified",
+        "https://www.youtube.com/channel/UCwg6xDQi5POlksfrsjjwFyA"
       ],
-      "lastChecked": "2026-10-03T19:10:00.000Z",
-      "notes": "Alta manual sol·licitada: canal Topic pendent de resolució; gènere Cançó d'autor.",
+      "lastChecked": "2026-10-03T19:25:00.000Z",
+      "notes": "Alta manual verificada: canal «Mazoni - Topic»; gènere Cançó d'autor.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-03T19:22:10.330Z",
@@ -14122,15 +14132,15 @@
           }
         ]
       },
-      "confidence": "alta",
-      "reviewStatus": "aprovat",
-      "active": true,
+      "confidence": "pendent",
+      "reviewStatus": "pendent",
+      "active": false,
       "sources": [
         "manual-user-2026-10-03",
         "genre:manual"
       ],
       "lastChecked": "2026-10-03T19:10:00.000Z",
-      "notes": "Alta manual sol·licitada: canal Topic pendent de resolució; gènere Rock.",
+      "notes": "No s'ha trobat cap canal «Motoclus - Topic» fiable. La cerca explícita retorna «Motoclub - Topic» i canals no relacionats; no s'accepta cap candidat per evitar un fals positiu.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-03T19:22:10.942Z",
