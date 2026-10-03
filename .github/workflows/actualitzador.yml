@@ -7,8 +7,8 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: music-data-writer
-  cancel-in-progress: true
+  group: manual-topic-category-update
+  cancel-in-progress: false
 
 jobs:
   actualitza:
