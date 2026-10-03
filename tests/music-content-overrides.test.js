@@ -148,6 +148,9 @@ describe('dades revisades manualment', () => {
         expect(contentAudit.typeCounts.review).toBe(review.videos.length);
         const total = Object.values(contentAudit.typeCounts).reduce((sum, n) => sum + n, 0);
         expect(total).toBe(contentAudit.rawPublicVideoCount);
-        expect(contentAudit.shortVideoCount).toBe(feed.videos.filter((video) => video.isShort === true).length);
+        // shortVideoCount descriu el catàleg complet abans d'arxivar.
+        // published* descriu el feed calent que realment queda a data/feed.json.
+        expect(contentAudit.publishedFeedVideoCount).toBe(feed.videos.length);
+        expect(contentAudit.publishedShortVideoCount).toBe(feed.videos.filter((video) => video.isShort === true).length);
     });
 });

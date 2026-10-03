@@ -20,6 +20,8 @@ on:
       - "tests/albums-musica.test.js"
       - "scripts/update_music_history_views.js"
       - "scripts/update_music_feed.js"
+      - "scripts/lib/subtitols_castella.js"
+      - "tests/subtitols-castella.test.js"
       - ".github/workflows/actualitzar-feed-musica.yml"
       - ".github/workflows/validar-musica.yml"
   pull_request:
@@ -40,6 +42,8 @@ on:
       - "scripts/archivar_feed_musical.js"
       - "tests/albums-musica.test.js"
       - "scripts/update_music_history_views.js"
+      - "scripts/lib/subtitols_castella.js"
+      - "tests/subtitols-castella.test.js"
       - ".github/workflows/validar-musica.yml"
   workflow_dispatch:
 
@@ -75,6 +79,9 @@ jobs:
 
       - name: Prova feed calent i historial
         run: npx vitest run tests/arxiu-musical.test.js
+
+      - name: Prova coherència del pipeline musical
+        run: npx vitest run tests/music-content-overrides.test.js tests/subtitols-castella.test.js
 
       - name: Prova metadades de discos sense API
         run: npx vitest run tests/albums-musica.test.js
