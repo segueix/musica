@@ -1279,3 +1279,18 @@ Hi havia dos problemes independents:
 1. **GitHub Actions:** S'ha afegit el pas `node scripts/sincronitzar_tot.js` a `.github/workflows/actualitzador.yml` immediatament després de generar el feed, i s'han afegit les ordres `git add -f js/channels-ca.json` i `git add -f sw.js` al commit automàtic perquè la web s'actualitzi i la memòria cau es trenqui per als usuaris.
 2. **Cloudflare Pages:** S'ha modificat la configuració de construcció (Build Configuration) de Cloudflare deixant el *Framework preset* a `None` i configurant el *Build command* com a `exit 0` perquè ignori el `package.json` i publiqui els arxius estàtics directament des de l'arrel `/`.
 
+
+### 🎵 Revisió d’idioma: Guillermina Motta, Pere Tàpias i La Trinca (2026-10-03)
+
+**Problema:** la llengua indicada per YouTube i els detectors basats només en caràcters poden donar falsos positius, i alguns títols existeixen tant en una versió catalana com en una castellana.
+
+**Solució aplicada:**
+- s’han revisat els catàlegs Topic dels tres artistes i s’han afegit a `data/hidden-videos.json` les gravacions confirmades que no són en català;
+- s’han creat regles persistents a `scripts/ocultar_titols_castella.js` per als títols inequívocs de Guillermina Motta i La Trinca;
+- «Mama Caca», «Vade Retro» i «Flash Reagan» només es bloquegen per ID en les gravacions castellanes, per no eliminar versions catalanes amb el mateix títol;
+- «La Patata» de La Trinca es conserva perquè la lletra és catalana;
+- «La Moñito» de Guillermina Motta es recupera del descart automàtic: la ñ del títol és un fals positiu i la peça és catalana amb frases paròdiques;
+- Pere Tàpias manté la regla de «Oye José María» i «Moreno de la Fe», i s’han ocultat també les gravacions duplicades/en directe d’aquesta darrera;
+- no s’utilitza `defaultLanguage` / `defaultAudioLanguage` com a prova de llengua, perquè en aquests catàlegs etiqueta erròniament diverses peces catalanes.
+
+**Fitxers afectats:** `data/hidden-videos.json`, `data/revisio-idiomes.json`, `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md`, `docs/PROBLEMES_I_SOLUCIONS.md`.
