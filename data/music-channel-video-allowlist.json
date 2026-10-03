@@ -29,6 +29,30 @@
       "deniedTitleContains": [
         "Citylights"
       ]
+    },
+    "UCJ6EMs_13PLDvRSHi-XqRwQ": {
+      "artist": "Sidonie",
+      "note": "Només s'indexa el repertori català recent demanat: la col·laboració 'Persiana baixada' (2026) i les 12 cançons de Catalan Graffiti (2025). La resta del canal queda fora.",
+      "allowedTitles": [
+        "Persiana baixada",
+        "Et puc odiar molt més",
+        "Cançons que maten",
+        "Sé",
+        "Ets Itàlia",
+        "Sismologia",
+        "Els Beatles",
+        "OVNI 84",
+        "El cap ple d'ocells",
+        "Boda",
+        "Mentida",
+        "Aquesta nit és la nit",
+        "Baby, baby"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
     }
   }
 }
