@@ -19,6 +19,8 @@ const ROOT = path.resolve(__dirname, '..');
 const FEED = path.join(ROOT, 'data', 'feed.json');
 const ARCHIVE_DIR = path.join(ROOT, 'data', 'archive', 'channels');
 const HISTORY_POOL = path.join(ROOT, 'data', 'history-pool.json');
+const CONTENT_AUDIT = path.join(ROOT, 'data', 'music-content-audit.json');
+const FEED_AUDIT = path.join(ROOT, 'data', 'music-feed-audit.json');
 
 const HOT_DAYS = Number.parseInt(process.env.MUSIC_HOT_DAYS || String(DEFAULTS.hotDays), 10);
 const OLD_KEEP = Number.parseInt(process.env.MUSIC_OLD_KEEP_PER_CHANNEL || String(DEFAULTS.oldKeepPerChannel), 10);
@@ -35,6 +37,14 @@ function readJson(file, fallback) {
 
 function archivePath(channelId) {
   return path.join(ARCHIVE_DIR, String(channelId) + '.json');
+}
+
+function syncPublishedAudit(file, videos) {
+  const audit = readJson(file, null);
+  if (!audit || typeof audit !== 'object') return;
+  audit.publishedFeedVideoCount = videos.length;
+  audit.publishedShortVideoCount = videos.filter(video => video?.isShort === true).length;
+  fs.writeFileSync(file, JSON.stringify(audit, null, 2) + '\n');
 }
 
 function hydrateForHot(video) {
@@ -105,6 +115,10 @@ function main() {
   feed.videos = uniqueVideos(hot);
   feed.generatedAt = new Date().toISOString();
   fs.writeFileSync(FEED, serializeFeed(feed));
+  // Les auditories del generador descriuen el catàleg complet abans d'arxivar.
+  // Aquests dos camps descriuen explícitament el feed calent que finalment es publica.
+  syncPublishedAudit(CONTENT_AUDIT, feed.videos);
+  syncPublishedAudit(FEED_AUDIT, feed.videos);
 
   const poolPayload = {
     updatedAt: new Date().toISOString(),
