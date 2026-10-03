@@ -1328,3 +1328,16 @@ Hi havia dos problemes independents:
 **Proves:** `tests/player-controls.test.js`, `tests/system-player.test.js` i `tests/browser/verificar-finestra-sistema.js`.
 
 **Fitxers Afectats:** `js/app.js`, `js/features/system-player.js`, `tests/player-controls.test.js`, `tests/system-player.test.js`, `tests/browser/verificar-finestra-sistema.js`, `CLAUDE.md`, `sw.js`, `docs/PROBLEMES_I_SOLUCIONS.md`.
+
+
+## [2026-10-03] - «La teva ràdio» no es veia bé amb la barra lateral oberta
+
+**Símptoma:** a l'escriptori, amb la barra de l'esquerra desplegada i «Continua escoltant» al costat, la targeta de la ràdio quedava d'uns 450–770 px: el títol i el text es partien en moltes línies, les caràtules tapaven el botó «Ràdio nova» i el selector «Quant vols descobrir?» s'aixafava (opcions en 3–4 línies, «Sorprèn-me» tallat).
+
+**Causa Arrel:** les caràtules (mínim 120 px) reservaven a la dreta ~380 px de `padding-right` a tot el cos de la targeta, pensat per a targetes de tot l'ample. En una targeta estreta quedaven uns 70–300 px per al text, el botó i el selector.
+
+**Solució Implementada:** `#homePage.is-portada` és un contenidor; amb menys de 1180 px de contingut les dues targetes s'apilen. Si la targeta fa menys de 900 px, les caràtules són petites i només l'etiqueta, el títol i el text en reserven el lloc; el botó i el selector fan servir tot l'ample (`flex: 1 1 auto` al cos, que és dins un flex). Trampa: una consulta de contenidor no estila el propi contenidor, per això les variables `--pt-cover*` es posen als descendents.
+
+**Proves:** `tests/portada-assets.test.js`; comprovat amb captures a 1920, 1536, 1366, 1100, 900 i 800 px (barra oberta i plegada).
+
+**Fitxers Afectats:** `css/portada.css`, `tests/portada-assets.test.js`, `CLAUDE.md`, `sw.js`, `docs/PROBLEMES_I_SOLUCIONS.md`.

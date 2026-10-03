@@ -202,6 +202,28 @@ describe('«La teva ràdio»: caràtules grans i centrades a la versió web', ()
     });
 });
 
+describe('«La teva ràdio» amb la barra lateral oberta: targeta sencera i caràtules que no tapen res', () => {
+    const block = css.slice(css.indexOf('/* ---------- «La teva ràdio» amb la barra lateral oberta'));
+    const end = block.indexOf('/* ---------- Ràdio o llista que sona');
+    const own = block.slice(0, end);
+
+    it('apila «Continua escoltant» i la ràdio quan l’àrea de contingut és estreta', () => {
+        expect(own).toMatch(/#homePage\.is-portada \{\s*container-type: inline-size/);
+        expect(own).toMatch(
+            /@container portada-page \(max-width: 1179px\) \{\s*\.pt-entry\.has-continue \{\s*grid-template-columns: minmax\(0, 1fr\)/
+        );
+    });
+
+    it('en una targeta estreta les caràtules són petites i només el títol i el text en reserven el lloc', () => {
+        const narrow = own.slice(own.indexOf('@container (max-width: 899px)'));
+        // les variables van als descendents: una consulta de contenidor no estila el propi contenidor
+        expect(narrow).toMatch(/\.pt-radio__body,\s*\.pt-radio__covers \{\s*--pt-cover: clamp\(72px, 15cqw, 104px\)/);
+        expect(narrow).toMatch(/\.pt-radio__body \{\s*flex: 1 1 auto;\s*padding-right: 28px/);
+        expect(narrow).toMatch(/\.pt-radio__title,\s*\.pt-radio__lead,[\s\S]*?padding-right: calc\(/);
+        expect(narrow).toMatch(/\.pt-mode__options \{\s*max-width: none/);
+    });
+});
+
 describe('fitxa de la cançó: cua alineada amb els botons i línies enganxades', () => {
     const styles = read('css/styles.css');
     const block = css.slice(
