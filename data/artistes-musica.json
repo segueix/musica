@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-03T19:04:00.000Z",
+  "updatedAt": "2026-10-03T19:06:25.827Z",
   "artists": [
     {
       "name": "31 FAM",
@@ -3973,7 +3973,51 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": []
+        "channels": [],
+        "searchCandidates": [
+          {
+            "id": "UCOXyxBFPQ97GO6PQqiJSvkw",
+            "title": "Dusminguet - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 1270,
+            "thumbnail": "https://yt3.ggpht.com/UHTqWbTycxZiOUuLnsxvtutxwb8xJyvEMnbp-vbb78jb1DACkD4cdS5eTdTyg7H_yIdktRrpBA=s240-c-k-c0x00ffffff-no-rj",
+            "score": 85,
+            "reasons": [
+              "nom exacte de canal Topic",
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-03T19:06:25.207Z"
+          },
+          {
+            "id": "UCgGX4EKP5wm6_FyvxA6QdqQ",
+            "title": "Dusminguet eldocumental",
+            "handle": "@dusmingueteldocumental2808",
+            "description": "",
+            "subscriberCount": 49,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_mNuZm7HZGQSen1VuSjU4sOa0zm-D_FMscKdQ3KV3LxdKE=s240-c-k-c0x00ffffff-no-rj",
+            "score": 53,
+            "reasons": [
+              "nom parcial",
+              "handle coincident"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-03T19:06:25.207Z"
+          },
+          {
+            "id": "UC1De0CdYgNV4u5rGY-HQYmw",
+            "title": "vafalungopostrof",
+            "handle": "@vafalungopostrof",
+            "description": "",
+            "subscriberCount": 548,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_kHTbe_d8YeXMN5KwaEvWT1O_cC0rMcDg3pDCAwxJRU5A=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-03T19:06:25.207Z"
+          }
+        ]
       },
       "confidence": "alta",
       "reviewStatus": "aprovat",
@@ -3984,7 +4028,17 @@
         "genre:manual"
       ],
       "lastChecked": "2026-10-03T19:04:00.000Z",
-      "notes": "Alta manual sol·licitada: canal Topic pendent de resolució automàtica; gènere Rumba / Mestissatge."
+      "notes": "Alta manual sol·licitada: canal Topic pendent de resolució automàtica; gènere Rumba / Mestissatge.",
+      "enrichment": {
+        "youtubeSearch": {
+          "checkedAt": "2026-10-03T19:06:25.207Z",
+          "status": "candidats",
+          "query": "Dusminguet",
+          "resultCount": 3,
+          "bestScore": 85,
+          "autoAcceptedId": null
+        }
+      }
     },
     {
       "name": "Ebri Knight",
