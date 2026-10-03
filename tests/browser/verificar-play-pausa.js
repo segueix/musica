@@ -331,6 +331,37 @@ async function proves(browser, width, errors) {
             })
         );
     }
+    // 5d) Un avís endarrerit amb l'estat d'abans de l'ordre (ja era en camí) no desfà el canvi: pausa → «sona» tard →
+    //     el botó continua en play i el toc següent fa sonar. I un avís d'un altre iframe de YouTube (el de Shorts)
+    //     no toca l'estat del reproductor principal.
+    const endarrerit = await page.evaluate(async () => {
+        const iframe = document.querySelector('#videoPlayer iframe');
+        const fals = (source, data) =>
+            window.__handleOriginal({ origin: 'https://www.youtube.com', source, data: JSON.stringify(data) });
+        const estat = () => document.getElementById('videoPlayer').dataset.playerState;
+        // ara sona (el darrer toc de 5c ha estat pausa → tornem a sonar sense avís)
+        document.getElementById('playerPlayPauseBtn').click();
+        await new Promise(resolve => setTimeout(resolve, 50));
+        const abans = estat();
+        document.getElementById('playerPlayPauseBtn').click(); // pausa
+        fals(iframe.contentWindow, { event: 'onStateChange', info: 1 }); // «sona» d'abans de la pausa
+        fals(iframe.contentWindow, { event: 'infoDelivery', info: { playerState: 1 } });
+        await new Promise(resolve => setTimeout(resolve, 50));
+        const despresEndarrerit = estat();
+        fals(window, { event: 'infoDelivery', info: { playerState: 1 } }); // d'un altre iframe
+        await new Promise(resolve => setTimeout(resolve, 50));
+        const altreIframe = estat();
+        const label = document.getElementById('playerPlayPauseBtn').getAttribute('aria-label');
+        return { abans, despresEndarrerit, altreIframe, label };
+    });
+    comprovar(
+        `${etiqueta}: un «sona» endarrerit no desfà la pausa i els avisos d'un altre iframe (Shorts) no compten`,
+        endarrerit.abans === '1' &&
+            endarrerit.despresEndarrerit === '2' &&
+            endarrerit.altreIframe === '2' &&
+            endarrerit.label === 'Reprodueix',
+        endarrerit
+    );
     const ordresSenseAvis = await page.evaluate(() => {
         SegueixApp.features.player.handleYouTubeMessage = window.__handleOriginal;
         return window.__ordres.filter(ordre => ordre === 'playVideo' || ordre === 'pauseVideo');
@@ -338,7 +369,7 @@ async function proves(browser, width, errors) {
     comprovar(
         `${etiqueta}: sense avís d'estat de YouTube, el botó canvia a cada toc (pausa → play → pausa) i torna a fer sonar`,
         senseAvis.join() === 'Reprodueix:play,Pausa:pausa,Reprodueix:play' &&
-            ordresSenseAvis.join() === 'pauseVideo,playVideo,pauseVideo',
+            ordresSenseAvis.join() === 'pauseVideo,playVideo,pauseVideo,playVideo,pauseVideo',
         { senseAvis, ordresSenseAvis }
     );
     // Torna a sonar per a la resta de proves

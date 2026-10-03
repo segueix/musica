@@ -10150,6 +10150,7 @@ function swapLivePlayerVideo({ videoId, startAt = 0, thumbnail = '', title = '' 
     lastLiveSwapAt = Date.now();
     videoPlayer.dataset.playingVideoId = id;
     videoPlayer.dataset.playerState = '';
+    pendingPlayerState = null;
     // El forat continua darrere del reproductor: hi deixem la caràtula del vídeo nou per
     // si l'usuari surt de la pantalla completa mentre encara carrega.
     setPlaceholderImage(thumbnail, title);
@@ -10274,6 +10275,7 @@ function resetInlineVideoSurface() {
     videoPlayer.innerHTML = '';
     videoPlayer.classList.remove('mini-player-active');
     videoPlayer.dataset.playerState = '';
+    pendingPlayerState = null;
     videoPlayer.dataset.playingVideoId = '';
     videoPlayer.style.display = 'none';
     videoPlayer.style.width = '';
@@ -10441,9 +10443,11 @@ function handleYouTubeMessageLegacyImpl(event) {
             return;
         }
     }
+    // Només els avisos de l'iframe del reproductor principal en descriuen l'estat (el de Shorts també n'envia)
+    const fromMainPlayer = Boolean(videoPlayer) && event.source === videoPlayer.querySelector('iframe')?.contentWindow;
     // Guardem l'estat del reproductor (1 = Playing, 2 = Paused, etc.)
     if (payload?.event === 'onStateChange' && videoPlayer) {
-        videoPlayer.dataset.playerState = payload.info;
+        if (fromMainPlayer) applyReportedPlayerState(payload.info);
         if (payload?.info === 2 && hasQueueNavigation()) {
             showQueueNextOverlay();
         } else if (payload?.info === 1) {
@@ -10502,9 +10506,9 @@ function handleYouTubeMessageLegacyImpl(event) {
     if (
         (payload?.event === 'infoDelivery' || payload?.event === 'initialDelivery') &&
         Number.isInteger(payload?.info?.playerState) &&
-        videoPlayer
+        fromMainPlayer
     ) {
-        videoPlayer.dataset.playerState = payload.info.playerState;
+        applyReportedPlayerState(payload.info.playerState);
     }
 }
 
@@ -10594,15 +10598,41 @@ function sendMainPlayerCommand(func) {
 // manera que el botó de play/pausa de sota el reproductor (i la resta de l'app) canvia en tocar-lo i el toc següent fa
 // el contrari. L'avís real de YouTube (onStateChange / infoDelivery) el confirma o el corregeix quan arriba; abans,
 // si no arribava o arribava tard, el botó no canviava i el segon toc tornava a pausar en lloc de fer sonar.
+// Mentre una ordre no es confirma (fins a PLAYER_STATE_PENDING_MS), un avís que la contradiu és d'abans de l'ordre
+// (ja era en camí) i s'ignora: si no, pausar podia rebre un «sona» endarrerit i el toc següent tornava a pausar.
+const PLAYER_STATE_PENDING_MS = 1500;
+let pendingPlayerState = null;
+
+function requestPlayerState(state) {
+    if (!videoPlayer) return;
+    pendingPlayerState = { state, until: Date.now() + PLAYER_STATE_PENDING_MS };
+    videoPlayer.dataset.playerState = state;
+}
+
+function applyReportedPlayerState(info) {
+    if (!videoPlayer) return;
+    const state = String(info);
+    if (pendingPlayerState && Date.now() < pendingPlayerState.until) {
+        const wantsPlay = pendingPlayerState.state === '1';
+        const confirms = wantsPlay ? state === '1' || state === '3' : state === '2';
+        const contradicts = wantsPlay ? state === '2' : state === '1' || state === '3';
+        if (contradicts) return;
+        if (confirms) pendingPlayerState = null;
+    } else {
+        pendingPlayerState = null;
+    }
+    videoPlayer.dataset.playerState = state;
+}
+
 function playMainPlayer() {
     const sent = sendMainPlayerCommand('playVideo');
-    if (sent && videoPlayer) videoPlayer.dataset.playerState = '1';
+    if (sent) requestPlayerState('1');
     return sent;
 }
 
 function pauseMainPlayer() {
     const sent = sendMainPlayerCommand('pauseVideo');
-    if (sent && videoPlayer) videoPlayer.dataset.playerState = '2';
+    if (sent) requestPlayerState('2');
     return sent;
 }
 
