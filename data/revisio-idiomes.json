@@ -1,424 +1,2716 @@
 {
-  "updatedAt": "2026-10-03T19:40:50.057Z",
+  "updatedAt": "2026-10-03T19:45:00.000Z",
   "pendents": [
-    {"id":"QAr713wG3TI","artista":"Anna Andreu","titol":"'Letargo y Despertar' d'Anna Andreu","descripcio":"Artista: Anna Andreu Canción: Letargo y Despertar Composición, voy y guitarra: Anna Andreu Batería y coros: Marina Arrufat Producción musical, guitarra y bajo:…","publicada":"2023-05-20","afegida":"2026-10-02T15:58:31.716Z"},
-    {"id":"p3NesYndiBg","artista":"Anna Andreu","titol":"'Quietud' d'Anna Andreu ft. Rita Payés i Pol Batlle","descripcio":"Artista: Anna Andreu ft. Rita Payés i Pol Batlle Direcció Jordi Martínez Director fotografia Yuse Riera Produït per Me río de los nervios films Color Fabián Mat…","publicada":"2023-03-21","afegida":"2026-10-02T15:58:31.716Z"},
-    {"id":"f1MXDLREBrc","artista":"Anna Andreu","titol":"Anna Andreu 'Els mals costums' (Audio oficial - complet)","descripcio":"Artista: Anna Andreu Album: Els Mals Costums (abril 2020) Veu i guitarra: Anna Andreu Bateria, teclats i veus: Marina Arrufat Producció: Jordi Matas Master: Vic…","publicada":"2020-04-16","afegida":"2026-10-02T15:58:31.716Z"},
-    {"id":"U-8YwBg0R_U","artista":"Anna Andreu","titol":"Anna Andreu 'La mida' (Audio oficial sencer)","descripcio":"Artista: Anna Andreu Àlbum: La mida (Hidden Track Records, març 2022) Veu i guitarra: Anna Andreu Bateria: Marina Arrufat Gravació, mescla i producció de Jordi…","publicada":"2022-03-24","afegida":"2026-10-02T15:58:31.716Z"},
-    {"id":"xiG1Pg3oxU4","artista":"Anna Andreu","titol":"Torrent Sanguini (directe)","descripcio":"Cançó: Torrent Sanguini Veu i guitarra: Anna Andreu Bateria: Marina Arrufat Àlbum: Els Mals Costums (Hidden Track Records 2020) Direcció: Carles Pons Altimira D…","publicada":"2020-09-09","afegida":"2026-10-02T15:58:31.716Z"},
-    {"id":"6AXuq71AXak","artista":"Brams","titol":"Aquest Món","descripcio":"Disc: Tot És Possible","publicada":"2014-11-16","afegida":"2026-10-03T17:26:42.487Z"},
-    {"id":"EYxwT6F0J6Q","artista":"Brams","titol":"El senyal de combat","descripcio":"Disc: Sempremés","publicada":"2014-11-21","afegida":"2026-10-03T17:26:42.487Z"},
-    {"id":"k-naoJVzwlE","artista":"Brams","titol":"Guanyarem","descripcio":"Disc: Sempremés","publicada":"2014-11-21","afegida":"2026-10-03T17:26:42.487Z"},
-    {"id":"2_UuLh18hT8","artista":"Brams","titol":"La Guerra de la Verdulaire, Part I, Sants Collons","descripcio":"Disc: Aldea Global Thematic Park","publicada":"2014-11-21","afegida":"2026-10-03T17:26:42.487Z"},
-    {"id":"WH4mzRc8a0g","artista":"Brams","titol":"Moros i cristians","descripcio":"Disc: Sempremés","publicada":"2014-11-21","afegida":"2026-10-03T17:26:42.487Z"},
-    {"id":"PHCLmBxn67M","artista":"Brams","titol":"Sants collons","descripcio":"Disc: Sempremés","publicada":"2014-11-21","afegida":"2026-10-03T17:26:42.487Z"},
-    {"id":"DaUlwpS5evA","artista":"Dàmaris Gelabert","titol":"MOU EL COS - Us estrimem fest #cançonsinfantils #família #cançonsperaprendre","descripcio":"","publicada":"2023-11-06","afegida":"2026-10-02T15:58:31.716Z"},
-    {"id":"h4K5D51bsuE","artista":"Desperta Ferro","titol":"Almogauers","descripcio":"Disc: Segueu Arran","publicada":"2015-07-27","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"MAYYeeCxvnM","artista":"Desperta Ferro","titol":"Almogàvers","descripcio":"Disc: Dempeus i Alerta!","publicada":"2024-11-04","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"mcRfZGmI3BU","artista":"Desperta Ferro","titol":"Angelets De La Terra","descripcio":"Disc: Segueu Arran","publicada":"2015-07-27","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"0d5okCVbtpU","artista":"Desperta Ferro","titol":"Atac contra l'Estat","descripcio":"Disc: Dempeus i Alerta!","publicada":"2024-11-04","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"DD7J-0n8bhU","artista":"Desperta Ferro","titol":"Bemba Bar","descripcio":"Disc: Segueu Arran","publicada":"2015-07-27","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"Wo2zBuh7VRU","artista":"Desperta Ferro","titol":"Bruixa de Dol","descripcio":"Disc: Dempeus i Alerta!","publicada":"2024-11-04","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"TJCT8x2SJb4","artista":"Desperta Ferro","titol":"Cada dia més a prop","descripcio":"Disc: Dempeus i Alerta!","publicada":"2024-11-04","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"UA5G7qQ-6ik","artista":"Desperta Ferro","titol":"Consciencia De Classe","descripcio":"Disc: Segueu Arran","publicada":"2015-07-27","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"3BhVffOND9E","artista":"Desperta Ferro","titol":"Desperta Ferro","descripcio":"Disc: Dempeus i Alerta!","publicada":"2024-11-04","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"iZXY3KXlqfw","artista":"Desperta Ferro","titol":"DF Crew","descripcio":"Disc: L'alba d'un nou jorn","publicada":"2015-07-27","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"zdwDdu8DQA8","artista":"Desperta Ferro","titol":"Dos Camins","descripcio":"Disc: Dempeus i Alerta!","publicada":"2024-11-04","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"mv6k17BUdG4","artista":"Desperta Ferro","titol":"E.U.E.","descripcio":"Disc: Dempeus i Alerta!","publicada":"2024-11-04","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"-BKVFAP4PPU","artista":"Desperta Ferro","titol":"Els Bons Temps","descripcio":"Disc: Dempeus i Alerta!","publicada":"2024-11-04","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"DQw57bzqW30","artista":"Desperta Ferro","titol":"Fahrenheit 451","descripcio":"Disc: Segueu Arran","publicada":"2015-07-27","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"jb2qqaY2GRw","artista":"Desperta Ferro","titol":"Fins a la Mort","descripcio":"Disc: Dempeus i Alerta!","publicada":"2024-11-04","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"SU2HZARaRj0","artista":"Desperta Ferro","titol":"Germans","descripcio":"Disc: L'alba d'un nou jorn","publicada":"2015-07-27","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"ZRrU7RN8rxg","artista":"Desperta Ferro","titol":"Gol Nord","descripcio":"Disc: Dempeus i Alerta!","publicada":"2024-11-04","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"3FZ3pwH_BkQ","artista":"Desperta Ferro","titol":"Inscrit En La Memoria","descripcio":"Disc: Segueu Arran","publicada":"2015-07-27","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"ngiBhWJ_DYc","artista":"Desperta Ferro","titol":"La Història del mai acabar","descripcio":"Disc: L'alba d'un nou jorn","publicada":"2015-07-27","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"2mlDiwoouTg","artista":"Desperta Ferro","titol":"La Llançadora","descripcio":"Disc: L'alba d'un nou jorn","publicada":"2015-07-27","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"To2W_C5Exmk","artista":"Desperta Ferro","titol":"La Mata de Jonc","descripcio":"Disc: Dempeus i Alerta!","publicada":"2024-11-04","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"RweWnDiYmuI","artista":"Desperta Ferro","titol":"La Sirena","descripcio":"Disc: L'alba d'un nou jorn","publicada":"2015-07-27","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"OaOytyB5hPU","artista":"Desperta Ferro","titol":"Maquis","descripcio":"Disc: L'alba d'un nou jorn","publicada":"2015-07-27","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"j0598xRgvW8","artista":"Desperta Ferro","titol":"Maulets","descripcio":"Disc: L'alba d'un nou jorn","publicada":"2015-07-27","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"_TV841tKDq0","artista":"Desperta Ferro","titol":"No ens rendirem","descripcio":"Disc: L'alba d'un nou jorn","publicada":"2015-07-27","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"0_FxIzsOC9M","artista":"Desperta Ferro","titol":"Nomes Hi Ha Un Cami","descripcio":"Disc: Segueu Arran","publicada":"2015-07-27","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"3MIFU8wNG0s","artista":"Desperta Ferro","titol":"Oda als Països Catalans","descripcio":"Disc: L'alba d'un nou jorn","publicada":"2015-07-27","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"TgeTtFjI4zI","artista":"Desperta Ferro","titol":"Sang i Or","descripcio":"Disc: L'alba d'un nou jorn","publicada":"2015-07-27","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"o22wu0Sfsi4","artista":"Desperta Ferro","titol":"Sant Jordi","descripcio":"Disc: L'alba d'un nou jorn","publicada":"2015-07-27","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"GquhWgonw14","artista":"Desperta Ferro","titol":"Sempre Endavant","descripcio":"Disc: Dempeus i Alerta!","publicada":"2024-11-04","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"dEnidOEQsQE","artista":"Desperta Ferro","titol":"Som I Serem Cules","descripcio":"Disc: Segueu Arran","publicada":"2015-07-27","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"jUbdexNlbSs","artista":"Desperta Ferro","titol":"Som Una Nacio","descripcio":"Disc: Segueu Arran","publicada":"2015-07-27","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"zEw69oCjVJo","artista":"Desperta Ferro","titol":"Supporters","descripcio":"Disc: L'alba d'un nou jorn","publicada":"2015-07-27","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"OjvhB9QMpT8","artista":"Desperta Ferro","titol":"Terra De Guerres","descripcio":"Disc: Segueu Arran","publicada":"2015-07-27","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"kq8wv2ltVs0","artista":"Desperta Ferro","titol":"Vells Telers","descripcio":"Disc: Segueu Arran","publicada":"2015-07-27","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"kYx4YHRk_N4","artista":"Desperta Ferro","titol":"Venjança Catalana","descripcio":"Disc: Dempeus i Alerta!","publicada":"2024-11-04","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"iTS0Key8OsE","artista":"Doctor Prats","titol":"Adéu Fins Aviat (El Docu)","descripcio":"Aquest és un \"mini docu\" molt especial: una mirada al cor dels nostres últims concerts abans de fer una pausa fins al 2025. 'Adeu fins aviat' no és només un víd…","publicada":"2024-01-17","afegida":"2026-10-02T15:58:31.716Z"},
-    {"id":"b4Ir-xoS95s","artista":"Doctor Prats","titol":"Al final tot anirà bé (en confinament)","descripcio":"💧🎵 NOU VIDEOCLIP \"A poc a poc\" 🎵💧: https://youtu.be/fnBXD6VGVhc Aviat tot el que cou s'ho endurà el temps. Facebook: http://facebook.com/doctorprats Twitter…","publicada":"2020-04-18","afegida":"2026-10-02T15:58:31.716Z"},
-    {"id":"7gZ7C0-wGh8","artista":"Doctor Prats","titol":"Doctor Prats - Pel cantó bo (Disc Sencer)","descripcio":"00:00 Loviu Baby 03:21 Seguirem Ballant (amb Stay Homas) 06:27 A Poc a Poc 09:07 Quan Et Faci Falta 12:33 Pel Cantó Bo 15:11 Ocells de Llum 18:18 Massa Bé 21:18…","publicada":"2022-04-28","afegida":"2026-10-02T15:58:31.716Z"},
-    {"id":"V8ppnOhfQyU","artista":"Dusminguet","titol":"Africa","descripcio":"Disc: Vafalungo","publicada":"2015-10-25","afegida":"2026-10-03T19:07:36.989Z"},
-    {"id":"2V2vw1dJ-h0","artista":"Dusminguet","titol":"Ai Maria!","descripcio":"Disc: Vafalungo","publicada":"2015-10-25","afegida":"2026-10-03T19:07:36.989Z"},
-    {"id":"LNEeaaPX0tI","artista":"Dusminguet","titol":"Babilonia","descripcio":"Disc: Vafalungo","publicada":"2015-10-25","afegida":"2026-10-03T19:07:36.989Z"},
-    {"id":"pWqJwBuF1j4","artista":"Dusminguet","titol":"Carretera del miedo","descripcio":"Disc: Postrof","publicada":"2015-01-19","afegida":"2026-10-03T19:07:36.989Z"},
-    {"id":"E4vTD8JQoDc","artista":"Dusminguet","titol":"Cosa fea","descripcio":"Disc: Goᐳ","publicada":"2015-12-11","afegida":"2026-10-03T19:07:36.989Z"},
-    {"id":"fAAoEM3UJaY","artista":"Dusminguet","titol":"Cumbia bruja","descripcio":"Disc: Postrof","publicada":"2015-01-19","afegida":"2026-10-03T19:07:36.989Z"},
-    {"id":"gkq97Hn2KdA","artista":"Dusminguet","titol":"Decimero","descripcio":"Disc: Postrof","publicada":"2015-01-19","afegida":"2026-10-03T19:07:36.989Z"},
-    {"id":"4MXWiVvPIow","artista":"Dusminguet","titol":"Disco jonki","descripcio":"Disc: Vafalungo","publicada":"2015-10-25","afegida":"2026-10-03T19:07:36.989Z"},
-    {"id":"ErPqnRd8b8k","artista":"Dusminguet","titol":"El camí","descripcio":"Disc: Goᐳ","publicada":"2015-12-11","afegida":"2026-10-03T19:07:36.989Z"},
-    {"id":"FuPOoXTyN6k","artista":"Dusminguet","titol":"El pardal","descripcio":"Disc: Vafalungo","publicada":"2015-10-25","afegida":"2026-10-03T19:07:36.989Z"},
-    {"id":"ap4_atGBBu4","artista":"Dusminguet","titol":"El son","descripcio":"Disc: Goᐳ","publicada":"2015-12-11","afegida":"2026-10-03T19:07:36.989Z"},
-    {"id":"liV7pSnizkY","artista":"Dusminguet","titol":"El teu amor","descripcio":"Disc: Postrof","publicada":"2015-01-19","afegida":"2026-10-03T19:07:36.989Z"},
-    {"id":"ULqTGD651hg","artista":"Dusminguet","titol":"Jackeline","descripcio":"Disc: Vafalungo","publicada":"2015-10-25","afegida":"2026-10-03T19:07:36.989Z"},
-    {"id":"Z8AeCRpulxA","artista":"Dusminguet","titol":"La Dansa De L´imbécil","descripcio":"Disc: Postrof","publicada":"2015-01-19","afegida":"2026-10-03T19:07:36.989Z"},
-    {"id":"rpHh84frHmE","artista":"Dusminguet","titol":"La muralla","descripcio":"Disc: Postrof","publicada":"2015-01-19","afegida":"2026-10-03T19:07:36.989Z"},
-    {"id":"cBKpfoGdxJA","artista":"Dusminguet","titol":"La Recepta","descripcio":"Disc: Postrof","publicada":"2015-01-19","afegida":"2026-10-03T19:07:36.989Z"},
-    {"id":"EApUIeark_k","artista":"Dusminguet","titol":"La rumba del solterón","descripcio":"Disc: Postrof","publicada":"2015-01-19","afegida":"2026-10-03T19:07:36.989Z"},
-    {"id":"AtFH2MGZkZk","artista":"Dusminguet","titol":"Les Ampolles","descripcio":"Disc: Vafalungo","publicada":"2015-10-25","afegida":"2026-10-03T19:07:36.989Z"},
-    {"id":"f3DqJYrbk8c","artista":"Dusminguet","titol":"Manketú","descripcio":"Disc: Postrof","publicada":"2015-01-19","afegida":"2026-10-03T19:07:36.989Z"},
-    {"id":"9J2xziITotU","artista":"Dusminguet","titol":"Marihuana","descripcio":"Disc: Vafalungo","publicada":"2015-10-25","afegida":"2026-10-03T19:07:36.989Z"},
-    {"id":"3q13_NLMCsc","artista":"Dusminguet","titol":"Mi arte","descripcio":"Disc: Postrof","publicada":"2015-01-19","afegida":"2026-10-03T19:07:36.989Z"},
-    {"id":"JOW_qC4QGRk","artista":"Dusminguet","titol":"Nass la garriga","descripcio":"Disc: Postrof","publicada":"2015-01-19","afegida":"2026-10-03T19:07:36.989Z"},
-    {"id":"Jh6E0IdEZdM","artista":"Dusminguet","titol":"One Way","descripcio":"Disc: Vafalungo","publicada":"2015-10-25","afegida":"2026-10-03T19:07:36.989Z"},
-    {"id":"S6nQ-ngzxIw","artista":"Dusminguet","titol":"Plegando velas","descripcio":"Disc: Postrof","publicada":"2015-01-19","afegida":"2026-10-03T19:07:36.989Z"},
-    {"id":"-fotKUoJj-g","artista":"Dusminguet","titol":"Ritmo americano","descripcio":"Disc: Postrof","publicada":"2015-01-19","afegida":"2026-10-03T19:07:36.989Z"},
-    {"id":"8daAbiFhXPg","artista":"Dusminguet","titol":"Rumbeta bona","descripcio":"Disc: Postrof","publicada":"2015-01-19","afegida":"2026-10-03T19:07:36.989Z"},
-    {"id":"taqPPP7UimA","artista":"Dusminguet","titol":"San Cristóbal","descripcio":"Disc: Postrof","publicada":"2015-01-19","afegida":"2026-10-03T19:07:36.989Z"},
-    {"id":"6XsyGL7l-WE","artista":"Dusminguet","titol":"Siento","descripcio":"Disc: Vafalungo","publicada":"2015-10-25","afegida":"2026-10-03T19:07:36.989Z"},
-    {"id":"wJwk6O3fHNc","artista":"Dusminguet","titol":"Son del campesino","descripcio":"Disc: Postrof","publicada":"2015-01-19","afegida":"2026-10-03T19:07:36.989Z"},
-    {"id":"pCRH1SjSeyg","artista":"Dusminguet","titol":"Sonajeros","descripcio":"Disc: Vafalungo","publicada":"2015-10-25","afegida":"2026-10-03T19:07:36.989Z"},
-    {"id":"iqC7gyAj95w","artista":"Dusminguet","titol":"Sopetón","descripcio":"Disc: Postrof","publicada":"2015-01-19","afegida":"2026-10-03T19:07:36.989Z"},
-    {"id":"A5XKkm69YeY","artista":"Els Amics de les Arts","titol":"Sobre com es va fer 'El senyal que esperaves', amb Sopa de Cabra","descripcio":"Gerard Quintana explica la història creuada entre Els Amics de les Arts i Sopa de Cabra, i la manera com han treballat la seva col·laboració dins el disc '20 an…","publicada":"2025-01-05","afegida":"2026-10-02T15:58:31.716Z"},
-    {"id":"ACtqW433DsU","artista":"Els Pets","titol":"Agost","descripcio":"","publicada":"2010-03-31","afegida":"2026-10-02T15:58:31.716Z"},
-    {"id":"iINVs4c0L7Y","artista":"Els Pets","titol":"Els Pets - Això és espectacle (Gira 20)","descripcio":"","publicada":"2011-07-25","afegida":"2026-10-02T15:58:31.716Z"},
-    {"id":"ab6f_2z-hOA","artista":"Els Pets","titol":"Per veure't a tu","descripcio":"","publicada":"2010-04-08","afegida":"2026-10-02T15:58:31.716Z"},
-    {"id":"R1BKUbtnRdE","artista":"Els Pets","titol":"Soroll","descripcio":"","publicada":"2010-03-31","afegida":"2026-10-02T15:58:31.716Z"},
-    {"id":"zmGYk4YV1h4","artista":"enMatu","titol":"8. bojan krkic","descripcio":"escolta \"jove talismà\" aquí: https://lnk.to/enMatujovetalisma prod by jovedry visualizer: Linus Mariscal","publicada":"2026-01-23","afegida":"2026-10-02T15:58:31.716Z"},
-    {"id":"mPt8f4q5QwU","artista":"Fetus","titol":"Ahir","descripcio":"Disc: Càntir nou fa aigua fresca","publicada":"2024-10-10","afegida":"2026-10-03T18:32:00.756Z"},
-    {"id":"XiFOvkcc_P8","artista":"Fetus","titol":"Aigua fresca","descripcio":"Disc: Càntir nou fa aigua fresca","publicada":"2024-10-10","afegida":"2026-10-03T18:32:00.756Z"},
-    {"id":"8SqmQSKbKlU","artista":"Fetus","titol":"Au, jovent!","descripcio":"Disc: Au, jovent!","publicada":"2023-07-31","afegida":"2026-10-03T18:32:00.756Z"},
-    {"id":"XpggajOE42Y","artista":"Fetus","titol":"Balada del sabater d'Ordis","descripcio":"Disc: La Serra dels Perduts","publicada":"2022-10-06","afegida":"2026-10-03T18:32:00.756Z"},
-    {"id":"MxB8rpppTHc","artista":"Fetus","titol":"Brevari de terra i sol","descripcio":"Disc: Càntir nou fa aigua fresca","publicada":"2024-10-10","afegida":"2026-10-03T18:32:00.756Z"},
-    {"id":"gUklhMKB53c","artista":"Fetus","titol":"Camarada","descripcio":"Disc: Romancer tartera","publicada":"2026-04-22","afegida":"2026-10-03T18:32:00.756Z"},
-    {"id":"3qooiE9zUEo","artista":"Fetus","titol":"Candidatura de progrés","descripcio":"Disc: Candidatura de progrés","publicada":"2026-04-10","afegida":"2026-10-03T18:32:00.756Z"},
-    {"id":"pfokjAGi9R4","artista":"Fetus","titol":"Carboner, bon carboner","descripcio":"Disc: La Serra dels Perduts","publicada":"2022-10-06","afegida":"2026-10-03T18:32:00.756Z"},
-    {"id":"n29tNrKP9i0","artista":"Fetus","titol":"Clam dels ocells","descripcio":"Disc: Clam dels ocells","publicada":"2024-09-16","afegida":"2026-10-03T18:32:00.756Z"},
-    {"id":"jL9Rl-5kRow","artista":"Fetus","titol":"Domini màgic","descripcio":"Disc: Càntir nou fa aigua fresca","publicada":"2024-10-10","afegida":"2026-10-03T18:32:00.756Z"},
-    {"id":"T1Ye0MPUrNk","artista":"Fetus","titol":"Durruti, Macià i Verdaguer","descripcio":"Disc: Durruti, Macià i Verdaguer","publicada":"2024-09-30","afegida":"2026-10-03T18:32:00.756Z"},
-    {"id":"aNJJDUvWTQ4","artista":"Fetus","titol":"El bou i la tramuntana","descripcio":"Disc: Càntir nou fa aigua fresca","publicada":"2024-10-10","afegida":"2026-10-03T18:32:00.756Z"},
-    {"id":"slo7Nsl5-bg","artista":"Fetus","titol":"El darrer llop","descripcio":"Disc: Romancer tartera","publicada":"2026-04-22","afegida":"2026-10-03T18:32:00.756Z"},
-    {"id":"ng_-lIRkkE8","artista":"Fetus","titol":"El Rebombori del Pa","descripcio":"Disc: El Rebombori del Pa","publicada":"2022-09-26","afegida":"2026-10-03T18:32:00.756Z"},
-    {"id":"2CtUYN8Hl5E","artista":"Fetus","titol":"El rellotger de Creixells","descripcio":"Disc: La Serra dels Perduts","publicada":"2022-10-06","afegida":"2026-10-03T18:32:00.756Z"},
-    {"id":"JBVRtFEYpp0","artista":"Fetus","titol":"El somni barceloní","descripcio":"Disc: El somni barceloní","publicada":"2019-04-11","afegida":"2026-10-03T18:32:00.756Z"},
-    {"id":"7otH0VWr5Ws","artista":"Fetus","titol":"Esqueixada","descripcio":"Disc: Terra cuita","publicada":"2019-05-02","afegida":"2026-10-03T18:32:00.756Z"},
-    {"id":"132WUFrSGm0","artista":"Fetus","titol":"Estel roig","descripcio":"Disc: La Serra dels Perduts","publicada":"2022-10-06","afegida":"2026-10-03T18:32:00.756Z"},
-    {"id":"EctRmr3YeM4","artista":"Fetus","titol":"Goigs de Sant Martí","descripcio":"Disc: Goigs de Sant Martí","publicada":"2022-05-27","afegida":"2026-10-03T18:32:00.756Z"},
-    {"id":"-ZBhjs1dViU","artista":"Fetus","titol":"Homilies de la costa","descripcio":"Disc: Homilies de la costa","publicada":"2024-06-13","afegida":"2026-10-03T18:32:00.756Z"},
-    {"id":"q9QWoJMvuvQ","artista":"Fetus","titol":"Isabel Cinc Hores","descripcio":"Disc: La Serra dels Perduts","publicada":"2022-10-06","afegida":"2026-10-03T18:32:00.756Z"},
-    {"id":"OBrS-kmlHHg","artista":"Fetus","titol":"L'entresol equidistant","descripcio":"Disc: Càntir nou fa aigua fresca","publicada":"2024-10-10","afegida":"2026-10-03T18:32:00.756Z"},
-    {"id":"cx8dilhLvf0","artista":"Fetus","titol":"L'útim oracle","descripcio":"Disc: Terra cuita","publicada":"2019-05-02","afegida":"2026-10-03T18:32:00.756Z"},
-    {"id":"9DsF-6G_LOU","artista":"Fetus","titol":"La brigadista","descripcio":"Disc: Càntir nou fa aigua fresca","publicada":"2024-10-10","afegida":"2026-10-03T18:32:00.756Z"},
-    {"id":"hwt7zvVIHwE","artista":"Fetus","titol":"La fi del món a Girona","descripcio":"Disc: Romancer tartera","publicada":"2026-04-22","afegida":"2026-10-03T18:32:00.756Z"},
-    {"id":"rD-qXqEluvM","artista":"Fetus","titol":"La gran xefla","descripcio":"Disc: La gran xefla","publicada":"2023-05-29","afegida":"2026-10-03T18:32:00.756Z"},
-    {"id":"ReaPe9cFokI","artista":"Fetus","titol":"La pomposa","descripcio":"Disc: Terra cuita","publicada":"2019-05-02","afegida":"2026-10-03T18:32:00.756Z"},
-    {"id":"cv6UEvXM8Zk","artista":"Fetus","titol":"La revolta de Rabioses","descripcio":"Disc: La Serra dels Perduts","publicada":"2022-10-06","afegida":"2026-10-03T18:32:00.756Z"},
-    {"id":"eS5cjZyVb9E","artista":"Fetus","titol":"La sega","descripcio":"Disc: La sega","publicada":"2022-09-12","afegida":"2026-10-03T18:32:00.756Z"},
-    {"id":"CxzopzCM0sY","artista":"Fetus","titol":"Les rondes de vi","descripcio":"Disc: Sota, cavall i rei","publicada":"2021-02-18","afegida":"2026-10-03T18:32:00.756Z"},
-    {"id":"87ajxn1USrk","artista":"Fetus","titol":"Lo comte Arnau","descripcio":"Disc: Sota, cavall i rei","publicada":"2021-02-18","afegida":"2026-10-03T18:32:00.756Z"},
-    {"id":"110BkifhFHA","artista":"Fetus","titol":"Lo mariner de Sant Pau","descripcio":"Disc: La Serra dels Perduts","publicada":"2022-10-06","afegida":"2026-10-03T18:32:00.756Z"},
-    {"id":"u_D5vEMnz5U","artista":"Fetus","titol":"Mori el brunch","descripcio":"Disc: Mori el brunch","publicada":"2026-03-24","afegida":"2026-10-03T18:32:00.756Z"},
-    {"id":"-hG3PGyYnQo","artista":"Fetus","titol":"Numeraris del tendrum","descripcio":"Disc: Històries de la carn i de la sang","publicada":"2023-07-06","afegida":"2026-10-03T18:32:00.756Z"},
-    {"id":"6q1baNWwm0k","artista":"Fetus","titol":"Pessebre bevent","descripcio":"Disc: Pessebre bevent","publicada":"2023-11-30","afegida":"2026-10-03T18:32:00.756Z"},
-    {"id":"jazPehKsmGE","artista":"Fetus","titol":"Querella i carallot","descripcio":"Disc: Querella o carallot","publicada":"2019-04-25","afegida":"2026-10-03T18:32:00.756Z"},
-    {"id":"eUmb_1SfUP4","artista":"Fetus","titol":"Riu d'or","descripcio":"Disc: La Serra dels Perduts","publicada":"2022-10-06","afegida":"2026-10-03T18:32:00.756Z"},
-    {"id":"1Qb-Ebjm3Ew","artista":"Fetus","titol":"Romanço d'en Quico Sabaté","descripcio":"Disc: Romanço d'en Quico Sabaté","publicada":"2021-01-11","afegida":"2026-10-03T18:32:00.756Z"},
-    {"id":"JBUTM6bfESk","artista":"Fetus","titol":"Romanço de la Copamèrica","descripcio":"Disc: Romancer tartera","publicada":"2026-04-22","afegida":"2026-10-03T18:32:00.756Z"},
-    {"id":"q676Fv3Zo5A","artista":"Fetus","titol":"Romanço del talp","descripcio":"Disc: Romancer tartera","publicada":"2026-04-22","afegida":"2026-10-03T18:32:00.756Z"},
-    {"id":"xxcBoTYSLQM","artista":"Fetus","titol":"Rubrus","descripcio":"Disc: Rubrus","publicada":"2026-04-30","afegida":"2026-10-03T18:32:00.756Z"},
-    {"id":"PNs3ZfNLiiE","artista":"Fetus","titol":"Sé que venen pels camins","descripcio":"Disc: Sé que venen pels camins","publicada":"2021-01-28","afegida":"2026-10-03T18:32:00.756Z"},
-    {"id":"tafelFUB1tI","artista":"Fetus","titol":"Senglar Atropellat Scooter Club","descripcio":"Disc: Històries de la carn i de la sang","publicada":"2023-07-06","afegida":"2026-10-03T18:32:00.756Z"},
-    {"id":"fUo-TEW1uXg","artista":"Fetus","titol":"Senyora trencadissa","descripcio":"Disc: Terra cuita","publicada":"2019-05-02","afegida":"2026-10-03T18:32:00.756Z"},
-    {"id":"5s2no-chqe0","artista":"Fetus","titol":"Set sous","descripcio":"Disc: Càntir nou fa aigua fresca","publicada":"2024-10-10","afegida":"2026-10-03T18:32:00.756Z"},
-    {"id":"gJ37jKP31wE","artista":"Fetus","titol":"Tabac i muntanya","descripcio":"Disc: Romancer tartera","publicada":"2026-04-22","afegida":"2026-10-03T18:32:00.756Z"},
-    {"id":"nbidPjF1Q_A","artista":"Fetus","titol":"Terra cuita","descripcio":"Disc: Terra cuita","publicada":"2019-05-02","afegida":"2026-10-03T18:32:00.756Z"},
-    {"id":"U7CQMso3ATA","artista":"Fetus","titol":"Una nova Catalunya","descripcio":"Disc: Romancer tartera","publicada":"2026-04-22","afegida":"2026-10-03T18:32:00.756Z"},
-    {"id":"qIU2xNWBDEs","artista":"Frans Cuspinera","titol":"Mai Sabràs","descripcio":"Disc: Garoina","publicada":"2025-03-31","afegida":"2026-10-02T15:58:31.716Z"},
-    {"id":"Zyal3qirpGc","artista":"Gertrudis","titol":"Torno Cap a Casa Dasousa Mix","descripcio":"Per fi estrenem el nou clip de la versió Torno cap a Casa que hem fet amb Mark Dasousa. Esperem que us agradi. La història continua!","publicada":"2017-07-13","afegida":"2026-10-02T15:58:31.716Z"},
-    {"id":"Goed_LJfRwo","artista":"Joan Dausà","titol":"Andrea, Ya Nada Puede Ser","descripcio":"Disc: Barcelona Nit d'Hivern (Banda Sonora Original)","publicada":"2024-03-21","afegida":"2026-10-03T17:26:42.487Z"},
-    {"id":"BNLyH0BV6Zg","artista":"Joan Dausà","titol":"Call Me","descripcio":"Disc: Lost in a Tale","publicada":"2024-03-21","afegida":"2026-10-03T17:26:42.487Z"},
-    {"id":"vTnh8DIqRqY","artista":"Joan Dausà","titol":"Com plora el mar (Cançó per als refugiats)","descripcio":"Disc: Com plora el mar (Cançó per als refugiats)","publicada":"2024-02-07","afegida":"2026-10-03T17:26:42.487Z"},
-    {"id":"2L2jNHRRjKc","artista":"Joan Dausà","titol":"El Veurem Junts","descripcio":"Disc: Barcelona Nit d'Estiu (Banda Sonora Original)","publicada":"2024-03-21","afegida":"2026-10-03T17:26:42.487Z"},
-    {"id":"0bVuglLBoeA","artista":"Joan Dausà","titol":"JO MAI MAI + JUDIT (la mateixa cançó, la mateixa nit). CSC 06 JOAN DAUSÀ","descripcio":"Una producció de Club Social Carme. Enregistrada el 21 de setembre de 2026 al Bar Bocata de Barcelona. Músics: Joan Dausà, Anaïs Vila i Florenci Ferrer.","publicada":"2026-09-24","afegida":"2026-10-02T15:58:31.716Z"},
-    {"id":"K5h8mR3ujGc","artista":"Joan Dausà","titol":"L'Absurd","descripcio":"Disc: Jo Mai Mai","publicada":"2024-02-07","afegida":"2026-10-03T17:26:42.487Z"},
-    {"id":"iCmW2gj7VEA","artista":"Joan Dausà","titol":"Nit de Reis","descripcio":"Disc: Barcelona Nit d'Hivern (Banda Sonora Original)","publicada":"2024-03-21","afegida":"2026-10-03T17:26:42.487Z"},
-    {"id":"xNlMUyVSntQ","artista":"Joan Dausà","titol":"On Seràs Demà?","descripcio":"Disc: On Seràs Demà?","publicada":"2024-02-06","afegida":"2026-10-03T17:26:42.487Z"},
-    {"id":"h13zo2BQnCE","artista":"Joan Dausà","titol":"Parque Rosedal","descripcio":"Disc: Jo Mai Mai","publicada":"2024-02-07","afegida":"2026-10-03T17:26:42.487Z"},
-    {"id":"SU0G0UrpDuk","artista":"Joan Dausà","titol":"Puto Héctor (Live)","descripcio":"Disc: La Festa Final","publicada":"2024-02-07","afegida":"2026-10-03T17:26:42.487Z"},
-    {"id":"KgZiHWzvkYg","artista":"Joan Dausà","titol":"Reis del Món (Live)","descripcio":"Disc: La Festa Final","publicada":"2024-02-07","afegida":"2026-10-03T17:26:42.487Z"},
-    {"id":"FSVAKEbnIQg","artista":"Joan Dausà","titol":"Talking About You and Me","descripcio":"Disc: Lost in a Tale","publicada":"2024-03-21","afegida":"2026-10-03T17:26:42.487Z"},
-    {"id":"9nbPc1tVqRw","artista":"Joan Miquel Oliver","titol":"Agricultors Ingràvids","descripcio":"Disc: Atlantis","publicada":"2017-04-06","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"Ho247myr300","artista":"Joan Miquel Oliver","titol":"Arbre Que Mira Farola","descripcio":"Disc: Bombon Mallorquin","publicada":"2014-11-20","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"LPGvc2uzN1M","artista":"Joan Miquel Oliver","titol":"Atlantis","descripcio":"Disc: Atlantis","publicada":"2017-04-06","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"IspB71-AjQ8","artista":"Joan Miquel Oliver","titol":"Bucle Infinit","descripcio":"Disc: Elektra","publicada":"2018-08-20","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"-9S0NUaaCE4","artista":"Joan Miquel Oliver","titol":"Cançó de Contacte","descripcio":"Disc: Atlantis","publicada":"2017-04-06","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"_MVqQg0WgDs","artista":"Joan Miquel Oliver","titol":"Dins un Avió de Paper","descripcio":"Disc: Bombon Mallorquin","publicada":"2014-11-20","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"08kWq3_jYok","artista":"Joan Miquel Oliver","titol":"Ecos d'Ambulàncies","descripcio":"Disc: Pegasus","publicada":"2015-04-14","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"uBc1NtgHhQE","artista":"Joan Miquel Oliver","titol":"Elektra","descripcio":"Disc: Elektra","publicada":"2018-08-20","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"rLY_-hvs_b4","artista":"Joan Miquel Oliver","titol":"Emerson Fitipaldi","descripcio":"Disc: Live in Paris","publicada":"2014-11-20","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"iUNvsnLsk28","artista":"Joan Miquel Oliver","titol":"Entrada al Bosc de Sor Tomasseta","descripcio":"Disc: Aventures de la nota La","publicada":"2020-10-15","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"PrDPLFuXRkA","artista":"Joan Miquel Oliver","titol":"Esferes","descripcio":"Disc: Pegasus","publicada":"2015-04-14","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"UTIl5oxthmw","artista":"Joan Miquel Oliver","titol":"Exploram s'Avorriment","descripcio":"Disc: Elektra","publicada":"2018-08-20","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"JEpfagNX9f4","artista":"Joan Miquel Oliver","titol":"Fèmurs","descripcio":"Disc: Pegasus","publicada":"2015-04-14","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"2MullDi-fDQ","artista":"Joan Miquel Oliver","titol":"Final Feliç","descripcio":"Disc: Bombon Mallorquin","publicada":"2014-11-20","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"FnyKEyDwGvw","artista":"Joan Miquel Oliver","titol":"Flors de Cactus","descripcio":"Disc: Pegasus","publicada":"2015-04-14","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"satI5e4X-uY","artista":"Joan Miquel Oliver","titol":"Gent que mola un munt","descripcio":"Disc: Gent que mola un munt","publicada":"2026-04-09","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"jtnLs3BrJzg","artista":"Joan Miquel Oliver","titol":"Goletes","descripcio":"Disc: Elektra","publicada":"2018-08-20","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"lvSvA204GcE","artista":"Joan Miquel Oliver","titol":"Hansel i gretel","descripcio":"Disc: Sa Nuvia Morta Hansell I Gretel","publicada":"2017-02-07","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"XaMNaRg2wLY","artista":"Joan Miquel Oliver","titol":"Hipotèrmia","descripcio":"Disc: Elektra","publicada":"2018-08-20","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"Qu8S6mvxkUQ","artista":"Joan Miquel Oliver","titol":"Honey","descripcio":"Disc: Elektra","publicada":"2018-08-20","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"94BYFaux5-E","artista":"Joan Miquel Oliver","titol":"Incident a Sa Pista Dos","descripcio":"Disc: Atlantis","publicada":"2017-04-06","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"brQTDgUPSOM","artista":"Joan Miquel Oliver","titol":"Jo Diria \"Cine\"","descripcio":"Disc: Bombon Mallorquin","publicada":"2014-11-20","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"RT1jhePtelM","artista":"Joan Miquel Oliver","titol":"Lego","descripcio":"Disc: Bombon Mallorquin","publicada":"2014-11-20","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"V9XBBKg7mI8","artista":"Joan Miquel Oliver","titol":"Líquens Arborescents","descripcio":"Disc: Elektra","publicada":"2018-08-20","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"xT8SWG6lRbg","artista":"Joan Miquel Oliver","titol":"Marcianet de Mart","descripcio":"Disc: Bombon Mallorquin","publicada":"2014-11-20","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"G5SyULA4150","artista":"Joan Miquel Oliver","titol":"Marès a Radial","descripcio":"Disc: Pegasus","publicada":"2015-04-14","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"oH8NDWKirHw","artista":"Joan Miquel Oliver","titol":"Mil Bilions en Estrelletes","descripcio":"Disc: Pegasus","publicada":"2015-04-14","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"CK91GzNFD-U","artista":"Joan Miquel Oliver","titol":"Món Vegetal","descripcio":"Disc: Pegasus","publicada":"2015-04-14","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"A48XFDQ4Bfc","artista":"Joan Miquel Oliver","titol":"Nins a Tobogans","descripcio":"Disc: Atlantis","publicada":"2017-04-06","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"gwHKaIvrfpc","artista":"Joan Miquel Oliver","titol":"Orthopedic Ragtime","descripcio":"Disc: Pegasus","publicada":"2015-04-14","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"8UiAgNvTfuU","artista":"Joan Miquel Oliver","titol":"Pegasus","descripcio":"Disc: Pegasus","publicada":"2015-04-14","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"62AZWVaTX74","artista":"Joan Miquel Oliver","titol":"Per a Totes ses Mamàs","descripcio":"Disc: Elektra","publicada":"2018-08-20","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"EoXWDPPXYoo","artista":"Joan Miquel Oliver","titol":"Petit homenet","descripcio":"Disc: Surfistes en Càmera Lenta","publicada":"2014-11-20","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"iopcEAKd9Dc","artista":"Joan Miquel Oliver","titol":"Polo de Llimona","descripcio":"Disc: Bombon Mallorquin","publicada":"2014-11-20","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"gIzLTILSpMw","artista":"Joan Miquel Oliver","titol":"Polo de Menta","descripcio":"Disc: Bombon Mallorquin","publicada":"2014-11-20","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"GQsPGm5KRL4","artista":"Joan Miquel Oliver","titol":"Posidònia","descripcio":"Disc: Atlantis","publicada":"2017-04-06","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"iV7pM39ZBEo","artista":"Joan Miquel Oliver","titol":"Robot mayordomo","descripcio":"Disc: Robot Mayordomo","publicada":"2023-06-21","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"pGvojYFyG8o","artista":"Joan Miquel Oliver","titol":"Romanç infame de sa nuvia morta","descripcio":"Disc: Sa Nuvia Morta Hansell I Gretel","publicada":"2017-02-08","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"N6o0rzFj8mQ","artista":"Joan Miquel Oliver","titol":"Rumba del Temps","descripcio":"Disc: Atlantis","publicada":"2017-04-06","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"-FOsgk-OfzU","artista":"Joan Miquel Oliver","titol":"Ryanair","descripcio":"Disc: Bombon Mallorquin","publicada":"2014-11-20","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"img769oPDPY","artista":"Joan Miquel Oliver","titol":"Sa Música","descripcio":"Disc: Elektra","publicada":"2018-08-20","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"lkE8KQKIigY","artista":"KnockOut","titol":"Això no és un joc - KnocKOuts","descripcio":"Això no és un joc - KnocKOuts","publicada":"2011-03-26","afegida":"2026-10-03T17:26:42.487Z"},
-    {"id":"ly7uD_fXYuo","artista":"KnockOut","titol":"City lights - KnocKOuts","descripcio":"City lights - KnocKOuts","publicada":"2011-03-26","afegida":"2026-10-03T17:26:42.487Z"},
-    {"id":"lsaAVXYplWM","artista":"KnockOut","titol":"El teu país - KnocKOuts","descripcio":"El teu país - KnocKOuts","publicada":"2011-03-26","afegida":"2026-10-03T17:26:42.487Z"},
-    {"id":"gt0cks6hdNM","artista":"KnockOut","titol":"Has de ser meva - KnocKOuts","descripcio":"Has de ser meva - KnocKOuts","publicada":"2011-03-26","afegida":"2026-10-03T17:26:42.487Z"},
-    {"id":"2E1FIDqnigw","artista":"KnockOut","titol":"L'Andreu - KnocKOuts","descripcio":"L'Andreu - KnocKOuts","publicada":"2011-03-26","afegida":"2026-10-03T17:26:42.487Z"},
-    {"id":"3fefKDW0fM0","artista":"KnockOut","titol":"La teva oportunitat - KnocKOuts","descripcio":"La teva oportunitat - KnocKOuts","publicada":"2011-03-26","afegida":"2026-10-03T17:26:42.487Z"},
-    {"id":"vxZTBd6vzaY","artista":"KnockOut","titol":"La vida no s'atura - KnocKOuts","descripcio":"La vida no s'atura - KnocKOuts","publicada":"2011-03-26","afegida":"2026-10-03T17:26:42.487Z"},
-    {"id":"Il6NYzQs-rY","artista":"KnockOut","titol":"No et deixo d'estimar - KnocKOuts","descripcio":"No et deixo d'estimar - KnocKOuts","publicada":"2011-03-26","afegida":"2026-10-03T17:26:42.487Z"},
-    {"id":"GvTBYNK0PIE","artista":"KnockOut","titol":"Noia - KnocKOuts","descripcio":"Noia - KnocKOuts","publicada":"2011-03-25","afegida":"2026-10-03T17:26:42.487Z"},
-    {"id":"U2Kn5HBf_Gg","artista":"KnockOut","titol":"Una mirada - KnocKOuts","descripcio":"Una mirada - KnocKOuts","publicada":"2011-03-26","afegida":"2026-10-03T17:26:42.487Z"},
-    {"id":"y8cPw-9UdiM","artista":"KnockOut","titol":"Wonderbrass (instrumental) - KnocKOuts","descripcio":"Wonderbrass (instrumental) - KnocKOuts","publicada":"2011-03-26","afegida":"2026-10-03T17:26:42.487Z"},
-    {"id":"fL464Sq5v9g","artista":"La Gossa Sorda","titol":"A Tornallom","descripcio":"Disc: A Tornallom","publicada":"2025-10-30","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"sv1hY8D4QWs","artista":"La Gossa Sorda","titol":"Aire","descripcio":"Disc: La Polseguera","publicada":"2014-11-08","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"4Mv0k5GKgZA","artista":"La Gossa Sorda","titol":"Apocalipsi","descripcio":"Disc: L'Últim Heretge","publicada":"2014-12-31","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"MTx1X1CIomw","artista":"La Gossa Sorda","titol":"Ateu","descripcio":"Disc: L'Últim Heretge","publicada":"2014-12-31","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"imjqI7H5B6s","artista":"La Gossa Sorda","titol":"Ball de Rojos","descripcio":"Disc: Garrotades","publicada":"2015-09-05","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"lVASK8ovgbA","artista":"La Gossa Sorda","titol":"Batiste Ceba","descripcio":"Disc: Vigila","publicada":"2020-11-24","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"qVS27dxTS7I","artista":"La Gossa Sorda","titol":"Camals Mullats","descripcio":"Disc: Saó","publicada":"2014-11-08","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"3U3DU0f93tQ","artista":"La Gossa Sorda","titol":"Cassalla Paradise","descripcio":"Disc: L'Últim Heretge","publicada":"2014-12-31","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"g6wgNUekl9s","artista":"La Gossa Sorda","titol":"Colpeja Fort","descripcio":"Disc: Garrotades","publicada":"2015-09-10","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"Og8o1PNPc6g","artista":"La Gossa Sorda","titol":"De Cara a la Paret","descripcio":"Disc: La Polseguera","publicada":"2014-11-08","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"lNAcZ3O_VNk","artista":"La Gossa Sorda","titol":"De Matinada","descripcio":"Disc: Saó","publicada":"2014-11-08","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"TB02WuiBAPY","artista":"La Gossa Sorda","titol":"Diuen","descripcio":"Disc: Saó","publicada":"2014-11-08","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"Eq9sQpaYa4I","artista":"La Gossa Sorda","titol":"Dona d'Aigua","descripcio":"Disc: La Polseguera","publicada":"2014-11-09","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"9cnnpJslWlM","artista":"La Gossa Sorda","titol":"Dóna'm La Mà","descripcio":"Disc: L'Últim Heretge","publicada":"2014-12-31","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"nvENuhR-GXQ","artista":"La Gossa Sorda","titol":"El Dia Que Tot Rebente","descripcio":"Disc: Saó","publicada":"2014-11-06","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"cnsY2bHozRk","artista":"La Gossa Sorda","titol":"El Forn Dels Borratxos","descripcio":"Disc: La Polseguera","publicada":"2014-11-06","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"mfEcbXVNzZw","artista":"La Gossa Sorda","titol":"El Pecat Original","descripcio":"Disc: La Polseguera","publicada":"2014-11-06","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"isdd2PKgsME","artista":"La Gossa Sorda","titol":"Entre Canuts","descripcio":"Disc: Saó","publicada":"2014-11-09","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"t39XTHvMUYs","artista":"La Gossa Sorda","titol":"Esbarzers","descripcio":"Disc: La Polseguera","publicada":"2014-11-08","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"yzMO0_xpjBg","artista":"La Gossa Sorda","titol":"Fa Tres Anys","descripcio":"Disc: La Polseguera","publicada":"2014-11-08","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"wTHRFCVxfhk","artista":"La Gossa Sorda","titol":"Falsos i Absurds","descripcio":"Disc: L'Últim Heretge","publicada":"2014-12-31","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"zcsgwwTXs6s","artista":"La Gossa Sorda","titol":"Farem Saó","descripcio":"Disc: Saó","publicada":"2014-11-09","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"5rWoV2swGA0","artista":"La Gossa Sorda","titol":"Garrotades","descripcio":"Disc: Garrotades","publicada":"2015-09-05","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"ewSZ3H2wNTk","artista":"La Gossa Sorda","titol":"He Robat Un Altre Cor","descripcio":"Disc: La Polseguera","publicada":"2014-11-09","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"ryVvJVIGY5I","artista":"La Gossa Sorda","titol":"L'Últim Heretge","descripcio":"Disc: L'Últim Heretge","publicada":"2014-12-31","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"VdOcMh1zb8M","artista":"La Gossa Sorda","titol":"La Guàrdia","descripcio":"Disc: Garrotades","publicada":"2015-09-05","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"Qgbnnv0KVfg","artista":"La Gossa Sorda","titol":"La Nostra Sort","descripcio":"Disc: La Nostra Sort","publicada":"2015-01-29","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"LpZcFUIhr2Q","artista":"La Gossa Sorda","titol":"La Polseguera","descripcio":"Disc: La Polseguera","publicada":"2014-11-08","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"nzMloVVelro","artista":"La Gossa Sorda","titol":"La Veu Trencada","descripcio":"Disc: La Polseguera","publicada":"2014-11-08","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"QdEOggIUnbM","artista":"La Gossa Sorda","titol":"Preferiria","descripcio":"Disc: L'Últim Heretge","publicada":"2014-12-31","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"go17sMkeMDo","artista":"La Gossa Sorda","titol":"Putrefactes","descripcio":"Disc: Garrotades","publicada":"2015-09-05","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"hlLVlkurEkw","artista":"La Gossa Sorda","titol":"Quina Calitja","descripcio":"Disc: Saó","publicada":"2015-06-23","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"xeywDb1F5AU","artista":"La Gossa Sorda","titol":"Ràdio Bemba","descripcio":"Disc: Vigila","publicada":"2020-11-24","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"OazmNnbwxSg","artista":"La Gossa Sorda","titol":"Respira","descripcio":"Disc: Saó","publicada":"2014-11-09","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"XNvN6cFyXCo","artista":"La Gossa Sorda","titol":"Senyor Pirotècnic","descripcio":"Disc: Vigila","publicada":"2020-11-24","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"7z3TQbL0b-c","artista":"La Gossa Sorda","titol":"Som de la Marina","descripcio":"Disc: Garrotades","publicada":"2015-09-05","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"t4LqDup_GoE","artista":"La Gossa Sorda","titol":"Tres De Pego","descripcio":"Disc: Saó","publicada":"2014-11-05","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"rO-C5TLoecg","artista":"La Gossa Sorda","titol":"Última Volta","descripcio":"Disc: Saó","publicada":"2014-11-08","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"siN5S-Sdvo8","artista":"La Gossa Sorda","titol":"Vianants","descripcio":"Disc: Saó","publicada":"2014-11-08","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"N7-doiYVho0","artista":"La Gossa Sorda","titol":"Viatge al Centre de la Guerra","descripcio":"Disc: La Polseguera","publicada":"2014-11-08","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"CDYDJ24I9SU","artista":"La Troba Kung-Fú","titol":"Ai on va l'à...","descripcio":"Disc: Nocturns de vetlla i revetlla","publicada":"2019-06-20","afegida":"2026-10-03T19:07:36.989Z"},
-    {"id":"pnpgKoSX8YU","artista":"La Troba Kung-Fú","titol":"Això és tot","descripcio":"Disc: El Ball I el Plany","publicada":"2020-06-11","afegida":"2026-10-03T19:07:36.989Z"},
-    {"id":"gNOiHPIoHFM","artista":"La Troba Kung-Fú","titol":"Ballem!","descripcio":"Disc: El Ball I el Plany","publicada":"2020-06-11","afegida":"2026-10-03T19:07:36.989Z"},
-    {"id":"VZLDip1cOyc","artista":"La Troba Kung-Fú","titol":"Barcelona (Andyloop / Toti & Maxey Remix)","descripcio":"Disc: Turntables on Las Ramblas","publicada":"2022-09-17","afegida":"2026-10-03T19:07:36.989Z"},
-    {"id":"fAjboxgVX-E","artista":"La Troba Kung-Fú","titol":"Calor Calor","descripcio":"Disc: Clavell Morenet","publicada":"2018-05-01","afegida":"2026-10-03T19:07:36.989Z"},
-    {"id":"0hZgfNZleBA","artista":"La Troba Kung-Fú","titol":"Cariñosa","descripcio":"Disc: El Ball I el Plany","publicada":"2020-06-11","afegida":"2026-10-03T19:07:36.989Z"},
-    {"id":"ngS-7MDCr5E","artista":"La Troba Kung-Fú","titol":"Colors","descripcio":"Disc: El Ball I el Plany","publicada":"2020-06-11","afegida":"2026-10-03T19:07:36.989Z"},
-    {"id":"OCi8EpYcTLo","artista":"La Troba Kung-Fú","titol":"Cumbia Infierno (Toti & Andy Loop Fat Beat Remix)","descripcio":"Disc: Turntables on the Hudson: 10 Year Anniversary","publicada":"2022-09-17","afegida":"2026-10-03T19:07:36.989Z"},
-    {"id":"rxGn7en5mW0","artista":"La Troba Kung-Fú","titol":"Dansa Damor","descripcio":"Disc: Clavell Morenet","publicada":"2018-05-01","afegida":"2026-10-03T19:07:36.989Z"},
-    {"id":"Cw2wfuJCCfU","artista":"La Troba Kung-Fú","titol":"El rock & roll és mort","descripcio":"Disc: Et cantaré el rock & roll és mort perquè marxen lluny","publicada":"2024-02-27","afegida":"2026-10-03T19:07:36.989Z"},
-    {"id":"NqG1NXKfgz8","artista":"La Troba Kung-Fú","titol":"Et cantaré","descripcio":"Disc: Et cantaré el rock & roll és mort perquè marxen lluny","publicada":"2024-02-27","afegida":"2026-10-03T19:07:36.989Z"},
-    {"id":"mYhf6I9yCc8","artista":"La Troba Kung-Fú","titol":"Fa bon temps","descripcio":"Disc: El Ball I el Plany","publicada":"2020-06-11","afegida":"2026-10-03T19:07:36.989Z"},
-    {"id":"AK-O5F7In44","artista":"La Troba Kung-Fú","titol":"Flor de primavera","descripcio":"Disc: A la panxa del bou","publicada":"2020-06-09","afegida":"2026-10-03T19:07:36.989Z"},
-    {"id":"P8wjcfG5EZQ","artista":"La Troba Kung-Fú","titol":"La Rumba","descripcio":"Disc: El Ball I el Plany","publicada":"2020-06-11","afegida":"2026-10-03T19:07:36.989Z"},
-    {"id":"54-pDWC_AFg","artista":"La Troba Kung-Fú","titol":"Leila","descripcio":"Disc: El Ball I el Plany","publicada":"2020-06-11","afegida":"2026-10-03T19:07:36.989Z"},
-    {"id":"NYCpqvpYHes","artista":"La Troba Kung-Fú","titol":"Mariatxis Trance","descripcio":"Disc: El Ball I el Plany","publicada":"2020-06-11","afegida":"2026-10-03T19:07:36.989Z"},
-    {"id":"358mQC2tJlY","artista":"La Troba Kung-Fú","titol":"Marxen lluny","descripcio":"Disc: Et cantaré el rock & roll és mort perquè marxen lluny","publicada":"2024-02-27","afegida":"2026-10-03T19:07:36.989Z"},
-    {"id":"_eCj0yf2D5Q","artista":"La Troba Kung-Fú","titol":"Nocturn","descripcio":"Disc: El Ball I el Plany","publicada":"2020-06-11","afegida":"2026-10-03T19:07:36.989Z"},
-    {"id":"5oKCLAlTASE","artista":"La Troba Kung-Fú","titol":"Perquè","descripcio":"Disc: Perquè","publicada":"2023-05-17","afegida":"2026-10-03T19:07:36.989Z"},
-    {"id":"JjRxAH58f0o","artista":"La Troba Kung-Fú","titol":"Petit rumbero","descripcio":"Disc: A la panxa del bou","publicada":"2020-06-09","afegida":"2026-10-03T19:07:36.989Z"},
-    {"id":"iIR5cllfbP0","artista":"La Troba Kung-Fú","titol":"Sra. Vanitat","descripcio":"Disc: Santalegria","publicada":"2014-11-06","afegida":"2026-10-03T19:07:36.989Z"},
-    {"id":"LykiAfiHY-0","artista":"La Troba Kung-Fú","titol":"Sta. Alegria","descripcio":"Disc: Santalegria","publicada":"2014-11-06","afegida":"2026-10-03T19:07:36.989Z"},
-    {"id":"tqyYMafK1h0","artista":"La Troba Kung-Fú","titol":"Take Your Time","descripcio":"Disc: A la panxa del bou","publicada":"2020-06-09","afegida":"2026-10-03T19:07:36.989Z"},
-    {"id":"qWCf57Q6MMo","artista":"La Troba Kung-Fú","titol":"Treu-te la camisa","descripcio":"Disc: Treu-te la camisa / Joan Petit","publicada":"2025-03-07","afegida":"2026-10-03T19:07:36.989Z"},
-    {"id":"z7W97SNgX2Y","artista":"La Troba Kung-Fú","titol":"Within Human Law","descripcio":"Disc: El Ball I el Plany","publicada":"2020-06-11","afegida":"2026-10-03T19:07:36.989Z"},
-    {"id":"e_Tx0xpJm7k","artista":"La Troba Kung-Fú","titol":"Y Se Ríe la Muerte","descripcio":"Disc: A la panxa del bou","publicada":"2020-06-09","afegida":"2026-10-03T19:07:36.989Z"},
-    {"id":"-vHII1orvfU","artista":"La Troba Kung-Fú","titol":"Yo Soy","descripcio":"Disc: A la panxa del bou","publicada":"2020-06-09","afegida":"2026-10-03T19:07:36.989Z"},
-    {"id":"49Z0C3BCJD8","artista":"Lal'Ba","titol":"2020","descripcio":"Disc: 2020","publicada":"2024-02-06","afegida":"2026-10-03T17:26:42.487Z"},
-    {"id":"ll6_-YakfJY","artista":"Lal'Ba","titol":"Cendra","descripcio":"Disc: Cendra","publicada":"2024-02-07","afegida":"2026-10-03T17:26:42.487Z"},
-    {"id":"S1Un3UHabJI","artista":"Lal'Ba","titol":"Pas ferm","descripcio":"Disc: Lal'Boom","publicada":"2024-02-07","afegida":"2026-10-03T17:26:42.487Z"},
-    {"id":"B7Ts33UuUSg","artista":"Lal'Ba","titol":"Per Mi","descripcio":"Disc: Per Mi","publicada":"2022-06-20","afegida":"2026-10-03T17:26:42.487Z"},
-    {"id":"v5xa2nzw3gY","artista":"Lídia Pujol","titol":"Cuncti simus concanentes","descripcio":"Disc: Iter Luminis","publicada":"2017-05-04","afegida":"2026-10-03T17:26:42.487Z"},
-    {"id":"hX4GRP-45Yk","artista":"Lídia Pujol","titol":"Un home moria sense amor (Hi ha gent)","descripcio":"Disc: Iter Luminis","publicada":"2017-05-04","afegida":"2026-10-03T17:26:42.487Z"},
-    {"id":"231JlseDpWA","artista":"Mar Pujol","titol":"Mitja Vida","descripcio":"Disc: Mitja Vida","publicada":"2026-10-03","afegida":"2026-10-03T17:26:42.487Z"},
-    {"id":"5xqq8xjsfmY","artista":"Mar Pujol","titol":"Toquen Quarts d'Una","descripcio":"Música, lletra, edició i muntatge: Mar Pujol Càmera: Nérea Sánchez, Anna Tisora, Sofi Paez i Mar Pujol Producció sonora: Ivan López i Mar Pujol Mescla: Ivan Lóp…","publicada":"2022-12-21","afegida":"2026-10-02T15:58:31.716Z"},
-    {"id":"uO4tfrjGA6s","artista":"Maria Del Mar Bonet","titol":"L'arbre campaner","descripcio":"Disc: L'aigua no cansa","publicada":"2026-05-13","afegida":"2026-10-03T17:26:42.487Z"},
-    {"id":"fFs7HeJj9Yk","artista":"Maria Del Mar Bonet","titol":"Nit","descripcio":"Disc: L'aigua no cansa","publicada":"2026-05-13","afegida":"2026-10-03T17:26:42.487Z"},
-    {"id":"41Gbr1jJUrw","artista":"Maria Del Mar Bonet","titol":"S'aigo no","descripcio":"Disc: S'aigo no","publicada":"2026-04-22","afegida":"2026-10-03T17:26:42.487Z"},
-    {"id":"SM7sicCbr2o","artista":"Marina Rossell","titol":"Barca del Temps","descripcio":"Disc: Barca del Temps","publicada":"2014-11-06","afegida":"2026-10-03T17:26:42.487Z"},
-    {"id":"ULUc7adJ4jg","artista":"Marina Rossell","titol":"El Carter (feat. Roger Mas)","descripcio":"Disc: Marina Rossell Canta Moustaki","publicada":"2015-09-18","afegida":"2026-10-03T17:26:42.487Z"},
-    {"id":"9n1k7wrfAVQ","artista":"Marina Rossell","titol":"El Mar M'ha Donat","descripcio":"Disc: Marina Rossell Canta Moustaki","publicada":"2015-09-18","afegida":"2026-10-03T17:26:42.487Z"},
-    {"id":"YBoWTslvjKY","artista":"Marina Rossell","titol":"El Meu Avi","descripcio":"Disc: Clàssics Catalans…","publicada":"2014-11-06","afegida":"2026-10-03T17:26:42.487Z"},
-    {"id":"sy2sbn7XfQA","artista":"Marina Rossell","titol":"Els Amants S'estimen un Temps","descripcio":"Disc: Marina Rossell Canta Moustaki","publicada":"2015-09-18","afegida":"2026-10-03T17:26:42.487Z"},
-    {"id":"R2NQpRznxKI","artista":"Marina Rossell","titol":"Hi Havia un Jardí","descripcio":"Disc: Marina Rossell Canta Moustaki","publicada":"2015-09-18","afegida":"2026-10-03T17:26:42.487Z"},
-    {"id":"Ax-YaBy1E2I","artista":"Marina Rossell","titol":"Ma Llibertat","descripcio":"Disc: Marina Rossell Canta Moustaki","publicada":"2015-09-18","afegida":"2026-10-03T17:26:42.487Z"},
-    {"id":"TCHDOblXMMg","artista":"Marina Rossell","titol":"Ma Solitud","descripcio":"Disc: Marina Rossell Canta Moustaki","publicada":"2015-09-18","afegida":"2026-10-03T17:26:42.487Z"},
-    {"id":"vnG-uZQ5nA0","artista":"Marina Rossell","titol":"Mare de Déu del Món","descripcio":"Disc: Clàssics Catalans…","publicada":"2014-11-06","afegida":"2026-10-03T17:26:42.487Z"},
-    {"id":"3tE5vm-kxuA","artista":"Marina Rossell","titol":"Màrmara (feat. Georges Moustaki)","descripcio":"Disc: Marina Rossell Canta Moustaki","publicada":"2015-09-18","afegida":"2026-10-03T17:26:42.487Z"},
-    {"id":"FKy-Pr4cHfs","artista":"Marina Rossell","titol":"No em penedeixo de res (Non, je ne regrette rien)","descripcio":"Disc: 300 crits","publicada":"2021-10-28","afegida":"2026-10-03T17:26:42.487Z"},
-    {"id":"75FQkWzUWVY","artista":"Marina Rossell","titol":"Sense Anomenar-la","descripcio":"Disc: Marina Rossell Canta Moustaki","publicada":"2015-09-18","afegida":"2026-10-03T17:26:42.487Z"},
-    {"id":"2IQZ9zNQfRs","artista":"Mazoni","titol":"A.I.L.O.D.I.U.","descripcio":"Disc: Sacrifiqueu la princesa","publicada":"2015-06-23","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"LZC48xTVTKU","artista":"Mazoni","titol":"Això nostre s'ha acabat (fos el que fos)","descripcio":"Disc: Fins que la mort ens separi","publicada":"2014-11-08","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"uW7afc_L03Q","artista":"Mazoni","titol":"Aldarulls emocionals","descripcio":"Disc: Ludwig","publicada":"2021-11-04","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"8HdtryWITVs","artista":"Mazoni","titol":"Amb el símbol d'infinit","descripcio":"Disc: Desig imbècil","publicada":"2019-10-03","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"Zn-NqJ84iE8","artista":"Mazoni","titol":"Apocalipsi now","descripcio":"Disc: Eufòria 5 - Esperança 0","publicada":"2015-02-21","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"Ow5y0-PZbf0","artista":"Mazoni","titol":"Brúixola erràtica","descripcio":"Disc: Desig imbècil","publicada":"2019-10-03","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"S2C5fSQk3bw","artista":"Mazoni","titol":"Cançó 7a en colors","descripcio":"Disc: Esgarrapada","publicada":"2014-11-08","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"MD3iBlDFFxg","artista":"Mazoni","titol":"Caputxeta","descripcio":"Disc: Eufòria 5 - Esperança 0","publicada":"2015-02-21","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"o2a1TcWFm6I","artista":"Mazoni","titol":"Desig imbècil","descripcio":"Disc: Desig imbècil","publicada":"2019-09-05","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"FMOhdji5gv8","artista":"Mazoni","titol":"Ei, que surt el sol!","descripcio":"Disc: Eufòria 5 - Esperança 0","publicada":"2015-02-21","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"0-dvuDydKog","artista":"Mazoni","titol":"El dubte","descripcio":"Disc: Fins que la mort ens separi","publicada":"2015-06-23","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"bFuVgLI47Bc","artista":"Mazoni","titol":"El riu","descripcio":"Disc: Si els dits fossin xilòfons","publicada":"2015-12-02","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"Y_-nE8DqvV4","artista":"Mazoni","titol":"És veritat perquè és bonic","descripcio":"Disc: És veritat perquè és bonic","publicada":"2021-10-21","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"Em34NfTyp4s","artista":"Mazoni","titol":"Eufòria","descripcio":"Disc: Eufòria 5 - Esperança 0","publicada":"2015-06-23","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"W_0XCHDLk3w","artista":"Mazoni","titol":"Fe dins la tristesa","descripcio":"Disc: Banderes per daltònics","publicada":"2025-09-04","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"2HBo_jTTJZ8","artista":"Mazoni","titol":"Gised","descripcio":"Disc: Esgarrapada","publicada":"2014-11-08","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"g03nkxG0EKg","artista":"Mazoni","titol":"La collita","descripcio":"Disc: Carn, os i tot inclòs","publicada":"2017-04-20","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"Zc8YVK2KxJA","artista":"Mazoni","titol":"La cuina està tancada","descripcio":"Disc: Banderes per daltònics","publicada":"2025-09-04","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"McsyfLL_wNQ","artista":"Mazoni","titol":"La granja de la Paula","descripcio":"Disc: Si els dits fossin xilòfons","publicada":"2015-12-02","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"0POJIabBYsg","artista":"Mazoni","titol":"La promesa","descripcio":"Disc: La promesa","publicada":"2015-06-23","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"FrvAUStz-iw","artista":"Mazoni","titol":"M'han sortit dues ales","descripcio":"Disc: M'han sortit dues ales","publicada":"2019-09-19","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"4ArDh0QyCv4","artista":"Mazoni","titol":"Never Push a Sailor","descripcio":"Disc: 7 Songs for an Endless Night","publicada":"2016-03-11","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"G4dDu8mnFrM","artista":"Mazoni","titol":"No ho puc fer per tu","descripcio":"Disc: Ludwig","publicada":"2021-11-04","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"4gxFbQ1Ek64","artista":"Mazoni","titol":"No tinc temps","descripcio":"Disc: Esgarrapada","publicada":"2014-11-08","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"f9mtL_cJqls","artista":"Mazoni","titol":"Ocean","descripcio":"Disc: 7 songs for a sleepless night","publicada":"2015-02-21","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"nCCr1QjG4JA","artista":"Mazoni","titol":"On vull estar","descripcio":"Disc: Ludwig","publicada":"2021-11-04","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"Rz17XjxPPN0","artista":"Mazoni","titol":"Pedres","descripcio":"Disc: Carn, os i tot inclòs","publicada":"2017-04-20","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"3cmy9Fe9-SU","artista":"Mazoni","titol":"Per primer cop","descripcio":"Disc: Fins que la mort ens separi","publicada":"2014-11-08","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"i64xQ2vLjjQ","artista":"Mazoni","titol":"Perduts en la boira","descripcio":"Disc: Esgarrapada","publicada":"2014-11-09","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"XkZAkJWAaXU","artista":"Mazoni","titol":"Purgatori","descripcio":"Disc: Magranes molt / Purgatori","publicada":"2015-06-23","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"R_-KvwgzSuo","artista":"Mazoni","titol":"Quant temps fa que no plores?","descripcio":"Disc: Banderes per daltònics","publicada":"2025-09-04","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"D5FRGhuo6jc","artista":"Mazoni","titol":"Se'm moren les plantes","descripcio":"Disc: Si els dits fossin xilòfons","publicada":"2015-12-02","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"iLGvRQwgtUQ","artista":"Mazoni","titol":"Sense pluja però amb diluvi","descripcio":"Disc: Sense pluja però amb diluvi","publicada":"2023-02-06","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"Yln4KCIr1XA","artista":"Mazoni","titol":"Set de nou","descripcio":"Disc: Banderes per daltònics","publicada":"2025-09-04","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"jDU8NJD8eE4","artista":"Mazoni","titol":"Sol","descripcio":"Disc: Sol","publicada":"2017-03-30","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"64jNlgPu46U","artista":"Mazoni","titol":"Un Dimecres Qualsevol","descripcio":"Disc: Perversions: 15 Cançons d'Els Pets Interpretades per...","publicada":"2018-06-08","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"sP5pOkF_8qo","artista":"Mazoni","titol":"Un petit racó de pau per cadascú","descripcio":"Disc: Banderes per daltònics","publicada":"2025-09-04","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"65i4TklWnhA","artista":"Mazoni","titol":"Vindré com una plaga","descripcio":"Disc: Carn, os i tot inclòs","publicada":"2017-04-20","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"nRXqwKAidGw","artista":"Mazoni","titol":"You and me","descripcio":"Disc: 7 songs for a sleepless night","publicada":"2015-02-21","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"Ngv3vZFKPlM","artista":"Mazoni","titol":"Zombies","descripcio":"Disc: Zombies","publicada":"2021-10-07","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"zo39iWFcr20","artista":"Miki Nuñez","titol":"Escriurem #Joemcorono - Col·lectiva","descripcio":"Miki Núñez, Sara Roy, Judit Neddermann, Blaumut, Cesc Freixas, Natalia Lacunza, Bely Basarte, Els Amics de les Arts, Doctor Prats , Alba Reche, Maren, Buhos, Li…","publicada":"2020-04-20","afegida":"2026-10-02T15:58:31.716Z"},
-    {"id":"-a2fVQA_fCI","artista":"Moto Clua","titol":"Balada","descripcio":"Disc: Amic Majestic","publicada":"2026-07-06","afegida":"2026-10-03T19:27:35.653Z"},
-    {"id":"cBpGIFlSu90","artista":"Moto Clua","titol":"Ciutat","descripcio":"Disc: Amic Majestic","publicada":"2026-07-06","afegida":"2026-10-03T19:27:35.653Z"},
-    {"id":"zgT_MNf3-Rs","artista":"Moto Clua","titol":"El dia ha nascut","descripcio":"Disc: Amic Majestic","publicada":"2026-07-06","afegida":"2026-10-03T19:27:35.653Z"},
-    {"id":"WVw0jKX7ybU","artista":"Moto Clua","titol":"Magistic Friend","descripcio":"Disc: Amic Majestic","publicada":"2026-07-06","afegida":"2026-10-03T19:27:35.653Z"},
-    {"id":"Z_3fJD8Kqsw","artista":"Moto Clua","titol":"No és més que el por","descripcio":"Disc: Amic Majestic","publicada":"2026-07-06","afegida":"2026-10-03T19:27:35.653Z"},
-    {"id":"uWqWVMRMDrw","artista":"Moto Clua","titol":"Ombres de la Nit","descripcio":"Disc: Amic Majestic","publicada":"2026-07-06","afegida":"2026-10-03T19:27:35.653Z"},
-    {"id":"JxSSXmB_Q-I","artista":"Moto Clua","titol":"Posterior","descripcio":"Disc: Amic Majestic","publicada":"2026-07-06","afegida":"2026-10-03T19:27:35.653Z"},
-    {"id":"P755vvu0JCY","artista":"Moto Clua","titol":"Reflexes","descripcio":"Disc: Amic Majestic","publicada":"2026-07-06","afegida":"2026-10-03T19:27:35.653Z"},
-    {"id":"vzf7DKHQ7ik","artista":"Opció K-95","titol":"6.10.34","descripcio":"Disc: Reneix","publicada":"2026-04-07","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"Je3UmjUbQiM","artista":"Opció K-95","titol":"A Sang I Fetge","descripcio":"Disc: Reneix","publicada":"2026-04-07","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"POyYWQKV6gg","artista":"Opció K-95","titol":"A World To Win","descripcio":"Disc: Reneix","publicada":"2026-04-07","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"5llPATI5cQ8","artista":"Opció K-95","titol":"Angoixa","descripcio":"Disc: Terra cremada","publicada":"2026-04-07","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"-Qx8s5iATzg","artista":"Opció K-95","titol":"Bandera Negra","descripcio":"Disc: Terra cremada","publicada":"2026-04-07","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"UOSkdQFJ8u8","artista":"Opció K-95","titol":"BCN 12-O","descripcio":"Disc: Terra cremada","publicada":"2026-04-07","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"ifm5bZfo-IY","artista":"Opció K-95","titol":"Blau i grana","descripcio":"Disc: Mai Morirem","publicada":"2026-04-14","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"hctUNVUxDZ4","artista":"Opció K-95","titol":"Catalunya unida","descripcio":"Disc: Mai Morirem","publicada":"2026-04-14","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"6Vpv9M0FgpI","artista":"Opció K-95","titol":"Colpeja un per aturar cent","descripcio":"Disc: Terra cremada","publicada":"2026-04-07","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"SQQOa6hHlsM","artista":"Opció K-95","titol":"Company","descripcio":"Disc: Mai Morirem","publicada":"2026-04-14","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"GOvv1vdTcno","artista":"Opció K-95","titol":"Creu Sagnant","descripcio":"Disc: Reneix","publicada":"2026-04-07","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"mT16Q0NnbWA","artista":"Opció K-95","titol":"Dinaida Isakova","descripcio":"Disc: Reneix","publicada":"2026-04-07","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"-glcEfnf35A","artista":"Opció K-95","titol":"Els Senyors De La Guerra","descripcio":"Disc: Reneix","publicada":"2026-04-07","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"1FRtcuCTBlQ","artista":"Opció K-95","titol":"Es per tu","descripcio":"Disc: Terra cremada","publicada":"2026-04-07","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"D_C2Pc_4na0","artista":"Opció K-95","titol":"Estem Farts","descripcio":"Disc: Terra cremada","publicada":"2026-04-07","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"uWZyNbeXZNE","artista":"Opció K-95","titol":"Fascinació per la violència","descripcio":"Disc: Mai Morirem","publicada":"2026-04-14","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"RVmKSrDL1AU","artista":"Opció K-95","titol":"Impacte","descripcio":"Disc: Terra cremada","publicada":"2026-04-07","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"jhSqhoQmqW4","artista":"Opció K-95","titol":"Kill The Bastards","descripcio":"Disc: Reneix","publicada":"2026-04-07","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"KKIfgaFuVec","artista":"Opció K-95","titol":"L'hora De Passar Comptes","descripcio":"Disc: Reneix","publicada":"2026-04-07","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"AhVad0fGe4Q","artista":"Opció K-95","titol":"La Forja De La Història","descripcio":"Disc: Reneix","publicada":"2026-04-07","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"uaYkgOyr9jA","artista":"Opció K-95","titol":"La Veu Dels Upstarts","descripcio":"Disc: Cap oportunitat","publicada":"2026-04-01","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"0SL39V24kAM","artista":"Opció K-95","titol":"La Victòria depèn de Tu","descripcio":"Disc: Terra cremada","publicada":"2026-04-07","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"hsvblZLRyi8","artista":"Opció K-95","titol":"Mai morirem","descripcio":"Disc: Mai Morirem","publicada":"2026-04-14","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"hFgYAAXTP4c","artista":"Opció K-95","titol":"Moment present","descripcio":"Disc: Mai Morirem","publicada":"2026-04-14","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"mt66QnlAiq0","artista":"Opció K-95","titol":"N 12","descripcio":"Disc: Terra cremada","publicada":"2026-04-07","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"v7-Bt2jFTxo","artista":"Opció K-95","titol":"Nation of Oi!","descripcio":"Disc: Terra cremada","publicada":"2026-04-07","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"rBeJqpRvMYU","artista":"Opció K-95","titol":"No Hi Ha Herois","descripcio":"Disc: Reneix","publicada":"2026-04-07","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"U4GEaYdFSb8","artista":"Opció K-95","titol":"No more colours one army","descripcio":"Disc: Mai Morirem","publicada":"2026-04-14","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"6pclc8yMfz0","artista":"Opció K-95","titol":"Oi! Per Catalunya","descripcio":"Disc: Mai Morirem","publicada":"2026-04-14","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"-YgqeGIpL6M","artista":"Opció K-95","titol":"Oi! You!","descripcio":"Disc: Cap oportunitat","publicada":"2026-04-01","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"AxVG80g4Yds","artista":"Opció K-95","titol":"Partisans","descripcio":"Disc: Reneix","publicada":"2026-04-07","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"h96yZNdAoD0","artista":"Opció K-95","titol":"Reis de l'alcohol","descripcio":"Disc: Mai Morirem","publicada":"2026-04-14","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"Kyuon0fHLOk","artista":"Opció K-95","titol":"Rosa de Foc","descripcio":"Disc: Terra cremada","publicada":"2026-04-07","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"oSZ7JDxEbQQ","artista":"Opció K-95","titol":"Si l'haguessiu vist","descripcio":"Disc: Mai Morirem","publicada":"2026-04-14","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"jze7iaKnKmM","artista":"Opció K-95","titol":"SOS neonazisme","descripcio":"Disc: Mai Morirem","publicada":"2026-04-14","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"fwPWHpn--Rc","artista":"Opció K-95","titol":"Sota Control","descripcio":"Disc: Cap oportunitat","publicada":"2026-04-01","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"gQf_YwcYHuc","artista":"Opció K-95","titol":"Terra De Sang","descripcio":"Disc: Reneix","publicada":"2026-04-07","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"aMpg6qc24UE","artista":"Opció K-95","titol":"Tres Fletxes Negres","descripcio":"Disc: Reneix","publicada":"2026-04-07","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"tHGZmae9kCU","artista":"Opció K-95","titol":"Un Poble","descripcio":"Disc: Cap oportunitat","publicada":"2026-04-01","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"1y_ib4jPmpw","artista":"Opció K-95","titol":"We must break our chains","descripcio":"Disc: Mai Morirem","publicada":"2026-04-14","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"fKGFOiCPIGw","artista":"Opció K-95","titol":"We're Free","descripcio":"Disc: Terra cremada","publicada":"2026-04-07","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"TYdjMzmjlpU","artista":"Opció K-95","titol":"Working Class Hell","descripcio":"Disc: Terra cremada","publicada":"2026-04-07","afegida":"2026-10-03T19:40:50.057Z"},
-    {"id":"RJmsqOZQYAs","artista":"Pol Bordas","titol":"arròs covat","descripcio":"Disc: he marxat, per tornar","publicada":"2026-03-05","afegida":"2026-10-03T17:26:42.487Z"},
-    {"id":"XA28IEMFABo","artista":"Pol Bordas","titol":"barna :/","descripcio":"Disc: barna :/","publicada":"2025-06-05","afegida":"2026-10-03T17:26:42.487Z"},
-    {"id":"MzXzA1QnCpg","artista":"Pol Bordas","titol":"BENZINA","descripcio":"Disc: AQUESTA VIDA ÉS NOSTRA","publicada":"2024-11-14","afegida":"2026-10-03T17:26:42.487Z"},
-    {"id":"eEnyC_tMR10","artista":"Pol Bordas","titol":"caviar i efectiu","descripcio":"Disc: caviar i efectiu","publicada":"2025-04-10","afegida":"2026-10-03T17:26:42.487Z"},
-    {"id":"Ptzt7clu4ZY","artista":"Pol Bordas","titol":"ddia i dnit","descripcio":"Disc: AQUESTA VIDA ÉS NOSTRA","publicada":"2024-11-14","afegida":"2026-10-03T17:26:42.487Z"},
-    {"id":"u2ikmg3CJ2M","artista":"Pol Bordas","titol":"ens valdrà la pena/1600Km","descripcio":"Disc: ens valdrà la pena/1600Km","publicada":"2025-11-27","afegida":"2026-10-03T17:26:42.487Z"},
-    {"id":"kXd_8dfuwmA","artista":"Pol Bordas","titol":"he marxat, lluny de casa","descripcio":"Disc: he marxat, per tornar","publicada":"2026-03-05","afegida":"2026-10-03T17:26:42.487Z"},
-    {"id":"dD7qB2v99CY","artista":"Pol Bordas","titol":"lava ⟗","descripcio":"Disc: he marxat, per tornar","publicada":"2026-03-05","afegida":"2026-10-03T17:26:42.487Z"},
-    {"id":"qUAeXYpX4PU","artista":"Pol Bordas","titol":"masseria","descripcio":"Disc: he marxat, per tornar","publicada":"2026-03-05","afegida":"2026-10-03T17:26:42.487Z"},
-    {"id":"zfv5cMnISTo","artista":"Pol Bordas","titol":"outro/inèrcia","descripcio":"Disc: AQUESTA VIDA ÉS NOSTRA","publicada":"2024-11-14","afegida":"2026-10-03T17:26:42.487Z"},
-    {"id":"O8nNR6I1syU","artista":"Pol Bordas","titol":"petons PeToNs PETONS","descripcio":"Disc: petons PeToNs PETONS","publicada":"2025-04-09","afegida":"2026-10-03T17:26:42.487Z"},
-    {"id":"Yx4QhLOCe0k","artista":"Pol Bordas","titol":"RES MÉS QUE","descripcio":"Disc: RES MÉS QUE","publicada":"2024-10-03","afegida":"2026-10-03T17:26:42.487Z"},
-    {"id":"pfeU3tUSSRE","artista":"Pol Bordas","titol":"retrobar-nos","descripcio":"Disc: retrobar-nos","publicada":"2026-01-29","afegida":"2026-10-03T17:26:42.487Z"},
-    {"id":"0Ex9Opv6pIA","artista":"Pol Bordas","titol":"RONDINAIRE","descripcio":"Disc: RONDINAIRE","publicada":"2024-04-18","afegida":"2026-10-03T17:26:42.487Z"},
-    {"id":"BQH88FirLFI","artista":"Pol Bordas","titol":"socoRRista!","descripcio":"Disc: socoRRista!","publicada":"2025-08-07","afegida":"2026-10-03T17:26:42.487Z"},
-    {"id":"7E615UwhDRQ","artista":"Pol Bordas","titol":"TANTA ESTONA","descripcio":"Disc: TANTA ESTONA","publicada":"2024-06-06","afegida":"2026-10-03T17:26:42.487Z"},
-    {"id":"jz72JF3egME","artista":"Pol Bordas","titol":"TEMPS AL TEMPS","descripcio":"Disc: AQUESTA VIDA ÉS NOSTRA","publicada":"2024-11-14","afegida":"2026-10-03T17:26:42.487Z"},
-    {"id":"MBpc5xNSta8","artista":"Pol Bordas","titol":"TÒRAX","descripcio":"Disc: TÒRAX","publicada":"2024-10-16","afegida":"2026-10-03T17:26:42.487Z"},
-    {"id":"2m5wvZUNeHk","artista":"Pol Bordas","titol":"Xfi","descripcio":"Disc: Xfi","publicada":"2024-10-16","afegida":"2026-10-03T17:26:42.487Z"},
-    {"id":"ZlaFGRZVadA","artista":"Quimi Portet","titol":"Central de biomassa","descripcio":"Disc: Festa Major d'Hivern","publicada":"2018-04-05","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"AEzTac8Ryr4","artista":"Quimi Portet","titol":"Francesc Pujols (Live In Cincinnati)","descripcio":"Disc: Si plou, ho farem al Pavelló","publicada":"2020-11-19","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"DyccG_it-W8","artista":"Quimi Portet","titol":"Homes i dones del cap dret (Live In Cincinnati)","descripcio":"Disc: Si plou, ho farem al Pavelló","publicada":"2020-11-19","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"MHp5YqDLZP8","artista":"Quimi Portet","titol":"La Rambla","descripcio":"Disc: Barcelona Zona Bastarda","publicada":"2019-09-05","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"C2iM0kQ9Cqg","artista":"Quimi Portet","titol":"La Terra és plana (Live In Cincinnati)","descripcio":"Disc: Si plou, ho farem al Pavelló","publicada":"2020-11-19","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"_a2TEsN0L_8","artista":"Quimi Portet","titol":"Oh my Love","descripcio":"Disc: Oh My Love","publicada":"2015-02-24","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"Exruyw8tjpA","artista":"Quimi Portet","titol":"Ós bipolar (Live In Cincinnati)","descripcio":"Disc: Si plou, ho farem al Pavelló","publicada":"2020-11-19","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"t2g1kD5yF_c","artista":"Quimi Portet","titol":"Sabadell (Live In Cincinnati)","descripcio":"Disc: Si plou, ho farem al Pavelló","publicada":"2020-11-19","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"OY7bGXj05FA","artista":"Quimi Portet","titol":"Tinc una bèstia dintre meu","descripcio":"Disc: Oh My Love","publicada":"2015-06-23","afegida":"2026-10-03T19:25:02.248Z"},
-    {"id":"Gyg-_2nViQU","artista":"Sopa de Cabra","titol":"El Refugi","descripcio":"Disc: Cercles","publicada":"2015-12-16","afegida":"2026-10-03T17:26:42.487Z"}
+    {
+      "id": "QAr713wG3TI",
+      "artista": "Anna Andreu",
+      "titol": "'Letargo y Despertar' d'Anna Andreu",
+      "descripcio": "Artista: Anna Andreu Canción: Letargo y Despertar Composición, voy y guitarra: Anna Andreu Batería y coros: Marina Arrufat Producción musical, guitarra y bajo:…",
+      "publicada": "2023-05-20",
+      "afegida": "2026-10-02T15:58:31.716Z"
+    },
+    {
+      "id": "p3NesYndiBg",
+      "artista": "Anna Andreu",
+      "titol": "'Quietud' d'Anna Andreu ft. Rita Payés i Pol Batlle",
+      "descripcio": "Artista: Anna Andreu ft. Rita Payés i Pol Batlle Direcció Jordi Martínez Director fotografia Yuse Riera Produït per Me río de los nervios films Color Fabián Mat…",
+      "publicada": "2023-03-21",
+      "afegida": "2026-10-02T15:58:31.716Z"
+    },
+    {
+      "id": "f1MXDLREBrc",
+      "artista": "Anna Andreu",
+      "titol": "Anna Andreu 'Els mals costums' (Audio oficial - complet)",
+      "descripcio": "Artista: Anna Andreu Album: Els Mals Costums (abril 2020) Veu i guitarra: Anna Andreu Bateria, teclats i veus: Marina Arrufat Producció: Jordi Matas Master: Vic…",
+      "publicada": "2020-04-16",
+      "afegida": "2026-10-02T15:58:31.716Z"
+    },
+    {
+      "id": "U-8YwBg0R_U",
+      "artista": "Anna Andreu",
+      "titol": "Anna Andreu 'La mida' (Audio oficial sencer)",
+      "descripcio": "Artista: Anna Andreu Àlbum: La mida (Hidden Track Records, març 2022) Veu i guitarra: Anna Andreu Bateria: Marina Arrufat Gravació, mescla i producció de Jordi…",
+      "publicada": "2022-03-24",
+      "afegida": "2026-10-02T15:58:31.716Z"
+    },
+    {
+      "id": "xiG1Pg3oxU4",
+      "artista": "Anna Andreu",
+      "titol": "Torrent Sanguini (directe)",
+      "descripcio": "Cançó: Torrent Sanguini Veu i guitarra: Anna Andreu Bateria: Marina Arrufat Àlbum: Els Mals Costums (Hidden Track Records 2020) Direcció: Carles Pons Altimira D…",
+      "publicada": "2020-09-09",
+      "afegida": "2026-10-02T15:58:31.716Z"
+    },
+    {
+      "id": "6AXuq71AXak",
+      "artista": "Brams",
+      "titol": "Aquest Món",
+      "descripcio": "Disc: Tot És Possible",
+      "publicada": "2014-11-16",
+      "afegida": "2026-10-03T17:26:42.487Z"
+    },
+    {
+      "id": "EYxwT6F0J6Q",
+      "artista": "Brams",
+      "titol": "El senyal de combat",
+      "descripcio": "Disc: Sempremés",
+      "publicada": "2014-11-21",
+      "afegida": "2026-10-03T17:26:42.487Z"
+    },
+    {
+      "id": "k-naoJVzwlE",
+      "artista": "Brams",
+      "titol": "Guanyarem",
+      "descripcio": "Disc: Sempremés",
+      "publicada": "2014-11-21",
+      "afegida": "2026-10-03T17:26:42.487Z"
+    },
+    {
+      "id": "2_UuLh18hT8",
+      "artista": "Brams",
+      "titol": "La Guerra de la Verdulaire, Part I, Sants Collons",
+      "descripcio": "Disc: Aldea Global Thematic Park",
+      "publicada": "2014-11-21",
+      "afegida": "2026-10-03T17:26:42.487Z"
+    },
+    {
+      "id": "WH4mzRc8a0g",
+      "artista": "Brams",
+      "titol": "Moros i cristians",
+      "descripcio": "Disc: Sempremés",
+      "publicada": "2014-11-21",
+      "afegida": "2026-10-03T17:26:42.487Z"
+    },
+    {
+      "id": "PHCLmBxn67M",
+      "artista": "Brams",
+      "titol": "Sants collons",
+      "descripcio": "Disc: Sempremés",
+      "publicada": "2014-11-21",
+      "afegida": "2026-10-03T17:26:42.487Z"
+    },
+    {
+      "id": "DaUlwpS5evA",
+      "artista": "Dàmaris Gelabert",
+      "titol": "MOU EL COS - Us estrimem fest #cançonsinfantils #família #cançonsperaprendre",
+      "descripcio": "",
+      "publicada": "2023-11-06",
+      "afegida": "2026-10-02T15:58:31.716Z"
+    },
+    {
+      "id": "iTS0Key8OsE",
+      "artista": "Doctor Prats",
+      "titol": "Adéu Fins Aviat (El Docu)",
+      "descripcio": "Aquest és un \"mini docu\" molt especial: una mirada al cor dels nostres últims concerts abans de fer una pausa fins al 2025. 'Adeu fins aviat' no és només un víd…",
+      "publicada": "2024-01-17",
+      "afegida": "2026-10-02T15:58:31.716Z"
+    },
+    {
+      "id": "b4Ir-xoS95s",
+      "artista": "Doctor Prats",
+      "titol": "Al final tot anirà bé (en confinament)",
+      "descripcio": "💧🎵 NOU VIDEOCLIP \"A poc a poc\" 🎵💧: https://youtu.be/fnBXD6VGVhc Aviat tot el que cou s'ho endurà el temps. Facebook: http://facebook.com/doctorprats Twitter…",
+      "publicada": "2020-04-18",
+      "afegida": "2026-10-02T15:58:31.716Z"
+    },
+    {
+      "id": "7gZ7C0-wGh8",
+      "artista": "Doctor Prats",
+      "titol": "Doctor Prats - Pel cantó bo (Disc Sencer)",
+      "descripcio": "00:00 Loviu Baby 03:21 Seguirem Ballant (amb Stay Homas) 06:27 A Poc a Poc 09:07 Quan Et Faci Falta 12:33 Pel Cantó Bo 15:11 Ocells de Llum 18:18 Massa Bé 21:18…",
+      "publicada": "2022-04-28",
+      "afegida": "2026-10-02T15:58:31.716Z"
+    },
+    {
+      "id": "V8ppnOhfQyU",
+      "artista": "Dusminguet",
+      "titol": "Africa",
+      "descripcio": "Disc: Vafalungo",
+      "publicada": "2015-10-25",
+      "afegida": "2026-10-03T19:07:36.989Z"
+    },
+    {
+      "id": "2V2vw1dJ-h0",
+      "artista": "Dusminguet",
+      "titol": "Ai Maria!",
+      "descripcio": "Disc: Vafalungo",
+      "publicada": "2015-10-25",
+      "afegida": "2026-10-03T19:07:36.989Z"
+    },
+    {
+      "id": "LNEeaaPX0tI",
+      "artista": "Dusminguet",
+      "titol": "Babilonia",
+      "descripcio": "Disc: Vafalungo",
+      "publicada": "2015-10-25",
+      "afegida": "2026-10-03T19:07:36.989Z"
+    },
+    {
+      "id": "pWqJwBuF1j4",
+      "artista": "Dusminguet",
+      "titol": "Carretera del miedo",
+      "descripcio": "Disc: Postrof",
+      "publicada": "2015-01-19",
+      "afegida": "2026-10-03T19:07:36.989Z"
+    },
+    {
+      "id": "E4vTD8JQoDc",
+      "artista": "Dusminguet",
+      "titol": "Cosa fea",
+      "descripcio": "Disc: Goᐳ",
+      "publicada": "2015-12-11",
+      "afegida": "2026-10-03T19:07:36.989Z"
+    },
+    {
+      "id": "fAAoEM3UJaY",
+      "artista": "Dusminguet",
+      "titol": "Cumbia bruja",
+      "descripcio": "Disc: Postrof",
+      "publicada": "2015-01-19",
+      "afegida": "2026-10-03T19:07:36.989Z"
+    },
+    {
+      "id": "gkq97Hn2KdA",
+      "artista": "Dusminguet",
+      "titol": "Decimero",
+      "descripcio": "Disc: Postrof",
+      "publicada": "2015-01-19",
+      "afegida": "2026-10-03T19:07:36.989Z"
+    },
+    {
+      "id": "4MXWiVvPIow",
+      "artista": "Dusminguet",
+      "titol": "Disco jonki",
+      "descripcio": "Disc: Vafalungo",
+      "publicada": "2015-10-25",
+      "afegida": "2026-10-03T19:07:36.989Z"
+    },
+    {
+      "id": "ErPqnRd8b8k",
+      "artista": "Dusminguet",
+      "titol": "El camí",
+      "descripcio": "Disc: Goᐳ",
+      "publicada": "2015-12-11",
+      "afegida": "2026-10-03T19:07:36.989Z"
+    },
+    {
+      "id": "FuPOoXTyN6k",
+      "artista": "Dusminguet",
+      "titol": "El pardal",
+      "descripcio": "Disc: Vafalungo",
+      "publicada": "2015-10-25",
+      "afegida": "2026-10-03T19:07:36.989Z"
+    },
+    {
+      "id": "ap4_atGBBu4",
+      "artista": "Dusminguet",
+      "titol": "El son",
+      "descripcio": "Disc: Goᐳ",
+      "publicada": "2015-12-11",
+      "afegida": "2026-10-03T19:07:36.989Z"
+    },
+    {
+      "id": "liV7pSnizkY",
+      "artista": "Dusminguet",
+      "titol": "El teu amor",
+      "descripcio": "Disc: Postrof",
+      "publicada": "2015-01-19",
+      "afegida": "2026-10-03T19:07:36.989Z"
+    },
+    {
+      "id": "ULqTGD651hg",
+      "artista": "Dusminguet",
+      "titol": "Jackeline",
+      "descripcio": "Disc: Vafalungo",
+      "publicada": "2015-10-25",
+      "afegida": "2026-10-03T19:07:36.989Z"
+    },
+    {
+      "id": "Z8AeCRpulxA",
+      "artista": "Dusminguet",
+      "titol": "La Dansa De L´imbécil",
+      "descripcio": "Disc: Postrof",
+      "publicada": "2015-01-19",
+      "afegida": "2026-10-03T19:07:36.989Z"
+    },
+    {
+      "id": "rpHh84frHmE",
+      "artista": "Dusminguet",
+      "titol": "La muralla",
+      "descripcio": "Disc: Postrof",
+      "publicada": "2015-01-19",
+      "afegida": "2026-10-03T19:07:36.989Z"
+    },
+    {
+      "id": "cBKpfoGdxJA",
+      "artista": "Dusminguet",
+      "titol": "La Recepta",
+      "descripcio": "Disc: Postrof",
+      "publicada": "2015-01-19",
+      "afegida": "2026-10-03T19:07:36.989Z"
+    },
+    {
+      "id": "EApUIeark_k",
+      "artista": "Dusminguet",
+      "titol": "La rumba del solterón",
+      "descripcio": "Disc: Postrof",
+      "publicada": "2015-01-19",
+      "afegida": "2026-10-03T19:07:36.989Z"
+    },
+    {
+      "id": "AtFH2MGZkZk",
+      "artista": "Dusminguet",
+      "titol": "Les Ampolles",
+      "descripcio": "Disc: Vafalungo",
+      "publicada": "2015-10-25",
+      "afegida": "2026-10-03T19:07:36.989Z"
+    },
+    {
+      "id": "f3DqJYrbk8c",
+      "artista": "Dusminguet",
+      "titol": "Manketú",
+      "descripcio": "Disc: Postrof",
+      "publicada": "2015-01-19",
+      "afegida": "2026-10-03T19:07:36.989Z"
+    },
+    {
+      "id": "9J2xziITotU",
+      "artista": "Dusminguet",
+      "titol": "Marihuana",
+      "descripcio": "Disc: Vafalungo",
+      "publicada": "2015-10-25",
+      "afegida": "2026-10-03T19:07:36.989Z"
+    },
+    {
+      "id": "3q13_NLMCsc",
+      "artista": "Dusminguet",
+      "titol": "Mi arte",
+      "descripcio": "Disc: Postrof",
+      "publicada": "2015-01-19",
+      "afegida": "2026-10-03T19:07:36.989Z"
+    },
+    {
+      "id": "JOW_qC4QGRk",
+      "artista": "Dusminguet",
+      "titol": "Nass la garriga",
+      "descripcio": "Disc: Postrof",
+      "publicada": "2015-01-19",
+      "afegida": "2026-10-03T19:07:36.989Z"
+    },
+    {
+      "id": "Jh6E0IdEZdM",
+      "artista": "Dusminguet",
+      "titol": "One Way",
+      "descripcio": "Disc: Vafalungo",
+      "publicada": "2015-10-25",
+      "afegida": "2026-10-03T19:07:36.989Z"
+    },
+    {
+      "id": "S6nQ-ngzxIw",
+      "artista": "Dusminguet",
+      "titol": "Plegando velas",
+      "descripcio": "Disc: Postrof",
+      "publicada": "2015-01-19",
+      "afegida": "2026-10-03T19:07:36.989Z"
+    },
+    {
+      "id": "-fotKUoJj-g",
+      "artista": "Dusminguet",
+      "titol": "Ritmo americano",
+      "descripcio": "Disc: Postrof",
+      "publicada": "2015-01-19",
+      "afegida": "2026-10-03T19:07:36.989Z"
+    },
+    {
+      "id": "8daAbiFhXPg",
+      "artista": "Dusminguet",
+      "titol": "Rumbeta bona",
+      "descripcio": "Disc: Postrof",
+      "publicada": "2015-01-19",
+      "afegida": "2026-10-03T19:07:36.989Z"
+    },
+    {
+      "id": "taqPPP7UimA",
+      "artista": "Dusminguet",
+      "titol": "San Cristóbal",
+      "descripcio": "Disc: Postrof",
+      "publicada": "2015-01-19",
+      "afegida": "2026-10-03T19:07:36.989Z"
+    },
+    {
+      "id": "6XsyGL7l-WE",
+      "artista": "Dusminguet",
+      "titol": "Siento",
+      "descripcio": "Disc: Vafalungo",
+      "publicada": "2015-10-25",
+      "afegida": "2026-10-03T19:07:36.989Z"
+    },
+    {
+      "id": "wJwk6O3fHNc",
+      "artista": "Dusminguet",
+      "titol": "Son del campesino",
+      "descripcio": "Disc: Postrof",
+      "publicada": "2015-01-19",
+      "afegida": "2026-10-03T19:07:36.989Z"
+    },
+    {
+      "id": "pCRH1SjSeyg",
+      "artista": "Dusminguet",
+      "titol": "Sonajeros",
+      "descripcio": "Disc: Vafalungo",
+      "publicada": "2015-10-25",
+      "afegida": "2026-10-03T19:07:36.989Z"
+    },
+    {
+      "id": "iqC7gyAj95w",
+      "artista": "Dusminguet",
+      "titol": "Sopetón",
+      "descripcio": "Disc: Postrof",
+      "publicada": "2015-01-19",
+      "afegida": "2026-10-03T19:07:36.989Z"
+    },
+    {
+      "id": "A5XKkm69YeY",
+      "artista": "Els Amics de les Arts",
+      "titol": "Sobre com es va fer 'El senyal que esperaves', amb Sopa de Cabra",
+      "descripcio": "Gerard Quintana explica la història creuada entre Els Amics de les Arts i Sopa de Cabra, i la manera com han treballat la seva col·laboració dins el disc '20 an…",
+      "publicada": "2025-01-05",
+      "afegida": "2026-10-02T15:58:31.716Z"
+    },
+    {
+      "id": "ACtqW433DsU",
+      "artista": "Els Pets",
+      "titol": "Agost",
+      "descripcio": "",
+      "publicada": "2010-03-31",
+      "afegida": "2026-10-02T15:58:31.716Z"
+    },
+    {
+      "id": "iINVs4c0L7Y",
+      "artista": "Els Pets",
+      "titol": "Els Pets - Això és espectacle (Gira 20)",
+      "descripcio": "",
+      "publicada": "2011-07-25",
+      "afegida": "2026-10-02T15:58:31.716Z"
+    },
+    {
+      "id": "ab6f_2z-hOA",
+      "artista": "Els Pets",
+      "titol": "Per veure't a tu",
+      "descripcio": "",
+      "publicada": "2010-04-08",
+      "afegida": "2026-10-02T15:58:31.716Z"
+    },
+    {
+      "id": "R1BKUbtnRdE",
+      "artista": "Els Pets",
+      "titol": "Soroll",
+      "descripcio": "",
+      "publicada": "2010-03-31",
+      "afegida": "2026-10-02T15:58:31.716Z"
+    },
+    {
+      "id": "zmGYk4YV1h4",
+      "artista": "enMatu",
+      "titol": "8. bojan krkic",
+      "descripcio": "escolta \"jove talismà\" aquí: https://lnk.to/enMatujovetalisma prod by jovedry visualizer: Linus Mariscal",
+      "publicada": "2026-01-23",
+      "afegida": "2026-10-02T15:58:31.716Z"
+    },
+    {
+      "id": "mPt8f4q5QwU",
+      "artista": "Fetus",
+      "titol": "Ahir",
+      "descripcio": "Disc: Càntir nou fa aigua fresca",
+      "publicada": "2024-10-10",
+      "afegida": "2026-10-03T18:32:00.756Z"
+    },
+    {
+      "id": "XiFOvkcc_P8",
+      "artista": "Fetus",
+      "titol": "Aigua fresca",
+      "descripcio": "Disc: Càntir nou fa aigua fresca",
+      "publicada": "2024-10-10",
+      "afegida": "2026-10-03T18:32:00.756Z"
+    },
+    {
+      "id": "8SqmQSKbKlU",
+      "artista": "Fetus",
+      "titol": "Au, jovent!",
+      "descripcio": "Disc: Au, jovent!",
+      "publicada": "2023-07-31",
+      "afegida": "2026-10-03T18:32:00.756Z"
+    },
+    {
+      "id": "XpggajOE42Y",
+      "artista": "Fetus",
+      "titol": "Balada del sabater d'Ordis",
+      "descripcio": "Disc: La Serra dels Perduts",
+      "publicada": "2022-10-06",
+      "afegida": "2026-10-03T18:32:00.756Z"
+    },
+    {
+      "id": "MxB8rpppTHc",
+      "artista": "Fetus",
+      "titol": "Brevari de terra i sol",
+      "descripcio": "Disc: Càntir nou fa aigua fresca",
+      "publicada": "2024-10-10",
+      "afegida": "2026-10-03T18:32:00.756Z"
+    },
+    {
+      "id": "gUklhMKB53c",
+      "artista": "Fetus",
+      "titol": "Camarada",
+      "descripcio": "Disc: Romancer tartera",
+      "publicada": "2026-04-22",
+      "afegida": "2026-10-03T18:32:00.756Z"
+    },
+    {
+      "id": "3qooiE9zUEo",
+      "artista": "Fetus",
+      "titol": "Candidatura de progrés",
+      "descripcio": "Disc: Candidatura de progrés",
+      "publicada": "2026-04-10",
+      "afegida": "2026-10-03T18:32:00.756Z"
+    },
+    {
+      "id": "pfokjAGi9R4",
+      "artista": "Fetus",
+      "titol": "Carboner, bon carboner",
+      "descripcio": "Disc: La Serra dels Perduts",
+      "publicada": "2022-10-06",
+      "afegida": "2026-10-03T18:32:00.756Z"
+    },
+    {
+      "id": "n29tNrKP9i0",
+      "artista": "Fetus",
+      "titol": "Clam dels ocells",
+      "descripcio": "Disc: Clam dels ocells",
+      "publicada": "2024-09-16",
+      "afegida": "2026-10-03T18:32:00.756Z"
+    },
+    {
+      "id": "jL9Rl-5kRow",
+      "artista": "Fetus",
+      "titol": "Domini màgic",
+      "descripcio": "Disc: Càntir nou fa aigua fresca",
+      "publicada": "2024-10-10",
+      "afegida": "2026-10-03T18:32:00.756Z"
+    },
+    {
+      "id": "T1Ye0MPUrNk",
+      "artista": "Fetus",
+      "titol": "Durruti, Macià i Verdaguer",
+      "descripcio": "Disc: Durruti, Macià i Verdaguer",
+      "publicada": "2024-09-30",
+      "afegida": "2026-10-03T18:32:00.756Z"
+    },
+    {
+      "id": "aNJJDUvWTQ4",
+      "artista": "Fetus",
+      "titol": "El bou i la tramuntana",
+      "descripcio": "Disc: Càntir nou fa aigua fresca",
+      "publicada": "2024-10-10",
+      "afegida": "2026-10-03T18:32:00.756Z"
+    },
+    {
+      "id": "slo7Nsl5-bg",
+      "artista": "Fetus",
+      "titol": "El darrer llop",
+      "descripcio": "Disc: Romancer tartera",
+      "publicada": "2026-04-22",
+      "afegida": "2026-10-03T18:32:00.756Z"
+    },
+    {
+      "id": "ng_-lIRkkE8",
+      "artista": "Fetus",
+      "titol": "El Rebombori del Pa",
+      "descripcio": "Disc: El Rebombori del Pa",
+      "publicada": "2022-09-26",
+      "afegida": "2026-10-03T18:32:00.756Z"
+    },
+    {
+      "id": "2CtUYN8Hl5E",
+      "artista": "Fetus",
+      "titol": "El rellotger de Creixells",
+      "descripcio": "Disc: La Serra dels Perduts",
+      "publicada": "2022-10-06",
+      "afegida": "2026-10-03T18:32:00.756Z"
+    },
+    {
+      "id": "JBVRtFEYpp0",
+      "artista": "Fetus",
+      "titol": "El somni barceloní",
+      "descripcio": "Disc: El somni barceloní",
+      "publicada": "2019-04-11",
+      "afegida": "2026-10-03T18:32:00.756Z"
+    },
+    {
+      "id": "7otH0VWr5Ws",
+      "artista": "Fetus",
+      "titol": "Esqueixada",
+      "descripcio": "Disc: Terra cuita",
+      "publicada": "2019-05-02",
+      "afegida": "2026-10-03T18:32:00.756Z"
+    },
+    {
+      "id": "132WUFrSGm0",
+      "artista": "Fetus",
+      "titol": "Estel roig",
+      "descripcio": "Disc: La Serra dels Perduts",
+      "publicada": "2022-10-06",
+      "afegida": "2026-10-03T18:32:00.756Z"
+    },
+    {
+      "id": "EctRmr3YeM4",
+      "artista": "Fetus",
+      "titol": "Goigs de Sant Martí",
+      "descripcio": "Disc: Goigs de Sant Martí",
+      "publicada": "2022-05-27",
+      "afegida": "2026-10-03T18:32:00.756Z"
+    },
+    {
+      "id": "-ZBhjs1dViU",
+      "artista": "Fetus",
+      "titol": "Homilies de la costa",
+      "descripcio": "Disc: Homilies de la costa",
+      "publicada": "2024-06-13",
+      "afegida": "2026-10-03T18:32:00.756Z"
+    },
+    {
+      "id": "q9QWoJMvuvQ",
+      "artista": "Fetus",
+      "titol": "Isabel Cinc Hores",
+      "descripcio": "Disc: La Serra dels Perduts",
+      "publicada": "2022-10-06",
+      "afegida": "2026-10-03T18:32:00.756Z"
+    },
+    {
+      "id": "OBrS-kmlHHg",
+      "artista": "Fetus",
+      "titol": "L'entresol equidistant",
+      "descripcio": "Disc: Càntir nou fa aigua fresca",
+      "publicada": "2024-10-10",
+      "afegida": "2026-10-03T18:32:00.756Z"
+    },
+    {
+      "id": "cx8dilhLvf0",
+      "artista": "Fetus",
+      "titol": "L'útim oracle",
+      "descripcio": "Disc: Terra cuita",
+      "publicada": "2019-05-02",
+      "afegida": "2026-10-03T18:32:00.756Z"
+    },
+    {
+      "id": "9DsF-6G_LOU",
+      "artista": "Fetus",
+      "titol": "La brigadista",
+      "descripcio": "Disc: Càntir nou fa aigua fresca",
+      "publicada": "2024-10-10",
+      "afegida": "2026-10-03T18:32:00.756Z"
+    },
+    {
+      "id": "hwt7zvVIHwE",
+      "artista": "Fetus",
+      "titol": "La fi del món a Girona",
+      "descripcio": "Disc: Romancer tartera",
+      "publicada": "2026-04-22",
+      "afegida": "2026-10-03T18:32:00.756Z"
+    },
+    {
+      "id": "rD-qXqEluvM",
+      "artista": "Fetus",
+      "titol": "La gran xefla",
+      "descripcio": "Disc: La gran xefla",
+      "publicada": "2023-05-29",
+      "afegida": "2026-10-03T18:32:00.756Z"
+    },
+    {
+      "id": "ReaPe9cFokI",
+      "artista": "Fetus",
+      "titol": "La pomposa",
+      "descripcio": "Disc: Terra cuita",
+      "publicada": "2019-05-02",
+      "afegida": "2026-10-03T18:32:00.756Z"
+    },
+    {
+      "id": "cv6UEvXM8Zk",
+      "artista": "Fetus",
+      "titol": "La revolta de Rabioses",
+      "descripcio": "Disc: La Serra dels Perduts",
+      "publicada": "2022-10-06",
+      "afegida": "2026-10-03T18:32:00.756Z"
+    },
+    {
+      "id": "eS5cjZyVb9E",
+      "artista": "Fetus",
+      "titol": "La sega",
+      "descripcio": "Disc: La sega",
+      "publicada": "2022-09-12",
+      "afegida": "2026-10-03T18:32:00.756Z"
+    },
+    {
+      "id": "CxzopzCM0sY",
+      "artista": "Fetus",
+      "titol": "Les rondes de vi",
+      "descripcio": "Disc: Sota, cavall i rei",
+      "publicada": "2021-02-18",
+      "afegida": "2026-10-03T18:32:00.756Z"
+    },
+    {
+      "id": "87ajxn1USrk",
+      "artista": "Fetus",
+      "titol": "Lo comte Arnau",
+      "descripcio": "Disc: Sota, cavall i rei",
+      "publicada": "2021-02-18",
+      "afegida": "2026-10-03T18:32:00.756Z"
+    },
+    {
+      "id": "110BkifhFHA",
+      "artista": "Fetus",
+      "titol": "Lo mariner de Sant Pau",
+      "descripcio": "Disc: La Serra dels Perduts",
+      "publicada": "2022-10-06",
+      "afegida": "2026-10-03T18:32:00.756Z"
+    },
+    {
+      "id": "u_D5vEMnz5U",
+      "artista": "Fetus",
+      "titol": "Mori el brunch",
+      "descripcio": "Disc: Mori el brunch",
+      "publicada": "2026-03-24",
+      "afegida": "2026-10-03T18:32:00.756Z"
+    },
+    {
+      "id": "-hG3PGyYnQo",
+      "artista": "Fetus",
+      "titol": "Numeraris del tendrum",
+      "descripcio": "Disc: Històries de la carn i de la sang",
+      "publicada": "2023-07-06",
+      "afegida": "2026-10-03T18:32:00.756Z"
+    },
+    {
+      "id": "6q1baNWwm0k",
+      "artista": "Fetus",
+      "titol": "Pessebre bevent",
+      "descripcio": "Disc: Pessebre bevent",
+      "publicada": "2023-11-30",
+      "afegida": "2026-10-03T18:32:00.756Z"
+    },
+    {
+      "id": "jazPehKsmGE",
+      "artista": "Fetus",
+      "titol": "Querella i carallot",
+      "descripcio": "Disc: Querella o carallot",
+      "publicada": "2019-04-25",
+      "afegida": "2026-10-03T18:32:00.756Z"
+    },
+    {
+      "id": "eUmb_1SfUP4",
+      "artista": "Fetus",
+      "titol": "Riu d'or",
+      "descripcio": "Disc: La Serra dels Perduts",
+      "publicada": "2022-10-06",
+      "afegida": "2026-10-03T18:32:00.756Z"
+    },
+    {
+      "id": "1Qb-Ebjm3Ew",
+      "artista": "Fetus",
+      "titol": "Romanço d'en Quico Sabaté",
+      "descripcio": "Disc: Romanço d'en Quico Sabaté",
+      "publicada": "2021-01-11",
+      "afegida": "2026-10-03T18:32:00.756Z"
+    },
+    {
+      "id": "JBUTM6bfESk",
+      "artista": "Fetus",
+      "titol": "Romanço de la Copamèrica",
+      "descripcio": "Disc: Romancer tartera",
+      "publicada": "2026-04-22",
+      "afegida": "2026-10-03T18:32:00.756Z"
+    },
+    {
+      "id": "q676Fv3Zo5A",
+      "artista": "Fetus",
+      "titol": "Romanço del talp",
+      "descripcio": "Disc: Romancer tartera",
+      "publicada": "2026-04-22",
+      "afegida": "2026-10-03T18:32:00.756Z"
+    },
+    {
+      "id": "xxcBoTYSLQM",
+      "artista": "Fetus",
+      "titol": "Rubrus",
+      "descripcio": "Disc: Rubrus",
+      "publicada": "2026-04-30",
+      "afegida": "2026-10-03T18:32:00.756Z"
+    },
+    {
+      "id": "PNs3ZfNLiiE",
+      "artista": "Fetus",
+      "titol": "Sé que venen pels camins",
+      "descripcio": "Disc: Sé que venen pels camins",
+      "publicada": "2021-01-28",
+      "afegida": "2026-10-03T18:32:00.756Z"
+    },
+    {
+      "id": "tafelFUB1tI",
+      "artista": "Fetus",
+      "titol": "Senglar Atropellat Scooter Club",
+      "descripcio": "Disc: Històries de la carn i de la sang",
+      "publicada": "2023-07-06",
+      "afegida": "2026-10-03T18:32:00.756Z"
+    },
+    {
+      "id": "fUo-TEW1uXg",
+      "artista": "Fetus",
+      "titol": "Senyora trencadissa",
+      "descripcio": "Disc: Terra cuita",
+      "publicada": "2019-05-02",
+      "afegida": "2026-10-03T18:32:00.756Z"
+    },
+    {
+      "id": "5s2no-chqe0",
+      "artista": "Fetus",
+      "titol": "Set sous",
+      "descripcio": "Disc: Càntir nou fa aigua fresca",
+      "publicada": "2024-10-10",
+      "afegida": "2026-10-03T18:32:00.756Z"
+    },
+    {
+      "id": "gJ37jKP31wE",
+      "artista": "Fetus",
+      "titol": "Tabac i muntanya",
+      "descripcio": "Disc: Romancer tartera",
+      "publicada": "2026-04-22",
+      "afegida": "2026-10-03T18:32:00.756Z"
+    },
+    {
+      "id": "nbidPjF1Q_A",
+      "artista": "Fetus",
+      "titol": "Terra cuita",
+      "descripcio": "Disc: Terra cuita",
+      "publicada": "2019-05-02",
+      "afegida": "2026-10-03T18:32:00.756Z"
+    },
+    {
+      "id": "U7CQMso3ATA",
+      "artista": "Fetus",
+      "titol": "Una nova Catalunya",
+      "descripcio": "Disc: Romancer tartera",
+      "publicada": "2026-04-22",
+      "afegida": "2026-10-03T18:32:00.756Z"
+    },
+    {
+      "id": "qIU2xNWBDEs",
+      "artista": "Frans Cuspinera",
+      "titol": "Mai Sabràs",
+      "descripcio": "Disc: Garoina",
+      "publicada": "2025-03-31",
+      "afegida": "2026-10-02T15:58:31.716Z"
+    },
+    {
+      "id": "Zyal3qirpGc",
+      "artista": "Gertrudis",
+      "titol": "Torno Cap a Casa Dasousa Mix",
+      "descripcio": "Per fi estrenem el nou clip de la versió Torno cap a Casa que hem fet amb Mark Dasousa. Esperem que us agradi. La història continua!",
+      "publicada": "2017-07-13",
+      "afegida": "2026-10-02T15:58:31.716Z"
+    },
+    {
+      "id": "Goed_LJfRwo",
+      "artista": "Joan Dausà",
+      "titol": "Andrea, Ya Nada Puede Ser",
+      "descripcio": "Disc: Barcelona Nit d'Hivern (Banda Sonora Original)",
+      "publicada": "2024-03-21",
+      "afegida": "2026-10-03T17:26:42.487Z"
+    },
+    {
+      "id": "BNLyH0BV6Zg",
+      "artista": "Joan Dausà",
+      "titol": "Call Me",
+      "descripcio": "Disc: Lost in a Tale",
+      "publicada": "2024-03-21",
+      "afegida": "2026-10-03T17:26:42.487Z"
+    },
+    {
+      "id": "vTnh8DIqRqY",
+      "artista": "Joan Dausà",
+      "titol": "Com plora el mar (Cançó per als refugiats)",
+      "descripcio": "Disc: Com plora el mar (Cançó per als refugiats)",
+      "publicada": "2024-02-07",
+      "afegida": "2026-10-03T17:26:42.487Z"
+    },
+    {
+      "id": "2L2jNHRRjKc",
+      "artista": "Joan Dausà",
+      "titol": "El Veurem Junts",
+      "descripcio": "Disc: Barcelona Nit d'Estiu (Banda Sonora Original)",
+      "publicada": "2024-03-21",
+      "afegida": "2026-10-03T17:26:42.487Z"
+    },
+    {
+      "id": "0bVuglLBoeA",
+      "artista": "Joan Dausà",
+      "titol": "JO MAI MAI + JUDIT (la mateixa cançó, la mateixa nit). CSC 06 JOAN DAUSÀ",
+      "descripcio": "Una producció de Club Social Carme. Enregistrada el 21 de setembre de 2026 al Bar Bocata de Barcelona. Músics: Joan Dausà, Anaïs Vila i Florenci Ferrer.",
+      "publicada": "2026-09-24",
+      "afegida": "2026-10-02T15:58:31.716Z"
+    },
+    {
+      "id": "K5h8mR3ujGc",
+      "artista": "Joan Dausà",
+      "titol": "L'Absurd",
+      "descripcio": "Disc: Jo Mai Mai",
+      "publicada": "2024-02-07",
+      "afegida": "2026-10-03T17:26:42.487Z"
+    },
+    {
+      "id": "iCmW2gj7VEA",
+      "artista": "Joan Dausà",
+      "titol": "Nit de Reis",
+      "descripcio": "Disc: Barcelona Nit d'Hivern (Banda Sonora Original)",
+      "publicada": "2024-03-21",
+      "afegida": "2026-10-03T17:26:42.487Z"
+    },
+    {
+      "id": "xNlMUyVSntQ",
+      "artista": "Joan Dausà",
+      "titol": "On Seràs Demà?",
+      "descripcio": "Disc: On Seràs Demà?",
+      "publicada": "2024-02-06",
+      "afegida": "2026-10-03T17:26:42.487Z"
+    },
+    {
+      "id": "h13zo2BQnCE",
+      "artista": "Joan Dausà",
+      "titol": "Parque Rosedal",
+      "descripcio": "Disc: Jo Mai Mai",
+      "publicada": "2024-02-07",
+      "afegida": "2026-10-03T17:26:42.487Z"
+    },
+    {
+      "id": "SU0G0UrpDuk",
+      "artista": "Joan Dausà",
+      "titol": "Puto Héctor (Live)",
+      "descripcio": "Disc: La Festa Final",
+      "publicada": "2024-02-07",
+      "afegida": "2026-10-03T17:26:42.487Z"
+    },
+    {
+      "id": "KgZiHWzvkYg",
+      "artista": "Joan Dausà",
+      "titol": "Reis del Món (Live)",
+      "descripcio": "Disc: La Festa Final",
+      "publicada": "2024-02-07",
+      "afegida": "2026-10-03T17:26:42.487Z"
+    },
+    {
+      "id": "FSVAKEbnIQg",
+      "artista": "Joan Dausà",
+      "titol": "Talking About You and Me",
+      "descripcio": "Disc: Lost in a Tale",
+      "publicada": "2024-03-21",
+      "afegida": "2026-10-03T17:26:42.487Z"
+    },
+    {
+      "id": "9nbPc1tVqRw",
+      "artista": "Joan Miquel Oliver",
+      "titol": "Agricultors Ingràvids",
+      "descripcio": "Disc: Atlantis",
+      "publicada": "2017-04-06",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "Ho247myr300",
+      "artista": "Joan Miquel Oliver",
+      "titol": "Arbre Que Mira Farola",
+      "descripcio": "Disc: Bombon Mallorquin",
+      "publicada": "2014-11-20",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "LPGvc2uzN1M",
+      "artista": "Joan Miquel Oliver",
+      "titol": "Atlantis",
+      "descripcio": "Disc: Atlantis",
+      "publicada": "2017-04-06",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "IspB71-AjQ8",
+      "artista": "Joan Miquel Oliver",
+      "titol": "Bucle Infinit",
+      "descripcio": "Disc: Elektra",
+      "publicada": "2018-08-20",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "-9S0NUaaCE4",
+      "artista": "Joan Miquel Oliver",
+      "titol": "Cançó de Contacte",
+      "descripcio": "Disc: Atlantis",
+      "publicada": "2017-04-06",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "_MVqQg0WgDs",
+      "artista": "Joan Miquel Oliver",
+      "titol": "Dins un Avió de Paper",
+      "descripcio": "Disc: Bombon Mallorquin",
+      "publicada": "2014-11-20",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "08kWq3_jYok",
+      "artista": "Joan Miquel Oliver",
+      "titol": "Ecos d'Ambulàncies",
+      "descripcio": "Disc: Pegasus",
+      "publicada": "2015-04-14",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "uBc1NtgHhQE",
+      "artista": "Joan Miquel Oliver",
+      "titol": "Elektra",
+      "descripcio": "Disc: Elektra",
+      "publicada": "2018-08-20",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "rLY_-hvs_b4",
+      "artista": "Joan Miquel Oliver",
+      "titol": "Emerson Fitipaldi",
+      "descripcio": "Disc: Live in Paris",
+      "publicada": "2014-11-20",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "iUNvsnLsk28",
+      "artista": "Joan Miquel Oliver",
+      "titol": "Entrada al Bosc de Sor Tomasseta",
+      "descripcio": "Disc: Aventures de la nota La",
+      "publicada": "2020-10-15",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "PrDPLFuXRkA",
+      "artista": "Joan Miquel Oliver",
+      "titol": "Esferes",
+      "descripcio": "Disc: Pegasus",
+      "publicada": "2015-04-14",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "UTIl5oxthmw",
+      "artista": "Joan Miquel Oliver",
+      "titol": "Exploram s'Avorriment",
+      "descripcio": "Disc: Elektra",
+      "publicada": "2018-08-20",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "JEpfagNX9f4",
+      "artista": "Joan Miquel Oliver",
+      "titol": "Fèmurs",
+      "descripcio": "Disc: Pegasus",
+      "publicada": "2015-04-14",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "2MullDi-fDQ",
+      "artista": "Joan Miquel Oliver",
+      "titol": "Final Feliç",
+      "descripcio": "Disc: Bombon Mallorquin",
+      "publicada": "2014-11-20",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "FnyKEyDwGvw",
+      "artista": "Joan Miquel Oliver",
+      "titol": "Flors de Cactus",
+      "descripcio": "Disc: Pegasus",
+      "publicada": "2015-04-14",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "satI5e4X-uY",
+      "artista": "Joan Miquel Oliver",
+      "titol": "Gent que mola un munt",
+      "descripcio": "Disc: Gent que mola un munt",
+      "publicada": "2026-04-09",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "jtnLs3BrJzg",
+      "artista": "Joan Miquel Oliver",
+      "titol": "Goletes",
+      "descripcio": "Disc: Elektra",
+      "publicada": "2018-08-20",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "lvSvA204GcE",
+      "artista": "Joan Miquel Oliver",
+      "titol": "Hansel i gretel",
+      "descripcio": "Disc: Sa Nuvia Morta Hansell I Gretel",
+      "publicada": "2017-02-07",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "XaMNaRg2wLY",
+      "artista": "Joan Miquel Oliver",
+      "titol": "Hipotèrmia",
+      "descripcio": "Disc: Elektra",
+      "publicada": "2018-08-20",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "Qu8S6mvxkUQ",
+      "artista": "Joan Miquel Oliver",
+      "titol": "Honey",
+      "descripcio": "Disc: Elektra",
+      "publicada": "2018-08-20",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "94BYFaux5-E",
+      "artista": "Joan Miquel Oliver",
+      "titol": "Incident a Sa Pista Dos",
+      "descripcio": "Disc: Atlantis",
+      "publicada": "2017-04-06",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "brQTDgUPSOM",
+      "artista": "Joan Miquel Oliver",
+      "titol": "Jo Diria \"Cine\"",
+      "descripcio": "Disc: Bombon Mallorquin",
+      "publicada": "2014-11-20",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "RT1jhePtelM",
+      "artista": "Joan Miquel Oliver",
+      "titol": "Lego",
+      "descripcio": "Disc: Bombon Mallorquin",
+      "publicada": "2014-11-20",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "V9XBBKg7mI8",
+      "artista": "Joan Miquel Oliver",
+      "titol": "Líquens Arborescents",
+      "descripcio": "Disc: Elektra",
+      "publicada": "2018-08-20",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "xT8SWG6lRbg",
+      "artista": "Joan Miquel Oliver",
+      "titol": "Marcianet de Mart",
+      "descripcio": "Disc: Bombon Mallorquin",
+      "publicada": "2014-11-20",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "G5SyULA4150",
+      "artista": "Joan Miquel Oliver",
+      "titol": "Marès a Radial",
+      "descripcio": "Disc: Pegasus",
+      "publicada": "2015-04-14",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "oH8NDWKirHw",
+      "artista": "Joan Miquel Oliver",
+      "titol": "Mil Bilions en Estrelletes",
+      "descripcio": "Disc: Pegasus",
+      "publicada": "2015-04-14",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "CK91GzNFD-U",
+      "artista": "Joan Miquel Oliver",
+      "titol": "Món Vegetal",
+      "descripcio": "Disc: Pegasus",
+      "publicada": "2015-04-14",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "A48XFDQ4Bfc",
+      "artista": "Joan Miquel Oliver",
+      "titol": "Nins a Tobogans",
+      "descripcio": "Disc: Atlantis",
+      "publicada": "2017-04-06",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "gwHKaIvrfpc",
+      "artista": "Joan Miquel Oliver",
+      "titol": "Orthopedic Ragtime",
+      "descripcio": "Disc: Pegasus",
+      "publicada": "2015-04-14",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "8UiAgNvTfuU",
+      "artista": "Joan Miquel Oliver",
+      "titol": "Pegasus",
+      "descripcio": "Disc: Pegasus",
+      "publicada": "2015-04-14",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "62AZWVaTX74",
+      "artista": "Joan Miquel Oliver",
+      "titol": "Per a Totes ses Mamàs",
+      "descripcio": "Disc: Elektra",
+      "publicada": "2018-08-20",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "EoXWDPPXYoo",
+      "artista": "Joan Miquel Oliver",
+      "titol": "Petit homenet",
+      "descripcio": "Disc: Surfistes en Càmera Lenta",
+      "publicada": "2014-11-20",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "iopcEAKd9Dc",
+      "artista": "Joan Miquel Oliver",
+      "titol": "Polo de Llimona",
+      "descripcio": "Disc: Bombon Mallorquin",
+      "publicada": "2014-11-20",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "gIzLTILSpMw",
+      "artista": "Joan Miquel Oliver",
+      "titol": "Polo de Menta",
+      "descripcio": "Disc: Bombon Mallorquin",
+      "publicada": "2014-11-20",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "GQsPGm5KRL4",
+      "artista": "Joan Miquel Oliver",
+      "titol": "Posidònia",
+      "descripcio": "Disc: Atlantis",
+      "publicada": "2017-04-06",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "iV7pM39ZBEo",
+      "artista": "Joan Miquel Oliver",
+      "titol": "Robot mayordomo",
+      "descripcio": "Disc: Robot Mayordomo",
+      "publicada": "2023-06-21",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "pGvojYFyG8o",
+      "artista": "Joan Miquel Oliver",
+      "titol": "Romanç infame de sa nuvia morta",
+      "descripcio": "Disc: Sa Nuvia Morta Hansell I Gretel",
+      "publicada": "2017-02-08",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "N6o0rzFj8mQ",
+      "artista": "Joan Miquel Oliver",
+      "titol": "Rumba del Temps",
+      "descripcio": "Disc: Atlantis",
+      "publicada": "2017-04-06",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "-FOsgk-OfzU",
+      "artista": "Joan Miquel Oliver",
+      "titol": "Ryanair",
+      "descripcio": "Disc: Bombon Mallorquin",
+      "publicada": "2014-11-20",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "img769oPDPY",
+      "artista": "Joan Miquel Oliver",
+      "titol": "Sa Música",
+      "descripcio": "Disc: Elektra",
+      "publicada": "2018-08-20",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "lkE8KQKIigY",
+      "artista": "KnockOut",
+      "titol": "Això no és un joc - KnocKOuts",
+      "descripcio": "Això no és un joc - KnocKOuts",
+      "publicada": "2011-03-26",
+      "afegida": "2026-10-03T17:26:42.487Z"
+    },
+    {
+      "id": "ly7uD_fXYuo",
+      "artista": "KnockOut",
+      "titol": "City lights - KnocKOuts",
+      "descripcio": "City lights - KnocKOuts",
+      "publicada": "2011-03-26",
+      "afegida": "2026-10-03T17:26:42.487Z"
+    },
+    {
+      "id": "lsaAVXYplWM",
+      "artista": "KnockOut",
+      "titol": "El teu país - KnocKOuts",
+      "descripcio": "El teu país - KnocKOuts",
+      "publicada": "2011-03-26",
+      "afegida": "2026-10-03T17:26:42.487Z"
+    },
+    {
+      "id": "gt0cks6hdNM",
+      "artista": "KnockOut",
+      "titol": "Has de ser meva - KnocKOuts",
+      "descripcio": "Has de ser meva - KnocKOuts",
+      "publicada": "2011-03-26",
+      "afegida": "2026-10-03T17:26:42.487Z"
+    },
+    {
+      "id": "2E1FIDqnigw",
+      "artista": "KnockOut",
+      "titol": "L'Andreu - KnocKOuts",
+      "descripcio": "L'Andreu - KnocKOuts",
+      "publicada": "2011-03-26",
+      "afegida": "2026-10-03T17:26:42.487Z"
+    },
+    {
+      "id": "3fefKDW0fM0",
+      "artista": "KnockOut",
+      "titol": "La teva oportunitat - KnocKOuts",
+      "descripcio": "La teva oportunitat - KnocKOuts",
+      "publicada": "2011-03-26",
+      "afegida": "2026-10-03T17:26:42.487Z"
+    },
+    {
+      "id": "vxZTBd6vzaY",
+      "artista": "KnockOut",
+      "titol": "La vida no s'atura - KnocKOuts",
+      "descripcio": "La vida no s'atura - KnocKOuts",
+      "publicada": "2011-03-26",
+      "afegida": "2026-10-03T17:26:42.487Z"
+    },
+    {
+      "id": "Il6NYzQs-rY",
+      "artista": "KnockOut",
+      "titol": "No et deixo d'estimar - KnocKOuts",
+      "descripcio": "No et deixo d'estimar - KnocKOuts",
+      "publicada": "2011-03-26",
+      "afegida": "2026-10-03T17:26:42.487Z"
+    },
+    {
+      "id": "GvTBYNK0PIE",
+      "artista": "KnockOut",
+      "titol": "Noia - KnocKOuts",
+      "descripcio": "Noia - KnocKOuts",
+      "publicada": "2011-03-25",
+      "afegida": "2026-10-03T17:26:42.487Z"
+    },
+    {
+      "id": "U2Kn5HBf_Gg",
+      "artista": "KnockOut",
+      "titol": "Una mirada - KnocKOuts",
+      "descripcio": "Una mirada - KnocKOuts",
+      "publicada": "2011-03-26",
+      "afegida": "2026-10-03T17:26:42.487Z"
+    },
+    {
+      "id": "y8cPw-9UdiM",
+      "artista": "KnockOut",
+      "titol": "Wonderbrass (instrumental) - KnocKOuts",
+      "descripcio": "Wonderbrass (instrumental) - KnocKOuts",
+      "publicada": "2011-03-26",
+      "afegida": "2026-10-03T17:26:42.487Z"
+    },
+    {
+      "id": "fL464Sq5v9g",
+      "artista": "La Gossa Sorda",
+      "titol": "A Tornallom",
+      "descripcio": "Disc: A Tornallom",
+      "publicada": "2025-10-30",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "sv1hY8D4QWs",
+      "artista": "La Gossa Sorda",
+      "titol": "Aire",
+      "descripcio": "Disc: La Polseguera",
+      "publicada": "2014-11-08",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "4Mv0k5GKgZA",
+      "artista": "La Gossa Sorda",
+      "titol": "Apocalipsi",
+      "descripcio": "Disc: L'Últim Heretge",
+      "publicada": "2014-12-31",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "MTx1X1CIomw",
+      "artista": "La Gossa Sorda",
+      "titol": "Ateu",
+      "descripcio": "Disc: L'Últim Heretge",
+      "publicada": "2014-12-31",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "imjqI7H5B6s",
+      "artista": "La Gossa Sorda",
+      "titol": "Ball de Rojos",
+      "descripcio": "Disc: Garrotades",
+      "publicada": "2015-09-05",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "lVASK8ovgbA",
+      "artista": "La Gossa Sorda",
+      "titol": "Batiste Ceba",
+      "descripcio": "Disc: Vigila",
+      "publicada": "2020-11-24",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "qVS27dxTS7I",
+      "artista": "La Gossa Sorda",
+      "titol": "Camals Mullats",
+      "descripcio": "Disc: Saó",
+      "publicada": "2014-11-08",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "3U3DU0f93tQ",
+      "artista": "La Gossa Sorda",
+      "titol": "Cassalla Paradise",
+      "descripcio": "Disc: L'Últim Heretge",
+      "publicada": "2014-12-31",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "g6wgNUekl9s",
+      "artista": "La Gossa Sorda",
+      "titol": "Colpeja Fort",
+      "descripcio": "Disc: Garrotades",
+      "publicada": "2015-09-10",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "Og8o1PNPc6g",
+      "artista": "La Gossa Sorda",
+      "titol": "De Cara a la Paret",
+      "descripcio": "Disc: La Polseguera",
+      "publicada": "2014-11-08",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "lNAcZ3O_VNk",
+      "artista": "La Gossa Sorda",
+      "titol": "De Matinada",
+      "descripcio": "Disc: Saó",
+      "publicada": "2014-11-08",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "TB02WuiBAPY",
+      "artista": "La Gossa Sorda",
+      "titol": "Diuen",
+      "descripcio": "Disc: Saó",
+      "publicada": "2014-11-08",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "Eq9sQpaYa4I",
+      "artista": "La Gossa Sorda",
+      "titol": "Dona d'Aigua",
+      "descripcio": "Disc: La Polseguera",
+      "publicada": "2014-11-09",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "9cnnpJslWlM",
+      "artista": "La Gossa Sorda",
+      "titol": "Dóna'm La Mà",
+      "descripcio": "Disc: L'Últim Heretge",
+      "publicada": "2014-12-31",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "nvENuhR-GXQ",
+      "artista": "La Gossa Sorda",
+      "titol": "El Dia Que Tot Rebente",
+      "descripcio": "Disc: Saó",
+      "publicada": "2014-11-06",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "cnsY2bHozRk",
+      "artista": "La Gossa Sorda",
+      "titol": "El Forn Dels Borratxos",
+      "descripcio": "Disc: La Polseguera",
+      "publicada": "2014-11-06",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "mfEcbXVNzZw",
+      "artista": "La Gossa Sorda",
+      "titol": "El Pecat Original",
+      "descripcio": "Disc: La Polseguera",
+      "publicada": "2014-11-06",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "isdd2PKgsME",
+      "artista": "La Gossa Sorda",
+      "titol": "Entre Canuts",
+      "descripcio": "Disc: Saó",
+      "publicada": "2014-11-09",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "t39XTHvMUYs",
+      "artista": "La Gossa Sorda",
+      "titol": "Esbarzers",
+      "descripcio": "Disc: La Polseguera",
+      "publicada": "2014-11-08",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "yzMO0_xpjBg",
+      "artista": "La Gossa Sorda",
+      "titol": "Fa Tres Anys",
+      "descripcio": "Disc: La Polseguera",
+      "publicada": "2014-11-08",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "wTHRFCVxfhk",
+      "artista": "La Gossa Sorda",
+      "titol": "Falsos i Absurds",
+      "descripcio": "Disc: L'Últim Heretge",
+      "publicada": "2014-12-31",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "zcsgwwTXs6s",
+      "artista": "La Gossa Sorda",
+      "titol": "Farem Saó",
+      "descripcio": "Disc: Saó",
+      "publicada": "2014-11-09",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "5rWoV2swGA0",
+      "artista": "La Gossa Sorda",
+      "titol": "Garrotades",
+      "descripcio": "Disc: Garrotades",
+      "publicada": "2015-09-05",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "ewSZ3H2wNTk",
+      "artista": "La Gossa Sorda",
+      "titol": "He Robat Un Altre Cor",
+      "descripcio": "Disc: La Polseguera",
+      "publicada": "2014-11-09",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "ryVvJVIGY5I",
+      "artista": "La Gossa Sorda",
+      "titol": "L'Últim Heretge",
+      "descripcio": "Disc: L'Últim Heretge",
+      "publicada": "2014-12-31",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "VdOcMh1zb8M",
+      "artista": "La Gossa Sorda",
+      "titol": "La Guàrdia",
+      "descripcio": "Disc: Garrotades",
+      "publicada": "2015-09-05",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "Qgbnnv0KVfg",
+      "artista": "La Gossa Sorda",
+      "titol": "La Nostra Sort",
+      "descripcio": "Disc: La Nostra Sort",
+      "publicada": "2015-01-29",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "LpZcFUIhr2Q",
+      "artista": "La Gossa Sorda",
+      "titol": "La Polseguera",
+      "descripcio": "Disc: La Polseguera",
+      "publicada": "2014-11-08",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "nzMloVVelro",
+      "artista": "La Gossa Sorda",
+      "titol": "La Veu Trencada",
+      "descripcio": "Disc: La Polseguera",
+      "publicada": "2014-11-08",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "QdEOggIUnbM",
+      "artista": "La Gossa Sorda",
+      "titol": "Preferiria",
+      "descripcio": "Disc: L'Últim Heretge",
+      "publicada": "2014-12-31",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "go17sMkeMDo",
+      "artista": "La Gossa Sorda",
+      "titol": "Putrefactes",
+      "descripcio": "Disc: Garrotades",
+      "publicada": "2015-09-05",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "hlLVlkurEkw",
+      "artista": "La Gossa Sorda",
+      "titol": "Quina Calitja",
+      "descripcio": "Disc: Saó",
+      "publicada": "2015-06-23",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "xeywDb1F5AU",
+      "artista": "La Gossa Sorda",
+      "titol": "Ràdio Bemba",
+      "descripcio": "Disc: Vigila",
+      "publicada": "2020-11-24",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "OazmNnbwxSg",
+      "artista": "La Gossa Sorda",
+      "titol": "Respira",
+      "descripcio": "Disc: Saó",
+      "publicada": "2014-11-09",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "XNvN6cFyXCo",
+      "artista": "La Gossa Sorda",
+      "titol": "Senyor Pirotècnic",
+      "descripcio": "Disc: Vigila",
+      "publicada": "2020-11-24",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "7z3TQbL0b-c",
+      "artista": "La Gossa Sorda",
+      "titol": "Som de la Marina",
+      "descripcio": "Disc: Garrotades",
+      "publicada": "2015-09-05",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "t4LqDup_GoE",
+      "artista": "La Gossa Sorda",
+      "titol": "Tres De Pego",
+      "descripcio": "Disc: Saó",
+      "publicada": "2014-11-05",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "rO-C5TLoecg",
+      "artista": "La Gossa Sorda",
+      "titol": "Última Volta",
+      "descripcio": "Disc: Saó",
+      "publicada": "2014-11-08",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "siN5S-Sdvo8",
+      "artista": "La Gossa Sorda",
+      "titol": "Vianants",
+      "descripcio": "Disc: Saó",
+      "publicada": "2014-11-08",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "N7-doiYVho0",
+      "artista": "La Gossa Sorda",
+      "titol": "Viatge al Centre de la Guerra",
+      "descripcio": "Disc: La Polseguera",
+      "publicada": "2014-11-08",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "CDYDJ24I9SU",
+      "artista": "La Troba Kung-Fú",
+      "titol": "Ai on va l'à...",
+      "descripcio": "Disc: Nocturns de vetlla i revetlla",
+      "publicada": "2019-06-20",
+      "afegida": "2026-10-03T19:07:36.989Z"
+    },
+    {
+      "id": "pnpgKoSX8YU",
+      "artista": "La Troba Kung-Fú",
+      "titol": "Això és tot",
+      "descripcio": "Disc: El Ball I el Plany",
+      "publicada": "2020-06-11",
+      "afegida": "2026-10-03T19:07:36.989Z"
+    },
+    {
+      "id": "gNOiHPIoHFM",
+      "artista": "La Troba Kung-Fú",
+      "titol": "Ballem!",
+      "descripcio": "Disc: El Ball I el Plany",
+      "publicada": "2020-06-11",
+      "afegida": "2026-10-03T19:07:36.989Z"
+    },
+    {
+      "id": "VZLDip1cOyc",
+      "artista": "La Troba Kung-Fú",
+      "titol": "Barcelona (Andyloop / Toti & Maxey Remix)",
+      "descripcio": "Disc: Turntables on Las Ramblas",
+      "publicada": "2022-09-17",
+      "afegida": "2026-10-03T19:07:36.989Z"
+    },
+    {
+      "id": "fAjboxgVX-E",
+      "artista": "La Troba Kung-Fú",
+      "titol": "Calor Calor",
+      "descripcio": "Disc: Clavell Morenet",
+      "publicada": "2018-05-01",
+      "afegida": "2026-10-03T19:07:36.989Z"
+    },
+    {
+      "id": "0hZgfNZleBA",
+      "artista": "La Troba Kung-Fú",
+      "titol": "Cariñosa",
+      "descripcio": "Disc: El Ball I el Plany",
+      "publicada": "2020-06-11",
+      "afegida": "2026-10-03T19:07:36.989Z"
+    },
+    {
+      "id": "ngS-7MDCr5E",
+      "artista": "La Troba Kung-Fú",
+      "titol": "Colors",
+      "descripcio": "Disc: El Ball I el Plany",
+      "publicada": "2020-06-11",
+      "afegida": "2026-10-03T19:07:36.989Z"
+    },
+    {
+      "id": "OCi8EpYcTLo",
+      "artista": "La Troba Kung-Fú",
+      "titol": "Cumbia Infierno (Toti & Andy Loop Fat Beat Remix)",
+      "descripcio": "Disc: Turntables on the Hudson: 10 Year Anniversary",
+      "publicada": "2022-09-17",
+      "afegida": "2026-10-03T19:07:36.989Z"
+    },
+    {
+      "id": "rxGn7en5mW0",
+      "artista": "La Troba Kung-Fú",
+      "titol": "Dansa Damor",
+      "descripcio": "Disc: Clavell Morenet",
+      "publicada": "2018-05-01",
+      "afegida": "2026-10-03T19:07:36.989Z"
+    },
+    {
+      "id": "Cw2wfuJCCfU",
+      "artista": "La Troba Kung-Fú",
+      "titol": "El rock & roll és mort",
+      "descripcio": "Disc: Et cantaré el rock & roll és mort perquè marxen lluny",
+      "publicada": "2024-02-27",
+      "afegida": "2026-10-03T19:07:36.989Z"
+    },
+    {
+      "id": "NqG1NXKfgz8",
+      "artista": "La Troba Kung-Fú",
+      "titol": "Et cantaré",
+      "descripcio": "Disc: Et cantaré el rock & roll és mort perquè marxen lluny",
+      "publicada": "2024-02-27",
+      "afegida": "2026-10-03T19:07:36.989Z"
+    },
+    {
+      "id": "mYhf6I9yCc8",
+      "artista": "La Troba Kung-Fú",
+      "titol": "Fa bon temps",
+      "descripcio": "Disc: El Ball I el Plany",
+      "publicada": "2020-06-11",
+      "afegida": "2026-10-03T19:07:36.989Z"
+    },
+    {
+      "id": "AK-O5F7In44",
+      "artista": "La Troba Kung-Fú",
+      "titol": "Flor de primavera",
+      "descripcio": "Disc: A la panxa del bou",
+      "publicada": "2020-06-09",
+      "afegida": "2026-10-03T19:07:36.989Z"
+    },
+    {
+      "id": "P8wjcfG5EZQ",
+      "artista": "La Troba Kung-Fú",
+      "titol": "La Rumba",
+      "descripcio": "Disc: El Ball I el Plany",
+      "publicada": "2020-06-11",
+      "afegida": "2026-10-03T19:07:36.989Z"
+    },
+    {
+      "id": "54-pDWC_AFg",
+      "artista": "La Troba Kung-Fú",
+      "titol": "Leila",
+      "descripcio": "Disc: El Ball I el Plany",
+      "publicada": "2020-06-11",
+      "afegida": "2026-10-03T19:07:36.989Z"
+    },
+    {
+      "id": "NYCpqvpYHes",
+      "artista": "La Troba Kung-Fú",
+      "titol": "Mariatxis Trance",
+      "descripcio": "Disc: El Ball I el Plany",
+      "publicada": "2020-06-11",
+      "afegida": "2026-10-03T19:07:36.989Z"
+    },
+    {
+      "id": "358mQC2tJlY",
+      "artista": "La Troba Kung-Fú",
+      "titol": "Marxen lluny",
+      "descripcio": "Disc: Et cantaré el rock & roll és mort perquè marxen lluny",
+      "publicada": "2024-02-27",
+      "afegida": "2026-10-03T19:07:36.989Z"
+    },
+    {
+      "id": "_eCj0yf2D5Q",
+      "artista": "La Troba Kung-Fú",
+      "titol": "Nocturn",
+      "descripcio": "Disc: El Ball I el Plany",
+      "publicada": "2020-06-11",
+      "afegida": "2026-10-03T19:07:36.989Z"
+    },
+    {
+      "id": "5oKCLAlTASE",
+      "artista": "La Troba Kung-Fú",
+      "titol": "Perquè",
+      "descripcio": "Disc: Perquè",
+      "publicada": "2023-05-17",
+      "afegida": "2026-10-03T19:07:36.989Z"
+    },
+    {
+      "id": "JjRxAH58f0o",
+      "artista": "La Troba Kung-Fú",
+      "titol": "Petit rumbero",
+      "descripcio": "Disc: A la panxa del bou",
+      "publicada": "2020-06-09",
+      "afegida": "2026-10-03T19:07:36.989Z"
+    },
+    {
+      "id": "iIR5cllfbP0",
+      "artista": "La Troba Kung-Fú",
+      "titol": "Sra. Vanitat",
+      "descripcio": "Disc: Santalegria",
+      "publicada": "2014-11-06",
+      "afegida": "2026-10-03T19:07:36.989Z"
+    },
+    {
+      "id": "LykiAfiHY-0",
+      "artista": "La Troba Kung-Fú",
+      "titol": "Sta. Alegria",
+      "descripcio": "Disc: Santalegria",
+      "publicada": "2014-11-06",
+      "afegida": "2026-10-03T19:07:36.989Z"
+    },
+    {
+      "id": "tqyYMafK1h0",
+      "artista": "La Troba Kung-Fú",
+      "titol": "Take Your Time",
+      "descripcio": "Disc: A la panxa del bou",
+      "publicada": "2020-06-09",
+      "afegida": "2026-10-03T19:07:36.989Z"
+    },
+    {
+      "id": "qWCf57Q6MMo",
+      "artista": "La Troba Kung-Fú",
+      "titol": "Treu-te la camisa",
+      "descripcio": "Disc: Treu-te la camisa / Joan Petit",
+      "publicada": "2025-03-07",
+      "afegida": "2026-10-03T19:07:36.989Z"
+    },
+    {
+      "id": "z7W97SNgX2Y",
+      "artista": "La Troba Kung-Fú",
+      "titol": "Within Human Law",
+      "descripcio": "Disc: El Ball I el Plany",
+      "publicada": "2020-06-11",
+      "afegida": "2026-10-03T19:07:36.989Z"
+    },
+    {
+      "id": "e_Tx0xpJm7k",
+      "artista": "La Troba Kung-Fú",
+      "titol": "Y Se Ríe la Muerte",
+      "descripcio": "Disc: A la panxa del bou",
+      "publicada": "2020-06-09",
+      "afegida": "2026-10-03T19:07:36.989Z"
+    },
+    {
+      "id": "-vHII1orvfU",
+      "artista": "La Troba Kung-Fú",
+      "titol": "Yo Soy",
+      "descripcio": "Disc: A la panxa del bou",
+      "publicada": "2020-06-09",
+      "afegida": "2026-10-03T19:07:36.989Z"
+    },
+    {
+      "id": "49Z0C3BCJD8",
+      "artista": "Lal'Ba",
+      "titol": "2020",
+      "descripcio": "Disc: 2020",
+      "publicada": "2024-02-06",
+      "afegida": "2026-10-03T17:26:42.487Z"
+    },
+    {
+      "id": "ll6_-YakfJY",
+      "artista": "Lal'Ba",
+      "titol": "Cendra",
+      "descripcio": "Disc: Cendra",
+      "publicada": "2024-02-07",
+      "afegida": "2026-10-03T17:26:42.487Z"
+    },
+    {
+      "id": "S1Un3UHabJI",
+      "artista": "Lal'Ba",
+      "titol": "Pas ferm",
+      "descripcio": "Disc: Lal'Boom",
+      "publicada": "2024-02-07",
+      "afegida": "2026-10-03T17:26:42.487Z"
+    },
+    {
+      "id": "B7Ts33UuUSg",
+      "artista": "Lal'Ba",
+      "titol": "Per Mi",
+      "descripcio": "Disc: Per Mi",
+      "publicada": "2022-06-20",
+      "afegida": "2026-10-03T17:26:42.487Z"
+    },
+    {
+      "id": "v5xa2nzw3gY",
+      "artista": "Lídia Pujol",
+      "titol": "Cuncti simus concanentes",
+      "descripcio": "Disc: Iter Luminis",
+      "publicada": "2017-05-04",
+      "afegida": "2026-10-03T17:26:42.487Z"
+    },
+    {
+      "id": "hX4GRP-45Yk",
+      "artista": "Lídia Pujol",
+      "titol": "Un home moria sense amor (Hi ha gent)",
+      "descripcio": "Disc: Iter Luminis",
+      "publicada": "2017-05-04",
+      "afegida": "2026-10-03T17:26:42.487Z"
+    },
+    {
+      "id": "231JlseDpWA",
+      "artista": "Mar Pujol",
+      "titol": "Mitja Vida",
+      "descripcio": "Disc: Mitja Vida",
+      "publicada": "2026-10-03",
+      "afegida": "2026-10-03T17:26:42.487Z"
+    },
+    {
+      "id": "5xqq8xjsfmY",
+      "artista": "Mar Pujol",
+      "titol": "Toquen Quarts d'Una",
+      "descripcio": "Música, lletra, edició i muntatge: Mar Pujol Càmera: Nérea Sánchez, Anna Tisora, Sofi Paez i Mar Pujol Producció sonora: Ivan López i Mar Pujol Mescla: Ivan Lóp…",
+      "publicada": "2022-12-21",
+      "afegida": "2026-10-02T15:58:31.716Z"
+    },
+    {
+      "id": "uO4tfrjGA6s",
+      "artista": "Maria Del Mar Bonet",
+      "titol": "L'arbre campaner",
+      "descripcio": "Disc: L'aigua no cansa",
+      "publicada": "2026-05-13",
+      "afegida": "2026-10-03T17:26:42.487Z"
+    },
+    {
+      "id": "fFs7HeJj9Yk",
+      "artista": "Maria Del Mar Bonet",
+      "titol": "Nit",
+      "descripcio": "Disc: L'aigua no cansa",
+      "publicada": "2026-05-13",
+      "afegida": "2026-10-03T17:26:42.487Z"
+    },
+    {
+      "id": "41Gbr1jJUrw",
+      "artista": "Maria Del Mar Bonet",
+      "titol": "S'aigo no",
+      "descripcio": "Disc: S'aigo no",
+      "publicada": "2026-04-22",
+      "afegida": "2026-10-03T17:26:42.487Z"
+    },
+    {
+      "id": "SM7sicCbr2o",
+      "artista": "Marina Rossell",
+      "titol": "Barca del Temps",
+      "descripcio": "Disc: Barca del Temps",
+      "publicada": "2014-11-06",
+      "afegida": "2026-10-03T17:26:42.487Z"
+    },
+    {
+      "id": "ULUc7adJ4jg",
+      "artista": "Marina Rossell",
+      "titol": "El Carter (feat. Roger Mas)",
+      "descripcio": "Disc: Marina Rossell Canta Moustaki",
+      "publicada": "2015-09-18",
+      "afegida": "2026-10-03T17:26:42.487Z"
+    },
+    {
+      "id": "9n1k7wrfAVQ",
+      "artista": "Marina Rossell",
+      "titol": "El Mar M'ha Donat",
+      "descripcio": "Disc: Marina Rossell Canta Moustaki",
+      "publicada": "2015-09-18",
+      "afegida": "2026-10-03T17:26:42.487Z"
+    },
+    {
+      "id": "YBoWTslvjKY",
+      "artista": "Marina Rossell",
+      "titol": "El Meu Avi",
+      "descripcio": "Disc: Clàssics Catalans…",
+      "publicada": "2014-11-06",
+      "afegida": "2026-10-03T17:26:42.487Z"
+    },
+    {
+      "id": "sy2sbn7XfQA",
+      "artista": "Marina Rossell",
+      "titol": "Els Amants S'estimen un Temps",
+      "descripcio": "Disc: Marina Rossell Canta Moustaki",
+      "publicada": "2015-09-18",
+      "afegida": "2026-10-03T17:26:42.487Z"
+    },
+    {
+      "id": "R2NQpRznxKI",
+      "artista": "Marina Rossell",
+      "titol": "Hi Havia un Jardí",
+      "descripcio": "Disc: Marina Rossell Canta Moustaki",
+      "publicada": "2015-09-18",
+      "afegida": "2026-10-03T17:26:42.487Z"
+    },
+    {
+      "id": "Ax-YaBy1E2I",
+      "artista": "Marina Rossell",
+      "titol": "Ma Llibertat",
+      "descripcio": "Disc: Marina Rossell Canta Moustaki",
+      "publicada": "2015-09-18",
+      "afegida": "2026-10-03T17:26:42.487Z"
+    },
+    {
+      "id": "TCHDOblXMMg",
+      "artista": "Marina Rossell",
+      "titol": "Ma Solitud",
+      "descripcio": "Disc: Marina Rossell Canta Moustaki",
+      "publicada": "2015-09-18",
+      "afegida": "2026-10-03T17:26:42.487Z"
+    },
+    {
+      "id": "vnG-uZQ5nA0",
+      "artista": "Marina Rossell",
+      "titol": "Mare de Déu del Món",
+      "descripcio": "Disc: Clàssics Catalans…",
+      "publicada": "2014-11-06",
+      "afegida": "2026-10-03T17:26:42.487Z"
+    },
+    {
+      "id": "3tE5vm-kxuA",
+      "artista": "Marina Rossell",
+      "titol": "Màrmara (feat. Georges Moustaki)",
+      "descripcio": "Disc: Marina Rossell Canta Moustaki",
+      "publicada": "2015-09-18",
+      "afegida": "2026-10-03T17:26:42.487Z"
+    },
+    {
+      "id": "FKy-Pr4cHfs",
+      "artista": "Marina Rossell",
+      "titol": "No em penedeixo de res (Non, je ne regrette rien)",
+      "descripcio": "Disc: 300 crits",
+      "publicada": "2021-10-28",
+      "afegida": "2026-10-03T17:26:42.487Z"
+    },
+    {
+      "id": "75FQkWzUWVY",
+      "artista": "Marina Rossell",
+      "titol": "Sense Anomenar-la",
+      "descripcio": "Disc: Marina Rossell Canta Moustaki",
+      "publicada": "2015-09-18",
+      "afegida": "2026-10-03T17:26:42.487Z"
+    },
+    {
+      "id": "2IQZ9zNQfRs",
+      "artista": "Mazoni",
+      "titol": "A.I.L.O.D.I.U.",
+      "descripcio": "Disc: Sacrifiqueu la princesa",
+      "publicada": "2015-06-23",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "LZC48xTVTKU",
+      "artista": "Mazoni",
+      "titol": "Això nostre s'ha acabat (fos el que fos)",
+      "descripcio": "Disc: Fins que la mort ens separi",
+      "publicada": "2014-11-08",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "uW7afc_L03Q",
+      "artista": "Mazoni",
+      "titol": "Aldarulls emocionals",
+      "descripcio": "Disc: Ludwig",
+      "publicada": "2021-11-04",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "8HdtryWITVs",
+      "artista": "Mazoni",
+      "titol": "Amb el símbol d'infinit",
+      "descripcio": "Disc: Desig imbècil",
+      "publicada": "2019-10-03",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "Zn-NqJ84iE8",
+      "artista": "Mazoni",
+      "titol": "Apocalipsi now",
+      "descripcio": "Disc: Eufòria 5 - Esperança 0",
+      "publicada": "2015-02-21",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "Ow5y0-PZbf0",
+      "artista": "Mazoni",
+      "titol": "Brúixola erràtica",
+      "descripcio": "Disc: Desig imbècil",
+      "publicada": "2019-10-03",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "S2C5fSQk3bw",
+      "artista": "Mazoni",
+      "titol": "Cançó 7a en colors",
+      "descripcio": "Disc: Esgarrapada",
+      "publicada": "2014-11-08",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "MD3iBlDFFxg",
+      "artista": "Mazoni",
+      "titol": "Caputxeta",
+      "descripcio": "Disc: Eufòria 5 - Esperança 0",
+      "publicada": "2015-02-21",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "o2a1TcWFm6I",
+      "artista": "Mazoni",
+      "titol": "Desig imbècil",
+      "descripcio": "Disc: Desig imbècil",
+      "publicada": "2019-09-05",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "FMOhdji5gv8",
+      "artista": "Mazoni",
+      "titol": "Ei, que surt el sol!",
+      "descripcio": "Disc: Eufòria 5 - Esperança 0",
+      "publicada": "2015-02-21",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "0-dvuDydKog",
+      "artista": "Mazoni",
+      "titol": "El dubte",
+      "descripcio": "Disc: Fins que la mort ens separi",
+      "publicada": "2015-06-23",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "bFuVgLI47Bc",
+      "artista": "Mazoni",
+      "titol": "El riu",
+      "descripcio": "Disc: Si els dits fossin xilòfons",
+      "publicada": "2015-12-02",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "Y_-nE8DqvV4",
+      "artista": "Mazoni",
+      "titol": "És veritat perquè és bonic",
+      "descripcio": "Disc: És veritat perquè és bonic",
+      "publicada": "2021-10-21",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "Em34NfTyp4s",
+      "artista": "Mazoni",
+      "titol": "Eufòria",
+      "descripcio": "Disc: Eufòria 5 - Esperança 0",
+      "publicada": "2015-06-23",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "W_0XCHDLk3w",
+      "artista": "Mazoni",
+      "titol": "Fe dins la tristesa",
+      "descripcio": "Disc: Banderes per daltònics",
+      "publicada": "2025-09-04",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "2HBo_jTTJZ8",
+      "artista": "Mazoni",
+      "titol": "Gised",
+      "descripcio": "Disc: Esgarrapada",
+      "publicada": "2014-11-08",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "g03nkxG0EKg",
+      "artista": "Mazoni",
+      "titol": "La collita",
+      "descripcio": "Disc: Carn, os i tot inclòs",
+      "publicada": "2017-04-20",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "Zc8YVK2KxJA",
+      "artista": "Mazoni",
+      "titol": "La cuina està tancada",
+      "descripcio": "Disc: Banderes per daltònics",
+      "publicada": "2025-09-04",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "McsyfLL_wNQ",
+      "artista": "Mazoni",
+      "titol": "La granja de la Paula",
+      "descripcio": "Disc: Si els dits fossin xilòfons",
+      "publicada": "2015-12-02",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "0POJIabBYsg",
+      "artista": "Mazoni",
+      "titol": "La promesa",
+      "descripcio": "Disc: La promesa",
+      "publicada": "2015-06-23",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "FrvAUStz-iw",
+      "artista": "Mazoni",
+      "titol": "M'han sortit dues ales",
+      "descripcio": "Disc: M'han sortit dues ales",
+      "publicada": "2019-09-19",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "4ArDh0QyCv4",
+      "artista": "Mazoni",
+      "titol": "Never Push a Sailor",
+      "descripcio": "Disc: 7 Songs for an Endless Night",
+      "publicada": "2016-03-11",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "G4dDu8mnFrM",
+      "artista": "Mazoni",
+      "titol": "No ho puc fer per tu",
+      "descripcio": "Disc: Ludwig",
+      "publicada": "2021-11-04",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "4gxFbQ1Ek64",
+      "artista": "Mazoni",
+      "titol": "No tinc temps",
+      "descripcio": "Disc: Esgarrapada",
+      "publicada": "2014-11-08",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "f9mtL_cJqls",
+      "artista": "Mazoni",
+      "titol": "Ocean",
+      "descripcio": "Disc: 7 songs for a sleepless night",
+      "publicada": "2015-02-21",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "nCCr1QjG4JA",
+      "artista": "Mazoni",
+      "titol": "On vull estar",
+      "descripcio": "Disc: Ludwig",
+      "publicada": "2021-11-04",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "Rz17XjxPPN0",
+      "artista": "Mazoni",
+      "titol": "Pedres",
+      "descripcio": "Disc: Carn, os i tot inclòs",
+      "publicada": "2017-04-20",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "3cmy9Fe9-SU",
+      "artista": "Mazoni",
+      "titol": "Per primer cop",
+      "descripcio": "Disc: Fins que la mort ens separi",
+      "publicada": "2014-11-08",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "i64xQ2vLjjQ",
+      "artista": "Mazoni",
+      "titol": "Perduts en la boira",
+      "descripcio": "Disc: Esgarrapada",
+      "publicada": "2014-11-09",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "XkZAkJWAaXU",
+      "artista": "Mazoni",
+      "titol": "Purgatori",
+      "descripcio": "Disc: Magranes molt / Purgatori",
+      "publicada": "2015-06-23",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "R_-KvwgzSuo",
+      "artista": "Mazoni",
+      "titol": "Quant temps fa que no plores?",
+      "descripcio": "Disc: Banderes per daltònics",
+      "publicada": "2025-09-04",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "D5FRGhuo6jc",
+      "artista": "Mazoni",
+      "titol": "Se'm moren les plantes",
+      "descripcio": "Disc: Si els dits fossin xilòfons",
+      "publicada": "2015-12-02",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "iLGvRQwgtUQ",
+      "artista": "Mazoni",
+      "titol": "Sense pluja però amb diluvi",
+      "descripcio": "Disc: Sense pluja però amb diluvi",
+      "publicada": "2023-02-06",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "Yln4KCIr1XA",
+      "artista": "Mazoni",
+      "titol": "Set de nou",
+      "descripcio": "Disc: Banderes per daltònics",
+      "publicada": "2025-09-04",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "jDU8NJD8eE4",
+      "artista": "Mazoni",
+      "titol": "Sol",
+      "descripcio": "Disc: Sol",
+      "publicada": "2017-03-30",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "64jNlgPu46U",
+      "artista": "Mazoni",
+      "titol": "Un Dimecres Qualsevol",
+      "descripcio": "Disc: Perversions: 15 Cançons d'Els Pets Interpretades per...",
+      "publicada": "2018-06-08",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "sP5pOkF_8qo",
+      "artista": "Mazoni",
+      "titol": "Un petit racó de pau per cadascú",
+      "descripcio": "Disc: Banderes per daltònics",
+      "publicada": "2025-09-04",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "65i4TklWnhA",
+      "artista": "Mazoni",
+      "titol": "Vindré com una plaga",
+      "descripcio": "Disc: Carn, os i tot inclòs",
+      "publicada": "2017-04-20",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "nRXqwKAidGw",
+      "artista": "Mazoni",
+      "titol": "You and me",
+      "descripcio": "Disc: 7 songs for a sleepless night",
+      "publicada": "2015-02-21",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "Ngv3vZFKPlM",
+      "artista": "Mazoni",
+      "titol": "Zombies",
+      "descripcio": "Disc: Zombies",
+      "publicada": "2021-10-07",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "zo39iWFcr20",
+      "artista": "Miki Nuñez",
+      "titol": "Escriurem #Joemcorono - Col·lectiva",
+      "descripcio": "Miki Núñez, Sara Roy, Judit Neddermann, Blaumut, Cesc Freixas, Natalia Lacunza, Bely Basarte, Els Amics de les Arts, Doctor Prats , Alba Reche, Maren, Buhos, Li…",
+      "publicada": "2020-04-20",
+      "afegida": "2026-10-02T15:58:31.716Z"
+    },
+    {
+      "id": "-a2fVQA_fCI",
+      "artista": "Moto Clua",
+      "titol": "Balada",
+      "descripcio": "Disc: Amic Majestic",
+      "publicada": "2026-07-06",
+      "afegida": "2026-10-03T19:27:35.653Z"
+    },
+    {
+      "id": "cBpGIFlSu90",
+      "artista": "Moto Clua",
+      "titol": "Ciutat",
+      "descripcio": "Disc: Amic Majestic",
+      "publicada": "2026-07-06",
+      "afegida": "2026-10-03T19:27:35.653Z"
+    },
+    {
+      "id": "zgT_MNf3-Rs",
+      "artista": "Moto Clua",
+      "titol": "El dia ha nascut",
+      "descripcio": "Disc: Amic Majestic",
+      "publicada": "2026-07-06",
+      "afegida": "2026-10-03T19:27:35.653Z"
+    },
+    {
+      "id": "WVw0jKX7ybU",
+      "artista": "Moto Clua",
+      "titol": "Magistic Friend",
+      "descripcio": "Disc: Amic Majestic",
+      "publicada": "2026-07-06",
+      "afegida": "2026-10-03T19:27:35.653Z"
+    },
+    {
+      "id": "Z_3fJD8Kqsw",
+      "artista": "Moto Clua",
+      "titol": "No és més que el por",
+      "descripcio": "Disc: Amic Majestic",
+      "publicada": "2026-07-06",
+      "afegida": "2026-10-03T19:27:35.653Z"
+    },
+    {
+      "id": "uWqWVMRMDrw",
+      "artista": "Moto Clua",
+      "titol": "Ombres de la Nit",
+      "descripcio": "Disc: Amic Majestic",
+      "publicada": "2026-07-06",
+      "afegida": "2026-10-03T19:27:35.653Z"
+    },
+    {
+      "id": "JxSSXmB_Q-I",
+      "artista": "Moto Clua",
+      "titol": "Posterior",
+      "descripcio": "Disc: Amic Majestic",
+      "publicada": "2026-07-06",
+      "afegida": "2026-10-03T19:27:35.653Z"
+    },
+    {
+      "id": "P755vvu0JCY",
+      "artista": "Moto Clua",
+      "titol": "Reflexes",
+      "descripcio": "Disc: Amic Majestic",
+      "publicada": "2026-07-06",
+      "afegida": "2026-10-03T19:27:35.653Z"
+    },
+    {
+      "id": "RJmsqOZQYAs",
+      "artista": "Pol Bordas",
+      "titol": "arròs covat",
+      "descripcio": "Disc: he marxat, per tornar",
+      "publicada": "2026-03-05",
+      "afegida": "2026-10-03T17:26:42.487Z"
+    },
+    {
+      "id": "XA28IEMFABo",
+      "artista": "Pol Bordas",
+      "titol": "barna :/",
+      "descripcio": "Disc: barna :/",
+      "publicada": "2025-06-05",
+      "afegida": "2026-10-03T17:26:42.487Z"
+    },
+    {
+      "id": "MzXzA1QnCpg",
+      "artista": "Pol Bordas",
+      "titol": "BENZINA",
+      "descripcio": "Disc: AQUESTA VIDA ÉS NOSTRA",
+      "publicada": "2024-11-14",
+      "afegida": "2026-10-03T17:26:42.487Z"
+    },
+    {
+      "id": "eEnyC_tMR10",
+      "artista": "Pol Bordas",
+      "titol": "caviar i efectiu",
+      "descripcio": "Disc: caviar i efectiu",
+      "publicada": "2025-04-10",
+      "afegida": "2026-10-03T17:26:42.487Z"
+    },
+    {
+      "id": "Ptzt7clu4ZY",
+      "artista": "Pol Bordas",
+      "titol": "ddia i dnit",
+      "descripcio": "Disc: AQUESTA VIDA ÉS NOSTRA",
+      "publicada": "2024-11-14",
+      "afegida": "2026-10-03T17:26:42.487Z"
+    },
+    {
+      "id": "u2ikmg3CJ2M",
+      "artista": "Pol Bordas",
+      "titol": "ens valdrà la pena/1600Km",
+      "descripcio": "Disc: ens valdrà la pena/1600Km",
+      "publicada": "2025-11-27",
+      "afegida": "2026-10-03T17:26:42.487Z"
+    },
+    {
+      "id": "kXd_8dfuwmA",
+      "artista": "Pol Bordas",
+      "titol": "he marxat, lluny de casa",
+      "descripcio": "Disc: he marxat, per tornar",
+      "publicada": "2026-03-05",
+      "afegida": "2026-10-03T17:26:42.487Z"
+    },
+    {
+      "id": "dD7qB2v99CY",
+      "artista": "Pol Bordas",
+      "titol": "lava ⟗",
+      "descripcio": "Disc: he marxat, per tornar",
+      "publicada": "2026-03-05",
+      "afegida": "2026-10-03T17:26:42.487Z"
+    },
+    {
+      "id": "qUAeXYpX4PU",
+      "artista": "Pol Bordas",
+      "titol": "masseria",
+      "descripcio": "Disc: he marxat, per tornar",
+      "publicada": "2026-03-05",
+      "afegida": "2026-10-03T17:26:42.487Z"
+    },
+    {
+      "id": "zfv5cMnISTo",
+      "artista": "Pol Bordas",
+      "titol": "outro/inèrcia",
+      "descripcio": "Disc: AQUESTA VIDA ÉS NOSTRA",
+      "publicada": "2024-11-14",
+      "afegida": "2026-10-03T17:26:42.487Z"
+    },
+    {
+      "id": "O8nNR6I1syU",
+      "artista": "Pol Bordas",
+      "titol": "petons PeToNs PETONS",
+      "descripcio": "Disc: petons PeToNs PETONS",
+      "publicada": "2025-04-09",
+      "afegida": "2026-10-03T17:26:42.487Z"
+    },
+    {
+      "id": "Yx4QhLOCe0k",
+      "artista": "Pol Bordas",
+      "titol": "RES MÉS QUE",
+      "descripcio": "Disc: RES MÉS QUE",
+      "publicada": "2024-10-03",
+      "afegida": "2026-10-03T17:26:42.487Z"
+    },
+    {
+      "id": "pfeU3tUSSRE",
+      "artista": "Pol Bordas",
+      "titol": "retrobar-nos",
+      "descripcio": "Disc: retrobar-nos",
+      "publicada": "2026-01-29",
+      "afegida": "2026-10-03T17:26:42.487Z"
+    },
+    {
+      "id": "0Ex9Opv6pIA",
+      "artista": "Pol Bordas",
+      "titol": "RONDINAIRE",
+      "descripcio": "Disc: RONDINAIRE",
+      "publicada": "2024-04-18",
+      "afegida": "2026-10-03T17:26:42.487Z"
+    },
+    {
+      "id": "BQH88FirLFI",
+      "artista": "Pol Bordas",
+      "titol": "socoRRista!",
+      "descripcio": "Disc: socoRRista!",
+      "publicada": "2025-08-07",
+      "afegida": "2026-10-03T17:26:42.487Z"
+    },
+    {
+      "id": "7E615UwhDRQ",
+      "artista": "Pol Bordas",
+      "titol": "TANTA ESTONA",
+      "descripcio": "Disc: TANTA ESTONA",
+      "publicada": "2024-06-06",
+      "afegida": "2026-10-03T17:26:42.487Z"
+    },
+    {
+      "id": "jz72JF3egME",
+      "artista": "Pol Bordas",
+      "titol": "TEMPS AL TEMPS",
+      "descripcio": "Disc: AQUESTA VIDA ÉS NOSTRA",
+      "publicada": "2024-11-14",
+      "afegida": "2026-10-03T17:26:42.487Z"
+    },
+    {
+      "id": "MBpc5xNSta8",
+      "artista": "Pol Bordas",
+      "titol": "TÒRAX",
+      "descripcio": "Disc: TÒRAX",
+      "publicada": "2024-10-16",
+      "afegida": "2026-10-03T17:26:42.487Z"
+    },
+    {
+      "id": "2m5wvZUNeHk",
+      "artista": "Pol Bordas",
+      "titol": "Xfi",
+      "descripcio": "Disc: Xfi",
+      "publicada": "2024-10-16",
+      "afegida": "2026-10-03T17:26:42.487Z"
+    },
+    {
+      "id": "ZlaFGRZVadA",
+      "artista": "Quimi Portet",
+      "titol": "Central de biomassa",
+      "descripcio": "Disc: Festa Major d'Hivern",
+      "publicada": "2018-04-05",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "AEzTac8Ryr4",
+      "artista": "Quimi Portet",
+      "titol": "Francesc Pujols (Live In Cincinnati)",
+      "descripcio": "Disc: Si plou, ho farem al Pavelló",
+      "publicada": "2020-11-19",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "DyccG_it-W8",
+      "artista": "Quimi Portet",
+      "titol": "Homes i dones del cap dret (Live In Cincinnati)",
+      "descripcio": "Disc: Si plou, ho farem al Pavelló",
+      "publicada": "2020-11-19",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "MHp5YqDLZP8",
+      "artista": "Quimi Portet",
+      "titol": "La Rambla",
+      "descripcio": "Disc: Barcelona Zona Bastarda",
+      "publicada": "2019-09-05",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "C2iM0kQ9Cqg",
+      "artista": "Quimi Portet",
+      "titol": "La Terra és plana (Live In Cincinnati)",
+      "descripcio": "Disc: Si plou, ho farem al Pavelló",
+      "publicada": "2020-11-19",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "_a2TEsN0L_8",
+      "artista": "Quimi Portet",
+      "titol": "Oh my Love",
+      "descripcio": "Disc: Oh My Love",
+      "publicada": "2015-02-24",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "Exruyw8tjpA",
+      "artista": "Quimi Portet",
+      "titol": "Ós bipolar (Live In Cincinnati)",
+      "descripcio": "Disc: Si plou, ho farem al Pavelló",
+      "publicada": "2020-11-19",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "t2g1kD5yF_c",
+      "artista": "Quimi Portet",
+      "titol": "Sabadell (Live In Cincinnati)",
+      "descripcio": "Disc: Si plou, ho farem al Pavelló",
+      "publicada": "2020-11-19",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "OY7bGXj05FA",
+      "artista": "Quimi Portet",
+      "titol": "Tinc una bèstia dintre meu",
+      "descripcio": "Disc: Oh My Love",
+      "publicada": "2015-06-23",
+      "afegida": "2026-10-03T19:25:02.248Z"
+    },
+    {
+      "id": "Gyg-_2nViQU",
+      "artista": "Sopa de Cabra",
+      "titol": "El Refugi",
+      "descripcio": "Disc: Cercles",
+      "publicada": "2015-12-16",
+      "afegida": "2026-10-03T17:26:42.487Z"
+    }
   ],
   "descartades": [
-    {"id":"L6fCzeuZzxc","artista":"Dusminguet","titol":"Gran dubtá","descripcio":"Disc: Postrof","publicada":"2015-01-19","afegida":"2026-10-03T19:07:36.989Z","motiu":"á (castellà)"},
-    {"id":"MtK1fQ5f3IM","artista":"Dusminguet","titol":"Le cha cha chá","descripcio":"Disc: Vafalungo","publicada":"2015-10-25","afegida":"2026-10-03T19:07:36.989Z","motiu":"á (castellà)"},
-    {"id":"OMJjxnkpu3A","artista":"Gertrudis","titol":"Niña India (amb Winston Ducati)","descripcio":"Disc: Tripolar","publicada":"2024-09-03","afegida":"2026-10-03T17:26:42.487Z","motiu":"ñ (castellà)"},
-    {"id":"6bnWQj5jnXc","artista":"La Troba Kung-Fú","titol":"María Hernández","descripcio":"Disc: A la panxa del bou","publicada":"2020-06-09","afegida":"2026-10-03T19:07:36.989Z","motiu":"á (castellà)"}
+    {
+      "id": "L6fCzeuZzxc",
+      "artista": "Dusminguet",
+      "titol": "Gran dubtá",
+      "descripcio": "Disc: Postrof",
+      "publicada": "2015-01-19",
+      "afegida": "2026-10-03T19:07:36.989Z",
+      "motiu": "á (castellà)"
+    },
+    {
+      "id": "MtK1fQ5f3IM",
+      "artista": "Dusminguet",
+      "titol": "Le cha cha chá",
+      "descripcio": "Disc: Vafalungo",
+      "publicada": "2015-10-25",
+      "afegida": "2026-10-03T19:07:36.989Z",
+      "motiu": "á (castellà)"
+    },
+    {
+      "id": "OMJjxnkpu3A",
+      "artista": "Gertrudis",
+      "titol": "Niña India (amb Winston Ducati)",
+      "descripcio": "Disc: Tripolar",
+      "publicada": "2024-09-03",
+      "afegida": "2026-10-03T17:26:42.487Z",
+      "motiu": "ñ (castellà)"
+    },
+    {
+      "id": "6bnWQj5jnXc",
+      "artista": "La Troba Kung-Fú",
+      "titol": "María Hernández",
+      "descripcio": "Disc: A la panxa del bou",
+      "publicada": "2020-06-09",
+      "afegida": "2026-10-03T19:07:36.989Z",
+      "motiu": "á (castellà)"
+    }
   ],
   "revisades": [
     "--61Gni8_zc",
@@ -448,6 +2740,7 @@
     "-AA4m-7p9Lk",
     "-BEhv4GDiY0",
     "-BIoKUhHwPY",
+    "-BKVFAP4PPU",
     "-BloI5YY5Wk",
     "-C6oKP7_NZ4",
     "-CKEJQn1Pqw",
@@ -485,6 +2778,7 @@
     "-Q2KghKhwFg",
     "-QNbu6G38Vo",
     "-QgT7BvKifE",
+    "-Qx8s5iATzg",
     "-QxvY5V41YA",
     "-REhfWmrPaI",
     "-RM1LV4Y9sE",
@@ -502,6 +2796,7 @@
     "-XH0upqKE8g",
     "-XXGp6q_Gj8",
     "-YLpa5ebSTU",
+    "-YgqeGIpL6M",
     "-ZSe0TYfi-Y",
     "-Zcg26DLlnw",
     "-ZzcmKvARps",
@@ -521,6 +2816,7 @@
     "-f4Wzs9PrM4",
     "-gR0poqq9qU",
     "-ghUaCSLX1c",
+    "-glcEfnf35A",
     "-h0ZAjvCrqI",
     "-h_idzxitl0",
     "-ho8mEzpuSg",
@@ -624,6 +2920,7 @@
     "0RZQUKMTAO0",
     "0S2i1wrpnuc",
     "0SKVm5VBFyY",
+    "0SL39V24kAM",
     "0SPmOc6T2kk",
     "0TJ6ifV8peM",
     "0TJ8fPNvgG0",
@@ -643,12 +2940,14 @@
     "0YO78SUu20k",
     "0YvpZifpjgM",
     "0_2EndbQ0gA",
+    "0_FxIzsOC9M",
     "0_VCqryfoZM",
     "0aj3RW7aC38",
     "0bAAuLo8mx4",
     "0bISxhy2O_4",
     "0cima0hibB8",
     "0cssk-dIFLE",
+    "0d5okCVbtpU",
     "0dDO9PQPn7s",
     "0eHmrCQg9_Y",
     "0f01QbArLjs",
@@ -717,6 +3016,7 @@
     "1Bo92ZVMuJM",
     "1E1YfvycCFk",
     "1ECeIxyFzNs",
+    "1FRtcuCTBlQ",
     "1GxkbESBKLY",
     "1HZ8unHcGh4",
     "1JBcLa-v6-0",
@@ -799,6 +3099,7 @@
     "1xRAK77G4B4",
     "1xhrWATZlOU",
     "1xp7JG6o194",
+    "1y_ib4jPmpw",
     "1yuBoJwAIyI",
     "1zNwxhVnmyg",
     "1zgB4NDPvlM",
@@ -901,6 +3202,7 @@
     "2mBFh6kl5QY",
     "2mBINMD_ecY",
     "2mBn8QvaCHQ",
+    "2mlDiwoouTg",
     "2n9WioPRa-Y",
     "2nBCR0zu4ns",
     "2nPlIHKTVk8",
@@ -962,12 +3264,14 @@
     "3AJHqYvIIA4",
     "3AWD0-9C3ls",
     "3B5pxSFJqoY",
+    "3BhVffOND9E",
     "3BjgVKOjMYw",
     "3C8dVYtR3fk",
     "3CCVCQXYyvg",
     "3Cwk0XSufNg",
     "3DEpaDLV2TM",
     "3EQbTINdelA",
+    "3FZ3pwH_BkQ",
     "3G1Mg6KhP4U",
     "3GJM-PRnBOk",
     "3G_lLM4uNzE",
@@ -981,6 +3285,7 @@
     "3LEOkTgs3oo",
     "3LNI5ayqNUg",
     "3LYIn9KMez8",
+    "3MIFU8wNG0s",
     "3NCsFuUzS18",
     "3NN89dJaTcA",
     "3O1FtaxKr8U",
@@ -1265,6 +3570,7 @@
     "5kOnpOdybtA",
     "5kQp8MZU65s",
     "5l_4-_IxY1g",
+    "5llPATI5cQ8",
     "5lnJ9Tkc-Lw",
     "5lno8DH0j08",
     "5modsEYHaMg",
@@ -1364,6 +3670,7 @@
     "6TWXVZnAIxo",
     "6Tv3YsONDYM",
     "6VN4T3r2VMs",
+    "6Vpv9M0FgpI",
     "6W7LmNKqDyo",
     "6WGogDRnZgY",
     "6WHL1jCrUP0",
@@ -1400,6 +3707,7 @@
     "6oKL_QClwlw",
     "6oqDdH3Ufnk",
     "6ousbYHZb2k",
+    "6pclc8yMfz0",
     "6q8g-Whn-jQ",
     "6qODWL6eUCE",
     "6qROiGhyV2s",
@@ -1907,6 +4215,7 @@
     "Aeq4223yRm8",
     "AfjMxLgbJ50",
     "AgGTK6aVtVM",
+    "AhVad0fGe4Q",
     "AhrGzE4bTeM",
     "Ai85k3JinMo",
     "AjgdwRM5d0A",
@@ -1939,6 +4248,7 @@
     "AwqZGxtDmtE",
     "Ax1HxS-ZwuA",
     "AxOcMIU2mWI",
+    "AxVG80g4Yds",
     "Axhl28f-m9M",
     "AxlOIIUNHg0",
     "Ay0UabBEhNU",
@@ -2194,6 +4504,7 @@
     "DCRrzJQGrOM",
     "DCgliYvtOO8",
     "DCq_Wx9WuD8",
+    "DD7J-0n8bhU",
     "DD81S9hvgXY",
     "DD8hNxMS24U",
     "DDnrE34RkOg",
@@ -2214,6 +4525,7 @@
     "DOqQnGFYLOw",
     "DPH0qpx0kxc",
     "DQJmDaYfuUU",
+    "DQw57bzqW30",
     "DSAG9defawE",
     "DSS6LrqegWk",
     "DS_eGtM7NPU",
@@ -2234,6 +4546,7 @@
     "DWOfjBDEiYA",
     "DXV6Nj0sg4A",
     "DY-C6SPm3qY",
+    "D_C2Pc_4na0",
     "D_NkV53xS40",
     "D_rfUbDtkyE",
     "D_uquctAE0M",
@@ -2583,6 +4896,7 @@
     "GObGj5pdOgM",
     "GObLaBklkuM",
     "GOonPcFu-HA",
+    "GOvv1vdTcno",
     "GPTr6jSC9UA",
     "GPwm2qHyqa4",
     "GQ0bpIC9vl0",
@@ -2659,6 +4973,7 @@
     "GplI8FWLilA",
     "GqKHoTNlMFo",
     "GqjpvqhPh6g",
+    "GquhWgonw14",
     "GqxV1m--xZE",
     "GrNh3u-sXJo",
     "GrTqLzMedUc",
@@ -2978,6 +5293,7 @@
     "Jd7GU-XVbx4",
     "JdEDYrguB8w",
     "JdPLVPB8rtU",
+    "Je3UmjUbQiM",
     "JeGkUtaEAK8",
     "Jefm7n8JWKY",
     "JfEdfvfb_dg",
@@ -3067,6 +5383,7 @@
     "KJ9l5FFIBRM",
     "KJHWpsk6ZQY",
     "KKCD0XMa0QM",
+    "KKIfgaFuVec",
     "KKrx83T_T5Y",
     "KLZblVr5r70",
     "KMMm_NuXm5U",
@@ -3123,6 +5440,7 @@
     "KvZ3-2loO5A",
     "KxFfsQ1sWnI",
     "Kyrozs1x51g",
+    "Kyuon0fHLOk",
     "Kz25VMjRC9g",
     "KzYqjeATOF4",
     "Kzn_iNUTqKA",
@@ -3283,6 +5601,7 @@
     "M9hoxKEwtqY",
     "M9uQAq9RJgs",
     "MA9V0JbT4iM",
+    "MAYYeeCxvnM",
     "MAYlA-ffJ9E",
     "MCs07jsVk4E",
     "MD0ASUx69oU",
@@ -3601,6 +5920,7 @@
     "O_JWrK0CxOg",
     "O_eXZ1Enc4Y",
     "O_j8P8eTnP8",
+    "OaOytyB5hPU",
     "ObMgtDrRZ_w",
     "ObNA1OtN0wM",
     "ObUNUoZMuho",
@@ -3627,6 +5947,7 @@
     "OhpfBBNc76U",
     "OhthliVSw2Y",
     "OiRMFhG3ge8",
+    "OjvhB9QMpT8",
     "OkX3jOXXLXA",
     "OkiiobHtI-w",
     "Okl5yAHMOlM",
@@ -3696,6 +6017,7 @@
     "PNpNlAepbxc",
     "PNq1oDXYxEw",
     "POmdU3cVYkQ",
+    "POyYWQKV6gg",
     "PP0qUgbprKw",
     "PPd-WQeQcls",
     "PPz1L6L9PGw",
@@ -3951,6 +6273,7 @@
     "RTnOmJ7zJTM",
     "RVD-IrKa1F8",
     "RVPx8UkMsPw",
+    "RVmKSrDL1AU",
     "RVoFlNQRxmo",
     "RYI0_lihFV0",
     "RYT6x_2c-Ts",
@@ -3987,6 +6310,7 @@
     "RvCienxxipg",
     "RvoZ7rCYpD4",
     "RvoZsBiErhQ",
+    "RweWnDiYmuI",
     "RwpLK7EpchM",
     "RxGHOgxp_Sw",
     "RxK6eeiTvRQ",
@@ -4050,6 +6374,7 @@
     "SQ2ekCNjsDY",
     "SQKLs8pCvQg",
     "SQNVr_okzgk",
+    "SQQOa6hHlsM",
     "SRFxtkF2hHY",
     "SRQO__jc86w",
     "SSA7MN0ie5Y",
@@ -4057,6 +6382,7 @@
     "STG8Tm7EqC0",
     "STaae3HZEDE",
     "STgjWUL2bGQ",
+    "SU2HZARaRj0",
     "SUDxS760E-A",
     "SUyVq_b0QmA",
     "SUzmers1nnQ",
@@ -4173,6 +6499,7 @@
     "TIua_bnEGGU",
     "TJ2TmPjnXlY",
     "TJ7bMeaDlg0",
+    "TJCT8x2SJb4",
     "TN9RgEY5Xck",
     "TNMzRfXo16o",
     "TNeOfkBFTfI",
@@ -4199,6 +6526,7 @@
     "TWUa2vkhvv8",
     "TX24U_yx5Pw",
     "TXoWOAbbFCQ",
+    "TYdjMzmjlpU",
     "TYz8r41GvlA",
     "TZbtpFVwzl0",
     "T_0JDXzX0ws",
@@ -4216,6 +6544,7 @@
     "TezMuZU9hCE",
     "TfNKxUNLmXc",
     "TfvMm5PqCzk",
+    "TgeTtFjI4zI",
     "TgzHDg7KwnQ",
     "TjLYDWTsqFE",
     "Tjzw_x1B4wo",
@@ -4229,6 +6558,7 @@
     "TnCsmN2NVqI",
     "TnhTAjq3Ulc",
     "Tnim0jAj7Xc",
+    "To2W_C5Exmk",
     "TpCR-QNIvl0",
     "Tq5lEF4B3yk",
     "Tq6sqqI9Fxw",
@@ -4260,12 +6590,14 @@
     "U2CwOkvjd8Q",
     "U438CIMzDR4",
     "U4CYMg763bw",
+    "U4GEaYdFSb8",
     "U4uUQOro4xo",
     "U5UShYMAkpw",
     "U5Zb0teRvZE",
     "U83_HaJmVR8",
     "U8LR6hu6xRo",
     "U9Up7woJiNA",
+    "UA5G7qQ-6ik",
     "UAfgZibuG_A",
     "UAmWmNbcFgw",
     "UCPVaOKj_tI",
@@ -4301,6 +6633,7 @@
     "UNltjw9lwEk",
     "UNlzGHCqbdE",
     "UONGRyh-CRQ",
+    "UOSkdQFJ8u8",
     "UOa-h03KjI0",
     "UOxS07Vt-hs",
     "UPKCL1F4sNU",
@@ -4589,6 +6922,7 @@
     "Wlg-ZlpEOW0",
     "WmsQlAedOs0",
     "WnX9X0UZKIk",
+    "Wo2zBuh7VRU",
     "WpBgf-rPGhs",
     "WpRmFoqLiIU",
     "WpSU2TQsXjs",
@@ -4902,6 +7236,7 @@
     "ZONip7fAEmM",
     "ZOqcsxfagx4",
     "ZQcdgQROWtU",
+    "ZRrU7RN8rxg",
     "ZS1YpaB_R1s",
     "ZSeDzpbj17E",
     "ZSv95pmLquI",
@@ -5021,6 +7356,7 @@
     "_QjTQ4yO0aA",
     "_RV572Es1Qs",
     "_S22kk99dnw",
+    "_TV841tKDq0",
     "_TZ1NZCEpag",
     "_Th8ZPt6w70",
     "_UpEkX0BepA",
@@ -5154,6 +7490,7 @@
     "aLotHqEeJlI",
     "aMNDgqekEuw",
     "aMfKWbH3PkA",
+    "aMpg6qc24UE",
     "aMqsBR0D9HU",
     "aNsOJblxF5A",
     "aO4YN_xrwj0",
@@ -5512,6 +7849,7 @@
     "dD_8s1ZXjdQ",
     "dE4R75Yva2U",
     "dE5dPnEJ6yI",
+    "dEnidOEQsQE",
     "dFBNM28IajQ",
     "dFdEKxDcI5w",
     "dFhYnvTPUL0",
@@ -5753,6 +8091,7 @@
     "fJFYB01kGYQ",
     "fJHV9QBLi_M",
     "fK7SVl80ajE",
+    "fKGFOiCPIGw",
     "fKO-7Asx9ds",
     "fKmj6mjzTqQ",
     "fKvFrTwrQK0",
@@ -5830,6 +8169,7 @@
     "funypogXKZQ",
     "fvp07S93Rco",
     "fvpyWbQM3ok",
+    "fwPWHpn--Rc",
     "fwgnWXI0Wys",
     "fxCSHTSjpTk",
     "fxjHuhkyO_A",
@@ -5893,6 +8233,7 @@
     "gPD08s-RDyE",
     "gP_CffOJKuk",
     "gPs3ATyTWX0",
+    "gQf_YwcYHuc",
     "gQtyVGeItuA",
     "gQw_VuLvcjc",
     "gRiQN2nIlYI",
@@ -5967,6 +8308,7 @@
     "h0eXN3LRUEk",
     "h3pwHk6_IMk",
     "h4HMonzwuBQ",
+    "h4K5D51bsuE",
     "h4P18BguyTE",
     "h4Utcy555oY",
     "h4c091QpZm8",
@@ -5982,6 +8324,7 @@
     "h7SHhVq3-wE",
     "h7vaJmYu2JA",
     "h8X2VTW45FE",
+    "h96yZNdAoD0",
     "h982Cj5IDH4",
     "h9JLU4BnL2M",
     "h9wSyHOgeKs",
@@ -5989,6 +8332,7 @@
     "hB1om-e_BN0",
     "hBQuSSKn09A",
     "hBYiFZ4NmgU",
+    "hFgYAAXTP4c",
     "hGIbVwwIFp4",
     "hIbdbhQgIlY",
     "hJKwmQ3pOBY",
@@ -6027,6 +8371,7 @@
     "hc_7HM0Twto",
     "hckykqcAVi4",
     "hct2tuhRVQw",
+    "hctUNVUxDZ4",
     "hd1yQ5p3o_o",
     "hd26_j0FbAE",
     "heFplKw4KKM",
@@ -6056,6 +8401,7 @@
     "hrGoaTMShXM",
     "hsCon6Adt2s",
     "hsmjw3Qm-IQ",
+    "hsvblZLRyi8",
     "huOSss_LUDg",
     "hud8WYB6kc0",
     "husU0CIge7Q",
@@ -6137,6 +8483,7 @@
     "iXb4LvUaCec",
     "iYHh7pC9n-A",
     "iYfWkKIFFFw",
+    "iZXY3KXlqfw",
     "iZfZRUiBScw",
     "i_-sjTJUYPA",
     "i_EFdoVKOMs",
@@ -6151,6 +8498,7 @@
     "idw-3sIXZw0",
     "ieSmj1aakn0",
     "ifb1K_bIHt8",
+    "ifm5bZfo-IY",
     "igYTXeOiun4",
     "igyL51M5rIw",
     "iiHSYVc_rNM",
@@ -6187,6 +8535,7 @@
     "j-DHd7pKrPo",
     "j-SWSQxUYtE",
     "j-bj568dThw",
+    "j0598xRgvW8",
     "j083adsE1V8",
     "j0Cs21Sojpo",
     "j0aTyrPHKg8",
@@ -6250,6 +8599,7 @@
     "jTkFbZKkx-E",
     "jTxGyJLYINU",
     "jUZFBjo2PNs",
+    "jUbdexNlbSs",
     "jVrBSCZciJc",
     "jVtiyuxWeIE",
     "jWWlYs5557I",
@@ -6275,6 +8625,7 @@
     "jaT--Tob1ek",
     "jauAIXOC7NA",
     "jazBQoCENrM",
+    "jb2qqaY2GRw",
     "jbVQIRo6T5E",
     "jbo_HY2jWyo",
     "jbpBn1k3axE",
@@ -6291,6 +8642,7 @@
     "jgQnpc_7iJQ",
     "jgXB0V0p8GI",
     "jh9eZC2qUtQ",
+    "jhSqhoQmqW4",
     "ji3yPpkDsiI",
     "jiIjeYBl4YM",
     "jjGSUU5ijhM",
@@ -6319,6 +8671,7 @@
     "jxPQ9Lh1XKo",
     "jxmdARl_KS4",
     "jzHF3HtJw4M",
+    "jze7iaKnKmM",
     "k-Lq6Yek6CE",
     "k-dQZ3Nl_80",
     "k-pvUoedsGA",
@@ -6388,6 +8741,7 @@
     "kXVglv4qZiM",
     "kXVytBYAwmU",
     "kXv2o6iFecc",
+    "kYx4YHRk_N4",
     "kZeczn_Fe6c",
     "k_5-YwujJDM",
     "k_in19AG-ek",
@@ -6437,6 +8791,7 @@
     "kpJw8seK4iE",
     "kpUvmopZLvk",
     "kpoPv60bWQA",
+    "kq8wv2ltVs0",
     "krZCvYCJcfY",
     "ksLd3Tm_uLs",
     "ksb4QIm0BZo",
@@ -6662,6 +9017,7 @@
     "mS7xKHpzfsg",
     "mSAH3DcR1L8",
     "mSFYE97cjNc",
+    "mT16Q0NnbWA",
     "mTI9r-I0-y0",
     "mTNKvGaSUQw",
     "mTPq4izP1Q0",
@@ -6689,6 +9045,7 @@
     "mbW2Wxc8In4",
     "mbt-ZwaHwq8",
     "mbt-f5gbA8g",
+    "mcRfZGmI3BU",
     "mcg6LbSgkYo",
     "mcmJ3fsCQTk",
     "mdIGdPCW0bI",
@@ -6717,8 +9074,10 @@
     "mqxH2K7IqfY",
     "mrYzFxWx3X4",
     "msN0RmOCwdI",
+    "mt66QnlAiq0",
     "mtCXKhyg6Po",
     "muXKMBmUSuE",
+    "mv6k17BUdG4",
     "mvuh4gOXvMw",
     "mvzUD0Unkrk",
     "myjk89lKTmY",
@@ -6815,6 +9174,7 @@
     "ndOOxpOEMM8",
     "ndSzLAM-4L8",
     "ne35RUYe8sI",
+    "ngiBhWJ_DYc",
     "nh7vSDDl-pY",
     "ni0aUwVtg-M",
     "niIZfkGRclU",
@@ -6858,6 +9218,7 @@
     "o1G-nLjveww",
     "o1KBt38eZYE",
     "o1eY3LbNrgs",
+    "o22wu0Sfsi4",
     "o2ChYqNLzvA",
     "o3H0FgPud-g",
     "o3TN1Cbj5J4",
@@ -6912,6 +9273,7 @@
     "oR9JcJ5aUAs",
     "oRPxUByf63Y",
     "oS8C0hlZuDI",
+    "oSZ7JDxEbQQ",
     "oSzJQTv7YXY",
     "oTfBi_AwGwk",
     "oTzCoVlApoM",
@@ -7268,6 +9630,7 @@
     "rAqCcPjCyeA",
     "rB436yiHol4",
     "rBNeo0_9bOI",
+    "rBeJqpRvMYU",
     "rCc1bPCNSX4",
     "rCn3AUcZWIo",
     "rCxz7YIfTCU",
@@ -7552,6 +9915,7 @@
     "tGZ0IxZqNNY",
     "tGu1_1401y4",
     "tHBT-K7vS38",
+    "tHGZmae9kCU",
     "tHtIkCkJNIY",
     "tKgwEg_EZMc",
     "tLuBbLM5V1E",
@@ -7708,6 +10072,7 @@
     "uW8raXqAR3g",
     "uWAn_bUsBps",
     "uWBgpjyAACM",
+    "uWZyNbeXZNE",
     "uWsCM15LNxs",
     "uWzDz4pyTHI",
     "uXb3RqNUcA4",
@@ -7725,6 +10090,7 @@
     "u_fg4x2bV1M",
     "u_yj_IH4-bs",
     "uaTrIFqYWT4",
+    "uaYkgOyr9jA",
     "ub3LSVggQV0",
     "ubB6_UwrtJc",
     "ubMkQrWtd2w",
@@ -7786,6 +10152,7 @@
     "v4eZ6NioBrY",
     "v55Ww-6TtXo",
     "v6usG9gzGXo",
+    "v7-Bt2jFTxo",
     "v794sRay86k",
     "v7vmpn2gryQ",
     "v8VQR9l1pN8",
@@ -7908,6 +10275,7 @@
     "vyvnhSCs1ZI",
     "vzP3xbkbKW4",
     "vzWDnDu42GY",
+    "vzf7DKHQ7ik",
     "vzvwi_2rO_4",
     "vzxf1huxgN4",
     "w1Hes4vIyyY",
@@ -8328,6 +10696,7 @@
     "zE98El_X_3I",
     "zE9ut2O0oYI",
     "zEKJGadHxYQ",
+    "zEw69oCjVJo",
     "zExWQ1h1OhE",
     "zGDOi1GGa1Y",
     "zG_rP3beIio",
@@ -8383,6 +10752,7 @@
     "zd67QoyQkm8",
     "zd7Eyx2iIjM",
     "zdbKMckpU1M",
+    "zdwDdu8DQA8",
     "zdxGaMEfUkI",
     "zegKYUx7zrU",
     "zettvo4rqYE",
