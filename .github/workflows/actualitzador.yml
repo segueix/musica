@@ -1,10 +1,13 @@
 name: Actualitzador feed musical (manual)
 
 on:
+  push:
+    paths:
+      - ".github/workflows/actualitzador.yml"
   workflow_dispatch:
 
 concurrency:
-  group: music-data-writer
+  group: motoclus-topic-update
   cancel-in-progress: false
 
 jobs:
@@ -29,6 +32,7 @@ jobs:
           # El mateix mode que el workflow diari (actualitzar-feed-musica.yml): si no, el feed manual tornaria a
           # posar el que el filtre del canal Tema treu.
           MUSIC_TOPIC_GOVERNANCE: "apply"
+          MUSIC_TARGET_CHANNELS: "UC3bvpTw40rgvnsZA1wCZeIQ"
         run: node scripts/update_music_feed.js
       - name: Publica feed
         run: |
