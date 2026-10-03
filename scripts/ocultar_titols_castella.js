@@ -561,7 +561,7 @@ afegeix('Gertrudis', [
     'Rúa da Raiña',
     'Rua de Raiña',
 ]);
-// Mariona Escoda — peces amb títol anglès del repertori acústic; «Juno» s'exclou explícitament a petició de l'usuari.
+// Mariona Escoda — exclusions editorials: Juno, Requiem i peces amb títol anglès del repertori acústic.
 afegeix(['Mariona Escoda', 'Mariona Escoda - Topic'], ['Juno', 'Requiem', "Everybody's changing", 'Maniac']);
 // Daveu — «Mi broda» exclosa a petició de l'usuari; el canal Tema es diu DAVEU.
 afegeix(['DAVEU', 'DAVEU))'], ['MI BRODA']);
