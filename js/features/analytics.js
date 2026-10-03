@@ -240,7 +240,7 @@
             return;
         }
 
-        const like = target.closest('#likeToggle, [data-like-video], .like-toggle, .like-button');
+        const like = target.closest('#likeToggle, #playerLikeBtn, [data-like-video], .like-toggle, .like-button');
         if (like) {
             const currentlyPressed = like.getAttribute('aria-pressed') === 'true' || like.classList.contains('is-liked');
             track('like_toggle', {

@@ -4843,6 +4843,13 @@ body.drive-mode .dm-info[hidden] {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
+/* Finestra més estreta que la barra (redimensionada): la barra no s'encongeix i va arrodonida per tots costats */
+.player-external-controls.is-docked.is-floating.is-wide {
+    border-top: 1px solid var(--pt-line);
+    border-bottom: 1px solid var(--pt-line);
+    border-radius: 12px;
+}
+
 body:has(#playerExternalControls.is-floating:not(.is-above):not([hidden])) #videoPlayer.mini-player-active {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
