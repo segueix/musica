@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-03T21:00:00.000Z",
+  "updatedAt": "2026-10-03T21:30:00.000Z",
   "artists": [
     {
       "name": "31 FAM",
@@ -19468,6 +19468,44 @@
       "notes": "3Cat: el pop català que més balla.",
       "genresRaw": [
         "Pop"
+      ]
+    },
+    {
+      "name": "Sidonie",
+      "aliases": [],
+      "genres": [
+        "Rock"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCJ6EMs_13PLDvRSHi-XqRwQ",
+            "handle": null,
+            "name": "Sidonie",
+            "type": "official",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-03",
+        "youtube:manual-verified",
+        "genre:manual",
+        "https://www.youtube.com/channel/UCJ6EMs_13PLDvRSHi-XqRwQ"
+      ],
+      "lastChecked": "2026-10-03T21:30:00.000Z",
+      "notes": "Alta manual amb llista blanca: només 'Persiana baixada' i les 12 cançons de l'àlbum Catalan Graffiti (2025), tot en català.",
+      "genresRaw": [
+        "rock"
       ]
     },
     {
