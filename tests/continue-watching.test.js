@@ -154,6 +154,40 @@ describe('emmagatzematge de Continua mirant', () => {
 });
 
 describe('represa del reproductor', () => {
+    it('el final arriba al gestor de la cua després de pausa i represa, també en vídeos consecutius', () => {
+        const { window } = bootPlayer();
+        const player = window.SegueixApp.features.player;
+        const testApi = window.SegueixApp.features.continueWatching._test;
+        const source = {};
+        const surface = { dataset: {}, querySelector: () => ({ contentWindow: source }) };
+        const getElementById = window.document.getElementById;
+        window.document.getElementById = id => id === 'videoPlayer' ? surface : getElementById(id);
+        const nextVideo = vi.fn();
+        player.registerRuntime({ handleYouTubeMessageImpl: event => {
+            if (event.data.event === 'onStateChange' && event.data.info === 0) nextVideo();
+        } });
+        const send = data => player.handleYouTubeMessage({ origin: 'https://www.youtube.com', source, data });
+        const clock = vi.spyOn(Date, 'now');
+        try {
+            for (const [index, videoId] of ['AbCdEf12345', 'ZyXwVu98765'].entries()) {
+                clock.mockReturnValue(10000 + index * 20000);
+                surface.dataset.playingVideoId = videoId;
+                testApi.beginProgressTracking(videoId, 'api', { options: { startAt: 0 } });
+                clock.mockReturnValue(12000 + index * 20000);
+                send({ event: 'onStateChange', info: 1 });
+                send({ event: 'infoDelivery', info: { currentTime: 35, duration: 100 } });
+                send({ event: 'onStateChange', info: 2 });
+                send({ event: 'onStateChange', info: 1 });
+                expect(nextVideo).toHaveBeenCalledTimes(index);
+                send({ event: 'infoDelivery', info: { currentTime: 100, duration: 100 } });
+                send({ event: 'onStateChange', info: 0 });
+                expect(nextVideo).toHaveBeenCalledTimes(index + 1);
+            }
+        } finally {
+            clock.mockRestore();
+        }
+    });
+
     it('prioritza un temps explícit de l’enllaç per sobre del progrés desat', () => {
         const videoId = 'AbCdEf12345';
         const { window, entries } = bootPlayer({ search: `?v=${videoId}&t=41` });
