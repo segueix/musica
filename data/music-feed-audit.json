@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-03T19:28:39.674Z",
+  "generatedAt": "2026-10-03T19:40:50.669Z",
   "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
   "deepPagesFetched": 0,
   "deepChannelCount": 20,
-  "topicChannelCount": 145,
+  "topicChannelCount": 147,
   "governedChannelCount": 73,
   "topicCoverage": [
     {
@@ -1050,6 +1050,13 @@
       "withClip": 2
     },
     {
+      "id": "UCtad7HKeiW-TwPgX-ZIOGZw",
+      "name": "Desperta Ferro",
+      "tracks": 41,
+      "selected": 36,
+      "withClip": 0
+    },
+    {
       "id": "UCXnvbcjY11hEzjvWXUTjQ8Q",
       "name": "Doctor Prats",
       "tracks": 92,
@@ -1526,6 +1533,13 @@
       "withClip": 23
     },
     {
+      "id": "UCCBTyMmUoeGrciYMzrwWiUw",
+      "name": "Opció K-95",
+      "tracks": 49,
+      "selected": 42,
+      "withClip": 0
+    },
+    {
       "id": "UCtq1tANqWFsrmS5XmCXY8qQ",
       "name": "Oques Grasses",
       "tracks": 70,
@@ -1599,7 +1613,7 @@
       "id": "UCcCicDkn0YDxOeir49bCwPQ",
       "name": "Pilseners",
       "tracks": 59,
-      "selected": 22,
+      "selected": 43,
       "withClip": 0
     },
     {
@@ -1848,13 +1862,13 @@
       "withClip": 11
     }
   ],
-  "indexedChannelCount": 305,
-  "resolvedChannelCount": 305,
-  "feedChannelCount": 305,
-  "rawPublicVideoCount": 7348,
-  "feedVideoCount": 7348,
-  "acceptedMusicCount": 6887,
-  "categoryEligibleVideoCount": 6825,
+  "indexedChannelCount": 306,
+  "resolvedChannelCount": 307,
+  "feedChannelCount": 307,
+  "rawPublicVideoCount": 7447,
+  "feedVideoCount": 7447,
+  "acceptedMusicCount": 6986,
+  "categoryEligibleVideoCount": 6924,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
     "before": 0,
@@ -1863,8 +1877,8 @@
   },
   "contentReviewCount": 408,
   "contentTypeCounts": {
-    "song": 6621,
-    "live_song": 204,
+    "song": 6717,
+    "live_song": 207,
     "album": 62,
     "other": 330,
     "review": 131
@@ -1873,5 +1887,5 @@
   "channelsWithoutUploads": [],
   "channelsWithoutVideos": [],
   "channelsWithoutAcceptedMusic": [],
-  "allIndexedChannelsVisible": true
+  "allIndexedChannelsVisible": false
 }

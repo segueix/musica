@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-03T19:28:39.674Z",
+  "updatedAt": "2026-10-03T19:40:50.669Z",
   "channels": [
     {
       "id": "UC9X30uS2tBqnVwEqpmA32xQ",
@@ -1165,6 +1165,25 @@
       ],
       "type": "topic",
       "primary": false
+    },
+    {
+      "id": "UCtad7HKeiW-TwPgX-ZIOGZw",
+      "name": "Desperta Ferro",
+      "avatar": "https://yt3.ggpht.com/e2bKUP0v_dvjTsP3nEFnAl9chwkK1pyqHMKIEC7fpxAxw7YYvgGJpCNQ-mqhYSD7RZBHsL7pHJc=s800-c-k-c0x00ffffff-no-rj",
+      "description": "",
+      "handle": "",
+      "subscriberCount": 183,
+      "categories": [
+        "Punk / Metal"
+      ],
+      "genres": [
+        "Punk"
+      ],
+      "artists": [
+        "Desperta Ferro"
+      ],
+      "type": "topic",
+      "primary": true
     },
     {
       "id": "UCn26f9Y9kg_AguUTaqNQUDw",
@@ -4094,6 +4113,25 @@
       "primary": false
     },
     {
+      "id": "UCCBTyMmUoeGrciYMzrwWiUw",
+      "name": "Opció K-95",
+      "avatar": "https://yt3.ggpht.com/_mUmb40mvgVYxDElQ7Bq3nhOFv7NpQg-kuN5Zr3UqEm_NNhJzVClgw0hvmNO2t3Ji1MT1x5drw=s800-c-k-c0x00ffffff-no-rj",
+      "description": "",
+      "handle": "",
+      "subscriberCount": 450,
+      "categories": [
+        "Punk / Metal"
+      ],
+      "genres": [
+        "Punk"
+      ],
+      "artists": [
+        "Opció K-95"
+      ],
+      "type": "topic",
+      "primary": true
+    },
+    {
       "id": "UCJD6uhnBA8eppY5QmQfJZwA",
       "name": "Oques Grasses",
       "avatar": "https://yt3.ggpht.com/gt_4JxOcyMa3eVBZUnngxEKr3bL3Ed3NSeo4P6e02fwsamqsUFOnLo4JSpFXDL7DmuElsldPAg=s800-c-k-c0x00ffffff-no-rj",
@@ -4621,7 +4659,7 @@
         "Pilseners"
       ],
       "type": "topic",
-      "primary": false
+      "primary": true
     },
     {
       "id": "UCEMQa0poTrwLZPEbB0HGJTA",
