@@ -4,7 +4,7 @@ import { loadScript } from './setup.js';
 
 // Controls del sistema (Media Session) i finestra flotant del sistema (Document Picture-in-Picture).
 
-function setup({ queue, index = 0, playlist = true, state = '1', time = 30, pip = false } = {}) {
+function setup({ queue, index = 0, playlist = true, state = '1', time = 30, pip = false, hidden = false } = {}) {
     const handlers = {};
     const posted = [];
     const calls = [];
@@ -38,6 +38,7 @@ function setup({ queue, index = 0, playlist = true, state = '1', time = 30, pip 
         },
         document: {
             readyState: 'complete',
+            visibilityState: hidden ? 'hidden' : 'visible',
             getElementById: id => (id === 'videoPlayer' ? player : null),
             addEventListener() {},
             body: { classList: { add() {}, remove() {} } },
@@ -78,6 +79,15 @@ describe('controls del sistema (Media Session)', () => {
         handlers.pause();
         handlers.stop();
         expect(calls).toEqual(['play', 'pause', 'pause']);
+    });
+
+    it('amb la pestanya amagada no permet reprendre ni avançar des de Media Session', () => {
+        const { handlers, calls, api } = setup({ state: '2', hidden: true, pip: true });
+        handlers.play();
+        handlers.nexttrack();
+        handlers.pause();
+        expect(calls).toEqual(['pause']);
+        expect(api.openPip()).resolves.toBe(false);
     });
 
     it('anterior i següent només hi són quan la cua en té', () => {
