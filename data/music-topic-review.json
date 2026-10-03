@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-02T15:58:32.155Z",
+  "generatedAt": "2026-10-03T17:26:43.046Z",
   "mode": "apply",
   "reclassified": {
-    "other": 228,
-    "song": 21
+    "other": 191,
+    "song": 20
   },
   "hiddenFromTopic": [
     "31 FAM · A Letter 2 Grandma",
@@ -24,9 +24,13 @@
     "Adrià Puntí · Barba Azul",
     "Adrià Puntí · Color de Higado",
     "Adrià Puntí · El Gitanillo de Tiana",
+    "Adrià Puntí · El Preludio del Adiós",
     "Adrià Puntí · En Cuarentena",
     "Adrià Puntí · Entre Tu y Tu Yo",
+    "Adrià Puntí · La Columna de Simeon",
     "Adrià Puntí · Peladilla Amarga",
+    "Adrià Puntí · Si",
+    "Adrià Puntí · Sueño Dormido (Al Fondo de un Abrebadero)",
     "Adrià Puntí · Tocayo",
     "Adrià Puntí · Un Compendio en Mi Menor",
     "Albert Pla · Alboraya",
@@ -108,7 +112,6 @@
     "Baya Baye · Tutto Passa",
     "Brams · Rojo Separatista",
     "Brams · Two Girls",
-    "Brams · ¿Qué pone en tu DNI?",
     "Buhos · Cerca de ti",
     "Buhos · Ha Sido Ramón",
     "Buhos · La última y Nos Vamos",
@@ -267,14 +270,15 @@
     "Marina Rossell · De Que Hablas Habanera",
     "Marina Rossell · El Meteco (Le Métèque)",
     "Marina Rossell · Grândola, vila morena (feat. Enric Montefusco)",
-    "Marina Rossell · Había un Jardín (Il y avait un jardin)",
     "Marina Rossell · La Bella Lola (feat. Port Bo)",
-    "Marina Rossell · La Paloma",
     "Marina Rossell · Mi Madre Fue una Mulata (feat. Port Bo)",
     "Marina Rossell · Mi Soledad (Ma Solitude)",
     "Marina Rossell · Si Me Quieres Escribir",
     "Marina Rossell · Y una Rosa Roja",
-    "Marina Rossell · Yo Te Dire",
+    "Mariona Escoda · Everybody's changing (Acústic en directe)",
+    "Mariona Escoda · Juno (Acústic en directe)",
+    "Mariona Escoda · Maniac (Acústic en directe)",
+    "Mariona Escoda · Requiem (Dear Evan Hansen, Acústic en directe)",
     "Miki Núñez · Ahora",
     "Miki Núñez · Alma Mía",
     "Miki Núñez · Apaga La Luz",
@@ -406,6 +410,7 @@
     "Txarango · Sueña Como un Niño",
     "Txarango · Tom Dooley / Verde, Verde / Esta Es Tu Tierra",
     "Txarango · Volveremos",
+    "Ven'nus · I JAZZ WANT MY G BACK",
     "Xavi Sarrià · No s'apaguen les estreles (BSO La mort de Guillem)"
   ],
   "videos": [
@@ -1432,177 +1437,9 @@
       "to": "song"
     },
     {
-      "id": "RL8mZO7j9is",
-      "channelTitle": "Maria del Mar Bonet",
-      "title": "Amic amat Damasc",
-      "from": "review",
-      "to": "other"
-    },
-    {
-      "id": "7p_lfZo5lrk",
-      "channelTitle": "Maria del Mar Bonet",
-      "title": "Barcelona vista, Maria del Mar Bonet.",
-      "from": "review",
-      "to": "other"
-    },
-    {
-      "id": "5B_2ir7TuAY",
-      "channelTitle": "Maria del Mar Bonet",
-      "title": "Cançó \"Oració a la Plaça del Rei\", estiu de 1991",
-      "from": "review",
-      "to": "other"
-    },
-    {
-      "id": "OQpeJDgWoBg",
-      "channelTitle": "Maria del Mar Bonet",
-      "title": "Concert \"El Cor del temps\", Palau Sant Jordi de Barcelona, 23 d'abril del 1997",
-      "from": "review",
-      "to": "other"
-    },
-    {
-      "id": "DVY623XzSUQ",
-      "channelTitle": "Maria del Mar Bonet",
-      "title": "Concert \"Raixa\" al Palau Musica Catalana, Barcelona, 18 de gener del 2002",
-      "from": "review",
-      "to": "other"
-    },
-    {
-      "id": "7dBufrX3QR8",
-      "channelTitle": "Maria del Mar Bonet",
-      "title": "Concert Ben a prop. Maria del Mar Bonet i Manel Camp",
-      "from": "review",
-      "to": "other"
-    },
-    {
-      "id": "2EYgFCdIbdQ",
-      "channelTitle": "Maria del Mar Bonet",
-      "title": "El Cor del temps - Amb l'Ensemble de Musique Traditionelle de Tunis 23/5/1997 Barcelona",
-      "from": "review",
-      "to": "other"
-    },
-    {
-      "id": "p6SvoUppnaM",
-      "channelTitle": "Maria del Mar Bonet",
-      "title": "El Drac de Na Coca",
-      "from": "review",
-      "to": "song"
-    },
-    {
-      "id": "q_DM5Eios5A",
-      "channelTitle": "Maria del Mar Bonet",
-      "title": "Especial Maria del Mar Bonet, TVE , 1985 (S. Schaaff)",
-      "from": "review",
-      "to": "other"
-    },
-    {
-      "id": "D_rfUbDtkyE",
-      "channelTitle": "Maria del Mar Bonet",
-      "title": "Especial Maria del Mar Bonet, TVE, 1985  (S. Schaaff)",
-      "from": "song",
-      "to": "other"
-    },
-    {
-      "id": "vl8sioCq7Eo",
-      "channelTitle": "Maria del Mar Bonet",
-      "title": "Especial Maria del Mar Bonet, TVE, 1985 (S. Schaaff)",
-      "from": "review",
-      "to": "other"
-    },
-    {
-      "id": "-llSVmgGLl4",
-      "channelTitle": "Maria del Mar Bonet",
-      "title": "Los conciertos de Popgrama, TVE. Maria del Mar Bonet i Pi de la Serra. Barcelona, 1980.",
-      "from": "review",
-      "to": "other"
-    },
-    {
-      "id": "QhR9ZOsFtr0",
-      "channelTitle": "Maria del Mar Bonet",
-      "title": "MAR PALAU",
-      "from": "review",
-      "to": "other"
-    },
-    {
-      "id": "_969LYGFf9Y",
-      "channelTitle": "Maria del Mar Bonet",
-      "title": "Maria del Mar Bonet (Tunísia - Catalunya). Realitzadors Jaume Perecaula i Joan Minguell. TV3, 1986",
-      "from": "review",
-      "to": "other"
-    },
-    {
-      "id": "H6J0zVNOFAo",
-      "channelTitle": "Maria del Mar Bonet",
-      "title": "Maria del Mar Bonet amb l'Ensemble de Musique Traditionelle de Tunis, dirigida per Fethi Zghonda",
-      "from": "song",
-      "to": "other"
-    },
-    {
-      "id": "nu0zBTsTiM4",
-      "channelTitle": "Maria del Mar Bonet",
-      "title": "Maria del Mar Bonet en el programa \"A media voz\", TVE, 1987",
-      "from": "review",
-      "to": "other"
-    },
-    {
-      "id": "mhqNwXNFPvo",
-      "channelTitle": "Maria del Mar Bonet",
-      "title": "Maria del Mar Bonet i Manolo Sanlúcar, \"Musical Expréss\", 1981",
-      "from": "song",
-      "to": "other"
-    },
-    {
-      "id": "T-d928mOjgE",
-      "channelTitle": "Maria del Mar Bonet",
-      "title": "Maria del Mar Bonet X Ventura Pons. Autor X Autor. Producció SGAE. 1997",
-      "from": "review",
-      "to": "other"
-    },
-    {
-      "id": "pOx9fX02JsI",
-      "channelTitle": "Maria del Mar Bonet",
-      "title": "Musical Express, Maria del Mar Bonet, 1981. Direcció: Àngel Casas",
-      "from": "review",
-      "to": "other"
-    },
-    {
-      "id": "GW0J_L1BzpA",
-      "channelTitle": "Maria del Mar Bonet",
-      "title": "Programa musical \"Yo canto\", Maria del Mar Bonet, TVE, 1978",
-      "from": "review",
-      "to": "other"
-    },
-    {
-      "id": "0Ghw08gPTzU",
-      "channelTitle": "Marina Rossell",
-      "title": "Georges Moustaki + Marina Rossell: Rodamón (Palau de la Música Catalana, 2007)",
-      "from": "song",
-      "to": "other"
-    },
-    {
-      "id": "b1puH89CU-U",
-      "channelTitle": "Marina Rossell",
-      "title": "Marina Rossell - \"Ma llibertat/Ma liberté\"",
-      "from": "song",
-      "to": "other"
-    },
-    {
       "id": "vhCaZTwkgeY",
       "channelTitle": "Marina Rossell",
       "title": "Marina Rossell - Enderrock Awards (March 2023)",
-      "from": "song",
-      "to": "other"
-    },
-    {
-      "id": "RG0yWlEzWS8",
-      "channelTitle": "Marina Rossell",
-      "title": "Marina Rossell - Gran Teatre del Liceu de Barcelona (Clàssics Catalans) SUBT[EN][FR][ES]",
-      "from": "song",
-      "to": "other"
-    },
-    {
-      "id": "zPt3H6xfUlM",
-      "channelTitle": "Marina Rossell",
-      "title": "Marina Rossell - L'oreneta (Palau de la Música Catalana, 2012)",
       "from": "song",
       "to": "other"
     },
@@ -1621,69 +1458,6 @@
       "to": "other"
     },
     {
-      "id": "HeP8GOvDSO8",
-      "channelTitle": "Marina Rossell",
-      "title": "Marina Rossell - La cançó del lladre (TV1)",
-      "from": "song",
-      "to": "other"
-    },
-    {
-      "id": "7i1hdk27wy8",
-      "channelTitle": "Marina Rossell",
-      "title": "Marina Rossell - La Gavina Contra la Sida (June 8th, 2012)",
-      "from": "song",
-      "to": "other"
-    },
-    {
-      "id": "8V_Anlglh5o",
-      "channelTitle": "Marina Rossell",
-      "title": "Marina Rossell - Muntanyes del Canigó",
-      "from": "song",
-      "to": "other"
-    },
-    {
-      "id": "MxXbiqGa9tA",
-      "channelTitle": "Marina Rossell",
-      "title": "Marina Rossell - Tutto Andrà Bene (Planta Baixa, TV3, June 2021)",
-      "from": "song",
-      "to": "other"
-    },
-    {
-      "id": "-b7fZMdKju4",
-      "channelTitle": "Marina Rossell",
-      "title": "Marina Rossell - Tutto Andrà Bene!",
-      "from": "song",
-      "to": "other"
-    },
-    {
-      "id": "f2o-cWtFv3E",
-      "channelTitle": "Marina Rossell",
-      "title": "Marina Rossell - Tutto Andrà Bene! (Calella de Palafrugell, 2020)",
-      "from": "song",
-      "to": "other"
-    },
-    {
-      "id": "6Omd94z0Aqc",
-      "channelTitle": "Marina Rossell",
-      "title": "Marina Rossell - XIV Premis Gaudí: Estimem-nos",
-      "from": "song",
-      "to": "other"
-    },
-    {
-      "id": "-wN-sbyr1l8",
-      "channelTitle": "Marina Rossell",
-      "title": "Marina Rossell al Gran Teatre del Liceu: 16. Pregària de la Verge del Remei",
-      "from": "song",
-      "to": "other"
-    },
-    {
-      "id": "9c3aX6MrVes",
-      "channelTitle": "Marina Rossell",
-      "title": "Marina Rossell al Gran Teatre del Liceu: 23. El Virolai",
-      "from": "song",
-      "to": "other"
-    },
-    {
       "id": "gthvXYvgWjY",
       "channelTitle": "Marina Rossell",
       "title": "Marina Rossell and Antoni Ros-Marbà - El clar país (Tribute at El Palau de la Música Catalana, 2024)",
@@ -1694,34 +1468,6 @@
       "id": "4lPbikvARz8",
       "channelTitle": "Marina Rossell",
       "title": "Marina Rossell and Antoni Ros-Marbà - El clar país (Tribute at El Palau de la Música Catalana, 2024)",
-      "from": "song",
-      "to": "other"
-    },
-    {
-      "id": "KokiFoMfLpc",
-      "channelTitle": "Marina Rossell",
-      "title": "Marina Rossell and Maria del Mar Bonet - Corrandes del temps que fa - Musical Express (1980)",
-      "from": "song",
-      "to": "other"
-    },
-    {
-      "id": "2XH242SjlkI",
-      "channelTitle": "Marina Rossell",
-      "title": "Marina Rossell and Pep Sala - Viatge Llarg (Tribute to Carles Sabater, 1999)",
-      "from": "song",
-      "to": "other"
-    },
-    {
-      "id": "d4usOcwLsOc",
-      "channelTitle": "Marina Rossell",
-      "title": "Marina Rossell and Santiago Auserón - Concert at the Palau de la Música (22nd of November, 2002)",
-      "from": "song",
-      "to": "other"
-    },
-    {
-      "id": "hc_7HM0Twto",
-      "channelTitle": "Marina Rossell",
-      "title": "Marina Rossell, Lluís Llach and Maria del Mar Bonet - Cant de l'enyor (Camp Nou de Barcelona, 1985)",
       "from": "song",
       "to": "other"
     },
@@ -1905,13 +1651,6 @@
       "channelTitle": "PAU VALLVÉ",
       "title": "PAU VALLVÉ @ Sant Jordi Club (25/04/2026)",
       "from": "review",
-      "to": "other"
-    },
-    {
-      "id": "vpgzyOu1Nec",
-      "channelTitle": "Pol Bordas",
-      "title": "Pol Bordas - AQUESTA VIDA ÉS NOSTRA",
-      "from": "song",
       "to": "other"
     },
     {

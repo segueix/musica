@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-02T15:58:32.155Z",
-  "retainedVideoCount": 826,
+  "generatedAt": "2026-10-03T17:26:43.046Z",
+  "retainedVideoCount": 121,
   "unverifiedVideoCount": 0,
   "deepPagesFetched": 0,
   "deepChannelCount": 20,
   "topicChannelCount": 138,
-  "governedChannelCount": 74,
+  "governedChannelCount": 73,
   "topicCoverage": [
     {
       "id": "UCqaEtRht2jakBhGFLzS617w",
@@ -160,6 +160,14 @@
       "governs": true
     },
     {
+      "id": "UCgTB-WFdzE-byKvUR5QVnFQ",
+      "name": "Pol Bordas",
+      "songs": 4,
+      "matched": 4,
+      "coverage": 1,
+      "governs": true
+    },
+    {
       "id": "UCWq2Sd65Q2V6PhDzOBMTb5Q",
       "name": "Quimi Portet",
       "songs": 17,
@@ -232,14 +240,6 @@
       "governs": true
     },
     {
-      "id": "UCgTB-WFdzE-byKvUR5QVnFQ",
-      "name": "Pol Bordas",
-      "songs": 38,
-      "matched": 37,
-      "coverage": 0.97,
-      "governs": true
-    },
-    {
       "id": "UC4tHQwYKnZ0frCoqwMmgMkQ",
       "name": "Sara Roy",
       "songs": 34,
@@ -272,14 +272,6 @@
       "governs": true
     },
     {
-      "id": "UCleNuGpCliL0P7B2eAI4U_Q",
-      "name": "Sopa de Cabra",
-      "songs": 59,
-      "matched": 56,
-      "coverage": 0.95,
-      "governs": true
-    },
-    {
       "id": "UC9aKnizc9niMNJGRL1lnwTg",
       "name": "Senyor Oca",
       "songs": 18,
@@ -308,6 +300,14 @@
       "name": "REMEI DE CA LA FRESCA",
       "songs": 15,
       "matched": 14,
+      "coverage": 0.93,
+      "governs": true
+    },
+    {
+      "id": "UCleNuGpCliL0P7B2eAI4U_Q",
+      "name": "Sopa de Cabra",
+      "songs": 44,
+      "matched": 41,
       "coverage": 0.93,
       "governs": true
     },
@@ -397,6 +397,14 @@
       "songs": 28,
       "matched": 25,
       "coverage": 0.89,
+      "governs": true
+    },
+    {
+      "id": "UCtFrz4JJnpJq7dhxLNRwkdA",
+      "name": "Marina Rossell",
+      "songs": 40,
+      "matched": 35,
+      "coverage": 0.88,
       "governs": true
     },
     {
@@ -560,27 +568,11 @@
       "governs": true
     },
     {
-      "id": "UCtFrz4JJnpJq7dhxLNRwkdA",
-      "name": "Marina Rossell",
-      "songs": 107,
-      "matched": 85,
-      "coverage": 0.79,
-      "governs": true
-    },
-    {
       "id": "UCFRzEt990b8xiMQ9soWNegw",
       "name": "DAVEU))",
       "songs": 9,
       "matched": 7,
       "coverage": 0.78,
-      "governs": true
-    },
-    {
-      "id": "UCJtO_dvu5AOSjtz1cWWpV0Q",
-      "name": "Maria del Mar Bonet",
-      "songs": 13,
-      "matched": 10,
-      "coverage": 0.77,
       "governs": true
     },
     {
@@ -696,14 +688,6 @@
       "governs": false
     },
     {
-      "id": "UC2WMiCvYBSXvRjYIB0yrpEg",
-      "name": "LAL'BA MUSIC",
-      "songs": 21,
-      "matched": 10,
-      "coverage": 0.48,
-      "governs": false
-    },
-    {
       "id": "UCvSMpTrqlrZxYbhZoTbsQoA",
       "name": "KOP",
       "songs": 15,
@@ -717,6 +701,22 @@
       "songs": 24,
       "matched": 11,
       "coverage": 0.46,
+      "governs": false
+    },
+    {
+      "id": "UCJtO_dvu5AOSjtz1cWWpV0Q",
+      "name": "Maria del Mar Bonet",
+      "songs": 13,
+      "matched": 6,
+      "coverage": 0.46,
+      "governs": false
+    },
+    {
+      "id": "UC2WMiCvYBSXvRjYIB0yrpEg",
+      "name": "LAL'BA MUSIC",
+      "songs": 15,
+      "matched": 6,
+      "coverage": 0.4,
       "governs": false
     },
     {
@@ -786,9 +786,9 @@
     {
       "id": "UCGQuY2Y9jeqLRxhs0l9-jVw",
       "name": "Pau Riba",
-      "songs": 90,
+      "songs": 58,
       "matched": 1,
-      "coverage": 0.01,
+      "coverage": 0.02,
       "governs": false
     },
     {
@@ -818,7 +818,7 @@
     {
       "id": "UCHU_RiP5nttdIcrT37Y7-uA",
       "name": "Inadaptats",
-      "songs": 70,
+      "songs": 49,
       "matched": 0,
       "coverage": 0,
       "governs": false
@@ -858,10 +858,10 @@
   ],
   "topicGovernance": "apply",
   "governedReclassified": {
-    "other": 228,
-    "song": 21
+    "other": 191,
+    "song": 20
   },
-  "topicHiddenCount": 401,
+  "topicHiddenCount": 406,
   "topicChannels": [
     {
       "id": "UCEMDA-ZXzEUlJjZ-avy0Pvg",
@@ -979,7 +979,7 @@
       "id": "UCuk-lO3FpbukFk5lcPx29_g",
       "name": "Brams",
       "tracks": 193,
-      "selected": 52,
+      "selected": 42,
       "withClip": 0
     },
     {
@@ -1126,7 +1126,7 @@
       "id": "UCc-fcN1V8NLdND4zBDMBrnA",
       "name": "Enric Barbat",
       "tracks": 62,
-      "selected": 40,
+      "selected": 15,
       "withClip": 0
     },
     {
@@ -1343,8 +1343,8 @@
       "id": "UCFYEAYfftkeTPVQk70lVapQ",
       "name": "Lal'Ba",
       "tracks": 16,
-      "selected": 5,
-      "withClip": 10
+      "selected": 9,
+      "withClip": 6
     },
     {
       "id": "UCgAWzLHswq5VtYxCEMWGAng",
@@ -1391,16 +1391,16 @@
     {
       "id": "UCrkGlLnid_710UIFOrWVpAQ",
       "name": "Mar Pujol",
-      "tracks": 29,
-      "selected": 8,
+      "tracks": 30,
+      "selected": 9,
       "withClip": 13
     },
     {
       "id": "UCLgDhaK2cT63xw3fKKkU1_g",
       "name": "Maria Del Mar Bonet",
       "tracks": 470,
-      "selected": 40,
-      "withClip": 10
+      "selected": 43,
+      "withClip": 5
     },
     {
       "id": "UC3QJ1xC8aCwQdvTy-HTRwew",
@@ -1414,7 +1414,7 @@
       "name": "Marina Rossell",
       "tracks": 312,
       "selected": 40,
-      "withClip": 51
+      "withClip": 25
     },
     {
       "id": "UC82RhPbZ6uly1CbqivbZqxQ",
@@ -1553,15 +1553,15 @@
       "id": "UCcCicDkn0YDxOeir49bCwPQ",
       "name": "Pilseners",
       "tracks": 59,
-      "selected": 43,
+      "selected": 22,
       "withClip": 0
     },
     {
       "id": "UCtpjQosTHLms2EiAUrTgaAg",
       "name": "Pol Bordas",
       "tracks": 98,
-      "selected": 28,
-      "withClip": 24
+      "selected": 40,
+      "withClip": 4
     },
     {
       "id": "UCQkOO8WejzCPcbzL7sc6iGg",
@@ -1722,7 +1722,7 @@
       "name": "Sopa de Cabra",
       "tracks": 428,
       "selected": 40,
-      "withClip": 42
+      "withClip": 33
     },
     {
       "id": "UCTdiD8UkDXr2DdbFRfQbRgQ",
@@ -1802,21 +1802,26 @@
       "withClip": 11
     }
   ],
-  "indexedChannelCount": 297,
-  "resolvedChannelCount": 297,
-  "feedChannelCount": 297,
-  "rawPublicVideoCount": 9813,
-  "feedVideoCount": 9062,
-  "acceptedMusicCount": 8384,
-  "categoryEligibleVideoCount": 8320,
-  "shortVideoCount": 1118,
-  "contentReviewCount": 408,
+  "indexedChannelCount": 298,
+  "resolvedChannelCount": 298,
+  "feedChannelCount": 298,
+  "rawPublicVideoCount": 8976,
+  "feedVideoCount": 7326,
+  "acceptedMusicCount": 7585,
+  "categoryEligibleVideoCount": 7522,
+  "shortVideoCount": 213,
+  "shortCatalogFilter": {
+    "before": 1112,
+    "matched": 216,
+    "rejected": 896
+  },
+  "contentReviewCount": 419,
   "contentTypeCounts": {
-    "song": 7986,
-    "live_song": 334,
-    "album": 64,
-    "other": 1021,
-    "review": 408
+    "song": 7287,
+    "live_song": 235,
+    "album": 63,
+    "other": 972,
+    "review": 419
   },
   "unresolvedChannelIds": [],
   "channelsWithoutUploads": [],
@@ -1831,6 +1836,7 @@
     "UCLKx4vBoCOKwB2x280VFmng",
     "UCboGC6e3sTTIO9C6lHxifnA",
     "UCfMqjIyA0G1cVGNlFXXoJhA",
+    "UCEMQa0poTrwLZPEbB0HGJTA",
     "UC9i1uNb0GFrISNB2pctkvRg",
     "UCMNP5PWXks1_Es7e5Fs2LOg",
     "UCXa6Mb5QgzYjRV_D1VlYoKQ",
