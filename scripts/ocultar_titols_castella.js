@@ -688,6 +688,64 @@ afegeix(['La Troba Kung-Fú', 'La Troba Kung-Fú - Topic'], [
     'Rúmbia',
 ]);
 
+
+// Revisió 2026-10-03: Guillermina Motta i La Trinca.
+// Només títols comprovats com a versions no catalanes. No s'afegeixen aquí títols idèntics
+// entre la versió catalana i la castellana (p. ex. «Mama Caca», «Vade Retro» o «Flash Reagan»);
+// aquestes gravacions concretes es bloquegen per ID a data/hidden-videos.json.
+afegeix('Guillermina Motta', [
+    'Tras La Lluvia',
+    'Con Vino Soy',
+    'Los Novios',
+    'Mi Soledad',
+    'One Morning',
+    'Tu Vendrás',
+    'Quiero Marcharme',
+    'Si Mi Voz Muriera En Tierra',
+    'Cuando Sea Muy Vieja',
+    'Yo En Amores Soy Muy Ligera',
+    'Aquellos Tiempos Del Cuple',
+    'Aquellos Tiempos Del Cuplé',
+    'La Bella Encarna',
+    'No Lo Quiero Azul',
+    'Johnny Go Home',
+    'Johnny, Go Home',
+    'Jamás Olvidaré Al Hombre Que Quiso Ponerme Un Piso',
+    'Groucho Marx',
+    'Como Mi Padre',
+    'Oscar',
+]);
+afegeix('La Trinca', [
+    'El Huevo De Colón',
+    'Fantasmas',
+    'Ele Manolo!',
+    'Sevillanas De La Probeta',
+    'El Obispo De Aquisgrán',
+    'La Guerra Verdulera',
+    'El Danubio Azul',
+    'Vidas Paralelas',
+    'La Danza Del Sable',
+    'Por Primera Vez',
+    'Agamenón y La Cabra',
+    'Mi Colegio',
+    'El Bayón De La OTAN',
+    'El Barón De Bidé',
+    'Oda al Papel Higiénico',
+    'Las Hermanas Sisters',
+    'El IVA Hecho Fácil',
+    'El IVA (Hecho Fácil)',
+    'Y el Pobre Mundo',
+    'La Tele Matutina',
+    'Sube al Avión',
+    'Sube all Avión',
+    'Qué Bonitos los Anuncios',
+    'No Sé por Qué Te Quiero',
+    'Quiero una Novia Pechugona',
+    'El Hombre Light',
+    'Masacre y Aniquilación',
+    'El Centro On the Rocks',
+]);
+
 function esCastella(video) {
     const regla = REGLES[video.channelTitle];
     if (!regla) return false;
