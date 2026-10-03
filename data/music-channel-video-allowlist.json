@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-30",
-  "description": "Llista blanca per a canals on Segueix Música només ha d'ingerir vídeos concrets. Els títols es comparen normalitzats i de manera exacta.",
+  "updatedAt": "2026-10-03",
+  "description": "Llista blanca per a canals on Segueix Música només ha d'ingerir vídeos concrets. Admet títols exactes (allowedTitles) o fragments obligatoris (allowedTitleContains).",
   "channels": {
     "UCz35Q7e_ulwY_uRqg5zDxeQ": {
       "artist": "Subliminal",
@@ -13,6 +13,15 @@
         "Subliminal - Radios i TVs",
         "Subliminal - Presumit"
       ]
+    },
+    "UCqA3KzIrZxgA27NEEyVZdrQ": {
+      "artist": "KnockOut",
+      "note": "Canal mixt: només s'accepta música si el títol del vídeo conté el nom KnockOut. La imatge del canal a Segueix Música surt de la miniatura del primer vídeo acceptat.",
+      "allowedTitleContains": [
+        "KnockOut"
+      ],
+      "acceptedMusicOnly": true,
+      "avatarFromFirstAllowedVideo": true
     }
   }
 }
