@@ -5042,3 +5042,36 @@ body:has(#playerExternalControls.is-floating.is-above:not([hidden])) #videoPlaye
         }
     }
 }
+
+/* ---------- Reproductor quadrat a mòbil: s'adapta a l'alçada de la pantalla ----------
+   El reproductor és quadrat i ocupa tot l'ample: en una pantalla baixa (o amb la zona del sistema a dalt) empenyia la fila
+   de botons (afegir a llista, compartir, finestra flotant…) per sota de la navegació inferior i es veien a mitges. Ara el
+   costat del quadrat és el que queda lliure un cop descomptats la capçalera, la navegació i tot el que hi ha sota el
+   reproductor (controls, mode de llista, títol, canal i botons ≈ 336 px): mai més gran que l'ample ni més petit de 200 px
+   (el mínim que demana YouTube). Queda centrat; en pantalles altes no canvia res. El forat (#videoPlaceholder) mana: el
+   reproductor se li posa a sobre (updatePlayerPosition). */
+@media (max-width: 768px) {
+    #watchPage .video-placeholder {
+        width: min(100%, max(200px, calc(100vh - var(--header-height, 61px) - var(--pt-nav-h) - var(--safe-bottom, 0px) - 336px)));
+        width: min(100%, max(200px, calc(100svh - var(--header-height, 61px) - var(--pt-nav-h) - var(--safe-bottom, 0px) - 336px)));
+        margin: 0 auto 12px;
+    }
+}
+
+/* Pantalles molt baixes: el quadrat ja no pot encongir més (mínim 200 px); es compacten els controls de sota perquè la
+   fila de botons segueixi sencera */
+@media (max-width: 768px) and (max-height: 680px) {
+    .player-external-controls:not(.is-docked) {
+        margin: 8px auto 10px;
+    }
+
+    .player-external-controls:not(.is-docked) .player-external-btn {
+        width: 46px;
+        height: 46px;
+    }
+
+    .player-external-controls:not(.is-docked) .player-external-btn--main {
+        width: 54px;
+        height: 54px;
+    }
+}

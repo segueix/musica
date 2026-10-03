@@ -201,3 +201,22 @@ describe('«La teva ràdio»: caràtules grans i centrades a la versió web', ()
         expect(block).toMatch(/@supports \(width: 1cqw\) \{\s*@media \(min-width: 769px\)/);
     });
 });
+
+describe('reproductor quadrat a mòbil: la fila de botons no queda sota la navegació', () => {
+    const block = css.slice(css.indexOf('/* ---------- Reproductor quadrat a mòbil'));
+
+    it('el costat del quadrat depèn de l’alçada lliure, amb mínim de 200 px (YouTube) i centrat', () => {
+        expect(block).toMatch(/@media \(max-width: 768px\) \{\s*#watchPage \.video-placeholder \{/);
+        expect(block).toMatch(
+            /width: min\(100%, max\(200px, calc\(100vh - var\(--header-height, 61px\) - var\(--pt-nav-h\)/
+        );
+        // alçada de pantalla dinàmica (svh) per sobre de l'alternativa en vh
+        expect(block).toMatch(/calc\(100svh - var\(--header-height, 61px\) - var\(--pt-nav-h\)/);
+        expect(block).toMatch(/margin: 0 auto 12px/);
+    });
+
+    it('en pantalles molt baixes es compacten els controls de sota (no els de la finestra flotant)', () => {
+        expect(block).toMatch(/@media \(max-width: 768px\) and \(max-height: 680px\)/);
+        expect(block).toMatch(/\.player-external-controls:not\(\.is-docked\)/);
+    });
+});
