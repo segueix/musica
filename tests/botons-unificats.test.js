@@ -33,22 +33,19 @@ describe('botons unificats i configuració', () => {
         expect(block).toContain('background: var(--pt-surface-2)');
     });
 
-    it('posa Segueix al costat del nom de l’artista i el cor com a primera acció de la cançó', () => {
+    it('posa Segueix al costat del nom de l’artista; el cor és a la barra de sota el reproductor, no a la fila', () => {
         const start = app.indexOf('function buildWatchChannelInfoHtml');
         const end = app.indexOf('// ==================== POSICIÓ DEL BOTÓ DE SUPORT', start);
         const block = app.slice(start, end);
         expect(block).toContain('<div class="channel-name-row">');
         expect(block.indexOf('${followButtonHtml}')).toBeGreaterThan(block.indexOf('<div class="channel-name-row">'));
-        expect(block).toContain('btn-heart btn-heart-song-action');
-        expect(block.indexOf('btn-heart btn-heart-song-action')).toBeLessThan(block.indexOf('btn-comment-youtube--mobile'));
+        expect(block).not.toContain('btn-heart');
+        expect(block).not.toContain('likeToggle');
 
         const cssStart = css.indexOf('/* ---------- Capçalera del reproductor: artista + Segueix');
         const layout = css.slice(cssStart);
         expect(layout).toContain('.channel-name-row .follow-btn-pill');
-        expect(layout).toContain('.btn-heart-song-action');
-        expect(layout).toContain('width: 48px');
-        expect(layout).toContain('width: 24px');
-        expect(layout).toContain('order: -100');
+        expect(layout).not.toContain('.btn-heart-song-action');
         expect(layout).toContain('#playlistBtn');
         expect(layout).toContain('order: -90');
         expect(layout).toContain('#shareBtn');

@@ -41,20 +41,23 @@ describe('sense botó de play/pausa propi ni capa que cobreixi el vídeo', () =>
         expect(css).toMatch(/\.drag-handle-container \{\s*position: absolute;\s*inset: 0 0 auto 0;\s*height: 36px;/);
         expect(css).toMatch(/@media \(max-width: 768px\) \{[\s\S]*?\.drag-handle-container \{\s*display: none;/);
         expect(portada).not.toMatch(/clip-path/);
-        // I la barra de dalt (restaurar/tancar) no enfosqueix el vídeo: és un degradat, i al mòbil és sempre visible
-        expect(app).toContain('position: absolute; inset: 0 0 auto 0; height: 56px;');
-        expect(css).toMatch(/\.mini-player-controls-overlay \{\s*opacity: 1;[\s\S]*?linear-gradient/);
     });
 
-    it('restaurar i tancar tenen àrees tàctils de 44 px i no depenen de cap llibreria d’icones', () => {
-        expect(css).toMatch(/\.close-mini-player-btn \{[^}]*min-width: 44px;[^}]*min-height: 44px;/);
-        expect(css).toMatch(/\.expand-mini-player-btn \{[^}]*min-width: 44px;[^}]*min-height: 44px;/);
-        const template = app.slice(
-            app.indexOf('class="close-mini-player-btn"'),
-            app.indexOf('class="video-embed-wrap"')
-        );
-        expect(template).not.toContain('data-lucide');
-        expect(template).toContain('<svg');
+    it('restaurar i tancar no van damunt del vídeo (normes de YouTube): són a la barra de sota', () => {
+        const html = read('index.html');
+        for (const source of [app, css, portada]) {
+            expect(source).not.toMatch(/close-mini-player-btn|expand-mini-player-btn|mini-player-controls-overlay/);
+        }
+        expect(html).toContain('id="playerMiniBtn"');
+        expect(html).toMatch(/id="playerCloseBtn"[^>]*hidden/);
+        const controls = fn(app, 'initExternalPlayerControls');
+        expect(controls).toContain('expandMiniPlayer()');
+        expect(controls).toContain('closeMiniPlayer()');
+        expect(controls).toContain('close.hidden = !miniActive');
+        // Al mòbil la barra s'enganxa sota la finestra; a l'escriptori la segueix
+        expect(controls).toContain('place(miniActive, miniActive && !mobileQuery.matches)');
+        expect(portada).toMatch(/\.player-external-controls\.is-docked\.is-floating \{/);
+        expect(fn(app, 'positionMiniPlayerBottomRight')).toContain('EXTERNAL_CONTROLS_DOCK_HEIGHT');
     });
 });
 

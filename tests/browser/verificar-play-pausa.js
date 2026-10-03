@@ -1,7 +1,8 @@
 // Verificació en navegador real del play/pausa del reproductor (normal i flotant): res no cobreix el reproductor de
 // YouTube (tots els tocs hi arriben) i els controls de l'app (anterior · play/pausa · següent · flotant · m'agrada) són a
 // la barra de sota (#playerExternalControls); la finestra flotant només s'arrossega pel mànec de dalt (escriptori) i al
-// mòbil va ancorada a baix amb la barra de dalt sempre visible i els controls, petits, enganxats a sota.
+// mòbil va ancorada a baix. Restaurar i tancar no van damunt del vídeo (normes de YouTube): són a la barra de controls,
+// que va enganxada sota la finestra flotant (al mòbil, petita i ancorada; a l'escriptori, la segueix).
 //
 // YouTube no es pot carregar aquí: se serveix un succedani local a la URL d'embed que parla el mateix protocol de
 // postMessage (onStateChange, playVideo/pauseVideo) i avisa la pàgina de cada toc rebut.
@@ -163,7 +164,7 @@ async function proves(browser, width, errors) {
             ).length,
             visible: !bar.hidden && barBox.height > 0,
             sota: Math.round(barBox.top - player.bottom),
-            botons: [...bar.querySelectorAll('button')].map(button => button.id),
+            botons: [...bar.querySelectorAll('button')].filter(button => !button.hidden).map(button => button.id),
         };
     });
     comprovar(
@@ -201,7 +202,7 @@ async function proves(browser, width, errors) {
     const centre = await page.evaluate(() => {
         const box = document.getElementById('videoPlayer').getBoundingClientRect();
         const el = document.elementFromPoint(box.left + box.width / 2, box.top + box.height / 2);
-        const buttons = [...document.querySelectorAll('#playerExternalControls button')].map(button => {
+        const buttons = [...document.querySelectorAll('#playerExternalControls button:not([hidden])')].map(button => {
             const r = button.getBoundingClientRect();
             return { nom: button.id, w: Math.round(r.width), h: Math.round(r.height) };
         });
@@ -288,29 +289,29 @@ async function proves(browser, width, errors) {
         };
         const handle = document.querySelector('.drag-handle-container');
         const handleBox = handle.getBoundingClientRect();
-        const overlay = document.querySelector('.mini-player-controls-overlay');
-        const buttons = ['.expand-mini-player-btn', '.close-mini-player-btn'].map(selector => {
-            const r = document.querySelector(selector).getBoundingClientRect();
-            return [Math.round(r.width), Math.round(r.height)];
-        });
         return {
             ancorada: window.innerWidth <= 768,
             box: [Math.round(box.left), Math.round(box.top), Math.round(box.width), Math.round(box.height)],
             video: [at(0.5, 0.5), at(0.2, 0.9), at(0.8, 0.6), at(0.5, 0.35)],
             dalt: at(0.5, 0.06),
             mànec: getComputedStyle(handle).display === 'none' ? null : Math.round(handleBox.height),
-            barra: getComputedStyle(overlay).opacity,
-            buttons,
+            // Restaurar i tancar ja no van damunt del vídeo (normes de YouTube): cap botó dins del reproductor
+            botonsDamunt: player.querySelectorAll('button').length,
             controls: (() => {
                 const bar = document.getElementById('playerExternalControls');
                 const r = bar.getBoundingClientRect();
                 const nav = document.getElementById('ptBottomNav')?.getBoundingClientRect();
                 return {
                     docked: bar.classList.contains('is-docked'),
+                    floating: bar.classList.contains('is-floating'),
+                    left: Math.round(r.left - box.left),
                     sota: Math.round(r.top - box.bottom),
                     sobreNav: nav && nav.height ? Math.round(nav.top - r.bottom) : null,
                     w: Math.round(r.width),
-                    botons: [...bar.querySelectorAll('button')].map(b => Math.round(b.getBoundingClientRect().width)),
+                    ids: [...bar.querySelectorAll('button:not([hidden])')].map(b => b.id),
+                    botons: [...bar.querySelectorAll('button:not([hidden])')].map(b =>
+                        Math.round(b.getBoundingClientRect().width)
+                    ),
                 };
             })(),
         };
@@ -322,11 +323,10 @@ async function proves(browser, width, errors) {
     );
     if (mobile) {
         comprovar(
-            `${etiqueta}: la finestra va ancorada a baix, sense mànec, amb la barra de dalt (restaurar/tancar) sempre visible i de ≥ 44 px`,
+            `${etiqueta}: la finestra va ancorada a baix, sense mànec ni cap botó damunt del vídeo`,
             mini.mànec === null &&
                 mini.dalt === 'iframe.' &&
-                Number(mini.barra) === 1 &&
-                mini.buttons.every(([w, h]) => w >= 44 && h >= 44) &&
+                mini.botonsDamunt === 0 &&
                 mini.box[0] === 0 &&
                 mini.box[2] === width,
             mini
@@ -337,14 +337,26 @@ async function proves(browser, width, errors) {
                 Math.abs(mini.controls.sota) <= 1 &&
                 Math.abs(mini.controls.sobreNav) <= 1 &&
                 mini.controls.w === width &&
+                mini.controls.ids.join() ===
+                    'playerPrevBtn,playerPlayPauseBtn,playerNextBtn,playerMiniBtn,playerLikeBtn,playerCloseBtn' &&
                 mini.controls.botons.every(w => w >= 40 && w < 52),
             mini.controls
         );
     } else {
         comprovar(
-            `${etiqueta}: només hi ha un mànec de 36 px a dalt per arrossegar`,
-            mini.mànec === 36 && /drag-surface/.test(mini.dalt),
-            { mànec: mini.mànec, dalt: mini.dalt }
+            `${etiqueta}: només hi ha un mànec de 36 px a dalt per arrossegar i cap botó damunt del vídeo`,
+            mini.mànec === 36 && /drag-surface/.test(mini.dalt) && mini.botonsDamunt === 0,
+            { mànec: mini.mànec, dalt: mini.dalt, botonsDamunt: mini.botonsDamunt }
+        );
+        comprovar(
+            `${etiqueta}: els controls (amb restaura i tanca) van enganxats sota la finestra flotant, amb la seva amplada`,
+            mini.controls.docked &&
+                mini.controls.floating &&
+                mini.controls.left === 0 &&
+                Math.abs(mini.controls.sota) <= 1 &&
+                Math.abs(mini.controls.w - mini.box[2]) <= 1 &&
+                mini.controls.ids.includes('playerCloseBtn'),
+            mini.controls
         );
     }
 
@@ -376,6 +388,17 @@ async function proves(browser, width, errors) {
         await page.mouse.up();
         await page.waitForTimeout(400);
         const despres = await punts(page);
+        await page.waitForTimeout(300);
+        const barra = await page.evaluate(() => {
+            const r = document.getElementById('playerExternalControls').getBoundingClientRect();
+            const p = document.getElementById('videoPlayer').getBoundingClientRect();
+            return { left: Math.round(r.left - p.left), sota: Math.round(r.top - p.bottom) };
+        });
+        comprovar(
+            `${etiqueta}: en arrossegar la finestra, la barra de controls la segueix`,
+            barra.left === 0 && Math.abs(barra.sota) <= 1,
+            barra
+        );
         comprovar(
             `${etiqueta}: arrossegar pel mànec de dalt mou la finestra i no pausa el vídeo`,
             Math.abs(despres.l - (abansBox.l - 120)) < 3 &&
@@ -403,7 +426,7 @@ async function proves(browser, width, errors) {
     });
 
     // 8) Restaurar des de la barra: la finestra torna al seu lloc i la barra, sota el reproductor
-    if (mobile) {
+    {
         await page.click('#playerMiniBtn');
         await page.waitForTimeout(700);
         const restaurat = await page.evaluate(() => {
@@ -412,14 +435,31 @@ async function proves(browser, width, errors) {
                 mini: isMiniPlayerActive(),
                 docked: bar.classList.contains('is-docked'),
                 aLaFitxa: Boolean(bar.closest('#watchPage .watch-main')),
+                tanca: !document.getElementById('playerCloseBtn').hidden,
             };
         });
         comprovar(
-            `${etiqueta}: «restaura» de la barra torna el reproductor i la barra al seu lloc`,
-            !restaurat.mini && !restaurat.docked && restaurat.aLaFitxa,
+            `${etiqueta}: «restaura» de la barra torna el reproductor i la barra al seu lloc (sense «tanca»)`,
+            !restaurat.mini && !restaurat.docked && restaurat.aLaFitxa && !restaurat.tanca,
             restaurat
         );
     }
+
+    // 9) «Tanca» de la barra tanca la finestra flotant
+    await page.evaluate(() => setMiniPlayerState(true, { trigger: 'test' }));
+    await page.waitForTimeout(500);
+    await page.click('#playerCloseBtn');
+    await page.waitForTimeout(600);
+    const tancat = await page.evaluate(() => ({
+        mini: isMiniPlayerActive(),
+        iframe: Boolean(document.querySelector('#videoPlayer iframe')),
+        barra: document.getElementById('playerExternalControls').hidden,
+    }));
+    comprovar(
+        `${etiqueta}: «tanca» de la barra tanca la finestra flotant i amaga la barra`,
+        !tancat.mini && !tancat.iframe && tancat.barra,
+        tancat
+    );
 
     await context.close();
 }

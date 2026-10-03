@@ -1126,7 +1126,7 @@
         }
         if (pick('[data-pt-mix]')) return startMix();
         if (pick('[data-pt-continue]')) {
-            window.document.querySelector('#videoPlayer .expand-mini-player-btn')?.click();
+            if (typeof expandMiniPlayer === 'function') expandMiniPlayer();
             return undefined;
         }
         if (pick('[data-pt-toggle]')) {

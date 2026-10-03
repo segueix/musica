@@ -2576,12 +2576,6 @@ body .follow-btn-pill.is-followed:hover {
    Ara només hi ha un mànec de 36 px a dalt per arrossegar (styles.css, `.drag-handle-container`); la resta del vídeo
    rep tots els tocs. */
 
-/* La capa de botons (restaurar/tancar) mai captura clics fora dels seus botons */
-#videoPlayer.mini-player-active .mini-player-controls-overlay,
-#videoPlayer.mini-player-active .mini-player-controls-overlay.visible {
-    pointer-events: none;
-}
-
 /* ---------- Nom de la ràdio: estil/s fixos i «+» per sumar-ne un altre ---------- */
 .mq-source.mq-styles {
     display: flex;
@@ -4282,42 +4276,6 @@ body #watchPage .channel-name-row .follow-btn-pill {
     line-height: 1;
 }
 
-body #watchPage .video-metadata-bar .btn-heart-song-action {
-    display: inline-grid;
-    place-items: center;
-    flex: 0 0 auto;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    border: 1px solid var(--pt-line);
-    background: var(--pt-surface-2);
-    color: var(--pt-text);
-    box-shadow: none;
-}
-
-body #watchPage .video-metadata-bar .btn-heart-song-action svg {
-    width: 24px;
-    height: 24px;
-    stroke: currentColor;
-    stroke-width: 2.2;
-}
-
-body #watchPage .video-metadata-bar .btn-heart-song-action:is(:hover, :focus-visible) {
-    border-color: var(--pt-accent);
-    background: var(--pt-surface-3);
-    color: var(--pt-accent);
-}
-
-body #watchPage .video-metadata-bar .btn-heart-song-action:is(.is-liked, .liked) {
-    border-color: var(--pt-accent);
-    color: var(--pt-accent);
-}
-
-body #watchPage .video-metadata-bar .btn-heart-song-action:is(.is-liked, .liked) svg {
-    fill: var(--pt-accent);
-    stroke: var(--pt-accent);
-}
-
 @media (max-width: 768px) {
     /* Capçalera compacta: avatar + (nom · Segueix), sense cap acció flotant a la dreta. */
     body #watchPage .channel-header-row {
@@ -4407,13 +4365,6 @@ body #watchPage .video-metadata-bar .btn-heart-song-action:is(.is-liked, .liked)
         display: contents;
     }
 
-    body #watchPage .video-metadata-bar .btn-heart-song-action {
-        order: -100;
-        width: 48px;
-        height: 48px;
-        flex: 0 0 48px;
-    }
-
     body #watchPage .video-metadata-bar #playlistBtn {
         order: -90;
     }
@@ -4438,7 +4389,7 @@ body #watchPage .video-metadata-bar .btn-heart-song-action:is(.is-liked, .liked)
         order: 20;
     }
 
-    body #watchPage .video-metadata-bar :is(.btn-round-icon, .btn-heart-song-action) {
+    body #watchPage .video-metadata-bar .btn-round-icon {
         flex-shrink: 0;
     }
 
@@ -4727,9 +4678,10 @@ body.drive-mode .dm-info[hidden] {
 /* ---------- Controls sota el reproductor (#playerExternalControls) ----------
    Anterior · play/pausa · següent · finestra flotant · m'agrada, fora de l'iframe de YouTube (no s'hi posa res al
    damunt). Mateix estil que els botons d'icona de l'app: rodons, superfície 2, vora fina, llima en passar-hi per
-   sobre o en estat actiu; el play/pausa és el botó principal, en llima. Amb la finestra flotant ancorada a baix del
-   mòbil (≤ 768 px), app.js els passa a <body> amb `.is-docked`: una barra petita enganxada sota la finestra, que
-   puja per deixar-hi lloc. */
+   sobre o en estat actiu; el play/pausa és el botó principal, en llima. Amb la finestra flotant, app.js els passa a
+   <body> amb `.is-docked` (i «tanca» apareix): al mòbil (≤ 768 px), una barra petita ancorada a baix sota la finestra,
+   que puja per deixar-hi lloc; a l'escriptori (`.is-floating`), una barra que segueix la finestra (a sota, o a sobre
+   amb `.is-above` si no hi cap). Restaurar i tancar no van damunt del vídeo: YouTube no ho permet. */
 :root {
     --pec-dock-h: 52px;
 }
@@ -4873,6 +4825,38 @@ body.drive-mode .dm-info[hidden] {
 .player-external-controls.is-docked .player-external-btn {
     width: 40px;
     height: 40px;
+}
+
+.player-external-controls .player-external-btn[hidden] {
+    display: none;
+}
+
+/* Escriptori: segueix la finestra flotant (app.js hi posa left, top i width) */
+.player-external-controls.is-docked.is-floating {
+    right: auto;
+    bottom: auto;
+    gap: 8px;
+    padding: 0 8px;
+    border: 1px solid var(--pt-line);
+    border-top: 0;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+body:has(#playerExternalControls.is-floating:not(.is-above):not([hidden])) #videoPlayer.mini-player-active {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+body:has(#playerExternalControls.is-floating.is-above:not([hidden])) #videoPlayer.mini-player-active {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.player-external-controls.is-docked.is-floating.is-above {
+    border-top: 1px solid var(--pt-line);
+    border-bottom: 0;
+    border-radius: 12px 12px 0 0;
 }
 
 .player-external-controls.is-docked .player-external-btn .pec-icon {
