@@ -561,8 +561,8 @@ afegeix('Gertrudis', [
     'Rúa da Raiña',
     'Rua de Raiña',
 ]);
-// Mariona Escoda — anglès: versió de «Maniac» de Michael Sembello.
-afegeix(['Mariona Escoda', 'Mariona Escoda - Topic'], ['Maniac']);
+// Mariona Escoda — peces amb títol anglès del repertori acústic; «Juno» s'exclou explícitament a petició de l'usuari.
+afegeix(['Mariona Escoda', 'Mariona Escoda - Topic'], ['Juno', "Everybody's changing", 'Maniac']);
 // Daveu — «Mi broda» exclosa a petició de l'usuari; el canal Tema es diu DAVEU.
 afegeix(['DAVEU', 'DAVEU))'], ['MI BRODA']);
 
