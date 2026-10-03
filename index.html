@@ -281,6 +281,13 @@
                     <div id="videoPlaceholder" class="video-placeholder hidden">
                         <img id="placeholderImage" src="" alt="" decoding="async">
                     </div>
+                    <div class="player-external-controls" id="playerExternalControls" role="group" aria-label="Controls de reproducció" hidden>
+                    <button type="button" class="player-external-btn" id="playerPrevBtn" aria-label="Cançó anterior" title="Cançó anterior">⏮</button>
+                    <button type="button" class="player-external-btn player-external-btn--main" id="playerPlayPauseBtn" aria-label="Reprodueix" title="Reprodueix">▶</button>
+                    <button type="button" class="player-external-btn" id="playerNextBtn" aria-label="Cançó següent" title="Cançó següent">⏭</button>
+                    <button type="button" class="player-external-btn" id="playerMiniBtn" aria-label="Posa el reproductor flotant" title="Reproductor flotant">▣</button>
+                    <button type="button" class="player-external-btn player-external-btn--heart" id="playerLikeBtn" aria-label="M'agrada" title="M'agrada" aria-pressed="false">♡</button>
+                    </div>
                     <div class="video-info">
                         <h1 class="video-title" id="videoTitle"></h1>
 
@@ -383,13 +390,6 @@
     </main>
 
     <div class="video-player" id="videoPlayer"></div>
-    <div class="player-external-controls" id="playerExternalControls" role="group" aria-label="Controls de reproducció" hidden>
-        <button type="button" class="player-external-btn" id="playerPrevBtn" aria-label="Cançó anterior" title="Cançó anterior">⏮</button>
-        <button type="button" class="player-external-btn player-external-btn--main" id="playerPlayPauseBtn" aria-label="Reprodueix" title="Reprodueix">▶</button>
-        <button type="button" class="player-external-btn" id="playerNextBtn" aria-label="Cançó següent" title="Cançó següent">⏭</button>
-        <button type="button" class="player-external-btn" id="playerMiniBtn" aria-label="Posa el reproductor flotant" title="Reproductor flotant">▣</button>
-        <button type="button" class="player-external-btn player-external-btn--heart" id="playerLikeBtn" aria-label="M'agrada" title="M'agrada" aria-pressed="false">♡</button>
-    </div>
 
     <div id="historyPage" class="main-content hidden">
         <h1 class="page-title">Historial</h1>
