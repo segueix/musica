@@ -25,6 +25,15 @@ describe('navegació lateral plegable', () => {
         expect(styles).not.toMatch(/sidebar-pin-toggle|sidebar-peek/);
     });
 
+    it('el botó és un requadre blanc de vora fina amb cantonades arrodonides, com el de GitHub', () => {
+        const block = portada.slice(portada.indexOf('.sidebar-toggle {\n        grid-area: toggle;'));
+        const rule = block.slice(0, block.indexOf('}'));
+        expect(rule).toMatch(/border: 1px solid rgba\(244, 240, 232, 0\.55\)/);
+        expect(rule).toMatch(/border-radius: 8px/);
+        expect(rule).toMatch(/width: 40px/);
+        expect(portada).toMatch(/body\.sidebar-collapsed \.sidebar-toggle \{\s*border-color: var\(--pt-accent\)/);
+    });
+
     it('plegada, l’espai de la barra és 0 i tot el que en depèn s’hi adapta', () => {
         expect(portada).toMatch(/@property --pt-side-w \{[^}]*syntax: '<length>'[^}]*inherits: true/);
         expect(portada).toMatch(/--pt-side-w: var\(--pt-side-open\)/);
