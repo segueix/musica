@@ -22,6 +22,15 @@
 
 **Fitxers Afectats:**
 
+## [2026-10-03] - Fitxa de la cançó (escriptori): botons de sota tallats i cua de la dreta més curta que la columna de l'esquerra
+**Símptoma:** a escriptori, la fila de botons de sota el títol (afegir a llista, compartir, canal…) quedava tallada al peu de la finestra, i la finestra de la ràdio de la dreta acabava molt més amunt que aquests botons.
+
+**Causa Arrel:** (1) La barra de controls `#playerExternalControls` es va afegir dins `.watch-main` com una fila nova de la graella (reproductor, **controls**, títol, canal), però la cua `#playlistQueueContainer` continuava amb `grid-row: 1 / span 3` i, amb `contain: size`, només arribava fins al títol: acabava uns 170 px abans que el canal. (2) Entre línies s'havien anat sumant uns 66 px de marges: 16 + 12 del reproductor als controls, 16 + 4 fins al títol, 8 de farciment del canal i 16 + 16 fins als botons.
+
+**Solució Implementada:** `grid-row: 1 / span 4` (si els controls són a `<body>` amb la finestra flotant, la 4a fila és buida i la cua hi arriba igual) i `grid-column: 1` per als controls (`styles.css`). Bloc a `portada.css` (≥ 769 px) amb els marges mínims: reproductor sense marge inferior, controls amb `10px auto 6px`, títol, canal i botons enganxats. A 1251×730 la columna de l'esquerra baixa 67 px i la cua acaba a 853 px, a ran dels botons (845 + 8 de farciment). `verificar-play-pausa.js` ho comprova a escriptori; amb el CSS anterior la cua acabava a 751 i els botons a 914.
+
+**Fitxers Afectats:** `css/styles.css`, `css/portada.css`, `tests/portada-assets.test.js`, `tests/browser/verificar-play-pausa.js`.
+
 ## [2026-10-03] - El botó de pausa de sota el reproductor no es convertia en play ni tornava a fer sonar
 **Símptoma:** en prémer la pausa del botó gran de sota el reproductor, el vídeo s'aturava però el botó continuava mostrant la pausa; tornar-lo a prémer no feia sonar la cançó.
 

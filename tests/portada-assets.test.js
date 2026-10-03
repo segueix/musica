@@ -201,3 +201,22 @@ describe('«La teva ràdio»: caràtules grans i centrades a la versió web', ()
         expect(block).toMatch(/@supports \(width: 1cqw\) \{\s*@media \(min-width: 769px\)/);
     });
 });
+
+describe('fitxa de la cançó: cua alineada amb els botons i línies enganxades', () => {
+    const styles = read('css/styles.css');
+    const block = css.slice(
+        css.indexOf('/* ---------- Fitxa de la cançó (tauleta i escriptori): menys espai entre línies')
+    );
+
+    it('la cua de la dreta ocupa les 4 files de l’esquerra (reproductor, controls, títol i canal)', () => {
+        expect(styles).toMatch(/watch-main > \.player-external-controls,/);
+        expect(styles).toMatch(/watch-main > #playlistQueueContainer \{[^}]*grid-row: 1 \/ span 4;/);
+    });
+
+    it('els marges entre línies són mínims a partir de 769 px', () => {
+        expect(block).toMatch(/@media \(min-width: 769px\) \{/);
+        expect(block).toMatch(/\.player-external-controls:not\(\.is-docked\) \{\s*margin: 10px auto 6px;/);
+        expect(block).toMatch(/#watchPage \.video-placeholder \{\s*margin-bottom: 0;/);
+        expect(block).toMatch(/\.video-metadata-bar \{\s*padding-top: 0;/);
+    });
+});

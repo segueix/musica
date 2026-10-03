@@ -5086,3 +5086,32 @@ body:has(#playerExternalControls.is-floating.is-above:not([hidden])) #videoPlaye
     stroke-linecap: round;
     stroke-linejoin: round;
 }
+
+/* ---------- Fitxa de la cançó (tauleta i escriptori): menys espai entre línies ----------
+   Entre el reproductor, els controls, el títol, el canal i la fila de botons s'havien anat sumant uns 66 px de marges
+   (16 + 12 del reproductor als controls, 16 + 4 fins al títol, 8 de farciment del canal, 16 + 16 fins als botons) i en
+   una finestra de pocs píxels d'alçada la fila de botons (afegir a llista, compartir, canal…) quedava tallada. Ara
+   cada línia queda enganxada a la següent amb un espai mínim. El mòbil té la seva pròpia compactació. */
+@media (min-width: 769px) {
+    #watchPage .video-placeholder {
+        margin-bottom: 0;
+    }
+
+    .player-external-controls:not(.is-docked) {
+        margin: 10px auto 6px;
+    }
+
+    #watchPage .video-info {
+        margin-top: 0;
+    }
+
+    #watchPage .video-info-modern {
+        padding-top: 0;
+        padding-bottom: 8px;
+        gap: 8px;
+    }
+
+    body #watchPage .video-info-modern .video-metadata-bar {
+        padding-top: 0;
+    }
+}
