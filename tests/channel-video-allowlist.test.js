@@ -32,6 +32,24 @@ describe('llista blanca de vídeos per canal', () => {
     expect(isChannelVideoAllowed(rules, 'UCaltre', 'Qualsevol vídeo')).toBe(true);
   });
 
+  it('pot fixar un vídeo concret com a font de la icona del canal', () => {
+    const fakeFs = {
+      readFileSync() {
+        return JSON.stringify({
+          channels: {
+            UCsubliminal: {
+              allowedTitles: ['Subliminal - PIKIN', 'Subliminal - Presumit'],
+              avatarFromAllowedTitle: 'Subliminal - PIKIN'
+            }
+          }
+        });
+      }
+    };
+    const rules = loadChannelVideoAllowlist('/fake.json', fakeFs);
+    expect(rules.get('UCsubliminal')?.avatarFromAllowedTitle).toBe('subliminal pikin');
+    expect(rules.get('UCsubliminal')?.avatarFromFirstAllowedVideo).toBe(false);
+  });
+
   it('pot acceptar només vídeos que continguin el nom de l artista', () => {
     const fakeFs = {
       readFileSync() {
