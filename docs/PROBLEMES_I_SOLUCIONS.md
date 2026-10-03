@@ -179,7 +179,9 @@
 
 **Fitxers Afectats:** `scripts/lib/canal_tema.js`, `scripts/update_music_feed.js`, `data/artistes-musica.json`, `.github/workflows/actualitzar-feed-musica.yml`, `tests/canal-tema.test.js`, `tests/song-title.test.js`.
 
-## [2026-10-02] - Finestra flotant del sistema: la cançó següent no sonava amb Chrome minimitzat
+## [2026-10-02] - Finestra flotant del sistema: la cançó següent no sonava amb Chrome minimitzat — SUBSTITUÏT
+**Estat:** aquesta solució històrica de reproducció amb Chrome minimitzat ja no és vigent; des del 2026-10-04 la pestanya amagada pausa YouTube.
+
 **Símptoma:** al Chromebook, amb la finestra flotant del sistema oberta i la de Segueix Música minimitzada, en acabar una cançó la finestra flotant mostrava la següent però no sonava fins que es tornava a obrir la finestra de Chrome.
 
 **Causa Arrel:** a cada canvi de cançó, `loadVideoInSequence()` recreava l'iframe de YouTube (`prepareWatchPlaybackPreview()` buida `#videoPlayer`). Chrome no deixa engegar el so d'un reproductor nou en una pàgina que no es veu. Només la pantalla completa de les TV reutilitzava el reproductor.
@@ -1296,7 +1298,9 @@ Hi havia dos problemes independents:
 **Fitxers afectats:** `data/hidden-videos.json`, `data/revisio-idiomes.json`, `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md`, `docs/PROBLEMES_I_SOLUCIONS.md`.
 
 
-## [2026-10-03] - La finestra mini de Chrome s'aturava en navegar per Segueix Música
+## [2026-10-03] - La finestra mini de Chrome s'aturava en navegar per Segueix Música — SUBSTITUÏT
+
+**Estat:** aquesta solució es va revertir l'endemà per no facilitar reproducció de YouTube en segon pla. La regla vigent és la secció següent.
 
 **Símptoma:** amb la finestra flotant del sistema (Document Picture-in-Picture de Chrome/Edge) oberta, la música podia aturar-se o perdre la ràdio/llista en anar a Inici, Historial, La teva música, Artistes o un perfil, tot i que la finestra mini continuava oberta.
 
@@ -1307,3 +1311,20 @@ Hi havia dos problemes independents:
 **Proves:** `tests/player-controls.test.js` comprova les tres proteccions de navegació i `tests/browser/verificar-finestra-sistema.js` navega a Historial amb la finestra del sistema oberta i verifica que l'iframe, la reproducció, la cua i la cançó actual es mantenen.
 
 **Fitxers Afectats:** `js/app.js`, `tests/player-controls.test.js`, `tests/browser/verificar-finestra-sistema.js`, `sw.js`, `docs/PROBLEMES_I_SOLUCIONS.md`.
+
+
+## [2026-10-04] - YouTube només reprodueix mentre el reproductor és visible
+
+**Objectiu:** mantenir la navegació còmoda dins de Segueix Música sense crear una funció de reproducció de YouTube en segon pla.
+
+**Solució Implementada:**
+- quan la pestanya queda amagada o Chrome es minimitza (`document.visibilityState === 'hidden'`), s'envia `pauseVideo` al reproductor i es tanca Document Picture-in-Picture;
+- Media Session no pot reprendre, anar a anterior/següent ni obrir la finestra del sistema mentre la pestanya és amagada;
+- `handlePlaylistVideoEnded()` no avança automàticament la cua en segon pla i `loadVideoInSequence()` desactiva l'autoplay si la pàgina no és visible;
+- `swapLivePlayerVideo()` ja no s'utilitza per sostenir àudio en segon pla: queda limitat a la pantalla completa visible;
+- en navegar per Inici, Historial, La teva música, Artistes o perfils només es conserva la reproducció quan està activa la finestreta pròpia de Segueix Música, on el reproductor de YouTube continua visible;
+- la finestra del sistema es tanca si una navegació interna faria desaparèixer el reproductor visible.
+
+**Proves:** `tests/player-controls.test.js`, `tests/system-player.test.js` i `tests/browser/verificar-finestra-sistema.js`.
+
+**Fitxers Afectats:** `js/app.js`, `js/features/system-player.js`, `tests/player-controls.test.js`, `tests/system-player.test.js`, `tests/browser/verificar-finestra-sistema.js`, `CLAUDE.md`, `sw.js`, `docs/PROBLEMES_I_SOLUCIONS.md`.

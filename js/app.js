@@ -3096,6 +3096,12 @@ async function bootstrapApp() {
     document.addEventListener('visibilitychange', () => {
         if (document.visibilityState === 'hidden') {
             saveViewState();
+            // Política de YouTube: no facilitem reproducció en segon pla quan la pestanya
+            // queda amagada o Chrome es minimitza. L'usuari pot reprendre-la en tornar.
+            if (isMainPlayerPlaying()) {
+                pauseMainPlayer();
+            }
+            window.SegueixApp?.features?.systemPlayer?.closePip?.();
         }
     });
     let saveViewStateTimer = null;
@@ -8955,16 +8961,13 @@ function loadVideoInSequence({ autoPlay = true } = {}) {
     isPlaylistMode = true;
     // En TV la vista queda ancorada a dalt —mai flotant— fins que el vídeo nou arrenca.
     focusTVPlayerViewport();
-    // Si s'està mirant en pantalla completa, el vídeo següent hi continua: el reproductor
-    // no es recrea, se li demana el vídeo nou (veure swapLivePlayerVideo).
-    // També amb la pàgina amagada o la finestra flotant del sistema oberta: un reproductor nou en una finestra
-    // minimitzada no comença a sonar fins que es torna a veure (Chrome no deixa engegar-ne el so).
-    const keepLivePlayer =
-        video.source !== 'static' && (isTVPlaybackMode() || isPlaybackInBackground()) && canSwapLivePlayerVideo();
+    // En TV a pantalla completa el vídeo següent continua dins del mateix reproductor visible.
+    // No fem aquest encadenat per mantenir àudio quan la pestanya és amagada o Chrome està minimitzat.
+    const keepLivePlayer = video.source !== 'static' && isTVPlaybackMode() && canSwapLivePlayerVideo();
     lastTVAdvanceAt = Date.now();
-    // Per defecte les cues continuen amb autoplay. Algunes entrades (TV de categoria
-    // i Segueix TV des del xip) poden demanar que només el primer vídeo quedi en pausa.
-    isAutoPlayNavigating = autoPlay;
+    // Per defecte les cues continuen amb autoplay només mentre la pàgina és visible.
+    // Si queda amagada/minimitzada, qualsevol canvi de cua es prepara en pausa.
+    isAutoPlayNavigating = Boolean(autoPlay && document.visibilityState !== 'hidden');
     updatePlaylistModeBadge();
     syncQueueNextOverlay();
     isPlaylistNavigation = true;
@@ -8982,6 +8985,11 @@ function loadVideoInSequence({ autoPlay = true } = {}) {
 }
 
 function handlePlaylistVideoEnded() {
+    // No avancem automàticament la cua amb la pestanya amagada: evita reactivar
+    // reproducció en segon pla després d'un ended que arribi tard.
+    if (document.visibilityState === 'hidden') {
+        return;
+    }
     if (!isPlaylistMode || activePlaylistQueue.length === 0) {
         return;
     }
@@ -10069,28 +10077,17 @@ function getLiveYouTubeIframe() {
     return iframe;
 }
 
-// La pàgina no es veu (finestra minimitzada, una altra pestanya) o la música es controla des de la finestra
-// flotant del sistema (system-player.js).
-function isPlaybackInBackground() {
-    if (document.visibilityState === 'hidden') {
-        return true;
-    }
-    return Boolean(window.SegueixApp?.features?.systemPlayer?.isPipOpen?.());
-}
-
-// Tant la finestreta flotant pròpia com la finestra mini de Chrome/Edge són reproductors persistents:
-// navegar per l'app no ha d'aturar el vídeo, buidar la cua ni perdre l'estat de la cançó que sona.
+// Només la finestreta pròpia de Segueix Música és persistent durant la navegació interna:
+// el reproductor de YouTube continua visible a la pàgina. La pestanya amagada/minimitzada
+// i la finestra del sistema no s'utilitzen per mantenir àudio en segon pla.
 function isPersistentPlayerActive() {
-    return isMiniPlayerActive() || isPlaybackInBackground();
+    return isMiniPlayerActive();
 }
 
-// Només s'encadena en calent quan cal de debò: en pantalla completa, o en segon pla (un iframe nou no
-// sonaria fins que es tornés a veure la pàgina). Fora d'aquests casos, el camí normal ja va bé i mostra
-// la caràtula del vídeo nou mentre carrega.
+// L'encadenat en calent només es permet en pantalla completa, on el reproductor continua
+// visible. No s'utilitza per forçar reproducció amb la pestanya amagada o Chrome minimitzat.
 function canSwapLivePlayerVideo() {
-    return Boolean(
-        (isPlayerFullscreen() || isPlaybackInBackground()) && getLiveYouTubeIframe() && hasAcceptedYouTubeCookies()
-    );
+    return Boolean(isPlayerFullscreen() && getLiveYouTubeIframe() && hasAcceptedYouTubeCookies());
 }
 
 function cancelLiveSwapFallback() {
@@ -11066,6 +11063,8 @@ function handlePlayerVisibilityOnNavigation() {
         videoPlayer.style.display = 'block';
         return;
     }
+    // La finestra del sistema no manté reproducció fora de la vista del reproductor de YouTube.
+    window.SegueixApp?.features?.systemPlayer?.closePip?.();
     stopVideoPlayback();
 }
 

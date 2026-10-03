@@ -92,13 +92,20 @@ describe('ordres de play/pausa robustes', () => {
     });
 });
 
-describe('finestra mini de Chrome/Edge persistent', () => {
-    it('navegar per l’app no atura el reproductor ni buida la cua mentre la finestra del sistema és oberta', () => {
-        expect(fn(app, 'isPlaybackInBackground')).toContain('systemPlayer?.isPipOpen?.()');
-        expect(fn(app, 'isPersistentPlayerActive')).toContain('isMiniPlayerActive() || isPlaybackInBackground()');
-        expect(fn(app, 'handlePlayerVisibilityOnNavigation')).toContain('isPersistentPlayerActive()');
+describe('reproducció visible i sense segon pla', () => {
+    it('només la finestreta interna visible és persistent durant la navegació', () => {
+        expect(fn(app, 'isPersistentPlayerActive')).toContain('return isMiniPlayerActive();');
+        expect(fn(app, 'canSwapLivePlayerVideo')).toContain('isPlayerFullscreen()');
+        expect(fn(app, 'canSwapLivePlayerVideo')).not.toContain('visibilityState');
+        expect(fn(app, 'handlePlayerVisibilityOnNavigation')).toContain('systemPlayer?.closePip?.()');
         expect(fn(app, 'exitPlaylistModeForNavigation')).toContain('isPersistentPlayerActive()');
         expect(app).toContain('isMiniPlayerActive: isPersistentPlayerActive');
+    });
+
+    it('quan la pestanya queda amagada es pausa YouTube, es tanca la finestra del sistema i no avança sola', () => {
+        expect(app).toMatch(/visibilitychange[\s\S]*?visibilityState === 'hidden'[\s\S]*?pauseMainPlayer\(\)[\s\S]*?systemPlayer\?\.closePip\?\.\(\)/);
+        expect(fn(app, 'loadVideoInSequence')).toContain("autoPlay && document.visibilityState !== 'hidden'");
+        expect(fn(app, 'handlePlaylistVideoEnded')).toContain("document.visibilityState === 'hidden'");
     });
 });
 
