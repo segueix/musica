@@ -176,6 +176,39 @@ async function proves(browser, width, errors) {
         estructura
     );
 
+    // 1a) Escriptori: la cua de la dreta arriba fins al nivell dels botons de sota i les línies de l'esquerra estan
+    //     enganxades (sense marges de més entre reproductor, controls, títol, canal i botons)
+    if (!mobile) {
+        const alineacio = await page.evaluate(() => {
+            const box = selector => document.querySelector(selector).getBoundingClientRect();
+            const holder = box('#videoPlaceholder');
+            const controls = box('#playerExternalControls');
+            const info = box('.video-info');
+            const channel = box('.channel-info');
+            const actions = box('.video-metadata-bar');
+            const queue = box('#playlistQueueContainer');
+            return {
+                cuaAcaba: Math.round(queue.bottom),
+                botonsAcaben: Math.round(actions.bottom),
+                canalAcaba: Math.round(channel.bottom),
+                holderControls: Math.round(controls.top - holder.bottom),
+                controlsTitol: Math.round(info.top - controls.bottom),
+                canalBotons: Math.round(
+                    actions.top - document.querySelector('.channel-header-row').getBoundingClientRect().bottom
+                ),
+            };
+        });
+        comprovar(
+            `${etiqueta}: la cua de la dreta acaba al nivell dels botons de sota i les línies de l'esquerra estan enganxades`,
+            alineacio.cuaAcaba >= alineacio.botonsAcaben &&
+                alineacio.cuaAcaba <= alineacio.canalAcaba + 1 &&
+                alineacio.holderControls <= 12 &&
+                alineacio.controlsTitol <= 10 &&
+                alineacio.canalBotons <= 10,
+            alineacio
+        );
+    }
+
     // 1b) La ràdio es diu amb una etiqueta dins la línia de data i visualitzacions (no amb una línia pròpia)
     const etiquetaRadio = await page.evaluate(() => {
         const chip = document.getElementById('playlistModeChip');
