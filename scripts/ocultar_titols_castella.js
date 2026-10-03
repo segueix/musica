@@ -596,6 +596,7 @@ afegeix(["VEN'NUS", "Ven'nus"], [
 ]);
 
 afegeix('Sandra Bautista', [
+    'Pandela',
     'Ni so que le pare',
     'Sentada en un meteorito',
     'Desamparada',
