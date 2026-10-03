@@ -2,6 +2,11 @@
   "updatedAt": "2026-10-04",
   "description": "Llista blanca per a canals on Segueix Música només ha d'ingerir vídeos concrets. Admet títols exactes, fragments obligatoris i fragments exclosos.",
   "channels": {
+    "UCKpscwdWlVaMqcA81vLI7OA": {
+      "artist": "La Trinca",
+      "note": "Només fixa la icona: la imatge de l'artista a Segueix Música és la caràtula de «Puja a L'avio». No filtra cap cançó del canal.",
+      "avatarFromAllowedTitle": "Puja a L'avio"
+    },
     "UCz35Q7e_ulwY_uRqg5zDxeQ": {
       "artist": "Subliminal",
       "note": "Canal antic/mixt de Subliminal: només es conserven aquestes sis cançons seleccionades manualment. La icona del grup surt de la caràtula de PIKIN.",

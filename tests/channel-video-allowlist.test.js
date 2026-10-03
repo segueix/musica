@@ -77,4 +77,11 @@ describe('llista blanca de vídeos per canal', () => {
     expect(rules.get('UCknockout')?.allowedContentTypes.has('album')).toBe(false);
     expect(rules.get('UCknockout')?.avatarFromFirstAllowedVideo).toBe(true);
   });
+
+  it('La Trinca: la icona és la caràtula de «Puja a L\'avio» i no es filtra cap cançó', () => {
+    const rules = loadChannelVideoAllowlist(new URL('../data/music-channel-video-allowlist.json', import.meta.url).pathname);
+    const rule = rules.get('UCKpscwdWlVaMqcA81vLI7OA');
+    expect(rule?.avatarFromAllowedTitle).toBe(normalizeVideoTitle("Puja a L'avio"));
+    expect(isChannelVideoAllowed(rules, 'UCKpscwdWlVaMqcA81vLI7OA', 'Qualsevol altra cançó')).toBe(true);
+  });
 });
