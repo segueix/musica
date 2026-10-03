@@ -51,6 +51,8 @@ describe('ocultar cançons amb títol en castellà', () => {
         expect(esCastella(song('Sílvia Pérez Cruz', 'Mar de Na Catalina'))).toBe(false);
         expect(esCastella(song('El Pony Pisador', 'Wellerman'))).toBe(true);
         expect(esCastella(song('El Pony Pisador', 'Tot és part de ser un pirata'))).toBe(false);
+        expect(esCastella(song('Mariona Escoda', 'Juno (Acústic en directe)'))).toBe(true);
+        expect(esCastella(song('Mariona Escoda - Topic', "Everybody's changing (Acústic en directe)"))).toBe(true);
         expect(esCastella(song('Mariona Escoda', 'Maniac (Acústic en directe)'))).toBe(true);
         expect(esCastella(song('Mariona Escoda - Topic', 'Maniac'))).toBe(true);
         expect(esCastella(song('Mariona Escoda', 'Et deixo la mà (Acústic en directe)'))).toBe(false);
