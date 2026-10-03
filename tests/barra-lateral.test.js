@@ -30,7 +30,7 @@ describe('navegació lateral plegable', () => {
         const rule = block.slice(0, block.indexOf('}'));
         expect(rule).toMatch(/border: 1px solid rgba\(244, 240, 232, 0\.55\)/);
         expect(rule).toMatch(/border-radius: 8px/);
-        expect(rule).toMatch(/width: 40px/);
+        expect(rule).toMatch(/width: 44px/);
         expect(portada).toMatch(/body\.sidebar-collapsed \.sidebar-toggle \{\s*border-color: var\(--pt-accent\)/);
     });
 

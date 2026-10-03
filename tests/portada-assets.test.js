@@ -185,3 +185,19 @@ describe('PWA: el service worker precacheja els recursos nous', () => {
         expect(sw).toMatch(/const CACHE_VERSION = '[a-z0-9]{12}'/);
     });
 });
+
+describe('«La teva ràdio»: caràtules grans i centrades a la versió web', () => {
+    const block = css.slice(css.indexOf('/* ---------- «La teva ràdio»: caràtules més grans i centrades'));
+
+    it('creixen amb l’ample de la targeta, queden centrades en vertical i el text els reserva lloc', () => {
+        expect(block).toContain('container-type: inline-size');
+        expect(block).toMatch(/--pt-cover: clamp\(110px, 12cqw, 190px\)/);
+        expect(block).toMatch(/\.pt-radio__covers \{\s*top: 50%;[\s\S]*?transform: translateY\(-50%\)/);
+        // 3 caràtules solapades = 2,28 mides; el cos de la targeta reserva aquest espai més la separació de la vora
+        expect(block).toMatch(/padding-right: calc\(var\(--pt-cover\) \* 2\.28 \+ var\(--pt-cover-right\) \+ 28px\)/);
+    });
+
+    it('només a partir de 769 px (al mòbil no canvia res) i amb alternativa si no hi ha unitats de contenidor', () => {
+        expect(block).toMatch(/@supports \(width: 1cqw\) \{\s*@media \(min-width: 769px\)/);
+    });
+});
