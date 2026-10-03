@@ -3065,6 +3065,7 @@ async function bootstrapApp() {
     initElements();
     syncHeaderHeightVar();
     observePlayerLayoutShifts();
+    initExternalPlayerControls();
     // YouTube: no superposem controls propis damunt de l'iframe oficial.
     // La navegació de cua continua disponible fora del reproductor.
     // initQueueNextOverlay();
@@ -10519,6 +10520,63 @@ function isMainPlayerPlaying() {
 
 function toggleMainPlayerPlayback() {
     return isMainPlayerPlaying() ? pauseMainPlayer() : playMainPlayer();
+}
+
+function initExternalPlayerControls() {
+    const bar = document.getElementById('playerExternalControls');
+    const prev = document.getElementById('playerPrevBtn');
+    const toggle = document.getElementById('playerPlayPauseBtn');
+    const next = document.getElementById('playerNextBtn');
+    const mini = document.getElementById('playerMiniBtn');
+    const like = document.getElementById('playerLikeBtn');
+    if (!bar || !prev || !toggle || !next || !mini || !like || !videoPlayer) return;
+
+    const sync = () => {
+        const hasIframe = Boolean(videoPlayer.querySelector('iframe'));
+        const id = String(videoPlayer.dataset.playingVideoId || '');
+        bar.hidden = !hasIframe || !id;
+        const playing = videoPlayer.dataset.playerState === '1' || videoPlayer.dataset.playerState === '3';
+        toggle.textContent = playing ? '⏸' : '▶';
+        toggle.setAttribute('aria-label', playing ? 'Pausa' : 'Reprodueix');
+        toggle.title = playing ? 'Pausa' : 'Reprodueix';
+        prev.disabled = !hasQueuePrevVideo();
+        next.disabled = !hasQueueNextVideo();
+        const miniActive = isMiniPlayerActive();
+        mini.setAttribute('aria-pressed', miniActive ? 'true' : 'false');
+        mini.title = miniActive ? 'Restaura el reproductor' : 'Reproductor flotant';
+        const likes = window.SegueixApp?.features?.likes;
+        const liked = Boolean(id && likes?.isLiked?.(id));
+        like.setAttribute('aria-pressed', liked ? 'true' : 'false');
+        like.textContent = liked ? '♥' : '♡';
+    };
+
+    prev.addEventListener('click', goToPreviousFromOverlay);
+    toggle.addEventListener('click', () => toggleMainPlayerPlayback());
+    next.addEventListener('click', advanceQueueFromOverlay);
+    mini.addEventListener('click', () => setMiniPlayerState(!isMiniPlayerActive(), { trigger: 'external-controls' }));
+    like.addEventListener('click', () => {
+        const id = String(videoPlayer.dataset.playingVideoId || '');
+        const likes = window.SegueixApp?.features?.likes;
+        if (!id || !likes?.toggleLikeVideo) return;
+        let video = { id };
+        try {
+            video =
+                activePlaylistQueue?.find?.(item => String(item?.id) === id) ||
+                currentFeedVideos?.find?.(item => String(item?.id) === id) ||
+                cachedAPIVideos?.find?.(item => String(item?.id) === id) ||
+                video;
+        } catch (error) {}
+        likes.toggleLikeVideo(video);
+        sync();
+    });
+
+    new MutationObserver(sync).observe(videoPlayer, {
+        childList: true,
+        attributes: true,
+        attributeFilter: ['data-playing-video-id', 'data-player-state', 'class'],
+    });
+    window.addEventListener('segueix:music-prefs-changed', sync);
+    sync();
 }
 
 function updatePlayerIframe({ source, videoId, videoUrl, startAt = 0 }) {
