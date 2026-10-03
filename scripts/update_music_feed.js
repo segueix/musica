@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const { classifyMusicContent } = require('./lib/classificar_contingut_musical');
 const { loadContentOverrides, applyContentOverride } = require('./lib/revisio_manual_musical');
-const { loadChannelVideoAllowlist, isChannelVideoAllowed } = require('./lib/filtre_videos_canal');
+const { normalizeVideoTitle, loadChannelVideoAllowlist, isChannelVideoAllowed } = require('./lib/filtre_videos_canal');
 const { parseManualDates, stampOriginalYear } = require('./lib/any_original_musical');
 const catalog = require('./lib/cataleg_musical');
 const { teSubtitolsCastella } = require('./lib/subtitols_castella');
@@ -647,10 +647,19 @@ async function main(){
         musicReason:classification.reason
       };
 
+      const normalizedCandidateTitle = normalizeVideoTitle(candidateTitle);
+      const avatarMatchesSpecificTitle = Boolean(
+        channelVideoRule?.avatarFromAllowedTitle &&
+        normalizedCandidateTitle === channelVideoRule.avatarFromAllowedTitle
+      );
+      const avatarMatchesFirstAllowed = Boolean(
+        channelVideoRule?.avatarFromFirstAllowedVideo &&
+        !channelVideoRule?.avatarFromAllowedTitle
+      );
       if(
         !channelAvatarFromAllowedVideo &&
-        channelVideoRule?.avatarFromFirstAllowedVideo &&
-        base.thumbnail
+        base.thumbnail &&
+        (avatarMatchesSpecificTitle || avatarMatchesFirstAllowed)
       ){
         channel.avatar=base.thumbnail;
         channels[id].avatar=base.thumbnail;
