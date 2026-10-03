@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-03T18:32:01.208Z",
+  "generatedAt": "2026-10-03T19:07:37.616Z",
   "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
   "deepPagesFetched": 0,
   "deepChannelCount": 20,
-  "topicChannelCount": 139,
+  "topicChannelCount": 141,
   "governedChannelCount": 73,
   "topicCoverage": [
     {
@@ -1064,6 +1064,13 @@
       "withClip": 0
     },
     {
+      "id": "UCOXyxBFPQ97GO6PQqiJSvkw",
+      "name": "Dusminguet",
+      "tracks": 78,
+      "selected": 33,
+      "withClip": 0
+    },
+    {
       "id": "UC1n7SLx5qYPP1HzKh-rvyng",
       "name": "Ebri Knight",
       "tracks": 127,
@@ -1341,6 +1348,13 @@
       "name": "La Tour De Carol",
       "tracks": 65,
       "selected": 40,
+      "withClip": 0
+    },
+    {
+      "id": "UC63BTrp525uyzMd-YTMAt_w",
+      "name": "La Troba Kung-Fú",
+      "tracks": 71,
+      "selected": 28,
       "withClip": 0
     },
     {
@@ -1806,26 +1820,26 @@
       "withClip": 11
     }
   ],
-  "indexedChannelCount": 299,
-  "resolvedChannelCount": 299,
-  "feedChannelCount": 299,
-  "rawPublicVideoCount": 7374,
-  "feedVideoCount": 7161,
-  "acceptedMusicCount": 6760,
-  "categoryEligibleVideoCount": 6698,
+  "indexedChannelCount": 301,
+  "resolvedChannelCount": 301,
+  "feedChannelCount": 301,
+  "rawPublicVideoCount": 7222,
+  "feedVideoCount": 7219,
+  "acceptedMusicCount": 6761,
+  "categoryEligibleVideoCount": 6699,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
-    "before": 213,
+    "before": 0,
     "matched": 0,
-    "rejected": 213
+    "rejected": 0
   },
   "contentReviewCount": 408,
   "contentTypeCounts": {
-    "song": 6498,
-    "live_song": 200,
+    "song": 6500,
+    "live_song": 199,
     "album": 62,
-    "other": 431,
-    "review": 183
+    "other": 330,
+    "review": 131
   },
   "unresolvedChannelIds": [],
   "channelsWithoutUploads": [],
