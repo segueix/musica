@@ -3065,7 +3065,9 @@ async function bootstrapApp() {
     initElements();
     syncHeaderHeightVar();
     observePlayerLayoutShifts();
-    initQueueNextOverlay();
+    // YouTube: no superposem controls propis damunt de l'iframe oficial.
+    // La navegació de cua continua disponible fora del reproductor.
+    // initQueueNextOverlay();
     initAppUpdater();
     loadGridLayoutPreference();
     loadWatchGridLayoutPreference();
