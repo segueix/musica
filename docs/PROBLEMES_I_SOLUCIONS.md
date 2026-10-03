@@ -179,7 +179,9 @@
 
 **Fitxers Afectats:** `scripts/lib/canal_tema.js`, `scripts/update_music_feed.js`, `data/artistes-musica.json`, `.github/workflows/actualitzar-feed-musica.yml`, `tests/canal-tema.test.js`, `tests/song-title.test.js`.
 
-## [2026-10-02] - Finestra flotant del sistema: la cançó següent no sonava amb Chrome minimitzat
+## [2026-10-02] - Finestra flotant del sistema: la cançó següent no sonava amb Chrome minimitzat — SUBSTITUÏT
+**Estat:** aquesta solució històrica de reproducció amb Chrome minimitzat ja no és vigent; des del 2026-10-04 la pestanya amagada pausa YouTube.
+
 **Símptoma:** al Chromebook, amb la finestra flotant del sistema oberta i la de Segueix Música minimitzada, en acabar una cançó la finestra flotant mostrava la següent però no sonava fins que es tornava a obrir la finestra de Chrome.
 
 **Causa Arrel:** a cada canvi de cançó, `loadVideoInSequence()` recreava l'iframe de YouTube (`prepareWatchPlaybackPreview()` buida `#videoPlayer`). Chrome no deixa engegar el so d'un reproductor nou en una pàgina que no es veu. Només la pantalla completa de les TV reutilitzava el reproductor.
