@@ -638,6 +638,56 @@ afegeix(['Opció K-95', 'Opcio K-95', 'Opció K-95 - Topic', 'Opcio K-95 - Topic
     'Working Class Hell',
 ]);
 
+// Revisió del 2026-10-03: Dusminguet i La Troba Kung-Fú.
+// Criteri del projecte: només català/occità; també s'exclouen les peces mixtes.
+// Dusminguet: «Gran Dubtà» es conserva (fals positiu de l'accent) i no s'afegeixen els casos sense lletra prou clara.
+afegeix(['Dusminguet', 'Dusminguet - Topic'], [
+    'Africa',
+    'Ai Maria!',
+    'Babilonia',
+    'Carretera del miedo',
+    'Cosa fea',
+    'Cumbia bruja',
+    'Decimero',
+    'La rumba del solterón',
+    'Le cha cha cha',
+    'Le cha cha chá',
+    'Manketú',
+    'Marihuana',
+    'Mi arte',
+    'Nass la garriga',
+    'One Way',
+    'Plegando velas',
+    'Ritmo americano',
+    'San Cristóbal',
+    'San Cristobal',
+    'Siento',
+    'Son del campesino',
+    'Sonajeros',
+    'Sopetón',
+]);
+
+afegeix(['La Troba Kung-Fú', 'La Troba Kung-Fú - Topic'], [
+    'Cariñosa',
+    'Cariñosa',
+    'Cumbia Infierno',
+    'Take Your Time',
+    'Within Human Law',
+    'Y Se Ríe la Muerte',
+    'Y Se Rie La Muerte',
+    'Yo Soy',
+    'María Hernández',
+    'Maria Hernández',
+    'Be Rebel',
+    'La Prima de Riesgo',
+    'Como Acordeón',
+    'Mi Vecina',
+    'Loco & Motora',
+    'Mirame',
+    'Mírame',
+    'Rúmbia',
+]);
+
 function esCastella(video) {
     const regla = REGLES[video.channelTitle];
     if (!regla) return false;
