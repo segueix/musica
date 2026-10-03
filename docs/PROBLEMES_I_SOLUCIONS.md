@@ -22,6 +22,15 @@
 
 **Fitxers Afectats:**
 
+## [2026-10-03] - Restaurar i tancar damunt de la finestra flotant: contra les normes de YouTube
+**Símptoma:** la finestra flotant portava dos botons (restaurar i tancar) i una franja enfosquida a dalt, damunt del vídeo de YouTube. La fila de sota el títol duplicava el m'agrada de la barra de controls.
+
+**Causa Arrel:** les normes de l'API de YouTube (Developer Policies, funcionalitat mínima del reproductor incrustat) no permeten superposicions, marcs ni altres elements visuals al davant de cap part del reproductor, inclosos els seus controls. Els botons eren dins de `#videoPlayer` (`.mini-player-controls-overlay`). Si es treien sense més, a l'escriptori la finestra flotant no es podia restaurar ni tancar, perquè la barra de sota és dins `#watchPage`, que queda amagada.
+
+**Solució Implementada:** fora `.mini-player-controls-overlay` de la plantilla del reproductor, i també `setupMiniPlayerUIControls()`, `showMiniPlayerControls()` i el CSS. La lògica és a `closeMiniPlayer()` i `expandMiniPlayer()` (que també fa servir el «Continua» de la portada). La barra `#playerExternalControls` té «tanca» (`#playerCloseBtn`, només amb la finestra flotant), i el botó de finestra flotant fa de «restaura». A l'escriptori, la barra segueix la finestra (`.is-floating`: observa el `style` de `#videoPlayer`, `transitionend` i `resize`) i `positionMiniPlayerBottomRight()` deixa 52 px a sota. També s'ha tret el cor de la fila de sota el títol (`#likeToggle`): `likes.js` ja tolera que no hi sigui. Encara són damunt del vídeo el mànec d'arrossegar de 36 px (transparent) i la cantonada de redimensionar de l'escriptori: si s'han de treure, arrossegar s'hauria de fer des de la barra.
+
+**Fitxers Afectats:** `index.html`, `js/app.js`, `js/features/portada.js`, `css/styles.css`, `css/portada.css`, `tests/player-controls.test.js`, `tests/botons-unificats.test.js`, `tests/browser/verificar-play-pausa.js`.
+
 ## [2026-10-03] - Controls de sota el reproductor: estil de l'app i barra enganxada a la finestra flotant del mòbil
 **Símptoma:** els controls nous de sota el reproductor (`#playerExternalControls`) eren símbols de text (⏮ ▶ ⏭ ▣ ♡), grans i amb el cor vermell, diferents de la resta de botons de l'app. Amb la finestra flotant ancorada a baix del mòbil no hi havia cap control (la barra és dins `#watchPage`, que s'amaga), i en pausa encara sortien anterior/següent damunt del vídeo. La navegació inferior, a més, tapava 8 px de la finestra flotant.
 

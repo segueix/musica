@@ -3361,52 +3361,6 @@ body.segueix-tv-playback.segueix-tv-active .chips-bar.home-categories.segueix-tv
     touch-action: none;
 }
 
-.close-mini-player-btn {
-    position: absolute;
-    top: 4px;
-    right: 4px;
-    min-width: 44px;
-    min-height: 44px;
-    background: transparent;
-    border: none;
-    color: #ffffff;
-    cursor: pointer;
-    padding: 10px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 2002;
-}
-
-.close-mini-player-btn svg {
-    width: 26px;
-    height: 26px;
-    stroke-width: 3;
-}
-
-.expand-mini-player-btn {
-    position: absolute;
-    top: 4px;
-    left: 4px;
-    min-width: 44px;
-    min-height: 44px;
-    background: transparent;
-    border: none;
-    color: #ffffff;
-    cursor: pointer;
-    padding: 10px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 2002;
-}
-
-.expand-mini-player-btn svg {
-    width: 24px;
-    height: 24px;
-    stroke-width: 2.5;
-}
-
 button:disabled,
 .icon-btn-ghost:disabled {
     opacity: 0.3;
@@ -3415,8 +3369,6 @@ button:disabled,
 }
 
 #videoPlayer:not(.mini-player-active) .drag-handle-container,
-#videoPlayer:not(.mini-player-active) .close-mini-player-btn,
-#videoPlayer:not(.mini-player-active) .expand-mini-player-btn,
 #videoPlayer:not(.mini-player-active) .mini-player-resize-handle {
     display: none;
 }
@@ -3439,23 +3391,9 @@ button:disabled,
         margin: 0 !important;
     }
 
-    /* Ancorada a baix: sense mànec d'arrossegar i amb la barra de dalt (restaurar / tancar) sempre visible, perquè un
-       toc al vídeo és del reproductor de YouTube i no es pot fer servir per mostrar-la. */
+    /* Ancorada a baix: sense mànec d'arrossegar (restaurar i tancar són a la barra de sota, #playerExternalControls) */
     .drag-handle-container {
         display: none;
-    }
-
-    .mini-player-controls-overlay {
-        opacity: 1;
-        transition: opacity 0.3s ease-in-out;
-        pointer-events: none;
-        background: linear-gradient(rgba(0, 0, 0, 0.6), transparent);
-        z-index: 2002;
-    }
-
-    .mini-player-controls-overlay.visible {
-        opacity: 1 !important;
-        pointer-events: auto;
     }
 
     .mini-player-active .video-info-modern,
@@ -6700,25 +6638,6 @@ body {
 }
 
 /* --- Estils per a Escriptori (Mini Player) --- */
-/* Barra de dalt (restaurar / tancar), sobre el mànec d'arrossegar: no enfosqueix el vídeo, que és del reproductor */
-.mini-player-controls-overlay {
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), transparent);
-    pointer-events: none;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    #videoPlayer.mini-player-active:hover .mini-player-controls-overlay {
-        opacity: 1;
-    }
-}
-
-.mini-player-controls-overlay.visible {
-    opacity: 1 !important;
-    pointer-events: auto;
-}
-
 .mini-player-resize-handle {
     position: absolute;
     bottom: 0;

@@ -281,14 +281,16 @@
                     <div id="videoPlaceholder" class="video-placeholder hidden">
                         <img id="placeholderImage" src="" alt="" decoding="async">
                     </div>
-                    <!-- Controls de Segueix Música fora de l'iframe de YouTube. Amb la finestra flotant al mòbil, app.js
-                         (initExternalPlayerControls) els passa a <body> i van petits enganxats sota la finestra. -->
+                    <!-- Controls de Segueix Música fora de l'iframe de YouTube (res no hi va al davant). Amb la finestra
+                         flotant, app.js (initExternalPlayerControls) els passa a <body> i van petits enganxats sota la
+                         finestra, amb «restaura» i «tanca». -->
                     <div class="player-external-controls" id="playerExternalControls" role="group" aria-label="Controls de reproducció" hidden>
                         <button type="button" class="player-external-btn" id="playerPrevBtn" aria-label="Cançó anterior" title="Cançó anterior"><svg class="pec-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 20 9 12l10-8v16Z"/><path d="M5 19V5"/></svg></button>
                         <button type="button" class="player-external-btn player-external-btn--main" id="playerPlayPauseBtn" aria-label="Reprodueix" title="Reprodueix"><svg class="pec-icon pec-icon--play" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path class="pec-fill" d="M7 4.5v15l12.5-7.5L7 4.5Z"/></svg><svg class="pec-icon pec-icon--pause" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect class="pec-fill" x="6" y="4.5" width="4" height="15" rx="1"/><rect class="pec-fill" x="14" y="4.5" width="4" height="15" rx="1"/></svg></button>
                         <button type="button" class="player-external-btn" id="playerNextBtn" aria-label="Cançó següent" title="Cançó següent"><svg class="pec-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 4 10 8-10 8V4Z"/><path d="M19 5v14"/></svg></button>
                         <button type="button" class="player-external-btn player-external-btn--mini" id="playerMiniBtn" aria-label="Posa el reproductor flotant" title="Reproductor flotant" aria-pressed="false"><svg class="pec-icon pec-icon--mini" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 9V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h4"/><rect x="12" y="13" width="10" height="7" rx="2"/></svg><svg class="pec-icon pec-icon--restore" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button>
                         <button type="button" class="player-external-btn player-external-btn--heart" id="playerLikeBtn" aria-label="M'agrada" title="M'agrada" aria-pressed="false"><svg class="pec-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
+                        <button type="button" class="player-external-btn player-external-btn--close" id="playerCloseBtn" aria-label="Tanca el reproductor flotant" title="Tanca" hidden><svg class="pec-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
                     </div>
                     <div class="video-info">
                         <h1 class="video-title" id="videoTitle"></h1>

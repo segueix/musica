@@ -1150,7 +1150,6 @@ let currentFontSize = null;
 let userGridPreference = '4';
 let userWatchGridPreference = '3';
 let isAutoPlayNavigating = false;
-let miniPlayerTimer = null;
 let miniPlayerAutoActivatedByScroll = false;
 const featuredVideoBySection = new Map();
 const customCategorySearchCache = new Map();
@@ -1892,9 +1891,6 @@ function buildWatchChannelInfoHtml(channel, avatar, watchUrl, video) {
                     </a>
                 </div>
                 <div class="action-group">
-                    <button class="btn-heart btn-heart-song-action" id="likeToggle" type="button" aria-label="M'agrada aquesta cançó" aria-pressed="false" title="M'agrada">
-                        <i data-lucide="heart"></i>
-                    </button>
                     <a href="${watchUrl}" target="_blank" rel="noopener noreferrer" class="btn-round-icon btn-comment-youtube--mobile" title="Comenta" aria-label="Comenta">
                         <i data-lucide="message-circle"></i>
                     </a>
@@ -9166,7 +9162,6 @@ function initQueueNextOverlay() {
             const active = document.activeElement;
             if (!active || active.tagName !== 'IFRAME' || !videoPlayer.contains(active)) return;
             if (hasQueueNavigation()) showQueueNextOverlay({ duration: 3000 });
-            if (isMiniPlayerActive()) showMiniPlayerControls();
             setTimeout(() => {
                 try {
                     window.focus();
@@ -10524,6 +10519,9 @@ function toggleMainPlayerPlayback() {
     return isMainPlayerPlaying() ? pauseMainPlayer() : playMainPlayer();
 }
 
+// Alçada de la barra de controls quan va enganxada sota la finestra flotant (portada.css, --pec-dock-h)
+const EXTERNAL_CONTROLS_DOCK_HEIGHT = 52;
+
 function initExternalPlayerControls() {
     const bar = document.getElementById('playerExternalControls');
     const prev = document.getElementById('playerPrevBtn');
@@ -10531,16 +10529,34 @@ function initExternalPlayerControls() {
     const next = document.getElementById('playerNextBtn');
     const mini = document.getElementById('playerMiniBtn');
     const like = document.getElementById('playerLikeBtn');
-    if (!bar || !prev || !toggle || !next || !mini || !like || !videoPlayer) return;
+    const close = document.getElementById('playerCloseBtn');
+    if (!bar || !prev || !toggle || !next || !mini || !like || !close || !videoPlayer) return;
 
-    // Amb la finestra flotant ancorada a baix del mòbil (styles.css, ≤ 768 px), la barra va a <body>, petita i
-    // enganxada sota la finestra (portada.css, «Controls sota el reproductor»). Moure-la no toca l'iframe.
+    // Amb la finestra flotant, la barra va a <body>, petita i enganxada sota la finestra (portada.css, «Controls sota
+    // el reproductor»): al mòbil, ancorada a baix amb la finestra; a l'escriptori, seguint la finestra quan s'arrossega
+    // o es redimensiona (a sobre si no hi cap a sota). Moure-la no toca l'iframe. Res no va damunt del vídeo.
     const home = { parent: bar.parentNode, next: bar.nextSibling };
     const mobileQuery = window.matchMedia('(max-width: 768px)');
-    const place = docked => {
+    const place = (docked, floating) => {
         bar.classList.toggle('is-docked', docked);
+        bar.classList.toggle('is-floating', floating);
         if (docked && bar.parentNode !== document.body) document.body.appendChild(bar);
         if (!docked && bar.parentNode !== home.parent) home.parent.insertBefore(bar, home.next);
+        if (!floating) ['left', 'top', 'width'].forEach(prop => bar.style.removeProperty(prop));
+    };
+    let positionFrame = null;
+    const followPlayer = () => {
+        positionFrame = null;
+        if (!bar.classList.contains('is-floating')) return;
+        const rect = videoPlayer.getBoundingClientRect();
+        const below = rect.bottom + EXTERNAL_CONTROLS_DOCK_HEIGHT <= window.innerHeight;
+        bar.style.left = `${Math.round(rect.left)}px`;
+        bar.style.top = `${Math.round(below ? rect.bottom : rect.top - EXTERNAL_CONTROLS_DOCK_HEIGHT)}px`;
+        bar.style.width = `${Math.round(rect.width)}px`;
+        bar.classList.toggle('is-above', !below);
+    };
+    const scheduleFollow = () => {
+        if (positionFrame === null) positionFrame = requestAnimationFrame(followPlayer);
     };
 
     const sync = () => {
@@ -10554,7 +10570,9 @@ function initExternalPlayerControls() {
         prev.disabled = !hasQueuePrevVideo();
         next.disabled = !hasQueueNextVideo();
         const miniActive = isMiniPlayerActive();
-        place(miniActive && mobileQuery.matches);
+        place(miniActive, miniActive && !mobileQuery.matches);
+        followPlayer();
+        close.hidden = !miniActive;
         mini.setAttribute('aria-pressed', miniActive ? 'true' : 'false');
         mini.title = miniActive ? 'Restaura el reproductor' : 'Reproductor flotant';
         mini.setAttribute('aria-label', miniActive ? 'Restaura el reproductor' : 'Posa el reproductor flotant');
@@ -10567,7 +10585,11 @@ function initExternalPlayerControls() {
     prev.addEventListener('click', goToPreviousFromOverlay);
     toggle.addEventListener('click', () => toggleMainPlayerPlayback());
     next.addEventListener('click', advanceQueueFromOverlay);
-    mini.addEventListener('click', () => setMiniPlayerState(!isMiniPlayerActive(), { trigger: 'external-controls' }));
+    mini.addEventListener('click', () => {
+        if (isMiniPlayerActive()) expandMiniPlayer();
+        else setMiniPlayerState(true, { trigger: 'external-controls' });
+    });
+    close.addEventListener('click', () => closeMiniPlayer());
     like.addEventListener('click', () => {
         const id = String(videoPlayer.dataset.playingVideoId || '');
         const likes = window.SegueixApp?.features?.likes;
@@ -10589,6 +10611,10 @@ function initExternalPlayerControls() {
         attributes: true,
         attributeFilter: ['data-playing-video-id', 'data-player-state', 'class'],
     });
+    // Arrossegar i redimensionar la finestra canvien el seu `style`; en acabar hi ha una transició de 0,2 s
+    new MutationObserver(scheduleFollow).observe(videoPlayer, { attributes: true, attributeFilter: ['style'] });
+    videoPlayer.addEventListener('transitionend', scheduleFollow);
+    window.addEventListener('resize', scheduleFollow);
     window.addEventListener('segueix:music-prefs-changed', sync);
     mobileQuery.addEventListener?.('change', sync);
     sync();
@@ -10634,21 +10660,6 @@ function updatePlayerIframeLegacyImpl({ source, videoId, videoUrl, startAt = 0 }
         <div class="drag-handle-container" aria-hidden="true">
             <div class="drag-surface" style="position:absolute; inset:0; cursor:grab;"></div>
         </div>
-        <div class="mini-player-controls-overlay" style="
-            position: absolute; inset: 0 0 auto 0; height: 56px; z-index: 2002; pointer-events: none;
-            display: flex; justify-content: space-between; padding: 8px;
-            transition: opacity 0.3s ease;
-        ">
-            <button class="expand-mini-player-btn" type="button" aria-label="Restaurar" style="pointer-events: auto; background: none; border: none; color: white;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M8 12H2.5M5 9.5 2.5 12 5 14.5"></path><path d="M16 12h5.5M19 9.5l2.5 2.5-2.5 2.5"></path>
-                    <path d="M12 8V2.5M9.5 5 12 2.5 14.5 5"></path><path d="M12 16v5.5M9.5 19l2.5 2.5 2.5-2.5"></path>
-                </svg>
-            </button>
-            <button class="close-mini-player-btn" type="button" aria-label="Tancar" style="pointer-events: auto; background: none; border: none; color: white;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"></path></svg>
-            </button>
-        </div>
         <div class="video-embed-wrap" style="position: absolute; inset: 0; z-index: 2000;">
             <iframe
                 id="catube-player"
@@ -10666,7 +10677,6 @@ function updatePlayerIframeLegacyImpl({ source, videoId, videoUrl, startAt = 0 }
         setupYouTubeIframeMessaging(newIframe);
     }
     setupDragHandle();
-    setupMiniPlayerUIControls();
     refreshIcons(videoPlayer);
     setupVideoCardActionButtons();
 }
@@ -10796,51 +10806,6 @@ function makeResizable(element, handle) {
     handle.addEventListener('mousedown', onMouseDown);
 }
 
-function setupMiniPlayerUIControls() {
-    if (!videoPlayer) {
-        return;
-    }
-    const overlay = videoPlayer.querySelector('.mini-player-controls-overlay');
-    if (!overlay) {
-        return;
-    }
-
-    if (videoPlayer._miniPlayerUIHandlers) {
-        videoPlayer.removeEventListener('touchstart', videoPlayer._miniPlayerUIHandlers.onInteraction);
-        videoPlayer.removeEventListener('mousemove', videoPlayer._miniPlayerUIHandlers.onInteraction);
-        videoPlayer.removeEventListener('mouseenter', videoPlayer._miniPlayerUIHandlers.onInteraction);
-        videoPlayer.removeEventListener('mouseleave', videoPlayer._miniPlayerUIHandlers.onLeave);
-    }
-
-    const showControls = () => {
-        showMiniPlayerControls(overlay);
-    };
-
-    videoPlayer._miniPlayerUIHandlers = {
-        onInteraction: showControls,
-        onLeave: () => {},
-    };
-
-    videoPlayer.addEventListener('touchstart', showControls, { passive: true });
-    videoPlayer.addEventListener('mouseenter', showControls);
-    videoPlayer.addEventListener('mousemove', showControls);
-    showControls();
-}
-
-function showMiniPlayerControls(overlayElement) {
-    const overlay = overlayElement || videoPlayer?.querySelector('.mini-player-controls-overlay');
-    if (!overlay) {
-        return;
-    }
-
-    overlay.classList.add('visible');
-
-    clearTimeout(miniPlayerTimer);
-    miniPlayerTimer = setTimeout(() => {
-        overlay.classList.remove('visible');
-    }, 3000);
-}
-
 function setupDragHandle() {
     const handle = videoPlayer?.querySelector('.drag-surface');
     if (!handle) {
@@ -10856,99 +10821,55 @@ function setupDragHandle() {
             delete resizeHandle._resizeHandlers;
         }
     }
+}
 
-    const closeButton = videoPlayer.querySelector('.close-mini-player-btn');
-    const expandButton = videoPlayer.querySelector('.expand-mini-player-btn');
-    if (!closeButton) {
-        return;
-    }
+// Tancar i restaurar la finestra flotant. Abans eren dos botons damunt del vídeo: les normes de YouTube no permeten
+// res al davant del reproductor, i ara són a la barra de sota (#playerExternalControls, initExternalPlayerControls).
+function closeMiniPlayer() {
+    const isWatchPageVisible = watchPage && !watchPage.classList.contains('hidden');
 
-    const miniPlayerControls = [closeButton, expandButton].filter(Boolean);
+    if (isWatchPageVisible) {
+        if (videoPlayer) {
+            videoPlayer.innerHTML = '';
+            videoPlayer.style.display = 'none';
+            videoPlayer.classList.remove('mini-player-active');
+            videoPlayer.style.top = '';
+            videoPlayer.style.left = '';
+            videoPlayer.style.width = '';
+            videoPlayer.style.height = '';
+        }
 
-    if (closeButton._closeHandlers) {
-        closeButton.removeEventListener('click', closeButton._closeHandlers.onClose);
-        closeButton.removeEventListener('mousedown', closeButton._closeHandlers.stopPropagation);
-        closeButton.removeEventListener('touchstart', closeButton._closeHandlers.stopPropagation);
-    }
-
-    if (expandButton?._expandHandlers) {
-        expandButton.removeEventListener('click', expandButton._expandHandlers.onExpand);
-        expandButton.removeEventListener('mousedown', expandButton._expandHandlers.stopPropagation);
-        expandButton.removeEventListener('touchstart', expandButton._expandHandlers.stopPropagation);
-    }
-
-    const stopPropagation = event => {
-        event.stopPropagation();
-    };
-
-    const onClose = event => {
-        event.preventDefault();
-        event.stopPropagation();
-        const isWatchPageVisible = watchPage && !watchPage.classList.contains('hidden');
-
-        if (isWatchPageVisible) {
-            if (videoPlayer) {
-                videoPlayer.innerHTML = '';
-                videoPlayer.style.display = 'none';
-                videoPlayer.classList.remove('mini-player-active');
-                videoPlayer.style.top = '';
-                videoPlayer.style.left = '';
-                videoPlayer.style.width = '';
-                videoPlayer.style.height = '';
-            }
-
-            if (videoPlaceholder) {
-                videoPlaceholder.classList.remove('hidden');
-                videoPlaceholder.classList.remove('is-placeholder-hidden');
-                ensurePlayOverlay(() => {
-                    if (currentVideoId) {
-                        if (useYouTubeAPI) {
-                            showVideoFromAPI(currentVideoId);
-                        } else {
-                            showVideo(currentVideoId);
-                        }
+        if (videoPlaceholder) {
+            videoPlaceholder.classList.remove('hidden');
+            videoPlaceholder.classList.remove('is-placeholder-hidden');
+            ensurePlayOverlay(() => {
+                if (currentVideoId) {
+                    if (useYouTubeAPI) {
+                        showVideoFromAPI(currentVideoId);
+                    } else {
+                        showVideo(currentVideoId);
                     }
-                });
-            }
-        } else {
-            stopVideoPlayback();
-            if (isPlaylistMode) exitPlaylistMode();
+                }
+            });
         }
-    };
-
-    const onExpand = async event => {
-        event.preventDefault();
-        event.stopPropagation();
-        const playingId = videoPlayer.dataset.playingVideoId;
-        const currentPageId = currentVideoId;
-        // Desactivar mini-player primer per restaurar la posició
-        setMiniPlayerState(false);
-        if (playingId && playingId !== currentPageId) {
-            if (useYouTubeAPI) {
-                await showVideoFromAPI(playingId);
-            } else {
-                showVideo(playingId);
-            }
-        }
-    };
-
-    closeButton._closeHandlers = { onClose, stopPropagation };
-    closeButton.addEventListener('click', onClose);
-    closeButton.addEventListener('mousedown', stopPropagation);
-    closeButton.addEventListener('touchstart', stopPropagation, { passive: true });
-
-    if (expandButton) {
-        expandButton._expandHandlers = { onExpand, stopPropagation };
-        expandButton.addEventListener('click', onExpand);
-        expandButton.addEventListener('mousedown', stopPropagation);
-        expandButton.addEventListener('touchstart', stopPropagation, { passive: true });
+    } else {
+        stopVideoPlayback();
+        if (isPlaylistMode) exitPlaylistMode();
     }
+}
 
-    miniPlayerControls.forEach(control => {
-        control.addEventListener('pointerdown', stopPropagation, { passive: true });
-    });
-
-    setupMiniPlayerUIControls();
+async function expandMiniPlayer() {
+    const playingId = videoPlayer?.dataset.playingVideoId;
+    const currentPageId = currentVideoId;
+    // Desactivar mini-player primer per restaurar la posició
+    setMiniPlayerState(false);
+    if (playingId && playingId !== currentPageId) {
+        if (useYouTubeAPI) {
+            await showVideoFromAPI(playingId);
+        } else {
+            showVideo(playingId);
+        }
+    }
 }
 
 function preparePlayerForPlayback({ thumbnail, title }) {
@@ -11035,9 +10956,11 @@ function positionMiniPlayerBottomRight() {
     const miniPlayerMargin = 24;
     const width = parseFloat(videoPlayer.style.width) || videoPlayer.offsetWidth || 320;
     const height = parseFloat(videoPlayer.style.height) || videoPlayer.offsetHeight || Math.round((width * 9) / 16);
+    // A sota hi va enganxada la barra de controls (#playerExternalControls)
+    const bottomMargin = miniPlayerMargin + EXTERNAL_CONTROLS_DOCK_HEIGHT;
 
     videoPlayer.style.left = `${Math.max(miniPlayerMargin, window.innerWidth - width - miniPlayerMargin)}px`;
-    videoPlayer.style.top = `${Math.max(miniPlayerMargin, window.innerHeight - height - miniPlayerMargin)}px`;
+    videoPlayer.style.top = `${Math.max(miniPlayerMargin, window.innerHeight - height - bottomMargin)}px`;
 }
 
 function setMiniPlayerState(isActive, options = {}) {
@@ -11079,15 +11002,6 @@ function setMiniPlayerState(isActive, options = {}) {
             videoPlayer.style.top = '';
             videoPlayer.style.bottom = '';
             videoPlayer.style.right = '';
-
-            if (videoPlayer._miniPlayerMobileListener) {
-                videoPlayer.removeEventListener('touchstart', videoPlayer._miniPlayerMobileListener);
-            }
-            videoPlayer._miniPlayerMobileListener = () => {
-                showMiniPlayerControls();
-            };
-            videoPlayer.addEventListener('touchstart', videoPlayer._miniPlayerMobileListener, { passive: true });
-            showMiniPlayerControls();
         } else {
             videoPlayer.style.removeProperty('top');
             videoPlayer.style.removeProperty('left');
@@ -11096,8 +11010,6 @@ function setMiniPlayerState(isActive, options = {}) {
             updateMiniPlayerSize();
             positionMiniPlayerBottomRight();
         }
-
-        setupMiniPlayerUIControls();
     } else {
         if (mainContent) {
             mainContent.classList.remove('hidden');
@@ -11122,10 +11034,6 @@ function setMiniPlayerState(isActive, options = {}) {
         videoPlayer.style.top = '';
         videoPlayer.style.bottom = '';
         videoPlayer.style.right = '';
-        if (videoPlayer._miniPlayerMobileListener) {
-            videoPlayer.removeEventListener('touchstart', videoPlayer._miniPlayerMobileListener);
-            delete videoPlayer._miniPlayerMobileListener;
-        }
         // Resetejar cache de posició per forçar recàlcul
         _lastPlayerRect = { top: 0, left: 0, width: 0, height: 0 };
         updatePlayerPosition();
