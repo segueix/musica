@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-03T20:15:00.000Z",
+  "updatedAt": "2026-10-03T19:30:00.000Z",
   "artists": [
     {
       "name": "31 FAM",
@@ -1706,6 +1706,44 @@
       "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
       "genresRaw": [
         "Urbana"
+      ]
+    },
+    {
+      "name": "Banda Neon",
+      "aliases": [],
+      "genres": [
+        "Rumba / Mestissatge"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UC8EgQzp733Go-yRbPKR3FHg",
+            "handle": null,
+            "name": "Banda Neon",
+            "type": "official",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-03",
+        "youtube:manual-verified",
+        "genre:manual",
+        "https://www.youtube.com/channel/UC8EgQzp733Go-yRbPKR3FHg"
+      ],
+      "lastChecked": "2026-10-03T19:30:00.000Z",
+      "notes": "Alta manual. Canal de YouTube indicat per l'usuari; categoria Rumba / Mestissatge.",
+      "genresRaw": [
+        "mestissatge"
       ]
     },
     {
