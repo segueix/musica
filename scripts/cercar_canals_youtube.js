@@ -406,5 +406,3 @@ if (require.main === module) {
         process.exit(1);
     });
 }
-
-// trigger-manual-2026-10-03-fetus
