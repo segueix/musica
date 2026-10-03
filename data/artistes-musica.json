@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-03T19:07:06.879Z",
+  "updatedAt": "2026-10-03T19:10:00.000Z",
   "artists": [
     {
       "name": "31 FAM",
@@ -8314,12 +8314,10 @@
       ]
     },
     {
-      "name": "Joan Miquel Oliver Ripoll",
+      "name": "Joan Miquel Oliver",
       "aliases": [],
       "genres": [
-        "Pop",
-        "Indie / Alternativa",
-        "Experimental / Avantguarda"
+        "Cançó d'autor"
       ],
       "territories": [],
       "languages": [
@@ -8328,7 +8326,15 @@
       "wikidataId": "Q4895645",
       "musicbrainzId": "a379ad24-6df4-434a-a810-a0057d4705fa",
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCEV_8wEQansDoZnwNW1Z1Vw",
+            "handle": null,
+            "name": "Joan Miquel Oliver - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
         "candidates": [],
         "searchCandidates": [
           {
@@ -8361,16 +8367,20 @@
           }
         ]
       },
-      "confidence": "pendent",
-      "reviewStatus": "pendent",
-      "active": false,
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
         "https://www.wikidata.org/wiki/Q4895645",
         "wikidata:languages-spoken-catalan",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "manual-user-2026-10-03",
+        "genre:manual",
+        "youtube:manual-verified",
+        "https://www.youtube.com/channel/UCEV_8wEQansDoZnwNW1Z1Vw"
       ],
-      "lastChecked": "2026-09-25T15:54:58.228Z",
-      "notes": "",
+      "lastChecked": "2026-10-03T19:10:00.000Z",
+      "notes": "Nom públic «Joan Miquel Oliver»; canal Topic verificat; gènere Cançó d'autor.",
       "enrichment": {
         "musicbrainz": {
           "checkedAt": "2026-09-25T15:54:58.228Z",
@@ -10438,9 +10448,7 @@
       "name": "La Gossa Sorda",
       "aliases": [],
       "genres": [
-        "Rock",
-        "Ska / Reggae",
-        "Punk"
+        "Rumba / Mestissatge"
       ],
       "territories": [],
       "languages": [
@@ -10449,7 +10457,15 @@
       "wikidataId": "Q3174522",
       "musicbrainzId": "b84d2b3b-fae2-490c-b406-8ce0fc184460",
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCIw0fqxE56SUZRCVd2FI09Q",
+            "handle": null,
+            "name": "La Gossa Sorda - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
         "candidates": [],
         "searchCandidates": [
           {
@@ -10500,15 +10516,19 @@
           }
         ]
       },
-      "confidence": "pendent",
-      "reviewStatus": "pendent",
-      "active": false,
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
         "https://www.wikidata.org/wiki/Q3174522",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "manual-user-2026-10-03",
+        "genre:manual",
+        "youtube:manual-verified",
+        "https://www.youtube.com/channel/UCIw0fqxE56SUZRCVd2FI09Q"
       ],
-      "lastChecked": "2026-09-25T15:55:18.406Z",
-      "notes": "",
+      "lastChecked": "2026-10-03T19:10:00.000Z",
+      "notes": "Alta manual verificada: només canal «La Gossa Sorda - Topic»; gènere Rumba / Mestissatge.",
       "enrichment": {
         "musicbrainz": {
           "checkedAt": "2026-09-25T15:55:18.406Z",
@@ -13262,6 +13282,31 @@
       ]
     },
     {
+      "name": "Mazoni",
+      "aliases": [],
+      "genres": [
+        "Cançó d'autor"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-03",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-03T19:10:00.000Z",
+      "notes": "Alta manual sol·licitada: canal Topic pendent de resolució; gènere Cançó d'autor."
+    },
+    {
       "name": "Miki Núñez",
       "aliases": [],
       "genres": [
@@ -13794,6 +13839,31 @@
       "lastChecked": "2026-10-02T09:00:00.000Z",
       "notes": "Alta manual verificada (llista de l'usuari del 2026-10-02).",
       "displayName": "Montse Castellà"
+    },
+    {
+      "name": "Motoclus",
+      "aliases": [],
+      "genres": [
+        "Rock"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-03",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-03T19:10:00.000Z",
+      "notes": "Alta manual sol·licitada: canal Topic pendent de resolució; gènere Rock."
     },
     {
       "name": "Muluk El Hwa",
@@ -17128,8 +17198,7 @@
       "name": "Quimi Portet",
       "aliases": [],
       "genres": [
-        "Cançó d'autor",
-        "Rock"
+        "Cançó d'autor"
       ],
       "territories": [],
       "languages": [
@@ -17162,10 +17231,11 @@
         "manual-user-2026-10-02",
         "youtube:manual-verified",
         "genre:manual",
-        "https://www.youtube.com/channel/UCWq2Sd65Q2V6PhDzOBMTb5Q"
+        "https://www.youtube.com/channel/UCWq2Sd65Q2V6PhDzOBMTb5Q",
+        "manual-user-2026-10-03"
       ],
-      "lastChecked": "2026-10-02T09:00:00.000Z",
-      "notes": "Alta manual verificada (llista de l'usuari del 2026-10-02)."
+      "lastChecked": "2026-10-03T19:10:00.000Z",
+      "notes": "Categoria manual: Cançó d'autor. Es conserva el canal Topic ja indexat."
     },
     {
       "name": "Raimon",
