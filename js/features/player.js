@@ -9,7 +9,6 @@
     const DEFAULT_VIDEO_THUMBNAIL_SRC = '/img/caratula.png';
     const CONTINUE_SECTION_ID = 'continueWatchingSection';
     const CONTINUE_LIST_ID = 'continueWatchingList';
-    const RESTART_BUTTON_ID = 'restartVideoBtn';
     const PROGRESS_WRITE_INTERVAL_MS = 10000;
     const PLAYER_SWITCH_GRACE_MS = 1500;
     const MAX_EXPLICIT_START_SECONDS = 24 * 60 * 60;
@@ -217,7 +216,7 @@
             .continue-watching-list{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(240px,290px);gap:12px;overflow-x:auto;overscroll-behavior-inline:contain;scroll-snap-type:x proximity;padding:2px 2px 10px;scrollbar-width:thin}
             .continue-watching-card{position:relative;scroll-snap-align:start;min-width:0}
             .continue-watching-open{display:block;width:100%;padding:0;border:0;background:transparent;color:inherit;text-align:left;cursor:pointer;border-radius:12px}
-            .continue-watching-open:focus-visible,.continue-watching-remove:focus-visible,.continue-watching-restart:focus-visible{outline:3px solid var(--color-button-accent);outline-offset:3px}
+            .continue-watching-open:focus-visible,.continue-watching-remove:focus-visible{outline:3px solid var(--color-button-accent);outline-offset:3px}
             .continue-watching-thumb-wrap{position:relative;overflow:hidden;border-radius:12px;aspect-ratio:16/9;background:rgba(0,0,0,.28)}
             .continue-watching-thumb{display:block;width:100%;height:100%;object-fit:cover}
             .continue-watching-progress{position:absolute;left:0;right:0;bottom:0;height:5px;background:rgba(255,255,255,.25)}
@@ -227,9 +226,7 @@
             .continue-watching-channel{display:block;margin-top:4px;color:rgba(255,255,255,.65);font-size:.82rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
             .continue-watching-remove{position:absolute;top:8px;right:8px;display:grid;place-items:center;width:44px;height:44px;border:0;border-radius:999px;background:rgba(15,15,15,.82);color:#fff;font-size:25px;line-height:1;cursor:pointer;backdrop-filter:blur(6px)}
             .continue-watching-remove:hover{background:rgba(15,15,15,.96)}
-            .continue-watching-restart{margin-left:12px;padding:7px 12px;min-height:36px;border:1px solid rgba(255,255,255,.24);border-radius:999px;background:transparent;color:inherit;font:inherit;font-size:.82rem;font-weight:600;cursor:pointer}
-            .continue-watching-restart:hover{background:rgba(255,255,255,.1)}
-            @media(max-width:768px){.continue-watching-section{margin-bottom:20px}.continue-watching-list{grid-auto-columns:minmax(218px,76vw);gap:12px}.continue-watching-title{font-size:1.05rem}.continue-watching-restart{min-height:44px;margin-left:8px;padding:9px 12px}}
+            @media(max-width:768px){.continue-watching-section{margin-bottom:20px}.continue-watching-list{grid-auto-columns:minmax(218px,76vw);gap:12px}.continue-watching-title{font-size:1.05rem}}
         `;
         document.head.appendChild(style);
     }
@@ -281,29 +278,6 @@
             .join('');
     }
 
-    function ensureRestartButton() {
-        const document = window.document;
-        let button = document?.getElementById?.(RESTART_BUTTON_ID);
-        if (button) return button;
-        const metaRow = document?.querySelector?.('#watchPage .video-meta-row');
-        if (!metaRow) return null;
-        button = document.createElement('button');
-        button.id = RESTART_BUTTON_ID;
-        button.className = 'continue-watching-restart hidden';
-        button.type = 'button';
-        button.textContent = 'Comença de nou';
-        button.addEventListener?.('click', restartCurrentVideo);
-        metaRow.appendChild(button);
-        return button;
-    }
-
-    function updateRestartButton(videoId) {
-        const button = ensureRestartButton();
-        if (!button) return;
-        const id = String(videoId || '').trim();
-        const hasProgress = Boolean(id && getContinueStorage()?.get?.(id));
-        button.classList?.toggle?.('hidden', !hasProgress);
-    }
 
     function currentProgressMetadata(videoId) {
         const document = window.document;
@@ -390,7 +364,6 @@
             channel: saved?.channel || '',
             thumbnail: saved?.thumbnail || '',
         };
-        updateRestartButton(id);
         return activeProgress;
     }
 
@@ -501,7 +474,6 @@
         dismissedProgressIds.add(id);
         getContinueStorage()?.remove?.(id);
         renderContinueWatching();
-        updateRestartButton(id);
     }
 
     function openContinueWatching(videoId) {
@@ -512,22 +484,10 @@
         else showVideoFromAPI(id);
     }
 
-    function restartCurrentVideo() {
-        const id = getActiveVideoId();
-        if (!id) return;
-        dismissedProgressIds.add(id);
-        getContinueStorage()?.remove?.(id);
-        renderContinueWatching();
-        const source = String(app.state?.player?.currentVideoSource || app.state?.currentVideoSource || 'api');
-        const options = { startAt: 0, replaceHistory: true, skipSavedProgress: true };
-        if (source === 'static') showVideo(id, options);
-        else showVideoFromAPI(id, options);
-    }
 
     function installContinueWatching() {
         installContinueWatchingStyles();
         ensureContinueWatchingSection();
-        ensureRestartButton();
         renderContinueWatching();
         window.document?.addEventListener?.('visibilitychange', () => {
             if (window.document.visibilityState === 'hidden') persistActiveProgress({ force: true });
@@ -652,7 +612,6 @@
     app.features.continueWatching = {
         render: renderContinueWatching,
         remove: dismissContinueWatching,
-        restart: restartCurrentVideo,
         _test: {
             resolvePlaybackOptions,
             beginProgressTracking,
