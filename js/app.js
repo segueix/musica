@@ -1903,9 +1903,6 @@ function buildWatchChannelInfoHtml(channel, avatar, watchUrl, video) {
                     <button class="btn-round-icon" id="shareBtn" title="Compartir" aria-label="Compartir">
                         <i data-lucide="share-2"></i>
                     </button>
-                    <button class="btn-round-icon" id="miniPlayerToggle" type="button" title="Mini reproductor" aria-label="Mini reproductor">
-                        ${MINI_PLAYER_ICON_SVG}
-                    </button>
                 </div>
             </div>
         </div>
@@ -10150,6 +10147,7 @@ function swapLivePlayerVideo({ videoId, startAt = 0, thumbnail = '', title = '' 
     lastLiveSwapAt = Date.now();
     videoPlayer.dataset.playingVideoId = id;
     videoPlayer.dataset.playerState = '';
+    pendingPlayerState = null;
     // El forat continua darrere del reproductor: hi deixem la caràtula del vídeo nou per
     // si l'usuari surt de la pantalla completa mentre encara carrega.
     setPlaceholderImage(thumbnail, title);
@@ -10274,6 +10272,7 @@ function resetInlineVideoSurface() {
     videoPlayer.innerHTML = '';
     videoPlayer.classList.remove('mini-player-active');
     videoPlayer.dataset.playerState = '';
+    pendingPlayerState = null;
     videoPlayer.dataset.playingVideoId = '';
     videoPlayer.style.display = 'none';
     videoPlayer.style.width = '';
@@ -10441,9 +10440,11 @@ function handleYouTubeMessageLegacyImpl(event) {
             return;
         }
     }
+    // Només els avisos de l'iframe del reproductor principal en descriuen l'estat (el de Shorts també n'envia)
+    const fromMainPlayer = Boolean(videoPlayer) && event.source === videoPlayer.querySelector('iframe')?.contentWindow;
     // Guardem l'estat del reproductor (1 = Playing, 2 = Paused, etc.)
     if (payload?.event === 'onStateChange' && videoPlayer) {
-        videoPlayer.dataset.playerState = payload.info;
+        if (fromMainPlayer) applyReportedPlayerState(payload.info);
         if (payload?.info === 2 && hasQueueNavigation()) {
             showQueueNextOverlay();
         } else if (payload?.info === 1) {
@@ -10496,6 +10497,15 @@ function handleYouTubeMessageLegacyImpl(event) {
     }
     if (payload?.event === 'infoDelivery' && payload?.info?.currentTime != null) {
         lastKnownPlayerTime = Number(payload.info.currentTime) || 0;
+    }
+    // L'estat també arriba dins infoDelivery / initialDelivery (playerState): si un onStateChange es perd, el botó de
+    // play/pausa i la resta de l'app continuen sabent si sona.
+    if (
+        (payload?.event === 'infoDelivery' || payload?.event === 'initialDelivery') &&
+        Number.isInteger(payload?.info?.playerState) &&
+        fromMainPlayer
+    ) {
+        applyReportedPlayerState(payload.info.playerState);
     }
 }
 
@@ -10581,12 +10591,46 @@ function sendMainPlayerCommand(func) {
     return true;
 }
 
+// Ordres explícites amb resposta immediata: l'estat es posa de seguida al que s'ha demanat (1 = sona, 2 = pausa), de
+// manera que el botó de play/pausa de sota el reproductor (i la resta de l'app) canvia en tocar-lo i el toc següent fa
+// el contrari. L'avís real de YouTube (onStateChange / infoDelivery) el confirma o el corregeix quan arriba; abans,
+// si no arribava o arribava tard, el botó no canviava i el segon toc tornava a pausar en lloc de fer sonar.
+// Mentre una ordre no es confirma (fins a PLAYER_STATE_PENDING_MS), un avís que la contradiu és d'abans de l'ordre
+// (ja era en camí) i s'ignora: si no, pausar podia rebre un «sona» endarrerit i el toc següent tornava a pausar.
+const PLAYER_STATE_PENDING_MS = 1500;
+let pendingPlayerState = null;
+
+function requestPlayerState(state) {
+    if (!videoPlayer) return;
+    pendingPlayerState = { state, until: Date.now() + PLAYER_STATE_PENDING_MS };
+    videoPlayer.dataset.playerState = state;
+}
+
+function applyReportedPlayerState(info) {
+    if (!videoPlayer) return;
+    const state = String(info);
+    if (pendingPlayerState && Date.now() < pendingPlayerState.until) {
+        const wantsPlay = pendingPlayerState.state === '1';
+        const confirms = wantsPlay ? state === '1' || state === '3' : state === '2';
+        const contradicts = wantsPlay ? state === '2' : state === '1' || state === '3';
+        if (contradicts) return;
+        if (confirms) pendingPlayerState = null;
+    } else {
+        pendingPlayerState = null;
+    }
+    videoPlayer.dataset.playerState = state;
+}
+
 function playMainPlayer() {
-    return sendMainPlayerCommand('playVideo');
+    const sent = sendMainPlayerCommand('playVideo');
+    if (sent) requestPlayerState('1');
+    return sent;
 }
 
 function pauseMainPlayer() {
-    return sendMainPlayerCommand('pauseVideo');
+    const sent = sendMainPlayerCommand('pauseVideo');
+    if (sent) requestPlayerState('2');
+    return sent;
 }
 
 // Sona o està a punt de sonar: reproduint (1) o carregant/buffering (3). En buffering el vídeo «vol» sonar, i un

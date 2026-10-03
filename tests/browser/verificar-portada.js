@@ -218,7 +218,7 @@ async function recorregut(browser, width, height) {
     comprovar(`${nom}: engega una ràdio amb cua`, cua.radio && cua.longitud >= 2, cua);
 
     // 6) Canviar de secció amb la finestreta: el mateix reproductor
-    await page.evaluate(() => document.getElementById('miniPlayerToggle')?.click());
+    await page.evaluate(() => document.getElementById('playerMiniBtn')?.click());
     await page.waitForTimeout(400);
     await page.evaluate(() => {
         const frame = document.querySelector('#videoPlayer iframe');

@@ -22,6 +22,15 @@
 
 **Fitxers Afectats:**
 
+## [2026-10-03] - El botó de pausa de sota el reproductor no es convertia en play ni tornava a fer sonar
+**Símptoma:** en prémer la pausa del botó gran de sota el reproductor, el vídeo s'aturava però el botó continuava mostrant la pausa; tornar-lo a prémer no feia sonar la cançó.
+
+**Causa Arrel:** el botó mostra l'estat de `data-player-state`, que només s'actualitzava amb l'avís `onStateChange` del reproductor de YouTube, i `toggleMainPlayerPlayback()` decideix amb aquest estat. Si l'avís es perdia o arribava tard (passa amb el reproductor real; el succedani de les proves sempre l'enviava), l'estat es quedava a 1: el botó no canviava i cada toc tornava a enviar `pauseVideo`.
+
+**Solució Implementada:** `playMainPlayer()` / `pauseMainPlayer()` posen l'estat que s'ha demanat (1 / 2) en enviar l'ordre; l'avís real el confirma o el corregeix quan arriba. A més, l'estat també es llegeix dels avisos `infoDelivery` / `initialDelivery` (`info.playerState`), de manera que no depèn d'un sol tipus de missatge. Dues trampes (revisió de Codex): (1) l'iframe de Shorts també envia `infoDelivery` i queda viu en pausa, així que només compten els avisos amb `event.source` igual a l'iframe del reproductor principal; (2) un avís amb l'estat d'abans de l'ordre pot arribar just després: durant 1,5 s (`PLAYER_STATE_PENDING_MS`) els avisos que contradiuen l'ordre pendent s'ignoren (`applyReportedPlayerState()`), i en carregar un iframe nou l'ordre pendent s'oblida. `verificar-play-pausa.js` descarta els avisos d'estat (a `SegueixApp.features.player.handleYouTubeMessage`; un `addEventListener` de captura a `window` no s'hi avança) i comprova pausa → play → pausa amb les ordres corresponents; amb el codi antic falla (pausa, pausa, pausa).
+
+**Fitxers Afectats:** `js/app.js`, `tests/player-controls.test.js`, `tests/browser/verificar-play-pausa.js`.
+
 ## [2026-10-03] - Fila de botons de la fitxa de la cançó tallada per la navegació inferior (mòbil)
 **Símptoma:** al mòbil, la fila de botons de sota el títol (afegir a llista, compartir, finestra flotant, comentar, «Canal YouTube») quedava a mitges sota la navegació inferior.
 

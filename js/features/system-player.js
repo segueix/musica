@@ -445,10 +445,11 @@
         if (isPipOpen()) pipWindow.close();
     }
 
-    // Els botons «Finestra flotant» (sota el reproductor i sobre el vídeo) obren la finestra del sistema on n'hi ha;
-    // si la finestra flotant de dins la pàgina ja és oberta, el botó la torna a lloc com sempre.
+    // El botó «Finestra flotant» de la barra de controls de sota el reproductor (#playerMiniBtn; el de la fila de sota el
+    // títol, #miniPlayerToggle, s'ha tret perquè era repetit) obre la finestra del sistema on n'hi ha; si la finestra
+    // flotant de dins la pàgina ja és oberta, el botó la torna a lloc («restaura») com sempre.
     function onDocumentClick(event) {
-        const trigger = event.target.closest?.('#miniPlayerToggle, .queue-mini-button');
+        const trigger = event.target.closest?.('#playerMiniBtn, .queue-mini-button');
         if (!trigger || !isPipSupported() || call(fns.miniActive())) return;
         event.preventDefault();
         event.stopImmediatePropagation();
