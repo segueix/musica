@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-10-03T19:29:48.745Z",
+  "generatedAt": "2026-10-03T20:11:37.965Z",
   "summary": {
-    "total": 35,
-    "musicalClar": 35,
+    "total": 34,
+    "musicalClar": 34,
     "revisar": 0,
     "possibleFalsPositiu": 0
   },
@@ -335,33 +335,6 @@
       ],
       "musicOccupations": [
         "http://www.wikidata.org/entity/Q639669"
-      ],
-      "musicTypes": [],
-      "verdict": "musical-clar",
-      "reasons": [
-        "Wikidata: ocupació musical explícita"
-      ]
-    },
-    {
-      "name": "Guillermina Motta",
-      "wikidataId": "Q9001292",
-      "musicbrainzId": "f962cece-5c70-4b77-a56c-7a0b6cb199ea",
-      "sources": [
-        "https://www.wikidata.org/wiki/Q9001292",
-        "wikidata:performed-catalan-work"
-      ],
-      "youtubeChannels": 0,
-      "instances": [
-        "ésser humà"
-      ],
-      "occupations": [
-        "cantant",
-        "actor",
-        "compositor"
-      ],
-      "musicOccupations": [
-        "http://www.wikidata.org/entity/Q36834",
-        "http://www.wikidata.org/entity/Q177220"
       ],
       "musicTypes": [],
       "verdict": "musical-clar",
