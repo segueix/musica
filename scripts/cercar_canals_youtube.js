@@ -216,7 +216,7 @@ async function searchChannels(name, apiKey) {
     const url = new URL(SEARCH_URL);
     url.searchParams.set('part', 'snippet');
     url.searchParams.set('type', 'channel');
-    url.searchParams.set('maxResults', '10');
+    url.searchParams.set('maxResults', '3');
     url.searchParams.set('q', name);
     return apiJson(url, apiKey);
 }
@@ -313,8 +313,7 @@ async function main() {
         artist.enrichment ||= {};
 
         try {
-            const searchName = ['Mazoni','Motoclus'].includes(artist.name) ? artist.name + ' - Topic' : artist.name;
-            const search = await searchChannels(searchName, apiKey);
+            const search = await searchChannels(artist.name, apiKey);
             searches += 1;
             const ids = (search.items || [])
                 .map((item) => item.id?.channelId)
@@ -333,7 +332,7 @@ async function main() {
             artist.enrichment.youtubeSearch = {
                 checkedAt: now,
                 status: accepted ? 'autoacceptat' : scored.length ? 'candidats' : 'sense-resultats',
-                query: searchName,
+                query: artist.name,
                 resultCount: scored.length,
                 bestScore: scored[0]?.score || 0,
                 autoAcceptedId: accepted?.id || null
@@ -407,7 +406,3 @@ if (require.main === module) {
         process.exit(1);
     });
 }
-
-// trigger-manual-2026-10-03-mazoni-motoclus
-
-// trigger-manual-2026-10-03-mazoni-motoclus-topic
