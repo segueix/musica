@@ -3561,52 +3561,50 @@ function initElements() {
     initConfigElements();
 }
 
+// Plegar i desplegar la navegació lateral (botó de tres ratlles de la capçalera, #sidebarToggle). Només on la barra és
+// una columna (≥ 769 px); al mòbil hi ha la navegació inferior. L'estat es recorda. El CSS (portada.css, «Plegar i
+// desplegar la navegació lateral») fa la feina: aquí només es posa `body.sidebar-collapsed` i l'estat accessible.
 function initDesktopSidebarPreference() {
     if (!sidebar) return;
     const STORAGE_KEY = 'segueix_music_desktop_sidebar_collapsed';
-    const toggle = document.getElementById('sidebarPinToggle');
-    const desktop = () => window.matchMedia('(min-width: 1025px)').matches;
+    const toggle = document.getElementById('sidebarToggle');
+    const wide = window.matchMedia('(min-width: 769px)');
 
-    const apply = collapsed => {
-        if (!desktop()) {
-            sidebar.classList.remove('collapsed', 'sidebar-peek');
-            document.body.classList.remove('sidebar-collapsed');
-            return;
-        }
-        sidebar.classList.toggle('collapsed', collapsed);
-        sidebar.classList.remove('sidebar-peek');
-        document.body.classList.toggle('sidebar-collapsed', collapsed);
-        if (toggle) {
-            toggle.textContent = collapsed ? '›' : '‹';
-            toggle.setAttribute('aria-label', collapsed ? 'Deixa oberta la navegació' : 'Plega la navegació');
-            toggle.title = collapsed ? 'Deixa oberta la navegació' : 'Plega la navegació';
-            toggle.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
+    const saved = () => {
+        try {
+            return localStorage.getItem(STORAGE_KEY) === '1';
+        } catch (error) {
+            return false;
         }
     };
 
-    let collapsed = false;
-    try { collapsed = localStorage.getItem(STORAGE_KEY) === '1'; } catch (error) {}
-    apply(collapsed);
+    const apply = collapsed => {
+        const active = wide.matches && collapsed;
+        document.body.classList.toggle('sidebar-collapsed', active);
+        if (!toggle) return;
+        const label = active ? 'Desplega el menú lateral' : 'Plega el menú lateral';
+        toggle.setAttribute('aria-expanded', active ? 'false' : 'true');
+        toggle.setAttribute('aria-label', label);
+        toggle.title = label;
+    };
+
+    apply(saved());
+    // Les transicions s'activen un cop pintat l'estat desat: en obrir l'app amb la barra plegada no s'anima
+    requestAnimationFrame(() => requestAnimationFrame(() => document.body.classList.add('sidebar-ready')));
 
     toggle?.addEventListener('click', event => {
         event.preventDefault();
-        event.stopPropagation();
         const next = !document.body.classList.contains('sidebar-collapsed');
-        try { localStorage.setItem(STORAGE_KEY, next ? '1' : '0'); } catch (error) {}
+        try {
+            localStorage.setItem(STORAGE_KEY, next ? '1' : '0');
+        } catch (error) {
+            // sense emmagatzematge: funciona igual, però no es recorda
+        }
         apply(next);
     });
 
-    sidebar.addEventListener('mouseenter', () => {
-        if (desktop() && document.body.classList.contains('sidebar-collapsed')) sidebar.classList.add('sidebar-peek');
-    });
-    sidebar.addEventListener('mouseleave', () => {
-        if (document.body.classList.contains('sidebar-collapsed')) sidebar.classList.remove('sidebar-peek');
-    });
-    window.addEventListener('resize', () => {
-        let saved = false;
-        try { saved = localStorage.getItem(STORAGE_KEY) === '1'; } catch (error) {}
-        apply(saved);
-    });
+    // En passar d'escriptori a mòbil (i a l'inrevés) la barra es comporta com toca amb la preferència desada
+    wide.addEventListener?.('change', () => apply(saved()));
 }
 
 // ==================== EVENT BINDING ====================
