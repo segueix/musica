@@ -176,6 +176,26 @@ async function proves(browser, width, errors) {
         estructura
     );
 
+    // 1b) La ràdio es diu amb una etiqueta dins la línia de data i visualitzacions (no amb una línia pròpia)
+    const etiquetaRadio = await page.evaluate(() => {
+        const chip = document.getElementById('playlistModeChip');
+        const row = document.querySelector('#watchPage .video-meta-row');
+        return {
+            liniaAntiga: Boolean(document.getElementById('playlistModeBadge')),
+            dinsLinia: Boolean(chip && row?.contains(chip)),
+            text: chip?.textContent.trim() || '',
+            unaLinia: row ? Math.round(row.getBoundingClientRect().height) <= 26 : false,
+        };
+    });
+    comprovar(
+        `${etiqueta}: «Ràdio · 1/N» és una etiqueta a la línia de data i visualitzacions, sense línia pròpia`,
+        !etiquetaRadio.liniaAntiga &&
+            etiquetaRadio.dinsLinia &&
+            /^Ràdio · 1\/\d+$/.test(etiquetaRadio.text) &&
+            etiquetaRadio.unaLinia,
+        etiquetaRadio
+    );
+
     // 2) Reproductor normal, controls amagats: tots els tocs arriben al reproductor de YouTube
     await amagarControls(page);
     await page.waitForTimeout(300);

@@ -23,13 +23,13 @@
 **Fitxers Afectats:**
 
 ## [2026-10-03] - Fila de botons de la fitxa de la cançó tallada per la navegació inferior (mòbil)
-**Símptoma:** al mòbil, a la fitxa de la cançó, la fila de botons (afegir a llista, compartir, finestra flotant, comentar, «Canal YouTube») quedava a mitges sota la navegació inferior: calia desplaçar per veure-la sencera.
+**Símptoma:** al mòbil, la fila de botons de sota el títol (afegir a llista, compartir, finestra flotant, comentar, «Canal YouTube») quedava a mitges sota la navegació inferior.
 
-**Causa Arrel:** el reproductor és quadrat i ocupa tot l'ample (`#watchPage .video-placeholder { aspect-ratio: 1 / 1; width: 100% }`), de manera que a 360 px d'ample fa 328 px d'alçada. Sumant-hi la barra de controls, el mode de llista, el títol i el canal, la fila de botons acabava uns 700 px avall; en un mòbil amb la zona del sistema (la pantalla útil és més baixa, uns 740 px) quedava per sota de la navegació.
+**Causa Arrel:** sota el reproductor quadrat (que ocupa tot l'ample) hi havia una línia pròpia «Mode llista · Ràdio 1/40» (`#playlistModeBadge`, 31 px + marge) abans del títol. Amb la zona del sistema a dalt, la pantalla útil (≈ 740 px) no hi arribava.
 
-**Solució Implementada:** el costat del quadrat depèn de l'alçada lliure: `min(100%, max(200px, 100svh − --header-height − --pt-nav-h − --safe-bottom − 336px))` (amb `100vh` d'alternativa), centrat amb `margin: 0 auto`. En una pantalla de 360×738 el quadrat passa de 328 a 273 px i la fila acaba 18 px per sobre de la navegació; en pantalles altes no canvia res (el límit és l'ample). El mínim de 200 px compleix el que demana YouTube. Per a alçades ≤ 680 px es compacten els controls de sota (46/54 px, marges menors). El forat mana: `updatePlayerPosition()` posa el reproductor damunt, així que no s'ha tocat cap JS.
+**Solució Implementada:** un primer intent (PR #70) feia el quadrat més petit segons l'alçada; l'usuari va preferir conservar-lo a tot l'ample i es va desfer. Ara la línia desapareix i la ràdio o la llista es diu amb una etiqueta petita en llima dins la línia de data i visualitzacions que ja hi havia (`updatePlaylistModeChip()`, `#playlistModeChip`, icona de ràdio o de llista + «Ràdio · 1/40»). La línia no es parteix: si no hi cap, s'escurcen les visualitzacions. Es guanyen ≈ 37 px; a 360×738 la fila acaba just damunt de la navegació. Les TV conserven el seu `#playlistModeBadge` amb la informació i el botó de regenerar.
 
-**Fitxers Afectats:** `css/portada.css`, `tests/portada-assets.test.js`, `tests/browser/verificar-reproductor-mobil.js`, `tests/browser/README.md`.
+**Fitxers Afectats:** `js/app.js`, `css/portada.css`, `tests/player-controls.test.js`, `tests/browser/verificar-play-pausa.js`.
 
 ## [2026-10-03] - Plegar la navegació lateral: la barra plegada ocupava l'espai i el contingut sortia desplaçat
 **Símptoma:** el control per plegar la barra (una fletxa ‹ › penjada a la vora de la barra) no plegava res de debò: amb la barra «plegada» quedava una columna buida de 236 px, el contingut no s'estenia, i amb la barra oberta el contingut sortia 240 px desplaçat a la dreta.
