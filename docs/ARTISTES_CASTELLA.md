@@ -5,7 +5,7 @@ tenir quan el feed musical incorpori vídeos nous: cal repassar-los primer cada 
 castellà». Les cançons amagades són a `data/hidden-videos.json` (el client les filtra i `update_music_feed.js` les
 descarta en regenerar el feed).
 
-> Última revisió: 2026-10-02. Si afegeixes o treus un artista, actualitza la taula **i** la data.
+> Última revisió: 2026-10-03. Si afegeixes o treus un artista, actualitza la taula **i** la data.
 
 ## Cançons noves (des del 2026-10-02)
 
@@ -103,7 +103,7 @@ que són noms propis. 472 cançons a `data/hidden-videos.json` amb `afegeix()` d
 | **31 FAM** | 18 | Revisió del 2026-10-02: castellà (Te gusto, Rompe, Sincero…) i anglès (Purgatory, No Love, Touchdown…). Es mantenen l'argot i els títols mixtos (Homies, Frosti Flakes, Bandolera, Vida Gris). |
 | **KOP** | 14 | Revisió del 2026-10-02: castellà, anglès («Freedom», «We're Not Angels») i basc («Utzi Bakean»). |
 | **Manu Guix** | 10 | Castellà (Tiempo para creer, Había una vez…) i les cançons de Grease en castellà i anglès. |
-| **Adrià Puntí** | 8 | Les cançons d'Umpah-Pah en castellà del canal Tema (Tocayo, Barba Azul…). |
+| **Adrià Puntí** | 12 | Cançons d'Umpah-Pah en castellà del canal Tema. Revisió 2026-10-03: amagades també «El Preludio del Adiós», «La Columna de Simeon», «Sueño Dormido (Al Fondo de un Abrevadero)» i «Sí»; la regla persistent ja les cobreix. |
 | **Roger Mas** | 3 | «La Llorona», «La Bien Pagá» (castellà) i «Amore che vieni» (italià). Es manté l'occità. |
 | **The Tyets** | 7 | Castellà (Bebesita, Oye Mulata, Se queda…) i anglès («Let Me Alive»). |
 | **Brams** | 3 | «Two Girls», «¿Qué pone en tu DNI?», «Rojo Separatista». |
