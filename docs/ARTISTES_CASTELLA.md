@@ -102,6 +102,7 @@ que són noms propis. 472 cançons a `data/hidden-videos.json` amb `afegeix()` d
 | **Buhos** | 7 | Castellà (Cerca de ti, Vuela aunque duela…) i anglès (Today is the day, Sweet Caroline). |
 | **31 FAM** | 18 | Revisió del 2026-10-02: castellà (Te gusto, Rompe, Sincero…) i anglès (Purgatory, No Love, Touchdown…). Es mantenen l'argot i els títols mixtos (Homies, Frosti Flakes, Bandolera, Vida Gris). |
 | **KOP** | 14 | Revisió del 2026-10-02: castellà, anglès («Freedom», «We're Not Angels») i basc («Utzi Bakean»). |
+| **Opció K-95** | 7 | Revisió 2026-10-03 del canal Topic: anglès confirmat — «A World To Win», «Kill The Bastards», «No More Colours One Army», «We Must Break Our Chains», «We're Free», «Nation of Oi!» i «Working Class Hell». Es mantenen «Oi! You!» (Cap Oportunitat és íntegrament en català), «Partisans» i la resta de repertori català. |
 | **Manu Guix** | 10 | Castellà (Tiempo para creer, Había una vez…) i les cançons de Grease en castellà i anglès. |
 | **Adrià Puntí** | 12 | Cançons d'Umpah-Pah en castellà del canal Tema. Revisió 2026-10-03: amagades també «El Preludio del Adiós», «La Columna de Simeon», «Sueño Dormido (Al Fondo de un Abrevadero)» i «Sí»; la regla persistent ja les cobreix. |
 | **Roger Mas** | 3 | «La Llorona», «La Bien Pagá» (castellà) i «Amore che vieni» (italià). Es manté l'occità. |
