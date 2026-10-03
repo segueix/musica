@@ -96,3 +96,17 @@ describe('controls de la cua sense cobrir el vídeo', () => {
         expect(init).toContain('window.focus();');
     });
 });
+
+describe('ràdio o llista que sona: etiqueta a la línia de data, sense línia pròpia', () => {
+    it('fora de les TV no es crea la línia «Mode llista» sinó una etiqueta dins .meta-left', () => {
+        const chip = fn(app, 'updatePlaylistModeChip');
+        expect(chip).toContain("querySelector('#watchPage .video-meta-row .meta-left')");
+        expect(chip).toContain("chip.id = 'playlistModeChip'");
+        expect(chip).toContain("isRadio ? 'Ràdio' : 'Llista'");
+        const badge = fn(app, 'updatePlaylistModeBadge');
+        expect(badge).toContain('updatePlaylistModeChip(isTVPlaying)');
+        expect(badge).toContain('if (!isPlaylistMode || !isTVPlaying)');
+        expect(portada).toMatch(/\.queue-mode-chip \{[^}]*color: var\(--pt-accent\)/);
+        expect(portada).toMatch(/#watchPage \.video-meta-row \.meta-left \{[^}]*flex-wrap: nowrap/);
+    });
+});

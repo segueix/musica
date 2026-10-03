@@ -5042,3 +5042,47 @@ body:has(#playerExternalControls.is-floating.is-above:not([hidden])) #videoPlaye
         }
     }
 }
+
+/* ---------- Ràdio o llista que sona: etiqueta dins la línia de data i visualitzacions ----------
+   Abans era una línia pròpia sota el reproductor («Mode llista · Ràdio 1/40») que, a mòbil, empenyia la fila de botons
+   sota la navegació. Ara és una etiqueta petita en llima (icona de ràdio o de llista + «Ràdio · 1/40») al principi de la
+   línia que ja hi havia; la línia no es parteix mai (si no hi cap, s'escurcen les visualitzacions). El nom sencer de la
+   ràdio o la llista és al `title`. */
+#watchPage .video-meta-row .meta-left {
+    min-width: 0;
+    flex-wrap: nowrap;
+    gap: 10px;
+    white-space: nowrap;
+}
+
+#watchPage .video-meta-row .meta-left #videoViews {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.queue-mode-chip {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    gap: 5px;
+    padding: 2px 9px 2px 7px;
+    border: 1px solid rgba(214, 237, 132, 0.35);
+    border-radius: var(--pt-radius-pill);
+    background: rgba(214, 237, 132, 0.1);
+    color: var(--pt-accent);
+    font-size: 0.75rem;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.queue-mode-chip svg {
+    width: 14px;
+    height: 14px;
+    flex: none;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}

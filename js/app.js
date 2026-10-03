@@ -9309,13 +9309,47 @@ function createTVAlgorithmInfo() {
     return wrap;
 }
 
+// Ràdio o llista que sona: una etiqueta petita al principi de la línia de data i visualitzacions (sota el títol), no
+// una línia pròpia; a mòbil, la línia «Mode llista · Ràdio 1/40» de sota el reproductor empenyia els botons sota la
+// navegació. Les TV (mode bucle) conserven la seva capçalera amb la informació i el botó de regenerar.
+const QUEUE_CHIP_ICONS = {
+    radio: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4.9 19.1a10 10 0 0 1 0-14.2M7.8 16.2a6 6 0 0 1 0-8.4M16.2 7.8a6 6 0 0 1 0 8.4M19.1 4.9a10 10 0 0 1 0 14.2"/><circle cx="12" cy="12" r="2"/></svg>',
+    list: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h13M3 12h13M3 18h9M17 15v6l5-3-5-3Z"/></svg>',
+};
+
+function updatePlaylistModeChip(isTVMode) {
+    const row = document.querySelector('#watchPage .video-meta-row .meta-left');
+    const existing = document.getElementById('playlistModeChip');
+    if (!row || !isPlaylistMode || isTVMode) {
+        existing?.remove();
+        return;
+    }
+    const isRadio = activePlaylistId === SegueixApp.features.musicQueue?.QUEUE_ID;
+    const position = activePlaylistQueue.length > 0 ? `${currentPlaylistIndex + 1}/${activePlaylistQueue.length}` : '';
+    const name = isRadio ? SegueixApp.features.musicQueue?.playlistName?.() || 'Ràdio' : activePlaylistName || 'Llista';
+    const chip = existing || document.createElement('span');
+    chip.id = 'playlistModeChip';
+    chip.className = `queue-mode-chip${isRadio ? ' is-radio' : ''}`;
+    chip.title = `${name}${position ? ` · ${position}` : ''}`;
+    chip.setAttribute('aria-label', isRadio ? `Sona una ràdio: ${chip.title}` : `Sona una llista: ${chip.title}`);
+    chip.innerHTML = `${isRadio ? QUEUE_CHIP_ICONS.radio : QUEUE_CHIP_ICONS.list}<span>${isRadio ? 'Ràdio' : 'Llista'}${
+        position ? ` · ${position}` : ''
+    }</span>`;
+    if (!existing) row.insertBefore(chip, row.firstChild);
+}
+
 function updatePlaylistModeBadge() {
     const container = document.querySelector('.video-info');
     if (!container) {
         return;
     }
     const existing = document.getElementById('playlistModeBadge');
-    if (!isPlaylistMode) {
+    const isTVPlaying =
+        isPlaylistMode &&
+        activePlaylistId === '__segueix_tv_discovery__' &&
+        document.body.classList.contains('segueix-tv-playback');
+    updatePlaylistModeChip(isTVPlaying);
+    if (!isPlaylistMode || !isTVPlaying) {
         existing?.remove();
         return;
     }

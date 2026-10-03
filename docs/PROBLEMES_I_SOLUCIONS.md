@@ -22,6 +22,15 @@
 
 **Fitxers Afectats:**
 
+## [2026-10-03] - Fila de botons de la fitxa de la cançó tallada per la navegació inferior (mòbil)
+**Símptoma:** al mòbil, la fila de botons de sota el títol (afegir a llista, compartir, finestra flotant, comentar, «Canal YouTube») quedava a mitges sota la navegació inferior.
+
+**Causa Arrel:** sota el reproductor quadrat (que ocupa tot l'ample) hi havia una línia pròpia «Mode llista · Ràdio 1/40» (`#playlistModeBadge`, 31 px + marge) abans del títol. Amb la zona del sistema a dalt, la pantalla útil (≈ 740 px) no hi arribava.
+
+**Solució Implementada:** un primer intent (PR #70) feia el quadrat més petit segons l'alçada; l'usuari va preferir conservar-lo a tot l'ample i es va desfer. Ara la línia desapareix i la ràdio o la llista es diu amb una etiqueta petita en llima dins la línia de data i visualitzacions que ja hi havia (`updatePlaylistModeChip()`, `#playlistModeChip`, icona de ràdio o de llista + «Ràdio · 1/40»). La línia no es parteix: si no hi cap, s'escurcen les visualitzacions. Es guanyen ≈ 37 px; a 360×738 la fila acaba just damunt de la navegació. Les TV conserven el seu `#playlistModeBadge` amb la informació i el botó de regenerar.
+
+**Fitxers Afectats:** `js/app.js`, `css/portada.css`, `tests/player-controls.test.js`, `tests/browser/verificar-play-pausa.js`.
+
 ## [2026-10-03] - Plegar la navegació lateral: la barra plegada ocupava l'espai i el contingut sortia desplaçat
 **Símptoma:** el control per plegar la barra (una fletxa ‹ › penjada a la vora de la barra) no plegava res de debò: amb la barra «plegada» quedava una columna buida de 236 px, el contingut no s'estenia, i amb la barra oberta el contingut sortia 240 px desplaçat a la dreta.
 
