@@ -5140,3 +5140,17 @@ body #watchPage .video-info-modern :is(.btn-round-icon, .btn-heart, .btn-pill-re
     #playlistBtn, #shareBtn, #miniPlayerToggle) {
     border: 1.5px solid var(--pt-icon-border);
 }
+
+/* Accessos superiors: icones directament sobre el fons, sense marc ni pastilla. */
+body .app-header .actions :is(.icon-btn[data-page='llistes'], #backgroundBtn, #addYoutuberBtn) {
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    outline: none;
+}
+
+body .app-header .actions :is(.icon-btn[data-page='llistes'], #backgroundBtn, #addYoutuberBtn):focus-visible {
+    color: var(--pt-icon-border);
+    /* El focus de teclat es ressalta a la icona, sense dibuixar un marc. */
+    filter: drop-shadow(0 0 3px var(--pt-icon-border));
+}
