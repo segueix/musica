@@ -81,13 +81,13 @@ describe('controls del sistema (Media Session)', () => {
         expect(calls).toEqual(['play', 'pause', 'pause']);
     });
 
-    it('amb la pestanya amagada no permet reprendre ni avançar des de Media Session', () => {
+    it('amb la pestanya amagada no permet reprendre ni avançar des de Media Session', async () => {
         const { handlers, calls, api } = setup({ state: '2', hidden: true, pip: true });
         handlers.play();
         handlers.nexttrack();
         handlers.pause();
         expect(calls).toEqual(['pause']);
-        expect(api.openPip()).resolves.toBe(false);
+        await expect(api.openPip()).resolves.toBe(false);
     });
 
     it('anterior i següent només hi són quan la cua en té', () => {
