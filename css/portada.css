@@ -5043,6 +5043,58 @@ body:has(#playerExternalControls.is-floating.is-above:not([hidden])) #videoPlaye
     }
 }
 
+/* ---------- «La teva ràdio» amb la barra lateral oberta: targeta sencera i caràtules que no tapen res ----------
+   Amb la barra desplegada (i «Continua escoltant» al costat) la targeta quedava d'uns 450–750 px, però les caràtules
+   reservaven fins a 380 px a la dreta: el text es partia en molts trossos, les caràtules tapaven el botó i el selector
+   «Quant vols descobrir?» s'aixafava. Ara (1) quan l'àrea de contingut fa menys de 1180 px les dues targetes van una
+   sota l'altra i la ràdio té tot l'ample, (2) si la targeta fa menys de 900 px les caràtules són més petites i només el títol i el text en reserven
+   el lloc (el botó i el selector de mode, que ocupa tot l'ample del cos, no). */
+@supports (width: 1cqw) {
+    @media (min-width: 769px) {
+        #homePage.is-portada {
+            container-type: inline-size;
+            container-name: portada-page;
+        }
+
+        @container portada-page (max-width: 1179px) {
+            .pt-entry.has-continue {
+                grid-template-columns: minmax(0, 1fr);
+            }
+        }
+
+        /* El contenidor és .pt-radio: una consulta de contenidor només estila els descendents, per això les variables
+           es posen al cos i a les caràtules (no a la targeta) */
+        @container (max-width: 899px) {
+            .pt-radio__body,
+            .pt-radio__covers {
+                --pt-cover: clamp(72px, 15cqw, 104px);
+                --pt-cover-right: 20px;
+            }
+
+            .pt-radio__covers {
+                top: 22px;
+                transform: none;
+            }
+
+            /* Només el que és a l'alçada de les caràtules (etiqueta, títol i text) deixa lloc a la dreta */
+            .pt-radio__body {
+                flex: 1 1 auto;
+                padding-right: 28px;
+            }
+
+            .pt-radio__title,
+            .pt-radio__lead,
+            .pt-radio .pt-eyebrow--brand {
+                padding-right: calc(var(--pt-cover) * 2.28 + var(--pt-cover-right) - 8px);
+            }
+
+            .pt-radio .pt-mode__options {
+                max-width: none;
+            }
+        }
+    }
+}
+
 /* ---------- Ràdio o llista que sona: etiqueta dins la línia de data i visualitzacions ----------
    Abans era una línia pròpia sota el reproductor («Mode llista · Ràdio 1/40») que, a mòbil, empenyia la fila de botons
    sota la navegació. Ara és una etiqueta petita en llima (icona de ràdio o de llista + «Ràdio · 1/40») al principi de la
