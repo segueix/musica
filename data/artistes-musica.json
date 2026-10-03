@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-03T13:26:00.758Z",
+  "updatedAt": "2026-10-03T17:39:00.000Z",
   "artists": [
     {
       "name": "31 FAM",
@@ -5752,6 +5752,32 @@
           "musicbrainzReleaseGroupCount": 8
         }
       }
+    },
+    {
+      "name": "Fetus",
+      "aliases": [],
+      "genres": [
+        "Punk"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": "Q118176928",
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://www.wikidata.org/wiki/Q118176928",
+        "manual-user-2026-10-03",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-03T17:39:00.000Z",
+      "notes": "Alta manual sol·licitada: nom públic «Fetus», gènere Punk. Canal «Fetus - Topic» pendent de resolució automàtica de YouTube."
     },
     {
       "name": "Figa Flawas",
