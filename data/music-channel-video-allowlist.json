@@ -21,7 +21,11 @@
         "KnockOut"
       ],
       "acceptedMusicOnly": true,
-      "avatarFromFirstAllowedVideo": true
+      "avatarFromFirstAllowedVideo": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
     }
   }
 }
