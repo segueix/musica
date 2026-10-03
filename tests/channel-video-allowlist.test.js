@@ -31,4 +31,26 @@ describe('llista blanca de vídeos per canal', () => {
     expect(isChannelVideoAllowed(rules, 'UCtest', 'Subliminal - Para la Foto')).toBe(false);
     expect(isChannelVideoAllowed(rules, 'UCaltre', 'Qualsevol vídeo')).toBe(true);
   });
+
+  it('pot acceptar només vídeos que continguin el nom de l artista', () => {
+    const fakeFs = {
+      readFileSync() {
+        return JSON.stringify({
+          channels: {
+            UCknockout: {
+              allowedTitleContains: ['KnockOut'],
+              acceptedMusicOnly: true,
+              avatarFromFirstAllowedVideo: true
+            }
+          }
+        });
+      }
+    };
+    const rules = loadChannelVideoAllowlist('/fake.json', fakeFs);
+    expect(isChannelVideoAllowed(rules, 'UCknockout', 'KNOCKOUT - La vida s atura')).toBe(true);
+    expect(isChannelVideoAllowed(rules, 'UCknockout', 'Knock-Out - Directe')).toBe(true);
+    expect(isChannelVideoAllowed(rules, 'UCknockout', 'Un altre grup - Cançó')).toBe(false);
+    expect(rules.get('UCknockout')?.acceptedMusicOnly).toBe(true);
+    expect(rules.get('UCknockout')?.avatarFromFirstAllowedVideo).toBe(true);
+  });
 });
