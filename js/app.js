@@ -10570,6 +10570,9 @@ function toggleMainPlayerPlayback() {
 
 // Alçada de la barra de controls quan va enganxada sota la finestra flotant (portada.css, --pec-dock-h)
 const EXTERNAL_CONTROLS_DOCK_HEIGHT = 52;
+// Amplada mínima de la barra flotant (escriptori): sis botons de 40-44 px. La finestra es pot fer més estreta
+// (redimensionar), però la barra no s'encongeix i es manté dins la pantalla.
+const EXTERNAL_CONTROLS_MIN_WIDTH = 300;
 
 function initExternalPlayerControls() {
     const bar = document.getElementById('playerExternalControls');
@@ -10591,7 +10594,10 @@ function initExternalPlayerControls() {
         bar.classList.toggle('is-floating', floating);
         if (docked && bar.parentNode !== document.body) document.body.appendChild(bar);
         if (!docked && bar.parentNode !== home.parent) home.parent.insertBefore(bar, home.next);
-        if (!floating) ['left', 'top', 'width'].forEach(prop => bar.style.removeProperty(prop));
+        if (!floating) {
+            ['left', 'top', 'width'].forEach(prop => bar.style.removeProperty(prop));
+            bar.classList.remove('is-above', 'is-wide');
+        }
     };
     let positionFrame = null;
     const followPlayer = () => {
@@ -10599,9 +10605,13 @@ function initExternalPlayerControls() {
         if (!bar.classList.contains('is-floating')) return;
         const rect = videoPlayer.getBoundingClientRect();
         const below = rect.bottom + EXTERNAL_CONTROLS_DOCK_HEIGHT <= window.innerHeight;
-        bar.style.left = `${Math.round(rect.left)}px`;
+        const width = Math.max(rect.width, EXTERNAL_CONTROLS_MIN_WIDTH);
+        // Centrada sota la finestra, sense sortir de la pantalla
+        const left = Math.min(Math.max(0, rect.left + (rect.width - width) / 2), window.innerWidth - width);
+        bar.style.left = `${Math.round(Math.max(0, left))}px`;
         bar.style.top = `${Math.round(below ? rect.bottom : rect.top - EXTERNAL_CONTROLS_DOCK_HEIGHT)}px`;
-        bar.style.width = `${Math.round(rect.width)}px`;
+        bar.style.width = `${Math.round(width)}px`;
+        bar.classList.toggle('is-wide', width > rect.width + 1);
         bar.classList.toggle('is-above', !below);
     };
     const scheduleFollow = () => {
