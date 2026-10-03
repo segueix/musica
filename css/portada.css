@@ -27,7 +27,8 @@
 
     --pt-display: 'Fraunces', 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
     --pt-nav-h: 60px; /* navegació inferior (mòbil) */
-    --pt-side-w: 0px; /* navegació lateral (escriptori) */
+    --pt-side-open: 0px; /* ample de la navegació lateral quan és desplegada (escriptori) */
+    --pt-side-w: var(--pt-side-open); /* espai que ocupa ara: 0 si és plegada (i s'anima, vegeu @property) */
     --pt-gutter: 16px;
 
     /* La resta de l'app hereta la mateixa paleta */
@@ -42,14 +43,14 @@
 
 @media (min-width: 769px) {
     :root {
-        --pt-side-w: 84px;
+        --pt-side-open: 84px;
         --pt-gutter: 28px;
     }
 }
 
 @media (min-width: 1200px) {
     :root {
-        --pt-side-w: 236px;
+        --pt-side-open: 236px;
     }
 }
 
@@ -421,7 +422,7 @@ body {
         top: var(--header-height);
         left: 0;
         bottom: 0;
-        width: var(--pt-side-w);
+        width: var(--pt-side-open);
         height: auto;
         padding: 12px 10px;
         background: var(--pt-bg);
@@ -4892,5 +4893,101 @@ body:has(#playerExternalControls.is-floating.is-above:not([hidden])) #videoPlaye
 
     body:has(#playerExternalControls.is-docked:not([hidden])):has(#videoPlayer.mini-player-active) .pt-toast {
         bottom: calc(var(--pt-nav-h) + var(--safe-bottom) + 56.25vw + var(--pec-dock-h) + 12px);
+    }
+}
+
+/* ---------- Plegar i desplegar la navegació lateral (escriptori i tauleta) ----------
+   Botó de tres ratlles (#sidebarToggle) a l'esquerra de la capçalera. Plegada, la barra llisca cap a fora i el
+   contingut ocupa tot l'ample: `body.sidebar-collapsed` posa --pt-side-w (l'espai que ocupa la barra) a 0 i tot el que en
+   depèn (padding del cos, marge de la capçalera) s'hi adapta alhora. --pt-side-w és una propietat registrada perquè es
+   pugui animar; sense @property (navegadors vells) el canvi és instantani. La preferència es recorda (app.js). */
+@property --pt-side-w {
+    syntax: '<length>';
+    inherits: true;
+    initial-value: 0px;
+}
+
+.sidebar-toggle {
+    display: none;
+}
+
+@media (min-width: 769px) {
+    .app-header {
+        grid-template-columns: auto auto minmax(220px, 1fr) auto;
+        grid-template-areas: 'toggle brand search actions';
+    }
+
+    .sidebar-toggle {
+        grid-area: toggle;
+        display: inline-grid;
+        place-items: center;
+        width: 44px;
+        height: 44px;
+        margin-right: -4px;
+        padding: 0;
+        border: 1px solid transparent;
+        border-radius: var(--pt-radius-sm);
+        background: transparent;
+        color: var(--pt-text);
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+        transition:
+            background-color 0.15s ease,
+            color 0.15s ease;
+    }
+
+    .sidebar-toggle svg {
+        width: 24px;
+        height: 24px;
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 2.2;
+        stroke-linecap: round;
+    }
+
+    .sidebar-toggle:hover {
+        background: var(--pt-surface-2);
+    }
+
+    .sidebar-toggle:focus-visible {
+        outline: 2px solid var(--pt-accent);
+        outline-offset: 2px;
+    }
+
+    /* Amb la barra plegada el botó s'ha de veure «actiu» perquè se sàpiga que hi ha un menú amagat */
+    body.sidebar-collapsed .sidebar-toggle {
+        color: var(--pt-accent);
+    }
+
+    body.sidebar-collapsed {
+        --pt-side-w: 0px;
+    }
+
+    /* La barra no s'arronsa (el text es trencaria): llisca cap a fora i, un cop fora, deixa de ser focalitzable */
+    body .sidebar#sidebar {
+        transition:
+            transform 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+            visibility 0s linear 0s;
+    }
+
+    body.sidebar-collapsed .sidebar#sidebar {
+        transform: translateX(-100%);
+        visibility: hidden;
+        transition:
+            transform 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+            visibility 0s linear 0.28s;
+    }
+
+    /* Les transicions només comencen quan l'app ja ha pintat l'estat desat (sense animar en obrir la pàgina) */
+    body.sidebar-ready {
+        transition: --pt-side-w 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body.sidebar-ready,
+    body .sidebar#sidebar,
+    body.sidebar-collapsed .sidebar#sidebar {
+        transition: none;
     }
 }

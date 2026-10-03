@@ -22,6 +22,15 @@
 
 **Fitxers Afectats:**
 
+## [2026-10-03] - Plegar la navegació lateral: la barra plegada ocupava l'espai i el contingut sortia desplaçat
+**Símptoma:** el control per plegar la barra (una fletxa ‹ › penjada a la vora de la barra) no plegava res de debò: amb la barra «plegada» quedava una columna buida de 236 px, el contingut no s'estenia, i amb la barra oberta el contingut sortia 240 px desplaçat a la dreta.
+
+**Causa Arrel:** el bloc afegit a `styles.css` posava `body.sidebar-collapsed .sidebar { width: 12px }` i `body:not(.sidebar-collapsed) .main-content { margin-left: var(--sidebar-width) }`, però la maquetació real de Segueix Música és a `portada.css`: la barra té `body .sidebar#sidebar { width: var(--pt-side-w) }` (l'id guanya en especificitat) i el cos fa `padding-left: var(--pt-side-w)`. La regla nova no es veia, i el marge s'afegia al padding que ja hi havia.
+
+**Solució Implementada:** es parteix de l'ample que ja manava. `--pt-side-open` és l'ample desplegat i `--pt-side-w` l'espai que la barra ocupa ara; `body.sidebar-collapsed` el posa a 0 i el padding del cos i el marge de la capçalera s'hi adapten sols. `--pt-side-w` es registra amb `@property` per animar-lo (0,28 s); la barra conserva el seu ample i llisca amb `transform`, i plegada és `visibility: hidden` (res al teclat). El control passa a ser un botó de tres ratlles a la capçalera (`#sidebarToggle`, `aria-expanded`/`aria-label`), amb la preferència desada i sense animar en obrir l'app (`body.sidebar-ready`). S'ha tret la vista prèvia en passar per una franja de 12 px i el bloc de `styles.css`.
+
+**Fitxers Afectats:** `index.html`, `css/portada.css`, `css/styles.css`, `js/app.js`, `tests/barra-lateral.test.js`, `tests/browser/verificar-barra-lateral.js`.
+
 ## [2026-10-03] - Restaurar i tancar damunt de la finestra flotant: contra les normes de YouTube
 **Símptoma:** la finestra flotant portava dos botons (restaurar i tancar) i una franja enfosquida a dalt, damunt del vídeo de YouTube. La fila de sota el títol duplicava el m'agrada de la barra de controls.
 
