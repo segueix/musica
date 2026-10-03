@@ -673,6 +673,7 @@ async function main(){
   }
 
   applyFalseShortsOverrides(videos);
+  const artistsOfChannel=id=>indexed.get(id)?.artistNames||[];
   // Shorts: només conservem els que es poden vincular inequívocament a una cançó de la discografia
   // validada del mateix artista (canal Tema). Això evita entrevistes, promos i fragments parlats en altres llengües.
   // Els Shorts del mateix canal Tema ja són la cançó publicada i també han de coincidir amb el seu catàleg.
@@ -699,7 +700,6 @@ async function main(){
   const hiddenIds=loadHiddenVideoIds();
   // Una cançó amagada al canal propi d'un artista (castellà...) tampoc no entra des del seu Tema: ni la que
   // coincideix amb una amagada per ID, ni la que compleix les regles per títol de scripts/ocultar_titols_castella.js.
-  const artistsOfChannel=id=>indexed.get(id)?.artistNames||[];
   const rulesByArtist=new Map();
   for(const [ruleName,rule] of Object.entries(SPANISH_TITLE_RULES)){
     for(const id of ids){
