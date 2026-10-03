@@ -3,11 +3,10 @@
 // 1) Media Session: pantalla de bloqueig, notificació d'Android, tecles multimèdia, auriculars i Chromebook. Diu quina
 //    cançó sona (títol, artista, ràdio i caràtula), la posició dins la cançó i quines accions hi ha: play, pausa, atura,
 //    anterior i següent (només si n'hi ha a la cua), endavant/enrere 10 s i saltar a un punt.
-// 2) Finestra flotant del sistema (Document Picture-in-Picture: Chrome i Edge d'escriptori i Chromebook): una finestra
-//    sempre al davant, fins i tot amb el navegador minimitzat, amb la caràtula, la cançó, la barra de temps,
-//    anterior / play-pausa / següent, «com aquesta» (+/−) i què ve després. El reproductor de YouTube es queda a la
-//    pestanya: si es mogués a la finestra YouTube el tornaria a carregar i deixarien de funcionar les estadístiques
-//    d'escolta, els m'agrada i la resta de l'app que el llegeixen de la pàgina.
+// 2) Finestra flotant del sistema (Document Picture-in-Picture: Chrome i Edge d'escriptori i Chromebook): mostra
+//    caràtula, cançó, barra de temps i controls mentre la pàgina de Segueix Música és visible. El reproductor de
+//    YouTube es queda a la pestanya. Si la pestanya queda amagada o Chrome es minimitza, app.js pausa YouTube i tanca
+//    aquesta finestra; aquest mòdul tampoc permet reprendre ni saltar cançons des de Media Session en segon pla.
 //
 // No depèn d'app.js en carregar-se: les funcions globals (playMainPlayer, advanceQueueFromOverlay…) només es fan servir
 // en temps d'execució.
@@ -150,12 +149,16 @@
         return true;
     }
 
+    function canControlPlayback() {
+        return window.document?.visibilityState !== 'hidden';
+    }
+
     const actions = {
-        play: () => (fns.play() ? fns.play()() : sendCommand('playVideo')),
+        play: () => (canControlPlayback() ? (fns.play() ? fns.play()() : sendCommand('playVideo')) : false),
         pause: () => (fns.pause() ? fns.pause()() : sendCommand('pauseVideo')),
         toggle: () => (isPlaying() ? actions.pause() : actions.play()),
-        next: () => (hasNext() ? call(fns.next()) : undefined),
-        previous: () => (hasPrevious() ? call(fns.previous()) : undefined),
+        next: () => (canControlPlayback() && hasNext() ? call(fns.next()) : undefined),
+        previous: () => (canControlPlayback() && hasPrevious() ? call(fns.previous()) : undefined),
         seekTo: seconds => {
             const duration = durationOf(nowPlaying());
             const target = Math.max(0, duration ? Math.min(seconds, duration - 1) : seconds);
@@ -405,7 +408,7 @@
     }
 
     async function openPip() {
-        if (!isPipSupported()) return false;
+        if (!isPipSupported() || !canControlPlayback()) return false;
         if (isPipOpen()) {
             pipWindow.focus?.();
             return true;
