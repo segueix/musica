@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-03T18:25:50.737Z",
+  "updatedAt": "2026-10-03T19:04:00.000Z",
   "artists": [
     {
       "name": "31 FAM",
@@ -3957,6 +3957,34 @@
         "pop-rock",
         "pop"
       ]
+    },
+    {
+      "name": "Dusminguet",
+      "aliases": [],
+      "genres": [
+        "Rumba / Mestissatge"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://es.wikipedia.org/wiki/Dusminguet",
+        "manual-user-2026-10-03",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-03T19:04:00.000Z",
+      "notes": "Alta manual sol·licitada: canal Topic pendent de resolució automàtica; gènere Rumba / Mestissatge."
     },
     {
       "name": "Ebri Knight",
@@ -10866,7 +10894,9 @@
     {
       "name": "La Troba Kung-Fú",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Rumba / Mestissatge"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -10874,7 +10904,15 @@
       "wikidataId": "Q1817487",
       "musicbrainzId": "c52e82c6-e3fa-4643-b553-efa44cd68af1",
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UC63BTrp525uyzMd-YTMAt_w",
+            "handle": null,
+            "name": "La Troba Kung-Fú - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
         "candidates": [],
         "searchCandidates": [
           {
@@ -10918,15 +10956,19 @@
           }
         ]
       },
-      "confidence": "pendent",
-      "reviewStatus": "pendent",
-      "active": false,
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
         "https://www.wikidata.org/wiki/Q1817487",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "manual-user-2026-10-03",
+        "genre:manual",
+        "youtube:manual-verified",
+        "https://www.youtube.com/channel/UC63BTrp525uyzMd-YTMAt_w"
       ],
-      "lastChecked": "2026-09-25T15:55:21.158Z",
-      "notes": "",
+      "lastChecked": "2026-10-03T19:04:00.000Z",
+      "notes": "Alta manual verificada: canal «La Troba Kung-Fú - Topic»; gènere Rumba / Mestissatge.",
       "enrichment": {
         "musicbrainz": {
           "checkedAt": "2026-09-25T15:55:21.158Z",
