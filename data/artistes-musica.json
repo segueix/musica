@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-03T19:06:25.827Z",
+  "updatedAt": "2026-10-03T19:07:00.000Z",
   "artists": [
     {
       "name": "31 FAM",
@@ -3973,7 +3973,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCOXyxBFPQ97GO6PQqiJSvkw",
+            "handle": null,
+            "name": "Dusminguet - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UCOXyxBFPQ97GO6PQqiJSvkw",
@@ -4025,10 +4033,12 @@
       "sources": [
         "https://es.wikipedia.org/wiki/Dusminguet",
         "manual-user-2026-10-03",
-        "genre:manual"
+        "genre:manual",
+        "youtube:manual-verified",
+        "https://www.youtube.com/channel/UCOXyxBFPQ97GO6PQqiJSvkw"
       ],
-      "lastChecked": "2026-10-03T19:04:00.000Z",
-      "notes": "Alta manual sol·licitada: canal Topic pendent de resolució automàtica; gènere Rumba / Mestissatge.",
+      "lastChecked": "2026-10-03T19:07:00.000Z",
+      "notes": "Alta manual verificada: canal «Dusminguet - Topic»; gènere Rumba / Mestissatge.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-03T19:06:25.207Z",
