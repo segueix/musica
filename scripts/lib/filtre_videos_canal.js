@@ -49,6 +49,7 @@ function loadChannelVideoAllowlist(filePath, fsModule = require('fs')) {
             .filter(Boolean)
         ),
         avatarFromFirstAllowedVideo: rule?.avatarFromFirstAllowedVideo === true,
+        avatarFromAllowedTitle: normalizeVideoTitle(rule?.avatarFromAllowedTitle || ''),
       };
       parsedRule.hasTitleFilter = exactTitles.size > 0 || titleContains.length > 0;
 
@@ -57,7 +58,8 @@ function loadChannelVideoAllowlist(filePath, fsModule = require('fs')) {
         parsedRule.deniedTitleContains.length > 0 ||
         parsedRule.acceptedMusicOnly ||
         parsedRule.allowedContentTypes.size > 0 ||
-        parsedRule.avatarFromFirstAllowedVideo
+        parsedRule.avatarFromFirstAllowedVideo ||
+        parsedRule.avatarFromAllowedTitle
       ) {
         map.set(channelId, parsedRule);
       }
