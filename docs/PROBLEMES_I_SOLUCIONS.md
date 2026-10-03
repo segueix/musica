@@ -1,3 +1,12 @@
+## [2026-10-03] - Revisió d'idioma dels nous canals Oi!/Punk
+**Símptoma:** en afegir els canals Topic d’Opció K-95 i Desperta Ferro, les pistes noves van entrar a `data/revisio-idiomes.json`; alguns títols anglesos d’Opció K-95 són realment cançons en anglès, mentre que títols anglesos de Desperta Ferro com «DF Crew» i «Supporters» tenen lletra catalana.
+
+**Causa Arrel:** la revisió automàtica només detecta marques inequívocament no catalanes al títol; els títols anglesos sense caràcters especials necessiten comprovació editorial de la lletra.
+
+**Solució Implementada:** verificació de lletres i fonts web. S’han ocultat 7 pistes angleses d’Opció K-95 i s’ha afegit una regla persistent perquè no tornin a entrar. Es mantenen «Oi! You!» (el disc *Cap Oportunitat* és íntegrament en català), «Partisans» i totes les 36 pistes pendents de Desperta Ferro. Pilseners no tenia cap pista pendent. La revisió s’ha tancat només per aquests tres artistes, sense buidar la resta de pendents del projecte.
+
+**Fitxers Afectats:** `scripts/ocultar_titols_castella.js`, `data/hidden-videos.json`, `data/revisio-idiomes.json`, `docs/ARTISTES_CASTELLA.md`, `docs/PROBLEMES_I_SOLUCIONS.md`.
+
 ## [2026-10-03] - La reproducció automàtica s’atura al final de la cançó
 **Símptoma:** el vídeo acaba però la ràdio o llista no passa a la cançó següent.
 
