@@ -5438,7 +5438,7 @@ function hideLoading() {
 
 function setPageTitle(title) {
     if (pageTitle) {
-        pageTitle.classList.remove('page-title--with-actions', 'page-title--user-category');
+        pageTitle.classList.remove('page-title--with-actions', 'page-title--user-category', 'page-title--style');
         pageTitle.dataset.title = title;
         pageTitle.textContent = title;
     }
@@ -7956,6 +7956,31 @@ function openManageCategoryYoutubersModal(categoryName) {
     refreshIcons(modal);
 }
 
+// Vistes que són un estil musical (porten el botó de ràdio a dalt de tot). Inici, Descobreix, Radar, «Seguint» i la
+// resta de vistes especials no són un estil.
+const STYLE_RADIO_EXCLUDED_VIEWS = new Set(['Novetats', 'Tot', 'Descobreix', 'Radar', 'Seguint', 'Categoria']);
+const STYLE_RADIO_ICON =
+    '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4.9 19.1a10 10 0 0 1 0-14.2M7.8 16.2a6 6 0 0 1 0-8.4M16.2 7.8a6 6 0 0 1 0 8.4M19.1 4.9a10 10 0 0 1 0 14.2M12 13a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z"/></svg>';
+
+function isStyleRadioCategory(category) {
+    const name = normalizeCustomTag(category);
+    return Boolean(name) && !STYLE_RADIO_EXCLUDED_VIEWS.has(name) && isStandardCategory(name);
+}
+
+// Capçalera de la vista d'un estil: el nom i, just a sota, «Ràdio» (ràdio d'aquest estil, `startStyleRadio`).
+function renderStyleRadioHeader(category) {
+    pageTitle.classList.add('page-title--with-actions', 'page-title--style');
+    pageTitle.dataset.title = category;
+    pageTitle.innerHTML = `
+        <span class="uc-page">
+            <span class="page-title__query uc-page__name">${escapeHtml(category)}</span>
+            <span class="uc-page__actions">
+                <button type="button" class="pt-btn pt-btn--primary style-page__radio" data-style-radio="${escapeHtml(category)}">${STYLE_RADIO_ICON}<span>Ràdio</span></button>
+            </span>
+        </span>`;
+    pageTitle.querySelector('[data-style-radio]')?.addEventListener('click', () => startGenreRadio(category));
+}
+
 function renderCategoryActions(category) {
     if (!pageTitle) {
         return;
@@ -7963,6 +7988,7 @@ function renderCategoryActions(category) {
     const normalizedCategory = normalizeCustomTag(category);
     // Cas especial: secció Radar → mostra un botó d'informació al costat del títol
     if (normalizedCategory === 'Radar') {
+        pageTitle.classList.remove('page-title--style');
         pageTitle.classList.add('page-title--with-actions');
         pageTitle.dataset.title = 'Radar';
         pageTitle.innerHTML = `
@@ -7987,6 +8013,7 @@ function renderCategoryActions(category) {
     // Categoria pròpia: nom, grups i accions (ràdio, compartir, esborrar)
     const userTitleHtml = SegueixApp.features.userCategories?.pageTitleHtml?.(normalizedCategory);
     if (userTitleHtml && !isStandardCategory(normalizedCategory)) {
+        pageTitle.classList.remove('page-title--style');
         pageTitle.classList.add('page-title--with-actions', 'page-title--user-category');
         pageTitle.dataset.title = normalizedCategory;
         pageTitle.innerHTML = userTitleHtml;
@@ -7994,6 +8021,13 @@ function renderCategoryActions(category) {
         return;
     }
     pageTitle.classList.remove('page-title--user-category');
+    // Un estil (Pop, Rock…): el títol i, a dalt de tot, el botó de la ràdio d'aquest estil
+    if (isStyleRadioCategory(normalizedCategory)) {
+        renderStyleRadioHeader(normalizedCategory);
+        hideInlineKeywords();
+        return;
+    }
+    pageTitle.classList.remove('page-title--style');
     if (
         !normalizedCategory ||
         normalizedCategory === getCategoryPageTitle('Tot') ||
