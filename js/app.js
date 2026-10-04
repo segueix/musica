@@ -3651,9 +3651,12 @@ function bindCoreEvents() {
             }
             showHome();
             renderCategoryActions(getCategoryPageTitle(selectedCategory));
+            if (selectedCategory !== 'Novetats' && selectedCategory !== 'Tot') {
+                showCategoryLoading();
+            }
             // Diferir renderFeed al següent frame perquè el canvi de chip es pinti primer
             requestAnimationFrame(() => {
-                renderFeed();
+                renderFeedAfterCategoryChange();
                 if (isCustomCategory(selectedCategory)) {
                     const activeCategory = selectedCategory;
                     refreshCustomCategorySearch(activeCategory).then(() => {
@@ -4311,6 +4314,36 @@ function initInfoPopovers() {
     );
 }
 
+// En tocar un estil, la graella encara té el contingut de la vista anterior (la portada) i #homePage perd de seguida
+// `is-portada` (portada.js observa la barra d'estils): el navegador pintava les seccions de la portada sense el seu
+// estil («Torna-hi» amb l'historial, llistes…) fins que arribava la llista nova. Ara es pinta un esquelet de cançons
+// i s'amaga la capçalera de l'estil anterior fins que renderFeed() hi posa el contingut.
+const CATEGORY_LOADING_CLASS = 'is-loading-category';
+
+function showCategoryLoading() {
+    const home = document.getElementById('homePage');
+    if (!home || !videosGrid) return;
+    home.classList.add(CATEGORY_LOADING_CLASS);
+    // El render per lots i l'«scroll infinit» de la vista anterior no hi han d'afegir més targetes
+    if (typeof _batchRenderAbort !== 'undefined' && _batchRenderAbort) _batchRenderAbort.aborted = true;
+    videosGrid.setAttribute('aria-busy', 'true');
+    videosGrid.innerHTML = `<div class="cat-skeleton" aria-hidden="true">${'<div class="cat-skeleton__item"><i class="cat-skeleton__thumb"></i><span class="cat-skeleton__lines"><i></i><i></i></span></div>'.repeat(8)}</div>`;
+}
+
+function hideCategoryLoading() {
+    document.getElementById('homePage')?.classList.remove(CATEGORY_LOADING_CLASS);
+    videosGrid?.removeAttribute('aria-busy');
+}
+
+// renderFeed() amb l'esquelet de càrrega posat des del toc fins que la llista és a punt.
+function renderFeedAfterCategoryChange() {
+    try {
+        renderFeed();
+    } finally {
+        hideCategoryLoading();
+    }
+}
+
 function bindHomeEvents() {
     // Handler directe a chips-bar per resposta tàctil immediata (evita esperar bubbling a document)
     if (chipsBar) {
@@ -4350,6 +4383,9 @@ function bindHomeEvents() {
             }
 
             saveChipsToCache();
+            if (selectedCategory !== 'Novetats' && selectedCategory !== 'Tot') {
+                showCategoryLoading();
+            }
             const basePath = window.location.pathname.replace(/\/index\.html$/, '/');
             // Guardar la categoria anterior a l'entrada actual del historial
             history.replaceState(
@@ -4368,7 +4404,7 @@ function bindHomeEvents() {
                     }
                     showHome({ skipPushState: true });
                     renderCategoryActions(getCategoryPageTitle(selectedCategory));
-                    renderFeed();
+                    renderFeedAfterCategoryChange();
 
                     // Consolidar estat visual
                     chip.classList.remove('chip-loading');

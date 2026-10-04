@@ -5493,3 +5493,89 @@ body .app-header .actions :is(.icon-btn[data-page='llistes'], #backgroundBtn, #a
     margin: 0 auto;
     text-align: center;
 }
+
+/* ---------- Canvi d'estil sense salts (app.js: showCategoryLoading) ---------- */
+/* Des del toc fins que la llista nova és a punt: esquelet de cançons a la graella i cap resta de la vista anterior
+   (ni la capçalera de l'estil d'abans ni les seccions de la portada sense el seu estil). */
+#homePage.is-loading-category .hero > *,
+#homePage.is-loading-category .grid-layout-controls,
+#homePage.is-loading-category .category-keywords-inline {
+    visibility: hidden;
+}
+
+/* La capçalera (cançó destacada) es queda al seu lloc com a esquelet: la llista no salta quan arriba */
+#homePage.is-loading-category .hero {
+    animation: pt-pulse 1.4s ease-in-out infinite;
+}
+
+#homePage .videos-grid > .cat-skeleton {
+    grid-column: 1 / -1;
+}
+
+.cat-skeleton {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr));
+    gap: 12px;
+}
+
+.cat-skeleton__item {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    min-height: 92px;
+    padding: 8px;
+    border-radius: var(--pt-radius);
+    background: var(--pt-surface);
+}
+
+.cat-skeleton__thumb {
+    flex: 0 0 132px;
+    aspect-ratio: 16 / 9;
+    border-radius: 10px;
+    background: var(--pt-surface-2);
+}
+
+.cat-skeleton__lines {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cat-skeleton__lines i {
+    display: block;
+    height: 12px;
+    border-radius: var(--pt-radius-pill);
+    background: var(--pt-surface-2);
+}
+
+.cat-skeleton__lines i:last-child {
+    width: 55%;
+}
+
+.cat-skeleton__thumb,
+.cat-skeleton__lines i {
+    animation: pt-pulse 1.4s ease-in-out infinite;
+}
+
+/* A escriptori i tauleta les targetes de cançó són verticals (caràtula a dalt) */
+@media (min-width: 769px) {
+    .cat-skeleton__item {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 12px;
+    }
+
+    .cat-skeleton__thumb {
+        flex: none;
+        width: 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #homePage.is-loading-category .hero,
+    .cat-skeleton__thumb,
+    .cat-skeleton__lines i {
+        animation: none;
+    }
+}
