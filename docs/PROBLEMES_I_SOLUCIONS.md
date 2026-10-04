@@ -1403,3 +1403,23 @@ Hi havia dos problemes independents:
 **Causa:** el canvi que el va crear (`4b73725`) va afegir les regles a `css/portada.css` però no va canviar el `?v=` de l'enllaç a `index.html`. L'HTML (network-first) ja era el nou i el CSS sortia de la memòria cau (HTTP i `static-<hash>` del SW, que queda `waiting` mentre l'app és visible).
 
 **Solució:** `?v=` nou a `portada.css` (una URL que cap memòria cau no té) i `npm run sw:version`. El bloc s'ha redissenyat com una franja integrada (disc llima amb micròfon, text, crida llima) amb selectors `#followPage …` perquè guanyin a les regles antigues de `#addYoutuberBtn` i `.follow-subtitle` de `styles.css`, i amb marge a la dreta (30 / 40 px) per no tocar la columna de lletres. **Regla:** si canvies `portada.css` o `styles.css` amb HTML nou que en depèn, canvia també el `?v=` de l'enllaç. Prova: `tests/contacte.test.js`.
+
+
+## [2026-10-05] - La finestra flotant del sistema porta el vídeo (es pot canviar de pestanya amb el vídeo visible)
+
+**Objectiu:** poder anar per altres pestanyes i webs sense perdre el vídeo, complint les normes de YouTube (no es pot reproduir en segon pla amb el reproductor amagat). Abans la finestra del sistema només portava controls i la pestanya amagada pausava la música.
+
+**Solució:** `system-player.js` trasllada `#videoPlayer` (el node sencer) a la finestra Document Picture-in-Picture; mentre és oberta, el reproductor és visible i `isVideoPipOpen()` és l'única excepció a la pausa amb la pestanya amagada (`visibilitychange`, `handlePlaylistVideoEnded`, `loadVideoInSequence`, `isPersistentPlayerActive`). En tancar-la, el node torna a lloc (`pagehide`) i es reprèn al segon on era; si l'usuari és en una altra pàgina de l'app, queda a la finestreta de dins la pàgina.
+
+**Trampes que ja han mossegat:**
+- Moure un iframe el recarrega: cal `start=` i `autoplay=` a la URL (`withPlaybackParams`) i tornar a pausar si estava en pausa (l'app envia `playVideo` en cada càrrega).
+- Els `postMessage` de l'iframe van al seu pare, que ara és la finestra flotant: es reenvien a `window` amb `MessageEvent` (mateixa `source`) perquè l'estat, el temps i el final de cançó arribin a l'app.
+- `document.getElementById('videoPlayer')` retorna `null` mentre és a la finestra: fer servir `SegueixApp.utils.playerElement()`. Si no, `music-signals.js` deixa de comptar escoltes.
+- Els estils de la pàgina no arriben a la finestra: `PIP_CSS` posa `#videoPlayer` a ple amb `!important` (hi queden estils en línia de la pàgina) i amaga tot el que no és `.video-embed-wrap`.
+- A la pàgina `#watchPage` no té `hidden` quan s'és a Historial (l'amaga `#mainContent`): per saber si el forat és a la vista cal mirar `#videoPlaceholder.getClientRects()`.
+- Proves en navegador: les rutes del succedani de YouTube han d'anar al **context**, no a la pàgina (la finestra és una altra pàgina).
+
+**No verificat:** reproducció real de YouTube a la finestra (possible bloqueig d'autoplay o d'embed per referrer); caldrà provar-ho a Chrome.
+
+**Proves:** `tests/system-player.test.js`, `tests/player-controls.test.js`, `node tests/browser/verificar-finestra-sistema.js`.
+

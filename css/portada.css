@@ -5880,3 +5880,36 @@ body:not(:has(#followPage)) .az-index {
         transition: none;
     }
 }
+
+/* ---------- Vídeo a la finestra flotant del sistema ----------
+   Amb la finestra flotant (Document Picture-in-Picture) oberta, el reproductor de YouTube hi viu a dins i a la pàgina
+   només queda el forat amb la caràtula i un avís amb el botó per tornar-lo (system-player.js posa `is-video-pip`). */
+.video-pip-notice {
+    display: none;
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    padding: 16px;
+    text-align: center;
+    color: var(--pt-text);
+}
+
+.video-pip-notice p {
+    margin: 0;
+    font-size: 1.0625rem;
+    font-weight: 700;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+}
+
+body.is-video-pip .video-placeholder .video-pip-notice {
+    display: flex;
+}
+
+body.is-video-pip .video-placeholder.is-placeholder-hidden {
+    visibility: visible;
+    pointer-events: auto;
+}

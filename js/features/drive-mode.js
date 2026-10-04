@@ -68,8 +68,13 @@
         }
     }
 
+    // El reproductor pot ser a la finestra flotant del sistema: es busca amb app.utils.playerElement()
+    function playerHost() {
+        return app.utils?.playerElement?.() || document.getElementById('videoPlayer');
+    }
+
     function currentVideoId() {
-        return String(document.getElementById('videoPlayer')?.dataset?.playingVideoId || '');
+        return String(playerHost()?.dataset?.playingVideoId || '');
     }
 
     function syncRecoveryVideo() {
@@ -84,7 +89,7 @@
     }
 
     function primeRecoveryState() {
-        const state = Number(document.getElementById('videoPlayer')?.dataset?.playerState);
+        const state = Number(playerHost()?.dataset?.playerState);
         if (!Number.isFinite(state)) return;
         lastPlayerState = state;
         if (state === 1 || state === 3) hasPlayedCurrentVideo = true;
@@ -118,7 +123,7 @@
 
     function parseYouTubePayload(event) {
         if (!/youtube(-nocookie)?\\.com/.test(String(event.origin || ''))) return null;
-        const iframe = document.querySelector('#videoPlayer iframe');
+        const iframe = playerHost()?.querySelector?.('iframe') || document.querySelector('#videoPlayer iframe');
         if (!iframe || (event.source && iframe.contentWindow && event.source !== iframe.contentWindow)) return null;
         let payload = event.data;
         if (typeof payload === 'string') {
@@ -264,7 +269,7 @@
     }
 
     function hasPlayer() {
-        return Boolean(document.querySelector('#videoPlayer iframe'));
+        return Boolean(playerHost()?.querySelector?.('iframe') || document.querySelector('#videoPlayer iframe'));
     }
 
     function enter() {

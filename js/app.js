@@ -3096,6 +3096,11 @@ async function bootstrapApp() {
             saveViewState();
             // Política de YouTube: no facilitem reproducció en segon pla quan la pestanya
             // queda amagada o Chrome es minimitza. L'usuari pot reprendre-la en tornar.
+            // Única excepció: el vídeo és visible dins la finestra flotant del sistema (la finestra
+            // continua oberta i el reproductor hi és a dins), llavors no s'atura res.
+            if (isVideoPipOpen()) {
+                return;
+            }
             if (isMainPlayerPlaying()) {
                 pauseMainPlayer();
             }
@@ -3646,7 +3651,7 @@ function bindCoreEvents() {
             chip.classList.add('is-active');
             const basePath = window.location.pathname.replace(/\/index\.html$/, '/');
             history.pushState({}, '', basePath);
-            if (!isMiniPlayerActive()) {
+            if (!isPersistentPlayerActive()) {
                 stopVideoPlayback();
             }
             showHome();
@@ -4083,7 +4088,7 @@ function bindNavigationEvents() {
             const basePath = window.location.pathname.replace(/\/index\.html$/, '/');
             history.pushState({}, '', basePath);
             requestAnimationFrame(() => {
-                if (!isMiniPlayerActive()) {
+                if (!isPersistentPlayerActive()) {
                     stopVideoPlayback();
                 }
                 showHomeNovetats();
@@ -4405,7 +4410,7 @@ function bindHomeEvents() {
             // Diferir el treball pesat per deixar l'animació córrer
             requestAnimationFrame(() => {
                 setTimeout(() => {
-                    if (!isMiniPlayerActive()) {
+                    if (!isPersistentPlayerActive()) {
                         stopVideoPlayback();
                     }
                     showHome({ skipPushState: true });
@@ -5360,7 +5365,7 @@ function handleCustomCategoryCreation() {
 
     const basePath = window.location.pathname.replace(/\/index\.html$/, '/');
     history.pushState({}, '', basePath);
-    if (!isMiniPlayerActive()) {
+    if (!isPersistentPlayerActive()) {
         stopVideoPlayback();
     }
     showHome();
@@ -8911,7 +8916,7 @@ function loadVideoInSequence({ autoPlay = true } = {}) {
     lastTVAdvanceAt = Date.now();
     // Per defecte les cues continuen amb autoplay només mentre la pàgina és visible.
     // Si queda amagada/minimitzada, qualsevol canvi de cua es prepara en pausa.
-    isAutoPlayNavigating = Boolean(autoPlay && document.visibilityState !== 'hidden');
+    isAutoPlayNavigating = Boolean(autoPlay && (document.visibilityState !== 'hidden' || isVideoPipOpen()));
     updatePlaylistModeBadge();
     syncQueueNextOverlay();
     isPlaylistNavigation = true;
@@ -8931,7 +8936,7 @@ function loadVideoInSequence({ autoPlay = true } = {}) {
 function handlePlaylistVideoEnded() {
     // No avancem automàticament la cua amb la pestanya amagada: evita reactivar
     // reproducció en segon pla després d'un ended que arribi tard.
-    if (document.visibilityState === 'hidden') {
+    if (document.visibilityState === 'hidden' && !isVideoPipOpen()) {
         return;
     }
     if (!isPlaylistMode || activePlaylistQueue.length === 0) {
@@ -10021,11 +10026,16 @@ function getLiveYouTubeIframe() {
     return iframe;
 }
 
-// Només la finestreta pròpia de Segueix Música és persistent durant la navegació interna:
-// el reproductor de YouTube continua visible a la pàgina. La pestanya amagada/minimitzada
-// i la finestra del sistema no s'utilitzen per mantenir àudio en segon pla.
+// El reproductor només és persistent durant la navegació interna si continua VISIBLE: dins la finestreta pròpia
+// de Segueix Música o dins la finestra flotant del sistema (que ara porta el vídeo a dins). La pestanya
+// amagada/minimitzada sense vídeo visible no s'utilitza per mantenir àudio en segon pla.
 function isPersistentPlayerActive() {
-    return isMiniPlayerActive();
+    return isMiniPlayerActive() || isVideoPipOpen();
+}
+
+// El vídeo és dins la finestra flotant del sistema (Document Picture-in-Picture)
+function isVideoPipOpen() {
+    return Boolean(window.SegueixApp?.features?.systemPlayer?.isVideoPipOpen?.());
 }
 
 // L'encadenat en calent només es permet en pantalla completa, on el reproductor continua
@@ -10655,9 +10665,14 @@ function initExternalPlayerControls() {
         place(miniActive, miniActive && !mobileQuery.matches);
         followPlayer();
         close.hidden = !miniActive;
-        mini.setAttribute('aria-pressed', miniActive ? 'true' : 'false');
-        mini.title = miniActive ? 'Restaura el reproductor' : 'Reproductor flotant';
-        mini.setAttribute('aria-label', miniActive ? 'Restaura el reproductor' : 'Posa el reproductor flotant');
+        // Amb el vídeo a la finestra flotant del sistema, el botó fa de «torna el vídeo a la pàgina» (system-player.js)
+        const pipOpen = isVideoPipOpen();
+        mini.setAttribute('aria-pressed', miniActive || pipOpen ? 'true' : 'false');
+        mini.title = miniActive ? 'Restaura el reproductor' : pipOpen ? 'Torna el vídeo a la pàgina' : 'Reproductor flotant';
+        mini.setAttribute(
+            'aria-label',
+            miniActive ? 'Restaura el reproductor' : pipOpen ? 'Torna el vídeo a la pàgina' : 'Posa el reproductor flotant'
+        );
         const likes = window.SegueixApp?.features?.likes;
         const liked = Boolean(id && likes?.isLiked?.(id));
         like.setAttribute('aria-pressed', liked ? 'true' : 'false');
@@ -11056,6 +11071,10 @@ function setMiniPlayerState(isActive, options = {}) {
     if (isPlaylistMode && activePlaylistId === '__segueix_tv_discovery__') {
         isActive = false;
     }
+    // Amb el vídeo a la finestra flotant del sistema, la finestreta de dins la pàgina no s'obre (no hi ha res a mostrar)
+    if (isActive && isVideoPipOpen()) {
+        isActive = false;
+    }
     const trigger = options.trigger || 'manual';
     if (isActive) {
         miniPlayerAutoActivatedByScroll = trigger === 'auto-scroll';
@@ -11139,6 +11158,10 @@ function handleMiniPlayerAutoOnScroll() {
         return;
     }
     if (watchPage.classList.contains('hidden') || videoPlayer.style.display === 'none') {
+        return;
+    }
+    // Amb el vídeo a la finestra flotant del sistema no hi ha res a la pàgina que minimitzar
+    if (isVideoPipOpen()) {
         return;
     }
 
@@ -12073,6 +12096,8 @@ function createVideoCard(video) {
 }
 
 function stopVideoPlayback() {
+    // Si el vídeo era a la finestra flotant del sistema, torna a la pàgina abans de buidar-lo
+    window.SegueixApp?.features?.systemPlayer?.closePip?.();
     if (videoPlayer) {
         videoPlayer.innerHTML = '';
         videoPlayer.classList.remove('mini-player-active');

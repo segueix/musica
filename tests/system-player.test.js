@@ -126,10 +126,46 @@ describe('finestra flotant del sistema', () => {
         expect(setup({ pip: true }).api.isPipSupported()).toBe(true);
     });
 
-    it('els botons de finestra flotant obren la del sistema i no es mou el reproductor de YouTube', () => {
+    it('els botons de finestra flotant obren la del sistema; amb la finestra oberta fan de «torna»', () => {
         const source = readFileSync(new URL('../js/features/system-player.js', import.meta.url), 'utf8');
         expect(source).toContain("closest?.('#playerMiniBtn, .queue-mini-button')");
-        expect(source).not.toMatch(/appendChild\([^)]*(iframe|playerElement|videoPlayer)/);
+        expect(source).toContain("closest?.('#videoPipRestore')");
+        expect(source).toMatch(/if \(isVideoPipOpen\(\)\) \{[\s\S]*?closePip\(\);/);
+    });
+
+    it('el vídeo de YouTube viu a la finestra mentre és oberta i torna a la pàgina en tancar-la', () => {
+        const source = readFileSync(new URL('../js/features/system-player.js', import.meta.url), 'utf8');
+        // Es trasllada el node #videoPlayer sencer (l'iframe es recarrega des del segon on era i amb el mateix estat)
+        expect(source).toContain('host.appendChild(player);');
+        expect(source).toContain('app.state.playerHost = player;');
+        expect(source).toContain("url.searchParams.set('start'");
+        expect(source).toContain("url.searchParams.set('autoplay', autoplay ? '1' : '0')");
+        // Els avisos de l'iframe arriben a la finestra: es reenvien a la pàgina amb la mateixa font
+        expect(source).toContain("pipWindow.addEventListener('message', forwardMessage)");
+        expect(source).toMatch(/new window\.MessageEvent\('message', \{[\s\S]*?source: event\.source/);
+        // En tancar-la (incloent «torna a la pestanya»), el reproductor torna a lloc
+        expect(source).toMatch(/pagehide[\s\S]*?returnVideo\(\)/);
+        // Res no va damunt de l'iframe de YouTube dins la finestra
+        expect(source).toContain('.sp-video #videoPlayer > :not(.video-embed-wrap) { display: none !important; }');
+    });
+
+    it('només amb el vídeo dins la finestra es pot controlar la reproducció amb la pestanya amagada', async () => {
+        const hiddenNoPip = setup({ state: '2', hidden: true, pip: true });
+        expect(hiddenNoPip.api.isVideoPipOpen()).toBe(false);
+        hiddenNoPip.handlers.play();
+        expect(hiddenNoPip.calls).toEqual([]);
+        const visible = setup({ state: '2', pip: true });
+        visible.handlers.play();
+        expect(visible.calls).toEqual(['play']);
+    });
+
+    it('app.utils.playerElement troba el reproductor a la pàgina o dins la finestra (no document.getElementById)', () => {
+        const core = readFileSync(new URL('../js/core/segueix-app.js', import.meta.url), 'utf8');
+        expect(core).toContain('app.state.playerHost ||');
+        for (const file of ['js/features/music-signals.js', 'js/features/drive-mode.js']) {
+            const source = readFileSync(new URL(`../${file}`, import.meta.url), 'utf8');
+            expect(source).toContain('app.utils?.playerElement?.()');
+        }
     });
 
     it('el mòdul es carrega després de music-queue.js, i music-queue hi delega la Media Session', () => {

@@ -3,10 +3,13 @@
 // 1) Media Session: pantalla de bloqueig, notificació d'Android, tecles multimèdia, auriculars i Chromebook. Diu quina
 //    cançó sona (títol, artista, ràdio i caràtula), la posició dins la cançó i quines accions hi ha: play, pausa, atura,
 //    anterior i següent (només si n'hi ha a la cua), endavant/enrere 10 s i saltar a un punt.
-// 2) Finestra flotant del sistema (Document Picture-in-Picture: Chrome i Edge d'escriptori i Chromebook): mostra
-//    caràtula, cançó, barra de temps i controls mentre la pàgina de Segueix Música és visible. El reproductor de
-//    YouTube es queda a la pestanya. Si la pestanya queda amagada o Chrome es minimitza, app.js pausa YouTube i tanca
-//    aquesta finestra; aquest mòdul tampoc permet reprendre ni saltar cançons des de Media Session en segon pla.
+// 2) Finestra flotant del sistema (Document Picture-in-Picture: Chrome i Edge d'escriptori i Chromebook): hi viu el
+//    VÍDEO de YouTube (el node #videoPlayer s'hi trasllada sencer) amb la cançó, la barra de temps i els controls a
+//    sota; així l'usuari pot canviar de pestanya o de web i el vídeo continua visible (normes de YouTube: només es
+//    reprodueix mentre el reproductor és visible). En tancar-la, el reproductor torna a la pàgina. Moure un iframe
+//    el torna a carregar: es reprèn al segon on era (`start`) i els avisos de l'iframe (que ara arriben a la finestra
+//    flotant) es reenvien a la pàgina perquè l'app els rebi com sempre. Sense aquesta finestra (pestanya amagada,
+//    Chrome minimitzat) app.js pausa YouTube i aquest mòdul no permet reprendre ni saltar cançons des de Media Session.
 //
 // No depèn d'app.js en carregar-se: les funcions globals (playMainPlayer, advanceQueueFromOverlay…) només es fan servir
 // en temps d'execució.
@@ -15,7 +18,11 @@
     if (!app) return;
 
     const SEEK_STEP = 10;
-    const PIP_SIZE = { width: 360, height: 520 };
+    // Finestra flotant del sistema i, mentre és oberta, on era el reproductor ({ player, parent, next })
+    let pipWindow = null;
+    let pipVideo = null;
+    let pipTimer = 0;
+    const PIP_SIZE = { width: 480, height: 560 };
 
     // Globals d'app.js (let/const de nivell superior): es llegeixen en temps d'execució, mai en carregar-se el mòdul
     const g = {
@@ -47,8 +54,11 @@
 
     // ---------- Què sona ----------
 
+    // El reproductor és a la pàgina o dins la finestra flotant (app.utils.playerElement ho sap)
     function playerElement() {
-        return window.document?.getElementById?.('videoPlayer') || null;
+        return (
+            pipVideo?.player || app.utils?.playerElement?.() || window.document?.getElementById?.('videoPlayer') || null
+        );
     }
 
     function playerState() {
@@ -149,8 +159,9 @@
         return true;
     }
 
+    // Amb la pestanya amagada només es pot controlar la reproducció si el vídeo és visible a la finestra flotant
     function canControlPlayback() {
-        return window.document?.visibilityState !== 'hidden';
+        return window.document?.visibilityState !== 'hidden' || isVideoPipOpen();
     }
 
     const actions = {
@@ -239,15 +250,18 @@
 
     // ---------- Finestra flotant del sistema ----------
 
-    let pipWindow = null;
-    let pipTimer = 0;
-
     function isPipSupported() {
         return Boolean(window.documentPictureInPicture?.requestWindow) && window.isSecureContext !== false;
     }
 
     function isPipOpen() {
         return Boolean(pipWindow && !pipWindow.closed);
+    }
+
+    // La finestra flotant és oberta I el vídeo hi és a dins (visible): l'única situació on pot continuar sonant amb la
+    // pestanya de l'app amagada. app.js ho consulta abans de pausar.
+    function isVideoPipOpen() {
+        return Boolean(pipVideo && isPipOpen());
     }
 
     const ICONS = {
@@ -265,13 +279,22 @@
         * { box-sizing: border-box; }
         html, body { margin: 0; height: 100%; background: var(--bg); color: var(--text);
             font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; }
-        .sp { display: flex; flex-direction: column; gap: 12px; height: 100%; max-width: 520px; margin: 0 auto;
-            padding: 16px; }
-        .sp-cover { width: 100%; max-height: 34vh; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 14px;
-            background: var(--surface); }
+        .sp { display: flex; flex-direction: column; gap: 10px; min-height: 100%; max-width: 760px; margin: 0 auto;
+            padding: 12px; }
+        /* El vídeo de YouTube (el node #videoPlayer de la pàgina) viu aquí. Els estils de la pàgina no hi arriben:
+           es posa a ple dins la caixa 16:9 i s'amaga tot el que no és l'iframe (res no va damunt del vídeo). */
+        .sp-video { position: relative; flex: none; width: 100%; aspect-ratio: 16 / 9; overflow: hidden;
+            border-radius: 12px; background: #000; }
+        .sp-video #videoPlayer { position: absolute !important; inset: 0 !important; top: 0 !important;
+            left: 0 !important; width: 100% !important; height: 100% !important; margin: 0 !important;
+            display: block !important; border-radius: 0 !important; transform: none !important; opacity: 1 !important;
+            pointer-events: auto !important; z-index: 1 !important; background: #000 !important; }
+        .sp-video #videoPlayer > :not(.video-embed-wrap) { display: none !important; }
+        .sp-video .video-embed-wrap { position: absolute !important; inset: 0 !important; z-index: 1 !important; }
+        .sp-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; display: block; }
         .sp-label { margin: 0; color: var(--accent); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.06em;
             text-transform: uppercase; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-        .sp-title { margin: 2px 0 0; font-family: Fraunces, Georgia, serif; font-size: 1.25rem; line-height: 1.2;
+        .sp-title { margin: 2px 0 0; font-family: Fraunces, Georgia, serif; font-size: 1.125rem; line-height: 1.2;
             display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; }
         .sp-artist { margin: 4px 0 0; color: var(--muted); font-weight: 600; }
         .sp-progress { display: grid; grid-template-columns: auto 1fr auto; gap: 8px; align-items: center;
@@ -280,18 +303,18 @@
         .sp-bar i { position: absolute; inset: 0 auto 0 0; width: 0; border-radius: 999px; background: var(--accent); }
         .sp-controls { display: flex; justify-content: center; align-items: center; gap: 14px; }
         button { font: inherit; color: inherit; cursor: pointer; }
-        .sp-btn { display: inline-grid; place-items: center; width: 48px; height: 48px; padding: 0;
+        .sp-btn { display: inline-grid; place-items: center; width: 44px; height: 44px; padding: 0;
             border: 1px solid var(--line); border-radius: 50%; background: var(--surface-2); color: var(--text); }
         .sp-btn svg { width: 22px; height: 22px; }
         .sp-btn:hover:not(:disabled), .sp-btn:focus-visible { border-color: var(--accent); color: var(--accent); }
         .sp-btn:disabled { opacity: 0.35; cursor: default; }
-        .sp-btn--main { width: 64px; height: 64px; border-color: var(--accent); background: var(--accent);
+        .sp-btn--main { width: 56px; height: 56px; border-color: var(--accent); background: var(--accent);
             color: var(--on-accent); }
         .sp-btn--main:hover, .sp-btn--main:focus-visible { color: var(--on-accent); background: #e4f59d; }
-        .sp-btn--main svg { width: 28px; height: 28px; }
+        .sp-btn--main svg { width: 26px; height: 26px; }
         .sp-prefs { display: flex; justify-content: center; align-items: center; gap: 10px; color: var(--muted);
             font-size: 0.8125rem; }
-        .sp-prefs .sp-btn { width: 40px; height: 40px; }
+        .sp-prefs .sp-btn { width: 36px; height: 36px; }
         .sp-prefs .sp-btn[aria-pressed='true'] { border-color: var(--accent); background: rgba(214, 237, 132, 0.14);
             color: var(--accent); }
         .sp-next { margin: auto 0 0; padding-top: 10px; border-top: 1px solid var(--line); color: var(--muted);
@@ -303,7 +326,7 @@
 
     const PIP_HTML = `
         <main class="sp" aria-label="Segueix Música">
-            <img class="sp-cover" alt="" data-sp="cover">
+            <div class="sp-video" data-sp="video"></div>
             <div>
                 <p class="sp-label" data-sp="label"></p>
                 <h1 class="sp-title" data-sp="title"></h1>
@@ -342,11 +365,6 @@
         el('label').textContent = label || 'Ara sona';
         el('title').textContent = video?.title || 'No sona res';
         el('artist').textContent = video?.channelTitle || '';
-        const cover = artworkOf(video)[1]?.src || '';
-        if (el('cover').getAttribute('src') !== cover) {
-            if (cover) el('cover').setAttribute('src', cover);
-            else el('cover').removeAttribute('src');
-        }
         el('time').textContent = formatTime(time);
         el('duration').textContent = duration ? formatTime(duration) : '–:––';
         el('fill').style.width = duration ? `${Math.min(100, (time / duration) * 100)}%` : '0%';
@@ -407,13 +425,116 @@
         scheduleUpdate();
     }
 
+    // URL de l'embed amb el segon on som i si ha de sonar en carregar-se (moure un iframe el torna a carregar)
+    function withPlaybackParams(src, seconds, autoplay) {
+        try {
+            const url = new URL(src, window.location?.href);
+            if (seconds > 0) url.searchParams.set('start', String(Math.floor(seconds)));
+            else url.searchParams.delete('start');
+            url.searchParams.set('autoplay', autoplay ? '1' : '0');
+            return url.toString();
+        } catch (error) {
+            return src;
+        }
+    }
+
+    // Torna a carregar l'iframe del reproductor (just després de moure'l d'un document a l'altre) des del segon actual.
+    // L'app envia `playVideo` en cada càrrega: si estava en pausa, es torna a pausar.
+    function reloadAt(player, seconds, autoplay) {
+        const iframe = player?.querySelector?.('iframe');
+        if (!iframe?.src) return;
+        iframe.src = withPlaybackParams(iframe.src, seconds, autoplay);
+        if (!autoplay) {
+            iframe.addEventListener('load', () => window.setTimeout(() => sendCommand('pauseVideo'), 300), {
+                once: true,
+            });
+        }
+    }
+
+    // Els avisos de l'iframe (estat, temps, final de cançó) ara arriben a la finestra flotant, no a la pàgina: es
+    // reenvien a la pàgina amb el mateix origen i la mateixa font, que és com els espera app.js.
+    function forwardMessage(event) {
+        try {
+            window.dispatchEvent(
+                new window.MessageEvent('message', {
+                    data: event.data,
+                    origin: event.origin,
+                    lastEventId: event.lastEventId,
+                    source: event.source,
+                    ports: Array.from(event.ports || []),
+                })
+            );
+        } catch (error) {
+            // Un navegador que no admet aquest tipus d'esdeveniment no hauria de tenir finestra flotant
+        }
+    }
+
+    // Trasllada el reproductor sencer (#videoPlayer) a la caixa de vídeo de la finestra flotant
+    function moveVideoIn() {
+        const player = playerElement();
+        const host = pipWindow?.document?.querySelector('[data-sp="video"]');
+        if (!player || !host) return false;
+        const playing = isPlaying();
+        const time = position();
+        pipVideo = { player, parent: player.parentNode, next: player.nextSibling };
+        app.state.playerHost = player;
+        host.appendChild(player);
+        player.style.display = 'block';
+        reloadAt(player, time, playing);
+        window.document?.body?.classList.add('is-video-pip');
+        syncMiniButton();
+        return true;
+    }
+
+    // El reproductor torna a lloc (i es recarrega des del segon on era). Si la pestanya és amagada en aquest moment
+    // (l'usuari ha tancat la finestra des d'una altra pestanya) es torna en pausa: no hi ha vídeo visible.
+    function returnVideo() {
+        if (!pipVideo) return;
+        const { player, parent, next } = pipVideo;
+        const playing = isPlaying();
+        const time = position();
+        pipVideo = null;
+        app.state.playerHost = null;
+        if (parent) {
+            if (next && next.parentNode === parent) parent.insertBefore(player, next);
+            else parent.appendChild(player);
+        }
+        reloadAt(player, time, playing && window.document?.visibilityState !== 'hidden');
+        window.document?.body?.classList.remove('is-video-pip');
+        syncMiniButton();
+        // Si l'usuari és en una altra pàgina de l'app (Inici, Historial, un artista…), el forat del reproductor no hi
+        // és: el vídeo es queda visible a la finestreta de dins la pàgina, que és el que fa l'app en navegar.
+        // (el forat és #videoPlaceholder: sense caixa de disseny, la fitxa de la cançó no és a la vista)
+        const hole = window.document?.getElementById?.('videoPlaceholder');
+        const holeVisible = Boolean(hole && hole.getClientRects().length);
+        if (!holeVisible && typeof window.setMiniPlayerState === 'function') {
+            window.setMiniPlayerState(true, { trigger: 'pip-closed' });
+        }
+        // El forat del reproductor a la pàgina pot haver canviat: que app.js el torni a col·locar
+        try {
+            window.dispatchEvent(new window.Event('resize'));
+        } catch (error) {
+            // Sense Event: la col·locació es refà en el proper scroll
+        }
+    }
+
+    // El botó de la barra de controls fa de «torna el vídeo a la pàgina» mentre la finestra és oberta
+    function syncMiniButton() {
+        const button = window.document?.getElementById?.('playerMiniBtn');
+        if (!button) return;
+        const open = isVideoPipOpen();
+        button.setAttribute('aria-pressed', String(open));
+        button.setAttribute('aria-label', open ? 'Torna el vídeo a la pàgina' : 'Posa el reproductor flotant');
+        button.title = open ? 'Torna el vídeo a la pàgina' : 'Reproductor flotant';
+    }
+
     async function openPip() {
         if (!isPipSupported() || !canControlPlayback()) return false;
         if (isPipOpen()) {
             pipWindow.focus?.();
             return true;
         }
-        if (!nowPlaying()) {
+        if (!nowPlaying() || !playerElement()) {
             app.features.shellNav?.toast?.('Posa una cançó o una ràdio per obrir la finestra flotant.');
             return false;
         }
@@ -431,13 +552,18 @@
         doc.body.innerHTML = PIP_HTML;
         doc.addEventListener('click', onPipClick);
         doc.addEventListener('keydown', onPipKey);
+        pipWindow.addEventListener('message', forwardMessage);
         pipWindow.addEventListener('pagehide', () => {
+            // Tant si l'usuari la tanca com si torna a la pestanya: el reproductor torna a la pàgina
+            returnVideo();
             window.clearInterval(pipTimer);
             pipTimer = 0;
             pipWindow = null;
-            window.document?.body?.classList.remove('is-system-pip');
+            window.document?.body?.classList.remove('is-system-pip', 'is-video-pip');
+            syncMiniButton();
         });
         window.document?.body?.classList.add('is-system-pip');
+        moveVideoIn();
         renderPip();
         // La barra de temps avança cada segon (la posició ve dels avisos del reproductor)
         pipTimer = window.setInterval(renderPip, 1000);
@@ -445,15 +571,30 @@
     }
 
     function closePip() {
-        if (isPipOpen()) pipWindow.close();
+        if (!isPipOpen()) return;
+        returnVideo();
+        pipWindow.close();
     }
 
     // El botó «Finestra flotant» de la barra de controls de sota el reproductor (#playerMiniBtn; el de la fila de sota el
-    // títol, #miniPlayerToggle, s'ha tret perquè era repetit) obre la finestra del sistema on n'hi ha; si la finestra
-    // flotant de dins la pàgina ja és oberta, el botó la torna a lloc («restaura») com sempre.
+    // títol, #miniPlayerToggle, s'ha tret perquè era repetit) obre la finestra del sistema on n'hi ha; amb la finestra
+    // del sistema oberta, el botó torna el vídeo a la pàgina («restaura»). Si la finestra flotant de dins la pàgina ja
+    // és oberta, el botó la torna a lloc com sempre. «Torna el vídeo aquí» (#videoPipRestore, a la pàgina) fa el mateix.
     function onDocumentClick(event) {
+        if (event.target.closest?.('#videoPipRestore')) {
+            event.preventDefault();
+            closePip();
+            return;
+        }
         const trigger = event.target.closest?.('#playerMiniBtn, .queue-mini-button');
-        if (!trigger || !isPipSupported() || call(fns.miniActive())) return;
+        if (!trigger) return;
+        if (isVideoPipOpen()) {
+            event.preventDefault();
+            event.stopImmediatePropagation();
+            closePip();
+            return;
+        }
+        if (!isPipSupported() || call(fns.miniActive())) return;
         event.preventDefault();
         event.stopImmediatePropagation();
         openPip();
@@ -513,6 +654,7 @@
         updateMediaSession,
         isPipSupported,
         isPipOpen,
+        isVideoPipOpen,
         openPip,
         closePip,
         actions,
