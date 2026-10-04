@@ -5094,6 +5094,33 @@ body:has(#playerExternalControls.is-floating.is-above:not([hidden])) #videoPlaye
     }
 }
 
+/* ---------- «La teva ràdio» amb la barra lateral plegada: caràtules una mica més avall i centrades ----------
+   Amb la barra plegada la targeta és molt ampla i les caràtules quedaven enganxades a la dreta i amunt (la primera i la
+   tercera, girades, sobresurten per dalt). Ara el centre del collage és al 75 % de l'ample de la targeta (el mig de
+   l'espai lliure a la dreta del text) i baixa un 8 % de la mida d'una caràtula, que és d'un màxim de 190 px. El cos reserva just el lloc que ocupen
+   (25 % + mitja amplada del collage), de manera que el text no s'hi solapa mai. Només quan la targeta fa ≥ 900 px. */
+@supports (width: 1cqw) {
+    @media (min-width: 769px) {
+        @container (min-width: 900px) {
+            /* Una mica més petites (fins a 190 px) perquè, baixant, no toquin la vora de baix de la targeta */
+            body.sidebar-collapsed .pt-radio__body,
+            body.sidebar-collapsed .pt-radio__covers {
+                --pt-cover: clamp(120px, 12cqw, 190px);
+            }
+
+            body.sidebar-collapsed .pt-radio__covers {
+                left: 75%;
+                right: auto;
+                transform: translate(-50%, calc(-50% + var(--pt-cover) * 0.08));
+            }
+
+            body.sidebar-collapsed .pt-radio__body {
+                padding-right: calc(25cqw + var(--pt-cover) * 1.14 + 28px);
+            }
+        }
+    }
+}
+
 /* ---------- Ràdio o llista que sona: etiqueta dins la línia de data i visualitzacions ----------
    Abans era una línia pròpia sota el reproductor («Mode llista · Ràdio 1/40») que, a mòbil, empenyia la fila de botons
    sota la navegació. Ara és una etiqueta petita en llima (icona de ràdio o de llista + «Ràdio · 1/40») al principi de la
