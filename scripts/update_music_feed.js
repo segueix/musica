@@ -710,27 +710,19 @@ async function main(){
 
   applyFalseShortsOverrides(videos);
   const artistsOfChannel=id=>allIndexed.get(id)?.artistNames||[];
-  // Shorts: només conservem els que es poden vincular inequívocament a una cançó de la discografia
-  // validada del mateix artista (canal Tema). Això evita entrevistes, promos i fragments parlats en altres llengües.
-  // Els Shorts del mateix canal Tema ja són la cançó publicada i també han de coincidir amb el seu catàleg.
+  // Shorts: Segueix Música no en publica cap (2026-10-04). Abans es conservaven els que coincidien amb una cançó del
+  // canal Tema; ara tots surten del feed. Els falsos Shorts (cançons curtes marcades per error) ja s'han corregit a
+  // applyFalseShortsOverrides() i continuen al feed com a cançons.
   let shortBeforeCatalogFilter=0;
-  let shortCatalogMatched=0;
+  const shortCatalogMatched=0;
   let shortCatalogRejected=0;
   for(let i=videos.length-1;i>=0;i--){
-    const video=videos[i];
-    if(video?.isShort!==true) continue;
+    if(videos[i]?.isShort!==true) continue;
     shortBeforeCatalogFilter++;
-    const artists=artistsOfChannel(video.channelId);
-    const catalogKeys=new Set(artists.flatMap(name=>[...(topicKeysByArtist.get(name)||[])]));
-    const matched=catalogKeys.size>0 && Boolean(tema.matchedKey(video.title,namesOfChannel(video.channelId),catalogKeys));
-    if(matched){
-      shortCatalogMatched++;
-      continue;
-    }
     videos.splice(i,1);
     shortCatalogRejected++;
   }
-  console.log(`📱 Shorts vinculats a cançons validades: ${shortCatalogMatched}/${shortBeforeCatalogFilter}; descartats: ${shortCatalogRejected}`);
+  console.log(`📱 Shorts descartats del feed: ${shortCatalogRejected}`);
 
   // Vídeos ocults manualment (p. ex. cançons amb títol en castellà): no entren al feed
   const hiddenIds=loadHiddenVideoIds();

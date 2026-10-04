@@ -59,6 +59,7 @@ js/
 │   ├── portada.js           # Portada «La teva plaça musical» (model pur + HTML + esdeveniments), pinta dins #videosGrid
 │   ├── artist-page.js       # Fitxa d'artista: dues ràdios (artista / estil), presentació curta expandible (model pur + DOM)
 │   ├── user-categories.js   # Les teves categories: categories pròpies de grups (portada, fitxa, ordre, compartir)
+│   ├── alphabet-index.js    # Índex alfabètic de la pàgina d'artistes (lletres que es fan grans, arrossegar per saltar)
 │   ├── shell-nav.js         # Navegació lateral/inferior i avisos breus (toast)
 │   ├── music-selection.js   # Motor de selecció musical compartit (funcions pures): antiguitat real, puntuació, restriccions
 │   ├── music-signals.js     # Observador únic d'escolta, estadístiques i preferències («(+) com aquesta (−)»)
@@ -316,6 +317,11 @@ const likes = ctx2.SegueixApp.features.likes;
 - **Ordre manual a Inici (tàctil):** mantenir premuda una rajola de «Tria el teu so» (250 ms) i arrossegar-la (Sortable); també amb el ratolí o **Alt + fletxes**. Es desa a `catube_music_home_style_order` i `setHomeOrder()` el porta a l'ordre de la barra d'estils (`mergeOrder()`). Visibles sense desplegar: les 8 primeres + una per categoria pròpia (`arrangeTiles()`).
 - Proves: `tests/user-categories.test.js`; opt-in `node tests/browser/verificar-categories.js`. Detall i trampes: `docs/PROBLEMES_I_SOLUCIONS.md` (2026-10-04).
 
+### Pàgina d'artistes: índex alfabètic (2026-10-04)
+
+- A la dreta de la llista d'artistes (`#followPage`) hi ha una **columna de lletres** (`js/features/alphabet-index.js`, patró 2; `renderFollowPage()` crida `alphabetIndex.attach(followGrid)`): tocar-la o **arrossegar-hi el dit** porta als artistes de la lletra (amb una bombolla gran amb la lletra), i **en fer scroll la lletra dels artistes que es veuen es fa gran** (escala 2, les veïnes 1,5 i 1,2: `--az-scale`). Inicials sense accents; números i símbols a «#»; les lletres sense artistes, apagades. La columna penja de `<body>` (un pare amb transformació trencava el `position: fixed`) i el CSS l'amaga fora de la pàgina d'artistes (`body:has(#followPage.hidden)`). Proves: `tests/alphabet-index.test.js`.
+- El botó «Artistes» de la capçalera (només al mòbil) va **sense marc** verd fluorescent, com la resta d'accessos de dalt.
+
 ### Revisió d'idioma de les cançons noves (2026-10-02)
 
 **Prompt per a l'agent — quan et demanin «revisa les cançons noves», «revisa l'idioma» o similar:**
@@ -349,6 +355,10 @@ const likes = ctx2.SegueixApp.features.likes;
 - Només es presenta com a «Disc» un llançament amb almenys **2 títols diferents**; els senzills i les cançons sense assignació fiable van a «Singles i altres».
 - Un videoclip del canal oficial hereta el disc només si `artista + títol normalitzat` coincideix amb **un únic disc** Topic. Si és ambigu, no s'inventa cap relació.
 - UI: `js/features/artist-page.js` pinta «Discos» amb caràtules; tocar un disc filtra la graella de cançons. `Totes` restaura el repertori. Fora de `#channelPage` no es mostra cap disc.
+
+### Sense Shorts (2026-10-04)
+
+- Segueix Música **no mostra cap Short**. `YouTubeAPI.filterHiddenVideos()` (per on passen feed, instantània local, pool de ràdio, historial dels estils, arxiu de la fitxa i cerca) descarta `isShort === true`; `update_music_feed.js` els treu tots del feed (abans es quedaven els que coincidien amb una cançó del Tema) i `archivar_feed_musical.js` no en guarda a l'arxiu ni al pool. Els **falsos Shorts** (`data/falsos-shorts.json`) es corregeixen abans i continuen com a cançons. A la interfície ja no hi ha la fila «Shorts» dels estils ni de la fitxa d'artista, ni el filtre «Shorts» de l'historial (`isSongOrShort()` ara és `isSongVideo()` i els exclou). `shorts.js` i la finestra `#short-modal` queden sense cap punt d'entrada. No hi tornis a posar Shorts. Prova: `tests/sense-shorts.test.js`.
 
 ### Feed calent + historial musical (2026-10-02)
 

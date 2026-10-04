@@ -5193,15 +5193,16 @@ body #watchPage .video-info-modern :is(.btn-round-icon, .btn-heart, .btn-pill-re
     border: 1.5px solid var(--pt-icon-border);
 }
 
-/* Accessos superiors: icones directament sobre el fons, sense marc ni pastilla. */
-body .app-header .actions :is(.icon-btn[data-page='llistes'], #backgroundBtn, #addYoutuberBtn) {
+/* Accessos superiors: icones directament sobre el fons, sense marc ni pastilla (també «Artistes», que només hi és al
+   mòbil: abans duia el marc verd fluorescent). */
+body .app-header .actions :is(.icon-btn[data-page='llistes'], .icon-btn[data-page='segueix'], #backgroundBtn, #addYoutuberBtn) {
     border: 0;
     background: transparent;
     box-shadow: none;
     outline: none;
 }
 
-body .app-header .actions :is(.icon-btn[data-page='llistes'], #backgroundBtn, #addYoutuberBtn):focus-visible {
+body .app-header .actions :is(.icon-btn[data-page='llistes'], .icon-btn[data-page='segueix'], #backgroundBtn, #addYoutuberBtn):focus-visible {
     color: var(--pt-icon-border);
     /* El focus de teclat es ressalta a la icona, sense dibuixar un marc. */
     filter: drop-shadow(0 0 3px var(--pt-icon-border));
@@ -5577,5 +5578,122 @@ body .app-header .actions :is(.icon-btn[data-page='llistes'], #backgroundBtn, #a
     .cat-skeleton__thumb,
     .cat-skeleton__lines i {
         animation: none;
+    }
+}
+
+/* ---------- Índex alfabètic de la pàgina d'artistes (js/features/alphabet-index.js) ---------- */
+/* Columna de lletres enganxada a la dreta: tocar-la o arrossegar-hi el dit porta a la lletra. La lletra dels artistes
+   que es veuen (o la que hi ha sota el dit) es fa gran, i les veïnes una mica (--az-scale, que posa el JS). */
+.az-index {
+    position: fixed;
+    top: calc(var(--header-height, 64px) + 8px);
+    right: calc(2px + var(--safe-right, 0px));
+    bottom: calc(var(--pt-nav-h, 60px) + 8px + env(safe-area-inset-bottom, 0px));
+    z-index: 40;
+    display: flex;
+    align-items: center;
+    width: 30px;
+    touch-action: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.az-index[hidden],
+body:has(#followPage.hidden) .az-index,
+body:not(:has(#followPage)) .az-index {
+    display: none;
+}
+
+.az-index__letters {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    max-height: 660px;
+    margin: 0;
+    padding: 4px 0;
+    list-style: none;
+}
+
+.az-index__letters li {
+    display: flex;
+    flex: 1 1 0;
+    align-items: center;
+    justify-content: center;
+    min-height: 0;
+}
+
+.az-index__letter {
+    width: 30px;
+    min-height: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--pt-muted);
+    font: 700 11px/1 system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+    cursor: pointer;
+    transform: translateX(calc((var(--az-scale, 1) - 1) * -12px)) scale(var(--az-scale, 1));
+    transform-origin: right center;
+    transition:
+        transform 0.14s ease,
+        color 0.14s ease;
+}
+
+.az-index__letter.is-active {
+    color: var(--pt-accent);
+}
+
+.az-index__letter.is-empty {
+    opacity: 0.3;
+    cursor: default;
+}
+
+.az-index__letter:focus-visible {
+    outline: 2px solid var(--pt-accent);
+    outline-offset: 1px;
+    border-radius: 8px;
+}
+
+/* Lletra gran mentre s'arrossega el dit per la columna */
+.az-index__bubble {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    display: grid;
+    place-items: center;
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    background: var(--pt-accent);
+    color: var(--pt-on-accent);
+    font: 800 2.5rem/1 var(--pt-display);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+}
+
+.az-index__bubble[hidden] {
+    display: none;
+}
+
+/* La llista deixa lloc a la columna de lletres */
+.follow-grid.has-az-index {
+    padding-right: 30px;
+}
+
+@media (min-width: 769px) {
+    .az-index {
+        bottom: 16px;
+        right: calc(8px + var(--safe-right, 0px));
+    }
+
+    .follow-grid.has-az-index {
+        padding-right: 40px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .az-index__letter {
+        transition: none;
     }
 }
