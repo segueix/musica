@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-03T23:29:20.183Z",
+  "generatedAt": "2026-10-04T12:48:53.325Z",
   "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
   "deepPagesFetched": 0,
@@ -637,6 +637,14 @@
       "songs": 3,
       "matched": 2,
       "coverage": 0.67,
+      "governs": false
+    },
+    {
+      "id": "UC76gEcL7sivyILBfwe54ETw",
+      "name": "Isaak Aguilà",
+      "songs": 24,
+      "matched": 15,
+      "coverage": 0.63,
       "governs": false
     },
     {
@@ -1876,34 +1884,32 @@
       "withClip": 11
     }
   ],
-  "indexedChannelCount": 311,
-  "resolvedChannelCount": 312,
-  "feedChannelCount": 312,
-  "rawPublicVideoCount": 4006,
-  "feedVideoCount": 3553,
-  "acceptedMusicCount": 3522,
-  "categoryEligibleVideoCount": 3519,
+  "indexedChannelCount": 312,
+  "resolvedChannelCount": 313,
+  "feedChannelCount": 313,
+  "rawPublicVideoCount": 4017,
+  "feedVideoCount": 3590,
+  "acceptedMusicCount": 3545,
+  "categoryEligibleVideoCount": 3542,
   "shortVideoCount": 3,
   "shortCatalogFilter": {
-    "before": 48,
+    "before": 8,
     "matched": 3,
-    "rejected": 45
+    "rejected": 5
   },
-  "contentReviewCount": 425,
+  "contentReviewCount": 432,
   "contentTypeCounts": {
-    "song": 3429,
+    "song": 3452,
     "live_song": 90,
     "album": 3,
-    "other": 59,
-    "review": 425
+    "other": 40,
+    "review": 432
   },
   "unresolvedChannelIds": [],
   "channelsWithoutUploads": [],
-  "channelsWithoutVideos": [
-    "UCJ6EMs_13PLDvRSHi-XqRwQ"
-  ],
+  "channelsWithoutVideos": [],
   "channelsWithoutAcceptedMusic": [],
   "allIndexedChannelsVisible": false,
-  "publishedFeedVideoCount": 3558,
+  "publishedFeedVideoCount": 3570,
   "publishedShortVideoCount": 4
 }

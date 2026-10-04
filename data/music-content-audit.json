@@ -1,209 +1,76 @@
 {
-  "generatedAt": "2026-10-03T23:29:20.183Z",
-  "rawPublicVideoCount": 4006,
-  "feedVideoCount": 3553,
-  "acceptedMusicCount": 3522,
-  "categoryEligibleVideoCount": 3519,
+  "generatedAt": "2026-10-04T12:48:53.325Z",
+  "rawPublicVideoCount": 4017,
+  "feedVideoCount": 3590,
+  "acceptedMusicCount": 3545,
+  "categoryEligibleVideoCount": 3542,
   "shortVideoCount": 3,
   "shortCatalogFilter": {
-    "before": 48,
+    "before": 8,
     "matched": 3,
-    "rejected": 45
+    "rejected": 5
   },
-  "rejectedOrReviewCount": 484,
-  "reviewCount": 425,
+  "rejectedOrReviewCount": 472,
+  "reviewCount": 432,
   "typeCounts": {
-    "song": 3429,
+    "song": 3452,
     "live_song": 90,
     "album": 3,
-    "other": 59,
-    "review": 425
+    "other": 40,
+    "review": 432
   },
   "channelsWithoutAcceptedMusic": [],
   "rejectedSamples": [
     {
-      "id": "T-Qw7RNEIiw",
-      "title": "BANDA NEON a Lloret de Mar - Novembre 2024  #festamajor",
-      "channelTitle": "Banda Neon",
-      "durationSeconds": 26,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "AbiUeOxSbbo",
-      "title": "BANDA NEON a ZONA ZÀPING TV3 - M'agrades molt #tv3",
-      "channelTitle": "Banda Neon",
-      "durationSeconds": 17,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "1Y69neBNqbk",
-      "title": "BANDA NEON a CATALUNYA RÀDIO #radio",
-      "channelTitle": "Banda Neon",
-      "durationSeconds": 9,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "qNtNa7UgXUk",
-      "title": "BANDA NEON a RAC1 - Entrevista + concert presentació temporada 2025",
-      "channelTitle": "Banda Neon",
-      "durationSeconds": 66,
+      "id": "8VDTmLNAfjU",
+      "title": "Entrevista i actuació al programa Fet a Mida",
+      "channelTitle": "Isaak Aguilà",
+      "durationSeconds": 460,
       "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
     },
     {
-      "id": "pjWsRG4lZrM",
-      "title": "Banda Neon a ARBÚCIES 2024 #estiu #festamajor  #musica",
-      "channelTitle": "Banda Neon",
-      "durationSeconds": 28,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "BhTUwwfAiWk",
-      "title": "i es que m'agrades molt, molt més del que tu et penses..! - BANDA NEON",
-      "channelTitle": "Banda Neon",
-      "durationSeconds": 25,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "kim1Im1ZkiU",
-      "title": "BANDA NEON #tendencias i si.. anem tard😂🫶💜 #tendenciastiktok #tendencia",
-      "channelTitle": "Banda Neon",
-      "durationSeconds": 19,
+      "id": "As2o2AaV-kE",
+      "title": "Entrevista Sies.Tv",
+      "channelTitle": "Isaak Aguilà",
+      "durationSeconds": 291,
       "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
     },
     {
-      "id": "r12X_B9oOYs",
-      "title": "BANDA NEON a ROSES 10/02/2024",
-      "channelTitle": "Banda Neon",
-      "durationSeconds": 42,
-      "musicReason": "massa curt: probable teaser/fragment"
+      "id": "JgwWReMOYoc",
+      "title": "Entrevista al programa El Mirador",
+      "channelTitle": "Isaak Aguilà",
+      "durationSeconds": 657,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
     },
     {
-      "id": "m77-4bh6yE4",
-      "title": "BANDA NEON a Cardona i Torà 2024 - carnaval #show",
-      "channelTitle": "Banda Neon",
-      "durationSeconds": 34,
-      "musicReason": "massa curt: probable teaser/fragment"
+      "id": "b9m6hG8AFOM",
+      "title": "Entrevista al  programa Té de Tot",
+      "channelTitle": "Isaak Aguilà",
+      "durationSeconds": 584,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
     },
     {
-      "id": "srMR7eUjcXI",
-      "title": "🫧🫧🫧🫧 que boniiiic💜 #bubble #xmas",
-      "channelTitle": "Banda Neon",
-      "durationSeconds": 9,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "YYR6SMcENII",
-      "title": "SI NO ESTÁS mini cover en plena gira #iñigoquintero",
-      "channelTitle": "Banda Neon",
-      "durationSeconds": 28,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "nE-Mlq7KWKc",
-      "title": "BANDA NEON a RIPOLL 2022",
-      "channelTitle": "Banda Neon",
-      "durationSeconds": 21,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "ga0vP-dGI7c",
-      "title": "BANDA NEON a OLOT - Fira de la cervesa 2022",
-      "channelTitle": "Banda Neon",
+      "id": "1d3bS0slVRk",
+      "title": "Private investigations guitar solo",
+      "channelTitle": "Isaak Aguilà",
       "durationSeconds": 41,
       "musicReason": "massa curt: probable teaser/fragment"
     },
     {
-      "id": "OGYYdyiMSdg",
-      "title": "GRÀCIES TORÀ! 19/02/2022",
-      "channelTitle": "Banda Neon",
-      "durationSeconds": 16,
-      "musicReason": "massa curt: probable teaser/fragment"
+      "id": "q39CjWRqFiU",
+      "title": "EGOISME",
+      "channelTitle": "Isaak Aguilà",
+      "durationSeconds": 236,
+      "musicReason": "descripció inequívoca de contingut no musical"
     },
     {
-      "id": "ehvG5SEkef0",
-      "title": "VALLS, te voy a escribir la canción más bonita del mundo!",
-      "channelTitle": "Banda Neon",
-      "durationSeconds": 16,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "DE0IAVdabgQ",
-      "title": "BANDA NEON a Cerdanyola del Vallès - 2021",
-      "channelTitle": "Banda Neon",
-      "durationSeconds": 13,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "IulhIQBLEfQ",
-      "title": "BANDA NEON a la Rambla de FIGUERES (Castanyada 2021)",
-      "channelTitle": "Banda Neon",
-      "durationSeconds": 19,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "UetA-oWwwwo",
-      "title": "BANDA NEON a Puigverd de Lleida, Fortià i Benissanet 2021",
-      "channelTitle": "Banda Neon",
-      "durationSeconds": 32,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "b3OrCH_4sGk",
-      "title": "BANDA NEON a Bellcaire d'Empordà 2021",
-      "channelTitle": "Banda Neon",
-      "durationSeconds": 39,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "QFAwKZV7iro",
-      "title": "BANDA NEON - making of FESTINEON (1a edició)",
-      "channelTitle": "Banda Neon",
-      "durationSeconds": 60,
-      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "4YNE4wa_kdE",
-      "title": "BANDA NEON a CASTELLÓ D'EMPÚRIES - Gener 2020",
-      "channelTitle": "Banda Neon",
-      "durationSeconds": 33,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "0tHX-A-40do",
-      "title": "BANDA NEON a SANT PERE DE RIBES - Gener 2020",
-      "channelTitle": "Banda Neon",
-      "durationSeconds": 28,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "ywgjFoHeA5k",
-      "title": "BANDA NEON a LLERS, EL PERELLÓ, ELS PALLARESOS i LLANÇÀ - Gener 2020",
-      "channelTitle": "Banda Neon",
-      "durationSeconds": 44,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "mkYx_FaDpjc",
-      "title": "BANDA NEON a MANRESA",
-      "channelTitle": "Banda Neon",
-      "durationSeconds": 33,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "2rL9JcsvXx4",
-      "title": "BANDA NEON a TARRAGONA - Sant Magí",
-      "channelTitle": "Banda Neon",
-      "durationSeconds": 40,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "5vEVlnAzOH0",
-      "title": "BANDA NEON al FESTINEON (1a edició)",
-      "channelTitle": "Banda Neon",
-      "durationSeconds": 27,
-      "musicReason": "massa curt: probable teaser/fragment"
+      "id": "B8AUfHnHMOY",
+      "title": "SOBREINFORMACIÓ",
+      "channelTitle": "Isaak Aguilà",
+      "durationSeconds": 199,
+      "musicReason": "descripció inequívoca de contingut no musical"
     }
   ],
-  "publishedFeedVideoCount": 3558,
+  "publishedFeedVideoCount": 3570,
   "publishedShortVideoCount": 4
 }
