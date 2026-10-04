@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-04T12:48:53.325Z",
-  "retainedVideoCount": 0,
+  "generatedAt": "2026-10-04T14:24:58.137Z",
+  "retainedVideoCount": 119,
   "unverifiedVideoCount": 0,
   "deepPagesFetched": 0,
   "deepChannelCount": 20,
   "topicChannelCount": 149,
-  "governedChannelCount": 73,
+  "governedChannelCount": 74,
   "topicCoverage": [
     {
       "id": "UCqaEtRht2jakBhGFLzS617w",
@@ -160,14 +160,6 @@
       "governs": true
     },
     {
-      "id": "UCgTB-WFdzE-byKvUR5QVnFQ",
-      "name": "Pol Bordas",
-      "songs": 4,
-      "matched": 4,
-      "coverage": 1,
-      "governs": true
-    },
-    {
       "id": "UCWq2Sd65Q2V6PhDzOBMTb5Q",
       "name": "Quimi Portet",
       "songs": 17,
@@ -236,6 +228,14 @@
       "name": "Ginestà",
       "songs": 32,
       "matched": 31,
+      "coverage": 0.97,
+      "governs": true
+    },
+    {
+      "id": "UCgTB-WFdzE-byKvUR5QVnFQ",
+      "name": "Pol Bordas",
+      "songs": 38,
+      "matched": 37,
       "coverage": 0.97,
       "governs": true
     },
@@ -504,18 +504,18 @@
       "governs": true
     },
     {
+      "id": "UC57d8FV0O8sOiK6-K-gWNHA",
+      "name": "Mar Pujol",
+      "songs": 17,
+      "matched": 14,
+      "coverage": 0.82,
+      "governs": true
+    },
+    {
       "id": "UChYQSBa6bIG2yArpLA4ykvA",
       "name": "Gertrudis",
       "songs": 31,
       "matched": 25,
-      "coverage": 0.81,
-      "governs": true
-    },
-    {
-      "id": "UC57d8FV0O8sOiK6-K-gWNHA",
-      "name": "Mar Pujol",
-      "songs": 16,
-      "matched": 13,
       "coverage": 0.81,
       "governs": true
     },
@@ -573,6 +573,14 @@
       "songs": 9,
       "matched": 7,
       "coverage": 0.78,
+      "governs": true
+    },
+    {
+      "id": "UCJtO_dvu5AOSjtz1cWWpV0Q",
+      "name": "Maria del Mar Bonet",
+      "songs": 13,
+      "matched": 10,
+      "coverage": 0.77,
       "governs": true
     },
     {
@@ -696,6 +704,14 @@
       "governs": false
     },
     {
+      "id": "UC2WMiCvYBSXvRjYIB0yrpEg",
+      "name": "LAL'BA MUSIC",
+      "songs": 21,
+      "matched": 10,
+      "coverage": 0.48,
+      "governs": false
+    },
+    {
       "id": "UCvSMpTrqlrZxYbhZoTbsQoA",
       "name": "KOP",
       "songs": 15,
@@ -709,22 +725,6 @@
       "songs": 24,
       "matched": 11,
       "coverage": 0.46,
-      "governs": false
-    },
-    {
-      "id": "UCJtO_dvu5AOSjtz1cWWpV0Q",
-      "name": "Maria del Mar Bonet",
-      "songs": 13,
-      "matched": 6,
-      "coverage": 0.46,
-      "governs": false
-    },
-    {
-      "id": "UC2WMiCvYBSXvRjYIB0yrpEg",
-      "name": "LAL'BA MUSIC",
-      "songs": 15,
-      "matched": 6,
-      "coverage": 0.4,
       "governs": false
     },
     {
@@ -800,14 +800,6 @@
       "governs": false
     },
     {
-      "id": "UCfMqjIyA0G1cVGNlFXXoJhA",
-      "name": "",
-      "songs": 0,
-      "matched": 0,
-      "coverage": 0,
-      "governs": false
-    },
-    {
       "id": "UC7IUL5Ba9dhBVPnTLe9RHhQ",
       "name": "",
       "songs": 0,
@@ -865,8 +857,11 @@
     }
   ],
   "topicGovernance": "apply",
-  "governedReclassified": {},
-  "topicHiddenCount": 0,
+  "governedReclassified": {
+    "other": 211,
+    "song": 21
+  },
+  "topicHiddenCount": 455,
   "topicChannels": [
     {
       "id": "UCEMDA-ZXzEUlJjZ-avy0Pvg",
@@ -984,7 +979,7 @@
       "id": "UCuk-lO3FpbukFk5lcPx29_g",
       "name": "Brams",
       "tracks": 193,
-      "selected": 42,
+      "selected": 52,
       "withClip": 0
     },
     {
@@ -1082,7 +1077,7 @@
       "id": "UCOXyxBFPQ97GO6PQqiJSvkw",
       "name": "Dusminguet",
       "tracks": 78,
-      "selected": 33,
+      "selected": 40,
       "withClip": 0
     },
     {
@@ -1145,7 +1140,7 @@
       "id": "UCc-fcN1V8NLdND4zBDMBrnA",
       "name": "Enric Barbat",
       "tracks": 62,
-      "selected": 15,
+      "selected": 40,
       "withClip": 0
     },
     {
@@ -1271,8 +1266,8 @@
       "id": "UCS9aWKrOcJsSqsJqBEouqAg",
       "name": "Isaak Aguilà",
       "tracks": 36,
-      "selected": 33,
-      "withClip": 0
+      "selected": 22,
+      "withClip": 12
     },
     {
       "id": "UCzQX193kQwe6E3QbRLPz59g",
@@ -1306,7 +1301,7 @@
       "id": "UCEV_8wEQansDoZnwNW1Z1Vw",
       "name": "Joan Miquel Oliver",
       "tracks": 171,
-      "selected": 41,
+      "selected": 51,
       "withClip": 0
     },
     {
@@ -1397,15 +1392,15 @@
       "id": "UC63BTrp525uyzMd-YTMAt_w",
       "name": "La Troba Kung-Fú",
       "tracks": 71,
-      "selected": 28,
+      "selected": 40,
       "withClip": 0
     },
     {
       "id": "UCFYEAYfftkeTPVQk70lVapQ",
       "name": "Lal'Ba",
       "tracks": 16,
-      "selected": 9,
-      "withClip": 6
+      "selected": 5,
+      "withClip": 10
     },
     {
       "id": "UCgAWzLHswq5VtYxCEMWGAng",
@@ -1453,15 +1448,15 @@
       "id": "UCrkGlLnid_710UIFOrWVpAQ",
       "name": "Mar Pujol",
       "tracks": 30,
-      "selected": 9,
-      "withClip": 13
+      "selected": 8,
+      "withClip": 14
     },
     {
       "id": "UCLgDhaK2cT63xw3fKKkU1_g",
       "name": "Maria Del Mar Bonet",
       "tracks": 470,
-      "selected": 43,
-      "withClip": 5
+      "selected": 40,
+      "withClip": 10
     },
     {
       "id": "UC3QJ1xC8aCwQdvTy-HTRwew",
@@ -1558,7 +1553,7 @@
       "id": "UCCBTyMmUoeGrciYMzrwWiUw",
       "name": "Opció K-95",
       "tracks": 49,
-      "selected": 42,
+      "selected": 41,
       "withClip": 0
     },
     {
@@ -1642,8 +1637,8 @@
       "id": "UCtpjQosTHLms2EiAUrTgaAg",
       "name": "Pol Bordas",
       "tracks": 98,
-      "selected": 40,
-      "withClip": 4
+      "selected": 28,
+      "withClip": 24
     },
     {
       "id": "UCQkOO8WejzCPcbzL7sc6iGg",
@@ -1657,7 +1652,7 @@
       "name": "Quimi Portet",
       "tracks": 197,
       "selected": 40,
-      "withClip": 0
+      "withClip": 16
     },
     {
       "id": "UCn4V6rDw7Gz1R6F2qyt2IrQ",
@@ -1885,31 +1880,52 @@
     }
   ],
   "indexedChannelCount": 312,
-  "resolvedChannelCount": 313,
-  "feedChannelCount": 313,
-  "rawPublicVideoCount": 4017,
-  "feedVideoCount": 3590,
-  "acceptedMusicCount": 3545,
-  "categoryEligibleVideoCount": 3542,
-  "shortVideoCount": 3,
+  "resolvedChannelCount": 312,
+  "feedChannelCount": 312,
+  "rawPublicVideoCount": 9629,
+  "feedVideoCount": 7654,
+  "acceptedMusicCount": 8163,
+  "categoryEligibleVideoCount": 8099,
+  "shortVideoCount": 0,
   "shortCatalogFilter": {
-    "before": 8,
-    "matched": 3,
-    "rejected": 5
+    "before": 1176,
+    "matched": 0,
+    "rejected": 1176
   },
   "contentReviewCount": 432,
   "contentTypeCounts": {
-    "song": 3452,
-    "live_song": 90,
-    "album": 3,
-    "other": 40,
+    "song": 7848,
+    "live_song": 251,
+    "album": 64,
+    "other": 1034,
     "review": 432
   },
   "unresolvedChannelIds": [],
   "channelsWithoutUploads": [],
-  "channelsWithoutVideos": [],
-  "channelsWithoutAcceptedMusic": [],
-  "allIndexedChannelsVisible": false,
-  "publishedFeedVideoCount": 3570,
+  "channelsWithoutVideos": [
+    "UCMj8K97SgGnI9OdJIHBH-Sw",
+    "UCOEzuNu9yvO0AFTnSVKk4LQ",
+    "UCvdm27ITzhd3bsnftrBmFUg",
+    "UCRdGqpbhydDXIl83A9E8-2Q",
+    "UCwYR6Axoc2mEKz89P8t4N5Q",
+    "UCQAWPZGGc_4JqXq53ATaSBQ",
+    "UCHXlSnGKv7tdBxMw2F-FMkw",
+    "UCLKx4vBoCOKwB2x280VFmng",
+    "UCboGC6e3sTTIO9C6lHxifnA",
+    "UC9i1uNb0GFrISNB2pctkvRg",
+    "UCMNP5PWXks1_Es7e5Fs2LOg",
+    "UCJ6EMs_13PLDvRSHi-XqRwQ",
+    "UCXa6Mb5QgzYjRV_D1VlYoKQ",
+    "UC7IUL5Ba9dhBVPnTLe9RHhQ",
+    "UCHWqKBzUJqglcjVIMViPE0A",
+    "UCUsvtjzfis5NZY8qj8BY_FQ"
+  ],
+  "channelsWithoutAcceptedMusic": [
+    "UCUSjRkF72RR1E8Rl4SWtVsQ",
+    "UC5CGdoxqbma-pqkAHPjkq9w",
+    "UC_eW1AyvwaPsQA5YAuOC3YQ"
+  ],
+  "allIndexedChannelsVisible": true,
+  "publishedFeedVideoCount": 3599,
   "publishedShortVideoCount": 0
 }
