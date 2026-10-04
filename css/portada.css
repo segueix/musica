@@ -3830,19 +3830,20 @@ body .follow-btn-pill.is-followed:hover {
     display: none;
 }
 
-/* ---------- Suggereix un artista (#addYoutuberModal) i contacte (#contactModal, la icona @) ---------- */
-:is(#addYoutuberModal, #contactModal) .pt-contact {
+/* ---------- Contacte (#contactModal, la icona @ de la capçalera). Les fonts d'indexació i l'ajuda del @ surten ara
+   dins la franja «Hi falta algú?» d'Artistes i grups (el formulari s'obre directament) ---------- */
+#contactModal .pt-contact {
     background: var(--pt-surface);
     border: 1px solid var(--pt-line);
     border-radius: var(--pt-radius-lg);
     max-width: 460px;
 }
 
-:is(#addYoutuberModal, #contactModal) .pt-contact .modal-header {
+#contactModal .pt-contact .modal-header {
     border-bottom: 1px solid var(--pt-line);
 }
 
-:is(#addYoutuberModal, #contactModal) .pt-contact .modal-body {
+#contactModal .pt-contact .modal-body {
     display: flex;
     flex-direction: column;
     gap: 14px;
@@ -3860,13 +3861,13 @@ body .follow-btn-pill.is-followed:hover {
     color: var(--pt-on-accent);
 }
 
-:is(#addYoutuberModal, #contactModal) .pt-contact__badge svg {
+#contactModal .pt-contact__badge svg {
     width: 22px;
     height: 22px;
     color: inherit;
 }
 
-:is(#addYoutuberModal, #contactModal) .pt-contact .modal-title {
+#contactModal .pt-contact .modal-title {
     font-family: var(--pt-display);
     font-size: 1.25rem;
     color: var(--pt-text);
@@ -3946,36 +3947,6 @@ body .follow-btn-pill.is-followed:hover {
     line-height: 1.45;
 }
 
-:is(#addYoutuberModal, #contactModal) .pt-contact__primary {
-    width: 100%;
-    min-height: 48px;
-    border: 0;
-    border-radius: var(--pt-radius-sm);
-    background: var(--pt-accent);
-    color: var(--pt-on-accent);
-    font-size: 1rem;
-    font-weight: 700;
-    cursor: pointer;
-}
-
-:is(#addYoutuberModal, #contactModal) .pt-contact__primary:hover {
-    background: #e4f59d;
-    opacity: 1;
-}
-
-:is(#addYoutuberModal, #contactModal) .add-youtuber-help {
-    margin: 0;
-    color: var(--pt-muted);
-}
-
-:is(#addYoutuberModal, #contactModal) .add-youtuber-help strong {
-    color: var(--pt-text);
-}
-
-:is(#addYoutuberModal, #contactModal) .add-youtuber-message {
-    margin-top: 0;
-}
-
 .pt-contact__list {
     display: flex;
     flex-direction: column;
@@ -4045,7 +4016,7 @@ body .follow-btn-pill.is-followed:hover {
     overflow-wrap: anywhere;
 }
 
-:is(#addYoutuberModal, #contactModal) .about-telegram-btn {
+#contactModal .about-telegram-btn {
     min-width: 0;
     min-height: 40px;
     padding: 8px 14px;
@@ -4057,13 +4028,13 @@ body .follow-btn-pill.is-followed:hover {
     border-radius: var(--pt-radius-sm);
 }
 
-:is(#addYoutuberModal, #contactModal) .about-telegram-btn:hover {
+#contactModal .about-telegram-btn:hover {
     background: var(--pt-surface-3);
     color: var(--pt-text);
     transform: none;
 }
 
-:is(#addYoutuberModal, #contactModal) .project-credit-line {
+#contactModal .project-credit-line {
     font-family: var(--pt-display);
 }
 
@@ -5913,3 +5884,40 @@ body.is-video-pip .video-placeholder.is-placeholder-hidden {
     visibility: visible;
     pointer-events: auto;
 }
+
+/* ---------- Franja «Hi falta algú?»: enllaç directe al formulari + fonts i ajuda plegades ---------- */
+#followPage #addYoutuberBtn.follow-suggest__button {
+    text-decoration: none;
+}
+
+#followPage .follow-suggest__more {
+    margin-top: 10px;
+}
+
+#followPage .follow-suggest__more strong {
+    color: var(--pt-text);
+}
+
+/* ---------- Capçalera mòbil: la marca no es solapa amb la cerca ----------
+   La columna de la marca és el que sobra entre la cerca i les icones (≈ 170 px a 393 px d'ample). Amb les
+   tipografies reals «Segueix! Música» en fa uns 195 i es menjava la icona de cerca. La marca és un contenidor:
+   si no hi cap sencera, perd «Música» i, si encara no hi cap, només queda el logo. */
+@media (max-width: 768px) {
+    .app-header .brand {
+        container-type: inline-size;
+        overflow: hidden;
+    }
+
+    @container (max-width: 205px) {
+        .app-header .brand-tag {
+            display: none;
+        }
+    }
+
+    @container (max-width: 130px) {
+        .app-header .brand-name {
+            display: none;
+        }
+    }
+}
+
