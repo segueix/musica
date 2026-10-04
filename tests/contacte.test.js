@@ -86,10 +86,11 @@ describe('Contacte i suggeriment d’artistes', () => {
         expect(app).toContain('initSuggestFormLink();');
         expect(app).toContain('if (formUrl) link.href = formUrl;');
         expect(app).not.toMatch(/openAddYoutuberModal|submitYoutuber|addYoutuberModal/);
-        // Les fonts d'indexació i l'ajuda del @ es conserven dins la franja
-        expect(html.slice(html.indexOf('class="follow-suggest"'), html.indexOf('id="followTabs"'))).toContain(
-            'https://llista.cat'
-        );
+        // La franja no porta cap nota «Abans de suggerir…» ni fonts d'indexació (eren de Segueix youtubers)
+        const strip = html.slice(html.indexOf('class="follow-suggest"'), html.indexOf('id="followTabs"'));
+        expect(strip).not.toContain('<details');
+        expect(strip).not.toContain('llista.cat');
+        expect(strip).not.toContain('Abans de suggerir');
     });
 
     it('a mòbil la marca de la capçalera no se solapa amb la cerca (perd «Música» i, si cal, el nom)', () => {
@@ -97,5 +98,39 @@ describe('Contacte i suggeriment d’artistes', () => {
         expect(css).toMatch(/\.app-header \.brand \{\s*container-type: inline-size;\s*overflow: hidden;/);
         expect(css).toMatch(/@container \(max-width: 205px\) \{\s*\.app-header \.brand-tag \{\s*display: none;/);
         expect(css).toMatch(/@container \(max-width: 130px\) \{\s*\.app-header \.brand-name \{\s*display: none;/);
+    });
+
+    it('la pàgina «Informació per a artistes» és de música: ràdios, visualitzacions, sense ànim de lucre i formulari', () => {
+        const info = fs.readFileSync(path.join(root, 'info-youtubers.html'), 'utf8');
+        // Ja no és la pàgina de Segueix youtubers
+        expect(info).not.toContain('YouTubers');
+        expect(info).toContain('Informació per a <span>artistes i grups</span>');
+        expect(info).not.toMatch(/Gaming|Radar|Programes|categories intel·ligents/);
+        // Projecte sense ànim de lucre per als músics i grups catalans
+        expect(info).toContain('sense ànim de lucre');
+        expect(info).toMatch(/músics i grups catalans/);
+        // Com compten les visualitzacions
+        expect(info).toContain('Com compten les visualitzacions als teus canals');
+        expect(info).toContain('reproductor oficial de YouTube');
+        expect(info).toContain('trànsit extern');
+        // L'algorisme, amb els pesos del motor (music-selection.js) i els quatre modes de descoberta
+        const sel = fs.readFileSync(path.join(root, 'js', 'features', 'music-selection.js'), 'utf8');
+        expect(sel).toMatch(
+            /weights: \{ taste: 0\.45, actuality: 0\.2, popularity: 0\.15, rotation: 0\.1, affinity: 0\.1 \}/
+        );
+        for (const pes of ['45 %', '20 %', '15 %', '10 %']) expect(info).toContain(pes);
+        for (const mode of ['Els meus de sempre', 'Una mica de tot', 'Sorprèn-me', 'Només no escoltats']) {
+            expect(info).toContain(mode);
+        }
+        expect(info).toContain('65 %');
+        expect(info).toContain('Ningú no pot pagar per sortir més');
+        // El formulari és el de la configuració
+        const url = config.match(/suggestYoutuberUrl:\s*"([^"]+)"/)?.[1];
+        expect(info).toContain(`href="${url}"`);
+        expect(info).toContain('https://t.me/segueix');
+        expect(info).toContain('mailto:info.segueix@gmail.com');
+        // Totes les ancores del menú existeixen
+        const ids = [...info.matchAll(/ id="([^"]+)"/g)].map(m => m[1]);
+        [...info.matchAll(/href="#([^"]+)"/g)].forEach(m => expect(ids).toContain(m[1]));
     });
 });

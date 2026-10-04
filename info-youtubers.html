@@ -3,19 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Informació per a YouTubers — Segueix!</title>
+    <title>Informació per a artistes i grups — Segueix Música</title>
+    <meta name="description" content="Com funciona Segueix Música per als artistes i grups: com compten les visualitzacions als teus canals de YouTube, com trien les cançons les ràdios i com demanar entrar-hi o sortir-ne.">
     <link rel="icon" type="image/png" href="img/icon-192.png">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #0f0f0f;
-            --surface: #1a1a1a;
-            --surface-hover: #222;
-            --text: #e8e8e8;
-            --text-secondary: #aaa;
-            --accent: #ff4444;
-            --accent-soft: rgba(255, 68, 68, 0.15);
-            --border: #333;
+            --bg: #141615;
+            --surface: #202421;
+            --surface-2: #2a2f2b;
+            --text: #f4f0e8;
+            --muted: #b9b5ac;
+            --accent: #d6ed84;
+            --on-accent: #141615;
+            --terracotta: #d98a70;
+            --line: rgba(244, 240, 232, 0.14);
             --radius: 14px;
         }
 
@@ -25,8 +28,12 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Roboto', system-ui, sans-serif;
             background: var(--bg);
             color: var(--text);
             line-height: 1.7;
@@ -34,78 +41,109 @@
         }
 
         .page-header {
-            background: linear-gradient(135deg, var(--surface) 0%, #1f1a1a 100%);
-            border-bottom: 1px solid var(--border);
+            background: linear-gradient(135deg, var(--surface) 0%, #1b211c 100%);
+            border-bottom: 1px solid var(--line);
             padding: 32px 20px 28px;
             text-align: center;
         }
 
-        .page-header a.back-link {
+        .back-link {
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            color: var(--text-secondary);
+            color: var(--muted);
             text-decoration: none;
             font-size: 14px;
             margin-bottom: 16px;
-            transition: color 0.2s;
         }
 
-        .page-header a.back-link:hover {
+        .back-link:hover {
             color: var(--text);
         }
 
         .page-header h1 {
-            font-size: 28px;
-            font-weight: 900;
-            letter-spacing: -0.5px;
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 30px;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            line-height: 1.2;
         }
 
         .page-header h1 span {
             color: var(--accent);
         }
 
-        .page-header p.subtitle {
-            color: var(--text-secondary);
+        .subtitle {
+            color: var(--muted);
             font-size: 16px;
-            margin-top: 8px;
+            margin: 10px auto 0;
+            max-width: 560px;
         }
 
         .content {
-            max-width: 760px;
+            max-width: 780px;
             margin: 0 auto;
-            padding: 32px 20px 60px;
+            padding: 28px 20px 60px;
+        }
+
+        .toc {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 36px;
+        }
+
+        .toc a {
+            padding: 7px 14px;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            color: var(--text);
+            font-size: 13px;
+            font-weight: 500;
+            text-decoration: none;
+            background: var(--surface);
+        }
+
+        .toc a:hover,
+        .toc a:focus-visible {
+            border-color: var(--accent);
+            color: var(--accent);
+            outline: none;
         }
 
         section {
-            margin-bottom: 40px;
+            margin-bottom: 44px;
+            scroll-margin-top: 16px;
         }
 
         h2 {
-            font-size: 22px;
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 24px;
             font-weight: 700;
             margin-bottom: 16px;
             padding-bottom: 8px;
             border-bottom: 2px solid var(--accent);
             display: inline-block;
+            line-height: 1.25;
         }
 
         h3 {
             font-size: 17px;
             font-weight: 700;
-            margin: 20px 0 10px;
+            margin: 22px 0 10px;
             color: var(--text);
         }
 
         p {
             margin-bottom: 14px;
-            color: var(--text-secondary);
+            color: var(--muted);
             font-size: 15px;
         }
 
-        ul, ol {
-            margin: 10px 0 16px 20px;
-            color: var(--text-secondary);
+        ul,
+        ol {
+            margin: 10px 0 16px 22px;
+            color: var(--muted);
             font-size: 15px;
         }
 
@@ -113,28 +151,29 @@
             margin-bottom: 8px;
         }
 
-        li strong {
+        strong {
             color: var(--text);
         }
 
-        .info-card {
+        .card {
             background: var(--surface);
-            border: 1px solid var(--border);
+            border: 1px solid var(--line);
             border-radius: var(--radius);
             padding: 20px 22px;
             margin: 16px 0;
         }
 
-        .info-card.highlight {
+        .card.highlight {
             border-color: var(--accent);
-            background: var(--accent-soft);
+            background: rgba(214, 237, 132, 0.07);
         }
 
-        .info-card h3 {
+        .card h3 {
             margin-top: 0;
         }
 
-        .info-card p:last-child {
+        .card p:last-child,
+        .card ul:last-child {
             margin-bottom: 0;
         }
 
@@ -147,70 +186,91 @@
 
         .data-table th,
         .data-table td {
-            padding: 10px 14px;
+            padding: 10px 12px;
             text-align: left;
-            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+            border-bottom: 1px solid var(--line);
         }
 
         .data-table th {
             color: var(--text);
-            font-weight: 700;
             background: var(--surface);
-            font-size: 13px;
+            font-size: 12px;
+            font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
         .data-table td {
-            color: var(--text-secondary);
+            color: var(--muted);
         }
 
-        .emoji-label {
-            font-size: 18px;
-            margin-right: 6px;
-        }
-
-        .site-credit-footer {
-            display: flex;
-            justify-content: flex-end;
-            padding: 0 20px 24px;
-        }
-
-        .project-credit {
-            text-align: right;
-            color: var(--text-secondary);
-        }
-
-        .project-credit-line {
-            margin: 0;
-            font-size: 18px;
-            font-style: italic;
-        }
-
-        .project-credit-icon {
-            margin-left: 4px;
-        }
-
-        .project-credit-subline {
-            margin-top: 4px;
-            font-size: 12px;
-        }
-
-        .project-credit-link {
+        .data-table td:first-child {
             color: var(--text);
-            text-decoration: underline;
-            text-underline-offset: 2px;
+            font-weight: 500;
+            white-space: nowrap;
         }
 
-        .project-credit-link:hover {
+        .pill {
+            display: inline-block;
+            padding: 1px 9px;
+            border-radius: 999px;
+            background: rgba(214, 237, 132, 0.14);
             color: var(--accent);
+            font-size: 12px;
+            font-weight: 700;
         }
 
-        code {
-            background: var(--surface);
-            padding: 2px 7px;
-            border-radius: 5px;
-            font-size: 13px;
+        .no-list {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .no-list li {
+            position: relative;
+            padding-left: 26px;
+        }
+
+        .no-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .no-list.nope li::before {
+            content: '✕';
+            color: var(--terracotta);
+        }
+
+        .cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin: 6px 10px 6px 0;
+            padding: 11px 20px;
+            border-radius: 999px;
+            background: var(--accent);
+            color: var(--on-accent);
+            font-weight: 700;
+            font-size: 15px;
+            text-decoration: none;
+        }
+
+        .cta:hover {
+            filter: brightness(1.06);
+            text-decoration: none;
+        }
+
+        .cta.secondary {
+            background: transparent;
+            border: 1px solid var(--line);
+            color: var(--text);
+        }
+
+        .cta.secondary:hover {
+            border-color: var(--accent);
             color: var(--accent);
         }
 
@@ -223,22 +283,60 @@
             text-decoration: underline;
         }
 
+        code {
+            background: var(--surface-2);
+            padding: 2px 7px;
+            border-radius: 5px;
+            font-size: 13px;
+            color: var(--accent);
+        }
+
+        .site-credit-footer {
+            display: flex;
+            justify-content: flex-end;
+            padding: 0 20px 28px;
+        }
+
+        .project-credit {
+            text-align: right;
+            color: var(--muted);
+        }
+
+        .project-credit-subline {
+            margin: 4px 0 0;
+            font-size: 12px;
+        }
+
+        .project-credit-link {
+            color: var(--text);
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
         @media (max-width: 600px) {
             .page-header h1 {
-                font-size: 22px;
+                font-size: 24px;
             }
+
             .content {
-                padding: 24px 16px 48px;
+                padding: 22px 16px 48px;
             }
+
             h2 {
-                font-size: 19px;
+                font-size: 20px;
             }
+
             .data-table {
                 font-size: 13px;
             }
+
             .data-table th,
             .data-table td {
-                padding: 8px 10px;
+                padding: 8px 8px;
+            }
+
+            .data-table td:first-child {
+                white-space: normal;
             }
         }
     </style>
@@ -246,643 +344,470 @@
 <body>
 
 <div class="page-header">
-    <a href="index.html" class="back-link">&larr; Tornar a Segueix!</a>
-    <h1>Informació per a <span>YouTubers</span></h1>
-    <p class="subtitle">Com funciona Segueix! per dins i què has de saber com a creador de contingut</p>
+    <a href="index.html" class="back-link">&larr; Tornar a Segueix Música</a>
+    <h1>Informació per a <span>artistes i grups</span></h1>
+    <p class="subtitle">Com funciona Segueix Música, com sonen les teves cançons a les ràdios i què passa amb les teves visualitzacions de YouTube</p>
 </div>
 
 <div class="content">
 
-    <!-- INTRODUCCIÓ -->
-    <section>
-        <h2>Què és Segueix!</h2>
+    <nav class="toc" aria-label="Contingut d'aquesta pàgina">
+        <a href="#que-es">Què és</a>
+        <a href="#visualitzacions">Visualitzacions</a>
+        <a href="#algorisme">Com triem les cançons</a>
+        <a href="#entrar">Com hi entres</a>
+        <a href="#repertori">El teu repertori</a>
+        <a href="#consells">Consells</a>
+        <a href="#contacte">Entrar, amagar o sortir</a>
+        <a href="#privacitat">Privacitat</a>
+        <a href="#preguntes">Preguntes</a>
+    </nav>
+
+    <!-- QUÈ ÉS -->
+    <section id="que-es">
+        <h2>Què és Segueix Música</h2>
         <p>
-            Segueix! és una aplicació web oberta que agrega vídeos de YouTube de canals que creen contingut
-            en català. L'objectiu és facilitar el descobriment de creadors, donar-los visibilitat
-            i ajudar l'audiència a trobar contingut de qualitat fàcilment.
-        </p>
-        <p>
-            No som una plataforma alternativa a YouTube: els vídeos es reprodueixen directament des de YouTube
-            i totes les reproduccions compten exactament igual que si l'espectador hagués vist el vídeo
-            a youtube.com o a l'aplicació de YouTube.
+            Segueix Música és una aplicació web gratuïta per escoltar música en català: ràdios,
+            estils, fitxes d'artista, llistes i descobriment de grups. Les cançons que hi sonen
+            són els <strong>vídeos oficials dels teus canals de YouTube</strong>, reproduïts amb el
+            reproductor oficial de YouTube. Nosaltres no emmagatzemem ni distribuïm cap fitxer teu.
         </p>
 
-        <div class="info-card highlight">
-            <h3>Les reproduccions compten?</h3>
+        <div class="card highlight">
+            <h3>Un projecte sense ànim de lucre, fet per als músics</h3>
             <p>
-                <strong>Sí, al 100%.</strong> Segueix! utilitza el reproductor oficial de YouTube
-                (YouTube IFrame Player API). Cada visualització des de Segueix! es comptabilitza com una
-                reproducció legítima al teu canal. Les estadístiques de YouTube Analytics reflectiran
-                aquestes visualitzacions com a provinents d'un "lloc web extern" (embedded player).
-                Això inclou temps de visualització (<em>watch time</em>), interaccions i totes les mètriques
-                que YouTube utilitza per a la monetització.
+                Segueix Música <strong>no és un negoci</strong>. No hi ha subscripcions, no hi ha
+                publicitat pròpia, no venem dades i no cobrem res als artistes per sortir-hi ni per sortir
+                millor posicionats. El projecte neix d'una idea senzilla: que la música feta en català,
+                sigui d'un grup consolidat o d'un grup que comença, sigui <strong>fàcil de trobar i de
+                descobrir</strong>, i que cada cançó que se n'escolta reverteixi directament als
+                seus creadors a través del seu canal de YouTube.
+            </p>
+            <p>
+                El cost el cobrim nosaltres amb un pressupost mínim. Per això posem tota
+                l'energia a una sola cosa: que més gent trobi, escolti i segueixi els músics i grups catalans.
             </p>
         </div>
     </section>
 
-    <!-- COM S'INDEXEN ELS VÍDEOS -->
-    <section>
-        <h2>Com s'indexen els vídeos</h2>
+    <!-- VISUALITZACIONS -->
+    <section id="visualitzacions">
+        <h2>Com compten les visualitzacions als teus canals</h2>
         <p>
-            El sistema d'indexació de Segueix! funciona de manera automàtica. Periòdicament, un
-            procés de sincronització recull els vídeos més recents de tots els canals registrats
-            a través de l'API oficial de YouTube.
+            Aquest és el punt més important per a un artista. La resposta curta:
+            <strong>cada cançó que s'escolta a Segueix Música es reprodueix a YouTube</strong>,
+            des del teu vídeo, i és YouTube qui la comptabilitza.
         </p>
 
-        <h3>El procés pas a pas</h3>
-        <ol>
-            <li>
-                <strong>Llistat de canals:</strong> Mantenim una base de dades amb tots els canals
-                que creen contingut en la nostra llengua. Cada canal té assignades una o més categories
-                temàtiques.
-            </li>
-            <li>
-                <strong>Recollida de vídeos:</strong> Per a cada canal, a cada sincronització es
-                recullen fins a <strong>50 vídeos recents per YouTuber</strong> amb totes les seves
-                dades: títol, descripció, durada, visualitzacions, data de publicació i miniatura.
-                Aquesta xifra podrà variar en funció de la capacitat del sistema i del nombre de
-                YouTubers registrats.
-            </li>
-            <li>
-                <strong>Sense descàrrega retroactiva:</strong> Quan es fa la crida a l'API de
-                YouTube (siguin 15 o 50 vídeos), només s'indexen els que hi ha <strong>en aquell
-                moment</strong>, fins al límit marcat. Si un canal crea molt contingut, no anem
-                enrere a buscar vídeos antics que ja havien quedat fora: la indexació sempre
-                parteix del moment de la sincronització.
-            </li>
-            <li>
-                <strong>Detecció d'idioma:</strong> Per als canals multilingües, el sistema analitza
-                automàticament cada vídeo per determinar si està en català. Utilitza
-                l'etiqueta d'idioma de YouTube i, quan aquesta no és fiable, aplica una heurística
-                que analitza el títol i la descripció cercant marcadors lingüístics específics del català
-                (com ara la ç, l'l·l, apòstrofs i vocabulari propi).
-            </li>
-            <li>
-                <strong>Classificació:</strong> Els vídeos s'assignen a les categories del canal
-                (Vida, Gaming, Cultura, El Món, Diversió, etc.).
-            </li>
-            <li>
-                <strong>Historial del canal:</strong> Quan el nombre de vídeos supera el límit del
-                feed actiu, els vídeos més antics passen a l'historial del canal. L'única diferència
-                respecte al feed actiu és que aquí no es mostren les dades de visualització; la resta
-                d'informació (títol, miniatura, durada i data) es conserva igual i els vídeos
-                continuen sent cercables.
-            </li>
-        </ol>
-
-        <div class="info-card">
-            <h3>Shorts</h3>
-            <p>
-                Els vídeos curts (Shorts) de menys de 3 minuts es detecten automàticament i es mostren
-                en una secció dedicada amb navegació vertical, semblant a l'experiència de YouTube Shorts.
-            </p>
-            <p style="margin-bottom:0;">
-                <strong>Aquesta secció només apareix al mòbil.</strong> A l'ordinador no es mostra,
-                per no trencar l'experiència de visualització: els Shorts estan pensats per a pantalles
-                verticals i no encaixen bé amb la navegació d'escriptori.
-            </p>
+        <div class="card highlight">
+            <h3>Les reproduccions són reproduccions de YouTube</h3>
+            <ul>
+                <li>
+                    El reproductor és <strong>l'oficial de YouTube</strong> (IFrame Player). Segueix Música no
+                    hi afegeix cap capa pròpia, no el tapa i no en canvia els controls, els subtítols ni els anuncis.
+                </li>
+                <li>
+                    No hi ha cap «comptador de Segueix Música» que substitueixi el de YouTube: les visualitzacions, el
+                    temps de visualització (<em>watch time</em>) i les interaccions s'apunten al <strong>teu vídeo i al
+                    teu canal</strong>, com a qualsevol altre lloc web que incrusti un vídeo de YouTube.
+                </li>
+                <li>
+                    A YouTube Studio / Analytics normalment les veuràs com a <strong>trànsit extern</strong> (reproductor
+                    incrustat en un altre lloc web).
+                </li>
+                <li>
+                    <strong>Què compta com a visualització, quins anuncis es mostren i quins ingressos genera cada
+                    reproducció ho decideix YouTube</strong> segons les seves normes i la configuració del teu canal
+                    (per exemple, si el tens monetitzat). Segueix Música no bloqueja els anuncis de YouTube ni hi té accés.
+                </li>
+            </ul>
         </div>
 
-        <h3>Arxiu i cerca</h3>
-        <p>
-            Tots els vídeos indexats es conserven en un arxiu organitzat per canal i per any.
-            L'usuari pot cercar vídeos de tot l'arxiu històric (des de 2006 fins avui).
-            La cerca funciona en dues fases: primer busca als vídeos recents del feed
-            i després amplia la cerca a l'arxiu complet.
-        </p>
-    </section>
-
-    <!-- PREFERÈNCIA DE YouTubers -->
-    <section>
-        <h2>Prioritat dels YouTubers al feed</h2>
-        <p>
-            Segueix! dóna un tractament preferent als creadors de contingut individuals (YouTubers)
-            respecte als canals institucionals (mitjans de comunicació, entitats, mitjans digitals).
-        </p>
-
-        <h3>Límits de vídeos al feed actiu</h3>
-        <table class="data-table">
-            <thead>
-                <tr>
-                    <th>Tipus de canal</th>
-                    <th>Vídeos al feed</th>
-                    <th>Exemples</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>YouTuber</strong> (creador individual)</td>
-                    <td>15 vídeos</td>
-                    <td>Qualsevol creador de contingut</td>
-                </tr>
-                <tr>
-                    <td><strong>Entitat</strong></td>
-                    <td>5 vídeos</td>
-                    <td>Organitzacions, associacions</td>
-                </tr>
-                <tr>
-                    <td><strong>Mitjà / Digital</strong></td>
-                    <td>5 vídeos</td>
-                    <td>Mitjans de comunicació, premsa digital</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <p>
-            Cal tenir en compte que la presència de mitjans, mitjans digitals i entitats pot anar
-            perdent pes en funció de la incorporació de més YouTubers i de les necessitats de gestió
-            de la plataforma.
-        </p>
-
-        <h3>Visibilitat al feed principal</h3>
-        <p>
-            A la vista <strong>"Novetats"</strong> (la vista per defecte), els vídeos de YouTubers
-            apareixen directament. Els canals classificats com a mitjans, digitals o entitats
-            <strong>no apareixen</strong> a Novetats per evitar que el contingut institucional
-            tapi els creadors individuals. Aquests canals tenen les seves pròpies categories
-            per a qui els vulgui consultar.
-        </p>
-
-        <h3>Algoritme d'ordenació</h3>
-        <p>
-            El feed no és simplement cronològic. Segueix! utilitza un sistema intel·ligent que
-            combina dos criteris:
-        </p>
+        <h3>Detalls que convé saber</h3>
         <ul>
             <li>
-                <strong>Contingut destacat:</strong> Els vídeos de menys d'una setmana d'antiguitat
-                amb més de 1.000 reproduccions es consideren "contingut calent" i es col·loquen
-                a les primeres posicions del feed (fins a 8 vídeos destacats). Dins d'aquest
-                grup, s'ordenen per popularitat.
+                <strong>Cada cançó comença des del principi.</strong> No reprenem a mig vídeo, de manera que
+                l'oient escolta la peça sencera si vol.
             </li>
             <li>
-                <strong>Rotació per canal (round-robin):</strong> La resta del feed s'ordena
-                alternant entre canals per garantir diversitat. Cap canal pot ocupar tot el
-                feed, encara que publiqui molts vídeos. Dins de cada canal, els vídeos més
-                recents apareixen primer.
+                <strong>A la ràdio, la cançó següent comença sola</strong> quan s'acaba l'anterior, com en una llista de
+                YouTube, i només mentre el vídeo és visible, a la pàgina o a la finestra flotant (no hi ha reproducció amagada en segon pla).
+            </li>
+            <li>
+                <strong>Una cançó, una versió.</strong> Mostrem una sola versió de cada cançó. Si hi ha un videoclip al
+                teu canal oficial, té prioritat sobre la pista d'àudio del canal «<em>Artista – Tema</em>»
+                (el que YouTube Music genera amb la teva discografia). Quan una cançó només és al canal «Tema», sona
+                allà, i la reproducció es comptabilitza a aquell vídeo.
+            </li>
+            <li>
+                <strong>Què veus tu a Segueix Música i què no.</strong> Les xifres de visualitzacions que
+                mostrem a les cançons són les públiques de YouTube. Per saber quant s'ha escoltat el teu repertori
+                has de mirar YouTube Studio: nosaltres no tenim ni oferim estadístiques per artista.
+            </li>
+            <li>
+                <strong>Les visualitzacions no són l'únic factor.</strong> Veuràs a continuació que la popularitat
+                té un pes petit a les ràdios: una cançó amb poques visualitzacions pot sonar igualment.
             </li>
         </ul>
-        <div class="info-card">
-            <h3>Què significa això per al teu canal?</h3>
-            <p>
-                Si el teu vídeo supera les 1.000 reproduccions durant la primera setmana,
-                tindrà una posició privilegiada al feed. Però fins i tot amb menys visualitzacions,
-                el sistema de rotació garanteix que els teus vídeos apareixeran al feed intercalats
-                amb els d'altres canals, de manera que tots els creadors tenen visibilitat.
-            </p>
-        </div>
     </section>
 
-    <!-- FUNCIONALITATS PER A L'AUDIÈNCIA -->
-    <section>
-        <h2>Què poden fer els usuaris amb el teu contingut</h2>
-
-        <h3>Seguir el teu canal</h3>
+    <!-- ALGORISME -->
+    <section id="algorisme">
+        <h2>Com triem les cançons: els algorismes de les ràdios</h2>
         <p>
-            Els usuaris poden seguir els canals que els interessen. A la vista
-            <strong>"Seguint"</strong> veuran exclusivament els vídeos dels canals
-            que segueixen, creant un feed personalitzat.
+            La ràdio («La teva ràdio», les ràdios d'estil, d'artista i de cerca), el feed «Recomanat per a tu» i les
+            files de la portada fan servir <strong>un sol motor de selecció</strong>, explicat aquí perquè sàpigues
+            exactament com funciona. <strong>Ningú no pot pagar per sortir més</strong>: no hi ha posicions comprades
+            ni «destacats» patrocinats.
         </p>
 
-        <h3>M'agrada</h3>
+        <h3>Com es puntua cada cançó</h3>
+        <table class="data-table">
+            <thead>
+                <tr><th>Criteri</th><th>Pes</th><th>Què mira</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Gust de l'oient</td>
+                    <td><span class="pill">45 %</span></td>
+                    <td>Els cors, els seguiments, les cançons escoltades (de 30 segons en endavant), les que s'han repetit
+                        a propòsit i els botons «+ / − com aquesta» <strong>d'aquella persona</strong>. Un cor o un
+                        seguiment pesa més que una escolta; els cors no caduquen i les escoltes perden pes amb els mesos.</td>
+                </tr>
+                <tr>
+                    <td>Actualitat</td>
+                    <td><span class="pill">20 %</span></td>
+                    <td>L'edat real de la música (veure més avall): la música recent puntua més, però la històrica també hi té lloc.</td>
+                </tr>
+                <tr>
+                    <td>Popularitat</td>
+                    <td><span class="pill">15 %</span></td>
+                    <td>Les visualitzacions, però en <strong>relatiu</strong>: es compara cada cançó amb les de la seva
+                        mateixa franja d'antiguitat (i, per als clàssics, amb el seu propi canal), amb una escala logarítmica
+                        que no premia només les xifres enormes. Sense dades és neutra, i una novetat de menys de 30 dies mai
+                        no baixa de la meitat.</td>
+                </tr>
+                <tr>
+                    <td>Rotació</td>
+                    <td><span class="pill">10 %</span></td>
+                    <td>Una cançó que l'oient no ha escoltat és «fresca». Una que ha sonat fa poc reposa uns dies abans de tornar.</td>
+                </tr>
+                <tr>
+                    <td>Afinitat d'estil</td>
+                    <td><span class="pill">10 %</span></td>
+                    <td>Que la cançó encaixi amb l'estil de la ràdio i el que se n'ha escoltat a la mateixa sessió.</td>
+                </tr>
+            </tbody>
+        </table>
         <p>
-            Cada vídeo i cada Short té un botó de "M'agrada" (cor). Els vídeos marcats
-            es guarden al dispositiu de l'usuari i es poden consultar des de l'historial
-            amb el filtre de "M'agrada" activat. Aquests "M'agrada" són interns de
-            Segueix! i no afecten els "M'agrada" del teu vídeo a YouTube.
+            A això se li resten <strong>penalitzacions</strong> temporals quan l'oient salta ràpidament una cançó o un artista,
+            quan una cançó ha sonat fa menys de 24 hores o quan ha premut «− com aquesta».
         </p>
 
-        <h3>Historial de reproduccions</h3>
+        <h3>Una barreja d'èpoques, no només el que és nou</h3>
         <p>
-            Segueix! manté un historial local de les últimes <strong>50 reproduccions</strong>
-            de cada usuari. Aquest historial serveix per:
+            L'antiguitat es calcula pel <strong>moment real de la cançó</strong>, no per la data en què es va pujar a YouTube:
+            fem servir l'any original (la data de publicació oficial de la descripció automàtica de YouTube
+            «<em>Released on</em>» o el ℗, o una dada verificada a mà). Així, una reedició pujada avui no es fa passar per una novetat.
         </p>
+        <table class="data-table">
+            <thead>
+                <tr><th>Franja</th><th>Edat</th><th>Pes orientatiu a la ràdio</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Recent</td><td>fins a 24 mesos</td><td>65 %</td></tr>
+                <tr><td>Mitjana</td><td>de 2 a 8 anys</td><td>25 %</td></tr>
+                <tr><td>Històrica</td><td>més de 8 anys</td><td>10 %</td></tr>
+            </tbody>
+        </table>
+        <p>
+            Si algú demostra amb molts senyals que li agrada la música antiga (cors, repeticions, seguiments de
+            clàssics), la part històrica creix fins a un màxim del 60 %. Un sol clic no ho canvia.
+            Les <strong>estrenes</strong> (música publicada fa menys de 90 dies i que no és una gravació antiga reeditada)
+            tenen la seva pròpia secció a la portada.
+        </p>
+
+        <h3>Regles d'equitat entre artistes</h3>
+        <p>Una ràdio no és una llista dels més escoltats. Aquestes regles es mantenen sobre la llista final:</p>
+        <ul class="no-list">
+            <li><strong>Màxim per artista:</strong> no més de 2 cançons del mateix artista a les primeres 20.</li>
+            <li><strong>Separació:</strong> entre dues cançons del mateix artista n'hi ha almenys 3 d'altres.</li>
+            <li><strong>Descans:</strong> una cançó no torna a sonar abans de 12 cançons i 60 minuts.</li>
+            <li><strong>Sense duplicats:</strong> les versions de la mateixa gravació no es posen seguides. Els directes, acústics i remixos sí que es
+                conserven, però no s'encadenen.</li>
+            <li><strong>Música històrica repartida:</strong> els clàssics no s'acumulen ni van seguits.</li>
+        </ul>
+        <p>
+            Si un estil té poca música (per exemple, un estil amb un sol artista), les regles es relaxen
+            només el necessari i es diu a l'oient. La ràdio mai s'omple amb cançons que no encaixen.
+        </p>
+
+        <h3>Modes de descoberta: l'oportunitat per a grups nous</h3>
+        <p>
+            Cada ràdio té un selector amb quatre modes. L'oient decideix quant vol descobrir:
+        </p>
+        <table class="data-table">
+            <thead>
+                <tr><th>Mode</th><th>Què fa</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Els meus de sempre</td><td>75 % d'artistes que ja coneix, 20 % d'afins i 5 % de sorpresa.</td></tr>
+                <tr><td>Una mica de tot</td><td>60 % coneguts, 30 % d'afins i 10 % de sorpresa.</td></tr>
+                <tr><td>Sorprèn-me</td><td>25 % coneguts, 45 % d'artistes nous d'estils afins i 30 % de sorpresa.</td></tr>
+                <tr><td>Només no escoltats</td><td>Només artistes que la persona <strong>no ha escoltat mai</strong>: un sol tema per artista, i la
+                    popularitat hi pesa la meitat perquè surtin també els grups petits.</td></tr>
+            </tbody>
+        </table>
+        <p>
+            «Només no escoltats» és, de fet, una porta d'entrada per a grups que encara no són coneguts: quan algú
+            l'activa, el seu objectiu és trobar-los.
+        </p>
+
+        <h3>Altres ràdios i com hi surts</h3>
         <ul>
-            <li>
-                <strong>Amagar vídeos ja vistos:</strong> Al feed principal, els vídeos que
-                l'usuari ja ha vist desapareixen automàticament, de manera que sempre veu
-                contingut nou.
-            </li>
-            <li>
-                <strong>Consultar l'historial:</strong> L'usuari pot revisar els vídeos que ha
-                vist recentment, filtrats per categoria o pels que ha marcat amb "M'agrada".
-            </li>
+            <li><strong>Ràdio de l'artista:</strong> a la teva fitxa hi ha una ràdio amb només les teves cançons.</li>
+            <li><strong>Ràdio de l'estil:</strong> barreja a parts iguals els estils en què estàs classificat (màxim tres).</li>
+            <li><strong>Ràdio d'una cerca:</strong> amb les cançons que ha trobat una cerca, sense restricció d'estil.</li>
+            <li><strong>Estils:</strong> cada artista té un estil principal i, si cal, altres gèneres, assignats a partir de dades obertes i revisats a mà. Si penses que el teu estil no és el correcte, <a href="#contacte">escriu-nos</a>.</li>
         </ul>
-        <p>
-            L'historial es guarda només al dispositiu de l'usuari (localStorage del navegador).
-            Segueix! no recull ni emmagatzema cap dada de navegació en cap servidor.
-        </p>
 
-        <h3>Llistes de reproducció</h3>
-        <p>
-            Els usuaris poden crear llistes de reproducció personalitzades afegint-hi qualsevol
-            vídeo. Les llistes es poden compartir amb altres usuaris mitjançant un enllaç
-            que codifica els identificadors dels vídeos.
-        </p>
+        <div class="card">
+            <h3>Què no fa l'algorisme</h3>
+            <ul class="no-list nope">
+                <li>No accepta pagaments, ni dels artistes ni de les discogràfiques, per canviar què sona.</li>
+                <li>No envia el que escolta cada persona a cap servidor: el gust de l'oient viu al seu dispositiu.</li>
+            </ul>
+        </div>
 
-        <h3>Programes</h3>
         <p>
-            Si el teu canal publica diferents tipus de contingut (per exemple, diversos programes
-            o sèries), els usuaris poden crear "programes" que filtren automàticament els vídeos
-            del teu canal pel nom del programa. Això permet als espectadors seguir una sèrie
-            concreta del teu canal sense veure la resta.
-        </p>
-
-        <h3>Compartir</h3>
-        <p>
-            Cada vídeo té un botó de compartir que utilitza l'API nativa del dispositiu.
-            L'enllaç compartit porta directament al vídeo dins de Segueix!, donant-li
-            visibilitat tant al teu contingut com a la plataforma.
+            <strong>Una advertència honesta:</strong> aquests paràmetres els hem provat amb simulacions sobre el catàleg real,
+            però encara no tenim mesures d'ús real que demostrin quin efecte tenen sobre l'audiència. Els anirem
+            ajustant i, si canviem alguna cosa important, ho reflectirem en aquesta mateixa pàgina.
         </p>
     </section>
 
-    <!-- CATEGORIES -->
-    <section>
-        <h2>Categories</h2>
+    <!-- COM HI ENTRES -->
+    <section id="entrar">
+        <h2>Com entres a Segueix Música</h2>
         <p>
-            Les categories de Segueix! són genèriques i estan pensades per organitzar el contingut
-            de manera àmplia. Cada canal està assignat a una o més d'aquestes categories temàtiques:
-        </p>
-        <table class="data-table">
-            <thead>
-                <tr>
-                    <th>Categoria</th>
-                    <th>Descripció</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>El Món</strong></td>
-                    <td>Actualitat, política, societat, opinió</td>
-                </tr>
-                <tr>
-                    <td><strong>Vida</strong></td>
-                    <td>Estil de vida, vlogs, cuina, viatges, salut</td>
-                </tr>
-                <tr>
-                    <td><strong>Diversió</strong></td>
-                    <td>Humor, entreteniment, reptes, experiments</td>
-                </tr>
-                <tr>
-                    <td><strong>Cultura</strong></td>
-                    <td>Educació, ciència, història, literatura</td>
-                </tr>
-                <tr>
-                    <td><strong>Gaming</strong></td>
-                    <td>Videojocs, gameplays, eSports, anàlisis</td>
-                </tr>
-            </tbody>
-        </table>
-        <p>
-            La veritable potència de Segueix!, però, no està en aquestes categories genèriques,
-            sinó en la personalització que cada usuari pot fer. Consulta la secció següent per
-            entendre com funciona.
-        </p>
-
-        <div class="info-card">
-            <h3>Grups de música</h3>
-            <p>
-                Segueix! <strong>no indexa grups de música</strong>. N'hi ha una gran quantitat
-                i es mereixen una aplicació a part, dedicada exclusivament a l'escena musical en
-                català. Esperem poder-la crear un cop consolidat Segueix!.
-            </p>
-            <p style="margin-bottom:0;">
-                Tot i això, us agrairíem que ens els feu arribar igualment: així els anem
-                guardant i tenint-los a mà per a aquest proper projecte.
-            </p>
-        </div>
-    </section>
-
-    <!-- PERSONALITZACIÓ -->
-    <section>
-        <h2>Personalització</h2>
-        <p>
-            Més enllà de les categories genèriques, Segueix! ofereix dues eines potents perquè
-            cada usuari es construeixi la seva pròpia experiència:
-        </p>
-
-        <h3>Categories personalitzades</h3>
-        <p>
-            Les categories personalitzades permeten a l'usuari agrupar vídeos a partir
-            d'un <strong>mot cercat</strong> (per exemple: <em>Viatge</em>). Quan
-            l'usuari crea una categoria amb el mot "Viatge", Segueix! hi va mostrant
-            tots els vídeos que continguin aquesta paraula al títol o a la descripció,
-            vinguin del canal que vinguin.
-        </p>
-
-        <div class="info-card">
-            <h3>Com fer que els teus vídeos hi apareguin</h3>
-            <p>
-                <strong>No cal que facis res especial.</strong> Segueix! llegirà les
-                teves descripcions (i els títols) i activarà la categoria automàticament
-                quan trobi la paraula clau. Com més vídeos teus continguin aquell mot,
-                més ràpida i fiable serà la detecció.
-            </p>
-            <p>
-                Els teus vídeos apareixeran al feed en la propera sincronització.
-                Intentem fer-ho amb la freqüència més alta possible, però et demanem
-                una mica de paciència.
-            </p>
-        </div>
-
-        <h3>"Categories intel·ligents"</h3>
-        <p>
-            Les "categories intel·ligents" funcionen a partir de la cerca: l'usuari pot
-            començar amb un feed buit i anar sumant els YouTubers que vulgui un a un.
-            Això permet crear <strong>canals temàtics</strong> molt específics, com ara
-            un feed dedicat exclusivament a cuina catalana, o un altre centrat en
-            ressenyes de videojocs. A diferència de les categories personalitzades (que
-            agrupen vídeos pel mot cercat, vinguin del canal que vinguin), les
-            "categories intel·ligents" deixen triar a mà els YouTubers que en formen part.
-        </p>
-
-        <div class="info-card">
-            <h3>Com crear una categoria intel·ligent</h3>
-            <p>
-                El truc per arrencar una categoria intel·ligent des de zero és fer una
-                cerca de <strong>dues paraules entre cometes</strong> que no tingui cap
-                resultat, per exemple <code>"Indie local"</code>. Com que aquesta cerca
-                literal no retorna vídeos, obtens un feed buit i des d'allà pots anar
-                indexant els YouTubers que vulguis incloure a la teva categoria.
-            </p>
-        </div>
-
-        <div class="info-card">
-            <h3>Exemples per defecte</h3>
-            <p>
-                Segueix! anirà introduint exemples de Llistes i Categories personalitzades
-                i "categories intel·ligents" que estaran disponibles per defecte, perquè els
-                usuaris tinguin exemples pràctics de com funcionen aquestes eines i puguin
-                inspirar-se per crear les seves pròpies.
-            </p>
-        </div>
-    </section>
-
-    <!-- NOVETATS, RADAR I SEGUINT -->
-    <section>
-        <h2>Novetats, Radar i Seguint</h2>
-        <p>
-            Segueix! organitza el contingut en tres vistes principals que l'usuari pot alternar:
-        </p>
-
-        <h3>Novetats</h3>
-        <p>
-            És la vista per defecte. Mostra els vídeos més recents de tots els canals de YouTubers
-            registrats a Segueix!, ordenats amb l'algoritme de contingut destacat i rotació per canal.
-            És la porta d'entrada per descobrir contingut nou en la nostra llengua.
-        </p>
-
-        <h3>Radar</h3>
-        <p>
-            Radar mostra els darrers vídeos sobre les <strong>temàtiques que segueix l'usuari</strong>.
-            Si un usuari ha configurat categories personalitzades o "categories intel·ligents",
-            Radar li oferirà un feed filtrat amb el contingut que encaixa amb els seus interessos,
-            de manera que pot estar al dia de tot el que es publica sobre els temes que li importen.
-        </p>
-
-        <h3>Seguint</h3>
-        <p>
-            "Seguint" és una <strong>secció</strong> (no una categoria) que mostra els vídeos
-            <strong>exclusivament dels YouTubers que l'usuari segueix</strong>. Només hi
-            apareixen els canals que l'usuari ha marcat explícitament com a seguits. És la
-            secció més personal i directa: si segueixes 10 canals, Seguint et mostrarà només
-            el contingut d'aquells 10 canals.
-        </p>
-    </section>
-
-    <!-- SUPORT ALS CREADORS -->
-    <section>
-        <h2>Suport als creadors</h2>
-        <p>
-            Segueix! detecta automàticament els mètodes de suport econòmic que incloeu a les
-            descripcions dels vostres vídeos i els mostra al perfil del canal amb un botó
-            <strong>"Dona suport"</strong>. Això facilita que l'audiència us pugui donar suport
-            directament.
-        </p>
-
-        <h3>Plataformes detectades automàticament</h3>
-        <table class="data-table">
-            <thead>
-                <tr>
-                    <th>Plataforma</th>
-                    <th>Com es detecta</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Patreon</strong></td>
-                    <td>Enllaç a patreon.com a les descripcions</td>
-                </tr>
-                <tr>
-                    <td><strong>Aixeta</strong></td>
-                    <td>Enllaç a aixeta.cat</td>
-                </tr>
-                <tr>
-                    <td><strong>Ko-fi</strong></td>
-                    <td>Enllaç a ko-fi.com</td>
-                </tr>
-                <tr>
-                    <td><strong>Buy Me a Coffee</strong></td>
-                    <td>Enllaç a buymeacoffee.com</td>
-                </tr>
-                <tr>
-                    <td><strong>PayPal</strong></td>
-                    <td>Enllaç a paypal.me o paypal.com/donate</td>
-                </tr>
-                <tr>
-                    <td><strong>Tipeee</strong></td>
-                    <td>Enllaç a tipeee.com</td>
-                </tr>
-                <tr>
-                    <td><strong>Bizum</strong></td>
-                    <td>Número de Bizum a la descripció</td>
-                </tr>
-                <tr>
-                    <td><strong>Transferència bancària</strong></td>
-                    <td>IBAN a la descripció</td>
-                </tr>
-                <tr>
-                    <td><strong>Fes-te membre (YouTube)</strong></td>
-                    <td>Enllaç /join del canal</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <div class="info-card">
-            <h3>Com activar el suport al teu canal</h3>
-            <p>
-                <strong>No cal que facis res especial.</strong> Si poses enllaços de Patreon,
-                Ko-fi, Aixeta o qualsevol altra plataforma a les descripcions dels teus vídeos,
-                Segueix! llegirà les descripcions i activarà els botons automàticament al teu
-                perfil. Com més vídeos continguin l'enllaç, més ràpida i fiable serà la detecció.
-            </p>
-        </div>
-    </section>
-
-    <!-- ECOSISTEMA DIGITAL EN CATALÀ -->
-    <section id="ecosistema" class="ecosistema-section" style="margin-top: 40px; border-top: 1px solid #eee; padding-top: 40px;">
-        <h2 style="margin-bottom: 10px;">L'ecosistema digital en català</h2>
-        <p style="margin-bottom: 25px;">
-            Segueix! beu de la feina de curació i indexació que fan diversos portals de la comunitat. Abans de suggerir un canal, et recomanem que consultis i donis d'alta el contingut en aquestes plataformes per enfortir la xarxa:
-        </p>
-
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 40px;">
-            <div style="background: #f9f9f9; padding: 20px; border-radius: 12px; border: 1px solid #ddd; display: flex; flex-direction: column; justify-content: space-between;">
-                <div>
-                    <h3 style="margin-top:0; color: #d32f2f;">📊 Llista.cat</h3>
-                    <p style="font-size: 0.9em; line-height: 1.4;">La gran radiografia de dades i rànquings del sector a tots els territoris.</p>
-                </div>
-                <a href="https://llista.cat" target="_blank" style="color: #d32f2f; font-weight: bold; text-decoration: none; font-size: 0.9em; margin-top: 10px;">Visita el portal →</a>
-            </div>
-
-            <div style="background: #f9f9f9; padding: 20px; border-radius: 12px; border: 1px solid #ddd; display: flex; flex-direction: column; justify-content: space-between;">
-                <div>
-                    <h3 style="margin-top:0; color: #2e7d32;">🔍 ClapClap.cat</h3>
-                    <p style="font-size: 0.9em; line-height: 1.4;">L'índex definitiu per trobar canals per temàtiques i descobrir nous pòdcasts.</p>
-                </div>
-                <a href="https://clapclap.cat" target="_blank" style="color: #2e7d32; font-weight: bold; text-decoration: none; font-size: 0.9em; margin-top: 10px;">Visita el portal →</a>
-            </div>
-
-            <div style="background: #f9f9f9; padding: 20px; border-radius: 12px; border: 1px solid #ddd; display: flex; flex-direction: column; justify-content: space-between;">
-                <div>
-                    <h3 style="margin-top:0; color: #ef6c00;">🍊 Poblet.info</h3>
-                    <p style="font-size: 0.9em; line-height: 1.4;">El referent indispensable per a la creació de contingut al País Valencià.</p>
-                </div>
-                <a href="https://poblet.info" target="_blank" style="color: #ef6c00; font-weight: bold; text-decoration: none; font-size: 0.9em; margin-top: 10px;">Visita el portal →</a>
-            </div>
-
-            <div style="background: #f9f9f9; padding: 20px; border-radius: 12px; border: 1px solid #ddd; display: flex; flex-direction: column; justify-content: space-between;">
-                <div>
-                    <h3 style="margin-top:0; color: #1565c0;">✍️ Vlogs.cat</h3>
-                    <p style="font-size: 0.9em; line-height: 1.4;">El portal històric dels vloggers i creadors amb eines i notícies del sector.</p>
-                </div>
-                <a href="https://vlogs.cat" target="_blank" style="color: #1565c0; font-weight: bold; text-decoration: none; font-size: 0.9em; margin-top: 10px;">Visita el portal →</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- COM AFEGIR EL TEU CANAL -->
-    <section>
-        <h2>Com afegir el teu canal</h2>
-        <p>
-            Si crees contingut en la nostra llengua a YouTube i el teu canal encara no apareix
-            a Segueix!, pots sol·licitar la inclusió de dues maneres:
+            Només hi ha <strong>música i grups en català</strong>. La base d'artistes es construeix amb dades obertes i es
+            revisa a mà:
         </p>
         <ol>
             <li>
-                <strong>Des de l'aplicació:</strong> A la secció "Sobre nosaltres" hi ha un
-                formulari on pots enviar el nom del teu canal, l'URL i la categoria que
-                consideres més adequada.
+                <strong>Descobriment:</strong> cada setmana comparem Wikidata i MusicBrainz per trobar artistes amb obra
+                catalogada en català o amb el català com a llengua. No n'hi ha prou amb parlar-lo: cal que sigui un músic,
+                cantant o grup, i tingui identificador a MusicBrainz.
             </li>
+            <li><strong>Revisió editorial:</strong> cada candidat es marca com a aprovat o rebutjat. Només els aprovats entren a l'app.</li>
             <li>
-                <strong>Per Telegram:</strong> Escriu-nos a
-                <a href="http://t.me/segueix" target="_blank" rel="noopener noreferrer">t.me/segueix</a>
-                i afegim el teu canal.
+                <strong>El teu canal de YouTube:</strong> vinculem l'artista amb el seu canal oficial (i, si n'hi ha, amb el
+                canal «Artista – Tema»). Si no en tens, no podem fer-hi sonar res.
             </li>
         </ol>
+
+        <h3>Què no hi surt</h3>
+        <ul>
+            <li>
+                <strong>Repertori en altres llengües.</strong> Si un artista canta principalment en castellà o en una altra llengua, no
+                entra. Si és mixt, només es queden les cançons en català (o occità/aranès, instrumentals i títols que són
+                noms propis).
+            </li>
+            <li>
+                <strong>Cançons amb subtítols en castellà declarats</strong> al títol o a la descripció.
+            </li>
+            <li>
+                <strong>Shorts.</strong> Segueix Música no mostra cap Short.
+            </li>
+            <li>
+                <strong>Entitats que no són músics</strong> (companyies de teatre, performance…) i els casos exclosos
+                expressament.
+            </li>
+        </ul>
         <p>
-            Un cop afegit, els teus vídeos apareixeran al feed en la propera sincronització.
-            Intentem fer-ho amb la freqüència més alta possible, però et demanem una mica
-            de paciència.
+            Si el títol d'una cançó nova porta signes d'un altre idioma (per exemple <code>ñ</code>, <code>¿</code>,
+            <code>¡</code> o accents castellans), la peça espera una revisió manual abans d'entrar, per evitar errors. Si
+            s'ha quedat fora per equivocació, <a href="#contacte">avisa'ns</a> i ho arreglem.
         </p>
     </section>
 
-    <!-- DONAR-SE DE BAIXA -->
-    <section>
-        <h2>No vols formar part de Segueix?</h2>
-        <div class="info-card">
+    <!-- REPERTORI -->
+    <section id="repertori">
+        <h2>El teu repertori: què es veu i quan s'actualitza</h2>
+        <ul>
+            <li>
+                <strong>Actualització diària.</strong> Cada dia (al matí) recollim les novetats dels canals a través de
+                l'API oficial de YouTube. Una cançó nova apareix a Segueix Música com a molt l'endemà de publicar-la. Si l'API
+                diu que un vídeo ja no és públic, el traiem.
+            </li>
+            <li>
+                <strong>Catàleg «calent».</strong> La portada, les ràdios i els estils treballen amb tot el que has publicat
+                en els darrers 365 dies i, a més, amb les <strong>12 cançons antigues més escoltades</strong> del teu canal.
+            </li>
+            <li>
+                <strong>L'arxiu complet.</strong> La resta del teu repertori no desapareix: es conserva a l'arxiu, es pot cercar
+                i surt a la teva fitxa. Les visualitzacions de l'arxiu s'actualitzen un cop per setmana.
+            </li>
+            <li>
+                <strong>La fitxa d'artista</strong> mostra la teva foto, una presentació curta, les teves cançons, els discos
+                que s'han pogut agrupar a partir de la informació que YouTube Music publica de les pistes, i les
+                ràdios de l'artista i de l'estil.
+            </li>
+            <li>
+                <strong>Què poden fer els oients:</strong> seguir-te, donar-te cors, afegir les teves cançons a llistes,
+                compartir-les, crear categories pròpies que incloguin el teu grup i desar les ràdios.
+            </li>
+            <li>
+                <strong>Suport econòmic.</strong> Si a la descripció dels teus vídeos hi ha enllaços de suport (Patreon, Ko-fi, Buy Me a
+                Coffee, PayPal, Bizum, Tipeee, Stripe, una transferència o les membresies de YouTube), la teva fitxa
+                pot mostrar un botó «Dona suport» que hi porta directament.
+            </li>
+        </ul>
+    </section>
+
+    <!-- CONSELLS -->
+    <section id="consells">
+        <h2>Consells perquè la teva música sigui fàcil de trobar</h2>
+        <ol>
+            <li>
+                <strong>Declara el català a YouTube Studio.</strong> A cada vídeo, indica el català com a llengua del
+                títol i de l'àudio. Ajuda que la cançó es reconegui com a catalana (també a YouTube, i pot ajudar que
+                hi hagi anuncis en català). Si distribueixes amb una discogràfica o
+                distribuïdora, demana-los que ho facin als lliuraments.
+            </li>
+            <li>
+                <strong>Publica el videoclip o el <em>lyric</em> al teu canal oficial.</strong> És el que sona primer a l'app
+                i el que porta les visualitzacions al teu canal.
+            </li>
+            <li>
+                <strong>Deixa que YouTube Music generi el canal «Artista – Tema»</strong> amb la teva discografia (arriba amb la distribució
+                digital). Així totes les cançons, també les que no tenen vídeo, poden sonar a les ràdios.
+            </li>
+            <li>
+                <strong>Indica l'any original</strong> de les cançons antigues (per exemple, <code>℗ 1998</code> a la descripció).
+                Així no es compten com a novetats quan només són reedicions.
+            </li>
+            <li>
+                <strong>Títols nets.</strong> Mostrem el títol sense el teu nom ni «videoclip oficial»; amb títols com
+                «Artista – Cançó (Videoclip oficial)» ens basta. Evita signes d'altres llengües si la cançó és en català.
+            </li>
+            <li>
+                <strong>Un nom coherent.</strong> Fes servir el mateix nom d'artista a YouTube i a MusicBrainz/Wikidata: ens
+                ajuda a no duplicar-te ni confondre't amb homònims.
+            </li>
+        </ol>
+    </section>
+
+    <!-- CONTACTE -->
+    <section id="contacte">
+        <h2>Entrar, amagar una cançó o sortir de Segueix Música</h2>
+
+        <h3>Vull que hi surti el meu grup</h3>
+        <p>Omple el formulari: ens fa falta el nom de l'artista o grup i l'enllaç al seu canal de YouTube.</p>
+        <p>
+            <a class="cta" href="https://docs.google.com/forms/d/e/1FAIpQLScKqj3PNvZ3UUMMv4dmvFBBqj6G9nez0N-6Uc5LgKSTE0EMKQ/viewform" target="_blank" rel="noopener noreferrer">Suggereix un artista o grup</a>
+            <a class="cta secondary" href="https://t.me/segueix" target="_blank" rel="noopener noreferrer">Escriu-nos per Telegram</a>
+        </p>
+
+        <h3>Vull amagar una cançó o sortir de Segueix Música</h3>
+        <div class="card">
             <p>
-                Si ets YouTuber i no vols que el teu canal aparegui a Segueix!,
-                <strong>només cal que ens ho comuniquis</strong> i el donarem de baixa
-                de seguida. No fem preguntes ni demanem cap explicació.
+                Només cal que ens ho diguis. Podem <strong>amagar una cançó concreta</strong> o <strong>retirar tot el
+                grup</strong> de l'aplicació, <strong>sense preguntes ni explicacions</strong>. Es fa efectiu a la propera actualització diària.
             </p>
-            <p style="margin-bottom:0;">
-                Pots escriure'ns per Telegram a
-                <a href="http://t.me/segueix" target="_blank" rel="noopener noreferrer">t.me/segueix</a>
-                i ho farem efectiu en la propera sincronització.
+            <p>
+                Escriu-nos per Telegram a <a href="https://t.me/segueix" target="_blank" rel="noopener noreferrer">t.me/segueix</a> o per
+                correu a <a href="mailto:info.segueix@gmail.com">info.segueix@gmail.com</a>.
             </p>
         </div>
+
+        <h3>Hi ha alguna dada incorrecta</h3>
+        <p>
+            Estil, nom, foto, cançons d'un altre artista o d'un altre idioma barrejades amb les teves: ens ho pots
+            comunicar pels mateixos canals i ho corregim.
+        </p>
     </section>
 
     <!-- PRIVACITAT -->
-    <section>
+    <section id="privacitat">
         <h2>Privacitat i dades</h2>
-        <p>
-            Segueix! no té comptes d'usuari, no utilitza cookies de seguiment i no recull
-            cap dada personal. Tota la informació de l'usuari (historial, "M'agrada", llistes
-            de reproducció, canals seguits) es guarda només al dispositiu de l'usuari
-            mitjançant localStorage del navegador.
-        </p>
-        <p>
-            Les úniques dades que es recullen dels canals són les que YouTube proporciona
-            públicament a través de la seva API: dades dels vídeos, estadístiques públiques
-            (visualitzacions, "M'agrada", comentaris) i informació del canal (nom, avatar,
-            descripció, nombre de subscriptors).
-        </p>
+        <ul class="no-list">
+            <li>No hi ha comptes d'usuari ni dades personals.</li>
+            <li>
+                L'historial, els cors, les llistes i el gust de cada oient es guarden <strong>només al seu dispositiu</strong>
+                (<code>localStorage</code>). El motor de les ràdios s'executa al navegador.
+            </li>
+            <li>
+                De cada canal només fem servir les dades que YouTube publica a través de la seva API: vídeos, títol, durada,
+                visualitzacions, data de pujada i informació pública del canal.
+            </li>
+            <li>
+                Fem servir mesures d'ús <strong>anònimes i agregades</strong> (per exemple, quines seccions es visiten) que cada persona
+                pot desactivar a Configuració. No inclouen què escolta cada usuari ni identifiquen ningú.
+            </li>
+            <li>
+                YouTube només es carrega quan l'oient ho accepta, perquè el reproductor de YouTube pot fer servir cookies
+                seves.
+            </li>
+        </ul>
     </section>
 
-    <!-- PREGUNTES FREQÜENTS -->
-    <section>
+    <!-- PREGUNTES -->
+    <section id="preguntes">
         <h2>Preguntes freqüents</h2>
 
-        <h3>Les reproduccions des de Segueix! compten per a la monetització?</h3>
+        <h3>Puc pagar per sortir més a les ràdios?</h3>
         <p>
-            Sí. El reproductor és l'oficial de YouTube (IFrame API). Les reproduccions
-            compten igual que des de qualsevol lloc web que inclogui vídeos de YouTube,
-            incloent-hi el temps de visualització i els anuncis.
+            No. No acceptem pagaments ni acords que canviïn què sona. L'únic que influeix és la puntuació descrita
+            més amunt i el que cada oient escolta.
         </p>
 
-        <h3>Puc demanar que retirin un vídeo meu?</h3>
+        <h3>Les reproduccions des de Segueix Música compten per a la monetització?</h3>
         <p>
-            Sí. Contacta'ns per Telegram i podem amagar qualsevol vídeo concret o, si ho
-            prefereixes, retirar tot el canal de la plataforma.
+            Es reprodueixen amb el reproductor oficial de YouTube i s'apunten al teu vídeo. Que compten com a visualització i
+            que generin ingressos ho decideix YouTube segons les seves normes i com tinguis configurat el teu canal.
         </p>
 
-        <h3>Amb quina freqüència s'actualitza el feed?</h3>
+        <h3>Per què no surt una cançó meva?</h3>
         <p>
-            El feed es sincronitza de manera automàtica <strong>quatre vegades al dia</strong>.
-            Actualment els horaris aproximats (hora de Barcelona) són:
-        </p>
-        <ul>
-            <li><strong>Horari d'estiu</strong> (CEST, UTC+2): 10:00, 14:00, 20:00 i 00:00</li>
-            <li><strong>Horari d'hivern</strong> (CET, UTC+1): 09:00, 13:00, 19:00 i 23:00</li>
-        </ul>
-        <p>
-            Els vídeos nous apareixen a Segueix! en la propera sincronització després de
-            publicar-se a YouTube. Et demanem una mica de paciència: és un procés que pot
-            variar segons la càrrega del sistema. Si els horaris o la periodicitat canvien
-            en el futur, els horaris nous es reflectiran en aquesta mateixa secció.
+            Pot ser que sigui un Short (no en mostrem), que estigui declarada en un altre idioma o amb subtítols en
+            castellà, que la peça sigui molt antiga i només sigui a l'arxiu del canal, que sigui una versió duplicada d'una altra que ja hi surt, o que encara no
+            hagi arribat la propera actualització. Escriu-nos i ho mirem.
         </p>
 
-        <h3>Per què no apareix un vídeo meu?</h3>
+        <h3>Per què la meva cançó surt poc a les ràdios?</h3>
         <p>
-            Pot ser per diversos motius: el vídeo s'ha detectat com a contingut en un altre idioma
-            (si el teu canal és multilingüe), el vídeo és molt antic i ha passat a l'arxiu,
-            o el canal encara no està registrat a la nostra base de dades.
+            Les ràdios s'adapten al gust de cada oient i barregen èpoques i estils amb límits per artista. Una cançó
+            sona més a les persones que et segueixen o t'han escoltat, i a qui tria «Sorprèn-me» o «Només no
+            escoltats». Cap artista no té una posició fixa.
         </p>
 
-        <h3>Segueix! té aplicació mòbil?</h3>
+        <h3>Em podeu donar estadístiques?</h3>
         <p>
-            Segueix! és una PWA (Progressive Web App). Pots instal·lar-la al mòbil des del
-            navegador (Chrome: "Afegeix a la pantalla d'inici", Safari: "Compartir > Afegeix
-            a la pantalla d'inici") i funciona com una app nativa, fins i tot sense connexió
-            per als vídeos ja carregats.
+            No guardem què escolta cada persona. Per a les teves xifres, fes servir YouTube Studio: hi veuràs les
+            reproduccions procedents de webs externes.
+        </p>
+
+        <h3>Té aplicació per al mòbil?</h3>
+        <p>
+            Segueix Música és una aplicació web instal·lable (PWA). Des del navegador pots afegir-la a la pantalla d'inici
+            del mòbil o de l'ordinador.
         </p>
     </section>
 
-    <!-- APUNT FINAL: SENSE ÀNIM DE LUCRE -->
+    <!-- APUNT FINAL -->
     <section>
-        <h2>Un apunt final</h2>
-        <div class="info-card highlight">
+        <h2>Gràcies per fer música en català</h2>
+        <div class="card highlight">
             <p>
-                Segueix! és un projecte <strong>sense ànim de lucre</strong>. Partim d'un
-                pressupost mínim que cobrim de la nostra butxaca, perquè creiem que els
-                creadors en català mereixen un espai propi per ser descoberts.
+                Segueix Música existeix perquè la música en català es mereix un lloc on trobar-la sense haver de
+                lluitar contra els algorismes de les grans plataformes. No tenim ànim de lucre i volem que el que s'hi escolta reverteixi
+                en els músics. Si ens ajudes a donar-lo a conèixer entre el teu públic, ens ajudes a arribar a més artistes.
             </p>
-            <p style="margin-bottom:0;">
-                Per això et demanem paciència amb les sincronitzacions, comprensió amb
-                els límits del feed i, sobretot, que ens ajudis a fer-lo créixer parlant-ne
-                a la teva audiència. Gràcies per fer contingut en català!
+            <p>
+                Si tens dubtes, suggeriments o crítiques sobre com funciona,
+                <a href="https://t.me/segueix" target="_blank" rel="noopener noreferrer">escriu-nos</a>: som un equip petit i ho llegim tot.
+                <strong>Gràcies!</strong>
             </p>
         </div>
     </section>
@@ -890,9 +815,9 @@
 </div>
 
 <footer class="site-credit-footer">
-    <div class="project-credit project-credit--page-end">
+    <div class="project-credit">
         <p class="project-credit-subline">
-            Projecte de <span class="project-credit-highlight">Can Nyero</span> amb
+            Projecte de <strong>Can Nyero</strong> amb
             <a href="https://agenciacapture.com/" class="project-credit-link" target="_blank" rel="noopener noreferrer">Capture</a>
         </p>
     </div>
