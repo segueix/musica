@@ -121,14 +121,14 @@ A la capçalera de la ràdio, al costat del nom (abans hi havia el text del mode
 
 ## Mode de descoberta dins de cada ràdio
 
-Cada ràdio generada (general, d'estil o de cerca) porta a la capçalera el selector **«Els meus de sempre» / «Una mica de tot» / «Sorprèn-me» / «Només nous»** (abans, el primer es deia «A casa»). Una selecció («Acabades de sortir») o una llista de l'usuari no en tenen: es reprodueixen tal com són.
+Cada ràdio generada (general, d'estil o de cerca) porta a la capçalera el selector **«Els meus de sempre» / «Una mica de tot» / «Sorprèn-me» / «Només no escoltats»** (abans, el primer es deia «A casa»). Una selecció («Acabades de sortir») o una llista de l'usuari no en tenen: es reprodueixen tal com són.
 
 - **Efecte immediat.** `musicQueue.setDiscoveryMode(mode)` desa el mode (`catube_discovery_mode`; la portada s'hi sincronitza) i torna a triar **només la part pendent** de la cua amb el mode nou: la cançó que sona i el que l'usuari hi ha afegit a mà es conserven. En una ràdio de cerca es reordenen les mateixes cançons trobades.
 - **Es veu.** Les cançons pendents entren escalonades de dalt a baix (`.mq-list.is-renewed`, desactivat amb «moviment reduït») i una línia sota el selector diu «Ràdio adaptada a «Sorprèn-me»: 28 cançons noves a la llista.» durant uns 7 s. Si l'historial no arriba a 3 artistes coneguts, diu que el mode s'ha desat però la ràdio es manté variada.
 - **El selector diu la veritat.** Marca el mode amb què s'ha generat la llista que es veu (`radioMeta.requested`), no el de la portada, que (com abans) s'aplica a la ràdio següent; prémer el mode ja aplicat no fa res.
 - **L'efecte és suau.** El mode és un objectiu de repartiment coneguda/afí/sorpresa que corregeix la puntuació (`gain.familiarity` 0,5), i el gust de l'usuari pesa més. En una prova al navegador amb 30 artistes escoltats, «Els meus de sempre» va donar ~74 % d'artistes coneguts i «Sorprèn-me» ~58 % (objectius 75 % i 25 %); a la llista canvien unes 28–31 de 39 cançons, en part per la tria aleatòria. Cap d'aquestes xifres és de producció.
 
-## «Només nous»: descoberta pura (2026-10-04)
+## «Només no escoltats»: descoberta pura (2026-10-04)
 
 Quart mode del selector (`discovery.MODES`, id `new`; també a la portada, `#ptRadio`). Serveix perquè la persona **descobreixi grups que potser ni sap que existeixen**, no per afinar el gust: a diferència de «Sorprèn-me» (25/45/30, sempre amb una part de coneguts), aquí hi ha un **filtre dur** a `selectRadio()` (`discoveryPool()` de `music-selection.js`).
 
@@ -139,7 +139,7 @@ Quart mode del selector (`discovery.MODES`, id `new`; també a la portada, `#ptR
 - **Es veu.** L'avís sota el selector i la nota de la portada diuen «Ràdio de descoberta: N artistes que encara no has escoltat.» (`meta.discover.artists`).
 - **Preferència global.** Com els altres modes es desa a `catube_discovery_mode`: mentre estigui triat, **cada ràdio general o d'estil** és de descoberta (també la que comença en tocar una cançó). El selector de cada ràdio permet tornar-hi a un altre mode.
 - **Motor antic (`legacy`).** `PATTERNS.new = ['F']`: els nous primer i els coneguts només al final.
-- Proves: `tests/music-selection.test.js` («mode «Només nous»»), `tests/music-queue-selection.test.js`, `tests/discovery.test.js`; opt-in `node tests/browser/verificar-mode-radio.js` (quatre opcions, 2×2 a la capçalera de la ràdio i a mòbil).
+- Proves: `tests/music-selection.test.js` («mode «Només no escoltats»»), `tests/music-queue-selection.test.js`, `tests/discovery.test.js`; opt-in `node tests/browser/verificar-mode-radio.js` (quatre opcions, 2×2 a la capçalera de la ràdio i a mòbil).
 
 ## Ràdio d'una cerca
 

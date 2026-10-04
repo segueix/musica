@@ -454,9 +454,9 @@ describe('gust, seguiments, cors i escoltes', () => {
     });
 });
 
-// ---------- «Només nous»: descoberta pura ----------
+// ---------- «Només no escoltats»: descoberta pura ----------
 
-describe('mode «Només nous»', () => {
+describe('mode «Només no escoltats»', () => {
     const catalog = syntheticCatalog();
     const ctx = makeCtx(catalog);
     // L'usuari ha seguit/escoltat 14 artistes actuals (cur1..cur14) i ha deixat rastre amb un altre (cur20: va saltar-lo)
@@ -535,7 +535,7 @@ describe('mode «Només nous»', () => {
         expect(meta.requested).toBe('new');
     });
 
-    it('el feed «Recomanat per a tu» no exclou res amb «Només nous»', () => {
+    it('el feed «Recomanat per a tu» no exclou res amb «Només no escoltats»', () => {
         const list = catalog.slice(0, 60);
         const ranked = E.rankFeed(list, { ctx, signals: signals(), mode: 'new', rng: mulberry(3), now: NOW });
         expect(ranked.length).toBe(list.length);
