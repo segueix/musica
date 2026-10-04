@@ -52,7 +52,7 @@
     
     <!-- CSS -->
     <link rel="stylesheet" href="css/styles.css?v=20260929-home-playlists-4">
-    <link rel="stylesheet" href="css/portada.css?v=20261005-video-flotant-1">
+    <link rel="stylesheet" href="css/portada.css?v=20261005-contacte-1">
     
     <!-- Icons (Lucide via CDN) -->
     <script src="https://unpkg.com/lucide@0.563.0"></script>
@@ -146,6 +146,10 @@
             <a class="icon-btn nav-trigger" href="#" data-page="segueix" aria-label="Artistes i grups" title="Artistes i grups">
                 <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
             </a>
+            <!-- Contacte (Telegram, correu, informació per a artistes): obre #contactModal -->
+            <button class="icon-btn" id="contactBtn" type="button" aria-label="Contacte" title="Contacte" aria-haspopup="dialog">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-4 8"/></svg>
+            </button>
             <button class="icon-btn" id="backgroundBtn" type="button" aria-label="Configuració" title="Configuració" style="position:relative;">
                 <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06A1.7 1.7 0 0 0 15 19.4a1.7 1.7 0 0 0-1 .6 1.7 1.7 0 0 0-.4 1.1V21a2 2 0 1 1-4 0v-.09A1.7 1.7 0 0 0 8.5 19.4a1.7 1.7 0 0 0-1.88.34l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.7 1.7 0 0 0 4.6 15a1.7 1.7 0 0 0-.6-1 1.7 1.7 0 0 0-1.1-.4H3a2 2 0 1 1 0-4h.09A1.7 1.7 0 0 0 4.6 8.5a1.7 1.7 0 0 0-.34-1.88l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.7 1.7 0 0 0 9 4.6a1.7 1.7 0 0 0 1-.6 1.7 1.7 0 0 0 .4-1.1V3a2 2 0 1 1 4 0v.09A1.7 1.7 0 0 0 15.5 4.6a1.7 1.7 0 0 0 1.88-.34l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.7 1.7 0 0 0 19.4 9c.14.37.35.7.6 1 .3.3.69.47 1.1.5H21a2 2 0 1 1 0 4h-.09a1.7 1.7 0 0 0-1.51.5Z"/></svg>
                 <span id="updateBadge" class="pt-update-dot" role="img" aria-label="Hi ha una versió nova: prem per actualitzar" style="display:none;"></span>
@@ -574,7 +578,26 @@
                     <p class="add-youtuber-help">Per trobar el nom d'usuari <strong>@</strong>, entra al canal de YouTube i copia el text que surt al perfil, per exemple <strong>@nomdelcanal</strong>.</p>
                     <div id="addYoutuberMessage" class="add-youtuber-message hidden"></div>
                 </section>
+            </div>
+        </div>
+    </div>
 
+
+    <!-- Modal de contacte: s'obre amb la icona @ de la capçalera -->
+    <div class="modal-overlay" id="contactModal">
+        <div class="modal modal-small pt-contact" role="dialog" aria-modal="true" aria-labelledby="contactModalTitle">
+            <div class="modal-header">
+                <h2 class="modal-title" id="contactModalTitle">
+                    <span class="pt-contact__badge" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-4 8"/></svg>
+                    </span>
+                    Contacte
+                </h2>
+                <button class="modal-close" id="closeContactModal" type="button" aria-label="Tancar modal">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <div class="modal-body">
                 <section class="pt-contact__card" aria-labelledby="ptContactTalkTitle">
                     <h3 class="pt-contact__title" id="ptContactTalkTitle">Parla amb nosaltres</h3>
                     <p class="pt-contact__text">Ets artista, tens un comentari o vols que retirem una cançó? Escriu-nos.</p>
