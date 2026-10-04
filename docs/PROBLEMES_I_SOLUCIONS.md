@@ -1,3 +1,12 @@
+## [2026-10-04] - «Validar base musical» en vermell: l'auditoria de contingut no quadrava (review 21 contra 425)
+**Símptoma:** `tests/music-content-overrides.test.js` («l'auditoria de contingut és coherent…») fallava des del commit del bot `0c14be1` (feed del 2026-10-03 23:29): `typeCounts.review` era 21 i `music-content-review.json` en tenia 425. Els commits del bot no llancen la validació; es va veure en obrir la PR següent.
+
+**Causa Arrel:** en mode incremental (`targetMode`, només alguns canals), `update_music_feed.js` comptava els tipus dels canals no llegits a partir del feed anterior, però conservava tota la seva llista de revisió. Des que el feed calent i l'historial van separats, la majoria de vídeos «per revisar» ja no són al feed (326 són a l'arxiu): la llista en tenia 425 i el recompte, 21.
+
+**Solució Implementada:** en `targetMode`, els vídeos «review» dels canals no llegits es compten des de la llista de revisió conservada (i no des del feed); `rawPublicVideoCount` és la suma dels tipus. Les auditories publicades (`music-content-audit.json`, `music-feed-audit.json`) es van corregir amb el mateix criteri fins a la propera generació.
+
+**Fitxers Afectats:** `scripts/update_music_feed.js`, `data/music-content-audit.json`, `data/music-feed-audit.json`.
+
 ## [2026-10-04] - L'historial dins dels estils sortia a part, amb una icona i sense visualitzacions
 **Símptoma:** en obrir un estil, les cançons antigues (arxiu/historial) sortien en un bloc a part, al final, amb una targeta diferent (icona blanca d'historial) i sense visualitzacions.
 
