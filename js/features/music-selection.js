@@ -52,7 +52,12 @@
             home: { known: 0.75, affine: 0.2, surprise: 0.05 },
             mix: { known: 0.6, affine: 0.3, surprise: 0.1 },
             surprise: { known: 0.25, affine: 0.45, surprise: 0.3 },
+            // «Només nous»: res de conegut (filtre dur a selectRadio); entre els nous, els d'estils afins una mica més.
+            new: { known: 0, affine: 0.5, surprise: 0.5 },
         },
+        // «Només nous»: artistes diferents a procurar i quant es redueix el pes de la popularitat (els èxits ja
+        // són coneguts; es vol que surtin grups que potser l'usuari no sap que existeixen).
+        discovery: { minArtists: 12, popularityDamping: 0.5, secondSongPenalty: 0.25, weakKnownPenalty: 0.5 },
         // Reforços limitats (logarítmics) i decaïment temporal.
         taste: {
             halfLifeDays: 120,
@@ -658,6 +663,65 @@
         { gap: 0, perArtist: 99, hist: 99, work: false, consecutive: true, cool: 0 },
     ];
 
+    // «Només nous»: un artista és nou si l'usuari no hi ha deixat cap rastre (ni escoltes, ni historial feble, ni cor,
+    // ni «+/−», ni salts, ni seguit). Un artista que només ha saltat també queda fora: ja l'ha vist i no l'ha volgut.
+    function isNewArtist(artist, signals) {
+        if (!artist || isKnownArtist(artist, signals)) return false;
+        const entry = signals.artists[artist];
+        return !entry || Object.keys(entry).length === 0;
+    }
+
+    // Conjunt de treball de la ràdio de descoberta. Per ordre: (1) una cançó per cada artista nou (com més grups
+    // diferents, millor); (2) la resta de cançons d'artistes nous; (3) només si no n'hi ha prou, artistes poc coneguts
+    // (ni seguits, ni amb cor, ni amb cançons escoltades). Cada nivell més avall puntua menys, de manera que només hi
+    // entren quan fa falta. Retorna { items, relaxed }.
+    function discoveryPool(items, signals, count, cfg) {
+        const d = cfg.discovery;
+        const first = [];
+        const second = [];
+        const seen = new Set();
+        items.forEach(item => {
+            if (!isNewArtist(item.f.artist, signals)) return;
+            if (signals.songs[item.f.id] || signals.liked.has(item.f.id)) return;
+            if (seen.has(item.f.artist)) second.push(item);
+            else {
+                seen.add(item.f.artist);
+                first.push(item);
+            }
+        });
+        // Els èxits ja són coneguts: es resta part del pes de la popularitat perquè surtin també grups petits.
+        const damp = item => {
+            item.base -= d.popularityDamping * cfg.weights.popularity * (item.f.popularity || 0);
+        };
+        first.forEach(damp);
+        second.forEach(item => {
+            damp(item);
+            item.base -= d.secondSongPenalty;
+        });
+        let pool = first;
+        if (first.length < Math.min(count, d.minArtists) || first.length + second.length < count) {
+            pool = [...first, ...second];
+        }
+        let relaxed = false;
+        if (pool.length < count) {
+            const used = new Set(pool);
+            const weak = items.filter(item => {
+                if (used.has(item) || !item.f.artist || signals.followed.has(item.f.artist)) return false;
+                if (signals.likedArtists[item.f.artist]) return false;
+                return (
+                    !signals.songs[item.f.id]?.q && !signals.liked.has(item.f.id) && !signals.moreLike.has(item.f.id)
+                );
+            });
+            weak.forEach(item => {
+                damp(item);
+                item.base -= d.weakKnownPenalty;
+            });
+            if (weak.length) relaxed = true;
+            pool = [...pool, ...weak];
+        }
+        return { items: pool.sort((a, b) => b.base - a.base), relaxed };
+    }
+
     // Bucle comú: tria `count` elements de `items` (cadascun amb {video, f, base, fam}) respectant els límits.
     // Retorna { picked, level } o, amb `keepAll`, afegeix la resta en el seu ordre quan res no encaixa.
     function runSelection(items, options) {
@@ -883,6 +947,12 @@
         'Aquesta selecció té poca música dels darrers anys: hi hem afegit peces més antigues del catàleg.';
     const NOTE_VARIETY = 'Encara tenim poc historial per afinar-ho: et proposem una selecció variada.';
     const NOTE_NONE = 'Encara no tens historial d’escolta: et proposem una selecció variada.';
+    const NOTE_NEW_FEW =
+        'Ja coneixes gairebé tots els artistes d’aquesta selecció: hem completat la ràdio amb artistes que has escoltat poc.';
+    const discoveryNote = n =>
+        n === 1
+            ? 'Ràdio de descoberta: 1 artista que encara no has escoltat.'
+            : `Ràdio de descoberta: ${n} artistes que encara no has escoltat.`;
 
     // Ràdio: retorna la part automàtica de la cua (sense la cançó inicial).
     // options: { ctx, candidates, seed, signals, mode, policy, count, preceding, now, rng, category }
@@ -891,8 +961,12 @@
         const cfg = ctx.config;
         const rng = options.rng || Math.random;
         const signals = normalizeSignals(options.signals);
-        const mode = options.mode && cfg.familiarity[options.mode] ? options.mode : 'mix';
+        const requestedMode = options.mode && cfg.familiarity[options.mode] ? options.mode : 'mix';
         const policy = options.policy || 'general';
+        // «Només nous» només té sentit en una ràdio general o d'estil. En una cerca, o en la ràdio d'un artista, el
+        // conjunt el tria l'usuari: allà el mode s'aplica com a «Sorprèn-me» i no s'exclou res.
+        const discover = requestedMode === 'new' && policy === 'general';
+        const mode = requestedMode === 'new' && !discover ? 'surprise' : requestedMode;
         const count = Math.max(1, options.count || cfg.queue.max - 1);
         const seed = options.seed || null;
         const preceding = toArray(options.preceding).length ? options.preceding : seed ? [seed] : [];
@@ -904,7 +978,13 @@
         const hasEnough = knownArtistCount(signals) >= 3;
         // `mix`: { labels, tagOf } perquè la ràdio barregi diversos estils a parts iguals.
         const mix = options.mix && toArray(options.mix.labels).length > 1 ? options.mix : null;
-        const built = buildItems(toArray(options.candidates), ctx, signals, seed, rng);
+        let built = buildItems(toArray(options.candidates), ctx, signals, seed, rng);
+        let relaxedDiscovery = false;
+        if (discover) {
+            const found = discoveryPool(built, signals, count, cfg);
+            built = found.items;
+            relaxedDiscovery = found.relaxed;
+        }
         if (mix) built.forEach(item => (item.tags = mix.tagOf(item.video)));
         const items = trimPool(built, cfg.queue.pool);
         const pref = eraPreference(ctx, signals, { policy });
@@ -947,9 +1027,9 @@
             }
         }
 
-        const famTargets = hasEnough ? cfg.familiarity[mode] : null;
+        const famTargets = discover ? cfg.familiarity.new : hasEnough ? cfg.familiarity[mode] : null;
         const useFam = Boolean(famTargets);
-        if (!hasEnough) {
+        if (!hasEnough && !discover) {
             notes.push(signals.followed.size || Object.keys(signals.artists).length ? NOTE_VARIETY : NOTE_NONE);
         }
 
@@ -982,11 +1062,16 @@
         }
 
         const stats = shares(result.picked);
+        const newArtists = discover
+            ? new Set(result.picked.filter(c => isNewArtist(c.f.artist, signals)).map(c => c.f.artist)).size
+            : 0;
+        if (discover) notes.push(relaxedDiscovery ? NOTE_NEW_FEW : discoveryNote(newArtists));
         return {
             queue: result.picked.map(c => c.video),
             meta: {
-                mode: hasEnough ? mode : 'variety',
-                requested: mode,
+                mode: discover ? 'new' : hasEnough ? mode : 'variety',
+                requested: requestedMode,
+                discover: discover ? { artists: newArtists, relaxed: relaxedDiscovery } : null,
                 // La nota que s'ensenya: primer el que explica una degradació (poca música actual, pocs artistes).
                 note: notes.find(n => n !== NOTE_VARIETY && n !== NOTE_NONE) || notes[0] || '',
                 notes,
@@ -1021,7 +1106,9 @@
         const items = buildItems(list, ctx, signals, null, rng);
         const pool = trimPool(items, cfg.queue.pool);
         const pref = eraPreference(ctx, signals, {});
-        const mode = options.mode && cfg.familiarity[options.mode] ? options.mode : 'mix';
+        // «Només nous» és d'una ràdio: un feed personalitzat no exclou res i el tracta com «Sorprèn-me».
+        const picked = options.mode && cfg.familiarity[options.mode] ? options.mode : 'mix';
+        const mode = picked === 'new' ? 'surprise' : picked;
         const hasEnough = knownArtistCount(signals) >= 3;
         const restTarget = 1 - pref.historic;
         const targetSum = cfg.era.target.recent + cfg.era.target.mid;
@@ -1270,6 +1357,7 @@
         reasonFor,
         summarize,
         isKnownArtist,
+        isNewArtist,
         knownArtistCount,
     };
 })(window);

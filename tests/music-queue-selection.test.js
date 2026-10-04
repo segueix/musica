@@ -785,13 +785,14 @@ describe('mode de descoberta dins de cada ràdio', () => {
     const modeButtons = html =>
         [...html.matchAll(/data-mq-mode="(\w+)" aria-checked="(true|false)"/g)].map(m => [m[1], m[2]]);
 
-    it('cada ràdio mostra el selector amb les tres opcions i el mode amb què s’ha generat', () => {
+    it('cada ràdio mostra el selector amb les quatre opcions i el mode amb què s’ha generat', () => {
         const env = radioWithMode({ mode: 'surprise' });
         env.queue.render(env.container);
         expect(modeButtons(env.container.innerHTML)).toEqual([
             ['home', 'false'],
             ['mix', 'false'],
             ['surprise', 'true'],
+            ['new', 'false'],
         ]);
         expect(env.container.innerHTML).toContain('role="radiogroup" aria-label="Quant vols descobrir?"');
         expect(env.container.innerHTML).toContain('Els meus de sempre');
@@ -834,6 +835,25 @@ describe('mode de descoberta dins de cada ràdio', () => {
         );
         // L'animació només es fa en canviar de mode: un repintat posterior ja no la porta
         expect(env.container.innerHTML).not.toContain('is-renewed');
+    });
+
+    it('«Només nous»: la part pendent només porta artistes que no coneixes i un avís diu quants', () => {
+        const env = radioWithMode();
+        const result = env.queue.setDiscoveryMode('new');
+        expect(result.mode).toBe('new');
+        expect(env.queue.getAppliedMode()).toBe('new');
+        expect(env.localStorage.getItem('catube_discovery_mode')).toBe('new');
+        const pending = env.ctx.activePlaylistQueue.slice(1);
+        expect(pending.length).toBeGreaterThan(5);
+        // Aquest catàleg només té uns 15 artistes sense escoltar (els 12 de l'historial són c0..c11): tots hi surten
+        // i, com que no n'hi ha prou per omplir la cua, es completa amb els de l'historial i ho diu.
+        const fresh = new Set(pending.map(v => v.channelId).filter(id => !/^c(\d|1[01])$/.test(id)));
+        expect(fresh.size).toBeGreaterThanOrEqual(12);
+        expect(env.ctx.activePlaylistQueue.slice(1, 6).some(v => /^c(\d|1[01])$/.test(v.channelId))).toBe(false);
+        expect(env.queue.getState().meta.note).toMatch(/Ja coneixes gairebé tots els artistes/);
+        env.queue.render(env.container);
+        expect(env.container.innerHTML).toContain('data-mq-mode="new" aria-checked="true"');
+        expect(env.container.innerHTML).toContain('Ja coneixes gairebé tots els artistes');
     });
 
     it('el mode és un event: la portada s’hi sincronitza', () => {

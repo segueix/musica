@@ -454,6 +454,110 @@ describe('gust, seguiments, cors i escoltes', () => {
     });
 });
 
+// ---------- «Només nous»: descoberta pura ----------
+
+describe('mode «Només nous»', () => {
+    const catalog = syntheticCatalog();
+    const ctx = makeCtx(catalog);
+    // L'usuari ha seguit/escoltat 14 artistes actuals (cur1..cur14) i ha deixat rastre amb un altre (cur20: va saltar-lo)
+    const knownKeys = Array.from({ length: 14 }, (_, i) => `cur${i + 1}`);
+    const signals = () => {
+        const sigs = E.emptySignals();
+        knownKeys.forEach(key => sigs.followed.add(key));
+        sigs.artists.cur20 = { s: 2 };
+        sigs.artists.cur21 = { h: 1 };
+        return sigs;
+    };
+    const run = (extra = {}) =>
+        radio(ctx, catalog, { seed: catalog[200], signals: signals(), mode: 'new', rng: mulberry(5), ...extra });
+
+    it('només hi surten artistes sense cap rastre: ni seguits, ni escoltats, ni saltats, ni de l’historial', () => {
+        for (let i = 0; i < 10; i++) {
+            const { queue } = run({ rng: mulberry(i + 1) });
+            const artists = queue.slice(1).map(v => v.channelId);
+            expect(artists.length).toBeGreaterThan(20);
+            artists.forEach(artist => {
+                expect(knownKeys).not.toContain(artist);
+                expect(['cur20', 'cur21']).not.toContain(artist);
+            });
+        }
+    });
+
+    it('prefereix molts grups diferents: un sol tema per artista mentre n’hi hagi prou', () => {
+        const { queue } = run();
+        const artists = queue.slice(1).map(v => v.channelId);
+        expect(new Set(artists).size).toBe(artists.length);
+    });
+
+    it('explica quants artistes nous hi ha i demana el mode tal com és', () => {
+        const { meta } = run();
+        expect(meta.requested).toBe('new');
+        expect(meta.mode).toBe('new');
+        expect(meta.discover.artists).toBeGreaterThan(20);
+        expect(meta.discover.relaxed).toBe(false);
+        expect(meta.note).toMatch(/Ràdio de descoberta: \d+ artistes que encara no has escoltat\./);
+    });
+
+    it('funciona també sense historial (tot és nou) sense dir que «falta historial»', () => {
+        const { meta, queue } = radio(ctx, catalog, { seed: catalog[0], signals: E.emptySignals(), mode: 'new' });
+        expect(queue.length).toBeGreaterThan(20);
+        expect(meta.mode).toBe('new');
+        expect(meta.note).not.toMatch(/historial/);
+    });
+
+    it('si gairebé tot és conegut, ho diu i completa amb artistes poc escoltats (mai amb els seguits)', () => {
+        const sigs = E.emptySignals();
+        for (let a = 0; a < 30; a++) {
+            // 26 artistes de 30 seguits; la resta, només escoltats una mica
+            if (a < 26) sigs.followed.add(`cur${a}`);
+            else sigs.artists[`cur${a}`] = { q: 1 };
+        }
+        const { queue, meta } = radio(ctx, catalog, {
+            seed: catalog[200],
+            signals: sigs,
+            mode: 'new',
+            rng: mulberry(9),
+        });
+        expect(meta.discover.relaxed).toBe(true);
+        expect(meta.note).toMatch(/Ja coneixes gairebé tots/);
+        queue.slice(1).forEach(v => {
+            const a = Number(v.channelId.replace(/\D/g, ''));
+            const isCurrent = v.channelId.startsWith('cur');
+            if (isCurrent) expect(a).toBeGreaterThanOrEqual(26);
+        });
+    });
+
+    it('una ràdio de cerca o d’artista no exclou res: el mode s’hi aplica com «Sorprèn-me»', () => {
+        const { queue, meta } = run({ policy: 'search' });
+        const artists = queue.slice(1).map(v => v.channelId);
+        expect(artists.some(artist => knownKeys.includes(artist))).toBe(true);
+        expect(meta.discover).toBeNull();
+        expect(meta.requested).toBe('new');
+    });
+
+    it('el feed «Recomanat per a tu» no exclou res amb «Només nous»', () => {
+        const list = catalog.slice(0, 60);
+        const ranked = E.rankFeed(list, { ctx, signals: signals(), mode: 'new', rng: mulberry(3), now: NOW });
+        expect(ranked.length).toBe(list.length);
+    });
+
+    it('isNewArtist: seguit, cor, escoltat o amb rastre no són nous', () => {
+        const sigs = E.emptySignals();
+        sigs.followed.add('a');
+        sigs.likedArtists.b = 1;
+        sigs.artists.c = { q: 1 };
+        sigs.artists.d = { s: 1 };
+        expect(['a', 'b', 'c', 'd', 'e', ''].map(x => E.isNewArtist(x, sigs))).toEqual([
+            false,
+            false,
+            false,
+            false,
+            true,
+            false,
+        ]);
+    });
+});
+
 // ---------- Preferència per música antiga ----------
 
 describe('música antiga: només amb gust explícit', () => {
