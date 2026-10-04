@@ -82,7 +82,7 @@ const CONFIG = {
     },
 
     forms: {
-        suggestYoutuberUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdIZCIqIpjYH9Xq5t9anTNfnQ2t53jkEtYqA6D8NMnRdIlxWQ/viewform"
+        suggestYoutuberUrl: "https://docs.google.com/forms/d/e/1FAIpQLScKqj3PNvZ3UUMMv4dmvFBBqj6G9nez0N-6Uc5LgKSTE0EMKQ/viewform"
     }
 };
 
