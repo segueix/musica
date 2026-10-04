@@ -62,4 +62,12 @@ describe('navegació lateral plegable', () => {
         expect(block).not.toContain('sidebar-peek');
         expect(block).not.toContain("sidebar.classList.toggle('collapsed'");
     });
+
+    it('amb la barra plegada, les caràtules de «La teva ràdio» baixen i queden centrades a l’espai lliure', () => {
+        const block = portada.slice(portada.indexOf('«La teva ràdio» amb la barra lateral plegada'));
+        expect(block).toContain('@container (min-width: 900px)');
+        expect(block).toMatch(/body\.sidebar-collapsed \.pt-radio__covers \{[^}]*left: 75%;/);
+        expect(block).toContain('translate(-50%, calc(-50% + var(--pt-cover) * 0.08))');
+        expect(block).toContain('padding-right: calc(25cqw + var(--pt-cover) * 1.14 + 28px)');
+    });
 });
