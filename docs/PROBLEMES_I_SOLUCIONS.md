@@ -1395,3 +1395,11 @@ Hi havia dos problemes independents:
 **Proves:** `tests/portada-assets.test.js`; comprovat amb captures a 1920, 1536, 1366, 1100, 900 i 800 px (barra oberta i plegada).
 
 **Fitxers Afectats:** `css/portada.css`, `tests/portada-assets.test.js`, `CLAUDE.md`, `sw.js`, `docs/PROBLEMES_I_SOLUCIONS.md`.
+
+## [2026-10-04] - «Hi falta algú?» sortia sense estil a Artistes i grups
+
+**Símptoma:** a la versió publicada, el bloc de suggeriment d'artistes de `#followPage` sortia com HTML cru: títol en Roboto gros, botó gris del navegador amb la icona enorme, cap fons.
+
+**Causa:** el canvi que el va crear (`4b73725`) va afegir les regles a `css/portada.css` però no va canviar el `?v=` de l'enllaç a `index.html`. L'HTML (network-first) ja era el nou i el CSS sortia de la memòria cau (HTTP i `static-<hash>` del SW, que queda `waiting` mentre l'app és visible).
+
+**Solució:** `?v=` nou a `portada.css` (una URL que cap memòria cau no té) i `npm run sw:version`. El bloc s'ha redissenyat com una franja integrada (disc llima amb micròfon, text, crida llima) amb selectors `#followPage …` perquè guanyin a les regles antigues de `#addYoutuberBtn` i `.follow-subtitle` de `styles.css`, i amb marge a la dreta (30 / 40 px) per no tocar la columna de lletres. **Regla:** si canvies `portada.css` o `styles.css` amb HTML nou que en depèn, canvia també el `?v=` de l'enllaç. Prova: `tests/contacte.test.js`.
