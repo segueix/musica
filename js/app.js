@@ -32,6 +32,7 @@ let isCategoryKeywordsModalScrollLocked = false;
 let playlistsPage, playlistsList, playlistNameInput, createPlaylistBtn;
 let followPage, followGrid, followTabs;
 let addYoutuberModal;
+let contactModal;
 let heroSection, heroTitle, heroDescription, heroImage, heroDuration, heroButton, heroEyebrow, heroChannel;
 let pageTitle;
 let backgroundModal, backgroundBtn, backgroundOptions, buttonColorOptions;
@@ -3421,6 +3422,7 @@ function initChannelElements() {
     followGrid = document.getElementById('followGrid');
     followTabs = document.getElementById('followTabs');
     addYoutuberModal = document.getElementById('addYoutuberModal');
+    contactModal = document.getElementById('contactModal');
     channelPage = document.getElementById('channelPage');
     channelVideosGrid = document.getElementById('channelVideosGrid');
     channelBackBtn = document.getElementById('channelBackBtn');
@@ -4631,6 +4633,9 @@ function bindChannelEvents() {
     const addYoutuberBtn = document.getElementById('addYoutuberBtn');
     bindButtonInstant(addYoutuberBtn, openAddYoutuberModal);
     initAddYoutuberModal();
+    // Icona «@» de la capçalera: contacte (Telegram, correu, informació per a artistes)
+    bindButtonInstant(document.getElementById('contactBtn'), openContactModal);
+    initContactModal();
 }
 
 function bindConfigEvents() {
@@ -12731,6 +12736,38 @@ function closeAddYoutuberModal(fromPopstate = false) {
     }
 }
 
+// ========== CONTACTE (icona @ de la capçalera) ==========
+
+function initContactModal() {
+    if (!contactModal) return;
+    document.getElementById('closeContactModal')?.addEventListener('click', () => closeContactModal());
+    contactModal.addEventListener('click', e => {
+        if (e.target === contactModal) closeContactModal();
+    });
+}
+
+function openContactModal() {
+    if (!contactModal) return;
+    const wasActive = contactModal.classList.contains('active');
+    contactModal.classList.add('active');
+    if (!wasActive) {
+        history.pushState({ ...(history.state || {}), modal: 'contact' }, '', window.location.href);
+    }
+    setTimeout(() => {
+        requestAnimationFrame(() => refreshIcons(contactModal));
+    }, 50);
+}
+
+function closeContactModal(fromPopstate = false) {
+    if (!contactModal) return;
+    const wasActive = contactModal.classList.contains('active');
+    contactModal.classList.remove('active');
+    if (wasActive && !fromPopstate && history.state && history.state.modal === 'contact') {
+        suppressNextPopstateNavigation = true;
+        history.back();
+    }
+}
+
 function submitYoutuber() {
     const formUrl = CONFIG?.forms?.suggestYoutuberUrl;
     const messageDiv = document.getElementById('addYoutuberMessage');
@@ -13092,6 +13129,11 @@ window.addEventListener('popstate', e => {
 
     if (addYoutuberModal?.classList.contains('active')) {
         closeAddYoutuberModal(true);
+        return;
+    }
+
+    if (contactModal?.classList.contains('active')) {
+        closeContactModal(true);
         return;
     }
 

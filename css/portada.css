@@ -3830,19 +3830,19 @@ body .follow-btn-pill.is-followed:hover {
     display: none;
 }
 
-/* ---------- Suggereix un artista i contacte (#addYoutuberModal) ---------- */
-#addYoutuberModal .pt-contact {
+/* ---------- Suggereix un artista (#addYoutuberModal) i contacte (#contactModal, la icona @) ---------- */
+:is(#addYoutuberModal, #contactModal) .pt-contact {
     background: var(--pt-surface);
     border: 1px solid var(--pt-line);
     border-radius: var(--pt-radius-lg);
     max-width: 460px;
 }
 
-#addYoutuberModal .pt-contact .modal-header {
+:is(#addYoutuberModal, #contactModal) .pt-contact .modal-header {
     border-bottom: 1px solid var(--pt-line);
 }
 
-#addYoutuberModal .pt-contact .modal-body {
+:is(#addYoutuberModal, #contactModal) .pt-contact .modal-body {
     display: flex;
     flex-direction: column;
     gap: 14px;
@@ -3860,13 +3860,13 @@ body .follow-btn-pill.is-followed:hover {
     color: var(--pt-on-accent);
 }
 
-#addYoutuberModal .pt-contact__badge svg {
+:is(#addYoutuberModal, #contactModal) .pt-contact__badge svg {
     width: 22px;
     height: 22px;
     color: inherit;
 }
 
-#addYoutuberModal .pt-contact .modal-title {
+:is(#addYoutuberModal, #contactModal) .pt-contact .modal-title {
     font-family: var(--pt-display);
     font-size: 1.25rem;
     color: var(--pt-text);
@@ -3946,7 +3946,7 @@ body .follow-btn-pill.is-followed:hover {
     line-height: 1.45;
 }
 
-#addYoutuberModal .pt-contact__primary {
+:is(#addYoutuberModal, #contactModal) .pt-contact__primary {
     width: 100%;
     min-height: 48px;
     border: 0;
@@ -3958,21 +3958,21 @@ body .follow-btn-pill.is-followed:hover {
     cursor: pointer;
 }
 
-#addYoutuberModal .pt-contact__primary:hover {
+:is(#addYoutuberModal, #contactModal) .pt-contact__primary:hover {
     background: #e4f59d;
     opacity: 1;
 }
 
-#addYoutuberModal .add-youtuber-help {
+:is(#addYoutuberModal, #contactModal) .add-youtuber-help {
     margin: 0;
     color: var(--pt-muted);
 }
 
-#addYoutuberModal .add-youtuber-help strong {
+:is(#addYoutuberModal, #contactModal) .add-youtuber-help strong {
     color: var(--pt-text);
 }
 
-#addYoutuberModal .add-youtuber-message {
+:is(#addYoutuberModal, #contactModal) .add-youtuber-message {
     margin-top: 0;
 }
 
@@ -4045,7 +4045,7 @@ body .follow-btn-pill.is-followed:hover {
     overflow-wrap: anywhere;
 }
 
-#addYoutuberModal .about-telegram-btn {
+:is(#addYoutuberModal, #contactModal) .about-telegram-btn {
     min-width: 0;
     min-height: 40px;
     padding: 8px 14px;
@@ -4057,13 +4057,13 @@ body .follow-btn-pill.is-followed:hover {
     border-radius: var(--pt-radius-sm);
 }
 
-#addYoutuberModal .about-telegram-btn:hover {
+:is(#addYoutuberModal, #contactModal) .about-telegram-btn:hover {
     background: var(--pt-surface-3);
     color: var(--pt-text);
     transform: none;
 }
 
-#addYoutuberModal .project-credit-line {
+:is(#addYoutuberModal, #contactModal) .project-credit-line {
     font-family: var(--pt-display);
 }
 
@@ -5227,14 +5227,14 @@ body #watchPage .video-info-modern :is(.btn-round-icon, .btn-heart, .btn-pill-re
 
 /* Accessos superiors: icones directament sobre el fons, sense marc ni pastilla (també «Artistes», que només hi és al
    mòbil: abans duia el marc verd fluorescent). */
-body .app-header .actions :is(.icon-btn[data-page='llistes'], .icon-btn[data-page='segueix'], #backgroundBtn) {
+body .app-header .actions :is(.icon-btn[data-page='llistes'], .icon-btn[data-page='segueix'], #contactBtn, #backgroundBtn) {
     border: 0;
     background: transparent;
     box-shadow: none;
     outline: none;
 }
 
-body .app-header .actions :is(.icon-btn[data-page='llistes'], .icon-btn[data-page='segueix'], #backgroundBtn):focus-visible {
+body .app-header .actions :is(.icon-btn[data-page='llistes'], .icon-btn[data-page='segueix'], #contactBtn, #backgroundBtn):focus-visible {
     color: var(--pt-icon-border);
     /* El focus de teclat es ressalta a la icona, sense dibuixar un marc. */
     filter: drop-shadow(0 0 3px var(--pt-icon-border));
