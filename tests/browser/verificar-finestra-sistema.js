@@ -1,7 +1,8 @@
 // Verificació en navegador real dels controls del sistema i de la finestra flotant del sistema (Document
-// Picture-in-Picture, Chrome/Edge d'escriptori i Chromebook): el botó «Mini reproductor» obre una finestra del sistema
-// amb la cançó, la ràdio i els controls; el reproductor de YouTube es queda a la pàgina; anterior / play-pausa /
-// següent i «com aquesta» funcionen des de la finestra; la Media Session diu què sona.
+// Picture-in-Picture, Chrome/Edge d'escriptori i Chromebook): el botó «Reproductor flotant» obre una finestra del
+// sistema que porta el VÍDEO de YouTube a dins (el node #videoPlayer s'hi trasllada) amb la cançó, la ràdio i els
+// controls; amb el vídeo allà la reproducció continua encara que la pestanya quedi amagada; en tancar-la, el
+// reproductor torna a la pàgina des del segon on era. Sense la finestra, una pestanya amagada pausa YouTube.
 //
 // YouTube no es pot carregar aquí: se serveix un succedani local a la URL d'embed que parla el mateix protocol de
 // postMessage (onStateChange, playVideo/pauseVideo) i avisa la pàgina de cada toc rebut.
@@ -38,16 +39,22 @@ const MIME = {
 
 const STUB_PLAYER = `<!doctype html><html lang="ca"><head><meta charset="utf-8"><title>stub</title>
 <style>html,body{margin:0;height:100%;background:#123;color:#fff;font:16px sans-serif}</style></head><body><p>stub</p><script>
-function send(info) { parent.postMessage(JSON.stringify({ event: 'onStateChange', info, id: 'catube-player' }), '*'); }
+let st = -1;
+function send(info) { st = info; parent.postMessage(JSON.stringify({ event: 'onStateChange', info, id: 'catube-player' }), '*'); }
 document.addEventListener('pointerdown', () => parent.postMessage(JSON.stringify({ event: '__tap' }), '*'));
-setTimeout(() => send(1), 150);
+// El temps actual arriba cada 200 ms (com infoDelivery de YouTube) i la URL diu d'on s'ha arrencat (start=)
+const start = Number(new URLSearchParams(location.search).get('start')) || 0;
+const autoplay = new URLSearchParams(location.search).get('autoplay') !== '0';
+setTimeout(() => { if (autoplay) send(1); else send(5); }, 150);
+setInterval(() => parent.postMessage(JSON.stringify({ event: 'infoDelivery', info: { currentTime: start + 42, playerState: st } }), '*'), 200);
 window.addEventListener('message', event => {
     let dades = event.data;
     if (typeof dades === 'string') { try { dades = JSON.parse(dades); } catch (_) { return; } }
     if (!dades || dades.event !== 'command') return;
-    parent.postMessage(JSON.stringify({ event: '__command', func: dades.func }), '*');
+    parent.postMessage(JSON.stringify({ event: '__command', func: dades.func, start }), '*');
     if (dades.func === 'pauseVideo') send(2);
     if (dades.func === 'playVideo') send(1);
+    if (dades.func === '__end') send(0);
     if (dades.func === 'loadVideoById') { send(3); setTimeout(() => send(1), 120); }
 });
 </script></body></html>`;
@@ -94,9 +101,11 @@ async function novaPagina(browser, width, errors) {
         } catch (_) {}
     });
     const page = await context.newPage();
-    await page.route(/^https?:\/\/(?!localhost|127\.0\.0\.1)/, route => route.abort());
+    // Les rutes van al context (no a la pàgina): l'iframe que viu dins la finestra flotant del sistema és d'una altra
+    // pàgina del navegador i també ha de rebre el succedani de YouTube
+    await context.route(/^https?:\/\/(?!localhost|127\.0\.0\.1)/, route => route.abort());
     // Es registra després del bloqueig general perquè hi passi al davant
-    await page.route('**://*.youtube*.com/embed/**', route =>
+    await context.route('**://*.youtube*.com/embed/**', route =>
         route.fulfill({ status: 200, contentType: 'text/html; charset=utf-8', body: STUB_PLAYER })
     );
     page.on('pageerror', error => errors.push(error.message));
@@ -181,10 +190,10 @@ const clicPip = (page, action) =>
         );
         comprovar('la Media Session sap que sona', media.state === 'playing', media.state);
 
-        // Obrir la finestra del sistema amb el botó «Mini reproductor» de sota el vídeo
+        // Obrir la finestra del sistema amb el botó «Reproductor flotant» de sota el vídeo
         await page.click('#playerMiniBtn');
         await page.waitForFunction(() => Boolean(window.documentPictureInPicture?.window), null, { timeout: 5000 });
-        await page.waitForTimeout(400);
+        await page.waitForTimeout(600);
         let estat = await pip(page);
         comprovar(
             'la finestra mostra la cançó i l’artista',
@@ -198,33 +207,89 @@ const clicPip = (page, action) =>
         );
         if (process.env.MUSICA_TEST_SHOTS) {
             const finestra = context.pages().find(item => item !== page);
-            if (finestra) await finestra.setViewportSize({ width: 360, height: 520 });
             if (finestra)
                 await finestra.screenshot({ path: path.join(process.env.MUSICA_TEST_SHOTS, 'finestra-sistema.png') });
         }
         comprovar('la finestra diu què ve després', /^A continuació:/.test(estat?.next || ''), estat?.next);
         comprovar('a la primera cançó no hi ha «anterior»', estat?.prevDisabled === true);
-        const alLloc = await page.evaluate(() => ({
-            aLaPagina: document.getElementById('videoPlayer')?.isConnected === true,
-            iframe: Boolean(document.querySelector('#videoPlayer iframe')),
-            mini: document.getElementById('videoPlayer')?.classList.contains('mini-player-active'),
+
+        // El vídeo viu a la finestra flotant, no a la pàgina
+        const dins = await page.evaluate(() => {
+            const win = window.documentPictureInPicture.window;
+            const player = win.document.getElementById('videoPlayer');
+            const caixa = win.document.querySelector('[data-sp="video"]');
+            const rect = player?.getBoundingClientRect();
+            return {
+                aLaFinestra: Boolean(player && caixa && caixa.contains(player)),
+                iframe: Boolean(player?.querySelector('iframe')),
+                aLaPagina: Boolean(document.getElementById('videoPlayer')),
+                utils: SegueixApp.utils.playerElement() === player,
+                visible: Boolean(rect && rect.width > 200 && rect.height > 100),
+                amplada: Math.round(rect?.width || 0),
+                alcada: Math.round(rect?.height || 0),
+                classe: document.body.classList.contains('is-video-pip'),
+                obert: SegueixApp.features.systemPlayer.isVideoPipOpen(),
+                mini: player?.classList.contains('mini-player-active') === true,
+                avis: getComputedStyle(document.getElementById('videoPipNotice')).display,
+                srcPausa: player?.querySelector('iframe')?.src.includes('autoplay=1'),
+            };
+        });
+        comprovar(
+            'el vídeo de YouTube és dins la finestra flotant (visible, ≥ 200 px)',
+            dins.aLaFinestra && dins.iframe && dins.visible,
+            dins
+        );
+        comprovar(
+            'i ja no és a la pàgina, però l’app el troba (app.utils.playerElement)',
+            !dins.aLaPagina && dins.utils,
+            dins
+        );
+        comprovar(
+            'l’app ho sap i no obre també la finestreta de dins la pàgina',
+            dins.classe && dins.obert && !dins.mini,
+            dins
+        );
+        comprovar('l’iframe es reprèn amb autoplay (sonava)', dins.srcPausa === true, dins);
+
+        // El reproductor reenviat arriba a l'app com sempre: l'estat i el temps (infoDelivery) s'hi actualitzen
+        await page.waitForFunction(() => document.body.classList.contains('is-video-pip'), null, { timeout: 3000 });
+        await page.waitForTimeout(800);
+        const rebut = await page.evaluate(() => ({
+            estat: SegueixApp.utils.playerElement().dataset.playerState,
+            temps: lastKnownPlayerTime,
         }));
         comprovar(
-            'el reproductor de YouTube es queda a la pàgina (no s’hi mou)',
-            alLloc.aLaPagina && alLloc.iframe,
-            alLloc
+            'els avisos de l’iframe de la finestra arriben a la pàgina (estat «sona» i temps)',
+            rebut.estat === '1' && rebut.temps >= 42,
+            rebut
         );
-        comprovar('no s’obre també la finestra flotant de dins la pàgina', !alLloc.mini, alLloc);
 
-        // Següent des de la finestra mentre la pàgina continua visible: la cançó canvia amb el camí normal.
-        // No fem cap tractament especial per preparar reproducció en segon pla.
-        await page.evaluate(() => {
-            window.__iframe = document.querySelector('#videoPlayer iframe');
-            window.__ordres = [];
+        // A la pàgina, el forat avisa i dona un botó per tornar-lo
+        await page.evaluate(() => showVideoFromAPI?.call && 0);
+        const avis = await page.evaluate(() => {
+            const notice = document.getElementById('videoPipNotice');
+            const placeholder = document.getElementById('videoPlaceholder');
+            return {
+                text: notice?.innerText?.trim(),
+                visible:
+                    getComputedStyle(notice).display !== 'none' &&
+                    getComputedStyle(placeholder).visibility !== 'hidden',
+                boto: Boolean(document.getElementById('videoPipRestore')),
+                miniBtn: document.getElementById('playerMiniBtn').getAttribute('aria-label'),
+                pressed: document.getElementById('playerMiniBtn').getAttribute('aria-pressed'),
+            };
         });
+        comprovar(
+            'la pàgina diu que el vídeo és a la finestra i el botó de sota fa de «torna»',
+            /finestra flotant/.test(avis.text) && avis.boto && avis.pressed === 'true' && /Torna/.test(avis.miniBtn),
+            avis
+        );
+
+        // Següent des de la finestra: la cançó canvia amb el camí normal i el nou vídeo sona dins la mateixa finestra
+        await page.evaluate(() => (window.__ordres = []));
         await clicPip(page, 'next');
         await page.waitForFunction(i => currentPlaylistIndex === i + 1, ara.index, { timeout: 5000 });
-        await page.waitForTimeout(1300);
+        await page.waitForTimeout(1500);
         const segona = await sona(page);
         estat = await pip(page);
         comprovar('«següent» passa a la cançó següent i la finestra s’hi posa al dia', estat?.title === segona.title, {
@@ -232,22 +297,24 @@ const clicPip = (page, action) =>
             finestra: estat?.title,
         });
         comprovar('ara sí que hi ha «anterior»', estat?.prevDisabled === false);
-        const encadenat = await page.evaluate(() => ({
-            mateix: document.querySelector('#videoPlayer iframe') === window.__iframe,
-            ordres: window.__ordres.slice(),
-            sona: document.getElementById('videoPlayer')?.dataset?.playingVideoId,
-            id: String(activePlaylistQueue[currentPlaylistIndex]?.id || ''),
-        }));
+        const continua = await page.evaluate(() => {
+            const win = window.documentPictureInPicture.window;
+            const player = win.document.getElementById('videoPlayer');
+            return {
+                aLaFinestra: Boolean(player?.querySelector('iframe')),
+                aLaPagina: Boolean(document.getElementById('videoPlayer')),
+                sona: SegueixApp.utils.playerElement().dataset.playingVideoId,
+                id: String(activePlaylistQueue[currentPlaylistIndex]?.id || ''),
+                estat: SegueixApp.utils.playerElement().dataset.playerState,
+            };
+        });
         comprovar(
-            'amb la pàgina visible, «següent» no força un encadenat especial de segon pla',
-            !encadenat.mateix && !encadenat.ordres.includes('loadVideoById') && encadenat.sona === encadenat.id,
-            encadenat
+            'la cançó nova sona dins la mateixa finestra (el vídeo no torna a la pàgina)',
+            continua.aLaFinestra && !continua.aLaPagina && continua.sona === continua.id && continua.estat === '1',
+            continua
         );
 
         // Pausa i play des de la finestra
-        await page.waitForFunction(() => document.getElementById('videoPlayer')?.dataset?.playerState === '1', null, {
-            timeout: 8000,
-        });
         await page.evaluate(() => (window.__ordres = []));
         await clicPip(page, 'toggle');
         await page.waitForTimeout(1300);
@@ -264,11 +331,6 @@ const clicPip = (page, action) =>
             toggle: estat?.toggle,
         });
 
-        // Anterior
-        await clicPip(page, 'previous');
-        await page.waitForFunction(i => currentPlaylistIndex === i, ara.index, { timeout: 5000 });
-        comprovar('«anterior» torna a la primera cançó', true);
-
         // «Com aquesta»
         await clicPip(page, 'more');
         await page.waitForTimeout(400);
@@ -279,39 +341,168 @@ const clicPip = (page, action) =>
         );
         comprovar('«+ com aquesta» queda marcat', preferencia === 'true', preferencia);
 
-        // Tancar
-        await page.evaluate(() => window.documentPictureInPicture.window.close());
-        await page.waitForTimeout(400);
-        const tancada = await page.evaluate(() => ({
-            obert: SegueixApp.features.systemPlayer.isPipOpen(),
-            classe: document.body.classList.contains('is-system-pip'),
-        }));
-        comprovar('en tancar-la, l’app ho sap', !tancada.obert && !tancada.classe, tancada);
+        const obrir = async () => {
+            await page.click('#playerMiniBtn');
+            await page.waitForFunction(() => Boolean(window.documentPictureInPicture?.window), null, { timeout: 5000 });
+            await page.waitForTimeout(700);
+        };
+        const estatPagina = () =>
+            page.evaluate(() => {
+                const player = document.getElementById('videoPlayer');
+                const iframe = player?.querySelector('iframe');
+                return {
+                    obert: SegueixApp.features.systemPlayer.isPipOpen(),
+                    classe:
+                        document.body.classList.contains('is-system-pip') ||
+                        document.body.classList.contains('is-video-pip'),
+                    aLaPagina: Boolean(player && player.isConnected),
+                    iframe: Boolean(iframe),
+                    start: /[?&]start=\d+/.test(iframe?.src || ''),
+                    utils: SegueixApp.utils.playerElement() === player,
+                    boto: document.getElementById('playerMiniBtn').getAttribute('aria-pressed'),
+                    mini: Boolean(player?.classList.contains('mini-player-active')),
+                    estat: player?.dataset?.playerState,
+                };
+            });
 
-        // Pàgina amagada/minimitzada: Segueix Música no facilita reproducció de YouTube en segon pla.
+        // El botó de sota (que amb la finestra oberta fa de «torna») tanca la finestra: el reproductor torna a la pàgina
+        // i es reprèn al segon on era (start=…)
         await page.click('#playerMiniBtn');
-        await page.waitForFunction(() => Boolean(window.documentPictureInPicture?.window), null, { timeout: 5000 });
-        await page.waitForFunction(() => document.getElementById('videoPlayer')?.dataset?.playerState === '1', null, {
-            timeout: 8000,
+        await page.waitForTimeout(1200);
+        let tornat = await estatPagina();
+        comprovar(
+            'el botó de finestra flotant, amb la finestra oberta, la tanca («torna») i el vídeo torna a la pàgina',
+            !tornat.obert &&
+                !tornat.classe &&
+                tornat.aLaPagina &&
+                tornat.iframe &&
+                tornat.utils &&
+                tornat.boto === 'false',
+            tornat
+        );
+        comprovar(
+            'l’iframe es reprèn al segon on era (start=…), sona i no queda la finestreta de dins la pàgina',
+            tornat.start && tornat.estat === '1' && !tornat.mini,
+            tornat
+        );
+
+        // «Torna el vídeo aquí» (a la pàgina) fa el mateix
+        await obrir();
+        await page.click('#videoPipRestore');
+        await page.waitForTimeout(1000);
+        tornat = await estatPagina();
+        comprovar(
+            '«Torna el vídeo aquí» tanca la finestra i el vídeo torna a la pàgina',
+            !tornat.obert && tornat.aLaPagina && tornat.iframe,
+            tornat
+        );
+
+        // Navegar per l'app amb la finestra oberta: el vídeo no s'atura i la cua es manté
+        await obrir();
+        const abansNavegar = await sona(page);
+        await page.evaluate(() => showHistory());
+        await page.waitForTimeout(800);
+        const navegat = await page.evaluate(() => ({
+            obert: SegueixApp.features.systemPlayer.isVideoPipOpen(),
+            iframe: Boolean(SegueixApp.utils.playerElement()?.querySelector('iframe')),
+            estat: SegueixApp.utils.playerElement()?.dataset?.playerState,
+            index: currentPlaylistIndex,
+            cua: activePlaylistQueue.length,
+        }));
+        comprovar(
+            'navegar a Historial amb la finestra oberta no atura el vídeo ni buida la cua',
+            navegat.obert &&
+                navegat.iframe &&
+                navegat.estat === '1' &&
+                navegat.index === abansNavegar.index &&
+                navegat.cua > 1,
+            navegat
+        );
+
+        // Pestanya amagada AMB la finestra oberta: el vídeo és visible allà, no es pausa res i la cua avança sola
+        await page.evaluate(() => {
+            window.__ordres = [];
+            Object.defineProperty(document, 'visibilityState', { get: () => 'hidden', configurable: true });
+            document.dispatchEvent(new Event('visibilitychange'));
         });
+        await page.waitForTimeout(600);
+        let amagada = await page.evaluate(() => ({
+            ordres: window.__ordres.slice(),
+            estat: SegueixApp.utils.playerElement()?.dataset?.playerState,
+            obert: SegueixApp.features.systemPlayer.isVideoPipOpen(),
+        }));
+        comprovar(
+            'amb la pestanya amagada i la finestra oberta, el vídeo continua (cap pausa) i la finestra no es tanca',
+            !amagada.ordres.includes('pauseVideo') && amagada.estat === '1' && amagada.obert,
+            amagada
+        );
+        const indexAmagada = await page.evaluate(() => currentPlaylistIndex);
+        await page.evaluate(() => {
+            const frame = SegueixApp.utils.playerElement().querySelector('iframe');
+            frame.contentWindow.postMessage(JSON.stringify({ event: 'command', func: '__end', args: [] }), '*');
+        });
+        await page
+            .waitForFunction(i => currentPlaylistIndex === i + 1, indexAmagada, { timeout: 6000 })
+            .catch(() => {});
+        await page.waitForTimeout(1500);
+        amagada = await page.evaluate(
+            i => ({
+                avancada: currentPlaylistIndex === i + 1,
+                estat: SegueixApp.utils.playerElement()?.dataset?.playerState,
+                aLaFinestra: Boolean(
+                    window.documentPictureInPicture?.window?.document
+                        .getElementById('videoPlayer')
+                        ?.querySelector('iframe')
+                ),
+            }),
+            indexAmagada
+        );
+        comprovar(
+            'amb la finestra oberta, en acabar la cançó la cua avança i la nova sona també amb la pestanya amagada',
+            amagada.avancada && amagada.estat === '1' && amagada.aLaFinestra,
+            amagada
+        );
+        await page.evaluate(() => {
+            delete document.visibilityState;
+            document.dispatchEvent(new Event('visibilitychange'));
+        });
+
+        // Tancar la finestra des d'una altra pàgina de l'app (Historial; en avançar la cua l'app havia tornat a la
+        // fitxa de la cançó): el vídeo no té forat a la pàgina i es queda visible a la finestreta de dins, sonant
+        await page.evaluate(() => showHistory());
+        await page.waitForTimeout(600);
+        await page.evaluate(() => window.documentPictureInPicture.window.close());
+        await page.waitForTimeout(1200);
+        const dinsPagina = await estatPagina();
+        comprovar(
+            'en tancar-la des d’Historial, el reproductor torna a la pàgina i es queda visible a la finestreta de dins',
+            !dinsPagina.obert &&
+                !dinsPagina.classe &&
+                dinsPagina.aLaPagina &&
+                dinsPagina.iframe &&
+                dinsPagina.mini &&
+                dinsPagina.start &&
+                dinsPagina.estat === '1',
+            dinsPagina
+        );
+
+        // Pàgina amagada/minimitzada SENSE finestra flotant: Segueix Música no facilita reproducció en segon pla
         await page.evaluate(() => {
             window.__ordres = [];
             Object.defineProperty(document, 'visibilityState', { get: () => 'hidden', configurable: true });
             document.dispatchEvent(new Event('visibilitychange'));
         });
         await page.waitForTimeout(500);
-        const amagada = await page.evaluate(() => ({
+        const sensePip = await page.evaluate(() => ({
             ordres: window.__ordres.slice(),
             state: document.getElementById('videoPlayer')?.dataset?.playerState,
             pip: SegueixApp.features.systemPlayer.isPipOpen(),
         }));
         comprovar(
-            'amb Chrome minimitzat o la pestanya amagada, el reproductor rep pausa',
-            amagada.ordres.includes('pauseVideo') && amagada.state === '2',
-            amagada
+            'sense finestra flotant, amb Chrome minimitzat o la pestanya amagada, el reproductor rep pausa',
+            sensePip.ordres.includes('pauseVideo') && sensePip.state === '2',
+            sensePip
         );
-        comprovar('la finestra mini del sistema també es tanca', amagada.pip === false, amagada);
-
         await page.evaluate(() => {
             delete document.visibilityState;
         });

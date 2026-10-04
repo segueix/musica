@@ -93,19 +93,35 @@ describe('ordres de play/pausa robustes', () => {
 });
 
 describe('reproducció visible i sense segon pla', () => {
-    it('només la finestreta interna visible és persistent durant la navegació', () => {
-        expect(fn(app, 'isPersistentPlayerActive')).toContain('return isMiniPlayerActive();');
+    it('el reproductor només és persistent durant la navegació si continua visible (finestreta o finestra del sistema)', () => {
+        expect(fn(app, 'isPersistentPlayerActive')).toContain('return isMiniPlayerActive() || isVideoPipOpen();');
+        expect(fn(app, 'isVideoPipOpen')).toContain('systemPlayer?.isVideoPipOpen?.()');
         expect(fn(app, 'canSwapLivePlayerVideo')).toContain('isPlayerFullscreen()');
         expect(fn(app, 'canSwapLivePlayerVideo')).not.toContain('visibilityState');
         expect(fn(app, 'handlePlayerVisibilityOnNavigation')).toContain('systemPlayer?.closePip?.()');
         expect(fn(app, 'exitPlaylistModeForNavigation')).toContain('isPersistentPlayerActive()');
         expect(app).toContain('isMiniPlayerActive: isPersistentPlayerActive');
+        // En navegar (chips, logo, Inici) es para el reproductor només si no és persistent
+        expect(app).not.toMatch(/if \(!isMiniPlayerActive\(\)\) \{\s*stopVideoPlayback\(\);\s*\}\s*showHome\(/);
     });
 
-    it('quan la pestanya queda amagada es pausa YouTube, es tanca la finestra del sistema i no avança sola', () => {
-        expect(app).toMatch(/visibilitychange[\s\S]*?visibilityState === 'hidden'[\s\S]*?pauseMainPlayer\(\)[\s\S]*?systemPlayer\?\.closePip\?\.\(\)/);
-        expect(fn(app, 'loadVideoInSequence')).toContain("autoPlay && document.visibilityState !== 'hidden'");
-        expect(fn(app, 'handlePlaylistVideoEnded')).toContain("document.visibilityState === 'hidden'");
+    it('amb la pestanya amagada es pausa YouTube i no avança sola, tret que el vídeo sigui a la finestra del sistema', () => {
+        expect(app).toMatch(
+            /visibilitychange[\s\S]*?visibilityState === 'hidden'[\s\S]*?if \(isVideoPipOpen\(\)\) \{\s*return;\s*\}[\s\S]*?pauseMainPlayer\(\)[\s\S]*?systemPlayer\?\.closePip\?\.\(\)/
+        );
+        expect(fn(app, 'loadVideoInSequence')).toContain(
+            "autoPlay && (document.visibilityState !== 'hidden' || isVideoPipOpen())"
+        );
+        expect(fn(app, 'handlePlaylistVideoEnded')).toContain(
+            "document.visibilityState === 'hidden' && !isVideoPipOpen()"
+        );
+    });
+
+    it('amb el vídeo a la finestra del sistema no hi ha finestreta ni minimització automàtica a la pàgina', () => {
+        expect(fn(app, 'handleMiniPlayerAutoOnScroll')).toContain('if (isVideoPipOpen()) {');
+        expect(fn(app, 'setMiniPlayerState')).toContain('if (isActive && isVideoPipOpen()) {');
+        // Parar la reproducció torna primer el vídeo a la pàgina
+        expect(fn(app, 'stopVideoPlayback')).toContain('systemPlayer?.closePip?.()');
     });
 });
 

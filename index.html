@@ -52,7 +52,7 @@
     
     <!-- CSS -->
     <link rel="stylesheet" href="css/styles.css?v=20260929-home-playlists-4">
-    <link rel="stylesheet" href="css/portada.css?v=20261004-radio-estil-2">
+    <link rel="stylesheet" href="css/portada.css?v=20261005-video-flotant-1">
     
     <!-- Icons (Lucide via CDN) -->
     <script src="https://unpkg.com/lucide@0.563.0"></script>
@@ -282,6 +282,11 @@
                 <div class="watch-main">
                     <div id="videoPlaceholder" class="video-placeholder hidden">
                         <img id="placeholderImage" src="" alt="" decoding="async">
+                        <!-- Només es veu amb el vídeo a la finestra flotant del sistema (system-player.js) -->
+                        <div class="video-pip-notice" id="videoPipNotice">
+                            <p>El vídeo sona a la finestra flotant</p>
+                            <button type="button" class="pt-btn pt-btn--primary" id="videoPipRestore">Torna el vídeo aquí</button>
+                        </div>
                     </div>
                     <!-- Controls de Segueix Música fora de l'iframe de YouTube (res no hi va al davant). Amb la finestra
                          flotant, app.js (initExternalPlayerControls) els passa a <body> i van petits enganxats sota la

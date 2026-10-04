@@ -657,12 +657,17 @@
         }
     }
 
+    // El reproductor pot ser a la finestra flotant del sistema: es busca amb app.utils.playerElement()
+    function playerHost() {
+        return app.utils?.playerElement?.() || document.getElementById?.('videoPlayer') || null;
+    }
+
     function playerFrame() {
-        return document.querySelector('#videoPlayer iframe');
+        return playerHost()?.querySelector?.('iframe') || document.querySelector('#videoPlayer iframe');
     }
 
     function currentVideoId() {
-        return String(document.getElementById('videoPlayer')?.dataset?.playingVideoId || '');
+        return String(playerHost()?.dataset?.playingVideoId || '');
     }
 
     let sinkRegistered = false;
