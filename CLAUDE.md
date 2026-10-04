@@ -350,6 +350,10 @@ const likes = ctx2.SegueixApp.features.likes;
 - Un videoclip del canal oficial hereta el disc només si `artista + títol normalitzat` coincideix amb **un únic disc** Topic. Si és ambigu, no s'inventa cap relació.
 - UI: `js/features/artist-page.js` pinta «Discos» amb caràtules; tocar un disc filtra la graella de cançons. `Totes` restaura el repertori. Fora de `#channelPage` no es mostra cap disc.
 
+### Sense Shorts (2026-10-04)
+
+- Segueix Música **no mostra cap Short**. `YouTubeAPI.filterHiddenVideos()` (per on passen feed, instantània local, pool de ràdio, historial dels estils, arxiu de la fitxa i cerca) descarta `isShort === true`; `update_music_feed.js` els treu tots del feed (abans es quedaven els que coincidien amb una cançó del Tema) i `archivar_feed_musical.js` no en guarda a l'arxiu ni al pool. Els **falsos Shorts** (`data/falsos-shorts.json`) es corregeixen abans i continuen com a cançons. A la interfície ja no hi ha la fila «Shorts» dels estils ni de la fitxa d'artista, ni el filtre «Shorts» de l'historial (`isSongOrShort()` ara és `isSongVideo()` i els exclou). `shorts.js` i la finestra `#short-modal` queden sense cap punt d'entrada. No hi tornis a posar Shorts. Prova: `tests/sense-shorts.test.js`.
+
 ### Feed calent + historial musical (2026-10-02)
 
 - `data/feed.json` és el **catàleg calent**: conserva tots els vídeos dels últims **365 dies** i, per canal, les **12 cançons/directes antigues amb més visualitzacions**.

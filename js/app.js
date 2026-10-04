@@ -53,7 +53,6 @@ let channelProfileHandle,
     channelProfileShareBtn;
 let channelSearchInputDesktop, channelSearchInputMobile;
 let currentChannelVideos = [];
-let currentChannelShorts = [];
 let currentChannelLongVideos = [];
 let currentChannelId = '';
 let currentChannelName = '';
@@ -605,7 +604,7 @@ function getYouTubeConsentSettingsSummary() {
     }
 
     if (consent === 'rejected') {
-        return "YouTube està desactivat. Podràs continuar navegant per l'app, però els vídeos i Shorts no es reproduiran dins de Segueix! fins que el tornis a activar.";
+        return "YouTube està desactivat. Podràs continuar navegant per l'app, però els vídeos no es reproduiran dins de Segueix! fins que el tornis a activar.";
     }
 
     return "Encara no has triat una preferència permanent per a la reproducció incrustada. Pots activar o deixar desactivat YouTube des d'aquí.";
@@ -660,7 +659,7 @@ function bindYouTubeConsentSettingsUi() {
     enableBtn?.addEventListener('click', () => {
         openYouTubeConsentModal({
             title: 'Activar YouTube dins de Segueix!',
-            text: "Si actives aquesta preferència, Segueix! podrà carregar el reproductor de YouTube quan vulguis veure vídeos o Shorts dins de l'app. Pots canviar-ho més endavant des d'aquesta mateixa pantalla.",
+            text: "Si actives aquesta preferència, Segueix! podrà carregar el reproductor de YouTube quan vulguis veure vídeos dins de l'app. Pots canviar-ho més endavant des d'aquesta mateixa pantalla.",
             acceptLabel: 'Activar YouTube',
             cancelLabel: 'Ara no',
             consentOnAccept: true,
@@ -844,7 +843,7 @@ function acceptYouTubeCookiesAndResume({ resumePlayer = true, resumeShort = true
 function showCookieInfo() {
     openYouTubeConsentModal({
         title: 'Com funciona el consentiment de YouTube',
-        text: "Segueix! no carrega analítica pròpia, però quan entres al reproductor incrustat YouTube pot utilitzar cookies o altres identificadors relacionats amb la reproducció, la seguretat i el recompte de visualitzacions. Si l'actives, aquesta acceptació quedarà aplicada a partir d'ara per a tots els vídeos i Shorts incrustats de la plataforma fins que la canviïs a la configuració.",
+        text: "Segueix! no carrega analítica pròpia, però quan entres al reproductor incrustat YouTube pot utilitzar cookies o altres identificadors relacionats amb la reproducció, la seguretat i el recompte de visualitzacions. Si l'actives, aquesta acceptació quedarà aplicada a partir d'ara per a tots els vídeos incrustats de la plataforma fins que la canviïs a la configuració.",
         acceptLabel: 'Entesos',
         cancelLabel: 'Tancar',
     });
@@ -2048,7 +2047,6 @@ async function openProgramProfile(programId) {
     currentChannelId = normalizedId;
     currentChannelName = program.name;
     currentChannelVideos = filteredVideos;
-    currentChannelShorts = currentChannelVideos.filter(video => video.isShort);
     currentChannelLongVideos = currentChannelVideos.filter(video => !video.isShort);
 
     if (channelSearchInputDesktop) channelSearchInputDesktop.value = '';
@@ -3193,7 +3191,9 @@ async function restoreSavedViewState() {
             await showVideoFromAPI(saved.currentVideoId, { startAt, replaceHistory: true });
         }
     } else if (page === 'historial' || page === 'history') {
-        historySelectedCategory = saved.historySelectedCategory || 'Tot';
+        // El filtre «Shorts» de l'historial ja no existeix
+        historySelectedCategory =
+            saved.historySelectedCategory && saved.historySelectedCategory !== 'Shorts' ? saved.historySelectedCategory : 'Tot';
         historyFilterLiked = Boolean(saved.historyFilterLiked);
         showHistory();
     } else if (page === 'llistes' || page === 'playlists') {
@@ -5814,11 +5814,12 @@ async function refreshCustomCategorySearch(category) {
     }
 }
 
-// Només cançons: fora entrevistes, concerts complets, pel·lícules, teasers... (els Shorts hi passen).
+// Només cançons: fora entrevistes, concerts complets, pel·lícules, teasers i Shorts.
 // Els vídeos sense `contentType` (snapshots antics o canals afegits a mà) es consideren vàlids.
-function isSongOrShort(video) {
+function isSongVideo(video) {
+    if (video?.isShort) return false;
     const music = window.SegueixMusicCategories;
-    return !music?.isCategoryEligibleVideo || Boolean(video?.isShort) || music.isCategoryEligibleVideo(video);
+    return !music?.isCategoryEligibleVideo || music.isCategoryEligibleVideo(video);
 }
 
 function filterVideosByCategory(videos, feed) {
@@ -5831,7 +5832,7 @@ function filterVideosByCategory(videos, feed) {
         // Només cançons (song / live_song): fora entrevistes, concerts complets, teasers, etc.
         const music = window.SegueixMusicCategories;
         return music?.isCategoryEligibleVideo
-            ? visibleVideos.filter(video => video.isShort || music.isCategoryEligibleVideo(video))
+            ? visibleVideos.filter(video => !video.isShort && music.isCategoryEligibleVideo(video))
             : visibleVideos;
     }
     if (selectedCategory === 'Descobreix') {
@@ -5839,7 +5840,7 @@ function filterVideosByCategory(videos, feed) {
         return visibleVideos.filter(video => {
             const channelId = String(video?.channelId || '');
             if (!channelId || followedIds.has(channelId)) return false;
-            if (!isSongOrShort(video)) return false;
+            if (!isSongVideo(video)) return false;
             const music = window.SegueixMusicCategories;
             return !music?.isReady?.() || music.isMusicChannel(channelId);
         });
@@ -5848,12 +5849,7 @@ function filterVideosByCategory(videos, feed) {
     const userCategory = SegueixApp.features.userCategories?.get?.(selectedCategory);
     if (userCategory && String(userCategory.name).toLowerCase() === String(selectedCategory).toLowerCase()) {
         const artists = new Set(SegueixApp.features.userCategories.categoryChannelIds(userCategory).map(String));
-        const music = window.SegueixMusicCategories;
-        return visibleVideos.filter(
-            video =>
-                artists.has(String(video?.channelId || '')) &&
-                (!music?.isCategoryEligibleVideo || video.isShort || music.isCategoryEligibleVideo(video))
-        );
+        return visibleVideos.filter(video => artists.has(String(video?.channelId || '')) && isSongVideo(video));
     }
     if (selectedCategory === 'Radar') {
         const activeTags = getCustomTags();
@@ -5884,7 +5880,7 @@ function filterVideosByCategory(videos, feed) {
         if (followedIds.size === 0) {
             return [];
         }
-        return visibleVideos.filter(video => followedIds.has(String(video.channelId)) && isSongOrShort(video));
+        return visibleVideos.filter(video => followedIds.has(String(video.channelId)) && isSongVideo(video));
     }
     if (!feed || !Array.isArray(feed.channels)) return visibleVideos;
 
@@ -6736,8 +6732,8 @@ function renderFeedLegacyImpl() {
     }
     // Afegeix aquest bloc just abans de: lastRenderedFeedList = filtered;
     filtered = filtered.filter(video => {
-        // Els shorts tenen la seva pròpia lògica, els mantenim
-        if (video.isShort) return true;
+        // Segueix Música no mostra Shorts
+        if (video.isShort) return false;
 
         // Calculem els segons. Si és 0 (estrena/error) o null (privat/eliminat), el descartem
         const seconds = getVideoDurationSeconds(video);
@@ -8188,25 +8184,12 @@ function renderVideos(videos) {
 
     const listVideos = featured ? videos.filter(video => String(video.id) !== String(featured.id)) : videos;
 
-    const isMobile = window.matchMedia('(max-width: 768px)').matches;
-    const shorts = isMobile ? listVideos.filter(video => video.isShort) : [];
+    // Segueix Música no mostra Shorts (tampoc en una fila a part): només cançons.
     const normal = listVideos.filter(video => !video.isShort);
 
-    // El hero surt de la llista (i els Shorts al mòbil): en treure elements del mig poden quedar
-    // junts dos vídeos del mateix artista, o el primer igual que el hero. Es torna a repartir.
+    // El hero surt de la llista: en treure'l del mig poden quedar junts dos vídeos del mateix artista,
+    // o el primer igual que el hero. Es torna a repartir.
     let freshVideos = spreadVideosByArtist(normal, { previousArtist: getVideoArtistKey(featured) });
-
-    const shortsSection =
-        shorts.length > 0
-            ? `
-        <div class="shorts-section">
-            <h2 class="shorts-title">Shorts</h2>
-            <div class="shorts-row">
-                ${shorts.map(video => createShortCard(video)).join('')}
-            </div>
-        </div>
-    `
-            : '';
 
     // Delegació d'events per video cards (1 listener en lloc de N)
     setupDelegatedVideoCardClicks(videosGrid, 'api');
@@ -8231,7 +8214,6 @@ function renderVideos(videos) {
         SegueixApp.features.homeSections?.render(videosGrid, normal, {
             feed: currentFeedData,
             all: currentFeedVideos,
-            prepend: shortsSection,
         })
     ) {
         if (_batchRenderAbort) _batchRenderAbort.aborted = true;
@@ -8245,7 +8227,6 @@ function renderVideos(videos) {
     // les seccions d'historial quedin intercalades amb els vídeos nous.
     const categoryAtRender = selectedCategory;
     batchRenderCards(videosGrid, freshVideos, createVideoCardAPI, {
-        prepend: shortsSection,
         maxVisible: isDesktopView() ? 0 : FEED_PAGE_SIZE,
         onComplete: () => {
             refreshIcons(videosGrid);
@@ -8259,14 +8240,8 @@ function renderVideos(videos) {
 
 // ==================== SHORTS (wrappers globals) ====================
 // Implementació a js/features/shorts.js
-function createShortCard(video) {
-    return SegueixApp.features.shorts?.createShortCard?.(video) || '';
-}
 function openShortModal(videoId) {
     return SegueixApp.features.shorts?.openShortModal?.(videoId);
-}
-function openChannelShortModal(videoId, channelId) {
-    return SegueixApp.features.shorts?.openChannelShortModal?.(videoId, channelId);
 }
 function toggleShortPlayback() {
     return SegueixApp.features.shorts?.toggleShortPlayback?.();
@@ -10248,7 +10223,7 @@ function prepareWatchPlaybackPreview({ videoId, source, videoUrl, thumbnail, tit
         pendingYouTubePlayerPayload = { source, videoId, videoUrl, startAt, thumbnail, title };
         requestYouTubePlaybackConsent({
             title: 'Cal activar YouTube per reproduir el vídeo',
-            text: "Ara ets al reproductor del vídeo dins de Segueix!. Si acceptes, YouTube podrà carregar el reproductor incrustat, comptar la reproducció i aquesta decisió quedarà activa a partir d'ara per a tots els vídeos i Shorts de la plataforma fins que la canviïs a la configuració.",
+            text: "Ara ets al reproductor del vídeo dins de Segueix!. Si acceptes, YouTube podrà carregar el reproductor incrustat, comptar la reproducció i aquesta decisió quedarà activa a partir d'ara per a tots els vídeos de la plataforma fins que la canviïs a la configuració.",
         });
     });
     requestAnimationFrame(updatePlayerPosition);
@@ -11540,7 +11515,7 @@ function renderCategoryVideosBelowLegacyImpl(currentChannelId, currentVideoId) {
         }
 
         // Només cançons (abans, sense categoria efectiva, entrava tot el feed)
-        videos = videos.filter(isSongOrShort);
+        videos = videos.filter(isSongVideo);
 
         // Excloure vídeo actual, canal actual, shorts
         videos = videos.filter(
@@ -12426,16 +12401,13 @@ function getFilteredHistoryItems() {
         filtered = filtered.filter(video => likedIds.includes(String(video.id)));
     }
 
-    if (historySelectedCategory === 'Shorts') {
-        filtered = filtered.filter(video => video.isShort === true);
-    } else {
-        filtered = filtered.filter(video => !video.isShort);
-        if (historySelectedCategory !== 'Tot') {
-            const wanted = historySelectedCategory.toLowerCase();
-            filtered = filtered.filter(video =>
-                getHistoryVideoCategories(video).some(cat => String(cat).toLowerCase() === wanted)
-            );
-        }
+    // Els Shorts escoltats abans no surten a l'historial (Segueix Música no en mostra cap)
+    filtered = filtered.filter(video => !video.isShort);
+    if (historySelectedCategory !== 'Tot') {
+        const wanted = historySelectedCategory.toLowerCase();
+        filtered = filtered.filter(video =>
+            getHistoryVideoCategories(video).some(cat => String(cat).toLowerCase() === wanted)
+        );
     }
 
     return filtered;
@@ -12546,54 +12518,6 @@ function createHistoryCard(video) {
     `;
 }
 
-function renderShortsHistoryCarousel(items) {
-    const groups = new Map();
-    items.forEach(video => {
-        const viewedAt = video.viewedAt || video.publishedAt || video.uploadDate || '';
-        const label = viewedAt ? formatDate(viewedAt) : 'Sense data';
-        if (!groups.has(label)) groups.set(label, []);
-        groups.get(label).push(video);
-    });
-
-    let html = '';
-    groups.forEach((videos, label) => {
-        const carouselItems = videos
-            .map(video => {
-                const thumbnail =
-                    video.thumbnail ||
-                    video.snippet?.thumbnails?.maxres?.url ||
-                    video.snippet?.thumbnails?.high?.url ||
-                    video.snippet?.thumbnails?.medium?.url ||
-                    '';
-                const title = video.title || video.snippet?.title || '';
-                return `
-                <div class="short-history-item" data-video-id="${video.id}" role="button" tabindex="0" aria-label="${escapeHtml(title)}">
-                    <button class="short-history-delete" type="button" aria-label="Eliminar de l'historial" data-history-id="${video.id}">×</button>
-                    <img src="${thumbnail}" alt="${escapeHtml(title)}" loading="lazy">
-                    <div class="short-history-item-title">${escapeHtml(title)}</div>
-                </div>`;
-            })
-            .join('');
-        html += `<h2 class="history-group-title">${escapeHtml(label)}</h2>
-            <div class="shorts-history-carousel">${carouselItems}</div>`;
-    });
-
-    historyGrid.innerHTML = html;
-
-    historyGrid.querySelectorAll('.short-history-item').forEach(item => {
-        item.addEventListener('click', () => openShortModal(item.dataset.videoId));
-    });
-
-    historyGrid.querySelectorAll('.short-history-delete').forEach(btn => {
-        btn.addEventListener('click', event => {
-            event.stopPropagation();
-            const targetId = btn.dataset.historyId;
-            saveHistoryItems(getHistoryItems().filter(item => String(item.id) !== String(targetId)));
-            renderHistory();
-        });
-    });
-}
-
 function renderHistory() {
     if (!historyGrid) return;
 
@@ -12612,13 +12536,6 @@ function renderHistory() {
                 ? "Encara no hi ha vídeos a l'historial."
                 : 'No hi ha vídeos que coincideixin amb aquests filtres.';
         historyGrid.innerHTML = `<div class="empty-state">${message}</div>`;
-        return;
-    }
-
-    if (historySelectedCategory === 'Shorts') {
-        historyGrid.classList.add('is-shorts');
-        renderShortsHistoryCarousel(historyItems);
-        refreshIcons(historyGrid);
         return;
     }
 
@@ -12924,7 +12841,6 @@ async function openChannelProfileLegacyImpl(channelId) {
     currentChannelId = profileId;
     currentChannelName = channelName;
     currentChannelVideos = Array.isArray(channelVideos) ? channelVideos : [];
-    currentChannelShorts = currentChannelVideos.filter(video => video.isShort);
     currentChannelLongVideos = currentChannelVideos.filter(video => !video.isShort);
     SegueixApp.features.artistPage?.setSongs?.(currentChannelVideos, profileId);
 
@@ -12984,58 +12900,15 @@ function renderChannelVideosLegacyImpl(query = '') {
     const albumFilteredLongVideos = albumPage?.filterSongs
         ? albumPage.filterSongs(currentChannelLongVideos, currentChannelId)
         : currentChannelLongVideos;
-    const filteredShorts = albumPage?.isAlbumFilterActive?.() ? [] : currentChannelShorts.filter(filterByQuery);
-    // Al perfil del canal també només cançons (no concerts complets, pel·lícules, entrevistes...).
-    const filteredLongVideos = albumFilteredLongVideos.filter(isSongOrShort).filter(filterByQuery);
-    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+    // Al perfil del canal també només cançons (no concerts complets, pel·lícules, entrevistes, ni Shorts).
+    const filteredLongVideos = albumFilteredLongVideos.filter(isSongVideo).filter(filterByQuery);
 
-    if (normalizedQuery && filteredShorts.length === 0 && filteredLongVideos.length === 0) {
+    if (normalizedQuery && filteredLongVideos.length === 0) {
         channelVideosGrid.innerHTML = '<div class="empty-state">No s\'han trobat resultats dins d\'aquest canal.</div>';
         return;
     }
 
-    if (!isMobile && filteredLongVideos.length === 0) {
-        channelVideosGrid.innerHTML = normalizedQuery
-            ? '<div class="empty-state">Aquesta cerca només retorna shorts en aquest canal.</div>'
-            : '<div class="empty-state">Aquest canal només té shorts disponibles ara mateix.</div>';
-        return;
-    }
-
-    const shortsSection =
-        isMobile && filteredShorts.length > 0
-            ? `
-        <div class="shorts-section">
-            <h2 class="shorts-title">Shorts</h2>
-            <div class="shorts-row">
-                ${filteredShorts
-                    .map(
-                        video => `
-                    <button class="short-card" type="button" data-video-id="${video.id}" data-channel-id="${currentChannelId}">
-                        <img class="short-thumb" src="${video.thumbnail}" alt="${escapeHtml(video.title)}" loading="lazy">
-                        <div class="short-meta">
-                            <div class="short-title">${escapeHtml(video.title)}</div>
-                            <div class="short-channel">${escapeHtml(video.channelTitle || currentChannelName)}</div>
-                        </div>
-                    </button>
-                `
-                    )
-                    .join('')}
-            </div>
-        </div>
-    `
-            : '';
-
-    channelVideosGrid.innerHTML = `
-        ${shortsSection}
-        ${filteredLongVideos.map(video => createVideoCardAPI(video)).join('')}
-    `;
-
-    channelVideosGrid.querySelectorAll('.short-card').forEach(card => {
-        card.addEventListener('click', event => {
-            event.stopPropagation();
-            openChannelShortModal(card.dataset.videoId, card.dataset.channelId);
-        });
-    });
+    channelVideosGrid.innerHTML = filteredLongVideos.map(video => createVideoCardAPI(video)).join('');
 
     setupDelegatedVideoCardClicks(channelVideosGrid, 'api');
     bindChannelLinks(channelVideosGrid);

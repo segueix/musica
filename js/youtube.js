@@ -346,11 +346,13 @@ const YouTubeAPI = {
         return this.hiddenVideoIds.has(String(videoId || ''));
     },
 
+    // Fora els vídeos amagats i els Shorts: Segueix Música no en mostra cap (feed, historial, arxiu de la fitxa,
+    // pool de ràdio, cerca). Totes les fonts de vídeos de l'app passen per aquí.
     filterHiddenVideos(videos) {
-        if (!Array.isArray(videos) || videos.length === 0 || this.hiddenVideoIds.size === 0) {
+        if (!Array.isArray(videos) || videos.length === 0) {
             return Array.isArray(videos) ? videos : [];
         }
-        return videos.filter((video) => !this.isVideoHidden(video));
+        return videos.filter((video) => video?.isShort !== true && !this.isVideoHidden(video));
     },
 
 

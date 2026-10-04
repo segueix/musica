@@ -60,7 +60,9 @@ function hydrateForHot(video) {
 
 function main() {
   const feed = readJson(FEED, { channels: {}, videos: [] });
-  const videos = Array.isArray(feed.videos) ? feed.videos : [];
+  // Segueix Música no publica Shorts: ni al feed calent ni a l'historial (2026-10-04).
+  const notShort = video => video?.isShort !== true;
+  const videos = (Array.isArray(feed.videos) ? feed.videos : []).filter(notShort);
   fs.mkdirSync(ARCHIVE_DIR, { recursive: true });
 
   const byChannel = new Map();
@@ -78,7 +80,7 @@ function main() {
     if (!byChannel.has(channelId)) byChannel.set(channelId, []);
     byChannel.set(channelId, uniqueVideos([
       ...byChannel.get(channelId),
-      ...(Array.isArray(archive.videos) ? archive.videos : []),
+      ...(Array.isArray(archive.videos) ? archive.videos : []).filter(notShort),
     ]));
   }
 

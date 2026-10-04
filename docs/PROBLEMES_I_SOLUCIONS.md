@@ -1,3 +1,12 @@
+## [2026-10-04] - Fora els Shorts de tota l'app
+**Petició:** eliminar els Shorts del feed i de tota l'app.
+
+**Solució Implementada:** (1) dades: `update_music_feed.js` treu tots els Shorts del feed (abans conservava els que coincidien amb una cançó del canal Tema) i `archivar_feed_musical.js` no en guarda a l'arxiu, al pool de ràdio ni a `historial-musical.json` (722 a l'arxiu); el workflow «Arxivar feed musical» els neteja en fusionar el canvi. (2) client: `YouTubeAPI.filterHiddenVideos()` descarta `isShort === true` a totes les fonts, de manera que no en surt cap encara que les dades publicades en portin. (3) interfície: fora la fila «Shorts» dels estils (`renderVideos`) i de la fitxa d'artista (`renderChannelVideos`), el filtre «Shorts» de l'historial (un filtre desat «Shorts» passa a «Tot») i els Shorts de l'historial antic; `isSongOrShort()` → `isSongVideo()`; textos de les galetes sense «Shorts».
+
+**Trampes:** els falsos Shorts (cançons curtes marcades per error, `data/falsos-shorts.json`) es corregeixen abans del filtre i es queden com a cançons. `shorts.js` i `#short-modal` es mantenen però ja no tenen cap punt d'entrada (Segueix TV, enllaços antics a un Short: el vídeo no es troba entre els coneguts).
+
+**Fitxers Afectats:** `scripts/update_music_feed.js`, `scripts/archivar_feed_musical.js`, `js/youtube.js`, `js/app.js`, `index.html`, `sw.js`, `tests/sense-shorts.test.js`.
+
 ## [2026-10-04] - «Validar base musical» en vermell: l'auditoria de contingut no quadrava (review 21 contra 425)
 **Símptoma:** `tests/music-content-overrides.test.js` («l'auditoria de contingut és coherent…») fallava des del commit del bot `0c14be1` (feed del 2026-10-03 23:29): `typeCounts.review` era 21 i `music-content-review.json` en tenia 425. Els commits del bot no llancen la validació; es va veure en obrir la PR següent.
 
