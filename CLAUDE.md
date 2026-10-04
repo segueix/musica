@@ -59,6 +59,7 @@ js/
 │   ├── portada.js           # Portada «La teva plaça musical» (model pur + HTML + esdeveniments), pinta dins #videosGrid
 │   ├── artist-page.js       # Fitxa d'artista: dues ràdios (artista / estil), presentació curta expandible (model pur + DOM)
 │   ├── user-categories.js   # Les teves categories: categories pròpies de grups (portada, fitxa, ordre, compartir)
+│   ├── alphabet-index.js    # Índex alfabètic de la pàgina d'artistes (lletres que es fan grans, arrossegar per saltar)
 │   ├── shell-nav.js         # Navegació lateral/inferior i avisos breus (toast)
 │   ├── music-selection.js   # Motor de selecció musical compartit (funcions pures): antiguitat real, puntuació, restriccions
 │   ├── music-signals.js     # Observador únic d'escolta, estadístiques i preferències («(+) com aquesta (−)»)
@@ -315,6 +316,11 @@ const likes = ctx2.SegueixApp.features.likes;
 - **Compartir:** `shareUserCategory()` (app.js) → `?importData=` de tipus `category` (nom + ID de canal). El missatge porta **el nom de la categoria i els grups** (`shareMessage()`, `text` de `navigator.share`); «Generar QR» fa la targeta «Categoria · nom · N artistes». En obrir l'enllaç es desa com a categoria pròpia (`importShared()`, sense duplicar; «Nom (2)» si el nom ja és d'una altra) i surt a Inici.
 - **Ordre manual a Inici (tàctil):** mantenir premuda una rajola de «Tria el teu so» (250 ms) i arrossegar-la (Sortable); també amb el ratolí o **Alt + fletxes**. Es desa a `catube_music_home_style_order` i `setHomeOrder()` el porta a l'ordre de la barra d'estils (`mergeOrder()`). Visibles sense desplegar: les 8 primeres + una per categoria pròpia (`arrangeTiles()`).
 - Proves: `tests/user-categories.test.js`; opt-in `node tests/browser/verificar-categories.js`. Detall i trampes: `docs/PROBLEMES_I_SOLUCIONS.md` (2026-10-04).
+
+### Pàgina d'artistes: índex alfabètic (2026-10-04)
+
+- A la dreta de la llista d'artistes (`#followPage`) hi ha una **columna de lletres** (`js/features/alphabet-index.js`, patró 2; `renderFollowPage()` crida `alphabetIndex.attach(followGrid)`): tocar-la o **arrossegar-hi el dit** porta als artistes de la lletra (amb una bombolla gran amb la lletra), i **en fer scroll la lletra dels artistes que es veuen es fa gran** (escala 2, les veïnes 1,5 i 1,2: `--az-scale`). Inicials sense accents; números i símbols a «#»; les lletres sense artistes, apagades. La columna penja de `<body>` (un pare amb transformació trencava el `position: fixed`) i el CSS l'amaga fora de la pàgina d'artistes (`body:has(#followPage.hidden)`). Proves: `tests/alphabet-index.test.js`.
+- El botó «Artistes» de la capçalera (només al mòbil) va **sense marc** verd fluorescent, com la resta d'accessos de dalt.
 
 ### Revisió d'idioma de les cançons noves (2026-10-02)
 

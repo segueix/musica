@@ -8710,6 +8710,7 @@ async function renderFollowPage() {
         : (Array.isArray(YouTubeAPI?.getAllChannels?.()) ? YouTubeAPI.getAllChannels() : []);
 
     if (!allChannels.length) {
+        SegueixApp.features.alphabetIndex?.detach?.();
         followGrid.innerHTML = '<div class="empty-state">No hi ha artistes disponibles ara mateix.</div>';
         return;
     }
@@ -8784,6 +8785,8 @@ async function renderFollowPage() {
     bindFollowButtons(followGrid);
     bindHideChannelButtons(followGrid);
     _bindFollowGridDelegated();
+    // Índex alfabètic a la dreta de la llista (js/features/alphabet-index.js)
+    SegueixApp.features.alphabetIndex?.attach?.(followGrid);
 }
 
 // Listener delegat persistent per followGrid (1 sol listener en lloc de N)
@@ -8803,6 +8806,7 @@ function renderFollowEmptyState() {
     if (!followGrid) {
         return;
     }
+    SegueixApp.features.alphabetIndex?.detach?.();
     if (activeFollowTab === 'following') {
         followGrid.innerHTML = `
             <div class="empty-state">
