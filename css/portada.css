@@ -5698,77 +5698,144 @@ body:not(:has(#followPage)) .az-index {
 }
 
 
-/* ---------- Artistes i grups: suggeriment ---------- */
-.follow-suggest {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 18px;
-    margin: 18px 0 4px;
-    padding: 16px 18px;
-    border: 1px solid var(--pt-line);
-    border-radius: var(--pt-radius);
-    background: var(--pt-surface);
+/* ---------- Artistes i grups: suggeriment ----------
+   Franja integrada a la capçalera de la pàgina: icona en un disc llima, text i crida. Deixa lloc a la columna de
+   lletres (.az-index) com la graella (.follow-grid.has-az-index). Els selectors porten #followPage perquè guanyin a
+   les regles antigues de #addYoutuberBtn i .follow-subtitle de styles.css. */
+#followPage .page-title {
+    margin-bottom: 6px;
 }
 
-.follow-suggest__copy {
+#followPage .follow-subtitle {
+    display: block;
+    margin: 0 30px 18px 0;
+    padding: 0;
+    background: none;
+}
+
+#followPage .follow-suggest {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 0 30px 20px 0;
+    padding: 14px 14px 14px 16px;
+    overflow: hidden;
+    border: 1px solid color-mix(in srgb, var(--pt-accent) 24%, var(--pt-line));
+    border-radius: var(--pt-radius);
+    background:
+        radial-gradient(120% 160% at 0% 50%, color-mix(in srgb, var(--pt-accent) 13%, transparent) 0%, transparent 55%),
+        var(--pt-surface);
+}
+
+#followPage .follow-suggest__icon {
+    display: grid;
+    place-items: center;
+    flex: none;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: color-mix(in srgb, var(--pt-accent) 16%, transparent);
+    color: var(--pt-accent);
+}
+
+#followPage .follow-suggest__icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+#followPage .follow-suggest__copy {
+    flex: 1 1 auto;
     min-width: 0;
 }
 
-.follow-suggest__copy h2 {
+#followPage .follow-suggest__copy h2 {
     margin: 0;
     color: var(--pt-text);
     font-family: var(--pt-display);
-    font-size: 1.05rem;
+    font-size: 1.125rem;
+    font-weight: 700;
     line-height: 1.2;
 }
 
-.follow-suggest__copy p {
-    margin: 5px 0 0;
+#followPage .follow-suggest__copy p {
+    margin: 4px 0 0;
     color: var(--pt-muted);
     font-size: 0.9rem;
     line-height: 1.4;
 }
 
-#addYoutuberBtn.follow-suggest__button {
+#followPage #addYoutuberBtn.follow-suggest__button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
     flex: none;
-    padding: 10px 14px;
+    min-height: 44px;
+    margin: 0;
+    padding: 10px 18px 10px 14px;
     border: 0;
     border-radius: var(--pt-radius-pill);
     background: var(--pt-accent);
     color: var(--pt-on-accent);
     font: inherit;
+    font-size: 0.9375rem;
     font-weight: 800;
+    line-height: 1.2;
+    white-space: nowrap;
     cursor: pointer;
+    transition: filter 0.15s ease, transform 0.15s ease;
 }
 
-#addYoutuberBtn.follow-suggest__button svg {
+#followPage #addYoutuberBtn.follow-suggest__button svg {
     width: 20px;
     height: 20px;
     flex: none;
 }
 
-#addYoutuberBtn.follow-suggest__button:hover {
-    filter: brightness(1.05);
+#followPage #addYoutuberBtn.follow-suggest__button:hover {
+    filter: brightness(1.06);
 }
 
-#addYoutuberBtn.follow-suggest__button:focus-visible {
+#followPage #addYoutuberBtn.follow-suggest__button:active {
+    transform: scale(0.98);
+}
+
+#followPage #addYoutuberBtn.follow-suggest__button:focus-visible {
     outline: 3px solid color-mix(in srgb, var(--pt-accent) 45%, transparent);
     outline-offset: 3px;
 }
 
+@media (min-width: 769px) {
+    #followPage .follow-suggest {
+        margin-right: 40px;
+        padding: 16px 16px 16px 18px;
+    }
+}
+
 @media (max-width: 600px) {
-    .follow-suggest {
-        align-items: stretch;
-        flex-direction: column;
-        gap: 12px;
+    #followPage .follow-suggest {
+        flex-wrap: wrap;
+        gap: 12px 14px;
+        padding: 14px;
     }
 
-    #addYoutuberBtn.follow-suggest__button {
+    #followPage .follow-suggest__icon {
+        width: 42px;
+        height: 42px;
+    }
+
+    #followPage .follow-suggest__copy {
+        flex-basis: calc(100% - 56px);
+    }
+
+    #followPage #addYoutuberBtn.follow-suggest__button {
         width: 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #followPage #addYoutuberBtn.follow-suggest__button {
+        transition: none;
     }
 }

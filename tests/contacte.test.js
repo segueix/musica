@@ -34,4 +34,13 @@ describe('Contacte i suggeriment d’artistes', () => {
         expect(btn).toContain('Suggereix un artista o grup');
         expect(btn).toContain('<circle cx="7" cy="17" r="3"');
     });
+
+    it('la franja de suggeriment té estil propi, deixa lloc a les lletres i força el CSS nou', () => {
+        const css = fs.readFileSync(path.join(root, 'css', 'portada.css'), 'utf8');
+        expect(html).toContain('class="follow-suggest__icon"');
+        expect(css).toContain('#followPage .follow-suggest {');
+        expect(css).toMatch(/#followPage \.follow-suggest \{[^}]*margin: 0 30px 20px 0;/);
+        expect(css).toContain('#followPage #addYoutuberBtn.follow-suggest__button {');
+        expect(html).not.toContain('css/portada.css?v=20261001-artista-1');
+    });
 });
