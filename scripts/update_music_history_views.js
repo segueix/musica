@@ -5,10 +5,12 @@
 
 const fs = require('fs');
 const path = require('path');
+const { buildStyleHistory, serializeStyleHistory } = require('./lib/arxiu_musical');
 
 const ROOT = path.resolve(__dirname, '..');
 const ARCHIVE_DIR = path.join(ROOT, 'data', 'archive', 'channels');
 const HISTORY_POOL = path.join(ROOT, 'data', 'history-pool.json');
+const STYLE_HISTORY = path.join(ROOT, 'data', 'historial-musical.json');
 const API = 'https://www.googleapis.com/youtube/v3/videos';
 
 function chunks(items, size) {
@@ -71,6 +73,10 @@ async function main() {
     pool.statsUpdatedAt = at;
     fs.writeFileSync(HISTORY_POOL, JSON.stringify(pool));
   }
+
+  // Les cançons de l'historial que es barregen als estils porten les mateixes visualitzacions
+  const styleHistory = buildStyleHistory([...archives.values()].flatMap(data => data.videos || []));
+  fs.writeFileSync(STYLE_HISTORY, serializeStyleHistory(styleHistory, at));
 
   console.log(`✅ Historial: ${views.size} vídeos verificats; ${changed} comptadors actualitzats.`);
 }

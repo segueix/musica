@@ -3,6 +3,9 @@
 const FEED_URL = 'data/feed.json';
 const HIDDEN_VIDEOS_URL = 'data/hidden-videos.json';
 const HISTORY_POOL_URL = 'data/history-pool.json';
+// Totes les cançons de l'arxiu (scripts/lib/arxiu_musical.js: buildStyleHistory): la vista d'un estil les barreja amb
+// les del feed abans d'ordenar-les amb el motor de selecció.
+const STYLE_HISTORY_URL = 'data/historial-musical.json';
 const CHANNELS_FALLBACK_URL = 'js/channels-ca.json';
 const FEED_SNAPSHOT_KEY = 'iutube_feed_snapshot_v1';
 
@@ -27,6 +30,8 @@ const YouTubeAPI = {
     feedVideos: [],
     feedLoaded: false,
     historyPoolVideos: [],
+    styleHistoryVideos: [],
+    styleHistoryPromise: null,
     hiddenVideoIds: new Set(),
     channelArchiveCache: {},
     channelArchivePromises: {},
@@ -55,6 +60,9 @@ const YouTubeAPI = {
         // Intentar carregar el feed calent i després el petit pool històric de ràdio.
         await this.loadFeed();
         await this.loadHistoryPool();
+        // L'historial dels estils es demana quan l'app ja és a punt, perquè el primer estil s'obri sense esperar.
+        const idle = window.requestIdleCallback || (callback => setTimeout(callback, 1500));
+        idle(() => this.ensureStyleHistory(), { timeout: 4000 });
         
         console.log(`iuTube: ${this.getAllChannels().length} canals configurats`);
         console.log(`iuTube: Cache configurat per ${this.CACHE_DURATION / 1000 / 60} minuts`);
@@ -399,6 +407,42 @@ const YouTubeAPI = {
             this.historyPoolVideos = [];
             return [];
         }
+    },
+
+    // Cançons de l'historial per als estils: es demanen una sola vegada (en segon pla en obrir l'app, o en obrir el
+    // primer estil). Sense fitxer o sense xarxa, la vista d'estil continua amb les del feed.
+    ensureStyleHistory() {
+        if (this.styleHistoryPromise) return this.styleHistoryPromise;
+        this.styleHistoryPromise = (async () => {
+            try {
+                const url = window.appDataUrl?.(STYLE_HISTORY_URL) || STYLE_HISTORY_URL;
+                const response = await fetch(url);
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                const data = await response.json();
+                const channels = new Map(this.feedChannels.map(channel => [String(channel?.id || ''), channel]));
+                const feedIds = new Set((this.feedVideos || []).map(video => String(video?.id)));
+                this.styleHistoryVideos = this.filterHiddenVideos(Array.isArray(data?.videos) ? data.videos : [])
+                    .filter(video => video?.id && !feedIds.has(String(video.id)) && channels.has(String(video.channelId)))
+                    .map(video => {
+                        const channel = channels.get(String(video.channelId));
+                        const base = {
+                            ...video,
+                            contentType: video.contentType || 'song',
+                            channelTitle: channel?.name || '',
+                            thumbnail: `https://i.ytimg.com/vi/${video.id}/hqdefault.jpg`,
+                            categories: this.normalizeCategories(Array.isArray(channel?.categories) ? channel.categories : []),
+                        };
+                        return window.SegueixMusicCategories?.decorateVideo?.(base, channel?.artists || []) || base;
+                    });
+                console.log(`iuTube: ${this.styleHistoryVideos.length} cançons de l'historial per als estils`);
+            } catch (error) {
+                console.log('iuTube: Historial dels estils no disponible:', error.message);
+                this.styleHistoryVideos = [];
+                this.styleHistoryPromise = null;
+            }
+            return this.styleHistoryVideos;
+        })();
+        return this.styleHistoryPromise;
     },
 
     getRadioPoolVideos() {

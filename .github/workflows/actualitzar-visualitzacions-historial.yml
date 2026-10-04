@@ -35,7 +35,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/archive/channels data/history-pool.json
+          git add data/archive/channels data/history-pool.json data/historial-musical.json
           if git diff --cached --quiet; then
             echo "Sense canvis de visualitzacions."
             exit 0
