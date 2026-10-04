@@ -1083,13 +1083,20 @@ body:has(#homePage.is-portada) .category-selector {
 
 .pt-mode__options {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    /* Quatre modes: dues files de dos al mòbil, una fila de quatre quan hi cap (vegeu la consulta de sota) */
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 4px;
     max-width: 480px;
     padding: 4px;
     border: 1px solid var(--pt-line);
     border-radius: var(--pt-radius-lg);
     background: var(--pt-surface);
+}
+
+@media (min-width: 560px) {
+    .pt-mode__options {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
 }
 
 .pt-mode__opt {
@@ -2716,7 +2723,8 @@ body .follow-btn-pill.is-followed:hover {
 
 .mq-mode__options {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    /* Quatre modes dins la capçalera de la cua: sempre dues files de dos (a quatre columnes es partien en tres línies) */
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 4px;
     padding: 4px;
     border: 1px solid var(--pt-line);

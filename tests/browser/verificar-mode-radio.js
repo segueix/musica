@@ -168,9 +168,9 @@ async function main() {
             };
         });
         comprovar(
-            'cada ràdio porta el selector de mode a la capçalera, amb les tres opcions i «Una mica de tot» actiu',
+            'cada ràdio porta el selector de mode a la capçalera, amb les quatre opcions i «Una mica de tot» actiu',
             selector.aCapcalera &&
-                selector.opcions.map(item => item.text).join('|') === 'Els meus de sempre|Una mica de tot|Sorprèn-me' &&
+                selector.opcions.map(item => item.text).join('|') === 'Els meus de sempre|Una mica de tot|Sorprèn-me|Només nous' &&
                 selector.opcions
                     .filter(item => item.actiu === 'true')
                     .map(item => item.id)
@@ -296,7 +296,7 @@ async function main() {
         const despresCerca = await estatRadio(page);
         comprovar(
             'una ràdio de cerca té el selector i, en canviar-lo, reordena dins dels mateixos resultats',
-            cerca.opcions === 3 &&
+            cerca.opcions === 4 &&
                 /Cerca: prova/.test(cerca.nom) &&
                 despresCerca.pendents.length > 0 &&
                 despresCerca.pendents.every(id => abansCerca.pendents.includes(id) || id === despresCerca.actual) &&
@@ -329,8 +329,8 @@ async function main() {
             };
         });
         comprovar(
-            'al mòbil (390 px) les tres opcions caben, fan ≥ 44 px i no hi ha desbordament',
-            mobil.options.length === 3 &&
+            'al mòbil (390 px) les quatre opcions caben, fan ≥ 44 px i no hi ha desbordament',
+            mobil.options.length === 4 &&
                 mobil.options.every(([w, h, tallat]) => w >= 80 && h >= 44 && !tallat) &&
                 !mobil.overflow,
             mobil

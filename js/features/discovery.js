@@ -25,6 +25,11 @@
         },
         { id: 'mix', label: 'Una mica de tot', hint: 'Combina música coneguda i descoberta.' },
         { id: 'surprise', label: 'Sorprèn-me', hint: 'Dona més pes als artistes que encara no has escoltat.' },
+        {
+            id: 'new',
+            label: 'Només nous',
+            hint: 'Només artistes que encara no has escoltat: grups que potser ni sabies que existien.',
+        },
     ]);
 
     // Proporció coneguda (K) / per descobrir (F) de cada mode, repetida cíclicament.
@@ -32,6 +37,8 @@
         home: ['K', 'K', 'K', 'K', 'K', 'F'],
         mix: ['K', 'F'],
         surprise: ['F', 'F', 'F', 'F', 'K'],
+        // Només descoberta: el conegut queda al final i només surt si no n'hi ha prou de nou.
+        new: ['F'],
     });
 
     // Mateixes etiquetes que SegueixMusicCategories.CATEGORY_GROUPS (es fa servir aquell si és carregat).

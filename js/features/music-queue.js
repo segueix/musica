@@ -105,11 +105,7 @@
 
     function findVideo(videoId) {
         const id = String(videoId);
-        const pools = [
-            window.currentFeedVideos,
-            window.cachedAPIVideos,
-            window.YouTubeAPI?.historyPoolVideos,
-        ];
+        const pools = [window.currentFeedVideos, window.cachedAPIVideos, window.YouTubeAPI?.historyPoolVideos];
         try {
             pools.unshift(currentFeedVideos, cachedAPIVideos);
         } catch (error) {
@@ -179,8 +175,8 @@
     // Candidates de la ràdio: només cançons del feed, sense vistes, ni amagades, ni de l'artista excloent-se.
     function getCandidates(exclude, category = '') {
         const categories = asCategories(category);
-        let pool = window.YouTubeAPI?.getRadioPoolVideos?.()
-            || (Array.isArray(currentFeedVideos) ? currentFeedVideos : []);
+        let pool =
+            window.YouTubeAPI?.getRadioPoolVideos?.() || (Array.isArray(currentFeedVideos) ? currentFeedVideos : []);
         // Política anterior: una cançó de l'historial quedava fora per sempre. El motor de selecció la deixa
         // tornar (amb descans, cors i repeticions voluntàries), així que només s'exclou amb `engine: 'legacy'`.
         if (!engineOn()) {
@@ -707,6 +703,13 @@
         let pool = own;
         if (mode === 'mix') pool = [...new Set([...own, ...styled])];
         else if (mode === 'surprise') pool = styled.filter(item => !known(item));
+        else if (mode === 'new') {
+            // «Només nous»: artistes que no coneixes, els del teu estil primer; el motor encara filtra el que has
+            // deixat rastre, així que amb pocs candidats es pot ampliar a tots els que no coneixes.
+            const fresh = candidates.filter(item => !known(item));
+            const styledFresh = styled.filter(item => !known(item));
+            return styledFresh.length >= MIN_SEED_POOL ? styledFresh : fresh.length ? fresh : candidates;
+        }
         if (pool.length >= MIN_SEED_POOL) return pool;
         return own.length >= MIN_SEED_POOL ? own : candidates;
     }
@@ -1273,6 +1276,23 @@
             // Sense motor (proves): es fa servir el que diu la ràdio
         }
         const songs = changed === 1 ? '1 cançó nova' : `${changed} cançons noves`;
+        if (mode === 'new') {
+            // Ràdio de descoberta: el que importa és quants grups diferents que no coneixes hi ha (no el tipus d'historial)
+            const artists = new Set(
+                activePlaylistQueue
+                    .slice(currentPlaylistIndex + 1)
+                    .map(item => artistOf(item))
+                    .filter(Boolean)
+            ).size;
+            setModeStatus(
+                radioMeta?.note ||
+                    (artists === 1
+                        ? 'Ràdio de descoberta: 1 artista a la llista.'
+                        : `Ràdio de descoberta: ${artists} artistes a la llista.`)
+            );
+            notifyQueueChanged();
+            return { changed, mode };
+        }
         setModeStatus(
             variety
                 ? `«${label}» desat. Amb tan poc historial la ràdio es manté variada (${songs} a la llista).`
