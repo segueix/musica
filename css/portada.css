@@ -359,8 +359,7 @@ body {
         padding-bottom: 8px;
     }
 
-    .app-header .nav-trigger[data-page='llistes'],
-    .app-header #addYoutuberBtn {
+    .app-header .nav-trigger[data-page='llistes'] {
         display: none;
     }
 
@@ -5195,14 +5194,14 @@ body #watchPage .video-info-modern :is(.btn-round-icon, .btn-heart, .btn-pill-re
 
 /* Accessos superiors: icones directament sobre el fons, sense marc ni pastilla (també «Artistes», que només hi és al
    mòbil: abans duia el marc verd fluorescent). */
-body .app-header .actions :is(.icon-btn[data-page='llistes'], .icon-btn[data-page='segueix'], #backgroundBtn, #addYoutuberBtn) {
+body .app-header .actions :is(.icon-btn[data-page='llistes'], .icon-btn[data-page='segueix'], #backgroundBtn) {
     border: 0;
     background: transparent;
     box-shadow: none;
     outline: none;
 }
 
-body .app-header .actions :is(.icon-btn[data-page='llistes'], .icon-btn[data-page='segueix'], #backgroundBtn, #addYoutuberBtn):focus-visible {
+body .app-header .actions :is(.icon-btn[data-page='llistes'], .icon-btn[data-page='segueix'], #backgroundBtn):focus-visible {
     color: var(--pt-icon-border);
     /* El focus de teclat es ressalta a la icona, sense dibuixar un marc. */
     filter: drop-shadow(0 0 3px var(--pt-icon-border));
@@ -5695,5 +5694,81 @@ body:not(:has(#followPage)) .az-index {
 @media (prefers-reduced-motion: reduce) {
     .az-index__letter {
         transition: none;
+    }
+}
+
+
+/* ---------- Artistes i grups: suggeriment ---------- */
+.follow-suggest {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    margin: 18px 0 4px;
+    padding: 16px 18px;
+    border: 1px solid var(--pt-line);
+    border-radius: var(--pt-radius);
+    background: var(--pt-surface);
+}
+
+.follow-suggest__copy {
+    min-width: 0;
+}
+
+.follow-suggest__copy h2 {
+    margin: 0;
+    color: var(--pt-text);
+    font-family: var(--pt-display);
+    font-size: 1.05rem;
+    line-height: 1.2;
+}
+
+.follow-suggest__copy p {
+    margin: 5px 0 0;
+    color: var(--pt-muted);
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+#addYoutuberBtn.follow-suggest__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex: none;
+    padding: 10px 14px;
+    border: 0;
+    border-radius: var(--pt-radius-pill);
+    background: var(--pt-accent);
+    color: var(--pt-on-accent);
+    font: inherit;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+#addYoutuberBtn.follow-suggest__button svg {
+    width: 20px;
+    height: 20px;
+    flex: none;
+}
+
+#addYoutuberBtn.follow-suggest__button:hover {
+    filter: brightness(1.05);
+}
+
+#addYoutuberBtn.follow-suggest__button:focus-visible {
+    outline: 3px solid color-mix(in srgb, var(--pt-accent) 45%, transparent);
+    outline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+    .follow-suggest {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    #addYoutuberBtn.follow-suggest__button {
+        width: 100%;
     }
 }

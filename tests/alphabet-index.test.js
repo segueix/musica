@@ -39,9 +39,9 @@ describe('índex alfabètic dels artistes', () => {
         expect(readFileSync('sw.js', 'utf8')).toContain("'./js/features/alphabet-index.js'");
     });
 
-    it('el botó d’artistes de la capçalera (mòbil) no té marc', () => {
+    it('els botons d’accés de la capçalera (mòbil) no tenen marc', () => {
         expect(css).toContain(
-            ":is(.icon-btn[data-page='llistes'], .icon-btn[data-page='segueix'], #backgroundBtn, #addYoutuberBtn)"
+            ":is(.icon-btn[data-page='llistes'], .icon-btn[data-page='segueix'], #backgroundBtn)"
         );
     });
 });

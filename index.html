@@ -143,15 +143,12 @@
             <a class="icon-btn nav-trigger" href="#" data-page="historial" aria-label="Historial" title="Historial">
                 <i data-lucide="history"></i>
             </a>
-            <a class="icon-btn nav-trigger" href="#" data-page="segueix" aria-label="Artistes" title="Artistes">
+            <a class="icon-btn nav-trigger" href="#" data-page="segueix" aria-label="Artistes i grups" title="Artistes i grups">
                 <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
             </a>
             <button class="icon-btn" id="backgroundBtn" type="button" aria-label="Configuració" title="Configuració" style="position:relative;">
                 <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06A1.7 1.7 0 0 0 15 19.4a1.7 1.7 0 0 0-1 .6 1.7 1.7 0 0 0-.4 1.1V21a2 2 0 1 1-4 0v-.09A1.7 1.7 0 0 0 8.5 19.4a1.7 1.7 0 0 0-1.88.34l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.7 1.7 0 0 0 4.6 15a1.7 1.7 0 0 0-.6-1 1.7 1.7 0 0 0-1.1-.4H3a2 2 0 1 1 0-4h.09A1.7 1.7 0 0 0 4.6 8.5a1.7 1.7 0 0 0-.34-1.88l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.7 1.7 0 0 0 9 4.6a1.7 1.7 0 0 0 1-.6 1.7 1.7 0 0 0 .4-1.1V3a2 2 0 1 1 4 0v.09A1.7 1.7 0 0 0 15.5 4.6a1.7 1.7 0 0 0 1.88-.34l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.7 1.7 0 0 0 19.4 9c.14.37.35.7.6 1 .3.3.69.47 1.1.5H21a2 2 0 1 1 0 4h-.09a1.7 1.7 0 0 0-1.51.5Z"/></svg>
                 <span id="updateBadge" class="pt-update-dot" role="img" aria-label="Hi ha una versió nova: prem per actualitzar" style="display:none;"></span>
-            </button>
-            <button class="icon-btn" id="addYoutuberBtn" type="button" aria-label="Suggereix un artista" title="Suggereix un artista">
-                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="7" cy="17" r="3" fill="none" stroke="currentColor" stroke-width="2"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M10 17V4l4 1M18 7v6M15 10h6"/></svg>
             </button>
         </nav>
     </header>
@@ -197,7 +194,7 @@
             </a>
             <a href="#" class="nav-item pt-nav-item" data-page="segueix" data-pt-nav="artists">
                 <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                <span>Artistes</span>
+                <span>Artistes i grups</span>
             </a>
             <a href="#" class="nav-item pt-nav-item" data-page="library" data-pt-nav="library">
                 <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M21 15V6M18.5 18a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM12 12H3M16 6H3M12 18H3"/></svg>
@@ -434,11 +431,21 @@
     </div>
 
     <div id="followPage" class="main-content hidden" aria-labelledby="followPageTitle">
-        <h1 class="page-title" id="followPageTitle">Artistes</h1>
-        <p class="page-subtitle follow-subtitle">Retroba els teus artistes i segueix-ne de nous</p>
-        <div class="follow-tabs" id="followTabs" role="tablist" aria-label="Filtres d'artistes">
+        <h1 class="page-title" id="followPageTitle">Artistes i grups</h1>
+        <p class="page-subtitle follow-subtitle">Retroba els teus artistes i grups, i descobreix-ne de nous.</p>
+        <section class="follow-suggest" aria-labelledby="followSuggestTitle">
+            <div class="follow-suggest__copy">
+                <h2 id="followSuggestTitle">Hi falta algú?</h2>
+                <p>Si no trobes un artista o grup que canta en català, proposa’l.</p>
+            </div>
+            <button class="follow-suggest__button" id="addYoutuberBtn" type="button" aria-label="Suggereix un artista o grup">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="7" cy="17" r="3" fill="none" stroke="currentColor" stroke-width="2"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M10 17V4l4 1M18 7v6M15 10h6"/></svg>
+                <span>Suggereix un artista o grup</span>
+            </button>
+        </section>
+        <div class="follow-tabs" id="followTabs" role="tablist" aria-label="Filtres d'artistes i grups">
             <button class="follow-tab" type="button" role="tab" aria-selected="false" data-follow-tab="all">
-                Tots els artistes
+                Tots
             </button>
             <button class="follow-tab is-active" type="button" role="tab" aria-selected="true" data-follow-tab="following">
                 Seguint
@@ -533,7 +540,7 @@
                     <span class="pt-contact__badge" aria-hidden="true">
                         <svg viewBox="0 0 24 24" focusable="false"><circle cx="7" cy="17" r="3" fill="none" stroke="currentColor" stroke-width="2"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M10 17V4l4 1M18 7v6M15 10h6"/></svg>
                     </span>
-                    Suggereix un artista
+                    Suggereix un artista o grup
                 </h2>
                 <button class="modal-close" id="closeAddYoutuberModal" type="button" aria-label="Tancar modal">
                     <i data-lucide="x"></i>

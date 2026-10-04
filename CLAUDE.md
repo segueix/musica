@@ -390,7 +390,7 @@ const likes = ctx2.SegueixApp.features.likes;
 
 ### Contacte i suggeriment d'artistes (2026-10-01)
 
-- `#addYoutuberModal` («Suggereix un artista», botó `#addYoutuberBtn` amb icona de nota musical amb «+») porta, amb l'estil de `portada.css` (`.pt-contact*`): **formulari** (`#addYoutuberSubmitBtn` → `CONFIG.forms.suggestYoutuberUrl`), **Telegram** (`t.me/segueix`), **correu** (`info.segueix@gmail.com`), «Informació per a artistes» i els crèdits. No hi tornis a posar el vídeo de YouTube «Coneix-nos» ni Xiuxiuejar (eliminats, com les seves imatges). **Pendent:** `suggestYoutuberUrl` encara és el formulari antic de Segueix youtubers; cal substituir-lo pel nou (per grups de música). Prova: `tests/contacte.test.js`.
+- `#addYoutuberModal` («Suggereix un artista o grup») s'obre des del botó `#addYoutuberBtn`, que ara és una crida visible a la part superior de `#followPage` («Artistes i grups») i ja no és a la capçalera. El modal porta, amb l'estil de `portada.css` (`.pt-contact*`): **formulari** (`#addYoutuberSubmitBtn` → `CONFIG.forms.suggestYoutuberUrl`), **Telegram** (`t.me/segueix`), **correu** (`info.segueix@gmail.com`), «Informació per a artistes» i els crèdits. No hi tornis a posar el vídeo de YouTube «Coneix-nos» ni Xiuxiuejar (eliminats, com les seves imatges). **Pendent:** `suggestYoutuberUrl` encara és el formulari antic de Segueix youtubers; cal substituir-lo pel nou (per grups de música). Prova: `tests/contacte.test.js`.
 
 ### Botons d'icona i colors de la configuració (2026-10-02)
 

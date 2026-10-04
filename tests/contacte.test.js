@@ -20,12 +20,18 @@ describe('Contacte i suggeriment d’artistes', () => {
         expect(fs.existsSync(path.join(root, 'img', 'Xiuxiuajar_icona.png'))).toBe(false);
     });
 
-    it('el botó de la capçalera usa la icona musical i no la de persona', () => {
-        const btn = html.slice(
-            html.indexOf('id="addYoutuberBtn"'),
-            html.indexOf('</button>', html.indexOf('id="addYoutuberBtn"'))
-        );
+    it('posa el suggeriment a la part superior d’Artistes i grups, fora de la capçalera', () => {
+        const header = html.slice(html.indexOf('<header class="app-header">'), html.indexOf('</header>'));
+        const followPage = html.slice(html.indexOf('id="followPage"'), html.indexOf('id="short-modal"'));
+        const btnStart = followPage.indexOf('id="addYoutuberBtn"');
+        const tabsStart = followPage.indexOf('id="followTabs"');
+        const btn = followPage.slice(btnStart, followPage.indexOf('</button>', btnStart));
+
+        expect(header).not.toContain('id="addYoutuberBtn"');
+        expect(followPage).toContain('id="followPageTitle">Artistes i grups');
+        expect(btnStart).toBeGreaterThanOrEqual(0);
+        expect(btnStart).toBeLessThan(tabsStart);
+        expect(btn).toContain('Suggereix un artista o grup');
         expect(btn).toContain('<circle cx="7" cy="17" r="3"');
-        expect(btn).not.toContain('M16 21v-2');
     });
 });
