@@ -52,10 +52,10 @@
             home: { known: 0.75, affine: 0.2, surprise: 0.05 },
             mix: { known: 0.6, affine: 0.3, surprise: 0.1 },
             surprise: { known: 0.25, affine: 0.45, surprise: 0.3 },
-            // «Només nous»: res de conegut (filtre dur a selectRadio); entre els nous, els d'estils afins una mica més.
+            // «Només no escoltats»: res de conegut (filtre dur a selectRadio); entre els nous, els d'estils afins una mica més.
             new: { known: 0, affine: 0.5, surprise: 0.5 },
         },
-        // «Només nous»: artistes diferents a procurar i quant es redueix el pes de la popularitat (els èxits ja
+        // «Només no escoltats»: artistes diferents a procurar i quant es redueix el pes de la popularitat (els èxits ja
         // són coneguts; es vol que surtin grups que potser l'usuari no sap que existeixen).
         discovery: { minArtists: 12, popularityDamping: 0.5, secondSongPenalty: 0.25, weakKnownPenalty: 0.5 },
         // Reforços limitats (logarítmics) i decaïment temporal.
@@ -663,7 +663,7 @@
         { gap: 0, perArtist: 99, hist: 99, work: false, consecutive: true, cool: 0 },
     ];
 
-    // «Només nous»: un artista és nou si l'usuari no hi ha deixat cap rastre (ni escoltes, ni historial feble, ni cor,
+    // «Només no escoltats»: un artista és nou si l'usuari no hi ha deixat cap rastre (ni escoltes, ni historial feble, ni cor,
     // ni «+/−», ni salts, ni seguit). Un artista que només ha saltat també queda fora: ja l'ha vist i no l'ha volgut.
     function isNewArtist(artist, signals) {
         if (!artist || isKnownArtist(artist, signals)) return false;
@@ -963,7 +963,7 @@
         const signals = normalizeSignals(options.signals);
         const requestedMode = options.mode && cfg.familiarity[options.mode] ? options.mode : 'mix';
         const policy = options.policy || 'general';
-        // «Només nous» només té sentit en una ràdio general o d'estil. En una cerca, o en la ràdio d'un artista, el
+        // «Només no escoltats» només té sentit en una ràdio general o d'estil. En una cerca, o en la ràdio d'un artista, el
         // conjunt el tria l'usuari: allà el mode s'aplica com a «Sorprèn-me» i no s'exclou res.
         const discover = requestedMode === 'new' && policy === 'general';
         const mode = requestedMode === 'new' && !discover ? 'surprise' : requestedMode;
@@ -1106,7 +1106,7 @@
         const items = buildItems(list, ctx, signals, null, rng);
         const pool = trimPool(items, cfg.queue.pool);
         const pref = eraPreference(ctx, signals, {});
-        // «Només nous» és d'una ràdio: un feed personalitzat no exclou res i el tracta com «Sorprèn-me».
+        // «Només no escoltats» és d'una ràdio: un feed personalitzat no exclou res i el tracta com «Sorprèn-me».
         const picked = options.mode && cfg.familiarity[options.mode] ? options.mode : 'mix';
         const mode = picked === 'new' ? 'surprise' : picked;
         const hasEnough = knownArtistCount(signals) >= 3;

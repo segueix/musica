@@ -704,7 +704,7 @@
         if (mode === 'mix') pool = [...new Set([...own, ...styled])];
         else if (mode === 'surprise') pool = styled.filter(item => !known(item));
         else if (mode === 'new') {
-            // «Només nous»: artistes que no coneixes, els del teu estil primer; el motor encara filtra el que has
+            // «Només no escoltats»: artistes que no coneixes, els del teu estil primer; el motor encara filtra el que has
             // deixat rastre, així que amb pocs candidats es pot ampliar a tots els que no coneixes.
             const fresh = candidates.filter(item => !known(item));
             const styledFresh = styled.filter(item => !known(item));
