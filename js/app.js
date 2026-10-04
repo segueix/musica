@@ -31,7 +31,6 @@ let categoryKeywordsCurrentCategory = null;
 let isCategoryKeywordsModalScrollLocked = false;
 let playlistsPage, playlistsList, playlistNameInput, createPlaylistBtn;
 let followPage, followGrid, followTabs;
-let addYoutuberModal;
 let contactModal;
 let heroSection, heroTitle, heroDescription, heroImage, heroDuration, heroButton, heroEyebrow, heroChannel;
 let pageTitle;
@@ -3421,7 +3420,6 @@ function initChannelElements() {
     followPage = document.getElementById('followPage');
     followGrid = document.getElementById('followGrid');
     followTabs = document.getElementById('followTabs');
-    addYoutuberModal = document.getElementById('addYoutuberModal');
     contactModal = document.getElementById('contactModal');
     channelPage = document.getElementById('channelPage');
     channelVideosGrid = document.getElementById('channelVideosGrid');
@@ -4630,9 +4628,7 @@ function bindChannelEvents() {
     bindChannelSearchInput(channelSearchInputDesktop);
     bindChannelSearchInput(channelSearchInputMobile);
 
-    const addYoutuberBtn = document.getElementById('addYoutuberBtn');
-    bindButtonInstant(addYoutuberBtn, openAddYoutuberModal);
-    initAddYoutuberModal();
+    initSuggestFormLink();
     // Icona «@» de la capçalera: contacte (Telegram, correu, informació per a artistes)
     bindButtonInstant(document.getElementById('contactBtn'), openContactModal);
     initContactModal();
@@ -12696,46 +12692,6 @@ function showFollow(tab = 'all', options = {}) {
     }
 }
 
-function initAddYoutuberModal() {
-    if (!addYoutuberModal) return;
-
-    const closeBtn = document.getElementById('closeAddYoutuberModal');
-    if (closeBtn) {
-        closeBtn.addEventListener('click', closeAddYoutuberModal);
-    }
-    addYoutuberModal.addEventListener('click', e => {
-        if (e.target === addYoutuberModal) closeAddYoutuberModal();
-    });
-
-    const submitBtn = document.getElementById('addYoutuberSubmitBtn');
-    if (submitBtn) {
-        submitBtn.addEventListener('click', submitYoutuber);
-    }
-}
-
-function openAddYoutuberModal() {
-    if (!addYoutuberModal) return;
-    const wasActive = addYoutuberModal.classList.contains('active');
-    addYoutuberModal.classList.add('active');
-    if (!wasActive) {
-        history.pushState({ ...(history.state || {}), modal: 'add-youtuber' }, '', window.location.href);
-    }
-    // Deixa respirar el fil principal abans de parsejar SVGs
-    setTimeout(() => {
-        requestAnimationFrame(() => refreshIcons(addYoutuberModal));
-    }, 50);
-}
-
-function closeAddYoutuberModal(fromPopstate = false) {
-    if (!addYoutuberModal) return;
-    const wasActive = addYoutuberModal.classList.contains('active');
-    addYoutuberModal.classList.remove('active');
-    if (wasActive && !fromPopstate && history.state && history.state.modal === 'add-youtuber') {
-        suppressNextPopstateNavigation = true;
-        history.back();
-    }
-}
-
 // ========== CONTACTE (icona @ de la capçalera) ==========
 
 function initContactModal() {
@@ -12768,40 +12724,25 @@ function closeContactModal(fromPopstate = false) {
     }
 }
 
-function submitYoutuber() {
+// «Suggereix un artista o grup» (franja «Hi falta algú?» d'Artistes i grups): enllaç directe al formulari de Google.
+// L'href de l'HTML és el de CONFIG.forms.suggestYoutuberUrl (aquí es manté al dia); a l'app d'escriptori instal·lada
+// s'obre a la mateixa finestra, com sempre, i a la resta en una pestanya nova.
+function initSuggestFormLink() {
+    const link = document.getElementById('addYoutuberBtn');
+    if (!link) return;
     const formUrl = CONFIG?.forms?.suggestYoutuberUrl;
-    const messageDiv = document.getElementById('addYoutuberMessage');
-
-    if (!formUrl) {
-        if (messageDiv) {
-            messageDiv.textContent = 'No s’ha configurat encara l’enllaç del formulari.';
-            messageDiv.className = 'add-youtuber-message add-youtuber-message--error';
-            messageDiv.classList.remove('hidden');
+    if (formUrl) link.href = formUrl;
+    link.addEventListener('click', event => {
+        const url = link.href;
+        if (!url) return;
+        const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+            navigator.userAgent || ''
+        );
+        if (window.matchMedia('(display-mode: standalone)').matches && !isMobileDevice) {
+            event.preventDefault();
+            window.location.assign(url);
         }
-        return;
-    }
-
-    if (messageDiv) {
-        messageDiv.classList.add('hidden');
-    }
-
-    const userAgent = navigator.userAgent || '';
-    const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
-    const isStandaloneDesktopApp = window.matchMedia('(display-mode: standalone)').matches && !isMobileDevice;
-
-    if (isStandaloneDesktopApp) {
-        closeAddYoutuberModal();
-        window.location.assign(formUrl);
-        return;
-    }
-
-    const newWindow = window.open(formUrl, '_blank', 'noopener,noreferrer');
-    if (!newWindow) {
-        window.location.href = formUrl;
-        return;
-    }
-
-    closeAddYoutuberModal();
+    });
 }
 
 async function openChannelProfile(channelId) {
@@ -13124,11 +13065,6 @@ window.addEventListener('popstate', e => {
 
     if (backgroundModal?.classList.contains('active')) {
         closeBackgroundModal(true);
-        return;
-    }
-
-    if (addYoutuberModal?.classList.contains('active')) {
-        closeAddYoutuberModal(true);
         return;
     }
 
