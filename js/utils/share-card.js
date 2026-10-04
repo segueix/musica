@@ -57,9 +57,11 @@
             .trim();
     }
 
-    function countText(count) {
+    // Una categoria compta grups (artistes); la resta, cançons.
+    function countText(count, kind = 'playlist') {
         const total = Number(count);
         if (!Number.isFinite(total) || total <= 0) return '';
+        if (kind === 'category') return total === 1 ? '1 artista' : `${Math.floor(total)} artistes`;
         return total === 1 ? '1 cançó' : `${Math.floor(total)} cançons`;
     }
 
@@ -85,7 +87,7 @@
             kindLabel: info.label,
             name,
             count: Number(input.count) > 0 ? Math.floor(Number(input.count)) : 0,
-            countText: countText(input.count),
+            countText: countText(input.count, kind),
             caption: `${info.label} · ${name}`,
             fileName: `segueix-${info.slug}-${slugify(name)}.png`,
         };

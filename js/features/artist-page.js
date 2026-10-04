@@ -315,6 +315,8 @@
         });
         setBio(description);
         renderRadios();
+        // «Les teves categories»: afegir o treure aquest grup de les categories pròpies (user-categories.js)
+        app.features.userCategories?.showForArtist?.({ channelId: state.channelId, name: state.name, program });
         bindOnce();
     }
 

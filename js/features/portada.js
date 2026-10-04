@@ -299,8 +299,9 @@
             radarItems.forEach(item => taken.delete(String(item.video.id)));
         }
 
-        // F · estils reals
-        model.styles = discovery.summarizeStyles({ videos: all, channels });
+        // F · estils reals i les teves categories (user-categories.js), en l'ordre que hagis triat arrossegant
+        model.styleBase = discovery.summarizeStyles({ videos: all, channels });
+        model.styles = arrangeStyles(model.styleBase, ctx.userCategories, ctx.styleOrder, channels);
 
         freshRow.forEach(explain);
         model.radar?.items.forEach(item => explain(item.video));
@@ -314,6 +315,13 @@
                 .slice(0, FRESH_ALL);
         }
         return model;
+    }
+
+    // Estils + categories pròpies en l'ordre desat. Sense el mòdul de categories, només els estils.
+    function arrangeStyles(base, userCategories, order, channels) {
+        const uc = app.features.userCategories;
+        if (!uc?.arrangeTiles) return toArray(base);
+        return uc.arrangeTiles(toArray(base), uc.tilesFor(toArray(userCategories), { channels }), order || null);
     }
 
     // ---------- HTML (pur) ----------
@@ -477,10 +485,13 @@
         const secondary = styles.filter(style => !style.primary);
         const tile = (style, extra) => {
             const label = esc(style.label);
-            const count = style.artists === 1 ? '1 artista' : `${style.artists} artistes`;
+            const count =
+                style.artists === 1 ? '1 artista' : style.artists ? `${style.artists} artistes` : 'Sense artistes';
+            const kind = style.user ? 'La teva categoria' : 'Estil';
             return `
-                <li class="pt-style-cell${extra ? ' pt-style-cell--extra' : ''}"${extra && !expanded ? ' hidden' : ''}>
-                    <button type="button" class="pt-style" data-pt-style="${label}" aria-label="${label}, ${count}">
+                <li class="pt-style-cell${extra ? ' pt-style-cell--extra' : ''}${style.user ? ' pt-style-cell--user' : ''}"${extra && !expanded ? ' hidden' : ''}>
+                    <button type="button" class="pt-style${style.user ? ' pt-style--user' : ''}" data-pt-style="${label}" aria-label="${kind}: ${label}, ${count}. Alt i fletxes per moure-la">
+                        ${style.user ? '<span class="pt-style__kind">La teva</span>' : ''}
                         <span class="pt-style__faces" aria-hidden="true">${style.avatars
                             .map(
                                 src =>
@@ -497,7 +508,8 @@
                 ${headHtml({
                     id: 'ptH-styles',
                     title: 'Tria el teu so',
-                    subtitle: 'Cada estil obre les cançons dels seus artistes',
+                    subtitle:
+                        'Cada estil obre les cançons dels seus artistes. Mantén premut un estil i arrossega’l per canviar-ne l’ordre.',
                 })}
                 <ul class="pt-styles" id="ptStyles">
                     ${styles
@@ -505,6 +517,13 @@
                         .map(style => tile(style, false))
                         .join('')}
                     ${secondary.map(style => tile(style, true)).join('')}
+                    <li class="pt-style-cell pt-style-cell--add">
+                        <button type="button" class="pt-style pt-style--add" data-uc-create>
+                            <span class="pt-style__plus" aria-hidden="true">+</span>
+                            <span class="pt-style__label">Crea una categoria</span>
+                            <span class="pt-style__count">Amb els grups que vulguis</span>
+                        </button>
+                    </li>
                 </ul>
                 ${
                     secondary.length
@@ -600,6 +619,8 @@
             recent: input.recent,
             all: input.all,
             channels: feed?.channels,
+            userCategories: app.features.userCategories?.list?.() || [],
+            styleOrder: app.features.userCategories?.getHomeOrder?.() || null,
             history: context.history,
             liked: context.liked,
             followedIds: context.followedIds,
@@ -661,6 +682,7 @@
         container.removeAttribute('aria-busy');
         updateEntry();
         syncRowControls();
+        setupStyleSorting();
         return true;
     }
 
@@ -674,7 +696,96 @@
         if (!fresh) return false;
         old.replaceWith(fresh);
         syncRowControls();
+        setupStyleSorting();
         return true;
+    }
+
+    // ---------- Ordre manual de «Tria el teu so» ----------
+    // Tàctil: mantenir premuda una rajola (250 ms) i arrossegar-la; ratolí: arrossegar; teclat: Alt + fletxes.
+    // L'ordre es desa (user-categories.setHomeOrder) i també mana a la barra d'estils de les vistes d'estil.
+
+    function styleLabelsFromDom(list) {
+        return Array.from(list.querySelectorAll('.pt-style-cell:not(.pt-style-cell--add) [data-pt-style]')).map(
+            button => button.dataset.ptStyle
+        );
+    }
+
+    function saveStyleOrder(labels, focusLabel = '') {
+        const uc = app.features.userCategories;
+        if (!uc?.setHomeOrder || !state.model) return;
+        uc.setHomeOrder(labels);
+        const tiles = toArray(state.model.styles);
+        state.model.styles = uc.arrangeTiles(
+            tiles.filter(tile => !tile.user),
+            tiles.filter(tile => tile.user),
+            labels
+        );
+        swapSection('styles', stylesHtml(state.model.styles, state.expanded.styles));
+        if (focusLabel) {
+            Array.from(state.container?.querySelectorAll?.('#ptStyles [data-pt-style]') || [])
+                .find(button => button.dataset.ptStyle === focusLabel)
+                ?.focus?.({ preventScroll: true });
+        }
+    }
+
+    function setupStyleSorting() {
+        const list = state.container?.querySelector?.('#ptStyles');
+        if (!list || list.dataset.ptSortable === '1' || typeof window.Sortable?.create !== 'function') return;
+        list.dataset.ptSortable = '1';
+        window.Sortable.create(list, {
+            animation: 160,
+            draggable: '.pt-style-cell:not(.pt-style-cell--add)',
+            filter: '.pt-style-cell--add',
+            preventOnFilter: false,
+            ghostClass: 'is-ghost',
+            chosenClass: 'is-chosen',
+            dragClass: 'is-dragging',
+            delay: 250,
+            delayOnTouchOnly: true,
+            touchStartThreshold: 6,
+            onMove: event => !event.related?.classList?.contains('pt-style-cell--add'),
+            onEnd: event => {
+                if (event.oldIndex === event.newIndex) return;
+                const labels = styleLabelsFromDom(list);
+                // Repintar després que Sortable acabi de tocar el DOM.
+                window.setTimeout(() => {
+                    saveStyleOrder(labels);
+                    toast('Has canviat l’ordre dels estils.');
+                }, 0);
+            },
+        });
+    }
+
+    // Alt + fletxa (o Alt + Re Pàg / Av Pàg) mou la rajola enfocada un lloc enrere o endavant.
+    function moveStyleWithKeyboard(event) {
+        const button = event.target.closest?.('#ptStyles [data-pt-style]');
+        if (!button || !event.altKey) return false;
+        const back = event.key === 'ArrowLeft' || event.key === 'ArrowUp';
+        const forward = event.key === 'ArrowRight' || event.key === 'ArrowDown';
+        if (!back && !forward) return false;
+        const labels = styleLabelsFromDom(button.closest('#ptStyles'));
+        const from = labels.indexOf(button.dataset.ptStyle);
+        const to = from + (forward ? 1 : -1);
+        event.preventDefault();
+        if (from < 0 || to < 0 || to >= labels.length) return true;
+        const [moved] = labels.splice(from, 1);
+        labels.splice(to, 0, moved);
+        saveStyleOrder(labels, moved);
+        return true;
+    }
+
+    // Les categories pròpies han canviat (creades, esborrades, grups): es refà només «Tria el teu so».
+    function refreshStyles() {
+        const uc = app.features.userCategories;
+        if (!uc || !state.model?.styleBase || !state.container?.querySelector?.('[data-pt-section="styles"]')) return;
+        state.model.styles = arrangeStyles(
+            state.model.styleBase,
+            uc.list(),
+            uc.getHomeOrder(),
+            app.features.discovery?.normalizeChannels?.(state.lastInput?.feed?.channels) ||
+                state.lastInput?.feed?.channels
+        );
+        swapSection('styles', stylesHtml(state.model.styles, state.expanded.styles));
     }
 
     // Retorna true si ha pintat la portada (si no, l'app fa servir la graella clàssica).
@@ -1138,6 +1249,7 @@
 
     // Fletxes esquerra/dreta entre les cançons d'una fila.
     function onKeydown(event) {
+        if (moveStyleWithKeyboard(event)) return;
         if (event.key !== 'ArrowRight' && event.key !== 'ArrowLeft') return;
         const media = event.target.closest?.('.pt-card__media');
         if (!media) return;
@@ -1180,6 +1292,7 @@
         window.addEventListener('segueix:queue-changed', updateEntry);
         window.addEventListener('segueix:discovery-mode-changed', syncModeInputs);
         window.addEventListener('segueix:music-prefs-changed', updateEntry);
+        window.addEventListener('segueix:user-categories-changed', refreshStyles);
         observeLive();
     }
 
