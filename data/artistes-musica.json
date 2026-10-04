@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-03T21:30:00.000Z",
+  "updatedAt": "2026-10-04T12:18:29.646Z",
   "artists": [
     {
       "name": "31 FAM",
@@ -49,7 +49,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.365Z",
+          "checkedAt": "2026-10-04T12:18:29.504Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:10.717Z",
           "wikidataRaw": [
             "trap",
@@ -102,7 +102,25 @@
         "https://www.youtube.com/channel/UCDiHZrbEw6zc_DaFl5wsmRA"
       ],
       "lastChecked": "2026-10-02T09:00:00.000Z",
-      "notes": "Alta manual verificada (llista de l'usuari del 2026-10-02). Canal «Tema» (Topic) de YouTube."
+      "notes": "Alta manual verificada (llista de l'usuari del 2026-10-02). Canal «Tema» (Topic) de YouTube.",
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.504Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.504Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Ai Ai Ai",
@@ -184,14 +202,14 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.365Z",
+          "checkedAt": "2026-10-04T12:18:29.504Z",
           "musicbrainzCheckedAt": "2026-09-25T17:11:16.208Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-28T10:52:15.365Z",
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.504Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
           "musicbrainzTagsCheckedAt": "2026-09-25T17:11:16.208Z",
@@ -289,7 +307,7 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.365Z",
+          "checkedAt": "2026-10-04T12:18:29.505Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:13.253Z",
           "wikidataRaw": [
             "música tradicional"
@@ -343,7 +361,25 @@
         "https://www.youtube.com/channel/UCz-O8jJsp_uT_vORvd9Etbg"
       ],
       "lastChecked": "2026-10-02T09:00:00.000Z",
-      "notes": "Alta manual verificada (llista de l'usuari del 2026-10-02). Canal «Tema» (Topic) de YouTube."
+      "notes": "Alta manual verificada (llista de l'usuari del 2026-10-02). Canal «Tema» (Topic) de YouTube.",
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.505Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.505Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Albert Guinovart i Mingacho",
@@ -428,7 +464,7 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.368Z",
+          "checkedAt": "2026-10-04T12:18:29.508Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:14.515Z",
           "wikidataRaw": [
             "sardana",
@@ -563,7 +599,7 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.369Z",
+          "checkedAt": "2026-10-04T12:18:29.509Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:15.777Z",
           "wikidataRaw": [
             "rock",
@@ -630,10 +666,25 @@
       ],
       "lastChecked": "2026-09-28T15:55:21.005Z",
       "notes": "Apareix com a pop en català, però convé revisar si el repertori és principalment en català.",
-      "genresRaw": [
-        "Pop"
-      ],
-      "displayName": "Alfred García"
+      "genresRaw": [],
+      "displayName": "Alfred García",
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.509Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.509Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Al·lèrgiques al Pol·len",
@@ -683,7 +734,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.370Z",
+          "checkedAt": "2026-10-04T12:18:29.510Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:17.051Z",
           "wikidataRaw": [
             "pop-rock",
@@ -705,9 +756,7 @@
     {
       "name": "Alosa",
       "aliases": [],
-      "genres": [
-        "Folk i arrel"
-      ],
+      "genres": [],
       "territories": [],
       "languages": [
         "ca"
@@ -741,7 +790,25 @@
         "manual-user-2026-10-02"
       ],
       "lastChecked": "2026-09-30T12:15:00.000Z",
-      "notes": "Alta manual verificada: duet de folk d'arrel catalana i canal oficial de YouTube."
+      "notes": "Alta manual verificada: duet de folk d'arrel catalana i canal oficial de YouTube.",
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.510Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.510Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Anaïs Vila",
@@ -776,7 +843,25 @@
         "https://www.youtube.com/channel/UCPzAMvgbZZqisrkmVSgqIHg"
       ],
       "lastChecked": "2026-10-02T09:00:00.000Z",
-      "notes": "Alta manual verificada (llista de l'usuari del 2026-10-02). Canal «Tema» (Topic) de YouTube."
+      "notes": "Alta manual verificada (llista de l'usuari del 2026-10-02). Canal «Tema» (Topic) de YouTube.",
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.510Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.510Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Andreu Rifé i Oro",
@@ -873,14 +958,14 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.370Z",
+          "checkedAt": "2026-10-04T12:18:29.510Z",
           "musicbrainzCheckedAt": "2026-09-25T17:11:17.450Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-28T10:52:15.370Z",
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.510Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
           "musicbrainzTagsCheckedAt": "2026-09-25T17:11:17.450Z",
@@ -890,9 +975,7 @@
           "musicbrainzReleaseGroupCount": 2
         }
       },
-      "genresRaw": [
-        "Cançó d'autor"
-      ]
+      "genresRaw": []
     },
     {
       "name": "Anna Andreu",
@@ -937,16 +1020,29 @@
       ],
       "lastChecked": "2026-09-29T17:03:26.977Z",
       "notes": "",
-      "genresRaw": [
-        "Cançó d'autor"
-      ]
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.510Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.510Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Anna Ferrer",
       "aliases": [],
-      "genres": [
-        "Folk i arrel"
-      ],
+      "genres": [],
       "territories": [],
       "languages": [
         "ca"
@@ -972,7 +1068,25 @@
         "https://www.enderrock.cat/noticies/etiqueta/Anna%2BFerrer"
       ],
       "lastChecked": "2026-09-30T12:15:00.000Z",
-      "notes": "Alta manual verificada: artista menorquina de folk i arrel amb repertori en català i canal oficial d'artista."
+      "notes": "Alta manual verificada: artista menorquina de folk i arrel amb repertori en català i canal oficial d'artista.",
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.510Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.510Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Anonymous (grup)",
@@ -1064,7 +1178,7 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.371Z",
+          "checkedAt": "2026-10-04T12:18:29.510Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:20.957Z",
           "wikidataRaw": [
             "punk rock"
@@ -1169,7 +1283,7 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.371Z",
+          "checkedAt": "2026-10-04T12:18:29.511Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:22.653Z",
           "wikidataRaw": [
             "música clàssica"
@@ -1240,7 +1354,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.373Z",
+          "checkedAt": "2026-10-04T12:18:29.513Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:23.983Z",
           "wikidataRaw": [
             "pop-rock",
@@ -1309,7 +1423,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.374Z",
+          "checkedAt": "2026-10-04T12:18:29.514Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:25.245Z",
           "wikidataRaw": [
             "reggae"
@@ -1413,14 +1527,14 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.374Z",
+          "checkedAt": "2026-10-04T12:18:29.514Z",
           "musicbrainzCheckedAt": "2026-09-25T17:11:18.691Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-28T10:52:15.374Z",
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.514Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
           "musicbrainzTagsCheckedAt": "2026-09-25T17:11:18.691Z",
@@ -1519,7 +1633,7 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.377Z",
+          "checkedAt": "2026-10-04T12:18:29.516Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:28.032Z",
           "wikidataRaw": [
             "tecno",
@@ -1594,9 +1708,24 @@
       ],
       "lastChecked": "2026-09-28T15:55:19.331Z",
       "notes": "Nova etapa més pop i en català.",
-      "genresRaw": [
-        "Indie-pop / pop"
-      ]
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.516Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.516Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Auxili",
@@ -1643,7 +1772,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.377Z",
+          "checkedAt": "2026-10-04T12:18:29.516Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:30.688Z",
           "wikidataRaw": [
             "reggae"
@@ -1704,9 +1833,24 @@
       ],
       "lastChecked": "2026-09-29T11:23:48.235Z",
       "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
-      "genresRaw": [
-        "Urbana"
-      ]
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.516Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.516Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Banda Neon",
@@ -1742,9 +1886,24 @@
       ],
       "lastChecked": "2026-10-03T19:30:00.000Z",
       "notes": "Alta manual. Canal de YouTube indicat per l'usuari; categoria Rumba / Mestissatge.",
-      "genresRaw": [
-        "mestissatge"
-      ]
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.516Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.516Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Baya Baye",
@@ -1789,9 +1948,24 @@
       ],
       "lastChecked": "2026-09-29T11:23:48.383Z",
       "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
-      "genresRaw": [
-        "Urbana"
-      ]
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.516Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.516Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Bèrnia",
@@ -1836,9 +2010,24 @@
       ],
       "lastChecked": "2026-09-28T15:55:20.040Z",
       "notes": "Classificat al Sona9 2026 com a mestissatge pop.",
-      "genresRaw": [
-        "Mestissatge pop"
-      ]
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.516Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.516Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Berta",
@@ -1921,14 +2110,14 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.377Z",
+          "checkedAt": "2026-10-04T12:18:29.516Z",
           "musicbrainzCheckedAt": "2026-09-25T17:11:21.173Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-28T10:52:15.377Z",
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.516Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
           "musicbrainzTagsCheckedAt": "2026-09-25T17:11:21.173Z",
@@ -2027,7 +2216,7 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.378Z",
+          "checkedAt": "2026-10-04T12:18:29.517Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:33.227Z",
           "wikidataRaw": [
             "rock",
@@ -2134,14 +2323,14 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.378Z",
+          "checkedAt": "2026-10-04T12:18:29.517Z",
           "musicbrainzCheckedAt": "2026-09-25T17:11:22.417Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-28T10:52:15.378Z",
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.517Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
           "musicbrainzTagsCheckedAt": "2026-09-25T17:11:22.417Z",
@@ -2231,14 +2420,14 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.378Z",
+          "checkedAt": "2026-10-04T12:18:29.517Z",
           "musicbrainzCheckedAt": "2026-09-25T17:11:23.658Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-28T10:52:15.378Z",
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.517Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
           "musicbrainzTagsCheckedAt": "2026-09-25T17:11:23.658Z",
@@ -2344,7 +2533,7 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.379Z",
+          "checkedAt": "2026-10-04T12:18:29.518Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:37.011Z",
           "wikidataRaw": [
             "rock",
@@ -2422,7 +2611,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.382Z",
+          "checkedAt": "2026-10-04T12:18:29.520Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:38.276Z",
           "wikidataRaw": [
             "ska",
@@ -2485,7 +2674,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.383Z",
+          "checkedAt": "2026-10-04T12:18:29.521Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:40.832Z",
           "wikidataRaw": [
             "reggae",
@@ -2509,9 +2698,7 @@
     {
       "name": "Calagher",
       "aliases": [],
-      "genres": [
-        "Urbana"
-      ],
+      "genres": [],
       "territories": [],
       "languages": [
         "ca"
@@ -2574,9 +2761,7 @@
       ],
       "lastChecked": "2026-09-29T11:22:49.642Z",
       "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
-      "genresRaw": [
-        "Urbana"
-      ],
+      "genresRaw": [],
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-09-29T11:23:50.307Z",
@@ -2585,6 +2770,21 @@
           "resultCount": 3,
           "bestScore": 58,
           "autoAcceptedId": null
+        },
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.521Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.521Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
         }
       }
     },
@@ -2628,7 +2828,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.384Z",
+          "checkedAt": "2026-10-04T12:18:29.521Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:42.495Z",
           "wikidataRaw": [
             "òpera"
@@ -2734,14 +2934,14 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.384Z",
+          "checkedAt": "2026-10-04T12:18:29.521Z",
           "musicbrainzCheckedAt": "2026-09-25T17:11:26.138Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-28T10:52:15.384Z",
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.521Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
           "musicbrainzTagsCheckedAt": "2026-09-25T17:11:26.138Z",
@@ -2836,14 +3036,14 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.384Z",
+          "checkedAt": "2026-10-04T12:18:29.521Z",
           "musicbrainzCheckedAt": "2026-09-25T17:11:27.377Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-28T10:52:15.384Z",
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.521Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
           "musicbrainzTagsCheckedAt": "2026-09-25T17:11:27.377Z",
@@ -2858,9 +3058,7 @@
     {
       "name": "Ceaxe",
       "aliases": [],
-      "genres": [
-        "Urbana"
-      ],
+      "genres": [],
       "territories": [],
       "languages": [
         "ca"
@@ -2896,17 +3094,29 @@
       ],
       "lastChecked": "2026-09-29T11:23:48.558Z",
       "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
-      "genresRaw": [
-        "Urbana"
-      ]
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.521Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.521Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Celobert",
       "aliases": [],
-      "genres": [
-        "Pop",
-        "Indie / Alternativa"
-      ],
+      "genres": [],
       "territories": [],
       "languages": [
         "ca"
@@ -2942,9 +3152,24 @@
       ],
       "lastChecked": "2026-09-28T15:53:50.745Z",
       "notes": "EPs 2025-26; indie-pop en català.",
-      "genresRaw": [
-        "Indie-pop"
-      ]
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.521Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.521Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Cesk Freixas",
@@ -2988,7 +3213,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.385Z",
+          "checkedAt": "2026-10-04T12:18:29.523Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:46.530Z",
           "wikidataRaw": [
             "música tradicional",
@@ -3013,10 +3238,7 @@
     {
       "name": "Cloe Riembau",
       "aliases": [],
-      "genres": [
-        "Pop",
-        "Indie / Alternativa"
-      ],
+      "genres": [],
       "territories": [],
       "languages": [
         "ca"
@@ -3052,9 +3274,24 @@
       ],
       "lastChecked": "2026-09-28T15:55:19.249Z",
       "notes": "Guanyadora del Sona9; debut indie-pop el 2026.",
-      "genresRaw": [
-        "Indie-pop"
-      ]
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.523Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.523Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Cobla Mediterrània",
@@ -3140,14 +3377,14 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.385Z",
+          "checkedAt": "2026-10-04T12:18:29.523Z",
           "musicbrainzCheckedAt": "2026-09-25T17:11:28.620Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-28T10:52:15.385Z",
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.523Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
           "musicbrainzTagsCheckedAt": "2026-09-25T17:11:28.620Z",
@@ -3206,7 +3443,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.389Z",
+          "checkedAt": "2026-10-04T12:18:29.526Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:50.334Z",
           "wikidataRaw": [
             "jazz rock",
@@ -3302,14 +3539,14 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.389Z",
+          "checkedAt": "2026-10-04T12:18:29.526Z",
           "musicbrainzCheckedAt": "2026-09-25T17:11:29.861Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-28T10:52:15.389Z",
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.526Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
           "musicbrainzTagsCheckedAt": "2026-09-25T17:11:29.861Z",
@@ -3367,7 +3604,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.389Z",
+          "checkedAt": "2026-10-04T12:18:29.526Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:53.138Z",
           "wikidataRaw": [
             "punk rock"
@@ -3388,10 +3625,7 @@
     {
       "name": "Cristina Monllau",
       "aliases": [],
-      "genres": [
-        "Pop",
-        "Indie / Alternativa"
-      ],
+      "genres": [],
       "territories": [],
       "languages": [
         "ca"
@@ -3419,9 +3653,24 @@
       ],
       "lastChecked": "2026-09-28T15:53:50.745Z",
       "notes": "Classificada al Sona9 2026 com a pop-indie.",
-      "genresRaw": [
-        "Pop-indie"
-      ]
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.526Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.526Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Dàmaris Gelabert",
@@ -3468,7 +3717,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.390Z",
+          "checkedAt": "2026-10-04T12:18:29.527Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:55.679Z",
           "wikidataRaw": [
             "música infantil"
@@ -3489,10 +3738,7 @@
     {
       "name": "Dan Peralbo & El Comboi",
       "aliases": [],
-      "genres": [
-        "Pop",
-        "Rock"
-      ],
+      "genres": [],
       "territories": [],
       "languages": [
         "ca"
@@ -3528,10 +3774,25 @@
       ],
       "lastChecked": "2026-09-28T15:53:50.745Z",
       "notes": "Inclòs entre les noves veus del pop català.",
-      "genresRaw": [
-        "Power pop / rock"
-      ],
-      "displayName": "Dan Peralbo i El Comboi"
+      "genresRaw": [],
+      "displayName": "Dan Peralbo i El Comboi",
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.527Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.527Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "dani6ix & IZZKID",
@@ -3576,9 +3837,24 @@
       ],
       "lastChecked": "2026-09-29T11:23:48.627Z",
       "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
-      "genresRaw": [
-        "Urbana"
-      ]
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.527Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.527Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Daveu",
@@ -3623,10 +3899,25 @@
       ],
       "lastChecked": "2026-09-28T15:55:18.341Z",
       "notes": "Projecte creat el 2025; Sona9 el defineix com pop en català.",
-      "genresRaw": [
-        "Pop / EDM / urbà"
-      ],
-      "displayName": "Daveu"
+      "genresRaw": [],
+      "displayName": "Daveu",
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.527Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.527Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Derbi Junior",
@@ -3671,9 +3962,24 @@
       ],
       "lastChecked": "2026-09-28T15:55:18.709Z",
       "notes": "Inclòs per 3Cat en el mapa de futur del pop.",
-      "genresRaw": [
-        "Pop / indie"
-      ]
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.527Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.527Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Desperta Ferro",
@@ -3708,7 +4014,25 @@
         "https://www.youtube.com/channel/UCtad7HKeiW-TwPgX-ZIOGZw"
       ],
       "lastChecked": "2026-10-03T19:40:00.000Z",
-      "notes": "Canal Topic verificat manualment; gènere Punk."
+      "notes": "Canal Topic verificat manualment; gènere Punk.",
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.527Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.527Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Doctor Prats",
@@ -3761,7 +4085,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.392Z",
+          "checkedAt": "2026-10-04T12:18:29.529Z",
           "musicbrainzCheckedAt": "2026-09-25T16:46:59.570Z",
           "wikidataRaw": [
             "funk",
@@ -3881,7 +4205,7 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.393Z",
+          "checkedAt": "2026-10-04T12:18:29.530Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:00.831Z",
           "wikidataRaw": [
             "ska",
@@ -4008,7 +4332,7 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.394Z",
+          "checkedAt": "2026-10-04T12:18:29.531Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:02.350Z",
           "wikidataRaw": [
             "pop-rock",
@@ -4120,8 +4444,24 @@
           "resultCount": 3,
           "bestScore": 85,
           "autoAcceptedId": null
+        },
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.531Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.531Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
         }
-      }
+      },
+      "genresRaw": []
     },
     {
       "name": "Ebri Knight",
@@ -4171,7 +4511,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.395Z",
+          "checkedAt": "2026-10-04T12:18:29.532Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:04.874Z",
           "wikidataRaw": [
             "folk rock"
@@ -4232,7 +4572,7 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.395Z",
+          "checkedAt": "2026-10-04T12:18:29.532Z",
           "musicbrainzCheckedAt": "2026-09-25T17:11:32.343Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
@@ -4309,7 +4649,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.396Z",
+          "checkedAt": "2026-10-04T12:18:29.532Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:07.399Z",
           "wikidataRaw": [
             "folk"
@@ -4360,7 +4700,25 @@
         "https://www.youtube.com/channel/UCfEMFCX--mYjYsAWSKvKMhA"
       ],
       "lastChecked": "2026-10-02T09:00:00.000Z",
-      "notes": "Alta manual verificada (llista de l'usuari del 2026-10-02). Canal «Tema» (Topic) de YouTube."
+      "notes": "Alta manual verificada (llista de l'usuari del 2026-10-02). Canal «Tema» (Topic) de YouTube.",
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.532Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.532Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "El Pont d'Arcalís",
@@ -4443,7 +4801,7 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.397Z",
+          "checkedAt": "2026-10-04T12:18:29.534Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:09.914Z",
           "wikidataRaw": [
             "folk",
@@ -4523,7 +4881,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.401Z",
+          "checkedAt": "2026-10-04T12:18:29.537Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:11.214Z",
           "wikidataRaw": [
             "iòdel",
@@ -4641,7 +4999,7 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.401Z",
+          "checkedAt": "2026-10-04T12:18:29.538Z",
           "musicbrainzCheckedAt": "2026-09-25T17:11:34.825Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
@@ -4680,10 +5038,7 @@
     {
       "name": "Elo",
       "aliases": [],
-      "genres": [
-        "Pop",
-        "Urbana"
-      ],
+      "genres": [],
       "territories": [],
       "languages": [
         "ca"
@@ -4711,9 +5066,24 @@
       ],
       "lastChecked": "2026-09-28T15:55:20.497Z",
       "notes": "Sona9 2026: pop urbà.",
-      "genresRaw": [
-        "Pop urbà"
-      ]
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.538Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.538Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Elphomega",
@@ -4799,7 +5169,7 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.402Z",
+          "checkedAt": "2026-10-04T12:18:29.538Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:13.850Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [
@@ -4872,7 +5242,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.404Z",
+          "checkedAt": "2026-10-04T12:18:29.540Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:15.687Z",
           "wikidataRaw": [
             "folk",
@@ -4947,7 +5317,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.404Z",
+          "checkedAt": "2026-10-04T12:18:29.541Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:17.507Z",
           "wikidataRaw": [
             "folk rock"
@@ -5090,7 +5460,7 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.405Z",
+          "checkedAt": "2026-10-04T12:18:29.541Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:18.767Z",
           "wikidataRaw": [
             "pop-rock"
@@ -5153,7 +5523,7 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.405Z",
+          "checkedAt": "2026-10-04T12:18:29.541Z",
           "musicbrainzCheckedAt": "2026-09-25T17:11:36.065Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
@@ -5256,7 +5626,7 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.406Z",
+          "checkedAt": "2026-10-04T12:18:29.543Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:21.601Z",
           "wikidataRaw": [
             "òpera",
@@ -5286,10 +5656,7 @@
     {
       "name": "En Rick",
       "aliases": [],
-      "genres": [
-        "Pop",
-        "Electrònica"
-      ],
+      "genres": [],
       "territories": [],
       "languages": [
         "ca"
@@ -5317,9 +5684,24 @@
       ],
       "lastChecked": "2026-09-28T15:55:20.407Z",
       "notes": "Sona9 2026: pop electrònic.",
-      "genresRaw": [
-        "Pop electrònic"
-      ]
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.543Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.543Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "enMatu",
@@ -5364,9 +5746,24 @@
       ],
       "lastChecked": "2026-09-29T11:23:48.746Z",
       "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
-      "genresRaw": [
-        "Urbana"
-      ]
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.543Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.543Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Enric Barbat",
@@ -5401,7 +5798,25 @@
         "https://www.youtube.com/channel/UCc-fcN1V8NLdND4zBDMBrnA"
       ],
       "lastChecked": "2026-10-02T09:00:00.000Z",
-      "notes": "Alta manual verificada (llista de l'usuari del 2026-10-02). Canal «Tema» (Topic) de YouTube."
+      "notes": "Alta manual verificada (llista de l'usuari del 2026-10-02). Canal «Tema» (Topic) de YouTube.",
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.543Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.543Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Enric Hernàez",
@@ -5436,7 +5851,25 @@
         "https://www.youtube.com/channel/UCpdGiiitzh2ypWsOaSyvL0A"
       ],
       "lastChecked": "2026-10-02T09:00:00.000Z",
-      "notes": "Alta manual verificada (llista de l'usuari del 2026-10-02). Canal «Tema» (Topic) de YouTube."
+      "notes": "Alta manual verificada (llista de l'usuari del 2026-10-02). Canal «Tema» (Topic) de YouTube.",
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.543Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.543Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Enric Madriguera i Rodon",
@@ -5494,14 +5927,14 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.406Z",
+          "checkedAt": "2026-10-04T12:18:29.543Z",
           "musicbrainzCheckedAt": "2026-09-25T17:11:37.306Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-28T10:52:15.406Z",
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.543Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
           "musicbrainzTagsCheckedAt": "2026-09-25T17:11:37.306Z",
@@ -5600,7 +6033,7 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.407Z",
+          "checkedAt": "2026-10-04T12:18:29.543Z",
           "musicbrainzCheckedAt": "2026-09-25T17:11:38.554Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
@@ -5612,7 +6045,7 @@
             "folk",
             "country"
           ],
-          "wikidataWorkCheckedAt": "2026-09-28T10:52:15.407Z",
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.543Z",
           "wikidataWorkEvidence": [
             {
               "genre": "folk",
@@ -5718,7 +6151,7 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.407Z",
+          "checkedAt": "2026-10-04T12:18:29.543Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:25.663Z",
           "wikidataRaw": [
             "pop"
@@ -5780,7 +6213,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.408Z",
+          "checkedAt": "2026-10-04T12:18:29.545Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:27.035Z",
           "wikidataRaw": [
             "música urbana",
@@ -5842,9 +6275,24 @@
       ],
       "lastChecked": "2026-10-02T09:00:00.000Z",
       "notes": "Alta manual verificada (llista de l'usuari del 2026-10-02).",
-      "genresRaw": [
-        "Cançó d'autor"
-      ]
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.545Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.545Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Ferran Palau",
@@ -5893,7 +6341,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.409Z",
+          "checkedAt": "2026-10-04T12:18:29.545Z",
           "musicbrainzCheckedAt": "2026-09-25T17:11:39.795Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
@@ -6002,8 +6450,32 @@
           "resultCount": 3,
           "bestScore": 85,
           "autoAcceptedId": null
+        },
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.546Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": null,
+          "wikidataRaw": [
+            "folk punk",
+            "garage punk",
+            "punk rock"
+          ],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "classificat",
+          "wikidataWorkEvidence": []
         }
-      }
+      },
+      "genresRaw": [
+        "folk punk",
+        "garage punk",
+        "punk rock"
+      ]
     },
     {
       "name": "Figa Flawas",
@@ -6046,7 +6518,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.410Z",
+          "checkedAt": "2026-10-04T12:18:29.548Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:29.779Z",
           "wikidataRaw": [
             "pop",
@@ -6116,7 +6588,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.411Z",
+          "checkedAt": "2026-10-04T12:18:29.548Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:31.320Z",
           "wikidataRaw": [
             "música urbana"
@@ -6223,7 +6695,7 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.413Z",
+          "checkedAt": "2026-10-04T12:18:29.550Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:32.721Z",
           "wikidataRaw": [
             "música mediterrània",
@@ -6331,14 +6803,14 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.413Z",
+          "checkedAt": "2026-10-04T12:18:29.550Z",
           "musicbrainzCheckedAt": "2026-09-25T17:11:41.035Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-28T10:52:15.413Z",
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.550Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
           "musicbrainzTagsCheckedAt": "2026-09-25T17:11:41.035Z",
@@ -6383,7 +6855,25 @@
         "https://www.youtube.com/channel/UCOGyDtQsutPHkVRfp0mJ_GQ"
       ],
       "lastChecked": "2026-10-02T09:00:00.000Z",
-      "notes": "Alta manual verificada (llista de l'usuari del 2026-10-02). Canal «Tema» (Topic) de YouTube."
+      "notes": "Alta manual verificada (llista de l'usuari del 2026-10-02). Canal «Tema» (Topic) de YouTube.",
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.550Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.550Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "GadeGANG",
@@ -6419,9 +6909,24 @@
       ],
       "lastChecked": "2026-10-03T21:00:00.000Z",
       "notes": "Alta manual. Canal de YouTube indicat per l'usuari; categoria Electrònica.",
-      "genresRaw": [
-        "electrònica"
-      ]
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.550Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.550Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Gavina.mp3",
@@ -6464,7 +6969,25 @@
         "manual-user-2026-10-02"
       ],
       "lastChecked": "2026-09-30T12:15:00.000Z",
-      "notes": "Alta manual verificada: projecte de pop electrònic contemporani en català, guanyador del Sona9 2024."
+      "notes": "Alta manual verificada: projecte de pop electrònic contemporani en català, guanyador del Sona9 2024.",
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.550Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.550Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Geoffrey Parsons",
@@ -6552,7 +7075,7 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.413Z",
+          "checkedAt": "2026-10-04T12:18:29.550Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:35.501Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [
@@ -6659,7 +7182,7 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.413Z",
+          "checkedAt": "2026-10-04T12:18:29.551Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:36.763Z",
           "wikidataRaw": [
             "folk"
@@ -6725,7 +7248,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.414Z",
+          "checkedAt": "2026-10-04T12:18:29.551Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:38.143Z",
           "wikidataRaw": [
             "rumba catalana"
@@ -6783,7 +7306,25 @@
         "https://www.youtube.com/channel/UCPsEb7F9DceUz4TsdfyuiBw"
       ],
       "lastChecked": "2026-10-02T09:00:00.000Z",
-      "notes": "Alta manual verificada (llista de l'usuari del 2026-10-02)."
+      "notes": "Alta manual verificada (llista de l'usuari del 2026-10-02).",
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.551Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.551Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Ginestà",
@@ -6831,7 +7372,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.414Z",
+          "checkedAt": "2026-10-04T12:18:29.551Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:39.406Z",
           "wikidataRaw": [
             "pop-folk"
@@ -6900,7 +7441,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.416Z",
+          "checkedAt": "2026-10-04T12:18:29.553Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:42.353Z",
           "wikidataRaw": [
             "música de cantautor",
@@ -7007,14 +7548,14 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.416Z",
+          "checkedAt": "2026-10-04T12:18:29.553Z",
           "musicbrainzCheckedAt": "2026-09-25T17:11:42.279Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-28T10:52:15.416Z",
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.553Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
           "musicbrainzTagsCheckedAt": "2026-09-25T17:11:42.279Z",
@@ -7106,14 +7647,14 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.416Z",
+          "checkedAt": "2026-10-04T12:18:29.553Z",
           "musicbrainzCheckedAt": "2026-09-25T17:11:43.519Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-28T10:52:15.416Z",
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.553Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
           "musicbrainzTagsCheckedAt": "2026-09-25T17:11:43.519Z",
@@ -7159,9 +7700,24 @@
       ],
       "lastChecked": null,
       "notes": "",
-      "genresRaw": [
-        "Cançó d'autor"
-      ]
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.553Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.553Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Guillermina Motta",
@@ -7261,14 +7817,14 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.416Z",
+          "checkedAt": "2026-10-04T12:18:29.553Z",
           "musicbrainzCheckedAt": "2026-09-25T17:11:44.759Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-28T10:52:15.416Z",
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.553Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
           "musicbrainzTagsCheckedAt": "2026-09-25T17:11:44.759Z",
@@ -7283,10 +7839,7 @@
     {
       "name": "GUINEU",
       "aliases": [],
-      "genres": [
-        "Pop",
-        "Indie / Alternativa"
-      ],
+      "genres": [],
       "territories": [],
       "languages": [
         "ca"
@@ -7322,10 +7875,25 @@
       ],
       "lastChecked": "2026-09-28T15:55:18.252Z",
       "notes": "Font oficial la descriu com indie-pop català.",
-      "genresRaw": [
-        "Indie-pop"
-      ],
-      "displayName": "Guineu"
+      "genresRaw": [],
+      "displayName": "Guineu",
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.553Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.553Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Gusset",
@@ -7370,9 +7938,24 @@
       ],
       "lastChecked": "2026-09-28T15:55:20.721Z",
       "notes": "Premiat dins la gala dedicada a artistes de pop en català.",
-      "genresRaw": [
-        "Pop"
-      ]
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.553Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.553Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Hèctor Vila",
@@ -7407,15 +7990,30 @@
         "https://www.youtube.com/channel/UCfY137sqCUb5DJNrjiiy6iQ"
       ],
       "lastChecked": "2026-10-02T09:00:00.000Z",
-      "notes": "Alta manual verificada (llista de l'usuari del 2026-10-02). Canal «Tema» (Topic) de YouTube."
+      "notes": "Alta manual verificada (llista de l'usuari del 2026-10-02). Canal «Tema» (Topic) de YouTube.",
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.553Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.553Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Hey Zuri",
       "aliases": [],
-      "genres": [
-        "Pop",
-        "Rock"
-      ],
+      "genres": [],
       "territories": [],
       "languages": [
         "ca"
@@ -7443,9 +8041,24 @@
       ],
       "lastChecked": "2026-09-28T15:55:19.975Z",
       "notes": "Classificat al Sona9 2026 com a pop-rock.",
-      "genresRaw": [
-        "Pop-rock"
-      ]
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.553Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.553Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Inadaptats",
@@ -7494,7 +8107,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.417Z",
+          "checkedAt": "2026-10-04T12:18:29.554Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:47.870Z",
           "wikidataRaw": [
             "oi!",
@@ -7601,7 +8214,7 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.419Z",
+          "checkedAt": "2026-10-04T12:18:29.556Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:49.235Z",
           "wikidataRaw": [
             "cançó d'autor",
@@ -7661,15 +8274,30 @@
         "https://www.youtube.com/channel/UCS9aWKrOcJsSqsJqBEouqAg"
       ],
       "lastChecked": "2026-10-02T09:00:00.000Z",
-      "notes": "Alta manual verificada (llista de l'usuari del 2026-10-02). Canal «Tema» (Topic) de YouTube."
+      "notes": "Alta manual verificada (llista de l'usuari del 2026-10-02). Canal «Tema» (Topic) de YouTube.",
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.556Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.556Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Ja t'ho diré",
       "aliases": [],
-      "genres": [
-        "Pop",
-        "Rock"
-      ],
+      "genres": [],
       "territories": [],
       "languages": [
         "ca"
@@ -7697,10 +8325,24 @@
       ],
       "lastChecked": "2026-09-29T11:23:49.623Z",
       "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
-      "genresRaw": [
-        "Pop",
-        "Rock"
-      ]
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.556Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.556Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Jaume Aragall i Garriga",
@@ -7783,7 +8425,7 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.420Z",
+          "checkedAt": "2026-10-04T12:18:29.556Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:50.505Z",
           "wikidataRaw": [
             "òpera"
@@ -7885,14 +8527,14 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.420Z",
+          "checkedAt": "2026-10-04T12:18:29.556Z",
           "musicbrainzCheckedAt": "2026-09-25T17:11:46.000Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-28T10:52:15.420Z",
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.556Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
           "musicbrainzTagsCheckedAt": "2026-09-25T17:11:46.000Z",
@@ -7960,14 +8602,14 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.420Z",
+          "checkedAt": "2026-10-04T12:18:29.556Z",
           "musicbrainzCheckedAt": "2026-09-25T17:11:47.243Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-28T10:52:15.420Z",
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.556Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
           "musicbrainzTagsCheckedAt": "2026-09-25T17:11:47.243Z",
@@ -8046,7 +8688,7 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.420Z",
+          "checkedAt": "2026-10-04T12:18:29.557Z",
           "musicbrainzCheckedAt": "2026-09-25T17:11:48.484Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
@@ -8132,7 +8774,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.421Z",
+          "checkedAt": "2026-10-04T12:18:29.558Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:55.902Z",
           "wikidataRaw": [
             "lo-fi",
@@ -8203,7 +8845,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.423Z",
+          "checkedAt": "2026-10-04T12:18:29.560Z",
           "musicbrainzCheckedAt": "2026-09-25T16:47:57.292Z",
           "wikidataRaw": [
             "música de cantautor",
@@ -8267,14 +8909,14 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.424Z",
+          "checkedAt": "2026-10-04T12:18:29.560Z",
           "musicbrainzCheckedAt": "2026-09-25T17:11:49.724Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-28T10:52:15.424Z",
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.560Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
           "musicbrainzTagsCheckedAt": "2026-09-25T17:11:49.724Z",
@@ -8346,14 +8988,14 @@
           "relationCount": 1
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.424Z",
+          "checkedAt": "2026-10-04T12:18:29.561Z",
           "musicbrainzCheckedAt": "2026-09-25T17:11:50.965Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-28T10:52:15.424Z",
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.561Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
           "musicbrainzTagsCheckedAt": "2026-09-25T17:11:50.965Z",
@@ -8398,7 +9040,25 @@
         "https://www.youtube.com/channel/UCcDS4PowmsXc6R3ACE7Vgfg"
       ],
       "lastChecked": "2026-10-02T09:00:00.000Z",
-      "notes": "Alta manual verificada (llista de l'usuari del 2026-10-02). Canal «Tema» (Topic) de YouTube."
+      "notes": "Alta manual verificada (llista de l'usuari del 2026-10-02). Canal «Tema» (Topic) de YouTube.",
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.561Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.561Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Joan Manuel Serrat",
@@ -8434,9 +9094,24 @@
       ],
       "lastChecked": "2026-09-29T17:03:27.206Z",
       "notes": "Nova Cançó / Cançó d'autor.",
-      "genresRaw": [
-        "Cançó d'autor"
-      ]
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.561Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.561Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Joan Miquel Oliver",
@@ -8521,7 +9196,7 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.425Z",
+          "checkedAt": "2026-10-04T12:18:29.562Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:02.716Z",
           "wikidataRaw": [
             "pop"
@@ -8638,7 +9313,7 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.426Z",
+          "checkedAt": "2026-10-04T12:18:29.562Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:04.117Z",
           "wikidataRaw": [
             "folk"
@@ -8740,7 +9415,7 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.426Z",
+          "checkedAt": "2026-10-04T12:18:29.563Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:05.500Z",
           "wikidataRaw": [
             "sardana"
@@ -8806,14 +9481,14 @@
       "genresRaw": [],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.426Z",
+          "checkedAt": "2026-10-04T12:18:29.563Z",
           "musicbrainzCheckedAt": "2026-09-25T17:11:52.205Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-28T10:52:15.426Z",
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.563Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
           "musicbrainzTagsCheckedAt": "2026-09-25T17:11:52.205Z",
@@ -8912,7 +9587,7 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.427Z",
+          "checkedAt": "2026-10-04T12:18:29.564Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:08.052Z",
           "wikidataRaw": [
             "sardana",
@@ -9024,7 +9699,7 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.428Z",
+          "checkedAt": "2026-10-04T12:18:29.564Z",
           "musicbrainzCheckedAt": "2026-09-25T17:11:53.445Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
@@ -9141,7 +9816,7 @@
           "autoAcceptedId": null
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.428Z",
+          "checkedAt": "2026-10-04T12:18:29.565Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:10.594Z",
           "wikidataRaw": [
             "òpera"
@@ -9239,7 +9914,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.429Z",
+          "checkedAt": "2026-10-04T12:18:29.565Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:11.869Z",
           "wikidataRaw": [
             "música electroacústica"
@@ -9342,7 +10017,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.430Z",
+          "checkedAt": "2026-10-04T12:18:29.567Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:13.282Z",
           "wikidataRaw": [
             "música contemporània",
@@ -9411,7 +10086,25 @@
         "https://www.youtube.com/channel/UC7ixOUPG3ydQjkUZ4pPqvhA"
       ],
       "lastChecked": "2026-10-02T09:00:00.000Z",
-      "notes": "Alta manual verificada (llista de l'usuari del 2026-10-02). Canal «Tema» (Topic) de YouTube."
+      "notes": "Alta manual verificada (llista de l'usuari del 2026-10-02). Canal «Tema» (Topic) de YouTube.",
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.567Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.567Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Judit Neddermann",
@@ -9454,7 +10147,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.432Z",
+          "checkedAt": "2026-10-04T12:18:29.568Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:14.671Z",
           "wikidataRaw": [
             "folk",
@@ -9555,7 +10248,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.432Z",
+          "checkedAt": "2026-10-04T12:18:29.568Z",
           "musicbrainzCheckedAt": "2026-09-25T17:11:54.684Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
@@ -9632,7 +10325,25 @@
         "manual-user-2026-10-02"
       ],
       "lastChecked": "2026-09-30T12:15:00.000Z",
-      "notes": "Alta manual verificada: cançó-pop d'arrel mallorquina i canal oficial de YouTube."
+      "notes": "Alta manual verificada: cançó-pop d'arrel mallorquina i canal oficial de YouTube.",
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.568Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.568Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Júlia Cruz",
@@ -9677,9 +10388,24 @@
       ],
       "lastChecked": "2026-09-28T15:55:19.084Z",
       "notes": "Inclosa entre les noves veus del pop català.",
-      "genresRaw": [
-        "Pop"
-      ]
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.568Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.568Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Julieta",
@@ -9727,21 +10453,21 @@
         "música electrònica",
         "reggaeton",
         "pop dance",
-        "música vocal",
         "pop",
-        "música urbana"
+        "música urbana",
+        "música vocal"
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.434Z",
+          "checkedAt": "2026-10-04T12:18:29.571Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:17.197Z",
           "wikidataRaw": [
             "música electrònica",
             "reggaeton",
             "pop dance",
-            "música vocal",
             "pop",
-            "música urbana"
+            "música urbana",
+            "música vocal"
           ],
           "musicbrainzRaw": [],
           "unmappedRaw": [
@@ -9793,9 +10519,24 @@
       ],
       "lastChecked": "2026-09-29T11:23:49.663Z",
       "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
-      "genresRaw": [
-        "Rock"
-      ]
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.571Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.571Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "knocKouts",
@@ -9803,9 +10544,7 @@
         "Knockout",
         "KnockOut"
       ],
-      "genres": [
-        "Ska / Reggae"
-      ],
+      "genres": [],
       "territories": [],
       "languages": [
         "ca"
@@ -9831,7 +10570,25 @@
         "manual-user-2026-10-03"
       ],
       "lastChecked": "2026-10-03T17:12:00.000Z",
-      "notes": "Alta manual. Canal mixt: només s'accepten cançons amb «KnockOut»/«knocKouts» al títol; «Citylights» queda exclosa; categoria Ska / Reggae; la imatge visible es pren d'una miniatura d'un vídeo acceptat."
+      "notes": "Alta manual. Canal mixt: només s'accepten cançons amb «KnockOut»/«knocKouts» al títol; «Citylights» queda exclosa; categoria Ska / Reggae; la imatge visible es pren d'una miniatura d'un vídeo acceptat.",
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.571Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.571Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Koji Kondo",
@@ -9910,7 +10667,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.436Z",
+          "checkedAt": "2026-10-04T12:18:29.572Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:18.542Z",
           "wikidataRaw": [
             "jazz",
@@ -9996,7 +10753,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.436Z",
+          "checkedAt": "2026-10-04T12:18:29.573Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:19.897Z",
           "wikidataRaw": [
             "thrash metal"
@@ -10049,9 +10806,24 @@
       ],
       "lastChecked": "2026-09-28T15:55:19.166Z",
       "notes": "Inclòs entre les noves veus del pop català.",
-      "genresRaw": [
-        "Pop / cançó"
-      ]
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.573Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.573Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "La Banda Trapera del Río",
@@ -10133,7 +10905,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.438Z",
+          "checkedAt": "2026-10-04T12:18:29.574Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:21.264Z",
           "wikidataRaw": [
             "punk rock",
@@ -10245,7 +11017,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.438Z",
+          "checkedAt": "2026-10-04T12:18:29.574Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:22.676Z",
           "wikidataRaw": [
             "indie rock"
@@ -10356,7 +11128,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.439Z",
+          "checkedAt": "2026-10-04T12:18:29.575Z",
           "musicbrainzCheckedAt": "2026-09-25T17:11:55.924Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
@@ -10367,7 +11139,7 @@
             "folk",
             "indie pop"
           ],
-          "wikidataWorkCheckedAt": "2026-09-28T10:52:15.438Z",
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.574Z",
           "wikidataWorkEvidence": [
             {
               "genre": "pop",
@@ -10477,14 +11249,14 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.439Z",
+          "checkedAt": "2026-10-04T12:18:29.575Z",
           "musicbrainzCheckedAt": "2026-09-25T17:11:57.164Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-28T10:52:15.439Z",
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.575Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
           "musicbrainzTagsCheckedAt": "2026-09-25T17:11:57.164Z",
@@ -10551,7 +11323,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.439Z",
+          "checkedAt": "2026-10-04T12:18:29.575Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:26.840Z",
           "wikidataRaw": [
             "pop-rock"
@@ -10661,7 +11433,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.441Z",
+          "checkedAt": "2026-10-04T12:18:29.576Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:28.219Z",
           "wikidataRaw": [
             "ska punk"
@@ -10746,7 +11518,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.442Z",
+          "checkedAt": "2026-10-04T12:18:29.578Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:29.484Z",
           "wikidataRaw": [
             "indie folk",
@@ -10815,7 +11587,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.442Z",
+          "checkedAt": "2026-10-04T12:18:29.578Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:30.738Z",
           "wikidataRaw": [
             "pop",
@@ -10869,17 +11641,29 @@
       ],
       "lastChecked": "2026-09-29T11:23:49.715Z",
       "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
-      "genresRaw": [
-        "Rock"
-      ]
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.578Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.578Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "La Mousse",
       "aliases": [],
-      "genres": [
-        "Pop",
-        "Electrònica"
-      ],
+      "genres": [],
       "territories": [],
       "languages": [
         "ca"
@@ -10915,9 +11699,24 @@
       ],
       "lastChecked": "2026-09-28T15:55:20.173Z",
       "notes": "Classificat al Sona9 2026 com a pop electrònic.",
-      "genresRaw": [
-        "Pop electrònic"
-      ]
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.578Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.578Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "La Tour de Carol",
@@ -10960,7 +11759,25 @@
         "manual-user-2026-10-02"
       ],
       "lastChecked": "2026-09-30T12:15:00.000Z",
-      "notes": "Alta manual verificada: banda barcelonina de pop-rock/alternativa en català; Channel ID confirmat manualment."
+      "notes": "Alta manual verificada: banda barcelonina de pop-rock/alternativa en català; Channel ID confirmat manualment.",
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.578Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.578Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "La Trinca",
@@ -11064,7 +11881,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.443Z",
+          "checkedAt": "2026-10-04T12:18:29.579Z",
           "musicbrainzCheckedAt": "2026-09-25T17:11:58.405Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [
@@ -11196,14 +12013,14 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.443Z",
+          "checkedAt": "2026-10-04T12:18:29.579Z",
           "musicbrainzCheckedAt": "2026-09-25T17:11:59.647Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-28T10:52:15.443Z",
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.579Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
           "musicbrainzTagsCheckedAt": "2026-09-25T17:11:59.647Z",
@@ -11270,7 +12087,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.444Z",
+          "checkedAt": "2026-10-04T12:18:29.580Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:36.142Z",
           "wikidataRaw": [
             "música urbana"
@@ -11376,7 +12193,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.445Z",
+          "checkedAt": "2026-10-04T12:18:29.580Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:37.560Z",
           "wikidataRaw": [
             "pop-rock",
@@ -11442,7 +12259,25 @@
         "https://www.youtube.com/channel/UCgAWzLHswq5VtYxCEMWGAng"
       ],
       "lastChecked": "2026-10-02T09:00:00.000Z",
-      "notes": "Alta manual verificada (llista de l'usuari del 2026-10-02). Canal «Tema» (Topic) de YouTube."
+      "notes": "Alta manual verificada (llista de l'usuari del 2026-10-02). Canal «Tema» (Topic) de YouTube.",
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.580Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.580Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Lildami",
@@ -11491,7 +12326,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.445Z",
+          "checkedAt": "2026-10-04T12:18:29.581Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:38.815Z",
           "wikidataRaw": [
             "rap",
@@ -11584,7 +12419,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.446Z",
+          "checkedAt": "2026-10-04T12:18:29.581Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:00.888Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
@@ -11623,9 +12458,7 @@
     {
       "name": "Lluc",
       "aliases": [],
-      "genres": [
-        "Urbana"
-      ],
+      "genres": [],
       "territories": [],
       "languages": [
         "ca"
@@ -11645,9 +12478,24 @@
       ],
       "lastChecked": "2026-09-29T11:23:48.827Z",
       "notes": "Canal @lluc descartat (2026-09-29): és Loma Linda University Church, una església; no és l'artista. No tornar a resoldre @lluc.",
-      "genresRaw": [
-        "Urbana"
-      ]
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.581Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.581Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Lluís Llach i Grande",
@@ -11691,7 +12539,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.446Z",
+          "checkedAt": "2026-10-04T12:18:29.582Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:41.458Z",
           "wikidataRaw": [
             "cançó protesta"
@@ -11762,14 +12610,14 @@
           "relationCount": 1
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.446Z",
+          "checkedAt": "2026-10-04T12:18:29.582Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:02.130Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-28T10:52:15.446Z",
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.582Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
           "musicbrainzTagsCheckedAt": "2026-09-25T17:12:02.130Z",
@@ -11858,7 +12706,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.447Z",
+          "checkedAt": "2026-10-04T12:18:29.582Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:45.626Z",
           "wikidataRaw": [
             "rumba catalana"
@@ -11970,7 +12818,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.448Z",
+          "checkedAt": "2026-10-04T12:18:29.584Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:46.952Z",
           "wikidataRaw": [
             "nadala",
@@ -12086,7 +12934,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.450Z",
+          "checkedAt": "2026-10-04T12:18:29.585Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:48.216Z",
           "wikidataRaw": [
             "jazz contemporani"
@@ -12125,10 +12973,7 @@
     {
       "name": "Mai Halis",
       "aliases": [],
-      "genres": [
-        "Pop",
-        "Rock"
-      ],
+      "genres": [],
       "territories": [],
       "languages": [
         "ca"
@@ -12164,9 +13009,24 @@
       ],
       "lastChecked": "2026-09-28T15:55:20.258Z",
       "notes": "Classificat al Sona9 2026 com a pop-rock.",
-      "genresRaw": [
-        "Pop-rock"
-      ]
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.585Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.585Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Maig",
@@ -12203,9 +13063,24 @@
       ],
       "lastChecked": "2026-09-28T15:53:50.745Z",
       "notes": "Debut 2025 i projecció 2026.",
-      "genresRaw": [
-        "Pop"
-      ]
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.585Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.585Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Mama Dousha",
@@ -12252,14 +13127,14 @@
       "genresRaw": [],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.450Z",
+          "checkedAt": "2026-10-04T12:18:29.585Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:03.370Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-28T10:52:15.450Z",
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.585Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
           "musicbrainzTagsCheckedAt": "2026-09-25T17:12:03.370Z",
@@ -12315,7 +13190,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.452Z",
+          "checkedAt": "2026-10-04T12:18:29.588Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:51.072Z",
           "wikidataRaw": [
             "música mediterrània",
@@ -12438,14 +13313,14 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.452Z",
+          "checkedAt": "2026-10-04T12:18:29.588Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:04.610Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-28T10:52:15.452Z",
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.588Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
           "musicbrainzTagsCheckedAt": "2026-09-25T17:12:04.610Z",
@@ -12463,9 +13338,7 @@
           "autoAcceptedId": null
         }
       },
-      "genresRaw": [
-        "Cançó d'autor"
-      ]
+      "genresRaw": []
     },
     {
       "name": "Manuel Espona",
@@ -12538,14 +13411,14 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.452Z",
+          "checkedAt": "2026-10-04T12:18:29.588Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:05.850Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-28T10:52:15.452Z",
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.588Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
           "musicbrainzTagsCheckedAt": "2026-09-25T17:12:05.850Z",
@@ -12641,14 +13514,14 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.452Z",
+          "checkedAt": "2026-10-04T12:18:29.588Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:07.090Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-28T10:52:15.452Z",
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.588Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
           "musicbrainzTagsCheckedAt": "2026-09-25T17:12:07.090Z",
@@ -12711,9 +13584,24 @@
       ],
       "lastChecked": "2026-09-28T15:55:18.991Z",
       "notes": "Inclosa entre les noves veus del pop català.",
-      "genresRaw": [
-        "Pop / folk"
-      ]
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.588Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.588Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Mar Pujol",
@@ -12757,9 +13645,24 @@
       ],
       "lastChecked": "2026-09-28T15:55:18.493Z",
       "notes": "Inclosa entre les noves veus del pop català. Cantautora: el gènere és manual (Cançó d'autor).",
-      "genresRaw": [
-        "Pop d'autor"
-      ]
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.588Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.588Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Maria Bertomeu i Soria",
@@ -12798,7 +13701,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.453Z",
+          "checkedAt": "2026-10-04T12:18:29.588Z",
           "musicbrainzCheckedAt": "2026-09-25T16:48:58.639Z",
           "wikidataRaw": [
             "cant valencià d'estil"
@@ -12916,7 +13819,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.455Z",
+          "checkedAt": "2026-10-04T12:18:29.590Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:01.257Z",
           "wikidataRaw": [
             "música mediterrània",
@@ -13031,7 +13934,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.455Z",
+          "checkedAt": "2026-10-04T12:18:29.590Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:09.571Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
@@ -13040,7 +13943,7 @@
           "wikidataWorkRaw": [
             "pop"
           ],
-          "wikidataWorkCheckedAt": "2026-09-28T10:52:15.455Z",
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.590Z",
           "wikidataWorkEvidence": [
             {
               "genre": "pop",
@@ -13129,7 +14032,7 @@
           "relationCount": 1
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.455Z",
+          "checkedAt": "2026-10-04T12:18:29.590Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:10.812Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
@@ -13138,7 +14041,7 @@
           "wikidataWorkRaw": [
             "indie pop"
           ],
-          "wikidataWorkCheckedAt": "2026-09-28T10:52:15.455Z",
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.590Z",
           "wikidataWorkEvidence": [
             {
               "genre": "indie pop",
@@ -13203,14 +14106,14 @@
       "genresRaw": [],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.455Z",
+          "checkedAt": "2026-10-04T12:18:29.590Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:12.052Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-28T10:52:15.455Z",
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.590Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
           "musicbrainzTagsCheckedAt": "2026-09-25T17:12:12.052Z",
@@ -13265,14 +14168,14 @@
       "genresRaw": [],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.455Z",
+          "checkedAt": "2026-10-04T12:18:29.590Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:13.292Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-28T10:52:15.455Z",
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.590Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
           "musicbrainzTagsCheckedAt": "2026-09-25T17:12:13.292Z",
@@ -13361,14 +14264,14 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.455Z",
+          "checkedAt": "2026-10-04T12:18:29.590Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:14.532Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-28T10:52:15.455Z",
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.590Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
           "musicbrainzTagsCheckedAt": "2026-09-25T17:12:14.532Z",
@@ -13391,9 +14294,7 @@
     {
       "name": "MARLENA",
       "aliases": [],
-      "genres": [
-        "Urbana"
-      ],
+      "genres": [],
       "territories": [],
       "languages": [
         "ca"
@@ -13413,9 +14314,24 @@
       ],
       "lastChecked": "2026-09-29T11:23:48.882Z",
       "notes": "Descartada (2026-09-29): repertori i títols en castellà. No tornar a resoldre @marlenaoficial.",
-      "genresRaw": [
-        "Urbana"
-      ]
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.590Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.590Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Mazoni",
@@ -13592,8 +14508,24 @@
           "resultCount": 10,
           "bestScore": 88,
           "autoAcceptedId": null
+        },
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.591Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.590Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
         }
-      }
+      },
+      "genresRaw": []
     },
     {
       "name": "Miki Núñez",
@@ -13638,9 +14570,24 @@
       ],
       "lastChecked": "2026-09-28T15:55:20.892Z",
       "notes": "Apareix com a pop en català, però convé revisar si el repertori és principalment en català.",
-      "genresRaw": [
-        "Pop"
-      ]
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.591Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.591Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Minibús intergalàctic",
@@ -13746,7 +14693,7 @@
           "relationCount": 1
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.457Z",
+          "checkedAt": "2026-10-04T12:18:29.592Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:12.220Z",
           "wikidataRaw": [
             "rock psicodèlic",
@@ -13784,9 +14731,7 @@
     {
       "name": "miquel",
       "aliases": [],
-      "genres": [
-        "Pop"
-      ],
+      "genres": [],
       "territories": [],
       "languages": [
         "ca"
@@ -13814,9 +14759,24 @@
       ],
       "lastChecked": "2026-09-28T15:55:18.614Z",
       "notes": "Inclòs entre les noves veus del pop català.",
-      "genresRaw": [
-        "Pop"
-      ]
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.592Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.592Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Miquel Abras",
@@ -13897,7 +14857,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.457Z",
+          "checkedAt": "2026-10-04T12:18:29.592Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:13.588Z",
           "wikidataRaw": [
             "pop-rock"
@@ -13974,14 +14934,14 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.457Z",
+          "checkedAt": "2026-10-04T12:18:29.592Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:15.774Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-28T10:52:15.457Z",
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.592Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
           "musicbrainzTagsCheckedAt": "2026-09-25T17:12:15.774Z",
@@ -14061,7 +15021,7 @@
           "relationCount": 1
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.458Z",
+          "checkedAt": "2026-10-04T12:18:29.593Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:16.309Z",
           "wikidataRaw": [
             "pop-rock",
@@ -14127,7 +15087,25 @@
       ],
       "lastChecked": "2026-10-02T09:00:00.000Z",
       "notes": "Alta manual verificada (llista de l'usuari del 2026-10-02).",
-      "displayName": "Montse Castellà"
+      "displayName": "Montse Castellà",
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.593Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.593Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Moto Clua",
@@ -14295,8 +15273,24 @@
           "resultCount": 10,
           "bestScore": 5,
           "autoAcceptedId": null
+        },
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.593Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.593Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
         }
-      }
+      },
+      "genresRaw": []
     },
     {
       "name": "Muluk El Hwa",
@@ -14331,7 +15325,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.459Z",
+          "checkedAt": "2026-10-04T12:18:29.594Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:17.580Z",
           "wikidataRaw": [
             "música tradicional",
@@ -14465,7 +15459,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.461Z",
+          "checkedAt": "2026-10-04T12:18:29.596Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:18.849Z",
           "wikidataRaw": [
             "reggaeton",
@@ -14505,10 +15499,7 @@
     {
       "name": "N'Gai N'Gai",
       "aliases": [],
-      "genres": [
-        "Pop",
-        "Rock"
-      ],
+      "genres": [],
       "territories": [],
       "languages": [
         "ca"
@@ -14536,10 +15527,24 @@
       ],
       "lastChecked": "2026-09-29T11:23:49.878Z",
       "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
-      "genresRaw": [
-        "Pop",
-        "Rock"
-      ]
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.596Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.596Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Naina",
@@ -14584,9 +15589,24 @@
       ],
       "lastChecked": "2026-09-28T15:55:19.710Z",
       "notes": "Artista valenciana amb nou disc en català el 2026.",
-      "genresRaw": [
-        "Pop"
-      ]
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.596Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.596Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Narcís Perich i Serra",
@@ -14663,7 +15683,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.462Z",
+          "checkedAt": "2026-10-04T12:18:29.597Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:21.492Z",
           "wikidataRaw": [
             "sardana"
@@ -14769,7 +15789,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.462Z",
+          "checkedAt": "2026-10-04T12:18:29.597Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:24.150Z",
           "wikidataRaw": [
             "pop"
@@ -14840,7 +15860,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.464Z",
+          "checkedAt": "2026-10-04T12:18:29.598Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:25.588Z",
           "wikidataRaw": [
             "folk",
@@ -14868,9 +15888,7 @@
     {
       "name": "nusar3000",
       "aliases": [],
-      "genres": [
-        "Urbana"
-      ],
+      "genres": [],
       "territories": [],
       "languages": [
         "ca"
@@ -14890,9 +15908,24 @@
       ],
       "lastChecked": "2026-10-01T05:49:45.927Z",
       "notes": "Eliminat (2026-10-01) a petició de l'editor. No tornar a resoldre @nusar3000.",
-      "genresRaw": [
-        "Urbana"
-      ]
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.599Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.599Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Obrint Pas",
@@ -14949,7 +15982,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.466Z",
+          "checkedAt": "2026-10-04T12:18:29.602Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:28.323Z",
           "wikidataRaw": [
             "hardcore punk",
@@ -14982,10 +16015,7 @@
     {
       "name": "Ocults",
       "aliases": [],
-      "genres": [
-        "Pop",
-        "Rock"
-      ],
+      "genres": [],
       "territories": [],
       "languages": [
         "ca"
@@ -15013,18 +16043,29 @@
       ],
       "lastChecked": "2026-09-29T11:23:49.943Z",
       "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
-      "genresRaw": [
-        "Pop",
-        "Rock"
-      ]
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.602Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.602Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "okdw",
       "aliases": [],
-      "genres": [
-        "Pop",
-        "Funk / Soul / R&B"
-      ],
+      "genres": [],
       "territories": [],
       "languages": [
         "ca"
@@ -15060,9 +16101,24 @@
       ],
       "lastChecked": "2026-09-28T15:53:50.745Z",
       "notes": "Font oficial: fusió de R&B, soul i pop en català.",
-      "genresRaw": [
-        "R&B / soul / pop"
-      ]
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.602Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.602Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Opció K-95",
@@ -15097,7 +16153,25 @@
         "https://www.youtube.com/channel/UCCBTyMmUoeGrciYMzrwWiUw"
       ],
       "lastChecked": "2026-10-03T19:40:00.000Z",
-      "notes": "Canal Topic verificat manualment; gènere Punk."
+      "notes": "Canal Topic verificat manualment; gènere Punk.",
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.602Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.602Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Oques Grasses",
@@ -15150,7 +16224,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.469Z",
+          "checkedAt": "2026-10-04T12:18:29.604Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:29.652Z",
           "wikidataRaw": [
             "música del món",
@@ -15218,9 +16292,24 @@
       ],
       "lastChecked": "2026-09-28T15:55:20.327Z",
       "notes": "Classificat al Sona9 2026 com a pop-rock.",
-      "genresRaw": [
-        "Pop-rock"
-      ]
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.604Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.604Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Orfeó Català",
@@ -15300,14 +16389,14 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.469Z",
+          "checkedAt": "2026-10-04T12:18:29.604Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:19.498Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-28T10:52:15.469Z",
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.604Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
           "musicbrainzTagsCheckedAt": "2026-09-25T17:12:19.498Z",
@@ -15371,14 +16460,14 @@
       "genresRaw": [],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.469Z",
+          "checkedAt": "2026-10-04T12:18:29.604Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:20.738Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-28T10:52:15.469Z",
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.604Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
           "musicbrainzTagsCheckedAt": "2026-09-25T17:12:20.738Z",
@@ -15460,14 +16549,14 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.469Z",
+          "checkedAt": "2026-10-04T12:18:29.604Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:21.979Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-28T10:52:15.469Z",
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.604Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
           "musicbrainzTagsCheckedAt": "2026-09-25T17:12:21.979Z",
@@ -15559,14 +16648,14 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.469Z",
+          "checkedAt": "2026-10-04T12:18:29.604Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:23.218Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-28T10:52:15.469Z",
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.604Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
           "musicbrainzTagsCheckedAt": "2026-09-25T17:12:23.218Z",
@@ -15661,14 +16750,14 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.469Z",
+          "checkedAt": "2026-10-04T12:18:29.604Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:24.459Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-28T10:52:15.469Z",
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.604Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
           "musicbrainzTagsCheckedAt": "2026-09-25T17:12:24.459Z",
@@ -15749,7 +16838,7 @@
           "relationCount": 1
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.470Z",
+          "checkedAt": "2026-10-04T12:18:29.605Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:25.706Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
@@ -15839,9 +16928,24 @@
       ],
       "lastChecked": "2026-09-28T15:53:50.745Z",
       "notes": "Pop experimental en català; forta presència 2025-26.",
-      "genresRaw": [
-        "Pop experimental"
-      ]
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.605Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.605Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Ovidi Montllor i Mengual",
@@ -15928,7 +17032,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.471Z",
+          "checkedAt": "2026-10-04T12:18:29.606Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:39.195Z",
           "wikidataRaw": [
             "Nova Cançó"
@@ -15961,10 +17065,7 @@
     {
       "name": "Palau",
       "aliases": [],
-      "genres": [
-        "Pop",
-        "Indie / Alternativa"
-      ],
+      "genres": [],
       "territories": [],
       "languages": [
         "ca"
@@ -15992,9 +17093,24 @@
       ],
       "lastChecked": "2026-09-28T15:55:18.417Z",
       "notes": "Grup nascut el 2025; indie-pop en català.",
-      "genresRaw": [
-        "Indie-pop"
-      ]
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.606Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.606Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Pastora",
@@ -16078,7 +17194,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.471Z",
+          "checkedAt": "2026-10-04T12:18:29.606Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:40.565Z",
           "wikidataRaw": [
             "electropop",
@@ -16154,14 +17270,14 @@
       "genresRaw": [],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.471Z",
+          "checkedAt": "2026-10-04T12:18:29.606Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:26.950Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-28T10:52:15.471Z",
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.606Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
           "musicbrainzTagsCheckedAt": "2026-09-25T17:12:26.950Z",
@@ -16236,7 +17352,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.472Z",
+          "checkedAt": "2026-10-04T12:18:29.607Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:43.100Z",
           "wikidataRaw": [
             "folk",
@@ -16328,7 +17444,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.477Z",
+          "checkedAt": "2026-10-04T12:18:29.611Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:44.358Z",
           "wikidataRaw": [
             "rock",
@@ -16408,7 +17524,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.478Z",
+          "checkedAt": "2026-10-04T12:18:29.613Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:45.611Z",
           "wikidataRaw": [
             "música de cantautor",
@@ -16463,17 +17579,29 @@
       ],
       "lastChecked": null,
       "notes": "",
-      "genresRaw": [
-        "Cançó d'autor"
-      ]
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.613Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.613Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Paula Montalbán",
       "aliases": [],
-      "genres": [
-        "Pop",
-        "Indie / Alternativa"
-      ],
+      "genres": [],
       "territories": [],
       "languages": [
         "ca"
@@ -16509,10 +17637,25 @@
       ],
       "lastChecked": "2026-09-28T15:55:19.892Z",
       "notes": "Classificada al Sona9 2026 com a pop alternatiu.",
-      "genresRaw": [
-        "Pop alternatiu"
-      ],
-      "displayName": "Paula Montalbán"
+      "genresRaw": [],
+      "displayName": "Paula Montalbán",
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.613Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.613Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Pawn Gang",
@@ -16557,10 +17700,25 @@
       ],
       "lastChecked": "2026-09-29T11:23:49.125Z",
       "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
-      "genresRaw": [
-        "Urbana"
-      ],
-      "displayName": "P.A.W.N. Gang"
+      "genresRaw": [],
+      "displayName": "P.A.W.N. Gang",
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.613Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.613Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Pep Gimeno \"Botifarra\"",
@@ -16641,7 +17799,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.479Z",
+          "checkedAt": "2026-10-04T12:18:29.613Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:28.192Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
@@ -16653,7 +17811,7 @@
             "música tradicional",
             "música valenciana"
           ],
-          "wikidataWorkCheckedAt": "2026-09-28T10:52:15.479Z",
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.613Z",
           "wikidataWorkEvidence": [
             {
               "genre": "música tradicional",
@@ -16761,7 +17919,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.479Z",
+          "checkedAt": "2026-10-04T12:18:29.614Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:29.433Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
@@ -16880,7 +18038,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.480Z",
+          "checkedAt": "2026-10-04T12:18:29.615Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:30.673Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
@@ -16893,7 +18051,7 @@
             "patxanga",
             "pop-rock"
           ],
-          "wikidataWorkCheckedAt": "2026-09-28T10:52:15.480Z",
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.614Z",
           "wikidataWorkEvidence": [
             {
               "genre": "ska-rock",
@@ -16965,7 +18123,25 @@
       ],
       "lastChecked": "2026-10-03T20:15:00.000Z",
       "notes": "Canal Topic verificat manualment; gènere Cançó d'autor.",
-      "displayName": "Pere Tàpias"
+      "displayName": "Pere Tàpias",
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.615Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.615Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Pilseners",
@@ -17010,7 +18186,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.481Z",
+          "checkedAt": "2026-10-04T12:18:29.615Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:52.327Z",
           "wikidataRaw": [
             "oi!",
@@ -17104,7 +18280,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.482Z",
+          "checkedAt": "2026-10-04T12:18:29.617Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:53.590Z",
           "wikidataRaw": [
             "reggae",
@@ -17176,9 +18352,24 @@
       ],
       "lastChecked": "2026-09-28T15:55:20.588Z",
       "notes": "Guanyador Sona9 2026; pop-rock.",
-      "genresRaw": [
-        "Pop-rock"
-      ]
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.617Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.617Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Pol Bordas",
@@ -17223,9 +18414,24 @@
       ],
       "lastChecked": "2026-09-29T11:23:49.201Z",
       "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
-      "genresRaw": [
-        "Urbana"
-      ]
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.617Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.617Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Pulpopop",
@@ -17301,14 +18507,14 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.482Z",
+          "checkedAt": "2026-10-04T12:18:29.617Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:31.913Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-28T10:52:15.482Z",
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.617Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
           "musicbrainzTagsCheckedAt": "2026-09-25T17:12:31.913Z",
@@ -17365,7 +18571,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.486Z",
+          "checkedAt": "2026-10-04T12:18:29.620Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:56.174Z",
           "wikidataRaw": [
             "balada romàntica",
@@ -17486,7 +18692,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.486Z",
+          "checkedAt": "2026-10-04T12:18:29.620Z",
           "musicbrainzCheckedAt": "2026-09-25T16:49:57.434Z",
           "wikidataRaw": [
             "pop"
@@ -17586,14 +18792,14 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.486Z",
+          "checkedAt": "2026-10-04T12:18:29.620Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:33.156Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-28T10:52:15.486Z",
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.620Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
           "musicbrainzTagsCheckedAt": "2026-09-25T17:12:33.156Z",
@@ -17655,10 +18861,25 @@
       ],
       "lastChecked": null,
       "notes": "Nova Cançó.",
-      "genresRaw": [
-        "Cançó d'autor"
-      ],
-      "displayName": "Quico Pi de la Serra"
+      "genresRaw": [],
+      "displayName": "Quico Pi de la Serra",
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.620Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.620Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Quimi Portet",
@@ -17701,7 +18922,25 @@
         "manual-user-2026-10-03"
       ],
       "lastChecked": "2026-10-03T19:10:00.000Z",
-      "notes": "Categoria manual: Cançó d'autor. Es conserva el canal Topic ja indexat."
+      "notes": "Categoria manual: Cançó d'autor. Es conserva el canal Topic ja indexat.",
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.620Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.620Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Raimon",
@@ -17737,9 +18976,24 @@
       ],
       "lastChecked": null,
       "notes": "Nova Cançó.",
-      "genresRaw": [
-        "Cançó d'autor"
-      ]
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.620Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.620Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Ramon Calduch i Gimeno",
@@ -17789,14 +19043,14 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.486Z",
+          "checkedAt": "2026-10-04T12:18:29.620Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:34.397Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-28T10:52:15.486Z",
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.620Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
           "musicbrainzTagsCheckedAt": "2026-09-25T17:12:34.397Z",
@@ -17878,7 +19132,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.487Z",
+          "checkedAt": "2026-10-04T12:18:29.621Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:01.361Z",
           "wikidataRaw": [
             "cançó d'autor"
@@ -17992,7 +19246,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.488Z",
+          "checkedAt": "2026-10-04T12:18:29.622Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:02.609Z",
           "wikidataRaw": [
             "rap"
@@ -18024,9 +19278,7 @@
     {
       "name": "Reïna",
       "aliases": [],
-      "genres": [
-        "Pop"
-      ],
+      "genres": [],
       "territories": [],
       "languages": [
         "ca"
@@ -18062,9 +19314,24 @@
       ],
       "lastChecked": "2026-09-28T15:55:18.792Z",
       "notes": "Inclòs entre les noves veus del pop català.",
-      "genresRaw": [
-        "Pop"
-      ]
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.622Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.622Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Remei de Ca la Fresca",
@@ -18161,7 +19428,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.489Z",
+          "checkedAt": "2026-10-04T12:18:29.623Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:04.100Z",
           "wikidataRaw": [
             "indie pop",
@@ -18244,14 +19511,14 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.489Z",
+          "checkedAt": "2026-10-04T12:18:29.623Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:35.636Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-28T10:52:15.489Z",
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.623Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
           "musicbrainzTagsCheckedAt": "2026-09-25T17:12:35.636Z",
@@ -18318,7 +19585,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.490Z",
+          "checkedAt": "2026-10-04T12:18:29.624Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:06.727Z",
           "wikidataRaw": [
             "pop-rock"
@@ -18430,7 +19697,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.490Z",
+          "checkedAt": "2026-10-04T12:18:29.624Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:36.876Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
@@ -18439,7 +19706,7 @@
           "wikidataWorkRaw": [
             "cançó d'autor"
           ],
-          "wikidataWorkCheckedAt": "2026-09-28T10:52:15.490Z",
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.624Z",
           "wikidataWorkEvidence": [
             {
               "genre": "cançó d'autor",
@@ -18543,7 +19810,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.491Z",
+          "checkedAt": "2026-10-04T12:18:29.625Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:10.933Z",
           "wikidataRaw": [
             "òpera"
@@ -18578,10 +19845,7 @@
     {
       "name": "Roser Dresaire",
       "aliases": [],
-      "genres": [
-        "Pop",
-        "Cançó d'autor"
-      ],
+      "genres": [],
       "territories": [],
       "languages": [
         "ca"
@@ -18617,9 +19881,24 @@
       ],
       "lastChecked": "2026-09-28T15:55:19.804Z",
       "notes": "Classificada al Sona9 2026 com a pop d'autor.",
-      "genresRaw": [
-        "Pop d'autor"
-      ]
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.625Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.625Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Salomé",
@@ -18703,7 +19982,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.491Z",
+          "checkedAt": "2026-10-04T12:18:29.625Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:13.483Z",
           "wikidataRaw": [
             "pop"
@@ -18772,7 +20051,25 @@
         "https://www.youtube.com/channel/UC_Nx-tsTDRubDg1dbd5jwAw"
       ],
       "lastChecked": "2026-10-02T09:00:00.000Z",
-      "notes": "Alta manual verificada (llista de l'usuari del 2026-10-02)."
+      "notes": "Alta manual verificada (llista de l'usuari del 2026-10-02).",
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.625Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.625Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Sandra Monfort",
@@ -18817,9 +20114,24 @@
       ],
       "lastChecked": "2026-09-28T15:55:18.901Z",
       "notes": "Inclosa entre les noves veus del pop català.",
-      "genresRaw": [
-        "Pop / folk"
-      ]
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.625Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.625Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Sangtraït",
@@ -18902,9 +20214,7 @@
       ],
       "lastChecked": "2026-09-29T11:25:49.833Z",
       "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
-      "genresRaw": [
-        "Rock"
-      ],
+      "genresRaw": [],
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-09-29T11:23:50.760Z",
@@ -18913,15 +20223,28 @@
           "resultCount": 3,
           "bestScore": 85,
           "autoAcceptedId": null
+        },
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.625Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.625Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
         }
       }
     },
     {
       "name": "Sara Roy",
       "aliases": [],
-      "genres": [
-        "Pop"
-      ],
+      "genres": [],
       "territories": [],
       "languages": [
         "ca"
@@ -18957,9 +20280,24 @@
       ],
       "lastChecked": "2026-09-28T15:55:20.799Z",
       "notes": "Premiada dins la gala dedicada a artistes de pop en català.",
-      "genresRaw": [
-        "Pop"
-      ]
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.625Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.625Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Sau",
@@ -19047,7 +20385,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.492Z",
+          "checkedAt": "2026-10-04T12:18:29.625Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:17.492Z",
           "wikidataRaw": [
             "pop-rock"
@@ -19113,7 +20451,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.492Z",
+          "checkedAt": "2026-10-04T12:18:29.626Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:39.358Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
@@ -19122,7 +20460,7 @@
           "wikidataWorkRaw": [
             "música urbana"
           ],
-          "wikidataWorkCheckedAt": "2026-09-28T10:52:15.492Z",
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.626Z",
           "wikidataWorkEvidence": [
             {
               "genre": "música urbana",
@@ -19141,9 +20479,7 @@
     {
       "name": "Scotty DK",
       "aliases": [],
-      "genres": [
-        "Urbana"
-      ],
+      "genres": [],
       "territories": [],
       "languages": [
         "ca"
@@ -19179,10 +20515,25 @@
       ],
       "lastChecked": "2026-09-29T11:23:49.295Z",
       "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
-      "genresRaw": [
-        "Urbana"
-      ],
-      "displayName": "Scotty DK"
+      "genresRaw": [],
+      "displayName": "Scotty DK",
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.626Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.626Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Sense Sal",
@@ -19263,7 +20614,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.492Z",
+          "checkedAt": "2026-10-04T12:18:29.626Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:40.597Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
@@ -19272,7 +20623,7 @@
           "wikidataWorkRaw": [
             "pop"
           ],
-          "wikidataWorkCheckedAt": "2026-09-28T10:52:15.492Z",
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.626Z",
           "wikidataWorkEvidence": [
             {
               "genre": "pop",
@@ -19345,7 +20696,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.493Z",
+          "checkedAt": "2026-10-04T12:18:29.627Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:21.275Z",
           "wikidataRaw": [
             "drum and bass",
@@ -19406,7 +20757,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.494Z",
+          "checkedAt": "2026-10-04T12:18:29.628Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:22.534Z",
           "wikidataRaw": [
             "música urbana",
@@ -19428,9 +20779,7 @@
     {
       "name": "Siderland",
       "aliases": [],
-      "genres": [
-        "Pop"
-      ],
+      "genres": [],
       "territories": [],
       "languages": [
         "ca"
@@ -19466,9 +20815,24 @@
       ],
       "lastChecked": "2026-09-28T15:55:19.404Z",
       "notes": "3Cat: el pop català que més balla.",
-      "genresRaw": [
-        "Pop"
-      ]
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.628Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.628Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Sidonie",
@@ -19504,9 +20868,24 @@
       ],
       "lastChecked": "2026-10-03T21:30:00.000Z",
       "notes": "Alta manual amb llista blanca: només 'Persiana baixada' i les 12 cançons de l'àlbum Catalan Graffiti (2025), tot en català.",
-      "genresRaw": [
-        "rock"
-      ]
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.628Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.628Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Sílvia Comes",
@@ -19541,7 +20920,25 @@
         "https://www.youtube.com/channel/UCOQizv5kl-XBONzbo3RKHdw"
       ],
       "lastChecked": "2026-10-02T09:00:00.000Z",
-      "notes": "Alta manual verificada (llista de l'usuari del 2026-10-02). Canal «Tema» (Topic) de YouTube."
+      "notes": "Alta manual verificada (llista de l'usuari del 2026-10-02). Canal «Tema» (Topic) de YouTube.",
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.628Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.628Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Sílvia Pérez Cruz",
@@ -19641,7 +21038,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.499Z",
+          "checkedAt": "2026-10-04T12:18:29.632Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:25.290Z",
           "wikidataRaw": [
             "flamenc",
@@ -19728,7 +21125,25 @@
         "https://www.youtube.com/channel/UCUWHtSvVKAhJn-zsf38q2TQ"
       ],
       "lastChecked": "2026-10-02T09:00:00.000Z",
-      "notes": "Alta manual verificada (llista de l'usuari del 2026-10-02). Canal «Tema» (Topic) de YouTube."
+      "notes": "Alta manual verificada (llista de l'usuari del 2026-10-02). Canal «Tema» (Topic) de YouTube.",
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.632Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.632Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Smoking Souls",
@@ -19775,7 +21190,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.499Z",
+          "checkedAt": "2026-10-04T12:18:29.632Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:26.654Z",
           "wikidataRaw": [
             "rock"
@@ -19839,7 +21254,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.499Z",
+          "checkedAt": "2026-10-04T12:18:29.633Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:28.060Z",
           "wikidataRaw": [
             "indie pop"
@@ -19860,10 +21275,7 @@
     {
       "name": "Sodi",
       "aliases": [],
-      "genres": [
-        "Pop",
-        "Rock"
-      ],
+      "genres": [],
       "territories": [],
       "languages": [
         "ca"
@@ -19899,9 +21311,24 @@
       ],
       "lastChecked": "2026-09-28T15:55:19.594Z",
       "notes": "Guanyador de premis Sona9 2025; debut discogràfic 2026.",
-      "genresRaw": [
-        "Brit-pop / pop-rock"
-      ]
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.633Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.633Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Sopa de Cabra",
@@ -19950,7 +21377,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.500Z",
+          "checkedAt": "2026-10-04T12:18:29.634Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:30.746Z",
           "wikidataRaw": [
             "pop-rock",
@@ -20046,14 +21473,14 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.500Z",
+          "checkedAt": "2026-10-04T12:18:29.634Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:41.838Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-28T10:52:15.500Z",
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.634Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
           "musicbrainzTagsCheckedAt": "2026-09-25T17:12:41.838Z",
@@ -20076,9 +21503,7 @@
     {
       "name": "Subliminal",
       "aliases": [],
-      "genres": [
-        "Urbana"
-      ],
+      "genres": [],
       "territories": [],
       "languages": [
         "ca"
@@ -20104,14 +21529,30 @@
         "manual-user-2026-09-30"
       ],
       "lastChecked": "2026-09-30T15:00:00.000Z",
-      "notes": "Alta manual verificada. Nom visible forçat a Subliminal; només s'accepten al feed les sis cançons autoritzades a data/music-channel-video-allowlist.json."
+      "notes": "Alta manual verificada. Nom visible forçat a Subliminal; només s'accepten al feed les sis cançons autoritzades a data/music-channel-video-allowlist.json.",
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.634Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.634Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Suu",
       "aliases": [],
-      "genres": [
-        "Pop"
-      ],
+      "genres": [],
       "territories": [],
       "languages": [
         "ca"
@@ -20139,17 +21580,29 @@
       ],
       "lastChecked": "2026-09-28T15:53:50.745Z",
       "notes": "Premiada el 2025.",
-      "genresRaw": [
-        "Pop"
-      ]
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.634Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.634Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Svetlana",
       "aliases": [],
-      "genres": [
-        "Pop",
-        "Electrònica"
-      ],
+      "genres": [],
       "territories": [],
       "languages": [
         "ca"
@@ -20185,9 +21638,24 @@
       ],
       "lastChecked": "2026-09-28T15:53:50.745Z",
       "notes": "Premiats el 2025 i presents en cartells 2026.",
-      "genresRaw": [
-        "Pop / electrònica"
-      ]
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.634Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.634Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Teresa Rebull",
@@ -20262,14 +21730,14 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.500Z",
+          "checkedAt": "2026-10-04T12:18:29.634Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:43.078Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-28T10:52:15.500Z",
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.634Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
           "musicbrainzTagsCheckedAt": "2026-09-25T17:12:43.078Z",
@@ -20336,7 +21804,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.501Z",
+          "checkedAt": "2026-10-04T12:18:29.634Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:38.465Z",
           "wikidataRaw": [
             "oi!",
@@ -20404,7 +21872,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.502Z",
+          "checkedAt": "2026-10-04T12:18:29.635Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:39.729Z",
           "wikidataRaw": [
             "reggaeton",
@@ -20484,14 +21952,14 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.502Z",
+          "checkedAt": "2026-10-04T12:18:29.635Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:44.318Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-28T10:52:15.502Z",
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.635Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
           "musicbrainzTagsCheckedAt": "2026-09-25T17:12:44.318Z",
@@ -20590,7 +22058,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.503Z",
+          "checkedAt": "2026-10-04T12:18:29.636Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:42.244Z",
           "wikidataRaw": [
             "música tradicional",
@@ -20700,14 +22168,14 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.503Z",
+          "checkedAt": "2026-10-04T12:18:29.636Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:45.559Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-28T10:52:15.503Z",
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.636Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
           "musicbrainzTagsCheckedAt": "2026-09-25T17:12:45.559Z",
@@ -20824,7 +22292,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.503Z",
+          "checkedAt": "2026-10-04T12:18:29.637Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:44.791Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [
@@ -20913,14 +22381,14 @@
           "relationCount": 1
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.503Z",
+          "checkedAt": "2026-10-04T12:18:29.637Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:46.799Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-28T10:52:15.503Z",
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.637Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
           "musicbrainzTagsCheckedAt": "2026-09-25T17:12:46.799Z",
@@ -20983,7 +22451,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.506Z",
+          "checkedAt": "2026-10-04T12:18:29.639Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:47.530Z",
           "wikidataRaw": [
             "salsa",
@@ -21018,9 +22486,7 @@
     {
       "name": "Umpah-Pah",
       "aliases": [],
-      "genres": [
-        "Rock"
-      ],
+      "genres": [],
       "territories": [],
       "languages": [
         "ca"
@@ -21048,10 +22514,25 @@
       ],
       "lastChecked": "2026-09-29T11:23:50.137Z",
       "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
-      "genresRaw": [
-        "Rock"
-      ],
-      "displayName": "Umpah-Pah"
+      "genresRaw": [],
+      "displayName": "Umpah-Pah",
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.639Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.639Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Ven'nus",
@@ -21111,7 +22592,7 @@
           "relationCount": 1
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.506Z",
+          "checkedAt": "2026-10-04T12:18:29.640Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:48.798Z",
           "wikidataRaw": [
             "electropop",
@@ -21207,7 +22688,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.507Z",
+          "checkedAt": "2026-10-04T12:18:29.640Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:50.052Z",
           "wikidataRaw": [
             "òpera"
@@ -21242,10 +22723,7 @@
     {
       "name": "Vittara",
       "aliases": [],
-      "genres": [
-        "Pop",
-        "Indie / Alternativa"
-      ],
+      "genres": [],
       "territories": [],
       "languages": [
         "ca"
@@ -21281,17 +22759,29 @@
       ],
       "lastChecked": "2026-09-28T15:55:19.508Z",
       "notes": "Grup indie-pop barceloní amb disc 2026.",
-      "genresRaw": [
-        "Indie-pop"
-      ]
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.640Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.640Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Whiskyn's",
       "aliases": [],
-      "genres": [
-        "Pop",
-        "Rock"
-      ],
+      "genres": [],
       "territories": [],
       "languages": [
         "ca"
@@ -21319,10 +22809,24 @@
       ],
       "lastChecked": "2026-09-29T11:23:50.221Z",
       "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
-      "genresRaw": [
-        "Pop",
-        "Rock"
-      ]
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.640Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.640Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Xanguito",
@@ -21375,7 +22879,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.509Z",
+          "checkedAt": "2026-10-04T12:18:29.642Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:51.366Z",
           "wikidataRaw": [
             "rumba catalana",
@@ -21446,7 +22950,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.511Z",
+          "checkedAt": "2026-10-04T12:18:29.643Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:52.728Z",
           "wikidataRaw": [
             "folk rock",
@@ -21499,7 +23003,25 @@
         "https://www.youtube.com/channel/UC40skFzEdR6EMg4FeL7U6OQ"
       ],
       "lastChecked": "2026-10-02T09:00:00.000Z",
-      "notes": "Alta manual verificada (llista de l'usuari del 2026-10-02). Canal «Tema» (Topic) de YouTube."
+      "notes": "Alta manual verificada (llista de l'usuari del 2026-10-02). Canal «Tema» (Topic) de YouTube.",
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.643Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.643Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Xavier Benguerel i Godó",
@@ -21550,7 +23072,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.511Z",
+          "checkedAt": "2026-10-04T12:18:29.644Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:54.067Z",
           "wikidataRaw": [
             "òpera"
@@ -21624,14 +23146,14 @@
       "genresRaw": [],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.511Z",
+          "checkedAt": "2026-10-04T12:18:29.644Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:48.039Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-28T10:52:15.511Z",
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.644Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
           "musicbrainzTagsCheckedAt": "2026-09-25T17:12:48.039Z",
@@ -21687,7 +23209,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.512Z",
+          "checkedAt": "2026-10-04T12:18:29.644Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:56.776Z",
           "wikidataRaw": [
             "pop"
@@ -21742,7 +23264,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.513Z",
+          "checkedAt": "2026-10-04T12:18:29.644Z",
           "musicbrainzCheckedAt": "2026-09-25T16:50:58.044Z",
           "wikidataRaw": [
             "rock"
@@ -21833,14 +23355,14 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.513Z",
+          "checkedAt": "2026-10-04T12:18:29.644Z",
           "musicbrainzCheckedAt": "2026-09-25T17:12:49.280Z",
           "wikidataRaw": [],
           "musicbrainzRaw": [],
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkRaw": [],
-          "wikidataWorkCheckedAt": "2026-09-28T10:52:15.513Z",
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.644Z",
           "wikidataWorkEvidence": [],
           "musicbrainzTagsRaw": [],
           "musicbrainzTagsCheckedAt": "2026-09-25T17:12:49.280Z",
@@ -21936,7 +23458,7 @@
           "relationCount": 0
         },
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.514Z",
+          "checkedAt": "2026-10-04T12:18:29.645Z",
           "musicbrainzCheckedAt": "2026-09-25T16:51:00.583Z",
           "wikidataRaw": [
             "música electrònica",
@@ -22008,7 +23530,7 @@
       ],
       "enrichment": {
         "genres": {
-          "checkedAt": "2026-09-28T10:52:15.515Z",
+          "checkedAt": "2026-10-04T12:18:29.646Z",
           "musicbrainzCheckedAt": "2026-09-25T16:51:01.855Z",
           "wikidataRaw": [
             "rock",
