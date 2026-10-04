@@ -1,3 +1,15 @@
+## [2026-10-04] - Les teves categories: categories pròpies de grups
+**Símptoma / petició:** l'usuari no podia fer-se categories pròpies (p. ex. «Festa major») amb els grups que volgués, ni tenir-les a Inici amb els estils, ni compartir-les. La barra d'estils encara mostrava «Canal Jove» i «Canal Història», categories heretades de Segueix youtubers que `initDefaultSmartCategories()` injecta a `catube_custom_tags`, i «+ Afegeix una categoria» obria el modal antic de cerques per paraules clau.
+
+**Solució Implementada:** mòdul nou `js/features/user-categories.js` (patró 2) amb dades pròpies a `catube_music_user_categories` (`[{ id, name, artists: [channelId] }]`), sense reutilitzar `catube_custom_tags` / `catube_channel_custom_categories`. Les categories surten a «Tria el teu so» (rajola amb «La teva» i una rajola «Crea una categoria»), a la barra d'estils (en lloc de les heretades) i a la fitxa de l'artista («Les teves categories»: tocar una categoria hi afegeix o en treu el grup; «Nova categoria» la crea amb el grup a dins). La vista d'una categoria té ràdio (`musicQueue.startCategoryRadio`, «Ràdio <nom>»), compartir i esborrar. L'enllaç de compartir és el `?importData=` de tipus `category` (nom + ID de canal) i el missatge porta el nom i els grups (`navigator.share` amb `text`). L'ordre de «Tria el teu so» es canvia mantenint premuda una rajola i arrossegant-la (Sortable, `delay` 250 ms només tàctil), amb el ratolí o amb Alt + fletxes; es desa a `catube_music_home_style_order` i es porta a l'ordre de la barra d'estils (`mergeOrder()`).
+
+**Trampes:**
+- Una fitxa d'artista pot agrupar diversos canals (oficial + «Tema», `YouTubeAPI.getArtistGroupForChannel()`): la categoria desa l'ID de la fitxa, i el filtre i la ràdio han d'expandir-lo a tots els `channelIds` del grup (`categoryChannelIds()` / `channelIdsOf()`). Sense això, un artista afegit des de la fitxa podia quedar sense cançons.
+- L'enllaç només porta ID de canal i, en obrir-lo, el catàleg encara no és a punt: la previsualització posa els noms quan arriben (`fillImportCategoryArtists()`), no en el moment de pintar el modal.
+- El nom d'una categoria no pot ser el d'un estil ni d'una vista (Inici, Novetats, Descobreix, Seguint…): la selecció de la vista va per nom (`selectedCategory`).
+
+**Fitxers Afectats:** `js/features/user-categories.js`, `js/features/portada.js`, `js/features/artist-page.js`, `js/features/music-queue.js`, `js/app.js`, `js/utils/share-card.js`, `index.html`, `css/portada.css`, `sw.js`, `tests/user-categories.test.js`, `tests/browser/verificar-categories.js`.
+
 ## [2026-10-03] - Revisió d'idioma dels nous canals Oi!/Punk
 **Símptoma:** en afegir els canals Topic d’Opció K-95 i Desperta Ferro, les pistes noves van entrar a `data/revisio-idiomes.json`; alguns títols anglesos d’Opció K-95 són realment cançons en anglès, mentre que títols anglesos de Desperta Ferro com «DF Crew» i «Supporters» tenen lletra catalana.
 

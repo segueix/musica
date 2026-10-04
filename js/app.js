@@ -5114,6 +5114,11 @@ function closeBackgroundModal(fromPopstate = false) {
 }
 
 function openCustomCategoryModal() {
+    // A Segueix Música, «+ Afegeix una categoria» crea una categoria pròpia de grups (user-categories.js).
+    if (SegueixApp.features.userCategories?.openCreateDialog) {
+        SegueixApp.features.userCategories.openCreateDialog();
+        return;
+    }
     if (!customCategoryModal) {
         return;
     }
@@ -5391,7 +5396,7 @@ function hideLoading() {
 
 function setPageTitle(title) {
     if (pageTitle) {
-        pageTitle.classList.remove('page-title--with-actions');
+        pageTitle.classList.remove('page-title--with-actions', 'page-title--user-category');
         pageTitle.dataset.title = title;
         pageTitle.textContent = title;
     }
@@ -5796,6 +5801,17 @@ function filterVideosByCategory(videos, feed) {
             const music = window.SegueixMusicCategories;
             return !music?.isReady?.() || music.isMusicChannel(channelId);
         });
+    }
+    // Categoria pròpia (user-categories.js): les cançons dels grups que l'usuari hi ha afegit.
+    const userCategory = SegueixApp.features.userCategories?.get?.(selectedCategory);
+    if (userCategory && String(userCategory.name).toLowerCase() === String(selectedCategory).toLowerCase()) {
+        const artists = new Set(SegueixApp.features.userCategories.categoryChannelIds(userCategory).map(String));
+        const music = window.SegueixMusicCategories;
+        return visibleVideos.filter(
+            video =>
+                artists.has(String(video?.channelId || '')) &&
+                (!music?.isCategoryEligibleVideo || video.isShort || music.isCategoryEligibleVideo(video))
+        );
     }
     if (selectedCategory === 'Radar') {
         const activeTags = getCustomTags();
@@ -6593,6 +6609,19 @@ function renderFeedLegacyImpl() {
                         openCustomCategoryModal();
                     });
                 }
+            } else if (SegueixApp.features.userCategories?.isUserCategory?.(selectedCategory)) {
+                // Categoria pròpia sense cançons: encara no hi ha cap grup (o cap amb cançons al catàleg)
+                videosGrid.innerHTML = `
+                    <div class="empty-state uc-empty">
+                        <p>Encara no hi ha cançons en aquesta categoria. Obre la fitxa d'un artista i, a «Les teves categories», toca el nom d'aquesta per afegir-hi el grup.</p>
+                        <button class="pt-btn pt-btn--primary" type="button" data-uc-artists>Tria artistes</button>
+                    </div>
+                `;
+                videosGrid.querySelector('[data-uc-artists]')?.addEventListener('click', event => {
+                    event.preventDefault();
+                    setActiveNavItem('segueix');
+                    showFollow('all');
+                });
             } else if (isCustomCategoryTag(selectedCategory)) {
                 videosGrid.innerHTML = `
                     <div class="empty-state empty-state-custom">
@@ -6962,10 +6991,13 @@ function setupChipsBarOrdering() {
             value: label,
             isCustom: false,
         })),
-        ...getCustomTags().map(tag => ({
-            label: tag,
-            value: tag,
-            isCustom: true,
+        // Les teves categories (user-categories.js). Les categories heretades de Segueix youtubers
+        // (catube_custom_tags: «Canal Jove»...) ja no surten a la barra de Segueix Música.
+        ...(SegueixApp.features.userCategories?.list?.() || []).map(category => ({
+            label: category.name,
+            value: category.name,
+            isCustom: false,
+            isUser: true,
         })),
     ];
 
@@ -7007,6 +7039,7 @@ function setupChipsBarOrdering() {
 
         button.className = chip.isCustom ? 'chip is-custom' : 'chip';
         if (isExact) button.classList.add('is-exact');
+        if (chip.isUser) button.classList.add('is-user-category');
 
         button.dataset.cat = chip.value;
         button.textContent = chip.label;
@@ -8061,6 +8094,16 @@ function renderCategoryActions(category) {
         hideInlineKeywords();
         return;
     }
+    // Categoria pròpia: nom, grups i accions (ràdio, compartir, esborrar)
+    const userTitleHtml = SegueixApp.features.userCategories?.pageTitleHtml?.(normalizedCategory);
+    if (userTitleHtml && !isStandardCategory(normalizedCategory)) {
+        pageTitle.classList.add('page-title--with-actions', 'page-title--user-category');
+        pageTitle.dataset.title = normalizedCategory;
+        pageTitle.innerHTML = userTitleHtml;
+        hideInlineKeywords();
+        return;
+    }
+    pageTitle.classList.remove('page-title--user-category');
     if (
         !normalizedCategory ||
         normalizedCategory === getCategoryPageTitle('Tot') ||
@@ -13340,6 +13383,25 @@ async function shareCategoryWithYoutubers(categoryName, channelIds) {
     _showShareOptionsModal('Categoria', categoryName, shareUrl, { type: 'category' });
 }
 
+// Comparteix una categoria pròpia (user-categories.js): l'enllaç porta el nom i els grups (ID de canal), i el missatge
+// diu el nom de la categoria i quins grups hi ha («Et passo la meva categoria «Festa major» de Segueix Música: …»).
+async function shareUserCategory(categoryName, channelIds, message = '') {
+    const ids = [...new Set((Array.isArray(channelIds) ? channelIds : []).map(String).filter(Boolean))];
+    if (!ids.length) return alert('Aquesta categoria encara no té cap grup.');
+    const shareCodecs = SegueixApp.utils.shareCodecs;
+    const payload = shareCodecs.buildImportPayload({ type: 'category', name: categoryName, items: ids });
+    const shareUrl = shareCodecs.buildImportUrl(payload);
+    if (!shareUrl) {
+        alert("No s'ha pogut generar l'enllaç de compartició.");
+        return;
+    }
+    _showShareOptionsModal('Categoria', categoryName, shareUrl, {
+        type: 'category',
+        count: ids.length,
+        text: message || `Et passo la meva categoria «${categoryName}» de Segueix Música.`,
+    });
+}
+
 // Una ràdio compartida porta només les primeres cançons de la cua: l'enllaç (i el QR) s'han de poder llegir des d'una
 // pantalla, i el que importa és que qui l'obre sent la mateixa ràdio, no tota la cua.
 const MAX_RADIO_SHARE_SONGS = 30;
@@ -13487,11 +13549,15 @@ async function _showShareOptionsModal(typeLabel, name, shareUrl, options = {}) {
     // Per evitar trencar la previsualització Open Graph en apps com WhatsApp,
     // la compartició nativa de l'enllaç envia només URL + title (sense camp text).
     const shareText = model?.caption || `${typeLabel}: ${name}`;
+    // Una categoria porta un missatge amb el nom i els grups (options.text): les ràdios i llistes no en porten.
+    const messageText = typeof options?.text === 'string' ? options.text.trim() : '';
 
     async function shareLink() {
         if (hasNativeShare) {
             try {
-                await navigator.share({ title: shareText, url: shareUrl });
+                await navigator.share(
+                    messageText ? { title: shareText, text: messageText, url: shareUrl } : { title: shareText, url: shareUrl }
+                );
                 modal.remove();
             } catch (_e) {
                 /* cancelled per l'usuari */
@@ -13500,7 +13566,7 @@ async function _showShareOptionsModal(typeLabel, name, shareUrl, options = {}) {
         }
         // Fallback desktop sense Web Share: copia només la URL (sense text addicional)
         try {
-            await navigator.clipboard.writeText(shareUrl);
+            await navigator.clipboard.writeText(messageText ? `${messageText}\n${shareUrl}` : shareUrl);
             const btn = modal.querySelector('#shareOptShare');
             btn.innerHTML = '<i data-lucide="check"></i><span>Enllaç copiat!</span>';
             btn.style.background = '#2ecc71';
@@ -13614,7 +13680,8 @@ function handleImportDataParam() {
     if ((payload.type === 'playlist' || isRadio) && itemCount > 0) {
         previewHtml = `<p style="font-size:0.85rem; opacity:0.7; margin-bottom:12px;">${itemCount} ${itemCount === 1 ? 'cançó' : 'cançons'}</p>`;
     } else if (payload.type === 'category' && itemCount > 0) {
-        previewHtml = `<p style="font-size:0.85rem; opacity:0.7; margin-bottom:12px;">${itemCount} artistes assignats</p>`;
+        // Els noms dels grups s'hi posen quan el catàleg és a punt (fillImportCategoryArtists)
+        previewHtml = `<p style="font-size:0.85rem; opacity:0.7; margin-bottom:6px;">${itemCount === 1 ? '1 artista' : `${itemCount} artistes`}</p><p class="uc-import-artists" id="importDataArtists" style="font-size:0.85rem; margin-bottom:12px;" hidden></p>`;
     } else if (payload.type === 'history') {
         previewHtml = `<p style="font-size:0.85rem; opacity:0.7; margin-bottom:12px;">${itemCount} visualitzacions</p>`;
     }
@@ -13652,6 +13719,7 @@ function handleImportDataParam() {
     `;
     document.body.appendChild(modal);
     setTimeout(() => refreshIcons(modal), 0);
+    if (payload.type === 'category') fillImportCategoryArtists(modal, payload.items || []);
 
     modal.querySelector('#importDataCancelBtn').addEventListener('click', () => modal.remove());
     modal.addEventListener('click', e => {
@@ -13666,6 +13734,24 @@ function handleImportDataParam() {
             resultDiv.innerHTML = `<p style="color:#ff6b6b; font-size:0.85rem;">Error: ${escapeHtml(err.message)}</p>`;
         }
     });
+}
+
+// Noms dels grups d'una categoria rebuda: l'enllaç només porta ID de canal, i en obrir-lo el catàleg pot no haver
+// arribat encara. Es torna a provar fins que tots tenen nom (o passen 15 s: es queden els que s'han trobat).
+function fillImportCategoryArtists(modal, channelIds, attempt = 0) {
+    const target = modal.querySelector('#importDataArtists');
+    const userCategories = SegueixApp.features.userCategories;
+    if (!target || !userCategories || !modal.isConnected) return;
+    const ids = (Array.isArray(channelIds) ? channelIds : []).map(String);
+    const names = userCategories.artistNames({ artists: ids }, userCategories.knownChannels());
+    const named = names.filter((name, index) => name !== ids[index]);
+    if (named.length) {
+        target.textContent = `${named.slice(0, 12).join(', ')}${named.length > 12 ? '…' : ''}`;
+        target.hidden = false;
+    }
+    if (named.length < ids.length && attempt < 30) {
+        setTimeout(() => fillImportCategoryArtists(modal, ids, attempt + 1), 500);
+    }
 }
 
 // Executa la importació real des d'un payload rebut per URL
@@ -13740,23 +13826,19 @@ function _executeImportFromPayload(payload, resultDiv, modal) {
         resultDiv.innerHTML = `<p style="color:#2ecc71; font-size:0.9rem;">✔ Llista "${escapeHtml(newPlaylist.name)}" importada amb ${hydratedVideos.length} vídeos</p>`;
         _disableImportBtn(modal);
     } else if (payload.type === 'category') {
-        const tagName = payload.name;
+        const tagName = String(payload.name || '').trim();
         if (!tagName) throw new Error('La categoria no té nom');
+        const userCategories = SegueixApp.features.userCategories;
+        if (!userCategories) throw new Error('Les categories no estan disponibles ara mateix.');
 
-        // Afegir tag
-        if (typeof addCustomTag === 'function') addCustomTag(tagName);
-
-        // Assignar canals
-        const channelIds = payload.items || [];
-        for (const channelId of channelIds) {
-            if (typeof addChannelCustomCategory === 'function') {
-                addChannelCustomCategory(channelId, tagName);
-            }
-        }
-
-        if (typeof setupChipsBarOrdering === 'function') setupChipsBarOrdering();
-
-        resultDiv.innerHTML = `<p style="color:#2ecc71; font-size:0.9rem;">✔ Categoria "${escapeHtml(tagName)}" importada amb ${channelIds.length} artistes</p>`;
+        // Es desa com una categoria pròpia més (amb els seus grups) i surt a Inici amb els estils.
+        const result = userCategories.importShared({ name: tagName, items: payload.items || [] });
+        const saved = result.category;
+        const count = saved?.artists?.length || 0;
+        resultDiv.innerHTML =
+            result.status === 'exists'
+                ? `<p style="color:#2ecc71; font-size:0.9rem;">✔ Ja tenies la categoria «${escapeHtml(saved.name)}»</p>`
+                : `<p style="color:#2ecc71; font-size:0.9rem;">✔ Categoria «${escapeHtml(saved.name)}» afegida amb ${count === 1 ? '1 artista' : `${count} artistes`}. La trobaràs a Inici.</p>`;
         _disableImportBtn(modal);
     } else if (payload.type === 'history') {
         const stored = localStorage.getItem('catube_history');

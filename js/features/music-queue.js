@@ -541,9 +541,11 @@
         radioMeta = { mode: 'none', requested: '', note: '' };
         const query = String(info.query || '').trim();
         const artist = String(info.artist || '').trim();
-        searchRadio = { videos: pool, query, artist, channelId: String(info.channelId || '') };
+        // `title`: nom fix de la ràdio (la d'una categoria pròpia és «Ràdio <categoria>», no «Ràdio de …»).
+        const title = String(info.title || '').trim();
+        searchRadio = { videos: pool, query, artist, title, channelId: String(info.channelId || '') };
         savedListId = '';
-        radioLabel = artist ? `Ràdio de ${artist}` : query ? `Cerca «${query}»` : 'Cerca';
+        radioLabel = title || (artist ? `Ràdio de ${artist}` : query ? `Cerca «${query}»` : 'Cerca');
         queuedIds = waitingIds;
         pendingQueue = [];
         clearEmbeddedYouTubeSession();
@@ -606,6 +608,19 @@
             { artist: name, channelId: options.channelId },
             options
         );
+    }
+
+    // Ràdio d'una categoria pròpia (user-categories.js): només cançons dels grups que l'usuari hi ha posat, ordenades
+    // pel motor segons el gust i el mode de descoberta (com una ràdio d'artista), amb el nom «Ràdio <categoria>».
+    // Retorna true si ha començat (calen almenys dues cançons).
+    function startCategoryRadio(videos, options = {}) {
+        if (typeof loadVideoInSequence !== 'function' || document.body.classList.contains('segueix-tv-active')) {
+            return false;
+        }
+        const pool = searchPool(videos, ARTIST_RADIO_POOL);
+        const name = String(options.name || '').trim();
+        if (pool.length < 2 || !name) return false;
+        return launchPoolRadio(pool, pickPoolSeed(pool, options), { artist: name, title: `Ràdio ${name}` }, options);
     }
 
     // Ràdio de l'estil (o de la combinació d'estils) d'un artista: la mateixa ràdio d'estil de la resta de l'app
@@ -888,6 +903,7 @@
     // Nom de la ràdio d'un conjunt tancat: «Ràdio de <artista>» o «Cerca: <text>» (buit si no n'és cap).
     function searchRadioName() {
         if (!searchRadio) return '';
+        if (searchRadio.title) return searchRadio.title;
         if (searchRadio.artist) return `Ràdio de ${searchRadio.artist}`;
         return searchRadio.query ? `Cerca: ${searchRadio.query}` : '';
     }
@@ -1297,7 +1313,7 @@
             return `<span class="mq-source mq-styles" role="group" aria-label="Llista de reproducció"><span class="mq-style mq-style--list">${escapeText(activePlaylistName || '')}</span><span class="mq-tools">${share}</span></span>`;
         }
         if (searchRadio?.artist) {
-            return `<span class="mq-source mq-styles" role="group" aria-label="Origen de la ràdio"><span class="mq-style">Ràdio de ${escapeText(searchRadio.artist)}</span><span class="mq-tools">${regenerateButtonHtml()}${saveButtonHtml()}${shareButtonHtml()}</span></span>`;
+            return `<span class="mq-source mq-styles" role="group" aria-label="Origen de la ràdio"><span class="mq-style">${escapeText(searchRadio.title || `Ràdio de ${searchRadio.artist}`)}</span><span class="mq-tools">${regenerateButtonHtml()}${saveButtonHtml()}${shareButtonHtml()}</span></span>`;
         }
         if (searchRadio) {
             return `<span class="mq-source mq-styles" role="group" aria-label="Origen de la ràdio"><span class="mq-style">Cerca: ${escapeText(searchRadio.query)} · estils barrejats</span><span class="mq-tools">${regenerateButtonHtml()}${saveButtonHtml()}${shareButtonHtml()}</span></span>`;
@@ -1598,6 +1614,7 @@
         playSelection,
         startFromSearch,
         startArtistRadio,
+        startCategoryRadio,
         startStyleRadio,
         saveAsPlaylist,
         playlistName,

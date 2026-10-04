@@ -5206,3 +5206,290 @@ body .app-header .actions :is(.icon-btn[data-page='llistes'], #backgroundBtn, #a
     /* El focus de teclat es ressalta a la icona, sense dibuixar un marc. */
     filter: drop-shadow(0 0 3px var(--pt-icon-border));
 }
+
+/* ---------- Les teves categories (js/features/user-categories.js) ---------- */
+/* A «Tria el teu so» les categories pròpies van amb els estils: mateixa rajola, amb una etiqueta «La teva» i la vora
+   llima. Totes les rajoles es poden reordenar (mantenir premut i arrossegar; Sortable.js). */
+.pt-style {
+    position: relative;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.pt-style--user {
+    border-color: rgba(214, 237, 132, 0.42);
+}
+
+.pt-style__kind {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 2px 8px;
+    border-radius: var(--pt-radius-pill);
+    background: var(--pt-accent);
+    color: var(--pt-on-accent);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+.pt-style--add {
+    justify-content: center;
+    border-style: dashed;
+    background: transparent;
+}
+
+.pt-style__plus {
+    display: inline-grid;
+    place-items: center;
+    width: 28px;
+    height: 28px;
+    margin-bottom: 8px;
+    border-radius: 50%;
+    background: var(--pt-surface-2);
+    color: var(--pt-accent);
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.pt-style-cell.is-chosen .pt-style {
+    border-color: var(--pt-accent);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+    transform: scale(1.03);
+}
+
+.pt-style-cell.is-ghost {
+    opacity: 0.35;
+}
+
+.pt-style-cell.is-dragging {
+    opacity: 0.95;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .pt-style-cell.is-chosen .pt-style {
+        transform: none;
+    }
+}
+
+/* Fitxa d'artista: «Les teves categories» */
+.uc-artist {
+    margin: 4px 0 20px;
+}
+
+.uc-artist[hidden] {
+    display: none;
+}
+
+.uc-artist__title {
+    margin: 0;
+    font-family: var(--pt-display);
+    font-size: 1.125rem;
+}
+
+.uc-artist__hint {
+    margin: 2px 0 10px;
+    color: var(--pt-muted);
+    font-size: 0.8125rem;
+}
+
+.uc-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.uc-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    min-height: 44px;
+    max-width: 100%;
+    padding: 0 16px 0 12px;
+    border: 1px solid var(--pt-line);
+    border-radius: var(--pt-radius-pill);
+    background: var(--pt-surface-2);
+    color: var(--pt-text);
+    font: inherit;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.uc-pill span:last-child {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.uc-pill:hover {
+    border-color: var(--pt-accent);
+}
+
+.uc-pill__mark {
+    display: inline-grid;
+    place-items: center;
+    flex: 0 0 auto;
+    width: 20px;
+    height: 20px;
+    border: 1.5px solid currentColor;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    line-height: 1;
+}
+
+.uc-pill.is-on {
+    border-color: var(--pt-accent);
+    background: var(--pt-accent);
+    color: var(--pt-on-accent);
+}
+
+.uc-pill--new {
+    border-style: dashed;
+    background: transparent;
+    color: var(--pt-accent);
+}
+
+.uc-pill--new .uc-pill__mark {
+    border: 0;
+    font-size: 1.125rem;
+}
+
+/* Finestra «Crea una categoria» */
+.uc-overlay .uc-dialog {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: min(440px, calc(100vw - 32px));
+    padding: 22px 20px 20px;
+    border: 1px solid var(--pt-line);
+    border-radius: var(--pt-radius-lg);
+    background: var(--pt-surface);
+    color: var(--pt-text);
+}
+
+.uc-dialog__title {
+    margin: 0;
+    font-family: var(--pt-display);
+    font-size: 1.375rem;
+}
+
+.uc-dialog__text {
+    margin: 0;
+    color: var(--pt-muted);
+    font-size: 0.9375rem;
+}
+
+.uc-dialog__label {
+    margin-top: 6px;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.uc-dialog__input {
+    min-height: 48px;
+    padding: 0 14px;
+    border: 1px solid var(--pt-line);
+    border-radius: var(--pt-radius-sm);
+    background: var(--pt-bg);
+    color: var(--pt-text);
+    font: inherit;
+    font-size: 1rem;
+}
+
+.uc-dialog__input:focus-visible {
+    outline: 2px solid var(--pt-accent);
+    outline-offset: 1px;
+}
+
+.uc-dialog__error {
+    margin: 0;
+    color: var(--pt-terracotta);
+    font-size: 0.875rem;
+}
+
+.uc-dialog__error[hidden] {
+    display: none;
+}
+
+.uc-dialog__actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+/* Vista d'una categoria pròpia: nom, grups i accions */
+.page-title.page-title--user-category {
+    display: block;
+}
+
+.uc-page {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+/* El títol de pàgina és en lletra de titular: l'etiqueta i els grups van en la lletra del text */
+.uc-page__eyebrow,
+.uc-page__who {
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+.uc-page__who {
+    color: var(--pt-muted);
+    font-size: 0.875rem;
+    font-weight: 400;
+    letter-spacing: 0;
+}
+
+.uc-page__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.uc-page__radio svg,
+.uc-icon-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+.uc-icon-btn {
+    display: inline-grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 1px solid var(--pt-line);
+    border-radius: 50%;
+    background: var(--pt-surface-2);
+    color: var(--pt-text);
+    cursor: pointer;
+}
+
+.uc-icon-btn:hover:not(:disabled) {
+    border-color: var(--pt-accent);
+    color: var(--pt-accent);
+}
+
+.uc-icon-btn:disabled,
+.uc-page__radio:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+.uc-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    max-width: 52ch;
+    margin: 0 auto;
+    text-align: center;
+}

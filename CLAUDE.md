@@ -58,6 +58,7 @@ js/
 │   ├── my-music.js          # «La teva música»: historial (3 últimes + períodes), artistes seguits (model pur + HTML)
 │   ├── portada.js           # Portada «La teva plaça musical» (model pur + HTML + esdeveniments), pinta dins #videosGrid
 │   ├── artist-page.js       # Fitxa d'artista: dues ràdios (artista / estil), presentació curta expandible (model pur + DOM)
+│   ├── user-categories.js   # Les teves categories: categories pròpies de grups (portada, fitxa, ordre, compartir)
 │   ├── shell-nav.js         # Navegació lateral/inferior i avisos breus (toast)
 │   ├── music-selection.js   # Motor de selecció musical compartit (funcions pures): antiguitat real, puntuació, restriccions
 │   ├── music-signals.js     # Observador únic d'escolta, estadístiques i preferències («(+) com aquesta (−)»)
@@ -304,6 +305,15 @@ const likes = ctx2.SegueixApp.features.likes;
 - **Ràdio de l'artista:** `musicQueue.startArtistRadio(cançons, { name, channelId })`: només cançons de l'artista, reutilitza la ràdio de cerca (`launchPoolRadio`, `policy: 'search'`: ordre del motor pel gust i mode de descoberta, es permeten cançons seguides del mateix artista, «Barreja» es queda dins seu). Nom «Ràdio de <artista>» (`searchRadio.artist`).
 - **Ràdio de l'estil:** `musicQueue.startStyleRadio(estils)`: la ràdio d'estil de sempre (estils barrejats a parts iguals, antiguitat, un artista per vegada, descans, mode) amb **els estils de l'artista** (principal primer, màxim 3, sense «Altres estils» ni vistes generals: `artistStyles()`). Comença amb la cançó que tria el motor entre les d'aquells estils.
 - Detall i trampes: `docs/PROBLEMES_I_SOLUCIONS.md` (2026-10-01, «Fitxa d'artista»). Proves: `tests/artist-page.test.js` i `tests/music-queue-selection.test.js`.
+
+### Les teves categories (2026-10-04)
+
+- L'usuari crea **categories pròpies de grups** (`js/features/user-categories.js`, patró 2): `catube_music_user_categories` = `[{ id, name, artists: [channelId] }]`. **No** fan servir `catube_custom_tags` / `catube_channel_custom_categories` (herència de Segueix youtubers: «Canal Jove», paraules clau…), que ja no surten a la barra d'estils.
+- On surten: a **Inici, a «Tria el teu so» amb els estils** (rajola amb l'etiqueta «La teva», visible sense «Tots els estils», i la rajola «Crea una categoria» `[data-uc-create]`); a la **barra d'estils** (xip `.is-user-category`, `data-cat` = nom; «+ Afegeix una categoria» obre el diàleg nou); a la **fitxa d'artista** (`#apUserCats`, «Les teves categories»: tocar una categoria hi afegeix/treu el grup, «Nova categoria» la crea amb el grup). La vista d'una categoria (`filterVideosByCategory`) mostra les cançons dels seus grups, amb títol propi, **Ràdio** (`musicQueue.startCategoryRadio`, «Ràdio <nom>»), compartir i esborrar.
+- Una categoria desa l'ID de la **fitxa** de l'artista: per a cançons i ràdio, expandeix-lo als canals del grup (`categoryChannelIds()`; oficial + «Tema»).
+- **Compartir:** `shareUserCategory()` (app.js) → `?importData=` de tipus `category` (nom + ID de canal). El missatge porta **el nom de la categoria i els grups** (`shareMessage()`, `text` de `navigator.share`); «Generar QR» fa la targeta «Categoria · nom · N artistes». En obrir l'enllaç es desa com a categoria pròpia (`importShared()`, sense duplicar; «Nom (2)» si el nom ja és d'una altra) i surt a Inici.
+- **Ordre manual a Inici (tàctil):** mantenir premuda una rajola de «Tria el teu so» (250 ms) i arrossegar-la (Sortable); també amb el ratolí o **Alt + fletxes**. Es desa a `catube_music_home_style_order` i `setHomeOrder()` el porta a l'ordre de la barra d'estils (`mergeOrder()`). Visibles sense desplegar: les 8 primeres + una per categoria pròpia (`arrangeTiles()`).
+- Proves: `tests/user-categories.test.js`; opt-in `node tests/browser/verificar-categories.js`. Detall i trampes: `docs/PROBLEMES_I_SOLUCIONS.md` (2026-10-04).
 
 ### Revisió d'idioma de les cançons noves (2026-10-02)
 
