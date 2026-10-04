@@ -1,3 +1,16 @@
+## [2026-10-04] - Salt visual en entrar a un estil (portada desfeta i «historial» abans de les cançons)
+**Símptoma:** al mòbil, en tocar un estil (rajola de «Tria el teu so», selector «Estil» o peu), primer es veia una llista estranya, després cançons de l'historial i finalment la llista de cançons de l'estil.
+
+**Causa Arrel:** dues coses juntes. (1) `portada.js` observa la barra d'estils i treu `is-portada` de `#homePage` en el mateix toc, però la graella encara tenia les seccions de la portada: el navegador pintava «Comença per aquí», «Torna-hi» (l'historial)… sense l'estil de portada, dins la graella de vídeos, amb la capçalera de l'estil anterior. (2) Aquest estat durava molt perquè `renderFeed()` → `arrangeMusicList()` → `musicSelection.arrange()` era quadràtic: a cada pas `runSelection()` comparava cada candidata amb **totes** les cançons ja triades (`usedRecordings.some(isSameRecording)`), ≈10⁸ comparacions per a ~1.500 cançons de Pop: ~0,8 s a l'ordinador, diversos segons al mòbil.
+
+**Solució Implementada:**
+- `music-selection.js`: `recordingIndex()` agrupa les gravacions ja triades per `recording` (isSameRecording() només pot ser cert entre claus amb el mateix `recording`), i en reordenacions de llistes (`keepAll`) el bucle s'atura a la primera candidata vàlida (mana l'ordre original: `base` decreix amb la posició). Resultat **idèntic** (comprovat amb totes les categories del feed, amb i sense senyals, i 45 ràdios amb `rng` fix) i 6–9 vegades més ràpid (tot el catàleg: 1,6 s → 0,2 s; Pop al navegador: 730 → 80 ms).
+- `app.js`: els dos camins del clic d'un estil criden `showCategoryLoading()` en el mateix toc (esquelet de cançons `.cat-skeleton` a la graella, `#homePage.is-loading-category` amaga el contingut de la capçalera però en conserva l'espai, i s'avorta el render per lots/«scroll infinit» de la vista anterior) i `renderFeedAfterCategoryChange()` el treu quan la llista és a punt (`finally`). En tornar a Inici no hi ha esquelet.
+
+**Trampes:** no tornis a posar comparacions «contra totes les triades» dins del bucle de `runSelection()`; si cal una restricció nova, indexa-la. L'esquelet només el treu `renderFeedAfterCategoryChange()`: si afegeixes un camí nou per canviar d'estil, fes-lo servir.
+
+**Fitxers Afectats:** `js/features/music-selection.js`, `js/app.js`, `css/portada.css`, `sw.js`, `tests/canvi-estil.test.js`.
+
 ## [2026-10-04] - Les teves categories: categories pròpies de grups
 **Símptoma / petició:** l'usuari no podia fer-se categories pròpies (p. ex. «Festa major») amb els grups que volgués, ni tenir-les a Inici amb els estils, ni compartir-les. La barra d'estils encara mostrava «Canal Jove» i «Canal Història», categories heretades de Segueix youtubers que `initDefaultSmartCategories()` injecta a `catube_custom_tags`, i «+ Afegeix una categoria» obria el modal antic de cerques per paraules clau.
 

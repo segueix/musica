@@ -261,6 +261,23 @@
         return Math.abs(a.duration - b.duration) <= Math.max(4, Math.round(Math.min(a.duration, b.duration) * 0.03));
     }
 
+    // Gravacions ja triades, agrupades per `recording`: isSameRecording() només pot ser cert entre claus amb el mateix
+    // `recording`, i així cada comprovació mira 0–2 claus en lloc de totes les triades (abans, ordenar una categoria de
+    // 1.500 cançons feia ~10⁸ comparacions i trigava ~0,8 s a l'ordinador i diversos segons al mòbil).
+    function recordingIndex(initial = []) {
+        const byRecording = new Map();
+        const add = keys => {
+            if (!keys) return;
+            const list = byRecording.get(keys.recording);
+            if (list) list.push(keys);
+            else byRecording.set(keys.recording, [keys]);
+        };
+        toArray(initial).forEach(add);
+        const has = keys =>
+            Boolean(keys) && (byRecording.get(keys.recording) || []).some(used => isSameRecording(used, keys));
+        return { add, has };
+    }
+
     // ---------- Context (es calcula una vegada per feed) ----------
 
     const NEUTRAL_POPULARITY = 0.4;
@@ -671,6 +688,7 @@
         const usedIds = new Set(sequence.map(item => item.id));
         const usedRecordings = preceding.map(video => featuresOf(options.ctx, video).keys);
         const usedWork = new Set(usedRecordings.map(keys => keys.work));
+        const usedIndex = recordingIndex(usedRecordings);
         const eraCount = { recent: 0, mid: 0, historic: 0 };
         const famCount = { known: 0, affine: 0, surprise: 0 };
         sequence.forEach(item => {
@@ -727,11 +745,18 @@
                         if (!allowConsecutive && !level.consecutive && last?.tier === 'historic') continue;
                     }
                     if (level.work && usedWork.has(c.f.keys.work)) continue;
-                    if (usedRecordings.some(keys => isSameRecording(keys, c.f.keys))) continue;
+                    if (usedIndex.has(c.f.keys)) continue;
                     if (useCooldown) {
                         if (cool.has(c.f.id)) continue;
                         const at = recentTimes.get(c.f.id) || 0;
                         if (level.cool > 0 && at && now - at < cfg.cooldown.minutes * 60000 * level.cool) continue;
+                    }
+                    // En reordenacions de llistes mana l'ordre original: `remaining` conserva l'ordre i `base` hi
+                    // decreix, així que la primera candidata que encaixa és la triada (no cal puntuar la resta).
+                    if (keepAll) {
+                        chosen = i;
+                        chosenLevel = li;
+                        break;
                     }
                     let s = c.base;
                     if (eraTargets) {
@@ -750,8 +775,6 @@
                     ) {
                         s -= 0.05;
                     }
-                    // En reordenacions de llistes mana l'ordre original: s'agafa el primer que encaixa.
-                    if (keepAll) s = c.base;
                     if (s > bestScore) {
                         bestScore = s;
                         chosen = i;
@@ -766,6 +789,7 @@
             usedIds.add(c.f.id);
             usedWork.add(c.f.keys.work);
             usedRecordings.push(c.f.keys);
+            usedIndex.add(c.f.keys);
             sequence.push({ id: c.f.id, artist: c.f.artist, tier: c.f.tier, style: c.f.primaryStyle, fam: c.fam });
             eraCount[c.f.tier] += 1;
             famCount[c.fam] += 1;
@@ -1022,9 +1046,8 @@
             artistOf: ctx.artistKeyOf,
         });
         const pickedIds = new Set(result.picked.map(c => c.f.id));
-        const rest = items.filter(
-            item => !pickedIds.has(item.f.id) && !result.picked.some(p => isSameRecording(p.f.keys, item.f.keys))
-        );
+        const pickedIndex = recordingIndex(result.picked.map(c => c.f.keys));
+        const rest = items.filter(item => !pickedIds.has(item.f.id) && !pickedIndex.has(item.f.keys));
         return [...result.picked, ...rest].map(item => item.video);
     }
 
@@ -1061,9 +1084,8 @@
         });
         // Les gravacions duplicades es descarten; la resta d'elements que no encaixen van al final, en el seu ordre.
         const picked = result.picked.map(c => c.video);
-        const rest = result.leftover
-            .filter(c => !result.picked.some(p => isSameRecording(p.f.keys, c.f.keys)))
-            .map(c => c.video);
+        const pickedIndex = recordingIndex(result.picked.map(c => c.f.keys));
+        const rest = result.leftover.filter(c => !pickedIndex.has(c.f.keys)).map(c => c.video);
         return [...picked, ...rest];
     }
 
