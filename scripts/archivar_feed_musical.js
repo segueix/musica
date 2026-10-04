@@ -12,6 +12,8 @@ const {
   compactArchiveVideo,
   selectHistoryPool,
   uniqueVideos,
+  buildStyleHistory,
+  serializeStyleHistory,
 } = require('./lib/arxiu_musical');
 const { serializeFeed } = require('./lib/aprimar_feed');
 
@@ -19,6 +21,7 @@ const ROOT = path.resolve(__dirname, '..');
 const FEED = path.join(ROOT, 'data', 'feed.json');
 const ARCHIVE_DIR = path.join(ROOT, 'data', 'archive', 'channels');
 const HISTORY_POOL = path.join(ROOT, 'data', 'history-pool.json');
+const STYLE_HISTORY = path.join(ROOT, 'data', 'historial-musical.json');
 const CONTENT_AUDIT = path.join(ROOT, 'data', 'music-content-audit.json');
 const FEED_AUDIT = path.join(ROOT, 'data', 'music-feed-audit.json');
 
@@ -81,6 +84,7 @@ function main() {
 
   const hot = [];
   const pool = [];
+  const allArchived = [];
   let archiveCount = 0;
 
   for (const [channelId, channelVideos] of byChannel) {
@@ -105,6 +109,7 @@ function main() {
       };
       fs.writeFileSync(file, JSON.stringify(payload));
       archiveCount += archived.length;
+      allArchived.push(...archived);
       pool.push(...selectHistoryPool(archived, POOL_KEEP));
     } else if (fs.existsSync(file)) {
       fs.unlinkSync(file);
@@ -126,10 +131,13 @@ function main() {
     videos: uniqueVideos(pool),
   };
   fs.writeFileSync(HISTORY_POOL, JSON.stringify(poolPayload));
+  const styleHistory = buildStyleHistory(allArchived);
+  fs.writeFileSync(STYLE_HISTORY, serializeStyleHistory(styleHistory));
 
   console.log(
     `✅ Arxiu musical: feed calent ${videos.length} → ${feed.videos.length} vídeos; `
-    + `${archiveCount} a l'historial; pool de ràdio ${poolPayload.videos.length}.`
+    + `${archiveCount} a l'historial (${styleHistory.length} cançons per als estils); `
+    + `pool de ràdio ${poolPayload.videos.length}.`
   );
 }
 

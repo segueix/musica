@@ -1,3 +1,23 @@
+## [2026-10-04] - «Validar base musical» en vermell: l'auditoria de contingut no quadrava (review 21 contra 425)
+**Símptoma:** `tests/music-content-overrides.test.js` («l'auditoria de contingut és coherent…») fallava des del commit del bot `0c14be1` (feed del 2026-10-03 23:29): `typeCounts.review` era 21 i `music-content-review.json` en tenia 425. Els commits del bot no llancen la validació; es va veure en obrir la PR següent.
+
+**Causa Arrel:** en mode incremental (`targetMode`, només alguns canals), `update_music_feed.js` comptava els tipus dels canals no llegits a partir del feed anterior, però conservava tota la seva llista de revisió. Des que el feed calent i l'historial van separats, la majoria de vídeos «per revisar» ja no són al feed (326 són a l'arxiu): la llista en tenia 425 i el recompte, 21.
+
+**Solució Implementada:** en `targetMode`, els vídeos «review» dels canals no llegits es compten des de la llista de revisió conservada (i no des del feed); `rawPublicVideoCount` és la suma dels tipus. Les auditories publicades (`music-content-audit.json`, `music-feed-audit.json`) es van corregir amb el mateix criteri fins a la propera generació.
+
+**Fitxers Afectats:** `scripts/update_music_feed.js`, `data/music-content-audit.json`, `data/music-feed-audit.json`.
+
+## [2026-10-04] - L'historial dins dels estils sortia a part, amb una icona i sense visualitzacions
+**Símptoma:** en obrir un estil, les cançons antigues (arxiu/historial) sortien en un bloc a part, al final, amb una targeta diferent (icona blanca d'historial) i sense visualitzacions.
+
+**Causa Arrel:** `renderCategoryHistorySection()` les afegia després de pintar la llista del feed, amb `createArchiveVideoCard()`, a partir de l'índex de cerca (`search_index_*`: només els 3 últims anys, sense visualitzacions ni tipus de contingut). A més, la vista d'un estil ordenava per data i el motor només hi aplicava els límits: encara que s'haguessin barrejat, totes les de l'historial (de fa més d'un any) haurien quedat al final.
+
+**Solució Implementada:** fitxer compacte `data/historial-musical.json` (totes les cançons de l'arxiu: 4.261, ~800 KB, ~160 KB comprimit), generat per `archivar_feed_musical.js` i actualitzat amb les visualitzacions per `update_music_history_views.js` (el workflow setmanal ara també el desa). El client el carrega en segon pla (`YouTubeAPI.ensureStyleHistory()`, amb la mateixa hidratació que el feed: nom del canal, miniatura, estils, títol net). En una vista d'estil, categoria pròpia o «Seguint», `mergeStyleHistory()` l'afegeix a les cançons del feed abans de filtrar (les vistes en filtren les cançons ja escoltades com sempre) i `rankRecommendedWithEngine()` ordena tot el conjunt com «Recomanat per a tu» (gust, popularitat, antiguitat, mode de descoberta), i després `arrangeMusicList()`. Mateixa targeta que el feed (`createVideoCardAPI`, amb visualitzacions). Si l'historial encara no ha arribat en tocar l'estil, l'esquelet de càrrega espera fins a 2,5 s perquè la llista es pinti una sola vegada. Eliminades `renderCategoryHistorySection()` i `createArchiveVideoCard()`.
+
+**Trampes:** les cançons de l'historial han de ser trobables en reproduir-les: són a `YouTubeAPI.styleHistoryVideos`, que s'ha afegit a les llistes de vídeos coneguts d'`openVideoFromUserGesture()` i companyia. L'ordre d'un estil ja no és cronològic: el fa el motor (pot variar una mica d'una visita a l'altra).
+
+**Fitxers Afectats:** `scripts/lib/arxiu_musical.js`, `scripts/archivar_feed_musical.js`, `scripts/update_music_history_views.js`, `.github/workflows/actualitzar-visualitzacions-historial.yml`, `data/historial-musical.json`, `js/youtube.js`, `js/app.js`, `sw.js`, `tests/estils-historial.test.js`, `tests/canvi-estil.test.js`.
+
 ## [2026-10-04] - Salt visual en entrar a un estil (portada desfeta i «historial» abans de les cançons)
 **Símptoma:** al mòbil, en tocar un estil (rajola de «Tria el teu so», selector «Estil» o peu), primer es veia una llista estranya, després cançons de l'historial i finalment la llista de cançons de l'estil.
 

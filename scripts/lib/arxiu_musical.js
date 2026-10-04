@@ -89,8 +89,39 @@ function selectHistoryPool(videos, limit = DEFAULTS.historyPoolPerChannel) {
     .filter(Boolean);
 }
 
+// data/historial-musical.json: totes les cançons de l'arxiu en un sol fitxer compacte perquè la vista d'un estil
+// les barregi amb les del feed (el client ordena el conjunt amb el motor de selecció). Només cançons publicades
+// (song / live_song, no Shorts, amb durada); sense el nom del canal ni l'hora (el client els treu del canal i del dia).
+function buildStyleHistory(videos) {
+  return uniqueVideos(videos)
+    .filter(video => isSong(video) && !video?.isShort && Number(video?.durationSeconds) > 0 && video?.channelId)
+    .map(video => {
+      const out = {
+        id: String(video.id),
+        title: String(video.title || ''),
+        channelId: String(video.channelId),
+        publishedAt: String(video.publishedAt || '').slice(0, 10),
+        viewCount: Number(video.viewCount || 0),
+        durationSeconds: Number(video.durationSeconds),
+      };
+      if (video.contentType === 'live_song') out.contentType = 'live_song';
+      if (video.originalYear) out.originalYear = Number(video.originalYear);
+      if (video.topicTrack) out.topicTrack = true;
+      return out;
+    })
+    .sort((a, b) => b.publishedAt.localeCompare(a.publishedAt) || a.id.localeCompare(b.id));
+}
+
+// Una cançó per línia: els canvis setmanals de visualitzacions fan diffs petits.
+function serializeStyleHistory(videos, updatedAt = new Date().toISOString()) {
+  const list = Array.isArray(videos) ? videos : [];
+  return `{"updatedAt":${JSON.stringify(updatedAt)},"videos":[\n${list.map(video => JSON.stringify(video)).join(',\n')}\n]}\n`;
+}
+
 module.exports = {
   DEFAULTS,
+  buildStyleHistory,
+  serializeStyleHistory,
   splitChannelVideos,
   compactArchiveVideo,
   selectHistoryPool,

@@ -1,6 +1,6 @@
 {
   "generatedAt": "2026-10-03T23:29:20.183Z",
-  "rawPublicVideoCount": 3602,
+  "rawPublicVideoCount": 4006,
   "feedVideoCount": 3553,
   "acceptedMusicCount": 3522,
   "categoryEligibleVideoCount": 3519,
@@ -10,14 +10,14 @@
     "matched": 3,
     "rejected": 45
   },
-  "rejectedOrReviewCount": 80,
+  "rejectedOrReviewCount": 484,
   "reviewCount": 425,
   "typeCounts": {
     "song": 3429,
     "live_song": 90,
     "album": 3,
     "other": 59,
-    "review": 21
+    "review": 425
   },
   "channelsWithoutAcceptedMusic": [],
   "rejectedSamples": [

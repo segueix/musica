@@ -44,7 +44,7 @@ describe('en tocar un estil no es veu la vista anterior', () => {
         expect(app.match(/showCategoryLoading\(\);/g)?.length).toBeGreaterThanOrEqual(2);
         expect(app.match(/renderFeedAfterCategoryChange\(\);/g)?.length).toBeGreaterThanOrEqual(2);
         expect(app).toMatch(
-            /function renderFeedAfterCategoryChange\(\) \{\s*try \{\s*renderFeed\(\);\s*\} finally \{\s*hideCategoryLoading\(\);/
+            /async function renderFeedAfterCategoryChange\(\) \{[\s\S]*?try \{\s*renderFeed\(\);\s*\} finally \{\s*hideCategoryLoading\(\);/
         );
         // El render per lots de la vista anterior no hi pot afegir targetes
         expect(app).toMatch(/function showCategoryLoading\(\) \{[\s\S]*?_batchRenderAbort\.aborted = true/);

@@ -4335,8 +4335,14 @@ function hideCategoryLoading() {
     videosGrid?.removeAttribute('aria-busy');
 }
 
-// renderFeed() amb l'esquelet de càrrega posat des del toc fins que la llista és a punt.
-function renderFeedAfterCategoryChange() {
+// renderFeed() amb l'esquelet de càrrega posat des del toc fins que la llista és a punt (amb l'historial de l'estil
+// ja carregat: si arribés després, la llista es tornaria a pintar i saltaria).
+async function renderFeedAfterCategoryChange() {
+    const category = selectedCategory;
+    if (isStyleHistoryView(category)) {
+        await waitForStyleHistory();
+        if (selectedCategory !== category) return;
+    }
     try {
         renderFeed();
     } finally {
@@ -6292,6 +6298,7 @@ async function resolveInitialVideoForUrl(videoId) {
         ...(Array.isArray(currentFeedVideos) ? currentFeedVideos : []),
         ...(Array.isArray(cachedAPIVideos) ? cachedAPIVideos : []),
         ...(Array.isArray(YouTubeAPI?.feedVideos) ? YouTubeAPI.feedVideos : []),
+        ...(Array.isArray(YouTubeAPI?.styleHistoryVideos) ? YouTubeAPI.styleHistoryVideos : []),
     ];
     const localVideo = localCandidates.find(video => String(video?.id || '') === normalizedId);
     if (localVideo) {
@@ -6467,6 +6474,32 @@ function getVideoDurationSeconds(video) {
     return null;
 }
 
+// ========== HISTORIAL DINS DELS ESTILS ==========
+
+const STYLE_HISTORY_EXCLUDED_VIEWS = new Set(['Novetats', 'Tot', 'Descobreix', 'Radar']);
+const STYLE_HISTORY_WAIT_MS = 2500;
+
+function isStyleHistoryView(category) {
+    return Boolean(category) && !STYLE_HISTORY_EXCLUDED_VIEWS.has(category) && !isCustomCategory(category);
+}
+
+// Feed + cançons de l'historial (data/historial-musical.json) sense repetir cap ID.
+function mergeStyleHistory(videos) {
+    const list = Array.isArray(videos) ? videos : [];
+    const history = Array.isArray(YouTubeAPI?.styleHistoryVideos) ? YouTubeAPI.styleHistoryVideos : [];
+    if (!history.length) return list;
+    const ids = new Set(list.map(video => String(video?.id)));
+    return [...list, ...history.filter(video => !ids.has(String(video.id)))];
+}
+
+// Espera (amb límit) que l'historial dels estils sigui a punt: l'esquelet de càrrega cobreix l'espera i la llista es
+// pinta una sola vegada, ja barrejada.
+function waitForStyleHistory() {
+    const promise = YouTubeAPI?.ensureStyleHistory?.();
+    if (!promise) return Promise.resolve();
+    return Promise.race([promise, new Promise(resolve => setTimeout(resolve, STYLE_HISTORY_WAIT_MS))]);
+}
+
 function renderFeedLegacyImpl() {
     if (!currentFeedRenderer) return;
     if (isCustomCategory(selectedCategory)) {
@@ -6503,6 +6536,12 @@ function renderFeedLegacyImpl() {
         }
 
         videosToFilter = Array.from(uniqueVideosMap.values());
+    }
+
+    // Vista d'un estil (o d'una categoria pròpia, o «Seguint»): les cançons de l'historial s'hi barregen amb les del
+    // feed i surten igual (mateixa targeta, visualitzacions); l'ordre el fa el motor de selecció amb tot el conjunt.
+    if (isStyleHistoryView(selectedCategory)) {
+        videosToFilter = mergeStyleHistory(videosToFilter);
     }
 
     let filtered = filterVideosByCategory(videosToFilter, currentFeedData);
@@ -6597,6 +6636,18 @@ function renderFeedLegacyImpl() {
         );
     } else if (HYBRID_CATEGORY_SORT.has(selectedCategory)) {
         filtered = hybridCategorySort(filtered);
+    }
+
+    // Estil amb l'historial barrejat: per data, totes les cançons de l'historial (de fa més d'un any) quedarien al
+    // final. Les ordena el motor de selecció, com «Recomanat per a tu» (gust, popularitat, antiguitat i mode de
+    // descoberta, amb els mateixos límits d'antigues i d'artista).
+    if (isStyleHistoryView(selectedCategory) && SegueixApp.features.musicSelection?.isEnabled?.()) {
+        try {
+            const ranked = rankRecommendedWithEngine(filtered);
+            if (Array.isArray(ranked) && ranked.length > 0) filtered = ranked;
+        } catch (error) {
+            console.warn('No s’ha pogut ordenar l’estil amb el motor de selecció:', error);
+        }
     }
 
     if (isRecommendedPage) {
@@ -6718,199 +6769,6 @@ function appendWatchedVideosSection(container, videos) {
     refreshIcons(wrapper);
     setupVideoCardActionButtons(wrapper);
     return wrapper;
-}
-
-function renderCategoryHistorySection(categoryTag) {
-    if (!videosGrid || !categoryTag) return;
-    if (!Array.isArray(searchArchiveIndexCache) || searchArchiveIndexCache.length === 0) return;
-
-    const feedVideoIds = new Set((lastRenderedFeedList || []).map(v => String(v.id)));
-    const watchedIds = getHistoryVideoIdSet();
-    const notInFeed = video => !feedVideoIds.has(String(video.id));
-
-    let archiveCandidates = [];
-
-    if (isCustomCategory(categoryTag)) {
-        // Categories personalitzades: cercar per títol i resultats previs
-        const rawTag = normalizeCustomTag(categoryTag);
-        if (!rawTag) return;
-        const forceExact = rawTag.includes(' ');
-        const isTitleMatch = video => {
-            const title = video?.title || video?.snippet?.title || '';
-            return isMatch(title, rawTag, forceExact);
-        };
-
-        const searchResults = getCustomCategorySearchResults(categoryTag);
-        archiveCandidates = searchResults
-            .filter(video => video && !video.isShort)
-            .filter(video => resolveHistorySource(video) === 'archive')
-            .filter(video => isTitleMatch(video));
-    } else if (categoryTag === 'Seguint') {
-        // Seguint: arxiu dels canals seguits
-        const followedIds = new Set(getFollowedChannelIds().map(id => String(id)));
-        if (followedIds.size === 0) return;
-        archiveCandidates = searchArchiveIndexCache
-            .filter(item => followedIds.has(String(item?.c || '')))
-            .map(item => ({
-                id: item?.i,
-                title: item?.t || '',
-                channelId: item?.c || '',
-                channelTitle: getChannelNameById(item?.c),
-                publishedAt: item?.d || '',
-                thumbnail: buildArchiveThumbnail(item?.i),
-                source: 'archive',
-            }))
-            .filter(video => video.id && !video.isShort);
-    } else if (categoryTag === 'Radar') {
-        // Radar: arxiu de canals assignats + vídeos que fan match per títol
-        // amb el nom de les categories o les seves etiquetes
-        const radarChannels = getRadarChannelIds();
-        const activeTags = getCustomTags();
-
-        // Construir llista de termes de cerca: noms de categories + etiquetes
-        const searchTerms = [];
-        for (const tag of activeTags) {
-            const normalized = normalizeCustomTag(tag);
-            if (!normalized) continue;
-            searchTerms.push({ term: normalized, forceExact: normalized.includes(' ') });
-            const keywords = getCategoryKeywords(normalized);
-            for (const kw of keywords) {
-                const kwTrimmed = kw.trim();
-                if (kwTrimmed) {
-                    searchTerms.push({ term: kwTrimmed, forceExact: kwTrimmed.includes(' ') });
-                }
-            }
-        }
-
-        const matchesRadar = item => {
-            // Match per canal assignat
-            if (radarChannels.has(String(item?.c || ''))) return true;
-            // Match per títol amb termes de categories i etiquetes
-            const title = item?.t || '';
-            return searchTerms.some(({ term, forceExact }) => isMatch(title, term, forceExact));
-        };
-
-        archiveCandidates = searchArchiveIndexCache
-            .filter(matchesRadar)
-            .map(item => ({
-                id: item?.i,
-                title: item?.t || '',
-                channelId: item?.c || '',
-                channelTitle: getChannelNameById(item?.c),
-                publishedAt: item?.d || '',
-                thumbnail: buildArchiveThumbnail(item?.i),
-                source: 'archive',
-            }))
-            .filter(video => video.id);
-    } else {
-        // Categories estàndard (Música, Ciència, etc.): arxiu dels canals de la categoria
-        const wanted = categoryTag.toLowerCase();
-        const categoryChannelIds = new Set();
-        if (currentFeedData?.channels) {
-            (Array.isArray(currentFeedData.channels) ? currentFeedData.channels : []).forEach(c => {
-                const cats = Array.isArray(c.categories) ? c.categories.map(cat => String(cat).toLowerCase()) : [];
-                if (cats.includes(wanted)) {
-                    categoryChannelIds.add(String(c.id));
-                }
-            });
-        }
-        if (categoryChannelIds.size === 0) return;
-        archiveCandidates = searchArchiveIndexCache
-            .filter(item => categoryChannelIds.has(String(item?.c || '')))
-            .map(item => ({
-                id: item?.i,
-                title: item?.t || '',
-                channelId: item?.c || '',
-                channelTitle: getChannelNameById(item?.c),
-                publishedAt: item?.d || '',
-                thumbnail: buildArchiveThumbnail(item?.i),
-                source: 'archive',
-            }))
-            .filter(video => video.id);
-    }
-
-    const historicByDate = archiveCandidates
-        .filter(video => !watchedIds.has(String(video.id)))
-        .filter(notInFeed)
-        .sort((a, b) => {
-            const dateA = new Date(a.publishedAt || a.uploadDate || 0).getTime();
-            const dateB = new Date(b.publishedAt || b.uploadDate || 0).getTime();
-            return dateB - dateA;
-        });
-    // Varietat: l'arxiu ordenat per data agrupa tongades del mateix artista; es reparteixen
-    // (mantenint l'actualitat) i s'enllaça amb l'últim vídeo del feed que hi ha just a sobre.
-    const lastFeedVideo = lastRenderedFeedList[lastRenderedFeedList.length - 1];
-    const historicVideos = spreadVideosByArtist(historicByDate, {
-        previousArtist: getVideoArtistKey(lastFeedVideo),
-        window: 400,
-    });
-
-    if (historicVideos.length === 0) return;
-
-    const SECTION_INITIAL = 12;
-    const SECTION_LOAD_MORE = 12;
-
-    // Delegació d'events per seccions d'arxiu (un sol listener per wrapper)
-    const bindSectionDelegation = wrapper => {
-        wrapper.addEventListener('click', event => {
-            const playlistBtn = event.target.closest('.archive-playlist-action');
-            if (playlistBtn) {
-                event.stopPropagation();
-                const payload = playlistBtn.dataset.playlistVideo;
-                if (payload) openPlaylistModal(JSON.parse(decodeURIComponent(payload)));
-                return;
-            }
-            if (event.target.closest('.channel-link')) return;
-            const card = event.target.closest('.archive-video-card');
-            if (card) openVideoFromUserGesture(card.dataset.videoId, 'api');
-        });
-        bindChannelLinks(wrapper);
-        refreshIcons(wrapper);
-    };
-
-    // A Desktop, mostrar tots els vídeos directament sense botó "Mostra'n més"
-    const showAll = isDesktopView();
-    const initial = showAll ? historicVideos : historicVideos.slice(0, SECTION_INITIAL);
-    let loaded = initial.length;
-
-    const wrapper = document.createElement('div');
-    wrapper.className = 'category-history-wrapper category-history-seamless';
-    wrapper.innerHTML = `
-        <div class="videos-grid archive-videos-grid">${initial.map(video => createArchiveVideoCard(video)).join('')}</div>
-    `;
-    videosGrid.appendChild(wrapper);
-
-    const grid = wrapper.querySelector('.archive-videos-grid');
-    bindSectionDelegation(wrapper);
-
-    // Botó "Mostra'n més" només a mòbil
-    if (!showAll && historicVideos.length > SECTION_INITIAL) {
-        const loadMoreBtn = document.createElement('button');
-        loadMoreBtn.type = 'button';
-        loadMoreBtn.className = 'section-load-more-btn';
-        loadMoreBtn.textContent = `Mostra'n més (${historicVideos.length - loaded})`;
-        wrapper.appendChild(loadMoreBtn);
-
-        loadMoreBtn.addEventListener('click', () => {
-            const next = historicVideos.slice(loaded, loaded + SECTION_LOAD_MORE);
-            if (next.length === 0) return;
-
-            const fragment = document
-                .createRange()
-                .createContextualFragment(next.map(video => createArchiveVideoCard(video)).join(''));
-            grid.appendChild(fragment);
-            refreshIcons(grid);
-            bindChannelLinks(grid);
-
-            loaded += next.length;
-            const remaining = historicVideos.length - loaded;
-            if (remaining > 0) {
-                loadMoreBtn.textContent = `Mostra'n més (${remaining})`;
-            } else {
-                loadMoreBtn.remove();
-            }
-        });
-    }
 }
 
 // Carregar categories
@@ -8392,13 +8250,6 @@ function renderVideos(videos) {
         onComplete: () => {
             refreshIcons(videosGrid);
             setupVideoCardActionButtons(videosGrid);
-            if (
-                selectedCategory === categoryAtRender &&
-                categoryAtRender !== 'Tot' &&
-                categoryAtRender !== 'Novetats'
-            ) {
-                renderCategoryHistorySection(categoryAtRender);
-            }
         },
     });
 
@@ -8516,6 +8367,7 @@ async function hydratePlaylistVideos(videos) {
     const resolvedById = new Map();
     const cachedSources = [
         ...(Array.isArray(YouTubeAPI?.feedVideos) ? YouTubeAPI.feedVideos : []),
+        ...(Array.isArray(YouTubeAPI?.styleHistoryVideos) ? YouTubeAPI.styleHistoryVideos : []),
         ...(Array.isArray(cachedAPIVideos) ? cachedAPIVideos : []),
         ...(Array.isArray(window.cachedAPIVideos) ? window.cachedAPIVideos : []),
         ...(Array.isArray(window.VIDEOS) ? window.VIDEOS : []),
@@ -11330,39 +11182,6 @@ function setupMiniPlayerToggle() {
     setMiniPlayerState(isMiniPlayerActive());
 }
 
-// Targetes d'arxiu
-function createArchiveVideoCard(video) {
-    const payload = encodeURIComponent(JSON.stringify(getPlaylistVideoData(video)));
-    const thumbnail = video.thumbnail || buildArchiveThumbnail(video.id);
-    const channelId = video.channelId || '';
-    const duration = getVideoDisplayDuration(video);
-    const radarLabel = getRadarCategoryLabel(video);
-    return `
-        <article class="archive-video-card" data-video-id="${video.id}">
-            <div class="archive-video-thumb-wrap is-archive-source">
-                <img class="archive-video-thumb" src="${thumbnail}" alt="${escapeHtml(video.title)}" loading="lazy" decoding="async">
-                <span class="archive-history-badge" aria-label="Arxiu" title="Vídeo d'arxiu">
-                    <i data-lucide="history"></i>
-                </span>
-                ${radarLabel ? `<span class="radar-category-label radar-category-label--top-right">${escapeHtml(radarLabel)}</span>` : ''}
-                ${duration ? `<span class="video-duration-badge">${duration}</span>` : ''}
-            </div>
-            <div class="archive-video-info">
-                <div class="archive-video-header">
-                    <h3 class="archive-video-title">${escapeHtml(video.title)}</h3>
-                    <button class="video-action-btn playlist-action archive-playlist-action" type="button" data-playlist-video="${payload}" aria-label="Afegir a una llista">
-                        ${PLAYLIST_ICON_SVG}
-                    </button>
-                </div>
-                <p class="archive-video-meta">
-                    <span class="channel-link" data-channel-id="${escapeHtml(channelId)}">${escapeHtml(video.channelTitle || 'Canal')}</span>
-                    <span>• ${formatDate(video.publishedAt)}</span>
-                </p>
-            </div>
-        </article>
-    `;
-}
-
 // Crear targeta de vídeo (API)
 function createVideoCardAPI(video) {
     const payload = encodeURIComponent(JSON.stringify(getPlaylistVideoData(video)));
@@ -11886,6 +11705,7 @@ async function showVideoFromAPILegacyImpl(videoId, options = {}) {
         ...(Array.isArray(YouTubeAPI?.feedVideos) ? YouTubeAPI.feedVideos : []),
         ...(Array.isArray(currentFeedVideos) ? currentFeedVideos : []),
         ...cachedAPIVideos,
+        ...(Array.isArray(YouTubeAPI?.styleHistoryVideos) ? YouTubeAPI.styleHistoryVideos : []),
     ];
 
     let cachedVideo = allKnownVideos.find(video => String(video?.id) === normalizedVideoId);

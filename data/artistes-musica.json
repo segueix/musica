@@ -8256,11 +8256,18 @@
       "youtube": {
         "channels": [
           {
+            "id": "UC76gEcL7sivyILBfwe54ETw",
+            "handle": "@IsaakAguila",
+            "name": "Isaak Aguilà",
+            "type": "official",
+            "primary": true
+          },
+          {
             "id": "UCS9aWKrOcJsSqsJqBEouqAg",
             "handle": null,
-            "name": "Isaak Aguilà",
+            "name": "Isaak Aguilà - Topic",
             "type": "topic",
-            "primary": true
+            "primary": false
           }
         ]
       },
@@ -8271,10 +8278,11 @@
         "manual-user-2026-10-02",
         "youtube:manual-verified",
         "genre:manual",
-        "https://www.youtube.com/channel/UCS9aWKrOcJsSqsJqBEouqAg"
+        "https://www.youtube.com/channel/UCS9aWKrOcJsSqsJqBEouqAg",
+        "https://www.youtube.com/channel/UC76gEcL7sivyILBfwe54ETw"
       ],
       "lastChecked": "2026-10-02T09:00:00.000Z",
-      "notes": "Alta manual verificada (llista de l'usuari del 2026-10-02). Canal «Tema» (Topic) de YouTube.",
+      "notes": "Alta manual verificada (llista de l’usuari del 2026-10-02). Canal propi @IsaakAguila (afegit el 2026-10-04: al «Tema» les cançons tenen 0–20 visualitzacions; les reals són al canal propi) i canal «Tema» (Topic).",
       "genresRaw": [],
       "enrichment": {
         "genres": {

@@ -507,11 +507,19 @@ async function main(){
   let categoryEligibleVideoCount=0;
 
   if(targetMode){
+    // Els vídeos «per revisar» dels canals que no es tornen a llegir es compten des de la llista de revisió conservada,
+    // no des del feed anterior: des que el feed calent i l'historial van separats, molts ja no són al feed i
+    // l'auditoria deixava de quadrar (typeCounts.review 21 contra 425 a music-content-review.json).
+    publicVideoCount=0;
     for(const video of videos){
+      if(video.contentType==='review') continue;
+      publicVideoCount++;
       typeCounts[video.contentType]=(typeCounts[video.contentType]||0)+1;
       if(['song','live_song','album'].includes(video.contentType)) acceptedMusicCount++;
       if(video.contentType==='song' || video.contentType==='live_song') categoryEligibleVideoCount++;
     }
+    typeCounts.review+=review.length;
+    publicVideoCount+=review.length;
   }
 
   for(const id of ids){
