@@ -1085,12 +1085,8 @@ body:has(#homePage.is-portada) .category-selector {
     display: grid;
     /* Quatre modes: dues files de dos al mòbil, una fila de quatre quan hi cap (vegeu la consulta de sota) */
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 4px;
+    gap: 8px;
     max-width: 480px;
-    padding: 4px;
-    border: 1px solid var(--pt-line);
-    border-radius: var(--pt-radius-lg);
-    background: var(--pt-surface);
 }
 
 @media (min-width: 560px) {
@@ -1115,12 +1111,14 @@ body:has(#homePage.is-portada) .category-selector {
     cursor: pointer;
 }
 
+/* Cada mode és un botó amb un marc simple; el triat canvia de color (no de forma) */
 .pt-mode__opt span {
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 44px;
     padding: 4px 8px;
+    border: 1px solid var(--pt-mode-line, rgba(244, 240, 232, 0.4));
     border-radius: var(--pt-radius-sm);
     color: var(--pt-text);
     font-size: 0.875rem;
@@ -1133,10 +1131,12 @@ body:has(#homePage.is-portada) .category-selector {
 }
 
 .pt-mode__opt:hover span {
+    border-color: var(--pt-accent);
     background: var(--pt-surface-2);
 }
 
 .pt-mode__opt input:checked + span {
+    border-color: var(--pt-accent);
     background: var(--pt-accent);
     color: var(--pt-on-accent);
 }
@@ -2725,18 +2725,14 @@ body .follow-btn-pill.is-followed:hover {
     display: grid;
     /* Quatre modes dins la capçalera de la cua: sempre dues files de dos (a quatre columnes es partien en tres línies) */
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 4px;
-    padding: 4px;
-    border: 1px solid var(--pt-line);
-    border-radius: var(--pt-radius-lg);
-    background: var(--pt-surface);
+    gap: 8px;
 }
 
 .mq-mode__opt {
     min-width: 0;
     min-height: 44px;
     padding: 4px 6px;
-    border: 0;
+    border: 1px solid var(--pt-mode-line, rgba(244, 240, 232, 0.4));
     border-radius: var(--pt-radius-sm);
     background: transparent;
     color: var(--pt-text);
@@ -2752,10 +2748,12 @@ body .follow-btn-pill.is-followed:hover {
 }
 
 .mq-mode__opt:hover {
+    border-color: var(--pt-accent);
     background: var(--pt-surface-2);
 }
 
 .mq-mode__opt.is-active {
+    border-color: var(--pt-accent);
     background: var(--pt-accent);
     color: var(--pt-on-accent);
 }
@@ -5457,8 +5455,9 @@ body .app-header .actions :is(.icon-btn[data-page='llistes'], .icon-btn[data-pag
     margin-top: 8px;
 }
 
-/* Vista d'una categoria pròpia: nom, grups i accions */
-.page-title.page-title--user-category {
+/* Vista d'una categoria pròpia o d'un estil: nom i accions (la ràdio, a dalt de tot) */
+.page-title.page-title--user-category,
+.page-title.page-title--style {
     display: block;
 }
 
@@ -5489,7 +5488,14 @@ body .app-header .actions :is(.icon-btn[data-page='llistes'], .icon-btn[data-pag
     margin-top: 10px;
 }
 
+/* El títol de pàgina és en lletra de titular: el botó va en la lletra del text */
+.uc-page__radio,
+.style-page__radio {
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
 .uc-page__radio svg,
+.style-page__radio svg,
 .uc-icon-btn svg {
     width: 20px;
     height: 20px;
