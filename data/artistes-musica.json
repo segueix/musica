@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-05T09:10:00.000Z",
+  "updatedAt": "2026-10-05T09:11:03.414Z",
   "artists": [
     {
       "name": "31 FAM",
@@ -10617,7 +10617,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": []
+        "channels": [
+          {
+            "id": "UCREWI0yP_fZNpVsqt-t5wIw",
+            "handle": "@kiddireal",
+            "name": "Kiddi",
+            "type": "official",
+            "primary": true
+          }
+        ]
       },
       "confidence": "alta",
       "reviewStatus": "aprovat",
@@ -10628,7 +10636,7 @@
         "genre:manual",
         "https://www.youtube.com/@kiddireal"
       ],
-      "lastChecked": "2026-10-05T09:10:00.000Z",
+      "lastChecked": "2026-10-05T09:11:03.414Z",
       "notes": "Alta manual verificada (petició de l'usuari del 2026-10-05). Canal oficial @kiddireal verificat; l'ID es resol pel pipeline de canals verificats per evitar el Topic homònim contaminat."
     },
     {
