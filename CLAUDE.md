@@ -65,7 +65,7 @@ js/
 │   ├── music-selection.js   # Motor de selecció musical compartit (funcions pures): antiguitat real, puntuació, restriccions
 │   ├── music-signals.js     # Observador únic d'escolta, estadístiques i preferències («(+) com aquesta (−)»)
 │   ├── music-queue.js       # Ràdio/cua: motor de selecció, mode de descoberta, «Afegeix a la cua», reproduir una selecció
-│   └── home-playlists.js    # «Les teves llistes» de la portada
+│   └── home-playlists.js    # «Les teves llistes» de la portada (només a Inici: amagada als estils, categories i cerca)
 ├── config.js                # Constants CONFIG (branding, theme, features, layout, categories)
 ├── song-title.js            # Títols nets: treu l'artista i «videoclip / vídeo / oficial» (UMD, funcions pures)
 ├── youtube.js               # YouTubeAPI object — feed fetch, cache, parsers
