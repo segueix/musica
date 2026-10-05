@@ -59,20 +59,6 @@
         "song",
         "live_song"
       ]
-    },
-    "UCdV07zjxqkXc8sEZg5SaDFw": {
-      "artist": "Pomada",
-      "note": "Canal d'arxiu de Xavier Batllés / BITSTUDI, productor d'El disc 1 de Pomada. Només s'accepta contingut musical explícitament identificat com a Pomada per evitar barrejar la resta del canal.",
-      "allowedTitleContains": [
-        "Pomada"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song",
-        "album"
-      ],
-      "avatarFromFirstAllowedVideo": true
     }
   }
 }
