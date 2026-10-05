@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-05T15:18:57.389Z",
+  "updatedAt": "2026-10-05T15:38:23.541171Z",
   "artists": [
     {
       "name": "2ES",
@@ -28159,6 +28159,323 @@
       ],
       "lastChecked": "2026-10-05T15:17:16.646044Z",
       "notes": "Alta de punk en català a petició de l’usuari. Només el repertori revisat a la llista blanca està autoritzat; no implica que tota la discografia sigui en català. Lletres contrastades a fonts del grup o del segell."
+    },
+    {
+      "name": "Maria Betriu",
+      "aliases": [
+        "Maria Betriu Jazz Band"
+      ],
+      "genres": [
+        "Jazz / Blues"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UC18hp60b-j4DdzwEcWe9wrw",
+            "handle": null,
+            "name": "Maria Betriu - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://www.enderrock.cat/disc/5909/jazz-catala",
+        "https://www.verkami.com/projects/10333-maria-betriu-canta-standards-de-jazz-en-catala",
+        "https://www.youtube.com/channel/UC18hp60b-j4DdzwEcWe9wrw",
+        "manual-user-2026-10-05",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-05T15:38:23.541171Z",
+      "notes": "Alta de jazz a petició de l’usuari: només repertori cantat en català o instrumental contrastat. Llista blanca tancada i fonts per peça a docs/REVISION_JAZZ_2026-10-05.json; la resta de la discografia no queda autoritzada."
+    },
+    {
+      "name": "Carme Canela",
+      "aliases": [],
+      "genres": [
+        "Jazz / Blues"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCe_v26nxcgIzZxxvRDkHOrw",
+            "handle": null,
+            "name": "Carme Canela - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://www.coveralia.com/letras/postal-carme-canela.php",
+        "https://www.coveralia.com/letras/desapareixer-dins-del-llit-carme-canela.php",
+        "https://rodamots.cat/escreix/carme-canela-retrat-en-blanc-i-negre/",
+        "https://www.youtube.com/channel/UCe_v26nxcgIzZxxvRDkHOrw",
+        "manual-user-2026-10-05",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-05T15:38:23.541171Z",
+      "notes": "Alta de jazz a petició de l’usuari: només repertori cantat en català o instrumental contrastat. Llista blanca tancada i fonts per peça a docs/REVISION_JAZZ_2026-10-05.json; la resta de la discografia no queda autoritzada."
+    },
+    {
+      "name": "Andrea Motis",
+      "aliases": [],
+      "genres": [
+        "Jazz / Blues"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCmwGTBibm2bt9oF-P7ECSmQ",
+            "handle": null,
+            "name": "Andrea Motis",
+            "type": "official",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://andreamotis.com/emotional-dance/",
+        "https://www.discmedi.com/en/jazz-latin-jazz/jazz/emotional_dance",
+        "https://www.youtube.com/channel/UCmwGTBibm2bt9oF-P7ECSmQ",
+        "manual-user-2026-10-05",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-05T15:38:23.541171Z",
+      "notes": "Alta de jazz a petició de l’usuari: només repertori cantat en català o instrumental contrastat. Llista blanca tancada i fonts per peça a docs/REVISION_JAZZ_2026-10-05.json; la resta de la discografia no queda autoritzada."
+    },
+    {
+      "name": "Vicens Martín Dream Big Band",
+      "aliases": [
+        "Vicens Martín",
+        "Vicens Martín Dream Big Band & Gemma Abrié"
+      ],
+      "genres": [
+        "Jazz / Blues"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCpj14cymb-6wmeXwI4hmFxA",
+            "handle": null,
+            "name": "Vicens Martín - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://vicensmartin.bandcamp.com/album/els-fruits-saborosos-gemma-abri-vicens-mart-n-dream-big-band",
+        "https://www.youtube.com/channel/UCpj14cymb-6wmeXwI4hmFxA",
+        "manual-user-2026-10-05",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-05T15:38:23.541171Z",
+      "notes": "Alta de jazz a petició de l’usuari: només repertori cantat en català o instrumental contrastat. Llista blanca tancada i fonts per peça a docs/REVISION_JAZZ_2026-10-05.json; la resta de la discografia no queda autoritzada."
+    },
+    {
+      "name": "Magalí Datzira",
+      "aliases": [],
+      "genres": [
+        "Jazz / Blues"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCfcp4MZZ3t309KMOLo7JJag",
+            "handle": null,
+            "name": "Magalí Datzira",
+            "type": "official",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://magalidatzira.bandcamp.com/album/la-salut-i-la-bellesa",
+        "https://www.youtube.com/channel/UCfcp4MZZ3t309KMOLo7JJag",
+        "manual-user-2026-10-05",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-05T15:38:23.541171Z",
+      "notes": "Alta de jazz a petició de l’usuari: només repertori cantat en català o instrumental contrastat. Llista blanca tancada i fonts per peça a docs/REVISION_JAZZ_2026-10-05.json; la resta de la discografia no queda autoritzada."
+    },
+    {
+      "name": "Pegasus",
+      "aliases": [],
+      "genres": [
+        "Jazz / Blues",
+        "Rock"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCYVzNqs1SsMzBHLli6QUHaw",
+            "handle": null,
+            "name": "Pegasus - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://santiarisa.cat/pegasus/",
+        "https://www.pegasus.cat/ca/discografia/discografia.html",
+        "https://www.youtube.com/channel/UCYVzNqs1SsMzBHLli6QUHaw",
+        "manual-user-2026-10-05",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-05T15:38:23.541171Z",
+      "notes": "Alta de jazz a petició de l’usuari: només repertori cantat en català o instrumental contrastat. Llista blanca tancada i fonts per peça a docs/REVISION_JAZZ_2026-10-05.json; la resta de la discografia no queda autoritzada."
+    },
+    {
+      "name": "Clara Peya",
+      "aliases": [],
+      "genres": [
+        "Jazz / Blues",
+        "Indie / Alternativa"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCRLHVqJybtjS5ODPP5iAv4w",
+            "handle": null,
+            "name": "Clara Peya",
+            "type": "official",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://clarapeya.bandcamp.com/album/estat-de-larva",
+        "https://www.enderrock.cat/noticia/21377/clara-peya-confinament-fet-veure-necessito-quotidianitat-afecte-tacte",
+        "https://vidarecords.bandcamp.com/album/perif-ria",
+        "https://www.youtube.com/channel/UCRLHVqJybtjS5ODPP5iAv4w",
+        "manual-user-2026-10-05",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-05T15:38:23.541171Z",
+      "notes": "Alta de jazz a petició de l’usuari: només repertori cantat en català o instrumental contrastat. Llista blanca tancada i fonts per peça a docs/REVISION_JAZZ_2026-10-05.json; la resta de la discografia no queda autoritzada."
+    },
+    {
+      "name": "Rita Payés",
+      "aliases": [],
+      "genres": [
+        "Jazz / Blues"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCYPbYGqAXm8gaYGVY-ANVXA",
+            "handle": null,
+            "name": "Rita Payés",
+            "type": "official",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://www.shazam.com/es-mx/song/1735922079/un-tros-dahir-feat-eudald-payc3a9s",
+        "https://www.youtube.com/watch?v=WjYm5D9hijI",
+        "https://www.youtube.com/channel/UCYPbYGqAXm8gaYGVY-ANVXA",
+        "manual-user-2026-10-05",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-05T15:38:23.541171Z",
+      "notes": "Alta de jazz a petició de l’usuari: només repertori cantat en català o instrumental contrastat. Llista blanca tancada i fonts per peça a docs/REVISION_JAZZ_2026-10-05.json; la resta de la discografia no queda autoritzada."
     }
   ]
 }
