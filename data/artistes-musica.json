@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-05T11:29:01.307Z",
+  "updatedAt": "2026-10-05T11:29:21.352Z",
   "artists": [
     {
       "name": "2ES",
@@ -12647,7 +12647,51 @@
       "musicbrainzId": null,
       "youtube": {
         "channels": [],
-        "candidates": []
+        "candidates": [],
+        "searchCandidates": [
+          {
+            "id": "UCakYGPxc03pOvnjK-kn6lRA",
+            "title": "La Madame",
+            "handle": "@lamadameof",
+            "description": "",
+            "subscriberCount": 2600,
+            "thumbnail": "https://yt3.ggpht.com/bueMgsu4k3-fcyvEIDNJSQa5PLFRnJr6osmCMuRryr-U_OpjciSjcMgvfv4rmXwFnqYGJumJ9w=s240-c-k-c0x00ffffff-no-rj",
+            "score": 53,
+            "reasons": [
+              "nom parcial",
+              "handle coincident"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T11:29:20.871Z"
+          },
+          {
+            "id": "UCbTr9gPHiKV60TAokK1mFcQ",
+            "title": "MADAME",
+            "handle": "@sonolamadame_",
+            "description": "Il canale ufficiale di Madame",
+            "subscriberCount": 614000,
+            "thumbnail": "https://yt3.ggpht.com/tkyCBC5ut-Ie52lqTg-HuxNgrSydtrSo-QVCPoNDaHuUOCKhGWVZlno4qimattPcRmrMXSlqYw=s240-c-k-c0x00ffffff-no-rj",
+            "score": 23,
+            "reasons": [
+              "handle coincident",
+              "primer resultat"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T11:29:20.871Z"
+          },
+          {
+            "id": "UCPsxk52RUPpJdlS7k0gDWIQ",
+            "title": "Madame - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 5630,
+            "thumbnail": "https://yt3.ggpht.com/tkyCBC5ut-Ie52lqTg-HuxNgrSydtrSo-QVCPoNDaHuUOCKhGWVZlno4qimattPcRmrMXSlqYw=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-05T11:29:20.871Z"
+          }
+        ]
       },
       "confidence": "mitjana",
       "reviewStatus": "pendent",
@@ -12675,6 +12719,14 @@
           "unmappedRaw": [],
           "status": "sense-dades",
           "wikidataWorkEvidence": []
+        },
+        "youtubeSearch": {
+          "checkedAt": "2026-10-05T11:29:20.871Z",
+          "status": "candidats",
+          "query": "La Madam",
+          "resultCount": 3,
+          "bestScore": 53,
+          "autoAcceptedId": null
         }
       }
     },
