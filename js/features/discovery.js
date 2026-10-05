@@ -55,7 +55,6 @@
         'Rumba / Mestissatge',
         'Punk / Metal',
         'Jazz / Blues',
-        'Clàssica',
         'Infantil',
         'Altres estils',
     ]);
@@ -843,3 +842,4 @@
         summarizeStyles,
     };
 })(window);
+

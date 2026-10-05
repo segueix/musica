@@ -1509,3 +1509,8 @@ La selecció manual tampoc aplica la deduplicació de títols pop: «Nocturne No
 **Causa:** (1) el workflow `cercar-canals-youtube.yml` s'executava en qualsevol `push` que toqués els seus fitxers, **de qualsevol branca**: una fusió de `main` a la branca de la PR hi portava canvis de `data/youtube-verified-handles.json` i el disparava. El job no prova la branca (fa `git reset --hard origin/main`), així que només podia fallar per causes externes. (2) La quota diària de l'API de YouTube (compartida per tots els workflows) era esgotada, i `resoldre_canals_verificats.js` sortia amb error (codi 1); `cercar_canals_youtube.js` ja s'aturava net.
 
 **Solució:** el `push` del workflow només és a `main` (`branches: [main]`), i `resoldre_canals_verificats.js` reconeix la quota esgotada (`isQuotaError()`: 403 amb `quotaExceeded`/`limit`), s'atura, desa el que ja ha resolt i surt amb codi 0 (la propera execució diària, 08:17 UTC, continua). Qualsevol altre error de l'API continua fent fallar el job. Prova: `tests/resoldre-canals-quota.test.js`.
+
+
+## [2026-10-05] - Retirada de Clàssica sense dependre de YouTube
+
+L’usuari retira la categoria Clàssica i els seus 78 artistes. Els 76 canals queden bloquejats i registrats amb `channelIds` a `music-exclusions.json`. L’arxivador purga aquests canals del feed, del mapa de canals i dels arxius abans de reconstruir l’historial i l’índex. Això evita que l’arxiu recuperi gravacions retirades i permet completar les baixes encara que s’hagi esgotat la quota de YouTube. El workflow d’arxiu respon a canvis d’exclusions i comparteix `music-data-writer` amb els altres generadors. La llista `musica-classica.json` fa referència a música antiga per ponderar ràdios, no al gènere retirat, i es conserva.

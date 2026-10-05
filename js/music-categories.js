@@ -21,9 +21,8 @@
         { label: 'Rumba / Mestissatge', genres: ['Rumba / Mestissatge'] },
         { label: 'Punk / Metal', genres: ['Punk', 'Metal'] },
         { label: 'Jazz / Blues', genres: ['Jazz / Blues'] },
-        { label: 'Clàssica', genres: ['Clàssica i contemporània', 'Coral / Vocal'] },
         { label: 'Infantil', genres: ['Infantil'] },
-        { label: 'Altres estils', genres: ['Funk / Soul / R&B', 'Experimental / Avantguarda', 'Altres'] },
+        { label: 'Altres estils', genres: ['Funk / Soul / R&B', 'Experimental / Avantguarda', 'Coral / Vocal', 'Altres'] },
     ];
 
     const byChannel = new Map();
@@ -314,3 +313,4 @@
         cleanVideoTitle,
     };
 });
+

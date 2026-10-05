@@ -68,7 +68,6 @@ const CONFIG = {
         { id: "rumba-mestissatge", name: "Rumba / Mestissatge", icon: "drum" },
         { id: "punk-metal", name: "Punk / Metal", icon: "zap" },
         { id: "jazz-blues", name: "Jazz / Blues", icon: "music-2" },
-        { id: "classica", name: "Clàssica", icon: "music" },
         { id: "infantil", name: "Infantil", icon: "baby" },
         { id: "altres-estils", name: "Altres estils", icon: "disc-3" }
     ],
@@ -117,3 +116,4 @@ if (document.readyState === 'loading') {
 }
 
 // SEGUEIX_API_URL eliminat — dependència de Google Sheets suprimida (Fase 1 QR)
+

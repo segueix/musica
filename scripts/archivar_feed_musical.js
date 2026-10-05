@@ -60,9 +60,23 @@ function hydrateForHot(video) {
 
 function main() {
   const feed = readJson(FEED, { channels: {}, videos: [] });
+  // Les baixes editorials es purguen també sense quota de YouTube, abans de rellegir l'arxiu.
+  const exclusions = readJson(path.join(ROOT, 'data', 'music-exclusions.json'), { exclusions: [] });
+  const removedChannels = new Set(exclusions.exclusions.flatMap(entry => entry.channelIds || []));
+  feed.channels = Object.fromEntries(Object.entries(feed.channels || {}).filter(([id]) => !removedChannels.has(id)));
+  const channelMapPath = path.join(ROOT, 'js', 'channels-ca.json');
+  const channelMap = readJson(channelMapPath, null);
+  if (Array.isArray(channelMap?.channels)) {
+    const kept = channelMap.channels.filter(channel => !removedChannels.has(channel.id));
+    if (kept.length !== channelMap.channels.length) {
+      channelMap.channels = kept;
+      fs.writeFileSync(channelMapPath, JSON.stringify(channelMap, null, 2) + '\n');
+    }
+  }
   // Segueix Música no publica Shorts: ni al feed calent ni a l'historial (2026-10-04).
   const notShort = video => video?.isShort !== true;
-  const videos = (Array.isArray(feed.videos) ? feed.videos : []).filter(notShort);
+  const notRemoved = video => !removedChannels.has(video?.channelId);
+  const videos = (Array.isArray(feed.videos) ? feed.videos : []).filter(notShort).filter(notRemoved);
   fs.mkdirSync(ARCHIVE_DIR, { recursive: true });
 
   const byChannel = new Map();
@@ -76,11 +90,15 @@ function main() {
   // Inclou l'arxiu existent perquè una execució posterior no perdi repertori ja mogut.
   for (const file of fs.readdirSync(ARCHIVE_DIR).filter(name => name.endsWith('.json'))) {
     const channelId = path.basename(file, '.json');
+    if (removedChannels.has(channelId)) {
+      fs.unlinkSync(path.join(ARCHIVE_DIR, file));
+      continue;
+    }
     const archive = readJson(path.join(ARCHIVE_DIR, file), { videos: [] });
     if (!byChannel.has(channelId)) byChannel.set(channelId, []);
     byChannel.set(channelId, uniqueVideos([
       ...byChannel.get(channelId),
-      ...(Array.isArray(archive.videos) ? archive.videos : []).filter(notShort),
+      ...(Array.isArray(archive.videos) ? archive.videos : []).filter(notShort).filter(notRemoved),
     ]));
   }
 
@@ -144,3 +162,4 @@ function main() {
 }
 
 main();
+

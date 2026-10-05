@@ -5,6 +5,7 @@ on:
     branches:
       - main
     paths:
+      - "data/music-exclusions.json"
       - "scripts/archivar_feed_musical.js"
       - "scripts/lib/arxiu_musical.js"
       - "tests/arxiu-musical.test.js"
@@ -13,7 +14,7 @@ on:
 
 concurrency:
   # Mateix feed, però aquesta tasca no usa API. Es serialitza per ella mateixa i abans de publicar sincronitza main.
-  group: music-archive-writer
+  group: music-data-writer
   cancel-in-progress: false
 
 jobs:
@@ -49,7 +50,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A data
+          git add -A data js/channels-ca.json
           if git diff --cached --quiet; then
             echo "Sense canvis d'arxiu."
             exit 0
@@ -60,3 +61,4 @@ jobs:
           git fetch origin main
           git rebase origin/main
           git push origin HEAD:main
+

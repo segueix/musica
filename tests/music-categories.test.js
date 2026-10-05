@@ -5,8 +5,9 @@ describe('taxonomia de navegació musical', () => {
     it('agrupa Punk i Metal en una sola secció', () => {
         expect(music.navigationCategoriesForGenres(['Punk', 'Metal'])).toContain('Punk / Metal');
     });
-    it('agrupa clàssica i coral', () => {
-        expect(music.navigationCategoriesForGenres(['Coral / Vocal'])).toContain('Clàssica');
+    it('manté coral a Altres estils sense recuperar Clàssica', () => {
+        expect(music.navigationCategoriesForGenres(['Coral / Vocal'])).toContain('Altres estils');
+        expect(music.navigationCategoriesForGenres(['Clàssica i contemporània'])).toEqual([]);
     });
     it('manté els estils principals separats', () => {
         expect(music.navigationCategoriesForGenres(['Pop', 'Rock', 'Indie / Alternativa'])).toEqual([
@@ -77,3 +78,4 @@ describe('taxonomia de navegació musical', () => {
         expect(music.artistChannelMeta(topic)).toMatchObject({ type: 'topic', primary: false });
     });
 });
+

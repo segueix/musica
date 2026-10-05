@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-05T17:33:10.759Z",
+  "updatedAt": "2026-10-05T18:45:00.000Z",
   "description": "Llista blanca per a canals on Segueix Música només ha d'ingerir vídeos concrets. Admet títols exactes, fragments obligatoris i fragments exclosos.",
   "channels": {
     "UCKpscwdWlVaMqcA81vLI7OA": {
@@ -1182,1355 +1182,296 @@
       ]
     },
     "UCy6U0DI2WntUCxkrU3vDigw": {
-      "artist": "Salvador Brotons",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "Kd-5318ROYI",
-        "4t5qhS770X8",
-        "vZa2-2vyecQ"
-      ],
-      "allowedTitles": [
-        "Symphony No. 6, Op. 122, \"Concise\": I. Frontal",
-        "Symphony No. 6, Op. 122, \"Concise\": IV. Passacaglia -",
-        "Interlude for the Left Head, Op. 47 Nº 2"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UCswhIDGfTrgDzLuo8Kla8Dw": {
-      "artist": "Albert Guinovart",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "_xyQbIrHhd0",
-        "ly7J4KyBbMM"
-      ],
-      "allowedTitles": [
-        "El Somni de Gaudí",
-        "Five Poems for Piano: V. If I shouldn't be alive"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UCZbd4nFXfPvUSUMe6jp4gwQ": {
-      "artist": "Claudi Arimany",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "wMVRQdUKwiM",
-        "Z79SBhmgZPc",
-        "EiEX_8rqj4g"
-      ],
-      "allowedTitles": [
-        "Nocturne, Op. 17",
-        "Berceuse, Op. 15",
-        "Fantasie über Motive aus Casilda von Ernst II (Version for Flute, Harp & Orchestra)"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UCWVI6lwZuJvVeDonuF7DhCg": {
-      "artist": "Vicens Prats",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "DN4-qaJu7Y0",
-        "2L0r5xNnGQU",
-        "Mgi6uoPdoEQ",
-        "hi2U7U1V9Ws"
-      ],
-      "allowedTitles": [
-        "Danse de la Chèvre",
-        "Syrinx",
-        "Density 21.5",
-        "Partita in A Minor, BWV 1013: I Allemande"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UCab4pnI807mVEv0vkLP1sow": {
-      "artist": "Xavier Relats",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "TyPbu6-RWxk",
-        "M1LJT16FiDk",
-        "EDxgJUITCNA"
-      ],
-      "allowedTitles": [
-        "Sonata Op.21 (1979). Lento Cantabile-Cadenza",
-        "Capriccio Per a Flauta Sola (1949)",
-        "Sonata Op.21 (1979). Presto-Lento Sensible-Presto"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UCFAZkqpu92KgA53lGY9Vj2w": {
-      "artist": "Patrícia Mazo",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "aA55Tvj1fmE",
-        "cRdSqvHBcEQ",
-        "WW9xzDs3fb4",
-        "4eiclMGBOVI",
-        "kIdffsXoQBI"
-      ],
-      "allowedTitles": [
-        "Patinnazo: I. Patinnazo I",
-        "Patinnazo: IV. Patinnazo IV",
-        "Patinnazo: V. Patinnazo V",
-        "Patinnazo: III. Patinnazo III",
-        "Patinnazo: II. Patinnazo II"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UC_6nNeEQkwJB1rXEo3MoGhg": {
-      "artist": "Salvador Gratacós",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "auMHO9Wq4BA",
-        "blbA4yCW0so",
-        "2NbuXn2b0SI"
-      ],
-      "allowedTitles": [
-        "Quetzalcoatl, Per a Flauta I Conjunt de Cambra",
-        "Concert Per a Dues Flautes I Cordes",
-        "Sonatina, Per a Flauta I Conjunt de Cambra"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UCM50YwgmGgJI7fha94FqmRA": {
-      "artist": "Elisabet Franch",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "wDDWmKcQlzA"
-      ],
-      "allowedTitles": [
-        "Romance, Op. 37"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UCkffB0um-WngkGYgnh3-oOA": {
-      "artist": "Elisabet Franch",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "uHZXpwTZNUs",
-        "cFkC4p5BHh0"
-      ],
-      "allowedTitles": [
-        "Introduction et Rondo Capriccioso, Op. 28",
-        "Sonata in A Major, FWV 8: III. Recitativo-Fantasia"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UC25TdQ4qqDqD0ny-PYUn52A": {
-      "artist": "Bernat Castillejo",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "IEs4Zk_n_Xg",
-        "upKLIDxMrns",
-        "pPYCPCMS0tw",
-        "ZCVU_Qelfl4"
-      ],
-      "allowedTitles": [
-        "Flute Sonata in D Minor, HV VIII/3.1: I. Allegretto",
-        "Violin Sonata in D Major, W. B 10 (Version for Flute) : II. Andante grazioso",
-        "Suite in C Minor, BWV 997 (Arr. for Flute and Piano by Bernat Castillejo and Adolf Pla) : II. Fuga",
-        "Flute Sonata in E Minor, BR WFB B 17: I. Allegro ma non tanto"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UCYbIqL41M5bbVKF1i3BcbVw": {
-      "artist": "Josep Pons",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "7MYOgyw0YPM",
-        "ne2oRXA2VNg",
-        "F_sMvPmjt_c",
-        "KFOZMd1WxwA"
-      ],
-      "allowedTitles": [
-        "Ravel: Boléro, M. 81: Bolero",
-        "L'Arlésienne, Suite No. 1, Op. 23: IV. Carillon",
-        "Symphonie en Ut Majeur: IV. Allegro vivace",
-        "Debussy: Ibéria (De Images): Les Parfums De La Nuit"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UCAkMPUkR_djkKWQcm6-TK9w": {
-      "artist": "Manel Valdivieso",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "k0R7_KpEw8k",
-        "E8vwm89bxGU",
-        "s-lNkJ-Mix0"
-      ],
-      "allowedTitles": [
-        "Adagio y Fuga in C Minor, K. 546: Adagio",
-        "Serenata No. 12 in Do Minor, K. 388: III. Minuet, Pt. 3",
-        "Sinfonia No. 38 in D Major, K. 504 \"Praga\": I. Adagio - Allegro"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UCbEQ1VqFTC68wPxAZaFwBlA": {
-      "artist": "Jordi Mora",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "fXcpTMBEm8U",
-        "kk522eW60qw",
-        "XgcJBuO8c1E"
-      ],
-      "allowedTitles": [
-        "Piano Concerto No. 23 in A Major, K. 488: II. Adagio",
-        "Piano Concerto No. 23 in A Major, K. 488: I. Allegro",
-        "Concerto No. 2 in B-Flat Major for Piano and Orchestra, Op. 19: I. Allegro con brio"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UCXpSE_cGGWd3Vxe3NRtpURA": {
-      "artist": "Edmon Colomer",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "1F7bGA8vUVU",
-        "SiLcSqE03bQ",
-        "IFC1wLOEQKk"
-      ],
-      "allowedTitles": [
-        "Sones en la Giralda: I. Lento",
-        "Concierto de Aranjuez: II. Adagio",
-        "Concierto de Aranjuez: I. Allegro con spirito"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UCpul0O4d0qF7snAAnFwSpvw": {
-      "artist": "Marçal Cervera",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "bK-TGTKxwnY",
-        "C0LsaaCTOSA",
-        "ROj1sNLbods",
-        "HcbXfvVJINg"
-      ],
-      "allowedTitles": [
-        "J.S. Bach: Sonata For Viola Da Gamba And Harpsichord No. 2 In D, BWV 1028: 2. Allegro",
-        "J.S. Bach: Sonata For Viola Da Gamba And Harpsichord No. 2 In D, BWV 1028: 3. Andante",
-        "J.S. Bach: Sonata For Viola Da Gamba And Harpsichord No. 2 In D, BWV 1028: 4. Allegro",
-        "J.S. Bach: Sonata For Viola Da Gamba And Harpsichord No. 3 In G Minor, BWV 1029: 1. Vivace"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UCrclwNXgI5R-HhcCKfo3u2A": {
-      "artist": "Lluís Claret",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "eZTOq1wK8hI",
-        "VZA3E2dSYng",
-        "vRHS1oJLDB8"
-      ],
-      "allowedTitles": [
-        "Suite for Cello Solo: I. Prelude - Fantasia",
-        "Cello Suite No. 1 in G Major, BWV 1007: VI. Gigue",
-        "Cello Sonata in G Minor, Op. 65: I. Allegro moderato"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UCb71ueu_mq2SOz18qvhXVVw": {
-      "artist": "Pau Codina",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "9zHsy8lZ_ZE",
-        "iXM-UytjZ9U",
-        "hn5Ng4Nr7L8",
-        "YAlIWYWajI4"
-      ],
-      "allowedTitles": [
-        "Sonata for Solo Violoncello: III. Toccata",
-        "Suite for Solo Cello: II. Sardana (Danza)",
-        "Sonata for Solo Violoncello: I. Fantasia",
-        "Suite for Cello and Orchestra, Op. 16b: III. Gavotte (Allegro non troppo)"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UCEsmz1ttew5A4W0Y3KmB82Q": {
-      "artist": "Arnau Tomàs",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "r-IjErNIjtI",
-        "F4-wdtsDQlU",
-        "kcOopWj2CPU",
-        "k0PTAhP8wEU"
-      ],
-      "allowedTitles": [
-        "Suite No. 1 in G Major / Sol Mayor, BWV 1007: Prelude",
-        "Cello Sonata No. 1, Op. 5 No. 1 in F Major: Allegro",
-        "Cello Sonata No. 2, Op. 5 No. 2 in G Minor: Allegro Molto Più Tosto Presto",
-        "Suite No. 2 in D Minor / Re Menor, BWV 1008: Gigue"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UCGjdEW_PQW0hkmFY_WKYuXw": {
-      "artist": "Amat Santacana",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "aAsjWuyJ5NI",
-        "Ffd9MCXvgfw",
-        "OlVrFUvMu5o"
-      ],
-      "allowedTitles": [
-        "Tres peces per a violoncel i piano: II. Oda al Sol",
-        "Cinc perces per a violoncel i piano: II",
-        "Tres peces per a violoncel i piano: III. L'ocell blau"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UCM4JQ36TwDV5bhCCD30-l4w": {
-      "artist": "Josep Bassal",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "ZzZ1D1WJq88",
-        "eDUug6SzVA4",
-        "BBDmZAz1TrA"
-      ],
-      "allowedTitles": [
-        "I. Preludio",
-        "I. Allegro",
-        "II. Allemanda"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UCnt52TKWBQepRRfwxCl3ILw": {
-      "artist": "Antoni Besses",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "aBoVZtM5EDA",
-        "3J8C4azQQCo",
-        "b3y2M7dKEms"
-      ],
-      "allowedTitles": [
-        "Sonata, Op. 60: II. Con Calma",
-        "Sonata No. 1 La mayor",
-        "Sis Moments Musicals, Op. 94 - Iv. Moderato (Ch Min)"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UCQj13f64UFj_mLTk2NtP77w": {
-      "artist": "Albert Attenelle",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "WDFbWcNOL4M",
-        "6DMj2D9W_PM",
-        "yk8juMSMl2w"
-      ],
-      "allowedTitles": [
-        "Variations sur un thème de Chopin: IX. Valse",
-        "Suite Iberia, Cahier 2: Rondeña",
-        "Goyescas, Suite para Piano, Op. 11: II. Coloquio en la Reja"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UCKFHxaZDDLlq45Ik-pujizA": {
-      "artist": "Josep Colom",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "WKu9eU3VgKQ",
-        "8xqn7kDXUho",
-        "pJqFao7n2zo",
-        "HcerFuByhPo"
-      ],
-      "allowedTitles": [
-        "The Well-Tempered Clavier, Book I, BWV 855: No. 10 in E Minor, Prelude",
-        "Preludes, Op. 28: No. 6 in B Minor",
-        "Waltzes, Op. 34: No. 2 in A Minor",
-        "Piano Sonata in B Minor, S. 178: I. Lento assai - Allegro energico"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UCk2T5uYmLYgrLIQCnjTdmGQ": {
-      "artist": "Miquel Farré / Ramon Coll",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "OwAi1mueVY8",
-        "Oa5FzsgKeM8",
-        "RJwlnBrGaFk",
-        "mj9lWj5okVQ",
-        "HBEPOhu9Yw4",
-        "yWnNmjACAt0",
-        "LFQOgRSDcdQ"
-      ],
-      "allowedTitles": [
-        "Nocturne Op. 48 No. 1",
-        "Andante spianato Op.22",
-        "Klavierstücke Op. 76: V. Capriccio - Agitato, Ma Non Troppo Presto",
-        "Valsos poètics (poetic waltzes) : Vals No. 1",
-        "Walzer für Pianoforte zu vier Händer, Op. 39: VIII",
-        "Walzer für Pianoforte zu vier Händer, Op. 39: XI",
-        "Walzer für Pianoforte zu vier Händer, Op. 39: XIII"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UCfDU7VY1OZiY8bUOJV3pQCw": {
-      "artist": "Jordi Masó",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "Nwnd4_59g3w",
-        "pZTilqxEI1c",
-        "xgpu4GrbE3Q"
-      ],
-      "allowedTitles": [
-        "Sonata en Do menor: III Sardana",
-        "Sonata en Do menor: I.",
-        "6 Variationen : VI. Ritmico"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UCYLn5DGwwhFuKLv7Mo6z6Vg": {
-      "artist": "Alba Ventura",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "m9ymFC331zw",
-        "9LhgcKVqNek",
-        "SsM31Gs9V3w"
-      ],
-      "allowedTitles": [
-        "Étude in A Flat Major, Op. 25 No. 1",
-        "Iberia, Cahier I: Cadix (El Puerto)",
-        "Étude in A Minor Op. 740 No. 17"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UCjmO7d756-QL35tbZha6klg": {
-      "artist": "Adolf Plà",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "mhxAle9OJcs",
-        "Z0nw46Jvgqo",
-        "uMYW-fQBrO4"
-      ],
-      "allowedTitles": [
-        "Impressions íntimes: Ocell trist",
-        "Suburbis: Gitanes",
-        "Variacions sobre un tema de Chopin"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UCSe6hQfr7LLyXtDf3LoTtKA": {
-      "artist": "Jordi Camell",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "b1ySnRQ-WTs",
-        "zLkQsHnzEUw",
-        "5DEYheYnWaI"
-      ],
-      "allowedTitles": [
-        "Where the City Ends",
-        "Trois Pièces",
-        "Trois dernières Improvisations"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UC7I9_HJ2SBMrF_kwxL4gXbg": {
-      "artist": "Daniel Ligorio",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "JZVLziDJ7vo",
-        "kXhSKlotLsM"
-      ],
-      "allowedTitles": [
-        "3 Preludes: No. 3, Agitato \"Spanish Prelude\"",
-        "Fantasia baetica"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UCcdwOnC-XjHUXz200C6V8og": {
-      "artist": "Emili Brugalla",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "MQgSy1AuFbE",
-        "kLwGTHcNtz0",
-        "ys2Lnbpvb7k"
-      ],
-      "allowedTitles": [
-        "Trois Variations: Courtoisie",
-        "Trois Variations: Nocturne",
-        "Música callada: Llibre I: VIII. Semplice"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UCfC-YFu9EKtnDp6h7XRbdaw": {
-      "artist": "Alícia de Larrocha",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "CQruHcDza9c",
-        "mrhJHN7MP1A",
-        "XJfeIyYVqz4",
-        "zGmNvj0BtR8"
-      ],
-      "allowedTitles": [
-        "Albéniz: Suite española No. 1, Op. 47: Asturias (Leyenda)",
-        "Valses Poéticos",
-        "Barcarolle, Op. 60 in F-Sharp",
-        "Granados: 12 Danzas españolas, Op. 37: 5. Andaluza"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UC3HZ0YrcAVaWpdH2weJLWcw": {
-      "artist": "Sofia Puche",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "W9P1hMYhKHA",
-        "jmK1L1hVlgE",
-        "jZYP0M3IfUQ",
-        "maWzw5Oz7h0"
-      ],
-      "allowedTitles": [
-        "Sonatas de Castilla: I. Sonata",
-        "Prelude No. 8",
-        "Aiguaforts: V. Capritx",
-        "Aiguaforts: Sardana - Fantasia"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UCP_N7IHIzLfYykj0wXhefLw": {
-      "artist": "Eulàlia Solé",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "kliDYBcUd5U",
-        "0nZHzj7gQsU",
-        "g03mCrP3xIw",
-        "Qe_Nay2ipf4"
-      ],
-      "allowedTitles": [
-        "Präludium und Fuge C-dur BWV 870: Präludium",
-        "Präludium und Fuge b-moll BWV 867: Fuge",
-        "Präludium und Fuge b-moll BWV 867: Präludium",
-        "Eulàlia Solé Live: Piano Sonata in B Flat Major, D 960: II. Andante sostenuto (Live)"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UC7HUTOwjYDYWHp0pu9nsXDA": {
-      "artist": "Ignasi Cambra",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "scYQApBFCZY",
-        "7FTB6dxZ5Lg",
-        "ZF5AwmfVB_Q"
-      ],
-      "allowedTitles": [
-        "4 Impromptus, D. 899, Op. 90: No. 1 in C Minor",
-        "4 Impromptus: No. 3 in G-Flat Major, Op. 51",
-        "4 Impromptus, D. 899, Op. 90: No. 3 in G-Flat Major"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UCr3gL-nIjRCYV062K7jA4GQ": {
-      "artist": "Ignasi Cambra",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "_nKH3N1gmgI"
-      ],
-      "allowedTitles": [
-        "Préludes, Op. 32: No. 12 in G-Sharp Minor (Allegro)"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UCSCEYsHv72tuDUNjdvUU1HQ": {
-      "artist": "Leonora Milà",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "o_cdRIWienM",
-        "MENJVTf_LEo",
-        "hM3Mp3h6c_c",
-        "TFMXdkXETUo"
-      ],
-      "allowedTitles": [
-        "Ten Habaneras for Piano: I. Havanera Op. 48",
-        "Ten Habaneras for Piano: II. Havanera Op. 52",
-        "Ten Habaneras for Piano: X. Havanera Op. 60",
-        "Ten Habaneras for Piano: IX. Havanera Op. 59"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UCZ8_-6GA1ihcyKbws0ep3yg": {
-      "artist": "Laura Farré Rozada",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "d6Nlj0EHODY",
-        "mhbZu8scFaQ",
-        "1qy1UwX8Dr8"
-      ],
-      "allowedTitles": [
-        "Seven Songs for Piano: No. 1, I am a Girl",
-        "Piano Sonata in E-Flat Minor",
-        "Sonate pour piano: II. Lied"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UCgmhO2IwHsaK_xYzWqryN3w": {
-      "artist": "Miquel Villalba",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "vE1JQxuWLZc",
-        "laVEvFSwTts",
-        "L3Amc7YjpYQ"
-      ],
-      "allowedTitles": [
-        "Nocturne No. 2",
-        "2 Peces (2 Pieces) : No. 1. Adagio",
-        "Nocturne No. 4"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UCaCYdGQkelVdyZd5R7RXIhg": {
-      "artist": "Àlex Alguacil",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "OByEzDkmPTE",
-        "9Fc9ItIVMpA",
-        "ecqnzVSopPw"
-      ],
-      "allowedTitles": [
-        "Piano sonata in B minor, Op.5 : II. Andante cantabile",
-        "Fünf Klavierstücke, Op.3 : I. Andante (teneramente)",
-        "Visions Fugitives Op. 22: Con Eleganza"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UCWtXmazLnvcMZ_RJSuHlVcg": {
-      "artist": "Daniel Blanch",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "KoUgQf1DCBs",
-        "EjNaPS815s8",
-        "Dt7vw3C1KVU"
-      ],
-      "allowedTitles": [
-        "Rêverie. Schumanienne",
-        "Allegro spiritoso",
-        "Albeniziana"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UCi8YI75JBCbTE9b87s8vA8A": {
-      "artist": "Melani Mestre",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "XIRF_XWMzfo",
-        "Z-leYm4zirw",
-        "269gqIfxhhA"
-      ],
-      "allowedTitles": [
-        "Sonata in D minor",
-        "Fantasy in C minor KV475",
-        "Grand Sonata in B flat major D.960 Andante sostenuto"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UCxuIHcEZ-amCmuxJtuyz1ew": {
-      "artist": "Gonçal Comellas",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "QaPbi4EdEiI",
-        "Htcj61sTWjU",
-        "sbsioBh1brA"
-      ],
-      "allowedTitles": [
-        "Violin Sonata No. 3 in D Minor, Op. 108: IV. Presto agitato",
-        "Violin Sonata No. 3 in D Minor, Op. 108: II. Adagio",
-        "Violin Sonata No. 3 in D Minor, Op. 108: I. Allegro"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UCcniAgKq1Icg5XQM35DvMzw": {
-      "artist": "Gonçal Comellas",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "NLyXbYKWHWg"
-      ],
-      "allowedTitles": [
-        "Sonata per a violi sol - 3 Melodia"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UCVQMmVQStQYuZMRAO6VNe5w": {
-      "artist": "Eduard Toldrà",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "hlI46bueVgo"
-      ],
-      "allowedTitles": [
-        "Ancient Airs and Dances, Suite No. 3 for Strings, P. 172: II. Arie di corte (f) Vivacissimo..."
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UCZokshYjD4zFaibzVxAMIoQ": {
-      "artist": "Anna Urpina",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "_xRkSEyF_ZA",
-        "zN8sGDAjzTA",
-        "BhG_vNktcLQ",
-        "uOmkcBNnt1c"
-      ],
-      "allowedTitles": [
-        "Sonata I for violin, viola da gamba and organ in A Minor: I. Grave – Presto - Adagio",
-        "Sonata I for violin, viola da gamba and organ in A Minor: III. Allegro - Affettuoso – Adagio",
-        "Sonata for violin and basso continuo, Op. 16 No. 12",
-        "Correnti da sonarsi col violino, e spinetta: Corrente Quarta"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UCm6gXRCLJR3ZZZSstrt1efg": {
-      "artist": "Quartet Casals",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "vXeDX8_zx6Q",
-        "aUABhXJWtGQ",
-        "yAGYw-BJ1WA",
-        "DNjNOrMqx1I"
-      ],
-      "allowedTitles": [
-        "String Quartet No. 1 in C Minor , Op. 51: I. Allegro",
-        "String Quartet No. 6 in G Major, Op. 101: III. Lento",
-        "String Quartet No. 1 in F Major, Op. 18 No. 1: I. Allegro",
-        "String Quartet No.15 in D Minor, K. 421: III. Menuetto - Trio. Allegretto"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UCrX0-iYjOJgmhb4PCtEEE7w": {
-      "artist": "Quartet Sonor",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "57w_IBzT-2I",
-        "K7DiyKqK6N4",
-        "lzwkct84zHg",
-        "pMcW1ipTFdg"
-      ],
-      "allowedTitles": [
-        "Quartet en Do Menor. Scherzo Molto Allegro",
-        "Quartet en Do Menor. Allegro Assai Agitato",
-        "Quartet en Do Menor. Allegro Quasi Presto",
-        "Quartet en Do Menor. Andante Sostenuto"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UCp12tnYNWcqnB-hcQ5yc1Cw": {
-      "artist": "Joan Guinjoan",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "k6jX7Rrzuu0",
-        "qWFN38avQ3k"
-      ],
-      "allowedTitles": [
-        "Ab Origine",
-        "Trama"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UCuxbK4YoCNgTnUffVehCuVw": {
-      "artist": "Carles Trepat",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "rjZyt_Bm0DA",
-        "xymbC17WrCM",
-        "c60Lj24gyzw"
-      ],
-      "allowedTitles": [
-        "Fandango",
-        "Preludio núm. 1",
-        "Pavana"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UC1BbV04YuUc9Dc_gsaxoTqg": {
-      "artist": "Manuel García Morante",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "5gNgc1d7y_g",
-        "eqrDPfejydA",
-        "_jCysi_IStc"
-      ],
-      "allowedTitles": [
-        "Tríptic III",
-        "Tríptic II",
-        "Tríptic I"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UCnUJqVn2iL89SWTgGEQLTUg": {
-      "artist": "Àngel Soler",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "B9nxCt8dS8U",
-        "TgqS3-NSdpI",
-        "qyDFzgz8Xwc"
-      ],
-      "allowedTitles": [
-        "Sonata en La Major per a Violoncel i Piano: Grazioso",
-        "Sonata en La Major per a Violoncel i Piano: Allegro con spirito",
-        "Sonata en La Major per a Violoncel i Piano: Adagio"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UCz-jtOvtiYDJq3sasXqwpWw": {
-      "artist": "Montserrat Torrent",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "KCHYutXk_wE",
-        "1SvEaoiVLzw",
-        "HchxaHwMeQ0"
-      ],
-      "allowedTitles": [
-        "Tiento De 1er. To (Vila)",
-        "Tiento de quarto tono por elami I",
-        "Tiento sopra Ave Maria"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UCnu1LSHgrh15ie_YNNXtTZw": {
-      "artist": "Juan de la Rubia",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "8cKwVrAeMes",
-        "vr8Ce7F8htQ"
-      ],
-      "allowedTitles": [
-        "Die Kunst der Fuge, BWV 1080: I. Contrapunctus I",
-        "Prelude in G Minor, BuxWV 149"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UCqTF0UYqdiS5cav3Z-tgKSA": {
-      "artist": "Juan de la Rubia",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "m4zVV5EK7k4"
-      ],
-      "allowedTitles": [
-        "Prelude and Fugue in D Major, BWV 532: II. Fugue"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UCCIR8FjHyQ2RdjAvYuE9K7A": {
-      "artist": "Maria Lluïsa Cortada",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "t8x1k3PNlVk",
-        "eU8HaSx3VeY",
-        "binnqpFyvmQ"
-      ],
-      "allowedTitles": [
-        "Sonata En Si Bemoll Major: Andante Moderato (Freixenet)",
-        "Sonata En Re Major (Rubio, 111) (Soler)",
-        "Keyboard Sonata In D Minor Nº 2, R.15. Andante, Allegro."
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UCPm9RDzJzZAcIDqr_dTHkXw": {
-      "artist": "Jordi Reguant",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "BPwihV_oA9A",
-        "VQ1znnqr1BE",
-        "f-9rzHWw5bE"
-      ],
-      "allowedTitles": [
-        "Concert núm. 1",
-        "Concert núm. 4",
-        "Concert núm. 2"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UCULm3jROXEj83hMZCFllrcw": {
-      "artist": "Jordi Savall",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "xqk_N4lJtzA",
-        "4i5sgYI14Jg"
-      ],
-      "allowedTitles": [
-        "Recercada Ottava Sobre La Folia, 1553 (Ortiz)",
-        "Prelude"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UCGapG0VtwQI_Btd2LM_VH-g": {
-      "artist": "Patrícia de No",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "SzkDrG2Az_8",
-        "x4-fG9hnc58"
-      ],
-      "allowedTitles": [
-        "Syrinx (Solo for Flute)",
-        "Sonata for Flute & Piano: 1. Allegro Malincolico"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UC4IBiyoPqeDCNZUx5o_X8XA": {
-      "artist": "Patrícia de No",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "DhrWFwRmvwA"
-      ],
-      "allowedTitles": [
-        "Tres Romances, Op. 94: II. Einfach inning (semplice affetuoso)"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UCc0fN2xBxU0GJyObxFYuEBQ": {
-      "artist": "Jaume Cortadellas",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "EIND6QeuV6g"
-      ],
-      "allowedTitles": [
-        "THE MISSION - FLUTES (J.Cortadellas, Q.Ollé, R.Vilalta) VIDEO DE CONFINAMENT"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UCpYUKmzf7-LewUl2iOCW9Tg": {
-      "artist": "Albert Mora",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "e2crWeOrqhM",
-        "-I16iM4MpLA",
-        "l66W76Sn6ow"
-      ],
-      "allowedTitles": [
-        "Hindemith: Acht Stücke: I. Gemächlich, leicht bewegt",
-        "Bach: Partita a-moll BWV 1013: I. Allemande",
-        "Bach: Partita a-moll BWV 1013: II. Corrente"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UCXNj5SlHRPWJEkRyDn_Qotg": {
-      "artist": "Albert Mora",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "LQqLuXupAWU",
-        "rwB9W16jGZk"
-      ],
-      "allowedTitles": [
-        "Por la Paz for Flute and Piano: 1. Prologue",
-        "Cantiga for Flute and Piano (Live)"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UCtFR0uodaVBnXp03S9dc1Lw": {
-      "artist": "Salvador Mas",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "pENJh4q4FF0",
-        "efl8s3haf6w"
-      ],
-      "allowedTitles": [
-        "II. March",
-        "III. Elegy"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UC6PHFVdud96AXt3ERGBuYvg": {
-      "artist": "Salvador Mas",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "Iks8sCb5MOQ"
-      ],
-      "allowedTitles": [
-        "Empúries (Invocacion to Empordà) a Sardana Lliure for Orchestra"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UCENPwyqYGKL7lpH_RGur0UQ": {
-      "artist": "Salvador Mas",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "VYPjTTH1zHc"
-      ],
-      "allowedTitles": [
-        "Danzas Fantásticas, Op. 22: No. 3, Orgía"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UCNkGF7E6QFK-UG045gqFFrw": {
-      "artist": "Miquel Ortega",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "KXf4cqmxuzw"
-      ],
-      "allowedTitles": [
-        "Preludio nº 2 (Siete preludios para piano) - Miquel Ortega (Aurelio Viribay, piano)"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UCijCMKwxn6EcEb5pXRAHF8w": {
-      "artist": "Ernest Martínez Izquierdo",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "25UC3vQzpH8"
-      ],
-      "allowedTitles": [
-        "Nonet: III. Andante"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UCfhh98CmKOImKUiTs-vGWoA": {
-      "artist": "Josep Caballé Domènech",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "ZUcFprdfVyE"
-      ],
-      "allowedTitles": [
-        "Roman Festivals: II. Il Giubileo"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UCblaH0-63-L1_XUw86_QoSw": {
-      "artist": "Enrique Bagaría",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "220IOcIe_EM",
-        "DlitbmJcS6E",
-        "4F02q36a85s"
-      ],
-      "allowedTitles": [
-        "Piano Sonata No. 31 in A-Flat Major, Hob. XVI: 46: II. Adagio",
-        "Piano Sonata No. 59 in E-Flat Major, Hob. XVI: 49: II. Adagio e cantabile",
-        "Piano Sonata No. 33 in C Minor, Hob. XVI: 20: III. Finale. Allegro"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UCCeVzchKrlMaULQlfYppRww": {
-      "artist": "Albert Nieto",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "ToXwqQlEQ3g",
-        "OtZIuZKthJU",
-        "ir6-mmYjR-Q"
-      ],
-      "allowedTitles": [
-        "Tres Peces per a Piano: I. Larguetto Cantabile",
-        "Tres Peces per a Piano: II. Poco Allegre - Quasi Furioso",
-        "Évora op.49: Adagio evocativo e malincolico"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UC6SeH-9yzvBHcGxjoR6Uo9w": {
-      "artist": "Abigail Prat",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "T9IYbZYmD2Y"
-      ],
-      "allowedTitles": [
-        "FRANZ LISZT - Le Rossignol - ABIGAIL PRAT - #LICEUCAMBRA"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UCupaupEexZCQ_fG4q5UniIA": {
-      "artist": "Joan Albert Amargós",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "Y9c4bu6EOas",
-        "5ZqDkpuPdWc"
-      ],
-      "allowedTitles": [
-        "Las flores de su corona\" for piano and viola Joan Albert Amargós y Uixi Amargós",
-        "\"For my eternal Love\" Piano Quintet by Joan Albert Amargós"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UCnywvUT2nnyf_1TjhZqRrDg": {
-      "artist": "Antoni Ros Marbà",
-      "note": "Només gravacions instrumentals verificades. Llista tancada per ID i títol; cap importació oberta del canal.",
-      "allowedVideoIds": [
-        "A7acWSYQ8_0"
-      ],
-      "allowedTitles": [
-        "Concerto in E, Op. 64: III. Allegro molto vivace"
-      ],
-      "acceptedMusicOnly": true,
-      "allowedContentTypes": [
-        "song",
-        "live_song"
-      ]
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     },
     "UC5h-dMbHSH3tikTmTSnfGjQ": {
       "artist": "Mainasons",
@@ -2850,6 +1791,18 @@
         "song",
         "live_song"
       ]
+    },
+    "UCiexRltj6F1FrMTegAXkb6A": {
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
+    },
+    "UC7uVuUVNeWD3DpaxoAYVMLg": {
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
+    },
+    "UC9mLxcsf7XS0qM2jcgXEWpg": {
+      "blocked": true,
+      "note": "Canal retirat amb la categoria Clàssica a petició de l’usuari el 2026-10-05."
     }
   }
 }
