@@ -10186,6 +10186,12 @@ function handleTVPlaybackStarted() {
     releaseTVViewportHold();
 }
 
+// Normes de YouTube: el vídeo inserit ha de fer com a mínim 200 × 200 px. A la finestreta flotant d'escriptori (16:9) vol
+// dir 356 px d'ample com a mínim. El mànec d'arrossegar i el de canviar la mida van en una franja a sobre del vídeo
+// (MINI_PLAYER_BAR_HEIGHT, el padding-top de la finestreta a portada.css), mai damunt del reproductor.
+const MINI_PLAYER_MIN_WIDTH = 356;
+const MINI_PLAYER_BAR_HEIGHT = 36;
+
 function updateMiniPlayerSize() {
     if (!videoPlayer) {
         return;
@@ -10200,7 +10206,7 @@ function updateMiniPlayerSize() {
         videoPlayer.style.right = '';
         return;
     }
-    const width = Math.min(360, window.innerWidth - 32);
+    const width = Math.max(MINI_PLAYER_MIN_WIDTH, Math.min(360, window.innerWidth - 32));
     const height = Math.round((width * 9) / 16);
     videoPlayer.style.width = `${width}px`;
     videoPlayer.style.height = `${height}px`;
@@ -10905,8 +10911,9 @@ function makeResizable(element, handle) {
     let startWidth;
 
     const onMouseMove = event => {
-        const newWidth = startWidth + (event.clientX - startX);
-        if (newWidth > 200 && newWidth < window.innerWidth - 20) {
+        // Mai més petita que el mínim de YouTube (200 px d'alçada del vídeo)
+        const newWidth = Math.max(MINI_PLAYER_MIN_WIDTH, startWidth + (event.clientX - startX));
+        if (newWidth < window.innerWidth - 20) {
             element.style.width = `${newWidth}px`;
             element.style.height = `${Math.round((newWidth * 9) / 16)}px`;
         }
@@ -11097,7 +11104,8 @@ function positionMiniPlayerBottomRight() {
 
     const miniPlayerMargin = 24;
     const width = parseFloat(videoPlayer.style.width) || videoPlayer.offsetWidth || 320;
-    const height = parseFloat(videoPlayer.style.height) || videoPlayer.offsetHeight || Math.round((width * 9) / 16);
+    // L'alçada desada és la del vídeo: a sobre hi ha la franja del mànec d'arrossegar
+    const height = (parseFloat(videoPlayer.style.height) || Math.round((width * 9) / 16)) + MINI_PLAYER_BAR_HEIGHT;
     // A sota hi va enganxada la barra de controls (#playerExternalControls)
     const bottomMargin = miniPlayerMargin + EXTERNAL_CONTROLS_DOCK_HEIGHT;
 
