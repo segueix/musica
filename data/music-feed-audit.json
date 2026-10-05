@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-05T09:34:45.729Z",
-  "retainedVideoCount": 118,
+  "generatedAt": "2026-10-05T09:45:27.517Z",
+  "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
   "deepPagesFetched": 0,
   "deepChannelCount": 20,
-  "topicChannelCount": 151,
-  "governedChannelCount": 74,
+  "topicChannelCount": 162,
+  "governedChannelCount": 79,
   "topicCoverage": [
     {
       "id": "UCqaEtRht2jakBhGFLzS617w",
@@ -240,6 +240,14 @@
       "governs": true
     },
     {
+      "id": "UCIX5CqhHETyi1Xx4JzcGjZg",
+      "name": "PUPIL·LES",
+      "songs": 34,
+      "matched": 33,
+      "coverage": 0.97,
+      "governs": true
+    },
+    {
       "id": "UC4tHQwYKnZ0frCoqwMmgMkQ",
       "name": "Sara Roy",
       "songs": 34,
@@ -269,6 +277,22 @@
       "songs": 46,
       "matched": 44,
       "coverage": 0.96,
+      "governs": true
+    },
+    {
+      "id": "UCvS1bHC_x3hqOwrYTY2bLIA",
+      "name": "Atupa",
+      "songs": 44,
+      "matched": 42,
+      "coverage": 0.95,
+      "governs": true
+    },
+    {
+      "id": "UCVeo5x9sEwL4yxoo-004zqw",
+      "name": "Malson Atmosfèric",
+      "songs": 19,
+      "matched": 18,
+      "coverage": 0.95,
       "governs": true
     },
     {
@@ -384,6 +408,14 @@
       "governs": true
     },
     {
+      "id": "UC-JNcJrzWSw2RtL-3TqYoeQ",
+      "name": "Adala",
+      "songs": 45,
+      "matched": 40,
+      "coverage": 0.89,
+      "governs": true
+    },
+    {
       "id": "UCNzFLySm2-AVSBe_hyiY5Vw",
       "name": "PAU VALLVÉ",
       "songs": 9,
@@ -428,6 +460,14 @@
       "name": "Els Amics de les Arts",
       "songs": 22,
       "matched": 19,
+      "coverage": 0.86,
+      "governs": true
+    },
+    {
+      "id": "UCyNgOgsiiy5cSgyfEqveONw",
+      "name": "HerbaNegra",
+      "songs": 7,
+      "matched": 6,
       "coverage": 0.86,
       "governs": true
     },
@@ -696,6 +736,14 @@
       "governs": false
     },
     {
+      "id": "UC3fuMj55qp3YmD2B2mPBgOw",
+      "name": "Josep Valtonyc",
+      "songs": 42,
+      "matched": 21,
+      "coverage": 0.5,
+      "governs": false
+    },
+    {
       "id": "UCdobjCKfq5FbF7eQL6C1VLw",
       "name": "La Mousse",
       "songs": 2,
@@ -725,6 +773,14 @@
       "songs": 24,
       "matched": 11,
       "coverage": 0.46,
+      "governs": false
+    },
+    {
+      "id": "UC9HWLecmAeJ3MrNdDHEMDBA",
+      "name": "POOR TRÀMIT",
+      "songs": 20,
+      "matched": 8,
+      "coverage": 0.4,
       "governs": false
     },
     {
@@ -780,6 +836,14 @@
       "name": "Pi de la Serra",
       "songs": 51,
       "matched": 10,
+      "coverage": 0.2,
+      "governs": false
+    },
+    {
+      "id": "UCqlbDl192qJeA3gpIFkVhVA",
+      "name": "Rapsodes",
+      "songs": 40,
+      "matched": 8,
       "coverage": 0.2,
       "governs": false
     },
@@ -858,10 +922,10 @@
   ],
   "topicGovernance": "apply",
   "governedReclassified": {
-    "other": 211,
-    "song": 21
+    "other": 11,
+    "song": 8
   },
-  "topicHiddenCount": 455,
+  "topicHiddenCount": 0,
   "topicChannels": [
     {
       "id": "UCEMDA-ZXzEUlJjZ-avy0Pvg",
@@ -869,6 +933,20 @@
       "tracks": 136,
       "selected": 40,
       "withClip": 41
+    },
+    {
+      "id": "UCrmKSeRAoGbFoEiLv36EzWg",
+      "name": "ACROS",
+      "tracks": 47,
+      "selected": 40,
+      "withClip": 0
+    },
+    {
+      "id": "UCr0GRoNMpT6f-ELLCZMlNlg",
+      "name": "Adala",
+      "tracks": 99,
+      "selected": 30,
+      "withClip": 35
     },
     {
       "id": "UCDiHZrbEw6zc_DaFl5wsmRA",
@@ -946,6 +1024,13 @@
       "tracks": 42,
       "selected": 17,
       "withClip": 17
+    },
+    {
+      "id": "UC5o8evhO7e-P0CjCarYQ7TQ",
+      "name": "Atupa",
+      "tracks": 47,
+      "selected": 3,
+      "withClip": 36
     },
     {
       "id": "UCOEzuNu9yvO0AFTnSVKk4LQ",
@@ -1270,6 +1355,13 @@
       "withClip": 0
     },
     {
+      "id": "UCNzhlSBbPNlsZ563SKvvggg",
+      "name": "Herba Negra",
+      "tracks": 28,
+      "selected": 14,
+      "withClip": 10
+    },
+    {
       "id": "UCby9BHawLhftHyR37pEztHg",
       "name": "Inadaptats",
       "tracks": 15,
@@ -1436,6 +1528,13 @@
       "tracks": 1,
       "selected": 0,
       "withClip": 1
+    },
+    {
+      "id": "UCyOpYZK-23D5O5ih1d5I4yQ",
+      "name": "Malson Atmosfèric",
+      "tracks": 38,
+      "selected": 4,
+      "withClip": 18
     },
     {
       "id": "UCcRTdMWUEXFLtpvle3p_qug",
@@ -1655,6 +1754,20 @@
       "withClip": 24
     },
     {
+      "id": "UCvKAZWUa6tY8b5RBergLr0Q",
+      "name": "Poor Tràmit",
+      "tracks": 41,
+      "selected": 25,
+      "withClip": 8
+    },
+    {
+      "id": "UCzxleD2G_7JNCMufgoF3KLw",
+      "name": "Pupil·les",
+      "tracks": 41,
+      "selected": 1,
+      "withClip": 28
+    },
+    {
       "id": "UCQkOO8WejzCPcbzL7sc6iGg",
       "name": "Quico Pi de la Serra",
       "tracks": 27,
@@ -1674,6 +1787,13 @@
       "tracks": 119,
       "selected": 40,
       "withClip": 0
+    },
+    {
+      "id": "UCuvGkVD3aN6ncVC6-EN8Wfw",
+      "name": "Rapsodes",
+      "tracks": 53,
+      "selected": 35,
+      "withClip": 7
     },
     {
       "id": "UC9i1uNb0GFrISNB2pctkvRg",
@@ -1816,11 +1936,25 @@
       "withClip": 33
     },
     {
+      "id": "UCIBWCquq4qqhRWKD6nOdR4w",
+      "name": "Still Ill",
+      "tracks": 102,
+      "selected": 40,
+      "withClip": 0
+    },
+    {
       "id": "UCTdiD8UkDXr2DdbFRfQbRgQ",
       "name": "Svetlana",
       "tracks": 43,
       "selected": 1,
       "withClip": 20
+    },
+    {
+      "id": "UCx82VgJTTf_cKHahlakKfFg",
+      "name": "Tesa",
+      "tracks": 29,
+      "selected": 15,
+      "withClip": 0
     },
     {
       "id": "UChFT46QMLdzzwd04aCTeyqg",
@@ -1858,6 +1992,13 @@
       "withClip": 32
     },
     {
+      "id": "UCsl_oTZ8vww29O9G0NAX-gA",
+      "name": "Valtonyc",
+      "tracks": 82,
+      "selected": 40,
+      "withClip": 20
+    },
+    {
       "id": "UCouT_0PiTMYVIG5wcTYfpcg",
       "name": "Ven'nus",
       "tracks": 55,
@@ -1893,53 +2034,35 @@
       "withClip": 11
     }
   ],
-  "indexedChannelCount": 319,
-  "resolvedChannelCount": 319,
-  "feedChannelCount": 319,
-  "rawPublicVideoCount": 9730,
-  "feedVideoCount": 7740,
-  "acceptedMusicCount": 8261,
-  "categoryEligibleVideoCount": 8197,
+  "indexedChannelCount": 341,
+  "resolvedChannelCount": 341,
+  "feedChannelCount": 341,
+  "rawPublicVideoCount": 4719,
+  "feedVideoCount": 4251,
+  "acceptedMusicCount": 4151,
+  "categoryEligibleVideoCount": 4135,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
-    "before": 1184,
+    "before": 33,
     "matched": 0,
-    "rejected": 1184
+    "rejected": 33
   },
-  "contentReviewCount": 434,
+  "contentReviewCount": 503,
   "contentTypeCounts": {
-    "song": 7945,
-    "live_song": 252,
-    "album": 64,
-    "other": 1035,
-    "review": 434
+    "song": 4045,
+    "live_song": 90,
+    "album": 16,
+    "other": 65,
+    "review": 503
   },
   "unresolvedChannelIds": [],
   "channelsWithoutUploads": [],
-  "channelsWithoutVideos": [
-    "UCMj8K97SgGnI9OdJIHBH-Sw",
-    "UCOEzuNu9yvO0AFTnSVKk4LQ",
-    "UCvdm27ITzhd3bsnftrBmFUg",
-    "UCRdGqpbhydDXIl83A9E8-2Q",
-    "UCwYR6Axoc2mEKz89P8t4N5Q",
-    "UCQAWPZGGc_4JqXq53ATaSBQ",
-    "UCHXlSnGKv7tdBxMw2F-FMkw",
-    "UCLKx4vBoCOKwB2x280VFmng",
-    "UCboGC6e3sTTIO9C6lHxifnA",
-    "UC9i1uNb0GFrISNB2pctkvRg",
-    "UCMNP5PWXks1_Es7e5Fs2LOg",
-    "UCJ6EMs_13PLDvRSHi-XqRwQ",
-    "UCXa6Mb5QgzYjRV_D1VlYoKQ",
-    "UC7IUL5Ba9dhBVPnTLe9RHhQ",
-    "UCHWqKBzUJqglcjVIMViPE0A",
-    "UCUsvtjzfis5NZY8qj8BY_FQ"
-  ],
+  "channelsWithoutVideos": [],
   "channelsWithoutAcceptedMusic": [
-    "UCUSjRkF72RR1E8Rl4SWtVsQ",
-    "UC5CGdoxqbma-pqkAHPjkq9w",
-    "UC_eW1AyvwaPsQA5YAuOC3YQ"
+    "UCjEehp73GI2mh9Rkv31QT9w",
+    "UCdwDeWJ4aJ9RAURZERmWquA"
   ],
   "allIndexedChannelsVisible": true,
-  "publishedFeedVideoCount": 3659,
+  "publishedFeedVideoCount": 3898,
   "publishedShortVideoCount": 0
 }
