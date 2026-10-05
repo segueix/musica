@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-05T15:38:23.541171Z",
+  "updatedAt": "2026-10-05T15:45:24.360Z",
   "description": "Llista blanca per a canals on Segueix Música només ha d'ingerir vídeos concrets. Admet títols exactes, fragments obligatoris i fragments exclosos.",
   "channels": {
     "UCKpscwdWlVaMqcA81vLI7OA": {
@@ -1088,6 +1088,88 @@
       ]
     },
     "UCYPbYGqAXm8gaYGVY-ANVXA": {
+      "artist": "Rita Payés",
+      "note": "Revisió manual de català o instrumental, 2026-10-05. Fonts i tipus de cada peça a docs/REVISION_JAZZ_2026-10-05.json. No inferir idioma pel títol ni absència de lletra.",
+      "allowedTitles": [
+        "Un tros d'ahir"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCQSsmLNT3tKUD3m_XsZpfHA": {
+      "artist": "Andrea Motis",
+      "note": "Revisió manual de català o instrumental, 2026-10-05. Fonts i tipus de cada peça a docs/REVISION_JAZZ_2026-10-05.json. No inferir idioma pel títol ni absència de lletra.",
+      "allowedTitles": [
+        "La Gavina",
+        "Louisiana O Els Camps De Coto",
+        "Matilda",
+        "Save The Orangutan",
+        "Emotional Dance"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCG5zbsU-wyiM9QP5oYKhB4A": {
+      "artist": "Magalí Datzira",
+      "note": "Revisió manual de català o instrumental, 2026-10-05. Fonts i tipus de cada peça a docs/REVISION_JAZZ_2026-10-05.json. No inferir idioma pel títol ni absència de lletra.",
+      "allowedTitles": [
+        "Hi ha un abisme",
+        "He sortit a córrer",
+        "1 o 1000",
+        "Pedaços",
+        "Gerani",
+        "fffff",
+        "2h 32'",
+        "Interlude - Em porto bé",
+        "Cançó de fer camí",
+        "Trenem-nos",
+        "Intro Pedaços",
+        "Cànon per l'Ana"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UC52R4wjmZztT-anyAJpU18A": {
+      "artist": "Clara Peya",
+      "note": "Revisió manual de català o instrumental, 2026-10-05. Fonts i tipus de cada peça a docs/REVISION_JAZZ_2026-10-05.json. No inferir idioma pel títol ni absència de lletra.",
+      "allowedTitles": [
+        "No",
+        "Se",
+        "Vos",
+        "Al",
+        "Tres",
+        "Pe",
+        "Ro",
+        "Jo",
+        "Ne",
+        "Ces",
+        "Si",
+        "To",
+        "Pell",
+        "Per",
+        "Viu",
+        "Re",
+        "Ni el mar",
+        "Caus",
+        "Quan ens crèiem àngels",
+        "Ha mort l'amor"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCqcQJRrcXc_rLSwGVo4dP5g": {
       "artist": "Rita Payés",
       "note": "Revisió manual de català o instrumental, 2026-10-05. Fonts i tipus de cada peça a docs/REVISION_JAZZ_2026-10-05.json. No inferir idioma pel títol ni absència de lletra.",
       "allowedTitles": [
