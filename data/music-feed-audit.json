@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-05T10:24:33.003Z",
-  "retainedVideoCount": 118,
+  "generatedAt": "2026-10-05T10:27:47.186Z",
+  "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
   "deepPagesFetched": 0,
   "deepChannelCount": 20,
@@ -1017,11 +1017,8 @@
     }
   ],
   "topicGovernance": "apply",
-  "governedReclassified": {
-    "other": 251,
-    "song": 30
-  },
-  "topicHiddenCount": 455,
+  "governedReclassified": {},
+  "topicHiddenCount": 0,
   "topicChannels": [
     {
       "id": "UCEMDA-ZXzEUlJjZ-avy0Pvg",
@@ -2228,57 +2225,32 @@
       "withClip": 36
     }
   ],
-  "indexedChannelCount": 368,
-  "resolvedChannelCount": 368,
-  "feedChannelCount": 368,
-  "rawPublicVideoCount": 11327,
-  "feedVideoCount": 9122,
-  "acceptedMusicCount": 9570,
-  "categoryEligibleVideoCount": 9488,
+  "indexedChannelCount": 369,
+  "resolvedChannelCount": 369,
+  "feedChannelCount": 369,
+  "rawPublicVideoCount": 4808,
+  "feedVideoCount": 4252,
+  "acceptedMusicCount": 4209,
+  "categoryEligibleVideoCount": 4204,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
-    "before": 1372,
+    "before": 0,
     "matched": 0,
-    "rejected": 1372
+    "rejected": 0
   },
   "contentReviewCount": 562,
   "contentTypeCounts": {
-    "song": 9182,
-    "live_song": 306,
-    "album": 82,
-    "other": 1195,
+    "song": 4103,
+    "live_song": 101,
+    "album": 5,
+    "other": 37,
     "review": 562
   },
   "unresolvedChannelIds": [],
   "channelsWithoutUploads": [],
-  "channelsWithoutVideos": [
-    "UCETR11eCJC5Z9mitj6MbASw",
-    "UCMj8K97SgGnI9OdJIHBH-Sw",
-    "UCOEzuNu9yvO0AFTnSVKk4LQ",
-    "UCvdm27ITzhd3bsnftrBmFUg",
-    "UCRdGqpbhydDXIl83A9E8-2Q",
-    "UCwYR6Axoc2mEKz89P8t4N5Q",
-    "UCQAWPZGGc_4JqXq53ATaSBQ",
-    "UCHXlSnGKv7tdBxMw2F-FMkw",
-    "UCLKx4vBoCOKwB2x280VFmng",
-    "UCboGC6e3sTTIO9C6lHxifnA",
-    "UC9i1uNb0GFrISNB2pctkvRg",
-    "UCMNP5PWXks1_Es7e5Fs2LOg",
-    "UCJ6EMs_13PLDvRSHi-XqRwQ",
-    "UCXa6Mb5QgzYjRV_D1VlYoKQ",
-    "UC7IUL5Ba9dhBVPnTLe9RHhQ",
-    "UCHWqKBzUJqglcjVIMViPE0A",
-    "UCUsvtjzfis5NZY8qj8BY_FQ"
-  ],
-  "channelsWithoutAcceptedMusic": [
-    "UCjEehp73GI2mh9Rkv31QT9w",
-    "UCUSjRkF72RR1E8Rl4SWtVsQ",
-    "UCQOqsrBqC_4Ibu_MJrBpK_g",
-    "UC5CGdoxqbma-pqkAHPjkq9w",
-    "UC_eW1AyvwaPsQA5YAuOC3YQ",
-    "UCdwDeWJ4aJ9RAURZERmWquA"
-  ],
+  "channelsWithoutVideos": [],
+  "channelsWithoutAcceptedMusic": [],
   "allIndexedChannelsVisible": true,
-  "publishedFeedVideoCount": 4202,
+  "publishedFeedVideoCount": 4214,
   "publishedShortVideoCount": 0
 }
