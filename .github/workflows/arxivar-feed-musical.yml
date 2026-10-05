@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - "data/music-exclusions.json"
+      - "data/music-channel-video-allowlist.json"
       - "scripts/archivar_feed_musical.js"
       - "scripts/lib/arxiu_musical.js"
       - "tests/arxiu-musical.test.js"

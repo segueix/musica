@@ -64,11 +64,20 @@ function main() {
   const exclusions = readJson(path.join(ROOT, 'data', 'music-exclusions.json'), { exclusions: [] });
   const removedChannels = new Set(exclusions.exclusions.flatMap(entry => entry.channelIds || []));
   feed.channels = Object.fromEntries(Object.entries(feed.channels || {}).filter(([id]) => !removedChannels.has(id)));
+  // Caràtules editorials fixes: s'apliquen sense API i es mantenen després de cada actualització.
+  const avatarRules = readJson(path.join(ROOT, 'data', 'music-channel-video-allowlist.json'), { channels: {} });
+  const applyAvatar = (channel, id) => {
+    const url = avatarRules.channels?.[id]?.avatarUrl;
+    if (channel && typeof url === 'string' && url.startsWith('https://i.ytimg.com/vi/')) channel.avatar = url;
+  };
+  for (const [id, channel] of Object.entries(feed.channels)) applyAvatar(channel, id);
   const channelMapPath = path.join(ROOT, 'js', 'channels-ca.json');
   const channelMap = readJson(channelMapPath, null);
   if (Array.isArray(channelMap?.channels)) {
+    const beforeChannels = JSON.stringify(channelMap.channels);
     const kept = channelMap.channels.filter(channel => !removedChannels.has(channel.id));
-    if (kept.length !== channelMap.channels.length) {
+    kept.forEach(channel => applyAvatar(channel, channel.id));
+    if (JSON.stringify(kept) !== beforeChannels) {
       channelMap.channels = kept;
       fs.writeFileSync(channelMapPath, JSON.stringify(channelMap, null, 2) + '\n');
     }
