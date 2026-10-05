@@ -1461,3 +1461,16 @@ El feed incloïa l’entrevista «Programa Signes del Temps-Entrevista exclusiva
 Causa comprovada: `update_music_feed.js` conserva els vídeos públics al feed i delega el filtre a les vistes, excepte quan el canal té `acceptedMusicOnly` o `allowedContentTypes`. A més, el classificador pot acceptar un títol del canal oficial que conté el nom de l’artista, un separador i una durada musical; altres casos acumulen punts per categoria Music, tags i durada. Són senyals de metadades, no una anàlisi de l’àudio. Que un vídeo sigui al feed no demostra que totes les vistes el mostrin: el perfil té també el filtre `isSongVideo`.
 
 Correcció de catàleg demanada: només cinc enregistraments Topic (pCeWfNt-GCE, MZ0YjJC1XVM, FVhxEiH0QVQ, xAIMP0FnPJ8, 1fKzpw-KB0c). Llista blanca de títols exactes, tipus `song` i música acceptada; canal oficial retirat i bloquejat; 36 vídeos addicionals ocultats i arxius dels dos canals eliminats perquè el generador els reconstrueixi amb la selecció. No s’ha alterat globalment el classificador ni s’han retirat vídeos d’altres artistes.
+
+## [2026-10-05] - La finestreta flotant no complia la mida mínima ni «res al damunt» de YouTube
+
+**Símptoma (revisió de normes, no un error visible):** les normes de YouTube demanen que el vídeo inserit faci com a mínim **200 × 200 px** i que no hi hagi **cap element al davant** del reproductor (ni transparent). La finestreta de dins la pàgina:
+- a l'ordinador es podia fer fins a 200 × 113 px amb la cantonada (`makeResizable()`), i el CSS per defecte (`.mini-player-active`, 320 px) feia 180 px d'alçada;
+- al mòbil ocupa tot l'ample en 16:9: en una pantalla de 320 px feia 180 px d'alçada;
+- el mànec d'arrossegar (`.drag-handle-container`, 36 px transparents) i la cantonada de canviar la mida (`.mini-player-resize-handle`, 20 × 20 px, on YouTube té la pantalla completa) eren **damunt del vídeo**.
+
+**Solució:** ordinador: el mànec i la cantonada van en una **franja de 36 px a sobre del vídeo** (`padding-top` amb `box-sizing: content-box` a `#videoPlayer.mini-player-active`; l'alçada en línia que posa `app.js` continua sent la del vídeo) i el vídeo fa com a mínim **356 × 200 px** (`MINI_PLAYER_MIN_WIDTH`, també a `updateMiniPlayerSize()` i `makeResizable()`); `positionMiniPlayerBottomRight()` hi suma `MINI_PLAYER_BAR_HEIGHT`. Mòbil: `height: max(200px, 56.25vw)` (YouTube hi posa franges negres) i els espais reservats a `portada.css` fan servir el mateix valor. Bloc «Finestreta flotant: normes de YouTube» al final de `portada.css`.
+
+**Trampa:** `#videoPlayer .video-embed-wrap` té `height: 100%` (`styles.css`): amb `inset: 36px 0 0 0` el vídeo baixava 36 px i **els controls de YouTube quedaven tallats per sota** (no es veia a les proves fins que es va mirar la caixa de l'iframe). Cal `height: auto !important` perquè mani `inset`. Al mòbil, la vora de dalt d'1 px es menjava 1 px del vídeo (199 px): `box-sizing: content-box`.
+
+**Proves:** `node tests/browser/verificar-play-pausa.js` (vídeo ≥ 200 × 200, vídeo sencer dins la finestra, mànecs fora del vídeo, 320 px d'ample al mòbil, la cantonada no la deixa més petita de 356 × 200); `tests/finestreta-normes.test.js`.

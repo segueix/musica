@@ -422,7 +422,16 @@ async function proves(browser, width, errors) {
         };
         const handle = document.querySelector('.drag-handle-container');
         const handleBox = handle.getBoundingClientRect();
+        const iframeBox = player.querySelector('iframe').getBoundingClientRect();
+        const resizeBox = player.querySelector('.mini-player-resize-handle').getBoundingClientRect();
+        // Normes de YouTube: vídeo de 200 × 200 px com a mínim i res al davant (mànecs fora del vídeo)
+        const fora = r => !r.width || !r.height || r.bottom <= iframeBox.top + 0.5 || r.top >= iframeBox.bottom - 0.5;
+        // El vídeo es veu sencer: no en queda cap tros tallat per sota de la finestra
+        const sencer = iframeBox.bottom <= box.bottom + 0.5 && iframeBox.top >= box.top - 0.5;
         return {
+            iframe: [Math.round(iframeBox.width), Math.round(iframeBox.height)],
+            mànecsFora: fora(handleBox) && fora(resizeBox),
+            sencer,
             ancorada: window.innerWidth <= 768,
             box: [Math.round(box.left), Math.round(box.top), Math.round(box.width), Math.round(box.height)],
             video: [at(0.5, 0.5), at(0.2, 0.9), at(0.8, 0.6), at(0.5, 0.35)],
@@ -454,7 +463,22 @@ async function proves(browser, width, errors) {
         mini.video.every(id => id === 'iframe.'),
         mini.video
     );
+    comprovar(
+        `${etiqueta}: a la finestra flotant el vídeo fa com a mínim 200 × 200 px i cap mànec no hi és al damunt`,
+        mini.iframe[0] >= 200 && mini.iframe[1] >= 200 && mini.mànecsFora && mini.sencer,
+        { iframe: mini.iframe, mànecsFora: mini.mànecsFora, sencer: mini.sencer }
+    );
     if (mobile) {
+        // Mòbil estret (320 px): el vídeo continua fent 200 px d'alçada
+        await page.setViewportSize({ width: 320, height: 844 });
+        await page.waitForTimeout(300);
+        const estret = await page.evaluate(() => {
+            const r = document.querySelector('#videoPlayer iframe').getBoundingClientRect();
+            return [Math.round(r.width), Math.round(r.height)];
+        });
+        comprovar(`${etiqueta}: a 320 px d'ample el vídeo flotant fa 200 px d'alçada`, estret[1] >= 200, estret);
+        await page.setViewportSize({ width, height: 844 });
+        await page.waitForTimeout(300);
         comprovar(
             `${etiqueta}: la finestra va ancorada a baix, sense mànec ni cap botó damunt del vídeo`,
             mini.mànec === null &&
@@ -477,7 +501,7 @@ async function proves(browser, width, errors) {
         );
     } else {
         comprovar(
-            `${etiqueta}: només hi ha un mànec de 36 px a dalt per arrossegar i cap botó damunt del vídeo`,
+            `${etiqueta}: el mànec de 36 px per arrossegar és en una franja a sobre del vídeo i cap botó hi és al damunt`,
             mini.mànec === 36 && /drag-surface/.test(mini.dalt) && mini.botonsDamunt === 0,
             { mànec: mini.mànec, dalt: mini.dalt, botonsDamunt: mini.botonsDamunt }
         );
@@ -542,6 +566,25 @@ async function proves(browser, width, errors) {
                 abans: [Math.round(abansBox.l), Math.round(abansBox.t)],
                 despres: [Math.round(despres.l), Math.round(despres.t)],
             }
+        );
+    }
+
+    // 6c-bis) Escriptori: el mànec de canviar la mida no la deixa més petita que el mínim de YouTube
+    if (!mobile) {
+        const r = await page.locator('#videoPlayer .mini-player-resize-handle').boundingBox();
+        await page.mouse.move(r.x + r.width / 2, r.y + r.height / 2);
+        await page.mouse.down();
+        await page.mouse.move(r.x + r.width / 2 - 400, r.y + r.height / 2, { steps: 8 });
+        await page.mouse.up();
+        await page.waitForTimeout(300);
+        const petita = await page.evaluate(() => {
+            const box = document.querySelector('#videoPlayer iframe').getBoundingClientRect();
+            return [Math.round(box.width), Math.round(box.height)];
+        });
+        comprovar(
+            `${etiqueta}: en fer-la petita amb el mànec, el vídeo no baixa de 356 × 200 px`,
+            petita[0] >= 356 && petita[1] >= 200,
+            petita
         );
     }
 
