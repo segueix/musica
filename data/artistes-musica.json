@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-04T14:06:09.158Z",
+  "updatedAt": "2026-10-05T09:10:00.000Z",
   "artists": [
     {
       "name": "31 FAM",
@@ -1376,6 +1376,43 @@
       }
     },
     {
+      "name": "Ariox",
+      "aliases": [],
+      "genres": [
+        "Pop",
+        "Urbana"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": "Q109460984",
+      "musicbrainzId": "d214c3f6-cb7a-4fcd-91b8-c40fc701f6b3",
+      "youtube": {
+        "channels": [
+          {
+            "id": "UC5wqkIyYD4y1lLYN40BL9lg",
+            "handle": null,
+            "name": "Ariox - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-05",
+        "youtube:manual-verified",
+        "genre:manual",
+        "https://www.wikidata.org/wiki/Q109460984",
+        "https://www.youtube.com/channel/UC5wqkIyYD4y1lLYN40BL9lg"
+      ],
+      "lastChecked": "2026-10-05T09:10:00.000Z",
+      "notes": "Alta manual verificada (petició de l'usuari del 2026-10-05). Pop urbà en català; canal Topic verificat."
+    },
+    {
       "name": "Aspencat",
       "aliases": [],
       "genres": [
@@ -2341,6 +2378,44 @@
         }
       },
       "genresRaw": []
+    },
+    {
+      "name": "Boom Boom Fighters",
+      "aliases": [
+        "Boom Boom Fighters & Cookah P"
+      ],
+      "genres": [
+        "Urbana",
+        "Ska / Reggae"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCMIJ1Y_N61x72rTIAeyzRKA",
+            "handle": null,
+            "name": "Boom Boom Fighters - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-05",
+        "youtube:manual-verified",
+        "genre:manual",
+        "https://www.youtube.com/channel/UCMIJ1Y_N61x72rTIAeyzRKA"
+      ],
+      "lastChecked": "2026-10-05T09:10:00.000Z",
+      "notes": "Alta manual verificada (petició de l'usuari del 2026-10-05). Reggae/dancehall en català; canal Topic verificat."
     },
     {
       "name": "Bradien",
@@ -6929,6 +7004,42 @@
       }
     },
     {
+      "name": "Galgo Lento",
+      "aliases": [],
+      "genres": [
+        "Urbana",
+        "Indie / Alternativa"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCXh0ap-a-fIbQBYfCxASKCw",
+            "handle": "@galgolento3213",
+            "name": "Galgo Lento",
+            "type": "official",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-05",
+        "youtube:manual-verified",
+        "genre:manual",
+        "https://www.youtube.com/channel/UCXh0ap-a-fIbQBYfCxASKCw"
+      ],
+      "lastChecked": "2026-10-05T09:10:00.000Z",
+      "notes": "Alta manual verificada (petició de l'usuari del 2026-10-05). Repertori en català; canal oficial verificat."
+    },
+    {
       "name": "Gavina.mp3",
       "aliases": [],
       "genres": [
@@ -10491,6 +10602,34 @@
           "wikidataWorkEvidence": []
         }
       }
+    },
+    {
+      "name": "Kiddi",
+      "aliases": [],
+      "genres": [
+        "Urbana",
+        "Pop"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-05",
+        "youtube:manual-verified",
+        "genre:manual",
+        "https://www.youtube.com/@kiddireal"
+      ],
+      "lastChecked": "2026-10-05T09:10:00.000Z",
+      "notes": "Alta manual verificada (petició de l'usuari del 2026-10-05). Canal oficial @kiddireal verificat; l'ID es resol pel pipeline de canals verificats per evitar el Topic homònim contaminat."
     },
     {
       "name": "Kitsch",
@@ -14340,6 +14479,42 @@
           "wikidataWorkEvidence": []
         }
       }
+    },
+    {
+      "name": "Masvi",
+      "aliases": [],
+      "genres": [
+        "Urbana",
+        "Pop"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCoybSbI2HaLsHZnY1RG8LEQ",
+            "handle": null,
+            "name": "MasviVEVO",
+            "type": "official",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-05",
+        "youtube:manual-verified",
+        "genre:manual",
+        "https://www.youtube.com/channel/UCoybSbI2HaLsHZnY1RG8LEQ"
+      ],
+      "lastChecked": "2026-10-05T09:10:00.000Z",
+      "notes": "Alta manual verificada (petició de l'usuari del 2026-10-05). Música urbana en català; canal oficial VEVO verificat."
     },
     {
       "name": "Mazoni",
@@ -22492,6 +22667,42 @@
       }
     },
     {
+      "name": "ultralone",
+      "aliases": [],
+      "genres": [
+        "Urbana",
+        "Rap / Hip-hop"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UC2Q-E-1tamuyLrKRMd0Wmbg",
+            "handle": null,
+            "name": "ultralone",
+            "type": "official",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-05",
+        "youtube:manual-verified",
+        "genre:manual",
+        "https://www.youtube.com/channel/UC2Q-E-1tamuyLrKRMd0Wmbg"
+      ],
+      "lastChecked": "2026-10-05T09:10:00.000Z",
+      "notes": "Alta manual verificada (petició de l'usuari del 2026-10-05). Urban/rap en català; canal oficial verificat."
+    },
+    {
       "name": "Umpah-Pah",
       "aliases": [],
       "genres": [],
@@ -23171,6 +23382,42 @@
           "musicbrainzReleaseGroupCount": 1
         }
       }
+    },
+    {
+      "name": "Xenia Casado",
+      "aliases": [],
+      "genres": [
+        "Urbana"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UC8QspJi5zwZj3rOVYHKKVUQ",
+            "handle": null,
+            "name": "XeniaCasadoVEVO",
+            "type": "official",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-05",
+        "youtube:manual-verified",
+        "genre:manual",
+        "https://www.youtube.com/channel/UC8QspJi5zwZj3rOVYHKKVUQ",
+        "https://www.fim.cat/artistes/xenia-casado/"
+      ],
+      "lastChecked": "2026-10-05T09:10:00.000Z",
+      "notes": "Alta manual verificada (petició de l'usuari del 2026-10-05). Repertori en català; canal oficial verificat."
     },
     {
       "name": "Xicu",
