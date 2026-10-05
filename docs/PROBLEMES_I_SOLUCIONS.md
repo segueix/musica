@@ -1,3 +1,13 @@
+## [2026-10-05] - Revisió completa de la cua d’idiomes
+
+**Petició:** revisar totes les cançons pendents i eliminar les que no siguin en català.
+
+**Resultat:** 221 IDs afegits a ocults; 1008 entrades conservades i 68 exclusions prèvies respectades. S’han repassat 1546 entrades, incloses les altes del bot durant la revisió. 249 casos no resolts es documenten sense marcar-los com a revisats; de l’estat vigent queden 239 pendents i 2 descartades automàtiques sense verificar. Es respecten totes les exclusions anteriors.
+
+**Implementació:** fusió selectiva de l’estat actual de revisió, sense buidar globalment la cua ni editar manualment el feed. Les exclusions per ID s’apliquen a totes les fonts a través del filtre existent. No s’exclou cap artista sencer ni s’estén una exclusió a versions no contrastades.
+
+**Traçabilitat:** [decisions, criteris i fonts](revisions/2026-10-05-idiomes.json). S’han contrastat lletres/descripcions disponibles i context de títol, disc i repertori; la revisió no implica haver escoltat íntegrament tots els vídeos.
+
 ## [2026-10-05] - Retirada d’Itaca Band, filtre de Stay Homas / La Pegatina i canal homònim de La Madam
 
 **Petició:** retirar Itaca Band, conservar només el repertori català de Stay Homas i La Pegatina i eliminar el canal `UCCjTaOHQqmy0VD2vkZVxxoA` de La Madam.
@@ -1432,5 +1442,3 @@ Hi havia dos problemes independents:
 **No verificat:** reproducció real de YouTube a la finestra (possible bloqueig d'autoplay o d'embed per referrer); caldrà provar-ho a Chrome.
 
 **Proves:** `tests/system-player.test.js`, `tests/player-controls.test.js`, `node tests/browser/verificar-finestra-sistema.js`.
-
-

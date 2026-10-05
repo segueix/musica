@@ -7,6 +7,38 @@ descarta en regenerar el feed).
 
 > Última revisió: 2026-10-05. Si afegeixes o treus un artista, actualitza la taula **i** la data.
 
+## Revisió de pendents (2026-10-05)
+
+Repassades 1546 entrades: 1008 conservades, 221 exclusions noves per ID, 68 exclusions anteriors respectades i 249 casos sense evidència suficient. Inclou les 717 entrades incorporades durant la revisió. A l’estat actual queden 239 pendents i 2 descartades encara per verificar; la diferència correspon a entrades que el bot ja havia retirat del feed.
+
+[Registre complet de decisions i fonts](revisions/2026-10-05-idiomes.json). La revisió contextual no s’ha presentat com una comprovació íntegra de totes les lletres. No s’han aprovat els casos dubtosos. Les exclusions són per vídeo per evitar afectar versions catalanes o instrumentals d’artistes homònims.
+
+| Artista (nom al feed) | Ocultes noves | Criteri |
+| --- | --- | --- |
+| **9SON** | 3 | Vegeu el registre per ID, motiu i font. |
+| **ACROS** | 40 | Vegeu el registre per ID, motiu i font. |
+| **Adala** | 6 | Vegeu el registre per ID, motiu i font. |
+| **AnimalGrup** | 5 | Vegeu el registre per ID, motiu i font. |
+| **Dusminguet** | 1 | Vegeu el registre per ID, motiu i font. |
+| **Itaca Band** | 4 | Vegeu el registre per ID, motiu i font. |
+| **Josep Valtonyc** | 7 | Vegeu el registre per ID, motiu i font. |
+| **La Banda del Yuyu** | 2 | Vegeu el registre per ID, motiu i font. |
+| **La Pegatina** | 5 | Vegeu el registre per ID, motiu i font. |
+| **La Sra. Tomasa** | 60 | Vegeu el registre per ID, motiu i font. |
+| **Lluís Llach** | 1 | Vegeu el registre per ID, motiu i font. |
+| **Mazoni** | 3 | Vegeu el registre per ID, motiu i font. |
+| **Muyayo Rif** | 19 | Vegeu el registre per ID, motiu i font. |
+| **PUPIL·LES** | 4 | Vegeu el registre per ID, motiu i font. |
+| **Rapsodes** | 1 | Vegeu el registre per ID, motiu i font. |
+| **Roba Estesa** | 6 | Vegeu el registre per ID, motiu i font. |
+| **SABOR DE GRACIA** | 3 | Vegeu el registre per ID, motiu i font. |
+| **STAY HOMAS** | 2 | Vegeu el registre per ID, motiu i font. |
+| **Sabor de Gracia** | 25 | Vegeu el registre per ID, motiu i font. |
+| **Still Ill** | 15 | Vegeu el registre per ID, motiu i font. |
+| **Tesa** | 1 | Vegeu el registre per ID, motiu i font. |
+| **Valtonyc** | 6 | Vegeu el registre per ID, motiu i font. |
+| **XEIC** | 2 | Vegeu el registre per ID, motiu i font. |
+
 ## Stay Homas i La Pegatina (2026-10-05)
 
 A petició de l’usuari es conserva el repertori català dels canals oficials i Tema, incloses les versions en directe. Les exclusions s’apliquen també a l’historial i al catàleg de pistes.
@@ -38,8 +70,7 @@ amb el vistiplau de l'usuari: vegeu «Revisió d'idioma de les cançons noves» 
    node scripts/revisar_castella_vigilats.js --artista="Sisa"       # un sol artista
    ```
 2. Mira cada títol (i, si dubtes, la descripció: la lletra és el criteri, **no** `defaultAudioLanguage`, que és poc
-   fiable). Amaga només el que és **100 % en castellà o basc**; conserva el català, el mixt i els títols que podrien
-   ser de qualsevol llengua.
+   fiable). En aquesta revisió, la petició «només català» exclou també les cançons amb estrofes substancials en altres llengües. Conserva les expressions breus, els instrumentals i l’occità/aranès; deixa els dubtes pendents.
 3. Amaga'ls: afegeix la regla de l'artista a `REGLES` de `scripts/ocultar_titols_castella.js` i executa
    `node scripts/ocultar_titols_castella.js` (o afegeix l'ID a `data/hidden-videos.json` si és un cas puntual: un
    Short, un àlbum, etc., que la regla no mira perquè només tracta `song`/`live_song`).
