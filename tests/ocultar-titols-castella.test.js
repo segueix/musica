@@ -74,6 +74,17 @@ describe('ocultar cançons amb títol en castellà', () => {
         expect(esCastella(song('Sara Roy', 'TOCAR EL CEL - Sara Roy'))).toBe(false);
     });
 
+    it('revisió del 2026-10-05: Au Rora conserva només les tres darreres peces en català', () => {
+        expect(esCastella(song('Au Rora', 'Au Rora — How Long Are We Supposed To Wait'))).toBe(true);
+        expect(esCastella(song('Au Rora', 'Au Rora — How Does It Feel (Live 2024)'))).toBe(true);
+        expect(esCastella(song('Au Rora', 'Au Rora — Naïve'))).toBe(true);
+        expect(esCastella(song('Au Rora', 'Blessed — Daniel Caesar cover by Au Rora'))).toBe(true);
+        expect(esCastella(song('Au Rora', 'Au Rora — Tipsy'))).toBe(true);
+        expect(esCastella(song('Au Rora', "Veure't Marxar — Au Rora"))).toBe(false);
+        expect(esCastella(song('Au Rora', 'Au Rora — Espero No Arribar Tard (Live a Betevé)'))).toBe(false);
+        expect(esCastella(song('Au Rora', 'Au Rora — Espero No Arribar Tard'))).toBe(false);
+    });
+
     it('només afecta cançons i canals de la llista', () => {
         expect(esCastella({ channelTitle: 'MARLENA', title: 'entrevista', contentType: 'review' })).toBe(false);
         expect(esCastella(song('Altre canal', 'Nadie Se Muere De Amor'))).toBe(false);
