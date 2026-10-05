@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-05T10:27:47.186Z",
-  "retainedVideoCount": 0,
+  "generatedAt": "2026-10-05T11:40:07.025Z",
+  "retainedVideoCount": 118,
   "unverifiedVideoCount": 0,
   "deepPagesFetched": 0,
   "deepChannelCount": 20,
-  "topicChannelCount": 176,
-  "governedChannelCount": 86,
+  "topicChannelCount": 172,
+  "governedChannelCount": 83,
   "topicCoverage": [
     {
       "id": "UCqaEtRht2jakBhGFLzS617w",
@@ -224,14 +224,6 @@
       "governs": true
     },
     {
-      "id": "UCSDuvSwql52flui2567reQw",
-      "name": "Anna Andreu",
-      "songs": 40,
-      "matched": 39,
-      "coverage": 0.97,
-      "governs": true
-    },
-    {
       "id": "UC5nvjukz73UjS-GpzieyTxw",
       "name": "Ginestà",
       "songs": 32,
@@ -285,22 +277,6 @@
       "songs": 46,
       "matched": 44,
       "coverage": 0.96,
-      "governs": true
-    },
-    {
-      "id": "UCvS1bHC_x3hqOwrYTY2bLIA",
-      "name": "Atupa",
-      "songs": 44,
-      "matched": 42,
-      "coverage": 0.95,
-      "governs": true
-    },
-    {
-      "id": "UCH977_Zpn90y2QGeeE-hhlQ",
-      "name": "Itaca Band",
-      "songs": 44,
-      "matched": 42,
-      "coverage": 0.95,
       "governs": true
     },
     {
@@ -760,14 +736,6 @@
       "governs": false
     },
     {
-      "id": "UCKyyi4qBKOJpeV2iZROTQaw",
-      "name": "Muyayo Rif",
-      "songs": 38,
-      "matched": 22,
-      "coverage": 0.58,
-      "governs": false
-    },
-    {
       "id": "UCUFf95lc9BoH8zy0Tn1Tm9w",
       "name": "gusset",
       "songs": 21,
@@ -952,6 +920,14 @@
       "governs": false
     },
     {
+      "id": "UCfMqjIyA0G1cVGNlFXXoJhA",
+      "name": "",
+      "songs": 0,
+      "matched": 0,
+      "coverage": 0,
+      "governs": false
+    },
+    {
       "id": "UC7IUL5Ba9dhBVPnTLe9RHhQ",
       "name": "",
       "songs": 0,
@@ -1017,8 +993,11 @@
     }
   ],
   "topicGovernance": "apply",
-  "governedReclassified": {},
-  "topicHiddenCount": 0,
+  "governedReclassified": {
+    "other": 243,
+    "song": 25
+  },
+  "topicHiddenCount": 455,
   "topicChannels": [
     {
       "id": "UCEMDA-ZXzEUlJjZ-avy0Pvg",
@@ -1098,13 +1077,6 @@
       "withClip": 0
     },
     {
-      "id": "UCBwmzKj56CGeAPmEFgqz0dg",
-      "name": "Anna Andreu",
-      "tracks": 41,
-      "selected": 2,
-      "withClip": 29
-    },
-    {
       "id": "UCALf4AsnFm6WhQSD6RGV5pg",
       "name": "Antònia Font",
       "tracks": 180,
@@ -1124,13 +1096,6 @@
       "tracks": 42,
       "selected": 17,
       "withClip": 17
-    },
-    {
-      "id": "UC5o8evhO7e-P0CjCarYQ7TQ",
-      "name": "Atupa",
-      "tracks": 47,
-      "selected": 3,
-      "withClip": 36
     },
     {
       "id": "UCOEzuNu9yvO0AFTnSVKk4LQ",
@@ -1483,13 +1448,6 @@
       "withClip": 12
     },
     {
-      "id": "UCLgbWJg8gE8lCwufclbvikg",
-      "name": "Itaca Band",
-      "tracks": 108,
-      "selected": 41,
-      "withClip": 33
-    },
-    {
       "id": "UCzQX193kQwe6E3QbRLPz59g",
       "name": "Jo Jet i Maria Ribot",
       "tracks": 100,
@@ -1782,13 +1740,6 @@
       "tracks": 31,
       "selected": 0,
       "withClip": 23
-    },
-    {
-      "id": "UCo7lLQMgwlo1IpACeWFAEag",
-      "name": "Muyayo Rif",
-      "tracks": 78,
-      "selected": 40,
-      "withClip": 21
     },
     {
       "id": "UCTn8anEMvCsxpCMhyajKjrg",
@@ -2225,32 +2176,59 @@
       "withClip": 36
     }
   ],
-  "indexedChannelCount": 369,
-  "resolvedChannelCount": 369,
-  "feedChannelCount": 366,
-  "rawPublicVideoCount": 4808,
-  "feedVideoCount": 4252,
-  "acceptedMusicCount": 4209,
-  "categoryEligibleVideoCount": 4204,
+  "indexedChannelCount": 360,
+  "resolvedChannelCount": 360,
+  "feedChannelCount": 360,
+  "rawPublicVideoCount": 10862,
+  "feedVideoCount": 8778,
+  "acceptedMusicCount": 9142,
+  "categoryEligibleVideoCount": 9040,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
-    "before": 0,
+    "before": 1318,
     "matched": 0,
-    "rejected": 0
+    "rejected": 1318
   },
-  "contentReviewCount": 562,
+  "contentReviewCount": 553,
   "contentTypeCounts": {
-    "song": 4103,
-    "live_song": 101,
-    "album": 5,
-    "other": 37,
-    "review": 562
+    "song": 8741,
+    "live_song": 299,
+    "album": 102,
+    "other": 1167,
+    "review": 553
   },
   "unresolvedChannelIds": [],
   "channelsWithoutUploads": [],
-  "channelsWithoutVideos": [],
-  "channelsWithoutAcceptedMusic": [],
+  "channelsWithoutVideos": [
+    "UCETR11eCJC5Z9mitj6MbASw",
+    "UCMj8K97SgGnI9OdJIHBH-Sw",
+    "UCOEzuNu9yvO0AFTnSVKk4LQ",
+    "UCvdm27ITzhd3bsnftrBmFUg",
+    "UCRdGqpbhydDXIl83A9E8-2Q",
+    "UCr8kBnuIa6LPmhZSxbwVs7w",
+    "UCwYR6Axoc2mEKz89P8t4N5Q",
+    "UCQAWPZGGc_4JqXq53ATaSBQ",
+    "UCHXlSnGKv7tdBxMw2F-FMkw",
+    "UCLKx4vBoCOKwB2x280VFmng",
+    "UCboGC6e3sTTIO9C6lHxifnA",
+    "UCfMqjIyA0G1cVGNlFXXoJhA",
+    "UC9i1uNb0GFrISNB2pctkvRg",
+    "UCMNP5PWXks1_Es7e5Fs2LOg",
+    "UCJ6EMs_13PLDvRSHi-XqRwQ",
+    "UCXa6Mb5QgzYjRV_D1VlYoKQ",
+    "UC7IUL5Ba9dhBVPnTLe9RHhQ",
+    "UCHWqKBzUJqglcjVIMViPE0A",
+    "UCUsvtjzfis5NZY8qj8BY_FQ"
+  ],
+  "channelsWithoutAcceptedMusic": [
+    "UCjEehp73GI2mh9Rkv31QT9w",
+    "UCUSjRkF72RR1E8Rl4SWtVsQ",
+    "UCQOqsrBqC_4Ibu_MJrBpK_g",
+    "UC5CGdoxqbma-pqkAHPjkq9w",
+    "UC_eW1AyvwaPsQA5YAuOC3YQ",
+    "UCdwDeWJ4aJ9RAURZERmWquA"
+  ],
   "allIndexedChannelsVisible": true,
-  "publishedFeedVideoCount": 4174,
+  "publishedFeedVideoCount": 4200,
   "publishedShortVideoCount": 0
 }
