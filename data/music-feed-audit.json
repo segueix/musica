@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-05T16:54:55.457Z",
-  "retainedVideoCount": 118,
+  "generatedAt": "2026-10-05T18:36:51.646Z",
+  "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
   "deepPagesFetched": 0,
   "deepChannelCount": 20,
-  "topicChannelCount": 275,
+  "topicChannelCount": 287,
   "governedChannelCount": 85,
   "topicCoverage": [
     {
@@ -1041,12 +1041,16 @@
     }
   ],
   "topicGovernance": "apply",
-  "governedReclassified": {
-    "other": 226,
-    "song": 25
-  },
-  "topicHiddenCount": 546,
+  "governedReclassified": {},
+  "topicHiddenCount": 0,
   "topicChannels": [
+    {
+      "id": "UClwN1cpIrafSRa8MbOMAvvQ",
+      "name": "2princesesbarbudes",
+      "tracks": 2,
+      "selected": 2,
+      "withClip": 0
+    },
     {
       "id": "UCEMDA-ZXzEUlJjZ-avy0Pvg",
       "name": "31 FAM",
@@ -1221,6 +1225,13 @@
       "tracks": 180,
       "selected": 40,
       "withClip": 13
+    },
+    {
+      "id": "UCnc-ydOqTCAyaVjB5h6Yk8w",
+      "name": "Ara Va de Bo",
+      "tracks": 2,
+      "selected": 2,
+      "withClip": 0
     },
     {
       "id": "UC5wqkIyYD4y1lLYN40BL9lg",
@@ -1832,6 +1843,13 @@
       "withClip": 12
     },
     {
+      "id": "UCMWf6XTheiTNyzFHQr5A2fQ",
+      "name": "Jaume Barri",
+      "tracks": 1,
+      "selected": 1,
+      "withClip": 0
+    },
+    {
       "id": "UCzQX193kQwe6E3QbRLPz59g",
       "name": "Jo Jet i Maria Ribot",
       "tracks": 100,
@@ -1913,6 +1931,13 @@
       "name": "Jordi Savall",
       "tracks": 2,
       "selected": 2,
+      "withClip": 0
+    },
+    {
+      "id": "UCvrdIqqti5520O_bz3ik57Q",
+      "name": "Jordi Tonietti",
+      "tracks": 1,
+      "selected": 1,
       "withClip": 0
     },
     {
@@ -2056,6 +2081,13 @@
       "withClip": 0
     },
     {
+      "id": "UCIdj5otREH5qxyPbKjAx2Sw",
+      "name": "La Tresca i la Verdesca",
+      "tracks": 2,
+      "selected": 2,
+      "withClip": 0
+    },
+    {
       "id": "UCKpscwdWlVaMqcA81vLI7OA",
       "name": "La Trinca",
       "tracks": 299,
@@ -2075,6 +2107,20 @@
       "tracks": 16,
       "selected": 5,
       "withClip": 10
+    },
+    {
+      "id": "UC3Bb6mYAwuWFLzNrro83tQA",
+      "name": "Lali BeGood",
+      "tracks": 1,
+      "selected": 1,
+      "withClip": 0
+    },
+    {
+      "id": "UCSuJ17uSSb8B4WOyFUNW9GQ",
+      "name": "Landry el Rumbero",
+      "tracks": 3,
+      "selected": 3,
+      "withClip": 0
     },
     {
       "id": "UCZ8_-6GA1ihcyKbws0ep3yg",
@@ -2145,6 +2191,13 @@
       "tracks": 1,
       "selected": 0,
       "withClip": 1
+    },
+    {
+      "id": "UCT9peuXLxzh-dx3r49F13qg",
+      "name": "Mainasons",
+      "tracks": 4,
+      "selected": 4,
+      "withClip": 0
     },
     {
       "id": "UCyOpYZK-23D5O5ih1d5I4yQ",
@@ -2469,6 +2522,13 @@
       "withClip": 0
     },
     {
+      "id": "UCZZOt0pWmzrTf3P97R7be6g",
+      "name": "Pep Puigdemont",
+      "tracks": 3,
+      "selected": 3,
+      "withClip": 0
+    },
+    {
       "id": "UCYECw-23usgJzg1MnHRFFQQ",
       "name": "Pere Tapias",
       "tracks": 127,
@@ -2634,6 +2694,13 @@
       "name": "Salvador Brotons",
       "tracks": 3,
       "selected": 3,
+      "withClip": 0
+    },
+    {
+      "id": "UCnNhpfMHfVCIGQI3HjxTkxg",
+      "name": "Samfaina de Colors",
+      "tracks": 2,
+      "selected": 2,
       "withClip": 0
     },
     {
@@ -2943,71 +3010,48 @@
       "tracks": 94,
       "selected": 40,
       "withClip": 36
+    },
+    {
+      "id": "UC5DkIn4ZKBgGKqvpa0JyZlg",
+      "name": "Xesco Boix",
+      "tracks": 1,
+      "selected": 1,
+      "withClip": 0
+    },
+    {
+      "id": "UCwLcftQS2zEOfwD9jSl2TXA",
+      "name": "Xiula",
+      "tracks": 2,
+      "selected": 2,
+      "withClip": 0
     }
   ],
-  "indexedChannelCount": 479,
-  "resolvedChannelCount": 479,
-  "feedChannelCount": 479,
-  "rawPublicVideoCount": 10919,
-  "feedVideoCount": 8833,
-  "acceptedMusicCount": 9273,
-  "categoryEligibleVideoCount": 9173,
+  "indexedChannelCount": 496,
+  "resolvedChannelCount": 496,
+  "feedChannelCount": 496,
+  "rawPublicVideoCount": 4946,
+  "feedVideoCount": 4418,
+  "acceptedMusicCount": 4378,
+  "categoryEligibleVideoCount": 4373,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
-    "before": 1267,
+    "before": 0,
     "matched": 0,
-    "rejected": 1267
+    "rejected": 0
   },
   "contentReviewCount": 534,
   "contentTypeCounts": {
-    "song": 8899,
-    "live_song": 274,
-    "album": 100,
-    "other": 1112,
+    "song": 4271,
+    "live_song": 102,
+    "album": 5,
+    "other": 34,
     "review": 534
   },
   "unresolvedChannelIds": [],
   "channelsWithoutUploads": [],
-  "channelsWithoutVideos": [
-    "UCETR11eCJC5Z9mitj6MbASw",
-    "UCMj8K97SgGnI9OdJIHBH-Sw",
-    "UCOEzuNu9yvO0AFTnSVKk4LQ",
-    "UCvdm27ITzhd3bsnftrBmFUg",
-    "UCFI6QGe27kctP5lGeugsrhA",
-    "UCRdGqpbhydDXIl83A9E8-2Q",
-    "UCr8kBnuIa6LPmhZSxbwVs7w",
-    "UCwYR6Axoc2mEKz89P8t4N5Q",
-    "UCQAWPZGGc_4JqXq53ATaSBQ",
-    "UCHXlSnGKv7tdBxMw2F-FMkw",
-    "UCLKx4vBoCOKwB2x280VFmng",
-    "UCboGC6e3sTTIO9C6lHxifnA",
-    "UCfMqjIyA0G1cVGNlFXXoJhA",
-    "UC9i1uNb0GFrISNB2pctkvRg",
-    "UCMNP5PWXks1_Es7e5Fs2LOg",
-    "UCJ6EMs_13PLDvRSHi-XqRwQ",
-    "UCXa6Mb5QgzYjRV_D1VlYoKQ",
-    "UC7IUL5Ba9dhBVPnTLe9RHhQ",
-    "UCz35Q7e_ulwY_uRqg5zDxeQ",
-    "UCHWqKBzUJqglcjVIMViPE0A",
-    "UCUsvtjzfis5NZY8qj8BY_FQ",
-    "UC5u7o5L26RuDowQsqOJDm0w",
-    "UC5Fb0Xo8Xx6gVrFPoVsZluw",
-    "UCHVIvz-1UD7NLa_FBveiFnw",
-    "UCYcAA6W7ef4ZOWat8JjaARQ",
-    "UCmwGTBibm2bt9oF-P7ECSmQ",
-    "UCfcp4MZZ3t309KMOLo7JJag",
-    "UCRLHVqJybtjS5ODPP5iAv4w",
-    "UCYPbYGqAXm8gaYGVY-ANVXA"
-  ],
-  "channelsWithoutAcceptedMusic": [
-    "UCjEehp73GI2mh9Rkv31QT9w",
-    "UCUSjRkF72RR1E8Rl4SWtVsQ",
-    "UCQOqsrBqC_4Ibu_MJrBpK_g",
-    "UC5CGdoxqbma-pqkAHPjkq9w",
-    "UC_eW1AyvwaPsQA5YAuOC3YQ",
-    "UCdwDeWJ4aJ9RAURZERmWquA"
-  ],
+  "channelsWithoutVideos": [],
+  "channelsWithoutAcceptedMusic": [],
   "allIndexedChannelsVisible": true,
-  "publishedFeedVideoCount": 4369,
+  "publishedFeedVideoCount": 4418,
   "publishedShortVideoCount": 0
 }
