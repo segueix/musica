@@ -170,7 +170,7 @@ async function main() {
         comprovar(
             'cada ràdio porta el selector de mode a la capçalera, amb les quatre opcions i «Una mica de tot» actiu',
             selector.aCapcalera &&
-                selector.opcions.map(item => item.text).join('|') === 'Els meus de sempre|Una mica de tot|Sorprèn-me|Només no escoltats' &&
+                selector.opcions.map(item => item.text).join('|') === 'Els meus de sempre|Una mica de tot|Sorprèn-me|Fora del meu radar' &&
                 selector.opcions
                     .filter(item => item.actiu === 'true')
                     .map(item => item.id)

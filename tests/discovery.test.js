@@ -60,7 +60,7 @@ describe('preferència del mode de descoberta', () => {
             'Els meus de sempre',
             'Una mica de tot',
             'Sorprèn-me',
-            'Només no escoltats',
+            'Fora del meu radar',
         ]);
     });
 
