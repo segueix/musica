@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-05T15:19:40.079Z",
+  "generatedAt": "2026-10-05T15:40:50.178Z",
   "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
   "deepPagesFetched": 0,
   "deepChannelCount": 20,
-  "topicChannelCount": 198,
+  "topicChannelCount": 202,
   "governedChannelCount": 83,
   "topicCoverage": [
     {
@@ -1195,6 +1195,13 @@
       "withClip": 3
     },
     {
+      "id": "UCe_v26nxcgIzZxxvRDkHOrw",
+      "name": "Carme Canela",
+      "tracks": 97,
+      "selected": 40,
+      "withClip": 0
+    },
+    {
       "id": "UCu05DiznV7Z3jDMGr6w5WTQ",
       "name": "Ceaxe",
       "tracks": 45,
@@ -1790,6 +1797,13 @@
       "withClip": 14
     },
     {
+      "id": "UC18hp60b-j4DdzwEcWe9wrw",
+      "name": "Maria Betriu",
+      "tracks": 23,
+      "selected": 23,
+      "withClip": 0
+    },
+    {
       "id": "UCLgDhaK2cT63xw3fKKkU1_g",
       "name": "Maria Del Mar Bonet",
       "tracks": 470,
@@ -1970,6 +1984,13 @@
       "tracks": 3,
       "selected": 0,
       "withClip": 3
+    },
+    {
+      "id": "UCYVzNqs1SsMzBHLli6QUHaw",
+      "name": "Pegasus",
+      "tracks": 99,
+      "selected": 40,
+      "withClip": 0
     },
     {
       "id": "UCYECw-23usgJzg1MnHRFFQQ",
@@ -2329,6 +2350,13 @@
       "withClip": 19
     },
     {
+      "id": "UCpj14cymb-6wmeXwI4hmFxA",
+      "name": "Vicens Martín",
+      "tracks": 42,
+      "selected": 36,
+      "withClip": 0
+    },
+    {
       "id": "UC7HPer-lgFJBnjfNJ_J1Q4g",
       "name": "Vittara",
       "tracks": 64,
@@ -2371,13 +2399,13 @@
       "withClip": 36
     }
   ],
-  "indexedChannelCount": 394,
-  "resolvedChannelCount": 394,
-  "feedChannelCount": 394,
-  "rawPublicVideoCount": 4698,
-  "feedVideoCount": 4165,
-  "acceptedMusicCount": 4126,
-  "categoryEligibleVideoCount": 4121,
+  "indexedChannelCount": 402,
+  "resolvedChannelCount": 402,
+  "feedChannelCount": 402,
+  "rawPublicVideoCount": 4735,
+  "feedVideoCount": 4202,
+  "acceptedMusicCount": 4163,
+  "categoryEligibleVideoCount": 4158,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
     "before": 0,
@@ -2386,17 +2414,22 @@
   },
   "contentReviewCount": 538,
   "contentTypeCounts": {
-    "song": 4024,
-    "live_song": 97,
+    "song": 4062,
+    "live_song": 96,
     "album": 5,
     "other": 34,
     "review": 538
   },
   "unresolvedChannelIds": [],
   "channelsWithoutUploads": [],
-  "channelsWithoutVideos": [],
+  "channelsWithoutVideos": [
+    "UCmwGTBibm2bt9oF-P7ECSmQ",
+    "UCfcp4MZZ3t309KMOLo7JJag",
+    "UCRLHVqJybtjS5ODPP5iAv4w",
+    "UCYPbYGqAXm8gaYGVY-ANVXA"
+  ],
   "channelsWithoutAcceptedMusic": [],
   "allIndexedChannelsVisible": true,
-  "publishedFeedVideoCount": 4164,
+  "publishedFeedVideoCount": 4199,
   "publishedShortVideoCount": 0
 }
