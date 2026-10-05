@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-05T13:18:36.165Z",
+  "updatedAt": "2026-10-05T13:41:40.211Z",
   "artists": [
     {
       "name": "2ES",
@@ -404,31 +404,9 @@
             "name": "Adala",
             "type": "official",
             "primary": true
-          },
-          {
-            "id": "UCr0GRoNMpT6f-ELLCZMlNlg",
-            "handle": null,
-            "name": "Adala - Topic",
-            "type": "topic",
-            "primary": false
           }
         ],
         "searchCandidates": [
-          {
-            "id": "UCr0GRoNMpT6f-ELLCZMlNlg",
-            "title": "Adala - Topic",
-            "handle": null,
-            "description": "",
-            "subscriberCount": 1970,
-            "thumbnail": "https://yt3.ggpht.com/dE2oTFGA3EAy5nO8DepThAk2rZg8n4kGnA5HetA-c4TsdmithuO9prCHmB2k9RPlj2u7wZsTxg=s240-c-k-c0x00ffffff-no-rj",
-            "score": 85,
-            "reasons": [
-              "nom exacte de canal Topic",
-              "primer resultat"
-            ],
-            "suggestedType": "topic",
-            "discoveredAt": "2026-10-05T09:42:04.619Z"
-          },
           {
             "id": "UC-JNcJrzWSw2RtL-3TqYoeQ",
             "title": "Adala",
@@ -442,18 +420,6 @@
             ],
             "suggestedType": "official",
             "discoveredAt": "2026-10-05T09:42:04.619Z"
-          },
-          {
-            "id": "UC_TuC__S3qGK7feASr2F_ZQ",
-            "title": "البرنامج الإذاعي حكم العدالة Hokm al Adala",
-            "handle": "@hokm",
-            "description": "حكم العدالة : البرنامج الاشهر منذ عام 1977",
-            "subscriberCount": 165000,
-            "thumbnail": "https://yt3.ggpht.com/ZWFPx85-YuW6mgnhf-9dTRZd1ZfbQyWh4AlknWmxZm4hkeTRUXEt30YYI7eucNkJllXjqetWLDE=s240-c-k-c0x00ffffff-no-rj",
-            "score": 0,
-            "reasons": [],
-            "suggestedType": "official",
-            "discoveredAt": "2026-10-05T09:42:04.619Z"
           }
         ]
       },
@@ -465,8 +431,8 @@
         "https://adala.cat/",
         "youtube:targeted-search-verified"
       ],
-      "lastChecked": "2026-10-05T09:46:00.000Z",
-      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal(s) YouTube verificat(s) amb cerca dirigida.",
+      "lastChecked": "2026-10-05T13:41:40.211Z",
+      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal(s) YouTube verificat(s) amb cerca dirigida. Restricció explícita de l’usuari 2026-10-05: només el canal UC-JNcJrzWSw2RtL-3TqYoeQ. Canal Topic retirat i bloquejat per evitar reincorporacions.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-05T09:42:04.619Z",
