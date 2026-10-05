@@ -222,6 +222,15 @@ async function searchChannels(name, apiKey) {
     return apiJson(url, apiKey);
 }
 
+async function searchVideos(name, apiKey) {
+    const url = new URL(SEARCH_URL);
+    url.searchParams.set('part', 'snippet');
+    url.searchParams.set('type', 'video');
+    url.searchParams.set('maxResults', '5');
+    url.searchParams.set('q', name);
+    return apiJson(url, apiKey);
+}
+
 async function channelDetails(ids, apiKey) {
     if (!ids.length) return [];
     const url = new URL(CHANNELS_URL);
@@ -340,9 +349,20 @@ async function main() {
             const searchQuery = targetedQueries.get(normalizeText(artist.name)) || artist.name;
             const search = await searchChannels(searchQuery, apiKey);
             searches += 1;
-            const ids = (search.items || [])
+            let ids = (search.items || [])
                 .map((item) => item.id?.channelId)
                 .filter((id) => CHANNEL_ID_RE.test(id));
+
+            if (!ids.length && targetedNames && targetedQueries.has(normalizeText(artist.name))) {
+                const videoSearch = await searchVideos(searchQuery, apiKey);
+                searches += 1;
+                ids = [...new Set((videoSearch.items || [])
+                    .map((item) => item.snippet?.channelId)
+                    .filter((id) => CHANNEL_ID_RE.test(id)))];
+                if (ids.length) {
+                    console.log('🎵 ' + artist.name + ': candidats derivats de vídeos per «' + searchQuery + '».');
+                }
+            }
 
             const details = await channelDetails(ids, apiKey);
             const detailMap = new Map(details.map((item) => [item.id, item]));
