@@ -85,8 +85,22 @@ describe('ocultar cançons amb títol en castellà', () => {
         expect(esCastella(song('Au Rora', 'Au Rora — Espero No Arribar Tard'))).toBe(false);
     });
 
+    it('retira les lletres no catalanes de Stay Homas i La Pegatina també en directe', () => {
+        expect(esCastella(song('STAY HOMAS', 'STAY HOMAS - RADE BLUNNER (Unplugged)'))).toBe(true);
+        expect(esCastella(song('Stay Homas', 'Del Revés'))).toBe(true);
+        expect(esCastella(song('Stay Homas', 'TROPICAL.mp3'))).toBe(true);
+        expect(esCastella(song('La Pegatina', 'Sonqueson'))).toBe(true);
+        expect(esCastella(song('La Pegatina - Topic', 'Non è facile (Live 2024)'))).toBe(true);
+        expect(esCastella(song('Stay Homas', '+='))).toBe(false);
+        expect(esCastella(song('STAY HOMAS', 'STAY HOMAS - HO TORNARIA A FER (Unplugged)'))).toBe(false);
+        expect(esCastella(song('La Pegatina', 'Gat Rumberu'))).toBe(false);
+        expect(esCastella(song('La Pegatina', "Que t'agradi veure'm"))).toBe(false);
+        expect(esCastella(song('La Pegatina', 'La guspira'))).toBe(false);
+    });
+
     it('només afecta cançons i canals de la llista', () => {
         expect(esCastella({ channelTitle: 'MARLENA', title: 'entrevista', contentType: 'review' })).toBe(false);
         expect(esCastella(song('Altre canal', 'Nadie Se Muere De Amor'))).toBe(false);
     });
 });
+

@@ -2,8 +2,10 @@
 
 const fs = require('fs');
 const path = require('path');
+const { loadChannelVideoAllowlist } = require('./lib/filtre_videos_canal');
 
 const FILE = path.join(process.cwd(), 'data', 'artistes-musica.json');
+const TARGETS_FILE = path.join(process.cwd(), 'data', 'youtube-search-targets.json');
 const SEARCH_URL = 'https://www.googleapis.com/youtube/v3/search';
 const CHANNELS_URL = 'https://www.googleapis.com/youtube/v3/channels';
 const DEFAULT_BATCH = 25;
@@ -221,6 +223,15 @@ async function searchChannels(name, apiKey) {
     return apiJson(url, apiKey);
 }
 
+async function searchVideos(name, apiKey) {
+    const url = new URL(SEARCH_URL);
+    url.searchParams.set('part', 'snippet');
+    url.searchParams.set('type', 'video');
+    url.searchParams.set('maxResults', '5');
+    url.searchParams.set('q', name);
+    return apiJson(url, apiKey);
+}
+
 async function channelDetails(ids, apiKey) {
     if (!ids.length) return [];
     const url = new URL(CHANNELS_URL);
@@ -271,6 +282,7 @@ async function main() {
     }
 
     const data = JSON.parse(fs.readFileSync(FILE, 'utf8'));
+    const channelRules = loadChannelVideoAllowlist(path.join(process.cwd(), 'data', 'music-channel-video-allowlist.json'));
     const todayPT = pacificDateKey(new Date());
     const alreadyUsedToday = data.artists.filter((artist) =>
         pacificDateKey(artist.enrichment?.youtubeSearch?.checkedAt) === todayPT
@@ -285,12 +297,35 @@ async function main() {
         return;
     }
 
+    let targetedNames = null;
+    let targetedQueries = new Map();
+    if (fs.existsSync(TARGETS_FILE)) {
+        try {
+            const payload = JSON.parse(fs.readFileSync(TARGETS_FILE, 'utf8'));
+            const names = Array.isArray(payload?.artists) ? payload.artists : [];
+            targetedNames = new Set(names.map(normalizeText).filter(Boolean));
+            targetedQueries = new Map(
+                Object.entries(payload?.queries || {})
+                    .map(([name, query]) => [normalizeText(name), String(query || '').trim()])
+                    .filter(([, query]) => query)
+            );
+            if (targetedNames.size) {
+                console.log('🎯 Cerca YouTube dirigida a ' + targetedNames.size + ' artistes.');
+            } else {
+                targetedNames = null;
+            }
+        } catch (error) {
+            console.warn('⚠️ No s’ha pogut llegir youtube-search-targets.json:', error.message);
+        }
+    }
+
     const targets = data.artists
         .filter((artist) => {
             if (artist.reviewStatus === 'rebutjat') return false;
             if (artist.youtube?.channels?.length) return false;
+            if (targetedNames && !targetedNames.has(normalizeText(artist.name))) return false;
             const checkedAt = artist.enrichment?.youtubeSearch?.checkedAt;
-            return !checkedAt || daysSince(checkedAt) >= RECHECK_DAYS;
+            return targetedNames ? true : (!checkedAt || daysSince(checkedAt) >= RECHECK_DAYS);
         })
         .slice(0, runLimit);
 
@@ -313,11 +348,23 @@ async function main() {
         artist.enrichment ||= {};
 
         try {
-            const search = await searchChannels(artist.name, apiKey);
+            const searchQuery = targetedQueries.get(normalizeText(artist.name)) || artist.name;
+            const search = await searchChannels(searchQuery, apiKey);
             searches += 1;
-            const ids = (search.items || [])
+            let ids = (search.items || [])
                 .map((item) => item.id?.channelId)
-                .filter((id) => CHANNEL_ID_RE.test(id));
+                .filter((id) => CHANNEL_ID_RE.test(id) && !channelRules.get(id)?.blocked);
+
+            if (!ids.length && targetedNames && targetedQueries.has(normalizeText(artist.name))) {
+                const videoSearch = await searchVideos(searchQuery, apiKey);
+                searches += 1;
+                ids = [...new Set((videoSearch.items || [])
+                    .map((item) => item.snippet?.channelId)
+                    .filter((id) => CHANNEL_ID_RE.test(id) && !channelRules.get(id)?.blocked))];
+                if (ids.length) {
+                    console.log('🎵 ' + artist.name + ': candidats derivats de vídeos per «' + searchQuery + '».');
+                }
+            }
 
             const details = await channelDetails(ids, apiKey);
             const detailMap = new Map(details.map((item) => [item.id, item]));
@@ -327,12 +374,14 @@ async function main() {
                 .sort((a, b) => b.score - a.score);
 
             artist.youtube.searchCandidates = scored.map(publicCandidate);
-            const accepted = decideAutoAccept(artist, scored);
+            // En una cerca dirigida preferim inspecció manual: noms curts com Tesa, Adala o 2ES
+            // tenen homònims i no s'han d'autoacceptar només perquè el Topic coincideixi.
+            const accepted = targetedNames ? null : decideAutoAccept(artist, scored);
 
             artist.enrichment.youtubeSearch = {
                 checkedAt: now,
                 status: accepted ? 'autoacceptat' : scored.length ? 'candidats' : 'sense-resultats',
-                query: artist.name,
+                query: searchQuery,
                 resultCount: scored.length,
                 bestScore: scored[0]?.score || 0,
                 autoAcceptedId: accepted?.id || null
@@ -370,7 +419,7 @@ async function main() {
             artist.enrichment.youtubeSearch = {
                 checkedAt: now,
                 status: 'error',
-                query: artist.name,
+                query: searchQuery,
                 resultCount: 0,
                 bestScore: 0,
                 autoAcceptedId: null,
@@ -406,3 +455,4 @@ if (require.main === module) {
         process.exit(1);
     });
 }
+

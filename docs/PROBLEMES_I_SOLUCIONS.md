@@ -1,3 +1,33 @@
+## [2026-10-05] - Segona passada amb cerca i anàlisi de lletres
+
+**Petició:** buscar artista i lletra de les 239 pendents i fer més descartes segons l’idioma.
+
+**Resultat:** 22 exclusions dins les 239, 35 conservades i 182 pendents sense evidència suficient. S’afegeix l’exclusió correctiva de «Gratitud», de Still Ill: 23 IDs ocults nous en total.
+
+**Aplicació:** només les 57 decisions resoltes passen a revisades. Es mantenen les 182 pendents, les 2 descartades automàtiques i totes les exclusions anteriors. El filtre existent d’ocults aplica els IDs; no s’edita el feed.
+
+**Traçabilitat:** [registre amb cerques, decisions i fonts](revisions/2026-10-05-idiomes-lletres.json). Sense atribuir lletres d’homònims ni deduir l’idioma del títol. No s’han verificat íntegrament les 239 lletres.
+
+## [2026-10-05] - Revisió completa de la cua d’idiomes
+
+**Petició:** revisar totes les cançons pendents i eliminar les que no siguin en català.
+
+**Resultat:** 221 IDs afegits a ocults; 1008 entrades conservades i 68 exclusions prèvies respectades. S’han repassat 1546 entrades, incloses les altes del bot durant la revisió. 249 casos no resolts es documenten sense marcar-los com a revisats; de l’estat vigent queden 239 pendents i 2 descartades automàtiques sense verificar. Es respecten totes les exclusions anteriors.
+
+**Implementació:** fusió selectiva de l’estat actual de revisió, sense buidar globalment la cua ni editar manualment el feed. Les exclusions per ID s’apliquen a totes les fonts a través del filtre existent. No s’exclou cap artista sencer ni s’estén una exclusió a versions no contrastades.
+
+**Traçabilitat:** [decisions, criteris i fonts](revisions/2026-10-05-idiomes.json). S’han contrastat lletres/descripcions disponibles i context de títol, disc i repertori; la revisió no implica haver escoltat íntegrament tots els vídeos.
+
+## [2026-10-05] - Retirada d’Itaca Band, filtre de Stay Homas / La Pegatina i canal homònim de La Madam
+
+**Petició:** retirar Itaca Band, conservar només el repertori català de Stay Homas i La Pegatina i eliminar el canal `UCCjTaOHQqmy0VD2vkZVxxoA` de La Madam.
+
+**Solució:** Itaca Band queda rebutjat i exclòs de la descoberta; es retiren els dos canals. Per fer desaparèixer les fitxes immediatament, el feed només es neteja dels tres canals retirats (amb `serializeFeed()`); les exclusions de cançons per idioma es fan amb el registre d’ocults. S’eliminen les exclusions globals antigues de Stay Homas i La Pegatina perquè aquests artistes sí que es conserven. La llista per canal fixa també el repertori català verificat (11 cançons de Stay Homas i 4 de La Pegatina, amb les seves versions): una regeneració no pot omplir els buits amb altres peces no revisades. Per afegir nous títols catalans cal verificar la lletra i ampliar aquesta selecció; `+=` es conserva també com a títol simbòlic. Els títols revisats en altres llengües tenen regles permanents al canal oficial i Tema; els IDs s’han materialitzat des del feed, historial, arxiu i catàleg de pistes. «Del Revés», «Rade Blunner», «Tropical» i «Sonqueson» són castellanes encara que el títol pugui enganyar; «+=» és catalana. Es conserven les cançons catalanes amb expressions breus d’altres llengües; es retiren «Ara (Les Merdes II)» i «The Bright Side», amb versos sencers en anglès.
+
+**Canals retirats:** `blocked: true` a `music-channel-video-allowlist.json` rebutja qualsevol vídeo del canal; la cerca i el resolutor de YouTube també descarten aquests IDs. La Madam s’exclou només per l’ID indicat, mai pel nom: el Topic barreja peces del grup català i d’un homònim castellà. No hi ha un segon ID assignat al repositori; es manté la fitxa catalana pendent del canal correcte. També es retira l’entrada de `youtube-verified-handles.json`, que el resolutor de verificats tornava a assignar, i aquest resolutor respecta els canals bloquejats i els artistes rebutjats. Stay Homas i La Pegatina incorporen els QID verificats (Q90712655 i Q1813924) perquè la descoberta per Wikidata actualitzi la fitxa existent i no creï duplicats.
+
+**Verificació:** comprovació dels IDs ocults i de les cançons catalanes conservades; proves del filtre per canal i regles per títol. La suite general ja presentava errors abans del canvi.
+
 ## [2026-10-04] - Fora els Shorts de tota l'app
 **Petició:** eliminar els Shorts del feed i de tota l'app.
 
@@ -1423,6 +1453,14 @@ Hi havia dos problemes independents:
 
 **Proves:** `tests/system-player.test.js`, `tests/player-controls.test.js`, `node tests/browser/verificar-finestra-sistema.js`.
 
+
+## [2026-10-05] Sabor de Gràcia: vídeos auxiliars i selecció de cinc cançons
+
+El feed incloïa l’entrevista «Programa Signes del Temps-Entrevista exclusiva» (W-uxBzgiktg, 28 minuts), ja classificada com `other`, i aparicions com «CULTURAS 2 RTVE-SABOR DE GRACIA» i «PREMIS ENDERROCK 2025», classificades com `song`.
+
+Causa comprovada: `update_music_feed.js` conserva els vídeos públics al feed i delega el filtre a les vistes, excepte quan el canal té `acceptedMusicOnly` o `allowedContentTypes`. A més, el classificador pot acceptar un títol del canal oficial que conté el nom de l’artista, un separador i una durada musical; altres casos acumulen punts per categoria Music, tags i durada. Són senyals de metadades, no una anàlisi de l’àudio. Que un vídeo sigui al feed no demostra que totes les vistes el mostrin: el perfil té també el filtre `isSongVideo`.
+
+Correcció de catàleg demanada: només cinc enregistraments Topic (pCeWfNt-GCE, MZ0YjJC1XVM, FVhxEiH0QVQ, xAIMP0FnPJ8, 1fKzpw-KB0c). Llista blanca de títols exactes, tipus `song` i música acceptada; canal oficial retirat i bloquejat; 36 vídeos addicionals ocultats i arxius dels dos canals eliminats perquè el generador els reconstrueixi amb la selecció. No s’ha alterat globalment el classificador ni s’han retirat vídeos d’altres artistes.
 
 ## [2026-10-05] - La finestreta flotant no complia la mida mínima ni «res al damunt» de YouTube
 

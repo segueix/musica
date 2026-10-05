@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-28T10:18:07.275Z",
+  "updatedAt": "2026-10-05",
   "exclusions": [
     {
       "wikidataId": "Q2838792",
@@ -111,20 +111,6 @@
       "source": "editorial-language-policy"
     },
     {
-      "wikidataId": "Q1813924",
-      "name": "La Pegatina",
-      "aliases": [],
-      "reason": "Criteri editorial d'idioma: repertori majoritàriament en castellà i multilingüe.",
-      "source": "editorial-language-policy"
-    },
-    {
-      "wikidataId": "Q90712655",
-      "name": "Stay Homas",
-      "aliases": [],
-      "reason": "Criteri editorial d'idioma: repertori multilingüe, no principalment català.",
-      "source": "editorial-language-policy"
-    },
-    {
       "wikidataId": "Q123503941",
       "name": "Chiara Oliver Williams",
       "aliases": [
@@ -217,6 +203,16 @@
       ],
       "reason": "Exclusió editorial sol·licitada per a Segueix Música.",
       "source": "editorial-exclusion"
+    },
+    {
+      "wikidataId": null,
+      "name": "Itaca Band",
+      "aliases": [
+        "Itaca",
+        "Ítaca Band"
+      ],
+      "reason": "Retirat íntegrament a petició de l’usuari el 2026-10-05.",
+      "source": "manual-user-2026-10-05"
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-04",
+  "updatedAt": "2026-10-05T15:45:24.360Z",
   "description": "Llista blanca per a canals on Segueix Música només ha d'ingerir vídeos concrets. Admet títols exactes, fragments obligatoris i fragments exclosos.",
   "channels": {
     "UCKpscwdWlVaMqcA81vLI7OA": {
@@ -53,6 +53,1127 @@
         "Mentida",
         "Aquesta nit és la nit",
         "Baby, baby"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCH977_Zpn90y2QGeeE-hhlQ": {
+      "artist": "Itaca Band",
+      "blocked": true,
+      "note": "Canal retirat explícitament per l’usuari el 2026-10-05. No ingerir vídeos ni tornar-lo a acceptar en resoldre canals."
+    },
+    "UCLgbWJg8gE8lCwufclbvikg": {
+      "artist": "Itaca Band",
+      "blocked": true,
+      "note": "Canal retirat explícitament per l’usuari el 2026-10-05. No ingerir vídeos ni tornar-lo a acceptar en resoldre canals."
+    },
+    "UCCjTaOHQqmy0VD2vkZVxxoA": {
+      "artist": "La Madam (canal retirat)",
+      "blocked": true,
+      "note": "Canal retirat explícitament per l’usuari el 2026-10-05. No ingerir vídeos ni tornar-lo a acceptar en resoldre canals."
+    },
+    "UC0PtwzSikWRnftscW9uI_Ug": {
+      "artist": "Stay Homas",
+      "note": "Repertori català verificat del feed i historial el 2026-10-05, incloses versions en directe. Les noves peces només s’incorporen després de comprovar la lletra i ampliar aquesta selecció; evita que una regeneració ompli els buits amb altres cançons en castellà.",
+      "allowedTitleContains": [
+        "Espurna",
+        "Xinu Xanu",
+        "La Platja",
+        "Petons",
+        "Ho tornaria a fer",
+        "La Nòria",
+        "Les Merdes",
+        "Ho sap tothom menys tu",
+        "No tinc paraules",
+        "No vull baixar",
+        "+="
+      ],
+      "deniedTitleContains": [
+        "Ara (Les Merdes II)"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCerRtDlJWXCmBMgGYjq6gYQ": {
+      "artist": "Stay Homas",
+      "note": "Repertori català verificat del feed i historial el 2026-10-05, incloses versions en directe. Les noves peces només s’incorporen després de comprovar la lletra i ampliar aquesta selecció; evita que una regeneració ompli els buits amb altres cançons en castellà.",
+      "allowedTitleContains": [
+        "Espurna",
+        "Xinu Xanu",
+        "La Platja",
+        "Petons",
+        "Ho tornaria a fer",
+        "La Nòria",
+        "Les Merdes",
+        "Ho sap tothom menys tu",
+        "No tinc paraules",
+        "No vull baixar",
+        "+="
+      ],
+      "deniedTitleContains": [
+        "Ara (Les Merdes II)"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCr8kBnuIa6LPmhZSxbwVs7w": {
+      "artist": "La Pegatina",
+      "note": "Repertori català verificat del feed i historial el 2026-10-05, incloses versions en directe. Les noves peces només s’incorporen després de comprovar la lletra i ampliar aquesta selecció; evita que una regeneració ompli els buits amb altres cançons en castellà.",
+      "allowedTitleContains": [
+        "Gat Rumberu",
+        "La Meva Gent",
+        "Que t'agradi veure'm",
+        "La guspira"
+      ],
+      "deniedTitleContains": [],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCMepRsHQTgYZd3u__Xbj_6A": {
+      "artist": "La Pegatina",
+      "note": "Repertori català verificat del feed i historial el 2026-10-05, incloses versions en directe. Les noves peces només s’incorporen després de comprovar la lletra i ampliar aquesta selecció; evita que una regeneració ompli els buits amb altres cançons en castellà.",
+      "allowedTitleContains": [
+        "Gat Rumberu",
+        "La Meva Gent",
+        "Que t'agradi veure'm",
+        "La guspira"
+      ],
+      "deniedTitleContains": [],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCD1xceEEywgVv2tMX5kMi6Q": {
+      "artist": "Marala",
+      "note": "Només repertori català verificat; evita Canción del Varear i peces en altres idiomes. Trio de Selma Bruna, Clara Fiol i Sandra Monfort.",
+      "allowedTitleContains": [
+        "El desich",
+        "A la vora del riu mare",
+        "Rosa i espina"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCsAbCGSmpvZ7Ym2WNklg44A": {
+      "artist": "La Coixinera",
+      "note": "Selecció inicial de cançons en català contrastada el 2026-10-05. Només ampliar amb verificació del repertori; exclou peces en altres idiomes.",
+      "allowedTitleContains": [
+        "Mar i muntanya"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UC5u7o5L26RuDowQsqOJDm0w": {
+      "artist": "La Coixinera",
+      "note": "Selecció inicial de cançons en català contrastada el 2026-10-05. Només ampliar amb verificació del repertori; exclou peces en altres idiomes.",
+      "allowedTitleContains": [
+        "Mar i muntanya"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UC5Fb0Xo8Xx6gVrFPoVsZluw": {
+      "artist": "RIU",
+      "note": "Selecció inicial de cançons en català contrastada el 2026-10-05. Només ampliar amb verificació del repertori; exclou peces en altres idiomes.",
+      "allowedTitleContains": [
+        "Rossinyol",
+        "Lo Tio Pep",
+        "El noi de la mare"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCSsJFD5CFYZ3fe24qhtsejA": {
+      "artist": "Urbàlia Rurana",
+      "note": "Selecció inicial de cançons en català contrastada el 2026-10-05. Només ampliar amb verificació del repertori; exclou peces en altres idiomes.",
+      "allowedTitleContains": [
+        "Marineries",
+        "Seguidilles de Nules",
+        "Albades d'Hortells",
+        "Tres a buscar fortuna",
+        "Esbós de xiquet eixint d'escola",
+        "Saloma",
+        "Panegíric",
+        "Corrandes de Villores",
+        "Seguidilles de la Brisa",
+        "Ja ve Cento"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCMIVDQMYttFV6h1aRIeQN-w": {
+      "artist": "Urbàlia Rurana",
+      "note": "Selecció inicial de cançons en català contrastada el 2026-10-05. Només ampliar amb verificació del repertori; exclou peces en altres idiomes.",
+      "allowedTitleContains": [
+        "Marineries",
+        "Seguidilles de Nules",
+        "Albades d'Hortells",
+        "Tres a buscar fortuna",
+        "Esbós de xiquet eixint d'escola",
+        "Saloma",
+        "Panegíric",
+        "Corrandes de Villores",
+        "Seguidilles de la Brisa",
+        "Ja ve Cento"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UC8vbtHPcQvQEuQi2wcwK6aQ": {
+      "artist": "Tornaveus",
+      "note": "Selecció inicial de cançons en català contrastada el 2026-10-05. Només ampliar amb verificació del repertori; exclou peces en altres idiomes.",
+      "allowedTitleContains": [
+        "Sant Joan",
+        "L'estaca"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCz3aiLj85sLBimSrPwNcQcQ": {
+      "artist": "Trèvol",
+      "note": "Selecció inicial de cançons en català contrastada el 2026-10-05. Només ampliar amb verificació del repertori; exclou peces en altres idiomes.",
+      "allowedTitleContains": [
+        "Per molt de temps",
+        "Quimet",
+        "Ni un pam de terra",
+        "La venitosa"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCF6nxIBqp7vuVu51PGC7x5w": {
+      "artist": "Trèvol",
+      "note": "Selecció inicial de cançons en català contrastada el 2026-10-05. Només ampliar amb verificació del repertori; exclou peces en altres idiomes.",
+      "allowedTitleContains": [
+        "Per molt de temps",
+        "Quimet",
+        "Ni un pam de terra",
+        "La venitosa"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCYzpmEEhGtncFPgZSocnrtQ": {
+      "artist": "Corrandes són corrandes",
+      "note": "Selecció inicial de cançons en català contrastada el 2026-10-05. Només ampliar amb verificació del repertori; exclou peces en altres idiomes.",
+      "allowedTitleContains": [
+        "Donzelleta agraciada",
+        "Muntanyetes",
+        "Seguida de corrandes",
+        "Corrandes de Viladecavalls",
+        "Cobles del Peirot"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCTsSJXhTo6HpqmtSh8-p31A": {
+      "artist": "Corrandes són corrandes",
+      "note": "Selecció inicial de cançons en català contrastada el 2026-10-05. Només ampliar amb verificació del repertori; exclou peces en altres idiomes.",
+      "allowedTitleContains": [
+        "Donzelleta agraciada",
+        "Muntanyetes",
+        "Seguida de corrandes",
+        "Corrandes de Viladecavalls",
+        "Cobles del Peirot"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCv_7jwmDsQHYpxisi82fQng": {
+      "artist": "Quico el Célio, el Noi i el Mut de Ferreries",
+      "note": "Selecció inicial de cançons en català contrastada el 2026-10-05. Només ampliar amb verificació del repertori; exclou peces en altres idiomes.",
+      "allowedTitleContains": [
+        "Lo carrilet de la Cava",
+        "Lo carrilet i lo vaporet"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCYcAA6W7ef4ZOWat8JjaARQ": {
+      "artist": "Quico el Célio, el Noi i el Mut de Ferreries",
+      "note": "Selecció inicial de cançons en català contrastada el 2026-10-05. Només ampliar amb verificació del repertori; exclou peces en altres idiomes.",
+      "allowedTitleContains": [
+        "Lo carrilet de la Cava",
+        "Lo carrilet i lo vaporet"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCHVIvz-1UD7NLa_FBveiFnw": {
+      "artist": "Solk",
+      "note": "Canal oficial enllaçat per https://linktr.ee/solkmusicaivers. Absència: poema traduït al català per Josep Piera, documentat per Kasba Music.",
+      "allowedTitleContains": [
+        "Absència"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCrQY3EI5TJXNbCwkXcDLp7A": {
+      "artist": "Al Tall",
+      "note": "Selecció catalana inicial 2026-10-05. Font de repertori: https://www.cervantesvirtual.com/portales/al_tall/discografia/. No s’autoritza la resta del canal només pel nom del grup.",
+      "allowedTitleContains": [
+        "Tio Canya",
+        "Cant dels maulets",
+        "Cant de maulets",
+        "Lladres",
+        "Romanç de cec",
+        "Dansa del trull",
+        "Darrer diumenge d'octubre",
+        "A Miquel assassinaren",
+        "A Miquel Grau",
+        "La cançó de la llum",
+        "Cançó de la llum",
+        "La Pepa l'espardenyera",
+        "En casa del dimoni"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCv6aLx9OL9Qzc2nmNT5_IdA": {
+      "artist": "Esquirols",
+      "note": "Selecció catalana inicial 2026-10-05. Font de repertori: https://www.memoria.cat/records-personals/torna-torna-serrallona-1980-cinque-disc-desquirols-i-el-seu-context/. No s’autoritza la resta del canal només pel nom del grup.",
+      "allowedTitleContains": [
+        "Fent camí",
+        "Torna, torna Serrallonga",
+        "Sortiu a peu",
+        "Mediterrània",
+        "Vianant",
+        "Vine l'amor",
+        "Corrandes vénen",
+        "Terra, que de dona tens el nom",
+        "Rondalla",
+        "Barcelona",
+        "Plany de Salses a Guardamar"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UChRlRycsUvrvZZ-upnGunLw": {
+      "artist": "El Pont d'Arcalís",
+      "note": "Selecció catalana inicial 2026-10-05. Font de repertori: https://materialsescolafolk.tradicionarius.cat/inici/el-pont-darcal%C3%ADs/la-m%C3%BAsica. No s’autoritza la resta del canal només pel nom del grup.",
+      "allowedTitleContains": [
+        "Non plores, Tonet",
+        "Ninou de Fòrnols",
+        "La perdiueta",
+        "Andorra",
+        "La flor del pèsol",
+        "La desgràcia d'un pobre home",
+        "La polleta d'aigua",
+        "Cigalons de Canalda",
+        "Cançó de ronda"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UC_nlyjkIdPSWKkzbWK7Q-0w": {
+      "artist": "Germà Negre",
+      "note": "Selecció catalana inicial 2026-10-05. Font de repertori: https://www.germanegre.cat/. No s’autoritza la resta del canal només pel nom del grup.",
+      "allowedTitleContains": [
+        "La Cabritinha",
+        "Muntanyes del Canigó",
+        "Cançó de les mudances",
+        "Cançó de les mares",
+        "Les males herbes"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCFI6QGe27kctP5lGeugsrhA": {
+      "artist": "Germà Negre",
+      "note": "Selecció catalana inicial 2026-10-05. Font de repertori: https://www.germanegre.cat/. No s’autoritza la resta del canal només pel nom del grup.",
+      "allowedTitleContains": [
+        "La Cabritinha",
+        "Muntanyes del Canigó",
+        "Cançó de les mudances",
+        "Cançó de les mares",
+        "Les males herbes"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCr0GRoNMpT6f-ELLCZMlNlg": {
+      "artist": "Adala (canal retirat)",
+      "blocked": true,
+      "note": "Retirat per petició explícita 2026-10-05: només conservar UC-JNcJrzWSw2RtL-3TqYoeQ."
+    },
+    "UCezETW2-gAMtXB98LGBweWQ": {
+      "artist": "Sabor de Gràcia",
+      "blocked": true,
+      "note": "Canal oficial retirat 2026-10-05: l’usuari només vol cinc peces presents al Topic; evita entrevistes, programes, premis i altres cançons."
+    },
+    "UClTLWZcaxCMgkk58dQna18A": {
+      "artist": "Sabor de Gràcia",
+      "allowedTitles": [
+        "Me'n Vaig a Peu",
+        "Ara Que Tinc Vint Anys",
+        "Per A Tu, Serrat",
+        "Ningú No Comprèn Ningú",
+        "Qualsevol Nit Pot Sortir El Sol"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song"
+      ],
+      "note": "Selecció tancada de cinc cançons indicada explícitament per l’usuari el 2026-10-05."
+    },
+    "UC96Q7Ki2GoRwrwSzeLTtvwg": {
+      "artist": "La Sra. Tomasa",
+      "blocked": true,
+      "note": "Artista exclosa íntegrament per petició de l'usuari (2026-10-05)."
+    },
+    "UCM-WxdgJTr37_bOOlX5sZhg": {
+      "artist": "La Sra. Tomasa",
+      "blocked": true,
+      "note": "Artista exclosa íntegrament per petició de l'usuari (2026-10-05)."
+    },
+    "UCNy0mWkgdGm_-fqav1J59dQ": {
+      "artist": "Les Buch",
+      "note": "Revisió manual 2026-10-05: només cançons amb lletra catalana contrastada. Fonts i decisions a docs/REVISION_PUNK_2026-10-05.json. Resta de repertori pendent; no importar altres vídeos.",
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "allowedTitles": [
+        "Si és pecat",
+        "Ens estan matant!",
+        "T'he calat",
+        "Sóc com sóc",
+        "Xantatge emocional",
+        "El pogo de la mort",
+        "Darrere teu!",
+        "Descansaré quan moriré",
+        "No és no",
+        "Un dia més"
+      ]
+    },
+    "UC8hpq3EHqyG09og9xy3qOFg": {
+      "artist": "Groggy Rude",
+      "note": "Revisió manual 2026-10-05: només cançons amb lletra catalana contrastada. Fonts i decisions a docs/REVISION_PUNK_2026-10-05.json. Resta de repertori pendent; no importar altres vídeos.",
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "allowedTitles": [
+        "Fins al final",
+        "Muralles",
+        "Hem crescut",
+        "No ets especial",
+        "Himnes de merda",
+        "Àngel condemnat",
+        "Fill de Déu",
+        "T'has cansat",
+        "Res a perdre"
+      ]
+    },
+    "UCmgvpf_Hz64idSYh4hFGHkQ": {
+      "artist": "Batec",
+      "note": "Revisió manual 2026-10-05: només cançons amb lletra catalana contrastada. Fonts i decisions a docs/REVISION_PUNK_2026-10-05.json. Resta de repertori pendent; no importar altres vídeos.",
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "allowedTitles": [
+        "NEVER SURRENDER",
+        "ARA I SEMPRE",
+        "EL MEU MOMENT",
+        "ENORMES",
+        "P-O-R",
+        "PER D'AQUÍ A UNS ANYS",
+        "FERIDA OBERTA",
+        "DISPARA AMB MI",
+        "EXECUTORS",
+        "RENEGATS",
+        "ABRIL",
+        "LA CIUTAT",
+        "ENTRE LLOPS",
+        "ENCARA HI SON"
+      ]
+    },
+    "UCDX2tkKsA-KRAxfE6p_kVuQ": {
+      "artist": "Panellet",
+      "note": "Revisió manual 2026-10-05: només cançons amb lletra catalana contrastada. Fonts i decisions a docs/REVISION_PUNK_2026-10-05.json. Resta de repertori pendent; no importar altres vídeos.",
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "allowedTitles": [
+        "Ocupat",
+        "Escape room",
+        "Denver",
+        "Llac petit",
+        "Amic boletaire",
+        "Loser",
+        "Montser Guallar",
+        "Thalassa",
+        "Ball de graduació",
+        "Excursió a Rupit",
+        "Atrapat (al meu passat)",
+        "Montse Guallar"
+      ]
+    },
+    "UC5prxpApFpUCRDrjIyIJjEg": {
+      "artist": "Les Salvatges",
+      "note": "Revisió manual 2026-10-05: només cançons amb lletra catalana contrastada. Fonts i decisions a docs/REVISION_PUNK_2026-10-05.json. Resta de repertori pendent; no importar altres vídeos.",
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "allowedTitles": [
+        "Penjar la guitarra",
+        "Pell d'ós",
+        "Cançó d'odi #3",
+        "Aquest món no està fet per nosaltres",
+        "Ona expansiva",
+        "No vull ser un policia",
+        "Mai ho sabràs / No vull tocar",
+        "Tasques inassumibles",
+        "Decisions",
+        "Sísif virtual",
+        "La pàtria",
+        "Hienes, llops, serps i voltors",
+        "Els últims dies"
+      ]
+    },
+    "UCHf4JVtqfIL_emZFYmchjkw": {
+      "artist": "Bacora",
+      "note": "Revisió manual 2026-10-05: només cançons amb lletra catalana contrastada. Fonts i decisions a docs/REVISION_PUNK_2026-10-05.json. Resta de repertori pendent; no importar altres vídeos.",
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "allowedTitles": [
+        "Alacant",
+        "Futbol és passió",
+        "Cibertont@",
+        "El Comboi",
+        "Poble Apitxat",
+        "Heil Hipster",
+        "Amor Secret",
+        "Sóc Feliç",
+        "Nació Valenciana",
+        "Optimisme Banal"
+      ]
+    },
+    "UCiUT6UwoOJsthloLMK0pSig": {
+      "artist": "Saïm",
+      "note": "Revisió manual 2026-10-05: només cançons amb lletra catalana contrastada. Fonts i decisions a docs/REVISION_PUNK_2026-10-05.json. Resta de repertori pendent; no importar altres vídeos.",
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "allowedTitles": [
+        "Celobert",
+        "Extrasístole"
+      ]
+    },
+    "UCQgZIJD-VO5fH80azRymksg": {
+      "artist": "Les Cruet",
+      "note": "Revisió manual 2026-10-05: només cançons amb lletra catalana contrastada. Fonts i decisions a docs/REVISION_PUNK_2026-10-05.json. Resta de repertori pendent; no importar altres vídeos.",
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "allowedTitles": [
+        "Eclipsi",
+        "Nana de la Mort",
+        "Enyor",
+        "Por_nº2",
+        "Mai no em feu nosa",
+        "Nus i desenllaç",
+        "He caigut",
+        "Una guineu",
+        "Recomane tenebres",
+        "Una boira",
+        "Submergida",
+        "Animal",
+        "Matilde",
+        "2 de març",
+        "Crits",
+        "Cérvols",
+        "Al fons del mar",
+        "il·logic",
+        "Esquirol i geneta",
+        "Formigues i cigales",
+        "Sota tant de tot",
+        "Ombres de gat",
+        "Carnaval"
+      ]
+    },
+    "UCAEf3q8jStY3hXlEtfoI0nA": {
+      "artist": "Enemic Interior",
+      "note": "Revisió manual 2026-10-05: només cançons amb lletra catalana contrastada. Fonts i decisions a docs/REVISION_PUNK_2026-10-05.json. Resta de repertori pendent; no importar altres vídeos.",
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "allowedTitles": [
+        "Mai més",
+        "Camisa de Força – Remasteritzada",
+        "Dimoni – Remasteritzada",
+        "Enemic Interior – Remasteritzada",
+        "Les Vies – Remasteritzada",
+        "Eterns – Remasteritzada",
+        "La Llum – Remasteritzada",
+        "Maquinària Veloç – Remasteritzada",
+        "Esperit Isard – Remasteritzada",
+        "Cop directe – Remasteritzada",
+        "100 Tambors – Remasteritzada",
+        "Les Ombres – Remasteritzada",
+        "Pilars de la Decadència – Remasteritzada",
+        "Als Àngels – Remasteritzada",
+        "Màgia de Sang – Remasteritzada",
+        "Cos a cos – Remasteritzada",
+        "Una llança en el meu pit – Remasteritzada",
+        "Fugir Endavant",
+        "Camisa de Força",
+        "Camisa de Força (Remasteritzada)",
+        "Dimoni",
+        "Dimoni (Remasteritzada)",
+        "Enemic Interior",
+        "Enemic Interior (Remasteritzada)",
+        "Les Vies",
+        "Les Vies (Remasteritzada)",
+        "Eterns",
+        "Eterns (Remasteritzada)",
+        "La Llum",
+        "La Llum (Remasteritzada)",
+        "Maquinària Veloç",
+        "Maquinària Veloç (Remasteritzada)",
+        "Esperit Isard",
+        "Esperit Isard (Remasteritzada)",
+        "Cop directe",
+        "Cop directe (Remasteritzada)",
+        "100 Tambors",
+        "100 Tambors (Remasteritzada)",
+        "Les Ombres",
+        "Les Ombres (Remasteritzada)",
+        "Pilars de la Decadència",
+        "Pilars de la Decadència (Remasteritzada)",
+        "Als Àngels",
+        "Als Àngels (Remasteritzada)",
+        "Màgia de Sang",
+        "Màgia de Sang (Remasteritzada)",
+        "Cos a cos",
+        "Cos a cos (Remasteritzada)",
+        "Una llança en el meu pit",
+        "Una llança en el meu pit (Remasteritzada)"
+      ]
+    },
+    "UCkIaaBrbzpnm0jbPXxNGwPw": {
+      "artist": "Apologia",
+      "note": "Revisió manual 2026-10-05: només cançons amb lletra catalana contrastada. Fonts i decisions a docs/REVISION_PUNK_2026-10-05.json. Resta de repertori pendent; no importar altres vídeos.",
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "allowedTitleContains": [
+        "Amb pluja i amb fred"
+      ]
+    },
+    "UCcqVDo23bg_lYmIan70ZhhA": {
+      "artist": "Brigada Moreneta",
+      "note": "Revisió manual 2026-10-05: només cançons amb lletra catalana contrastada. Fonts i decisions a docs/REVISION_PUNK_2026-10-05.json. Resta de repertori pendent; no importar altres vídeos.",
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "allowedTitles": [
+        "Torna la BRIMO",
+        "Ocell negre",
+        "Terres ocupades",
+        "Eskamot",
+        "Construïm la base",
+        "Subtil cacotanàsia",
+        "Seguim al carrer",
+        "Res canvia",
+        "Explota",
+        "Derrota en vida",
+        "NeoMerda",
+        "Malesa"
+      ]
+    },
+    "UCDxlvPSUVbtUrLsKDpGV_lw": {
+      "artist": "Brigada Moreneta",
+      "note": "Revisió manual 2026-10-05: només cançons amb lletra catalana contrastada. Fonts i decisions a docs/REVISION_PUNK_2026-10-05.json. Resta de repertori pendent; no importar altres vídeos.",
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "allowedTitles": [
+        "Torna la BRIMO",
+        "Ocell negre",
+        "Terres ocupades",
+        "Eskamot",
+        "Construïm la base",
+        "Subtil cacotanàsia",
+        "Seguim al carrer",
+        "Res canvia",
+        "Explota",
+        "Derrota en vida",
+        "NeoMerda",
+        "Malesa"
+      ]
+    },
+    "UCPRiU_lr3A-0m0GmF098EkA": {
+      "artist": "Coça",
+      "note": "Revisió manual 2026-10-05: només cançons amb lletra catalana contrastada. Fonts i decisions a docs/REVISION_PUNK_2026-10-05.json. Resta de repertori pendent; no importar altres vídeos.",
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "allowedTitles": [
+        "Llarg hivern",
+        "Zuverkaufen",
+        "Tren transquiberià",
+        "Pachamama",
+        "Sa nova fil·loxera",
+        "Renault kangoo",
+        "Veteranos d'UM"
+      ]
+    },
+    "UCTgyTOC4u7Dw0AvH3-4uC9w": {
+      "artist": "Tano!",
+      "note": "Revisió manual 2026-10-05: només cançons amb lletra catalana contrastada. Fonts i decisions a docs/REVISION_PUNK_2026-10-05.json. Resta de repertori pendent; no importar altres vídeos.",
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "allowedTitles": [
+        "El Despertar",
+        "Rius de Serps",
+        "Un Moment, un Instant",
+        "La Torre de les Bruixes",
+        "L'Ànima en Pena",
+        "L'Última Frontera",
+        "La Bèstia",
+        "Miracles Perduts",
+        "Negre és el Color",
+        "Criant Corbs",
+        "Lladre de Temps",
+        "Tinc un Ogre a Casa",
+        "L'Eterna Creuada",
+        "L'Enciclopèdia del No-Res"
+      ]
+    },
+    "UCYcENw_M0RUKP-sXuR3odHQ": {
+      "artist": "X-Fanekaes",
+      "note": "Revisió manual 2026-10-05: només cançons amb lletra catalana contrastada. Fonts i decisions a docs/REVISION_PUNK_2026-10-05.json. Resta de repertori pendent; no importar altres vídeos.",
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "allowedTitles": [
+        "Cau del balancí",
+        "Historietes",
+        "No puc domir",
+        "Morralla",
+        "Sexe, cassalla i punkfolk",
+        "Innocència morta",
+        "Som el que som",
+        "Peguem a fugir",
+        "No puc dormir"
+      ]
+    },
+    "UCzv2Zdpkuk5RefgIRkXggCw": {
+      "artist": "Milícians",
+      "note": "Revisió manual 2026-10-05: només cançons amb lletra catalana contrastada. Fonts i decisions a docs/REVISION_PUNK_2026-10-05.json. Resta de repertori pendent; no importar altres vídeos.",
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "allowedTitles": [
+        "Benzina i foc"
+      ]
+    },
+    "UC6RbhWqXkSqfJDawc7pyPxQ": {
+      "artist": "Família Fracàs",
+      "note": "Revisió manual 2026-10-05: només cançons amb lletra catalana contrastada. Fonts i decisions a docs/REVISION_PUNK_2026-10-05.json. Resta de repertori pendent; no importar altres vídeos.",
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "allowedTitles": [
+        "Atracar Un Banc",
+        "M'agrades Quan Et Separes Perquè Estàs Com Present",
+        "Passaport Enlloc",
+        "Punk Rock Sostenible",
+        "Teràpia Familiar",
+        "Treballar És de Pobres",
+        "Quan Sigui Vell",
+        "Roba, Amiga"
+      ]
+    },
+    "UCdvCXh3zd4i8SLE_l_6AEDw": {
+      "artist": "Una Bèstia Incontrolable",
+      "note": "Revisió manual 2026-10-05: només cançons amb lletra catalana contrastada. Fonts i decisions a docs/REVISION_PUNK_2026-10-05.json. Resta de repertori pendent; no importar altres vídeos.",
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "allowedTitles": [
+        "Nou Món",
+        "Cinturons, Genolls, Vidres I Cossos"
+      ]
+    },
+    "UC03QvbTvYBOyxApwRdt4k_w": {
+      "artist": "Mandanga!",
+      "note": "Revisió manual 2026-10-05: només cançons amb lletra catalana contrastada. Fonts i decisions a docs/REVISION_PUNK_2026-10-05.json. Resta de repertori pendent; no importar altres vídeos.",
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "allowedTitles": [
+        "Nit de Sant Joan",
+        "N.M.T.",
+        "Com els americans",
+        "La cançó del Primavera",
+        "Cuentu d'alta mar",
+        "La tapa del tupper",
+        "Cara de carallot",
+        "De la guantera al finestral",
+        "Somni ibèric",
+        "Vaig tard",
+        "Campillo de Aragón",
+        "Dansa, rumba, festa",
+        "Lliçó de geografia"
+      ]
+    },
+    "UC18hp60b-j4DdzwEcWe9wrw": {
+      "artist": "Maria Betriu",
+      "note": "Revisió manual de català o instrumental, 2026-10-05. Fonts i tipus de cada peça a docs/REVISION_JAZZ_2026-10-05.json. No inferir idioma pel títol ni absència de lletra.",
+      "allowedTitles": [
+        "Quan vas marxar",
+        "És temps d'estiu",
+        "Només tu",
+        "El nostre amor viurà",
+        "Algú que vetlli per mi",
+        "Amb aquells ulls tan blaus",
+        "L'home que estimo",
+        "Retrat en blanc i negre",
+        "T'he mirat",
+        "Aquell infant",
+        "Mitges brillants",
+        "Desafinado"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCe_v26nxcgIzZxxvRDkHOrw": {
+      "artist": "Carme Canela",
+      "note": "Revisió manual de català o instrumental, 2026-10-05. Fonts i tipus de cada peça a docs/REVISION_JAZZ_2026-10-05.json. No inferir idioma pel títol ni absència de lletra.",
+      "allowedTitles": [
+        "Postal",
+        "Desaparèixer dins del llit",
+        "Retrat en blanc i negre"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCmwGTBibm2bt9oF-P7ECSmQ": {
+      "artist": "Andrea Motis",
+      "note": "Revisió manual de català o instrumental, 2026-10-05. Fonts i tipus de cada peça a docs/REVISION_JAZZ_2026-10-05.json. No inferir idioma pel títol ni absència de lletra.",
+      "allowedTitles": [
+        "La Gavina",
+        "Louisiana O Els Camps De Coto",
+        "Matilda",
+        "Save The Orangutan",
+        "Emotional Dance"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCpj14cymb-6wmeXwI4hmFxA": {
+      "artist": "Vicens Martín Dream Big Band",
+      "note": "Revisió manual de català o instrumental, 2026-10-05. Fonts i tipus de cada peça a docs/REVISION_JAZZ_2026-10-05.json. No inferir idioma pel títol ni absència de lletra.",
+      "allowedTitles": [
+        "Com les maduixes",
+        "Aglae i les taronges",
+        "La poma escollida",
+        "Les figues matinals",
+        "Agavé i les castanyes",
+        "Les prunes d'or",
+        "Les cireres ingènues",
+        "Les serves endreçades",
+        "Les llimones casolanes",
+        "Eglé i la síndria",
+        "Els raïms immortals",
+        "Àgave i les castanyes"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCfcp4MZZ3t309KMOLo7JJag": {
+      "artist": "Magalí Datzira",
+      "note": "Revisió manual de català o instrumental, 2026-10-05. Fonts i tipus de cada peça a docs/REVISION_JAZZ_2026-10-05.json. No inferir idioma pel títol ni absència de lletra.",
+      "allowedTitles": [
+        "Hi ha un abisme",
+        "He sortit a córrer",
+        "1 o 1000",
+        "Pedaços",
+        "Gerani",
+        "fffff",
+        "2h 32'",
+        "Interlude - Em porto bé",
+        "Cançó de fer camí",
+        "Trenem-nos",
+        "Intro Pedaços",
+        "Cànon per l'Ana"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCYVzNqs1SsMzBHLli6QUHaw": {
+      "artist": "Pegasus",
+      "note": "Revisió manual de català o instrumental, 2026-10-05. Fonts i tipus de cada peça a docs/REVISION_JAZZ_2026-10-05.json. No inferir idioma pel títol ni absència de lletra.",
+      "allowedTitles": [
+        "Conga con ganas",
+        "Cosmópolis",
+        "L'enanito trist",
+        "Gritos y susurros",
+        "Ball de gegants",
+        "Tema del Müll",
+        "Arístides y el gato",
+        "El turista",
+        "Transmediterrani Exprés",
+        "En busca del Müll",
+        "Dansa de la nit",
+        "Kryptonita",
+        "Parafernalia",
+        "La cachaca del swing",
+        "Ales nocturnes",
+        "Perseguido por el rayo",
+        "Transmediterrani Express",
+        "Transmediterrani Expres"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCRLHVqJybtjS5ODPP5iAv4w": {
+      "artist": "Clara Peya",
+      "note": "Revisió manual de català o instrumental, 2026-10-05. Fonts i tipus de cada peça a docs/REVISION_JAZZ_2026-10-05.json. No inferir idioma pel títol ni absència de lletra.",
+      "allowedTitles": [
+        "No",
+        "Se",
+        "Vos",
+        "Al",
+        "Tres",
+        "Pe",
+        "Ro",
+        "Jo",
+        "Ne",
+        "Ces",
+        "Si",
+        "To",
+        "Pell",
+        "Per",
+        "Viu",
+        "Re",
+        "Ni el mar",
+        "Caus",
+        "Quan ens crèiem àngels",
+        "Ha mort l'amor"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCYPbYGqAXm8gaYGVY-ANVXA": {
+      "artist": "Rita Payés",
+      "note": "Revisió manual de català o instrumental, 2026-10-05. Fonts i tipus de cada peça a docs/REVISION_JAZZ_2026-10-05.json. No inferir idioma pel títol ni absència de lletra.",
+      "allowedTitles": [
+        "Un tros d'ahir"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCQSsmLNT3tKUD3m_XsZpfHA": {
+      "artist": "Andrea Motis",
+      "note": "Revisió manual de català o instrumental, 2026-10-05. Fonts i tipus de cada peça a docs/REVISION_JAZZ_2026-10-05.json. No inferir idioma pel títol ni absència de lletra.",
+      "allowedTitles": [
+        "La Gavina",
+        "Louisiana O Els Camps De Coto",
+        "Matilda",
+        "Save The Orangutan",
+        "Emotional Dance"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCG5zbsU-wyiM9QP5oYKhB4A": {
+      "artist": "Magalí Datzira",
+      "note": "Revisió manual de català o instrumental, 2026-10-05. Fonts i tipus de cada peça a docs/REVISION_JAZZ_2026-10-05.json. No inferir idioma pel títol ni absència de lletra.",
+      "allowedTitles": [
+        "Hi ha un abisme",
+        "He sortit a córrer",
+        "1 o 1000",
+        "Pedaços",
+        "Gerani",
+        "fffff",
+        "2h 32'",
+        "Interlude - Em porto bé",
+        "Cançó de fer camí",
+        "Trenem-nos",
+        "Intro Pedaços",
+        "Cànon per l'Ana"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UC52R4wjmZztT-anyAJpU18A": {
+      "artist": "Clara Peya",
+      "note": "Revisió manual de català o instrumental, 2026-10-05. Fonts i tipus de cada peça a docs/REVISION_JAZZ_2026-10-05.json. No inferir idioma pel títol ni absència de lletra.",
+      "allowedTitles": [
+        "No",
+        "Se",
+        "Vos",
+        "Al",
+        "Tres",
+        "Pe",
+        "Ro",
+        "Jo",
+        "Ne",
+        "Ces",
+        "Si",
+        "To",
+        "Pell",
+        "Per",
+        "Viu",
+        "Re",
+        "Ni el mar",
+        "Caus",
+        "Quan ens crèiem àngels",
+        "Ha mort l'amor"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCqcQJRrcXc_rLSwGVo4dP5g": {
+      "artist": "Rita Payés",
+      "note": "Revisió manual de català o instrumental, 2026-10-05. Fonts i tipus de cada peça a docs/REVISION_JAZZ_2026-10-05.json. No inferir idioma pel títol ni absència de lletra.",
+      "allowedTitles": [
+        "Un tros d'ahir"
       ],
       "acceptedMusicOnly": true,
       "allowedContentTypes": [

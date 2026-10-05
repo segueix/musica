@@ -6,6 +6,33 @@ import {
 } from '../scripts/lib/filtre_videos_canal.js';
 
 describe('llista blanca de vídeos per canal', () => {
+  it('conserva els títols simbòlics verificats com += sense admetre altres peces', () => {
+    const rules = loadChannelVideoAllowlist('/fake.json', {
+      readFileSync: () => JSON.stringify({ channels: {
+        UCstay: { allowedTitleContains: ['+=', 'Espurna'] }
+      } })
+    });
+    expect(isChannelVideoAllowed(rules, 'UCstay', '+=' )).toBe(true);
+    expect(isChannelVideoAllowed(rules, 'UCstay', 'STAY HOMAS - += (Official Video)')).toBe(true);
+    expect(isChannelVideoAllowed(rules, 'UCstay', 'STAY HOMAS - Espurna')).toBe(true);
+    expect(isChannelVideoAllowed(rules, 'UCstay', 'TROPICAL.mp3')).toBe(false);
+  });
+
+    it('bloqueja un canal retirat sense afectar un homònim correcte', () => {
+        const rules = loadChannelVideoAllowlist('/fake.json', {
+            readFileSync: () =>
+                JSON.stringify({
+                    channels: {
+                        UCretirat: { blocked: true, allowedTitles: ['Hores i Hores'] },
+                    },
+                }),
+        });
+        expect(rules.get('UCretirat')?.blocked).toBe(true);
+        expect(isChannelVideoAllowed(rules, 'UCretirat', 'Hores i Hores')).toBe(false);
+        expect(isChannelVideoAllowed(rules, 'UCretirat', 'Cançó nova')).toBe(false);
+        expect(isChannelVideoAllowed(rules, 'UCcorrecte', 'Hores i Hores')).toBe(true);
+    });
+
   it('normalitza accents, puntuació i majúscules', () => {
     expect(normalizeVideoTitle('Subliminal - Ràdios i TVs')).toBe('subliminal radios i tvs');
   });

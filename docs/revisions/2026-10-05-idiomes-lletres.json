@@ -1,0 +1,4028 @@
+{
+  "data": "2026-10-05T12:26:20.918Z",
+  "base": "7080531a2f55e109404f1a8d14f24f41eb0b77cd",
+  "abast": "239 entrades pendents de la revisió anterior. Cerca individual per artista i títol, seguida de contrast de lletres disponibles. No equival a 239 lletres verificades ni a una escolta completa.",
+  "criteri": "Conservar català, occità/aranès i instrumentals confirmades. Admetre manlleus breus; excloure estrofes substancials en altres llengües. El títol, la nacionalitat i les etiquetes automàtiques no determinen la llengua. Les identificacions de directes a partir de la lletra de l’estudi s’indiquen al motiu. Els homònims, àlbums i vídeos sense lletra fiable segueixen pendents.",
+  "recompte": {
+    "pendent": 182,
+    "conservar": 35,
+    "amagar": 22
+  },
+  "exclusionsNovesTotals": 23,
+  "estatFinal": {
+    "pendents": 182,
+    "descartades": 2,
+    "revisades": 9571
+  },
+  "correccionsRevisioAnterior": [
+    {
+      "id": "Nil6Cwf12rs",
+      "artista": "Still Ill",
+      "titol": "Gratitud",
+      "decisioAnterior": "conservar",
+      "decisio": "amagar",
+      "idioma": "es",
+      "motiu": "La lletra publicada pel grup és castellana. Rectifica la inferència incorrecta de la revisió anterior basada en títol i repertori.",
+      "fonts": [
+        "https://lagrimasdesangre.bandcamp.com/album/mogudes-i-deliris"
+      ]
+    }
+  ],
+  "cancons": [
+    {
+      "id": "rScA7ZRBNY8",
+      "artista": "9SON",
+      "titol": "9son - Corason",
+      "publicada": "2013-05-17",
+      "index": 0,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 0,
+        "consulta": "\"9SON\" \"Corason\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "0Fgq7oWQS4w",
+      "artista": "9SON",
+      "titol": "9son - Welcome to Barcelona",
+      "publicada": "2013-05-16",
+      "index": 1,
+      "decisio": "conservar",
+      "idioma": "ca",
+      "motiu": "Lletra catalana; expressió anglesa breu al títol i tornada.",
+      "fonts": [
+        "https://noesuntimo.blogspot.com/2018/07/welcome-to-barcelona.html?m=0",
+        "https://www.youtube.com/watch?v=0Fgq7oWQS4w"
+      ],
+      "cerca": {
+        "index": 1,
+        "consulta": "\"9SON\" \"Welcome to Barcelona\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "eHaK41GDd0M",
+      "artista": "9SON",
+      "titol": "9SON -Wopepopiero-",
+      "publicada": "2015-03-03",
+      "index": 2,
+      "decisio": "conservar",
+      "idioma": "ca",
+      "motiu": "Lletra catalana amb tornada onomatopeica.",
+      "fonts": [
+        "https://noesuntimo.blogspot.com/2015/04/wopepopiero.html?m=0",
+        "https://www.youtube.com/watch?v=eHaK41GDd0M"
+      ],
+      "cerca": {
+        "index": 2,
+        "consulta": "\"9SON\" \"Wopepopiero-\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "iR9oNlNoY2I",
+      "artista": "Adala",
+      "titol": "1 Cold In Paradise - Adala [Cel LP]",
+      "publicada": "2017-01-26",
+      "index": 3,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 3,
+        "consulta": "\"Adala\" \"Cold In Paradise\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "Wt36winFpGw",
+      "artista": "Adala",
+      "titol": "3  December - Adala [Cel LP]",
+      "publicada": "2017-01-26",
+      "index": 4,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 4,
+        "consulta": "\"Adala\" \"December\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "jJ8an2o93pg",
+      "artista": "Adala",
+      "titol": "4  What Can I say - Adala [Cel LP]",
+      "publicada": "2017-01-26",
+      "index": 5,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 5,
+        "consulta": "\"Adala\" \"What Can I say\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "CoAR05fVFI8",
+      "artista": "Adala",
+      "titol": "8  Look Inside - Adala [Cel LP]",
+      "publicada": "2017-01-26",
+      "index": 6,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 6,
+        "consulta": "\"Adala\" \"Look Inside\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "2njsa_Qlyjg",
+      "artista": "Adala",
+      "titol": "Adala - Ilegal [VideoLyric] #blankfosk",
+      "publicada": "2018-10-16",
+      "index": 7,
+      "decisio": "conservar",
+      "idioma": "ca",
+      "motiu": "Text original català publicat per Adala; no confondre amb les traduccions de la mateixa pàgina.",
+      "fonts": [
+        "https://adala.cat/uml/",
+        "https://www.youtube.com/watch?v=2njsa_Qlyjg"
+      ],
+      "cerca": {
+        "index": 7,
+        "consulta": "\"Adala\" \"Ilegal\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "7xuF8q1A9ZA",
+      "artista": "Adala",
+      "titol": "Adala - Money [VideoLyric] #blankfosk",
+      "publicada": "2018-08-13",
+      "index": 8,
+      "decisio": "conservar",
+      "idioma": "ca",
+      "motiu": "Estrofes catalanes amb tornada breu anglesa.",
+      "fonts": [
+        "https://sonichits.com/video/Adala/Money",
+        "https://www.youtube.com/watch?v=7xuF8q1A9ZA"
+      ],
+      "cerca": {
+        "index": 8,
+        "consulta": "\"Adala\" \"Money\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "0pMlPAIfV5w",
+      "artista": "Adala",
+      "titol": "Anabaum (Original Mix)",
+      "publicada": "2018-08-16",
+      "index": 9,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 9,
+        "consulta": "\"Adala\" \"Anabaum (Original Mix)\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "mqTPh8szNPw",
+      "artista": "Adala",
+      "titol": "Doctor (Original Mix)",
+      "publicada": "2020-10-25",
+      "index": 10,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 10,
+        "consulta": "\"Adala\" \"Doctor (Original Mix)\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "pmIV5Vjjh4I",
+      "artista": "Adala",
+      "titol": "Flexible",
+      "publicada": "2019-01-03",
+      "index": 11,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 11,
+        "consulta": "\"Adala\" \"Flexible\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "JyXfEE-SWYY",
+      "artista": "Adala",
+      "titol": "Hear It Everywhere (feat. LaVoyce) [Illyus & Barrientos Remix]",
+      "publicada": "2019-06-30",
+      "index": 12,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 12,
+        "consulta": "\"Adala\" \"Hear It Everywhere (feat. LaVoyce) [Illyus & Barrientos Remix]\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "FhtPGPiaXYI",
+      "artista": "Adala",
+      "titol": "Joystick",
+      "publicada": "2018-11-08",
+      "index": 13,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 13,
+        "consulta": "\"Adala\" \"Joystick\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "KcADfc_msEc",
+      "artista": "Adala",
+      "titol": "La Mafia",
+      "publicada": "2023-11-26",
+      "index": 14,
+      "decisio": "conservar",
+      "idioma": "ca",
+      "motiu": "Lletra original catalana publicada per Adala.",
+      "fonts": [
+        "https://adala.cat/delta-lirica/",
+        "https://www.youtube.com/watch?v=KcADfc_msEc"
+      ],
+      "cerca": {
+        "index": 14,
+        "consulta": "\"Adala\" \"La Mafia\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "znIf6giNUp4",
+      "artista": "Adala",
+      "titol": "No Shirk",
+      "publicada": "2024-03-21",
+      "index": 15,
+      "decisio": "conservar",
+      "idioma": "ca",
+      "motiu": "Lletra catalana contrastada, malgrat el títol.",
+      "fonts": [
+        "https://www.musica.com/letras.asp?letra=2480470",
+        "https://www.youtube.com/watch?v=znIf6giNUp4"
+      ],
+      "cerca": {
+        "index": 15,
+        "consulta": "\"Adala\" \"No Shirk\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "XERxGKeeu6A",
+      "artista": "Adala",
+      "titol": "None of Us Are Free (Rockers Version)",
+      "publicada": "2024-02-07",
+      "index": 16,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 16,
+        "consulta": "\"Adala\" \"None of Us Are Free (Rockers Version)\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "86YbuMNqFRA",
+      "artista": "Adala",
+      "titol": "Sound System",
+      "publicada": "2020-01-23",
+      "index": 17,
+      "decisio": "amagar",
+      "idioma": "ca/en",
+      "motiu": "Estrofa sencera de Matah en anglès/patois i final anglès repetit.",
+      "fonts": [
+        "https://www.shazam.com/song/1494697383/sound-system-feat-matah",
+        "https://www.youtube.com/watch?v=86YbuMNqFRA"
+      ],
+      "cerca": {
+        "index": 17,
+        "consulta": "\"Adala\" \"Sound System\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "BJh9OW2t-as",
+      "artista": "Adala",
+      "titol": "Yellow Leaf (Original Mix)",
+      "publicada": "2018-11-12",
+      "index": 18,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 18,
+        "consulta": "\"Adala\" \"Yellow Leaf (Original Mix)\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "EUOFWujGRL0",
+      "artista": "Boom Boom Fighters",
+      "titol": "Badmind",
+      "publicada": "2025-03-13",
+      "index": 19,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 19,
+        "consulta": "\"Boom Boom Fighters\" \"Badmind\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "3siZusYxNgI",
+      "artista": "Boom Boom Fighters",
+      "titol": "Big Tune",
+      "publicada": "2024-08-08",
+      "index": 20,
+      "decisio": "conservar",
+      "idioma": "ca",
+      "motiu": "Lletra principal catalana; fragments breus en anglès i una frase castellana.",
+      "fonts": [
+        "https://lyricstranslate.com/es/boom-boom-fighters-big-tune-lyrics",
+        "https://www.youtube.com/watch?v=3siZusYxNgI"
+      ],
+      "cerca": {
+        "index": 20,
+        "consulta": "\"Boom Boom Fighters\" \"Big Tune\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "zbKEqJJkem0",
+      "artista": "Boom Boom Fighters",
+      "titol": "G Spot",
+      "publicada": "2023-11-16",
+      "index": 21,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 21,
+        "consulta": "\"Boom Boom Fighters\" \"G Spot\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "CVb8I9WD4bE",
+      "artista": "Boom Boom Fighters",
+      "titol": "Gun Clown",
+      "publicada": "2023-02-08",
+      "index": 22,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 22,
+        "consulta": "\"Boom Boom Fighters\" \"Gun Clown\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "r-D8TIhLHfA",
+      "artista": "Boom Boom Fighters",
+      "titol": "I Know a Spot",
+      "publicada": "2023-02-08",
+      "index": 23,
+      "decisio": "amagar",
+      "idioma": "ca/en",
+      "motiu": "Estrofes i tornada en anglès/patois alternades amb català.",
+      "fonts": [
+        "https://_dc-mx.16f610809275.animesonglyrics.com/boom_boom_fighters/i_know_a_spot/video",
+        "https://www.youtube.com/watch?v=r-D8TIhLHfA"
+      ],
+      "cerca": {
+        "index": 23,
+        "consulta": "\"Boom Boom Fighters\" \"I Know a Spot\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "TypOPp4Ir_s",
+      "artista": "Boom Boom Fighters",
+      "titol": "K.O. (90’s Tribute)",
+      "publicada": "2023-11-16",
+      "index": 24,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 24,
+        "consulta": "\"Boom Boom Fighters\" \"K.O. (90’s Tribute)\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "l_K1PhTYHbU",
+      "artista": "Boom Boom Fighters",
+      "titol": "Misick",
+      "publicada": "2023-11-16",
+      "index": 25,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 25,
+        "consulta": "\"Boom Boom Fighters\" \"Misick\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "QzMXniP4mvQ",
+      "artista": "Boom Boom Fighters",
+      "titol": "No Skailark",
+      "publicada": "2025-03-13",
+      "index": 26,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 26,
+        "consulta": "\"Boom Boom Fighters\" \"No Skailark\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "BV2zgvdDyLU",
+      "artista": "Boom Boom Fighters",
+      "titol": "Party Tonight",
+      "publicada": "2023-11-16",
+      "index": 27,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 27,
+        "consulta": "\"Boom Boom Fighters\" \"Party Tonight\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "w28ui4SLd6I",
+      "artista": "Boom Boom Fighters",
+      "titol": "Pum Pum Diamond",
+      "publicada": "2025-03-13",
+      "index": 28,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 28,
+        "consulta": "\"Boom Boom Fighters\" \"Pum Pum Diamond\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "XCJhNtRE1BU",
+      "artista": "Boom Boom Fighters",
+      "titol": "Rise Up",
+      "publicada": "2025-03-13",
+      "index": 29,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 29,
+        "consulta": "\"Boom Boom Fighters\" \"Rise Up\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "f8_zKNIIW28",
+      "artista": "Boom Boom Fighters",
+      "titol": "Weedhead",
+      "publicada": "2025-03-13",
+      "index": 30,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 30,
+        "consulta": "\"Boom Boom Fighters\" \"Weedhead\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "lePmRrwxc6g",
+      "artista": "Boom Boom Fighters",
+      "titol": "Young Veterans",
+      "publicada": "2025-03-13",
+      "index": 31,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 31,
+        "consulta": "\"Boom Boom Fighters\" \"Young Veterans\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "hJG6AP7905E",
+      "artista": "Dusminguet",
+      "titol": "Candombe apertura",
+      "publicada": "2015-12-11",
+      "index": 32,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 32,
+        "consulta": "\"Dusminguet\" \"Candombe apertura\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "_olL1QErpe8",
+      "artista": "Dusminguet",
+      "titol": "Como si nada",
+      "publicada": "2015-12-11",
+      "index": 33,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 33,
+        "consulta": "\"Dusminguet\" \"Como si nada\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "2sDwf73a6FI",
+      "artista": "Dusminguet",
+      "titol": "Go",
+      "publicada": "2015-12-11",
+      "index": 34,
+      "decisio": "conservar",
+      "idioma": "ca",
+      "motiu": "Lletra catalana contrastada.",
+      "fonts": [
+        "https://www.coveralia.com/letras/go-dusminguet.php",
+        "https://www.youtube.com/watch?v=2sDwf73a6FI"
+      ],
+      "cerca": {
+        "index": 34,
+        "consulta": "\"Dusminguet\" \"Go\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "RSFtgTpnIdI",
+      "artista": "Dusminguet",
+      "titol": "Habibi",
+      "publicada": "2015-10-25",
+      "index": 35,
+      "decisio": "amagar",
+      "idioma": "ar",
+      "motiu": "Text àrab transliterat; s’ha descartat una pàgina que atribuïa erròniament la lletra del suec Ricky Rich a Dusminguet.",
+      "fonts": [
+        "https://www.coveralia.com/letras/habibi-dusminguet.php",
+        "https://www.youtube.com/watch?v=RSFtgTpnIdI"
+      ],
+      "cerca": {
+        "index": 35,
+        "consulta": "\"Dusminguet\" \"Habibi\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "yxTaaFOftu0",
+      "artista": "Dusminguet",
+      "titol": "José",
+      "publicada": "2015-10-25",
+      "index": 36,
+      "decisio": "amagar",
+      "idioma": "pt/es",
+      "motiu": "Lletra portuguesa i castellana, sense estrofes catalanes.",
+      "fonts": [
+        "https://www.coveralia.com/letras/jose-dusminguet.php",
+        "https://www.youtube.com/watch?v=yxTaaFOftu0"
+      ],
+      "cerca": {
+        "index": 36,
+        "consulta": "\"Dusminguet\" \"José\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "X3PFxaH7elQ",
+      "artista": "Dusminguet",
+      "titol": "La rabia",
+      "publicada": "2015-12-11",
+      "index": 37,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 37,
+        "consulta": "\"Dusminguet\" \"La rabia\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "NPHnNmsC1XA",
+      "artista": "Dusminguet",
+      "titol": "Maneras",
+      "publicada": "2015-12-11",
+      "index": 38,
+      "decisio": "amagar",
+      "idioma": "es",
+      "motiu": "Lletra castellana contrastada.",
+      "fonts": [
+        "https://1004paraules.wordpress.com/2009/03/27/maneras-dusminguet-go-2003/",
+        "https://www.youtube.com/watch?v=NPHnNmsC1XA"
+      ],
+      "cerca": {
+        "index": 38,
+        "consulta": "\"Dusminguet\" \"Maneras\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "wfdJsLQ55GY",
+      "artista": "El Nota",
+      "titol": "el Nota a la Bikini",
+      "publicada": "2009-07-25",
+      "index": 39,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 39,
+        "consulta": "\"El Nota\" \"el Nota a la Bikini\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "6xSnMPkwNzU",
+      "artista": "El Nota",
+      "titol": "El Nota al Pentagrama",
+      "publicada": "2012-01-16",
+      "index": 40,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 40,
+        "consulta": "\"El Nota\" \"El Nota al Pentagrama\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "Ea945PS7OWE",
+      "artista": "El Nota",
+      "titol": "F.L.O.W",
+      "publicada": "2023-05-18",
+      "index": 41,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 41,
+        "consulta": "\"El Nota\" \"F.L.O.W\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "f32aNOtk-44",
+      "artista": "El Nota",
+      "titol": "Perra Vida",
+      "publicada": "2014-10-04",
+      "index": 42,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 42,
+        "consulta": "\"El Nota\" \"Perra Vida\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "ixCRlEgE_nE",
+      "artista": "El Nota",
+      "titol": "Rap para la Tuerka el Nota",
+      "publicada": "2012-05-25",
+      "index": 43,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 43,
+        "consulta": "\"El Nota\" \"Rap para la Tuerka el Nota\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "nzLNuxK8AQI",
+      "artista": "El Nota",
+      "titol": "Stand By",
+      "publicada": "2023-05-18",
+      "index": 44,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 44,
+        "consulta": "\"El Nota\" \"Stand By\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "Bdq8-ugElqo",
+      "artista": "El Nota",
+      "titol": "W.Y.W.K.A.M",
+      "publicada": "2023-05-18",
+      "index": 45,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 45,
+        "consulta": "\"El Nota\" \"W.Y.W.K.A.M\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "uLOP3w2ly5s",
+      "artista": "Herba Negra",
+      "titol": "Loka",
+      "publicada": "2020-04-21",
+      "index": 46,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 46,
+        "consulta": "\"Herba Negra\" \"Loka\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "u0JO0nGgw8o",
+      "artista": "HerbaNegra",
+      "titol": "Herba negra - Lluny",
+      "publicada": "2017-03-13",
+      "index": 47,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 47,
+        "consulta": "\"HerbaNegra\" \"Lluny\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "wT4osastdDA",
+      "artista": "HerbaNegra",
+      "titol": "Herba Negra - Lluny (LevelUp!, Mesdemil 2017)",
+      "publicada": "2017-03-31",
+      "index": 48,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 48,
+        "consulta": "\"HerbaNegra\" \"Lluny (LevelUp!, Mesdemil 2017)\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "e-DLNLSZSYI",
+      "artista": "HerbaNegra",
+      "titol": "Herba Negra - Pell vs pell (LevelUp!, Mesdemil 2017)",
+      "publicada": "2017-03-31",
+      "index": 49,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 49,
+        "consulta": "\"HerbaNegra\" \"Pell vs pell (LevelUp!, Mesdemil 2017)\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "Sip_L602LA4",
+      "artista": "Isaak Aguilà",
+      "titol": "No - Shakira cover -",
+      "publicada": "2021-03-15",
+      "index": 50,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 50,
+        "consulta": "\"Isaak Aguilà\" \"No - Shakira cover -\" lyrics lletra",
+        "estat": "error_de_cerca"
+      }
+    },
+    {
+      "id": "poUPag--V6I",
+      "artista": "Isaak Aguilà",
+      "titol": "Y si fuera ella? - Alejandro Sanz cover -",
+      "publicada": "2020-05-07",
+      "index": 51,
+      "decisio": "conservar",
+      "idioma": "ca",
+      "motiu": "L’autor identifica expressament aquesta interpretació com a versió en català; no s’aplica la lletra castellana de l’original d’Alejandro Sanz.",
+      "fonts": [
+        "https://www.youtube.com/watch?v=poUPag--V6I",
+        "https://www.youtube.com/watch?v=poUPag--V6I"
+      ],
+      "cerca": {
+        "index": 51,
+        "consulta": "\"Isaak Aguilà\" \"Y si fuera ella? - Alejandro Sanz cover -\" lyrics lletra",
+        "estat": "error_de_cerca"
+      }
+    },
+    {
+      "id": "gwHKaIvrfpc",
+      "artista": "Joan Miquel Oliver",
+      "titol": "Orthopedic Ragtime",
+      "publicada": "2015-04-14",
+      "index": 52,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 52,
+        "consulta": "\"Joan Miquel Oliver\" \"Orthopedic Ragtime\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "iV7pM39ZBEo",
+      "artista": "Joan Miquel Oliver",
+      "titol": "Robot mayordomo",
+      "publicada": "2023-06-21",
+      "index": 53,
+      "decisio": "amagar",
+      "idioma": "ca/es",
+      "motiu": "Tornada i final extensos en castellà alternats amb estrofes catalanes.",
+      "fonts": [
+        "https://www.paroles-musique.com/eng/Joan-Miquel-Oliver-Robot-mayordomo-lyrics%2Cp8576601",
+        "https://www.youtube.com/watch?v=iV7pM39ZBEo"
+      ],
+      "cerca": {
+        "index": 53,
+        "consulta": "\"Joan Miquel Oliver\" \"Robot mayordomo\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "DD3plH5VxjM",
+      "artista": "Joan Miquel Oliver",
+      "titol": "The tuning song",
+      "publicada": "2026-04-29",
+      "index": 54,
+      "decisio": "conservar",
+      "idioma": "ca",
+      "motiu": "Lletra catalana publicada al vídeo oficial.",
+      "fonts": [
+        "https://www.youtube.com/watch?v=wD9abEiKUNA",
+        "https://www.youtube.com/watch?v=DD3plH5VxjM"
+      ],
+      "cerca": {
+        "index": 54,
+        "consulta": "\"Joan Miquel Oliver\" \"The tuning song\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "Vce8aUzy60M",
+      "artista": "Josep Valtonyc",
+      "titol": "Balle Doble H FT Valtonyc - Kalashnikov (Videoclip)",
+      "publicada": "2015-04-27",
+      "index": 55,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 55,
+        "consulta": "\"Josep Valtonyc\" \"Balle Doble H FT Valtonyc - Kalashnikov (Videoclip)\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "4c6gN9ILojY",
+      "artista": "Josep Valtonyc",
+      "titol": "Charly Efe & Valtonyc - Modo Hater (Prod. Josep Valtonyc)",
+      "publicada": "2018-05-11",
+      "index": 56,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 56,
+        "consulta": "\"Josep Valtonyc\" \"Charly Efe & Valtonyc - Modo Hater (Prod. Josep Valtonyc)\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "LkpNf1Nkueo",
+      "artista": "Josep Valtonyc",
+      "titol": "JOSEP V • DESOBDC (videoclip) 2015",
+      "publicada": "2015-10-24",
+      "index": 57,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 57,
+        "consulta": "\"Josep Valtonyc\" \"JOSEP V • DESOBDC (videoclip) 2015\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "dyHS2bO9bmo",
+      "artista": "Josep Valtonyc",
+      "titol": "JOSEP VALTONYC · PURA ENTELEQUIA (2016)",
+      "publicada": "2016-03-27",
+      "index": 58,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 58,
+        "consulta": "\"Josep Valtonyc\" \"PURA ENTELEQUIA (2016)\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "mpccibLRNDw",
+      "artista": "Josep Valtonyc",
+      "titol": "VALTONYC - DEAR KAREN 💔",
+      "publicada": "2017-08-26",
+      "index": 59,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 59,
+        "consulta": "\"Josep Valtonyc\" \"DEAR KAREN 💔\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "x2NzQY7uI1M",
+      "artista": "Josep Valtonyc",
+      "titol": "VALTONYC - DEDUST2 (de_dust2)",
+      "publicada": "2019-09-14",
+      "index": 60,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 60,
+        "consulta": "\"Josep Valtonyc\" \"DEDUST2 (de_dust2)\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "uTHg2GAjiUs",
+      "artista": "Josep Valtonyc",
+      "titol": "VALTONYC - EPD [VIDEO]",
+      "publicada": "2021-01-15",
+      "index": 61,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 61,
+        "consulta": "\"Josep Valtonyc\" \"EPD\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "RRifXvfyYz4",
+      "artista": "Josep Valtonyc",
+      "titol": "VALTONYC - FINLANDIA (2019)",
+      "publicada": "2019-08-13",
+      "index": 62,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 62,
+        "consulta": "\"Josep Valtonyc\" \"FINLANDIA (2019)\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "RcVle66OEqk",
+      "artista": "Josep Valtonyc",
+      "titol": "VALTONYC - GIAN MARIA VOLONTÉ [VIDEO]",
+      "publicada": "2021-04-03",
+      "index": 63,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 63,
+        "consulta": "\"Josep Valtonyc\" \"GIAN MARIA VOLONTÉ\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "gq9VlmX_VAo",
+      "artista": "Josep Valtonyc",
+      "titol": "VALTONYC - L'IMMORTEL (2015)",
+      "publicada": "2015-11-11",
+      "index": 64,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 64,
+        "consulta": "\"Josep Valtonyc\" \"L'IMMORTEL (2015)\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "dUIjZczjTGc",
+      "artista": "Josep Valtonyc",
+      "titol": "VALTONYC - NEVERSLEEP (TRABAJO COMPLETO)",
+      "publicada": "2016-06-21",
+      "index": 65,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 65,
+        "consulta": "\"Josep Valtonyc\" \"NEVERSLEEP (TRABAJO COMPLETO)\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "3ofREStHa-I",
+      "artista": "Josep Valtonyc",
+      "titol": "VALTONYC - THE GC DONT CRY 💋",
+      "publicada": "2018-06-01",
+      "index": 66,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 66,
+        "consulta": "\"Josep Valtonyc\" \"THE GC DONT CRY 💋\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "7T7_ukJyBSE",
+      "artista": "Josep Valtonyc",
+      "titol": "VALTONYC / PIET HEIN (Prod. Yeke Boy) VIDEOCLIP",
+      "publicada": "2019-08-05",
+      "index": 67,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 67,
+        "consulta": "\"Josep Valtonyc\" \"/ PIET HEIN (Prod. Yeke Boy) VIDEOCLIP\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "C0--I5v1s5k",
+      "artista": "Josep Valtonyc",
+      "titol": "VALTONYC / SALONES (VIDEOCLIP)",
+      "publicada": "2019-04-30",
+      "index": 68,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 68,
+        "consulta": "\"Josep Valtonyc\" \"/ SALONES (VIDEOCLIP)\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "EG60LeujejA",
+      "artista": "Josep Valtonyc",
+      "titol": "VALTONYC & THE RE-FUGEES // 128 BARS // (Prod. Valtonyc)",
+      "publicada": "2020-05-04",
+      "index": 69,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 69,
+        "consulta": "\"Josep Valtonyc\" \"& THE RE-FUGEES // 128 BARS // (Prod. Valtonyc)\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "8Yg2qTn1ExE",
+      "artista": "Josep Valtonyc",
+      "titol": "VALTONYC | EL VIRUS (2020) Prod. STL Beatz",
+      "publicada": "2020-03-20",
+      "index": 70,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 70,
+        "consulta": "\"Josep Valtonyc\" \"EL VIRUS (2020) Prod. STL Beatz\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "hLL5UpghleA",
+      "artista": "Josep Valtonyc",
+      "titol": "VALTONYC, ZOO, JU - BIG BANG [VIDEO]",
+      "publicada": "2021-02-05",
+      "index": 71,
+      "decisio": "conservar",
+      "idioma": "ca",
+      "motiu": "Transcripció del programa Sona9: estrofes de Panxo/Zoo, Ju i Valtònyc en català.",
+      "fonts": [
+        "https://radioteca.cat/p/sona9/2021/01/24/latraccio-per-lavanda-CsDLNjSFA5kLjlO3Ms8rsg-CsDLNjSFA5kLjlO3Ms8rsg",
+        "https://www.youtube.com/watch?v=hLL5UpghleA"
+      ],
+      "cerca": {
+        "index": 71,
+        "consulta": "\"Josep Valtonyc\" \", ZOO, JU - BIG BANG\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "Ig-BrHtBx4A",
+      "artista": "Kayo Malayo",
+      "titol": "Banco-Jones",
+      "publicada": "2024-03-21",
+      "index": 72,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 72,
+        "consulta": "\"Kayo Malayo\" \"Banco-Jones\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "raqIPV7KhvQ",
+      "artista": "Kayo Malayo",
+      "titol": "Eco",
+      "publicada": "2024-03-21",
+      "index": 73,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 73,
+        "consulta": "\"Kayo Malayo\" \"Eco\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "fOLq0tglMA0",
+      "artista": "Kayo Malayo",
+      "titol": "El Muro",
+      "publicada": "2024-03-21",
+      "index": 74,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 74,
+        "consulta": "\"Kayo Malayo\" \"El Muro\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "T50_vgz66ss",
+      "artista": "Kayo Malayo",
+      "titol": "Fuera de Control",
+      "publicada": "2024-03-21",
+      "index": 75,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 75,
+        "consulta": "\"Kayo Malayo\" \"Fuera de Control\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "-nVRYwqSaBg",
+      "artista": "Kayo Malayo",
+      "titol": "Gasolina (Radio Edit)",
+      "publicada": "2024-03-21",
+      "index": 76,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 76,
+        "consulta": "\"Kayo Malayo\" \"Gasolina (Radio Edit)\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "xJeT4rdiGIE",
+      "artista": "Kayo Malayo",
+      "titol": "Mr. Gafe",
+      "publicada": "2015-01-20",
+      "index": 77,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 77,
+        "consulta": "\"Kayo Malayo\" \"Mr. Gafe\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "2cy0hTRawJc",
+      "artista": "Kayo Malayo",
+      "titol": "Welcome to Catalonia",
+      "publicada": "2015-01-20",
+      "index": 78,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 78,
+        "consulta": "\"Kayo Malayo\" \"Welcome to Catalonia\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "wT_O-f_Ugvk",
+      "artista": "La Sra. Tomasa",
+      "titol": "Interludio IV (Live)",
+      "publicada": "2023-01-25",
+      "index": 79,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 79,
+        "consulta": "\"La Sra. Tomasa\" \"Interludio IV (Live)\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "-IpPAbzoRMI",
+      "artista": "La Sra. Tomasa",
+      "titol": "Intro",
+      "publicada": "2020-04-14",
+      "index": 80,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 80,
+        "consulta": "\"La Sra. Tomasa\" \"Intro\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "vT3oCm_kkg0",
+      "artista": "La Sra. Tomasa",
+      "titol": "La Sra. Tomasa",
+      "publicada": "2020-05-04",
+      "index": 81,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 81,
+        "consulta": "\"La Sra. Tomasa\" \"La Sra. Tomasa\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "VXiEsEpMdFo",
+      "artista": "La Sra. Tomasa",
+      "titol": "La Sra. Tomasa - Timbafunk",
+      "publicada": "2024-03-01",
+      "index": 82,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 82,
+        "consulta": "\"La Sra. Tomasa\" \"La Sra. Tomasa - Timbafunk\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "xZAntK3cr_A",
+      "artista": "La Sra. Tomasa",
+      "titol": "Money (Live)",
+      "publicada": "2023-01-25",
+      "index": 83,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 83,
+        "consulta": "\"La Sra. Tomasa\" \"Money (Live)\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "Zm-iOtVufbI",
+      "artista": "La Sra. Tomasa",
+      "titol": "Outro",
+      "publicada": "2020-04-14",
+      "index": 84,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 84,
+        "consulta": "\"La Sra. Tomasa\" \"Outro\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "tTcLbZOpAmA",
+      "artista": "La Sra. Tomasa",
+      "titol": "Sepa Mi Gente (Live Sessions)",
+      "publicada": "2020-04-14",
+      "index": 85,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 85,
+        "consulta": "\"La Sra. Tomasa\" \"Sepa Mi Gente (Live Sessions)\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "Lh5IclUf64U",
+      "artista": "La Sra. Tomasa",
+      "titol": "Suba",
+      "publicada": "2020-04-24",
+      "index": 86,
+      "decisio": "amagar",
+      "idioma": "es",
+      "motiu": "Lletra castellana publicada pel segell.",
+      "fonts": [
+        "https://guspirarecords.bandcamp.com/track/suba",
+        "https://www.youtube.com/watch?v=Lh5IclUf64U"
+      ],
+      "cerca": {
+        "index": 86,
+        "consulta": "\"La Sra. Tomasa\" \"Suba\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "OO3puTBwips",
+      "artista": "La Sra. Tomasa",
+      "titol": "Welcome",
+      "publicada": "2020-04-14",
+      "index": 87,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 87,
+        "consulta": "\"La Sra. Tomasa\" \"Welcome\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "y9W0bC0JEZA",
+      "artista": "La Troba Kung-Fú",
+      "titol": "Barcelona",
+      "publicada": "2020-06-09",
+      "index": 88,
+      "decisio": "conservar",
+      "idioma": "ca",
+      "motiu": "Lletra catalana publicada al vídeo oficial.",
+      "fonts": [
+        "https://www.youtube.com/watch?v=242hSJxYFb4",
+        "https://www.youtube.com/watch?v=y9W0bC0JEZA"
+      ],
+      "cerca": {
+        "index": 88,
+        "consulta": "\"La Troba Kung-Fú\" \"Barcelona\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "AXOc9N7j9eQ",
+      "artista": "La Troba Kung-Fú",
+      "titol": "La Pregària",
+      "publicada": "2014-11-06",
+      "index": 89,
+      "decisio": "conservar",
+      "idioma": "ca",
+      "motiu": "Lletra catalana publicada al vídeo oficial.",
+      "fonts": [
+        "https://www.youtube.com/watch?v=pbjXt_m5vU4",
+        "https://www.youtube.com/watch?v=AXOc9N7j9eQ"
+      ],
+      "cerca": {
+        "index": 89,
+        "consulta": "\"La Troba Kung-Fú\" \"La Pregària\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "kr0S50i1pjY",
+      "artista": "La Troba Kung-Fú",
+      "titol": "La Rumba",
+      "publicada": "2019-06-20",
+      "index": 90,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 90,
+        "consulta": "\"La Troba Kung-Fú\" \"La Rumba\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "oxi_U_ylynI",
+      "artista": "La Troba Kung-Fú",
+      "titol": "Subway Walk",
+      "publicada": "2020-06-09",
+      "index": 91,
+      "decisio": "amagar",
+      "idioma": "ca/en/es",
+      "motiu": "Estrofes extenses en anglès i fragments castellans, a més del català.",
+      "fonts": [
+        "https://lyrhub.com/de/track/La-Troba-Kung-Fu%CC%81/Subway-Walk",
+        "https://www.youtube.com/watch?v=oxi_U_ylynI"
+      ],
+      "cerca": {
+        "index": 91,
+        "consulta": "\"La Troba Kung-Fú\" \"Subway Walk\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "HG1K-Tm_Q0Y",
+      "artista": "La Troba Kung-Fú",
+      "titol": "Xocolata Bona",
+      "publicada": "2014-11-06",
+      "index": 92,
+      "decisio": "conservar",
+      "idioma": "ca",
+      "motiu": "Lletra catalana contrastada.",
+      "fonts": [
+        "https://noesuntimo.blogspot.com/2014/07/xocolata-bona.html",
+        "https://www.youtube.com/watch?v=HG1K-Tm_Q0Y"
+      ],
+      "cerca": {
+        "index": 92,
+        "consulta": "\"La Troba Kung-Fú\" \"Xocolata Bona\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "Pi9NYKlOAo0",
+      "artista": "Lluís Llach",
+      "titol": "Lluís Llach amb Lucrecia -  Dona'm la mà (Temps de revoltes)",
+      "publicada": "2016-12-22",
+      "index": 93,
+      "decisio": "conservar",
+      "idioma": "ca",
+      "motiu": "Lletra catalana de la versió amb Lucrecia publicada al vídeo oficial.",
+      "fonts": [
+        "https://www.youtube.com/watch?v=Pi9NYKlOAo0",
+        "https://www.youtube.com/watch?v=Pi9NYKlOAo0"
+      ],
+      "cerca": {
+        "index": 93,
+        "consulta": "\"Lluís Llach\" \"Lluís Llach amb Lucrecia -  Dona'm la mà (Temps de revoltes)\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "21LnyzbRkV0",
+      "artista": "Malson Atmosfèric",
+      "titol": "Paradise",
+      "publicada": "2022-05-27",
+      "index": 94,
+      "decisio": "amagar",
+      "idioma": "en/ca",
+      "motiu": "Estrofa inicial extensa i tornada en anglès; resta en català.",
+      "fonts": [
+        "https://www.songstraducidas.com/letratraducida-paradise-feat-aragog-malson-atmosferic",
+        "https://www.youtube.com/watch?v=21LnyzbRkV0"
+      ],
+      "cerca": {
+        "index": 94,
+        "consulta": "\"Malson Atmosfèric\" \"Paradise\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "3tE5vm-kxuA",
+      "artista": "Marina Rossell",
+      "titol": "Màrmara (feat. Georges Moustaki)",
+      "publicada": "2015-09-18",
+      "index": 95,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 95,
+        "consulta": "\"Marina Rossell\" \"Màrmara (feat. Georges Moustaki)\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "Ngv3vZFKPlM",
+      "artista": "Mazoni",
+      "titol": "Zombies",
+      "publicada": "2021-10-07",
+      "index": 96,
+      "decisio": "conservar",
+      "idioma": "ca",
+      "motiu": "Lletra catalana publicada per Mazoni; salutacions breus estrangeres.",
+      "fonts": [
+        "https://mazoni.bandcamp.com/track/zombies",
+        "https://www.youtube.com/watch?v=Ngv3vZFKPlM"
+      ],
+      "cerca": {
+        "index": 96,
+        "consulta": "\"Mazoni\" \"Zombies\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "WVw0jKX7ybU",
+      "artista": "Moto Clua",
+      "titol": "Magistic Friend",
+      "publicada": "2026-07-06",
+      "index": 97,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 97,
+        "consulta": "\"Moto Clua\" \"Magistic Friend\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "4a9YEPejVo8",
+      "artista": "Poor Tràmit",
+      "titol": "11 de gala",
+      "publicada": "2024-11-25",
+      "index": 98,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 98,
+        "consulta": "\"Poor Tràmit\" \"de gala\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "7OmpFoCjj2Q",
+      "artista": "Poor Tràmit",
+      "titol": "1st Lesson",
+      "publicada": "2023-03-13",
+      "index": 99,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 99,
+        "consulta": "\"Poor Tràmit\" \"1st Lesson\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "o3ASnpE_VMI",
+      "artista": "Poor Tràmit",
+      "titol": "Best Cypher",
+      "publicada": "2025-03-31",
+      "index": 100,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 100,
+        "consulta": "\"Poor Tràmit\" \"Best Cypher\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "v1K-cX4oHZE",
+      "artista": "Poor Tràmit",
+      "titol": "Intro",
+      "publicada": "2020-04-23",
+      "index": 101,
+      "decisio": "conservar",
+      "idioma": "ca",
+      "motiu": "Lletra catalana transcrita, amb manlleus breus.",
+      "fonts": [
+        "https://www.hhgroups.com/letras/poor-tramit/la-fleca-53860/intro-15345/",
+        "https://www.youtube.com/watch?v=v1K-cX4oHZE"
+      ],
+      "cerca": {
+        "index": 101,
+        "consulta": "\"Poor Tràmit\" \"Intro\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "3K1e9iJ_BpQ",
+      "artista": "Poor Tràmit",
+      "titol": "Just Kidding",
+      "publicada": "2025-03-31",
+      "index": 102,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 102,
+        "consulta": "\"Poor Tràmit\" \"Just Kidding\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "rJLCC5biloY",
+      "artista": "Poor Tràmit",
+      "titol": "Keep It Pur",
+      "publicada": "2025-03-31",
+      "index": 103,
+      "decisio": "conservar",
+      "idioma": "ca",
+      "motiu": "Lletra catalana contrastada; expressions breus d’altres llengües.",
+      "fonts": [
+        "https://versosperfectos.com/canciones/poor-tramit-keep-it-pur",
+        "https://www.youtube.com/watch?v=rJLCC5biloY"
+      ],
+      "cerca": {
+        "index": 103,
+        "consulta": "\"Poor Tràmit\" \"Keep It Pur\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "UBsQ-G5kD30",
+      "artista": "Poor Tràmit",
+      "titol": "Knowledge",
+      "publicada": "2020-04-23",
+      "index": 104,
+      "decisio": "conservar",
+      "idioma": "ca",
+      "motiu": "Estrofes de Poor Tràmit i Nu Drama en català; manlleus anglesos breus.",
+      "fonts": [
+        "https://www.hhgroups.com/letras/poor-tramit/la-fleca-53860/knowledge-15347/",
+        "https://www.youtube.com/watch?v=UBsQ-G5kD30"
+      ],
+      "cerca": {
+        "index": 104,
+        "consulta": "\"Poor Tràmit\" \"Knowledge\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "CFZbgc1KIGg",
+      "artista": "Poor Tràmit",
+      "titol": "Yayus 5aif",
+      "publicada": "2020-04-23",
+      "index": 105,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 105,
+        "consulta": "\"Poor Tràmit\" \"Yayus 5aif\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "fhYgOuCQWIE",
+      "artista": "POOR TRÀMIT",
+      "titol": "Poor tr∆mit - Je Pense (Tràmit Remix)",
+      "publicada": "2020-01-23",
+      "index": 106,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 106,
+        "consulta": "\"POOR TRÀMIT\" \"Je Pense (Tràmit Remix)\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "hkvlFAIVAdQ",
+      "artista": "POOR TRÀMIT",
+      "titol": "Poor Tràmit -🤜💥Still Kicking🤜💥 (#GuarapLaMixtape)",
+      "publicada": "2018-10-14",
+      "index": 107,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 107,
+        "consulta": "\"POOR TRÀMIT\" \"🤜💥Still Kicking🤜💥 (\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "N9nxISGDw5U",
+      "artista": "POOR TRÀMIT",
+      "titol": "Poor Tràmit \"What you gonna do\" feat Lil Russia (prod. Jahzzmvn)",
+      "publicada": "2021-04-18",
+      "index": 108,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 108,
+        "consulta": "\"POOR TRÀMIT\" \"What you gonna do feat Lil Russia (prod. Jahzzmvn)\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "PLee70SXc64",
+      "artista": "POOR TRÀMIT",
+      "titol": "POOR TRÀMIT x LOS ÚLTIMOS BANDOLEROS ANDALUCES - BERNINI (prod. MIDDLE NAME)",
+      "publicada": "2025-05-09",
+      "index": 109,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 109,
+        "consulta": "\"POOR TRÀMIT\" \"x LOS ÚLTIMOS BANDOLEROS ANDALUCES - BERNINI (prod. MIDDLE NAME)\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "9wvudjSaq3Y",
+      "artista": "POOR TRÀMIT",
+      "titol": "Poor Tràmit x Tube (Eqvvs Lac) Legañas (#GuarapLaMixtape)",
+      "publicada": "2018-11-14",
+      "index": 110,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 110,
+        "consulta": "\"POOR TRÀMIT\" \"x Tube (Eqvvs Lac) Legañas (\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "cd5jMcdmBUI",
+      "artista": "PUPIL·LES",
+      "titol": "PUPIL•LES - SOLA CONTRA MÍ / VÍDEO LÍRIC OFICIAL",
+      "publicada": "2017-11-06",
+      "index": 111,
+      "decisio": "amagar",
+      "idioma": "ca/es",
+      "motiu": "Lletra oficial bilingüe amb estrofes i tornada en castellà.",
+      "fonts": [
+        "https://www.youtube.com/watch?v=uejkWDIoO28",
+        "https://www.youtube.com/watch?v=cd5jMcdmBUI"
+      ],
+      "cerca": {
+        "index": 111,
+        "consulta": "\"PUPIL·LES\" \"SOLA CONTRA MÍ / VÍDEO LÍRIC OFICIAL\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "G1lvu48kILA",
+      "artista": "PUPIL·LES",
+      "titol": "PUPIL·LES - CITA PREVIA",
+      "publicada": "2018-11-27",
+      "index": 112,
+      "decisio": "amagar",
+      "idioma": "es",
+      "motiu": "El text de la lletra és castellà, tot i que l’etiqueta automàtica del web diu erròniament Catalan.",
+      "fonts": [
+        "https://www.paroles-musique.com/eng/Pupil-les-Cita-previa-lyrics%2Cp1911622",
+        "https://www.youtube.com/watch?v=G1lvu48kILA"
+      ],
+      "cerca": {
+        "index": 112,
+        "consulta": "\"PUPIL·LES\" \"CITA PREVIA\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "l4cKu16-Tzg",
+      "artista": "PUPIL·LES",
+      "titol": "PUPIL·LES - FACE TO FACE",
+      "publicada": "2017-01-30",
+      "index": 113,
+      "decisio": "conservar",
+      "idioma": "ca",
+      "motiu": "Lletra catalana completa a la publicació oficial.",
+      "fonts": [
+        "https://www.youtube.com/watch?v=l4cKu16-Tzg",
+        "https://www.youtube.com/watch?v=l4cKu16-Tzg"
+      ],
+      "cerca": {
+        "index": 113,
+        "consulta": "\"PUPIL·LES\" \"FACE TO FACE\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "qrygBZRNCZ8",
+      "artista": "PUPIL·LES",
+      "titol": "PUPIL·LES - LLUNY DEL TEU MELIC (Tot i res, 2022)",
+      "publicada": "2022-02-09",
+      "index": 114,
+      "decisio": "conservar",
+      "idioma": "ca",
+      "motiu": "Lletra catalana amb una expressió breu en castellà.",
+      "fonts": [
+        "https://www.paroles-musique.com/eng/Pupil-les-Lluny-del-teu-melic-lyrics%2Cp12763702",
+        "https://www.youtube.com/watch?v=qrygBZRNCZ8"
+      ],
+      "cerca": {
+        "index": 114,
+        "consulta": "\"PUPIL·LES\" \"LLUNY DEL TEU MELIC\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "uejkWDIoO28",
+      "artista": "PUPIL·LES",
+      "titol": "PUPIL·LES - SOLA CONTRA MI",
+      "publicada": "2017-01-30",
+      "index": 115,
+      "decisio": "amagar",
+      "idioma": "ca/es",
+      "motiu": "Lletra oficial bilingüe amb estrofes i tornada en castellà.",
+      "fonts": [
+        "https://www.youtube.com/watch?v=uejkWDIoO28",
+        "https://www.youtube.com/watch?v=uejkWDIoO28"
+      ],
+      "cerca": {
+        "index": 115,
+        "consulta": "\"PUPIL·LES\" \"SOLA CONTRA MI\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "wgRznt7k3U0",
+      "artista": "Rapsodes",
+      "titol": "Aquí te pillo, aquí temazo",
+      "publicada": "2019-01-13",
+      "index": 116,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 116,
+        "consulta": "\"Rapsodes\" \"Aquí te pillo, aquí temazo\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "r136Ud_aZNI",
+      "artista": "Rapsodes",
+      "titol": "Concert de Rapsodes -  Alboraia -  2 de Juliol de 2007",
+      "publicada": "2015-10-28",
+      "index": 117,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 117,
+        "consulta": "\"Rapsodes\" \"Concert\" \"Alboraia\"",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "eNe-LjXs8d0",
+      "artista": "Rapsodes",
+      "titol": "Concert Rapsodes & Run DMC - Spook - 7 de Gener de 2010",
+      "publicada": "2015-10-28",
+      "index": 118,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 118,
+        "consulta": "\"Rapsodes\" \"Concert Rapsodes & Run DMC - Spook - 7 de Gener de 2010\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "YOdM4WdQ3bc",
+      "artista": "Rapsodes",
+      "titol": "La mejor guerra 2005",
+      "publicada": "2019-01-13",
+      "index": 119,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 119,
+        "consulta": "\"Rapsodes\" \"La mejor guerra 2005\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "qaYH_6bS914",
+      "artista": "Rapsodes",
+      "titol": "La música 2006",
+      "publicada": "2019-01-13",
+      "index": 120,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 120,
+        "consulta": "\"Rapsodes\" \"La música 2006\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "9ABGh43rutU",
+      "artista": "Rapsodes",
+      "titol": "Macarroni 2007",
+      "publicada": "2019-01-13",
+      "index": 121,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 121,
+        "consulta": "\"Rapsodes\" \"Macarroni 2007\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "LWN9VIOqPhU",
+      "artista": "Rapsodes",
+      "titol": "Mel",
+      "publicada": "2019-01-13",
+      "index": 122,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 122,
+        "consulta": "\"Rapsodes\" \"Mel\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "giFzXdwCCjI",
+      "artista": "Rapsodes",
+      "titol": "PRESENTACIÓ DEL DISC 10/09/08 el loco - 08 its mai laif",
+      "publicada": "2008-09-23",
+      "index": 123,
+      "decisio": "conservar",
+      "idioma": "ca",
+      "motiu": "Lletra catalana publicada pel segell; títol anglès i cites breus. La primera entrada és el directe de la mateixa cançó.",
+      "fonts": [
+        "https://mesdemil.bandcamp.com/track/rapsodes-its-my-life",
+        "https://www.youtube.com/watch?v=giFzXdwCCjI"
+      ],
+      "cerca": {
+        "index": 123,
+        "consulta": "\"Rapsodes\" \"PRESENTACIÓ DEL DISC 10/09/08 el loco - 08 its mai laif\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "01MEt7Ni_Eo",
+      "artista": "Rapsodes",
+      "titol": "PRESENTACIÓ DEL DISC 10/09/08 el loco - 09 fi de festa",
+      "publicada": "2008-09-23",
+      "index": 124,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 124,
+        "consulta": "\"Rapsodes\" \"PRESENTACIÓ DEL DISC 10/09/08 el loco - 09 fi de festa\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "VQJ-NnzC_WU",
+      "artista": "Rapsodes",
+      "titol": "Rapsodes - Boda La Romeu i El Isaac - 2013",
+      "publicada": "2013-12-30",
+      "index": 125,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 125,
+        "consulta": "\"Rapsodes\" \"Rapsodes - Boda La Romeu i El Isaac - 2013\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "T0xolCjo0zM",
+      "artista": "Rapsodes",
+      "titol": "Rapsodes - Intakte & La Casa del Terror - Maig 2010 - Durango Meliana",
+      "publicada": "2013-12-30",
+      "index": 126,
+      "decisio": "conservar",
+      "idioma": "ca",
+      "motiu": "Lletres catalanes publicades pel segell: Intakte, La casa del terror, Rita la cantaora i Irresistible (tornada Superincreïble). Identificació de les versions en directe a partir del títol; no s’ha transcrit cada directe.",
+      "fonts": [
+        "https://mesdemil.bandcamp.com/album/rapsodes-contes-per-versos",
+        "https://www.youtube.com/watch?v=T0xolCjo0zM"
+      ],
+      "cerca": {
+        "index": 126,
+        "consulta": "\"Rapsodes\" \"Rapsodes - Intakte & La Casa del Terror - Maig 2010 - Durango Meliana\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "ZmwTWmwiDds",
+      "artista": "Rapsodes",
+      "titol": "Rapsodes - Its my life",
+      "publicada": "2009-06-08",
+      "index": 127,
+      "decisio": "conservar",
+      "idioma": "ca",
+      "motiu": "Lletra catalana publicada pel segell; títol anglès i cites breus. La primera entrada és el directe de la mateixa cançó.",
+      "fonts": [
+        "https://mesdemil.bandcamp.com/track/rapsodes-its-my-life",
+        "https://www.youtube.com/watch?v=ZmwTWmwiDds"
+      ],
+      "cerca": {
+        "index": 127,
+        "consulta": "\"Rapsodes\" \"Rapsodes - Its my life\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "oRmqiMmId5s",
+      "artista": "Rapsodes",
+      "titol": "Rapsodes - La Casa del Terror - Carcaixent Novembre 2010",
+      "publicada": "2013-12-30",
+      "index": 128,
+      "decisio": "conservar",
+      "idioma": "ca",
+      "motiu": "Lletres catalanes publicades pel segell: Intakte, La casa del terror, Rita la cantaora i Irresistible (tornada Superincreïble). Identificació de les versions en directe a partir del títol; no s’ha transcrit cada directe.",
+      "fonts": [
+        "https://mesdemil.bandcamp.com/album/rapsodes-contes-per-versos",
+        "https://www.youtube.com/watch?v=oRmqiMmId5s"
+      ],
+      "cerca": {
+        "index": 128,
+        "consulta": "\"Rapsodes\" \"Rapsodes - La Casa del Terror - Carcaixent Novembre 2010\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "NLBA6Kg9uDM",
+      "artista": "Rapsodes",
+      "titol": "Rapsodes - Rita la Cantaora - Carcaixent 2010",
+      "publicada": "2013-12-30",
+      "index": 129,
+      "decisio": "conservar",
+      "idioma": "ca",
+      "motiu": "Lletres catalanes publicades pel segell: Intakte, La casa del terror, Rita la cantaora i Irresistible (tornada Superincreïble). Identificació de les versions en directe a partir del títol; no s’ha transcrit cada directe.",
+      "fonts": [
+        "https://mesdemil.bandcamp.com/album/rapsodes-contes-per-versos",
+        "https://www.youtube.com/watch?v=NLBA6Kg9uDM"
+      ],
+      "cerca": {
+        "index": 129,
+        "consulta": "\"Rapsodes\" \"Rapsodes - Rita la Cantaora - Carcaixent 2010\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "wO_5CLV6IbI",
+      "artista": "Rapsodes",
+      "titol": "Rapsodes - Superincreible - Carcaixent 2010",
+      "publicada": "2013-12-30",
+      "index": 130,
+      "decisio": "conservar",
+      "idioma": "ca",
+      "motiu": "Lletres catalanes publicades pel segell: Intakte, La casa del terror, Rita la cantaora i Irresistible (tornada Superincreïble). Identificació de les versions en directe a partir del títol; no s’ha transcrit cada directe.",
+      "fonts": [
+        "https://mesdemil.bandcamp.com/album/rapsodes-contes-per-versos",
+        "https://www.youtube.com/watch?v=wO_5CLV6IbI"
+      ],
+      "cerca": {
+        "index": 130,
+        "consulta": "\"Rapsodes\" \"Rapsodes - Superincreible - Carcaixent 2010\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "EW-_N7foKXw",
+      "artista": "Rapsodes",
+      "titol": "Rapsodes - Superincreible - Machetazo Festival - Maig 2010 - Durango Meliana",
+      "publicada": "2013-12-30",
+      "index": 131,
+      "decisio": "conservar",
+      "idioma": "ca",
+      "motiu": "Lletres catalanes publicades pel segell: Intakte, La casa del terror, Rita la cantaora i Irresistible (tornada Superincreïble). Identificació de les versions en directe a partir del títol; no s’ha transcrit cada directe.",
+      "fonts": [
+        "https://mesdemil.bandcamp.com/album/rapsodes-contes-per-versos",
+        "https://www.youtube.com/watch?v=EW-_N7foKXw"
+      ],
+      "cerca": {
+        "index": 131,
+        "consulta": "\"Rapsodes\" \"Rapsodes - Superincreible - Machetazo Festival - Maig 2010 - Durango Meliana\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "vBJX53_-aAA",
+      "artista": "Rapsodes",
+      "titol": "Rapsodes & Dialokolectiv - Son Art '09",
+      "publicada": "2009-06-10",
+      "index": 132,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 132,
+        "consulta": "\"Rapsodes\" \"Rapsodes & Dialokolectiv - Son Art '09\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "kbcZEEeWtH0",
+      "artista": "Rapsodes",
+      "titol": "Rapsodes 25 d'Abril 2009 València",
+      "publicada": "2016-10-24",
+      "index": 133,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 133,
+        "consulta": "\"Rapsodes\" \"Rapsodes 25 d'Abril 2009 València\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "0RBj1bK4GgQ",
+      "artista": "Rapsodes",
+      "titol": "Rapsodes a Extrafalarium (Punt2)",
+      "publicada": "2009-02-20",
+      "index": 134,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 134,
+        "consulta": "\"Rapsodes\" \"Rapsodes a Extrafalarium (Punt2)\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "PJA9Syezgrg",
+      "artista": "Rapsodes",
+      "titol": "Rapsodes al 22e Mercat de Musica Viva de Vic 2010",
+      "publicada": "2015-05-29",
+      "index": 135,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 135,
+        "consulta": "\"Rapsodes\" \"Rapsodes al 22e Mercat de Musica Viva de Vic 2010\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "wyWNF5sU8YE",
+      "artista": "Rapsodes",
+      "titol": "Rapsodes al programa Ànima del C33",
+      "publicada": "2009-05-15",
+      "index": 136,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 136,
+        "consulta": "\"Rapsodes\" \"Rapsodes al programa Ànima del C33\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "B0N-MEVO4DE",
+      "artista": "Rapsodes",
+      "titol": "Rapsodes Atupa Sala Simbiosi Alzira 2013",
+      "publicada": "2016-10-24",
+      "index": 137,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 137,
+        "consulta": "\"Rapsodes\" \"Rapsodes Atupa Sala Simbiosi Alzira 2013\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "gADZ49KWmAM",
+      "artista": "Rapsodes",
+      "titol": "Rapsodes improvisant a la japan de Vilareal",
+      "publicada": "2009-08-04",
+      "index": 138,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 138,
+        "consulta": "\"Rapsodes\" \"Rapsodes improvisant a la japan de Vilareal\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "t3IjuazxUFg",
+      "artista": "Rapsodes",
+      "titol": "Rapsodes Matisse 17 Febrer 2010 València",
+      "publicada": "2016-10-24",
+      "index": 139,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 139,
+        "consulta": "\"Rapsodes\" \"Rapsodes Matisse 17 Febrer 2010 València\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "fmUdPgDHQp8",
+      "artista": "Rapsodes",
+      "titol": "RapsoHistòries Vol 10 - Dinar de Nadal Mésdemil",
+      "publicada": "2010-04-26",
+      "index": 140,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 140,
+        "consulta": "\"Rapsodes\" \"RapsoHistòries Vol 10 - Dinar de Nadal Mésdemil\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "jhqoy08wPvw",
+      "artista": "Rapsodes",
+      "titol": "RapsoHistòries Vol 11 - Les 12 Hores",
+      "publicada": "2010-08-30",
+      "index": 141,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 141,
+        "consulta": "\"Rapsodes\" \"RapsoHistòries Vol 11 - Les 12 Hores\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "VaKCZZ08XnY",
+      "artista": "Rapsodes",
+      "titol": "RapsoHistòries Vol 13 - Motor Music Festival",
+      "publicada": "2010-10-27",
+      "index": 142,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 142,
+        "consulta": "\"Rapsodes\" \"RapsoHistòries Vol 13 - Motor Music Festival\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "diSxigr6mOQ",
+      "artista": "Rapsodes",
+      "titol": "RapsoHistòries Vol 14 - Premis Octubre 2009",
+      "publicada": "2015-05-29",
+      "index": 143,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 143,
+        "consulta": "\"Rapsodes\" \"RapsoHistòries Vol 14 - Premis Octubre 2009\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "yTQ9lP27NiU",
+      "artista": "Rapsodes",
+      "titol": "Rapsohistòries Vol 4 - Tunisia 2009",
+      "publicada": "2009-08-24",
+      "index": 144,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 144,
+        "consulta": "\"Rapsodes\" \"Rapsohistòries Vol 4 - Tunisia 2009\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "DUH4ysKzpYQ",
+      "artista": "Rapsodes",
+      "titol": "Rapsohistòries Vol 6 - Festes Cardedeu El Polvorí",
+      "publicada": "2010-01-27",
+      "index": 145,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 145,
+        "consulta": "\"Rapsodes\" \"Rapsohistòries Vol 6 - Festes Cardedeu El Polvorí\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "WLon9qVzZws",
+      "artista": "Rapsodes",
+      "titol": "RapsoHistòries Vol 7 - VistaRock '09",
+      "publicada": "2010-02-02",
+      "index": 146,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 146,
+        "consulta": "\"Rapsodes\" \"RapsoHistòries Vol 7 - VistaRock '09\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "_5U2UiVCiNI",
+      "artista": "Rapsodes",
+      "titol": "RapsoHistòries Vol 8 - Festes de Gràcia",
+      "publicada": "2010-02-08",
+      "index": 147,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 147,
+        "consulta": "\"Rapsodes\" \"RapsoHistòries Vol 8 - Festes de Gràcia\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "vS9v8DOwtW4",
+      "artista": "Rapsodes",
+      "titol": "RapsoHistòries Vol 9 - Multicumple",
+      "publicada": "2010-04-10",
+      "index": 148,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 148,
+        "consulta": "\"Rapsodes\" \"RapsoHistòries Vol 9 - Multicumple\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "HS3zHq5YyY8",
+      "artista": "Rapsodes",
+      "titol": "RapsoHistòries Vol. 1 Acampallengua 2009 - Mallorca",
+      "publicada": "2009-06-11",
+      "index": 149,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 149,
+        "consulta": "\"Rapsodes\" \"RapsoHistòries Vol. 1 Acampallengua 2009 - Mallorca\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "XAppT30zHBI",
+      "artista": "Rapsodes",
+      "titol": "RapsoHistòries Vol. 3. Barrakuda 2009. Aldaia",
+      "publicada": "2009-08-04",
+      "index": 150,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 150,
+        "consulta": "\"Rapsodes\" \"RapsoHistòries Vol. 3. Barrakuda 2009. Aldaia\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "FgVR-nhxpe8",
+      "artista": "Rapsodes",
+      "titol": "Rasohistòries Vol 5 - Paelleta RapsoTheSkafeinà",
+      "publicada": "2010-01-21",
+      "index": 151,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 151,
+        "consulta": "\"Rapsodes\" \"Rasohistòries Vol 5 - Paelleta RapsoTheSkafeinà\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "T6flTYqQSms",
+      "artista": "Rapsodes",
+      "titol": "Rita la Cantaora de Rave 2014",
+      "publicada": "2019-01-13",
+      "index": 152,
+      "decisio": "conservar",
+      "idioma": "ca",
+      "motiu": "Lletra catalana publicada pel segell.",
+      "fonts": [
+        "https://mesdemil.bandcamp.com/track/rapsodes-rita-la-cantaora-de-rave-2014",
+        "https://www.youtube.com/watch?v=T6flTYqQSms"
+      ],
+      "cerca": {
+        "index": 152,
+        "consulta": "\"Rapsodes\" \"Rita la Cantaora de Rave 2014\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "VsdzIcVcQ2U",
+      "artista": "Rapsodes",
+      "titol": "Soiree Catalane amb Rapsodes i Freddy Beats a París",
+      "publicada": "2019-01-15",
+      "index": 153,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 153,
+        "consulta": "\"Rapsodes\" \"Soiree Catalane amb Rapsodes i Freddy Beats a París\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "6pfU5l0cdgg",
+      "artista": "Rapsodes",
+      "titol": "Somewhere over the rainbow",
+      "publicada": "2019-01-13",
+      "index": 154,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 154,
+        "consulta": "\"Rapsodes\" \"Somewhere over the rainbow\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "gN8aBL7Hd5M",
+      "artista": "Rapsodes",
+      "titol": "TV3 Voluntariat pel Valencia & la Gira 2008 & Rapsodes",
+      "publicada": "2008-09-24",
+      "index": 155,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 155,
+        "consulta": "\"Rapsodes\" \"TV3 Voluntariat pel Valencia & la Gira 2008 & Rapsodes\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "7aub6L2YalY",
+      "artista": "Rapsodes",
+      "titol": "Zombie Tour Abuse 2012",
+      "publicada": "2019-01-13",
+      "index": 156,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 156,
+        "consulta": "\"Rapsodes\" \"Zombie Tour Abuse 2012\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "pM_34QtlGes",
+      "artista": "Roba Estesa",
+      "titol": "1312",
+      "publicada": "2025-03-31",
+      "index": 157,
+      "decisio": "amagar",
+      "idioma": "ca/es/eu",
+      "motiu": "Lletra amb estrofes castellanes i basques de La Furia; versions d’estudi i directe identificades.",
+      "fonts": [
+        "https://www.shazam.com/song/1729786638/1312",
+        "https://www.youtube.com/watch?v=pM_34QtlGes"
+      ],
+      "cerca": {
+        "index": 157,
+        "consulta": "\"Roba Estesa\" \"1312\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "biO9fGOEHkQ",
+      "artista": "Roba Estesa",
+      "titol": "La nit és nostra",
+      "publicada": "2018-03-22",
+      "index": 158,
+      "decisio": "conservar",
+      "idioma": "ca",
+      "motiu": "La lletra inclosa a la publicació oficial amb Mafalda és catalana.",
+      "fonts": [
+        "https://www.youtube.com/watch?v=xHvVmnjT5E4",
+        "https://www.youtube.com/watch?v=biO9fGOEHkQ"
+      ],
+      "cerca": {
+        "index": 158,
+        "consulta": "\"Roba Estesa\" \"La nit és nostra\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "7Q1rf02_p5U",
+      "artista": "Roba Estesa",
+      "titol": "ROBA ESTESA - 10. LNTMNT (DE LO BO, LO MILLOR, 2024)",
+      "publicada": "2024-02-28",
+      "index": 159,
+      "decisio": "conservar",
+      "idioma": "ca",
+      "motiu": "Lletra catalana amb manlleus breus.",
+      "fonts": [
+        "https://lyricstranslate.com/en/roba-estesa-lntmnt-lyrics.html",
+        "https://www.youtube.com/watch?v=7Q1rf02_p5U"
+      ],
+      "cerca": {
+        "index": 159,
+        "consulta": "\"Roba Estesa\" \"10. LNTMNT\" lyrics lletra",
+        "estat": "error_de_cerca"
+      }
+    },
+    {
+      "id": "sdqmfjXwSUM",
+      "artista": "Roba Estesa",
+      "titol": "ROBA ESTESA - 4. la culpa (DE LO BO, LO MILLOR, 2024)",
+      "publicada": "2024-02-28",
+      "index": 160,
+      "decisio": "conservar",
+      "idioma": "ca",
+      "motiu": "Lletra catalana contrastada.",
+      "fonts": [
+        "https://www.shazam.com/es-es/song/1729786645/la-culpa",
+        "https://www.youtube.com/watch?v=sdqmfjXwSUM"
+      ],
+      "cerca": {
+        "index": 160,
+        "consulta": "\"Roba Estesa\" \"4. la culpa\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "VEJNyAeZ1Qs",
+      "artista": "Roba Estesa",
+      "titol": "ROBA ESTESA - 8. DESAKATANT (DE LO BO, LO MILLOR, 2024)",
+      "publicada": "2024-02-28",
+      "index": 161,
+      "decisio": "conservar",
+      "idioma": "ca",
+      "motiu": "Lletra catalana publicada al videolyric; manlleus breus, sense estrofes en una altra llengua.",
+      "fonts": [
+        "https://www.youtube.com/watch?v=lfxdmGxuuF0",
+        "https://www.youtube.com/watch?v=VEJNyAeZ1Qs"
+      ],
+      "cerca": {
+        "index": 161,
+        "consulta": "\"Roba Estesa\" \"8. DESAKATANT\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "lfxdmGxuuF0",
+      "artista": "Roba Estesa",
+      "titol": "Roba Estesa | DESAKATANT (Videolyric Oficial)",
+      "publicada": "2024-01-30",
+      "index": 162,
+      "decisio": "conservar",
+      "idioma": "ca",
+      "motiu": "Lletra catalana publicada al videolyric; manlleus breus, sense estrofes en una altra llengua.",
+      "fonts": [
+        "https://www.youtube.com/watch?v=lfxdmGxuuF0",
+        "https://www.youtube.com/watch?v=lfxdmGxuuF0"
+      ],
+      "cerca": {
+        "index": 162,
+        "consulta": "\"Roba Estesa\" \"DESAKATANT\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "GmJAsHbOvEs",
+      "artista": "Roba Estesa",
+      "titol": "Roba Estesa | LNTMNT (Videolyric Oficial)",
+      "publicada": "2023-11-15",
+      "index": 163,
+      "decisio": "conservar",
+      "idioma": "ca",
+      "motiu": "Lletra catalana amb manlleus breus.",
+      "fonts": [
+        "https://lyricstranslate.com/en/roba-estesa-lntmnt-lyrics.html",
+        "https://www.youtube.com/watch?v=GmJAsHbOvEs"
+      ],
+      "cerca": {
+        "index": 163,
+        "consulta": "\"Roba Estesa\" \"LNTMNT\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "RJ4tiSlaa4A",
+      "artista": "Roba Estesa",
+      "titol": "Roba Estesa feat DJ TRAPELLA| REMIX LNTMNT (Videolyric Oficial)",
+      "publicada": "2023-12-04",
+      "index": 164,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 164,
+        "consulta": "\"Roba Estesa\" \"feat DJ TRAPELLA| REMIX LNTMNT\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "pLLSRgx4IL4",
+      "artista": "Roba Estesa",
+      "titol": "ROBA ESTESA feat LA FURIA - 1312 (live at Sala Apolo Barcelona 2024)",
+      "publicada": "2024-07-09",
+      "index": 165,
+      "decisio": "amagar",
+      "idioma": "ca/es/eu",
+      "motiu": "Lletra amb estrofes castellanes i basques de La Furia; versions d’estudi i directe identificades.",
+      "fonts": [
+        "https://www.shazam.com/song/1729786638/1312",
+        "https://www.youtube.com/watch?v=pLLSRgx4IL4"
+      ],
+      "cerca": {
+        "index": 165,
+        "consulta": "\"Roba Estesa\" \"feat LA FURIA - 1312 (live at Sala Apolo Barcelona 2024)\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "a7qE1okg8cU",
+      "artista": "Roger Padrós",
+      "titol": "Roger Padrós - Live al Karmela's",
+      "publicada": "2025-12-05",
+      "index": 166,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 166,
+        "consulta": "\"Roger Padrós\" \"Roger Padrós - Live al Karmela's\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "DW81melnL9s",
+      "artista": "Sabor de Gracia",
+      "titol": "Indiferente",
+      "publicada": "2020-01-30",
+      "index": 167,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 167,
+        "consulta": "\"Sabor de Gracia\" \"Indiferente\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "mYK0FGG7KMk",
+      "artista": "Sabor de Gracia",
+      "titol": "La Marimorena",
+      "publicada": "2021-11-25",
+      "index": 168,
+      "decisio": "amagar",
+      "idioma": "es",
+      "motiu": "Lletra castellana d’aquesta interpretació de la nadala.",
+      "fonts": [
+        "https://www.paroles-musique.com/eng/Sabor-de-Gracia-La-Marimorena-lyrics%2Cp4865603",
+        "https://www.youtube.com/watch?v=mYK0FGG7KMk"
+      ],
+      "cerca": {
+        "index": 168,
+        "consulta": "\"Sabor de Gracia\" \"La Marimorena\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "hqYinbX47rw",
+      "artista": "Sabor de Gracia",
+      "titol": "Mi Testimonio",
+      "publicada": "2018-06-22",
+      "index": 169,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 169,
+        "consulta": "\"Sabor de Gracia\" \"Mi Testimonio\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "Dcq3HG4MuUk",
+      "artista": "Sabor de Gracia",
+      "titol": "Pescaílla",
+      "publicada": "2015-01-02",
+      "index": 170,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 170,
+        "consulta": "\"Sabor de Gracia\" \"Pescaílla\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "0p_AtCafWKs",
+      "artista": "Sabor de Gracia",
+      "titol": "Shambalaa de Sabor",
+      "publicada": "2020-01-30",
+      "index": 171,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 171,
+        "consulta": "\"Sabor de Gracia\" \"Shambalaa de Sabor\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "oCbrTKn9ozM",
+      "artista": "Sabor de Gracia",
+      "titol": "Sinelas Capoeira",
+      "publicada": "2018-06-22",
+      "index": 172,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 172,
+        "consulta": "\"Sabor de Gracia\" \"Sinelas Capoeira\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "x2sqs1p9x6A",
+      "artista": "Sabor de Gracia",
+      "titol": "Tau Tau",
+      "publicada": "2018-06-22",
+      "index": 173,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 173,
+        "consulta": "\"Sabor de Gracia\" \"Tau Tau\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "yR47NV0opVo",
+      "artista": "Sabor de Gracia",
+      "titol": "Y Ahora",
+      "publicada": "2025-09-18",
+      "index": 174,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 174,
+        "consulta": "\"Sabor de Gracia\" \"Y Ahora\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "nu2zReKFQsw",
+      "artista": "SABOR DE GRACIA",
+      "titol": "CULTURAS 2 RTVE-SABOR DE GRACIA",
+      "publicada": "2025-03-14",
+      "index": 175,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 175,
+        "consulta": "\"SABOR DE GRACIA\" \"CULTURAS 2 RTVE-SABOR DE GRACIA\" lyrics lletra",
+        "estat": "error_de_cerca"
+      }
+    },
+    {
+      "id": "E0ulPrAbYN0",
+      "artista": "SABOR DE GRACIA",
+      "titol": "Ole lo nuestro! -Juerga Gitana.",
+      "publicada": "2025-03-28",
+      "index": 176,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 176,
+        "consulta": "\"SABOR DE GRACIA\" \"Ole lo nuestro! -Juerga Gitana.\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "kk3uLlYL1m8",
+      "artista": "SABOR DE GRACIA",
+      "titol": "PREMIS ENDERROCK 2025-SABOR. DE GRACIA PREMI TRAJECTÒRIA 30 ANYS",
+      "publicada": "2025-03-07",
+      "index": 177,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 177,
+        "consulta": "\"SABOR DE GRACIA\" \"PREMIS ENDERROCK 2025-SABOR. DE GRACIA PREMI TRAJECTÒRIA 30 ANYS\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "aB43eBhbSFc",
+      "artista": "SABOR DE GRACIA",
+      "titol": "TAU TAU REMIX- SABOR DE GRACIA, ORIGINAL  ELIAS , MARÍA TOLEDO & AZIZ IBRAHIM ",
+      "publicada": "2025-11-07",
+      "index": 178,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 178,
+        "consulta": "\"SABOR DE GRACIA\" \"TAU TAU REMIX- SABOR DE GRACIA, ORIGINAL  ELIAS , MARÍA TOLEDO & AZIZ IBRAHIM\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "mPhVYX4Clvg",
+      "artista": "SABOR DE GRACIA",
+      "titol": "TIK TOK-Sabor de Gracia & Maruja Limón Feat CIA  Flamenca Sensaciones",
+      "publicada": "2025-05-16",
+      "index": 179,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 179,
+        "consulta": "\"SABOR DE GRACIA\" \"TIK TOK-Sabor de Gracia & Maruja Limón Feat CIA  Flamenca Sensaciones\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "dt3mAj4TVn0",
+      "artista": "SABOR DE GRACIA",
+      "titol": "TOT ES MOU -SABOR DE GRACIA- LA RUMBA NO PARA",
+      "publicada": "2025-03-14",
+      "index": 180,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 180,
+        "consulta": "\"SABOR DE GRACIA\" \"TOT ES MOU -SABOR DE GRACIA- LA RUMBA NO PARA\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "HjR-VcgXmPc",
+      "artista": "Still Ill",
+      "titol": "23-06-2025",
+      "publicada": "2025-06-23",
+      "index": 181,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 181,
+        "consulta": "\"Still Ill\" \"23-06-2025\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "9MaRGn8c7oc",
+      "artista": "Still Ill",
+      "titol": "Bounce",
+      "publicada": "2015-10-22",
+      "index": 182,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 182,
+        "consulta": "\"Still Ill\" \"Bounce\" lyrics lletra",
+        "estat": "error_de_cerca"
+      }
+    },
+    {
+      "id": "YW3W22LaWyU",
+      "artista": "Still Ill",
+      "titol": "Focalicemos",
+      "publicada": "2021-07-26",
+      "index": 183,
+      "decisio": "amagar",
+      "idioma": "es/ca",
+      "motiu": "Lletres publicades pel grup: castellà predominant o estrofes substancials en castellà.",
+      "fonts": [
+        "https://lagrimasdesangre.bandcamp.com/album/mogudes-i-deliris",
+        "https://www.youtube.com/watch?v=YW3W22LaWyU"
+      ],
+      "cerca": {
+        "index": 183,
+        "consulta": "\"Still Ill\" \"Focalicemos\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "XzY9KY9HBy0",
+      "artista": "Still Ill",
+      "titol": "I Wanna Know",
+      "publicada": "2015-10-22",
+      "index": 184,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 184,
+        "consulta": "\"Still Ill\" \"I Wanna Know\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "-Nf2hq01DqQ",
+      "artista": "Still Ill",
+      "titol": "Matchpoint",
+      "publicada": "2021-07-26",
+      "index": 185,
+      "decisio": "amagar",
+      "idioma": "es/ca",
+      "motiu": "Lletres publicades pel grup: castellà predominant o estrofes substancials en castellà.",
+      "fonts": [
+        "https://lagrimasdesangre.bandcamp.com/album/mogudes-i-deliris",
+        "https://www.youtube.com/watch?v=-Nf2hq01DqQ"
+      ],
+      "cerca": {
+        "index": 185,
+        "consulta": "\"Still Ill\" \"Matchpoint\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "sXSas2fil9c",
+      "artista": "Still Ill",
+      "titol": "Misoginia y Monoflow",
+      "publicada": "2021-07-26",
+      "index": 186,
+      "decisio": "amagar",
+      "idioma": "es/ca",
+      "motiu": "Lletres publicades pel grup: castellà predominant o estrofes substancials en castellà.",
+      "fonts": [
+        "https://lagrimasdesangre.bandcamp.com/album/mogudes-i-deliris",
+        "https://www.youtube.com/watch?v=sXSas2fil9c"
+      ],
+      "cerca": {
+        "index": 186,
+        "consulta": "\"Still Ill\" \"Misoginia y Monoflow\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "GWeONOq2nHk",
+      "artista": "Still Ill",
+      "titol": "Prologue",
+      "publicada": "2016-03-11",
+      "index": 187,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 187,
+        "consulta": "\"Still Ill\" \"Prologue\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "dOfD8K0u2Bg",
+      "artista": "Still Ill",
+      "titol": "R.a.F",
+      "publicada": "2021-07-26",
+      "index": 188,
+      "decisio": "amagar",
+      "idioma": "es/ca",
+      "motiu": "Lletres publicades pel grup: castellà predominant o estrofes substancials en castellà.",
+      "fonts": [
+        "https://lagrimasdesangre.bandcamp.com/album/mogudes-i-deliris",
+        "https://www.youtube.com/watch?v=dOfD8K0u2Bg"
+      ],
+      "cerca": {
+        "index": 188,
+        "consulta": "\"Still Ill\" \"R.a.F\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "tH8rvjFrQFs",
+      "artista": "Still Ill",
+      "titol": "Si Uno No Se Rinde",
+      "publicada": "2021-07-26",
+      "index": 189,
+      "decisio": "amagar",
+      "idioma": "es/ca",
+      "motiu": "Lletres publicades pel grup: castellà predominant o estrofes substancials en castellà.",
+      "fonts": [
+        "https://lagrimasdesangre.bandcamp.com/album/mogudes-i-deliris",
+        "https://www.youtube.com/watch?v=tH8rvjFrQFs"
+      ],
+      "cerca": {
+        "index": 189,
+        "consulta": "\"Still Ill\" \"Si Uno No Se Rinde\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "2rAHzk7ErHY",
+      "artista": "Still Ill",
+      "titol": "Still Got to F U C K",
+      "publicada": "2019-01-31",
+      "index": 190,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 190,
+        "consulta": "\"Still Ill\" \"Still Got to F U C K\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "2owcvwZQjeQ",
+      "artista": "Still Ill",
+      "titol": "Still I Try",
+      "publicada": "2019-01-31",
+      "index": 191,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 191,
+        "consulta": "\"Still Ill\" \"Still I Try\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "snx5dIFaIoM",
+      "artista": "Still Ill",
+      "titol": "Still Ignorant",
+      "publicada": "2020-03-28",
+      "index": 192,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 192,
+        "consulta": "\"Still Ill\" \"Still Ignorant\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "7HoHUSCxCaE",
+      "artista": "Still Ill",
+      "titol": "Still Neo",
+      "publicada": "2020-03-28",
+      "index": 193,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 193,
+        "consulta": "\"Still Ill\" \"Still Neo\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "nxQA5yRT5n4",
+      "artista": "Still Ill",
+      "titol": "Viacheslav Agafonov (Bonus Track)",
+      "publicada": "2021-07-26",
+      "index": 194,
+      "decisio": "amagar",
+      "idioma": "es",
+      "motiu": "Estrofes castellanes; cita final catalana. Text publicat pel grup.",
+      "fonts": [
+        "https://lagrimasdesangre.bandcamp.com/track/viacheslav-agafonov-retrats-sense-sostre-bonus-track",
+        "https://www.youtube.com/watch?v=nxQA5yRT5n4"
+      ],
+      "cerca": {
+        "index": 194,
+        "consulta": "\"Still Ill\" \"Viacheslav Agafonov (Bonus Track)\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "xPjgGP8UUDc",
+      "artista": "Tashkenti",
+      "titol": "Comme ci comme ça",
+      "publicada": "2014-04-25",
+      "index": 195,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 195,
+        "consulta": "\"Tashkenti\" \"Comme ci comme ça\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "9h9hxjIm5cs",
+      "artista": "Tashkenti",
+      "titol": "Jugar por Jugar",
+      "publicada": "2014-04-25",
+      "index": 196,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 196,
+        "consulta": "\"Tashkenti\" \"Jugar por Jugar\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "d3L0feLxGaI",
+      "artista": "Tashkenti",
+      "titol": "La Evidencia",
+      "publicada": "2015-01-28",
+      "index": 197,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 197,
+        "consulta": "\"Tashkenti\" \"La Evidencia\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "QMNeRVK_83s",
+      "artista": "Tashkenti",
+      "titol": "La Falsedad (Remix)",
+      "publicada": "2014-04-25",
+      "index": 198,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 198,
+        "consulta": "\"Tashkenti\" \"La Falsedad (Remix)\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "JmiMwyp5y-o",
+      "artista": "Tashkenti",
+      "titol": "La Rosa de los Tiempos",
+      "publicada": "2015-01-28",
+      "index": 199,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 199,
+        "consulta": "\"Tashkenti\" \"La Rosa de los Tiempos\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "L7qmlax3jIY",
+      "artista": "Tashkenti",
+      "titol": "Night of Action (Mano Negra´s Tribute)",
+      "publicada": "2014-04-25",
+      "index": 200,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 200,
+        "consulta": "\"Tashkenti\" \"Night of Action (Mano Negra´s Tribute)\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "BeKmo3nwuK4",
+      "artista": "Tashkenti",
+      "titol": "Verdicina",
+      "publicada": "2014-04-25",
+      "index": 201,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 201,
+        "consulta": "\"Tashkenti\" \"Verdicina\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "SJUa3FBvIkE",
+      "artista": "Terratombats",
+      "titol": "Tribut a Peret, el nostre particular mig amic",
+      "publicada": "2024-02-06",
+      "index": 202,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 202,
+        "consulta": "\"Terratombats\" \"Tribut a Peret, el nostre particular mig amic\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "_JI6z3EtKc4",
+      "artista": "Terratombats CAT",
+      "titol": "Terratombats, rumba catalana, compromesa crítica i casolana!",
+      "publicada": "2014-02-04",
+      "index": 203,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 203,
+        "consulta": "\"Terratombats CAT\" \"Terratombats, rumba catalana, compromesa crítica i casolana!\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "Ur3H6aubMno",
+      "artista": "Tesa",
+      "titol": "G",
+      "publicada": "2018-05-23",
+      "index": 204,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 204,
+        "consulta": "\"Tesa\" \"G\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "iLFaTImk28Y",
+      "artista": "Tesa",
+      "titol": "H",
+      "publicada": "2018-05-23",
+      "index": 205,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 205,
+        "consulta": "\"Tesa\" \"H\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "ofedU_hH39w",
+      "artista": "Tesa",
+      "titol": "I",
+      "publicada": "2020-07-16",
+      "index": 206,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 206,
+        "consulta": "\"Tesa\" \"I\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "yAOvq3zRcGQ",
+      "artista": "Tesa",
+      "titol": "II",
+      "publicada": "2020-07-16",
+      "index": 207,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 207,
+        "consulta": "\"Tesa\" \"II\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "T6zRkeQDFqk",
+      "artista": "Tesa",
+      "titol": "III",
+      "publicada": "2020-07-16",
+      "index": 208,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 208,
+        "consulta": "\"Tesa\" \"III\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "wJi2rln_Obo",
+      "artista": "Tesa",
+      "titol": "Interval 3",
+      "publicada": "2026-04-02",
+      "index": 209,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 209,
+        "consulta": "\"Tesa\" \"Interval 3\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "5Lo3njtyJ8s",
+      "artista": "Tesa",
+      "titol": "IV",
+      "publicada": "2020-07-16",
+      "index": 210,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 210,
+        "consulta": "\"Tesa\" \"IV\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "OW6-96RBkj0",
+      "artista": "Tesa",
+      "titol": "O",
+      "publicada": "2020-04-28",
+      "index": 211,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 211,
+        "consulta": "\"Tesa\" \"O\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "KVaThwJcsgs",
+      "artista": "Tesa",
+      "titol": "S",
+      "publicada": "2018-05-23",
+      "index": 212,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 212,
+        "consulta": "\"Tesa\" \"S\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "CiKvJRKexCU",
+      "artista": "Tesa",
+      "titol": "T",
+      "publicada": "2020-04-28",
+      "index": 213,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 213,
+        "consulta": "\"Tesa\" \"T\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "b3KuiHSq30A",
+      "artista": "Tesa",
+      "titol": "V",
+      "publicada": "2020-07-16",
+      "index": 214,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 214,
+        "consulta": "\"Tesa\" \"V\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "fF331XwC6FM",
+      "artista": "Tesa",
+      "titol": "VI",
+      "publicada": "2020-07-16",
+      "index": 215,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 215,
+        "consulta": "\"Tesa\" \"VI\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "TesLy3pPiN0",
+      "artista": "Tesa",
+      "titol": "You Send Me (Original Mix)",
+      "publicada": "2014-09-29",
+      "index": 216,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 216,
+        "consulta": "\"Tesa\" \"You Send Me (Original Mix)\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "6vWn0o1j1ks",
+      "artista": "ultralone",
+      "titol": "ultralone ft Clutchill - Serpico",
+      "publicada": "2025-07-24",
+      "index": 217,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 217,
+        "consulta": "\"ultralone\" \"ultralone ft Clutchill - Serpico\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "4REX__U2MCA",
+      "artista": "Valtonyc",
+      "titol": "Deshonor",
+      "publicada": "2021-01-05",
+      "index": 218,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 218,
+        "consulta": "\"Valtonyc\" \"Deshonor\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "8WWyGTDN1Pk",
+      "artista": "Valtonyc",
+      "titol": "Edurne (feat. Mi Amargo)",
+      "publicada": "2021-01-05",
+      "index": 219,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 219,
+        "consulta": "\"Valtonyc\" \"Edurne (feat. Mi Amargo)\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "oyid4V_kP0U",
+      "artista": "Valtonyc",
+      "titol": "El Cobarde",
+      "publicada": "2018-07-26",
+      "index": 220,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 220,
+        "consulta": "\"Valtonyc\" \"El Cobarde\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "or8fv4ZPU00",
+      "artista": "Valtonyc",
+      "titol": "Fabula",
+      "publicada": "2019-04-14",
+      "index": 221,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 221,
+        "consulta": "\"Valtonyc\" \"Fabula\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "b7LHcgQgZCo",
+      "artista": "Valtonyc",
+      "titol": "Fonky rap",
+      "publicada": "2019-01-13",
+      "index": 222,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 222,
+        "consulta": "\"Valtonyc\" \"Fonky rap\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "3iHHJl6jiQM",
+      "artista": "Valtonyc",
+      "titol": "Gora Getafe",
+      "publicada": "2019-04-14",
+      "index": 223,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 223,
+        "consulta": "\"Valtonyc\" \"Gora Getafe\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "-xm8Aou60xk",
+      "artista": "Valtonyc",
+      "titol": "Hipocondría",
+      "publicada": "2019-05-09",
+      "index": 224,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 224,
+        "consulta": "\"Valtonyc\" \"Hipocondría\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "rjQJtCRzRlI",
+      "artista": "Valtonyc",
+      "titol": "Intro",
+      "publicada": "2018-03-08",
+      "index": 225,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 225,
+        "consulta": "\"Valtonyc\" \"Intro\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "FzRb0D-Ng5s",
+      "artista": "Valtonyc",
+      "titol": "Le Roi Du Nord",
+      "publicada": "2021-01-05",
+      "index": 226,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 226,
+        "consulta": "\"Valtonyc\" \"Le Roi Du Nord\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "1FL9Pw61n6o",
+      "artista": "Valtonyc",
+      "titol": "Mulay Émbarek",
+      "publicada": "2019-05-09",
+      "index": 227,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 227,
+        "consulta": "\"Valtonyc\" \"Mulay Émbarek\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "4-xWMJu7P7A",
+      "artista": "Valtonyc",
+      "titol": "No Hay Trato",
+      "publicada": "2018-04-12",
+      "index": 228,
+      "decisio": "amagar",
+      "idioma": "es",
+      "motiu": "Lletra castellana contrastada.",
+      "fonts": [
+        "https://lirik.web.id/v/valtonyc/lirik-lagu-valtonyc-no-hay-trato/",
+        "https://www.youtube.com/watch?v=4-xWMJu7P7A"
+      ],
+      "cerca": {
+        "index": 228,
+        "consulta": "\"Valtonyc\" \"No Hay Trato\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "rtw7NQElwfY",
+      "artista": "Valtonyc",
+      "titol": "Oleguer P",
+      "publicada": "2018-03-08",
+      "index": 229,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 229,
+        "consulta": "\"Valtonyc\" \"Oleguer P\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "v-BQeXgUPpg",
+      "artista": "Valtonyc",
+      "titol": "Posca",
+      "publicada": "2019-04-14",
+      "index": 230,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 230,
+        "consulta": "\"Valtonyc\" \"Posca\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "9VCl94aOUGw",
+      "artista": "Valtonyc",
+      "titol": "Punkis & Abogados",
+      "publicada": "2019-05-09",
+      "index": 231,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 231,
+        "consulta": "\"Valtonyc\" \"Punkis & Abogados\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "bPY2QWwXdXY",
+      "artista": "Valtonyc",
+      "titol": "Que Bonito Es El Amor",
+      "publicada": "2019-05-09",
+      "index": 232,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 232,
+        "consulta": "\"Valtonyc\" \"Que Bonito Es El Amor\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "ou-yvs6O-0c",
+      "artista": "Valtonyc",
+      "titol": "Testarrossa",
+      "publicada": "2019-04-14",
+      "index": 233,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 233,
+        "consulta": "\"Valtonyc\" \"Testarrossa\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "1FcQC_tZ9YA",
+      "artista": "Valtonyc",
+      "titol": "Va Te Faire Foutre",
+      "publicada": "2021-01-05",
+      "index": 234,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 234,
+        "consulta": "\"Valtonyc\" \"Va Te Faire Foutre\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "1rDjQmX2ur0",
+      "artista": "VINNIE KAIROS",
+      "titol": "VINNIE KAIROS & Mad Phi - Clean Dopamine",
+      "publicada": "2020-11-26",
+      "index": 235,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 235,
+        "consulta": "\"VINNIE KAIROS\" \"VINNIE KAIROS & Mad Phi - Clean Dopamine\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "a8Lwe6-MCts",
+      "artista": "VINNIE KAIROS",
+      "titol": "VINNIE KAIROS & Tute - 55lasalle",
+      "publicada": "2020-11-26",
+      "index": 236,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 236,
+        "consulta": "\"VINNIE KAIROS\" \"VINNIE KAIROS & Tute - 55lasalle\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    },
+    {
+      "id": "3Fu_nxAFUOs",
+      "artista": "VINNIE KAIROS",
+      "titol": "VINNIE KAIROS & Tute- CABRA",
+      "publicada": "2020-11-26",
+      "index": 237,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 237,
+        "consulta": "\"VINNIE KAIROS\" \"VINNIE KAIROS & Tute- CABRA\" lyrics lletra",
+        "estat": "error_de_cerca"
+      }
+    },
+    {
+      "id": "mx9pO8VGcNM",
+      "artista": "XEIC!",
+      "titol": "Malson (con La pegatina)",
+      "publicada": "2024-02-06",
+      "index": 238,
+      "decisio": "pendent",
+      "idioma": "und",
+      "motiu": "Cerca per artista i títol sense lletra fiable suficient per resoldre la versió.",
+      "fonts": [],
+      "cerca": {
+        "index": 238,
+        "consulta": "\"XEIC!\" \"Malson (con La pegatina)\" lyrics lletra",
+        "estat": "cerca_efectuada"
+      }
+    }
+  ]
+}

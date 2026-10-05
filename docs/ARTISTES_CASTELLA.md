@@ -5,7 +5,75 @@ tenir quan el feed musical incorpori vídeos nous: cal repassar-los primer cada 
 castellà». Les cançons amagades són a `data/hidden-videos.json` (el client les filtra i `update_music_feed.js` les
 descarta en regenerar el feed).
 
-> Última revisió: 2026-10-03. Si afegeixes o treus un artista, actualitza la taula **i** la data.
+> Última revisió: 2026-10-05. Si afegeixes o treus un artista, actualitza la taula **i** la data.
+
+## Revisió de lletres de les 239 pendents (2026-10-05)
+
+Cerca individual per artista i títol: **22 exclusions, 35 conservades i 182 encara pendents**. S’afegeix una 23a exclusió en rectificar «Gratitud», de Still Ill, conservada erròniament a la passada anterior: la lletra publicada pel grup és castellana. Les dues descartades automàtiques anteriors continuen sense verificar.
+
+[Decisions, cerques i fonts per entrada](revisions/2026-10-05-idiomes-lletres.json). Les cerques no han proporcionat una lletra fiable per a les 182 pendents; no s’han marcat com a revisades. Les versions en directe inferides a partir de la lletra d’estudi s’identifiquen al registre.
+
+| Artista (nom al feed) | Ocultes noves |
+| --- | --- |
+| **Adala** | 1 |
+| **Boom Boom Fighters** | 1 |
+| **Dusminguet** | 3 |
+| **Joan Miquel Oliver** | 1 |
+| **La Sra. Tomasa** | 1 |
+| **La Troba Kung-Fú** | 1 |
+| **Malson Atmosfèric** | 1 |
+| **PUPIL·LES** | 3 |
+| **Roba Estesa** | 2 |
+| **Sabor de Gracia** | 1 |
+| **Still Ill** | 7 |
+| **Valtonyc** | 1 |
+
+## Revisió de pendents (2026-10-05)
+
+Repassades 1546 entrades: 1008 conservades, 221 exclusions noves per ID, 68 exclusions anteriors respectades i 249 casos sense evidència suficient. Inclou les 717 entrades incorporades durant la revisió. En tancar aquella passada quedaven 239 pendents i 2 descartades encara per verificar; la diferència correspon a entrades que el bot ja havia retirat del feed.
+
+[Registre complet de decisions i fonts](revisions/2026-10-05-idiomes.json). La revisió contextual no s’ha presentat com una comprovació íntegra de totes les lletres. No s’han aprovat els casos dubtosos. Les exclusions són per vídeo per evitar afectar versions catalanes o instrumentals d’artistes homònims.
+
+| Artista (nom al feed) | Ocultes noves | Criteri |
+| --- | --- | --- |
+| **9SON** | 3 | Vegeu el registre per ID, motiu i font. |
+| **ACROS** | 40 | Vegeu el registre per ID, motiu i font. |
+| **Adala** | 6 | Vegeu el registre per ID, motiu i font. |
+| **AnimalGrup** | 5 | Vegeu el registre per ID, motiu i font. |
+| **Dusminguet** | 1 | Vegeu el registre per ID, motiu i font. |
+| **Itaca Band** | 4 | Vegeu el registre per ID, motiu i font. |
+| **Josep Valtonyc** | 7 | Vegeu el registre per ID, motiu i font. |
+| **La Banda del Yuyu** | 2 | Vegeu el registre per ID, motiu i font. |
+| **La Pegatina** | 5 | Vegeu el registre per ID, motiu i font. |
+| **La Sra. Tomasa** | 60 | Vegeu el registre per ID, motiu i font. |
+| **Lluís Llach** | 1 | Vegeu el registre per ID, motiu i font. |
+| **Mazoni** | 3 | Vegeu el registre per ID, motiu i font. |
+| **Muyayo Rif** | 19 | Vegeu el registre per ID, motiu i font. |
+| **PUPIL·LES** | 4 | Vegeu el registre per ID, motiu i font. |
+| **Rapsodes** | 1 | Vegeu el registre per ID, motiu i font. |
+| **Roba Estesa** | 6 | Vegeu el registre per ID, motiu i font. |
+| **SABOR DE GRACIA** | 3 | Vegeu el registre per ID, motiu i font. |
+| **STAY HOMAS** | 2 | Vegeu el registre per ID, motiu i font. |
+| **Sabor de Gracia** | 25 | Vegeu el registre per ID, motiu i font. |
+| **Still Ill** | 15 | Vegeu el registre per ID, motiu i font. |
+| **Tesa** | 1 | Vegeu el registre per ID, motiu i font. |
+| **Valtonyc** | 6 | Vegeu el registre per ID, motiu i font. |
+| **XEIC** | 2 | Vegeu el registre per ID, motiu i font. |
+
+## Stay Homas i La Pegatina (2026-10-05)
+
+A petició de l’usuari es conserva el repertori català dels canals oficials i Tema, incloses les versions en directe. Les exclusions s’apliquen també a l’historial i al catàleg de pistes.
+
+| Artista (nom al feed) | Ocultes | Notes |
+| --- | --- | --- |
+| **STAY HOMAS** | Per títol | Castellà, anglès i portuguès; «Rade Blunner», «Tropical» i «Del Revés» tenen lletra castellana. Es conserven «Espurna», «Xinu Xanu», «La Platja», «Petons», «Ho tornaria a fer», «La Nòria», «Les Merdes», «Ho sap tothom menys tu», «No tinc paraules», «No vull baixar» i «+=», amb les seves versions. |
+| **Stay Homas** | Per títol | Mateix criteri al canal Tema. «Ara (Les Merdes II)» i «The Bright Side» es retiren pels versos sencers en anglès. |
+| **Stay Homas - Topic** | Per títol | Àlies del canal Tema de Stay Homas. |
+| **La Pegatina** | Per títol | Es conserven «Gat Rumberu», «La Meva Gent», «Que t’agradi veure’m» i «La guspira» del feed i historial actuals. «Sonqueson» i «Saber que tu» tenen lletra castellana. Les regles cobreixen també les versions del catàleg. |
+| **La Pegatina - Topic** | Per títol | Àlies del canal Tema de La Pegatina. |
+| **DAVEU** | 2 | Nom normalitzat del canal «DAVEU))», ja vigilat; mateixa regla. |
+
+Itaca Band es retira íntegrament, amb tots dos canals. De La Madam només es bloqueja `UCCjTaOHQqmy0VD2vkZVxxoA`, sense excloure el grup català pel nom. Al repositori no hi ha cap altre canal de La Madam assignat: la fitxa es conserva pendent d’identificar el correcte.
 
 ## Cançons noves (des del 2026-10-02)
 
@@ -23,8 +91,7 @@ amb el vistiplau de l'usuari: vegeu «Revisió d'idioma de les cançons noves» 
    node scripts/revisar_castella_vigilats.js --artista="Sisa"       # un sol artista
    ```
 2. Mira cada títol (i, si dubtes, la descripció: la lletra és el criteri, **no** `defaultAudioLanguage`, que és poc
-   fiable). Amaga només el que és **100 % en castellà o basc**; conserva el català, el mixt i els títols que podrien
-   ser de qualsevol llengua.
+   fiable). En aquesta revisió, la petició «només català» exclou també les cançons amb estrofes substancials en altres llengües. Conserva les expressions breus, els instrumentals i l’occità/aranès; deixa els dubtes pendents.
 3. Amaga'ls: afegeix la regla de l'artista a `REGLES` de `scripts/ocultar_titols_castella.js` i executa
    `node scripts/ocultar_titols_castella.js` (o afegeix l'ID a `data/hidden-videos.json` si és un cas puntual: un
    Short, un àlbum, etc., que la regla no mira perquè només tracta `song`/`live_song`).
@@ -196,3 +263,19 @@ Repertori en castellà: s'han tret sencers (canal fora de `data/artistes-musica.
 - Paraules compartides (Tornado, Taxi, Minifalda, Frikis, Primavera, Celebrar si és d'un artista català…) quan no hi ha
   cap altra pista.
 - Gallec, occità i la resta de llengües que no s'han demanat explícitament. **Excepció:** als artistes de la secció «Castellà i altres llengües dels canals Tema (2026-10-02)» s'amaguen totes les llengües que no són el català ni l'occità.
+
+
+## Noms de canal ja coberts per les regles
+
+Àlies i artistes amb regles existents; s’hi afegeixen perquè la revisió automàtica també els repassi.
+
+| Artista (nom al feed) | Ocultes | Notes |
+| --- | --- | --- |
+| **Opcio K-95** | Per títol | Regla existent a l’script; sense canvis d’exclusions en aquesta revisió. |
+| **Opció K-95 - Topic** | Per títol | Regla existent a l’script; sense canvis d’exclusions en aquesta revisió. |
+| **Opcio K-95 - Topic** | Per títol | Regla existent a l’script; sense canvis d’exclusions en aquesta revisió. |
+| **Dusminguet** | Per títol | Regla existent a l’script; sense canvis d’exclusions en aquesta revisió. |
+| **Dusminguet - Topic** | Per títol | Regla existent a l’script; sense canvis d’exclusions en aquesta revisió. |
+| **La Troba Kung-Fú** | Per títol | Regla existent a l’script; sense canvis d’exclusions en aquesta revisió. |
+| **La Troba Kung-Fú - Topic** | Per títol | Regla existent a l’script; sense canvis d’exclusions en aquesta revisió. |
+| **Au Rora** | Per títol | Regla existent a l’script; sense canvis d’exclusions en aquesta revisió. |
