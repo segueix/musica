@@ -1,240 +1,34 @@
 {
-  "generatedAt": "2026-10-05T09:45:27.517Z",
-  "rawPublicVideoCount": 4719,
-  "feedVideoCount": 4251,
-  "acceptedMusicCount": 4151,
-  "categoryEligibleVideoCount": 4135,
+  "generatedAt": "2026-10-05T09:47:48.614Z",
+  "rawPublicVideoCount": 4431,
+  "feedVideoCount": 3931,
+  "acceptedMusicCount": 3890,
+  "categoryEligibleVideoCount": 3885,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
-    "before": 33,
+    "before": 3,
     "matched": 0,
-    "rejected": 33
+    "rejected": 3
   },
-  "rejectedOrReviewCount": 568,
-  "reviewCount": 503,
+  "rejectedOrReviewCount": 541,
+  "reviewCount": 505,
   "typeCounts": {
-    "song": 4045,
-    "live_song": 90,
-    "album": 16,
-    "other": 65,
-    "review": 503
+    "song": 3796,
+    "live_song": 89,
+    "album": 5,
+    "other": 36,
+    "review": 505
   },
-  "channelsWithoutAcceptedMusic": [
-    "UCjEehp73GI2mh9Rkv31QT9w",
-    "UCdwDeWJ4aJ9RAURZERmWquA"
-  ],
+  "channelsWithoutAcceptedMusic": [],
   "rejectedSamples": [
     {
-      "id": "M9zXhsatkYI",
-      "title": "ADALA EN RUTA [KLIMA 2022]",
-      "channelTitle": "Adala",
-      "durationSeconds": 475,
-      "musicReason": "no és a la discografia del canal Tema"
-    },
-    {
-      "id": "pzUTA6qwXXQ",
-      "title": "ADALA & LITTLE JAVA - LA NOSTRA SENTÈNCIA",
-      "channelTitle": "Adala",
-      "durationSeconds": 300,
-      "musicReason": "no és a la discografia del canal Tema"
-    },
-    {
-      "id": "VC9stjzAqrk",
-      "title": "SANTA SALUT & ADALA - BALA PERDIDA",
-      "channelTitle": "Adala",
-      "durationSeconds": 161,
-      "musicReason": "no és a la discografia del canal Tema"
-    },
-    {
-      "id": "ROsyvNkBHyo",
-      "title": "GENESI TUR 2018 [Video-Resum] - Adala & The Same Song Band",
-      "channelTitle": "Adala",
-      "durationSeconds": 179,
-      "musicReason": "no és a la discografia del canal Tema"
-    },
-    {
-      "id": "e6u9CWqjMxM",
-      "title": "Adala & Siva - Blank Fosk [Mixtape 2018]",
-      "channelTitle": "Adala",
-      "durationSeconds": 1550,
-      "musicReason": "no és a la discografia del canal Tema"
-    },
-    {
-      "id": "BLaV52WaZCc",
-      "title": "Emissió en directe de: Adala Music",
-      "channelTitle": "Adala",
-      "durationSeconds": 0,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "eHG7DcfMhdo",
-      "title": "Concerts de presentació Quasi res porta el diari #QRPDtour",
-      "channelTitle": "Atupa",
-      "durationSeconds": 188,
-      "musicReason": "no és a la discografia del canal Tema"
-    },
-    {
-      "id": "ZMUyBQ1Q5UA",
-      "title": "Atupa - Poble (Amb Feliu Ventura)",
-      "channelTitle": "Atupa",
-      "durationSeconds": 276,
-      "musicReason": "descripció inequívoca de contingut no musical"
-    },
-    {
-      "id": "4hVSRIE3Ksg",
-      "title": "Atupa - Promo Concert de Falles 2013",
-      "channelTitle": "Atupa",
-      "durationSeconds": 102,
-      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "nToA2-00vsg",
-      "title": "Atupa - Promoció de QuatribaRap (Videoclip)",
-      "channelTitle": "Atupa",
-      "durationSeconds": 67,
-      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "OB49aa9WPcw",
-      "title": "Concert de presentació de QuatribaRap i agraïment als mecenes.",
-      "channelTitle": "Atupa",
-      "durationSeconds": 197,
-      "musicReason": "no és a la discografia del canal Tema"
-    },
-    {
-      "id": "PFTBvBMdGd8",
-      "title": "TOT ANIRÀ BÉ #Sense - Versió confinament",
-      "channelTitle": "HerbaNegra",
-      "durationSeconds": 221,
-      "musicReason": "no és a la discografia del canal Tema"
-    },
-    {
-      "id": "dPEZnTSpGBA",
-      "title": "LOCA (amb Andreu de RAPSODES)",
-      "channelTitle": "HerbaNegra",
-      "durationSeconds": 199,
-      "musicReason": "no és a la discografia del canal Tema"
-    },
-    {
-      "id": "Jyp_1mewxh0",
-      "title": "Teaser - És molt fort",
-      "channelTitle": "HerbaNegra",
-      "durationSeconds": 29,
-      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "RQfUB9ZtbJw",
-      "title": "Live Malson Atmosfèric La Mirona 20/01/2023",
-      "channelTitle": "Malson Atmosfèric",
-      "durationSeconds": 173,
-      "musicReason": "no és a la discografia del canal Tema"
-    },
-    {
-      "id": "03icbUHzxGU",
-      "title": "Emisión en directo de POOR TRÀMIT",
-      "channelTitle": "POOR TRÀMIT",
-      "durationSeconds": 0,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "KF5IOZwhARo",
-      "title": "PUPIL·LES - DEESES",
-      "channelTitle": "PUPIL·LES",
-      "durationSeconds": 232,
-      "musicReason": "no és a la discografia del canal Tema"
-    },
-    {
-      "id": "qHCewzGeles",
-      "title": "Rapsodes Outro Bolo Presentacio OUIEA 2011",
-      "channelTitle": "Rapsodes",
-      "durationSeconds": 44,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "yv2iYwH17vg",
-      "title": "Making Off Rapsodes No a la Pedrera 2008",
-      "channelTitle": "Rapsodes",
-      "durationSeconds": 54,
-      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "ZwZPwXcfS2w",
-      "title": "RapsoHistòries Vol 12 - I Melic Festival",
-      "channelTitle": "Rapsodes",
-      "durationSeconds": 429,
-      "musicReason": "descripció inequívoca de contingut no musical"
-    },
-    {
-      "id": "vGxfS0v10IE",
-      "title": "RapsoHistòries Vol. 2. La pelu de la Núria. 2009. Reus.",
-      "channelTitle": "Rapsodes",
-      "durationSeconds": 284,
-      "musicReason": "descripció inequívoca de contingut no musical"
-    },
-    {
-      "id": "Qxlj2MyTxv4",
-      "title": "Rapsodes - Making off Rap & Soda (versió llarga)",
-      "channelTitle": "Rapsodes",
-      "durationSeconds": 431,
-      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "LKrlAQhy-ps",
-      "title": "VAVNER x CHARLY EFE x POOR TRAMIT - CAP PROMO (Videolyric)",
-      "channelTitle": "Josep Valtonyc",
-      "durationSeconds": 196,
-      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "UTbuyteR4ow",
-      "title": "patinaje sobre hielo | #voltortv de #Twitch",
-      "channelTitle": "Voltor",
-      "durationSeconds": 18,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "RooeI0SHgYk",
-      "title": "El barco sigue | #voltortv de #Twitch",
-      "channelTitle": "Voltor",
-      "durationSeconds": 20,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "ixPzzXG0jLU",
-      "title": "Riding the Gjall | #voltortv de #Twitch",
-      "channelTitle": "Voltor",
-      "durationSeconds": 25,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "cJ1XCEwFX9c",
-      "title": "casi | #voltortv de #Twitch",
-      "channelTitle": "Voltor",
-      "durationSeconds": 19,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "ikfYbVA87sQ",
-      "title": "La TRAISSIÓN - Hollow Halls | #voltortv de #Twitch",
-      "channelTitle": "Voltor",
-      "durationSeconds": 20,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "0uECv5H30Tk",
-      "title": "Me hee partido... | #voltortv de #Twitch",
-      "channelTitle": "Voltor",
-      "durationSeconds": 15,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "UyLZFGU_Hvw",
-      "title": "Pabla ESCOBAR: Plata o ESCOBAZO? | #voltortv de #Twitch",
-      "channelTitle": "Voltor",
-      "durationSeconds": 30,
+      "id": "NgURR7Uym0M",
+      "title": "en Pau a l'estudi",
+      "channelTitle": "El Nota",
+      "durationSeconds": 10,
       "musicReason": "massa curt: probable teaser/fragment"
     }
   ],
-  "publishedFeedVideoCount": 3898,
+  "publishedFeedVideoCount": 3922,
   "publishedShortVideoCount": 0
 }

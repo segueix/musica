@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-05T09:45:27.517Z",
+  "generatedAt": "2026-10-05T09:47:48.614Z",
   "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
   "deepPagesFetched": 0,
   "deepChannelCount": 20,
-  "topicChannelCount": 162,
+  "topicChannelCount": 163,
   "governedChannelCount": 79,
   "topicCoverage": [
     {
@@ -848,6 +848,14 @@
       "governs": false
     },
     {
+      "id": "UChMW6YylOdFelVBHnIsXM4Q",
+      "name": "elputunota",
+      "songs": 12,
+      "matched": 1,
+      "coverage": 0.08,
+      "governs": false
+    },
+    {
       "id": "UC7uVuUVNeWD3DpaxoAYVMLg",
       "name": "Orfeó Gracienc",
       "songs": 12,
@@ -921,10 +929,7 @@
     }
   ],
   "topicGovernance": "apply",
-  "governedReclassified": {
-    "other": 11,
-    "song": 8
-  },
+  "governedReclassified": {},
   "topicHiddenCount": 0,
   "topicChannels": [
     {
@@ -1199,6 +1204,13 @@
       "tracks": 21,
       "selected": 15,
       "withClip": 0
+    },
+    {
+      "id": "UCCNpPo0bc8xsWYXVMvhg63Q",
+      "name": "El Nota",
+      "tracks": 41,
+      "selected": 21,
+      "withClip": 1
     },
     {
       "id": "UCBMrWboBJ7RC04ul-MNY0xA",
@@ -2034,35 +2046,32 @@
       "withClip": 11
     }
   ],
-  "indexedChannelCount": 341,
-  "resolvedChannelCount": 341,
-  "feedChannelCount": 341,
-  "rawPublicVideoCount": 4719,
-  "feedVideoCount": 4251,
-  "acceptedMusicCount": 4151,
-  "categoryEligibleVideoCount": 4135,
+  "indexedChannelCount": 343,
+  "resolvedChannelCount": 343,
+  "feedChannelCount": 343,
+  "rawPublicVideoCount": 4431,
+  "feedVideoCount": 3931,
+  "acceptedMusicCount": 3890,
+  "categoryEligibleVideoCount": 3885,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
-    "before": 33,
+    "before": 3,
     "matched": 0,
-    "rejected": 33
+    "rejected": 3
   },
-  "contentReviewCount": 503,
+  "contentReviewCount": 505,
   "contentTypeCounts": {
-    "song": 4045,
-    "live_song": 90,
-    "album": 16,
-    "other": 65,
-    "review": 503
+    "song": 3796,
+    "live_song": 89,
+    "album": 5,
+    "other": 36,
+    "review": 505
   },
   "unresolvedChannelIds": [],
   "channelsWithoutUploads": [],
   "channelsWithoutVideos": [],
-  "channelsWithoutAcceptedMusic": [
-    "UCjEehp73GI2mh9Rkv31QT9w",
-    "UCdwDeWJ4aJ9RAURZERmWquA"
-  ],
+  "channelsWithoutAcceptedMusic": [],
   "allIndexedChannelsVisible": true,
-  "publishedFeedVideoCount": 3898,
+  "publishedFeedVideoCount": 3922,
   "publishedShortVideoCount": 0
 }
