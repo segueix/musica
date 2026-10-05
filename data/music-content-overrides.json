@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-05T16:42:49.427383Z",
+  "updatedAt": "2026-10-05T17:33:10.759Z",
   "description": "Decisions manuals sobre el tipus de contingut de vídeos concrets. Manen sobre el classificador automàtic (scripts/lib/classificar_contingut_musical.js) i el pipeline (scripts/update_music_feed.js) les reaplica a cada generació del feed. Tipus permesos: song, live_song, album, other. Un vídeo revisat aquí surt de data/music-content-review.json.",
   "videos": [
     {
@@ -1096,6 +1096,251 @@
       "id": "LFQOgRSDcdQ",
       "contentType": "song",
       "note": "Gravació instrumental verificada: Ramon Coll. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "SdRuLy9dnJk",
+      "contentType": "song",
+      "note": "Cançó infantil en català revisada: Mainasons. Vegeu docs/REVISION_INFANTIL_2026-10-05.json."
+    },
+    {
+      "id": "UnJsICg3Hk8",
+      "contentType": "song",
+      "note": "Cançó infantil en català revisada: Mainasons. Vegeu docs/REVISION_INFANTIL_2026-10-05.json."
+    },
+    {
+      "id": "0Xq77tZo-as",
+      "contentType": "song",
+      "note": "Cançó infantil en català revisada: Mainasons. Vegeu docs/REVISION_INFANTIL_2026-10-05.json."
+    },
+    {
+      "id": "ijUw9pA9gCM",
+      "contentType": "song",
+      "note": "Cançó infantil en català revisada: Mainasons. Vegeu docs/REVISION_INFANTIL_2026-10-05.json."
+    },
+    {
+      "id": "eA3y__EOUCU",
+      "contentType": "song",
+      "note": "Cançó infantil en català revisada: Mainasons. Vegeu docs/REVISION_INFANTIL_2026-10-05.json."
+    },
+    {
+      "id": "uIVA2-vJ8Qc",
+      "contentType": "song",
+      "note": "Cançó infantil en català revisada: Mainasons. Vegeu docs/REVISION_INFANTIL_2026-10-05.json."
+    },
+    {
+      "id": "YzHtsJeN6EQ",
+      "contentType": "song",
+      "note": "Cançó infantil en català revisada: Mainasons. Vegeu docs/REVISION_INFANTIL_2026-10-05.json."
+    },
+    {
+      "id": "4z37gGPqtzc",
+      "contentType": "song",
+      "note": "Cançó infantil en català revisada: Mainasons. Vegeu docs/REVISION_INFANTIL_2026-10-05.json."
+    },
+    {
+      "id": "c_qH2SI_-Ts",
+      "contentType": "song",
+      "note": "Cançó infantil en català revisada: Mainasons. Vegeu docs/REVISION_INFANTIL_2026-10-05.json."
+    },
+    {
+      "id": "3jzxDVCv8lA",
+      "contentType": "song",
+      "note": "Cançó infantil en català revisada: El Pot Petit. Vegeu docs/REVISION_INFANTIL_2026-10-05.json."
+    },
+    {
+      "id": "Cs-stT-6B-0",
+      "contentType": "song",
+      "note": "Cançó infantil en català revisada: El Pot Petit. Vegeu docs/REVISION_INFANTIL_2026-10-05.json."
+    },
+    {
+      "id": "wbuqXRV8N0o",
+      "contentType": "song",
+      "note": "Cançó infantil en català revisada: El Pot Petit. Vegeu docs/REVISION_INFANTIL_2026-10-05.json."
+    },
+    {
+      "id": "lYriMzzMsUw",
+      "contentType": "song",
+      "note": "Cançó infantil en català revisada: El Pot Petit. Vegeu docs/REVISION_INFANTIL_2026-10-05.json."
+    },
+    {
+      "id": "xHmFVkSOjZY",
+      "contentType": "song",
+      "note": "Cançó infantil en català revisada: Xiula. Vegeu docs/REVISION_INFANTIL_2026-10-05.json."
+    },
+    {
+      "id": "0oLVYBelbn0",
+      "contentType": "song",
+      "note": "Cançó infantil en català revisada: Xiula. Vegeu docs/REVISION_INFANTIL_2026-10-05.json."
+    },
+    {
+      "id": "w9DyPrDghbs",
+      "contentType": "song",
+      "note": "Cançó infantil en català revisada: Ambauka. Vegeu docs/REVISION_INFANTIL_2026-10-05.json."
+    },
+    {
+      "id": "VnyWlfQPflI",
+      "contentType": "song",
+      "note": "Cançó infantil en català revisada: Ambauka. Vegeu docs/REVISION_INFANTIL_2026-10-05.json."
+    },
+    {
+      "id": "VatTF_8FeOM",
+      "contentType": "song",
+      "note": "Cançó infantil en català revisada: Ambauka. Vegeu docs/REVISION_INFANTIL_2026-10-05.json."
+    },
+    {
+      "id": "j4G-pew6n2U",
+      "contentType": "song",
+      "note": "Cançó infantil en català revisada: Ambauka. Vegeu docs/REVISION_INFANTIL_2026-10-05.json."
+    },
+    {
+      "id": "TJMd9PISmDI",
+      "contentType": "song",
+      "note": "Cançó infantil en català revisada: Ambauka. Vegeu docs/REVISION_INFANTIL_2026-10-05.json."
+    },
+    {
+      "id": "-iCNzW24L4o",
+      "contentType": "song",
+      "note": "Cançó infantil en català revisada: Ambauka. Vegeu docs/REVISION_INFANTIL_2026-10-05.json."
+    },
+    {
+      "id": "CrxKmOFpODA",
+      "contentType": "song",
+      "note": "Cançó infantil en català revisada: Ambauka. Vegeu docs/REVISION_INFANTIL_2026-10-05.json."
+    },
+    {
+      "id": "NSpKQRH8njg",
+      "contentType": "song",
+      "note": "Cançó infantil en català revisada: Ambauka. Vegeu docs/REVISION_INFANTIL_2026-10-05.json."
+    },
+    {
+      "id": "UGFyP5wQK8E",
+      "contentType": "song",
+      "note": "Cançó infantil en català revisada: Ambauka. Vegeu docs/REVISION_INFANTIL_2026-10-05.json."
+    },
+    {
+      "id": "nMkrnLOPTIA",
+      "contentType": "song",
+      "note": "Cançó infantil en català revisada: Els Atrapasomnis. Vegeu docs/REVISION_INFANTIL_2026-10-05.json."
+    },
+    {
+      "id": "wMlPh_BnQtE",
+      "contentType": "song",
+      "note": "Cançó infantil en català revisada: Els Atrapasomnis. Vegeu docs/REVISION_INFANTIL_2026-10-05.json."
+    },
+    {
+      "id": "L6b7COYuVEU",
+      "contentType": "song",
+      "note": "Cançó infantil en català revisada: Els Atrapasomnis. Vegeu docs/REVISION_INFANTIL_2026-10-05.json."
+    },
+    {
+      "id": "lB2KfipM3G4",
+      "contentType": "song",
+      "note": "Cançó infantil en català revisada: Els Atrapasomnis. Vegeu docs/REVISION_INFANTIL_2026-10-05.json."
+    },
+    {
+      "id": "iuWlLDMN8dQ",
+      "contentType": "song",
+      "note": "Cançó infantil en català revisada: Reggae per Xics. Vegeu docs/REVISION_INFANTIL_2026-10-05.json."
+    },
+    {
+      "id": "XKd_pFNUgUc",
+      "contentType": "song",
+      "note": "Cançó infantil en català revisada: Reggae per Xics. Vegeu docs/REVISION_INFANTIL_2026-10-05.json."
+    },
+    {
+      "id": "zt7IuC3ewtA",
+      "contentType": "song",
+      "note": "Cançó infantil en català revisada: Reggae per Xics. Vegeu docs/REVISION_INFANTIL_2026-10-05.json."
+    },
+    {
+      "id": "STI0S6EdEC4",
+      "contentType": "song",
+      "note": "Cançó infantil en català revisada: Xesco Boix. Vegeu docs/REVISION_INFANTIL_2026-10-05.json."
+    },
+    {
+      "id": "7NKhFqIsJzY",
+      "contentType": "song",
+      "note": "Cançó infantil en català revisada: Ara Va de Bo. Vegeu docs/REVISION_INFANTIL_2026-10-05.json."
+    },
+    {
+      "id": "5HqxTYKI5lw",
+      "contentType": "song",
+      "note": "Cançó infantil en català revisada: Ara Va de Bo. Vegeu docs/REVISION_INFANTIL_2026-10-05.json."
+    },
+    {
+      "id": "Un4RnM3uqMM",
+      "contentType": "song",
+      "note": "Cançó infantil en català revisada: Jaume Barri. Vegeu docs/REVISION_INFANTIL_2026-10-05.json."
+    },
+    {
+      "id": "b-dAXvY2Fp8",
+      "contentType": "song",
+      "note": "Cançó infantil en català revisada: Jordi Tonietti. Vegeu docs/REVISION_INFANTIL_2026-10-05.json."
+    },
+    {
+      "id": "YjAntdeAzbg",
+      "contentType": "song",
+      "note": "Cançó infantil en català revisada: Pep Puigdemont. Vegeu docs/REVISION_INFANTIL_2026-10-05.json."
+    },
+    {
+      "id": "gSu6WCnjHf0",
+      "contentType": "song",
+      "note": "Cançó infantil en català revisada: Pep Puigdemont. Vegeu docs/REVISION_INFANTIL_2026-10-05.json."
+    },
+    {
+      "id": "c6pWzVvcIYo",
+      "contentType": "song",
+      "note": "Cançó infantil en català revisada: Pep Puigdemont. Vegeu docs/REVISION_INFANTIL_2026-10-05.json."
+    },
+    {
+      "id": "0hSCOU_oIoI",
+      "contentType": "song",
+      "note": "Cançó infantil en català revisada: La Tresca i la Verdesca. Vegeu docs/REVISION_INFANTIL_2026-10-05.json."
+    },
+    {
+      "id": "rdnrSebzKBM",
+      "contentType": "song",
+      "note": "Cançó infantil en català revisada: La Tresca i la Verdesca. Vegeu docs/REVISION_INFANTIL_2026-10-05.json."
+    },
+    {
+      "id": "A8ApWFlQOiI",
+      "contentType": "song",
+      "note": "Cançó infantil en català revisada: Lali BeGood. Vegeu docs/REVISION_INFANTIL_2026-10-05.json."
+    },
+    {
+      "id": "Rx-b2gnH4WA",
+      "contentType": "song",
+      "note": "Cançó infantil en català revisada: Landry el Rumbero. Vegeu docs/REVISION_INFANTIL_2026-10-05.json."
+    },
+    {
+      "id": "G6kCV2AC28w",
+      "contentType": "song",
+      "note": "Cançó infantil en català revisada: Landry el Rumbero. Vegeu docs/REVISION_INFANTIL_2026-10-05.json."
+    },
+    {
+      "id": "oaCJqwJdlcg",
+      "contentType": "song",
+      "note": "Cançó infantil en català revisada: Landry el Rumbero. Vegeu docs/REVISION_INFANTIL_2026-10-05.json."
+    },
+    {
+      "id": "eXf8Ik2645E",
+      "contentType": "song",
+      "note": "Cançó infantil en català revisada: Samfaina de Colors. Vegeu docs/REVISION_INFANTIL_2026-10-05.json."
+    },
+    {
+      "id": "xGNt1b2nngM",
+      "contentType": "song",
+      "note": "Cançó infantil en català revisada: Samfaina de Colors. Vegeu docs/REVISION_INFANTIL_2026-10-05.json."
+    },
+    {
+      "id": "ySvPq4k3wkU",
+      "contentType": "song",
+      "note": "Cançó infantil en català revisada: 2 Princeses Barbudes. Vegeu docs/REVISION_INFANTIL_2026-10-05.json."
+    },
+    {
+      "id": "oIuojtzfwEE",
+      "contentType": "song",
+      "note": "Cançó infantil en català revisada: 2 Princeses Barbudes. Vegeu docs/REVISION_INFANTIL_2026-10-05.json."
     }
   ]
 }
