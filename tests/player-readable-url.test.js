@@ -4,7 +4,7 @@ import { describe, expect, it, vi } from 'vitest';
 
 const playerSource = readFileSync(new URL('../js/features/player.js', import.meta.url), 'utf8');
 
-function bootPlayer({ title = 'À Punt Mèdia: vídeo de prova' } = {}) {
+function bootPlayer({ title = 'À Punt Mèdia: vídeo de prova', hostname = '', pathname = '/', base = '' } = {}) {
     const elements = {
         videoTitle: { textContent: title },
         mainContent: { classList: { contains: () => false } },
@@ -19,13 +19,14 @@ function bootPlayer({ title = 'À Punt Mèdia: vídeo de prova' } = {}) {
     };
 
     const location = {
-        pathname: '/',
+        hostname,
+        pathname,
         search: '',
         hash: '',
     };
 
     function applyUrl(rawUrl) {
-        const parsed = new URL(rawUrl, 'https://segueix.cat/');
+        const parsed = new URL(rawUrl, `https://segueix.cat${location.pathname}${location.search}`);
         location.pathname = parsed.pathname;
         location.search = parsed.search;
         location.hash = parsed.hash;
@@ -44,7 +45,7 @@ function bootPlayer({ title = 'À Punt Mèdia: vídeo de prova' } = {}) {
     };
 
     const window = {
-        SegueixApp: { state: { player: {} }, features: {} },
+        SegueixApp: { state: { player: {} }, features: {}, utils: base ? { appBasePath: () => base } : {} },
         document,
         location,
         history,
@@ -96,5 +97,43 @@ describe('URL llegible del vídeo dins la PWA', () => {
         expect(window.location.pathname).toBe('/video/historia-de-catalunya-ZyXwVu98765');
         expect(window.location.search).toBe('?t=73');
         expect(history.state.videoId).toBe(videoId);
+    });
+
+    it("a GitHub Pages (segueix.github.io/musica/) la URL es queda a /musica/?v=<id>: en recarregar s'obre l'app", () => {
+        const { window, history } = bootPlayer({
+            hostname: 'segueix.github.io',
+            pathname: '/musica/',
+            base: '/musica/',
+        });
+        const videoId = 'AbCdEf12345';
+
+        window.SegueixApp.features.player.registerRuntime({
+            showVideoImpl(id) {
+                window.SegueixApp.state.player.currentVideoId = id;
+                history.pushState({ videoId: id }, '', `?v=${id}`);
+            },
+        });
+
+        window.SegueixApp.features.player.showVideo(videoId);
+
+        expect(history.replaceState).not.toHaveBeenCalled();
+        expect(window.location.pathname).toBe('/musica/');
+        expect(window.location.search).toBe(`?v=${videoId}`);
+    });
+
+    it("la ruta llegible parteix de la carpeta de l'app, no de l'arrel del domini", () => {
+        const { window, history } = bootPlayer({ pathname: '/musica/', base: '/musica/' });
+        const videoId = 'AbCdEf12345';
+
+        window.SegueixApp.features.player.registerRuntime({
+            showVideoImpl(id) {
+                window.SegueixApp.state.player.currentVideoId = id;
+                history.pushState({ videoId: id }, '', `?v=${id}`);
+            },
+        });
+
+        window.SegueixApp.features.player.showVideo(videoId);
+
+        expect(window.location.pathname).toBe('/musica/video/a-punt-media-video-de-prova-AbCdEf12345');
     });
 });

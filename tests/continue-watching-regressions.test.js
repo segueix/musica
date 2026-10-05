@@ -13,14 +13,19 @@ describe('regressions de Continua mirant', () => {
     });
 
     it('no descarta el primer estat playing durant la finestra de canvi', () => {
-        expect(source).toContain("const isPlayingState = payload?.event === 'onStateChange' && Number(payload.info) === 1;");
+        expect(source).toContain(
+            "const isPlayingState = payload?.event === 'onStateChange' && Number(payload.info) === 1;"
+        );
         expect(source).toContain('if (inSwitchGrace && !isPlayingState) return;');
     });
 
     it('força el desament quan la SPA abandona la vista del reproductor', () => {
         const fnStart = source.indexOf('function normalizeUrlAfterLeavingWatch()');
         const persist = source.indexOf('persistActiveProgress({ force: true });', fnStart);
-        const pathGuard = source.indexOf("if (!VIDEO_PATH_PATTERN.test(window.location.pathname || '')) return;", fnStart);
+        const pathGuard = source.indexOf(
+            "if (!isReadableVideoPath(window.location.pathname) && !params.has('v')) return;",
+            fnStart
+        );
         expect(fnStart).toBeGreaterThan(-1);
         expect(persist).toBeGreaterThan(fnStart);
         expect(pathGuard).toBeGreaterThan(persist);

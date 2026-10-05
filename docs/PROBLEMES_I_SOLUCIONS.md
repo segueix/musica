@@ -1474,3 +1474,21 @@ Correcció de catàleg demanada: només cinc enregistraments Topic (pCeWfNt-GCE,
 **Trampa:** `#videoPlayer .video-embed-wrap` té `height: 100%` (`styles.css`): amb `inset: 36px 0 0 0` el vídeo baixava 36 px i **els controls de YouTube quedaven tallats per sota** (no es veia a les proves fins que es va mirar la caixa de l'iframe). Cal `height: auto !important` perquè mani `inset`. Al mòbil, la vora de dalt d'1 px es menjava 1 px del vídeo (199 px): `box-sizing: content-box`.
 
 **Proves:** `node tests/browser/verificar-play-pausa.js` (vídeo ≥ 200 × 200, vídeo sencer dins la finestra, mànecs fora del vídeo, 320 px d'ample al mòbil, la cantonada no la deixa més petita de 356 × 200); `tests/finestreta-normes.test.js`.
+
+## [2026-10-05] - En recarregar mentre sonava una cançó s'obria segueix.github.io (404) i no l'app
+
+**Símptoma:** a `segueix.github.io/musica/`, si es recarregava la pàgina després d'engegar una cançó, el navegador anava a `segueix.github.io/video/<títol>-<id>` i es quedava en una pàgina d'error («es queda penjat»). Comprovat amb `curl`: `segueix.github.io/`, `segueix.github.io/video/…` i `segueix.github.io/musica/video/…` donen 404; només `segueix.github.io/musica/` dona 200.
+
+**Causa:** herència de Segueix youtubers (`segueix.cat`, a l'arrel del domini i amb `functions/video/[videoKey].js` a Cloudflare). En reproduir, `player.js` (`syncReadableVideoUrl()`) canviava la URL a la ruta llegible **`/video/<slug>-<id>`, escrita des de l'arrel del domini**: a GitHub Pages queda fora de `/musica/`. A més, GitHub Pages no té cap servidor que sàpiga servir `/video/…`. En sortir del reproductor, `normalizeUrlAfterLeavingWatch()` també escrivia `/` (l'arrel del domini). Les URL de les seccions d'`app.js` (`basePath`) partien de la ruta actual, que podia ser la del vídeo.
+
+**Solució:**
+- `core/segueix-app.js`: `SegueixApp.utils.appBasePath()` = carpeta de l'app, treta de la ruta del seu propi `<script>` (`/musica/` a GitHub Pages, `/` a l'arrel d'un domini). Qualsevol URL que l'app escrigui amb `pushState` / `replaceState` ha de partir d'aquí.
+- `player.js`: la ruta llegible **només s'escriu on un servidor la sap servir** (`supportsReadableVideoPaths()`: no a `*.github.io`) i sempre dins la carpeta de l'app (`${appBasePath()}video/…`). A GitHub Pages la URL es queda a **`/musica/?v=<id>`**, que `index.html` ja obre. En sortir del reproductor la URL torna a `/musica/` sense `?v=` ni `t=` (abans, amb `?v=`, una recàrrega a una secció reobria el vídeo). La caràtula per defecte també parteix de la carpeta de l'app (mai relativa: la URL canvia en reproduir).
+- `app.js`: `getAppBasePath()` per a totes les URL de les seccions.
+- `404.html` (nou): GitHub Pages el serveix per a qualsevol adreça de `/musica/` que no existeix; una ruta `/musica/video/<títol>-<id>` torna a l'app amb `?v=<id>` i la resta, a `/musica/`.
+
+**No es pot arreglar des d'aquest repositori:** les pestanyes o l'historial que ja tinguin `segueix.github.io/video/…` (a l'arrel). Caldria un repositori `segueix/segueix.github.io` amb un `404.html` que hi redirigeixi.
+
+**Pendent (no tocat):** altres rutes escrites des de l'arrel que a GitHub Pages donen 404 i, per tant, ara no es carreguen: `navigation.js` (`/css/category-chips.css`, `/css/typography-polish.css`, `/css/spacing-polish.css`, `/js/features/segueix-tv.js`, `context-tv.js`, `tv-scroll-ui.js`), `segueix-app.js` (`/js/features/shorts-polish.js`), `channel.js` (`/js/channels-ca.json`). Si s'arreglessin, començarien a carregar-se (canvi visible): decidir-ho abans.
+
+**Proves:** `tests/player-readable-url.test.js` (GitHub Pages: `/musica/?v=<id>`; ruta llegible dins la carpeta), `tests/continue-watching-regressions.test.js`, i opt-in `node tests/browser/verificar-recarrega.js` (simula GitHub Pages amb `context.route`: recarregar torna a l'app amb la cançó, `/musica/video/…` passa pel 404.html, Inici deixa `/musica/`). Amb el codi d'abans, la prova mostra la URL `https://segueix.github.io/video/…` i la recàrrega no torna.

@@ -6,7 +6,8 @@
     const VIDEO_ID_PATTERN = /^[A-Za-z0-9_-]{11}$/;
     const VIDEO_PATH_PATTERN = /^\/video\/[^/]+$/;
     const APP_SECTION_HASHES = new Set(['#historial', '#llistes', '#segueix']);
-    const DEFAULT_VIDEO_THUMBNAIL_SRC = '/img/caratula.png';
+    // Respecte a la carpeta de l'app (appBasePath()), mai relativa: la URL canvia en reproduir
+    const DEFAULT_VIDEO_THUMBNAIL_FILE = 'img/caratula.png';
     const CONTINUE_SECTION_ID = 'continueWatchingSection';
     const CONTINUE_LIST_ID = 'continueWatchingList';
     const PROGRESS_WRITE_INTERVAL_MS = 10000;
@@ -98,15 +99,38 @@
         return { options: nextOptions, saved, resumed: false, explicit: false };
     }
 
+    // Carpeta de l'app (segueix-app.js): «/musica/» a segueix.github.io/musica/, «/» a l'arrel d'un domini. Abans les
+    // URL es posaven des de «/» i, a GitHub Pages, la URL del vídeo quedava a segueix.github.io/video/…: en recarregar
+    // s'obria segueix.github.io (404) en lloc de l'app.
+    function appBasePath() {
+        const fromApp = app.utils?.appBasePath?.();
+        if (fromApp) return fromApp;
+        const path = String(window.location?.pathname || '/');
+        return path.replace(/\/video\/[^/]*$/, '/').replace(/[^/]*$/, '') || '/';
+    }
+
+    // La ruta llegible /video/<slug>-<id> necessita un servidor que la serveixi (functions/video a Cloudflare). GitHub
+    // Pages no en té: en recarregar donava 404. Allà la URL es queda amb ?v=<id>, que index.html ja sap obrir.
+    function supportsReadableVideoPaths() {
+        return !/\.github\.io$/i.test(String(window.location?.hostname || ''));
+    }
+
+    function isReadableVideoPath(pathname) {
+        const base = appBasePath();
+        const path = String(pathname || '');
+        return path.startsWith(base) && VIDEO_PATH_PATTERN.test(`/${path.slice(base.length)}`);
+    }
+
     function buildReadableVideoPath(videoId, title, { omitStartAt = false } = {}) {
         const id = String(videoId || '').trim();
         if (!VIDEO_ID_PATTERN.test(id)) return '';
         const slug = slugifyVideoTitle(title) || 'video';
         const startAt = omitStartAt ? 0 : currentStartAt();
-        return `/video/${encodeURIComponent(`${slug}-${id}`)}${startAt > 0 ? `?t=${startAt}` : ''}`;
+        return `${appBasePath()}video/${encodeURIComponent(`${slug}-${id}`)}${startAt > 0 ? `?t=${startAt}` : ''}`;
     }
 
     function syncReadableVideoUrl(videoId, attempt = 0, settings = {}) {
+        if (!supportsReadableVideoPaths()) return;
         const id = String(videoId || '').trim();
         if (!VIDEO_ID_PATTERN.test(id)) return;
         const activeId = getActiveVideoId();
@@ -157,9 +181,9 @@
     function applyDefaultVideoThumbnailFallback(img) {
         if (!img || img.dataset?.defaultThumbnailFallback === 'applied') return;
         const currentSrc = String(img.getAttribute?.('src') || img.src || '');
-        if (currentSrc.endsWith(DEFAULT_VIDEO_THUMBNAIL_SRC)) return;
+        if (currentSrc.endsWith(DEFAULT_VIDEO_THUMBNAIL_FILE)) return;
         if (img.dataset) img.dataset.defaultThumbnailFallback = 'applied';
-        img.src = DEFAULT_VIDEO_THUMBNAIL_SRC;
+        img.src = `${appBasePath()}${DEFAULT_VIDEO_THUMBNAIL_FILE}`;
         if (img.style) img.style.visibility = '';
     }
 
@@ -256,7 +280,8 @@
                 const position = Math.max(0, Number(entry.position) || 0);
                 const progress = duration > 0 ? Math.min(100, Math.max(0, Math.round((position / duration) * 100))) : 0;
                 const title = entry.title || 'Vídeo pendent';
-                const thumbnail = entry.thumbnail || `https://i.ytimg.com/vi/${encodeURIComponent(entry.id)}/hqdefault.jpg`;
+                const thumbnail =
+                    entry.thumbnail || `https://i.ytimg.com/vi/${encodeURIComponent(entry.id)}/hqdefault.jpg`;
                 return `
                     <article class="continue-watching-card">
                         <button class="continue-watching-open" type="button" data-continue-open="${escapeHtml(entry.id)}" aria-label="Continua mirant ${escapeHtml(title)}">
@@ -277,7 +302,6 @@
             })
             .join('');
     }
-
 
     function currentProgressMetadata(videoId) {
         const document = window.document;
@@ -304,7 +328,13 @@
     function persistActiveProgress({ force = false } = {}) {
         const progress = activeProgress;
         const storage = getContinueStorage();
-        if (!progress || !storage || progress.completed || progress.isLive || dismissedProgressIds.has(progress.videoId)) {
+        if (
+            !progress ||
+            !storage ||
+            progress.completed ||
+            progress.isLive ||
+            dismissedProgressIds.has(progress.videoId)
+        ) {
             return false;
         }
 
@@ -480,7 +510,6 @@
         else showVideoFromAPI(id);
     }
 
-
     function installContinueWatching() {
         installContinueWatchingStyles();
         ensureContinueWatchingSection();
@@ -507,10 +536,20 @@
     function normalizeUrlAfterLeavingWatch() {
         if (isWatchViewActive()) return;
         persistActiveProgress({ force: true });
-        if (!VIDEO_PATH_PATTERN.test(window.location.pathname || '')) return;
+        // Fora del reproductor la URL torna a la carpeta de l'app, sense el vídeo: ni /video/<slug>-<id> ni ?v=<id>
+        // (si no, en recarregar s'obriria el vídeo i no la secció on és l'usuari)
+        const params = new window.URLSearchParams(window.location.search || '');
+        if (!isReadableVideoPath(window.location.pathname) && !params.has('v')) return;
+        params.delete('v');
+        params.delete('t');
+        const query = params.toString();
         const hash = APP_SECTION_HASHES.has(window.location.hash) ? window.location.hash : '';
         try {
-            window.history.replaceState(window.history.state || {}, '', `/${hash}`);
+            window.history.replaceState(
+                window.history.state || {},
+                '',
+                `${appBasePath()}${query ? `?${query}` : ''}${hash}`
+            );
         } catch {}
     }
 
@@ -633,4 +672,3 @@
         renderPlaylistRelatedVideos,
     };
 })(window);
-
