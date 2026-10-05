@@ -6683,6 +6683,7 @@ function renderFeedLegacyImpl() {
     if (selectedCategory !== 'Novetats' && selectedCategory !== 'Tot' && filtered.length === 0) {
         featuredVideoBySection.delete(getHeroSectionKey());
         updateHero(null);
+        SegueixApp.features.categoryArtists?.hide?.();
         if (videosGrid) {
             if (selectedCategory === 'Radar') {
                 videosGrid.innerHTML = `
@@ -8136,6 +8137,7 @@ async function navigateToSearchResults(query) {
     setPageTitle(`Resultats per: "${trimmedQuery}"`);
     featuredVideoBySection.delete(getHeroSectionKey());
     updateHero(null);
+    SegueixApp.features.categoryArtists?.hide?.();
 
     if (!videosGrid) {
         return;
@@ -8190,6 +8192,30 @@ function bindSearchResults(container) {
     });
 }
 
+// Artistes de la categoria (js/features/category-artists.js): sota la cançó destacada d'un estil (Pop, Rock…) o d'una
+// categoria pròpia hi ha una filera amb els perfils dels artistes que hi pertanyen. A la resta de vistes s'amaga.
+function syncCategoryArtists() {
+    const feature = SegueixApp.features.categoryArtists;
+    if (!feature) return;
+    const category = normalizeCustomTag(selectedCategory);
+    const userFeature = SegueixApp.features.userCategories;
+    const userCategory = category ? userFeature?.get?.(category) : null;
+    const isUser = Boolean(userCategory) && String(userCategory.name).toLowerCase() === category.toLowerCase();
+    if (!category || (!isUser && !isStyleRadioCategory(category))) {
+        feature.hide();
+        return;
+    }
+    const music = window.SegueixMusicCategories;
+    feature.render(category, {
+        groups: YouTubeAPI?.getArtistGroups?.() || [],
+        userChannelIds: isUser ? userFeature.categoryChannelIds(userCategory) : null,
+        hiddenIds: getHiddenChannelIds(),
+        videos: currentFeedVideos,
+        isSong: isSongVideo,
+        primaryOf: channelId => music?.primaryCategoryForChannel?.(channelId) || '',
+    });
+}
+
 // Renderitzar vídeos de l'API
 // Render de targetes API i flux principal de vídeos
 function renderVideos(videos) {
@@ -8221,6 +8247,7 @@ function renderVideos(videos) {
 
     const featured = getFeaturedVideoForSection(videos, getHeroSectionKey());
     updateHero(featured, 'api');
+    syncCategoryArtists();
 
     const listVideos = featured ? videos.filter(video => String(video.id) !== String(featured.id)) : videos;
 
@@ -12038,6 +12065,7 @@ function renderStaticVideos(videos) {
     applyGridLayoutPreference();
     const featured = getFeaturedVideoForSection(videos, getHeroSectionKey());
     updateHero(featured, 'static');
+    syncCategoryArtists();
     const listVideos = featured ? videos.filter(video => String(video.id) !== String(featured.id)) : videos;
 
     setupDelegatedVideoCardClicks(videosGrid, 'static');
