@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-05T10:05:00.000Z",
+  "updatedAt": "2026-10-05T09:57:40.724Z",
   "artists": [
     {
       "name": "2ES",
@@ -171,7 +171,53 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": []
+        "channels": [],
+        "searchCandidates": [
+          {
+            "id": "UCETR11eCJC5Z9mitj6MbASw",
+            "title": "9Son - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 4,
+            "thumbnail": "https://yt3.ggpht.com/mplgk54y313PYRqoI1OFY52PdrNoGipNrJ5O-jbZbztQBveBhXtxSOCAuBit58MDsE0sjvJaYA=s240-c-k-c0x00ffffff-no-rj",
+            "score": 80,
+            "reasons": [
+              "nom exacte de canal Topic"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-05T09:57:36.330Z"
+          },
+          {
+            "id": "UCgxDx8sv2sxUgoXJixc61Eg",
+            "title": "9son",
+            "handle": "@9son942",
+            "description": "",
+            "subscriberCount": 5800,
+            "thumbnail": "https://yt3.ggpht.com/iW0F_Mg4HvqxKSC1hK269MXo0z9V8rLZL4GSegt83SHgpns9N58-BLbq-5UkqtZcFAeGuIs0rLE=s240-c-k-c0x00ffffff-no-rj",
+            "score": 75,
+            "reasons": [
+              "nom exacte",
+              "primer resultat"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T09:57:36.330Z"
+          },
+          {
+            "id": "UCPJBMmuD2mgN4liF9Rc12mw",
+            "title": "9SON Oficial",
+            "handle": "@9sonoficial",
+            "description": "9SON aixeca el teló a principis de 2010 amb la il·lusió de teixir amb la seva música, una manera de mantenir-se al costat de l'imant de les emocions i les ganes de seguir caminant.\r\n\r\nAquests 10 músics aconsegueixen, amb les seves cançons i els seus directes, una energia i una força que ens mou per dins, amb una seducció que ens omple de sabor i de",
+            "subscriberCount": 1230,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_nBlAsoHSybzWIyjRApPyXy0BzuefuUywC1KECcyZH9l2k=s240-c-k-c0x00ffffff-no-rj",
+            "score": 75,
+            "reasons": [
+              "nom exacte traient oficial",
+              "marca oficial"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T09:57:36.330Z"
+          }
+        ]
       },
       "confidence": "alta",
       "reviewStatus": "aprovat",
@@ -181,7 +227,17 @@
         "genre:manual"
       ],
       "lastChecked": "2026-10-05T10:05:00.000Z",
-      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal YouTube pendent de resolució dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma."
+      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal YouTube pendent de resolució dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma.",
+      "enrichment": {
+        "youtubeSearch": {
+          "checkedAt": "2026-10-05T09:57:36.330Z",
+          "status": "candidats",
+          "query": "9SON",
+          "resultCount": 3,
+          "bestScore": 80,
+          "autoAcceptedId": null
+        }
+      }
     },
     {
       "name": "Acros",
@@ -1288,7 +1344,51 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": []
+        "channels": [],
+        "searchCandidates": [
+          {
+            "id": "UCDPk9MG2RexnOMGTD-YnSnA",
+            "title": "Nat Geo Animals",
+            "handle": "@natgeoanimals",
+            "description": "Explore the wonders of the animal kingdom with National Geographic. National Geographic Animals is a place for all things animals and for animal-lovers alike. Take a journey through the animal kingdom with us and discover things you never knew before, or rediscover your favorite animals! ",
+            "subscriberCount": 6510000,
+            "thumbnail": "https://yt3.ggpht.com/-Qnrya3t3zOFYecI-Dkb7vI-xFo1WaPUCDFgsnpo1ZV4nAegQdUsbMFKXM5HQCEgFPiFqoJa=s240-c-k-c0x00ffffff-no-rj",
+            "score": 53,
+            "reasons": [
+              "nom parcial",
+              "handle coincident"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T09:57:36.707Z"
+          },
+          {
+            "id": "UCcFlzgDVSL9dMUo66cEyWJQ",
+            "title": "The Animals - Topic",
+            "handle": null,
+            "description": "The Animals emerged from Newcastle in the early '60s, blending gritty blues with raw rock energy. Led by Eric Burdon’s powerhouse vocals and Alan Price’s soulful keys, their original lineup earned the nickname “The Animals” for their wild stage presence. After moving to London in 1964, they exploded onto the scene with hits like “Baby Let Me Take Y",
+            "subscriberCount": 8210,
+            "thumbnail": "https://yt3.ggpht.com/MYBSFDvvjVGlsDmKYGYT6Wy57-9LNxxKWoVpkoiqBIG4xHYZg2_ebEy9-0doQmZOTI4jajnnZA=s240-c-k-c0x00ffffff-no-rj",
+            "score": 40,
+            "reasons": [
+              "nom parcial",
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-05T09:57:36.707Z"
+          },
+          {
+            "id": "UCh-aB-rYXIfkoVDo-7zwzGg",
+            "title": "A.N.I.M.A.L. - Topic",
+            "handle": null,
+            "description": "BIOGRAFIA\nA.N.I.M.A.L. Cuyas siglas significan “acosados nuestros indios murieron al luchar.” Es un grupo argentino nacido en 1992 que interrumpe en la escena del rock latinoamericano con un mensaje claro sobre la defensa y valoración de las etnias y razas de todo EL CONTINENTE. Con mas de 30 años de trayectoria, diez álbumes de estudio y presentac",
+            "subscriberCount": 974,
+            "thumbnail": "https://yt3.ggpht.com/_M5QeQkfV9jGBLubqO2K3FFoYK8jmdolE6a0WLQ-BQuym3hnXbPft49VMtNNunbhr_ioOW_xMg=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-05T09:57:36.707Z"
+          }
+        ]
       },
       "confidence": "alta",
       "reviewStatus": "aprovat",
@@ -1298,7 +1398,17 @@
         "genre:manual"
       ],
       "lastChecked": "2026-10-05T10:05:00.000Z",
-      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal YouTube pendent de resolució dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma."
+      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal YouTube pendent de resolució dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma.",
+      "enrichment": {
+        "youtubeSearch": {
+          "checkedAt": "2026-10-05T09:57:36.707Z",
+          "status": "candidats",
+          "query": "Animal",
+          "resultCount": 3,
+          "bestScore": 53,
+          "autoAcceptedId": null
+        }
+      }
     },
     {
       "name": "Anna Andreu",
@@ -9034,7 +9144,55 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": []
+        "channels": [],
+        "searchCandidates": [
+          {
+            "id": "UCH977_Zpn90y2QGeeE-hhlQ",
+            "title": "Itaca Band Oficial",
+            "handle": "@itacabandoficial",
+            "description": "",
+            "subscriberCount": 22700,
+            "thumbnail": "https://yt3.ggpht.com/Qqt1AX2k4YtYROCTdde6qPAHX0f62qlj8mFyOUZOYKgLw23NQt-TVnTBBGoSkTa9nTR4Skf4=s240-c-k-c0x00ffffff-no-rj",
+            "score": 98,
+            "reasons": [
+              "nom exacte traient oficial",
+              "handle coincident",
+              "marca oficial",
+              "primer resultat"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T09:57:37.143Z"
+          },
+          {
+            "id": "UCLgbWJg8gE8lCwufclbvikg",
+            "title": "Itaca Band - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 90,
+            "thumbnail": "https://yt3.ggpht.com/Qqt1AX2k4YtYROCTdde6qPAHX0f62qlj8mFyOUZOYKgLw23NQt-TVnTBBGoSkTa9nTR4Skf4=s240-c-k-c0x00ffffff-no-rj",
+            "score": 80,
+            "reasons": [
+              "nom exacte de canal Topic"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-05T09:57:37.143Z"
+          },
+          {
+            "id": "UChFldWirdaz7znzh_Ksc9Sw",
+            "title": "Sueños de Ítaca Band",
+            "handle": "@suenosdeitaca",
+            "description": "Canal oficial de Sueños de Ítaca, donde encontrarás todos los vídeos del grupo.",
+            "subscriberCount": 17,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_mvFq0a8bQoyPqsxVKs0E_5VLPNzrl5m4m6C4GHYX-gjhk=s240-c-k-c0x00ffffff-no-rj",
+            "score": 45,
+            "reasons": [
+              "nom parcial",
+              "marca oficial"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T09:57:37.143Z"
+          }
+        ]
       },
       "confidence": "alta",
       "reviewStatus": "aprovat",
@@ -9044,7 +9202,17 @@
         "genre:manual"
       ],
       "lastChecked": "2026-10-05T10:05:00.000Z",
-      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal YouTube pendent de resolució dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma."
+      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal YouTube pendent de resolució dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma.",
+      "enrichment": {
+        "youtubeSearch": {
+          "checkedAt": "2026-10-05T09:57:37.143Z",
+          "status": "candidats",
+          "query": "Itaca Band",
+          "resultCount": 3,
+          "bestScore": 98,
+          "autoAcceptedId": null
+        }
+      }
     },
     {
       "name": "Ja t'ho diré",
@@ -11250,7 +11418,51 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": []
+        "channels": [],
+        "searchCandidates": [
+          {
+            "id": "UCOD2VzQJrg-IlcH7VEF79rg",
+            "title": "Kayo Malayo",
+            "handle": "@kayomalayo1143",
+            "description": "",
+            "subscriberCount": 2,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_mMQRvITwpKRn6z00Brv2kKuRxD_C5Bko8yxdsil2c=s240-c-k-c0x00ffffff-no-rj",
+            "score": 88,
+            "reasons": [
+              "nom exacte",
+              "handle coincident"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T09:57:37.413Z"
+          },
+          {
+            "id": "UCkJn1Oupgp27jlFzFl7I2Ag",
+            "title": "Kayo Malayo - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 49,
+            "thumbnail": "https://yt3.ggpht.com/hs-CQZWV6BKGjOgd7f7T7UBGcJxBiaO_9U4nFmsYqIRZGBZdMMfwN0HMs1fyf9-vhTkQuYcRrw=s240-c-k-c0x00ffffff-no-rj",
+            "score": 85,
+            "reasons": [
+              "nom exacte de canal Topic",
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-05T09:57:37.413Z"
+          },
+          {
+            "id": "UCeHZKva3TtyuSaoPxDndDFw",
+            "title": "Kahit malayo kayo, kayo ang tahanan 2",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 0,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_lry5t2S9CBkuXn7Kq1b9WOi6QeOlVNz7kq18pNWnkNZ_GIVopzjXPkqp_Y2rf2p4WTSA=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T09:57:37.413Z"
+          }
+        ]
       },
       "confidence": "alta",
       "reviewStatus": "aprovat",
@@ -11260,7 +11472,17 @@
         "genre:manual"
       ],
       "lastChecked": "2026-10-05T10:05:00.000Z",
-      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal YouTube pendent de resolució dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma."
+      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal YouTube pendent de resolució dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma.",
+      "enrichment": {
+        "youtubeSearch": {
+          "checkedAt": "2026-10-05T09:57:37.413Z",
+          "status": "candidats",
+          "query": "Kayo Malayo",
+          "resultCount": 3,
+          "bestScore": 88,
+          "autoAcceptedId": null
+        }
+      }
     },
     {
       "name": "Kiddi",
@@ -11654,7 +11876,53 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": []
+        "channels": [],
+        "searchCandidates": [
+          {
+            "id": "UCQOqsrBqC_4Ibu_MJrBpK_g",
+            "title": "La Banda del Yuyu",
+            "handle": "@labandadelyuyu4422",
+            "description": "",
+            "subscriberCount": 7,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_k7kbpM9TUU8BfSHAqlTCkEBD7coWzxxZObxo-2l7TfH5U=s240-c-k-c0x00ffffff-no-rj",
+            "score": 88,
+            "reasons": [
+              "nom exacte",
+              "handle coincident"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T09:57:37.665Z"
+          },
+          {
+            "id": "UCSJ3UWpeU4pVvvuK0flmaeg",
+            "title": "La Banda del Yuyu - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 7,
+            "thumbnail": "https://yt3.ggpht.com/CP-rjigkA56twi14o7_E7Co7HvG6byuyQSJTGIM5LIWhZF7YB__jlHltcvE5p3EcHRVUllzkGVY=s240-c-k-c0x00ffffff-no-rj",
+            "score": 85,
+            "reasons": [
+              "nom exacte de canal Topic",
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-05T09:57:37.665Z"
+          },
+          {
+            "id": "UCF6IjtQqoq0khM9ROyQxx8Q",
+            "title": "labandadelyuyu",
+            "handle": "@labandadelyuyu",
+            "description": "",
+            "subscriberCount": 55,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_n-L64kKG0J170R-i0NBX-MVD8oADOGNdQ-gDGa3DGpdA=s240-c-k-c0x00ffffff-no-rj",
+            "score": 25,
+            "reasons": [
+              "handle exacte"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T09:57:37.665Z"
+          }
+        ]
       },
       "confidence": "alta",
       "reviewStatus": "aprovat",
@@ -11664,7 +11932,17 @@
         "genre:manual"
       ],
       "lastChecked": "2026-10-05T10:05:00.000Z",
-      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal YouTube pendent de resolució dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma."
+      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal YouTube pendent de resolució dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma.",
+      "enrichment": {
+        "youtubeSearch": {
+          "checkedAt": "2026-10-05T09:57:37.665Z",
+          "status": "candidats",
+          "query": "La Banda del Yuyu",
+          "resultCount": 3,
+          "bestScore": 88,
+          "autoAcceptedId": null
+        }
+      }
     },
     {
       "name": "La Banda Trapera del Río",
@@ -12573,7 +12851,53 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": []
+        "channels": [],
+        "searchCandidates": [
+          {
+            "id": "UCr8kBnuIa6LPmhZSxbwVs7w",
+            "title": "La Pegatina",
+            "handle": "@lapegatina",
+            "description": "We are La Pegatina, We are the party! Music from Barcelona!",
+            "subscriberCount": 132000,
+            "thumbnail": "https://yt3.ggpht.com/m33QLtoUyVSxVj3SLEQEx129CEXCXC4g-8pZqpGS5NB4lFHvo4M-cF_097S3w7EVgodxJjR9Xw=s240-c-k-c0x00ffffff-no-rj",
+            "score": 100,
+            "reasons": [
+              "nom exacte",
+              "handle exacte",
+              "primer resultat"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T09:57:37.943Z"
+          },
+          {
+            "id": "UCMepRsHQTgYZd3u__Xbj_6A",
+            "title": "La Pegatina - Topic",
+            "handle": null,
+            "description": "La Pegatina, originarios de Montcada i Reixac desde 2003, han viajado por más de 35 países y han realizado más de 1400 conciertos.\nSu nombre es sinónimo de fiesta y diversión. Con 7 discos de estudio y 9 discos en su carrera, son una de las bandas más activas del panorama.",
+            "subscriberCount": 554,
+            "thumbnail": "https://yt3.ggpht.com/m33QLtoUyVSxVj3SLEQEx129CEXCXC4g-8pZqpGS5NB4lFHvo4M-cF_097S3w7EVgodxJjR9Xw=s240-c-k-c0x00ffffff-no-rj",
+            "score": 80,
+            "reasons": [
+              "nom exacte de canal Topic"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-05T09:57:37.943Z"
+          },
+          {
+            "id": "UCDsfI8tgb-vuzS83JbVMiEg",
+            "title": "La Pegatina - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 0,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_m0TWGDJ1pPXYKd1OWZSHyNjjQEhHTuPiVpVP_rKDXXx93mplIIvtbIMrbtzIhsrc4YVA=s240-c-k-c0x00ffffff-no-rj",
+            "score": 80,
+            "reasons": [
+              "nom exacte de canal Topic"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-05T09:57:37.943Z"
+          }
+        ]
       },
       "confidence": "alta",
       "reviewStatus": "aprovat",
@@ -12583,7 +12907,17 @@
         "genre:manual"
       ],
       "lastChecked": "2026-10-05T10:05:00.000Z",
-      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal YouTube pendent de resolució dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma."
+      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal YouTube pendent de resolució dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma.",
+      "enrichment": {
+        "youtubeSearch": {
+          "checkedAt": "2026-10-05T09:57:37.943Z",
+          "status": "candidats",
+          "query": "La Pegatina",
+          "resultCount": 3,
+          "bestScore": 100,
+          "autoAcceptedId": null
+        }
+      }
     },
     {
       "name": "La Sra. Tomasa",
@@ -12602,7 +12936,51 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": []
+        "channels": [],
+        "searchCandidates": [
+          {
+            "id": "UC96Q7Ki2GoRwrwSzeLTtvwg",
+            "title": "La Sra. Tomasa",
+            "handle": "@lasratomasa",
+            "description": "La Sra. Tomasa son el grupo rompedor de la escena, referentes de un sonido y un estilo totalmente innovador. Ofrecen una fusión de estilos desafiantes donde combinan sonidos latinoamericanos (timba, salsa, guagancó) con reggae, funk, rap y las tendencias más electrónicas (drum’n’bass, trap, House...). Todo con un respeto propio de quien ama la músi",
+            "subscriberCount": 22200,
+            "thumbnail": "https://yt3.ggpht.com/i1Tuj4WqMoh9m95I-2RW_ti5pLzUF-PwbsZ6ZxkS4dC32iNisR0n2bJxMBvhJiGJIy8A40NNPQ=s240-c-k-c0x00ffffff-no-rj",
+            "score": 100,
+            "reasons": [
+              "nom exacte",
+              "handle exacte",
+              "primer resultat"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T09:57:38.304Z"
+          },
+          {
+            "id": "UCM-WxdgJTr37_bOOlX5sZhg",
+            "title": "La Sra. Tomasa - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 231,
+            "thumbnail": "https://yt3.ggpht.com/i1Tuj4WqMoh9m95I-2RW_ti5pLzUF-PwbsZ6ZxkS4dC32iNisR0n2bJxMBvhJiGJIy8A40NNPQ=s240-c-k-c0x00ffffff-no-rj",
+            "score": 80,
+            "reasons": [
+              "nom exacte de canal Topic"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-05T09:57:38.304Z"
+          },
+          {
+            "id": "UCw-k8B1GjBqfpGMmpypUpeQ",
+            "title": "J Dose",
+            "handle": "@_jdose",
+            "description": "",
+            "subscriberCount": 186,
+            "thumbnail": "https://yt3.ggpht.com/Fqs14S9nVIOlI5rOd_vTnWVbLgH6EYqm8D9H_8FVRlOyKcHVOVdq6Svymo0e_yJcuYm8SorH=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T09:57:38.304Z"
+          }
+        ]
       },
       "confidence": "alta",
       "reviewStatus": "aprovat",
@@ -12612,7 +12990,17 @@
         "genre:manual"
       ],
       "lastChecked": "2026-10-05T10:05:00.000Z",
-      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal YouTube pendent de resolució dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma."
+      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal YouTube pendent de resolució dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma.",
+      "enrichment": {
+        "youtubeSearch": {
+          "checkedAt": "2026-10-05T09:57:38.304Z",
+          "status": "candidats",
+          "query": "La Sra. Tomasa",
+          "resultCount": 3,
+          "bestScore": 100,
+          "autoAcceptedId": null
+        }
+      }
     },
     {
       "name": "La Tour de Carol",
@@ -16542,7 +16930,54 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": []
+        "channels": [],
+        "searchCandidates": [
+          {
+            "id": "UCKyyi4qBKOJpeV2iZROTQaw",
+            "title": "Muyayo Rif",
+            "handle": "@muyayorif",
+            "description": "Bienvenido al canal de Youtube de Muyayo Rif. Aquí encontrarás nuestros videoclips musicales y videos de nuestras aventuras y conciertos, para no perderte detalle. Pero sin duda es mejor vernos en directo! Pásate por www.muyayorif.com y mira si tocamos en tu ciudad!",
+            "subscriberCount": 925,
+            "thumbnail": "https://yt3.ggpht.com/14s8VYZkwDrgRa5uhDDZZf0_52mqpVab-ajs5gur_A0GbL3wl9EJw3Aw1ICJ1AXAFNdnshFN=s240-c-k-c0x00ffffff-no-rj",
+            "score": 100,
+            "reasons": [
+              "nom exacte",
+              "handle exacte",
+              "primer resultat"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T09:57:38.574Z"
+          },
+          {
+            "id": "UCo7lLQMgwlo1IpACeWFAEag",
+            "title": "Muyayo Rif - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 197,
+            "thumbnail": "https://yt3.ggpht.com/8a3ODJChnlmWX8HYwaTmj8oEq79Y7hc6rWdijH4M6rqtS54RJg3tbT21Y16fRNlEGWmksyegGQ=s240-c-k-c0x00ffffff-no-rj",
+            "score": 80,
+            "reasons": [
+              "nom exacte de canal Topic"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-05T09:57:38.574Z"
+          },
+          {
+            "id": "UCCajhGPgtnjiZfyz9y9QeMg",
+            "title": "Muyayo Rif Fan Club",
+            "handle": "@muyayoriffanclub9241",
+            "description": "Covers de muyayo rif",
+            "subscriberCount": 0,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_mtTErkYeC-d3N82_FUaQDDW4G0KrpBJ-vLU2ohtzZeNQ=s240-c-k-c0x00ffffff-no-rj",
+            "score": 53,
+            "reasons": [
+              "nom parcial",
+              "handle coincident"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T09:57:38.574Z"
+          }
+        ]
       },
       "confidence": "alta",
       "reviewStatus": "aprovat",
@@ -16552,7 +16987,17 @@
         "genre:manual"
       ],
       "lastChecked": "2026-10-05T10:05:00.000Z",
-      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal YouTube pendent de resolució dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma."
+      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal YouTube pendent de resolució dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma.",
+      "enrichment": {
+        "youtubeSearch": {
+          "checkedAt": "2026-10-05T09:57:38.574Z",
+          "status": "candidats",
+          "query": "Muyayo Rif",
+          "resultCount": 3,
+          "bestScore": 100,
+          "autoAcceptedId": null
+        }
+      }
     },
     {
       "name": "N'Gai N'Gai",
@@ -19505,7 +19950,55 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": []
+        "channels": [],
+        "searchCandidates": [
+          {
+            "id": "UCCsCskbol9LpsC0RBt5z6-Q",
+            "title": "Pomada Oficial",
+            "handle": "@pomadaoficial5102",
+            "description": "",
+            "subscriberCount": 12000,
+            "thumbnail": "https://yt3.ggpht.com/qJEPQOo9XVZEzYBoxzaxL3OGBirWBOM5u6iYO8bkFDRmI4EaCRZyCXwosL3Nd8kwguj7nZ0C_g=s240-c-k-c0x00ffffff-no-rj",
+            "score": 93,
+            "reasons": [
+              "nom exacte traient oficial",
+              "handle coincident",
+              "marca oficial"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T09:57:38.844Z"
+          },
+          {
+            "id": "UCpSWFKDV6M63wwX2JUAifyQ",
+            "title": "Pomada - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 1910,
+            "thumbnail": "https://yt3.ggpht.com/qJEPQOo9XVZEzYBoxzaxL3OGBirWBOM5u6iYO8bkFDRmI4EaCRZyCXwosL3Nd8kwguj7nZ0C_g=s240-c-k-c0x00ffffff-no-rj",
+            "score": 85,
+            "reasons": [
+              "nom exacte de canal Topic",
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-05T09:57:38.844Z"
+          },
+          {
+            "id": "UC5hqLFPaYhiTfVq0t36ST7A",
+            "title": "Los Originales De Pomada",
+            "handle": "@losoriginalesdepomada3696",
+            "description": "",
+            "subscriberCount": 11300,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_m_tCa2nhYAk9PiN_F3uHFCXEvHaH1y3HxdHxavZd71WQ=s240-c-k-c0x00ffffff-no-rj",
+            "score": 53,
+            "reasons": [
+              "nom parcial",
+              "handle coincident"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T09:57:38.844Z"
+          }
+        ]
       },
       "confidence": "alta",
       "reviewStatus": "aprovat",
@@ -19515,7 +20008,17 @@
         "genre:manual"
       ],
       "lastChecked": "2026-10-05T10:05:00.000Z",
-      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal YouTube pendent de resolució dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma."
+      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal YouTube pendent de resolució dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma.",
+      "enrichment": {
+        "youtubeSearch": {
+          "checkedAt": "2026-10-05T09:57:38.844Z",
+          "status": "candidats",
+          "query": "Pomada",
+          "resultCount": 3,
+          "bestScore": 93,
+          "autoAcceptedId": null
+        }
+      }
     },
     {
       "name": "Poor Tràmit",
@@ -20996,7 +21499,51 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": []
+        "channels": [],
+        "searchCandidates": [
+          {
+            "id": "UCfOJHONAYVLmmA5lwE117vw",
+            "title": "Roba Estesa",
+            "handle": "@robaestesa",
+            "description": "Roba Estesa som una banda de fusió entre les músiques urbanes i festives, el rock, el folk, el pop i comptem amb Eiden Sánchez, un intèrpret en LSC que participa activament en els directes.\n\nDE LO BO, LO MILLOR! (2024, Halley Records) és el nostre últim treball, un àlbum que vol homenatjar les quotidianitats com a potències d'orgull, celebració i t",
+            "subscriberCount": 11000,
+            "thumbnail": "https://yt3.ggpht.com/wHgPiOJ6wzVJlXvth6fctilc6Tx3Cew5SR4vYkZ7qnASzAvjJDFo89LryCw43z2UljGZNPSH8L0=s240-c-k-c0x00ffffff-no-rj",
+            "score": 95,
+            "reasons": [
+              "nom exacte",
+              "handle exacte"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T09:57:39.129Z"
+          },
+          {
+            "id": "UCl4HM-ELckbc7ToCDTyAvVQ",
+            "title": "Roba Estesa - Topic",
+            "handle": null,
+            "description": "Roba Estesa és un fenomen sense precedents en la història musical catalana i un dels projectes més rellevants després de convertir-se en la primera banda no-mixte de dones i identitats dissidents del circuit festiu dels Països Catalans. El compromís social i polític en les lletres de les seves cançons i la fusió de músiques mediterrània-tradicional",
+            "subscriberCount": 214,
+            "thumbnail": "https://yt3.ggpht.com/wHgPiOJ6wzVJlXvth6fctilc6Tx3Cew5SR4vYkZ7qnASzAvjJDFo89LryCw43z2UljGZNPSH8L0=s240-c-k-c0x00ffffff-no-rj",
+            "score": 85,
+            "reasons": [
+              "nom exacte de canal Topic",
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-05T09:57:39.129Z"
+          },
+          {
+            "id": "UCfrbdaFabNFMHDeIBdQX0gw",
+            "title": "Halley Records",
+            "handle": "@halleyrecords",
+            "description": "Segell discogràfic independent de Barcelona\n(Des de 2015)\n\nARTISTES: Animal, Aspencat, Cactus, Canetrock, Caritat Humana, Despit, El Diluvi, Ferran Palau, Germà Negre, Guillem Ramisa, Itaca Band, Koers, La Fúmiga, Lildami, Marcel Lázara i Júlia Arrey, No Logo, Núria Graham, Oques Grasses, Pau Lobo, Prozak Soup, Pupil·les, Roba Estesa, Sergi Carbone",
+            "subscriberCount": 1050,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_lj_5Ki0FZ9mGhux6b_Z-Xbpmj8GxjCXvGRXofZO3QVLg=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T09:57:39.129Z"
+          }
+        ]
       },
       "confidence": "alta",
       "reviewStatus": "aprovat",
@@ -21006,7 +21553,17 @@
         "genre:manual"
       ],
       "lastChecked": "2026-10-05T10:05:00.000Z",
-      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal YouTube pendent de resolució dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma."
+      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal YouTube pendent de resolució dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma.",
+      "enrichment": {
+        "youtubeSearch": {
+          "checkedAt": "2026-10-05T09:57:39.129Z",
+          "status": "candidats",
+          "query": "Roba Estesa",
+          "resultCount": 3,
+          "bestScore": 95,
+          "autoAcceptedId": null
+        }
+      }
     },
     {
       "name": "Roger Mas i Solé",
@@ -21320,7 +21877,54 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": []
+        "channels": [],
+        "searchCandidates": [
+          {
+            "id": "UCezETW2-gAMtXB98LGBweWQ",
+            "title": "SABOR DE GRACIA OFICIAL",
+            "handle": "@sabordegraciaoficial",
+            "description": "Sabor de Gracia, Grupo de Rumba de tipología gitana. Nacido en Barcelona en Noviembre de 1994, Nuestra Rumba se ha bailado en toda España y también en paises como EE.UU, Venezuela, Argentina, Puerto Rico, Francia, Alemania, Hungria, Belgica, Etc..\nNuestros discos \"Tots Els Colors\" (DCD1997), \"El Mundo Baila ( Industria 2004)! , \"La Cançó amb Rumba ",
+            "subscriberCount": 4970,
+            "thumbnail": "https://yt3.ggpht.com/iYGkVq9aFfj9UxhCOoVG-SaZRyYrN1LJ96mQ_HK8h60qC8JiUJtk9X1HY0K1rBCrS5JOXgpgsOE=s240-c-k-c0x00ffffff-no-rj",
+            "score": 98,
+            "reasons": [
+              "nom exacte traient oficial",
+              "handle coincident",
+              "marca oficial",
+              "primer resultat"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T09:57:39.384Z"
+          },
+          {
+            "id": "UClTLWZcaxCMgkk58dQna18A",
+            "title": "Sabor de Gracia - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 2630,
+            "thumbnail": "https://yt3.ggpht.com/HM7vItjek4Qx4mB3-q_LF2ZfJ6cj2JzebLB8xbl4EfwuZX-WhLnzuu26jURXNvmLHGBlWdpRuA=s240-c-k-c0x00ffffff-no-rj",
+            "score": 80,
+            "reasons": [
+              "nom exacte de canal Topic"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-05T09:57:39.384Z"
+          },
+          {
+            "id": "UCwNdUI4SsXRESRaTFlWXaAQ",
+            "title": "Sabor De Gracia - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 1,
+            "thumbnail": "https://yt3.ggpht.com/iE9E9bbX27dXhveI1N9PSW-rFuhYN9dLMIXdyIo66hFx4GyeN05aWsy8yddxhBS6qgmaKdGL0w=s240-c-k-c0x00ffffff-no-rj",
+            "score": 80,
+            "reasons": [
+              "nom exacte de canal Topic"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-05T09:57:39.384Z"
+          }
+        ]
       },
       "confidence": "alta",
       "reviewStatus": "aprovat",
@@ -21330,7 +21934,17 @@
         "genre:manual"
       ],
       "lastChecked": "2026-10-05T10:05:00.000Z",
-      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal YouTube pendent de resolució dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma."
+      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal YouTube pendent de resolució dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma.",
+      "enrichment": {
+        "youtubeSearch": {
+          "checkedAt": "2026-10-05T09:57:39.384Z",
+          "status": "candidats",
+          "query": "Sabor de Gràcia",
+          "resultCount": 3,
+          "bestScore": 98,
+          "autoAcceptedId": null
+        }
+      }
     },
     {
       "name": "Salomé",
@@ -22844,7 +23458,51 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": []
+        "channels": [],
+        "searchCandidates": [
+          {
+            "id": "UC0PtwzSikWRnftscW9uI_Ug",
+            "title": "STAY HOMAS",
+            "handle": "@stayhomas",
+            "description": "Stay Homas are Klaus, Rai and Guillem, three roommates making some music.",
+            "subscriberCount": 124000,
+            "thumbnail": "https://yt3.ggpht.com/uAbqeA-jMx0hnvSnQeMy-Nyq1ymzh0TIPXHoGJC4ipjEf9-xJJQcFgFfcZ8gj90T1um17DkUpw=s240-c-k-c0x00ffffff-no-rj",
+            "score": 100,
+            "reasons": [
+              "nom exacte",
+              "handle exacte",
+              "primer resultat"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T09:57:39.653Z"
+          },
+          {
+            "id": "UCerRtDlJWXCmBMgGYjq6gYQ",
+            "title": "Stay Homas - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 161,
+            "thumbnail": "https://yt3.ggpht.com/uAbqeA-jMx0hnvSnQeMy-Nyq1ymzh0TIPXHoGJC4ipjEf9-xJJQcFgFfcZ8gj90T1um17DkUpw=s240-c-k-c0x00ffffff-no-rj",
+            "score": 80,
+            "reasons": [
+              "nom exacte de canal Topic"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-05T09:57:39.653Z"
+          },
+          {
+            "id": "UCTP2xRTBHgPe8nD8K8SOfLw",
+            "title": "DLBmusic",
+            "handle": "@dlbmusic8985",
+            "description": "",
+            "subscriberCount": 7,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_nJpto1RqnzrjhErQWHynQWSUxEnnDewBEKVdkJxHyq8Q=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T09:57:39.653Z"
+          }
+        ]
       },
       "confidence": "alta",
       "reviewStatus": "aprovat",
@@ -22854,7 +23512,17 @@
         "genre:manual"
       ],
       "lastChecked": "2026-10-05T10:05:00.000Z",
-      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal YouTube pendent de resolució dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma."
+      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal YouTube pendent de resolució dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma.",
+      "enrichment": {
+        "youtubeSearch": {
+          "checkedAt": "2026-10-05T09:57:39.653Z",
+          "status": "candidats",
+          "query": "Stay Homas",
+          "resultCount": 3,
+          "bestScore": 100,
+          "autoAcceptedId": null
+        }
+      }
     },
     {
       "name": "Still Ill",
@@ -23220,7 +23888,48 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": []
+        "channels": [],
+        "searchCandidates": [
+          {
+            "id": "UCkxi7wy2VhKCMzoxoVEF9pg",
+            "title": "Tashkenti - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 7,
+            "thumbnail": "https://yt3.ggpht.com/FhbMedOzX-rthf9cC-vh1_OBmUyJSmkV96zh9HYyY7ZMUN5SiSKvB31XDl7CUpFN4AZ4piHUAw=s240-c-k-c0x00ffffff-no-rj",
+            "score": 85,
+            "reasons": [
+              "nom exacte de canal Topic",
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-05T09:57:39.918Z"
+          },
+          {
+            "id": "UCU20okgn7qgl_TYpoZBYLvw",
+            "title": "U.S. Embassy Tashkent",
+            "handle": "@usembassytashkent",
+            "description": "Welcome to the U.S. Embassy in Tashkent, Uzbekistan.\n\nThe U.S. recognized the independence of Uzbekistan on December 25, 1991, and opened an Embassy in Tashkent in March 1992. Relations had been boosted by the March 2002 meeting between President Bush and President Karimov in Washington, DC, where the two countries signed the Declaration of Strateg",
+            "subscriberCount": 7190,
+            "thumbnail": "https://yt3.ggpht.com/AUsYpJazh_JPxhSxyKdgKQWD0kGX77gv59qaNROFVvAj6369hekkDUJafAV6GIhqKyUKy4zbZw=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T09:57:39.918Z"
+          },
+          {
+            "id": "UCx8811IudfrNBZhDNHHgknA",
+            "title": "Iwash Tashkent",
+            "handle": "@iwashtashkent2169",
+            "description": "Otabek Jo'rayev YouTube kanali. \n",
+            "subscriberCount": 663000,
+            "thumbnail": "https://yt3.ggpht.com/5c9MQEUb9JjWeoAjwyCzFECHlEs20lqumLqsxIkaM_-0zNkvEiPI-nN0Uy2zZdsVzpsXUDwuJQ=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T09:57:39.918Z"
+          }
+        ]
       },
       "confidence": "alta",
       "reviewStatus": "aprovat",
@@ -23230,7 +23939,17 @@
         "genre:manual"
       ],
       "lastChecked": "2026-10-05T10:05:00.000Z",
-      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal YouTube pendent de resolució dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma."
+      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal YouTube pendent de resolució dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma.",
+      "enrichment": {
+        "youtubeSearch": {
+          "checkedAt": "2026-10-05T09:57:39.918Z",
+          "status": "candidats",
+          "query": "Tashkenti",
+          "resultCount": 3,
+          "bestScore": 85,
+          "autoAcceptedId": null
+        }
+      }
     },
     {
       "name": "Teresa Rebull",
@@ -23345,7 +24064,54 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": []
+        "channels": [],
+        "searchCandidates": [
+          {
+            "id": "UCrAazkwonIdGi_TGkzXkoCw",
+            "title": "Terratombats - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 27,
+            "thumbnail": "https://yt3.ggpht.com/q_nVFwKWT7pT_5jMCdXMN3zZWOYz4dea5MfC6LxU8n1wFwtXC7XuKkDlNyJ7uq6WSoTW-qyTxbk=s240-c-k-c0x00ffffff-no-rj",
+            "score": 85,
+            "reasons": [
+              "nom exacte de canal Topic",
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-05T09:57:40.185Z"
+          },
+          {
+            "id": "UCAx9peaZFIswCLSlT77e1Cg",
+            "title": "Terratombats CAT",
+            "handle": "@terratombats",
+            "description": "",
+            "subscriberCount": 288,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_lbQjHQT3zPSdBa5EUz3g0ovDRE-gT5OoKyPPGQxEXIsIc=s240-c-k-c0x00ffffff-no-rj",
+            "score": 60,
+            "reasons": [
+              "nom parcial",
+              "handle exacte"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T09:57:40.185Z"
+          },
+          {
+            "id": "UCTD1P9Fn_BT2xSNCrUSWuiA",
+            "title": "Terratombats Bloc",
+            "handle": "@terratombatsbloc7147",
+            "description": "",
+            "subscriberCount": 6,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_lzqMGre2YC54_KhH6yko7tLnE71E_quF5xycP_cmc=s240-c-k-c0x00ffffff-no-rj",
+            "score": 53,
+            "reasons": [
+              "nom parcial",
+              "handle coincident"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T09:57:40.185Z"
+          }
+        ]
       },
       "confidence": "alta",
       "reviewStatus": "aprovat",
@@ -23355,7 +24121,17 @@
         "genre:manual"
       ],
       "lastChecked": "2026-10-05T10:05:00.000Z",
-      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal YouTube pendent de resolució dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma."
+      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal YouTube pendent de resolució dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma.",
+      "enrichment": {
+        "youtubeSearch": {
+          "checkedAt": "2026-10-05T09:57:40.185Z",
+          "status": "candidats",
+          "query": "Terratombats",
+          "resultCount": 3,
+          "bestScore": 85,
+          "autoAcceptedId": null
+        }
+      }
     },
     {
       "name": "Tesa",
@@ -25180,7 +25956,52 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": []
+        "channels": [],
+        "searchCandidates": [
+          {
+            "id": "UCNS4k4s7_GRMNpKBlRfpfTQ",
+            "title": "XEIC! - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 182,
+            "thumbnail": "https://yt3.ggpht.com/46DRLykUXzVAJFIUWw-9npej8GzlxzrWHE_AfeHv95QrFS9FI9Wpk4CkwJG33FiZy2zQVBkVEA=s240-c-k-c0x00ffffff-no-rj",
+            "score": 80,
+            "reasons": [
+              "nom exacte de canal Topic"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-05T09:57:40.427Z"
+          },
+          {
+            "id": "UC4ZpvBvQ4jzY_Ppwho9rSiw",
+            "title": "XEIC",
+            "handle": "@xeicska",
+            "description": "",
+            "subscriberCount": 4180,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_kGa6ht2_1UhxEttHp-ow1GbXQMllehPXy7DGGNE3NXUD4=s240-c-k-c0x00ffffff-no-rj",
+            "score": 75,
+            "reasons": [
+              "nom exacte",
+              "primer resultat"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T09:57:40.427Z"
+          },
+          {
+            "id": "UCbqrrDwxENkjPwFNcoNHygg",
+            "title": "xeic",
+            "handle": "@xeic-i8g",
+            "description": "",
+            "subscriberCount": 22,
+            "thumbnail": "https://yt3.ggpht.com/QmH3vjQ_Y6dlwyIJ8oN4vcY8jP06MJNCI9avbAz9C6_b0Mph2eWRDkeZUHSHc61Ep19mWgAQXg=s240-c-k-c0x00ffffff-no-rj",
+            "score": 70,
+            "reasons": [
+              "nom exacte"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T09:57:40.427Z"
+          }
+        ]
       },
       "confidence": "alta",
       "reviewStatus": "aprovat",
@@ -25190,7 +26011,17 @@
         "genre:manual"
       ],
       "lastChecked": "2026-10-05T10:05:00.000Z",
-      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal YouTube pendent de resolució dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma."
+      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal YouTube pendent de resolució dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma.",
+      "enrichment": {
+        "youtubeSearch": {
+          "checkedAt": "2026-10-05T09:57:40.427Z",
+          "status": "candidats",
+          "query": "Xeic!",
+          "resultCount": 3,
+          "bestScore": 80,
+          "autoAcceptedId": null
+        }
+      }
     },
     {
       "name": "Xenia Casado",
