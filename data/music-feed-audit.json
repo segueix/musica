@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-05T13:03:44.389Z",
+  "generatedAt": "2026-10-05T13:19:54.533Z",
   "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
   "deepPagesFetched": 0,
   "deepChannelCount": 20,
-  "topicChannelCount": 178,
-  "governedChannelCount": 84,
+  "topicChannelCount": 182,
+  "governedChannelCount": 85,
   "topicCoverage": [
     {
       "id": "UCqaEtRht2jakBhGFLzS617w",
@@ -560,6 +560,14 @@
       "governs": true
     },
     {
+      "id": "UC_nlyjkIdPSWKkzbWK7Q-0w",
+      "name": "Germà Negre",
+      "songs": 41,
+      "matched": 34,
+      "coverage": 0.83,
+      "governs": true
+    },
+    {
       "id": "UC_Nx-tsTDRubDg1dbd5jwAw",
       "name": "Sandra Bautista",
       "songs": 24,
@@ -1064,6 +1072,13 @@
       "withClip": 0
     },
     {
+      "id": "UCrQY3EI5TJXNbCwkXcDLp7A",
+      "name": "Al Tall",
+      "tracks": 285,
+      "selected": 40,
+      "withClip": 0
+    },
+    {
       "id": "UCz-O8jJsp_uT_vORvd9Etbg",
       "name": "Albert Fibla",
       "tracks": 75,
@@ -1309,6 +1324,13 @@
       "withClip": 1
     },
     {
+      "id": "UChRlRycsUvrvZZ-upnGunLw",
+      "name": "El Pont d'Arcalís",
+      "tracks": 131,
+      "selected": 40,
+      "withClip": 0
+    },
+    {
       "id": "UCBMrWboBJ7RC04ul-MNY0xA",
       "name": "El Pony Pisador",
       "tracks": 106,
@@ -1365,6 +1387,13 @@
       "withClip": 8
     },
     {
+      "id": "UCv6aLx9OL9Qzc2nmNT5_IdA",
+      "name": "Esquirols",
+      "tracks": 89,
+      "selected": 40,
+      "withClip": 0
+    },
+    {
       "id": "UC-1A04_-NE4nuEor7HG7aSg",
       "name": "Feliu Ventura",
       "tracks": 113,
@@ -1405,6 +1434,13 @@
       "tracks": 32,
       "selected": 12,
       "withClip": 7
+    },
+    {
+      "id": "UCFI6QGe27kctP5lGeugsrhA",
+      "name": "Germà Negre",
+      "tracks": 49,
+      "selected": 14,
+      "withClip": 28
     },
     {
       "id": "UCvqTGNjxbWceoaz4pkBSEzg",
@@ -2247,13 +2283,13 @@
       "withClip": 36
     }
   ],
-  "indexedChannelCount": 374,
-  "resolvedChannelCount": 374,
-  "feedChannelCount": 374,
-  "rawPublicVideoCount": 4698,
-  "feedVideoCount": 4125,
-  "acceptedMusicCount": 4109,
-  "categoryEligibleVideoCount": 4104,
+  "indexedChannelCount": 379,
+  "resolvedChannelCount": 379,
+  "feedChannelCount": 379,
+  "rawPublicVideoCount": 4717,
+  "feedVideoCount": 4162,
+  "acceptedMusicCount": 4128,
+  "categoryEligibleVideoCount": 4123,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
     "before": 0,
@@ -2262,8 +2298,8 @@
   },
   "contentReviewCount": 553,
   "contentTypeCounts": {
-    "song": 4004,
-    "live_song": 100,
+    "song": 4017,
+    "live_song": 106,
     "album": 5,
     "other": 36,
     "review": 553
@@ -2271,10 +2307,10 @@
   "unresolvedChannelIds": [],
   "channelsWithoutUploads": [],
   "channelsWithoutVideos": [
-    "UCHVIvz-1UD7NLa_FBveiFnw"
+    "UCFI6QGe27kctP5lGeugsrhA"
   ],
   "channelsWithoutAcceptedMusic": [],
   "allIndexedChannelsVisible": true,
-  "publishedFeedVideoCount": 4138,
+  "publishedFeedVideoCount": 4165,
   "publishedShortVideoCount": 0
 }
