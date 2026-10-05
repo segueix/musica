@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-05T09:46:17.396Z",
+  "updatedAt": "2026-10-05T09:47:00.000Z",
   "artists": [
     {
       "name": "2ES",
@@ -5175,7 +5175,22 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UChMW6YylOdFelVBHnIsXM4Q",
+            "handle": "@elputunota",
+            "name": "elputunota",
+            "type": "official",
+            "primary": true
+          },
+          {
+            "id": "UCCNpPo0bc8xsWYXVMvhg63Q",
+            "handle": null,
+            "name": "El Nota - Topic",
+            "type": "topic",
+            "primary": false
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UCCNpPo0bc8xsWYXVMvhg63Q",
@@ -5222,10 +5237,12 @@
       "reviewStatus": "aprovat",
       "active": true,
       "sources": [
-        "manual-user-2026-10-05"
+        "manual-user-2026-10-05",
+        "youtube:targeted-video-search-verified",
+        "https://www.youtube.com/@elputunota"
       ],
-      "lastChecked": "2026-10-05T09:40:00.000Z",
-      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal YouTube pendent de resolució dirigida.",
+      "lastChecked": "2026-10-05T09:47:00.000Z",
+      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canals oficial i Topic verificats a partir de «Tampoc és tan difícil».",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-05T09:46:16.789Z",
