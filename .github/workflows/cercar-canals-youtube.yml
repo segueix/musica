@@ -2,6 +2,10 @@ name: Cercar canals YouTube
 
 on:
   push:
+    # Només a main: el job treballa sempre sobre l'últim main (git reset) i hi publica. En una branca, una fusió de
+    # main que porta aquests fitxers el disparava i, si la quota de l'API era esgotada, la PR sortia en vermell.
+    branches:
+      - main
     paths:
       - "scripts/cercar_canals_youtube.js"
       - "scripts/resoldre_canals_verificats.js"

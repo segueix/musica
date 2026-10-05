@@ -1501,3 +1501,11 @@ La selecció manual tampoc aplica la deduplicació de títols pop: «Nocturne No
 **Pendent (no tocat):** altres rutes escrites des de l'arrel que a GitHub Pages donen 404 i, per tant, ara no es carreguen: `navigation.js` (`/css/category-chips.css`, `/css/typography-polish.css`, `/css/spacing-polish.css`, `/js/features/segueix-tv.js`, `context-tv.js`, `tv-scroll-ui.js`), `segueix-app.js` (`/js/features/shorts-polish.js`), `channel.js` (`/js/channels-ca.json`). Si s'arreglessin, començarien a carregar-se (canvi visible): decidir-ho abans.
 
 **Proves:** `tests/player-readable-url.test.js` (GitHub Pages: `/musica/?v=<id>`; ruta llegible dins la carpeta), `tests/continue-watching-regressions.test.js`, i opt-in `node tests/browser/verificar-recarrega.js` (simula GitHub Pages amb `context.route`: recarregar torna a l'app amb la cançó, `/musica/video/…` passa pel 404.html, Inici deixa `/musica/`). Amb el codi d'abans, la prova mostra la URL `https://segueix.github.io/video/…` i la recàrrega no torna.
+
+## [2026-10-05] - La PR sortia en vermell per «cerca» (Cercar canals YouTube) sense cap relació amb el canvi
+
+**Símptoma:** la comprovació «cerca» de la PR fallava: `resoldre_canals_verificats.js` → `YouTube API HTTP 403 … exceeded your quota`.
+
+**Causa:** (1) el workflow `cercar-canals-youtube.yml` s'executava en qualsevol `push` que toqués els seus fitxers, **de qualsevol branca**: una fusió de `main` a la branca de la PR hi portava canvis de `data/youtube-verified-handles.json` i el disparava. El job no prova la branca (fa `git reset --hard origin/main`), així que només podia fallar per causes externes. (2) La quota diària de l'API de YouTube (compartida per tots els workflows) era esgotada, i `resoldre_canals_verificats.js` sortia amb error (codi 1); `cercar_canals_youtube.js` ja s'aturava net.
+
+**Solució:** el `push` del workflow només és a `main` (`branches: [main]`), i `resoldre_canals_verificats.js` reconeix la quota esgotada (`isQuotaError()`: 403 amb `quotaExceeded`/`limit`), s'atura, desa el que ja ha resolt i surt amb codi 0 (la propera execució diària, 08:17 UTC, continua). Qualsevol altre error de l'API continua fent fallar el job. Prova: `tests/resoldre-canals-quota.test.js`.
