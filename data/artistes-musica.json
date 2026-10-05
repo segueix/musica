@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-05T13:03:14.821Z",
+  "updatedAt": "2026-10-05T13:18:36.165Z",
   "artists": [
     {
       "name": "2ES",
@@ -653,14 +653,24 @@
       "genres": [
         "Folk i arrel"
       ],
-      "territories": [],
+      "territories": [
+        "País Valencià"
+      ],
       "languages": [
         "ca"
       ],
       "wikidataId": "Q2306388",
       "musicbrainzId": "3ad2965d-fcfa-4b91-ae93-e6ec8e32c1c1",
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCrQY3EI5TJXNbCwkXcDLp7A",
+            "handle": null,
+            "name": "Al Tall - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
         "candidates": [],
         "searchCandidates": [
           {
@@ -709,15 +719,17 @@
           }
         ]
       },
-      "confidence": "pendent",
-      "reviewStatus": "pendent",
-      "active": false,
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
         "https://www.wikidata.org/wiki/Q2306388",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "https://www.cervantesvirtual.com/portales/al_tall/discografia/",
+        "https://www.youtube.com/channel/UCrQY3EI5TJXNbCwkXcDLp7A"
       ],
-      "lastChecked": "2026-09-25T15:53:52.918Z",
-      "notes": "",
+      "lastChecked": "2026-10-05T13:18:36.165Z",
+      "notes": " Activat el 2026-10-05 a petició de l’usuari: folk i cançó d’arrel en català. Selecció inicial de repertori català amb llista blanca; altres peces pendents de contrastar.",
       "enrichment": {
         "musicbrainz": {
           "checkedAt": "2026-09-25T15:53:52.918Z",
@@ -5415,14 +5427,24 @@
       "genres": [
         "Folk i arrel"
       ],
-      "territories": [],
+      "territories": [
+        "Catalunya"
+      ],
       "languages": [
         "ca"
       ],
       "wikidataId": "Q192427",
       "musicbrainzId": "afd9e0e5-6c1c-4560-9350-64fec5731bc2",
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UChRlRycsUvrvZZ-upnGunLw",
+            "handle": null,
+            "name": "El Pont d'Arcalís - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
         "candidates": [],
         "searchCandidates": [
           {
@@ -5466,15 +5488,17 @@
           }
         ]
       },
-      "confidence": "pendent",
-      "reviewStatus": "pendent",
-      "active": false,
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
         "https://www.wikidata.org/wiki/Q192427",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "https://materialsescolafolk.tradicionarius.cat/inici/el-pont-darcal%C3%ADs/la-m%C3%BAsica",
+        "https://www.youtube.com/channel/UChRlRycsUvrvZZ-upnGunLw"
       ],
-      "lastChecked": "2026-09-25T15:54:25.465Z",
-      "notes": "",
+      "lastChecked": "2026-10-05T13:18:36.165Z",
+      "notes": " Activat el 2026-10-05 a petició de l’usuari: folk i cançó d’arrel en català. Selecció inicial de repertori català amb llista blanca; altres peces pendents de contrastar.",
       "enrichment": {
         "musicbrainz": {
           "checkedAt": "2026-09-25T15:54:25.465Z",
@@ -6641,14 +6665,24 @@
       "genres": [
         "Folk i arrel"
       ],
-      "territories": [],
+      "territories": [
+        "Catalunya"
+      ],
       "languages": [
         "ca"
       ],
       "wikidataId": "Q11920737",
       "musicbrainzId": "d5ef76d8-e91e-4499-803e-3143813b04e5",
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCv6aLx9OL9Qzc2nmNT5_IdA",
+            "handle": null,
+            "name": "Esquirols - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
         "candidates": [],
         "searchCandidates": [
           {
@@ -6697,16 +6731,18 @@
           }
         ]
       },
-      "confidence": "pendent",
-      "reviewStatus": "pendent",
-      "active": false,
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
         "https://www.wikidata.org/wiki/Q11920737",
         "wikidata:languages-spoken-catalan",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "https://www.memoria.cat/records-personals/torna-torna-serrallona-1980-cinque-disc-desquirols-i-el-seu-context/",
+        "https://www.youtube.com/channel/UCv6aLx9OL9Qzc2nmNT5_IdA"
       ],
-      "lastChecked": "2026-09-25T15:54:35.362Z",
-      "notes": "",
+      "lastChecked": "2026-10-05T13:18:36.165Z",
+      "notes": " Activat el 2026-10-05 a petició de l’usuari: folk i cançó d’arrel en català. Selecció inicial de repertori català amb llista blanca; altres peces pendents de contrastar.",
       "enrichment": {
         "musicbrainz": {
           "checkedAt": "2026-09-25T15:54:35.362Z",
@@ -7845,14 +7881,31 @@
       "genres": [
         "Folk i arrel"
       ],
-      "territories": [],
+      "territories": [
+        "Catalunya"
+      ],
       "languages": [
         "ca"
       ],
       "wikidataId": "Q20875980",
       "musicbrainzId": "62a7f13f-3359-4e9d-a408-687d835a21ec",
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UC_nlyjkIdPSWKkzbWK7Q-0w",
+            "handle": "@germanegre",
+            "name": "Germà Negre",
+            "type": "official",
+            "primary": true
+          },
+          {
+            "id": "UCFI6QGe27kctP5lGeugsrhA",
+            "handle": null,
+            "name": "Germà Negre - Topic",
+            "type": "topic",
+            "primary": false
+          }
+        ],
         "candidates": [],
         "searchCandidates": [
           {
@@ -7901,15 +7954,18 @@
           }
         ]
       },
-      "confidence": "pendent",
-      "reviewStatus": "pendent",
-      "active": false,
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
         "https://www.wikidata.org/wiki/Q20875980",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "https://www.germanegre.cat/",
+        "https://www.youtube.com/channel/UC_nlyjkIdPSWKkzbWK7Q-0w",
+        "https://www.youtube.com/channel/UCFI6QGe27kctP5lGeugsrhA"
       ],
-      "lastChecked": "2026-09-25T15:54:42.196Z",
-      "notes": "",
+      "lastChecked": "2026-10-05T13:18:36.165Z",
+      "notes": " Activat el 2026-10-05 a petició de l’usuari: folk i cançó d’arrel en català. Selecció inicial de repertori català amb llista blanca; altres peces pendents de contrastar.",
       "enrichment": {
         "musicbrainz": {
           "checkedAt": "2026-09-25T15:54:42.196Z",
