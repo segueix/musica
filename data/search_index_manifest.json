@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-05T09:47:49.330Z",
+  "generatedAt": "2026-10-05T10:00:12.985Z",
   "strategy": {
     "mode": "hybrid",
     "monthlyRecentYears": 2
@@ -11,7 +11,7 @@
       "month": 10,
       "granularity": "month",
       "file": "search_index_2025_10.json",
-      "itemCount": 1
+      "itemCount": 2
     },
     {
       "key": "2025_09",
@@ -19,7 +19,7 @@
       "month": 9,
       "granularity": "month",
       "file": "search_index_2025_09.json",
-      "itemCount": 166
+      "itemCount": 168
     },
     {
       "key": "2025_08",
@@ -43,7 +43,7 @@
       "month": 6,
       "granularity": "month",
       "file": "search_index_2025_06.json",
-      "itemCount": 29
+      "itemCount": 30
     },
     {
       "key": "2025_05",
@@ -51,7 +51,7 @@
       "month": 5,
       "granularity": "month",
       "file": "search_index_2025_05.json",
-      "itemCount": 42
+      "itemCount": 43
     },
     {
       "key": "2025_04",
@@ -59,7 +59,7 @@
       "month": 4,
       "granularity": "month",
       "file": "search_index_2025_04.json",
-      "itemCount": 48
+      "itemCount": 57
     },
     {
       "key": "2025_03",
@@ -67,7 +67,7 @@
       "month": 3,
       "granularity": "month",
       "file": "search_index_2025_03.json",
-      "itemCount": 870
+      "itemCount": 903
     },
     {
       "key": "2025_02",
@@ -75,7 +75,7 @@
       "month": 2,
       "granularity": "month",
       "file": "search_index_2025_02.json",
-      "itemCount": 51
+      "itemCount": 52
     },
     {
       "key": "2025_01",
@@ -91,7 +91,7 @@
       "month": null,
       "granularity": "year",
       "file": "search_index_2024.json",
-      "itemCount": 676
+      "itemCount": 747
     },
     {
       "key": "2023",
@@ -99,7 +99,7 @@
       "month": null,
       "granularity": "year",
       "file": "search_index_2023.json",
-      "itemCount": 457
+      "itemCount": 493
     },
     {
       "key": "2022",
@@ -107,7 +107,7 @@
       "month": null,
       "granularity": "year",
       "file": "search_index_2022.json",
-      "itemCount": 368
+      "itemCount": 386
     },
     {
       "key": "2021",
@@ -115,7 +115,7 @@
       "month": null,
       "granularity": "year",
       "file": "search_index_2021.json",
-      "itemCount": 294
+      "itemCount": 310
     },
     {
       "key": "2020",
@@ -123,7 +123,7 @@
       "month": null,
       "granularity": "year",
       "file": "search_index_2020.json",
-      "itemCount": 342
+      "itemCount": 396
     },
     {
       "key": "2019",
@@ -131,7 +131,7 @@
       "month": null,
       "granularity": "year",
       "file": "search_index_2019.json",
-      "itemCount": 214
+      "itemCount": 239
     },
     {
       "key": "2018",
@@ -139,7 +139,7 @@
       "month": null,
       "granularity": "year",
       "file": "search_index_2018.json",
-      "itemCount": 213
+      "itemCount": 263
     },
     {
       "key": "2017",
@@ -147,7 +147,7 @@
       "month": null,
       "granularity": "year",
       "file": "search_index_2017.json",
-      "itemCount": 207
+      "itemCount": 228
     },
     {
       "key": "2016",
@@ -155,7 +155,7 @@
       "month": null,
       "granularity": "year",
       "file": "search_index_2016.json",
-      "itemCount": 160
+      "itemCount": 170
     },
     {
       "key": "2015",
@@ -163,7 +163,7 @@
       "month": null,
       "granularity": "year",
       "file": "search_index_2015.json",
-      "itemCount": 300
+      "itemCount": 361
     },
     {
       "key": "2014",
@@ -171,7 +171,7 @@
       "month": null,
       "granularity": "year",
       "file": "search_index_2014.json",
-      "itemCount": 605
+      "itemCount": 629
     },
     {
       "key": "2013",
@@ -179,7 +179,7 @@
       "month": null,
       "granularity": "year",
       "file": "search_index_2013.json",
-      "itemCount": 29
+      "itemCount": 42
     },
     {
       "key": "2012",
@@ -187,7 +187,7 @@
       "month": null,
       "granularity": "year",
       "file": "search_index_2012.json",
-      "itemCount": 9
+      "itemCount": 13
     },
     {
       "key": "2011",

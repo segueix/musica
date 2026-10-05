@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-05T09:47:48.614Z",
+  "generatedAt": "2026-10-05T10:00:12.240Z",
   "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
   "deepPagesFetched": 0,
   "deepChannelCount": 20,
-  "topicChannelCount": 163,
-  "governedChannelCount": 79,
+  "topicChannelCount": 176,
+  "governedChannelCount": 86,
   "topicCoverage": [
     {
       "id": "UCqaEtRht2jakBhGFLzS617w",
@@ -124,6 +124,14 @@
       "name": "Julieta",
       "songs": 36,
       "matched": 36,
+      "coverage": 1,
+      "governs": true
+    },
+    {
+      "id": "UCr8kBnuIa6LPmhZSxbwVs7w",
+      "name": "La Pegatina",
+      "songs": 8,
+      "matched": 8,
       "coverage": 1,
       "governs": true
     },
@@ -288,6 +296,14 @@
       "governs": true
     },
     {
+      "id": "UCH977_Zpn90y2QGeeE-hhlQ",
+      "name": "Itaca Band",
+      "songs": 44,
+      "matched": 42,
+      "coverage": 0.95,
+      "governs": true
+    },
+    {
       "id": "UCVeo5x9sEwL4yxoo-004zqw",
       "name": "Malson Atmosfèric",
       "songs": 19,
@@ -360,10 +376,26 @@
       "governs": true
     },
     {
+      "id": "UC0PtwzSikWRnftscW9uI_Ug",
+      "name": "STAY HOMAS",
+      "songs": 39,
+      "matched": 36,
+      "coverage": 0.92,
+      "governs": true
+    },
+    {
       "id": "UCwjV0xSIDOp3SqY9A9dCsZA",
       "name": "Celobert",
       "songs": 11,
       "matched": 10,
+      "coverage": 0.91,
+      "governs": true
+    },
+    {
+      "id": "UC96Q7Ki2GoRwrwSzeLTtvwg",
+      "name": "La Sra. Tomasa",
+      "songs": 32,
+      "matched": 29,
       "coverage": 0.91,
       "governs": true
     },
@@ -452,6 +484,14 @@
       "name": "Manu Guix",
       "songs": 39,
       "matched": 34,
+      "coverage": 0.87,
+      "governs": true
+    },
+    {
+      "id": "UC4ZpvBvQ4jzY_Ppwho9rSiw",
+      "name": "XEIC",
+      "songs": 46,
+      "matched": 40,
       "coverage": 0.87,
       "governs": true
     },
@@ -552,6 +592,14 @@
       "governs": true
     },
     {
+      "id": "UCPJBMmuD2mgN4liF9Rc12mw",
+      "name": "9SON",
+      "songs": 37,
+      "matched": 30,
+      "coverage": 0.81,
+      "governs": true
+    },
+    {
       "id": "UChYQSBa6bIG2yArpLA4ykvA",
       "name": "Gertrudis",
       "songs": 31,
@@ -612,6 +660,14 @@
       "name": "DAVEU))",
       "songs": 9,
       "matched": 7,
+      "coverage": 0.78,
+      "governs": true
+    },
+    {
+      "id": "UCfOJHONAYVLmmA5lwE117vw",
+      "name": "Roba Estesa",
+      "songs": 41,
+      "matched": 32,
       "coverage": 0.78,
       "governs": true
     },
@@ -704,6 +760,14 @@
       "governs": false
     },
     {
+      "id": "UCKyyi4qBKOJpeV2iZROTQaw",
+      "name": "Muyayo Rif",
+      "songs": 38,
+      "matched": 22,
+      "coverage": 0.58,
+      "governs": false
+    },
+    {
       "id": "UCUFf95lc9BoH8zy0Tn1Tm9w",
       "name": "gusset",
       "songs": 21,
@@ -748,6 +812,14 @@
       "name": "La Mousse",
       "songs": 2,
       "matched": 1,
+      "coverage": 0.5,
+      "governs": false
+    },
+    {
+      "id": "UCezETW2-gAMtXB98LGBweWQ",
+      "name": "SABOR DE GRACIA",
+      "songs": 12,
+      "matched": 6,
       "coverage": 0.5,
       "governs": false
     },
@@ -797,6 +869,14 @@
       "songs": 15,
       "matched": 5,
       "coverage": 0.33,
+      "governs": false
+    },
+    {
+      "id": "UCAx9peaZFIswCLSlT77e1Cg",
+      "name": "Terratombats CAT",
+      "songs": 29,
+      "matched": 8,
+      "coverage": 0.28,
       "governs": false
     },
     {
@@ -896,6 +976,14 @@
       "governs": false
     },
     {
+      "id": "UCQOqsrBqC_4Ibu_MJrBpK_g",
+      "name": "La Banda del Yuyu",
+      "songs": 0,
+      "matched": 0,
+      "coverage": 0,
+      "governs": false
+    },
+    {
       "id": "UC5CGdoxqbma-pqkAHPjkq9w",
       "name": "La Tour de Carol",
       "songs": 0,
@@ -929,7 +1017,10 @@
     }
   ],
   "topicGovernance": "apply",
-  "governedReclassified": {},
+  "governedReclassified": {
+    "other": 29,
+    "song": 1
+  },
   "topicHiddenCount": 0,
   "topicChannels": [
     {
@@ -938,6 +1029,13 @@
       "tracks": 136,
       "selected": 40,
       "withClip": 41
+    },
+    {
+      "id": "UCETR11eCJC5Z9mitj6MbASw",
+      "name": "9Son",
+      "tracks": 24,
+      "selected": 0,
+      "withClip": 23
     },
     {
       "id": "UCrmKSeRAoGbFoEiLv36EzWg",
@@ -1388,6 +1486,13 @@
       "withClip": 12
     },
     {
+      "id": "UCLgbWJg8gE8lCwufclbvikg",
+      "name": "Itaca Band",
+      "tracks": 108,
+      "selected": 41,
+      "withClip": 33
+    },
+    {
       "id": "UCzQX193kQwe6E3QbRLPz59g",
       "name": "Jo Jet i Maria Ribot",
       "tracks": 100,
@@ -1458,11 +1563,25 @@
       "withClip": 31
     },
     {
+      "id": "UCkJn1Oupgp27jlFzFl7I2Ag",
+      "name": "Kayo Malayo",
+      "tracks": 30,
+      "selected": 26,
+      "withClip": 0
+    },
+    {
       "id": "UCC66jsgEM01kvhvwJ59xttA",
       "name": "KOP",
       "tracks": 84,
       "selected": 40,
       "withClip": 6
+    },
+    {
+      "id": "UCSJ3UWpeU4pVvvuK0flmaeg",
+      "name": "La Banda del Yuyu",
+      "tracks": 53,
+      "selected": 40,
+      "withClip": 0
     },
     {
       "id": "UCMzWN1obqqsyoTQxZ-WsPXA",
@@ -1491,6 +1610,20 @@
       "tracks": 12,
       "selected": 10,
       "withClip": 0
+    },
+    {
+      "id": "UCMepRsHQTgYZd3u__Xbj_6A",
+      "name": "La Pegatina",
+      "tracks": 426,
+      "selected": 42,
+      "withClip": 8
+    },
+    {
+      "id": "UCM-WxdgJTr37_bOOlX5sZhg",
+      "name": "La Sra. Tomasa",
+      "tracks": 154,
+      "selected": 40,
+      "withClip": 22
     },
     {
       "id": "UC8DHU0fP67z2wgVm7Lkvrzw",
@@ -1652,6 +1785,13 @@
       "tracks": 31,
       "selected": 0,
       "withClip": 23
+    },
+    {
+      "id": "UCo7lLQMgwlo1IpACeWFAEag",
+      "name": "Muyayo Rif",
+      "tracks": 78,
+      "selected": 40,
+      "withClip": 21
     },
     {
       "id": "UCTn8anEMvCsxpCMhyajKjrg",
@@ -1829,6 +1969,13 @@
       "withClip": 19
     },
     {
+      "id": "UCl4HM-ELckbc7ToCDTyAvVQ",
+      "name": "Roba Estesa",
+      "tracks": 63,
+      "selected": 28,
+      "withClip": 23
+    },
+    {
       "id": "UC7kOHFUIoTiH9RrPznoJDEQ",
       "name": "Roger Mas",
       "tracks": 282,
@@ -1841,6 +1988,13 @@
       "tracks": 3,
       "selected": 1,
       "withClip": 2
+    },
+    {
+      "id": "UClTLWZcaxCMgkk58dQna18A",
+      "name": "Sabor de Gracia",
+      "tracks": 215,
+      "selected": 40,
+      "withClip": 6
     },
     {
       "id": "UC3AV402A_vdbG18-cpYsX-Q",
@@ -1948,6 +2102,13 @@
       "withClip": 33
     },
     {
+      "id": "UCerRtDlJWXCmBMgGYjq6gYQ",
+      "name": "Stay Homas",
+      "tracks": 58,
+      "selected": 21,
+      "withClip": 22
+    },
+    {
       "id": "UCIBWCquq4qqhRWKD6nOdR4w",
       "name": "Still Ill",
       "tracks": 102,
@@ -1960,6 +2121,20 @@
       "tracks": 43,
       "selected": 1,
       "withClip": 20
+    },
+    {
+      "id": "UCkxi7wy2VhKCMzoxoVEF9pg",
+      "name": "Tashkenti",
+      "tracks": 17,
+      "selected": 14,
+      "withClip": 0
+    },
+    {
+      "id": "UCrAazkwonIdGi_TGkzXkoCw",
+      "name": "Terratombats",
+      "tracks": 24,
+      "selected": 14,
+      "withClip": 6
     },
     {
       "id": "UCx82VgJTTf_cKHahlakKfFg",
@@ -2044,34 +2219,45 @@
       "tracks": 15,
       "selected": 4,
       "withClip": 11
+    },
+    {
+      "id": "UCNS4k4s7_GRMNpKBlRfpfTQ",
+      "name": "XEIC!",
+      "tracks": 94,
+      "selected": 40,
+      "withClip": 36
     }
   ],
-  "indexedChannelCount": 343,
-  "resolvedChannelCount": 343,
-  "feedChannelCount": 343,
-  "rawPublicVideoCount": 4431,
-  "feedVideoCount": 3931,
-  "acceptedMusicCount": 3890,
-  "categoryEligibleVideoCount": 3885,
+  "indexedChannelCount": 367,
+  "resolvedChannelCount": 367,
+  "feedChannelCount": 367,
+  "rawPublicVideoCount": 5308,
+  "feedVideoCount": 4642,
+  "acceptedMusicCount": 4586,
+  "categoryEligibleVideoCount": 4575,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
-    "before": 3,
+    "before": 145,
     "matched": 0,
-    "rejected": 3
+    "rejected": 145
   },
-  "contentReviewCount": 505,
+  "contentReviewCount": 560,
   "contentTypeCounts": {
-    "song": 3796,
-    "live_song": 89,
-    "album": 5,
-    "other": 36,
-    "review": 505
+    "song": 4435,
+    "live_song": 140,
+    "album": 11,
+    "other": 162,
+    "review": 560
   },
   "unresolvedChannelIds": [],
   "channelsWithoutUploads": [],
-  "channelsWithoutVideos": [],
-  "channelsWithoutAcceptedMusic": [],
+  "channelsWithoutVideos": [
+    "UCETR11eCJC5Z9mitj6MbASw"
+  ],
+  "channelsWithoutAcceptedMusic": [
+    "UCQOqsrBqC_4Ibu_MJrBpK_g"
+  ],
   "allIndexedChannelsVisible": true,
-  "publishedFeedVideoCount": 3922,
+  "publishedFeedVideoCount": 4191,
   "publishedShortVideoCount": 0
 }
