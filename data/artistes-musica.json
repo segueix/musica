@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-05T09:42:08.893Z",
+  "updatedAt": "2026-10-05T09:46:00.000Z",
   "artists": [
     {
       "name": "2ES",
@@ -16,7 +16,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCjEehp73GI2mh9Rkv31QT9w",
+            "handle": "@twoeazzy2",
+            "name": "2ES",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UCjEehp73GI2mh9Rkv31QT9w",
@@ -66,10 +74,11 @@
       "reviewStatus": "aprovat",
       "active": true,
       "sources": [
-        "manual-user-2026-10-05"
+        "manual-user-2026-10-05",
+        "youtube:targeted-search-verified"
       ],
-      "lastChecked": "2026-10-05T09:40:00.000Z",
-      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal YouTube pendent de resolució dirigida.",
+      "lastChecked": "2026-10-05T09:46:00.000Z",
+      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal(s) YouTube verificat(s) amb cerca dirigida.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-05T09:42:03.874Z",
@@ -160,7 +169,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCrmKSeRAoGbFoEiLv36EzWg",
+            "handle": null,
+            "name": "ACROS - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UCrmKSeRAoGbFoEiLv36EzWg",
@@ -211,10 +228,11 @@
       "active": true,
       "sources": [
         "manual-user-2026-10-05",
-        "https://www.radiorahim.cat/artista/acros/"
+        "https://www.radiorahim.cat/artista/acros/",
+        "youtube:targeted-search-verified"
       ],
-      "lastChecked": "2026-10-05T09:40:00.000Z",
-      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal YouTube pendent de resolució dirigida.",
+      "lastChecked": "2026-10-05T09:46:00.000Z",
+      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal(s) YouTube verificat(s) amb cerca dirigida.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-05T09:42:04.321Z",
@@ -239,7 +257,22 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UC-JNcJrzWSw2RtL-3TqYoeQ",
+            "handle": "@adalamusic",
+            "name": "Adala",
+            "type": "official",
+            "primary": true
+          },
+          {
+            "id": "UCr0GRoNMpT6f-ELLCZMlNlg",
+            "handle": null,
+            "name": "Adala - Topic",
+            "type": "topic",
+            "primary": false
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UCr0GRoNMpT6f-ELLCZMlNlg",
@@ -289,10 +322,11 @@
       "active": true,
       "sources": [
         "manual-user-2026-10-05",
-        "https://adala.cat/"
+        "https://adala.cat/",
+        "youtube:targeted-search-verified"
       ],
-      "lastChecked": "2026-10-05T09:40:00.000Z",
-      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal YouTube pendent de resolució dirigida.",
+      "lastChecked": "2026-10-05T09:46:00.000Z",
+      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal(s) YouTube verificat(s) amb cerca dirigida.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-05T09:42:04.619Z",
@@ -1952,7 +1986,22 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCvS1bHC_x3hqOwrYTY2bLIA",
+            "handle": "@atupatv",
+            "name": "Atupa",
+            "type": "official",
+            "primary": true
+          },
+          {
+            "id": "UC5o8evhO7e-P0CjCarYQ7TQ",
+            "handle": null,
+            "name": "Atupa - Topic",
+            "type": "topic",
+            "primary": false
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UC5o8evhO7e-P0CjCarYQ7TQ",
@@ -2004,10 +2053,11 @@
       "active": true,
       "sources": [
         "manual-user-2026-10-05",
-        "https://musicaenvalencia.es/artista/163/atupa"
+        "https://musicaenvalencia.es/artista/163/atupa",
+        "youtube:targeted-search-verified"
       ],
-      "lastChecked": "2026-10-05T09:40:00.000Z",
-      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal YouTube pendent de resolució dirigida.",
+      "lastChecked": "2026-10-05T09:46:00.000Z",
+      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal(s) YouTube verificat(s) amb cerca dirigida.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-05T09:42:04.982Z",
@@ -8530,7 +8580,22 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCyNgOgsiiy5cSgyfEqveONw",
+            "handle": "@herbanegra8475",
+            "name": "HerbaNegra",
+            "type": "official",
+            "primary": true
+          },
+          {
+            "id": "UCNzhlSBbPNlsZ563SKvvggg",
+            "handle": null,
+            "name": "Herba Negra - Topic",
+            "type": "topic",
+            "primary": false
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UCNzhlSBbPNlsZ563SKvvggg",
@@ -8579,10 +8644,11 @@
       "reviewStatus": "aprovat",
       "active": true,
       "sources": [
-        "manual-user-2026-10-05"
+        "manual-user-2026-10-05",
+        "youtube:targeted-search-verified"
       ],
-      "lastChecked": "2026-10-05T09:40:00.000Z",
-      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal YouTube pendent de resolució dirigida.",
+      "lastChecked": "2026-10-05T09:46:00.000Z",
+      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal(s) YouTube verificat(s) amb cerca dirigida.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-05T09:42:05.645Z",
@@ -13726,7 +13792,22 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCVeo5x9sEwL4yxoo-004zqw",
+            "handle": "@malsonatmosferic",
+            "name": "Malson Atmosfèric",
+            "type": "official",
+            "primary": true
+          },
+          {
+            "id": "UCyOpYZK-23D5O5ih1d5I4yQ",
+            "handle": null,
+            "name": "Malson Atmosfèric - Topic",
+            "type": "topic",
+            "primary": false
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UCVeo5x9sEwL4yxoo-004zqw",
@@ -13779,10 +13860,11 @@
       "active": true,
       "sources": [
         "manual-user-2026-10-05",
-        "https://malsonatmosferic.bandcamp.com/"
+        "https://malsonatmosferic.bandcamp.com/",
+        "youtube:targeted-search-verified"
       ],
-      "lastChecked": "2026-10-05T09:40:00.000Z",
-      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal YouTube pendent de resolució dirigida.",
+      "lastChecked": "2026-10-05T09:46:00.000Z",
+      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal(s) YouTube verificat(s) amb cerca dirigida.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-05T09:42:06.023Z",
@@ -19196,7 +19278,22 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UC9HWLecmAeJ3MrNdDHEMDBA",
+            "handle": "@poortramit",
+            "name": "POOR TRÀMIT",
+            "type": "official",
+            "primary": true
+          },
+          {
+            "id": "UCvKAZWUa6tY8b5RBergLr0Q",
+            "handle": null,
+            "name": "Poor Tràmit - Topic",
+            "type": "topic",
+            "primary": false
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UC9HWLecmAeJ3MrNdDHEMDBA",
@@ -19247,10 +19344,11 @@
       "active": true,
       "sources": [
         "manual-user-2026-10-05",
-        "https://www.radiorahim.cat/"
+        "https://www.radiorahim.cat/",
+        "youtube:targeted-search-verified"
       ],
-      "lastChecked": "2026-10-05T09:40:00.000Z",
-      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal YouTube pendent de resolució dirigida.",
+      "lastChecked": "2026-10-05T09:46:00.000Z",
+      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal(s) YouTube verificat(s) amb cerca dirigida.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-05T09:42:06.332Z",
@@ -19379,7 +19477,22 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCIX5CqhHETyi1Xx4JzcGjZg",
+            "handle": "@pupiles",
+            "name": "PUPIL·LES",
+            "type": "official",
+            "primary": true
+          },
+          {
+            "id": "UCzxleD2G_7JNCMufgoF3KLw",
+            "handle": null,
+            "name": "Pupil·les - Topic",
+            "type": "topic",
+            "primary": false
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UCzxleD2G_7JNCMufgoF3KLw",
@@ -19432,10 +19545,11 @@
       "active": true,
       "sources": [
         "manual-user-2026-10-05",
-        "https://musicaenvalencia.es/artista/90/pupil%C2%B7les"
+        "https://musicaenvalencia.es/artista/90/pupil%C2%B7les",
+        "youtube:targeted-search-verified"
       ],
-      "lastChecked": "2026-10-05T09:40:00.000Z",
-      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal YouTube pendent de resolució dirigida.",
+      "lastChecked": "2026-10-05T09:46:00.000Z",
+      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal(s) YouTube verificat(s) amb cerca dirigida.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-05T09:42:06.640Z",
@@ -20092,7 +20206,22 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCqlbDl192qJeA3gpIFkVhVA",
+            "handle": "@rapsodesoficial",
+            "name": "Rapsodes Oficial",
+            "type": "official",
+            "primary": true
+          },
+          {
+            "id": "UCuvGkVD3aN6ncVC6-EN8Wfw",
+            "handle": null,
+            "name": "Rapsodes - Topic",
+            "type": "topic",
+            "primary": false
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UCqlbDl192qJeA3gpIFkVhVA",
@@ -20146,10 +20275,11 @@
       "reviewStatus": "aprovat",
       "active": true,
       "sources": [
-        "manual-user-2026-10-05"
+        "manual-user-2026-10-05",
+        "youtube:targeted-search-verified"
       ],
-      "lastChecked": "2026-10-05T09:40:00.000Z",
-      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal YouTube pendent de resolució dirigida.",
+      "lastChecked": "2026-10-05T09:46:00.000Z",
+      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal(s) YouTube verificat(s) amb cerca dirigida.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-05T09:42:06.952Z",
@@ -22408,7 +22538,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCIBWCquq4qqhRWKD6nOdR4w",
+            "handle": null,
+            "name": "Still Ill - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UCIBWCquq4qqhRWKD6nOdR4w",
@@ -22461,10 +22599,11 @@
       "active": true,
       "sources": [
         "manual-user-2026-10-05",
-        "https://guspira.net/ca/still-ill-presenta-nou-disc-en-catala-allo-que-mai-no-mor/"
+        "https://guspira.net/ca/still-ill-presenta-nou-disc-en-catala-allo-que-mai-no-mor/",
+        "youtube:targeted-search-verified"
       ],
-      "lastChecked": "2026-10-05T09:40:00.000Z",
-      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal YouTube pendent de resolució dirigida.",
+      "lastChecked": "2026-10-05T09:46:00.000Z",
+      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal(s) YouTube verificat(s) amb cerca dirigida.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-05T09:42:07.295Z",
@@ -22849,7 +22988,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCx82VgJTTf_cKHahlakKfFg",
+            "handle": null,
+            "name": "Tesa - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UCx82VgJTTf_cKHahlakKfFg",
@@ -22897,10 +23044,11 @@
       "active": true,
       "sources": [
         "manual-user-2026-10-05",
-        "https://musicaenvalencia.es/artista/102/tesa"
+        "https://musicaenvalencia.es/artista/102/tesa",
+        "youtube:targeted-search-verified"
       ],
-      "lastChecked": "2026-10-05T09:40:00.000Z",
-      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal YouTube pendent de resolució dirigida.",
+      "lastChecked": "2026-10-05T09:46:00.000Z",
+      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal(s) YouTube verificat(s) amb cerca dirigida.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-05T09:42:07.619Z",
@@ -23740,7 +23888,22 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UC3fuMj55qp3YmD2B2mPBgOw",
+            "handle": "@josep-valtonyc",
+            "name": "Josep Valtonyc",
+            "type": "official",
+            "primary": true
+          },
+          {
+            "id": "UCsl_oTZ8vww29O9G0NAX-gA",
+            "handle": null,
+            "name": "Valtonyc - Topic",
+            "type": "topic",
+            "primary": false
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UCsl_oTZ8vww29O9G0NAX-gA",
@@ -23793,10 +23956,11 @@
       "active": true,
       "sources": [
         "manual-user-2026-10-05",
-        "https://www.radiorahim.cat/"
+        "https://www.radiorahim.cat/",
+        "youtube:targeted-search-verified"
       ],
-      "lastChecked": "2026-10-05T09:40:00.000Z",
-      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal YouTube pendent de resolució dirigida.",
+      "lastChecked": "2026-10-05T09:46:00.000Z",
+      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal(s) YouTube verificat(s) amb cerca dirigida.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-05T09:42:07.974Z",
@@ -24007,7 +24171,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCmsQN-zOoJXlhKtbkRS702A",
+            "handle": "@vinniekairos3252",
+            "name": "VINNIE KAIROS",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UCmsQN-zOoJXlhKtbkRS702A",
@@ -24060,10 +24232,11 @@
       "active": true,
       "sources": [
         "manual-user-2026-10-05",
-        "https://www.radiorahim.cat/artista/vinnie-kairos/"
+        "https://www.radiorahim.cat/artista/vinnie-kairos/",
+        "youtube:targeted-search-verified"
       ],
-      "lastChecked": "2026-10-05T09:40:00.000Z",
-      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal YouTube pendent de resolució dirigida.",
+      "lastChecked": "2026-10-05T09:46:00.000Z",
+      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal(s) YouTube verificat(s) amb cerca dirigida.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-05T09:42:08.269Z",
@@ -24147,7 +24320,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCdwDeWJ4aJ9RAURZERmWquA",
+            "handle": "@voltortube",
+            "name": "Voltor",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UCdwDeWJ4aJ9RAURZERmWquA",
@@ -24198,10 +24379,11 @@
       "reviewStatus": "aprovat",
       "active": true,
       "sources": [
-        "manual-user-2026-10-05"
+        "manual-user-2026-10-05",
+        "youtube:targeted-search-verified"
       ],
-      "lastChecked": "2026-10-05T09:40:00.000Z",
-      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal YouTube pendent de resolució dirigida.",
+      "lastChecked": "2026-10-05T09:46:00.000Z",
+      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal(s) YouTube verificat(s) amb cerca dirigida.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-05T09:42:08.574Z",
