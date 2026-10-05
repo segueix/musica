@@ -1,3 +1,13 @@
+## [2026-10-05] - Segona passada amb cerca i anàlisi de lletres
+
+**Petició:** buscar artista i lletra de les 239 pendents i fer més descartes segons l’idioma.
+
+**Resultat:** 22 exclusions dins les 239, 35 conservades i 182 pendents sense evidència suficient. S’afegeix l’exclusió correctiva de «Gratitud», de Still Ill: 23 IDs ocults nous en total.
+
+**Aplicació:** només les 57 decisions resoltes passen a revisades. Es mantenen les 182 pendents, les 2 descartades automàtiques i totes les exclusions anteriors. El filtre existent d’ocults aplica els IDs; no s’edita el feed.
+
+**Traçabilitat:** [registre amb cerques, decisions i fonts](revisions/2026-10-05-idiomes-lletres.json). Sense atribuir lletres d’homònims ni deduir l’idioma del títol. No s’han verificat íntegrament les 239 lletres.
+
 ## [2026-10-05] - Revisió completa de la cua d’idiomes
 
 **Petició:** revisar totes les cançons pendents i eliminar les que no siguin en català.

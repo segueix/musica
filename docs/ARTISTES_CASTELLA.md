@@ -7,9 +7,30 @@ descarta en regenerar el feed).
 
 > Última revisió: 2026-10-05. Si afegeixes o treus un artista, actualitza la taula **i** la data.
 
+## Revisió de lletres de les 239 pendents (2026-10-05)
+
+Cerca individual per artista i títol: **22 exclusions, 35 conservades i 182 encara pendents**. S’afegeix una 23a exclusió en rectificar «Gratitud», de Still Ill, conservada erròniament a la passada anterior: la lletra publicada pel grup és castellana. Les dues descartades automàtiques anteriors continuen sense verificar.
+
+[Decisions, cerques i fonts per entrada](revisions/2026-10-05-idiomes-lletres.json). Les cerques no han proporcionat una lletra fiable per a les 182 pendents; no s’han marcat com a revisades. Les versions en directe inferides a partir de la lletra d’estudi s’identifiquen al registre.
+
+| Artista (nom al feed) | Ocultes noves |
+| --- | --- |
+| **Adala** | 1 |
+| **Boom Boom Fighters** | 1 |
+| **Dusminguet** | 3 |
+| **Joan Miquel Oliver** | 1 |
+| **La Sra. Tomasa** | 1 |
+| **La Troba Kung-Fú** | 1 |
+| **Malson Atmosfèric** | 1 |
+| **PUPIL·LES** | 3 |
+| **Roba Estesa** | 2 |
+| **Sabor de Gracia** | 1 |
+| **Still Ill** | 7 |
+| **Valtonyc** | 1 |
+
 ## Revisió de pendents (2026-10-05)
 
-Repassades 1546 entrades: 1008 conservades, 221 exclusions noves per ID, 68 exclusions anteriors respectades i 249 casos sense evidència suficient. Inclou les 717 entrades incorporades durant la revisió. A l’estat actual queden 239 pendents i 2 descartades encara per verificar; la diferència correspon a entrades que el bot ja havia retirat del feed.
+Repassades 1546 entrades: 1008 conservades, 221 exclusions noves per ID, 68 exclusions anteriors respectades i 249 casos sense evidència suficient. Inclou les 717 entrades incorporades durant la revisió. En tancar aquella passada quedaven 239 pendents i 2 descartades encara per verificar; la diferència correspon a entrades que el bot ja havia retirat del feed.
 
 [Registre complet de decisions i fonts](revisions/2026-10-05-idiomes.json). La revisió contextual no s’ha presentat com una comprovació íntegra de totes les lletres. No s’han aprovat els casos dubtosos. Les exclusions són per vídeo per evitar afectar versions catalanes o instrumentals d’artistes homònims.
 
