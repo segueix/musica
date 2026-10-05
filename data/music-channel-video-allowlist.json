@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-04",
+  "updatedAt": "2026-10-05",
   "description": "Llista blanca per a canals on Segueix Música només ha d'ingerir vídeos concrets. Admet títols exactes, fragments obligatoris i fragments exclosos.",
   "channels": {
     "UCKpscwdWlVaMqcA81vLI7OA": {
@@ -59,6 +59,20 @@
         "song",
         "live_song"
       ]
+    },
+    "UCdV07zjxqkXc8sEZg5SaDFw": {
+      "artist": "Pomada",
+      "note": "Canal d'arxiu de Xavier Batllés / BITSTUDI, productor d'El disc 1 de Pomada. Només s'accepta contingut musical explícitament identificat com a Pomada per evitar barrejar la resta del canal.",
+      "allowedTitleContains": [
+        "Pomada"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song",
+        "album"
+      ],
+      "avatarFromFirstAllowedVideo": true
     }
   }
 }
