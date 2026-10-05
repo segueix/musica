@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-05T13:19:54.533Z",
-  "retainedVideoCount": 0,
+  "generatedAt": "2026-10-05T13:48:56.994Z",
+  "retainedVideoCount": 118,
   "unverifiedVideoCount": 0,
   "deepPagesFetched": 0,
   "deepChannelCount": 20,
-  "topicChannelCount": 182,
-  "governedChannelCount": 85,
+  "topicChannelCount": 181,
+  "governedChannelCount": 84,
   "topicCoverage": [
     {
       "id": "UCqaEtRht2jakBhGFLzS617w",
@@ -421,14 +421,6 @@
       "songs": 31,
       "matched": 28,
       "coverage": 0.9,
-      "governs": true
-    },
-    {
-      "id": "UC-JNcJrzWSw2RtL-3TqYoeQ",
-      "name": "Adala",
-      "songs": 45,
-      "matched": 40,
-      "coverage": 0.89,
       "governs": true
     },
     {
@@ -1033,8 +1025,11 @@
     }
   ],
   "topicGovernance": "apply",
-  "governedReclassified": {},
-  "topicHiddenCount": 0,
+  "governedReclassified": {
+    "other": 238,
+    "song": 25
+  },
+  "topicHiddenCount": 601,
   "topicChannels": [
     {
       "id": "UCEMDA-ZXzEUlJjZ-avy0Pvg",
@@ -1056,13 +1051,6 @@
       "tracks": 47,
       "selected": 40,
       "withClip": 0
-    },
-    {
-      "id": "UCr0GRoNMpT6f-ELLCZMlNlg",
-      "name": "Adala",
-      "tracks": 99,
-      "selected": 30,
-      "withClip": 35
     },
     {
       "id": "UCDiHZrbEw6zc_DaFl5wsmRA",
@@ -2283,34 +2271,64 @@
       "withClip": 36
     }
   ],
-  "indexedChannelCount": 379,
-  "resolvedChannelCount": 379,
-  "feedChannelCount": 379,
-  "rawPublicVideoCount": 4717,
-  "feedVideoCount": 4162,
-  "acceptedMusicCount": 4128,
-  "categoryEligibleVideoCount": 4123,
+  "indexedChannelCount": 378,
+  "resolvedChannelCount": 378,
+  "feedChannelCount": 378,
+  "rawPublicVideoCount": 10891,
+  "feedVideoCount": 8608,
+  "acceptedMusicCount": 9176,
+  "categoryEligibleVideoCount": 9074,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
-    "before": 0,
+    "before": 1318,
     "matched": 0,
-    "rejected": 0
+    "rejected": 1318
   },
   "contentReviewCount": 553,
   "contentTypeCounts": {
-    "song": 4017,
-    "live_song": 106,
-    "album": 5,
-    "other": 36,
+    "song": 8771,
+    "live_song": 303,
+    "album": 102,
+    "other": 1162,
     "review": 553
   },
   "unresolvedChannelIds": [],
   "channelsWithoutUploads": [],
   "channelsWithoutVideos": [
-    "UCFI6QGe27kctP5lGeugsrhA"
+    "UCETR11eCJC5Z9mitj6MbASw",
+    "UCMj8K97SgGnI9OdJIHBH-Sw",
+    "UCOEzuNu9yvO0AFTnSVKk4LQ",
+    "UCvdm27ITzhd3bsnftrBmFUg",
+    "UCFI6QGe27kctP5lGeugsrhA",
+    "UCRdGqpbhydDXIl83A9E8-2Q",
+    "UCr8kBnuIa6LPmhZSxbwVs7w",
+    "UCwYR6Axoc2mEKz89P8t4N5Q",
+    "UCQAWPZGGc_4JqXq53ATaSBQ",
+    "UCHXlSnGKv7tdBxMw2F-FMkw",
+    "UCLKx4vBoCOKwB2x280VFmng",
+    "UCboGC6e3sTTIO9C6lHxifnA",
+    "UCfMqjIyA0G1cVGNlFXXoJhA",
+    "UC9i1uNb0GFrISNB2pctkvRg",
+    "UCMNP5PWXks1_Es7e5Fs2LOg",
+    "UCJ6EMs_13PLDvRSHi-XqRwQ",
+    "UCXa6Mb5QgzYjRV_D1VlYoKQ",
+    "UC7IUL5Ba9dhBVPnTLe9RHhQ",
+    "UCHWqKBzUJqglcjVIMViPE0A",
+    "UCUsvtjzfis5NZY8qj8BY_FQ",
+    "UC5u7o5L26RuDowQsqOJDm0w",
+    "UC5Fb0Xo8Xx6gVrFPoVsZluw",
+    "UCHVIvz-1UD7NLa_FBveiFnw",
+    "UCYcAA6W7ef4ZOWat8JjaARQ"
   ],
-  "channelsWithoutAcceptedMusic": [],
+  "channelsWithoutAcceptedMusic": [
+    "UCjEehp73GI2mh9Rkv31QT9w",
+    "UCUSjRkF72RR1E8Rl4SWtVsQ",
+    "UCQOqsrBqC_4Ibu_MJrBpK_g",
+    "UC5CGdoxqbma-pqkAHPjkq9w",
+    "UC_eW1AyvwaPsQA5YAuOC3YQ",
+    "UCdwDeWJ4aJ9RAURZERmWquA"
+  ],
   "allIndexedChannelsVisible": true,
-  "publishedFeedVideoCount": 4165,
+  "publishedFeedVideoCount": 4147,
   "publishedShortVideoCount": 0
 }
