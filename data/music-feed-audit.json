@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-05T13:48:56.994Z",
+  "generatedAt": "2026-10-05T13:57:11.127Z",
   "retainedVideoCount": 118,
   "unverifiedVideoCount": 0,
   "deepPagesFetched": 0,
@@ -800,14 +800,6 @@
       "governs": false
     },
     {
-      "id": "UCezETW2-gAMtXB98LGBweWQ",
-      "name": "SABOR DE GRACIA",
-      "songs": 12,
-      "matched": 6,
-      "coverage": 0.5,
-      "governs": false
-    },
-    {
       "id": "UC2WMiCvYBSXvRjYIB0yrpEg",
       "name": "LAL'BA MUSIC",
       "songs": 21,
@@ -1029,7 +1021,7 @@
     "other": 238,
     "song": 25
   },
-  "topicHiddenCount": 601,
+  "topicHiddenCount": 575,
   "topicChannels": [
     {
       "id": "UCEMDA-ZXzEUlJjZ-avy0Pvg",
@@ -2023,7 +2015,7 @@
       "name": "Sabor de Gracia",
       "tracks": 215,
       "selected": 40,
-      "withClip": 6
+      "withClip": 0
     },
     {
       "id": "UC3AV402A_vdbG18-cpYsX-Q",
@@ -2271,26 +2263,26 @@
       "withClip": 36
     }
   ],
-  "indexedChannelCount": 378,
-  "resolvedChannelCount": 378,
-  "feedChannelCount": 378,
-  "rawPublicVideoCount": 10891,
-  "feedVideoCount": 8608,
-  "acceptedMusicCount": 9176,
-  "categoryEligibleVideoCount": 9074,
+  "indexedChannelCount": 377,
+  "resolvedChannelCount": 377,
+  "feedChannelCount": 377,
+  "rawPublicVideoCount": 10806,
+  "feedVideoCount": 8582,
+  "acceptedMusicCount": 9129,
+  "categoryEligibleVideoCount": 9027,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
-    "before": 1318,
+    "before": 1288,
     "matched": 0,
-    "rejected": 1318
+    "rejected": 1288
   },
-  "contentReviewCount": 553,
+  "contentReviewCount": 540,
   "contentTypeCounts": {
-    "song": 8771,
-    "live_song": 303,
+    "song": 8725,
+    "live_song": 302,
     "album": 102,
-    "other": 1162,
-    "review": 553
+    "other": 1137,
+    "review": 540
   },
   "unresolvedChannelIds": [],
   "channelsWithoutUploads": [],
@@ -2329,6 +2321,6 @@
     "UCdwDeWJ4aJ9RAURZERmWquA"
   ],
   "allIndexedChannelsVisible": true,
-  "publishedFeedVideoCount": 4147,
+  "publishedFeedVideoCount": 4076,
   "publishedShortVideoCount": 0
 }
