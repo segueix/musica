@@ -7,7 +7,7 @@
         currentVideoId: null,
         currentChannelId: null,
         currentShortIndex: 0,
-        activePlaylistId: null
+        activePlaylistId: null,
     };
     app.dom = app.dom || {};
     app.features = app.features || {};
@@ -21,6 +21,21 @@
         function playerElement() {
             return app.state.playerHost || window.document?.getElementById?.('videoPlayer') || null;
         };
+
+    // Carpeta on viu l'app: «/musica/» a segueix.github.io/musica/, «/» a l'arrel d'un domini. Es treu de la ruta
+    // d'aquest mateix script (js/core/segueix-app.js), que no canvia encara que l'app canviï la URL en reproduir.
+    // Qualsevol URL que l'app escrigui amb history.pushState/replaceState ha de partir d'aquí, mai de «/».
+    const APP_BASE_PATH = (() => {
+        try {
+            const src = window.document?.currentScript?.src;
+            if (src) return new URL('../../', src).pathname;
+        } catch (error) {
+            // Sense URL (entorn de proves): es dedueix de la ruta actual
+        }
+        const path = String(window.location?.pathname || '/');
+        return path.replace(/\/video\/[^/]*$/, '/').replace(/[^/]*$/, '') || '/';
+    })();
+    app.utils.appBasePath = app.utils.appBasePath || (() => APP_BASE_PATH);
 
     // Complement visual dels Shorts. Es carrega de forma independent per mantenir
     // el mòdul base lleuger i permetre ajustar la UI nativa de l'iframe sense tocar

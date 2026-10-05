@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ca">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+    <title>Segueix! Música</title>
+    <script>
+        // GitHub Pages serveix aquesta pàgina per a qualsevol adreça de /musica/ que no existeix. Una ruta de vídeo
+        // (/musica/video/<títol>-<id>) torna a l'app amb ?v=<id>; la resta, a l'inici de l'app (amb la consulta i el
+        // fragment). Així una recàrrega mai no es queda en una pàgina d'error.
+        (function () {
+            var loc = window.location;
+            var parts = loc.pathname.split('/');
+            var base = /\.github\.io$/i.test(loc.hostname) && parts[1] ? '/' + parts[1] + '/' : '/';
+            var rest = loc.pathname.slice(base.length);
+            var video = /^video\/[^/]*?([A-Za-z0-9_-]{11})\/?$/.exec(decodeURIComponent(rest));
+            var target = base;
+            if (video) {
+                var params = new URLSearchParams(loc.search);
+                var start = params.get('t');
+                target += '?v=' + video[1] + (start && /^\d+$/.test(start) ? '&t=' + start : '');
+            } else {
+                target += loc.search + loc.hash;
+            }
+            loc.replace(target);
+        })();
+    </script>
+</head>
+<body style="background:#141615;color:#F4F0E8;font-family:sans-serif">
+    <p><a href="/musica/" style="color:#D6ED84">Segueix! Música</a></p>
+</body>
+</html>

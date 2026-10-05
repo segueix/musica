@@ -2965,6 +2965,12 @@ function initIntroSplash() {
 }
 
 // Caràtula per defecte per als vídeos sense coberta carregable
+// Carpeta de l'app («/musica/» a segueix.github.io/musica/, «/» a l'arrel d'un domini; core/segueix-app.js). Les URL de
+// les seccions parteixen d'aquí, i no de la ruta actual, que pot ser la d'un vídeo (/video/<slug>-<id>).
+function getAppBasePath() {
+    return SegueixApp.utils?.appBasePath?.() || window.location.pathname.replace(/\/index\.html$/, '/');
+}
+
 const DEFAULT_VIDEO_THUMBNAIL_SRC = 'img/caratula.png';
 
 // Detecta si una imatge és una caràtula de vídeo (tant pel seu contenidor com per classes pròpies)
@@ -3649,7 +3655,7 @@ function bindCoreEvents() {
             localStorage.setItem(LAST_CATEGORY_STORAGE_KEY, selectedCategory);
             document.querySelector('.chip.is-active')?.classList.remove('is-active');
             chip.classList.add('is-active');
-            const basePath = window.location.pathname.replace(/\/index\.html$/, '/');
+            const basePath = getAppBasePath();
             history.pushState({}, '', basePath);
             if (!isPersistentPlayerActive()) {
                 stopVideoPlayback();
@@ -4085,7 +4091,7 @@ function bindNavigationEvents() {
         brandLink.addEventListener('click', e => {
             e.preventDefault();
             SegueixApp.features.navigation?.setActiveNavItem?.('home');
-            const basePath = window.location.pathname.replace(/\/index\.html$/, '/');
+            const basePath = getAppBasePath();
             history.pushState({}, '', basePath);
             requestAnimationFrame(() => {
                 if (!isPersistentPlayerActive()) {
@@ -4397,7 +4403,7 @@ function bindHomeEvents() {
             if (selectedCategory !== 'Novetats' && selectedCategory !== 'Tot') {
                 showCategoryLoading();
             }
-            const basePath = window.location.pathname.replace(/\/index\.html$/, '/');
+            const basePath = getAppBasePath();
             // Guardar la categoria anterior a l'entrada actual del historial
             history.replaceState(
                 { ...(history.state || {}), appPage: 'home', category: previousCategory },
@@ -5364,7 +5370,7 @@ function handleCustomCategoryCreation() {
     setupChipsBarOrdering();
     closeCustomCategoryModal();
 
-    const basePath = window.location.pathname.replace(/\/index\.html$/, '/');
+    const basePath = getAppBasePath();
     history.pushState({}, '', basePath);
     if (!isPersistentPlayerActive()) {
         stopVideoPlayback();
@@ -6801,7 +6807,7 @@ function loadCategories() {
             item.classList.add('active');
 
             const categoryId = item.dataset.category;
-            const basePath = window.location.pathname.replace(/\/index\.html$/, '/');
+            const basePath = getAppBasePath();
             history.pushState({}, '', basePath);
             showHome();
             if (useYouTubeAPI) {

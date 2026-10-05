@@ -22,9 +22,25 @@ async function apiJson(url, apiKey) {
     const response = await fetch(url);
     const body = await response.text();
     if (!response.ok) {
-        throw new Error('YouTube API HTTP ' + response.status + ': ' + body.slice(0, 250));
+        let reason = '';
+        try {
+            const parsed = JSON.parse(body);
+            reason = parsed?.error?.errors?.[0]?.reason || parsed?.error?.message || '';
+        } catch (_) {
+            reason = body.slice(0, 250);
+        }
+        const error = new Error('YouTube API HTTP ' + response.status + ': ' + (reason || body.slice(0, 250)));
+        error.status = response.status;
+        error.reason = reason;
+        throw error;
     }
     return JSON.parse(body);
+}
+
+// Quota diària de l'API esgotada (la comparteixen tots els workflows): no és un error de les dades. Com
+// cercar_canals_youtube.js, s'atura, desa el que ja ha resolt i la propera execució (cada dia, 08:17 UTC) continua.
+function isQuotaError(error) {
+    return error?.status === 403 && /quota|limit/i.test(String(error.reason || error.message || ''));
 }
 
 async function resolveChannel(entry, apiKey) {
@@ -52,6 +68,7 @@ async function main() {
     let resolved = 0;
     let skipped = 0;
     let missing = 0;
+    let quotaStopped = false;
 
     for (const entry of verified.channels || []) {
         const artist = byName.get(normalizeName(entry.artist));
@@ -80,7 +97,15 @@ async function main() {
             continue;
         }
 
-        const item = await resolveChannel(entry, apiKey);
+        let item;
+        try {
+            item = await resolveChannel(entry, apiKey);
+        } catch (error) {
+            if (!isQuotaError(error)) throw error;
+            quotaStopped = true;
+            console.warn('🛑 Quota de l\'API esgotada: s\'atura aquí i es continua a la propera execució (' + error.message + ').');
+            break;
+        }
         if (!item || !CHANNEL_ID_RE.test(item.id || '') || channelRules.get(item.id)?.blocked) {
             console.warn('⚠️ No resolt: ' + entry.artist + ' (' + (entry.handle || entry.channelId || 'sense identificador') + ')');
             missing += 1;
@@ -104,8 +129,13 @@ async function main() {
 
     data.updatedAt = new Date().toISOString();
     fs.writeFileSync(ARTISTS_FILE, JSON.stringify(data, null, 2) + '\n');
-    console.log('📊 Canals verificats: ' + resolved + ' resolts; ' + skipped + ' ja presents; ' + missing + ' pendents.');
+    console.log(
+        '📊 Canals verificats: ' + resolved + ' resolts; ' + skipped + ' ja presents; ' + missing + ' pendents'
+        + (quotaStopped ? '; aturat per quota.' : '.')
+    );
 }
+
+module.exports = { apiJson, isQuotaError };
 
 if (require.main === module) {
     main().catch((error) => {
