@@ -287,11 +287,17 @@ async function main() {
     }
 
     let targetedNames = null;
+    let targetedQueries = new Map();
     if (fs.existsSync(TARGETS_FILE)) {
         try {
             const payload = JSON.parse(fs.readFileSync(TARGETS_FILE, 'utf8'));
             const names = Array.isArray(payload?.artists) ? payload.artists : [];
             targetedNames = new Set(names.map(normalizeText).filter(Boolean));
+            targetedQueries = new Map(
+                Object.entries(payload?.queries || {})
+                    .map(([name, query]) => [normalizeText(name), String(query || '').trim()])
+                    .filter(([, query]) => query)
+            );
             if (targetedNames.size) {
                 console.log('🎯 Cerca YouTube dirigida a ' + targetedNames.size + ' artistes.');
             } else {
@@ -331,7 +337,8 @@ async function main() {
         artist.enrichment ||= {};
 
         try {
-            const search = await searchChannels(artist.name, apiKey);
+            const searchQuery = targetedQueries.get(normalizeText(artist.name)) || artist.name;
+            const search = await searchChannels(searchQuery, apiKey);
             searches += 1;
             const ids = (search.items || [])
                 .map((item) => item.id?.channelId)
@@ -352,7 +359,7 @@ async function main() {
             artist.enrichment.youtubeSearch = {
                 checkedAt: now,
                 status: accepted ? 'autoacceptat' : scored.length ? 'candidats' : 'sense-resultats',
-                query: artist.name,
+                query: searchQuery,
                 resultCount: scored.length,
                 bestScore: scored[0]?.score || 0,
                 autoAcceptedId: accepted?.id || null
@@ -390,7 +397,7 @@ async function main() {
             artist.enrichment.youtubeSearch = {
                 checkedAt: now,
                 status: 'error',
-                query: artist.name,
+                query: searchQuery,
                 resultCount: 0,
                 bestScore: 0,
                 autoAcceptedId: null,
