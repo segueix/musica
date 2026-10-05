@@ -757,6 +757,98 @@ afegeix('Au Rora', [
     'Tipsy',
 ]);
 
+// Revisió del 2026-10-05: Stay Homas i La Pegatina conserven el repertori català.
+// «Del Revés», «Rade Blunner», «Tropical» i «Sonqueson» tenen lletra castellana.
+// «Ara (Les Merdes II)» i «The Bright Side» incorporen versos sencers en anglès.
+// «+=», «Les Merdes» i «La Nòria» es conserven com a cançons catalanes.
+afegeix(
+    ['STAY HOMAS', 'Stay Homas', 'Stay Homas - Topic'],
+    [
+        'Del Revés',
+        'Days of Our Lives',
+        'Let it Out',
+        'Tudo Bem',
+        'Por el Camino',
+        'Estamos Mal',
+        'Volveré a Empezar',
+        'Gotta Be Patient',
+        'The Bright Side',
+        'In The End',
+        'Stay Homa',
+        'THE ONLY ONE',
+        'ESE BESO',
+        'Dos Besos',
+        'Es Por Ti',
+        'Here2play',
+        'Another Love Song',
+        'TO LO KE',
+        'MORIR VIVIENDO',
+        'ME DA IGUAL',
+        'RADE BLUNNER',
+        'DIME',
+        'I’LL BE HOME',
+        "I'LL BE HOME",
+        'TROPICAL',
+        'Doin’ the Peach',
+        "Doin' the Peach",
+        'El Silencio',
+        'Cacatúa',
+        'Al Ponerse el Sol',
+        'Nunca Vuelven',
+        'Ara (Les Merdes II)',
+        'Mientras Respire',
+        'QUIERO MÁS',
+    ]
+);
+afegeix(
+    ['La Pegatina', 'La Pegatina - Topic'],
+    [
+        'Impura',
+        'Lupita y Silvino',
+        'Del barrio soy',
+        'Brinca',
+        'Todo el mundo pregunta por ti',
+        'La Bidouille',
+        'De lado a lado',
+        'Siempre nos tienes aquí',
+        'La voltereta',
+        'Yo quiero bailar',
+        'Miranda',
+        'Alosque',
+        'Mari Carmen',
+        'Non é facile',
+        'Non è facile',
+        'Olivia',
+        'Saber que tu',
+        'Saber que tú',
+        'Ahora o nunca',
+        'Y volar',
+        'Vamos a por ti',
+        'Una mirada',
+        'Y se fue',
+        'Candela',
+        'A medio camino',
+        'Down for Love',
+        'Siempre te pedí',
+        'Darle la vuelta',
+        'Como se hacen las flores',
+        'Te veré cuando yo quiera',
+        'Dejarse la piel',
+        'Como lo haría un acuario',
+        'Tomasín',
+        'Chocholoco',
+        'Qué bonito es el amor',
+        'La ciudad de los gatos negros',
+        'Muérdeme',
+        'La tempestad',
+        'Mama',
+        'Eh, madame',
+        'Sonqueson',
+        'Nada que decir',
+        'Heridas de guerra',
+    ]
+);
+
 function esCastella(video) {
     const regla = REGLES[video.channelTitle];
     if (!regla) return false;
@@ -783,3 +875,4 @@ function main() {
 
 if (require.main === module) main();
 module.exports = { esCastella, REGLES };
+

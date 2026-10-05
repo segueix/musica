@@ -2,6 +2,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const { loadChannelVideoAllowlist } = require('./lib/filtre_videos_canal');
 
 const FILE = path.join(process.cwd(), 'data', 'artistes-musica.json');
 const TARGETS_FILE = path.join(process.cwd(), 'data', 'youtube-search-targets.json');
@@ -281,6 +282,7 @@ async function main() {
     }
 
     const data = JSON.parse(fs.readFileSync(FILE, 'utf8'));
+    const channelRules = loadChannelVideoAllowlist(path.join(process.cwd(), 'data', 'music-channel-video-allowlist.json'));
     const todayPT = pacificDateKey(new Date());
     const alreadyUsedToday = data.artists.filter((artist) =>
         pacificDateKey(artist.enrichment?.youtubeSearch?.checkedAt) === todayPT
@@ -351,14 +353,14 @@ async function main() {
             searches += 1;
             let ids = (search.items || [])
                 .map((item) => item.id?.channelId)
-                .filter((id) => CHANNEL_ID_RE.test(id));
+                .filter((id) => CHANNEL_ID_RE.test(id) && !channelRules.get(id)?.blocked);
 
             if (!ids.length && targetedNames && targetedQueries.has(normalizeText(artist.name))) {
                 const videoSearch = await searchVideos(searchQuery, apiKey);
                 searches += 1;
                 ids = [...new Set((videoSearch.items || [])
                     .map((item) => item.snippet?.channelId)
-                    .filter((id) => CHANNEL_ID_RE.test(id)))];
+                    .filter((id) => CHANNEL_ID_RE.test(id) && !channelRules.get(id)?.blocked))];
                 if (ids.length) {
                     console.log('🎵 ' + artist.name + ': candidats derivats de vídeos per «' + searchQuery + '».');
                 }
@@ -453,3 +455,4 @@ if (require.main === module) {
         process.exit(1);
     });
 }
+

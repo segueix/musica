@@ -6,6 +6,21 @@ import {
 } from '../scripts/lib/filtre_videos_canal.js';
 
 describe('llista blanca de vídeos per canal', () => {
+    it('bloqueja un canal retirat sense afectar un homònim correcte', () => {
+        const rules = loadChannelVideoAllowlist('/fake.json', {
+            readFileSync: () =>
+                JSON.stringify({
+                    channels: {
+                        UCretirat: { blocked: true, allowedTitles: ['Hores i Hores'] },
+                    },
+                }),
+        });
+        expect(rules.get('UCretirat')?.blocked).toBe(true);
+        expect(isChannelVideoAllowed(rules, 'UCretirat', 'Hores i Hores')).toBe(false);
+        expect(isChannelVideoAllowed(rules, 'UCretirat', 'Cançó nova')).toBe(false);
+        expect(isChannelVideoAllowed(rules, 'UCcorrecte', 'Hores i Hores')).toBe(true);
+    });
+
   it('normalitza accents, puntuació i majúscules', () => {
     expect(normalizeVideoTitle('Subliminal - Ràdios i TVs')).toBe('subliminal radios i tvs');
   });
@@ -85,3 +100,4 @@ describe('llista blanca de vídeos per canal', () => {
     expect(isChannelVideoAllowed(rules, 'UCKpscwdWlVaMqcA81vLI7OA', 'Qualsevol altra cançó')).toBe(true);
   });
 });
+

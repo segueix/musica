@@ -2,6 +2,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const { loadChannelVideoAllowlist } = require('./lib/filtre_videos_canal');
 
 const FILE = path.join(process.cwd(), 'data', 'artistes-musica.json');
 const API_KEY = process.env.YOUTUBE_API_KEY_SERVER;
@@ -84,6 +85,7 @@ async function resolveChannel(target) {
 
 async function main() {
     const data = JSON.parse(fs.readFileSync(FILE, 'utf8'));
+    const channelRules = loadChannelVideoAllowlist(path.join(process.cwd(), 'data', 'music-channel-video-allowlist.json'));
     let calls = 0;
     let resolved = 0;
     let unsupported = 0;
@@ -103,7 +105,7 @@ async function main() {
 
             calls += 1;
             const channel = await resolveChannel(target);
-            if (!channel) {
+            if (!channel || channelRules.get(channel.id)?.blocked) {
                 notFound += 1;
                 console.log(`⚪ ${artist.name}: no resolt (${target.kind} ${target.value}).`);
                 continue;
@@ -144,3 +146,4 @@ main().catch((error) => {
     console.error(`❌ ${error.message}`);
     process.exit(1);
 });
+

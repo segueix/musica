@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-05T10:25:00.000Z",
+  "updatedAt": "2026-10-05",
   "artists": [
     {
       "name": "2ES",
@@ -9168,81 +9168,21 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [
-          {
-            "id": "UCH977_Zpn90y2QGeeE-hhlQ",
-            "handle": "@itacabandoficial",
-            "name": "Itaca Band Oficial",
-            "type": "official",
-            "primary": true
-          },
-          {
-            "id": "UCLgbWJg8gE8lCwufclbvikg",
-            "handle": null,
-            "name": "Itaca Band - Topic",
-            "type": "topic",
-            "primary": false
-          }
-        ],
-        "searchCandidates": [
-          {
-            "id": "UCH977_Zpn90y2QGeeE-hhlQ",
-            "title": "Itaca Band Oficial",
-            "handle": "@itacabandoficial",
-            "description": "",
-            "subscriberCount": 22700,
-            "thumbnail": "https://yt3.ggpht.com/Qqt1AX2k4YtYROCTdde6qPAHX0f62qlj8mFyOUZOYKgLw23NQt-TVnTBBGoSkTa9nTR4Skf4=s240-c-k-c0x00ffffff-no-rj",
-            "score": 98,
-            "reasons": [
-              "nom exacte traient oficial",
-              "handle coincident",
-              "marca oficial",
-              "primer resultat"
-            ],
-            "suggestedType": "official",
-            "discoveredAt": "2026-10-05T09:57:37.143Z"
-          },
-          {
-            "id": "UCLgbWJg8gE8lCwufclbvikg",
-            "title": "Itaca Band - Topic",
-            "handle": null,
-            "description": "",
-            "subscriberCount": 90,
-            "thumbnail": "https://yt3.ggpht.com/Qqt1AX2k4YtYROCTdde6qPAHX0f62qlj8mFyOUZOYKgLw23NQt-TVnTBBGoSkTa9nTR4Skf4=s240-c-k-c0x00ffffff-no-rj",
-            "score": 80,
-            "reasons": [
-              "nom exacte de canal Topic"
-            ],
-            "suggestedType": "topic",
-            "discoveredAt": "2026-10-05T09:57:37.143Z"
-          },
-          {
-            "id": "UChFldWirdaz7znzh_Ksc9Sw",
-            "title": "Sueños de Ítaca Band",
-            "handle": "@suenosdeitaca",
-            "description": "Canal oficial de Sueños de Ítaca, donde encontrarás todos los vídeos del grupo.",
-            "subscriberCount": 17,
-            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_mvFq0a8bQoyPqsxVKs0E_5VLPNzrl5m4m6C4GHYX-gjhk=s240-c-k-c0x00ffffff-no-rj",
-            "score": 45,
-            "reasons": [
-              "nom parcial",
-              "marca oficial"
-            ],
-            "suggestedType": "official",
-            "discoveredAt": "2026-10-05T09:57:37.143Z"
-          }
-        ]
+        "channels": [],
+        "searchCandidates": [],
+        "candidates": []
       },
       "confidence": "alta",
-      "reviewStatus": "aprovat",
-      "active": true,
+      "reviewStatus": "rebutjat",
+      "active": false,
       "sources": [
         "manual-user-2026-10-05",
         "genre:manual",
-        "youtube:targeted-search-verified"
+        "youtube:targeted-search-verified",
+        "manual-user-removal-2026-10-05"
       ],
-      "lastChecked": "2026-10-05T10:10:00.000Z",
-      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal(s) YouTube verificat(s) amb cerca dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma.",
+      "lastChecked": "2026-10-05",
+      "notes": "Retirat a petició de l’usuari el 2026-10-05. No reindexar ni el canal oficial ni el canal Tema.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-05T09:57:37.143Z",
@@ -12804,15 +12744,7 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [
-          {
-            "id": "UCCjTaOHQqmy0VD2vkZVxxoA",
-            "handle": null,
-            "name": "La Madam - Topic",
-            "type": "official",
-            "primary": true
-          }
-        ],
+        "channels": [],
         "candidates": []
       },
       "confidence": "mitjana",
@@ -12823,8 +12755,8 @@
         "youtube:manual-verified",
         "genre:manual"
       ],
-      "lastChecked": "2026-09-29T11:23:49.715Z",
-      "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
+      "lastChecked": "2026-10-05",
+      "notes": "Afegit manualment a partir del llistat verificat de YouTube. El 2026-10-05 es retira només UCCjTaOHQqmy0VD2vkZVxxoA a petició de l’usuari: canal barrejat amb un homònim en castellà. La fitxa catalana es conserva pendent d’identificar el canal correcte; no excloure l’artista pel nom.",
       "genresRaw": [],
       "enrichment": {
         "genres": {

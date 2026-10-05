@@ -5,7 +5,22 @@ tenir quan el feed musical incorpori vídeos nous: cal repassar-los primer cada 
 castellà». Les cançons amagades són a `data/hidden-videos.json` (el client les filtra i `update_music_feed.js` les
 descarta en regenerar el feed).
 
-> Última revisió: 2026-10-03. Si afegeixes o treus un artista, actualitza la taula **i** la data.
+> Última revisió: 2026-10-05. Si afegeixes o treus un artista, actualitza la taula **i** la data.
+
+## Stay Homas i La Pegatina (2026-10-05)
+
+A petició de l’usuari es conserva el repertori català dels canals oficials i Tema, incloses les versions en directe. Les exclusions s’apliquen també a l’historial i al catàleg de pistes.
+
+| Artista (nom al feed) | Ocultes | Notes |
+| --- | --- | --- |
+| **STAY HOMAS** | Per títol | Castellà, anglès i portuguès; «Rade Blunner», «Tropical» i «Del Revés» tenen lletra castellana. Es conserven «Espurna», «Xinu Xanu», «La Platja», «Petons», «Ho tornaria a fer», «La Nòria», «Les Merdes», «Ho sap tothom menys tu», «No tinc paraules», «No vull baixar» i «+=», amb les seves versions. |
+| **Stay Homas** | Per títol | Mateix criteri al canal Tema. «Ara (Les Merdes II)» i «The Bright Side» es retiren pels versos sencers en anglès. |
+| **Stay Homas - Topic** | Per títol | Àlies del canal Tema de Stay Homas. |
+| **La Pegatina** | Per títol | Es conserven «Gat Rumberu», «La Meva Gent», «Que t’agradi veure’m» i «La guspira» del feed i historial actuals. «Sonqueson» i «Saber que tu» tenen lletra castellana. Les regles cobreixen també les versions del catàleg. |
+| **La Pegatina - Topic** | Per títol | Àlies del canal Tema de La Pegatina. |
+| **DAVEU** | 2 | Nom normalitzat del canal «DAVEU))», ja vigilat; mateixa regla. |
+
+Itaca Band es retira íntegrament, amb tots dos canals. De La Madam només es bloqueja `UCCjTaOHQqmy0VD2vkZVxxoA`, sense excloure el grup català pel nom. Al repositori no hi ha cap altre canal de La Madam assignat: la fitxa es conserva pendent d’identificar el correcte.
 
 ## Cançons noves (des del 2026-10-02)
 
@@ -196,3 +211,19 @@ Repertori en castellà: s'han tret sencers (canal fora de `data/artistes-musica.
 - Paraules compartides (Tornado, Taxi, Minifalda, Frikis, Primavera, Celebrar si és d'un artista català…) quan no hi ha
   cap altra pista.
 - Gallec, occità i la resta de llengües que no s'han demanat explícitament. **Excepció:** als artistes de la secció «Castellà i altres llengües dels canals Tema (2026-10-02)» s'amaguen totes les llengües que no són el català ni l'occità.
+
+
+## Noms de canal ja coberts per les regles
+
+Àlies i artistes amb regles existents; s’hi afegeixen perquè la revisió automàtica també els repassi.
+
+| Artista (nom al feed) | Ocultes | Notes |
+| --- | --- | --- |
+| **Opcio K-95** | Per títol | Regla existent a l’script; sense canvis d’exclusions en aquesta revisió. |
+| **Opció K-95 - Topic** | Per títol | Regla existent a l’script; sense canvis d’exclusions en aquesta revisió. |
+| **Opcio K-95 - Topic** | Per títol | Regla existent a l’script; sense canvis d’exclusions en aquesta revisió. |
+| **Dusminguet** | Per títol | Regla existent a l’script; sense canvis d’exclusions en aquesta revisió. |
+| **Dusminguet - Topic** | Per títol | Regla existent a l’script; sense canvis d’exclusions en aquesta revisió. |
+| **La Troba Kung-Fú** | Per títol | Regla existent a l’script; sense canvis d’exclusions en aquesta revisió. |
+| **La Troba Kung-Fú - Topic** | Per títol | Regla existent a l’script; sense canvis d’exclusions en aquesta revisió. |
+| **Au Rora** | Per títol | Regla existent a l’script; sense canvis d’exclusions en aquesta revisió. |

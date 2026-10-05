@@ -39,6 +39,7 @@ function loadChannelVideoAllowlist(filePath, fsModule = require('fs')) {
         .filter(value => value.normalized);
 
       const parsedRule = {
+        blocked: rule?.blocked === true,
         exactTitles,
         titleContains,
         deniedTitleContains,
@@ -54,6 +55,7 @@ function loadChannelVideoAllowlist(filePath, fsModule = require('fs')) {
       parsedRule.hasTitleFilter = exactTitles.size > 0 || titleContains.length > 0;
 
       if (
+        parsedRule.blocked ||
         parsedRule.hasTitleFilter ||
         parsedRule.deniedTitleContains.length > 0 ||
         parsedRule.acceptedMusicOnly ||
@@ -73,6 +75,7 @@ function loadChannelVideoAllowlist(filePath, fsModule = require('fs')) {
 function isChannelVideoAllowed(allowlist, channelId, title) {
   const rule = allowlist.get(String(channelId || ''));
   if (!rule) return true;
+  if (rule.blocked) return false;
 
   const normalized = normalizeVideoTitle(title);
   const compact = normalized.replace(/\s+/g, '');
@@ -96,3 +99,4 @@ module.exports = {
   loadChannelVideoAllowlist,
   isChannelVideoAllowed
 };
+

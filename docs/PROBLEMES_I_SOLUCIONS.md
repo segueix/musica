@@ -1,3 +1,13 @@
+## [2026-10-05] - Retirada d’Itaca Band, filtre de Stay Homas / La Pegatina i canal homònim de La Madam
+
+**Petició:** retirar Itaca Band, conservar només el repertori català de Stay Homas i La Pegatina i eliminar el canal `UCCjTaOHQqmy0VD2vkZVxxoA` de La Madam.
+
+**Solució:** Itaca Band queda rebutjat i exclòs de la descoberta; es retiren els dos canals. Per fer desaparèixer les fitxes immediatament, el feed només es neteja dels tres canals retirats (amb `serializeFeed()`); les exclusions de cançons per idioma es fan amb el registre d’ocults. S’eliminen les exclusions globals antigues de Stay Homas i La Pegatina perquè aquests artistes sí que es conserven. Els títols revisats en altres llengües tenen regles permanents al canal oficial i Tema; els IDs s’han materialitzat des del feed, historial, arxiu i catàleg de pistes. «Del Revés», «Rade Blunner», «Tropical» i «Sonqueson» són castellanes encara que el títol pugui enganyar; «+=» és catalana. Es conserven les cançons catalanes amb expressions breus d’altres llengües; es retiren «Ara (Les Merdes II)» i «The Bright Side», amb versos sencers en anglès.
+
+**Canals retirats:** `blocked: true` a `music-channel-video-allowlist.json` rebutja qualsevol vídeo del canal; la cerca i el resolutor de YouTube també descarten aquests IDs. La Madam s’exclou només per l’ID indicat, mai pel nom: el Topic barreja peces del grup català i d’un homònim castellà. No hi ha un segon ID assignat al repositori; es manté la fitxa catalana pendent del canal correcte.
+
+**Verificació:** comprovació dels IDs ocults i de les cançons catalanes conservades; proves del filtre per canal i regles per títol. La suite general ja presentava errors abans del canvi.
+
 ## [2026-10-04] - Fora els Shorts de tota l'app
 **Petició:** eliminar els Shorts del feed i de tota l'app.
 
@@ -1422,4 +1432,5 @@ Hi havia dos problemes independents:
 **No verificat:** reproducció real de YouTube a la finestra (possible bloqueig d'autoplay o d'embed per referrer); caldrà provar-ho a Chrome.
 
 **Proves:** `tests/system-player.test.js`, `tests/player-controls.test.js`, `node tests/browser/verificar-finestra-sistema.js`.
+
 
