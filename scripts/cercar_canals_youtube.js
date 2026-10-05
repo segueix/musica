@@ -4,6 +4,7 @@ const fs = require('fs');
 const path = require('path');
 
 const FILE = path.join(process.cwd(), 'data', 'artistes-musica.json');
+const TARGETS_FILE = path.join(process.cwd(), 'data', 'youtube-search-targets.json');
 const SEARCH_URL = 'https://www.googleapis.com/youtube/v3/search';
 const CHANNELS_URL = 'https://www.googleapis.com/youtube/v3/channels';
 const DEFAULT_BATCH = 25;
@@ -285,12 +286,29 @@ async function main() {
         return;
     }
 
+    let targetedNames = null;
+    if (fs.existsSync(TARGETS_FILE)) {
+        try {
+            const payload = JSON.parse(fs.readFileSync(TARGETS_FILE, 'utf8'));
+            const names = Array.isArray(payload?.artists) ? payload.artists : [];
+            targetedNames = new Set(names.map(normalizeText).filter(Boolean));
+            if (targetedNames.size) {
+                console.log('🎯 Cerca YouTube dirigida a ' + targetedNames.size + ' artistes.');
+            } else {
+                targetedNames = null;
+            }
+        } catch (error) {
+            console.warn('⚠️ No s’ha pogut llegir youtube-search-targets.json:', error.message);
+        }
+    }
+
     const targets = data.artists
         .filter((artist) => {
             if (artist.reviewStatus === 'rebutjat') return false;
             if (artist.youtube?.channels?.length) return false;
+            if (targetedNames && !targetedNames.has(normalizeText(artist.name))) return false;
             const checkedAt = artist.enrichment?.youtubeSearch?.checkedAt;
-            return !checkedAt || daysSince(checkedAt) >= RECHECK_DAYS;
+            return targetedNames ? true : (!checkedAt || daysSince(checkedAt) >= RECHECK_DAYS);
         })
         .slice(0, runLimit);
 
@@ -327,7 +345,9 @@ async function main() {
                 .sort((a, b) => b.score - a.score);
 
             artist.youtube.searchCandidates = scored.map(publicCandidate);
-            const accepted = decideAutoAccept(artist, scored);
+            // En una cerca dirigida preferim inspecció manual: noms curts com Tesa, Adala o 2ES
+            // tenen homònims i no s'han d'autoacceptar només perquè el Topic coincideixi.
+            const accepted = targetedNames ? null : decideAutoAccept(artist, scored);
 
             artist.enrichment.youtubeSearch = {
                 checkedAt: now,
