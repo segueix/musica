@@ -2,6 +2,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const { loadChannelVideoAllowlist } = require('./lib/filtre_videos_canal');
 
 const ARTISTS_FILE = path.join(process.cwd(), 'data', 'artistes-musica.json');
 const VERIFIED_FILE = path.join(process.cwd(), 'data', 'youtube-verified-handles.json');
@@ -46,6 +47,7 @@ async function main() {
 
     const data = JSON.parse(fs.readFileSync(ARTISTS_FILE, 'utf8'));
     const verified = JSON.parse(fs.readFileSync(VERIFIED_FILE, 'utf8'));
+    const channelRules = loadChannelVideoAllowlist(path.join(process.cwd(), 'data', 'music-channel-video-allowlist.json'));
     const byName = new Map(data.artists.map((artist) => [normalizeName(artist.name), artist]));
     let resolved = 0;
     let skipped = 0;
@@ -53,6 +55,10 @@ async function main() {
 
     for (const entry of verified.channels || []) {
         const artist = byName.get(normalizeName(entry.artist));
+        if (artist?.reviewStatus === 'rebutjat' || channelRules.get(entry.channelId)?.blocked) {
+            skipped += 1;
+            continue;
+        }
         if (!artist) {
             console.warn('⚠️ Artista no trobat: ' + entry.artist);
             missing += 1;
@@ -75,7 +81,7 @@ async function main() {
         }
 
         const item = await resolveChannel(entry, apiKey);
-        if (!item || !CHANNEL_ID_RE.test(item.id || '')) {
+        if (!item || !CHANNEL_ID_RE.test(item.id || '') || channelRules.get(item.id)?.blocked) {
             console.warn('⚠️ No resolt: ' + entry.artist + ' (' + (entry.handle || entry.channelId || 'sense identificador') + ')');
             missing += 1;
             continue;
