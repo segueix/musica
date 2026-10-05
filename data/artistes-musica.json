@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-05",
+  "updatedAt": "2026-10-05T11:24:31.116Z",
   "artists": [
     {
       "name": "2ES",
@@ -12744,7 +12744,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCCjTaOHQqmy0VD2vkZVxxoA",
+            "handle": null,
+            "name": "La Madam - Topic",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "candidates": []
       },
       "confidence": "mitjana",
@@ -12755,7 +12763,7 @@
         "youtube:manual-verified",
         "genre:manual"
       ],
-      "lastChecked": "2026-10-05",
+      "lastChecked": "2026-10-05T11:24:31.079Z",
       "notes": "Afegit manualment a partir del llistat verificat de YouTube. El 2026-10-05 es retira només UCCjTaOHQqmy0VD2vkZVxxoA a petició de l’usuari: canal barrejat amb un homònim en castellà. La fitxa catalana es conserva pendent d’identificar el canal correcte; no excloure l’artista pel nom.",
       "genresRaw": [],
       "enrichment": {
