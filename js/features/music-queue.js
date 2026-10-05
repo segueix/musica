@@ -1408,7 +1408,71 @@
     function toggleStylePicker(force) {
         stylePickerOpen = typeof force === 'boolean' ? force : !stylePickerOpen;
         pendingFocus = stylePickerOpen ? '[data-mq-pick-style]' : '[data-mq-add-style]';
+        if (stylePickerOpen) pickerScrollBase = currentScroll();
         refresh();
+    }
+
+    // ---------- Ordinador: el selector d'estils es tanca sol en fer scroll cap avall ----------
+    // A l'ordinador, si el selector «Afegeix un estil» és obert i l'usuari baixa per veure les cançons de la ràdio, es
+    // tanca sol. La cua fa scroll a dins seu (≥ 1025 px) o amb la pàgina (769–1024 px): es miren tots dos. Al mòbil no.
+    const PICKER_CLOSE_SCROLL_PX = 24;
+    const PICKER_DESKTOP_QUERY = '(min-width: 769px)';
+    let pickerScrollBase = { queue: 0, page: 0 };
+
+    function currentScroll() {
+        return { queue: Number(lastContainer?.scrollTop) || 0, page: Number(window.scrollY) || 0 };
+    }
+
+    // Pur: tanca si s'ha baixat prou des del punt més alt (des que s'ha obert) a la cua o a la pàgina.
+    function shouldClosePickerOnScroll({ open, desktop, base, current, threshold = PICKER_CLOSE_SCROLL_PX }) {
+        if (!open || !desktop || !base || !current) return false;
+        return current.queue - base.queue > threshold || current.page - base.page > threshold;
+    }
+
+    // Treu el selector sense repintar la cua i sense que les cançons que es veuen facin cap salt.
+    function closePickerKeepingScroll(container) {
+        const picker = container.querySelector?.('.mq-style-picker');
+        const anchor = container.querySelector?.('.mq-section');
+        const before = anchor?.getBoundingClientRect?.().top;
+        const hadFocus = Boolean(picker?.contains?.(document.activeElement));
+        stylePickerOpen = false;
+        picker?.remove?.();
+        const add = container.querySelector?.('[data-mq-add-style]');
+        add?.setAttribute?.('aria-expanded', 'false');
+        if (hadFocus) add?.focus?.({ preventScroll: true });
+        const after = anchor?.getBoundingClientRect?.().top;
+        const delta = Number.isFinite(before) && Number.isFinite(after) ? before - after : 0;
+        if (delta > 0) {
+            if (container.scrollHeight > container.clientHeight && container.scrollTop > 0) {
+                container.scrollTop = Math.max(0, container.scrollTop - delta);
+            } else {
+                window.scrollBy?.(0, -delta);
+            }
+        }
+    }
+
+    function onQueueScroll() {
+        const container = lastContainer;
+        if (!stylePickerOpen || !container || !container.getClientRects?.().length) return;
+        const current = currentScroll();
+        // El punt de partida és el més alt on s'ha estat: pujar una mica i tornar a baixar també compta
+        pickerScrollBase = {
+            queue: Math.min(pickerScrollBase.queue, current.queue),
+            page: Math.min(pickerScrollBase.page, current.page),
+        };
+        const desktop = Boolean(window.matchMedia?.(PICKER_DESKTOP_QUERY)?.matches);
+        if (shouldClosePickerOnScroll({ open: stylePickerOpen, desktop, base: pickerScrollBase, current })) {
+            closePickerKeepingScroll(container);
+        }
+    }
+
+    let pageScrollBound = false;
+    function bindPickerScroll(container) {
+        container.addEventListener('scroll', onQueueScroll, { passive: true });
+        if (!pageScrollBound) {
+            pageScrollBound = true;
+            window.addEventListener?.('scroll', onQueueScroll, { passive: true });
+        }
     }
 
     // Retorna true si s'ha encarregat de pintar la cua.
@@ -1495,6 +1559,7 @@
     function bindContainer(container) {
         if (container._mqBound) return;
         container._mqBound = true;
+        bindPickerScroll(container);
         container.addEventListener('keydown', event => {
             if (event.key === 'Escape' && stylePickerOpen) {
                 event.stopPropagation();
@@ -1649,6 +1714,8 @@
         getPreference,
         addStyle,
         removeStyle,
+        toggleStylePicker,
+        shouldClosePickerOnScroll,
         getStyles: radioStyles,
         buildQueue,
         buildYouTubeMusicUrl,
