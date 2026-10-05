@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-05T13:42:27.009Z",
+  "updatedAt": "2026-10-05T13:50:37.077Z",
   "artists": [
     {
       "name": "2ES",
@@ -21879,38 +21879,14 @@
       "youtube": {
         "channels": [
           {
-            "id": "UCezETW2-gAMtXB98LGBweWQ",
-            "handle": "@sabordegraciaoficial",
-            "name": "SABOR DE GRACIA OFICIAL",
-            "type": "official",
-            "primary": true
-          },
-          {
             "id": "UClTLWZcaxCMgkk58dQna18A",
             "handle": null,
             "name": "Sabor de Gracia - Topic",
             "type": "topic",
-            "primary": false
+            "primary": true
           }
         ],
         "searchCandidates": [
-          {
-            "id": "UCezETW2-gAMtXB98LGBweWQ",
-            "title": "SABOR DE GRACIA OFICIAL",
-            "handle": "@sabordegraciaoficial",
-            "description": "Sabor de Gracia, Grupo de Rumba de tipología gitana. Nacido en Barcelona en Noviembre de 1994, Nuestra Rumba se ha bailado en toda España y también en paises como EE.UU, Venezuela, Argentina, Puerto Rico, Francia, Alemania, Hungria, Belgica, Etc..\nNuestros discos \"Tots Els Colors\" (DCD1997), \"El Mundo Baila ( Industria 2004)! , \"La Cançó amb Rumba ",
-            "subscriberCount": 4970,
-            "thumbnail": "https://yt3.ggpht.com/iYGkVq9aFfj9UxhCOoVG-SaZRyYrN1LJ96mQ_HK8h60qC8JiUJtk9X1HY0K1rBCrS5JOXgpgsOE=s240-c-k-c0x00ffffff-no-rj",
-            "score": 98,
-            "reasons": [
-              "nom exacte traient oficial",
-              "handle coincident",
-              "marca oficial",
-              "primer resultat"
-            ],
-            "suggestedType": "official",
-            "discoveredAt": "2026-10-05T09:57:39.384Z"
-          },
           {
             "id": "UClTLWZcaxCMgkk58dQna18A",
             "title": "Sabor de Gracia - Topic",
@@ -21918,20 +21894,6 @@
             "description": "",
             "subscriberCount": 2630,
             "thumbnail": "https://yt3.ggpht.com/HM7vItjek4Qx4mB3-q_LF2ZfJ6cj2JzebLB8xbl4EfwuZX-WhLnzuu26jURXNvmLHGBlWdpRuA=s240-c-k-c0x00ffffff-no-rj",
-            "score": 80,
-            "reasons": [
-              "nom exacte de canal Topic"
-            ],
-            "suggestedType": "topic",
-            "discoveredAt": "2026-10-05T09:57:39.384Z"
-          },
-          {
-            "id": "UCwNdUI4SsXRESRaTFlWXaAQ",
-            "title": "Sabor De Gracia - Topic",
-            "handle": null,
-            "description": "",
-            "subscriberCount": 1,
-            "thumbnail": "https://yt3.ggpht.com/iE9E9bbX27dXhveI1N9PSW-rFuhYN9dLMIXdyIo66hFx4GyeN05aWsy8yddxhBS6qgmaKdGL0w=s240-c-k-c0x00ffffff-no-rj",
             "score": 80,
             "reasons": [
               "nom exacte de canal Topic"
@@ -21949,8 +21911,8 @@
         "genre:manual",
         "youtube:targeted-search-verified"
       ],
-      "lastChecked": "2026-10-05T10:10:00.000Z",
-      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal(s) YouTube verificat(s) amb cerca dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma.",
+      "lastChecked": "2026-10-05T13:50:37.077Z",
+      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal(s) YouTube verificat(s) amb cerca dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma. 2026-10-05: l’usuari limita el catàleg a cinc cançons: Ningú No Comprèn Ningú; Ara Que Tinc Vint Anys; Me'n Vaig a Peu; Per A Tu, Serrat; Qualsevol Nit Pot Sortir El Sol. Només canal Topic; oficial retirat.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-05T09:57:39.384Z",

@@ -466,6 +466,26 @@
       "artist": "Adala (canal retirat)",
       "blocked": true,
       "note": "Retirat per petició explícita 2026-10-05: només conservar UC-JNcJrzWSw2RtL-3TqYoeQ."
+    },
+    "UCezETW2-gAMtXB98LGBweWQ": {
+      "artist": "Sabor de Gràcia",
+      "blocked": true,
+      "note": "Canal oficial retirat 2026-10-05: l’usuari només vol cinc peces presents al Topic; evita entrevistes, programes, premis i altres cançons."
+    },
+    "UClTLWZcaxCMgkk58dQna18A": {
+      "artist": "Sabor de Gràcia",
+      "allowedTitles": [
+        "Me'n Vaig a Peu",
+        "Ara Que Tinc Vint Anys",
+        "Per A Tu, Serrat",
+        "Ningú No Comprèn Ningú",
+        "Qualsevol Nit Pot Sortir El Sol"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song"
+      ],
+      "note": "Selecció tancada de cinc cançons indicada explícitament per l’usuari el 2026-10-05."
     }
   }
 }

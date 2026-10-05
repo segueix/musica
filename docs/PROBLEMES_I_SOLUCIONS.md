@@ -1452,3 +1452,12 @@ Hi havia dos problemes independents:
 **No verificat:** reproducció real de YouTube a la finestra (possible bloqueig d'autoplay o d'embed per referrer); caldrà provar-ho a Chrome.
 
 **Proves:** `tests/system-player.test.js`, `tests/player-controls.test.js`, `node tests/browser/verificar-finestra-sistema.js`.
+
+
+## [2026-10-05] Sabor de Gràcia: vídeos auxiliars i selecció de cinc cançons
+
+El feed incloïa l’entrevista «Programa Signes del Temps-Entrevista exclusiva» (W-uxBzgiktg, 28 minuts), ja classificada com `other`, i aparicions com «CULTURAS 2 RTVE-SABOR DE GRACIA» i «PREMIS ENDERROCK 2025», classificades com `song`.
+
+Causa comprovada: `update_music_feed.js` conserva els vídeos públics al feed i delega el filtre a les vistes, excepte quan el canal té `acceptedMusicOnly` o `allowedContentTypes`. A més, el classificador pot acceptar un títol del canal oficial que conté el nom de l’artista, un separador i una durada musical; altres casos acumulen punts per categoria Music, tags i durada. Són senyals de metadades, no una anàlisi de l’àudio. Que un vídeo sigui al feed no demostra que totes les vistes el mostrin: el perfil té també el filtre `isSongVideo`.
+
+Correcció de catàleg demanada: només cinc enregistraments Topic (pCeWfNt-GCE, MZ0YjJC1XVM, FVhxEiH0QVQ, xAIMP0FnPJ8, 1fKzpw-KB0c). Llista blanca de títols exactes, tipus `song` i música acceptada; canal oficial retirat i bloquejat; 36 vídeos addicionals ocultats i arxius dels dos canals eliminats perquè el generador els reconstrueixi amb la selecció. No s’ha alterat globalment el classificador ni s’han retirat vídeos d’altres artistes.
