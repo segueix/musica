@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-05T09:59:22.752Z",
+  "updatedAt": "2026-10-05T10:15:00.000Z",
   "artists": [
     {
       "name": "2ES",
@@ -1360,7 +1360,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCg2Go1mJnKlXnMvy1VhlZTw",
+            "handle": "@animalgrup2574",
+            "name": "AnimalGrup",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UCg2Go1mJnKlXnMvy1VhlZTw",
@@ -1409,10 +1417,12 @@
       "active": true,
       "sources": [
         "manual-user-2026-10-05",
-        "genre:manual"
+        "genre:manual",
+        "youtube:video-verified",
+        "https://www.youtube.com/watch?v=6ZnwCG_Qn0s"
       ],
-      "lastChecked": "2026-10-05T10:05:00.000Z",
-      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal YouTube pendent de resolució dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma.",
+      "lastChecked": "2026-10-05T10:15:00.000Z",
+      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal oficial verificat a partir del videoclip «Només amb tu»; repertori mixt s'ha de sotmetre al filtre d'idioma.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-05T09:59:21.683Z",
