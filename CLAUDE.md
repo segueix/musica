@@ -60,6 +60,7 @@ js/
 │   ├── artist-page.js       # Fitxa d'artista: dues ràdios (artista / estil), presentació curta expandible (model pur + DOM)
 │   ├── user-categories.js   # Les teves categories: categories pròpies de grups (portada, fitxa, ordre, compartir)
 │   ├── alphabet-index.js    # Índex alfabètic de la pàgina d'artistes (lletres que es fan grans, arrossegar per saltar)
+│   ├── category-artists.js  # Filera d'artistes d'una categoria sota la cançó destacada (scroll al mòbil, desplegable a l'ordinador)
 │   ├── shell-nav.js         # Navegació lateral/inferior i avisos breus (toast)
 │   ├── music-selection.js   # Motor de selecció musical compartit (funcions pures): antiguitat real, puntuació, restriccions
 │   ├── music-signals.js     # Observador únic d'escolta, estadístiques i preferències («(+) com aquesta (−)»)
@@ -318,6 +319,12 @@ const likes = ctx2.SegueixApp.features.likes;
 - **Compartir:** `shareUserCategory()` (app.js) → `?importData=` de tipus `category` (nom + ID de canal). El missatge porta **el nom de la categoria i els grups** (`shareMessage()`, `text` de `navigator.share`); «Generar QR» fa la targeta «Categoria · nom · N artistes». En obrir l'enllaç es desa com a categoria pròpia (`importShared()`, sense duplicar; «Nom (2)» si el nom ja és d'una altra) i surt a Inici.
 - **Ordre manual a Inici (tàctil):** mantenir premuda una rajola de «Tria el teu so» (250 ms) i arrossegar-la (Sortable); també amb el ratolí o **Alt + fletxes**. Es desa a `catube_music_home_style_order` i `setHomeOrder()` el porta a l'ordre de la barra d'estils (`mergeOrder()`). Visibles sense desplegar: les 8 primeres + una per categoria pròpia (`arrangeTiles()`).
 - Proves: `tests/user-categories.test.js`; opt-in `node tests/browser/verificar-categories.js`. Detall i trampes: `docs/PROBLEMES_I_SOLUCIONS.md` (2026-10-04).
+
+### Artistes de cada categoria (2026-10-05)
+
+- A la vista d'un estil (Pop, Rock…; `isStyleRadioCategory()`) i d'una categoria pròpia, **just després de la cançó destacada** (`#heroSection`) hi ha la filera **«Artistes N»** (`#categoryArtists`, `js/features/category-artists.js`, patró 2): els perfils (foto rodona + nom) dels artistes de la categoria; tocar-ne un obre la fitxa (`openChannelProfile`). `syncCategoryArtists()` (app.js) la pinta després de `updateHero()` a `renderVideos()` / `renderStaticVideos()` i s'amaga a Inici, Descobreix, Radar, «Seguint», la cerca i les vistes buides.
+- Quins artistes: els grups (`YouTubeAPI.getArtistGroups()`) amb la categoria a `categories` (estil) o amb algun canal a `categoryChannelIds()` (categoria pròpia), no amagats i amb alguna cançó al feed; primer els que hi tenen la categoria principal i després per nombre de cançons.
+- **Mòbil (≤ 768 px): una sola filera amb scroll lateral**, sense botó. **Ordinador: una fila plegada** (`max-height: var(--ca-row-h)`, alçada mesurada pel JS) i, si n'hi ha més dels que hi caben, el botó **«Mostra'ls tots (N)» / «Mostra'n menys»** la desplega (`.ca__list.is-expanded`). Estil al final de `portada.css`. Proves: `tests/category-artists.test.js`; opt-in `node tests/browser/verificar-artistes-categoria.js`.
 
 ### Pàgina d'artistes: índex alfabètic (2026-10-04)
 
