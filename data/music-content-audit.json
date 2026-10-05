@@ -1,41 +1,26 @@
 {
-  "generatedAt": "2026-10-05T10:01:38.761Z",
-  "rawPublicVideoCount": 4788,
-  "feedVideoCount": 4229,
-  "acceptedMusicCount": 4187,
-  "categoryEligibleVideoCount": 4182,
+  "generatedAt": "2026-10-05T10:05:02.027Z",
+  "rawPublicVideoCount": 4759,
+  "feedVideoCount": 4203,
+  "acceptedMusicCount": 4160,
+  "categoryEligibleVideoCount": 4155,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
-    "before": 5,
+    "before": 0,
     "matched": 0,
-    "rejected": 5
+    "rejected": 0
   },
-  "rejectedOrReviewCount": 601,
+  "rejectedOrReviewCount": 599,
   "reviewCount": 562,
   "typeCounts": {
-    "song": 4079,
-    "live_song": 103,
+    "song": 4053,
+    "live_song": 102,
     "album": 5,
-    "other": 39,
+    "other": 37,
     "review": 562
   },
   "channelsWithoutAcceptedMusic": [],
-  "rejectedSamples": [
-    {
-      "id": "VEZOOy1ohkk",
-      "title": "ANIMAL - La Melodia del Foc - Teaser Oficial 2018",
-      "channelTitle": "AnimalGrup",
-      "durationSeconds": 138,
-      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "5FfxV282eKw",
-      "title": "ANIMAL - Teaser Oficial - Més enllà de les paraules",
-      "channelTitle": "AnimalGrup",
-      "durationSeconds": 85,
-      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
-    }
-  ],
+  "rejectedSamples": [],
   "publishedFeedVideoCount": 4203,
   "publishedShortVideoCount": 0
 }
