@@ -746,6 +746,17 @@ afegeix('La Trinca', [
     'El Centro On the Rocks',
 ]);
 
+// Revisió del 2026-10-05: Au Rora.
+// Només es conserven les tres darreres peces en català del canal actual:
+// «Veure't Marxar», «Espero No Arribar Tard (Live a Betevé)» i «Espero No Arribar Tard».
+afegeix('Au Rora', [
+    'How Long Are We Supposed To Wait',
+    'How Does It Feel',
+    'Naïve',
+    'Blessed',
+    'Tipsy',
+]);
+
 function esCastella(video) {
     const regla = REGLES[video.channelTitle];
     if (!regla) return false;
