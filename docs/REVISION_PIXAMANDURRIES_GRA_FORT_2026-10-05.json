@@ -1,0 +1,85 @@
+{
+  "updatedAt": "2026-10-05T19:02:42.450Z",
+  "scope": "Canals exactes demanats per l’usuari. Primera selecció conservadora, no discografia completa.",
+  "genre": "Punk",
+  "artists": [
+    {
+      "name": "Pixamandúrries",
+      "aliases": [
+        "Pixamandurries"
+      ],
+      "channel": "UCXQsHe-XMB9xWUxtRLFAWQg",
+      "ids": [
+        "BvW0TmXoBEQ",
+        "2EExfuHmT2U",
+        "t8TBnCGiexw"
+      ],
+      "sources": [
+        "https://albertpunsolavilar.com/wp-content/uploads/2024/01/el-temps_1993_10_0488.pdf"
+      ],
+      "tracks": [
+        {
+          "id": "BvW0TmXoBEQ",
+          "title": "En Kim",
+          "durationSeconds": 155,
+          "language": "ca",
+          "channelId": "UCXQsHe-XMB9xWUxtRLFAWQg"
+        },
+        {
+          "id": "2EExfuHmT2U",
+          "title": "La piruleta",
+          "durationSeconds": 142,
+          "language": "ca",
+          "channelId": "UCXQsHe-XMB9xWUxtRLFAWQg"
+        },
+        {
+          "id": "t8TBnCGiexw",
+          "title": "L´any dels gossos",
+          "durationSeconds": 129,
+          "language": "ca",
+          "channelId": "UCXQsHe-XMB9xWUxtRLFAWQg"
+        }
+      ]
+    },
+    {
+      "name": "Gra Fort",
+      "aliases": [],
+      "channel": "UC5PqMEE9b8osizQXQSdVkNQ",
+      "ids": [
+        "BCzg-AMTtzw",
+        "5MCC_7fZOY8",
+        "nQVRtG9Z14I"
+      ],
+      "sources": [
+        "https://www.coveralia.com/letras/d-o-t-a--gra-fort.php",
+        "https://www.coveralia.com/letras/terra-alta-gra-fort.php",
+        "https://www.coveralia.com/letras/rock-n-roll-gra-fort.php"
+      ],
+      "tracks": [
+        {
+          "id": "BCzg-AMTtzw",
+          "title": "D.o.t.a.",
+          "durationSeconds": 212,
+          "language": "ca",
+          "channelId": "UC5PqMEE9b8osizQXQSdVkNQ"
+        },
+        {
+          "id": "5MCC_7fZOY8",
+          "title": "Terra Alta",
+          "durationSeconds": 266,
+          "language": "ca",
+          "channelId": "UC5PqMEE9b8osizQXQSdVkNQ"
+        },
+        {
+          "id": "nQVRtG9Z14I",
+          "title": "Rock'n'roll",
+          "durationSeconds": 198,
+          "language": "ca",
+          "channelId": "UC5PqMEE9b8osizQXQSdVkNQ"
+        }
+      ]
+    }
+  ],
+  "verification": "Gra Fort: anàlisi de les lletres enllaçades. Pixamandúrries: El Temps 25-10-1993, pàgina 90, identifica explícitament les cançons en català de L’any dels gossos. Contrast de títol, disc i canal amb metadades públiques de YouTube.",
+  "notImported": "Altres canals; cançons sense confirmació lingüística; pistes curtes pendents de comprovar com a no-Shorts. Pixamandúrries té repertori multilingüe."
+}

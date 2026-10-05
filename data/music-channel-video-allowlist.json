@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-05T18:53:57.098Z",
+  "updatedAt": "2026-10-05T19:02:42.450Z",
   "description": "Llista blanca per a canals on Segueix Música només ha d'ingerir vídeos concrets. Admet títols exactes, fragments obligatoris i fragments exclosos.",
   "channels": {
     "UCKpscwdWlVaMqcA81vLI7OA": {
@@ -1813,6 +1813,44 @@
       "artist": "Pilseners",
       "avatarUrl": "https://i.ytimg.com/vi/CQFtVT5RvIc/maxresdefault.jpg",
       "note": " Imatge del grup: caràtula de «Nits de glòria (2022 Remastered)», a petició de l’usuari."
+    },
+    "UCXQsHe-XMB9xWUxtRLFAWQg": {
+      "artist": "Pixamandúrries",
+      "note": "Selecció tancada de cançons en català; no importar altres vídeos ni canals. Fonts: docs/REVISION_PIXAMANDURRIES_GRA_FORT_2026-10-05.json",
+      "allowedVideoIds": [
+        "BvW0TmXoBEQ",
+        "2EExfuHmT2U",
+        "t8TBnCGiexw"
+      ],
+      "allowedTitles": [
+        "En Kim",
+        "La piruleta",
+        "L´any dels gossos"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UC5PqMEE9b8osizQXQSdVkNQ": {
+      "artist": "Gra Fort",
+      "note": "Selecció tancada de cançons en català; no importar altres vídeos ni canals. Fonts: docs/REVISION_PIXAMANDURRIES_GRA_FORT_2026-10-05.json",
+      "allowedVideoIds": [
+        "BCzg-AMTtzw",
+        "5MCC_7fZOY8",
+        "nQVRtG9Z14I"
+      ],
+      "allowedTitles": [
+        "D.o.t.a.",
+        "Terra Alta",
+        "Rock'n'roll"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
     }
   }
 }
