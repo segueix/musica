@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-05T09:40:00.000Z",
+  "updatedAt": "2026-10-05T09:42:08.893Z",
   "artists": [
     {
       "name": "2ES",
@@ -16,7 +16,51 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": []
+        "channels": [],
+        "searchCandidates": [
+          {
+            "id": "UCjEehp73GI2mh9Rkv31QT9w",
+            "title": "2ES",
+            "handle": "@twoeazzy2",
+            "description": "catalan urban music.",
+            "subscriberCount": 88,
+            "thumbnail": "https://yt3.ggpht.com/lu0LyzX-Kp0JrZdGhbZyAUbDhuUlteq1gITQLpnYNX5mYFrZm9DujR6hxA8yZ1Sslh0HyV2TWg=s240-c-k-c0x00ffffff-no-rj",
+            "score": 70,
+            "reasons": [
+              "nom exacte"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T09:42:03.874Z"
+          },
+          {
+            "id": "UCpFnDeK384F0WR53VYZMjOA",
+            "title": "2ES",
+            "handle": "@2es355",
+            "description": "Освітлення спеціалізованих заходів різноманітного змісту та різнобічної спрямованості",
+            "subscriberCount": 2270,
+            "thumbnail": "https://yt3.ggpht.com/DQemH2wh1VT7qwdT83qnULWF4E08SZlSRz5STDlHDJdwCX1YwfcYN4IeE_jW3hIwbFyouj5x8w=s240-c-k-c0x00ffffff-no-rj",
+            "score": 70,
+            "reasons": [
+              "nom exacte"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T09:42:03.874Z"
+          },
+          {
+            "id": "UCRolTtx66X54RmtLGy-ivFg",
+            "title": "2 Es",
+            "handle": "@helenthompson-w8l",
+            "description": "Fun trends, funny videos with my friends\n",
+            "subscriberCount": 41,
+            "thumbnail": "https://yt3.ggpht.com/TAEUloJEPvLVcn3M3AYjX1DTfaJCVP6MVrr_yxaWzT7JaSEFpyGp0gI-F1EIDGiMDOWPJaoT3JY=s240-c-k-c0x00ffffff-no-rj",
+            "score": 5,
+            "reasons": [
+              "primer resultat"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T09:42:03.874Z"
+          }
+        ]
       },
       "confidence": "alta",
       "reviewStatus": "aprovat",
@@ -25,7 +69,17 @@
         "manual-user-2026-10-05"
       ],
       "lastChecked": "2026-10-05T09:40:00.000Z",
-      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal YouTube pendent de resolució dirigida."
+      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal YouTube pendent de resolució dirigida.",
+      "enrichment": {
+        "youtubeSearch": {
+          "checkedAt": "2026-10-05T09:42:03.874Z",
+          "status": "candidats",
+          "query": "2ES",
+          "resultCount": 3,
+          "bestScore": 70,
+          "autoAcceptedId": null
+        }
+      }
     },
     {
       "name": "31 FAM",
@@ -106,7 +160,51 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": []
+        "channels": [],
+        "searchCandidates": [
+          {
+            "id": "UCrmKSeRAoGbFoEiLv36EzWg",
+            "title": "ACROS - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 153,
+            "thumbnail": "https://yt3.ggpht.com/NpVvqiItwc6zHZEfh1UCQIxXISel3vsPkK-BvzTLahQ1CsPygBdUjJjp5QCzbCZsUEN8_lwqeyI=s240-c-k-c0x00ffffff-no-rj",
+            "score": 80,
+            "reasons": [
+              "nom exacte de canal Topic"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-05T09:42:04.321Z"
+          },
+          {
+            "id": "UCmWO80Gg_pX2K1pp6whm2hg",
+            "title": "Acros",
+            "handle": "@acrostheangel",
+            "description": "",
+            "subscriberCount": 2160,
+            "thumbnail": "https://yt3.ggpht.com/w23HFu0uZjdIywqglCxMUDoIsDJ8FdhRNkX3pwj10jEdC65oSwgMeM3yTm9A35NJUrGTtTglrko=s240-c-k-c0x00ffffff-no-rj",
+            "score": 70,
+            "reasons": [
+              "nom exacte"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T09:42:04.321Z"
+          },
+          {
+            "id": "UCf4PPvHf-5nnoBX54RBs4JQ",
+            "title": "Acro",
+            "handle": "@acro",
+            "description": "Me play game",
+            "subscriberCount": 26100,
+            "thumbnail": "https://yt3.ggpht.com/rtqgIw_eszUdV0zmVrmYaDwfmSjTF_dlCgorqLzb3n60JzIfXVuoFHBqXRnhUFEpO0fSyLHvUw=s240-c-k-c0x00ffffff-no-rj",
+            "score": 5,
+            "reasons": [
+              "primer resultat"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T09:42:04.321Z"
+          }
+        ]
       },
       "confidence": "alta",
       "reviewStatus": "aprovat",
@@ -116,7 +214,17 @@
         "https://www.radiorahim.cat/artista/acros/"
       ],
       "lastChecked": "2026-10-05T09:40:00.000Z",
-      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal YouTube pendent de resolució dirigida."
+      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal YouTube pendent de resolució dirigida.",
+      "enrichment": {
+        "youtubeSearch": {
+          "checkedAt": "2026-10-05T09:42:04.321Z",
+          "status": "candidats",
+          "query": "Acros",
+          "resultCount": 3,
+          "bestScore": 80,
+          "autoAcceptedId": null
+        }
+      }
     },
     {
       "name": "Adala",
@@ -131,7 +239,50 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": []
+        "channels": [],
+        "searchCandidates": [
+          {
+            "id": "UCr0GRoNMpT6f-ELLCZMlNlg",
+            "title": "Adala - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 1970,
+            "thumbnail": "https://yt3.ggpht.com/dE2oTFGA3EAy5nO8DepThAk2rZg8n4kGnA5HetA-c4TsdmithuO9prCHmB2k9RPlj2u7wZsTxg=s240-c-k-c0x00ffffff-no-rj",
+            "score": 85,
+            "reasons": [
+              "nom exacte de canal Topic",
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-05T09:42:04.619Z"
+          },
+          {
+            "id": "UC-JNcJrzWSw2RtL-3TqYoeQ",
+            "title": "Adala",
+            "handle": "@adalamusic",
+            "description": "Música del sub·conscient des de Barcelona",
+            "subscriberCount": 28900,
+            "thumbnail": "https://yt3.ggpht.com/dE2oTFGA3EAy5nO8DepThAk2rZg8n4kGnA5HetA-c4TsdmithuO9prCHmB2k9RPlj2u7wZsTxg=s240-c-k-c0x00ffffff-no-rj",
+            "score": 70,
+            "reasons": [
+              "nom exacte"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T09:42:04.619Z"
+          },
+          {
+            "id": "UC_TuC__S3qGK7feASr2F_ZQ",
+            "title": "البرنامج الإذاعي حكم العدالة Hokm al Adala",
+            "handle": "@hokm",
+            "description": "حكم العدالة : البرنامج الاشهر منذ عام 1977",
+            "subscriberCount": 165000,
+            "thumbnail": "https://yt3.ggpht.com/ZWFPx85-YuW6mgnhf-9dTRZd1ZfbQyWh4AlknWmxZm4hkeTRUXEt30YYI7eucNkJllXjqetWLDE=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T09:42:04.619Z"
+          }
+        ]
       },
       "confidence": "alta",
       "reviewStatus": "aprovat",
@@ -141,7 +292,17 @@
         "https://adala.cat/"
       ],
       "lastChecked": "2026-10-05T09:40:00.000Z",
-      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal YouTube pendent de resolució dirigida."
+      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal YouTube pendent de resolució dirigida.",
+      "enrichment": {
+        "youtubeSearch": {
+          "checkedAt": "2026-10-05T09:42:04.619Z",
+          "status": "candidats",
+          "query": "Adala",
+          "resultCount": 3,
+          "bestScore": 85,
+          "autoAcceptedId": null
+        }
+      }
     },
     {
       "name": "Adrià Puntí",
@@ -1791,7 +1952,52 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": []
+        "channels": [],
+        "searchCandidates": [
+          {
+            "id": "UC5o8evhO7e-P0CjCarYQ7TQ",
+            "title": "Atupa - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 14,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_nsu_lBxE2ury6Lm0RPchuoiBNqX9glYYwjMVEcOsqJbh4=s240-c-k-c0x00ffffff-no-rj",
+            "score": 80,
+            "reasons": [
+              "nom exacte de canal Topic"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-05T09:42:04.982Z"
+          },
+          {
+            "id": "UCvS1bHC_x3hqOwrYTY2bLIA",
+            "title": "Atupa",
+            "handle": "@atupatv",
+            "description": "",
+            "subscriberCount": 6430,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_nsu_lBxE2ury6Lm0RPchuoiBNqX9glYYwjMVEcOsqJbh4=s240-c-k-c0x00ffffff-no-rj",
+            "score": 75,
+            "reasons": [
+              "nom exacte",
+              "primer resultat"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T09:42:04.982Z"
+          },
+          {
+            "id": "UCMvG-ov3hE33h1UL_QwtXBA",
+            "title": "ATUPA ",
+            "handle": "@atupa247",
+            "description": "The Association of Technical Universities and Polytechnics in Africa",
+            "subscriberCount": 76,
+            "thumbnail": "https://yt3.ggpht.com/1U0RbkwQBBnO7RRhCIVyyR-RCBoZNYydoORwywFnpPmAle_GQHHgyEBW9Jiaett4Z4HLoBmWhw=s240-c-k-c0x00ffffff-no-rj",
+            "score": 70,
+            "reasons": [
+              "nom exacte"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T09:42:04.982Z"
+          }
+        ]
       },
       "confidence": "alta",
       "reviewStatus": "aprovat",
@@ -1801,7 +2007,17 @@
         "https://musicaenvalencia.es/artista/163/atupa"
       ],
       "lastChecked": "2026-10-05T09:40:00.000Z",
-      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal YouTube pendent de resolució dirigida."
+      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal YouTube pendent de resolució dirigida.",
+      "enrichment": {
+        "youtubeSearch": {
+          "checkedAt": "2026-10-05T09:42:04.982Z",
+          "status": "candidats",
+          "query": "Atupa",
+          "resultCount": 3,
+          "bestScore": 80,
+          "autoAcceptedId": null
+        }
+      }
     },
     {
       "name": "Au Rora",
@@ -4909,7 +5125,52 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": []
+        "channels": [],
+        "searchCandidates": [
+          {
+            "id": "UCcViTCO0ICmQ8HOh3g5sxxA",
+            "title": "El Nota",
+            "handle": "@elnota",
+            "description": "Culturismo de alto rendimiento: ciencia, salud, negocio y competición.\n\nAnalizo el culturismo moderno desde dentro: físicos, campeonatos, jueces, posing, biomecánica, hipertrofia, suplementación, química deportiva, salud metabólica y preparación competitiva.\n\nEl canal combina actualidad del Mr. Olympia, Arnold Classic, IFBB Pro League, Open Bodybui",
+            "subscriberCount": 45100,
+            "thumbnail": "https://yt3.ggpht.com/R8SYxahMoEFSK4CLm6Sten9ltsnNuJEcfUf5LywF_sRV8PmaHuXCjV25If0TnH_d5uNh7PCDlGE=s240-c-k-c0x00ffffff-no-rj",
+            "score": 100,
+            "reasons": [
+              "nom exacte",
+              "handle exacte",
+              "primer resultat"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T09:42:05.308Z"
+          },
+          {
+            "id": "UCUv4MPsmEnAqDTvTbnZaPkg",
+            "title": "El Nota",
+            "handle": "@elnota_papa",
+            "description": "EL NOTA ES ACERCA DEL 💗",
+            "subscriberCount": 4310,
+            "thumbnail": "https://yt3.ggpht.com/jsQyh-UEOlkvpiuW27kCO0LeGIGfMKQT5bfaQAneFhjmCXOEBTDnLTyttmcm2Saqc9EjPcF6Pw=s240-c-k-c0x00ffffff-no-rj",
+            "score": 88,
+            "reasons": [
+              "nom exacte",
+              "handle coincident"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T09:42:05.308Z"
+          },
+          {
+            "id": "UClpjzgaLvFABQvI50YDXblw",
+            "title": "Nota - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 237,
+            "thumbnail": "https://yt3.ggpht.com/jsQyh-UEOlkvpiuW27kCO0LeGIGfMKQT5bfaQAneFhjmCXOEBTDnLTyttmcm2Saqc9EjPcF6Pw=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-05T09:42:05.308Z"
+          }
+        ]
       },
       "confidence": "alta",
       "reviewStatus": "aprovat",
@@ -4918,7 +5179,17 @@
         "manual-user-2026-10-05"
       ],
       "lastChecked": "2026-10-05T09:40:00.000Z",
-      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal YouTube pendent de resolució dirigida."
+      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal YouTube pendent de resolució dirigida.",
+      "enrichment": {
+        "youtubeSearch": {
+          "checkedAt": "2026-10-05T09:42:05.308Z",
+          "status": "candidats",
+          "query": "El Nota",
+          "resultCount": 3,
+          "bestScore": 100,
+          "autoAcceptedId": null
+        }
+      }
     },
     {
       "name": "El Pont d'Arcalís",
@@ -8259,7 +8530,50 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": []
+        "channels": [],
+        "searchCandidates": [
+          {
+            "id": "UCNzhlSBbPNlsZ563SKvvggg",
+            "title": "Herba Negra - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 108,
+            "thumbnail": "https://yt3.ggpht.com/PBfCgQ2Gymaqdw2j5d8s4myT7w2Gfptfak1ynh0QSlD3bfJNxUOiRFLGli-w3xOtNtDA8ot2=s240-c-k-c0x00ffffff-no-rj",
+            "score": 85,
+            "reasons": [
+              "nom exacte de canal Topic",
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-05T09:42:05.645Z"
+          },
+          {
+            "id": "UCyNgOgsiiy5cSgyfEqveONw",
+            "title": "HerbaNegra",
+            "handle": "@herbanegra8475",
+            "description": "",
+            "subscriberCount": 551,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_kyt473GjkfGeVEZJcjZj9gE_5uSohvufqmJR3NRakNQg=s240-c-k-c0x00ffffff-no-rj",
+            "score": 18,
+            "reasons": [
+              "handle coincident"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T09:42:05.645Z"
+          },
+          {
+            "id": "UCVjUDA0FgEh-v9SxMP7nOjg",
+            "title": "VERS ENDINS",
+            "handle": "@versendins7147",
+            "description": "",
+            "subscriberCount": 129,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_lrGbqaiuPxsPP99wi4U05CP9GWKpwFza1nvHH_cQoPD0I=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T09:42:05.645Z"
+          }
+        ]
       },
       "confidence": "alta",
       "reviewStatus": "aprovat",
@@ -8268,7 +8582,17 @@
         "manual-user-2026-10-05"
       ],
       "lastChecked": "2026-10-05T09:40:00.000Z",
-      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal YouTube pendent de resolució dirigida."
+      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal YouTube pendent de resolució dirigida.",
+      "enrichment": {
+        "youtubeSearch": {
+          "checkedAt": "2026-10-05T09:42:05.645Z",
+          "status": "candidats",
+          "query": "Herba Negra",
+          "resultCount": 3,
+          "bestScore": 85,
+          "autoAcceptedId": null
+        }
+      }
     },
     {
       "name": "Hey Zuri",
@@ -13402,7 +13726,53 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": []
+        "channels": [],
+        "searchCandidates": [
+          {
+            "id": "UCVeo5x9sEwL4yxoo-004zqw",
+            "title": "Malson Atmosfèric",
+            "handle": "@malsonatmosferic",
+            "description": "Quina merda la ciutat",
+            "subscriberCount": 606,
+            "thumbnail": "https://yt3.ggpht.com/ttm1qnf9FR-RftAIyQ-8-H3ai00JF5Fh3K6nUaBkBPhcswoCUBAqmqcufwwBn7UhYyVsU9Ru=s240-c-k-c0x00ffffff-no-rj",
+            "score": 100,
+            "reasons": [
+              "nom exacte",
+              "handle exacte",
+              "primer resultat"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T09:42:06.023Z"
+          },
+          {
+            "id": "UCyOpYZK-23D5O5ih1d5I4yQ",
+            "title": "Malson Atmosfèric - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 14,
+            "thumbnail": "https://yt3.ggpht.com/ttm1qnf9FR-RftAIyQ-8-H3ai00JF5Fh3K6nUaBkBPhcswoCUBAqmqcufwwBn7UhYyVsU9Ru=s240-c-k-c0x00ffffff-no-rj",
+            "score": 80,
+            "reasons": [
+              "nom exacte de canal Topic"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-05T09:42:06.023Z"
+          },
+          {
+            "id": "UC9INg4nYzp8suVdMWl7BXmw",
+            "title": "Malson Atmosfèric - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 2,
+            "thumbnail": "https://yt3.ggpht.com/ApgsNhRW1Xow7VQJtAwytvu6em7gq0AM2JlAYed2t10wl0486vkcmKdP3mlrHgPJCWl9-Nn7rqw=s240-c-k-c0x00ffffff-no-rj",
+            "score": 80,
+            "reasons": [
+              "nom exacte de canal Topic"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-05T09:42:06.023Z"
+          }
+        ]
       },
       "confidence": "alta",
       "reviewStatus": "aprovat",
@@ -13412,7 +13782,17 @@
         "https://malsonatmosferic.bandcamp.com/"
       ],
       "lastChecked": "2026-10-05T09:40:00.000Z",
-      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal YouTube pendent de resolució dirigida."
+      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal YouTube pendent de resolució dirigida.",
+      "enrichment": {
+        "youtubeSearch": {
+          "checkedAt": "2026-10-05T09:42:06.023Z",
+          "status": "candidats",
+          "query": "Malson Atmosfèric",
+          "resultCount": 3,
+          "bestScore": 100,
+          "autoAcceptedId": null
+        }
+      }
     },
     {
       "name": "Mama Dousha",
@@ -18816,7 +19196,51 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": []
+        "channels": [],
+        "searchCandidates": [
+          {
+            "id": "UC9HWLecmAeJ3MrNdDHEMDBA",
+            "title": "POOR TRÀMIT",
+            "handle": "@poortramit",
+            "description": "Booking i info: urban.radiorahim@gmail.com\n\nPoor Tràmit i Deps Music s’uneixen de nou per donar vida a ‘El Rosari de l’Aurora’, un disc\nmeravellós que neix de la necessitat de mirar cap endins per treure-ho fora.\nMC i productor mostren un cop més la seva bona sintonia amb gairebé vint-i-cinc minuts de\ngaudi continu on la qualitat està garantida i t",
+            "subscriberCount": 587,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_koiBi0btqqbH6mPxIWIcKwlhOhqk5Z2SyuwmoZV_X-OOo=s240-c-k-c0x00ffffff-no-rj",
+            "score": 100,
+            "reasons": [
+              "nom exacte",
+              "handle exacte",
+              "primer resultat"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T09:42:06.332Z"
+          },
+          {
+            "id": "UCvKAZWUa6tY8b5RBergLr0Q",
+            "title": "Poor Tràmit - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 86,
+            "thumbnail": "https://yt3.ggpht.com/E3im4Ceja-GPN-dvaVWjUO2XvSejc7HmtM5IY1CU7RwRSwvIGrzPmBj2-4feKzpTGWubAjmsFQ=s240-c-k-c0x00ffffff-no-rj",
+            "score": 80,
+            "reasons": [
+              "nom exacte de canal Topic"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-05T09:42:06.332Z"
+          },
+          {
+            "id": "UCsPv0Liyph9c4GcD6Rn-ovQ",
+            "title": "Transmit",
+            "handle": "@transmittheband",
+            "description": "",
+            "subscriberCount": 2,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_kBI266QKKwWGOivjisJ67aTyicf5z_YJckgh_bK5TBKg=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T09:42:06.332Z"
+          }
+        ]
       },
       "confidence": "alta",
       "reviewStatus": "aprovat",
@@ -18826,7 +19250,17 @@
         "https://www.radiorahim.cat/"
       ],
       "lastChecked": "2026-10-05T09:40:00.000Z",
-      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal YouTube pendent de resolució dirigida."
+      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal YouTube pendent de resolució dirigida.",
+      "enrichment": {
+        "youtubeSearch": {
+          "checkedAt": "2026-10-05T09:42:06.332Z",
+          "status": "candidats",
+          "query": "Poor Tràmit",
+          "resultCount": 3,
+          "bestScore": 100,
+          "autoAcceptedId": null
+        }
+      }
     },
     {
       "name": "Pulpopop",
@@ -18945,7 +19379,53 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": []
+        "channels": [],
+        "searchCandidates": [
+          {
+            "id": "UCzxleD2G_7JNCMufgoF3KLw",
+            "title": "Pupil·les - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 360,
+            "thumbnail": "https://yt3.ggpht.com/D-sdgmfRVPBE-sjkYItajsj8TFZqFNtZPCjXsTRIAnRUQi4DIy2bQAZ3jO5vud7K0RgK10XsFg=s240-c-k-c0x00ffffff-no-rj",
+            "score": 80,
+            "reasons": [
+              "nom exacte de canal Topic"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-05T09:42:06.640Z"
+          },
+          {
+            "id": "UCIX5CqhHETyi1Xx4JzcGjZg",
+            "title": "PUPIL·LES",
+            "handle": "@pupiles",
+            "description": "Grup valencià de música electrònica feminista. Des de 2014.\n\nhttps://www.instagram.com/pupilesoficial/\nhttps://www.facebook.com/PupilesOficial/\nhttps://www.twitter.com/pupilesoficial/",
+            "subscriberCount": 7200,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_lznakYDDkcNFAhIF_i9RgUE823U5KO78qec088cAJaIQk=s240-c-k-c0x00ffffff-no-rj",
+            "score": 75,
+            "reasons": [
+              "nom exacte",
+              "primer resultat"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T09:42:06.640Z"
+          },
+          {
+            "id": "UCAXqcdt3DOFJlMhLGedQQ5A",
+            "title": "Mondial Pupilles Plomelin - Tournoi International de Football U13",
+            "handle": "@mondialpupillesplomelin-to4231",
+            "description": "Mondial Pupilles de Plomelin - Tournoi International de Football U13\n38ème édition du 14 au 17 Mai 2026.\n72 équipes masculines, 18 équipes féminines.\nDont 15 équipes étrangères, 30 équipes professionnelles.\n\n20 000 spectateurs sur les 4 jours dont 6000 pour les finales le dimanche.\n1472 joueurs et joueuses.\n\nRetrouvez-nous sur : \nhttp://mondialplom",
+            "subscriberCount": 1140,
+            "thumbnail": "https://yt3.ggpht.com/E0Nj9s6vWQ8g01YTByZxhMgfzxO3SblACjLkAYvPQHUy9MfVjTZkJYUzd6gqnbpFDmHH1bCQ=s240-c-k-c0x00ffffff-no-rj",
+            "score": 53,
+            "reasons": [
+              "nom parcial",
+              "handle coincident"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T09:42:06.640Z"
+          }
+        ]
       },
       "confidence": "alta",
       "reviewStatus": "aprovat",
@@ -18955,7 +19435,17 @@
         "https://musicaenvalencia.es/artista/90/pupil%C2%B7les"
       ],
       "lastChecked": "2026-10-05T09:40:00.000Z",
-      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal YouTube pendent de resolució dirigida."
+      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal YouTube pendent de resolució dirigida.",
+      "enrichment": {
+        "youtubeSearch": {
+          "checkedAt": "2026-10-05T09:42:06.640Z",
+          "status": "candidats",
+          "query": "Pupil·les",
+          "resultCount": 3,
+          "bestScore": 80,
+          "autoAcceptedId": null
+        }
+      }
     },
     {
       "name": "Q1029506",
@@ -19602,7 +20092,55 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": []
+        "channels": [],
+        "searchCandidates": [
+          {
+            "id": "UCqlbDl192qJeA3gpIFkVhVA",
+            "title": "Rapsodes Oficial",
+            "handle": "@rapsodesoficial",
+            "description": "Canal de videos del grup de hip-hop Rapsodes, on podreu trobar els nostres videoclips, les RapsoHistòries: les aventures i parides dels Rapsodes pel món, així com actuacions en directe i aparicions a la tele.",
+            "subscriberCount": 341,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_mH1HLyOrsUIaPmcBEzNqc9p7jBl5uJ_9qiTdbTpT48KQ=s240-c-k-c0x00ffffff-no-rj",
+            "score": 93,
+            "reasons": [
+              "nom exacte traient oficial",
+              "handle coincident",
+              "marca oficial"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T09:42:06.952Z"
+          },
+          {
+            "id": "UCySkv1CohuHnFiIFgypxLDA",
+            "title": "Rapsodes",
+            "handle": "@rapsodes.1",
+            "description": "Welcome to the depths of the human psyche.  \nThis channel explores the raw and often hidden layers of psychology, from childhood trauma to the haunting grip of fear. Inspired by the minds of Carl Jung, Sigmund Freud, and Erich Fromm, we dive into the unconscious, confront emotional wounds, and seek healing through understanding.\nWhether you're curi",
+            "subscriberCount": 11,
+            "thumbnail": "https://yt3.ggpht.com/_ifIK1pEaveQRLAHBINjBPLIqTXcLOEUJVU1rAx36AlrMlwhhXZVtyFR09Zo1DKn8xrDegoH=s240-c-k-c0x00ffffff-no-rj",
+            "score": 88,
+            "reasons": [
+              "nom exacte",
+              "handle coincident"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T09:42:06.952Z"
+          },
+          {
+            "id": "UCuvGkVD3aN6ncVC6-EN8Wfw",
+            "title": "Rapsodes - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 107,
+            "thumbnail": "https://yt3.ggpht.com/VuJURS3hgfuDcv8E9W2ZAWb1Aj9Lbqme68BxXYQU1eS8YAhcAlVbnie0INDiiYwgVKFuU9Lw_g=s240-c-k-c0x00ffffff-no-rj",
+            "score": 85,
+            "reasons": [
+              "nom exacte de canal Topic",
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-05T09:42:06.952Z"
+          }
+        ]
       },
       "confidence": "alta",
       "reviewStatus": "aprovat",
@@ -19611,7 +20149,17 @@
         "manual-user-2026-10-05"
       ],
       "lastChecked": "2026-10-05T09:40:00.000Z",
-      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal YouTube pendent de resolució dirigida."
+      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal YouTube pendent de resolució dirigida.",
+      "enrichment": {
+        "youtubeSearch": {
+          "checkedAt": "2026-10-05T09:42:06.952Z",
+          "status": "candidats",
+          "query": "Rapsodes",
+          "resultCount": 3,
+          "bestScore": 93,
+          "autoAcceptedId": null
+        }
+      }
     },
     {
       "name": "Rapsusklei",
@@ -21860,7 +22408,53 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": []
+        "channels": [],
+        "searchCandidates": [
+          {
+            "id": "UCIBWCquq4qqhRWKD6nOdR4w",
+            "title": "Still Ill - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 109,
+            "thumbnail": "https://yt3.ggpht.com/-hqd6TbcZPJjpCuKUyWdcc03AaTGdfKumQXKR-U1PRPMu0KKNLj5R_OyTfWQjrwWo4_yhQHd=s240-c-k-c0x00ffffff-no-rj",
+            "score": 80,
+            "reasons": [
+              "nom exacte de canal Topic"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-05T09:42:07.295Z"
+          },
+          {
+            "id": "UColSJgAKp9r6TJyNESc3aQQ",
+            "title": "STILL/ILL",
+            "handle": "@wasterxo1",
+            "description": "I make a playlist for every emotion and situation life throws at us... Dig it or eat shhhhhh",
+            "subscriberCount": 1,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_n93mkZTuJ3uDOqNPCDTwJl9Ui1JJj5v_5B4bVLs0k=s240-c-k-c0x00ffffff-no-rj",
+            "score": 70,
+            "reasons": [
+              "nom exacte"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T09:42:07.295Z"
+          },
+          {
+            "id": "UCkHIvGEWQ_eHIFzt3WZk0Pg",
+            "title": "Still ill Records",
+            "handle": "@stillillrecords4840",
+            "description": "",
+            "subscriberCount": 133,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_nGJdKcsTzXBUoixNjWIFvIr0IBdsOHB_ptwtlr00s4_w=s240-c-k-c0x00ffffff-no-rj",
+            "score": 58,
+            "reasons": [
+              "nom parcial",
+              "handle coincident",
+              "primer resultat"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T09:42:07.295Z"
+          }
+        ]
       },
       "confidence": "alta",
       "reviewStatus": "aprovat",
@@ -21870,7 +22464,17 @@
         "https://guspira.net/ca/still-ill-presenta-nou-disc-en-catala-allo-que-mai-no-mor/"
       ],
       "lastChecked": "2026-10-05T09:40:00.000Z",
-      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal YouTube pendent de resolució dirigida."
+      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal YouTube pendent de resolució dirigida.",
+      "enrichment": {
+        "youtubeSearch": {
+          "checkedAt": "2026-10-05T09:42:07.295Z",
+          "status": "candidats",
+          "query": "Still Ill",
+          "resultCount": 3,
+          "bestScore": 80,
+          "autoAcceptedId": null
+        }
+      }
     },
     {
       "name": "Strombers",
@@ -22245,7 +22849,48 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": []
+        "channels": [],
+        "searchCandidates": [
+          {
+            "id": "UCx82VgJTTf_cKHahlakKfFg",
+            "title": "Tesa - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 276,
+            "thumbnail": "https://yt3.ggpht.com/-BXT45cwNoRhswUhY0HeXX5UTT9IhMpNnNseHH3oxEmMHqXc3i-5y8rilk6N2eq3A8Fm3rjuXQ=s240-c-k-c0x00ffffff-no-rj",
+            "score": 85,
+            "reasons": [
+              "nom exacte de canal Topic",
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-05T09:42:07.619Z"
+          },
+          {
+            "id": "UC2Uh-lmzQHXXu1hgxAsOYTg",
+            "title": "Tisa Tells",
+            "handle": "@tisatells",
+            "description": "Karma's CHIEF Correspondent! Giving Blogging A GOOD Name!\n\nInstagram: Tisatellss\nSnapchat: Tisatells\nTikTok: @Tisatellss\nBluesky: @tisatells.bsky.social\n\nBusiness Contact Info:\ntisatells@proton.me\nSerious Inquires & Correspondence Only \nCopyright Disclaimer Under Section 107 of the Copyright Act 1976, allowance is made for \"fair use\" for purposes s",
+            "subscriberCount": 643000,
+            "thumbnail": "https://yt3.ggpht.com/tkBZpfAwrYU33WRBGKW7o9hkgrgcmYQY81299GVV78uvYGR4-k4Q8-Gfln0V5aIJJqpyGnWHQA=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T09:42:07.619Z"
+          },
+          {
+            "id": "UCLOxUzb69zfZe4dQPeJm7_A",
+            "title": "Tesa Tiara Tv",
+            "handle": "@tesatiaratv9603",
+            "description": "",
+            "subscriberCount": 13300,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_mue8pCgOu9FiYKIxJgDj5AhMXM6sRBma2ZaoEdu1_Bz14=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T09:42:07.619Z"
+          }
+        ]
       },
       "confidence": "alta",
       "reviewStatus": "aprovat",
@@ -22255,7 +22900,17 @@
         "https://musicaenvalencia.es/artista/102/tesa"
       ],
       "lastChecked": "2026-10-05T09:40:00.000Z",
-      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal YouTube pendent de resolució dirigida."
+      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal YouTube pendent de resolució dirigida.",
+      "enrichment": {
+        "youtubeSearch": {
+          "checkedAt": "2026-10-05T09:42:07.619Z",
+          "status": "candidats",
+          "query": "Tesa",
+          "resultCount": 3,
+          "bestScore": 85,
+          "autoAcceptedId": null
+        }
+      }
     },
     {
       "name": "The Demencials",
@@ -23085,7 +23740,53 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": []
+        "channels": [],
+        "searchCandidates": [
+          {
+            "id": "UCsl_oTZ8vww29O9G0NAX-gA",
+            "title": "Valtonyc - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 393,
+            "thumbnail": "https://yt3.ggpht.com/pxssncevq0bQTfitbtdHbKkbViABiwsCMsrFWHbzbDLA9nvwGi88mhBx_fID0YTxizG6RGOhhg=s240-c-k-c0x00ffffff-no-rj",
+            "score": 80,
+            "reasons": [
+              "nom exacte de canal Topic"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-05T09:42:07.974Z"
+          },
+          {
+            "id": "UCWkDyRfHMcNILfqdD3AHYkg",
+            "title": "Valtonyc - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 1,
+            "thumbnail": "https://yt3.ggpht.com/AfXwOaBKCFtBHNobts0oYUCvbqfhw6IzTjl6TfFIUjDq3fIJVouSxJq86KxvvIwpmJNvGxRqFQw=s240-c-k-c0x00ffffff-no-rj",
+            "score": 80,
+            "reasons": [
+              "nom exacte de canal Topic"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-05T09:42:07.974Z"
+          },
+          {
+            "id": "UC3fuMj55qp3YmD2B2mPBgOw",
+            "title": "Josep Valtonyc",
+            "handle": "@josep-valtonyc",
+            "description": "Sóc tan sols un ocell de pas",
+            "subscriberCount": 21600,
+            "thumbnail": "https://yt3.ggpht.com/pxssncevq0bQTfitbtdHbKkbViABiwsCMsrFWHbzbDLA9nvwGi88mhBx_fID0YTxizG6RGOhhg=s240-c-k-c0x00ffffff-no-rj",
+            "score": 58,
+            "reasons": [
+              "nom parcial",
+              "handle coincident",
+              "primer resultat"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T09:42:07.974Z"
+          }
+        ]
       },
       "confidence": "alta",
       "reviewStatus": "aprovat",
@@ -23095,7 +23796,17 @@
         "https://www.radiorahim.cat/"
       ],
       "lastChecked": "2026-10-05T09:40:00.000Z",
-      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal YouTube pendent de resolució dirigida."
+      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal YouTube pendent de resolució dirigida.",
+      "enrichment": {
+        "youtubeSearch": {
+          "checkedAt": "2026-10-05T09:42:07.974Z",
+          "status": "candidats",
+          "query": "Valtònyc",
+          "resultCount": 3,
+          "bestScore": 80,
+          "autoAcceptedId": null
+        }
+      }
     },
     {
       "name": "Ven'nus",
@@ -23296,7 +24007,53 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": []
+        "channels": [],
+        "searchCandidates": [
+          {
+            "id": "UCmsQN-zOoJXlhKtbkRS702A",
+            "title": "VINNIE KAIROS",
+            "handle": "@vinniekairos3252",
+            "description": "",
+            "subscriberCount": 165,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_mGXh_4Gn-pbwk8pbUwha3JdqgTeck_9ToYdru2eiuhaco=s240-c-k-c0x00ffffff-no-rj",
+            "score": 93,
+            "reasons": [
+              "nom exacte",
+              "handle coincident",
+              "primer resultat"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T09:42:08.269Z"
+          },
+          {
+            "id": "UCD2LoxNw40ZSdMsTfaprLug",
+            "title": "VINNIE KAIROS - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 16,
+            "thumbnail": "https://yt3.ggpht.com/05ew6Cfe78TVMSRyE6c8YP4RO3Gt7JwiJxNh0R_t1U_-LGK3eVD5ub_LC-7gUouvcY0UDaZU=s240-c-k-c0x00ffffff-no-rj",
+            "score": 80,
+            "reasons": [
+              "nom exacte de canal Topic"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-05T09:42:08.269Z"
+          },
+          {
+            "id": "UC9zVD-Y05iAmkcBYVmXkLFA",
+            "title": "VINNIE KAIROS - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 39,
+            "thumbnail": "https://yt3.ggpht.com/n8GFmfyS0a1TrocMn0wvhCfqtFzdDXz0SZvi4C_4AxTQcXYqEey5VQ7iHelKduzjbneKsUAdCw=s240-c-k-c0x00ffffff-no-rj",
+            "score": 80,
+            "reasons": [
+              "nom exacte de canal Topic"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-05T09:42:08.269Z"
+          }
+        ]
       },
       "confidence": "alta",
       "reviewStatus": "aprovat",
@@ -23306,7 +24063,17 @@
         "https://www.radiorahim.cat/artista/vinnie-kairos/"
       ],
       "lastChecked": "2026-10-05T09:40:00.000Z",
-      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal YouTube pendent de resolució dirigida."
+      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal YouTube pendent de resolució dirigida.",
+      "enrichment": {
+        "youtubeSearch": {
+          "checkedAt": "2026-10-05T09:42:08.269Z",
+          "status": "candidats",
+          "query": "Vinnie Kairos",
+          "resultCount": 3,
+          "bestScore": 93,
+          "autoAcceptedId": null
+        }
+      }
     },
     {
       "name": "Vittara",
@@ -23380,7 +24147,52 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": []
+        "channels": [],
+        "searchCandidates": [
+          {
+            "id": "UCdwDeWJ4aJ9RAURZERmWquA",
+            "title": "Voltor",
+            "handle": "@voltortube",
+            "description": "",
+            "subscriberCount": 3640,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_kDfxsB1x-9abDiKAvhcYAC1OiLbZNqx6a9jWUqnOswGf0=s240-c-k-c0x00ffffff-no-rj",
+            "score": 88,
+            "reasons": [
+              "nom exacte",
+              "handle coincident"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T09:42:08.574Z"
+          },
+          {
+            "id": "UCe03HFhEziGyxjyAazcqA5w",
+            "title": "Voltor63",
+            "handle": "@voltor63",
+            "description": "Every day I ride is a good day 🤙🏻🌴\n🚀 Ça arrive bientôt !\n📍Auvergne\n🏍️ Stark Varg EX de chez Elite Moto 15\n\nPartenariats : partenariat@voltor63.com\n\nDe l'Auvergne à la Californie, suis mes aventures à moto ! \n\nVlog, Mécanique, Balade, Tuto, et fun, on est là pour kiffer ensemble autour de l'enduro et du motocross ! ✌🏻\n",
+            "subscriberCount": 210000,
+            "thumbnail": "https://yt3.ggpht.com/kowW0Xj4Ay_Ta3pOGogjBBb78XoDj-s90yEvMhxK9dK-Zx1x_jMvgLGOUtKCLW_M9eItyRQ4KOU=s240-c-k-c0x00ffffff-no-rj",
+            "score": 58,
+            "reasons": [
+              "nom parcial",
+              "handle coincident",
+              "primer resultat"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T09:42:08.574Z"
+          },
+          {
+            "id": "UCGGD-Foi1LhdeeHYuevOi7g",
+            "title": "Valtor",
+            "handle": "@valtorroblox",
+            "description": "🔥Merhaba! Ben Valtor. Roblox videoları paylaşıyorum. Eğlence ve macera için kanala göz at!🔥\n\n🙏 Hedef: 50 Bin Abone Olmak!\n\n📬Reklam ve Sponsorluk için: heimdallbey@gmail.com\n",
+            "subscriberCount": 16200,
+            "thumbnail": "https://yt3.ggpht.com/r4JaetNR482Z4eN3vPaypkOUW61VQWkixq466Hh3OmeX-fZZCfFmkAZq3FmOUq-Da3qMb6cc=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T09:42:08.574Z"
+          }
+        ]
       },
       "confidence": "alta",
       "reviewStatus": "aprovat",
@@ -23389,7 +24201,17 @@
         "manual-user-2026-10-05"
       ],
       "lastChecked": "2026-10-05T09:40:00.000Z",
-      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal YouTube pendent de resolució dirigida."
+      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal YouTube pendent de resolució dirigida.",
+      "enrichment": {
+        "youtubeSearch": {
+          "checkedAt": "2026-10-05T09:42:08.574Z",
+          "status": "candidats",
+          "query": "Voltor",
+          "resultCount": 3,
+          "bestScore": 88,
+          "autoAcceptedId": null
+        }
+      }
     },
     {
       "name": "Whiskyn's",
