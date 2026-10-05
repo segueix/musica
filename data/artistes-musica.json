@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-05T12:58:43.038Z",
+  "updatedAt": "2026-10-05T13:00:17.655Z",
   "artists": [
     {
       "name": "2ES",
@@ -26750,7 +26750,22 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCsAbCGSmpvZ7Ym2WNklg44A",
+            "handle": "@coixinera",
+            "name": "La Coixinera Compayia de saraus",
+            "type": "official",
+            "primary": true
+          },
+          {
+            "id": "UC5u7o5L26RuDowQsqOJDm0w",
+            "handle": null,
+            "name": "La Coixinera - Topic",
+            "type": "topic",
+            "primary": false
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UC5u7o5L26RuDowQsqOJDm0w",
@@ -26797,13 +26812,15 @@
         ]
       },
       "confidence": "alta",
-      "reviewStatus": "pendent",
-      "active": false,
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
-        "https://www.cantut.cat/festival/programacio/la-coixinera"
+        "https://www.cantut.cat/festival/programacio/la-coixinera",
+        "https://www.youtube.com/channel/UCsAbCGSmpvZ7Ym2WNklg44A",
+        "https://www.youtube.com/channel/UC5u7o5L26RuDowQsqOJDm0w"
       ],
-      "lastChecked": "2026-10-05T12:57:41.032Z",
-      "notes": "Grup d’arrel de Mataró. Cançons tradicionals i de taverna; repertori també instrumental. No incloure Astoaren kanta (basc). Alta de folk i arrel 2026-10-05; canal i selecció pendents de verificació.",
+      "lastChecked": "2026-10-05T13:00:17.655Z",
+      "notes": "Grup d’arrel de Mataró. Cançons tradicionals i de taverna; repertori també instrumental. No incloure Astoaren kanta (basc). Alta de folk i arrel 2026-10-05; canals contrastats amb la identitat i el repertori del grup; selecció catalana limitada per llista blanca.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-05T12:58:39.176Z",
@@ -26832,7 +26849,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UC5Fb0Xo8Xx6gVrFPoVsZluw",
+            "handle": "@riumusicappcc",
+            "name": "RIU - Música Popular dels PPCC",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UC5Fb0Xo8Xx6gVrFPoVsZluw",
@@ -26852,13 +26877,14 @@
         ]
       },
       "confidence": "alta",
-      "reviewStatus": "pendent",
-      "active": false,
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
-        "https://riumusica.bandcamp.com/album/riu"
+        "https://riumusica.bandcamp.com/album/riu",
+        "https://www.youtube.com/channel/UC5Fb0Xo8Xx6gVrFPoVsZluw"
       ],
-      "lastChecked": "2026-10-05T12:57:41.032Z",
-      "notes": "Música popular dels Països Catalans. Canal històric enllaçat pel grup: https://www.youtube.com/user/RIUmusicaPPCC . Alta de folk i arrel 2026-10-05; canal i selecció pendents de verificació.",
+      "lastChecked": "2026-10-05T13:00:17.655Z",
+      "notes": "Música popular dels Països Catalans. Canal històric enllaçat pel grup: https://www.youtube.com/user/RIUmusicaPPCC . Alta de folk i arrel 2026-10-05; canals contrastats amb la identitat i el repertori del grup; selecció catalana limitada per llista blanca.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-05T12:58:39.689Z",
@@ -26887,7 +26913,22 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCSsJFD5CFYZ3fe24qhtsejA",
+            "handle": "@urbaliarurana",
+            "name": "Urbàlia Rurana",
+            "type": "official",
+            "primary": true
+          },
+          {
+            "id": "UCMIVDQMYttFV6h1aRIeQN-w",
+            "handle": null,
+            "name": "Urbàlia Rurana - Topic",
+            "type": "topic",
+            "primary": false
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UCSsJFD5CFYZ3fe24qhtsejA",
@@ -26936,13 +26977,15 @@
         ]
       },
       "confidence": "alta",
-      "reviewStatus": "pendent",
-      "active": false,
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
-        "https://www.monfolk.com/artistes/urbalia-rurana/"
+        "https://www.monfolk.com/artistes/urbalia-rurana/",
+        "https://www.youtube.com/channel/UCSsJFD5CFYZ3fe24qhtsejA",
+        "https://www.youtube.com/channel/UCMIVDQMYttFV6h1aRIeQN-w"
       ],
-      "lastChecked": "2026-10-05T12:57:41.032Z",
-      "notes": "Folk valencià i mediterrani; comprovar l’idioma de cada peça del repertori mediterrani. Alta de folk i arrel 2026-10-05; canal i selecció pendents de verificació.",
+      "lastChecked": "2026-10-05T13:00:17.655Z",
+      "notes": "Folk valencià i mediterrani; comprovar l’idioma de cada peça del repertori mediterrani. Alta de folk i arrel 2026-10-05; canals contrastats amb la identitat i el repertori del grup; selecció catalana limitada per llista blanca.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-05T12:58:40.039Z",
@@ -26969,7 +27012,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UC8vbtHPcQvQEuQi2wcwK6aQ",
+            "handle": "@tornaveus",
+            "name": "Tornaveus Polifonies",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UC8vbtHPcQvQEuQi2wcwK6aQ",
@@ -26990,13 +27041,14 @@
         ]
       },
       "confidence": "alta",
-      "reviewStatus": "pendent",
-      "active": false,
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
-        "https://tornaveuspolifonies.wordpress.com/"
+        "https://tornaveuspolifonies.wordpress.com/",
+        "https://www.youtube.com/channel/UC8vbtHPcQvQEuQi2wcwK6aQ"
       ],
-      "lastChecked": "2026-10-05T12:57:41.033Z",
-      "notes": "Polifonies tradicionals catalanes. No donar per català el repertori litúrgic en llatí. Alta de folk i arrel 2026-10-05; canal i selecció pendents de verificació.",
+      "lastChecked": "2026-10-05T13:00:17.655Z",
+      "notes": "Polifonies tradicionals catalanes. No donar per català el repertori litúrgic en llatí. Alta de folk i arrel 2026-10-05; canals contrastats amb la identitat i el repertori del grup; selecció catalana limitada per llista blanca.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-05T12:58:40.440Z",
@@ -27025,7 +27077,22 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCz3aiLj85sLBimSrPwNcQcQ",
+            "handle": "@trevolgrup",
+            "name": "TRÈVOL",
+            "type": "official",
+            "primary": true
+          },
+          {
+            "id": "UCF6nxIBqp7vuVu51PGC7x5w",
+            "handle": null,
+            "name": "Trèvol - Topic",
+            "type": "topic",
+            "primary": false
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UCz3aiLj85sLBimSrPwNcQcQ",
@@ -27072,13 +27139,15 @@
         ]
       },
       "confidence": "alta",
-      "reviewStatus": "pendent",
-      "active": false,
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
-        "https://www.enderrock.cat/sons/grupsons2023/22/trevol"
+        "https://www.enderrock.cat/sons/grupsons2023/22/trevol",
+        "https://www.youtube.com/channel/UCz3aiLj85sLBimSrPwNcQcQ",
+        "https://www.youtube.com/channel/UCF6nxIBqp7vuVu51PGC7x5w"
       ],
-      "lastChecked": "2026-10-05T12:57:41.033Z",
-      "notes": "Folk fusió d’arrel; repertori català, instrumental i d’altres tradicions. Selecció de cançons en català, sense aprovar tot el canal. Alta de folk i arrel 2026-10-05; canal i selecció pendents de verificació.",
+      "lastChecked": "2026-10-05T13:00:17.655Z",
+      "notes": "Folk fusió d’arrel; repertori català, instrumental i d’altres tradicions. Selecció de cançons en català, sense aprovar tot el canal. Alta de folk i arrel 2026-10-05; canals contrastats amb la identitat i el repertori del grup; selecció catalana limitada per llista blanca.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-05T12:58:40.854Z",
@@ -27126,7 +27195,7 @@
         "https://propaganda-pel-fet.cat/index.php/cat/artistes/marala"
       ],
       "lastChecked": "2026-10-05T12:57:41.033Z",
-      "notes": "Trio de Selma Bruna, Clara Fiol i Sandra Monfort. Evitar l’artista homònima colombiana. Selecció explícita de repertori català; no incloure Canción del Varear. Alta de folk i arrel 2026-10-05; canal i selecció pendents de verificació."
+      "notes": "Trio de Selma Bruna, Clara Fiol i Sandra Monfort. Evitar l’artista homònima colombiana. Selecció explícita de repertori català; no incloure Canción del Varear. Alta de folk i arrel 2026-10-05; canal verificat i selecció catalana limitada per llista blanca."
     },
     {
       "name": "Corrandes són corrandes",
@@ -27143,7 +27212,22 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCYzpmEEhGtncFPgZSocnrtQ",
+            "handle": "@corrandescat",
+            "name": "Corrandes són corrandes",
+            "type": "official",
+            "primary": true
+          },
+          {
+            "id": "UCTsSJXhTo6HpqmtSh8-p31A",
+            "handle": null,
+            "name": "Corrandes són Corrandes - Topic",
+            "type": "topic",
+            "primary": false
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UCTsSJXhTo6HpqmtSh8-p31A",
@@ -27189,13 +27273,15 @@
         ]
       },
       "confidence": "alta",
-      "reviewStatus": "pendent",
-      "active": false,
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
-        "https://www.enderrock.cat/sons/grupsons2020/24/corrandes/son/corrandes"
+        "https://www.enderrock.cat/sons/grupsons2020/24/corrandes/son/corrandes",
+        "https://www.youtube.com/channel/UCYzpmEEhGtncFPgZSocnrtQ",
+        "https://www.youtube.com/channel/UCTsSJXhTo6HpqmtSh8-p31A"
       ],
-      "lastChecked": "2026-10-05T12:57:41.033Z",
-      "notes": "Cançó d’arrel i improvisada de la Catalunya Vella. Alta de folk i arrel 2026-10-05; canal i selecció pendents de verificació.",
+      "lastChecked": "2026-10-05T13:00:17.655Z",
+      "notes": "Cançó d’arrel i improvisada de la Catalunya Vella. Alta de folk i arrel 2026-10-05; canals contrastats amb la identitat i el repertori del grup; selecció catalana limitada per llista blanca.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-05T12:58:41.195Z",
@@ -27408,7 +27494,22 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCv_7jwmDsQHYpxisi82fQng",
+            "handle": null,
+            "name": "Quico El Célio, El Noi i El Mut de Ferreries - Topic",
+            "type": "topic",
+            "primary": true
+          },
+          {
+            "id": "UCYcAA6W7ef4ZOWat8JjaARQ",
+            "handle": null,
+            "name": "Quico el Célio, el Noi i el Mut de Ferreries - Topic",
+            "type": "topic",
+            "primary": false
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UCv_7jwmDsQHYpxisi82fQng",
@@ -27454,13 +27555,15 @@
         ]
       },
       "confidence": "alta",
-      "reviewStatus": "pendent",
-      "active": false,
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
-        "https://www.quicoelcelio.com/"
+        "https://www.quicoelcelio.com/",
+        "https://www.youtube.com/channel/UCv_7jwmDsQHYpxisi82fQng",
+        "https://www.youtube.com/channel/UCYcAA6W7ef4ZOWat8JjaARQ"
       ],
-      "lastChecked": "2026-10-05T12:57:41.035Z",
-      "notes": "Cançó tradicional de les Terres de l’Ebre. El web oficial apunta al canal compartit TubalEspectacles; preferir un canal propi o Topic verificat. Alta de folk i arrel 2026-10-05; canal i selecció pendents de verificació.",
+      "lastChecked": "2026-10-05T13:00:17.655Z",
+      "notes": "Cançó tradicional de les Terres de l’Ebre. El web oficial apunta al canal compartit TubalEspectacles; preferir un canal propi o Topic verificat. Alta de folk i arrel 2026-10-05; canals contrastats amb la identitat i el repertori del grup; selecció catalana limitada per llista blanca.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-05T12:58:42.602Z",
