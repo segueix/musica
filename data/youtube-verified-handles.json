@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-28T15:53:50.745Z",
+  "updatedAt": "2026-10-05T09:11:00.000Z",
   "channels": [
     {
       "artist": "Svetlana",
@@ -703,6 +703,15 @@
       "primary": true,
       "verified": true,
       "source": "manual-user-2026-09-29"
+    },
+    {
+      "artist": "Kiddi",
+      "handle": "@kiddireal",
+      "channelId": null,
+      "type": "official",
+      "primary": true,
+      "verified": true,
+      "source": "manual-user-2026-10-05"
     }
   ]
 }
