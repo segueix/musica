@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-05T13:51:37.092Z",
+  "updatedAt": "2026-10-05T13:57:24.679Z",
   "artists": [
     {
       "name": "2ES",
@@ -12965,61 +12965,18 @@
             "primary": false
           }
         ],
-        "searchCandidates": [
-          {
-            "id": "UC96Q7Ki2GoRwrwSzeLTtvwg",
-            "title": "La Sra. Tomasa",
-            "handle": "@lasratomasa",
-            "description": "La Sra. Tomasa son el grupo rompedor de la escena, referentes de un sonido y un estilo totalmente innovador. Ofrecen una fusión de estilos desafiantes donde combinan sonidos latinoamericanos (timba, salsa, guagancó) con reggae, funk, rap y las tendencias más electrónicas (drum’n’bass, trap, House...). Todo con un respeto propio de quien ama la músi",
-            "subscriberCount": 22200,
-            "thumbnail": "https://yt3.ggpht.com/i1Tuj4WqMoh9m95I-2RW_ti5pLzUF-PwbsZ6ZxkS4dC32iNisR0n2bJxMBvhJiGJIy8A40NNPQ=s240-c-k-c0x00ffffff-no-rj",
-            "score": 100,
-            "reasons": [
-              "nom exacte",
-              "handle exacte",
-              "primer resultat"
-            ],
-            "suggestedType": "official",
-            "discoveredAt": "2026-10-05T09:57:38.304Z"
-          },
-          {
-            "id": "UCM-WxdgJTr37_bOOlX5sZhg",
-            "title": "La Sra. Tomasa - Topic",
-            "handle": null,
-            "description": "",
-            "subscriberCount": 231,
-            "thumbnail": "https://yt3.ggpht.com/i1Tuj4WqMoh9m95I-2RW_ti5pLzUF-PwbsZ6ZxkS4dC32iNisR0n2bJxMBvhJiGJIy8A40NNPQ=s240-c-k-c0x00ffffff-no-rj",
-            "score": 80,
-            "reasons": [
-              "nom exacte de canal Topic"
-            ],
-            "suggestedType": "topic",
-            "discoveredAt": "2026-10-05T09:57:38.304Z"
-          },
-          {
-            "id": "UCw-k8B1GjBqfpGMmpypUpeQ",
-            "title": "J Dose",
-            "handle": "@_jdose",
-            "description": "",
-            "subscriberCount": 186,
-            "thumbnail": "https://yt3.ggpht.com/Fqs14S9nVIOlI5rOd_vTnWVbLgH6EYqm8D9H_8FVRlOyKcHVOVdq6Svymo0e_yJcuYm8SorH=s240-c-k-c0x00ffffff-no-rj",
-            "score": 0,
-            "reasons": [],
-            "suggestedType": "official",
-            "discoveredAt": "2026-10-05T09:57:38.304Z"
-          }
-        ]
+        "searchCandidates": []
       },
       "confidence": "alta",
-      "reviewStatus": "aprovat",
-      "active": true,
+      "reviewStatus": "rebutjat",
+      "active": false,
       "sources": [
         "manual-user-2026-10-05",
         "genre:manual",
         "youtube:targeted-search-verified"
       ],
-      "lastChecked": "2026-10-05T10:10:00.000Z",
-      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal(s) YouTube verificat(s) amb cerca dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma.",
+      "lastChecked": "2026-10-05T13:57:24.679Z",
+      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal(s) YouTube verificat(s) amb cerca dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma. Exclosa íntegrament per petició explícita de l'usuari el 2026-10-05; no reindexar.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-05T09:57:38.304Z",

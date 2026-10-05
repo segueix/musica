@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-05",
+  "updatedAt": "2026-10-05T13:57:24.679Z",
   "description": "Llista blanca per a canals on Segueix Música només ha d'ingerir vídeos concrets. Admet títols exactes, fragments obligatoris i fragments exclosos.",
   "channels": {
     "UCKpscwdWlVaMqcA81vLI7OA": {
@@ -486,6 +486,16 @@
         "song"
       ],
       "note": "Selecció tancada de cinc cançons indicada explícitament per l’usuari el 2026-10-05."
+    },
+    "UC96Q7Ki2GoRwrwSzeLTtvwg": {
+      "artist": "La Sra. Tomasa",
+      "blocked": true,
+      "note": "Artista exclosa íntegrament per petició de l'usuari (2026-10-05)."
+    },
+    "UCM-WxdgJTr37_bOOlX5sZhg": {
+      "artist": "La Sra. Tomasa",
+      "blocked": true,
+      "note": "Artista exclosa íntegrament per petició de l'usuari (2026-10-05)."
     }
   }
 }
