@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-10-05T16:29:26.108Z",
+  "generatedAt": "2026-10-05T16:55:26.842Z",
   "summary": {
-    "total": 34,
-    "musicalClar": 34,
+    "total": 33,
+    "musicalClar": 33,
     "revisar": 0,
     "possibleFalsPositiu": 0
   },
@@ -477,30 +477,6 @@
         "http://www.wikidata.org/entity/Q36834",
         "http://www.wikidata.org/entity/Q215793",
         "http://www.wikidata.org/entity/Q639669"
-      ],
-      "musicTypes": [],
-      "verdict": "musical-clar",
-      "reasons": [
-        "Wikidata: ocupació musical explícita"
-      ]
-    },
-    {
-      "name": "Manuel García Morante",
-      "wikidataId": "Q105407739",
-      "musicbrainzId": "30cc57c1-0eee-49b2-9b4d-3f70e1319b42",
-      "sources": [
-        "https://www.wikidata.org/wiki/Q105407739",
-        "wikidata:performed-catalan-work"
-      ],
-      "youtubeChannels": 0,
-      "instances": [
-        "ésser humà"
-      ],
-      "occupations": [
-        "compositor"
-      ],
-      "musicOccupations": [
-        "http://www.wikidata.org/entity/Q36834"
       ],
       "musicTypes": [],
       "verdict": "musical-clar",
