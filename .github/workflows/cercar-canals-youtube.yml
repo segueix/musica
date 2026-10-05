@@ -6,6 +6,7 @@ on:
       - "scripts/cercar_canals_youtube.js"
       - "scripts/resoldre_canals_verificats.js"
       - "data/youtube-verified-handles.json"
+      - "data/youtube-search-targets.json"
       - "tests/youtube-search-candidates.test.js"
       - ".github/workflows/cercar-canals-youtube.yml"
   schedule:
