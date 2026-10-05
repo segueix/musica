@@ -1,7 +1,32 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-05T09:11:03.414Z",
+  "updatedAt": "2026-10-05T09:40:00.000Z",
   "artists": [
+    {
+      "name": "2ES",
+      "aliases": [],
+      "genres": [
+        "Rap / Hip-hop",
+        "Urbana"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-05"
+      ],
+      "lastChecked": "2026-10-05T09:40:00.000Z",
+      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal YouTube pendent de resolució dirigida."
+    },
     {
       "name": "31 FAM",
       "aliases": [],
@@ -67,6 +92,56 @@
           "wikidataWorkEvidence": []
         }
       }
+    },
+    {
+      "name": "Acros",
+      "aliases": [],
+      "genres": [
+        "Rap / Hip-hop"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-05",
+        "https://www.radiorahim.cat/artista/acros/"
+      ],
+      "lastChecked": "2026-10-05T09:40:00.000Z",
+      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal YouTube pendent de resolució dirigida."
+    },
+    {
+      "name": "Adala",
+      "aliases": [],
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-05",
+        "https://adala.cat/"
+      ],
+      "lastChecked": "2026-10-05T09:40:00.000Z",
+      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal YouTube pendent de resolució dirigida."
     },
     {
       "name": "Adrià Puntí",
@@ -1701,6 +1776,32 @@
         "hip hop",
         "jazz rap"
       ]
+    },
+    {
+      "name": "Atupa",
+      "aliases": [],
+      "genres": [
+        "Rap / Hip-hop",
+        "Urbana"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-05",
+        "https://musicaenvalencia.es/artista/163/atupa"
+      ],
+      "lastChecked": "2026-10-05T09:40:00.000Z",
+      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal YouTube pendent de resolució dirigida."
     },
     {
       "name": "Au Rora",
@@ -4794,6 +4895,30 @@
           "wikidataWorkEvidence": []
         }
       }
+    },
+    {
+      "name": "El Nota",
+      "aliases": [],
+      "genres": [
+        "Rap / Hip-hop"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-05"
+      ],
+      "lastChecked": "2026-10-05T09:40:00.000Z",
+      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal YouTube pendent de resolució dirigida."
     },
     {
       "name": "El Pont d'Arcalís",
@@ -8120,6 +8245,30 @@
           "wikidataWorkEvidence": []
         }
       }
+    },
+    {
+      "name": "Herba Negra",
+      "aliases": [],
+      "genres": [
+        "Rap / Hip-hop"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-05"
+      ],
+      "lastChecked": "2026-10-05T09:40:00.000Z",
+      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal YouTube pendent de resolució dirigida."
     },
     {
       "name": "Hey Zuri",
@@ -13236,6 +13385,34 @@
           "wikidataWorkEvidence": []
         }
       }
+    },
+    {
+      "name": "Malson Atmosfèric",
+      "aliases": [
+        "Malson Atmosferic"
+      ],
+      "genres": [
+        "Rap / Hip-hop",
+        "Urbana"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-05",
+        "https://malsonatmosferic.bandcamp.com/"
+      ],
+      "lastChecked": "2026-10-05T09:40:00.000Z",
+      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal YouTube pendent de resolució dirigida."
     },
     {
       "name": "Mama Dousha",
@@ -18625,6 +18802,33 @@
       }
     },
     {
+      "name": "Poor Tràmit",
+      "aliases": [
+        "Poor Tramit"
+      ],
+      "genres": [
+        "Rap / Hip-hop"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-05",
+        "https://www.radiorahim.cat/"
+      ],
+      "lastChecked": "2026-10-05T09:40:00.000Z",
+      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal YouTube pendent de resolució dirigida."
+    },
+    {
       "name": "Pulpopop",
       "aliases": [],
       "genres": [],
@@ -18724,6 +18928,34 @@
         }
       },
       "genresRaw": []
+    },
+    {
+      "name": "Pupil·les",
+      "aliases": [
+        "Pupilles"
+      ],
+      "genres": [
+        "Pop",
+        "Electrònica"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-05",
+        "https://musicaenvalencia.es/artista/90/pupil%C2%B7les"
+      ],
+      "lastChecked": "2026-10-05T09:40:00.000Z",
+      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal YouTube pendent de resolució dirigida."
     },
     {
       "name": "Q1029506",
@@ -19356,6 +19588,30 @@
         "nova cançó",
         "singer-songwriter"
       ]
+    },
+    {
+      "name": "Rapsodes",
+      "aliases": [],
+      "genres": [
+        "Rap / Hip-hop"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-05"
+      ],
+      "lastChecked": "2026-10-05T09:40:00.000Z",
+      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal YouTube pendent de resolució dirigida."
     },
     {
       "name": "Rapsusklei",
@@ -21590,6 +21846,33 @@
       }
     },
     {
+      "name": "Still Ill",
+      "aliases": [
+        "Still ill"
+      ],
+      "genres": [
+        "Rap / Hip-hop"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-05",
+        "https://guspira.net/ca/still-ill-presenta-nou-disc-en-catala-allo-que-mai-no-mor/"
+      ],
+      "lastChecked": "2026-10-05T09:40:00.000Z",
+      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal YouTube pendent de resolució dirigida."
+    },
+    {
       "name": "Strombers",
       "aliases": [],
       "genres": [],
@@ -21947,6 +22230,32 @@
         }
       },
       "genresRaw": []
+    },
+    {
+      "name": "Tesa",
+      "aliases": [],
+      "genres": [
+        "Rap / Hip-hop",
+        "Folk i arrel"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-05",
+        "https://musicaenvalencia.es/artista/102/tesa"
+      ],
+      "lastChecked": "2026-10-05T09:40:00.000Z",
+      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal YouTube pendent de resolució dirigida."
     },
     {
       "name": "The Demencials",
@@ -22762,6 +23071,33 @@
       }
     },
     {
+      "name": "Valtònyc",
+      "aliases": [
+        "Valtonyc"
+      ],
+      "genres": [
+        "Rap / Hip-hop"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-05",
+        "https://www.radiorahim.cat/"
+      ],
+      "lastChecked": "2026-10-05T09:40:00.000Z",
+      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal YouTube pendent de resolució dirigida."
+    },
+    {
       "name": "Ven'nus",
       "aliases": [],
       "genres": [
@@ -22948,6 +23284,31 @@
       ]
     },
     {
+      "name": "Vinnie Kairos",
+      "aliases": [],
+      "genres": [
+        "Rap / Hip-hop"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-05",
+        "https://www.radiorahim.cat/artista/vinnie-kairos/"
+      ],
+      "lastChecked": "2026-10-05T09:40:00.000Z",
+      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal YouTube pendent de resolució dirigida."
+    },
+    {
       "name": "Vittara",
       "aliases": [],
       "genres": [],
@@ -23004,6 +23365,31 @@
           "wikidataWorkEvidence": []
         }
       }
+    },
+    {
+      "name": "Voltor",
+      "aliases": [],
+      "genres": [
+        "Punk",
+        "Rock"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-05"
+      ],
+      "lastChecked": "2026-10-05T09:40:00.000Z",
+      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal YouTube pendent de resolució dirigida."
     },
     {
       "name": "Whiskyn's",
