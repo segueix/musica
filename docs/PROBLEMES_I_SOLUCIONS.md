@@ -1474,3 +1474,12 @@ Correcció de catàleg demanada: només cinc enregistraments Topic (pCeWfNt-GCE,
 **Trampa:** `#videoPlayer .video-embed-wrap` té `height: 100%` (`styles.css`): amb `inset: 36px 0 0 0` el vídeo baixava 36 px i **els controls de YouTube quedaven tallats per sota** (no es veia a les proves fins que es va mirar la caixa de l'iframe). Cal `height: auto !important` perquè mani `inset`. Al mòbil, la vora de dalt d'1 px es menjava 1 px del vídeo (199 px): `box-sizing: content-box`.
 
 **Proves:** `node tests/browser/verificar-play-pausa.js` (vídeo ≥ 200 × 200, vídeo sencer dins la finestra, mànecs fora del vídeo, 320 px d'ample al mòbil, la cantonada no la deixa més petita de 356 × 200); `tests/finestreta-normes.test.js`.
+
+
+## [2026-10-05] - Selecció de gravacions instrumentals de clàssica
+
+Els canals de solistes i directors poden barrejar peces instrumentals, òpera, cors i entrevistes; els títols genèrics tampoc identifiquen una versió concreta. `allowedVideoIds` a `music-channel-video-allowlist.json` fixa les gravacions verificades, junt amb els títols exactes. El generador consulta directament aquests IDs, comprova el canal propietari retornat per YouTube i manté els filtres de privacitat, contingut i vídeos ocults. Això evita llegir discografies senceres o perdre peces seleccionades per la finestra de 50 pujades o les 40 més populars. Els canals sense aquesta propietat continuen amb el procés anterior.
+
+Els moviments curts de discos Topic no són Shorts: els verificats figuren a `falsos-shorts.json`; la selecció Topic ara respecta aquest registre abans de descartar per durada, com ja feia la sortida final. Les peces revisades com a instrumentals es registren a `revisio-idiomes.json` perquè un títol estranger no les amagui. Crèdits, fonts i exclusions a `docs/REVISION_CLASSICA_2026-10-05.json`.
+
+La selecció manual tampoc aplica la deduplicació de títols pop: «Nocturne No. 2» i «Nocturne No. 4», o concerts amb numeració diferent, són obres diferents. La prova amb respostes API simulades importa les 201 peces amb 7 consultes (2 de canals i 5 de vídeos), cap consulta de playlists i cap peça addicional.

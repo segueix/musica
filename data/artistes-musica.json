@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-05T16:22:34.989Z",
+  "updatedAt": "2026-10-05T16:42:49.427383Z",
   "artists": [
     {
       "name": "2ES",
@@ -789,17 +789,24 @@
       "name": "Albert Guinovart i Mingacho",
       "aliases": [],
       "genres": [
-        "Folk i arrel",
         "Clàssica i contemporània"
       ],
-      "territories": [],
-      "languages": [
-        "ca"
+      "territories": [
+        "Catalunya"
       ],
+      "languages": [],
       "wikidataId": "Q2831227",
       "musicbrainzId": "a007220e-6f15-462c-bf25-914940c8aec3",
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCswhIDGfTrgDzLuo8Kla8Dw",
+            "handle": null,
+            "name": "Albert Guinovart - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
         "candidates": [],
         "searchCandidates": [
           {
@@ -843,16 +850,20 @@
           }
         ]
       },
-      "confidence": "pendent",
-      "reviewStatus": "pendent",
-      "active": false,
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
         "https://www.wikidata.org/wiki/Q2831227",
         "wikidata:languages-spoken-catalan",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "manual-user-2026-10-05",
+        "genre:manual",
+        "https://www.youtube.com/watch?v=_xyQbIrHhd0",
+        "https://www.youtube.com/watch?v=ly7J4KyBbMM"
       ],
-      "lastChecked": "2026-09-25T15:53:54.375Z",
-      "notes": "",
+      "lastChecked": "2026-10-05T16:42:49.427383Z",
+      "notes": " Selecció instrumental revisada el 2026-10-05. Només els vídeos explícitament autoritzats; no s’admeten veus cantades ni recitades. Els canals de distribuïdors o col·laboradors només aporten les gravacions acreditades.",
       "enrichment": {
         "musicbrainz": {
           "checkedAt": "2026-09-25T15:53:54.375Z",
@@ -901,7 +912,8 @@
         "musical",
         "òpera",
         "banda sonora"
-      ]
+      ],
+      "displayName": "Albert Guinovart"
     },
     {
       "name": "Albert Pla i Álvarez",
@@ -14846,16 +14858,28 @@
     },
     {
       "name": "Manuel García Morante",
-      "aliases": [],
-      "genres": [],
-      "territories": [],
-      "languages": [
-        "ca"
+      "aliases": [
+        "Manel Garcia Morante"
       ],
+      "genres": [
+        "Clàssica i contemporània"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [],
       "wikidataId": "Q105407739",
       "musicbrainzId": "30cc57c1-0eee-49b2-9b4d-3f70e1319b42",
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UC1BbV04YuUc9Dc_gsaxoTqg",
+            "handle": null,
+            "name": "Manuel García Morante - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
         "candidates": [],
         "searchCandidates": [
           {
@@ -14904,15 +14928,20 @@
           }
         ]
       },
-      "confidence": "pendent",
-      "reviewStatus": "pendent",
-      "active": false,
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
         "https://www.wikidata.org/wiki/Q105407739",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "manual-user-2026-10-05",
+        "genre:manual",
+        "https://www.youtube.com/watch?v=5gNgc1d7y_g",
+        "https://www.youtube.com/watch?v=eqrDPfejydA",
+        "https://www.youtube.com/watch?v=_jCysi_IStc"
       ],
-      "lastChecked": "2026-09-25T15:55:34.209Z",
-      "notes": "",
+      "lastChecked": "2026-10-05T16:42:49.427383Z",
+      "notes": " Selecció instrumental revisada el 2026-10-05. Només els vídeos explícitament autoritzats; no s’admeten veus cantades ni recitades. Els canals de distribuïdors o col·laboradors només aporten les gravacions acreditades.",
       "enrichment": {
         "musicbrainz": {
           "checkedAt": "2026-09-25T15:55:34.209Z",
@@ -14945,7 +14974,8 @@
           "autoAcceptedId": null
         }
       },
-      "genresRaw": []
+      "genresRaw": [],
+      "displayName": "Manuel García Morante"
     },
     {
       "name": "Mar Grimalt",
@@ -29118,6 +29148,2509 @@
           "wikidataWorkEvidence": []
         }
       }
+    },
+    {
+      "name": "Salvador Brotons",
+      "aliases": [],
+      "genres": [
+        "Clàssica i contemporània"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCy6U0DI2WntUCxkrU3vDigw",
+            "handle": null,
+            "name": "Salvador Brotons - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual",
+        "https://www.youtube.com/watch?v=Kd-5318ROYI",
+        "https://www.youtube.com/watch?v=4t5qhS770X8",
+        "https://www.youtube.com/watch?v=vZa2-2vyecQ"
+      ],
+      "notes": " Selecció instrumental revisada el 2026-10-05. Només els vídeos explícitament autoritzats; no s’admeten veus cantades ni recitades. Els canals de distribuïdors o col·laboradors només aporten les gravacions acreditades.",
+      "displayName": "Salvador Brotons",
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-05T16:42:49.427383Z"
+    },
+    {
+      "name": "Claudi Arimany",
+      "aliases": [],
+      "genres": [
+        "Clàssica i contemporània"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCZbd4nFXfPvUSUMe6jp4gwQ",
+            "handle": null,
+            "name": "Claudi Arimany - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual",
+        "https://www.youtube.com/watch?v=wMVRQdUKwiM",
+        "https://www.youtube.com/watch?v=Z79SBhmgZPc",
+        "https://www.youtube.com/watch?v=EiEX_8rqj4g"
+      ],
+      "notes": " Selecció instrumental revisada el 2026-10-05. Només els vídeos explícitament autoritzats; no s’admeten veus cantades ni recitades. Els canals de distribuïdors o col·laboradors només aporten les gravacions acreditades.",
+      "displayName": "Claudi Arimany",
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-05T16:42:49.427383Z"
+    },
+    {
+      "name": "Vicens Prats",
+      "aliases": [],
+      "genres": [
+        "Clàssica i contemporània"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCWVI6lwZuJvVeDonuF7DhCg",
+            "handle": null,
+            "name": "Vicens Prats - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual",
+        "https://www.youtube.com/watch?v=DN4-qaJu7Y0",
+        "https://www.youtube.com/watch?v=2L0r5xNnGQU",
+        "https://www.youtube.com/watch?v=Mgi6uoPdoEQ",
+        "https://www.youtube.com/watch?v=hi2U7U1V9Ws"
+      ],
+      "notes": " Selecció instrumental revisada el 2026-10-05. Només els vídeos explícitament autoritzats; no s’admeten veus cantades ni recitades. Els canals de distribuïdors o col·laboradors només aporten les gravacions acreditades.",
+      "displayName": "Vicens Prats",
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-05T16:42:49.427383Z"
+    },
+    {
+      "name": "Xavier Relats",
+      "aliases": [],
+      "genres": [
+        "Clàssica i contemporània"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCab4pnI807mVEv0vkLP1sow",
+            "handle": null,
+            "name": "Xavier Relats - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual",
+        "https://www.youtube.com/watch?v=TyPbu6-RWxk",
+        "https://www.youtube.com/watch?v=M1LJT16FiDk",
+        "https://www.youtube.com/watch?v=EDxgJUITCNA"
+      ],
+      "notes": " Selecció instrumental revisada el 2026-10-05. Només els vídeos explícitament autoritzats; no s’admeten veus cantades ni recitades. Els canals de distribuïdors o col·laboradors només aporten les gravacions acreditades.",
+      "displayName": "Xavier Relats",
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-05T16:42:49.427383Z"
+    },
+    {
+      "name": "Patrícia Mazo",
+      "aliases": [],
+      "genres": [
+        "Clàssica i contemporània"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCFAZkqpu92KgA53lGY9Vj2w",
+            "handle": null,
+            "name": "Patricia Mazo - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual",
+        "https://www.youtube.com/watch?v=aA55Tvj1fmE",
+        "https://www.youtube.com/watch?v=cRdSqvHBcEQ",
+        "https://www.youtube.com/watch?v=WW9xzDs3fb4",
+        "https://www.youtube.com/watch?v=4eiclMGBOVI",
+        "https://www.youtube.com/watch?v=kIdffsXoQBI"
+      ],
+      "notes": " Selecció instrumental revisada el 2026-10-05. Només els vídeos explícitament autoritzats; no s’admeten veus cantades ni recitades. Els canals de distribuïdors o col·laboradors només aporten les gravacions acreditades.",
+      "displayName": "Patrícia Mazo",
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-05T16:42:49.427383Z"
+    },
+    {
+      "name": "Salvador Gratacós",
+      "aliases": [],
+      "genres": [
+        "Clàssica i contemporània"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UC_6nNeEQkwJB1rXEo3MoGhg",
+            "handle": null,
+            "name": "Conjunt De Cambra, Jean Pierre Rampal & Salvador Gratacós - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual",
+        "https://www.youtube.com/watch?v=auMHO9Wq4BA",
+        "https://www.youtube.com/watch?v=blbA4yCW0so",
+        "https://www.youtube.com/watch?v=2NbuXn2b0SI"
+      ],
+      "notes": " Selecció instrumental revisada el 2026-10-05. Només els vídeos explícitament autoritzats; no s’admeten veus cantades ni recitades. Els canals de distribuïdors o col·laboradors només aporten les gravacions acreditades.",
+      "displayName": "Salvador Gratacós",
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-05T16:42:49.427383Z"
+    },
+    {
+      "name": "Elisabet Franch",
+      "aliases": [],
+      "genres": [
+        "Clàssica i contemporània"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCM50YwgmGgJI7fha94FqmRA",
+            "handle": null,
+            "name": "Elisabet Franch - Topic",
+            "type": "topic",
+            "primary": true
+          },
+          {
+            "id": "UCkffB0um-WngkGYgnh3-oOA",
+            "handle": null,
+            "name": "Elisabet Franch - Topic",
+            "type": "topic",
+            "primary": false
+          }
+        ],
+        "searchCandidates": []
+      },
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual",
+        "https://www.youtube.com/watch?v=wDDWmKcQlzA",
+        "https://www.youtube.com/watch?v=uHZXpwTZNUs",
+        "https://www.youtube.com/watch?v=cFkC4p5BHh0"
+      ],
+      "notes": " Selecció instrumental revisada el 2026-10-05. Només els vídeos explícitament autoritzats; no s’admeten veus cantades ni recitades. Els canals de distribuïdors o col·laboradors només aporten les gravacions acreditades.",
+      "displayName": "Elisabet Franch",
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-05T16:42:49.427383Z"
+    },
+    {
+      "name": "Bernat Castillejo",
+      "aliases": [],
+      "genres": [
+        "Clàssica i contemporània"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UC25TdQ4qqDqD0ny-PYUn52A",
+            "handle": null,
+            "name": "Bernat Castillejo - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual",
+        "https://www.youtube.com/watch?v=IEs4Zk_n_Xg",
+        "https://www.youtube.com/watch?v=upKLIDxMrns",
+        "https://www.youtube.com/watch?v=pPYCPCMS0tw",
+        "https://www.youtube.com/watch?v=ZCVU_Qelfl4"
+      ],
+      "notes": " Selecció instrumental revisada el 2026-10-05. Només els vídeos explícitament autoritzats; no s’admeten veus cantades ni recitades. Els canals de distribuïdors o col·laboradors només aporten les gravacions acreditades.",
+      "displayName": "Bernat Castillejo",
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-05T16:42:49.427383Z"
+    },
+    {
+      "name": "Josep Pons",
+      "aliases": [],
+      "genres": [
+        "Clàssica i contemporània"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCYbIqL41M5bbVKF1i3BcbVw",
+            "handle": null,
+            "name": "Josep Pons - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual",
+        "https://www.youtube.com/watch?v=7MYOgyw0YPM",
+        "https://www.youtube.com/watch?v=ne2oRXA2VNg",
+        "https://www.youtube.com/watch?v=F_sMvPmjt_c",
+        "https://www.youtube.com/watch?v=KFOZMd1WxwA"
+      ],
+      "notes": " Selecció instrumental revisada el 2026-10-05. Només els vídeos explícitament autoritzats; no s’admeten veus cantades ni recitades. Els canals de distribuïdors o col·laboradors només aporten les gravacions acreditades.",
+      "displayName": "Josep Pons",
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-05T16:42:49.427383Z"
+    },
+    {
+      "name": "Manel Valdivieso",
+      "aliases": [],
+      "genres": [
+        "Clàssica i contemporània"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCAkMPUkR_djkKWQcm6-TK9w",
+            "handle": null,
+            "name": "Jove Orquestra Nacional de Catalunya - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual",
+        "https://www.youtube.com/watch?v=k0R7_KpEw8k",
+        "https://www.youtube.com/watch?v=E8vwm89bxGU",
+        "https://www.youtube.com/watch?v=s-lNkJ-Mix0"
+      ],
+      "notes": " Selecció instrumental revisada el 2026-10-05. Només els vídeos explícitament autoritzats; no s’admeten veus cantades ni recitades. Els canals de distribuïdors o col·laboradors només aporten les gravacions acreditades.",
+      "displayName": "Manel Valdivieso",
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-05T16:42:49.427383Z"
+    },
+    {
+      "name": "Jordi Mora",
+      "aliases": [],
+      "genres": [
+        "Clàssica i contemporània"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCbEQ1VqFTC68wPxAZaFwBlA",
+            "handle": null,
+            "name": "Jordi Mora - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual",
+        "https://www.youtube.com/watch?v=fXcpTMBEm8U",
+        "https://www.youtube.com/watch?v=kk522eW60qw",
+        "https://www.youtube.com/watch?v=XgcJBuO8c1E"
+      ],
+      "notes": " Selecció instrumental revisada el 2026-10-05. Només els vídeos explícitament autoritzats; no s’admeten veus cantades ni recitades. Els canals de distribuïdors o col·laboradors només aporten les gravacions acreditades.",
+      "displayName": "Jordi Mora",
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-05T16:42:49.427383Z"
+    },
+    {
+      "name": "Edmon Colomer",
+      "aliases": [],
+      "genres": [
+        "Clàssica i contemporània"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCXpSE_cGGWd3Vxe3NRtpURA",
+            "handle": null,
+            "name": "Edmon Colomer - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual",
+        "https://www.youtube.com/watch?v=1F7bGA8vUVU",
+        "https://www.youtube.com/watch?v=SiLcSqE03bQ",
+        "https://www.youtube.com/watch?v=IFC1wLOEQKk"
+      ],
+      "notes": " Selecció instrumental revisada el 2026-10-05. Només els vídeos explícitament autoritzats; no s’admeten veus cantades ni recitades. Els canals de distribuïdors o col·laboradors només aporten les gravacions acreditades.",
+      "displayName": "Edmon Colomer",
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-05T16:42:49.427383Z"
+    },
+    {
+      "name": "Marçal Cervera",
+      "aliases": [],
+      "genres": [
+        "Clàssica i contemporània"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCpul0O4d0qF7snAAnFwSpvw",
+            "handle": null,
+            "name": "Marçal Cervera - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual",
+        "https://www.youtube.com/watch?v=bK-TGTKxwnY",
+        "https://www.youtube.com/watch?v=C0LsaaCTOSA",
+        "https://www.youtube.com/watch?v=ROj1sNLbods",
+        "https://www.youtube.com/watch?v=HcbXfvVJINg"
+      ],
+      "notes": " Selecció instrumental revisada el 2026-10-05. Només els vídeos explícitament autoritzats; no s’admeten veus cantades ni recitades. Els canals de distribuïdors o col·laboradors només aporten les gravacions acreditades.",
+      "displayName": "Marçal Cervera",
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-05T16:42:49.427383Z"
+    },
+    {
+      "name": "Lluís Claret",
+      "aliases": [],
+      "genres": [
+        "Clàssica i contemporània"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCrclwNXgI5R-HhcCKfo3u2A",
+            "handle": null,
+            "name": "Lluís Claret - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual",
+        "https://www.youtube.com/watch?v=eZTOq1wK8hI",
+        "https://www.youtube.com/watch?v=VZA3E2dSYng",
+        "https://www.youtube.com/watch?v=vRHS1oJLDB8"
+      ],
+      "notes": " Selecció instrumental revisada el 2026-10-05. Només els vídeos explícitament autoritzats; no s’admeten veus cantades ni recitades. Els canals de distribuïdors o col·laboradors només aporten les gravacions acreditades.",
+      "displayName": "Lluís Claret",
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-05T16:42:49.427383Z"
+    },
+    {
+      "name": "Pau Codina",
+      "aliases": [],
+      "genres": [
+        "Clàssica i contemporània"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCb71ueu_mq2SOz18qvhXVVw",
+            "handle": null,
+            "name": "Pau Codina - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual",
+        "https://www.youtube.com/watch?v=9zHsy8lZ_ZE",
+        "https://www.youtube.com/watch?v=iXM-UytjZ9U",
+        "https://www.youtube.com/watch?v=hn5Ng4Nr7L8",
+        "https://www.youtube.com/watch?v=YAlIWYWajI4"
+      ],
+      "notes": " Selecció instrumental revisada el 2026-10-05. Només els vídeos explícitament autoritzats; no s’admeten veus cantades ni recitades. Els canals de distribuïdors o col·laboradors només aporten les gravacions acreditades.",
+      "displayName": "Pau Codina",
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-05T16:42:49.427383Z"
+    },
+    {
+      "name": "Arnau Tomàs",
+      "aliases": [],
+      "genres": [
+        "Clàssica i contemporània"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCEsmz1ttew5A4W0Y3KmB82Q",
+            "handle": null,
+            "name": "Arnau Tomàs - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual",
+        "https://www.youtube.com/watch?v=r-IjErNIjtI",
+        "https://www.youtube.com/watch?v=F4-wdtsDQlU",
+        "https://www.youtube.com/watch?v=kcOopWj2CPU",
+        "https://www.youtube.com/watch?v=k0PTAhP8wEU"
+      ],
+      "notes": " Selecció instrumental revisada el 2026-10-05. Només els vídeos explícitament autoritzats; no s’admeten veus cantades ni recitades. Els canals de distribuïdors o col·laboradors només aporten les gravacions acreditades.",
+      "displayName": "Arnau Tomàs",
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-05T16:42:49.427383Z"
+    },
+    {
+      "name": "Amat Santacana",
+      "aliases": [],
+      "genres": [
+        "Clàssica i contemporània"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCGjdEW_PQW0hkmFY_WKYuXw",
+            "handle": null,
+            "name": "Pau Sandaran - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual",
+        "https://www.youtube.com/watch?v=aAsjWuyJ5NI",
+        "https://www.youtube.com/watch?v=Ffd9MCXvgfw",
+        "https://www.youtube.com/watch?v=OlVrFUvMu5o"
+      ],
+      "notes": " Selecció instrumental revisada el 2026-10-05. Només els vídeos explícitament autoritzats; no s’admeten veus cantades ni recitades. Els canals de distribuïdors o col·laboradors només aporten les gravacions acreditades.",
+      "displayName": "Amat Santacana",
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-05T16:42:49.427383Z"
+    },
+    {
+      "name": "Josep Bassal",
+      "aliases": [],
+      "genres": [
+        "Clàssica i contemporània"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCM4JQ36TwDV5bhCCD30-l4w",
+            "handle": null,
+            "name": "Josep Bassal - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual",
+        "https://www.youtube.com/watch?v=ZzZ1D1WJq88",
+        "https://www.youtube.com/watch?v=eDUug6SzVA4",
+        "https://www.youtube.com/watch?v=BBDmZAz1TrA"
+      ],
+      "notes": " Selecció instrumental revisada el 2026-10-05. Només els vídeos explícitament autoritzats; no s’admeten veus cantades ni recitades. Els canals de distribuïdors o col·laboradors només aporten les gravacions acreditades.",
+      "displayName": "Josep Bassal",
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-05T16:42:49.427383Z"
+    },
+    {
+      "name": "Antoni Besses",
+      "aliases": [],
+      "genres": [
+        "Clàssica i contemporània"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCnt52TKWBQepRRfwxCl3ILw",
+            "handle": null,
+            "name": "Antoni Besses - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual",
+        "https://www.youtube.com/watch?v=aBoVZtM5EDA",
+        "https://www.youtube.com/watch?v=3J8C4azQQCo",
+        "https://www.youtube.com/watch?v=b3y2M7dKEms"
+      ],
+      "notes": " Selecció instrumental revisada el 2026-10-05. Només els vídeos explícitament autoritzats; no s’admeten veus cantades ni recitades. Els canals de distribuïdors o col·laboradors només aporten les gravacions acreditades.",
+      "displayName": "Antoni Besses",
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-05T16:42:49.427383Z"
+    },
+    {
+      "name": "Albert Attenelle",
+      "aliases": [],
+      "genres": [
+        "Clàssica i contemporània"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCQj13f64UFj_mLTk2NtP77w",
+            "handle": null,
+            "name": "Albert Attenelle - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual",
+        "https://www.youtube.com/watch?v=WDFbWcNOL4M",
+        "https://www.youtube.com/watch?v=6DMj2D9W_PM",
+        "https://www.youtube.com/watch?v=yk8juMSMl2w"
+      ],
+      "notes": " Selecció instrumental revisada el 2026-10-05. Només els vídeos explícitament autoritzats; no s’admeten veus cantades ni recitades. Els canals de distribuïdors o col·laboradors només aporten les gravacions acreditades.",
+      "displayName": "Albert Attenelle",
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-05T16:42:49.427383Z"
+    },
+    {
+      "name": "Josep Colom",
+      "aliases": [],
+      "genres": [
+        "Clàssica i contemporània"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCKFHxaZDDLlq45Ik-pujizA",
+            "handle": null,
+            "name": "Josep Colom - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual",
+        "https://www.youtube.com/watch?v=WKu9eU3VgKQ",
+        "https://www.youtube.com/watch?v=8xqn7kDXUho",
+        "https://www.youtube.com/watch?v=pJqFao7n2zo",
+        "https://www.youtube.com/watch?v=HcerFuByhPo"
+      ],
+      "notes": " Selecció instrumental revisada el 2026-10-05. Només els vídeos explícitament autoritzats; no s’admeten veus cantades ni recitades. Els canals de distribuïdors o col·laboradors només aporten les gravacions acreditades.",
+      "displayName": "Josep Colom",
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-05T16:42:49.427383Z"
+    },
+    {
+      "name": "Miquel Farré",
+      "aliases": [],
+      "genres": [
+        "Clàssica i contemporània"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCk2T5uYmLYgrLIQCnjTdmGQ",
+            "handle": null,
+            "name": "Miquel Farré - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual",
+        "https://www.youtube.com/watch?v=OwAi1mueVY8",
+        "https://www.youtube.com/watch?v=Oa5FzsgKeM8",
+        "https://www.youtube.com/watch?v=RJwlnBrGaFk",
+        "https://www.youtube.com/watch?v=mj9lWj5okVQ"
+      ],
+      "notes": " Selecció instrumental revisada el 2026-10-05. Només els vídeos explícitament autoritzats; no s’admeten veus cantades ni recitades. Els canals de distribuïdors o col·laboradors només aporten les gravacions acreditades.",
+      "displayName": "Miquel Farré",
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-05T16:42:49.427383Z"
+    },
+    {
+      "name": "Jordi Masó",
+      "aliases": [],
+      "genres": [
+        "Clàssica i contemporània"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCfDU7VY1OZiY8bUOJV3pQCw",
+            "handle": null,
+            "name": "Jordi Masó - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual",
+        "https://www.youtube.com/watch?v=Nwnd4_59g3w",
+        "https://www.youtube.com/watch?v=pZTilqxEI1c",
+        "https://www.youtube.com/watch?v=xgpu4GrbE3Q"
+      ],
+      "notes": " Selecció instrumental revisada el 2026-10-05. Només els vídeos explícitament autoritzats; no s’admeten veus cantades ni recitades. Els canals de distribuïdors o col·laboradors només aporten les gravacions acreditades.",
+      "displayName": "Jordi Masó",
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-05T16:42:49.427383Z"
+    },
+    {
+      "name": "Alba Ventura",
+      "aliases": [],
+      "genres": [
+        "Clàssica i contemporània"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCYLn5DGwwhFuKLv7Mo6z6Vg",
+            "handle": null,
+            "name": "Alba Ventura - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual",
+        "https://www.youtube.com/watch?v=m9ymFC331zw",
+        "https://www.youtube.com/watch?v=9LhgcKVqNek",
+        "https://www.youtube.com/watch?v=SsM31Gs9V3w"
+      ],
+      "notes": " Selecció instrumental revisada el 2026-10-05. Només els vídeos explícitament autoritzats; no s’admeten veus cantades ni recitades. Els canals de distribuïdors o col·laboradors només aporten les gravacions acreditades.",
+      "displayName": "Alba Ventura",
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-05T16:42:49.427383Z"
+    },
+    {
+      "name": "Adolf Plà",
+      "aliases": [],
+      "genres": [
+        "Clàssica i contemporània"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCjmO7d756-QL35tbZha6klg",
+            "handle": null,
+            "name": "Adolf Pla - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual",
+        "https://www.youtube.com/watch?v=mhxAle9OJcs",
+        "https://www.youtube.com/watch?v=Z0nw46Jvgqo",
+        "https://www.youtube.com/watch?v=uMYW-fQBrO4"
+      ],
+      "notes": " Selecció instrumental revisada el 2026-10-05. Només els vídeos explícitament autoritzats; no s’admeten veus cantades ni recitades. Els canals de distribuïdors o col·laboradors només aporten les gravacions acreditades.",
+      "displayName": "Adolf Plà",
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-05T16:42:49.427383Z"
+    },
+    {
+      "name": "Jordi Camell",
+      "aliases": [],
+      "genres": [
+        "Clàssica i contemporània"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCSe6hQfr7LLyXtDf3LoTtKA",
+            "handle": null,
+            "name": "Jordi Camell - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual",
+        "https://www.youtube.com/watch?v=b1ySnRQ-WTs",
+        "https://www.youtube.com/watch?v=zLkQsHnzEUw",
+        "https://www.youtube.com/watch?v=5DEYheYnWaI"
+      ],
+      "notes": " Selecció instrumental revisada el 2026-10-05. Només els vídeos explícitament autoritzats; no s’admeten veus cantades ni recitades. Els canals de distribuïdors o col·laboradors només aporten les gravacions acreditades.",
+      "displayName": "Jordi Camell",
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-05T16:42:49.427383Z"
+    },
+    {
+      "name": "Daniel Ligorio",
+      "aliases": [],
+      "genres": [
+        "Clàssica i contemporània"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UC7I9_HJ2SBMrF_kwxL4gXbg",
+            "handle": null,
+            "name": "Daniel Ligorio - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual",
+        "https://www.youtube.com/watch?v=JZVLziDJ7vo",
+        "https://www.youtube.com/watch?v=kXhSKlotLsM"
+      ],
+      "notes": " Selecció instrumental revisada el 2026-10-05. Només els vídeos explícitament autoritzats; no s’admeten veus cantades ni recitades. Els canals de distribuïdors o col·laboradors només aporten les gravacions acreditades.",
+      "displayName": "Daniel Ligorio",
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-05T16:42:49.427383Z"
+    },
+    {
+      "name": "Emili Brugalla",
+      "aliases": [],
+      "genres": [
+        "Clàssica i contemporània"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCcdwOnC-XjHUXz200C6V8og",
+            "handle": null,
+            "name": "Emili Brugalla - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual",
+        "https://www.youtube.com/watch?v=MQgSy1AuFbE",
+        "https://www.youtube.com/watch?v=kLwGTHcNtz0",
+        "https://www.youtube.com/watch?v=ys2Lnbpvb7k"
+      ],
+      "notes": " Selecció instrumental revisada el 2026-10-05. Només els vídeos explícitament autoritzats; no s’admeten veus cantades ni recitades. Els canals de distribuïdors o col·laboradors només aporten les gravacions acreditades.",
+      "displayName": "Emili Brugalla",
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-05T16:42:49.427383Z"
+    },
+    {
+      "name": "Alícia de Larrocha",
+      "aliases": [
+        "Alicia de Larrocha"
+      ],
+      "genres": [
+        "Clàssica i contemporània"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCfC-YFu9EKtnDp6h7XRbdaw",
+            "handle": null,
+            "name": "Alicia de Larrocha - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual",
+        "https://www.youtube.com/watch?v=CQruHcDza9c",
+        "https://www.youtube.com/watch?v=mrhJHN7MP1A",
+        "https://www.youtube.com/watch?v=XJfeIyYVqz4",
+        "https://www.youtube.com/watch?v=zGmNvj0BtR8"
+      ],
+      "notes": " Selecció instrumental revisada el 2026-10-05. Només els vídeos explícitament autoritzats; no s’admeten veus cantades ni recitades. Els canals de distribuïdors o col·laboradors només aporten les gravacions acreditades.",
+      "displayName": "Alícia de Larrocha",
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-05T16:42:49.427383Z"
+    },
+    {
+      "name": "Sofia Puche",
+      "aliases": [],
+      "genres": [
+        "Clàssica i contemporània"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UC3HZ0YrcAVaWpdH2weJLWcw",
+            "handle": null,
+            "name": "Sofia Puche - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual",
+        "https://www.youtube.com/watch?v=W9P1hMYhKHA",
+        "https://www.youtube.com/watch?v=jmK1L1hVlgE",
+        "https://www.youtube.com/watch?v=jZYP0M3IfUQ",
+        "https://www.youtube.com/watch?v=maWzw5Oz7h0"
+      ],
+      "notes": " Selecció instrumental revisada el 2026-10-05. Només els vídeos explícitament autoritzats; no s’admeten veus cantades ni recitades. Els canals de distribuïdors o col·laboradors només aporten les gravacions acreditades.",
+      "displayName": "Sofia Puche",
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-05T16:42:49.427383Z"
+    },
+    {
+      "name": "Eulàlia Solé",
+      "aliases": [],
+      "genres": [
+        "Clàssica i contemporània"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCP_N7IHIzLfYykj0wXhefLw",
+            "handle": null,
+            "name": "Eulàlia Solé - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual",
+        "https://www.youtube.com/watch?v=kliDYBcUd5U",
+        "https://www.youtube.com/watch?v=0nZHzj7gQsU",
+        "https://www.youtube.com/watch?v=g03mCrP3xIw",
+        "https://www.youtube.com/watch?v=Qe_Nay2ipf4"
+      ],
+      "notes": " Selecció instrumental revisada el 2026-10-05. Només els vídeos explícitament autoritzats; no s’admeten veus cantades ni recitades. Els canals de distribuïdors o col·laboradors només aporten les gravacions acreditades.",
+      "displayName": "Eulàlia Solé",
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-05T16:42:49.427383Z"
+    },
+    {
+      "name": "Ignasi Cambra",
+      "aliases": [],
+      "genres": [
+        "Clàssica i contemporània"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UC7HUTOwjYDYWHp0pu9nsXDA",
+            "handle": null,
+            "name": "Ignasi Cambra - Topic",
+            "type": "topic",
+            "primary": true
+          },
+          {
+            "id": "UCr3gL-nIjRCYV062K7jA4GQ",
+            "handle": null,
+            "name": "Ignasi Cambra - Topic",
+            "type": "topic",
+            "primary": false
+          }
+        ],
+        "searchCandidates": []
+      },
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual",
+        "https://www.youtube.com/watch?v=scYQApBFCZY",
+        "https://www.youtube.com/watch?v=7FTB6dxZ5Lg",
+        "https://www.youtube.com/watch?v=_nKH3N1gmgI",
+        "https://www.youtube.com/watch?v=ZF5AwmfVB_Q"
+      ],
+      "notes": " Selecció instrumental revisada el 2026-10-05. Només els vídeos explícitament autoritzats; no s’admeten veus cantades ni recitades. Els canals de distribuïdors o col·laboradors només aporten les gravacions acreditades.",
+      "displayName": "Ignasi Cambra",
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-05T16:42:49.427383Z"
+    },
+    {
+      "name": "Leonora Milà",
+      "aliases": [],
+      "genres": [
+        "Clàssica i contemporània"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCSCEYsHv72tuDUNjdvUU1HQ",
+            "handle": null,
+            "name": "Leonora Milà - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual",
+        "https://www.youtube.com/watch?v=o_cdRIWienM",
+        "https://www.youtube.com/watch?v=MENJVTf_LEo",
+        "https://www.youtube.com/watch?v=hM3Mp3h6c_c",
+        "https://www.youtube.com/watch?v=TFMXdkXETUo"
+      ],
+      "notes": " Selecció instrumental revisada el 2026-10-05. Només els vídeos explícitament autoritzats; no s’admeten veus cantades ni recitades. Els canals de distribuïdors o col·laboradors només aporten les gravacions acreditades.",
+      "displayName": "Leonora Milà",
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-05T16:42:49.427383Z"
+    },
+    {
+      "name": "Laura Farré Rozada",
+      "aliases": [],
+      "genres": [
+        "Clàssica i contemporània"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCZ8_-6GA1ihcyKbws0ep3yg",
+            "handle": null,
+            "name": "Laura Farré Rozada - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual",
+        "https://www.youtube.com/watch?v=d6Nlj0EHODY",
+        "https://www.youtube.com/watch?v=mhbZu8scFaQ",
+        "https://www.youtube.com/watch?v=1qy1UwX8Dr8"
+      ],
+      "notes": " Selecció instrumental revisada el 2026-10-05. Només els vídeos explícitament autoritzats; no s’admeten veus cantades ni recitades. Els canals de distribuïdors o col·laboradors només aporten les gravacions acreditades.",
+      "displayName": "Laura Farré Rozada",
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-05T16:42:49.427383Z"
+    },
+    {
+      "name": "Miquel Villalba",
+      "aliases": [],
+      "genres": [
+        "Clàssica i contemporània"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCgmhO2IwHsaK_xYzWqryN3w",
+            "handle": null,
+            "name": "Miquel Villalba - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual",
+        "https://www.youtube.com/watch?v=vE1JQxuWLZc",
+        "https://www.youtube.com/watch?v=laVEvFSwTts",
+        "https://www.youtube.com/watch?v=L3Amc7YjpYQ"
+      ],
+      "notes": " Selecció instrumental revisada el 2026-10-05. Només els vídeos explícitament autoritzats; no s’admeten veus cantades ni recitades. Els canals de distribuïdors o col·laboradors només aporten les gravacions acreditades.",
+      "displayName": "Miquel Villalba",
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-05T16:42:49.427383Z"
+    },
+    {
+      "name": "Àlex Alguacil",
+      "aliases": [],
+      "genres": [
+        "Clàssica i contemporània"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCaCYdGQkelVdyZd5R7RXIhg",
+            "handle": null,
+            "name": "Alex Alguacil - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual",
+        "https://www.youtube.com/watch?v=OByEzDkmPTE",
+        "https://www.youtube.com/watch?v=9Fc9ItIVMpA",
+        "https://www.youtube.com/watch?v=ecqnzVSopPw"
+      ],
+      "notes": " Selecció instrumental revisada el 2026-10-05. Només els vídeos explícitament autoritzats; no s’admeten veus cantades ni recitades. Els canals de distribuïdors o col·laboradors només aporten les gravacions acreditades.",
+      "displayName": "Àlex Alguacil",
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-05T16:42:49.427383Z"
+    },
+    {
+      "name": "Daniel Blanch",
+      "aliases": [],
+      "genres": [
+        "Clàssica i contemporània"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCWtXmazLnvcMZ_RJSuHlVcg",
+            "handle": null,
+            "name": "Daniel Blanch - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual",
+        "https://www.youtube.com/watch?v=KoUgQf1DCBs",
+        "https://www.youtube.com/watch?v=EjNaPS815s8",
+        "https://www.youtube.com/watch?v=Dt7vw3C1KVU"
+      ],
+      "notes": " Selecció instrumental revisada el 2026-10-05. Només els vídeos explícitament autoritzats; no s’admeten veus cantades ni recitades. Els canals de distribuïdors o col·laboradors només aporten les gravacions acreditades.",
+      "displayName": "Daniel Blanch",
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-05T16:42:49.427383Z"
+    },
+    {
+      "name": "Melani Mestre",
+      "aliases": [],
+      "genres": [
+        "Clàssica i contemporània"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCi8YI75JBCbTE9b87s8vA8A",
+            "handle": null,
+            "name": "Melani Mestre - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual",
+        "https://www.youtube.com/watch?v=XIRF_XWMzfo",
+        "https://www.youtube.com/watch?v=Z-leYm4zirw",
+        "https://www.youtube.com/watch?v=269gqIfxhhA"
+      ],
+      "notes": " Selecció instrumental revisada el 2026-10-05. Només els vídeos explícitament autoritzats; no s’admeten veus cantades ni recitades. Els canals de distribuïdors o col·laboradors només aporten les gravacions acreditades.",
+      "displayName": "Melani Mestre",
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-05T16:42:49.427383Z"
+    },
+    {
+      "name": "Gonçal Comellas",
+      "aliases": [],
+      "genres": [
+        "Clàssica i contemporània"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCxuIHcEZ-amCmuxJtuyz1ew",
+            "handle": null,
+            "name": "Gonçal Comellas - Topic",
+            "type": "topic",
+            "primary": true
+          },
+          {
+            "id": "UCcniAgKq1Icg5XQM35DvMzw",
+            "handle": null,
+            "name": "Gonçal Comellas - Topic",
+            "type": "topic",
+            "primary": false
+          }
+        ],
+        "searchCandidates": []
+      },
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual",
+        "https://www.youtube.com/watch?v=QaPbi4EdEiI",
+        "https://www.youtube.com/watch?v=Htcj61sTWjU",
+        "https://www.youtube.com/watch?v=sbsioBh1brA",
+        "https://www.youtube.com/watch?v=NLyXbYKWHWg"
+      ],
+      "notes": " Selecció instrumental revisada el 2026-10-05. Només els vídeos explícitament autoritzats; no s’admeten veus cantades ni recitades. Els canals de distribuïdors o col·laboradors només aporten les gravacions acreditades.",
+      "displayName": "Gonçal Comellas",
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-05T16:42:49.427383Z"
+    },
+    {
+      "name": "Eduard Toldrà",
+      "aliases": [],
+      "genres": [
+        "Clàssica i contemporània"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCVQMmVQStQYuZMRAO6VNe5w",
+            "handle": null,
+            "name": "Eduard Toldrà - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual",
+        "https://www.youtube.com/watch?v=hlI46bueVgo"
+      ],
+      "notes": " Selecció instrumental revisada el 2026-10-05. Només els vídeos explícitament autoritzats; no s’admeten veus cantades ni recitades. Els canals de distribuïdors o col·laboradors només aporten les gravacions acreditades.",
+      "displayName": "Eduard Toldrà",
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-05T16:42:49.427383Z"
+    },
+    {
+      "name": "Anna Urpina",
+      "aliases": [],
+      "genres": [
+        "Clàssica i contemporània"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCZokshYjD4zFaibzVxAMIoQ",
+            "handle": null,
+            "name": "Anna Urpina - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual",
+        "https://www.youtube.com/watch?v=_xRkSEyF_ZA",
+        "https://www.youtube.com/watch?v=zN8sGDAjzTA",
+        "https://www.youtube.com/watch?v=BhG_vNktcLQ",
+        "https://www.youtube.com/watch?v=uOmkcBNnt1c"
+      ],
+      "notes": " Selecció instrumental revisada el 2026-10-05. Només els vídeos explícitament autoritzats; no s’admeten veus cantades ni recitades. Els canals de distribuïdors o col·laboradors només aporten les gravacions acreditades.",
+      "displayName": "Anna Urpina",
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-05T16:42:49.427383Z"
+    },
+    {
+      "name": "Quartet Casals",
+      "aliases": [
+        "Cuarteto Casals"
+      ],
+      "genres": [
+        "Clàssica i contemporània"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCm6gXRCLJR3ZZZSstrt1efg",
+            "handle": null,
+            "name": "Cuarteto Casals - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual",
+        "https://www.youtube.com/watch?v=vXeDX8_zx6Q",
+        "https://www.youtube.com/watch?v=aUABhXJWtGQ",
+        "https://www.youtube.com/watch?v=yAGYw-BJ1WA",
+        "https://www.youtube.com/watch?v=DNjNOrMqx1I"
+      ],
+      "notes": " Selecció instrumental revisada el 2026-10-05. Només els vídeos explícitament autoritzats; no s’admeten veus cantades ni recitades. Els canals de distribuïdors o col·laboradors només aporten les gravacions acreditades.",
+      "displayName": "Quartet Casals",
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-05T16:42:49.427383Z"
+    },
+    {
+      "name": "Quartet Sonor",
+      "aliases": [],
+      "genres": [
+        "Clàssica i contemporània"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCrX0-iYjOJgmhb4PCtEEE7w",
+            "handle": null,
+            "name": "Quartet Sonor - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual",
+        "https://www.youtube.com/watch?v=57w_IBzT-2I",
+        "https://www.youtube.com/watch?v=K7DiyKqK6N4",
+        "https://www.youtube.com/watch?v=lzwkct84zHg",
+        "https://www.youtube.com/watch?v=pMcW1ipTFdg"
+      ],
+      "notes": " Selecció instrumental revisada el 2026-10-05. Només els vídeos explícitament autoritzats; no s’admeten veus cantades ni recitades. Els canals de distribuïdors o col·laboradors només aporten les gravacions acreditades.",
+      "displayName": "Quartet Sonor",
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-05T16:42:49.427383Z"
+    },
+    {
+      "name": "Joan Guinjoan",
+      "aliases": [],
+      "genres": [
+        "Clàssica i contemporània"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCp12tnYNWcqnB-hcQ5yc1Cw",
+            "handle": null,
+            "name": "Joan Guinjoan - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual",
+        "https://www.youtube.com/watch?v=k6jX7Rrzuu0",
+        "https://www.youtube.com/watch?v=qWFN38avQ3k"
+      ],
+      "notes": " Selecció instrumental revisada el 2026-10-05. Només els vídeos explícitament autoritzats; no s’admeten veus cantades ni recitades. Els canals de distribuïdors o col·laboradors només aporten les gravacions acreditades.",
+      "displayName": "Joan Guinjoan",
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-05T16:42:49.427383Z"
+    },
+    {
+      "name": "Carles Trepat",
+      "aliases": [],
+      "genres": [
+        "Clàssica i contemporània"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCuxbK4YoCNgTnUffVehCuVw",
+            "handle": null,
+            "name": "Carles Trepat - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual",
+        "https://www.youtube.com/watch?v=rjZyt_Bm0DA",
+        "https://www.youtube.com/watch?v=xymbC17WrCM",
+        "https://www.youtube.com/watch?v=c60Lj24gyzw"
+      ],
+      "notes": " Selecció instrumental revisada el 2026-10-05. Només els vídeos explícitament autoritzats; no s’admeten veus cantades ni recitades. Els canals de distribuïdors o col·laboradors només aporten les gravacions acreditades.",
+      "displayName": "Carles Trepat",
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-05T16:42:49.427383Z"
+    },
+    {
+      "name": "Àngel Soler",
+      "aliases": [],
+      "genres": [
+        "Clàssica i contemporània"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCnUJqVn2iL89SWTgGEQLTUg",
+            "handle": null,
+            "name": "Àngel Soler - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual",
+        "https://www.youtube.com/watch?v=B9nxCt8dS8U",
+        "https://www.youtube.com/watch?v=TgqS3-NSdpI",
+        "https://www.youtube.com/watch?v=qyDFzgz8Xwc"
+      ],
+      "notes": " Selecció instrumental revisada el 2026-10-05. Només els vídeos explícitament autoritzats; no s’admeten veus cantades ni recitades. Els canals de distribuïdors o col·laboradors només aporten les gravacions acreditades.",
+      "displayName": "Àngel Soler",
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-05T16:42:49.427383Z"
+    },
+    {
+      "name": "Montserrat Torrent",
+      "aliases": [],
+      "genres": [
+        "Clàssica i contemporània"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCz-jtOvtiYDJq3sasXqwpWw",
+            "handle": null,
+            "name": "Montserrat Torrent - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual",
+        "https://www.youtube.com/watch?v=KCHYutXk_wE",
+        "https://www.youtube.com/watch?v=1SvEaoiVLzw",
+        "https://www.youtube.com/watch?v=HchxaHwMeQ0"
+      ],
+      "notes": " Selecció instrumental revisada el 2026-10-05. Només els vídeos explícitament autoritzats; no s’admeten veus cantades ni recitades. Els canals de distribuïdors o col·laboradors només aporten les gravacions acreditades.",
+      "displayName": "Montserrat Torrent",
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-05T16:42:49.427383Z"
+    },
+    {
+      "name": "Juan de la Rubia",
+      "aliases": [
+        "Juan de Larubia"
+      ],
+      "genres": [
+        "Clàssica i contemporània"
+      ],
+      "territories": [
+        "País Valencià",
+        "Catalunya"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCnu1LSHgrh15ie_YNNXtTZw",
+            "handle": null,
+            "name": "Juan de la Rubia - Topic",
+            "type": "topic",
+            "primary": true
+          },
+          {
+            "id": "UCqTF0UYqdiS5cav3Z-tgKSA",
+            "handle": null,
+            "name": "Juan de la Rubia - Topic",
+            "type": "topic",
+            "primary": false
+          }
+        ],
+        "searchCandidates": []
+      },
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual",
+        "https://www.youtube.com/watch?v=8cKwVrAeMes",
+        "https://www.youtube.com/watch?v=m4zVV5EK7k4",
+        "https://www.youtube.com/watch?v=vr8Ce7F8htQ"
+      ],
+      "notes": " Selecció instrumental revisada el 2026-10-05. Només els vídeos explícitament autoritzats; no s’admeten veus cantades ni recitades. Els canals de distribuïdors o col·laboradors només aporten les gravacions acreditades.",
+      "displayName": "Juan de la Rubia",
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-05T16:42:49.427383Z"
+    },
+    {
+      "name": "Maria Lluïsa Cortada",
+      "aliases": [],
+      "genres": [
+        "Clàssica i contemporània"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCCIR8FjHyQ2RdjAvYuE9K7A",
+            "handle": null,
+            "name": "Maria Lluïsa Cortada - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual",
+        "https://www.youtube.com/watch?v=t8x1k3PNlVk",
+        "https://www.youtube.com/watch?v=eU8HaSx3VeY",
+        "https://www.youtube.com/watch?v=binnqpFyvmQ"
+      ],
+      "notes": " Selecció instrumental revisada el 2026-10-05. Només els vídeos explícitament autoritzats; no s’admeten veus cantades ni recitades. Els canals de distribuïdors o col·laboradors només aporten les gravacions acreditades.",
+      "displayName": "Maria Lluïsa Cortada",
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-05T16:42:49.427383Z"
+    },
+    {
+      "name": "Jordi Reguant",
+      "aliases": [],
+      "genres": [
+        "Clàssica i contemporània"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCPm9RDzJzZAcIDqr_dTHkXw",
+            "handle": null,
+            "name": "Jordi Reguant - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual",
+        "https://www.youtube.com/watch?v=BPwihV_oA9A",
+        "https://www.youtube.com/watch?v=VQ1znnqr1BE",
+        "https://www.youtube.com/watch?v=f-9rzHWw5bE"
+      ],
+      "notes": " Selecció instrumental revisada el 2026-10-05. Només els vídeos explícitament autoritzats; no s’admeten veus cantades ni recitades. Els canals de distribuïdors o col·laboradors només aporten les gravacions acreditades.",
+      "displayName": "Jordi Reguant",
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-05T16:42:49.427383Z"
+    },
+    {
+      "name": "Jordi Savall",
+      "aliases": [],
+      "genres": [
+        "Clàssica i contemporània"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCULm3jROXEj83hMZCFllrcw",
+            "handle": null,
+            "name": "Jordi Savall - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual",
+        "https://www.youtube.com/watch?v=xqk_N4lJtzA",
+        "https://www.youtube.com/watch?v=4i5sgYI14Jg"
+      ],
+      "notes": " Selecció instrumental revisada el 2026-10-05. Només els vídeos explícitament autoritzats; no s’admeten veus cantades ni recitades. Els canals de distribuïdors o col·laboradors només aporten les gravacions acreditades.",
+      "displayName": "Jordi Savall",
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-05T16:42:49.427383Z"
+    },
+    {
+      "name": "Patrícia de No",
+      "aliases": [],
+      "genres": [
+        "Clàssica i contemporània"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCGapG0VtwQI_Btd2LM_VH-g",
+            "handle": null,
+            "name": "Patrícia de No - Topic",
+            "type": "topic",
+            "primary": true
+          },
+          {
+            "id": "UC4IBiyoPqeDCNZUx5o_X8XA",
+            "handle": null,
+            "name": "Patrícia de No - Topic",
+            "type": "topic",
+            "primary": false
+          }
+        ],
+        "searchCandidates": []
+      },
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual",
+        "https://www.youtube.com/watch?v=SzkDrG2Az_8",
+        "https://www.youtube.com/watch?v=DhrWFwRmvwA",
+        "https://www.youtube.com/watch?v=x4-fG9hnc58"
+      ],
+      "notes": " Selecció instrumental revisada el 2026-10-05. Només els vídeos explícitament autoritzats; no s’admeten veus cantades ni recitades. Els canals de distribuïdors o col·laboradors només aporten les gravacions acreditades.",
+      "displayName": "Patrícia de No",
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-05T16:42:49.427383Z"
+    },
+    {
+      "name": "Jaume Cortadellas",
+      "aliases": [],
+      "genres": [
+        "Clàssica i contemporània"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCc0fN2xBxU0GJyObxFYuEBQ",
+            "handle": null,
+            "name": "flautatravesera",
+            "type": "label",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual",
+        "https://www.youtube.com/watch?v=EIND6QeuV6g"
+      ],
+      "notes": " Selecció instrumental revisada el 2026-10-05. Només els vídeos explícitament autoritzats; no s’admeten veus cantades ni recitades. Els canals de distribuïdors o col·laboradors només aporten les gravacions acreditades.",
+      "displayName": "Jaume Cortadellas",
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-05T16:42:49.427383Z"
+    },
+    {
+      "name": "Albert Mora",
+      "aliases": [],
+      "genres": [
+        "Clàssica i contemporània"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCpYUKmzf7-LewUl2iOCW9Tg",
+            "handle": null,
+            "name": "Release - Topic",
+            "type": "topic",
+            "primary": true
+          },
+          {
+            "id": "UCXNj5SlHRPWJEkRyDn_Qotg",
+            "handle": null,
+            "name": "Albert Mora - Topic",
+            "type": "topic",
+            "primary": false
+          }
+        ],
+        "searchCandidates": []
+      },
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual",
+        "https://www.youtube.com/watch?v=e2crWeOrqhM",
+        "https://www.youtube.com/watch?v=-I16iM4MpLA",
+        "https://www.youtube.com/watch?v=l66W76Sn6ow",
+        "https://www.youtube.com/watch?v=LQqLuXupAWU",
+        "https://www.youtube.com/watch?v=rwB9W16jGZk"
+      ],
+      "notes": " Selecció instrumental revisada el 2026-10-05. Només els vídeos explícitament autoritzats; no s’admeten veus cantades ni recitades. Els canals de distribuïdors o col·laboradors només aporten les gravacions acreditades.",
+      "displayName": "Albert Mora",
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-05T16:42:49.427383Z"
+    },
+    {
+      "name": "Salvador Mas",
+      "aliases": [],
+      "genres": [
+        "Clàssica i contemporània"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCtFR0uodaVBnXp03S9dc1Lw",
+            "handle": null,
+            "name": "Barcelona Symphony Orchestra - Topic",
+            "type": "topic",
+            "primary": true
+          },
+          {
+            "id": "UC6PHFVdud96AXt3ERGBuYvg",
+            "handle": null,
+            "name": "Württemberg Philharmonic Orchestra of Reutlingen - Topic",
+            "type": "topic",
+            "primary": false
+          },
+          {
+            "id": "UCENPwyqYGKL7lpH_RGur0UQ",
+            "handle": null,
+            "name": "Wurttembergische Philharmonie Reutlingen - Topic",
+            "type": "topic",
+            "primary": false
+          }
+        ],
+        "searchCandidates": []
+      },
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual",
+        "https://www.youtube.com/watch?v=pENJh4q4FF0",
+        "https://www.youtube.com/watch?v=efl8s3haf6w",
+        "https://www.youtube.com/watch?v=Iks8sCb5MOQ",
+        "https://www.youtube.com/watch?v=VYPjTTH1zHc"
+      ],
+      "notes": " Selecció instrumental revisada el 2026-10-05. Només els vídeos explícitament autoritzats; no s’admeten veus cantades ni recitades. Els canals de distribuïdors o col·laboradors només aporten les gravacions acreditades.",
+      "displayName": "Salvador Mas",
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-05T16:42:49.427383Z"
+    },
+    {
+      "name": "Miquel Ortega",
+      "aliases": [],
+      "genres": [
+        "Clàssica i contemporània"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCNkGF7E6QFK-UG045gqFFrw",
+            "handle": null,
+            "name": "Canción Lírica",
+            "type": "label",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual",
+        "https://www.youtube.com/watch?v=KXf4cqmxuzw"
+      ],
+      "notes": " Selecció instrumental revisada el 2026-10-05. Només els vídeos explícitament autoritzats; no s’admeten veus cantades ni recitades. Els canals de distribuïdors o col·laboradors només aporten les gravacions acreditades.",
+      "displayName": "Miquel Ortega",
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-05T16:42:49.427383Z"
+    },
+    {
+      "name": "Ernest Martínez Izquierdo",
+      "aliases": [
+        "Enric Martínez Izquierdo"
+      ],
+      "genres": [
+        "Clàssica i contemporània"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCijCMKwxn6EcEb5pXRAHF8w",
+            "handle": null,
+            "name": "Ernest Martínez Izquierdo - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual",
+        "https://www.youtube.com/watch?v=25UC3vQzpH8"
+      ],
+      "notes": " Selecció instrumental revisada el 2026-10-05. Només els vídeos explícitament autoritzats; no s’admeten veus cantades ni recitades. Els canals de distribuïdors o col·laboradors només aporten les gravacions acreditades.",
+      "displayName": "Ernest Martínez Izquierdo",
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-05T16:42:49.427383Z"
+    },
+    {
+      "name": "Josep Caballé Domènech",
+      "aliases": [],
+      "genres": [
+        "Clàssica i contemporània"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCfhh98CmKOImKUiTs-vGWoA",
+            "handle": null,
+            "name": "Royal Philharmonic Orchestra - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual",
+        "https://www.youtube.com/watch?v=ZUcFprdfVyE"
+      ],
+      "notes": " Selecció instrumental revisada el 2026-10-05. Només els vídeos explícitament autoritzats; no s’admeten veus cantades ni recitades. Els canals de distribuïdors o col·laboradors només aporten les gravacions acreditades.",
+      "displayName": "Josep Caballé Domènech",
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-05T16:42:49.427383Z"
+    },
+    {
+      "name": "Enrique Bagaría",
+      "aliases": [],
+      "genres": [
+        "Clàssica i contemporània"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCblaH0-63-L1_XUw86_QoSw",
+            "handle": null,
+            "name": "Enrique Bagaría - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual",
+        "https://www.youtube.com/watch?v=220IOcIe_EM",
+        "https://www.youtube.com/watch?v=DlitbmJcS6E",
+        "https://www.youtube.com/watch?v=4F02q36a85s"
+      ],
+      "notes": " Selecció instrumental revisada el 2026-10-05. Només els vídeos explícitament autoritzats; no s’admeten veus cantades ni recitades. Els canals de distribuïdors o col·laboradors només aporten les gravacions acreditades.",
+      "displayName": "Enrique Bagaría",
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-05T16:42:49.427383Z"
+    },
+    {
+      "name": "Albert Nieto",
+      "aliases": [],
+      "genres": [
+        "Clàssica i contemporània"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCCeVzchKrlMaULQlfYppRww",
+            "handle": null,
+            "name": "Albert Nieto - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual",
+        "https://www.youtube.com/watch?v=ToXwqQlEQ3g",
+        "https://www.youtube.com/watch?v=OtZIuZKthJU",
+        "https://www.youtube.com/watch?v=ir6-mmYjR-Q"
+      ],
+      "notes": " Selecció instrumental revisada el 2026-10-05. Només els vídeos explícitament autoritzats; no s’admeten veus cantades ni recitades. Els canals de distribuïdors o col·laboradors només aporten les gravacions acreditades.",
+      "displayName": "Albert Nieto",
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-05T16:42:49.427383Z"
+    },
+    {
+      "name": "Abigail Prat",
+      "aliases": [],
+      "genres": [
+        "Clàssica i contemporània"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UC6SeH-9yzvBHcGxjoR6Uo9w",
+            "handle": null,
+            "name": "Fundació Conservatori Liceu",
+            "type": "label",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual",
+        "https://www.youtube.com/watch?v=T9IYbZYmD2Y"
+      ],
+      "notes": " Selecció instrumental revisada el 2026-10-05. Només els vídeos explícitament autoritzats; no s’admeten veus cantades ni recitades. Els canals de distribuïdors o col·laboradors només aporten les gravacions acreditades.",
+      "displayName": "Abigail Prat",
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-05T16:42:49.427383Z"
+    },
+    {
+      "name": "Joan Albert Amargós",
+      "aliases": [
+        "Joan Albert Amargos"
+      ],
+      "genres": [
+        "Clàssica i contemporània"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCupaupEexZCQ_fG4q5UniIA",
+            "handle": null,
+            "name": "Joan Albert Amargos Music",
+            "type": "official",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual",
+        "https://www.youtube.com/watch?v=Y9c4bu6EOas",
+        "https://www.youtube.com/watch?v=5ZqDkpuPdWc"
+      ],
+      "notes": " Selecció instrumental revisada el 2026-10-05. Només els vídeos explícitament autoritzats; no s’admeten veus cantades ni recitades. Els canals de distribuïdors o col·laboradors només aporten les gravacions acreditades.",
+      "displayName": "Joan Albert Amargós",
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-05T16:42:49.427383Z"
+    },
+    {
+      "name": "Antoni Ros Marbà",
+      "aliases": [],
+      "genres": [
+        "Clàssica i contemporània"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCnywvUT2nnyf_1TjhZqRrDg",
+            "handle": null,
+            "name": "Antoni Ros Marba - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual",
+        "https://www.youtube.com/watch?v=A7acWSYQ8_0"
+      ],
+      "notes": " Selecció instrumental revisada el 2026-10-05. Només els vídeos explícitament autoritzats; no s’admeten veus cantades ni recitades. Els canals de distribuïdors o col·laboradors només aporten les gravacions acreditades.",
+      "displayName": "Antoni Ros Marbà",
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-05T16:42:49.427383Z"
+    },
+    {
+      "name": "Ramon Coll",
+      "aliases": [],
+      "genres": [
+        "Clàssica i contemporània"
+      ],
+      "territories": [
+        "Illes Balears"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCk2T5uYmLYgrLIQCnjTdmGQ",
+            "handle": null,
+            "name": "Miquel Farré - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual",
+        "https://www.youtube.com/watch?v=HBEPOhu9Yw4",
+        "https://www.youtube.com/watch?v=yWnNmjACAt0",
+        "https://www.youtube.com/watch?v=LFQOgRSDcdQ"
+      ],
+      "notes": " Selecció instrumental revisada el 2026-10-05. Només els vídeos explícitament autoritzats; no s’admeten veus cantades ni recitades. Els canals de distribuïdors o col·laboradors només aporten les gravacions acreditades.",
+      "displayName": "Ramon Coll",
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-05T16:42:49.427383Z"
     }
   ]
 }

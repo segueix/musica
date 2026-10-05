@@ -257,11 +257,18 @@ async function main(){
   const freshIdsByChannel=new Map();
   const deepIdsByChannel=new Map();
   // Canals Tema: discografia llegida en aquesta execució (o la de l'anterior si falla).
+  const falseShortIds=loadFalseShortRules().ids;
   const topicIds=new Set(ids.filter(id=>indexed.get(id).types.includes('topic')));
   const topicTracksByChannel=new Map();
   const previousTopicCatalog=readJsonSafe(TOPIC_CATALOG_FILE,{channels:{}}).channels||{};
 
   for(const id of ids){
+    const curated=channelVideoAllowlist.get(id)?.allowedVideoIds;
+    if(curated){
+      freshIdsByChannel.set(id,[...curated]);
+      if(topicIds.has(id)) topicTracksByChannel.set(id,[...curated].map(videoId=>({id:videoId,title:''})));
+      continue;
+    }
     const detail=channelDetails.get(id);
     const uploads=detail?.contentDetails?.relatedPlaylists?.uploads;
     if(!uploads){
@@ -360,6 +367,14 @@ async function main(){
     for(const item of payload.items||[]){
       item.durationSeconds=durationSeconds(item.contentDetails?.duration||'');
       detailsById.set(item.id,item);
+    }
+  }
+
+  // Completa els títols de la selecció manual amb les metadades verificades de YouTube.
+  for(const [id,tracks] of topicTracksByChannel){
+    if(channelVideoAllowlist.get(id)?.allowedVideoIds){
+      topicTracksByChannel.set(id,tracks.filter(t=>detailsById.get(t.id)?.snippet?.channelId===id)
+        .map(t=>({id:t.id,title:detailsById.get(t.id).snippet.title})));
     }
   }
 
@@ -483,9 +498,12 @@ async function main(){
     if(!tracks) continue;
     const names=namesOfChannel(id);
     const covered=new Set(indexed.get(id).artistNames.flatMap(name=>[...(coveredKeysByArtist.get(name)||[])]));
-    const candidates=tracks.map(t=>detailsById.get(t.id)).filter(item=>item && item.status?.privacyStatus==='public' && !isShortByDuration(item.durationSeconds))
+    const candidates=tracks.map(t=>detailsById.get(t.id)).filter(item=>item && item.status?.privacyStatus==='public' && (!isShortByDuration(item.durationSeconds) || falseShortIds.has(item.id)))
       .map(item=>({id:item.id,key:tema.songKey(item.snippet?.title,names),keys:tema.topicKeys(item.snippet?.title,names),viewCount:Number(item.statistics?.viewCount||0),publishedAt:item.snippet?.publishedAt}));
-    const selected=tema.selectTopicTracks(candidates,{coveredKeys:covered,now:generationTime});
+    // En una selecció manual, cada ID és una gravació revisada: els números de moviment són significatius.
+    const selected=channelVideoAllowlist.get(id)?.allowedVideoIds
+      ? candidates.map(track=>track.id)
+      : tema.selectTopicTracks(candidates,{coveredKeys:covered,now:generationTime});
     freshIdsByChannel.set(id,selected);
     topicStats.push({id,name:topicCatalog[id]?.name||'',tracks:tracks.length,selected:selected.length,withClip:covered.size});
   }
@@ -599,7 +617,8 @@ async function main(){
       const verdict=carried ? 'unverified' : catalog.verdict({requested:videoId,returned:item,batchFailed:false});
       if(verdict==='removed' || (!item && !carried)) continue;
       const candidateTitle=item?.snippet?.title || carried?.title || '';
-      if(!isChannelVideoAllowed(channelVideoAllowlist,id,candidateTitle)) continue;
+      if(!isChannelVideoAllowed(channelVideoAllowlist,id,candidateTitle,videoId)) continue;
+      if(item && item.snippet?.channelId!==id) continue;
 
       // La decisió manual (data/music-content-overrides.json) preval sobre el classificador automàtic.
       let classification=carried
