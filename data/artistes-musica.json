@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-05T09:44:49.132Z",
+  "updatedAt": "2026-10-05T09:46:17.396Z",
   "artists": [
     {
       "name": "2ES",
@@ -5176,7 +5176,47 @@
       "musicbrainzId": null,
       "youtube": {
         "channels": [],
-        "searchCandidates": []
+        "searchCandidates": [
+          {
+            "id": "UCCNpPo0bc8xsWYXVMvhg63Q",
+            "title": "El Nota - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 53,
+            "thumbnail": "https://yt3.ggpht.com/kTnP-gKEPNskWYweD8bafvODE6q_HCzh_vcYDsy-k6UVbAIVl4YBWXid7xs8FIs_WDKvTCF0HSw=s240-c-k-c0x00ffffff-no-rj",
+            "score": 85,
+            "reasons": [
+              "nom exacte de canal Topic",
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-05T09:46:16.789Z"
+          },
+          {
+            "id": "UCm3nJxxZMuA7pGtqbTRUz_Q",
+            "title": "Dude Room",
+            "handle": "@duderoom5329",
+            "description": "",
+            "subscriberCount": 73,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_msc1bIlumOSH90ud7OTsW85D1AW7dDJFRR3du5qnacbg=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T09:46:16.789Z"
+          },
+          {
+            "id": "UChMW6YylOdFelVBHnIsXM4Q",
+            "title": "elputunota",
+            "handle": "@elputunota",
+            "description": "",
+            "subscriberCount": 143,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_lj7BcaJW7AmkL3Y5atf3UT2_N1HncXn8pmXifFPEOHGA=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T09:46:16.789Z"
+          }
+        ]
       },
       "confidence": "alta",
       "reviewStatus": "aprovat",
@@ -5188,11 +5228,11 @@
       "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal YouTube pendent de resolució dirigida.",
       "enrichment": {
         "youtubeSearch": {
-          "checkedAt": "2026-10-05T09:44:48.823Z",
-          "status": "sense-resultats",
-          "query": "El Nota Anem a fer-ho fàcil rap català",
-          "resultCount": 0,
-          "bestScore": 0,
+          "checkedAt": "2026-10-05T09:46:16.789Z",
+          "status": "candidats",
+          "query": "El Nota Tampoc És Tan Difícil",
+          "resultCount": 3,
+          "bestScore": 85,
           "autoAcceptedId": null
         }
       }
