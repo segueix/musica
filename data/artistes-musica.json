@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-05T09:47:00.000Z",
+  "updatedAt": "2026-10-05T10:05:00.000Z",
   "artists": [
     {
       "name": "2ES",
@@ -155,6 +155,33 @@
           "wikidataWorkEvidence": []
         }
       }
+    },
+    {
+      "name": "9SON",
+      "aliases": [
+        "9 Son"
+      ],
+      "genres": [
+        "Rumba / Mestissatge"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-05T10:05:00.000Z",
+      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal YouTube pendent de resolució dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma."
     },
     {
       "name": "Acros",
@@ -1246,6 +1273,32 @@
         }
       },
       "genresRaw": []
+    },
+    {
+      "name": "Animal",
+      "aliases": [],
+      "genres": [
+        "Rumba / Mestissatge",
+        "Pop"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-05T10:05:00.000Z",
+      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal YouTube pendent de resolució dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma."
     },
     {
       "name": "Anna Andreu",
@@ -8966,6 +9019,34 @@
       }
     },
     {
+      "name": "Itaca Band",
+      "aliases": [
+        "Itaca"
+      ],
+      "genres": [
+        "Rumba / Mestissatge",
+        "Ska / Reggae"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-05T10:05:00.000Z",
+      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal YouTube pendent de resolució dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma."
+    },
+    {
       "name": "Ja t'ho diré",
       "aliases": [],
       "genres": [],
@@ -11156,6 +11237,32 @@
       }
     },
     {
+      "name": "Kayo Malayo",
+      "aliases": [],
+      "genres": [
+        "Rumba / Mestissatge",
+        "Ska / Reggae"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-05T10:05:00.000Z",
+      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal YouTube pendent de resolució dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma."
+    },
+    {
       "name": "Kiddi",
       "aliases": [],
       "genres": [
@@ -11531,6 +11638,33 @@
           "wikidataWorkEvidence": []
         }
       }
+    },
+    {
+      "name": "La Banda del Yuyu",
+      "aliases": [
+        "Banda del Yuyu"
+      ],
+      "genres": [
+        "Rumba / Mestissatge"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-05T10:05:00.000Z",
+      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal YouTube pendent de resolució dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma."
     },
     {
       "name": "La Banda Trapera del Río",
@@ -12424,6 +12558,61 @@
           "wikidataWorkEvidence": []
         }
       }
+    },
+    {
+      "name": "La Pegatina",
+      "aliases": [],
+      "genres": [
+        "Rumba / Mestissatge",
+        "Ska / Reggae"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-05T10:05:00.000Z",
+      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal YouTube pendent de resolució dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma."
+    },
+    {
+      "name": "La Sra. Tomasa",
+      "aliases": [
+        "La Sra Tomasa",
+        "La Señora Tomasa"
+      ],
+      "genres": [
+        "Rumba / Mestissatge",
+        "Electrònica"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-05T10:05:00.000Z",
+      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal YouTube pendent de resolució dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma."
     },
     {
       "name": "La Tour de Carol",
@@ -16340,6 +16529,32 @@
       ]
     },
     {
+      "name": "Muyayo Rif",
+      "aliases": [],
+      "genres": [
+        "Rumba / Mestissatge",
+        "Ska / Reggae"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-05T10:05:00.000Z",
+      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal YouTube pendent de resolució dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma."
+    },
+    {
       "name": "N'Gai N'Gai",
       "aliases": [],
       "genres": [],
@@ -19277,6 +19492,32 @@
       }
     },
     {
+      "name": "Pomada",
+      "aliases": [],
+      "genres": [
+        "Folk i arrel",
+        "Rumba / Mestissatge"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-05T10:05:00.000Z",
+      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal YouTube pendent de resolució dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma."
+    },
+    {
       "name": "Poor Tràmit",
       "aliases": [
         "Poor Tramit"
@@ -20742,6 +20983,32 @@
       }
     },
     {
+      "name": "Roba Estesa",
+      "aliases": [],
+      "genres": [
+        "Folk i arrel",
+        "Rumba / Mestissatge"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-05T10:05:00.000Z",
+      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal YouTube pendent de resolució dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma."
+    },
+    {
       "name": "Roger Mas i Solé",
       "aliases": [],
       "genres": [
@@ -21037,6 +21304,33 @@
           "wikidataWorkEvidence": []
         }
       }
+    },
+    {
+      "name": "Sabor de Gràcia",
+      "aliases": [
+        "Sabor de Gracia"
+      ],
+      "genres": [
+        "Rumba / Mestissatge"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-05T10:05:00.000Z",
+      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal YouTube pendent de resolució dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma."
     },
     {
       "name": "Salomé",
@@ -22537,6 +22831,32 @@
       }
     },
     {
+      "name": "Stay Homas",
+      "aliases": [],
+      "genres": [
+        "Pop",
+        "Rumba / Mestissatge"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-05T10:05:00.000Z",
+      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal YouTube pendent de resolució dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma."
+    },
+    {
       "name": "Still Ill",
       "aliases": [
         "Still ill"
@@ -22888,6 +23208,31 @@
       }
     },
     {
+      "name": "Tashkenti",
+      "aliases": [],
+      "genres": [
+        "Rumba / Mestissatge"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-05T10:05:00.000Z",
+      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal YouTube pendent de resolució dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma."
+    },
+    {
       "name": "Teresa Rebull",
       "aliases": [],
       "genres": [],
@@ -22986,6 +23331,31 @@
         }
       },
       "genresRaw": []
+    },
+    {
+      "name": "Terratombats",
+      "aliases": [],
+      "genres": [
+        "Rumba / Mestissatge"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-05T10:05:00.000Z",
+      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal YouTube pendent de resolució dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma."
     },
     {
       "name": "Tesa",
@@ -24793,6 +25163,34 @@
           "musicbrainzReleaseGroupCount": 1
         }
       }
+    },
+    {
+      "name": "Xeic!",
+      "aliases": [
+        "Xeic"
+      ],
+      "genres": [
+        "Rumba / Mestissatge",
+        "Rock"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-05",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-05T10:05:00.000Z",
+      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal YouTube pendent de resolució dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma."
     },
     {
       "name": "Xenia Casado",
