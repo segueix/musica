@@ -74,6 +74,88 @@
       "artist": "La Madam (canal retirat)",
       "blocked": true,
       "note": "Canal retirat explícitament per l’usuari el 2026-10-05. No ingerir vídeos ni tornar-lo a acceptar en resoldre canals."
+    },
+    "UC0PtwzSikWRnftscW9uI_Ug": {
+      "artist": "Stay Homas",
+      "note": "Repertori català verificat del feed i historial el 2026-10-05, incloses versions en directe. Les noves peces només s’incorporen després de comprovar la lletra i ampliar aquesta selecció; evita que una regeneració ompli els buits amb altres cançons en castellà.",
+      "allowedTitleContains": [
+        "Espurna",
+        "Xinu Xanu",
+        "La Platja",
+        "Petons",
+        "Ho tornaria a fer",
+        "La Nòria",
+        "Les Merdes",
+        "Ho sap tothom menys tu",
+        "No tinc paraules",
+        "No vull baixar",
+        "+="
+      ],
+      "deniedTitleContains": [
+        "Ara (Les Merdes II)"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCerRtDlJWXCmBMgGYjq6gYQ": {
+      "artist": "Stay Homas",
+      "note": "Repertori català verificat del feed i historial el 2026-10-05, incloses versions en directe. Les noves peces només s’incorporen després de comprovar la lletra i ampliar aquesta selecció; evita que una regeneració ompli els buits amb altres cançons en castellà.",
+      "allowedTitleContains": [
+        "Espurna",
+        "Xinu Xanu",
+        "La Platja",
+        "Petons",
+        "Ho tornaria a fer",
+        "La Nòria",
+        "Les Merdes",
+        "Ho sap tothom menys tu",
+        "No tinc paraules",
+        "No vull baixar",
+        "+="
+      ],
+      "deniedTitleContains": [
+        "Ara (Les Merdes II)"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCr8kBnuIa6LPmhZSxbwVs7w": {
+      "artist": "La Pegatina",
+      "note": "Repertori català verificat del feed i historial el 2026-10-05, incloses versions en directe. Les noves peces només s’incorporen després de comprovar la lletra i ampliar aquesta selecció; evita que una regeneració ompli els buits amb altres cançons en castellà.",
+      "allowedTitleContains": [
+        "Gat Rumberu",
+        "La Meva Gent",
+        "Que t'agradi veure'm",
+        "La guspira"
+      ],
+      "deniedTitleContains": [],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCMepRsHQTgYZd3u__Xbj_6A": {
+      "artist": "La Pegatina",
+      "note": "Repertori català verificat del feed i historial el 2026-10-05, incloses versions en directe. Les noves peces només s’incorporen després de comprovar la lletra i ampliar aquesta selecció; evita que una regeneració ompli els buits amb altres cançons en castellà.",
+      "allowedTitleContains": [
+        "Gat Rumberu",
+        "La Meva Gent",
+        "Que t'agradi veure'm",
+        "La guspira"
+      ],
+      "deniedTitleContains": [],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
     }
   }
 }

@@ -6,7 +6,7 @@ function normalizeVideoTitle(value) {
     .replace(/\p{Diacritic}/gu, '')
     .toLowerCase()
     .replace(/[’']/g, "'")
-    .replace(/[^a-z0-9'&]+/g, ' ')
+    .replace(/[^a-z0-9'&+=]+/g, ' ')
     .replace(/\s+/g, ' ')
     .trim();
 }
@@ -99,4 +99,3 @@ module.exports = {
   loadChannelVideoAllowlist,
   isChannelVideoAllowed
 };
-

@@ -6,6 +6,18 @@ import {
 } from '../scripts/lib/filtre_videos_canal.js';
 
 describe('llista blanca de vídeos per canal', () => {
+  it('conserva els títols simbòlics verificats com += sense admetre altres peces', () => {
+    const rules = loadChannelVideoAllowlist('/fake.json', {
+      readFileSync: () => JSON.stringify({ channels: {
+        UCstay: { allowedTitleContains: ['+=', 'Espurna'] }
+      } })
+    });
+    expect(isChannelVideoAllowed(rules, 'UCstay', '+=' )).toBe(true);
+    expect(isChannelVideoAllowed(rules, 'UCstay', 'STAY HOMAS - += (Official Video)')).toBe(true);
+    expect(isChannelVideoAllowed(rules, 'UCstay', 'STAY HOMAS - Espurna')).toBe(true);
+    expect(isChannelVideoAllowed(rules, 'UCstay', 'TROPICAL.mp3')).toBe(false);
+  });
+
     it('bloqueja un canal retirat sense afectar un homònim correcte', () => {
         const rules = loadChannelVideoAllowlist('/fake.json', {
             readFileSync: () =>
@@ -100,4 +112,3 @@ describe('llista blanca de vídeos per canal', () => {
     expect(isChannelVideoAllowed(rules, 'UCKpscwdWlVaMqcA81vLI7OA', 'Qualsevol altra cançó')).toBe(true);
   });
 });
-
