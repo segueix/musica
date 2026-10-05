@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-05T13:57:11.127Z",
+  "generatedAt": "2026-10-05T14:04:27.421Z",
   "retainedVideoCount": 118,
   "unverifiedVideoCount": 0,
   "deepPagesFetched": 0,
   "deepChannelCount": 20,
-  "topicChannelCount": 181,
-  "governedChannelCount": 84,
+  "topicChannelCount": 180,
+  "governedChannelCount": 83,
   "topicCoverage": [
     {
       "id": "UCqaEtRht2jakBhGFLzS617w",
@@ -372,14 +372,6 @@
       "name": "Celobert",
       "songs": 11,
       "matched": 10,
-      "coverage": 0.91,
-      "governs": true
-    },
-    {
-      "id": "UC96Q7Ki2GoRwrwSzeLTtvwg",
-      "name": "La Sra. Tomasa",
-      "songs": 32,
-      "matched": 29,
       "coverage": 0.91,
       "governs": true
     },
@@ -1018,10 +1010,10 @@
   ],
   "topicGovernance": "apply",
   "governedReclassified": {
-    "other": 238,
+    "other": 235,
     "song": 25
   },
-  "topicHiddenCount": 575,
+  "topicHiddenCount": 546,
   "topicChannels": [
     {
       "id": "UCEMDA-ZXzEUlJjZ-avy0Pvg",
@@ -1631,13 +1623,6 @@
       "tracks": 426,
       "selected": 42,
       "withClip": 8
-    },
-    {
-      "id": "UCM-WxdgJTr37_bOOlX5sZhg",
-      "name": "La Sra. Tomasa",
-      "tracks": 154,
-      "selected": 40,
-      "withClip": 22
     },
     {
       "id": "UC8DHU0fP67z2wgVm7Lkvrzw",
@@ -2263,26 +2248,26 @@
       "withClip": 36
     }
   ],
-  "indexedChannelCount": 377,
-  "resolvedChannelCount": 377,
-  "feedChannelCount": 377,
-  "rawPublicVideoCount": 10806,
-  "feedVideoCount": 8582,
-  "acceptedMusicCount": 9129,
-  "categoryEligibleVideoCount": 9027,
+  "indexedChannelCount": 375,
+  "resolvedChannelCount": 375,
+  "feedChannelCount": 375,
+  "rawPublicVideoCount": 10716,
+  "feedVideoCount": 8563,
+  "acceptedMusicCount": 9055,
+  "categoryEligibleVideoCount": 8955,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
-    "before": 1288,
+    "before": 1274,
     "matched": 0,
-    "rejected": 1288
+    "rejected": 1274
   },
-  "contentReviewCount": 540,
+  "contentReviewCount": 538,
   "contentTypeCounts": {
-    "song": 8725,
-    "live_song": 302,
-    "album": 102,
-    "other": 1137,
-    "review": 540
+    "song": 8675,
+    "live_song": 280,
+    "album": 100,
+    "other": 1123,
+    "review": 538
   },
   "unresolvedChannelIds": [],
   "channelsWithoutUploads": [],
@@ -2321,6 +2306,6 @@
     "UCdwDeWJ4aJ9RAURZERmWquA"
   ],
   "allIndexedChannelsVisible": true,
-  "publishedFeedVideoCount": 4076,
+  "publishedFeedVideoCount": 4055,
   "publishedShortVideoCount": 0
 }

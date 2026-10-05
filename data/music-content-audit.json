@@ -1,23 +1,23 @@
 {
-  "generatedAt": "2026-10-05T13:57:11.127Z",
-  "rawPublicVideoCount": 10806,
-  "feedVideoCount": 8582,
-  "acceptedMusicCount": 9129,
-  "categoryEligibleVideoCount": 9027,
+  "generatedAt": "2026-10-05T14:04:27.421Z",
+  "rawPublicVideoCount": 10716,
+  "feedVideoCount": 8563,
+  "acceptedMusicCount": 9055,
+  "categoryEligibleVideoCount": 8955,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
-    "before": 1288,
+    "before": 1274,
     "matched": 0,
-    "rejected": 1288
+    "rejected": 1274
   },
-  "rejectedOrReviewCount": 1677,
-  "reviewCount": 540,
+  "rejectedOrReviewCount": 1661,
+  "reviewCount": 538,
   "typeCounts": {
-    "song": 8725,
-    "live_song": 302,
-    "album": 102,
-    "other": 1137,
-    "review": 540
+    "song": 8675,
+    "live_song": 280,
+    "album": 100,
+    "other": 1123,
+    "review": 538
   },
   "channelsWithoutAcceptedMusic": [
     "UCjEehp73GI2mh9Rkv31QT9w",
@@ -869,6 +869,6 @@
       "musicReason": "massa curt: probable teaser/fragment"
     }
   ],
-  "publishedFeedVideoCount": 4076,
+  "publishedFeedVideoCount": 4055,
   "publishedShortVideoCount": 0
 }
