@@ -92,14 +92,21 @@ function isShortByDuration(seconds){
   const value=Number(seconds||0);
   return value>0 && value<=120;
 }
-function loadFalseShortIds(){
-  if(!fs.existsSync(FALSE_SHORTS_FILE)) return new Set();
+function loadFalseShortRules(){
+  if(!fs.existsSync(FALSE_SHORTS_FILE)) return { ids:new Set(), titleContains:[] };
   try{
     const registry=JSON.parse(fs.readFileSync(FALSE_SHORTS_FILE,'utf8'));
-    return new Set(Array.isArray(registry.falseShorts)?registry.falseShorts:[]);
+    const ids=new Set(Array.isArray(registry.falseShorts)?registry.falseShorts:[]);
+    const titleContains=(Array.isArray(registry.falseShortTitleContains)?registry.falseShortTitleContains:[])
+      .map(rule=>({
+        channelId:String(rule?.channelId||'').trim(),
+        contains:normalizeVideoTitle(rule?.contains||'')
+      }))
+      .filter(rule=>/^UC[A-Za-z0-9_-]{22}$/.test(rule.channelId) && rule.contains);
+    return { ids, titleContains };
   }catch(error){
     console.warn('⚠️ No s’ha pogut llegir falsos-shorts.json:',error.message);
-    return new Set();
+    return { ids:new Set(), titleContains:[] };
   }
 }
 function loadHiddenVideoIds(){
@@ -112,11 +119,17 @@ function loadHiddenVideoIds(){
 }
 
 function applyFalseShortsOverrides(videos){
-  const falseShortIds=loadFalseShortIds();
-  if(!falseShortIds.size) return 0;
+  const rules=loadFalseShortRules();
+  if(!rules.ids.size && !rules.titleContains.length) return 0;
   let applied=0;
   for(const video of videos||[]){
-    if(video?.isShort===true && falseShortIds.has(video.id)){
+    if(video?.isShort!==true) continue;
+    const normalizedTitle=normalizeVideoTitle(video.title||'');
+    const titleMatch=rules.titleContains.some(rule=>
+      rule.channelId===String(video.channelId||'') &&
+      normalizedTitle.includes(rule.contains)
+    );
+    if(rules.ids.has(video.id) || titleMatch){
       video.isShort=false;
       applied++;
     }
