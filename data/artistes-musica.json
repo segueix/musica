@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-05T10:01:58.829Z",
+  "updatedAt": "2026-10-05T10:20:00.000Z",
   "artists": [
     {
       "name": "2ES",
@@ -20063,7 +20063,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCdV07zjxqkXc8sEZg5SaDFw",
+            "handle": "@xbatlles0704",
+            "name": "Xavier Batlles BITSTUDI",
+            "type": "other",
+            "primary": true
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UCdV07zjxqkXc8sEZg5SaDFw",
@@ -20098,10 +20106,12 @@
       "active": true,
       "sources": [
         "manual-user-2026-10-05",
-        "genre:manual"
+        "genre:manual",
+        "youtube:archive-source-verified",
+        "https://blogstudi.blogspot.com/2007/09/"
       ],
-      "lastChecked": "2026-10-05T10:05:00.000Z",
-      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal YouTube pendent de resolució dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma.",
+      "lastChecked": "2026-10-05T10:20:00.000Z",
+      "notes": "Pomada (Helena Casas i Carles Belda). Font YouTube d'arxiu: Xavier Batllés / BITSTUDI, productor d'El disc 1 de Pomada. El canal està protegit amb llista blanca: només entra contingut musical amb «Pomada» al títol.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-05T09:59:22.191Z",
