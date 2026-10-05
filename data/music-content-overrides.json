@@ -1,21 +1,1101 @@
 {
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-10-05T16:42:49.427383Z",
   "description": "Decisions manuals sobre el tipus de contingut de vídeos concrets. Manen sobre el classificador automàtic (scripts/lib/classificar_contingut_musical.js) i el pipeline (scripts/update_music_feed.js) les reaplica a cada generació del feed. Tipus permesos: song, live_song, album, other. Un vídeo revisat aquí surt de data/music-content-review.json.",
   "videos": [
-    { "id": "wCY1LX1zYhc", "contentType": "song", "title": "Mar Pujol - Ploranera (Audio)", "note": "cançó de Mar Pujol (àudio oficial del seu canal)" },
-    { "id": "lrrP4tF26i0", "contentType": "song", "title": "Mar Pujol - L'hora justa (Audio)", "note": "cançó de Mar Pujol (àudio oficial del seu canal)" },
-    { "id": "nXEXHnY7gnU", "contentType": "song", "title": "Mar Pujol - Princesa de sal (Audio)", "note": "cançó de Mar Pujol (àudio oficial del seu canal); no és un Short (YouTube redirigeix /shorts/ a /watch)" },
-    { "id": "d8YRyHyK2gI", "contentType": "song", "title": "Mar Pujol - Tots els racons (Audio)", "note": "cançó de Mar Pujol (àudio oficial del seu canal)" },
-    { "id": "RT3MaUFkqrs", "contentType": "song", "title": "Mar Pujol - Amor en conserva (audio)", "note": "cançó de Mar Pujol (àudio oficial del seu canal)" },
-    { "id": "E249Bqwepbk", "contentType": "song", "title": "Mar Pujol - ìí (Audio)", "note": "cançó de Mar Pujol (àudio oficial del seu canal)" },
-    { "id": "10i-782qNA8", "contentType": "song", "title": "Mar Pujol - Verd avellaner (Audio)", "note": "cançó de Mar Pujol (àudio oficial del seu canal)" },
-    { "id": "aXKUh3OQiQQ", "contentType": "song", "title": "Mar Pujol - Cabell d'àngel (Audio)", "note": "cançó de Mar Pujol (àudio oficial del seu canal)" },
-    { "id": "a2vY2W3yMRw", "contentType": "song", "title": "Mar Pujol - Flor de nit (Audio)", "note": "cançó de Mar Pujol (àudio oficial del seu canal); no és un Short (YouTube redirigeix /shorts/ a /watch)" },
-    { "id": "eivIkBwRdDE", "contentType": "song", "title": "Mar Pujol - Per cada u (Audio)", "note": "cançó de Mar Pujol (àudio oficial del seu canal)" },
-    { "id": "3qN-t1aXQR0", "contentType": "song", "title": "Batall (Mar Pujol i Gèls)", "note": "cançó de Mar Pujol i Gèls publicada al canal de Mar Pujol" },
-    { "id": "9U-M4Ftu6ns", "contentType": "song", "title": "Gelimar (Mar Pujol i Gèls)", "note": "cançó de Mar Pujol i Gèls publicada al canal de Mar Pujol" },
-    { "id": "s_xIl382aio", "contentType": "album", "title": "EP Gelimar (Mar Pujol i Gèls)", "note": "EP sencer en un sol vídeo (8 min)" },
-    { "id": "8Lts1nZu4So", "contentType": "album", "title": "Mar Pujol - Cançons de rebost (Audio complet)", "note": "disc sencer en un sol vídeo (27 min)" },
-    { "id": "orn4mGO5vVg", "contentType": "live_song", "title": "\"Pometes té el pomer\" amb Mar Pujol, Bruna González i El Pony Pisador", "note": "interpretació enregistrada en directe amb altres músics (sessió de Hidden Track Records)" }
+    {
+      "id": "wCY1LX1zYhc",
+      "contentType": "song",
+      "title": "Mar Pujol - Ploranera (Audio)",
+      "note": "cançó de Mar Pujol (àudio oficial del seu canal)"
+    },
+    {
+      "id": "lrrP4tF26i0",
+      "contentType": "song",
+      "title": "Mar Pujol - L'hora justa (Audio)",
+      "note": "cançó de Mar Pujol (àudio oficial del seu canal)"
+    },
+    {
+      "id": "nXEXHnY7gnU",
+      "contentType": "song",
+      "title": "Mar Pujol - Princesa de sal (Audio)",
+      "note": "cançó de Mar Pujol (àudio oficial del seu canal); no és un Short (YouTube redirigeix /shorts/ a /watch)"
+    },
+    {
+      "id": "d8YRyHyK2gI",
+      "contentType": "song",
+      "title": "Mar Pujol - Tots els racons (Audio)",
+      "note": "cançó de Mar Pujol (àudio oficial del seu canal)"
+    },
+    {
+      "id": "RT3MaUFkqrs",
+      "contentType": "song",
+      "title": "Mar Pujol - Amor en conserva (audio)",
+      "note": "cançó de Mar Pujol (àudio oficial del seu canal)"
+    },
+    {
+      "id": "E249Bqwepbk",
+      "contentType": "song",
+      "title": "Mar Pujol - ìí (Audio)",
+      "note": "cançó de Mar Pujol (àudio oficial del seu canal)"
+    },
+    {
+      "id": "10i-782qNA8",
+      "contentType": "song",
+      "title": "Mar Pujol - Verd avellaner (Audio)",
+      "note": "cançó de Mar Pujol (àudio oficial del seu canal)"
+    },
+    {
+      "id": "aXKUh3OQiQQ",
+      "contentType": "song",
+      "title": "Mar Pujol - Cabell d'àngel (Audio)",
+      "note": "cançó de Mar Pujol (àudio oficial del seu canal)"
+    },
+    {
+      "id": "a2vY2W3yMRw",
+      "contentType": "song",
+      "title": "Mar Pujol - Flor de nit (Audio)",
+      "note": "cançó de Mar Pujol (àudio oficial del seu canal); no és un Short (YouTube redirigeix /shorts/ a /watch)"
+    },
+    {
+      "id": "eivIkBwRdDE",
+      "contentType": "song",
+      "title": "Mar Pujol - Per cada u (Audio)",
+      "note": "cançó de Mar Pujol (àudio oficial del seu canal)"
+    },
+    {
+      "id": "3qN-t1aXQR0",
+      "contentType": "song",
+      "title": "Batall (Mar Pujol i Gèls)",
+      "note": "cançó de Mar Pujol i Gèls publicada al canal de Mar Pujol"
+    },
+    {
+      "id": "9U-M4Ftu6ns",
+      "contentType": "song",
+      "title": "Gelimar (Mar Pujol i Gèls)",
+      "note": "cançó de Mar Pujol i Gèls publicada al canal de Mar Pujol"
+    },
+    {
+      "id": "s_xIl382aio",
+      "contentType": "album",
+      "title": "EP Gelimar (Mar Pujol i Gèls)",
+      "note": "EP sencer en un sol vídeo (8 min)"
+    },
+    {
+      "id": "8Lts1nZu4So",
+      "contentType": "album",
+      "title": "Mar Pujol - Cançons de rebost (Audio complet)",
+      "note": "disc sencer en un sol vídeo (27 min)"
+    },
+    {
+      "id": "orn4mGO5vVg",
+      "contentType": "live_song",
+      "title": "\"Pometes té el pomer\" amb Mar Pujol, Bruna González i El Pony Pisador",
+      "note": "interpretació enregistrada en directe amb altres músics (sessió de Hidden Track Records)"
+    },
+    {
+      "id": "Kd-5318ROYI",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Salvador Brotons. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "4t5qhS770X8",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Salvador Brotons. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "vZa2-2vyecQ",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Salvador Brotons. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "_xyQbIrHhd0",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Albert Guinovart. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "ly7J4KyBbMM",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Albert Guinovart. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "wMVRQdUKwiM",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Claudi Arimany. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "Z79SBhmgZPc",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Claudi Arimany. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "EiEX_8rqj4g",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Claudi Arimany. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "DN4-qaJu7Y0",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Vicens Prats. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "2L0r5xNnGQU",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Vicens Prats. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "Mgi6uoPdoEQ",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Vicens Prats. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "hi2U7U1V9Ws",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Vicens Prats. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "TyPbu6-RWxk",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Xavier Relats. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "M1LJT16FiDk",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Xavier Relats. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "EDxgJUITCNA",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Xavier Relats. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "aA55Tvj1fmE",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Patrícia Mazo. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "cRdSqvHBcEQ",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Patrícia Mazo. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "WW9xzDs3fb4",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Patrícia Mazo. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "4eiclMGBOVI",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Patrícia Mazo. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "kIdffsXoQBI",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Patrícia Mazo. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "auMHO9Wq4BA",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Salvador Gratacós. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "blbA4yCW0so",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Salvador Gratacós. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "2NbuXn2b0SI",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Salvador Gratacós. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "wDDWmKcQlzA",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Elisabet Franch. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "uHZXpwTZNUs",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Elisabet Franch. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "cFkC4p5BHh0",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Elisabet Franch. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "IEs4Zk_n_Xg",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Bernat Castillejo. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "upKLIDxMrns",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Bernat Castillejo. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "pPYCPCMS0tw",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Bernat Castillejo. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "ZCVU_Qelfl4",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Bernat Castillejo. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "7MYOgyw0YPM",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Josep Pons. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "ne2oRXA2VNg",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Josep Pons. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "F_sMvPmjt_c",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Josep Pons. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "KFOZMd1WxwA",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Josep Pons. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "k0R7_KpEw8k",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Manel Valdivieso. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "E8vwm89bxGU",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Manel Valdivieso. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "s-lNkJ-Mix0",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Manel Valdivieso. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "fXcpTMBEm8U",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Jordi Mora. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "kk522eW60qw",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Jordi Mora. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "XgcJBuO8c1E",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Jordi Mora. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "1F7bGA8vUVU",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Edmon Colomer. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "SiLcSqE03bQ",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Edmon Colomer. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "IFC1wLOEQKk",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Edmon Colomer. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "bK-TGTKxwnY",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Marçal Cervera. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "C0LsaaCTOSA",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Marçal Cervera. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "ROj1sNLbods",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Marçal Cervera. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "HcbXfvVJINg",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Marçal Cervera. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "eZTOq1wK8hI",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Lluís Claret. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "VZA3E2dSYng",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Lluís Claret. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "vRHS1oJLDB8",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Lluís Claret. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "9zHsy8lZ_ZE",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Pau Codina. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "iXM-UytjZ9U",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Pau Codina. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "hn5Ng4Nr7L8",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Pau Codina. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "YAlIWYWajI4",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Pau Codina. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "r-IjErNIjtI",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Arnau Tomàs. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "F4-wdtsDQlU",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Arnau Tomàs. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "kcOopWj2CPU",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Arnau Tomàs. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "k0PTAhP8wEU",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Arnau Tomàs. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "aAsjWuyJ5NI",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Amat Santacana. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "Ffd9MCXvgfw",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Amat Santacana. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "OlVrFUvMu5o",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Amat Santacana. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "ZzZ1D1WJq88",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Josep Bassal. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "eDUug6SzVA4",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Josep Bassal. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "BBDmZAz1TrA",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Josep Bassal. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "aBoVZtM5EDA",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Antoni Besses. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "3J8C4azQQCo",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Antoni Besses. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "b3y2M7dKEms",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Antoni Besses. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "WDFbWcNOL4M",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Albert Attenelle. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "6DMj2D9W_PM",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Albert Attenelle. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "yk8juMSMl2w",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Albert Attenelle. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "WKu9eU3VgKQ",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Josep Colom. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "8xqn7kDXUho",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Josep Colom. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "pJqFao7n2zo",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Josep Colom. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "HcerFuByhPo",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Josep Colom. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "OwAi1mueVY8",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Miquel Farré. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "Oa5FzsgKeM8",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Miquel Farré. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "RJwlnBrGaFk",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Miquel Farré. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "mj9lWj5okVQ",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Miquel Farré. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "Nwnd4_59g3w",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Jordi Masó. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "pZTilqxEI1c",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Jordi Masó. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "xgpu4GrbE3Q",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Jordi Masó. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "m9ymFC331zw",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Alba Ventura. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "9LhgcKVqNek",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Alba Ventura. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "SsM31Gs9V3w",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Alba Ventura. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "mhxAle9OJcs",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Adolf Plà. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "Z0nw46Jvgqo",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Adolf Plà. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "uMYW-fQBrO4",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Adolf Plà. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "b1ySnRQ-WTs",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Jordi Camell. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "zLkQsHnzEUw",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Jordi Camell. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "5DEYheYnWaI",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Jordi Camell. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "JZVLziDJ7vo",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Daniel Ligorio. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "kXhSKlotLsM",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Daniel Ligorio. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "MQgSy1AuFbE",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Emili Brugalla. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "kLwGTHcNtz0",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Emili Brugalla. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "ys2Lnbpvb7k",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Emili Brugalla. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "CQruHcDza9c",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Alícia de Larrocha. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "mrhJHN7MP1A",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Alícia de Larrocha. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "XJfeIyYVqz4",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Alícia de Larrocha. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "zGmNvj0BtR8",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Alícia de Larrocha. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "W9P1hMYhKHA",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Sofia Puche. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "jmK1L1hVlgE",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Sofia Puche. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "jZYP0M3IfUQ",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Sofia Puche. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "maWzw5Oz7h0",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Sofia Puche. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "kliDYBcUd5U",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Eulàlia Solé. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "0nZHzj7gQsU",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Eulàlia Solé. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "g03mCrP3xIw",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Eulàlia Solé. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "Qe_Nay2ipf4",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Eulàlia Solé. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "scYQApBFCZY",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Ignasi Cambra. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "7FTB6dxZ5Lg",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Ignasi Cambra. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "_nKH3N1gmgI",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Ignasi Cambra. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "ZF5AwmfVB_Q",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Ignasi Cambra. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "o_cdRIWienM",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Leonora Milà. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "MENJVTf_LEo",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Leonora Milà. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "hM3Mp3h6c_c",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Leonora Milà. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "TFMXdkXETUo",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Leonora Milà. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "d6Nlj0EHODY",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Laura Farré Rozada. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "mhbZu8scFaQ",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Laura Farré Rozada. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "1qy1UwX8Dr8",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Laura Farré Rozada. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "vE1JQxuWLZc",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Miquel Villalba. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "laVEvFSwTts",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Miquel Villalba. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "L3Amc7YjpYQ",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Miquel Villalba. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "OByEzDkmPTE",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Àlex Alguacil. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "9Fc9ItIVMpA",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Àlex Alguacil. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "ecqnzVSopPw",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Àlex Alguacil. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "KoUgQf1DCBs",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Daniel Blanch. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "EjNaPS815s8",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Daniel Blanch. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "Dt7vw3C1KVU",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Daniel Blanch. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "XIRF_XWMzfo",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Melani Mestre. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "Z-leYm4zirw",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Melani Mestre. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "269gqIfxhhA",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Melani Mestre. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "QaPbi4EdEiI",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Gonçal Comellas. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "Htcj61sTWjU",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Gonçal Comellas. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "sbsioBh1brA",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Gonçal Comellas. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "NLyXbYKWHWg",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Gonçal Comellas. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "hlI46bueVgo",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Eduard Toldrà. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "_xRkSEyF_ZA",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Anna Urpina. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "zN8sGDAjzTA",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Anna Urpina. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "BhG_vNktcLQ",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Anna Urpina. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "uOmkcBNnt1c",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Anna Urpina. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "vXeDX8_zx6Q",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Quartet Casals. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "aUABhXJWtGQ",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Quartet Casals. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "yAGYw-BJ1WA",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Quartet Casals. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "DNjNOrMqx1I",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Quartet Casals. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "57w_IBzT-2I",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Quartet Sonor. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "K7DiyKqK6N4",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Quartet Sonor. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "lzwkct84zHg",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Quartet Sonor. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "pMcW1ipTFdg",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Quartet Sonor. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "k6jX7Rrzuu0",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Joan Guinjoan. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "qWFN38avQ3k",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Joan Guinjoan. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "rjZyt_Bm0DA",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Carles Trepat. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "xymbC17WrCM",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Carles Trepat. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "c60Lj24gyzw",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Carles Trepat. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "5gNgc1d7y_g",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Manuel García Morante. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "eqrDPfejydA",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Manuel García Morante. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "_jCysi_IStc",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Manuel García Morante. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "B9nxCt8dS8U",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Àngel Soler. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "TgqS3-NSdpI",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Àngel Soler. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "qyDFzgz8Xwc",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Àngel Soler. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "KCHYutXk_wE",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Montserrat Torrent. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "1SvEaoiVLzw",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Montserrat Torrent. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "HchxaHwMeQ0",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Montserrat Torrent. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "8cKwVrAeMes",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Juan de la Rubia. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "m4zVV5EK7k4",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Juan de la Rubia. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "vr8Ce7F8htQ",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Juan de la Rubia. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "t8x1k3PNlVk",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Maria Lluïsa Cortada. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "eU8HaSx3VeY",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Maria Lluïsa Cortada. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "binnqpFyvmQ",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Maria Lluïsa Cortada. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "BPwihV_oA9A",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Jordi Reguant. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "VQ1znnqr1BE",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Jordi Reguant. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "f-9rzHWw5bE",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Jordi Reguant. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "xqk_N4lJtzA",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Jordi Savall. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "4i5sgYI14Jg",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Jordi Savall. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "SzkDrG2Az_8",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Patrícia de No. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "DhrWFwRmvwA",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Patrícia de No. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "x4-fG9hnc58",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Patrícia de No. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "EIND6QeuV6g",
+      "contentType": "live_song",
+      "note": "Gravació instrumental verificada: Jaume Cortadellas. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "e2crWeOrqhM",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Albert Mora. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "-I16iM4MpLA",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Albert Mora. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "l66W76Sn6ow",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Albert Mora. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "LQqLuXupAWU",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Albert Mora. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "rwB9W16jGZk",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Albert Mora. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "pENJh4q4FF0",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Salvador Mas. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "efl8s3haf6w",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Salvador Mas. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "Iks8sCb5MOQ",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Salvador Mas. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "VYPjTTH1zHc",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Salvador Mas. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "KXf4cqmxuzw",
+      "contentType": "live_song",
+      "note": "Gravació instrumental verificada: Miquel Ortega. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "25UC3vQzpH8",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Ernest Martínez Izquierdo. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "ZUcFprdfVyE",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Josep Caballé Domènech. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "220IOcIe_EM",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Enrique Bagaría. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "DlitbmJcS6E",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Enrique Bagaría. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "4F02q36a85s",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Enrique Bagaría. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "ToXwqQlEQ3g",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Albert Nieto. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "OtZIuZKthJU",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Albert Nieto. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "ir6-mmYjR-Q",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Albert Nieto. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "T9IYbZYmD2Y",
+      "contentType": "live_song",
+      "note": "Gravació instrumental verificada: Abigail Prat. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "Y9c4bu6EOas",
+      "contentType": "live_song",
+      "note": "Gravació instrumental verificada: Joan Albert Amargós. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "5ZqDkpuPdWc",
+      "contentType": "live_song",
+      "note": "Gravació instrumental verificada: Joan Albert Amargós. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "A7acWSYQ8_0",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Antoni Ros Marbà. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "HBEPOhu9Yw4",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Ramon Coll. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "yWnNmjACAt0",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Ramon Coll. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    },
+    {
+      "id": "LFQOgRSDcdQ",
+      "contentType": "song",
+      "note": "Gravació instrumental verificada: Ramon Coll. Vegeu docs/REVISION_CLASSICA_2026-10-05.json."
+    }
   ]
 }

@@ -41,6 +41,9 @@ function loadChannelVideoAllowlist(filePath, fsModule = require('fs')) {
       const parsedRule = {
         blocked: rule?.blocked === true,
         exactTitles,
+        allowedVideoIds: Array.isArray(rule?.allowedVideoIds)
+          ? new Set(rule.allowedVideoIds.map(String).filter(id => /^[A-Za-z0-9_-]{11}$/.test(id)))
+          : null,
         titleContains,
         deniedTitleContains,
         acceptedMusicOnly: rule?.acceptedMusicOnly === true,
@@ -55,6 +58,7 @@ function loadChannelVideoAllowlist(filePath, fsModule = require('fs')) {
       parsedRule.hasTitleFilter = exactTitles.size > 0 || titleContains.length > 0;
 
       if (
+        parsedRule.allowedVideoIds !== null ||
         parsedRule.blocked ||
         parsedRule.hasTitleFilter ||
         parsedRule.deniedTitleContains.length > 0 ||
@@ -72,10 +76,12 @@ function loadChannelVideoAllowlist(filePath, fsModule = require('fs')) {
   }
 }
 
-function isChannelVideoAllowed(allowlist, channelId, title) {
+function isChannelVideoAllowed(allowlist, channelId, title, videoId) {
   const rule = allowlist.get(String(channelId || ''));
   if (!rule) return true;
   if (rule.blocked) return false;
+  // Els resolutors comproven títols; el generador també exigeix la gravació exacta.
+  if (videoId !== undefined && rule.allowedVideoIds && !rule.allowedVideoIds.has(String(videoId))) return false;
 
   const normalized = normalizeVideoTitle(title);
   const compact = normalized.replace(/\s+/g, '');
