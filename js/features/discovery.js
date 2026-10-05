@@ -27,7 +27,7 @@
         { id: 'surprise', label: 'Sorprèn-me', hint: 'Dona més pes als artistes que encara no has escoltat.' },
         {
             id: 'new',
-            label: 'Només no escoltats',
+            label: 'Fora del meu radar',
             hint: 'Només artistes que encara no has escoltat: grups que potser ni sabies que existien.',
         },
     ]);

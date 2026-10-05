@@ -576,10 +576,8 @@
         pipWindow.close();
     }
 
-    // El botó «Finestra flotant» de la barra de controls de sota el reproductor (#playerMiniBtn; el de la fila de sota el
-    // títol, #miniPlayerToggle, s'ha tret perquè era repetit) obre la finestra del sistema on n'hi ha; amb la finestra
-    // del sistema oberta, el botó torna el vídeo a la pàgina («restaura»). Si la finestra flotant de dins la pàgina ja
-    // és oberta, el botó la torna a lloc com sempre. «Torna el vídeo aquí» (#videoPipRestore, a la pàgina) fa el mateix.
+    // «Torna el vídeo aquí» (#videoPipRestore) i el botó «Finestra flotant» (#playerMiniBtn) tanquen la finestra del
+    // sistema si és oberta. Obrir-ne una de nova ja no es fa des d'aquest botó: obre la finestra flotant de la pàgina.
     function onDocumentClick(event) {
         if (event.target.closest?.('#videoPipRestore')) {
             event.preventDefault();
@@ -588,16 +586,13 @@
         }
         const trigger = event.target.closest?.('#playerMiniBtn, .queue-mini-button');
         if (!trigger) return;
+        // El botó ja no obre la finestra del sistema (2026-10-05): a l'ordinador, com al mòbil, fa la finestra flotant
+        // de dins la pàgina amb els controls a sota (app.js). Només si la del sistema encara és oberta, la tanca.
         if (isVideoPipOpen()) {
             event.preventDefault();
             event.stopImmediatePropagation();
             closePip();
-            return;
         }
-        if (!isPipSupported() || call(fns.miniActive())) return;
-        event.preventDefault();
-        event.stopImmediatePropagation();
-        openPip();
     }
 
     // ---------- Actualitzacions ----------

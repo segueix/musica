@@ -837,7 +837,7 @@ describe('mode de descoberta dins de cada ràdio', () => {
         expect(env.container.innerHTML).not.toContain('is-renewed');
     });
 
-    it('«Només no escoltats»: la part pendent només porta artistes que no coneixes i un avís diu quants', () => {
+    it('«Fora del meu radar»: la part pendent només porta artistes que no coneixes i un avís diu quants', () => {
         const env = radioWithMode();
         const result = env.queue.setDiscoveryMode('new');
         expect(result.mode).toBe('new');

@@ -119,7 +119,7 @@ describe('Contacte i suggeriment d’artistes', () => {
             /weights: \{ taste: 0\.45, actuality: 0\.2, popularity: 0\.15, rotation: 0\.1, affinity: 0\.1 \}/
         );
         for (const pes of ['45 %', '20 %', '15 %', '10 %']) expect(info).toContain(pes);
-        for (const mode of ['Els meus de sempre', 'Una mica de tot', 'Sorprèn-me', 'Només no escoltats']) {
+        for (const mode of ['Els meus de sempre', 'Una mica de tot', 'Sorprèn-me', 'Fora del meu radar']) {
             expect(info).toContain(mode);
         }
         expect(info).toContain('65 %');
