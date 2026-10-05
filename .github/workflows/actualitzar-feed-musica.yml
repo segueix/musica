@@ -7,6 +7,8 @@ on:
     paths:
       - "scripts/lib/subtitols_castella.js"
       - "tests/subtitols-castella.test.js"
+      - "scripts/update_music_feed.js"
+      - "data/falsos-shorts.json"
   workflow_run:
     workflows:
       - "Validar base musical"
