@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-05T10:18:00.000Z",
+  "updatedAt": "2026-10-05T10:25:00.000Z",
   "artists": [
     {
       "name": "2ES",
@@ -23951,6 +23951,38 @@
           "wikidataWorkEvidence": []
         }
       }
+    },
+    {
+      "name": "Tancat per defunció",
+      "aliases": [],
+      "genres": [
+        "Rock"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCGbtwR91T2vj1mrT12bAEXw",
+            "handle": null,
+            "name": "Tancat per defunció",
+            "type": "official",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-05"
+      ],
+      "lastChecked": "2026-10-05T10:25:00.000Z",
+      "notes": "Alta manual a petició de l'usuari (2026-10-05). Canal de YouTube indicat directament per l'usuari."
     },
     {
       "name": "Tashkenti",
