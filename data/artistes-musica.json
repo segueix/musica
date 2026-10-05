@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-05T09:57:40.724Z",
+  "updatedAt": "2026-10-05T10:10:00.000Z",
   "artists": [
     {
       "name": "2ES",
@@ -171,7 +171,22 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCPJBMmuD2mgN4liF9Rc12mw",
+            "handle": "@9sonoficial",
+            "name": "9SON Oficial",
+            "type": "official",
+            "primary": true
+          },
+          {
+            "id": "UCETR11eCJC5Z9mitj6MbASw",
+            "handle": null,
+            "name": "9Son - Topic",
+            "type": "topic",
+            "primary": false
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UCETR11eCJC5Z9mitj6MbASw",
@@ -224,10 +239,11 @@
       "active": true,
       "sources": [
         "manual-user-2026-10-05",
-        "genre:manual"
+        "genre:manual",
+        "youtube:targeted-search-verified"
       ],
-      "lastChecked": "2026-10-05T10:05:00.000Z",
-      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal YouTube pendent de resolució dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma.",
+      "lastChecked": "2026-10-05T10:10:00.000Z",
+      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal(s) YouTube verificat(s) amb cerca dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-05T09:57:36.330Z",
@@ -9144,7 +9160,22 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCH977_Zpn90y2QGeeE-hhlQ",
+            "handle": "@itacabandoficial",
+            "name": "Itaca Band Oficial",
+            "type": "official",
+            "primary": true
+          },
+          {
+            "id": "UCLgbWJg8gE8lCwufclbvikg",
+            "handle": null,
+            "name": "Itaca Band - Topic",
+            "type": "topic",
+            "primary": false
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UCH977_Zpn90y2QGeeE-hhlQ",
@@ -9199,10 +9230,11 @@
       "active": true,
       "sources": [
         "manual-user-2026-10-05",
-        "genre:manual"
+        "genre:manual",
+        "youtube:targeted-search-verified"
       ],
-      "lastChecked": "2026-10-05T10:05:00.000Z",
-      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal YouTube pendent de resolució dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma.",
+      "lastChecked": "2026-10-05T10:10:00.000Z",
+      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal(s) YouTube verificat(s) amb cerca dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-05T09:57:37.143Z",
@@ -11418,7 +11450,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCkJn1Oupgp27jlFzFl7I2Ag",
+            "handle": null,
+            "name": "Kayo Malayo - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UCOD2VzQJrg-IlcH7VEF79rg",
@@ -11469,10 +11509,11 @@
       "active": true,
       "sources": [
         "manual-user-2026-10-05",
-        "genre:manual"
+        "genre:manual",
+        "youtube:targeted-search-verified"
       ],
-      "lastChecked": "2026-10-05T10:05:00.000Z",
-      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal YouTube pendent de resolució dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma.",
+      "lastChecked": "2026-10-05T10:10:00.000Z",
+      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal(s) YouTube verificat(s) amb cerca dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-05T09:57:37.413Z",
@@ -11876,7 +11917,22 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCQOqsrBqC_4Ibu_MJrBpK_g",
+            "handle": "@labandadelyuyu4422",
+            "name": "La Banda del Yuyu",
+            "type": "official",
+            "primary": true
+          },
+          {
+            "id": "UCSJ3UWpeU4pVvvuK0flmaeg",
+            "handle": null,
+            "name": "La Banda del Yuyu - Topic",
+            "type": "topic",
+            "primary": false
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UCQOqsrBqC_4Ibu_MJrBpK_g",
@@ -11929,10 +11985,11 @@
       "active": true,
       "sources": [
         "manual-user-2026-10-05",
-        "genre:manual"
+        "genre:manual",
+        "youtube:targeted-search-verified"
       ],
-      "lastChecked": "2026-10-05T10:05:00.000Z",
-      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal YouTube pendent de resolució dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma.",
+      "lastChecked": "2026-10-05T10:10:00.000Z",
+      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal(s) YouTube verificat(s) amb cerca dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-05T09:57:37.665Z",
@@ -12851,7 +12908,22 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCr8kBnuIa6LPmhZSxbwVs7w",
+            "handle": "@lapegatina",
+            "name": "La Pegatina",
+            "type": "official",
+            "primary": true
+          },
+          {
+            "id": "UCMepRsHQTgYZd3u__Xbj_6A",
+            "handle": null,
+            "name": "La Pegatina - Topic",
+            "type": "topic",
+            "primary": false
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UCr8kBnuIa6LPmhZSxbwVs7w",
@@ -12904,10 +12976,11 @@
       "active": true,
       "sources": [
         "manual-user-2026-10-05",
-        "genre:manual"
+        "genre:manual",
+        "youtube:targeted-search-verified"
       ],
-      "lastChecked": "2026-10-05T10:05:00.000Z",
-      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal YouTube pendent de resolució dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma.",
+      "lastChecked": "2026-10-05T10:10:00.000Z",
+      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal(s) YouTube verificat(s) amb cerca dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-05T09:57:37.943Z",
@@ -12936,7 +13009,22 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UC96Q7Ki2GoRwrwSzeLTtvwg",
+            "handle": "@lasratomasa",
+            "name": "La Sra. Tomasa",
+            "type": "official",
+            "primary": true
+          },
+          {
+            "id": "UCM-WxdgJTr37_bOOlX5sZhg",
+            "handle": null,
+            "name": "La Sra. Tomasa - Topic",
+            "type": "topic",
+            "primary": false
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UC96Q7Ki2GoRwrwSzeLTtvwg",
@@ -12987,10 +13075,11 @@
       "active": true,
       "sources": [
         "manual-user-2026-10-05",
-        "genre:manual"
+        "genre:manual",
+        "youtube:targeted-search-verified"
       ],
-      "lastChecked": "2026-10-05T10:05:00.000Z",
-      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal YouTube pendent de resolució dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma.",
+      "lastChecked": "2026-10-05T10:10:00.000Z",
+      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal(s) YouTube verificat(s) amb cerca dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-05T09:57:38.304Z",
@@ -16930,7 +17019,22 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCKyyi4qBKOJpeV2iZROTQaw",
+            "handle": "@muyayorif",
+            "name": "Muyayo Rif",
+            "type": "official",
+            "primary": true
+          },
+          {
+            "id": "UCo7lLQMgwlo1IpACeWFAEag",
+            "handle": null,
+            "name": "Muyayo Rif - Topic",
+            "type": "topic",
+            "primary": false
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UCKyyi4qBKOJpeV2iZROTQaw",
@@ -16984,10 +17088,11 @@
       "active": true,
       "sources": [
         "manual-user-2026-10-05",
-        "genre:manual"
+        "genre:manual",
+        "youtube:targeted-search-verified"
       ],
-      "lastChecked": "2026-10-05T10:05:00.000Z",
-      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal YouTube pendent de resolució dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma.",
+      "lastChecked": "2026-10-05T10:10:00.000Z",
+      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal(s) YouTube verificat(s) amb cerca dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-05T09:57:38.574Z",
@@ -21499,7 +21604,22 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCfOJHONAYVLmmA5lwE117vw",
+            "handle": "@robaestesa",
+            "name": "Roba Estesa",
+            "type": "official",
+            "primary": true
+          },
+          {
+            "id": "UCl4HM-ELckbc7ToCDTyAvVQ",
+            "handle": null,
+            "name": "Roba Estesa - Topic",
+            "type": "topic",
+            "primary": false
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UCfOJHONAYVLmmA5lwE117vw",
@@ -21550,10 +21670,11 @@
       "active": true,
       "sources": [
         "manual-user-2026-10-05",
-        "genre:manual"
+        "genre:manual",
+        "youtube:targeted-search-verified"
       ],
-      "lastChecked": "2026-10-05T10:05:00.000Z",
-      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal YouTube pendent de resolució dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma.",
+      "lastChecked": "2026-10-05T10:10:00.000Z",
+      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal(s) YouTube verificat(s) amb cerca dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-05T09:57:39.129Z",
@@ -21877,7 +21998,22 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCezETW2-gAMtXB98LGBweWQ",
+            "handle": "@sabordegraciaoficial",
+            "name": "SABOR DE GRACIA OFICIAL",
+            "type": "official",
+            "primary": true
+          },
+          {
+            "id": "UClTLWZcaxCMgkk58dQna18A",
+            "handle": null,
+            "name": "Sabor de Gracia - Topic",
+            "type": "topic",
+            "primary": false
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UCezETW2-gAMtXB98LGBweWQ",
@@ -21931,10 +22067,11 @@
       "active": true,
       "sources": [
         "manual-user-2026-10-05",
-        "genre:manual"
+        "genre:manual",
+        "youtube:targeted-search-verified"
       ],
-      "lastChecked": "2026-10-05T10:05:00.000Z",
-      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal YouTube pendent de resolució dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma.",
+      "lastChecked": "2026-10-05T10:10:00.000Z",
+      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal(s) YouTube verificat(s) amb cerca dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-05T09:57:39.384Z",
@@ -23458,7 +23595,22 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UC0PtwzSikWRnftscW9uI_Ug",
+            "handle": "@stayhomas",
+            "name": "STAY HOMAS",
+            "type": "official",
+            "primary": true
+          },
+          {
+            "id": "UCerRtDlJWXCmBMgGYjq6gYQ",
+            "handle": null,
+            "name": "Stay Homas - Topic",
+            "type": "topic",
+            "primary": false
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UC0PtwzSikWRnftscW9uI_Ug",
@@ -23509,10 +23661,11 @@
       "active": true,
       "sources": [
         "manual-user-2026-10-05",
-        "genre:manual"
+        "genre:manual",
+        "youtube:targeted-search-verified"
       ],
-      "lastChecked": "2026-10-05T10:05:00.000Z",
-      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal YouTube pendent de resolució dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma.",
+      "lastChecked": "2026-10-05T10:10:00.000Z",
+      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal(s) YouTube verificat(s) amb cerca dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-05T09:57:39.653Z",
@@ -23888,7 +24041,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCkxi7wy2VhKCMzoxoVEF9pg",
+            "handle": null,
+            "name": "Tashkenti - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UCkxi7wy2VhKCMzoxoVEF9pg",
@@ -23936,10 +24097,11 @@
       "active": true,
       "sources": [
         "manual-user-2026-10-05",
-        "genre:manual"
+        "genre:manual",
+        "youtube:targeted-search-verified"
       ],
-      "lastChecked": "2026-10-05T10:05:00.000Z",
-      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal YouTube pendent de resolució dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma.",
+      "lastChecked": "2026-10-05T10:10:00.000Z",
+      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal(s) YouTube verificat(s) amb cerca dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-05T09:57:39.918Z",
@@ -24064,7 +24226,22 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCAx9peaZFIswCLSlT77e1Cg",
+            "handle": "@terratombats",
+            "name": "Terratombats CAT",
+            "type": "official",
+            "primary": true
+          },
+          {
+            "id": "UCrAazkwonIdGi_TGkzXkoCw",
+            "handle": null,
+            "name": "Terratombats - Topic",
+            "type": "topic",
+            "primary": false
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UCrAazkwonIdGi_TGkzXkoCw",
@@ -24118,10 +24295,11 @@
       "active": true,
       "sources": [
         "manual-user-2026-10-05",
-        "genre:manual"
+        "genre:manual",
+        "youtube:targeted-search-verified"
       ],
-      "lastChecked": "2026-10-05T10:05:00.000Z",
-      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal YouTube pendent de resolució dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma.",
+      "lastChecked": "2026-10-05T10:10:00.000Z",
+      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal(s) YouTube verificat(s) amb cerca dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-05T09:57:40.185Z",
@@ -25956,7 +26134,22 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UC4ZpvBvQ4jzY_Ppwho9rSiw",
+            "handle": "@xeicska",
+            "name": "XEIC",
+            "type": "official",
+            "primary": true
+          },
+          {
+            "id": "UCNS4k4s7_GRMNpKBlRfpfTQ",
+            "handle": null,
+            "name": "XEIC! - Topic",
+            "type": "topic",
+            "primary": false
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UCNS4k4s7_GRMNpKBlRfpfTQ",
@@ -26008,10 +26201,11 @@
       "active": true,
       "sources": [
         "manual-user-2026-10-05",
-        "genre:manual"
+        "genre:manual",
+        "youtube:targeted-search-verified"
       ],
-      "lastChecked": "2026-10-05T10:05:00.000Z",
-      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal YouTube pendent de resolució dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma.",
+      "lastChecked": "2026-10-05T10:10:00.000Z",
+      "notes": "Alta manual de grup de mestissatge amb repertori en català. Canal(s) YouTube verificat(s) amb cerca dirigida; repertori mixt s'ha de sotmetre al filtre d'idioma.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-05T09:57:40.427Z",
