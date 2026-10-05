@@ -6145,3 +6145,9 @@ body.is-video-pip .video-placeholder.is-placeholder-hidden {
         aspect-ratio: auto !important;
     }
 }
+
+/* «Les teves llistes» només és a Inici (home-playlists.js ho decideix per la vista); mentre es canvia de vista,
+   tampoc no surt a baix d'un estil o d'una categoria. */
+#homePage:not(.is-portada) > .home-playlists {
+    display: none;
+}

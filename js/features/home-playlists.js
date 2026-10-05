@@ -46,9 +46,24 @@
     const SHARE_ICON =
         '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M18 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM6 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM18 22a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>';
 
+    // «Les teves llistes» és de la portada (Inici): als estils, les categories pròpies, «Seguint» o la cerca no hi va
+    // (a l'ordinador sortia a baix de tot de cada categoria).
+    function isHomeView() {
+        try {
+            return selectedCategory === 'Novetats';
+        } catch (error) {
+            return true; // app.js encara no ha carregat
+        }
+    }
+
     function render() {
         container = container || document.getElementById('homePlaylists');
         if (!container) return;
+        if (!isHomeView()) {
+            container.classList.add('hidden');
+            container.innerHTML = '';
+            return;
+        }
         const playlists = (app.features.library?.getPlaylists?.() || []).filter(
             list => list && Array.isArray(list.videos)
         );
