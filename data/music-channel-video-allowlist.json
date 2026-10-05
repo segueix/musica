@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-05T16:42:49.427383Z",
+  "updatedAt": "2026-10-05T17:33:10.759Z",
   "description": "Llista blanca per a canals on Segueix Música només ha d'ingerir vídeos concrets. Admet títols exactes, fragments obligatoris i fragments exclosos.",
   "channels": {
     "UCKpscwdWlVaMqcA81vLI7OA": {
@@ -2525,6 +2525,325 @@
       ],
       "allowedTitles": [
         "Concerto in E, Op. 64: III. Allegro molto vivace"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UC5h-dMbHSH3tikTmTSnfGjQ": {
+      "artist": "Mainasons",
+      "note": "Només cançons infantils en català revisades. Llista tancada per ID i títol; no importar la resta del canal.",
+      "allowedVideoIds": [
+        "SdRuLy9dnJk",
+        "0Xq77tZo-as",
+        "YzHtsJeN6EQ",
+        "4z37gGPqtzc",
+        "c_qH2SI_-Ts"
+      ],
+      "allowedTitles": [
+        "El Gegant del pi [Mainasons]",
+        "John Brown Petit Indi [Mainasons Vol.2]",
+        "La masovera [Mainasons]",
+        "Plou i fa sol [Mainasons]",
+        "En Joan Petit quan balla [Mainasons]"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCT9peuXLxzh-dx3r49F13qg": {
+      "artist": "Mainasons",
+      "note": "Només cançons infantils en català revisades. Llista tancada per ID i títol; no importar la resta del canal.",
+      "allowedVideoIds": [
+        "UnJsICg3Hk8",
+        "ijUw9pA9gCM",
+        "eA3y__EOUCU",
+        "uIVA2-vJ8Qc"
+      ],
+      "allowedTitles": [
+        "Vicentica",
+        "La Lluna, La Pruna",
+        "El Trineu",
+        "La Cançó dels Oficis"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCZqDq4Dl1ZxBQMlQgiEW5Kw": {
+      "artist": "El Pot Petit",
+      "note": "Només cançons infantils en català revisades. Llista tancada per ID i títol; no importar la resta del canal.",
+      "allowedVideoIds": [
+        "3jzxDVCv8lA",
+        "Cs-stT-6B-0",
+        "wbuqXRV8N0o",
+        "lYriMzzMsUw"
+      ],
+      "allowedTitles": [
+        "El Pot Petit - Tió de Nadal",
+        "El Pot Petit - Les Joguines (videoclip oficial)",
+        "El Pot Petit - El gat enfadat (videoclip oficial)",
+        "El Pot Petit - El lleó vergonyós (videoclip oficial)"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCwLcftQS2zEOfwD9jSl2TXA": {
+      "artist": "Xiula",
+      "note": "Només cançons infantils en català revisades. Llista tancada per ID i títol; no importar la resta del canal.",
+      "allowedVideoIds": [
+        "xHmFVkSOjZY",
+        "0oLVYBelbn0"
+      ],
+      "allowedTitles": [
+        "La Cançó del Cos",
+        "Verdura i peix"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCkbrYK7kel3WIW1ZSsxNvoQ": {
+      "artist": "Ambauka",
+      "note": "Només cançons infantils en català revisades. Llista tancada per ID i títol; no importar la resta del canal.",
+      "allowedVideoIds": [
+        "w9DyPrDghbs",
+        "VnyWlfQPflI",
+        "VatTF_8FeOM",
+        "j4G-pew6n2U",
+        "TJMd9PISmDI",
+        "-iCNzW24L4o",
+        "CrxKmOFpODA",
+        "NSpKQRH8njg",
+        "UGFyP5wQK8E"
+      ],
+      "allowedTitles": [
+        "AMBAUKA - Bon profit (videoclip)",
+        "AMBAUKA - Les notes de l'escala",
+        "AMBAUKA - El Drac Qüí (videoclip)",
+        "AMBAUKA - Contents (amb El Pot Petit) (videoclip)",
+        "AMBAUKA - Que bonic! (videoclip)",
+        "AMBAUKA - El Gegant del Pi i el Gegant de la Ciutat (videoclip)",
+        "AMBAUKA - Panellets i castanyes (cançó-recepta de Castanyada)",
+        "AMBAUKA - Embarbussaments (vídeo lletra)",
+        "AMBAUKA - El Patufet i les verdures de l'hortet (videoclip)"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCQbdJKk_c_MfT3OaO6rIISA": {
+      "artist": "Els Atrapasomnis",
+      "note": "Només cançons infantils en català revisades. Llista tancada per ID i títol; no importar la resta del canal.",
+      "allowedVideoIds": [
+        "nMkrnLOPTIA",
+        "wMlPh_BnQtE",
+        "L6b7COYuVEU",
+        "lB2KfipM3G4"
+      ],
+      "allowedTitles": [
+        "ELS ATRAPASOMNIS - JA S'ACABA L'ESCOLA (Videoclip Oficial)",
+        "ELS ATRAPASOMNIS - EL PLANETA VIOLETA (Videoclip Oficial)",
+        "🌙Els Atrapasomnis - 🌞BON DIA!!! (Videoclip oficial)",
+        "🌙ELS ATRAPASOMNIS - RENTA'T LES DENTS 🪥 (VIDEOCLIP OFICIAL)"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UC2pBZWFY9BTr7u6lZWPMROQ": {
+      "artist": "Reggae per Xics",
+      "note": "Només cançons infantils en català revisades. Llista tancada per ID i títol; no importar la resta del canal.",
+      "allowedVideoIds": [
+        "iuWlLDMN8dQ",
+        "XKd_pFNUgUc",
+        "zt7IuC3ewtA"
+      ],
+      "allowedTitles": [
+        "Una Mosca Volava per la Llum // Reggae Per Xics -- The Penguins",
+        "La Girafa // Reggae Per Xics -- The Penguins",
+        "REGGAE PER XICS - L'avi que estima el mar"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UC5DkIn4ZKBgGKqvpa0JyZlg": {
+      "artist": "Xesco Boix",
+      "note": "Només cançons infantils en català revisades. Llista tancada per ID i títol; no importar la resta del canal.",
+      "allowedVideoIds": [
+        "STI0S6EdEC4"
+      ],
+      "allowedTitles": [
+        "Si ens deixéssim de romanços"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCnc-ydOqTCAyaVjB5h6Yk8w": {
+      "artist": "Ara Va de Bo",
+      "note": "Només cançons infantils en català revisades. Llista tancada per ID i títol; no importar la resta del canal.",
+      "allowedVideoIds": [
+        "7NKhFqIsJzY",
+        "5HqxTYKI5lw"
+      ],
+      "allowedTitles": [
+        "La Masovera",
+        "El Gripau Blau"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCMWf6XTheiTNyzFHQr5A2fQ": {
+      "artist": "Jaume Barri",
+      "note": "Només cançons infantils en català revisades. Llista tancada per ID i títol; no importar la resta del canal.",
+      "allowedVideoIds": [
+        "Un4RnM3uqMM"
+      ],
+      "allowedTitles": [
+        "El gripau blau"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCvrdIqqti5520O_bz3ik57Q": {
+      "artist": "Jordi Tonietti",
+      "note": "Només cançons infantils en català revisades. Llista tancada per ID i títol; no importar la resta del canal.",
+      "allowedVideoIds": [
+        "b-dAXvY2Fp8"
+      ],
+      "allowedTitles": [
+        "Joan Petit"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCZZOt0pWmzrTf3P97R7be6g": {
+      "artist": "Pep Puigdemont",
+      "note": "Només cançons infantils en català revisades. Llista tancada per ID i títol; no importar la resta del canal.",
+      "allowedVideoIds": [
+        "YjAntdeAzbg",
+        "gSu6WCnjHf0",
+        "c6pWzVvcIYo"
+      ],
+      "allowedTitles": [
+        "El tren d'Olot",
+        "Dorm dorm.",
+        "La màgia de les cançons"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCIdj5otREH5qxyPbKjAx2Sw": {
+      "artist": "La Tresca i la Verdesca",
+      "note": "Només cançons infantils en català revisades. Llista tancada per ID i títol; no importar la resta del canal.",
+      "allowedVideoIds": [
+        "0hSCOU_oIoI",
+        "rdnrSebzKBM"
+      ],
+      "allowedTitles": [
+        "Per un instant",
+        "La carpa"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UC3Bb6mYAwuWFLzNrro83tQA": {
+      "artist": "Lali BeGood",
+      "note": "Només cançons infantils en català revisades. Llista tancada per ID i títol; no importar la resta del canal.",
+      "allowedVideoIds": [
+        "A8ApWFlQOiI"
+      ],
+      "allowedTitles": [
+        "Amor de mare"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCSuJ17uSSb8B4WOyFUNW9GQ": {
+      "artist": "Landry el Rumbero",
+      "note": "Només cançons infantils en català revisades. Llista tancada per ID i títol; no importar la resta del canal.",
+      "allowedVideoIds": [
+        "Rx-b2gnH4WA",
+        "G6kCV2AC28w",
+        "oaCJqwJdlcg"
+      ],
+      "allowedTitles": [
+        "Joan Petit",
+        "La masovera",
+        "Bugui-Bugui"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCnNhpfMHfVCIGQI3HjxTkxg": {
+      "artist": "Samfaina de Colors",
+      "note": "Només cançons infantils en català revisades. Llista tancada per ID i títol; no importar la resta del canal.",
+      "allowedVideoIds": [
+        "eXf8Ik2645E",
+        "xGNt1b2nngM"
+      ],
+      "allowedTitles": [
+        "Muntanyes del Canigó",
+        "Abril"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UClwN1cpIrafSRa8MbOMAvvQ": {
+      "artist": "2 Princeses Barbudes",
+      "note": "Només cançons infantils en català revisades. Llista tancada per ID i títol; no importar la resta del canal.",
+      "allowedVideoIds": [
+        "ySvPq4k3wkU",
+        "oIuojtzfwEE"
+      ],
+      "allowedTitles": [
+        "Clic clac",
+        "Tot creix"
       ],
       "acceptedMusicOnly": true,
       "allowedContentTypes": [

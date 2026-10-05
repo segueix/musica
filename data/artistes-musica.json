@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-05T17:10:39.280Z",
+  "updatedAt": "2026-10-05T17:33:10.759Z",
   "artists": [
     {
       "name": "2ES",
@@ -31651,6 +31651,622 @@
       "reviewStatus": "aprovat",
       "active": true,
       "lastChecked": "2026-10-05T16:42:49.427383Z"
+    },
+    {
+      "name": "Mainasons",
+      "aliases": [
+        "Maina Sons"
+      ],
+      "genres": [
+        "Infantil"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UC5h-dMbHSH3tikTmTSnfGjQ",
+            "handle": null,
+            "name": "Mainasons",
+            "type": "official",
+            "primary": true
+          },
+          {
+            "id": "UCT9peuXLxzh-dx3r49F13qg",
+            "handle": null,
+            "name": "Mainasons - Topic",
+            "type": "topic",
+            "primary": false
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://www.verkami.com/projects/15126-mainasons-vol2/blog",
+        "manual-user-2026-10-05",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-05T17:33:10.759Z",
+      "notes": "Selecció manual de cançons infantils en català. Només els vídeos de la llista tancada; comprovació a docs/REVISION_INFANTIL_2026-10-05.json."
+    },
+    {
+      "name": "El Pot Petit",
+      "aliases": [],
+      "genres": [
+        "Infantil"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCZqDq4Dl1ZxBQMlQgiEW5Kw",
+            "handle": null,
+            "name": "El Pot Petit",
+            "type": "official",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://www.potpetit.com/bases-io-partitures/",
+        "manual-user-2026-10-05",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-05T17:33:10.759Z",
+      "notes": "Selecció manual de cançons infantils en català. Només els vídeos de la llista tancada; comprovació a docs/REVISION_INFANTIL_2026-10-05.json."
+    },
+    {
+      "name": "Xiula",
+      "aliases": [],
+      "genres": [
+        "Infantil"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCwLcftQS2zEOfwD9jSl2TXA",
+            "handle": null,
+            "name": "Xiula - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://xiula.bandcamp.com/album/cuarto-lagarto",
+        "https://xiula.bandcamp.com/track/verdura-i-peix",
+        "manual-user-2026-10-05",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-05T17:33:10.759Z",
+      "notes": "Selecció manual de cançons infantils en català. Només els vídeos de la llista tancada; comprovació a docs/REVISION_INFANTIL_2026-10-05.json."
+    },
+    {
+      "name": "Ambauka",
+      "aliases": [
+        "Ambaüka",
+        "Ambaükatunàbia"
+      ],
+      "genres": [
+        "Infantil"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCkbrYK7kel3WIW1ZSsxNvoQ",
+            "handle": null,
+            "name": "AMBAUKA Música i espectacles familiars",
+            "type": "official",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://ambauka.cat/",
+        "manual-user-2026-10-05",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-05T17:33:10.759Z",
+      "notes": "Selecció manual de cançons infantils en català. Només els vídeos de la llista tancada; comprovació a docs/REVISION_INFANTIL_2026-10-05.json."
+    },
+    {
+      "name": "Els Atrapasomnis",
+      "aliases": [],
+      "genres": [
+        "Infantil"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCQbdJKk_c_MfT3OaO6rIISA",
+            "handle": null,
+            "name": "Els Atrapasomnis",
+            "type": "official",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://elsatrapasomnis.cat/nosaltres/",
+        "manual-user-2026-10-05",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-05T17:33:10.759Z",
+      "notes": "Selecció manual de cançons infantils en català. Només els vídeos de la llista tancada; comprovació a docs/REVISION_INFANTIL_2026-10-05.json."
+    },
+    {
+      "name": "Reggae per Xics",
+      "aliases": [
+        "The Penguins",
+        "The Penguins - Reggae per Xics"
+      ],
+      "genres": [
+        "Infantil"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UC2pBZWFY9BTr7u6lZWPMROQ",
+            "handle": null,
+            "name": "Reggae Per Xics",
+            "type": "official",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://www.fim.cat/artistes/reggae-per-xics/",
+        "manual-user-2026-10-05",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-05T17:33:10.759Z",
+      "notes": "Selecció manual de cançons infantils en català. Només els vídeos de la llista tancada; comprovació a docs/REVISION_INFANTIL_2026-10-05.json."
+    },
+    {
+      "name": "Xesco Boix",
+      "aliases": [],
+      "genres": [
+        "Infantil"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UC5DkIn4ZKBgGKqvpa0JyZlg",
+            "handle": null,
+            "name": "Xesco Boix - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://www.contesdelmon.org/mm/file/not%C3%ADcies/canconer_xesco_boix.pdf",
+        "manual-user-2026-10-05",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-05T17:33:10.759Z",
+      "notes": "Selecció manual de cançons infantils en català. Només els vídeos de la llista tancada; comprovació a docs/REVISION_INFANTIL_2026-10-05.json."
+    },
+    {
+      "name": "Ara Va de Bo",
+      "aliases": [],
+      "genres": [
+        "Infantil"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCnc-ydOqTCAyaVjB5h6Yk8w",
+            "handle": null,
+            "name": "Ara Va de Bo - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://www.detotunamica.net/cantaesplai/ca/lletra.php?id=136",
+        "manual-user-2026-10-05",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-05T17:33:10.759Z",
+      "notes": "Selecció manual de cançons infantils en català. Només els vídeos de la llista tancada; comprovació a docs/REVISION_INFANTIL_2026-10-05.json."
+    },
+    {
+      "name": "Jaume Barri",
+      "aliases": [],
+      "genres": [
+        "Infantil"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCMWf6XTheiTNyzFHQr5A2fQ",
+            "handle": null,
+            "name": "Jaume Barri - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://www.detotunamica.net/cantaesplai/ca/lletra.php?id=136",
+        "manual-user-2026-10-05",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-05T17:33:10.759Z",
+      "notes": "Selecció manual de cançons infantils en català. Només els vídeos de la llista tancada; comprovació a docs/REVISION_INFANTIL_2026-10-05.json."
+    },
+    {
+      "name": "Jordi Tonietti",
+      "aliases": [],
+      "genres": [
+        "Infantil"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCvrdIqqti5520O_bz3ik57Q",
+            "handle": null,
+            "name": "Jordi Tonietti - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://www.cantut.cat/index.php/canconer/cancons/item/2416-en-joan-petit",
+        "manual-user-2026-10-05",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-05T17:33:10.759Z",
+      "notes": "Selecció manual de cançons infantils en català. Només els vídeos de la llista tancada; comprovació a docs/REVISION_INFANTIL_2026-10-05.json."
+    },
+    {
+      "name": "Pep Puigdemont",
+      "aliases": [],
+      "genres": [
+        "Infantil"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCZZOt0pWmzrTf3P97R7be6g",
+            "handle": null,
+            "name": "Pep Puigdemont - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://www.puigdemont.net/publicac.php",
+        "https://www.puigdemont.net/mp3.php",
+        "manual-user-2026-10-05",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-05T17:33:10.759Z",
+      "notes": "Selecció manual de cançons infantils en català. Només els vídeos de la llista tancada; comprovació a docs/REVISION_INFANTIL_2026-10-05.json."
+    },
+    {
+      "name": "La Tresca i la Verdesca",
+      "aliases": [],
+      "genres": [
+        "Infantil"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCIdj5otREH5qxyPbKjAx2Sw",
+            "handle": null,
+            "name": "La Tresca i la Verdesca - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://blocs.xtec.cat/bondiaambmelodia/2023/11/29/per-un-instant-la-tresca-i-la-verdesca/",
+        "https://latresca.com/discografia/la-tresca-i-la-verdesca/",
+        "manual-user-2026-10-05",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-05T17:33:10.759Z",
+      "notes": "Selecció manual de cançons infantils en català. Només els vídeos de la llista tancada; comprovació a docs/REVISION_INFANTIL_2026-10-05.json."
+    },
+    {
+      "name": "Lali BeGood",
+      "aliases": [],
+      "genres": [
+        "Infantil"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UC3Bb6mYAwuWFLzNrro83tQA",
+            "handle": null,
+            "name": "Lali BeGood - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://lali-begood.bandcamp.com/album/el-jard-secret",
+        "manual-user-2026-10-05",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-05T17:33:10.759Z",
+      "notes": "Selecció manual de cançons infantils en català. Només els vídeos de la llista tancada; comprovació a docs/REVISION_INFANTIL_2026-10-05.json."
+    },
+    {
+      "name": "Landry el Rumbero",
+      "aliases": [
+        "Landry"
+      ],
+      "genres": [
+        "Infantil"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCSuJ17uSSb8B4WOyFUNW9GQ",
+            "handle": null,
+            "name": "Landry el Rumbero - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://www.youtube.com/watch?v=CZWZQ9WKaVA",
+        "https://www.cantut.cat/index.php/canconer/cancons/item/2416-en-joan-petit",
+        "manual-user-2026-10-05",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-05T17:33:10.759Z",
+      "notes": "Selecció manual de cançons infantils en català. Només els vídeos de la llista tancada; comprovació a docs/REVISION_INFANTIL_2026-10-05.json."
+    },
+    {
+      "name": "Samfaina de Colors",
+      "aliases": [],
+      "genres": [
+        "Infantil"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCnNhpfMHfVCIGQI3HjxTkxg",
+            "handle": null,
+            "name": "Samfaina de Colors - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://samfainadecolors.bandcamp.com/album/els-cistells-de-la-caputxeta",
+        "manual-user-2026-10-05",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-05T17:33:10.759Z",
+      "notes": "Selecció manual de cançons infantils en català. Només els vídeos de la llista tancada; comprovació a docs/REVISION_INFANTIL_2026-10-05.json."
+    },
+    {
+      "name": "2 Princeses Barbudes",
+      "aliases": [
+        "2princesesbarbudes"
+      ],
+      "genres": [
+        "Infantil"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UClwN1cpIrafSRa8MbOMAvvQ",
+            "handle": null,
+            "name": "2princesesbarbudes - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://2princesesbarbudes.bandcamp.com/album/enciclop-dia-baixeta-de-la-nit",
+        "https://www.argia.eus/argia-astekaria/2446/gaueko-entziklopedia-koxkorra",
+        "manual-user-2026-10-05",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-05T17:33:10.759Z",
+      "notes": "Selecció manual de cançons infantils en català. Només els vídeos de la llista tancada; comprovació a docs/REVISION_INFANTIL_2026-10-05.json."
     }
   ]
 }
