@@ -11012,6 +11012,14 @@ function preparePlayerForPlaybackLegacyImpl({ thumbnail, title }) {
     }
 }
 
+// Hi ha una cançó al reproductor (sonant o en pausa) a l'ordinador, amb la pàgina visible.
+function shouldFloatPlayerOnNavigation() {
+    if (!videoPlayer || isMobileView() || document.visibilityState === 'hidden') return false;
+    if (isPlaylistMode && activePlaylistId === '__segueix_tv_discovery__') return false;
+    const state = Number(videoPlayer.dataset.playerState);
+    return Boolean(getLiveYouTubeIframe()) && [1, 2, 3].includes(state);
+}
+
 function handlePlayerVisibilityOnNavigation() {
     // En sortir de la pàgina del reproductor tornem a mostrar la filera
     // d'icones del header (que amaguem al mòbil mentre es mira el vídeo).
@@ -11020,6 +11028,13 @@ function handlePlayerVisibilityOnNavigation() {
         return;
     }
     if (isPersistentPlayerActive()) {
+        videoPlayer.style.display = 'block';
+        return;
+    }
+    // Ordinador: si sona una cançó i vas a una altra secció, el reproductor passa a la finestra flotant (amb els
+    // controls a sota) en lloc d'aturar-se; es continua navegant amb la música.
+    if (shouldFloatPlayerOnNavigation()) {
+        setMiniPlayerState(true, { trigger: 'navigation' });
         videoPlayer.style.display = 'block';
         return;
     }
