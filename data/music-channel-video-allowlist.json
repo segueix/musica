@@ -156,6 +156,20 @@
         "song",
         "live_song"
       ]
+    },
+    "UCD1xceEEywgVv2tMX5kMi6Q": {
+      "artist": "Marala",
+      "note": "Només repertori català verificat; evita Canción del Varear i peces en altres idiomes. Trio de Selma Bruna, Clara Fiol i Sandra Monfort.",
+      "allowedTitleContains": [
+        "El desich",
+        "A la vora del riu mare",
+        "Rosa i espina"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
     }
   }
 }

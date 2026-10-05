@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-05T11:29:21.352Z",
+  "updatedAt": "2026-10-05T12:57:41.035Z",
   "artists": [
     {
       "name": "2ES",
@@ -26734,6 +26734,288 @@
         }
       },
       "displayName": "ZOO"
+    },
+    {
+      "name": "La Coixinera",
+      "aliases": [],
+      "genres": [
+        "Folk i arrel"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "https://www.cantut.cat/festival/programacio/la-coixinera"
+      ],
+      "lastChecked": "2026-10-05T12:57:41.032Z",
+      "notes": "Grup d’arrel de Mataró. Cançons tradicionals i de taverna; repertori també instrumental. No incloure Astoaren kanta (basc). Alta de folk i arrel 2026-10-05; canal i selecció pendents de verificació."
+    },
+    {
+      "name": "RIU",
+      "aliases": [
+        "RIU - Música Popular dels PPCC"
+      ],
+      "genres": [
+        "Folk i arrel"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "https://riumusica.bandcamp.com/album/riu"
+      ],
+      "lastChecked": "2026-10-05T12:57:41.032Z",
+      "notes": "Música popular dels Països Catalans. Canal històric enllaçat pel grup: https://www.youtube.com/user/RIUmusicaPPCC . Alta de folk i arrel 2026-10-05; canal i selecció pendents de verificació."
+    },
+    {
+      "name": "Urbàlia Rurana",
+      "aliases": [
+        "Urbalia Rurana"
+      ],
+      "genres": [
+        "Folk i arrel"
+      ],
+      "territories": [
+        "País Valencià"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "https://www.monfolk.com/artistes/urbalia-rurana/"
+      ],
+      "lastChecked": "2026-10-05T12:57:41.032Z",
+      "notes": "Folk valencià i mediterrani; comprovar l’idioma de cada peça del repertori mediterrani. Alta de folk i arrel 2026-10-05; canal i selecció pendents de verificació."
+    },
+    {
+      "name": "Tornaveus",
+      "aliases": [],
+      "genres": [
+        "Folk i arrel"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "https://tornaveuspolifonies.wordpress.com/"
+      ],
+      "lastChecked": "2026-10-05T12:57:41.033Z",
+      "notes": "Polifonies tradicionals catalanes. No donar per català el repertori litúrgic en llatí. Alta de folk i arrel 2026-10-05; canal i selecció pendents de verificació."
+    },
+    {
+      "name": "Trèvol",
+      "aliases": [
+        "Trèvol grup"
+      ],
+      "genres": [
+        "Folk i arrel"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "https://www.enderrock.cat/sons/grupsons2023/22/trevol"
+      ],
+      "lastChecked": "2026-10-05T12:57:41.033Z",
+      "notes": "Folk fusió d’arrel; repertori català, instrumental i d’altres tradicions. Selecció de cançons en català, sense aprovar tot el canal. Alta de folk i arrel 2026-10-05; canal i selecció pendents de verificació."
+    },
+    {
+      "name": "Marala",
+      "aliases": [
+        "Marala Trio"
+      ],
+      "genres": [
+        "Folk i arrel"
+      ],
+      "territories": [
+        "Catalunya",
+        "Illes Balears",
+        "País Valencià"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCD1xceEEywgVv2tMX5kMi6Q",
+            "handle": "@maralatrio1298",
+            "name": "Marala Trio",
+            "type": "official",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://propaganda-pel-fet.cat/index.php/cat/artistes/marala"
+      ],
+      "lastChecked": "2026-10-05T12:57:41.033Z",
+      "notes": "Trio de Selma Bruna, Clara Fiol i Sandra Monfort. Evitar l’artista homònima colombiana. Selecció explícita de repertori català; no incloure Canción del Varear. Alta de folk i arrel 2026-10-05; canal i selecció pendents de verificació."
+    },
+    {
+      "name": "Corrandes són corrandes",
+      "aliases": [],
+      "genres": [
+        "Folk i arrel"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "https://www.enderrock.cat/sons/grupsons2020/24/corrandes/son/corrandes"
+      ],
+      "lastChecked": "2026-10-05T12:57:41.033Z",
+      "notes": "Cançó d’arrel i improvisada de la Catalunya Vella. Alta de folk i arrel 2026-10-05; canal i selecció pendents de verificació."
+    },
+    {
+      "name": "Solk",
+      "aliases": [],
+      "genres": [
+        "Folk i arrel"
+      ],
+      "territories": [
+        "País Valencià"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "https://elcom.cat/artistes/solk"
+      ],
+      "lastChecked": "2026-10-05T12:57:41.033Z",
+      "notes": "Grup d’arrel de les terres del nord valencià. Distingir-lo de projectes homònims. Alta de folk i arrel 2026-10-05; canal i selecció pendents de verificació."
+    },
+    {
+      "name": "Arreu",
+      "aliases": [
+        "Arreu Música i Arrel"
+      ],
+      "genres": [
+        "Folk i arrel"
+      ],
+      "territories": [
+        "Illes Balears"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "https://arreu.bandcamp.com/album/arreu-musica-i-arrel"
+      ],
+      "lastChecked": "2026-10-05T12:57:41.035Z",
+      "notes": "Grup de música d’arrel de Mallorca, nascut a Esporles el 2012. Distingir-lo de projectes homònims. Alta de folk i arrel 2026-10-05; canal i selecció pendents de verificació."
+    },
+    {
+      "name": "Quico el Célio, el Noi i el Mut de Ferreries",
+      "aliases": [
+        "Quico el Célio"
+      ],
+      "genres": [
+        "Folk i arrel"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "https://www.quicoelcelio.com/"
+      ],
+      "lastChecked": "2026-10-05T12:57:41.035Z",
+      "notes": "Cançó tradicional de les Terres de l’Ebre. El web oficial apunta al canal compartit TubalEspectacles; preferir un canal propi o Topic verificat. Alta de folk i arrel 2026-10-05; canal i selecció pendents de verificació."
     }
   ]
 }
