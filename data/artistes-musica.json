@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-05T12:57:41.035Z",
+  "updatedAt": "2026-10-05T12:58:43.038Z",
   "artists": [
     {
       "name": "2ES",
@@ -26750,7 +26750,51 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": []
+        "channels": [],
+        "searchCandidates": [
+          {
+            "id": "UC5u7o5L26RuDowQsqOJDm0w",
+            "title": "La Coixinera - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 336,
+            "thumbnail": "https://yt3.ggpht.com/GGT2m_HiGpN-jhZ_j21okLT6B7Io4IJ-UbAxde4tU0JcbuKjAy6mWT-yInY-cQ3fVaV2pru7vg=s240-c-k-c0x00ffffff-no-rj",
+            "score": 85,
+            "reasons": [
+              "nom exacte de canal Topic",
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-05T12:58:39.176Z"
+          },
+          {
+            "id": "UCsAbCGSmpvZ7Ym2WNklg44A",
+            "title": "La Coixinera Compayia de saraus",
+            "handle": "@coixinera",
+            "description": "",
+            "subscriberCount": 192,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_nHV7Oeiio9J12Krs2kiayYHsN7iXTm7Iz8BzElnlnt1w=s240-c-k-c0x00ffffff-no-rj",
+            "score": 53,
+            "reasons": [
+              "nom parcial",
+              "handle coincident"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T12:58:39.176Z"
+          },
+          {
+            "id": "UCHbDDWZ1qJHsKHk3UYZ4PpQ",
+            "title": "Dani Àlvarez",
+            "handle": "@danialvarez5787",
+            "description": "",
+            "subscriberCount": 9,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_l8tRF1xApwIk8xg_jq4wwTq8S-dKWb__KG_MWz2yLD7Q=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T12:58:39.176Z"
+          }
+        ]
       },
       "confidence": "alta",
       "reviewStatus": "pendent",
@@ -26759,7 +26803,17 @@
         "https://www.cantut.cat/festival/programacio/la-coixinera"
       ],
       "lastChecked": "2026-10-05T12:57:41.032Z",
-      "notes": "Grup d’arrel de Mataró. Cançons tradicionals i de taverna; repertori també instrumental. No incloure Astoaren kanta (basc). Alta de folk i arrel 2026-10-05; canal i selecció pendents de verificació."
+      "notes": "Grup d’arrel de Mataró. Cançons tradicionals i de taverna; repertori també instrumental. No incloure Astoaren kanta (basc). Alta de folk i arrel 2026-10-05; canal i selecció pendents de verificació.",
+      "enrichment": {
+        "youtubeSearch": {
+          "checkedAt": "2026-10-05T12:58:39.176Z",
+          "status": "candidats",
+          "query": "La Coixinera",
+          "resultCount": 3,
+          "bestScore": 85,
+          "autoAcceptedId": null
+        }
+      }
     },
     {
       "name": "RIU",
@@ -26778,7 +26832,24 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": []
+        "channels": [],
+        "searchCandidates": [
+          {
+            "id": "UC5Fb0Xo8Xx6gVrFPoVsZluw",
+            "title": "RIU - Música Popular dels PPCC",
+            "handle": "@riumusicappcc",
+            "description": "Grup de música folk dels Països Catalans.\nMusic band that plays folk from Catalan Countries,",
+            "subscriberCount": 254,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_mLoHPnWhLtirk3eegu7GHGMDH4I9uUuHLv1db1VU12P30=s240-c-k-c0x00ffffff-no-rj",
+            "score": 75,
+            "reasons": [
+              "nom exacte",
+              "primer resultat"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T12:58:39.689Z"
+          }
+        ]
       },
       "confidence": "alta",
       "reviewStatus": "pendent",
@@ -26787,7 +26858,17 @@
         "https://riumusica.bandcamp.com/album/riu"
       ],
       "lastChecked": "2026-10-05T12:57:41.032Z",
-      "notes": "Música popular dels Països Catalans. Canal històric enllaçat pel grup: https://www.youtube.com/user/RIUmusicaPPCC . Alta de folk i arrel 2026-10-05; canal i selecció pendents de verificació."
+      "notes": "Música popular dels Països Catalans. Canal històric enllaçat pel grup: https://www.youtube.com/user/RIUmusicaPPCC . Alta de folk i arrel 2026-10-05; canal i selecció pendents de verificació.",
+      "enrichment": {
+        "youtubeSearch": {
+          "checkedAt": "2026-10-05T12:58:39.689Z",
+          "status": "candidats",
+          "query": "RIU Música Popular PPCC",
+          "resultCount": 1,
+          "bestScore": 75,
+          "autoAcceptedId": null
+        }
+      }
     },
     {
       "name": "Urbàlia Rurana",
@@ -26806,7 +26887,53 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": []
+        "channels": [],
+        "searchCandidates": [
+          {
+            "id": "UCSsJFD5CFYZ3fe24qhtsejA",
+            "title": "Urbàlia Rurana",
+            "handle": "@urbaliarurana",
+            "description": "",
+            "subscriberCount": 191,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_mDlMOfYUdATt5JufMdg78cmcLOjmMSV2fSczuL9nGXkRA=s240-c-k-c0x00ffffff-no-rj",
+            "score": 100,
+            "reasons": [
+              "nom exacte",
+              "handle exacte",
+              "primer resultat"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T12:58:40.039Z"
+          },
+          {
+            "id": "UCMIVDQMYttFV6h1aRIeQN-w",
+            "title": "Urbàlia Rurana - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 203,
+            "thumbnail": "https://yt3.ggpht.com/OShiLjl7fhnETl0RyZZ2BtpQTvoLzEWNbjPJNc0KFnyXgSEuLJDf_2ZgqEFoUdjgmkhuWELW=s240-c-k-c0x00ffffff-no-rj",
+            "score": 80,
+            "reasons": [
+              "nom exacte de canal Topic"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-05T12:58:40.039Z"
+          },
+          {
+            "id": "UCgBZCQX9Z7PD9u_I99y8fLg",
+            "title": "Urbàlia Rurana & Maurizio Marinotti - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 3,
+            "thumbnail": "https://yt3.ggpht.com/Bi8sSf92jDL2bjXu7lm4PieQKwYoZO3tGRy2i0IfhptVpa-VhvFmUg0gs5WaZxtTwsPiuv1u=s240-c-k-c0x00ffffff-no-rj",
+            "score": 35,
+            "reasons": [
+              "nom parcial"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-05T12:58:40.039Z"
+          }
+        ]
       },
       "confidence": "alta",
       "reviewStatus": "pendent",
@@ -26815,7 +26942,17 @@
         "https://www.monfolk.com/artistes/urbalia-rurana/"
       ],
       "lastChecked": "2026-10-05T12:57:41.032Z",
-      "notes": "Folk valencià i mediterrani; comprovar l’idioma de cada peça del repertori mediterrani. Alta de folk i arrel 2026-10-05; canal i selecció pendents de verificació."
+      "notes": "Folk valencià i mediterrani; comprovar l’idioma de cada peça del repertori mediterrani. Alta de folk i arrel 2026-10-05; canal i selecció pendents de verificació.",
+      "enrichment": {
+        "youtubeSearch": {
+          "checkedAt": "2026-10-05T12:58:40.039Z",
+          "status": "candidats",
+          "query": "Urbàlia Rurana",
+          "resultCount": 3,
+          "bestScore": 100,
+          "autoAcceptedId": null
+        }
+      }
     },
     {
       "name": "Tornaveus",
@@ -26832,7 +26969,25 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": []
+        "channels": [],
+        "searchCandidates": [
+          {
+            "id": "UC8vbtHPcQvQEuQi2wcwK6aQ",
+            "title": "Tornaveus Polifonies",
+            "handle": "@tornaveus",
+            "description": "Cantar a veus, sense cap o un mínim instrument que acompanyi, a la Mediterrània nord-occidental, és una característica compartida tant entre homes, dones o barrejats. Lluny del model de les corals, els components de Tornaveus són coneixedors de diferents possibilitats tradicionals d'aquests territoris, i en especial dels de parla catalana. Posen en",
+            "subscriberCount": 173,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_nMqyrkm_L2l5f8I4OW5kv2IGDGQg68PVH6Z6TPXK3AlOg=s240-c-k-c0x00ffffff-no-rj",
+            "score": 65,
+            "reasons": [
+              "nom parcial",
+              "handle exacte",
+              "primer resultat"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T12:58:40.440Z"
+          }
+        ]
       },
       "confidence": "alta",
       "reviewStatus": "pendent",
@@ -26841,7 +26996,17 @@
         "https://tornaveuspolifonies.wordpress.com/"
       ],
       "lastChecked": "2026-10-05T12:57:41.033Z",
-      "notes": "Polifonies tradicionals catalanes. No donar per català el repertori litúrgic en llatí. Alta de folk i arrel 2026-10-05; canal i selecció pendents de verificació."
+      "notes": "Polifonies tradicionals catalanes. No donar per català el repertori litúrgic en llatí. Alta de folk i arrel 2026-10-05; canal i selecció pendents de verificació.",
+      "enrichment": {
+        "youtubeSearch": {
+          "checkedAt": "2026-10-05T12:58:40.440Z",
+          "status": "candidats",
+          "query": "Tornaveus polifonies",
+          "resultCount": 1,
+          "bestScore": 65,
+          "autoAcceptedId": null
+        }
+      }
     },
     {
       "name": "Trèvol",
@@ -26860,7 +27025,51 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": []
+        "channels": [],
+        "searchCandidates": [
+          {
+            "id": "UCz3aiLj85sLBimSrPwNcQcQ",
+            "title": "TRÈVOL",
+            "handle": "@trevolgrup",
+            "description": "Folk d’extraradi. Entre la perifèria de Barcelona i la Catalunya Nord. \nCançons que beuen de la música tradicional dels Països Catalans, d’influències modernes i de les cultures que conviuen als barris de l’extraradi. Un so que reivindica la perifèria com a espai de creació, de barreja d’identitats i de resistència cultural. ",
+            "subscriberCount": 263,
+            "thumbnail": "https://yt3.ggpht.com/NcYWXstf0DKaSjebPF5zUb0qtfnWD0cPk4kUg6yPt5dMXdcw0GJ8m0Ewj-SAhDCPzmx81UWcJg=s240-c-k-c0x00ffffff-no-rj",
+            "score": 95,
+            "reasons": [
+              "nom exacte",
+              "handle exacte"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T12:58:40.854Z"
+          },
+          {
+            "id": "UCF6nxIBqp7vuVu51PGC7x5w",
+            "title": "Trèvol - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 91,
+            "thumbnail": "https://yt3.ggpht.com/vW3Wqlw5HElyXiSQI8Cw_bpqf9eoSN-eHbxjjA21oliz4r14zQhcgsfI6gzPtsRYeHrRUTYOmv8=s240-c-k-c0x00ffffff-no-rj",
+            "score": 85,
+            "reasons": [
+              "nom exacte de canal Topic",
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-05T12:58:40.854Z"
+          },
+          {
+            "id": "UCuF_wNnVsaqGUWAh3IZQLeA",
+            "title": "Music Travel Love - Topic",
+            "handle": null,
+            "description": "Music Travel Love is a Canadian brother duo MTL. Professionally performing from the early age of 4, with over 5,000 live performances Clint and Bob certainly fall within the category of seasoned entertainers.\n \nAlong with their brother’s, Scott and Dave, The Moffatts were signed to Polydor Records in Nashville and became the youngest band to ever s",
+            "subscriberCount": 47900,
+            "thumbnail": "https://yt3.ggpht.com/FGJ_iJ8L9CTBaF92ne8EfOU9wdOqJJAwBs_NA_5R0Xw1tm-OakOB2mGWDzKnHgOF4DIuuups=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-05T12:58:40.854Z"
+          }
+        ]
       },
       "confidence": "alta",
       "reviewStatus": "pendent",
@@ -26869,7 +27078,17 @@
         "https://www.enderrock.cat/sons/grupsons2023/22/trevol"
       ],
       "lastChecked": "2026-10-05T12:57:41.033Z",
-      "notes": "Folk fusió d’arrel; repertori català, instrumental i d’altres tradicions. Selecció de cançons en català, sense aprovar tot el canal. Alta de folk i arrel 2026-10-05; canal i selecció pendents de verificació."
+      "notes": "Folk fusió d’arrel; repertori català, instrumental i d’altres tradicions. Selecció de cançons en català, sense aprovar tot el canal. Alta de folk i arrel 2026-10-05; canal i selecció pendents de verificació.",
+      "enrichment": {
+        "youtubeSearch": {
+          "checkedAt": "2026-10-05T12:58:40.854Z",
+          "status": "candidats",
+          "query": "Trèvol grup folk",
+          "resultCount": 3,
+          "bestScore": 95,
+          "autoAcceptedId": null
+        }
+      }
     },
     {
       "name": "Marala",
@@ -26924,7 +27143,50 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": []
+        "channels": [],
+        "searchCandidates": [
+          {
+            "id": "UCTsSJXhTo6HpqmtSh8-p31A",
+            "title": "Corrandes són Corrandes - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 84,
+            "thumbnail": "https://yt3.ggpht.com/f0vArLkhjs7AuL6fdaSNjuX2qNpVUNNqBC8dhzsGN9V5CU6NtZnlKiPCzWYc__spif96i8zzvA=s240-c-k-c0x00ffffff-no-rj",
+            "score": 80,
+            "reasons": [
+              "nom exacte de canal Topic"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-05T12:58:41.195Z"
+          },
+          {
+            "id": "UCYzpmEEhGtncFPgZSocnrtQ",
+            "title": "Corrandes són corrandes",
+            "handle": "@corrandescat",
+            "description": "Corrandes són corrandes és un grup de música tradicional que té diferents formats de concert i ball.",
+            "subscriberCount": 260,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_kq4CyIQAIBeyIwq-jlIhBakMFkKRbhDPVpARZ28ZRA9A8=s240-c-k-c0x00ffffff-no-rj",
+            "score": 75,
+            "reasons": [
+              "nom exacte",
+              "primer resultat"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T12:58:41.195Z"
+          },
+          {
+            "id": "UCOxad64npNkkgQjtpQcIfXw",
+            "title": "Societat Coral Confinada",
+            "handle": "@societatcoralconfinada4425",
+            "description": "",
+            "subscriberCount": 7,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_mEmFvQ300PmPnGvNTZwXN6lvPO4HrhBIM8DPAXsSwLZw=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T12:58:41.195Z"
+          }
+        ]
       },
       "confidence": "alta",
       "reviewStatus": "pendent",
@@ -26933,7 +27195,17 @@
         "https://www.enderrock.cat/sons/grupsons2020/24/corrandes/son/corrandes"
       ],
       "lastChecked": "2026-10-05T12:57:41.033Z",
-      "notes": "Cançó d’arrel i improvisada de la Catalunya Vella. Alta de folk i arrel 2026-10-05; canal i selecció pendents de verificació."
+      "notes": "Cançó d’arrel i improvisada de la Catalunya Vella. Alta de folk i arrel 2026-10-05; canal i selecció pendents de verificació.",
+      "enrichment": {
+        "youtubeSearch": {
+          "checkedAt": "2026-10-05T12:58:41.195Z",
+          "status": "candidats",
+          "query": "Corrandes són corrandes",
+          "resultCount": 3,
+          "bestScore": 80,
+          "autoAcceptedId": null
+        }
+      }
     },
     {
       "name": "Solk",
@@ -26950,7 +27222,47 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": []
+        "channels": [],
+        "searchCandidates": [
+          {
+            "id": "UCBi_XlQ8FEnM01UJr8rzF4Q",
+            "title": "Herencia de Timbiqui - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 329,
+            "thumbnail": "https://yt3.ggpht.com/ODjwH_TM1w5HlC6JrkH4kEUxccQGYzLgaUI1adPMA5ssUCmu5zbe9WzSvL7tyNJICTnBWnzweA=s240-c-k-c0x00ffffff-no-rj",
+            "score": 5,
+            "reasons": [
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-05T12:58:41.589Z"
+          },
+          {
+            "id": "UCQjGbGm-wt5jwVHCzLxT3Mw",
+            "title": "Melodias Del Asfalto",
+            "handle": "@melodiasdelasfalto",
+            "description": "En Melodías del Asfalto, la música nace de las grietas del día a día. Aquí encontrarás historias reales: amores que marcan, calles que enseñan y esa resiliencia que nos mantiene en pie. Cada tema es un refugio para quienes buscan verdad en la música, con la crudeza de una guitarra acústica e historias que llegan al alma.\n\nSi te conmueve la emoción ",
+            "subscriberCount": 850,
+            "thumbnail": "https://yt3.ggpht.com/q9f48zzW489rn3iSJ2C7v3vKqtKWlFYlL2MSWzZ46c6xfGexuAGVE91F6AbUIfmLsLRNka6FfQ=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T12:58:41.589Z"
+          },
+          {
+            "id": "UC5z8xnfpJYInPyl5iAHP6Zg",
+            "title": "Radio Adoración Viva (folk espiritual)",
+            "handle": "@radioadoracionvivafe",
+            "description": "",
+            "subscriberCount": 117,
+            "thumbnail": "https://yt3.ggpht.com/BcViS4QnmEUHQpYlVL3anb6I_PpUFWV4Wey3M9ac0PHChRPzql2jklFnKc9MwotHfiZbzoxlOg=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T12:58:41.589Z"
+          }
+        ]
       },
       "confidence": "alta",
       "reviewStatus": "pendent",
@@ -26959,7 +27271,17 @@
         "https://elcom.cat/artistes/solk"
       ],
       "lastChecked": "2026-10-05T12:57:41.033Z",
-      "notes": "Grup d’arrel de les terres del nord valencià. Distingir-lo de projectes homònims. Alta de folk i arrel 2026-10-05; canal i selecció pendents de verificació."
+      "notes": "Grup d’arrel de les terres del nord valencià. Distingir-lo de projectes homònims. Alta de folk i arrel 2026-10-05; canal i selecció pendents de verificació.",
+      "enrichment": {
+        "youtubeSearch": {
+          "checkedAt": "2026-10-05T12:58:41.589Z",
+          "status": "candidats",
+          "query": "Solk Herència folk",
+          "resultCount": 3,
+          "bestScore": 5,
+          "autoAcceptedId": null
+        }
+      }
     },
     {
       "name": "Arreu",
@@ -26978,7 +27300,77 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": []
+        "channels": [],
+        "searchCandidates": [
+          {
+            "id": "UCtL5mgc0JLip1cHbQOU2SJw",
+            "title": "Arreu Oficial",
+            "handle": "@arreu",
+            "description": "Canal oficial de Youtube del grup musical [ARREU].\n\nEl gènere musical que engloba les seves cançons és una barreja. Conté una important càrrega de rock combinat amb ska, reggae i rap. I pel que fa a les lletres i missatges de les cançons, tracten temes molt variats, d’amor, amistat i compromís social.\n\n[Arreu] és la nostra forma d'expressio",
+            "subscriberCount": 343,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_l6L_7obd2sZmbvm06tQTP9zH24K2o3sezLst2pxBWvlw=s240-c-k-c0x00ffffff-no-rj",
+            "score": 100,
+            "reasons": [
+              "nom exacte traient oficial",
+              "handle exacte",
+              "marca oficial"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T12:58:41.941Z"
+          },
+          {
+            "id": "UCKonUKf9OfrSXqsYgVqMXYw",
+            "title": "ARRAP Cassalla Crew",
+            "handle": "@arrapcassallacrew",
+            "description": "Canal oficial del grup ARRAP\r\n\r\nTambé a Twitter @ARRAPgrup\r\ni Facebook /ARRAPgrup",
+            "subscriberCount": 1390,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_ke8zigggTLSqZVDg6ycdtPvmZe29u3MBI7hJ0axZzVUL0=s240-c-k-c0x00ffffff-no-rj",
+            "score": 10,
+            "reasons": [
+              "marca oficial"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T12:58:41.941Z"
+          },
+          {
+            "id": "UCmNWg5HDzk-buQIyH51-Sjw",
+            "title": "Héctor Falagán De Cabo",
+            "handle": "@videosenfamilia",
+            "description": "Fotógrafo / Photographer - Videasta / Filmmaker - Community Manager - Webmaster. Director en hfilms & photography.\nVer portafolios de trabajos realizados en Cuba, USA, España y Brasil en: http://www.FalaganDeCabo.es",
+            "subscriberCount": 2190,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_m-PDQOqYqNKbDEp6Tm6C0zjEMh43Ce3OgXwxpzEPibgwHv=s240-c-k-c0x00ffffff-no-rj",
+            "score": 5,
+            "reasons": [
+              "primer resultat"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T12:58:41.941Z"
+          },
+          {
+            "id": "UCin8MU6TOnEclHFlE9-av9Q",
+            "title": "D'Arrel Musical",
+            "handle": "@darrelmusical9737",
+            "description": "",
+            "subscriberCount": 23,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_loa1T41ioQOxFO34h49smwqxYPcXPyv8QKi6u-NRqd2G8=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T12:58:41.941Z"
+          },
+          {
+            "id": "UCGijB2rG6c4DSg4OG7JzzpA",
+            "title": "Bailongu Barcelona",
+            "handle": "@bailongubarcelona",
+            "description": "Bailongu somos una escuela que desde 1989 disfrutamos enseñando y promoviendo el baile en Barcelona y  online por todo el mundo con más de 40000 alumnos!\n\nLa profesionalidad, la ilusión y el entusiasmo de los que trabajamos se trasmite a todo el mundo. Este es el secreto por que nuestros espacios siempre están llenos de gente dispuesta a disfrutar ",
+            "subscriberCount": 33400,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_nBztaicKc58MWUKp50a1eLYGJfXwWVjfXXnXyLsCJ2vhg=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-05T12:58:41.941Z"
+          }
+        ]
       },
       "confidence": "alta",
       "reviewStatus": "pendent",
@@ -26987,7 +27379,17 @@
         "https://arreu.bandcamp.com/album/arreu-musica-i-arrel"
       ],
       "lastChecked": "2026-10-05T12:57:41.035Z",
-      "notes": "Grup de música d’arrel de Mallorca, nascut a Esporles el 2012. Distingir-lo de projectes homònims. Alta de folk i arrel 2026-10-05; canal i selecció pendents de verificació."
+      "notes": "Grup de música d’arrel de Mallorca, nascut a Esporles el 2012. Distingir-lo de projectes homònims. Alta de folk i arrel 2026-10-05; canal i selecció pendents de verificació.",
+      "enrichment": {
+        "youtubeSearch": {
+          "checkedAt": "2026-10-05T12:58:41.941Z",
+          "status": "candidats",
+          "query": "Arreu música arrel Mallorca",
+          "resultCount": 5,
+          "bestScore": 100,
+          "autoAcceptedId": null
+        }
+      }
     },
     {
       "name": "Quico el Célio, el Noi i el Mut de Ferreries",
@@ -27006,7 +27408,50 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": []
+        "channels": [],
+        "searchCandidates": [
+          {
+            "id": "UCv_7jwmDsQHYpxisi82fQng",
+            "title": "Quico El Célio, El Noi i El Mut de Ferreries - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 745,
+            "thumbnail": "https://yt3.ggpht.com/E_JnjssiH0fXmHPFQssWgmQUrSED_drTNK6VVYAj_v4GrGyrsydGrXtxVmYBf56icKhabq2q=s240-c-k-c0x00ffffff-no-rj",
+            "score": 85,
+            "reasons": [
+              "nom exacte de canal Topic",
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-05T12:58:42.602Z"
+          },
+          {
+            "id": "UCYcAA6W7ef4ZOWat8JjaARQ",
+            "title": "Quico el Célio, el Noi i el Mut de Ferreries - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 70,
+            "thumbnail": "https://yt3.ggpht.com/NnNauq1LKInoYxQ7VCl3VfyABc_t3d4FoDih9eJMQK_HGn48d_PmRHX9J4cqMjf_9zXDBye0rAA=s240-c-k-c0x00ffffff-no-rj",
+            "score": 80,
+            "reasons": [
+              "nom exacte de canal Topic"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-05T12:58:42.602Z"
+          },
+          {
+            "id": "UC-Yty92MTwqNSAmrb7NmcEg",
+            "title": "El Mut de Ferreries - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 4,
+            "thumbnail": "http://yt3.ggpht.com/3J0qtWpPtRC1zWSP8DvCqq3nOyGH4XvvGg0Vx4xH8wnDUSKSDNRkCykUIEnx2-dMp9WrNnWKPWoDoh2BDeU=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-05T12:58:42.602Z"
+          }
+        ]
       },
       "confidence": "alta",
       "reviewStatus": "pendent",
@@ -27015,7 +27460,17 @@
         "https://www.quicoelcelio.com/"
       ],
       "lastChecked": "2026-10-05T12:57:41.035Z",
-      "notes": "Cançó tradicional de les Terres de l’Ebre. El web oficial apunta al canal compartit TubalEspectacles; preferir un canal propi o Topic verificat. Alta de folk i arrel 2026-10-05; canal i selecció pendents de verificació."
+      "notes": "Cançó tradicional de les Terres de l’Ebre. El web oficial apunta al canal compartit TubalEspectacles; preferir un canal propi o Topic verificat. Alta de folk i arrel 2026-10-05; canal i selecció pendents de verificació.",
+      "enrichment": {
+        "youtubeSearch": {
+          "checkedAt": "2026-10-05T12:58:42.602Z",
+          "status": "candidats",
+          "query": "Quico el Célio el Noi i el Mut de Ferreries",
+          "resultCount": 3,
+          "bestScore": 85,
+          "autoAcceptedId": null
+        }
+      }
     }
   ]
 }
