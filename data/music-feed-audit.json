@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-04T14:24:58.137Z",
-  "retainedVideoCount": 119,
+  "generatedAt": "2026-10-05T09:11:29.988Z",
+  "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
   "deepPagesFetched": 0,
   "deepChannelCount": 20,
-  "topicChannelCount": 149,
+  "topicChannelCount": 151,
   "governedChannelCount": 74,
   "topicCoverage": [
     {
@@ -857,11 +857,8 @@
     }
   ],
   "topicGovernance": "apply",
-  "governedReclassified": {
-    "other": 211,
-    "song": 21
-  },
-  "topicHiddenCount": 455,
+  "governedReclassified": {},
+  "topicHiddenCount": 0,
   "topicChannels": [
     {
       "id": "UCEMDA-ZXzEUlJjZ-avy0Pvg",
@@ -934,6 +931,13 @@
       "withClip": 13
     },
     {
+      "id": "UC5wqkIyYD4y1lLYN40BL9lg",
+      "name": "ariox",
+      "tracks": 7,
+      "selected": 5,
+      "withClip": 0
+    },
+    {
       "id": "UCnygquYeJppJcbgD085undw",
       "name": "Aspencat",
       "tracks": 42,
@@ -974,6 +978,13 @@
       "tracks": 26,
       "selected": 1,
       "withClip": 14
+    },
+    {
+      "id": "UCMIJ1Y_N61x72rTIAeyzRKA",
+      "name": "Boom Boom Fighters",
+      "tracks": 45,
+      "selected": 38,
+      "withClip": 0
     },
     {
       "id": "UCuk-lO3FpbukFk5lcPx29_g",
@@ -1879,53 +1890,32 @@
       "withClip": 11
     }
   ],
-  "indexedChannelCount": 312,
-  "resolvedChannelCount": 312,
-  "feedChannelCount": 312,
-  "rawPublicVideoCount": 9629,
-  "feedVideoCount": 7654,
-  "acceptedMusicCount": 8163,
-  "categoryEligibleVideoCount": 8099,
+  "indexedChannelCount": 319,
+  "resolvedChannelCount": 319,
+  "feedChannelCount": 319,
+  "rawPublicVideoCount": 4129,
+  "feedVideoCount": 3684,
+  "acceptedMusicCount": 3659,
+  "categoryEligibleVideoCount": 3655,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
-    "before": 1176,
+    "before": 10,
     "matched": 0,
-    "rejected": 1176
+    "rejected": 10
   },
-  "contentReviewCount": 432,
+  "contentReviewCount": 434,
   "contentTypeCounts": {
-    "song": 7848,
-    "live_song": 251,
-    "album": 64,
-    "other": 1034,
-    "review": 432
+    "song": 3567,
+    "live_song": 88,
+    "album": 4,
+    "other": 36,
+    "review": 434
   },
   "unresolvedChannelIds": [],
   "channelsWithoutUploads": [],
-  "channelsWithoutVideos": [
-    "UCMj8K97SgGnI9OdJIHBH-Sw",
-    "UCOEzuNu9yvO0AFTnSVKk4LQ",
-    "UCvdm27ITzhd3bsnftrBmFUg",
-    "UCRdGqpbhydDXIl83A9E8-2Q",
-    "UCwYR6Axoc2mEKz89P8t4N5Q",
-    "UCQAWPZGGc_4JqXq53ATaSBQ",
-    "UCHXlSnGKv7tdBxMw2F-FMkw",
-    "UCLKx4vBoCOKwB2x280VFmng",
-    "UCboGC6e3sTTIO9C6lHxifnA",
-    "UC9i1uNb0GFrISNB2pctkvRg",
-    "UCMNP5PWXks1_Es7e5Fs2LOg",
-    "UCJ6EMs_13PLDvRSHi-XqRwQ",
-    "UCXa6Mb5QgzYjRV_D1VlYoKQ",
-    "UC7IUL5Ba9dhBVPnTLe9RHhQ",
-    "UCHWqKBzUJqglcjVIMViPE0A",
-    "UCUsvtjzfis5NZY8qj8BY_FQ"
-  ],
-  "channelsWithoutAcceptedMusic": [
-    "UCUSjRkF72RR1E8Rl4SWtVsQ",
-    "UC5CGdoxqbma-pqkAHPjkq9w",
-    "UC_eW1AyvwaPsQA5YAuOC3YQ"
-  ],
+  "channelsWithoutVideos": [],
+  "channelsWithoutAcceptedMusic": [],
   "allIndexedChannelsVisible": true,
-  "publishedFeedVideoCount": 3599,
+  "publishedFeedVideoCount": 3657,
   "publishedShortVideoCount": 0
 }
