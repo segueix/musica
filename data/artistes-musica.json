@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-05T13:01:03.628Z",
+  "updatedAt": "2026-10-05T13:02:49.851Z",
   "artists": [
     {
       "name": "2ES",
@@ -27300,6 +27300,7 @@
         "Folk i arrel"
       ],
       "territories": [
+        "Catalunya",
         "País Valencià"
       ],
       "languages": [
@@ -27308,7 +27309,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCHVIvz-1UD7NLa_FBveiFnw",
+            "handle": null,
+            "name": "Solk",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UCuiHiJPEohmHaNPGF22Rz3g",
@@ -27351,13 +27360,15 @@
         ]
       },
       "confidence": "alta",
-      "reviewStatus": "pendent",
-      "active": false,
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
-        "https://elcom.cat/artistes/solk"
+        "https://elcom.cat/artistes/solk",
+        "https://linktr.ee/solkmusicaivers",
+        "https://www.kasbamusic.com/en/2023/08/divendres-es-publica-absencia-el-primer-single-del-nou-disc-de-solk/"
       ],
-      "lastChecked": "2026-10-05T12:57:41.033Z",
-      "notes": "Grup d’arrel de les terres del nord valencià. Distingir-lo de projectes homònims. Alta de folk i arrel 2026-10-05; canal i selecció pendents de verificació.",
+      "lastChecked": "2026-10-05T13:02:49.851Z",
+      "notes": "Grup d’arrel de les Terres de l’Ebre i el Maestrat. Canal enllaçat directament al Linktree del grup. Selecció catalana inicial: Absència, sobre la traducció de Josep Piera del poema d’Abu Bakr el Tortosí. Altres peces pendents d’ampliar amb verificació.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-05T13:01:02.624Z",
@@ -27435,7 +27446,7 @@
         "https://arreu.bandcamp.com/album/arreu-musica-i-arrel"
       ],
       "lastChecked": "2026-10-05T12:57:41.035Z",
-      "notes": "Grup de música d’arrel de Mallorca, nascut a Esporles el 2012. Distingir-lo de projectes homònims. Alta de folk i arrel 2026-10-05; canal i selecció pendents de verificació.",
+      "notes": "Grup de música d’arrel de Mallorca, nascut a Esporles el 2012. Distingir-lo de projectes homònims. Alta de folk i arrel 2026-10-05; canal i selecció pendents de verificació. La cerca 2026-10-05 no ha trobat cap canal propi contrastable; @arreu és un grup homònim de rock/ska/reggae i NO correspon al grup mallorquí. Mantenir sense canal.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-05T13:01:03.259Z",
