@@ -15,11 +15,14 @@ describe('marca i rajoles de la portada', () => {
         expect(css).toMatch(/\.intro-splash-brand \{[\s\S]*?color: var\(--pt-accent\);/);
     });
 
-    it('al mòbil «Música» va damunt del logo, a baix a la dreta; a l’ordinador, al costat del nom', () => {
+    it('al mòbil «Música» va sota «Segueix!» (o damunt del logo si no hi cap el nom); a l’ordinador, al costat', () => {
         expect(html).toMatch(
             /<span class="brand-mark">\s*<img class="brand-logo"[^>]*>\s*<span class="brand-mark__tag"/
         );
         expect(css).toMatch(/\.brand-mark__tag \{\s*display: none;/);
+        expect(css).toMatch(
+            /@container \(max-width: 130px\) \{[\s\S]*?\.app-header \.brand-mark__tag \{\s*display: block;/
+        );
         expect(css).toMatch(/\.brand-mark__tag \{\s*position: absolute;\s*right: -\d+px;\s*bottom: -\d+px;/);
     });
 
