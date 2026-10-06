@@ -433,6 +433,52 @@ describe('Envia una llista i els artistes per WhatsApp', () => {
     });
 });
 
+describe('Obrir un enllaç amb l’app ja oberta', () => {
+    const linkHash = (api) => {
+        const link = api.buildLink(payload({ playlists: [{ id: 'p', name: 'Estiu', videos: [A, B] }], follows: [CH] }));
+        return link.slice(link.indexOf('#'));
+    };
+
+    it('un enllaç nou a la mateixa pestanya (només canvia el fragment) obre la confirmació', () => {
+        const listeners = {};
+        const location = { hash: '', search: '', pathname: '/musica/' };
+        const replaced = [];
+        const { api, el, storage } = ui(
+            {},
+            {
+                location,
+                addEventListener: (type, fn) => {
+                    listeners[type] = fn;
+                },
+                history: { replaceState: (...args) => replaced.push(args[2]) },
+            },
+        );
+        location.hash = linkHash(api);
+        listeners.hashchange();
+        expect(el('musicTransferDialog').showModal).toHaveBeenCalledOnce();
+        expect(el('musicTransferSummary').textContent).toBe('llista «Estiu» (2 cançons) · 1 artistes');
+        expect(replaced).toEqual(['/musica/']);
+        expect(storage.getItem('catube_playlists')).toBeNull();
+    });
+
+    it('l’app instal·lada ja oberta rep l’enllaç per launchQueue', () => {
+        let consumer;
+        const { api, el } = ui(
+            {},
+            {
+                launchQueue: {
+                    setConsumer(fn) {
+                        consumer = fn;
+                    },
+                },
+            },
+        );
+        consumer({ files: [], targetURL: 'https://segueix.github.io/musica/' + linkHash(api) });
+        expect(el('musicTransferDialog').showModal).toHaveBeenCalledOnce();
+        expect(el('musicTransferConfirm').disabled).toBe(false);
+    });
+});
+
 describe('Fitxer propi i compatibilitat amb les còpies ja generades', () => {
     it('comparteix el mateix JSON com a text quan el navegador rebutja l’extensió pròpia', async () => {
         const navigator = {

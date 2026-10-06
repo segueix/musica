@@ -383,7 +383,7 @@
         const dialog = byId('musicTransferDialog');
         byId('musicTransferSummary').textContent = error || summary(payload);
         byId('musicTransferConfirm').disabled = !payload;
-        dialog.showModal();
+        if (!dialog.open) dialog.showModal();
     }
     function requestImport(payload) {
         showImport(validate(payload));
@@ -637,6 +637,14 @@
         return validate(JSON.parse((await file.text()).replace(/^\uFEFF/, '')));
     }
 
+    function openLink(hash) {
+        try {
+            showImport(parseLink(hash));
+        } catch (error) {
+            showImport(null, error.message);
+        }
+    }
+
     async function openFiles(files) {
         if (!files?.length) return;
         if (files.length !== 1) {
@@ -652,7 +660,12 @@
 
     function init() {
         if (!byId('musicTransferWhatsApp')) return;
-        window.launchQueue?.setConsumer?.((launch) => openFiles(launch.files));
+        // L'app instal·lada rep aquí els fitxers associats i, si ja era oberta, l'adreça de l'enllaç.
+        window.launchQueue?.setConsumer?.((launch) => {
+            if (launch.files?.length) return openFiles(launch.files);
+            const hash = String(launch.targetURL || '').replace(/^[^#]*/, '');
+            if (isLink(hash) && hash !== initialHash) openLink(hash);
+        });
         bindAction('musicTransferWhatsApp', sendToWhatsApp);
         bindAction('musicTransferCopy', copyLink);
         refreshListPicker();
@@ -699,13 +712,14 @@
                 byId('musicTransferSummary').textContent = error.message;
             }
         });
-        if (initialHash) {
-            try {
-                showImport(parseLink(initialHash));
-            } catch (error) {
-                showImport(null, error.message);
-            }
-        }
+        if (initialHash) openLink(initialHash);
+        // Amb l'app ja oberta, un enllaç nou només canvia el fragment: la pàgina no es recarrega.
+        window.addEventListener?.('hashchange', () => {
+            const hash = window.location.hash;
+            if (!isLink(hash)) return;
+            window.history.replaceState(null, '', window.location.pathname + window.location.search);
+            openLink(hash);
+        });
         if (new URLSearchParams(window.location.search).has('musicImported')) {
             window.history.replaceState(null, '', window.location.pathname);
             app.features.shellNav?.toast?.('La teva música s’ha importat correctament.');
