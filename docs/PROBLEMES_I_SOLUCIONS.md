@@ -1557,3 +1557,14 @@ La fusió conserva dades locals i és idempotent; llistes amb ID coincident i no
 Límit propi d'enllaç: 8.000 caràcters (pressupost conservador, no una garantia universal de WhatsApp). Mai es retalla historial o llistes per fer-lo cabre: es proposa el fitxer JSON musical (màxim 2 MB en importació). L'enllaç és una còpia transferible, no una vinculació permanent, no caduca ni es pot revocar. No confondre el nou fitxer musical amb l'antic «Exportar tot» de configuració.
 
 Verificació: `tests/music-transfer.test.js` cobreix exclusions de dades, validació, fragment, límits, fusió repetida, col·lisions, preferències, prototips i rollback per quota.
+
+
+## [2026-10-06] - «Massa gran» amb una còpia de 42 kB: compartir el fitxer real
+
+L'avís anterior corresponia al pressupost de 8.000 caràcters de l'enllaç comprimit, no a la mida admissible del fitxer. S'elimina la generació d'enllaços de la interfície i del mòdul; es conserva només la lectura dels enllaços antics. A Configuració, mòbil i ordinador mostren «Genera el fitxer», «Comparteix» i «Importa un fitxer», sense missatges ni seccions sobre límits d'enllaç.
+
+`createFile()` genera `segueix-musica-copia.txt` amb contingut JSON versionat (`segueix-musica`, v1), i `navigator.share({files:[file], title: ...})` comparteix el fitxer real. Text pla s'admet en més menús natius de compartir que `application/json`; `navigator.canShare({files})` comprova la capacitat real. Importació compatible amb .txt, .json i BOM. La generació i importació de fitxers no passen pel còdec d'URL ni pel pressupost dels enllaços. No es retalla la còpia.
+
+Quan el navegador permet compartir fitxers, «Genera» els prepara en memòria i «Comparteix» obre el selector natiu sense crear una descàrrega prèvia. Si el navegador d'escriptori no ofereix aquesta funció, «Genera» desa el fitxer i «Comparteix» obre WhatsApp Web: el text explica que cal adjuntar-lo com a document (una web no pot adjuntar un fitxer automàticament a WhatsApp Web). Cancel·lar el selector natiu no inicia aquest camí alternatiu.
+
+Proves: còpia de més de 42 kB generada i reimportada sense pèrdues; fitxer real passat a Web Share, camí d'escriptori sense aquesta API, cancel·lació i compatibilitat amb JSON anteriors. Es mantenen les proves de fusió, idempotència i rollback.

@@ -1,32 +1,18 @@
 .music-transfer-help {
     font-size: 0.875rem;
     line-height: 1.5;
-    color: var(--text-secondary, #c2c7c0);
+    color: #c2c7c0;
     margin: 10px 0;
 }
-#musicTransferUrl {
-    display: block;
-    width: 100%;
-    box-sizing: border-box;
-    resize: vertical;
-    font-size: 0.8rem;
-    user-select: text;
-}
-#musicTransferWhatsApp {
+#musicTransferWhatsAppFallback:not(.hidden) {
     display: inline-flex;
     align-items: center;
     text-decoration: none;
+    margin-top: 10px;
 }
-.music-transfer-files {
-    margin-top: 16px;
-}
-.music-transfer-files summary {
-    cursor: pointer;
-    padding: 10px 0;
-}
-#musicTransferFile {
-    max-width: 100%;
-    font-size: 0.875rem;
+#musicTransferSection .config-sync-btn:disabled {
+    opacity: 0.5;
+    cursor: default;
 }
 .music-transfer-dialog {
     background: #202421;

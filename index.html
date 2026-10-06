@@ -54,7 +54,7 @@
     <link rel="stylesheet" href="css/styles.css?v=20260929-home-playlists-4">
     <link rel="stylesheet" href="css/portada.css?v=20261006-marca-mobil-2">
     
-    <link rel="stylesheet" href="css/music-transfer.css?v=20261006-1">
+    <link rel="stylesheet" href="css/music-transfer.css?v=20261006-file-2">
     <!-- Icons (Lucide via CDN) -->
     <script src="https://unpkg.com/lucide@0.563.0"></script>
     <!-- lz-string: compressió per a compartició ràpida per URL (Canal A) -->
@@ -735,30 +735,18 @@
                 </div>
                 <div class="settings-section" id="musicTransferSection">
                     <p class="setting-label">Passa la teva música a un altre aparell</p>
-                    <p class="music-transfer-help">Crea un enllaç i envia-te’l per WhatsApp. Obre’l a l’altre aparell i prem «Importa» per afegir-hi l’historial, els cors, els artistes, les llistes i les preferències musicals.</p>
+                    <p class="music-transfer-help">Genera un fitxer amb l’historial, els cors, els artistes, les llistes i les preferències musicals. Després comparteix-lo per WhatsApp o l’aplicació que vulguis.</p>
                     <div class="config-sync-row">
-                        <button class="config-sync-btn" id="musicTransferCreate" type="button">Crea l’enllaç</button>
+                        <button class="config-sync-btn" id="musicTransferCreate" type="button">Genera el fitxer</button>
+                        <button class="config-sync-btn" id="musicTransferShare" type="button" disabled>Comparteix</button>
                     </div>
-                    <div id="musicTransferResult" class="hidden">
-                        <div class="config-sync-row">
-                            <a class="config-sync-btn" id="musicTransferWhatsApp" target="_blank" rel="noopener noreferrer">Envia per WhatsApp</a>
-                            <button class="config-sync-btn" id="musicTransferShare" type="button">Comparteix…</button>
-                            <button class="config-sync-btn" id="musicTransferCopy" type="button">Copia l’enllaç</button>
-                        </div>
-                        <label class="music-transfer-help" for="musicTransferUrl">Enllaç amb la teva còpia musical</label>
-                        <textarea id="musicTransferUrl" class="config-sync-input" readonly rows="2" spellcheck="false"></textarea>
-                    </div>
-                    <p class="music-transfer-help">És una còpia del moment; no manté els aparells sincronitzats. Qui tingui l’enllaç podrà importar-la. Envia-te’l al teu propi xat.</p>
                     <div id="musicTransferFeedback" class="config-sync-feedback hidden" role="status" aria-live="polite"></div>
-                    <details class="music-transfer-files">
-                        <summary>Còpia completa en un fitxer</summary>
-                        <p class="music-transfer-help">Si les dades no caben a l’enllaç, envia el fitxer per WhatsApp com a document. Descarrega’l a l’altre aparell i importa’l aquí.</p>
-                        <div class="config-sync-row">
-                            <button class="config-sync-btn" id="musicTransferDownload" type="button">Descarrega el fitxer</button>
-                            <label class="config-sync-btn" for="musicTransferFile">Importa un fitxer</label>
-                            <input id="musicTransferFile" type="file" accept=".json,application/json">
-                        </div>
-                    </details>
+                    <a class="config-sync-btn hidden" id="musicTransferWhatsAppFallback" href="https://web.whatsapp.com/" target="_blank" rel="noopener noreferrer">Obre WhatsApp Web</a>
+                    <p class="music-transfer-help">A l’altre aparell, guarda el fitxer rebut i obre Música per importar-lo. És una còpia del moment; envia-te-la al teu propi xat.</p>
+                    <div class="config-sync-row">
+                        <button class="config-sync-btn" id="musicTransferImport" type="button">Importa un fitxer</button>
+                        <input id="musicTransferFile" type="file" accept=".json,.txt,application/json,text/plain" hidden>
+                    </div>
                 </div>
                 <div class="settings-section">
                     <p class="setting-label">Dades</p>
@@ -856,7 +844,7 @@
                 <p>Aquesta informació resideix exclusivament al teu dispositiu.</p>
                 <p>Si esborres les dades del navegador o la memòria cau, aquesta configuració es perdrà tret que n'hagis fet una còpia de seguretat manual.</p>
 
-                <p><strong>4. Transferència voluntària entre aparells</strong><br>«Passa la teva música» crea una còpia de les teves dades musicals en un enllaç o un fitxer. No envia aquesta còpia a una API de Segueix ni a l’emmagatzematge de Cloudflare. Si l’envies per WhatsApp o un altre servei, utilitzes aquell servei per transmetre-la. Qualsevol persona que tingui l’enllaç o el fitxer podrà importar-ne les dades; comparteix-lo només amb destinataris de confiança. Els enllaços no caduquen automàticament ni es poden revocar des de Música. La importació requereix confirmació i no crea una sincronització permanent.</p>
+                <p><strong>4. Transferència voluntària entre aparells</strong><br>«Passa la teva música» crea una còpia de les teves dades musicals en un fitxer compartible. Els enllaços de còpies anteriors continuen sent compatibles. No envia aquesta còpia a una API de Segueix ni a l’emmagatzematge de Cloudflare. Si l’envies per WhatsApp o un altre servei, utilitzes aquell servei per transmetre-la. Qualsevol persona que tingui l’enllaç o el fitxer podrà importar-ne les dades; comparteix-lo només amb destinataris de confiança. Els enllaços no caduquen automàticament ni es poden revocar des de Música. La importació requereix confirmació i no crea una sincronització permanent.</p>
 
                 <p><strong>5. Galetes (Cookies), analítica i rastreig</strong></p>
                 <ul>
@@ -990,7 +978,7 @@
     <script src="js/features/category-artists.js?v=20261005-artistes-categoria-1"></script>
     <script src="js/features/shared-playlists.js"></script>
     <script src="js/features/config-sync.js"></script>
-    <script src="js/features/music-transfer.js?v=20261006-1"></script>
+    <script src="js/features/music-transfer.js?v=20261006-file-2"></script>
     <script src="js/features/analytics.js?v=20261006-music-analytics-1"></script>
     <script src="js/features/analytics-pdf.js?v=20261006-music-analytics-1"></script>
     <script src="js/features/analytics-admin.js?v=20261006-music-analytics-1"></script>

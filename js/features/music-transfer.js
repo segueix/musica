@@ -1,8 +1,9 @@
-// Còpia musical entre navegadors: dades dins del fragment, sense API ni vinculació permanent.
+// Còpia musical en un fitxer compartible, sense API ni vinculació permanent.
+// Es manté la lectura dels enllaços antics.
 (function (window) {
     'use strict';
     const app = window.SegueixApp || (window.SegueixApp = { features: {}, utils: {} });
-    const MAX_URL = 8000; // Pressupost propi conservador; no és un límit garantit de WhatsApp.
+    const MAX_URL = 8000; // Només per llegir els enllaços antics; no afecta els fitxers.
     const MAX_FILE = 2 * 1024 * 1024;
     const PREFIX = '#music-transfer=';
     const KEYS = {
@@ -158,24 +159,14 @@
         });
     }
 
-    function buildUrl(payload) {
-        const codec = app.utils.shareCodecs;
-        const encoded = codec?.encodeImportPayload(validate(payload));
-        if (!encoded) throw new Error('No s’ha pogut crear l’enllaç. Torna-ho a provar o descarrega el fitxer.');
-        const url = codec.SHARE_BASE_URL + PREFIX + encoded;
-        if (url.length > MAX_URL)
-            {throw new Error(
-                'La teva música ocupa massa per a un enllaç. Descarrega el fitxer complet i envia’l com a document per WhatsApp; a l’altre aparell, tria «Importa un fitxer».'
-            );}
-        return url;
-    }
-
     function parseLink(hash) {
-        if (!hash.startsWith(PREFIX) || hash.length > MAX_URL)
-            {throw new Error('L’enllaç és incomplet o massa llarg. Demana una còpia nova.');}
+        if (!hash.startsWith(PREFIX) || hash.length > MAX_URL) {
+            throw new Error('L’enllaç és incomplet o massa llarg. Demana una còpia nova.');
+        }
         const raw = app.utils.shareCodecs?.decodeImportPayload(hash.slice(PREFIX.length));
-        if (!raw || JSON.stringify(raw).length > MAX_FILE)
-            {throw new Error('No s’ha pogut llegir l’enllaç. Demana una còpia nova.');}
+        if (!raw || JSON.stringify(raw).length > MAX_FILE) {
+            throw new Error('No s’ha pogut llegir l’enllaç. Demana una còpia nova.');
+        }
         return validate(raw);
     }
 
@@ -206,8 +197,9 @@
         const result = arr(local).map((p) => ({ ...p }));
         incoming.forEach((p) => {
             let match = result.find((x) => String(x.id) === p.id && x.name === p.name);
-            if (field === 'artists')
-                {match = match || result.find((x) => String(x.name).toLowerCase() === p.name.toLowerCase());}
+            if (field === 'artists') {
+                match = match || result.find((x) => String(x.name).toLowerCase() === p.name.toLowerCase());
+            }
             if (match) {
                 match[field] =
                     field === 'videos'
@@ -222,17 +214,18 @@
                     nextId = `${p.id}_import_${(hash >>> 0).toString(36)}`;
                     match = result.find((x) => x.id === nextId && x.name === p.name);
                 }
-                if (match)
-                    {match[field] =
+                if (match) {
+                    match[field] =
                         field === 'videos'
                             ? mergeVideos(match[field], p[field])
-                            : unique([...arr(match[field]), ...p[field]]);}
-                else
-                    {result.push({
+                            : unique([...arr(match[field]), ...p[field]]);
+                } else {
+                    result.push({
                         ...p,
                         id: nextId,
                         [field]: field === 'videos' ? mergeVideos([], p[field]) : p[field],
-                    });}
+                    });
+                }
             }
         });
         return result;
@@ -241,8 +234,9 @@
     function importData(payload, storage = window.localStorage) {
         const d = validate(payload).data;
         const signals = app.features.musicSignals;
-        if (!signals?.mergeStats || !signals?.mergePrefs)
-            {throw new Error('Música encara s’està carregant. Torna-ho a provar.');}
+        if (!signals?.mergeStats || !signals?.mergePrefs) {
+            throw new Error('Música encara s’està carregant. Torna-ho a provar.');
+        }
         const merged = {
             history: mergeVideos(read(storage, KEYS.history, []), d.history, true),
             likes: mergeVideos(read(storage, KEYS.likes, []), d.likes),
@@ -291,73 +285,104 @@
         byId('musicTransferConfirm').disabled = !payload;
         dialog.showModal();
     }
-    function download() {
+    let generatedFile = null;
+    const FILE_NAME = 'segueix-musica-copia.txt';
+
+    // Text pla és compartible a Android; alguns navegadors rebutgen application/json.
+    // El contingut continua sent JSON versionat i validat, també per als fitxers .json antics.
+    function createFile(payload) {
+        return new window.File([JSON.stringify(validate(payload))], FILE_NAME, { type: 'text/plain' });
+    }
+
+    function supportsFileSharing(file, navigator = window.navigator) {
         try {
-            const blob = new Blob([JSON.stringify(collect())], {
-                type: 'application/json',
-            });
-            if (blob.size > MAX_FILE)
-                {throw new Error(
-                    'La còpia supera els 2 MB. Fes servir «Exportar tot» per desar-la com a còpia de seguretat.'
-                );}
-            const url = URL.createObjectURL(blob);
-            const link = window.document.createElement('a');
-            link.href = url;
-            link.download = 'segueix-musica-copia.json';
-            link.click();
-            setTimeout(() => URL.revokeObjectURL(url), 10000);
-            feedback('Fitxer preparat. Envia’l com a document i importa’l des de Música a l’altre aparell.');
-        } catch (error) {
-            feedback(error.message);
+            return typeof navigator.share === 'function' && Boolean(navigator.canShare?.({ files: [file] }));
+        } catch (_) {
+            return false;
         }
     }
+
+    function saveGeneratedFile(file) {
+        const url = URL.createObjectURL(file);
+        const link = window.document.createElement('a');
+        link.href = url;
+        link.download = file.name;
+        link.click();
+        setTimeout(() => URL.revokeObjectURL(url), 10000);
+    }
+
     function prepare() {
-        byId('musicTransferResult').classList.add('hidden');
+        generatedFile = null;
+        byId('musicTransferShare').disabled = true;
+        byId('musicTransferWhatsAppFallback').classList.add('hidden');
         try {
             const payload = collect();
-            const url = buildUrl(payload);
-            byId('musicTransferUrl').value = url;
-            byId('musicTransferWhatsApp').href =
-                `https://wa.me/?text=${encodeURIComponent('La meva música — obre aquest enllaç i prem «Importa»:\n' + url)}`;
-            byId('musicTransferResult').classList.remove('hidden');
-            feedback(summary(payload));
+            generatedFile = createFile(payload);
+            byId('musicTransferShare').disabled = false;
+            if (supportsFileSharing(generatedFile)) {
+                feedback(
+                    'Fitxer generat. Prem «Comparteix» i tria WhatsApp o l’aplicació que vulguis. ' + summary(payload)
+                );
+            } else {
+                // Sense Web Share de fitxers, WhatsApp Web necessita que l'usuari l'adjunti.
+                saveGeneratedFile(generatedFile);
+                feedback(
+                    'Fitxer generat: ' +
+                        generatedFile.name +
+                        '. Prem «Comparteix» i adjunta’l a WhatsApp Web com a document.'
+                );
+            }
         } catch (error) {
-            feedback(error.message);
+            generatedFile = null;
+            byId('musicTransferShare').disabled = true;
+            feedback(error.message || 'No s’ha pogut generar el fitxer. Torna-ho a provar.');
         }
     }
+
+    async function shareFile() {
+        if (!generatedFile) {
+            feedback('Primer prem «Genera el fitxer».');
+            return;
+        }
+        if (!supportsFileSharing(generatedFile)) {
+            byId('musicTransferWhatsAppFallback').classList.remove('hidden');
+            window.open('https://web.whatsapp.com/', '_blank', 'noopener,noreferrer');
+            feedback(
+                'A WhatsApp Web, tria el teu xat i adjunta ' +
+                    generatedFile.name +
+                    ' com a document. El navegador no el pot adjuntar automàticament.'
+            );
+            return;
+        }
+        byId('musicTransferShare').disabled = true;
+        try {
+            // Sense text ni URL: només es comparteix el fitxer que s'acaba de generar.
+            await window.navigator.share({ files: [generatedFile], title: 'La meva música' });
+            feedback('Fitxer lliurat a l’aplicació de compartir.');
+        } catch (error) {
+            if (error.name !== 'AbortError') {
+                feedback('No s’ha pogut obrir el menú de compartir. Torna-ho a provar.');
+            }
+        } finally {
+            byId('musicTransferShare').disabled = false;
+        }
+    }
+
+    async function readFile(file) {
+        return validate(JSON.parse((await file.text()).replace(/^\uFEFF/, '')));
+    }
+
     function init() {
         if (!byId('musicTransferCreate')) return;
         byId('musicTransferCreate').addEventListener('click', prepare);
-        byId('musicTransferDownload').addEventListener('click', download);
-        byId('musicTransferCopy').addEventListener('click', async () => {
-            try {
-                await window.navigator.clipboard.writeText(byId('musicTransferUrl').value);
-                feedback('Enllaç copiat. Envia’l només a qui vulguis donar aquesta còpia.');
-            } catch (_) {
-                byId('musicTransferUrl').focus();
-                byId('musicTransferUrl').select();
-                feedback('Selecciona i copia l’enllaç del camp.');
-            }
-        });
-        byId('musicTransferShare').addEventListener('click', async () => {
-            try {
-                await window.navigator.share({
-                    title: 'La meva música',
-                    text: 'Obre l’enllaç i prem «Importa».',
-                    url: byId('musicTransferUrl').value,
-                });
-            } catch (error) {
-                if (error.name !== 'AbortError') feedback('Pots fer servir «WhatsApp» o «Copia l’enllaç».');
-            }
-        });
-        byId('musicTransferShare').hidden = !window.navigator.share;
+        byId('musicTransferShare').addEventListener('click', shareFile);
+        byId('musicTransferImport').addEventListener('click', () => byId('musicTransferFile').click());
         byId('musicTransferFile').addEventListener('change', async (event) => {
             const file = event.target.files?.[0];
             event.target.value = '';
             if (!file) return;
             try {
-                if (file.size > MAX_FILE) throw new Error('El fitxer supera el màxim de 2 MB.');
-                showImport(validate(JSON.parse(await file.text())));
+                showImport(await readFile(file));
             } catch (error) {
                 showImport(null, error.message || 'El fitxer no és vàlid.');
             }
@@ -400,8 +425,10 @@
     if (initialHash) window.history.replaceState(null, '', window.location.pathname + window.location.search);
     app.features.musicTransfer = {
         collect,
+        createFile,
+        supportsFileSharing,
+        readFile,
         validate,
-        buildUrl,
         parseLink,
         importData,
         mergeVideos,

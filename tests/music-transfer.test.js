@@ -1,4 +1,5 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
+import { File } from 'node:buffer';
 import { loadScript, createMockLocalStorage } from './setup.js';
 
 const A = 'abcdefghijk',
@@ -29,6 +30,7 @@ function setup(storage = createMockLocalStorage(), options = {}) {
     const out = loadScript('js/features/music-transfer.js', {
         SegueixApp: ctx.SegueixApp,
         localStorage: storage,
+        File,
         document: { addEventListener() {} },
         ...options,
     });
@@ -55,12 +57,11 @@ describe('Transferència musical sense servidor', () => {
         expect(JSON.stringify(copy)).not.toContain('SECRET');
     });
 
-    it('crea un enllaç al GitHub Pages actual, amb les dades al fragment', () => {
+    it('continua llegint els enllaços antics de GitHub Pages', () => {
         const { api } = setup();
-        const url = new URL(api.buildUrl(payload({ history: [{ id: A, title: 'L’amor i tu' }] })));
-        expect(url.origin + url.pathname).toBe('https://segueix.github.io/musica/');
-        expect(url.search).toBe('');
-        expect(api.parseLink(url.hash).data.history[0].title).toBe('L’amor i tu');
+        const original = payload({ history: [{ id: A, title: 'L’amor i tu' }] });
+        const hash = '#music-transfer=' + Buffer.from(JSON.stringify(original)).toString('base64url');
+        expect(api.parseLink(hash).data.history[0].title).toBe('L’amor i tu');
     });
 
     it('rebutja una còpia d’un altre producte, versions desconegudes i enllaços corruptes', () => {
@@ -71,17 +72,29 @@ describe('Transferència musical sense servidor', () => {
         expect(() => api.parseLink('#music-transfer=' + 'a'.repeat(8000))).toThrow();
     });
 
-    it('una còpia gran es deriva al fitxer sense retallar llistes ni historial', () => {
+    it('genera i importa un fitxer superior a 42 kB sense aplicar el límit dels enllaços', async () => {
         const { api } = setup();
         const input = payload({
-            playlists: Array.from({ length: 100 }, (_, i) => ({
+            playlists: Array.from({ length: 150 }, (_, i) => ({
                 id: `p${i}`,
                 name: 'Llista ' + i,
                 videos: [{ id: A, title: 't'.repeat(300) }],
             })),
         });
-        expect(api.validate(input).data.playlists).toHaveLength(100);
-        expect(() => api.buildUrl(input)).toThrow(/fitxer/);
+        const file = api.createFile(input);
+        expect(file.size).toBeGreaterThan(42 * 1024);
+        expect(file.name).toBe('segueix-musica-copia.txt');
+        expect(file.type).toBe('text/plain');
+        expect((await api.readFile(file)).data.playlists).toHaveLength(150);
+    });
+
+    it('reconeix els JSON anteriors i els fitxers de text amb BOM', async () => {
+        const { api } = setup();
+        const original = payload({ history: [{ id: A }] });
+        const old = new File([JSON.stringify(original)], 'copia.json', { type: 'application/json' });
+        const txt = new File(['\ufeff' + JSON.stringify(original)], 'copia.txt', { type: 'text/plain' });
+        expect((await api.readFile(old)).data.history).toEqual((await api.readFile(txt)).data.history);
+        await expect(api.readFile(new File(['No és una còpia'], 'error.txt'))).rejects.toThrow();
     });
 
     it('fusiona historial, cors i seguits sense perdre informació local ni duplicar-los', () => {
@@ -196,5 +209,88 @@ describe('Transferència musical sense servidor', () => {
         });
         expect(replaced).toBe('/musica/');
         expect(storage.length).toBe(0);
+    });
+});
+
+function ui(navigator) {
+    const storage = createMockLocalStorage();
+    const elements = new Map();
+    const el = (name) => {
+        if (!elements.has(name))
+            elements.set(name, {
+                disabled: name === 'musicTransferShare',
+                textContent: '',
+                hidden: false,
+                classList: { add: vi.fn(), remove: vi.fn() },
+                handlers: {},
+                addEventListener(event, handler) {
+                    this.handlers[event] = handler;
+                },
+                click: vi.fn(),
+            });
+        return elements.get(name);
+    };
+    const link = { click: vi.fn() };
+    let init;
+    const doc = {
+        getElementById: el,
+        createElement: () => link,
+        addEventListener: (_, handler) => {
+            init = handler;
+        },
+    };
+    const open = vi.fn();
+    const revokeObjectURL = vi.fn();
+    const { api } = setup(storage, {
+        document: doc,
+        navigator,
+        location: { hash: '', search: '' },
+        open,
+        URL: { createObjectURL: vi.fn(() => 'blob:copy'), revokeObjectURL },
+        setTimeout: (fn) => fn(),
+    });
+    init();
+    return { api, el, link, open, revokeObjectURL };
+}
+
+describe('Genera el fitxer i comparteix al mòbil i a l’ordinador', () => {
+    it('adjunta el fitxer real al menú natiu sense cap enllaç ni desar-lo abans', async () => {
+        const navigator = { canShare: vi.fn(() => true), share: vi.fn(async () => {}) };
+        const { el, link, open } = ui(navigator);
+        el('musicTransferCreate').handlers.click();
+        expect(el('musicTransferShare').disabled).toBe(false);
+        expect(link.click).not.toHaveBeenCalled();
+        await el('musicTransferShare').handlers.click();
+        const data = navigator.share.mock.calls[0][0];
+        expect(data.files).toHaveLength(1);
+        expect(data.files[0].name).toBe('segueix-musica-copia.txt');
+        expect(data.url).toBeUndefined();
+        expect(open).not.toHaveBeenCalled();
+    });
+
+    it('ofereix compartir a l’ordinador sense Web Share i explica l’adjunció manual', async () => {
+        const { el, link, open } = ui({});
+        el('musicTransferCreate').handlers.click();
+        expect(link.click).toHaveBeenCalledOnce();
+        expect(link.download).toBe('segueix-musica-copia.txt');
+        expect(el('musicTransferShare').disabled).toBe(false);
+        await el('musicTransferShare').handlers.click();
+        expect(open).toHaveBeenCalledWith('https://web.whatsapp.com/', '_blank', 'noopener,noreferrer');
+        expect(el('musicTransferFeedback').textContent).toContain('no el pot adjuntar automàticament');
+    });
+
+    it('no desa ni obre WhatsApp quan es cancel·la el menú natiu', async () => {
+        const navigator = {
+            canShare: () => true,
+            share: vi.fn(async () => {
+                throw Object.assign(new Error(), { name: 'AbortError' });
+            }),
+        };
+        const { el, link, open } = ui(navigator);
+        el('musicTransferCreate').handlers.click();
+        await el('musicTransferShare').handlers.click();
+        expect(link.click).not.toHaveBeenCalled();
+        expect(open).not.toHaveBeenCalled();
+        expect(el('musicTransferShare').disabled).toBe(false);
     });
 });
