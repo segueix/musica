@@ -5901,28 +5901,42 @@ body.is-video-pip .video-placeholder.is-placeholder-hidden {
 /* ---------- Capçalera mòbil: la marca no es solapa amb la cerca ----------
    La columna de la marca és el que sobra entre la cerca i les icones (≈ 170 px a 393 px d'ample). Amb les
    tipografies reals «Segueix! Música» en fa uns 195 i es menjava la icona de cerca. Al mòbil «Música» no va al
-   costat del nom: va petit, una mica damunt del logo, a baix a la dreta (.brand-mark__tag), i es veu sempre. La
-   marca és un contenidor: si no hi cap «Segueix!», només queda el logo (amb «Música»). */
+   costat del nom: va petit **a sota de «Segueix!», alineat a la dreta** (les dues paraules acaben a la mateixa
+   vertical). La marca és un contenidor: si no hi cap «Segueix!» (≤ 130 px), només queda el logo i «Música» passa a
+   sobre el logo, a baix a la dreta (.brand-mark__tag). */
 @media (max-width: 768px) {
     .app-header .brand {
         container-type: inline-size;
         overflow: hidden;
-        /* espai perquè «Música» pugui sortir una mica per sota i per la dreta del logo sense quedar retallat */
-        gap: 26px;
+        /* espai perquè «Música» pugui sortir per sota del nom (o del logo) sense quedar retallat */
         padding-block: 4px;
     }
 
+    .app-header .brand-name {
+        position: relative;
+    }
+
     .app-header .brand-tag {
-        display: none;
+        position: absolute;
+        top: calc(100% - 7px);
+        right: 0;
+        font-size: 0.6875rem;
+        font-weight: 700;
+        line-height: 1;
+        white-space: nowrap;
+        pointer-events: none;
     }
 
     @container (max-width: 130px) {
         .app-header .brand-name {
             display: none;
         }
+
+        .app-header .brand-mark__tag {
+            display: block;
+        }
     }
 }
-
 
 /* ---------- Artistes de la categoria (js/features/category-artists.js) ----------
    Sota la cançó destacada d'un estil o d'una categoria pròpia: els perfils dels artistes.
@@ -6155,7 +6169,7 @@ body.is-video-pip .video-placeholder.is-placeholder-hidden {
 }
 
 
-/* ---------- Marca: «Música» damunt del logo (només al mòbil) ---------- */
+/* ---------- Marca: «Música» damunt del logo (només al mòbil quan no hi cap el nom; capçalera mòbil, més amunt) ---------- */
 .brand-mark {
     position: relative;
     display: block;
@@ -6171,7 +6185,7 @@ body.is-video-pip .video-placeholder.is-placeholder-hidden {
         position: absolute;
         right: -23px;
         bottom: -4px;
-        display: block;
+        display: none;
         padding: 0 3px;
         border-radius: var(--pt-radius-pill);
         background: var(--pt-bg);
