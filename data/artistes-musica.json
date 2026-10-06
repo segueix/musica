@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-06T15:14:52.077Z",
+  "updatedAt": "2026-10-06T15:30:56.604Z",
   "artists": [
     {
       "name": "2ES",
@@ -28532,6 +28532,48 @@
       ],
       "lastChecked": "2026-10-06T12:45:00.564Z",
       "notes": "Canal mixt indicat per l’usuari. Només els 16 vídeos de Budellam seleccionats a data/music-channel-video-allowlist.json; la versió en castellà de Fuego en la Moncloa queda fora. Imatge: miniatura de budellam prou homes."
+    },
+    {
+      "name": "MASSAVIU",
+      "displayName": "MASSAVIU",
+      "aliases": [
+        "Massaviu"
+      ],
+      "genres": [
+        "Urbana",
+        "Pop"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCh1_-QpgzIdG-3QfCMfZi6w",
+            "handle": "@massaviu1277",
+            "name": "MASSAVIU",
+            "type": "official",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://www.youtube.com/channel/UCh1_-QpgzIdG-3QfCMfZi6w",
+        "https://www.enderrock.cat/sona9/grup2020/38/massaviu",
+        "manual-user-2026-10-06",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-06T15:30:56.604Z",
+      "notes": "Canal indicat per l’usuari; categories Urban i Pop. Grup de música en català, segons la seva presentació a Sona9."
     }
   ]
 }
