@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-06T07:00:43.980Z",
+  "generatedAt": "2026-10-06T07:43:32.441Z",
   "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
   "deepPagesFetched": 0,
   "deepChannelCount": 18,
-  "topicChannelCount": 219,
+  "topicChannelCount": 220,
   "governedChannelCount": 85,
   "topicCoverage": [
     {
@@ -2893,6 +2893,13 @@
       "withClip": 14
     },
     {
+      "id": "UCsOxXt5l7XmAc6AvMQDRV4A",
+      "name": "Tomeu Penya",
+      "tracks": 442,
+      "selected": 40,
+      "withClip": 0
+    },
+    {
       "id": "UCGCmSXoJ_f046wxT7OHUDMA",
       "name": "Toti Soler",
       "tracks": 495,
@@ -3040,13 +3047,13 @@
       "withClip": 0
     }
   ],
-  "indexedChannelCount": 422,
-  "resolvedChannelCount": 422,
-  "feedChannelCount": 422,
-  "rawPublicVideoCount": 4707,
-  "feedVideoCount": 4179,
-  "acceptedMusicCount": 4139,
-  "categoryEligibleVideoCount": 4134,
+  "indexedChannelCount": 423,
+  "resolvedChannelCount": 423,
+  "feedChannelCount": 423,
+  "rawPublicVideoCount": 4747,
+  "feedVideoCount": 4218,
+  "acceptedMusicCount": 4179,
+  "categoryEligibleVideoCount": 4174,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
     "before": 0,
@@ -3055,7 +3062,7 @@
   },
   "contentReviewCount": 534,
   "contentTypeCounts": {
-    "song": 4037,
+    "song": 4077,
     "live_song": 97,
     "album": 5,
     "other": 34,
@@ -3066,6 +3073,6 @@
   "channelsWithoutVideos": [],
   "channelsWithoutAcceptedMusic": [],
   "allIndexedChannelsVisible": true,
-  "publishedFeedVideoCount": 4179,
+  "publishedFeedVideoCount": 4191,
   "publishedShortVideoCount": 0
 }
