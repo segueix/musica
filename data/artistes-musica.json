@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-06T19:23:16.386Z",
+  "updatedAt": "2026-10-06T20:01:00.684Z",
   "artists": [
     {
       "name": "2ES",
@@ -12195,9 +12195,7 @@
     {
       "name": "La Trinca",
       "aliases": [],
-      "genres": [
-        "Cançó d'autor"
-      ],
+      "genres": [],
       "territories": [],
       "languages": [
         "ca"
@@ -12285,8 +12283,8 @@
         "youtube:manual-verified",
         "https://www.youtube.com/channel/UCKpscwdWlVaMqcA81vLI7OA"
       ],
-      "lastChecked": "2026-10-03T20:15:00.000Z",
-      "notes": "Canal Topic verificat manualment; gènere Cançó d'autor.",
+      "lastChecked": "2026-10-06T20:01:00.684Z",
+      "notes": "Canal Topic verificat manualment. Sense categoria per petició de l’usuari (2026-10-06), per mantenir la coherència de les ràdios d’estil.",
       "enrichment": {
         "musicbrainz": {
           "checkedAt": "2026-09-25T15:55:19.770Z",
