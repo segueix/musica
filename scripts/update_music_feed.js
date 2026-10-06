@@ -37,6 +37,10 @@ const CATALOG_STATE_FILE = path.join(process.cwd(), 'data', 'music-catalog-state
 const TOPIC_CATALOG_FILE = path.join(process.cwd(), 'data', 'music-topic-catalog.json');
 // Pàgines (de 50) que es llegeixen de cada canal Tema: la discografia sencera fins a 500 pistes.
 const TOPIC_MAX_PAGES = Math.max(1, Number.parseInt(process.env.MUSIC_TOPIC_MAX_PAGES || '10', 10));
+// Discografies per torns (quota): cada dia la primera pàgina de tots els Tema i la sencera d'1/TOPIC_FULL_DAYS dels
+// canals. MUSIC_TOPIC_FULL_READ=1 les llegeix totes senceres (execució manual completa).
+const TOPIC_FULL_DAYS = Math.max(1, Number.parseInt(process.env.MUSIC_TOPIC_FULL_DAYS || '7', 10));
+const TOPIC_FORCE_FULL_READ = process.env.MUSIC_TOPIC_FULL_READ === '1';
 // Un vídeo del canal propi d'un artista amb Tema publicat fa menys d'aquests dies es manté encara que la cançó
 // no sigui al Tema (el videoclip d'un senzill sol arribar abans que la distribuïdora la publiqui).
 const TOPIC_GRACE_DAYS = 30;
@@ -261,6 +265,9 @@ async function main(){
   const topicIds=new Set(ids.filter(id=>indexed.get(id).types.includes('topic')));
   const topicTracksByChannel=new Map();
   const previousTopicCatalog=readJsonSafe(TOPIC_CATALOG_FILE,{channels:{}}).channels||{};
+  // Tema dels quals avui només s'ha llegit la primera pàgina (la resta de la discografia és la desada)
+  const partialTopicIds=new Set();
+  const readDate=new Date();
 
   for(const id of ids){
     const curated=channelVideoAllowlist.get(id)?.allowedVideoIds;
@@ -277,11 +284,16 @@ async function main(){
     }
     uploadsByChannel.set(id,uploads);
     if(topicIds.has(id)){
-      // Canal Tema: es llegeix la discografia sencera (títols per decidir què és cançó de l'artista).
+      // Canal Tema: discografia (títols per decidir què és cançó de l'artista). Sencera un cop per setmana (torn
+      // del canal), si és nou o si es força; els altres dies només la primera pàgina, amb la resta de la desada.
+      const savedTracks=previousTopicCatalog[id]?.tracks||[];
+      const fullRead=targetMode || tema.shouldReadFullTopic(id,{
+        date:readDate,days:TOPIC_FULL_DAYS,hasCatalog:savedTracks.length>0,force:TOPIC_FORCE_FULL_READ
+      });
       try{
         const tracks=[];
         let pageToken;
-        for(let page=0;page<TOPIC_MAX_PAGES;page++){
+        for(let page=0;page<(fullRead?TOPIC_MAX_PAGES:1);page++){
           const payload=await api('playlistItems',{part:'snippet,contentDetails',playlistId:uploads,maxResults:50,pageToken});
           for(const item of payload.items||[]){
             const videoId=item.contentDetails?.videoId;
@@ -290,8 +302,15 @@ async function main(){
           pageToken=payload.nextPageToken;
           if(!pageToken) break;
         }
-        topicTracksByChannel.set(id,tracks);
-        freshIdsByChannel.set(id,unique(tracks.map(t=>t.id)));
+        if(fullRead){
+          topicTracksByChannel.set(id,tracks);
+          freshIdsByChannel.set(id,unique(tracks.map(t=>t.id)));
+        }else{
+          // Només es verifiquen (videos.list) les pistes noves; la selecció anterior es conserva més avall.
+          partialTopicIds.add(id);
+          topicTracksByChannel.set(id,tema.mergeTopicTracks(tracks,savedTracks));
+          freshIdsByChannel.set(id,unique(tracks.map(t=>t.id)));
+        }
       }catch(error){
         console.warn('⚠️ Tema '+id+': '+error.message);
         freshIdsByChannel.set(id,[]);
@@ -338,7 +357,12 @@ async function main(){
   const retainedIdsByChannel=new Map();
   for(const id of ids){
     const fresh=new Set([...(freshIdsByChannel.get(id)||[]),...(deepIdsByChannel.get(id)||[])]);
-    // Un Tema llegit sencer no necessita repertori conservat: només si la lectura ha fallat.
+    // Un Tema llegit sencer no necessita repertori conservat: només si la lectura ha fallat. Si avui només se n'ha
+    // llegit la primera pàgina, es conserva (i es torna a verificar) tota la selecció anterior del canal.
+    if(partialTopicIds.has(id)){
+      retainedIdsByChannel.set(id,catalog.pickRetained(previousByChannel.get(id),fresh,Infinity).map(v=>v.id));
+      continue;
+    }
     if(topicIds.has(id) && topicTracksByChannel.has(id)){ retainedIdsByChannel.set(id,[]); continue; }
     retainedIdsByChannel.set(id,catalog.pickRetained(previousByChannel.get(id),fresh).map(v=>v.id));
   }

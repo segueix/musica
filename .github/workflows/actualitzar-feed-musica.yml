@@ -1,13 +1,14 @@
 name: Actualitzar feed musical
 
+# Quota de YouTube (2026-10-06): actualització general NOMÉS un cop al dia, a les 20 h de Madrid. Les altes de canals
+# només consulten els canals nous; les baixes es treuen sense cap crida a l'API; els canvis de codi esperen a les 20 h.
+# La decisió és a scripts/lib/abast_feed.js (prova: tests/abast-feed.test.js).
 on:
   push:
     branches:
       - main
     paths:
-      - "scripts/lib/subtitols_castella.js"
-      - "tests/subtitols-castella.test.js"
-      - "scripts/update_music_feed.js"
+      # Revisions de dades: només es tornen a llegir els canals afectats.
       - "data/falsos-shorts.json"
       - "data/music-channel-video-allowlist.json"
   workflow_run:
@@ -17,9 +18,15 @@ on:
     types:
       - completed
   schedule:
-    # Actualització incremental diària de novetats dels canals existents.
-    - cron: "37 8 * * *"
+    # 20 h de Madrid: 18 h UTC a l'estiu i 19 h UTC a l'hivern. scripts/lib/abast_feed.js descarta el que no toca.
+    - cron: "0 18 * * *"
+    - cron: "0 19 * * *"
   workflow_dispatch:
+    inputs:
+      discografia_sencera:
+        description: "Llegeix la discografia sencera de tots els canals Tema (si no, una setena part cada dia)"
+        type: boolean
+        default: false
 
 concurrency:
   group: music-data-writer
@@ -49,82 +56,71 @@ jobs:
           git fetch origin main
           git reset --hard origin/main
 
-      - name: Detecta si realment hi ha canals nous
+      - name: Decideix què cal fer (i si cal gastar quota)
         id: scope
         env:
           EVENT_NAME: ${{ github.event_name }}
+          EVENT_SCHEDULE: ${{ github.event.schedule }}
           BEFORE_SHA: ${{ github.event.before }}
           AFTER_SHA: ${{ github.sha }}
         run: |
           node - <<'NODE'
           const fs=require('fs');
+          const {decideScope}=require('./scripts/lib/abast_feed.js');
+          const {activeChannelIds}=require('./scripts/lib/purga_canals.js');
           const artists=JSON.parse(fs.readFileSync('data/artistes-musica.json','utf8'));
           const feed=JSON.parse(fs.readFileSync('data/feed.json','utf8'));
-          const current=new Set();
-          for(const artist of artists.artists||[]){
-            if(artist.reviewStatus==='rebutjat') continue;
-            for(const channel of artist.youtube?.channels||[]){
-              const id=String(channel?.id||'').trim();
-              if(/^UC[A-Za-z0-9_-]{22}$/.test(id)) current.add(id);
-            }
-          }
-          if(process.env.EVENT_NAME==='push') {
+          const current=activeChannelIds(artists);
+          const existing=new Set(Object.keys(feed.channels||{}));
+          const event=process.env.EVENT_NAME;
+          let reviewed=[];
+          if(event==='push') {
             const {execFileSync}=require('child_process');
             const {canalsRevisats}=require('./scripts/lib/canals_revisats.js');
             const before=process.env.BEFORE_SHA;
             const after=process.env.AFTER_SHA;
             if(!/^[a-f0-9]{40}$/.test(before) || /^0+$/.test(before)) throw new Error('Commit anterior no vàlid');
             execFileSync('git',['fetch','--depth=1','origin',before]);
-            const changed=execFileSync('git',['diff','--name-only',before,after],{encoding:'utf8'}).trim().split('\n');
-            const codeChanged=changed.some(p=>['scripts/update_music_feed.js','scripts/lib/subtitols_castella.js','tests/subtitols-castella.test.js'].includes(p));
-            if(!codeChanged) {
-              const readAt=(sha,path)=>JSON.parse(execFileSync('git',['show',sha+':'+path],{encoding:'utf8'}));
-              const rules='data/music-channel-video-allowlist.json';
-              const shorts='data/falsos-shorts.json';
-              const reviewed=canalsRevisats({
-                abans:readAt(before,rules),despres:readAt(after,rules),
-                shortsAbans:readAt(before,shorts),shortsDespres:readAt(after,shorts),feed,actuals:current
-              });
-              fs.appendFileSync(process.env.GITHUB_OUTPUT,'run_api='+(reviewed.length>0)+'\ntarget_ids='+reviewed.join(',')+'\n');
-              console.log('Canals amb seleccions revisades: '+(reviewed.join(', ')||'cap; no es consulta YouTube'));
-              process.exit(0);
-            }
+            const readAt=(sha,path)=>JSON.parse(execFileSync('git',['show',sha+':'+path],{encoding:'utf8'}));
+            const rules='data/music-channel-video-allowlist.json';
+            const shorts='data/falsos-shorts.json';
+            reviewed=canalsRevisats({
+              abans:readAt(before,rules),despres:readAt(after,rules),
+              shortsAbans:readAt(before,shorts),shortsDespres:readAt(after,shorts),feed,actuals:current
+            });
           }
-          const existing=new Set(Object.keys(feed.channels||{}));
-          const added=[...current].filter(id=>!existing.has(id)).sort();
-          const removed=[...existing].filter(id=>!current.has(id)).sort();
-          const workflowRun=process.env.EVENT_NAME==='workflow_run';
-          const runApi=!workflowRun || added.length>0 || removed.length>0;
-          fs.appendFileSync(process.env.GITHUB_OUTPUT,'run_api='+(runApi?'true':'false')+'\n');
-          // Si hi ha baixes cal regenerar globalment per purgar el canal eliminat.
-          const targeted=workflowRun && removed.length===0 ? added.join(',') : '';
-          fs.appendFileSync(process.env.GITHUB_OUTPUT,'target_ids='+targeted+'\n');
-          console.log(
-            workflowRun
-              ? removed.length
-                ? '🗑️ Canals eliminats: '+removed.join(', ')+'; es regenerarà el feed per purgar-los.'
-                : added.length
-                  ? '🆕 Canals nous: '+added.join(', ')
-                  : '✅ Sense altes ni baixes de canals: no es gastarà quota de YouTube.'
-              : '🔄 Execució programada/manual: actualització incremental general.'
-          );
+          const scope=decideScope({
+            event,
+            schedule:process.env.EVENT_SCHEDULE||'',
+            added:[...current].filter(id=>!existing.has(id)),
+            removed:[...existing].filter(id=>!current.has(id)),
+            reviewed,
+          });
+          fs.appendFileSync(process.env.GITHUB_OUTPUT,
+            'work='+scope.work+'\nrun_api='+scope.runApi+'\ntarget_ids='+scope.targetIds.join(',')+'\n');
+          console.log(scope.message);
+          fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,'## Actualitzar feed musical\n\n'+scope.message+'\n');
           NODE
 
+      - name: Treu els canals de baixa (sense API)
+        if: steps.scope.outputs.work == 'true'
+        run: node scripts/purgar_canals_feed.js
+
       - name: Instal·la dependències
-        if: steps.scope.outputs.run_api == 'true'
+        if: steps.scope.outputs.work == 'true'
         run: npm ci
 
       - name: Valida la base d'artistes
-        if: steps.scope.outputs.run_api == 'true'
+        if: steps.scope.outputs.work == 'true'
         run: npm run music:validate
 
       - name: Prova classificador musical
-        if: steps.scope.outputs.run_api == 'true'
+        if: steps.scope.outputs.work == 'true'
         run: node scripts/test_music_content_classifier.js
 
       - name: Prova catàleg, any original i revisions manuals
-        if: steps.scope.outputs.run_api == 'true'
-        run: npx vitest run tests/cataleg-musical.test.js tests/any-original.test.js tests/music-content-overrides.test.js tests/channel-video-allowlist.test.js tests/canals-revisats.test.js tests/subtitols-castella.test.js tests/aprimar-feed.test.js tests/canal-tema.test.js tests/revisio-idiomes.test.js
+        if: steps.scope.outputs.work == 'true'
+        run: npx vitest run tests/cataleg-musical.test.js tests/any-original.test.js tests/music-content-overrides.test.js tests/channel-video-allowlist.test.js tests/canals-revisats.test.js tests/subtitols-castella.test.js tests/aprimar-feed.test.js tests/canal-tema.test.js tests/revisio-idiomes.test.js tests/quota-feed.test.js
 
       - name: Genera feed
         if: steps.scope.outputs.run_api == 'true'
@@ -133,16 +129,19 @@ jobs:
           MUSIC_VIDEOS_PER_CHANNEL: "50"
           MUSIC_TOPIC_GOVERNANCE: "apply"
           # En revisions de dades conté només els canals afectats; en workflow_run, els nous.
-          # En schedule/manual queda buit i fa l'actualització incremental general.
+          # A les 20 h i en manual queda buit i fa l'actualització incremental general.
           MUSIC_TARGET_CHANNELS: ${{ steps.scope.outputs.target_ids }}
+          # Canals Tema: cada dia la primera pàgina i la discografia sencera d'una setena part (per torns).
+          MUSIC_TOPIC_FULL_DAYS: "7"
+          MUSIC_TOPIC_FULL_READ: ${{ inputs.discografia_sencera && '1' || '0' }}
         run: node scripts/update_music_feed.js
 
       - name: Separa feed calent i historial
-        if: steps.scope.outputs.run_api == 'true'
+        if: steps.scope.outputs.work == 'true'
         run: node scripts/archivar_feed_musical.js
 
       - name: Valida cobertura
-        if: steps.scope.outputs.run_api == 'true'
+        if: steps.scope.outputs.work == 'true'
         run: |
           node - <<'NODE'
           const fs=require('fs');
@@ -152,21 +151,11 @@ jobs:
           NODE
 
       - name: Regenera índex de cerca després del feed
-        if: steps.scope.outputs.run_api == 'true'
+        if: steps.scope.outputs.work == 'true'
         run: npm run search:index:hybrid:rebuild
 
       - name: Publica feed i índex en un sol commit
-        if: steps.scope.outputs.run_api == 'true'
+        if: steps.scope.outputs.work == 'true'
+        # Si main ha canviat mentrestant: git pull --rebase i es torna a provar (no es perd la quota gastada).
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add -A data js/channels-ca.json
-
-          if git diff --cached --quiet; then
-            echo "Feed i índex sense canvis."
-            exit 0
-          fi
-
-          git commit -m "data: actualitza feed i índex musical"
-          git push origin HEAD:main
-
+          bash scripts/publicar_dades.sh "data: actualitza feed i índex musical" data js/channels-ca.json
