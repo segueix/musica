@@ -174,9 +174,14 @@
         if (!isLink(hash) || hash.length > MAX_URL) {
             throw new Error('L’enllaç és incomplet o massa llarg. Demana una còpia nova.');
         }
-        const encoded = hash.startsWith(LINK_PREFIX)
-            ? hash.slice(LINK_PREFIX.length).replace(/~/g, '+').replace(/_/g, '$')
-            : hash.slice(PREFIX.length);
+        let encoded = hash.slice(hash.startsWith(LINK_PREFIX) ? LINK_PREFIX.length : PREFIX.length);
+        try {
+            encoded = decodeURIComponent(encoded);
+        } catch (_) {
+            // Un «%» solt: es prova tal com ha arribat.
+        }
+        // «~» i «_» són dels primers enllaços #musica= (LZString no els fa servir mai).
+        encoded = encoded.replace(/~/g, '+').replace(/_/g, '$');
         const raw = app.utils.shareCodecs?.decodeImportPayload(encoded);
         if (!raw || JSON.stringify(raw).length > MAX_FILE) {
             throw new Error('No s’ha pogut llegir l’enllaç. Demana una còpia nova.');
@@ -329,12 +334,15 @@
     }
 
     // L'enllaç és el que s'obre d'un toc a WhatsApp Web (un fitxer adjunt només es descarrega).
-    // Alfabet de LZString sense «+» ni «$», que alguns xats tallen en reconèixer l'enllaç.
+    // «+» i «$» de LZString van codificats (%2B, %24): alguns xats tallen l'enllaç en aquests caràcters.
+    // Mai «_», «~», «*» ni «`»: WhatsApp els pren com a format (cursiva, ratllat…) i els esborra.
     function buildLink(payload) {
         const encoded = app.utils.shareCodecs?.encodeImportPayload(validate(payload));
         if (!encoded) return '';
         const link =
-            app.utils.shareCodecs.SHARE_BASE_URL + LINK_PREFIX + encoded.replace(/\+/g, '~').replace(/\$/g, '_');
+            app.utils.shareCodecs.SHARE_BASE_URL +
+            LINK_PREFIX +
+            encoded.replace(/\+/g, '%2B').replace(/\$/g, '%24');
         return link.length <= MAX_LINK ? link : '';
     }
 
