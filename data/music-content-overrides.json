@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-05T19:02:42.450Z",
+  "updatedAt": "2026-10-06T12:45:00.564Z",
   "description": "Decisions manuals sobre el tipus de contingut de vídeos concrets. Manen sobre el classificador automàtic (scripts/lib/classificar_contingut_musical.js) i el pipeline (scripts/update_music_feed.js) les reaplica a cada generació del feed. Tipus permesos: song, live_song, album, other. Un vídeo revisat aquí surt de data/music-content-review.json.",
   "videos": [
     {
@@ -1371,6 +1371,102 @@
       "id": "nQVRtG9Z14I",
       "contentType": "song",
       "note": "Cançó en català: Gra Fort. Vegeu docs/REVISION_PIXAMANDURRIES_GRA_FORT_2026-10-05.json."
+    },
+    {
+      "id": "oMt8H43ENBY",
+      "contentType": "live_song",
+      "title": "budellam el torracollons  el pa de cada dia live",
+      "note": "Cançó de Budellam en el canal mixt seleccionat per l’usuari; contrastada amb el títol, la descripció i el repertori del grup."
+    },
+    {
+      "id": "h32bnGdpvwg",
+      "contentType": "live_song",
+      "title": "budellam el terrorista live 2016",
+      "note": "Cançó de Budellam en el canal mixt seleccionat per l’usuari; contrastada amb el títol, la descripció i el repertori del grup."
+    },
+    {
+      "id": "mKb-qmoaKKM",
+      "contentType": "live_song",
+      "title": "budellam catalans live 2013",
+      "note": "Cançó de Budellam en el canal mixt seleccionat per l’usuari; contrastada amb el títol, la descripció i el repertori del grup."
+    },
+    {
+      "id": "t4hXWaOSEzU",
+      "contentType": "song",
+      "title": "Budellam Ben Raschid i Curro",
+      "note": "Cançó de Budellam en el canal mixt seleccionat per l’usuari; contrastada amb el títol, la descripció i el repertori del grup."
+    },
+    {
+      "id": "jx22ka3_fxE",
+      "contentType": "live_song",
+      "title": "budellam ensayo mercenaris 2013",
+      "note": "Cançó de Budellam en el canal mixt seleccionat per l’usuari; contrastada amb el títol, la descripció i el repertori del grup."
+    },
+    {
+      "id": "R7wi00B68R4",
+      "contentType": "song",
+      "title": "BUDELLAM GENT CREMADA",
+      "note": "Cançó de Budellam en el canal mixt seleccionat per l’usuari; contrastada amb el títol, la descripció i el repertori del grup."
+    },
+    {
+      "id": "NhS1gxigf7s",
+      "contentType": "live_song",
+      "title": "BUDELLAM SANG  SANG SANG PROU HOMES LIVE 2013",
+      "note": "Cançó de Budellam en el canal mixt seleccionat per l’usuari; contrastada amb el títol, la descripció i el repertori del grup."
+    },
+    {
+      "id": "z8mIu-8c08E",
+      "contentType": "live_song",
+      "title": "budellam cony yo soc aixi live 2013",
+      "note": "Cançó de Budellam en el canal mixt seleccionat per l’usuari; contrastada amb el títol, la descripció i el repertori del grup."
+    },
+    {
+      "id": "Km93zErYmHw",
+      "contentType": "live_song",
+      "title": "budellam live 2013 video",
+      "note": "Actuació de Budellam de 2013: Catalans i A gust, identificades a la descripció del vídeo."
+    },
+    {
+      "id": "mVKPcoDQOMA",
+      "contentType": "song",
+      "title": "budellam prou homes",
+      "note": "Cançó de Budellam en el canal mixt seleccionat per l’usuari; contrastada amb el títol, la descripció i el repertori del grup."
+    },
+    {
+      "id": "TFzzA2S_ld0",
+      "contentType": "song",
+      "title": "budellam sang sang sang",
+      "note": "Cançó de Budellam en el canal mixt seleccionat per l’usuari; contrastada amb el títol, la descripció i el repertori del grup."
+    },
+    {
+      "id": "czkEXi0ozF4",
+      "contentType": "song",
+      "title": "budellam el torracollons",
+      "note": "Cançó de Budellam en el canal mixt seleccionat per l’usuari; contrastada amb el títol, la descripció i el repertori del grup."
+    },
+    {
+      "id": "P8STgxNu9lw",
+      "contentType": "song",
+      "title": "budellam a gust",
+      "note": "Cançó de Budellam en el canal mixt seleccionat per l’usuari; contrastada amb el títol, la descripció i el repertori del grup."
+    },
+    {
+      "id": "4jVWSJfi4IU",
+      "contentType": "song",
+      "title": "BUDELLAM EL PA DE CADA DIA",
+      "note": "Cançó de Budellam en el canal mixt seleccionat per l’usuari; contrastada amb el títol, la descripció i el repertori del grup."
+    },
+    {
+      "id": "RTPtwffPCS8",
+      "contentType": "song",
+      "title": "budellam el gamarus",
+      "note": "Cançó de Budellam en el canal mixt seleccionat per l’usuari; contrastada amb el títol, la descripció i el repertori del grup."
+    },
+    {
+      "id": "4vgbgoB6F78",
+      "contentType": "song",
+      "title": "budellam el terrorista",
+      "note": "Cançó de Budellam en el canal mixt seleccionat per l’usuari; contrastada amb el títol, la descripció i el repertori del grup."
     }
   ]
 }

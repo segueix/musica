@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-06T08:29:45.611Z",
+  "updatedAt": "2026-10-06T12:45:00.564Z",
   "description": "Llista blanca per a canals on Segueix Música només ha d'ingerir vídeos concrets. Admet títols exactes, fragments obligatoris i fragments exclosos.",
   "channels": {
     "UCKpscwdWlVaMqcA81vLI7OA": {
@@ -1894,6 +1894,52 @@
         "Menjar, Beure I Cardar",
         "Menjar, Beure i Cardar"
       ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCxaFjfjCeRo1dUZXm_YtM6w": {
+      "artist": "Budellam",
+      "note": "Canal mixt de nebur seth onilecram: només les cançons i actuacions de Budellam seleccionades. Fuego en la Moncloa, versió en castellà d’Antidogmatikss, queda exclosa. Imatge demanada: miniatura de budellam prou homes.",
+      "allowedVideoIds": [
+        "oMt8H43ENBY",
+        "h32bnGdpvwg",
+        "mKb-qmoaKKM",
+        "t4hXWaOSEzU",
+        "jx22ka3_fxE",
+        "R7wi00B68R4",
+        "NhS1gxigf7s",
+        "z8mIu-8c08E",
+        "Km93zErYmHw",
+        "mVKPcoDQOMA",
+        "TFzzA2S_ld0",
+        "czkEXi0ozF4",
+        "P8STgxNu9lw",
+        "4jVWSJfi4IU",
+        "RTPtwffPCS8",
+        "4vgbgoB6F78"
+      ],
+      "allowedTitles": [
+        "budellam el torracollons  el pa de cada dia live",
+        "budellam el terrorista live 2016",
+        "budellam catalans live 2013",
+        "Budellam Ben Raschid i Curro",
+        "budellam ensayo mercenaris 2013",
+        "BUDELLAM GENT CREMADA",
+        "BUDELLAM SANG  SANG SANG PROU HOMES LIVE 2013",
+        "budellam cony yo soc aixi live 2013",
+        "budellam live 2013 video",
+        "budellam prou homes",
+        "budellam sang sang sang",
+        "budellam el torracollons",
+        "budellam a gust",
+        "BUDELLAM EL PA DE CADA DIA",
+        "budellam el gamarus",
+        "budellam el terrorista"
+      ],
+      "avatarFromAllowedTitle": "budellam prou homes",
       "acceptedMusicOnly": true,
       "allowedContentTypes": [
         "song",
