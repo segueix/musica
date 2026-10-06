@@ -15,16 +15,31 @@
 
     // ---------- Funcions pures ----------
 
-    // Inicial d'un nom per a l'índex: sense accents (À → A, Ç → C, Ñ → N); números i símbols → «#».
-    function letterOf(name) {
-        const first = String(name ?? '')
+    // El nom visible es conserva; només ignorem l'article català inicial per ordenar i indexar.
+    function sortKey(name) {
+        const fullName = String(name ?? '')
             .trim()
-            .replace(/^[^\p{L}\p{N}]+/u, '')
+            .replace(/^[^\p{L}\p{N}]+/u, '');
+        return fullName.replace(/^(?:(?:el|els|la|les)\s+|l['’ʼ]\s*)/iu, '').trim() || fullName;
+    }
+
+    // Inicial d'un nom per a l'índex: sense article ni accents; números i símbols → «#».
+    function letterOf(name) {
+        const first = sortKey(name)
             .charAt(0)
             .normalize('NFD')
             .replace(/[̀-ͯ]/g, '')
             .toUpperCase();
         return /^[A-Z]$/.test(first) ? first : '#';
+    }
+
+    function compareNames(a, b) {
+        const group = LETTERS.indexOf(letterOf(a)) - LETTERS.indexOf(letterOf(b));
+        return (
+            group ||
+            sortKey(a).localeCompare(sortKey(b), 'ca', { sensitivity: 'base' }) ||
+            String(a ?? '').localeCompare(String(b ?? ''), 'ca', { sensitivity: 'base' })
+        );
     }
 
     // Escala d'una lletra a `distance` posicions de l'activa (lluny: 1).
@@ -226,5 +241,7 @@
         state.grid?.classList.remove('has-az-index');
     }
 
-    app.features.alphabetIndex = { LETTERS, letterOf, scaleFor, indexFromOffset, attach, detach, highlight, jumpTo };
+    app.features.alphabetIndex = {
+        LETTERS, sortKey, compareNames, letterOf, scaleFor, indexFromOffset, attach, detach, highlight, jumpTo,
+    };
 })(window);

@@ -10,10 +10,33 @@ describe('índex alfabètic dels artistes', () => {
     it('la inicial no té accents i els números o símbols van a «#»', () => {
         expect(az.letterOf('Àlex Torío')).toBe('A');
         expect(az.letterOf('Ça va')).toBe('C');
-        expect(az.letterOf('  «Els Catarres»')).toBe('E');
+        expect(az.letterOf('  «Els Catarres»')).toBe('C');
         expect(az.letterOf('31 FAM')).toBe('#');
         expect(az.letterOf('')).toBe('#');
         expect(az.letterOf('òscar')).toBe('O');
+    });
+
+    it('ignora només els articles inicials i admet apòstrofs rectes i tipogràfics', () => {
+        for (const [name, letter] of [
+            ['Els Amics de les Arts', 'A'], ['Els Pets', 'P'], ['La Fúmiga', 'F'],
+            ['La Ludwig Band', 'L'], ['El Petit de Cal Eril', 'P'], ['Les Anxovetes', 'A'],
+            ["L'últim segon", 'U'], ['L’últim segon', 'U'], ['Lʼúltim segon', 'U'],
+            ['  ELS   CATARRES', 'C'], ['Lax’n’Busto', 'L'], ['Elena Gadel', 'E'],
+            ['Elsa', 'E'], ['Leslie', 'L'], ['Laia Llach', 'L'],
+        ]) {
+            expect(az.letterOf(name), name).toBe(letter);
+        }
+        expect(az.sortKey('Els Amics de les Arts')).toBe('Amics de les Arts');
+        expect(az.sortKey('El')).toBe('El');
+    });
+
+    it('ordena per la mateixa clau que la barra sense modificar els noms', () => {
+        const names = ['Els Pets', 'La Ludwig Band', 'Els Amics de les Arts', 'La Fúmiga',
+            'Els Catarres', 'Blaumut', '31 FAM', 'Àlex Torío'];
+        const ordered = [...names].sort(az.compareNames);
+        expect(ordered).toEqual(['31 FAM', 'Àlex Torío', 'Els Amics de les Arts', 'Blaumut',
+            'Els Catarres', 'La Fúmiga', 'La Ludwig Band', 'Els Pets']);
+        expect(ordered.map(az.letterOf)).toEqual(['#', 'A', 'A', 'B', 'C', 'F', 'L', 'P']);
     });
 
     it('la lletra activa és la més gran i les veïnes es fan més petites', () => {

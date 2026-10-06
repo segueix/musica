@@ -8816,7 +8816,9 @@ async function renderFollowPage() {
             withFollowButton.push(channel);
         }
     });
-    const byName = (a, b) => a.name.localeCompare(b.name, 'ca', { sensitivity: 'base' });
+    const byName = (a, b) =>
+        SegueixApp.features.alphabetIndex?.compareNames(a.name, b.name) ??
+        a.name.localeCompare(b.name, 'ca', { sensitivity: 'base' });
     withFollowButton.sort(byName);
     withoutFollowButton.sort(byName);
     const orderedChannels = [...withFollowButton, ...withoutFollowButton];
