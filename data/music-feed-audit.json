@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-06T15:33:43.673Z",
+  "generatedAt": "2026-10-06T19:24:36.101Z",
   "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
   "deepPagesFetched": 0,
   "deepChannelCount": 18,
-  "topicChannelCount": 220,
+  "topicChannelCount": 221,
   "governedChannelCount": 85,
   "topicCoverage": [
     {
@@ -2515,6 +2515,13 @@
       "withClip": 8
     },
     {
+      "id": "UCCYgQLqvl_nmSk4-WPDGPIg",
+      "name": "Paul Fuster",
+      "tracks": 39,
+      "selected": 35,
+      "withClip": 0
+    },
+    {
       "id": "UCboGC6e3sTTIO9C6lHxifnA",
       "name": "PAULA MONTALBÁN",
       "tracks": 3,
@@ -3050,22 +3057,22 @@
   "indexedChannelCount": 425,
   "resolvedChannelCount": 425,
   "feedChannelCount": 425,
-  "rawPublicVideoCount": 4782,
-  "feedVideoCount": 4247,
-  "acceptedMusicCount": 4211,
-  "categoryEligibleVideoCount": 4206,
+  "rawPublicVideoCount": 4758,
+  "feedVideoCount": 4228,
+  "acceptedMusicCount": 4188,
+  "categoryEligibleVideoCount": 4183,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
-    "before": 7,
+    "before": 0,
     "matched": 0,
-    "rejected": 7
+    "rejected": 0
   },
   "contentReviewCount": 536,
   "contentTypeCounts": {
-    "song": 4106,
-    "live_song": 100,
+    "song": 4085,
+    "live_song": 98,
     "album": 5,
-    "other": 35,
+    "other": 34,
     "review": 536
   },
   "unresolvedChannelIds": [],
@@ -3073,6 +3080,6 @@
   "channelsWithoutVideos": [],
   "channelsWithoutAcceptedMusic": [],
   "allIndexedChannelsVisible": true,
-  "publishedFeedVideoCount": 4218,
+  "publishedFeedVideoCount": 4227,
   "publishedShortVideoCount": 0
 }

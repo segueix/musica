@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-06T16:05:13.548Z",
+  "generatedAt": "2026-10-06T19:24:36.854Z",
   "strategy": {
     "mode": "hybrid",
     "monthlyRecentYears": 2
@@ -59,7 +59,7 @@
       "month": 4,
       "granularity": "month",
       "file": "search_index_2025_04.json",
-      "itemCount": 49
+      "itemCount": 48
     },
     {
       "key": "2025_03",
@@ -75,7 +75,7 @@
       "month": 2,
       "granularity": "month",
       "file": "search_index_2025_02.json",
-      "itemCount": 43
+      "itemCount": 42
     },
     {
       "key": "2025_01",
@@ -91,7 +91,7 @@
       "month": null,
       "granularity": "year",
       "file": "search_index_2024.json",
-      "itemCount": 696
+      "itemCount": 694
     },
     {
       "key": "2023",
@@ -99,7 +99,7 @@
       "month": null,
       "granularity": "year",
       "file": "search_index_2023.json",
-      "itemCount": 442
+      "itemCount": 443
     },
     {
       "key": "2022",
@@ -107,7 +107,7 @@
       "month": null,
       "granularity": "year",
       "file": "search_index_2022.json",
-      "itemCount": 365
+      "itemCount": 364
     },
     {
       "key": "2021",
@@ -123,7 +123,7 @@
       "month": null,
       "granularity": "year",
       "file": "search_index_2020.json",
-      "itemCount": 322
+      "itemCount": 320
     },
     {
       "key": "2019",
@@ -131,7 +131,7 @@
       "month": null,
       "granularity": "year",
       "file": "search_index_2019.json",
-      "itemCount": 216
+      "itemCount": 214
     },
     {
       "key": "2018",
@@ -147,7 +147,7 @@
       "month": null,
       "granularity": "year",
       "file": "search_index_2017.json",
-      "itemCount": 220
+      "itemCount": 219
     },
     {
       "key": "2016",
@@ -155,7 +155,7 @@
       "month": null,
       "granularity": "year",
       "file": "search_index_2016.json",
-      "itemCount": 168
+      "itemCount": 166
     },
     {
       "key": "2015",
@@ -171,7 +171,7 @@
       "month": null,
       "granularity": "year",
       "file": "search_index_2014.json",
-      "itemCount": 584
+      "itemCount": 583
     },
     {
       "key": "2013",
@@ -187,7 +187,7 @@
       "month": null,
       "granularity": "year",
       "file": "search_index_2012.json",
-      "itemCount": 11
+      "itemCount": 10
     },
     {
       "key": "2011",
