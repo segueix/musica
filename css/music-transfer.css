@@ -56,3 +56,34 @@
     border-color: var(--pt-accent, #d6ed84);
     font-weight: 600;
 }
+/* Desplegable de la llista i casella dels artistes */
+.music-transfer-field {
+    display: grid;
+    gap: 6px;
+    margin: 12px 0 8px;
+    font-size: 0.9rem;
+}
+.music-transfer-field select {
+    min-height: 44px;
+    width: 100%;
+    max-width: 420px;
+    padding: 0 12px;
+    border-radius: 12px;
+    border: 1px solid var(--pt-line, #56604c);
+    background: var(--pt-surface-2, #2a2f2b);
+    color: var(--pt-text, #f4f0e8);
+    font: inherit;
+}
+.music-transfer-check {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 44px;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+.music-transfer-check input {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--pt-accent, #d6ed84);
+}

@@ -231,9 +231,9 @@ describe('Transferència musical sense servidor', () => {
     });
 });
 
-function ui(navigator, options = {}) {
+function ui(navigator, options = {}, custom = {}) {
     const storage = createMockLocalStorage();
-    const elements = new Map();
+    const elements = new Map(Object.entries(custom));
     const el = (name) => {
         if (!elements.has(name))
             elements.set(name, {
@@ -255,7 +255,7 @@ function ui(navigator, options = {}) {
     let init;
     const doc = {
         getElementById: el,
-        createElement: () => link,
+        createElement: (tag) => (tag === 'option' ? {} : link),
         addEventListener: (_, handler) => {
             init = handler;
         },
@@ -275,37 +275,103 @@ function ui(navigator, options = {}) {
     return { api, el, link, open, revokeObjectURL, storage };
 }
 
-describe('Envia per WhatsApp: un enllaç que s’obre des de WhatsApp Web', () => {
-    const withHistory = (storage) =>
-        storage.setItem('catube_history', JSON.stringify([{ id: A, title: 'Cançó', viewedAt: '2026-10-06' }]));
+describe('Envia una llista i els artistes per WhatsApp', () => {
+    const ids = (n, pad = 'q') => Array.from({ length: n }, (_, i) => String(i).padStart(11, pad));
+    const withList = (storage, n = 20) => {
+        storage.setItem(
+            'catube_playlists',
+            JSON.stringify([
+                {
+                    id: 'p1',
+                    name: 'Estiu',
+                    videos: ids(n).map((id, i) => ({
+                        id,
+                        title: 'Cançó ' + i,
+                        channelTitle: 'Els Catarres',
+                        thumbnail: 'https://i.ytimg.com/x.jpg',
+                    })),
+                },
+                { id: 'p2', name: 'Buida', videos: [] },
+            ]),
+        );
+        storage.setItem('catube_follows', JSON.stringify([CH]));
+        storage.setItem('catube_history', JSON.stringify([{ id: A, title: 'Privada', viewedAt: '2026-10-06' }]));
+    };
+    const pick = (el, list, artists = true) => {
+        el('musicTransferList').value = list;
+        el('musicTransferArtists').checked = artists;
+    };
 
-    it('genera un enllaç sense «+» ni «$» que es torna a llegir igual', () => {
-        const { api } = setup();
-        const copy = payload({ history: [{ id: A, title: 'L’amor i tu' }], follows: [CH] });
+    it('envia només la llista triada i els artistes, sense historial ni títols', () => {
+        const { api, storage } = setup();
+        withList(storage);
+        const copy = api.selection('p1', true);
+        expect(copy.data.playlists[0].videos).toHaveLength(20);
+        expect(copy.data.follows).toEqual([CH]);
+        expect(copy.data.history).toEqual([]);
         const link = api.buildLink(copy);
-        expect(link.startsWith('https://segueix.github.io/musica/#musica=')).toBe(true);
+        expect(link).not.toContain('Cançó');
         expect(link).not.toMatch(/[+$_~*`]/);
-        const hash = link.slice(link.indexOf('#'));
-        expect(api.parseLink(hash).data).toEqual(api.validate(copy).data);
+        const back = api.parseLink(link.slice(link.indexOf('#')));
+        expect(back.data.playlists[0].videos.map((v) => v.id)).toEqual(ids(20));
+        expect(back.data.history).toEqual([]);
+        expect(api.summary(back)).toBe('llista «Estiu» (20 cançons) · 1 artistes');
     });
 
-    it('continua llegint els primers enllaços #musica= amb «~» i «_»', () => {
+    it('només artistes, sense llista; res triat o llista buida donen un avís', () => {
+        const { api, storage } = setup();
+        withList(storage);
+        expect(api.selection('', true).data.playlists).toEqual([]);
+        expect(() => api.selection('', false)).toThrow('Tria una llista');
+        expect(() => api.selection('p2', false)).toThrow('buida');
+    });
+
+    it('l’altre aparell recupera els títols del catàleg', () => {
         const { api } = setup();
-        const copy = payload({ history: [{ id: A, title: 'Cançó' }] });
-        const link = api.buildLink(copy);
-        const old = link.slice(link.indexOf('#')).replace(/%2B/g, '~').replace(/%24/g, '_');
-        expect(api.parseLink(old).data.history[0].id).toBe(A);
+        const copy = api.parseLink(
+            (() => {
+                const link = api.buildLink(payload({ playlists: [{ id: 'p', name: 'L', videos: [A, B] }] }));
+                return link.slice(link.indexOf('#'));
+            })(),
+        );
+        const catalog = new Map([[A, { id: A, title: 'Fins que arribi l’alba', channelTitle: 'Txarango', channelId: CH }]]);
+        const full = api.hydrate(copy, catalog);
+        expect(full.data.playlists[0].videos[0]).toMatchObject({ title: 'Fins que arribi l’alba', channelId: CH });
+        expect(full.data.playlists[0].videos[1]).toEqual({ id: B });
+    });
+
+    it('el desplegable mostra les llistes i tria la primera', () => {
+        const options = [];
+        const select = {
+            dataset: {},
+            value: '',
+            set textContent(_) {
+                options.length = 0;
+            },
+            appendChild: (o) => options.push(o),
+            addEventListener() {},
+            get options() {
+                return options;
+            },
+        };
+        const { api, storage } = ui({}, {}, { musicTransferList: select });
+        withList(storage);
+        api.refreshListPicker(storage);
+        expect(options.map((o) => o.textContent)).toEqual(['Estiu (20)', 'Buida (0)', 'Cap llista']);
+        expect(select.value).toBe('p1');
     });
 
     it('a l’ordinador obre WhatsApp Web amb el missatge i l’enllaç escrits', async () => {
         const { el, open, storage } = ui({});
-        withHistory(storage);
+        withList(storage);
+        pick(el, 'p1');
         await el('musicTransferWhatsApp').handlers.click();
         const url = open.mock.calls[0][0];
         expect(url.startsWith('https://web.whatsapp.com/send?text=')).toBe(true);
         const text = decodeURIComponent(url.split('text=')[1]);
-        expect(text).toContain('1 cançons a l’historial');
+        expect(text).toContain('llista «Estiu» (20 cançons) · 1 artistes');
         expect(text).toMatch(/https:\/\/segueix\.github\.io\/musica\/#musica=\S+$/);
+        expect(text.length).toBeLessThan(1000);
         expect(el('musicTransferFeedback').textContent).toContain('tria el xat');
         expect(el('musicTransferWhatsApp').disabled).toBe(false);
     });
@@ -313,16 +379,8 @@ describe('Envia per WhatsApp: un enllaç que s’obre des de WhatsApp Web', () =
     it('si l’enllaç és massa llarg per a l’adreça de WhatsApp, el copia i obre WhatsApp Web', async () => {
         const writeText = vi.fn(async () => {});
         const { el, open, storage } = ui({ clipboard: { writeText } });
-        storage.setItem(
-            'catube_history',
-            JSON.stringify(
-                Array.from({ length: 400 }, (_, i) => ({
-                    id: String(i).padStart(11, 'h'),
-                    title: 'Cançó llarga ' + i,
-                    viewedAt: '2026-10-06',
-                })),
-            ),
-        );
+        withList(storage, 800);
+        pick(el, 'p1');
         await el('musicTransferWhatsApp').handlers.click();
         expect(writeText.mock.calls[0][0]).toMatch(/#musica=/);
         expect(open).toHaveBeenCalledWith('https://web.whatsapp.com/', '_blank', 'noopener,noreferrer');
@@ -331,10 +389,9 @@ describe('Envia per WhatsApp: un enllaç que s’obre des de WhatsApp Web', () =
 
     it('al mòbil envia el text amb l’enllaç pel menú natiu, sense fitxer', async () => {
         const navigator = { share: vi.fn(async () => {}), canShare: () => true };
-        const { el, open, storage } = ui(navigator, {
-            matchMedia: () => ({ matches: true }),
-        });
-        withHistory(storage);
+        const { el, open, storage } = ui(navigator, { matchMedia: () => ({ matches: true }) });
+        withList(storage);
+        pick(el, 'p1');
         await el('musicTransferWhatsApp').handlers.click();
         const data = navigator.share.mock.calls[0][0];
         expect(data.files).toBeUndefined();
@@ -348,37 +405,31 @@ describe('Envia per WhatsApp: un enllaç que s’obre des de WhatsApp Web', () =
                 throw Object.assign(new Error(), { name: 'AbortError' });
             }),
         };
-        const { el, link, open } = ui(navigator, { matchMedia: () => ({ matches: true }) });
+        const { el, link, open, storage } = ui(navigator, { matchMedia: () => ({ matches: true }) });
+        withList(storage);
+        pick(el, 'p1');
         await el('musicTransferWhatsApp').handlers.click();
         expect(link.click).not.toHaveBeenCalled();
         expect(open).not.toHaveBeenCalled();
         expect(el('musicTransferWhatsApp').disabled).toBe(false);
     });
 
-    it('una còpia massa gran per a un enllaç es comparteix com a fitxer', async () => {
-        const navigator = { canShare: vi.fn(() => true), share: vi.fn(async () => {}) };
-        const { api, el, storage } = ui(navigator);
-        const huge = Array.from({ length: 3000 }, (_, i) => ({
-            id: String(i).padStart(11, 'z'),
-            title: 'Cançó ' + i + ' ' + 'x'.repeat(40),
-            viewedAt: '2026-10-06',
-        }));
-        storage.setItem('catube_history', JSON.stringify(huge));
-        expect(api.buildLink(api.collect())).toBe('');
+    it('sense res triat, avisa i no obre WhatsApp', async () => {
+        const { el, open, storage } = ui({});
+        withList(storage);
+        pick(el, '', false);
         await el('musicTransferWhatsApp').handlers.click();
-        expect(navigator.share.mock.calls[0][0].files[0].name).toBe('copia.segueixmusica');
-        expect(el('musicTransferFeedback').textContent).toContain('massa gran');
+        expect(open).not.toHaveBeenCalled();
+        expect(el('musicTransferFeedback').textContent).toContain('Tria una llista');
     });
 
-    it('«Copia l’enllaç» i «Desa el fitxer» funcionen sense cap pas previ', async () => {
+    it('«Copia l’enllaç» copia el missatge amb l’enllaç', async () => {
         const writeText = vi.fn(async () => {});
-        const { el, link, storage } = ui({ clipboard: { writeText } });
-        withHistory(storage);
+        const { el, storage } = ui({ clipboard: { writeText } });
+        withList(storage);
+        pick(el, 'p1');
         await el('musicTransferCopy').handlers.click();
-        expect(writeText.mock.calls[0][0]).toMatch(/#musica=/);
-        await el('musicTransferSave').handlers.click();
-        expect(link.download).toBe('copia.segueixmusica');
-        expect(link.click).toHaveBeenCalledOnce();
+        expect(writeText.mock.calls[0][0]).toMatch(/Estiu[\s\S]*#musica=/);
     });
 });
 
