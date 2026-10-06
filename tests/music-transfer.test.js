@@ -297,17 +297,18 @@ describe('Envia una llista i els artistes per WhatsApp', () => {
         storage.setItem('catube_follows', JSON.stringify([CH]));
         storage.setItem('catube_history', JSON.stringify([{ id: A, title: 'Privada', viewedAt: '2026-10-06' }]));
     };
-    const pick = (el, list, artists = true) => {
+    const pick = (el, list) => {
         el('musicTransferList').value = list;
-        el('musicTransferArtists').checked = artists;
     };
 
-    it('envia només la llista triada i els artistes, sense historial ni títols', () => {
-        const { api, storage } = setup();
+    it('envia només la llista triada, sense artistes, historial ni títols del catàleg', () => {
+        const { api, storage } = setup(createMockLocalStorage(), {
+            YouTubeAPI: { feedVideos: ids(20).map((id) => ({ id })) },
+        });
         withList(storage);
-        const copy = api.selection('p1', true);
+        const copy = api.selection('p1', false);
         expect(copy.data.playlists[0].videos).toHaveLength(20);
-        expect(copy.data.follows).toEqual([CH]);
+        expect(copy.data.follows).toEqual([]);
         expect(copy.data.history).toEqual([]);
         const link = api.buildLink(copy);
         expect(link).not.toContain('Cançó');
@@ -315,15 +316,20 @@ describe('Envia una llista i els artistes per WhatsApp', () => {
         const back = api.parseLink(link.slice(link.indexOf('#')));
         expect(back.data.playlists[0].videos.map((v) => v.id)).toEqual(ids(20));
         expect(back.data.history).toEqual([]);
-        expect(api.summary(back)).toBe('llista «Estiu» (20 cançons) · 1 artistes');
+        expect(api.summary(back)).toBe('llista «Estiu» (20 cançons)');
     });
 
-    it('només artistes, sense llista; res triat o llista buida donen un avís', () => {
+    it('els artistes s’envien a part, sense cap llista; sense llista o buida dona un avís', () => {
         const { api, storage } = setup();
         withList(storage);
-        expect(api.selection('', true).data.playlists).toEqual([]);
-        expect(() => api.selection('', false)).toThrow('Tria una llista');
+        const artists = api.selection('', true);
+        expect(artists.data.playlists).toEqual([]);
+        expect(artists.data.follows).toEqual([CH]);
+        expect(api.summary(artists)).toBe('1 artistes');
+        expect(() => api.selection('', false)).toThrow('No tens cap llista');
         expect(() => api.selection('p2', false)).toThrow('buida');
+        storage.setItem('catube_follows', '[]');
+        expect(() => api.selection('', true)).toThrow('Encara no segueixes');
     });
 
     it('l’altre aparell recupera els títols del catàleg', () => {
@@ -357,7 +363,7 @@ describe('Envia una llista i els artistes per WhatsApp', () => {
         const { api, storage } = ui({}, {}, { musicTransferList: select });
         withList(storage);
         api.refreshListPicker(storage);
-        expect(options.map((o) => o.textContent)).toEqual(['Estiu (20)', 'Buida (0)', 'Cap llista']);
+        expect(options.map((o) => o.textContent)).toEqual(['Estiu (20)', 'Buida (0)']);
         expect(select.value).toBe('p1');
     });
 
@@ -370,7 +376,8 @@ describe('Envia una llista i els artistes per WhatsApp', () => {
         const url = open.mock.calls[0][0];
         expect(url.startsWith('https://web.whatsapp.com/send?text=')).toBe(true);
         const text = decodeURIComponent(url.split('text=')[1]);
-        expect(text).toContain('llista «Estiu» (20 cançons) · 1 artistes');
+        expect(text).toContain('llista «Estiu» (20 cançons)');
+        expect(text).not.toContain('artistes');
         expect(text).toMatch(/https:\/\/segueix\.github\.io\/musica\/#musica=\S+$/);
         expect(text.length).toBeLessThan(1000);
         expect(el('musicTransferFeedback').textContent).toContain('tria el xat');
@@ -416,13 +423,25 @@ describe('Envia una llista i els artistes per WhatsApp', () => {
         expect(el('musicTransferWhatsApp').disabled).toBe(false);
     });
 
-    it('sense res triat, avisa i no obre WhatsApp', async () => {
+    it('el bloc dels artistes envia només els artistes, amb el seu avís', async () => {
         const { el, open, storage } = ui({});
         withList(storage);
-        pick(el, '', false);
+        await el('musicTransferArtistsWhatsApp').handlers.click();
+        const text = decodeURIComponent(open.mock.calls[0][0].split('text=')[1]);
+        expect(text).toContain('Segueix Música: 1 artistes.');
+        expect(text).not.toContain('llista');
+        expect(el('musicTransferArtistsFeedback').textContent).toContain('tria el xat');
+        expect(el('musicTransferFeedback').textContent).toBe('');
+    });
+
+    it('sense llistes o sense artistes, avisa i no obre WhatsApp', async () => {
+        const { el, open } = ui({});
+        pick(el, '');
         await el('musicTransferWhatsApp').handlers.click();
+        await el('musicTransferArtistsWhatsApp').handlers.click();
         expect(open).not.toHaveBeenCalled();
-        expect(el('musicTransferFeedback').textContent).toContain('Tria una llista');
+        expect(el('musicTransferFeedback').textContent).toContain('No tens cap llista');
+        expect(el('musicTransferArtistsFeedback').textContent).toContain('Encara no segueixes');
     });
 
     it('«Copia l’enllaç» copia el missatge amb l’enllaç', async () => {

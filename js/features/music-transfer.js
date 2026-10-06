@@ -343,9 +343,8 @@
         }
         if (withArtists) data.follows = arr(read(storage, KEYS.follows, []));
         const payload = validate({ product: 'segueix-musica', v: 1, data });
-        if (!payload.data.playlists.length && !payload.data.follows.length) {
-            throw new Error('Tria una llista o marca els artistes que segueixes.');
-        }
+        if (withArtists && !payload.data.follows.length) throw new Error('Encara no segueixes cap artista.');
+        if (!withArtists && !payload.data.playlists.length) throw new Error('No tens cap llista per enviar.');
         if (payload.data.playlists[0] && !payload.data.playlists[0].videos.length) {
             throw new Error('Aquesta llista és buida.');
         }
@@ -394,8 +393,8 @@
 
     let pending = null;
     const byId = (id) => window.document.getElementById(id);
-    function feedback(message) {
-        const el = byId('musicTransferFeedback');
+    function feedback(message, id = 'musicTransferFeedback') {
+        const el = byId(id);
         el.textContent = message;
         el.classList.remove('hidden');
     }
@@ -626,28 +625,28 @@
         lists.forEach((p) => {
             option(String(p.id), `${str(String(p.name || 'Llista'), 80)} (${arr(p.videos).length})`);
         });
-        option('', lists.length ? 'Cap llista' : 'No tens cap llista');
-        // Es manté la triada (també «Cap llista» si l'ha triat l'usuari); si no, la primera llista.
-        const keep =
-            !first &&
-            (lists.some((p) => String(p.id) === previous) || (previous === '' && select.dataset.chosen === '1'));
+        if (!lists.length) option('', 'No tens cap llista');
+        // Es manté la llista triada; si no, la primera.
+        const keep = !first && lists.some((p) => String(p.id) === previous);
         select.value = keep ? previous : lists[0] ? String(lists[0].id) : '';
         const label = byId('musicTransferArtistsCount');
         if (label) label.textContent = follows ? `(${follows})` : '(cap)';
     }
 
-    // Cada botó envia el que hi ha triat en aquell moment: cap pas previ de «generar».
-    function bindAction(buttonId, action) {
+    // Cada botó envia el que hi ha en aquell moment: cap pas previ de «generar».
+    // Bloc «Una llista»: només la llista triada. Bloc «Els artistes que segueixo»: només els artistes.
+    function bindAction(buttonId, action, artists) {
         const button = byId(buttonId);
+        const feedbackId = artists ? 'musicTransferArtistsFeedback' : 'musicTransferFeedback';
         button.addEventListener('click', async () => {
             byId('musicTransferWhatsAppFallback').classList.add('hidden');
             button.disabled = true;
             try {
-                const payload = selection(byId('musicTransferList')?.value, byId('musicTransferArtists')?.checked);
+                const payload = artists ? selection('', true) : selection(byId('musicTransferList')?.value, false);
                 const message = await action(payload);
-                if (message) feedback(message);
+                if (message) feedback(message, feedbackId);
             } catch (error) {
-                feedback(error.message || 'No s’ha pogut preparar l’enllaç. Torna-ho a provar.');
+                feedback(error.message || 'No s’ha pogut preparar l’enllaç. Torna-ho a provar.', feedbackId);
             } finally {
                 button.disabled = false;
             }
@@ -687,12 +686,11 @@
             const hash = String(launch.targetURL || '').replace(/^[^#]*/, '');
             if (isLink(hash) && hash !== initialHash) openLink(hash);
         });
-        bindAction('musicTransferWhatsApp', sendToWhatsApp);
-        bindAction('musicTransferCopy', copyLink);
+        bindAction('musicTransferWhatsApp', sendToWhatsApp, false);
+        bindAction('musicTransferCopy', copyLink, false);
+        bindAction('musicTransferArtistsWhatsApp', sendToWhatsApp, true);
+        bindAction('musicTransferArtistsCopy', copyLink, true);
         refreshListPicker();
-        byId('musicTransferList')?.addEventListener('change', (event) => {
-            if (event.target?.dataset) event.target.dataset.chosen = '1';
-        });
         // La llista pot haver canviat des que s'ha obert l'app: es refà en apropar-s'hi.
         for (const type of ['pointerenter', 'touchstart', 'focusin']) {
             byId('musicTransferSection')?.addEventListener(type, () => refreshListPicker(), { passive: true });
