@@ -54,6 +54,7 @@
     <link rel="stylesheet" href="css/styles.css?v=20260929-home-playlists-4">
     <link rel="stylesheet" href="css/portada.css?v=20261006-marca-mobil-2">
     
+    <link rel="stylesheet" href="css/music-transfer.css?v=20261006-1">
     <!-- Icons (Lucide via CDN) -->
     <script src="https://unpkg.com/lucide@0.563.0"></script>
     <!-- lz-string: compressió per a compartició ràpida per URL (Canal A) -->
@@ -732,32 +733,32 @@
                     <input type="file" id="configManualFileInput" accept=".json" class="hidden">
                     <div class="config-sync-feedback hidden" id="configManualFeedback"></div>
                 </div>
-                <div class="settings-section">
-                    <p class="setting-label">Sincronització entre dispositius</p>
-                    <div id="syncPairingSection">
-                        <div class="config-sync-row">
-                            <button class="config-sync-btn" id="generatePairCodeBtn" type="button">Generar Codi de Vinculació</button>
-                        </div>
-                        <div class="config-sync-feedback hidden" id="pairingCodeFeedback"></div>
-                        <div class="config-sync-row">
-                            <input class="config-sync-input" id="pairingCodeInput" type="text" maxlength="4" inputmode="numeric" pattern="[0-9]*" placeholder="Codi de 4 dígits" aria-label="Codi de vinculació">
-                            <button class="config-sync-btn" id="redeemPairCodeBtn" type="button">Introduir Codi</button>
-                        </div>
-                        <div class="config-sync-feedback hidden" id="pairingRedeemFeedback"></div>
-                    </div>
-                    <div class="hidden" id="linkedSyncActions">
-                        <div class="config-sync-row">
-                            <button class="config-sync-btn" id="uploadCloudSyncBtn" type="button">Pujar dades al núvol</button>
-                            <button class="config-sync-btn" id="downloadCloudSyncBtn" type="button">Descarregar dades del núvol</button>
-                        </div>
-                        <div class="config-sync-row">
-                            <button class="config-sync-btn config-reset-btn" id="unlinkCloudSyncBtn" type="button">Desvincular dispositiu</button>
-                        </div>
-                        <div class="config-sync-feedback hidden" id="linkedSyncFeedback"></div>
-                    </div>
+                <div class="settings-section" id="musicTransferSection">
+                    <p class="setting-label">Passa la teva música a un altre aparell</p>
+                    <p class="music-transfer-help">Crea un enllaç i envia-te’l per WhatsApp. Obre’l a l’altre aparell i prem «Importa» per afegir-hi l’historial, els cors, els artistes, les llistes i les preferències musicals.</p>
                     <div class="config-sync-row">
-                        <button class="config-sync-btn config-legal-link" type="button" data-open-legal-modal>Privacitat i Avís Legal</button>
+                        <button class="config-sync-btn" id="musicTransferCreate" type="button">Crea l’enllaç</button>
                     </div>
+                    <div id="musicTransferResult" class="hidden">
+                        <div class="config-sync-row">
+                            <a class="config-sync-btn" id="musicTransferWhatsApp" target="_blank" rel="noopener noreferrer">Envia per WhatsApp</a>
+                            <button class="config-sync-btn" id="musicTransferShare" type="button">Comparteix…</button>
+                            <button class="config-sync-btn" id="musicTransferCopy" type="button">Copia l’enllaç</button>
+                        </div>
+                        <label class="music-transfer-help" for="musicTransferUrl">Enllaç amb la teva còpia musical</label>
+                        <textarea id="musicTransferUrl" class="config-sync-input" readonly rows="2" spellcheck="false"></textarea>
+                    </div>
+                    <p class="music-transfer-help">És una còpia del moment; no manté els aparells sincronitzats. Qui tingui l’enllaç podrà importar-la. Envia-te’l al teu propi xat.</p>
+                    <div id="musicTransferFeedback" class="config-sync-feedback hidden" role="status" aria-live="polite"></div>
+                    <details class="music-transfer-files">
+                        <summary>Còpia completa en un fitxer</summary>
+                        <p class="music-transfer-help">Si les dades no caben a l’enllaç, envia el fitxer per WhatsApp com a document. Descarrega’l a l’altre aparell i importa’l aquí.</p>
+                        <div class="config-sync-row">
+                            <button class="config-sync-btn" id="musicTransferDownload" type="button">Descarrega el fitxer</button>
+                            <label class="config-sync-btn" for="musicTransferFile">Importa un fitxer</label>
+                            <input id="musicTransferFile" type="file" accept=".json,application/json">
+                        </div>
+                    </details>
                 </div>
                 <div class="settings-section">
                     <p class="setting-label">Dades</p>
@@ -855,12 +856,7 @@
                 <p>Aquesta informació resideix exclusivament al teu dispositiu.</p>
                 <p>Si esborres les dades del navegador o la memòria cau, aquesta configuració es perdrà tret que n'hagis fet una còpia de seguretat manual.</p>
 
-                <p><strong>4. Funcionalitat de Sincronització entre dispositius</strong><br>Si decideixes utilitzar voluntàriament la funció de "Sincronitzar dispositius", l'aplicació funciona de la següent manera:</p>
-                <ul>
-                    <li><strong>Identificador Anònim:</strong> Es genera un codi únic i secret (UUID) per vincular els teus dispositius de forma segura.</li>
-                    <li><strong>Transferència temporal:</strong> En prémer "Sincronitzar", la teva configuració s'envia als servidors de Cloudflare, Inc. (mitjançant el servei Workers KV).</li>
-                    <li><strong>Privacitat i Caducitat:</strong> Les dades viatgen de forma xifrada i s'emmagatzemen només el temps estrictament necessari (pocs minuts) per permetre la descàrrega des de l'altre dispositiu. Un cop finalitzada la sessió o passat el temps límit, les dades s'eliminen automàticament i de forma permanent dels servidors.</li>
-                </ul>
+                <p><strong>4. Transferència voluntària entre aparells</strong><br>«Passa la teva música» crea una còpia de les teves dades musicals en un enllaç o un fitxer. No envia aquesta còpia a una API de Segueix ni a l’emmagatzematge de Cloudflare. Si l’envies per WhatsApp o un altre servei, utilitzes aquell servei per transmetre-la. Qualsevol persona que tingui l’enllaç o el fitxer podrà importar-ne les dades; comparteix-lo només amb destinataris de confiança. Els enllaços no caduquen automàticament ni es poden revocar des de Música. La importació requereix confirmació i no crea una sincronització permanent.</p>
 
                 <p><strong>5. Galetes (Cookies), analítica i rastreig</strong></p>
                 <ul>
@@ -874,7 +870,7 @@
                 <p><strong>6. Drets de l'usuari</strong><br>Com que les dades són locals, tens el control total sobre elles:</p>
                 <ul>
                     <li>Pots esborrar tota la teva informació en qualsevol moment des de l'apartat de configuració de l'aplicació o des de les opcions del teu navegador.</li>
-                    <li>Pots desvincular els teus dispositius eliminant el codi de sincronització des de l'app.</li>
+                    <li>Pots eliminar els enllaços i fitxers compartits dels teus xats i aparells; això no elimina les còpies que altres destinataris ja hagin importat.</li>
                 </ul>
 
                 <p><strong>7. Enllaços a Tercers (YouTube)</strong><br>Aquesta aplicació mostra contingut allotjat a YouTube. En reproduir els vídeos, se t'aplicaran les Condicions de Servei i la Política de Privacitat de Google/YouTube. L'aplicació "Segueix!" no té control sobre el rastreig que Google pugui fer des del seu reproductor incrustat.</p>
@@ -934,6 +930,15 @@
 
     <!-- Scripts -->
     <!-- Base runtime/config -->
+    <dialog id="musicTransferDialog" class="music-transfer-dialog" aria-labelledby="musicTransferTitle" aria-describedby="musicTransferSummary">
+        <h2 id="musicTransferTitle">Importa la teva música</h2>
+        <p id="musicTransferSummary" role="status"></p>
+        <p>Les dades s’afegiran a les que ja tens. Es fusionaran les cançons repetides i es conservaran les teves llistes. La pàgina es recarregarà després d’importar.</p>
+        <div class="config-sync-row">
+            <button class="config-sync-btn" id="musicTransferConfirm" type="button">Importa</button>
+            <button class="config-sync-btn" id="musicTransferCancel" type="button" autofocus>Cancel·la</button>
+        </div>
+    </dialog>
     <script src="js/config.js"></script>
     <script src="js/song-title.js"></script>
     <script src="js/music-categories.js"></script>
@@ -985,6 +990,7 @@
     <script src="js/features/category-artists.js?v=20261005-artistes-categoria-1"></script>
     <script src="js/features/shared-playlists.js"></script>
     <script src="js/features/config-sync.js"></script>
+    <script src="js/features/music-transfer.js?v=20261006-1"></script>
     <script src="js/features/analytics.js?v=20261006-music-analytics-1"></script>
     <script src="js/features/analytics-pdf.js?v=20261006-music-analytics-1"></script>
     <script src="js/features/analytics-admin.js?v=20261006-music-analytics-1"></script>
@@ -1006,3 +1012,4 @@
 
 </body>
 </html>
+

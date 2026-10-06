@@ -1543,3 +1543,17 @@ El workflow `actualitzar-feed-musica.yml` delimita ara els pushes de seleccions/
 **Trampa en provar-ho:** `archivar_feed_musical.js` treballa sobre `path.resolve(__dirname, '..')`, no sobre el directori actual: per provar-lo en una còpia de les dades, copia-hi també `scripts/`. I no tallis la sortida de `purgar_canals_feed.js` amb `| head`: el SIGPIPE l'atura a mitja escriptura.
 
 **Proves:** `tests/quota-feed.test.js`.
+
+
+
+## [2026-10-06] - Transferir Música per WhatsApp des de GitHub Pages
+
+La vinculació heretada apuntava a `/api/sync`, inexistent a GitHub Pages. A Configuració es substitueix per «Passa la teva música a un altre aparell»: enllaç comprimit amb `#music-transfer=` i confirmació explícita en destí. El mòdul captura i retira el fragment abans de l'arrencada; no crida cap API de sincronització. La base és la mateixa `SHARE_BASE_URL` de `share-codecs.js`, actualment `https://segueix.github.io/musica/`. Canviar-la quan es migri el domini.
+
+El payload v1 `segueix-musica` usa una llista explícita de dades: historial, cors (incloent IDs legacy), seguits, llistes, categories musicals, preferències, estadístiques d'escolta, estils inicials i mode de descoberta. No exporta tokens, consentiments, identificadors analítics, caches, volum ni reproducció activa. S'eliminen metadades prescindibles (miniatures, descripcions); les miniatures importades es deriven de l'ID de YouTube. Historial actual: 50 cançons (`HISTORY_LIMIT`), sense augmentar-lo en aquest canvi.
+
+La fusió conserva dades locals i és idempotent; llistes amb ID coincident i nom diferent es conserven separades amb un ID estable. Les estadístiques/preferències usen `mergeStats`/`mergePrefs`; si una escriptura falla es restauren els valors anteriors. Després de confirmar, es recarrega la pàgina per reinicialitzar els caches. L'usuari pot cancel·lar sense cap escriptura.
+
+Límit propi d'enllaç: 8.000 caràcters (pressupost conservador, no una garantia universal de WhatsApp). Mai es retalla historial o llistes per fer-lo cabre: es proposa el fitxer JSON musical (màxim 2 MB en importació). L'enllaç és una còpia transferible, no una vinculació permanent, no caduca ni es pot revocar. No confondre el nou fitxer musical amb l'antic «Exportar tot» de configuració.
+
+Verificació: `tests/music-transfer.test.js` cobreix exclusions de dades, validació, fragment, límits, fusió repetida, col·lisions, preferències, prototips i rollback per quota.

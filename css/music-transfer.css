@@ -1,0 +1,65 @@
+.music-transfer-help {
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: var(--text-secondary, #c2c7c0);
+    margin: 10px 0;
+}
+#musicTransferUrl {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    resize: vertical;
+    font-size: 0.8rem;
+    user-select: text;
+}
+#musicTransferWhatsApp {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+}
+.music-transfer-files {
+    margin-top: 16px;
+}
+.music-transfer-files summary {
+    cursor: pointer;
+    padding: 10px 0;
+}
+#musicTransferFile {
+    max-width: 100%;
+    font-size: 0.875rem;
+}
+.music-transfer-dialog {
+    background: #202421;
+    color: #f4f0e8;
+    border: 1px solid #56604c;
+    border-radius: 16px;
+    width: min(480px, calc(100vw - 48px));
+    max-height: 85dvh;
+    overflow: auto;
+    padding: 24px;
+    box-sizing: border-box;
+}
+.music-transfer-dialog::backdrop {
+    background: rgb(0 0 0 / 75%);
+}
+.music-transfer-dialog h2 {
+    font-size: 1.3rem;
+    margin: 0 0 16px;
+}
+.music-transfer-dialog p {
+    line-height: 1.6;
+    margin: 12px 0;
+}
+.music-transfer-dialog .config-sync-row,
+#musicTransferSection .config-sync-row {
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.music-transfer-dialog button,
+#musicTransferSection .config-sync-btn {
+    min-height: 44px;
+    cursor: pointer;
+}
+#musicTransferSection [hidden] {
+    display: none;
+}

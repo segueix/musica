@@ -1,0 +1,414 @@
+// Còpia musical entre navegadors: dades dins del fragment, sense API ni vinculació permanent.
+(function (window) {
+    'use strict';
+    const app = window.SegueixApp || (window.SegueixApp = { features: {}, utils: {} });
+    const MAX_URL = 8000; // Pressupost propi conservador; no és un límit garantit de WhatsApp.
+    const MAX_FILE = 2 * 1024 * 1024;
+    const PREFIX = '#music-transfer=';
+    const KEYS = {
+        history: 'catube_history',
+        likes: 'catube_liked_videos',
+        follows: 'catube_follows',
+        playlists: 'catube_playlists',
+        categories: 'catube_music_user_categories',
+        prefs: 'catube_music_prefs_v1',
+        stats: 'catube_music_signals_v1',
+        styles: 'catube_first_styles',
+        mode: 'catube_discovery_mode',
+    };
+    const arr = (value) => (Array.isArray(value) ? value : []);
+    const str = (value, max = 300) => (typeof value === 'string' ? value.slice(0, max) : '');
+    const id = (value) => (/^[A-Za-z0-9_-]{1,100}$/.test(String(value || '')) ? String(value) : '');
+    const videoId = (value) => (/^[A-Za-z0-9_-]{11}$/.test(String(value || '')) ? String(value) : '');
+    const channelId = (value) => (/^UC[A-Za-z0-9_-]{22}$/.test(String(value || '')) ? String(value) : '');
+    const num = (value) => (Number.isFinite(Number(value)) ? Math.max(0, Math.min(Number(value), 1e15)) : 0);
+    const date = (value) => (typeof value === 'string' && Number.isFinite(Date.parse(value)) ? value : '');
+    const unique = (values) => [...new Set(values.filter(Boolean))];
+    const badKeys = new Set(['__proto__', 'constructor', 'prototype']);
+    const safeKey = (value) => id(value) && !badKeys.has(value);
+
+    function video(raw) {
+        if (typeof raw === 'string') raw = { id: raw };
+        if (!raw || !videoId(raw.id)) return null;
+        const out = { id: raw.id };
+        for (const field of ['title', 'channelTitle', 'artistName']) {
+            const value = str(raw[field] || raw.snippet?.[field]);
+            if (value) out[field] = value;
+        }
+        const channel = channelId(raw.channelId || raw.snippet?.channelId);
+        if (channel) out.channelId = channel;
+        for (const field of ['viewedAt', 'publishedAt']) if (date(raw[field])) out[field] = raw[field];
+        if (num(raw.durationSeconds)) out.durationSeconds = num(raw.durationSeconds);
+        const categories = unique(arr(raw.categories).map((v) => str(v, 70)));
+        if (categories.length) out.categories = categories.slice(0, 12);
+        if (str(raw.category, 70)) out.category = str(raw.category, 70);
+        return out;
+    }
+
+    function videos(raw) {
+        if (arr(raw).length > 15000) throw new Error('La còpia conté massa cançons.');
+        const map = new Map();
+        arr(raw)
+            .map(video)
+            .filter(Boolean)
+            .forEach((v) => {
+                const old = map.get(v.id);
+                if (!old || (Date.parse(v.viewedAt) || 0) > (Date.parse(old.viewedAt) || 0)) map.set(v.id, v);
+            });
+        return [...map.values()];
+    }
+
+    function preferences(raw) {
+        const out = { v: 1, lessLike: {}, moreLike: {}, blocked: {} };
+        for (const kind of ['lessLike', 'moreLike', 'blocked']) {
+            for (const [key, entry] of Object.entries(raw?.[kind] || {})) {
+                if (safeKey(key) && entry && typeof entry.on === 'boolean') {
+                    out[kind][key] = { at: num(entry.at), on: entry.on };
+                }
+            }
+        }
+        return out;
+    }
+
+    function statistics(raw) {
+        const out = { v: 1, songs: {}, artists: {}, recent: [] };
+        for (const kind of ['songs', 'artists']) {
+            const entries = Object.entries(raw?.[kind] || {});
+            if (entries.length > 10000) throw new Error('La còpia conté massa estadístiques.');
+            for (const [key, entry] of entries) {
+                if (!safeKey(key) || !entry) continue;
+                const clean = {};
+                for (const field of ['q', 'f', 'r', 's', 'h', 'll', 'l', 'sl', 'lq']) {
+                    if (num(entry[field])) clean[field] = num(entry[field]);
+                }
+                if (safeKey(entry.a)) clean.a = entry.a;
+                if (entry.m) {
+                    clean.m = {};
+                    Object.entries(entry.m).forEach(([month, n]) => {
+                        if (/^\d{4}-\d{2}$/.test(month)) clean.m[month] = num(n);
+                    });
+                }
+                out[kind][key] = clean;
+            }
+        }
+        out.recent = arr(raw?.recent)
+            .filter((v) => videoId(v?.id))
+            .slice(0, 60)
+            .map((v) => ({ id: v.id, at: num(v.at) }));
+        return out;
+    }
+
+    function validate(raw) {
+        if (!raw || raw.product !== 'segueix-musica' || raw.v !== 1 || !raw.data || typeof raw.data !== 'object') {
+            throw new Error('Aquest enllaç o fitxer no és una còpia compatible de Música.');
+        }
+        const d = raw.data;
+        if (arr(d.playlists).length > 500 || arr(d.categories).length > 500) throw new Error('La còpia és massa gran.');
+        const data = {
+            history: videos(d.history),
+            likes: videos(d.likes),
+            follows: unique(arr(d.follows).map(channelId)),
+            playlists: arr(d.playlists)
+                .filter((p) => p && id(p.id) && str(p.name))
+                .map((p) => ({
+                    id: id(p.id),
+                    name: str(p.name, 120),
+                    videos: videos(p.videos),
+                    ...(date(p.createdAt) ? { createdAt: p.createdAt } : {}),
+                })),
+            categories: arr(d.categories)
+                .filter((c) => c && id(c.id) && str(c.name))
+                .map((c) => ({
+                    id: id(c.id),
+                    name: str(c.name, 48),
+                    artists: unique(arr(c.artists).map(channelId)),
+                })),
+            prefs: preferences(d.prefs),
+            stats: statistics(d.stats),
+            styles: unique(arr(d.styles).map((s) => str(s, 70))).slice(0, 3),
+            mode: ['home', 'mix', 'surprise', 'new'].includes(d.mode) ? d.mode : '',
+        };
+        return {
+            product: 'segueix-musica',
+            v: 1,
+            createdAt: date(raw.createdAt),
+            data,
+        };
+    }
+
+    function read(storage, key, fallback) {
+        try {
+            return JSON.parse(storage.getItem(key)) ?? fallback;
+        } catch (_) {
+            return fallback;
+        }
+    }
+
+    function collect(storage = window.localStorage) {
+        const data = {};
+        for (const [field, key] of Object.entries(KEYS)) data[field] = read(storage, key, null);
+        // El mode es desa com a text; la resta són estructures JSON.
+        data.mode = storage.getItem(KEYS.mode) || '';
+        data.likes = [...arr(data.likes), ...arr(read(storage, 'user_liked_videos', []))];
+        return validate({
+            product: 'segueix-musica',
+            v: 1,
+            createdAt: new Date().toISOString(),
+            data,
+        });
+    }
+
+    function buildUrl(payload) {
+        const codec = app.utils.shareCodecs;
+        const encoded = codec?.encodeImportPayload(validate(payload));
+        if (!encoded) throw new Error('No s’ha pogut crear l’enllaç. Torna-ho a provar o descarrega el fitxer.');
+        const url = codec.SHARE_BASE_URL + PREFIX + encoded;
+        if (url.length > MAX_URL)
+            {throw new Error(
+                'La teva música ocupa massa per a un enllaç. Descarrega el fitxer complet i envia’l com a document per WhatsApp; a l’altre aparell, tria «Importa un fitxer».'
+            );}
+        return url;
+    }
+
+    function parseLink(hash) {
+        if (!hash.startsWith(PREFIX) || hash.length > MAX_URL)
+            {throw new Error('L’enllaç és incomplet o massa llarg. Demana una còpia nova.');}
+        const raw = app.utils.shareCodecs?.decodeImportPayload(hash.slice(PREFIX.length));
+        if (!raw || JSON.stringify(raw).length > MAX_FILE)
+            {throw new Error('No s’ha pogut llegir l’enllaç. Demana una còpia nova.');}
+        return validate(raw);
+    }
+
+    function mergeVideos(local, incoming, history = false) {
+        const map = new Map(
+            arr(local)
+                .filter((v) => v && videoId(v.id))
+                .map((v) => [v.id, v])
+        );
+        incoming.forEach((v) => {
+            const old = map.get(v.id);
+            const incomingNewer = (Date.parse(v.viewedAt) || 0) > (Date.parse(old?.viewedAt) || 0);
+            const merged = old
+                ? { ...v, ...old }
+                : {
+                      ...v,
+                      thumbnail: `https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`,
+                      source: 'api',
+                  };
+            if (incomingNewer) merged.viewedAt = v.viewedAt;
+            map.set(v.id, merged);
+        });
+        const result = [...map.values()];
+        return history ? result.sort((a, b) => (Date.parse(b.viewedAt) || 0) - (Date.parse(a.viewedAt) || 0)) : result;
+    }
+
+    function mergeLists(local, incoming, field) {
+        const result = arr(local).map((p) => ({ ...p }));
+        incoming.forEach((p) => {
+            let match = result.find((x) => String(x.id) === p.id && x.name === p.name);
+            if (field === 'artists')
+                {match = match || result.find((x) => String(x.name).toLowerCase() === p.name.toLowerCase());}
+            if (match) {
+                match[field] =
+                    field === 'videos'
+                        ? mergeVideos(match[field], p[field])
+                        : unique([...arr(match[field]), ...p[field]]);
+            } else {
+                // Un ID antic generat per data pot coincidir amb el d'una altra llista. ID estable en reimportar.
+                let nextId = p.id;
+                if (result.some((x) => String(x.id) === nextId)) {
+                    let hash = 2166136261;
+                    for (const c of p.name) hash = Math.imul(hash ^ c.charCodeAt(0), 16777619);
+                    nextId = `${p.id}_import_${(hash >>> 0).toString(36)}`;
+                    match = result.find((x) => x.id === nextId && x.name === p.name);
+                }
+                if (match)
+                    {match[field] =
+                        field === 'videos'
+                            ? mergeVideos(match[field], p[field])
+                            : unique([...arr(match[field]), ...p[field]]);}
+                else
+                    {result.push({
+                        ...p,
+                        id: nextId,
+                        [field]: field === 'videos' ? mergeVideos([], p[field]) : p[field],
+                    });}
+            }
+        });
+        return result;
+    }
+
+    function importData(payload, storage = window.localStorage) {
+        const d = validate(payload).data;
+        const signals = app.features.musicSignals;
+        if (!signals?.mergeStats || !signals?.mergePrefs)
+            {throw new Error('Música encara s’està carregant. Torna-ho a provar.');}
+        const merged = {
+            history: mergeVideos(read(storage, KEYS.history, []), d.history, true),
+            likes: mergeVideos(read(storage, KEYS.likes, []), d.likes),
+            follows: unique([...arr(read(storage, KEYS.follows, [])), ...d.follows]),
+            playlists: mergeLists(read(storage, KEYS.playlists, []), d.playlists, 'videos'),
+            categories: mergeLists(read(storage, KEYS.categories, []), d.categories, 'artists'),
+            prefs: signals.mergePrefs(read(storage, KEYS.prefs, {}), d.prefs),
+            stats: signals.mergeStats(read(storage, KEYS.stats, {}), d.stats),
+            styles: unique([...arr(read(storage, KEYS.styles, [])), ...d.styles]).slice(0, 3),
+        };
+        const updates = Object.entries(merged).map(([field, value]) => [KEYS[field], JSON.stringify(value)]);
+        updates.push([
+            'user_liked_videos',
+            JSON.stringify(unique([...arr(read(storage, 'user_liked_videos', [])), ...merged.likes.map((v) => v.id)])),
+        ]);
+        if (!storage.getItem(KEYS.mode) && d.mode) updates.push([KEYS.mode, d.mode]);
+        const previous = updates.map(([key]) => [key, storage.getItem(key)]);
+        try {
+            updates.forEach(([key, value]) => storage.setItem(key, value));
+        } catch (_) {
+            previous.forEach(([key, value]) => {
+                if (value === null) storage.removeItem(key);
+                else storage.setItem(key, value);
+            });
+            throw new Error('No hi ha prou espai per importar la còpia. Les dades anteriors s’han conservat.');
+        }
+        return merged;
+    }
+
+    function summary(payload) {
+        const d = payload.data;
+        return `${d.history.length} cançons a l’historial · ${d.likes.length} cors · ${d.follows.length} artistes · ${d.playlists.length} llistes · ${d.categories.length} categories`;
+    }
+
+    let pending = null;
+    const byId = (id) => window.document.getElementById(id);
+    function feedback(message) {
+        const el = byId('musicTransferFeedback');
+        el.textContent = message;
+        el.classList.remove('hidden');
+    }
+    function showImport(payload, error) {
+        pending = payload;
+        const dialog = byId('musicTransferDialog');
+        byId('musicTransferSummary').textContent = error || summary(payload);
+        byId('musicTransferConfirm').disabled = !payload;
+        dialog.showModal();
+    }
+    function download() {
+        try {
+            const blob = new Blob([JSON.stringify(collect())], {
+                type: 'application/json',
+            });
+            if (blob.size > MAX_FILE)
+                {throw new Error(
+                    'La còpia supera els 2 MB. Fes servir «Exportar tot» per desar-la com a còpia de seguretat.'
+                );}
+            const url = URL.createObjectURL(blob);
+            const link = window.document.createElement('a');
+            link.href = url;
+            link.download = 'segueix-musica-copia.json';
+            link.click();
+            setTimeout(() => URL.revokeObjectURL(url), 10000);
+            feedback('Fitxer preparat. Envia’l com a document i importa’l des de Música a l’altre aparell.');
+        } catch (error) {
+            feedback(error.message);
+        }
+    }
+    function prepare() {
+        byId('musicTransferResult').classList.add('hidden');
+        try {
+            const payload = collect();
+            const url = buildUrl(payload);
+            byId('musicTransferUrl').value = url;
+            byId('musicTransferWhatsApp').href =
+                `https://wa.me/?text=${encodeURIComponent('La meva música — obre aquest enllaç i prem «Importa»:\n' + url)}`;
+            byId('musicTransferResult').classList.remove('hidden');
+            feedback(summary(payload));
+        } catch (error) {
+            feedback(error.message);
+        }
+    }
+    function init() {
+        if (!byId('musicTransferCreate')) return;
+        byId('musicTransferCreate').addEventListener('click', prepare);
+        byId('musicTransferDownload').addEventListener('click', download);
+        byId('musicTransferCopy').addEventListener('click', async () => {
+            try {
+                await window.navigator.clipboard.writeText(byId('musicTransferUrl').value);
+                feedback('Enllaç copiat. Envia’l només a qui vulguis donar aquesta còpia.');
+            } catch (_) {
+                byId('musicTransferUrl').focus();
+                byId('musicTransferUrl').select();
+                feedback('Selecciona i copia l’enllaç del camp.');
+            }
+        });
+        byId('musicTransferShare').addEventListener('click', async () => {
+            try {
+                await window.navigator.share({
+                    title: 'La meva música',
+                    text: 'Obre l’enllaç i prem «Importa».',
+                    url: byId('musicTransferUrl').value,
+                });
+            } catch (error) {
+                if (error.name !== 'AbortError') feedback('Pots fer servir «WhatsApp» o «Copia l’enllaç».');
+            }
+        });
+        byId('musicTransferShare').hidden = !window.navigator.share;
+        byId('musicTransferFile').addEventListener('change', async (event) => {
+            const file = event.target.files?.[0];
+            event.target.value = '';
+            if (!file) return;
+            try {
+                if (file.size > MAX_FILE) throw new Error('El fitxer supera el màxim de 2 MB.');
+                showImport(validate(JSON.parse(await file.text())));
+            } catch (error) {
+                showImport(null, error.message || 'El fitxer no és vàlid.');
+            }
+        });
+        byId('musicTransferCancel').addEventListener('click', () => {
+            pending = null;
+            byId('musicTransferDialog').close();
+        });
+        byId('musicTransferDialog').addEventListener('cancel', () => {
+            pending = null;
+        });
+        byId('musicTransferConfirm').addEventListener('click', () => {
+            if (!pending) return;
+            try {
+                importData(pending);
+                pending = null;
+                byId('musicTransferConfirm').disabled = true;
+                byId('musicTransferSummary').textContent = 'Música importada. Recarregant…';
+                // Recarregar reinicialitza els caches i els observadors amb les dades fusionades.
+                window.location.replace(app.utils.shareCodecs.SHARE_BASE_URL + '?musicImported=1');
+            } catch (error) {
+                byId('musicTransferSummary').textContent = error.message;
+            }
+        });
+        if (initialHash) {
+            try {
+                showImport(parseLink(initialHash));
+            } catch (error) {
+                showImport(null, error.message);
+            }
+        }
+        if (new URLSearchParams(window.location.search).has('musicImported')) {
+            window.history.replaceState(null, '', window.location.pathname);
+            app.features.shellNav?.toast?.('La teva música s’ha importat correctament.');
+        }
+    }
+
+    // Captura abans que l'arrencada canviï la ruta; treu les dades de l'URL i de l'historial del navegador.
+    const initialHash = window.location?.hash?.startsWith(PREFIX) ? window.location.hash : '';
+    if (initialHash) window.history.replaceState(null, '', window.location.pathname + window.location.search);
+    app.features.musicTransfer = {
+        collect,
+        validate,
+        buildUrl,
+        parseLink,
+        importData,
+        mergeVideos,
+        mergeLists,
+        summary,
+        MAX_URL,
+        KEYS,
+    };
+    window.document?.addEventListener('DOMContentLoaded', init);
+})(window);

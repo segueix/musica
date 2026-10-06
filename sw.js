@@ -16,7 +16,7 @@
 // migrant els clients automàticament.
 
 // === AUTO-GENERAT per scripts/actualitzar_versio_sw.js — NO EDITAR MANUALMENT ===
-const CACHE_VERSION = 'c02bd532dc59';
+const CACHE_VERSION = '4d2270d691ef';
 const STATIC_ASSETS = [
     './',
     './index.html',
@@ -24,6 +24,7 @@ const STATIC_ASSETS = [
     './img/icon-192.png',
     './css/styles.css',
     './css/portada.css',
+    './css/music-transfer.css',
     './js/config.js',
     './js/song-title.js',
     './js/music-categories.js',
@@ -68,6 +69,7 @@ const STATIC_ASSETS = [
     './js/features/category-artists.js',
     './js/features/shared-playlists.js',
     './js/features/config-sync.js',
+    './js/features/music-transfer.js',
     './js/features/analytics.js',
     './js/features/analytics-pdf.js',
     './js/features/analytics-admin.js',
