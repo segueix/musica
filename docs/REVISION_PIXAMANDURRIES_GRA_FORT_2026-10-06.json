@@ -1,12 +1,12 @@
 {
-  "reviewedAt": "2026-10-06T07:58:24.332187Z",
+  "reviewedAt": "2026-10-06T08:29:45.611Z",
   "scope": "Només els dos canals Tema indicats per l’usuari. Inventari complet; s’amplia la selecció amb evidència de llengua, sense considerar en català les peces encara no verificades.",
   "channels": [
     {
       "artist": "Pixamandúrries",
       "channelId": "UCXQsHe-XMB9xWUxtRLFAWQg",
       "inventoryCount": 30,
-      "acceptedCount": 8,
+      "acceptedCount": 13,
       "videos": [
         {
           "id": "roMksx9Gl08",
@@ -21,8 +21,22 @@
           "title": "Escampa la rebel·lió",
           "durationSeconds": 98,
           "url": "https://www.youtube.com/watch?v=276JxrKVmUM",
-          "decision": "pendent",
-          "reason": "No s’ha pogut contrastar prou la llengua del text. No s’infereix pel títol."
+          "decision": "acceptat",
+          "reason": "Ampliació del disc demanada per l’usuari. Contrast de la mostra vocal oficial (30 segons) amb reconeixement de parla i lectura lingüística; no és una transcripció íntegra de la cançó.",
+          "language": "ca",
+          "evidence": [
+            "https://music.apple.com/us/album/escampa-la-rebel-li%C3%B3/1510667330?i=1510667818&uo=4",
+            "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview123/v4/2d/d4/bc/2dd4bcfd-d40c-97fe-b3f7-fa1f97e477da/mzaf_6296281748682640033.plus.aac.p.m4a",
+            "https://www.enderrock.cat/disc/8389/dels-rics-dels-pobres",
+            "https://radioteca.cat/p/sona9/2020/05/10/el-virus-del-ratpenat-tm4pZMFAxms2ONs2RSwl4g"
+          ],
+          "reviewedAt": "2026-10-06T08:29:45.611Z",
+          "shortsCheck": {
+            "status": 303,
+            "location": "https://www.youtube.com/watch?v=276JxrKVmUM",
+            "checkedAt": "2026-10-06T08:29:45.611Z",
+            "result": "vídeo normal, no Short"
+          }
         },
         {
           "id": "6BDBIP9APrM",
@@ -30,7 +44,7 @@
           "durationSeconds": 108,
           "url": "https://www.youtube.com/watch?v=6BDBIP9APrM",
           "decision": "pendent",
-          "reason": "No s’ha pogut contrastar prou la llengua del text. No s’infereix pel títol."
+          "reason": "La mostra no permet confirmar una lletra catalana; pendent de revisió completa."
         },
         {
           "id": "B7tyLEXysUk",
@@ -38,7 +52,7 @@
           "durationSeconds": 247,
           "url": "https://www.youtube.com/watch?v=B7tyLEXysUk",
           "decision": "pendent",
-          "reason": "No s’ha pogut contrastar prou la llengua del text. No s’infereix pel títol."
+          "reason": "Pista composta Guerra / La realidad social: part catalana detectada, però no s’ha validat el conjunt amb el criteri de llengua."
         },
         {
           "id": "CWg0Z813JcQ",
@@ -46,31 +60,57 @@
           "durationSeconds": 134,
           "url": "https://www.youtube.com/watch?v=CWg0Z813JcQ",
           "decision": "pendent",
-          "reason": "No s’ha pogut contrastar prou la llengua del text. No s’infereix pel títol."
+          "reason": "La mostra no aporta text vocal identificable; pendent de revisar la pista completa."
         },
         {
           "id": "Ga1TVVBjwVc",
           "title": "Capità Enciam",
           "durationSeconds": 93,
           "url": "https://www.youtube.com/watch?v=Ga1TVVBjwVc",
-          "decision": "pendent",
-          "reason": "No s’ha pogut contrastar prou la llengua del text. No s’infereix pel títol."
+          "decision": "acceptat",
+          "reason": "Ampliació del disc demanada per l’usuari. Contrast de la mostra vocal oficial (30 segons) amb reconeixement de parla i lectura lingüística; no és una transcripció íntegra de la cançó.",
+          "language": "ca",
+          "evidence": [
+            "https://music.apple.com/us/album/capit%C3%A0-enciam/1510667330?i=1510667817&uo=4",
+            "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview123/v4/2c/34/89/2c348925-f3e6-2b1a-6c86-bb1c4e325d76/mzaf_3502952978273082323.plus.aac.p.m4a",
+            "https://www.enderrock.cat/disc/8389/dels-rics-dels-pobres"
+          ],
+          "reviewedAt": "2026-10-06T08:29:45.611Z",
+          "shortsCheck": {
+            "status": 303,
+            "location": "https://www.youtube.com/watch?v=Ga1TVVBjwVc",
+            "checkedAt": "2026-10-06T08:29:45.611Z",
+            "result": "vídeo normal, no Short"
+          }
         },
         {
           "id": "Ugcg8JfqVT4",
           "title": "Bojos",
           "durationSeconds": 96,
           "url": "https://www.youtube.com/watch?v=Ugcg8JfqVT4",
-          "decision": "pendent",
-          "reason": "No s’ha pogut contrastar prou la llengua del text. No s’infereix pel títol."
+          "decision": "acceptat",
+          "reason": "Ampliació del disc demanada per l’usuari. Contrast de la mostra vocal oficial (30 segons) amb reconeixement de parla i lectura lingüística; no és una transcripció íntegra de la cançó.",
+          "language": "ca",
+          "evidence": [
+            "https://music.apple.com/us/album/bojos/1510667330?i=1510668018&uo=4",
+            "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview123/v4/2e/41/0f/2e410ff9-6d9d-b202-9e59-df343bbb9721/mzaf_3294796853218075439.plus.aac.p.m4a",
+            "https://www.enderrock.cat/disc/8389/dels-rics-dels-pobres"
+          ],
+          "reviewedAt": "2026-10-06T08:29:45.611Z",
+          "shortsCheck": {
+            "status": 303,
+            "location": "https://www.youtube.com/watch?v=Ugcg8JfqVT4",
+            "checkedAt": "2026-10-06T08:29:45.611Z",
+            "result": "vídeo normal, no Short"
+          }
         },
         {
           "id": "XQ7PIBaVOFE",
           "title": "Ritmo Corazón",
           "durationSeconds": 148,
           "url": "https://www.youtube.com/watch?v=XQ7PIBaVOFE",
-          "decision": "pendent",
-          "reason": "No s’ha pogut contrastar prou la llengua del text. No s’infereix pel títol."
+          "decision": "exclos",
+          "reason": "Mostra vocal en castellà; no incorporar."
         },
         {
           "id": "YWHEhKsa-q4",
@@ -99,24 +139,38 @@
           "title": "La història dels assassins 2",
           "durationSeconds": 143,
           "url": "https://www.youtube.com/watch?v=0C61byfgISw",
-          "decision": "pendent",
-          "reason": "No s’ha pogut contrastar prou la llengua del text. No s’infereix pel títol."
+          "decision": "acceptat",
+          "reason": "Ampliació del disc demanada per l’usuari. Contrast de la mostra vocal oficial (30 segons) amb reconeixement de parla i lectura lingüística; no és una transcripció íntegra de la cançó.",
+          "language": "ca",
+          "evidence": [
+            "https://music.apple.com/us/album/la-hist%C3%B2ria-dels-assassins-2/1510667330?i=1510667589&uo=4",
+            "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview123/v4/cb/97/74/cb977489-852b-dad2-a6a8-6d42bfeee8b3/mzaf_7064922677790828452.plus.aac.p.m4a",
+            "https://www.enderrock.cat/disc/8389/dels-rics-dels-pobres"
+          ],
+          "reviewedAt": "2026-10-06T08:29:45.611Z"
         },
         {
           "id": "6j97kx0Mnbc",
           "title": "Tempigas temp'",
           "durationSeconds": 111,
           "url": "https://www.youtube.com/watch?v=6j97kx0Mnbc",
-          "decision": "pendent",
-          "reason": "No s’ha pogut contrastar prou la llengua del text. No s’infereix pel títol."
+          "decision": "exclos",
+          "reason": "Esperanto, documentat a la crítica de MondoSonoro del 08-03-2024."
         },
         {
           "id": "7R2lrm_WT-c",
           "title": "Aquí sóc feliç",
           "durationSeconds": 188,
           "url": "https://www.youtube.com/watch?v=7R2lrm_WT-c",
-          "decision": "pendent",
-          "reason": "No s’ha pogut contrastar prou la llengua del text. No s’infereix pel títol."
+          "decision": "acceptat",
+          "reason": "Ampliació del disc demanada per l’usuari. Contrast de la mostra vocal oficial (30 segons) amb reconeixement de parla i lectura lingüística; no és una transcripció íntegra de la cançó.",
+          "language": "ca",
+          "evidence": [
+            "https://music.apple.com/us/album/aqu%C3%AD-s%C3%B3c-feli%C3%A7/1510667330?i=1510667336&uo=4",
+            "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview113/v4/2b/1b/c8/2b1bc82b-563b-2d0e-7386-9f3181ab4ace/mzaf_1149740328058156974.plus.aac.p.m4a",
+            "https://www.enderrock.cat/disc/8389/dels-rics-dels-pobres"
+          ],
+          "reviewedAt": "2026-10-06T08:29:45.611Z"
         },
         {
           "id": "rtsoBLNENcM",
@@ -124,7 +178,7 @@
           "durationSeconds": 203,
           "url": "https://www.youtube.com/watch?v=rtsoBLNENcM",
           "decision": "pendent",
-          "reason": "No s’ha pogut contrastar prou la llengua del text. No s’infereix pel títol."
+          "reason": "La mostra oficial conté una introducció parlada en castellà. Cal comprovar tota la pista composta abans d’incorporar-la."
         },
         {
           "id": "BvW0TmXoBEQ",
