@@ -1,26 +1,34 @@
 {
-  "generatedAt": "2026-10-06T12:47:10.849Z",
-  "rawPublicVideoCount": 4751,
-  "feedVideoCount": 4223,
-  "acceptedMusicCount": 4183,
-  "categoryEligibleVideoCount": 4178,
+  "generatedAt": "2026-10-06T15:33:43.673Z",
+  "rawPublicVideoCount": 4782,
+  "feedVideoCount": 4247,
+  "acceptedMusicCount": 4211,
+  "categoryEligibleVideoCount": 4206,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
-    "before": 0,
+    "before": 7,
     "matched": 0,
-    "rejected": 0
+    "rejected": 7
   },
-  "rejectedOrReviewCount": 568,
-  "reviewCount": 534,
+  "rejectedOrReviewCount": 571,
+  "reviewCount": 536,
   "typeCounts": {
-    "song": 4074,
-    "live_song": 104,
+    "song": 4106,
+    "live_song": 100,
     "album": 5,
-    "other": 34,
-    "review": 534
+    "other": 35,
+    "review": 536
   },
   "channelsWithoutAcceptedMusic": [],
-  "rejectedSamples": [],
-  "publishedFeedVideoCount": 4219,
+  "rejectedSamples": [
+    {
+      "id": "jIdrrTRum2s",
+      "title": "8/7/2019",
+      "channelTitle": "MASSAVIU",
+      "durationSeconds": 27,
+      "musicReason": "massa curt: probable teaser/fragment"
+    }
+  ],
+  "publishedFeedVideoCount": 4231,
   "publishedShortVideoCount": 0
 }
