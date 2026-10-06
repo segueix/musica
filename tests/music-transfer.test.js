@@ -284,9 +284,17 @@ describe('Envia per WhatsApp: un enllaç que s’obre des de WhatsApp Web', () =
         const copy = payload({ history: [{ id: A, title: 'L’amor i tu' }], follows: [CH] });
         const link = api.buildLink(copy);
         expect(link.startsWith('https://segueix.github.io/musica/#musica=')).toBe(true);
-        expect(link).not.toMatch(/[+$]/);
+        expect(link).not.toMatch(/[+$_~*`]/);
         const hash = link.slice(link.indexOf('#'));
         expect(api.parseLink(hash).data).toEqual(api.validate(copy).data);
+    });
+
+    it('continua llegint els primers enllaços #musica= amb «~» i «_»', () => {
+        const { api } = setup();
+        const copy = payload({ history: [{ id: A, title: 'Cançó' }] });
+        const link = api.buildLink(copy);
+        const old = link.slice(link.indexOf('#')).replace(/%2B/g, '~').replace(/%24/g, '_');
+        expect(api.parseLink(old).data.history[0].id).toBe(A);
     });
 
     it('a l’ordinador obre WhatsApp Web amb el missatge i l’enllaç escrits', async () => {

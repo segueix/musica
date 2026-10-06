@@ -1594,3 +1594,13 @@ Proves: còpia >42 kB, fallback de compartició TXT, associació de fitxers amb 
 **Trampes:** (1) Copiar al porta-retalls s'ha de fer **abans** d'obrir la pestanya de WhatsApp (sense focus, `clipboard.writeText` falla). (2) Si el navegador bloqueja la finestra emergent, `#musicTransferWhatsAppFallback` apareix amb l'adreça. (3) LZString ve del CDN: sense ell no es pot llegir l'enllaç (surt l'error de còpia no vàlida).
 
 **Proves:** `tests/music-transfer.test.js` (enllaç sense `+`/`$` i ida i tornada, WhatsApp Web amb el text, porta-retalls per a enllaços llargs, menú natiu al mòbil, cancel·lació, fitxer quan no cap, fragment nou retirat). Verificat també al Chromium: enllaç generat per l'app, obert en un altre context → confirmació → historial importat.
+
+## [2026-10-06] - L'enllaç de música enviat per WhatsApp no es podia llegir
+
+**Símptoma:** en obrir des de l'ordinador l'enllaç rebut per WhatsApp, Música deia «No s'ha pogut llegir l'enllaç. Demana una còpia nova.»
+
+**Causa Arrel:** per evitar `+` i `$` (alfabet de LZString), l'enllaç els canviava per `~` i `_`. WhatsApp fa servir `_text_` per a la cursiva i `~text~` per al ratllat: en enviar-lo, prenia parells d'aquests caràcters com a format i els esborrava, i les dades quedaven malmeses.
+
+**Solució Implementada:** `buildLink()` codifica `+` → `%2B` i `$` → `%24` (codificació d'URL estàndard, sense cap caràcter de format de WhatsApp: `_ ~ * \``). `parseLink()` fa `decodeURIComponent()` i continua acceptant `~`/`_` dels primers enllaços. Prova: `tests/music-transfer.test.js`.
+
+**Trampa:** mai posis `_`, `~`, `*` ni `` ` `` en un enllaç que hagi de passar per WhatsApp. Un enllaç enviat per WhatsApp sempre es veu sencer al missatge: no es pot amagar sense un servei d'enllaços curts (i l'app és a GitHub Pages, sense servidor).
