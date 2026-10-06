@@ -295,7 +295,7 @@
         } else if (d.playlists.length) parts.push(`${d.playlists.length} llistes`);
         if (d.follows.length) parts.push(`${d.follows.length} artistes`);
         if (d.history.length) parts.push(`${d.history.length} cançons a l’historial`);
-        if (d.likes.length) parts.push(`${d.likes.length} cors`);
+        if (d.likes.length) parts.push(`${d.likes.length} m’agrada`);
         if (d.categories.length) parts.push(`${d.categories.length} categories`);
         return parts.join(' · ') || 'La còpia és buida.';
     }
@@ -330,25 +330,6 @@
         if (d.likes.length) data.likes = d.likes.map((v) => v.id);
         if (d.categories.length) data.categories = d.categories;
         return { product: 'segueix-musica', v: 1, data };
-    }
-
-    // El que es pot enviar: una llista (o cap) i, si es vol, els artistes que segueixes.
-    function selection(listId, withArtists, storage = window.localStorage) {
-        const list = arr(read(storage, KEYS.playlists, [])).find((p) => p && String(p.id) === String(listId));
-        const data = {};
-        if (list) {
-            // Les primeres cançons (com sonen a la ràdio o la llista): l'enllaç no s'allarga sense mida.
-            const songs = arr(list.videos).slice(0, MAX_SHARE_SONGS);
-            data.playlists = [{ id: String(list.id), name: String(list.name || 'Llista'), videos: songs }];
-        }
-        if (withArtists) data.follows = arr(read(storage, KEYS.follows, []));
-        const payload = validate({ product: 'segueix-musica', v: 1, data });
-        if (withArtists && !payload.data.follows.length) throw new Error('Encara no segueixes cap artista.');
-        if (!withArtists && !payload.data.playlists.length) throw new Error('No tens cap llista per enviar.');
-        if (payload.data.playlists[0] && !payload.data.playlists[0].videos.length) {
-            throw new Error('Aquesta llista és buida.');
-        }
-        return payload;
     }
 
     // Completa títol, artista i durada de les cançons que han arribat només amb l'identificador.
@@ -408,13 +389,13 @@
     function requestImport(payload) {
         showImport(validate(payload));
     }
-    const FILE_NAME = 'copia.segueixmusica';
+    // Còpia de tota la música en un fitxer JSON: «segueix-musica-AAAA-MM-DD.json».
+    function fileName(date = new Date()) {
+        return `segueix-musica-${date.toISOString().slice(0, 10)}.json`;
+    }
 
-    // Extensió pròpia per associar-la amb la PWA sense registrar tots els JSON del dispositiu.
     function createFile(payload) {
-        return new window.File([JSON.stringify(validate(payload))], FILE_NAME, {
-            type: 'application/vnd.segueix-musica+json',
-        });
+        return new window.File([JSON.stringify(validate(payload))], fileName(), { type: 'application/json' });
     }
 
     function supportsFileSharing(file, navigator = window.navigator) {
@@ -427,7 +408,7 @@
 
     function shareableFile(file) {
         if (supportsFileSharing(file)) return file;
-        // Web Share pot rebutjar extensions pròpies. Mateixes dades JSON, embolcall de text compartible.
+        // Web Share (Chrome per a Android) no accepta .json: mateixes dades, embolcall de text compartible.
         const textFile = new window.File([file], file.name + '.txt', {
             type: 'text/plain',
         });
@@ -604,49 +585,39 @@
         setTimeout(() => URL.revokeObjectURL(url), 10000);
     }
 
-    // Desplegable amb les llistes de l'usuari (es refà si han canviat, sense perdre la triada).
-    function refreshListPicker(storage = window.localStorage) {
-        const select = byId('musicTransferList');
-        if (!select?.dataset) return;
-        const lists = arr(read(storage, KEYS.playlists, [])).filter((p) => p && p.id !== undefined && p.id !== null);
-        const follows = arr(read(storage, KEYS.follows, [])).length;
-        const signature = JSON.stringify([lists.map((p) => [p.id, p.name, arr(p.videos).length]), follows]);
-        if (select.dataset.signature === signature) return;
-        const first = !select.dataset.signature;
-        select.dataset.signature = signature;
-        const previous = select.value;
-        select.textContent = '';
-        const option = (value, label) => {
-            const el = window.document.createElement('option');
-            el.value = value;
-            el.textContent = label;
-            select.appendChild(el);
-        };
-        lists.forEach((p) => {
-            option(String(p.id), `${str(String(p.name || 'Llista'), 80)} (${arr(p.videos).length})`);
-        });
-        if (!lists.length) option('', 'No tens cap llista');
-        // Es manté la llista triada; si no, la primera.
-        const keep = !first && lists.some((p) => String(p.id) === previous);
-        select.value = keep ? previous : lists[0] ? String(lists[0].id) : '';
-        const label = byId('musicTransferArtistsCount');
-        if (label) label.textContent = follows ? `(${follows})` : '(cap)';
+    // «Envia el fitxer»: menú de compartir del sistema (WhatsApp, correu…) amb el fitxer. Si el navegador no pot
+    // compartir fitxers (ordinador), es desa i s'obre WhatsApp Web perquè s'hi adjunti com a document.
+    async function shareCopy(payload) {
+        const file = shareableFile(createFile(payload));
+        if (supportsFileSharing(file)) {
+            await window.navigator.share({ files: [file], title: 'Segueix Música' });
+            return 'Fitxer enviat. A l’altre aparell, desa’l i prem «Importa un fitxer».';
+        }
+        saveGeneratedFile(file);
+        openWhatsApp(WHATSAPP_WEB);
+        return 'S’ha desat ' + file.name + '. A WhatsApp Web, tria el xat i adjunta’l com a document.';
     }
 
-    // Cada botó envia el que hi ha en aquell moment: cap pas previ de «generar».
-    // Bloc «Una llista»: només la llista triada. Bloc «Els artistes que segueixo»: només els artistes.
-    function bindAction(buttonId, action, artists) {
+    function saveCopy(payload) {
+        const file = createFile(payload);
+        saveGeneratedFile(file);
+        return 'S’ha desat ' + file.name + '. A l’altre aparell, prem «Importa un fitxer» i tria’l.';
+    }
+
+    // Cada botó fa la còpia del moment (historial, m'agrades, artistes, llistes…): cap pas previ de «generar».
+    function bindFileAction(buttonId, action) {
         const button = byId(buttonId);
-        const feedbackId = artists ? 'musicTransferArtistsFeedback' : 'musicTransferFeedback';
         button.addEventListener('click', async () => {
             byId('musicTransferWhatsAppFallback').classList.add('hidden');
             button.disabled = true;
             try {
-                const payload = artists ? selection('', true) : selection(byId('musicTransferList')?.value, false);
+                const payload = collect();
                 const message = await action(payload);
-                if (message) feedback(message, feedbackId);
+                if (message) feedback(message + ' ' + summary(payload) + '.');
             } catch (error) {
-                feedback(error.message || 'No s’ha pogut preparar l’enllaç. Torna-ho a provar.', feedbackId);
+                if (error?.name !== 'AbortError') {
+                    feedback(error.message || 'No s’ha pogut preparar el fitxer. Torna-ho a provar.');
+                }
             } finally {
                 button.disabled = false;
             }
@@ -679,22 +650,15 @@
     }
 
     function init() {
-        if (!byId('musicTransferWhatsApp')) return;
-        // L'app instal·lada rep aquí els fitxers associats i, si ja era oberta, l'adreça de l'enllaç.
+        if (!byId('musicTransferShareFile')) return;
+        // L'app instal·lada rep aquí els fitxers associats i, si ja era oberta, l'adreça d'un enllaç.
         window.launchQueue?.setConsumer?.((launch) => {
             if (launch.files?.length) return openFiles(launch.files);
             const hash = String(launch.targetURL || '').replace(/^[^#]*/, '');
             if (isLink(hash) && hash !== initialHash) openLink(hash);
         });
-        bindAction('musicTransferWhatsApp', sendToWhatsApp, false);
-        bindAction('musicTransferCopy', copyLink, false);
-        bindAction('musicTransferArtistsWhatsApp', sendToWhatsApp, true);
-        bindAction('musicTransferArtistsCopy', copyLink, true);
-        refreshListPicker();
-        // La llista pot haver canviat des que s'ha obert l'app: es refà en apropar-s'hi.
-        for (const type of ['pointerenter', 'touchstart', 'focusin']) {
-            byId('musicTransferSection')?.addEventListener(type, () => refreshListPicker(), { passive: true });
-        }
+        bindFileAction('musicTransferShareFile', shareCopy);
+        bindFileAction('musicTransferSaveFile', saveCopy);
         byId('musicTransferImport').addEventListener('click', () => byId('musicTransferFile').click());
         byId('musicTransferFile').addEventListener('change', async (event) => {
             const file = event.target.files?.[0];
@@ -759,9 +723,10 @@
         sendToWhatsApp,
         copyLink,
         compact,
-        selection,
         hydrate,
-        refreshListPicker,
+        shareCopy,
+        saveCopy,
+        fileName,
         supportsFileSharing,
         readFile,
         requestImport,

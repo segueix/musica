@@ -1652,3 +1652,11 @@ Proves: còpia >42 kB, fallback de compartició TXT, associació de fitxers amb 
 La TV (`__segueix_tv_discovery__`) no hi entra. El vídeo potser no arrenca sol al mòbil (el navegador no deixa reproduir sense un toc després d'enrere/endavant): cal prémer play.
 
 **Proves:** `tests/player-controls.test.js` («enrere / endavant del navegador amb una ràdio o una llista») i opt-in `node tests/browser/verificar-enrere-radio.js` (1280 i 390 px: finestra flotant → enrere → endavant; enrere → endavant; següent → enrere → endavant). Amb el codi d'abans, les tres fallen.
+
+## [2026-10-06] - Decisió final: un sol fitxer JSON amb tota la música
+
+**Petició:** després de provar els enllaços (una llista, els artistes per separat), l'usuari prefereix **un sol JSON, que es pugui enviar i pujar, amb tot l'historial, els artistes que segueix i els m'agrada**.
+
+**Solució Implementada:** a Configuració, «Passa la teva música a un altre aparell» només té «Envia el fitxer», «Desa el fitxer» i «Importa un fitxer». El fitxer és `segueix-musica-AAAA-MM-DD.json` (`application/json`) amb `collect()` (historial, m'agrada, seguits, llistes, categories, preferències, estadístiques, estils i mode). «Envia» fa servir Web Share amb el fitxer; Chrome per a Android no accepta `.json` al menú de compartir, així que `shareableFile()` el passa com a `.json.txt` (mateix contingut; la importació l'accepta). Sense Web Share de fitxers (ordinador), el desa i obre WhatsApp Web perquè s'hi adjunti. Cancel·lar el menú no fa res. La importació mostra el resum («llista «Estiu» (20 cançons) · 9 artistes · 30 cançons a l'historial · 12 m'agrada») i fusiona amb el que hi ha. Eliminats de Configuració el desplegable de llistes, el bloc d'artistes, `selection()` i `refreshListPicker()`. Es mantenen la lectura dels enllaços `#musica=` i l'enllaç de compartir una ràdio/llista.
+
+**Proves:** `tests/music-transfer.test.js` («Un sol fitxer JSON amb tota la música»); verificat al Chromium: fitxer desat (30 + 12 + 9 + 1 llista, 6 kB) i importat en un altre context amb tot.
