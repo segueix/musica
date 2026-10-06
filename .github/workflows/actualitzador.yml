@@ -2,6 +2,11 @@ name: Actualitzador feed musical (manual)
 
 on:
   workflow_dispatch:
+    inputs:
+      discografia_sencera:
+        description: "Llegeix la discografia sencera de tots els canals Tema (si no, una setena part cada dia)"
+        type: boolean
+        default: false
 
 concurrency:
   group: music-data-writer
@@ -29,18 +34,12 @@ jobs:
           # El mateix mode que el workflow diari (actualitzar-feed-musica.yml): si no, el feed manual tornaria a
           # posar el que el filtre del canal Tema treu.
           MUSIC_TOPIC_GOVERNANCE: "apply"
+          MUSIC_TOPIC_FULL_READ: ${{ inputs.discografia_sencera && '1' || '0' }}
         run: node scripts/update_music_feed.js
       - name: Publica feed
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          # data/revisio-idiomes.json: les cançons noves pendents de revisar l'idioma (i les descartades).
-          git add data/feed.json js/channels-ca.json data/music-feed-audit.json data/revisio-idiomes.json data/music-topic-catalog.json data/music-topic-review.json
-          if git diff --cached --quiet; then
-            echo "Feed sense canvis."
-            exit 0
-          fi
-          git commit -m "data: actualitza feed musical"
-          git push origin HEAD:main
-
-
+        # data/revisio-idiomes.json: les cançons noves pendents de revisar l'idioma (i les descartades).
+        # Si main ha canviat mentrestant: git pull --rebase i es torna a provar (no es perd la quota gastada).
+        run: >-
+          bash scripts/publicar_dades.sh "data: actualitza feed musical"
+          data/feed.json js/channels-ca.json data/music-feed-audit.json data/revisio-idiomes.json
+          data/music-topic-catalog.json data/music-topic-review.json

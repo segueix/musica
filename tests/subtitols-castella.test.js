@@ -78,7 +78,8 @@ describe('integració al pipeline', () => {
         const validationWorkflow = read('.github/workflows/validar-musica.yml');
         expect(updateWorkflow).toMatch(/cron: "\d+ \d+ \* \* \*"/);
         expect(updateWorkflow).toContain('"Validar base musical"');
-        expect(updateWorkflow).toContain('scripts/lib/subtitols_castella.js');
+        // Un canvi del detector ja no dispara el feed (gastava quota): s'aplica a l'actualització diària de les 20 h,
+        // que abans de generar torna a passar aquesta prova.
         expect(updateWorkflow).toContain('tests/subtitols-castella.test.js');
         expect(validationWorkflow).toContain('scripts/lib/subtitols_castella.js');
         expect(validationWorkflow).toContain('tests/subtitols-castella.test.js');

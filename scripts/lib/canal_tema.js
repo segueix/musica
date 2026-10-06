@@ -189,8 +189,57 @@ function selectTopicTracks(tracks, { coveredKeys = new Set(), now = Date.now(), 
     return byViews.filter(track => chosen.has(track.id)).map(track => track.id);
 }
 
+// ---------- Lectura per torns de les discografies Tema (quota de l'API) ----------
+// Llegir cada dia les ~220 discografies senceres (≈ 19.000 pistes) costava unes 800 unitats de quota. Cada dia
+// només es llegeix la primera pàgina (les 50 pistes més noves: hi surten les estrenes) i la discografia sencera
+// d'una setena part dels canals, de manera que cada canal es llegeix sencer un cop per setmana.
+const DAY_MS = 86400000;
+
+function hash32(value) {
+    let hash = 2166136261;
+    for (const char of String(value || '')) {
+        hash ^= char.codePointAt(0);
+        hash = Math.imul(hash, 16777619) >>> 0;
+    }
+    return hash >>> 0;
+}
+
+// Torn d'un canal (0…days-1), estable: depèn només de l'ID.
+function topicReadTurn(channelId, days = 7) {
+    return hash32(channelId) % Math.max(1, days);
+}
+
+// Cal llegir avui la discografia sencera? Sí si li toca el torn, si encara no la tenim desada o si es força.
+function shouldReadFullTopic(channelId, { date = new Date(), days = 7, hasCatalog = true, force = false } = {}) {
+    if (force || !hasCatalog) return true;
+    const day = Math.floor(new Date(date).getTime() / DAY_MS);
+    return topicReadTurn(channelId, days) === ((day % days) + days) % days;
+}
+
+// Discografia d'un dia sense lectura sencera: les pistes de la primera pàgina (noves primer) i, darrere, les que
+// ja teníem desades (sense repetir-les). tracks: [{ id, title }]; previous: [[id, title]] (music-topic-catalog.json)
+function mergeTopicTracks(firstPage, previous) {
+    const seen = new Set();
+    const out = [];
+    for (const track of firstPage || []) {
+        if (!track?.id || seen.has(track.id)) continue;
+        seen.add(track.id);
+        out.push({ id: track.id, title: track.title || '' });
+    }
+    for (const entry of previous || []) {
+        const [id, title] = Array.isArray(entry) ? entry : [entry?.id, entry?.title];
+        if (!id || seen.has(id)) continue;
+        seen.add(id);
+        out.push({ id, title: title || '' });
+    }
+    return out;
+}
+
 module.exports = {
     DEFAULTS,
+    topicReadTurn,
+    shouldReadFullTopic,
+    mergeTopicTracks,
     songKey,
     songKeys,
     topicKeys,
