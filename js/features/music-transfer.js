@@ -9,6 +9,8 @@
     // web.whatsapp.com/send?text= passa pel servidor: per sobre d'això l'enllaç es copia i s'enganxa.
     const MAX_PREFILL = 7000;
     const MAX_FILE = 2 * 1024 * 1024;
+    // Una llista o ràdio s'envia amb les seves primeres cançons.
+    const MAX_SHARE_SONGS = 50;
     const PREFIX = '#music-transfer=';
     const LINK_PREFIX = '#musica=';
     const WHATSAPP_WEB = 'https://web.whatsapp.com/';
@@ -299,16 +301,33 @@
     }
 
     // Només identificadors: els títols els treu l'altre aparell del catàleg (hydrate()). Així l'enllaç és curt.
-    function compact(payload) {
+    // Cançons del catàleg públic que té carregat aquest aparell (feed, pool i historial dels estils).
+    function knownIds() {
+        const api = typeof YouTubeAPI !== 'undefined' ? YouTubeAPI : window.YouTubeAPI;
+        const known = new Set();
+        [api?.feedVideos, api?.historyPoolVideos, api?.styleHistoryVideos].forEach((list) => {
+            arr(list).forEach((v) => v?.id && known.add(String(v.id)));
+        });
+        return known;
+    }
+
+    // Una cançó del catàleg viatja només amb l'ID (l'altre aparell en treu el títol). Una que ja no hi és (una
+    // pista d'un canal «Tema» que ha sortit del feed, una d'amagada) porta el títol i l'artista desats.
+    function compact(payload, known = knownIds()) {
         const d = validate(payload).data;
-        const ids = (list) => list.map((v) => v.id);
+        const song = (v) => {
+            if (known.has(v.id) || !v.title) return v.id;
+            const artist = v.artistName || v.channelTitle;
+            return artist ? { id: v.id, title: v.title, channelTitle: artist } : { id: v.id, title: v.title };
+        };
+        const ids = (list) => list.map(song);
         const data = {};
         if (d.playlists.length) {
             data.playlists = d.playlists.map((p) => ({ id: p.id, name: p.name, videos: ids(p.videos) }));
         }
         if (d.follows.length) data.follows = d.follows;
-        if (d.history.length) data.history = ids(d.history);
-        if (d.likes.length) data.likes = ids(d.likes);
+        if (d.history.length) data.history = d.history.map((v) => v.id);
+        if (d.likes.length) data.likes = d.likes.map((v) => v.id);
         if (d.categories.length) data.categories = d.categories;
         return { product: 'segueix-musica', v: 1, data };
     }
@@ -318,13 +337,14 @@
         const list = arr(read(storage, KEYS.playlists, [])).find((p) => p && String(p.id) === String(listId));
         const data = {};
         if (list) {
-            data.playlists = [{ id: String(list.id), name: String(list.name || 'Llista'), videos: arr(list.videos) }];
+            // Les primeres cançons (com sonen a la ràdio o la llista): l'enllaç no s'allarga sense mida.
+            const songs = arr(list.videos).slice(0, MAX_SHARE_SONGS);
+            data.playlists = [{ id: String(list.id), name: String(list.name || 'Llista'), videos: songs }];
         }
         if (withArtists) data.follows = arr(read(storage, KEYS.follows, []));
         const payload = validate({ product: 'segueix-musica', v: 1, data });
-        if (!payload.data.playlists.length && !payload.data.follows.length) {
-            throw new Error('Tria una llista o marca els artistes que segueixes.');
-        }
+        if (withArtists && !payload.data.follows.length) throw new Error('Encara no segueixes cap artista.');
+        if (!withArtists && !payload.data.playlists.length) throw new Error('No tens cap llista per enviar.');
         if (payload.data.playlists[0] && !payload.data.playlists[0].videos.length) {
             throw new Error('Aquesta llista és buida.');
         }
@@ -373,8 +393,8 @@
 
     let pending = null;
     const byId = (id) => window.document.getElementById(id);
-    function feedback(message) {
-        const el = byId('musicTransferFeedback');
+    function feedback(message, id = 'musicTransferFeedback') {
+        const el = byId(id);
         el.textContent = message;
         el.classList.remove('hidden');
     }
@@ -520,7 +540,7 @@
     }
 
     function listPayload(name, items) {
-        const songs = videos(items);
+        const songs = videos(items).slice(0, MAX_SHARE_SONGS);
         if (!songs.length) throw new Error('Aquesta llista o ràdio és buida.');
         let hash = 2166136261;
         for (const c of String(name) + songs.map((v) => v.id).join(',')) {
@@ -549,7 +569,7 @@
         dialog.innerHTML =
             '<h2>Comparteix la música</h2><p class="music-file-name"></p>' +
             '<p>Envia un enllaç: qui el rebi l’obre (també des de WhatsApp Web) ' +
-            'i la llista s’afegeix a la seva Música.</p>' +
+            'i la llista s’afegeix a la seva Música. S’hi envien les ' + MAX_SHARE_SONGS + ' primeres cançons.</p>' +
             '<div class="config-sync-row">' +
             '<button type="button" class="config-sync-btn music-transfer-primary" data-whatsapp>Envia per WhatsApp</button>' +
             '<button type="button" class="config-sync-btn" data-copy>Copia l’enllaç</button></div>' +
@@ -605,28 +625,28 @@
         lists.forEach((p) => {
             option(String(p.id), `${str(String(p.name || 'Llista'), 80)} (${arr(p.videos).length})`);
         });
-        option('', lists.length ? 'Cap llista' : 'No tens cap llista');
-        // Es manté la triada (també «Cap llista» si l'ha triat l'usuari); si no, la primera llista.
-        const keep =
-            !first &&
-            (lists.some((p) => String(p.id) === previous) || (previous === '' && select.dataset.chosen === '1'));
+        if (!lists.length) option('', 'No tens cap llista');
+        // Es manté la llista triada; si no, la primera.
+        const keep = !first && lists.some((p) => String(p.id) === previous);
         select.value = keep ? previous : lists[0] ? String(lists[0].id) : '';
         const label = byId('musicTransferArtistsCount');
         if (label) label.textContent = follows ? `(${follows})` : '(cap)';
     }
 
-    // Cada botó envia el que hi ha triat en aquell moment: cap pas previ de «generar».
-    function bindAction(buttonId, action) {
+    // Cada botó envia el que hi ha en aquell moment: cap pas previ de «generar».
+    // Bloc «Una llista»: només la llista triada. Bloc «Els artistes que segueixo»: només els artistes.
+    function bindAction(buttonId, action, artists) {
         const button = byId(buttonId);
+        const feedbackId = artists ? 'musicTransferArtistsFeedback' : 'musicTransferFeedback';
         button.addEventListener('click', async () => {
             byId('musicTransferWhatsAppFallback').classList.add('hidden');
             button.disabled = true;
             try {
-                const payload = selection(byId('musicTransferList')?.value, byId('musicTransferArtists')?.checked);
+                const payload = artists ? selection('', true) : selection(byId('musicTransferList')?.value, false);
                 const message = await action(payload);
-                if (message) feedback(message);
+                if (message) feedback(message, feedbackId);
             } catch (error) {
-                feedback(error.message || 'No s’ha pogut preparar l’enllaç. Torna-ho a provar.');
+                feedback(error.message || 'No s’ha pogut preparar l’enllaç. Torna-ho a provar.', feedbackId);
             } finally {
                 button.disabled = false;
             }
@@ -666,12 +686,11 @@
             const hash = String(launch.targetURL || '').replace(/^[^#]*/, '');
             if (isLink(hash) && hash !== initialHash) openLink(hash);
         });
-        bindAction('musicTransferWhatsApp', sendToWhatsApp);
-        bindAction('musicTransferCopy', copyLink);
+        bindAction('musicTransferWhatsApp', sendToWhatsApp, false);
+        bindAction('musicTransferCopy', copyLink, false);
+        bindAction('musicTransferArtistsWhatsApp', sendToWhatsApp, true);
+        bindAction('musicTransferArtistsCopy', copyLink, true);
         refreshListPicker();
-        byId('musicTransferList')?.addEventListener('change', (event) => {
-            if (event.target?.dataset) event.target.dataset.chosen = '1';
-        });
         // La llista pot haver canviat des que s'ha obert l'app: es refà en apropar-s'hi.
         for (const type of ['pointerenter', 'touchstart', 'focusin']) {
             byId('musicTransferSection')?.addEventListener(type, () => refreshListPicker(), { passive: true });
@@ -754,6 +773,8 @@
         summary,
         MAX_URL,
         MAX_LINK,
+        MAX_SHARE_SONGS,
+        knownIds,
         KEYS,
     };
     window.document?.addEventListener('DOMContentLoaded', init);

@@ -157,3 +157,25 @@ describe('ràdio o llista que sona: etiqueta a la línia de data, sense línia p
         expect(portada).toMatch(/#watchPage \.video-meta-row \.meta-left \{[^}]*flex-wrap: nowrap/);
     });
 });
+
+describe('enrere / endavant del navegador amb una ràdio o una llista', () => {
+    it('tornar a la cançó que sona (també a la finestra flotant) no la torna a carregar com un vídeo sol', () => {
+        const popstate = app.slice(app.indexOf("window.addEventListener('popstate'"));
+        // Primer es prova de tornar a la ràdio; només si no hi és, es carrega el vídeo sol
+        expect(popstate.indexOf('restoreVideoFromHistory(e.state.videoId)')).toBeGreaterThan(-1);
+        expect(popstate.indexOf('restoreVideoFromHistory(e.state.videoId)')).toBeLessThan(
+            popstate.indexOf('showVideoFromAPI(e.state.videoId')
+        );
+        const restore = fn(app, 'restoreVideoFromHistory');
+        expect(restore).toContain('setMiniPlayerState(false)');
+        expect(restore).toContain('loadVideoInSequence({ replaceHistory: true })');
+        expect(restore).toContain('queueBeforeNavigation');
+    });
+
+    it('en sortir de la cançó al mòbil es desa la cua per recuperar-la amb «endavant»', () => {
+        const exit = fn(app, 'exitPlaylistModeForNavigation');
+        expect(exit.indexOf('queueBeforeNavigation =')).toBeLessThan(exit.indexOf('exitPlaylistMode();'));
+        // Recuperar la cançó dins la cua no afegeix cap entrada a l'historial
+        expect(fn(app, 'loadVideoInSequence')).toContain('replaceHistory');
+    });
+});

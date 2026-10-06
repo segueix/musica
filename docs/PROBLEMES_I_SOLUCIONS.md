@@ -1624,3 +1624,31 @@ Proves: còpia >42 kB, fallback de compartició TXT, associació de fitxers amb 
 **Solució Implementada:** `openLink()` comú; escolta `hashchange` (treu el fragment de l'adreça i obre la confirmació) i, a `launchQueue`, si no hi ha fitxers mira `launch.targetURL`. `showImport()` no torna a cridar `showModal()` si el diàleg ja és obert. Proves: `tests/music-transfer.test.js` («Obrir un enllaç amb l'app ja oberta»); verificat al Chromium navegant al fragment amb l'app ja carregada.
 
 **Trampa:** un enllaç de WhatsApp sempre es veu escrit sencer al missatge; no es pot amagar sense un servei d'enllaços curts.
+
+## [2026-10-06] - Cançons sense títol en importar una llista enviada per enllaç
+
+**Símptoma:** en importar una llista («Ràdio Cançó d'autor», 31 cançons) algunes cançons arribaven trencades, sense títol.
+
+**Causa Arrel:** l'enllaç només portava els identificadors i l'altre aparell en treia el títol del catàleg públic (feed, `history-pool.json`, `historial-musical.json`). 13 de les 31 cançons ja no hi eren: la majoria eren pistes de canals «Tema» que havien sortit del feed (cada dia només s'hi posa una part de la discografia, i no van a l'arxiu) i dues eren a `hidden-videos.json`. La llista desada sí que en tenia el títol.
+
+**Solució Implementada:** `compact(payload, knownIds())`: una cançó que és al catàleg carregat de l'aparell que envia viatja només amb l'ID; una que no hi és viatja amb `{ id, title, channelTitle }` (els de la llista desada), i `hydrate()` no sobreescriu un títol que ja arriba. Si l'historial dels estils encara no s'ha carregat, simplement hi van més títols (l'enllaç és més llarg, mai trencat). A més, d'una llista o ràdio només s'envien les **50 primeres cançons** (`MAX_SHARE_SONGS`), en l'ordre en què sonen. Proves: `tests/music-transfer.test.js` («Cançons que ja no són al catàleg i límit de cançons»); verificat al Chromium (22 del catàleg + 3 fora del catàleg: les 25 amb títol).
+
+## [2026-10-06] - Compartir una llista i compartir els artistes, per separat
+
+**Petició:** separar l'enviament d'una llista del dels artistes que se segueixen (abans anaven junts, amb una casella).
+
+**Solució Implementada:** dos blocs a «Passa la teva música a un altre aparell» (`index.html`, `.music-transfer-block`): «Una llista» (desplegable sense «Cap llista») i «Els artistes que segueixo (N)», cadascun amb «Envia per WhatsApp», «Copia l'enllaç» i el seu propi avís. `bindAction(botó, acció, artistes)` crida `selection(llista, false)` o `selection('', true)`; avisos propis: «No tens cap llista per enviar.» i «Encara no segueixes cap artista.». El missatge només diu el que s'envia («llista «Estiu» (25 cançons)» o «8 artistes»). Proves: `tests/music-transfer.test.js`; verificat al Chromium.
+
+## [2026-10-06] - Enrere / endavant amb la ràdio sonant: fitxa antiga, sense ràdio i amb el reproductor buit
+
+**Símptoma:** a l'ordinador i al mòbil, amb una ràdio sonant (sovint amb la finestra flotant), en tornar enrere i després endavant (o tornar a la cançó amb els botons del navegador o del mòbil), la vista es trencava: la fitxa d'un vídeo sol, amb el reproductor negre sense vídeo, «Altres vídeos relacionats» i sense la ràdio. També passava en prémer «enrere» per tornar a la cançó anterior de la ràdio.
+
+**Causa Arrel:** el `popstate` d'`app.js` cridava `showVideoFromAPI(videoId)` per a qualsevol entrada `{ videoId }` de l'historial. Com que no era una navegació de cua (`isPlaylistNavigation` fals), `showVideoFromAPI` feia `exitPlaylistMode()` (buidava la cua) i `exitMiniPlayerForNewVideo()`, i pintava la fitxa d'un vídeo sol. Al mòbil, a més, sortir de la cançó ja havia aturat la ràdio (`exitPlaylistModeForNavigation()`, norma: al mòbil no es conserva fora de la finestra flotant) i no en quedava res per recuperar.
+
+**Solució Implementada:** `restoreVideoFromHistory(videoId)` (app.js), cridada pel `popstate` abans de carregar el vídeo sol:
+- si és la cançó que ja sona i hi ha iframe: si és a la finestra flotant, la restaura (`setMiniPlayerState(false)` + `collapseMobileHeaderForWatchPage()`); si la fitxa ja es veu, no fa res;
+- si la cançó és a la ràdio/llista que sona, la reprodueix dins la cua (`currentPlaylistIndex` + `loadVideoInSequence({ replaceHistory: true })`, que ara accepta `replaceHistory` per no afegir entrades a l'historial);
+- si no, i és a la cua desada en sortir-ne (`queueBeforeNavigation`, que desa `exitPlaylistModeForNavigation()` abans de buidar-la; s'esborra quan torna a sonar una cua), la recupera i hi reprodueix la cançó.
+La TV (`__segueix_tv_discovery__`) no hi entra. El vídeo potser no arrenca sol al mòbil (el navegador no deixa reproduir sense un toc després d'enrere/endavant): cal prémer play.
+
+**Proves:** `tests/player-controls.test.js` («enrere / endavant del navegador amb una ràdio o una llista») i opt-in `node tests/browser/verificar-enrere-radio.js` (1280 i 390 px: finestra flotant → enrere → endavant; enrere → endavant; següent → enrere → endavant). Amb el codi d'abans, les tres fallen.

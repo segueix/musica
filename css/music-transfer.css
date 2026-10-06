@@ -87,3 +87,17 @@
     height: 20px;
     accent-color: var(--pt-accent, #d6ed84);
 }
+/* Dos blocs separats: una llista i els artistes que segueixes */
+.music-transfer-block {
+    border: 1px solid var(--pt-line, #56604c);
+    border-radius: 14px;
+    padding: 14px 16px;
+    margin: 12px 0;
+}
+.music-transfer-title {
+    font-weight: 600;
+    margin: 0 0 8px;
+}
+.music-transfer-block .music-transfer-field {
+    margin-top: 0;
+}

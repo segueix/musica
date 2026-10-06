@@ -8933,7 +8933,9 @@ async function startPlaylistPlayback(playlistId, startIndex = 0) {
     loadVideoInSequence();
 }
 
-function loadVideoInSequence({ autoPlay = true } = {}) {
+function loadVideoInSequence({ autoPlay = true, replaceHistory = false } = {}) {
+    // Una cua que torna a sonar (nova o recuperada) substitueix la que es va desar en sortir-ne
+    queueBeforeNavigation = null;
     if (!activePlaylistQueue.length || currentPlaylistIndex >= activePlaylistQueue.length) {
         exitPlaylistMode();
         return;
@@ -8961,10 +8963,14 @@ function loadVideoInSequence({ autoPlay = true } = {}) {
         isPlaylistNavigation = false;
         return;
     }
+    const showOptions = {
+        ...(keepLivePlayer ? { keepLivePlayer: true } : {}),
+        ...(replaceHistory ? { replaceHistory } : {}),
+    };
     if (video.source === 'static') {
-        showVideo(video.id);
+        showVideo(video.id, showOptions);
     } else {
-        showVideoFromAPI(video.id, keepLivePlayer ? { keepLivePlayer: true } : {});
+        showVideoFromAPI(video.id, showOptions);
     }
     isPlaylistNavigation = false;
 }
@@ -9389,7 +9395,54 @@ function exitPlaylistModeForNavigation() {
     if (isPlaylistMode && isPersistentPlayerActive() && activePlaylistId !== '__segueix_tv_discovery__') {
         return;
     }
+    // Al mòbil, sortir de la cançó atura la ràdio/llista: se'n desa la cua perquè, si l'usuari hi torna amb
+    // «endavant» (historial del navegador), es recuperi en lloc de pintar la fitxa d'un vídeo sol.
+    if (isPlaylistMode && activePlaylistQueue.length && activePlaylistId !== '__segueix_tv_discovery__') {
+        queueBeforeNavigation = {
+            queue: [...activePlaylistQueue],
+            index: currentPlaylistIndex,
+            id: activePlaylistId,
+            name: activePlaylistName,
+        };
+    }
     exitPlaylistMode();
+}
+
+let queueBeforeNavigation = null;
+
+// Enrere/endavant del navegador cap a una cançó: si és la que ja sona (també a la finestra flotant) o una de la
+// ràdio/llista que sona (o que sonava abans de sortir-ne), es torna a la ràdio en lloc de carregar-la com un vídeo
+// sol (es perdia la cua i es veia la fitxa antiga, amb el reproductor buit i «Altres vídeos relacionats»).
+function restoreVideoFromHistory(videoId) {
+    const id = String(videoId || '');
+    if (!id || !videoPlayer) return false;
+    const playingId = String(videoPlayer.dataset.playingVideoId || '');
+    if (playingId === id && videoPlayer.querySelector('iframe')) {
+        if (isMiniPlayerActive()) {
+            setMiniPlayerState(false);
+            if (!watchPage.classList.contains('hidden')) collapseMobileHeaderForWatchPage();
+            return true;
+        }
+        if (!watchPage.classList.contains('hidden')) return true;
+    }
+    if (activePlaylistId === '__segueix_tv_discovery__') return false;
+    let index = isPlaylistMode ? activePlaylistQueue.findIndex(video => String(video?.id) === id) : -1;
+    if (index < 0 && queueBeforeNavigation) {
+        const saved = queueBeforeNavigation;
+        const savedIndex = saved.queue.findIndex(video => String(video?.id) === id);
+        if (savedIndex >= 0) {
+            isPlaylistMode = true;
+            activePlaylistQueue = [...saved.queue];
+            activePlaylistId = saved.id;
+            activePlaylistName = saved.name;
+            index = savedIndex;
+        }
+    }
+    if (index < 0) return false;
+    queueBeforeNavigation = null;
+    currentPlaylistIndex = index;
+    loadVideoInSequence({ replaceHistory: true });
+    return true;
 }
 
 function exitPlaylistMode({ showQueueMessage = false } = {}) {
@@ -13144,6 +13197,7 @@ window.addEventListener('popstate', e => {
     }
 
     if (e.state && e.state.videoId) {
+        if (restoreVideoFromHistory(e.state.videoId)) return;
         const popParams = new URLSearchParams(window.location.search);
         const popStartAt = parseShareStartSeconds(popParams.get('t'));
         if (useYouTubeAPI) {
