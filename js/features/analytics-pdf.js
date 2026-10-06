@@ -10,15 +10,15 @@
     const CONTENT_W = PAGE_W - MARGIN * 2;
     const EVENT_LABELS = {
         app_open: 'Entrades',
-        video_open: 'Vídeos oberts',
+        video_open: 'Cançons obertes',
         search_used: 'Cerques',
         follow_toggle: 'Canvis de seguiment',
         like_toggle: 'Canvis de cor',
         category_open: 'Categories obertes',
         smart_feed_rendered: 'Feed intel·ligent',
-        tv_start: 'TV iniciades',
-        tv_next: 'Següent a TV',
-        tv_regenerate: 'TV regenerades',
+        tv_start: 'Ràdios iniciades',
+        tv_next: 'Següent a la ràdio',
+        tv_regenerate: 'Ràdios barrejades',
         continue_watching_open: 'Continua mirant',
     };
     const LABELS = {
@@ -52,7 +52,7 @@
         seguint: 'Seguint',
         tot: 'Tot / Recomanat',
         custom: 'Categoria pròpia',
-        segueix: 'Música TV',
+        segueix: 'La teva ràdio',
         category: 'TV de categoria',
         program: 'TV de programa',
         playlist: 'Llista',
@@ -241,9 +241,9 @@
         }
 
         // Capcalera
-        drawText('SEGUEIX!', MARGIN, y, 12, true);
+        drawText('SEGUEIX MÚSICA', MARGIN, y, 12, true);
         y -= 28;
-        drawText("Informe d'Analytics", MARGIN, y, 24, true);
+        drawText("Informe d'analítica de Música", MARGIN, y, 24, true);
         y -= 20;
         drawText(`Període: ${prettyDate(summary.from)} - ${prettyDate(summary.to)} (${summary.days} dies)`, MARGIN, y, 10, false);
         y -= 16;
@@ -274,25 +274,25 @@
         metricBox(MARGIN + boxW + gap, top, boxW, 'Recurrents', formatNumber(recurrentBrowsers), uniqueBrowsers ? `${percent(recurrentBrowsers, uniqueBrowsers)} dels únics` : '-');
         top -= 68;
         metricBox(MARGIN, top, boxW, 'Entrades', formatNumber(totals.app_open || 0));
-        metricBox(MARGIN + boxW + gap, top, boxW, 'Vídeos oberts', formatNumber(videoOpen));
+        metricBox(MARGIN + boxW + gap, top, boxW, 'Cançons obertes', formatNumber(videoOpen));
         top -= 68;
-        metricBox(MARGIN, top, boxW, 'TV iniciades', formatNumber(tvStarts), `Següent / TV: ${percent(tvNext, tvStarts)}`);
+        metricBox(MARGIN, top, boxW, 'Ràdios iniciades', formatNumber(tvStarts), `Següent / TV: ${percent(tvNext, tvStarts)}`);
         metricBox(MARGIN + boxW + gap, top, boxW, 'Cerques', formatNumber(totals.search_used || 0));
         y = top - 72;
 
         section('Audiència única');
         keyValue('Usuaris que han obert vídeos', formatNumber(videoUsers));
-        keyValue('Usuaris de TV', formatNumber(tvUsers));
+        keyValue('Usuaris de ràdio', formatNumber(tvUsers));
         keyValue('Usuaris del feed intel·ligent', formatNumber(smartFeedUsers));
         keyValue('Usuaris que han començat a seguir', formatNumber(followUsers));
-        keyValue('Vídeos / usuari únic', uniqueBrowsers ? number(audience.videosPerBrowser).toFixed(1).replace('.', ',') : '-');
+        keyValue('Cançons / usuari únic', uniqueBrowsers ? number(audience.videosPerBrowser).toFixed(1).replace('.', ',') : '-');
 
         section('Resum');
         keyValue('Feed intel·ligent', formatNumber(totals.smart_feed_rendered || 0));
         keyValue('Nous seguiments', formatNumber(followOn));
         keyValue('Baixes de seguiment', formatNumber(followOff));
         keyValue('Seguiments / vídeo', percent(followOn, videoOpen));
-        keyValue('TV regenerades', formatNumber(totals.tv_regenerate || 0));
+        keyValue('Ràdios barrejades', formatNumber(totals.tv_regenerate || 0));
         keyValue('Continua mirant', formatNumber(totals.continue_watching_open || 0));
 
         section('Evolució diària');
@@ -320,7 +320,7 @@
         dimensionSection('Dispositiu', dims.device);
         dimensionSection('Superfície', dims.surface);
         dimensionSection('Categories', dims.category);
-        dimensionSection('Tipus de TV', dims.tvMode);
+        dimensionSection('Tipus de ràdio', dims.tvMode);
 
         section('Tots els comptadors');
         for (const [key, title] of Object.entries(EVENT_LABELS)) {
@@ -378,7 +378,7 @@
         const url = URL.createObjectURL(blob);
         const link = document.createElement('a');
         link.href = url;
-        link.download = `segueix-analytics-${summary.from}-${summary.to}.pdf`;
+        link.download = `segueix-musica-analytics-${summary.from}-${summary.to}.pdf`;
         document.body.appendChild(link);
         link.click();
         link.remove();

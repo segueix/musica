@@ -5,8 +5,8 @@
     app.features = app.features || {};
 
     const ENABLED_KEY = 'catube_anonymous_analytics_enabled';
-    const ENDPOINT = '/api/analytics';
-    const CLIENT_ID_KEY = 'catube_anonymous_analytics_client_v1';
+    const ENDPOINT = 'https://segueix.cat/api/music-analytics';
+    const CLIENT_ID_KEY = 'catube_music_anonymous_analytics_client_v1';
     const CLIENT_ID_MAX_AGE_MS = 90 * 24 * 60 * 60 * 1000;
     const DEDUPE_MS = 900;
     const BUILTIN_CATEGORIES = new Map([
@@ -16,6 +16,7 @@
         ['rock', 'rock'],
         ['indie', 'indie'],
         ['urbana', 'urbana'],
+        ['urban', 'urbana'],
         ['rap / hip-hop', 'rap_hiphop'],
         ['folk i arrel', 'folk_arrel'],
         ["cançó d'autor", 'canco_autor'],
@@ -23,7 +24,9 @@
         ['electrònica', 'electronica'],
         ['electronica', 'electronica'],
         ['ska / reggae', 'ska_reggae'],
+        ['ska punk', 'ska_reggae'],
         ['rumba / mestissatge', 'rumba_mestissatge'],
+        ['mestissatge / rumba', 'rumba_mestissatge'],
         ['punk / metal', 'punk_metal'],
         ['jazz / blues', 'jazz_blues'],
         ['clàssica', 'classica'],
@@ -34,6 +37,8 @@
         ['tot', 'tot'],
         ['recomanat per a tu', 'tot'],
     ]);
+
+    for (const value of [...BUILTIN_CATEGORIES.values()]) BUILTIN_CATEGORIES.set(value, value);
 
     let lastSignature = '';
     let lastSentAt = 0;
@@ -162,7 +167,7 @@
         });
 
         try {
-            if (navigator.sendBeacon) {
+            if (navigator.sendBeacon && new URL(ENDPOINT).origin === window.location.origin) {
                 const blob = new Blob([json], { type: 'application/json' });
                 if (navigator.sendBeacon(ENDPOINT, blob)) return true;
             }
@@ -174,7 +179,7 @@
                 headers: { 'content-type': 'application/json' },
                 body: json,
                 keepalive: true,
-                credentials: 'same-origin',
+                credentials: 'omit',
             }).catch(() => {});
             return true;
         } catch {
@@ -218,13 +223,13 @@
             return;
         }
 
-        const next = target.closest('.queue-next-button, [data-tv-programming-next], [data-tv-overlay-next]');
+        const next = target.closest('.queue-next-button, [data-mq-next], [data-tv-programming-next], [data-tv-overlay-next]');
         if (next) {
             track('tv_next', { surface: 'tv', tvMode: tvModeFromElement(next) });
             return;
         }
 
-        const regenerate = target.closest('.tv-regenerate-button, [data-action="segueix-tv-refresh"]');
+        const regenerate = target.closest('.tv-regenerate-button, [data-mq-regenerate], [data-action="segueix-tv-refresh"]');
         if (regenerate) {
             track('tv_regenerate', { surface: currentSurface(), tvMode: tvModeFromElement(regenerate) });
             return;
@@ -283,6 +288,28 @@
         track('search_used', { surface: 'search' });
     }
 
+    function instrumentMusicRadios() {
+        const queue = app.features.musicQueue;
+        if (!queue) return;
+        for (const [name, tvMode] of Object.entries({
+            startDiscovery: 'segueix',
+            startArtistRadio: 'channel',
+            startStyleRadio: 'category',
+            startCategoryRadio: 'category',
+            startFromSearch: 'other',
+        })) {
+            const original = queue[name];
+            if (typeof original !== 'function') continue;
+            queue[name] = function (...args) {
+                const result = original.apply(this, args);
+                if (result === true || result?.started === true) {
+                    track('tv_start', { surface: currentSurface(), tvMode });
+                }
+                return result;
+            };
+        }
+    }
+
     function installSetting() {
         if (document.getElementById('anonymousAnalyticsSettingsSection')) {
             renderSetting();
@@ -331,6 +358,7 @@
     function init() {
         if (initialized) return;
         initialized = true;
+        instrumentMusicRadios();
         installSetting();
 
         document.addEventListener('click', handleDocumentClick, true);

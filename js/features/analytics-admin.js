@@ -4,20 +4,20 @@
     const app = window.SegueixApp || (window.SegueixApp = {});
     app.features = app.features || {};
 
-    const TOKEN_KEY = 'segueix_analytics_admin_token';
+    const TOKEN_KEY = 'segueix_music_analytics_admin_token';
     const DEFAULT_DAYS = 30;
     const ALLOWED_DAYS = [7, 30, 90];
     const EVENT_LABELS = {
         app_open: 'Entrades',
-        video_open: 'Vídeos oberts',
+        video_open: 'Cançons obertes',
         search_used: 'Cerques',
         follow_toggle: 'Canvis de seguiment',
         like_toggle: 'Canvis de ❤️',
         category_open: 'Categories obertes',
         smart_feed_rendered: 'Feed intel·ligent',
-        tv_start: 'TV iniciades',
-        tv_next: 'Següent a TV',
-        tv_regenerate: 'TV regenerades',
+        tv_start: 'Ràdios iniciades',
+        tv_next: 'Següent a la ràdio',
+        tv_regenerate: 'Ràdios barrejades',
         continue_watching_open: 'Continua mirant',
     };
     const DIMENSION_LABELS = {
@@ -51,7 +51,7 @@
         seguint: 'Seguint',
         tot: 'Tot / Recomanat',
         custom: 'Categoria pròpia',
-        segueix: 'Música TV',
+        segueix: 'La teva ràdio',
         category: 'TV de categoria',
         program: 'TV de programa',
         playlist: 'Llista',
@@ -238,7 +238,7 @@
         root.className = 'analytics-admin-shell';
         root.setAttribute('role', 'dialog');
         root.setAttribute('aria-modal', 'true');
-        root.setAttribute('aria-label', 'Analytics de Segueix');
+        root.setAttribute('aria-label', 'Analítica de Segueix Música');
         document.body.appendChild(root);
         document.body.classList.add('analytics-admin-open');
         return root;
@@ -260,7 +260,7 @@
         const root = shell();
         root.innerHTML = `
             <div class="analytics-admin-login">
-                <h2>Analytics de Segueix</h2>
+                <h2>Analítica de Segueix Música</h2>
                 <p>Introdueix el token administratiu. Només es conserva durant aquesta sessió del navegador.</p>
                 <input class="analytics-admin-input" id="analyticsAdminTokenInput" type="password" autocomplete="current-password" placeholder="ANALYTICS_ADMIN_TOKEN">
                 <div class="analytics-admin-login-actions">
@@ -292,9 +292,9 @@
             from: range.from,
             to: range.to,
         });
-        const response = await fetch(`/api/analytics?${params.toString()}`, {
+        const response = await fetch(`https://segueix.cat/api/music-analytics?${params.toString()}`, {
             headers: { authorization: `Bearer ${token}` },
-            credentials: 'same-origin',
+            credentials: 'omit',
             cache: 'no-store',
         });
 
@@ -399,8 +399,8 @@
             <div class="analytics-admin-inner">
                 <header class="analytics-admin-head">
                     <div>
-                        <h1 class="analytics-admin-title">Analytics de Segueix</h1>
-                        <p class="analytics-admin-subtitle">Comptadors anònims de producte · ${escapeHtml(formatRange(summary.from, summary.to))} · ${summary.days} dies</p>
+                        <h1 class="analytics-admin-title">Analítica de Segueix Música</h1>
+                        <p class="analytics-admin-subtitle">Només Segueix Música · ${escapeHtml(formatRange(summary.from, summary.to))} · ${summary.days} dies</p>
                     </div>
                     <button class="analytics-admin-close" id="analyticsAdminClose" type="button" aria-label="Tancar">×</button>
                 </header>
@@ -432,16 +432,16 @@
                 <section class="analytics-admin-grid">
                     ${metricCard('Usuaris únics', compact(uniqueBrowsers), 'Navegadors/dispositius anònims')}
                     ${metricCard('Recurrents', compact(recurrentBrowsers), uniqueBrowsers ? `${percent(recurrentBrowsers, uniqueBrowsers)} dels únics` : '—')}
-                    ${metricCard('Vídeos / usuari', uniqueBrowsers ? (number(audience.videosPerBrowser)).toFixed(1).replace('.', ',') : '—', `${compact(videoUsers)} usuaris han obert vídeos`)}
-                    ${metricCard('Usuaris de TV', compact(tvUsers), uniqueBrowsers ? `${percent(tvUsers, uniqueBrowsers)} dels únics` : '—')}
+                    ${metricCard('Cançons / usuari', uniqueBrowsers ? (number(audience.videosPerBrowser)).toFixed(1).replace('.', ',') : '—', `${compact(videoUsers)} usuaris han obert cançons`)}
+                    ${metricCard('Usuaris de ràdio', compact(tvUsers), uniqueBrowsers ? `${percent(tvUsers, uniqueBrowsers)} dels únics` : '—')}
                     ${metricCard('Entrades', compact(totals.app_open || 0))}
-                    ${metricCard('Vídeos oberts', compact(videoOpen))}
-                    ${metricCard('TV iniciades', compact(tvStarts), `Següent/TV: ${percent(tvNext, tvStarts)}`)}
+                    ${metricCard('Cançons obertes', compact(videoOpen))}
+                    ${metricCard('Ràdios iniciades', compact(tvStarts), `Següent/TV: ${percent(tvNext, tvStarts)}`)}
                     ${metricCard('Cerques', compact(totals.search_used || 0))}
                     ${metricCard('Feed intel·ligent', compact(totals.smart_feed_rendered || 0), `${compact(smartFeedUsers)} usuaris únics`)}
-                    ${metricCard('Nous follows', compact(followOn), `${compact(followUsers)} usuaris · Baixes: ${compact(followOff)}`)}
+                    ${metricCard('Nous seguiments', compact(followOn), `${compact(followUsers)} usuaris · Baixes: ${compact(followOff)}`)}
                     ${metricCard('Follow / vídeo', percent(followOn, videoOpen), 'Indicador orientatiu')}
-                    ${metricCard('Regeneracions TV', compact(totals.tv_regenerate || 0), `Per TV: ${percent(totals.tv_regenerate, tvStarts)}`)}
+                    ${metricCard('Barreges de ràdio', compact(totals.tv_regenerate || 0), `Per TV: ${percent(totals.tv_regenerate, tvStarts)}`)}
                 </section>
 
                 <section class="analytics-admin-panel">
@@ -466,7 +466,7 @@
                         ${dimensionRows(dims.category)}
                     </section>
                     <section class="analytics-admin-panel">
-                        <h3>Tipus de TV</h3>
+                        <h3>Tipus de ràdio</h3>
                         ${dimensionRows(dims.tvMode)}
                     </section>
                 </div>

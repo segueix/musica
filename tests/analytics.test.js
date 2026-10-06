@@ -1,6 +1,7 @@
+import vm from 'node:vm';
 import { readFileSync } from 'node:fs';
 import { describe, expect, it, vi } from 'vitest';
-import { onRequestGet, onRequestPost } from '../functions/api/analytics.js';
+import { onRequestGet, onRequestPost, onRequestOptions } from '../functions/api/analytics.js';
 
 const clientSource = readFileSync(new URL('../js/features/analytics.js', import.meta.url), 'utf8');
 const endpointSource = readFileSync(new URL('../functions/api/analytics.js', import.meta.url), 'utf8');
@@ -52,7 +53,7 @@ describe('analytics anònims de producte', () => {
                 context: {
                     surface: 'home',
                     device: 'mobile',
-                    category: 'cultura',
+                    category: 'pop',
                     videoId: 'secret-video',
                     channelId: 'secret-channel',
                     query: 'text privat',
@@ -64,14 +65,14 @@ describe('analytics anònims de producte', () => {
 
         expect(response.status).toBe(204);
         expect(writes).toHaveLength(1);
-        expect(writes[0].key).toMatch(/^analytics:v1:/);
+        expect(writes[0].key).toMatch(/^music:analytics:v1:/);
         expect(writes[0].options.expirationTtl).toBe(60 * 60 * 24 * 90);
 
         const stored = JSON.parse(writes[0].value);
         expect(stored.context).toEqual({
             surface: 'home',
             device: 'mobile',
-            category: 'cultura',
+            category: 'pop',
         });
         expect(stored.context.videoId).toBeUndefined();
         expect(stored.context.channelId).toBeUndefined();
@@ -103,10 +104,10 @@ describe('analytics anònims de producte', () => {
             String(today.getUTCDate()).padStart(2, '0'),
         ].join('-');
         const keys = [
-            { name: `analytics:v1:${day}:video_open:17:d-mobile:s-home:c-cultura:t-other:x-off:a` },
-            { name: `analytics:v1:${day}:video_open:18:d-desktop:s-watch:c-other:t-other:x-off:b` },
-            { name: `analytics:v1:${day}:tv_start:18:d-mobile:s-tv:c-other:t-segueix:x-off:c` },
-            { name: `analytics:v1:${day}:follow_toggle:18:d-mobile:s-channel:c-other:t-other:x-on:d` },
+            { name: `music:analytics:v1:${day}:video_open:17:d-mobile:s-home:c-pop:t-other:x-off:a` },
+            { name: `music:analytics:v1:${day}:video_open:18:d-desktop:s-watch:c-other:t-other:x-off:b` },
+            { name: `music:analytics:v1:${day}:tv_start:18:d-mobile:s-tv:c-other:t-segueix:x-off:c` },
+            { name: `music:analytics:v1:${day}:follow_toggle:18:d-mobile:s-channel:c-other:t-other:x-on:d` },
         ];
         const list = vi.fn(async ({ prefix }) => ({
             keys: prefix.includes(day) ? keys : [],
@@ -135,7 +136,7 @@ describe('analytics anònims de producte', () => {
 
     it('el client és cookieless i permet desactivar la recollida', () => {
         expect(clientSource).toContain("const ENABLED_KEY = 'catube_anonymous_analytics_enabled'");
-        expect(clientSource).toContain("const CLIENT_ID_KEY = 'catube_anonymous_analytics_client_v1'");
+        expect(clientSource).toContain("const CLIENT_ID_KEY = 'catube_music_anonymous_analytics_client_v1'");
         expect(clientSource).toContain('CLIENT_ID_MAX_AGE_MS = 90 * 24 * 60 * 60 * 1000');
         expect(clientSource).toContain("localStorage.getItem(ENABLED_KEY) !== '0'");
         expect(clientSource).toContain('toggleAnonymousAnalyticsBtn');
@@ -158,7 +159,7 @@ describe('analytics anònims de producte', () => {
             request: request({
                 event: 'video_open',
                 clientId,
-                context: { surface: 'home', device: 'mobile', category: 'cultura' },
+                context: { surface: 'home', device: 'mobile', category: 'pop' },
             }),
             env: { SEGUEIX_SYNC: kv },
         });
@@ -193,7 +194,7 @@ describe('analytics anònims de producte', () => {
         expect(adminSource).toContain("sessionStorage.setItem(TOKEN_KEY, token)");
         expect(adminSource).toContain("from: range.from");
         expect(adminSource).toContain("to: range.to");
-        expect(adminSource).toContain("fetch(\`/api/analytics?\${params.toString()}\`");
+        expect(adminSource).toContain("fetch(\`https://segueix.cat/api/music-analytics?\${params.toString()}\`");
         expect(adminSource).toContain("authorization: \`Bearer \${token}\`");
         expect(adminSource).toContain('const ALLOWED_DAYS = [7, 30, 90]');
         expect(adminSource).toContain('analyticsAdminFrom');
@@ -219,16 +220,16 @@ describe('analytics anònims de producte', () => {
 
         const keysByDay = new Map([
             [from, [
-                { name: `analytics:v1:${from}:video_open:10:d-mobile:s-home:c-cultura:t-other:x-off:u-user-a:a` },
-                { name: `analytics:v1:${from}:video_open:12:d-mobile:s-home:c-cultura:t-other:x-off:u-user-b:b` },
+                { name: `music:analytics:v1:${from}:video_open:10:d-mobile:s-home:c-pop:t-other:x-off:u-user-a:a` },
+                { name: `music:analytics:v1:${from}:video_open:12:d-mobile:s-home:c-pop:t-other:x-off:u-user-b:b` },
             ]],
             [to, [
-                { name: `analytics:v1:${to}:tv_start:11:d-desktop:s-tv:c-other:t-segueix:x-off:u-user-a:c` },
-                { name: `analytics:v1:${to}:follow_toggle:13:d-mobile:s-channel:c-other:t-other:x-on:u-user-a:d` },
+                { name: `music:analytics:v1:${to}:tv_start:11:d-desktop:s-tv:c-other:t-segueix:x-off:u-user-a:c` },
+                { name: `music:analytics:v1:${to}:follow_toggle:13:d-mobile:s-channel:c-other:t-other:x-on:u-user-a:d` },
             ]],
         ]);
         const list = vi.fn(async ({ prefix }) => {
-            const day = prefix.split(':')[2];
+            const day = prefix.split(':')[3];
             return { keys: keysByDay.get(day) || [], list_complete: true };
         });
 
@@ -275,7 +276,7 @@ describe('analytics anònims de producte', () => {
 
     it('genera un informe PDF local sense enviar dades a tercers', () => {
         expect(pdfSource).toContain("type: 'application/pdf'");
-        expect(pdfSource).toContain("segueix-analytics-${summary.from}-${summary.to}.pdf");
+        expect(pdfSource).toContain("segueix-musica-analytics-${summary.from}-${summary.to}.pdf");
         expect(pdfSource).toContain("app.features.analyticsPdf");
         expect(pdfSource).toContain("'Usuaris únics'");
         expect(pdfSource).toContain("'Recurrents'");
@@ -285,14 +286,99 @@ describe('analytics anònims de producte', () => {
     });
 
     it('carrega el mòdul, el precacheja i informa l’usuari', () => {
-        expect(indexSource).toContain('js/features/analytics.js?v=20260925-unique-users-v1');
+        expect(indexSource).toContain('js/features/analytics.js?v=20261006-music-analytics-1');
         expect(indexSource).toContain('Configuració &gt; Analítica anònima');
         expect(indexSource).toContain('identificador aleatori que rota cada 90 dies');
-        expect(indexSource).toContain('js/features/analytics-pdf.js?v=20260925-unique-users-v1');
-        expect(indexSource).toContain('js/features/analytics-admin.js?v=20260925-unique-users-v1');
+        expect(indexSource).toContain('js/features/analytics-pdf.js?v=20261006-music-analytics-1');
+        expect(indexSource).toContain('js/features/analytics-admin.js?v=20261006-music-analytics-1');
         expect(swSource).toContain("'./js/features/analytics.js'");
         expect(swSource).toContain("'./js/features/analytics-pdf.js'");
         expect(swSource).toContain("'./js/features/analytics-admin.js'");
         expect(swSource).toMatch(/const CACHE_VERSION = '[a-z0-9_-]+'/i);
     });
+});
+
+describe('aïllament de l’analítica de Música', () => {
+    it('permet el preflight de GitHub Pages però rebutja altres orígens', async () => {
+        const allowed = await onRequestOptions({ request: new Request('https://segueix.cat/api/music-analytics', {
+            method: 'OPTIONS', headers: { origin: 'https://segueix.github.io', 'sec-fetch-site': 'cross-site' },
+        }) });
+        expect(allowed.status).toBe(204);
+        expect(allowed.headers.get('access-control-allow-origin')).toBe('https://segueix.github.io');
+        expect(allowed.headers.get('access-control-allow-headers')).toContain('authorization');
+        const rejected = await onRequestPost({
+            request: request({ event: 'app_open' }, { origin: 'https://example.com', 'sec-fetch-site': 'cross-site' }),
+            env: { SEGUEIX_SYNC: { put: vi.fn() } },
+        });
+        expect(rejected.status).toBe(403);
+    });
+
+    it('desa exclusivament al prefix de Música encara que hi hagi Analytics Engine compartit', async () => {
+        const put = vi.fn(async () => {});
+        const writeDataPoint = vi.fn();
+        const response = await onRequestPost({
+            request: request({ event: 'category_open', context: { category: 'urbana' } }, {
+                origin: 'https://segueix.github.io', 'sec-fetch-site': 'cross-site',
+            }),
+            env: { SEGUEIX_SYNC: { put }, SEGUEIX_ANALYTICS: { writeDataPoint } },
+        });
+        expect(response.status).toBe(204);
+        expect(response.headers.get('access-control-allow-origin')).toBe('https://segueix.github.io');
+        expect(put.mock.calls[0][0]).toMatch(/^music:analytics:v1:/);
+        expect(writeDataPoint).not.toHaveBeenCalled();
+    });
+
+    it('el resum llegeix només Música, conserva l’autenticació i identifica el producte', async () => {
+        const list = vi.fn(async ({ prefix }) => {
+            expect(prefix).toMatch(/^music:analytics:v1:/);
+            return { keys: [{ name: prefix + 'app_open:12:d-mobile:s-home:c-pop:t-other:x-off:u-browser:x' }], list_complete: true };
+        });
+        const response = await onRequestGet({
+            request: new Request('https://segueix.cat/api/music-analytics?days=1', {
+                headers: { origin: 'https://segueix.github.io', authorization: 'Bearer music-token' },
+            }),
+            env: { MUSIC_ANALYTICS_ADMIN_TOKEN: 'music-token', ANALYTICS_ADMIN_TOKEN: 'main-token', SEGUEIX_SYNC: { list } },
+        });
+        expect(response.status).toBe(200);
+        const body = await response.json();
+        expect(body.product).toBe('musica');
+        expect(body.totals.app_open).toBe(1);
+        expect(body.audience.uniqueBrowsers).toBe(1);
+    });
+});
+
+it('registra una ràdio iniciada i conserva el resultat sense enviar noms d’artistes', () => {
+    const handlers = {};
+    const fetch = vi.fn(async () => ({}));
+    const queue = {
+        startArtistRadio: vi.fn(() => true),
+        startStyleRadio: vi.fn(() => false),
+    };
+    const document = {
+        readyState: 'loading',
+        body: { classList: { contains: () => false } },
+        addEventListener: (name, fn) => { handlers[name] = fn; },
+        querySelector: () => null,
+        getElementById: () => null,
+    };
+    const storage = new Map();
+    const window = {
+        SegueixApp: { features: { musicQueue: queue } },
+        location: { search: '', origin: 'https://segueix.github.io' },
+        setTimeout: () => {},
+    };
+    vm.runInNewContext(clientSource, {
+        window, document, navigator: {}, fetch, URL, URLSearchParams, Blob,
+        localStorage: { getItem: k => storage.get(k) || null, setItem: (k, v) => storage.set(k, v) },
+    });
+    handlers.DOMContentLoaded();
+    expect(queue.startArtistRadio([], { name: 'artista privat' })).toBe(true);
+    expect(queue.startStyleRadio(['Pop'])).toBe(false);
+    expect(fetch).toHaveBeenCalledTimes(1);
+    expect(fetch.mock.calls[0][0]).toBe('https://segueix.cat/api/music-analytics');
+    const payload = JSON.parse(fetch.mock.calls[0][1].body);
+    expect(payload.event).toBe('tv_start');
+    expect(payload.context.tvMode).toBe('channel');
+    expect(fetch.mock.calls[0][1].body).not.toContain('artista privat');
+    expect(fetch.mock.calls[0][1].credentials).toBe('omit');
 });

@@ -1,5 +1,6 @@
 const EVENT_TTL_SECONDS = 60 * 60 * 24 * 90;
 const MAX_SUMMARY_DAYS = 90;
+const STORAGE_PREFIX = 'music:analytics:v1:';
 
 const ALLOWED_EVENTS = new Set([
   'app_open',
@@ -44,19 +45,10 @@ function emptyResponse(status = 204) {
 }
 
 function sameSiteRequest(request) {
-  const secFetchSite = request.headers.get('sec-fetch-site');
-  if (secFetchSite && !['same-origin', 'same-site', 'none'].includes(secFetchSite)) return false;
-
   const origin = request.headers.get('origin');
   if (!origin) return true;
-
   try {
-    const requestUrl = new URL(request.url);
-    const originUrl = new URL(origin);
-    if (originUrl.hostname === requestUrl.hostname) return true;
-    if (originUrl.hostname === 'segueix.cat') return true;
-    if (originUrl.hostname.endsWith('.segueix.pages.dev')) return true;
-    return false;
+    return origin === new URL(request.url).origin || origin === 'https://segueix.github.io';
   } catch {
     return false;
   }
@@ -107,23 +99,6 @@ async function hashClientId(clientId) {
 async function writeEvent(env, eventName, context, clientHash = '') {
   const buckets = utcBuckets();
 
-  if (env?.SEGUEIX_ANALYTICS?.writeDataPoint) {
-    env.SEGUEIX_ANALYTICS.writeDataPoint({
-      blobs: [
-        eventName,
-        context.surface || 'other',
-        context.device || 'desktop',
-        context.category || 'other',
-        context.tvMode || 'other',
-        context.state || 'off',
-        clientHash || 'anonymous',
-      ],
-      doubles: [1],
-      indexes: [buckets.day],
-    });
-    return 'analytics-engine';
-  }
-
   if (!env?.SEGUEIX_SYNC) {
     throw new Error('No analytics storage configured');
   }
@@ -136,7 +111,7 @@ async function writeEvent(env, eventName, context, clientHash = '') {
     `x-${context.state || 'off'}`,
     ...(clientHash ? [`u-${clientHash}`] : []),
   ];
-  const key = `analytics:v1:${buckets.day}:${eventName}:${buckets.hour}:${dims.join(':')}:${randomSuffix()}`;
+  const key = `${STORAGE_PREFIX}${buckets.day}:${eventName}:${buckets.hour}:${dims.join(':')}:${randomSuffix()}`;
   await env.SEGUEIX_SYNC.put(
     key,
     JSON.stringify({
@@ -256,12 +231,12 @@ async function buildKvSummary(kv, range) {
   };
 
   for (const day of enumerateDays(range.from, range.to)) {
-    const keys = await listAllByPrefix(kv, `analytics:v1:${day}:`);
+    const keys = await listAllByPrefix(kv, `${STORAGE_PREFIX}${day}:`);
     const counts = {};
     const dailyUnique = new Set();
 
     for (const item of keys) {
-      const parts = String(item.name || '').split(':');
+      const parts = String(item.name || '').slice('music:'.length).split(':');
       const event = parts[3] || '';
       if (!ALLOWED_EVENTS.has(event)) continue;
 
@@ -306,6 +281,7 @@ async function buildKvSummary(kv, range) {
   const uniqueCount = uniqueBrowsers.size;
 
   return {
+    product: 'musica',
     from: range.from,
     to: range.to,
     days: range.days,
@@ -326,7 +302,7 @@ async function buildKvSummary(kv, range) {
   };
 }
 
-export async function onRequestPost(context) {
+async function handlePost(context) {
   const { request, env } = context;
 
   if (!sameSiteRequest(request)) {
@@ -361,9 +337,9 @@ export async function onRequestPost(context) {
   }
 }
 
-export async function onRequestGet(context) {
+async function handleGet(context) {
   const { request, env } = context;
-  const configuredToken = String(env?.ANALYTICS_ADMIN_TOKEN || '').trim();
+  const configuredToken = String(env?.MUSIC_ANALYTICS_ADMIN_TOKEN || env?.ANALYTICS_ADMIN_TOKEN || '').trim();
 
   if (!configuredToken) {
     return jsonResponse({ error: 'Analytics summary is not configured' }, 503);
@@ -380,12 +356,6 @@ export async function onRequestGet(context) {
     });
   }
 
-  if (env?.SEGUEIX_ANALYTICS?.writeDataPoint) {
-    return jsonResponse({
-      error: 'Events are stored in Cloudflare Analytics Engine; query that dataset from Cloudflare.',
-    }, 503);
-  }
-
   if (!env?.SEGUEIX_SYNC) {
     return jsonResponse({ error: 'KV summary unavailable' }, 503);
   }
@@ -398,4 +368,32 @@ export async function onRequestGet(context) {
 
   const summary = await buildKvSummary(env.SEGUEIX_SYNC, range);
   return jsonResponse(summary);
+}
+
+function withCors(response, request) {
+  const headers = new Headers(response.headers);
+  const origin = request.headers.get('origin');
+  if (origin && sameSiteRequest(request)) {
+    headers.set('access-control-allow-origin', origin);
+    headers.set('vary', 'Origin');
+  }
+  return new Response(response.body, { status: response.status, headers });
+}
+
+export async function onRequestOptions({ request }) {
+  if (!sameSiteRequest(request)) return jsonResponse({ error: 'Origin not allowed' }, 403);
+  const response = emptyResponse(204);
+  response.headers.set('access-control-allow-methods', 'GET, POST, OPTIONS');
+  response.headers.set('access-control-allow-headers', 'content-type, authorization');
+  response.headers.set('access-control-max-age', '600');
+  return withCors(response, request);
+}
+
+export async function onRequestPost(context) {
+  return withCors(await handlePost(context), context.request);
+}
+
+export async function onRequestGet(context) {
+  if (!sameSiteRequest(context.request)) return jsonResponse({ error: 'Origin not allowed' }, 403);
+  return withCors(await handleGet(context), context.request);
 }
