@@ -1604,3 +1604,13 @@ Proves: còpia >42 kB, fallback de compartició TXT, associació de fitxers amb 
 **Solució Implementada:** `buildLink()` codifica `+` → `%2B` i `$` → `%24` (codificació d'URL estàndard, sense cap caràcter de format de WhatsApp: `_ ~ * \``). `parseLink()` fa `decodeURIComponent()` i continua acceptant `~`/`_` dels primers enllaços. Prova: `tests/music-transfer.test.js`.
 
 **Trampa:** mai posis `_`, `~`, `*` ni `` ` `` en un enllaç que hagi de passar per WhatsApp. Un enllaç enviat per WhatsApp sempre es veu sencer al missatge: no es pot amagar sense un servei d'enllaços curts (i l'app és a GitHub Pages, sense servidor).
+
+## [2026-10-06] - Enllaç massa llarg: s'envia una llista i els artistes, només amb identificadors
+
+**Símptoma/Petició:** l'enllaç de «Passa la teva música» era massa llarg (al WhatsApp es veia un bloc de text). L'usuari vol enviar **una llista triada d'un desplegable i els artistes que segueix**, i prou: amb això, a l'altre aparell pot continuar escoltant i la ràdio ja coneix els seus artistes.
+
+**Solució Implementada:** `music-transfer.js`: `selection(llista, ambArtistes)` fa la còpia només amb la llista triada (`catube_playlists`) i, si es marca, `catube_follows`; `compact()` deixa a l'enllaç només identificadors (cançons i canals) i el nom de la llista. Una llista de 25 cançons i 8 artistes: missatge de ≈ 1.080 caràcters (abans, 50 cançons de l'historial ja en feien 2.200, i tot plegat molts milers). En confirmar a l'altre aparell, `hydrate()` hi posa títol, artista, canal, durada i categories des de `catalogMap()` (feed, pool d'història i `ensureStyleHistory()`); una cançó que no hi sigui queda només amb l'ID (la miniatura es deriva de l'ID). `summary()` només diu el que hi ha («llista «Estiu» (25 cançons) · 8 artistes»). Eliminat «Desa el fitxer»; «Importa un fitxer» es manté per a les còpies antigues. La importació de còpies completes antigues (enllaços i fitxers) continua funcionant.
+
+**Trampes:** (1) `catalogMap()` espera que el feed hagi carregat (fins a 10 s) abans de demanar `ensureStyleHistory()`: demanat abans, l'historial dels estils filtra per canals encara buits i queda buit tota la sessió. (2) El desplegable es refà en apropar-s'hi (`pointerenter`/`touchstart`/`focusin` de la secció) només si les llistes han canviat (signatura), i conserva la triada; «Cap llista» només es manté si l'ha triat l'usuari (`dataset.chosen`).
+
+**Proves:** `tests/music-transfer.test.js` (selecció sense historial ni títols, avisos, títols del catàleg, desplegable, WhatsApp Web, porta-retalls, mòbil, cancel·lació). Verificat al Chromium amb el feed real: llista de 25 cançons i 8 artistes importada en un altre context amb els 25 títols i l'historial buit.
