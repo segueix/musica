@@ -23420,6 +23420,7 @@
       "name": "Tomeu Penya",
       "aliases": [],
       "genres": [
+        "Rock",
         "Folk i arrel"
       ],
       "territories": [],
@@ -23429,7 +23430,15 @@
       "wikidataId": "Q2917088",
       "musicbrainzId": "256e45e8-aaf2-447e-a866-68662d89caf8",
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCsOxXt5l7XmAc6AvMQDRV4A",
+            "handle": null,
+            "name": "Tomeu Penya - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
         "candidates": [],
         "searchCandidates": [
           {
@@ -23478,13 +23487,15 @@
           }
         ]
       },
-      "confidence": "pendent",
-      "reviewStatus": "pendent",
-      "active": false,
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
         "https://www.wikidata.org/wiki/Q2917088",
         "wikidata:languages-spoken-catalan",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "genre:manual",
+        "https://www.youtube.com/channel/UCsOxXt5l7XmAc6AvMQDRV4A"
       ],
       "lastChecked": "2026-09-25T15:56:42.136Z",
       "notes": "",
