@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-05T19:02:42.450Z",
+  "updatedAt": "2026-10-06T07:58:24.332187Z",
   "description": "Llista blanca per a canals on Segueix Música només ha d'ingerir vídeos concrets. Admet títols exactes, fragments obligatoris i fragments exclosos.",
   "channels": {
     "UCKpscwdWlVaMqcA81vLI7OA": {
@@ -1816,16 +1816,26 @@
     },
     "UCXQsHe-XMB9xWUxtRLFAWQg": {
       "artist": "Pixamandúrries",
-      "note": "Selecció tancada de cançons en català; no importar altres vídeos ni canals. Fonts: docs/REVISION_PIXAMANDURRIES_GRA_FORT_2026-10-05.json",
+      "note": "Selecció ampliada de cançons en català contrastades. Inventari, evidències i pendents: docs/REVISION_PIXAMANDURRIES_GRA_FORT_2026-10-06.json. No importar la resta del canal sense revisió.",
       "allowedVideoIds": [
         "BvW0TmXoBEQ",
         "2EExfuHmT2U",
-        "t8TBnCGiexw"
+        "t8TBnCGiexw",
+        "M1SaVz4FrXI",
+        "w44--p-r3KI",
+        "vdY-9jT6Iyw",
+        "U9niiZ9kA2Y",
+        "Bt_3HAOBAmM"
       ],
       "allowedTitles": [
         "En Kim",
         "La piruleta",
-        "L´any dels gossos"
+        "L´any dels gossos",
+        "Educació i por",
+        "Tourisme de pandereta",
+        "L´economia",
+        "Raonament",
+        "Quina Vida"
       ],
       "acceptedMusicOnly": true,
       "allowedContentTypes": [
@@ -1835,16 +1845,44 @@
     },
     "UC5PqMEE9b8osizQXQSdVkNQ": {
       "artist": "Gra Fort",
-      "note": "Selecció tancada de cançons en català; no importar altres vídeos ni canals. Fonts: docs/REVISION_PIXAMANDURRIES_GRA_FORT_2026-10-05.json",
+      "note": "Selecció ampliada de cançons en català contrastades. Inventari, evidències i pendents: docs/REVISION_PIXAMANDURRIES_GRA_FORT_2026-10-06.json. No importar la resta del canal sense revisió.",
       "allowedVideoIds": [
-        "BCzg-AMTtzw",
+        "1SNB-sKrMwI",
+        "JqPEdfTgy1s",
+        "dMwGxJ4EzsA",
+        "5rtO-L0Fa3I",
+        "bk2M7KY2rQI",
+        "nQVRtG9Z14I",
+        "msOQMpwXiJE",
+        "d-Xbpb0ysa8",
+        "JNyMC33_pcA",
         "5MCC_7fZOY8",
-        "nQVRtG9Z14I"
+        "gF4PaVNxILk",
+        "I7wjLUEzSRk",
+        "Lck9awXJZHM",
+        "BCzg-AMTtzw",
+        "030wp70DQcA",
+        "QaQQzLEOxIc",
+        "9NUfwXyoP6U"
       ],
       "allowedTitles": [
-        "D.o.t.a.",
+        "Revolcats Per la Palla",
+        "Com el Cos",
+        "Paràsits Socials",
+        "Correfoc",
+        "No Hi Ha Pàtries",
+        "Rock'n'roll",
+        "Sentiments",
+        "Insubmissió",
+        "L'Estacada",
         "Terra Alta",
-        "Rock'n'roll"
+        "Rodamon Blues",
+        "Roses",
+        "Fruits Secs",
+        "D.o.t.a.",
+        "Victimes del Temps",
+        "Menjar, Beure I Cardar",
+        "Menjar, Beure i Cardar"
       ],
       "acceptedMusicOnly": true,
       "allowedContentTypes": [

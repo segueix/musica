@@ -1,0 +1,568 @@
+{
+  "reviewedAt": "2026-10-06T07:58:24.332187Z",
+  "scope": "Només els dos canals Tema indicats per l’usuari. Inventari complet; s’amplia la selecció amb evidència de llengua, sense considerar en català les peces encara no verificades.",
+  "channels": [
+    {
+      "artist": "Pixamandúrries",
+      "channelId": "UCXQsHe-XMB9xWUxtRLFAWQg",
+      "inventoryCount": 30,
+      "acceptedCount": 8,
+      "videos": [
+        {
+          "id": "roMksx9Gl08",
+          "title": "Mi bezonas revi",
+          "durationSeconds": 72,
+          "url": "https://www.youtube.com/watch?v=roMksx9Gl08",
+          "decision": "pendent",
+          "reason": "No s’ha pogut contrastar prou la llengua del text. No s’infereix pel títol."
+        },
+        {
+          "id": "276JxrKVmUM",
+          "title": "Escampa la rebel·lió",
+          "durationSeconds": 98,
+          "url": "https://www.youtube.com/watch?v=276JxrKVmUM",
+          "decision": "pendent",
+          "reason": "No s’ha pogut contrastar prou la llengua del text. No s’infereix pel títol."
+        },
+        {
+          "id": "6BDBIP9APrM",
+          "title": "Fi del viatge",
+          "durationSeconds": 108,
+          "url": "https://www.youtube.com/watch?v=6BDBIP9APrM",
+          "decision": "pendent",
+          "reason": "No s’ha pogut contrastar prou la llengua del text. No s’infereix pel títol."
+        },
+        {
+          "id": "B7tyLEXysUk",
+          "title": "Guerra / La realidad social",
+          "durationSeconds": 247,
+          "url": "https://www.youtube.com/watch?v=B7tyLEXysUk",
+          "decision": "pendent",
+          "reason": "No s’ha pogut contrastar prou la llengua del text. No s’infereix pel títol."
+        },
+        {
+          "id": "CWg0Z813JcQ",
+          "title": "Tot per tots",
+          "durationSeconds": 134,
+          "url": "https://www.youtube.com/watch?v=CWg0Z813JcQ",
+          "decision": "pendent",
+          "reason": "No s’ha pogut contrastar prou la llengua del text. No s’infereix pel títol."
+        },
+        {
+          "id": "Ga1TVVBjwVc",
+          "title": "Capità Enciam",
+          "durationSeconds": 93,
+          "url": "https://www.youtube.com/watch?v=Ga1TVVBjwVc",
+          "decision": "pendent",
+          "reason": "No s’ha pogut contrastar prou la llengua del text. No s’infereix pel títol."
+        },
+        {
+          "id": "Ugcg8JfqVT4",
+          "title": "Bojos",
+          "durationSeconds": 96,
+          "url": "https://www.youtube.com/watch?v=Ugcg8JfqVT4",
+          "decision": "pendent",
+          "reason": "No s’ha pogut contrastar prou la llengua del text. No s’infereix pel títol."
+        },
+        {
+          "id": "XQ7PIBaVOFE",
+          "title": "Ritmo Corazón",
+          "durationSeconds": 148,
+          "url": "https://www.youtube.com/watch?v=XQ7PIBaVOFE",
+          "decision": "pendent",
+          "reason": "No s’ha pogut contrastar prou la llengua del text. No s’infereix pel títol."
+        },
+        {
+          "id": "YWHEhKsa-q4",
+          "title": "Saldu auna",
+          "durationSeconds": 180,
+          "url": "https://www.youtube.com/watch?v=YWHEhKsa-q4",
+          "decision": "exclos",
+          "reason": "Esperanto o yahi, documentat pel segell.",
+          "evidence": [
+            "https://www.kasbamusic.com/en/2024/02/avui-es-publica-dels-rics-i-dels-pobres/"
+          ]
+        },
+        {
+          "id": "zbP2Td6aFqA",
+          "title": "La bonaj vortoj",
+          "durationSeconds": 133,
+          "url": "https://www.youtube.com/watch?v=zbP2Td6aFqA",
+          "decision": "exclos",
+          "reason": "Esperanto o yahi, documentat pel segell.",
+          "evidence": [
+            "https://www.kasbamusic.com/en/2024/02/avui-es-publica-dels-rics-i-dels-pobres/"
+          ]
+        },
+        {
+          "id": "0C61byfgISw",
+          "title": "La història dels assassins 2",
+          "durationSeconds": 143,
+          "url": "https://www.youtube.com/watch?v=0C61byfgISw",
+          "decision": "pendent",
+          "reason": "No s’ha pogut contrastar prou la llengua del text. No s’infereix pel títol."
+        },
+        {
+          "id": "6j97kx0Mnbc",
+          "title": "Tempigas temp'",
+          "durationSeconds": 111,
+          "url": "https://www.youtube.com/watch?v=6j97kx0Mnbc",
+          "decision": "pendent",
+          "reason": "No s’ha pogut contrastar prou la llengua del text. No s’infereix pel títol."
+        },
+        {
+          "id": "7R2lrm_WT-c",
+          "title": "Aquí sóc feliç",
+          "durationSeconds": 188,
+          "url": "https://www.youtube.com/watch?v=7R2lrm_WT-c",
+          "decision": "pendent",
+          "reason": "No s’ha pogut contrastar prou la llengua del text. No s’infereix pel títol."
+        },
+        {
+          "id": "rtsoBLNENcM",
+          "title": "Arribada a Occident / Jordi",
+          "durationSeconds": 203,
+          "url": "https://www.youtube.com/watch?v=rtsoBLNENcM",
+          "decision": "pendent",
+          "reason": "No s’ha pogut contrastar prou la llengua del text. No s’infereix pel títol."
+        },
+        {
+          "id": "BvW0TmXoBEQ",
+          "title": "En Kim",
+          "durationSeconds": 155,
+          "url": "https://www.youtube.com/watch?v=BvW0TmXoBEQ",
+          "decision": "acceptat",
+          "language": "ca",
+          "evidence": [
+            "https://albertpunsolavilar.com/wp-content/uploads/2024/01/el-temps_1993_10_0488.pdf"
+          ],
+          "reason": "Una de les set cançons identificades en català a El Temps, 25-10-1993, p. 90."
+        },
+        {
+          "id": "t8TBnCGiexw",
+          "title": "L´any dels gossos",
+          "durationSeconds": 130,
+          "url": "https://www.youtube.com/watch?v=t8TBnCGiexw",
+          "decision": "acceptat",
+          "language": "ca",
+          "evidence": [
+            "https://albertpunsolavilar.com/wp-content/uploads/2024/01/el-temps_1993_10_0488.pdf"
+          ],
+          "reason": "Una de les set cançons identificades en català a El Temps, 25-10-1993, p. 90."
+        },
+        {
+          "id": "vdY-9jT6Iyw",
+          "title": "L´economia",
+          "durationSeconds": 85,
+          "url": "https://www.youtube.com/watch?v=vdY-9jT6Iyw",
+          "decision": "acceptat",
+          "language": "ca",
+          "evidence": [
+            "https://albertpunsolavilar.com/wp-content/uploads/2024/01/el-temps_1993_10_0488.pdf"
+          ],
+          "reason": "Una de les set cançons identificades en català a El Temps, 25-10-1993, p. 90.",
+          "shortsCheck": {
+            "status": 303,
+            "location": "https://www.youtube.com/watch?v=vdY-9jT6Iyw",
+            "checkedAt": "2026-10-06T07:58:24.332187Z",
+            "result": "vídeo normal, no Short"
+          }
+        },
+        {
+          "id": "OLrvzNDWSCI",
+          "title": "Insubmissió Total",
+          "durationSeconds": 92,
+          "url": "https://www.youtube.com/watch?v=OLrvzNDWSCI",
+          "decision": "pendent",
+          "reason": "No s’ha pogut contrastar prou la llengua del text. No s’infereix pel títol."
+        },
+        {
+          "id": "1-npxZ54v_c",
+          "title": "1492-1992 La historio de la murdoj/ Posa-li tu el títol",
+          "durationSeconds": 309,
+          "url": "https://www.youtube.com/watch?v=1-npxZ54v_c",
+          "decision": "pendent",
+          "reason": "No s’ha pogut contrastar prou la llengua del text. No s’infereix pel títol."
+        },
+        {
+          "id": "2EExfuHmT2U",
+          "title": "La piruleta",
+          "durationSeconds": 142,
+          "url": "https://www.youtube.com/watch?v=2EExfuHmT2U",
+          "decision": "acceptat",
+          "language": "ca",
+          "evidence": [
+            "https://albertpunsolavilar.com/wp-content/uploads/2024/01/el-temps_1993_10_0488.pdf"
+          ],
+          "reason": "Una de les set cançons identificades en català a El Temps, 25-10-1993, p. 90."
+        },
+        {
+          "id": "A6u5ovGEDA0",
+          "title": "CorruPSOE",
+          "durationSeconds": 150,
+          "url": "https://www.youtube.com/watch?v=A6u5ovGEDA0",
+          "decision": "pendent",
+          "reason": "No s’ha pogut contrastar prou la llengua del text. No s’infereix pel títol."
+        },
+        {
+          "id": "M1E2GUiXknU",
+          "title": "Cap a on vas?",
+          "durationSeconds": 91,
+          "url": "https://www.youtube.com/watch?v=M1E2GUiXknU",
+          "decision": "pendent",
+          "reason": "No s’ha pogut contrastar prou la llengua del text. No s’infereix pel títol."
+        },
+        {
+          "id": "M1SaVz4FrXI",
+          "title": "Educació i por",
+          "durationSeconds": 90,
+          "url": "https://www.youtube.com/watch?v=M1SaVz4FrXI",
+          "decision": "acceptat",
+          "language": "ca",
+          "evidence": [
+            "https://albertpunsolavilar.com/wp-content/uploads/2024/01/el-temps_1993_10_0488.pdf"
+          ],
+          "reason": "Una de les set cançons identificades en català a El Temps, 25-10-1993, p. 90.",
+          "shortsCheck": {
+            "status": 303,
+            "location": "https://www.youtube.com/watch?v=M1SaVz4FrXI",
+            "checkedAt": "2026-10-06T07:58:24.332187Z",
+            "result": "vídeo normal, no Short"
+          }
+        },
+        {
+          "id": "PAd9I2hK-QI",
+          "title": "Mi bezonas revi",
+          "durationSeconds": 76,
+          "url": "https://www.youtube.com/watch?v=PAd9I2hK-QI",
+          "decision": "pendent",
+          "reason": "No s’ha pogut contrastar prou la llengua del text. No s’infereix pel títol."
+        },
+        {
+          "id": "U9niiZ9kA2Y",
+          "title": "Raonament",
+          "durationSeconds": 78,
+          "url": "https://www.youtube.com/watch?v=U9niiZ9kA2Y",
+          "decision": "acceptat",
+          "language": "ca",
+          "evidence": [
+            "https://albertpunsolavilar.com/wp-content/uploads/2024/01/el-temps_1993_10_0488.pdf"
+          ],
+          "reason": "Una de les set cançons identificades en català a El Temps, 25-10-1993, p. 90.",
+          "shortsCheck": {
+            "status": 303,
+            "location": "https://www.youtube.com/watch?v=U9niiZ9kA2Y",
+            "checkedAt": "2026-10-06T07:58:24.332187Z",
+            "result": "vídeo normal, no Short"
+          }
+        },
+        {
+          "id": "i32Bd7N1JLU",
+          "title": "Insubmissió total intro",
+          "durationSeconds": 106,
+          "url": "https://www.youtube.com/watch?v=i32Bd7N1JLU",
+          "decision": "pendent",
+          "reason": "No s’ha pogut contrastar prou la llengua del text. No s’infereix pel títol."
+        },
+        {
+          "id": "w44--p-r3KI",
+          "title": "Tourisme de pandereta",
+          "durationSeconds": 109,
+          "url": "https://www.youtube.com/watch?v=w44--p-r3KI",
+          "decision": "acceptat",
+          "language": "ca",
+          "evidence": [
+            "https://albertpunsolavilar.com/wp-content/uploads/2024/01/el-temps_1993_10_0488.pdf"
+          ],
+          "reason": "Una de les set cançons identificades en català a El Temps, 25-10-1993, p. 90.",
+          "shortsCheck": {
+            "status": 303,
+            "location": "https://www.youtube.com/watch?v=w44--p-r3KI",
+            "checkedAt": "2026-10-06T07:58:24.332187Z",
+            "result": "vídeo normal, no Short"
+          }
+        },
+        {
+          "id": "n2xiuGUrU2E",
+          "title": "Folk-Core",
+          "durationSeconds": 233,
+          "url": "https://www.youtube.com/watch?v=n2xiuGUrU2E",
+          "decision": "pendent",
+          "reason": "No s’ha pogut contrastar prou la llengua del text. No s’infereix pel títol."
+        },
+        {
+          "id": "gbv63ChVJpY",
+          "title": "Presoners del temps",
+          "durationSeconds": 171,
+          "url": "https://www.youtube.com/watch?v=gbv63ChVJpY",
+          "decision": "pendent",
+          "reason": "No s’ha pogut contrastar prou la llengua del text. No s’infereix pel títol."
+        },
+        {
+          "id": "Bt_3HAOBAmM",
+          "title": "Quina Vida",
+          "durationSeconds": 151,
+          "url": "https://www.youtube.com/watch?v=Bt_3HAOBAmM",
+          "decision": "acceptat",
+          "language": "ca",
+          "evidence": [
+            "https://adios-lili.blogspot.com/2012/03/entrevista-pixamandurries.html"
+          ],
+          "reason": "El primer LP Quina vida és documentat íntegrament en català."
+        }
+      ]
+    },
+    {
+      "artist": "Gra Fort",
+      "channelId": "UC5PqMEE9b8osizQXQSdVkNQ",
+      "inventoryCount": 22,
+      "acceptedCount": 17,
+      "videos": [
+        {
+          "id": "1SNB-sKrMwI",
+          "title": "Revolcats Per la Palla",
+          "durationSeconds": 244,
+          "url": "https://www.youtube.com/watch?v=1SNB-sKrMwI",
+          "decision": "acceptat",
+          "language": "ca",
+          "evidence": [
+            "https://www.coveralia.com/letras/rebolcats-per-la-palla-gra-fort.php"
+          ],
+          "reason": "Lletra contrastada en català."
+        },
+        {
+          "id": "JqPEdfTgy1s",
+          "title": "Com el Cos",
+          "durationSeconds": 257,
+          "url": "https://www.youtube.com/watch?v=JqPEdfTgy1s",
+          "decision": "acceptat",
+          "language": "ca",
+          "evidence": [
+            "https://www.coveralia.com/letras/com-el-cos-gra-fort.php"
+          ],
+          "reason": "Lletra contrastada en català."
+        },
+        {
+          "id": "dMwGxJ4EzsA",
+          "title": "Paràsits Socials",
+          "durationSeconds": 156,
+          "url": "https://www.youtube.com/watch?v=dMwGxJ4EzsA",
+          "decision": "acceptat",
+          "language": "ca",
+          "evidence": [
+            "https://www.coveralia.com/letras/parasits-socials-gra-fort.php"
+          ],
+          "reason": "Lletra contrastada en català."
+        },
+        {
+          "id": "5rtO-L0Fa3I",
+          "title": "Correfoc",
+          "durationSeconds": 157,
+          "url": "https://www.youtube.com/watch?v=5rtO-L0Fa3I",
+          "decision": "acceptat",
+          "language": "ca",
+          "evidence": [
+            "https://www.coveralia.com/letras/correfoc-gra-fort.php"
+          ],
+          "reason": "Lletra contrastada en català."
+        },
+        {
+          "id": "bk2M7KY2rQI",
+          "title": "No Hi Ha Pàtries",
+          "durationSeconds": 289,
+          "url": "https://www.youtube.com/watch?v=bk2M7KY2rQI",
+          "decision": "acceptat",
+          "language": "ca",
+          "evidence": [
+            "https://www.coveralia.com/letras/no-hi-ha-patries-gra-fort.php"
+          ],
+          "reason": "Lletra contrastada en català."
+        },
+        {
+          "id": "nQVRtG9Z14I",
+          "title": "Rock'n'roll",
+          "durationSeconds": 199,
+          "url": "https://www.youtube.com/watch?v=nQVRtG9Z14I",
+          "decision": "acceptat",
+          "language": "ca",
+          "evidence": [
+            "https://www.coveralia.com/letras/rock-n-roll-gra-fort.php"
+          ],
+          "reason": "Lletra contrastada en català."
+        },
+        {
+          "id": "Ap_NsKI9pyc",
+          "title": "Fosc (Instrumental)",
+          "durationSeconds": 181,
+          "url": "https://www.youtube.com/watch?v=Ap_NsKI9pyc",
+          "decision": "no_incorporat",
+          "reason": "Peça instrumental; aquesta ampliació cobreix cançons amb lletra en català."
+        },
+        {
+          "id": "mZC7VQuBDl4",
+          "title": "L'Abocador",
+          "durationSeconds": 173,
+          "url": "https://www.youtube.com/watch?v=mZC7VQuBDl4",
+          "decision": "pendent",
+          "reason": "No s’ha pogut contrastar prou la llengua del text. No s’infereix pel títol."
+        },
+        {
+          "id": "msOQMpwXiJE",
+          "title": "Sentiments",
+          "durationSeconds": 264,
+          "url": "https://www.youtube.com/watch?v=msOQMpwXiJE",
+          "decision": "acceptat",
+          "language": "ca",
+          "evidence": [
+            "https://www.coveralia.com/letras/sentiments-gra-fort.php"
+          ],
+          "reason": "Lletra contrastada en català."
+        },
+        {
+          "id": "d-Xbpb0ysa8",
+          "title": "Insubmissió",
+          "durationSeconds": 329,
+          "url": "https://www.youtube.com/watch?v=d-Xbpb0ysa8",
+          "decision": "acceptat",
+          "language": "ca",
+          "evidence": [
+            "https://www.coveralia.com/letras/insubmissio-gra-fort.php"
+          ],
+          "reason": "Lletra contrastada en català."
+        },
+        {
+          "id": "JNyMC33_pcA",
+          "title": "L'Estacada",
+          "durationSeconds": 244,
+          "url": "https://www.youtube.com/watch?v=JNyMC33_pcA",
+          "decision": "acceptat",
+          "language": "ca",
+          "evidence": [
+            "https://www.coveralia.com/letras/l-estacada-gra-fort.php"
+          ],
+          "reason": "Lletra contrastada en català."
+        },
+        {
+          "id": "5MCC_7fZOY8",
+          "title": "Terra Alta",
+          "durationSeconds": 266,
+          "url": "https://www.youtube.com/watch?v=5MCC_7fZOY8",
+          "decision": "acceptat",
+          "language": "ca",
+          "evidence": [
+            "https://www.coveralia.com/letras/terra-alta-gra-fort.php"
+          ],
+          "reason": "Lletra contrastada en català."
+        },
+        {
+          "id": "gF4PaVNxILk",
+          "title": "Rodamon Blues",
+          "durationSeconds": 295,
+          "url": "https://www.youtube.com/watch?v=gF4PaVNxILk",
+          "decision": "acceptat",
+          "language": "ca",
+          "evidence": [
+            "https://www.coveralia.com/letras/rodamon-blues-gra-fort.php"
+          ],
+          "reason": "Lletra contrastada en català."
+        },
+        {
+          "id": "I7wjLUEzSRk",
+          "title": "Roses",
+          "durationSeconds": 226,
+          "url": "https://www.youtube.com/watch?v=I7wjLUEzSRk",
+          "decision": "acceptat",
+          "language": "ca",
+          "evidence": [
+            "https://www.coveralia.com/letras/roses-gra-fort.php"
+          ],
+          "reason": "Lletra contrastada en català."
+        },
+        {
+          "id": "Lck9awXJZHM",
+          "title": "Fruits Secs",
+          "durationSeconds": 184,
+          "url": "https://www.youtube.com/watch?v=Lck9awXJZHM",
+          "decision": "acceptat",
+          "language": "ca",
+          "evidence": [
+            "https://www.coveralia.com/letras/fruits-secs-gra-fort.php"
+          ],
+          "reason": "Lletra contrastada en català."
+        },
+        {
+          "id": "PpJD0tHUfdM",
+          "title": "Pink Pantber (Instrumental)",
+          "durationSeconds": 210,
+          "url": "https://www.youtube.com/watch?v=PpJD0tHUfdM",
+          "decision": "no_incorporat",
+          "reason": "Peça instrumental; aquesta ampliació cobreix cançons amb lletra en català."
+        },
+        {
+          "id": "BCzg-AMTtzw",
+          "title": "D.o.t.a.",
+          "durationSeconds": 212,
+          "url": "https://www.youtube.com/watch?v=BCzg-AMTtzw",
+          "decision": "acceptat",
+          "language": "ca",
+          "evidence": [
+            "https://www.coveralia.com/letras/d-o-t-a--gra-fort.php"
+          ],
+          "reason": "Lletra contrastada en català."
+        },
+        {
+          "id": "030wp70DQcA",
+          "title": "Victimes del Temps",
+          "durationSeconds": 226,
+          "url": "https://www.youtube.com/watch?v=030wp70DQcA",
+          "decision": "acceptat",
+          "language": "ca",
+          "evidence": [
+            "https://www.coveralia.com/letras/victimes-del-temps-gra-fort.php"
+          ],
+          "reason": "Lletra contrastada en català."
+        },
+        {
+          "id": "QaQQzLEOxIc",
+          "title": "Menjar, Beure I Cardar",
+          "durationSeconds": 239,
+          "url": "https://www.youtube.com/watch?v=QaQQzLEOxIc",
+          "decision": "acceptat",
+          "language": "ca",
+          "evidence": [
+            "https://www.coveralia.com/letras/menjar--beure-i-cardar-gra-fort.php"
+          ],
+          "reason": "Lletra contrastada en català."
+        },
+        {
+          "id": "bdJMzcqPCNQ",
+          "title": "La Claror del Foc (Instrumental)",
+          "durationSeconds": 192,
+          "url": "https://www.youtube.com/watch?v=bdJMzcqPCNQ",
+          "decision": "no_incorporat",
+          "reason": "Peça instrumental; aquesta ampliació cobreix cançons amb lletra en català."
+        },
+        {
+          "id": "GSV1ZMgAW_w",
+          "title": "Sintonia (Instrumental)",
+          "durationSeconds": 175,
+          "url": "https://www.youtube.com/watch?v=GSV1ZMgAW_w",
+          "decision": "no_incorporat",
+          "reason": "Peça instrumental; aquesta ampliació cobreix cançons amb lletra en català."
+        },
+        {
+          "id": "9NUfwXyoP6U",
+          "title": "Menjar, Beure i Cardar",
+          "durationSeconds": 243,
+          "url": "https://www.youtube.com/watch?v=9NUfwXyoP6U",
+          "decision": "acceptat",
+          "language": "ca",
+          "evidence": [
+            "https://www.coveralia.com/letras/menjar--beure-i-cardar-gra-fort.php"
+          ],
+          "reason": "Lletra contrastada en català."
+        }
+      ]
+    }
+  ]
+}

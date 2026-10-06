@@ -1514,3 +1514,13 @@ La selecció manual tampoc aplica la deduplicació de títols pop: «Nocturne No
 ## [2026-10-05] - Retirada de Clàssica sense dependre de YouTube
 
 L’usuari retira la categoria Clàssica i els seus 78 artistes. Els 76 canals queden bloquejats i registrats amb `channelIds` a `music-exclusions.json`. L’arxivador purga aquests canals del feed, del mapa de canals i dels arxius abans de reconstruir l’historial i l’índex. Això evita que l’arxiu recuperi gravacions retirades i permet completar les baixes encara que s’hagi esgotat la quota de YouTube. El workflow d’arxiu respon a canvis d’exclusions i comparteix `music-data-writer` amb els altres generadors. La llista `musica-classica.json` fa referència a música antiga per ponderar ràdios, no al gènere retirat, i es conserva.
+
+
+## 2026-10-06 — Seleccions de tres pistes i actualització dels canals revisats
+
+Pixamandúrries i Gra Fort només mostraven tres vídeos perquè `allowedVideoIds` era una selecció inicial tancada. El generador consulta directament aquests IDs i no descobreix la resta del canal. Ampliar només `allowedTitles` no serveix si no s’amplien també els IDs.
+
+Revisió de l’inventari i evidències: `docs/REVISION_PIXAMANDURRIES_GRA_FORT_2026-10-06.json`. Les quatre peces curtes en català de L’any dels gossos retornen HTTP 303 des de `/shorts/ID` cap a `/watch?v=ID`; s’han registrat com a falsos Shorts. Sense aquest registre el filtre de durada les torna a descartar.
+
+El workflow `actualitzar-feed-musica.yml` delimita ara els pushes de seleccions/falsos Shorts comparant els commits de l’esdeveniment. Consulta només els canals amb regles modificades o amb un fals Short afectat. Una revisió sense canvis efectius no consulta YouTube. Si no pot atribuir un fals Short a un canal, falla explícitament abans de consultar l’API; es pot fer la revisió general manual. Les execucions programades/manuals generals i l’acció manual de grups nous mantenen el seu abast. Proves: `tests/canals-revisats.test.js`.
+
