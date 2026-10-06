@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-06T16:04:03.151Z",
+  "updatedAt": "2026-10-06T19:23:16.386Z",
   "artists": [
     {
       "name": "2ES",
@@ -28560,6 +28560,43 @@
       ],
       "lastChecked": "2026-10-06T15:30:56.604Z",
       "notes": "Canal indicat per l’usuari; categories Urban i Pop. Grup de música en català, segons la seva presentació a Sona9."
+    },
+    {
+      "name": "Paul Fuster",
+      "displayName": "Paul Fuster",
+      "aliases": [],
+      "genres": [
+        "Cançó d'autor"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCCYgQLqvl_nmSk4-WPDGPIg",
+            "handle": null,
+            "name": "Paul Fuster - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-06",
+        "genre:manual",
+        "https://www.youtube.com/channel/UCCYgQLqvl_nmSk4-WPDGPIg",
+        "https://www.enderrock.cat/disc/918/repte",
+        "https://music.amazon.com/tracks/B007EAHWUK"
+      ],
+      "lastChecked": "2026-10-06T19:23:16.386Z",
+      "notes": "Només el disc Repte (2012), deu cançons en català. Llista tancada de títols a data/music-channel-video-allowlist.json; la resta de discos queda exclosa."
     }
   ]
 }
