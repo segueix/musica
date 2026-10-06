@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-10-06T19:26:01.102Z",
+  "generatedAt": "2026-10-06T20:02:59.204Z",
   "summary": {
-    "total": 33,
-    "musicalClar": 33,
+    "total": 34,
+    "musicalClar": 34,
     "revisar": 0,
     "possibleFalsPositiu": 0
   },
@@ -452,6 +452,35 @@
       "verdict": "musical-clar",
       "reasons": [
         "Wikidata: ocupació musical explícita",
+        "Wikidata: tipus de conjunt/entitat musical"
+      ]
+    },
+    {
+      "name": "La Trinca",
+      "wikidataId": "Q4895526",
+      "musicbrainzId": "e811f1d4-9d6f-47a0-a8c0-352dd7c71312",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q4895526",
+        "wikidata:performed-catalan-work",
+        "manual-user-2026-10-03",
+        "genre:manual",
+        "youtube:manual-verified",
+        "https://www.youtube.com/channel/UCKpscwdWlVaMqcA81vLI7OA"
+      ],
+      "youtubeChannels": 1,
+      "instances": [
+        "conjunt musical",
+        "grup còmic",
+        "grup de música"
+      ],
+      "occupations": [],
+      "musicOccupations": [],
+      "musicTypes": [
+        "http://www.wikidata.org/entity/Q215380",
+        "http://www.wikidata.org/entity/Q2088357"
+      ],
+      "verdict": "musical-clar",
+      "reasons": [
         "Wikidata: tipus de conjunt/entitat musical"
       ]
     },
