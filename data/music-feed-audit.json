@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-05T18:36:51.646Z",
+  "generatedAt": "2026-10-06T07:00:43.980Z",
   "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
   "deepPagesFetched": 0,
-  "deepChannelCount": 20,
-  "topicChannelCount": 287,
+  "deepChannelCount": 18,
+  "topicChannelCount": 219,
   "governedChannelCount": 85,
   "topicCoverage": [
     {
@@ -1773,6 +1773,13 @@
       "withClip": 11
     },
     {
+      "id": "UC5PqMEE9b8osizQXQSdVkNQ",
+      "name": "Gra Fort",
+      "tracks": 3,
+      "selected": 3,
+      "withClip": 0
+    },
+    {
       "id": "UC8hpq3EHqyG09og9xy3qOFg",
       "name": "Groggy Rude",
       "tracks": 46,
@@ -2543,6 +2550,13 @@
       "withClip": 0
     },
     {
+      "id": "UCXQsHe-XMB9xWUxtRLFAWQg",
+      "name": "Pixamandurries",
+      "tracks": 3,
+      "selected": 3,
+      "withClip": 0
+    },
+    {
       "id": "UCtpjQosTHLms2EiAUrTgaAg",
       "name": "Pol Bordas",
       "tracks": 98,
@@ -3026,13 +3040,13 @@
       "withClip": 0
     }
   ],
-  "indexedChannelCount": 496,
-  "resolvedChannelCount": 496,
-  "feedChannelCount": 496,
-  "rawPublicVideoCount": 4946,
-  "feedVideoCount": 4418,
-  "acceptedMusicCount": 4378,
-  "categoryEligibleVideoCount": 4373,
+  "indexedChannelCount": 422,
+  "resolvedChannelCount": 422,
+  "feedChannelCount": 422,
+  "rawPublicVideoCount": 4707,
+  "feedVideoCount": 4179,
+  "acceptedMusicCount": 4139,
+  "categoryEligibleVideoCount": 4134,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
     "before": 0,
@@ -3041,8 +3055,8 @@
   },
   "contentReviewCount": 534,
   "contentTypeCounts": {
-    "song": 4271,
-    "live_song": 102,
+    "song": 4037,
+    "live_song": 97,
     "album": 5,
     "other": 34,
     "review": 534
@@ -3052,6 +3066,6 @@
   "channelsWithoutVideos": [],
   "channelsWithoutAcceptedMusic": [],
   "allIndexedChannelsVisible": true,
-  "publishedFeedVideoCount": 4173,
+  "publishedFeedVideoCount": 4179,
   "publishedShortVideoCount": 0
 }
