@@ -1578,3 +1578,19 @@ El format és JSON v1 amb extensió `.segueixmusica` i MIME `application/vnd.seg
 Si Web Share rebutja l'extensió pròpia però accepta text, es comparteix la mateixa còpia com a `.segueixmusica.txt`. Tots dos selectors d'importació accepten .segueixmusica, .json i .txt, inclòs el fitxer .txt anterior amb BOM. «Importar tot» reconeix `product: segueix-musica` i mostra la confirmació musical abans d'escriure cap dada. El camí de configuracions antigues es conserva.
 
 Proves: còpia >42 kB, fallback de compartició TXT, associació de fitxers amb confirmació i rebuig de dades corruptes, obertura múltiple explícita, 75 cançons de ràdio conservades, importació TXT des d'«Importar tot» sense sobreescriure storage abans de confirmar.
+
+## [2026-10-06] - La còpia musical s'obre directament des de WhatsApp Web; fora «Exportar tot» i «Importar tot»
+
+**Símptoma/Petició:** un fitxer adjunt a WhatsApp Web només es descarrega: no hi ha manera que obri Música. L'usuari volia que, des de WhatsApp Web, la còpia s'obrís directament a la web, i treure «Exportar tot» / «Importar tot» de Configuració.
+
+**Causa Arrel:** el camí principal era el fitxer `.segueixmusica`. L'associació de fitxers (`launchQueue`) només funciona amb la PWA instal·lada en un ordinador compatible i mai des d'un adjunt de WhatsApp Web. L'enllaç de la primera versió s'havia abandonat pel límit de 8.000 caràcters, que era propi i no de WhatsApp.
+
+**Solució Implementada:** `music-transfer.js` torna a fer de l'**enllaç** el camí principal: `buildLink()` → `https://segueix.github.io/musica/#musica=<LZString>` amb `+`→`~` i `$`→`_` (alguns xats tallen l'enllaç en aquests caràcters; `parseLink()` ho desfà i continua llegint `#music-transfer=`). Límit `MAX_LINK` = 60.000 caràcters (un missatge de WhatsApp n'admet 65.536); una còpia real de 26 kB fa uns 6.000 caràcters. En obrir l'enllaç, el fragment es captura i s'esborra abans de l'arrencada i surt la mateixa confirmació d'importació; en confirmar es recarrega a `appBasePath()` (abans anava sempre a github.io).
+- **Configuració:** «Envia per WhatsApp» (llima), «Copia l'enllaç», «Desa el fitxer» i «Importa un fitxer». Cada botó recull les dades del moment (ja no hi ha el pas «Genera el fitxer»).
+- **Envia per WhatsApp** (`sendToWhatsApp()`): al mòbil (`pointer: coarse`) menú natiu amb el text i l'enllaç; a l'ordinador `web.whatsapp.com/send?text=` amb el missatge escrit si l'adreça fa ≤ 7.000 caràcters (`MAX_PREFILL`: el paràmetre passa pel servidor de WhatsApp); si és més llarg, copia el missatge al porta-retalls i obre WhatsApp Web perquè s'enganxi. Si la còpia no cap en un enllaç, es comparteix com a fitxer (Web Share o descàrrega + WhatsApp Web), com abans.
+- Les ràdios i llistes (`showListExport()`) fan servir els mateixos tres botons.
+- **Eliminat:** «Exportar tot» / «Importar tot» (`exportConfigManual`, `importConfigManual`, `handleManualFileImport` de `config-sync.js` i `#configManualFileInput`). Exportaven tot el `localStorage` (també claus que no són de música). No els hi tornis a posar: la còpia musical i «Importa un fitxer» en fan la feina.
+
+**Trampes:** (1) Copiar al porta-retalls s'ha de fer **abans** d'obrir la pestanya de WhatsApp (sense focus, `clipboard.writeText` falla). (2) Si el navegador bloqueja la finestra emergent, `#musicTransferWhatsAppFallback` apareix amb l'adreça. (3) LZString ve del CDN: sense ell no es pot llegir l'enllaç (surt l'error de còpia no vàlida).
+
+**Proves:** `tests/music-transfer.test.js` (enllaç sense `+`/`$` i ida i tornada, WhatsApp Web amb el text, porta-retalls per a enllaços llargs, menú natiu al mòbil, cancel·lació, fitxer quan no cap, fragment nou retirat). Verificat també al Chromium: enllaç generat per l'app, obert en un altre context → confirmació → historial importat.
