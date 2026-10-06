@@ -1,0 +1,129 @@
+name: Actualitzar feed només dels grups nous
+
+# Només manual: incorpora els canals de la base que encara no són al feed.
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: music-data-writer
+  cancel-in-progress: false
+
+jobs:
+  actualitza:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+          fetch-depth: 1
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "20"
+
+      - name: Sincronitza main
+        run: |
+          git fetch origin main
+          git reset --hard origin/main
+
+      - name: Detecta els canals nous pendents
+        id: scope
+        run: |
+          node - <<'NODE'
+          const fs = require('fs');
+          const artists = JSON.parse(fs.readFileSync('data/artistes-musica.json', 'utf8'));
+          const feed = JSON.parse(fs.readFileSync('data/feed.json', 'utf8'));
+          if (!Array.isArray(artists.artists) || !feed.channels ||
+              typeof feed.channels !== 'object' || Array.isArray(feed.channels)) {
+            throw new Error("La base d'artistes o el feed no tenen el format esperat.");
+          }
+          const added = new Map();
+          for (const artist of artists.artists) {
+            if (artist.reviewStatus === 'rebutjat') continue;
+            for (const channel of artist.youtube?.channels || []) {
+              const id = String(channel?.id || '').trim();
+              if (!/^UC[A-Za-z0-9_-]{22}$/.test(id) ||
+                  Object.prototype.hasOwnProperty.call(feed.channels, id)) continue;
+              if (!added.has(id)) added.set(id, new Set());
+              added.get(id).add(artist.displayName || artist.name || id);
+            }
+          }
+          const ids = [...added.keys()].sort();
+          fs.appendFileSync(process.env.GITHUB_OUTPUT,
+            'run_api=' + (ids.length > 0) + '\n' +
+            'target_ids=' + ids.join(',') + '\n');
+          const message = ids.length
+            ? 'Canals nous pendents: ' + ids.length + '\n' +
+              ids.map(id => '- ' + [...added.get(id)].join(', ') + ' (' + id + ')').join('\n')
+            : 'Cap canal nou pendent. No es consulta YouTube ni es modifica el feed.';
+          console.log(message);
+          fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,
+            '## Actualització dels grups nous\n\n' + message + '\n');
+          NODE
+
+      - name: Instal·la dependències
+        if: steps.scope.outputs.run_api == 'true'
+        run: npm ci
+
+      - name: Valida la base d'artistes
+        if: steps.scope.outputs.run_api == 'true'
+        run: npm run music:validate
+
+      - name: Prova classificador musical
+        if: steps.scope.outputs.run_api == 'true'
+        run: node scripts/test_music_content_classifier.js
+
+      - name: Prova catàleg, any original i revisions manuals
+        if: steps.scope.outputs.run_api == 'true'
+        run: npx vitest run tests/cataleg-musical.test.js tests/any-original.test.js tests/music-content-overrides.test.js tests/channel-video-allowlist.test.js tests/subtitols-castella.test.js tests/aprimar-feed.test.js tests/canal-tema.test.js tests/revisio-idiomes.test.js
+
+      - name: Genera feed
+        if: steps.scope.outputs.run_api == 'true'
+        env:
+          YOUTUBE_API_KEY_SERVER: ${{ secrets.YOUTUBE_API_KEY_SERVER }}
+          MUSIC_VIDEOS_PER_CHANNEL: "50"
+          MUSIC_TOPIC_GOVERNANCE: "apply"
+          # Mai no es consulta la resta de canals, encara que hi hagi baixes.
+          MUSIC_TARGET_CHANNELS: ${{ steps.scope.outputs.target_ids }}
+        run: |
+          # Una llista buida activaria el mode general del generador: no ho permetem.
+          test -n "$MUSIC_TARGET_CHANNELS"
+          node scripts/update_music_feed.js
+
+      - name: Separa feed calent i historial
+        if: steps.scope.outputs.run_api == 'true'
+        run: node scripts/archivar_feed_musical.js
+
+      - name: Valida cobertura
+        if: steps.scope.outputs.run_api == 'true'
+        run: |
+          node - <<'NODE'
+          const fs=require('fs');
+          const a=JSON.parse(fs.readFileSync('data/music-feed-audit.json','utf8'));
+          if(!a.feedChannelCount) throw new Error('El feed no conté cap canal');
+          console.log(`Cobertura: ${a.feedChannelCount}/${a.indexedChannelCount} canals; ${a.feedVideoCount} vídeos`);
+          NODE
+
+      - name: Regenera índex de cerca després del feed
+        if: steps.scope.outputs.run_api == 'true'
+        run: npm run search:index:hybrid:rebuild
+
+      - name: Publica feed i índex en un sol commit
+        if: steps.scope.outputs.run_api == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A data js/channels-ca.json
+
+          if git diff --cached --quiet; then
+            echo "Feed i índex sense canvis."
+            exit 0
+          fi
+
+          git commit -m "data: incorpora els grups nous al feed musical"
+          git push origin HEAD:main

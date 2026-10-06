@@ -152,3 +152,27 @@ L'enriquiment usa Wikidata P136 i MusicBrainz `inc=genres`. MusicBrainz es torna
 ## Revisió de títols de cançons (`revisio-cancons.html`)
 
 Llista totes les cançons publicades amb el títol que es veu a l'app, per editar-lo i baixar només els canvis (`revisio-cancons-AAAA-MM-DD.json`). `revisio-artistes.html` redirigeix a aquesta pàgina. Els canvis s'apliquen a mà (regla a `js/song-title.js` o excepció per vídeo); el feed no es toca.
+
+## Actualització manual només dels grups nous
+
+Després d'afegir els artistes i els seus IDs de canal a `data/artistes-musica.json` i
+desar-los a `main`, obre **Actions → Actualitzar feed només dels grups nous →
+Run workflow** i selecciona `main`.
+
+L'acció detecta els IDs vàlids de canals dels artistes no rebutjats que encara no
+apareixen a `data/feed.json` (`channels`). Aquest és el criteri de «nou»: pendent
+de la primera incorporació al feed, independentment de la data d'alta. Inclou
+també els canals Tema acabats d'afegir. Un canal que ja consta al feed, encara que
+no tingui cançons publicades, no es torna a consultar.
+
+- Només consulta YouTube per aquests canals, amb `MUSIC_TARGET_CHANNELS`.
+- Si no hi ha canals nous, acaba correctament sense API ni canvis de dades.
+- Les baixes de canals no provoquen una actualització general.
+- Manté els filtres musicals, les revisions d'idioma i la separació entre feed i
+  historial; regenera l'índex de cerca i publica les dades en un sol commit.
+- Comparteix `music-data-writer` amb l'actualitzador habitual i rellegeix `main`
+  abans de detectar els canals, per evitar repetir altes ja processades.
+
+El workflow habitual **Actualitzar feed musical** conserva l'actualització
+general programada i manual. La nova acció només s'executa manualment i des de
+`main`; no cal escriure noms ni IDs en prémer **Run workflow**.
