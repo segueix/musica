@@ -1614,3 +1614,13 @@ Proves: còpia >42 kB, fallback de compartició TXT, associació de fitxers amb 
 **Trampes:** (1) `catalogMap()` espera que el feed hagi carregat (fins a 10 s) abans de demanar `ensureStyleHistory()`: demanat abans, l'historial dels estils filtra per canals encara buits i queda buit tota la sessió. (2) El desplegable es refà en apropar-s'hi (`pointerenter`/`touchstart`/`focusin` de la secció) només si les llistes han canviat (signatura), i conserva la triada; «Cap llista» només es manté si l'ha triat l'usuari (`dataset.chosen`).
 
 **Proves:** `tests/music-transfer.test.js` (selecció sense historial ni títols, avisos, títols del catàleg, desplegable, WhatsApp Web, porta-retalls, mòbil, cancel·lació). Verificat al Chromium amb el feed real: llista de 25 cançons i 8 artistes importada en un altre context amb els 25 títols i l'historial buit.
+
+## [2026-10-06] - L'enllaç de música no feia res a l'ordinador amb l'app ja oberta
+
+**Símptoma:** l'enllaç `#musica=…` rebut per WhatsApp no obria la confirmació d'importació a l'ordinador. Les dades de l'enllaç eren correctes (es descodificava: llista «Ràdio Cançó d'autor» amb els seus identificadors).
+
+**Causa Arrel:** `music-transfer.js` només llegia el fragment en carregar la pàgina (`initialHash`). Si la pestanya o l'app instal·lada ja era oberta a `segueix.github.io/musica/`, obrir-hi l'enllaç només canvia el fragment (`#…`): no hi ha càrrega nova i no passava res. L'app instal·lada (PWA) que ja és oberta pot rebre l'adreça per `launchQueue` (`targetURL`), que només atenia fitxers.
+
+**Solució Implementada:** `openLink()` comú; escolta `hashchange` (treu el fragment de l'adreça i obre la confirmació) i, a `launchQueue`, si no hi ha fitxers mira `launch.targetURL`. `showImport()` no torna a cridar `showModal()` si el diàleg ja és obert. Proves: `tests/music-transfer.test.js` («Obrir un enllaç amb l'app ja oberta»); verificat al Chromium navegant al fragment amb l'app ja carregada.
+
+**Trampa:** un enllaç de WhatsApp sempre es veu escrit sencer al missatge; no es pot amagar sense un servei d'enllaços curts.
