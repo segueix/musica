@@ -49,3 +49,10 @@
 #musicTransferSection [hidden] {
     display: none;
 }
+/* L'acció principal (enviar l'enllaç) en llima, com el play de la portada. */
+.music-transfer-primary {
+    background: var(--pt-accent, #d6ed84);
+    color: #141615;
+    border-color: var(--pt-accent, #d6ed84);
+    font-weight: 600;
+}

@@ -1,11 +1,18 @@
-// Còpia musical en un fitxer compartible, sense API ni vinculació permanent.
-// Es manté la lectura dels enllaços antics.
+// Còpia musical en un enllaç (o un fitxer, si és massa gran), sense API ni vinculació permanent.
+// L'enllaç s'obre d'un toc des de WhatsApp Web; es mantenen els enllaços antics.
 (function (window) {
     'use strict';
     const app = window.SegueixApp || (window.SegueixApp = { features: {}, utils: {} });
-    const MAX_URL = 8000; // Només per llegir els enllaços antics; no afecta els fitxers.
+    // Un missatge de WhatsApp admet 65.536 caràcters: hi ha de cabre l'enllaç i la frase que el presenta.
+    const MAX_LINK = 60000;
+    const MAX_URL = MAX_LINK + 100;
+    // web.whatsapp.com/send?text= passa pel servidor: per sobre d'això l'enllaç es copia i s'enganxa.
+    const MAX_PREFILL = 7000;
     const MAX_FILE = 2 * 1024 * 1024;
     const PREFIX = '#music-transfer=';
+    const LINK_PREFIX = '#musica=';
+    const WHATSAPP_WEB = 'https://web.whatsapp.com/';
+    const WHATSAPP_MOBILE = 'https://api.whatsapp.com/';
     const KEYS = {
         history: 'catube_history',
         likes: 'catube_liked_videos',
@@ -159,11 +166,18 @@
         });
     }
 
+    function isLink(hash) {
+        return typeof hash === 'string' && (hash.startsWith(LINK_PREFIX) || hash.startsWith(PREFIX));
+    }
+
     function parseLink(hash) {
-        if (!hash.startsWith(PREFIX) || hash.length > MAX_URL) {
+        if (!isLink(hash) || hash.length > MAX_URL) {
             throw new Error('L’enllaç és incomplet o massa llarg. Demana una còpia nova.');
         }
-        const raw = app.utils.shareCodecs?.decodeImportPayload(hash.slice(PREFIX.length));
+        const encoded = hash.startsWith(LINK_PREFIX)
+            ? hash.slice(LINK_PREFIX.length).replace(/~/g, '+').replace(/_/g, '$')
+            : hash.slice(PREFIX.length);
+        const raw = app.utils.shareCodecs?.decodeImportPayload(encoded);
         if (!raw || JSON.stringify(raw).length > MAX_FILE) {
             throw new Error('No s’ha pogut llegir l’enllaç. Demana una còpia nova.');
         }
@@ -288,7 +302,6 @@
     function requestImport(payload) {
         showImport(validate(payload));
     }
-    let generatedFile = null;
     const FILE_NAME = 'copia.segueixmusica';
 
     // Extensió pròpia per associar-la amb la PWA sense registrar tots els JSON del dispositiu.
@@ -313,6 +326,114 @@
             type: 'text/plain',
         });
         return supportsFileSharing(textFile) ? textFile : file;
+    }
+
+    // L'enllaç és el que s'obre d'un toc a WhatsApp Web (un fitxer adjunt només es descarrega).
+    // Alfabet de LZString sense «+» ni «$», que alguns xats tallen en reconèixer l'enllaç.
+    function buildLink(payload) {
+        const encoded = app.utils.shareCodecs?.encodeImportPayload(validate(payload));
+        if (!encoded) return '';
+        const link =
+            app.utils.shareCodecs.SHARE_BASE_URL + LINK_PREFIX + encoded.replace(/\+/g, '~').replace(/\$/g, '_');
+        return link.length <= MAX_LINK ? link : '';
+    }
+
+    function shareMessage(payload, link) {
+        const d = payload.data;
+        const what =
+            d.history.length || d.likes.length || d.follows.length || d.playlists.length !== 1
+                ? 'La meva música de Segueix Música (' + summary(payload) + ').'
+                : 'Llista «' + d.playlists[0].name + '» de Segueix Música (' + d.playlists[0].videos.length +
+                  ' cançons).';
+        return what + '\nObre l’enllaç per afegir-la a la teva Música:\n' + link;
+    }
+
+    function isTouchDevice() {
+        try {
+            return Boolean(window.matchMedia?.('(pointer: coarse)').matches);
+        } catch (_) {
+            return false;
+        }
+    }
+
+    async function copyText(text) {
+        try {
+            await window.navigator.clipboard.writeText(text);
+            return true;
+        } catch (_) {
+            return false;
+        }
+    }
+
+    function openWhatsApp(url) {
+        const fallback = byId('musicTransferWhatsAppFallback');
+        if (fallback) {
+            fallback.href = url;
+            fallback.classList.remove('hidden');
+        }
+        window.open(url, '_blank', 'noopener,noreferrer');
+    }
+
+    // Envia l'enllaç per WhatsApp. Retorna el missatge per a l'usuari.
+    async function sendLink(payload, link) {
+        const text = shareMessage(payload, link);
+        const navigator = window.navigator;
+        if (isTouchDevice() && typeof navigator.share === 'function') {
+            // Al mòbil, el menú natiu deixa triar WhatsApp; l'enllaç va dins el text perquè no es perdi.
+            await navigator.share({ title: 'Segueix Música', text });
+            return 'Enllaç enviat. Qui el rebi només l’ha d’obrir, també des de WhatsApp Web.';
+        }
+        const base = isTouchDevice() ? WHATSAPP_MOBILE : WHATSAPP_WEB;
+        const prefilled = base + 'send?text=' + encodeURIComponent(text);
+        if (prefilled.length <= MAX_PREFILL) {
+            openWhatsApp(prefilled);
+            return 'S’ha obert WhatsApp amb l’enllaç escrit: tria el xat i envia’l.';
+        }
+        // Massa llarg per passar-lo a WhatsApp per l'adreça: es copia i l'usuari l'enganxa.
+        const copied = await copyText(text);
+        openWhatsApp(base);
+        return copied
+            ? 'Enllaç copiat. A WhatsApp, obre el xat i enganxa’l (Ctrl+V o mantén premut) i envia’l.'
+            : 'No s’ha pogut copiar l’enllaç. Prem «Copia l’enllaç» i enganxa’l a WhatsApp.';
+    }
+
+    // Còpia massa gran per a un enllaç: es comparteix com a fitxer.
+    async function sendFile(payload) {
+        const file = shareableFile(createFile(payload));
+        if (supportsFileSharing(file)) {
+            await window.navigator.share({ files: [file], title: 'Segueix Música' });
+            return 'La còpia és massa gran per a un enllaç: s’ha compartit com a fitxer.';
+        }
+        saveGeneratedFile(file);
+        openWhatsApp(WHATSAPP_WEB);
+        return (
+            'La còpia és massa gran per a un enllaç. S’ha desat ' +
+            file.name +
+            ': adjunta’l a WhatsApp Web com a document.'
+        );
+    }
+
+    async function sendToWhatsApp(payload) {
+        const link = buildLink(payload);
+        try {
+            return await (link ? sendLink(payload, link) : sendFile(payload));
+        } catch (error) {
+            if (error?.name === 'AbortError') return '';
+            return 'No s’ha pogut compartir. Torna-ho a provar.';
+        }
+    }
+
+    async function copyLink(payload) {
+        const link = buildLink(payload);
+        if (!link) return 'La còpia és massa gran per a un enllaç. Prem «Desa el fitxer».';
+        return (await copyText(shareMessage(payload, link)))
+            ? 'Enllaç copiat. Enganxa’l on vulguis: en obrir-lo, Música et demanarà si vols importar-lo.'
+            : 'El navegador no ha deixat copiar l’enllaç.';
+    }
+
+    function saveFile(payload) {
+        saveGeneratedFile(createFile(payload));
+        return 'Fitxer desat: ' + FILE_NAME + '. A l’altre aparell, prem «Importa un fitxer».';
     }
 
     function listPayload(name, items) {
@@ -344,48 +465,29 @@
         dialog.className = 'music-transfer-dialog';
         dialog.innerHTML =
             '<h2>Comparteix la música</h2><p class="music-file-name"></p>' +
-            '<p>Genera un fitxer amb les cançons i comparteix-lo com a document.</p>' +
-            '<div class="config-sync-row"><button type="button" class="config-sync-btn" data-create>Genera el fitxer</button>' +
-            '<button type="button" class="config-sync-btn" data-share disabled>Comparteix</button></div>' +
+            '<p>Envia un enllaç: qui el rebi l’obre (també des de WhatsApp Web) ' +
+            'i la llista s’afegeix a la seva Música.</p>' +
+            '<div class="config-sync-row">' +
+            '<button type="button" class="config-sync-btn music-transfer-primary" data-whatsapp>Envia per WhatsApp</button>' +
+            '<button type="button" class="config-sync-btn" data-copy>Copia l’enllaç</button>' +
+            '<button type="button" class="config-sync-btn" data-save>Desa el fitxer</button></div>' +
             '<p data-feedback role="status" aria-live="polite"></p>' +
-            '<p>Obre el fitxer amb Segueix Música instal·lada en un ordinador compatible. Al mòbil, obre Configuració → Importa un fitxer.</p>' +
             '<button type="button" class="config-sync-btn" data-close>Tanca</button>';
         dialog.querySelector('.music-file-name').textContent = str(name);
-        let file = null;
-        const share = dialog.querySelector('[data-share]');
         const status = dialog.querySelector('[data-feedback]');
-        dialog.querySelector('[data-create]').addEventListener('click', () => {
-            try {
-                file = shareableFile(createFile(payload));
-                if (!supportsFileSharing(file)) saveGeneratedFile(file);
-                share.disabled = false;
-                status.textContent = 'Fitxer generat: ' + file.name + '. Prem «Comparteix».';
-            } catch (_) {
-                file = null;
-                share.disabled = true;
-                status.textContent = 'No s’ha pogut generar el fitxer. Torna-ho a provar.';
-            }
-        });
-        share.addEventListener('click', async () => {
-            if (!file) return;
-            if (!supportsFileSharing(file)) {
-                window.open('https://web.whatsapp.com/', '_blank', 'noopener,noreferrer');
-                status.textContent = 'Adjunta ' + file.name + ' a WhatsApp Web com a document.';
-                return;
-            }
-            share.disabled = true;
-            try {
-                await window.navigator.share({
-                    files: [file],
-                    title: 'Segueix Música',
-                });
-                status.textContent = 'Fitxer compartit.';
-            } catch (error) {
-                if (error.name !== 'AbortError') status.textContent = 'No s’ha pogut compartir. Torna-ho a provar.';
-            } finally {
-                share.disabled = false;
-            }
-        });
+        const run = (button, action) =>
+            button.addEventListener('click', async () => {
+                button.disabled = true;
+                try {
+                    const message = await action(payload);
+                    if (message) status.textContent = message;
+                } finally {
+                    button.disabled = false;
+                }
+            });
+        run(dialog.querySelector('[data-whatsapp]'), sendToWhatsApp);
+        run(dialog.querySelector('[data-copy]'), copyLink);
+        run(dialog.querySelector('[data-save]'), saveFile);
         dialog.querySelector('[data-close]').addEventListener('click', () => dialog.close());
         dialog.addEventListener('close', () => dialog.remove());
         window.document.body.appendChild(dialog);
@@ -401,64 +503,21 @@
         setTimeout(() => URL.revokeObjectURL(url), 10000);
     }
 
-    function prepare() {
-        generatedFile = null;
-        byId('musicTransferShare').disabled = true;
-        byId('musicTransferWhatsAppFallback').classList.add('hidden');
-        try {
-            const payload = collect();
-            generatedFile = shareableFile(createFile(payload));
-            byId('musicTransferShare').disabled = false;
-            if (supportsFileSharing(generatedFile)) {
-                feedback(
-                    'Fitxer generat. Prem «Comparteix» i tria WhatsApp o l’aplicació que vulguis. ' + summary(payload),
-                );
-            } else {
-                // Sense Web Share de fitxers, WhatsApp Web necessita que l'usuari l'adjunti.
-                saveGeneratedFile(generatedFile);
-                feedback(
-                    'Fitxer generat: ' +
-                        generatedFile.name +
-                        '. Prem «Comparteix» i adjunta’l a WhatsApp Web com a document.',
-                );
+    // Cada botó recull les dades del moment: no cal cap pas previ de «generar».
+    function bindAction(buttonId, action) {
+        const button = byId(buttonId);
+        button.addEventListener('click', async () => {
+            byId('musicTransferWhatsAppFallback').classList.add('hidden');
+            button.disabled = true;
+            try {
+                const message = await action(collect());
+                if (message) feedback(message);
+            } catch (error) {
+                feedback(error.message || 'No s’ha pogut preparar la còpia. Torna-ho a provar.');
+            } finally {
+                button.disabled = false;
             }
-        } catch (error) {
-            generatedFile = null;
-            byId('musicTransferShare').disabled = true;
-            feedback(error.message || 'No s’ha pogut generar el fitxer. Torna-ho a provar.');
-        }
-    }
-
-    async function shareFile() {
-        if (!generatedFile) {
-            feedback('Primer prem «Genera el fitxer».');
-            return;
-        }
-        if (!supportsFileSharing(generatedFile)) {
-            byId('musicTransferWhatsAppFallback').classList.remove('hidden');
-            window.open('https://web.whatsapp.com/', '_blank', 'noopener,noreferrer');
-            feedback(
-                'A WhatsApp Web, tria el teu xat i adjunta ' +
-                    generatedFile.name +
-                    ' com a document. El navegador no el pot adjuntar automàticament.',
-            );
-            return;
-        }
-        byId('musicTransferShare').disabled = true;
-        try {
-            // Sense text ni URL: només es comparteix el fitxer que s'acaba de generar.
-            await window.navigator.share({
-                files: [generatedFile],
-                title: 'La meva música',
-            });
-            feedback('Fitxer lliurat a l’aplicació de compartir.');
-        } catch (error) {
-            if (error.name !== 'AbortError') {
-                feedback('No s’ha pogut obrir el menú de compartir. Torna-ho a provar.');
-            }
-        } finally {
-            byId('musicTransferShare').disabled = false;
-        }
+        });
     }
 
     async function readFile(file) {
@@ -479,10 +538,11 @@
     }
 
     function init() {
-        if (!byId('musicTransferCreate')) return;
+        if (!byId('musicTransferWhatsApp')) return;
         window.launchQueue?.setConsumer?.((launch) => openFiles(launch.files));
-        byId('musicTransferCreate').addEventListener('click', prepare);
-        byId('musicTransferShare').addEventListener('click', shareFile);
+        bindAction('musicTransferWhatsApp', sendToWhatsApp);
+        bindAction('musicTransferCopy', copyLink);
+        bindAction('musicTransferSave', saveFile);
         byId('musicTransferImport').addEventListener('click', () => byId('musicTransferFile').click());
         byId('musicTransferFile').addEventListener('change', async (event) => {
             const file = event.target.files?.[0];
@@ -509,7 +569,9 @@
                 byId('musicTransferConfirm').disabled = true;
                 byId('musicTransferSummary').textContent = 'Música importada. Recarregant…';
                 // Recarregar reinicialitza els caches i els observadors amb les dades fusionades.
-                window.location.replace(app.utils.shareCodecs.SHARE_BASE_URL + '?musicImported=1');
+                // Mateixa app on s'ha obert l'enllaç (github.io, l'app instal·lada o una prova local).
+                const base = app.utils.appBasePath?.() || app.utils.shareCodecs.SHARE_BASE_URL;
+                window.location.replace(base + '?musicImported=1');
             } catch (error) {
                 byId('musicTransferSummary').textContent = error.message;
             }
@@ -528,7 +590,7 @@
     }
 
     // Captura abans que l'arrencada canviï la ruta; treu les dades de l'URL i de l'historial del navegador.
-    const initialHash = window.location?.hash?.startsWith(PREFIX) ? window.location.hash : '';
+    const initialHash = isLink(window.location?.hash) ? window.location.hash : '';
     if (initialHash) window.history.replaceState(null, '', window.location.pathname + window.location.search);
     app.features.musicTransfer = {
         collect,
@@ -536,6 +598,11 @@
         shareableFile,
         listPayload,
         showListExport,
+        buildLink,
+        shareMessage,
+        sendToWhatsApp,
+        copyLink,
+        saveFile,
         supportsFileSharing,
         readFile,
         requestImport,
@@ -546,6 +613,7 @@
         mergeLists,
         summary,
         MAX_URL,
+        MAX_LINK,
         KEYS,
     };
     window.document?.addEventListener('DOMContentLoaded', init);

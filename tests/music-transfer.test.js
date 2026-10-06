@@ -18,10 +18,12 @@ function setup(storage = createMockLocalStorage(), options = {}) {
     });
     ctx.SegueixApp.utils.shareCodecs = {
         SHARE_BASE_URL: 'https://segueix.github.io/musica/',
-        encodeImportPayload: (p) => Buffer.from(JSON.stringify(p)).toString('base64url'),
+        // Com LZString: l'alfabet porta «+» i «$».
+        encodeImportPayload: (p) =>
+            Buffer.from(JSON.stringify(p)).toString('base64').replace(/\//g, '$').replace(/=+$/, ''),
         decodeImportPayload: (s) => {
             try {
-                return JSON.parse(Buffer.from(s, 'base64url').toString());
+                return JSON.parse(Buffer.from(s.replace(/\$/g, '/'), 'base64').toString());
             } catch {
                 return null;
             }
@@ -214,6 +216,19 @@ describe('Transferència musical sense servidor', () => {
         expect(replaced).toBe('/musica/');
         expect(storage.length).toBe(0);
     });
+
+    it('també retira el fragment dels enllaços nous', () => {
+        let replaced;
+        setup(createMockLocalStorage(), {
+            location: { hash: '#musica=abc', pathname: '/musica/', search: '?x=1' },
+            history: {
+                replaceState: (...args) => {
+                    replaced = args[2];
+                },
+            },
+        });
+        expect(replaced).toBe('/musica/?x=1');
+    });
 });
 
 function ui(navigator, options = {}) {
@@ -222,7 +237,7 @@ function ui(navigator, options = {}) {
     const el = (name) => {
         if (!elements.has(name))
             elements.set(name, {
-                disabled: name === 'musicTransferShare',
+                disabled: false,
                 textContent: '',
                 hidden: false,
                 classList: { add: vi.fn(), remove: vi.fn() },
@@ -260,48 +275,102 @@ function ui(navigator, options = {}) {
     return { api, el, link, open, revokeObjectURL, storage };
 }
 
-describe('Genera el fitxer i comparteix al mòbil i a l’ordinador', () => {
-    it('adjunta el fitxer real al menú natiu sense cap enllaç ni desar-lo abans', async () => {
-        const navigator = {
-            canShare: vi.fn(() => true),
-            share: vi.fn(async () => {}),
-        };
-        const { el, link, open } = ui(navigator);
-        el('musicTransferCreate').handlers.click();
-        expect(el('musicTransferShare').disabled).toBe(false);
-        expect(link.click).not.toHaveBeenCalled();
-        await el('musicTransferShare').handlers.click();
+describe('Envia per WhatsApp: un enllaç que s’obre des de WhatsApp Web', () => {
+    const withHistory = (storage) =>
+        storage.setItem('catube_history', JSON.stringify([{ id: A, title: 'Cançó', viewedAt: '2026-10-06' }]));
+
+    it('genera un enllaç sense «+» ni «$» que es torna a llegir igual', () => {
+        const { api } = setup();
+        const copy = payload({ history: [{ id: A, title: 'L’amor i tu' }], follows: [CH] });
+        const link = api.buildLink(copy);
+        expect(link.startsWith('https://segueix.github.io/musica/#musica=')).toBe(true);
+        expect(link).not.toMatch(/[+$]/);
+        const hash = link.slice(link.indexOf('#'));
+        expect(api.parseLink(hash).data).toEqual(api.validate(copy).data);
+    });
+
+    it('a l’ordinador obre WhatsApp Web amb el missatge i l’enllaç escrits', async () => {
+        const { el, open, storage } = ui({});
+        withHistory(storage);
+        await el('musicTransferWhatsApp').handlers.click();
+        const url = open.mock.calls[0][0];
+        expect(url.startsWith('https://web.whatsapp.com/send?text=')).toBe(true);
+        const text = decodeURIComponent(url.split('text=')[1]);
+        expect(text).toContain('1 cançons a l’historial');
+        expect(text).toMatch(/https:\/\/segueix\.github\.io\/musica\/#musica=\S+$/);
+        expect(el('musicTransferFeedback').textContent).toContain('tria el xat');
+        expect(el('musicTransferWhatsApp').disabled).toBe(false);
+    });
+
+    it('si l’enllaç és massa llarg per a l’adreça de WhatsApp, el copia i obre WhatsApp Web', async () => {
+        const writeText = vi.fn(async () => {});
+        const { el, open, storage } = ui({ clipboard: { writeText } });
+        storage.setItem(
+            'catube_history',
+            JSON.stringify(
+                Array.from({ length: 400 }, (_, i) => ({
+                    id: String(i).padStart(11, 'h'),
+                    title: 'Cançó llarga ' + i,
+                    viewedAt: '2026-10-06',
+                })),
+            ),
+        );
+        await el('musicTransferWhatsApp').handlers.click();
+        expect(writeText.mock.calls[0][0]).toMatch(/#musica=/);
+        expect(open).toHaveBeenCalledWith('https://web.whatsapp.com/', '_blank', 'noopener,noreferrer');
+        expect(el('musicTransferFeedback').textContent).toContain('Enllaç copiat');
+    });
+
+    it('al mòbil envia el text amb l’enllaç pel menú natiu, sense fitxer', async () => {
+        const navigator = { share: vi.fn(async () => {}), canShare: () => true };
+        const { el, open, storage } = ui(navigator, {
+            matchMedia: () => ({ matches: true }),
+        });
+        withHistory(storage);
+        await el('musicTransferWhatsApp').handlers.click();
         const data = navigator.share.mock.calls[0][0];
-        expect(data.files).toHaveLength(1);
-        expect(data.files[0].name).toBe('copia.segueixmusica');
-        expect(data.url).toBeUndefined();
+        expect(data.files).toBeUndefined();
+        expect(data.text).toMatch(/#musica=/);
         expect(open).not.toHaveBeenCalled();
     });
 
-    it('ofereix compartir a l’ordinador sense Web Share i explica l’adjunció manual', async () => {
-        const { el, link, open } = ui({});
-        el('musicTransferCreate').handlers.click();
-        expect(link.click).toHaveBeenCalledOnce();
-        expect(link.download).toBe('copia.segueixmusica');
-        expect(el('musicTransferShare').disabled).toBe(false);
-        await el('musicTransferShare').handlers.click();
-        expect(open).toHaveBeenCalledWith('https://web.whatsapp.com/', '_blank', 'noopener,noreferrer');
-        expect(el('musicTransferFeedback').textContent).toContain('no el pot adjuntar automàticament');
-    });
-
-    it('no desa ni obre WhatsApp quan es cancel·la el menú natiu', async () => {
+    it('no fa res més quan es cancel·la el menú natiu', async () => {
         const navigator = {
-            canShare: () => true,
             share: vi.fn(async () => {
                 throw Object.assign(new Error(), { name: 'AbortError' });
             }),
         };
-        const { el, link, open } = ui(navigator);
-        el('musicTransferCreate').handlers.click();
-        await el('musicTransferShare').handlers.click();
+        const { el, link, open } = ui(navigator, { matchMedia: () => ({ matches: true }) });
+        await el('musicTransferWhatsApp').handlers.click();
         expect(link.click).not.toHaveBeenCalled();
         expect(open).not.toHaveBeenCalled();
-        expect(el('musicTransferShare').disabled).toBe(false);
+        expect(el('musicTransferWhatsApp').disabled).toBe(false);
+    });
+
+    it('una còpia massa gran per a un enllaç es comparteix com a fitxer', async () => {
+        const navigator = { canShare: vi.fn(() => true), share: vi.fn(async () => {}) };
+        const { api, el, storage } = ui(navigator);
+        const huge = Array.from({ length: 3000 }, (_, i) => ({
+            id: String(i).padStart(11, 'z'),
+            title: 'Cançó ' + i + ' ' + 'x'.repeat(40),
+            viewedAt: '2026-10-06',
+        }));
+        storage.setItem('catube_history', JSON.stringify(huge));
+        expect(api.buildLink(api.collect())).toBe('');
+        await el('musicTransferWhatsApp').handlers.click();
+        expect(navigator.share.mock.calls[0][0].files[0].name).toBe('copia.segueixmusica');
+        expect(el('musicTransferFeedback').textContent).toContain('massa gran');
+    });
+
+    it('«Copia l’enllaç» i «Desa el fitxer» funcionen sense cap pas previ', async () => {
+        const writeText = vi.fn(async () => {});
+        const { el, link, storage } = ui({ clipboard: { writeText } });
+        withHistory(storage);
+        await el('musicTransferCopy').handlers.click();
+        expect(writeText.mock.calls[0][0]).toMatch(/#musica=/);
+        await el('musicTransferSave').handlers.click();
+        expect(link.download).toBe('copia.segueixmusica');
+        expect(link.click).toHaveBeenCalledOnce();
     });
 });
 
@@ -311,10 +380,8 @@ describe('Fitxer propi i compatibilitat amb les còpies ja generades', () => {
             canShare: ({ files }) => files[0].name.endsWith('.txt'),
             share: vi.fn(async () => {}),
         };
-        const { el } = ui(navigator);
-        el('musicTransferCreate').handlers.click();
-        await el('musicTransferShare').handlers.click();
-        const file = navigator.share.mock.calls[0][0].files[0];
+        const { api } = ui(navigator);
+        const file = api.shareableFile(api.createFile(payload({ history: [{ id: A }] })));
         expect(file.name).toBe('copia.segueixmusica.txt');
         expect(JSON.parse(await file.text()).product).toBe('segueix-musica');
     });
@@ -371,41 +438,5 @@ describe('Fitxer propi i compatibilitat amb les còpies ja generades', () => {
         expect(api.listPayload('La meva ràdio', ids)).toMatchObject({
             data: result.data,
         });
-    });
-
-    it('Importar tot reconeix una còpia musical TXT i demana confirmació en lloc de sobreescriure localStorage', () => {
-        const { api, el, storage } = ui({});
-        let change;
-        const input = {
-            addEventListener(_, fn) {
-                change = fn;
-            },
-        };
-        const context = loadScript('js/features/config-sync.js', {
-            localStorage: storage,
-            SegueixApp: { features: { musicTransfer: api }, utils: {} },
-            document: {
-                getElementById: (id) => (id === 'configManualFileInput' ? input : null),
-            },
-            FileReader: class {
-                readAsText(file) {
-                    this.onload({ target: { result: file.contents } });
-                }
-            },
-        });
-        context.SegueixApp.features.configSync.register();
-        change({
-            target: {
-                files: [
-                    {
-                        name: 'segueix-musica-copia.txt',
-                        contents: '\ufeff' + JSON.stringify(payload({ history: [{ id: A }] })),
-                    },
-                ],
-            },
-        });
-        expect(el('musicTransferDialog').showModal).toHaveBeenCalledOnce();
-        expect(el('musicTransferConfirm').disabled).toBe(false);
-        expect(storage.length).toBe(0);
     });
 });

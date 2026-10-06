@@ -153,51 +153,6 @@
         }
     }
 
-    function exportConfigManual() {
-        const configData = collectAllLocalStorageData();
-        const json = JSON.stringify(configData, null, 2);
-        const blob = new Blob([json], { type: 'application/json' });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = 'segueix-configuracio.json';
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        URL.revokeObjectURL(url);
-        showFeedback('configManualFeedback', '✔ Fitxer descarregat', 'success');
-    }
-
-    function importConfigManual() {
-        hideFeedback('configManualFeedback');
-        document.getElementById('configManualFileInput').click();
-    }
-
-    function handleManualFileImport(event) {
-        const file = event.target.files[0];
-        if (!file) return;
-
-        const reader = new FileReader();
-        reader.onload = function (e) {
-            try {
-                const configData = JSON.parse(String(e.target.result).replace(/^\uFEFF/, ''));
-                if (configData?.product === 'segueix-musica') {
-                    app.features.musicTransfer.requestImport(configData);
-                    return;
-                }
-                applyLocalStorageData(configData);
-
-                const btn = document.getElementById('importConfigManualBtn');
-                btn.textContent = '\u2714';
-                setTimeout(() => location.reload(), 600);
-            } catch (_) {
-                showFeedback('configManualFeedback', 'Fitxer no vàlid. Ha de ser un JSON correcte.', 'error');
-            }
-        };
-        reader.readAsText(file);
-        event.target.value = '';
-    }
-
     async function generatePairingCode() {
         hideFeedback('pairingCodeFeedback');
         const btn = document.getElementById('generatePairCodeBtn');
@@ -403,9 +358,6 @@
     }
 
     function register() {
-        const exportManualBtn = document.getElementById('exportConfigManualBtn');
-        const importManualBtn = document.getElementById('importConfigManualBtn');
-        const fileInput = document.getElementById('configManualFileInput');
         const clearBtn = document.getElementById('clearAllDataBtn');
         const generatePairCodeBtn = document.getElementById('generatePairCodeBtn');
         const redeemPairCodeBtn = document.getElementById('redeemPairCodeBtn');
@@ -413,9 +365,6 @@
         const downloadCloudSyncBtn = document.getElementById('downloadCloudSyncBtn');
         const unlinkCloudSyncBtn = document.getElementById('unlinkCloudSyncBtn');
 
-        if (exportManualBtn) exportManualBtn.addEventListener('click', exportConfigManual);
-        if (importManualBtn) importManualBtn.addEventListener('click', importConfigManual);
-        if (fileInput) fileInput.addEventListener('change', handleManualFileImport);
         if (clearBtn) clearBtn.addEventListener('click', clearAllData);
         if (generatePairCodeBtn) generatePairCodeBtn.addEventListener('click', generatePairingCode);
         if (redeemPairCodeBtn) redeemPairCodeBtn.addEventListener('click', redeemPairingCode);
@@ -428,8 +377,6 @@
 
     app.features.configSync = {
         register,
-        exportManual: exportConfigManual,
-        importManual: importConfigManual,
         clearAllData,
     };
 })(window);
