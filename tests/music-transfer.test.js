@@ -277,7 +277,7 @@ function ui(navigator, options = {}, custom = {}) {
 
 describe('Envia una llista i els artistes per WhatsApp', () => {
     const ids = (n, pad = 'q') => Array.from({ length: n }, (_, i) => String(i).padStart(11, pad));
-    const withList = (storage, n = 20) => {
+    const withList = (storage, n = 20, extra = '') => {
         storage.setItem(
             'catube_playlists',
             JSON.stringify([
@@ -286,7 +286,7 @@ describe('Envia una llista i els artistes per WhatsApp', () => {
                     name: 'Estiu',
                     videos: ids(n).map((id, i) => ({
                         id,
-                        title: 'Cançó ' + i,
+                        title: 'Cançó ' + i + extra,
                         channelTitle: 'Els Catarres',
                         thumbnail: 'https://i.ytimg.com/x.jpg',
                     })),
@@ -362,7 +362,8 @@ describe('Envia una llista i els artistes per WhatsApp', () => {
     });
 
     it('a l’ordinador obre WhatsApp Web amb el missatge i l’enllaç escrits', async () => {
-        const { el, open, storage } = ui({});
+        // Cançons del catàleg: només viatgen els identificadors.
+        const { el, open, storage } = ui({}, { YouTubeAPI: { feedVideos: ids(20).map((id) => ({ id })) } });
         withList(storage);
         pick(el, 'p1');
         await el('musicTransferWhatsApp').handlers.click();
@@ -379,7 +380,8 @@ describe('Envia una llista i els artistes per WhatsApp', () => {
     it('si l’enllaç és massa llarg per a l’adreça de WhatsApp, el copia i obre WhatsApp Web', async () => {
         const writeText = vi.fn(async () => {});
         const { el, open, storage } = ui({ clipboard: { writeText } });
-        withList(storage, 800);
+        // Cançons que no són al catàleg: viatgen amb títols llargs.
+        withList(storage, 50, ' ' + 'una cançó amb un títol molt llarg '.repeat(5));
         pick(el, 'p1');
         await el('musicTransferWhatsApp').handlers.click();
         expect(writeText.mock.calls[0][0]).toMatch(/#musica=/);
@@ -430,6 +432,44 @@ describe('Envia una llista i els artistes per WhatsApp', () => {
         pick(el, 'p1');
         await el('musicTransferCopy').handlers.click();
         expect(writeText.mock.calls[0][0]).toMatch(/Estiu[\s\S]*#musica=/);
+    });
+});
+
+describe('Cançons que ja no són al catàleg i límit de cançons', () => {
+    it('les del catàleg van només amb l’ID; les que no hi són porten títol i artista', () => {
+        const { api } = setup(createMockLocalStorage(), { YouTubeAPI: { feedVideos: [{ id: A }] } });
+        const copy = payload({
+            playlists: [
+                {
+                    id: 'p',
+                    name: 'Ràdio Cançó d’autor',
+                    videos: [
+                        { id: A, title: 'Al catàleg', channelTitle: 'Txarango' },
+                        { id: B, title: 'Pista Tema', channelTitle: 'Joan Dausà - Tema' },
+                    ],
+                },
+            ],
+        });
+        const link = api.buildLink(copy);
+        expect(link).not.toContain('Al%20cat');
+        const back = api.parseLink(link.slice(link.indexOf('#')));
+        expect(back.data.playlists[0].videos).toEqual([
+            { id: A },
+            { id: B, title: 'Pista Tema', channelTitle: 'Joan Dausà - Tema' },
+        ]);
+        // L'altre aparell no sobreescriu el títol que ha arribat amb l'enllaç.
+        const full = api.hydrate(back, new Map([[A, { id: A, title: 'Al catàleg' }]]));
+        expect(full.data.playlists[0].videos.map((v) => v.title)).toEqual(['Al catàleg', 'Pista Tema']);
+    });
+
+    it('envia només les 50 primeres cançons d’una llista o d’una ràdio', () => {
+        const { api, storage } = setup();
+        const many = Array.from({ length: 80 }, (_, i) => ({ id: String(i).padStart(11, 'm'), title: 'C' + i }));
+        storage.setItem('catube_playlists', JSON.stringify([{ id: 'p', name: 'Ràdio', videos: many }]));
+        const songs = api.selection('p', false).data.playlists[0].videos;
+        expect(songs).toHaveLength(50);
+        expect(songs[0].id).toBe(many[0].id);
+        expect(api.listPayload('Ràdio', many).data.playlists[0].videos).toHaveLength(50);
     });
 });
 
@@ -537,7 +577,7 @@ describe('Fitxer propi i compatibilitat amb les còpies ja generades', () => {
         const { api } = setup();
         const ids = Array.from({ length: 75 }, (_, i) => String(i).padStart(11, '0'));
         const result = api.listPayload('La meva ràdio', ids);
-        expect(result.data.playlists[0].videos).toHaveLength(75);
+        expect(result.data.playlists[0].videos).toHaveLength(50);
         expect(result.data.history).toEqual([]);
         expect(result.data.follows).toEqual([]);
         expect(api.listPayload('La meva ràdio', ids)).toMatchObject({

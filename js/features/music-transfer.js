@@ -9,6 +9,8 @@
     // web.whatsapp.com/send?text= passa pel servidor: per sobre d'això l'enllaç es copia i s'enganxa.
     const MAX_PREFILL = 7000;
     const MAX_FILE = 2 * 1024 * 1024;
+    // Una llista o ràdio s'envia amb les seves primeres cançons.
+    const MAX_SHARE_SONGS = 50;
     const PREFIX = '#music-transfer=';
     const LINK_PREFIX = '#musica=';
     const WHATSAPP_WEB = 'https://web.whatsapp.com/';
@@ -299,16 +301,33 @@
     }
 
     // Només identificadors: els títols els treu l'altre aparell del catàleg (hydrate()). Així l'enllaç és curt.
-    function compact(payload) {
+    // Cançons del catàleg públic que té carregat aquest aparell (feed, pool i historial dels estils).
+    function knownIds() {
+        const api = typeof YouTubeAPI !== 'undefined' ? YouTubeAPI : window.YouTubeAPI;
+        const known = new Set();
+        [api?.feedVideos, api?.historyPoolVideos, api?.styleHistoryVideos].forEach((list) => {
+            arr(list).forEach((v) => v?.id && known.add(String(v.id)));
+        });
+        return known;
+    }
+
+    // Una cançó del catàleg viatja només amb l'ID (l'altre aparell en treu el títol). Una que ja no hi és (una
+    // pista d'un canal «Tema» que ha sortit del feed, una d'amagada) porta el títol i l'artista desats.
+    function compact(payload, known = knownIds()) {
         const d = validate(payload).data;
-        const ids = (list) => list.map((v) => v.id);
+        const song = (v) => {
+            if (known.has(v.id) || !v.title) return v.id;
+            const artist = v.artistName || v.channelTitle;
+            return artist ? { id: v.id, title: v.title, channelTitle: artist } : { id: v.id, title: v.title };
+        };
+        const ids = (list) => list.map(song);
         const data = {};
         if (d.playlists.length) {
             data.playlists = d.playlists.map((p) => ({ id: p.id, name: p.name, videos: ids(p.videos) }));
         }
         if (d.follows.length) data.follows = d.follows;
-        if (d.history.length) data.history = ids(d.history);
-        if (d.likes.length) data.likes = ids(d.likes);
+        if (d.history.length) data.history = d.history.map((v) => v.id);
+        if (d.likes.length) data.likes = d.likes.map((v) => v.id);
         if (d.categories.length) data.categories = d.categories;
         return { product: 'segueix-musica', v: 1, data };
     }
@@ -318,7 +337,9 @@
         const list = arr(read(storage, KEYS.playlists, [])).find((p) => p && String(p.id) === String(listId));
         const data = {};
         if (list) {
-            data.playlists = [{ id: String(list.id), name: String(list.name || 'Llista'), videos: arr(list.videos) }];
+            // Les primeres cançons (com sonen a la ràdio o la llista): l'enllaç no s'allarga sense mida.
+            const songs = arr(list.videos).slice(0, MAX_SHARE_SONGS);
+            data.playlists = [{ id: String(list.id), name: String(list.name || 'Llista'), videos: songs }];
         }
         if (withArtists) data.follows = arr(read(storage, KEYS.follows, []));
         const payload = validate({ product: 'segueix-musica', v: 1, data });
@@ -520,7 +541,7 @@
     }
 
     function listPayload(name, items) {
-        const songs = videos(items);
+        const songs = videos(items).slice(0, MAX_SHARE_SONGS);
         if (!songs.length) throw new Error('Aquesta llista o ràdio és buida.');
         let hash = 2166136261;
         for (const c of String(name) + songs.map((v) => v.id).join(',')) {
@@ -549,7 +570,7 @@
         dialog.innerHTML =
             '<h2>Comparteix la música</h2><p class="music-file-name"></p>' +
             '<p>Envia un enllaç: qui el rebi l’obre (també des de WhatsApp Web) ' +
-            'i la llista s’afegeix a la seva Música.</p>' +
+            'i la llista s’afegeix a la seva Música. S’hi envien les ' + MAX_SHARE_SONGS + ' primeres cançons.</p>' +
             '<div class="config-sync-row">' +
             '<button type="button" class="config-sync-btn music-transfer-primary" data-whatsapp>Envia per WhatsApp</button>' +
             '<button type="button" class="config-sync-btn" data-copy>Copia l’enllaç</button></div>' +
@@ -754,6 +775,8 @@
         summary,
         MAX_URL,
         MAX_LINK,
+        MAX_SHARE_SONGS,
+        knownIds,
         KEYS,
     };
     window.document?.addEventListener('DOMContentLoaded', init);

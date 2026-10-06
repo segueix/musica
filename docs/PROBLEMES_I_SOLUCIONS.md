@@ -1624,3 +1624,11 @@ Proves: còpia >42 kB, fallback de compartició TXT, associació de fitxers amb 
 **Solució Implementada:** `openLink()` comú; escolta `hashchange` (treu el fragment de l'adreça i obre la confirmació) i, a `launchQueue`, si no hi ha fitxers mira `launch.targetURL`. `showImport()` no torna a cridar `showModal()` si el diàleg ja és obert. Proves: `tests/music-transfer.test.js` («Obrir un enllaç amb l'app ja oberta»); verificat al Chromium navegant al fragment amb l'app ja carregada.
 
 **Trampa:** un enllaç de WhatsApp sempre es veu escrit sencer al missatge; no es pot amagar sense un servei d'enllaços curts.
+
+## [2026-10-06] - Cançons sense títol en importar una llista enviada per enllaç
+
+**Símptoma:** en importar una llista («Ràdio Cançó d'autor», 31 cançons) algunes cançons arribaven trencades, sense títol.
+
+**Causa Arrel:** l'enllaç només portava els identificadors i l'altre aparell en treia el títol del catàleg públic (feed, `history-pool.json`, `historial-musical.json`). 13 de les 31 cançons ja no hi eren: la majoria eren pistes de canals «Tema» que havien sortit del feed (cada dia només s'hi posa una part de la discografia, i no van a l'arxiu) i dues eren a `hidden-videos.json`. La llista desada sí que en tenia el títol.
+
+**Solució Implementada:** `compact(payload, knownIds())`: una cançó que és al catàleg carregat de l'aparell que envia viatja només amb l'ID; una que no hi és viatja amb `{ id, title, channelTitle }` (els de la llista desada), i `hydrate()` no sobreescriu un títol que ja arriba. Si l'historial dels estils encara no s'ha carregat, simplement hi van més títols (l'enllaç és més llarg, mai trencat). A més, d'una llista o ràdio només s'envien les **50 primeres cançons** (`MAX_SHARE_SONGS`), en l'ordre en què sonen. Proves: `tests/music-transfer.test.js` («Cançons que ja no són al catàleg i límit de cançons»); verificat al Chromium (22 del catàleg + 3 fora del catàleg: les 25 amb títol).
