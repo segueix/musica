@@ -180,7 +180,11 @@
         const reader = new FileReader();
         reader.onload = function (e) {
             try {
-                const configData = JSON.parse(e.target.result);
+                const configData = JSON.parse(String(e.target.result).replace(/^\uFEFF/, ''));
+                if (configData?.product === 'segueix-musica') {
+                    app.features.musicTransfer.requestImport(configData);
+                    return;
+                }
                 applyLocalStorageData(configData);
 
                 const btn = document.getElementById('importConfigManualBtn');

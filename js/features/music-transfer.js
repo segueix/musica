@@ -174,7 +174,7 @@
         const map = new Map(
             arr(local)
                 .filter((v) => v && videoId(v.id))
-                .map((v) => [v.id, v])
+                .map((v) => [v.id, v]),
         );
         incoming.forEach((v) => {
             const old = map.get(v.id);
@@ -285,13 +285,17 @@
         byId('musicTransferConfirm').disabled = !payload;
         dialog.showModal();
     }
+    function requestImport(payload) {
+        showImport(validate(payload));
+    }
     let generatedFile = null;
-    const FILE_NAME = 'segueix-musica-copia.txt';
+    const FILE_NAME = 'copia.segueixmusica';
 
-    // Text pla és compartible a Android; alguns navegadors rebutgen application/json.
-    // El contingut continua sent JSON versionat i validat, també per als fitxers .json antics.
+    // Extensió pròpia per associar-la amb la PWA sense registrar tots els JSON del dispositiu.
     function createFile(payload) {
-        return new window.File([JSON.stringify(validate(payload))], FILE_NAME, { type: 'text/plain' });
+        return new window.File([JSON.stringify(validate(payload))], FILE_NAME, {
+            type: 'application/vnd.segueix-musica+json',
+        });
     }
 
     function supportsFileSharing(file, navigator = window.navigator) {
@@ -300,6 +304,92 @@
         } catch (_) {
             return false;
         }
+    }
+
+    function shareableFile(file) {
+        if (supportsFileSharing(file)) return file;
+        // Web Share pot rebutjar extensions pròpies. Mateixes dades JSON, embolcall de text compartible.
+        const textFile = new window.File([file], file.name + '.txt', {
+            type: 'text/plain',
+        });
+        return supportsFileSharing(textFile) ? textFile : file;
+    }
+
+    function listPayload(name, items) {
+        const songs = videos(items);
+        if (!songs.length) throw new Error('Aquesta llista o ràdio és buida.');
+        let hash = 2166136261;
+        for (const c of String(name) + songs.map((v) => v.id).join(',')) {
+            hash = Math.imul(hash ^ c.charCodeAt(0), 16777619);
+        }
+        return validate({
+            product: 'segueix-musica',
+            v: 1,
+            createdAt: new Date().toISOString(),
+            data: {
+                playlists: [
+                    {
+                        id: 'compartida_' + (hash >>> 0).toString(36),
+                        name,
+                        videos: songs,
+                    },
+                ],
+            },
+        });
+    }
+
+    function showListExport(name, items) {
+        const payload = listPayload(name, items);
+        const dialog = window.document.createElement('dialog');
+        dialog.className = 'music-transfer-dialog';
+        dialog.innerHTML =
+            '<h2>Comparteix la música</h2><p class="music-file-name"></p>' +
+            '<p>Genera un fitxer amb les cançons i comparteix-lo com a document.</p>' +
+            '<div class="config-sync-row"><button type="button" class="config-sync-btn" data-create>Genera el fitxer</button>' +
+            '<button type="button" class="config-sync-btn" data-share disabled>Comparteix</button></div>' +
+            '<p data-feedback role="status" aria-live="polite"></p>' +
+            '<p>Obre el fitxer amb Segueix Música instal·lada en un ordinador compatible. Al mòbil, obre Configuració → Importa un fitxer.</p>' +
+            '<button type="button" class="config-sync-btn" data-close>Tanca</button>';
+        dialog.querySelector('.music-file-name').textContent = str(name);
+        let file = null;
+        const share = dialog.querySelector('[data-share]');
+        const status = dialog.querySelector('[data-feedback]');
+        dialog.querySelector('[data-create]').addEventListener('click', () => {
+            try {
+                file = shareableFile(createFile(payload));
+                if (!supportsFileSharing(file)) saveGeneratedFile(file);
+                share.disabled = false;
+                status.textContent = 'Fitxer generat: ' + file.name + '. Prem «Comparteix».';
+            } catch (_) {
+                file = null;
+                share.disabled = true;
+                status.textContent = 'No s’ha pogut generar el fitxer. Torna-ho a provar.';
+            }
+        });
+        share.addEventListener('click', async () => {
+            if (!file) return;
+            if (!supportsFileSharing(file)) {
+                window.open('https://web.whatsapp.com/', '_blank', 'noopener,noreferrer');
+                status.textContent = 'Adjunta ' + file.name + ' a WhatsApp Web com a document.';
+                return;
+            }
+            share.disabled = true;
+            try {
+                await window.navigator.share({
+                    files: [file],
+                    title: 'Segueix Música',
+                });
+                status.textContent = 'Fitxer compartit.';
+            } catch (error) {
+                if (error.name !== 'AbortError') status.textContent = 'No s’ha pogut compartir. Torna-ho a provar.';
+            } finally {
+                share.disabled = false;
+            }
+        });
+        dialog.querySelector('[data-close]').addEventListener('click', () => dialog.close());
+        dialog.addEventListener('close', () => dialog.remove());
+        window.document.body.appendChild(dialog);
+        dialog.showModal();
     }
 
     function saveGeneratedFile(file) {
@@ -317,11 +407,11 @@
         byId('musicTransferWhatsAppFallback').classList.add('hidden');
         try {
             const payload = collect();
-            generatedFile = createFile(payload);
+            generatedFile = shareableFile(createFile(payload));
             byId('musicTransferShare').disabled = false;
             if (supportsFileSharing(generatedFile)) {
                 feedback(
-                    'Fitxer generat. Prem «Comparteix» i tria WhatsApp o l’aplicació que vulguis. ' + summary(payload)
+                    'Fitxer generat. Prem «Comparteix» i tria WhatsApp o l’aplicació que vulguis. ' + summary(payload),
                 );
             } else {
                 // Sense Web Share de fitxers, WhatsApp Web necessita que l'usuari l'adjunti.
@@ -329,7 +419,7 @@
                 feedback(
                     'Fitxer generat: ' +
                         generatedFile.name +
-                        '. Prem «Comparteix» i adjunta’l a WhatsApp Web com a document.'
+                        '. Prem «Comparteix» i adjunta’l a WhatsApp Web com a document.',
                 );
             }
         } catch (error) {
@@ -350,14 +440,17 @@
             feedback(
                 'A WhatsApp Web, tria el teu xat i adjunta ' +
                     generatedFile.name +
-                    ' com a document. El navegador no el pot adjuntar automàticament.'
+                    ' com a document. El navegador no el pot adjuntar automàticament.',
             );
             return;
         }
         byId('musicTransferShare').disabled = true;
         try {
             // Sense text ni URL: només es comparteix el fitxer que s'acaba de generar.
-            await window.navigator.share({ files: [generatedFile], title: 'La meva música' });
+            await window.navigator.share({
+                files: [generatedFile],
+                title: 'La meva música',
+            });
             feedback('Fitxer lliurat a l’aplicació de compartir.');
         } catch (error) {
             if (error.name !== 'AbortError') {
@@ -372,8 +465,22 @@
         return validate(JSON.parse((await file.text()).replace(/^\uFEFF/, '')));
     }
 
+    async function openFiles(files) {
+        if (!files?.length) return;
+        if (files.length !== 1) {
+            showImport(null, 'Obre un fitxer de Música cada vegada.');
+            return;
+        }
+        try {
+            showImport(await readFile(await files[0].getFile()));
+        } catch (_) {
+            showImport(null, 'No s’ha pogut obrir una còpia vàlida de Música.');
+        }
+    }
+
     function init() {
         if (!byId('musicTransferCreate')) return;
+        window.launchQueue?.setConsumer?.((launch) => openFiles(launch.files));
         byId('musicTransferCreate').addEventListener('click', prepare);
         byId('musicTransferShare').addEventListener('click', shareFile);
         byId('musicTransferImport').addEventListener('click', () => byId('musicTransferFile').click());
@@ -426,8 +533,12 @@
     app.features.musicTransfer = {
         collect,
         createFile,
+        shareableFile,
+        listPayload,
+        showListExport,
         supportsFileSharing,
         readFile,
+        requestImport,
         validate,
         parseLink,
         importData,

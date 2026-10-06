@@ -13231,42 +13231,13 @@ async function shareUserCategory(categoryName, channelIds, message = '') {
     });
 }
 
-// Una ràdio compartida porta només les primeres cançons de la cua: l'enllaç (i el QR) s'han de poder llegir des d'una
-// pantalla, i el que importa és que qui l'obre sent la mateixa ràdio, no tota la cua.
-const MAX_RADIO_SHARE_SONGS = 30;
-
-// Comparteix una ràdio o una llista de reproducció: enllaç (amb les cançons dins) + targeta amb QR.
-// type: 'radio' | 'playlist'. items: ID de vídeo o objectes vídeo.
+// Ràdios i llistes viatgen com a dades importables, sense convertir-les en imatges QR.
 async function _shareVideoList(type, name, items) {
-    const videoIdsOnly = [
-        ...new Set(
-            (Array.isArray(items) ? items : [])
-                .map(v => (typeof v === 'string' ? v : v?.id))
-                .filter(Boolean)
-                .map(String)
-        ),
-    ].slice(0, type === 'radio' ? MAX_RADIO_SHARE_SONGS : undefined);
-    if (!videoIdsOnly.length) {
-        return alert(type === 'radio' ? 'Aquesta ràdio és buida.' : 'Aquesta llista és buida o no existeix.');
+    try {
+        SegueixApp.features.musicTransfer.showListExport(name, items);
+    } catch (error) {
+        alert(error.message || 'No s’ha pogut preparar el fitxer.');
     }
-
-    const shareCodecs = SegueixApp.utils.shareCodecs;
-    const payload = shareCodecs.buildImportPayload({ type, name, items: videoIdsOnly });
-    const shareUrl = shareCodecs.buildImportUrl(payload);
-
-    if (!shareUrl) {
-        alert("No s'ha pogut generar l'enllaç de compartició.");
-        return;
-    }
-
-    // Caràtula representativa: hqdefault del primer vídeo (si no carrega, la icona de Segueix Música)
-    const thumbnailUrl = videoIdsOnly[0] ? buildArchiveThumbnail(videoIdsOnly[0]) : '';
-
-    _showShareOptionsModal(type === 'radio' ? 'Ràdio' : 'Llista', name, shareUrl, {
-        type,
-        count: videoIdsOnly.length,
-        thumbnailUrl,
-    });
 }
 
 function _readStoredPlaylists() {

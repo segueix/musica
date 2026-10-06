@@ -1568,3 +1568,13 @@ L'avís anterior corresponia al pressupost de 8.000 caràcters de l'enllaç comp
 Quan el navegador permet compartir fitxers, «Genera» els prepara en memòria i «Comparteix» obre el selector natiu sense crear una descàrrega prèvia. Si el navegador d'escriptori no ofereix aquesta funció, «Genera» desa el fitxer i «Comparteix» obre WhatsApp Web: el text explica que cal adjuntar-lo com a document (una web no pot adjuntar un fitxer automàticament a WhatsApp Web). Cancel·lar el selector natiu no inicia aquest camí alternatiu.
 
 Proves: còpia de més de 42 kB generada i reimportada sense pèrdues; fitxer real passat a Web Share, camí d'escriptori sense aquesta API, cancel·lació i compatibilitat amb JSON anteriors. Es mantenen les proves de fusió, idempotència i rollback.
+
+## [2026-10-06] - Fitxer propi de Música, PNG de llistes i importació de TXT
+
+Hi havia dos fluxos diferents: compartir ràdios/llistes generava una targeta PNG amb QR; la còpia musical de Configuració generava JSON dins un .txt. A més, «Importar tot» encara filtrava només .json i no reconeixia el payload musical. Ara les ràdios/llistes fan servir un diàleg de generar/compartir dades, sense PNG ni retallar la cua a 30 cançons. Només inclouen la llista compartida, mai l'historial personal.
+
+El format és JSON v1 amb extensió `.segueixmusica` i MIME `application/vnd.segueix-musica+json`. El manifest registra exclusivament aquesta extensió; launchQueue passa el fitxer per la mateixa validació i confirmació d'importació. Requereix PWA instal·lada, navegador d'escriptori compatible i associació/permís del sistema. No és un format xifrat ni exclusiu i no es promet obertura directa a Android o des de WhatsApp.
+
+Si Web Share rebutja l'extensió pròpia però accepta text, es comparteix la mateixa còpia com a `.segueixmusica.txt`. Tots dos selectors d'importació accepten .segueixmusica, .json i .txt, inclòs el fitxer .txt anterior amb BOM. «Importar tot» reconeix `product: segueix-musica` i mostra la confirmació musical abans d'escriure cap dada. El camí de configuracions antigues es conserva.
+
+Proves: còpia >42 kB, fallback de compartició TXT, associació de fitxers amb confirmació i rebuig de dades corruptes, obertura múltiple explícita, 75 cançons de ràdio conservades, importació TXT des d'«Importar tot» sense sobreescriure storage abans de confirmar.

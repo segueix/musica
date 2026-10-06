@@ -83,16 +83,20 @@ describe('Transferència musical sense servidor', () => {
         });
         const file = api.createFile(input);
         expect(file.size).toBeGreaterThan(42 * 1024);
-        expect(file.name).toBe('segueix-musica-copia.txt');
-        expect(file.type).toBe('text/plain');
+        expect(file.name).toBe('copia.segueixmusica');
+        expect(file.type).toBe('application/vnd.segueix-musica+json');
         expect((await api.readFile(file)).data.playlists).toHaveLength(150);
     });
 
     it('reconeix els JSON anteriors i els fitxers de text amb BOM', async () => {
         const { api } = setup();
         const original = payload({ history: [{ id: A }] });
-        const old = new File([JSON.stringify(original)], 'copia.json', { type: 'application/json' });
-        const txt = new File(['\ufeff' + JSON.stringify(original)], 'copia.txt', { type: 'text/plain' });
+        const old = new File([JSON.stringify(original)], 'copia.json', {
+            type: 'application/json',
+        });
+        const txt = new File(['\ufeff' + JSON.stringify(original)], 'copia.txt', {
+            type: 'text/plain',
+        });
         expect((await api.readFile(old)).data.history).toEqual((await api.readFile(txt)).data.history);
         await expect(api.readFile(new File(['No és una còpia'], 'error.txt'))).rejects.toThrow();
     });
@@ -109,7 +113,7 @@ describe('Transferència musical sense servidor', () => {
                     originalYear: 1995,
                 },
                 { id: C },
-            ])
+            ]),
         );
         storage.setItem('catube_liked_videos', JSON.stringify([{ id: C }]));
         storage.setItem('catube_follows', JSON.stringify([CH]));
@@ -150,7 +154,7 @@ describe('Transferència musical sense servidor', () => {
         const { api, storage } = setup();
         storage.setItem(
             'catube_music_user_categories',
-            JSON.stringify([{ id: 'local', name: 'Favorits', artists: [CH] }])
+            JSON.stringify([{ id: 'local', name: 'Favorits', artists: [CH] }]),
         );
         storage.setItem('catube_music_signals_v1', JSON.stringify({ songs: { [A]: { q: 3 } } }));
         storage.setItem('catube_music_prefs_v1', JSON.stringify({ moreLike: { [A]: { at: 20, on: false } } }));
@@ -212,7 +216,7 @@ describe('Transferència musical sense servidor', () => {
     });
 });
 
-function ui(navigator) {
+function ui(navigator, options = {}) {
     const storage = createMockLocalStorage();
     const elements = new Map();
     const el = (name) => {
@@ -227,6 +231,8 @@ function ui(navigator) {
                     this.handlers[event] = handler;
                 },
                 click: vi.fn(),
+                showModal: vi.fn(),
+                close: vi.fn(),
             });
         return elements.get(name);
     };
@@ -248,14 +254,18 @@ function ui(navigator) {
         open,
         URL: { createObjectURL: vi.fn(() => 'blob:copy'), revokeObjectURL },
         setTimeout: (fn) => fn(),
+        ...options,
     });
     init();
-    return { api, el, link, open, revokeObjectURL };
+    return { api, el, link, open, revokeObjectURL, storage };
 }
 
 describe('Genera el fitxer i comparteix al mòbil i a l’ordinador', () => {
     it('adjunta el fitxer real al menú natiu sense cap enllaç ni desar-lo abans', async () => {
-        const navigator = { canShare: vi.fn(() => true), share: vi.fn(async () => {}) };
+        const navigator = {
+            canShare: vi.fn(() => true),
+            share: vi.fn(async () => {}),
+        };
         const { el, link, open } = ui(navigator);
         el('musicTransferCreate').handlers.click();
         expect(el('musicTransferShare').disabled).toBe(false);
@@ -263,7 +273,7 @@ describe('Genera el fitxer i comparteix al mòbil i a l’ordinador', () => {
         await el('musicTransferShare').handlers.click();
         const data = navigator.share.mock.calls[0][0];
         expect(data.files).toHaveLength(1);
-        expect(data.files[0].name).toBe('segueix-musica-copia.txt');
+        expect(data.files[0].name).toBe('copia.segueixmusica');
         expect(data.url).toBeUndefined();
         expect(open).not.toHaveBeenCalled();
     });
@@ -272,7 +282,7 @@ describe('Genera el fitxer i comparteix al mòbil i a l’ordinador', () => {
         const { el, link, open } = ui({});
         el('musicTransferCreate').handlers.click();
         expect(link.click).toHaveBeenCalledOnce();
-        expect(link.download).toBe('segueix-musica-copia.txt');
+        expect(link.download).toBe('copia.segueixmusica');
         expect(el('musicTransferShare').disabled).toBe(false);
         await el('musicTransferShare').handlers.click();
         expect(open).toHaveBeenCalledWith('https://web.whatsapp.com/', '_blank', 'noopener,noreferrer');
@@ -292,5 +302,110 @@ describe('Genera el fitxer i comparteix al mòbil i a l’ordinador', () => {
         expect(link.click).not.toHaveBeenCalled();
         expect(open).not.toHaveBeenCalled();
         expect(el('musicTransferShare').disabled).toBe(false);
+    });
+});
+
+describe('Fitxer propi i compatibilitat amb les còpies ja generades', () => {
+    it('comparteix el mateix JSON com a text quan el navegador rebutja l’extensió pròpia', async () => {
+        const navigator = {
+            canShare: ({ files }) => files[0].name.endsWith('.txt'),
+            share: vi.fn(async () => {}),
+        };
+        const { el } = ui(navigator);
+        el('musicTransferCreate').handlers.click();
+        await el('musicTransferShare').handlers.click();
+        const file = navigator.share.mock.calls[0][0].files[0];
+        expect(file.name).toBe('copia.segueixmusica.txt');
+        expect(JSON.parse(await file.text()).product).toBe('segueix-musica');
+    });
+
+    it('obre un fitxer associat amb confirmació, sense escriure les dades automàticament', async () => {
+        let consumer;
+        const { api, el, storage } = ui(
+            {},
+            {
+                launchQueue: {
+                    setConsumer(fn) {
+                        consumer = fn;
+                    },
+                },
+            },
+        );
+        const file = api.createFile(payload({ history: [{ id: A }] }));
+        await consumer({ files: [{ getFile: async () => file }] });
+        expect(el('musicTransferDialog').showModal).toHaveBeenCalledOnce();
+        expect(el('musicTransferConfirm').disabled).toBe(false);
+        expect(el('musicTransferSummary').textContent).toContain('1 cançons');
+        expect(storage.length).toBe(0);
+        await consumer({
+            files: [{ getFile: async () => new File(['wrong'], 'wrong.segueixmusica') }],
+        });
+        expect(el('musicTransferConfirm').disabled).toBe(true);
+        expect(storage.length).toBe(0);
+    });
+
+    it('no ignora fitxers en una obertura múltiple', async () => {
+        let consumer;
+        const { el } = ui(
+            {},
+            {
+                launchQueue: {
+                    setConsumer(fn) {
+                        consumer = fn;
+                    },
+                },
+            },
+        );
+        await consumer({ files: [{}, {}] });
+        expect(el('musicTransferConfirm').disabled).toBe(true);
+        expect(el('musicTransferSummary').textContent).toContain('cada vegada');
+    });
+
+    it('exporta totes les cançons d’una ràdio sense afegir historial ni dades privades', () => {
+        const { api } = setup();
+        const ids = Array.from({ length: 75 }, (_, i) => String(i).padStart(11, '0'));
+        const result = api.listPayload('La meva ràdio', ids);
+        expect(result.data.playlists[0].videos).toHaveLength(75);
+        expect(result.data.history).toEqual([]);
+        expect(result.data.follows).toEqual([]);
+        expect(api.listPayload('La meva ràdio', ids)).toMatchObject({
+            data: result.data,
+        });
+    });
+
+    it('Importar tot reconeix una còpia musical TXT i demana confirmació en lloc de sobreescriure localStorage', () => {
+        const { api, el, storage } = ui({});
+        let change;
+        const input = {
+            addEventListener(_, fn) {
+                change = fn;
+            },
+        };
+        const context = loadScript('js/features/config-sync.js', {
+            localStorage: storage,
+            SegueixApp: { features: { musicTransfer: api }, utils: {} },
+            document: {
+                getElementById: (id) => (id === 'configManualFileInput' ? input : null),
+            },
+            FileReader: class {
+                readAsText(file) {
+                    this.onload({ target: { result: file.contents } });
+                }
+            },
+        });
+        context.SegueixApp.features.configSync.register();
+        change({
+            target: {
+                files: [
+                    {
+                        name: 'segueix-musica-copia.txt',
+                        contents: '\ufeff' + JSON.stringify(payload({ history: [{ id: A }] })),
+                    },
+                ],
+            },
+        });
+        expect(el('musicTransferDialog').showModal).toHaveBeenCalledOnce();
+        expect(el('musicTransferConfirm').disabled).toBe(false);
+        expect(storage.length).toBe(0);
     });
 });

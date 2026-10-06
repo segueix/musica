@@ -21,5 +21,14 @@
             "type": "image/png",
             "purpose": "any maskable"
         }
+    ],
+    "file_handlers": [
+        {
+            "action": "./",
+            "accept": {
+                "application/vnd.segueix-musica+json": [".segueixmusica"]
+            },
+            "launch_type": "single-client"
+        }
     ]
 }
