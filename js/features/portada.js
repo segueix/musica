@@ -521,7 +521,7 @@
                         <button type="button" class="pt-style pt-style--add" data-uc-create>
                             <span class="pt-style__plus" aria-hidden="true">+</span>
                             <span class="pt-style__label">Crea una categoria</span>
-                            <span class="pt-style__count">Amb els grups que vulguis</span>
+                            <span class="pt-style__count">Els teus grups</span>
                         </button>
                     </li>
                 </ul>
