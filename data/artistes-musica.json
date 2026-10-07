@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-07T15:01:39.851Z",
+  "updatedAt": "2026-10-07T15:19:17.519Z",
   "artists": [
     {
       "name": "2ES",
@@ -28693,7 +28693,52 @@
       "musicbrainzId": null,
       "youtube": {
         "channels": [],
-        "searchCandidates": []
+        "searchCandidates": [
+          {
+            "id": "UC4S5WcSVzMhUd-UwKKpKp5w",
+            "title": "Teràpia De Shock",
+            "handle": "@terapiadeshock5143",
+            "description": "TERÀPIA DE SHOCK\n\nFERRAN MASSEGÚ: Veu i Guitarra\nALBERT PARÉS: Baix i Veus\nGERARD LOPEZ: Bateria i Veus\nGUILLEM SOLER: Piano, Teclats i Veus\n\nContractació: Bàrbar Produccions\ninfo@barbar.cat\npremsa@barbar.cat\nTel. 600 745 394",
+            "subscriberCount": 71,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_nL3FFABbuMKmexoIGVecEI_9bCYe_GPph8cBuq1IueIQ=s240-c-k-c0x00ffffff-no-rj",
+            "score": 88,
+            "reasons": [
+              "nom exacte",
+              "handle coincident"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-07T15:19:13.243Z"
+          },
+          {
+            "id": "UCIJjTYBxYUHPFir2cZj0wKQ",
+            "title": "Teràpia de Shock - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 826,
+            "thumbnail": "https://yt3.ggpht.com/548AZojso1cfYEq80mdJqUphtFmg1aJs8xLWZvDH1QWcBNxzjjVrwtXmdwvVsNndddnCsYWyFO4=s240-c-k-c0x00ffffff-no-rj",
+            "score": 85,
+            "reasons": [
+              "nom exacte de canal Topic",
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-07T15:19:13.243Z"
+          },
+          {
+            "id": "UCnO3DG7B2cyiu5zoNstHEfA",
+            "title": "TerapiaDeShock",
+            "handle": "@terapiadeshock",
+            "description": "Terapia de Shock es una jove banda de Les Preses ( La Garrotxa ) que es va formar el 2006. Suka, Massa, Gerard i Peres, son els 4 membres que la formen. El seu estil es rock català.\n\nTerapia de Shock es una joven banda de Les Preses, que se formó en 2006. Suka, Massa, Gerard I peres, son los 4 miembros que la forman. Su estilo es Rock catalan.\n\nDis",
+            "subscriberCount": 804,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_lkzpI9Uy-cBLleqjhLKU64tVBflSCj1Br7lQrvvp8R-w=s240-c-k-c0x00ffffff-no-rj",
+            "score": 25,
+            "reasons": [
+              "handle exacte"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-07T15:19:13.243Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -28704,7 +28749,17 @@
         "https://terapiadeshock.cat/"
       ],
       "lastChecked": null,
-      "notes": "Alta sol·licitada per l’usuari. Pendent de verificar el canal de YouTube abans d’incorporar-ne les cançons."
+      "notes": "Alta sol·licitada per l’usuari. Pendent de verificar el canal de YouTube abans d’incorporar-ne les cançons.",
+      "enrichment": {
+        "youtubeSearch": {
+          "checkedAt": "2026-10-07T15:19:13.243Z",
+          "status": "candidats",
+          "query": "Teràpia de Shock",
+          "resultCount": 3,
+          "bestScore": 88,
+          "autoAcceptedId": null
+        }
+      }
     },
     {
       "name": "Pantaleó",
@@ -28724,7 +28779,54 @@
       "musicbrainzId": null,
       "youtube": {
         "channels": [],
-        "searchCandidates": []
+        "searchCandidates": [
+          {
+            "id": "UCSJK4Tvl9acyIdnY61kSG4A",
+            "title": "Alba Pantaleón",
+            "handle": "@albapantaleon-v7v",
+            "description": "Cantautora de República Dominicana. Obra Perfecta de Dios y adoradora del Jesús que sana y restaura corazones.",
+            "subscriberCount": 6600,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_m-h3ZmWyMCG5z2YjFTNg4j56gnThbe1xtLNci-ehMK6Rs=s240-c-k-c0x00ffffff-no-rj",
+            "score": 58,
+            "reasons": [
+              "nom parcial",
+              "handle coincident",
+              "primer resultat"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-07T15:19:13.764Z"
+          },
+          {
+            "id": "UC-Hx-z60eEVHrbCFVtMsG9g",
+            "title": "Pantaleon",
+            "handle": "@pantaleon2925",
+            "description": "Contenido sobre Minecraft bedrock \n\n\nhttps://www.instagram.com/p/Cd92qjluZC8/?igshid=YmMyMTA2M2Y=",
+            "subscriberCount": 3580,
+            "thumbnail": "https://yt3.ggpht.com/E9lUJKW-QSdaSSUQM_CoHHB039N8ubxcw1LEXMQMQEZZr4Xjq_yJlOcOo45N-FydX7FIth6hqw=s240-c-k-c0x00ffffff-no-rj",
+            "score": 53,
+            "reasons": [
+              "nom parcial",
+              "handle coincident"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-07T15:19:13.764Z"
+          },
+          {
+            "id": "UC5DgWSOeH2fb9XdKgBcJ9Cw",
+            "title": "Jeric Pantaleon",
+            "handle": "@jericpantaleon",
+            "description": "Martial Arts, Life, Talks & Seminars\n\nMessage me on Instagram @jericpantaleon\nhttps://www.instagram.com/jericpantaleon/\n\n\n\n",
+            "subscriberCount": 5790,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_lyWigwzlquBzstUTutF7bYEJbVSc2J_sSynYwZ5zz7YKqi=s240-c-k-c0x00ffffff-no-rj",
+            "score": 53,
+            "reasons": [
+              "nom parcial",
+              "handle coincident"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-07T15:19:13.764Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -28735,7 +28837,17 @@
         "https://www.musicaglobal.com/ca/artistes/pantaleo/"
       ],
       "lastChecked": null,
-      "notes": "Alta sol·licitada per l’usuari. Pendent de verificar el canal de YouTube abans d’incorporar-ne les cançons."
+      "notes": "Alta sol·licitada per l’usuari. Pendent de verificar el canal de YouTube abans d’incorporar-ne les cançons.",
+      "enrichment": {
+        "youtubeSearch": {
+          "checkedAt": "2026-10-07T15:19:13.764Z",
+          "status": "candidats",
+          "query": "Pantaleó",
+          "resultCount": 3,
+          "bestScore": 58,
+          "autoAcceptedId": null
+        }
+      }
     },
     {
       "name": "Grup de Folk",
@@ -28752,7 +28864,52 @@
       "musicbrainzId": null,
       "youtube": {
         "channels": [],
-        "searchCandidates": []
+        "searchCandidates": [
+          {
+            "id": "UC8efMlZQ7vQ1cTO6MbspafA",
+            "title": "Grup de folk - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 549,
+            "thumbnail": "https://yt3.ggpht.com/6-mwEg4MckBWGPYgmQ2eP6zEDpwZY4UPH289jp60Fm4tkY1qsNwyTsP32UdhSSTk-oSw4kSVxg=s240-c-k-c0x00ffffff-no-rj",
+            "score": 85,
+            "reasons": [
+              "nom exacte de canal Topic",
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-07T15:19:14.551Z"
+          },
+          {
+            "id": "UCphvEtLA2h4USbACQNVWi5A",
+            "title": "Muscat Grup de folk",
+            "handle": "@muscatgrupdefolk3616",
+            "description": "Som un grup de música tradicional i folk.",
+            "subscriberCount": 11,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_kRhZ0WQQlY2TwVXM-owhvuzOgZe-iWIo9l2efJwNeUrg=s240-c-k-c0x00ffffff-no-rj",
+            "score": 53,
+            "reasons": [
+              "nom parcial",
+              "handle coincident"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-07T15:19:14.551Z"
+          },
+          {
+            "id": "UC6v6la1b_ceB_ZQaUdBx-gw",
+            "title": "Ubs Del Grup De Folk - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 9,
+            "thumbnail": "http://yt3.ggpht.com/5pAR6Qlr724II-mm_Rfng0F1-S6x17b_sUwHoAYJ80MBULibfKFQwIcZZacsewCv1XJaHGloKsg1MEKeig=s240-c-k-c0x00ffffff-no-rj",
+            "score": 35,
+            "reasons": [
+              "nom parcial"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-07T15:19:14.551Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -28763,7 +28920,17 @@
         "https://www.enciclopedia.cat/gran-enciclopedia-de-la-musica/grup-de-folk"
       ],
       "lastChecked": null,
-      "notes": "Alta sol·licitada per l’usuari. Pendent de verificar el canal de YouTube abans d’incorporar-ne les cançons."
+      "notes": "Alta sol·licitada per l’usuari. Pendent de verificar el canal de YouTube abans d’incorporar-ne les cançons.",
+      "enrichment": {
+        "youtubeSearch": {
+          "checkedAt": "2026-10-07T15:19:14.551Z",
+          "status": "candidats",
+          "query": "Grup de Folk",
+          "resultCount": 3,
+          "bestScore": 85,
+          "autoAcceptedId": null
+        }
+      }
     },
     {
       "name": "Joan Masdéu",
@@ -28783,7 +28950,54 @@
       "musicbrainzId": null,
       "youtube": {
         "channels": [],
-        "searchCandidates": []
+        "searchCandidates": [
+          {
+            "id": "UCmTclPozSbbvY0khfHnaMgw",
+            "title": "Joan Masdéu",
+            "handle": "@joanmasdeuoficial",
+            "description": "Canal oficial de Joan Masdéu amb els videoclips de la seva discografia, a més d'altres vídeos.",
+            "subscriberCount": 380,
+            "thumbnail": "https://yt3.ggpht.com/66SjCexb7YH92WrpNN17KW4B2Gmi_zZGjzWunIeBK-0w9VEM5Gm5umjYu-uFj_uPdHdsMJaxsQ=s240-c-k-c0x00ffffff-no-rj",
+            "score": 103,
+            "reasons": [
+              "nom exacte",
+              "handle coincident",
+              "marca oficial",
+              "primer resultat"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-07T15:19:15.083Z"
+          },
+          {
+            "id": "UCIu7jGN31S41R-S24-AnJuQ",
+            "title": "Joan Masdéu - Topic",
+            "handle": null,
+            "description": "Joan Masdéu (Reus, 1974) inicia la seva carrera musical al capdavant de Whiskyn’s, banda amb la qual publica nou discos i fa més de 700 concerts, incloent una gira per Argentina i Uruguai. El grup es dissol el 2009.\n\nEl 2011 debuta en solitari amb Casa Murada (Música Global), disc guardonat amb el premi Enderrock a la millor cançó d’autor. La gira ",
+            "subscriberCount": 78,
+            "thumbnail": "https://yt3.ggpht.com/66SjCexb7YH92WrpNN17KW4B2Gmi_zZGjzWunIeBK-0w9VEM5Gm5umjYu-uFj_uPdHdsMJaxsQ=s240-c-k-c0x00ffffff-no-rj",
+            "score": 80,
+            "reasons": [
+              "nom exacte de canal Topic"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-07T15:19:15.083Z"
+          },
+          {
+            "id": "UC8-vGa6KC1K4TPa4bO2yuxg",
+            "title": "Joan Masdeu Casas",
+            "handle": "@joanmasdeucasas7002",
+            "description": "Hola soy Demoni_angel y mi meta es 67",
+            "subscriberCount": 38,
+            "thumbnail": "https://yt3.ggpht.com/5V9hl2dV1v6xdfSIkE-xXdHHS6JaJc6M7v2D2WFlxyKnfJGr8PjIQogH5OrsdpKl-4XcADDIWuM=s240-c-k-c0x00ffffff-no-rj",
+            "score": 53,
+            "reasons": [
+              "nom parcial",
+              "handle coincident"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-07T15:19:15.083Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -28794,7 +29008,17 @@
         "https://www.joanmasdeu.com/"
       ],
       "lastChecked": null,
-      "notes": "Alta sol·licitada per l’usuari. Pendent de verificar el canal de YouTube abans d’incorporar-ne les cançons."
+      "notes": "Alta sol·licitada per l’usuari. Pendent de verificar el canal de YouTube abans d’incorporar-ne les cançons.",
+      "enrichment": {
+        "youtubeSearch": {
+          "checkedAt": "2026-10-07T15:19:15.083Z",
+          "status": "candidats",
+          "query": "Joan Masdéu",
+          "resultCount": 3,
+          "bestScore": 103,
+          "autoAcceptedId": null
+        }
+      }
     },
     {
       "name": "Exili a Elba",
@@ -28812,7 +29036,52 @@
       "musicbrainzId": null,
       "youtube": {
         "channels": [],
-        "searchCandidates": []
+        "searchCandidates": [
+          {
+            "id": "UCCjjqhwGK59J_vn4l0MjYSA",
+            "title": "Exili A Elba",
+            "handle": "@exiliaelba",
+            "description": "Exili a Elba és un grup barceloní d'iindie-rock en català format l’any 2012 que va publicar  el primer àlbum l’any 2012.  4 anys després del seu últim LP “Amb poca llum es trenca la foscor\", la banda llança el seu nou treball “Dolce Vita” (2026, Satelite K)  encetant nous camins tant en el so com en la composició de la banda.  Un disc on s'exploren",
+            "subscriberCount": 296,
+            "thumbnail": "https://yt3.ggpht.com/5yXp_Fa65Pa-R37OdB-fgx8DbgagZQwykRmGN1-IZj82Ymi3FCB8ypSNAIQUKZ1mulDhU4VjVw=s240-c-k-c0x00ffffff-no-rj",
+            "score": 100,
+            "reasons": [
+              "nom exacte",
+              "handle exacte",
+              "primer resultat"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-07T15:19:15.545Z"
+          },
+          {
+            "id": "UCOpeaEtE-7hK7ZXGEVWMyRw",
+            "title": "Exili a Elba - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 2,
+            "thumbnail": "https://yt3.ggpht.com/5yXp_Fa65Pa-R37OdB-fgx8DbgagZQwykRmGN1-IZj82Ymi3FCB8ypSNAIQUKZ1mulDhU4VjVw=s240-c-k-c0x00ffffff-no-rj",
+            "score": 80,
+            "reasons": [
+              "nom exacte de canal Topic"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-07T15:19:15.545Z"
+          },
+          {
+            "id": "UC7sXT1HaXxJEcEqxd3KFY-w",
+            "title": "Satélite K",
+            "handle": "@satelitekvideos",
+            "description": "Canal Oficial de Satélite K. Sello discográfico independiente de Barcelona fundado en 1997.\n\nArtist roster: Adrià Puntí, Roger Mas, Quart Primera, Judit Neddermann, Gemma Humet, Joan Rovira, Anna Roig i L'ombre de ton chien, Bikimel, Sara Pi, Marina Rossell, Sisa, BGKO, etc.\n\n¡Suscríbete y disfruta de la mejor música!\nhttps://www.youtube.com/user/s",
+            "subscriberCount": 72700,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_kfq1Qevh5Canu76oaQ8axvcMwNgZDVobkV5O_Kc_FtmKU=s240-c-k-c0x00ffffff-no-rj",
+            "score": 10,
+            "reasons": [
+              "marca oficial"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-07T15:19:15.545Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -28823,7 +29092,17 @@
         "https://exiliaelba.bandcamp.com/"
       ],
       "lastChecked": null,
-      "notes": "Alta sol·licitada per l’usuari. Pendent de verificar el canal de YouTube abans d’incorporar-ne les cançons."
+      "notes": "Alta sol·licitada per l’usuari. Pendent de verificar el canal de YouTube abans d’incorporar-ne les cançons.",
+      "enrichment": {
+        "youtubeSearch": {
+          "checkedAt": "2026-10-07T15:19:15.545Z",
+          "status": "candidats",
+          "query": "Exili a Elba",
+          "resultCount": 3,
+          "bestScore": 100,
+          "autoAcceptedId": null
+        }
+      }
     },
     {
       "name": "Caïm Riba",
@@ -28843,7 +29122,50 @@
       "musicbrainzId": null,
       "youtube": {
         "channels": [],
-        "searchCandidates": []
+        "searchCandidates": [
+          {
+            "id": "UCszfsK0D7h1kZ6eSOhlB9cA",
+            "title": "Caïm Riba",
+            "handle": "@caimribamusic",
+            "description": "Music i fundador del grup Pastora, ara en solitari i presentant el 3er disc Llunes de Plutó (5 de Març)\nProductor musical, mescla, mastering, remixer\n",
+            "subscriberCount": 420,
+            "thumbnail": "https://yt3.ggpht.com/3AxEDH1aWaOYoyqij8A2uOZUerWWhJcrYBik2kYfpkgyVD1k5gqcMKWu-JeYv8tRa7iGJ-WvwaE=s240-c-k-c0x00ffffff-no-rj",
+            "score": 93,
+            "reasons": [
+              "nom exacte",
+              "handle coincident",
+              "primer resultat"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-07T15:19:15.908Z"
+          },
+          {
+            "id": "UC_JVj-OoxEnO0fhw7VQP2lg",
+            "title": "Caïm Riba - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 121,
+            "thumbnail": "https://yt3.ggpht.com/Z07Y3wflEZR54GjsIFxJhSn8rQiiBYMabxEp7p7W1Fw9NJhzBUw_3bXnLt_d9CiRpQKM7924=s240-c-k-c0x00ffffff-no-rj",
+            "score": 80,
+            "reasons": [
+              "nom exacte de canal Topic"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-07T15:19:15.908Z"
+          },
+          {
+            "id": "UCgJxG9f5dGLDkSEHK57eylg",
+            "title": "Pastora - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 1240,
+            "thumbnail": "https://yt3.ggpht.com/VqbaZBwU3pyrrVLpdveXzCqOnSXon2eQ52r9ny6oxpqzwzBECw4g2bxjclJTVHyWBUygheshJX8=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-07T15:19:15.908Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -28854,7 +29176,17 @@
         "https://rgb.cat/management/caim-riba/"
       ],
       "lastChecked": null,
-      "notes": "Alta sol·licitada per l’usuari. Pendent de verificar el canal de YouTube abans d’incorporar-ne les cançons."
+      "notes": "Alta sol·licitada per l’usuari. Pendent de verificar el canal de YouTube abans d’incorporar-ne les cançons.",
+      "enrichment": {
+        "youtubeSearch": {
+          "checkedAt": "2026-10-07T15:19:15.908Z",
+          "status": "candidats",
+          "query": "Caïm Riba",
+          "resultCount": 3,
+          "bestScore": 93,
+          "autoAcceptedId": null
+        }
+      }
     },
     {
       "name": "Falciots Ninja",
@@ -28872,7 +29204,47 @@
       "musicbrainzId": null,
       "youtube": {
         "channels": [],
-        "searchCandidates": []
+        "searchCandidates": [
+          {
+            "id": "UCLbuprK567zLAC6ZzamsDLQ",
+            "title": "Falciots Ninja - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 43,
+            "thumbnail": "https://yt3.ggpht.com/3iXFAJhwLqIvTw2LqV5vVYfKJMX1vSszl836bG04Nl-lgenpKbonqpZ2vzLDjoijCOUHeMzZ0Lw=s240-c-k-c0x00ffffff-no-rj",
+            "score": 85,
+            "reasons": [
+              "nom exacte de canal Topic",
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-07T15:19:16.266Z"
+          },
+          {
+            "id": "UCY1e16xgDy4gXhvw4f7hqww",
+            "title": "Sara",
+            "handle": "@sara_llobet",
+            "description": "",
+            "subscriberCount": 1,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_lKjrXchM3S1OxyEqaOjDdbtUn-TUt7sZm-up02zFeqNh0=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-07T15:19:16.266Z"
+          },
+          {
+            "id": "UCuhRPv35MIfxkxZ61YZeZmA",
+            "title": "TheYellowGate",
+            "handle": "@theyellowgate",
+            "description": "The Yellow Gate Records\nMusic & Video Factory\ntheyellowgate.net \n::::::::::::::::::::::::::::::::\nThe Yellow Gate Records\n- Falciots Ninja\n- Alavedra\n- Dan Peralbo\n- Ominira\n- Virtudes\n- Pantocrator\n- Diamante Negro\n- Mampön\n- Borrissol\n- MiNE!\n\n\n\n\n",
+            "subscriberCount": 351,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_lg0N25gQ9Vs-rxRPMq2OhBPTKlu4uQQ--XxQsNezeQ8Q=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-07T15:19:16.266Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -28883,7 +29255,17 @@
         "https://www.mmvv.cat/ca/artista/falciots-ninja/887/2018"
       ],
       "lastChecked": null,
-      "notes": "Alta sol·licitada per l’usuari. Pendent de verificar el canal de YouTube abans d’incorporar-ne les cançons."
+      "notes": "Alta sol·licitada per l’usuari. Pendent de verificar el canal de YouTube abans d’incorporar-ne les cançons.",
+      "enrichment": {
+        "youtubeSearch": {
+          "checkedAt": "2026-10-07T15:19:16.266Z",
+          "status": "candidats",
+          "query": "Falciots Ninja",
+          "resultCount": 3,
+          "bestScore": 85,
+          "autoAcceptedId": null
+        }
+      }
     },
     {
       "name": "Da Souza",
@@ -28901,7 +29283,48 @@
       "musicbrainzId": null,
       "youtube": {
         "channels": [],
-        "searchCandidates": []
+        "searchCandidates": [
+          {
+            "id": "UC9qAJ8qxZth4Ic8D-OV52RQ",
+            "title": "Da Souza - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 417,
+            "thumbnail": "https://yt3.ggpht.com/brYMfQlwIDIll613VovDsbRxjz18RD34mFSlOhBYdsmHqKI5R3zmj86xIFUJ6jMV7i1YMtwFog=s240-c-k-c0x00ffffff-no-rj",
+            "score": 80,
+            "reasons": [
+              "nom exacte de canal Topic"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-07T15:19:16.672Z"
+          },
+          {
+            "id": "UC8GAOCAJxBL4bExaUCvwL4Q",
+            "title": "Dinesh D'Souza",
+            "handle": "@dineshdsouza",
+            "description": "Dinesh D'Souza is an author and filmmaker. A graduate of Dartmouth College, he was a senior domestic policy analyst in the Reagan administration. He also served as a research fellow at the American Enterprise Institute and the Hoover Institution at Stanford University.\n\nHe is the author of many bestselling books, including Illiberal Education, What",
+            "subscriberCount": 810000,
+            "thumbnail": "https://yt3.ggpht.com/REwkvd5QZstQhT-KO2skT5TCPQ_qxECZFCMpeAdKVh8fEt8X6xQEu-updTg8ya4MaWkASmarfQ=s240-c-k-c0x00ffffff-no-rj",
+            "score": 5,
+            "reasons": [
+              "primer resultat"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-07T15:19:16.672Z"
+          },
+          {
+            "id": "UCj9mXuymvoFEvKVUm81hU3A",
+            "title": "De souza - Sem melindres",
+            "handle": "@gs_desouza",
+            "description": "Faaaala melindrados!\nEste é o Canal : De Souza – Sem Melindres\nAqui é conteúdo direto, motivação sem frescura e a realidade da rotina de quem estuda, trabalha e não tem tempo a perder.\nTrago meus bizus de estudo, minha caminhada nos concursos, organização, erros, acertos e tudo que realmente faz diferença para quem está na luta pela aprovação.\nSe v",
+            "subscriberCount": 4470,
+            "thumbnail": "https://yt3.ggpht.com/4CdjM3N5OF-N2qOyY6ZjvoN2GSZP0wwwFoRVs__jAtQHlAqWIAfisj17qKtQCssO2L5-L3O7=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-07T15:19:16.672Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -28912,7 +29335,17 @@
         "https://dasouza.bandcamp.com/"
       ],
       "lastChecked": null,
-      "notes": "Alta sol·licitada per l’usuari. Pendent de verificar el canal de YouTube abans d’incorporar-ne les cançons."
+      "notes": "Alta sol·licitada per l’usuari. Pendent de verificar el canal de YouTube abans d’incorporar-ne les cançons.",
+      "enrichment": {
+        "youtubeSearch": {
+          "checkedAt": "2026-10-07T15:19:16.672Z",
+          "status": "candidats",
+          "query": "Da Souza",
+          "resultCount": 3,
+          "bestScore": 80,
+          "autoAcceptedId": null
+        }
+      }
     },
     {
       "name": "Els Jóvens",
@@ -28932,7 +29365,50 @@
       "musicbrainzId": null,
       "youtube": {
         "channels": [],
-        "searchCandidates": []
+        "searchCandidates": [
+          {
+            "id": "UCq7L4buafGO2yHcjCdnaGxg",
+            "title": "Els Jóvens",
+            "handle": "@elsjovens3193",
+            "description": "Canal del grup Els Jóvens.\nAcí posem les cançons abans ✌🏿✌🏿✌🏿",
+            "subscriberCount": 987,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_m8VNmWSGEGj9oxSjA8EyW7eLbEGol2G_EtWZEKyvWPRvU=s240-c-k-c0x00ffffff-no-rj",
+            "score": 93,
+            "reasons": [
+              "nom exacte",
+              "handle coincident",
+              "primer resultat"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-07T15:19:17.111Z"
+          },
+          {
+            "id": "UCf-q-2ikL2X1ZFd0HSj7Eiw",
+            "title": "Els Jóvens - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 169,
+            "thumbnail": "https://yt3.ggpht.com/lzJCGi72zyPeX_Ce6ginskGMezcH6kjHowtUcX15TX51LouNK4QRnUoVyOW3QAkJgC72EXg2Bw=s240-c-k-c0x00ffffff-no-rj",
+            "score": 80,
+            "reasons": [
+              "nom exacte de canal Topic"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-07T15:19:17.111Z"
+          },
+          {
+            "id": "UCp3yk4lTg326yZyQRr_CHHQ",
+            "title": "VespreSky",
+            "handle": "@witchsol",
+            "description": "",
+            "subscriberCount": 1,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_mi4faAEgfMaYh9EfeU0hSv_BNHW0Cn5qDJXQVX8GnGOPo=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-07T15:19:17.111Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -28943,7 +29419,17 @@
         "https://www.enderrock.cat/disc/7250/jovens"
       ],
       "lastChecked": null,
-      "notes": "Alta sol·licitada per l’usuari. Pendent de verificar el canal de YouTube abans d’incorporar-ne les cançons."
+      "notes": "Alta sol·licitada per l’usuari. Pendent de verificar el canal de YouTube abans d’incorporar-ne les cançons.",
+      "enrichment": {
+        "youtubeSearch": {
+          "checkedAt": "2026-10-07T15:19:17.111Z",
+          "status": "candidats",
+          "query": "Els Jóvens",
+          "resultCount": 3,
+          "bestScore": 93,
+          "autoAcceptedId": null
+        }
+      }
     }
   ]
 }
