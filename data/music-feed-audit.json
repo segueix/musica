@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-07T17:22:53.876Z",
+  "generatedAt": "2026-10-07T17:31:57.742Z",
   "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
   "deepPagesFetched": 0,
   "deepChannelCount": 18,
-  "topicChannelCount": 255,
+  "topicChannelCount": 256,
   "governedChannelCount": 90,
   "topicCoverage": [
     {
@@ -1878,6 +1878,13 @@
       "withClip": 31
     },
     {
+      "id": "UCGXRDt9r8BA1eJbl3dxh1GA",
+      "name": "Karda Fàstik",
+      "tracks": 12,
+      "selected": 12,
+      "withClip": 0
+    },
+    {
       "id": "UCkJn1Oupgp27jlFzFl7I2Ag",
       "name": "Kayo Malayo",
       "tracks": 30,
@@ -2858,13 +2865,13 @@
       "withClip": 0
     }
   ],
-  "indexedChannelCount": 468,
-  "resolvedChannelCount": 468,
-  "feedChannelCount": 468,
-  "rawPublicVideoCount": 5244,
-  "feedVideoCount": 4708,
-  "acceptedMusicCount": 4667,
-  "categoryEligibleVideoCount": 4662,
+  "indexedChannelCount": 470,
+  "resolvedChannelCount": 470,
+  "feedChannelCount": 470,
+  "rawPublicVideoCount": 5258,
+  "feedVideoCount": 4722,
+  "acceptedMusicCount": 4681,
+  "categoryEligibleVideoCount": 4676,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
     "before": 0,
@@ -2873,7 +2880,7 @@
   },
   "contentReviewCount": 542,
   "contentTypeCounts": {
-    "song": 4548,
+    "song": 4562,
     "live_song": 114,
     "album": 5,
     "other": 35,
@@ -2884,6 +2891,6 @@
   "channelsWithoutVideos": [],
   "channelsWithoutAcceptedMusic": [],
   "allIndexedChannelsVisible": true,
-  "publishedFeedVideoCount": 4698,
+  "publishedFeedVideoCount": 4722,
   "publishedShortVideoCount": 0
 }
