@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-07T16:26:21.946Z",
+  "updatedAt": "2026-10-07T16:48:10.426Z",
   "description": "Llista blanca per a canals on Segueix Música només ha d'ingerir vídeos concrets. Admet títols exactes, fragments obligatoris i fragments exclosos.",
   "channels": {
     "UCKpscwdWlVaMqcA81vLI7OA": {
@@ -2287,6 +2287,78 @@
         "Oriol",
         "Sempre pensa en ell",
         "La història"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UC8eN3E2fiYV0wtMwds1ZK9g": {
+      "artist": "Blay Tritono",
+      "note": "Alta per ampliar el jazz instrumental. Només la selecció tancada de peces de la llista blanca; no s’autoritza tota la discografia.",
+      "allowedTitles": [
+        "Clot 20",
+        "Saura I",
+        "Saura II"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCw04zTLucny6vY-O5-qE21A": {
+      "artist": "Jordi Sabatés",
+      "note": "Alta per ampliar el jazz instrumental. Només la selecció tancada de peces de la llista blanca; no s’autoritza tota la discografia.",
+      "allowedTitles": [
+        "Stonehenge",
+        "Ballarines Mecàniques",
+        "Bolero para Chick y Lulu White"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCJJ6X0cboaPc-rl_XeafowQ": {
+      "artist": "Orquestra Mirasol",
+      "note": "Alta per ampliar el jazz instrumental. Només la selecció tancada de peces de la llista blanca; no s’autoritza tota la discografia.",
+      "allowedTitles": [
+        "To de \"Re\" per a Mandolina i Clarinet",
+        "To de ”Re” Per a Mandolina I Clarinet",
+        "Molt Trist",
+        "Hancock"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UC_htjc02Q62QuGP1EOyOSnQ": {
+      "artist": "Secta Sònica",
+      "note": "Alta per ampliar el jazz instrumental. Només la selecció tancada de peces de la llista blanca; no s’autoritza tota la discografia.",
+      "allowedTitles": [
+        "I Left My Heart in El Aaiun",
+        "Wad-Ras",
+        "Acoyte"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCDxUh6YqVfCZ-DwSDQy1mNQ": {
+      "artist": "La Vella Dixieland",
+      "note": "Alta per ampliar el jazz instrumental. Només la selecció tancada de peces de la llista blanca; no s’autoritza tota la discografia.",
+      "allowedTitles": [
+        "Tiger Rag",
+        "Muskat Ramble",
+        "Muskrat Ramble",
+        "Taps Miller"
       ],
       "acceptedMusicOnly": true,
       "allowedContentTypes": [

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-07T16:46:22.107Z",
+  "updatedAt": "2026-10-07T16:48:10.426Z",
   "artists": [
     {
       "name": "2ES",
@@ -30733,7 +30733,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UC8eN3E2fiYV0wtMwds1ZK9g",
+            "name": "Blay Tritono - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": true
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UC8eN3E2fiYV0wtMwds1ZK9g",
@@ -30752,15 +30760,17 @@
           }
         ]
       },
-      "confidence": "baixa",
-      "reviewStatus": "pendent",
-      "active": false,
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
         "manual-user-2026-10-07",
-        "genre:manual"
+        "genre:manual",
+        "https://onaedicions.cat/botiga/?p=32",
+        "https://lafonoteca.net/disco/clot-20/"
       ],
-      "lastChecked": "2026-10-07T16:45:48.674Z",
-      "notes": "Selecció instrumental pendent de verificar.",
+      "lastChecked": "2026-10-07T16:48:10.426Z",
+      "notes": "Alta per ampliar el jazz instrumental. Només la selecció tancada de peces de la llista blanca; no s’autoritza tota la discografia.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-07T16:46:20.501Z",
@@ -30783,7 +30793,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCw04zTLucny6vY-O5-qE21A",
+            "name": "Jordi Sabatés - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": true
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UCw04zTLucny6vY-O5-qE21A",
@@ -30830,15 +30848,17 @@
           }
         ]
       },
-      "confidence": "baixa",
-      "reviewStatus": "pendent",
-      "active": false,
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
         "manual-user-2026-10-07",
-        "genre:manual"
+        "genre:manual",
+        "https://www.enderrock.cat/disc/5010/senyor-dels-anells",
+        "https://barcelonaartorchestra.com/index.php/musica-laietana/"
       ],
-      "lastChecked": "2026-10-07T16:45:48.677Z",
-      "notes": "Selecció instrumental pendent de verificar.",
+      "lastChecked": "2026-10-07T16:48:10.426Z",
+      "notes": "Alta per ampliar el jazz instrumental. Només la selecció tancada de peces de la llista blanca; no s’autoritza tota la discografia.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-07T16:46:20.892Z",
@@ -30861,7 +30881,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCJJ6X0cboaPc-rl_XeafowQ",
+            "name": "Orquestra Mirasol - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": true
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UCJJ6X0cboaPc-rl_XeafowQ",
@@ -30904,15 +30932,17 @@
           }
         ]
       },
-      "confidence": "baixa",
-      "reviewStatus": "pendent",
-      "active": false,
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
         "manual-user-2026-10-07",
-        "genre:manual"
+        "genre:manual",
+        "https://www.enderrock.cat/disc/5471/salsa-catalana",
+        "https://www.dlsi.ua.es/~inesta/Prog/SPE/orqmirasol-e.html"
       ],
-      "lastChecked": "2026-10-07T16:45:48.677Z",
-      "notes": "Selecció instrumental pendent de verificar.",
+      "lastChecked": "2026-10-07T16:48:10.426Z",
+      "notes": "Alta per ampliar el jazz instrumental. Només la selecció tancada de peces de la llista blanca; no s’autoritza tota la discografia.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-07T16:46:21.212Z",
@@ -30935,7 +30965,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UC_htjc02Q62QuGP1EOyOSnQ",
+            "name": "Secta Sònica - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": true
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UC_htjc02Q62QuGP1EOyOSnQ",
@@ -30954,15 +30992,16 @@
           }
         ]
       },
-      "confidence": "baixa",
-      "reviewStatus": "pendent",
-      "active": false,
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
         "manual-user-2026-10-07",
-        "genre:manual"
+        "genre:manual",
+        "https://lafonoteca.net/disco/fred-pedralbes/"
       ],
-      "lastChecked": "2026-10-07T16:45:48.677Z",
-      "notes": "Selecció instrumental pendent de verificar.",
+      "lastChecked": "2026-10-07T16:48:10.426Z",
+      "notes": "Alta per ampliar el jazz instrumental. Només la selecció tancada de peces de la llista blanca; no s’autoritza tota la discografia.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-07T16:46:21.483Z",
@@ -30985,7 +31024,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCDxUh6YqVfCZ-DwSDQy1mNQ",
+            "name": "La Vella Dixieland - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": true
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UCYtcI0I7SRj7AuP731hNgzA",
@@ -31032,15 +31079,17 @@
           }
         ]
       },
-      "confidence": "baixa",
-      "reviewStatus": "pendent",
-      "active": false,
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
         "manual-user-2026-10-07",
-        "genre:manual"
+        "genre:manual",
+        "https://www.enderrock.cat/disc/5233/vella-dixieland",
+        "https://contrabaix.com/la-vella-dixieland/"
       ],
-      "lastChecked": "2026-10-07T16:45:48.677Z",
-      "notes": "Selecció instrumental pendent de verificar.",
+      "lastChecked": "2026-10-07T16:48:10.426Z",
+      "notes": "Alta per ampliar el jazz instrumental. Només la selecció tancada de peces de la llista blanca; no s’autoritza tota la discografia.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-07T16:46:21.774Z",
