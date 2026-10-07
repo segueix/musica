@@ -468,6 +468,10 @@ const likes = ctx2.SegueixApp.features.likes;
 
 - El `popstate` d'`app.js` crida primer `restoreVideoFromHistory()`: tornar a la cançó que sona (també a la finestra flotant) la restaura, i una cançó de la ràdio/llista que sona (o de la cua que `exitPlaylistModeForNavigation()` desa a `queueBeforeNavigation` en sortir-ne al mòbil) es reprodueix dins la cua (`loadVideoInSequence({ replaceHistory: true })`). **No hi tornis a carregar el vídeo sol directament**: es perdia la ràdio i es veia la fitxa antiga amb el reproductor buit i els relacionats. Proves: `tests/player-controls.test.js`; opt-in `node tests/browser/verificar-enrere-radio.js`.
 
+### Cua als aparells d'Apple (2026-10-07)
+
+- A iPhone, iPad i Mac (`isAppleDevice()`), la cançó següent d'una ràdio/llista es carrega **al mateix reproductor** (`canKeepApplePlayer()` → `swapLivePlayerVideo()`, `loadVideoById`): Safari no deixa sonar un iframe nou sense un toc. Si tot i així no arrenca en 4 s, `watchAppleAutoplay()` fa parpellejar el play i mostra `#playerAutoplayHint` dins `#playerExternalControls` (mai damunt del vídeo). A la resta d'aparells no canvia res. Detall: `docs/PROBLEMES_I_SOLUCIONS.md` (2026-10-07). Prova: `tests/autoplay-apple.test.js`.
+
 ### Ràdio i llistes: sense relacionats (2026-09-30)
 
 - Després d'una ràdio o d'una llista (qualsevol cua `.mq` visible) **no es mostren** «Altres vídeos relacionats» ni els vídeos de l'artista: a escriptori (≥ 1025 px) per a la ràdio (`styles.css`) i a mòbil/tauleta (≤ 1024 px) per a ràdio i llistes (`portada.css`). Un vídeo sol sí que els té. No hi tornis a posar cap relacionat sota la cua. Verificació opt-in: `node tests/browser/verificar-relacionats.js`.

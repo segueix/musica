@@ -212,6 +212,14 @@ function isIOSLikeDevice() {
     return /iPhone|iPad|iPod/i.test(userAgent) || (platform === 'MacIntel' && maxTouchPoints > 1);
 }
 
+// iPhone, iPad (també l'iPadOS que es presenta com a Mac) i Mac. Safari no hi deixa sonar un reproductor nou sense un
+// toc de l'usuari (a l'iPhone i l'iPad, cap navegador: tots fan servir el motor de Safari).
+function isAppleDevice() {
+    const userAgent = navigator.userAgent || '';
+    const platform = navigator.platform || '';
+    return isIOSLikeDevice() || /Macintosh|Mac OS X/i.test(userAgent) || /^Mac/i.test(platform);
+}
+
 function buildArchiveThumbnail(videoId) {
     const normalizedId = String(videoId || '').trim();
     if (!normalizedId) {

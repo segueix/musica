@@ -1,3 +1,13 @@
+## [2026-10-07] - iPhone, iPad i Mac: la cançó següent de la cua no arrencava sola
+
+**Problema:** A l'iPhone (i a Safari de l'iPad i el Mac), en acabar una cançó de la ràdio o d'una llista la següent quedava aturada: calia tocar play a cada cançó.
+
+**Causa Arrel:** Safari no deixa sonar un reproductor nou sense un toc de l'usuari, i l'app en creava un a cada cançó (`prepareWatchPlaybackPreview()` buida `#videoPlayer` i hi posa un iframe amb `autoplay=1`). Els `playVideo` que s'envien després (en carregar i amb els estats 5 / -1) tampoc no compten com a toc.
+
+**Solució Implementada (només aparells d'Apple, `isAppleDevice()` de `helpers.js`):** (1) **Mateix reproductor:** `loadVideoInSequence()` marca `keepLivePlayer` també quan `canKeepApplePlayer()` (Apple, autoplay, pàgina visible, iframe de YouTube viu i consentiment) i `showVideoFromAPI` fa servir `swapLivePlayerVideo()` (`loadVideoById` al mateix iframe, el que ja feien les TV a pantalla completa). Si el reproductor no respon en 2,5 s es recrea com abans (a la finestra flotant, amb `queuePlayback`). (2) **Avís:** `watchAppleAutoplay()` (a l'encadenat, a `prepareWatchPlaybackPreview` i `queuePlayback` amb autoplay) comprova al cap de 4 s si la cançó continua sense començar (estat `''`, `-1` o `5`) i, si és així, posa `.is-autoplay-blocked` a `#playerExternalControls`: el play parpelleja i surt `#playerAutoplayHint` («Toca el vídeo o ▶ per continuar») a sota dels botons, mai damunt del vídeo (a la barra petita de la finestra flotant només parpelleja). Desapareix quan sona.
+
+**Trampes conegudes:** (1) No s'ha pogut provar amb un iPhone ni amb YouTube real (només proves estàtiques). (2) El play de la barra envia `playVideo` per `postMessage`, que Safari pot no comptar com a toc: per això l'avís diu també «toca el vídeo». (3) Amb la pestanya amagada no s'encadena res (regla del 2026-10-04): no s'hi ha tocat. (4) A Android, Windows i Linux no canvia res. Prova: `tests/autoplay-apple.test.js`.
+
 ## [2026-10-05] - Segona passada amb cerca i anàlisi de lletres
 
 **Petició:** buscar artista i lletra de les 239 pendents i fer més descartes segons l’idioma.
