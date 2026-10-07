@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-07T16:48:10.426Z",
+  "updatedAt": "2026-10-07T16:53:34.511Z",
   "artists": [
     {
       "name": "2ES",
@@ -31100,6 +31100,63 @@
           "autoAcceptedId": null
         }
       }
+    },
+    {
+      "name": "Els Detectors",
+      "aliases": [
+        "Detectors"
+      ],
+      "genres": [
+        "Pop",
+        "Rock"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [],
+        "searchCandidates": []
+      },
+      "confidence": "baixa",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "manual-user-2026-10-07",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-07T16:53:34.511Z",
+      "notes": "Alta pendent de verificar canal i repertori."
+    },
+    {
+      "name": "Karda Fàstik",
+      "aliases": [
+        "Karda Fastik"
+      ],
+      "genres": [
+        "Rock"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [],
+        "searchCandidates": []
+      },
+      "confidence": "baixa",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "manual-user-2026-10-07",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-07T16:53:34.511Z",
+      "notes": "Alta pendent de verificar canal i repertori."
     }
   ]
 }
