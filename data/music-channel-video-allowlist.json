@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-07T16:16:01.523Z",
+  "updatedAt": "2026-10-07T16:19:30.629Z",
   "description": "Llista blanca per a canals on Segueix Música només ha d'ingerir vídeos concrets. Admet títols exactes, fragments obligatoris i fragments exclosos.",
   "channels": {
     "UCKpscwdWlVaMqcA81vLI7OA": {
@@ -2106,7 +2106,7 @@
     },
     "UCVowitUeUXlew8bjVjBOtUQ": {
       "artist": "Peret",
-      "note": "Alta manual 2026-10-07. Selecció inicial de repertori amb llista tancada per canal. No s’autoritza tota la discografia; la resta queda pendent de revisió.",
+      "note": "Primera selecció catalana per ID: El cant dels ocells, Paraules d’amor, Una noia de Mataró i Volem pa amb oli. La llista explícita evita el límit de 500 entrades i la selecció de 40 populars del canal multilingüe.",
       "allowedTitles": [
         "El cant dels ocells",
         "Al vent",
@@ -2121,6 +2121,12 @@
       "allowedContentTypes": [
         "song",
         "live_song"
+      ],
+      "allowedVideoIds": [
+        "JJUUQ7pfEWg",
+        "-mZ5z8TfB74",
+        "k9fisxtrAWc",
+        "T5t_p8Of3HA"
       ]
     },
     "UCxZhZaJrcH8nHdrKx4ij0sw": {
