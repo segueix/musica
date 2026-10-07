@@ -777,6 +777,11 @@
         init,
         snapshot,
         registerSessionSink,
+        replaceSynchronizedData(data) {
+            prefs = normalizePrefs(data.prefs);
+            ensureTracker().setStats(data.stats);
+            snapshotCache.rev += 1;
+        },
         importMerged,
         importPrefs,
         getStats: () => ensureTracker().getStats(),
@@ -807,3 +812,4 @@
         else init();
     }
 })(window);
+

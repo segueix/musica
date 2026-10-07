@@ -1660,3 +1660,14 @@ La TV (`__segueix_tv_discovery__`) no hi entra. El vídeo potser no arrenca sol 
 **Solució Implementada:** a Configuració, «Passa la teva música a un altre aparell» només té «Envia el fitxer», «Desa el fitxer» i «Importa un fitxer». El fitxer és `segueix-musica-AAAA-MM-DD.json` (`application/json`) amb `collect()` (historial, m'agrada, seguits, llistes, categories, preferències, estadístiques, estils i mode). «Envia» fa servir Web Share amb el fitxer; Chrome per a Android no accepta `.json` al menú de compartir, així que `shareableFile()` el passa com a `.json.txt` (mateix contingut; la importació l'accepta). Sense Web Share de fitxers (ordinador), el desa i obre WhatsApp Web perquè s'hi adjunti. Cancel·lar el menú no fa res. La importació mostra el resum («llista «Estiu» (20 cançons) · 9 artistes · 30 cançons a l'historial · 12 m'agrada») i fusiona amb el que hi ha. Eliminats de Configuració el desplegable de llistes, el bloc d'artistes, `selection()` i `refreshListPicker()`. Es mantenen la lectura dels enllaços `#musica=` i l'enllaç de compartir una ràdio/llista.
 
 **Proves:** `tests/music-transfer.test.js` («Un sol fitxer JSON amb tota la música»); verificat al Chromium: fitxer desat (30 + 12 + 9 + 1 llista, 6 kB) i importat en un altre context amb tot.
+
+
+## [2026-10-07] - Drive substitueix els fitxers i els codis de vinculació
+
+**Petició:** eliminar tot el sistema anterior de transferència de configuració i historial i preparar Google Drive. La configuració OAuth es farà després.
+
+**Solució:** `music-data.js` recull només dades permeses; `drive-sync-model.js` fusiona registres i eliminacions; `google-drive-sync.js` gestiona OAuth i la carpeta privada de Drive. Un fitxer per aparell evita sobreescriptures concurrents. Les pestanyes es coordinen amb Web Locks. El diari local conserva la base real aplicada, separada dels canvis remots pendents, per recuperar-se d’errors de xarxa. Retirats `music-transfer.js`, `backup-codecs.js`, `/api/sync`, els handlers de fitxers PWA i la importació d’historial per URL. No s’esborren les dades musicals existents.
+
+**Activació:** identificador públic a `js/google-drive-config.js`; buit mostra «pendent d’activació» sense carregar Google. Instruccions a `docs/GOOGLE_DRIVE.md` i política pública a `privacitat.html`. En arribar canvis es recarrega l’app: primer s’actualitza la memòria de `musicSignals` perquè no torni a desar estadístiques antigues.
+
+**Proves:** models de fusió i eliminació, idempotència, llistes editades en dos equips, permisos, privacitat, errors, paginació i recuperació d’una escriptura fallida amb API simulada. La prova real OAuth queda pendent del client Google.

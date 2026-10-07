@@ -13285,13 +13285,16 @@ async function shareUserCategory(categoryName, channelIds, message = '') {
     });
 }
 
-// Ràdios i llistes viatgen com a dades importables, sense convertir-les en imatges QR.
+// La compartició pública de llistes és independent de la sincronització privada.
 async function _shareVideoList(type, name, items) {
-    try {
-        SegueixApp.features.musicTransfer.showListExport(name, items);
-    } catch (error) {
-        alert(error.message || 'No s’ha pogut preparar el fitxer.');
-    }
+    const codecs = SegueixApp.utils.shareCodecs;
+    const known = new Map([...(window.YouTubeAPI?.feedVideos || []), ...(typeof cachedAPIVideos !== 'undefined' ? cachedAPIVideos : []), ...(typeof activePlaylistQueue !== 'undefined' ? activePlaylistQueue : [])].map(v => [v.id, v]));
+    const videos = items.map(item => typeof item === 'string' ? known.get(item) || item : item);
+    const songs = SegueixApp.utils.musicData.validate({ product: 'segueix-musica', v: 1, data: { likes: videos } }).data.likes.slice(0, 50);
+    const payload = codecs.buildImportPayload({ type, name, items: songs });
+    const url = codecs.buildImportUrl(payload);
+    if (!url) return alert('No s’ha pogut preparar l’enllaç de la llista.');
+    return _showShareOptionsModal(type === 'radio' ? 'Ràdio' : 'Llista', name, url, { type, count: songs.length });
 }
 
 function _readStoredPlaylists() {
@@ -13335,7 +13338,7 @@ async function shareSegueixRadio() {
     return _shareVideoList(share.type, share.name, share.ids);
 }
 
-const SHARE_TYPE_BY_LABEL = { Llista: 'playlist', Ràdio: 'radio', Categoria: 'category', Visualitzacions: 'history' };
+const SHARE_TYPE_BY_LABEL = { Llista: 'playlist', Ràdio: 'radio', Categoria: 'category' };
 
 // Modal amb opcions de compartició: Compartir (targeta amb icona + tipus + nom, sense enllaç escrit) + Generar QR
 async function _showShareOptionsModal(typeLabel, name, shareUrl, options = {}) {
@@ -13517,13 +13520,12 @@ function handleImportDataParam() {
         return;
     }
 
-    console.log('[importData] Payload rebut:', payload);
+    if (!['playlist', 'radio', 'category'].includes(payload.type)) return;
 
     const typeLabels = {
         playlist: 'Llista de reproducció',
         radio: 'Ràdio',
         category: 'Categoria',
-        history: 'Visualitzacions',
     };
     const typeLabel = typeLabels[payload.type] || payload.type;
     const itemCount = payload.items?.length || 0;
@@ -13536,8 +13538,6 @@ function handleImportDataParam() {
     } else if (payload.type === 'category' && itemCount > 0) {
         // Els noms dels grups s'hi posen quan el catàleg és a punt (fillImportCategoryArtists)
         previewHtml = `<p style="font-size:0.85rem; opacity:0.7; margin-bottom:6px;">${itemCount === 1 ? '1 artista' : `${itemCount} artistes`}</p><p class="uc-import-artists" id="importDataArtists" style="font-size:0.85rem; margin-bottom:12px;" hidden></p>`;
-    } else if (payload.type === 'history') {
-        previewHtml = `<p style="font-size:0.85rem; opacity:0.7; margin-bottom:12px;">${itemCount} visualitzacions</p>`;
     }
 
     const modal = document.createElement('div');
@@ -13610,6 +13610,8 @@ function fillImportCategoryArtists(modal, channelIds, attempt = 0) {
 
 // Executa la importació real des d'un payload rebut per URL
 function _executeImportFromPayload(payload, resultDiv, modal) {
+    const sharedSongs = ['radio', 'playlist'].includes(payload.type)
+        ? SegueixApp.utils.musicData.validate({ product: 'segueix-musica', v: 1, data: { likes: payload.items } }).data.likes : [];
     if (payload.type === 'radio') {
         // Una ràdio compartida no es desa: es posa a sonar tal com la van enviar (amb les cançons que tenim al feed).
         const known = new Map(
@@ -13621,7 +13623,7 @@ function _executeImportFromPayload(payload, resultDiv, modal) {
                 ...(window.VIDEOS || []),
             ].map(video => [String(video.id), video])
         );
-        const videos = (payload.items || []).map(id => known.get(String(id))).filter(Boolean);
+        const videos = sharedSongs.map(video => known.get(video.id) || { ...video, thumbnail: `https://i.ytimg.com/vi/${video.id}/hqdefault.jpg`, source: 'shared' });
         if (!videos.length) throw new Error('Ara mateix no he trobat cap d’aquestes cançons. Torna-ho a provar.');
         const started = SegueixApp.features.musicQueue?.playSelection?.(videos, payload.name || 'Ràdio compartida');
         if (!started) throw new Error('No s’ha pogut posar la ràdio a sonar.');
@@ -13633,11 +13635,10 @@ function _executeImportFromPayload(payload, resultDiv, modal) {
         const stored = localStorage.getItem('catube_playlists');
         const playlists = stored ? JSON.parse(stored) : [];
 
-        const videoObjs = (payload.items || []).map(id => ({
-            id: id,
-            title: 'Vídeo ' + id,
-            thumbnail: 'img/icon-192.png',
-            channelTitle: '',
+        const videoObjs = sharedSongs.map(video => ({
+            ...video,
+            title: video.title || 'Cançó ' + video.id,
+            thumbnail: `https://i.ytimg.com/vi/${video.id}/hqdefault.jpg`,
             source: 'shared',
         }));
 
@@ -13693,23 +13694,6 @@ function _executeImportFromPayload(payload, resultDiv, modal) {
             result.status === 'exists'
                 ? `<p style="color:#2ecc71; font-size:0.9rem;">✔ Ja tenies la categoria «${escapeHtml(saved.name)}»</p>`
                 : `<p style="color:#2ecc71; font-size:0.9rem;">✔ Categoria «${escapeHtml(saved.name)}» afegida amb ${count === 1 ? '1 artista' : `${count} artistes`}. La trobaràs a Inici.</p>`;
-        _disableImportBtn(modal);
-    } else if (payload.type === 'history') {
-        const stored = localStorage.getItem('catube_history');
-        const existing = stored ? JSON.parse(stored) : [];
-        const existingIds = new Set(existing.map(e => e.id));
-        let added = 0;
-
-        for (const item of payload.items || []) {
-            if (!existingIds.has(item.id)) {
-                existing.push(item);
-                existingIds.add(item.id);
-                added++;
-            }
-        }
-
-        localStorage.setItem('catube_history', JSON.stringify(existing));
-        resultDiv.innerHTML = `<p style="color:#2ecc71; font-size:0.9rem;">✔ ${added} visualitzacions importades</p>`;
         _disableImportBtn(modal);
     } else {
         throw new Error('Tipus no reconegut: ' + payload.type);
@@ -13915,7 +13899,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 await handleInitialUrlParams();
                 await handleSharedPlaylistUrlImport();
                 SegueixApp.features.configSync.register();
-                SegueixApp.utils.backupCodecs.register();
+                SegueixApp.features.googleDriveSync.register();
                 startupCompleted = true;
             })(),
             22000,
@@ -13929,4 +13913,5 @@ document.addEventListener('DOMContentLoaded', async () => {
         setTimeout(() => completeBootstrapProgressOverlay(), 180);
     }
 });
+
 

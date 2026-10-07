@@ -411,7 +411,7 @@ const likes = ctx2.SegueixApp.features.likes;
 
 ### Passar la música a un altre aparell (2026-10-06)
 
-- Configuració → «Passa la teva música a un altre aparell» (`js/features/music-transfer.js`) és **un sol fitxer JSON** (2026-10-06, decisió final de l'usuari) amb tota la música (`collect()`: historial, m'agrada, artistes seguits, llistes, categories pròpies, preferències i estadístiques de la ràdio, estils i mode; mai tokens, consentiments ni caches): **«Envia el fitxer»** (`#musicTransferShareFile`, `shareCopy()`: menú de compartir del sistema amb el fitxer; si no accepta `.json` el passa com a `.json.txt`; a l'ordinador sense Web Share el desa i obre WhatsApp Web per adjuntar-lo) i **«Desa el fitxer»** (`#musicTransferSaveFile`, `saveCopy()`), `segueix-musica-AAAA-MM-DD.json`. A l'altre aparell, **«Importa un fitxer»** (accepta `.json`, `.txt` i `.segueixmusica`) mostra el resum i, en confirmar, **fusiona** amb el que ja hi ha (`importData()`, idempotent). **No hi tornis a posar** el desplegable de llistes, el bloc dels artistes ni l'enviament per enllaç a Configuració. Els enllaços `#musica=…` es continuen llegint (també amb l'app ja oberta: `hashchange`, `launchQueue.targetURL`) i compartir una ràdio o una llista des del seu botó (`showListExport()`) encara envia un enllaç (50 primeres cançons, `MAX_SHARE_SONGS`; LZString amb `%2B`/`%24`, mai `_ ~ * \``).
+- Configuració → «Sincronitza amb Google Drive» substitueix tots els fitxers i codis de vinculació anteriors (2026-10-07). Mòduls `music-data.js`, `drive-sync-model.js`, `google-drive-sync.js`; credencial pública a `js/google-drive-config.js`. Només `drive.appdata`, tokens en memòria, metadades per compte, marques d’esborrat i un fitxer per aparell. Vegeu `docs/GOOGLE_DRIVE.md`. No restaureu la transferència de configuració/historial per fitxers, WhatsApp, QR o `/api/sync`. Compartir públicament una llista/categoria continua separat.
 - **No hi ha «Exportar tot» ni «Importar tot»** (eliminats el 2026-10-06): exportaven tot el `localStorage`; no els hi tornis a posar. Detall: `docs/PROBLEMES_I_SOLUCIONS.md` (2026-10-06). Prova: `tests/music-transfer.test.js`.
 
 ### Botons d'icona i colors de la configuració (2026-10-02)
@@ -567,3 +567,4 @@ const likes = ctx2.SegueixApp.features.likes;
 5. **Cache del SW:** si afegeixes un script nou a index.html, considera si cal afegir-lo al precache de sw.js
 6. **localStorage:** les claus amb prefix `catube_` són de l'app. `user_liked_videos` és legacy i es fusiona amb `catube_liked_videos`
 7. **No hi ha build step** — els fitxers JS es serveixen tal qual. Qualsevol error de sintaxi trenca l'app sencera
+

@@ -1,13 +1,17 @@
-import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import { loadScript } from './setup.js';
 
-const syncSource = readFileSync(new URL('../js/features/config-sync.js', import.meta.url), 'utf8');
+
 
 describe('Continua mirant és local al dispositiu', () => {
-    it('queda exclòs de la sincronització i de la importació/exportació de configuració', () => {
-        expect(syncSource).toContain("LOCAL_ONLY_STORAGE_KEYS = new Set(['catube_continue_watching_v1'])");
-        expect(syncSource).toContain('if (LOCAL_ONLY_STORAGE_KEYS.has(key)) continue;');
+    it('queda exclòs de la sincronització amb Google Drive', () => {
+        const ctx = loadScript('js/utils/music-data.js');
+        ctx.localStorage.setItem('catube_continue_watching_v1', 'PRIVATE_PROGRESS');
+        ctx.localStorage.setItem('catube_anonymous_analytics_enabled', 'PRIVATE_CONSENT');
+        const snapshot = ctx.SegueixApp.utils.musicData.collect();
+        expect(JSON.stringify(snapshot)).not.toContain('PRIVATE');
+        ctx.SegueixApp.utils.musicData.apply(snapshot.data);
+        expect(ctx.localStorage.getItem('catube_continue_watching_v1')).toBe('PRIVATE_PROGRESS');
     });
 
     it('no desa Shorts ni directes coneguts a l’historial', () => {
@@ -29,3 +33,4 @@ describe('Continua mirant és local al dispositiu', () => {
         expect(storage.get('Live1234567')).toBeNull();
     });
 });
+

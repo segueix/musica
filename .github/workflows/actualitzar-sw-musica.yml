@@ -9,7 +9,9 @@ on:
       - "js/youtube.js"
       - "js/data.js"
       - "js/app.js"
-      - "js/utils/storage.js"
+      - "js/utils/**"
+      - "js/google-drive-config.js"
+      - "manifest.json"
       - "js/features/**"
       - "css/**"
       - "scripts/actualitzar_versio_sw.js"
@@ -51,3 +53,4 @@ jobs:
           fi
           git commit -m "chore: refresh music service worker"
           git push origin HEAD:main
+
