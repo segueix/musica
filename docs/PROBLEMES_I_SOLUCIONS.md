@@ -1673,3 +1673,13 @@ La TV (`__segueix_tv_discovery__`) no hi entra. El vídeo potser no arrenca sol 
 **Proves:** models de fusió i eliminació, idempotència, llistes editades en dos equips, permisos, privacitat, errors, paginació i recuperació d’una escriptura fallida amb API simulada. La prova real OAuth queda pendent del client Google.
 
 **Actualització en navegadors que ja tenien l’app oberta:** a la prova publicada, l’HTML nou es combinava amb `app.js?v=20261006-file-3` de la memòria cau i aquest intentava registrar `backupCodecs`, que ja s’havia retirat. Cal canviar també la versió de les URLs dels scripts modificats (`app.js`, `config-sync.js`, `music-signals.js` → `20261007-drive-1`), a més de regenerar el service worker. No n’hi ha prou de canviar només el hash del SW en una substitució de mòduls.
+
+## [2026-10-07] - La primera sincronització amb Drive falla per falta d'espai local
+
+**Símptoma real:** després d'autoritzar Google, Configuració mostra «No hi ha prou espai al navegador per aplicar la sincronització». El compte encara no queda vinculat.
+
+**Causa identificada al codi:** les escriptures del dispositiu, del diari de fusió i de les dades compartien la quota de localStorage amb instantànies del feed i memòries cau de cerca. No hi havia cap recuperació de quota. La captura no permet mesurar quina clau omplia l'aparell; la regressió es reprodueix amb emmagatzematge de capacitat limitada.
+
+**Solució:** `musicData.writeStorage()` reintenta una vegada després d'eliminar exclusivament caches regenerables (`catube_feed_v1`, `catube_archive_idx_v1`, `catube_chips_html_cache`, `iutube_feed_snapshot_v1`, `iutube_cache_*`, `catube_cat_*`). Conserva dades personals, posició de reproducció, consentiments, altres aplicacions i diaris de Drive. S'aplica tant a les metadades de connexió com a les dades musicals. No es neteja res en errors aliens a la quota. Les dades, el diari final i la data de sincronització es confirmen en el mateix lot; si falla, s'alliberen les escriptures parcials abans de restaurar-ne la còpia anterior, perquè les expansions no impedeixin recuperar les claus que s'havien reduït. Si les dades personals soles no hi caben, el procés s'atura amb la base pendent intacta per al reintent.
+
+**Proves:** quota persistent abans de crear el dispositiu, al diari i en aplicar canvis remots; preservació de dades alienes, recuperació davant quota insuficient sense cache, error en confirmar el diari final i reintent, i SecurityError sense neteja. 47 proves relacionades superades. Versions de `music-data.js` i `google-drive-sync.js` a `20261007-space-1` per evitar barrejar mòduls antics amb els nous.

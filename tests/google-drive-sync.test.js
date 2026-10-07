@@ -218,6 +218,108 @@ describe('Model de sincronització amb eliminacions', () => {
     });
 });
 
+// Quota realista: l'error persisteix fins que s'allibera espai, com al navegador.
+function quotaStorage(limit = 12000) {
+    const values = new Map();
+    let failures = 0;
+    const used = () => [...values].reduce((n, [k, v]) => n + k.length + v.length, 0);
+    return {
+        getItem: (key) => values.get(key) ?? null,
+        key: (index) => [...values.keys()][index] ?? null,
+        get length() { return values.size; },
+        get failures() { return failures; },
+        used,
+        setItem(key, raw) {
+            const value = String(raw);
+            const previous = values.has(key) ? key.length + values.get(key).length : 0;
+            if (used() - previous + key.length + value.length > limit) {
+                failures++;
+                throw Object.assign(new Error('Storage full'), { name: 'QuotaExceededError' });
+            }
+            values.set(key, value);
+        },
+        removeItem: (key) => values.delete(key),
+        fillCache(key = 'iutube_cache_feed_json') {
+            values.delete(key);
+            this.setItem(key, 'x'.repeat(Math.max(0, limit - used() - key.length - 1)));
+        },
+    };
+}
+
+describe('Quota local durant la sincronització', () => {
+    it.each(['device', 'journal', 'apply'])('recupera espai al pas %s sense tocar dades personals', async (stage) => {
+        const s = server();
+        const remote = setup(s.fetch);
+        remote.storage.setItem('catube_liked_videos', JSON.stringify([song(2)]));
+        await remote.api.connect();
+        const storage = quotaStorage();
+        const a = setup(s.fetch, { localStorage: storage });
+        const protectedKeys = ['catube_continue_watching_v1', 'catube_anonymous_analytics_enabled',
+            'unrelated_app_data', 'catube_drive_state_v1_other', 'catube_last_radio'];
+        for (const key of protectedKeys) storage.setItem(key, 'preserve');
+        storage.setItem('catube_history', JSON.stringify([song(1)]));
+        if (stage !== 'device') storage.setItem('catube_drive_device_v1', randomUUID());
+        if (stage === 'apply') s.state.onWrite = () => storage.fillCache('catube_cat_Pop');
+        else storage.fillCache();
+        await a.api.connect();
+        expect(storage.failures).toBeGreaterThan(0);
+        expect(a.el('googleDriveFeedback').textContent).toContain('completada');
+        expect(a.data.collect().data.history.map(v => v.id)).toEqual([song(1).id]);
+        expect(a.data.collect().data.likes.map(v => v.id)).toEqual([song(2).id]);
+        for (const key of protectedKeys) expect(storage.getItem(key)).toBe('preserve');
+        expect(storage.getItem('iutube_cache_feed_json')).toBeNull();
+        expect(storage.getItem('catube_cat_Pop')).toBeNull();
+        const saved = JSON.parse(storage.getItem('catube_drive_state_v1_user1'));
+        expect(saved.baseline.likes.map(v => v.id)).toEqual([song(2).id]);
+    });
+    it('restaura tot si les dades soles no hi caben, fins i tot després de reduir una clau i ampliar-ne una altra', () => {
+        const storage = quotaStorage(2000);
+        const a = setup(vi.fn(), { localStorage: storage });
+        storage.setItem('catube_history', JSON.stringify(Array.from({ length: 8 }, (_, i) => song(i))));
+        storage.setItem('other_app', 'x'.repeat(500));
+        const previous = storage.getItem('catube_history');
+        expect(() => a.data.apply({ history: [], likes: [song(20), song(21)],
+            playlists: [{ id: 'list1', name: 'Gran', videos: Array.from({ length: 10 }, (_, i) => song(i)) }] }))
+            .toThrow('Storage full');
+        expect(storage.getItem('catube_history')).toBe(previous);
+        expect(storage.getItem('catube_liked_videos')).toBeNull();
+        expect(storage.getItem('catube_playlists')).toBeNull();
+        expect(storage.getItem('other_app')).toBe('x'.repeat(500));
+    });
+    it('si falla el diari final restaura les dades i la base pendent, i el reintent recupera la fusió', async () => {
+        const s = server(); const remote = setup(s.fetch); const a = setup(s.fetch);
+        remote.storage.setItem('catube_liked_videos', JSON.stringify([song(2)]));
+        await remote.api.connect();
+        a.storage.setItem('catube_history', JSON.stringify([song(1)]));
+        const originalHistory = a.storage.getItem('catube_history');
+        const write = a.storage.setItem.bind(a.storage);
+        let blockFinal = true;
+        a.storage.setItem = (key, value) => {
+            if (blockFinal && key === 'catube_drive_state_v1_user1' && JSON.parse(value).baseline.likes.length) {
+                throw Object.assign(new Error('Storage full'), { name: 'QuotaExceededError' });
+            }
+            write(key, value);
+        };
+        await a.api.connect();
+        expect(a.el('googleDriveFeedback').textContent).toContain('prou espai');
+        expect(a.storage.getItem('catube_history')).toBe(originalHistory);
+        expect(a.storage.getItem('catube_liked_videos')).toBeNull();
+        expect(JSON.parse(a.storage.getItem('catube_drive_state_v1_user1')).baseline.likes).toEqual([]);
+        expect(JSON.parse(a.storage.getItem('catube_drive_account_v1')).lastSync).toBeNull();
+        blockFinal = false;
+        await a.api.connect();
+        expect(a.el('googleDriveFeedback').textContent).toContain('completada');
+        expect(a.data.collect().data.likes.map(v => v.id)).toEqual([song(2).id]);
+    });
+    it('un error aliè a la quota no elimina cap memòria cau', () => {
+        const a = setup();
+        a.storage.setItem('iutube_feed_snapshot_v1', 'cached');
+        a.storage.setItem = () => { throw Object.assign(new Error('blocked'), { name: 'SecurityError' }); };
+        expect(() => a.data.writeStorage('catube_drive_device_v1', 'id')).toThrow('blocked');
+        expect(a.storage.getItem('iutube_feed_snapshot_v1')).toBe('cached');
+    });
+});
+
 describe('Flux OAuth i Drive simulat', () => {
     it('dos enviaments simultanis no es trepitgen i convergeixen després', async () => {
         const s = server(); const a = setup(s.fetch); const b = setup(s.fetch);

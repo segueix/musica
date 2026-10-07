@@ -191,7 +191,33 @@
         });
     }
 
-    function apply(data, storage = window.localStorage) {
+    // Només dades regenerables: mai historial, llistes, gustos, consentiments ni diaris de Drive.
+    function releaseCache(storage) {
+        const keys = new Set([
+            'catube_feed_v1',
+            'catube_archive_idx_v1',
+            'catube_chips_html_cache',
+            'iutube_feed_snapshot_v1',
+        ]);
+        for (let i = 0; i < storage.length; i++) {
+            const key = storage.key?.(i);
+            if (key?.startsWith('iutube_cache_') || key?.startsWith('catube_cat_')) keys.add(key);
+        }
+        for (const key of keys) storage.removeItem(key);
+    }
+
+    function writeStorage(key, value, storage = window.localStorage) {
+        try {
+            storage.setItem(key, value);
+        } catch (error) {
+            if (error.name !== 'QuotaExceededError') throw error;
+            releaseCache(storage);
+            // Un únic reintent; si les dades personals soles no hi caben, es conserva l'error.
+            storage.setItem(key, value);
+        }
+    }
+
+    function apply(data, storage = window.localStorage, metadata = []) {
         const clean = validate({ product: 'segueix-musica', v: 1, data }).data;
         const decorate = (list) =>
             list.map((v) => ({ ...v, thumbnail: `https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`, source: 'api' }));
@@ -217,14 +243,18 @@
             ])
         );
         writes.push(['user_liked_videos', JSON.stringify(clean.likes.map((v) => v.id))]);
+        // El diari i el compte de Drive es confirmen juntament amb les dades aplicades.
+        writes.push(...metadata);
         const old = writes.map(([key]) => [key, storage.getItem(key)]);
         try {
-            writes.forEach(([key, value]) => (value === null ? storage.removeItem(key) : storage.setItem(key, value)));
+            writes.forEach(([key, value]) => (value === null ? storage.removeItem(key) : writeStorage(key, value, storage)));
         } catch (error) {
+            // Primer allibera totes les escriptures parcials, inclòs el diari: la còpia anterior hi cabia.
+            writes.forEach(([key]) => storage.removeItem(key));
             old.forEach(([key, value]) => (value === null ? storage.removeItem(key) : storage.setItem(key, value)));
             throw error;
         }
         return clean;
     }
-    app.utils.musicData = { KEYS, collect, validate, apply };
+    app.utils.musicData = { KEYS, collect, validate, apply, writeStorage };
 })(window);

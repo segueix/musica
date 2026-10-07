@@ -220,7 +220,7 @@
         let device = localStorage.getItem(DEVICE_KEY);
         if (!device) {
             device = window.crypto.randomUUID();
-            localStorage.setItem(DEVICE_KEY, device);
+            dataApi.writeStorage(DEVICE_KEY, device);
         }
         const stateKey = PREFIX + account.id;
         const saved = read(stateKey) || { doc: model.empty(), baseline: {} };
@@ -235,26 +235,21 @@
         const beforeUpload = dataApi.collect().data;
         doc = model.limitHistory(model.update(doc, initial, beforeUpload, device), device);
         // Conserva també els canvis pendents si la connexió cau després de l'escriptura remota.
-        localStorage.setItem(stateKey, JSON.stringify({ doc, baseline: beforeUpload }));
-        localStorage.setItem(LINK_KEY, JSON.stringify(account));
+        dataApi.writeStorage(stateKey, JSON.stringify({ doc, baseline: beforeUpload }));
+        dataApi.writeStorage(LINK_KEY, JSON.stringify(account));
         const ownFile = files.find((file) => file.appProperties?.device === device);
         await writeFile(ownFile?.id, device, doc);
         const latest = dataApi.collect().data;
         doc = model.limitHistory(model.update(doc, beforeUpload, latest, device), device);
         const merged = model.materialize(doc);
         const changed = JSON.stringify(model.flatten(latest)) !== JSON.stringify(model.flatten(merged));
-        // El diari s'escriu primer: si falta espai no s'aplica cap dada remota parcialment.
-        const pending = localStorage.getItem(stateKey);
-        localStorage.setItem(stateKey, JSON.stringify({ doc, baseline: merged }));
-        try {
-            dataApi.apply(merged);
-        } catch (error) {
-            localStorage.setItem(stateKey, pending);
-            throw error;
-        }
-        app.features.musicSignals?.replaceSynchronizedData?.(merged);
+        // Si falla qualsevol escriptura, restaura també la base del diari pendent.
         account.lastSync = new Date().toISOString();
-        localStorage.setItem(LINK_KEY, JSON.stringify(account));
+        dataApi.apply(merged, window.localStorage, [
+            [stateKey, JSON.stringify({ doc, baseline: merged })],
+            [LINK_KEY, JSON.stringify(account)],
+        ]);
+        app.features.musicSignals?.replaceSynchronizedData?.(merged);
         feedback(
             changed ? 'Sincronització completada. Actualitzant Música…' : 'Sincronització completada. Tot al dia.'
         );
