@@ -1847,6 +1847,11 @@ function getWatchChannelInfoContext(channel, video) {
 
 function buildWatchChannelInfoHtml(channel, avatar, watchUrl, video) {
     const info = getWatchChannelInfoContext(channel, video);
+    // Subscripció directa al canal OFICIAL de l'artista (no al «Tema»): youtube-subscribe.js, `?sub_confirmation=1`
+    const youtubeChannel = SegueixApp.features.youtubeSubscribe?.channelLink?.(channel.id) || {
+        url: `https://www.youtube.com/channel/${channel.id}`,
+        subscribe: false,
+    };
     const isMitjans = isMitjansOrDigitalsChannel(channel.id);
     const followButtonHtml = isMitjans
         ? ''
@@ -1885,8 +1890,8 @@ function buildWatchChannelInfoHtml(channel, avatar, watchUrl, video) {
             </div>
             <div class="video-metadata-bar">
                 <div class="action-group action-group-left">
-                    <a href="https://www.youtube.com/channel/${channel.id}" target="_blank" rel="noopener noreferrer" class="btn-pill-red">
-                        Canal Youtube
+                    <a href="${youtubeChannel.url}" target="_blank" rel="noopener noreferrer" class="btn-pill-red"${youtubeChannel.subscribe ? ` data-yt-subscribe="true" aria-label="Subscriu-t'hi a YouTube" title="Subscriu-t'hi al canal oficial de YouTube"` : ''}>
+                        ${youtubeChannel.subscribe ? `Subscriu-t'hi<span class="yt-subscribe-long"> a YouTube</span>` : 'Canal Youtube'}
                     </a>
                     ${supportBtnMobile}
                     <a href="${watchUrl}" target="_blank" rel="noopener noreferrer" class="btn-round-icon btn-comment-youtube--desktop" title="Comenta" aria-label="Comenta">
@@ -2092,6 +2097,11 @@ function bindChannelLinks(container = document) {
         event => {
             const link = event.target.closest('.channel-link');
             if (!link || !container.contains(link)) {
+                return;
+            }
+            // El botó «Segueix» va dins del nom de l'artista (fitxa de la cançó): l'ha de gestionar el botó. Abans aquest
+            // gestor (en captura) obria la fitxa de l'artista i el botó no seguia mai l'artista.
+            if (event.target.closest('[data-follow-channel]')) {
                 return;
             }
 
