@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-07T16:02:19.187Z",
+  "generatedAt": "2026-10-07T16:17:11.120Z",
   "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
   "deepPagesFetched": 0,
   "deepChannelCount": 18,
-  "topicChannelCount": 231,
+  "topicChannelCount": 244,
   "governedChannelCount": 89,
   "topicCoverage": [
     {
@@ -784,6 +784,14 @@
       "governs": false
     },
     {
+      "id": "UC1yaXYiC2Ab3tus3lTDljtw",
+      "name": "Magalí Sare",
+      "songs": 37,
+      "matched": 24,
+      "coverage": 0.65,
+      "governs": false
+    },
+    {
       "id": "UC76gEcL7sivyILBfwe54ETw",
       "name": "Isaak Aguilà",
       "songs": 24,
@@ -1081,9 +1089,7 @@
     }
   ],
   "topicGovernance": "apply",
-  "governedReclassified": {
-    "other": 5
-  },
+  "governedReclassified": {},
   "topicHiddenCount": 0,
   "topicChannels": [
     {
@@ -1465,11 +1471,25 @@
       "withClip": 0
     },
     {
+      "id": "UCWmht-NuFvH4O3rkURaNFeQ",
+      "name": "ElectroToylets",
+      "tracks": 14,
+      "selected": 12,
+      "withClip": 0
+    },
+    {
       "id": "UCPKDz8plx4-C1nhZKhhAhfQ",
       "name": "Els Amics De Les Arts",
       "tracks": 209,
       "selected": 18,
       "withClip": 19
+    },
+    {
+      "id": "UC1GY1MkV-zNT_8Mv-GANOLA",
+      "name": "Els Bourbons",
+      "tracks": 14,
+      "selected": 11,
+      "withClip": 0
     },
     {
       "id": "UCuaeVeuqfAO6a8EFjtmh6Ug",
@@ -1591,6 +1611,13 @@
       "withClip": 0
     },
     {
+      "id": "UCxZhZaJrcH8nHdrKx4ij0sw",
+      "name": "Gato Perez",
+      "tracks": 237,
+      "selected": 41,
+      "withClip": 0
+    },
+    {
       "id": "UC2abGPf4WfBi0LXHYMKX_aQ",
       "name": "gavina.mp3",
       "tracks": 32,
@@ -1687,6 +1714,13 @@
       "tracks": 28,
       "selected": 14,
       "withClip": 10
+    },
+    {
+      "id": "UCy8MYPwq8ezeihgBh4dgEdg",
+      "name": "Herois de la Katalunya Interior",
+      "tracks": 42,
+      "selected": 35,
+      "withClip": 0
     },
     {
       "id": "UCby9BHawLhftHyR37pEztHg",
@@ -1948,6 +1982,13 @@
       "withClip": 9
     },
     {
+      "id": "UCPCYIT1ovAuKG8uedKp8QNA",
+      "name": "Magalí Sare",
+      "tracks": 90,
+      "selected": 40,
+      "withClip": 19
+    },
+    {
       "id": "UCwYR6Axoc2mEKz89P8t4N5Q",
       "name": "Mai Halis",
       "tracks": 1,
@@ -2102,6 +2143,13 @@
       "withClip": 15
     },
     {
+      "id": "UCntzpmXOeNsqe2AfOFTCUZg",
+      "name": "Nyandú",
+      "tracks": 53,
+      "selected": 36,
+      "withClip": 0
+    },
+    {
       "id": "UCPMX7e8_PQtgqcDHzzbfX7g",
       "name": "Obrint Pas",
       "tracks": 111,
@@ -2221,6 +2269,13 @@
       "withClip": 0
     },
     {
+      "id": "UCVowitUeUXlew8bjVjBOtUQ",
+      "name": "Peret",
+      "tracks": 500,
+      "selected": 40,
+      "withClip": 0
+    },
+    {
       "id": "UCcCicDkn0YDxOeir49bCwPQ",
       "name": "Pilseners",
       "tracks": 59,
@@ -2296,6 +2351,13 @@
       "tracks": 53,
       "selected": 35,
       "withClip": 7
+    },
+    {
+      "id": "UCCKRS2KD1i75evCURPuHQXA",
+      "name": "Raydibaum",
+      "tracks": 62,
+      "selected": 40,
+      "withClip": 0
     },
     {
       "id": "UC9i1uNb0GFrISNB2pctkvRg",
@@ -2676,34 +2738,35 @@
       "withClip": 0
     }
   ],
-  "indexedChannelCount": 442,
-  "resolvedChannelCount": 442,
-  "feedChannelCount": 442,
-  "rawPublicVideoCount": 5182,
-  "feedVideoCount": 4644,
-  "acceptedMusicCount": 4591,
-  "categoryEligibleVideoCount": 4585,
+  "indexedChannelCount": 457,
+  "resolvedChannelCount": 451,
+  "feedChannelCount": 451,
+  "rawPublicVideoCount": 5138,
+  "feedVideoCount": 4601,
+  "acceptedMusicCount": 4561,
+  "categoryEligibleVideoCount": 4556,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
-    "before": 20,
+    "before": 0,
     "matched": 0,
-    "rejected": 20
+    "rejected": 0
   },
   "contentReviewCount": 542,
   "contentTypeCounts": {
-    "song": 4471,
+    "song": 4442,
     "live_song": 114,
-    "album": 6,
-    "other": 49,
+    "album": 5,
+    "other": 35,
     "review": 542
   },
   "unresolvedChannelIds": [],
   "channelsWithoutUploads": [],
   "channelsWithoutVideos": [
-    "UCf-q-2ikL2X1ZFd0HSj7Eiw"
+    "UC1yaXYiC2Ab3tus3lTDljtw",
+    "UCVowitUeUXlew8bjVjBOtUQ"
   ],
   "channelsWithoutAcceptedMusic": [],
-  "allIndexedChannelsVisible": true,
-  "publishedFeedVideoCount": 4516,
+  "allIndexedChannelsVisible": false,
+  "publishedFeedVideoCount": 4559,
   "publishedShortVideoCount": 0
 }

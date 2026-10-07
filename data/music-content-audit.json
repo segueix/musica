@@ -1,125 +1,26 @@
 {
-  "generatedAt": "2026-10-07T16:02:19.187Z",
-  "rawPublicVideoCount": 5182,
-  "feedVideoCount": 4644,
-  "acceptedMusicCount": 4591,
-  "categoryEligibleVideoCount": 4585,
+  "generatedAt": "2026-10-07T16:17:11.120Z",
+  "rawPublicVideoCount": 5138,
+  "feedVideoCount": 4601,
+  "acceptedMusicCount": 4561,
+  "categoryEligibleVideoCount": 4556,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
-    "before": 20,
+    "before": 0,
     "matched": 0,
-    "rejected": 20
+    "rejected": 0
   },
-  "rejectedOrReviewCount": 591,
+  "rejectedOrReviewCount": 577,
   "reviewCount": 542,
   "typeCounts": {
-    "song": 4471,
+    "song": 4442,
     "live_song": 114,
-    "album": 6,
-    "other": 49,
+    "album": 5,
+    "other": 35,
     "review": 542
   },
   "channelsWithoutAcceptedMusic": [],
-  "rejectedSamples": [
-    {
-      "id": "bir6suoxTHY",
-      "title": "🍀",
-      "channelTitle": "Joan Masdéu",
-      "durationSeconds": 18,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "ehuyNZddu1I",
-      "title": "Publiquem LA BONAVENTURA, el meu nou disc (amb Xoel López, Dan Peralbo i River Omelet)",
-      "channelTitle": "Joan Masdéu",
-      "durationSeconds": 17,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "VWBpr85NxoI",
-      "title": "Festival Recòndit",
-      "channelTitle": "Joan Masdéu",
-      "durationSeconds": 27,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "in3qRHX0x00",
-      "title": "Fer una bomba de fum...💨",
-      "channelTitle": "Joan Masdéu",
-      "durationSeconds": 7,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "bitklmDBxtM",
-      "title": "Joan Masdéu concert TVE La 2 Músics (24/05/2018)",
-      "channelTitle": "Joan Masdéu",
-      "durationSeconds": 1493,
-      "musicReason": "no és a la discografia del canal Tema"
-    },
-    {
-      "id": "CFWY1SE-dWs",
-      "title": "Joan Masdéu - Teaser avançament \"Innocents\" (27/10 NOU DISC)",
-      "channelTitle": "Joan Masdéu",
-      "durationSeconds": 71,
-      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "pB9CtuiXm1M",
-      "title": "Tràiler videoclip \"El planeta imaginari\" Joan Masdéu (Dissabte)",
-      "channelTitle": "Joan Masdéu",
-      "durationSeconds": 57,
-      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "sNGa2XcoApU",
-      "title": "Joan Masdéu - TEASER AVANÇAMENT \"DISSABTE\" (2014)",
-      "channelTitle": "Joan Masdéu",
-      "durationSeconds": 101,
-      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "duI-K6tUTek",
-      "title": "Joan Masdéu Sèrie Capítol 2:",
-      "channelTitle": "Joan Masdéu",
-      "durationSeconds": 183,
-      "musicReason": "no és a la discografia del canal Tema"
-    },
-    {
-      "id": "SjgAg3N8o9M",
-      "title": "Retrospectiva",
-      "channelTitle": "Joan Masdéu",
-      "durationSeconds": 216,
-      "musicReason": "no és a la discografia del canal Tema"
-    },
-    {
-      "id": "HavdwwEPLNU",
-      "title": "CRIDA • El racó dels pensaments - Caïm Riba",
-      "channelTitle": "Caïm Riba",
-      "durationSeconds": 36,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "AhscMYuVf54",
-      "title": "\"Caim i amics\" · Resum - Teaser - Medley",
-      "channelTitle": "Caïm Riba",
-      "durationSeconds": 449,
-      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "W-TpB4ngDKw",
-      "title": "Els Jóvens - T'ailoviu més que l'hòstia a Sanvi",
-      "channelTitle": "Els Jóvens",
-      "durationSeconds": 242,
-      "musicReason": "no és a la discografia del canal Tema"
-    },
-    {
-      "id": "qzbCUr9oIiI",
-      "title": "Els Jóvens - Anís Tenis a Sanvi",
-      "channelTitle": "Els Jóvens",
-      "durationSeconds": 377,
-      "musicReason": "no és a la discografia del canal Tema"
-    }
-  ],
-  "publishedFeedVideoCount": 4516,
+  "rejectedSamples": [],
+  "publishedFeedVideoCount": 4559,
   "publishedShortVideoCount": 0
 }
