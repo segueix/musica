@@ -1,26 +1,97 @@
 {
-  "generatedAt": "2026-10-07T16:17:11.120Z",
-  "rawPublicVideoCount": 5138,
-  "feedVideoCount": 4601,
-  "acceptedMusicCount": 4561,
-  "categoryEligibleVideoCount": 4556,
+  "generatedAt": "2026-10-07T16:17:48.749Z",
+  "rawPublicVideoCount": 5294,
+  "feedVideoCount": 4758,
+  "acceptedMusicCount": 4707,
+  "categoryEligibleVideoCount": 4702,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
     "before": 0,
     "matched": 0,
     "rejected": 0
   },
-  "rejectedOrReviewCount": 577,
+  "rejectedOrReviewCount": 587,
   "reviewCount": 542,
   "typeCounts": {
-    "song": 4442,
-    "live_song": 114,
+    "song": 4586,
+    "live_song": 116,
     "album": 5,
-    "other": 35,
+    "other": 45,
     "review": 542
   },
   "channelsWithoutAcceptedMusic": [],
-  "rejectedSamples": [],
-  "publishedFeedVideoCount": 4559,
+  "rejectedSamples": [
+    {
+      "id": "IyQv9TVcphc",
+      "title": "BLAUMUT al PALAU DE LA MÚSICA amb la JOSB - 3CAT (versió curta)",
+      "channelTitle": "Blaumut",
+      "durationSeconds": 3806,
+      "musicReason": "no és a la discografia del canal Tema"
+    },
+    {
+      "id": "pzigeg-2fdg",
+      "title": "Teaser Blaumut al Palau de la Música amb la JOSB",
+      "channelTitle": "Blaumut",
+      "durationSeconds": 242,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "RPfr_1mKBiY",
+      "title": "Making Of 0001 - EPISODI 6: “Navegant a derives”.",
+      "channelTitle": "Blaumut",
+      "durationSeconds": 221,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "x3wYDlJGUcY",
+      "title": "Making Of 0001 - EPISODI 5: “Tan futur, tan de prop”.",
+      "channelTitle": "Blaumut",
+      "durationSeconds": 151,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "Wl2nZG9aboY",
+      "title": "Making Of 0001 - EPISODI 4: “Murmuris i elefants”.",
+      "channelTitle": "Blaumut",
+      "durationSeconds": 196,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "AAlIrJrT8dU",
+      "title": "Making Of 0001 - EPISODI 3: “L’equació per trobar el so”.",
+      "channelTitle": "Blaumut",
+      "durationSeconds": 187,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "Sr2YzDLINVU",
+      "title": "Making Of 0001 - EPISODI 2: “Interiors i plecs en una manta”.",
+      "channelTitle": "Blaumut",
+      "durationSeconds": 219,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "7uYONC-0aXg",
+      "title": "Making Of 0001 - EPISODI 1: “Les idees, les antípodes i el nord”.",
+      "channelTitle": "Blaumut",
+      "durationSeconds": 191,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "QvOdZbmGgxI",
+      "title": "Blaumut - 0001confinat",
+      "channelTitle": "Blaumut",
+      "durationSeconds": 157,
+      "musicReason": "no és a la discografia del canal Tema"
+    },
+    {
+      "id": "rwXiQ5IXMl4",
+      "title": "Blaumut - De veritat #0001",
+      "channelTitle": "Blaumut",
+      "durationSeconds": 235,
+      "musicReason": "no és a la discografia del canal Tema"
+    }
+  ],
+  "publishedFeedVideoCount": 4647,
   "publishedShortVideoCount": 0
 }

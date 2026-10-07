@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-07T16:17:11.120Z",
+  "generatedAt": "2026-10-07T16:17:48.749Z",
   "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
   "deepPagesFetched": 0,
   "deepChannelCount": 18,
   "topicChannelCount": 244,
-  "governedChannelCount": 89,
+  "governedChannelCount": 90,
   "topicCoverage": [
     {
       "id": "UCqaEtRht2jakBhGFLzS617w",
@@ -293,6 +293,14 @@
       "songs": 46,
       "matched": 44,
       "coverage": 0.96,
+      "governs": true
+    },
+    {
+      "id": "UC99ULQORmyZtD4bngOa48hw",
+      "name": "Blaumut",
+      "songs": 41,
+      "matched": 39,
+      "coverage": 0.95,
       "governs": true
     },
     {
@@ -1089,7 +1097,9 @@
     }
   ],
   "topicGovernance": "apply",
-  "governedReclassified": {},
+  "governedReclassified": {
+    "other": 3
+  },
   "topicHiddenCount": 0,
   "topicChannels": [
     {
@@ -1240,6 +1250,13 @@
       "withClip": 0
     },
     {
+      "id": "UCGHuCX7ksRy8c0BvCwPoHsg",
+      "name": "Bars",
+      "tracks": 7,
+      "selected": 7,
+      "withClip": 0
+    },
+    {
       "id": "UCmgvpf_Hz64idSYh4hFGHkQ",
       "name": "BATEC",
       "tracks": 27,
@@ -1259,6 +1276,13 @@
       "tracks": 26,
       "selected": 1,
       "withClip": 14
+    },
+    {
+      "id": "UCs5SsCyZ5g5q3dGMBI3NS8w",
+      "name": "Blaumut",
+      "tracks": 119,
+      "selected": 44,
+      "withClip": 37
     },
     {
       "id": "UCMIJ1Y_N61x72rTIAeyzRKA",
@@ -1352,6 +1376,13 @@
       "withClip": 4
     },
     {
+      "id": "UCnBMdEFrntxHSNXpIO7HXFA",
+      "name": "Coses",
+      "tracks": 32,
+      "selected": 25,
+      "withClip": 0
+    },
+    {
       "id": "UCZ7V4w0VrZPSM21CiYNuk7g",
       "name": "Crim",
       "tracks": 177,
@@ -1405,6 +1436,13 @@
       "name": "Desperta Ferro",
       "tracks": 41,
       "selected": 36,
+      "withClip": 0
+    },
+    {
+      "id": "UCXPmz-dujGuIrhnf5v5Fxrg",
+      "name": "Dijous Paella",
+      "tracks": 35,
+      "selected": 32,
       "withClip": 0
     },
     {
@@ -2150,6 +2188,13 @@
       "withClip": 0
     },
     {
+      "id": "UCjdNldGc9QMmr-mpOQjy7Zg",
+      "name": "OBESES",
+      "tracks": 150,
+      "selected": 43,
+      "withClip": 0
+    },
+    {
       "id": "UCPMX7e8_PQtgqcDHzzbfX7g",
       "name": "Obrint Pas",
       "tracks": 111,
@@ -2739,12 +2784,12 @@
     }
   ],
   "indexedChannelCount": 457,
-  "resolvedChannelCount": 451,
-  "feedChannelCount": 451,
-  "rawPublicVideoCount": 5138,
-  "feedVideoCount": 4601,
-  "acceptedMusicCount": 4561,
-  "categoryEligibleVideoCount": 4556,
+  "resolvedChannelCount": 457,
+  "feedChannelCount": 457,
+  "rawPublicVideoCount": 5294,
+  "feedVideoCount": 4758,
+  "acceptedMusicCount": 4707,
+  "categoryEligibleVideoCount": 4702,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
     "before": 0,
@@ -2753,20 +2798,17 @@
   },
   "contentReviewCount": 542,
   "contentTypeCounts": {
-    "song": 4442,
-    "live_song": 114,
+    "song": 4586,
+    "live_song": 116,
     "album": 5,
-    "other": 35,
+    "other": 45,
     "review": 542
   },
   "unresolvedChannelIds": [],
   "channelsWithoutUploads": [],
-  "channelsWithoutVideos": [
-    "UC1yaXYiC2Ab3tus3lTDljtw",
-    "UCVowitUeUXlew8bjVjBOtUQ"
-  ],
+  "channelsWithoutVideos": [],
   "channelsWithoutAcceptedMusic": [],
-  "allIndexedChannelsVisible": false,
-  "publishedFeedVideoCount": 4559,
+  "allIndexedChannelsVisible": true,
+  "publishedFeedVideoCount": 4647,
   "publishedShortVideoCount": 0
 }
