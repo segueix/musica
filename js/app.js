@@ -13814,7 +13814,45 @@ var SupportModule = {
     openModal: openSupportModal,
 };
 
+async function refreshSynchronizedMusic(data, previous) {
+    const changed = key => JSON.stringify(data[key]) !== JSON.stringify(previous[key]);
+    if (changed('settings')) {
+        initBackgroundPicker();
+        currentFontSize = Number(localStorage.getItem(FONT_SIZE_STORAGE_KEY)) || 16;
+        document.documentElement.style.fontSize = `${currentFontSize}px`;
+        updateFontSizeDisplay();
+    }
+    document.querySelectorAll('[data-follow-channel]').forEach(button =>
+        updateFollowButtonState(button, button.dataset.followChannel));
+    document.querySelectorAll('.like-action, #likeToggle').forEach(button => {
+        const id = button.dataset.videoId || (button.id === 'likeToggle' ? currentVideoId : '');
+        const liked = SegueixApp.features.likes?.isLiked?.(id) || false;
+        SegueixApp.features.likes?.updateLikeButtonState?.(button, liked);
+        button.classList.toggle('liked', liked);
+    });
+    for (const event of ['segueix:music-prefs-changed', 'segueix:playlists-changed',
+        'segueix:user-categories-changed', 'segueix:discovery-mode-changed']) {
+        window.dispatchEvent(new CustomEvent(event, { detail: { type: 'sync' } }));
+    }
+    // Mai es toca la fitxa del reproductor, la cua activa ni un formulari que s’està editant.
+    if (document.activeElement?.matches?.('input, textarea, [contenteditable="true"]')) return;
+    if (changed('categories') || JSON.stringify(data.settings.styleOrder) !== JSON.stringify(previous.settings.styleOrder)) {
+        renderCategories();
+    }
+    const page = getCurrentVisiblePage();
+    if (page === 'home' && ['history', 'likes', 'follows', 'playlists', 'categories', 'styles', 'mode'].some(changed)) {
+        renderFeed();
+    } else if (page === 'historial') {
+        renderHistory();
+    } else if (page === 'llistes') {
+        renderMyMusic();
+    } else if (page === 'segueix') {
+        await renderFollowPage();
+    }
+}
+
 function configureFeatureRuntimes() {
+    SegueixApp.features.googleDriveSync?.registerRuntime?.({ refreshView: refreshSynchronizedMusic });
     SegueixApp.features.navigation?.registerRuntime?.({
         handlePlayerVisibilityOnNavigation,
         exitPlaylistMode: exitPlaylistModeForNavigation,

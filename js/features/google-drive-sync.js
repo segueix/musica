@@ -15,6 +15,64 @@
     let expires = 0;
     let busy = false;
     let sdkPromise;
+
+    const contentCache = new Map();
+    let monitorTimer;
+    let registered = false;
+    let monitoring = false;
+    let nextCheck = 0;
+    let retryAfter = 0;
+    let failures = 0;
+    let observed = '';
+    let changedAt = 0;
+    let refreshView = null;
+    const authorized = () => Boolean(token && Date.now() < expires);
+    const canonical = value => JSON.stringify(value, (_key, item) =>
+        item && typeof item === 'object' && !Array.isArray(item)
+            ? Object.fromEntries(Object.keys(item).sort().map(key => [key, item[key]]))
+            : item);
+    const fastSignature = data => {
+        const preferences = { ...data };
+        delete preferences.history;
+        delete preferences.stats;
+        return canonical(preferences);
+    };
+    function collectLocal() {
+        app.features.musicSignals?.persistForSync?.();
+        return dataApi.collect().data;
+    }
+    function observeLocal() {
+        const signature = fastSignature(dataApi.collect().data);
+        if (signature !== observed) {
+            observed = signature;
+            changedAt = Date.now();
+        }
+    }
+    async function monitor() {
+        if (monitoring) return;
+        monitoring = true;
+        clearTimeout(monitorTimer);
+        try {
+            if (!busy && clientId() && localStorage.getItem(LINK_KEY) &&
+                document.visibilityState !== 'hidden' && navigator.onLine !== false) {
+                if (!authorized()) {
+                    render(true);
+                } else {
+                    observeLocal();
+                    const now = Date.now();
+                    if (now >= retryAfter && (now >= nextCheck || (changedAt && now - changedAt >= 10000))) {
+                        await connect({ automatic: true });
+                    }
+                }
+            }
+        } catch (error) {
+            feedback(error.message, true);
+        } finally {
+            monitoring = false;
+            if (registered) monitorTimer = setTimeout(monitor, 5000);
+        }
+    }
+
     const byId = (id) => document.getElementById(id);
     const clientId = () => window.SEGUEIX_GOOGLE_DRIVE_CLIENT_ID || '';
     const read = (key) => {
@@ -48,7 +106,7 @@
             : '';
         if (account?.receipt) {
             byId('googleDriveAccount').textContent +=
-                ` · Darrera sincronització: ${account.receipt.devices} aparells · ${account.receipt.likes} m’agrada`;
+                ` · Darrera sincronització: ${account.receipt.devices} ${account.receipt.devices === 1 ? 'aparell' : 'aparells'} · ${account.receipt.likes} m’agrada`;
         }
         if (!clientId()) {
             feedback(
@@ -57,7 +115,9 @@
         } else if (resetFeedback) {
             feedback(
                 account
-                    ? 'Compte connectat. Prem «Sincronitza» per actualitzar aquest aparell.'
+                    ? authorized()
+                        ? 'Sincronització automàtica activa mentre Música és visible. No cal prémer el botó cada vegada.'
+                        : 'Compte connectat. Prem «Sincronitza» per activar o renovar la sincronització automàtica.'
                     : 'Connecta amb Google Drive per sincronitzar la teva música entre aparells.'
             );
         }
@@ -100,6 +160,7 @@
                         reject(new Error('No s’ha autoritzat la sincronització. Les dades locals es conserven.'));
                         return;
                     }
+                    contentCache.clear();
                     token = response.access_token;
                     expires = Date.now() + Math.max(0, Number(response.expires_in) - 60) * 1000;
                     resolve();
@@ -169,7 +230,7 @@
             const params = new URLSearchParams({
                 spaces: 'appDataFolder',
                 q: `trashed = false and appProperties has { key='product' and value='${PRODUCT}' }`,
-                fields: 'nextPageToken,files(id,appProperties)',
+                fields: 'nextPageToken,files(id,appProperties,version)',
                 pageSize: '100',
             });
             if (pageToken) params.set('pageToken', pageToken);
@@ -183,7 +244,7 @@
     async function writeFile(fileId, device, doc) {
         if (fileId) {
             return request(
-                `files/${encodeURIComponent(fileId)}?uploadType=media&fields=id`,
+                `files/${encodeURIComponent(fileId)}?uploadType=media&fields=id,version`,
                 {
                     method: 'PATCH',
                     headers: { 'Content-Type': 'application/json' },
@@ -200,7 +261,7 @@
             appProperties: { product: PRODUCT, device },
         };
         return request(
-            'files?uploadType=multipart&fields=id',
+            'files?uploadType=multipart&fields=id,version',
             {
                 method: 'POST',
                 headers: { 'Content-Type': `multipart/related; boundary=${boundary}` },
@@ -235,24 +296,38 @@
         const stateKey = PREFIX + account.id;
         const saved = read(stateKey) || { doc: model.empty(), baseline: {} };
         model.validate(saved.doc);
-        const initial = dataApi.collect().data;
+        const initial = collectLocal();
         let doc = model.update(saved.doc, saved.baseline, initial, device);
         const files = await listFiles();
         // Cada aparell escriu el seu fitxer: dos aparells no es trepitgen una escriptura.
+        const remote = new Map();
         for (const file of files) {
-            doc = model.merge(doc, await request(`files/${encodeURIComponent(file.id)}?alt=media`));
+            const cached = contentCache.get(file.id);
+            const copy = file.version && cached?.version === file.version
+                ? cached.doc : await request(`files/${encodeURIComponent(file.id)}?alt=media`);
+            doc = model.merge(doc, copy);
+            remote.set(file.id, copy);
+            if (file.version) contentCache.set(file.id, { version: file.version, doc: copy });
         }
-        const beforeUpload = dataApi.collect().data;
+        for (const id of contentCache.keys()) {
+            if (!remote.has(id)) contentCache.delete(id);
+        }
+        const beforeUpload = collectLocal();
         doc = model.limitHistory(model.update(doc, initial, beforeUpload, device), device);
         // Conserva també els canvis pendents si la connexió cau després de l'escriptura remota.
         dataApi.writeStorage(stateKey, JSON.stringify({ doc, baseline: beforeUpload }));
         dataApi.writeStorage(LINK_KEY, JSON.stringify(account));
         const ownFile = files.find((file) => file.appProperties?.device === device);
-        await writeFile(ownFile?.id, device, doc);
-        const latest = dataApi.collect().data;
+        if (!ownFile || canonical(remote.get(ownFile.id)) !== canonical(doc)) {
+            const written = await writeFile(ownFile?.id, device, doc);
+            if (written.id && written.version) {
+                contentCache.set(written.id, { version: written.version, doc });
+            } else if (ownFile) contentCache.delete(ownFile.id);
+        }
+        const latest = collectLocal();
         doc = model.limitHistory(model.update(doc, beforeUpload, latest, device), device);
         const merged = model.materialize(doc);
-        const changed = JSON.stringify(model.flatten(latest)) !== JSON.stringify(model.flatten(merged));
+        const changed = canonical(model.flatten(latest)) !== canonical(model.flatten(merged));
         // Si falla qualsevol escriptura, restaura també la base del diari pendent.
         account.lastSync = new Date().toISOString();
         account.receipt = {
@@ -264,28 +339,41 @@
             [LINK_KEY, JSON.stringify(account)],
         ]);
         app.features.musicSignals?.replaceSynchronizedData?.(merged);
+        observed = fastSignature(merged);
+        changedAt = 0;
+        // Només repinta dades: mai recarrega ni substitueix el reproductor o la cua que sona.
+        if (changed && refreshView) {
+            try { await refreshView(merged, latest); }
+            catch (error) { console.warn('La vista es renovarà en tornar a la secció.', error); }
+        }
         feedback(
-            changed ? 'Sincronització completada. Actualitzant Música…' : 'Sincronització completada. Tot al dia.'
+            changed ? 'Sincronització completada. Canvis aplicats sense aturar la música.' : 'Sincronització completada. Tot al dia.'
         );
-        if (changed) setTimeout(() => window.location.reload(), 800);
         return { changed };
     }
 
-    async function connect() {
+    async function connect({ automatic = false } = {}) {
         if (busy || !clientId()) return;
+        // Cap finestra OAuth des d’un temporitzador: només un gest explícit pot renovar l’accés.
+        if (automatic && (!authorized() || !localStorage.getItem(LINK_KEY) ||
+            document.visibilityState === 'hidden' || navigator.onLine === false)) return;
         busy = true;
         render();
         try {
             if (navigator.onLine === false) throw new Error('Necessites connexió a Internet per sincronitzar.');
             if (!navigator.locks) throw new Error('Actualitza el navegador per poder sincronitzar de manera segura.');
             // Si el SDK ja és carregat, conserva el gest de l'usuari fins a requestAccessToken.
-            if (!window.google?.accounts?.oauth2) await loadSdk();
-            await authorize();
+            if (!automatic && !window.google?.accounts?.oauth2) await loadSdk();
+            if (!automatic) await authorize();
             await navigator.locks.request('segueix-musica-drive-sync', { ifAvailable: true }, async (lock) => {
                 if (!lock) throw new Error('Música ja s’està sincronitzant en una altra pestanya.');
                 await synchronize();
             });
+            failures = 0;
+            retryAfter = 0;
         } catch (error) {
+            failures += 1;
+            retryAfter = Date.now() + Math.min(900000, 60000 * 2 ** Math.min(failures - 1, 4));
             feedback(
                 error.name === 'QuotaExceededError'
                     ? 'No hi ha prou espai al navegador per aplicar la sincronització. Les dades locals es conserven.'
@@ -294,6 +382,7 @@
             );
         } finally {
             busy = false;
+            nextCheck = Date.now() + 60000;
             render();
         }
     }
@@ -302,18 +391,40 @@
         if (busy) return;
         token = '';
         expires = 0;
+        contentCache.clear();
+        changedAt = 0;
         localStorage.removeItem(LINK_KEY);
         feedback('Aquest aparell està desconnectat. Les dades locals i la còpia de Drive es conserven.');
         render();
     }
 
     function register() {
+        if (registered) return;
+        registered = true;
         byId('googleDriveSync')?.addEventListener('click', connect);
         byId('googleDriveDisconnect')?.addEventListener('click', disconnect);
         window.addEventListener('storage', (event) => {
-            if (event.key === LINK_KEY && !busy) render(true);
+            if (event.key === LINK_KEY && !busy) {
+                contentCache.clear();
+                if (!localStorage.getItem(LINK_KEY)) { token = ''; expires = 0; }
+                render(true);
+            }
         });
+        const checkWhenVisible = () => {
+            if (document.visibilityState !== 'hidden' && Date.now() >= nextCheck) monitor();
+        };
+        document.addEventListener?.('visibilitychange', checkWhenVisible);
+        window.addEventListener('online', checkWhenVisible);
+        for (const event of ['segueix:music-prefs-changed', 'segueix:playlists-changed', 'segueix:user-categories-changed']) {
+            window.addEventListener(event, () => {
+                if (!busy && authorized()) {
+                    try { observeLocal(); } catch (_) { /* El proper intent mostrarà l’error. */ }
+                }
+            });
+        }
+        monitorTimer = setTimeout(monitor, 5000);
         render(true);
     }
-    app.features.googleDriveSync = { register, connect, disconnect, synchronize, listFiles, SCOPE };
+    app.features.googleDriveSync = { register, connect, disconnect, synchronize, listFiles, SCOPE,
+        registerRuntime: hooks => { refreshView = hooks.refreshView; } };
 })(window);
