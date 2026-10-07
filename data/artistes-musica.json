@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-06T20:01:00.684Z",
+  "updatedAt": "2026-10-07T07:10:04Z",
   "artists": [
     {
       "name": "2ES",
@@ -28595,6 +28595,83 @@
       ],
       "lastChecked": "2026-10-06T19:23:16.386Z",
       "notes": "Només el disc Repte (2012), deu cançons en català. Llista tancada de títols a data/music-channel-video-allowlist.json; la resta de discos queda exclosa."
+    },
+    {
+      "name": "Xarim Aresté",
+      "displayName": "Xarim Aresté",
+      "aliases": [
+        "Xarim Areste"
+      ],
+      "genres": [
+        "Cançó d'autor"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCVCila0PYCYGNb7ThkN2Tlw",
+            "handle": null,
+            "name": "Xarim Aresté - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-07",
+        "genre:manual",
+        "https://www.youtube.com/channel/UCVCila0PYCYGNb7ThkN2Tlw"
+      ],
+      "lastChecked": "2026-10-07T07:07:56Z",
+      "notes": "Canal Tema indicat per l’usuari. Categoria Cançó d’autor per indicació editorial."
+    },
+    {
+      "name": "El Petit de Cal Eril",
+      "displayName": "El Petit de Cal Eril",
+      "aliases": [],
+      "genres": [
+        "Pop"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCQc-T583XUy2JAfeun2_0mg",
+            "handle": "@elpetitdecalerilmusica",
+            "name": "el petit de cal eril",
+            "type": "official",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-07",
+        "genre:manual",
+        "https://www.youtube.com/channel/UCQc-T583XUy2JAfeun2_0mg",
+        "https://www.youtube.com/@elpetitdecalerilmusica"
+      ],
+      "lastChecked": "2026-10-07T07:10:04Z",
+      "notes": "Alta del canal oficial indicat per l’usuari. Categoria Pop per indicació editorial; s’apliquen els filtres habituals de contingut musical i català."
     }
   ]
 }
