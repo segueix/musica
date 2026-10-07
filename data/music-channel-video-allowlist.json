@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-07T16:00:26.789Z",
+  "updatedAt": "2026-10-07T16:16:01.523Z",
   "description": "Llista blanca per a canals on Segueix Música només ha d'ingerir vídeos concrets. Admet títols exactes, fragments obligatoris i fragments exclosos.",
   "channels": {
     "UCKpscwdWlVaMqcA81vLI7OA": {
@@ -2032,6 +2032,153 @@
         "La vall del riu vermell",
         "No hi ha cap amagatall",
         "Tota la tristor"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCCKRS2KD1i75evCURPuHQXA": {
+      "artist": "Raydibaum",
+      "note": "S’exclou el primer LP The Biggest Box, en anglès. S’incorpora l’etapa catalana.",
+      "deniedTitleContains": [
+        "Self-sending to Sydney",
+        "Meaningless",
+        "Mushroom boy",
+        "Brian's first day",
+        "Greetings from Dallas",
+        "Where will we go",
+        "Autoplant",
+        "Galactic Breadbear",
+        "Painter",
+        "This is the end"
+      ]
+    },
+    "UCntzpmXOeNsqe2AfOFTCUZg": {
+      "artist": "Nyandú",
+      "note": "Exclou Call Me On My Phone, amb estrofes en anglès segons la lletra publicada pel grup, i la versió castellana Barca, cielo y ola.",
+      "deniedTitleContains": [
+        "Call Me On My Phone",
+        "Barca Cielo y Ola",
+        "Barca, cielo y ola"
+      ]
+    },
+    "UC1yaXYiC2Ab3tus3lTDljtw": {
+      "artist": "Magalí Sare",
+      "note": "Alta manual 2026-10-07. Selecció inicial de repertori amb llista tancada per canal. No s’autoritza tota la discografia; la resta queda pendent de revisió.",
+      "allowedTitles": [
+        "Beure de tu",
+        "Cronos",
+        "Esponja",
+        "Inframon",
+        "No sé cantar",
+        "No té edat",
+        "Mai t'he vist plorar",
+        "Malifetes",
+        "Venim a aquest món"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCPCYIT1ovAuKG8uedKp8QNA": {
+      "artist": "Magalí Sare",
+      "note": "Alta manual 2026-10-07. Selecció inicial de repertori amb llista tancada per canal. No s’autoritza tota la discografia; la resta queda pendent de revisió.",
+      "allowedTitles": [
+        "Beure de tu",
+        "Cronos",
+        "Esponja",
+        "Inframon",
+        "No sé cantar",
+        "No té edat",
+        "Mai t'he vist plorar",
+        "Malifetes",
+        "Venim a aquest món"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCVowitUeUXlew8bjVjBOtUQ": {
+      "artist": "Peret",
+      "note": "Alta manual 2026-10-07. Selecció inicial de repertori amb llista tancada per canal. No s’autoritza tota la discografia; la resta queda pendent de revisió.",
+      "allowedTitles": [
+        "El cant dels ocells",
+        "Al vent",
+        "Paraules d'amor",
+        "Una noia de Mataró",
+        "Volem pa amb oli",
+        "Mort de gana",
+        "L'emigrant",
+        "Si jo fora rei"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCxZhZaJrcH8nHdrKx4ij0sw": {
+      "artist": "Gato Pérez",
+      "note": "Alta manual 2026-10-07. Selecció inicial de repertori amb llista tancada per canal. No s’autoritza tota la discografia; la resta queda pendent de revisió.",
+      "allowedTitles": [
+        "La rumba de Barcelona",
+        "Rumba de Barcelona"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UC1GY1MkV-zNT_8Mv-GANOLA": {
+      "artist": "Els Bourbons",
+      "note": "Alta manual 2026-10-07. Selecció inicial de repertori amb llista tancada per canal. No s’autoritza tota la discografia; la resta queda pendent de revisió.",
+      "allowedTitles": [
+        "Fill de bruta, carbó!",
+        "100 gr. d'esperança",
+        "Sense mouren's d'aquest llit",
+        "Catalunya Tropicaô",
+        "Herois del Mississippi",
+        "Tu ets més desastre que jo",
+        "Quan vaig mig de tort"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCy8MYPwq8ezeihgBh4dgEdg": {
+      "artist": "Herois de la Katalunya Interior",
+      "note": "Alta manual 2026-10-07. Selecció inicial de repertori amb llista tancada per canal. No s’autoritza tota la discografia; la resta queda pendent de revisió.",
+      "allowedTitles": [
+        "Orgull pastoril",
+        "Bolets",
+        "Soc vilatà",
+        "Sóc vilatà",
+        "Dona'm guerra",
+        "Toc a sometent"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCWmht-NuFvH4O3rkURaNFeQ": {
+      "artist": "Electrotoylets",
+      "note": "Alta manual 2026-10-07. Selecció inicial de repertori amb llista tancada per canal. No s’autoritza tota la discografia; la resta queda pendent de revisió.",
+      "allowedTitles": [
+        "El noi de la mare",
+        "El cant dels ocells",
+        "Virolai",
+        "El Virolai"
       ],
       "acceptedMusicOnly": true,
       "allowedContentTypes": [

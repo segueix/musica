@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-07T16:14:47.557Z",
+  "updatedAt": "2026-10-07T16:16:20.193Z",
   "artists": [
     {
       "name": "2ES",
@@ -13263,8 +13263,8 @@
       "name": "Magalí Sare",
       "aliases": [],
       "genres": [
-        "Pop",
-        "Jazz / Blues"
+        "Jazz / Blues",
+        "Pop"
       ],
       "territories": [],
       "languages": [
@@ -13273,7 +13273,22 @@
       "wikidataId": "Q64760623",
       "musicbrainzId": "7877f283-89e5-4491-b11c-4477c02cb1bd",
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UC1yaXYiC2Ab3tus3lTDljtw",
+            "name": "Magalí Sare",
+            "handle": "@magalisaremusica",
+            "type": "official",
+            "primary": true
+          },
+          {
+            "id": "UCPCYIT1ovAuKG8uedKp8QNA",
+            "name": "Magalí Sare - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": false
+          }
+        ],
         "candidates": [],
         "searchCandidates": [
           {
@@ -13322,15 +13337,17 @@
           }
         ]
       },
-      "confidence": "pendent",
-      "reviewStatus": "pendent",
-      "active": false,
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
         "https://www.wikidata.org/wiki/Q64760623",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "genre:manual",
+        "youtube:targeted-search-verified"
       ],
-      "lastChecked": "2026-09-25T15:55:29.858Z",
-      "notes": "",
+      "lastChecked": "2026-10-07T16:16:01.523Z",
+      "notes": "Alta manual 2026-10-07. Selecció inicial de repertori amb llista tancada per canal. No s’autoritza tota la discografia; la resta queda pendent de revisió.",
       "enrichment": {
         "musicbrainz": {
           "checkedAt": "2026-09-25T15:55:29.858Z",
@@ -29566,7 +29583,22 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UC99ULQORmyZtD4bngOa48hw",
+            "name": "Blaumut Oficial",
+            "handle": "@blaumutoficial",
+            "type": "official",
+            "primary": true
+          },
+          {
+            "id": "UCs5SsCyZ5g5q3dGMBI3NS8w",
+            "name": "Blaumut - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": false
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UC99ULQORmyZtD4bngOa48hw",
@@ -29613,15 +29645,16 @@
           }
         ]
       },
-      "confidence": "pendent",
-      "reviewStatus": "pendent",
-      "active": false,
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
         "manual-user-2026-10-07",
-        "genre:manual"
+        "genre:manual",
+        "youtube:targeted-search-verified"
       ],
-      "lastChecked": null,
-      "notes": "Pendent de verificar canals i selecció de repertori abans d’activar.",
+      "lastChecked": "2026-10-07T16:16:01.523Z",
+      "notes": "Alta manual 2026-10-07. Canal identificat per cerca dirigida; filtre musical i d’idioma habitual.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-07T16:11:20.260Z",
@@ -29647,7 +29680,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCjdNldGc9QMmr-mpOQjy7Zg",
+            "name": "OBESES - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": true
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UCjdNldGc9QMmr-mpOQjy7Zg",
@@ -29690,15 +29731,16 @@
           }
         ]
       },
-      "confidence": "pendent",
-      "reviewStatus": "pendent",
-      "active": false,
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
         "manual-user-2026-10-07",
-        "genre:manual"
+        "genre:manual",
+        "youtube:targeted-search-verified"
       ],
-      "lastChecked": null,
-      "notes": "Pendent de verificar canals i selecció de repertori abans d’activar.",
+      "lastChecked": "2026-10-07T16:16:01.523Z",
+      "notes": "Alta manual 2026-10-07. Canal identificat per cerca dirigida; filtre musical i d’idioma habitual.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-07T16:11:20.613Z",
@@ -29724,7 +29766,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCGHuCX7ksRy8c0BvCwPoHsg",
+            "name": "Bars - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": true
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UCGHuCX7ksRy8c0BvCwPoHsg",
@@ -29767,15 +29817,16 @@
           }
         ]
       },
-      "confidence": "pendent",
-      "reviewStatus": "pendent",
-      "active": false,
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
         "manual-user-2026-10-07",
-        "genre:manual"
+        "genre:manual",
+        "youtube:targeted-search-verified"
       ],
-      "lastChecked": null,
-      "notes": "Pendent de verificar canals i selecció de repertori abans d’activar.",
+      "lastChecked": "2026-10-07T16:16:01.523Z",
+      "notes": "Alta manual 2026-10-07. Canal identificat per cerca dirigida; filtre musical i d’idioma habitual.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-07T16:14:46.435Z",
@@ -29802,7 +29853,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCnBMdEFrntxHSNXpIO7HXFA",
+            "name": "Coses - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": true
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UCnBMdEFrntxHSNXpIO7HXFA",
@@ -29845,15 +29904,16 @@
           }
         ]
       },
-      "confidence": "pendent",
-      "reviewStatus": "pendent",
-      "active": false,
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
         "manual-user-2026-10-07",
-        "genre:manual"
+        "genre:manual",
+        "youtube:targeted-search-verified"
       ],
-      "lastChecked": null,
-      "notes": "Pendent de verificar canals i selecció de repertori abans d’activar.",
+      "lastChecked": "2026-10-07T16:16:01.523Z",
+      "notes": "Alta manual 2026-10-07. Canal identificat per cerca dirigida; filtre musical i d’idioma habitual.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-07T16:11:21.353Z",
@@ -29879,7 +29939,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCXPmz-dujGuIrhnf5v5Fxrg",
+            "name": "Dijous Paella - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": true
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UCXPmz-dujGuIrhnf5v5Fxrg",
@@ -29922,15 +29990,16 @@
           }
         ]
       },
-      "confidence": "pendent",
-      "reviewStatus": "pendent",
-      "active": false,
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
         "manual-user-2026-10-07",
-        "genre:manual"
+        "genre:manual",
+        "youtube:targeted-search-verified"
       ],
-      "lastChecked": null,
-      "notes": "Pendent de verificar canals i selecció de repertori abans d’activar.",
+      "lastChecked": "2026-10-07T16:16:01.523Z",
+      "notes": "Alta manual 2026-10-07. Canal identificat per cerca dirigida; filtre musical i d’idioma habitual.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-07T16:11:21.770Z",
@@ -29957,7 +30026,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCCKRS2KD1i75evCURPuHQXA",
+            "name": "Raydibaum - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": true
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UCCKRS2KD1i75evCURPuHQXA",
@@ -29976,15 +30053,16 @@
           }
         ]
       },
-      "confidence": "pendent",
-      "reviewStatus": "pendent",
-      "active": false,
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
         "manual-user-2026-10-07",
-        "genre:manual"
+        "genre:manual",
+        "youtube:targeted-search-verified"
       ],
-      "lastChecked": null,
-      "notes": "Pendent de verificar canals i selecció de repertori abans d’activar.",
+      "lastChecked": "2026-10-07T16:16:01.523Z",
+      "notes": "Alta manual 2026-10-07. Canal identificat per cerca dirigida; filtre musical i d’idioma habitual.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-07T16:11:22.127Z",
@@ -30011,7 +30089,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCntzpmXOeNsqe2AfOFTCUZg",
+            "name": "Nyandú - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": true
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UCntzpmXOeNsqe2AfOFTCUZg",
@@ -30054,15 +30140,16 @@
           }
         ]
       },
-      "confidence": "pendent",
-      "reviewStatus": "pendent",
-      "active": false,
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
         "manual-user-2026-10-07",
-        "genre:manual"
+        "genre:manual",
+        "youtube:targeted-search-verified"
       ],
-      "lastChecked": null,
-      "notes": "Pendent de verificar canals i selecció de repertori abans d’activar.",
+      "lastChecked": "2026-10-07T16:16:01.523Z",
+      "notes": "Alta manual 2026-10-07. Canal identificat per cerca dirigida; filtre musical i d’idioma habitual.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-07T16:14:46.841Z",
@@ -30088,7 +30175,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCVowitUeUXlew8bjVjBOtUQ",
+            "name": "Peret - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": true
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UCVowitUeUXlew8bjVjBOtUQ",
@@ -30131,15 +30226,16 @@
           }
         ]
       },
-      "confidence": "pendent",
-      "reviewStatus": "pendent",
-      "active": false,
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
         "manual-user-2026-10-07",
-        "genre:manual"
+        "genre:manual",
+        "youtube:targeted-search-verified"
       ],
-      "lastChecked": null,
-      "notes": "Pendent de verificar canals i selecció de repertori abans d’activar.",
+      "lastChecked": "2026-10-07T16:16:01.523Z",
+      "notes": "Alta manual 2026-10-07. Selecció inicial de repertori amb llista tancada per canal. No s’autoritza tota la discografia; la resta queda pendent de revisió.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-07T16:11:22.723Z",
@@ -30165,7 +30261,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCxZhZaJrcH8nHdrKx4ij0sw",
+            "name": "Gato Perez - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": true
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UCxZhZaJrcH8nHdrKx4ij0sw",
@@ -30210,15 +30314,16 @@
           }
         ]
       },
-      "confidence": "pendent",
-      "reviewStatus": "pendent",
-      "active": false,
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
         "manual-user-2026-10-07",
-        "genre:manual"
+        "genre:manual",
+        "youtube:targeted-search-verified"
       ],
-      "lastChecked": null,
-      "notes": "Pendent de verificar canals i selecció de repertori abans d’activar.",
+      "lastChecked": "2026-10-07T16:16:01.523Z",
+      "notes": "Alta manual 2026-10-07. Selecció inicial de repertori amb llista tancada per canal. No s’autoritza tota la discografia; la resta queda pendent de revisió.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-07T16:14:47.151Z",
@@ -30244,7 +30349,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UC1GY1MkV-zNT_8Mv-GANOLA",
+            "name": "Els Bourbons - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": true
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UC1GY1MkV-zNT_8Mv-GANOLA",
@@ -30287,15 +30400,16 @@
           }
         ]
       },
-      "confidence": "pendent",
-      "reviewStatus": "pendent",
-      "active": false,
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
         "manual-user-2026-10-07",
-        "genre:manual"
+        "genre:manual",
+        "youtube:targeted-search-verified"
       ],
-      "lastChecked": null,
-      "notes": "Pendent de verificar canals i selecció de repertori abans d’activar.",
+      "lastChecked": "2026-10-07T16:16:01.523Z",
+      "notes": "Alta manual 2026-10-07. Selecció inicial de repertori amb llista tancada per canal. No s’autoritza tota la discografia; la resta queda pendent de revisió.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-07T16:11:23.422Z",
@@ -30321,7 +30435,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCy8MYPwq8ezeihgBh4dgEdg",
+            "name": "Herois de la Katalunya Interior - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": true
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UCy8MYPwq8ezeihgBh4dgEdg",
@@ -30340,15 +30462,16 @@
           }
         ]
       },
-      "confidence": "pendent",
-      "reviewStatus": "pendent",
-      "active": false,
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
         "manual-user-2026-10-07",
-        "genre:manual"
+        "genre:manual",
+        "youtube:targeted-search-verified"
       ],
-      "lastChecked": null,
-      "notes": "Pendent de verificar canals i selecció de repertori abans d’activar.",
+      "lastChecked": "2026-10-07T16:16:01.523Z",
+      "notes": "Alta manual 2026-10-07. Selecció inicial de repertori amb llista tancada per canal. No s’autoritza tota la discografia; la resta queda pendent de revisió.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-07T16:11:23.739Z",
@@ -30375,7 +30498,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCWmht-NuFvH4O3rkURaNFeQ",
+            "name": "ElectroToylets - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": true
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UCWmht-NuFvH4O3rkURaNFeQ",
@@ -30394,15 +30525,16 @@
           }
         ]
       },
-      "confidence": "pendent",
-      "reviewStatus": "pendent",
-      "active": false,
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
         "manual-user-2026-10-07",
-        "genre:manual"
+        "genre:manual",
+        "youtube:targeted-search-verified"
       ],
-      "lastChecked": null,
-      "notes": "Pendent de verificar canals i selecció de repertori abans d’activar.",
+      "lastChecked": "2026-10-07T16:16:01.523Z",
+      "notes": "Alta manual 2026-10-07. Selecció inicial de repertori amb llista tancada per canal. No s’autoritza tota la discografia; la resta queda pendent de revisió.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-07T16:11:24.001Z",
