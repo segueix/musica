@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-07T17:11:32.864Z",
+  "updatedAt": "2026-10-07T17:14:22.663Z",
   "description": "Llista blanca per a canals on Segueix Música només ha d'ingerir vídeos concrets. Admet títols exactes, fragments obligatoris i fragments exclosos.",
   "channels": {
     "UCKpscwdWlVaMqcA81vLI7OA": {
@@ -102,7 +102,31 @@
         "song",
         "live_song"
       ],
-      "avatarFromAllowedTitle": "És Cosa Teva"
+      "avatarFromAllowedTitle": "És Cosa Teva",
+      "allowedVideoIds": [
+        "noivIzCcBZE",
+        "q1qGKnJZmUg",
+        "XeTOZ76rBS8",
+        "x-2Tr-ENNsA",
+        "WsNuEqWi8PI",
+        "GObGj5pdOgM",
+        "B6wEA2L9_Ug",
+        "C3zmCWboIO4",
+        "vwd5J_uFnus",
+        "C5zYtmCdt-8",
+        "vBlAdP1QSZk",
+        "to-VOcsA9v4",
+        "nQP3FDCD0s4",
+        "luTi4xOmc-k",
+        "96YsDKBb06I",
+        "a2yK7Sqrj7I",
+        "-ZzcmKvARps",
+        "9pfs1vwkIGQ",
+        "u4ekzc0xHFk",
+        "SshcKA51Np0",
+        "mYXtiVfA2zk",
+        "HC2wcMJvzRE"
+      ]
     },
     "UC0PtwzSikWRnftscW9uI_Ug": {
       "artist": "Stay Homas",
