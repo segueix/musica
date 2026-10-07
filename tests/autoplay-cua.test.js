@@ -36,23 +36,33 @@ describe('isAppleDevice', () => {
     });
 });
 
-describe('Cua als aparells d’Apple: mateix reproductor i avís de bloqueig', () => {
+describe('Cua: mateix reproductor a tots els aparells i avís de bloqueig', () => {
     const app = read('js/app.js');
     const html = read('index.html');
     const css = read('css/portada.css');
 
-    it('la cua amb autoplay reutilitza el reproductor només als aparells d’Apple', () => {
-        expect(app).toMatch(/\(autoPlay && canKeepApplePlayer\(\)\)/);
-        expect(app).toMatch(
-            /function canKeepApplePlayer\(\) \{[\s\S]*?isAppleDevice\(\)[\s\S]*?visibilityState !== 'hidden'/
-        );
+    it('la cua amb autoplay reutilitza el reproductor a tots els aparells, amb interruptor', () => {
+        expect(app).toMatch(/\(autoPlay && canKeepQueuePlayer\(\)\)/);
+        const fn = app.match(/function canKeepQueuePlayer\(\) \{[\s\S]*?\n\}/)[0];
+        expect(fn).toContain('isPlayerReuseEnabled()');
+        expect(fn).toContain("visibilityState !== 'hidden'");
+        expect(fn).not.toContain('isAppleDevice');
+        expect(app).toMatch(/localStorage\.getItem\(PLAYER_REUSE_STORAGE_KEY\) !== 'off'/);
+        expect(app).toContain("const PLAYER_REUSE_STORAGE_KEY = 'catube_player_reuse';");
         expect(app).toMatch(/options\.keepLivePlayer === true &&\s*canKeepLivePlayer\(\)/);
     });
 
-    it('la vigilància de l’autoplay només avisa als aparells d’Apple i amb estats sense començar', () => {
-        expect(app).toMatch(/function watchAppleAutoplay[\s\S]*?!isAppleDevice\(\)/);
+    it('escolta onAutoplayBlocked de YouTube i mostra l’avís', () => {
+        expect(app).toContain("args: ['onAutoplayBlocked']");
+        expect(app).toMatch(
+            /payload\?\.event === 'onAutoplayBlocked' && fromMainPlayer\) \{[\s\S]*?cancelLiveSwapFallback\(\);[\s\S]*?setAutoplayBlockedHint\(true\)/
+        );
+    });
+
+    it('la comprovació per temps només es fa als aparells d’Apple i amb estats sense començar', () => {
+        expect(app).toMatch(/function watchAutoplay[\s\S]*?!isAppleDevice\(\)/);
         expect(app).toMatch(/state === '' \|\| state === '-1' \|\| state === '5'/);
-        expect(app.match(/watchAppleAutoplay\(/g).length).toBeGreaterThanOrEqual(4);
+        expect(app.match(/watchAutoplay\(/g).length).toBeGreaterThanOrEqual(4);
     });
 
     it('l’avís és dins la barra de sota el reproductor, no damunt del vídeo', () => {

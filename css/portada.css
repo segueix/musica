@@ -6249,9 +6249,9 @@ body.is-video-pip .video-placeholder.is-placeholder-hidden {
     white-space: nowrap;
 }
 
-/* ---------- Reproducció automàtica bloquejada (aparells d'Apple) ----------
-   Safari no deixa sonar un reproductor nou sense un toc: si una cançó de la cua no arrenca sola, app.js
-   (watchAppleAutoplay) posa `.is-autoplay-blocked` a la barra de controls. L'avís va a sota dels botons (mai damunt
+/* ---------- Reproducció automàtica bloquejada ----------
+   Si el navegador no deixa sonar una cançó sense un toc (YouTube avisa amb onAutoplayBlocked; a Apple també
+   watchAutoplay), app.js posa `.is-autoplay-blocked` a la barra de controls. L'avís va a sota dels botons (mai damunt
    del vídeo) i el play parpelleja; a la barra petita de la finestra flotant només parpelleja el play. */
 .player-external-controls.is-autoplay-blocked:not(.is-docked) {
     flex-wrap: wrap;
