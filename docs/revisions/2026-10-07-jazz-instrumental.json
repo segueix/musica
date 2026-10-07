@@ -1,6 +1,6 @@
 {
   "date": "2026-10-07",
-  "criterion": "Selecció inicial instrumental; no alta indiscriminada de discografies. Fonts discogràfiques i ressenyes; no audició integral automatitzada.",
+  "criterion": "Selecció inicial instrumental de 15 gravacions concretes. Fonts discogràfiques i ressenyes; no audició integral automatitzada. IDs explícits per evitar versions diferents i el límit de 40 populars dels canals Tema.",
   "selections": [
     {
       "name": "Blay Tritono",
@@ -13,6 +13,11 @@
       "sources": [
         "https://onaedicions.cat/botiga/?p=32",
         "https://lafonoteca.net/disco/clot-20/"
+      ],
+      "videoIds": [
+        "poTTrRa4o8I",
+        "0QTp1rcyDMc",
+        "3Wealg4Qygs"
       ]
     },
     {
@@ -26,6 +31,11 @@
       "sources": [
         "https://www.enderrock.cat/disc/5010/senyor-dels-anells",
         "https://barcelonaartorchestra.com/index.php/musica-laietana/"
+      ],
+      "videoIds": [
+        "wZOHn7VXWS4",
+        "c1wuAQQS3so",
+        "PglPFnM-ZAE"
       ]
     },
     {
@@ -40,6 +50,11 @@
       "sources": [
         "https://www.enderrock.cat/disc/5471/salsa-catalana",
         "https://www.dlsi.ua.es/~inesta/Prog/SPE/orqmirasol-e.html"
+      ],
+      "videoIds": [
+        "4ENVhTpn7Co",
+        "5Au0nrXuZu8",
+        "lQt6xFGjmd0"
       ]
     },
     {
@@ -52,6 +67,11 @@
       ],
       "sources": [
         "https://lafonoteca.net/disco/fred-pedralbes/"
+      ],
+      "videoIds": [
+        "O6kM5hs-0WI",
+        "i3NECPtu2Us",
+        "Z0yZLPPH3OI"
       ]
     },
     {
@@ -66,6 +86,11 @@
       "sources": [
         "https://www.enderrock.cat/disc/5233/vella-dixieland",
         "https://contrabaix.com/la-vella-dixieland/"
+      ],
+      "videoIds": [
+        "R2-5XR4wd4Y",
+        "XhsgXwWtF7c",
+        "1kuiyCUhzcw"
       ]
     }
   ]
