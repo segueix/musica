@@ -1,3 +1,13 @@
+## [2026-10-07] - Finestra flotant d'escriptori: es mou des de la barra de controls, sense franja a sobre
+
+**Objectiu:** l'usuari volia moure la finestra flotant des de qualsevol punt i treure la línia (franja de 36 px) de sobre.
+
+**Limitació:** des del mateix vídeo no es pot: els clics de dins l'iframe de YouTube no arriben a la pàgina i caldria una capa al damunt, que les normes de YouTube no permeten (per això es va treure el 2026-10-05). L'usuari va triar la barra de controls.
+
+**Solució Implementada:** (1) `portada.css` (bloc «Finestreta flotant: normes de YouTube»): `padding-top: 0`, `.video-embed-wrap` amb `inset: 0` i `.drag-handle-container` / `.mini-player-resize-handle` amagats a ≥ 769 px; `MINI_PLAYER_BAR_HEIGHT = 0` a `app.js`. (2) `initExternalPlayerControls()`: `pointerdown` a la barra flotant (`.is-floating`) fora dels botons mou `#videoPlayer` (dins la pantalla, deixant lloc a la barra; la barra el segueix amb `followPlayer`), amb `setPointerCapture` perquè no es perdi en passar per damunt de l'iframe. (3) Mànec `#playerResizeHandle` a l'extrem dret de la barra (`index.html`): canvia l'amplada (16:9, mínim `MINI_PLAYER_MIN_WIDTH`). Al mòbil no canvia res (la finestra va ancorada a baix).
+
+**Proves:** `tests/finestreta-normes.test.js`; opt-in `node tests/browser/verificar-play-pausa.js` (arrossegar la barra, mida mínima, botons sense moure la finestra).
+
 ## [2026-10-07] - Android: un vel fosc amb un cercle que gira tapava la cançó que ja sonava
 
 **Problema:** A Android, en una ràdio, la cançó sonava però tota la pantalla quedava coberta per un vel semitransparent amb el cercle de «carregant» (sense títol, amb «Altres vídeos relacionats» buit).

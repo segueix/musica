@@ -10358,10 +10358,10 @@ function handleTVPlaybackStarted() {
 }
 
 // Normes de YouTube: el vídeo inserit ha de fer com a mínim 200 × 200 px. A la finestreta flotant d'escriptori (16:9) vol
-// dir 356 px d'ample com a mínim. El mànec d'arrossegar i el de canviar la mida van en una franja a sobre del vídeo
-// (MINI_PLAYER_BAR_HEIGHT, el padding-top de la finestreta a portada.css), mai damunt del reproductor.
+// dir 356 px d'ample com a mínim. Res no va damunt del reproductor: des del 2026-10-07 la finestra no té franja a sobre
+// (MINI_PLAYER_BAR_HEIGHT = 0) i es mou i canvia de mida des de la barra de controls de sota (initExternalPlayerControls).
 const MINI_PLAYER_MIN_WIDTH = 356;
-const MINI_PLAYER_BAR_HEIGHT = 36;
+const MINI_PLAYER_BAR_HEIGHT = 0;
 
 function updateMiniPlayerSize() {
     if (!videoPlayer) {
@@ -10836,6 +10836,7 @@ function initExternalPlayerControls() {
     const mini = document.getElementById('playerMiniBtn');
     const like = document.getElementById('playerLikeBtn');
     const close = document.getElementById('playerCloseBtn');
+    const resize = document.getElementById('playerResizeHandle');
     if (!bar || !prev || !toggle || !next || !mini || !like || !close || !videoPlayer) return;
 
     // Amb la finestra flotant, la barra va a <body>, petita i enganxada sota la finestra (portada.css, «Controls sota
@@ -10909,6 +10910,59 @@ function initExternalPlayerControls() {
         if (blocked) watchAutoplay(videoPlayer.dataset.playingVideoId);
     });
     next.addEventListener('click', advanceQueueFromOverlay);
+    // Ordinador: la finestra flotant es mou prement i arrossegant un espai buit de la barra (no els botons) i canvia
+    // d'amplada amb el mànec de l'extrem dret (#playerResizeHandle). No hi ha res damunt del vídeo (normes de YouTube).
+    bar.addEventListener('pointerdown', event => {
+        if (!bar.classList.contains('is-floating') || event.button !== 0) return;
+        if (event.target.closest('button')) return;
+        const resizing = Boolean(resize && event.target === resize);
+        const rect = videoPlayer.getBoundingClientRect();
+        const startX = event.clientX;
+        const startY = event.clientY;
+        const startWidth = parseFloat(getComputedStyle(videoPlayer).width) || rect.width;
+        event.preventDefault();
+        bar.classList.add('is-dragging');
+        videoPlayer.style.transition = 'none';
+        try {
+            bar.setPointerCapture(event.pointerId);
+        } catch (error) {
+            // Sense captura, el moviment continua mentre el ratolí és damunt la barra
+        }
+        const onMove = moveEvent => {
+            const dx = moveEvent.clientX - startX;
+            const dy = moveEvent.clientY - startY;
+            if (resizing) {
+                const width = Math.min(
+                    Math.max(MINI_PLAYER_MIN_WIDTH, startWidth + dx),
+                    window.innerWidth - rect.left - 8
+                );
+                videoPlayer.style.width = `${Math.round(width)}px`;
+                videoPlayer.style.height = `${Math.round((width * 9) / 16)}px`;
+                return;
+            }
+            // Dins la pantalla, deixant lloc a sota per a la barra (si no hi cap, la barra passa a sobre)
+            const left = Math.min(Math.max(0, rect.left + dx), window.innerWidth - rect.width);
+            const top = Math.min(
+                Math.max(0, rect.top + dy),
+                window.innerHeight - rect.height - EXTERNAL_CONTROLS_DOCK_HEIGHT
+            );
+            videoPlayer.style.left = `${Math.round(left)}px`;
+            videoPlayer.style.top = `${Math.round(Math.max(0, top))}px`;
+            videoPlayer.style.right = 'auto';
+            videoPlayer.style.bottom = 'auto';
+        };
+        const onEnd = () => {
+            bar.classList.remove('is-dragging');
+            videoPlayer.style.transition = '';
+            bar.removeEventListener('pointermove', onMove);
+            bar.removeEventListener('pointerup', onEnd);
+            bar.removeEventListener('pointercancel', onEnd);
+            scheduleFollow();
+        };
+        bar.addEventListener('pointermove', onMove);
+        bar.addEventListener('pointerup', onEnd);
+        bar.addEventListener('pointercancel', onEnd);
+    });
     mini.addEventListener('click', () => {
         if (isMiniPlayerActive()) expandMiniPlayer();
         else setMiniPlayerState(true, { trigger: 'external-controls' });

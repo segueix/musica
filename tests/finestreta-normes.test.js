@@ -17,13 +17,18 @@ describe('finestreta flotant: normes de YouTube', () => {
         expect(block).toMatch(/min-width: 356px;/);
     });
 
-    it('el mànec i la cantonada van en una franja a sobre del vídeo, no al damunt', () => {
-        expect(block).toMatch(/box-sizing: content-box;[\s\S]*?padding-top: 36px;/);
-        expect(block).toMatch(
-            /\.video-embed-wrap \{[\s\S]*?inset: 36px 0 0 0 !important;[\s\S]*?height: auto !important;/
-        );
-        expect(app).toContain('const MINI_PLAYER_BAR_HEIGHT = 36;');
-        expect(app).toMatch(/\+ MINI_PLAYER_BAR_HEIGHT;/);
+    it('ordinador: sense franja a sobre; es mou i canvia de mida des de la barra de sota, no damunt del vídeo', () => {
+        expect(block).toMatch(/box-sizing: content-box;[\s\S]*?padding-top: 0;/);
+        expect(block).toMatch(/\.video-embed-wrap \{[\s\S]*?inset: 0 !important;/);
+        expect(block).toMatch(/\.drag-handle-container,[\s\S]*?\.mini-player-resize-handle \{\s*display: none;/);
+        expect(app).toContain('const MINI_PLAYER_BAR_HEIGHT = 0;');
+        // Arrossegar: només la barra flotant i mai des d'un botó
+        expect(app).toMatch(/bar\.addEventListener\('pointerdown'[\s\S]*?is-floating[\s\S]*?closest\('button'\)/);
+        expect(app).toMatch(/Math\.max\(MINI_PLAYER_MIN_WIDTH, startWidth \+ dx\)/);
+        const html = readFileSync('index.html', 'utf8');
+        const bar = html.slice(html.indexOf('id="playerExternalControls"'), html.indexOf('<div class="video-info">'));
+        expect(bar).toContain('id="playerResizeHandle"');
+        expect(css).toContain('.player-external-controls.is-floating .pec-resize {');
     });
 
     it('al mòbil el vídeo flotant fa com a mínim 200 px d’alçada', () => {
