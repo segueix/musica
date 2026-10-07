@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-07T07:07:56Z",
+  "updatedAt": "2026-10-07T07:10:04Z",
   "artists": [
     {
       "name": "2ES",
@@ -28634,6 +28634,44 @@
       ],
       "lastChecked": "2026-10-07T07:07:56Z",
       "notes": "Canal Tema indicat per l’usuari. Categoria Cançó d’autor per indicació editorial."
+    },
+    {
+      "name": "El Petit de Cal Eril",
+      "displayName": "El Petit de Cal Eril",
+      "aliases": [],
+      "genres": [
+        "Pop"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCQc-T583XUy2JAfeun2_0mg",
+            "handle": "@elpetitdecalerilmusica",
+            "name": "el petit de cal eril",
+            "type": "official",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-07",
+        "genre:manual",
+        "https://www.youtube.com/channel/UCQc-T583XUy2JAfeun2_0mg",
+        "https://www.youtube.com/@elpetitdecalerilmusica"
+      ],
+      "lastChecked": "2026-10-07T07:10:04Z",
+      "notes": "Alta del canal oficial indicat per l’usuari. Categoria Pop per indicació editorial; s’apliquen els filtres habituals de contingut musical i català."
     }
   ]
 }
