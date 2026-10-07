@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-07T16:50:15.989Z",
+  "updatedAt": "2026-10-07T17:11:32.864Z",
   "description": "Llista blanca per a canals on Segueix Música només ha d'ingerir vídeos concrets. Admet títols exactes, fragments obligatoris i fragments exclosos.",
   "channels": {
     "UCKpscwdWlVaMqcA81vLI7OA": {
@@ -71,9 +71,38 @@
       "note": "Canal retirat explícitament per l’usuari el 2026-10-05. No ingerir vídeos ni tornar-lo a acceptar en resoldre canals."
     },
     "UCCjTaOHQqmy0VD2vkZVxxoA": {
-      "artist": "La Madam (canal retirat)",
-      "blocked": true,
-      "note": "Canal retirat explícitament per l’usuari el 2026-10-05. No ingerir vídeos ni tornar-lo a acceptar en resoldre canals."
+      "artist": "La Madam",
+      "note": "L’usuari autoritza recuperar el canal el 2026-10-07 només per Micos i Mones i Sense Pressa. No importar homònims ni altres àlbums.",
+      "allowedTitles": [
+        "És Cosa Teva",
+        "Els Esclaus",
+        "Manual d'Amor",
+        "Catalina",
+        "Mentider",
+        "Laia",
+        "Hores i Hores (En Va)",
+        "De Nit i Sola pel Carrer",
+        "Quan Ningú t'Espera",
+        "Digue'm Com ha Estat",
+        "Potser en Tinc Poc de Tu",
+        "Sense Pressa",
+        "D.N.I.",
+        "Bons Propòsits",
+        "S Pot Perquè S Pot",
+        "No Juguis Sola",
+        "Disciplina",
+        "Natàlia",
+        "Història Fúcsia",
+        "Amor de Menor (Amor Superior)",
+        "Twist de la Núvia",
+        "Creus Que Es una Bona Idea? (Bonus Track)"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "avatarFromAllowedTitle": "És Cosa Teva"
     },
     "UC0PtwzSikWRnftscW9uI_Ug": {
       "artist": "Stay Homas",
@@ -2390,6 +2419,40 @@
         "XhsgXwWtF7c",
         "1kuiyCUhzcw"
       ]
+    },
+    "UCcCWhlBeuoXoqEXUcCZaTxQ": {
+      "artist": "La Madam",
+      "note": "Només els 10 IDs de l’àlbum 1991 indicat per l’usuari. Canal amb homònims.",
+      "allowedVideoIds": [
+        "FgnPT009p64",
+        "sM2GRRkWht8",
+        "9HLUgtbhsgQ",
+        "Om8yKJ9QM0I",
+        "14s_cn8ES7o",
+        "YsoJ2UsikQo",
+        "SHyAFuAbd9A",
+        "ZGFcUs8xVOA",
+        "14kEl_DyKVo",
+        "EDe6w3yfvNk"
+      ],
+      "allowedTitles": [
+        "Tu, Tu, Tu",
+        "Figures de Cera",
+        "Divina Tragèdia",
+        "Tot el Que Em Diguis",
+        "Lupe Dalí",
+        "Formigues o Gegants",
+        "Els Meus Amics",
+        "Una Dona Tal Com Cal",
+        "Encendre la Ciutat",
+        "Els Bons Catalans"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "avatarFromAllowedTitle": "Tu, Tu, Tu"
     }
   }
 }

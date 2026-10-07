@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-07T16:53:34.511Z",
+  "updatedAt": "2026-10-07T17:11:32.863Z",
   "artists": [
     {
       "name": "2ES",
@@ -11785,7 +11785,6 @@
       "name": "La Madam",
       "aliases": [],
       "genres": [
-        "Pop",
         "Rock"
       ],
       "territories": [],
@@ -11795,7 +11794,22 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCCjTaOHQqmy0VD2vkZVxxoA",
+            "name": "La Madam - Topic",
+            "type": "topic",
+            "primary": true,
+            "handle": null
+          },
+          {
+            "id": "UCcCWhlBeuoXoqEXUcCZaTxQ",
+            "name": "Madam(s) - Topic",
+            "type": "topic",
+            "primary": false,
+            "handle": null
+          }
+        ],
         "candidates": [],
         "searchCandidates": [
           {
@@ -11842,16 +11856,17 @@
           }
         ]
       },
-      "confidence": "mitjana",
-      "reviewStatus": "pendent",
-      "active": false,
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
         "manual-user-2026-09-29",
         "youtube:manual-verified",
-        "genre:manual"
+        "genre:manual",
+        "manual-user-2026-10-07"
       ],
-      "lastChecked": "2026-10-05T11:24:31.079Z",
-      "notes": "Afegit manualment a partir del llistat verificat de YouTube. El 2026-10-05 es retira només UCCjTaOHQqmy0VD2vkZVxxoA a petició de l’usuari: canal barrejat amb un homònim en castellà. La fitxa catalana es conserva pendent d’identificar el canal correcte; no excloure l’artista pel nom.",
+      "lastChecked": "2026-10-07T17:11:32.863Z",
+      "notes": "Reactivació autoritzada 2026-10-07: només Micos i Mones, 1991 i Sense Pressa. YouTube barreja homònims; filtres tancats. El canal MADAM • Priscilla és una artista diferent; caràtula sol·licitada pendent d’un enllaç de vídeo correcte.",
       "genresRaw": [],
       "enrichment": {
         "genres": {
