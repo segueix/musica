@@ -17,9 +17,18 @@ Quan canviï el domini, afegeix-ne l’origen al mateix client/projecte i actual
 
 ## Ús
 
-A Configuració, «Connecta amb Google Drive» selecciona el compte i fa la primera sincronització. Després «Sincronitza» combina els canvis. Cal prémer-lo als aparells que hagin d’enviar o rebre dades. No hi ha vigilància contínua en segon pla. Google pot demanar renovar l’accés; el token només es conserva en memòria. Si un navegador bloqueja la primera finestra després de carregar Google, l’avís demana tornar a prémer el botó.
+A Configuració, «Connecta amb Google Drive» selecciona el compte i inicia la sessió. Mentre l’autorització temporal sigui vigent i l’app sigui visible i tingui xarxa:
+- Els cors, seguits, llistes i preferències s’agrupen uns 10–15 segons després de l’últim canvi; si hi ha canvis continus, el cicle d’un minut també els envia.
+- L’historial i les estadístiques es comproven aproximadament cada minut. Les estadístiques pendents es desen sense finalitzar la sessió d’escolta.
+- La consulta de versions evita baixar còpies inalterades. No es puja el fitxer propi si el contingut és el mateix.
+- En tornar a la pàgina o recuperar la xarxa, es reprèn el cicle pendent. Les peticions s’espaien progressivament davant d’errors (fins a 15 minuts).
+- «Sincronitza» permet forçar un intent immediat.
 
-Si arriben canvis es recarrega la pàgina per actualitzar tots els mòduls, i la reproducció s’atura. «Desconnecta» deixa de fer servir el compte en aquell aparell; no esborra dades ni revoca globalment l’autorització d’altres aparells. Google Drive permet eliminar les dades ocultes de l’aplicació; el compte de Google permet revocar-ne l’accés.
+El token només es conserva en memòria. Després de recarregar o quan caduca cal un toc a «Sincronitza» per renovar-lo. Cap temporitzador no obre finestres OAuth. Una renovació permanent sense gestos exigiria un flux de codi amb servidor i refresh tokens; no s’ha implementat en aquesta web estàtica.
+
+Els canvis es desen i s’apliquen a la vista sense recarregar: cors, seguits, biblioteca, categories i preferències. Es conserva el reproductor i la cua activa; no es refà un formulari amb el focus. «Desconnecta» atura l’automatisme en aquell aparell i conserva les còpies locals i de Drive.
+
+No hi ha una prova de 24 hores definida a l’app ni un canvi automàtic a producció. En Google OAuth Testing les autoritzacions de prova caduquen als set dies. Per obrir-ho al públic cal publicar l’app a Google Auth Platform → Audience i completar la verificació que Google demani. Això no elimina la caducitat del token temporal del navegador.
 
 ## Dades i conflictes
 

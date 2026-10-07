@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs';
 import { createContext, runInContext } from 'node:vm';
 import { randomUUID } from 'node:crypto';
-import { describe, it, expect, vi } from 'vitest';
+import { describe, it, expect, vi, afterEach } from 'vitest';
 import { createMockLocalStorage } from './setup.js';
 
 const song = (n) => ({
@@ -73,6 +73,7 @@ function server() {
         onWrite: null,
         paginated: false,
         failStatus: 0,
+        versioned: false,
     };
     const response = (body, status = 200) => ({ ok: status < 400, status, text: async () => JSON.stringify(body) });
     const fetch = vi.fn(async (url, options) => {
@@ -91,12 +92,13 @@ function server() {
                 const doc = JSON.parse(parts[2].split('\r\n--')[0]);
                 expect(meta.parents).toEqual(['appDataFolder']);
                 const id = randomUUID();
-                files.set(id, { id, appProperties: meta.appProperties, doc });
-                return response({ id });
+                files.set(id, { id, appProperties: meta.appProperties, doc, ...(state.versioned ? { version: '1' } : {}) });
+                return response({ id, ...(state.versioned ? { version: '1' } : {}) });
             }
             const id = u.pathname.split('/').pop();
             files.get(id).doc = JSON.parse(options.body);
-            return response({ id });
+            if (state.versioned) files.get(id).version = String(Number(files.get(id).version || 0) + 1);
+            return response({ id, ...(state.versioned ? { version: files.get(id).version } : {}) });
         }
         expect(u.searchParams.get('spaces')).toBe('appDataFolder');
         expect(u.searchParams.get('q')).toContain('segueix-musica-drive-v1');
@@ -526,5 +528,116 @@ describe('Flux OAuth i Drive simulat', () => {
         await b.api.connect();
         expect(s.fetch).not.toHaveBeenCalled();
         expect(b.el('googleDriveFeedback').textContent).toContain('Internet');
+    });
+});
+
+describe('sincronització automàtica sense interrompre la música', () => {
+    afterEach(() => vi.useRealTimers());
+    const automatic = s => {
+        vi.useFakeTimers();
+        vi.setSystemTime(new Date('2026-10-07T12:00:00Z'));
+        const a = setup(s.fetch, { setTimeout, clearTimeout });
+        a.ctx.document.visibilityState = 'visible';
+        a.ctx.google.accounts.oauth2.initTokenClient = vi.fn(a.ctx.google.accounts.oauth2.initTokenClient);
+        a.api.register();
+        return a;
+    };
+    it('comprova cada minut sense una altra finestra Google i no transfereix còpies inalterades', async () => {
+        const s = server(); s.state.versioned = true;
+        const a = automatic(s);
+        await a.api.connect();
+        s.fetch.mockClear();
+        await vi.advanceTimersByTimeAsync(60000);
+        expect(s.fetch).toHaveBeenCalledTimes(2); // compte + versions; cap descàrrega ni pujada
+        expect(a.ctx.google.accounts.oauth2.initTokenClient).toHaveBeenCalledTimes(1);
+        expect(a.ctx.location.reload).not.toHaveBeenCalled();
+    });
+    it('agrupa diversos cors i els envia deu segons després de l’últim canvi', async () => {
+        const s = server(); s.state.versioned = true;
+        const a = automatic(s);
+        await a.api.connect(); s.fetch.mockClear();
+        const onChange = a.ctx.addEventListener.mock.calls.find(([type]) => type === 'segueix:music-prefs-changed')[1];
+        for (let n = 1; n <= 5; n++) {
+            a.storage.setItem('catube_liked_videos', JSON.stringify(Array.from({ length: n }, (_, i) => song(i + 1))));
+            onChange();
+            await vi.advanceTimersByTimeAsync(1000);
+        }
+        expect(s.fetch).not.toHaveBeenCalled();
+        await vi.advanceTimersByTimeAsync(10000);
+        const writes = s.fetch.mock.calls.filter(([, options]) => options.method === 'PATCH');
+        expect(writes).toHaveLength(1);
+        expect(a.model.materialize([...s.files.values()][0].doc).likes).toHaveLength(5);
+    });
+    it('aplica els canvis entrants amb el hook de vista i conserva la reproducció', async () => {
+        const s = server(); s.state.versioned = true;
+        const a = automatic(s);
+        const refreshView = vi.fn();
+        a.api.registerRuntime({ refreshView });
+        await a.api.connect();
+        const b = setup(s.fetch);
+        b.storage.setItem('catube_liked_videos', JSON.stringify([song(1)]));
+        await b.api.connect();
+        await vi.advanceTimersByTimeAsync(60000);
+        expect(a.data.collect().data.likes.map(v => v.id)).toEqual([song(1).id]);
+        expect(refreshView).toHaveBeenCalledTimes(1);
+        expect(a.ctx.location.reload).not.toHaveBeenCalled();
+    });
+    it('l’historial espera el cicle d’un minut en lloc d’enviar cada escolta', async () => {
+        const s = server(); s.state.versioned = true;
+        const a = automatic(s);
+        await a.api.connect(); s.fetch.mockClear();
+        a.storage.setItem('catube_history', JSON.stringify([song(1)]));
+        await vi.advanceTimersByTimeAsync(15000);
+        expect(s.fetch).not.toHaveBeenCalled();
+        await vi.advanceTimersByTimeAsync(45000);
+        expect(s.fetch.mock.calls.filter(([, options]) => options.method === 'PATCH')).toHaveLength(1);
+        expect(a.model.materialize([...s.files.values()][0].doc).history.map(v => v.id)).toEqual([song(1).id]);
+    });
+    it('atura les peticions en segon pla, sense xarxa o desconnectat, i les reprèn en tornar', async () => {
+        const s = server(); s.state.versioned = true;
+        const a = automatic(s);
+        await a.api.connect(); s.fetch.mockClear();
+        a.ctx.document.visibilityState = 'hidden';
+        await vi.advanceTimersByTimeAsync(70000);
+        expect(s.fetch).not.toHaveBeenCalled();
+        a.ctx.document.visibilityState = 'visible';
+        a.ctx.navigator.onLine = false;
+        await vi.advanceTimersByTimeAsync(10000);
+        expect(s.fetch).not.toHaveBeenCalled();
+        a.ctx.navigator.onLine = true;
+        await vi.advanceTimersByTimeAsync(5000);
+        expect(s.fetch).toHaveBeenCalledTimes(2);
+        a.api.disconnect(); s.fetch.mockClear();
+        await vi.advanceTimersByTimeAsync(70000);
+        expect(s.fetch).not.toHaveBeenCalled();
+    });
+    it('quan caduca l’accés avisa sense obrir Google automàticament', async () => {
+        const s = server();
+        const a = automatic(s);
+        const oauth = a.ctx.google.accounts.oauth2;
+        oauth.initTokenClient = vi.fn(options => ({
+            requestAccessToken: () => options.callback({ access_token: 'short-lived', expires_in: 90 }),
+        }));
+        await a.api.connect(); s.fetch.mockClear();
+        await vi.advanceTimersByTimeAsync(70000);
+        expect(s.fetch).not.toHaveBeenCalled();
+        expect(oauth.initTokenClient).toHaveBeenCalledTimes(1);
+        expect(a.el('googleDriveFeedback').textContent).toContain('renovar');
+        await a.api.connect();
+        expect(oauth.initTokenClient).toHaveBeenCalledTimes(2);
+    });
+    it('espacia els reintents quan Drive limita les peticions', async () => {
+        const s = server();
+        const a = automatic(s);
+        await a.api.connect(); s.fetch.mockClear();
+        s.state.failStatus = 429;
+        await vi.advanceTimersByTimeAsync(60000);
+        expect(s.fetch).toHaveBeenCalledTimes(1);
+        await vi.advanceTimersByTimeAsync(60000);
+        expect(s.fetch).toHaveBeenCalledTimes(2);
+        await vi.advanceTimersByTimeAsync(60000);
+        expect(s.fetch).toHaveBeenCalledTimes(2);
+        await vi.advanceTimersByTimeAsync(60000);
+        expect(s.fetch).toHaveBeenCalledTimes(3);
     });
 });

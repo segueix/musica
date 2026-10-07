@@ -777,6 +777,7 @@
         init,
         snapshot,
         registerSessionSink,
+        persistForSync() { tracker?.persist(true); },
         replaceSynchronizedData(data) {
             prefs = normalizePrefs(data.prefs);
             ensureTracker().setStats(data.stats);

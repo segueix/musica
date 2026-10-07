@@ -1725,3 +1725,15 @@ La TV (`__segueix_tv_discovery__`) no hi entra. El vídeo potser no arrenca sol 
 **Límits:** la cua no viatja a Drive; un enllaç nou no recupera una cua antiga; les TV i les dades de sessió invàlides continuen pel camí anterior. Versions de `app.js` i `music-queue.js` actualitzades.
 
 **Proves:** sessió nova amb la mateixa cua i segon; ràdio d’artista amb context; arrencada que sobreescriu temporalment la vista; enllaç nou, vídeo diferent, sessió malmesa i TV. Proves relacionades de reproducció, ràdios i Drive.
+
+## [2026-10-07] - Sincronització automàtica agrupada i sense recàrrega
+
+**Petició:** enviar i rebre canvis sense prémer el botó a cada operació ni interrompre la música.
+
+**Solució:** monitor local cada 5 segons, actiu només amb token vigent, compte connectat, app visible i xarxa. Agrupa preferències uns 10 segons després de detectar l’últim canvi i consulta Drive cada minut; historial/estadístiques esperen aquest cicle. No hi ha finestres OAuth des de temporitzadors. Caducitat: avís per renovar amb un toc. Els errors provoquen espera progressiva fins a 15 minuts; la desconnexió talla les peticions. El monitor té exclusió pròpia i les escriptures mantenen Web Locks.
+
+**Quota:** es demana `files.version` i es conserva en memòria la còpia validada de cada fitxer. Només es baixa una versió diferent; només es puja el fitxer propi quan ha canviat. Sense canvis, un cicle necessita habitualment dues peticions (compte i llistat de versions). Es buida la cache en renovar el token o canviar la vinculació.
+
+**Aplicació en viu:** hook `refreshSynchronizedMusic` d’app.js; actualitza cors, seguits, pantalles de dades i preferències, però mai torna a carregar el vídeo ni la cua. `musicSignals.persistForSync()` desa els comptadors pendents sense cridar `flush()`, que finalitzaria la sessió. La transacció de dades/diari/compte i la recuperació de quota continuen actives. Els canvis locals durant una petició es conserven per al cicle següent.
+
+**Proves:** rellotge simulat amb cicles reals de registre i OAuth, agrupació de cors, historial al minut, recepció d’un altre aparell, versions inalterades sense transferència, segon pla, absència de xarxa, desconnexió, caducitat sense finestres i espera davant 429. Hook real de vista: repinta cors i biblioteca sense canviar cua, posició ni pàgina; preserva formularis amb focus. Testing de Google: set dies d’autorització, cap prova de 24 hores implementada.
