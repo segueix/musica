@@ -6301,3 +6301,12 @@ body.is-video-pip .video-placeholder.is-placeholder-hidden {
 .player-external-controls.is-floating .pec-resize:focus-visible::after {
     border-color: var(--pt-accent);
 }
+
+/* ---------- «Subscriu-t'hi a YouTube» (fitxa de la cançó; js/features/youtube-subscribe.js) ----------
+   L'antic «Canal Youtube» porta al canal oficial amb el diàleg de subscripció obert. Al mòbil estret el text és
+   «Subscriu-t'hi» (el nom complet és a l'aria-label) perquè la fila de botons no surti de l'ample. */
+@media (max-width: 480px) {
+    .btn-pill-red[data-yt-subscribe] .yt-subscribe-long {
+        display: none;
+    }
+}

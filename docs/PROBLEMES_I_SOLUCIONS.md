@@ -1,3 +1,13 @@
+## [2026-10-07] - «Subscriu-t'hi a YouTube» i el botó «Segueix» de la fitxa de la cançó que no seguia
+
+**Objectiu:** que els oients se subscriguin al canal oficial dels grups (benefici clar i durador per als artistes, encara que YouTube no compti les cançons encadenades).
+
+**Solució Implementada:** `js/features/youtube-subscribe.js` (patró 2): botó «Subscriu-t'hi a YouTube» al canal oficial amb `?sub_confirmation=1` i proposta (avís breu) en seguir l'artista o al segon m'agrada, una vegada per artista i una al dia (`catube_yt_subscribe_prompts`).
+
+**Problema trobat pel camí:** a la fitxa de la cançó, prémer «Segueix» (al costat del nom de l'artista) obria la fitxa de l'artista i **no el seguia**: `bindChannelLinks()` escolta en captura els clics a `.channel-link`, i el botó és a dins. Ara ignora els clics a `[data-follow-channel]`.
+
+**Trampes conegudes:** (1) `YouTubeAPI` és un `const` global de `youtube.js`, no una propietat de `window`: des d'un mòdul cal `typeof YouTubeAPI !== 'undefined' ? YouTubeAPI : window.YouTubeAPI` (amb `window.YouTubeAPI` el grup de l'artista no es trobava i el missatge deia «aquest artista»). (2) A 390 px el text llarg feia sortir la fila de botons 3 px: per sota de 480 px es mostra «Subscriu-t'hi». (3) No es pot saber si l'usuari ja hi està subscrit sense OAuth de YouTube. Prova: `tests/youtube-subscribe.test.js`.
+
 ## [2026-10-07] - Finestra flotant d'escriptori: es mou des de la barra de controls, sense franja a sobre
 
 **Objectiu:** l'usuari volia moure la finestra flotant des de qualsevol punt i treure la línia (franja de 36 px) de sobre.
