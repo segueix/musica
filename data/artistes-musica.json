@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-07T16:16:20.193Z",
+  "updatedAt": "2026-10-07T16:24:39.526Z",
   "artists": [
     {
       "name": "2ES",
@@ -30545,6 +30545,58 @@
           "autoAcceptedId": null
         }
       }
+    },
+    {
+      "name": "The Anti-Patiks",
+      "aliases": [],
+      "genres": [
+        "Punk"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [],
+        "searchCandidates": []
+      },
+      "confidence": "baixa",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "manual-user-2026-10-07",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-07T16:24:39.526Z",
+      "notes": "Alta sol·licitada per l’usuari; canal pendent de verificació."
+    },
+    {
+      "name": "Ypnosi",
+      "aliases": [],
+      "genres": [
+        "Rock"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [],
+        "searchCandidates": []
+      },
+      "confidence": "baixa",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "manual-user-2026-10-07",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-07T16:24:39.526Z",
+      "notes": "Alta sol·licitada per l’usuari; canal pendent de verificació."
     }
   ]
 }
