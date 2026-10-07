@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-07T16:20:22.292Z",
+  "generatedAt": "2026-10-07T16:28:27.898Z",
   "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
   "deepPagesFetched": 0,
   "deepChannelCount": 18,
-  "topicChannelCount": 244,
+  "topicChannelCount": 248,
   "governedChannelCount": 90,
   "topicCoverage": [
     {
@@ -2634,6 +2634,20 @@
       "withClip": 0
     },
     {
+      "id": "UCARSXSWwSje53JsJgzLCtpA",
+      "name": "The Anti-Patiks",
+      "tracks": 23,
+      "selected": 9,
+      "withClip": 0
+    },
+    {
+      "id": "UCuBUwUHwHaYGai1Enee7DSw",
+      "name": "The Anti-Patiks",
+      "tracks": 12,
+      "selected": 5,
+      "withClip": 0
+    },
+    {
       "id": "UChFT46QMLdzzwd04aCTeyqg",
       "name": "The Demencials",
       "tracks": 40,
@@ -2779,15 +2793,29 @@
       "tracks": 2,
       "selected": 2,
       "withClip": 0
+    },
+    {
+      "id": "UCqqRg6HX-P769DEoffrQMEQ",
+      "name": "YPNOSI",
+      "tracks": 33,
+      "selected": 25,
+      "withClip": 0
+    },
+    {
+      "id": "UCg6lVNl78-THJI1w8dSy0bA",
+      "name": "YPNOSI",
+      "tracks": 12,
+      "selected": 6,
+      "withClip": 0
     }
   ],
-  "indexedChannelCount": 457,
-  "resolvedChannelCount": 457,
-  "feedChannelCount": 457,
-  "rawPublicVideoCount": 5187,
-  "feedVideoCount": 4651,
-  "acceptedMusicCount": 4610,
-  "categoryEligibleVideoCount": 4605,
+  "indexedChannelCount": 461,
+  "resolvedChannelCount": 461,
+  "feedChannelCount": 461,
+  "rawPublicVideoCount": 5197,
+  "feedVideoCount": 4661,
+  "acceptedMusicCount": 4620,
+  "categoryEligibleVideoCount": 4615,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
     "before": 0,
@@ -2796,7 +2824,7 @@
   },
   "contentReviewCount": 542,
   "contentTypeCounts": {
-    "song": 4491,
+    "song": 4501,
     "live_song": 114,
     "album": 5,
     "other": 35,
@@ -2804,9 +2832,11 @@
   },
   "unresolvedChannelIds": [],
   "channelsWithoutUploads": [],
-  "channelsWithoutVideos": [],
+  "channelsWithoutVideos": [
+    "UCg6lVNl78-THJI1w8dSy0bA"
+  ],
   "channelsWithoutAcceptedMusic": [],
   "allIndexedChannelsVisible": true,
-  "publishedFeedVideoCount": 4651,
+  "publishedFeedVideoCount": 4661,
   "publishedShortVideoCount": 0
 }
