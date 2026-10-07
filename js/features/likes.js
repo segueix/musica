@@ -112,22 +112,20 @@
             }
         }
 
-        // Diferir escriptura a localStorage fora del fil principal
-        const likedCopy = [...likedVideos];
-        (requestIdleCallback || setTimeout)(() => {
-            setLikedVideos(likedCopy);
-            setLikedVideoIds(likedCopy.map(item => String(item.id)));
-            // El cor compta ja per a les decisions següents de la ràdio (music-queue / music-signals).
-            try {
-                window.dispatchEvent(
-                    new CustomEvent('segueix:music-prefs-changed', {
-                        detail: { type: 'like', key: normalizedId, on: nowLiked },
-                    })
-                );
-            } catch (error) {
-                // Entorn sense esdeveniments (proves)
-            }
-        });
+        // Desa abans de pintar el cor o iniciar Drive: un callback inactiu pot arribar
+        // després de la sincronització i sobreescriure els favorits acabats de rebre.
+        setLikedVideos(likedVideos);
+        setLikedVideoIds(likedVideos.map(item => String(item.id)));
+        // El cor compta ja per a les decisions següents de la ràdio (music-queue / music-signals).
+        try {
+            window.dispatchEvent(
+                new CustomEvent('segueix:music-prefs-changed', {
+                    detail: { type: 'like', key: normalizedId, on: nowLiked },
+                })
+            );
+        } catch (error) {
+            // Entorn sense esdeveniments (proves)
+        }
         return nowLiked;
     }
 

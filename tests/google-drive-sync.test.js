@@ -321,6 +321,35 @@ describe('Quota local durant la sincronització', () => {
 });
 
 describe('Flux OAuth i Drive simulat', () => {
+    it('envia el cor acabat de prémer encara que el mòbil no tingui cap moment inactiu', async () => {
+        const s = server();
+        const idle = vi.fn();
+        const mobile = setup(s.fetch, { requestIdleCallback: idle });
+        const desktop = setup(s.fetch);
+        runInContext(readFileSync(new URL('../js/features/likes.js', import.meta.url), 'utf8'), mobile.ctx);
+        const likes = mobile.ctx.SegueixApp.features.likes;
+        likes.toggleLikeVideo(song(1));
+        await mobile.api.connect();
+        await desktop.api.connect();
+        expect(desktop.data.collect().data.likes.map(v => v.id)).toEqual([song(1).id]);
+        expect(desktop.el('googleDriveAccount').textContent).toContain('2 aparells · 1 m’agrada');
+        const reopened = setup(s.fetch, { localStorage: desktop.storage });
+        reopened.api.register();
+        expect(reopened.el('googleDriveAccount').textContent).toContain('2 aparells · 1 m’agrada');
+        likes.toggleLikeVideo(song(1));
+        await mobile.api.connect();
+        await desktop.api.connect();
+        expect(desktop.data.collect().data.likes).toEqual([]);
+    });
+    it('conserva dos cors premuts seguits i permet desfer-los abans de sincronitzar', () => {
+        const a = setup(vi.fn(), { requestIdleCallback: vi.fn() });
+        runInContext(readFileSync(new URL('../js/features/likes.js', import.meta.url), 'utf8'), a.ctx);
+        const likes = a.ctx.SegueixApp.features.likes;
+        likes.toggleLikeVideo(song(1));
+        likes.toggleLikeVideo(song(2));
+        likes.toggleLikeVideo(song(1));
+        expect(a.data.collect().data.likes.map(v => v.id)).toEqual([song(2).id]);
+    });
     it('dos enviaments simultanis no es trepitgen i convergeixen després', async () => {
         const s = server(); const a = setup(s.fetch); const b = setup(s.fetch);
         a.storage.setItem('catube_liked_videos', JSON.stringify([song(1)]));

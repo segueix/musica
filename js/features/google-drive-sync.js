@@ -46,6 +46,10 @@
         byId('googleDriveAccount').textContent = account
             ? `Compte: ${account.label}${account.lastSync ? ' · Última sincronització: ' + new Date(account.lastSync).toLocaleString('ca-ES') : ''}`
             : '';
+        if (account?.receipt) {
+            byId('googleDriveAccount').textContent +=
+                ` · Darrera sincronització: ${account.receipt.devices} aparells · ${account.receipt.likes} m’agrada`;
+        }
         if (!clientId()) {
             feedback(
                 'La sincronització amb Google Drive està pendent d’activació. Les teves dades continuen desades en aquest aparell.'
@@ -251,6 +255,10 @@
         const changed = JSON.stringify(model.flatten(latest)) !== JSON.stringify(model.flatten(merged));
         // Si falla qualsevol escriptura, restaura també la base del diari pendent.
         account.lastSync = new Date().toISOString();
+        account.receipt = {
+            devices: new Set([device, ...files.map(file => file.appProperties?.device || file.id)]).size,
+            likes: merged.likes.length,
+        };
         dataApi.apply(merged, window.localStorage, [
             [stateKey, JSON.stringify({ doc, baseline: merged })],
             [LINK_KEY, JSON.stringify(account)],

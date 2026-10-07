@@ -1693,3 +1693,13 @@ La TV (`__segueix_tv_discovery__`) no hi entra. El vídeo potser no arrenca sol 
 **Solució:** HTML inicial sense diagnòstic d’activació. En registrar el panell es mostra «Compte connectat» si hi ha vinculació desada, o la invitació a connectar si no n’hi ha. Es reserva «pendent d’activació» per a l’absència real del client OAuth. També es refresca l’estat quan una altra pestanya canvia la vinculació, sense trepitjar una sincronització en curs. Els resultats i errors de l’operació actual es conserven; no s’afirma que les dades estan al dia només per tenir un compte vinculat. URL del mòdul versionada a `20261007-status-1`.
 
 **Proves:** inici configurat sense compte, sincronització seguida d’una recàrrega amb el mateix emmagatzematge, recuperació de compte/data sense peticions automàtiques, errors posteriors conservats, desconnexió en una altra pestanya i estat sense client OAuth.
+
+## [2026-10-07] - Un cor visible podia quedar fora de la sincronització
+
+**Símptoma notificat:** un m’agrada del mòbil no apareix a l’ordinador després de sincronitzar i recarregar. No s’ha pogut inspeccionar l’emmagatzematge dels aparells de l’usuari.
+
+**Error reproduït:** `likes.toggleLikeVideo()` retornava l’estat nou i pintava el cor, però ajornava l’escriptura amb `requestIdleCallback` sense termini. Si encara no s’havia executat en sincronitzar, Drive recollia les dades anteriors. A més, diversos clics seguits podien partir de la mateixa llista antiga, i un callback pendent podia sobreescriure favorits rebuts de Drive. Les proves carreguen el mòdul real de cors amb el callback inactiu pendent i simulen dos aparells; fallaven abans del canvi.
+
+**Solució:** el cor es desa immediatament, abans de retornar l’estat visual i emetre l’esdeveniment dels gustos. La sincronització conserva també un resum local de l’operació completada (nombre d’aparells amb còpia i m’agrada resultants), visible amb el compte i la data després de recarregar. Serveix per diagnosticar si el problema notificat persisteix; no indica actualització automàtica. URLs de `likes.js` i `google-drive-sync.js` versionades.
+
+**Proves:** afegir i treure un cor amb els callbacks inactius pendents, enviament a un segon aparell, diversos clics seguits, resum persistent després de recarregar. 67 proves relacionades superades. La confirmació sobre els aparells reals queda pendent.
