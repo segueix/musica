@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-07T16:51:04.674Z",
+  "generatedAt": "2026-10-07T17:12:30.099Z",
   "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
   "deepPagesFetched": 0,
   "deepChannelCount": 18,
-  "topicChannelCount": 253,
+  "topicChannelCount": 255,
   "governedChannelCount": 90,
   "topicCoverage": [
     {
@@ -1098,7 +1098,7 @@
   ],
   "topicGovernance": "apply",
   "governedReclassified": {},
-  "topicHiddenCount": 0,
+  "topicHiddenCount": 20,
   "topicChannels": [
     {
       "id": "UClwN1cpIrafSRa8MbOMAvvQ",
@@ -1927,6 +1927,13 @@
       "withClip": 26
     },
     {
+      "id": "UCCjTaOHQqmy0VD2vkZVxxoA",
+      "name": "La Madam",
+      "tracks": 32,
+      "selected": 30,
+      "withClip": 0
+    },
+    {
       "id": "UCRxi4RlTmeoc97rxkLxTiBQ",
       "name": "La Mousse",
       "tracks": 12,
@@ -2030,6 +2037,13 @@
       "tracks": 89,
       "selected": 24,
       "withClip": 38
+    },
+    {
+      "id": "UCcCWhlBeuoXoqEXUcCZaTxQ",
+      "name": "Madam(s)",
+      "tracks": 10,
+      "selected": 10,
+      "withClip": 0
     },
     {
       "id": "UCG5zbsU-wyiM9QP5oYKhB4A",
@@ -2844,13 +2858,13 @@
       "withClip": 0
     }
   ],
-  "indexedChannelCount": 466,
-  "resolvedChannelCount": 466,
-  "feedChannelCount": 466,
-  "rawPublicVideoCount": 5212,
-  "feedVideoCount": 4676,
-  "acceptedMusicCount": 4635,
-  "categoryEligibleVideoCount": 4630,
+  "indexedChannelCount": 468,
+  "resolvedChannelCount": 468,
+  "feedChannelCount": 468,
+  "rawPublicVideoCount": 5242,
+  "feedVideoCount": 4686,
+  "acceptedMusicCount": 4665,
+  "categoryEligibleVideoCount": 4660,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
     "before": 0,
@@ -2859,7 +2873,7 @@
   },
   "contentReviewCount": 542,
   "contentTypeCounts": {
-    "song": 4516,
+    "song": 4546,
     "live_song": 114,
     "album": 5,
     "other": 35,
@@ -2870,6 +2884,6 @@
   "channelsWithoutVideos": [],
   "channelsWithoutAcceptedMusic": [],
   "allIndexedChannelsVisible": true,
-  "publishedFeedVideoCount": 4676,
+  "publishedFeedVideoCount": 4686,
   "publishedShortVideoCount": 0
 }
