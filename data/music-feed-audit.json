@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-07T16:28:27.898Z",
+  "generatedAt": "2026-10-07T16:48:58.496Z",
   "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
   "deepPagesFetched": 0,
   "deepChannelCount": 18,
-  "topicChannelCount": 248,
+  "topicChannelCount": 253,
   "governedChannelCount": 90,
   "topicCoverage": [
     {
@@ -1283,6 +1283,13 @@
       "withClip": 37
     },
     {
+      "id": "UC8eN3E2fiYV0wtMwds1ZK9g",
+      "name": "Blay Tritono",
+      "tracks": 9,
+      "selected": 6,
+      "withClip": 0
+    },
+    {
       "id": "UCMIJ1Y_N61x72rTIAeyzRKA",
       "name": "Boom Boom Fighters",
       "tracks": 45,
@@ -1829,6 +1836,13 @@
       "withClip": 8
     },
     {
+      "id": "UCw04zTLucny6vY-O5-qE21A",
+      "name": "Jordi Sabatés",
+      "tracks": 208,
+      "selected": 40,
+      "withClip": 0
+    },
+    {
       "id": "UCvrdIqqti5520O_bz3ik57Q",
       "name": "Jordi Tonietti",
       "tracks": 1,
@@ -1951,6 +1965,13 @@
       "id": "UC63BTrp525uyzMd-YTMAt_w",
       "name": "La Troba Kung-Fú",
       "tracks": 71,
+      "selected": 40,
+      "withClip": 0
+    },
+    {
+      "id": "UCDxUh6YqVfCZ-DwSDQy1mNQ",
+      "name": "La Vella Dixieland",
+      "tracks": 100,
       "selected": 40,
       "withClip": 0
     },
@@ -2226,6 +2247,13 @@
       "tracks": 7,
       "selected": 5,
       "withClip": 1
+    },
+    {
+      "id": "UCJJ6X0cboaPc-rl_XeafowQ",
+      "name": "Orquestra Mirasol",
+      "tracks": 32,
+      "selected": 25,
+      "withClip": 0
     },
     {
       "id": "UCuOXOJ1KW_sCpse10ImvXRg",
@@ -2512,6 +2540,13 @@
       "name": "Scotty Dk",
       "tracks": 1,
       "selected": 1,
+      "withClip": 0
+    },
+    {
+      "id": "UC_htjc02Q62QuGP1EOyOSnQ",
+      "name": "Secta Sònica",
+      "tracks": 20,
+      "selected": 18,
       "withClip": 0
     },
     {
@@ -2809,13 +2844,13 @@
       "withClip": 0
     }
   ],
-  "indexedChannelCount": 461,
-  "resolvedChannelCount": 461,
-  "feedChannelCount": 461,
-  "rawPublicVideoCount": 5197,
-  "feedVideoCount": 4661,
-  "acceptedMusicCount": 4620,
-  "categoryEligibleVideoCount": 4615,
+  "indexedChannelCount": 466,
+  "resolvedChannelCount": 466,
+  "feedChannelCount": 466,
+  "rawPublicVideoCount": 5210,
+  "feedVideoCount": 4673,
+  "acceptedMusicCount": 4633,
+  "categoryEligibleVideoCount": 4628,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
     "before": 0,
@@ -2824,7 +2859,7 @@
   },
   "contentReviewCount": 542,
   "contentTypeCounts": {
-    "song": 4501,
+    "song": 4514,
     "live_song": 114,
     "album": 5,
     "other": 35,
@@ -2832,11 +2867,9 @@
   },
   "unresolvedChannelIds": [],
   "channelsWithoutUploads": [],
-  "channelsWithoutVideos": [
-    "UCg6lVNl78-THJI1w8dSy0bA"
-  ],
+  "channelsWithoutVideos": [],
   "channelsWithoutAcceptedMusic": [],
   "allIndexedChannelsVisible": true,
-  "publishedFeedVideoCount": 4661,
+  "publishedFeedVideoCount": 4673,
   "publishedShortVideoCount": 0
 }
