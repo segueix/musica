@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-07T16:45:48.677Z",
+  "updatedAt": "2026-10-07T16:46:22.107Z",
   "artists": [
     {
       "name": "2ES",
@@ -30734,7 +30734,23 @@
       "musicbrainzId": null,
       "youtube": {
         "channels": [],
-        "searchCandidates": []
+        "searchCandidates": [
+          {
+            "id": "UC8eN3E2fiYV0wtMwds1ZK9g",
+            "title": "Blay Tritono - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 22,
+            "thumbnail": "https://yt3.ggpht.com/vf7ndlwTyKIDPAlkNMghFmAOr9lbaZh2DBzzwRh6SYlElXEXwpjc17tbs1epZ6dHKm-LQtMFr7w=s240-c-k-c0x00ffffff-no-rj",
+            "score": 85,
+            "reasons": [
+              "nom exacte de canal Topic",
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-07T16:46:20.501Z"
+          }
+        ]
       },
       "confidence": "baixa",
       "reviewStatus": "pendent",
@@ -30744,7 +30760,17 @@
         "genre:manual"
       ],
       "lastChecked": "2026-10-07T16:45:48.674Z",
-      "notes": "Selecció instrumental pendent de verificar."
+      "notes": "Selecció instrumental pendent de verificar.",
+      "enrichment": {
+        "youtubeSearch": {
+          "checkedAt": "2026-10-07T16:46:20.501Z",
+          "status": "candidats",
+          "query": "Blay Tritono - Topic",
+          "resultCount": 1,
+          "bestScore": 85,
+          "autoAcceptedId": null
+        }
+      }
     },
     {
       "name": "Jordi Sabatés",
@@ -30758,7 +30784,51 @@
       "musicbrainzId": null,
       "youtube": {
         "channels": [],
-        "searchCandidates": []
+        "searchCandidates": [
+          {
+            "id": "UCw04zTLucny6vY-O5-qE21A",
+            "title": "Jordi Sabatés - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 143,
+            "thumbnail": "https://yt3.ggpht.com/nl9OtpFWxUVeYuDQYyv23ugXWv9cLfY_dgEeyGAJ4DmXNWD9OmkNcHcqRRTi86uR4yspyXotW7k=s240-c-k-c0x00ffffff-no-rj",
+            "score": 85,
+            "reasons": [
+              "nom exacte de canal Topic",
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-07T16:46:20.892Z"
+          },
+          {
+            "id": "UCUo3MKeIV7pF-WJOhuDlk8Q",
+            "title": "Jordi Sabatés - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 0,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_l8eo8-U6Hq182HvGSivhWsfhg3pOCinNGPXomA3iYdj_2Aq9hR3pP-TUmOw-mA8K_Hzw=s240-c-k-c0x00ffffff-no-rj",
+            "score": 80,
+            "reasons": [
+              "nom exacte de canal Topic"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-07T16:46:20.892Z"
+          },
+          {
+            "id": "UChwgA7YKTQINRdvN0rA4eMA",
+            "title": "Carmen Bustamante & Jordi Sabatés - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 4,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_l8L0TJqZB5vy_wSoWnPUp41hZqjFKi2vrB8iGXThNWdbedSaomLTqHOwXLKh-b_8ECSQ=s240-c-k-c0x00ffffff-no-rj",
+            "score": 35,
+            "reasons": [
+              "nom parcial"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-07T16:46:20.892Z"
+          }
+        ]
       },
       "confidence": "baixa",
       "reviewStatus": "pendent",
@@ -30768,7 +30838,17 @@
         "genre:manual"
       ],
       "lastChecked": "2026-10-07T16:45:48.677Z",
-      "notes": "Selecció instrumental pendent de verificar."
+      "notes": "Selecció instrumental pendent de verificar.",
+      "enrichment": {
+        "youtubeSearch": {
+          "checkedAt": "2026-10-07T16:46:20.892Z",
+          "status": "candidats",
+          "query": "Jordi Sabatés - Topic",
+          "resultCount": 3,
+          "bestScore": 85,
+          "autoAcceptedId": null
+        }
+      }
     },
     {
       "name": "Orquestra Mirasol",
@@ -30782,7 +30862,47 @@
       "musicbrainzId": null,
       "youtube": {
         "channels": [],
-        "searchCandidates": []
+        "searchCandidates": [
+          {
+            "id": "UCJJ6X0cboaPc-rl_XeafowQ",
+            "title": "Orquestra Mirasol - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 131,
+            "thumbnail": "https://yt3.ggpht.com/FLDd6O4OyNdRszN5ZpFf_Nq9ReIU5KX3ddnfgVbLURZWoMQvvBuF9-oGUiItQDXjj7W6tYiWIA=s240-c-k-c0x00ffffff-no-rj",
+            "score": 85,
+            "reasons": [
+              "nom exacte de canal Topic",
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-07T16:46:21.212Z"
+          },
+          {
+            "id": "UCK3s8lk3v9CMLONOcTBOdNw",
+            "title": "Xavier Batllés - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 16,
+            "thumbnail": "https://yt3.ggpht.com/i05YijIdx-VXZ4fbvnTSmzjASdeQaR6OxXQrh6gpYX6eBaWRpmtqCuRHyLzPQhmWdGvXwxw2uQ=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-07T16:46:21.212Z"
+          },
+          {
+            "id": "UCTHx1M9Dh9PnjJQrJybBQiw",
+            "title": "Orquesta Raúl Medina - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 1820,
+            "thumbnail": "http://yt3.ggpht.com/HvU6yxWLwxkpLWqHSkBDZz-tjeXei2q249NvCh9BMJFdjOMTzlNmV6hH5nEbD6K4OTA1fjvlXh_EU01NVQ=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-07T16:46:21.212Z"
+          }
+        ]
       },
       "confidence": "baixa",
       "reviewStatus": "pendent",
@@ -30792,7 +30912,17 @@
         "genre:manual"
       ],
       "lastChecked": "2026-10-07T16:45:48.677Z",
-      "notes": "Selecció instrumental pendent de verificar."
+      "notes": "Selecció instrumental pendent de verificar.",
+      "enrichment": {
+        "youtubeSearch": {
+          "checkedAt": "2026-10-07T16:46:21.212Z",
+          "status": "candidats",
+          "query": "Orquestra Mirasol - Topic",
+          "resultCount": 3,
+          "bestScore": 85,
+          "autoAcceptedId": null
+        }
+      }
     },
     {
       "name": "Secta Sònica",
@@ -30806,7 +30936,23 @@
       "musicbrainzId": null,
       "youtube": {
         "channels": [],
-        "searchCandidates": []
+        "searchCandidates": [
+          {
+            "id": "UC_htjc02Q62QuGP1EOyOSnQ",
+            "title": "Secta Sònica - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 68,
+            "thumbnail": "https://yt3.ggpht.com/9EZNIPlDwsEUaqlooFGY_PkQQ6xuwKGVXu6fedTcvlw76_CunmzGo4Rrw4VG8fsefCkecWDK=s240-c-k-c0x00ffffff-no-rj",
+            "score": 85,
+            "reasons": [
+              "nom exacte de canal Topic",
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-07T16:46:21.483Z"
+          }
+        ]
       },
       "confidence": "baixa",
       "reviewStatus": "pendent",
@@ -30816,7 +30962,17 @@
         "genre:manual"
       ],
       "lastChecked": "2026-10-07T16:45:48.677Z",
-      "notes": "Selecció instrumental pendent de verificar."
+      "notes": "Selecció instrumental pendent de verificar.",
+      "enrichment": {
+        "youtubeSearch": {
+          "checkedAt": "2026-10-07T16:46:21.483Z",
+          "status": "candidats",
+          "query": "Secta Sònica - Topic",
+          "resultCount": 1,
+          "bestScore": 85,
+          "autoAcceptedId": null
+        }
+      }
     },
     {
       "name": "La Vella Dixieland",
@@ -30830,7 +30986,51 @@
       "musicbrainzId": null,
       "youtube": {
         "channels": [],
-        "searchCandidates": []
+        "searchCandidates": [
+          {
+            "id": "UCYtcI0I7SRj7AuP731hNgzA",
+            "title": "La Vella Dixieland oficial",
+            "handle": "@lavelladixieland",
+            "description": "Canal oficial de La Vella Dixieland",
+            "subscriberCount": 36,
+            "thumbnail": "https://yt3.ggpht.com/e24KhPV1u86SxhMsHtfGs1iYTbX44QU46urBVirgkp19evxHRlzEZS4Xy8Hd5jvEVAlFwNCW=s240-c-k-c0x00ffffff-no-rj",
+            "score": 100,
+            "reasons": [
+              "nom exacte traient oficial",
+              "handle exacte",
+              "marca oficial"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-07T16:46:21.774Z"
+          },
+          {
+            "id": "UCDxUh6YqVfCZ-DwSDQy1mNQ",
+            "title": "La Vella Dixieland - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 126,
+            "thumbnail": "https://yt3.ggpht.com/sAYmVY_jg1-3CRvgdR9fhXXdxYJYtPEjW46sv6rBNe6taHIycKkB7-h3r-CUUwvv3qKMyINCjA=s240-c-k-c0x00ffffff-no-rj",
+            "score": 85,
+            "reasons": [
+              "nom exacte de canal Topic",
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-07T16:46:21.774Z"
+          },
+          {
+            "id": "UCNjsGpt-HoH3xXI7t3mE4dg",
+            "title": "Lavella Dixieland - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 3,
+            "thumbnail": "https://yt3.ggpht.com/qeA_sHH3Ix-r_nX0AuEmr7TETkwanjzTPIq167W3qzEwjvtp-JyAd1hKfQtU9Zj5JA4Wqb-aSBo=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-07T16:46:21.774Z"
+          }
+        ]
       },
       "confidence": "baixa",
       "reviewStatus": "pendent",
@@ -30840,7 +31040,17 @@
         "genre:manual"
       ],
       "lastChecked": "2026-10-07T16:45:48.677Z",
-      "notes": "Selecció instrumental pendent de verificar."
+      "notes": "Selecció instrumental pendent de verificar.",
+      "enrichment": {
+        "youtubeSearch": {
+          "checkedAt": "2026-10-07T16:46:21.774Z",
+          "status": "candidats",
+          "query": "La Vella Dixieland - Topic",
+          "resultCount": 3,
+          "bestScore": 100,
+          "autoAcceptedId": null
+        }
+      }
     }
   ]
 }
