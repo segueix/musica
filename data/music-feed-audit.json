@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-07T16:17:48.749Z",
+  "generatedAt": "2026-10-07T16:20:22.292Z",
   "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
   "deepPagesFetched": 0,
@@ -1097,9 +1097,7 @@
     }
   ],
   "topicGovernance": "apply",
-  "governedReclassified": {
-    "other": 3
-  },
+  "governedReclassified": {},
   "topicHiddenCount": 0,
   "topicChannels": [
     {
@@ -2316,8 +2314,8 @@
     {
       "id": "UCVowitUeUXlew8bjVjBOtUQ",
       "name": "Peret",
-      "tracks": 500,
-      "selected": 40,
+      "tracks": 4,
+      "selected": 4,
       "withClip": 0
     },
     {
@@ -2786,10 +2784,10 @@
   "indexedChannelCount": 457,
   "resolvedChannelCount": 457,
   "feedChannelCount": 457,
-  "rawPublicVideoCount": 5294,
-  "feedVideoCount": 4758,
-  "acceptedMusicCount": 4707,
-  "categoryEligibleVideoCount": 4702,
+  "rawPublicVideoCount": 5187,
+  "feedVideoCount": 4651,
+  "acceptedMusicCount": 4610,
+  "categoryEligibleVideoCount": 4605,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
     "before": 0,
@@ -2798,10 +2796,10 @@
   },
   "contentReviewCount": 542,
   "contentTypeCounts": {
-    "song": 4586,
-    "live_song": 116,
+    "song": 4491,
+    "live_song": 114,
     "album": 5,
-    "other": 45,
+    "other": 35,
     "review": 542
   },
   "unresolvedChannelIds": [],
@@ -2809,6 +2807,6 @@
   "channelsWithoutVideos": [],
   "channelsWithoutAcceptedMusic": [],
   "allIndexedChannelsVisible": true,
-  "publishedFeedVideoCount": 4647,
+  "publishedFeedVideoCount": 4651,
   "publishedShortVideoCount": 0
 }
