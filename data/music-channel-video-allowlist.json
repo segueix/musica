@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-07T16:19:30.629Z",
+  "updatedAt": "2026-10-07T16:26:21.946Z",
   "description": "Llista blanca per a canals on Segueix Música només ha d'ingerir vídeos concrets. Admet títols exactes, fragments obligatoris i fragments exclosos.",
   "channels": {
     "UCKpscwdWlVaMqcA81vLI7OA": {
@@ -2185,6 +2185,108 @@
         "El cant dels ocells",
         "Virolai",
         "El Virolai"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCARSXSWwSje53JsJgzLCtpA": {
+      "artist": "The Anti-Patiks",
+      "note": "Selecció inicial: Les Pitjors Cançons del Punk Rock Català. Resta pendent de revisió.",
+      "allowedTitles": [
+        "Només el Punk Rock Em Fa Feliç",
+        "No Estem Bé",
+        "Barrets de Palla",
+        "Milícia",
+        "Tieta Roser",
+        "Perdre el Control",
+        "Sols a la Ciutat",
+        "Arreplegats",
+        "Pícnic Jazz",
+        "Fent el Préssec",
+        "Mauthausen Vallès",
+        "No Estic Preparat Per Ser Normal",
+        "Llista Negra",
+        "Ai Per Favor",
+        "T'estimo",
+        "Sirenes Des del Llit",
+        "Indevises",
+        "Així, Enlloc",
+        "Vells Temps",
+        "Els Nois"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCuBUwUHwHaYGai1Enee7DSw": {
+      "artist": "The Anti-Patiks",
+      "note": "Selecció inicial: Les Pitjors Cançons del Punk Rock Català. Resta pendent de revisió.",
+      "allowedTitles": [
+        "Només el Punk Rock Em Fa Feliç",
+        "No Estem Bé",
+        "Barrets de Palla",
+        "Milícia",
+        "Tieta Roser",
+        "Perdre el Control",
+        "Sols a la Ciutat",
+        "Arreplegats",
+        "Pícnic Jazz",
+        "Fent el Préssec",
+        "Mauthausen Vallès",
+        "No Estic Preparat Per Ser Normal",
+        "Llista Negra",
+        "Ai Per Favor",
+        "T'estimo",
+        "Sirenes Des del Llit",
+        "Indevises",
+        "Així, Enlloc",
+        "Vells Temps",
+        "Els Nois"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCqqRg6HX-P769DEoffrQMEQ": {
+      "artist": "Ypnosi",
+      "note": "Selecció inicial: disc Em sap greu riure (2025), en català. Resta pendent de revisió.",
+      "allowedTitles": [
+        "L’atracador del poble",
+        "Als funerals dels meus amics",
+        "Quin mal em fa",
+        "Eulàlia",
+        "El que diu la gent",
+        "Ballem",
+        "Oriol",
+        "Sempre pensa en ell",
+        "La història"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCg6lVNl78-THJI1w8dSy0bA": {
+      "artist": "Ypnosi",
+      "note": "Selecció inicial: disc Em sap greu riure (2025), en català. Resta pendent de revisió.",
+      "allowedTitles": [
+        "L’atracador del poble",
+        "Als funerals dels meus amics",
+        "Quin mal em fa",
+        "Eulàlia",
+        "El que diu la gent",
+        "Ballem",
+        "Oriol",
+        "Sempre pensa en ell",
+        "La història"
       ],
       "acceptedMusicOnly": true,
       "allowedContentTypes": [

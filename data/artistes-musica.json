@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-07T16:25:22.367Z",
+  "updatedAt": "2026-10-07T16:26:21.946Z",
   "artists": [
     {
       "name": "2ES",
@@ -4774,8 +4774,8 @@
         ]
       },
       "confidence": "alta",
-      "reviewStatus": "pendent",
-      "active": false,
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
         "https://www.wikidata.org/wiki/Q20105693",
         "wikidata:performed-catalan-work",
@@ -30559,7 +30559,22 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCARSXSWwSje53JsJgzLCtpA",
+            "name": "The Anti-Patiks - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": true
+          },
+          {
+            "id": "UCuBUwUHwHaYGai1Enee7DSw",
+            "name": "The Anti-Patiks - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": false
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UCARSXSWwSje53JsJgzLCtpA",
@@ -30604,15 +30619,16 @@
           }
         ]
       },
-      "confidence": "baixa",
-      "reviewStatus": "pendent",
-      "active": false,
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
         "manual-user-2026-10-07",
-        "genre:manual"
+        "genre:manual",
+        "https://the-anti-patiks.bandcamp.com/album/les-pitjors-can-ons-del-punk-rock-catal-2"
       ],
-      "lastChecked": "2026-10-07T16:24:39.526Z",
-      "notes": "Alta sol·licitada per l’usuari; canal pendent de verificació.",
+      "lastChecked": "2026-10-07T16:26:21.946Z",
+      "notes": "Selecció inicial: Les Pitjors Cançons del Punk Rock Català. Resta pendent de revisió.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-07T16:25:21.598Z",
@@ -30637,7 +30653,22 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCqqRg6HX-P769DEoffrQMEQ",
+            "name": "YPNOSI - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": true
+          },
+          {
+            "id": "UCg6lVNl78-THJI1w8dSy0bA",
+            "name": "YPNOSI - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": false
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UCqqRg6HX-P769DEoffrQMEQ",
@@ -30670,15 +30701,16 @@
           }
         ]
       },
-      "confidence": "baixa",
-      "reviewStatus": "pendent",
-      "active": false,
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
         "manual-user-2026-10-07",
-        "genre:manual"
+        "genre:manual",
+        "https://music.amazon.es/albums/B0FWFMQ748"
       ],
-      "lastChecked": "2026-10-07T16:24:39.526Z",
-      "notes": "Alta sol·licitada per l’usuari; canal pendent de verificació.",
+      "lastChecked": "2026-10-07T16:26:21.946Z",
+      "notes": "Selecció inicial: disc Em sap greu riure (2025), en català. Resta pendent de revisió.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-07T16:25:22.018Z",
