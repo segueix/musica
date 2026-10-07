@@ -8973,7 +8973,10 @@ function loadVideoInSequence({ autoPlay = true, replaceHistory = false, startAt 
     focusTVPlayerViewport();
     // En TV a pantalla completa el vídeo següent continua dins del mateix reproductor visible.
     // No fem aquest encadenat per mantenir àudio quan la pestanya és amagada o Chrome està minimitzat.
-    const keepLivePlayer = video.source !== 'static' && isTVPlaybackMode() && canSwapLivePlayerVideo();
+    // Als aparells d'Apple, també qualsevol cua amb autoplay: un reproductor nou no sonaria sense un toc.
+    const keepLivePlayer =
+        video.source !== 'static' &&
+        ((isTVPlaybackMode() && canSwapLivePlayerVideo()) || (autoPlay && canKeepApplePlayer()));
     lastTVAdvanceAt = Date.now();
     // Per defecte les cues continuen amb autoplay només mentre la pàgina és visible.
     // Si queda amagada/minimitzada, qualsevol canvi de cua es prepara en pausa.
@@ -10157,6 +10160,62 @@ function canSwapLivePlayerVideo() {
     return Boolean(isPlayerFullscreen() && getLiveYouTubeIframe() && hasAcceptedYouTubeCookies());
 }
 
+// Aparells d'Apple (iPhone, iPad, Mac): Safari no deixa sonar un reproductor de YouTube nou sense un toc de l'usuari,
+// i l'app en creava un a cada cançó de la cua. Amb la pàgina visible, la cançó següent es demana al mateix reproductor
+// (`loadVideoById`, swapLivePlayerVideo), que ja ha sonat després d'un toc i continua sonant. Si no respon, es recrea
+// de la manera normal i, si tot i així no arrenca, watchAppleAutoplay() avisa a la barra de controls.
+function canKeepApplePlayer() {
+    return Boolean(
+        isAppleDevice() && document.visibilityState !== 'hidden' && getLiveYouTubeIframe() && hasAcceptedYouTubeCookies()
+    );
+}
+
+function canKeepLivePlayer() {
+    return canSwapLivePlayerVideo() || canKeepApplePlayer();
+}
+
+// ---------- Reproducció automàtica bloquejada (aparells d'Apple) ----------
+// Si una cançó que havia d'arrencar sola continua sense començar (-1 = no iniciat, 5 = preparat, '' = cap avís) al cap
+// d'uns segons, Safari l'ha bloquejada: es diu a la barra de sota el reproductor (mai damunt del vídeo) i el play
+// parpelleja. Desapareix quan sona.
+const AUTOPLAY_BLOCK_CHECK_MS = 4000;
+let autoplayBlockTimer = null;
+
+function isAutoplayBlockedState(state) {
+    return state === '' || state === '-1' || state === '5';
+}
+
+function setAutoplayBlockedHint(visible) {
+    const bar = document.getElementById('playerExternalControls');
+    const hint = document.getElementById('playerAutoplayHint');
+    bar?.classList.toggle('is-autoplay-blocked', visible);
+    if (hint) hint.hidden = !visible;
+}
+
+function watchAppleAutoplay(videoId) {
+    if (autoplayBlockTimer) {
+        clearTimeout(autoplayBlockTimer);
+        autoplayBlockTimer = null;
+    }
+    setAutoplayBlockedHint(false);
+    const id = String(videoId || '').trim();
+    if (!id || !isAppleDevice()) {
+        return;
+    }
+    autoplayBlockTimer = setTimeout(() => {
+        autoplayBlockTimer = null;
+        if (document.visibilityState === 'hidden' || !getLiveYouTubeIframe()) {
+            return;
+        }
+        if (String(videoPlayer?.dataset?.playingVideoId || '') !== id) {
+            return;
+        }
+        if (isAutoplayBlockedState(String(videoPlayer?.dataset?.playerState ?? ''))) {
+            setAutoplayBlockedHint(true);
+        }
+    }, AUTOPLAY_BLOCK_CHECK_MS);
+}
+
 function cancelLiveSwapFallback() {
     if (liveSwapTimer) {
         clearTimeout(liveSwapTimer);
@@ -10223,6 +10282,7 @@ function swapLivePlayerVideo({ videoId, startAt = 0, thumbnail = '', title = '' 
     setPlaceholderImage(thumbnail, title);
 
     cancelLiveSwapFallback();
+    watchAppleAutoplay(id);
     liveSwapPending = { videoId: id, startAt: safeStartAt, thumbnail, title };
     liveSwapTimer = setTimeout(() => {
         const pendent = liveSwapPending;
@@ -10230,7 +10290,18 @@ function swapLivePlayerVideo({ videoId, startAt = 0, thumbnail = '', title = '' 
         if (!pendent || String(currentVideoId) !== pendent.videoId) {
             return;
         }
-        const recarregar = () =>
+        const recarregar = () => {
+            // Als aparells d'Apple l'encadenat també es fa a la finestra flotant: s'hi ha de quedar
+            if (isMiniPlayerActive() && !isPlayerFullscreen()) {
+                queuePlayback({
+                    videoId: pendent.videoId,
+                    source: 'api',
+                    thumbnail: pendent.thumbnail,
+                    title: pendent.title,
+                    autoPlay: true,
+                });
+                return;
+            }
             prepareWatchPlaybackPreview({
                 videoId: pendent.videoId,
                 source: 'api',
@@ -10239,6 +10310,7 @@ function swapLivePlayerVideo({ videoId, startAt = 0, thumbnail = '', title = '' 
                 title: pendent.title,
                 autoPlay: true,
             });
+        };
         // El reproductor no ha respost: es carrega de la manera normal. Abans, la pantalla
         // completa passa al contenidor, que no es destrueix en recrear l'iframe. El traspàs
         // és asíncron i s'ha d'esperar: si l'iframe desapareix abans d'acabar, se'n surt.
@@ -10375,6 +10447,7 @@ function prepareWatchPlaybackPreview({ videoId, source, videoUrl, thumbnail, tit
         updatePlayerIframe({ source, videoId, videoUrl, startAt });
         clearPlayOverlay();
         preparePlayerForPlayback({ thumbnail, title });
+        watchAppleAutoplay(videoId);
         requestAnimationFrame(updatePlayerPosition);
         return;
     }
@@ -10411,6 +10484,7 @@ function queuePlaybackLegacyImpl({ videoId, source, videoUrl, thumbnail, title, 
     // sola, sense esperar un clic al placeholder (que queda darrere la finestreta).
     if (autoPlay && hasAcceptedYouTubeCookies()) {
         loadNewVideoInMiniPlayer(videoId, source, videoUrl, thumbnail, title);
+        watchAppleAutoplay(videoId);
         return;
     }
     ensurePlayOverlay(() => loadNewVideoInMiniPlayer(videoId, source, videoUrl, thumbnail, title));
@@ -10775,6 +10849,7 @@ function initExternalPlayerControls() {
         const id = String(videoPlayer.dataset.playingVideoId || '');
         bar.hidden = !hasIframe || !id;
         const playing = videoPlayer.dataset.playerState === '1' || videoPlayer.dataset.playerState === '3';
+        if (playing || !hasIframe) setAutoplayBlockedHint(false);
         toggle.classList.toggle('is-playing', playing);
         toggle.setAttribute('aria-label', playing ? 'Pausa' : 'Reprodueix');
         toggle.title = playing ? 'Pausa' : 'Reprodueix';
@@ -10799,7 +10874,12 @@ function initExternalPlayerControls() {
     };
 
     prev.addEventListener('click', goToPreviousFromOverlay);
-    toggle.addEventListener('click', () => toggleMainPlayerPlayback());
+    toggle.addEventListener('click', () => {
+        const blocked = bar.classList.contains('is-autoplay-blocked');
+        toggleMainPlayerPlayback();
+        // Si Safari continua sense deixar-la sonar, l'avís torna a sortir (cal tocar el vídeo mateix)
+        if (blocked) watchAppleAutoplay(videoPlayer.dataset.playingVideoId);
+    });
     next.addEventListener('click', advanceQueueFromOverlay);
     mini.addEventListener('click', () => {
         if (isMiniPlayerActive()) expandMiniPlayer();
@@ -11938,7 +12018,7 @@ async function showVideoFromAPILegacyImpl(videoId, options = {}) {
     // l'iframe en trauria l'usuari. La resta de la pàgina s'actualitza igualment.
     const swapped =
         options.keepLivePlayer === true &&
-        canSwapLivePlayerVideo() &&
+        canKeepLivePlayer() &&
         swapLivePlayerVideo({
             videoId,
             startAt,

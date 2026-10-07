@@ -6248,3 +6248,49 @@ body.is-video-pip .video-placeholder.is-placeholder-hidden {
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+
+/* ---------- Reproducció automàtica bloquejada (aparells d'Apple) ----------
+   Safari no deixa sonar un reproductor nou sense un toc: si una cançó de la cua no arrenca sola, app.js
+   (watchAppleAutoplay) posa `.is-autoplay-blocked` a la barra de controls. L'avís va a sota dels botons (mai damunt
+   del vídeo) i el play parpelleja; a la barra petita de la finestra flotant només parpelleja el play. */
+.player-external-controls.is-autoplay-blocked:not(.is-docked) {
+    flex-wrap: wrap;
+}
+
+.player-autoplay-hint {
+    flex: 1 0 100%;
+    order: 99;
+    margin: 0;
+    padding: 0 16px;
+    color: var(--pt-text);
+    font-size: 0.9rem;
+    line-height: 1.35;
+    text-align: center;
+}
+
+.player-autoplay-hint[hidden],
+.player-external-controls.is-docked .player-autoplay-hint {
+    display: none;
+}
+
+.player-external-controls.is-autoplay-blocked .player-external-btn--main {
+    animation: pec-autoplay-pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes pec-autoplay-pulse {
+    0%,
+    100% {
+        box-shadow: 0 0 0 0 rgba(214, 237, 132, 0.55);
+    }
+    50% {
+        box-shadow: 0 0 0 10px rgba(214, 237, 132, 0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .player-external-controls.is-autoplay-blocked .player-external-btn--main {
+        animation: none;
+        outline: 2px solid var(--pt-accent);
+        outline-offset: 3px;
+    }
+}
