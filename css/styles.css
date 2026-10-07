@@ -3343,8 +3343,9 @@ body.segueix-tv-playback.segueix-tv-active .chips-bar.home-categories.segueix-tv
     touch-action: none;
 }
 
-/* La finestreta flotant s'arrossega pel mànec de dalt (36 px): la resta del vídeo és del reproductor de YouTube, que
-   rep tots els tocs (play/pausa, barra de progrés...). Al mòbil la finestreta va ancorada a baix i no té mànec. */
+/* Mànec antic de la finestreta flotant: des del 2026-10-07 està amagat (portada.css) i la finestra es mou des de la
+   barra de controls de sota (app.js, initExternalPlayerControls). El vídeo és del reproductor de YouTube, que rep tots
+   els tocs. Al mòbil la finestreta va ancorada a baix i no té mànec. */
 .drag-handle-container {
     position: absolute;
     inset: 0 0 auto 0;

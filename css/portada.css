@@ -6082,8 +6082,9 @@ body.is-video-pip .video-placeholder.is-placeholder-hidden {
 
 /* ---------- Finestreta flotant: normes de YouTube (2026-10-05) ----------
    El vídeo inserit ha de fer com a mínim 200 × 200 px i no hi pot haver res al davant (ni transparent).
-   Ordinador: el mànec d'arrossegar i el de canviar la mida van en una franja de 36 px A SOBRE del vídeo
-   (padding-top amb content-box: l'alçada en línia que posa app.js és la del vídeo), i el vídeo fa com a mínim
+   Ordinador (2026-10-07): sense franja a sobre del vídeo. La finestra s'arrossega des de qualsevol espai buit de la
+   barra de controls enganxada a sota (#playerExternalControls.is-floating) i la mida es canvia amb el mànec de
+   l'extrem dret d'aquesta barra (#playerResizeHandle): res no va damunt del vídeo. El vídeo fa com a mínim
    356 × 200 px (MINI_PLAYER_MIN_WIDTH a app.js). Mòbil: com a mínim 200 px d'alçada encara que la pantalla sigui
    estreta (YouTube hi posa franges negres). */
 @media (min-width: 769px) {
@@ -6092,64 +6093,19 @@ body.is-video-pip .video-placeholder.is-placeholder-hidden {
         width: 360px;
         min-width: 356px;
         min-height: 200px;
-        padding-top: 36px;
+        padding-top: 0;
         aspect-ratio: auto;
         background: var(--pt-surface-2);
     }
 
-    /* height: auto perquè mani inset (amb height: 100% el vídeo baixava 36 px i els controls de YouTube quedaven
-       tallats per sota) */
     body #videoPlayer.mini-player-active .video-embed-wrap {
-        inset: 36px 0 0 0 !important;
+        inset: 0 !important;
         height: auto !important;
     }
 
-    body #videoPlayer.mini-player-active .drag-handle-container {
-        inset: 0 0 auto 0;
-        height: 36px;
-    }
-
-    body #videoPlayer.mini-player-active .drag-surface {
-        display: grid;
-        place-items: center;
-    }
-
-    body #videoPlayer.mini-player-active .drag-surface::before {
-        content: '';
-        width: 40px;
-        height: 4px;
-        border-radius: var(--pt-radius-pill);
-        background: var(--pt-muted);
-    }
-
-    body #videoPlayer.mini-player-active .drag-surface:active {
-        cursor: grabbing;
-    }
-
+    body #videoPlayer.mini-player-active .drag-handle-container,
     body #videoPlayer.mini-player-active .mini-player-resize-handle {
-        top: 0;
-        right: 0;
-        bottom: auto;
-        width: 36px;
-        height: 36px;
-        z-index: 2002;
-        cursor: ew-resize;
-    }
-
-    body #videoPlayer.mini-player-active .mini-player-resize-handle::after {
-        top: 50%;
-        right: 50%;
-        bottom: auto;
-        width: 10px;
-        height: 10px;
-        border-style: solid;
-        border-width: 2px 2px 0 0;
-        border-color: var(--pt-muted);
-        transform: translate(50%, -50%);
-    }
-
-    body #videoPlayer.mini-player-active .mini-player-resize-handle:hover::after {
-        border-color: var(--pt-accent);
+        display: none;
     }
 }
 
@@ -6293,4 +6249,55 @@ body.is-video-pip .video-placeholder.is-placeholder-hidden {
         outline: 2px solid var(--pt-accent);
         outline-offset: 3px;
     }
+}
+
+/* ---------- Finestra flotant (ordinador): moure i canviar la mida des de la barra de controls ----------
+   app.js (initExternalPlayerControls) mou la finestra en prémer i arrossegar un espai buit de la barra (no els
+   botons) i en canvia l'amplada amb #playerResizeHandle, a l'extrem dret. Només a la barra flotant d'escriptori. */
+.player-external-controls .pec-resize {
+    display: none;
+}
+
+.player-external-controls.is-floating {
+    cursor: grab;
+    touch-action: none;
+    user-select: none;
+}
+
+.player-external-controls.is-floating.is-dragging {
+    cursor: grabbing;
+}
+
+.player-external-controls.is-floating .player-external-btn {
+    cursor: pointer;
+}
+
+.player-external-controls.is-floating .pec-resize {
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: nwse-resize;
+}
+
+.player-external-controls.is-floating .pec-resize::after {
+    content: '';
+    position: absolute;
+    right: 6px;
+    bottom: 6px;
+    width: 9px;
+    height: 9px;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    border-color: var(--pt-muted);
+}
+
+.player-external-controls.is-floating .pec-resize:hover::after,
+.player-external-controls.is-floating .pec-resize:focus-visible::after {
+    border-color: var(--pt-accent);
 }

@@ -1,6 +1,6 @@
 // Verificació en navegador real del play/pausa del reproductor (normal i flotant): res no cobreix el reproductor de
 // YouTube (tots els tocs hi arriben) i els controls de l'app (anterior · play/pausa · següent · flotant · m'agrada) són a
-// la barra de sota (#playerExternalControls); la finestra flotant només s'arrossega pel mànec de dalt (escriptori) i al
+// la barra de sota (#playerExternalControls); la finestra flotant només s'arrossega des de la barra de controls (escriptori) i al
 // mòbil va ancorada a baix. Restaurar i tancar no van damunt del vídeo (normes de YouTube): són a la barra de controls,
 // que va enganxada sota la finestra flotant (al mòbil, petita i ancorada; a l'escriptori, la segueix).
 //
@@ -501,8 +501,8 @@ async function proves(browser, width, errors) {
         );
     } else {
         comprovar(
-            `${etiqueta}: el mànec de 36 px per arrossegar és en una franja a sobre del vídeo i cap botó hi és al damunt`,
-            mini.mànec === 36 && /drag-surface/.test(mini.dalt) && mini.botonsDamunt === 0,
+            `${etiqueta}: sense franja a sobre del vídeo: a dalt hi ha el reproductor i cap botó hi és al damunt`,
+            mini.mànec === null && /^iframe/.test(mini.dalt) && mini.botonsDamunt === 0,
             { mànec: mini.mànec, dalt: mini.dalt, botonsDamunt: mini.botonsDamunt }
         );
         comprovar(
@@ -536,12 +536,13 @@ async function proves(browser, width, errors) {
         flotant
     );
 
-    // 6c) Escriptori: arrossegar pel mànec mou la finestra, sense pausar res
+    // 6c) Escriptori: arrossegar un espai buit de la barra de controls mou la finestra, sense pausar res
     if (!mobile) {
         const abansBox = await punts(page);
-        await page.mouse.move(abansBox.l + abansBox.w / 2, abansBox.t + 18);
+        const barraBox = await page.locator('#playerExternalControls').boundingBox();
+        await page.mouse.move(barraBox.x + 4, barraBox.y + barraBox.height / 2);
         await page.mouse.down();
-        await page.mouse.move(abansBox.l + abansBox.w / 2 - 120, abansBox.t + 18 - 90, { steps: 6 });
+        await page.mouse.move(barraBox.x + 4 - 120, barraBox.y + barraBox.height / 2 - 90, { steps: 6 });
         await page.mouse.up();
         await page.waitForTimeout(400);
         const despres = await punts(page);
@@ -557,7 +558,7 @@ async function proves(browser, width, errors) {
             barra
         );
         comprovar(
-            `${etiqueta}: arrossegar pel mànec de dalt mou la finestra i no pausa el vídeo`,
+            `${etiqueta}: arrossegar la barra de controls mou la finestra i no pausa el vídeo`,
             Math.abs(despres.l - (abansBox.l - 120)) < 3 &&
                 Math.abs(despres.t - (abansBox.t - 90)) < 3 &&
                 (await estat(page)) === '1' &&
@@ -571,7 +572,7 @@ async function proves(browser, width, errors) {
 
     // 6c-bis) Escriptori: el mànec de canviar la mida no la deixa més petita que el mínim de YouTube
     if (!mobile) {
-        const r = await page.locator('#videoPlayer .mini-player-resize-handle').boundingBox();
+        const r = await page.locator('#playerResizeHandle').boundingBox();
         await page.mouse.move(r.x + r.width / 2, r.y + r.height / 2);
         await page.mouse.down();
         await page.mouse.move(r.x + r.width / 2 - 400, r.y + r.height / 2, { steps: 8 });
@@ -582,7 +583,7 @@ async function proves(browser, width, errors) {
             return [Math.round(box.width), Math.round(box.height)];
         });
         comprovar(
-            `${etiqueta}: en fer-la petita amb el mànec, el vídeo no baixa de 356 × 200 px`,
+            `${etiqueta}: en fer-la petita amb el mànec de la barra, el vídeo no baixa de 356 × 200 px`,
             petita[0] >= 356 && petita[1] >= 200,
             petita
         );
