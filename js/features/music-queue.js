@@ -912,6 +912,47 @@
     }
 
     // Estat de la cua per a la interfície (portada): què sona, què ve després i què espera.
+    // La cua és local a aquesta pestanya: només serveix per recuperar una recàrrega,
+    // inclosa la que aplica els canvis de Drive. No forma part de les dades sincronitzades.
+    function captureSession() {
+        if (!isPlaylistMode || !activePlaylistQueue.length || activePlaylistId === '__segueix_tv_discovery__') return null;
+        return {
+            v: 1,
+            queue: activePlaylistQueue,
+            index: currentPlaylistIndex,
+            id: activePlaylistId,
+            name: activePlaylistName,
+            radioCategory,
+            radioExtra,
+            radioMeta,
+            radioLabel,
+            searchRadio,
+            savedListId,
+            queuedIds: [...queuedIds],
+        };
+    }
+
+    function restoreSession(saved, videoId) {
+        if (!saved || saved.v !== 1 || saved.id === '__segueix_tv_discovery__' ||
+            !Array.isArray(saved.queue) || !saved.queue.length || saved.queue.length > 15000 ||
+            !Number.isInteger(saved.index) || saved.index < 0 || saved.index >= saved.queue.length ||
+            !saved.queue.every(video => video && typeof video === 'object' && video.id && !video.isShort) ||
+            String(saved.queue[saved.index].id) !== String(videoId)) return false;
+        activePlaylistQueue = saved.queue.map(video => ({ ...video }));
+        currentPlaylistIndex = saved.index;
+        activePlaylistId = typeof saved.id === 'string' ? saved.id : null;
+        activePlaylistName = typeof saved.name === 'string' ? saved.name : 'Llista';
+        radioCategory = typeof saved.radioCategory === 'string' ? saved.radioCategory : '';
+        radioExtra = Array.isArray(saved.radioExtra) ? saved.radioExtra.filter(style => typeof style === 'string') : [];
+        radioMeta = saved.radioMeta && typeof saved.radioMeta === 'object' ? saved.radioMeta : null;
+        radioLabel = typeof saved.radioLabel === 'string' ? saved.radioLabel : '';
+        searchRadio = saved.searchRadio && typeof saved.searchRadio === 'object' ? saved.searchRadio : null;
+        savedListId = typeof saved.savedListId === 'string' ? saved.savedListId : '';
+        queuedIds = new Set(Array.isArray(saved.queuedIds) ? saved.queuedIds : []);
+        isPlaylistMode = true;
+        return true;
+    }
+
     function getState() {
         const active = isPlaylistMode && activePlaylistQueue.length > 0;
         return {
@@ -1692,6 +1733,8 @@
     }
 
     app.features.musicQueue = {
+        captureSession,
+        restoreSession,
         startFrom,
         startDiscovery,
         getLastRadio,

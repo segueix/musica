@@ -1703,3 +1703,15 @@ La TV (`__segueix_tv_discovery__`) no hi entra. El vídeo potser no arrenca sol 
 **Solució:** el cor es desa immediatament, abans de retornar l’estat visual i emetre l’esdeveniment dels gustos. La sincronització conserva també un resum local de l’operació completada (nombre d’aparells amb còpia i m’agrada resultants), visible amb el compte i la data després de recarregar. Serveix per diagnosticar si el problema notificat persisteix; no indica actualització automàtica. URLs de `likes.js` i `google-drive-sync.js` versionades.
 
 **Proves:** afegir i treure un cor amb els callbacks inactius pendents, enviament a un segon aparell, diversos clics seguits, resum persistent després de recarregar. 67 proves relacionades superades. La confirmació sobre els aparells reals queda pendent.
+
+## [2026-10-07] - Després de sincronitzar es perdia la ràdio en recarregar
+
+**Símptoma:** Drive ja sincronitza, però en tornar al reproductor apareix la vista antiga de vídeo individual, amb l’espai de la ràdio buit.
+
+**Causa:** la sincronització recarrega l’app quan aplica canvis. La URL `?v=` només conserva el vídeo; la cua i el context musical vivien en memòria. L’arrencada interpretava la URL com un enllaç independent, cridava `showVideoFromAPI()` i sortia del mode llista. L’estat local de vista tampoc desava la cua.
+
+**Solució:** `musicQueue.captureSession/restoreSession` conserva la cua, l’índex i el context de ràdio (estils, nom, artista/cerca i mode) dins l’estat de sessió de la pestanya. En una recàrrega real de la mateixa cançó, l’arrencada recupera aquest estat abans d’obrir el vídeo individual i passa el segon desat a `loadVideoInSequence`. La còpia es llegeix al començament per evitar que una vista provisional la substitueixi. Es prepara en pausa. Les metadades dels vídeos de la cua recuperada tornen al catàleg en memòria perquè les cançons fora del feed mantinguin títol i artista.
+
+**Límits:** la cua no viatja a Drive; un enllaç nou no recupera una cua antiga; les TV i les dades de sessió invàlides continuen pel camí anterior. Versions de `app.js` i `music-queue.js` actualitzades.
+
+**Proves:** sessió nova amb la mateixa cua i segon; ràdio d’artista amb context; arrencada que sobreescriu temporalment la vista; enllaç nou, vídeo diferent, sessió malmesa i TV. Proves relacionades de reproducció, ràdios i Drive.

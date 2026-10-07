@@ -1071,6 +1071,8 @@ let pendingDeepLinkVideo = (() => {
     }
 })();
 let deepLinkVideoHandled = false;
+// Captura abans que l’arrencada pugui desar una vista provisional d’Inici.
+const reloadedViewState = loadSavedViewState();
 
 // Obre el vídeo d'un enllaç compartit. Idempotent i tolerant a errors: si alguna cosa
 // falla, s'obre igualment el reproductor en comptes de deixar l'usuari al feed.
@@ -1080,6 +1082,8 @@ async function openPendingDeepLinkVideo() {
     }
     const { id: videoId, startAt } = pendingDeepLinkVideo;
     deepLinkVideoHandled = true;
+
+    if (restoreReloadedQueue(videoId)) return;
 
     try {
         let urlVideo = null;
@@ -3152,6 +3156,7 @@ function saveViewState() {
             currentVideoId: isWatchPage ? currentVideoId || '' : '',
             currentVideoSource: isWatchPage ? currentVideoSource || '' : '',
             playbackSeconds: isWatchPage ? Math.max(0, Math.floor(lastKnownPlayerTime || 0)) : 0,
+            playbackQueue: isWatchPage ? SegueixApp.features.musicQueue?.captureSession?.() || null : null,
             ts: Date.now(),
         };
         sessionStorage.setItem(VIEW_STATE_STORAGE_KEY, JSON.stringify(state));
@@ -3170,6 +3175,23 @@ function loadSavedViewState() {
     }
 }
 
+// Una recàrrega de la mateixa pestanya recupera la cua; un enllaç nou continua sent un enllaç.
+function restoreReloadedQueue(videoId) {
+    if (window.performance?.getEntriesByType?.('navigation')?.[0]?.type !== 'reload') return false;
+    const saved = reloadedViewState;
+    if (!saved || saved.page !== 'watch' || String(saved.currentVideoId) !== String(videoId)) return false;
+    if (!SegueixApp.features.musicQueue?.restoreSession?.(saved.playbackQueue, videoId)) return false;
+    // Les cançons fora del feed també han de conservar títol i artista en recuperar la cua.
+    const known = new Set(cachedAPIVideos.map(video => String(video.id)));
+    cachedAPIVideos.push(...activePlaylistQueue.filter(video => !known.has(String(video.id))));
+    loadVideoInSequence({
+        autoPlay: false,
+        replaceHistory: true,
+        startAt: Math.max(0, Math.floor(Number(saved.playbackSeconds) || 0)),
+    });
+    return true;
+}
+
 async function restoreSavedViewState() {
     if (!shouldRestoreViewState) return;
     const saved = loadSavedViewState();
@@ -3182,6 +3204,7 @@ async function restoreSavedViewState() {
 
     const page = saved.page || 'home';
     if (page === 'watch' && saved.currentVideoId) {
+        if (restoreReloadedQueue(saved.currentVideoId)) return;
         const startAt = Number(saved.playbackSeconds || 0);
         const preferredSource = saved.currentVideoSource;
         const staticVideo = getVideoById(saved.currentVideoId);
@@ -8933,7 +8956,7 @@ async function startPlaylistPlayback(playlistId, startIndex = 0) {
     loadVideoInSequence();
 }
 
-function loadVideoInSequence({ autoPlay = true, replaceHistory = false } = {}) {
+function loadVideoInSequence({ autoPlay = true, replaceHistory = false, startAt = 0 } = {}) {
     // Una cua que torna a sonar (nova o recuperada) substitueix la que es va desar en sortir-ne
     queueBeforeNavigation = null;
     if (!activePlaylistQueue.length || currentPlaylistIndex >= activePlaylistQueue.length) {
@@ -8964,6 +8987,7 @@ function loadVideoInSequence({ autoPlay = true, replaceHistory = false } = {}) {
         return;
     }
     const showOptions = {
+        startAt,
         ...(keepLivePlayer ? { keepLivePlayer: true } : {}),
         ...(replaceHistory ? { replaceHistory } : {}),
     };
