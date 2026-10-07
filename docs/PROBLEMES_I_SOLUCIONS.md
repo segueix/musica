@@ -1,3 +1,13 @@
+## [2026-10-07] - Android: un vel fosc amb un cercle que gira tapava la cançó que ja sonava
+
+**Problema:** A Android, en una ràdio, la cançó sonava però tota la pantalla quedava coberta per un vel semitransparent amb el cercle de «carregant» (sense títol, amb «Altres vídeos relacionats» buit).
+
+**Causa Arrel:** És la capa de càrrega `#loading` que `showVideoFromAPILegacyImpl()` posa en obrir cada cançó i que només treia **després** de l'API de YouTube (`getVideoDetails`). (1) Si la cançó no era a cap llista coneguda (`feedVideos`, `currentFeedVideos`, `cachedAPIVideos`, `styleHistoryVideos`), com les del pool d'historial de la ràdio (`history-pool.json`), abans s'esperava l'índex d'arxiu fins a 5 s. (2) `scheduleLoadingAutoHide()` només l'amagava sola a iOS: a Android es quedava fins que responia la xarxa. Amb el mateix reproductor (entrada següent) la cançó ja sona durant l'espera i el vel es fa evident.
+
+**Solució Implementada:** (1) `allKnownVideos` inclou `activePlaylistQueue`: una cançó de la cua ja és coneguda i no s'espera l'índex. (2) Amb les dades conegudes (`cachedVideo`) es fa `hideLoading()` abans de l'enriquiment per l'API. (3) La capa s'amaga sola al cap de 4 s a tots els aparells. Reproduït en Chromium amb una cançó de la cua desconeguda i l'índex d'arxiu penjat (abans `#loading.active` al cap d'1 s; ara no).
+
+**Trampes conegudes:** No posis cap espera de xarxa abans de `hideLoading()` quan ja es pot pintar la fitxa. Prova: `tests/autoplay-cua.test.js`.
+
 ## [2026-10-07] - La cua fa servir el mateix reproductor a tots els aparells i escolta onAutoplayBlocked
 
 **Objectiu:** després de l'arranjament per a Apple (entrada següent), fer servir el mateix mètode a tots els aparells (canvi de cançó més ràpid, menys dades, un sol camí al codi) i detectar el bloqueig de la reproducció automàtica amb l'avís oficial de YouTube.
