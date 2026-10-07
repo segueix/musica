@@ -1055,12 +1055,6 @@
             mix,
             artistOf: ctx.artistKeyOf,
         });
-        if (result.level >= 4) {
-            notes.push('Aquesta selecció té molt pocs artistes: hi poden sonar cançons seguides del mateix artista.');
-        } else if (result.level >= 2) {
-            notes.push('Hem relaxat els límits de repetició d’artista perquè el catàleg disponible és petit.');
-        }
-
         const stats = shares(result.picked);
         const newArtists = discover
             ? new Set(result.picked.filter(c => isNewArtist(c.f.artist, signals)).map(c => c.f.artist)).size
