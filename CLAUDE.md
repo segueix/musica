@@ -468,9 +468,9 @@ const likes = ctx2.SegueixApp.features.likes;
 
 - El `popstate` d'`app.js` crida primer `restoreVideoFromHistory()`: tornar a la cançó que sona (també a la finestra flotant) la restaura, i una cançó de la ràdio/llista que sona (o de la cua que `exitPlaylistModeForNavigation()` desa a `queueBeforeNavigation` en sortir-ne al mòbil) es reprodueix dins la cua (`loadVideoInSequence({ replaceHistory: true })`). **No hi tornis a carregar el vídeo sol directament**: es perdia la ràdio i es veia la fitxa antiga amb el reproductor buit i els relacionats. Proves: `tests/player-controls.test.js`; opt-in `node tests/browser/verificar-enrere-radio.js`.
 
-### Cua als aparells d'Apple (2026-10-07)
+### Cua: mateix reproductor (2026-10-07)
 
-- A iPhone, iPad i Mac (`isAppleDevice()`), la cançó següent d'una ràdio/llista es carrega **al mateix reproductor** (`canKeepApplePlayer()` → `swapLivePlayerVideo()`, `loadVideoById`): Safari no deixa sonar un iframe nou sense un toc. Si tot i així no arrenca en 4 s, `watchAppleAutoplay()` fa parpellejar el play i mostra `#playerAutoplayHint` dins `#playerExternalControls` (mai damunt del vídeo). A la resta d'aparells no canvia res. Detall: `docs/PROBLEMES_I_SOLUCIONS.md` (2026-10-07). Prova: `tests/autoplay-apple.test.js`.
+- A **tots els aparells**, la cançó següent d'una ràdio/llista (amb la pàgina visible) es carrega **al mateix reproductor** (`canKeepQueuePlayer()` → `swapLivePlayerVideo()`, `loadVideoById`) en lloc de crear-ne un de nou: a iPhone, iPad i Mac Safari no deixaria sonar un iframe nou sense un toc. Interruptor per tornar al mètode antic: `localStorage.catube_player_reuse = 'off'`. Si el navegador bloqueja l'autoplay, YouTube envia `onAutoplayBlocked` (l'iframe s'hi subscriu) i es mostra `#playerAutoplayHint` dins `#playerExternalControls` (mai damunt del vídeo) amb el play parpellejant; a Apple també `watchAutoplay()` ho comprova al cap de 4 s. No intentis mai amagar o saltar anuncis. Detall: `docs/PROBLEMES_I_SOLUCIONS.md` (2026-10-07). Prova: `tests/autoplay-cua.test.js`.
 
 ### Ràdio i llistes: sense relacionats (2026-09-30)
 

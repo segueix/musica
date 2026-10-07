@@ -1,3 +1,11 @@
+## [2026-10-07] - La cua fa servir el mateix reproductor a tots els aparells i escolta onAutoplayBlocked
+
+**Objectiu:** després de l'arranjament per a Apple (entrada següent), fer servir el mateix mètode a tots els aparells (canvi de cançó més ràpid, menys dades, un sol camí al codi) i detectar el bloqueig de la reproducció automàtica amb l'avís oficial de YouTube.
+
+**Solució Implementada:** (1) `canKeepApplePlayer()` passa a ser `canKeepQueuePlayer()`, sense `isAppleDevice()`: qualsevol cua amb autoplay i la pàgina visible encadena amb `swapLivePlayerVideo()` (`loadVideoById`). **Interruptor** per tornar al mètode antic (un reproductor nou a cada cançó) sense tocar codi: `localStorage.catube_player_reuse = 'off'` (`isPlayerReuseEnabled()`). (2) L'iframe se subscriu a `onAutoplayBlocked` (`setupYouTubeIframeMessaging`); `handleYouTubeMessage` mostra l'avís (`#playerAutoplayHint`, ara «El navegador ha aturat…») i cancel·la la recàrrega de l'encadenat, que també quedaria bloquejada. (3) `watchAppleAutoplay()` es diu `watchAutoplay()`: la comprovació per temps (4 s) es manté només a Apple, per si l'avís no arriba.
+
+**Trampes conegudes:** (1) YouTube no publica com decideix els anuncis ni si les cançons encadenades compten com a visualitzacions: per comparar, prova amb l'interruptor (anuncis en mode incògnit; font «Reproductor incrustat» a YouTube Studio dels artistes). (2) Mai s'ha d'intentar amagar, saltar o bloquejar anuncis. (3) No provat amb YouTube real. Prova: `tests/autoplay-cua.test.js`.
+
 ## [2026-10-07] - iPhone, iPad i Mac: la cançó següent de la cua no arrencava sola
 
 **Problema:** A l'iPhone (i a Safari de l'iPad i el Mac), en acabar una cançó de la ràdio o d'una llista la següent quedava aturada: calia tocar play a cada cançó.
@@ -6,7 +14,7 @@
 
 **Solució Implementada (només aparells d'Apple, `isAppleDevice()` de `helpers.js`):** (1) **Mateix reproductor:** `loadVideoInSequence()` marca `keepLivePlayer` també quan `canKeepApplePlayer()` (Apple, autoplay, pàgina visible, iframe de YouTube viu i consentiment) i `showVideoFromAPI` fa servir `swapLivePlayerVideo()` (`loadVideoById` al mateix iframe, el que ja feien les TV a pantalla completa). Si el reproductor no respon en 2,5 s es recrea com abans (a la finestra flotant, amb `queuePlayback`). (2) **Avís:** `watchAppleAutoplay()` (a l'encadenat, a `prepareWatchPlaybackPreview` i `queuePlayback` amb autoplay) comprova al cap de 4 s si la cançó continua sense començar (estat `''`, `-1` o `5`) i, si és així, posa `.is-autoplay-blocked` a `#playerExternalControls`: el play parpelleja i surt `#playerAutoplayHint` («Toca el vídeo o ▶ per continuar») a sota dels botons, mai damunt del vídeo (a la barra petita de la finestra flotant només parpelleja). Desapareix quan sona.
 
-**Trampes conegudes:** (1) No s'ha pogut provar amb un iPhone ni amb YouTube real (només proves estàtiques). (2) El play de la barra envia `playVideo` per `postMessage`, que Safari pot no comptar com a toc: per això l'avís diu també «toca el vídeo». (3) Amb la pestanya amagada no s'encadena res (regla del 2026-10-04): no s'hi ha tocat. (4) A Android, Windows i Linux no canvia res. Prova: `tests/autoplay-apple.test.js`.
+**Trampes conegudes:** (1) No s'ha pogut provar amb un iPhone ni amb YouTube real (només proves estàtiques). (2) El play de la barra envia `playVideo` per `postMessage`, que Safari pot no comptar com a toc: per això l'avís diu també «toca el vídeo». (3) Amb la pestanya amagada no s'encadena res (regla del 2026-10-04): no s'hi ha tocat. (4) A Android, Windows i Linux no canvia res. Prova: `tests/autoplay-cua.test.js`.
 
 ## [2026-10-05] - Segona passada amb cerca i anàlisi de lletres
 
