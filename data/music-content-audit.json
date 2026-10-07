@@ -1,90 +1,176 @@
 {
-  "generatedAt": "2026-10-07T07:33:10.171Z",
-  "rawPublicVideoCount": 4903,
-  "feedVideoCount": 4395,
-  "acceptedMusicCount": 4358,
-  "categoryEligibleVideoCount": 4349,
+  "generatedAt": "2026-10-07T16:01:39.548Z",
+  "rawPublicVideoCount": 5034,
+  "feedVideoCount": 4516,
+  "acceptedMusicCount": 4454,
+  "categoryEligibleVideoCount": 4449,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
-    "before": 14,
+    "before": 22,
     "matched": 0,
-    "rejected": 14
+    "rejected": 22
   },
-  "rejectedOrReviewCount": 545,
-  "reviewCount": 502,
+  "rejectedOrReviewCount": 580,
+  "reviewCount": 524,
   "typeCounts": {
-    "song": 4236,
-    "live_song": 113,
-    "album": 9,
-    "other": 43,
-    "review": 502
+    "song": 4331,
+    "live_song": 118,
+    "album": 5,
+    "other": 56,
+    "review": 524
   },
-  "channelsWithoutAcceptedMusic": [],
+  "channelsWithoutAcceptedMusic": [
+    "UC4S5WcSVzMhUd-UwKKpKp5w"
+  ],
   "rejectedSamples": [
     {
-      "id": "TNZxNCARlNo",
-      "title": "El Petit de Cal Eril i la Processó Metafísica - Concert inaugural Vida Festival 2026",
-      "channelTitle": "el petit de cal eril",
-      "durationSeconds": 31,
+      "id": "zBwf7UGt33w",
+      "title": "TERAPIA DE SHOCK (LIVE TARRAGONA)",
+      "channelTitle": "TerapiaDeShock",
+      "durationSeconds": 35,
       "musicReason": "massa curt: probable teaser/fragment"
     },
     {
-      "id": "V9hqB6YfvGM",
-      "title": "El Petit de Cal Eril  • ERIL ERIL ERIL • Sessions de gravació  - Documental",
-      "channelTitle": "el petit de cal eril",
-      "durationSeconds": 979,
+      "id": "_eL9cA5hyZM",
+      "title": "TERAPIA DE SHOCK - JA ES VEU A VENIR",
+      "channelTitle": "TerapiaDeShock",
+      "durationSeconds": 150,
+      "musicReason": "no és a la discografia del canal Tema"
+    },
+    {
+      "id": "usCb557LSwA",
+      "title": "TERAPIA DE SHOCK - TOT VA TAN RAPIT",
+      "channelTitle": "TerapiaDeShock",
+      "durationSeconds": 215,
+      "musicReason": "no és a la discografia del canal Tema"
+    },
+    {
+      "id": "YnoBKLhFNx8",
+      "title": "TERAPIA DE SHOCK - QUAN ELLA BALLA ROCK'N'ROLL",
+      "channelTitle": "TerapiaDeShock",
+      "durationSeconds": 221,
+      "musicReason": "no és a la discografia del canal Tema"
+    },
+    {
+      "id": "x5NwFD_zcdE",
+      "title": "TERAPIA DE SHOCK - SAN FRANCISCO",
+      "channelTitle": "TerapiaDeShock",
+      "durationSeconds": 226,
+      "musicReason": "no és a la discografia del canal Tema"
+    },
+    {
+      "id": "QrURcG-7M1c",
+      "title": "TERAPIA DE SHOCK - NO ÉS MASSA TART",
+      "channelTitle": "TerapiaDeShock",
+      "durationSeconds": 151,
+      "musicReason": "no és a la discografia del canal Tema"
+    },
+    {
+      "id": "D5buVDroQq4",
+      "title": "TERAPIA DE SHOCK - TERAPIA DE SHOCK",
+      "channelTitle": "TerapiaDeShock",
+      "durationSeconds": 140,
+      "musicReason": "no és a la discografia del canal Tema"
+    },
+    {
+      "id": "2Kj1hpgCXtM",
+      "title": "TERAPIA DE SHOCK - SENSE TU LA MERCE 2013",
+      "channelTitle": "TerapiaDeShock",
+      "durationSeconds": 34,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "ItGPK0LrMtI",
+      "title": "Terapia de Shock assaig 2013",
+      "channelTitle": "TerapiaDeShock",
+      "durationSeconds": 59,
       "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
     },
     {
-      "id": "W3lxzzqvEeE",
-      "title": "19/12/25 ERIL ERIL ERIL al Razzmatazz",
-      "channelTitle": "el petit de cal eril",
-      "durationSeconds": 42,
+      "id": "Ll2bCW-Ypd0",
+      "title": "NOU TEMA DE TERAPIA DE SHOCK!!!!",
+      "channelTitle": "TerapiaDeShock",
+      "durationSeconds": 34,
       "musicReason": "massa curt: probable teaser/fragment"
     },
     {
-      "id": "j4vn7eoBv_E",
-      "title": "El Petit de Cal Eril - ERIL ERIL ERIL - Nou àlbum",
-      "channelTitle": "el petit de cal eril",
-      "durationSeconds": 24,
+      "id": "iTT2k0_n0z8",
+      "title": "Terapia De Shock Estudi",
+      "channelTitle": "TerapiaDeShock",
+      "durationSeconds": 21,
       "musicReason": "massa curt: probable teaser/fragment"
     },
     {
-      "id": "Acl3gYql_Dg",
-      "title": "23-04-2025",
-      "channelTitle": "el petit de cal eril",
-      "durationSeconds": 24,
-      "musicReason": "massa curt: probable teaser/fragment"
+      "id": "yaBVy6-nlTg",
+      "title": "Terapia de shock i el gat guardiola",
+      "channelTitle": "TerapiaDeShock",
+      "durationSeconds": 143,
+      "musicReason": "no és a la discografia del canal Tema"
     },
     {
-      "id": "Sh2Tu20Qj7U",
-      "title": "E",
-      "channelTitle": "el petit de cal eril",
-      "durationSeconds": 26,
-      "musicReason": "massa curt: probable teaser/fragment"
+      "id": "aHqSJ_bgZmo",
+      "title": "Heures - Exili a Elba - Concert Lagaia Books (Badalona)",
+      "channelTitle": "Exili A Elba",
+      "durationSeconds": 209,
+      "musicReason": "no és a la discografia del canal Tema"
     },
     {
-      "id": "NMdXgwM6HP8",
-      "title": "R",
-      "channelTitle": "el petit de cal eril",
-      "durationSeconds": 26,
-      "musicReason": "massa curt: probable teaser/fragment"
+      "id": "rmWpAm0w8Vg",
+      "title": "He vist una noia - Exili a Elba (Cover The Beatles)",
+      "channelTitle": "Exili A Elba",
+      "durationSeconds": 234,
+      "musicReason": "no és a la discografia del canal Tema"
     },
     {
-      "id": "D4vZblDHXLY",
-      "title": "I",
-      "channelTitle": "el petit de cal eril",
-      "durationSeconds": 24,
-      "musicReason": "massa curt: probable teaser/fragment"
+      "id": "nPYqF363pyg",
+      "title": "Exili a Elba - Sona9 - Concert Preliminar Dijous 25.06 - 20h",
+      "channelTitle": "Exili A Elba",
+      "durationSeconds": 149,
+      "musicReason": "no és a la discografia del canal Tema"
     },
     {
-      "id": "ud-OqyQ65l4",
-      "title": "L",
-      "channelTitle": "el petit de cal eril",
-      "durationSeconds": 28,
-      "musicReason": "massa curt: probable teaser/fragment"
+      "id": "RbQbWkEluSQ",
+      "title": "Home I'll Never Be - cover by Exili a Elba",
+      "channelTitle": "Exili A Elba",
+      "durationSeconds": 142,
+      "musicReason": "no és a la discografia del canal Tema"
+    },
+    {
+      "id": "4bcoFiOOarM",
+      "title": "Aparences a l'Antiga Fàbrica Estrella Damm",
+      "channelTitle": "Exili A Elba",
+      "durationSeconds": 181,
+      "musicReason": "no és a la discografia del canal Tema"
+    },
+    {
+      "id": "DIUKjeFE3d4",
+      "title": "Sang Suor i Asfalt a l'Antiga Fàbrica Estrella Damm",
+      "channelTitle": "Exili A Elba",
+      "durationSeconds": 181,
+      "musicReason": "no és a la discografia del canal Tema"
+    },
+    {
+      "id": "PqRQs-LL070",
+      "title": "Exili a Elba - EPK 2015",
+      "channelTitle": "Exili A Elba",
+      "durationSeconds": 305,
+      "musicReason": "no és a la discografia del canal Tema"
+    },
+    {
+      "id": "17j3EWKqilI",
+      "title": "Come together (The Beatles) - Exili a Elba - En viu a \"La Nau\"",
+      "channelTitle": "Exili A Elba",
+      "durationSeconds": 179,
+      "musicReason": "no és a la discografia del canal Tema"
+    },
+    {
+      "id": "Fzypl53rLyU",
+      "title": "No hi ha llum - Exili a Elba - En viu a \"La Nau\"",
+      "channelTitle": "Exili A Elba",
+      "durationSeconds": 329,
+      "musicReason": "no és a la discografia del canal Tema"
     }
   ],
-  "publishedFeedVideoCount": 4349,
+  "publishedFeedVideoCount": 4417,
   "publishedShortVideoCount": 0
 }

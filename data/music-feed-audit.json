@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-07T07:33:10.171Z",
+  "generatedAt": "2026-10-07T16:01:39.548Z",
   "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
   "deepPagesFetched": 0,
   "deepChannelCount": 18,
-  "topicChannelCount": 222,
-  "governedChannelCount": 85,
+  "topicChannelCount": 231,
+  "governedChannelCount": 87,
   "topicCoverage": [
     {
       "id": "UCqaEtRht2jakBhGFLzS617w",
@@ -568,6 +568,14 @@
       "governs": true
     },
     {
+      "id": "UCCjjqhwGK59J_vn4l0MjYSA",
+      "name": "Exili A Elba",
+      "songs": 49,
+      "matched": 40,
+      "coverage": 0.82,
+      "governs": true
+    },
+    {
       "id": "UC57d8FV0O8sOiK6-K-gWNHA",
       "name": "Mar Pujol",
       "songs": 17,
@@ -669,6 +677,14 @@
       "songs": 13,
       "matched": 10,
       "coverage": 0.77,
+      "governs": true
+    },
+    {
+      "id": "UCnO3DG7B2cyiu5zoNstHEfA",
+      "name": "TerapiaDeShock",
+      "songs": 29,
+      "matched": 22,
+      "coverage": 0.76,
       "governs": true
     },
     {
@@ -1030,10 +1046,20 @@
       "matched": 0,
       "coverage": 0,
       "governs": false
+    },
+    {
+      "id": "UC4S5WcSVzMhUd-UwKKpKp5w",
+      "name": "Teràpia De Shock",
+      "songs": 0,
+      "matched": 0,
+      "coverage": 0,
+      "governs": false
     }
   ],
   "topicGovernance": "apply",
-  "governedReclassified": {},
+  "governedReclassified": {
+    "other": 16
+  },
   "topicHiddenCount": 0,
   "topicChannels": [
     {
@@ -1464,6 +1490,13 @@
       "withClip": 0
     },
     {
+      "id": "UCOpeaEtE-7hK7ZXGEVWMyRw",
+      "name": "Exili a Elba",
+      "tracks": 91,
+      "selected": 40,
+      "withClip": 30
+    },
+    {
       "id": "UC6RbhWqXkSqfJDawc7pyPxQ",
       "name": "Família Fracàs",
       "tracks": 43,
@@ -1559,6 +1592,13 @@
       "name": "Groggy Rude",
       "tracks": 46,
       "selected": 35,
+      "withClip": 0
+    },
+    {
+      "id": "UC8efMlZQ7vQ1cTO6MbspafA",
+      "name": "Grup de folk",
+      "tracks": 98,
+      "selected": 40,
       "withClip": 0
     },
     {
@@ -2402,6 +2442,13 @@
       "withClip": 0
     },
     {
+      "id": "UCIJjTYBxYUHPFir2cZj0wKQ",
+      "name": "Teràpia de Shock",
+      "tracks": 105,
+      "selected": 36,
+      "withClip": 20
+    },
+    {
       "id": "UCrAazkwonIdGi_TGkzXkoCw",
       "name": "Terratombats",
       "tracks": 24,
@@ -2563,32 +2610,34 @@
       "withClip": 0
     }
   ],
-  "indexedChannelCount": 427,
-  "resolvedChannelCount": 427,
-  "feedChannelCount": 427,
-  "rawPublicVideoCount": 4903,
-  "feedVideoCount": 4395,
-  "acceptedMusicCount": 4358,
-  "categoryEligibleVideoCount": 4349,
+  "indexedChannelCount": 442,
+  "resolvedChannelCount": 433,
+  "feedChannelCount": 433,
+  "rawPublicVideoCount": 5034,
+  "feedVideoCount": 4516,
+  "acceptedMusicCount": 4454,
+  "categoryEligibleVideoCount": 4449,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
-    "before": 14,
+    "before": 22,
     "matched": 0,
-    "rejected": 14
+    "rejected": 22
   },
-  "contentReviewCount": 502,
+  "contentReviewCount": 524,
   "contentTypeCounts": {
-    "song": 4236,
-    "live_song": 113,
-    "album": 9,
-    "other": 43,
-    "review": 502
+    "song": 4331,
+    "live_song": 118,
+    "album": 5,
+    "other": 56,
+    "review": 524
   },
   "unresolvedChannelIds": [],
   "channelsWithoutUploads": [],
   "channelsWithoutVideos": [],
-  "channelsWithoutAcceptedMusic": [],
-  "allIndexedChannelsVisible": true,
-  "publishedFeedVideoCount": 4349,
+  "channelsWithoutAcceptedMusic": [
+    "UC4S5WcSVzMhUd-UwKKpKp5w"
+  ],
+  "allIndexedChannelsVisible": false,
+  "publishedFeedVideoCount": 4417,
   "publishedShortVideoCount": 0
 }
