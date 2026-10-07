@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-07T16:01:39.548Z",
+  "generatedAt": "2026-10-07T16:02:19.187Z",
   "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
   "deepPagesFetched": 0,
   "deepChannelCount": 18,
   "topicChannelCount": 231,
-  "governedChannelCount": 87,
+  "governedChannelCount": 89,
   "topicCoverage": [
     {
       "id": "UCqaEtRht2jakBhGFLzS617w",
@@ -496,6 +496,14 @@
       "governs": true
     },
     {
+      "id": "UCq7L4buafGO2yHcjCdnaGxg",
+      "name": "Els Jóvens",
+      "songs": 13,
+      "matched": 11,
+      "coverage": 0.85,
+      "governs": true
+    },
+    {
       "id": "UCtHWEhEdI_nkFQmE2Ewzrnw",
       "name": "SMOKING SOULS",
       "songs": 33,
@@ -656,6 +664,14 @@
       "governs": true
     },
     {
+      "id": "UCmTclPozSbbvY0khfHnaMgw",
+      "name": "Joan Masdéu",
+      "songs": 14,
+      "matched": 11,
+      "coverage": 0.79,
+      "governs": true
+    },
+    {
       "id": "UCFRzEt990b8xiMQ9soWNegw",
       "name": "DAVEU))",
       "songs": 9,
@@ -722,6 +738,14 @@
     {
       "id": "UCmwGTBibm2bt9oF-P7ECSmQ",
       "name": "Andrea Motis",
+      "songs": 13,
+      "matched": 9,
+      "coverage": 0.69,
+      "governs": false
+    },
+    {
+      "id": "UCszfsK0D7h1kZ6eSOhlB9cA",
+      "name": "Caïm Riba",
       "songs": 13,
       "matched": 9,
       "coverage": 0.69,
@@ -1058,7 +1082,7 @@
   ],
   "topicGovernance": "apply",
   "governedReclassified": {
-    "other": 16
+    "other": 5
   },
   "topicHiddenCount": 0,
   "topicChannels": [
@@ -1266,6 +1290,13 @@
       "withClip": 3
     },
     {
+      "id": "UC_JVj-OoxEnO0fhw7VQP2lg",
+      "name": "Caïm Riba",
+      "tracks": 63,
+      "selected": 41,
+      "withClip": 9
+    },
+    {
       "id": "UCe_v26nxcgIzZxxvRDkHOrw",
       "name": "Carme Canela",
       "tracks": 97,
@@ -1320,6 +1351,13 @@
       "tracks": 177,
       "selected": 19,
       "withClip": 28
+    },
+    {
+      "id": "UC9qAJ8qxZth4Ic8D-OV52RQ",
+      "name": "Da Souza",
+      "tracks": 81,
+      "selected": 40,
+      "withClip": 0
     },
     {
       "id": "UCIumPBt0bPxqjeDXi_dZtgg",
@@ -1441,6 +1479,13 @@
       "withClip": 34
     },
     {
+      "id": "UCf-q-2ikL2X1ZFd0HSj7Eiw",
+      "name": "Els Jóvens",
+      "tracks": 16,
+      "selected": 0,
+      "withClip": 11
+    },
+    {
       "id": "UC0EB-hSs5R5X4DGiSkY_-mw",
       "name": "Els Pets",
       "tracks": 352,
@@ -1495,6 +1540,13 @@
       "tracks": 91,
       "selected": 40,
       "withClip": 30
+    },
+    {
+      "id": "UCLbuprK567zLAC6ZzamsDLQ",
+      "name": "Falciots Ninja",
+      "tracks": 28,
+      "selected": 25,
+      "withClip": 0
     },
     {
       "id": "UC6RbhWqXkSqfJDawc7pyPxQ",
@@ -1684,6 +1736,13 @@
       "tracks": 406,
       "selected": 40,
       "withClip": 0
+    },
+    {
+      "id": "UCIu7jGN31S41R-S24-AnJuQ",
+      "name": "Joan Masdéu",
+      "tracks": 70,
+      "selected": 40,
+      "withClip": 11
     },
     {
       "id": "UCEV_8wEQansDoZnwNW1Z1Vw",
@@ -2096,6 +2155,13 @@
       "name": "Panellet",
       "tracks": 28,
       "selected": 17,
+      "withClip": 0
+    },
+    {
+      "id": "UCgYkYD0ZgH2zk3Cnhh_belA",
+      "name": "Pantaleó",
+      "tracks": 42,
+      "selected": 32,
       "withClip": 0
     },
     {
@@ -2611,33 +2677,33 @@
     }
   ],
   "indexedChannelCount": 442,
-  "resolvedChannelCount": 433,
-  "feedChannelCount": 433,
-  "rawPublicVideoCount": 5034,
-  "feedVideoCount": 4516,
-  "acceptedMusicCount": 4454,
-  "categoryEligibleVideoCount": 4449,
+  "resolvedChannelCount": 442,
+  "feedChannelCount": 442,
+  "rawPublicVideoCount": 5182,
+  "feedVideoCount": 4644,
+  "acceptedMusicCount": 4591,
+  "categoryEligibleVideoCount": 4585,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
-    "before": 22,
+    "before": 20,
     "matched": 0,
-    "rejected": 22
+    "rejected": 20
   },
-  "contentReviewCount": 524,
+  "contentReviewCount": 542,
   "contentTypeCounts": {
-    "song": 4331,
-    "live_song": 118,
-    "album": 5,
-    "other": 56,
-    "review": 524
+    "song": 4471,
+    "live_song": 114,
+    "album": 6,
+    "other": 49,
+    "review": 542
   },
   "unresolvedChannelIds": [],
   "channelsWithoutUploads": [],
-  "channelsWithoutVideos": [],
-  "channelsWithoutAcceptedMusic": [
-    "UC4S5WcSVzMhUd-UwKKpKp5w"
+  "channelsWithoutVideos": [
+    "UCf-q-2ikL2X1ZFd0HSj7Eiw"
   ],
-  "allIndexedChannelsVisible": false,
-  "publishedFeedVideoCount": 4417,
+  "channelsWithoutAcceptedMusic": [],
+  "allIndexedChannelsVisible": true,
+  "publishedFeedVideoCount": 4516,
   "publishedShortVideoCount": 0
 }
