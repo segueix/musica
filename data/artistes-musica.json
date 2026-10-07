@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-07T16:24:39.526Z",
+  "updatedAt": "2026-10-07T16:25:22.367Z",
   "artists": [
     {
       "name": "2ES",
@@ -30560,7 +30560,49 @@
       "musicbrainzId": null,
       "youtube": {
         "channels": [],
-        "searchCandidates": []
+        "searchCandidates": [
+          {
+            "id": "UCARSXSWwSje53JsJgzLCtpA",
+            "title": "The Anti-Patiks - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 139,
+            "thumbnail": "https://yt3.ggpht.com/LYWiAvEGm-FmOEpS3EnjanSt6J64q-mwzyy15Vjksr9WDCg0jB7D-npLoMkA2Jn4AF7BM3xgwg=s240-c-k-c0x00ffffff-no-rj",
+            "score": 85,
+            "reasons": [
+              "nom exacte de canal Topic",
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-07T16:25:21.598Z"
+          },
+          {
+            "id": "UCuBUwUHwHaYGai1Enee7DSw",
+            "title": "The Anti-Patiks - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 11,
+            "thumbnail": "https://yt3.ggpht.com/jyxztHMAG8hHtNSs_heG666Z0hD0lVEO4OIYt6gUbLqd26DcWzBu2FRusijtBjKRZFrUG6VmM4E=s240-c-k-c0x00ffffff-no-rj",
+            "score": 80,
+            "reasons": [
+              "nom exacte de canal Topic"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-07T16:25:21.598Z"
+          },
+          {
+            "id": "UC3HlCvjDJTx7lwHvGv223TQ",
+            "title": "Antilògic - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 9,
+            "thumbnail": "https://yt3.ggpht.com/crry_omvZFKF6iClAmYfr1c1U-GSxt7oWsnUjj5m0UryKKqIkIDk9N3RlYFvkQUkGmrrQfuHnA=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-07T16:25:21.598Z"
+          }
+        ]
       },
       "confidence": "baixa",
       "reviewStatus": "pendent",
@@ -30570,7 +30612,17 @@
         "genre:manual"
       ],
       "lastChecked": "2026-10-07T16:24:39.526Z",
-      "notes": "Alta sol·licitada per l’usuari; canal pendent de verificació."
+      "notes": "Alta sol·licitada per l’usuari; canal pendent de verificació.",
+      "enrichment": {
+        "youtubeSearch": {
+          "checkedAt": "2026-10-07T16:25:21.598Z",
+          "status": "candidats",
+          "query": "The Anti-Patiks - Topic",
+          "resultCount": 3,
+          "bestScore": 85,
+          "autoAcceptedId": null
+        }
+      }
     },
     {
       "name": "Ypnosi",
@@ -30586,7 +30638,37 @@
       "musicbrainzId": null,
       "youtube": {
         "channels": [],
-        "searchCandidates": []
+        "searchCandidates": [
+          {
+            "id": "UCqqRg6HX-P769DEoffrQMEQ",
+            "title": "YPNOSI - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 157,
+            "thumbnail": "https://yt3.ggpht.com/gb9WUK_Sh3UfJt3fXNWb5JITDq3YAjV_lX0WQ0NZ65hsQheMgO7FVLOoi-DRU4iJukOupuVE=s240-c-k-c0x00ffffff-no-rj",
+            "score": 85,
+            "reasons": [
+              "nom exacte de canal Topic",
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-07T16:25:22.018Z"
+          },
+          {
+            "id": "UCg6lVNl78-THJI1w8dSy0bA",
+            "title": "YPNOSI - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 58,
+            "thumbnail": "https://yt3.ggpht.com/PTo9UYB6q4EKyzwaTxzhlLMLOAO-1R6teL5_VMW2g6PoTXDO695dGy8Yy2smspNhH4SLwvjt=s240-c-k-c0x00ffffff-no-rj",
+            "score": 80,
+            "reasons": [
+              "nom exacte de canal Topic"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-07T16:25:22.018Z"
+          }
+        ]
       },
       "confidence": "baixa",
       "reviewStatus": "pendent",
@@ -30596,7 +30678,17 @@
         "genre:manual"
       ],
       "lastChecked": "2026-10-07T16:24:39.526Z",
-      "notes": "Alta sol·licitada per l’usuari; canal pendent de verificació."
+      "notes": "Alta sol·licitada per l’usuari; canal pendent de verificació.",
+      "enrichment": {
+        "youtubeSearch": {
+          "checkedAt": "2026-10-07T16:25:22.018Z",
+          "status": "candidats",
+          "query": "Ypnosi - Topic",
+          "resultCount": 2,
+          "bestScore": 85,
+          "autoAcceptedId": null
+        }
+      }
     }
   ]
 }
