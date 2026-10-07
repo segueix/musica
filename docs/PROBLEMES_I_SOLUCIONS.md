@@ -1671,3 +1671,5 @@ La TV (`__segueix_tv_discovery__`) no hi entra. El vídeo potser no arrenca sol 
 **Activació:** identificador públic a `js/google-drive-config.js`; buit mostra «pendent d’activació» sense carregar Google. Instruccions a `docs/GOOGLE_DRIVE.md` i política pública a `privacitat.html`. En arribar canvis es recarrega l’app: primer s’actualitza la memòria de `musicSignals` perquè no torni a desar estadístiques antigues.
 
 **Proves:** models de fusió i eliminació, idempotència, llistes editades en dos equips, permisos, privacitat, errors, paginació i recuperació d’una escriptura fallida amb API simulada. La prova real OAuth queda pendent del client Google.
+
+**Actualització en navegadors que ja tenien l’app oberta:** a la prova publicada, l’HTML nou es combinava amb `app.js?v=20261006-file-3` de la memòria cau i aquest intentava registrar `backupCodecs`, que ja s’havia retirat. Cal canviar també la versió de les URLs dels scripts modificats (`app.js`, `config-sync.js`, `music-signals.js` → `20261007-drive-1`), a més de regenerar el service worker. No n’hi ha prou de canviar només el hash del SW en una substitució de mòduls.
