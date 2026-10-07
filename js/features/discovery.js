@@ -28,7 +28,7 @@
         {
             id: 'new',
             label: 'Fora del meu radar',
-            hint: 'Només artistes que encara no has escoltat: grups que potser ni sabies que existien.',
+            hint: 'Grups o cançons que no has escoltat.',
         },
     ]);
 
