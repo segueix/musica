@@ -5,7 +5,7 @@ tenir quan el feed musical incorpori vídeos nous: cal repassar-los primer cada 
 castellà». Les cançons amagades són a `data/hidden-videos.json` (el client les filtra i `update_music_feed.js` les
 descarta en regenerar el feed).
 
-> Última revisió: 2026-10-05. Si afegeixes o treus un artista, actualitza la taula **i** la data.
+> Última revisió: 2026-10-07. Si afegeixes o treus un artista, actualitza la taula **i** la data.
 
 ## Revisió de lletres de les 239 pendents (2026-10-05)
 
@@ -279,3 +279,11 @@ Repertori en castellà: s'han tret sencers (canal fora de `data/artistes-musica.
 | **La Troba Kung-Fú** | Per títol | Regla existent a l’script; sense canvis d’exclusions en aquesta revisió. |
 | **La Troba Kung-Fú - Topic** | Per títol | Regla existent a l’script; sense canvis d’exclusions en aquesta revisió. |
 | **Au Rora** | Per títol | Regla existent a l’script; sense canvis d’exclusions en aquesta revisió. |
+
+## Altes dirigides (2026-10-07)
+
+Regles preventives a `data/music-channel-video-allowlist.json`:
+
+- Teràpia de Shock: s’exclouen «Sin Ti» i «Without You», versions castellana i anglesa de «Sense tu».
+- Grup de Folk: canal multilingüe; només primera selecció de títols catalans identificats. Referència: https://www.enderrock.cat/disc/4765/festival-folk . La resta queda fora fins a revisió.
+- Exili a Elba: «Red Right Hand» queda fora de la selecció catalana.

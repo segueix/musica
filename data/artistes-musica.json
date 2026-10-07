@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-07T15:56:45.934Z",
+  "updatedAt": "2026-10-07T16:00:26.789Z",
   "artists": [
     {
       "name": "2ES",
@@ -28692,7 +28692,29 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UC4S5WcSVzMhUd-UwKKpKp5w",
+            "handle": "@terapiadeshock5143",
+            "name": "Teràpia De Shock",
+            "type": "official",
+            "primary": true
+          },
+          {
+            "id": "UCIJjTYBxYUHPFir2cZj0wKQ",
+            "handle": null,
+            "name": "Teràpia de Shock - Topic",
+            "type": "topic",
+            "primary": false
+          },
+          {
+            "id": "UCnO3DG7B2cyiu5zoNstHEfA",
+            "handle": "@terapiadeshock",
+            "name": "TerapiaDeShock",
+            "type": "official",
+            "primary": false
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UC4S5WcSVzMhUd-UwKKpKp5w",
@@ -28740,16 +28762,17 @@
           }
         ]
       },
-      "confidence": "pendent",
-      "reviewStatus": "pendent",
-      "active": false,
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
         "manual-user-2026-10-07",
         "genre:manual",
-        "https://terapiadeshock.cat/"
+        "https://terapiadeshock.cat/",
+        "youtube:targeted-search-verified"
       ],
-      "lastChecked": null,
-      "notes": "Alta sol·licitada per l’usuari. Pendent de verificar el canal de YouTube abans d’incorporar-ne les cançons.",
+      "lastChecked": "2026-10-07T16:00:26.789Z",
+      "notes": "Alta sol·licitada per l’usuari el 2026-10-07. Canals verificats amb cerca dirigida i fonts de l’artista; s’exclouen homònims i canals de segells compartits.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-07T15:35:05.337Z",
@@ -28778,7 +28801,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCgYkYD0ZgH2zk3Cnhh_belA",
+            "handle": null,
+            "name": "Pantaleó - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UCgYkYD0ZgH2zk3Cnhh_belA",
@@ -28825,16 +28856,17 @@
           }
         ]
       },
-      "confidence": "pendent",
-      "reviewStatus": "pendent",
-      "active": false,
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
         "manual-user-2026-10-07",
         "genre:manual",
-        "https://www.musicaglobal.com/ca/artistes/pantaleo/"
+        "https://www.musicaglobal.com/ca/artistes/pantaleo/",
+        "youtube:targeted-search-verified"
       ],
-      "lastChecked": null,
-      "notes": "Alta sol·licitada per l’usuari. Pendent de verificar el canal de YouTube abans d’incorporar-ne les cançons.",
+      "lastChecked": "2026-10-07T16:00:26.789Z",
+      "notes": "Alta sol·licitada per l’usuari el 2026-10-07. Canals verificats amb cerca dirigida i fonts de l’artista; s’exclouen homònims i canals de segells compartits.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-07T15:56:45.499Z",
@@ -28860,7 +28892,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UC8efMlZQ7vQ1cTO6MbspafA",
+            "handle": null,
+            "name": "Grup de folk - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UC8efMlZQ7vQ1cTO6MbspafA",
@@ -28908,16 +28948,17 @@
           }
         ]
       },
-      "confidence": "pendent",
-      "reviewStatus": "pendent",
-      "active": false,
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
         "manual-user-2026-10-07",
         "genre:manual",
-        "https://www.enciclopedia.cat/gran-enciclopedia-de-la-musica/grup-de-folk"
+        "https://www.enciclopedia.cat/gran-enciclopedia-de-la-musica/grup-de-folk",
+        "youtube:targeted-search-verified"
       ],
-      "lastChecked": null,
-      "notes": "Alta sol·licitada per l’usuari. Pendent de verificar el canal de YouTube abans d’incorporar-ne les cançons.",
+      "lastChecked": "2026-10-07T16:00:26.789Z",
+      "notes": "Alta sol·licitada per l’usuari el 2026-10-07. Canals verificats amb cerca dirigida i fonts de l’artista; s’exclouen homònims i canals de segells compartits.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-07T15:35:06.290Z",
@@ -28946,7 +28987,22 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCmTclPozSbbvY0khfHnaMgw",
+            "handle": "@joanmasdeuoficial",
+            "name": "Joan Masdéu",
+            "type": "official",
+            "primary": true
+          },
+          {
+            "id": "UCIu7jGN31S41R-S24-AnJuQ",
+            "handle": null,
+            "name": "Joan Masdéu - Topic",
+            "type": "topic",
+            "primary": false
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UCmTclPozSbbvY0khfHnaMgw",
@@ -28996,16 +29052,17 @@
           }
         ]
       },
-      "confidence": "pendent",
-      "reviewStatus": "pendent",
-      "active": false,
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
         "manual-user-2026-10-07",
         "genre:manual",
-        "https://www.joanmasdeu.com/"
+        "https://www.joanmasdeu.com/",
+        "youtube:targeted-search-verified"
       ],
-      "lastChecked": null,
-      "notes": "Alta sol·licitada per l’usuari. Pendent de verificar el canal de YouTube abans d’incorporar-ne les cançons.",
+      "lastChecked": "2026-10-07T16:00:26.789Z",
+      "notes": "Alta sol·licitada per l’usuari el 2026-10-07. Canals verificats amb cerca dirigida i fonts de l’artista; s’exclouen homònims i canals de segells compartits.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-07T15:35:06.726Z",
@@ -29032,7 +29089,22 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCCjjqhwGK59J_vn4l0MjYSA",
+            "handle": "@exiliaelba",
+            "name": "Exili A Elba",
+            "type": "official",
+            "primary": true
+          },
+          {
+            "id": "UCOpeaEtE-7hK7ZXGEVWMyRw",
+            "handle": null,
+            "name": "Exili a Elba - Topic",
+            "type": "topic",
+            "primary": false
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UCCjjqhwGK59J_vn4l0MjYSA",
@@ -29080,16 +29152,17 @@
           }
         ]
       },
-      "confidence": "pendent",
-      "reviewStatus": "pendent",
-      "active": false,
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
         "manual-user-2026-10-07",
         "genre:manual",
-        "https://exiliaelba.bandcamp.com/"
+        "https://exiliaelba.bandcamp.com/",
+        "youtube:targeted-search-verified"
       ],
-      "lastChecked": null,
-      "notes": "Alta sol·licitada per l’usuari. Pendent de verificar el canal de YouTube abans d’incorporar-ne les cançons.",
+      "lastChecked": "2026-10-07T16:00:26.789Z",
+      "notes": "Alta sol·licitada per l’usuari el 2026-10-07. Canals verificats amb cerca dirigida i fonts de l’artista; s’exclouen homònims i canals de segells compartits.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-07T15:35:07.102Z",
@@ -29118,7 +29191,22 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCszfsK0D7h1kZ6eSOhlB9cA",
+            "handle": "@caimribamusic",
+            "name": "Caïm Riba",
+            "type": "official",
+            "primary": true
+          },
+          {
+            "id": "UC_JVj-OoxEnO0fhw7VQP2lg",
+            "handle": null,
+            "name": "Caïm Riba - Topic",
+            "type": "topic",
+            "primary": false
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UCszfsK0D7h1kZ6eSOhlB9cA",
@@ -29164,16 +29252,17 @@
           }
         ]
       },
-      "confidence": "pendent",
-      "reviewStatus": "pendent",
-      "active": false,
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
         "manual-user-2026-10-07",
         "genre:manual",
-        "https://rgb.cat/management/caim-riba/"
+        "https://rgb.cat/management/caim-riba/",
+        "youtube:targeted-search-verified"
       ],
-      "lastChecked": null,
-      "notes": "Alta sol·licitada per l’usuari. Pendent de verificar el canal de YouTube abans d’incorporar-ne les cançons.",
+      "lastChecked": "2026-10-07T16:00:26.789Z",
+      "notes": "Alta sol·licitada per l’usuari el 2026-10-07. Canals verificats amb cerca dirigida i fonts de l’artista; s’exclouen homònims i canals de segells compartits.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-07T15:35:07.681Z",
@@ -29200,7 +29289,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCLbuprK567zLAC6ZzamsDLQ",
+            "handle": null,
+            "name": "Falciots Ninja - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UCLbuprK567zLAC6ZzamsDLQ",
@@ -29243,16 +29340,17 @@
           }
         ]
       },
-      "confidence": "pendent",
-      "reviewStatus": "pendent",
-      "active": false,
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
         "manual-user-2026-10-07",
         "genre:manual",
-        "https://www.mmvv.cat/ca/artista/falciots-ninja/887/2018"
+        "https://www.mmvv.cat/ca/artista/falciots-ninja/887/2018",
+        "youtube:targeted-search-verified"
       ],
-      "lastChecked": null,
-      "notes": "Alta sol·licitada per l’usuari. Pendent de verificar el canal de YouTube abans d’incorporar-ne les cançons.",
+      "lastChecked": "2026-10-07T16:00:26.789Z",
+      "notes": "Alta sol·licitada per l’usuari el 2026-10-07. Canals verificats amb cerca dirigida i fonts de l’artista; s’exclouen homònims i canals de segells compartits.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-07T15:35:08.030Z",
@@ -29279,7 +29377,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UC9qAJ8qxZth4Ic8D-OV52RQ",
+            "handle": null,
+            "name": "Da Souza - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UC9qAJ8qxZth4Ic8D-OV52RQ",
@@ -29323,16 +29429,17 @@
           }
         ]
       },
-      "confidence": "pendent",
-      "reviewStatus": "pendent",
-      "active": false,
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
         "manual-user-2026-10-07",
         "genre:manual",
-        "https://dasouza.bandcamp.com/"
+        "https://dasouza.bandcamp.com/",
+        "youtube:targeted-search-verified"
       ],
-      "lastChecked": null,
-      "notes": "Alta sol·licitada per l’usuari. Pendent de verificar el canal de YouTube abans d’incorporar-ne les cançons.",
+      "lastChecked": "2026-10-07T16:00:26.789Z",
+      "notes": "Alta sol·licitada per l’usuari el 2026-10-07. Canals verificats amb cerca dirigida i fonts de l’artista; s’exclouen homònims i canals de segells compartits.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-07T15:35:08.340Z",
@@ -29361,7 +29468,22 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCq7L4buafGO2yHcjCdnaGxg",
+            "handle": "@elsjovens3193",
+            "name": "Els Jóvens",
+            "type": "official",
+            "primary": true
+          },
+          {
+            "id": "UCf-q-2ikL2X1ZFd0HSj7Eiw",
+            "handle": null,
+            "name": "Els Jóvens - Topic",
+            "type": "topic",
+            "primary": false
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UCq7L4buafGO2yHcjCdnaGxg",
@@ -29407,16 +29529,17 @@
           }
         ]
       },
-      "confidence": "pendent",
-      "reviewStatus": "pendent",
-      "active": false,
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
         "manual-user-2026-10-07",
         "genre:manual",
-        "https://www.enderrock.cat/disc/7250/jovens"
+        "https://www.enderrock.cat/disc/7250/jovens",
+        "youtube:targeted-search-verified"
       ],
-      "lastChecked": null,
-      "notes": "Alta sol·licitada per l’usuari. Pendent de verificar el canal de YouTube abans d’incorporar-ne les cançons.",
+      "lastChecked": "2026-10-07T16:00:26.789Z",
+      "notes": "Alta sol·licitada per l’usuari el 2026-10-07. Canals verificats amb cerca dirigida i fonts de l’artista; s’exclouen homònims i canals de segells compartits.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-07T15:35:08.700Z",

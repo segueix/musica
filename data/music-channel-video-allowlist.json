@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-06T19:23:16.386Z",
+  "updatedAt": "2026-10-07T16:00:26.789Z",
   "description": "Llista blanca per a canals on Segueix Música només ha d'ingerir vídeos concrets. Admet títols exactes, fragments obligatoris i fragments exclosos.",
   "channels": {
     "UCKpscwdWlVaMqcA81vLI7OA": {
@@ -1975,6 +1975,69 @@
         "song"
       ],
       "avatarFromFirstAllowedVideo": true
+    },
+    "UC4S5WcSVzMhUd-UwKKpKp5w": {
+      "artist": "Teràpia de Shock",
+      "note": "Exclusió de versions en altres llengües; la resta segueix el filtre musical habitual.",
+      "deniedTitleContains": [
+        "Sin Ti",
+        "Without You"
+      ]
+    },
+    "UCIJjTYBxYUHPFir2cZj0wKQ": {
+      "artist": "Teràpia de Shock",
+      "note": "Exclusió de versions en altres llengües; la resta segueix el filtre musical habitual.",
+      "deniedTitleContains": [
+        "Sin Ti",
+        "Without You"
+      ]
+    },
+    "UCnO3DG7B2cyiu5zoNstHEfA": {
+      "artist": "Teràpia de Shock",
+      "note": "Exclusió de versions en altres llengües; la resta segueix el filtre musical habitual.",
+      "deniedTitleContains": [
+        "Sin Ti",
+        "Without You"
+      ]
+    },
+    "UCCjjqhwGK59J_vn4l0MjYSA": {
+      "artist": "Exili a Elba",
+      "note": "Exclusió de versions en altres llengües; la resta segueix el filtre musical habitual.",
+      "deniedTitleContains": [
+        "Red Right Hand"
+      ]
+    },
+    "UCOpeaEtE-7hK7ZXGEVWMyRw": {
+      "artist": "Exili a Elba",
+      "note": "Exclusió de versions en altres llengües; la resta segueix el filtre musical habitual.",
+      "deniedTitleContains": [
+        "Red Right Hand"
+      ]
+    },
+    "UC8efMlZQ7vQ1cTO6MbspafA": {
+      "artist": "Grup de Folk",
+      "note": "Canal amb repertori multilingüe. Primera selecció de cançons catalanes identificades; no s'accepta automàticament tot el canal.",
+      "allowedTitles": [
+        "La cruel guerra",
+        "Escolta-ho en el vent",
+        "La noia del país del nord",
+        "Si no em trobes darrera l'autobús",
+        "Per sobre les muntanyes",
+        "Kumbaià",
+        "Els temps estan canviant",
+        "No serem moguts",
+        "Roseta d'Olivella",
+        "Les pometes",
+        "Hi ha algú que està trucant",
+        "La vall del riu vermell",
+        "No hi ha cap amagatall",
+        "Tota la tristor"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
     }
   }
 }
