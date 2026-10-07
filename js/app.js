@@ -5432,12 +5432,10 @@ function clearLoadingAutoHideTimer() {
     }
 }
 
+// La capa de càrrega no es pot quedar mai posada (abans només s'amagava sola a iOS: a Android, si l'API de YouTube
+// trigava, tapava la cançó que ja sonava). Es treu sola al cap de 4 s a tots els aparells.
 function scheduleLoadingAutoHide() {
     clearLoadingAutoHideTimer();
-
-    if (!isIOSLikeDevice()) {
-        return;
-    }
 
     loadingAutoHideTimer = setTimeout(() => {
         if (!loading?.classList.contains('active')) {
@@ -5445,7 +5443,7 @@ function scheduleLoadingAutoHide() {
         }
 
         const visibleForMs = Date.now() - loadingVisibleSince;
-        console.warn(`Loading overlay auto-hidden on iOS after ${visibleForMs}ms.`);
+        console.warn(`Loading overlay auto-hidden after ${visibleForMs}ms.`);
         hideLoading();
     }, 4000);
 }
@@ -11988,6 +11986,9 @@ async function showVideoFromAPILegacyImpl(videoId, options = {}) {
         ...(Array.isArray(currentFeedVideos) ? currentFeedVideos : []),
         ...cachedAPIVideos,
         ...(Array.isArray(YouTubeAPI?.styleHistoryVideos) ? YouTubeAPI.styleHistoryVideos : []),
+        // Les cançons de la ràdio poden venir del pool d'historial (history-pool.json), que no és a cap llista
+        // d'aquestes: sense això s'esperava l'índex d'arxiu (fins a 5 s) amb la capa de càrrega damunt la cançó
+        ...(Array.isArray(activePlaylistQueue) ? activePlaylistQueue : []),
     ];
 
     let cachedVideo = allKnownVideos.find(video => String(video?.id) === normalizedVideoId);
@@ -12123,6 +12124,11 @@ async function showVideoFromAPILegacyImpl(videoId, options = {}) {
                 });
             }
         }
+    }
+
+    // Amb les dades que ja tenim la fitxa ja es pot veure (i la cançó ja sona): no s'espera l'API per treure la capa
+    if (cachedVideo) {
+        hideLoading();
     }
 
     // 2. Enriquiment progressiu via API

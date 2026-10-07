@@ -73,3 +73,20 @@ describe('Cua: mateix reproductor a tots els aparells i avís de bloqueig', () =
         expect(css).toContain('.player-external-controls.is-docked .player-autoplay-hint');
     });
 });
+
+describe('Capa de càrrega en canviar de cançó', () => {
+    const app = read('js/app.js');
+
+    it('les cançons de la cua compten com a vídeos coneguts (no s’espera l’índex d’arxiu)', () => {
+        expect(app).toMatch(/const allKnownVideos = \[[\s\S]*?activePlaylistQueue[\s\S]*?\];/);
+    });
+
+    it('es treu la capa en tenir les dades, sense esperar l’API', () => {
+        expect(app).toMatch(/if \(cachedVideo\) \{\s*hideLoading\(\);\s*\}\s*\/\/ 2\. Enriquiment progressiu via API/);
+    });
+
+    it('la capa s’amaga sola a tots els aparells, no només a iOS', () => {
+        const fn = app.match(/function scheduleLoadingAutoHide\(\) \{[\s\S]*?\n\}/)[0];
+        expect(fn).not.toContain('isIOSLikeDevice');
+    });
+});
