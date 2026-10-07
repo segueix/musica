@@ -440,6 +440,50 @@ describe('Flux OAuth i Drive simulat', () => {
         await b.api.connect();
         expect(b.el('googleDriveFeedback').textContent).toContain('limitant');
     });
+    it('mostra l’estat activat en obrir Configuració abans de connectar', () => {
+        const a = setup();
+        a.el('googleDriveFeedback').textContent = 'La sincronització amb Google Drive està pendent d’activació.';
+        a.api.register();
+        expect(a.el('googleDriveFeedback').textContent).toContain('Connecta amb Google Drive');
+        expect(a.el('googleDriveSync').disabled).toBe(false);
+        expect(a.ctx.fetch).not.toHaveBeenCalled();
+    });
+    it('recupera el compte i la data després de sincronitzar i recarregar', async () => {
+        const s = server();
+        const a = setup(s.fetch);
+        a.api.register();
+        await a.api.connect();
+        expect(a.el('googleDriveFeedback').textContent).toContain('completada');
+        s.fetch.mockClear();
+
+        const b = setup(s.fetch, { localStorage: a.storage });
+        b.el('googleDriveFeedback').textContent = 'La sincronització amb Google Drive està pendent d’activació.';
+        b.api.register();
+        expect(b.el('googleDriveFeedback').textContent).toContain('Compte connectat');
+        expect(b.el('googleDriveAccount').textContent).toContain('user1@example.test');
+        expect(b.el('googleDriveAccount').textContent).toContain('Última sincronització:');
+        expect(b.el('googleDriveSync').textContent).toBe('Sincronitza');
+        expect(b.el('googleDriveSync').disabled).toBe(false);
+        expect(b.el('googleDriveDisconnect').hidden).toBe(false);
+        expect(s.fetch).not.toHaveBeenCalled();
+
+        s.state.failStatus = 429;
+        await b.api.connect();
+        expect(b.el('googleDriveFeedback').textContent).toContain('limitant');
+    });
+    it('actualitza el panell si una altra pestanya desconnecta el compte', () => {
+        const a = setup();
+        a.storage.setItem('catube_drive_account_v1', JSON.stringify({ id: 'user1', label: 'user1@example.test' }));
+        a.api.register();
+        expect(a.el('googleDriveFeedback').textContent).toContain('Compte connectat');
+        expect(a.el('googleDriveAccount').textContent).not.toContain('Última sincronització:');
+        a.storage.removeItem('catube_drive_account_v1');
+        const handler = a.ctx.addEventListener.mock.calls.find(([event]) => event === 'storage')[1];
+        handler({ key: 'catube_drive_account_v1' });
+        expect(a.el('googleDriveFeedback').textContent).toContain('Connecta amb Google Drive');
+        expect(a.el('googleDriveAccount').textContent).toBe('');
+        expect(a.el('googleDriveDisconnect').hidden).toBe(true);
+    });
     it('no fa peticions abans de l’activació ni sense connexió', async () => {
         const s = server();
         const a = setup(s.fetch, { SEGUEIX_GOOGLE_DRIVE_CLIENT_ID: '' });
@@ -447,6 +491,7 @@ describe('Flux OAuth i Drive simulat', () => {
         await a.api.connect();
         expect(s.fetch).not.toHaveBeenCalled();
         expect(a.el('googleDriveSync').disabled).toBe(true);
+        expect(a.el('googleDriveFeedback').textContent).toContain('pendent d’activació');
         const b = setup(s.fetch);
         b.ctx.navigator.onLine = false;
         await b.api.connect();

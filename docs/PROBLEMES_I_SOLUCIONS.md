@@ -1683,3 +1683,13 @@ La TV (`__segueix_tv_discovery__`) no hi entra. El vídeo potser no arrenca sol 
 **Solució:** `musicData.writeStorage()` reintenta una vegada després d'eliminar exclusivament caches regenerables (`catube_feed_v1`, `catube_archive_idx_v1`, `catube_chips_html_cache`, `iutube_feed_snapshot_v1`, `iutube_cache_*`, `catube_cat_*`). Conserva dades personals, posició de reproducció, consentiments, altres aplicacions i diaris de Drive. S'aplica tant a les metadades de connexió com a les dades musicals. No es neteja res en errors aliens a la quota. Les dades, el diari final i la data de sincronització es confirmen en el mateix lot; si falla, s'alliberen les escriptures parcials abans de restaurar-ne la còpia anterior, perquè les expansions no impedeixin recuperar les claus que s'havien reduït. Si les dades personals soles no hi caben, el procés s'atura amb la base pendent intacta per al reintent.
 
 **Proves:** quota persistent abans de crear el dispositiu, al diari i en aplicar canvis remots; preservació de dades alienes, recuperació davant quota insuficient sense cache, error en confirmar el diari final i reintent, i SecurityError sense neteja. 47 proves relacionades superades. Versions de `music-data.js` i `google-drive-sync.js` a `20261007-space-1` per evitar barrejar mòduls antics amb els nous.
+
+## [2026-10-07] - «Pendent d’activació» després d’una sincronització correcta
+
+**Símptoma:** després de sincronitzar al mòbil i tornar a Configuració, apareixia que Google Drive estava pendent d’activació.
+
+**Causa:** el missatge era text estàtic d’index.html. En recarregar l’app després d’aplicar dades remotes, `render()` recuperava el compte i la data, però només canviava el missatge si faltava el client OAuth. Amb el client configurat deixava el text inicial incorrecte.
+
+**Solució:** HTML inicial sense diagnòstic d’activació. En registrar el panell es mostra «Compte connectat» si hi ha vinculació desada, o la invitació a connectar si no n’hi ha. Es reserva «pendent d’activació» per a l’absència real del client OAuth. També es refresca l’estat quan una altra pestanya canvia la vinculació, sense trepitjar una sincronització en curs. Els resultats i errors de l’operació actual es conserven; no s’afirma que les dades estan al dia només per tenir un compte vinculat. URL del mòdul versionada a `20261007-status-1`.
+
+**Proves:** inici configurat sense compte, sincronització seguida d’una recàrrega amb el mateix emmagatzematge, recuperació de compte/data sense peticions automàtiques, errors posteriors conservats, desconnexió en una altra pestanya i estat sense client OAuth.

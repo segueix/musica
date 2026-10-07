@@ -29,7 +29,7 @@
         el.className = 'config-sync-feedback feedback-' + (error ? 'error' : 'success');
     }
 
-    function render() {
+    function render(resetFeedback = false) {
         const button = byId('googleDriveSync');
         if (!button) return;
         let account;
@@ -49,6 +49,12 @@
         if (!clientId()) {
             feedback(
                 'La sincronització amb Google Drive està pendent d’activació. Les teves dades continuen desades en aquest aparell.'
+            );
+        } else if (resetFeedback) {
+            feedback(
+                account
+                    ? 'Compte connectat. Prem «Sincronitza» per actualitzar aquest aparell.'
+                    : 'Connecta amb Google Drive per sincronitzar la teva música entre aparells.'
             );
         }
     }
@@ -297,9 +303,9 @@
         byId('googleDriveSync')?.addEventListener('click', connect);
         byId('googleDriveDisconnect')?.addEventListener('click', disconnect);
         window.addEventListener('storage', (event) => {
-            if (event.key === LINK_KEY) render();
+            if (event.key === LINK_KEY && !busy) render(true);
         });
-        render();
+        render(true);
     }
     app.features.googleDriveSync = { register, connect, disconnect, synchronize, listFiles, SCOPE };
 })(window);
