@@ -118,7 +118,12 @@ describe('Contacte i suggeriment d’artistes', () => {
         // Com compten les visualitzacions
         expect(info).toContain('Com compten les visualitzacions als teus canals');
         expect(info).toContain('reproductor oficial de YouTube');
-        expect(info).toContain('trànsit extern');
+        expect(info).toContain('Font de trànsit → Externa');
+        // Explica sense prometre res les cançons encadenades, la diferència visualitzacions/ingressos i Premium
+        expect(info).toContain('YouTube no aclareix si una cançó encadenada automàticament compta');
+        expect(info).toContain('visualitzacions compromeses');
+        expect(info).toContain('YouTube Premium');
+        expect(info).not.toContain('Només no');
         // L'algorisme, amb els pesos del motor (music-selection.js) i els quatre modes de descoberta
         const sel = fs.readFileSync(path.join(root, 'js', 'features', 'music-selection.js'), 'utf8');
         expect(sel).toMatch(
