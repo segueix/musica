@@ -120,8 +120,13 @@ describe('Contacte i suggeriment d’artistes', () => {
         expect(info).toContain('reproductor oficial de YouTube');
         expect(info).toContain('Font de trànsit → Externa');
         // Explica sense prometre res les cançons encadenades, la diferència visualitzacions/ingressos i Premium
-        expect(info).toContain('YouTube no aclareix si una cançó encadenada automàticament compta');
-        expect(info).toContain('visualitzacions compromeses');
+        // La primera cançó amb el ▶ natiu de YouTube; les encadenades soles probablement no compten (documentació de YouTube)
+        expect(info).toContain(
+            'les cançons que la ràdio\n                encadena automàticament probablement no compten com a visualització'
+        );
+        expect(info).not.toContain('queda a criteri de YouTube');
+        // A la fitxa de la cançó hi ha «Canal Youtube»; la subscripció es proposa amb la targeta
+        expect(info).not.toContain("A la fitxa de cada cançó hi ha\n                «Subscriu-t'hi a YouTube»");
         expect(info).toContain('YouTube Premium');
         expect(info).not.toContain('Només no');
         // L'algorisme, amb els pesos del motor (music-selection.js) i els quatre modes de descoberta
