@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-08T17:06:19.149Z",
+  "updatedAt": "2026-10-08T17:55:14.113Z",
   "description": "Decisions manuals sobre el tipus de contingut de vídeos concrets. Manen sobre el classificador automàtic (scripts/lib/classificar_contingut_musical.js) i el pipeline (scripts/update_music_feed.js) les reaplica a cada generació del feed. Tipus permesos: song, live_song, album, other. Un vídeo revisat aquí surt de data/music-content-review.json.",
   "videos": [
     {
@@ -2961,6 +2961,804 @@
       "title": "Carn Viva",
       "contentType": "song",
       "note": "Grup 7: enregistrament musical Topic; català contrastat amb la lletra publicada a Bandcamp. docs/GRUP_7_XAVI.md."
+    },
+    {
+      "id": "WuiYrGgyqjE",
+      "title": "Vidres a la sang - \"Llàgrimes de sang\" (Live Studio Session)",
+      "contentType": "live_song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "xl1WTUcrgB0",
+      "title": "Vidres a la sang - \"Records a l'oblit\" (Live Studio Session)",
+      "contentType": "live_song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "ztl6Ku5JPTU",
+      "title": "Vidres a la sang - \"Capricis de l'atzar\"",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "sLUSaDHMWkE",
+      "title": "Vidres a la sang - \"L'elegia dels innocents\"",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "JL9OlQeOwNU",
+      "title": "Vidres a la sang - \"Sempre és incert\" (lyric video) guest vocals by Arnau Tordera",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "3fjNbykM-e8",
+      "title": "Vidres a la sang - \"Màrtirs\"",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "G8kNBGfaGYc",
+      "title": "Vidres a la sang - \"Fins aquí\" (live BCN la Nau)",
+      "contentType": "live_song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "B0yMpjuciEI",
+      "title": "Vidres a la sang - \"Ara és demà\"",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "L-kYV5eW4Kw",
+      "title": "Vidres a la sang - \"Ventres de llum\"",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "Dn3mzSlDS8Y",
+      "title": "Vidres a la sang - \"Salveu-me els ulls\"",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "7cDlloKI9s0",
+      "title": "Vidres a la sang - \"Mort de paraula\"",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "12kRQJ1i0rk",
+      "title": "Vidres a la Sang \"Els vents bufen a favor\"",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "3XpiqGQo_TY",
+      "title": "Policromia",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "uk_I27zGjDQ",
+      "title": "El Crit",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "-kOpSJrlc0c",
+      "title": "De Sobte el Foc",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "iTkNa_QhdDA",
+      "title": "Tots els Paisatges Son Iguals",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "93D_sgf_gyg",
+      "title": "Torna al Teu Clos",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "PRXAjZMkuVY",
+      "title": "Negre Destí, Roja Venjança",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "XBbiMKCBkhE",
+      "title": "La Nostra Estirp",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "4yuO13Qrf2Q",
+      "title": "Els Límits de la Creació",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "S57e56ZHms4",
+      "title": "Som",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "ZfylFQuKAp8",
+      "title": "No Tornaré a Ser Jove",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "OXcar9vGJp4",
+      "title": "El Més Dur Sempre Guanya",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "8CjGZUZCJGk",
+      "title": "El Nostre Silenci",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "pqeItxb98-8",
+      "title": "Esclaus de la Modernitat",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "hMjVbpaGhO4",
+      "title": "La Terra i Tú",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "QjUszAnOOdw",
+      "title": "A l'ombra",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "UVa3_332Umw",
+      "title": "Un Dia Qualsevol",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "YADk6ofSX3Y",
+      "title": "Amb Tota Rancúnia",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "Ohpn1bC8v9I",
+      "title": "Identitat",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "YnDJIqBaqq0",
+      "title": "El poble redemptor",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "H9PBv400f_M",
+      "title": "L'òrbita del cor",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "ZP-vV-pxynw",
+      "title": "Emergiré",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "EItmNHHieJY",
+      "title": "Miraré de no tornar-me a perdre",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "y452wMrfSpk",
+      "title": "Som pelegrins",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "mLDvuaRUczo",
+      "title": "El mur",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "pAFRiQG2GGE",
+      "title": "Solitud",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "MczB5GZDVYI",
+      "title": "Traces Mòrbides",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "ACFjh9DBSDQ",
+      "title": "Misofonia",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "7gUY6dQW7pU",
+      "title": "Cançó de Mort",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "N4S20UP17qY",
+      "title": "Els Colors del Silenci",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "VCZMYUVlP2g",
+      "title": "L’Esglai",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "LFqMEiR_R5c",
+      "title": "Laments",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "oXGCMzL_s_g",
+      "title": "Secrets",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "sMGw3tby7Uo",
+      "title": "Malson",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "GlmSA-GI4kI",
+      "title": "Cel Rogent",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "TP91vIrZ2bk",
+      "title": "Cançó de Mort",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "P_bT3kG66j4",
+      "title": "Malson",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "gs-o-L3h0nA",
+      "title": "Cel Rogent",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "7akPkTH2YNQ",
+      "title": "Les Irreals Visions",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "16MSezM_N5M",
+      "title": "L.amor.T",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "2Da3wPx5SCY",
+      "title": "Instants",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "prqO9w7YMo8",
+      "title": "Altars",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "Sgo1W8eSvqY",
+      "title": "Espectres Al Cau",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "nLV4I0ulx48",
+      "title": "Encenalls De Mort",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "joxVDK86hkM",
+      "title": "L.amor.T",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "pdkJn3RGxb8",
+      "title": "Encenalls De Mort",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "h_gLSUYw2k4",
+      "title": "Malfiança",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "Y4Uio11mKmg",
+      "title": "De Marges I Matinades",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "xb0qy-hkaQs",
+      "title": "Espectres Al Cau",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "af092zeSnm4",
+      "title": "Encenalls De Mort",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "frZleW_n3UM",
+      "title": "Ciutat Tràgica",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "u-uVsC_HGHU",
+      "title": "Instants",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "Ll-BbcxeyFo",
+      "title": "Altars",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "7UbtKla8UJk",
+      "title": "Les Irreals Visions",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "qMejtwR_bZ0",
+      "title": "Altars",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "1NUUf0_eJ6s",
+      "title": "Instants",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "fvdIVxtkxXI",
+      "title": "Ciutat Tràgica",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "YYN9A-9c4cs",
+      "title": "Senescència",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "4cgUQfZ42TA",
+      "title": "L.Amor.T",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "eizOXtQlNNg",
+      "title": "Gebre",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "i0K6Ll0mOZ0",
+      "title": "L'ombra De L'addició",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "RrcScejooLQ",
+      "title": "... I Tornà De Les Cendres",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "D6Dkhgo952o",
+      "title": "El Palau Dels Plors",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "mtYlpomkWNs",
+      "title": "Melangia",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "StcRKHdMzCA",
+      "title": "La Vetlla",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "SMDVRxTq_A8",
+      "title": "Al Cor De La Boscúria",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "7sidXSX4x0k",
+      "title": "L'hivern Per a Les Muses",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "qKsmlSDEIV4",
+      "title": "Esgarriat",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "N884AOAQpGc",
+      "title": "El Bastó",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "0sIX2iW_v-E",
+      "title": "La Puta Ruïna",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "x6sHMcLvo3Y",
+      "title": "Corrupció i Màfia",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "p0kle4Jwxu8",
+      "title": "Cavalgant la Corda Fluixa",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "HSk43_35hzs",
+      "title": "Sang de Roure",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "bqEHHfaPojs",
+      "title": "El sot",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "xJTeL511gE8",
+      "title": "Humanitat Podrida",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "E-UvVSI_clU",
+      "title": "L'antídot",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "rKbtwFIpP54",
+      "title": "Corre i Caure Caure i Recarure",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "4BaYCchQmws",
+      "title": "Zero Substància",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "7t9uO1XQJik",
+      "title": "Brossa",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "qlV_W_ECgH8",
+      "title": "No ho vulguis saber",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "W2-BBPl2LVA",
+      "title": "La generació de la mort",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "127tggsWCbQ",
+      "title": "La fe que enterra",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "BTmJ6YnVZ4U",
+      "title": "Bateig de napalm",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "LiYCC-GlwyQ",
+      "title": "Merda de vida",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "NBzaWMBnzsA",
+      "title": "L'acer que reflecteix la nostra fi",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "SW31YPTggOQ",
+      "title": "Absolutament sol",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "Tqn2bFbhvUk",
+      "title": "Al fons de tot hi som nosaltres",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "bvToD3TO7O0",
+      "title": "La mentida, la misèria",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "wEkgEx4AoW4",
+      "title": "Fart",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "UDVrVCdYdOc",
+      "title": "Aïllament (Live)",
+      "contentType": "live_song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "hIJDi8LzEAY",
+      "title": "Absolutament sol (Live)",
+      "contentType": "live_song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "c_ri4uqPYjU",
+      "title": "La tempesta (Live)",
+      "contentType": "live_song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "vAOZLWO4FuQ",
+      "title": "Et menja per dintre (Live)",
+      "contentType": "live_song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "2LkJut3VlTk",
+      "title": "La mirada del terror",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "EzrS6eznCY4",
+      "title": "La tempesta",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "GNoFc1wrOCc",
+      "title": "La personalitat es despesa",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "CLt9rh2xRK0",
+      "title": "Et Menja Per Dintre",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "EI1mjW1Lgs4",
+      "title": "Sota Terra",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "PQpUWJTcYBU",
+      "title": "Aïllament",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "TanPkCklENo",
+      "title": "El Cos Ja diu Prou",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "7c1kMwaaAMY",
+      "title": "Gargalls de foc",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "1h4IpBXyP08",
+      "title": "Inventors de la Guerra 2.0",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "OdmL3jq5a20",
+      "title": "En plena foscor",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "4O1LgZA__9M",
+      "title": "Bruixes",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "_XFecmdogkY",
+      "title": "La mort",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "To2cwis9KVY",
+      "title": "Faust",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "-jD4Tr2b4t8",
+      "title": "Titelles i titellaires",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "TkhYkLA4d6w",
+      "title": "Una lliura de carn",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "NNmZUABui1c",
+      "title": "Dorm",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "yHUXGTpbLWw",
+      "title": "Maledicció",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "6Yvnyj35Uls",
+      "title": "Despertar",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "RDsLyRqxRUQ",
+      "title": "Parc necrotemàtic",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "EMuyPUcouxA",
+      "title": "Satanas dominus",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "1aJJfRGdiNw",
+      "title": "Dia de venjança",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "9CznoxqmYOk",
+      "title": "Deliri",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "CN2Xgcr4k7E",
+      "title": "Dogma",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "qnmNwSO5h_Q",
+      "title": "Déus del genocidi canibal",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "mCrQiugToyE",
+      "title": "Korruption found-temps de l'home llop amb lletra",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "4zDaFPKc54Y",
+      "title": "Korruption Found - Mort en vida.",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "BhCmbcYw6NQ",
+      "title": "Korruption Found - Gargalls de foc",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "ZkeDTIi2OAo",
+      "title": "Korruption Found-El jardí del Emperador",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "5ESO6qF8dfE",
+      "title": "Korruption found- EL TEU JUST DESTÍ. (videoclip)2009 promo-2010",
+      "contentType": "song",
+      "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
     }
   ]
 }

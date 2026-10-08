@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-08T17:06:19.149Z",
+  "updatedAt": "2026-10-08T17:55:14.113Z",
   "artists": [
     {
       "name": "2 Princeses Barbudes",
@@ -9685,6 +9685,52 @@
       }
     },
     {
+      "name": "Foscor",
+      "displayName": "Foscor",
+      "aliases": [],
+      "genres": [
+        "Metal"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCpWzqKujkmJvGIAt5QgBgBQ",
+            "handle": null,
+            "name": "Foscor - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://foscor.bandcamp.com/album/solitud",
+        "https://foscor.bandcamp.com/album/els-sepulcres-blancs",
+        "https://foscor.bandcamp.com/album/les-irreals-visions",
+        "https://foscor.bandcamp.com/album/les-irreals-versions",
+        "https://foscor.bandcamp.com/album/les-irreals-visions-d-side-bonus",
+        "https://foscor.bandcamp.com/album/those-horrors-wither",
+        "https://foscor.bandcamp.com/album/the-smile-of-the-sad-ones",
+        "https://foscor.bandcamp.com/album/groans-to-the-guilty",
+        "https://foscor.bandcamp.com/album/entrance-to-the-shadows-village",
+        "https://www.youtube.com/channel/UCpWzqKujkmJvGIAt5QgBgBQ",
+        "manual-user-2026-10-08",
+        "genre:manual",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": "2026-10-08T17:55:14.113Z",
+      "notes": "Lot 1 de metall de Joan Hernández. Selecció explícita de 42 vídeos; revisió documental d'idioma, límits i exclusions a docs/HEAVY_GRUP_1.md. Només els IDs de l'allowlist s'incorporen."
+    },
+    {
       "name": "Fox System",
       "displayName": "Fox System",
       "aliases": [],
@@ -14540,6 +14586,55 @@
           "wikidataWorkEvidence": []
         }
       }
+    },
+    {
+      "name": "Korruption Found",
+      "displayName": "Korruption Found",
+      "aliases": [],
+      "genres": [
+        "Metal"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCCNmteQmEPFZTuM8joXB2Vw",
+            "handle": null,
+            "name": "Korruption Found - Topic",
+            "type": "topic",
+            "primary": true
+          },
+          {
+            "id": "UClGOkwEfKOBUuvepYGT9AUQ",
+            "handle": "@korruptionfound",
+            "name": "korruptionfound",
+            "type": "official",
+            "primary": false
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://korruptionfound.bandcamp.com/album/maledicci",
+        "https://korruptionfound.bandcamp.com/album/d-us-del-genocidi-can-bal",
+        "https://korruptionfound.bandcamp.com/album/inventors-de-la-guerra",
+        "https://korruptionfound.bandcamp.com/track/satanas-dominus",
+        "https://www.youtube.com/channel/UCCNmteQmEPFZTuM8joXB2Vw",
+        "https://www.youtube.com/channel/UClGOkwEfKOBUuvepYGT9AUQ",
+        "manual-user-2026-10-08",
+        "genre:manual",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": "2026-10-08T17:55:14.113Z",
+      "notes": "Lot 1 de metall de Joan Hernández. Selecció explícita de 22 vídeos; revisió documental d'idioma, límits i exclusions a docs/HEAVY_GRUP_1.md. Només els IDs de l'allowlist s'incorporen."
     },
     {
       "name": "L'arannà",
@@ -20312,6 +20407,45 @@
         "pop-rock",
         "indie pop"
       ]
+    },
+    {
+      "name": "Moksha",
+      "displayName": "Moksha",
+      "aliases": [],
+      "genres": [
+        "Metal"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UC3uMAvZMHLOMo3OSDjqAVYQ",
+            "handle": null,
+            "name": "MOKSHA - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://bcmoksha.bandcamp.com/album/sang-de-roure",
+        "https://www.salarazzmatazz.com/31-03-2018/moksha",
+        "https://www.youtube.com/channel/UC3uMAvZMHLOMo3OSDjqAVYQ",
+        "manual-user-2026-10-08",
+        "genre:manual",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": "2026-10-08T17:55:14.113Z",
+      "notes": "Lot 1 de metall de Joan Hernández. Selecció explícita de 10 vídeos; revisió documental d'idioma, límits i exclusions a docs/HEAVY_GRUP_1.md. Només els IDs de l'allowlist s'incorporen."
     },
     {
       "name": "Montse Castellà",
@@ -28436,6 +28570,48 @@
       }
     },
     {
+      "name": "Sota Terra",
+      "displayName": "Sota Terra",
+      "aliases": [],
+      "genres": [
+        "Punk",
+        "Metal"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCUTor5MG45HnmxOEc2HrUhA",
+            "handle": null,
+            "name": "Sota Terra - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://sotaterra.bandcamp.com/",
+        "https://sotaterra.bandcamp.com/album/declivi",
+        "https://sotaterra.bandcamp.com/album/split-w-tempestat",
+        "https://www.nomepierdoniuna.net/las-salas-de-conciertos-de-castello-sacan-todo-su-repertorio-para-el-febrero-que-mas-dura/",
+        "https://www.youtube.com/channel/UCUTor5MG45HnmxOEc2HrUhA",
+        "manual-user-2026-10-08",
+        "genre:manual",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": "2026-10-08T17:55:14.113Z",
+      "notes": "Lot 1 de metall de Joan Hernández. Selecció explícita de 23 vídeos; revisió documental d'idioma, límits i exclusions a docs/HEAVY_GRUP_1.md. Només els IDs de l'allowlist s'incorporen."
+    },
+    {
       "name": "Stay Homas",
       "aliases": [],
       "genres": [
@@ -31258,6 +31434,54 @@
       ],
       "lastChecked": "2026-10-08T17:06:19.149Z",
       "notes": "Grup 7 Xavi: repertori mixt. Només 17 vídeos amb lletra catalana contrastada a Bandcamp; allowlist explícita. Kalima, Luna de miel i Demasiado guiri exclosos. Sabotejadora i Brujeria de la urbe pendents de contrastar. Vegeu docs/GRUP_7_XAVI.md."
+    },
+    {
+      "name": "Vidres a la Sang",
+      "displayName": "Vidres a la Sang",
+      "aliases": [],
+      "genres": [
+        "Metal"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCWWnWo4E1RqWDOX4-y1jwfQ",
+            "handle": "@vidresalasangofficial6392",
+            "name": "Vidres a la sang official",
+            "type": "official",
+            "primary": true
+          },
+          {
+            "id": "UCZKSBZ8hKicoNtWdq1hzTfw",
+            "handle": null,
+            "name": "Vidres a la Sang - Topic",
+            "type": "topic",
+            "primary": false
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://vidresalasang.bandcamp.com/",
+        "https://www.bloodfirepromo.com/bandas",
+        "https://www.elrockodrom.cat/entrevista-vidres-a-la-sang-la-virtut-del-desencis/",
+        "https://www.youtube.com/channel/UCWWnWo4E1RqWDOX4-y1jwfQ",
+        "https://www.youtube.com/channel/UCZKSBZ8hKicoNtWdq1hzTfw",
+        "manual-user-2026-10-08",
+        "genre:manual",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": "2026-10-08T17:55:14.113Z",
+      "notes": "Lot 1 de metall de Joan Hernández. Selecció explícita de 36 vídeos; revisió documental d'idioma, límits i exclusions a docs/HEAVY_GRUP_1.md. Només els IDs de l'allowlist s'incorporen."
     },
     {
       "name": "Vinnie Kairos",
