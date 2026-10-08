@@ -292,7 +292,6 @@
         if (!shouldPrompt(state, artist.key)) return false;
         const doc = window.document;
         if (!doc?.body) return false;
-        writeState(markPrompted(state, artist.key));
         closePrompt();
         const name = artist.name || 'aquest artista';
         const title = reason === 'follow' ? `Ara segueixes ${name}` : `T'agrada ${name}?`;
@@ -304,6 +303,13 @@
         const card = doc.createElement('section');
         card.id = PROMPT_ID;
         card.className = 'yt-sub-prompt';
+        // Espera el botó definitiu sense mostrar abans la versió provisional amb l'enllaç.
+        // Conserva les dimensions perquè l'iframe de YouTube es pugui preparar.
+        card.style.opacity = '0';
+        card.style.pointerEvents = 'none';
+        card.style.animation = 'none';
+        card.inert = true;
+        card.setAttribute('aria-hidden', 'true');
         card.setAttribute('role', 'dialog');
         card.setAttribute('aria-modal', 'false');
         card.setAttribute('aria-labelledby', 'ytSubPromptTitle');
@@ -330,9 +336,18 @@
             // Amb el botó oficial de YouTube, l'enllaç sobra (fa el mateix)
             const go = card.querySelector('[data-yt-sub-go]');
             if (go) go.hidden = ok;
+            // Si YouTube no carrega, mostra una sola vegada l'alternativa amb l'enllaç.
+            const widget = card.querySelector('.yt-sub-prompt__widget');
+            if (!ok && widget) widget.remove();
             placePrompt();
+            card.style.opacity = '';
+            card.style.pointerEvents = '';
+            card.style.animation = '';
+            card.inert = false;
+            card.removeAttribute('aria-hidden');
+            writeState(markPrompted(readState(), artist.key));
+            promptTimer = window.setTimeout(closePrompt, PROMPT_MS);
         });
-        promptTimer = window.setTimeout(closePrompt, PROMPT_MS);
         return true;
     }
 
@@ -396,3 +411,4 @@
         mountWidgets,
     };
 })(window);
+

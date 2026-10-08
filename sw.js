@@ -16,7 +16,7 @@
 // migrant els clients automàticament.
 
 // === AUTO-GENERAT per scripts/actualitzar_versio_sw.js — NO EDITAR MANUALMENT ===
-const CACHE_VERSION = 'a75c44288e4e';
+const CACHE_VERSION = '60a5d2cf5a02';
 const STATIC_ASSETS = [
     './',
     './index.html',
@@ -261,4 +261,5 @@ async function staleWhileRevalidate(request, cacheName, event) {
     const network = await networkPromise;
     return network || Response.error();
 }
+
 
