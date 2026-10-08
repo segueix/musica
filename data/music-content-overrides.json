@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-08T18:24:17.646Z",
+  "updatedAt": "2026-10-08T18:37:28.180Z",
   "description": "Decisions manuals sobre el tipus de contingut de vídeos concrets. Manen sobre el classificador automàtic (scripts/lib/classificar_contingut_musical.js) i el pipeline (scripts/update_music_feed.js) les reaplica a cada generació del feed. Tipus permesos: song, live_song, album, other. Un vídeo revisat aquí surt de data/music-content-review.json.",
   "videos": [
     {
@@ -5517,6 +5517,384 @@
       "title": "Rere el Mirall",
       "contentType": "song",
       "note": "Angoixa: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "guTvq-bkegI",
+      "title": "Dins la Boscúria",
+      "contentType": "song",
+      "note": "Grup 4 metall: cançó catalana revisada documentalment; docs/HEAVY_GRUP_4.md."
+    },
+    {
+      "id": "XAf45DrR4GA",
+      "title": "Sang I Suor",
+      "contentType": "song",
+      "note": "Grup 4 metall: cançó catalana revisada documentalment; docs/HEAVY_GRUP_4.md."
+    },
+    {
+      "id": "5ZllwUedi5g",
+      "title": "Arcadia",
+      "contentType": "song",
+      "note": "Grup 4 metall: cançó catalana revisada documentalment; docs/HEAVY_GRUP_4.md."
+    },
+    {
+      "id": "9dnwTt_D3YU",
+      "title": "Perdut en el Temps",
+      "contentType": "song",
+      "note": "Grup 4 metall: cançó catalana revisada documentalment; docs/HEAVY_GRUP_4.md."
+    },
+    {
+      "id": "b1L_65Q1Vy4",
+      "title": "Sang I Suor",
+      "contentType": "song",
+      "note": "Grup 4 metall: cançó catalana revisada documentalment; docs/HEAVY_GRUP_4.md."
+    },
+    {
+      "id": "CiaBoRF9vfg",
+      "title": "Melangia",
+      "contentType": "song",
+      "note": "Grup 4 metall: cançó catalana revisada documentalment; docs/HEAVY_GRUP_4.md."
+    },
+    {
+      "id": "6kABqy29e0o",
+      "title": "No Tanquis Els Ulls",
+      "contentType": "song",
+      "note": "Grup 4 metall: cançó catalana revisada documentalment; docs/HEAVY_GRUP_4.md."
+    },
+    {
+      "id": "VPybmzPZCJs",
+      "title": "Silenci",
+      "contentType": "song",
+      "note": "Grup 4 metall: cançó catalana revisada documentalment; docs/HEAVY_GRUP_4.md."
+    },
+    {
+      "id": "t32ozBa--rs",
+      "title": "Himne",
+      "contentType": "song",
+      "note": "Grup 4 metall: cançó catalana revisada documentalment; docs/HEAVY_GRUP_4.md."
+    },
+    {
+      "id": "Dmt_IaYotZQ",
+      "title": "Cementiri Forestal",
+      "contentType": "song",
+      "note": "Grup 4 metall: cançó catalana revisada documentalment; docs/HEAVY_GRUP_4.md."
+    },
+    {
+      "id": "PxuQJ6DI87k",
+      "title": "Vora el Foc",
+      "contentType": "song",
+      "note": "Grup 4 metall: cançó catalana revisada documentalment; docs/HEAVY_GRUP_4.md."
+    },
+    {
+      "id": "vcUKb4W51_M",
+      "title": "Animals",
+      "contentType": "song",
+      "note": "Grup 4 metall: cançó catalana revisada documentalment; docs/HEAVY_GRUP_4.md."
+    },
+    {
+      "id": "LJ-GhAJefWs",
+      "title": "Ja No Queda Res",
+      "contentType": "song",
+      "note": "Grup 4 metall: cançó catalana revisada documentalment; docs/HEAVY_GRUP_4.md."
+    },
+    {
+      "id": "M9dpzTxHZY8",
+      "title": "ICESTORM - La Llegenda Auria - ( Versió Sant Jordi 2020 )",
+      "contentType": "song",
+      "note": "Grup 4 metall: cançó catalana revisada documentalment; docs/HEAVY_GRUP_4.md."
+    },
+    {
+      "id": "M_eDeZpptn0",
+      "title": "12. Horitzons ( feat. Pep Fillat - Noctämbuls - Versió 2019 ) - ICESTORM -",
+      "contentType": "song",
+      "note": "Grup 4 metall: cançó catalana revisada documentalment; docs/HEAVY_GRUP_4.md."
+    },
+    {
+      "id": "agcwBh1YSXw",
+      "title": "11. Fi D'un Món Crepuscular - ICESTORM -",
+      "contentType": "song",
+      "note": "Grup 4 metall: cançó catalana revisada documentalment; docs/HEAVY_GRUP_4.md."
+    },
+    {
+      "id": "sNYaL2VCwDg",
+      "title": "9. Que La Terra Et Sigui Lleu- ICESTORM -",
+      "contentType": "song",
+      "note": "Grup 4 metall: cançó catalana revisada documentalment; docs/HEAVY_GRUP_4.md."
+    },
+    {
+      "id": "zr0S87hOYq0",
+      "title": "7. Depredadors - ICESTORM -",
+      "contentType": "song",
+      "note": "Grup 4 metall: cançó catalana revisada documentalment; docs/HEAVY_GRUP_4.md."
+    },
+    {
+      "id": "eKep4UmhZXA",
+      "title": "6. Sang Al Nord - ICESTORM -",
+      "contentType": "song",
+      "note": "Grup 4 metall: cançó catalana revisada documentalment; docs/HEAVY_GRUP_4.md."
+    },
+    {
+      "id": "FGQ_kNxtjC8",
+      "title": "4. Völundr - ICESTORM -",
+      "contentType": "song",
+      "note": "Grup 4 metall: cançó catalana revisada documentalment; docs/HEAVY_GRUP_4.md."
+    },
+    {
+      "id": "arnpnmp8Uds",
+      "title": "2.  Dominació Del Caos - ICESTORM -",
+      "contentType": "song",
+      "note": "Grup 4 metall: cançó catalana revisada documentalment; docs/HEAVY_GRUP_4.md."
+    },
+    {
+      "id": "DLn3qVZvceA",
+      "title": "ICESTORM -  Ullals de sang  [ Versió acústica ]",
+      "contentType": "live_song",
+      "note": "Grup 4 metall: cançó catalana revisada documentalment; docs/HEAVY_GRUP_4.md."
+    },
+    {
+      "id": "HJafxTgEIFM",
+      "title": "ICESTORM -  Llegat - [ Official video ]",
+      "contentType": "song",
+      "note": "Grup 4 metall: cançó catalana revisada documentalment; docs/HEAVY_GRUP_4.md."
+    },
+    {
+      "id": "RUmPOtPKNog",
+      "title": "ICESTORM - Llàgrimes de gel ( Versió èpica )",
+      "contentType": "song",
+      "note": "Grup 4 metall: cançó catalana revisada documentalment; docs/HEAVY_GRUP_4.md."
+    },
+    {
+      "id": "nsrq3kl3SWo",
+      "title": "ICESTORM - Reconquesta i sang",
+      "contentType": "song",
+      "note": "Grup 4 metall: cançó catalana revisada documentalment; docs/HEAVY_GRUP_4.md."
+    },
+    {
+      "id": "N8UyEFY7b4E",
+      "title": "ICESTORM -  Atlàntida",
+      "contentType": "song",
+      "note": "Grup 4 metall: cançó catalana revisada documentalment; docs/HEAVY_GRUP_4.md."
+    },
+    {
+      "id": "FJufjNINrv4",
+      "title": "ICESTORM  - Sota setge ( Cardona 1711 )",
+      "contentType": "song",
+      "note": "Grup 4 metall: cançó catalana revisada documentalment; docs/HEAVY_GRUP_4.md."
+    },
+    {
+      "id": "RyJKCTFleyE",
+      "title": "ICESTORM - Sacrifici immortal",
+      "contentType": "song",
+      "note": "Grup 4 metall: cançó catalana revisada documentalment; docs/HEAVY_GRUP_4.md."
+    },
+    {
+      "id": "gdJILNHZ2l8",
+      "title": "ICESTORM - A la forca",
+      "contentType": "song",
+      "note": "Grup 4 metall: cançó catalana revisada documentalment; docs/HEAVY_GRUP_4.md."
+    },
+    {
+      "id": "IVmAqYcMli4",
+      "title": "ICESTORM- Cant De Corbs",
+      "contentType": "song",
+      "note": "Grup 4 metall: cançó catalana revisada documentalment; docs/HEAVY_GRUP_4.md."
+    },
+    {
+      "id": "mr0MBqj-YLU",
+      "title": "ICESTORM - Terres de foc",
+      "contentType": "song",
+      "note": "Grup 4 metall: cançó catalana revisada documentalment; docs/HEAVY_GRUP_4.md."
+    },
+    {
+      "id": "dw89oBfXizo",
+      "title": "ICESTORM - La llegenda àuria",
+      "contentType": "song",
+      "note": "Grup 4 metall: cançó catalana revisada documentalment; docs/HEAVY_GRUP_4.md."
+    },
+    {
+      "id": "wp6xlLTSTPM",
+      "title": "ICESTORM - Rebel·lió",
+      "contentType": "song",
+      "note": "Grup 4 metall: cançó catalana revisada documentalment; docs/HEAVY_GRUP_4.md."
+    },
+    {
+      "id": "k90zelZkyks",
+      "title": "ICESTORM - La llegenda àuria -  [ Official Video ]",
+      "contentType": "song",
+      "note": "Grup 4 metall: cançó catalana revisada documentalment; docs/HEAVY_GRUP_4.md."
+    },
+    {
+      "id": "Yyr6pMOgLQM",
+      "title": "ICESTORM - Ullals de sang ( Feat. Quim Mandado ex-Sangtraït i LGP )",
+      "contentType": "song",
+      "note": "Grup 4 metall: cançó catalana revisada documentalment; docs/HEAVY_GRUP_4.md."
+    },
+    {
+      "id": "9-IVI-AJlsI",
+      "title": "ICESTORM - Horitzons - [ Contes de la Vall de Glaç ] - 2012",
+      "contentType": "song",
+      "note": "Grup 4 metall: cançó catalana revisada documentalment; docs/HEAVY_GRUP_4.md."
+    },
+    {
+      "id": "2z7P-i4BdmY",
+      "title": "Inhumans",
+      "contentType": "song",
+      "note": "Grup 4 metall: cançó catalana revisada documentalment; docs/HEAVY_GRUP_4.md."
+    },
+    {
+      "id": "ECQfp4OORH0",
+      "title": "La vall de l'oblit",
+      "contentType": "song",
+      "note": "Grup 4 metall: cançó catalana revisada documentalment; docs/HEAVY_GRUP_4.md."
+    },
+    {
+      "id": "QC2M8tBPXqo",
+      "title": "Descalç",
+      "contentType": "song",
+      "note": "Grup 4 metall: cançó catalana revisada documentalment; docs/HEAVY_GRUP_4.md."
+    },
+    {
+      "id": "ShsCD1u6U7w",
+      "title": "Irreverent",
+      "contentType": "song",
+      "note": "Grup 4 metall: cançó catalana revisada documentalment; docs/HEAVY_GRUP_4.md."
+    },
+    {
+      "id": "WlPUXW9cCHQ",
+      "title": "L'escorça de l'home mort",
+      "contentType": "song",
+      "note": "Grup 4 metall: cançó catalana revisada documentalment; docs/HEAVY_GRUP_4.md."
+    },
+    {
+      "id": "uPOPZmN2coA",
+      "title": "Clau de dol",
+      "contentType": "song",
+      "note": "Grup 4 metall: cançó catalana revisada documentalment; docs/HEAVY_GRUP_4.md."
+    },
+    {
+      "id": "9TTJVv8XZkA",
+      "title": "L'Alè dels Indòmits",
+      "contentType": "song",
+      "note": "Grup 4 metall: cançó catalana revisada documentalment; docs/HEAVY_GRUP_4.md."
+    },
+    {
+      "id": "uJDwVJymyJU",
+      "title": "Egocidi",
+      "contentType": "song",
+      "note": "Grup 4 metall: cançó catalana revisada documentalment; docs/HEAVY_GRUP_4.md."
+    },
+    {
+      "id": "AAiRQalGfa8",
+      "title": "L'Art de Morir",
+      "contentType": "song",
+      "note": "Grup 4 metall: cançó catalana revisada documentalment; docs/HEAVY_GRUP_4.md."
+    },
+    {
+      "id": "PwpFAcwO4TI",
+      "title": "Estigmes Sobre Cendres",
+      "contentType": "song",
+      "note": "Grup 4 metall: cançó catalana revisada documentalment; docs/HEAVY_GRUP_4.md."
+    },
+    {
+      "id": "W6nRQ7H9szU",
+      "title": "Eudaimonia",
+      "contentType": "song",
+      "note": "Grup 4 metall: cançó catalana revisada documentalment; docs/HEAVY_GRUP_4.md."
+    },
+    {
+      "id": "w7zrJjlPXKQ",
+      "title": "Arrelats",
+      "contentType": "song",
+      "note": "Grup 4 metall: cançó catalana revisada documentalment; docs/HEAVY_GRUP_4.md."
+    },
+    {
+      "id": "MIEv6PGkhBQ",
+      "title": "Hereus",
+      "contentType": "song",
+      "note": "Grup 4 metall: cançó catalana revisada documentalment; docs/HEAVY_GRUP_4.md."
+    },
+    {
+      "id": "FjqLF4_ABiM",
+      "title": "Hereus",
+      "contentType": "song",
+      "note": "Grup 4 metall: cançó catalana revisada documentalment; docs/HEAVY_GRUP_4.md."
+    },
+    {
+      "id": "3UziseexBR0",
+      "title": "Vrademargk - Clau de Dol",
+      "contentType": "song",
+      "note": "Grup 4 metall: cançó catalana revisada documentalment; docs/HEAVY_GRUP_4.md."
+    },
+    {
+      "id": "y1_Su-MUjaY",
+      "title": "1.CLAU DE DOL",
+      "contentType": "song",
+      "note": "Grup 4 metall: cançó catalana revisada documentalment; docs/HEAVY_GRUP_4.md."
+    },
+    {
+      "id": "hdkkoSddejo",
+      "title": "2.IRREVERENT ",
+      "contentType": "song",
+      "note": "Grup 4 metall: cançó catalana revisada documentalment; docs/HEAVY_GRUP_4.md."
+    },
+    {
+      "id": "BUUVo4OaMbE",
+      "title": "3.DESCALÇ ",
+      "contentType": "song",
+      "note": "Grup 4 metall: cançó catalana revisada documentalment; docs/HEAVY_GRUP_4.md."
+    },
+    {
+      "id": "JHNRH8CCW-M",
+      "title": "4.L'ESCORÇA DE L'HOME MORT",
+      "contentType": "song",
+      "note": "Grup 4 metall: cançó catalana revisada documentalment; docs/HEAVY_GRUP_4.md."
+    },
+    {
+      "id": "5ND50FBj_o0",
+      "title": "5.INHUMANS",
+      "contentType": "song",
+      "note": "Grup 4 metall: cançó catalana revisada documentalment; docs/HEAVY_GRUP_4.md."
+    },
+    {
+      "id": "IfDcTykvl2o",
+      "title": "6.LA VALL DE L'OBLIT ",
+      "contentType": "song",
+      "note": "Grup 4 metall: cançó catalana revisada documentalment; docs/HEAVY_GRUP_4.md."
+    },
+    {
+      "id": "tNSqy6OgOJM",
+      "title": "Vrademargk - Irreverent",
+      "contentType": "song",
+      "note": "Grup 4 metall: cançó catalana revisada documentalment; docs/HEAVY_GRUP_4.md."
+    },
+    {
+      "id": "xWNZQCkfJ1E",
+      "title": "Vrademargk - L'Art de Morir en directe a Terrassa",
+      "contentType": "live_song",
+      "note": "Grup 4 metall: cançó catalana revisada documentalment; docs/HEAVY_GRUP_4.md."
+    },
+    {
+      "id": "6EVqw46Zppg",
+      "title": "VRADEMARGK - \"Eudaimonia\" Lyric Video 2021- Featuring Eloi Boucherie",
+      "contentType": "song",
+      "note": "Grup 4 metall: cançó catalana revisada documentalment; docs/HEAVY_GRUP_4.md."
+    },
+    {
+      "id": "k6ADtgQLjk0",
+      "title": "Vrademargk - Arrelats 2021",
+      "contentType": "song",
+      "note": "Grup 4 metall: cançó catalana revisada documentalment; docs/HEAVY_GRUP_4.md."
+    },
+    {
+      "id": "kbJaaMpOCls",
+      "title": "PESTA PORCINA - La Fonda Canibal",
+      "contentType": "live_song",
+      "note": "Grup 4 metall: cançó catalana revisada documentalment; docs/HEAVY_GRUP_4.md."
+    },
+    {
+      "id": "fn_BjVH4uYs",
+      "title": "COPROFAGIA RURAL - PESTA PORCINA -",
+      "contentType": "live_song",
+      "note": "Grup 4 metall: cançó catalana revisada documentalment; docs/HEAVY_GRUP_4.md."
     }
   ]
 }

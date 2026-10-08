@@ -1,24 +1,30 @@
-name: Verificar Pesta Porcina grup 4
+name: Verificar metall grup 4
 on:
-  push:
-    branches: [main]
-    paths: [".github/workflows/inspeccionar-candidats-musicals.yml"]
+  workflow_run:
+    workflows: ["Actualitzar feed musical"]
+    types: [completed]
 permissions:
   contents: read
 jobs:
-  inspeccio:
+  verifica:
+    if: github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
       - uses: actions/setup-node@v5
         with:
           node-version: "20"
-      - name: Consulta limitada de candidats i repertoris
-        env:
-          YOUTUBE_API_KEY_SERVER: ${{ secrets.YOUTUBE_API_KEY_SERVER }}
+      - name: Comprova seleccio i exclusions
         run: |
           node - <<'NODE'
-          async function api(endpoint,params){const u=new URL('https://www.googleapis.com/youtube/v3/'+endpoint);for(const[k,v]of Object.entries(params))u.searchParams.set(k,v);u.searchParams.set('key',process.env.YOUTUBE_API_KEY_SERVER);for(let attempt=0;attempt<4;attempt++){const r=await fetch(u);if(r.status===429||r.status>=500){await new Promise(ok=>setTimeout(ok,1500*(attempt+1)));continue;}const d=await r.json();if(!r.ok)throw Error('YouTube '+r.status);return d;}throw Error('YouTube unavailable after retries');}
-          (async()=>{const ids=new Set(['UCeZTzF8dhFsh_BcqHUzygjg']);
-          for(const id of ids){const r=await api('channels',{part:'snippet,contentDetails',id});const c=r.items?.[0];if(!c)continue;let token='',tracks=[];for(let n=0;n<2;n++){const p=await api('playlistItems',{part:'snippet,contentDetails',playlistId:c.contentDetails.relatedPlaylists.uploads,maxResults:'50',...(token?{pageToken:token}:{})});const vids=p.items.map(x=>x.contentDetails.videoId);if(vids.length){const v=await api('videos',{part:'snippet,contentDetails',id:vids.join(',')});tracks.push(...v.items);}token=p.nextPageToken||'';if(!token)break;}console.log('REPERTOIRE '+JSON.stringify({id,title:c.snippet.title,handle:c.snippet.customUrl,description:c.snippet.description,tracks,more:!!token}));}})().catch(e=>{console.error(e.message);process.exitCode=1;});
+          const fs=require('fs'),assert=require('assert');
+          const specs=[{"artist":"Avalot","id":"UCcG2ayuF3B2xDZIVH2LNefg","ids":["guTvq-bkegI","XAf45DrR4GA","5ZllwUedi5g","9dnwTt_D3YU","b1L_65Q1Vy4","CiaBoRF9vfg","6kABqy29e0o","VPybmzPZCJs","t32ozBa--rs","Dmt_IaYotZQ","PxuQJ6DI87k","vcUKb4W51_M","LJ-GhAJefWs"]},{"artist":"Icestorm","id":"UCcjUSZZ1Aqt74OqoXtkb51A","ids":["M9dpzTxHZY8","M_eDeZpptn0","agcwBh1YSXw","sNYaL2VCwDg","zr0S87hOYq0","eKep4UmhZXA","FGQ_kNxtjC8","arnpnmp8Uds","DLn3qVZvceA","HJafxTgEIFM","RUmPOtPKNog","nsrq3kl3SWo","N8UyEFY7b4E","FJufjNINrv4","RyJKCTFleyE","gdJILNHZ2l8","IVmAqYcMli4","mr0MBqj-YLU","dw89oBfXizo","wp6xlLTSTPM","k90zelZkyks","Yyr6pMOgLQM","9-IVI-AJlsI"]},{"artist":"Vrademargk","id":"UC0Ury5l6zFGf9ws25up1ucg","ids":["2z7P-i4BdmY","ECQfp4OORH0","QC2M8tBPXqo","ShsCD1u6U7w","WlPUXW9cCHQ","uPOPZmN2coA","9TTJVv8XZkA","uJDwVJymyJU","AAiRQalGfa8","PwpFAcwO4TI","W6nRQ7H9szU","w7zrJjlPXKQ"]},{"artist":"Thanatopraxy","id":"UCZ9JPgA_kLvdtOpbIzs8Yew","ids":["MIEv6PGkhBQ","FjqLF4_ABiM"]},{"artist":"Vrademargk","id":"UC5b2TCGWRI0ulWbpeCm9dnw","ids":["3UziseexBR0","y1_Su-MUjaY","hdkkoSddejo","BUUVo4OaMbE","JHNRH8CCW-M","5ND50FBj_o0","IfDcTykvl2o","tNSqy6OgOJM","xWNZQCkfJ1E","6EVqw46Zppg","k6ADtgQLjk0"]},{"artist":"Pesta Porcina","id":"UCeZTzF8dhFsh_BcqHUzygjg","ids":["kbJaaMpOCls","fn_BjVH4uYs"]}];
+          const found=new Map();
+          function walk(o){if(!o||typeof o!=='object')return;if(typeof o.id==='string'&&specs.some(s=>s.ids.includes(o.id)||s.id===o.channelId))found.set(o.id,o);for(const v of Object.values(o))if(v&&typeof v==='object')walk(v);}
+          walk(JSON.parse(fs.readFileSync('data/feed.json','utf8')));
+          function files(dir){if(!fs.existsSync(dir))return;for(const e of fs.readdirSync(dir,{withFileTypes:true})){const p=dir+'/'+e.name;if(e.isDirectory())files(p);else if(p.endsWith('.json'))walk(JSON.parse(fs.readFileSync(p,'utf8')));}}
+          files('data/archive');const allowed=new Set(specs.flatMap(s=>s.ids));for(const s of specs){const missing=s.ids.filter(id=>!found.has(id));console.log(JSON.stringify({artist:s.artist,channel:s.id,expected:s.ids.length,missing}));assert.equal(missing.length,0,'Vídeos absents');}for(const[id,v]of found)if(specs.some(s=>s.id===v.channelId))assert(allowed.has(id),'Vídeo no autoritzat '+id);console.log('HEAVY_4_OK '+allowed.size+' vídeos; selecció exacta.');
           NODE

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-08T18:24:17.646Z",
+  "updatedAt": "2026-10-08T18:37:28.180Z",
   "artists": [
     {
       "name": "2 Princeses Barbudes",
@@ -2910,6 +2910,43 @@
           "wikidataWorkEvidence": []
         }
       }
+    },
+    {
+      "name": "Avalot",
+      "displayName": "Avalot",
+      "aliases": [],
+      "genres": [
+        "Metal"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCcG2ayuF3B2xDZIVH2LNefg",
+            "handle": null,
+            "name": "Avalot - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://www.enderrock.cat/disc/565/arrels",
+        "manual-user-2026-10-08",
+        "genre:manual",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": "2026-10-08T18:37:28.180Z",
+      "notes": "Grup 4 metall. Selecció tancada per ID, revisada documentalment. Vegeu docs/HEAVY_GRUP_4.md. La resta del repertori no s’autoritza automàticament."
     },
     {
       "name": "Ayryn",
@@ -12105,6 +12142,47 @@
       ],
       "lastChecked": "2026-10-08T16:16:43.833Z",
       "notes": "Grup 3 Xavi. Canal Tema UCvPRZLDMTTzI_DeI5EEFJIA i EP Com En Toshiro Mifune identificats (Miguel Rodrigo, Gaspar Alloza, Iban Galindo, Robert Beltran). No s'han localitzat lletres per confirmar idioma. Cinc pistes pendents: agwd6xAZ9_s, vnwxo3Dy6-I, scNdnZe7v3g, 0NzC1yZAN9o, C9kdnxlqvew. Els títols anglesos no s'han tractat com a prova d'idioma. Homònims Hirsute francesos descartats."
+    },
+    {
+      "name": "Icestorm",
+      "displayName": "Icestorm",
+      "aliases": [],
+      "genres": [
+        "Metal"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCcjUSZZ1Aqt74OqoXtkb51A",
+            "handle": "@icestormband",
+            "name": "Icestorm",
+            "type": "official",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://www.icestorm.cat/ca/inici",
+        "https://icestorm.bandcamp.com/album/terres-de-foc-firelands",
+        "https://icestorm.bandcamp.com/album/s-a-g-a",
+        "https://www.youtube.com/watch?v=Yyr6pMOgLQM",
+        "https://www.youtube.com/watch?v=9-IVI-AJlsI",
+        "manual-user-2026-10-08",
+        "genre:manual",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": "2026-10-08T18:37:28.180Z",
+      "notes": "Grup 4 metall. Selecció tancada per ID, revisada documentalment. Vegeu docs/HEAVY_GRUP_4.md. La resta del repertori no s’autoritza automàticament."
     },
     {
       "name": "Inadaptats",
@@ -24491,6 +24569,44 @@
       "notes": "Grup 6 Xavi. Banda identificada i lletres catalanes contrastades a Bandcamp. Sense canal propi/Topic verificat: cerques YouTube retornen còpies de tercers i un àlbum complet. Pendent de canal, inactiu, sense ingestió."
     },
     {
+      "name": "Pesta Porcina",
+      "displayName": "Pesta Porcina",
+      "aliases": [],
+      "genres": [
+        "Metal"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCeZTzF8dhFsh_BcqHUzygjg",
+            "handle": "@jofredalmau",
+            "name": "Jofredalmau",
+            "type": "other",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://www.scribd.com/document/978038968/Necro-Porc-Mic-On",
+        "https://www.youtube.com/watch?v=kbJaaMpOCls",
+        "manual-user-2026-10-08",
+        "genre:manual",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": "2026-10-08T18:37:28.180Z",
+      "notes": "Grup 4 metall. Selecció tancada per ID, revisada documentalment. Vegeu docs/HEAVY_GRUP_4.md. Canal personal compartit de Jofre Dalmau: només dues cançons de Pesta Porcina; caràtula del vídeo seleccionat."
+    },
+    {
       "name": "Pilseners",
       "aliases": [],
       "genres": [
@@ -30139,6 +30255,44 @@
       "genresRaw": []
     },
     {
+      "name": "Thanatopraxy",
+      "displayName": "Thanatopraxy",
+      "aliases": [],
+      "genres": [
+        "Metal"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCZ9JPgA_kLvdtOpbIzs8Yew",
+            "handle": null,
+            "name": "thanatopraxy - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://thanatopraxy.bandcamp.com/album/guts-lungs-and-other-things",
+        "https://www.enderrock.cat/noticia/28737/noves-cancons-catala-son-pau-vallv-flashy-ice-cream-galgo-lento-ayryn-miki-nunez-fades-alanaire",
+        "manual-user-2026-10-08",
+        "genre:manual",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": "2026-10-08T18:37:28.180Z",
+      "notes": "Grup 4 metall. Selecció tancada per ID, revisada documentalment. Vegeu docs/HEAVY_GRUP_4.md. La resta del repertori no s’autoritza automàticament."
+    },
+    {
       "name": "The Anti-Patiks",
       "aliases": [],
       "genres": [
@@ -32217,6 +32371,53 @@
         }
       },
       "genresRaw": []
+    },
+    {
+      "name": "Vrademargk",
+      "displayName": "Vrademargk",
+      "aliases": [
+        "Vrademarg"
+      ],
+      "genres": [
+        "Metal"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UC5b2TCGWRI0ulWbpeCm9dnw",
+            "handle": "@vrademargkofficial",
+            "name": "VRADEMARGKofficial",
+            "type": "official",
+            "primary": true
+          },
+          {
+            "id": "UC0Ury5l6zFGf9ws25up1ucg",
+            "handle": null,
+            "name": "Vrademargk - Topic",
+            "type": "topic",
+            "primary": false
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://vrademargk.bandcamp.com/album/arrelats",
+        "https://vrademargk.bandcamp.com/album/el-pante-dels-vius",
+        "manual-user-2026-10-08",
+        "genre:manual",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": "2026-10-08T18:37:28.180Z",
+      "notes": "Grup 4 metall. Selecció tancada per ID, revisada documentalment. Vegeu docs/HEAVY_GRUP_4.md. La resta del repertori no s’autoritza automàticament."
     },
     {
       "name": "Whiskyn's",

@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-08T18:24:17.646Z",
+  "updatedAt": "2026-10-08T18:37:28.180Z",
   "description": "Llista blanca per a canals on Segueix Música només ha d'ingerir vídeos concrets. Admet títols exactes, fragments obligatoris i fragments exclosos.",
   "channels": {
     "UCKpscwdWlVaMqcA81vLI7OA": {
@@ -4079,6 +4079,141 @@
         "live_song"
       ],
       "avatarFromFirstAllowedVideo": false
+    },
+    "UCcG2ayuF3B2xDZIVH2LNefg": {
+      "artist": "Avalot",
+      "note": "Grup 4 metall: música catalana contrastada documentalment; selecció exacta. Vegeu docs/HEAVY_GRUP_4.md.",
+      "allowedVideoIds": [
+        "guTvq-bkegI",
+        "XAf45DrR4GA",
+        "5ZllwUedi5g",
+        "9dnwTt_D3YU",
+        "b1L_65Q1Vy4",
+        "CiaBoRF9vfg",
+        "6kABqy29e0o",
+        "VPybmzPZCJs",
+        "t32ozBa--rs",
+        "Dmt_IaYotZQ",
+        "PxuQJ6DI87k",
+        "vcUKb4W51_M",
+        "LJ-GhAJefWs"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "avatarFromFirstAllowedVideo": false
+    },
+    "UCcjUSZZ1Aqt74OqoXtkb51A": {
+      "artist": "Icestorm",
+      "note": "Grup 4 metall: música catalana contrastada documentalment; selecció exacta. Vegeu docs/HEAVY_GRUP_4.md.",
+      "allowedVideoIds": [
+        "M9dpzTxHZY8",
+        "M_eDeZpptn0",
+        "agcwBh1YSXw",
+        "sNYaL2VCwDg",
+        "zr0S87hOYq0",
+        "eKep4UmhZXA",
+        "FGQ_kNxtjC8",
+        "arnpnmp8Uds",
+        "DLn3qVZvceA",
+        "HJafxTgEIFM",
+        "RUmPOtPKNog",
+        "nsrq3kl3SWo",
+        "N8UyEFY7b4E",
+        "FJufjNINrv4",
+        "RyJKCTFleyE",
+        "gdJILNHZ2l8",
+        "IVmAqYcMli4",
+        "mr0MBqj-YLU",
+        "dw89oBfXizo",
+        "wp6xlLTSTPM",
+        "k90zelZkyks",
+        "Yyr6pMOgLQM",
+        "9-IVI-AJlsI"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "avatarFromFirstAllowedVideo": false
+    },
+    "UC0Ury5l6zFGf9ws25up1ucg": {
+      "artist": "Vrademargk",
+      "note": "Grup 4 metall: música catalana contrastada documentalment; selecció exacta. Vegeu docs/HEAVY_GRUP_4.md.",
+      "allowedVideoIds": [
+        "2z7P-i4BdmY",
+        "ECQfp4OORH0",
+        "QC2M8tBPXqo",
+        "ShsCD1u6U7w",
+        "WlPUXW9cCHQ",
+        "uPOPZmN2coA",
+        "9TTJVv8XZkA",
+        "uJDwVJymyJU",
+        "AAiRQalGfa8",
+        "PwpFAcwO4TI",
+        "W6nRQ7H9szU",
+        "w7zrJjlPXKQ"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "avatarFromFirstAllowedVideo": false
+    },
+    "UCZ9JPgA_kLvdtOpbIzs8Yew": {
+      "artist": "Thanatopraxy",
+      "note": "Grup 4 metall: música catalana contrastada documentalment; selecció exacta. Vegeu docs/HEAVY_GRUP_4.md.",
+      "allowedVideoIds": [
+        "MIEv6PGkhBQ",
+        "FjqLF4_ABiM"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "avatarFromFirstAllowedVideo": false
+    },
+    "UC5b2TCGWRI0ulWbpeCm9dnw": {
+      "artist": "Vrademargk",
+      "note": "Grup 4 metall: música catalana contrastada documentalment; selecció exacta. Vegeu docs/HEAVY_GRUP_4.md.",
+      "allowedVideoIds": [
+        "3UziseexBR0",
+        "y1_Su-MUjaY",
+        "hdkkoSddejo",
+        "BUUVo4OaMbE",
+        "JHNRH8CCW-M",
+        "5ND50FBj_o0",
+        "IfDcTykvl2o",
+        "tNSqy6OgOJM",
+        "xWNZQCkfJ1E",
+        "6EVqw46Zppg",
+        "k6ADtgQLjk0"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "avatarFromFirstAllowedVideo": false
+    },
+    "UCeZTzF8dhFsh_BcqHUzygjg": {
+      "artist": "Pesta Porcina",
+      "note": "Grup 4 metall: música catalana contrastada documentalment; selecció exacta. Vegeu docs/HEAVY_GRUP_4.md.",
+      "allowedVideoIds": [
+        "kbJaaMpOCls",
+        "fn_BjVH4uYs"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "avatarFromFirstAllowedVideo": true
     }
   }
 }
