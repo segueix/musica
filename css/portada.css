@@ -6302,44 +6302,14 @@ body.is-video-pip .video-placeholder.is-placeholder-hidden {
     border-color: var(--pt-accent);
 }
 
-/* ---------- «Subscriu-t'hi a YouTube» (fitxa de la cançó; js/features/youtube-subscribe.js) ----------
-   L'antic «Canal Youtube» porta al canal oficial amb el diàleg de subscripció obert. Al mòbil estret el text és
-   «Subscriu-t'hi» (el nom complet és a l'aria-label) perquè la fila de botons no surti de l'ample. */
-@media (max-width: 480px) {
-    .btn-pill-red[data-yt-subscribe] .yt-subscribe-long {
-        display: none;
-    }
-}
-
-/* Botó oficial de subscripció de YouTube a la fitxa de la cançó (youtube-subscribe.js, mountWidgets). Buit fins que
-   arriba; aleshores l'enllaç «Subscriu-t'hi» s'amaga. */
-.yt-sub-widget {
-    display: inline-flex;
-    align-items: center;
-    min-height: 24px;
-}
-
-/* Mentre carrega no es veu ni ocupa lloc, però té la seva mida (si no, l'iframe de YouTube no es pinta bé) */
-.yt-sub-widget:not(.is-ready),
+/* Botó oficial de YouTube de la targeta: mentre carrega no es veu ni ocupa lloc, però té la seva mida (si el
+   contenidor té display: none o 1 px, l'iframe de YouTube no es pinta bé) */
 .yt-sub-prompt:not(.has-widget) .yt-sub-prompt__widget {
     position: absolute;
     left: -10000px;
     top: 0;
     opacity: 0;
     pointer-events: none;
-}
-
-.yt-sub-widget.is-ready {
-    display: inline-flex;
-    flex: 0 0 auto;
-    /* L'iframe neix amb 450 px d'ample: que no empenyi la fila de botons */
-    max-width: 160px;
-    overflow: hidden;
-}
-
-/* Amb el botó oficial ja pintat, l'enllaç s'amaga (els estils del botó tenen display propi) */
-.btn-pill-red[data-yt-subscribe][hidden] {
-    display: none !important;
 }
 
 /* ---------- Proposta de subscripció: targeta gran i centrada ----------

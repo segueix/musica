@@ -1,17 +1,16 @@
 // Subscripció al canal oficial de YouTube de l'artista (2026-10-07).
 // - L'enllaç «Subscriu-t'hi a YouTube» porta al canal OFICIAL (no al «Tema») amb `?sub_confirmation=1`: YouTube hi obre
 //   de seguida el diàleg per confirmar la subscripció (al mòbil, a l'app de YouTube).
-// - On hi ha canal oficial, s'hi carrega el botó oficial de subscripció de YouTube (platform.js, només amb YouTube
-//   acceptat); si no arriba, es queda l'enllaç.
+// - A la targeta de la proposta s'hi carrega el botó oficial de subscripció de YouTube (platform.js, només amb YouTube
+//   acceptat); si no arriba, es queda l'enllaç. (A la fitxa de la cançó hi ha el botó «Canal Youtube» de sempre.)
 // - Quan l'usuari mostra interès (segueix l'artista a l'app o li fa m'agrada a una segona cançó), es proposa una sola
-//   vegada per artista i com a màxim una al dia, amb una targeta gran i centrada (mai damunt del reproductor).
+//   vegada per artista, amb una targeta gran i centrada (mai damunt del reproductor).
 // Patró 2: implementació directa. La lògica pura (officialChannelId, shouldPrompt, …) es pot provar sense DOM.
 (function (window) {
     const app = window.SegueixApp;
     if (!app) return;
 
     const STORAGE_KEY = 'catube_yt_subscribe_prompts';
-    const DAY_MS = 24 * 60 * 60 * 1000;
     // M'agrades de cançons d'un mateix artista a partir dels quals es proposa subscriure-s'hi
     const LIKES_TO_PROMPT = 2;
 
@@ -41,13 +40,13 @@
         };
     }
 
-    // Una proposta per artista (per sempre) i com a màxim una al dia.
-    function shouldPrompt(state, artistKey, now = Date.now()) {
+    // Una proposta per artista (per sempre). Abans també com a màxim una al dia: en seguir diversos artistes seguits
+    // només sortia la primera i semblava que no funcionava (2026-10-08).
+    function shouldPrompt(state, artistKey) {
         const key = String(artistKey || '');
         if (!key) return false;
         const current = normalizeState(state);
-        if (current.prompted[key]) return false;
-        return now - current.lastAt >= DAY_MS;
+        return !current.prompted[key];
     }
 
     function markPrompted(state, artistKey, now = Date.now()) {

@@ -1,3 +1,11 @@
+## [2026-10-08] - En seguir artistes no sortia la proposta de subscripció (i «Segueix» de la fitxa d'artista no seguia)
+
+**Problema:** l'usuari seguia artistes des de la ràdio i des de la fitxa d'artista i no li sortia la targeta «Subscriu-t'hi a YouTube».
+
+**Causa Arrel:** (1) La regla «com a màxim una proposta al dia» (`shouldPrompt()`): després del primer artista no en sortia cap més. (2) A la fitxa d'artista, `#channelProfileFollowBtn` es reutilitza per a cada artista i `openChannelProfileLegacyImpl()` hi posa `followBound = 'false'`: `bindFollowButtons()` hi afegia un gestor de clic més a cada visita, i amb dues visites un toc seguia i deixava de seguir alhora (l'artista no quedava seguit). Ja passava abans.
+
+**Solució Implementada:** (1) Una proposta per artista, sense límit diari. (2) `bindFollowButtons()` només posa un gestor per botó (`button._followClickBound`) i llegeix `data-follow-channel` en el moment del clic. A més, a petició de l'usuari, la fitxa de la cançó torna a tenir el botó «Canal Youtube» de sempre; el botó oficial de YouTube queda només a la targeta. Verificat en Chromium: tres artistes seguits des de la fitxa (obrint-la dues vegades) i dos des de la fitxa de la cançó amb una ràdio: tots queden seguits i a cadascun li surt la targeta. Prova: `tests/youtube-subscribe.test.js`.
+
 ## [2026-10-08] - Proposta de subscripció gran i centrada, i botó oficial de subscripció de YouTube
 
 **Problema:** al mòbil, l'avís «Ara segueixes… Vols subscriure't també a YouTube?» era un avís petit a baix de tot.
