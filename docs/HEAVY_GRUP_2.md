@@ -227,6 +227,8 @@ Canal: https://www.youtube.com/channel/UCYnT07O7RJlNvU_sNq6EsZQ
 
 ## Verificació
 
-Catàleg validat amb validar_artistes_musica.js. Comprovació automàtica de presència exacta al feed/arxiu pendent d’acabar. La revisió lingüística només marcarà aquests 116 IDs.
+Catàleg validat amb validar_artistes_musica.js. Feed i índex publicats correctament: només nou canals nous consultats. Verificació automàtica HEAVY_2_OK: els 116 IDs són presents al feed/arxiu i no hi ha vídeos fora de la selecció en aquests canals. Revisió lingüística aplicada exclusivament als 116 IDs d’aquest lot; es conserven els altres pendents i descartats.
+
+Execucions: feed 37822168421; comprovació exacta 37822249356. Les proves del pipeline i la validació musical han passat.
 
 La línia base de l’aplicació té 5 tests fallits i 5 errors de lint preexistents, documentats al grup 1; no s’ha modificat codi de l’aplicació en aquest lot.
