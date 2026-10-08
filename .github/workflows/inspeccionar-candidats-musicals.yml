@@ -29,8 +29,8 @@ jobs:
             return data;
           }
           (async () => {
-            const ids=new Set();
-            for(const q of ['"Daltabaix"','"En-Brut"','"Hirsut" music','"Fox System"','"FP" "Ciment"']){
+            const ids=new Set(['UCMI_YX4hq_6gmj5KXiSMCEQ','UCnJ4T56eu1dxFBWin7Z7C3A','UCdontCcTg9y1senwNiJFECg']);
+            for(const q of ['"Daltabaix" "Topic"','"En-Brut" "Topic"','"Fox System" "Topic"','"Hirsut" "Idiota competent"']){
               const r=await api('search',{part:'snippet',type:'video',maxResults:'5',q});
               console.log('SEARCH '+JSON.stringify({q,items:r.items}));
               for(const x of r.items||[])ids.add(x.snippet.channelId);
@@ -41,6 +41,7 @@ jobs:
               const p=await api('playlistItems',{part:'snippet,contentDetails',playlistId:c.contentDetails.relatedPlaylists.uploads,maxResults:'50'});
               const vids=p.items.map(x=>x.contentDetails.videoId);
               const v=await api('videos',{part:'snippet,contentDetails',id:vids.join(',')});
+              for(const track of v.items){const m=track.contentDetails.duration.match(/PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?/);const sec=(+m[1]||0)*3600+(+m[2]||0)*60+(+m[3]||0);if(sec<=120){const h=await fetch('https://www.youtube.com/shorts/'+track.id,{method:'HEAD',redirect:'manual',signal:AbortSignal.timeout(10000)}).catch(()=>null);track.shortCheck={status:h?.status,location:h?.headers.get('location')};}}
               console.log('REPERTOIRE '+JSON.stringify({id,title:c.snippet.title,handle:c.snippet.customUrl,description:c.snippet.description,tracks:v.items,more:!!p.nextPageToken}));
             }
           })().catch(e=>{console.error(e.message);process.exitCode=1;});
