@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-08T16:18:16.730Z",
+  "generatedAt": "2026-10-08T16:32:09.370Z",
   "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
   "deepPagesFetched": 0,
   "deepChannelCount": 18,
-  "topicChannelCount": 267,
-  "governedChannelCount": 92,
+  "topicChannelCount": 271,
+  "governedChannelCount": 94,
   "topicCoverage": [
     {
       "id": "UCqaEtRht2jakBhGFLzS617w",
@@ -96,6 +96,14 @@
       "governs": true
     },
     {
+      "id": "UCZn28rxOtata8FamPOLCDug",
+      "name": "GATZARA",
+      "songs": 1,
+      "matched": 1,
+      "coverage": 1,
+      "governs": true
+    },
+    {
       "id": "UCUTFIQKXld2UO6NRCxiM8qw",
       "name": "GAVINA.MP3",
       "songs": 7,
@@ -140,6 +148,14 @@
       "name": "La Pegatina",
       "songs": 8,
       "matched": 8,
+      "coverage": 1,
+      "governs": true
+    },
+    {
+      "id": "UCICi6PgGxMiqrzwepxP0VZA",
+      "name": "Les Testarudes",
+      "songs": 4,
+      "matched": 4,
       "coverage": 1,
       "governs": true
     },
@@ -802,6 +818,14 @@
     {
       "id": "UCnmFh1j3xvDfrw20AqVgegw",
       "name": "Derbi Junior",
+      "songs": 3,
+      "matched": 2,
+      "coverage": 0.67,
+      "governs": false
+    },
+    {
+      "id": "UCN8HPAk-E5ZtrkLrDf7cR7A",
+      "name": "Les Aranyes",
       "songs": 3,
       "matched": 2,
       "coverage": 0.67,
@@ -1770,6 +1794,13 @@
       "withClip": 0
     },
     {
+      "id": "UCgV7p1tbKMGsNjvg8Zhm4YQ",
+      "name": "GATZARA",
+      "tracks": 18,
+      "selected": 18,
+      "withClip": 1
+    },
+    {
       "id": "UC2abGPf4WfBi0LXHYMKX_aQ",
       "name": "gavina.mp3",
       "tracks": 32,
@@ -1831,6 +1862,13 @@
       "tracks": 98,
       "selected": 33,
       "withClip": 0
+    },
+    {
+      "id": "UChp3Qj6gtmg9chsHHDFyVyg",
+      "name": "Guaita'ls",
+      "tracks": 1,
+      "selected": 1,
+      "withClip": 1
     },
     {
       "id": "UCyhZSV8Dh0pQi09p1vECRVA",
@@ -2120,6 +2158,13 @@
       "withClip": 0
     },
     {
+      "id": "UC3v9pZ9RLUMaaBrr877QPmA",
+      "name": "Les Aranyes",
+      "tracks": 14,
+      "selected": 14,
+      "withClip": 2
+    },
+    {
       "id": "UCNy0mWkgdGm_-fqav1J59dQ",
       "name": "Les Buch",
       "tracks": 29,
@@ -2139,6 +2184,13 @@
       "tracks": 32,
       "selected": 20,
       "withClip": 0
+    },
+    {
+      "id": "UCHbefcM_E94xfrGz6CWC9vQ",
+      "name": "Les Testarudes",
+      "tracks": 5,
+      "selected": 5,
+      "withClip": 3
     },
     {
       "id": "UCgAWzLHswq5VtYxCEMWGAng",
@@ -2974,13 +3026,13 @@
       "withClip": 0
     }
   ],
-  "indexedChannelCount": 489,
-  "resolvedChannelCount": 489,
-  "feedChannelCount": 489,
-  "rawPublicVideoCount": 5420,
-  "feedVideoCount": 4885,
-  "acceptedMusicCount": 4844,
-  "categoryEligibleVideoCount": 4839,
+  "indexedChannelCount": 497,
+  "resolvedChannelCount": 497,
+  "feedChannelCount": 497,
+  "rawPublicVideoCount": 5461,
+  "feedVideoCount": 4926,
+  "acceptedMusicCount": 4885,
+  "categoryEligibleVideoCount": 4880,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
     "before": 0,
@@ -2989,8 +3041,8 @@
   },
   "contentReviewCount": 541,
   "contentTypeCounts": {
-    "song": 4724,
-    "live_song": 115,
+    "song": 4762,
+    "live_song": 118,
     "album": 5,
     "other": 35,
     "review": 541
@@ -3000,6 +3052,6 @@
   "channelsWithoutVideos": [],
   "channelsWithoutAcceptedMusic": [],
   "allIndexedChannelsVisible": true,
-  "publishedFeedVideoCount": 4873,
+  "publishedFeedVideoCount": 4918,
   "publishedShortVideoCount": 0
 }
