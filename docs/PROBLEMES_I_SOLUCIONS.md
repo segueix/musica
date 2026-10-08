@@ -1,3 +1,11 @@
+## [2026-10-08] - Primera reproducció amb el botó natiu de YouTube
+
+**Petició:** en seleccionar una caràtula, una fila de la cua, una llista o una ràdio, preparar el vídeo aturat i demanar el primer ▶ dins de YouTube. Després, controls propis actius i cançons següents automàtiques.
+
+**Implementació:** les entrades manuals passen `autoPlay: false`; l'iframe es carrega amb `autoplay=0`, controls natius visibles i `data-awaiting-native-play`. Els dos reintents antics de `playVideo` i els controls del sistema respecten aquesta espera. Només un estat real `playing` del reproductor principal desbloqueja anterior/play/següent. La selecció manual crea un iframe nou per descartar avisos de l'anterior. El missatge va sota els controls, mai sobre el vídeo; a la finestra flotant s'amaga per no envair el reproductor. La continuació automàtica manté `loadVideoById` i els seus mecanismes de recuperació. Música TV conserva la seva entrada pròpia.
+
+**Verificació:** 47 proves del reproductor/subscripció/inici natiu; lint dels fitxers modificats sense errors. El lint general manté cinc errors previs en `data.js` i `home-sections.js`. No s'ha pogut executar la prova visual: la descàrrega de Chromium retorna un arxiu invàlid. No s'ha validat amb YouTube real ni es certifica el recompte de visualitzacions.
+
 ## [2026-10-08] - En seguir artistes no sortia la proposta de subscripció (i «Segueix» de la fitxa d'artista no seguia)
 
 **Problema:** l'usuari seguia artistes des de la ràdio i des de la fitxa d'artista i no li sortia la targeta «Subscriu-t'hi a YouTube».

@@ -8963,7 +8963,7 @@ async function startPlaylistPlayback(playlistId, startIndex = 0) {
     currentPlaylistIndex = Number.isInteger(startIndex) && startIndex >= 0 && startIndex < playlist.videos.length ? startIndex : 0;
     activePlaylistId = playlist.id;
     activePlaylistName = playlist.name || 'Llista';
-    loadVideoInSequence();
+    loadVideoInSequence({ autoPlay: false });
 }
 
 function loadVideoInSequence({ autoPlay = true, replaceHistory = false, startAt = 0 } = {}) {
@@ -8985,7 +8985,7 @@ function loadVideoInSequence({ autoPlay = true, replaceHistory = false, startAt 
     // No fem aquest encadenat per mantenir àudio quan la pestanya és amagada o Chrome està minimitzat.
     // També qualsevol cua amb autoplay i la pàgina visible: la cançó següent es demana al mateix reproductor.
     const keepLivePlayer =
-        video.source !== 'static' &&
+        autoPlay && video.source !== 'static' &&
         ((isTVPlaybackMode() && canSwapLivePlayerVideo()) || (autoPlay && canKeepQueuePlayer()));
     lastTVAdvanceAt = Date.now();
     // Per defecte les cues continuen amb autoplay només mentre la pàgina és visible.
@@ -9013,6 +9013,7 @@ function loadVideoInSequence({ autoPlay = true, replaceHistory = false, startAt 
 }
 
 function handlePlaylistVideoEnded() {
+    if (isAwaitingNativePlay()) return;
     // No avancem automàticament la cua amb la pestanya amagada: evita reactivar
     // reproducció en segon pla després d'un ended que arribi tard.
     if (document.visibilityState === 'hidden' && !isVideoPipOpen()) {
@@ -9125,6 +9126,7 @@ function showQueueNextOverlay({ duration = 3000, sticky = false } = {}) {
 }
 
 function advanceQueueFromOverlay(event) {
+    if (isAwaitingNativePlay()) return;
     event?.preventDefault?.();
     event?.stopPropagation?.();
 
@@ -9139,6 +9141,7 @@ function advanceQueueFromOverlay(event) {
 }
 
 function goToPreviousFromOverlay(event) {
+    if (isAwaitingNativePlay()) return;
     event?.preventDefault?.();
     event?.stopPropagation?.();
 
@@ -9778,7 +9781,7 @@ function renderPlaylistQueue() {
 function playVideoFromPlaylistIndex(index) {
     if (index >= 0 && index < activePlaylistQueue.length) {
         currentPlaylistIndex = index;
-        loadVideoInSequence();
+        loadVideoInSequence({ autoPlay: false });
     }
 }
 
@@ -10469,24 +10472,24 @@ function prepareWatchPlaybackPreview({ videoId, source, videoUrl, thumbnail, tit
     videoPlaceholder.classList.remove('is-placeholder-hidden');
     setPlaceholderImage(thumbnail, title);
 
-    if (autoPlay && hasAcceptedYouTubeCookies()) {
-        updatePlayerIframe({ source, videoId, videoUrl, startAt });
+    if (hasAcceptedYouTubeCookies()) {
+        updatePlayerIframe({ source, videoId, videoUrl, startAt, autoPlay });
         clearPlayOverlay();
         preparePlayerForPlayback({ thumbnail, title });
-        watchAutoplay(videoId);
+        if (autoPlay) watchAutoplay(videoId);
         requestAnimationFrame(updatePlayerPosition);
         return;
     }
 
     ensurePlayOverlay(() => {
         if (hasAcceptedYouTubeCookies()) {
-            updatePlayerIframe({ source, videoId, videoUrl, startAt });
+            updatePlayerIframe({ source, videoId, videoUrl, startAt, autoPlay: false });
             clearPlayOverlay();
             preparePlayerForPlayback({ thumbnail, title });
             return;
         }
 
-        pendingYouTubePlayerPayload = { source, videoId, videoUrl, startAt, thumbnail, title };
+        pendingYouTubePlayerPayload = { source, videoId, videoUrl, startAt, thumbnail, title, autoPlay: false };
         requestYouTubePlaybackConsent({
             title: 'Cal activar YouTube per reproduir el vídeo',
             text: "Ara ets al reproductor del vídeo dins de Segueix!. Si acceptes, YouTube podrà carregar el reproductor incrustat, comptar la reproducció i aquesta decisió quedarà activa a partir d'ara per a tots els vídeos de la plataforma fins que la canviïs a la configuració.",
@@ -10508,19 +10511,19 @@ function queuePlaybackLegacyImpl({ videoId, source, videoUrl, thumbnail, title, 
     setPlaceholderImage(thumbnail, title);
     // Avanç automàtic d'una ràdio/llista amb la finestra flotant: la cançó següent arrenca
     // sola, sense esperar un clic al placeholder (que queda darrere la finestreta).
-    if (autoPlay && hasAcceptedYouTubeCookies()) {
-        loadNewVideoInMiniPlayer(videoId, source, videoUrl, thumbnail, title);
-        watchAutoplay(videoId);
+    if (hasAcceptedYouTubeCookies()) {
+        loadNewVideoInMiniPlayer(videoId, source, videoUrl, thumbnail, title, autoPlay);
+        if (autoPlay) watchAutoplay(videoId);
         return;
     }
-    ensurePlayOverlay(() => loadNewVideoInMiniPlayer(videoId, source, videoUrl, thumbnail, title));
+    ensurePlayOverlay(() => loadNewVideoInMiniPlayer(videoId, source, videoUrl, thumbnail, title, false));
 }
 
-function loadNewVideoInMiniPlayer(videoId, source, videoUrl, thumbnail, title) {
+function loadNewVideoInMiniPlayer(videoId, source, videoUrl, thumbnail, title, autoPlay = false) {
     if (!videoPlayer) {
         return;
     }
-    updatePlayerIframe({ source, videoId, videoUrl });
+    updatePlayerIframe({ source, videoId, videoUrl, autoPlay });
     clearPlayOverlay();
     preparePlayerForPlayback({ thumbnail, title });
     setupMiniPlayerToggle();
@@ -10649,7 +10652,7 @@ function handleYouTubeMessageLegacyImpl(event) {
     // "unstarted" (-1). Reintenta playVideo per forçar la reproducció.
     if (payload?.event === 'onStateChange' && (payload?.info === 5 || payload?.info === -1)) {
         const playerIframe = videoPlayer?.querySelector('iframe');
-        if (playerIframe?.contentWindow) {
+        if (fromMainPlayer && !isAwaitingNativePlay() && playerIframe?.contentWindow) {
             playerIframe.contentWindow.postMessage(
                 JSON.stringify({
                     event: 'command',
@@ -10703,6 +10706,7 @@ function setupYouTubeIframeMessaging(iframe) {
         return;
     }
     const sendListenerCommand = () => {
+        if (iframe !== videoPlayer?.querySelector('iframe')) return;
         if (!iframe.contentWindow) {
             return;
         }
@@ -10754,6 +10758,7 @@ function setupYouTubeIframeMessaging(iframe) {
             }),
             '*'
         );
+        if (isAwaitingNativePlay()) return;
         // A iOS Safari, autoplay=1 no sempre s'honora. Enviem playVideo explícit
         // perquè el reproductor iniciï la reproducció quan l'iframe està llest.
         iframe.contentWindow.postMessage(
@@ -10774,7 +10779,12 @@ function setupYouTubeIframeMessaging(iframe) {
 }
 
 // Ordres explícites al reproductor de YouTube (no depenen de l'estat que l'iframe hagi reportat).
+function isAwaitingNativePlay() {
+    return videoPlayer?.dataset.awaitingNativePlay === 'true';
+}
+
 function sendMainPlayerCommand(func) {
+    if (func === 'playVideo' && isAwaitingNativePlay()) return false;
     const iframe = videoPlayer?.querySelector('iframe');
     if (!iframe?.contentWindow) return false;
     iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func, args: [] }), '*');
@@ -10799,6 +10809,8 @@ function requestPlayerState(state) {
 function applyReportedPlayerState(info) {
     if (!videoPlayer) return;
     const state = String(info);
+    // Només l'estat real de l'iframe desbloqueja els controls, mai un clic propi ni buffering.
+    if (state === '1') videoPlayer.dataset.awaitingNativePlay = 'false';
     if (pendingPlayerState && Date.now() < pendingPlayerState.until) {
         const wantsPlay = pendingPlayerState.state === '1';
         const confirms = wantsPlay ? state === '1' || state === '3' : state === '2';
@@ -10871,12 +10883,13 @@ function initExternalPlayerControls() {
         positionFrame = null;
         if (!bar.classList.contains('is-floating')) return;
         const rect = videoPlayer.getBoundingClientRect();
-        const below = rect.bottom + EXTERNAL_CONTROLS_DOCK_HEIGHT <= window.innerHeight;
+        const barHeight = Math.max(EXTERNAL_CONTROLS_DOCK_HEIGHT, bar.offsetHeight);
+        const below = rect.bottom + barHeight <= window.innerHeight;
         const width = Math.max(rect.width, EXTERNAL_CONTROLS_MIN_WIDTH);
         // Centrada sota la finestra, sense sortir de la pantalla
         const left = Math.min(Math.max(0, rect.left + (rect.width - width) / 2), window.innerWidth - width);
         bar.style.left = `${Math.round(Math.max(0, left))}px`;
-        bar.style.top = `${Math.round(below ? rect.bottom : rect.top - EXTERNAL_CONTROLS_DOCK_HEIGHT)}px`;
+        bar.style.top = `${Math.round(below ? rect.bottom : rect.top - barHeight)}px`;
         bar.style.width = `${Math.round(width)}px`;
         bar.classList.toggle('is-wide', width > rect.width + 1);
         bar.classList.toggle('is-above', !below);
@@ -10894,8 +10907,17 @@ function initExternalPlayerControls() {
         toggle.classList.toggle('is-playing', playing);
         toggle.setAttribute('aria-label', playing ? 'Pausa' : 'Reprodueix');
         toggle.title = playing ? 'Pausa' : 'Reprodueix';
-        prev.disabled = !hasQueuePrevVideo();
-        next.disabled = !hasQueueNextVideo();
+        const awaiting = isAwaitingNativePlay();
+        toggle.disabled = awaiting;
+        if (awaiting) {
+            toggle.title = 'Prem ▶ dins del vídeo de YouTube per començar';
+            toggle.setAttribute('aria-label', toggle.title);
+        }
+        prev.disabled = awaiting || !hasQueuePrevVideo();
+        next.disabled = awaiting || !hasQueueNextVideo();
+        bar.classList.toggle('is-awaiting-native', awaiting);
+        const nativeHint = document.getElementById('playerNativePlayHint');
+        if (nativeHint) nativeHint.hidden = !awaiting;
         const miniActive = isMiniPlayerActive();
         place(miniActive, miniActive && !mobileQuery.matches);
         followPlayer();
@@ -10999,7 +11021,7 @@ function initExternalPlayerControls() {
     new MutationObserver(sync).observe(videoPlayer, {
         childList: true,
         attributes: true,
-        attributeFilter: ['data-playing-video-id', 'data-player-state', 'class'],
+        attributeFilter: ['data-playing-video-id', 'data-player-state', 'data-awaiting-native-play', 'class'],
     });
     // Arrossegar i redimensionar la finestra canvien el seu `style`; en acabar hi ha una transició de 0,2 s
     new MutationObserver(scheduleFollow).observe(videoPlayer, { attributes: true, attributeFilter: ['style'] });
@@ -11010,16 +11032,16 @@ function initExternalPlayerControls() {
     sync();
 }
 
-function updatePlayerIframe({ source, videoId, videoUrl, startAt = 0 }) {
-    return SegueixApp.features.player?.updatePlayerIframe?.({ source, videoId, videoUrl, startAt });
+function updatePlayerIframe({ source, videoId, videoUrl, startAt = 0, autoPlay = false }) {
+    return SegueixApp.features.player?.updatePlayerIframe?.({ source, videoId, videoUrl, startAt, autoPlay });
 }
 
-function updatePlayerIframeLegacyImpl({ source, videoId, videoUrl, startAt = 0 }) {
+function updatePlayerIframeLegacyImpl({ source, videoId, videoUrl, startAt = 0, autoPlay = false }) {
     if (!videoPlayer) {
         return;
     }
     if (!hasAcceptedYouTubeCookies()) {
-        pendingYouTubePlayerPayload = { source, videoId, videoUrl, startAt };
+        pendingYouTubePlayerPayload = { source, videoId, videoUrl, startAt, autoPlay };
         renderYouTubeCookiePlaceholder(videoPlayer, {
             title: 'Cal el teu consentiment per carregar YouTube',
             text: "Aquesta web incrusta vídeos de YouTube. Si acceptes, es carregarà el reproductor incrustat i YouTube podrà utilitzar cookies o altres identificadors relacionats amb la reproducció.",
@@ -11035,11 +11057,21 @@ function updatePlayerIframeLegacyImpl({ source, videoId, videoUrl, startAt = 0 }
         videoPlayer.dataset.playingVideoId = videoId;
     }
     const safeStartAt = Math.max(0, Math.floor(Number(startAt) || 0));
-    const iframeSrc =
+    videoPlayer.dataset.awaitingNativePlay = autoPlay ? 'false' : 'true';
+    videoPlayer.dataset.playerState = '';
+    pendingPlayerState = null;
+    let iframeSrc =
         source === 'api' ? buildYoutubeEmbedUrl(videoId, { startAt: safeStartAt }) : addAutoplayParam(videoUrl);
 
+    if (isYouTubeEmbed(iframeSrc)) {
+        const url = new URL(iframeSrc, window.location.href);
+        url.searchParams.set('autoplay', autoPlay ? '1' : '0');
+        url.searchParams.set('controls', '1');
+        iframeSrc = url.toString();
+    }
     const existingIframe = videoPlayer.querySelector('iframe');
-    if (!isMobile && existingIframe) {
+    // Una selecció manual té un iframe nou: els avisos antics no poden desbloquejar-la.
+    if (autoPlay && !isMobile && existingIframe) {
         existingIframe.src = iframeSrc;
         existingIframe.id = 'catube-player';
         applyYouTubeIframePolicy(existingIframe);
@@ -12466,7 +12498,7 @@ function openVideoFromUserGesture(videoId, source = 'api') {
 
 function playThenNavigateLegacyImpl(videoId, source) {
     clearEmbeddedYouTubeSession();
-    isAutoPlayNavigating = true;
+    isAutoPlayNavigating = false;
 
     // Fase 1: naveguem primer i només carregarem el reproductor
     // quan el flux de consentiment explícit ho permeti.

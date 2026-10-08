@@ -52,7 +52,7 @@
     
     <!-- CSS -->
     <link rel="stylesheet" href="css/styles.css?v=20260929-home-playlists-4">
-    <link rel="stylesheet" href="css/portada.css?v=20261008-subscriu-3">
+    <link rel="stylesheet" href="css/portada.css?v=20261008-native-1">
     
     <link rel="stylesheet" href="css/google-drive-sync.css">
     <!-- Icons (Lucide via CDN) -->
@@ -311,6 +311,7 @@
                         <!-- Finestra flotant d'escriptori: canviar la mida (app.js, initExternalPlayerControls) -->
                         <span class="pec-resize" id="playerResizeHandle" role="separator" aria-label="Canvia la mida del reproductor flotant" title="Arrossega per canviar la mida"></span>
                         <!-- El navegador ha aturat la reproducció automàtica (app.js: onAutoplayBlocked i watchAutoplay) -->
+                        <p class="player-native-play-hint" id="playerNativePlayHint" role="status" hidden>Prem ▶ dins del vídeo de YouTube per començar.</p>
                         <p class="player-autoplay-hint" id="playerAutoplayHint" role="status" hidden>El navegador ha aturat la reproducció automàtica. Toca el vídeo o ▶ per continuar.</p>
                     </div>
                     <div class="video-info">
@@ -970,7 +971,7 @@
     <script src="js/features/analytics-admin.js?v=20261006-music-analytics-1"></script>
 
     <!-- Main app entrypoint -->
-    <script src="js/app.js?v=20261007-auto-1"></script>
+    <script src="js/app.js?v=20261008-native-1"></script>
     <script src="js/features/tv-learning.js?v=20260924-learning-v1"></script>
     <script src="js/features/smart-feed.js?v=20260924-smart-feed-v1"></script>
     <script src="js/features/tv-live-queue.js?v=20260924-live-session-v1"></script>

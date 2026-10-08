@@ -6440,3 +6440,13 @@ body.is-video-pip .video-placeholder.is-placeholder-hidden {
         margin-bottom: 12px;
     }
 }
+
+/* Inici manual dins de YouTube: avís sota els controls, mai sobre el vídeo. */
+.player-external-controls.is-awaiting-native { flex-wrap: wrap; }
+.player-native-play-hint {
+    flex: 1 0 100%; order: 99; margin: 0; padding: 6px 12px;
+    color: var(--pt-text); font-size: 0.9rem; line-height: 1.35; text-align: center;
+}
+.player-native-play-hint[hidden],
+.player-external-controls.is-docked .player-native-play-hint { display: none; }
+.player-external-controls.is-awaiting-native .player-external-btn:disabled { opacity: 0.4; cursor: default; }

@@ -372,7 +372,7 @@
         activePlaylistQueue = queue;
         currentPlaylistIndex = 0;
         rememberLastRadio(video, categories.join('|'));
-        loadVideoInSequence();
+        loadVideoInSequence({ autoPlay: false });
         return true;
     }
 
@@ -463,7 +463,7 @@
         activePlaylistName = QUEUE_NAME;
         activePlaylistQueue = queue;
         currentPlaylistIndex = 0;
-        loadVideoInSequence();
+        loadVideoInSequence({ autoPlay: false });
         return true;
     }
 
@@ -550,7 +550,7 @@
         activePlaylistName = QUEUE_NAME;
         activePlaylistQueue = queue;
         currentPlaylistIndex = 0;
-        loadVideoInSequence();
+        loadVideoInSequence({ autoPlay: false });
         notifyQueueChanged();
         return true;
     }
@@ -646,7 +646,7 @@
             if (index >= 0) {
                 currentPlaylistIndex = index;
                 clearEmbeddedYouTubeSession();
-                loadVideoInSequence();
+                loadVideoInSequence({ autoPlay: false });
                 return true;
             }
         }

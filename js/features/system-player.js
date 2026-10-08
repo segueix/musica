@@ -161,6 +161,7 @@
 
     // Amb la pestanya amagada només es pot controlar la reproducció si el vídeo és visible a la finestra flotant
     function canControlPlayback() {
+        if (playerElement()?.dataset?.awaitingNativePlay === 'true') return false;
         return window.document?.visibilityState !== 'hidden' || isVideoPipOpen();
     }
 
