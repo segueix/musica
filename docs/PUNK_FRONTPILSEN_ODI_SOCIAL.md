@@ -32,4 +32,6 @@ Queden fora les pistes castellanes, mixtes i les no acreditades com a catalanes,
 - Sis vídeos seleccionats, sense declaracions de subtítols en castellà.
 - Les pistes curtes d'Ataka a l'Estat redirigeixen de /shorts/ a /watch (HTTP 303): falsos Shorts registrats.
 - Proves generals abans de les altes: 1019 correctes i 5 errors preexistents; lint: 5 errors i 181 avisos preexistents. No es modifica codi de l'aplicació.
-- Actualització del feed i verificació exacta dels sis IDs: pendent d'execució.
+- Feed actualitzat amb èxit: [execució 37836554903](https://github.com/segueix/musica/actions/runs/37836554903), només 2 canals consultats de 539.
+- 96 proves del pipeline superades. [Verificació exacta](https://github.com/segueix/musica/actions/runs/37836666708): 6 vídeos presents, cap vídeo aliè a la selecció ni cap Short.
+- Els sis vídeos seleccionats passen a revisats; es preserva la resta de la cua de revisió.
