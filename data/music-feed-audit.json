@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-08T17:57:27.416Z",
+  "generatedAt": "2026-10-08T18:10:23.751Z",
   "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
   "deepPagesFetched": 0,
   "deepChannelCount": 18,
-  "topicChannelCount": 285,
-  "governedChannelCount": 94,
+  "topicChannelCount": 290,
+  "governedChannelCount": 96,
   "topicCoverage": [
     {
       "id": "UCqaEtRht2jakBhGFLzS617w",
@@ -76,6 +76,14 @@
       "name": "EN-BRUT",
       "songs": 1,
       "matched": 1,
+      "coverage": 1,
+      "governs": true
+    },
+    {
+      "id": "UCgVBViL3I9YWFVBHIyvcpjg",
+      "name": "Falç de Fetillera",
+      "songs": 13,
+      "matched": 13,
       "coverage": 1,
       "governs": true
     },
@@ -228,6 +236,14 @@
       "name": "Triquell",
       "songs": 31,
       "matched": 31,
+      "coverage": 1,
+      "governs": true
+    },
+    {
+      "id": "UCYnT07O7RJlNvU_sNq6EsZQ",
+      "name": "Udol Band",
+      "songs": 1,
+      "matched": 1,
       "coverage": 1,
       "governs": true
     },
@@ -920,6 +936,14 @@
       "governs": false
     },
     {
+      "id": "UCQz3jf86vHTtfVwXd-rOSrA",
+      "name": "UDOL BAND",
+      "songs": 2,
+      "matched": 1,
+      "coverage": 0.5,
+      "governs": false
+    },
+    {
       "id": "UC2WMiCvYBSXvRjYIB0yrpEg",
       "name": "LAL'BA MUSIC",
       "songs": 21,
@@ -1390,6 +1414,13 @@
       "withClip": 0
     },
     {
+      "id": "UCR5qRB1oeWWJF8QhX7WmuXQ",
+      "name": "Bocc",
+      "tracks": 53,
+      "selected": 53,
+      "withClip": 0
+    },
+    {
       "id": "UCGPjtE1NFB1I8oDJ_Mx3O_Q",
       "name": "Bonestorm",
       "tracks": 14,
@@ -1719,6 +1750,13 @@
       "withClip": 0
     },
     {
+      "id": "UCayj6r8npsfkvYupNj8YC4A",
+      "name": "Entropia",
+      "tracks": 1,
+      "selected": 1,
+      "withClip": 0
+    },
+    {
       "id": "UCl3RfIF60BFTx93il4D11nQ",
       "name": "Ernest Crusats",
       "tracks": 13,
@@ -1738,6 +1776,13 @@
       "tracks": 91,
       "selected": 31,
       "withClip": 30
+    },
+    {
+      "id": "UC8GlOjZpZMKHieUbeJ9eh7g",
+      "name": "Falç de Fetillera",
+      "tracks": 21,
+      "selected": 21,
+      "withClip": 9
     },
     {
       "id": "UCLbuprK567zLAC6ZzamsDLQ",
@@ -2503,6 +2548,13 @@
       "withClip": 0
     },
     {
+      "id": "UCCmgW83QdTLEGTkEc6uyJ6Q",
+      "name": "Ósserp",
+      "tracks": 13,
+      "selected": 13,
+      "withClip": 0
+    },
+    {
       "id": "UCuOXOJ1KW_sCpse10ImvXRg",
       "name": "Ouineta",
       "tracks": 34,
@@ -3000,6 +3052,13 @@
       "withClip": 32
     },
     {
+      "id": "UCrxpjvY7G2ffEklcmSHm5og",
+      "name": "Udol",
+      "tracks": 10,
+      "selected": 10,
+      "withClip": 2
+    },
+    {
       "id": "UCdvCXh3zd4i8SLE_l_6AEDw",
       "name": "Una Bèstia Incontrolable",
       "tracks": 24,
@@ -3140,13 +3199,13 @@
       "withClip": 0
     }
   ],
-  "indexedChannelCount": 513,
-  "resolvedChannelCount": 513,
-  "feedChannelCount": 513,
-  "rawPublicVideoCount": 5688,
-  "feedVideoCount": 5153,
-  "acceptedMusicCount": 5112,
-  "categoryEligibleVideoCount": 5107,
+  "indexedChannelCount": 522,
+  "resolvedChannelCount": 522,
+  "feedChannelCount": 522,
+  "rawPublicVideoCount": 5759,
+  "feedVideoCount": 5224,
+  "acceptedMusicCount": 5183,
+  "categoryEligibleVideoCount": 5178,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
     "before": 0,
@@ -3155,8 +3214,8 @@
   },
   "contentReviewCount": 541,
   "contentTypeCounts": {
-    "song": 4982,
-    "live_song": 125,
+    "song": 5054,
+    "live_song": 124,
     "album": 5,
     "other": 35,
     "review": 541
@@ -3166,6 +3225,6 @@
   "channelsWithoutVideos": [],
   "channelsWithoutAcceptedMusic": [],
   "allIndexedChannelsVisible": true,
-  "publishedFeedVideoCount": 5108,
+  "publishedFeedVideoCount": 5183,
   "publishedShortVideoCount": 0
 }

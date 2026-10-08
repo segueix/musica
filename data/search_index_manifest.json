@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-08T17:57:28.249Z",
+  "generatedAt": "2026-10-08T18:10:24.811Z",
   "strategy": {
     "mode": "hybrid",
     "monthlyRecentYears": 2
@@ -19,7 +19,7 @@
       "month": 9,
       "granularity": "month",
       "file": "search_index_2025_09.json",
-      "itemCount": 175
+      "itemCount": 176
     },
     {
       "key": "2025_08",
@@ -27,7 +27,7 @@
       "month": 8,
       "granularity": "month",
       "file": "search_index_2025_08.json",
-      "itemCount": 13
+      "itemCount": 14
     },
     {
       "key": "2025_07",
@@ -43,7 +43,7 @@
       "month": 6,
       "granularity": "month",
       "file": "search_index_2025_06.json",
-      "itemCount": 47
+      "itemCount": 58
     },
     {
       "key": "2025_05",
@@ -51,7 +51,7 @@
       "month": 5,
       "granularity": "month",
       "file": "search_index_2025_05.json",
-      "itemCount": 54
+      "itemCount": 56
     },
     {
       "key": "2025_04",
@@ -59,7 +59,7 @@
       "month": 4,
       "granularity": "month",
       "file": "search_index_2025_04.json",
-      "itemCount": 84
+      "itemCount": 87
     },
     {
       "key": "2025_03",
@@ -91,7 +91,7 @@
       "month": null,
       "granularity": "year",
       "file": "search_index_2024.json",
-      "itemCount": 1010
+      "itemCount": 1016
     },
     {
       "key": "2023",
@@ -99,7 +99,7 @@
       "month": null,
       "granularity": "year",
       "file": "search_index_2023.json",
-      "itemCount": 486
+      "itemCount": 492
     },
     {
       "key": "2022",
@@ -107,7 +107,7 @@
       "month": null,
       "granularity": "year",
       "file": "search_index_2022.json",
-      "itemCount": 462
+      "itemCount": 470
     },
     {
       "key": "2021",
@@ -115,7 +115,7 @@
       "month": null,
       "granularity": "year",
       "file": "search_index_2021.json",
-      "itemCount": 345
+      "itemCount": 347
     },
     {
       "key": "2020",
@@ -123,7 +123,7 @@
       "month": null,
       "granularity": "year",
       "file": "search_index_2020.json",
-      "itemCount": 375
+      "itemCount": 376
     },
     {
       "key": "2019",
