@@ -60,3 +60,21 @@ Fonts contrastades: [Assot](https://assot.bandcamp.com/), [ASSAC!](https://assac
 - `DzgnUUMveE4`: Sitja (91 s), HTTP 303 a /watch.
 - `HyMHqC6ixcc`: Volen trossos de tu (100 s), HTTP 303 a /watch.
 - `x43TXEArhqw`: Prohibit patinar (90 s), HTTP 303 a /watch.
+
+## Resultat publicat i verificació
+
+| Artista | Vídeos musicals al feed i historial |
+| --- | ---: |
+| Assot | 30 |
+| ASSAC! | 3 |
+| Autodestrucció | 31 |
+| All Crü | 18 |
+| Bonestorm | 17 |
+| **Total** | **99** |
+
+El recompte és d'IDs de vídeo diferents, no de composicions úniques: pot incloure versions, reedicions i videoclips d'una mateixa cançó.
+
+- [Actualització del feed](https://github.com/segueix/musica/actions/runs/37804460787): correcta; 96 proves del pipeline passen. Només consulta els cinc canals del grup 1 afectats per les correccions de falsos Shorts. Les altes prèvies han incorporat els set canals dels cinc artistes.
+- [Comprovació del resultat](https://github.com/segueix/musica/actions/runs/37804749695): el pas «Verifica cobertura i exclusions del grup 1» passa. Confirma contingut als set canals, recuperació dels 29 falsos Shorts, només els tres vídeos seleccionats d'ASSAC! i absència dels tres IDs exclosos o pendents.
+- [Prova general](https://github.com/segueix/musica/actions/runs/37804460796): 1.019 proves passen i 5 fallen en assertions estàtiques de portada/TV. El lint retorna 5 errors preexistents de caràcters escapats innecessaris a `js/data.js` i `js/features/home-sections.js`, més 181 avisos. Aquests fitxers i les proves no s'han modificat en aquesta alta: [comparació amb l'estat inicial](https://github.com/segueix/musica/compare/8787cf9e9b9e54f718272d02efc0cc54d6ad2107...71fd6dbc794dc6ee4afd7b9360c3e6963b21bc0a).
+- El workflow temporal d'inspecció i verificació s'ha retirat després d'obtenir els resultats.
