@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-08T18:10:23.751Z",
+  "generatedAt": "2026-10-08T18:25:59.211Z",
   "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
   "deepPagesFetched": 0,
   "deepChannelCount": 18,
-  "topicChannelCount": 290,
-  "governedChannelCount": 96,
+  "topicChannelCount": 295,
+  "governedChannelCount": 100,
   "topicCoverage": [
     {
       "id": "UCqaEtRht2jakBhGFLzS617w",
@@ -20,6 +20,14 @@
       "name": "alfredgarcia",
       "songs": 43,
       "matched": 43,
+      "coverage": 1,
+      "governs": true
+    },
+    {
+      "id": "UC7auRFIxjfkrZdsWPe7R_Qg",
+      "name": "Astral Warrior",
+      "songs": 8,
+      "matched": 8,
       "coverage": 1,
       "governs": true
     },
@@ -100,6 +108,14 @@
       "name": "Flashy Ice Cream",
       "songs": 47,
       "matched": 47,
+      "coverage": 1,
+      "governs": true
+    },
+    {
+      "id": "UCBaZT9T1jD6ggbVikvr0nAw",
+      "name": "Forja",
+      "songs": 21,
+      "matched": 21,
       "coverage": 1,
       "governs": true
     },
@@ -232,6 +248,14 @@
       "governs": true
     },
     {
+      "id": "UCxVQcJujZLvClGNyvobPRyQ",
+      "name": "Tempestat",
+      "songs": 1,
+      "matched": 1,
+      "coverage": 1,
+      "governs": true
+    },
+    {
       "id": "UCIE6UEv7aCNJq-Jw9F0mJ7A",
       "name": "Triquell",
       "songs": 31,
@@ -301,6 +325,14 @@
       "songs": 34,
       "matched": 33,
       "coverage": 0.97,
+      "governs": true
+    },
+    {
+      "id": "UCOwCZBGNBYlvxmZn2BbmhFQ",
+      "name": "Angoixa (Death metal)",
+      "songs": 24,
+      "matched": 23,
+      "coverage": 0.96,
       "governs": true
     },
     {
@@ -1274,6 +1306,13 @@
       "withClip": 10
     },
     {
+      "id": "UCoOJY5SD3f0RvSk6uhRVZ_A",
+      "name": "AMARGOR",
+      "tracks": 15,
+      "selected": 15,
+      "withClip": 0
+    },
+    {
       "id": "UCPzAMvgbZZqisrkmVSgqIHg",
       "name": "Anaïs Vila",
       "tracks": 64,
@@ -1293,6 +1332,13 @@
       "tracks": 71,
       "selected": 34,
       "withClip": 0
+    },
+    {
+      "id": "UC7CW0LUdtTnZfYmuayRJEmQ",
+      "name": "Angoixa",
+      "tracks": 38,
+      "selected": 38,
+      "withClip": 13
     },
     {
       "id": "UCALf4AsnFm6WhQSD6RGV5pg",
@@ -1328,6 +1374,13 @@
       "tracks": 30,
       "selected": 30,
       "withClip": 0
+    },
+    {
+      "id": "UCh_dOmbZ0ZkjBEYDH96NNqQ",
+      "name": "Astral Warrior",
+      "tracks": 17,
+      "selected": 17,
+      "withClip": 6
     },
     {
       "id": "UCOEzuNu9yvO0AFTnSVKk4LQ",
@@ -1825,6 +1878,13 @@
       "tracks": 109,
       "selected": 15,
       "withClip": 47
+    },
+    {
+      "id": "UCmciKowevXGORJnZGaZVrsg",
+      "name": "Forja",
+      "tracks": 43,
+      "selected": 43,
+      "withClip": 20
     },
     {
       "id": "UCpWzqKujkmJvGIAt5QgBgBQ",
@@ -2961,6 +3021,13 @@
       "withClip": 0
     },
     {
+      "id": "UC50KRxJXBWgOj3Q05CDAs8w",
+      "name": "Tempestat",
+      "tracks": 10,
+      "selected": 10,
+      "withClip": 1
+    },
+    {
       "id": "UCIJjTYBxYUHPFir2cZj0wKQ",
       "name": "Teràpia de Shock",
       "tracks": 105,
@@ -3199,13 +3266,13 @@
       "withClip": 0
     }
   ],
-  "indexedChannelCount": 522,
-  "resolvedChannelCount": 522,
-  "feedChannelCount": 522,
-  "rawPublicVideoCount": 5759,
-  "feedVideoCount": 5224,
-  "acceptedMusicCount": 5183,
-  "categoryEligibleVideoCount": 5178,
+  "indexedChannelCount": 531,
+  "resolvedChannelCount": 531,
+  "feedChannelCount": 531,
+  "rawPublicVideoCount": 5895,
+  "feedVideoCount": 5353,
+  "acceptedMusicCount": 5319,
+  "categoryEligibleVideoCount": 5314,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
     "before": 0,
@@ -3214,8 +3281,8 @@
   },
   "contentReviewCount": 541,
   "contentTypeCounts": {
-    "song": 5054,
-    "live_song": 124,
+    "song": 5179,
+    "live_song": 135,
     "album": 5,
     "other": 35,
     "review": 541
@@ -3225,6 +3292,6 @@
   "channelsWithoutVideos": [],
   "channelsWithoutAcceptedMusic": [],
   "allIndexedChannelsVisible": true,
-  "publishedFeedVideoCount": 5183,
+  "publishedFeedVideoCount": 5283,
   "publishedShortVideoCount": 0
 }
