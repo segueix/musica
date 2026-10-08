@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-08T16:30:16.892Z",
+  "updatedAt": "2026-10-08T16:46:12.028Z",
   "artists": [
     {
       "name": "2ES",
@@ -32269,6 +32269,178 @@
       ],
       "lastChecked": "2026-10-08T16:30:16.892Z",
       "notes": "Grup 4 Xavi. Grup hardcore de Cardedeu/La Roca. No s'ha confirmat canal propi ni lletra dels vídeos de tercers Quanta Policia (8uMAsRT2u0M) i Jove Radical (PQEpDnQKBx4). Canal homònim GransNPus UCvEsCddOPacc1q90oXzNEwQ amb referències a Ciutadella no vinculat sense proves. Pendent, sense ingestió."
+    },
+    {
+      "name": "Mr. Freak Ska",
+      "displayName": "Mr. Freak Ska",
+      "aliases": [],
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCElR_cmETBNoC7Rs6STl0BA",
+            "handle": null,
+            "name": "Mr. Freak Ska - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://mrfreakska.wordpress.com/bio/",
+        "https://mrfreakska.wordpress.com/links/",
+        "https://buenritmo.bigcartel.com/product/mr-freak-ska-ska-de-vells-cd-preorder",
+        "https://www.verkami.com/projects/42481-mrfreak-ska-decaleg-blubit",
+        "manual-user-2026-10-08",
+        "genre:manual",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": "2026-10-08T16:46:12.028Z",
+      "notes": "Grup 5 Xavi. 40 pistes seleccionades: 13 de Ska Casolà, 16 de Ska de Vells i 11 de Decàleg Blubit. Idioma contrastat amb les presentacions oficials dels discos, no amb transcripció íntegra de totes les lletres. Només canal Topic nou; el canal oficial compartit ja correspon a The Cabrians i no es modifica. Resta pendent de revisió; llista tancada."
+    },
+    {
+      "name": "Miquel Gil",
+      "displayName": "Miquel Gil",
+      "aliases": [],
+      "genres": [
+        "Folk i arrel",
+        "Cançó d'autor"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCrTJ5_xgCZyb-Rt3dp1eUxg",
+            "handle": null,
+            "name": "Miquel Gil - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://miquelgil.com/biografia05/",
+        "https://miquelgil.com/discografia/",
+        "manual-user-2026-10-08",
+        "genre:manual",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": "2026-10-08T16:46:12.028Z",
+      "notes": "Grup 5 Xavi. Selecció de les 11 pistes d'Orgànic: la biografia oficial documenta poesia de l'àrea lingüística catalana i el premi a disc en català. No es presumeix que tot el canal sigui en català: altres discos, medleys i reedicions fora de la selecció, pendents de revisió."
+    },
+    {
+      "name": "Mendra",
+      "displayName": "Mendra",
+      "aliases": [],
+      "genres": [
+        "Punk"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCokFPjgxi7i2ONsHr8wHj6g",
+            "handle": null,
+            "name": "Mendra - Topic",
+            "type": "topic",
+            "primary": true
+          },
+          {
+            "id": "UCtTPgp6W1WefOGfV3maG7JA",
+            "handle": null,
+            "name": "Mendra - Topic",
+            "type": "topic",
+            "primary": false
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://mendra.bandcamp.com/album/hostal-hostil",
+        "https://mendra.bandcamp.com/album/tacho",
+        "manual-user-2026-10-08",
+        "genre:manual",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": "2026-10-08T16:46:12.028Z",
+      "notes": "Grup 5 Xavi. 7 pistes amb lletres catalanes al Bandcamp oficial: Morir, Diana Fidelman, Néixer, Elefant, Error en Mim, Fantasmes i Superglue. Viure i Renéixer són en castellà. Canals Topic amb homònims i repertori multilingüe: llista tancada, sense autoritzar la resta."
+    },
+    {
+      "name": "La Cobla",
+      "displayName": "La Cobla",
+      "aliases": [],
+      "genres": [
+        "Punk"
+      ],
+      "territories": [],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [],
+        "searchCandidates": []
+      },
+      "confidence": "pendent",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "https://lacobla.bandcamp.com/album/e-p",
+        "manual-user-2026-10-08",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-08T16:46:12.028Z",
+      "notes": "Grup 5 Xavi. Identificada la banda punk, diferent de les cobles sardanistes. No s'ha confirmat un canal propi ni prou evidència lingüística de les còpies de tercers. Pendent, sense ingestió."
+    },
+    {
+      "name": "Quatre Parets",
+      "displayName": "Quatre Parets",
+      "aliases": [],
+      "genres": [],
+      "territories": [],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [],
+        "searchCandidates": []
+      },
+      "confidence": "pendent",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "manual-user-2026-10-08"
+      ],
+      "lastChecked": "2026-10-08T16:46:12.028Z",
+      "notes": "Grup 5 Xavi. Identitat no confirmada: les cerques retornen sobretot títols de cançons d'altres artistes. Cal confirmar el nom o aportar un enllaç. Pendent, sense canal ni ingestió."
     }
   ]
 }
