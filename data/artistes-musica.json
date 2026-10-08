@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-08T15:40:23.905Z",
+  "updatedAt": "2026-10-08T15:42:16.868Z",
   "artists": [
     {
       "name": "2ES",
@@ -31190,6 +31190,141 @@
       ],
       "lastChecked": "2026-10-07T17:31:16.271Z",
       "notes": "Canal verificat directament. Selecció inicial de cançons en català; resta pendent de revisió."
+    },
+    {
+      "name": "Assot",
+      "aliases": [],
+      "genres": [
+        "Metal"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": []
+      },
+      "confidence": "pendent",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "https://assot.bandcamp.com/",
+        "manual-user-2026-10-08",
+        "genre:manual"
+      ],
+      "lastChecked": null,
+      "notes": "Grup de death metal de Breda; pendent de verificar canal i repertori."
+    },
+    {
+      "name": "ASSAC!",
+      "aliases": [
+        "Assac"
+      ],
+      "genres": [
+        "Punk"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": []
+      },
+      "confidence": "pendent",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "https://assac.bandcamp.com/",
+        "manual-user-2026-10-08",
+        "genre:manual"
+      ],
+      "lastChecked": null,
+      "notes": "Hardcore de Barcelona. Cal revisar també les versions."
+    },
+    {
+      "name": "Autodestrucció",
+      "aliases": [],
+      "genres": [
+        "Punk"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": []
+      },
+      "confidence": "pendent",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "https://autodestruccio.bandcamp.com/",
+        "manual-user-2026-10-08",
+        "genre:manual"
+      ],
+      "lastChecked": null,
+      "notes": "Projecte de Càndid Coll; pendent de verificar canal i repertori."
+    },
+    {
+      "name": "All Crü",
+      "aliases": [
+        "All Cru",
+        "ALL CRÜ"
+      ],
+      "genres": [
+        "Punk"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": []
+      },
+      "confidence": "pendent",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "https://allcru.bandcamp.com/",
+        "manual-user-2026-10-08",
+        "genre:manual"
+      ],
+      "lastChecked": null,
+      "notes": "Punk rock en català; disc All i Odi."
+    },
+    {
+      "name": "Bonestorm",
+      "aliases": [],
+      "genres": [
+        "Punk"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": []
+      },
+      "confidence": "pendent",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "https://bonestormvic.bandcamp.com/",
+        "manual-user-2026-10-08",
+        "genre:manual"
+      ],
+      "lastChecked": null,
+      "notes": "Grup de Vic. Té repertori en català i anglès; no confondre amb grups homònims. Revisió per cançó necessària."
     }
   ]
 }
