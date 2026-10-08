@@ -1,4 +1,4 @@
-name: Verificar canals identificats grup 4
+name: Verificar Pesta Porcina grup 4
 on:
   push:
     branches: [main]
@@ -19,6 +19,6 @@ jobs:
         run: |
           node - <<'NODE'
           async function api(endpoint,params){const u=new URL('https://www.googleapis.com/youtube/v3/'+endpoint);for(const[k,v]of Object.entries(params))u.searchParams.set(k,v);u.searchParams.set('key',process.env.YOUTUBE_API_KEY_SERVER);for(let attempt=0;attempt<4;attempt++){const r=await fetch(u);if(r.status===429||r.status>=500){await new Promise(ok=>setTimeout(ok,1500*(attempt+1)));continue;}const d=await r.json();if(!r.ok)throw Error('YouTube '+r.status);return d;}throw Error('YouTube unavailable after retries');}
-          (async()=>{const ids=new Set();const r=await api('videos',{part:'snippet,contentDetails',id:'kbJaaMpOCls,8WdiHHMQlEI'});console.log('VIDEOS '+JSON.stringify(r.items));for(const v of r.items||[])ids.add(v.snippet.channelId);
-          for(const id of ids){const r=await api('channels',{part:'snippet,contentDetails',id});const c=r.items?.[0];if(!c||!/avalot|icestorm|vrademarg|thanatopraxy|pesta.?porcina/i.test(c.snippet.title))continue;let token='',tracks=[];for(let n=0;n<4;n++){const p=await api('playlistItems',{part:'snippet,contentDetails',playlistId:c.contentDetails.relatedPlaylists.uploads,maxResults:'50',...(token?{pageToken:token}:{})});const vids=p.items.map(x=>x.contentDetails.videoId);if(vids.length){const v=await api('videos',{part:'snippet,contentDetails',id:vids.join(',')});tracks.push(...v.items);}token=p.nextPageToken||'';if(!token)break;}console.log('REPERTOIRE '+JSON.stringify({id,title:c.snippet.title,handle:c.snippet.customUrl,description:c.snippet.description,tracks,more:!!token}));}})().catch(e=>{console.error(e.message);process.exitCode=1;});
+          (async()=>{const ids=new Set(['UCeZTzF8dhFsh_BcqHUzygjg']);
+          for(const id of ids){const r=await api('channels',{part:'snippet,contentDetails',id});const c=r.items?.[0];if(!c)continue;let token='',tracks=[];for(let n=0;n<2;n++){const p=await api('playlistItems',{part:'snippet,contentDetails',playlistId:c.contentDetails.relatedPlaylists.uploads,maxResults:'50',...(token?{pageToken:token}:{})});const vids=p.items.map(x=>x.contentDetails.videoId);if(vids.length){const v=await api('videos',{part:'snippet,contentDetails',id:vids.join(',')});tracks.push(...v.items);}token=p.nextPageToken||'';if(!token)break;}console.log('REPERTOIRE '+JSON.stringify({id,title:c.snippet.title,handle:c.snippet.customUrl,description:c.snippet.description,tracks,more:!!token}));}})().catch(e=>{console.error(e.message);process.exitCode=1;});
           NODE
