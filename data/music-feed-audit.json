@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-08T16:59:18.367Z",
+  "generatedAt": "2026-10-08T17:07:08.817Z",
   "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
   "deepPagesFetched": 0,
   "deepChannelCount": 18,
-  "topicChannelCount": 279,
+  "topicChannelCount": 280,
   "governedChannelCount": 94,
   "topicCoverage": [
     {
@@ -2998,6 +2998,13 @@
       "withClip": 0
     },
     {
+      "id": "UCl8a9NTTy-1sx1zB3lOAd5A",
+      "name": "Vicky L'Arròs",
+      "tracks": 17,
+      "selected": 17,
+      "withClip": 0
+    },
+    {
       "id": "UC7HPer-lgFJBnjfNJ_J1Q4g",
       "name": "Vittara",
       "tracks": 64,
@@ -3082,13 +3089,13 @@
       "withClip": 0
     }
   ],
-  "indexedChannelCount": 505,
-  "resolvedChannelCount": 505,
-  "feedChannelCount": 505,
-  "rawPublicVideoCount": 5587,
-  "feedVideoCount": 5052,
-  "acceptedMusicCount": 5011,
-  "categoryEligibleVideoCount": 5006,
+  "indexedChannelCount": 506,
+  "resolvedChannelCount": 506,
+  "feedChannelCount": 506,
+  "rawPublicVideoCount": 5555,
+  "feedVideoCount": 5020,
+  "acceptedMusicCount": 4979,
+  "categoryEligibleVideoCount": 4974,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
     "before": 0,
@@ -3097,7 +3104,7 @@
   },
   "contentReviewCount": 541,
   "contentTypeCounts": {
-    "song": 4888,
+    "song": 4856,
     "live_song": 118,
     "album": 5,
     "other": 35,
@@ -3108,6 +3115,6 @@
   "channelsWithoutVideos": [],
   "channelsWithoutAcceptedMusic": [],
   "allIndexedChannelsVisible": true,
-  "publishedFeedVideoCount": 5003,
+  "publishedFeedVideoCount": 5020,
   "publishedShortVideoCount": 0
 }
