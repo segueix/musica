@@ -154,6 +154,6 @@ Canal: https://www.youtube.com/channel/UCeZTzF8dhFsh_BcqHUzygjg
 
 ## Verificació
 
-Base validada localment: 447 artistes. Feed i índex pendents de comprovació després de la publicació. Només els 63 IDs seleccionats es marcaran com a revisats.
+Base validada localment i a GitHub: 447 artistes (execució 37825853714). Feed i índex actualitzats amb èxit, consultant només 6 canals nous de 537 (execució 37825853843). Les 96 proves del pipeline passen. Verificació final correcta (37825911990): els 63 IDs presents al feed/arxiu, cap vídeo fora de la selecció; comprovació directa addicional al commit 447328311deb957b21ff90f5bb4107b2c00643f4. Només aquests 63 IDs s’han passat a revisats: 961 pendents, 10570 revisats i 16 descartats.
 
 La línia base de tests i lint presenta els errors preexistents documentats al grup 1; aquest lot només modifica dades i documentació. Les consultes de cerca de YouTube han patit respostes temporals 429; els canals incorporats s’han verificat amb respostes correctes de l’API.
