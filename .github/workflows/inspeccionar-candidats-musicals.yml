@@ -29,20 +29,7 @@ jobs:
             return data;
           }
           (async () => {
-            const ids=new Set(['UCvEsCddOPacc1q90oXzNEwQ','UC3v9pZ9RLUMaaBrr877QPmA','UCN8HPAk-E5ZtrkLrDf7cR7A','UCgV7p1tbKMGsNjvg8Zhm4YQ']);
-            for(const q of ["\"Grans amb Pus\" \"Topic\"","\"Guaita'ls\" \"Topic\""]){
-              const r=await api('search',{part:'snippet',type:'video',maxResults:'5',q});
-              console.log('SEARCH '+JSON.stringify({q,items:r.items}));
-              for(const x of r.items||[])ids.add(x.snippet.channelId);
-            }
-            for(const id of ids){
-              const r=await api('channels',{part:'snippet,contentDetails',id});const c=r.items?.[0];if(!c)continue;
-              if(!/grans|gatzara|guaita|testarudes|aranyes/i.test(c.snippet.title))continue;
-              const p=await api('playlistItems',{part:'snippet,contentDetails',playlistId:c.contentDetails.relatedPlaylists.uploads,maxResults:'50'});
-              const vids=p.items.map(x=>x.contentDetails.videoId);
-              const v=await api('videos',{part:'snippet,contentDetails',id:vids.join(',')});
-              for(const track of v.items){const m=track.contentDetails.duration.match(/PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?/);const sec=(+m[1]||0)*3600+(+m[2]||0)*60+(+m[3]||0);if(sec<=120){const h=await fetch('https://www.youtube.com/shorts/'+track.id,{method:'HEAD',redirect:'manual',signal:AbortSignal.timeout(10000)}).catch(()=>null);track.shortCheck={status:h?.status,location:h?.headers.get('location')};}}
-              console.log('REPERTOIRE '+JSON.stringify({id,title:c.snippet.title,handle:c.snippet.customUrl,description:c.snippet.description,tracks:v.items,more:!!p.nextPageToken}));
-            }
+            const v=await api('videos',{part:'snippet,contentDetails',id:'EBKvnGdVJqk,iX_xXpaYP5w'});
+            for(const track of v.items){const h=await fetch('https://www.youtube.com/shorts/'+track.id,{method:'HEAD',redirect:'manual',signal:AbortSignal.timeout(10000)}).catch(()=>null);track.shortCheck={status:h?.status,location:h?.headers.get('location')};console.log('TRACK '+JSON.stringify(track));}
           })().catch(e=>{console.error(e.message);process.exitCode=1;});
           NODE
