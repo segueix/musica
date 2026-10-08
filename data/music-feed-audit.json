@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-08T16:32:09.370Z",
+  "generatedAt": "2026-10-08T16:47:32.312Z",
   "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
   "deepPagesFetched": 0,
   "deepChannelCount": 18,
-  "topicChannelCount": 271,
+  "topicChannelCount": 275,
   "governedChannelCount": 94,
   "topicCoverage": [
     {
@@ -2326,6 +2326,20 @@
       "withClip": 0
     },
     {
+      "id": "UCokFPjgxi7i2ONsHr8wHj6g",
+      "name": "Mendra",
+      "tracks": 5,
+      "selected": 5,
+      "withClip": 0
+    },
+    {
+      "id": "UCtTPgp6W1WefOGfV3maG7JA",
+      "name": "Mendra",
+      "tracks": 2,
+      "selected": 2,
+      "withClip": 0
+    },
+    {
       "id": "UCJ_erOhxsuzi3KYLngXMeJw",
       "name": "Miki Núñez",
       "tracks": 136,
@@ -2347,6 +2361,13 @@
       "withClip": 12
     },
     {
+      "id": "UCrTJ5_xgCZyb-Rt3dp1eUxg",
+      "name": "Miquel Gil",
+      "tracks": 11,
+      "selected": 11,
+      "withClip": 0
+    },
+    {
       "id": "UC_z4NPeGNySemAwaAihgbaQ",
       "name": "MISHIMA",
       "tracks": 151,
@@ -2365,6 +2386,13 @@
       "name": "Moto Clua",
       "tracks": 10,
       "selected": 8,
+      "withClip": 0
+    },
+    {
+      "id": "UCElR_cmETBNoC7Rs6STl0BA",
+      "name": "Mr. Freak Ska",
+      "tracks": 40,
+      "selected": 40,
       "withClip": 0
     },
     {
@@ -3026,13 +3054,13 @@
       "withClip": 0
     }
   ],
-  "indexedChannelCount": 497,
-  "resolvedChannelCount": 497,
-  "feedChannelCount": 497,
-  "rawPublicVideoCount": 5461,
-  "feedVideoCount": 4926,
-  "acceptedMusicCount": 4885,
-  "categoryEligibleVideoCount": 4880,
+  "indexedChannelCount": 501,
+  "resolvedChannelCount": 501,
+  "feedChannelCount": 501,
+  "rawPublicVideoCount": 5511,
+  "feedVideoCount": 4976,
+  "acceptedMusicCount": 4935,
+  "categoryEligibleVideoCount": 4930,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
     "before": 0,
@@ -3041,7 +3069,7 @@
   },
   "contentReviewCount": 541,
   "contentTypeCounts": {
-    "song": 4762,
+    "song": 4812,
     "live_song": 118,
     "album": 5,
     "other": 35,
@@ -3052,6 +3080,6 @@
   "channelsWithoutVideos": [],
   "channelsWithoutAcceptedMusic": [],
   "allIndexedChannelsVisible": true,
-  "publishedFeedVideoCount": 4918,
+  "publishedFeedVideoCount": 4959,
   "publishedShortVideoCount": 0
 }
