@@ -62,7 +62,7 @@ js/
 │   ├── alphabet-index.js    # Índex alfabètic de la pàgina d'artistes (lletres que es fan grans, arrossegar per saltar)
 │   ├── category-artists.js  # Filera d'artistes d'una categoria sota la cançó destacada (scroll al mòbil, desplegable a l'ordinador)
 │   ├── shell-nav.js         # Navegació lateral/inferior i avisos breus (toast)
-│   ├── youtube-subscribe.js # «Subscriu-t'hi a YouTube»: canal oficial amb ?sub_confirmation=1 i proposta en seguir / 2 m'agrada
+│   ├── youtube-subscribe.js # «Subscriu-t'hi a YouTube»: botó oficial de YouTube / ?sub_confirmation=1 i targeta en seguir / 2 m'agrada
 │   ├── music-selection.js   # Motor de selecció musical compartit (funcions pures): antiguitat real, puntuació, restriccions
 │   ├── music-signals.js     # Observador únic d'escolta, estadístiques i preferències («(+) com aquesta (−)»)
 │   ├── music-queue.js       # Ràdio/cua: motor de selecció, mode de descoberta, «Afegeix a la cua», reproduir una selecció
@@ -476,7 +476,8 @@ const likes = ctx2.SegueixApp.features.likes;
 ### Subscripció al canal de YouTube (2026-10-07)
 
 - `js/features/youtube-subscribe.js` (patró 2, després de `shell-nav.js`): el botó de la fitxa de la cançó (`.btn-pill-red`, abans «Canal Youtube») és **«Subscriu-t'hi a YouTube»** (al mòbil estret, «Subscriu-t'hi») i porta al **canal oficial** de l'artista (`pickOfficialChannel()`: oficial principal → oficial → no «Tema»; mai un «Tema») amb **`?sub_confirmation=1`** (YouTube obre el diàleg de subscripció). Si l'artista només té canal «Tema», el botó continua sent «Canal Youtube».
-- **Proposta:** en seguir un artista a l'app (`segueix:music-prefs-changed` `follow`) o en fer m'agrada a la **segona** cançó d'un mateix artista (oficial + «Tema»), un avís (`shellNav.toast`) amb «Subscriu-t'hi». **Una sola vegada per artista i com a màxim una al dia** (`catube_yt_subscribe_prompts`). Mai damunt del reproductor. No es pot saber si l'usuari ja hi està subscrit (caldria OAuth de YouTube): no ho intentis.
+- **Botó oficial de YouTube (2026-10-08):** on hi ha canal oficial, `mountWidgets()` hi carrega el botó de subscripció de YouTube (`https://apis.google.com/js/platform.js`, `gapi.ytsubscribe.render`, `theme: dark`; a ≤ 480 px sense recompte) dins `[data-yt-sub-widget]` i amaga l'enllaç. **Només amb YouTube acceptat** (`hasAcceptedYouTubeCookies()`, com el reproductor); si no arriba en uns segons, es queda l'enllaç `?sub_confirmation=1`. Trampes: platform.js posa estils en línia (450 px d'ample) al contenidor que rep, per això es pinta en una caixa interior; i un contenidor amb `display: none` o 1 px no deixa pintar l'iframe (mentre carrega va fora de la pantalla).
+- **Proposta:** en seguir un artista a l'app (`segueix:music-prefs-changed` `follow`) o en fer m'agrada a la **segona** cançó d'un mateix artista (oficial + «Tema»), una **targeta gran i centrada** (`#ytSubPrompt`, `.yt-sub-prompt`: títol, text, botó oficial de YouTube o l'enllaç, «Ara no», ×; es tanca sola als 20 s o amb Esc). `choosePromptPosition()` (pura) la posa al centre de la pantalla o, si hi tocaria el vídeo o `#playerExternalControls`, al mig de l'espai lliure de sota/sobre/costat: **mai damunt del reproductor** ni sense fons fosc al damunt. **Una sola vegada per artista i com a màxim una al dia** (`catube_yt_subscribe_prompts`). No es pot saber si l'usuari ja hi està subscrit (caldria OAuth de YouTube): no ho intentis.
 - El botó «Segueix» del costat del nom a la fitxa de la cançó no feia res (el gestor en captura de `.channel-link` obria la fitxa de l'artista): `bindChannelLinks()` ara ignora els clics a `[data-follow-channel]`. Prova: `tests/youtube-subscribe.test.js`.
 
 ### Ràdio i llistes: sense relacionats (2026-09-30)

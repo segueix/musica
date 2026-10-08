@@ -6310,3 +6310,163 @@ body.is-video-pip .video-placeholder.is-placeholder-hidden {
         display: none;
     }
 }
+
+/* Botó oficial de subscripció de YouTube a la fitxa de la cançó (youtube-subscribe.js, mountWidgets). Buit fins que
+   arriba; aleshores l'enllaç «Subscriu-t'hi» s'amaga. */
+.yt-sub-widget {
+    display: inline-flex;
+    align-items: center;
+    min-height: 24px;
+}
+
+/* Mentre carrega no es veu ni ocupa lloc, però té la seva mida (si no, l'iframe de YouTube no es pinta bé) */
+.yt-sub-widget:not(.is-ready),
+.yt-sub-prompt:not(.has-widget) .yt-sub-prompt__widget {
+    position: absolute;
+    left: -10000px;
+    top: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.yt-sub-widget.is-ready {
+    display: inline-flex;
+    flex: 0 0 auto;
+    /* L'iframe neix amb 450 px d'ample: que no empenyi la fila de botons */
+    max-width: 160px;
+    overflow: hidden;
+}
+
+/* Amb el botó oficial ja pintat, l'enllaç s'amaga (els estils del botó tenen display propi) */
+.btn-pill-red[data-yt-subscribe][hidden] {
+    display: none !important;
+}
+
+/* ---------- Proposta de subscripció: targeta gran i centrada ----------
+   youtube-subscribe.js (placePrompt / choosePromptPosition) la posa al mig de la pantalla o, si hi tocaria el vídeo o
+   els seus controls, al mig de l'espai lliure del costat (res no va damunt del vídeo: normes de YouTube). Sense fons
+   fosc al damunt de la pàgina. */
+.yt-sub-prompt {
+    position: fixed;
+    left: 16px;
+    top: 30%;
+    z-index: 2600;
+    width: min(420px, calc(100vw - 32px));
+    padding: 22px 20px 18px;
+    border: 1px solid var(--pt-accent);
+    border-radius: 16px;
+    background: var(--pt-surface-2);
+    color: var(--pt-text);
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    animation: yt-sub-prompt-in 0.22s ease-out;
+}
+
+@keyframes yt-sub-prompt-in {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .yt-sub-prompt {
+        animation: none;
+    }
+}
+
+.yt-sub-prompt__close {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    width: 44px;
+    height: 44px;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    color: var(--pt-muted);
+    font-size: 26px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.yt-sub-prompt__close:hover,
+.yt-sub-prompt__close:focus-visible {
+    color: var(--pt-accent);
+}
+
+.yt-sub-prompt__title {
+    margin: 0 36px 8px;
+    font-size: 1.35rem;
+    line-height: 1.25;
+    color: var(--pt-text);
+}
+
+.yt-sub-prompt__text {
+    margin: 0 0 16px;
+    font-size: 1.02rem;
+    line-height: 1.45;
+    color: var(--pt-text);
+}
+
+.yt-sub-prompt__widget {
+    display: flex;
+    align-items: center;
+    min-height: 48px;
+}
+
+/* El botó oficial de YouTube va a la fila de «Ara no» i l'enllaç s'amaga (fa el mateix) */
+.yt-sub-prompt__go[hidden] {
+    display: none;
+}
+
+.yt-sub-prompt__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.yt-sub-prompt__go,
+.yt-sub-prompt__later {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0 20px;
+    border-radius: var(--pt-radius-pill);
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.yt-sub-prompt__go {
+    border: 1px solid var(--pt-accent);
+    background: var(--pt-accent);
+    color: #141615;
+}
+
+.yt-sub-prompt__later {
+    border: 1px solid var(--pt-line);
+    background: transparent;
+    color: var(--pt-text);
+}
+
+@media (max-width: 480px) {
+    .yt-sub-prompt {
+        padding: 18px 16px 14px;
+    }
+
+    .yt-sub-prompt__title {
+        font-size: 1.25rem;
+    }
+
+    .yt-sub-prompt__text {
+        margin-bottom: 12px;
+    }
+}

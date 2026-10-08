@@ -1,3 +1,11 @@
+## [2026-10-08] - Proposta de subscripció gran i centrada, i botó oficial de subscripció de YouTube
+
+**Problema:** al mòbil, l'avís «Ara segueixes… Vols subscriure't també a YouTube?» era un avís petit a baix de tot.
+
+**Solució Implementada:** (1) La proposta és una targeta pròpia (`#ytSubPrompt`) gran i centrada; `choosePromptPosition()` la col·loca al centre o a l'espai lliure que no toca el vídeo ni la barra de controls (normes de YouTube). (2) Botó oficial de subscripció de YouTube (`platform.js`, `gapi.ytsubscribe.render`) a la fitxa de la cançó i a la targeta, només amb YouTube acceptat; si no arriba, es queda l'enllaç `?sub_confirmation=1`.
+
+**Trampes conegudes:** (1) `platform.js` posa estils en línia al contenidor que rep (`width: 450px; display: inline-block; margin: 0`): cal pintar-lo en una caixa interior perquè els estils propis (amagar, retallar, centrar) s'apliquin a la de fora. (2) Si el contenidor té `display: none` o 1 px d'ample, l'iframe neix amb 0 o 1 px i no es corregeix: mentre carrega es posa fora de la pantalla (`left: -10000px`). (3) L'enllaç `.btn-pill-red` té `display` propi: `[hidden]` necessita `display: none !important`. (4) Els esdeveniments del botó (`subscribe`) estan obsolets: no es pot saber si l'usuari s'ha subscrit. Verificat amb Chromium i xarxa real a 390 i 1280 px (botó de 85 px / 116 px amb recompte; targeta sense tocar vídeo ni controls) i bloquejant `apis.google.com` (queden els enllaços). Prova: `tests/youtube-subscribe.test.js`.
+
 ## [2026-10-07] - «Subscriu-t'hi a YouTube» i el botó «Segueix» de la fitxa de la cançó que no seguia
 
 **Objectiu:** que els oients se subscriguin al canal oficial dels grups (benefici clar i durador per als artistes, encara que YouTube no compti les cançons encadenades).
