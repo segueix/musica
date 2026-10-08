@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-06T12:45:00.564Z",
+  "updatedAt": "2026-10-08T15:51:16.394Z",
   "description": "Decisions manuals sobre el tipus de contingut de vídeos concrets. Manen sobre el classificador automàtic (scripts/lib/classificar_contingut_musical.js) i el pipeline (scripts/update_music_feed.js) les reaplica a cada generació del feed. Tipus permesos: song, live_song, album, other. Un vídeo revisat aquí surt de data/music-content-review.json.",
   "videos": [
     {
@@ -1467,6 +1467,66 @@
       "contentType": "song",
       "title": "budellam el terrorista",
       "note": "Cançó de Budellam en el canal mixt seleccionat per l’usuari; contrastada amb el títol, la descripció i el repertori del grup."
+    },
+    {
+      "id": "8S-V2kDuDlY",
+      "contentType": "song",
+      "title": "Assac! - Estigmes del colonialisme",
+      "note": "Grup 1 Xavi: cançó completa identificada per títol i descripció; selecció manual del canal."
+    },
+    {
+      "id": "AJ6ab1pyaMI",
+      "contentType": "song",
+      "title": "Assac! - El meu pitjor enemic",
+      "note": "Grup 1 Xavi: cançó completa identificada per títol i descripció; selecció manual del canal."
+    },
+    {
+      "id": "JdXvQ6B_ge8",
+      "contentType": "song",
+      "title": "Assac! - Per llogar-hi katanes",
+      "note": "Grup 1 Xavi: cançó completa identificada per títol i descripció; selecció manual del canal."
+    },
+    {
+      "id": "8lFerQtBsz0",
+      "contentType": "song",
+      "title": "All Crü - No M'Autoajudis (Gurus go home) [Videoclip]",
+      "note": "Grup 1 Xavi: cançó completa identificada per títol i descripció; selecció manual del canal."
+    },
+    {
+      "id": "QLxPzu0Ik-U",
+      "contentType": "song",
+      "title": "ALL CRÜ - Per Tornar-se boig (Vídeo oficial)",
+      "note": "Grup 1 Xavi: cançó completa identificada per títol i descripció; selecció manual del canal."
+    },
+    {
+      "id": "bzu0V4qfKUk",
+      "contentType": "song",
+      "title": "ALL CRÜ - Community Goebbels",
+      "note": "Grup 1 Xavi: cançó completa identificada per títol i descripció; selecció manual del canal."
+    },
+    {
+      "id": "UUVKZRt_7UU",
+      "contentType": "song",
+      "title": "ALL CRÜ -  Un Dels Nostres (Vídeo oficial)",
+      "note": "Grup 1 Xavi: cançó completa identificada per títol i descripció; selecció manual del canal."
+    },
+    {
+      "id": "3BjoovIwQ0w",
+      "contentType": "live_song",
+      "title": "Bonestorm - Estigmes ( punk countryside diy show )",
+      "note": "Grup 1 Xavi: cançó completa identificada per títol i descripció; selecció manual del canal."
+    },
+    {
+      "id": "fQtYOPzyi8Q",
+      "contentType": "song",
+      "title": "BONESTORM - Flyer (Videoclip)",
+      "note": "Grup 1 Xavi: cançó completa identificada per títol i descripció; selecció manual del canal."
+    },
+    {
+      "id": "t1RUiKcAf-E",
+      "contentType": "song",
+      "title": "Bonestorm - No canviïs mai (Videoclip)",
+      "note": "Grup 1 Xavi: cançó completa identificada per títol i descripció; selecció manual del canal."
     }
   ]
 }

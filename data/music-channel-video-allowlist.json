@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-07T17:14:22.663Z",
+  "updatedAt": "2026-10-08T15:51:16.394Z",
   "description": "Llista blanca per a canals on Segueix Música només ha d'ingerir vídeos concrets. Admet títols exactes, fragments obligatoris i fragments exclosos.",
   "channels": {
     "UCKpscwdWlVaMqcA81vLI7OA": {
@@ -2517,6 +2517,92 @@
         "7H12jJmLoH4",
         "XfHZfybEggw",
         "jm4Zx25Y2cs"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCzyjfdkAmiRCOjJGuUVbqYg": {
+      "artist": "ASSAC!",
+      "note": "Hardcore en català. No s'ha verificat cap canal propi: selecció tancada de tres cançons en el canal compartit cerinobalzano, identificat com a other. No importar-ne altres artistes.",
+      "allowedVideoIds": [
+        "8S-V2kDuDlY",
+        "AJ6ab1pyaMI",
+        "JdXvQ6B_ge8"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "avatarFromFirstAllowedVideo": true
+    },
+    "UC8yBjieIRVNRxjAVi0FO1DQ": {
+      "artist": "Autodestrucció",
+      "note": "Canal Tema contrastat amb els discos i crèdits del grup. Selecció inicial sense Hijos de la dictadura i Ride girl, pendents de confirmar l'idioma; no es classifiquen com a no catalanes només pel títol.",
+      "allowedVideoIds": [
+        "y9z5GueOefg",
+        "1fGETCjYsfc",
+        "EVeU7di2Ypg",
+        "OnqwSolytNc",
+        "SIHdRqX7uy0",
+        "Tgoih0sZJPQ",
+        "X2gNkeQiUXo",
+        "YrEY3aV8EXI",
+        "aDiDtzq_7LQ",
+        "c1kW4r_7uDU",
+        "pWrd1wwyTrw",
+        "y6pUfpe582g",
+        "yG2s6Ve4wkc",
+        "izKGp-CAPmg",
+        "tl0oLmWNoEA",
+        "sOXAhjrvcbs",
+        "j-K-y4WnNYY",
+        "fJT6cU4pZXE",
+        "q44qnmBahVI",
+        "4qFEWcuz8uM",
+        "AE8KlCmJ0hE",
+        "kr7RgGzGz_k",
+        "A7O4cp4Q6Dw",
+        "YQ3H788DI38",
+        "DOwfQsvQk7I",
+        "DEngmgelNYI",
+        "5AnmhNX3akM",
+        "R5zccwDM4gQ",
+        "NUIbwSxMXsk",
+        "HpC8MqLSy8w",
+        "RUJ8Ebvvy80"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCyNWjZ1IhLo8Iy6nUMEz0rw": {
+      "artist": "All Crü",
+      "note": "Canal oficial @allcrupunkrock i canal Tema contrastats amb All i odi i el Linktree del grup. Canal oficial limitat a quatre cançons completes, sense promocions.",
+      "allowedVideoIds": [
+        "8lFerQtBsz0",
+        "QLxPzu0Ik-U",
+        "bzu0V4qfKUk",
+        "UUVKZRt_7UU"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCJXKRxaUXEg0kpgb-Kd8uDg": {
+      "artist": "Bonestorm",
+      "note": "Grup de Vic: canal oficial i Tema amb crèdits coincidents. Selecció en català; Horse Riding Girl exclosa perquè té lletra anglesa. Flyer i Maitia tenen lletra catalana. No confondre amb Bonestorm de Colòmbia.",
+      "allowedVideoIds": [
+        "3BjoovIwQ0w",
+        "fQtYOPzyi8Q",
+        "t1RUiKcAf-E"
       ],
       "acceptedMusicOnly": true,
       "allowedContentTypes": [

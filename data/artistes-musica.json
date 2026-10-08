@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-08T15:42:58.051Z",
+  "updatedAt": "2026-10-08T15:51:16.394Z",
   "artists": [
     {
       "name": "2ES",
@@ -31204,7 +31204,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCgAPpOaGsoDsXdEQKLB6gnQ",
+            "handle": null,
+            "name": "Assot - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UCHYDybCgyBhbXW9cLr8eiMA",
@@ -31246,16 +31254,18 @@
           }
         ]
       },
-      "confidence": "pendent",
-      "reviewStatus": "pendent",
-      "active": false,
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
         "https://assot.bandcamp.com/",
         "manual-user-2026-10-08",
-        "genre:manual"
+        "genre:manual",
+        "youtube:manual-verified",
+        "https://www.youtube.com/channel/UCgAPpOaGsoDsXdEQKLB6gnQ"
       ],
-      "lastChecked": null,
-      "notes": "Grup de death metal de Breda; pendent de verificar canal i repertori.",
+      "lastChecked": "2026-10-08T15:51:16.394Z",
+      "notes": "Death metal de Breda. Canal Tema contrastat amb Territori Hostil i Bullen les calderes de Bandcamp; no confondre amb canals homònims.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-08T15:42:56.288Z",
@@ -31265,7 +31275,8 @@
           "bestScore": 5,
           "autoAcceptedId": null
         }
-      }
+      },
+      "displayName": "Assot"
     },
     {
       "name": "ASSAC!",
@@ -31282,7 +31293,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCzyjfdkAmiRCOjJGuUVbqYg",
+            "handle": null,
+            "name": "cerinobalzano",
+            "type": "other",
+            "primary": true
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UCVQ_h3DBWjUQbZ7Jdgh-HMQ",
@@ -31324,16 +31343,18 @@
           }
         ]
       },
-      "confidence": "pendent",
-      "reviewStatus": "pendent",
-      "active": false,
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
         "https://assac.bandcamp.com/",
         "manual-user-2026-10-08",
-        "genre:manual"
+        "genre:manual",
+        "youtube:manual-verified",
+        "https://www.youtube.com/channel/UCzyjfdkAmiRCOjJGuUVbqYg"
       ],
-      "lastChecked": null,
-      "notes": "Hardcore de Barcelona. Cal revisar també les versions.",
+      "lastChecked": "2026-10-08T15:51:16.394Z",
+      "notes": "Hardcore en català. No s'ha verificat cap canal propi: selecció tancada de tres cançons en el canal compartit cerinobalzano, identificat com a other. No importar-ne altres artistes.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-08T15:42:56.754Z",
@@ -31343,7 +31364,8 @@
           "bestScore": 5,
           "autoAcceptedId": null
         }
-      }
+      },
+      "displayName": "ASSAC!"
     },
     {
       "name": "Autodestrucció",
@@ -31358,7 +31380,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UC8yBjieIRVNRxjAVi0FO1DQ",
+            "handle": null,
+            "name": "Autodestrucció - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UC8yBjieIRVNRxjAVi0FO1DQ",
@@ -31406,16 +31436,18 @@
           }
         ]
       },
-      "confidence": "pendent",
-      "reviewStatus": "pendent",
-      "active": false,
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
         "https://autodestruccio.bandcamp.com/",
         "manual-user-2026-10-08",
-        "genre:manual"
+        "genre:manual",
+        "youtube:manual-verified",
+        "https://www.youtube.com/channel/UC8yBjieIRVNRxjAVi0FO1DQ"
       ],
-      "lastChecked": null,
-      "notes": "Projecte de Càndid Coll; pendent de verificar canal i repertori.",
+      "lastChecked": "2026-10-08T15:51:16.394Z",
+      "notes": "Canal Tema contrastat amb els discos i crèdits del grup. Selecció inicial sense Hijos de la dictadura i Ride girl, pendents de confirmar l'idioma; no es classifiquen com a no catalanes només pel títol.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-08T15:42:57.035Z",
@@ -31425,7 +31457,8 @@
           "bestScore": 85,
           "autoAcceptedId": null
         }
-      }
+      },
+      "displayName": "Autodestrucció"
     },
     {
       "name": "All Crü",
@@ -31443,7 +31476,22 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCyNWjZ1IhLo8Iy6nUMEz0rw",
+            "handle": "@allcrupunkrock",
+            "name": "ALL CRÜ",
+            "type": "official",
+            "primary": true
+          },
+          {
+            "id": "UC_tsO4hz22Lk0jb1CEIFPmw",
+            "handle": null,
+            "name": "All Crü - Topic",
+            "type": "topic",
+            "primary": false
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UCyNWjZ1IhLo8Iy6nUMEz0rw",
@@ -31489,16 +31537,19 @@
           }
         ]
       },
-      "confidence": "pendent",
-      "reviewStatus": "pendent",
-      "active": false,
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
         "https://allcru.bandcamp.com/",
         "manual-user-2026-10-08",
-        "genre:manual"
+        "genre:manual",
+        "youtube:manual-verified",
+        "https://www.youtube.com/channel/UCyNWjZ1IhLo8Iy6nUMEz0rw",
+        "https://www.youtube.com/channel/UC_tsO4hz22Lk0jb1CEIFPmw"
       ],
-      "lastChecked": null,
-      "notes": "Punk rock en català; disc All i Odi.",
+      "lastChecked": "2026-10-08T15:51:16.394Z",
+      "notes": "Canal oficial @allcrupunkrock i canal Tema contrastats amb All i odi i el Linktree del grup. Canal oficial limitat a quatre cançons completes, sense promocions.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-08T15:42:57.404Z",
@@ -31508,7 +31559,8 @@
           "bestScore": 88,
           "autoAcceptedId": null
         }
-      }
+      },
+      "displayName": "All Crü"
     },
     {
       "name": "Bonestorm",
@@ -31523,7 +31575,22 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCJXKRxaUXEg0kpgb-Kd8uDg",
+            "handle": "@bonestorm2417",
+            "name": "Bonestorm",
+            "type": "official",
+            "primary": true
+          },
+          {
+            "id": "UCGPjtE1NFB1I8oDJ_Mx3O_Q",
+            "handle": null,
+            "name": "Bonestorm - Topic",
+            "type": "topic",
+            "primary": false
+          }
+        ],
         "searchCandidates": [
           {
             "id": "UCJXKRxaUXEg0kpgb-Kd8uDg",
@@ -31555,16 +31622,19 @@
           }
         ]
       },
-      "confidence": "pendent",
-      "reviewStatus": "pendent",
-      "active": false,
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
         "https://bonestormvic.bandcamp.com/",
         "manual-user-2026-10-08",
-        "genre:manual"
+        "genre:manual",
+        "youtube:manual-verified",
+        "https://www.youtube.com/channel/UCJXKRxaUXEg0kpgb-Kd8uDg",
+        "https://www.youtube.com/channel/UCGPjtE1NFB1I8oDJ_Mx3O_Q"
       ],
-      "lastChecked": null,
-      "notes": "Grup de Vic. Té repertori en català i anglès; no confondre amb grups homònims. Revisió per cançó necessària.",
+      "lastChecked": "2026-10-08T15:51:16.394Z",
+      "notes": "Grup de Vic: canal oficial i Tema amb crèdits coincidents. Selecció en català; Horse Riding Girl exclosa perquè té lletra anglesa. Flyer i Maitia tenen lletra catalana. No confondre amb Bonestorm de Colòmbia.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-08T15:42:57.765Z",
@@ -31574,7 +31644,8 @@
           "bestScore": 93,
           "autoAcceptedId": null
         }
-      }
+      },
+      "displayName": "Bonestorm"
     }
   ]
 }
