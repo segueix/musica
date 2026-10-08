@@ -1890,6 +1890,7 @@ function buildWatchChannelInfoHtml(channel, avatar, watchUrl, video) {
             </div>
             <div class="video-metadata-bar">
                 <div class="action-group action-group-left">
+                    ${youtubeChannel.subscribe && youtubeChannel.channelId ? `<div class="yt-sub-widget" data-yt-sub-widget="${youtubeChannel.channelId}"></div>` : ''}
                     <a href="${youtubeChannel.url}" target="_blank" rel="noopener noreferrer" class="btn-pill-red"${youtubeChannel.subscribe ? ` data-yt-subscribe="true" aria-label="Subscriu-t'hi a YouTube" title="Subscriu-t'hi al canal oficial de YouTube"` : ''}>
                         ${youtubeChannel.subscribe ? `Subscriu-t'hi<span class="yt-subscribe-long"> a YouTube</span>` : 'Canal Youtube'}
                     </a>
@@ -12174,6 +12175,8 @@ async function showVideoFromAPILegacyImpl(videoId, options = {}) {
             };
             const watchUrl = `https://www.youtube.com/watch?v=${cachedVideo.id || videoId}`;
             channelInfo.innerHTML = buildWatchChannelInfoHtml(channel, cachedChannelAvatar, watchUrl, cachedVideo);
+            // Botó oficial de subscripció de YouTube (si arriba, substitueix l'enllaç «Subscriu-t'hi»)
+            SegueixApp.features.youtubeSubscribe?.mountWidgets?.(channelInfo);
             bindLikeButton(channelInfo, cachedVideo);
             setupMiniPlayerToggle();
             bindFollowButtons(channelInfo);
@@ -12240,6 +12243,8 @@ async function showVideoFromAPILegacyImpl(videoId, options = {}) {
                 );
                 const channelAvatar = resolveChannelAvatar(channel.id, { ...channel, ...matchedChannel });
                 channelInfo.innerHTML = buildWatchChannelInfoHtml(channel, channelAvatar, watchUrl, currentVideo);
+                // Botó oficial de subscripció de YouTube (si arriba, substitueix l'enllaç «Subscriu-t'hi»)
+                SegueixApp.features.youtubeSubscribe?.mountWidgets?.(channelInfo);
                 bindLikeButton(channelInfo, video);
                 setupMiniPlayerToggle();
                 bindFollowButtons(channelInfo);
@@ -12580,6 +12585,8 @@ function showVideoLegacyImpl(videoId, options = {}) {
         ? video.videoUrl.replace('embed/', 'watch?v=')
         : `https://www.youtube.com/watch?v=${videoId}`;
     channelInfo.innerHTML = buildWatchChannelInfoHtml(channel, channel.avatar || 'img/icon-192.png', watchUrl, video);
+    // Botó oficial de subscripció de YouTube (si arriba, substitueix l'enllaç «Subscriu-t'hi»)
+    SegueixApp.features.youtubeSubscribe?.mountWidgets?.(channelInfo);
     const likeVideoData = {
         ...video,
         channel: {
