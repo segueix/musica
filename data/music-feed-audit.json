@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-08T15:52:34.564Z",
+  "generatedAt": "2026-10-08T15:53:02.413Z",
   "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
   "deepPagesFetched": 0,
@@ -1164,6 +1164,13 @@
       "withClip": 32
     },
     {
+      "id": "UC_tsO4hz22Lk0jb1CEIFPmw",
+      "name": "ALL CRÜ",
+      "tracks": 18,
+      "selected": 14,
+      "withClip": 0
+    },
+    {
       "id": "UC5RFGXhh0Yq6w7EAzrSJXAw",
       "name": "Alosa",
       "tracks": 22,
@@ -1218,6 +1225,13 @@
       "tracks": 42,
       "selected": 17,
       "withClip": 17
+    },
+    {
+      "id": "UCgAPpOaGsoDsXdEQKLB6gnQ",
+      "name": "Assot",
+      "tracks": 30,
+      "selected": 18,
+      "withClip": 0
     },
     {
       "id": "UCOEzuNu9yvO0AFTnSVKk4LQ",
@@ -1294,6 +1308,13 @@
       "name": "Blay Tritono",
       "tracks": 3,
       "selected": 3,
+      "withClip": 0
+    },
+    {
+      "id": "UCGPjtE1NFB1I8oDJ_Mx3O_Q",
+      "name": "Bonestorm",
+      "tracks": 14,
+      "selected": 8,
       "withClip": 0
     },
     {
@@ -2873,21 +2894,21 @@
     }
   ],
   "indexedChannelCount": 477,
-  "resolvedChannelCount": 474,
-  "feedChannelCount": 474,
-  "rawPublicVideoCount": 5281,
-  "feedVideoCount": 4742,
-  "acceptedMusicCount": 4705,
-  "categoryEligibleVideoCount": 4700,
+  "resolvedChannelCount": 477,
+  "feedChannelCount": 477,
+  "rawPublicVideoCount": 5312,
+  "feedVideoCount": 4777,
+  "acceptedMusicCount": 4736,
+  "categoryEligibleVideoCount": 4731,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
-    "before": 4,
+    "before": 0,
     "matched": 0,
-    "rejected": 4
+    "rejected": 0
   },
   "contentReviewCount": 541,
   "contentTypeCounts": {
-    "song": 4585,
+    "song": 4616,
     "live_song": 115,
     "album": 5,
     "other": 35,
@@ -2897,7 +2918,7 @@
   "channelsWithoutUploads": [],
   "channelsWithoutVideos": [],
   "channelsWithoutAcceptedMusic": [],
-  "allIndexedChannelsVisible": false,
-  "publishedFeedVideoCount": 4737,
+  "allIndexedChannelsVisible": true,
+  "publishedFeedVideoCount": 4769,
   "publishedShortVideoCount": 0
 }
