@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-08T16:10:47.597Z",
+  "generatedAt": "2026-10-08T16:18:16.730Z",
   "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
   "deepPagesFetched": 0,
   "deepChannelCount": 18,
-  "topicChannelCount": 263,
-  "governedChannelCount": 90,
+  "topicChannelCount": 267,
+  "governedChannelCount": 92,
   "topicCoverage": [
     {
       "id": "UCqaEtRht2jakBhGFLzS617w",
@@ -68,6 +68,14 @@
       "name": "elspetsoficial",
       "songs": 3,
       "matched": 3,
+      "coverage": 1,
+      "governs": true
+    },
+    {
+      "id": "UCnJ4T56eu1dxFBWin7Z7C3A",
+      "name": "EN-BRUT",
+      "songs": 1,
+      "matched": 1,
       "coverage": 1,
       "governs": true
     },
@@ -484,6 +492,14 @@
       "name": "Els Amics de les Arts",
       "songs": 22,
       "matched": 19,
+      "coverage": 0.86,
+      "governs": true
+    },
+    {
+      "id": "UClEkW6DS-3DfOcxGMouE_7A",
+      "name": "Fox System",
+      "songs": 7,
+      "matched": 6,
       "coverage": 0.86,
       "governs": true
     },
@@ -1040,6 +1056,14 @@
       "governs": false
     },
     {
+      "id": "UCMI_YX4hq_6gmj5KXiSMCEQ",
+      "name": "Daltabaix",
+      "songs": 0,
+      "matched": 0,
+      "coverage": 0,
+      "governs": false
+    },
+    {
       "id": "UCUSjRkF72RR1E8Rl4SWtVsQ",
       "name": "El Pony Pisador",
       "songs": 0,
@@ -1459,6 +1483,13 @@
       "withClip": 0
     },
     {
+      "id": "UCke5e6w0YsmcfxvngW4An3A",
+      "name": "Daltabaix",
+      "tracks": 7,
+      "selected": 7,
+      "withClip": 0
+    },
+    {
       "id": "UCIumPBt0bPxqjeDXi_dZtgg",
       "name": "Dàmaris Gelabert",
       "tracks": 500,
@@ -1613,6 +1644,13 @@
       "withClip": 28
     },
     {
+      "id": "UC86_pXaC6Kh_U-ouv4OZ_DQ",
+      "name": "EN-BRUT",
+      "tracks": 15,
+      "selected": 15,
+      "withClip": 1
+    },
+    {
       "id": "UCAEf3q8jStY3hXlEtfoI0nA",
       "name": "Enemic Interior",
       "tracks": 35,
@@ -1702,6 +1740,20 @@
       "tracks": 109,
       "selected": 15,
       "withClip": 47
+    },
+    {
+      "id": "UCwCcA6f2KDLJi58xX2se6DA",
+      "name": "Fox System",
+      "tracks": 16,
+      "selected": 16,
+      "withClip": 6
+    },
+    {
+      "id": "UCdontCcTg9y1senwNiJFECg",
+      "name": "FP",
+      "tracks": 24,
+      "selected": 24,
+      "withClip": 0
     },
     {
       "id": "UCOGyDtQsutPHkVRfp0mJ_GQ",
@@ -2922,13 +2974,13 @@
       "withClip": 0
     }
   ],
-  "indexedChannelCount": 482,
-  "resolvedChannelCount": 482,
-  "feedChannelCount": 482,
-  "rawPublicVideoCount": 5349,
-  "feedVideoCount": 4814,
-  "acceptedMusicCount": 4773,
-  "categoryEligibleVideoCount": 4768,
+  "indexedChannelCount": 489,
+  "resolvedChannelCount": 489,
+  "feedChannelCount": 489,
+  "rawPublicVideoCount": 5420,
+  "feedVideoCount": 4885,
+  "acceptedMusicCount": 4844,
+  "categoryEligibleVideoCount": 4839,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
     "before": 0,
@@ -2937,7 +2989,7 @@
   },
   "contentReviewCount": 541,
   "contentTypeCounts": {
-    "song": 4653,
+    "song": 4724,
     "live_song": 115,
     "album": 5,
     "other": 35,
@@ -2948,6 +3000,6 @@
   "channelsWithoutVideos": [],
   "channelsWithoutAcceptedMusic": [],
   "allIndexedChannelsVisible": true,
-  "publishedFeedVideoCount": 4811,
+  "publishedFeedVideoCount": 4873,
   "publishedShortVideoCount": 0
 }
