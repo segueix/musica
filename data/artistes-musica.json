@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-08T18:37:28.180Z",
+  "updatedAt": "2026-10-08T20:02:16.367Z",
   "artists": [
     {
       "name": "2 Princeses Barbudes",
@@ -10452,6 +10452,47 @@
       }
     },
     {
+      "name": "Frontpilsen",
+      "displayName": "Frontpilsen",
+      "aliases": [
+        "Front Pilsen"
+      ],
+      "genres": [
+        "Punk"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCOxRObgDa7GRNF7UaO7B83w",
+            "handle": "@frontpilsentoninapo2941",
+            "name": "Frontpilsen Toni Napo",
+            "type": "official",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://www.youtube.com/@frontpilsentoninapo2941",
+        "https://no80s-gruposnacionales.blogspot.com/2008/07/frontpilsen.html",
+        "https://www.vilaweb.cat/noticia/423514/20011105/neix-nova-discografica-catalana-especialitzada-sons-jamaicans.html",
+        "manual-user-2026-10-08",
+        "genre:manual",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": "2026-10-08T20:02:16.367Z",
+      "notes": "Punk / Oi! en català. Canal del cantant Toni Napo, identificat a la descripció de Noia especial. Dos vídeos individuals; selecció tancada. Vegeu docs/PUNK_FRONTPILSEN_ODI_SOCIAL.md."
+    },
+    {
       "name": "GadeGANG",
       "aliases": [],
       "genres": [
@@ -15097,6 +15138,47 @@
           "wikidataWorkEvidence": []
         }
       }
+    },
+    {
+      "name": "L'Odi Social",
+      "displayName": "L'Odi Social",
+      "aliases": [
+        "Odio Social",
+        "L’Odi Social"
+      ],
+      "genres": [
+        "Punk"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCkS1qH6mVR8T0hqyHJs0jnA",
+            "handle": null,
+            "name": "L'Odi Social - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://lodisocial.bandcamp.com/album/que-pagui-pujol-esventats-extras-reissue",
+        "https://es.wikipedia.org/wiki/L%27Odi_Social",
+        "manual-user-2026-10-08",
+        "genre:manual",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": "2026-10-08T20:02:16.367Z",
+      "notes": "Punk. Repertori mixt: només Speed, No Olimpics i Ataka a l'Estat (estudi i directe). La resta no entra per la llista tancada; el títol català no acredita l'idioma de la lletra. Vegeu docs/PUNK_FRONTPILSEN_ODI_SOCIAL.md."
     },
     {
       "name": "La Banda del Yuyu",

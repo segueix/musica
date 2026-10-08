@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-08T18:37:28.180Z",
+  "updatedAt": "2026-10-08T20:02:16.367Z",
   "description": "Decisions manuals sobre el tipus de contingut de vídeos concrets. Manen sobre el classificador automàtic (scripts/lib/classificar_contingut_musical.js) i el pipeline (scripts/update_music_feed.js) les reaplica a cada generació del feed. Tipus permesos: song, live_song, album, other. Un vídeo revisat aquí surt de data/music-content-review.json.",
   "videos": [
     {
@@ -5895,6 +5895,42 @@
       "title": "COPROFAGIA RURAL - PESTA PORCINA -",
       "contentType": "live_song",
       "note": "Grup 4 metall: cançó catalana revisada documentalment; docs/HEAVY_GRUP_4.md."
+    },
+    {
+      "id": "AVme-aAxVyQ",
+      "title": "Frontpilsen - El final de la nit [1989]",
+      "contentType": "song",
+      "note": "Selecció manual Punk; català verificat documentalment. docs/PUNK_FRONTPILSEN_ODI_SOCIAL.md."
+    },
+    {
+      "id": "HT5PnRXeh0A",
+      "title": "Frontpilsen - Noia especial [1990]",
+      "contentType": "live_song",
+      "note": "Selecció manual Punk; català verificat documentalment. docs/PUNK_FRONTPILSEN_ODI_SOCIAL.md."
+    },
+    {
+      "id": "nvqawc3_Rvo",
+      "title": "No Olimpics",
+      "contentType": "song",
+      "note": "Selecció manual Punk; català verificat documentalment. docs/PUNK_FRONTPILSEN_ODI_SOCIAL.md."
+    },
+    {
+      "id": "unSOr6YqFnQ",
+      "title": "Speed",
+      "contentType": "song",
+      "note": "Selecció manual Punk; català verificat documentalment. docs/PUNK_FRONTPILSEN_ODI_SOCIAL.md."
+    },
+    {
+      "id": "1hvCR99PFk0",
+      "title": "Ataka A L'Estat",
+      "contentType": "song",
+      "note": "Selecció manual Punk; català verificat documentalment. docs/PUNK_FRONTPILSEN_ODI_SOCIAL.md."
+    },
+    {
+      "id": "DiE1FKU2IvQ",
+      "title": "Ataka A L' Estat (Live)",
+      "contentType": "live_song",
+      "note": "Selecció manual Punk; català verificat documentalment. docs/PUNK_FRONTPILSEN_ODI_SOCIAL.md."
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-08T18:37:28.180Z",
+  "updatedAt": "2026-10-08T20:02:16.367Z",
   "description": "Llista blanca per a canals on Segueix Música només ha d'ingerir vídeos concrets. Admet títols exactes, fragments obligatoris i fragments exclosos.",
   "channels": {
     "UCKpscwdWlVaMqcA81vLI7OA": {
@@ -4214,6 +4214,36 @@
         "live_song"
       ],
       "avatarFromFirstAllowedVideo": true
+    },
+    "UCOxRObgDa7GRNF7UaO7B83w": {
+      "artist": "Frontpilsen",
+      "note": "Punk / Oi! en català. Canal del cantant Toni Napo, identificat a la descripció de Noia especial. Dos vídeos individuals; selecció tancada. Vegeu docs/PUNK_FRONTPILSEN_ODI_SOCIAL.md.",
+      "allowedVideoIds": [
+        "AVme-aAxVyQ",
+        "HT5PnRXeh0A"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "avatarFromFirstAllowedVideo": false
+    },
+    "UCkS1qH6mVR8T0hqyHJs0jnA": {
+      "artist": "L'Odi Social",
+      "note": "Punk. Repertori mixt: només Speed, No Olimpics i Ataka a l'Estat (estudi i directe). La resta no entra per la llista tancada; el títol català no acredita l'idioma de la lletra. Vegeu docs/PUNK_FRONTPILSEN_ODI_SOCIAL.md.",
+      "allowedVideoIds": [
+        "nvqawc3_Rvo",
+        "unSOr6YqFnQ",
+        "1hvCR99PFk0",
+        "DiE1FKU2IvQ"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "avatarFromFirstAllowedVideo": false
     }
   }
 }
