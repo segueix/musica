@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-08T18:38:53.286Z",
+  "generatedAt": "2026-10-08T20:03:58.745Z",
   "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
   "deepPagesFetched": 0,
   "deepChannelCount": 18,
-  "topicChannelCount": 298,
+  "topicChannelCount": 299,
   "governedChannelCount": 101,
   "topicCoverage": [
     {
@@ -2196,6 +2196,13 @@
       "withClip": 1
     },
     {
+      "id": "UCkS1qH6mVR8T0hqyHJs0jnA",
+      "name": "L'Odi Social",
+      "tracks": 4,
+      "selected": 4,
+      "withClip": 0
+    },
+    {
       "id": "UCSJ3UWpeU4pVvvuK0flmaeg",
       "name": "La Banda del Yuyu",
       "tracks": 53,
@@ -3295,13 +3302,13 @@
       "withClip": 0
     }
   ],
-  "indexedChannelCount": 537,
-  "resolvedChannelCount": 537,
-  "feedChannelCount": 537,
-  "rawPublicVideoCount": 5881,
-  "feedVideoCount": 5346,
-  "acceptedMusicCount": 5305,
-  "categoryEligibleVideoCount": 5300,
+  "indexedChannelCount": 539,
+  "resolvedChannelCount": 539,
+  "feedChannelCount": 539,
+  "rawPublicVideoCount": 5875,
+  "feedVideoCount": 5340,
+  "acceptedMusicCount": 5299,
+  "categoryEligibleVideoCount": 5294,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
     "before": 0,
@@ -3310,8 +3317,8 @@
   },
   "contentReviewCount": 541,
   "contentTypeCounts": {
-    "song": 5166,
-    "live_song": 134,
+    "song": 5159,
+    "live_song": 135,
     "album": 5,
     "other": 35,
     "review": 541
@@ -3321,6 +3328,6 @@
   "channelsWithoutVideos": [],
   "channelsWithoutAcceptedMusic": [],
   "allIndexedChannelsVisible": true,
-  "publishedFeedVideoCount": 5334,
+  "publishedFeedVideoCount": 5340,
   "publishedShortVideoCount": 0
 }
