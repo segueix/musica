@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-08T18:25:59.211Z",
+  "generatedAt": "2026-10-08T18:38:53.286Z",
   "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
   "deepPagesFetched": 0,
   "deepChannelCount": 18,
-  "topicChannelCount": 295,
-  "governedChannelCount": 100,
+  "topicChannelCount": 298,
+  "governedChannelCount": 101,
   "topicCoverage": [
     {
       "id": "UCqaEtRht2jakBhGFLzS617w",
@@ -676,6 +676,14 @@
       "name": "Mar Pujol",
       "songs": 17,
       "matched": 14,
+      "coverage": 0.82,
+      "governs": true
+    },
+    {
+      "id": "UC5b2TCGWRI0ulWbpeCm9dnw",
+      "name": "VRADEMARGKofficial",
+      "songs": 11,
+      "matched": 9,
       "coverage": 0.82,
       "governs": true
     },
@@ -1402,6 +1410,13 @@
       "tracks": 69,
       "selected": 30,
       "withClip": 24
+    },
+    {
+      "id": "UCcG2ayuF3B2xDZIVH2LNefg",
+      "name": "Avalot",
+      "tracks": 13,
+      "selected": 13,
+      "withClip": 0
     },
     {
       "id": "UCF0gz817gR4oCPDwd6bqRuw",
@@ -3049,6 +3064,13 @@
       "withClip": 0
     },
     {
+      "id": "UCZ9JPgA_kLvdtOpbIzs8Yew",
+      "name": "thanatopraxy",
+      "tracks": 2,
+      "selected": 2,
+      "withClip": 0
+    },
+    {
       "id": "UCARSXSWwSje53JsJgzLCtpA",
       "name": "The Anti-Patiks",
       "tracks": 23,
@@ -3189,6 +3211,13 @@
       "withClip": 14
     },
     {
+      "id": "UC0Ury5l6zFGf9ws25up1ucg",
+      "name": "Vrademargk",
+      "tracks": 12,
+      "selected": 12,
+      "withClip": 7
+    },
+    {
       "id": "UCYcENw_M0RUKP-sXuR3odHQ",
       "name": "X-Fanekaes",
       "tracks": 18,
@@ -3266,13 +3295,13 @@
       "withClip": 0
     }
   ],
-  "indexedChannelCount": 531,
-  "resolvedChannelCount": 531,
-  "feedChannelCount": 531,
-  "rawPublicVideoCount": 5895,
-  "feedVideoCount": 5353,
-  "acceptedMusicCount": 5319,
-  "categoryEligibleVideoCount": 5314,
+  "indexedChannelCount": 537,
+  "resolvedChannelCount": 537,
+  "feedChannelCount": 537,
+  "rawPublicVideoCount": 5881,
+  "feedVideoCount": 5346,
+  "acceptedMusicCount": 5305,
+  "categoryEligibleVideoCount": 5300,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
     "before": 0,
@@ -3281,8 +3310,8 @@
   },
   "contentReviewCount": 541,
   "contentTypeCounts": {
-    "song": 5179,
-    "live_song": 135,
+    "song": 5166,
+    "live_song": 134,
     "album": 5,
     "other": 35,
     "review": 541
@@ -3292,6 +3321,6 @@
   "channelsWithoutVideos": [],
   "channelsWithoutAcceptedMusic": [],
   "allIndexedChannelsVisible": true,
-  "publishedFeedVideoCount": 5283,
+  "publishedFeedVideoCount": 5334,
   "publishedShortVideoCount": 0
 }
