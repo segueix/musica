@@ -16,7 +16,7 @@
 // migrant els clients automàticament.
 
 // === AUTO-GENERAT per scripts/actualitzar_versio_sw.js — NO EDITAR MANUALMENT ===
-const CACHE_VERSION = '796f7625c554';
+const CACHE_VERSION = 'f82399182570';
 const STATIC_ASSETS = [
     './',
     './index.html',
@@ -164,6 +164,7 @@ self.addEventListener('fetch', (event) => {
     const isNavigate = request.mode === 'navigate' || path === '/' || path.endsWith('/index.html');
     const isNetworkFirstData = path.endsWith('/data/feed.json')
         || path.endsWith('/data/hidden-videos.json')
+        || path.endsWith('/data/videos-restringits.json')
         || path.includes('/data/search_index_');
     const isSwrData = path.includes('/data/') || path.endsWith('/js/channels-ca.json');
     const isStaticCode = path.endsWith('.js') || path.endsWith('.css');

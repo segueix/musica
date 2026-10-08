@@ -12,6 +12,7 @@ const { slimFeed, serializeFeed } = require('./lib/aprimar_feed');
 const tema = require('./lib/canal_tema');
 const revisioIdiomes = require('./lib/revisio_idiomes');
 const albumsMusic = require('./lib/albums_musica');
+const restriccions = require('./lib/restriccions_youtube');
 const { REGLES: SPANISH_TITLE_RULES } = require('./ocultar_titols_castella');
 const { resolveChannelDisplayName, findNameOverride, loadNameOverrides, stripOfficialWord } = require('./lib/nom_canal');
 
@@ -392,6 +393,17 @@ async function main(){
       item.durationSeconds=durationSeconds(item.contentDetails?.duration||'');
       detailsById.set(item.id,item);
     }
+  }
+
+  // Vídeos que el reproductor incrustat no pot fer sonar (restricció d'edat o no incrustables): fora del feed. Les
+  // dades ja arriben amb aquesta consulta (contentDetails,status): no gasta quota. Registre per al client i l'arxiu:
+  // data/videos-restringits.json (scripts/lib/restriccions_youtube.js).
+  const restrictedUpdate=restriccions.updateRegistry(restriccions.loadRegistry(),[...detailsById.values()]);
+  const restrictedIds=Object.keys(restrictedUpdate.registry.videos);
+  restrictedIds.forEach(id=>detailsById.delete(id));
+  if(restrictedUpdate.changed) restriccions.saveRegistry(restrictedUpdate.registry);
+  if(restrictedUpdate.added.length || restrictedUpdate.removed.length){
+    console.log(`🔞 Vídeos restringits: ${restrictedUpdate.added.length} nous, ${restrictedUpdate.removed.length} recuperats (${restrictedIds.length} en total).`);
   }
 
   // Completa els títols de la selecció manual amb les metadades verificades de YouTube.
@@ -898,6 +910,8 @@ async function main(){
     generatedAt,
     retainedVideoCount:retainedSet.size,
     unverifiedVideoCount:unverified.size,
+    restrictedVideoCount:restrictedIds.length,
+    restrictedVideosAdded:restrictedUpdate.added,
     deepPagesFetched,
     deepChannelCount:deepChannels.size,
     topicChannelCount:allTopicChannelCount,
