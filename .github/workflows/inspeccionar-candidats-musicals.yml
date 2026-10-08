@@ -1,24 +1,24 @@
-name: Inspeccionar punk
+name: Verificar seleccio punk
 on:
-  push:
-    branches: [main]
-    paths: [".github/workflows/inspeccionar-candidats-musicals.yml"]
+  workflow_run:
+    workflows: ["Actualitzar feed musical"]
+    types: [completed]
 permissions:
   contents: read
 jobs:
-  inspeccio:
+  verifica:
+    if: github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v5
+        with:
+          ref: main
       - uses: actions/setup-node@v5
         with:
           node-version: "20"
-      - name: Consulta limitada de candidats
-        env:
-          YOUTUBE_API_KEY_SERVER: ${{ secrets.YOUTUBE_API_KEY_SERVER }}
+      - name: Comprova seleccio i exclusions
         run: |
           node - <<'NODE'
-          async function api(endpoint,params){const u=new URL('https://www.googleapis.com/youtube/v3/'+endpoint);for(const[k,v]of Object.entries(params))u.searchParams.set(k,v);u.searchParams.set('key',process.env.YOUTUBE_API_KEY_SERVER);const r=await fetch(u);if(!r.ok)throw Error('YouTube '+r.status);return r.json();}
-          (async()=>{for(const handle of ['@esperitdevi','@groggyrude']){const r=await api('channels',{part:'snippet,contentDetails',forHandle:handle});const c=r.items[0];let token='',tracks=[];for(let n=0;n<4;n++){const p=await api('playlistItems',{part:'snippet,contentDetails',playlistId:c.contentDetails.relatedPlaylists.uploads,maxResults:'50',...(token?{pageToken:token}:{})});const ids=p.items.map(x=>x.contentDetails.videoId);if(ids.length)tracks.push(...(await api('videos',{part:'snippet,contentDetails',id:ids.join(',')})).items);token=p.nextPageToken||'';if(!token)break;}console.log('REPERTOIRE '+JSON.stringify({id:c.id,title:c.snippet.title,handle,tracks,more:!!token}));}})().catch(e=>{console.error(e.message);process.exitCode=1;});
+          const fs=require('fs'),assert=require('assert');const specs=[{"name":"Esperit de Vi","id":"UCSBN6Ppa03Wh9WCXE4skixg","handle":"@esperitdevi","ids":["w1-b9ex3aCA","xSILyh6EYD8","TcAv0zoOvI0","d6Fr_HClkGc","Idotr-p4cww","3pKgHTMgLSM","3O638vg81iA","Uci7vneotMw","2HOjqW-dXNg","_3MiDZccZFI","cieXCaNbAQY","rtNkdvbwQkY","bN9STup_o50"]},{"name":"Groggy Rude","id":"UCG1eXBwVPsRtMl1xw0PmIKA","handle":"@groggyrude","ids":["Olm6pCf_NtY","LR0nuEOIZdY","P384fC2WAoE","feqtE1uWegI","RD35k0vM5Xk","z-Gb04TLFAQ","87VM_NjpVjU","UxM-qzR1rfA","me_bjou95SQ","8RUEarKuTgg","mYmpLoxIOHk","sSamS-_u4eA","dM7Ey3on_nY","tEF757mxmvY","4yu43BUGbBM","IfAZSARTTp0","qkIOz2xZEt4","86buq-fQZmg","c0Q6sFzoCSg","8Y5jiCmDdNc","nxZrXFx9Suk","3pijF0Y04ck","1b_38FDY2hM","R7bo7HVXwh4","PQj55x_mQrI","tPu89rXhLH8","cJj6XCz0rpM","1tSlHFqxe6U","jKOlejJIVyE","vqk6qFu_N4A","MQBEa4n-2CM","ksPBwNavCP8","raKCmK9V2EA","blNZtYNyay8","m9zStpuu_V8","hIj-vpWyays","5XhRsACu19o"]}];const found=new Map();function walk(o){if(!o||typeof o!=='object')return;if(typeof o.id==='string'&&specs.some(s=>s.ids.includes(o.id)||s.id===o.channelId))found.set(o.id,o);for(const v of Object.values(o))if(v&&typeof v==='object')walk(v);}walk(JSON.parse(fs.readFileSync('data/feed.json','utf8')));function files(dir){if(!fs.existsSync(dir))return;for(const e of fs.readdirSync(dir,{withFileTypes:true})){const p=dir+'/'+e.name;if(e.isDirectory())files(p);else if(p.endsWith('.json'))walk(JSON.parse(fs.readFileSync(p,'utf8')));}}files('data/archive');const allowed=new Set(specs.flatMap(s=>s.ids));for(const s of specs){const missing=s.ids.filter(id=>!found.has(id));console.log(JSON.stringify({artist:s.name,channel:s.id,expected:s.ids.length,missing}));assert.equal(missing.length,0,'Vídeos absents');}for(const[id,v]of found)if(specs.some(s=>s.id===v.channelId)){assert(allowed.has(id),'Vídeo no autoritzat '+id);assert(!v.isShort,'Short '+id);}console.log('PUNK_OK '+allowed.size+' vídeos; selecció exacta.');
           NODE

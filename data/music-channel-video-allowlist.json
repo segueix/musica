@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-08T20:02:16.367Z",
+  "updatedAt": "2026-10-08T20:08:32.845Z",
   "description": "Llista blanca per a canals on Segueix Música només ha d'ingerir vídeos concrets. Admet títols exactes, fragments obligatoris i fragments exclosos.",
   "channels": {
     "UCKpscwdWlVaMqcA81vLI7OA": {
@@ -4237,6 +4237,80 @@
         "unSOr6YqFnQ",
         "1hvCR99PFk0",
         "DiE1FKU2IvQ"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "avatarFromFirstAllowedVideo": false
+    },
+    "UCSBN6Ppa03Wh9WCXE4skixg": {
+      "artist": "Esperit de Vi",
+      "note": "Cançons catalanes contrastades amb lletres oficials. Selecció tancada; docs/PUNK_ESPERIT_GROGGY.md.",
+      "allowedVideoIds": [
+        "w1-b9ex3aCA",
+        "xSILyh6EYD8",
+        "TcAv0zoOvI0",
+        "d6Fr_HClkGc",
+        "Idotr-p4cww",
+        "3pKgHTMgLSM",
+        "3O638vg81iA",
+        "Uci7vneotMw",
+        "2HOjqW-dXNg",
+        "_3MiDZccZFI",
+        "cieXCaNbAQY",
+        "rtNkdvbwQkY",
+        "bN9STup_o50"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "avatarFromFirstAllowedVideo": false
+    },
+    "UCG1eXBwVPsRtMl1xw0PmIKA": {
+      "artist": "Groggy Rude",
+      "note": "Cançons catalanes contrastades amb lletres oficials. Selecció tancada; docs/PUNK_ESPERIT_GROGGY.md.",
+      "allowedVideoIds": [
+        "Olm6pCf_NtY",
+        "LR0nuEOIZdY",
+        "P384fC2WAoE",
+        "feqtE1uWegI",
+        "RD35k0vM5Xk",
+        "z-Gb04TLFAQ",
+        "87VM_NjpVjU",
+        "UxM-qzR1rfA",
+        "me_bjou95SQ",
+        "8RUEarKuTgg",
+        "mYmpLoxIOHk",
+        "sSamS-_u4eA",
+        "dM7Ey3on_nY",
+        "tEF757mxmvY",
+        "4yu43BUGbBM",
+        "IfAZSARTTp0",
+        "qkIOz2xZEt4",
+        "86buq-fQZmg",
+        "c0Q6sFzoCSg",
+        "8Y5jiCmDdNc",
+        "nxZrXFx9Suk",
+        "3pijF0Y04ck",
+        "1b_38FDY2hM",
+        "R7bo7HVXwh4",
+        "PQj55x_mQrI",
+        "tPu89rXhLH8",
+        "cJj6XCz0rpM",
+        "1tSlHFqxe6U",
+        "jKOlejJIVyE",
+        "vqk6qFu_N4A",
+        "MQBEa4n-2CM",
+        "ksPBwNavCP8",
+        "raKCmK9V2EA",
+        "blNZtYNyay8",
+        "m9zStpuu_V8",
+        "hIj-vpWyays",
+        "5XhRsACu19o"
       ],
       "acceptedMusicOnly": true,
       "allowedContentTypes": [

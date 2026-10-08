@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-08T20:02:16.367Z",
+  "updatedAt": "2026-10-08T20:08:32.845Z",
   "artists": [
     {
       "name": "2 Princeses Barbudes",
@@ -9034,6 +9034,44 @@
       "notes": "Lot 2 de metall de Joan Hernández. Selecció explícita de 3 vídeos; revisió documental d'idioma, límits i exclusions a docs/HEAVY_GRUP_2.md. Només els IDs de l'allowlist s'incorporen."
     },
     {
+      "name": "Esperit de Vi",
+      "displayName": "Esperit de Vi",
+      "aliases": [],
+      "genres": [
+        "Punk"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCSBN6Ppa03Wh9WCXE4skixg",
+            "handle": "@esperitdevi",
+            "name": "Esperit De Vi",
+            "type": "official",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://www.youtube.com/@esperitdevi",
+        "https://esperitdevi.bandcamp.com",
+        "manual-user-2026-10-08",
+        "genre:manual",
+        "youtube:manual-verified"
+      ],
+      "notes": " Canal oficial revisat el 2026-10-08; selecció tancada de música catalana. Vegeu docs/PUNK_ESPERIT_GROGGY.md.",
+      "lastChecked": "2026-10-08T20:08:32.845Z"
+    },
+    {
       "name": "Esquirols",
       "aliases": [],
       "genres": [
@@ -11268,6 +11306,13 @@
             "name": "Groggy Rude - Topic",
             "type": "topic",
             "primary": true
+          },
+          {
+            "id": "UCG1eXBwVPsRtMl1xw0PmIKA",
+            "handle": "@groggyrude",
+            "name": "Groggy Rude",
+            "type": "official",
+            "primary": false
           }
         ],
         "searchCandidates": []
@@ -11280,10 +11325,14 @@
         "https://www.youtube.com/watch?v=87VM_NjpVjU",
         "https://www.youtube.com/channel/UC8hpq3EHqyG09og9xy3qOFg",
         "manual-user-2026-10-05",
-        "genre:manual"
+        "genre:manual",
+        "https://www.youtube.com/@groggyrude",
+        "https://groggyrude.bandcamp.com",
+        "manual-user-2026-10-08",
+        "youtube:manual-verified"
       ],
-      "lastChecked": "2026-10-05T15:17:16.646044Z",
-      "notes": "Alta de punk en català a petició de l’usuari. Només el repertori revisat a la llista blanca està autoritzat; no implica que tota la discografia sigui en català. Lletres contrastades a fonts del grup o del segell.",
+      "lastChecked": "2026-10-08T20:08:32.845Z",
+      "notes": "Alta de punk en català a petició de l’usuari. Només el repertori revisat a la llista blanca està autoritzat; no implica que tota la discografia sigui en català. Lletres contrastades a fonts del grup o del segell. Canal oficial revisat el 2026-10-08; selecció tancada de música catalana. Vegeu docs/PUNK_ESPERIT_GROGGY.md.",
       "genresRaw": [],
       "enrichment": {
         "genres": {

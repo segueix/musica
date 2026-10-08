@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-08T20:02:16.367Z",
+  "updatedAt": "2026-10-08T20:08:32.845Z",
   "description": "Decisions manuals sobre el tipus de contingut de vídeos concrets. Manen sobre el classificador automàtic (scripts/lib/classificar_contingut_musical.js) i el pipeline (scripts/update_music_feed.js) les reaplica a cada generació del feed. Tipus permesos: song, live_song, album, other. Un vídeo revisat aquí surt de data/music-content-review.json.",
   "videos": [
     {
@@ -5931,6 +5931,306 @@
       "title": "Ataka A L' Estat (Live)",
       "contentType": "live_song",
       "note": "Selecció manual Punk; català verificat documentalment. docs/PUNK_FRONTPILSEN_ODI_SOCIAL.md."
+    },
+    {
+      "id": "w1-b9ex3aCA",
+      "title": "ESPERIT DE VI - BRINDAREM (VideoLyric)",
+      "contentType": "song",
+      "note": "Lletra catalana contrastada a les fonts oficials. docs/PUNK_ESPERIT_GROGGY.md."
+    },
+    {
+      "id": "xSILyh6EYD8",
+      "title": "ESPERIT DE VI - SOMRIURE DE RATA",
+      "contentType": "song",
+      "note": "Lletra catalana contrastada a les fonts oficials. docs/PUNK_ESPERIT_GROGGY.md."
+    },
+    {
+      "id": "TcAv0zoOvI0",
+      "title": "ESPERIT DE VI - M'HE COMPRAT UN BAT",
+      "contentType": "song",
+      "note": "Lletra catalana contrastada a les fonts oficials. docs/PUNK_ESPERIT_GROGGY.md."
+    },
+    {
+      "id": "d6Fr_HClkGc",
+      "title": "ESPERIT DE VI - MILICIANA",
+      "contentType": "song",
+      "note": "Lletra catalana contrastada a les fonts oficials. docs/PUNK_ESPERIT_GROGGY.md."
+    },
+    {
+      "id": "Idotr-p4cww",
+      "title": "ESPERIT DE VI - PANTALLES",
+      "contentType": "song",
+      "note": "Lletra catalana contrastada a les fonts oficials. docs/PUNK_ESPERIT_GROGGY.md."
+    },
+    {
+      "id": "3pKgHTMgLSM",
+      "title": "ESPERIT DE VI - SOM",
+      "contentType": "song",
+      "note": "Lletra catalana contrastada a les fonts oficials. docs/PUNK_ESPERIT_GROGGY.md."
+    },
+    {
+      "id": "3O638vg81iA",
+      "title": "ESPERIT DE VI - DESNONAMENTS I ATUR",
+      "contentType": "song",
+      "note": "Lletra catalana contrastada a les fonts oficials. docs/PUNK_ESPERIT_GROGGY.md."
+    },
+    {
+      "id": "Uci7vneotMw",
+      "title": "ESPERIT DE VI - FADES DE DOL",
+      "contentType": "song",
+      "note": "Lletra catalana contrastada a les fonts oficials. docs/PUNK_ESPERIT_GROGGY.md."
+    },
+    {
+      "id": "2HOjqW-dXNg",
+      "title": "ESPERIT DE VI - NARCOTOPIA (Videoclip)",
+      "contentType": "song",
+      "note": "Lletra catalana contrastada a les fonts oficials. docs/PUNK_ESPERIT_GROGGY.md."
+    },
+    {
+      "id": "_3MiDZccZFI",
+      "title": "2. Som (amb Javi Carry) - Esperit de Vi (EP 2021)",
+      "contentType": "song",
+      "note": "Lletra catalana contrastada a les fonts oficials. docs/PUNK_ESPERIT_GROGGY.md."
+    },
+    {
+      "id": "cieXCaNbAQY",
+      "title": "1. Esperit de Vi - Esperit de Vi (EP 2021)",
+      "contentType": "song",
+      "note": "Lletra catalana contrastada a les fonts oficials. docs/PUNK_ESPERIT_GROGGY.md."
+    },
+    {
+      "id": "rtNkdvbwQkY",
+      "title": "4. M'he Comprat Un Bat - Esperit de Vi (EP 2021)",
+      "contentType": "song",
+      "note": "Lletra catalana contrastada a les fonts oficials. docs/PUNK_ESPERIT_GROGGY.md."
+    },
+    {
+      "id": "bN9STup_o50",
+      "title": "3. Somriure de Rata - Esperit de Vi (EP 2021)",
+      "contentType": "song",
+      "note": "Lletra catalana contrastada a les fonts oficials. docs/PUNK_ESPERIT_GROGGY.md."
+    },
+    {
+      "id": "Olm6pCf_NtY",
+      "title": "GROGGY RUDE - Malson",
+      "contentType": "song",
+      "note": "Lletra catalana contrastada a les fonts oficials. docs/PUNK_ESPERIT_GROGGY.md."
+    },
+    {
+      "id": "LR0nuEOIZdY",
+      "title": "GROGGY RUDE - Ridícul",
+      "contentType": "song",
+      "note": "Lletra catalana contrastada a les fonts oficials. docs/PUNK_ESPERIT_GROGGY.md."
+    },
+    {
+      "id": "P384fC2WAoE",
+      "title": "GROGGY RUDE - Bona nit",
+      "contentType": "song",
+      "note": "Lletra catalana contrastada a les fonts oficials. docs/PUNK_ESPERIT_GROGGY.md."
+    },
+    {
+      "id": "feqtE1uWegI",
+      "title": "GROGGY RUDE - Al revés",
+      "contentType": "song",
+      "note": "Lletra catalana contrastada a les fonts oficials. docs/PUNK_ESPERIT_GROGGY.md."
+    },
+    {
+      "id": "RD35k0vM5Xk",
+      "title": "GROGGY RUDE - Promeses",
+      "contentType": "song",
+      "note": "Lletra catalana contrastada a les fonts oficials. docs/PUNK_ESPERIT_GROGGY.md."
+    },
+    {
+      "id": "z-Gb04TLFAQ",
+      "title": "GROGGY RUDE - Incondicional",
+      "contentType": "song",
+      "note": "Lletra catalana contrastada a les fonts oficials. docs/PUNK_ESPERIT_GROGGY.md."
+    },
+    {
+      "id": "87VM_NjpVjU",
+      "title": "GROGGY RUDE - Res a perdre (Videoclip)",
+      "contentType": "song",
+      "note": "Lletra catalana contrastada a les fonts oficials. docs/PUNK_ESPERIT_GROGGY.md."
+    },
+    {
+      "id": "UxM-qzR1rfA",
+      "title": "GROGGY RUDE - Una birra més (Videoclip)",
+      "contentType": "song",
+      "note": "Lletra catalana contrastada a les fonts oficials. docs/PUNK_ESPERIT_GROGGY.md."
+    },
+    {
+      "id": "me_bjou95SQ",
+      "title": "GROGGY RUDE - A dins meu (Videoclip)",
+      "contentType": "song",
+      "note": "Lletra catalana contrastada a les fonts oficials. docs/PUNK_ESPERIT_GROGGY.md."
+    },
+    {
+      "id": "8RUEarKuTgg",
+      "title": "GROGGY RUDE - Crits (Videoclip)",
+      "contentType": "song",
+      "note": "Lletra catalana contrastada a les fonts oficials. docs/PUNK_ESPERIT_GROGGY.md."
+    },
+    {
+      "id": "mYmpLoxIOHk",
+      "title": "GROGGY RUDE - Riure o plorar (Videoclip)",
+      "contentType": "song",
+      "note": "Lletra catalana contrastada a les fonts oficials. docs/PUNK_ESPERIT_GROGGY.md."
+    },
+    {
+      "id": "sSamS-_u4eA",
+      "title": "GROGGY RUDE - Nit i dia (Videoclip)",
+      "contentType": "song",
+      "note": "Lletra catalana contrastada a les fonts oficials. docs/PUNK_ESPERIT_GROGGY.md."
+    },
+    {
+      "id": "dM7Ey3on_nY",
+      "title": "GROGGY RUDE - Sota el cel (Videoclip)",
+      "contentType": "song",
+      "note": "Lletra catalana contrastada a les fonts oficials. docs/PUNK_ESPERIT_GROGGY.md."
+    },
+    {
+      "id": "tEF757mxmvY",
+      "title": "GROGGY RUDE - Serà perquè t'estimo (Videoclip)",
+      "contentType": "song",
+      "note": "Lletra catalana contrastada a les fonts oficials. docs/PUNK_ESPERIT_GROGGY.md."
+    },
+    {
+      "id": "4yu43BUGbBM",
+      "title": "GROGGY RUDE - Ara renúncies (Videoclip)",
+      "contentType": "song",
+      "note": "Lletra catalana contrastada a les fonts oficials. docs/PUNK_ESPERIT_GROGGY.md."
+    },
+    {
+      "id": "IfAZSARTTp0",
+      "title": "GROGGY RUDE - Cendra i pols (Videoclip)",
+      "contentType": "song",
+      "note": "Lletra catalana contrastada a les fonts oficials. docs/PUNK_ESPERIT_GROGGY.md."
+    },
+    {
+      "id": "qkIOz2xZEt4",
+      "title": "GROGGY RUDE - T'has cansat",
+      "contentType": "song",
+      "note": "Lletra catalana contrastada a les fonts oficials. docs/PUNK_ESPERIT_GROGGY.md."
+    },
+    {
+      "id": "86buq-fQZmg",
+      "title": "GROGGY RUDE - No ets especial",
+      "contentType": "song",
+      "note": "Lletra catalana contrastada a les fonts oficials. docs/PUNK_ESPERIT_GROGGY.md."
+    },
+    {
+      "id": "c0Q6sFzoCSg",
+      "title": "GROGGY RUDE - Muralles",
+      "contentType": "song",
+      "note": "Lletra catalana contrastada a les fonts oficials. docs/PUNK_ESPERIT_GROGGY.md."
+    },
+    {
+      "id": "8Y5jiCmDdNc",
+      "title": "GROGGY RUDE - Hem crescut",
+      "contentType": "song",
+      "note": "Lletra catalana contrastada a les fonts oficials. docs/PUNK_ESPERIT_GROGGY.md."
+    },
+    {
+      "id": "nxZrXFx9Suk",
+      "title": "GROGGY RUDE - Fill de Déu (amb Pauet Eterns)",
+      "contentType": "song",
+      "note": "Lletra catalana contrastada a les fonts oficials. docs/PUNK_ESPERIT_GROGGY.md."
+    },
+    {
+      "id": "3pijF0Y04ck",
+      "title": "GROGGY RUDE - Àngel condemnat",
+      "contentType": "song",
+      "note": "Lletra catalana contrastada a les fonts oficials. docs/PUNK_ESPERIT_GROGGY.md."
+    },
+    {
+      "id": "1b_38FDY2hM",
+      "title": "GROGGY RUDE - Himnes de merda (amb Presi Bastards)",
+      "contentType": "song",
+      "note": "Lletra catalana contrastada a les fonts oficials. docs/PUNK_ESPERIT_GROGGY.md."
+    },
+    {
+      "id": "R7bo7HVXwh4",
+      "title": "GROGGY RUDE - Privilegi raro (Videoclip)",
+      "contentType": "song",
+      "note": "Lletra catalana contrastada a les fonts oficials. docs/PUNK_ESPERIT_GROGGY.md."
+    },
+    {
+      "id": "PQj55x_mQrI",
+      "title": "GROGGY RUDE - Fins al final (Videoclip)",
+      "contentType": "song",
+      "note": "Lletra catalana contrastada a les fonts oficials. docs/PUNK_ESPERIT_GROGGY.md."
+    },
+    {
+      "id": "tPu89rXhLH8",
+      "title": "GROGGY RUDE - Refugiats",
+      "contentType": "song",
+      "note": "Lletra catalana contrastada a les fonts oficials. docs/PUNK_ESPERIT_GROGGY.md."
+    },
+    {
+      "id": "cJj6XCz0rpM",
+      "title": "GROGGY RUDE - Societat",
+      "contentType": "song",
+      "note": "Lletra catalana contrastada a les fonts oficials. docs/PUNK_ESPERIT_GROGGY.md."
+    },
+    {
+      "id": "1tSlHFqxe6U",
+      "title": "GROGGY RUDE  - Punkarrada F.S.",
+      "contentType": "song",
+      "note": "Lletra catalana contrastada a les fonts oficials. docs/PUNK_ESPERIT_GROGGY.md."
+    },
+    {
+      "id": "jKOlejJIVyE",
+      "title": "GROGGY RUDE - Tarraco Punkrockers (amb López i Azagra Brigada Negra)",
+      "contentType": "song",
+      "note": "Lletra catalana contrastada a les fonts oficials. docs/PUNK_ESPERIT_GROGGY.md."
+    },
+    {
+      "id": "vqk6qFu_N4A",
+      "title": "GROGGY RUDE - La plana (amb Txapes Demencials)",
+      "contentType": "song",
+      "note": "Lletra catalana contrastada a les fonts oficials. docs/PUNK_ESPERIT_GROGGY.md."
+    },
+    {
+      "id": "MQBEa4n-2CM",
+      "title": "GROGGY RUDE - Germans de cor",
+      "contentType": "song",
+      "note": "Lletra catalana contrastada a les fonts oficials. docs/PUNK_ESPERIT_GROGGY.md."
+    },
+    {
+      "id": "ksPBwNavCP8",
+      "title": "GROGGY RUDE - Sortir al carrer (amb Kiko Impuls)",
+      "contentType": "song",
+      "note": "Lletra catalana contrastada a les fonts oficials. docs/PUNK_ESPERIT_GROGGY.md."
+    },
+    {
+      "id": "raKCmK9V2EA",
+      "title": "GROGGY RUDE - Últim impuls (amb Manu Batec)",
+      "contentType": "song",
+      "note": "Lletra catalana contrastada a les fonts oficials. docs/PUNK_ESPERIT_GROGGY.md."
+    },
+    {
+      "id": "blNZtYNyay8",
+      "title": "GROGGY RUDE - Puta Rata (Videoclip)",
+      "contentType": "song",
+      "note": "Lletra catalana contrastada a les fonts oficials. docs/PUNK_ESPERIT_GROGGY.md."
+    },
+    {
+      "id": "m9zStpuu_V8",
+      "title": "GROGGY RUDE - No és normal",
+      "contentType": "song",
+      "note": "Lletra catalana contrastada a les fonts oficials. docs/PUNK_ESPERIT_GROGGY.md."
+    },
+    {
+      "id": "hIj-vpWyays",
+      "title": "GROGGY RUDE - Em Poses a 100",
+      "contentType": "song",
+      "note": "Lletra catalana contrastada a les fonts oficials. docs/PUNK_ESPERIT_GROGGY.md."
+    },
+    {
+      "id": "5XhRsACu19o",
+      "title": "GROGGY RUDE - Ciutadans Populars",
+      "contentType": "song",
+      "note": "Lletra catalana contrastada a les fonts oficials. docs/PUNK_ESPERIT_GROGGY.md."
     }
   ]
 }
