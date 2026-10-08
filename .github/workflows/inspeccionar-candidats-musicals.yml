@@ -1,48 +1,19 @@
-name: Inspeccionar candidats musicals
+name: Verificar grup 1 musical
 on:
-  workflow_dispatch:
   push:
     branches: [main]
     paths: [".github/workflows/inspeccionar-candidats-musicals.yml"]
 permissions:
   contents: read
 jobs:
-  inspeccio:
+  verifica:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 10
     steps:
+      - uses: actions/checkout@v5
       - uses: actions/setup-node@v5
         with:
           node-version: "20"
-      - name: Consulta limitada de candidats i repertoris
-        env:
-          YOUTUBE_API_KEY_SERVER: ${{ secrets.YOUTUBE_API_KEY_SERVER }}
-        run: |
-          node - <<'NODE'
-          async function api(endpoint, params) {
-            const url = new URL('https://www.googleapis.com/youtube/v3/' + endpoint);
-            for (const [k,v] of Object.entries(params)) url.searchParams.set(k,v);
-            url.searchParams.set('key', process.env.YOUTUBE_API_KEY_SERVER);
-            const res = await fetch(url);
-            const data = await res.json();
-            if (!res.ok) throw new Error('YouTube HTTP ' + res.status + ': ' + (data.error?.errors?.[0]?.reason || 'error'));
-            return data;
-          }
-          (async () => {
-            const ids=["GbghoKx7Ov4","_k2E1v6ZjPk","ctdH0bI6Dbw","5UhjrgORyFY","lf8q6rNOSvo","qF_LH2MGMCg","0Rc3KfGi_hQ","oZiKogQp-aA","b-SmQl-aTzE","2ZFbGIyyL_o","oWSYnFdVZmg","voltFcdhW-Y","Sb0ew3INtds","9SlObzhHcac","HJ50aBh3uq4","SschdYvzuvw","OrboUGUtEfM","mPEIcVB-8og","Kpls4oxXXbE","_HrKqbACvu8","bIFNO9Scjig","pJe0FBC_llQ","qkNVh3jojrc","xNlK5bQTSJU","T6s3Nr6SagU","POTc2xgnOVc","D631ouujZwI","Mrickh6JyQY","adUxL-PYM58","atY3l9AhmJI","8S-V2kDuDlY","AJ6ab1pyaMI","JdXvQ6B_ge8","y9z5GueOefg","1fGETCjYsfc","EVeU7di2Ypg","OnqwSolytNc","SIHdRqX7uy0","Tgoih0sZJPQ","X2gNkeQiUXo","YrEY3aV8EXI","aDiDtzq_7LQ","c1kW4r_7uDU","pWrd1wwyTrw","y6pUfpe582g","yG2s6Ve4wkc","izKGp-CAPmg","tl0oLmWNoEA","sOXAhjrvcbs","j-K-y4WnNYY","fJT6cU4pZXE","q44qnmBahVI","4qFEWcuz8uM","AE8KlCmJ0hE","kr7RgGzGz_k","A7O4cp4Q6Dw","YQ3H788DI38","DOwfQsvQk7I","DEngmgelNYI","5AnmhNX3akM","R5zccwDM4gQ","NUIbwSxMXsk","HpC8MqLSy8w","RUJ8Ebvvy80","8lFerQtBsz0","QLxPzu0Ik-U","bzu0V4qfKUk","UUVKZRt_7UU","LtERfyXioSQ","6p_VZsBgn98","Yd_QyezMpz8","olugVgCQk3g","HrVX2vgdb70","u1fbBE_W11I","wMPTRT_K5FY","ifWl7J67YO4","22DRzngcwQI","AmNyN-47QEM","gpd0TlNjdUA","xGxH2AzbcBE","Y3ngB0b2H4w","lfhto486eHM","oUzjasnGQMI","4TF9l4b_0fE","3JECIWn311k","_4Q5_l69dfE","3BjoovIwQ0w","fQtYOPzyi8Q","t1RUiKcAf-E","1daXNAkmeSg","82tr7GgC8ig","Nf9C7HS461k","rx6OzRFexYo","IfhVb5i2uiM","DzgnUUMveE4","HyMHqC6ixcc","3JPld1RWaDY","NGUb-eKmBKk","jbW3a1IA1-I","dBgIYb8W_ug","0ScFK3jv1Qg","qPBbmegZ4pE","x43TXEArhqw"];
-            for(let i=0;i<ids.length;i+=50){
-              const data=await api('videos',{part:'snippet,contentDetails',id:ids.slice(i,i+50).join(',')});
-              for(const v of data.items||[]){
-                const m=v.contentDetails.duration.match(/PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?/);
-                const secs=m?Number(m[1]||0)*3600+Number(m[2]||0)*60+Number(m[3]||0):0;
-                if(secs<=0 || secs>120)continue;
-                let result={status:null,location:null};
-                try{
-                  const r=await fetch('https://www.youtube.com/shorts/'+v.id,{method:'HEAD',redirect:'manual',signal:AbortSignal.timeout(10000)});
-                  result={status:r.status,location:r.headers.get('location')};
-                }catch{result.error='network';}
-                console.log('SHORT_CHECK '+JSON.stringify({id:v.id,title:v.snippet.title,seconds:secs,...result}));
-              }
-            }
-          })().catch(e=>{console.error(e.message);process.exit(1)});
-          NODE
+      - run: npm ci
+      - run: npm test
+      - run: npm run lint

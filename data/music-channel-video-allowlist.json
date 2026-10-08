@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-08T15:51:16.394Z",
+  "updatedAt": "2026-10-08T15:53:34.389Z",
   "description": "Llista blanca per a canals on Segueix Música només ha d'ingerir vídeos concrets. Admet títols exactes, fragments obligatoris i fragments exclosos.",
   "channels": {
     "UCKpscwdWlVaMqcA81vLI7OA": {
@@ -2603,6 +2603,72 @@
         "3BjoovIwQ0w",
         "fQtYOPzyi8Q",
         "t1RUiKcAf-E"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCgAPpOaGsoDsXdEQKLB6gnQ": {
+      "artist": "Assot",
+      "note": "Grup 1 Xavi: selecció inicial del canal Tema verificat. Les cançons curtes són vídeos normals segons redirecció HEAD de YouTube; registre a falsos-shorts.json.",
+      "allowedVideoIds": [
+        "GbghoKx7Ov4",
+        "_k2E1v6ZjPk",
+        "ctdH0bI6Dbw",
+        "5UhjrgORyFY",
+        "lf8q6rNOSvo",
+        "qF_LH2MGMCg",
+        "0Rc3KfGi_hQ",
+        "oZiKogQp-aA",
+        "b-SmQl-aTzE",
+        "2ZFbGIyyL_o",
+        "oWSYnFdVZmg",
+        "voltFcdhW-Y",
+        "Sb0ew3INtds",
+        "9SlObzhHcac",
+        "HJ50aBh3uq4",
+        "SschdYvzuvw",
+        "OrboUGUtEfM",
+        "mPEIcVB-8og",
+        "Kpls4oxXXbE",
+        "_HrKqbACvu8",
+        "bIFNO9Scjig",
+        "pJe0FBC_llQ",
+        "qkNVh3jojrc",
+        "xNlK5bQTSJU",
+        "T6s3Nr6SagU",
+        "POTc2xgnOVc",
+        "D631ouujZwI",
+        "Mrickh6JyQY",
+        "adUxL-PYM58",
+        "atY3l9AhmJI"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCGPjtE1NFB1I8oDJ_Mx3O_Q": {
+      "artist": "Bonestorm",
+      "note": "Grup 1 Xavi: selecció inicial del canal Tema verificat. Les cançons curtes són vídeos normals segons redirecció HEAD de YouTube; registre a falsos-shorts.json.",
+      "allowedVideoIds": [
+        "1daXNAkmeSg",
+        "82tr7GgC8ig",
+        "Nf9C7HS461k",
+        "rx6OzRFexYo",
+        "IfhVb5i2uiM",
+        "DzgnUUMveE4",
+        "HyMHqC6ixcc",
+        "3JPld1RWaDY",
+        "NGUb-eKmBKk",
+        "jbW3a1IA1-I",
+        "dBgIYb8W_ug",
+        "0ScFK3jv1Qg",
+        "qPBbmegZ4pE",
+        "x43TXEArhqw"
       ],
       "acceptedMusicOnly": true,
       "allowedContentTypes": [
