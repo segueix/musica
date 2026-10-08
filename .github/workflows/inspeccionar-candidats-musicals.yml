@@ -29,11 +29,11 @@ jobs:
             return data;
           }
           (async () => {
-            const ids = new Set(['UC8yBjieIRVNRxjAVi0FO1DQ','UC_tsO4hz22Lk0jb1CEIFPmw','UCyNWjZ1IhLo8Iy6nUMEz0rw','UCJXKRxaUXEg0kpgb-Kd8uDg']);
-            for (const q of ['"Assot"','"ASSAC!"','"Bonestorm" "Topic"']) {
-              const r = await api('search',{part:'snippet',type:'channel',maxResults:'5',q});
+            const ids = new Set();
+            for (const q of ['"ASSAC" hardcore','"ASSAC" "bròquil"','"ASSAC" "Topic"']) {
+              const r = await api('search',{part:'snippet',type:'video',maxResults:'8',q});
               console.log('SEARCH ' + JSON.stringify({q,items:r.items}));
-              for (const x of r.items || []) if (x.id?.channelId) ids.add(x.id.channelId);
+              for (const x of r.items || []) if (x.snippet?.channelId) ids.add(x.snippet.channelId);
             }
             for (const id of ids) {
               const c = await api('channels',{part:'snippet,contentDetails',id});
