@@ -2,7 +2,7 @@
 
 Data: 8 d’octubre de 2026.
 
-Cinc artistes nous, nou canals i 177 vídeos: Forja 64, Tempestat 11, Amargor 15, Angoixa 62 i Astral Warrior 25. Comptem vídeos, no composicions úniques: hi ha directes, reedicions i versions instrumentals.
+Cinc artistes nous, nou canals i 170 vídeos incorporats: Forja 58, Tempestat 11, Amargor 15, Angoixa 61 i Astral Warrior 25. Dels 177 vídeos amb idioma o caràcter instrumental contrastat, 7 queden fora pel filtre existent de subtítols en castellà. Comptem vídeos, no composicions úniques: hi ha directes, reedicions i versions instrumentals.
 
 ## Revisió i límits
 
@@ -54,7 +54,19 @@ Els vídeos curts seleccionats Exhaurit, Sheleiah i Nàufrag (8-bit Version) s�
 - https://www.enderrock.cat/noticia/30096/astral-warrior-vol-ser-naufrag-teu-cor
 - https://www.metal-archives.com/albums/Astral_Warrior/Metalunya/831854
 
-## Selecció exacta
+## Selecció documental exacta (177 candidats; 170 incorporats)
+
+La llista d’IDs permesos conserva els 177 candidats revisats documentalment. El filtre de subtítols té prioritat i exclou els 7 vídeos següents, encara que la cançó sigui catalana:
+
+- KwEjv8xjses: Forja - Arnau! (Videoclip Oficial) — Subtítols disponibles en 🇨🇦 català, 🇪🇸 castellà.
+- 4SisxpCzGQs: Forja - Mare del Bosc (Lyric Video) — Subtítols disponibles en català, castellà.
+- aM3kEASfIK0: Forja - Fosques Bèsties (Videoclip Oficial) — Subtítols disponibles en català, castellà.
+- qrJTB90R0w4: Forja - Pare Llop (Videoclip oficial) — Subtítols disponibles en català, castellà.
+- 62XeMC2-61E: Forja - El Nom del Vent — Subtítols disponibles en català, castellà.
+- Bt_LzJ5hhYA: Forja - Ratafia (feat l'Hòstia) — Subtítols disponibles en català, castellà.
+- Lxdc9kfYdAg: Angoixa - Ràbia (Lyric Video) — Subtítulos disponibles en castella.
+
+Les taules següents inclouen aquests candidats filtrats; els recomptes efectius són els de la capçalera.
 
 ### Forja — Forja (21)
 
@@ -356,6 +368,6 @@ Canal: https://www.youtube.com/channel/UC7CW0LUdtTnZfYmuayRJEmQ
 
 ## Verificació
 
-Base d’artistes validada localment. Verificació del feed/arxiu pendent de completar. La revisió lingüística només marcarà els 177 IDs seleccionats.
+Base d’artistes validada: 442 artistes. Actualització dirigida només als nou canals nous, completada amb 96 tests aprovats (execució 37824180354). Validació de dades musicals aprovada (37824180378). Comprovació final directa de feed.json i arxius dels canals al commit f48d3d406eec61c82828c94e9f944121d1f67f5f: els 170 IDs efectius presents, cap ID aliè a la selecció. La primera comprovació, de 177 IDs, va detectar els set descartats pel filtre existent; no s’ha modificat aquesta regla. Només els 170 IDs incorporats es marquen com a revisats: 961 pendents, 10507 revisats i 16 descartats. La comprovació és documental, sense audició completa.
 
 La línia base de l’aplicació té 5 tests fallits i 5 errors de lint preexistents, documentats al grup 1; aquest lot només modifica dades i documentació, sense canvis al codi de l’aplicació.
