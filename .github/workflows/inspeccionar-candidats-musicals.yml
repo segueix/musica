@@ -29,19 +29,16 @@ jobs:
             return data;
           }
           (async () => {
-            const ids=new Set();
-            for(const q of ["\"La Cobla\" \"Topic\"","\"Miquel Gil\" \"Topic\"","\"Mendra\" \"Topic\"","\"Mr Freak Ska\" canal"]){
-              const r=await api('search',{part:'snippet',type:'video',maxResults:'5',q});
-              console.log('SEARCH '+JSON.stringify({q,items:r.items}));
-              for(const x of r.items||[])ids.add(x.snippet.channelId);
-            }
+            const ids=new Set(['UCElR_cmETBNoC7Rs6STl0BA','UCrTJ5_xgCZyb-Rt3dp1eUxg','UCokFPjgxi7i2ONsHr8wHj6g']);
+            const u=await api('channels',{part:'snippet,contentDetails',forUsername:'molinilloboss'});for(const c of u.items||[])ids.add(c.id);
             for(const id of ids){
               const r=await api('channels',{part:'snippet,contentDetails',id});const c=r.items?.[0];if(!c)continue;
-              if(!/cobla|freak|miquel.?gil|quatre.?parets|mendra/i.test(c.snippet.title))continue;
-              const p=await api('playlistItems',{part:'snippet,contentDetails',playlistId:c.contentDetails.relatedPlaylists.uploads,maxResults:'50'});
-              const vids=p.items.map(x=>x.contentDetails.videoId);
-              const v=await api('videos',{part:'snippet,contentDetails',id:vids.join(',')});
-              console.log('REPERTOIRE '+JSON.stringify({id,title:c.snippet.title,handle:c.snippet.customUrl,description:c.snippet.description,tracks:v.items,more:!!p.nextPageToken}));
+              let token='',tracks=[];for(let n=0;n<4;n++){
+                const p=await api('playlistItems',{part:'contentDetails',playlistId:c.contentDetails.relatedPlaylists.uploads,maxResults:'50',...(token?{pageToken:token}:{})});
+                const v=await api('videos',{part:'snippet,contentDetails',id:p.items.map(x=>x.contentDetails.videoId).join(',')});tracks.push(...v.items);token=p.nextPageToken||'';if(!token)break;
+              }
+              for(const track of tracks){if(['7Wzf3EZ0fG4','slQ8MzfTIuY'].includes(track.id)){const h=await fetch('https://www.youtube.com/shorts/'+track.id,{method:'HEAD',redirect:'manual',signal:AbortSignal.timeout(10000)}).catch(()=>null);track.shortCheck={status:h?.status,location:h?.headers.get('location')};}}
+              console.log('REPERTOIRE '+JSON.stringify({id,title:c.snippet.title,handle:c.snippet.customUrl,description:c.snippet.description,tracks,more:!!token}));
             }
           })().catch(e=>{console.error(e.message);process.exitCode=1;});
           NODE
