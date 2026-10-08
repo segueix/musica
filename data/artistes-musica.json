@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-08T18:09:36.926Z",
+  "updatedAt": "2026-10-08T18:24:17.646Z",
   "artists": [
     {
       "name": "2 Princeses Barbudes",
@@ -1239,6 +1239,47 @@
       }
     },
     {
+      "name": "Amargor",
+      "displayName": "Amargor",
+      "aliases": [],
+      "genres": [
+        "Metal"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCoOJY5SD3f0RvSk6uhRVZ_A",
+            "handle": null,
+            "name": "AMARGOR - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://amargor-dsbm.bandcamp.com/album/tenebres-i-fosc-ria",
+        "https://amargor-dsbm.bandcamp.com/album/terres-de-somnis-a-perdre-ep",
+        "https://amargor-dsbm.bandcamp.com/album/promo-mmxxiv-els-mateixos-s-mbols-que-adores-seran-els-portadors-de-la-teva-destrucci",
+        "https://amargor-dsbm.bandcamp.com/album/a-les-portes-de-linfern-vol-tils-malediccions-com-amargs-estigmes",
+        "https://www.youtube.com/channel/UCoOJY5SD3f0RvSk6uhRVZ_A",
+        "manual-user-2026-10-08",
+        "genre:manual",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": "2026-10-08T18:24:17.646Z",
+      "notes": "Lot 3 de metall de Joan Hernández. Selecció tancada de 15 vídeos. Revisió documental, exclusions i pendents a docs/HEAVY_GRUP_3.md. No s'aprova automàticament tot el repertori."
+    },
+    {
       "name": "Ambauka",
       "aliases": [
         "Ambaüka",
@@ -1509,6 +1550,56 @@
         }
       },
       "genresRaw": []
+    },
+    {
+      "name": "Angoixa",
+      "displayName": "Angoixa",
+      "aliases": [],
+      "genres": [
+        "Metal"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCOwCZBGNBYlvxmZn2BbmhFQ",
+            "handle": "@angoixadeathmetal",
+            "name": "Angoixa (Death metal)",
+            "type": "official",
+            "primary": true
+          },
+          {
+            "id": "UC7CW0LUdtTnZfYmuayRJEmQ",
+            "handle": null,
+            "name": "Angoixa - Topic",
+            "type": "topic",
+            "primary": false
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://angoixadeathmetal.bandcamp.com/album/vida-i-mort",
+        "https://angoixadeathmetal.bandcamp.com/album/distopia-digital",
+        "https://angoixadeathmetal.bandcamp.com/album/esclaus-de-la-por",
+        "https://angoixadeathmetal.bandcamp.com/album/camins-sense-dest",
+        "https://angoixadeathmetal.bandcamp.com/album/la-foscor-del-bosc",
+        "https://www.youtube.com/channel/UCOwCZBGNBYlvxmZn2BbmhFQ",
+        "https://www.youtube.com/channel/UC7CW0LUdtTnZfYmuayRJEmQ",
+        "manual-user-2026-10-08",
+        "genre:manual",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": "2026-10-08T18:24:17.646Z",
+      "notes": "Lot 3 de metall de Joan Hernández. Selecció tancada de 62 vídeos. Revisió documental, exclusions i pendents a docs/HEAVY_GRUP_3.md. No s'aprova automàticament tot el repertori."
     },
     {
       "name": "Animal",
@@ -2433,6 +2524,55 @@
         }
       },
       "genresRaw": []
+    },
+    {
+      "name": "Astral Warrior",
+      "displayName": "Astral Warrior",
+      "aliases": [],
+      "genres": [
+        "Metal"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UC7auRFIxjfkrZdsWPe7R_Qg",
+            "handle": "@astralwarrior1309",
+            "name": "Astral Warrior",
+            "type": "official",
+            "primary": true
+          },
+          {
+            "id": "UCh_dOmbZ0ZkjBEYDH96NNqQ",
+            "handle": null,
+            "name": "Astral Warrior - Topic",
+            "type": "topic",
+            "primary": false
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://astralwarriors.bandcamp.com/album/metalunya",
+        "https://www.youtube.com/watch?v=v3vOGpma_eY",
+        "https://www.enderrock.cat/noticia/30096/astral-warrior-vol-ser-naufrag-teu-cor",
+        "https://www.metal-archives.com/albums/Astral_Warrior/Metalunya/831854",
+        "https://www.youtube.com/channel/UC7auRFIxjfkrZdsWPe7R_Qg",
+        "https://www.youtube.com/channel/UCh_dOmbZ0ZkjBEYDH96NNqQ",
+        "manual-user-2026-10-08",
+        "genre:manual",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": "2026-10-08T18:24:17.646Z",
+      "notes": "Lot 3 de metall de Joan Hernández. Selecció tancada de 25 vídeos. Revisió documental, exclusions i pendents a docs/HEAVY_GRUP_3.md. No s'aprova automàticament tot el repertori."
     },
     {
       "name": "At Versaris",
@@ -9822,6 +9962,57 @@
           "wikidataWorkEvidence": []
         }
       }
+    },
+    {
+      "name": "Forja",
+      "displayName": "Forja",
+      "aliases": [],
+      "genres": [
+        "Metal"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCBaZT9T1jD6ggbVikvr0nAw",
+            "handle": "@forjametalmelodic",
+            "name": "Forja",
+            "type": "official",
+            "primary": true
+          },
+          {
+            "id": "UCmciKowevXGORJnZGaZVrsg",
+            "handle": null,
+            "name": "Forja - Topic",
+            "type": "topic",
+            "primary": false
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://www.forja-metal.com/",
+        "https://www.forja-metal.com/LLETRES-Tornant.pdf",
+        "https://www.forja-metal.com/ENDVLYRICANDTRANS.pdf",
+        "https://forja.bandcamp.com/album/m-n-oblidat",
+        "https://forja.bandcamp.com/album/el-llibre-dels-feyts",
+        "https://forja.bandcamp.com/album/ratafia",
+        "https://www.youtube.com/channel/UCBaZT9T1jD6ggbVikvr0nAw",
+        "https://www.youtube.com/channel/UCmciKowevXGORJnZGaZVrsg",
+        "manual-user-2026-10-08",
+        "genre:manual",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": "2026-10-08T18:24:17.646Z",
+      "notes": "Lot 3 de metall de Joan Hernández. Selecció tancada de 64 vídeos. Revisió documental, exclusions i pendents a docs/HEAVY_GRUP_3.md. No s'aprova automàticament tot el repertori."
     },
     {
       "name": "Foscor",
@@ -29475,6 +29666,53 @@
         }
       },
       "genresRaw": []
+    },
+    {
+      "name": "Tempestat",
+      "displayName": "Tempestat",
+      "aliases": [],
+      "genres": [
+        "Metal"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCxVQcJujZLvClGNyvobPRyQ",
+            "handle": "@tempestat",
+            "name": "Tempestat",
+            "type": "official",
+            "primary": true
+          },
+          {
+            "id": "UC50KRxJXBWgOj3Q05CDAs8w",
+            "handle": null,
+            "name": "Tempestat - Topic",
+            "type": "topic",
+            "primary": false
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://tempestat.bandcamp.com/album/tempestat",
+        "https://tempestat.bandcamp.com/album/exhaurit",
+        "https://www.youtube.com/channel/UCxVQcJujZLvClGNyvobPRyQ",
+        "https://www.youtube.com/channel/UC50KRxJXBWgOj3Q05CDAs8w",
+        "manual-user-2026-10-08",
+        "genre:manual",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": "2026-10-08T18:24:17.646Z",
+      "notes": "Lot 3 de metall de Joan Hernández. Selecció tancada de 11 vídeos. Revisió documental, exclusions i pendents a docs/HEAVY_GRUP_3.md. No s'aprova automàticament tot el repertori."
     },
     {
       "name": "Teràpia de Shock",

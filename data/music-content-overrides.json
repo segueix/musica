@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-08T18:09:36.926Z",
+  "updatedAt": "2026-10-08T18:24:17.646Z",
   "description": "Decisions manuals sobre el tipus de contingut de vídeos concrets. Manen sobre el classificador automàtic (scripts/lib/classificar_contingut_musical.js) i el pipeline (scripts/update_music_feed.js) les reaplica a cada generació del feed. Tipus permesos: song, live_song, album, other. Un vídeo revisat aquí surt de data/music-content-review.json.",
   "videos": [
     {
@@ -4455,6 +4455,1068 @@
       "title": "UDOL  + El Regne +",
       "contentType": "song",
       "note": "Udol: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "KwEjv8xjses",
+      "title": "Forja - Arnau! (Videoclip Oficial)",
+      "contentType": "song",
+      "note": "Forja: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "4SisxpCzGQs",
+      "title": "Forja - Mare del Bosc (Lyric Video)",
+      "contentType": "song",
+      "note": "Forja: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "aM3kEASfIK0",
+      "title": "Forja - Fosques Bèsties (Videoclip Oficial)",
+      "contentType": "song",
+      "note": "Forja: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "qrJTB90R0w4",
+      "title": "Forja - Pare Llop (Videoclip oficial)",
+      "contentType": "song",
+      "note": "Forja: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "62XeMC2-61E",
+      "title": "Forja - El Nom del Vent",
+      "contentType": "song",
+      "note": "Forja: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "Bt_LzJ5hhYA",
+      "title": "Forja - Ratafia (feat l'Hòstia)",
+      "contentType": "song",
+      "note": "Forja: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "Ft-sVtei8pI",
+      "title": "Forja - El Conqueridor (Lyric video)",
+      "contentType": "song",
+      "note": "Forja: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "UKYofbqGSa8",
+      "title": "Forja - Muret (Videoclip oficial)",
+      "contentType": "song",
+      "note": "Forja: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "G3qMS3VqPWo",
+      "title": "Forja - Els Bons Homes",
+      "contentType": "song",
+      "note": "Forja: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "JQhmgMrwB6o",
+      "title": "Forja - Infància",
+      "contentType": "song",
+      "note": "Forja: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "4TVinsfF0xY",
+      "title": "Forja - Jaume I",
+      "contentType": "song",
+      "note": "Forja: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "ckuoGlYXnJM",
+      "title": "Forja - El Conqueridor",
+      "contentType": "song",
+      "note": "Forja: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "JANMLzVRMUM",
+      "title": "Forja - Ales Negres",
+      "contentType": "song",
+      "note": "Forja: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "jzehYF3v9N8",
+      "title": "Forja - Plany d'Occitània",
+      "contentType": "song",
+      "note": "Forja: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "asu-15l3n5I",
+      "title": "Forja - Desperta Ferro (Bonus Track)",
+      "contentType": "song",
+      "note": "Forja: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "rgoUXLt5GNU",
+      "title": "Forja - El Llibre dels Fets",
+      "contentType": "song",
+      "note": "Forja: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "zKei2JIvbrI",
+      "title": "Forja - Aurembiaix (Lyric Video)",
+      "contentType": "song",
+      "note": "Forja: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "Rzgo-7bz1nY",
+      "title": "Forja - Rancúnia",
+      "contentType": "song",
+      "note": "Forja: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "S2FzxmZ7iFw",
+      "title": "Forja - El Foc",
+      "contentType": "song",
+      "note": "Forja: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "V7DSSkOpXcE",
+      "title": "Forja - Víbria",
+      "contentType": "song",
+      "note": "Forja: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "Oej0LUVroqU",
+      "title": "Forja - Tornant de la Batalla (Video Clip Oficial)",
+      "contentType": "song",
+      "note": "Forja: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "fE-xUzz38aQ",
+      "title": "Tempestat - Imperi Perible - Music Video.",
+      "contentType": "song",
+      "note": "Tempestat: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "6GLFMyuK9nA",
+      "title": "Deïficar la mentida",
+      "contentType": "song",
+      "note": "Tempestat: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "AERkjDSiGSM",
+      "title": "Ja no importa",
+      "contentType": "song",
+      "note": "Tempestat: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "NC7BIbYo_n4",
+      "title": "Naufragi",
+      "contentType": "song",
+      "note": "Tempestat: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "dlWpxePrkfw",
+      "title": "Tumor",
+      "contentType": "song",
+      "note": "Tempestat: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "AG4nIMJRKw4",
+      "title": "Imperi Perible",
+      "contentType": "song",
+      "note": "Tempestat: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "yZ5zxcSWY-A",
+      "title": "Possessió",
+      "contentType": "song",
+      "note": "Tempestat: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "1FDTcnbC0WU",
+      "title": "Exhaurit",
+      "contentType": "song",
+      "note": "Tempestat: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "26ujby9e964",
+      "title": "Escurçar el Camí",
+      "contentType": "song",
+      "note": "Tempestat: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "w39Jy0ePeBc",
+      "title": "Suïcidat",
+      "contentType": "song",
+      "note": "Tempestat: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "4dxGptEv40M",
+      "title": "Obsolet",
+      "contentType": "song",
+      "note": "Tempestat: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "wYJNdq72lrc",
+      "title": "Angoixa - Esvaït [Vida i mort] (2026)",
+      "contentType": "song",
+      "note": "Angoixa: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "Hp_f9qhPOfE",
+      "title": "Angoixa - Esplendor [Vida i mort] (2026)",
+      "contentType": "song",
+      "note": "Angoixa: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "K_YlSc9n_54",
+      "title": "Angoixa - Distopia digital (video lyric)",
+      "contentType": "song",
+      "note": "Angoixa: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "3-B35mvXzUc",
+      "title": "Angoixa - Déus de la Falsedat [Live Cornucopia]",
+      "contentType": "live_song",
+      "note": "Angoixa: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "Kgviex6DdVc",
+      "title": "Angoixa - Més que Odi [Live Cornucopia]",
+      "contentType": "live_song",
+      "note": "Angoixa: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "RTVYoqlA5z4",
+      "title": "Angoixa - Dins la Matriu",
+      "contentType": "song",
+      "note": "Angoixa: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "_eR9-lle63k",
+      "title": "Angoixa - Ràbia",
+      "contentType": "song",
+      "note": "Angoixa: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "o33KMXI8zNE",
+      "title": "Angoixa - L'Ombra de la Dalla",
+      "contentType": "song",
+      "note": "Angoixa: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "sW7fumbRAb0",
+      "title": "Angoixa - Rere el Mirall",
+      "contentType": "song",
+      "note": "Angoixa: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "JeP_xYM8j7k",
+      "title": "Angoixa - El Turment dels Caiguts",
+      "contentType": "song",
+      "note": "Angoixa: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "RzJotDy9tLk",
+      "title": "Angoixa - Més que Odi",
+      "contentType": "song",
+      "note": "Angoixa: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "TE5ovoTQubI",
+      "title": "Angoixa - Esclaus de la Por",
+      "contentType": "song",
+      "note": "Angoixa: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "iGu4TvqftOs",
+      "title": "Angoixa - Déus de la Falsedat",
+      "contentType": "song",
+      "note": "Angoixa: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "Lxdc9kfYdAg",
+      "title": "Angoixa - Ràbia (Lyric Video)",
+      "contentType": "song",
+      "note": "Angoixa: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "TvvWc_Vnik0",
+      "title": "Angoixa - Llàgrimes negres [LIVE] (2018)",
+      "contentType": "live_song",
+      "note": "Angoixa: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "NIMkEtPckFI",
+      "title": "Angoixa - Esclaus de la Por [Live]",
+      "contentType": "live_song",
+      "note": "Angoixa: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "zNCOqkncVrI",
+      "title": "Angoixa - El Despertar de la Bèstia (Assaig)",
+      "contentType": "live_song",
+      "note": "Angoixa: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "vAZ-UP0jk2I",
+      "title": "Angoixa - Esclaus de la por (Assaig)",
+      "contentType": "live_song",
+      "note": "Angoixa: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "TriqiqNwJIk",
+      "title": "Angoixa - El Furgador de Taüts (Assaig)",
+      "contentType": "live_song",
+      "note": "Angoixa: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "Y6gr8r3eTio",
+      "title": "Angoixa - Un Món Podrit (Assaig)",
+      "contentType": "live_song",
+      "note": "Angoixa: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "RU1GAGQiTys",
+      "title": "Angoixa - L'Ànima Perduda (Assaig 27/02/17)",
+      "contentType": "live_song",
+      "note": "Angoixa: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "m79zpVip7C0",
+      "title": "Angoixa - El Mort Vivent (Assaig 27/02/17)",
+      "contentType": "live_song",
+      "note": "Angoixa: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "qA-Tg-vwlnU",
+      "title": "Angoixa - La Foscor del Bosc (Lyric video)",
+      "contentType": "song",
+      "note": "Angoixa: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "DoGdwxO1gSs",
+      "title": "Angoixa - El Foc (Lyric video)",
+      "contentType": "song",
+      "note": "Angoixa: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "IeXd1Kc8WBI",
+      "title": "Mare del Bosc",
+      "contentType": "song",
+      "note": "Forja: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "jme19sqqxz8",
+      "title": "Filadora del Destí",
+      "contentType": "song",
+      "note": "Forja: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "KuE4slIuJEQ",
+      "title": "Fosques Bèsties",
+      "contentType": "song",
+      "note": "Forja: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "e_d3_4tzn3E",
+      "title": "Arnau!",
+      "contentType": "song",
+      "note": "Forja: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "PNaqMf9wPfw",
+      "title": "Món Oblidat",
+      "contentType": "song",
+      "note": "Forja: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "TMF4h5w5ZCg",
+      "title": "Pare Llop",
+      "contentType": "song",
+      "note": "Forja: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "utjcm7dOwLs",
+      "title": "El Clot de les Ànimes",
+      "contentType": "song",
+      "note": "Forja: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "6Sj_yeBY_4Y",
+      "title": "Vells Esperits",
+      "contentType": "song",
+      "note": "Forja: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "RKH8Bj-yBkM",
+      "title": "Passat i Futur",
+      "contentType": "song",
+      "note": "Forja: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "0pvlQU-No5U",
+      "title": "Mare del Bosc (Instrumental)",
+      "contentType": "song",
+      "note": "Forja: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "bmYePMdtfgA",
+      "title": "Mare del Bosc (Orquestral)",
+      "contentType": "song",
+      "note": "Forja: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "KD0hQqVI47A",
+      "title": "Mare del Bosc (16 Bits)",
+      "contentType": "song",
+      "note": "Forja: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "sk4CGddWra8",
+      "title": "Mare del Bosc (8 Bits)",
+      "contentType": "song",
+      "note": "Forja: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "wGMbtH_agyo",
+      "title": "Mare del Bosc (Orquestral + Vocals)",
+      "contentType": "song",
+      "note": "Forja: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "cdpWUU-R0Ec",
+      "title": "Mare del Bosc",
+      "contentType": "song",
+      "note": "Forja: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "Ech4e1wSX_U",
+      "title": "Fosques Bèsties (8 Bits)",
+      "contentType": "song",
+      "note": "Forja: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "CWx42JzB1ZI",
+      "title": "Fosques Bèsties (Orquestral)",
+      "contentType": "song",
+      "note": "Forja: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "xx8LxY7EC_8",
+      "title": "Fosques Bèsties (Orquestral+Vocals)",
+      "contentType": "song",
+      "note": "Forja: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "TtrQNHXwLkA",
+      "title": "Fosques Bèsties",
+      "contentType": "song",
+      "note": "Forja: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "RmLY49ms8cU",
+      "title": "Fosques Bèsties (16 Bits)",
+      "contentType": "song",
+      "note": "Forja: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "qvnl1CW1zPg",
+      "title": "Fosques Bèsties (Instrumental)",
+      "contentType": "song",
+      "note": "Forja: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "uHKDNNQbxQU",
+      "title": "Pare Llop (8 Bits)",
+      "contentType": "song",
+      "note": "Forja: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "npemhCASMqU",
+      "title": "Pare Llop (Orquestral)",
+      "contentType": "song",
+      "note": "Forja: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "AMAR-zUQPMs",
+      "title": "Pare Llop (16 Bits)",
+      "contentType": "song",
+      "note": "Forja: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "rxOtsA7cP4s",
+      "title": "Pare Llop",
+      "contentType": "song",
+      "note": "Forja: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "ffX4WOo7yC4",
+      "title": "Pare Llop (feat. Quim Mandado) (Orquestral+Vocals)",
+      "contentType": "song",
+      "note": "Forja: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "s7Td0ORN8XU",
+      "title": "Pare Llop (Instrumental)",
+      "contentType": "song",
+      "note": "Forja: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "AGafnotlEVw",
+      "title": "El Nom del Vent",
+      "contentType": "song",
+      "note": "Forja: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "qzolymN1F4c",
+      "title": "Ratafia",
+      "contentType": "song",
+      "note": "Forja: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "FkeZg5wtMd0",
+      "title": "Rancúnia",
+      "contentType": "song",
+      "note": "Forja: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "i59i7tN7aNg",
+      "title": "El Foc",
+      "contentType": "song",
+      "note": "Forja: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "1T3AOa5SRQ8",
+      "title": "Víbria",
+      "contentType": "song",
+      "note": "Forja: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "oIRWqwXE7vU",
+      "title": "Tornant de la Batalla",
+      "contentType": "song",
+      "note": "Forja: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "xk2T23Vwcv0",
+      "title": "Jaume I",
+      "contentType": "song",
+      "note": "Forja: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "sM-5soRdgoI",
+      "title": "Infància",
+      "contentType": "song",
+      "note": "Forja: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "mnCaHx_ucL4",
+      "title": "Desperta Ferro!",
+      "contentType": "song",
+      "note": "Forja: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "pq_JVEO5sL4",
+      "title": "Plany d'Occitània",
+      "contentType": "song",
+      "note": "Forja: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "OApIXszw1TA",
+      "title": "Ales Negres",
+      "contentType": "song",
+      "note": "Forja: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "M-Wmc6-mXyU",
+      "title": "Muret",
+      "contentType": "song",
+      "note": "Forja: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "N7JkmxQAyzM",
+      "title": "Els Bons Homes",
+      "contentType": "song",
+      "note": "Forja: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "Xjkfcs-_wz0",
+      "title": "Aurembiaix",
+      "contentType": "song",
+      "note": "Forja: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "7llRAIRlmhA",
+      "title": "El Conqueridor",
+      "contentType": "song",
+      "note": "Forja: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "7_NxgdyIY2U",
+      "title": "El Llibre Dels Fets",
+      "contentType": "song",
+      "note": "Forja: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "mBH2EZcXyy0",
+      "title": "Nàufrag - Astral Warrior",
+      "contentType": "song",
+      "note": "Astral Warrior: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "F0p6_oTkLJw",
+      "title": "ÀNGEL GUARDIÀ (LYRIC VIDEO)",
+      "contentType": "song",
+      "note": "Astral Warrior: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "2TaDOyRKlrc",
+      "title": "La veu de l'innocent",
+      "contentType": "song",
+      "note": "Astral Warrior: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "5PNMnso9jck",
+      "title": "ASTRAL WARRIOR - GUERRER DE FOC",
+      "contentType": "song",
+      "note": "Astral Warrior: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "v3vOGpma_eY",
+      "title": "Regal dels Déus (Live in Ceferino - Barcelona)",
+      "contentType": "live_song",
+      "note": "Astral Warrior: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "jg0W7fFqwCo",
+      "title": "CONTES DE NIT (LYRIC VIDEO)",
+      "contentType": "song",
+      "note": "Astral Warrior: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "NcarBSHQma8",
+      "title": "GUERRER DE FOC (Lyric Video)",
+      "contentType": "song",
+      "note": "Astral Warrior: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "QadQrS1aPtg",
+      "title": "VIRUS D'AMOR",
+      "contentType": "song",
+      "note": "Astral Warrior: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "9Otk0dDg9uY",
+      "title": "Nàufrag",
+      "contentType": "song",
+      "note": "Astral Warrior: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "mctFNU15TKg",
+      "title": "Nàufrag (8-bit Version)",
+      "contentType": "song",
+      "note": "Astral Warrior: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "TIH42fqXsd4",
+      "title": "Regal dels Déus",
+      "contentType": "song",
+      "note": "Astral Warrior: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "3-wg8FXURVM",
+      "title": "La Veu de l'Innocent",
+      "contentType": "song",
+      "note": "Astral Warrior: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "3gVNkIIvWeE",
+      "title": "Guerrer de Foc",
+      "contentType": "song",
+      "note": "Astral Warrior: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "3pc2ziR4KV8",
+      "title": "Himne de les Hordes de l'Alba",
+      "contentType": "song",
+      "note": "Astral Warrior: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "BxeaNVvnRqM",
+      "title": "Àngel Guardià",
+      "contentType": "song",
+      "note": "Astral Warrior: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "VkcyyY8pjRE",
+      "title": "Amor Etern",
+      "contentType": "song",
+      "note": "Astral Warrior: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "YTZMoDJJvis",
+      "title": "Patrulla Astral Mdcix",
+      "contentType": "song",
+      "note": "Astral Warrior: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "Z6L7hITiD3M",
+      "title": "Filla de la Mort",
+      "contentType": "song",
+      "note": "Astral Warrior: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "bmByWYl0KX0",
+      "title": "Sheleiah",
+      "contentType": "song",
+      "note": "Astral Warrior: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "bwMGf40WMdI",
+      "title": "El Heavy Metal Es la Llei",
+      "contentType": "song",
+      "note": "Astral Warrior: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "ci53diEl1gE",
+      "title": "Virus d'Amor",
+      "contentType": "song",
+      "note": "Astral Warrior: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "g5UhonLIFpU",
+      "title": "Apokaliptik Llop",
+      "contentType": "song",
+      "note": "Astral Warrior: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "o-9vMkL8u64",
+      "title": "Terra Lliure",
+      "contentType": "song",
+      "note": "Astral Warrior: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "ojjdHP49avg",
+      "title": "Promeses als Estels",
+      "contentType": "song",
+      "note": "Astral Warrior: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "sI-IMsLkK1Y",
+      "title": "Contes de Nit",
+      "contentType": "song",
+      "note": "Astral Warrior: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "c3wQThgpnUo",
+      "title": "TOMBA DE PLAGA I TIRANIA",
+      "contentType": "song",
+      "note": "Amargor: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "ptSLcuSkDCQ",
+      "title": "CAMINS",
+      "contentType": "song",
+      "note": "Amargor: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "FTrBd9OWwe4",
+      "title": "Tempestuosa Destruccio Agonica del Purificat Sacrament",
+      "contentType": "song",
+      "note": "Amargor: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "HCC2nGvXHMk",
+      "title": "Com cabal que ferida provoca",
+      "contentType": "song",
+      "note": "Amargor: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "JDzvVEyjrjg",
+      "title": "Soga d'espiga estreny",
+      "contentType": "song",
+      "note": "Amargor: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "-jEphiR-YU0",
+      "title": "Dol i arrels moribundes",
+      "contentType": "song",
+      "note": "Amargor: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "EXC3HDf_i3s",
+      "title": "Fosca marxa emprenc",
+      "contentType": "song",
+      "note": "Amargor: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "oI_GbyKMAQ0",
+      "title": "El darrer ofec del màrtir",
+      "contentType": "song",
+      "note": "Amargor: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "DR0cgc7FPq0",
+      "title": "Ossi Odi Infernal",
+      "contentType": "song",
+      "note": "Amargor: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "ZgzXeUNG_lY",
+      "title": "Rere el Que el Mirall No Reflecteix",
+      "contentType": "song",
+      "note": "Amargor: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "imvRt-Y8T4w",
+      "title": "Psalm, Pt. II (Ignis Circularis Porta)",
+      "contentType": "song",
+      "note": "Amargor: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "mBjhNEvWfaU",
+      "title": "Tenebres i Foscúria",
+      "contentType": "song",
+      "note": "Amargor: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "qRvoltHqP_E",
+      "title": "Raig Roent d'un Pensament Ofegat",
+      "contentType": "song",
+      "note": "Amargor: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "qsxSgiXrelw",
+      "title": "Dogmes Pútrids",
+      "contentType": "song",
+      "note": "Amargor: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "vx1RoSF80Mo",
+      "title": "Psalm, Pt. I (Retro Nativitate)",
+      "contentType": "song",
+      "note": "Amargor: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "19-zbqP9myo",
+      "title": "Obsolet",
+      "contentType": "song",
+      "note": "Angoixa: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "IrEjdDhA5X4",
+      "title": "Despertar",
+      "contentType": "song",
+      "note": "Angoixa: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "UdloP8AXZ68",
+      "title": "Esplendor",
+      "contentType": "song",
+      "note": "Angoixa: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "XPVlA5G2RlE",
+      "title": "Innocència",
+      "contentType": "song",
+      "note": "Angoixa: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "ezaPaCkhRX0",
+      "title": "Esvaït",
+      "contentType": "song",
+      "note": "Angoixa: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "m6fc93nscK0",
+      "title": "Mort",
+      "contentType": "song",
+      "note": "Angoixa: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "vakAEmcnafc",
+      "title": "Zenit",
+      "contentType": "song",
+      "note": "Angoixa: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "CSnVIeahJgE",
+      "title": "La foscor del bosc",
+      "contentType": "song",
+      "note": "Angoixa: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "FOZGvUpD-sg",
+      "title": "L'ànima perduda",
+      "contentType": "song",
+      "note": "Angoixa: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "JBSEX3BoLuQ",
+      "title": "El despertar de la bestia",
+      "contentType": "song",
+      "note": "Angoixa: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "Jo1dqdNKTrs",
+      "title": "Per a la nostra llibertat",
+      "contentType": "song",
+      "note": "Angoixa: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "OF4xcARjW8E",
+      "title": "El furgador de taüts",
+      "contentType": "song",
+      "note": "Angoixa: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "TU7SZHAjnZA",
+      "title": "Angoixa",
+      "contentType": "song",
+      "note": "Angoixa: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "u19GGnkpQLg",
+      "title": "Entra al regne de la mort (Runemagick cover)",
+      "contentType": "song",
+      "note": "Angoixa: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "P7x4jSOdw0U",
+      "title": "Tempus fugit",
+      "contentType": "song",
+      "note": "Angoixa: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "X8SPL6e8L3g",
+      "title": "Malsons",
+      "contentType": "song",
+      "note": "Angoixa: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "XZQrvsA_KHo",
+      "title": "Llàgrimes negres",
+      "contentType": "song",
+      "note": "Angoixa: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "Zn4HfxEeBQs",
+      "title": "Intro + El mort vivent",
+      "contentType": "song",
+      "note": "Angoixa: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "gsl6LGmm32g",
+      "title": "Camins sense destí",
+      "contentType": "song",
+      "note": "Angoixa: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "oWiF4Hw_paY",
+      "title": "Forn funeral (Bloodbath cover)",
+      "contentType": "song",
+      "note": "Angoixa: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "uwQE_uct-20",
+      "title": "El foc",
+      "contentType": "song",
+      "note": "Angoixa: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "vHMae5B0WJY",
+      "title": "Un món podrit",
+      "contentType": "song",
+      "note": "Angoixa: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "xYEbQYuihQE",
+      "title": "Els racons del cor",
+      "contentType": "song",
+      "note": "Angoixa: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "K063vvTgXPs",
+      "title": "Els oblidats",
+      "contentType": "song",
+      "note": "Angoixa: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "oBog9UullUs",
+      "title": "La presó dels pensaments",
+      "contentType": "song",
+      "note": "Angoixa: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "1RIBjJKAyZs",
+      "title": "Regne de sang",
+      "contentType": "song",
+      "note": "Angoixa: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "tDwniuAbF2o",
+      "title": "Distopia digital",
+      "contentType": "song",
+      "note": "Angoixa: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "btM6xnUgYZE",
+      "title": "Desolació",
+      "contentType": "song",
+      "note": "Angoixa: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "WPXqXmDx45Y",
+      "title": "Monstres",
+      "contentType": "song",
+      "note": "Angoixa: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "d4XdB01bg4A",
+      "title": "La crisàlide",
+      "contentType": "song",
+      "note": "Angoixa: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "-FbgMCpDth4",
+      "title": "Dins la Matriu",
+      "contentType": "song",
+      "note": "Angoixa: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "3rAnpKfc1nY",
+      "title": "Més que Odi",
+      "contentType": "song",
+      "note": "Angoixa: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "ZQgEU8DMgMs",
+      "title": "El Turment dels Caiguts",
+      "contentType": "song",
+      "note": "Angoixa: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "KEfvio38qoQ",
+      "title": "Déus de la Falsedat",
+      "contentType": "song",
+      "note": "Angoixa: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "SWANJxecPfg",
+      "title": "L'Ombra de la Dalla",
+      "contentType": "song",
+      "note": "Angoixa: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "jBfQgQL4fwI",
+      "title": "Ràbia",
+      "contentType": "song",
+      "note": "Angoixa: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "n2eiiESB3hk",
+      "title": "Esclaus de la Por",
+      "contentType": "song",
+      "note": "Angoixa: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
+    },
+    {
+      "id": "tuE0YiQfQI0",
+      "title": "Rere el Mirall",
+      "contentType": "song",
+      "note": "Angoixa: lot heavy 3, revisió documental detallada a docs/HEAVY_GRUP_3.md."
     }
   ]
 }
