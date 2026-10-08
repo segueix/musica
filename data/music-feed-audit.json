@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-08T15:53:02.413Z",
+  "generatedAt": "2026-10-08T15:54:27.915Z",
   "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
   "deepPagesFetched": 0,
@@ -1032,6 +1032,14 @@
       "governs": false
     },
     {
+      "id": "UCJXKRxaUXEg0kpgb-Kd8uDg",
+      "name": "Bonestorm",
+      "songs": 2,
+      "matched": 0,
+      "coverage": 0,
+      "governs": false
+    },
+    {
       "id": "UCUSjRkF72RR1E8Rl4SWtVsQ",
       "name": "El Pony Pisador",
       "songs": 0,
@@ -1230,7 +1238,7 @@
       "id": "UCgAPpOaGsoDsXdEQKLB6gnQ",
       "name": "Assot",
       "tracks": 30,
-      "selected": 18,
+      "selected": 30,
       "withClip": 0
     },
     {
@@ -1244,7 +1252,7 @@
       "id": "UC8yBjieIRVNRxjAVi0FO1DQ",
       "name": "Autodestrucció",
       "tracks": 31,
-      "selected": 17,
+      "selected": 31,
       "withClip": 0
     },
     {
@@ -1314,7 +1322,7 @@
       "id": "UCGPjtE1NFB1I8oDJ_Mx3O_Q",
       "name": "Bonestorm",
       "tracks": 14,
-      "selected": 8,
+      "selected": 14,
       "withClip": 0
     },
     {
@@ -2896,10 +2904,10 @@
   "indexedChannelCount": 477,
   "resolvedChannelCount": 477,
   "feedChannelCount": 477,
-  "rawPublicVideoCount": 5312,
-  "feedVideoCount": 4777,
-  "acceptedMusicCount": 4736,
-  "categoryEligibleVideoCount": 4731,
+  "rawPublicVideoCount": 5351,
+  "feedVideoCount": 4816,
+  "acceptedMusicCount": 4775,
+  "categoryEligibleVideoCount": 4770,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
     "before": 0,
@@ -2908,7 +2916,7 @@
   },
   "contentReviewCount": 541,
   "contentTypeCounts": {
-    "song": 4616,
+    "song": 4655,
     "live_song": 115,
     "album": 5,
     "other": 35,
@@ -2919,6 +2927,6 @@
   "channelsWithoutVideos": [],
   "channelsWithoutAcceptedMusic": [],
   "allIndexedChannelsVisible": true,
-  "publishedFeedVideoCount": 4769,
+  "publishedFeedVideoCount": 4779,
   "publishedShortVideoCount": 0
 }
