@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-08T15:51:16.394Z",
+  "updatedAt": "2026-10-08T16:08:52.216Z",
   "description": "Decisions manuals sobre el tipus de contingut de vídeos concrets. Manen sobre el classificador automàtic (scripts/lib/classificar_contingut_musical.js) i el pipeline (scripts/update_music_feed.js) les reaplica a cada generació del feed. Tipus permesos: song, live_song, album, other. Un vídeo revisat aquí surt de data/music-content-review.json.",
   "videos": [
     {
@@ -1527,6 +1527,24 @@
       "contentType": "song",
       "title": "Bonestorm - No canviïs mai (Videoclip)",
       "note": "Grup 1 Xavi: cançó completa identificada per títol i descripció; selecció manual del canal."
+    },
+    {
+      "id": "0ZfkvQlg2yI",
+      "contentType": "song",
+      "title": "3. Nit d'Estrena",
+      "note": "Grup 2 Xavi: cançó completa en català verificada; lletra publicada pel grup."
+    },
+    {
+      "id": "hIyZqDaZLSU",
+      "contentType": "song",
+      "title": "5. Persona Tèbia",
+      "note": "Grup 2 Xavi: cançó completa en català verificada; lletra publicada pel grup."
+    },
+    {
+      "id": "PFPcb0S0d0c",
+      "contentType": "song",
+      "title": "The Cabrians - Vestit Aerostatic",
+      "note": "Grup 2 Xavi: cançó completa en català verificada; versió catalana indicada a la descripció del vídeo."
     }
   ]
 }

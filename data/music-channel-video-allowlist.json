@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-08T15:53:34.389Z",
+  "updatedAt": "2026-10-08T16:08:52.216Z",
   "description": "Llista blanca per a canals on Segueix Música només ha d'ingerir vídeos concrets. Admet títols exactes, fragments obligatoris i fragments exclosos.",
   "channels": {
     "UCKpscwdWlVaMqcA81vLI7OA": {
@@ -2675,6 +2675,101 @@
         "song",
         "live_song"
       ]
+    },
+    "UCk0dxKPgahJyFPV_F1VWVuA": {
+      "artist": "Baixa Fidelitat",
+      "note": "Grup 2 Xavi. 13 cançons; lletres catalanes contrastades al Bandcamp propi. Canal Tema verificat pels crèdits The Indian Runners.",
+      "allowedVideoIds": [
+        "5Ib4h3aC2RE",
+        "6LcjbBbOt_U",
+        "D5A6T_eVyrM",
+        "HQwYp5iErqo",
+        "IxN-4GIqya4",
+        "OLSv6Z7amR0",
+        "RA4zzpz69KM",
+        "RwIKVpFFznM",
+        "Yr83BJXoFaM",
+        "ZIHtCvDCWTM",
+        "hXfE-BZCtJo",
+        "o0ZlXHr_yRc",
+        "sFeEqeoEtOM"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "avatarFromFirstAllowedVideo": true
+    },
+    "UCf0MYgzgqhRYuimo71a2dYQ": {
+      "artist": "Bestiari",
+      "note": "Grup 2 Xavi. Banda de Sabadell; només Nit d'Estrena i Persona Tèbia, amb lletres catalanes publicades. Exclosos Ghosts, The Awakening, Fire Tide i Someday (lletres angleses). Outro instrumental no seleccionada.",
+      "allowedVideoIds": [
+        "0ZfkvQlg2yI",
+        "hIyZqDaZLSU"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "avatarFromFirstAllowedVideo": true
+    },
+    "UCc2hL_Q_Fi_nKHLptRFnw3w": {
+      "artist": "Brot Bord",
+      "note": "Grup 2 Xavi. Dos canals Tema contrastats amb els discos propis i els crèdits Kasba/Lanzadera. Freedom!, Smartphone, Soulaimane i Caramba tenen lletra catalana. Les traduccions basques del Bandcamp no són l'idioma de la interpretació. Desglaç single duplicat omès. Tremola, explota i La realitat és tossuda identificades al recopilatori Catalunya explota; no s'han localitzat lletres completes d'aquestes dues.",
+      "allowedVideoIds": [
+        "UHWg6k6GdT8",
+        "sqV58mvnPWM",
+        "SVnGLKqGpj4",
+        "Ltxrh7OFZw4",
+        "psn6OYGk9M8"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "avatarFromFirstAllowedVideo": true
+    },
+    "UCghKNKEskCkE55Wl5A-ggiQ": {
+      "artist": "Brot Bord",
+      "note": "Grup 2 Xavi. Dos canals Tema contrastats amb els discos propis i els crèdits Kasba/Lanzadera. Freedom!, Smartphone, Soulaimane i Caramba tenen lletra catalana. Les traduccions basques del Bandcamp no són l'idioma de la interpretació. Desglaç single duplicat omès. Tremola, explota i La realitat és tossuda identificades al recopilatori Catalunya explota; no s'han localitzat lletres completes d'aquestes dues.",
+      "allowedVideoIds": [
+        "7abqbEGdCFM",
+        "rGKGnWOL5J4",
+        "FeotQ8SOxq4",
+        "QrsTQkoYx7k",
+        "s7LFhoPGb58",
+        "hymQyy-ZCss",
+        "AH5TKPmRdQ8",
+        "DuG56JoHl2E",
+        "2I0ZxBIdZLQ",
+        "Z4irLitnQRk",
+        "kS-ByZ1PsdI",
+        "DDE-RYIqCHw",
+        "OKF6zVKedag",
+        "oxadvkrxuq0"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "avatarFromFirstAllowedVideo": true
+    },
+    "UC-N1gUYe6UmwHOSQAUPH2-A": {
+      "artist": "The Cabrians",
+      "note": "Grup 2 Xavi. Només Vestit Aerostatic, descrit explícitament com a versió catalana. Canal compartit de Mr. Freak Ska, no canal oficial de Cabrians: restringit a un vídeo. No ampliar automàticament quan es revisi Mr. Freak Ska al grup 5. Resta del repertori pendent de verificació lingüística.",
+      "allowedVideoIds": [
+        "PFPcb0S0d0c"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "avatarFromFirstAllowedVideo": true
     }
   }
 }
