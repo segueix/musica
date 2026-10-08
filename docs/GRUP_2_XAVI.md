@@ -20,6 +20,6 @@ Revisió: 2026-10-08. Només artistes nous. Selecció explícita per vídeo; cap
 
 ## Validació
 
-Base de 406 artistes vàlida. Sis cançons breus verificades com a vídeos normals (YouTube /shorts retorna 303 a /watch) i afegides a falsos-shorts. S'han conservat els registres anteriors. Indexació automàtica limitada als cinc canals nous; recompte previst de 35 vídeos entre feed i arxiu.
+Base de 406 artistes vàlida. Sis cançons breus verificades com a vídeos normals (YouTube /shorts retorna 303 a /watch) i afegides a falsos-shorts. S'han conservat els registres anteriors. Indexació automàtica limitada als cinc canals nous; recompte verificat de 35 vídeos entre feed i arxiu. Validació musical correcta, 96 proves específiques superades i verificació exacta de selecció/exclusions correcta. Execucions: [indexació](https://github.com/segueix/musica/actions/runs/37806636361) i [verificació](https://github.com/segueix/musica/actions/runs/37806779817).
 
 Les comprovacions generals executades en aquesta sessió ja mostraven errors previs aliens a aquestes dades: 5 tests de tv/portada i 5 errors de lint. No s'ha modificat codi de l'aplicació.
