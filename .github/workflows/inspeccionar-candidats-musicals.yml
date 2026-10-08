@@ -1,0 +1,47 @@
+name: Inspeccionar candidats musicals
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [".github/workflows/inspeccionar-candidats-musicals.yml"]
+permissions:
+  contents: read
+jobs:
+  inspeccio:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "20"
+      - name: Consulta limitada de candidats i repertoris
+        env:
+          YOUTUBE_API_KEY_SERVER: ${{ secrets.YOUTUBE_API_KEY_SERVER }}
+        run: |
+          node - <<'NODE'
+          async function api(endpoint, params) {
+            const url = new URL('https://www.googleapis.com/youtube/v3/' + endpoint);
+            for (const [k,v] of Object.entries(params)) url.searchParams.set(k,v);
+            url.searchParams.set('key', process.env.YOUTUBE_API_KEY_SERVER);
+            const res = await fetch(url);
+            const data = await res.json();
+            if (!res.ok) throw new Error('YouTube HTTP ' + res.status + ': ' + (data.error?.errors?.[0]?.reason || 'error'));
+            return data;
+          }
+          (async () => {
+            const ids=new Set();
+            for(const q of ['"Daltabaix"','"En-Brut"','"Hirsut" music','"Fox System"','"FP" "Ciment"']){
+              const r=await api('search',{part:'snippet',type:'video',maxResults:'5',q});
+              console.log('SEARCH '+JSON.stringify({q,items:r.items}));
+              for(const x of r.items||[])ids.add(x.snippet.channelId);
+            }
+            for(const id of ids){
+              const r=await api('channels',{part:'snippet,contentDetails',id});const c=r.items?.[0];if(!c)continue;
+              if(!/daltabaix|en.?brut|hirsut|fox.?system|^fp( |$)/i.test(c.snippet.title))continue;
+              const p=await api('playlistItems',{part:'snippet,contentDetails',playlistId:c.contentDetails.relatedPlaylists.uploads,maxResults:'50'});
+              const vids=p.items.map(x=>x.contentDetails.videoId);
+              const v=await api('videos',{part:'snippet,contentDetails',id:vids.join(',')});
+              console.log('REPERTOIRE '+JSON.stringify({id,title:c.snippet.title,handle:c.snippet.customUrl,description:c.snippet.description,tracks:v.items,more:!!p.nextPageToken}));
+            }
+          })().catch(e=>{console.error(e.message);process.exitCode=1;});
+          NODE
