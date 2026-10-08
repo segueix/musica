@@ -252,4 +252,9 @@ Base d'artistes vàlida: 432 artistes. Comprovacions generals executades abans d
 - Tests: https://github.com/segueix/musica/actions/runs/37819683139
 - Lint: https://github.com/segueix/musica/actions/runs/37820022417
 
-Indexació i verificació exacta del feed: pendents de completar després de l'alta.
+Indexació completada: només s'han consultat els 7 canals nous. Les 96 proves del pipeline musical han passat. Comprovació exacta superada: els 133 vídeos són presents al feed/arxiu i no hi ha vídeos addicionals dels canals seleccionats. Registre d'idioma actualitzat només per aquests 133 IDs, preservant els altres pendents i descartats.
+
+- Indexació: https://github.com/segueix/musica/actions/runs/37820442787
+- Verificació exacta: https://github.com/segueix/musica/actions/runs/37820582364
+
+Workflow temporal retirat després de la verificació.
