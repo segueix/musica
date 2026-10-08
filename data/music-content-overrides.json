@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-08T16:08:52.216Z",
+  "updatedAt": "2026-10-08T16:16:43.833Z",
   "description": "Decisions manuals sobre el tipus de contingut de vídeos concrets. Manen sobre el classificador automàtic (scripts/lib/classificar_contingut_musical.js) i el pipeline (scripts/update_music_feed.js) les reaplica a cada generació del feed. Tipus permesos: song, live_song, album, other. Un vídeo revisat aquí surt de data/music-content-review.json.",
   "videos": [
     {
@@ -1545,6 +1545,96 @@
       "contentType": "song",
       "title": "The Cabrians - Vestit Aerostatic",
       "note": "Grup 2 Xavi: cançó completa en català verificada; versió catalana indicada a la descripció del vídeo."
+    },
+    {
+      "id": "-ZmN9xZBANo",
+      "title": "Daltabaix \"M'enganyo a mi mateix\"",
+      "contentType": "song",
+      "note": "Grup 3 Xavi: cançó completa amb lletra catalana contrastada amb Bandcamp o descripció oficial; no és promoció ni fragment."
+    },
+    {
+      "id": "mRyWmfx1Ahg",
+      "title": "Daltabaix - \"Fingim\"",
+      "contentType": "song",
+      "note": "Grup 3 Xavi: cançó completa amb lletra catalana contrastada amb Bandcamp o descripció oficial; no és promoció ni fragment."
+    },
+    {
+      "id": "QFDQT7Bes_M",
+      "title": "Daltabaix \"Fins avui\"",
+      "contentType": "song",
+      "note": "Grup 3 Xavi: cançó completa amb lletra catalana contrastada amb Bandcamp o descripció oficial; no és promoció ni fragment."
+    },
+    {
+      "id": "NqOdlkWc5xg",
+      "title": "EN-BRUT - Cremant Vela (VIDEOCLIP)",
+      "contentType": "song",
+      "note": "Grup 3 Xavi: cançó completa amb lletra catalana contrastada amb Bandcamp o descripció oficial; no és promoció ni fragment."
+    },
+    {
+      "id": "d4j1GzJ8bxw",
+      "title": "EN-BRUT - Com Un (Warzone Cover)",
+      "contentType": "song",
+      "note": "Grup 3 Xavi: cançó completa amb lletra catalana contrastada amb Bandcamp o descripció oficial; no és promoció ni fragment."
+    },
+    {
+      "id": "GWddPdiqW4U",
+      "title": "D.I.Y.",
+      "contentType": "song",
+      "note": "Grup 3 Xavi: cançó completa amb lletra catalana contrastada amb Bandcamp o descripció oficial; no és promoció ni fragment."
+    },
+    {
+      "id": "fzWahM8iQp0",
+      "title": "Som En-Brut",
+      "contentType": "song",
+      "note": "Grup 3 Xavi: cançó completa amb lletra catalana contrastada amb Bandcamp o descripció oficial; no és promoció ni fragment."
+    },
+    {
+      "id": "GNThqRAYGik",
+      "title": "Món Ideal",
+      "contentType": "song",
+      "note": "Grup 3 Xavi: cançó completa amb lletra catalana contrastada amb Bandcamp o descripció oficial; no és promoció ni fragment."
+    },
+    {
+      "id": "7yWuMZDsZhk",
+      "title": "Fox System - L'únic que tinc",
+      "contentType": "song",
+      "note": "Grup 3 Xavi: cançó completa amb lletra catalana contrastada amb Bandcamp o descripció oficial; no és promoció ni fragment."
+    },
+    {
+      "id": "RZSrqy_RaXA",
+      "title": "Fox System - Himne C.F. Rosselló",
+      "contentType": "song",
+      "note": "Grup 3 Xavi: cançó completa amb lletra catalana contrastada amb Bandcamp o descripció oficial; no és promoció ni fragment."
+    },
+    {
+      "id": "Zxkztzc9nzg",
+      "title": "Fox System - Vidres a la Sang (Videoclip)",
+      "contentType": "song",
+      "note": "Grup 3 Xavi: cançó completa amb lletra catalana contrastada amb Bandcamp o descripció oficial; no és promoció ni fragment."
+    },
+    {
+      "id": "nzI2t9pzoKg",
+      "title": "Fox System - Company de Pis (Videoclip)",
+      "contentType": "song",
+      "note": "Grup 3 Xavi: cançó completa amb lletra catalana contrastada amb Bandcamp o descripció oficial; no és promoció ni fragment."
+    },
+    {
+      "id": "Tckd519JpMk",
+      "title": "FOX SYSTEM - Asfíxia Temporal (Videoclip)",
+      "contentType": "song",
+      "note": "Grup 3 Xavi: cançó completa amb lletra catalana contrastada amb Bandcamp o descripció oficial; no és promoció ni fragment."
+    },
+    {
+      "id": "LiRVWYMv9lY",
+      "title": "FOX SYSTEM - Doctor Torment (Videoclip)",
+      "contentType": "song",
+      "note": "Grup 3 Xavi: cançó completa amb lletra catalana contrastada amb Bandcamp o descripció oficial; no és promoció ni fragment."
+    },
+    {
+      "id": "JBx6LC0US6s",
+      "title": "FOX SYSTEM - La Banda Papelera",
+      "contentType": "song",
+      "note": "Grup 3 Xavi: cançó completa amb lletra catalana contrastada amb Bandcamp o descripció oficial; no és promoció ni fragment."
     }
   ]
 }

@@ -1,48 +1,36 @@
-name: Inspeccionar candidats musicals
+name: Verificar resultat grup 3
 on:
-  workflow_dispatch:
-  push:
-    branches: [main]
-    paths: [".github/workflows/inspeccionar-candidats-musicals.yml"]
+  workflow_run:
+    workflows: ["Actualitzar feed musical"]
+    types: [completed]
 permissions:
   contents: read
 jobs:
-  inspeccio:
+  verifica:
+    if: github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
       - uses: actions/setup-node@v5
         with:
           node-version: "20"
-      - name: Consulta limitada de candidats i repertoris
-        env:
-          YOUTUBE_API_KEY_SERVER: ${{ secrets.YOUTUBE_API_KEY_SERVER }}
+      - name: Comprova seleccio i exclusions
         run: |
           node - <<'NODE'
-          async function api(endpoint, params) {
-            const url = new URL('https://www.googleapis.com/youtube/v3/' + endpoint);
-            for (const [k,v] of Object.entries(params)) url.searchParams.set(k,v);
-            url.searchParams.set('key', process.env.YOUTUBE_API_KEY_SERVER);
-            const res = await fetch(url);
-            const data = await res.json();
-            if (!res.ok) throw new Error('YouTube HTTP ' + res.status + ': ' + (data.error?.errors?.[0]?.reason || 'error'));
-            return data;
-          }
-          (async () => {
-            const ids=new Set(['UCMI_YX4hq_6gmj5KXiSMCEQ','UCnJ4T56eu1dxFBWin7Z7C3A','UCdontCcTg9y1senwNiJFECg']);
-            for(const q of ['"Daltabaix" "Topic"','"En-Brut" "Topic"','"Fox System" "Topic"','"Hirsut" "Idiota competent"']){
-              const r=await api('search',{part:'snippet',type:'video',maxResults:'5',q});
-              console.log('SEARCH '+JSON.stringify({q,items:r.items}));
-              for(const x of r.items||[])ids.add(x.snippet.channelId);
-            }
-            for(const id of ids){
-              const r=await api('channels',{part:'snippet,contentDetails',id});const c=r.items?.[0];if(!c)continue;
-              if(!/daltabaix|en.?brut|hirsut|fox.?system|^fp( |$)/i.test(c.snippet.title))continue;
-              const p=await api('playlistItems',{part:'snippet,contentDetails',playlistId:c.contentDetails.relatedPlaylists.uploads,maxResults:'50'});
-              const vids=p.items.map(x=>x.contentDetails.videoId);
-              const v=await api('videos',{part:'snippet,contentDetails',id:vids.join(',')});
-              for(const track of v.items){const m=track.contentDetails.duration.match(/PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?/);const sec=(+m[1]||0)*3600+(+m[2]||0)*60+(+m[3]||0);if(sec<=120){const h=await fetch('https://www.youtube.com/shorts/'+track.id,{method:'HEAD',redirect:'manual',signal:AbortSignal.timeout(10000)}).catch(()=>null);track.shortCheck={status:h?.status,location:h?.headers.get('location')};}}
-              console.log('REPERTOIRE '+JSON.stringify({id,title:c.snippet.title,handle:c.snippet.customUrl,description:c.snippet.description,tracks:v.items,more:!!p.nextPageToken}));
-            }
-          })().catch(e=>{console.error(e.message);process.exitCode=1;});
+          const fs=require('fs'),assert=require('assert');
+          const specs=[{"artist":"Daltabaix","id":"UCMI_YX4hq_6gmj5KXiSMCEQ","type":"official","ids":["-ZmN9xZBANo","mRyWmfx1Ahg","QFDQT7Bes_M"]},{"artist":"Daltabaix","id":"UCke5e6w0YsmcfxvngW4An3A","type":"topic","ids":["UTcoB1Upgj0","4g2SjROn2AM","07R7Zd7mv94","3vuaUFhBdm0","6Ruf5Ks1R4w","K5-G5bPAhYQ","LifnIQiDFng"]},{"artist":"En Brut","id":"UCnJ4T56eu1dxFBWin7Z7C3A","type":"official","ids":["NqOdlkWc5xg","d4j1GzJ8bxw"]},{"artist":"En Brut","id":"UC86_pXaC6Kh_U-ouv4OZ_DQ","type":"topic","ids":["0OWHh5Ewi-I","GWddPdiqW4U","WeASi19sUxM","ro9rtMhEBns","s2RGTtOTSug","9x0IxQ5FCl8","NG8kc1s4JqI","U_FdkdecRrQ","fzWahM8iQp0","kvtZMJBF6KQ","GNThqRAYGik","aoPwFpOIVzQ","fNcojbv6ua0","psDcqc94fRE","5_O3p0-c0PU"]},{"artist":"Fox System","id":"UClEkW6DS-3DfOcxGMouE_7A","type":"official","ids":["7yWuMZDsZhk","RZSrqy_RaXA","Zxkztzc9nzg","nzI2t9pzoKg","Tckd519JpMk","LiRVWYMv9lY","JBx6LC0US6s"]},{"artist":"Fox System","id":"UCwCcA6f2KDLJi58xX2se6DA","type":"topic","ids":["7DQ1KiNoLNg","KH7W9DIvF3E","qDX0k5NCtdY","D4z44LiTWfI","7p7OPBml8d8","lNrhns_1jws","790A8N93SDA","HVWGKB4h6zk","kBvh4Lq5gKo","50KA5K7HRg0","jex28s8mjS0","v4EiGxdN-u0","z6-EsxMs_wE","XZStevcd88U","Iiv8m93EBos","tnl0CtlebjY"]},{"artist":"FP","id":"UCdontCcTg9y1senwNiJFECg","type":"topic","ids":["rUiJhiL1K4k","ssTKsWDqYQo","i7noQWXXmNY","YBz27KZBcKA","hoB6k5-25XU","Jt0nzgBYgdw","P77R2ovZrFQ","i0WVPPVNpwM","6NEHvZV-_uc","txSVoHQ1y1c","T-H_JGjpp2U","nwYRGZSIM-o","YlB7UAPYZvc","fCLpigaWGA0","yifXsrgQlIQ","Q3wbLamDx38","iQlf_aJdWrI","WAIx8wiLptU","r6KYa4-PC-U","nyy2dYyn8Oc","Q-6hIt3vz7U","29BOy-B9xW4","ocz28vFPkGs","2kTNA-8YZF8"]}];
+          const feed=JSON.parse(fs.readFileSync('data/feed.json','utf8'));
+          const found=new Map();
+          function walk(o){ if(!o||typeof o!=='object') return; if(typeof o.id==='string'&&specs.some(s=>s.ids.includes(o.id)||s.id===o.channelId)) found.set(o.id,o); for(const v of Object.values(o))if(v&&typeof v==='object')walk(v); }
+          walk(feed);
+          function files(dir){if(!fs.existsSync(dir))return;for(const e of fs.readdirSync(dir,{withFileTypes:true})){const p=dir+'/'+e.name;if(e.isDirectory())files(p);else if(p.endsWith('.json'))walk(JSON.parse(fs.readFileSync(p,'utf8')));}}
+          files('data/archive');
+          const allAllowed=new Set(specs.flatMap(s=>s.ids));
+          for(const s of specs){const missing=s.ids.filter(id=>!found.has(id)); console.log(JSON.stringify({artist:s.artist,channel:s.id,expected:s.ids.length,missing}));assert.equal(missing.length,0,'Vídeos absents');}
+          for(const [id,v]of found)if(specs.some(s=>s.id===v.channelId))assert(allAllowed.has(id),'Vídeo no autoritzat '+id);
+          const a=JSON.parse(fs.readFileSync('data/artistes-musica.json','utf8'));assert.equal(a.artists.find(a=>a.name==='Hirsut').active,false);
+          console.log('GRUP_3_OK '+allAllowed.size+' vídeos; Hirsut pendent; selecció exacta.');
           NODE
