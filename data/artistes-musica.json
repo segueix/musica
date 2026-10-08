@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-08T16:46:12.028Z",
+  "updatedAt": "2026-10-08T16:58:34.570Z",
   "artists": [
     {
       "name": "2ES",
@@ -32441,6 +32441,201 @@
       ],
       "lastChecked": "2026-10-08T16:46:12.028Z",
       "notes": "Grup 5 Xavi. Identitat no confirmada: les cerques retornen sobretot títols de cançons d'altres artistes. Cal confirmar el nom o aportar un enllaç. Pendent, sense canal ni ingestió."
+    },
+    {
+      "name": "Perro Pachingo",
+      "displayName": "Perro Pachingo",
+      "aliases": [],
+      "genres": [
+        "Rumba / Mestissatge",
+        "Punk"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [],
+        "searchCandidates": []
+      },
+      "confidence": "pendent",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "https://perropachingo.bandcamp.com/album/ara-la-rumba-es-queda",
+        "https://perropachingo.bandcamp.com/album/volem-pa-amb-odi",
+        "manual-user-2026-10-08",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-08T16:58:34.570Z",
+      "notes": "Grup 6 Xavi. Banda identificada i lletres catalanes contrastades a Bandcamp. Sense canal propi/Topic verificat: cerques YouTube retornen còpies de tercers i un àlbum complet. Pendent de canal, inactiu, sense ingestió."
+    },
+    {
+      "name": "Tiger Menja Zebra",
+      "displayName": "Tiger Menja Zebra",
+      "aliases": [],
+      "genres": [
+        "Electrònica",
+        "Experimental / Avantguarda"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCQMMHfq3-mXuozgrnyx-Gcg",
+            "handle": null,
+            "name": "Tiger menja zebra - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://tigermenjazebra.bandcamp.com/album/admirables",
+        "https://hiddentrackrecords.bandcamp.com/album/anarquia-i-mal-de-cap",
+        "https://zombipujol.bandcamp.com/album/mediocritat-i-putamerdisme",
+        "https://www.youtube.com/channel/UCukPK3uNQMGRUhLbmZO7PkQ",
+        "manual-user-2026-10-08",
+        "genre:manual",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": "2026-10-08T16:58:34.570Z",
+      "notes": "Grup 6 Xavi. 9 pistes Topic: sis d'Anarquia i Mal de Cap, Mimi Parker original i versió amb Ferran Orriols, i versió de No tenir farlopa no em fa por. Lletres en català contrastades amb artista/segell. Exclosos repertori en altres llengües, bilingüisme extens i duplicats; resta pendent. Canal oficial localitzat, ingestió restringida al Topic."
+    },
+    {
+      "name": "Ratpenat",
+      "displayName": "Ratpenat",
+      "aliases": [],
+      "genres": [
+        "Punk",
+        "Metal"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UC0Us9bY-uMslfHcmZSVirRw",
+            "handle": null,
+            "name": "Ratpenat - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://www.kasbamusic.com/es/2025/03/ratpenat-presentan-su-cuarto-album-cami-a-linfern/",
+        "https://www.enderrock.cat/noticia/29264/ratpenat-volem-ser-maxim-exponent-indecencia",
+        "https://www.youtube.com/channel/UCala6XHhTKMKvNkS3gjLpJw",
+        "manual-user-2026-10-08",
+        "genre:manual",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": "2026-10-08T16:58:34.570Z",
+      "notes": "Grup 6 Xavi. Selecció de les 10 pistes de Camí a l'infern. Identitat contrastada amb Kasba Music; en entrevista el grup afirma que només canta en català, inclosa la col·laboració de Podri. Revisió documental del disc, sense transcripció íntegra de totes les pistes. Homònims Rat Penat i el Ratpenat de Finidi no corresponen a aquest grup. Resta del repertori pendent."
+    },
+    {
+      "name": "Zombi Pujol",
+      "displayName": "Zombi Pujol",
+      "aliases": [],
+      "genres": [
+        "Punk"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCHdLUidEVvmo-4p1h895hcA",
+            "handle": null,
+            "name": "Zombi Pujol - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://zombipujol.bandcamp.com/track/pere-per-sempre",
+        "https://zombipujol.bandcamp.com/album/contuberni-per-la-conc-rdia",
+        "https://zombipujol.bandcamp.com/album/imbecil-litat-t-ctica",
+        "https://zombipujol.bandcamp.com/album/mediocritat-i-putamerdisme",
+        "https://zombipujol.bandcamp.com/album/la-conjura-de-les-iguals",
+        "https://www.youtube.com/channel/UCNMgQ8c1Zc0PAtkJOIcpZNQ",
+        "manual-user-2026-10-08",
+        "genre:manual",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": "2026-10-08T16:58:34.570Z",
+      "notes": "Grup 6 Xavi. 32 pistes Topic amb lletres catalanes publicades pel grup. No s'inclou Ni podem ni volem per secció castellana extensa; Pterodàctils, Jeannette Of My Heart i El meu avi queden pendents de contrast específic. Canal oficial localitzat; s'ingereix la selecció Topic."
+    },
+    {
+      "name": "Vàlius",
+      "displayName": "Vàlius",
+      "aliases": [],
+      "genres": [
+        "Punk",
+        "Indie / Alternativa"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCc20bll252Rwc71ILMnWVcA",
+            "handle": null,
+            "name": "vàlius - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://valius.bandcamp.com/album/obligaci",
+        "https://valius.bandcamp.com/album/senyal",
+        "https://valius.bandcamp.com/album/fam",
+        "https://valius.bandcamp.com/album/escola",
+        "https://www.youtube.com/channel/UClaGLb0HvCGlcm7g-AGEZ1g",
+        "manual-user-2026-10-08",
+        "genre:manual",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": "2026-10-08T16:58:34.570Z",
+      "notes": "Grup 6 Xavi. 42 pistes amb lletres catalanes contrastades: Obligació (4), Senyal (11), Fam (17) i Escola (10). Imbécil és en castellà i s'exclou. El Topic barreja un homònim anglòfon: llista tancada per IDs, excloent-hi aquell repertori, duplicats i peces pendents. TheFall és en català."
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-08T16:46:12.028Z",
+  "updatedAt": "2026-10-08T16:58:34.570Z",
   "description": "Llista blanca per a canals on Segueix Música només ha d'ingerir vídeos concrets. Admet títols exactes, fragments obligatoris i fragments exclosos.",
   "channels": {
     "UCKpscwdWlVaMqcA81vLI7OA": {
@@ -3176,6 +3176,147 @@
       "allowedVideoIds": [
         "7zcy83j0GuI",
         "InSd11YRwXE"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "avatarFromFirstAllowedVideo": false
+    },
+    "UCQMMHfq3-mXuozgrnyx-Gcg": {
+      "artist": "Tiger Menja Zebra",
+      "note": "Grup 6 Xavi. 9 pistes Topic: sis d'Anarquia i Mal de Cap, Mimi Parker original i versió amb Ferran Orriols, i versió de No tenir farlopa no em fa por. Lletres en català contrastades amb artista/segell. Exclosos repertori en altres llengües, bilingüisme extens i duplicats; resta pendent. Canal oficial localitzat, ingestió restringida al Topic.",
+      "allowedVideoIds": [
+        "bdoDKiBEWi4",
+        "8NyvQO0ZuS0",
+        "xX1X1i-i-7E",
+        "6XkfsHC0Mfg",
+        "AMEZpINEpq8",
+        "E19Vrsgu1cU",
+        "GpkTEkzbkpU",
+        "XWf0x7IBcnU",
+        "xt9FHkeJ8xU"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "avatarFromFirstAllowedVideo": false
+    },
+    "UC0Us9bY-uMslfHcmZSVirRw": {
+      "artist": "Ratpenat",
+      "note": "Grup 6 Xavi. Selecció de les 10 pistes de Camí a l'infern. Identitat contrastada amb Kasba Music; en entrevista el grup afirma que només canta en català, inclosa la col·laboració de Podri. Revisió documental del disc, sense transcripció íntegra de totes les pistes. Homònims Rat Penat i el Ratpenat de Finidi no corresponen a aquest grup. Resta del repertori pendent.",
+      "allowedVideoIds": [
+        "S7cB_F9zhAQ",
+        "w74VfHusxmg",
+        "5uaRqTbwLy0",
+        "7oFGW9JSdrM",
+        "g0oLGzzf1OQ",
+        "jvRi2vk2LYs",
+        "sW18u4laXUI",
+        "ZPJB929PhNQ",
+        "uZWut7RMV2Q",
+        "ga16eQFrYe0"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "avatarFromFirstAllowedVideo": false
+    },
+    "UCHdLUidEVvmo-4p1h895hcA": {
+      "artist": "Zombi Pujol",
+      "note": "Grup 6 Xavi. 32 pistes Topic amb lletres catalanes publicades pel grup. No s'inclou Ni podem ni volem per secció castellana extensa; Pterodàctils, Jeannette Of My Heart i El meu avi queden pendents de contrast específic. Canal oficial localitzat; s'ingereix la selecció Topic.",
+      "allowedVideoIds": [
+        "XTF0K67GRBs",
+        "YybWMQQ0R38",
+        "UPfZe5eVl3w",
+        "951XbIoTMqg",
+        "ywpmBRp1ALc",
+        "L9U-7y6vBfk",
+        "CtG2kAzqva8",
+        "0ctKtNnkcBA",
+        "0remglts4gc",
+        "1IPh1IHTRu8",
+        "p-BitwZZQAw",
+        "oGixYBBeYAk",
+        "h4bWvYsG56U",
+        "7ch9spF-kNs",
+        "CnIMw0BIals",
+        "oP39EU3ZTMw",
+        "hDjwN16zTJI",
+        "G77A2d1ZjMs",
+        "kSVXp78yyNg",
+        "QsHik7rnI-E",
+        "ChhOQ6-Lo9o",
+        "qxGxw6wgTlo",
+        "lRYa818n2T8",
+        "0e9JKz3ePYg",
+        "5pPLM9S2P-g",
+        "LAr1hDWxi7s",
+        "aYUuqU4gU9o",
+        "qO0bbOCUSJs",
+        "-IJ6UwgqaLw",
+        "hHUA1h4Aoow",
+        "2LUZFhMnUFM",
+        "azH_BoBiNpM"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "avatarFromFirstAllowedVideo": false
+    },
+    "UCc20bll252Rwc71ILMnWVcA": {
+      "artist": "Vàlius",
+      "note": "Grup 6 Xavi. 42 pistes amb lletres catalanes contrastades: Obligació (4), Senyal (11), Fam (17) i Escola (10). Imbécil és en castellà i s'exclou. El Topic barreja un homònim anglòfon: llista tancada per IDs, excloent-hi aquell repertori, duplicats i peces pendents. TheFall és en català.",
+      "allowedVideoIds": [
+        "TAPyhxHum_c",
+        "fzr3-1ECyJU",
+        "kxQPQ1FZ_Zk",
+        "wHcbtvlkFIo",
+        "KMT8Z-kqHGQ",
+        "XV76jIbppPs",
+        "cEqvxpHX5yM",
+        "2x048x1mTr0",
+        "O1rujubfYxs",
+        "QNJc3wQvwCw",
+        "Umz_6PFuB18",
+        "_lNyWJ_yK7k",
+        "ky8I3GyeyNg",
+        "ngNz0QjwQKg",
+        "rjFlkzRdEYw",
+        "7oxnizES3OE",
+        "IMKdVWZcdB8",
+        "RvkjyA5TOsg",
+        "jkB5tvtnEJU",
+        "vhf_0HKlIBk",
+        "Ivs1UY_Q-U8",
+        "9Y7DEW84fak",
+        "9pUv4_L1Qmw",
+        "AkV6QPdbIao",
+        "Gupf36LxEqc",
+        "Jh4hpy3l7FQ",
+        "KSJW3RWK10k",
+        "a2xV7AvZi2w",
+        "c5fQcNsQUlk",
+        "juTxNej5t2k",
+        "osxbPIfQxTc",
+        "pL-Gml2pZu8",
+        "FdYgAF0DTuw",
+        "cU3vtoh5B5U",
+        "y0hlTRGyITM",
+        "dw4QtRukKa8",
+        "WfooKX9eqIQ",
+        "yZKH03tulEs",
+        "vejkZfFrjIY",
+        "Jn5n2H-EQz8",
+        "fzAU9NHI_QA",
+        "HwAu3N4hVGs"
       ],
       "acceptedMusicOnly": true,
       "allowedContentTypes": [

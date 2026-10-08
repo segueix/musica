@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-08T16:46:12.028Z",
+  "updatedAt": "2026-10-08T16:58:34.570Z",
   "description": "Decisions manuals sobre el tipus de contingut de vídeos concrets. Manen sobre el classificador automàtic (scripts/lib/classificar_contingut_musical.js) i el pipeline (scripts/update_music_feed.js) les reaplica a cada generació del feed. Tipus permesos: song, live_song, album, other. Un vídeo revisat aquí surt de data/music-content-review.json.",
   "videos": [
     {
@@ -2301,6 +2301,564 @@
       "title": "Fantasmes",
       "contentType": "song",
       "note": "Grup 5 Xavi: pista completa seleccionada. Criteri lingüístic i exclusions a docs/GRUP_5_XAVI.md."
+    },
+    {
+      "id": "bdoDKiBEWi4",
+      "title": "No Tenir Farlopa No Em Fa Por (Zombi Pujol Cover)",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "8NyvQO0ZuS0",
+      "title": "Mimi Parker",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "xX1X1i-i-7E",
+      "title": "Mimi Parker",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "6XkfsHC0Mfg",
+      "title": "A la mà tencada se n' hi diu puny",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "AMEZpINEpq8",
+      "title": "Dies Irae (La dança dels morts)",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "E19Vrsgu1cU",
+      "title": "Matem per encarrec",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "GpkTEkzbkpU",
+      "title": "Els amics de les Farc",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "XWf0x7IBcnU",
+      "title": "Durruti t'estimo",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "xt9FHkeJ8xU",
+      "title": "Benzinera bingo",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "S7cB_F9zhAQ",
+      "title": "La dansa macabra",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "w74VfHusxmg",
+      "title": "Això no és una cançó d'amor",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "5uaRqTbwLy0",
+      "title": "Hores extres",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "7oFGW9JSdrM",
+      "title": "Mai més",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "g0oLGzzf1OQ",
+      "title": "La nit és nostra",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "jvRi2vk2LYs",
+      "title": "No hi ha lloc",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "sW18u4laXUI",
+      "title": "Ens podrirem a Rodalies",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "ZPJB929PhNQ",
+      "title": "Camí a l'infern",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "uZWut7RMV2Q",
+      "title": "No sóc skin, sóc calvo",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "ga16eQFrYe0",
+      "title": "Tourist Go Home",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "XTF0K67GRBs",
+      "title": "Pere, Per Sempre",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "YybWMQQ0R38",
+      "title": "Infantil i Paranoide",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "UPfZe5eVl3w",
+      "title": "Ballar i Destruir",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "951XbIoTMqg",
+      "title": "Tens un os",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "ywpmBRp1ALc",
+      "title": "Ex-pat",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "L9U-7y6vBfk",
+      "title": "Qüestió D'autoritat",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "CtG2kAzqva8",
+      "title": "Només Era un Cant",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "0ctKtNnkcBA",
+      "title": "Anti-Autoreferencial",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "0remglts4gc",
+      "title": "Fàbrica de Taps",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "1IPh1IHTRu8",
+      "title": "Déus de la Bajanada",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "p-BitwZZQAw",
+      "title": "Fora del Gueto Només hi ha Immundícia",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "oGixYBBeYAk",
+      "title": "Sol I Molts",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "h4bWvYsG56U",
+      "title": "Porto el Bus!",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "7ch9spF-kNs",
+      "title": "Grups D'acció, Grups D'afinitat",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "CnIMw0BIals",
+      "title": "Incontestable",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "oP39EU3ZTMw",
+      "title": "La Metadona Mata el Cego",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "hDjwN16zTJI",
+      "title": "No Puc Deconstruir la Meva Masculinitat",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "G77A2d1ZjMs",
+      "title": "El Que Volem",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "kSVXp78yyNg",
+      "title": "Democràcia Polles Alfa",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "QsHik7rnI-E",
+      "title": "L'han Ingressat",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "ChhOQ6-Lo9o",
+      "title": "No He Vingut Aquí",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "qxGxw6wgTlo",
+      "title": "Contingut Esforç",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "lRYa818n2T8",
+      "title": "Molt Medieval",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "0e9JKz3ePYg",
+      "title": "La Gent I Jo",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "5pPLM9S2P-g",
+      "title": "La Ciutat del Plor",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "LAr1hDWxi7s",
+      "title": "La Merda Que Fas Tu",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "aYUuqU4gU9o",
+      "title": "C.r.i.s.i.",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "qO0bbOCUSJs",
+      "title": "Fidels al No Res",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "-IJ6UwgqaLw",
+      "title": "La Banalitat del Bé",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "hHUA1h4Aoow",
+      "title": "Una Nova Cançó",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "2LUZFhMnUFM",
+      "title": "No Tenir Farlopa No Em Fa Por",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "azH_BoBiNpM",
+      "title": "Traieu-me d'Aquesta Feina",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "TAPyhxHum_c",
+      "title": "Optimisme",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "fzr3-1ECyJU",
+      "title": "Polonesa",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "kxQPQ1FZ_Zk",
+      "title": "Mur",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "wHcbtvlkFIo",
+      "title": "Son",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "KMT8Z-kqHGQ",
+      "title": "Ferir",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "XV76jIbppPs",
+      "title": "Mandat",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "cEqvxpHX5yM",
+      "title": "Hereu",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "2x048x1mTr0",
+      "title": "Senyal",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "O1rujubfYxs",
+      "title": "Balada",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "QNJc3wQvwCw",
+      "title": "Amistat",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "Umz_6PFuB18",
+      "title": "TheFall",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "_lNyWJ_yK7k",
+      "title": "Inquiet",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "ky8I3GyeyNg",
+      "title": "Jutjar",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "ngNz0QjwQKg",
+      "title": "Pleonasmes",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "rjFlkzRdEYw",
+      "title": "Traïdor",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "7oxnizES3OE",
+      "title": "Vegada",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "IMKdVWZcdB8",
+      "title": "Coses",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "RvkjyA5TOsg",
+      "title": "Nostre",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "jkB5tvtnEJU",
+      "title": "Bé",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "vhf_0HKlIBk",
+      "title": "Espinàs",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "Ivs1UY_Q-U8",
+      "title": "Valldaura",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "9Y7DEW84fak",
+      "title": "Difusió",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "9pUv4_L1Qmw",
+      "title": "Set",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "AkV6QPdbIao",
+      "title": "Desintoxicació",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "Gupf36LxEqc",
+      "title": "Bacallà",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "Jh4hpy3l7FQ",
+      "title": "Dos",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "KSJW3RWK10k",
+      "title": "Això",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "a2xV7AvZi2w",
+      "title": "Toquem",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "c5fQcNsQUlk",
+      "title": "Ningú",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "juTxNej5t2k",
+      "title": "Gran",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "osxbPIfQxTc",
+      "title": "Lenin",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "pL-Gml2pZu8",
+      "title": "Nosaltres",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "FdYgAF0DTuw",
+      "title": "Insistir",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "cU3vtoh5B5U",
+      "title": "Mal",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "y0hlTRGyITM",
+      "title": "Mai",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "dw4QtRukKa8",
+      "title": "Fontana",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "WfooKX9eqIQ",
+      "title": "Kim",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "yZKH03tulEs",
+      "title": "Moment",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "vejkZfFrjIY",
+      "title": "Dir",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "Jn5n2H-EQz8",
+      "title": "Oroley",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "fzAU9NHI_QA",
+      "title": "Crit",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "HwAu3N4hVGs",
+      "title": "Professor",
+      "contentType": "song",
+      "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
     }
   ]
 }
