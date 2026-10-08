@@ -30,7 +30,7 @@ jobs:
           }
           (async () => {
             const ids=new Set();
-            for(const q of ["\"La Cobla\" punk","\"Mr Freak Ska\"","\"Miquel Gil\"","\"Quatre Parets\" música","\"Mendra\""]){
+            for(const q of ["\"La Cobla\" \"Topic\"","\"Miquel Gil\" \"Topic\"","\"Mendra\" \"Topic\"","\"Mr Freak Ska\" canal"]){
               const r=await api('search',{part:'snippet',type:'video',maxResults:'5',q});
               console.log('SEARCH '+JSON.stringify({q,items:r.items}));
               for(const x of r.items||[])ids.add(x.snippet.channelId);
