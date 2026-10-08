@@ -48,4 +48,9 @@ Fleca gegant i Superherois són cançons curtes, no Shorts: comprovació HEAD am
 
 ## Validació
 
-Alta limitada a aquest artista nou. La comprovació del feed i el registre final de revisió d’idioma es completen després de la indexació.
+Base validada: 427 artistes. Alta limitada a aquest artista nou; el pipeline només ha consultat 1 canal nou. Indexació completada i comprovació exacta superada: 17 vídeos presents entre el feed i l’arxiu, cap vídeo addicional del canal. Revisió d’idioma registrada únicament per aquests 17 IDs, preservant els altres pendents i descartats.
+
+- Indexació: https://github.com/segueix/musica/actions/runs/37814020620
+- Verificació de selecció: https://github.com/segueix/musica/actions/runs/37814092479
+
+El workflow temporal d’inspecció/verificació s’ha retirat després de comprovar el resultat.
