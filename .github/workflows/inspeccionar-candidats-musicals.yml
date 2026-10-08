@@ -1,0 +1,24 @@
+name: Inspeccionar punk
+on:
+  push:
+    branches: [main]
+    paths: [".github/workflows/inspeccionar-candidats-musicals.yml"]
+permissions:
+  contents: read
+jobs:
+  inspeccio:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "20"
+      - name: Consulta limitada de candidats
+        env:
+          YOUTUBE_API_KEY_SERVER: ${{ secrets.YOUTUBE_API_KEY_SERVER }}
+        run: |
+          node - <<'NODE'
+          async function api(endpoint,params){const u=new URL('https://www.googleapis.com/youtube/v3/'+endpoint);for(const[k,v]of Object.entries(params))u.searchParams.set(k,v);u.searchParams.set('key',process.env.YOUTUBE_API_KEY_SERVER);const r=await fetch(u);if(!r.ok)throw Error('YouTube '+r.status);return r.json();}
+          (async()=>{for(const handle of ['@esperitdevi','@groggyrude']){const r=await api('channels',{part:'snippet,contentDetails',forHandle:handle});const c=r.items[0];let token='',tracks=[];for(let n=0;n<4;n++){const p=await api('playlistItems',{part:'snippet,contentDetails',playlistId:c.contentDetails.relatedPlaylists.uploads,maxResults:'50',...(token?{pageToken:token}:{})});const ids=p.items.map(x=>x.contentDetails.videoId);if(ids.length)tracks.push(...(await api('videos',{part:'snippet,contentDetails',id:ids.join(',')})).items);token=p.nextPageToken||'';if(!token)break;}console.log('REPERTOIRE '+JSON.stringify({id:c.id,title:c.snippet.title,handle,tracks,more:!!token}));}})().catch(e=>{console.error(e.message);process.exitCode=1;});
+          NODE
