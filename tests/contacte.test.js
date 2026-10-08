@@ -112,9 +112,9 @@ describe('Contacte i suggeriment d’artistes', () => {
         expect(info).not.toContain('YouTubers');
         expect(info).toContain('Informació per a <span>artistes i grups</span>');
         expect(info).not.toMatch(/Gaming|Radar|Programes|categories intel·ligents/);
-        // Projecte sense ànim de lucre per als músics i grups catalans
+        // Projecte sense ànim de lucre per als nostres músics i grups
         expect(info).toContain('sense ànim de lucre');
-        expect(info).toMatch(/músics i grups catalans/);
+        expect(info).toMatch(/nostres músics i grups/);
         // Com compten les visualitzacions
         expect(info).toContain('Com compten les visualitzacions als teus canals');
         expect(info).toContain('reproductor oficial de YouTube');
