@@ -29,24 +29,39 @@ jobs:
             return data;
           }
           (async()=>{
-           const ids=new Set();
-           for(const q of ['"Baixa Fidelitat"','"Bestiari" punk','"Brot Bord"','"Ciment" punk','"The Cabrians"']){
-            const r=await api('search',{part:'snippet',type:'channel',maxResults:'4',q});
+           const vids=new Set(["5Ib4h3aC2RE","6LcjbBbOt_U","D5A6T_eVyrM","HQwYp5iErqo","IxN-4GIqya4","OLSv6Z7amR0","RA4zzpz69KM","RwIKVpFFznM","Yr83BJXoFaM","ZIHtCvDCWTM","hXfE-BZCtJo","o0ZlXHr_yRc","sFeEqeoEtOM","v3K0tHmYzPw","uyQhl6D75sg","UHWg6k6GdT8","sqV58mvnPWM","SVnGLKqGpj4","Ltxrh7OFZw4","psn6OYGk9M8","x0600QG5yVo","7abqbEGdCFM","rGKGnWOL5J4","FeotQ8SOxq4","QrsTQkoYx7k","s7LFhoPGb58","hymQyy-ZCss","AH5TKPmRdQ8","DuG56JoHl2E","2I0ZxBIdZLQ","Z4irLitnQRk","kS-ByZ1PsdI","DDE-RYIqCHw","OKF6zVKedag","oxadvkrxuq0","PFPcb0S0d0c","ScmkirS0eW8","jc2w-CAzJFw"]), channelIds=new Set();
+           for(const q of ['"Bestiari" "Nit d\'estrena"','"Bestiari" "Persona tèbia"','"Ciment" "Pau Casas"','"Ciment" "Histeria"']){
+            const r=await api('search',{part:'snippet',type:'video',maxResults:'5',q});
             console.log('SEARCH '+JSON.stringify({q,items:r.items}));
-            for(const x of r.items||[])if(x.id?.channelId)ids.add(x.id.channelId);
+            for(const x of r.items||[]){if(x.id?.videoId)vids.add(x.id.videoId);if(/^(Bestiari|Ciment)/i.test(x.snippet?.channelTitle||''))channelIds.add(x.snippet.channelId);}
            }
-           for(const id of ids){
+           for(const q of ['"Bestiari"','"Ciment" "Topic"']){
+            const r=await api('search',{part:'snippet',type:'channel',maxResults:'5',q});
+            console.log('SEARCH '+JSON.stringify({q,items:r.items}));
+            for(const x of r.items||[])if(/^(Bestiari|Ciment)/i.test(x.snippet?.title||''))channelIds.add(x.id.channelId);
+           }
+           for(const id of channelIds){
             try{
              const c=(await api('channels',{part:'snippet,contentDetails',id})).items?.[0];if(!c)continue;
              const playlistId=c.contentDetails?.relatedPlaylists?.uploads;
-             let pageToken='',tracks=[];
-             for(let i=0;playlistId&&i<3;i++){
-              const p=await api('playlistItems',{part:'snippet,contentDetails',playlistId,maxResults:'50',...(pageToken?{pageToken}:{})});
-              tracks.push(...(p.items||[]).map(x=>({id:x.contentDetails.videoId,title:x.snippet.title,description:x.snippet.description})));
-              pageToken=p.nextPageToken;if(!pageToken)break;
-             }
-             console.log('REPERTOIRE '+JSON.stringify({id,title:c.snippet.title,handle:c.snippet.customUrl,description:c.snippet.description,tracks,more:!!pageToken}));
+             const p=await api('playlistItems',{part:'snippet,contentDetails',playlistId,maxResults:'50'});
+             const tracks=(p.items||[]).map(x=>({id:x.contentDetails.videoId,title:x.snippet.title,description:x.snippet.description}));
+             tracks.forEach(t=>vids.add(t.id));
+             console.log('REPERTOIRE '+JSON.stringify({id,title:c.snippet.title,handle:c.snippet.customUrl,description:c.snippet.description,tracks,more:!!p.nextPageToken}));
             }catch(e){console.log('CHANNEL_ERROR '+JSON.stringify({id,error:e.message}));}
+           }
+           const ids=[...vids];
+           for(let i=0;i<ids.length;i+=50){
+            const data=await api('videos',{part:'snippet,contentDetails',id:ids.slice(i,i+50).join(',')});
+            for(const v of data.items||[]){
+             const m=v.contentDetails.duration.match(/PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?/);
+             const seconds=m?Number(m[1]||0)*3600+Number(m[2]||0)*60+Number(m[3]||0):0;
+             let redirect={};
+             if(seconds>0&&seconds<=120){
+              try{const r=await fetch('https://www.youtube.com/shorts/'+v.id,{method:'HEAD',redirect:'manual',signal:AbortSignal.timeout(10000)});redirect={status:r.status,location:r.headers.get('location')};}catch{redirect={error:'network'};}
+             }
+             console.log('VIDEO '+JSON.stringify({id:v.id,title:v.snippet.title,channelId:v.snippet.channelId,channelTitle:v.snippet.channelTitle,description:v.snippet.description,seconds,...redirect}));
+            }
            }
           })().catch(e=>{console.error(e.message);process.exit(1)});
           NODE
