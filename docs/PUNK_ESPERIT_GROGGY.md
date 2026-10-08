@@ -90,4 +90,6 @@ Groggy Rude: Turntable, Pineapple, Paradise of Disorder i We're coming back amb 
 
 Base d'artistes: 450 artistes, vàlida. Cap declaració de subtítols castellans als 50 vídeos seleccionats. Tots superen 120 segons; no cal registrar falsos Shorts. Proves generals de la mateixa sessió: 1019 correctes i 5 errors preexistents; lint amb 5 errors i 181 avisos preexistents.
 
-Feed i verificació dels 50 IDs: pendents.
+[Feed actualitzat](https://github.com/segueix/musica/actions/runs/37837288495): només 2 canals consultats de 541; 96 proves del pipeline superades.
+
+[Verificació exacta](https://github.com/segueix/musica/actions/runs/37837403365): 13 + 37 vídeos presents al feed/arxiu, cap vídeo fora de la selecció ni cap Short. Els 50 IDs seleccionats passen a revisats; es preserven la resta de pendents.
