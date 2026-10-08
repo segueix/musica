@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-08T15:42:16.868Z",
+  "updatedAt": "2026-10-08T15:42:58.051Z",
   "artists": [
     {
       "name": "2ES",
@@ -31204,7 +31204,47 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": []
+        "channels": [],
+        "searchCandidates": [
+          {
+            "id": "UCHYDybCgyBhbXW9cLr8eiMA",
+            "title": "Pascal Breda",
+            "handle": "@pascalbreda7947",
+            "description": "",
+            "subscriberCount": 12,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_ncze5CpN_dfijTxAcpQ6L5tGIHRq_ckuZKsfPz6SuZ5-8=s240-c-k-c0x00ffffff-no-rj",
+            "score": 5,
+            "reasons": [
+              "primer resultat"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-08T15:42:56.288Z"
+          },
+          {
+            "id": "UCoY5F7OMqzV29CpBEaMh9AQ",
+            "title": "Association Les Argonautes",
+            "handle": "@kaneji74",
+            "description": "",
+            "subscriberCount": 38,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_nBGkBiGYRAvKeH16FYLdT_eMPUNdUdRPXn5Omxb2ZjVw=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-08T15:42:56.288Z"
+          },
+          {
+            "id": "UCc_J_ftHHAWZsKrYdm9tXwQ",
+            "title": "Brenda🦋 Ouma🌹",
+            "handle": "@brendaouma-w3m",
+            "description": "💙 gospel Artist 💖 \n\n🥀musical 🦋 love 😚\n\n\nHolla>>>>📱0794759102🤙",
+            "subscriberCount": 705,
+            "thumbnail": "https://yt3.ggpht.com/bBsdp4dBSBue7z5CTCzcygd2DB8I5-TxUR15iDTVf2SD5XuEKQFeaM9NH4_OURq_YGZus2gjVg=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-08T15:42:56.288Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -31215,7 +31255,17 @@
         "genre:manual"
       ],
       "lastChecked": null,
-      "notes": "Grup de death metal de Breda; pendent de verificar canal i repertori."
+      "notes": "Grup de death metal de Breda; pendent de verificar canal i repertori.",
+      "enrichment": {
+        "youtubeSearch": {
+          "checkedAt": "2026-10-08T15:42:56.288Z",
+          "status": "candidats",
+          "query": "Assot Breda",
+          "resultCount": 3,
+          "bestScore": 5,
+          "autoAcceptedId": null
+        }
+      }
     },
     {
       "name": "ASSAC!",
@@ -31232,7 +31282,47 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": []
+        "channels": [],
+        "searchCandidates": [
+          {
+            "id": "UCVQ_h3DBWjUQbZ7Jdgh-HMQ",
+            "title": "Isaac Newton Hardcore",
+            "handle": "@zachardcore",
+            "description": "",
+            "subscriberCount": 12,
+            "thumbnail": "https://yt3.ggpht.com/xB-Uh81I9UIq3NsG_NXns49SkER9U4JbWUSB06kD-OQiWnUsLIzHOvu0-8udF4AKdOvOH3FU=s240-c-k-c0x00ffffff-no-rj",
+            "score": 5,
+            "reasons": [
+              "primer resultat"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-08T15:42:56.754Z"
+          },
+          {
+            "id": "UCyrD5sw7_w23LT9hrLqWKIw",
+            "title": "Isaac Hardcore",
+            "handle": "@isaachardcore2260",
+            "description": "Olá, eu sou o Isaac Tenho 13 anos e  moro na cidade de Angicos-RN. Vou agradecer muito a vocês, se vocês se inscreverem no meu canal. Beijos meus amores. Flw!",
+            "subscriberCount": 127,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_lOv0M0RLF9m1xb85NZwZ4c8cevsunpxVQgdqXm-NcfKJU=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-08T15:42:56.754Z"
+          },
+          {
+            "id": "UCuCv3Z4lDpumwJUz5A39GPw",
+            "title": "Hardcore Isaac",
+            "handle": "@hardcoreisaac7562",
+            "description": "",
+            "subscriberCount": 5,
+            "thumbnail": "https://yt3.ggpht.com/Imx8m3gPFWVZwPBoWEVoG7OsTmQ9_pZJ4Y9Qcs2Ug07-HH9cgur_STHFCcw3h8umKmvCXCeV=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-08T15:42:56.754Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -31243,7 +31333,17 @@
         "genre:manual"
       ],
       "lastChecked": null,
-      "notes": "Hardcore de Barcelona. Cal revisar també les versions."
+      "notes": "Hardcore de Barcelona. Cal revisar també les versions.",
+      "enrichment": {
+        "youtubeSearch": {
+          "checkedAt": "2026-10-08T15:42:56.754Z",
+          "status": "candidats",
+          "query": "ASSAC hardcore",
+          "resultCount": 3,
+          "bestScore": 5,
+          "autoAcceptedId": null
+        }
+      }
     },
     {
       "name": "Autodestrucció",
@@ -31258,7 +31358,53 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": []
+        "channels": [],
+        "searchCandidates": [
+          {
+            "id": "UC8yBjieIRVNRxjAVi0FO1DQ",
+            "title": "Autodestrucció - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 40,
+            "thumbnail": "https://yt3.ggpht.com/g2mmex-SPP8I8gaqoyAUxVaiuaSDv3mj8SMkWWl2t0NLuNmpl2gfetDFBW00M-85f23YiDp7fg=s240-c-k-c0x00ffffff-no-rj",
+            "score": 85,
+            "reasons": [
+              "nom exacte de canal Topic",
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-08T15:42:57.035Z"
+          },
+          {
+            "id": "UC_BdTIqiBY-vq4GTrxic4xw",
+            "title": "autodestruccion metal",
+            "handle": "@autodestruccionmetal",
+            "description": "Intagram : autodestruccionmetal",
+            "subscriberCount": 6,
+            "thumbnail": "https://yt3.ggpht.com/BIv14JwAFtEU4IwAVNAjLymbisxWtFnhbuQUsBPo9-uVqxuBgQGcqTgTtUDhnFcp7mIGbZCZRg=s240-c-k-c0x00ffffff-no-rj",
+            "score": 53,
+            "reasons": [
+              "nom parcial",
+              "handle coincident"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-08T15:42:57.035Z"
+          },
+          {
+            "id": "UCR9J9TDVvh2MPQ5eS3vSyiA",
+            "title": "DESTRUCTIVO3Y33 AUTODESTRUCCIÓN",
+            "handle": "@destructivo3y33autodestruc5",
+            "description": "LA AUTODESTRUCCIÓN LLEGO EN ESTOS TIEMPOS ESTAIS PREPARADOS VAAAAAAAAAAAAAMOOOOOS FUEGOOOOOO GASOLINAAAA LOCOS DE LA PANDEMIA PARANOIA EN SUS CABEZAS EL ORÁCULO LLEGÓ A TU MENTE SKIZOIDE NO PUEDES UIR NI GRITAR ESTAS AMPARANOIAO ",
+            "subscriberCount": 47,
+            "thumbnail": "https://yt3.ggpht.com/7vqmNCJ2ikZj8R7zx-TlwP8SoZjTd5lE7YhoAaxV3wFaHth7O-zc19YsN-jnu32uZ7js0x5Fbw=s240-c-k-c0x00ffffff-no-rj",
+            "score": 35,
+            "reasons": [
+              "nom parcial"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-08T15:42:57.035Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -31269,7 +31415,17 @@
         "genre:manual"
       ],
       "lastChecked": null,
-      "notes": "Projecte de Càndid Coll; pendent de verificar canal i repertori."
+      "notes": "Projecte de Càndid Coll; pendent de verificar canal i repertori.",
+      "enrichment": {
+        "youtubeSearch": {
+          "checkedAt": "2026-10-08T15:42:57.035Z",
+          "status": "candidats",
+          "query": "Autodestrucció",
+          "resultCount": 3,
+          "bestScore": 85,
+          "autoAcceptedId": null
+        }
+      }
     },
     {
       "name": "All Crü",
@@ -31287,7 +31443,51 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": []
+        "channels": [],
+        "searchCandidates": [
+          {
+            "id": "UCyNWjZ1IhLo8Iy6nUMEz0rw",
+            "title": "ALL CRÜ",
+            "handle": "@allcrupunkrock",
+            "description": "🧄 Punk Rock ALL Stars 📍 CAT",
+            "subscriberCount": 162,
+            "thumbnail": "https://yt3.ggpht.com/23Ho_wHqGSULKogmxIkGzf-rSSdaJ-JG3o-DPylDOBhtPxxEVv4X6j0JLOrT3ZjzM4z0rbUd=s240-c-k-c0x00ffffff-no-rj",
+            "score": 88,
+            "reasons": [
+              "nom exacte",
+              "handle coincident"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-08T15:42:57.404Z"
+          },
+          {
+            "id": "UC_tsO4hz22Lk0jb1CEIFPmw",
+            "title": "ALL CRÜ - Topic",
+            "handle": null,
+            "description": "",
+            "subscriberCount": 45,
+            "thumbnail": "https://yt3.ggpht.com/P3DhyEwNGOTB08lWNQI8sa9nDtR34Um6lIcqmQuZ5ATa7J4amssYiUMENvrEjrlMEszqg3Ok=s240-c-k-c0x00ffffff-no-rj",
+            "score": 85,
+            "reasons": [
+              "nom exacte de canal Topic",
+              "primer resultat"
+            ],
+            "suggestedType": "topic",
+            "discoveredAt": "2026-10-08T15:42:57.404Z"
+          },
+          {
+            "id": "UCq2g_Vcu3J1OwNRmdTNoxYA",
+            "title": "Mötley Crüe",
+            "handle": "@motleycrue",
+            "description": "Return Of Carnival Of Sins Tour - July - Sept 2026\nTickets available now - https://www.motley.com/\nCrüeseum is now open!! \n",
+            "subscriberCount": 1350000,
+            "thumbnail": "https://yt3.ggpht.com/1GEPhMtREVYDdFKn5py3ijLKiNODR0MJQLOXUUqETeBM_BbSxZa6J37Xa1xXt36cdEtyQl7P9g=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-08T15:42:57.404Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -31298,7 +31498,17 @@
         "genre:manual"
       ],
       "lastChecked": null,
-      "notes": "Punk rock en català; disc All i Odi."
+      "notes": "Punk rock en català; disc All i Odi.",
+      "enrichment": {
+        "youtubeSearch": {
+          "checkedAt": "2026-10-08T15:42:57.404Z",
+          "status": "candidats",
+          "query": "All Crü",
+          "resultCount": 3,
+          "bestScore": 88,
+          "autoAcceptedId": null
+        }
+      }
     },
     {
       "name": "Bonestorm",
@@ -31313,7 +31523,37 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": []
+        "channels": [],
+        "searchCandidates": [
+          {
+            "id": "UCJXKRxaUXEg0kpgb-Kd8uDg",
+            "title": "Bonestorm",
+            "handle": "@bonestorm2417",
+            "description": "Fast as shit hardcore punk band from Vic, Catalonia.\n\nBanda de punk hardcore a tota merda des de Vic.",
+            "subscriberCount": 56,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_miOofN2_Ut4cAJy9BYQkRf4Ml2NHSjqGlYCGId9QvozA=s240-c-k-c0x00ffffff-no-rj",
+            "score": 93,
+            "reasons": [
+              "nom exacte",
+              "handle coincident",
+              "primer resultat"
+            ],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-08T15:42:57.765Z"
+          },
+          {
+            "id": "UCY8ypPJgfJqeYTtFEDyqCyw",
+            "title": "WrestlingNewsCo",
+            "handle": "@wrestlingnewsco",
+            "description": "Home of The Velvet Ropes with SoCal Val. Latest wrestling news and exclusive interviews. Visit WrestlingNews.Co for the latest breaking WWE News.",
+            "subscriberCount": 195000,
+            "thumbnail": "https://yt3.ggpht.com/FTlnZjc0yLIqelHZzmSOs9PWQ_znQy17Me0AS-51yD5X886EGJnS0gLAsmyGxy-B_DRw-71TxA=s240-c-k-c0x00ffffff-no-rj",
+            "score": 0,
+            "reasons": [],
+            "suggestedType": "official",
+            "discoveredAt": "2026-10-08T15:42:57.765Z"
+          }
+        ]
       },
       "confidence": "pendent",
       "reviewStatus": "pendent",
@@ -31324,7 +31564,17 @@
         "genre:manual"
       ],
       "lastChecked": null,
-      "notes": "Grup de Vic. Té repertori en català i anglès; no confondre amb grups homònims. Revisió per cançó necessària."
+      "notes": "Grup de Vic. Té repertori en català i anglès; no confondre amb grups homònims. Revisió per cançó necessària.",
+      "enrichment": {
+        "youtubeSearch": {
+          "checkedAt": "2026-10-08T15:42:57.765Z",
+          "status": "candidats",
+          "query": "Bonestorm Vic",
+          "resultCount": 2,
+          "bestScore": 93,
+          "autoAcceptedId": null
+        }
+      }
     }
   ]
 }
