@@ -1,24 +1,30 @@
-name: Inspeccionar candidats musicals
+name: Verificar metall grup 2
 on:
-  push:
-    branches: [main]
-    paths: [".github/workflows/inspeccionar-candidats-musicals.yml"]
+  workflow_run:
+    workflows: ["Actualitzar feed musical"]
+    types: [completed]
 permissions:
   contents: read
 jobs:
-  inspeccio:
+  verifica:
+    if: github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
       - uses: actions/setup-node@v5
         with:
           node-version: "20"
-      - name: Consulta limitada de candidats i repertoris
-        env:
-          YOUTUBE_API_KEY_SERVER: ${{ secrets.YOUTUBE_API_KEY_SERVER }}
+      - name: Comprova seleccio i exclusions
         run: |
           node - <<'NODE'
-          async function api(endpoint,params){const u=new URL('https://www.googleapis.com/youtube/v3/'+endpoint);for(const[k,v]of Object.entries(params))u.searchParams.set(k,v);u.searchParams.set('key',process.env.YOUTUBE_API_KEY_SERVER);const r=await fetch(u);const d=await r.json();if(!r.ok)throw Error('YouTube '+r.status);return d;}
-          (async()=>{const ids=new Set(['UCQz3jf86vHTtfVwXd-rOSrA']);for(const q of ["\"Udol\" \"Regne\"","\"Udol\" \"Invocació\"","\"Ósserp\" \"Sang\""]){const r=await api('search',{part:'snippet',type:'video',maxResults:'5',q});console.log('SEARCH '+JSON.stringify({q,items:r.items}));for(const x of r.items||[])ids.add(x.snippet.channelId);}
-          for(const id of ids){const r=await api('channels',{part:'snippet,contentDetails',id});const c=r.items?.[0];if(!c||!/entropia|sserp|bocc|udol|fetillera|metzinera/i.test(c.snippet.title))continue;let token='',tracks=[];for(let n=0;n<4;n++){const p=await api('playlistItems',{part:'snippet,contentDetails',playlistId:c.contentDetails.relatedPlaylists.uploads,maxResults:'50',...(token?{pageToken:token}:{})});const vids=p.items.map(x=>x.contentDetails.videoId);if(vids.length){const v=await api('videos',{part:'snippet,contentDetails',id:vids.join(',')});tracks.push(...v.items);}token=p.nextPageToken||'';if(!token)break;}for(const t of tracks){const m=t.contentDetails.duration.match(/^PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?$/);const sec=m?(+m[1]||0)*3600+(+m[2]||0)*60+(+m[3]||0):9999;if(sec<=120){const h=await fetch('https://www.youtube.com/shorts/'+t.id,{method:'HEAD',redirect:'manual',signal:AbortSignal.timeout(6000)}).catch(()=>null);t.shortCheck={status:h?.status,location:h?.headers.get('location')};}}console.log('REPERTOIRE '+JSON.stringify({id,title:c.snippet.title,handle:c.snippet.customUrl,description:c.snippet.description,tracks,more:!!token}));}})().catch(e=>{console.error(e.message);process.exitCode=1;});
+          const fs=require('fs'),assert=require('assert');
+          const specs=[{"artist":"Entropia","id":"UCT-wRacXWBQKqr1z6ZGoubw","ids":["XGTVyuIVGy8","aTWarcZRYsA"]},{"artist":"Entropia","id":"UCayj6r8npsfkvYupNj8YC4A","ids":["Th9BjzBEnrQ"]},{"artist":"Ósserp","id":"UCCmgW83QdTLEGTkEc6uyJ6Q","ids":["C9IkAfUQTkE","CM0dT4Zy4pI","CjfHzT2H2xY","LJu4JTho8gU","b3B8yY0LNwk","pEgPAfNN42E","pSLWvfk9Jq4","sIkUwV3Dbq0","vVs7x8cu2uk","CN30nxZz0bc","IPHXbRj83lg","tFHrFpK3-yA","vKnnC_nDXsI"]},{"artist":"Bocc","id":"UCR5qRB1oeWWJF8QhX7WmuXQ","ids":["ZnwKX-iMYxI","_AhMDFM9ttw","L6s-SQqblQE","-7fnIWhEhXA","wniV8oEQT0k","plJLcSL1mik","KwNcIdMdnBg","NtFIjn78lzE","ODIX6a_e0Z4","2qOBu8y6Tq8","2h_jEGLE0yw","E3yYPutOx_Y","ElOwLz4YMgs","7XHaJUkY1n8","7um2Be4KAbE","cJuiJE4yzzo","ki7ZZtrWIXY","IytBGB8x5H0","XR1yfPxHam8","Fe8FK9TO5ZA","f88wvjaxI84","W0O_2SK2m0A","5gR_NkVnMN4","hdFHPUYbwBE","j7xXBGcFX9E","KjqC7gMn5HY","0FsoSlhJq34","sB2gQeGRWfk","Zq_Bk56Drrw","poUwVGHRpl0","E5wTIXaceaY","fvOR2vXBzVQ","RjcfQGBIWNk","z474isVpx6I","8PgdVMpWn9E","rt5pii5v7cs","Ff3wdjFRVxc","xZpuS0GOTD0","MomL6WizUDk","0sW5BBR7JTA","bltVEh5YLuo","XfbE80xxWYs","nIH_Ji-dCVE","dxf2378gEkA","Z5y14tqIYRo","2ogYYSjzph4","Nb6jgyEr-rs","OjMeFmcRWBQ","hr7FslhbMzk","Vzdzq6R4uaQ","n7T9SsqBiiE","wMBj6OUpvqs","5FZfzZvTXVM"]},{"artist":"Falç de Fetillera","id":"UCgVBViL3I9YWFVBHIyvcpjg","ids":["VMcBZ2w4WP4","6vxPERj3W6U","bmo1tvlwffc","sA_NcRNbeQA","iwcKYIQSnok","7GnXTwcpsc0","9dZXv1e7zTU","uuvED4IWOYs","W1hPN8-LIaE","VL0lpK8LGWw","eeqLklHc6ws","G-ns72AUj1E","9wvllOlVrR0"]},{"artist":"Falç de Fetillera","id":"UC8GlOjZpZMKHieUbeJ9eh7g","ids":["IC3S3X35_M4","V3xf0sQc02o","o7cKsUEP398","ZaJtD5f7o6g","ntiR8TEKagI","zfBO2Rd92Do","GNjotmKaOOs","3TZpwe3RHIU","pKoz6ezl4wM","cgy_9NiZvQk","sWBTSGGr85k","EXFn5epnKjk","_iKRO23EM3g","pVqOvTDu3nw","3QqRdmmv3E0","sUelxJgpE3g","4KYBDkbgksM","VBThn-d6TIA","hpun9M00Ncs","kno3FuWTk4A","u-kHq2ZPjH0"]},{"artist":"Udol","id":"UCQz3jf86vHTtfVwXd-rOSrA","ids":["0Oxj-YIuIIM","TofPmLuy8Fs"]},{"artist":"Udol","id":"UCrxpjvY7G2ffEklcmSHm5og","ids":["2sQH2iiLuf4","52m3tz6DrTY","FD5WcmCzChw","WbB-LRLSdDw","O0N1MLhpyQU","Rk8E_fJMB54","27fGivY1LgQ","4ifhqXk6baw","EfVCCX5-LhE","mhh9dnOfSRc"]},{"artist":"Udol","id":"UCYnT07O7RJlNvU_sNq6EsZQ","ids":["sZ6FaKVr1fk"]}];
+          const found=new Map();
+          function walk(o){if(!o||typeof o!=='object')return;if(typeof o.id==='string'&&specs.some(s=>s.ids.includes(o.id)||s.id===o.channelId))found.set(o.id,o);for(const v of Object.values(o))if(v&&typeof v==='object')walk(v);}
+          walk(JSON.parse(fs.readFileSync('data/feed.json','utf8')));
+          function files(dir){if(!fs.existsSync(dir))return;for(const e of fs.readdirSync(dir,{withFileTypes:true})){const p=dir+'/'+e.name;if(e.isDirectory())files(p);else if(p.endsWith('.json'))walk(JSON.parse(fs.readFileSync(p,'utf8')));}}
+          files('data/archive');const allowed=new Set(specs.flatMap(s=>s.ids));for(const s of specs){const missing=s.ids.filter(id=>!found.has(id));console.log(JSON.stringify({artist:s.artist,channel:s.id,expected:s.ids.length,missing}));assert.equal(missing.length,0,'Vídeos absents');}for(const[id,v]of found)if(specs.some(s=>s.id===v.channelId))assert(allowed.has(id),'Vídeo no autoritzat '+id);console.log('HEAVY_2_OK '+allowed.size+' vídeos; selecció exacta.');
           NODE

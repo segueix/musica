@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-08T17:55:14.113Z",
+  "updatedAt": "2026-10-08T18:09:36.926Z",
   "artists": [
     {
       "name": "2 Princeses Barbudes",
@@ -3649,6 +3649,46 @@
           "autoAcceptedId": null
         }
       }
+    },
+    {
+      "name": "Bocc",
+      "displayName": "Bocc",
+      "aliases": [],
+      "genres": [
+        "Metal"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCR5qRB1oeWWJF8QhX7WmuXQ",
+            "handle": null,
+            "name": "Bocc - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://bocc.bandcamp.com/music",
+        "https://www.nocleansinging.com/2026/09/08/an-ncs-interview-bocc/",
+        "https://bocc.bandcamp.com/album/la-forja-dels-cranis-ep",
+        "https://www.youtube.com/channel/UCR5qRB1oeWWJF8QhX7WmuXQ",
+        "manual-user-2026-10-08",
+        "genre:manual",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": "2026-10-08T18:09:36.926Z",
+      "notes": "Lot 2 de metall de Joan Hernández. Selecció explícita de 53 vídeos; revisió documental d'idioma, límits i exclusions a docs/HEAVY_GRUP_2.md. Només els IDs de l'allowlist s'incorporen."
     },
     {
       "name": "Bonestorm",
@@ -8771,6 +8811,52 @@
       "genresRaw": []
     },
     {
+      "name": "Entropia",
+      "displayName": "Entropia",
+      "aliases": [],
+      "genres": [
+        "Metal"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCT-wRacXWBQKqr1z6ZGoubw",
+            "handle": "@entropia.",
+            "name": "ENTROPIA Anarkosatanisme",
+            "type": "official",
+            "primary": true
+          },
+          {
+            "id": "UCayj6r8npsfkvYupNj8YC4A",
+            "handle": null,
+            "name": "Entropia - Topic",
+            "type": "topic",
+            "primary": false
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://entropia-catalonia.bandcamp.com/album/p-nik-sagnant",
+        "https://www.youtube.com/channel/UCT-wRacXWBQKqr1z6ZGoubw",
+        "https://www.youtube.com/channel/UCayj6r8npsfkvYupNj8YC4A",
+        "manual-user-2026-10-08",
+        "genre:manual",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": "2026-10-08T18:09:36.926Z",
+      "notes": "Lot 2 de metall de Joan Hernández. Selecció explícita de 3 vídeos; revisió documental d'idioma, límits i exclusions a docs/HEAVY_GRUP_2.md. Només els IDs de l'allowlist s'incorporen."
+    },
+    {
       "name": "Esquirols",
       "aliases": [],
       "genres": [
@@ -9168,6 +9254,59 @@
           "wikidataWorkEvidence": []
         }
       }
+    },
+    {
+      "name": "Falç de Fetillera",
+      "displayName": "Falç de Fetillera",
+      "aliases": [
+        "Falç de Metzinera"
+      ],
+      "genres": [
+        "Folk i arrel",
+        "Metal"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCgVBViL3I9YWFVBHIyvcpjg",
+            "handle": "@falcdefetillera",
+            "name": "Falç de Fetillera",
+            "type": "official",
+            "primary": true
+          },
+          {
+            "id": "UC8GlOjZpZMKHieUbeJ9eh7g",
+            "handle": null,
+            "name": "Falç de Fetillera - Topic",
+            "type": "topic",
+            "primary": false
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://falcdefetillera.bandcamp.com/album/vol-i-fal-de-metzinera",
+        "https://falcdefetillera.bandcamp.com/album/vol-ii-fal-de-metzinera",
+        "https://falcdefetillera.bandcamp.com/track/el-pacte",
+        "https://falcdefetillera.bandcamp.com/track/abra-cat-dabra",
+        "https://falcdefetillera.bandcamp.com/track/estrella-refulgent",
+        "https://www.youtube.com/channel/UCgVBViL3I9YWFVBHIyvcpjg",
+        "https://www.youtube.com/channel/UC8GlOjZpZMKHieUbeJ9eh7g",
+        "manual-user-2026-10-08",
+        "genre:manual",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": "2026-10-08T18:09:36.926Z",
+      "notes": "Lot 2 de metall de Joan Hernández. Selecció explícita de 34 vídeos; revisió documental d'idioma, límits i exclusions a docs/HEAVY_GRUP_2.md. Només els IDs de l'allowlist s'incorporen."
     },
     {
       "name": "Falciots Ninja",
@@ -22522,6 +22661,45 @@
       "displayName": "Orxata Sound System"
     },
     {
+      "name": "Ósserp",
+      "displayName": "Ósserp",
+      "aliases": [],
+      "genres": [
+        "Metal"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCCmgW83QdTLEGTkEc6uyJ6Q",
+            "handle": null,
+            "name": "Ósserp - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://osserp.bandcamp.com/album/els-nous-cants-de-la-sibil-la",
+        "https://osserp.bandcamp.com/album/sota-el-cintur-dori-ep",
+        "https://www.youtube.com/channel/UCCmgW83QdTLEGTkEc6uyJ6Q",
+        "manual-user-2026-10-08",
+        "genre:manual",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": "2026-10-08T18:09:36.926Z",
+      "notes": "Lot 2 de metall de Joan Hernández. Selecció explícita de 13 vídeos; revisió documental d'idioma, límits i exclusions a docs/HEAVY_GRUP_2.md. Només els IDs de l'allowlist s'incorporen."
+    },
+    {
       "name": "Ouineta",
       "aliases": [],
       "genres": [
@@ -30823,6 +31001,61 @@
           "wikidataWorkEvidence": []
         }
       }
+    },
+    {
+      "name": "Udol",
+      "displayName": "Udol",
+      "aliases": [],
+      "genres": [
+        "Metal"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCQz3jf86vHTtfVwXd-rOSrA",
+            "handle": "@udolband3089",
+            "name": "UDOL BAND",
+            "type": "official",
+            "primary": true
+          },
+          {
+            "id": "UCrxpjvY7G2ffEklcmSHm5og",
+            "handle": null,
+            "name": "Udol - Topic",
+            "type": "topic",
+            "primary": false
+          },
+          {
+            "id": "UCYnT07O7RJlNvU_sNq6EsZQ",
+            "handle": "@udolband",
+            "name": "Udol Band",
+            "type": "official",
+            "primary": false
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://udol.bandcamp.com/album/el-regne-2",
+        "https://udol.bandcamp.com/album/153-lliures-i-17-salaris",
+        "https://www.youtube.com/channel/UCQz3jf86vHTtfVwXd-rOSrA",
+        "https://www.youtube.com/channel/UCrxpjvY7G2ffEklcmSHm5og",
+        "https://www.youtube.com/channel/UCYnT07O7RJlNvU_sNq6EsZQ",
+        "manual-user-2026-10-08",
+        "genre:manual",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": "2026-10-08T18:09:36.926Z",
+      "notes": "Lot 2 de metall de Joan Hernández. Selecció explícita de 13 vídeos; revisió documental d'idioma, límits i exclusions a docs/HEAVY_GRUP_2.md. Només els IDs de l'allowlist s'incorporen."
     },
     {
       "name": "ultralone",

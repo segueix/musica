@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-08T17:55:14.113Z",
+  "updatedAt": "2026-10-08T18:09:36.926Z",
   "description": "Decisions manuals sobre el tipus de contingut de vídeos concrets. Manen sobre el classificador automàtic (scripts/lib/classificar_contingut_musical.js) i el pipeline (scripts/update_music_feed.js) les reaplica a cada generació del feed. Tipus permesos: song, live_song, album, other. Un vídeo revisat aquí surt de data/music-content-review.json.",
   "videos": [
     {
@@ -3759,6 +3759,702 @@
       "title": "Korruption found- EL TEU JUST DESTÍ. (videoclip)2009 promo-2010",
       "contentType": "song",
       "note": "Lot 1 de metall: selecció musical i revisió documental d'idioma; docs/HEAVY_GRUP_1.md."
+    },
+    {
+      "id": "XGTVyuIVGy8",
+      "title": "ENTROPIA Tel De Greix  live Vallcarca-BCN 2014/09 BRUTAL DRONE METAL ANTIFA FROM CATALONIA",
+      "contentType": "live_song",
+      "note": "Entropia: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "aTWarcZRYsA",
+      "title": "ENTROPIA Tel de Greix @ II Lasarte's Fest 2012 - drone doom",
+      "contentType": "live_song",
+      "note": "Entropia: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "Th9BjzBEnrQ",
+      "title": "Tel de Greix",
+      "contentType": "song",
+      "note": "Entropia: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "C9IkAfUQTkE",
+      "title": "L'ENGANY",
+      "contentType": "song",
+      "note": "Ósserp: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "CM0dT4Zy4pI",
+      "title": "EL PES DEL BUIT",
+      "contentType": "song",
+      "note": "Ósserp: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "CjfHzT2H2xY",
+      "title": "TOT CREMA",
+      "contentType": "song",
+      "note": "Ósserp: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "LJu4JTho8gU",
+      "title": "LA RÈMORA",
+      "contentType": "song",
+      "note": "Ósserp: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "b3B8yY0LNwk",
+      "title": "L'HOME EN EL LABERINT",
+      "contentType": "song",
+      "note": "Ósserp: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "pEgPAfNN42E",
+      "title": "EL RIVAL MÉS FORT",
+      "contentType": "song",
+      "note": "Ósserp: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "pSLWvfk9Jq4",
+      "title": "CAVALCANT L'OSSA MENOR",
+      "contentType": "song",
+      "note": "Ósserp: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "sIkUwV3Dbq0",
+      "title": "LLUNA NEGRA",
+      "contentType": "song",
+      "note": "Ósserp: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "vVs7x8cu2uk",
+      "title": "L'ABRAÇADA DEL DESTÍ",
+      "contentType": "song",
+      "note": "Ósserp: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "CN30nxZz0bc",
+      "title": "Cinturó d'Orió",
+      "contentType": "song",
+      "note": "Ósserp: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "IPHXbRj83lg",
+      "title": "La nostra sang",
+      "contentType": "song",
+      "note": "Ósserp: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "tFHrFpK3-yA",
+      "title": "Segant entre diables",
+      "contentType": "song",
+      "note": "Ósserp: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "vKnnC_nDXsI",
+      "title": "Baluerna",
+      "contentType": "song",
+      "note": "Ósserp: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "ZnwKX-iMYxI",
+      "title": "4227",
+      "contentType": "song",
+      "note": "Bocc: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "_AhMDFM9ttw",
+      "title": "Ànima D’Acer",
+      "contentType": "song",
+      "note": "Bocc: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "L6s-SQqblQE",
+      "title": "Demolarium",
+      "contentType": "song",
+      "note": "Bocc: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "-7fnIWhEhXA",
+      "title": "Calvari (Dels Condemnats)",
+      "contentType": "song",
+      "note": "Bocc: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "wniV8oEQT0k",
+      "title": "Escorxador",
+      "contentType": "song",
+      "note": "Bocc: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "plJLcSL1mik",
+      "title": "Estigma",
+      "contentType": "song",
+      "note": "Bocc: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "KwNcIdMdnBg",
+      "title": "Ànima D’Acer",
+      "contentType": "song",
+      "note": "Bocc: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "NtFIjn78lzE",
+      "title": "Demolarium",
+      "contentType": "song",
+      "note": "Bocc: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "ODIX6a_e0Z4",
+      "title": "Santa Eulalia",
+      "contentType": "song",
+      "note": "Bocc: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "2qOBu8y6Tq8",
+      "title": "La Forja Dels Cranis",
+      "contentType": "song",
+      "note": "Bocc: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "2h_jEGLE0yw",
+      "title": "A La Forca",
+      "contentType": "song",
+      "note": "Bocc: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "E3yYPutOx_Y",
+      "title": "Pels Camins De La Vesania",
+      "contentType": "song",
+      "note": "Bocc: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "ElOwLz4YMgs",
+      "title": "La Culla",
+      "contentType": "song",
+      "note": "Bocc: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "7XHaJUkY1n8",
+      "title": "L'Altar",
+      "contentType": "song",
+      "note": "Bocc: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "7um2Be4KAbE",
+      "title": "Camp Dels Cremats",
+      "contentType": "song",
+      "note": "Bocc: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "cJuiJE4yzzo",
+      "title": "Dansa De La Mort",
+      "contentType": "song",
+      "note": "Bocc: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "ki7ZZtrWIXY",
+      "title": "Ala De Corb",
+      "contentType": "song",
+      "note": "Bocc: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "IytBGB8x5H0",
+      "title": "Santa Eulalia",
+      "contentType": "song",
+      "note": "Bocc: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "XR1yfPxHam8",
+      "title": "Icones Del Fracas",
+      "contentType": "song",
+      "note": "Bocc: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "Fe8FK9TO5ZA",
+      "title": "La Nit Mes Negra",
+      "contentType": "song",
+      "note": "Bocc: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "f88wvjaxI84",
+      "title": "Ala De Corb",
+      "contentType": "song",
+      "note": "Bocc: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "W0O_2SK2m0A",
+      "title": "Camp Dels Cremats",
+      "contentType": "song",
+      "note": "Bocc: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "5gR_NkVnMN4",
+      "title": "Santa Eulalia",
+      "contentType": "song",
+      "note": "Bocc: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "hdFHPUYbwBE",
+      "title": "Ànima D'Acer",
+      "contentType": "song",
+      "note": "Bocc: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "j7xXBGcFX9E",
+      "title": "Estigma",
+      "contentType": "song",
+      "note": "Bocc: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "KjqC7gMn5HY",
+      "title": "L'Escorxador",
+      "contentType": "song",
+      "note": "Bocc: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "0FsoSlhJq34",
+      "title": "La forja dels cranis",
+      "contentType": "song",
+      "note": "Bocc: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "sB2gQeGRWfk",
+      "title": "Camp dels cremats",
+      "contentType": "song",
+      "note": "Bocc: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "Zq_Bk56Drrw",
+      "title": "Icones del fracàs",
+      "contentType": "song",
+      "note": "Bocc: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "poUwVGHRpl0",
+      "title": "Camp dels cremats",
+      "contentType": "song",
+      "note": "Bocc: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "E5wTIXaceaY",
+      "title": "La Mussara",
+      "contentType": "song",
+      "note": "Bocc: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "fvOR2vXBzVQ",
+      "title": "L'home que caminava tort",
+      "contentType": "song",
+      "note": "Bocc: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "RjcfQGBIWNk",
+      "title": "A la forca",
+      "contentType": "song",
+      "note": "Bocc: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "z474isVpx6I",
+      "title": "La nit més negra",
+      "contentType": "song",
+      "note": "Bocc: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "8PgdVMpWn9E",
+      "title": "La Fam cavalca",
+      "contentType": "song",
+      "note": "Bocc: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "rt5pii5v7cs",
+      "title": "Eixam",
+      "contentType": "song",
+      "note": "Bocc: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "Ff3wdjFRVxc",
+      "title": "Sota la Creu Coberta",
+      "contentType": "song",
+      "note": "Bocc: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "xZpuS0GOTD0",
+      "title": "13 Calzes",
+      "contentType": "song",
+      "note": "Bocc: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "MomL6WizUDk",
+      "title": "Dolça mort en els llims del Rec Comptal",
+      "contentType": "song",
+      "note": "Bocc: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "0sW5BBR7JTA",
+      "title": "Caça Major",
+      "contentType": "song",
+      "note": "Bocc: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "bltVEh5YLuo",
+      "title": "Et creixen les ungles",
+      "contentType": "song",
+      "note": "Bocc: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "XfbE80xxWYs",
+      "title": "L'ombra del vampir",
+      "contentType": "song",
+      "note": "Bocc: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "nIH_Ji-dCVE",
+      "title": "La Mussara",
+      "contentType": "song",
+      "note": "Bocc: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "dxf2378gEkA",
+      "title": "13 Calzes",
+      "contentType": "song",
+      "note": "Bocc: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "Z5y14tqIYRo",
+      "title": "Et creixen les ungles",
+      "contentType": "song",
+      "note": "Bocc: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "2ogYYSjzph4",
+      "title": "L'altar",
+      "contentType": "song",
+      "note": "Bocc: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "Nb6jgyEr-rs",
+      "title": "Santa Eulalia",
+      "contentType": "song",
+      "note": "Bocc: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "OjMeFmcRWBQ",
+      "title": "La Culla",
+      "contentType": "song",
+      "note": "Bocc: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "hr7FslhbMzk",
+      "title": "Pels Camins de la Vesània",
+      "contentType": "song",
+      "note": "Bocc: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "Vzdzq6R4uaQ",
+      "title": "Ala de corb",
+      "contentType": "song",
+      "note": "Bocc: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "n7T9SsqBiiE",
+      "title": "A la forca",
+      "contentType": "song",
+      "note": "Bocc: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "wMBj6OUpvqs",
+      "title": "Dansa de mort",
+      "contentType": "song",
+      "note": "Bocc: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "5FZfzZvTXVM",
+      "title": "La nit més negra",
+      "contentType": "song",
+      "note": "Bocc: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "VMcBZ2w4WP4",
+      "title": "\"Abra Cat Dabra\" (Lady Gaga Cover) per Falç de Fetillera",
+      "contentType": "song",
+      "note": "Falç de Fetillera: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "6vxPERj3W6U",
+      "title": "EL PACTE - FALÇ DE FETILLERA",
+      "contentType": "song",
+      "note": "Falç de Fetillera: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "bmo1tvlwffc",
+      "title": "Falç de Metzinera - El Carro (Audio Oficial) | Falç de Fetillera",
+      "contentType": "song",
+      "note": "Falç de Fetillera: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "sA_NcRNbeQA",
+      "title": "Falç de Metzinera - Foc Entre Les Banyes (Audio Oficial) | Falç de Fetillera",
+      "contentType": "song",
+      "note": "Falç de Fetillera: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "iwcKYIQSnok",
+      "title": "Falç de Metzinera - La Foguera (Audio Oficial) | Falç de Fetillera",
+      "contentType": "song",
+      "note": "Falç de Fetillera: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "7GnXTwcpsc0",
+      "title": "Falç de Metzinera - Sant Silvestre (Audio Oficial) | Falç de Fetillera",
+      "contentType": "song",
+      "note": "Falç de Fetillera: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "9dZXv1e7zTU",
+      "title": "Falç de Metzinera - L'Afrodisíac (Audio Oficial) | Falç de Fetillera",
+      "contentType": "song",
+      "note": "Falç de Fetillera: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "uuvED4IWOYs",
+      "title": "Falç de Metzinera - La Filla i la Ferida (Audio Oficial) | Falç de Fetillera",
+      "contentType": "song",
+      "note": "Falç de Fetillera: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "W1hPN8-LIaE",
+      "title": "Falç de Metzinera - La Tempesta (Audio Oficial) | Falç de Fetillera",
+      "contentType": "song",
+      "note": "Falç de Fetillera: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "VL0lpK8LGWw",
+      "title": "Falç de Metzinera - La Tempesta (Videoclip) | Falç de Fetillera",
+      "contentType": "song",
+      "note": "Falç de Fetillera: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "eeqLklHc6ws",
+      "title": "Falç de Metzinera - La Tempesta (Audio Oficial) | Falç de Fetillera",
+      "contentType": "song",
+      "note": "Falç de Fetillera: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "G-ns72AUj1E",
+      "title": "Falç de Fetillera - La Foguera (Audio Oficial)",
+      "contentType": "song",
+      "note": "Falç de Fetillera: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "9wvllOlVrR0",
+      "title": "Falç de Metzinera - Foc entre les banyes (Videoclip) | Falç de Fetillera",
+      "contentType": "song",
+      "note": "Falç de Fetillera: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "IC3S3X35_M4",
+      "title": "Estrella Refulgent",
+      "contentType": "song",
+      "note": "Falç de Fetillera: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "V3xf0sQc02o",
+      "title": "Abra Cat Dabra",
+      "contentType": "song",
+      "note": "Falç de Fetillera: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "o7cKsUEP398",
+      "title": "El Pacte",
+      "contentType": "song",
+      "note": "Falç de Fetillera: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "ZaJtD5f7o6g",
+      "title": "La Foguera",
+      "contentType": "song",
+      "note": "Falç de Fetillera: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "ntiR8TEKagI",
+      "title": "La Tempesta",
+      "contentType": "song",
+      "note": "Falç de Fetillera: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "zfBO2Rd92Do",
+      "title": "L'Afrodisíac",
+      "contentType": "song",
+      "note": "Falç de Fetillera: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "GNjotmKaOOs",
+      "title": "Foc Entre Les Banyes",
+      "contentType": "song",
+      "note": "Falç de Fetillera: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "3TZpwe3RHIU",
+      "title": "Sant Silvestre",
+      "contentType": "song",
+      "note": "Falç de Fetillera: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "pKoz6ezl4wM",
+      "title": "El Carro",
+      "contentType": "song",
+      "note": "Falç de Fetillera: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "cgy_9NiZvQk",
+      "title": "La Filla i La Ferida",
+      "contentType": "song",
+      "note": "Falç de Fetillera: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "sWBTSGGr85k",
+      "title": "Foc Entre Les Banyes",
+      "contentType": "song",
+      "note": "Falç de Fetillera: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "EXFn5epnKjk",
+      "title": "La Foguera",
+      "contentType": "song",
+      "note": "Falç de Fetillera: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "_iKRO23EM3g",
+      "title": "La Tempesta",
+      "contentType": "song",
+      "note": "Falç de Fetillera: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "pVqOvTDu3nw",
+      "title": "La Foguera",
+      "contentType": "song",
+      "note": "Falç de Fetillera: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "3QqRdmmv3E0",
+      "title": "La Tempesta",
+      "contentType": "song",
+      "note": "Falç de Fetillera: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "sUelxJgpE3g",
+      "title": "La Tempesta",
+      "contentType": "song",
+      "note": "Falç de Fetillera: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "4KYBDkbgksM",
+      "title": "Vol I",
+      "contentType": "song",
+      "note": "Falç de Fetillera: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "VBThn-d6TIA",
+      "title": "Fongs i Herbes",
+      "contentType": "song",
+      "note": "Falç de Fetillera: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "hpun9M00Ncs",
+      "title": "Cau El Sol",
+      "contentType": "song",
+      "note": "Falç de Fetillera: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "kno3FuWTk4A",
+      "title": "Interludi - Versió de \"Karchata\" Folknery",
+      "contentType": "song",
+      "note": "Falç de Fetillera: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "u-kHq2ZPjH0",
+      "title": "Ell la Vol Alliberar",
+      "contentType": "song",
+      "note": "Falç de Fetillera: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "0Oxj-YIuIIM",
+      "title": "UDOL INVOCACIÓ SALA GARAGE SALOU",
+      "contentType": "live_song",
+      "note": "Udol: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "TofPmLuy8Fs",
+      "title": "UDOL - INVOCACIÓ",
+      "contentType": "song",
+      "note": "Udol: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "2sQH2iiLuf4",
+      "title": "Invocació",
+      "contentType": "song",
+      "note": "Udol: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "52m3tz6DrTY",
+      "title": "Judici",
+      "contentType": "song",
+      "note": "Udol: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "FD5WcmCzChw",
+      "title": "Execució",
+      "contentType": "song",
+      "note": "Udol: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "WbB-LRLSdDw",
+      "title": "Destí fatal",
+      "contentType": "song",
+      "note": "Udol: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "O0N1MLhpyQU",
+      "title": "Ombres",
+      "contentType": "song",
+      "note": "Udol: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "Rk8E_fJMB54",
+      "title": "L'incendi",
+      "contentType": "song",
+      "note": "Udol: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "27fGivY1LgQ",
+      "title": "El Regne",
+      "contentType": "song",
+      "note": "Udol: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "4ifhqXk6baw",
+      "title": "El pacte",
+      "contentType": "song",
+      "note": "Udol: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "EfVCCX5-LhE",
+      "title": "El Regne",
+      "contentType": "song",
+      "note": "Udol: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "mhh9dnOfSRc",
+      "title": "Invocació",
+      "contentType": "song",
+      "note": "Udol: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
+    },
+    {
+      "id": "sZ6FaKVr1fk",
+      "title": "UDOL  + El Regne +",
+      "contentType": "song",
+      "note": "Udol: selecció revisada del lot heavy 2; font i criteris a docs/HEAVY_GRUP_2.md."
     }
   ]
 }

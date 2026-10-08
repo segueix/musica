@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-08T17:55:14.113Z",
+  "updatedAt": "2026-10-08T18:09:36.926Z",
   "description": "Llista blanca per a canals on Segueix Música només ha d'ingerir vídeos concrets. Admet títols exactes, fragments obligatoris i fragments exclosos.",
   "channels": {
     "UCKpscwdWlVaMqcA81vLI7OA": {
@@ -3563,6 +3563,230 @@
         "BhCmbcYw6NQ",
         "ZkeDTIi2OAo",
         "5ESO6qF8dfE"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "avatarFromFirstAllowedVideo": false
+    },
+    "UCT-wRacXWBQKqr1z6ZGoubw": {
+      "artist": "Entropia",
+      "note": "Lot heavy 2: cançons i directes complets amb revisió documental en català. Selecció tancada; exclusions i pendents a docs/HEAVY_GRUP_2.md.",
+      "allowedVideoIds": [
+        "XGTVyuIVGy8",
+        "aTWarcZRYsA"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "avatarFromFirstAllowedVideo": false
+    },
+    "UCayj6r8npsfkvYupNj8YC4A": {
+      "artist": "Entropia",
+      "note": "Lot heavy 2: cançons i directes complets amb revisió documental en català. Selecció tancada; exclusions i pendents a docs/HEAVY_GRUP_2.md.",
+      "allowedVideoIds": [
+        "Th9BjzBEnrQ"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "avatarFromFirstAllowedVideo": true
+    },
+    "UCCmgW83QdTLEGTkEc6uyJ6Q": {
+      "artist": "Ósserp",
+      "note": "Lot heavy 2: cançons i directes complets amb revisió documental en català. Selecció tancada; exclusions i pendents a docs/HEAVY_GRUP_2.md.",
+      "allowedVideoIds": [
+        "C9IkAfUQTkE",
+        "CM0dT4Zy4pI",
+        "CjfHzT2H2xY",
+        "LJu4JTho8gU",
+        "b3B8yY0LNwk",
+        "pEgPAfNN42E",
+        "pSLWvfk9Jq4",
+        "sIkUwV3Dbq0",
+        "vVs7x8cu2uk",
+        "CN30nxZz0bc",
+        "IPHXbRj83lg",
+        "tFHrFpK3-yA",
+        "vKnnC_nDXsI"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "avatarFromFirstAllowedVideo": false
+    },
+    "UCR5qRB1oeWWJF8QhX7WmuXQ": {
+      "artist": "Bocc",
+      "note": "Lot heavy 2: cançons i directes complets amb revisió documental en català. Selecció tancada; exclusions i pendents a docs/HEAVY_GRUP_2.md.",
+      "allowedVideoIds": [
+        "ZnwKX-iMYxI",
+        "_AhMDFM9ttw",
+        "L6s-SQqblQE",
+        "-7fnIWhEhXA",
+        "wniV8oEQT0k",
+        "plJLcSL1mik",
+        "KwNcIdMdnBg",
+        "NtFIjn78lzE",
+        "ODIX6a_e0Z4",
+        "2qOBu8y6Tq8",
+        "2h_jEGLE0yw",
+        "E3yYPutOx_Y",
+        "ElOwLz4YMgs",
+        "7XHaJUkY1n8",
+        "7um2Be4KAbE",
+        "cJuiJE4yzzo",
+        "ki7ZZtrWIXY",
+        "IytBGB8x5H0",
+        "XR1yfPxHam8",
+        "Fe8FK9TO5ZA",
+        "f88wvjaxI84",
+        "W0O_2SK2m0A",
+        "5gR_NkVnMN4",
+        "hdFHPUYbwBE",
+        "j7xXBGcFX9E",
+        "KjqC7gMn5HY",
+        "0FsoSlhJq34",
+        "sB2gQeGRWfk",
+        "Zq_Bk56Drrw",
+        "poUwVGHRpl0",
+        "E5wTIXaceaY",
+        "fvOR2vXBzVQ",
+        "RjcfQGBIWNk",
+        "z474isVpx6I",
+        "8PgdVMpWn9E",
+        "rt5pii5v7cs",
+        "Ff3wdjFRVxc",
+        "xZpuS0GOTD0",
+        "MomL6WizUDk",
+        "0sW5BBR7JTA",
+        "bltVEh5YLuo",
+        "XfbE80xxWYs",
+        "nIH_Ji-dCVE",
+        "dxf2378gEkA",
+        "Z5y14tqIYRo",
+        "2ogYYSjzph4",
+        "Nb6jgyEr-rs",
+        "OjMeFmcRWBQ",
+        "hr7FslhbMzk",
+        "Vzdzq6R4uaQ",
+        "n7T9SsqBiiE",
+        "wMBj6OUpvqs",
+        "5FZfzZvTXVM"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "avatarFromFirstAllowedVideo": false
+    },
+    "UCgVBViL3I9YWFVBHIyvcpjg": {
+      "artist": "Falç de Fetillera",
+      "note": "Lot heavy 2: cançons i directes complets amb revisió documental en català. Selecció tancada; exclusions i pendents a docs/HEAVY_GRUP_2.md.",
+      "allowedVideoIds": [
+        "VMcBZ2w4WP4",
+        "6vxPERj3W6U",
+        "bmo1tvlwffc",
+        "sA_NcRNbeQA",
+        "iwcKYIQSnok",
+        "7GnXTwcpsc0",
+        "9dZXv1e7zTU",
+        "uuvED4IWOYs",
+        "W1hPN8-LIaE",
+        "VL0lpK8LGWw",
+        "eeqLklHc6ws",
+        "G-ns72AUj1E",
+        "9wvllOlVrR0"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "avatarFromFirstAllowedVideo": false
+    },
+    "UC8GlOjZpZMKHieUbeJ9eh7g": {
+      "artist": "Falç de Fetillera",
+      "note": "Lot heavy 2: cançons i directes complets amb revisió documental en català. Selecció tancada; exclusions i pendents a docs/HEAVY_GRUP_2.md.",
+      "allowedVideoIds": [
+        "IC3S3X35_M4",
+        "V3xf0sQc02o",
+        "o7cKsUEP398",
+        "ZaJtD5f7o6g",
+        "ntiR8TEKagI",
+        "zfBO2Rd92Do",
+        "GNjotmKaOOs",
+        "3TZpwe3RHIU",
+        "pKoz6ezl4wM",
+        "cgy_9NiZvQk",
+        "sWBTSGGr85k",
+        "EXFn5epnKjk",
+        "_iKRO23EM3g",
+        "pVqOvTDu3nw",
+        "3QqRdmmv3E0",
+        "sUelxJgpE3g",
+        "4KYBDkbgksM",
+        "VBThn-d6TIA",
+        "hpun9M00Ncs",
+        "kno3FuWTk4A",
+        "u-kHq2ZPjH0"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "avatarFromFirstAllowedVideo": false
+    },
+    "UCQz3jf86vHTtfVwXd-rOSrA": {
+      "artist": "Udol",
+      "note": "Lot heavy 2: cançons i directes complets amb revisió documental en català. Selecció tancada; exclusions i pendents a docs/HEAVY_GRUP_2.md.",
+      "allowedVideoIds": [
+        "0Oxj-YIuIIM",
+        "TofPmLuy8Fs"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "avatarFromFirstAllowedVideo": false
+    },
+    "UCrxpjvY7G2ffEklcmSHm5og": {
+      "artist": "Udol",
+      "note": "Lot heavy 2: cançons i directes complets amb revisió documental en català. Selecció tancada; exclusions i pendents a docs/HEAVY_GRUP_2.md.",
+      "allowedVideoIds": [
+        "2sQH2iiLuf4",
+        "52m3tz6DrTY",
+        "FD5WcmCzChw",
+        "WbB-LRLSdDw",
+        "O0N1MLhpyQU",
+        "Rk8E_fJMB54",
+        "27fGivY1LgQ",
+        "4ifhqXk6baw",
+        "EfVCCX5-LhE",
+        "mhh9dnOfSRc"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "avatarFromFirstAllowedVideo": false
+    },
+    "UCYnT07O7RJlNvU_sNq6EsZQ": {
+      "artist": "Udol",
+      "note": "Lot heavy 2: cançons i directes complets amb revisió documental en català. Selecció tancada; exclusions i pendents a docs/HEAVY_GRUP_2.md.",
+      "allowedVideoIds": [
+        "sZ6FaKVr1fk"
       ],
       "acceptedMusicOnly": true,
       "allowedContentTypes": [
