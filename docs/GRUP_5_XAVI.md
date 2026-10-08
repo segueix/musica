@@ -138,4 +138,13 @@ Quatre Parets: no s'ha pogut confirmar una banda amb aquest nom. Els resultats t
 
 ## Validació
 
-Pendent de completar la ingestió i comprovar la presència exacta dels 58 vídeos al feed i arxiu. La revisió d'idiomes només marcarà aquests identificadors; les altres cues es preserven.
+Completada la ingestió i comprovada la presència exacta dels 58 vídeos al feed i arxiu, sense cap vídeo addicional dels quatre canals nous.
+
+- Base d'artistes: 421 registres, validació correcta.
+- [Validació de la base](https://github.com/segueix/musica/actions/runs/37811450065): correcta.
+- [Actualització del feed](https://github.com/segueix/musica/actions/runs/37811450088): correcta; 4 canals nous i 96 proves del pipeline superades.
+- [Verificació exacta](https://github.com/segueix/musica/actions/runs/37811568328): GRUP_5_OK, 58 vídeos, cap absent ni extra; La Cobla i Quatre Parets inactius.
+- Revisió d'idiomes: només els 58 identificadors d'aquesta selecció passen a revisades. Es preserven els 961 altres pendents i els 16 descartats anteriors.
+- Flux temporal d'inspecció i verificació retirat un cop completat.
+
+Aquesta validació comprova la ingestió i les restriccions; no substitueix les evidències lingüístiques ni amplia el repertori aprovat.
