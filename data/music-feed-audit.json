@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-08T15:54:27.915Z",
+  "generatedAt": "2026-10-08T16:10:47.597Z",
   "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
   "deepPagesFetched": 0,
   "deepChannelCount": 18,
-  "topicChannelCount": 260,
+  "topicChannelCount": 263,
   "governedChannelCount": 90,
   "topicCoverage": [
     {
@@ -1277,6 +1277,13 @@
       "withClip": 0
     },
     {
+      "id": "UCk0dxKPgahJyFPV_F1VWVuA",
+      "name": "Baixa Fidelitat",
+      "tracks": 13,
+      "selected": 13,
+      "withClip": 0
+    },
+    {
       "id": "UCGHuCX7ksRy8c0BvCwPoHsg",
       "name": "Bars",
       "tracks": 7,
@@ -1351,6 +1358,20 @@
       "name": "Brigada Moreneta",
       "tracks": 5,
       "selected": 4,
+      "withClip": 0
+    },
+    {
+      "id": "UCc2hL_Q_Fi_nKHLptRFnw3w",
+      "name": "Brot Bord",
+      "tracks": 5,
+      "selected": 5,
+      "withClip": 0
+    },
+    {
+      "id": "UCghKNKEskCkE55Wl5A-ggiQ",
+      "name": "Brot Bord",
+      "tracks": 14,
+      "selected": 14,
       "withClip": 0
     },
     {
@@ -2901,13 +2922,13 @@
       "withClip": 0
     }
   ],
-  "indexedChannelCount": 477,
-  "resolvedChannelCount": 477,
-  "feedChannelCount": 477,
-  "rawPublicVideoCount": 5351,
-  "feedVideoCount": 4816,
-  "acceptedMusicCount": 4775,
-  "categoryEligibleVideoCount": 4770,
+  "indexedChannelCount": 482,
+  "resolvedChannelCount": 482,
+  "feedChannelCount": 482,
+  "rawPublicVideoCount": 5349,
+  "feedVideoCount": 4814,
+  "acceptedMusicCount": 4773,
+  "categoryEligibleVideoCount": 4768,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
     "before": 0,
@@ -2916,7 +2937,7 @@
   },
   "contentReviewCount": 541,
   "contentTypeCounts": {
-    "song": 4655,
+    "song": 4653,
     "live_song": 115,
     "album": 5,
     "other": 35,
@@ -2927,6 +2948,6 @@
   "channelsWithoutVideos": [],
   "channelsWithoutAcceptedMusic": [],
   "allIndexedChannelsVisible": true,
-  "publishedFeedVideoCount": 4779,
+  "publishedFeedVideoCount": 4811,
   "publishedShortVideoCount": 0
 }
