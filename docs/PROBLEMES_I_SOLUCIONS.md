@@ -1,3 +1,11 @@
+## [2026-10-08] - Vídeos amb restricció d'edat o que no es poden incrustar
+
+**Problema:** un vídeo amb restricció d'edat o que l'autor no deixa incrustar no sona al reproductor de l'app (YouTube demana obrir-lo a YouTube) i atura la ràdio. El generador ja rebia aquestes dades de l'API però no les mirava.
+
+**Solució Implementada:** `scripts/lib/restriccions_youtube.js` + registre `data/videos-restringits.json`. El generador diari treu del feed els vídeos amb `ytRating: 'ytAgeRestricted'` o `embeddable: false` (dades que ja demanava: `contentDetails,status`); l'actualització setmanal de l'arxiu afegeix aquestes parts a la consulta de visualitzacions (mateix cost: 1 unitat per 50 vídeos). El client els amaga amb la llista d'ocults. Cap consulta nova a l'API.
+
+**Trampes conegudes:** (1) El registre només es posa al dia amb els vídeos que s'acaben de consultar: un vídeo de l'arxiu restringit dimarts no s'amaga fins al diumenge. (2) Una segona comprovació setmanal de l'arxiu sí que gastaria quota (~140 unitats). (3) Sense la part `status` no es pot saber si és incrustable: no es marca. Prova: `tests/restriccions-youtube.test.js`.
+
 ## [2026-10-08] - Primera reproducció amb el botó natiu de YouTube
 
 **Petició:** en seleccionar una caràtula, una fila de la cua, una llista o una ràdio, preparar el vídeo aturat i demanar el primer ▶ dins de YouTube. Després, controls propis actius i cançons següents automàtiques.

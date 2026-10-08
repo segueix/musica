@@ -2,6 +2,9 @@
 
 const FEED_URL = 'data/feed.json';
 const HIDDEN_VIDEOS_URL = 'data/hidden-videos.json';
+// Vídeos amb restricció d'edat o que no es poden incrustar (no sonarien al reproductor): els detecten el generador
+// diari i l'actualització setmanal de l'arxiu (scripts/lib/restriccions_youtube.js) i s'amaguen com els ocults.
+const RESTRICTED_VIDEOS_URL = 'data/videos-restringits.json';
 const HISTORY_POOL_URL = 'data/history-pool.json';
 // Totes les cançons de l'arxiu (scripts/lib/arxiu_musical.js: buildStyleHistory): la vista d'un estil les barreja amb
 // les del feed abans d'ordenar-les amb el motor de selecció.
@@ -317,19 +320,34 @@ const YouTubeAPI = {
         }
     },
 
+    async loadRestrictedVideoIds() {
+        try {
+            const url = window.appDataUrl?.(RESTRICTED_VIDEOS_URL) || RESTRICTED_VIDEOS_URL;
+            const response = await fetch(url, { cache: 'no-store' });
+            if (!response.ok) return [];
+            const payload = await response.json();
+            return payload?.videos && typeof payload.videos === 'object' ? Object.keys(payload.videos) : [];
+        } catch (error) {
+            return [];
+        }
+    },
+
     async loadHiddenVideos() {
         try {
+            // Els dos fitxers es demanen alhora: l'arrencada no espera més
+            const restrictedPromise = this.loadRestrictedVideoIds();
             const hiddenUrl = window.appDataUrl?.(HIDDEN_VIDEOS_URL) || HIDDEN_VIDEOS_URL;
             const response = await fetch(hiddenUrl, { cache: 'no-store' });
             if (!response.ok) {
-                this.hiddenVideoIds = new Set();
+                this.hiddenVideoIds = new Set(await restrictedPromise);
                 return;
             }
 
             const payload = await response.json();
             const ids = Array.isArray(payload?.videoIds) ? payload.videoIds : [];
+            const restricted = await restrictedPromise;
             this.hiddenVideoIds = new Set(
-                ids
+                [...ids, ...restricted]
                     .map((id) => String(id || '').trim())
                     .filter(Boolean)
             );

@@ -2,10 +2,13 @@
 
 // Actualitza només viewCount de l'historial. No regenera el feed ni consulta canals.
 // Cost: 1 unitat de videos.list per cada bloc de fins a 50 IDs, un cop per setmana.
+// Amb la mateixa consulta (sense cost extra: les parts no canvien el preu) mira si algun vídeo de l'arxiu té
+// restricció d'edat o no es pot incrustar i en posa al dia data/videos-restringits.json (el client els amaga).
 
 const fs = require('fs');
 const path = require('path');
 const { buildStyleHistory, serializeStyleHistory } = require('./lib/arxiu_musical');
+const restriccions = require('./lib/restriccions_youtube');
 
 const ROOT = path.resolve(__dirname, '..');
 const ARCHIVE_DIR = path.join(ROOT, 'data', 'archive', 'channels');
@@ -39,16 +42,23 @@ async function main() {
   }
 
   const views = new Map();
+  const items = [];
   for (const batch of chunks([...new Set(ids)], 50)) {
     const url = new URL(API);
-    url.searchParams.set('part', 'statistics');
+    url.searchParams.set('part', 'statistics,contentDetails,status');
     url.searchParams.set('id', batch.join(','));
     url.searchParams.set('key', key);
     const response = await fetch(url);
     const body = await response.json();
     if (!response.ok || body.error) throw new Error('YouTube API: ' + (body.error?.message || response.status));
-    for (const item of body.items || []) views.set(item.id, Number(item.statistics?.viewCount || 0));
+    for (const item of body.items || []) {
+      views.set(item.id, Number(item.statistics?.viewCount || 0));
+      items.push(item);
+    }
   }
+
+  const restricted = restriccions.updateRegistry(restriccions.loadRegistry(), items);
+  if (restricted.changed) restriccions.saveRegistry(restricted.registry);
 
   const at = new Date().toISOString();
   let changed = 0;
@@ -79,6 +89,10 @@ async function main() {
   fs.writeFileSync(STYLE_HISTORY, serializeStyleHistory(styleHistory, at));
 
   console.log(`✅ Historial: ${views.size} vídeos verificats; ${changed} comptadors actualitzats.`);
+  console.log(
+    `🔞 Restringits (edat o no incrustables): ${restricted.added.length} nous, ${restricted.removed.length} recuperats, ` +
+      `${Object.keys(restricted.registry.videos).length} en total.`
+  );
 }
 
 main().catch(error => {
