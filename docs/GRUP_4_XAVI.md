@@ -4,7 +4,7 @@ Revisió: 8 d’octubre de 2026.
 
 ## Resultat
 
-5 fitxes noves: 4 aprovades i Grans amb Pus pendent. Selecció de 53 vídeos en 8 canals nous. Indexació pendent de comprovació automàtica.
+5 fitxes noves: 4 aprovades i Grans amb Pus pendent. Selecció de 53 vídeos en 8 canals nous. Indexació completada i verificada: 53 de 53 vídeos, sense cap vídeo addicional dels canals seleccionats.
 
 | Grup | Vídeos seleccionats | Estat |
 |---|---:|---|
@@ -176,4 +176,7 @@ https://www.youtube.com/channel/UC3v9pZ9RLUMaaBrr877QPmA
 - Altes limitades als cinc noms del grup 4; cap canal anterior es modifica.
 - Llistes explícites de vídeos autoritzats als vuit canals nous.
 - 10 vídeos de durada breu verificats amb redirecció HTTP 303 de `/shorts/` a `/watch`; registrats com a falsos shorts per conservar cançons completes.
-- Pipeline musical i verificació de feed + arxius: pendent d'execució.
+- Pipeline musical: 96 proves correctes; actualització limitada als 8 canals nous.
+- Verificació conjunta de feed + arxius: 53/53 vídeos presents, cap altre vídeo d'aquests canals. [Execució de verificació](https://github.com/segueix/musica/actions/runs/37809571987).
+- Només els 53 identificadors revisats d'aquest grup passen a `revisades` a `data/revisio-idiomes.json`; es conserven les altres cues pendents i descartades.
+- Auditoria temporal retirada després de confirmar el resultat.
