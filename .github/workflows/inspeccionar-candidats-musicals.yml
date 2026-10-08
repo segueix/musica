@@ -1,0 +1,49 @@
+name: Inspeccionar candidats musicals
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [".github/workflows/inspeccionar-candidats-musicals.yml"]
+permissions:
+  contents: read
+jobs:
+  inspeccio:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "20"
+      - name: Consulta limitada de candidats i repertoris
+        env:
+          YOUTUBE_API_KEY_SERVER: ${{ secrets.YOUTUBE_API_KEY_SERVER }}
+        run: |
+          node - <<'NODE'
+          async function api(endpoint, params) {
+            const url = new URL('https://www.googleapis.com/youtube/v3/' + endpoint);
+            for (const [k,v] of Object.entries(params)) url.searchParams.set(k,v);
+            url.searchParams.set('key', process.env.YOUTUBE_API_KEY_SERVER);
+            const res = await fetch(url);
+            const data = await res.json();
+            if (!res.ok) throw new Error('YouTube HTTP ' + res.status + ': ' + (data.error?.errors?.[0]?.reason || 'error'));
+            return data;
+          }
+          (async () => {
+            const ids=new Set();
+            for(const q of ["\"Perro Pachingo\"","\"Tiger Menja Zebra\"","\"Ratpenat\" punk","\"Zombi Pujol\"","\"vàlius\""]){
+              const r=await api('search',{part:'snippet',type:'video',maxResults:'5',q});
+              console.log('SEARCH '+JSON.stringify({q,items:r.items}));
+              for(const x of r.items||[])ids.add(x.snippet.channelId);
+            }
+            for(const id of ids){
+              const r=await api('channels',{part:'snippet,contentDetails',id});const c=r.items?.[0];if(!c)continue;
+              if(!/pachingo|tiger|rat.?penat|zombi|vàlius|valius/i.test(c.snippet.title))continue;
+              let token='',tracks=[]; for(let n=0;n<4;n++){ const p=await api('playlistItems',{part:'snippet,contentDetails',playlistId:c.contentDetails.relatedPlaylists.uploads,maxResults:'50',...(token?{pageToken:token}:{})});
+              const vids=p.items.map(x=>x.contentDetails.videoId);
+              const v=await api('videos',{part:'snippet,contentDetails',id:vids.join(',')});
+              tracks.push(...v.items);token=p.nextPageToken||'';if(!token)break; }
+              for(const t of tracks){const m=t.contentDetails.duration.match(/^PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?$/);const seconds=m?(+m[1]||0)*3600+(+m[2]||0)*60+(+m[3]||0):9999;if(seconds<=120){const h=await fetch('https://www.youtube.com/shorts/'+t.id,{method:'HEAD',redirect:'manual',signal:AbortSignal.timeout(6000)}).catch(()=>null);t.shortCheck={status:h?.status,location:h?.headers.get('location')};}}
+              console.log('REPERTOIRE '+JSON.stringify({id,title:c.snippet.title,handle:c.snippet.customUrl,description:c.snippet.description,tracks,more:!!token}));
+            }
+          })().catch(e=>{console.error(e.message);process.exitCode=1;});
+          NODE
