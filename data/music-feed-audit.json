@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-08T16:47:32.312Z",
+  "generatedAt": "2026-10-08T16:59:18.367Z",
   "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
   "deepPagesFetched": 0,
   "deepChannelCount": 18,
-  "topicChannelCount": 275,
+  "topicChannelCount": 279,
   "governedChannelCount": 94,
   "topicCoverage": [
     {
@@ -2634,6 +2634,13 @@
       "withClip": 7
     },
     {
+      "id": "UC0Us9bY-uMslfHcmZSVirRw",
+      "name": "Ratpenat",
+      "tracks": 10,
+      "selected": 10,
+      "withClip": 0
+    },
+    {
       "id": "UCCKRS2KD1i75evCURPuHQXA",
       "name": "Raydibaum",
       "tracks": 62,
@@ -2907,6 +2914,13 @@
       "withClip": 14
     },
     {
+      "id": "UCQMMHfq3-mXuozgrnyx-Gcg",
+      "name": "Tiger menja zebra",
+      "tracks": 9,
+      "selected": 9,
+      "withClip": 0
+    },
+    {
       "id": "UCsOxXt5l7XmAc6AvMQDRV4A",
       "name": "Tomeu Penya",
       "tracks": 442,
@@ -2954,6 +2968,13 @@
       "tracks": 106,
       "selected": 39,
       "withClip": 12
+    },
+    {
+      "id": "UCc20bll252Rwc71ILMnWVcA",
+      "name": "vàlius",
+      "tracks": 42,
+      "selected": 42,
+      "withClip": 0
     },
     {
       "id": "UCsl_oTZ8vww29O9G0NAX-gA",
@@ -3052,15 +3073,22 @@
       "tracks": 12,
       "selected": 6,
       "withClip": 0
+    },
+    {
+      "id": "UCHdLUidEVvmo-4p1h895hcA",
+      "name": "Zombi Pujol",
+      "tracks": 32,
+      "selected": 32,
+      "withClip": 0
     }
   ],
-  "indexedChannelCount": 501,
-  "resolvedChannelCount": 501,
-  "feedChannelCount": 501,
-  "rawPublicVideoCount": 5511,
-  "feedVideoCount": 4976,
-  "acceptedMusicCount": 4935,
-  "categoryEligibleVideoCount": 4930,
+  "indexedChannelCount": 505,
+  "resolvedChannelCount": 505,
+  "feedChannelCount": 505,
+  "rawPublicVideoCount": 5587,
+  "feedVideoCount": 5052,
+  "acceptedMusicCount": 5011,
+  "categoryEligibleVideoCount": 5006,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
     "before": 0,
@@ -3069,7 +3097,7 @@
   },
   "contentReviewCount": 541,
   "contentTypeCounts": {
-    "song": 4812,
+    "song": 4888,
     "live_song": 118,
     "album": 5,
     "other": 35,
@@ -3080,6 +3108,6 @@
   "channelsWithoutVideos": [],
   "channelsWithoutAcceptedMusic": [],
   "allIndexedChannelsVisible": true,
-  "publishedFeedVideoCount": 4959,
+  "publishedFeedVideoCount": 5003,
   "publishedShortVideoCount": 0
 }
