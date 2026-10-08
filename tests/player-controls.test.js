@@ -168,7 +168,7 @@ describe('enrere / endavant del navegador amb una ràdio o una llista', () => {
         );
         const restore = fn(app, 'restoreVideoFromHistory');
         expect(restore).toContain('setMiniPlayerState(false)');
-        expect(restore).toContain('loadVideoInSequence({ replaceHistory: true })');
+        expect(restore).toContain('loadVideoInSequence({ autoPlay: false, replaceHistory: true })');
         expect(restore).toContain('queueBeforeNavigation');
     });
 

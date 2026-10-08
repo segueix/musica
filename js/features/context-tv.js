@@ -366,7 +366,7 @@
             .map(item => item.video);
     }
 
-    function startPlaylist(queue, name, { requireLongVideos = true, startPaused = false, context = null } = {}) {
+    function startPlaylist(queue, name, { requireLongVideos = true, context = null } = {}) {
         const accepta = requireLongVideos ? isLongVideo : isPlayableVideo;
         const videos = uniqueVideos(queue).filter(accepta).slice(0, QUEUE_LIMIT);
         if (!videos.length || typeof loadVideoInSequence !== 'function') return false;
@@ -381,7 +381,7 @@
         activePlaylistId = TV_PLAYLIST_ID;
         activePlaylistName = name;
         document.body.classList.add('segueix-tv-playback');
-        loadVideoInSequence({ autoPlay: !startPaused });
+        loadVideoInSequence({ autoPlay: false });
         return true;
     }
 

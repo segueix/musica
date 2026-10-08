@@ -1153,6 +1153,7 @@ let currentFontSize = null;
 let userGridPreference = '4';
 let userWatchGridPreference = '3';
 let isAutoPlayNavigating = false;
+let playbackNavigationId = 0;
 let miniPlayerAutoActivatedByScroll = false;
 const featuredVideoBySection = new Map();
 const customCategorySearchCache = new Map();
@@ -9000,6 +9001,7 @@ function loadVideoInSequence({ autoPlay = true, replaceHistory = false, startAt 
         return;
     }
     const showOptions = {
+        autoPlay: isAutoPlayNavigating,
         startAt,
         ...(keepLivePlayer ? { keepLivePlayer: true } : {}),
         ...(replaceHistory ? { replaceHistory } : {}),
@@ -9481,7 +9483,7 @@ function restoreVideoFromHistory(videoId) {
     if (index < 0) return false;
     queueBeforeNavigation = null;
     currentPlaylistIndex = index;
-    loadVideoInSequence({ replaceHistory: true });
+    loadVideoInSequence({ autoPlay: false, replaceHistory: true });
     return true;
 }
 
@@ -12003,6 +12005,10 @@ async function showVideoFromAPI(videoId, options = {}) {
 }
 
 async function showVideoFromAPILegacyImpl(videoId, options = {}) {
+    const navigationId = ++playbackNavigationId;
+    // Cada obertura té una intenció pròpia; les seleccions esperen el toc natiu.
+    const shouldAutoPlay = options.autoPlay === true;
+    isAutoPlayNavigating = shouldAutoPlay;
     // En TV la posició la governa l'ancoratge (focusTVPlayerViewport), que porta la
     // vista a dalt de seguida i l'hi manté: el window.scrollTo(0, 0) del final arribaria
     // tard —quan l'usuari ja pot haver baixat a la programació— i faria un salt.
@@ -12104,6 +12110,9 @@ async function showVideoFromAPILegacyImpl(videoId, options = {}) {
         }
     }
 
+    // Una cerca nova substitueix qualsevol obertura anterior encara pendent.
+    if (navigationId !== playbackNavigationId) return;
+
     if (!cachedVideo) {
         const archiveVideoFromMap = archiveSearchVideoMap.get(normalizedVideoId);
         const archiveVideo = archiveVideoFromMap || getArchiveIndexVideoById(normalizedVideoId);
@@ -12138,15 +12147,12 @@ async function showVideoFromAPILegacyImpl(videoId, options = {}) {
             isArchivePlayback = cachedVideo?.source === 'archive' || cachedVideo?.historySource === 'archive';
         }
     }
-    const shouldAutoPlay = isAutoPlayNavigating;
-    if (isAutoPlayNavigating) {
-        isAutoPlayNavigating = false;
-    }
+    isAutoPlayNavigating = false;
 
     // En pantalla completa el reproductor es manté viu i només canvia de vídeo: recrear
     // l'iframe en trauria l'usuari. La resta de la pàgina s'actualitza igualment.
     const swapped =
-        options.keepLivePlayer === true &&
+        shouldAutoPlay && options.keepLivePlayer === true &&
         canKeepLivePlayer() &&
         swapLivePlayerVideo({
             videoId,
@@ -12482,6 +12488,8 @@ function showHome(options) {
 
 // Reproduir i navegar: inicia la reproducció de l'iframe i després obre la pàgina del vídeo
 function playThenNavigate(videoId, source) {
+    // La cerca, les caràtules i qualsevol selecció explícita comencen en pausa.
+    isAutoPlayNavigating = false;
     // Cua de cançons amb l'ordenació de Música TV (js/features/music-queue.js)
     if (SegueixApp.features.musicQueue?.startFrom?.(videoId, source)) return;
     return SegueixApp.features.player?.playThenNavigate?.(videoId, source);
@@ -12515,6 +12523,10 @@ function showVideo(videoId, options = {}) {
 }
 
 function showVideoLegacyImpl(videoId, options = {}) {
+    playbackNavigationId += 1;
+    // Cada obertura té una intenció pròpia; les seleccions esperen el toc natiu.
+    const shouldAutoPlay = options.autoPlay === true;
+    isAutoPlayNavigating = shouldAutoPlay;
     // En TV la posició la governa l'ancoratge (focusTVPlayerViewport), que porta la
     // vista a dalt de seguida i l'hi manté: el window.scrollTo(0, 0) del final arribaria
     // tard —quan l'usuari ja pot haver baixat a la programació— i faria un salt.
@@ -12575,10 +12587,7 @@ function showVideoLegacyImpl(videoId, options = {}) {
     watchPage.classList.remove('hidden');
     collapseMobileHeaderForWatchPage();
 
-    const shouldAutoPlay = isAutoPlayNavigating;
-    if (isAutoPlayNavigating) {
-        isAutoPlayNavigating = false;
-    }
+    isAutoPlayNavigating = false;
 
     if (isMini) {
         queuePlayback({

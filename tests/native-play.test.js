@@ -79,3 +79,27 @@ for (const autoPlay of [false, true]) {
         expect(ctx.videoPlayer.dataset.awaitingNativePlay).toBe(String(!autoPlay));
     });
 }
+
+
+describe('seleccions des de la cerca', () => {
+    it('un suggeriment obre la cançó sense heretar autoplay', () => {
+        const startFrom = vi.fn(() => true);
+        const ctx = { SegueixApp: { features: { musicQueue: { startFrom } } },
+            isAutoPlayNavigating: true, hideSearchDropdown: vi.fn(), isMobileView: () => false };
+        runInNewContext(['handleSearchResultSelection', 'openVideoFromUserGesture', 'playThenNavigate'].map(fn).join('\n'), ctx);
+        ctx.handleSearchResultSelection({ dataset: { resultType: 'video', videoId: 'song', videoSource: 'api' } });
+        expect(startFrom).toHaveBeenCalledWith('song', 'api');
+        expect(ctx.isAutoPlayNavigating).toBe(false);
+    });
+    for (const autoPlay of [false, true]) {
+        it(`la cua transmet explícitament autoPlay=${autoPlay}`, () => {
+            const ctx = { activePlaylistQueue: [{ id: 'song', source: 'api' }], currentPlaylistIndex: 0,
+                focusTVPlayerViewport: vi.fn(), isTVPlaybackMode: () => false, canKeepQueuePlayer: () => false,
+                document: { visibilityState: 'visible' }, updatePlaylistModeBadge: vi.fn(), syncQueueNextOverlay: vi.fn(),
+                showVideoFromAPI: vi.fn() };
+            runInNewContext(fn('loadVideoInSequence'), ctx);
+            ctx.loadVideoInSequence({ autoPlay });
+            expect(ctx.showVideoFromAPI).toHaveBeenCalledWith('song', { autoPlay, startAt: 0 });
+        });
+    }
+});

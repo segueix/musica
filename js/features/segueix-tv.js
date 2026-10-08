@@ -753,7 +753,7 @@
         });
     }
 
-    function startTVPlaylist(videoId, { startPaused = false } = {}) {
+    function startTVPlaylist(videoId) {
         const id = String(videoId || '').trim();
         if (!id || !tvQueue.length || typeof loadVideoInSequence !== 'function') return false;
         const clickedIndex = tvQueue.findIndex(video => String(video?.id || '') === id);
@@ -772,7 +772,7 @@
                 tvMode: 'segueix',
             });
         } catch {}
-        loadVideoInSequence({ autoPlay: !startPaused });
+        loadVideoInSequence({ autoPlay: false });
         return true;
     }
 
