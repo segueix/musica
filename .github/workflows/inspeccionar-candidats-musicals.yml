@@ -1,0 +1,24 @@
+name: Inspeccionar candidats musicals
+on:
+  push:
+    branches: [main]
+    paths: [".github/workflows/inspeccionar-candidats-musicals.yml"]
+permissions:
+  contents: read
+jobs:
+  inspeccio:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "20"
+      - name: Consulta limitada de candidats i repertoris
+        env:
+          YOUTUBE_API_KEY_SERVER: ${{ secrets.YOUTUBE_API_KEY_SERVER }}
+        run: |
+          node - <<'NODE'
+          async function api(endpoint,params){const u=new URL('https://www.googleapis.com/youtube/v3/'+endpoint);for(const[k,v]of Object.entries(params))u.searchParams.set(k,v);u.searchParams.set('key',process.env.YOUTUBE_API_KEY_SERVER);const r=await fetch(u);const d=await r.json();if(!r.ok)throw Error('YouTube '+r.status);return d;}
+          (async()=>{const ids=new Set();for(const q of ['"Vidres a la Sang"','"Foscor" Topic','"Moksha" Montseny','"Sota Terra" metal','"Korruption Found"']){const r=await api('search',{part:'snippet',type:'video',maxResults:'5',q});console.log('SEARCH '+JSON.stringify({q,items:r.items}));for(const x of r.items||[])ids.add(x.snippet.channelId);}
+          for(const id of ids){const r=await api('channels',{part:'snippet,contentDetails',id});const c=r.items?.[0];if(!c||!/vidres|foscor|moksha|sota.?terra|korruption/i.test(c.snippet.title))continue;let token='',tracks=[];for(let n=0;n<4;n++){const p=await api('playlistItems',{part:'snippet,contentDetails',playlistId:c.contentDetails.relatedPlaylists.uploads,maxResults:'50',...(token?{pageToken:token}:{})});const vids=p.items.map(x=>x.contentDetails.videoId);if(vids.length){const v=await api('videos',{part:'snippet,contentDetails',id:vids.join(',')});tracks.push(...v.items);}token=p.nextPageToken||'';if(!token)break;}for(const t of tracks){const m=t.contentDetails.duration.match(/^PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?$/);const sec=m?(+m[1]||0)*3600+(+m[2]||0)*60+(+m[3]||0):9999;if(sec<=120){const h=await fetch('https://www.youtube.com/shorts/'+t.id,{method:'HEAD',redirect:'manual',signal:AbortSignal.timeout(6000)}).catch(()=>null);t.shortCheck={status:h?.status,location:h?.headers.get('location')};}}console.log('REPERTOIRE '+JSON.stringify({id,title:c.snippet.title,handle:c.snippet.customUrl,description:c.snippet.description,tracks,more:!!token}));}})().catch(e=>{console.error(e.message);process.exitCode=1;});
+          NODE
