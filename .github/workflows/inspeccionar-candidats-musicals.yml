@@ -30,8 +30,8 @@ jobs:
           }
           (async () => {
             const ids=new Set();
-            for(const q of ["\"Perro Pachingo\"","\"Tiger Menja Zebra\"","\"Ratpenat\" punk","\"Zombi Pujol\"","\"vàlius\""]){
-              const r=await api('search',{part:'snippet',type:'video',maxResults:'5',q});
+            for(const q of ["Perro Pachingo","Tiger Menja Zebra Topic","Ratpenat Topic"]){
+              const r=await api('search',{part:'snippet',type:'channel',maxResults:'5',q});
               console.log('SEARCH '+JSON.stringify({q,items:r.items}));
               for(const x of r.items||[])ids.add(x.snippet.channelId);
             }
