@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-08T17:07:08.817Z",
+  "generatedAt": "2026-10-08T17:57:27.416Z",
   "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
   "deepPagesFetched": 0,
   "deepChannelCount": 18,
-  "topicChannelCount": 280,
+  "topicChannelCount": 285,
   "governedChannelCount": 94,
   "topicCoverage": [
     {
@@ -1016,6 +1016,14 @@
       "governs": false
     },
     {
+      "id": "UClGOkwEfKOBUuvepYGT9AUQ",
+      "name": "korruptionfound",
+      "songs": 5,
+      "matched": 1,
+      "coverage": 0.2,
+      "governs": false
+    },
+    {
       "id": "UCy3TyYTl8wJh8Ana3CP0QeA",
       "name": "Orella d'Ós",
       "songs": 10,
@@ -1147,6 +1155,14 @@
       "id": "UC4S5WcSVzMhUd-UwKKpKp5w",
       "name": "Teràpia De Shock",
       "songs": 0,
+      "matched": 0,
+      "coverage": 0,
+      "governs": false
+    },
+    {
+      "id": "UCWWnWo4E1RqWDOX4-y1jwfQ",
+      "name": "Vidres a la sang",
+      "songs": 12,
       "matched": 0,
       "coverage": 0,
       "governs": false
@@ -1766,6 +1782,13 @@
       "withClip": 47
     },
     {
+      "id": "UCpWzqKujkmJvGIAt5QgBgBQ",
+      "name": "Foscor",
+      "tracks": 42,
+      "selected": 42,
+      "withClip": 0
+    },
+    {
       "id": "UCwCcA6f2KDLJi58xX2se6DA",
       "name": "Fox System",
       "tracks": 16,
@@ -2044,6 +2067,13 @@
       "tracks": 84,
       "selected": 40,
       "withClip": 6
+    },
+    {
+      "id": "UCCNmteQmEPFZTuM8joXB2Vw",
+      "name": "Korruption Found",
+      "tracks": 17,
+      "selected": 17,
+      "withClip": 1
     },
     {
       "id": "UCSJ3UWpeU4pVvvuK0flmaeg",
@@ -2373,6 +2403,13 @@
       "tracks": 151,
       "selected": 27,
       "withClip": 33
+    },
+    {
+      "id": "UC3uMAvZMHLOMo3OSDjqAVYQ",
+      "name": "MOKSHA",
+      "tracks": 10,
+      "selected": 10,
+      "withClip": 0
     },
     {
       "id": "UCQXQh0zJqh0smX0vvOLNxag",
@@ -2830,6 +2867,13 @@
       "withClip": 33
     },
     {
+      "id": "UCUTor5MG45HnmxOEc2HrUhA",
+      "name": "Sota Terra",
+      "tracks": 23,
+      "selected": 23,
+      "withClip": 0
+    },
+    {
       "id": "UCerRtDlJWXCmBMgGYjq6gYQ",
       "name": "Stay Homas",
       "tracks": 58,
@@ -3005,6 +3049,13 @@
       "withClip": 0
     },
     {
+      "id": "UCZKSBZ8hKicoNtWdq1hzTfw",
+      "name": "Vidres a la Sang",
+      "tracks": 24,
+      "selected": 24,
+      "withClip": 0
+    },
+    {
       "id": "UC7HPer-lgFJBnjfNJ_J1Q4g",
       "name": "Vittara",
       "tracks": 64,
@@ -3089,13 +3140,13 @@
       "withClip": 0
     }
   ],
-  "indexedChannelCount": 506,
-  "resolvedChannelCount": 506,
-  "feedChannelCount": 506,
-  "rawPublicVideoCount": 5555,
-  "feedVideoCount": 5020,
-  "acceptedMusicCount": 4979,
-  "categoryEligibleVideoCount": 4974,
+  "indexedChannelCount": 513,
+  "resolvedChannelCount": 513,
+  "feedChannelCount": 513,
+  "rawPublicVideoCount": 5688,
+  "feedVideoCount": 5153,
+  "acceptedMusicCount": 5112,
+  "categoryEligibleVideoCount": 5107,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
     "before": 0,
@@ -3104,8 +3155,8 @@
   },
   "contentReviewCount": 541,
   "contentTypeCounts": {
-    "song": 4856,
-    "live_song": 118,
+    "song": 4982,
+    "live_song": 125,
     "album": 5,
     "other": 35,
     "review": 541
@@ -3115,6 +3166,6 @@
   "channelsWithoutVideos": [],
   "channelsWithoutAcceptedMusic": [],
   "allIndexedChannelsVisible": true,
-  "publishedFeedVideoCount": 5020,
+  "publishedFeedVideoCount": 5108,
   "publishedShortVideoCount": 0
 }
