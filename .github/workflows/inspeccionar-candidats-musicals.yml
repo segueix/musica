@@ -1,0 +1,52 @@
+name: Inspeccionar candidats musicals
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [".github/workflows/inspeccionar-candidats-musicals.yml"]
+permissions:
+  contents: read
+jobs:
+  inspeccio:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "20"
+      - name: Consulta limitada de candidats i repertoris
+        env:
+          YOUTUBE_API_KEY_SERVER: ${{ secrets.YOUTUBE_API_KEY_SERVER }}
+        run: |
+          node - <<'NODE'
+          async function api(endpoint, params) {
+            const url = new URL('https://www.googleapis.com/youtube/v3/' + endpoint);
+            for (const [k,v] of Object.entries(params)) url.searchParams.set(k,v);
+            url.searchParams.set('key', process.env.YOUTUBE_API_KEY_SERVER);
+            const res = await fetch(url);
+            const data = await res.json();
+            if (!res.ok) throw new Error('YouTube HTTP ' + res.status + ': ' + (data.error?.errors?.[0]?.reason || 'error'));
+            return data;
+          }
+          (async()=>{
+           const ids=new Set();
+           for(const q of ['"Baixa Fidelitat"','"Bestiari" punk','"Brot Bord"','"Ciment" punk','"The Cabrians"']){
+            const r=await api('search',{part:'snippet',type:'channel',maxResults:'4',q});
+            console.log('SEARCH '+JSON.stringify({q,items:r.items}));
+            for(const x of r.items||[])if(x.id?.channelId)ids.add(x.id.channelId);
+           }
+           for(const id of ids){
+            try{
+             const c=(await api('channels',{part:'snippet,contentDetails',id})).items?.[0];if(!c)continue;
+             const playlistId=c.contentDetails?.relatedPlaylists?.uploads;
+             let pageToken='',tracks=[];
+             for(let i=0;playlistId&&i<3;i++){
+              const p=await api('playlistItems',{part:'snippet,contentDetails',playlistId,maxResults:'50',...(pageToken?{pageToken}:{})});
+              tracks.push(...(p.items||[]).map(x=>({id:x.contentDetails.videoId,title:x.snippet.title,description:x.snippet.description})));
+              pageToken=p.nextPageToken;if(!pageToken)break;
+             }
+             console.log('REPERTOIRE '+JSON.stringify({id,title:c.snippet.title,handle:c.snippet.customUrl,description:c.snippet.description,tracks,more:!!pageToken}));
+            }catch(e){console.log('CHANNEL_ERROR '+JSON.stringify({id,error:e.message}));}
+           }
+          })().catch(e=>{console.error(e.message);process.exit(1)});
+          NODE
