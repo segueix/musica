@@ -49,3 +49,5 @@ Font: https://plasticwoundrecords.bandcamp.com/track/hirsut-microcef-lia-invissi
 ## Validació
 
 Base de 411 artistes vàlida. 21 cançons breus verificades com a vídeos normals (303 de /shorts a /watch). Selecció explícita per ID; sense importació d'àlbums complets ni reportatges. No es modifiquen artistes anteriors. Les comprovacions generals de la sessió ja mostraven 5 tests i 5 errors de lint previs aliens a aquestes dades. Es valida el pipeline musical específic.
+
+Resultat: **74 vídeos verificats** entre feed i historial, selecció exacta sense vídeos no autoritzats. 96 proves específiques superades. [Indexació](https://github.com/segueix/musica/actions/runs/37807602679) limitada als 7 canals nous. [Verificació](https://github.com/segueix/musica/actions/runs/37807742926) correcta.
