@@ -208,4 +208,12 @@ Els 27 vídeos seleccionats de dos minuts o menys retornen HTTP 303 de /shorts/ 
 
 ## Validació
 
-Pendent de completar la ingestió i confirmar la selecció exacta al feed i arxiu. La revisió d'idiomes només afectarà aquests 93 identificadors.
+Ingestió completada. Selecció exacta comprovada al feed i arxiu: 93 vídeos, cap absent ni extra dels quatre canals nous.
+
+- Base d'artistes: 426 registres vàlids.
+- [Actualització del feed](https://github.com/segueix/musica/actions/runs/37813015122): correcta; quatre canals nous, 96 proves del pipeline superades.
+- [Verificació exacta](https://github.com/segueix/musica/actions/runs/37813074549): GRUP_6_OK, 93 vídeos i Perro Pachingo inactiu.
+- Revisió d'idiomes: només aquests 93 identificadors passen a revisades. Es preserven els 961 altres pendents i els 16 descartats anteriors.
+- Flux temporal d'inspecció i verificació retirat després de completar la comprovació.
+
+La verificació tècnica no amplia el repertori aprovat ni substitueix el criteri documental descrit més amunt.
