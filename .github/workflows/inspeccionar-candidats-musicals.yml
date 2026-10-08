@@ -1,35 +1,36 @@
-name: Inspeccionar candidats musicals
+name: Verificar resultat grup 4
 on:
-  workflow_dispatch:
-  push:
-    branches: [main]
-    paths: [".github/workflows/inspeccionar-candidats-musicals.yml"]
+  workflow_run:
+    workflows: ["Actualitzar feed musical"]
+    types: [completed]
 permissions:
   contents: read
 jobs:
-  inspeccio:
+  verifica:
+    if: github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
       - uses: actions/setup-node@v5
         with:
           node-version: "20"
-      - name: Consulta limitada de candidats i repertoris
-        env:
-          YOUTUBE_API_KEY_SERVER: ${{ secrets.YOUTUBE_API_KEY_SERVER }}
+      - name: Comprova seleccio i exclusions
         run: |
           node - <<'NODE'
-          async function api(endpoint, params) {
-            const url = new URL('https://www.googleapis.com/youtube/v3/' + endpoint);
-            for (const [k,v] of Object.entries(params)) url.searchParams.set(k,v);
-            url.searchParams.set('key', process.env.YOUTUBE_API_KEY_SERVER);
-            const res = await fetch(url);
-            const data = await res.json();
-            if (!res.ok) throw new Error('YouTube HTTP ' + res.status + ': ' + (data.error?.errors?.[0]?.reason || 'error'));
-            return data;
-          }
-          (async () => {
-            const v=await api('videos',{part:'snippet,contentDetails',id:'EBKvnGdVJqk,iX_xXpaYP5w'});
-            for(const track of v.items){const h=await fetch('https://www.youtube.com/shorts/'+track.id,{method:'HEAD',redirect:'manual',signal:AbortSignal.timeout(10000)}).catch(()=>null);track.shortCheck={status:h?.status,location:h?.headers.get('location')};console.log('TRACK '+JSON.stringify(track));}
-          })().catch(e=>{console.error(e.message);process.exitCode=1;});
+          const fs=require('fs'),assert=require('assert');
+          const specs=[{"artist":"Gatzara","id":"UCZn28rxOtata8FamPOLCDug","type":"official","ids":["EBKvnGdVJqk","Fqf1OplaLXU","iX_xXpaYP5w"]},{"artist":"Gatzara","id":"UCgV7p1tbKMGsNjvg8Zhm4YQ","type":"topic","ids":["84knkmwdhY4","8cpJ9qZZYB4","DiGcW__90jo","Mc78ol8ijPE","VHxNpgqjfoM","bQa-3K3M5LE","eDwqwBJDTwk","jP-1tmRuWn8","mP2f3jkUn3A","DUDZwRHvI1U","Q6qAl9mJAWQ","fW2hokwaIj4","qa-N4_BuC0U","IZ0_dN4j3vE","3tO7MkHBI1c","1rkqcz9fCKQ","M7WCwHmbUVk","TaLNx6Rzhqc"]},{"artist":"Guaita'ls","id":"UCqCzt7Atzt9MRZ1PNnQreMA","type":"official","ids":["dRPHsmCA09Y","WwY34CyZv9U","0A2IxjWbME8","PO0a-VorhqQ"]},{"artist":"Guaita'ls","id":"UChp3Qj6gtmg9chsHHDFyVyg","type":"topic","ids":["HSVbUrknn3A"]},{"artist":"Les Testarudes","id":"UCICi6PgGxMiqrzwepxP0VZA","type":"official","ids":["2VXrM5Du7Wo","Uft6LEEfYyA","V-yWoVtI56A","EBJg2b9AG9E"]},{"artist":"Les Testarudes","id":"UCHbefcM_E94xfrGz6CWC9vQ","type":"topic","ids":["n6imtkibu3I","oV6NHnAQ588","w6D0xn0Ncoo","qtObAGRLHJs","tbXs7d6K-xA"]},{"artist":"Les Aranyes","id":"UCN8HPAk-E5ZtrkLrDf7cR7A","type":"official","ids":["GGxFo_RaUnc","n2JQPSHvjQY","MoL7Zii3M54","k-OPoI_8BNM"]},{"artist":"Les Aranyes","id":"UC3v9pZ9RLUMaaBrr877QPmA","type":"topic","ids":["dxrCZuk78k8","hE1DK8qmyUg","i-RMemxZaLE","u9elwxSOA08","1A86W9qFu4k","4-o46MfUNOY","5pdZ5SDsBBw","BSASKNxgS-E","KPZg7TlTQow","NfEvAtCt64Y","XtVa7D1TI-E","YZTl-oz5yi4","mlk50LhndQs","v3zuVkz_2E0"]}];
+          const feed=JSON.parse(fs.readFileSync('data/feed.json','utf8'));
+          const found=new Map();
+          function walk(o){ if(!o||typeof o!=='object') return; if(typeof o.id==='string'&&specs.some(s=>s.ids.includes(o.id)||s.id===o.channelId)) found.set(o.id,o); for(const v of Object.values(o))if(v&&typeof v==='object')walk(v); }
+          walk(feed);
+          function files(dir){if(!fs.existsSync(dir))return;for(const e of fs.readdirSync(dir,{withFileTypes:true})){const p=dir+'/'+e.name;if(e.isDirectory())files(p);else if(p.endsWith('.json'))walk(JSON.parse(fs.readFileSync(p,'utf8')));}}
+          files('data/archive');
+          const allAllowed=new Set(specs.flatMap(s=>s.ids));
+          for(const s of specs){const missing=s.ids.filter(id=>!found.has(id)); console.log(JSON.stringify({artist:s.artist,channel:s.id,expected:s.ids.length,missing}));assert.equal(missing.length,0,'Vídeos absents');}
+          for(const [id,v]of found)if(specs.some(s=>s.id===v.channelId))assert(allAllowed.has(id),'Vídeo no autoritzat '+id);
+          const a=JSON.parse(fs.readFileSync('data/artistes-musica.json','utf8'));assert.equal(a.artists.find(a=>a.name==='Grans amb Pus').active,false);
+          console.log('GRUP_4_OK '+allAllowed.size+' vídeos; Grans amb Pus pendent; selecció exacta.');
           NODE

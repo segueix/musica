@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-08T16:16:43.833Z",
+  "updatedAt": "2026-10-08T16:30:16.892Z",
   "description": "Llista blanca per a canals on Segueix Música només ha d'ingerir vídeos concrets. Admet títols exactes, fragments obligatoris i fragments exclosos.",
   "channels": {
     "UCKpscwdWlVaMqcA81vLI7OA": {
@@ -2921,6 +2921,155 @@
         "29BOy-B9xW4",
         "ocz28vFPkGs",
         "2kTNA-8YZF8"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "avatarFromFirstAllowedVideo": false
+    },
+    "UCZn28rxOtata8FamPOLCDug": {
+      "artist": "Gatzara",
+      "note": "Grup 4 Xavi. Trio punk de Molins de Rei. 21 vídeos amb repertori català contrastat amb les lletres del Bandcamp oficial. Exclòs Asumiendo tu derrota (castellà). ETERNA + S.P.T. és una pista publicada amb dues parts en català. No confondre amb Gatzara Records.",
+      "allowedVideoIds": [
+        "EBKvnGdVJqk",
+        "Fqf1OplaLXU",
+        "iX_xXpaYP5w"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "avatarFromFirstAllowedVideo": false
+    },
+    "UCgV7p1tbKMGsNjvg8Zhm4YQ": {
+      "artist": "Gatzara",
+      "note": "Grup 4 Xavi. Trio punk de Molins de Rei. 21 vídeos amb repertori català contrastat amb les lletres del Bandcamp oficial. Exclòs Asumiendo tu derrota (castellà). ETERNA + S.P.T. és una pista publicada amb dues parts en català. No confondre amb Gatzara Records.",
+      "allowedVideoIds": [
+        "84knkmwdhY4",
+        "8cpJ9qZZYB4",
+        "DiGcW__90jo",
+        "Mc78ol8ijPE",
+        "VHxNpgqjfoM",
+        "bQa-3K3M5LE",
+        "eDwqwBJDTwk",
+        "jP-1tmRuWn8",
+        "mP2f3jkUn3A",
+        "DUDZwRHvI1U",
+        "Q6qAl9mJAWQ",
+        "fW2hokwaIj4",
+        "qa-N4_BuC0U",
+        "IZ0_dN4j3vE",
+        "3tO7MkHBI1c",
+        "1rkqcz9fCKQ",
+        "M7WCwHmbUVk",
+        "TaLNx6Rzhqc"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "avatarFromFirstAllowedVideo": false
+    },
+    "UCqCzt7Atzt9MRZ1PNnQreMA": {
+      "artist": "Guaita'ls",
+      "note": "Grup 4 Xavi. Ska de Terrassa. 4 cançons amb lletres catalanes a les descripcions oficials i versió Tema de B de Reggae. Exclòs The Reggae Resource (anglès). Xavio Unchained i la resta del repertori Tema pendents de verificar idioma; no s'ha deduït dels títols.",
+      "allowedVideoIds": [
+        "dRPHsmCA09Y",
+        "WwY34CyZv9U",
+        "0A2IxjWbME8",
+        "PO0a-VorhqQ"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "avatarFromFirstAllowedVideo": false
+    },
+    "UChp3Qj6gtmg9chsHHDFyVyg": {
+      "artist": "Guaita'ls",
+      "note": "Grup 4 Xavi. Ska de Terrassa. 4 cançons amb lletres catalanes a les descripcions oficials i versió Tema de B de Reggae. Exclòs The Reggae Resource (anglès). Xavio Unchained i la resta del repertori Tema pendents de verificar idioma; no s'ha deduït dels títols.",
+      "allowedVideoIds": [
+        "HSVbUrknn3A"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "avatarFromFirstAllowedVideo": false
+    },
+    "UCICi6PgGxMiqrzwepxP0VZA": {
+      "artist": "Les Testarudes",
+      "note": "Grup 4 Xavi. Selecció de 9 vídeos: Vull uns mocasins, Terra de secà, Estafa climàtica (àudio/lyric i un directe), La gran xefla i Where's My Car? (català amb tornada anglesa). Idioma contrastat amb transcripcions radiofòniques, lletra original de Fetus i ressenya que documenta el bilingüisme. Un Mamut en castellà exclòs; versions estrangeres i resta de repertori sense verificació suficient queden fora de la llista autoritzada. Metadades defaultLanguage=ca no considerades prova d'idioma.",
+      "allowedVideoIds": [
+        "2VXrM5Du7Wo",
+        "Uft6LEEfYyA",
+        "V-yWoVtI56A",
+        "EBJg2b9AG9E"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "avatarFromFirstAllowedVideo": false
+    },
+    "UCHbefcM_E94xfrGz6CWC9vQ": {
+      "artist": "Les Testarudes",
+      "note": "Grup 4 Xavi. Selecció de 9 vídeos: Vull uns mocasins, Terra de secà, Estafa climàtica (àudio/lyric i un directe), La gran xefla i Where's My Car? (català amb tornada anglesa). Idioma contrastat amb transcripcions radiofòniques, lletra original de Fetus i ressenya que documenta el bilingüisme. Un Mamut en castellà exclòs; versions estrangeres i resta de repertori sense verificació suficient queden fora de la llista autoritzada. Metadades defaultLanguage=ca no considerades prova d'idioma.",
+      "allowedVideoIds": [
+        "n6imtkibu3I",
+        "oV6NHnAQ588",
+        "w6D0xn0Ncoo",
+        "qtObAGRLHJs",
+        "tbXs7d6K-xA"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "avatarFromFirstAllowedVideo": false
+    },
+    "UCN8HPAk-E5ZtrkLrDf7cR7A": {
+      "artist": "Les Aranyes",
+      "note": "Grup 4 Xavi. 14 pistes dels dos discos amb lletres catalanes publicades al Bandcamp oficial i 4 vídeos del canal oficial. Scanners i Klaatu Barada Nikto són en català malgrat els títols. 16 Jutges pendent de lletra; concert complet exclòs.",
+      "allowedVideoIds": [
+        "GGxFo_RaUnc",
+        "n2JQPSHvjQY",
+        "MoL7Zii3M54",
+        "k-OPoI_8BNM"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "avatarFromFirstAllowedVideo": false
+    },
+    "UC3v9pZ9RLUMaaBrr877QPmA": {
+      "artist": "Les Aranyes",
+      "note": "Grup 4 Xavi. 14 pistes dels dos discos amb lletres catalanes publicades al Bandcamp oficial i 4 vídeos del canal oficial. Scanners i Klaatu Barada Nikto són en català malgrat els títols. 16 Jutges pendent de lletra; concert complet exclòs.",
+      "allowedVideoIds": [
+        "dxrCZuk78k8",
+        "hE1DK8qmyUg",
+        "i-RMemxZaLE",
+        "u9elwxSOA08",
+        "1A86W9qFu4k",
+        "4-o46MfUNOY",
+        "5pdZ5SDsBBw",
+        "BSASKNxgS-E",
+        "KPZg7TlTQow",
+        "NfEvAtCt64Y",
+        "XtVa7D1TI-E",
+        "YZTl-oz5yi4",
+        "mlk50LhndQs",
+        "v3zuVkz_2E0"
       ],
       "acceptedMusicOnly": true,
       "allowedContentTypes": [

@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-08T16:16:43.833Z",
+  "updatedAt": "2026-10-08T16:30:16.892Z",
   "description": "Decisions manuals sobre el tipus de contingut de vídeos concrets. Manen sobre el classificador automàtic (scripts/lib/classificar_contingut_musical.js) i el pipeline (scripts/update_music_feed.js) les reaplica a cada generació del feed. Tipus permesos: song, live_song, album, other. Un vídeo revisat aquí surt de data/music-content-review.json.",
   "videos": [
     {
@@ -1635,6 +1635,324 @@
       "title": "FOX SYSTEM - La Banda Papelera",
       "contentType": "song",
       "note": "Grup 3 Xavi: cançó completa amb lletra catalana contrastada amb Bandcamp o descripció oficial; no és promoció ni fragment."
+    },
+    {
+      "id": "EBKvnGdVJqk",
+      "title": "GATZARA (Videoclip)",
+      "contentType": "song",
+      "note": "Grup 4 Xavi: cançó completa seleccionada; evidència lingüística i exclusions a docs/GRUP_4_XAVI.md."
+    },
+    {
+      "id": "Fqf1OplaLXU",
+      "title": "La Oi! (Videoclip D.I.Y.)",
+      "contentType": "song",
+      "note": "Grup 4 Xavi: cançó completa seleccionada; evidència lingüística i exclusions a docs/GRUP_4_XAVI.md."
+    },
+    {
+      "id": "iX_xXpaYP5w",
+      "title": "GATZARA \"Mentides\"  (NADAL A 10 BANDES) 2025",
+      "contentType": "song",
+      "note": "Grup 4 Xavi: cançó completa seleccionada; evidència lingüística i exclusions a docs/GRUP_4_XAVI.md."
+    },
+    {
+      "id": "84knkmwdhY4",
+      "title": "ETERNA + S.P.T.",
+      "contentType": "song",
+      "note": "Grup 4 Xavi: cançó completa seleccionada; evidència lingüística i exclusions a docs/GRUP_4_XAVI.md."
+    },
+    {
+      "id": "8cpJ9qZZYB4",
+      "title": "UNA ESPURNA",
+      "contentType": "song",
+      "note": "Grup 4 Xavi: cançó completa seleccionada; evidència lingüística i exclusions a docs/GRUP_4_XAVI.md."
+    },
+    {
+      "id": "DiGcW__90jo",
+      "title": "CEMENTERI AL FONS DEL MAR",
+      "contentType": "song",
+      "note": "Grup 4 Xavi: cançó completa seleccionada; evidència lingüística i exclusions a docs/GRUP_4_XAVI.md."
+    },
+    {
+      "id": "Mc78ol8ijPE",
+      "title": "EL MILLOR MESTRE",
+      "contentType": "song",
+      "note": "Grup 4 Xavi: cançó completa seleccionada; evidència lingüística i exclusions a docs/GRUP_4_XAVI.md."
+    },
+    {
+      "id": "VHxNpgqjfoM",
+      "title": "NINGÚ ÉS VIU",
+      "contentType": "song",
+      "note": "Grup 4 Xavi: cançó completa seleccionada; evidència lingüística i exclusions a docs/GRUP_4_XAVI.md."
+    },
+    {
+      "id": "bQa-3K3M5LE",
+      "title": "M.M.M.",
+      "contentType": "song",
+      "note": "Grup 4 Xavi: cançó completa seleccionada; evidència lingüística i exclusions a docs/GRUP_4_XAVI.md."
+    },
+    {
+      "id": "eDwqwBJDTwk",
+      "title": "AGUANTEM LA MIRADA",
+      "contentType": "song",
+      "note": "Grup 4 Xavi: cançó completa seleccionada; evidència lingüística i exclusions a docs/GRUP_4_XAVI.md."
+    },
+    {
+      "id": "jP-1tmRuWn8",
+      "title": "PALLARESES I PASSAMUNTANYES",
+      "contentType": "song",
+      "note": "Grup 4 Xavi: cançó completa seleccionada; evidència lingüística i exclusions a docs/GRUP_4_XAVI.md."
+    },
+    {
+      "id": "mP2f3jkUn3A",
+      "title": "SISTEMA DECADENT",
+      "contentType": "song",
+      "note": "Grup 4 Xavi: cançó completa seleccionada; evidència lingüística i exclusions a docs/GRUP_4_XAVI.md."
+    },
+    {
+      "id": "DUDZwRHvI1U",
+      "title": "El Jeta",
+      "contentType": "song",
+      "note": "Grup 4 Xavi: cançó completa seleccionada; evidència lingüística i exclusions a docs/GRUP_4_XAVI.md."
+    },
+    {
+      "id": "Q6qAl9mJAWQ",
+      "title": "Ningú és viu",
+      "contentType": "song",
+      "note": "Grup 4 Xavi: cançó completa seleccionada; evidència lingüística i exclusions a docs/GRUP_4_XAVI.md."
+    },
+    {
+      "id": "fW2hokwaIj4",
+      "title": "Gatzara",
+      "contentType": "song",
+      "note": "Grup 4 Xavi: cançó completa seleccionada; evidència lingüística i exclusions a docs/GRUP_4_XAVI.md."
+    },
+    {
+      "id": "qa-N4_BuC0U",
+      "title": "Brutícia",
+      "contentType": "song",
+      "note": "Grup 4 Xavi: cançó completa seleccionada; evidència lingüística i exclusions a docs/GRUP_4_XAVI.md."
+    },
+    {
+      "id": "IZ0_dN4j3vE",
+      "title": "Sota la runa",
+      "contentType": "song",
+      "note": "Grup 4 Xavi: cançó completa seleccionada; evidència lingüística i exclusions a docs/GRUP_4_XAVI.md."
+    },
+    {
+      "id": "3tO7MkHBI1c",
+      "title": "Fa olor a cremat",
+      "contentType": "song",
+      "note": "Grup 4 Xavi: cançó completa seleccionada; evidència lingüística i exclusions a docs/GRUP_4_XAVI.md."
+    },
+    {
+      "id": "1rkqcz9fCKQ",
+      "title": "Batecs del Baix",
+      "contentType": "song",
+      "note": "Grup 4 Xavi: cançó completa seleccionada; evidència lingüística i exclusions a docs/GRUP_4_XAVI.md."
+    },
+    {
+      "id": "M7WCwHmbUVk",
+      "title": "La Oi!",
+      "contentType": "song",
+      "note": "Grup 4 Xavi: cançó completa seleccionada; evidència lingüística i exclusions a docs/GRUP_4_XAVI.md."
+    },
+    {
+      "id": "TaLNx6Rzhqc",
+      "title": "Un dels nostres",
+      "contentType": "song",
+      "note": "Grup 4 Xavi: cançó completa seleccionada; evidència lingüística i exclusions a docs/GRUP_4_XAVI.md."
+    },
+    {
+      "id": "dRPHsmCA09Y",
+      "title": "GUAITA'LS - B DE REGGAE",
+      "contentType": "song",
+      "note": "Grup 4 Xavi: cançó completa seleccionada; evidència lingüística i exclusions a docs/GRUP_4_XAVI.md."
+    },
+    {
+      "id": "WwY34CyZv9U",
+      "title": "GUAITA'LS - NOUVINGUT",
+      "contentType": "song",
+      "note": "Grup 4 Xavi: cançó completa seleccionada; evidència lingüística i exclusions a docs/GRUP_4_XAVI.md."
+    },
+    {
+      "id": "0A2IxjWbME8",
+      "title": "GUAITA'LS - DE LA MÀ",
+      "contentType": "song",
+      "note": "Grup 4 Xavi: cançó completa seleccionada; evidència lingüística i exclusions a docs/GRUP_4_XAVI.md."
+    },
+    {
+      "id": "PO0a-VorhqQ",
+      "title": "GUAITA'LS - L'ONADA",
+      "contentType": "song",
+      "note": "Grup 4 Xavi: cançó completa seleccionada; evidència lingüística i exclusions a docs/GRUP_4_XAVI.md."
+    },
+    {
+      "id": "HSVbUrknn3A",
+      "title": "B de Reggae",
+      "contentType": "song",
+      "note": "Grup 4 Xavi: cançó completa seleccionada; evidència lingüística i exclusions a docs/GRUP_4_XAVI.md."
+    },
+    {
+      "id": "2VXrM5Du7Wo",
+      "title": "Les Testarudes - Vull Uns Mocasins (La Prèvia)",
+      "contentType": "song",
+      "note": "Grup 4 Xavi: cançó completa seleccionada; evidència lingüística i exclusions a docs/GRUP_4_XAVI.md."
+    },
+    {
+      "id": "Uft6LEEfYyA",
+      "title": "Les Testarudes - Terra de Secà (La Prèvia)",
+      "contentType": "song",
+      "note": "Grup 4 Xavi: cançó completa seleccionada; evidència lingüística i exclusions a docs/GRUP_4_XAVI.md."
+    },
+    {
+      "id": "V-yWoVtI56A",
+      "title": "Les Testarudes - Estafa Climàtica (La Prèvia)",
+      "contentType": "song",
+      "note": "Grup 4 Xavi: cançó completa seleccionada; evidència lingüística i exclusions a docs/GRUP_4_XAVI.md."
+    },
+    {
+      "id": "EBJg2b9AG9E",
+      "title": "Terra de Secà - Les Testarudes (versió en directe)",
+      "contentType": "live_song",
+      "note": "Grup 4 Xavi: cançó completa seleccionada; evidència lingüística i exclusions a docs/GRUP_4_XAVI.md."
+    },
+    {
+      "id": "n6imtkibu3I",
+      "title": "Vull Uns Mocasins",
+      "contentType": "song",
+      "note": "Grup 4 Xavi: cançó completa seleccionada; evidència lingüística i exclusions a docs/GRUP_4_XAVI.md."
+    },
+    {
+      "id": "oV6NHnAQ588",
+      "title": "Terra De Secà",
+      "contentType": "song",
+      "note": "Grup 4 Xavi: cançó completa seleccionada; evidència lingüística i exclusions a docs/GRUP_4_XAVI.md."
+    },
+    {
+      "id": "w6D0xn0Ncoo",
+      "title": "Estafa Climàtica",
+      "contentType": "song",
+      "note": "Grup 4 Xavi: cançó completa seleccionada; evidència lingüística i exclusions a docs/GRUP_4_XAVI.md."
+    },
+    {
+      "id": "qtObAGRLHJs",
+      "title": "Where's My Car?",
+      "contentType": "song",
+      "note": "Grup 4 Xavi: cançó completa seleccionada; evidència lingüística i exclusions a docs/GRUP_4_XAVI.md."
+    },
+    {
+      "id": "tbXs7d6K-xA",
+      "title": "La Gran Xefla",
+      "contentType": "song",
+      "note": "Grup 4 Xavi: cançó completa seleccionada; evidència lingüística i exclusions a docs/GRUP_4_XAVI.md."
+    },
+    {
+      "id": "GGxFo_RaUnc",
+      "title": "LES ARANYES - CAP DE CARBASSA en directe al TRASH BASTÉ Part II (5/11/22)",
+      "contentType": "live_song",
+      "note": "Grup 4 Xavi: cançó completa seleccionada; evidència lingüística i exclusions a docs/GRUP_4_XAVI.md."
+    },
+    {
+      "id": "n2JQPSHvjQY",
+      "title": "LES ARANYES - KLAATU BARADA NIKTO",
+      "contentType": "song",
+      "note": "Grup 4 Xavi: cançó completa seleccionada; evidència lingüística i exclusions a docs/GRUP_4_XAVI.md."
+    },
+    {
+      "id": "MoL7Zii3M54",
+      "title": "LES ARANYES - ELMER",
+      "contentType": "song",
+      "note": "Grup 4 Xavi: cançó completa seleccionada; evidència lingüística i exclusions a docs/GRUP_4_XAVI.md."
+    },
+    {
+      "id": "k-OPoI_8BNM",
+      "title": "Les Aranyes - Morts i Enterrats 31/10/21",
+      "contentType": "live_song",
+      "note": "Grup 4 Xavi: cançó completa seleccionada; evidència lingüística i exclusions a docs/GRUP_4_XAVI.md."
+    },
+    {
+      "id": "dxrCZuk78k8",
+      "title": "Cap de Carbassa",
+      "contentType": "song",
+      "note": "Grup 4 Xavi: cançó completa seleccionada; evidència lingüística i exclusions a docs/GRUP_4_XAVI.md."
+    },
+    {
+      "id": "hE1DK8qmyUg",
+      "title": "Llefiscositat",
+      "contentType": "song",
+      "note": "Grup 4 Xavi: cançó completa seleccionada; evidència lingüística i exclusions a docs/GRUP_4_XAVI.md."
+    },
+    {
+      "id": "i-RMemxZaLE",
+      "title": "Scanners",
+      "contentType": "song",
+      "note": "Grup 4 Xavi: cançó completa seleccionada; evidència lingüística i exclusions a docs/GRUP_4_XAVI.md."
+    },
+    {
+      "id": "u9elwxSOA08",
+      "title": "Al Subsòl",
+      "contentType": "song",
+      "note": "Grup 4 Xavi: cançó completa seleccionada; evidència lingüística i exclusions a docs/GRUP_4_XAVI.md."
+    },
+    {
+      "id": "1A86W9qFu4k",
+      "title": "Darrere les parets",
+      "contentType": "song",
+      "note": "Grup 4 Xavi: cançó completa seleccionada; evidència lingüística i exclusions a docs/GRUP_4_XAVI.md."
+    },
+    {
+      "id": "4-o46MfUNOY",
+      "title": "Klaatu Barada Nikto",
+      "contentType": "song",
+      "note": "Grup 4 Xavi: cançó completa seleccionada; evidència lingüística i exclusions a docs/GRUP_4_XAVI.md."
+    },
+    {
+      "id": "5pdZ5SDsBBw",
+      "title": "Re-Animador",
+      "contentType": "song",
+      "note": "Grup 4 Xavi: cançó completa seleccionada; evidència lingüística i exclusions a docs/GRUP_4_XAVI.md."
+    },
+    {
+      "id": "BSASKNxgS-E",
+      "title": "Disturbis al cementiri",
+      "contentType": "song",
+      "note": "Grup 4 Xavi: cançó completa seleccionada; evidència lingüística i exclusions a docs/GRUP_4_XAVI.md."
+    },
+    {
+      "id": "KPZg7TlTQow",
+      "title": "Funerària Morningside",
+      "contentType": "song",
+      "note": "Grup 4 Xavi: cançó completa seleccionada; evidència lingüística i exclusions a docs/GRUP_4_XAVI.md."
+    },
+    {
+      "id": "NfEvAtCt64Y",
+      "title": "Morts i enterrats",
+      "contentType": "song",
+      "note": "Grup 4 Xavi: cançó completa seleccionada; evidència lingüística i exclusions a docs/GRUP_4_XAVI.md."
+    },
+    {
+      "id": "XtVa7D1TI-E",
+      "title": "Les cures de l'Annie",
+      "contentType": "song",
+      "note": "Grup 4 Xavi: cançó completa seleccionada; evidència lingüística i exclusions a docs/GRUP_4_XAVI.md."
+    },
+    {
+      "id": "YZTl-oz5yi4",
+      "title": "20 ulls",
+      "contentType": "song",
+      "note": "Grup 4 Xavi: cançó completa seleccionada; evidència lingüística i exclusions a docs/GRUP_4_XAVI.md."
+    },
+    {
+      "id": "mlk50LhndQs",
+      "title": "Elmer",
+      "contentType": "song",
+      "note": "Grup 4 Xavi: cançó completa seleccionada; evidència lingüística i exclusions a docs/GRUP_4_XAVI.md."
+    },
+    {
+      "id": "v3zuVkz_2E0",
+      "title": "El senyor de les rates",
+      "contentType": "song",
+      "note": "Grup 4 Xavi: cançó completa seleccionada; evidència lingüística i exclusions a docs/GRUP_4_XAVI.md."
     }
   ]
 }
