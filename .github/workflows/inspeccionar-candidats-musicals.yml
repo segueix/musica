@@ -1,0 +1,24 @@
+name: Inspeccionar metall grup 4
+on:
+  push:
+    branches: [main]
+    paths: [".github/workflows/inspeccionar-candidats-musicals.yml"]
+permissions:
+  contents: read
+jobs:
+  inspeccio:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "20"
+      - name: Consulta limitada de candidats i repertoris
+        env:
+          YOUTUBE_API_KEY_SERVER: ${{ secrets.YOUTUBE_API_KEY_SERVER }}
+        run: |
+          node - <<'NODE'
+          async function api(endpoint,params){const u=new URL('https://www.googleapis.com/youtube/v3/'+endpoint);for(const[k,v]of Object.entries(params))u.searchParams.set(k,v);u.searchParams.set('key',process.env.YOUTUBE_API_KEY_SERVER);const r=await fetch(u);const d=await r.json();if(!r.ok)throw Error('YouTube '+r.status);return d;}
+          (async()=>{const ids=new Set();for(const q of ["Avalot Somnis","Avalot Topic","Icestorm Topic","Icestorm Terres de foc","Vrademargk Topic","Thanatopraxy Topic","Pesta Porcina Topic"]){const r=await api('search',{part:'snippet',type:'video',maxResults:'5',q});console.log('SEARCH '+JSON.stringify({q,items:r.items}));for(const x of r.items||[])ids.add(x.snippet.channelId);}
+          for(const id of ids){const r=await api('channels',{part:'snippet,contentDetails',id});const c=r.items?.[0];if(!c||!/avalot|icestorm|vrademarg|thanatopraxy|pesta.?porcina/i.test(c.snippet.title))continue;let token='',tracks=[];for(let n=0;n<4;n++){const p=await api('playlistItems',{part:'snippet,contentDetails',playlistId:c.contentDetails.relatedPlaylists.uploads,maxResults:'50',...(token?{pageToken:token}:{})});const vids=p.items.map(x=>x.contentDetails.videoId);if(vids.length){const v=await api('videos',{part:'snippet,contentDetails',id:vids.join(',')});tracks.push(...v.items);}token=p.nextPageToken||'';if(!token)break;}console.log('REPERTOIRE '+JSON.stringify({id,title:c.snippet.title,handle:c.snippet.customUrl,description:c.snippet.description,tracks,more:!!token}));}})().catch(e=>{console.error(e.message);process.exitCode=1;});
+          NODE
