@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-08T16:58:34.570Z",
+  "updatedAt": "2026-10-08T17:06:19.149Z",
   "description": "Decisions manuals sobre el tipus de contingut de vídeos concrets. Manen sobre el classificador automàtic (scripts/lib/classificar_contingut_musical.js) i el pipeline (scripts/update_music_feed.js) les reaplica a cada generació del feed. Tipus permesos: song, live_song, album, other. Un vídeo revisat aquí surt de data/music-content-review.json.",
   "videos": [
     {
@@ -2859,6 +2859,108 @@
       "title": "Professor",
       "contentType": "song",
       "note": "Grup 6 Xavi: pista completa seleccionada. Evidència lingüística i exclusions a docs/GRUP_6_XAVI.md."
+    },
+    {
+      "id": "7mrq8Iig5Go",
+      "title": "No em dona la vida",
+      "contentType": "song",
+      "note": "Grup 7: enregistrament musical Topic; català contrastat amb la lletra publicada a Bandcamp. docs/GRUP_7_XAVI.md."
+    },
+    {
+      "id": "V27MinLPyU8",
+      "title": "Amor i distorsió",
+      "contentType": "song",
+      "note": "Grup 7: enregistrament musical Topic; català contrastat amb la lletra publicada a Bandcamp. docs/GRUP_7_XAVI.md."
+    },
+    {
+      "id": "g56_nbA2-hI",
+      "title": "No m'he assegut en tot el dia",
+      "contentType": "song",
+      "note": "Grup 7: enregistrament musical Topic; català contrastat amb la lletra publicada a Bandcamp. docs/GRUP_7_XAVI.md."
+    },
+    {
+      "id": "hjY5Xe_Z10c",
+      "title": "Rems",
+      "contentType": "song",
+      "note": "Grup 7: enregistrament musical Topic; català contrastat amb la lletra publicada a Bandcamp. docs/GRUP_7_XAVI.md."
+    },
+    {
+      "id": "r5QfCes0_oI",
+      "title": "L'ull de l'huracà",
+      "contentType": "song",
+      "note": "Grup 7: enregistrament musical Topic; català contrastat amb la lletra publicada a Bandcamp. docs/GRUP_7_XAVI.md."
+    },
+    {
+      "id": "9mjCWU2yGL0",
+      "title": "FLECA GEGANT",
+      "contentType": "song",
+      "note": "Grup 7: enregistrament musical Topic; català contrastat amb la lletra publicada a Bandcamp. docs/GRUP_7_XAVI.md."
+    },
+    {
+      "id": "A3n3HxQgesI",
+      "title": "SOFISTES",
+      "contentType": "song",
+      "note": "Grup 7: enregistrament musical Topic; català contrastat amb la lletra publicada a Bandcamp. docs/GRUP_7_XAVI.md."
+    },
+    {
+      "id": "Pdez4UFfMc4",
+      "title": "POR",
+      "contentType": "song",
+      "note": "Grup 7: enregistrament musical Topic; català contrastat amb la lletra publicada a Bandcamp. docs/GRUP_7_XAVI.md."
+    },
+    {
+      "id": "SGZk2IvPXyk",
+      "title": "PANEROLES",
+      "contentType": "song",
+      "note": "Grup 7: enregistrament musical Topic; català contrastat amb la lletra publicada a Bandcamp. docs/GRUP_7_XAVI.md."
+    },
+    {
+      "id": "WtXDmYYlquY",
+      "title": "CARN VIVA",
+      "contentType": "song",
+      "note": "Grup 7: enregistrament musical Topic; català contrastat amb la lletra publicada a Bandcamp. docs/GRUP_7_XAVI.md."
+    },
+    {
+      "id": "ZHcL8hIOvaY",
+      "title": "SUPERHEROIS",
+      "contentType": "song",
+      "note": "Grup 7: enregistrament musical Topic; català contrastat amb la lletra publicada a Bandcamp. docs/GRUP_7_XAVI.md."
+    },
+    {
+      "id": "gGeDRyptcgc",
+      "title": "GRITA DINAMITA",
+      "contentType": "song",
+      "note": "Grup 7: enregistrament musical Topic; català contrastat amb la lletra publicada a Bandcamp. docs/GRUP_7_XAVI.md."
+    },
+    {
+      "id": "iDqPJvbSQ8w",
+      "title": "JARDÍ INTERIOR",
+      "contentType": "song",
+      "note": "Grup 7: enregistrament musical Topic; català contrastat amb la lletra publicada a Bandcamp. docs/GRUP_7_XAVI.md."
+    },
+    {
+      "id": "t3qZtFvnf2g",
+      "title": "SOM NADONS",
+      "contentType": "song",
+      "note": "Grup 7: enregistrament musical Topic; català contrastat amb la lletra publicada a Bandcamp. docs/GRUP_7_XAVI.md."
+    },
+    {
+      "id": "tp8FnYScRfI",
+      "title": "AJUDA'NS LLUNA",
+      "contentType": "song",
+      "note": "Grup 7: enregistrament musical Topic; català contrastat amb la lletra publicada a Bandcamp. docs/GRUP_7_XAVI.md."
+    },
+    {
+      "id": "5ktJl4HtWPk",
+      "title": "JARDÍ INTERIOR",
+      "contentType": "song",
+      "note": "Grup 7: enregistrament musical Topic; català contrastat amb la lletra publicada a Bandcamp. docs/GRUP_7_XAVI.md."
+    },
+    {
+      "id": "8SV5h3MrtgM",
+      "title": "Carn Viva",
+      "contentType": "song",
+      "note": "Grup 7: enregistrament musical Topic; català contrastat amb la lletra publicada a Bandcamp. docs/GRUP_7_XAVI.md."
     }
   ]
 }

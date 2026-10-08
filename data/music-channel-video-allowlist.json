@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-08T16:58:34.570Z",
+  "updatedAt": "2026-10-08T17:06:19.149Z",
   "description": "Llista blanca per a canals on Segueix Música només ha d'ingerir vídeos concrets. Admet títols exactes, fragments obligatoris i fragments exclosos.",
   "channels": {
     "UCKpscwdWlVaMqcA81vLI7OA": {
@@ -3317,6 +3317,35 @@
         "Jn5n2H-EQz8",
         "fzAU9NHI_QA",
         "HwAu3N4hVGs"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "avatarFromFirstAllowedVideo": false
+    },
+    "UCl8a9NTTy-1sx1zB3lOAd5A": {
+      "artist": "Vicky l’Arròs",
+      "note": "Grup 7: selecció amb lletres contrastades. Exclusions i pendents a docs/GRUP_7_XAVI.md.",
+      "allowedVideoIds": [
+        "7mrq8Iig5Go",
+        "V27MinLPyU8",
+        "g56_nbA2-hI",
+        "hjY5Xe_Z10c",
+        "r5QfCes0_oI",
+        "9mjCWU2yGL0",
+        "A3n3HxQgesI",
+        "Pdez4UFfMc4",
+        "SGZk2IvPXyk",
+        "WtXDmYYlquY",
+        "ZHcL8hIOvaY",
+        "gGeDRyptcgc",
+        "iDqPJvbSQ8w",
+        "t3qZtFvnf2g",
+        "tp8FnYScRfI",
+        "5ktJl4HtWPk",
+        "8SV5h3MrtgM"
       ],
       "acceptedMusicOnly": true,
       "allowedContentTypes": [
