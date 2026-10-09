@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-08T20:08:32.845Z",
+  "updatedAt": "2026-10-09T14:36:01.144Z",
   "description": "Llista blanca per a canals on Segueix Música només ha d'ingerir vídeos concrets. Admet títols exactes, fragments obligatoris i fragments exclosos.",
   "channels": {
     "UCKpscwdWlVaMqcA81vLI7OA": {
@@ -4318,6 +4318,24 @@
         "live_song"
       ],
       "avatarFromFirstAllowedVideo": false
+    },
+    "UCdezTX23syEeAJJAb2oOkKA": {
+      "artist": "Club Social Carme",
+      "note": "Només sessions musicals en directe del canal oficial @club_social_carme. Les set sessions inicials són live_song a music-content-overrides.json, incloses les que superen quinze minuts. No s'accepten vídeos d'estudi, entrevistes, teasers ni contingut auxiliar.",
+      "allowedVideoIds": [
+        "QkKPvNot94g",
+        "vf0BFDzgpmo",
+        "z5CG34bAwmA",
+        "ysKfbZElXaY",
+        "wJUlrv73K2Y",
+        "vvBfCHNvQe0",
+        "dpGrzBf6iKM"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "live_song"
+      ],
+      "avatarFromFirstAllowedVideo": true
     }
   }
 }
