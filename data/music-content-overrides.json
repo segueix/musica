@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-08T20:08:32.845Z",
+  "updatedAt": "2026-10-09T14:36:01.106Z",
   "description": "Decisions manuals sobre el tipus de contingut de vídeos concrets. Manen sobre el classificador automàtic (scripts/lib/classificar_contingut_musical.js) i el pipeline (scripts/update_music_feed.js) les reaplica a cada generació del feed. Tipus permesos: song, live_song, album, other. Un vídeo revisat aquí surt de data/music-content-review.json.",
   "videos": [
     {
@@ -6231,6 +6231,41 @@
       "title": "GROGGY RUDE - Ciutadans Populars",
       "contentType": "song",
       "note": "Lletra catalana contrastada a les fonts oficials. docs/PUNK_ESPERIT_GROGGY.md."
+    },
+    {
+      "id": "QkKPvNot94g",
+      "contentType": "live_song",
+      "note": "Sessió musical en directe del Club Social Carme. Sol·licitud manual de l'usuari: incorporar només com a directes (2026-10-09). Font: https://clubsocialcarme.com/ i canal oficial de YouTube @club_social_carme."
+    },
+    {
+      "id": "vf0BFDzgpmo",
+      "contentType": "live_song",
+      "note": "Sessió musical en directe del Club Social Carme. Sol·licitud manual de l'usuari: incorporar només com a directes (2026-10-09). Font: https://clubsocialcarme.com/ i canal oficial de YouTube @club_social_carme."
+    },
+    {
+      "id": "z5CG34bAwmA",
+      "contentType": "live_song",
+      "note": "Sessió musical en directe del Club Social Carme. Sol·licitud manual de l'usuari: incorporar només com a directes (2026-10-09). Font: https://clubsocialcarme.com/ i canal oficial de YouTube @club_social_carme."
+    },
+    {
+      "id": "ysKfbZElXaY",
+      "contentType": "live_song",
+      "note": "Sessió musical en directe del Club Social Carme. Sol·licitud manual de l'usuari: incorporar només com a directes (2026-10-09). Font: https://clubsocialcarme.com/ i canal oficial de YouTube @club_social_carme."
+    },
+    {
+      "id": "wJUlrv73K2Y",
+      "contentType": "live_song",
+      "note": "Sessió musical en directe del Club Social Carme. Sol·licitud manual de l'usuari: incorporar només com a directes (2026-10-09). Font: https://clubsocialcarme.com/ i canal oficial de YouTube @club_social_carme."
+    },
+    {
+      "id": "vvBfCHNvQe0",
+      "contentType": "live_song",
+      "note": "Sessió musical en directe del Club Social Carme. Sol·licitud manual de l'usuari: incorporar només com a directes (2026-10-09). Font: https://clubsocialcarme.com/ i canal oficial de YouTube @club_social_carme."
+    },
+    {
+      "id": "dpGrzBf6iKM",
+      "contentType": "live_song",
+      "note": "Sessió musical en directe del Club Social Carme. Sol·licitud manual de l'usuari: incorporar només com a directes (2026-10-09). Font: https://clubsocialcarme.com/ i canal oficial de YouTube @club_social_carme."
     }
   ]
 }
