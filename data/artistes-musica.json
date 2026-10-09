@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-08T20:08:32.845Z",
+  "updatedAt": "2026-10-09T14:36:01.124Z",
   "artists": [
     {
       "name": "2 Princeses Barbudes",
@@ -5406,6 +5406,43 @@
           "wikidataWorkEvidence": []
         }
       }
+    },
+    {
+      "name": "Club Social Carme",
+      "aliases": [
+        "club_social_carme"
+      ],
+      "genres": [],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCdezTX23syEeAJJAb2oOkKA",
+            "handle": "@club_social_carme",
+            "name": "Club Social Carme",
+            "type": "official",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://clubsocialcarme.com/",
+        "https://www.youtube.com/channel/UCdezTX23syEeAJJAb2oOkKA",
+        "manual-user-2026-10-09"
+      ],
+      "lastChecked": "2026-10-09T14:36:01.117Z",
+      "notes": "Cicle de sessions musicals en directe al BarBocata. Incorporació demanada exclusivament com a directes (live_song), sense assignar estils musicals ni incorporar contingut auxiliar. Sessions verificades al web oficial i a YouTube."
     },
     {
       "name": "Cobla Mediterrània",
