@@ -53,6 +53,7 @@ function cleanAlbum(album) {
     trackIds: [...new Set((album.trackIds || []).map(String).filter(Boolean))],
     keys: [...new Set((album.keys || []).map(String).filter(Boolean))],
   };
+  if (album.sourceChannelId) out.sourceChannelId = String(album.sourceChannelId);
   const year = Number(album.year || 0);
   if (year) out.year = year;
   return out;
@@ -179,3 +180,4 @@ module.exports = {
   canonicalArtist,
   mergeAlbumCatalog,
 };
+

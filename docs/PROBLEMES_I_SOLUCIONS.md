@@ -1,3 +1,15 @@
+## [2026-10-09] - Directes: ràdio pròpia i sessions convidades a la discografia
+
+**Petició:** clicar un directe engega una ràdio només de directes; les set sessions de Club Social Carme també són a la discografia dels artistes participants. Maria Jaume queda només a Pop.
+
+**Implementació:** `music-queue.js` filtra els candidats per `live_song` abans de passar-los als dos motors. El filtre es conserva en ampliar una categoria, barrejar, canviar el mode, sumar estils i restaurar/continuar la ràdio. Clicar un directe d'una cua mixta en crea una de directes. Les seleccions explícites i els botons de ràdio general/artista mantenen el seu comportament. Si no hi ha un segon directe, no es genera una ràdio amb cançons d'estudi.
+
+**Discografia:** cada sessió és una entrada a `albums-musica.json` amb `sourceChannelId` i els IDs exactes de les pistes. `getArtistVideosWithHistory()` incorpora només aquests vídeos convidats, manté el canal publicador i respecta els ocults. El catàleg es carrega una sola vegada i es comparteix amb la fitxa; `cleanAlbum()` conserva el canal d'origen en regenerar-lo. Canals oficial i Topic mostren la mateixa sessió.
+
+**Categories:** la base d'artistes preval sobre els estils antics del feed/arxiu per als canals coneguts; es conserven les etiquetes pròpies. Així, treure un gènere no el recupera des del feed anterior.
+
+**Proves:** `tests/club-social-carme.test.js`, `tests/albums-musica.test.js` i bloc de directes de `tests/music-queue-selection.test.js`. Validació de 451 artistes. Lint dels fitxers modificats sense errors; el lint general conserva cinc errors previs en `data.js` i `home-sections.js`.
+
 ## [2026-10-08] - Vídeos amb restricció d'edat o que no es poden incrustar
 
 **Problema:** un vídeo amb restricció d'edat o que l'autor no deixa incrustar no sona al reproductor de l'app (YouTube demana obrir-lo a YouTube) i atura la ràdio. El generador ja rebia aquestes dades de l'API però no les mirava.

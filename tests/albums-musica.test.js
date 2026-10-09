@@ -4,6 +4,18 @@ import albumModule from '../scripts/lib/albums_musica.js';
 const { extractAlbum, mergeAlbumCatalog } = albumModule;
 
 describe('catàleg local de discos', () => {
+  it('conserva les sessions convidades encara que només tinguin una pista i no arribin des de Topic', () => {
+    const session = {
+      id: 'live_carme_session', title: 'Club Social Carme (en directe)',
+      coverVideoId: 'session', trackIds: ['session'], keys: [], sourceChannelId: 'UCClub',
+    };
+    const result = mergeAlbumCatalog({
+      channels: { UCArtist: 'Artista' }, artists: { Artista: { albums: [session] } },
+    }, [], {}, { generatedAt: '2026-10-09' });
+    expect(result.artists.Artista.albums).toEqual([session]);
+    expect(result.channels.UCArtist).toBe('Artista');
+  });
+
   it("extreu disc i any d'una descripció Topic sense cap consulta externa", () => {
     expect(
       extractAlbum(
@@ -58,3 +70,4 @@ describe('catàleg local de discos', () => {
     expect(catalog.artists.Artista).toBeUndefined();
   });
 });
+

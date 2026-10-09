@@ -226,6 +226,16 @@
         return meta ? { ...meta } : null;
     }
 
+    // Els estils de la base són l'autoritat per als artistes coneguts: no recuperem
+    // etiquetes antigues dels feeds/arxius després de treure un gènere.
+    function currentCategories(categories, channelId) {
+        const source = (Array.isArray(categories) ? categories : []).map(canonicalCategory);
+        const kept = isMusicChannel(channelId)
+            ? source.filter(category => !CATEGORY_GROUPS.some(group => group.label === category))
+            : source;
+        return unique([...kept, ...categoriesForChannel(channelId)]);
+    }
+
     function decorateChannel(channel) {
         if (!channel) return channel;
         const id = channel.id || channel.channelId;
@@ -235,15 +245,10 @@
             ...(display && channel.name !== display
                 ? { name: display, originalName: channel.originalName || channel.name }
                 : {}),
-            categories: unique([
-                ...(Array.isArray(channel.categories)
-                    ? channel.categories
-                    : channel.category
-                      ? [channel.category]
-                      : []
-                ).map(canonicalCategory),
-                ...categoriesForChannel(id),
-            ]),
+            categories: currentCategories(
+                Array.isArray(channel.categories) ? channel.categories : channel.category ? [channel.category] : [],
+                id
+            ),
         };
     }
 
@@ -282,12 +287,10 @@
         const video = cleanVideoTitle(rawVideo, extraNames);
         return {
             ...video,
-            categories: unique([
-                ...(Array.isArray(video.categories) ? video.categories : video.category ? [video.category] : []).map(
-                    canonicalCategory
-                ),
-                ...categoriesForChannel(video.channelId || video.sourceChannelId || video.snippet?.channelId),
-            ]),
+            categories: currentCategories(
+                Array.isArray(video.categories) ? video.categories : video.category ? [video.category] : [],
+                video.channelId || video.sourceChannelId || video.snippet?.channelId
+            ),
         };
     }
 
@@ -313,4 +316,3 @@
         cleanVideoTitle,
     };
 });
-

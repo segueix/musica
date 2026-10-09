@@ -573,12 +573,45 @@ const YouTubeAPI = {
         return Array.from(mergedById.values())
             .sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt));
     },
+    // Un sol catàleg compartit amb la fitxa: inclou directes publicats en canals convidats.
+    async loadAlbumsCatalog() {
+        if (!this.albumsCatalogPromise) {
+            this.albumsCatalogPromise = (async () => {
+                try {
+                    const url = window.appDataUrl?.('data/albums-musica.json') || 'data/albums-musica.json';
+                    const response = await fetch(url, { cache: 'no-store' });
+                    return response.ok ? await response.json() : null;
+                } catch (error) {
+                    console.warn('Discos no disponibles:', error);
+                    return null;
+                }
+            })();
+        }
+        return this.albumsCatalogPromise;
+    },
     async getArtistVideosWithHistory(channelId) {
         const group = this.getArtistGroupForChannel(channelId);
         const channelIds = group?.channelIds?.length ? group.channelIds : [String(channelId || '')].filter(Boolean);
-        const lists = await Promise.all(channelIds.map(id => this.getChannelVideosWithHistory(id)));
+        const [lists, catalog] = await Promise.all([
+            Promise.all(channelIds.map(id => this.getChannelVideosWithHistory(id))),
+            this.loadAlbumsCatalog(),
+        ]);
+        const artist = catalog?.channels?.[String(channelId || '')];
+        const albums = catalog?.artists?.[artist]?.albums || [];
+        const externalIds = new Map();
+        for (const album of albums) {
+            const source = String(album.sourceChannelId || '');
+            if (!source || channelIds.includes(source)) continue;
+            if (!externalIds.has(source)) externalIds.set(source, new Set());
+            (album.trackIds || []).forEach(id => externalIds.get(source).add(String(id)));
+        }
+        const guests = await Promise.all([...externalIds].map(async ([source, ids]) =>
+            (await this.getChannelVideosWithHistory(source)).filter(video =>
+                ids.has(String(video?.id)) && !video.isShort && !this.hiddenVideoIds.has(String(video.id))
+            )
+        ));
         const merged = new Map();
-        lists.flat().forEach(video => {
+        [...lists, ...guests].flat().forEach(video => {
             if (video?.id) merged.set(String(video.id), video);
         });
         return [...merged.values()].sort((a, b) => new Date(b.publishedAt || 0) - new Date(a.publishedAt || 0));
@@ -1518,3 +1551,4 @@ const YouTubeAPI = {
         return `${minutes}:${seconds.toString().padStart(2, '0')}`;
     }
 };
+

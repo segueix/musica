@@ -140,6 +140,8 @@
     }
 
     async function loadAlbumsCatalog() {
+        const api = typeof YouTubeAPI !== 'undefined' ? YouTubeAPI : window.YouTubeAPI;
+        if (typeof api?.loadAlbumsCatalog === 'function') return api.loadAlbumsCatalog();
         if (albumsPromise) return albumsPromise;
         albumsPromise = (async () => {
             try {
@@ -382,3 +384,4 @@
         measureBio,
     };
 })(window);
+

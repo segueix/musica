@@ -126,6 +126,105 @@ function setup({ catalog, history = [], liked = [], followed = [], mode = 'mix',
 
 const eraOf = (selection, video) => selection.eraOf(video, {}).tier;
 
+describe('clicar un directe engega una ràdio només de directes', () => {
+    const mixed = () => [
+        ...Array.from({ length: 16 }, (_, i) => song('live' + i, 0.2, { contentType: 'live_song' })),
+        ...Array.from({ length: 16 }, (_, i) => song('studio' + i, 0.3)),
+    ];
+    const onlyLive = env => {
+        expect(env.ctx.activePlaylistQueue.length).toBeGreaterThan(1);
+        expect(env.ctx.activePlaylistQueue.every(video => video.contentType === 'live_song')).toBe(true);
+        expect(env.queue.getState().liveOnly).toBe(true);
+    };
+
+    for (const engine of ['v1', 'legacy']) {
+        it('filtra els candidats amb el motor ' + engine, () => {
+            const catalog = mixed();
+            const env = setup({ catalog });
+            env.selection.setConfigOverrides({ engine });
+            expect(env.queue.startFrom(catalog[0].id, 'api')).toBe(true);
+            onlyLive(env);
+            expect(env.queue.playlistName()).toContain('Ràdio de directes');
+            expect(env.queue.getShareData().name).toContain('directes');
+        });
+    }
+
+    it('no incorpora estudi quan ha d’ampliar una categoria amb un sol directe', () => {
+        const catalog = mixed();
+        catalog[0].categories = ['Jazz / Blues'];
+        const env = setup({ catalog, extra: { selectedCategory: 'Jazz / Blues' } });
+        expect(env.queue.startFrom(catalog[0].id, 'api')).toBe(true);
+        onlyLive(env);
+        expect(env.queue.getState().categories).toEqual([]);
+    });
+
+    it('conserva el filtre en barrejar, canviar el mode i sumar un estil', () => {
+        const catalog = mixed();
+        const env = setup({ catalog });
+        env.queue.startFrom(catalog[0].id, 'api');
+        env.queue.regenerate();
+        onlyLive(env);
+        env.queue.setDiscoveryMode('surprise');
+        onlyLive(env);
+        env.queue.addStyle('Rock');
+        onlyLive(env);
+    });
+
+    it('conserva el filtre en restaurar la sessió i continuar la darrera ràdio', () => {
+        const catalog = mixed();
+        const env = setup({ catalog });
+        env.queue.startFrom(catalog[0].id, 'api');
+        const saved = env.queue.captureSession();
+        const restored = setup({ catalog });
+        expect(restored.queue.restoreSession(saved, catalog[0].id)).toBe(true);
+        restored.queue.regenerate();
+        onlyLive(restored);
+        env.queue.playSelection(catalog.slice(16, 20), 'Estudi');
+        expect(env.queue.resumeLast()).toBe(true);
+        onlyLive(env);
+    });
+
+    it('refà una ràdio mixta quan es clica un directe que ja era a la cua', () => {
+        const catalog = mixed();
+        const env = setup({ catalog });
+        env.queue.playSelection(catalog, 'Mixta');
+        expect(env.queue.startFrom(catalog[1].id, 'api')).toBe(true);
+        onlyLive(env);
+        expect(env.ctx.currentPlaylistIndex).toBe(0);
+        expect(env.ctx.activePlaylistQueue[0].id).toBe(catalog[1].id);
+    });
+
+    it('les cançons d’estudi i les seleccions explícites continuen barrejant contingut', () => {
+        const catalog = mixed();
+        const env = setup({ catalog });
+        expect(env.queue.startFrom(catalog[16].id, 'api')).toBe(true);
+        expect(env.queue.getState().liveOnly).toBe(false);
+        expect(env.ctx.activePlaylistQueue.some(video => video.contentType === 'live_song')).toBe(true);
+        env.queue.playSelection([catalog[0], catalog[16]], 'Selecció');
+        expect(env.ctx.activePlaylistQueue.map(video => video.id)).toEqual([catalog[0].id, catalog[16].id]);
+        expect(env.queue.getState().liveOnly).toBe(false);
+    });
+
+    it('no fa una ràdio d’estudi quan no hi ha cap altre directe', () => {
+        const catalog = [song('live', 0, { contentType: 'live_song' }), ...mixed().slice(16)];
+        const env = setup({ catalog });
+        expect(env.queue.startFrom(catalog[0].id, 'api')).toBe(false);
+        expect(env.queue.getState().active).toBe(false);
+    });
+
+    it('pot encadenar sessions diferents publicades pel mateix canal del Club', () => {
+        const catalog = [
+            ...Array.from({ length: 7 }, (_, i) => song('club', 0.2, {
+                contentType: 'live_song', title: 'Grup ' + i + ' · Sessió #' + i,
+            })),
+            ...mixed().slice(16),
+        ];
+        const env = setup({ catalog });
+        env.queue.startFrom(catalog[0].id, 'api');
+        onlyLive(env);
+    });
+});
+
 describe('ràdio amb el motor de selecció', () => {
     it('una cançó de l’historial ja no queda exclosa per sempre', () => {
         const catalog = catalogWithClassics();
@@ -995,3 +1094,4 @@ describe('ràdios de la fitxa d’artista', () => {
         expect(calls.loaded).toBe(0);
     });
 });
+
