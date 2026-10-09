@@ -1,26 +1,97 @@
 {
-  "generatedAt": "2026-10-09T14:36:41.561Z",
-  "rawPublicVideoCount": 5936,
-  "feedVideoCount": 5399,
-  "acceptedMusicCount": 5359,
-  "categoryEligibleVideoCount": 5354,
+  "generatedAt": "2026-10-09T15:31:56.266Z",
+  "rawPublicVideoCount": 5967,
+  "feedVideoCount": 5397,
+  "acceptedMusicCount": 5380,
+  "categoryEligibleVideoCount": 5375,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
-    "before": 0,
+    "before": 10,
     "matched": 0,
-    "rejected": 0
+    "rejected": 10
   },
-  "rejectedOrReviewCount": 577,
+  "rejectedOrReviewCount": 587,
   "reviewCount": 543,
   "typeCounts": {
-    "song": 5212,
-    "live_song": 142,
+    "song": 5229,
+    "live_song": 146,
     "album": 5,
-    "other": 34,
+    "other": 44,
     "review": 543
   },
   "channelsWithoutAcceptedMusic": [],
-  "rejectedSamples": [],
-  "publishedFeedVideoCount": 5398,
+  "rejectedSamples": [
+    {
+      "id": "Dezx-X9NxGw",
+      "title": "13/03 CUPIDO CONTRA AFRODITA feat Alejandro y Maria Laura",
+      "channelTitle": "Sandra Bautista",
+      "durationSeconds": 33,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "lRutvrac5yY",
+      "title": "“Procurando curar” de Carlos Lage - Sandra Bautista, Yaima Orozco y Migue de la Rosa",
+      "channelTitle": "Sandra Bautista",
+      "durationSeconds": 25,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "q4lWg-FsMrI",
+      "title": "“Cupido contra Afrodita” el 13 de marzo en vuestros corasones 💘📀",
+      "channelTitle": "Sandra Bautista",
+      "durationSeconds": 14,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "T2wGbDj6wsE",
+      "title": "Mare, rema - Documental Sona9 25 anys",
+      "channelTitle": "Sandra Bautista",
+      "durationSeconds": 38,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "PfjeIBMNACM",
+      "title": "Sandra Bautista - Mamma, rema - Versione acustica (in italiano)",
+      "channelTitle": "Sandra Bautista",
+      "durationSeconds": 186,
+      "musicReason": "no és a la discografia del canal Tema"
+    },
+    {
+      "id": "ETKU8Jx6mPc",
+      "title": "Y si vuelve un general",
+      "channelTitle": "Sandra Bautista",
+      "durationSeconds": 29,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "YirnfCgalvk",
+      "title": "Crowdfunding - Sandra Bautista: Nuevo disco \"INTUIR EL TIGRE\"",
+      "channelTitle": "Sandra Bautista",
+      "durationSeconds": 182,
+      "musicReason": "no és a la discografia del canal Tema"
+    },
+    {
+      "id": "i9u_HcQ-ZIk",
+      "title": "Sandra Bautista en directo (Sala Upload)",
+      "channelTitle": "Sandra Bautista",
+      "durationSeconds": 988,
+      "musicReason": "concert o sessió llarga, no una sola cançó"
+    },
+    {
+      "id": "j6tqOTgi8_M",
+      "title": "Sandra Bautista y Daniel Felices - Un beso de esos (Zenet)",
+      "channelTitle": "Sandra Bautista",
+      "durationSeconds": 256,
+      "musicReason": "no és a la discografia del canal Tema"
+    },
+    {
+      "id": "YsQhzo7xpsI",
+      "title": "Horas (Jorge Drexler) - Cover de Sandra Bautista y Jaume Esponella",
+      "channelTitle": "Sandra Bautista",
+      "durationSeconds": 198,
+      "musicReason": "no és a la discografia del canal Tema"
+    }
+  ],
+  "publishedFeedVideoCount": 5396,
   "publishedShortVideoCount": 0
 }

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-09T14:36:41.561Z",
+  "generatedAt": "2026-10-09T15:31:56.266Z",
   "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
   "restrictedVideoCount": 21,
@@ -1251,8 +1251,10 @@
     }
   ],
   "topicGovernance": "apply",
-  "governedReclassified": {},
-  "topicHiddenCount": 0,
+  "governedReclassified": {
+    "other": 4
+  },
+  "topicHiddenCount": 7,
   "topicChannels": [
     {
       "id": "UClwN1cpIrafSRa8MbOMAvvQ",
@@ -2910,7 +2912,7 @@
       "id": "UC3AV402A_vdbG18-cpYsX-Q",
       "name": "Sandra Bautista",
       "tracks": 59,
-      "selected": 10,
+      "selected": 12,
       "withClip": 14
     },
     {
@@ -3323,22 +3325,22 @@
   "indexedChannelCount": 542,
   "resolvedChannelCount": 542,
   "feedChannelCount": 542,
-  "rawPublicVideoCount": 5936,
-  "feedVideoCount": 5399,
-  "acceptedMusicCount": 5359,
-  "categoryEligibleVideoCount": 5354,
+  "rawPublicVideoCount": 5967,
+  "feedVideoCount": 5397,
+  "acceptedMusicCount": 5380,
+  "categoryEligibleVideoCount": 5375,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
-    "before": 0,
+    "before": 10,
     "matched": 0,
-    "rejected": 0
+    "rejected": 10
   },
   "contentReviewCount": 543,
   "contentTypeCounts": {
-    "song": 5212,
-    "live_song": 142,
+    "song": 5229,
+    "live_song": 146,
     "album": 5,
-    "other": 34,
+    "other": 44,
     "review": 543
   },
   "unresolvedChannelIds": [],
@@ -3346,6 +3348,6 @@
   "channelsWithoutVideos": [],
   "channelsWithoutAcceptedMusic": [],
   "allIndexedChannelsVisible": true,
-  "publishedFeedVideoCount": 5398,
+  "publishedFeedVideoCount": 5396,
   "publishedShortVideoCount": 0
 }
