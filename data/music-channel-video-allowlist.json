@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-09T14:36:01.144Z",
+  "updatedAt": "2026-10-09T15:31:08.204Z",
   "description": "Llista blanca per a canals on Segueix Música només ha d'ingerir vídeos concrets. Admet títols exactes, fragments obligatoris i fragments exclosos.",
   "channels": {
     "UCKpscwdWlVaMqcA81vLI7OA": {
@@ -4336,6 +4336,22 @@
         "live_song"
       ],
       "avatarFromFirstAllowedVideo": true
+    },
+    "UC_Nx-tsTDRubDg1dbd5jwAw": {
+      "artist": "Sandra Bautista",
+      "deniedTitleContains": [
+        "Trapezista",
+        "El último gol Live"
+      ],
+      "note": "Exclusió manual de Trapezista i El último gol Live sol·licitada el 2026-10-09."
+    },
+    "UC3AV402A_vdbG18-cpYsX-Q": {
+      "artist": "Sandra Bautista",
+      "deniedTitleContains": [
+        "Trapezista",
+        "El último gol Live"
+      ],
+      "note": "Exclusió manual de Trapezista i El último gol Live sol·licitada el 2026-10-09."
     }
   }
 }
