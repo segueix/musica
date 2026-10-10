@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-10T08:04:03.448Z",
+  "updatedAt": "2026-10-10T08:04:30.897Z",
   "artists": [
     {
       "name": "2 Princeses Barbudes",
@@ -25335,7 +25335,15 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCEZDsPoB5Tz7LvCJLWrZLuA",
+            "handle": "@punkaires",
+            "name": "PunkAIres Produccions",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "candidates": [],
         "searchCandidates": []
       },
@@ -25345,9 +25353,10 @@
       "sources": [
         "https://www.youtube.com/@PunkAIres",
         "manual-user-2026-10-10",
-        "genre:manual"
+        "genre:manual",
+        "youtube:manual-verified"
       ],
-      "lastChecked": "2026-10-10T08:04:03.448Z",
+      "lastChecked": "2026-10-10T08:04:30.896Z",
       "notes": "PunkAIres Produccions (@PunkAIres): projecte de punk-rock en català creat amb eines d'IA, segons la descripció del canal. Identificador de YouTube pendent de resolució automàtica a partir del handle verificat. Cal revisar la llengua de cada cançó del canal, sense donar tot el repertori per contrastat."
     },
     {
