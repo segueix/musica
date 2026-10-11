@@ -8490,6 +8490,22 @@
       "reviewedOn": "2026-10-11",
       "assignmentSource": "user-correction",
       "locked": true
+    },
+    "artist:scotty-dk": {
+      "name": "Scotty DK",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3121145"
+      ],
+      "confidence": "alta",
+      "basis": "Origen a Granollers indicat expressament per l’editor el 2026-10-12.",
+      "sources": [
+        "https://www.youtube.com/channel/UCUlJ_OU8GDvRqHTTzfkqz4A"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-user",
+      "locked": true
     }
   },
   "channels": {
@@ -9001,7 +9017,8 @@
     "UC_X_KBioMYCrmZyI7hbL8Pw": "artist:vademecum-fam",
     "UCK3mJ6ChV2a26kecZHDb4lg": "artist:hereus-del-beat",
     "UCoQKWzy03Eh7EFrjM0Tuv1Q": "artist:bars",
-    "UCLyS6_AjQKIbL4C2BByWjmQ": "artist:els-pets"
+    "UCLyS6_AjQKIbL4C2BByWjmQ": "artist:els-pets",
+    "UCUlJ_OU8GDvRqHTTzfkqz4A": "artist:scotty-dk"
   },
   "excludedProfiles": {
     "UCdezTX23syEeAJJAb2oOkKA": {

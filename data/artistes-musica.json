@@ -29614,32 +29614,26 @@
       "youtube": {
         "channels": [
           {
-            "id": "UCMNP5PWXks1_Es7e5Fs2LOg",
-            "handle": "@scottydk",
-            "name": "Scottydk",
-            "type": "official",
-            "primary": true
-          },
-          {
             "id": "UCUlJ_OU8GDvRqHTTzfkqz4A",
             "handle": null,
             "name": "Scotty Dk - Topic",
             "type": "topic",
-            "primary": false
+            "primary": true
           }
         ],
         "candidates": []
       },
       "confidence": "mitjana",
-      "reviewStatus": "pendent",
-      "active": false,
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
         "manual-user-2026-09-29",
         "youtube:manual-verified",
-        "manual-user-2026-10-02"
+        "manual-user-2026-10-02",
+        "manual-user-2026-10-12"
       ],
-      "lastChecked": "2026-09-29T11:23:49.295Z",
-      "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
+      "lastChecked": "2026-10-11T22:23:00.000Z",
+      "notes": "Canal únic indicat per l’editor: UCUlJ_OU8GDvRqHTTzfkqz4A. Origen: Granollers. Substitueix el canal oficial anterior.",
       "genresRaw": [],
       "displayName": "Scotty DK",
       "enrichment": {
