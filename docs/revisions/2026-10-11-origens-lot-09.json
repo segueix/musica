@@ -1,0 +1,711 @@
+{
+  "reviewedOn": "2026-10-11",
+  "batch": 9,
+  "selection": {
+    "method": "30 artistes actius pendents amb més cançons i directes al feed, sumant els seus canals; desempat per nom amb ordenació catalana.",
+    "feedGeneratedAt": "2026-10-11T18:24:23.280Z"
+  },
+  "summary": {
+    "reviewed": 30,
+    "applied": 30,
+    "pending": 0,
+    "totals": {
+      "artists": 269,
+      "channels": 420,
+      "places": 130,
+      "municipalities": 118
+    },
+    "remaining": {
+      "catalogArtists": 451,
+      "assignedArtists": 269,
+      "withoutAssignment": 182,
+      "activeWithoutAssignment": 60,
+      "inactiveWithoutAssignment": 122,
+      "countingRule": "Artistes del catàleg sense assignació validada, comprovant el nom i tots els canals; active és el booleà del catàleg, no l’activitat actual del grup musical. Les assignacions territorials també compten com a revisades."
+    }
+  },
+  "artists": [
+    {
+      "artistId": "artist:tempestat",
+      "name": "Tempestat",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "El perfil propi de Tempestat a Bandcamp publica Barcelona com a localitat del projecte.",
+      "sources": [
+        "https://tempestat.bandcamp.com/album/tempestat"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 11,
+      "channelIds": [
+        "UCxVQcJujZLvClGNyvobPRyQ",
+        "UC50KRxJXBWgOj3Q05CDAs8w"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:ultralone",
+      "name": "ultralone",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128201"
+      ],
+      "confidence": "alta",
+      "basis": "L’entrevista d’El Nacional identifica Biel Negre, ultralone, com un raper de Berga.",
+      "sources": [
+        "https://www.elnacional.cat/ca/cultura/ultralone-vull-ser-l-artista-catala-que-s-escolti-la-gent-que-no-escolta-musica-catalana_1370843_102.html"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 11,
+      "channelIds": [
+        "UC2Q-E-1tamuyLrKRMd0Wmbg"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:vicens-martin-dream-big-band",
+      "name": "Vicens Martín Dream Big Band",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "El perfil oficial de Vicens Martín a Bandcamp, que publica els discos de la Dream Big Band, indica Barcelona. Es registra la vinculació pública del projecte, sense atribuir aquest origen a tots els músics de l’orquestra.",
+      "sources": [
+        "https://vicensmartin.bandcamp.com/album/els-fruits-saborosos-gemma-abri-vicens-mart-n-dream-big-band"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 11,
+      "channelIds": [
+        "UCpj14cymb-6wmeXwI4hmFxA"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:daltabaix",
+      "name": "Daltabaix",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "territory:montseny"
+      ],
+      "confidence": "alta",
+      "basis": "El duet es presenta al seu Bandcamp com a procedent de sota el Montseny. Es conserva l’escala territorial, sense convertir el nom del massís en una atribució al municipi homònim.",
+      "sources": [
+        "https://elsdaltabaix.bandcamp.com/album/per-no-cremar-ho-tot"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 10,
+      "channelIds": [
+        "UCMI_YX4hq_6gmj5KXiSMCEQ",
+        "UCke5e6w0YsmcfxvngW4An3A"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:esquirols",
+      "name": "Esquirols",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3109799"
+      ],
+      "confidence": "alta",
+      "basis": "La Gran Enciclopèdia Catalana situa la creació del grup de folk a l’Esquirol.",
+      "sources": [
+        "https://www.enciclopedia.cat/gran-enciclopedia-catalana/esquirols"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 10,
+      "channelIds": [
+        "UCv6aLx9OL9Qzc2nmNT5_IdA"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:grup-de-folk",
+      "name": "Grup de Folk",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "mitjana",
+      "basis": "La història del col·lectiu situa la seva aparició a Barcelona el 1967. L’Enciclopèdia en confirma l’any de formació i la identitat dels integrants.",
+      "sources": [
+        "https://es.wikipedia.org/wiki/Grup_de_Folk",
+        "https://www.enciclopedia.cat/gran-enciclopedia-de-la-musica/grup-de-folk"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 10,
+      "channelIds": [
+        "UC8efMlZQ7vQ1cTO6MbspafA"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:knockouts",
+      "name": "knocKouts",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "La presentació de la reedició de Knockouts Party a Liquidator i la informació municipal del Reggus identifiquen els Knockouts com una banda de Barcelona sorgida de l’escena de Skatalà. Correspon al grup de ska del catàleg, no als homònims de rock o Oi! d’altres ciutats.",
+      "sources": [
+        "https://www.liquidatormusic.com/tienda/es/ska-actual-lp/11473-knockouts-party.html",
+        "https://www.reus.cat/noticia/reggus-2005-i-15a-nit-de-marxa-dues-cites-amb-la-musica-alternativa"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 10,
+      "channelIds": [
+        "UCqA3KzIrZxgA27NEEyVZdrQ"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:moksha",
+      "name": "Moksha",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:3110813"
+      ],
+      "confidence": "alta",
+      "basis": "El perfil de Moksha a Bandcamp, on es publica Sang de roure, identifica Sant Celoni com a localitat del grup.",
+      "sources": [
+        "https://bcmoksha.bandcamp.com/album/sang-de-roure"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 10,
+      "channelIds": [
+        "UC3uMAvZMHLOMo3OSDjqAVYQ"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:ratpenat",
+      "name": "Ratpenat",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "L’entrevista de Mondo Sonoro situa Ratpenat a Barcelona i correspon a la banda de punk-rock del catàleg.",
+      "sources": [
+        "https://www.mondosonoro.com/entrevistas/ratpenat/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 10,
+      "channelIds": [
+        "UC0Us9bY-uMslfHcmZSVirRw"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:ambauka",
+      "name": "Ambauka",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3116562"
+      ],
+      "confidence": "alta",
+      "basis": "La presentació del Mercat de Música Viva de Vic explica que Ambauka va néixer entre monitors de l’Esplai l’Agrupa de Molins de Rei.",
+      "sources": [
+        "https://www.mmvv.cat/en/artist%26seccio%3Dartista%26id%3D1518%26idioma%3Dcast%26web2020%3D1%26"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 9,
+      "channelIds": [
+        "UCkbrYK7kel3WIW1ZSsxNvoQ"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:bacora",
+      "name": "Bacora",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "territory:la-safor",
+        "territory:la-vall-d-albaida"
+      ],
+      "confidence": "mitjana",
+      "basis": "La sala 16 Toneladas i Diània Televisió situen el grup a la Safor i la Vall d’Albaida. Es conserva aquesta escala comarcal: la fitxa de Música en Valencià que indica Crevillent no queda corroborada per les altres fonts, i la referència a Califòrnia del Bandcamp forma part de la presentació humorística del projecte.",
+      "sources": [
+        "https://www.16toneladas.com/events/event/novus-ordo/",
+        "https://www.diania.tv/bacora-canten-a-alacant-al-seu-nou-videoclip/",
+        "https://musicaenvalencia.es/artista/15/bacora"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 9,
+      "channelIds": [
+        "UCHf4JVtqfIL_emZFYmchjkw"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:les-salvatges",
+      "name": "Les Salvatges",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "L’entrevista d’AraInfo situa el grup en l’escena underground barcelonina i el seu perfil propi a Bandcamp indica Barcelona.",
+      "sources": [
+        "https://arainfo.org/les-salvatges-para-conectar-con-el-publico-escribimos-desde-posturas-que-cualquiera-pueda-entender/",
+        "https://lessalvatges.bandcamp.com/album/el-caliu-i-la-cendra"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 9,
+      "channelIds": [
+        "UC5prxpApFpUCRDrjIyIJjEg"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:mainasons",
+      "name": "Mainasons",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3119694"
+      ],
+      "confidence": "alta",
+      "basis": "El web oficial de Mainasons explica que el projecte va néixer el desembre de 2012 a la Garriga.",
+      "sources": [
+        "https://mainasons.com/mainasons-en-directe-barcelona-vic/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 9,
+      "channelIds": [
+        "UC5h-dMbHSH3tikTmTSnfGjQ",
+        "UCT9peuXLxzh-dx3r49F13qg"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:tiger-menja-zebra",
+      "name": "Tiger Menja Zebra",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3121145"
+      ],
+      "confidence": "alta",
+      "basis": "La presentació del festival MiniBeat i l’entrevista de Ruta 66 identifiquen Tiger Menja Zebra com un grup de Granollers. Aquesta referència municipal concreta preval sobre l’etiqueta Barcelona del seu perfil digital.",
+      "sources": [
+        "https://minibeat.cat/2018/04/27/tiger-menja-zebra-la-banda-mes-internacional-de-granollers-fara-un-concert-taller-al-minibeat/",
+        "https://www.ruta66.es/2024/11/encuentros/tiger-menja-zebra-y-sus-admirables/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 9,
+      "channelIds": [
+        "UCQMMHfq3-mXuozgrnyx-Gcg"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:urbalia-rurana",
+      "name": "Urbàlia Rurana",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:2509954"
+      ],
+      "confidence": "alta",
+      "basis": "El perfil propi del grup a Bandcamp publica València com a localitat de referència. El Col·lectiu Ovidi Montllor documenta membres de diverses comarques: es registra la vinculació del projecte, no un origen municipal comú a tots els integrants.",
+      "sources": [
+        "https://urbaliarurana.bandcamp.com/",
+        "https://elcom.cat/artistes/urbalia-rurana"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 9,
+      "channelIds": [
+        "UCSsJFD5CFYZ3fe24qhtsejA",
+        "UCMIVDQMYttFV6h1aRIeQN-w"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:clara-peya",
+      "name": "Clara Peya",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3114567"
+      ],
+      "confidence": "alta",
+      "basis": "La biografia del Consell Nacional de la Cultura i de les Arts identifica Palafrugell com el lloc de naixement de Clara Peya.",
+      "sources": [
+        "https://conca.gencat.cat/ca/detall/article/Clara-Peya"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 8,
+      "channelIds": [
+        "UCRLHVqJybtjS5ODPP5iAv4w",
+        "UC52R4wjmZztT-anyAJpU18A"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:germa-negre",
+      "name": "Germà Negre",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128885"
+      ],
+      "confidence": "alta",
+      "basis": "La biografia de 7sis Produccions situa el naixement de Germà Negre a Banyoles el 2012.",
+      "sources": [
+        "https://www.7sisproduccions.cat/germa-negre/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 8,
+      "channelIds": [
+        "UC_nlyjkIdPSWKkzbWK7Q-0w",
+        "UCFI6QGe27kctP5lGeugsrhA"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:les-testarudes",
+      "name": "Les Testarudes",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "La presentació de la Sala Apolo situa l’epicentre de la banda al barri de la Bordeta de Barcelona, tot especificant que les integrants provenen de diferents indrets del país.",
+      "sources": [
+        "https://www.sala-apolo.com/cat/event/la-gran-xefla-2025-fetus-y-les-testarudes-6902"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 8,
+      "channelIds": [
+        "UCICi6PgGxMiqrzwepxP0VZA",
+        "UCHbefcM_E94xfrGz6CWC9vQ"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:moto-clua",
+      "name": "Moto Clua",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "3Cat identifica Josep Maria Clua com a músic i cantautor barceloní i documenta Moto Clua com el seu projecte en solitari. Es conserva el nom públic del catàleg.",
+      "sources": [
+        "https://www.3cat.cat/3catinfo/mor-als-60-anys-el-music-i-cantautor-barceloni-josep-maria-clua/noticia/1374366/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 8,
+      "channelIds": [
+        "UC3bvpTw40rgvnsZA1wCZeIQ"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:x-fanekaes",
+      "name": "X-Fanekaes",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:2513703"
+      ],
+      "confidence": "alta",
+      "basis": "La biografia publicada pel grup al Sona9 situa el naixement de XFanekaes a Montcada, a l’Horta Nord del País Valencià, i no a Montcada i Reixac.",
+      "sources": [
+        "https://www.enderrock.cat/sona9/grup2022/6/xfanekaes"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 8,
+      "channelIds": [
+        "UCYcENw_M0RUKP-sXuR3odHQ"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:bars",
+      "name": "Bars",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3111199"
+      ],
+      "confidence": "alta",
+      "basis": "El reportatge de l’ARA explica que Bars es va formar a partir de diversos grups de l’escena sabadellenca el 1987.",
+      "sources": [
+        "https://www.ara.cat/cultura/musica/cara-rock-catala-grups-imprescindibles_1_3848657.html"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 7,
+      "channelIds": [
+        "UCGHuCX7ksRy8c0BvCwPoHsg"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:familia-fracas",
+      "name": "Família Fracàs",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3108286"
+      ],
+      "confidence": "alta",
+      "basis": "La presentació del Diari de Terrassa identifica Família Fracàs com un trio de Terrassa; la biografia del grup a Spotify coincideix en aquesta localitat.",
+      "sources": [
+        "https://www.diarideterrassa.com/cultura-i-espectacles/una-nit-punk-de-familia-fracas-en-el-sant-pere-sona.html",
+        "https://open.spotify.com/artist/2DYjsvLsl7lylk3y0XskTp"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 7,
+      "channelIds": [
+        "UC6RbhWqXkSqfJDawc7pyPxQ"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:les-buch",
+      "name": "Les Buch",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3108286"
+      ],
+      "confidence": "alta",
+      "basis": "La biografia oficial a Bandcamp explica que Les Buch es va crear a Terrassa el 2017.",
+      "sources": [
+        "https://lesbuch.bandcamp.com/music"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 7,
+      "channelIds": [
+        "UCNy0mWkgdGm_-fqav1J59dQ"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:masvi",
+      "name": "Masvi",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:3119099"
+      ],
+      "confidence": "alta",
+      "basis": "La fitxa presentada per Masvi al Sona9 indica la Roca del Vallès com a ciutat del projecte. Es documenta la vinculació declarada per l’artista, sense inferir-ne el lloc de naixement.",
+      "sources": [
+        "https://www.enderrock.cat/sona9/grup/209/masvi"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 7,
+      "channelIds": [
+        "UCoybSbI2HaLsHZnY1RG8LEQ"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:mendra",
+      "name": "Mendra",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3110643"
+      ],
+      "confidence": "alta",
+      "basis": "L’entrevista i actuació de Mendra al programa Feeel de betevé presenta explícitament el trio com una banda de Sant Feliu de Guíxols.",
+      "sources": [
+        "https://beteve.cat/feeel/mendra/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 7,
+      "channelIds": [
+        "UCokFPjgxi7i2ONsHr8wHj6g",
+        "UCtTPgp6W1WefOGfV3maG7JA"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:ypnosi",
+      "name": "Ypnosi",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "L’entrevista de l’ARA presenta Ypnosi com un grup barceloní i n’identifica els quatre integrants.",
+      "sources": [
+        "https://www.ara.cat/cultura/musica/son-quatre-matats-dediquen-rock-n-roll_1_5637081.html"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 7,
+      "channelIds": [
+        "UCqqRg6HX-P769DEoffrQMEQ",
+        "UCg6lVNl78-THJI1w8dSy0bA"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:el-pont-d-arcalis",
+      "name": "El Pont d'Arcalís",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:6358938"
+      ],
+      "confidence": "alta",
+      "basis": "Jordi Fàbregas explica a Línia folk que la idea de crear el grup va sorgir de la trobada amb Artur Blasco en una festa al pont d’Arcalís. Diariofolk en recull el mateix origen. Arcalís i Baro formen part de Soriguera; es registra el municipi on es va gestar el projecte, no l’origen dels seus membres.",
+      "sources": [
+        "https://radioteca.cat/p/linia-folk/2006/11/23/jordi-fabregas-medalla-dhonor-de-la-FBakb4ixV6NrUEwyPYC1vQ",
+        "https://www.diariofolk.com/reportaje/jordi-fabregas-un-musico-un-gestor-un-amigo/",
+        "https://soriguera.ddl.net/ajuntament"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 6,
+      "channelIds": [
+        "UChRlRycsUvrvZZ-upnGunLw"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:magali-sare",
+      "name": "Magalí Sare",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "La biografia del web oficial de Magalí Sare situa el seu naixement a Barcelona. Els estudis al Conservatori de Sabadell no es confonen amb el lloc de naixement.",
+      "sources": [
+        "https://magalisare.com/acerca-de/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 6,
+      "channelIds": [
+        "UC1yaXYiC2Ab3tus3lTDljtw",
+        "UCPCYIT1ovAuKG8uedKp8QNA"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:panellet",
+      "name": "Panellet",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:3108286"
+      ],
+      "confidence": "alta",
+      "basis": "El perfil propi de Panellet a Bandcamp identifica Terrassa com a localitat del grup.",
+      "sources": [
+        "https://panellet.bandcamp.com/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 6,
+      "channelIds": [
+        "UCDX2tkKsA-KRAxfE6p_kVuQ"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:ariox",
+      "name": "Ariox",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3126317"
+      ],
+      "confidence": "alta",
+      "basis": "La fitxa de les Cases de la Música situa el naixement del projecte Ariox a Cardedeu el 2020; la Diputació de Barcelona també presenta Ariadna Casas com una cantant de Cardedeu.",
+      "sources": [
+        "https://www.casadelamusica.cat/index.php/agenda/historic-concerts?catid=91&id=875%3A20210522-ariox&view=article",
+        "https://parcs.diba.cat/en/web/l-informatiu/-/litoral-ariox-presenta-el-seu-projecte-amb-banda-dins-del-cicle-parcs-en-concert-i-el-festival-musicab-de-cabrils"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 5,
+      "channelIds": [
+        "UC5wqkIyYD4y1lLYN40BL9lg"
+      ],
+      "applied": true
+    }
+  ]
+}

@@ -2,7 +2,7 @@
 
 ## Estat: 11 d'octubre de 2026
 
-La fitxa mostra les assignacions validades de 239 artistes (380 canals oficials i Topic). En prémer la línia «Origen» o «Vinculat a» es despleguen el motiu i les fonts. Els perfils de programes i els artistes encara sense assignació no mostren la línia.
+La fitxa mostra les assignacions validades de 269 artistes (420 canals oficials i Topic). En prémer la línia «Origen» o «Vinculat a» es despleguen el motiu i les fonts. Els perfils de programes i els artistes encara sense assignació no mostren la línia.
 
 El [pilot inicial](ORIGENS_PILOT_30.md) tenia 22 casos documentats i 8 pendents. Una segona revisió ha validat Dusminguet, La Coixinera, Ebri Knight, Joan Miquel Oliver, Xarim Aresté i la vinculació de La Troba Kung-Fú amb la Garriga. Per a aquest últim, la biografia de Fourni Produccions a WOMEX documenta l'estudi propi a la Fournier; no afirmem que sigui el municipi de formació.
 
@@ -14,8 +14,8 @@ El [pilot inicial](ORIGENS_PILOT_30.md) tenia 22 casos documentats i 8 pendents.
 
 - `artists`: assignació única per artista, relació `origin` o `associated`, llocs, fonts, explicació, data, estat i bloqueig manual.
 - `channels`: canals oficials i Topic associats a l'artista del catàleg. En afegir canals cal ampliar aquest mapa després de confirmar la identitat.
-- `places`: llocs normalitzats reutilitzables. Hi ha 113 poblacions amb identificador GeoNames i coordenades de referència del nucli o municipi; no són domicilis ni coordenades personals. La jerarquia administrativa del proveïdor no s'utilitza per assignar el municipi (pot tenir discrepàncies).
-- Formentera i Mallorca es mantenen a escala d'illa; Camp de Tarragona, Camp de Túria i Montseny a escala territorial. També es documenten Vallès, Comtat, Alcoià, Horta Sud i Maresme. Aquests deu llocs territorials no tenen coordenades puntuals. Marala conserva les tres poblacions documentades.
+- `places`: llocs normalitzats reutilitzables. Hi ha 118 poblacions amb identificador GeoNames i coordenades de referència del nucli o municipi; no són domicilis ni coordenades personals. La jerarquia administrativa del proveïdor no s'utilitza per assignar el municipi (pot tenir discrepàncies).
+- Formentera i Mallorca es mantenen a escala d'illa; Camp de Tarragona, Camp de Túria i Montseny a escala territorial. També es documenten Vallès, Comtat, Alcoià, Horta Sud, Maresme, la Safor i la Vall d’Albaida. Aquests dotze llocs territorials no tenen coordenades puntuals. Marala conserva les tres poblacions documentades.
 
 Les coordenades provenen de **GeoNames, generalment via Open-Meteo**, amb atribució CC BY 4.0. Cada població desa la consulta d'origen i la data. Referències: <https://www.geonames.org/> i <https://open-meteo.com/en/docs/geocoding-api>.
 
@@ -95,3 +95,13 @@ Icestorm s’assigna a Bigues i Riells del Fai, amb el nucli de Riells del Fai c
 Pantaleó queda vinculat a Terrassa segons l’entrevista sobre els inicis del projecte, distingint aquesta vinculació de l’origen santcugatenc del seu impulsor. Vinnie Kairos es vincula a Arenys de Mar sense inferir-ne el lloc de naixement. Karda Fàstik s’assigna a Vic amb confiança mitjana, perquè la concreció municipal prové de la Viquipèdia; Enderrock en corrobora el context osonenc. Les altres 29 assignacions tenen confiança alta.
 
 El registre suma 239 artistes, 380 canals i 113 poblacions, a més dels deu territoris que es conserven sense coordenades puntuals.
+
+## Novè lot de 30 artistes (11 d’octubre de 2026)
+
+S’han aplicat les 30 assignacions noves, corresponents a 40 canals, preservant íntegrament les 239 anteriors i totes les correccions editorials. [Decisions i fonts](revisions/2026-10-11-origens-lot-09.json).
+
+Mainasons s’assigna a la Garriga, Tiger Menja Zebra a Granollers, Germà Negre a Banyoles, Mendra a Sant Feliu de Guíxols i Bars a Sabadell. Masvi queda vinculat a la Roca del Vallès segons la seva fitxa del Sona9. X-Fanekaes s’assigna a Montcada, a l’Horta Nord del País Valencià. El Pont d’Arcalís s’assigna a Soriguera, preservant l’explicació de Jordi Fàbregas sobre la trobada al pont on es va gestar el grup; les coordenades són una referència de la divisió municipal, no del pont.
+
+Daltabaix conserva el Montseny a escala territorial. Bacora conserva la Safor i la Vall d’Albaida, sense coordenades puntuals: les dues fonts concordants no permeten corroborar la concreció a Crevillent d’un altre directori. Aquesta assignació i la del Grup de Folk tenen confiança mitjana. Les vinculacions de Vicens Martín Dream Big Band, Urbàlia Rurana i Les Testarudes no s’interpreten com l’origen comú de tots els integrants.
+
+El registre suma 269 artistes, 420 canals, 118 municipis i 12 territoris. Dels 451 artistes del catàleg, en queden 182 sense assignació: 60 amb `active: true` i 122 amb `active: false`. Aquest estat és editorial del catàleg i no indica si el grup continua fent concerts. Les assignacions territorials compten com a revisades, encara que no concretin un municipi. El recompte és una fotografia del catàleg en aquesta revisió.
