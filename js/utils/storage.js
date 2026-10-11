@@ -171,6 +171,35 @@ function renameUrbanaCategory() {
 
 renameUrbanaCategory();
 
+// La preferència conjunta es conserva com dues preferències independents.
+function splitPunkMetalPreferences() {
+    const key = 'catube_split_punk_metal_v1';
+    try {
+        if (localStorage.getItem(key)) return;
+        const expand = values => [...new Set(values.flatMap(value =>
+            value === 'Punk / Metal' ? ['Punk', 'Heavy / Metal'] : [value]))];
+        if (localStorage.getItem(LAST_CATEGORY_STORAGE_KEY) === 'Punk / Metal') {
+            localStorage.setItem(LAST_CATEGORY_STORAGE_KEY, 'Novetats');
+        }
+        const view = JSON.parse(localStorage.getItem(VIEW_STATE_STORAGE_KEY) || 'null');
+        if (view?.selectedCategory === 'Punk / Metal') {
+            view.selectedCategory = 'Novetats';
+            localStorage.setItem(VIEW_STATE_STORAGE_KEY, JSON.stringify(view));
+        }
+        const styles = JSON.parse(localStorage.getItem('catube_first_styles') || 'null');
+        if (Array.isArray(styles)) localStorage.setItem('catube_first_styles', JSON.stringify(expand(styles)));
+        const radio = JSON.parse(localStorage.getItem('catube_last_radio') || 'null');
+        if (typeof radio?.category === 'string') {
+            radio.category = expand(radio.category.split('|')).join('|');
+            localStorage.setItem('catube_last_radio', JSON.stringify(radio));
+        }
+        localStorage.removeItem(CHIPS_ORDER_STORAGE_KEY);
+        localStorage.removeItem(CHIPS_HTML_CACHE_KEY);
+        localStorage.setItem(key, '1');
+    } catch (_) { /* Emmagatzematge no disponible. */ }
+}
+splitPunkMetalPreferences();
+
 // Configuració visual
 const BACKGROUND_STORAGE_KEY = 'catube_background_color';
 const FONT_SIZE_STORAGE_KEY = 'catube_font_size';

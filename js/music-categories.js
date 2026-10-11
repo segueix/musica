@@ -19,7 +19,8 @@
         { label: 'Electrònica', genres: ['Electrònica'] },
         { label: 'Ska / Reggae', genres: ['Ska / Reggae'] },
         { label: 'Rumba / Mestissatge', genres: ['Rumba / Mestissatge'] },
-        { label: 'Punk / Metal', genres: ['Punk', 'Metal'] },
+        { label: 'Punk', genres: ['Punk'] },
+        { label: 'Heavy / Metal', genres: ['Metal'] },
         { label: 'Jazz / Blues', genres: ['Jazz / Blues'] },
         { label: 'Infantil', genres: ['Infantil'] },
         { label: 'Altres estils', genres: ['Funk / Soul / R&B', 'Experimental / Avantguarda', 'Coral / Vocal', 'Altres'] },
@@ -229,7 +230,8 @@
     // Els estils de la base són l'autoritat per als artistes coneguts: no recuperem
     // etiquetes antigues dels feeds/arxius després de treure un gènere.
     function currentCategories(categories, channelId) {
-        const source = (Array.isArray(categories) ? categories : []).map(canonicalCategory);
+        const source = (Array.isArray(categories) ? categories : []).map(canonicalCategory)
+            .filter(category => category !== 'Punk / Metal');
         const kept = isMusicChannel(channelId)
             ? source.filter(category => !CATEGORY_GROUPS.some(group => group.label === category))
             : source;

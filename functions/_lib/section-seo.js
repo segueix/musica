@@ -19,7 +19,8 @@ export const SEO_SECTIONS = {
   electronica: { path:'/electronica', label:'Electrònica', shortTitle:'Electrònica', title:'Música electrònica en català', description:'Electrònica, sessions i producció musical en català.', category:'Electrònica' },
   'ska-reggae': { path:'/ska-reggae', label:'Ska / Reggae', shortTitle:'Ska / Reggae', title:'Ska i reggae en català', description:'Ska i reggae en català.', category:'Ska / Reggae' },
   'rumba-mestissatge': { path:'/rumba-mestissatge', label:'Rumba / Mestissatge', shortTitle:'Rumba / Mestissatge', title:'Rumba i mestissatge en català', description:'Rumba i mestissatge de l’escena catalana.', category:'Rumba / Mestissatge' },
-  'punk-metal': { path:'/punk-metal', label:'Punk / Metal', shortTitle:'Punk / Metal', title:'Punk i metal en català', description:'Punk i metal en català.', category:'Punk / Metal' },
+  punk: { path:'/punk', label:'Punk', shortTitle:'Punk', title:'Punk en català', description:'Grups i cançons de punk en català.', category:'Punk' },
+  'heavy-metal': { path:'/heavy-metal', label:'Heavy / Metal', shortTitle:'Heavy / Metal', title:'Heavy i metal en català', description:'Grups i cançons de heavy i metal en català.', category:'Heavy / Metal' },
   'jazz-blues': { path:'/jazz-blues', label:'Jazz / Blues', shortTitle:'Jazz / Blues', title:'Jazz i blues en català', description:'Jazz i blues de l’escena musical catalana.', category:'Jazz / Blues' },
   classica: { path:'/classica', label:'Clàssica', shortTitle:'Clàssica', title:'Música clàssica catalana', description:'Música clàssica, contemporània, coral i vocal.', category:'Clàssica' },
   infantil: { path:'/infantil', label:'Infantil', shortTitle:'Infantil', title:'Música infantil en català', description:'Cançons i artistes de música infantil en català.', category:'Infantil' },
@@ -199,7 +200,7 @@ export async function renderSeoSection(context, key) {
     'Pop':['Pop'], 'Rock':['Rock'], 'Indie':['Indie / Alternativa'], 'Urbana':['Urbana'],
     'Rap / Hip-hop':['Rap / Hip-hop'], 'Folk i arrel':['Folk i arrel'], "Cançó d'autor":["Cançó d'autor"],
     'Electrònica':['Electrònica'], 'Ska / Reggae':['Ska / Reggae'], 'Rumba / Mestissatge':['Rumba / Mestissatge'],
-    'Punk / Metal':['Punk','Metal'], 'Jazz / Blues':['Jazz / Blues'],
+    'Punk':['Punk'], 'Heavy / Metal':['Metal'], 'Jazz / Blues':['Jazz / Blues'],
     'Clàssica':['Clàssica i contemporània','Coral / Vocal'], 'Infantil':['Infantil'],
     'Altres estils':['Funk / Soul / R&B','Experimental / Avantguarda','Altres']
   };

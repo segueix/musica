@@ -1,1 +1,4 @@
-import { handleSeoSectionRequest } from './_lib/section-seo.js';\n\nexport function onRequest(context) {\n  return handleSeoSectionRequest(context, 'punk-metal');\n}\n
+// Compatibilitat amb enllaços antics: la categoria conjunta ja no existeix.
+export function onRequest(context) {
+  return Response.redirect(new URL('/punk', context.request.url), 301);
+}

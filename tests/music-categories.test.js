@@ -2,8 +2,10 @@ import { describe, expect, it, vi } from 'vitest';
 import music from '../js/music-categories.js';
 
 describe('taxonomia de navegació musical', () => {
-    it('agrupa Punk i Metal en una sola secció', () => {
-        expect(music.navigationCategoriesForGenres(['Punk', 'Metal'])).toContain('Punk / Metal');
+    it('separa Punk i Heavy / Metal', () => {
+        expect(music.navigationCategoriesForGenres(['Punk', 'Metal'])).toEqual(['Punk', 'Heavy / Metal']);
+        expect(music.navigationCategoriesForGenres(['Metal'])).toEqual(['Heavy / Metal']);
+        expect(music.decorateVideo({ categories: ['Punk / Metal'], channelId: 'desconegut' }).categories).toEqual([]);
     });
     it('manté coral a Altres estils sense recuperar Clàssica', () => {
         expect(music.navigationCategoriesForGenres(['Coral / Vocal'])).toContain('Altres estils');
@@ -32,6 +34,9 @@ describe('taxonomia de navegació musical', () => {
     it('la categoria principal d’un canal és la del primer gènere de l’artista (no l’ordre de la taxonomia)', async () => {
         const artists = {
             artists: [
+                { name: 'Punk', genres: ['Punk'], youtube: { channels: [{ id: 'UCpunk' }] } },
+                { name: 'Metal', genres: ['Metal'], youtube: { channels: [{ id: 'UCmetal' }] } },
+                { name: 'Crossover', genres: ['Punk', 'Metal'], youtube: { channels: [{ id: 'UCboth' }] } },
                 { name: 'Grup A', genres: ['Rock', 'Pop'], youtube: { channels: [{ id: 'UC' + 'A'.repeat(22) }] } },
                 {
                     name: 'Grup B',
@@ -68,6 +73,9 @@ describe('taxonomia de navegació musical', () => {
         expect(music.primaryCategoryForChannel('UC' + 'B'.repeat(22))).toBe("Cançó d'autor");
         expect(music.primaryCategoryForChannel('UC' + 'C'.repeat(22))).toBe('Altres estils');
         expect(music.primaryCategoryForChannel('desconegut')).toBe('');
+        expect(music.decorateVideo({ channelId: 'UCpunk', categories: ['Punk / Metal'] }).categories).toEqual(['Punk']);
+        expect(music.decorateVideo({ channelId: 'UCmetal', categories: ['Punk / Metal'] }).categories).toEqual(['Heavy / Metal']);
+        expect(music.decorateChannel({ id: 'UCboth', categories: ['Punk / Metal'] }).categories).toEqual(['Punk', 'Heavy / Metal']);
 
         const official = 'UC' + 'D'.repeat(22);
         const topic = 'UC' + 'E'.repeat(22);

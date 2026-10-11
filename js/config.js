@@ -66,7 +66,8 @@ const CONFIG = {
         { id: "electronica", name: "Electrònica", icon: "radio" },
         { id: "ska-reggae", name: "Ska / Reggae", icon: "waves" },
         { id: "rumba-mestissatge", name: "Rumba / Mestissatge", icon: "drum" },
-        { id: "punk-metal", name: "Punk / Metal", icon: "zap" },
+        { id: "punk", name: "Punk", icon: "zap" },
+        { id: "heavy-metal", name: "Heavy / Metal", icon: "guitar" },
         { id: "jazz-blues", name: "Jazz / Blues", icon: "music-2" },
         { id: "infantil", name: "Infantil", icon: "baby" },
         { id: "altres-estils", name: "Altres estils", icon: "disc-3" }

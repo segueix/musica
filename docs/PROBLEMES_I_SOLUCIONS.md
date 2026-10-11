@@ -1838,3 +1838,12 @@ GitHub Pages no executa `functions/_middleware.js` i els robots socials no execu
 El workflow `publicar-comparticio-musica.yml` regenera les pàgines, les desa a main i publica l'artefacte a Pages. També escolta la finalització dels generadors de dades: els commits de GITHUB_TOKEN no disparen un altre push workflow. Les pàgines es mantenen al repositori perquè els desplegaments estàtics habituals també les incloguin. No editar-les manualment. Els enllaços antics amb query continuen obrint el contingut, però només els nous tenen meta pròpies a GitHub Pages. Les apps poden conservar la previsualització a la seva memòria cau.
 
 Proves: `tests/share-pages.test.js` (artista, cançó, arxiu, ocults, canals retirats, escapament, idempotència) i `tests/share-codecs.test.js`.
+
+
+## [2026-10-11] - Separació de Punk i Heavy / Metal
+
+La categoria conjunta desapareix dels xips, configuració, descoberta, portada i seccions SEO. Els gèneres interns continuen sent `Punk` i `Metal`; es mostren com `Punk` i `Heavy / Metal`. Ratpenat i Sota Terra queden a Punk; Bestiari conserva tots dos. La decoració del client elimina l'etiqueta conjunta dels feeds i arxius antics i aplica els gèneres actuals de cada artista. El generador de feed ja emet les noves categories.
+
+Migració local: preferències inicials i darrera ràdio expandides als dos estils, vista antiga retornada a Inici, memòria cau i ordre de xips regenerats. Les sessions de ràdio antigues recuperen els dos estils separats. La ruta antiga /punk-metal redirigeix a /punk sense mantenir una tercera categoria. Analítica: codis separats per les noves visites; l'etiqueta anterior només es conserva per identificar dades històriques.
+
+Verificació: taxonomia separada, decoració de vídeos d'arxiu, grup amb tots dos estils, migració idempotent i rutes SEO.

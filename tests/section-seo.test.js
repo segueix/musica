@@ -47,7 +47,7 @@ describe('seccions SEO', () => {
   it('publica les seccions principals amb URL estable', () => {
     expect(Object.values(SEO_SECTIONS).map((section) => section.path)).toEqual([
       '/novetats','/descobreix','/pop','/rock','/indie','/urbana','/rap-hip-hop','/folk-arrel','/canco-autor',
-      '/electronica','/ska-reggae','/rumba-mestissatge','/punk-metal','/jazz-blues','/classica','/infantil','/altres-estils','/musica-tv'
+      '/electronica','/ska-reggae','/rumba-mestissatge','/punk','/heavy-metal','/jazz-blues','/classica','/infantil','/altres-estils','/musica-tv'
     ]);
   });
 

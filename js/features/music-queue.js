@@ -165,6 +165,7 @@
     const asCategories = value =>
         (Array.isArray(value) ? value : [value])
             .map(item => String(item || '').trim())
+            .flatMap(item => item === 'Punk / Metal' ? ['Punk', 'Heavy / Metal'] : [item])
             .filter(
                 (item, index, list) =>
                     item && list.findIndex(other => other.toLowerCase() === item.toLowerCase()) === index
@@ -993,6 +994,9 @@
         activePlaylistName = typeof saved.name === 'string' ? saved.name : 'Llista';
         radioCategory = typeof saved.radioCategory === 'string' ? saved.radioCategory : '';
         radioExtra = Array.isArray(saved.radioExtra) ? saved.radioExtra.filter(style => typeof style === 'string') : [];
+        const restoredStyles = asCategories([radioCategory, ...radioExtra]);
+        radioCategory = restoredStyles[0] || '';
+        radioExtra = restoredStyles.slice(1);
         radioLiveOnly = saved.radioLiveOnly === true;
         radioMeta = saved.radioMeta && typeof saved.radioMeta === 'object' ? saved.radioMeta : null;
         radioLabel = typeof saved.radioLabel === 'string' ? saved.radioLabel : '';
