@@ -1511,6 +1511,17 @@
         pendingFocus = stylePickerOpen ? '[data-mq-pick-style]' : '[data-mq-add-style]';
         if (stylePickerOpen) pickerScrollBase = currentScroll();
         refresh();
+        if (stylePickerOpen && window.matchMedia?.('(max-width: 768px)').matches) {
+            // Espera que les categories estiguin pintades abans de portar-les a la vista.
+            window.requestAnimationFrame(() => {
+                if (!stylePickerOpen) return;
+                const picker = lastContainer?.querySelector?.('.mq-style-picker');
+                picker?.scrollIntoView?.({
+                    behavior: window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+                    block: 'center',
+                });
+            });
+        }
     }
 
     // ---------- Ordinador: el selector d'estils es tanca sol en fer scroll cap avall ----------
