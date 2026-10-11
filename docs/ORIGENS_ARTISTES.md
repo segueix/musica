@@ -2,7 +2,7 @@
 
 ## Estat: 11 d'octubre de 2026
 
-La fitxa mostra les assignacions validades de 329 artistes (491 canals oficials i Topic). En prémer la línia «Origen» o «Vinculat a» es despleguen el motiu i les fonts. Els perfils de programes i els artistes encara sense assignació no mostren la línia.
+El registre conté assignacions validades de 359 artistes (503 canals oficials i Topic). La fitxa les mostra quan l’artista té un canal vinculat; les entrades sense canal queden documentades per a futures incorporacions. En prémer la línia «Origen» o «Vinculat a» es despleguen el motiu i les fonts. Els perfils de programes i els artistes encara sense assignació no mostren la línia.
 
 El [pilot inicial](ORIGENS_PILOT_30.md) tenia 22 casos documentats i 8 pendents. Una segona revisió ha validat Dusminguet, La Coixinera, Ebri Knight, Joan Miquel Oliver, Xarim Aresté i la vinculació de La Troba Kung-Fú amb la Garriga. Per a aquest últim, la biografia de Fourni Produccions a WOMEX documenta l'estudi propi a la Fournier; no afirmem que sigui el municipi de formació.
 
@@ -13,8 +13,9 @@ El [pilot inicial](ORIGENS_PILOT_30.md) tenia 22 casos documentats i 8 pendents.
 `data/origens-artistes.json` és una font manual persistent, separada del feed generat:
 
 - `artists`: assignació única per artista, relació `origin` o `associated`, llocs, fonts, explicació, data, estat i bloqueig manual.
+- `excludedProfiles`: exclusions editorials protegides per canal. Club Social Carme queda sense origen per instrucció de l’editor; les futures revisions han de respectar aquesta exclusió i no heretar la ubicació del local als intèrprets.
 - `channels`: canals oficials i Topic associats a l'artista del catàleg. En afegir canals cal ampliar aquest mapa després de confirmar la identitat.
-- `places`: llocs normalitzats reutilitzables. Hi ha 136 poblacions amb identificador GeoNames i coordenades de referència del nucli o municipi; no són domicilis ni coordenades personals. La jerarquia administrativa del proveïdor no s'utilitza per assignar el municipi (pot tenir discrepàncies).
+- `places`: llocs normalitzats reutilitzables. Hi ha 142 poblacions amb identificador GeoNames i coordenades de referència del nucli o municipi; no són domicilis ni coordenades personals. La jerarquia administrativa del proveïdor no s'utilitza per assignar el municipi (pot tenir discrepàncies).
 - Formentera i Mallorca es mantenen a escala d'illa; Camp de Tarragona, Camp de Túria i Montseny a escala territorial. També es documenten Vallès, Comtat, Alcoià, Horta Sud, Maresme, la Safor, la Vall d’Albaida, Baix Llobregat, Barcelonès i Catalunya Nord. Aquests quinze llocs territorials no tenen coordenades puntuals. Marala conserva les tres poblacions documentades.
 
 Les coordenades provenen de **GeoNames, generalment via Open-Meteo**, amb atribució CC BY 4.0. Cada població desa la consulta d'origen i la data. Referències: <https://www.geonames.org/> i <https://open-meteo.com/en/docs/geocoding-api>.
@@ -127,3 +128,13 @@ Saïm conserva Felanitx i Manacor; Solk, les vinculacions amb Reus, Tortosa i Vi
 Els canals compartits d’ASSAC!, The Cabrians i Pesta Porcina no reben un origen global; les seves procedències documentades requereixen una correspondència per artista o vídeo. Els Bourbons, Electrotoylets i Tornaveus continuen pendents d’aclariment. Club Social Carme és un cicle de directes, no un grup: continua al recompte brut pendent, però no se li atribueix l’origen dels intèrprets.
 
 El registre suma 329 artistes, 491 canals, 136 municipis i 15 territoris. Queden 122 entrades sense assignació: 7 actives (6 artistes i el cicle Club Social Carme) i 115 inactives. Documentar els inactius no els reactiva.
+
+## Dotzè lot de 30 artistes (11 d’octubre de 2026)
+
+S’afegeixen 30 assignacions documentades i es preserven íntegrament les 329 anteriors. [Decisions i fonts](revisions/2026-10-11-origens-lot-12.json). Són entrades inactives del catàleg: documentar-ne la procedència no les reactiva. Les entrades sense canals no mostren encara aquesta dada en una fitxa pública.
+
+Ai Ai Ai queda vinculat a Mataró, Asstrio a Barcelona i Joana Serrat a Vic; aquestes vinculacions no s’etiqueten com a lloc de naixement o formació. Els altres 27 casos tenen relació d’origen documentada.
+
+**Club Social Carme no ha de tenir origen.** L’editor confirma que el cicle és de Barcelona però demana que cada grup participant conservi la seva procedència. Es desa com a exclusió manual protegida a `excludedProfiles`, sense municipi ni coordenades ni assignació al mapa de canals. Aquesta decisió substitueix el criteri de recompte brut del lot 11: el cicle ja no compta com a artista pendent. La ràdio per proximitat continua pendent d’implementació; aquesta revisió no atribueix orígens als vídeos del canal compartit.
+
+El registre suma 359 artistes, 503 canals, 142 municipis i 15 territoris. Queden **91 artistes pendents: 6 actius i 85 inactius**. El recompte brut és de 92 entrades sense assignació, incloent-hi el cicle expressament exclòs.

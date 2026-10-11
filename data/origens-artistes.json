@@ -1870,6 +1870,84 @@
       "territory": "Catalunya",
       "source": "https://geocoding-api.open-meteo.com/v1/search?name=El+Vendrell&count=10&language=ca&format=json",
       "checkedOn": "2026-10-11"
+    },
+    "geonames:6559648": {
+      "name": "Camarles",
+      "type": "municipality",
+      "geonamesId": 6559648,
+      "coordinates": {
+        "latitude": 40.78169,
+        "longitude": 0.65509,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Camarles&count=10&language=ca&format=json",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:3124967": {
+      "name": "Ciutadella de Menorca",
+      "type": "municipality",
+      "geonamesId": 3124967,
+      "coordinates": {
+        "latitude": 40.00112,
+        "longitude": 3.84144,
+        "precision": "settlement_reference"
+      },
+      "territory": "Illes Balears",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Ciutadella&count=10&language=ca&format=json",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:3037068": {
+      "name": "Argelers",
+      "type": "municipality",
+      "geonamesId": 3037068,
+      "coordinates": {
+        "latitude": 42.54714,
+        "longitude": 3.02253,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya Nord",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Argelers&count=10&language=ca&format=json",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:3125915": {
+      "name": "Castellar del Vallès",
+      "type": "municipality",
+      "geonamesId": 3125915,
+      "coordinates": {
+        "latitude": 41.61667,
+        "longitude": 2.08333,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Castellar+del+Valles&count=10&language=ca&format=json",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:2510279": {
+      "name": "Torrent",
+      "type": "municipality",
+      "geonamesId": 2510279,
+      "coordinates": {
+        "latitude": 39.43705,
+        "longitude": -0.46546,
+        "precision": "settlement_reference"
+      },
+      "territory": "País Valencià",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Torrent&count=10&language=ca&format=json",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:3107305": {
+      "name": "Ulldecona",
+      "type": "municipality",
+      "geonamesId": 3107305,
+      "coordinates": {
+        "latitude": 40.59734,
+        "longitude": 0.44718,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Ulldecona&count=10&language=ca&format=json",
+      "checkedOn": "2026-10-11"
     }
   },
   "artists": {
@@ -7326,6 +7404,486 @@
       "reviewedOn": "2026-10-11",
       "assignmentSource": "manual-review",
       "locked": true
+    },
+    "artist:ai-ai-ai": {
+      "name": "Ai Ai Ai",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:3117164"
+      ],
+      "confidence": "alta",
+      "basis": "Cultura Mataró descriu explícitament la vinculació del grup amb la ciutat; es registra com a vinculació, no com a municipi de formació.",
+      "sources": [
+        "https://www.culturamataro.cat/agenda-cultura/ai-ai-ai"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:asstrio": {
+      "name": "Asstrio",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "La fitxa discogràfica d’Asstrio identifica el trio com a establert a Barcelona.",
+      "sources": [
+        "https://www.discogs.com/artist/1096264-Asstrio"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:whiskyn-s": {
+      "name": "Whiskyn's",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3111933"
+      ],
+      "confidence": "alta",
+      "basis": "La biografia del Doctor Music Festival situa el naixement del grup a Reus.",
+      "sources": [
+        "https://doctormusicfestival.com/festival/html/arti_whisky_s.html"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:bonobos": {
+      "name": "Bonobos",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3125442"
+      ],
+      "confidence": "alta",
+      "basis": "La notícia del comiat identifica Bonobos com el grup de Centelles encapçalat per Jordi Ginesta.",
+      "sources": [
+        "https://www.enderrock.cat/noticia/16821/osonencs-bonobos-acomiaden"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:carmen-amaya": {
+      "name": "Carmen Amaya",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "La Biblioteca Virtual de la Diputació de Barcelona documenta Barcelona com a lloc de naixement de Carmen Amaya.",
+      "sources": [
+        "https://bibliotecavirtual.diba.cat/es/musica/carmen-amaya"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:carol-rovira": {
+      "name": "Carol Rovira",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:6559648"
+      ],
+      "confidence": "alta",
+      "basis": "El portal lingüístic de 3Cat presenta Carol Rovira com a actriu i cantant nascuda a Camarles.",
+      "sources": [
+        "https://esadir.cat/Nomspropis/Antroponims/Cultura/Carol_Rovira"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:guillamino": {
+      "name": "Guillamino",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "L’entrevista d’ARA identifica Pau Guillamet, Guillamino, com a nascut a Barcelona.",
+      "sources": [
+        "https://www.arabalears.cat/cultura/guillamino-entrevista-amics-tape-em-greu-utilitzat-quota-catalana_128_5070311.html"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:isaac-ulam": {
+      "name": "Isaac Ulam",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3127978"
+      ],
+      "confidence": "alta",
+      "basis": "La presentació d’Isaac Ulam a Time Out indica que és nascut a Blanes.",
+      "sources": [
+        "https://www.timeout.cat/barcelona/ca/musica/espaldamaceta-isaac-ulam"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:ja-t-ho-dire": {
+      "name": "Ja t'ho diré",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3124967"
+      ],
+      "confidence": "alta",
+      "basis": "La notícia de la presentació del llibre del grup identifica Ciutadella com la seva localitat d’origen.",
+      "sources": [
+        "https://www.dbalears.cat/balears/cultura/2003/01/04/84387/ja-t-ho-dire-recull-en-un-volum-la-historia-i-les-can-ons-del-grup.html"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:jaume-arnella-i-paris": {
+      "name": "Jaume Arnella i París",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "La biografia de l’Associació d’Escriptors en Llengua Catalana situa el naixement al barri de Sant Martí de Provençals, Barcelona.",
+      "sources": [
+        "https://www.escriptors.cat/autors/arnellaj/biografia"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:joan-crosas-i-casadesus": {
+      "name": "Joan Crosas i Casadesús",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3109799"
+      ],
+      "confidence": "alta",
+      "basis": "El registre d’autoritat de la Biblioteca de Catalunya documenta el naixement a l’Esquirol.",
+      "sources": [
+        "https://cantic.bnc.cat/registre/981061298227406706"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:joana-serrat": {
+      "name": "Joana Serrat",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:3106050"
+      ],
+      "confidence": "alta",
+      "basis": "El segell Loose Music documenta Vic com a ciutat de residència i punt de partida cap a l’estudi de gravació.",
+      "sources": [
+        "https://www.loosemusic.com/page/artist-detail/joana-serrat/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:jordi-barre": {
+      "name": "Jordi Barre",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3037068"
+      ],
+      "confidence": "alta",
+      "basis": "La Gran Enciclopèdia Catalana situa el naixement de Jordi Barre a Argelers, al Rosselló.",
+      "sources": [
+        "https://www.enciclopedia.cat/gran-enciclopedia-catalana/jordi-barre"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:juli-bustamante": {
+      "name": "Juli Bustamante",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:2509954"
+      ],
+      "confidence": "alta",
+      "basis": "L’efemèride de Diari La Veu documenta el naixement de Juli Bustamante a València ciutat.",
+      "sources": [
+        "https://www.diarilaveu.cat/efemerides/tal-dia-com-hui-del-1951-juli-bustamante-va-naixer-a-valencia-128067/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:kitsch": {
+      "name": "Kitsch",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128885"
+      ],
+      "confidence": "alta",
+      "basis": "La biografia del Bandcamp propi indica que el grup es va fundar a Banyoles.",
+      "sources": [
+        "https://kitsch2.bandcamp.com/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:la-carrau": {
+      "name": "La Carrau",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3108286"
+      ],
+      "confidence": "alta",
+      "basis": "L’entrevista a Càrol Duran presenta La Carrau com a grup de folk de Terrassa.",
+      "sources": [
+        "https://www.auva.cat/entrevistem-a-la-carrau/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:la-sra-tomasa": {
+      "name": "La Sra. Tomasa",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "La presentació del grup situa el naixement de La Sra. Tomasa a Barcelona el 2012.",
+      "sources": [
+        "https://www.tomaticket.es/es-es/entradas-la-sra-tomasa-en-mataro"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:los-manolos": {
+      "name": "Los Manolos",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "La presentació de Virus Cultural explica que el projecte va sorgir de deu amics de Barcelona, alguns del barri d’Hostafrancs.",
+      "sources": [
+        "https://www.viruscultural.cat/projectes/los-manolos"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:macedonia": {
+      "name": "Macedònia",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3125915"
+      ],
+      "confidence": "alta",
+      "basis": "El setmanari municipal L’Actual documenta que Macedònia es va formar a Castellar l’any 2001.",
+      "sources": [
+        "https://www.castellarvalles.cat/arxius/publicacio/897/arxiu/webactual587.pdf"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:mar-grimalt": {
+      "name": "Mar Grimalt",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:2517750"
+      ],
+      "confidence": "alta",
+      "basis": "El Setmanari Felanitx identifica Mar Grimalt com a artista felanitxera en la notícia dels Premis Enderrock.",
+      "sources": [
+        "https://www.setmanarifelanitx.cat/cultura/maria-hein-i-mar-grimalt-guardonades-als-premis-enderrock/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:maria-hein": {
+      "name": "Maria Hein",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:2517750"
+      ],
+      "confidence": "alta",
+      "basis": "L’entrevista a Maria Hein la presenta explícitament com a cantant i compositora felanitxera.",
+      "sources": [
+        "https://mallorcamusicmagazine.com/entrevista-maria-hein-2022-01/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:miquel-abras": {
+      "name": "Miquel Abras",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3119952"
+      ],
+      "confidence": "alta",
+      "basis": "L’Ajuntament de Sant Sadurní documenta el naixement del cantautor a la Bisbal d’Empordà; Sant Sadurní és només el lloc del concert.",
+      "sources": [
+        "https://santsadurni.cat/document.php?id=2250"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:nuria-feliu-i-mestres": {
+      "name": "Núria Feliu i Mestres",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "La notícia institucional de record de Núria Feliu documenta Barcelona com a ciutat de naixement.",
+      "sources": [
+        "https://www.fcbarcelona.cat/ca/noticies/2686642/mor-la-cantant-nuria-feliu"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:orxata-sound-system": {
+      "name": "Orxata Sound System",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:2509954"
+      ],
+      "confidence": "alta",
+      "basis": "La presentació del grup a les Festes Majors Autogestionades d’Alboraia explica en primera persona que el col·lectiu va néixer a la ciutat de València.",
+      "sources": [
+        "https://fesmal.wordpress.com/arxiu/fesmal-2010/els-grups/orxata-sound-system/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:pastora": {
+      "name": "Pastora",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "El segell Halley Records presenta Pastora com a grup barceloní i identifica Caïm Riba, Pauet Riba i Dolo Beltrán.",
+      "sources": [
+        "https://halleyrecords.com/artist/pastora/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:pau-alabajos-i-ferrer": {
+      "name": "Pau Alabajos i Ferrer",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:2510279"
+      ],
+      "confidence": "alta",
+      "basis": "La biografia oficial de Pau Alabajos l’identifica com a cantautor de Torrent.",
+      "sources": [
+        "https://paualabajos.com/bio/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:pep-gimeno-botifarra": {
+      "name": "Pep Gimeno \"Botifarra\"",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:2516345"
+      ],
+      "confidence": "alta",
+      "basis": "La Gran Enciclopèdia Catalana documenta Xàtiva com a lloc de naixement de Josep Gimeno i Montell, Pep Gimeno Botifarra.",
+      "sources": [
+        "https://www.enciclopedia.cat/gran-enciclopedia-catalana/josep-gimeno-i-montell"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:pepet-i-marieta": {
+      "name": "Pepet i Marieta",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3107305"
+      ],
+      "confidence": "alta",
+      "basis": "La fitxa de la productora identifica Ulldecona com a procedència del grup.",
+      "sources": [
+        "https://produccionssubmarines.com/artistes/pepet-i-marieta/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:suu": {
+      "name": "Suu",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "La presentació de la promotora The Project identifica Suu com a cantant de Barcelona.",
+      "sources": [
+        "https://www.theproject.es/es/suu"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:umpah-pah": {
+      "name": "Umpah-Pah",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3121456"
+      ],
+      "confidence": "alta",
+      "basis": "El repàs de la trajectòria identifica Umpah-pah com a grup de rock de Girona liderat per Adrià Puntí.",
+      "sources": [
+        "https://www.auva.cat/recordem-umpah-pah/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
     }
   },
   "channels": {
@@ -7819,6 +8377,27 @@
     "UC0njIX_vDoAZaqKR5N8AavA": "artist:sau",
     "UC6a_paoSt1YYKOFZwPGdEYw": "artist:sangtrait",
     "UCljKJq4zWfaxTUdptZgtTQA": "artist:raimon",
-    "UCHiwFlJ6-Ggj_mG0Okfq_HQ": "artist:lax-n-busto"
+    "UCHiwFlJ6-Ggj_mG0Okfq_HQ": "artist:lax-n-busto",
+    "UCFjpMGciAkOrjXrjxduOPog": "artist:whiskyn-s",
+    "UCixgCOsYckV_5zjYJpb5GGg": "artist:ja-t-ho-dire",
+    "UC3Z-76-_uT1IbUU9c8fP2mg": "artist:kitsch",
+    "UC96Q7Ki2GoRwrwSzeLTtvwg": "artist:la-sra-tomasa",
+    "UCM-WxdgJTr37_bOOlX5sZhg": "artist:la-sra-tomasa",
+    "UC_eW1AyvwaPsQA5YAuOC3YQ": "artist:mar-grimalt",
+    "UCf3r3A5NWE_xJr3CjFBeyog": "artist:mar-grimalt",
+    "UCjqasQj33NeNED2MJNHThjA": "artist:nuria-feliu-i-mestres",
+    "UCzEhOnMgbk8TPud1OI7NDbw": "artist:orxata-sound-system",
+    "UCLKx4vBoCOKwB2x280VFmng": "artist:orxata-sound-system",
+    "UClVTg1yrfwH3ku46CPlO7xg": "artist:suu",
+    "UCeza8RPly8qpRBT2VyPBhRQ": "artist:umpah-pah"
+  },
+  "excludedProfiles": {
+    "UCdezTX23syEeAJJAb2oOkKA": {
+      "name": "Club Social Carme",
+      "reason": "Cicle de sessions ubicat a Barcelona segons l’editor. No s’assigna origen al cicle ni al seu canal: cada grup participant ha de conservar la seva pròpia procedència. No inferir Barcelona per als intèrprets a partir del local.",
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "user-correction",
+      "locked": true
+    }
   }
 }
