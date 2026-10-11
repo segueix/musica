@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-11T21:45:42.460Z",
+  "updatedAt": "2026-10-11T21:55:26.145Z",
   "description": "Decisions manuals sobre el tipus de contingut de vídeos concrets. Manen sobre el classificador automàtic (scripts/lib/classificar_contingut_musical.js) i el pipeline (scripts/update_music_feed.js) les reaplica a cada generació del feed. Tipus permesos: song, live_song, album, other. Un vídeo revisat aquí surt de data/music-content-review.json.",
   "videos": [
     {
@@ -6536,6 +6536,408 @@
       "contentType": "song",
       "title": "Subliminal - Presumit",
       "note": "Cançó original de Subliminal recuperada per petició expressa de l’editor. Canal publicador VEVO verificat; 2026-10-11."
+    },
+    {
+      "id": "D5PU2mogznk",
+      "contentType": "song",
+      "title": "Ramon",
+      "note": "Bars, canal Topic verificat per petició de l’editor el 2026-10-11. Pista musical del catàleg seleccionat."
+    },
+    {
+      "id": "wZTzyxDO4D4",
+      "contentType": "song",
+      "title": "Quan el Blues va Tenir un Fill",
+      "note": "Bars, canal Topic verificat per petició de l’editor el 2026-10-11. Pista musical del catàleg seleccionat."
+    },
+    {
+      "id": "1uttuWJoTYk",
+      "contentType": "song",
+      "title": "Quan ens Veiem",
+      "note": "Bars, canal Topic verificat per petició de l’editor el 2026-10-11. Pista musical del catàleg seleccionat."
+    },
+    {
+      "id": "3oLkuiwTwxA",
+      "contentType": "song",
+      "title": "Com e Vallès no hi ha Res",
+      "note": "Bars, canal Topic verificat per petició de l’editor el 2026-10-11. Pista musical del catàleg seleccionat."
+    },
+    {
+      "id": "csQWJHZ7SbU",
+      "contentType": "song",
+      "title": "A Cara o Creu",
+      "note": "Bars, canal Topic verificat per petició de l’editor el 2026-10-11. Pista musical del catàleg seleccionat."
+    },
+    {
+      "id": "AGrWWYPfgTg",
+      "contentType": "song",
+      "title": "La Ràdio",
+      "note": "Bars, canal Topic verificat per petició de l’editor el 2026-10-11. Pista musical del catàleg seleccionat."
+    },
+    {
+      "id": "cHJWeRyaBZY",
+      "contentType": "song",
+      "title": "Ves Quins Collons",
+      "note": "Bars, canal Topic verificat per petició de l’editor el 2026-10-11. Pista musical del catàleg seleccionat."
+    },
+    {
+      "id": "8ENZxyhs91c",
+      "contentType": "song",
+      "title": "Bar Tancat",
+      "note": "Bars, canal Topic verificat per petició de l’editor el 2026-10-11. Pista musical del catàleg seleccionat."
+    },
+    {
+      "id": "aNnnNpf8Cd0",
+      "contentType": "song",
+      "title": "Temps Perdut",
+      "note": "Bars, canal Topic verificat per petició de l’editor el 2026-10-11. Pista musical del catàleg seleccionat."
+    },
+    {
+      "id": "6wCJKOQkA8U",
+      "contentType": "song",
+      "title": "Si Estàs \"Catxonda\"",
+      "note": "Bars, canal Topic verificat per petició de l’editor el 2026-10-11. Pista musical del catàleg seleccionat."
+    },
+    {
+      "id": "iu-Gh-dfUJc",
+      "contentType": "song",
+      "title": "Si es pogués rebobinar",
+      "note": "Bars, canal Topic verificat per petició de l’editor el 2026-10-11. Pista musical del catàleg seleccionat."
+    },
+    {
+      "id": "geNgvaiIAuM",
+      "contentType": "song",
+      "title": "La mateixa història de sempre (in catalan)",
+      "note": "Bars, canal Topic verificat per petició de l’editor el 2026-10-11. Pista musical del catàleg seleccionat."
+    },
+    {
+      "id": "xFkWFwTy9HI",
+      "contentType": "song",
+      "title": "La pitjor part de tu",
+      "note": "Bars, canal Topic verificat per petició de l’editor el 2026-10-11. Pista musical del catàleg seleccionat."
+    },
+    {
+      "id": "l-QN3GR1GM8",
+      "contentType": "song",
+      "title": "Maleiré aquella nit",
+      "note": "Bars, canal Topic verificat per petició de l’editor el 2026-10-11. Pista musical del catàleg seleccionat."
+    },
+    {
+      "id": "vFZQZ_0KC0I",
+      "contentType": "song",
+      "title": "Mira'm",
+      "note": "Bars, canal Topic verificat per petició de l’editor el 2026-10-11. Pista musical del catàleg seleccionat."
+    },
+    {
+      "id": "8fSVqkGRhXI",
+      "contentType": "song",
+      "title": "Entre barrots",
+      "note": "Bars, canal Topic verificat per petició de l’editor el 2026-10-11. Pista musical del catàleg seleccionat."
+    },
+    {
+      "id": "p2NoUqbaw9Q",
+      "contentType": "song",
+      "title": "El dia que vinguis",
+      "note": "Bars, canal Topic verificat per petició de l’editor el 2026-10-11. Pista musical del catàleg seleccionat."
+    },
+    {
+      "id": "t0sLSWtZMkA",
+      "contentType": "song",
+      "title": "Dolça mentida",
+      "note": "Bars, canal Topic verificat per petició de l’editor el 2026-10-11. Pista musical del catàleg seleccionat."
+    },
+    {
+      "id": "WgbEeFUAeMM",
+      "contentType": "song",
+      "title": "Assossegadament",
+      "note": "Bars, canal Topic verificat per petició de l’editor el 2026-10-11. Pista musical del catàleg seleccionat."
+    },
+    {
+      "id": "hdpdrHutvaQ",
+      "contentType": "song",
+      "title": "Només vuit dies",
+      "note": "Bars, canal Topic verificat per petició de l’editor el 2026-10-11. Pista musical del catàleg seleccionat."
+    },
+    {
+      "id": "eMGm2ocMdk0",
+      "contentType": "song",
+      "title": "Com roba mullada",
+      "note": "Bars, canal Topic verificat per petició de l’editor el 2026-10-11. Pista musical del catàleg seleccionat."
+    },
+    {
+      "id": "GTsfQnS5hg0",
+      "contentType": "song",
+      "title": "Fumes",
+      "note": "Bars, canal Topic verificat per petició de l’editor el 2026-10-11. Pista musical del catàleg seleccionat."
+    },
+    {
+      "id": "I0DEJ3W-ERM",
+      "contentType": "song",
+      "title": "Mai Es Tard",
+      "note": "Bars, canal Topic verificat per petició de l’editor el 2026-10-11. Pista musical del catàleg seleccionat."
+    },
+    {
+      "id": "ekHgwIVt0V8",
+      "contentType": "song",
+      "title": "Tu T'ho Has Buscat",
+      "note": "Bars, canal Topic verificat per petició de l’editor el 2026-10-11. Pista musical del catàleg seleccionat."
+    },
+    {
+      "id": "TdMJatFN9pY",
+      "contentType": "song",
+      "title": "Els Peixos Criden",
+      "note": "Bars, canal Topic verificat per petició de l’editor el 2026-10-11. Pista musical del catàleg seleccionat."
+    },
+    {
+      "id": "pUZKIZchqPo",
+      "contentType": "song",
+      "title": "Mora't",
+      "note": "Bars, canal Topic verificat per petició de l’editor el 2026-10-11. Pista musical del catàleg seleccionat."
+    },
+    {
+      "id": "VKvmGLm5Dnw",
+      "contentType": "song",
+      "title": "Greus Problemes",
+      "note": "Bars, canal Topic verificat per petició de l’editor el 2026-10-11. Pista musical del catàleg seleccionat."
+    },
+    {
+      "id": "MeWBFpoBT-U",
+      "contentType": "song",
+      "title": "On Has Estat?",
+      "note": "Bars, canal Topic verificat per petició de l’editor el 2026-10-11. Pista musical del catàleg seleccionat."
+    },
+    {
+      "id": "gBaaDRZa3As",
+      "contentType": "song",
+      "title": "Blues del Dilluns",
+      "note": "Bars, canal Topic verificat per petició de l’editor el 2026-10-11. Pista musical del catàleg seleccionat."
+    },
+    {
+      "id": "81Cbte7XKHQ",
+      "contentType": "song",
+      "title": "Algu T'espera",
+      "note": "Bars, canal Topic verificat per petició de l’editor el 2026-10-11. Pista musical del catàleg seleccionat."
+    },
+    {
+      "id": "D0frtT_jQWU",
+      "contentType": "song",
+      "title": "Estrany En El Mirall",
+      "note": "Bars, canal Topic verificat per petició de l’editor el 2026-10-11. Pista musical del catàleg seleccionat."
+    },
+    {
+      "id": "8cNUYIuoT-4",
+      "contentType": "song",
+      "title": "La Nit Mes Cega",
+      "note": "Bars, canal Topic verificat per petició de l’editor el 2026-10-11. Pista musical del catàleg seleccionat."
+    },
+    {
+      "id": "iQwl0a8W7kw",
+      "contentType": "live_song",
+      "title": "Blues del Dilluns",
+      "note": "Bars, canal Topic verificat per petició de l’editor el 2026-10-11. Pista del disc En Concert."
+    },
+    {
+      "id": "Di-UQBpSgR0",
+      "contentType": "live_song",
+      "title": "Algú t'espera",
+      "note": "Bars, canal Topic verificat per petició de l’editor el 2026-10-11. Pista del disc En Concert."
+    },
+    {
+      "id": "SL7b3YtyDLI",
+      "contentType": "song",
+      "title": "Clavar els Teus Ulls",
+      "note": "Bars, canal Topic verificat per petició de l’editor el 2026-10-11. Pista musical del catàleg seleccionat."
+    },
+    {
+      "id": "DS6b79FQkqQ",
+      "contentType": "live_song",
+      "title": "T'ho tu Has Buscat",
+      "note": "Bars, canal Topic verificat per petició de l’editor el 2026-10-11. Pista del disc En Concert."
+    },
+    {
+      "id": "9GHEJaqBRR0",
+      "contentType": "live_song",
+      "title": "Mai és Tard",
+      "note": "Bars, canal Topic verificat per petició de l’editor el 2026-10-11. Pista del disc En Concert."
+    },
+    {
+      "id": "0ZiBAt5VqmI",
+      "contentType": "live_song",
+      "title": "La Nit Més Cega",
+      "note": "Bars, canal Topic verificat per petició de l’editor el 2026-10-11. Pista del disc En Concert."
+    },
+    {
+      "id": "fVxvXdKBDoE",
+      "contentType": "live_song",
+      "title": "Clavar els Teus Ulls",
+      "note": "Bars, canal Topic verificat per petició de l’editor el 2026-10-11. Pista del disc En Concert."
+    },
+    {
+      "id": "tgMK0bn9mw0",
+      "contentType": "live_song",
+      "title": "Després d'un Dia Molt Llarg",
+      "note": "Bars, canal Topic verificat per petició de l’editor el 2026-10-11. Pista del disc En Concert."
+    },
+    {
+      "id": "AMKVUZ0CTDk",
+      "contentType": "live_song",
+      "title": "Perdre el Tren",
+      "note": "Bars, canal Topic verificat per petició de l’editor el 2026-10-11. Pista del disc En Concert."
+    },
+    {
+      "id": "G4WfULdvfiA",
+      "contentType": "song",
+      "title": "De Carretera",
+      "note": "Bars, canal Topic verificat per petició de l’editor el 2026-10-11. Pista musical del catàleg seleccionat."
+    },
+    {
+      "id": "K6CEKa0Y50M",
+      "contentType": "song",
+      "title": "Despres d'un Dia Molt Llarg",
+      "note": "Bars, canal Topic verificat per petició de l’editor el 2026-10-11. Pista musical del catàleg seleccionat."
+    },
+    {
+      "id": "78ibvf1DpCQ",
+      "contentType": "song",
+      "title": "No em Preguntis Res",
+      "note": "Bars, canal Topic verificat per petició de l’editor el 2026-10-11. Pista musical del catàleg seleccionat."
+    },
+    {
+      "id": "NvOmT0MjrsI",
+      "contentType": "song",
+      "title": "T'ho Diré Mil Vegades",
+      "note": "Bars, canal Topic verificat per petició de l’editor el 2026-10-11. Pista musical del catàleg seleccionat."
+    },
+    {
+      "id": "6eTin1Kzg6Y",
+      "contentType": "song",
+      "title": "Les Tres del Matí",
+      "note": "Bars, canal Topic verificat per petició de l’editor el 2026-10-11. Pista musical del catàleg seleccionat."
+    },
+    {
+      "id": "ZrPKyGUQDeE",
+      "contentType": "song",
+      "title": "Foc al Cor",
+      "note": "Bars, canal Topic verificat per petició de l’editor el 2026-10-11. Pista musical del catàleg seleccionat."
+    },
+    {
+      "id": "Q5yZV9hhtjw",
+      "contentType": "song",
+      "title": "Si Juguem Bé",
+      "note": "Bars, canal Topic verificat per petició de l’editor el 2026-10-11. Pista musical del catàleg seleccionat."
+    },
+    {
+      "id": "bISp5EvC72c",
+      "contentType": "song",
+      "title": "Perdre el Tren",
+      "note": "Bars, canal Topic verificat per petició de l’editor el 2026-10-11. Pista musical del catàleg seleccionat."
+    },
+    {
+      "id": "zDRmUC1lQRw",
+      "contentType": "song",
+      "title": "Mai És Tard",
+      "note": "Bars, canal Topic verificat per petició de l’editor el 2026-10-11. Pista musical del catàleg seleccionat."
+    },
+    {
+      "id": "TYZyXbFkaLQ",
+      "contentType": "song",
+      "title": "Després d'un Dia Molt Llarg",
+      "note": "Bars, canal Topic verificat per petició de l’editor el 2026-10-11. Pista musical del catàleg seleccionat."
+    },
+    {
+      "id": "IbuG6LFPoSM",
+      "contentType": "song",
+      "title": "Blues del Dilluns",
+      "note": "Bars, canal Topic verificat per petició de l’editor el 2026-10-11. Pista musical del catàleg seleccionat."
+    },
+    {
+      "id": "NJzm9raoNaA",
+      "contentType": "song",
+      "title": "Quan Ens Veiem",
+      "note": "Bars, canal Topic verificat per petició de l’editor el 2026-10-11. Pista musical del catàleg seleccionat."
+    },
+    {
+      "id": "vZcaMsuU13c",
+      "contentType": "song",
+      "title": "Sentir L'aire",
+      "note": "Bars, canal Topic verificat per petició de l’editor el 2026-10-11. Pista musical del catàleg seleccionat."
+    },
+    {
+      "id": "vGrpiCyWQtc",
+      "contentType": "song",
+      "title": "La Pitjor Part de Tu",
+      "note": "Bars, canal Topic verificat per petició de l’editor el 2026-10-11. Pista musical del catàleg seleccionat."
+    },
+    {
+      "id": "fj1XKg-HOCU",
+      "contentType": "song",
+      "title": "Assossegadament",
+      "note": "Bars, canal Topic verificat per petició de l’editor el 2026-10-11. Pista musical del catàleg seleccionat."
+    },
+    {
+      "id": "DAtS7JLN174",
+      "contentType": "song",
+      "title": "Greus Problemas",
+      "note": "Bars, canal Topic verificat per petició de l’editor el 2026-10-11. Pista musical del catàleg seleccionat."
+    },
+    {
+      "id": "CEKZMMOAKMA",
+      "contentType": "song",
+      "title": "Temps Perdut",
+      "note": "Bars, canal Topic verificat per petició de l’editor el 2026-10-11. Pista musical del catàleg seleccionat."
+    },
+    {
+      "id": "P7mr5SzAjcg",
+      "contentType": "song",
+      "title": "Per Sobreviure",
+      "note": "Bars, canal Topic verificat per petició de l’editor el 2026-10-11. Pista musical del catàleg seleccionat."
+    },
+    {
+      "id": "yBSgx3zqRLM",
+      "contentType": "song",
+      "title": "Foc Al Cor",
+      "note": "Bars, canal Topic verificat per petició de l’editor el 2026-10-11. Pista musical del catàleg seleccionat."
+    },
+    {
+      "id": "vKhX7nhrVXQ",
+      "contentType": "song",
+      "title": "De Carretera",
+      "note": "Bars, canal Topic verificat per petició de l’editor el 2026-10-11. Pista musical del catàleg seleccionat."
+    },
+    {
+      "id": "maUQ8y_cqsg",
+      "contentType": "song",
+      "title": "La Nit Més Cega",
+      "note": "Bars, canal Topic verificat per petició de l’editor el 2026-10-11. Pista musical del catàleg seleccionat."
+    },
+    {
+      "id": "oMqtxZrGtLM",
+      "contentType": "song",
+      "title": "Mentre Dormies",
+      "note": "Bars, canal Topic verificat per petició de l’editor el 2026-10-11. Pista musical del catàleg seleccionat."
+    },
+    {
+      "id": "d6yz9H2tRPY",
+      "contentType": "song",
+      "title": "El Dia Que Vinguis",
+      "note": "Bars, canal Topic verificat per petició de l’editor el 2026-10-11. Pista musical del catàleg seleccionat."
+    },
+    {
+      "id": "xGQZLkvBHu8",
+      "contentType": "song",
+      "title": "Només Viut Dies",
+      "note": "Bars, canal Topic verificat per petició de l’editor el 2026-10-11. Pista musical del catàleg seleccionat."
+    },
+    {
+      "id": "nsGEzjXZePI",
+      "contentType": "song",
+      "title": "Ramon",
+      "note": "Bars, canal Topic verificat per petició de l’editor el 2026-10-11. Pista musical del catàleg seleccionat."
+    },
+    {
+      "id": "turJ-_oz9z0",
+      "contentType": "song",
+      "title": "Massa Petit",
+      "note": "Bars, canal Topic verificat per petició de l’editor el 2026-10-11. Pista musical del catàleg seleccionat."
     }
   ]
 }

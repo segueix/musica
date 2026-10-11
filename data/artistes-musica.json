@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-11T21:45:42.460Z",
+  "updatedAt": "2026-10-11T21:55:26.145Z",
   "artists": [
     {
       "name": "2 Princeses Barbudes",
@@ -3375,7 +3375,9 @@
       "genres": [
         "Rock"
       ],
-      "territories": [],
+      "territories": [
+        "Catalunya"
+      ],
       "languages": [
         "ca"
       ],
@@ -3384,54 +3386,14 @@
       "youtube": {
         "channels": [
           {
-            "id": "UCGHuCX7ksRy8c0BvCwPoHsg",
-            "name": "Bars - Topic",
+            "id": "UCoQKWzy03Eh7EFrjM0Tuv1Q",
+            "name": "The Bars - Topic",
             "handle": null,
             "type": "topic",
             "primary": true
           }
         ],
-        "searchCandidates": [
-          {
-            "id": "UCGHuCX7ksRy8c0BvCwPoHsg",
-            "title": "Bars - Topic",
-            "handle": null,
-            "description": "",
-            "subscriberCount": 0,
-            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_nWyPWxkLouOOka6GuHM8izDlE_yXnC5xTup5HP8T7CMeTZxq27qge_MoyYv6lzf2FRtw=s240-c-k-c0x00ffffff-no-rj",
-            "score": 85,
-            "reasons": [
-              "nom exacte de canal Topic",
-              "primer resultat"
-            ],
-            "suggestedType": "topic",
-            "discoveredAt": "2026-10-07T16:14:46.435Z"
-          },
-          {
-            "id": "UCCAO3wn5c9XrU8EzBL05ewA",
-            "title": "ratonacm",
-            "handle": "@ratonacm",
-            "description": "",
-            "subscriberCount": 38,
-            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_nYzB_JdFQdYTgHcTojDbLy5Q6B3UCxQ2eqk4AKBRTCCw=s240-c-k-c0x00ffffff-no-rj",
-            "score": 0,
-            "reasons": [],
-            "suggestedType": "official",
-            "discoveredAt": "2026-10-07T16:14:46.435Z"
-          },
-          {
-            "id": "UCvSkgwO6uH7NSUGqIoZB4ew",
-            "title": "SQ TEAM",
-            "handle": "@sqteam23",
-            "description": "",
-            "subscriberCount": 107,
-            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_khzjynmSLTXe82HLxc7DJ68qDD-MHn4fIsNguLes6qEGM=s240-c-k-c0x00ffffff-no-rj",
-            "score": 0,
-            "reasons": [],
-            "suggestedType": "official",
-            "discoveredAt": "2026-10-07T16:14:46.435Z"
-          }
-        ]
+        "searchCandidates": []
       },
       "confidence": "alta",
       "reviewStatus": "aprovat",
@@ -3439,10 +3401,12 @@
       "sources": [
         "manual-user-2026-10-07",
         "genre:manual",
-        "youtube:targeted-search-verified"
+        "youtube:targeted-search-verified",
+        "manual-user-2026-10-11",
+        "https://www.youtube.com/channel/UCoQKWzy03Eh7EFrjM0Tuv1Q"
       ],
-      "lastChecked": "2026-10-07T16:16:01.523Z",
-      "notes": "Alta manual 2026-10-07. Canal identificat per cerca dirigida; filtre musical i d’idioma habitual.",
+      "lastChecked": "2026-10-11T21:55:26.145Z",
+      "notes": "Canal corregit per l’editor el 2026-10-11: UCoQKWzy03Eh7EFrjM0Tuv1Q. Excloure íntegrament el disc The Bars, que correspon a una barreja/homònim. Selecció persistent de repertori català; caràtula de Ramon del disc Bars. No recuperar el canal antic UCGHuCX7ksRy8c0BvCwPoHsg.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-07T16:14:46.435Z",
