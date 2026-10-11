@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-11T21:29:54.227Z",
+  "updatedAt": "2026-10-11T21:37:11.138Z",
   "description": "Llista blanca per a canals on Segueix Música només ha d'ingerir vídeos concrets. Admet títols exactes, fragments obligatoris i fragments exclosos.",
   "channels": {
     "UCKpscwdWlVaMqcA81vLI7OA": {
@@ -4415,7 +4415,7 @@
     },
     "UC_X_KBioMYCrmZyI7hbL8Pw": {
       "artist": "Vademecum FAM",
-      "note": "Selecció expressa de l’editor: només els 30 vídeos públics de les cinc llistes documentades a docs/revisions/2026-10-11-urban-vademecum-hereus.json. No ampliar a la resta del canal. Vademecum - 2012 és un vídeo extern inclòs a la llista oficial.",
+      "note": "Selecció expressa de l’editor: només els 30 vídeos públics de les cinc llistes documentades a docs/revisions/2026-10-11-urban-vademecum-hereus.json. No ampliar a la resta del canal. Vademecum - 2012 és un vídeo extern inclòs a la llista oficial. La selecció expressa inclou els deu vídeos amb subtítols traduïts al castellà; excepció limitada als seus IDs.",
       "allowedVideoIds": [
         "2g_cPzbm4h4",
         "tTkIWmhGeZM",
@@ -4452,7 +4452,22 @@
       "allowedContentTypes": [
         "song",
         "live_song"
-      ]
+      ],
+      "allowedSpanishSubtitleVideoIds": [
+        "qG2N-bOuDEs",
+        "UF8S0Ntbh2s",
+        "v81Hp4wL9JQ",
+        "Dxb5Ij4P_d4",
+        "bkTLS9OuD8w",
+        "nhSZl6y-EdE",
+        "mZSp7Sa7bMQ",
+        "RPti2DboKFE",
+        "vHQ3z6swPmM",
+        "nDm4YjYGSOU"
+      ],
+      "allowedExternalVideos": {
+        "NoA5Im3nrL4": "UCF9cjcRge4RhzZqSaa2aUDg"
+      }
     },
     "UCK3mJ6ChV2a26kecZHDb4lg": {
       "artist": "Hereus del Beat",

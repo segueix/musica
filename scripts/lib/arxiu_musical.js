@@ -77,6 +77,7 @@ function compactArchiveVideo(video) {
   if (video.isShort) compact.isShort = true;
   if (video.originalYear) compact.originalYear = Number(video.originalYear);
   if (video.topicTrack) compact.topicTrack = true;
+  if (video.sourceChannelId && video.sourceChannelId !== compact.channelId) compact.sourceChannelId = String(video.sourceChannelId);
   return compact;
 }
 

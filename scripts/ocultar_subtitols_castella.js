@@ -12,6 +12,7 @@
 const fs = require('fs');
 const path = require('path');
 const { declaracio } = require('./lib/subtitols_castella');
+const { loadChannelVideoAllowlist, allowsSpanishSubtitles } = require('./lib/filtre_videos_canal');
 
 const FEED_FILE = path.join(process.cwd(), 'data', 'feed.json');
 const HIDDEN_FILE = path.join(process.cwd(), 'data', 'hidden-videos.json');
@@ -22,9 +23,10 @@ function main() {
   const hidden = JSON.parse(fs.readFileSync(HIDDEN_FILE, 'utf8'));
   const ids = new Set((hidden.videoIds || []).map(String));
   const nous = [];
+  const selections = loadChannelVideoAllowlist(path.join(process.cwd(), 'data', 'music-channel-video-allowlist.json'));
   for (const video of feed.videos || []) {
     const frase = declaracio(video);
-    if (frase && !ids.has(String(video.id))) nous.push({ video, frase });
+    if (frase && !allowsSpanishSubtitles(selections, video) && !ids.has(String(video.id))) nous.push({ video, frase });
   }
 
   nous.forEach(({ video, frase }) => console.log(`- ${video.id} · ${video.channelTitle} · ${video.title} · «${frase}»`));

@@ -46,6 +46,14 @@ function loadChannelVideoAllowlist(filePath, fsModule = require('fs')) {
           : null,
         titleContains,
         deniedTitleContains,
+        allowedSpanishSubtitleVideoIds: new Set(
+          (Array.isArray(rule?.allowedSpanishSubtitleVideoIds) ? rule.allowedSpanishSubtitleVideoIds : [])
+            .map(String).filter(id => /^[A-Za-z0-9_-]{11}$/.test(id))
+        ),
+        allowedExternalVideos: new Map(
+          Object.entries(rule?.allowedExternalVideos || {})
+            .filter(([id, uploader]) => /^[A-Za-z0-9_-]{11}$/.test(id) && /^UC[A-Za-z0-9_-]{22}$/.test(uploader))
+        ),
         acceptedMusicOnly: rule?.acceptedMusicOnly === true,
         allowedContentTypes: new Set(
           (Array.isArray(rule?.allowedContentTypes) ? rule.allowedContentTypes : [])
@@ -100,8 +108,25 @@ function isChannelVideoAllowed(allowlist, channelId, title, videoId) {
   );
 }
 
+// Excepcions editorials per gravació: mai no obren tot el canal ni una llista de títols.
+function allowsSpanishSubtitles(allowlist, video) {
+  const rule = allowlist.get(String(video?.channelId || ''));
+  const id = String(video?.id || '');
+  return Boolean(rule?.allowedVideoIds?.has(id) && rule.allowedSpanishSubtitleVideoIds.has(id) &&
+    isChannelVideoAllowed(allowlist, video.channelId, video.title, id));
+}
+
+function isChannelVideoUploaderAllowed(allowlist, channelId, videoId, uploaderId) {
+  if (channelId === uploaderId) return true;
+  const rule = allowlist.get(channelId);
+  return Boolean(!rule?.blocked && rule?.allowedVideoIds?.has(videoId) &&
+    rule.allowedExternalVideos.get(videoId) === uploaderId);
+}
+
 module.exports = {
   normalizeVideoTitle,
   loadChannelVideoAllowlist,
-  isChannelVideoAllowed
+  isChannelVideoAllowed,
+  allowsSpanishSubtitles,
+  isChannelVideoUploaderAllowed
 };

@@ -18,6 +18,10 @@ function canalsRevisats({ abans, despres, shortsAbans, shortsDespres, feed, actu
     for (const videoId of new Set([...oldShorts, ...newShorts])) {
         if (oldShorts.has(videoId) === newShorts.has(videoId)) continue;
         const owners = new Set((feed.videos || []).filter(v => v.id === videoId).map(v => v.channelId));
+        for (const registry of [shortsAbans, shortsDespres]) {
+            const owner = registry.falseShortChannels?.[videoId];
+            if (typeof owner === 'string' && actuals.has(owner)) owners.add(owner);
+        }
         for (const [channelId, rule] of [...Object.entries(rulesBefore), ...Object.entries(rulesAfter)]) {
             if (rule.allowedVideoIds?.includes(videoId)) owners.add(channelId);
         }

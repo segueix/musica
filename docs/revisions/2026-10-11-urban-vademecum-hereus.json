@@ -386,6 +386,21 @@
       "id": "NoA5Im3nrL4",
       "uploaderChannelId": "UCF9cjcRge4RhzZqSaa2aUDg",
       "reason": "Vademecum - 2012 figura a la llista Vademecum del canal oficial sol·licitada."
+    },
+    "subtitleExceptions": {
+      "videoIds": [
+        "qG2N-bOuDEs",
+        "UF8S0Ntbh2s",
+        "v81Hp4wL9JQ",
+        "Dxb5Ij4P_d4",
+        "bkTLS9OuD8w",
+        "nhSZl6y-EdE",
+        "mZSp7Sa7bMQ",
+        "RPti2DboKFE",
+        "vHQ3z6swPmM",
+        "nDm4YjYGSOU"
+      ],
+      "basis": "La petició expressa inclou aquestes llistes; es preserva la selecció encara que el vídeo ofereixi traduccions de subtítols al castellà."
     }
   },
   "hereusDelBeat": {
@@ -589,7 +604,45 @@
         ]
       }
     ],
-    "scope": "Canal Topic complet, sense limitar les futures publicacions als llançaments actuals."
+    "scope": "Canal Topic complet, sense limitar les futures publicacions als llançaments actuals.",
+    "falseShortsVerified": [
+      {
+        "id": "eJCz7jqNmbo",
+        "url": "https://www.youtube.com/watch?v=eJCz7jqNmbo",
+        "status": 200
+      },
+      {
+        "id": "M82ff_4PBfM",
+        "url": "https://www.youtube.com/watch?v=M82ff_4PBfM",
+        "status": 200
+      },
+      {
+        "id": "yWTKVu0lbwM",
+        "url": "https://www.youtube.com/watch?v=yWTKVu0lbwM",
+        "status": 200
+      },
+      {
+        "id": "9ikEU6aTyuk",
+        "url": "https://www.youtube.com/watch?v=9ikEU6aTyuk",
+        "status": 200
+      },
+      {
+        "id": "hulcJ3MXss0",
+        "url": "https://www.youtube.com/watch?v=hulcJ3MXss0",
+        "status": 200
+      },
+      {
+        "id": "dZfODa2RFos",
+        "url": "https://www.youtube.com/watch?v=dZfODa2RFos",
+        "status": 200
+      },
+      {
+        "id": "L1f4jbYKWaM",
+        "url": "https://www.youtube.com/watch?v=L1f4jbYKWaM",
+        "status": 200
+      }
+    ],
+    "deduplication": "El canal Topic agrupa versions del mateix títol; els set temes d’Aerolínies són cançons breus, no Shorts."
   },
   "falseShortsVerified": [
     {
@@ -623,5 +676,11 @@
     "channels": 511,
     "remainingEligible": 61,
     "preservedClubSocialCarmeExclusion": true
-  }
+  },
+  "pipelineCorrections": [
+    "Excepcions de subtítols limitades als deu IDs de la selecció expressa; no s’amplia la resta del canal.",
+    "El vídeo extern exigeix ID i canal original exactes, i conserva sourceChannelId al feed i a l’arxiu.",
+    "falseShortChannels identifica el canal dels set temes d’Aerolínies encara absents del feed.",
+    "Una validació reintentada recupera els canals revisats del commit validat, sense consultar tot el catàleg."
+  ]
 }

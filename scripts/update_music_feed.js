@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const { classifyMusicContent } = require('./lib/classificar_contingut_musical');
 const { loadContentOverrides, applyContentOverride } = require('./lib/revisio_manual_musical');
-const { normalizeVideoTitle, loadChannelVideoAllowlist, isChannelVideoAllowed } = require('./lib/filtre_videos_canal');
+const { normalizeVideoTitle, loadChannelVideoAllowlist, isChannelVideoAllowed, allowsSpanishSubtitles, isChannelVideoUploaderAllowed } = require('./lib/filtre_videos_canal');
 const { parseManualDates, stampOriginalYear } = require('./lib/any_original_musical');
 const catalog = require('./lib/cataleg_musical');
 const { teSubtitolsCastella } = require('./lib/subtitols_castella');
@@ -655,7 +655,7 @@ async function main(){
       if(verdict==='removed' || (!item && !carried)) continue;
       const candidateTitle=item?.snippet?.title || carried?.title || '';
       if(!isChannelVideoAllowed(channelVideoAllowlist,id,candidateTitle,videoId)) continue;
-      if(item && item.snippet?.channelId!==id) continue;
+      if(item && !isChannelVideoUploaderAllowed(channelVideoAllowlist,id,videoId,item.snippet?.channelId)) continue;
 
       // La decisió manual (data/music-content-overrides.json) preval sobre el classificador automàtic.
       let classification=carried
@@ -714,7 +714,7 @@ async function main(){
         commentCount:Number(item.statistics?.commentCount||0),
         categories,
         genres:meta.genres,
-        sourceChannelId:id,
+        sourceChannelId:vs.channelId||id,
         liveBroadcastContent:vs.liveBroadcastContent||'none',
         // Llengua declarada pel canal: confirmació positiva per a scripts/depurar_videos_catala.js
         defaultAudioLanguage:vs.defaultAudioLanguage||'',
@@ -833,7 +833,7 @@ async function main(){
   // cada generació (cada dia), així que les cançons noves hi queden filtrades sense cap llista manual.
   let withSpanishSubtitles=0;
   for(let i=videos.length-1;i>=0;i--){
-    if(teSubtitolsCastella(videos[i])){ videos.splice(i,1); withSpanishSubtitles++; }
+    if(teSubtitolsCastella(videos[i]) && !allowsSpanishSubtitles(channelVideoAllowlist,videos[i])){ videos.splice(i,1); withSpanishSubtitles++; }
   }
   if(withSpanishSubtitles) console.log(`🙈 ${withSpanishSubtitles} vídeos amb subtítols en castellà descartats`);
   // Cançons que entren al feed per primera vegada: a la llista de revisió d'idioma (amb la descripció sencera).

@@ -5,7 +5,7 @@
 //
 //  - schedule:           actualització general, NOMÉS a les 20 h de Madrid. GitHub no entén zones horàries: hi ha
 //                        dos crons (18 h UTC a l'estiu, 19 h UTC a l'hivern) i aquí es descarta el que no toca.
-//  - workflow_run:       altes → només els canals nous (MUSIC_TARGET_CHANNELS); baixes → es purguen sense API.
+//  - workflow_run:       altes i seleccions del commit validat → només aquests canals; baixes sense API.
 //  - push:               revisions de dades (seleccions de canal, falsos Shorts) → només els canals afectats.
 //  - workflow_dispatch:  actualització general (manual).
 
@@ -53,11 +53,11 @@ function decideScope({ event, schedule = '', now = new Date(), added = [], remov
         };
     }
     if (event === 'workflow_run') {
-        const targetIds = ids(added);
+        const targetIds = ids([...added, ...reviewed]);
         const purge = base.removed.length > 0;
         const runApi = targetIds.length > 0;
         const parts = [];
-        if (runApi) parts.push('🆕 Canals nous (només aquests a YouTube): ' + targetIds.join(', '));
+        if (runApi) parts.push('🆕 Canals nous o revisats (només aquests a YouTube): ' + targetIds.join(', '));
         if (purge) parts.push('🗑️ Canals de baixa (es treuen sense API): ' + base.removed.join(', '));
         return {
             ...base,

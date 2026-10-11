@@ -1,11 +1,65 @@
 import { describe, expect, it } from 'vitest';
+import { compactArchiveVideo } from '../scripts/lib/arxiu_musical.js';
+import { canalsRevisats } from '../scripts/lib/canals_revisats.js';
+import { decideScope } from '../scripts/lib/abast_feed.js';
 import {
   normalizeVideoTitle,
   loadChannelVideoAllowlist,
-  isChannelVideoAllowed
+  isChannelVideoAllowed,
+  allowsSpanishSubtitles,
+  isChannelVideoUploaderAllowed
 } from '../scripts/lib/filtre_videos_canal.js';
 
 describe('llista blanca de vídeos per canal', () => {
+  it('reintenta només les seleccions del commit validat encara que els canals ja existeixin', () => {
+    const scope = decideScope({ event: 'workflow_run', added: [], reviewed: ['UCtopic', 'UCcollection'] });
+    expect(scope.runApi).toBe(true);
+    expect(scope.targetIds).toEqual(['UCcollection', 'UCtopic']);
+    expect(decideScope({ event: 'workflow_run' }).runApi).toBe(false);
+  });
+  it('recupera un fals Short absent del feed sense tancar el repertori futur del canal', () => {
+    const result = canalsRevisats({ abans: {}, despres: {}, shortsAbans: {},
+      shortsDespres: { falseShorts: ['eJCz7jqNmbo'], falseShortChannels: { eJCz7jqNmbo: 'UCtopic' } },
+      feed: { videos: [] }, actuals: new Set(['UCtopic']) });
+    expect(result).toEqual(['UCtopic']);
+  });
+  const selected = 'qG2N-bOuDEs';
+  const external = 'NoA5Im3nrL4';
+  const uploader = 'UCF9cjcRge4RhzZqSaa2aUDg';
+  const selection = extra => loadChannelVideoAllowlist('/fake.json', {
+    readFileSync: () => JSON.stringify({ channels: { UCcollection: {
+      allowedVideoIds: [selected, external],
+      allowedSpanishSubtitleVideoIds: [selected],
+      allowedExternalVideos: { [external]: uploader },
+      ...extra
+    } } })
+  });
+
+  it('respecta una excepció de subtítols només per al vídeo i la selecció indicats', () => {
+    const video = { id: selected, channelId: 'UCcollection', title: 'Cançó' };
+    expect(allowsSpanishSubtitles(selection(), video)).toBe(true);
+    expect(allowsSpanishSubtitles(selection(), { ...video, id: external })).toBe(false);
+    expect(allowsSpanishSubtitles(selection(), { ...video, channelId: 'UCother' })).toBe(false);
+    expect(allowsSpanishSubtitles(selection({ allowedVideoIds: [] }), video)).toBe(false);
+    expect(allowsSpanishSubtitles(selection({ blocked: true }), video)).toBe(false);
+    expect(allowsSpanishSubtitles(selection({ deniedTitleContains: ['Cançó'] }), video)).toBe(false);
+  });
+
+  it('exigeix vídeo extern i canal d’origen exactes sense obrir altres gravacions', () => {
+    expect(isChannelVideoUploaderAllowed(selection(), 'UCcollection', external, uploader)).toBe(true);
+    expect(isChannelVideoUploaderAllowed(selection(), 'UCcollection', selected, uploader)).toBe(false);
+    expect(isChannelVideoUploaderAllowed(selection(), 'UCcollection', external, 'UCother')).toBe(false);
+    expect(isChannelVideoUploaderAllowed(selection({ allowedVideoIds: [] }), 'UCcollection', external, uploader)).toBe(false);
+    expect(isChannelVideoUploaderAllowed(selection({ blocked: true }), 'UCcollection', external, uploader)).toBe(false);
+    expect(isChannelVideoUploaderAllowed(new Map(), 'UCown', selected, 'UCown')).toBe(true);
+    expect(isChannelVideoUploaderAllowed(new Map(), 'UCown', selected, uploader)).toBe(false);
+  });
+
+  it('conserva el canal que va publicar el vídeo extern quan passa a l’historial', () => {
+    const video = { id: external, title: 'Vademecum - 2012', channelId: 'UCcollection', sourceChannelId: uploader };
+    expect(compactArchiveVideo(video).sourceChannelId).toBe(uploader);
+    expect(compactArchiveVideo({ ...video, sourceChannelId: 'UCcollection' }).sourceChannelId).toBeUndefined();
+  });
   it('conserva els títols simbòlics verificats com += sense admetre altres peces', () => {
     const rules = loadChannelVideoAllowlist('/fake.json', {
       readFileSync: () => JSON.stringify({ channels: {

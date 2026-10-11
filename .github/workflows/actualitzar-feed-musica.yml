@@ -62,7 +62,7 @@ jobs:
           EVENT_NAME: ${{ github.event_name }}
           EVENT_SCHEDULE: ${{ github.event.schedule }}
           BEFORE_SHA: ${{ github.event.before }}
-          AFTER_SHA: ${{ github.sha }}
+          AFTER_SHA: ${{ github.event.workflow_run.head_sha || github.sha }}
         run: |
           node - <<'NODE'
           const fs=require('fs');
@@ -74,11 +74,18 @@ jobs:
           const existing=new Set(Object.keys(feed.channels||{}));
           const event=process.env.EVENT_NAME;
           let reviewed=[];
-          if(event==='push') {
+          if(event==='push' || event==='workflow_run') {
             const {execFileSync}=require('child_process');
             const {canalsRevisats}=require('./scripts/lib/canals_revisats.js');
-            const before=process.env.BEFORE_SHA;
             const after=process.env.AFTER_SHA;
+            if(!/^[a-f0-9]{40}$/.test(after)) throw new Error('Commit de revisió no vàlid');
+            // Una validació reintentada ha de recuperar també les seleccions que van quedar a la cua.
+            // workflow_run no té event.before: el comparem amb el pare del commit validat.
+            let before=process.env.BEFORE_SHA;
+            if(event==='workflow_run') {
+              execFileSync('git',['fetch','--depth=2','origin',after]);
+              before=execFileSync('git',['rev-parse',after+'^'],{encoding:'utf8'}).trim();
+            }
             if(!/^[a-f0-9]{40}$/.test(before) || /^0+$/.test(before)) throw new Error('Commit anterior no vàlid');
             execFileSync('git',['fetch','--depth=1','origin',before]);
             const readAt=(sha,path)=>JSON.parse(execFileSync('git',['show',sha+':'+path],{encoding:'utf8'}));
