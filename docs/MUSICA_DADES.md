@@ -176,3 +176,10 @@ no tingui cançons publicades, no es torna a consultar.
 El workflow habitual **Actualitzar feed musical** conserva l'actualització
 general programada i manual. La nova acció només s'executa manualment i des de
 `main`; no cal escriure noms ni IDs en prémer **Run workflow**.
+
+
+## Selecció de 2ES (11 d’octubre de 2026)
+
+L’editor aprova els nou vídeos del canal 2ES excepte **BYE BYE** (`lGT_JGeoULk`) i **It’s my time** (`GtDCepBTk7o`). Els onze estaven classificats com a `review` i arxivats. Les nou aprovacions es desen a `music-content-overrides.json`; les dues exclusions, també a `hidden-videos.json`. La classificació Urbana segueix la presentació del canal. No s’ha inferit l’idioma pels títols: s’ha aplicat la selecció explícita de l’editor.
+
+`node scripts/revisions/2026-10-11-2es.js` reaplica la selecció, recupera les metadades de l’arxiu amb les funcions compartides del pipeline i publica les nou cançons al feed calent, on caben dins del límit de dotze antigues per canal. Retira les entrades de la cua de revisió i actualitza els recomptes. [Selecció completa](revisions/2026-10-11-2es.json).

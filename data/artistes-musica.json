@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-11T18:24:39.711Z",
+  "updatedAt": "2026-10-11T21:00:00.000Z",
   "artists": [
     {
       "name": "2 Princeses Barbudes",
@@ -63,7 +63,9 @@
     {
       "name": "2ES",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Urbana"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -130,10 +132,12 @@
       "active": true,
       "sources": [
         "manual-user-2026-10-05",
-        "youtube:targeted-search-verified"
+        "youtube:targeted-search-verified",
+        "genre:manual",
+        "manual-user-2026-10-11"
       ],
       "lastChecked": "2026-10-05T09:46:00.000Z",
-      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal(s) YouTube verificat(s) amb cerca dirigida.",
+      "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal(s) YouTube verificat(s) amb cerca dirigida. Petició editorial explícita del 2026-10-11: incorporar les cançons de 2ES excepte BYE BYE i It’s my time. Gènere Urbana segons la presentació del canal (catalan urban music).",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-05T09:42:03.874Z",

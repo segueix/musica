@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-09T14:36:01.106Z",
+  "updatedAt": "2026-10-11T21:00:00.000Z",
   "description": "Decisions manuals sobre el tipus de contingut de vídeos concrets. Manen sobre el classificador automàtic (scripts/lib/classificar_contingut_musical.js) i el pipeline (scripts/update_music_feed.js) les reaplica a cada generació del feed. Tipus permesos: song, live_song, album, other. Un vídeo revisat aquí surt de data/music-content-review.json.",
   "videos": [
     {
@@ -6266,6 +6266,72 @@
       "id": "dpGrzBf6iKM",
       "contentType": "live_song",
       "note": "Sessió musical en directe del Club Social Carme. Sol·licitud manual de l'usuari: incorporar només com a directes (2026-10-09). Font: https://clubsocialcarme.com/ i canal oficial de YouTube @club_social_carme."
+    },
+    {
+      "id": "xZVbSeDtMCE",
+      "title": "2ES - AFROCAT Part.1 (Passa Tira)",
+      "contentType": "song",
+      "note": "Petició editorial explícita del 2026-10-11: incorporar les cançons de 2ES excepte BYE BYE i It’s my time."
+    },
+    {
+      "id": "neHwOZZ9p5I",
+      "title": "2ES - AL TERRAT",
+      "contentType": "song",
+      "note": "Petició editorial explícita del 2026-10-11: incorporar les cançons de 2ES excepte BYE BYE i It’s my time."
+    },
+    {
+      "id": "iwfzjc4tM2I",
+      "title": "2ES - A L'HOTEL",
+      "contentType": "song",
+      "note": "Petició editorial explícita del 2026-10-11: incorporar les cançons de 2ES excepte BYE BYE i It’s my time."
+    },
+    {
+      "id": "cW_PdTIx0hs",
+      "title": "2ES - AFROCAT Part.2 (Bota Bota)",
+      "contentType": "song",
+      "note": "Petició editorial explícita del 2026-10-11: incorporar les cançons de 2ES excepte BYE BYE i It’s my time."
+    },
+    {
+      "id": "btp8ZTRxuE0",
+      "title": "2ES FT. SELOP - BAILALO 💃🕺",
+      "contentType": "song",
+      "note": "Petició editorial explícita del 2026-10-11: incorporar les cançons de 2ES excepte BYE BYE i It’s my time."
+    },
+    {
+      "id": "_5JAMcVudu0",
+      "title": "2ES - AFROCAT Part. 3 (Falta Personal)",
+      "contentType": "song",
+      "note": "Petició editorial explícita del 2026-10-11: incorporar les cançons de 2ES excepte BYE BYE i It’s my time."
+    },
+    {
+      "id": "SGxoz-PItYs",
+      "title": "2ES - #LOOKATME X #VÍCTIMES⚡",
+      "contentType": "song",
+      "note": "Petició editorial explícita del 2026-10-11: incorporar les cançons de 2ES excepte BYE BYE i It’s my time."
+    },
+    {
+      "id": "S4LkxDs6Sho",
+      "title": "2ES & SELOP - COSAS MALAS",
+      "contentType": "song",
+      "note": "Petició editorial explícita del 2026-10-11: incorporar les cançons de 2ES excepte BYE BYE i It’s my time."
+    },
+    {
+      "id": "AZhrKRDrTEc",
+      "title": "ROSALÍA & Travis Scott - TKN (Catalan UNOFFICIAL RMX by Edu Esteve) ⚡",
+      "contentType": "song",
+      "note": "Petició editorial explícita del 2026-10-11: incorporar les cançons de 2ES excepte BYE BYE i It’s my time."
+    },
+    {
+      "id": "lGT_JGeoULk",
+      "title": "2ES & SELOP - BYE BYE",
+      "contentType": "other",
+      "note": "Petició editorial explícita del 2026-10-11: incorporar les cançons de 2ES excepte BYE BYE i It’s my time."
+    },
+    {
+      "id": "GtDCepBTk7o",
+      "title": "2ES feat. Selop - It's my time",
+      "contentType": "other",
+      "note": "Petició editorial explícita del 2026-10-11: incorporar les cançons de 2ES excepte BYE BYE i It’s my time."
     }
   ]
 }

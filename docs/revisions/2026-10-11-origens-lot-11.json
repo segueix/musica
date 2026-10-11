@@ -1,0 +1,730 @@
+{
+  "reviewedOn": "2026-10-11",
+  "batch": 11,
+  "selection": {
+    "method": "23 artistes actius resolubles i 7 del catàleg inactiu; els casos amb canal compartit, identitat dubtosa o municipi no documentat es mantenen pendents."
+  },
+  "summary": {
+    "applied": 30,
+    "totals": {
+      "artists": 329,
+      "channels": 491,
+      "places": 151,
+      "municipalities": 136,
+      "territories": 15
+    },
+    "remaining": {
+      "catalogArtists": 451,
+      "assignedArtists": 329,
+      "withoutAssignment": 122,
+      "activeWithoutAssignment": 7,
+      "inactiveWithoutAssignment": 115,
+      "countingRule": "Comprovació per nom i canals; active és l’estat editorial del catàleg. Inclou Club Social Carme, que és un cicle i no un grup musical."
+    }
+  },
+  "artists": [
+    {
+      "artistId": "artist:saim",
+      "name": "Saïm",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:2517750",
+        "geonames:2514216"
+      ],
+      "confidence": "alta",
+      "basis": "El text del disc Fràgil publicat al Bandcamp propi presenta Saïm com un trio de Felanitx-Manacor. Es conserven tots dos municipis.",
+      "sources": [
+        "https://saimtheband.bandcamp.com/album/fr-gil"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "channelIds": [
+        "UCiUT6UwoOJsthloLMK0pSig"
+      ],
+      "catalogActive": true,
+      "applied": true
+    },
+    {
+      "artistId": "artist:samfaina-de-colors",
+      "name": "Samfaina de Colors",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3111199"
+      ],
+      "confidence": "alta",
+      "basis": "Mirna Vilasís i Xavi Múrcia expliquen al perfil propi que van crear Samfaina de Colors el 1988 a Sabadell.",
+      "sources": [
+        "https://samfainadecolors.bandcamp.com/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "channelIds": [
+        "UCnNhpfMHfVCIGQI3HjxTkxg"
+      ],
+      "catalogActive": true,
+      "applied": true
+    },
+    {
+      "artistId": "artist:thanatopraxy",
+      "name": "Thanatopraxy",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128201"
+      ],
+      "confidence": "alta",
+      "basis": "La presentació de la banda en el concert de Vic situa explícitament la formació a Berga. No es confon la ciutat del concert amb la procedència.",
+      "sources": [
+        "https://www.tomaticket.com/en-es/entradas-homicidal-funeral-thanatopraxy-mr-terror-en-vic"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "channelIds": [
+        "UCZ9JPgA_kLvdtOpbIzs8Yew"
+      ],
+      "catalogActive": true,
+      "applied": true
+    },
+    {
+      "artistId": "artist:xiula",
+      "name": "Xiula",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "L’entrevista al grup publicada per Estris es realitza al seu estudi de Barcelona i documenta aquesta vinculació professional.",
+      "sources": [
+        "https://www.estris.cat/mes-estris/entrevistes/entrevista-grup-xiula-estris-254"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "channelIds": [
+        "UCwLcftQS2zEOfwD9jSl2TXA"
+      ],
+      "catalogActive": true,
+      "applied": true
+    },
+    {
+      "artistId": "artist:apologia",
+      "name": "Apologia",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:2509509"
+      ],
+      "confidence": "alta",
+      "basis": "La biografia del Bandcamp propi indica que el grup de punk rock neix a Vila-real el 2019.",
+      "sources": [
+        "https://apologiagrup.bandcamp.com/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "channelIds": [
+        "UCkIaaBrbzpnm0jbPXxNGwPw"
+      ],
+      "catalogActive": true,
+      "applied": true
+    },
+    {
+      "artistId": "artist:entropia",
+      "name": "Entropia",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "El perfil propi d’Entropia a Bandcamp situa el projecte a Barcelona des del 1994; es distingeix de les bandes homònimes.",
+      "sources": [
+        "https://entropia-catalonia.bandcamp.com/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "channelIds": [
+        "UCT-wRacXWBQKqr1z6ZGoubw",
+        "UCayj6r8npsfkvYupNj8YC4A"
+      ],
+      "catalogActive": true,
+      "applied": true
+    },
+    {
+      "artistId": "artist:frontpilsen",
+      "name": "Frontpilsen",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "La història especialitzada de Nuevaola80 situa la formació de Frontpilsen a Barcelona a mitjan 1989.",
+      "sources": [
+        "https://no80s-gruposnacionales.blogspot.com/2008/07/frontpilsen.html"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "channelIds": [
+        "UCOxRObgDa7GRNF7UaO7B83w"
+      ],
+      "catalogActive": true,
+      "applied": true
+    },
+    {
+      "artistId": "artist:gato-perez",
+      "name": "Gato Pérez",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "Betevé documenta la vinculació artística amb Gràcia i el descobriment de la rumba catalana al barri. Barcelona es registra com a vinculació, no com a lloc de naixement del músic argentí.",
+      "sources": [
+        "https://beteve.cat/va-passar-aqui/gato-perez-poeta-rumba-catalana/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "channelIds": [
+        "UCxZhZaJrcH8nHdrKx4ij0sw"
+      ],
+      "catalogActive": true,
+      "applied": true
+    },
+    {
+      "artistId": "artist:jaume-barri",
+      "name": "Jaume Barri",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3108288"
+      ],
+      "confidence": "alta",
+      "basis": "La presentació del disc Llepolies a El 9 Nou identifica Jaume Barri com a nascut a Tarragona el 1972. No s’atribueix Vic, on presenta el disc.",
+      "sources": [
+        "https://el9nou.cat/osona-ripolles/cultura-i-gent/jaume-barri-presenta-el-nou-disc-llepolies-a-vic/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "channelIds": [
+        "UCMWf6XTheiTNyzFHQr5A2fQ"
+      ],
+      "catalogActive": true,
+      "applied": true
+    },
+    {
+      "artistId": "artist:jordi-tonietti",
+      "name": "Jordi Tonietti",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:3121456"
+      ],
+      "confidence": "alta",
+      "basis": "La presentació dels pregoners de Sant Narcís documenta que Tonietti va arribar a Girona als quatre anys. Es registra l’arrelament, distingint-lo del naixement a Barcelona i la residència posterior a l’Empordà.",
+      "sources": [
+        "https://www.gerio.cat/noticia/1686181/angel-daban-i-jordi-tonietti-seran-els-pregoners-de-les-fires-de-sant-narcis"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "channelIds": [
+        "UCvrdIqqti5520O_bz3ik57Q"
+      ],
+      "catalogActive": true,
+      "applied": true
+    },
+    {
+      "artistId": "artist:lali-begood",
+      "name": "Lali BeGood",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "La biografia oficial presenta Lali BeGood, abans Lali Rondalla, com a cantautora barcelonina.",
+      "sources": [
+        "https://lali-begood.com/es/bio/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "channelIds": [
+        "UC3Bb6mYAwuWFLzNrro83tQA"
+      ],
+      "catalogActive": true,
+      "applied": true
+    },
+    {
+      "artistId": "artist:mandanga",
+      "name": "Mandanga!",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "El Bandcamp propi presenta Mandanga! com un grup de punk establert a Barcelona. No es confon amb la banda de salsa del Baix Montseny.",
+      "sources": [
+        "https://mandangabcn.bandcamp.com/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "channelIds": [
+        "UC03QvbTvYBOyxApwRdt4k_w"
+      ],
+      "catalogActive": true,
+      "applied": true
+    },
+    {
+      "artistId": "artist:milicians",
+      "name": "Milícians",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3115093"
+      ],
+      "confidence": "alta",
+      "basis": "La biografia oficial situa el naixement de Milícians a Olot la primavera del 2016.",
+      "sources": [
+        "https://www.milicians.com/biografia/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "channelIds": [
+        "UCzv2Zdpkuk5RefgIRkXggCw"
+      ],
+      "catalogActive": true,
+      "applied": true
+    },
+    {
+      "artistId": "artist:quico-el-celio-el-noi-i-el-mut-de-ferreries",
+      "name": "Quico el Célio, el Noi i el Mut de Ferreries",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:3107677"
+      ],
+      "confidence": "alta",
+      "basis": "La campanya pròpia Casa de la Jota documenta la seu de treball i assaig a Tortosa. El reportatge del 25è aniversari hi situa també els inicis del projecte.",
+      "sources": [
+        "https://www.verkami.com/projects/1599-casa-de-la-jota-quico-el-celio-lo-noi-i-el-mut-de-ferreries",
+        "https://www.enderrock.cat/noticia/16016/25-anys-carretera-4l"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "channelIds": [
+        "UCv_7jwmDsQHYpxisi82fQng",
+        "UCYcAA6W7ef4ZOWat8JjaARQ"
+      ],
+      "catalogActive": true,
+      "applied": true
+    },
+    {
+      "artistId": "artist:una-bestia-incontrolable",
+      "name": "Una Bèstia Incontrolable",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "El perfil propi del grup a Bandcamp indica Barcelona com a localitat.",
+      "sources": [
+        "https://unabestiaincontrolable.bandcamp.com/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "channelIds": [
+        "UCdvCXh3zd4i8SLE_l_6AEDw"
+      ],
+      "catalogActive": true,
+      "applied": true
+    },
+    {
+      "artistId": "artist:xesco-boix",
+      "name": "Xesco Boix",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "La Biblioteca de Catalunya documenta que Francesc Boix i Masramon, Xesco Boix, va néixer a Barcelona el 1946.",
+      "sources": [
+        "https://www.bnc.cat/esl/El-Blog-de-la-BC/Xesco-Boix-l-animador-compromes-i-Josep-Maria-Boix-i-Selva-el-pare-poeta-que-l-admirava"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "channelIds": [
+        "UC5DkIn4ZKBgGKqvpa0JyZlg"
+      ],
+      "catalogActive": true,
+      "applied": true
+    },
+    {
+      "artistId": "artist:2es",
+      "name": "2ES",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3129028"
+      ],
+      "confidence": "alta",
+      "basis": "Les descripcions del canal 2ES identifiquen Edu Esteve i el seu perfil eduestevemusic. L’entrevista sobre el canvi de nom confirma la identitat; Badalona Comunicació el presenta com a cantant badaloní.",
+      "sources": [
+        "https://www.youtube.com/@twoeazzy2/videos",
+        "https://elgeneracionalpost.com/cultura/musica/2021/0520/26819/edu-esteve-si-alguien-conecta-con-mi-sintonia-y-se-quiere-quedar-adelante.html",
+        "https://www.bdncom.cat/ca/edu-esteve-inicia-una-etapa-mes-introspectiva-amb-el-seu-nou-tema-la-meva-sort"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "channelIds": [
+        "UCjEehp73GI2mh9Rkv31QT9w"
+      ],
+      "catalogActive": true,
+      "applied": true
+    },
+    {
+      "artistId": "artist:acros",
+      "name": "Acros",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "El segell Guspira presenta Acros com a raper i productor barceloní. Betevé documenta la vinculació amb el Carmel.",
+      "sources": [
+        "https://guspira.net/acros-presenta-molts-motius-amb-lagrimas-de-sangre/",
+        "https://beteve.cat/cultura/rap-carmel-barri-esvoranc-massificacio-bunquers/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "channelIds": [
+        "UCrmKSeRAoGbFoEiLv36EzWg"
+      ],
+      "catalogActive": true,
+      "applied": true
+    },
+    {
+      "artistId": "artist:riu",
+      "name": "RIU",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:3110834"
+      ],
+      "confidence": "alta",
+      "basis": "La campanya pròpia de Verkami indica Sant Boi de Llobregat com a localitat del projecte.",
+      "sources": [
+        "https://www.verkami.com/locale/ca/projects/2799-ven-de-gira-con-riu"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "channelIds": [
+        "UC5Fb0Xo8Xx6gVrFPoVsZluw"
+      ],
+      "catalogActive": true,
+      "applied": true
+    },
+    {
+      "artistId": "artist:sidonie",
+      "name": "Sidonie",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "La presentació oficial de Sony Music recull que Sidonie assaja des del 1997 al mateix edifici del Poblenou de Barcelona.",
+      "sources": [
+        "https://store.sonymusic.es/blogs/news/sidonie-presenta-su-nuevo-album-marc-axel-y-jes"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "channelIds": [
+        "UCJ6EMs_13PLDvRSHi-XqRwQ"
+      ],
+      "catalogActive": true,
+      "applied": true
+    },
+    {
+      "artistId": "artist:solk",
+      "name": "Solk",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:3111933",
+        "geonames:3107677",
+        "geonames:3104584"
+      ],
+      "confidence": "alta",
+      "basis": "El segell Kasba explica que els components de Solk viuen repartits entre Reus, Tortosa i Vinaròs. Es conserven les tres vinculacions sense inventar un únic municipi de formació.",
+      "sources": [
+        "https://www.kasbamusic.com/en/2023/08/divendres-es-publica-absencia-el-primer-single-del-nou-disc-de-solk/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "channelIds": [
+        "UCHVIvz-1UD7NLa_FBveiFnw"
+      ],
+      "catalogActive": true,
+      "applied": true
+    },
+    {
+      "artistId": "artist:subliminal",
+      "name": "Subliminal",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3129028"
+      ],
+      "confidence": "alta",
+      "basis": "Enderrock identifica com a badaloní el Subliminal guanyador del vot popular del Sona9, autor d’El presumit. No es confon amb el raper israelià homònim.",
+      "sources": [
+        "https://www.enderrock.cat/noticia/30044/2022-any-figa-flawas-aina-koda-eloi-sayrach-subliminal"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "channelIds": [
+        "UCz35Q7e_ulwY_uRqg5zDxeQ"
+      ],
+      "catalogActive": true,
+      "applied": true
+    },
+    {
+      "artistId": "artist:voltor",
+      "name": "Voltor",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:2522077"
+      ],
+      "confidence": "alta",
+      "basis": "Diari La Veu situa explícitament el naixement de Voltor a Aldaia el 2002.",
+      "sources": [
+        "https://www.diarilaveu.cat/efemerides/tal-dia-com-hui-del-2004-voltor-va-actuar-a-alcantera-de-xuquer-124222/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "channelIds": [
+        "UCdwDeWJ4aJ9RAURZERmWquA"
+      ],
+      "catalogActive": true,
+      "applied": true
+    },
+    {
+      "artistId": "artist:alfred-garcia",
+      "name": "Alfred Garcia",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3123329"
+      ],
+      "confidence": "alta",
+      "basis": "La biografia de l’autor publicada per Penguin i l’Ajuntament del Prat documenten la procedència pratenca d’Alfred García.",
+      "sources": [
+        "https://www.penguinlibros.com/es/9691-alfred-garcia",
+        "https://www.elprat.cat/node/187128"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "channelIds": [
+        "UCego8MWd7DkJXnGl9WQAbTQ",
+        "UC0O9bre-V-kOYKAspxwS1uA"
+      ],
+      "catalogActive": false,
+      "applied": true
+    },
+    {
+      "artistId": "artist:manel",
+      "name": "Manel",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "La presentació contemporània del primer disc a VilaWeb identifica Manel com a grup barceloní. Enderrock en confirma la procedència.",
+      "sources": [
+        "https://www.vilaweb.cat/noticia/3084876/20081128/manel-grups-revelacio-lany-presenta-primer-disc.html",
+        "https://www.enderrock.cat/noticia/15123/fenomen-manel-10-claus-exit"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "channelIds": [
+        "UCYQm8GQEmBsi6KxKOird7_w"
+      ],
+      "catalogActive": false,
+      "applied": true
+    },
+    {
+      "artistId": "artist:obrint-pas",
+      "name": "Obrint Pas",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:2509954"
+      ],
+      "confidence": "alta",
+      "basis": "La fitxa del segell Propaganda pel fet! indica València com a localitat i 1993 com a any de fundació.",
+      "sources": [
+        "https://www.ppf.cat/index.php/cat/artistes/obrint-pas"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "channelIds": [
+        "UCBHDy6i_tQcWOjczk47PQyA",
+        "UCPMX7e8_PQtgqcDHzzbfX7g"
+      ],
+      "catalogActive": false,
+      "applied": true
+    },
+    {
+      "artistId": "artist:sau",
+      "name": "Sau",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:3105882"
+      ],
+      "confidence": "alta",
+      "basis": "La història oficial explica que el grup s’instal·la a Les Tallades, a Vilanova de Sau, el 1987 i hi treballa els dos primers discos. Es registra aquesta vinculació, posterior al primer contacte de Pep Sala i Carles Sabater el 1986.",
+      "sources": [
+        "https://sau.cat/sau/historia-sau/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "channelIds": [
+        "UC0njIX_vDoAZaqKR5N8AavA"
+      ],
+      "catalogActive": false,
+      "applied": true
+    },
+    {
+      "artistId": "artist:sangtrait",
+      "name": "Sangtraït",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3119559"
+      ],
+      "confidence": "alta",
+      "basis": "La Gran Enciclopèdia Catalana situa la creació de Sangtraït a la Jonquera el 1982.",
+      "sources": [
+        "https://www.enciclopedia.cat/gran-enciclopedia-catalana/sangtrait"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "channelIds": [
+        "UC6a_paoSt1YYKOFZwPGdEYw"
+      ],
+      "catalogActive": false,
+      "applied": true
+    },
+    {
+      "artistId": "artist:raimon",
+      "name": "Raimon",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:2516345"
+      ],
+      "confidence": "alta",
+      "basis": "La biografia institucional del CoNCA identifica Xàtiva com a lloc de naixement de Raimon el 1940.",
+      "sources": [
+        "https://conca.gencat.cat/ca/detall/article/Raimon"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "channelIds": [
+        "UCljKJq4zWfaxTUdptZgtTQA"
+      ],
+      "catalogActive": false,
+      "applied": true
+    },
+    {
+      "artistId": "artist:lax-n-busto",
+      "name": "Lax'n'Busto",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3106180"
+      ],
+      "confidence": "alta",
+      "basis": "La biografia d’AllMusic situa la formació de Lax’n’Busto al Vendrell el 1986.",
+      "sources": [
+        "https://www.allmusic.com/artist/lax-n-busto-mn0001477879"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "channelIds": [
+        "UCHiwFlJ6-Ggj_mG0Okfq_HQ"
+      ],
+      "catalogActive": false,
+      "applied": true
+    }
+  ],
+  "deferredCandidates": [
+    {
+      "name": "ASSAC!",
+      "reason": "Barcelona documentada, però el canal cerinobalzano és compartit. Cal correspondència per artista o vídeo."
+    },
+    {
+      "name": "Club Social Carme",
+      "reason": "És un cicle de sessions en directe, no un artista: no s’atribueix l’origen del local als intèrprets."
+    },
+    {
+      "name": "Electrotoylets",
+      "reason": "Es manté el dubte territorial documentat al lot 10."
+    },
+    {
+      "name": "Els Bourbons",
+      "reason": "Es manté el dubte d’identitat i municipi documentat al lot 10."
+    },
+    {
+      "name": "Pesta Porcina",
+      "reason": "Torelló documentat a Metal Archives; el canal personal de Jofre Dalmau és compartit."
+    },
+    {
+      "name": "The Cabrians",
+      "reason": "Mataró documentat pel segell Liquidator, però el canal Mr.Freak Ska és compartit."
+    },
+    {
+      "name": "Tornaveus",
+      "reason": "Les fonts consultades expliquen el projecte, però no concreten un municipi propi."
+    }
+  ]
+}
