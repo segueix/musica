@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-11T22:13:54.005Z",
+  "generatedAt": "2026-10-11T22:24:06.114Z",
   "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
   "restrictedVideoCount": 21,
@@ -1236,7 +1236,7 @@
   ],
   "topicGovernance": "apply",
   "governedReclassified": {},
-  "topicHiddenCount": 35,
+  "topicHiddenCount": 0,
   "topicChannels": [
     {
       "id": "UClwN1cpIrafSRa8MbOMAvvQ",
@@ -3311,13 +3311,13 @@
       "withClip": 0
     }
   ],
-  "indexedChannelCount": 542,
-  "resolvedChannelCount": 542,
-  "feedChannelCount": 542,
-  "rawPublicVideoCount": 6010,
-  "feedVideoCount": 5454,
-  "acceptedMusicCount": 5449,
-  "categoryEligibleVideoCount": 5445,
+  "indexedChannelCount": 541,
+  "resolvedChannelCount": 541,
+  "feedChannelCount": 541,
+  "rawPublicVideoCount": 5974,
+  "feedVideoCount": 5453,
+  "acceptedMusicCount": 5413,
+  "categoryEligibleVideoCount": 5409,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
     "before": 0,
@@ -3326,7 +3326,7 @@
   },
   "contentReviewCount": 527,
   "contentTypeCounts": {
-    "song": 5304,
+    "song": 5268,
     "live_song": 141,
     "album": 4,
     "other": 34,
@@ -3334,9 +3334,7 @@
   },
   "unresolvedChannelIds": [],
   "channelsWithoutUploads": [],
-  "channelsWithoutVideos": [
-    "UCXa6Mb5QgzYjRV_D1VlYoKQ"
-  ],
+  "channelsWithoutVideos": [],
   "channelsWithoutAcceptedMusic": [],
   "allIndexedChannelsVisible": true,
   "publishedFeedVideoCount": 5453,
