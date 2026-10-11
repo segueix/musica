@@ -1,0 +1,694 @@
+{
+  "reviewedOn": "2026-10-11",
+  "batch": 8,
+  "selection": {
+    "method": "30 artistes actius pendents amb més cançons i directes al feed, sumant els seus canals; desempat per nom amb ordenació catalana.",
+    "feedGeneratedAt": "2026-10-11T18:24:23.280Z"
+  },
+  "summary": {
+    "reviewed": 30,
+    "applied": 30,
+    "pending": 0,
+    "totals": {
+      "artists": 239,
+      "channels": 380,
+      "places": 123,
+      "municipalities": 113
+    }
+  },
+  "artists": [
+    {
+      "artistId": "artist:hector-vila",
+      "name": "Hèctor Vila",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3107997"
+      ],
+      "confidence": "alta",
+      "basis": "L’entrevista de SER Catalunya identifica Tona com el lloc de naixement del cantant.",
+      "sources": [
+        "https://cadenaser.com/cataluna/2023/10/04/despres-de-16-anys-de-silenci-hector-vila-ha-tornat-a-parlar-al-llapis-de-memoria-mestava-preparant-per-morir-sercat/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 12,
+      "channelIds": [
+        "UCfY137sqCUb5DJNrjiiy6iQ"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:icestorm",
+      "name": "Icestorm",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3111747"
+      ],
+      "confidence": "alta",
+      "basis": "La biografia publicada pel grup a Bandcamp situa la formació el 2006 a Riells del Fai. L’Ajuntament confirma que aquest nucli pertany a Bigues i Riells del Fai; Barcelona és la referència provincial de la biografia, no el municipi d’origen.",
+      "sources": [
+        "https://icestorm.bandcamp.com/",
+        "https://www.biguesiriells.cat/ca/coneixer-bir-4/historia-3/ajuntament-riells-del-fai-9.htm"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 12,
+      "channelIds": [
+        "UCcjUSZZ1Aqt74OqoXtkb51A"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:josep-tero",
+      "name": "Josep Tero",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3119779"
+      ],
+      "confidence": "alta",
+      "basis": "La biografia de l’Institut Ramon Llull situa el naixement del cantautor a l’Escala.",
+      "sources": [
+        "https://www.llull.cat/catala/actualitat/actualitat_noticies_detall.cfm?id=34400&url=eusebi-ayensa-josep-tero-evoquen-kavafis-festival-lea-atenes.htm"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 12,
+      "channelIds": [
+        "UC7ixOUPG3ydQjkUZ4pPqvhA"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:karda-fastik",
+      "name": "Karda Fàstik",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3106050"
+      ],
+      "confidence": "mitjana",
+      "basis": "La Viquipèdia identifica explícitament Vic com el lloc de constitució i origen del grup. El reportatge d’Enderrock el situa en l’escena musical d’Osona. Confiança mitjana perquè la concreció municipal prové de la font enciclopèdica secundària.",
+      "sources": [
+        "https://ca.wikipedia.org/wiki/Karda_F%C3%A0stik",
+        "https://www.enderrock.cat/noticia/23037/historia-vigatanisme-catala-ciutat-dels-sants-es-va-convertir-liverpool-catala"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 12,
+      "channelIds": [
+        "UCGXRDt9r8BA1eJbl3dxh1GA"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:kayo-malayo",
+      "name": "Kayo Malayo",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3108286"
+      ],
+      "confidence": "alta",
+      "basis": "La fitxa de concert de l’Associació de Sales de Concerts de Catalunya situa la formació del grup el 2004 a Terrassa.",
+      "sources": [
+        "https://www.asacc.net/ca/concert/kayo-malayo-en-concert-faktoria-d-arts-20090620-2230"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 12,
+      "channelIds": [
+        "UCkJn1Oupgp27jlFzFl7I2Ag"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:la-banda-del-yuyu",
+      "name": "La Banda del Yuyu",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3121456"
+      ],
+      "confidence": "alta",
+      "basis": "La fitxa de MUSICAT presenta el grup des de Girona i la biografia de Bandsintown hi situa la formació l’any 1999.",
+      "sources": [
+        "https://www.musicat.cat/ca/279252/cataleg-musica-en-viu-la-banda-del-yuyu.html",
+        "https://www.bandsintown.com/a/387923-la-banda-del-yuyu"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 12,
+      "channelIds": [
+        "UCQOqsrBqC_4Ibu_MJrBpK_g",
+        "UCSJ3UWpeU4pVvvuK0flmaeg"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:la-trinca",
+      "name": "La Trinca",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3126584"
+      ],
+      "confidence": "alta",
+      "basis": "L’Ajuntament de Canet de Mar documenta el naixement del grup al municipi el 1969.",
+      "sources": [
+        "https://www.canetdemar.cat/document.php?id=29981"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 12,
+      "channelIds": [
+        "UCKpscwdWlVaMqcA81vLI7OA"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:lidia-pujol",
+      "name": "Lídia Pujol",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "La biografia publicada pel segell Satélite K identifica Barcelona com el lloc de naixement de la cantant.",
+      "sources": [
+        "https://www.satelitek.com/libros/iter-luminis"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 12,
+      "channelIds": [
+        "UCgAWzLHswq5VtYxCEMWGAng"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:massaviu",
+      "name": "MASSAVIU",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3126317"
+      ],
+      "confidence": "alta",
+      "basis": "La fitxa de les Cases de la Música identifica MASSAVIU com un grup de Cardedeu.",
+      "sources": [
+        "https://casadelamusica.cat/index.php/fitxes-artistes/2126-massaviu"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 12,
+      "channelIds": [
+        "UCh1_-QpgzIdG-3QfCMfZi6w"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:nyandu",
+      "name": "Nyandú",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3114936"
+      ],
+      "confidence": "alta",
+      "basis": "Enderrock situa la formació del grup el 2010 a la Torre d’Oristà. La informació municipal confirma que aquest nucli pertany a Oristà; es conserva el nucli concret en aquesta explicació.",
+      "sources": [
+        "https://www.enderrock.cat/noticia/30464/nyandu-torna-amb-concert-unic-torre-orista",
+        "https://www.orista.cat/municipi/informacio-del-municipi/el-municipi?lang=ca"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 12,
+      "channelIds": [
+        "UCntzpmXOeNsqe2AfOFTCUZg"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:osserp",
+      "name": "Ósserp",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "El perfil propi a Bandcamp i la fitxa del festival CastellHell coincideixen a identificar el grup amb Barcelona.",
+      "sources": [
+        "https://osserp.bandcamp.com/music",
+        "https://castellhell.party/es/band/osserp-cat"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 12,
+      "channelIds": [
+        "UCCmgW83QdTLEGTkEc6uyJ6Q"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:pantaleo",
+      "name": "Pantaleó",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:3108286"
+      ],
+      "confidence": "alta",
+      "basis": "L’entrevista de Surtdecasa presenta Pantaleó com una banda terrassenca i explica la formació del projecte al voltant de la Nova Jazz Cava. Es registra la vinculació amb Terrassa, distingint-la de l’origen santcugatenc de Gerard de Pablo.",
+      "sources": [
+        "https://surtdecasa.cat/barcelona/musica-0"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 12,
+      "channelIds": [
+        "UCgYkYD0ZgH2zk3Cnhh_belA"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:pegasus",
+      "name": "Pegasus",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "El web oficial del grup situa la seva formació l’any 1981 a Barcelona.",
+      "sources": [
+        "https://www.pegasus.cat/ca/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 12,
+      "channelIds": [
+        "UCYVzNqs1SsMzBHLli6QUHaw"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:pixamandurries",
+      "name": "Pixamandúrries",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3124487"
+      ],
+      "confidence": "alta",
+      "basis": "El reportatge de l’ARA identifica Pixamandúrries com una banda de Casavells. L’Ajuntament de Corçà inclou Casavells entre els nuclis del municipi; es manté el nucli d’origen explícit en aquesta explicació.",
+      "sources": [
+        "https://www.arabalears.cat/cultura/20-anys-kasba-music-memoria-historica-punk-mestissatge_1_4942984.html",
+        "https://corca.cat/municipis/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 12,
+      "channelIds": [
+        "UCXQsHe-XMB9xWUxtRLFAWQg"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:ramon-muntaner-i-torruella",
+      "name": "Ramon Muntaner i Torruella",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3124569"
+      ],
+      "confidence": "alta",
+      "basis": "La biografia de la SGAE situa el naixement del cantautor a Cornellà de Llobregat.",
+      "sources": [
+        "https://www.sgae.es/noticia/denominacion-de-la-sala-ramon-muntaner-ahora-sala-club/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 12,
+      "channelIds": [
+        "UCn4V6rDw7Gz1R6F2qyt2IrQ"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:raydibaum",
+      "name": "Raydibaum",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "El reportatge de l’ARA identifica Raydibaum com un grup barceloní.",
+      "sources": [
+        "https://www.ara.cat/cultura/raydibaum-canvien-sobreviure_1_2893819.html"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 12,
+      "channelIds": [
+        "UCCKRS2KD1i75evCURPuHQXA"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:skatala",
+      "name": "Skatalà",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "La presentació del grup a Bandcamp el situa a l’escena ska de Barcelona i l’entrevista d’El Periódico l’identifica com una formació barcelonina.",
+      "sources": [
+        "https://skatala.bandcamp.com/album/un-de-nou",
+        "https://www.elperiodico.cat/oci-i-cultura/20191227/entrevista-skatala-7788437"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 12,
+      "channelIds": [
+        "UCUWHtSvVKAhJn-zsf38q2TQ"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:sota-terra",
+      "name": "Sota Terra",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3111933"
+      ],
+      "confidence": "alta",
+      "basis": "El reportatge d’Enderrock sobre el metal en català identifica explícitament Sota Terra com un grup reusenc.",
+      "sources": [
+        "https://www.enderrock.cat/noticia/25485/metal-catala-reducte-inexpugnable"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 12,
+      "channelIds": [
+        "UCUTor5MG45HnmxOEc2HrUhA"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:tancat-per-defuncio",
+      "name": "Tancat per defunció",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3111199"
+      ],
+      "confidence": "alta",
+      "basis": "La biografia del segell Picap explica que el grup es va formar arran d’una jam-session de jazz a Sabadell.",
+      "sources": [
+        "https://www.picap.cat/tancat-per-defuncio"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 12,
+      "channelIds": [
+        "UCGbtwR91T2vj1mrT12bAEXw"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:tashkenti",
+      "name": "Tashkenti",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:2513106"
+      ],
+      "confidence": "alta",
+      "basis": "La Universitat Politècnica de València identifica Tashkenti com un grup d’Ontinyent.",
+      "sources": [
+        "https://www.upv.es/noticias-upv/noticia-4516-setmana-per-la-es.html"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 12,
+      "channelIds": [
+        "UCkxi7wy2VhKCMzoxoVEF9pg"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:valius",
+      "name": "Vàlius",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "La presentació del concert a Time Out identifica Vàlius com un duet barceloní; es registra l’origen del projecte, no la localització actual d’un perfil digital.",
+      "sources": [
+        "https://www.timeout.cat/barcelona/ca/club/xtrarradio-musicfest-2013-valius-iepi-lariad-kil-valmer"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 12,
+      "channelIds": [
+        "UCc20bll252Rwc71ILMnWVcA"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:vinnie-kairos",
+      "name": "Vinnie Kairos",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:3129661"
+      ],
+      "confidence": "alta",
+      "basis": "Ràdio Arenys presenta Vinnie Kairos com un raper arenyenc i la seva fitxa de concerts indica Arenys de Mar com a localitat de referència. Es documenta la vinculació pública sense afirmar un lloc exacte de naixement.",
+      "sources": [
+        "https://www.radioarenys.cat/news/el-raper-arenyenc-vinnie-kairos-presenta-el-seu-darrer-treball-calamitats/",
+        "https://www.bandsintown.com/e/1040116798-vinnie-kairos-at-dosrombos?came_from=209"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 12,
+      "channelIds": [
+        "UCmsQN-zOoJXlhKtbkRS702A"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:xavier-baro",
+      "name": "Xavier Baró",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3130331"
+      ],
+      "confidence": "alta",
+      "basis": "La biografia de Pagès Editors situa el naixement a Almacelles i l’Ajuntament el presenta com a cantautor almacellenc.",
+      "sources": [
+        "https://www.pageseditors.cat/es/les-cancons-de-l-envelat-1998-2020.html?___from_store=en",
+        "https://www.almacelles.cat/actualitat/noticies/28-09-2020-xavier-baro-ens-presenta-201cla-veu-de-la-muntanya201d"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 12,
+      "channelIds": [
+        "UC40skFzEdR6EMg4FeL7U6OQ"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:xenia-casado",
+      "name": "Xenia Casado",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "La fitxa de l’artista a la Fira de Música Emergent i Familiar de Vila-seca la presenta com a artista barcelonina.",
+      "sources": [
+        "https://www.fim.cat/artistes/xenia-casado/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 12,
+      "channelIds": [
+        "UC8QspJi5zwZj3rOVYHKKVUQ"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:brigada-moreneta",
+      "name": "Brigada Moreneta",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3105184"
+      ],
+      "confidence": "alta",
+      "basis": "La presentació del concert a Entradium i la crònica de La Mañana identifiquen Brigada Moreneta amb Vilanova i la Geltrú.",
+      "sources": [
+        "https://entradium.com/events/putiferi-brimo-neosebo",
+        "https://lamanyana.cat/un-triple-concert-de-punk-estrena-la-nova-temporada-de-la-boite/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 11,
+      "channelIds": [
+        "UCcqVDo23bg_lYmIan70ZhhA",
+        "UCDxlvPSUVbtUrLsKDpGV_lw"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:gadegang",
+      "name": "GadeGANG",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3126888"
+      ],
+      "confidence": "alta",
+      "basis": "El recull dels grups participants al Sona9 publicat per Enderrock identifica GadeGANG com un grup de Cambrils.",
+      "sources": [
+        "https://www.enderrock.cat/noticia/30447/25-grups-dels-25-anys-sona9"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 11,
+      "channelIds": [
+        "UCLV9S1AX8_K0kA8MIqWS52w"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:maria-betriu",
+      "name": "Maria Betriu",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3108286"
+      ],
+      "confidence": "alta",
+      "basis": "La biografia publicada per l’artista a la campanya del seu disc a Verkami situa el seu naixement a Terrassa.",
+      "sources": [
+        "https://www.verkami.com/projects/13770-maria-betriu-jazz-en-catala-vol2/blog/22142-unes-linies-sobre-maria-betriu"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 11,
+      "channelIds": [
+        "UC18hp60b-j4DdzwEcWe9wrw"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:miquel-gil",
+      "name": "Miquel Gil",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:2519690"
+      ],
+      "confidence": "alta",
+      "basis": "La Gran Enciclopèdia Catalana situa el naixement de Miquel Gil a Catarroja.",
+      "sources": [
+        "https://www.enciclopedia.cat/gran-enciclopedia-catalana/miquel-gil-i-alfonso"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 11,
+      "channelIds": [
+        "UCrTJ5_xgCZyb-Rt3dp1eUxg"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:pere-tapias",
+      "name": "Pere Tàpias",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3105184"
+      ],
+      "confidence": "alta",
+      "basis": "La biografia publicada per l’Ajuntament de Vilanova i la Geltrú documenta l’origen vilanoví del cantautor.",
+      "sources": [
+        "https://www.vilanova.cat/noticies/detall?id=34942387"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 11,
+      "channelIds": [
+        "UCYECw-23usgJzg1MnHRFFQQ"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:silvia-comes",
+      "name": "Sílvia Comes",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3123329"
+      ],
+      "confidence": "alta",
+      "basis": "La informació municipal del Prat presenta Sílvia Comes com una artista pratenca i l’Ajuntament de Santa Coloma de Gramenet la identifica com una cantautora del Prat de Llobregat.",
+      "sources": [
+        "https://www.elprat.cat/actualitat/noticies/la-festa-major-del-prat-2007-escalfa-motors",
+        "https://ajuntamentinforma.gramenet.cat/es/info-local/silvia-comes-en-can-roig-i-torres/?cHash=3e51f3017322b5d3efc643036ff48a43&type=1000"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 11,
+      "channelIds": [
+        "UCOQizv5kl-XBONzbo3RKHdw"
+      ],
+      "applied": true
+    }
+  ]
+}
