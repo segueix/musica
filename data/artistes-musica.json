@@ -15860,7 +15860,9 @@
     {
       "name": "La Coixinera",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Folk i arrel"
+      ],
       "territories": [
         "Catalunya"
       ],
@@ -15937,10 +15939,12 @@
       "sources": [
         "https://www.cantut.cat/festival/programacio/la-coixinera",
         "https://www.youtube.com/channel/UCsAbCGSmpvZ7Ym2WNklg44A",
-        "https://www.youtube.com/channel/UC5u7o5L26RuDowQsqOJDm0w"
+        "https://www.youtube.com/channel/UC5u7o5L26RuDowQsqOJDm0w",
+        "genre:manual",
+        "manual-user-2026-10-11"
       ],
       "lastChecked": "2026-10-05T13:00:17.655Z",
-      "notes": "Grup d’arrel de Mataró. Cançons tradicionals i de taverna; repertori també instrumental. No incloure Astoaren kanta (basc). Alta de folk i arrel 2026-10-05; canals contrastats amb la identitat i el repertori del grup; selecció catalana limitada per llista blanca.",
+      "notes": "Grup d’arrel de Mataró. Cançons tradicionals i de taverna; repertori també instrumental. No incloure Astoaren kanta (basc). Alta de folk i arrel 2026-10-05; canals contrastats amb la identitat i el repertori del grup; selecció catalana limitada per llista blanca. Classificació Folk i arrel fixada manualment el 2026-10-11 a petició de l’usuari.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-05T12:58:39.176Z",
