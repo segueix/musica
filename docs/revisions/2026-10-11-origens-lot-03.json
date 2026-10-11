@@ -4,8 +4,8 @@
   "selection": "30 artistes següents sense origen assignat, ordenats pel nombre de vídeos song/live_song del feed; desempat pel nom. Falç de Fetillera es resol separadament al lot 02 per correcció de l'usuari.",
   "feedGeneratedAt": "2026-10-11T12:38:29.763Z",
   "reviewed": 30,
-  "validated": 29,
-  "pending": 1,
+  "validated": 30,
+  "pending": 0,
   "automaticEnrichmentEnabled": false,
   "artists": [
     {
@@ -535,18 +535,34 @@
     },
     {
       "name": "Forja",
-      "status": "pending",
-      "applied": false,
+      "status": "validated",
+      "applied": true,
       "feedSongCount": 24,
       "channelIds": [
         "UCBaZT9T1jD6ggbVikvr0nAw",
         "UCmciKowevXGORJnZGaZVrsg"
       ],
-      "basis": "La biografia oficial confirma la identitat però no explicita el municipi d'origen. L'estudi de gravació i els llocs de concert no són evidència d'origen. Un resultat del Sona9 al·ludeix a la província, però l'URL retorna un altre grup i es descarta. Cal una font municipal inequívoca o confirmació editorial.",
+      "basis": "Origen a Terrassa confirmat manualment per l'editor del catàleg el 11 d'octubre de 2026. La font enllaçada acredita la identitat del grup; la població prové de la correcció editorial.",
       "sources": [
-        "https://www.forja-metal.com/",
-        "https://forja.bandcamp.com/music"
-      ]
+        "https://www.forja-metal.com/"
+      ],
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3108286"
+      ],
+      "confidence": "alta",
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "user-correction",
+      "locked": true,
+      "artistId": "artist:forja",
+      "previousDecision": {
+        "status": "pending",
+        "basis": "La biografia oficial confirma la identitat però no explicita el municipi d'origen. L'estudi de gravació i els llocs de concert no són evidència d'origen. Un resultat del Sona9 al·ludeix a la província, però l'URL retorna un altre grup i es descarta. Cal una font municipal inequívoca o confirmació editorial.",
+        "sources": [
+          "https://www.forja-metal.com/",
+          "https://forja.bandcamp.com/music"
+        ]
+      }
     },
     {
       "artistId": "artist:gertrudis",

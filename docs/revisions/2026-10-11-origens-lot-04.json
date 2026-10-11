@@ -1,0 +1,723 @@
+{
+  "schemaVersion": 1,
+  "reviewedOn": "2026-10-11",
+  "selection": "Següents 30 artistes sense assignació, exclosa la correcció de Forja, ordenats per cançons i directes del feed (song/live_song), amb desempat pel nom en minúscules. El recompte reflecteix els canals del catàleg, no tota la discografia.",
+  "feedGeneratedAt": "2026-10-11T12:38:29.763Z",
+  "reviewed": 30,
+  "validated": 29,
+  "pending": 1,
+  "automaticEnrichmentEnabled": false,
+  "artists": [
+    {
+      "artistId": "artist:poor-tramit",
+      "name": "Poor Tràmit",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3112866"
+      ],
+      "confidence": "alta",
+      "basis": "El segell Radio Rahim i la programació municipal identifiquen Marc Andreu, Poor Tràmit, com a raper de Premià de Mar.",
+      "sources": [
+        "https://www.radiorahim.cat/album/poor-tramit-pur/",
+        "https://www.mataro.cat/ca/actualitat/agenda/vermut-musical-basukinho-plus-poor-tramit"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 24,
+      "channelIds": [
+        "UC9HWLecmAeJ3MrNdDHEMDBA",
+        "UCvKAZWUa6tY8b5RBergLr0Q"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:roger-mas-i-sole",
+      "name": "Roger Mas i Solé",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3108747"
+      ],
+      "confidence": "alta",
+      "basis": "El documental de RTVE situa el naixement i la infància del cantautor a Solsona.",
+      "sources": [
+        "https://www.rtve.es/play/noticies/20211111/efecte-collins-documental-roger-mas/2222320.shtml",
+        "https://www.enciclopedia.cat/gran-enciclopedia-catalana/roger-mas-i-sole"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 24,
+      "channelIds": [
+        "UCTnoklTTyDXYYtT5_nmxUVQ",
+        "UC7kOHFUIoTiH9RrPznoJDEQ"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:smoking-souls",
+      "name": "Smoking Souls",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:6559502"
+      ],
+      "confidence": "alta",
+      "basis": "La fitxa de l'agència i la biografia de música en valencià situen el grup a Pego.",
+      "sources": [
+        "https://www.ppf.cat/index.php/cat/artistes/smoking-souls",
+        "https://musicaenvalencia.es/artista/97/smoking-souls"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 24,
+      "channelIds": [
+        "UCtHWEhEdI_nkFQmE2Ewzrnw",
+        "UCYy5FHJ4Oq0RKqxqoGlF3Gw"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:terratombats",
+      "name": "Terratombats",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:3120431",
+        "geonames:3119532",
+        "geonames:3109442"
+      ],
+      "confidence": "alta",
+      "basis": "El grup explica que es va formar amb músics d'Igualada, la Llacuna i Sant Vicenç dels Horts. Es conserven les tres poblacions vinculades, sense atribuir un lloc de naixement únic al conjunt.",
+      "sources": [
+        "https://www.verkami.com/projects/1193-nou-disc-de-terratombats/blog",
+        "https://infoanoia.cat/terratombats-tornen-a-la-carrega-amb-el-seu-nou-disc/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 24,
+      "channelIds": [
+        "UCAx9peaZFIswCLSlT77e1Cg",
+        "UCrAazkwonIdGi_TGkzXkoCw"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:terapia-de-shock",
+      "name": "Teràpia de Shock",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3118862"
+      ],
+      "confidence": "alta",
+      "basis": "La història oficial del grup situa els inicis a les Preses, a la Garrotxa.",
+      "sources": [
+        "https://terapiadeshock.cat/historia/",
+        "https://www.tresc.cat/f/39481/terapia-de-shock/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 24,
+      "channelIds": [
+        "UC4S5WcSVzMhUd-UwKKpKp5w",
+        "UCIJjTYBxYUHPFir2cZj0wKQ",
+        "UCnO3DG7B2cyiu5zoNstHEfA"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:txarango",
+      "name": "Txarango",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:3110533"
+      ],
+      "confidence": "alta",
+      "basis": "Es prioritza la vinculació pública del grup amb Sant Joan de les Abadesses, que els seus membres presenten com a casa seva en explicar el Clownia. El projecte es va formar a Barcelona i té membres de diverses poblacions del Ripollès i de l'entorn; no s'atribueix un únic lloc de naixement als músics.",
+      "sources": [
+        "https://elpais.com/ccaa/2014/04/30/quadern/1398888320_131797.html?outputType=amp",
+        "https://santjoandelesabadesses.cat/ca/clownia-festival",
+        "https://www.catalunyamagrada.cat/llocs/txarango-banda-arrels-al-ripolles_40884102.html"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 24,
+      "channelIds": [
+        "UCmtykAu3QbU-yVO6Jirm1_Q",
+        "UCIDxAwPe8cNl_-NawMu4pDQ"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:xeic",
+      "name": "Xeic!",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3112265"
+      ],
+      "confidence": "alta",
+      "basis": "El segell Picap presenta Xeic! com una formació originària de Rasquera.",
+      "sources": [
+        "https://www.picap.cat/post/xeic-15-anys",
+        "https://www.riberaebre.org/grupsculturals/index.php?grup=7&opcio=veure"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 24,
+      "channelIds": [
+        "UC4ZpvBvQ4jzY_Ppwho9rSiw",
+        "UCNS4k4s7_GRMNpKBlRfpfTQ"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:fox-system",
+      "name": "Fox System",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3111343"
+      ],
+      "confidence": "alta",
+      "basis": "La banda s'identifica amb Rosselló al seu Bandcamp, i l'entrevista de Surtdecasa confirma aquesta població del Segrià.",
+      "sources": [
+        "https://foxsystem.bandcamp.com/",
+        "https://surtdecasa.cat/ponent/musica/fox-system-entrevista-abril-2018-rock-musica"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 23,
+      "channelIds": [
+        "UClEkW6DS-3DfOcxGMouE_7A",
+        "UCwCcA6f2KDLJi58xX2se6DA"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:herba-negra",
+      "name": "Herba Negra",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "territory:camp-de-turia",
+        "geonames:2519382"
+      ],
+      "confidence": "alta",
+      "basis": "El segell Mésdemil presenta el projecte des del Camp de Túria i Cocentaina. Es conserva la doble vinculació; el Camp de Túria no es converteix en un municipi ni en un punt geogràfic.",
+      "sources": [
+        "https://mesdemil.bandcamp.com/album/herba-negra-el-ren-ixer-dabril"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 23,
+      "channelIds": [
+        "UCyNgOgsiiy5cSgyfEqveONw",
+        "UCNzhlSBbPNlsZ563SKvvggg"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:inadaptats",
+      "name": "Inadaptats",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3105600"
+      ],
+      "confidence": "alta",
+      "basis": "La biografia de l'agència HFMN i el segell Talka identifiquen Inadaptats com a grup de Vilafranca del Penedès.",
+      "sources": [
+        "https://www.hfmncrew.cat/es/epk-public-inadaptats/bio-inadaptats/",
+        "https://www.talka.org/portfolio/inadaptats-moti-avalot/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 23,
+      "channelIds": [
+        "UCHU_RiP5nttdIcrT37Y7-uA",
+        "UCby9BHawLhftHyR37pEztHg"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:kop",
+      "name": "KOP",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3111294"
+      ],
+      "confidence": "alta",
+      "basis": "La biografia de l'agència situa la creació de KOP a Rubí. Distingeix aquest origen de l'establiment posterior a Badia del Vallès.",
+      "sources": [
+        "https://www.oa2produccions.cat/kop-2/",
+        "https://www.lafactoriadelritmo.com/kop/nos-vemos-en-las-calles/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 23,
+      "channelIds": [
+        "UCvSMpTrqlrZxYbhZoTbsQoA",
+        "UCC66jsgEM01kvhvwJ59xttA"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:mariona-escoda-i-sendra",
+      "name": "Mariona Escoda i Sendra",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3106492"
+      ],
+      "confidence": "alta",
+      "basis": "La fitxa biogràfica de 3Cat i el web oficial situen la cantant a Valls.",
+      "sources": [
+        "https://www.3cat.cat/3cat/zenit/seccio/mariona-escoda/156541/",
+        "https://www.marionaescoda.com/event/concert-amb-banda-7/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 23,
+      "channelIds": [
+        "UC_97DSVzzRp28ew8nKB255g",
+        "UC82RhPbZ6uly1CbqivbZqxQ"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:mr-freak-ska",
+      "name": "Mr. Freak Ska",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3117164"
+      ],
+      "confidence": "alta",
+      "basis": "El dossier del mateix artista identifica Jaume Cuadrada, Mr. Freak Ska, com a músic de Mataró.",
+      "sources": [
+        "https://mrfreakska.wordpress.com/wp-content/uploads/2014/08/mr_freak_ska_low_cast.pdf",
+        "https://nbcproduccions.wordpress.com/mr-freak-ska/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 23,
+      "channelIds": [
+        "UCElR_cmETBNoC7Rs6STl0BA"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:obeses",
+      "name": "Obeses",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3107997"
+      ],
+      "confidence": "alta",
+      "basis": "El reportatge amb els membres i la biografia del concert situen els inicis d'Obeses a Tona.",
+      "sources": [
+        "https://naciodigital.cat/osona/cultura-i-mitjans/obeses-un-grup-de-culte-que-fuig-de-la-frivolitat-comercial.html",
+        "https://www.lleida.com/esdeveniment/obeses-3d-banda-municipal-de-lleida"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 23,
+      "channelIds": [
+        "UCjdNldGc9QMmr-mpOQjy7Zg"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:sara-roy",
+      "name": "Sara Roy",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3117533"
+      ],
+      "confidence": "alta",
+      "basis": "La biografia d'Acció Cultural del País Valencià i l'entrevista d'ARA identifiquen Manresa com el lloc d'origen de Sara Roy.",
+      "sources": [
+        "https://acpv.cat/2026/10/08/la-cantautora-sara-roy-porta-la-seua-musica-al-cicle-amb-veu-de-dona-de-loctubre-ccc/",
+        "https://www.ara.cat/cultura/musica/sara-roy-alter-ego-ganes-demostrar-no-nomes-dona-sensible-dolca_128_5237453.html"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 23,
+      "channelIds": [
+        "UC4tHQwYKnZ0frCoqwMmgMkQ",
+        "UC-4TrBQbbqx6ZjJDzLnjFJQ"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:toti-soler",
+      "name": "Toti Soler",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3110601"
+      ],
+      "confidence": "alta",
+      "basis": "El segell Satélite K i l'editorial musical Tritó documenten que Toti Soler va néixer a Vilassar de Dalt.",
+      "sources": [
+        "https://www.satelitek.com/artistas/toti-soler",
+        "https://www.trito.es/es/compositores/34554/toti-soler"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 23,
+      "channelIds": [
+        "UC8RrEDfmV-rQsQpURsY6krA",
+        "UCGCmSXoJ_f046wxT7OHUDMA"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:vrademargk",
+      "name": "Vrademargk",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3108286"
+      ],
+      "confidence": "alta",
+      "basis": "La banda s'identifica amb Terrassa al seu Bandcamp; les biografies especialitzades hi situen la formació del grup.",
+      "sources": [
+        "https://vrademargk.bandcamp.com/music",
+        "https://necromance.eu/vrademargk-esp/",
+        "https://www.metalsymphony.com/vrademargk-transition-to-nowehere-autoeditado/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 23,
+      "channelIds": [
+        "UC5b2TCGWRI0ulWbpeCm9dnw",
+        "UC0Ury5l6zFGf9ws25up1ucg"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:enmatu",
+      "name": "enMatu",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3112866"
+      ],
+      "confidence": "alta",
+      "basis": "L'Ajuntament de Premià de Mar presenta enMatu com a músic premianenc.",
+      "sources": [
+        "https://premiademar.cat/document.php?id=27199"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 22,
+      "channelIds": [
+        "UCt7sVSd8TURhAqiI_M6eCwQ",
+        "UC87QlZfkr-dn0qiIh21OnFA"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:gossos",
+      "name": "Gossos",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3117533"
+      ],
+      "confidence": "alta",
+      "basis": "La història oficial explica que el grup va néixer de quatre músics manresans i que Manresa va ser el seu primer escenari.",
+      "sources": [
+        "https://www.gossos.cat/vida-de-gos/",
+        "https://web.manresa.cat/web/noticies/2405-una-canco-de-gossos-i-un-video-espectacular-de-manresa-plat-fort-de-la-campanya-et-porto-al-cor-"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 22,
+      "channelIds": [
+        "UCW4XOsm7cOFbfoHPa9dFlVA",
+        "UCDAuX43C1s8r_fH6-tU3SHQ"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:joan-isaac",
+      "name": "Joan Isaac",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:3122826"
+      ],
+      "confidence": "alta",
+      "basis": "Esplugues de Llobregat és la població de la infància, l'adolescència i l'arrelament públic del cantautor. Es desa aquesta vinculació, evitant convertir en certesa les referències discrepants sobre el lloc exacte de naixement.",
+      "sources": [
+        "https://www.esplugues.cat/noticies/joan-isaac-pregoner-de-sant-mateu-2024-esplugues-es-el-meu-refugi-sentimental/",
+        "https://sites.google.com/view/joan-isaac/traject%C3%B2ria-art%C3%ADstica/1953-1972"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 22,
+      "channelIds": [
+        "UCcDS4PowmsXc6R3ACE7Vgfg"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:julieta",
+      "name": "Julieta",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "Les entrevistes biogràfiques d'ARA i La Vanguardia identifiquen Julieta Gracián com a originària de Barcelona.",
+      "sources": [
+        "https://www.ara.cat/cultura/musica/cantar-catala-m-encanta_128_4534914.html",
+        "https://www.lavanguardia.com/encatala/20250509/10663069/murcia-i-madrid-canten-els-meus-temes-catala.html"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 22,
+      "channelIds": [
+        "UCHx3kmBag2FCtnNFdd8qZ8A",
+        "UCK4JIjpr1EofBTYKpm-H5QQ"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:la-madam",
+      "name": "La Madam",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3111199"
+      ],
+      "confidence": "alta",
+      "basis": "Les referències d'Enderrock i Auva situen a Sabadell el grup de Llongue que va editar Micos i mones; es distingeix d'altres artistes homònims.",
+      "sources": [
+        "https://www.enderrock.cat/edr/numero529/noticia/2980",
+        "https://www.auva.cat/recordem-la-madam/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 22,
+      "channelIds": [
+        "UCCjTaOHQqmy0VD2vkZVxxoA",
+        "UCcCWhlBeuoXoqEXUcCZaTxQ"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:mar-pujol",
+      "name": "Mar Pujol",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3112878"
+      ],
+      "confidence": "alta",
+      "basis": "La biografia oficial de Mar Pujol identifica Prats de Lluçanès com el seu poble d'origen.",
+      "sources": [
+        "https://marpujol.com/bio/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 22,
+      "channelIds": [
+        "UC57d8FV0O8sOiK6-K-gWNHA",
+        "UCrkGlLnid_710UIFOrWVpAQ"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:pilseners",
+      "name": "Pilseners",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "El relat dels membres recollit a La Fonoteca situa els inicis del grup a Barcelona, amb el primer local al barri de Gràcia.",
+      "sources": [
+        "https://lafonoteca.net/grupo/pilseners/",
+        "https://cadenaser.com/cataluna/2025/11/13/pilseners-homenatja-el-grup-danimacio-dracs-1991-amb-la-canco-del-cel-fins-a-linfern-sercat/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 22,
+      "channelIds": [
+        "UCcCicDkn0YDxOeir49bCwPQ",
+        "UCfMqjIyA0G1cVGNlFXXoJhA"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:buhos",
+      "name": "Buhos",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3127066"
+      ],
+      "confidence": "alta",
+      "basis": "L'Ajuntament de Calafell documenta que Buhos es va fundar al municipi.",
+      "sources": [
+        "https://calafell.cat/noticies/els-buhos-principal-cartell-musical-de-la-festa-major-de-calafell"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 21,
+      "channelIds": [
+        "UCyR3Vf_s-Mo30j6oqN4Aq_w",
+        "UClt-kDY-yDORa6XkI5leFjg"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:dan-peralbo-el-comboi",
+      "name": "Dan Peralbo & El Comboi",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3107941"
+      ],
+      "confidence": "alta",
+      "basis": "Les biografies dels concerts presenten el nucli del grup com a amics de Torelló que fan música plegats des de l'institut.",
+      "sources": [
+        "https://santceloni.cat/document.php?id=34483",
+        "https://www.rtve.es/play/videos/especials-de-radio-4/actuacio-dan-peralbo-comboi-acusticament-fest-2025/16632527/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 21,
+      "channelIds": [
+        "UCwtCbak4LIxDWURhumzu7Ng",
+        "UC-oiQp1FzuQJxnelkrBHKXQ"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:groggy-rude",
+      "name": "Groggy Rude",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3108288"
+      ],
+      "confidence": "alta",
+      "basis": "La programació municipal i el Bandcamp de la banda situen l'origen de Groggy Rude a Tarragona.",
+      "sources": [
+        "https://www.mataro.cat/ca/actualitat/agenda/lad-cuig-plus-groggy-rude-plus-remolke",
+        "https://groggyrude.bandcamp.com/album/tarraco-punkrockers"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 21,
+      "channelIds": [
+        "UC8hpq3EHqyG09og9xy3qOFg",
+        "UCG1eXBwVPsRtMl1xw0PmIKA"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:ouineta",
+      "name": "Ouineta",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3119099"
+      ],
+      "confidence": "alta",
+      "basis": "Marta Ros explica que va créixer a la Roca del Vallès; les entrevistes biogràfiques hi situen l'origen de l'artista.",
+      "sources": [
+        "https://www.revistagq.com/articulo/ouineta-entrevista-cantante-coreografa",
+        "https://www.vogue.es/articulos/ouineta-verificada-coreografa-artista-musical-entrevista-album-debut-marta-ros"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 21,
+      "channelIds": [
+        "UCn_A4CBnBwlD8OTXSz0_FHQ",
+        "UCuOXOJ1KW_sCpse10ImvXRg"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:astral-warrior",
+      "name": "Astral Warrior",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:6356146"
+      ],
+      "confidence": "alta",
+      "basis": "L'entrevista amb Mia Campdepadrós identifica les Masies de Voltregà com la localitat del projecte actual. Es distingeix d'Astral Warriors, el trio anterior del Lluçanès.",
+      "sources": [
+        "https://www.thesentinel.es/wpsentinel/?p=31419"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 20,
+      "channelIds": [
+        "UC7auRFIxjfkrZdsWPe7R_Qg",
+        "UCh_dOmbZ0ZkjBEYDH96NNqQ"
+      ],
+      "applied": true
+    },
+    {
+      "name": "Palau",
+      "status": "pending",
+      "applied": false,
+      "feedSongCount": 22,
+      "channelIds": [
+        "UCkGNJczVoESUwmJ3oejyM5w"
+      ],
+      "basis": "Conflicte d'identitat: la descripció correspon al grup Palau format el 2025, però el canal assignat és @ferranpalauoficial, de Ferran Palau. El recompte prové d'aquest canal i no acredita cançons del grup Palau. La fitxa del Sona9 documenta Palau a Barcelona; cal corregir i verificar el canal abans de publicar-ne l'origen. Es preserva Ferran Palau a Esparreguera.",
+      "candidatePlaceIds": [
+        "geonames:3128760"
+      ],
+      "sources": [
+        "https://www.enderrock.cat/sona9/grup/225/palau",
+        "https://www.youtube.com/@ferranpalauoficial"
+      ]
+    }
+  ]
+}

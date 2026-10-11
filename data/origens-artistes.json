@@ -751,6 +751,267 @@
       "territory": "Catalunya",
       "source": "https://geocoding-api.open-meteo.com/v1/search?name=Roda+de+Ter&count=5&language=ca&format=json&countryCode=ES",
       "checkedOn": "2026-10-11"
+    },
+    "geonames:3112866": {
+      "name": "Premià de Mar",
+      "type": "municipality",
+      "geonamesId": 3112866,
+      "coordinates": {
+        "latitude": 41.49206,
+        "longitude": 2.36524,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Premi%C3%A0+de+Mar&count=5&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:3108747": {
+      "name": "Solsona",
+      "type": "municipality",
+      "geonamesId": 3108747,
+      "coordinates": {
+        "latitude": 41.99395,
+        "longitude": 1.51706,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Solsona&count=5&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:3120431": {
+      "name": "Igualada",
+      "type": "municipality",
+      "geonamesId": 3120431,
+      "coordinates": {
+        "latitude": 41.58098,
+        "longitude": 1.6172,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Igualada&count=5&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:3119532": {
+      "name": "la Llacuna",
+      "type": "municipality",
+      "geonamesId": 3119532,
+      "coordinates": {
+        "latitude": 41.47145,
+        "longitude": 1.53241,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=la+Llacuna&count=5&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:3109442": {
+      "name": "Sant Vicenç dels Horts",
+      "type": "municipality",
+      "geonamesId": 3109442,
+      "coordinates": {
+        "latitude": 41.39317,
+        "longitude": 2.00689,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Sant+Vicen%C3%A7+dels+Horts&count=5&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:3118862": {
+      "name": "les Preses",
+      "type": "municipality",
+      "geonamesId": 3118862,
+      "coordinates": {
+        "latitude": 42.14508,
+        "longitude": 2.46025,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=les+Preses&count=5&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:3110533": {
+      "name": "Sant Joan de les Abadesses",
+      "type": "municipality",
+      "geonamesId": 3110533,
+      "coordinates": {
+        "latitude": 42.23332,
+        "longitude": 2.28524,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Sant+Joan+de+les+Abadesses&count=5&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:3111343": {
+      "name": "Rosselló",
+      "type": "municipality",
+      "geonamesId": 3111343,
+      "coordinates": {
+        "latitude": 41.69374,
+        "longitude": 0.59515,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Rossell%C3%B3&count=5&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:2519382": {
+      "name": "Cocentaina",
+      "type": "municipality",
+      "geonamesId": 2519382,
+      "coordinates": {
+        "latitude": 38.73975,
+        "longitude": -0.43976,
+        "precision": "settlement_reference"
+      },
+      "territory": "País Valencià",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Cocentaina&count=5&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:3105600": {
+      "name": "Vilafranca del Penedès",
+      "type": "municipality",
+      "geonamesId": 3105600,
+      "coordinates": {
+        "latitude": 41.34618,
+        "longitude": 1.69713,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Vilafranca+del+Pened%C3%A8s&count=5&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:3106492": {
+      "name": "Valls",
+      "type": "municipality",
+      "geonamesId": 3106492,
+      "coordinates": {
+        "latitude": 41.28612,
+        "longitude": 1.24993,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Valls&count=5&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:3107997": {
+      "name": "Tona",
+      "type": "municipality",
+      "geonamesId": 3107997,
+      "coordinates": {
+        "latitude": 41.84789,
+        "longitude": 2.22808,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Tona&count=5&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:3110601": {
+      "name": "Vilassar de Dalt",
+      "type": "municipality",
+      "geonamesId": 3110601,
+      "coordinates": {
+        "latitude": 41.51667,
+        "longitude": 2.36667,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Vilassar+de+Dalt&count=5&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:3122826": {
+      "name": "Esplugues de Llobregat",
+      "type": "municipality",
+      "geonamesId": 3122826,
+      "coordinates": {
+        "latitude": 41.37732,
+        "longitude": 2.08809,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Esplugues+de+Llobregat&count=5&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:3112878": {
+      "name": "Prats de Lluçanès",
+      "type": "municipality",
+      "geonamesId": 3112878,
+      "coordinates": {
+        "latitude": 42.01667,
+        "longitude": 2.03333,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Prats+de+Llu%C3%A7an%C3%A8s&count=5&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:3127066": {
+      "name": "Calafell",
+      "type": "municipality",
+      "geonamesId": 3127066,
+      "coordinates": {
+        "latitude": 41.19997,
+        "longitude": 1.5683,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Calafell&count=5&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:3107941": {
+      "name": "Torelló",
+      "type": "municipality",
+      "geonamesId": 3107941,
+      "coordinates": {
+        "latitude": 42.04627,
+        "longitude": 2.26679,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Torell%C3%B3&count=5&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:3119099": {
+      "name": "la Roca del Vallès",
+      "type": "municipality",
+      "geonamesId": 3119099,
+      "coordinates": {
+        "latitude": 41.58333,
+        "longitude": 2.33333,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=la+Roca+del+Vall%C3%A8s&count=5&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:6356146": {
+      "name": "les Masies de Voltregà",
+      "type": "municipality",
+      "geonamesId": 6356146,
+      "coordinates": {
+        "latitude": 42.01944,
+        "longitude": 2.23546,
+        "precision": "municipality_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://www.geonames.org/6356146/les-masies-de-voltrega.html",
+      "checkedOn": "2026-10-11",
+      "note": "Punt de referència de la divisió municipal GeoNames (ADM3), no d'un nucli concret."
+    },
+    "geonames:3112265": {
+      "name": "Rasquera",
+      "type": "municipality",
+      "geonamesId": 3112265,
+      "coordinates": {
+        "latitude": 41.00267,
+        "longitude": 0.59967,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Rasquera&count=5&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
     }
   },
   "artists": {
@@ -2258,6 +2519,515 @@
       "reviewedOn": "2026-10-11",
       "assignmentSource": "manual-review",
       "locked": true
+    },
+    "artist:forja": {
+      "name": "Forja",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3108286"
+      ],
+      "confidence": "alta",
+      "basis": "Origen a Terrassa confirmat manualment per l'editor del catàleg el 11 d'octubre de 2026. La font enllaçada acredita la identitat del grup; la població prové de la correcció editorial.",
+      "sources": [
+        "https://www.forja-metal.com/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "user-correction",
+      "locked": true
+    },
+    "artist:poor-tramit": {
+      "name": "Poor Tràmit",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3112866"
+      ],
+      "confidence": "alta",
+      "basis": "El segell Radio Rahim i la programació municipal identifiquen Marc Andreu, Poor Tràmit, com a raper de Premià de Mar.",
+      "sources": [
+        "https://www.radiorahim.cat/album/poor-tramit-pur/",
+        "https://www.mataro.cat/ca/actualitat/agenda/vermut-musical-basukinho-plus-poor-tramit"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:roger-mas-i-sole": {
+      "name": "Roger Mas i Solé",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3108747"
+      ],
+      "confidence": "alta",
+      "basis": "El documental de RTVE situa el naixement i la infància del cantautor a Solsona.",
+      "sources": [
+        "https://www.rtve.es/play/noticies/20211111/efecte-collins-documental-roger-mas/2222320.shtml",
+        "https://www.enciclopedia.cat/gran-enciclopedia-catalana/roger-mas-i-sole"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:smoking-souls": {
+      "name": "Smoking Souls",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:6559502"
+      ],
+      "confidence": "alta",
+      "basis": "La fitxa de l'agència i la biografia de música en valencià situen el grup a Pego.",
+      "sources": [
+        "https://www.ppf.cat/index.php/cat/artistes/smoking-souls",
+        "https://musicaenvalencia.es/artista/97/smoking-souls"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:terratombats": {
+      "name": "Terratombats",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:3120431",
+        "geonames:3119532",
+        "geonames:3109442"
+      ],
+      "confidence": "alta",
+      "basis": "El grup explica que es va formar amb músics d'Igualada, la Llacuna i Sant Vicenç dels Horts. Es conserven les tres poblacions vinculades, sense atribuir un lloc de naixement únic al conjunt.",
+      "sources": [
+        "https://www.verkami.com/projects/1193-nou-disc-de-terratombats/blog",
+        "https://infoanoia.cat/terratombats-tornen-a-la-carrega-amb-el-seu-nou-disc/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:terapia-de-shock": {
+      "name": "Teràpia de Shock",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3118862"
+      ],
+      "confidence": "alta",
+      "basis": "La història oficial del grup situa els inicis a les Preses, a la Garrotxa.",
+      "sources": [
+        "https://terapiadeshock.cat/historia/",
+        "https://www.tresc.cat/f/39481/terapia-de-shock/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:txarango": {
+      "name": "Txarango",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:3110533"
+      ],
+      "confidence": "alta",
+      "basis": "Es prioritza la vinculació pública del grup amb Sant Joan de les Abadesses, que els seus membres presenten com a casa seva en explicar el Clownia. El projecte es va formar a Barcelona i té membres de diverses poblacions del Ripollès i de l'entorn; no s'atribueix un únic lloc de naixement als músics.",
+      "sources": [
+        "https://elpais.com/ccaa/2014/04/30/quadern/1398888320_131797.html?outputType=amp",
+        "https://santjoandelesabadesses.cat/ca/clownia-festival",
+        "https://www.catalunyamagrada.cat/llocs/txarango-banda-arrels-al-ripolles_40884102.html"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:xeic": {
+      "name": "Xeic!",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3112265"
+      ],
+      "confidence": "alta",
+      "basis": "El segell Picap presenta Xeic! com una formació originària de Rasquera.",
+      "sources": [
+        "https://www.picap.cat/post/xeic-15-anys",
+        "https://www.riberaebre.org/grupsculturals/index.php?grup=7&opcio=veure"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:fox-system": {
+      "name": "Fox System",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3111343"
+      ],
+      "confidence": "alta",
+      "basis": "La banda s'identifica amb Rosselló al seu Bandcamp, i l'entrevista de Surtdecasa confirma aquesta població del Segrià.",
+      "sources": [
+        "https://foxsystem.bandcamp.com/",
+        "https://surtdecasa.cat/ponent/musica/fox-system-entrevista-abril-2018-rock-musica"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:herba-negra": {
+      "name": "Herba Negra",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "territory:camp-de-turia",
+        "geonames:2519382"
+      ],
+      "confidence": "alta",
+      "basis": "El segell Mésdemil presenta el projecte des del Camp de Túria i Cocentaina. Es conserva la doble vinculació; el Camp de Túria no es converteix en un municipi ni en un punt geogràfic.",
+      "sources": [
+        "https://mesdemil.bandcamp.com/album/herba-negra-el-ren-ixer-dabril"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:inadaptats": {
+      "name": "Inadaptats",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3105600"
+      ],
+      "confidence": "alta",
+      "basis": "La biografia de l'agència HFMN i el segell Talka identifiquen Inadaptats com a grup de Vilafranca del Penedès.",
+      "sources": [
+        "https://www.hfmncrew.cat/es/epk-public-inadaptats/bio-inadaptats/",
+        "https://www.talka.org/portfolio/inadaptats-moti-avalot/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:kop": {
+      "name": "KOP",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3111294"
+      ],
+      "confidence": "alta",
+      "basis": "La biografia de l'agència situa la creació de KOP a Rubí. Distingeix aquest origen de l'establiment posterior a Badia del Vallès.",
+      "sources": [
+        "https://www.oa2produccions.cat/kop-2/",
+        "https://www.lafactoriadelritmo.com/kop/nos-vemos-en-las-calles/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:mariona-escoda-i-sendra": {
+      "name": "Mariona Escoda i Sendra",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3106492"
+      ],
+      "confidence": "alta",
+      "basis": "La fitxa biogràfica de 3Cat i el web oficial situen la cantant a Valls.",
+      "sources": [
+        "https://www.3cat.cat/3cat/zenit/seccio/mariona-escoda/156541/",
+        "https://www.marionaescoda.com/event/concert-amb-banda-7/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:mr-freak-ska": {
+      "name": "Mr. Freak Ska",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3117164"
+      ],
+      "confidence": "alta",
+      "basis": "El dossier del mateix artista identifica Jaume Cuadrada, Mr. Freak Ska, com a músic de Mataró.",
+      "sources": [
+        "https://mrfreakska.wordpress.com/wp-content/uploads/2014/08/mr_freak_ska_low_cast.pdf",
+        "https://nbcproduccions.wordpress.com/mr-freak-ska/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:obeses": {
+      "name": "Obeses",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3107997"
+      ],
+      "confidence": "alta",
+      "basis": "El reportatge amb els membres i la biografia del concert situen els inicis d'Obeses a Tona.",
+      "sources": [
+        "https://naciodigital.cat/osona/cultura-i-mitjans/obeses-un-grup-de-culte-que-fuig-de-la-frivolitat-comercial.html",
+        "https://www.lleida.com/esdeveniment/obeses-3d-banda-municipal-de-lleida"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:sara-roy": {
+      "name": "Sara Roy",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3117533"
+      ],
+      "confidence": "alta",
+      "basis": "La biografia d'Acció Cultural del País Valencià i l'entrevista d'ARA identifiquen Manresa com el lloc d'origen de Sara Roy.",
+      "sources": [
+        "https://acpv.cat/2026/10/08/la-cantautora-sara-roy-porta-la-seua-musica-al-cicle-amb-veu-de-dona-de-loctubre-ccc/",
+        "https://www.ara.cat/cultura/musica/sara-roy-alter-ego-ganes-demostrar-no-nomes-dona-sensible-dolca_128_5237453.html"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:toti-soler": {
+      "name": "Toti Soler",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3110601"
+      ],
+      "confidence": "alta",
+      "basis": "El segell Satélite K i l'editorial musical Tritó documenten que Toti Soler va néixer a Vilassar de Dalt.",
+      "sources": [
+        "https://www.satelitek.com/artistas/toti-soler",
+        "https://www.trito.es/es/compositores/34554/toti-soler"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:vrademargk": {
+      "name": "Vrademargk",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3108286"
+      ],
+      "confidence": "alta",
+      "basis": "La banda s'identifica amb Terrassa al seu Bandcamp; les biografies especialitzades hi situen la formació del grup.",
+      "sources": [
+        "https://vrademargk.bandcamp.com/music",
+        "https://necromance.eu/vrademargk-esp/",
+        "https://www.metalsymphony.com/vrademargk-transition-to-nowehere-autoeditado/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:enmatu": {
+      "name": "enMatu",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3112866"
+      ],
+      "confidence": "alta",
+      "basis": "L'Ajuntament de Premià de Mar presenta enMatu com a músic premianenc.",
+      "sources": [
+        "https://premiademar.cat/document.php?id=27199"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:gossos": {
+      "name": "Gossos",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3117533"
+      ],
+      "confidence": "alta",
+      "basis": "La història oficial explica que el grup va néixer de quatre músics manresans i que Manresa va ser el seu primer escenari.",
+      "sources": [
+        "https://www.gossos.cat/vida-de-gos/",
+        "https://web.manresa.cat/web/noticies/2405-una-canco-de-gossos-i-un-video-espectacular-de-manresa-plat-fort-de-la-campanya-et-porto-al-cor-"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:joan-isaac": {
+      "name": "Joan Isaac",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:3122826"
+      ],
+      "confidence": "alta",
+      "basis": "Esplugues de Llobregat és la població de la infància, l'adolescència i l'arrelament públic del cantautor. Es desa aquesta vinculació, evitant convertir en certesa les referències discrepants sobre el lloc exacte de naixement.",
+      "sources": [
+        "https://www.esplugues.cat/noticies/joan-isaac-pregoner-de-sant-mateu-2024-esplugues-es-el-meu-refugi-sentimental/",
+        "https://sites.google.com/view/joan-isaac/traject%C3%B2ria-art%C3%ADstica/1953-1972"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:julieta": {
+      "name": "Julieta",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "Les entrevistes biogràfiques d'ARA i La Vanguardia identifiquen Julieta Gracián com a originària de Barcelona.",
+      "sources": [
+        "https://www.ara.cat/cultura/musica/cantar-catala-m-encanta_128_4534914.html",
+        "https://www.lavanguardia.com/encatala/20250509/10663069/murcia-i-madrid-canten-els-meus-temes-catala.html"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:la-madam": {
+      "name": "La Madam",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3111199"
+      ],
+      "confidence": "alta",
+      "basis": "Les referències d'Enderrock i Auva situen a Sabadell el grup de Llongue que va editar Micos i mones; es distingeix d'altres artistes homònims.",
+      "sources": [
+        "https://www.enderrock.cat/edr/numero529/noticia/2980",
+        "https://www.auva.cat/recordem-la-madam/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:mar-pujol": {
+      "name": "Mar Pujol",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3112878"
+      ],
+      "confidence": "alta",
+      "basis": "La biografia oficial de Mar Pujol identifica Prats de Lluçanès com el seu poble d'origen.",
+      "sources": [
+        "https://marpujol.com/bio/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:pilseners": {
+      "name": "Pilseners",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "El relat dels membres recollit a La Fonoteca situa els inicis del grup a Barcelona, amb el primer local al barri de Gràcia.",
+      "sources": [
+        "https://lafonoteca.net/grupo/pilseners/",
+        "https://cadenaser.com/cataluna/2025/11/13/pilseners-homenatja-el-grup-danimacio-dracs-1991-amb-la-canco-del-cel-fins-a-linfern-sercat/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:buhos": {
+      "name": "Buhos",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3127066"
+      ],
+      "confidence": "alta",
+      "basis": "L'Ajuntament de Calafell documenta que Buhos es va fundar al municipi.",
+      "sources": [
+        "https://calafell.cat/noticies/els-buhos-principal-cartell-musical-de-la-festa-major-de-calafell"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:dan-peralbo-el-comboi": {
+      "name": "Dan Peralbo & El Comboi",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3107941"
+      ],
+      "confidence": "alta",
+      "basis": "Les biografies dels concerts presenten el nucli del grup com a amics de Torelló que fan música plegats des de l'institut.",
+      "sources": [
+        "https://santceloni.cat/document.php?id=34483",
+        "https://www.rtve.es/play/videos/especials-de-radio-4/actuacio-dan-peralbo-comboi-acusticament-fest-2025/16632527/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:groggy-rude": {
+      "name": "Groggy Rude",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3108288"
+      ],
+      "confidence": "alta",
+      "basis": "La programació municipal i el Bandcamp de la banda situen l'origen de Groggy Rude a Tarragona.",
+      "sources": [
+        "https://www.mataro.cat/ca/actualitat/agenda/lad-cuig-plus-groggy-rude-plus-remolke",
+        "https://groggyrude.bandcamp.com/album/tarraco-punkrockers"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:ouineta": {
+      "name": "Ouineta",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3119099"
+      ],
+      "confidence": "alta",
+      "basis": "Marta Ros explica que va créixer a la Roca del Vallès; les entrevistes biogràfiques hi situen l'origen de l'artista.",
+      "sources": [
+        "https://www.revistagq.com/articulo/ouineta-entrevista-cantante-coreografa",
+        "https://www.vogue.es/articulos/ouineta-verificada-coreografa-artista-musical-entrevista-album-debut-marta-ros"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:astral-warrior": {
+      "name": "Astral Warrior",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:6356146"
+      ],
+      "confidence": "alta",
+      "basis": "L'entrevista amb Mia Campdepadrós identifica les Masies de Voltregà com la localitat del projecte actual. Es distingeix d'Astral Warriors, el trio anterior del Lluçanès.",
+      "sources": [
+        "https://www.thesentinel.es/wpsentinel/?p=31419"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
     }
   },
   "channels": {
@@ -2415,6 +3185,64 @@
     "UCJCUdj8MStJsApyF1oiFTVA": "artist:naina",
     "UCTn8anEMvCsxpCMhyajKjrg": "artist:naina",
     "UCJD6uhnBA8eppY5QmQfJZwA": "artist:oques-grasses",
-    "UCtq1tANqWFsrmS5XmCXY8qQ": "artist:oques-grasses"
+    "UCtq1tANqWFsrmS5XmCXY8qQ": "artist:oques-grasses",
+    "UCBaZT9T1jD6ggbVikvr0nAw": "artist:forja",
+    "UCmciKowevXGORJnZGaZVrsg": "artist:forja",
+    "UC9HWLecmAeJ3MrNdDHEMDBA": "artist:poor-tramit",
+    "UCvKAZWUa6tY8b5RBergLr0Q": "artist:poor-tramit",
+    "UCTnoklTTyDXYYtT5_nmxUVQ": "artist:roger-mas-i-sole",
+    "UC7kOHFUIoTiH9RrPznoJDEQ": "artist:roger-mas-i-sole",
+    "UCtHWEhEdI_nkFQmE2Ewzrnw": "artist:smoking-souls",
+    "UCYy5FHJ4Oq0RKqxqoGlF3Gw": "artist:smoking-souls",
+    "UCAx9peaZFIswCLSlT77e1Cg": "artist:terratombats",
+    "UCrAazkwonIdGi_TGkzXkoCw": "artist:terratombats",
+    "UC4S5WcSVzMhUd-UwKKpKp5w": "artist:terapia-de-shock",
+    "UCIJjTYBxYUHPFir2cZj0wKQ": "artist:terapia-de-shock",
+    "UCnO3DG7B2cyiu5zoNstHEfA": "artist:terapia-de-shock",
+    "UCmtykAu3QbU-yVO6Jirm1_Q": "artist:txarango",
+    "UCIDxAwPe8cNl_-NawMu4pDQ": "artist:txarango",
+    "UC4ZpvBvQ4jzY_Ppwho9rSiw": "artist:xeic",
+    "UCNS4k4s7_GRMNpKBlRfpfTQ": "artist:xeic",
+    "UClEkW6DS-3DfOcxGMouE_7A": "artist:fox-system",
+    "UCwCcA6f2KDLJi58xX2se6DA": "artist:fox-system",
+    "UCyNgOgsiiy5cSgyfEqveONw": "artist:herba-negra",
+    "UCNzhlSBbPNlsZ563SKvvggg": "artist:herba-negra",
+    "UCHU_RiP5nttdIcrT37Y7-uA": "artist:inadaptats",
+    "UCby9BHawLhftHyR37pEztHg": "artist:inadaptats",
+    "UCvSMpTrqlrZxYbhZoTbsQoA": "artist:kop",
+    "UCC66jsgEM01kvhvwJ59xttA": "artist:kop",
+    "UC_97DSVzzRp28ew8nKB255g": "artist:mariona-escoda-i-sendra",
+    "UC82RhPbZ6uly1CbqivbZqxQ": "artist:mariona-escoda-i-sendra",
+    "UCElR_cmETBNoC7Rs6STl0BA": "artist:mr-freak-ska",
+    "UCjdNldGc9QMmr-mpOQjy7Zg": "artist:obeses",
+    "UC4tHQwYKnZ0frCoqwMmgMkQ": "artist:sara-roy",
+    "UC-4TrBQbbqx6ZjJDzLnjFJQ": "artist:sara-roy",
+    "UC8RrEDfmV-rQsQpURsY6krA": "artist:toti-soler",
+    "UCGCmSXoJ_f046wxT7OHUDMA": "artist:toti-soler",
+    "UC5b2TCGWRI0ulWbpeCm9dnw": "artist:vrademargk",
+    "UC0Ury5l6zFGf9ws25up1ucg": "artist:vrademargk",
+    "UCt7sVSd8TURhAqiI_M6eCwQ": "artist:enmatu",
+    "UC87QlZfkr-dn0qiIh21OnFA": "artist:enmatu",
+    "UCW4XOsm7cOFbfoHPa9dFlVA": "artist:gossos",
+    "UCDAuX43C1s8r_fH6-tU3SHQ": "artist:gossos",
+    "UCcDS4PowmsXc6R3ACE7Vgfg": "artist:joan-isaac",
+    "UCHx3kmBag2FCtnNFdd8qZ8A": "artist:julieta",
+    "UCK4JIjpr1EofBTYKpm-H5QQ": "artist:julieta",
+    "UCCjTaOHQqmy0VD2vkZVxxoA": "artist:la-madam",
+    "UCcCWhlBeuoXoqEXUcCZaTxQ": "artist:la-madam",
+    "UC57d8FV0O8sOiK6-K-gWNHA": "artist:mar-pujol",
+    "UCrkGlLnid_710UIFOrWVpAQ": "artist:mar-pujol",
+    "UCcCicDkn0YDxOeir49bCwPQ": "artist:pilseners",
+    "UCfMqjIyA0G1cVGNlFXXoJhA": "artist:pilseners",
+    "UCyR3Vf_s-Mo30j6oqN4Aq_w": "artist:buhos",
+    "UClt-kDY-yDORa6XkI5leFjg": "artist:buhos",
+    "UCwtCbak4LIxDWURhumzu7Ng": "artist:dan-peralbo-el-comboi",
+    "UC-oiQp1FzuQJxnelkrBHKXQ": "artist:dan-peralbo-el-comboi",
+    "UC8hpq3EHqyG09og9xy3qOFg": "artist:groggy-rude",
+    "UCG1eXBwVPsRtMl1xw0PmIKA": "artist:groggy-rude",
+    "UCn_A4CBnBwlD8OTXSz0_FHQ": "artist:ouineta",
+    "UCuOXOJ1KW_sCpse10ImvXRg": "artist:ouineta",
+    "UC7auRFIxjfkrZdsWPe7R_Qg": "artist:astral-warrior",
+    "UCh_dOmbZ0ZkjBEYDH96NNqQ": "artist:astral-warrior"
   }
 }
