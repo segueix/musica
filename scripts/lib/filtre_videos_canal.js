@@ -40,6 +40,7 @@ function loadChannelVideoAllowlist(filePath, fsModule = require('fs')) {
 
       const parsedRule = {
         blocked: rule?.blocked === true,
+        avatarVideoId: /^[A-Za-z0-9_-]{11}$/.test(rule?.avatarVideoId || '') ? rule.avatarVideoId : null,
         exactTitles,
         allowedVideoIds: Array.isArray(rule?.allowedVideoIds)
           ? new Set(rule.allowedVideoIds.map(String).filter(id => /^[A-Za-z0-9_-]{11}$/.test(id)))
@@ -72,6 +73,7 @@ function loadChannelVideoAllowlist(filePath, fsModule = require('fs')) {
         parsedRule.deniedTitleContains.length > 0 ||
         parsedRule.acceptedMusicOnly ||
         parsedRule.allowedContentTypes.size > 0 ||
+        parsedRule.avatarVideoId ||
         parsedRule.avatarFromFirstAllowedVideo ||
         parsedRule.avatarFromAllowedTitle
       ) {

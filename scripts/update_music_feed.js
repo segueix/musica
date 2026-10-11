@@ -621,7 +621,9 @@ async function main(){
     const channel={
       id,
       name:displayChannelName,
-      avatar:bestThumb(snippet),
+      avatar:channelVideoRule?.avatarVideoId
+        ? `https://i.ytimg.com/vi/${channelVideoRule.avatarVideoId}/hqdefault.jpg`
+        : bestThumb(snippet),
       description:snippet.description || '',
       handle:snippet.customUrl || '',
       subscriberCount:Number(detail.statistics?.subscriberCount||0) || null,
@@ -735,6 +737,7 @@ async function main(){
       );
       if(
         !channelAvatarFromAllowedVideo &&
+        !channelVideoRule?.avatarVideoId &&
         base.thumbnail &&
         (avatarMatchesSpecificTitle || avatarMatchesFirstAllowed)
       ){

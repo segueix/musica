@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-11",
+  "updatedAt": "2026-10-12",
   "attribution": {
     "text": "Coordenades de referència: GeoNames, via Open-Meteo. CC BY 4.0.",
     "sources": [
@@ -1714,7 +1714,7 @@
       "type": "municipality",
       "geonamesId": 3109774,
       "coordinates": {
-        "latitude": 42.0,
+        "latitude": 42,
         "longitude": 1.98333,
         "precision": "settlement_reference"
       },
@@ -6348,15 +6348,15 @@
       "status": "validated",
       "relation": "origin",
       "placeIds": [
-        "geonames:3111199"
+        "geonames:3125915"
       ],
       "confidence": "alta",
-      "basis": "El reportatge de l’ARA explica que Bars es va formar a partir de diversos grups de l’escena sabadellenca el 1987.",
+      "basis": "Origen a Castellar del Vallès, corregit expressament per l’editor el 2026-10-12.",
       "sources": [
-        "https://www.ara.cat/cultura/musica/cara-rock-catala-grups-imprescindibles_1_3848657.html"
+        "https://github.com/segueix/musica/blob/main/docs/revisions/2026-10-12-bars-origin.json"
       ],
-      "reviewedOn": "2026-10-11",
-      "assignmentSource": "manual-review",
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-user",
       "locked": true
     },
     "artist:familia-fracas": {
