@@ -26799,63 +26799,6 @@
       "genresRaw": []
     },
     {
-      "name": "PunkAIres",
-      "aliases": [
-        "PunkAIres Produccions"
-      ],
-      "genres": [
-        "Punk"
-      ],
-      "territories": [],
-      "languages": [
-        "ca"
-      ],
-      "wikidataId": null,
-      "musicbrainzId": null,
-      "youtube": {
-        "channels": [
-          {
-            "id": "UCEZDsPoB5Tz7LvCJLWrZLuA",
-            "handle": "@punkaires",
-            "name": "PunkAIres Produccions",
-            "type": "official",
-            "primary": true
-          }
-        ],
-        "candidates": [],
-        "searchCandidates": []
-      },
-      "confidence": "mitjana",
-      "reviewStatus": "aprovat",
-      "active": true,
-      "sources": [
-        "https://www.youtube.com/@PunkAIres",
-        "manual-user-2026-10-10",
-        "genre:manual",
-        "youtube:manual-verified"
-      ],
-      "lastChecked": "2026-10-10T08:04:30.896Z",
-      "notes": "PunkAIres Produccions (@PunkAIres): projecte de punk-rock en català creat amb eines d'IA, segons la descripció del canal. Identificador de YouTube pendent de resolució automàtica a partir del handle verificat. Cal revisar la llengua de cada cançó del canal, sense donar tot el repertori per contrastat.",
-      "genresRaw": [],
-      "enrichment": {
-        "genres": {
-          "checkedAt": "2026-10-11T12:45:48.902Z",
-          "musicbrainzCheckedAt": null,
-          "musicbrainzTagsCheckedAt": null,
-          "musicbrainzReleaseCheckedAt": null,
-          "wikidataWorkCheckedAt": "2026-10-11T12:45:48.902Z",
-          "wikidataRaw": [],
-          "wikidataWorkRaw": [],
-          "musicbrainzRaw": [],
-          "musicbrainzTagsRaw": [],
-          "musicbrainzReleaseRaw": [],
-          "unmappedRaw": [],
-          "status": "sense-dades",
-          "wikidataWorkEvidence": []
-        }
-      }
-    },
-    {
       "name": "Pupil·les",
       "aliases": [
         "Pupilles"
