@@ -2039,6 +2039,159 @@
       "territory": "Navarra",
       "source": "https://geocoding-api.open-meteo.com/v1/search?name=Arbizu&count=10&language=ca&format=json",
       "checkedOn": "2026-10-11"
+    },
+    "geonames:3128026": {
+      "name": "Bilbao",
+      "type": "municipality",
+      "geonamesId": 3128026,
+      "coordinates": {
+        "latitude": 43.26271,
+        "longitude": -2.92528,
+        "precision": "settlement_reference"
+      },
+      "territory": "País Basc",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Bilbao&count=10&language=ca&format=json",
+      "checkedOn": "2026-10-12"
+    },
+    "geonames:3127117": {
+      "name": "Cadaqués",
+      "type": "municipality",
+      "geonamesId": 3127117,
+      "coordinates": {
+        "latitude": 42.28856,
+        "longitude": 3.27706,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Cadaques&count=10&language=ca&format=json",
+      "checkedOn": "2026-10-12"
+    },
+    "geonames:3122157": {
+      "name": "Fraga",
+      "type": "municipality",
+      "geonamesId": 3122157,
+      "coordinates": {
+        "latitude": 41.52294,
+        "longitude": 0.34894,
+        "precision": "settlement_reference"
+      },
+      "territory": "Aragó",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Fraga&count=10&language=ca&format=json",
+      "checkedOn": "2026-10-12"
+    },
+    "geonames:3117735": {
+      "name": "Madrid",
+      "type": "municipality",
+      "geonamesId": 3117735,
+      "coordinates": {
+        "latitude": 40.4165,
+        "longitude": -3.70256,
+        "precision": "settlement_reference"
+      },
+      "territory": "Comunitat de Madrid",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Madrid&count=10&language=ca&format=json",
+      "checkedOn": "2026-10-12"
+    },
+    "geonames:2514256": {
+      "name": "Màlaga",
+      "type": "municipality",
+      "geonamesId": 2514256,
+      "coordinates": {
+        "latitude": 36.72016,
+        "longitude": -4.42034,
+        "precision": "settlement_reference"
+      },
+      "territory": "Andalusia",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Malaga&count=10&language=ca&format=json",
+      "checkedOn": "2026-10-12"
+    },
+    "geonames:1856057": {
+      "name": "Nagoya",
+      "type": "municipality",
+      "geonamesId": 1856057,
+      "coordinates": {
+        "latitude": 35.18147,
+        "longitude": 136.9064,
+        "precision": "settlement_reference"
+      },
+      "territory": "Japó",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Nagoya&count=10&language=ca&format=json",
+      "checkedOn": "2026-10-12"
+    },
+    "geonames:2513145": {
+      "name": "Oliva",
+      "type": "municipality",
+      "geonamesId": 2513145,
+      "coordinates": {
+        "latitude": 38.91971,
+        "longitude": -0.11935,
+        "precision": "settlement_reference"
+      },
+      "territory": "País Valencià",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Oliva&count=10&language=ca&format=json",
+      "checkedOn": "2026-10-12"
+    },
+    "geonames:3110110": {
+      "name": "Sant Pol de Mar",
+      "type": "municipality",
+      "geonamesId": 3110110,
+      "coordinates": {
+        "latitude": 41.60177,
+        "longitude": 2.61741,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Sant%20Pol%20de%20Mar&count=10&language=ca&format=json",
+      "checkedOn": "2026-10-12"
+    },
+    "geonames:3109764": {
+      "name": "Santa Maria de Palautordera",
+      "type": "municipality",
+      "geonamesId": 3109764,
+      "coordinates": {
+        "latitude": 41.69417,
+        "longitude": 2.44566,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Santa%20Maria%20de%20Palautordera&count=10&language=ca&format=json",
+      "checkedOn": "2026-10-12"
+    },
+    "geonames:3104324": {
+      "name": "Saragossa",
+      "type": "municipality",
+      "geonamesId": 3104324,
+      "coordinates": {
+        "latitude": 41.65606,
+        "longitude": -0.87734,
+        "precision": "settlement_reference"
+      },
+      "territory": "Aragó",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Zaragoza&count=10&language=ca&format=json",
+      "checkedOn": "2026-10-12"
+    },
+    "geonames:3104499": {
+      "name": "Vitoria-Gasteiz",
+      "type": "municipality",
+      "geonamesId": 3104499,
+      "coordinates": {
+        "latitude": 42.84998,
+        "longitude": -2.67268,
+        "precision": "settlement_reference"
+      },
+      "territory": "País Basc",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Vitoria-Gasteiz&count=10&language=ca&format=json",
+      "checkedOn": "2026-10-12"
+    },
+    "territory:plana-de-vic": {
+      "name": "Plana de Vic",
+      "type": "region",
+      "coordinates": null
+    },
+    "territory:eivissa": {
+      "name": "Eivissa (illa)",
+      "type": "island",
+      "coordinates": null
     }
   },
   "artists": {
@@ -8506,6 +8659,487 @@
       "reviewedOn": "2026-10-12",
       "assignmentSource": "manual-user",
       "locked": true
+    },
+    "artist:assac": {
+      "name": "ASSAC!",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "Grup de Barcelona format el 2011; entrevista als components.",
+      "sources": [
+        "https://lafonoteca.net/grupo/assac/"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:the-cabrians": {
+      "name": "The Cabrians",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3117164"
+      ],
+      "confidence": "alta",
+      "basis": "La discogràfica identifica explícitament la banda com a mataronina.",
+      "sources": [
+        "https://www.liquidatormusic.com/ediciones/edicion/dirty-affaire/"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:betagarri": {
+      "name": "Betagarri",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3104499"
+      ],
+      "confidence": "alta",
+      "basis": "La fitxa de la Biblioteca Nacional documenta la formació a Vitoria-Gasteiz.",
+      "sources": [
+        "https://datos.bne.es/resource/XX200841"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:bradien": {
+      "name": "Bradien",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "Seu del grup a Barcelona, segons el Museu Reina Sofia i la informació de 3Cat.",
+      "sources": [
+        "https://www.museoreinasofia.es/actividad/espacio-acustico-3"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:ciment": {
+      "name": "Ciment",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "territory:plana-de-vic"
+      ],
+      "confidence": "alta",
+      "basis": "La Casa de la Música situa el duo a la Plana de Vic; no concreta municipi.",
+      "sources": [
+        "https://www.casadelamusica.cat/index.php/fitxes-artistes/3495-ciment"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:elphomega": {
+      "name": "Elphomega",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:2514256"
+      ],
+      "confidence": "alta",
+      "basis": "Sergio Albarracín va néixer a Màlaga el 1976.",
+      "sources": [
+        "https://www.telegramacultural.com/elphomega/"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:josep-maria-mestres-quadreny": {
+      "name": "Josep Maria Mestres Quadreny",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3117533"
+      ],
+      "confidence": "alta",
+      "basis": "Compositor nascut a Manresa, segons la Reial Acadèmia Catalana de Belles Arts.",
+      "sources": [
+        "https://www.racba.org/es/academic/mestres-i-quadreny-josep-maria/"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:lluc": {
+      "name": "Lluc",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3109764"
+      ],
+      "confidence": "alta",
+      "basis": "La seva agència documenta el naixement a Santa Maria de Palautordera.",
+      "sources": [
+        "https://www.suricatmusic.cat/es/lluc"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:au-rora": {
+      "name": "Au Rora",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3108286"
+      ],
+      "confidence": "alta",
+      "basis": "L’Auditori presenta l’artista com a cantant de Terrassa.",
+      "sources": [
+        "https://www.auditori.cat/ca/esdeveniment/concert-emergents-au-rora/"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:ceaxe": {
+      "name": "Ceaxe",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3105600"
+      ],
+      "confidence": "alta",
+      "basis": "ELS40 identifica el cantant com a originari de Vilafranca del Penedès.",
+      "sources": [
+        "https://los40.com/2025/07/04/ceaxe-aquest-estiu-el-passo-amb-tu-la-seva-nova-aventura-estival/"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:llum": {
+      "name": "Llum",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3117164"
+      ],
+      "confidence": "alta",
+      "basis": "Llum Aymerich, nascuda a Mataró el 2003.",
+      "sources": [
+        "https://capgros.elnacional.cat/ca/mataro/estrella-mataronina-ha-inaugurat-millors-festivals-mon_815798_102.html"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:maria-bertomeu-i-soria": {
+      "name": "Maria Bertomeu i Soria",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:2513145"
+      ],
+      "confidence": "alta",
+      "basis": "La Maria és la cantant d’Oliva identificada per À Punt.",
+      "sources": [
+        "https://www.apuntmedia.es/programes/xino-xano/articles/musica-tradicional-bonica-funcional-s-adapta-moment-social-personal_1_1642552.html"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:orquestra-de-cadaques": {
+      "name": "Orquestra de Cadaqués",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3127117"
+      ],
+      "confidence": "alta",
+      "basis": "Creada el 1988 al Festival de Cadaqués, segons el CNDM.",
+      "sources": [
+        "https://cndm.inaem.gob.es/node/19448"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:orquestra-simfonica-del-gran-teatre-del-liceu": {
+      "name": "Orquestra Simfònica del Gran Teatre del Liceu",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "Orquestra titular del Gran Teatre del Liceu de Barcelona.",
+      "sources": [
+        "https://www.liceubarcelona.cat/ca/el-liceu/orquestra"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:orquestra-simfonica-del-valles": {
+      "name": "Orquestra Simfònica del Vallès",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:3111199"
+      ],
+      "confidence": "alta",
+      "basis": "Seu a Sabadell acreditada per la mateixa orquestra.",
+      "sources": [
+        "https://www.osvalles.com/ca/contacte.html"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:la-banda-trapera-del-rio": {
+      "name": "La Banda Trapera del Río",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3124569"
+      ],
+      "confidence": "alta",
+      "basis": "Grup sorgit al barri de Sant Ildefons de Cornellà de Llobregat.",
+      "sources": [
+        "https://lafonoteca.net/grupo/la-banda-trapera-del-rio/"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:la-bien-querida": {
+      "name": "La Bien Querida",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128026"
+      ],
+      "confidence": "alta",
+      "basis": "Ana Fernández-Villaverde va néixer a Bilbao; es distingeix de la residència posterior a Madrid.",
+      "sources": [
+        "https://cadenaser.com/nacional/2025/03/24/la-bien-querida-he-sentido-mas-machismo-en-gente-que-menos-te-lo-esperas-que-en-los-escenarios-cadena-ser/"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:rapsusklei": {
+      "name": "Rapsusklei",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3104324"
+      ],
+      "confidence": "alta",
+      "basis": "La biografia oficial situa el naixement a Saragossa el 1980.",
+      "sources": [
+        "https://rapsusklei.org/about/"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:el-ultimo-de-la-fila": {
+      "name": "El Último de la Fila",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "El Palau Sant Jordi documenta la formació del grup a Barcelona el 1985.",
+      "sources": [
+        "https://palausantjordi.barcelona/es/el-ultimo-de-la-fila"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:koji-kondo": {
+      "name": "Koji Kondo",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:1856057"
+      ],
+      "confidence": "alta",
+      "basis": "Compositor nascut a Nagoya el 1961.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Koji_Kondo"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:marlena": {
+      "name": "MARLENA",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3117735"
+      ],
+      "confidence": "alta",
+      "basis": "Duo fundat a Madrid; la web oficial el presenta entre les bandes locals madrilenyes.",
+      "sources": [
+        "https://marlenaoficial.com/2025/05/22/mahou-y-marlena-se-unen-para-rendir-homenaje-a-madrid-con-su-version-mas-castiza-y-pop-del-chotis/"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:julia-cruz": {
+      "name": "Júlia Cruz",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3122157"
+      ],
+      "confidence": "alta",
+      "basis": "La Universitat de Lleida identifica la cantautora com a fragatina.",
+      "sources": [
+        "https://udl.cat/ca/serveis/oficina/Noticies/Julia-Cruz-presenta-el-seu-darrer-treball-discografic-a-la-UdL/"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:jaume-balius-i-vila": {
+      "name": "Jaume Balius i Vila",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "Compositor nascut a Barcelona el 1750.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Jaime_Balius"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:manuel-espona": {
+      "name": "Manuel Espona",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3107941"
+      ],
+      "confidence": "alta",
+      "basis": "Nascut a Sant Feliu de Torelló, denominació històrica de Torelló, el 1714; no s’assigna Montserrat com a origen.",
+      "sources": [
+        "https://www.brilliantclassics.com/articles/e/espona-complete-piano-sonatas-vol-1/"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:orfeo-catala": {
+      "name": "Orfeó Català",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "Seu al Palau de la Música Catalana de Barcelona, segons la biografia oficial.",
+      "sources": [
+        "https://www.palaumusica.cat/ca/qui-som_1184413"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:l-aranna": {
+      "name": "L'arannà",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:3110643",
+        "territory:eivissa"
+      ],
+      "confidence": "alta",
+      "basis": "Procedències de les integrants segons la web oficial: Anna Sala, Sant Feliu de Guíxols; Lara Magrinyà, Eivissa. Eivissa es conserva a escala insular perquè la font no precisa municipi.",
+      "sources": [
+        "https://laranna.com/qui-som/"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:n-gai-n-gai": {
+      "name": "N'Gai N'Gai",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3110110"
+      ],
+      "confidence": "alta",
+      "basis": "La revista municipal de Sant Pol identifica el grup com a santpolenc.",
+      "sources": [
+        "https://www.santpol.cat/ARXIUS/2025/COMUNICACIO/ENS/Sant_Pol_ENS_119_DIGITAL.pdf"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:yacine-the-oriental-groove": {
+      "name": "Yacine & The Oriental Groove",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "Smithsonian documenta Barcelona com a ciutat base del grup multicultural.",
+      "sources": [
+        "https://www.smithsonianmag.com/smithsonian-institution/some-barcelonas-most-acclaimed-musicians-rock-rumba-washington-180969457/"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:electrotoylets": {
+      "name": "Electrotoylets",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3121456"
+      ],
+      "confidence": "alta",
+      "basis": "L’entrevista amb David Ibáñez identifica la banda com a sorgida a Girona.",
+      "sources": [
+        "https://www.elperiodico.cat/actualitat/20080613/el-grup-electrotoylets-recorre-a-69787"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:pesta-porcina": {
+      "name": "Pesta Porcina",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3107941"
+      ],
+      "confidence": "alta",
+      "basis": "La fitxa especialitzada de Metal Archives situa el grup a Torelló.",
+      "sources": [
+        "https://www.metal-archives.com/bands/Pesta_Porcina/23250"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true
     }
   },
   "channels": {
@@ -9018,7 +9652,17 @@
     "UCK3mJ6ChV2a26kecZHDb4lg": "artist:hereus-del-beat",
     "UCoQKWzy03Eh7EFrjM0Tuv1Q": "artist:bars",
     "UCLyS6_AjQKIbL4C2BByWjmQ": "artist:els-pets",
-    "UCUlJ_OU8GDvRqHTTzfkqz4A": "artist:scotty-dk"
+    "UCUlJ_OU8GDvRqHTTzfkqz4A": "artist:scotty-dk",
+    "UCDdlTgzfniVZApbfmtGpUPg": "artist:au-rora",
+    "UCOEzuNu9yvO0AFTnSVKk4LQ": "artist:au-rora",
+    "UCBKjT0edCSrQhqufwWaX5Zw": "artist:ceaxe",
+    "UCu05DiznV7Z3jDMGr6w5WTQ": "artist:ceaxe",
+    "UCe2Nri7Kj182fGm2CmWyfMw": "artist:maria-bertomeu-i-soria",
+    "UCAwpv0YEBlWCi9OeqTCw4FA": "artist:julia-cruz",
+    "UCNKGOTgFuVUOWK2djkKi3DQ": "artist:julia-cruz",
+    "UCmmjpWToEL-YuLqYEenGS0A": "artist:l-aranna",
+    "UCUDIBEazNh-20moPTsT_f2w": "artist:n-gai-n-gai",
+    "UCWmht-NuFvH4O3rkURaNFeQ": "artist:electrotoylets"
   },
   "excludedProfiles": {
     "UCdezTX23syEeAJJAb2oOkKA": {
