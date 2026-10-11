@@ -4,8 +4,8 @@
   "selection": "30 artistes encara sense assignació, ordenats pel nombre de vídeos song/live_song al feed; no és el recompte de tota la discografia.",
   "feedGeneratedAt": "2026-10-11T12:38:29.763Z",
   "reviewed": 30,
-  "validated": 29,
-  "pending": 1,
+  "validated": 30,
+  "pending": 0,
   "automaticEnrichmentEnabled": false,
   "artists": [
     {
@@ -698,19 +698,35 @@
       "applied": true
     },
     {
+      "artistId": "artist:falc-de-fetillera",
       "name": "Falç de Fetillera",
-      "status": "pending",
-      "applied": false,
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "Origen a Barcelona confirmat manualment per l'editor del catàleg el 11 d'octubre de 2026. La font enllaçada acredita la identitat del grup; la població prové de la correcció editorial.",
+      "sources": [
+        "https://falcdefetillera.bandcamp.com/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "user-correction",
+      "locked": true,
       "feedSongCount": 27,
       "channelIds": [
         "UCgVBViL3I9YWFVBHIyvcpjg",
         "UC8GlOjZpZMKHieUbeJ9eh7g"
       ],
-      "basis": "La biografia oficial confirma la identitat (abans Falç de Metzinera), però només indica Catalunya. Els llocs de concert no acrediten la població d'origen. Cal una font explícita o confirmació editorial.",
-      "sources": [
-        "https://falcdefetillera.bandcamp.com/",
-        "https://www.santandercreativa.com/eventos/djiin-y-falc-de-metzinera-nord-tour-23"
-      ]
+      "applied": true,
+      "previousDecision": {
+        "status": "pending",
+        "basis": "La biografia oficial confirma la identitat (abans Falç de Metzinera), però només indica Catalunya. Els llocs de concert no acrediten la població d'origen. Cal una font explícita o confirmació editorial.",
+        "sources": [
+          "https://falcdefetillera.bandcamp.com/",
+          "https://www.santandercreativa.com/eventos/djiin-y-falc-de-metzinera-nord-tour-23"
+        ]
+      }
     }
   ]
 }

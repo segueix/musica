@@ -529,6 +529,228 @@
       "type": "region",
       "coordinates": null,
       "territory": "País Valencià"
+    },
+    "geonames:2513106": {
+      "name": "Ontinyent",
+      "type": "municipality",
+      "geonamesId": 2513106,
+      "coordinates": {
+        "latitude": 38.82191,
+        "longitude": -0.60603,
+        "precision": "settlement_reference"
+      },
+      "territory": "País Valencià",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Ontinyent&count=5&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:3128201": {
+      "name": "Berga",
+      "type": "municipality",
+      "geonamesId": 3128201,
+      "coordinates": {
+        "latitude": 42.10429,
+        "longitude": 1.84628,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Berga&count=5&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:2519783": {
+      "name": "Castalla",
+      "type": "municipality",
+      "geonamesId": 2519783,
+      "coordinates": {
+        "latitude": 38.59694,
+        "longitude": -0.67207,
+        "precision": "settlement_reference"
+      },
+      "territory": "País Valencià",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Castalla&count=5&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:3129108": {
+      "name": "Aiguafreda",
+      "type": "municipality",
+      "geonamesId": 3129108,
+      "coordinates": {
+        "latitude": 41.76807,
+        "longitude": 2.25051,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Aiguafreda&count=5&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:3125442": {
+      "name": "Centelles",
+      "type": "municipality",
+      "geonamesId": 3125442,
+      "coordinates": {
+        "latitude": 41.79746,
+        "longitude": 2.21902,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Centelles&count=5&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:3117533": {
+      "name": "Manresa",
+      "type": "municipality",
+      "geonamesId": 3117533,
+      "coordinates": {
+        "latitude": 41.72815,
+        "longitude": 1.82399,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Manresa&count=5&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:3110813": {
+      "name": "Sant Celoni",
+      "type": "municipality",
+      "geonamesId": 3110813,
+      "coordinates": {
+        "latitude": 41.68921,
+        "longitude": 2.48965,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Sant+Celoni&count=5&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:3122824": {
+      "name": "Espolla",
+      "type": "municipality",
+      "geonamesId": 3122824,
+      "coordinates": {
+        "latitude": 42.3912,
+        "longitude": 3.00064,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Espolla&count=5&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:3121283": {
+      "name": "Castellet i la Gornal",
+      "type": "municipality",
+      "geonamesId": 3121283,
+      "coordinates": {
+        "latitude": 41.25,
+        "longitude": 1.6,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=la+Gornal&count=5&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11",
+      "coordinateNote": "Punt de referència del nucli de la Gornal, dins de Castellet i la Gornal; no és el centre geomètric del municipi."
+    },
+    "geonames:3129791": {
+      "name": "Arbúcies",
+      "type": "municipality",
+      "geonamesId": 3129791,
+      "coordinates": {
+        "latitude": 41.81667,
+        "longitude": 2.51667,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Arb%C3%BAcies&count=5&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:3125904": {
+      "name": "Castellbisbal",
+      "type": "municipality",
+      "geonamesId": 3125904,
+      "coordinates": {
+        "latitude": 41.47534,
+        "longitude": 1.98174,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Castellbisbal&count=5&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:2516389": {
+      "name": "Xaló",
+      "type": "municipality",
+      "geonamesId": 2516389,
+      "coordinates": {
+        "latitude": 38.74063,
+        "longitude": -0.01129,
+        "precision": "settlement_reference"
+      },
+      "territory": "País Valencià",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Xal%C3%B3&count=5&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:3124569": {
+      "name": "Cornellà de Llobregat",
+      "type": "municipality",
+      "geonamesId": 3124569,
+      "coordinates": {
+        "latitude": 41.35,
+        "longitude": 2.08333,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Cornell%C3%A0+de+Llobregat&count=5&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:3111294": {
+      "name": "Rubí",
+      "type": "municipality",
+      "geonamesId": 3111294,
+      "coordinates": {
+        "latitude": 41.49226,
+        "longitude": 2.03305,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Rub%C3%AD&count=5&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:2514991": {
+      "name": "Lloret de Vistalegre",
+      "type": "municipality",
+      "geonamesId": 2514991,
+      "coordinates": {
+        "latitude": 39.61835,
+        "longitude": 2.97493,
+        "precision": "settlement_reference"
+      },
+      "territory": "Illes Balears",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Lloret+de+Vistalegre&count=5&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:2522012": {
+      "name": "Algemesí",
+      "type": "municipality",
+      "geonamesId": 2522012,
+      "coordinates": {
+        "latitude": 39.19042,
+        "longitude": -0.43572,
+        "precision": "settlement_reference"
+      },
+      "territory": "País Valencià",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Algemes%C3%AD&count=5&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:3111465": {
+      "name": "Roda de Ter",
+      "type": "municipality",
+      "geonamesId": 3111465,
+      "coordinates": {
+        "latitude": 41.98246,
+        "longitude": 2.31125,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Roda+de+Ter&count=5&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
     }
   },
   "artists": {
@@ -1527,6 +1749,515 @@
       "reviewedOn": "2026-10-11",
       "assignmentSource": "manual-review",
       "locked": true
+    },
+    "artist:falc-de-fetillera": {
+      "name": "Falç de Fetillera",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "Origen a Barcelona confirmat manualment per l'editor del catàleg el 11 d'octubre de 2026. La font enllaçada acredita la identitat del grup; la població prové de la correcció editorial.",
+      "sources": [
+        "https://falcdefetillera.bandcamp.com/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "user-correction",
+      "locked": true
+    },
+    "artist:maria-del-mar-bonet": {
+      "name": "Maria del Mar Bonet",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:2512989"
+      ],
+      "confidence": "alta",
+      "basis": "Cantant nascuda a Palma; origen documentat per les universitats que li han atorgat distincions.",
+      "sources": [
+        "https://www.uib.cat/documents/d/uib-www/bonet-pdf",
+        "https://www.uab.cat/web/sala-de-premsa/detall-noticia/maria-del-mar-bonet-i-alicia-casals-rebran-la-medalla-d-honor-de-la-xarxa-vives-a-la-uab-1345829508832.html?detid=1345863206136"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:pau-vallve-navarro": {
+      "name": "Pau Vallvé Navarro",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "Músic originari de Barcelona, com documenten les entrevistes biogràfiques; no es confon amb etapes posteriors a Banyoles.",
+      "sources": [
+        "https://www.eltemps.cat/article/11423/ser-felic-no-nomes-es-estar-content-te-un-punt-de-tristesa-i-capitulacio",
+        "https://www.ara.cat/cultura/pau-vallve-entrevista-disc-vida-es-ara_1_1016315.html"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:auxili": {
+      "name": "Auxili",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:2513106"
+      ],
+      "confidence": "alta",
+      "basis": "La biografia oficial situa la formació del grup a Ontinyent.",
+      "sources": [
+        "https://www.auxili.net/biografia-2/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:brams": {
+      "name": "Brams",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128201"
+      ],
+      "confidence": "alta",
+      "basis": "El dossier de premsa i la informació de 3Cat situen el naixement de la banda a Berga.",
+      "sources": [
+        "https://assets.zyrosite.com/Aq2JLQ4E0EhJQyy3/dossier_brams_2026-PGXQ8AbyeWriZWVz.pdf",
+        "https://www.3cat.cat/3catinfo/brams-treuen-nou-disc-quatre-anys-despres-de-la-gira-de-retrobament/noticia/2377021/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:el-diluvi": {
+      "name": "El Diluvi",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:2519783"
+      ],
+      "confidence": "alta",
+      "basis": "Castalla és la població de referència del grup. El Col·lectiu Ovidi Montllor precisa que els membres provenen també d'altres poblacions de l'Alcoià.",
+      "sources": [
+        "https://elcom.cat/artistes/el-diluvi",
+        "https://www.enderrock.cat/edrvalencia/numero77/noticia/521"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:els-amics-de-les-arts": {
+      "name": "Els Amics de les Arts",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "La biografia oficial explica que el grup va sorgir d'uns amics que compartien pis a Barcelona.",
+      "sources": [
+        "https://www.elsamicsdelesarts.cat/the-band/",
+        "https://www.enciclopedia.cat/gran-enciclopedia-catalana/els-amics-de-les-arts"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:els-catarres": {
+      "name": "Els Catarres",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3129108",
+        "geonames:3125442"
+      ],
+      "confidence": "alta",
+      "basis": "Grup identificat amb Aiguafreda i Centelles; es conserven les dues poblacions, sense reduir-lo al municipi d'un sol membre.",
+      "sources": [
+        "https://guia.barcelona.cat/ca/detall/concert-els-catarres_99400783383.html",
+        "https://www.aiguafreda.cat/actualitat/noticies/els-catarres-seran-a-la-festa-major-daiguafreda.html"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:flashy-ice-cream": {
+      "name": "Flashy Ice Cream",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3111199"
+      ],
+      "confidence": "alta",
+      "basis": "Les entrevistes al grup documenten l'origen sabadellenc del projecte.",
+      "sources": [
+        "https://www.diaridebarcelona.cat/w/flashy-ice-cream-real-morirse-gana-trap-rap",
+        "https://www.enderrock.cat/noticia/24724/flashy-ice-cream-es-molt-dificil-aconseguir-viure-musica-si-cantes-catala-nom-fas-trap"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:minibus-intergalactic": {
+      "name": "Minibús intergalàctic",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3121456"
+      ],
+      "confidence": "alta",
+      "basis": "La Casa de la Música presenta el grup com a originari de Girona, on es van conèixer els seus cinc membres.",
+      "sources": [
+        "https://www.casadelamusica.cat/index.php/fitxes-artistes/1467-minibus-intergalactic"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:mishima": {
+      "name": "Mishima",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "Grup format a Barcelona, segons les biografies d'AllMusic i Time Out.",
+      "sources": [
+        "https://www.allmusic.com/artist/mishima-mn0000496950",
+        "https://www.timeout.es/madrid/es/musica/mishima"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:pawn-gang": {
+      "name": "Pawn Gang",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "Col·lectiu sorgit al barri de Gràcia de Barcelona; es desa el municipi i es conserva el barri com a context.",
+      "sources": [
+        "https://www.editorialbase.cat/llibres/514",
+        "https://www.vilaweb.cat/noticies/pawn-gang-entrevista-drogues-respawn/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:jo-jet-i-maria-ribot": {
+      "name": "Jo Jet i Maria Ribot",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3117533"
+      ],
+      "confidence": "alta",
+      "basis": "Duet manresà, documentat a la fitxa del concurs Sons i a la programació del Kursaal.",
+      "sources": [
+        "https://www.enderrock.cat/sons/grupsons2013/78/jet/maria/ribot",
+        "https://www.kursaal.cat/programacio/acte/jo-jet-i-maria-ribot-3"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:joan-colomo": {
+      "name": "Joan Colomo",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3110813"
+      ],
+      "confidence": "alta",
+      "basis": "Cantautor originari de Sant Celoni; les entrevistes hi situen també els seus primers passos musicals.",
+      "sources": [
+        "https://www.ara.cat/societat/joancolomo-musica-teatre-precarietat-endemica_1_2371992.html",
+        "https://www.vilaweb.cat/noticies/joan-colomo-magrada-viure-al-marge-del-que-esta-establert-pero-en-realitat-faig-un-producte-poc-underground/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:jofre-bardagi-grima": {
+      "name": "Jofre Bardagí Grima",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "Músic nascut a Barcelona segons l'entrevista d'ARA i la referència biogràfica d'Enderrock.",
+      "sources": [
+        "https://www.ara.cat/cultura/jofre-bardagi-tenia-volia-tranquil_1_2648472.html",
+        "https://www.enderrock.cat/noticia/26615/21-agost-avui-aniversari-jofre-bardagi"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:la-ludwig-band": {
+      "name": "La Ludwig Band",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3122824"
+      ],
+      "confidence": "alta",
+      "basis": "Quim Carandell explica que el grup va començar a tocar i va muntar el primer estudi a Espolla. És l'origen del projecte, no el lloc de naixement de tots els membres.",
+      "sources": [
+        "https://www.timeout.cat/barcelona/ca/noticies/la-ludwig-band-vam-veure-que-el-dylan-no-funcionava-i-vam-decidir-copiar-el-bruce-100323",
+        "https://www.3cat.cat/3catinfo/la-ludwig-band-premi-cerveri-2022-a-millor-lletra-de-canco-en-catala/noticia/3185476/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:marina-rossell": {
+      "name": "Marina Rossell",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3121283"
+      ],
+      "confidence": "alta",
+      "basis": "La biografia oficial situa el naixement i la infància a la Gornal, nucli del municipi de Castellet i la Gornal, al Penedès.",
+      "sources": [
+        "https://marinarossell.com/bio/",
+        "https://marinarossell.bandcamp.com/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:remei-de-ca-la-fresca": {
+      "name": "Remei de Ca la Fresca",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3129791"
+      ],
+      "confidence": "alta",
+      "basis": "El segell situa l'epicentre del grup a Arbúcies; 3Cat documenta que el quartet s'hi va formar.",
+      "sources": [
+        "https://theindianrunners.bandcamp.com/album/remei-de-ca-la-fresca",
+        "https://www.3cat.cat/3catinfo/remei-de-ca-la-fresca-el-grup-singular-que-triomfa-a-leurovisio-de-les-llengues-minoritaries/noticia-amp/3319129/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:the-tyets": {
+      "name": "The Tyets",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3117164"
+      ],
+      "confidence": "alta",
+      "basis": "El duet descriu Mataró com la seva ciutat i com el lloc on va créixer el projecte.",
+      "sources": [
+        "https://ateneus.cat/2023/11/14/revista-ateneus-entrevista-oriol-de-ramon-the-tyets/",
+        "https://www.diaridebarcelona.cat/w/entrevista-the-tyets"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:xicu": {
+      "name": "Xicu",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3125904"
+      ],
+      "confidence": "alta",
+      "basis": "Cesc Valverde identifica Castellbisbal com el seu poble i explica que hi va començar el primer disc abans de traslladar-se a Barcelona.",
+      "sources": [
+        "https://cadenaser.com/cataluna/2026/02/14/xicu-la-musica-mainstream-en-catala-posa-el-focus-a-lletres-buides-i-a-penya-que-no-explica-res-sercat/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:antonia-font": {
+      "name": "Antònia Font",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "territory:mallorca"
+      ],
+      "confidence": "alta",
+      "basis": "Es conserva l'origen mallorquí del conjunt a escala d'illa, sense convertir els llocs de naixement dels membres en un únic municipi.",
+      "sources": [
+        "https://naciodigital.cat/cultura-i-mitjans/antonia-font-mallorca-ja-no-es-paradis_1956809_102.html",
+        "https://www.enciclopedia.cat/gran-enciclopedia-catalana/antonia-font"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:aspencat": {
+      "name": "Aspencat",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:2516389"
+      ],
+      "confidence": "alta",
+      "basis": "La banda identifica Xaló com el punt de partida; l'entrevista a Ràdio Capital hi situa els inicis.",
+      "sources": [
+        "https://www.radiocapital.cat/aspencat-la-musica-es-la-nostra-manera-de-lluitar-i-canviar-el-mon/",
+        "https://www.facebook.com/aspencatoficial/?locale=es_LA"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:el-nota": {
+      "name": "El Nota",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:3124569"
+      ],
+      "confidence": "alta",
+      "basis": "La crònica de RTVE situa el projecte a Cornellà; es registra com a vinculació del grup, sense afirmar el naixement dels membres.",
+      "sources": [
+        "https://www.rtve.es/play/noticias/20090625/el-rap-de-el-bloke/282274.shtml",
+        "https://elnota.bandcamp.com/album/anem-a-fer-ho-f-cil"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:gertrudis": {
+      "name": "Gertrudis",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3119694"
+      ],
+      "confidence": "alta",
+      "basis": "L'Ajuntament de la Garriga i 3Cat identifiquen la formació com a grup garriguenc.",
+      "sources": [
+        "https://lagarriga.cat/actualitat/noticies/gertrudis-cap-de-cartell-de-la-festa-major-de-la-garriga",
+        "https://www.3cat.cat/3catinfo/gertrudis-tanca-25-anys-de-trajectoria-amb-un-ultim-concert-a-razzmatazz/noticia/3323414/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:gessami-boada": {
+      "name": "Gessamí Boada",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3117164"
+      ],
+      "confidence": "alta",
+      "basis": "Cantant i compositora nascuda a Mataró, segons la biografia del centre cultural La Farinera i la programació municipal de Sentmenat.",
+      "sources": [
+        "https://farinera.org/agenda/gessami-boada/",
+        "https://www.sentmenat.cat/actualitat/noticies/la-regidoria-de-cultura-impulsa-el-primer-cicle-de-concerts-amb-cantautores-femenines.html"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:isaak-aguila": {
+      "name": "Isaak Aguilà",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:3111294"
+      ],
+      "confidence": "alta",
+      "basis": "Es prioritza la vinculació amb Rubí, on l'artista explica la seva formació i trajectòria. Va néixer a Sabadell i actualment es presenta des de Reus; aquests fets no es confonen amb l'arrelament rubinenc.",
+      "sources": [
+        "https://www.totrubi.cat/actualitat/societat/isaak-aguila_2165014102.html",
+        "https://www.totrubi.cat/actualitat/cultura/isaak-aguila-music-rubinenc-l-objectiu-d-estudiar-no-ha-de-ser-guanyar-diners-sino-ser-felic_1976303102.html",
+        "https://www.enderrock.cat/sons/grupsons2021/2/isaak/aguila",
+        "https://www.isaakaguila.cat/varis"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:maig": {
+      "name": "Maig",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "La biografia de l'Agenda Cultural de la Generalitat identifica l'artista i productora com a originària de Barcelona.",
+      "sources": [
+        "https://agenda.cultura.gencat.cat/ca/activitat.html/20260417016/maig",
+        "https://guia.barcelona.cat/es/agenda/detall/concierto-maig_99400784454.html"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:maria-jaume": {
+      "name": "Maria Jaume",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:2514991"
+      ],
+      "confidence": "alta",
+      "basis": "El CCCB i les entrevistes identifiquen Lloret de Vistalegre com el poble d'origen de la cantautora.",
+      "sources": [
+        "https://www.cccb.org/ca/w/participants/maria-jaume",
+        "https://www.eltemps.cat/article/67312/maria-jaume-podem-xerrar-de-coses-que-ens-importen-de-manera-divertida-i-accessible"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:naina": {
+      "name": "Naina",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:2522012"
+      ],
+      "confidence": "alta",
+      "basis": "Aina Escrivà, Naina, és d'Algemesí, com documenten les entrevistes d'Enderrock i El Temps.",
+      "sources": [
+        "https://www.enderrock.cat/noticia/29410/naina-coses-no-son-complicades-nosaltres-fem",
+        "https://www.eltemps.cat/article/67022/naina-fer-musica-en-valencia-es-fer-politica"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:oques-grasses": {
+      "name": "Oques Grasses",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3111465"
+      ],
+      "confidence": "alta",
+      "basis": "La fitxa del Sona9 i l'entrevista dels inicis del grup el situen a Roda de Ter.",
+      "sources": [
+        "https://www.enderrock.cat/sona9/grup2011/211/oques/grasses",
+        "https://www.auva.cat/entrevistem-a-oques-grasses/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
     }
   },
   "channels": {
@@ -1626,6 +2357,64 @@
     "UCqlbDl192qJeA3gpIFkVhVA": "artist:rapsodes",
     "UCuvGkVD3aN6ncVC6-EN8Wfw": "artist:rapsodes",
     "UCleNuGpCliL0P7B2eAI4U_Q": "artist:sopa-de-cabra",
-    "UCElrxQjQH5yoQAZU8fNtgpw": "artist:sopa-de-cabra"
+    "UCElrxQjQH5yoQAZU8fNtgpw": "artist:sopa-de-cabra",
+    "UCgVBViL3I9YWFVBHIyvcpjg": "artist:falc-de-fetillera",
+    "UC8GlOjZpZMKHieUbeJ9eh7g": "artist:falc-de-fetillera",
+    "UCJtO_dvu5AOSjtz1cWWpV0Q": "artist:maria-del-mar-bonet",
+    "UCLgDhaK2cT63xw3fKKkU1_g": "artist:maria-del-mar-bonet",
+    "UCNzFLySm2-AVSBe_hyiY5Vw": "artist:pau-vallve-navarro",
+    "UCeYxr0JNg6FD1jeBPiERkZQ": "artist:pau-vallve-navarro",
+    "UCflfVr855Oze52vJjp_gmfg": "artist:auxili",
+    "UCF61X-XZzSKlfnn3JIMIm9g": "artist:auxili",
+    "UCuk-lO3FpbukFk5lcPx29_g": "artist:brams",
+    "UC-QeigkuT0jVePTpc6laJxw": "artist:el-diluvi",
+    "UC1z2kyYBoovz6rXDKVbBH0g": "artist:el-diluvi",
+    "UCbP-zt6f5hDkqqVVnJcooHQ": "artist:els-amics-de-les-arts",
+    "UCPKDz8plx4-C1nhZKhhAhfQ": "artist:els-amics-de-les-arts",
+    "UCtrNm68UynCzT6DBC4Xq5sg": "artist:els-catarres",
+    "UCuaeVeuqfAO6a8EFjtmh6Ug": "artist:els-catarres",
+    "UCP-htfoFgQy1RLlGNntsQXw": "artist:flashy-ice-cream",
+    "UCnRFXP9nR0fh9BeIH7pZsZQ": "artist:flashy-ice-cream",
+    "UC6DmhC1mZqfYnQM72mg3PKw": "artist:minibus-intergalactic",
+    "UC2Dowy9wOm0M5R25Mu7v34w": "artist:minibus-intergalactic",
+    "UCG2FXKF44MdeDbLb66yb-rQ": "artist:mishima",
+    "UC_z4NPeGNySemAwaAihgbaQ": "artist:mishima",
+    "UCK3HgaeRN0-5mJkqvyB1hBA": "artist:pawn-gang",
+    "UC7b5PnElhJTDn_kM4ipKO7g": "artist:pawn-gang",
+    "UCiZ0Vjlvr_CNXtUU0WzSy1A": "artist:jo-jet-i-maria-ribot",
+    "UCzQX193kQwe6E3QbRLPz59g": "artist:jo-jet-i-maria-ribot",
+    "UCOROc49SeQwE15TiuBflV0g": "artist:joan-colomo",
+    "UCsNO9JMYvNgA6hEWFuhBk_w": "artist:joan-colomo",
+    "UCr0fPzOAhNwQbzy774xccOw": "artist:jofre-bardagi-grima",
+    "UC0BpfOdqXtofFVBklStzYMA": "artist:jofre-bardagi-grima",
+    "UC1M7jLDag1ddbI6e-arvfGw": "artist:la-ludwig-band",
+    "UCdtYbFDkfHhAQgY8AzDMVwQ": "artist:la-ludwig-band",
+    "UCtFrz4JJnpJq7dhxLNRwkdA": "artist:marina-rossell",
+    "UC5sHcbjiKxYUZ3G_0BQNBYQ": "artist:marina-rossell",
+    "UCIpVysRnHTbek1TON9dIF6Q": "artist:remei-de-ca-la-fresca",
+    "UCPLzO9EvgvibAyZCgJDxwyg": "artist:remei-de-ca-la-fresca",
+    "UC--8TyZ2PM0NFHWXCzQrUqw": "artist:the-tyets",
+    "UC0iUpe1JY-IBHXDSXIxTcCg": "artist:the-tyets",
+    "UCsZbZ9zubb6i4stTRiuiabw": "artist:xicu",
+    "UCUsvtjzfis5NZY8qj8BY_FQ": "artist:xicu",
+    "UCeiYZJsHIDALiJkzRkFWlAQ": "artist:antonia-font",
+    "UCALf4AsnFm6WhQSD6RGV5pg": "artist:antonia-font",
+    "UCcyD1Q9V5wfaGD1Z5CH1Nlw": "artist:aspencat",
+    "UCnygquYeJppJcbgD085undw": "artist:aspencat",
+    "UChMW6YylOdFelVBHnIsXM4Q": "artist:el-nota",
+    "UCCNpPo0bc8xsWYXVMvhg63Q": "artist:el-nota",
+    "UChYQSBa6bIG2yArpLA4ykvA": "artist:gertrudis",
+    "UCvqTGNjxbWceoaz4pkBSEzg": "artist:gertrudis",
+    "UCPsEb7F9DceUz4TsdfyuiBw": "artist:gessami-boada",
+    "UCRa2GTtcn1mkkSfPYQOGPhw": "artist:gessami-boada",
+    "UC76gEcL7sivyILBfwe54ETw": "artist:isaak-aguila",
+    "UCS9aWKrOcJsSqsJqBEouqAg": "artist:isaak-aguila",
+    "UCiJN7Igpjbpar_06XNFubcg": "artist:maig",
+    "UCfObID-K4ycs8Dllm-fLGEg": "artist:maria-jaume",
+    "UC3QJ1xC8aCwQdvTy-HTRwew": "artist:maria-jaume",
+    "UCJCUdj8MStJsApyF1oiFTVA": "artist:naina",
+    "UCTn8anEMvCsxpCMhyajKjrg": "artist:naina",
+    "UCJD6uhnBA8eppY5QmQfJZwA": "artist:oques-grasses",
+    "UCtq1tANqWFsrmS5XmCXY8qQ": "artist:oques-grasses"
   }
 }
