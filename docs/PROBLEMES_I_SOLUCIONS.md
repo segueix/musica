@@ -6,6 +6,8 @@
 
 **Serrat, nova indicació de l’editor:** es retira només la seva exclusió global i es recupera `@joanmanuelserrat`, amb 87 pistes dels nou discos d’estudi en català de 1967–1989. Els llançaments apareixen al canal oficial, però el distribuïdor de les gravacions és `UCrUiOJEGdgQEh6Ol4tPLJNg`: `allowedExternalVideos` autoritza cada parella ID/canal sense obrir la resta del repertori. Les cinc pistes de menys de dos minuts són cançons completes, registrades com a falsos Shorts. La revisió d’idioma i l’any original queden fixats per ID. `albums_musica.js` respecta l’any verificat manualment en comptes de mostrar la reedició de 2000, també en discos ja catalogats.
 
+**Verificació de la generació real:** `L’Olivera` es marcava `live_song` perquè el classificador trobava `live` dins d’`Olivera`; la selecció de discos d’estudi l’excloïa. Excepció manual `song` per a `HwdXKHxhyTI`, contrastada amb la pista Ariola del disc *Com ho fa el vent*. Es conserva el filtre només de discos i es regenera únicament Serrat.
+
 **Traçabilitat:** `docs/revisions/2026-10-12-restauracio-artistes.json` conté les llistes originals, els títols, els anys i els IDs verificats. El feed i els índexs es regeneren pel workflow ordinari només per als canals afectats; no s’editen manualment. Orígens incorporats amb fonts: Anna Andreu (Sant Quirze del Vallès), Guillem Ramisa (Roda de Ter) i Serrat (Barcelona).
 
 ## [2026-10-09] - Directes: ràdio pròpia i sessions convidades a la discografia

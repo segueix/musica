@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-11T22:10:00.000Z",
+  "updatedAt": "2026-10-11T23:12:58.056Z",
   "description": "Decisions manuals sobre el tipus de contingut de vídeos concrets. Manen sobre el classificador automàtic (scripts/lib/classificar_contingut_musical.js) i el pipeline (scripts/update_music_feed.js) les reaplica a cada generació del feed. Tipus permesos: song, live_song, album, other. Un vídeo revisat aquí surt de data/music-content-review.json.",
   "videos": [
     {
@@ -7646,6 +7646,11 @@
       "title": "S'ha Acabat (LIVE)",
       "contentType": "song",
       "note": "Els Pets: pista verificada dels nou llançaments seleccionats per l’editor al canal @阿亚伊奥 el 2026-10-11."
+    },
+    {
+      "id": "HwdXKHxhyTI",
+      "contentType": "song",
+      "note": "L’Olivera: pista d’estudi de Com ho fa el vent (1969), Ariola. El classificador trobava «live» dins d’«Olivera» i la marcava erròniament com a directe. Verificat a https://www.youtube.com/watch?v=HwdXKHxhyTI el 2026-10-12."
     }
   ]
 }

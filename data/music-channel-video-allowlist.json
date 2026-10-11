@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-11T23:03:20.925Z",
+  "updatedAt": "2026-10-11T23:12:58.056Z",
   "description": "Llista blanca per a canals on Segueix Música només ha d'ingerir vídeos concrets. Admet títols exactes, fragments obligatoris i fragments exclosos.",
   "channels": {
     "UCKpscwdWlVaMqcA81vLI7OA": {
@@ -4882,7 +4882,7 @@
     },
     "UC9twmdozj_iXRhX_FRZMwzw": {
       "artist": "Joan Manuel Serrat",
-      "note": "Selecció de l’editor: només nou discos antics d’estudi en català (1967–1989). Els 87 IDs i el canal distribuïdor s’han verificat a les llistes de llançaments de @joanmanuelserrat. Cap altra gravació, directe ni disc s’admet automàticament. Fonts a docs/revisions/2026-10-12-restauracio-artistes.json.",
+      "note": "Selecció de l’editor: només nou discos antics d’estudi en català (1967–1989). Els 87 IDs i el canal distribuïdor s’han verificat a les llistes de llançaments de @joanmanuelserrat. Cap altra gravació, directe ni disc s’admet automàticament. Fonts a docs/revisions/2026-10-12-restauracio-artistes.json. L’Olivera (HwdXKHxhyTI) és una pista d’estudi: classificació manual song per corregir el fals marcador live del títol.",
       "allowedVideoIds": [
         "CzyJSeByAmk",
         "R2S7dW4uHOk",
