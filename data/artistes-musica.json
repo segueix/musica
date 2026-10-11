@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-11T14:56:17.400Z",
+  "updatedAt": "2026-10-11T14:58:32.970Z",
   "artists": [
     {
       "name": "2 Princeses Barbudes",
@@ -24716,56 +24716,6 @@
         "Nova Cançó"
       ],
       "displayName": "Ovidi Montllor"
-    },
-    {
-      "name": "Palau",
-      "aliases": [],
-      "genres": [],
-      "territories": [],
-      "languages": [
-        "ca"
-      ],
-      "wikidataId": null,
-      "musicbrainzId": null,
-      "youtube": {
-        "channels": [
-          {
-            "id": "UCkGNJczVoESUwmJ3oejyM5w",
-            "handle": "@ferranpalauoficial",
-            "name": "Ferran Palau",
-            "type": "official",
-            "primary": true
-          }
-        ],
-        "candidates": []
-      },
-      "confidence": "alta",
-      "reviewStatus": "pendent",
-      "active": false,
-      "sources": [
-        "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026",
-        "youtube:manual-verified"
-      ],
-      "lastChecked": "2026-09-28T15:55:18.417Z",
-      "notes": "Grup nascut el 2025; indie-pop en català.",
-      "genresRaw": [],
-      "enrichment": {
-        "genres": {
-          "checkedAt": "2026-10-11T12:45:48.894Z",
-          "musicbrainzCheckedAt": null,
-          "musicbrainzTagsCheckedAt": null,
-          "musicbrainzReleaseCheckedAt": null,
-          "wikidataWorkCheckedAt": "2026-10-11T12:45:48.894Z",
-          "wikidataRaw": [],
-          "wikidataWorkRaw": [],
-          "musicbrainzRaw": [],
-          "musicbrainzTagsRaw": [],
-          "musicbrainzReleaseRaw": [],
-          "unmappedRaw": [],
-          "status": "sense-dades",
-          "wikidataWorkEvidence": []
-        }
-      }
     },
     {
       "name": "Panellet",

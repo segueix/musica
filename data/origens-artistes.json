@@ -3028,6 +3028,23 @@
       "reviewedOn": "2026-10-11",
       "assignmentSource": "manual-review",
       "locked": true
+    },
+    "artist:bocc": {
+      "name": "Bocc",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "El Bandcamp del mateix grup l'identifica amb Barcelona. La biografia del festival CastellHell situa explícitament la formació de Bocc a Barcelona el 2019.",
+      "sources": [
+        "https://bocc.bandcamp.com/music",
+        "https://castellhell.party/es/band/bocc"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
     }
   },
   "channels": {
@@ -3243,6 +3260,7 @@
     "UCn_A4CBnBwlD8OTXSz0_FHQ": "artist:ouineta",
     "UCuOXOJ1KW_sCpse10ImvXRg": "artist:ouineta",
     "UC7auRFIxjfkrZdsWPe7R_Qg": "artist:astral-warrior",
-    "UCh_dOmbZ0ZkjBEYDH96NNqQ": "artist:astral-warrior"
+    "UCh_dOmbZ0ZkjBEYDH96NNqQ": "artist:astral-warrior",
+    "UCR5qRB1oeWWJF8QhX7WmuXQ": "artist:bocc"
   }
 }

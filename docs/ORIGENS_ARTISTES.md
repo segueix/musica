@@ -2,7 +2,7 @@
 
 ## Estat: 11 d'octubre de 2026
 
-La fitxa mostra les assignacions validades de 119 artistes (213 canals oficials i Topic). En prémer la línia «Origen» o «Vinculat a» es despleguen el motiu i les fonts. Els perfils de programes i els artistes encara sense assignació no mostren la línia.
+La fitxa mostra les assignacions validades de 120 artistes (214 canals oficials i Topic). En prémer la línia «Origen» o «Vinculat a» es despleguen el motiu i les fonts. Els perfils de programes i els artistes encara sense assignació no mostren la línia.
 
 El [pilot inicial](ORIGENS_PILOT_30.md) tenia 22 casos documentats i 8 pendents. Una segona revisió ha validat Dusminguet, La Coixinera, Ebri Knight, Joan Miquel Oliver, Xarim Aresté i la vinculació de La Troba Kung-Fú amb la Garriga. Per a aquest últim, la biografia de Fourni Produccions a WOMEX documenta l'estudi propi a la Fournier; no afirmem que sigui el municipi de formació.
 
@@ -51,8 +51,14 @@ Falç de Fetillera queda assignat a Barcelona amb `assignmentSource: user-correc
 
 ## Quart lot de 30 artistes (11 d'octubre de 2026)
 
-S'han validat 29 assignacions; Palau queda pendent per un conflicte d'identitat: té assignat el canal de Ferran Palau, tot i que la descripció correspon a un altre grup. Es preserva l'origen de Ferran Palau a Esparreguera. [Decisions i fonts del lot](revisions/2026-10-11-origens-lot-04.json).
+S'han validat 29 assignacions. Palau s'ha retirat temporalment per petició editorial després de detectar que tenia assignat el canal de Ferran Palau, tot i que la descripció correspon a un altre grup. Es preserva l'origen de Ferran Palau a Esparreguera. [Decisions i fonts del lot](revisions/2026-10-11-origens-lot-04.json).
 
 Terratombats conserva Igualada, la Llacuna i Sant Vicenç dels Horts. Herba Negra es vincula al Camp de Túria i Cocentaina. Txarango es vincula a Sant Joan de les Abadesses, i Joan Isaac a Esplugues de Llobregat, sense confondre l'arrelament amb el lloc exacte de naixement. Astral Warrior es vincula a les Masies de Voltregà: les coordenades provenen directament de la divisió municipal de GeoNames i s'etiqueten com a referència municipal, no d'un nucli concret.
 
 Forja queda assignat a Terrassa amb `assignmentSource: user-correction` i `locked: true`; el lot 03 conserva el motiu de la decisió pendent anterior. Es preserven íntegrament les 89 assignacions anteriors. No s'ha activat l'enriquiment automàtic ni la ràdio per proximitat.
+
+## Següent grup: Bocc (11 d'octubre de 2026)
+
+Bocc queda assignat a Barcelona, amb la biografia del grup a Bandcamp i la fitxa del festival CastellHell com a fonts. Era el següent grup pendent amb 20 cançons/directes al feed. [Decisió i fonts](revisions/2026-10-11-origen-bocc.json).
+
+Palau s'ha eliminat del catàleg i de la llista de canals verificats, amb exclusió editorial temporal pel nom exacte. S'ha retirat també l'etiqueta incorrecta de les metadades del feed i de l'índex de canals. El canal, les cançons i l'origen de Ferran Palau es conserven íntegrament.

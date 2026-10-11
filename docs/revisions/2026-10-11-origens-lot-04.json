@@ -5,7 +5,7 @@
   "feedGeneratedAt": "2026-10-11T12:38:29.763Z",
   "reviewed": 30,
   "validated": 29,
-  "pending": 1,
+  "pending": 0,
   "automaticEnrichmentEnabled": false,
   "artists": [
     {
@@ -704,20 +704,30 @@
     },
     {
       "name": "Palau",
-      "status": "pending",
+      "status": "excluded",
       "applied": false,
       "feedSongCount": 22,
       "channelIds": [
         "UCkGNJczVoESUwmJ3oejyM5w"
       ],
-      "basis": "Conflicte d'identitat: la descripció correspon al grup Palau format el 2025, però el canal assignat és @ferranpalauoficial, de Ferran Palau. El recompte prové d'aquest canal i no acredita cançons del grup Palau. La fitxa del Sona9 documenta Palau a Barcelona; cal corregir i verificar el canal abans de publicar-ne l'origen. Es preserva Ferran Palau a Esparreguera.",
+      "basis": "Entrada retirada temporalment del catàleg per petició editorial el 11 d'octubre de 2026. No s'assigna cap origen. Es retira l'associació incorrecta al canal de Ferran Palau, que es conserva íntegrament.",
       "candidatePlaceIds": [
         "geonames:3128760"
       ],
       "sources": [
         "https://www.enderrock.cat/sona9/grup/225/palau",
         "https://www.youtube.com/@ferranpalauoficial"
-      ]
+      ],
+      "previousDecision": {
+        "status": "pending",
+        "basis": "Conflicte d'identitat: la descripció correspon al grup Palau format el 2025, però el canal assignat és @ferranpalauoficial, de Ferran Palau. El recompte prové d'aquest canal i no acredita cançons del grup Palau. La fitxa del Sona9 documenta Palau a Barcelona; cal corregir i verificar el canal abans de publicar-ne l'origen. Es preserva Ferran Palau a Esparreguera.",
+        "sources": [
+          "https://www.enderrock.cat/sona9/grup/225/palau",
+          "https://www.youtube.com/@ferranpalauoficial"
+        ]
+      },
+      "reviewedOn": "2026-10-11"
     }
-  ]
+  ],
+  "excluded": 1
 }

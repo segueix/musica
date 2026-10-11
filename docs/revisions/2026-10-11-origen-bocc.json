@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "reviewedOn": "2026-10-11",
+  "selection": "Primer artista pendent després del quart lot, per nombre de cançons i directes al feed, amb desempat pel nom en minúscules.",
+  "feedGeneratedAt": "2026-10-11T12:38:29.763Z",
+  "reviewed": 1,
+  "validated": 1,
+  "pending": 0,
+  "automaticEnrichmentEnabled": false,
+  "artists": [
+    {
+      "artistId": "artist:bocc",
+      "name": "Bocc",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "El Bandcamp del mateix grup l'identifica amb Barcelona. La biografia del festival CastellHell situa explícitament la formació de Bocc a Barcelona el 2019.",
+      "sources": [
+        "https://bocc.bandcamp.com/music",
+        "https://castellhell.party/es/band/bocc"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 20,
+      "channelIds": [
+        "UCR5qRB1oeWWJF8QhX7WmuXQ"
+      ],
+      "applied": true
+    }
+  ],
+  "catalogCorrection": {
+    "removedArtist": "Palau",
+    "temporary": true,
+    "reason": "Petició editorial; canal de Ferran Palau assignat erròniament.",
+    "preservedArtist": "Ferran Palau",
+    "removedEntry": {
+      "name": "Palau",
+      "aliases": [],
+      "genres": [],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCkGNJczVoESUwmJ3oejyM5w",
+            "handle": "@ferranpalauoficial",
+            "name": "Ferran Palau",
+            "type": "official",
+            "primary": true
+          }
+        ],
+        "candidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026",
+        "youtube:manual-verified"
+      ],
+      "lastChecked": "2026-09-28T15:55:18.417Z",
+      "notes": "Grup nascut el 2025; indie-pop en català.",
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-11T12:45:48.894Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-11T12:45:48.894Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
+    }
+  }
+}

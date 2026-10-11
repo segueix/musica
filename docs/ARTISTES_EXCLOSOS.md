@@ -50,3 +50,7 @@ La revisió de Viasona s'anirà fent progressivament. Quan es decideixi excloure
 Aquest document és un registre de treball. No s'ha d'eliminar un nom del llistat només perquè aparegui a Viasona, Wikidata, MusicBrainz o una altra font: la inclusió a Segueix Música depèn dels criteris editorials propis del projecte.
 
 Quan la revisió de Viasona avanci, aquest llistat s'anirà ampliant de manera acumulativa.
+
+## Baixa temporal del 11 d'octubre de 2026
+
+**Palau**: retirat per petició editorial mentre no es revisi la identitat del grup i el seu canal. S'elimina la vinculació incorrecta a `@FerranPalauOficial`; Ferran Palau i les seves cançons es conserven. L'exclusió és pel nom exacte «Palau», sense bloquejar cap canal compartit.
