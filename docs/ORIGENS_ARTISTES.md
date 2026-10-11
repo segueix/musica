@@ -2,7 +2,7 @@
 
 ## Estat: 12 d’octubre de 2026
 
-El registre conté assignacions validades de 422 artistes (520 canals oficials i Topic). La fitxa les mostra quan l’artista té un canal vinculat; les entrades sense canal queden documentades per a futures incorporacions. En prémer la línia «Origen» o «Vinculat a» es despleguen el motiu i les fonts. Els perfils de programes i els artistes encara sense assignació no mostren la línia.
+El registre conté assignacions validades de 451 artistes (539 canals oficials i Topic). La fitxa les mostra quan l’artista té un canal vinculat; les entrades sense canal queden documentades per a futures incorporacions. En prémer la línia «Origen» o «Vinculat a» es despleguen el motiu i les fonts. Els perfils de programes i els artistes encara sense assignació no mostren la línia.
 
 El [pilot inicial](ORIGENS_PILOT_30.md) tenia 22 casos documentats i 8 pendents. Una segona revisió ha validat Dusminguet, La Coixinera, Ebri Knight, Joan Miquel Oliver, Xarim Aresté i la vinculació de La Troba Kung-Fú amb la Garriga. Per a aquest últim, la biografia de Fourni Produccions a WOMEX documenta l'estudi propi a la Fournier; no afirmem que sigui el municipi de formació.
 
@@ -160,3 +160,13 @@ S’afegeixen 30 localitzacions, respectant totes les assignacions i correccions
 ASSAC! és de Barcelona; The Cabrians, de Mataró; Electrotoylets, de Girona, i Pesta Porcina, de Torelló. Ciment queda a la Plana de Vic, sense atribuir-li un municipi no documentat. L’arannà conserva les procedències de les integrants: Sant Feliu de Guíxols i Eivissa, aquesta última a escala insular. Les seus acreditades es mostren com a vinculació, no com a origen.
 
 El registre suma 422 artistes i 520 canals. Queden **30 artistes pendents: 2 actius i 28 inactius**. Club Social Carme continua exclòs expressament de la localització i del recompte de pendents.
+
+## Revisió dels darrers 30 artistes (12 d’octubre de 2026)
+
+S’han revisat els 30 pendents i s’han afegit 29 localitzacions amb fonts. [Decisions i fonts](revisions/2026-10-12-origens-lot-15.json). Es preserven les correccions anteriors, els canals i l’estat actiu/inactiu.
+
+Els Bourbons són de Barcelona i la Cobla Mediterrània, de Sabadell. Derbi Junior conserva la doble procedència Barcelona–Lluçanès. Tornaveus es vincula a les cinc procedències dels seus integrants, sense inventar un municipi únic de fundació. Hirsut, La Cobla, Perro Pachingo i Quartet Glinka incorporen vinculacions documentades.
+
+El marcador Q1029506 s’ha identificat com Camilo Sesto (Alcoi), mantenint-lo inactiu. L’arannà queda a Cançó d’autor i Electrònica, per petició de l’usuari.
+
+El registre suma **451 artistes i 539 canals**. Queda **1 artista pendent: Quatre Parets (inactiu)**, perquè manca confirmar-ne la identitat amb un enllaç. **No queda cap artista actiu pendent de localització.** Club Social Carme continua exclòs expressament de la localització i del recompte de pendents.

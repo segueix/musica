@@ -16108,8 +16108,8 @@
       "name": "L'arannà",
       "aliases": [],
       "genres": [
-        "Folk i arrel",
-        "Cançó d'autor"
+        "Cançó d'autor",
+        "Electrònica"
       ],
       "territories": [],
       "languages": [
@@ -16135,10 +16135,11 @@
       "sources": [
         "https://www.3cat.cat/3cat/catorze-veus-per-entendre-el-futur-del-pop-catala/audio/1244294/",
         "youtube:manual-verified",
-        "genre:manual"
+        "genre:manual",
+        "manual-user-2026-10-12"
       ],
       "lastChecked": "2026-09-28T15:55:19.166Z",
-      "notes": "Inclòs entre les noves veus del pop català.",
+      "notes": "Inclòs entre les noves veus del pop català. Gèneres corregits per petició de l’usuari el 2026-10-12: Cançó d’autor i Electrònica.",
       "genresRaw": [],
       "enrichment": {
         "genres": {
@@ -26810,8 +26811,10 @@
       "genresRaw": []
     },
     {
-      "name": "Q1029506",
-      "aliases": [],
+      "name": "Camilo Sesto",
+      "aliases": [
+        "Q1029506"
+      ],
       "genres": [
         "Pop",
         "Rock",
@@ -26838,7 +26841,7 @@
         "wikidata:native-language-catalan-musician"
       ],
       "lastChecked": "2026-09-25T15:56:15.786Z",
-      "notes": "",
+      "notes": "Identitat resolta el 2026-10-12: Q1029506 correspon a Camilo Sesto. Es conserva la fitxa inactiva sense canal ni ingestió.",
       "enrichment": {
         "musicbrainz": {
           "checkedAt": "2026-09-25T15:56:15.786Z",

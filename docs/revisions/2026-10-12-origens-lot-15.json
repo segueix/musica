@@ -1,0 +1,685 @@
+{
+  "reviewedOn": "2026-10-12",
+  "batch": 15,
+  "selection": {
+    "method": "Revisió dels 30 darrers pendents: 29 localitzacions documentades i 1 identitat no resolta. Es conserva l’estat actiu/inactiu."
+  },
+  "summary": {
+    "reviewed": 30,
+    "applied": 29,
+    "unresolved": 1,
+    "totals": {
+      "artists": 451,
+      "channels": 539,
+      "places": 185,
+      "municipalities": 167,
+      "territories": 18
+    },
+    "remaining": {
+      "withoutAssignment": 1,
+      "activeWithoutAssignment": 0,
+      "inactiveWithoutAssignment": 1,
+      "excludedProfiles": 1
+    }
+  },
+  "artists": [
+    {
+      "artistId": "artist:cristina-monllau",
+      "name": "Cristina Monllau",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3107677"
+      ],
+      "confidence": "alta",
+      "basis": "Procedència indicada a la selecció oficial del concurs Sona9 2026.",
+      "sources": [
+        "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "channelIds": [
+        "UCw1jsv2eynibpElkwzdJa2g"
+      ],
+      "catalogActive": false,
+      "applied": true
+    },
+    {
+      "artistId": "artist:elo",
+      "name": "Elo",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3117164"
+      ],
+      "confidence": "alta",
+      "basis": "Procedència indicada a la selecció oficial del concurs Sona9 2026.",
+      "sources": [
+        "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "channelIds": [
+        "UCBUcv--dB2dFkl6qhRO3JKA"
+      ],
+      "catalogActive": false,
+      "applied": true
+    },
+    {
+      "artistId": "artist:la-mousse",
+      "name": "La Mousse",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "Procedència indicada a la selecció oficial del concurs Sona9 2026.",
+      "sources": [
+        "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "channelIds": [
+        "UCdobjCKfq5FbF7eQL6C1VLw",
+        "UCRxi4RlTmeoc97rxkLxTiBQ"
+      ],
+      "catalogActive": false,
+      "applied": true
+    },
+    {
+      "artistId": "artist:mai-halis",
+      "name": "Mai Halis",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3106050"
+      ],
+      "confidence": "alta",
+      "basis": "Procedència indicada a la selecció oficial del concurs Sona9 2026.",
+      "sources": [
+        "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "channelIds": [
+        "UCelei-fP98dp5R8j-tLBnNw",
+        "UCwYR6Axoc2mEKz89P8t4N5Q"
+      ],
+      "catalogActive": false,
+      "applied": true
+    },
+    {
+      "artistId": "artist:paula-montalban",
+      "name": "Paula Montalbán",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:2509954"
+      ],
+      "confidence": "alta",
+      "basis": "Procedència indicada a la selecció oficial del concurs Sona9 2026.",
+      "sources": [
+        "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "channelIds": [
+        "UCZJX-lH3Hs2EfgNigx7F0Hg",
+        "UCboGC6e3sTTIO9C6lHxifnA"
+      ],
+      "catalogActive": false,
+      "applied": true
+    },
+    {
+      "artistId": "artist:pla-moguda",
+      "name": "Pla Moguda",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3110583"
+      ],
+      "confidence": "alta",
+      "basis": "Procedència indicada a la selecció oficial del concurs Sona9 2026.",
+      "sources": [
+        "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "channelIds": [
+        "UCEMQa0poTrwLZPEbB0HGJTA"
+      ],
+      "catalogActive": false,
+      "applied": true
+    },
+    {
+      "artistId": "artist:roser-dresaire",
+      "name": "Roser Dresaire",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3117164"
+      ],
+      "confidence": "alta",
+      "basis": "Procedència indicada a la selecció oficial del concurs Sona9 2026.",
+      "sources": [
+        "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "channelIds": [
+        "UCweQDbLnNXxU6M14_vSP7KQ",
+        "UCjdDE__u_koL76SqkY0jYJg"
+      ],
+      "catalogActive": false,
+      "applied": true
+    },
+    {
+      "artistId": "artist:anonymous-grup",
+      "name": "Anonymous (grup)",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3041563"
+      ],
+      "confidence": "alta",
+      "basis": "Formació andorrana creada a Andorra la Vella el 2004.",
+      "sources": [
+        "https://www.eurovisionuniverse.com/encyclopedia/anonymous/"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "channelIds": [],
+      "catalogActive": false,
+      "applied": true
+    },
+    {
+      "artistId": "artist:arreu",
+      "name": "Arreu",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:2517880"
+      ],
+      "confidence": "alta",
+      "basis": "El grup de música d’arrel situa explícitament el seu inici a Esporles el maig de 2012.",
+      "sources": [
+        "https://arreu.bandcamp.com/album/arreu-musica-i-arrel"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "channelIds": [],
+      "catalogActive": false,
+      "applied": true
+    },
+    {
+      "artistId": "artist:ayryn",
+      "name": "Ayryn",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3109981"
+      ],
+      "confidence": "alta",
+      "basis": "La biografia de l’agència identifica la cantant amb Santa Coloma de Gramenet.",
+      "sources": [
+        "https://evisual.cat/team/ayryn/"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "channelIds": [
+        "UCRgcGfe-4b4n3quUIKZa_AA",
+        "UCF0gz817gR4oCPDwd6bqRuw"
+      ],
+      "catalogActive": false,
+      "applied": true
+    },
+    {
+      "artistId": "artist:berta",
+      "name": "Berta",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3110144"
+      ],
+      "confidence": "alta",
+      "basis": "Berta Peñalver Grau, cantautora coneguda com Berta, de Premià de Dalt; es distingeix d’altres cantants homònimes.",
+      "sources": [
+        "https://www.acordscatala.cat/ca/berta",
+        "https://www.wikidata.org/wiki/Q8247042"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "channelIds": [],
+      "catalogActive": false,
+      "applied": true
+    },
+    {
+      "artistId": "artist:calagher",
+      "name": "Calagher",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3117164"
+      ],
+      "confidence": "alta",
+      "basis": "Entrevista que identifica Carles Luis i els seus col·laboradors com a mataronins.",
+      "sources": [
+        "https://www.enderrock.cat/noticia/28021/dani6ix-izzkid-kuu-enmatu-cloe-calagher-ayryn-juls-nou-pop-urba"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "channelIds": [],
+      "catalogActive": false,
+      "applied": true
+    },
+    {
+      "artistId": "artist:cobla-mediterrania",
+      "name": "Cobla Mediterrània",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3111199"
+      ],
+      "confidence": "alta",
+      "basis": "El reportatge sobre Josep Maria Serracant documenta el naixement de la cobla a Sabadell i els primers assajos al municipi.",
+      "sources": [
+        "https://vallesos.cat/21/noms-traces/81c45612"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "channelIds": [],
+      "catalogActive": false,
+      "applied": true
+    },
+    {
+      "artistId": "artist:daveu",
+      "name": "Daveu",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "El perfil del Sona9 identifica Adrià Úbeda Soler i l’inici del projecte al barri de Nou Barris de Barcelona.",
+      "sources": [
+        "https://www.enderrock.cat/sona9/grups/pagina10"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "channelIds": [
+        "UCFRzEt990b8xiMQ9soWNegw",
+        "UCQgDn86_83DIsAggpRadifg"
+      ],
+      "catalogActive": false,
+      "applied": true
+    },
+    {
+      "artistId": "artist:derbi-junior",
+      "name": "Derbi Junior",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760",
+        "territory:llucanes"
+      ],
+      "confidence": "alta",
+      "basis": "Doble procedència declarada pels integrants: Barcelona i Lluçanès. La segona es manté a escala comarcal.",
+      "sources": [
+        "https://www.ruta66.es/2024/05/breves/estrenamos-el-vi-que-alimenta-de-derbi-junior/"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "channelIds": [
+        "UCnmFh1j3xvDfrw20AqVgegw",
+        "UCjPkVZQJXgxwbkx2yE5uHig"
+      ],
+      "catalogActive": false,
+      "applied": true
+    },
+    {
+      "artistId": "artist:els-bourbons",
+      "name": "Els Bourbons",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "El seu segell Salseta Discos els descriu explícitament com a grup de pop-rock barceloní, autor d’Ous de reig.",
+      "sources": [
+        "https://www.salseta.cat/cat/salseta_discos.php"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "channelIds": [
+        "UC1GY1MkV-zNT_8Mv-GANOLA"
+      ],
+      "catalogActive": true,
+      "applied": true
+    },
+    {
+      "artistId": "artist:esther-querol-forner",
+      "name": "Esther Querol Forner",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3104584"
+      ],
+      "confidence": "alta",
+      "basis": "Identitat completa de la cantant ESTHER, nascuda a Vinaròs.",
+      "sources": [
+        "https://lletraferit.com/musica/esther-arrel-i-personalitat/"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "channelIds": [],
+      "catalogActive": false,
+      "applied": true
+    },
+    {
+      "artistId": "artist:grans-amb-pus",
+      "name": "Grans amb Pus",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3126317"
+      ],
+      "confidence": "alta",
+      "basis": "Les fonts de l’escena hardcore identifiquen la banda com a originària de Cardedeu; no es confon amb GransNPus de Ciutadella.",
+      "sources": [
+        "https://punkscatalunya.blogspot.com/2011/04/grans-amb-pus-els-aturats-no-canten.html",
+        "https://santandreupunk.blogspot.com/2019/"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "channelIds": [],
+      "catalogActive": false,
+      "applied": true
+    },
+    {
+      "artistId": "artist:hirsut",
+      "name": "Hirsut",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "Vinculació acreditada per les biografies dels integrants Gaspar Alloza i Miquel Rodrigo, tots dos de Barcelona. No es dedueix un lloc de fundació únicament dels concerts.",
+      "sources": [
+        "https://bord.band/banda/"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "channelIds": [],
+      "catalogActive": false,
+      "applied": true
+    },
+    {
+      "artistId": "artist:jose-domingo",
+      "name": "Jose Domingo",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3121456"
+      ],
+      "confidence": "alta",
+      "basis": "L’artista es presenta com a músic de Girona al seu web i al seu Bandcamp.",
+      "sources": [
+        "https://josedomingomusica.wixsite.com/josedomingo/prensa",
+        "https://josedomingo.bandcamp.com/music"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "channelIds": [],
+      "catalogActive": false,
+      "applied": true
+    },
+    {
+      "artistId": "artist:la-cobla",
+      "name": "La Cobla",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "Base declarada al Bandcamp propi del grup punk La Cobla; no correspon a una cobla sardanista.",
+      "sources": [
+        "https://lacobla.bandcamp.com/album/e-p"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "channelIds": [],
+      "catalogActive": false,
+      "applied": true
+    },
+    {
+      "artistId": "artist:muluk-el-hwa",
+      "name": "Muluk El Hwa",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:2542997"
+      ],
+      "confidence": "alta",
+      "basis": "RTVE documenta la fundació del grup a Marràqueix i la col·laboració amb Al Tall.",
+      "sources": [
+        "https://www.rtve.es/play/audios/los-ultrasonicos/kiko-helguera-afrohuellas-musica-africana-espana-29-05-22/6561019/"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "channelIds": [],
+      "catalogActive": false,
+      "applied": true
+    },
+    {
+      "artistId": "artist:nusar3000",
+      "name": "nusar3000",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3117735"
+      ],
+      "confidence": "alta",
+      "basis": "Procedència documentada a la biografia artística. Assignació només a la fitxa inactiva: es conserva la baixa explícita, sense recuperar canals ni contingut.",
+      "sources": [
+        "https://www.entradas.com/en/artist/nusar3000/"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "channelIds": [],
+      "catalogActive": false,
+      "applied": true
+    },
+    {
+      "artistId": "artist:perro-pachingo",
+      "name": "Perro Pachingo",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:3119099"
+      ],
+      "confidence": "alta",
+      "basis": "Base publicada pel mateix grup al seu Bandcamp.",
+      "sources": [
+        "https://perropachingo.bandcamp.com/album/contra-les-m-mies-mutants-de-la-generalitat-remaster-2026"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "channelIds": [],
+      "catalogActive": false,
+      "applied": true
+    },
+    {
+      "artistId": "artist:camilo-sesto",
+      "name": "Camilo Sesto",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:2522098"
+      ],
+      "confidence": "alta",
+      "basis": "Es resol el marcador Q1029506 com Camilo Sesto; l’Ajuntament d’Alcoi acredita la seva procedència alcoiana. La fitxa continua inactiva.",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q1029506",
+        "https://www.alcoi.org/ca/portal/noticias2026/noticia_0248.html"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "channelIds": [],
+      "catalogActive": false,
+      "applied": true
+    },
+    {
+      "artistId": "artist:quartet-glinka",
+      "name": "Quartet Glinka",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "El llibret discogràfic situa els músics fundadors de 1993 a Barcelona; s’anota com a vinculació del quartet.",
+      "sources": [
+        "https://studylib.es/doc/6121357/xavier-benguerel"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "channelIds": [],
+      "catalogActive": false,
+      "applied": true
+    },
+    {
+      "artistId": "artist:tomas-molina-i-bosch",
+      "name": "Tomàs Molina i Bosch",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3129028"
+      ],
+      "confidence": "alta",
+      "basis": "Procedència acreditada a la biografia publicada per la Universitat de Lleida.",
+      "sources": [
+        "https://www.udl.cat/ca/serveis/oficina/agenda/22-Setmana-de-la-Comunicacio-Temps-de-noticies---Tomas-Molina"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "channelIds": [],
+      "catalogActive": false,
+      "applied": true
+    },
+    {
+      "artistId": "artist:toni-cruz",
+      "name": "Toni Cruz",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3121456"
+      ],
+      "confidence": "alta",
+      "basis": "Nascut a Girona; es diferencia el seu origen del trasllat posterior a Canet de Mar.",
+      "sources": [
+        "https://www.3cat.cat/3catinfo/mor-toni-cruz-el-productor-televisiu-i-membre-de-la-trinca-als-78-anys/noticia-amp/3360645/"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "channelIds": [],
+      "catalogActive": false,
+      "applied": true
+    },
+    {
+      "artistId": "artist:tornaveus",
+      "name": "Tornaveus",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:3106050",
+        "geonames:3106492",
+        "geonames:3118514",
+        "geonames:3120073",
+        "geonames:3111199"
+      ],
+      "confidence": "alta",
+      "basis": "Vinculació amb les procedències documentades dels cinc integrants: Jaume Ayats (Vic), Iris Gayete (Valls), Ester G. Llop (Lleida), Heura Gaya (Juneda) i Anaís Falcó (Sabadell). No s’atribueix un municipi únic de fundació.",
+      "sources": [
+        "https://tornaveuspolifonies.wordpress.com/about/",
+        "https://conca.gencat.cat/ca/detall/article/Jaume-Ayats-00001",
+        "https://www.enderrock.cat/noticia/28646/anais-falco-manu-sabat-andrea-moliner-assumeixen-programacio-centre-artesa-tradicionarius"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "channelIds": [
+        "UC8vbtHPcQvQEuQi2wcwK6aQ"
+      ],
+      "catalogActive": true,
+      "applied": true
+    }
+  ],
+  "unresolved": [
+    {
+      "name": "Quatre Parets",
+      "applied": false,
+      "reason": "No s’ha pogut confirmar la identitat del grup introduït com «Grup 5 Xavi». Les cerques retornen cançons homònimes i un espectacle d’Anna Tobella, Maria Mora i Joan Bagés a Cal Prim, però no acrediten que sigui el mateix projecte ni una procedència. Cal un enllaç del grup.",
+      "sources": [
+        "https://www.somsegarra.cat/cultura/acte/10005/14e-cicle-de-concerts-a-cal-prim",
+        "https://rampaire.bandcamp.com/track/quatre-parets"
+      ]
+    }
+  ],
+  "remainingArtists": [
+    "Quatre Parets"
+  ],
+  "genreCorrection": {
+    "name": "L'arannà",
+    "genres": [
+      "Cançó d'autor",
+      "Electrònica"
+    ],
+    "source": "user-request-2026-10-12"
+  },
+  "identityCorrection": {
+    "previousName": "Q1029506",
+    "name": "Camilo Sesto",
+    "active": false
+  },
+  "preservedExclusions": {
+    "UCdezTX23syEeAJJAb2oOkKA": {
+      "name": "Club Social Carme",
+      "reason": "Cicle de sessions ubicat a Barcelona segons l’editor. No s’assigna origen al cicle ni al seu canal: cada grup participant ha de conservar la seva pròpia procedència. No inferir Barcelona per als intèrprets a partir del local.",
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "user-correction",
+      "locked": true
+    }
+  }
+}
