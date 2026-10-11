@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-11T21:46:38.229Z",
+  "generatedAt": "2026-10-11T21:57:08.899Z",
   "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
   "restrictedVideoCount": 21,
@@ -1455,13 +1455,6 @@
       "name": "Baixa Fidelitat",
       "tracks": 13,
       "selected": 13,
-      "withClip": 0
-    },
-    {
-      "id": "UCGHuCX7ksRy8c0BvCwPoHsg",
-      "name": "Bars",
-      "tracks": 7,
-      "selected": 7,
       "withClip": 0
     },
     {
@@ -3124,6 +3117,13 @@
       "withClip": 0
     },
     {
+      "id": "UCoQKWzy03Eh7EFrjM0Tuv1Q",
+      "name": "The Bars",
+      "tracks": 67,
+      "selected": 67,
+      "withClip": 0
+    },
+    {
       "id": "UChFT46QMLdzzwd04aCTeyqg",
       "name": "The Demencials",
       "tracks": 40,
@@ -3337,10 +3337,10 @@
   "indexedChannelCount": 544,
   "resolvedChannelCount": 544,
   "feedChannelCount": 544,
-  "rawPublicVideoCount": 5990,
-  "feedVideoCount": 5466,
-  "acceptedMusicCount": 5426,
-  "categoryEligibleVideoCount": 5422,
+  "rawPublicVideoCount": 6050,
+  "feedVideoCount": 5526,
+  "acceptedMusicCount": 5486,
+  "categoryEligibleVideoCount": 5482,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
     "before": 0,
@@ -3349,8 +3349,8 @@
   },
   "contentReviewCount": 530,
   "contentTypeCounts": {
-    "song": 5281,
-    "live_song": 141,
+    "song": 5333,
+    "live_song": 149,
     "album": 4,
     "other": 34,
     "review": 530
@@ -3360,6 +3360,6 @@
   "channelsWithoutVideos": [],
   "channelsWithoutAcceptedMusic": [],
   "allIndexedChannelsVisible": true,
-  "publishedFeedVideoCount": 5466,
+  "publishedFeedVideoCount": 5471,
   "publishedShortVideoCount": 0
 }
