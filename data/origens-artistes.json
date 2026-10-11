@@ -8458,6 +8458,38 @@
       "reviewedOn": "2026-10-11",
       "assignmentSource": "manual-review",
       "locked": true
+    },
+    "artist:vademecum-fam": {
+      "name": "Vademecum FAM",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3110533"
+      ],
+      "confidence": "alta",
+      "basis": "Procedència a Sant Joan de les Abadesses indicada expressament per l’editor del catàleg.",
+      "sources": [
+        "https://www.youtube.com/@VademecumFAM"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "user-correction",
+      "locked": true
+    },
+    "artist:hereus-del-beat": {
+      "name": "Hereus del Beat",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3108286"
+      ],
+      "confidence": "alta",
+      "basis": "Procedència a Terrassa indicada expressament per l’editor del catàleg.",
+      "sources": [
+        "https://www.youtube.com/channel/UCK3mJ6ChV2a26kecZHDb4lg"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "user-correction",
+      "locked": true
     }
   },
   "channels": {
@@ -8969,7 +9001,9 @@
     "UC9i1uNb0GFrISNB2pctkvRg": "artist:reina",
     "UCcMzzxk70aJr9DecqJN6hhw": "artist:roger-padros-de-la-torre",
     "UCtOU3Q4qYA0FrcA1jtTjTvw": "artist:xucu-pa",
-    "UCBh82sG2OKv1J6Ij43mdFiw": "artist:zoo"
+    "UCBh82sG2OKv1J6Ij43mdFiw": "artist:zoo",
+    "UC_X_KBioMYCrmZyI7hbL8Pw": "artist:vademecum-fam",
+    "UCK3mJ6ChV2a26kecZHDb4lg": "artist:hereus-del-beat"
   },
   "excludedProfiles": {
     "UCdezTX23syEeAJJAb2oOkKA": {

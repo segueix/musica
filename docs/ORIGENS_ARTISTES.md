@@ -2,7 +2,7 @@
 
 ## Estat: 11 d'octubre de 2026
 
-El registre conté assignacions validades de 389 artistes (509 canals oficials i Topic). La fitxa les mostra quan l’artista té un canal vinculat; les entrades sense canal queden documentades per a futures incorporacions. En prémer la línia «Origen» o «Vinculat a» es despleguen el motiu i les fonts. Els perfils de programes i els artistes encara sense assignació no mostren la línia.
+El registre conté assignacions validades de 391 artistes (511 canals oficials i Topic). La fitxa les mostra quan l’artista té un canal vinculat; les entrades sense canal queden documentades per a futures incorporacions. En prémer la línia «Origen» o «Vinculat a» es despleguen el motiu i les fonts. Els perfils de programes i els artistes encara sense assignació no mostren la línia.
 
 El [pilot inicial](ORIGENS_PILOT_30.md) tenia 22 casos documentats i 8 pendents. Una segona revisió ha validat Dusminguet, La Coixinera, Ebri Knight, Joan Miquel Oliver, Xarim Aresté i la vinculació de La Troba Kung-Fú amb la Garriga. Per a aquest últim, la biografia de Fourni Produccions a WOMEX documenta l'estudi propi a la Fournier; no afirmem que sigui el municipi de formació.
 
@@ -146,3 +146,9 @@ S’afegeixen 30 assignacions documentades i es preserven íntegrament les 359 a
 At Versaris conserva les vinculacions amb Barcelona, Sabadell i Olesa de Montserrat; Pirat’s Sound Sistema, Barcelona i el Maresme sense coordenades comarcals inventades. La Brigada es vincula a Vilanova i la Geltrú; Pulpopop a Girona i Zetak a Arbizu pel seu creador Pello Reparaz. Reïna té origen a Manacor, distingit de la residència posterior a Barcelona. Emili Vendrell i Coutier és el fill, nascut a Barcelona el 1924; Francesca Madriguera queda a Igualada i Remigi Palmero a Alginet.
 
 El registre suma 389 artistes, 509 canals, 149 municipis i 15 territoris. Queden **61 artistes pendents: 6 actius i 55 inactius**. El recompte brut és de 62 entrades sense assignació, incloent-hi Club Social Carme, exclòs expressament dels pendents. Les assignacions sense canal queden documentades per a una futura vinculació de canals verificats.
+
+## Vademecum FAM i Hereus del Beat (11 d’octubre de 2026)
+
+S’incorporen Vademecum FAM, de Sant Joan de les Abadesses, i Hereus del Beat, de Terrassa, a Urbana. Les dues procedències són correccions de l’editor protegides amb `locked: true`. Vademecum queda limitat als 30 vídeos públics de les cinc llistes sol·licitades; Hereus del Beat incorpora el canal Topic indicat. [Selecció i comprovacions](revisions/2026-10-11-urban-vademecum-hereus.json).
+
+El registre suma 391 artistes i 511 canals. Queden 61 artistes pendents de procedència, sense comptar Club Social Carme, que conserva l’exclusió expressa.

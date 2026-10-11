@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-11T21:00:00.000Z",
+  "updatedAt": "2026-10-11T21:29:54.227Z",
   "description": "Decisions manuals sobre el tipus de contingut de vídeos concrets. Manen sobre el classificador automàtic (scripts/lib/classificar_contingut_musical.js) i el pipeline (scripts/update_music_feed.js) les reaplica a cada generació del feed. Tipus permesos: song, live_song, album, other. Un vídeo revisat aquí surt de data/music-content-review.json.",
   "videos": [
     {
@@ -6332,6 +6332,186 @@
       "title": "2ES feat. Selop - It's my time",
       "contentType": "other",
       "note": "Petició editorial explícita del 2026-10-11: incorporar les cançons de 2ES excepte BYE BYE i It’s my time."
+    },
+    {
+      "id": "2g_cPzbm4h4",
+      "contentType": "song",
+      "title": "Nu Drama - Ikigai [Prod. Isotonez] (ÀUDIO OFICIAL)",
+      "note": "Cançó de la selecció de l’editor dins les llistes oficials de Vademecum FAM; crèdits musicals i durada verificats a YouTube. Revisió 2026-10-11."
+    },
+    {
+      "id": "tTkIWmhGeZM",
+      "contentType": "song",
+      "title": "Nu Drama - Ziggurat [Prod. SH1] (ÀUDIO OFICIAL)",
+      "note": "Cançó de la selecció de l’editor dins les llistes oficials de Vademecum FAM; crèdits musicals i durada verificats a YouTube. Revisió 2026-10-11."
+    },
+    {
+      "id": "C8JCU4ku4Bs",
+      "contentType": "song",
+      "title": "Nu Drama - Supernova [Prod. Manu] (ÀUDIO OFICIAL)",
+      "note": "Cançó de la selecció de l’editor dins les llistes oficials de Vademecum FAM; crèdits musicals i durada verificats a YouTube. Revisió 2026-10-11."
+    },
+    {
+      "id": "r-BbYZvaHzQ",
+      "contentType": "song",
+      "title": "Nu Drama - Planta morta [Prod. Manu i T.Sombra] (ÀUDIO OFICIAL)",
+      "note": "Cançó de la selecció de l’editor dins les llistes oficials de Vademecum FAM; crèdits musicals i durada verificats a YouTube. Revisió 2026-10-11."
+    },
+    {
+      "id": "B6KJ7rzSVTs",
+      "contentType": "song",
+      "title": "Nu Drama - Alliance [Prod. SCXTT] (ÀUDIO OFICIAL)",
+      "note": "Cançó de la selecció de l’editor dins les llistes oficials de Vademecum FAM; crèdits musicals i durada verificats a YouTube. Revisió 2026-10-11."
+    },
+    {
+      "id": "_0Z9xMHtti0",
+      "contentType": "song",
+      "title": "Nu Drama - Eclipsi [Prod. Quantum Void] (ÀUDIO OFICIAL)",
+      "note": "Cançó de la selecció de l’editor dins les llistes oficials de Vademecum FAM; crèdits musicals i durada verificats a YouTube. Revisió 2026-10-11."
+    },
+    {
+      "id": "qG2N-bOuDEs",
+      "contentType": "song",
+      "title": "Nu Drama i Rare Namibian - 01. Asfalt i Edificis [Prod. T.Sombra] (VÍDEO OFICIAL)",
+      "note": "Cançó de la selecció de l’editor dins les llistes oficials de Vademecum FAM; crèdits musicals i durada verificats a YouTube. Revisió 2026-10-11."
+    },
+    {
+      "id": "YZbl66hZ_y4",
+      "contentType": "song",
+      "title": "Nu Drama i Rare Namibian - 02. Alabastre [Prod. T.Sombra] (ÀUDIO OFICIAL)",
+      "note": "Cançó de la selecció de l’editor dins les llistes oficials de Vademecum FAM; crèdits musicals i durada verificats a YouTube. Revisió 2026-10-11."
+    },
+    {
+      "id": "Egj34UDGK0o",
+      "contentType": "song",
+      "title": "Nu Drama i Rare Namibian - 03. Rinoceront de Sumatra [Prod. T.Sombra] (ÀUDIO OFICIAL)",
+      "note": "Cançó de la selecció de l’editor dins les llistes oficials de Vademecum FAM; crèdits musicals i durada verificats a YouTube. Revisió 2026-10-11."
+    },
+    {
+      "id": "yIAIMlWkMhU",
+      "contentType": "song",
+      "title": "Nu Drama - 01. Dark Ages",
+      "note": "Cançó de la selecció de l’editor dins les llistes oficials de Vademecum FAM; crèdits musicals i durada verificats a YouTube. Revisió 2026-10-11."
+    },
+    {
+      "id": "3XwOte1E5fo",
+      "contentType": "song",
+      "title": "Nu Drama - 02. Ghostwriter",
+      "note": "Cançó de la selecció de l’editor dins les llistes oficials de Vademecum FAM; crèdits musicals i durada verificats a YouTube. Revisió 2026-10-11."
+    },
+    {
+      "id": "7CO-Q2As-Nc",
+      "contentType": "song",
+      "title": "Nu Drama - 03. Doom Drama",
+      "note": "Cançó de la selecció de l’editor dins les llistes oficials de Vademecum FAM; crèdits musicals i durada verificats a YouTube. Revisió 2026-10-11."
+    },
+    {
+      "id": "Yq7mlSwxFAk",
+      "contentType": "song",
+      "title": "Nu Drama - 04. Just another one",
+      "note": "Cançó de la selecció de l’editor dins les llistes oficials de Vademecum FAM; crèdits musicals i durada verificats a YouTube. Revisió 2026-10-11."
+    },
+    {
+      "id": "cvbGUDQWSDk",
+      "contentType": "song",
+      "title": "Nu Drama - 05. Herba alta [Prod. T. Sombra]",
+      "note": "Cançó de la selecció de l’editor dins les llistes oficials de Vademecum FAM; crèdits musicals i durada verificats a YouTube. Revisió 2026-10-11."
+    },
+    {
+      "id": "j7CAAY7dyZM",
+      "contentType": "song",
+      "title": "Nu Drama - 07. Half Life",
+      "note": "Cançó de la selecció de l’editor dins les llistes oficials de Vademecum FAM; crèdits musicals i durada verificats a YouTube. Revisió 2026-10-11."
+    },
+    {
+      "id": "qrnDZkslC_c",
+      "contentType": "song",
+      "title": "Nu Drama - 08. Ode to road rage RMX",
+      "note": "Cançó de la selecció de l’editor dins les llistes oficials de Vademecum FAM; crèdits musicals i durada verificats a YouTube. Revisió 2026-10-11."
+    },
+    {
+      "id": "A8Cg_77ElsU",
+      "contentType": "song",
+      "title": "Nu Drama - 09. Extrasensorial",
+      "note": "Cançó de la selecció de l’editor dins les llistes oficials de Vademecum FAM; crèdits musicals i durada verificats a YouTube. Revisió 2026-10-11."
+    },
+    {
+      "id": "kV6YbWL-kSg",
+      "contentType": "song",
+      "title": "Nu Drama - 10. Desconfio de l'ètre",
+      "note": "Cançó de la selecció de l’editor dins les llistes oficials de Vademecum FAM; crèdits musicals i durada verificats a YouTube. Revisió 2026-10-11."
+    },
+    {
+      "id": "b5S3eQZAwsc",
+      "contentType": "song",
+      "title": "Nu Drama - 11. Matriu",
+      "note": "Cançó de la selecció de l’editor dins les llistes oficials de Vademecum FAM; crèdits musicals i durada verificats a YouTube. Revisió 2026-10-11."
+    },
+    {
+      "id": "UF8S0Ntbh2s",
+      "contentType": "song",
+      "title": "Nu Drama - Shelter (LO-FI VIDEO OFICIAL) [Prod. Ch Pinewood]",
+      "note": "Cançó de la selecció de l’editor dins les llistes oficials de Vademecum FAM; crèdits musicals i durada verificats a YouTube. Revisió 2026-10-11."
+    },
+    {
+      "id": "v81Hp4wL9JQ",
+      "contentType": "song",
+      "title": "Vademecum 2021",
+      "note": "Cançó de la selecció de l’editor dins les llistes oficials de Vademecum FAM; crèdits musicals i durada verificats a YouTube. Revisió 2026-10-11."
+    },
+    {
+      "id": "Dxb5Ij4P_d4",
+      "contentType": "song",
+      "title": "Vademecum 2020",
+      "note": "Cançó de la selecció de l’editor dins les llistes oficials de Vademecum FAM; crèdits musicals i durada verificats a YouTube. Revisió 2026-10-11."
+    },
+    {
+      "id": "bkTLS9OuD8w",
+      "contentType": "song",
+      "title": "Vademecum 2019",
+      "note": "Cançó de la selecció de l’editor dins les llistes oficials de Vademecum FAM; crèdits musicals i durada verificats a YouTube. Revisió 2026-10-11."
+    },
+    {
+      "id": "nhSZl6y-EdE",
+      "contentType": "song",
+      "title": "Vademecum 2018",
+      "note": "Cançó de la selecció de l’editor dins les llistes oficials de Vademecum FAM; crèdits musicals i durada verificats a YouTube. Revisió 2026-10-11."
+    },
+    {
+      "id": "mZSp7Sa7bMQ",
+      "contentType": "song",
+      "title": "Vademecum 2017",
+      "note": "Cançó de la selecció de l’editor dins les llistes oficials de Vademecum FAM; crèdits musicals i durada verificats a YouTube. Revisió 2026-10-11."
+    },
+    {
+      "id": "RPti2DboKFE",
+      "contentType": "song",
+      "title": "Vademecum 2016",
+      "note": "Cançó de la selecció de l’editor dins les llistes oficials de Vademecum FAM; crèdits musicals i durada verificats a YouTube. Revisió 2026-10-11."
+    },
+    {
+      "id": "vHQ3z6swPmM",
+      "contentType": "song",
+      "title": "Vademecum 2015",
+      "note": "Cançó de la selecció de l’editor dins les llistes oficials de Vademecum FAM; crèdits musicals i durada verificats a YouTube. Revisió 2026-10-11."
+    },
+    {
+      "id": "nDm4YjYGSOU",
+      "contentType": "song",
+      "title": "Vademecum 2014",
+      "note": "Cançó de la selecció de l’editor dins les llistes oficials de Vademecum FAM; crèdits musicals i durada verificats a YouTube. Revisió 2026-10-11."
+    },
+    {
+      "id": "bvGYXfpbWLE",
+      "contentType": "song",
+      "title": "Vademecum 2013",
+      "note": "Cançó de la selecció de l’editor dins les llistes oficials de Vademecum FAM; crèdits musicals i durada verificats a YouTube. Revisió 2026-10-11."
+    },
+    {
+      "id": "NoA5Im3nrL4",
+      "contentType": "song",
+      "title": "Vademecum - 2012",
+      "note": "Cançó de la selecció de l’editor dins les llistes oficials de Vademecum FAM; crèdits musicals i durada verificats a YouTube. Revisió 2026-10-11."
     }
   ]
 }

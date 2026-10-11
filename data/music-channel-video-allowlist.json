@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-09T15:31:08.204Z",
+  "updatedAt": "2026-10-11T21:29:54.227Z",
   "description": "Llista blanca per a canals on Segueix Música només ha d'ingerir vídeos concrets. Admet títols exactes, fragments obligatoris i fragments exclosos.",
   "channels": {
     "UCKpscwdWlVaMqcA81vLI7OA": {
@@ -4407,6 +4407,56 @@
       "deniedTitleContains": [
         "Andarletto"
       ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UC_X_KBioMYCrmZyI7hbL8Pw": {
+      "artist": "Vademecum FAM",
+      "note": "Selecció expressa de l’editor: només els 30 vídeos públics de les cinc llistes documentades a docs/revisions/2026-10-11-urban-vademecum-hereus.json. No ampliar a la resta del canal. Vademecum - 2012 és un vídeo extern inclòs a la llista oficial.",
+      "allowedVideoIds": [
+        "2g_cPzbm4h4",
+        "tTkIWmhGeZM",
+        "C8JCU4ku4Bs",
+        "r-BbYZvaHzQ",
+        "B6KJ7rzSVTs",
+        "_0Z9xMHtti0",
+        "qG2N-bOuDEs",
+        "YZbl66hZ_y4",
+        "Egj34UDGK0o",
+        "yIAIMlWkMhU",
+        "3XwOte1E5fo",
+        "7CO-Q2As-Nc",
+        "Yq7mlSwxFAk",
+        "cvbGUDQWSDk",
+        "j7CAAY7dyZM",
+        "qrnDZkslC_c",
+        "A8Cg_77ElsU",
+        "kV6YbWL-kSg",
+        "b5S3eQZAwsc",
+        "UF8S0Ntbh2s",
+        "v81Hp4wL9JQ",
+        "Dxb5Ij4P_d4",
+        "bkTLS9OuD8w",
+        "nhSZl6y-EdE",
+        "mZSp7Sa7bMQ",
+        "RPti2DboKFE",
+        "vHQ3z6swPmM",
+        "nDm4YjYGSOU",
+        "bvGYXfpbWLE",
+        "NoA5Im3nrL4"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCK3mJ6ChV2a26kecZHDb4lg": {
+      "artist": "Hereus del Beat",
+      "note": "Canal Topic indicat expressament per l’editor; Urbana, Terrassa. Sense llista tancada de vídeos.",
       "acceptedMusicOnly": true,
       "allowedContentTypes": [
         "song",

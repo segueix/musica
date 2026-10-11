@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-11T21:00:00.000Z",
+  "updatedAt": "2026-10-11T21:29:54.227Z",
   "artists": [
     {
       "name": "2 Princeses Barbudes",
@@ -35625,6 +35625,83 @@
         }
       },
       "displayName": "ZOO"
+    },
+    {
+      "name": "Vademecum FAM",
+      "aliases": [
+        "Vademecum",
+        "Nu Drama"
+      ],
+      "genres": [
+        "Urbana"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca",
+        "es",
+        "en"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UC_X_KBioMYCrmZyI7hbL8Pw",
+            "handle": "@VademecumFAM",
+            "name": "Vademecum FAM",
+            "type": "official",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-11",
+        "genre:manual",
+        "https://www.youtube.com/@VademecumFAM"
+      ],
+      "lastChecked": "2026-10-11T21:29:54.227Z",
+      "notes": "Incorporació a Urbana i procedència confirmades per l’editor el 2026-10-11. Només les cinc llistes indicades: Ikigai [2020], Asfalt i Edificis [2019], Manshiyat Naser [2017], Nu Drama i [2017] i Vademecum. Selecció tancada de 30 vídeos; hi ha peces multilingües. Detall: docs/revisions/2026-10-11-urban-vademecum-hereus.json."
+    },
+    {
+      "name": "Hereus del Beat",
+      "aliases": [],
+      "genres": [
+        "Urbana"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCK3mJ6ChV2a26kecZHDb4lg",
+            "handle": null,
+            "name": "Hereus Del Beat - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-11",
+        "genre:manual",
+        "https://www.youtube.com/channel/UCK3mJ6ChV2a26kecZHDb4lg"
+      ],
+      "lastChecked": "2026-10-11T21:29:54.227Z",
+      "notes": "Incorporació a Urbana i procedència confirmades per l’editor el 2026-10-11. Canal Hereus Del Beat - Topic indicat per l’editor; discografia automàtica. Detall: docs/revisions/2026-10-11-urban-vademecum-hereus.json."
     }
   ]
 }
