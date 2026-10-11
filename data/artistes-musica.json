@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-11T21:55:26.145Z",
+  "updatedAt": "2026-10-11T22:10:00.000Z",
   "artists": [
     {
       "name": "2 Princeses Barbudes",
@@ -8970,100 +8970,30 @@
       "youtube": {
         "channels": [
           {
-            "id": "UCYLw9esbkWTiWH9PoSlnjXw",
-            "handle": "@elspetsoficial",
-            "name": "elspetsoficial",
+            "id": "UCLyS6_AjQKIbL4C2BByWjmQ",
+            "handle": "@阿亚伊奥",
+            "name": "Els Pets",
             "type": "official",
             "primary": true
-          },
-          {
-            "id": "UC0EB-hSs5R5X4DGiSkY_-mw",
-            "handle": null,
-            "name": "Els Pets - Topic",
-            "type": "topic",
-            "primary": false
-          },
-          {
-            "id": "UCV4rGI-t1ehir__UXavnbZg",
-            "handle": "@discmedielspets",
-            "name": "discmedielspets",
-            "type": "official",
-            "primary": false
           }
         ],
         "candidates": [],
-        "searchCandidates": [
-          {
-            "id": "UC0EB-hSs5R5X4DGiSkY_-mw",
-            "title": "Els Pets - Topic",
-            "handle": null,
-            "description": "",
-            "subscriberCount": 2990,
-            "thumbnail": "https://yt3.ggpht.com/vu9JWT-6iuA2_IW374nlyg0DgBEiZelU2kigWVK6osbbOvMlCzH73LSjnwhQzDMNN1vNFou45A=s240-c-k-c0x00ffffff-no-rj",
-            "score": 85,
-            "reasons": [
-              "nom exacte de canal Topic",
-              "primer resultat"
-            ],
-            "suggestedType": "topic",
-            "discoveredAt": "2026-09-25T16:34:01.560Z"
-          },
-          {
-            "id": "UCLyS6_AjQKIbL4C2BByWjmQ",
-            "title": "阿亚伊奥",
-            "handle": "@阿亚伊奥",
-            "description": "\n",
-            "subscriberCount": 10600,
-            "thumbnail": "https://yt3.ggpht.com/vu9JWT-6iuA2_IW374nlyg0DgBEiZelU2kigWVK6osbbOvMlCzH73LSjnwhQzDMNN1vNFou45A=s240-c-k-c0x00ffffff-no-rj",
-            "score": 35,
-            "reasons": [
-              "nom parcial"
-            ],
-            "suggestedType": "official",
-            "discoveredAt": "2026-09-25T16:34:01.560Z"
-          },
-          {
-            "id": "UCV4rGI-t1ehir__UXavnbZg",
-            "title": "discmedielspets",
-            "handle": "@discmedielspets",
-            "description": "",
-            "subscriberCount": 3880,
-            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_n5zviQST45aCR7-nTXI9qHlBOdxhBiUuEH0UhNMvB_bQ=s240-c-k-c0x00ffffff-no-rj",
-            "score": 18,
-            "reasons": [
-              "handle coincident"
-            ],
-            "suggestedType": "official",
-            "discoveredAt": "2026-09-25T16:34:01.560Z"
-          },
-          {
-            "id": "UCYLw9esbkWTiWH9PoSlnjXw",
-            "title": "elspetsoficial",
-            "handle": "@elspetsoficial",
-            "description": "",
-            "subscriberCount": 187,
-            "thumbnail": "https://yt3.ggpht.com/ytc/AIdro_lkaNAjMLL16eciFdlGySIMrwdb-9mDKMb1fKO0kdM=s240-c-k-c0x00ffffff-no-rj",
-            "score": 18,
-            "reasons": [
-              "handle coincident"
-            ],
-            "suggestedType": "official",
-            "discoveredAt": "2026-09-25T16:34:01.560Z"
-          }
-        ]
+        "searchCandidates": []
       },
       "confidence": "alta",
-      "reviewStatus": "pendent",
-      "active": false,
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
         "https://www.wikidata.org/wiki/Q1333372",
         "wikidata:performed-catalan-work",
         "manual-user-2026-09-29",
         "youtube:manual-verified",
-        "manual-user-2026-09-30"
+        "manual-user-2026-09-30",
+        "manual-user-2026-10-11",
+        "genre:manual"
       ],
-      "lastChecked": "2026-09-30T11:01:00.000Z",
-      "notes": "",
+      "lastChecked": "2026-10-11T22:10:00.000Z",
+      "notes": "Selecció expressa de l’editor: només els llançaments indicats del canal @阿亚伊奥. Nou llançaments verificats, 118 pistes. Pendents dels enllaços: 40 (Remasteritzada 2025), Bondia i Agost. Icona: Bon dia.",
       "enrichment": {
         "musicbrainz": {
           "checkedAt": "2026-09-25T15:54:29.662Z",
