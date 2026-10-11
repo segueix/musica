@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-10T14:29:34.873Z",
+  "updatedAt": "2026-10-11T12:27:39.530Z",
   "artists": [
     {
       "name": "2 Princeses Barbudes",
@@ -15913,18 +15913,11 @@
       "youtube": {
         "channels": [
           {
-            "id": "UCsAbCGSmpvZ7Ym2WNklg44A",
-            "handle": "@coixinera",
-            "name": "La Coixinera Compayia de saraus",
-            "type": "official",
-            "primary": true
-          },
-          {
             "id": "UC5u7o5L26RuDowQsqOJDm0w",
             "handle": null,
             "name": "La Coixinera - Topic",
             "type": "topic",
-            "primary": false
+            "primary": true
           }
         ],
         "searchCandidates": [
@@ -15982,8 +15975,8 @@
         "genre:manual",
         "manual-user-2026-10-11"
       ],
-      "lastChecked": "2026-10-05T13:00:17.655Z",
-      "notes": "Grup d’arrel de Mataró. Cançons tradicionals i de taverna; repertori també instrumental. No incloure Astoaren kanta (basc). Alta de folk i arrel 2026-10-05; canals contrastats amb la identitat i el repertori del grup; selecció catalana limitada per llista blanca. Classificació Folk i arrel fixada manualment el 2026-10-11 a petició de l’usuari.",
+      "lastChecked": "2026-10-11T12:27:39.529Z",
+      "notes": "Grup d’arrel de Mataró. Cançons tradicionals i de taverna; repertori també instrumental. No incloure Astoaren kanta (basc). Alta de folk i arrel 2026-10-05; canals contrastats amb la identitat i el repertori del grup; selecció catalana limitada per llista blanca. Classificació Folk i arrel fixada manualment el 2026-10-11 a petició de l’usuari. Correcció 2026-10-11: indexar exclusivament La Coixinera - Tema; @coixinera no és el canal sol·licitat. Es conserva la selecció de repertori català verificada.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-05T12:58:39.176Z",
