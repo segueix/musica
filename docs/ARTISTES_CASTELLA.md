@@ -5,7 +5,7 @@ tenir quan el feed musical incorpori vídeos nous: cal repassar-los primer cada 
 castellà». Les cançons amagades són a `data/hidden-videos.json` (el client les filtra i `update_music_feed.js` les
 descarta en regenerar el feed).
 
-> Última revisió: 2026-10-07. Si afegeixes o treus un artista, actualitza la taula **i** la data.
+> Última revisió: 2026-10-11. Si afegeixes o treus un artista, actualitza la taula **i** la data.
 
 ## Revisió de lletres de les 239 pendents (2026-10-05)
 
@@ -287,3 +287,9 @@ Regles preventives a `data/music-channel-video-allowlist.json`:
 - Teràpia de Shock: s’exclouen «Sin Ti» i «Without You», versions castellana i anglesa de «Sense tu».
 - Grup de Folk: canal multilingüe; només primera selecció de títols catalans identificats. Referència: https://www.enderrock.cat/disc/4765/festival-folk . La resta queda fora fins a revisió.
 - Exili a Elba: «Red Right Hand» queda fora de la selecció catalana.
+
+## Revisió 2026-10-11 — canals Tema de folk
+
+- **La Coixinera:** selecció ampliada d’1 a 49 pistes del Tema (català i instrumental). Astoaren Kanta continua exclosa (basc). Nou pistes continuen pendents; no s’ha obert el canal indiscriminadament.
+- **L’Ham de Foc:** revisió dels tres discos U, Cançó de dona i home i Cor de porc. Andarletto (`QY5wOLeAFhw`) exclosa per lletra en judeocastellà; regla persistent per títol al filtre del canal. Illes continua pendent de confirmar l’idioma o la condició instrumental.
+- Revisió documental de discos, autories, repertori i lletres disponibles, no audició íntegra. [Decisions i fonts per pista](revisions/2026-10-11-folk-tema.json).
