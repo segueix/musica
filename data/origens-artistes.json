@@ -1617,6 +1617,142 @@
       "type": "region",
       "coordinates": null,
       "territory": "País Valencià"
+    },
+    "geonames:3115985": {
+      "name": "Moià",
+      "type": "municipality",
+      "geonamesId": 3115985,
+      "coordinates": {
+        "latitude": 41.81112,
+        "longitude": 2.09839,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Moi%C3%A0&count=5&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:3122453": {
+      "name": "Figueres",
+      "type": "municipality",
+      "geonamesId": 3122453,
+      "coordinates": {
+        "latitude": 42.26645,
+        "longitude": 2.96163,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Figueres&count=5&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:3125884": {
+      "name": "Castelló d'Empúries",
+      "type": "municipality",
+      "geonamesId": 3125884,
+      "coordinates": {
+        "latitude": 42.25673,
+        "longitude": 3.07446,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Castello+d%27Empuries&count=5&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:3118954": {
+      "name": "la Cellera de Ter",
+      "type": "municipality",
+      "geonamesId": 3118954,
+      "coordinates": {
+        "latitude": 41.96919,
+        "longitude": 2.62402,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=la+Cellera+de+Ter&count=10&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:3116527": {
+      "name": "Montcada i Reixac",
+      "type": "municipality",
+      "geonamesId": 3116527,
+      "coordinates": {
+        "latitude": 41.48333,
+        "longitude": 2.18333,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Montcada+i+Reixac&count=5&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:3115093": {
+      "name": "Olot",
+      "type": "municipality",
+      "geonamesId": 3115093,
+      "coordinates": {
+        "latitude": 42.18096,
+        "longitude": 2.49012,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Olot&count=5&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:3107306": {
+      "name": "Ullastrell",
+      "type": "municipality",
+      "geonamesId": 3107306,
+      "coordinates": {
+        "latitude": 41.52643,
+        "longitude": 1.95537,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Ullastrell&count=5&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:3109774": {
+      "name": "Santa Maria de Merlès",
+      "type": "municipality",
+      "geonamesId": 3109774,
+      "coordinates": {
+        "latitude": 42.0,
+        "longitude": 1.98333,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Santa+Maria+de+Merles&count=5&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11",
+      "coordinateNote": "Referència del municipi de Santa Maria de Merlès; no és la localització del nucli de Sant Pau de Pinós."
+    },
+    "geonames:3110921": {
+      "name": "Sant Adrià de Besòs",
+      "type": "municipality",
+      "geonamesId": 3110921,
+      "coordinates": {
+        "latitude": 41.43073,
+        "longitude": 2.21855,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Sant+Adria+de+Besos&count=5&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "territory:baix-llobregat": {
+      "name": "Baix Llobregat",
+      "type": "region",
+      "coordinates": null,
+      "territory": "Catalunya"
+    },
+    "territory:barcelones": {
+      "name": "Barcelonès",
+      "type": "region",
+      "coordinates": null,
+      "territory": "Catalunya"
+    },
+    "territory:catalunya-nord": {
+      "name": "Catalunya Nord",
+      "type": "region",
+      "coordinates": null,
+      "territory": "Catalunya Nord"
     }
   },
   "artists": {
@@ -6084,6 +6220,506 @@
       "reviewedOn": "2026-10-11",
       "assignmentSource": "manual-review",
       "locked": true
+    },
+    "artist:guaita-ls": {
+      "name": "Guaita'ls",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3108286"
+      ],
+      "confidence": "alta",
+      "basis": "La crònica de l’organització del Connecta 2009 identifica Guaita’ls com a terrassencs. Redstar73 també situa explícitament el grup de ska a Terrassa.",
+      "sources": [
+        "https://joventrepublica.cat/locals/terrassa/actualitat/noticies_detall/eskassa-llibertat-guanya-el-connecta-09/3474",
+        "https://redstar73.wordpress.com/2011/11/10/mr-review-26-novembre-badalona-25-novembre-madrid/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:herois-de-la-katalunya-interior": {
+      "name": "Herois de la Katalunya Interior",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3115985"
+      ],
+      "confidence": "alta",
+      "basis": "La campanya pròpia de Verkami indica Moià. Les presentacions d’El Periódico i del Sona9 a Enderrock confirmen la localitat del grup. No es pren com a municipi d’origen l’etiqueta Montserrat del seu Bandcamp.",
+      "sources": [
+        "https://www.verkami.com/projects/2179-nou-disc-dels-herois-de-la-katalunya-interior",
+        "https://www.elperiodico.cat/actualitat/20081212/herois-de-la-katalunya-interior-239396",
+        "https://www.enderrock.cat/noticia/30041/2004-any-guiem-soldevila-amb-marco-mezquida-gataca-carnal-rauxa-nevera"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:sabor-de-gracia": {
+      "name": "Sabor de Gràcia",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "La biografia de la productora situa la creació de Sabor de Gràcia en el barri barceloní de Gràcia el 1994, per iniciativa de Sicus Carbonell.",
+      "sources": [
+        "https://www.meltemproduction.com/sabor-de-gracia-3/",
+        "https://beteve.cat/cultura/sabor-gracia-actes-celebracio-30-anys/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:banda-neon": {
+      "name": "Banda Neon",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:3122453"
+      ],
+      "confidence": "alta",
+      "basis": "La fitxa oficial de la Mercè publicada per l’Ajuntament de Barcelona presenta Banda Neon amb la localitat Figueres. És la procedència artística indicada, no la ubicació del concert, que és Barcelona.",
+      "sources": [
+        "https://guia.barcelona.cat/ca/cursos/detall/concierto-banda-neon_99400760986.html",
+        "https://guia.barcelona.cat/es/cursos/detall/concierto-banda-neon_99400760986.html"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:corrandes-son-corrandes": {
+      "name": "Corrandes són corrandes",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:3111199"
+      ],
+      "confidence": "alta",
+      "basis": "La fitxa presentada al concurs Sons indica Sabadell com a ciutat del projecte. El Museu de l’Escala també presenta la formació com a sabadellenca.",
+      "sources": [
+        "https://www.enderrock.cat/sons/grupsons2020/24/corrandes/son/corrandes",
+        "https://museudelescala.cat/en/la-canco-de-text-improvisat-de-corrandes-son-corrandes-protagonitza-el-concert-daquest-dissabte-17-de-juny-del-darrel-i-amb-salero/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:el-pot-petit": {
+      "name": "El Pot Petit",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3125884"
+      ],
+      "confidence": "alta",
+      "basis": "L’entrevista d’El Periódico situa el primer espectacle que va donar inici al projecte en un bateig a Castelló d’Empúries el 2009. El relat radiofònic de Tot és Comèdia coincideix en aquest inici; no s’atribueix la localitat de naixement a tots els integrants.",
+      "sources": [
+        "https://www.elperiodico.cat/oci-i-cultura/20211222/pot-petit-catalan-entrevista-13012539",
+        "https://radioteca.cat/p/tot-es-comedia/2024/07/14/entrevista-el-pot-petit-O5uwpDAVPhi_EQKZk3xr4w"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:els-atrapasomnis": {
+      "name": "Els Atrapasomnis",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:3118954"
+      ],
+      "confidence": "alta",
+      "basis": "La fitxa professional de la companyia a la TTP situa la seva seu a la Cellera de Ter. La biografia explica que els músics provenen de diversos municipis gironins: es registra la vinculació de la companyia, no un lloc de naixement compartit.",
+      "sources": [
+        "https://ttp.cat/company/els-atrapasomnis/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:la-pegatina": {
+      "name": "La Pegatina",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3116527"
+      ],
+      "confidence": "alta",
+      "basis": "L’Ajuntament de Montcada i Reixac i el mitjà municipal La Veu documenten l’origen montcadenc i la formació de La Pegatina per Adrià Salas, Rubén Sierra i Ovidi Díaz.",
+      "sources": [
+        "https://www.montcada.cat/actualitat/noticies/el-grup-de-musica-la-pegatina-fara-el-prego-de-la-festa-major-2026-.html",
+        "https://laveu.cat/a-fons/per-arribar-on-estem-tho-has-de-currar-molt/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:magali-datzira": {
+      "name": "Magalí Datzira",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "La biografia publicada pel Centre Cívic de Porqueres identifica Barcelona com el lloc de naixement de Magalí Datzira.",
+      "sources": [
+        "https://www.centrecivicporqueres.cat/ca/programacio/c/218-magali-datzira.html"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:tano": {
+      "name": "Tano!",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:3121456"
+      ],
+      "confidence": "alta",
+      "basis": "El perfil propi de TANO! a Bandcamp identifica Girona com a localitat del duet.",
+      "sources": [
+        "https://tanoduo.bandcamp.com/music"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:blay-tritono": {
+      "name": "Blay Tritono",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "La Fonoteca documenta la vinculació de Blay Tritono amb la sala Zeleste de Barcelona. Es registra aquesta vinculació clara; el mateix article presenta amb cautela el relat exacte de la formació durant una gravació amb Julia León.",
+      "sources": [
+        "https://lafonoteca.net/grupo/blay-tritono/",
+        "https://www.verkami.com/locale/ca/projects/39654-publicacio-del-disc-nucli-trio-convidats-interpreten-la-musica-laietana"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:coca": {
+      "name": "Coça",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "territory:mallorca"
+      ],
+      "confidence": "alta",
+      "basis": "La premsa musical balear situa Coça en l’escena mallorquina. Les fonts consultades no permeten fixar un únic municipi amb prou seguretat; es conserva l’illa sense coordenades puntuals.",
+      "sources": [
+        "https://www.dbalears.cat/balears/cultura/2024/02/28/390505/punk-not-dead-punk-ben-viu-mallorca.html",
+        "https://www.arabalears.cat/partforana/petit-pais-celebra-aniversari-consolidant-espai-cultura-reivindicacio-felanitx_1_5758165.html",
+        "https://www.acordscatala.cat/ca/coca"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:jordi-sabates": {
+      "name": "Jordi Sabatés",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "La presentació biogràfica de RTVE situa el naixement de Jordi Sabatés a Barcelona el 1948.",
+      "sources": [
+        "https://www.rtve.es/play/audios/discopolis/discopolis-9693-jordi-sabates-23-03-17/3954683/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:kiddi": {
+      "name": "Kiddi",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:3119099"
+      ],
+      "confidence": "alta",
+      "basis": "La fitxa de Kiddi al Sona9 indica la Roca del Vallès com a ciutat. La biografia i la col·laboració amb Lau Gibert permeten distingir l’artista català dels homònims estrangers.",
+      "sources": [
+        "https://www.enderrock.cat/sona9/grup/217/kiddi"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:l-odi-social": {
+      "name": "L'Odi Social",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "Maximum Rocknroll presenta L’Odi Social com una banda de Barcelona formada el 1981; la història del grup a La Fonoteca en corrobora la identitat.",
+      "sources": [
+        "https://www.maximumrocknroll.com/band/lodi-social/",
+        "https://lafonoteca.net/grupo/lodi-social/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:la-vella-dixieland": {
+      "name": "La Vella Dixieland",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "La història oficial del grup situa les primeres trobades dels fundadors a Barcelona i la primera actuació al Casal de Sarrià.",
+      "sources": [
+        "https://www.lavelladixieland.com/historia.html"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:landry-el-rumbero": {
+      "name": "Landry el Rumbero",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3111199"
+      ],
+      "confidence": "alta",
+      "basis": "La presentació de l’Ajuntament de Vic identifica Daniel Landry, que encapçala el projecte amb el seu nom artístic, com a nascut a Sabadell el 1979. La localitat correspon a l’artista, no a tots els músics acompanyants.",
+      "sources": [
+        "https://www.vic.cat/serveis/cultura/cultura/agenda/landry-el-rumbero-pati-de-los"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:orquestra-mirasol": {
+      "name": "Orquestra Mirasol",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:3128760",
+        "geonames:3110718"
+      ],
+      "confidence": "alta",
+      "basis": "Xavier Batllés documenta els contactes musicals que van gestar la Mirasol a Barcelona i la casa d’assaig de Mira-sol, a Sant Cugat del Vallès. Es conserven totes dues vinculacions, sense confondre el barri Mira-sol amb un municipi independent.",
+      "sources": [
+        "https://www.enderrock.cat/noticia/26531/xavier-batll-he-trobat-meu-lloc-musica-gracies-tecnologia"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:pep-puigdemont": {
+      "name": "Pep Puigdemont",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3115093"
+      ],
+      "confidence": "alta",
+      "basis": "La presentació del web oficial situa el naixement de Pep Puigdemont a Olot el 1971.",
+      "sources": [
+        "https://www.peppuigdemont.com/presentacio/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:reggae-per-xics": {
+      "name": "Reggae per Xics",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3110642"
+      ],
+      "confidence": "alta",
+      "basis": "La productora explica que Reggae per Xics va néixer el 2011 com el projecte familiar de The Penguins, banda de Sant Feliu de Llobregat.",
+      "sources": [
+        "https://www.buenritmo.es/ca/artist/reggaeperxics/",
+        "https://www.fim.cat/artistes/reggae-per-xics/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:secta-sonica": {
+      "name": "Secta Sònica",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "La història del grup a La Fonoteca situa la creació de Secta Sònica en l’entorn musical barceloní de Zeleste, a partir dels projectes de Gato Pérez després del seu retorn a Barcelona.",
+      "sources": [
+        "https://lafonoteca.net/grupo/secta-sonica/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:the-anti-patiks": {
+      "name": "The Anti-Patiks",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3107306"
+      ],
+      "confidence": "alta",
+      "basis": "La biografia del segell Propaganda pel fet! situa la fundació del grup a Ullastrell i rodalia el 2010. Aquesta font directa concreta la referència genèrica a Terrassa d’altres presentacions.",
+      "sources": [
+        "https://ppf.cat/index.php/cat/34-artistes/the-anti-patiks/123-anem-bogissims-el-nou-disc-de-the-anti-patiks-el-treu-propaganda-pel-fet"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:trevol": {
+      "name": "Trèvol",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "territory:baix-llobregat",
+        "territory:barcelones",
+        "territory:catalunya-nord"
+      ],
+      "confidence": "alta",
+      "basis": "La biografia de la seva representació situa el naixement del quartet entre el Baix Llobregat, el Barcelonès i la Catalunya Nord. Es conserva aquest origen plural a escala territorial sense triar una única ciutat ni afegir coordenades puntuals.",
+      "sources": [
+        "https://www.elsostingut.cat/trevol",
+        "https://lhdigital.cat/noticies/el-grup-trevol-presenta-el-segon-disc-folk-dextraradi/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:2-princeses-barbudes": {
+      "name": "2 Princeses Barbudes",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:3109774"
+      ],
+      "confidence": "alta",
+      "basis": "El cens d’artistes del Consorci del Lluçanès situa 2princesesbarbudes a Sant Pau de Pinós, nucli del municipi de Santa Maria de Merlès. Es registra una vinculació pública actual, no el lloc de formació del projecte. Les coordenades són la referència municipal, no les del nucli.",
+      "sources": [
+        "https://www.llucanes.cat/emal/cens-artistes-llucanes/",
+        "https://www.bisbatvic.org/ca/parroquia/sant-pau-de-pinos"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:andrea-motis": {
+      "name": "Andrea Motis",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "El web oficial presenta Andrea Motis com a cantant i trompetista de Barcelona; la biografia de la Fundació Mediterrani també situa el seu naixement a la ciutat.",
+      "sources": [
+        "https://andreamotis.com/en/",
+        "https://fundacionmediterraneo.es/actividades/musica/andrea-motis/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:ara-va-de-bo": {
+      "name": "Ara Va de Bo",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "El Centre Artesà Tradicionàrius situa la formació d’Ara Va de Bo a Barcelona el juliol de 1971, a l’Escola d’Estiu de Mestres de l’Associació Rosa Sensat.",
+      "sources": [
+        "https://tradicionarius.blogspot.com/2012/02/ara-va-de-40.html"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:bestiari": {
+      "name": "Bestiari",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:3111199"
+      ],
+      "confidence": "alta",
+      "basis": "El perfil propi de Bestiari a Bandcamp identifica Sabadell com a localitat. Els temes Nit d’estrena i Persona tèbia coincideixen amb els del catàleg i permeten descartar altres projectes homònims.",
+      "sources": [
+        "https://bestiari.bandcamp.com/album/bestiari"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:carme-canela": {
+      "name": "Carme Canela",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "La biografia institucional de l’ESMUC identifica Barcelona com el lloc de naixement de Carme Canela.",
+      "sources": [
+        "https://www.esmuc.cat/professorat/carme-canela/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:enemic-interior": {
+      "name": "Enemic Interior",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "La biografia publicada pel seu segell Flexidiscos presenta Enemic Interior com una banda de Barcelona.",
+      "sources": [
+        "https://flexidiscos.bandcamp.com/album/enemic-interior"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:la-tresca-i-la-verdesca": {
+      "name": "La Tresca i la Verdesca",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3110921"
+      ],
+      "confidence": "alta",
+      "basis": "L’Ateneu Cooperatiu del Barcelonès Nord situa la formació a Sant Adrià de Besòs el 1998. La història oficial confirma catorze anys a Sant Adrià abans del trasllat a Badalona. La primera actuació a la Garriga no es confon amb el lloc de formació.",
+      "sources": [
+        "https://ateneubnord.cat/la-tresca-i-la-verdesca-som-abelles/",
+        "https://latresca.com/la-tresca-i-la-verdesca/historia/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
     }
   },
   "channels": {
@@ -6506,6 +7142,43 @@
     "UC1yaXYiC2Ab3tus3lTDljtw": "artist:magali-sare",
     "UCPCYIT1ovAuKG8uedKp8QNA": "artist:magali-sare",
     "UCDX2tkKsA-KRAxfE6p_kVuQ": "artist:panellet",
-    "UC5wqkIyYD4y1lLYN40BL9lg": "artist:ariox"
+    "UC5wqkIyYD4y1lLYN40BL9lg": "artist:ariox",
+    "UCqCzt7Atzt9MRZ1PNnQreMA": "artist:guaita-ls",
+    "UChp3Qj6gtmg9chsHHDFyVyg": "artist:guaita-ls",
+    "UCy8MYPwq8ezeihgBh4dgEdg": "artist:herois-de-la-katalunya-interior",
+    "UClTLWZcaxCMgkk58dQna18A": "artist:sabor-de-gracia",
+    "UC8EgQzp733Go-yRbPKR3FHg": "artist:banda-neon",
+    "UCYzpmEEhGtncFPgZSocnrtQ": "artist:corrandes-son-corrandes",
+    "UCTsSJXhTo6HpqmtSh8-p31A": "artist:corrandes-son-corrandes",
+    "UCZqDq4Dl1ZxBQMlQgiEW5Kw": "artist:el-pot-petit",
+    "UCQbdJKk_c_MfT3OaO6rIISA": "artist:els-atrapasomnis",
+    "UCr8kBnuIa6LPmhZSxbwVs7w": "artist:la-pegatina",
+    "UCMepRsHQTgYZd3u__Xbj_6A": "artist:la-pegatina",
+    "UCfcp4MZZ3t309KMOLo7JJag": "artist:magali-datzira",
+    "UCG5zbsU-wyiM9QP5oYKhB4A": "artist:magali-datzira",
+    "UCTgyTOC4u7Dw0AvH3-4uC9w": "artist:tano",
+    "UC8eN3E2fiYV0wtMwds1ZK9g": "artist:blay-tritono",
+    "UCPRiU_lr3A-0m0GmF098EkA": "artist:coca",
+    "UCw04zTLucny6vY-O5-qE21A": "artist:jordi-sabates",
+    "UCREWI0yP_fZNpVsqt-t5wIw": "artist:kiddi",
+    "UCkS1qH6mVR8T0hqyHJs0jnA": "artist:l-odi-social",
+    "UCDxUh6YqVfCZ-DwSDQy1mNQ": "artist:la-vella-dixieland",
+    "UCSuJ17uSSb8B4WOyFUNW9GQ": "artist:landry-el-rumbero",
+    "UCJJ6X0cboaPc-rl_XeafowQ": "artist:orquestra-mirasol",
+    "UCZZOt0pWmzrTf3P97R7be6g": "artist:pep-puigdemont",
+    "UC2pBZWFY9BTr7u6lZWPMROQ": "artist:reggae-per-xics",
+    "UC_htjc02Q62QuGP1EOyOSnQ": "artist:secta-sonica",
+    "UCARSXSWwSje53JsJgzLCtpA": "artist:the-anti-patiks",
+    "UCuBUwUHwHaYGai1Enee7DSw": "artist:the-anti-patiks",
+    "UCz3aiLj85sLBimSrPwNcQcQ": "artist:trevol",
+    "UCF6nxIBqp7vuVu51PGC7x5w": "artist:trevol",
+    "UClwN1cpIrafSRa8MbOMAvvQ": "artist:2-princeses-barbudes",
+    "UCmwGTBibm2bt9oF-P7ECSmQ": "artist:andrea-motis",
+    "UCQSsmLNT3tKUD3m_XsZpfHA": "artist:andrea-motis",
+    "UCnc-ydOqTCAyaVjB5h6Yk8w": "artist:ara-va-de-bo",
+    "UCf0MYgzgqhRYuimo71a2dYQ": "artist:bestiari",
+    "UCe_v26nxcgIzZxxvRDkHOrw": "artist:carme-canela",
+    "UCAEf3q8jStY3hXlEtfoI0nA": "artist:enemic-interior",
+    "UCIdj5otREH5qxyPbKjAx2Sw": "artist:la-tresca-i-la-verdesca"
   }
 }
