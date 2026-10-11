@@ -322,6 +322,19 @@
       "name": "Montseny",
       "type": "region",
       "coordinates": null
+    },
+    "geonames:2509954": {
+      "name": "València",
+      "type": "municipality",
+      "geonamesId": 2509954,
+      "coordinates": {
+        "latitude": 39.47391,
+        "longitude": -0.37966,
+        "precision": "settlement_reference"
+      },
+      "territory": "País Valencià",
+      "source": "https://geocoding-api.open-meteo.com/v1/get?id=2509954&language=ca",
+      "checkedOn": "2026-10-11"
     }
   },
   "artists": {
@@ -800,6 +813,38 @@
       "reviewedOn": "2026-10-11",
       "assignmentSource": "manual-review",
       "locked": true
+    },
+    "artist:l-ham-de-foc": {
+      "name": "L'Ham de Foc",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:2509954"
+      ],
+      "confidence": "alta",
+      "basis": "Origen a València ciutat confirmat manualment per l'editor del catàleg el 11 d'octubre de 2026. Les fonts enllaçades aporten context biogràfic.",
+      "sources": [
+        "https://ca.wikipedia.org/wiki/L%27Ham_de_Foc"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "user-correction",
+      "locked": true
+    },
+    "artist:al-tall": {
+      "name": "Al Tall",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:2509954"
+      ],
+      "confidence": "alta",
+      "basis": "Origen a València ciutat confirmat manualment per l'editor del catàleg el 11 d'octubre de 2026. Les fonts enllaçades aporten context biogràfic.",
+      "sources": [
+        "https://www.3cat.cat/3catinfo/el-grup-valencia-al-tall-posa-punt-final-a-la-seva-carrera-artistica/noticia/1937892/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "user-correction",
+      "locked": true
     }
   },
   "channels": {
@@ -841,6 +886,8 @@
     "UCf-q-2ikL2X1ZFd0HSj7Eiw": "artist:els-jovens",
     "UCYPbYGqAXm8gaYGVY-ANVXA": "artist:rita-payes",
     "UCqcQJRrcXc_rLSwGVo4dP5g": "artist:rita-payes",
-    "UCVowitUeUXlew8bjVjBOtUQ": "artist:peret"
+    "UCVowitUeUXlew8bjVjBOtUQ": "artist:peret",
+    "UC711R927_H-bOzQGHu7B5Pg": "artist:l-ham-de-foc",
+    "UCrQY3EI5TJXNbCwkXcDLp7A": "artist:al-tall"
   }
 }

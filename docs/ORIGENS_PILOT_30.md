@@ -2,7 +2,7 @@
 
 Data de revisió: 2026-10-11.
 
-> Actualització posterior: la [integració a les fitxes](ORIGENS_ARTISTES.md) ja publica 28 assignacions validades. En queden dues pendents. Les xifres de la resta d'aquest document descriuen el resultat inicial del pilot; el JSON conté l'estat actual.
+> Actualització posterior: la [integració a les fitxes](ORIGENS_ARTISTES.md) ja publica 30 assignacions validades. L'editor ha confirmat València ciutat per a L'Ham de Foc i Al Tall; no queden casos pendents. Les xifres de la resta d'aquest document descriuen el resultat inicial del pilot; el JSON conté l'estat actual.
 
 ## Abast i resultat
 

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "purpose": "Pilot documental de 30 artistes per a Ràdio a prop teu",
-  "productionReady": false,
+  "productionReady": true,
   "entries": [
     {
       "artistName": "Dusminguet",
@@ -93,15 +93,19 @@
         ],
         "precision": "municipi"
       },
-      "confidence": "mitjana",
-      "status": "pendent_revisio",
-      "basis": "Font enciclopèdica situa el grup a València; pendent corroborar municipi en biografia primària.",
+      "confidence": "alta",
+      "status": "validat",
+      "basis": "Origen a València ciutat confirmat manualment per l'editor del catàleg el 11 d'octubre de 2026. Les fonts enllaçades aporten context biogràfic.",
       "sources": [
         "https://ca.wikipedia.org/wiki/L%27Ham_de_Foc"
       ],
       "checkedOn": "2026-10-11",
       "coordinates": null,
-      "applied": false
+      "applied": true,
+      "placeIds": [
+        "geonames:2509954"
+      ],
+      "assignmentSource": "user-correction"
     },
     {
       "artistName": "Ebri Knight",
@@ -667,21 +671,25 @@
         "UCrQY3EI5TJXNbCwkXcDLp7A"
       ],
       "proposal": {
-        "label": "Vinculat a",
+        "label": "Origen",
         "places": [
-          "País Valencià"
+          "València"
         ],
-        "precision": "territori"
+        "precision": "municipi"
       },
-      "confidence": "mitjana",
-      "status": "pendent_revisio",
-      "basis": "La font consultada confirma identitat valenciana però no permet convertir-la en València municipi. Municipi pendent.",
+      "confidence": "alta",
+      "status": "validat",
+      "basis": "Origen a València ciutat confirmat manualment per l'editor del catàleg el 11 d'octubre de 2026. Les fonts enllaçades aporten context biogràfic.",
       "sources": [
         "https://www.3cat.cat/3catinfo/el-grup-valencia-al-tall-posa-punt-final-a-la-seva-carrera-artistica/noticia/1937892/"
       ],
       "checkedOn": "2026-10-11",
       "coordinates": null,
-      "applied": false
+      "applied": true,
+      "placeIds": [
+        "geonames:2509954"
+      ],
+      "assignmentSource": "user-correction"
     },
     {
       "artistName": "La Gossa Sorda",
@@ -791,9 +799,9 @@
   ],
   "application": {
     "date": "2026-10-11",
-    "validated": 28,
-    "pending": 2,
+    "validated": 30,
+    "pending": 0,
     "runtimeCatalog": "data/origens-artistes.json",
-    "note": "Les assignacions validades es mostren a la fitxa; la ràdio per proximitat encara no està activada."
+    "note": "Les 30 assignacions es mostren a la fitxa; L'Ham de Foc i Al Tall validats per correcció de l'editor. La ràdio per proximitat encara no està activada."
   }
 }
