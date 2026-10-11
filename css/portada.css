@@ -6450,3 +6450,12 @@ body.is-video-pip .video-placeholder.is-placeholder-hidden {
 .player-native-play-hint[hidden],
 .player-external-controls.is-docked .player-native-play-hint { display: none; }
 .player-external-controls.is-awaiting-native .player-external-btn:disabled { opacity: 0.4; cursor: default; }
+
+/* Les cançons que YouTube rebutja continuen identificables després del salt de ràdio. */
+.mq-unavailable {
+    display: block;
+    color: var(--pt-text-muted, #aaa);
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+.mq-play:disabled { cursor: default; opacity: 0.65; }

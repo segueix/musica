@@ -1819,3 +1819,13 @@ La TV (`__segueix_tv_discovery__`) no hi entra. El vídeo potser no arrenca sol 
 **Aplicació en viu:** hook `refreshSynchronizedMusic` d’app.js; actualitza cors, seguits, pantalles de dades i preferències, però mai torna a carregar el vídeo ni la cua. `musicSignals.persistForSync()` desa els comptadors pendents sense cridar `flush()`, que finalitzaria la sessió. La transacció de dades/diari/compte i la recuperació de quota continuen actives. Els canvis locals durant una petició es conserven per al cicle següent.
 
 **Proves:** rellotge simulat amb cicles reals de registre i OAuth, agrupació de cors, historial al minut, recepció d’un altre aparell, versions inalterades sense transferència, segon pla, absència de xarxa, desconnexió, caducitat sense finestres i espera davant 429. Hook real de vista: repinta cors i biblioteca sense canviar cua, posició ni pàgina; preserva formularis amb focus. Testing de Google: set dies d’autorització, cap prova de 24 hores implementada.
+
+## [2026-10-11] - Una cançó no disponible aturava la ràdio
+
+**Símptoma:** en arribar a un vídeo no disponible (exemple comunicat: «Gat Rumberu», de La Pegatina), la ràdio quedava aturada.
+
+**Causa:** el reproductor escoltava onStateChange i onAutoplayBlocked però no onError.
+
+**Solució:** subscripció a onError i validació de l’origen exacte i de l’iframe principal. Els errors 100, 101 i 150 marquen la cançó «No disponible» en memòria durant la sessió. La ràdio conserva una secció amb les cançons saltades i avança al cap de 800 ms. No es modifica el catàleg global: la disponibilitat pot dependre de l’usuari o del territori. Els errors transitoris/configuració i el bloqueig d’autoplay no marquen cançons. Es cancel·len els reintents pendents i el reproductor fallit no es reutilitza; els avisos duplicats i els ended d’un iframe antic no salten més cançons. Una navegació manual cancel·la l’avanç pendent. Al final de la cua es conserva l’avís sense regenerar ni tornar al principi. Es manté la política existent de preparar en pausa si la pestanya és oculta.
+
+**Verificació:** 135 proves de ràdio, missatgeria, reproducció manual, controls i recàrrega superades; 12 cobreixen aquesta incidència amb YouTube simulat. No s’ha verificat la reproducció real de «Gat Rumberu». ESLint sense errors als fitxers modificats; el lint global manté cinc errors previs a data.js i home-sections.js.

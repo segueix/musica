@@ -22,6 +22,43 @@
     // (no importa la llista). Un cop oberta a YouTube, «Desa» la deixa a la biblioteca de YouTube Music.
     const YTM_QUEUE_URL = 'https://www.youtube.com/watch_videos?video_ids=';
     const YTM_MAX_VIDEOS = 50;
+    // Disponibilitat observada en aquesta sessió, mai una baixa permanent del catàleg.
+    const unavailableVideos = new Map();
+
+    function handleUnavailableVideo(code, iframe) {
+        // 5 (HTML5) i 153 (configuració del reproductor) no demostren que la cançó no estigui disponible.
+        if (![100, 101, 150].includes(Number(code)) || !iframe || iframe._musicUnavailableHandled) return false;
+        if (!isPlaylistMode || activePlaylistId !== QUEUE_ID) return false;
+        const queue = activePlaylistQueue;
+        const index = currentPlaylistIndex;
+        const video = queue[index];
+        if (!video || String(video.id) !== String(currentVideoId) ||
+            String(videoPlayer?.dataset?.playingVideoId) !== String(video.id)) return false;
+
+        iframe._musicUnavailableHandled = true;
+        unavailableVideos.set(String(video.id), Number(code));
+        cancelLiveSwapFallback();
+        if (autoplayBlockTimer) clearTimeout(autoplayBlockTimer);
+        autoplayBlockTimer = null;
+        setAutoplayBlockedHint(false);
+        renderPlaylistQueue();
+        // Deixa llegir l'avís. Si l'usuari navega mentrestant, no li canviem la nova cançó.
+        setTimeout(() => {
+            if (!isPlaylistMode || activePlaylistId !== QUEUE_ID || activePlaylistQueue !== queue ||
+                currentPlaylistIndex !== index || String(currentVideoId) !== String(video.id) ||
+                videoPlayer?.querySelector('iframe') !== iframe) return;
+            let next = index + 1;
+            while (next < queue.length && unavailableVideos.has(String(queue[next].id))) next += 1;
+            if (next >= queue.length) {
+                // Conserva la cua i l'avís si no queda cap cançó, sense bucles ni regeneració automàtica.
+                renderPlaylistQueue();
+                return;
+            }
+            currentPlaylistIndex = next;
+            loadVideoInSequence();
+        }, 800);
+        return true;
+    }
 
     const ICONS = {
         shuffle:
@@ -1063,17 +1100,19 @@
     }
 
     function renderItem(video, index, { active = false, draggable = true } = {}) {
+        const unavailable = unavailableVideos.has(String(video.id));
         const duration = typeof getVideoDisplayDuration === 'function' ? getVideoDisplayDuration(video) : '';
         return `
             <div class="mq-item${active ? ' is-active' : ''}" data-index="${index}" role="listitem">
                 ${draggable ? `<span class="mq-handle" aria-hidden="true" title="Arrossega per reordenar">${ICONS.grip}</span>` : '<span class="mq-handle mq-handle--placeholder" aria-hidden="true"></span>'}
-                <button type="button" class="mq-play" data-mq-play="${index}" aria-label="Reprodueix ${escapeText(video.title)}">
+                <button type="button" class="mq-play" data-mq-play="${index}" ${unavailable ? 'disabled' : ''} aria-label="${unavailable ? 'No disponible:' : 'Reprodueix'} ${escapeText(video.title)}">
                     <span class="mq-cover">
                         <img src="${escapeText(video.thumbnail || 'img/icon-192.png')}" alt="" loading="lazy" decoding="async">
-                        ${active ? '<span class="mq-eq" aria-hidden="true"><i></i><i></i><i></i></span>' : ''}
+                        ${active && !unavailable ? '<span class="mq-eq" aria-hidden="true"><i></i><i></i><i></i></span>' : ''}
                     </span>
                     <span class="mq-text">
                         <span class="mq-title">${escapeText(video.title)}</span>
+                        ${unavailable ? '<span class="mq-unavailable">No disponible</span>' : ''}
                         <span class="mq-artist">${escapeText(video.channelTitle || '')}${queuedIds.has(String(video.id)) && !active ? ' · <span class="mq-added">Afegida per tu</span>' : ''}</span>
                     </span>
                     <span class="mq-duration">${escapeText(duration || '')}</span>
@@ -1541,6 +1580,9 @@
         if (!current) return false;
 
         const upcoming = activePlaylistQueue.slice(currentPlaylistIndex + 1);
+        const unavailablePast = activePlaylistQueue.slice(0, currentPlaylistIndex)
+            .map((video, index) => ({ video, index }))
+            .filter(({ video }) => unavailableVideos.has(String(video.id)));
         const canRegenerate = activePlaylistId === QUEUE_ID;
         // L'explicació del mode de descoberta (p. ex. si no hi havia historial suficient); el nom del mode ja no es mostra.
         const applied = canRegenerate ? radioMeta : null;
@@ -1556,8 +1598,10 @@
                 </div>
                 ${stylePickerHtml()}
                 ${modeNote}
-                <div class="mq-section">Ara sona</div>
+                ${unavailableVideos.has(String(current.id)) ? `<p class="mq-note" role="status">${upcoming.some(video => !unavailableVideos.has(String(video.id))) ? 'Cançó no disponible. Passem a la següent.' : 'No queden cançons disponibles en aquesta ràdio.'}</p>` : ''}
+                <div class="mq-section">${unavailableVideos.has(String(current.id)) ? 'Cançó no disponible' : 'Ara sona'}</div>
                 ${renderItem(current, currentPlaylistIndex, { active: true, draggable: false })}
+                ${unavailablePast.length ? `<div class="mq-section">No disponibles</div><div role="list">${unavailablePast.map(({ video, index }) => renderItem(video, index, { draggable: false })).join('')}</div>` : ''}
                 <div class="mq-section">A continuació${upcoming.length ? ` · ${upcoming.length}` : ''}</div>
                 <div class="mq-list${animateNextRender ? ' is-renewed' : ''}" role="list">
                     ${upcoming.map((video, i) => renderItem(video, currentPlaylistIndex + 1 + i)).join('') || '<div class="mq-empty">No hi ha més cançons a la ràdio.</div>'}
@@ -1750,6 +1794,7 @@
     }
 
     app.features.musicQueue = {
+        handleUnavailableVideo,
         captureSession,
         restoreSession,
         startFrom,
@@ -1784,4 +1829,5 @@
         QUEUE_ID,
     };
 })(window);
+
 

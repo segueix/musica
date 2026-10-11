@@ -10151,7 +10151,7 @@ function isPlayerFullscreen() {
 
 function getLiveYouTubeIframe() {
     const iframe = videoPlayer?.querySelector('iframe');
-    if (!iframe || !iframe.contentWindow || !isYouTubeEmbed(iframe.src)) {
+    if (!iframe || !iframe.contentWindow || iframe._musicUnavailableHandled || !isYouTubeEmbed(iframe.src)) {
         return null;
     }
     return iframe;
@@ -10610,7 +10610,7 @@ function handleYouTubeMessage(event) {
 }
 
 function handleYouTubeMessageLegacyImpl(event) {
-    if (!event.origin || !/youtube\.com|youtube-nocookie\.com/.test(event.origin)) {
+    if (!/^https:\/\/(www\.)?youtube(-nocookie)?\.com$/.test(event.origin || '')) {
         return;
     }
     let payload = event.data;
@@ -10623,6 +10623,12 @@ function handleYouTubeMessageLegacyImpl(event) {
     }
     // Només els avisos de l'iframe del reproductor principal en descriuen l'estat (el de Shorts també n'envia)
     const fromMainPlayer = Boolean(videoPlayer) && event.source === videoPlayer.querySelector('iframe')?.contentWindow;
+    const mainIframe = videoPlayer?.querySelector('iframe');
+    if (fromMainPlayer && mainIframe?._musicUnavailableHandled) return;
+    if (payload?.event === 'onError' && fromMainPlayer) {
+        SegueixApp.features.musicQueue?.handleUnavailableVideo?.(payload.info, mainIframe);
+        return;
+    }
     // El navegador ha bloquejat la reproducció automàtica (o una ordre de reproduir): cal un toc de l'usuari
     if (payload?.event === 'onAutoplayBlocked' && fromMainPlayer) {
         // Recrear el reproductor (si era un encadenat) no ho arreglaria: també el bloquejaria
@@ -10677,7 +10683,7 @@ function handleYouTubeMessageLegacyImpl(event) {
             );
         }
     }
-    if (payload?.event === 'onStateChange' && payload?.info === 0) {
+    if (payload?.event === 'onStateChange' && payload?.info === 0 && fromMainPlayer) {
         if (!shouldIgnoreDuplicateTVEnded()) {
             handlePlaylistVideoEnded();
         }
@@ -10733,6 +10739,10 @@ function setupYouTubeIframeMessaging(iframe) {
                 func: 'addEventListener',
                 args: ['onAutoplayBlocked'],
             }),
+            '*'
+        );
+        iframe.contentWindow.postMessage(
+            JSON.stringify({ event: 'command', func: 'addEventListener', args: ['onError'] }),
             '*'
         );
         iframe.contentWindow.postMessage(
@@ -14198,5 +14208,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         setTimeout(() => completeBootstrapProgressOverlay(), 180);
     }
 });
+
 
 
