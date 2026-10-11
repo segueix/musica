@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-11T22:08:27.161Z",
+  "generatedAt": "2026-10-11T22:13:18.354Z",
   "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
   "restrictedVideoCount": 21,
@@ -1236,7 +1236,7 @@
   ],
   "topicGovernance": "apply",
   "governedReclassified": {},
-  "topicHiddenCount": 0,
+  "topicHiddenCount": 35,
   "topicChannels": [
     {
       "id": "UClwN1cpIrafSRa8MbOMAvvQ",
@@ -2964,7 +2964,7 @@
       "id": "UCXoDEBc8CPWptFtzb_mmLiQ",
       "name": "Sílvia Pérez Cruz",
       "tracks": 221,
-      "selected": 42,
+      "selected": 50,
       "withClip": 0
     },
     {
@@ -3314,10 +3314,10 @@
   "indexedChannelCount": 542,
   "resolvedChannelCount": 542,
   "feedChannelCount": 542,
-  "rawPublicVideoCount": 6079,
-  "feedVideoCount": 5558,
-  "acceptedMusicCount": 5518,
-  "categoryEligibleVideoCount": 5514,
+  "rawPublicVideoCount": 6010,
+  "feedVideoCount": 5454,
+  "acceptedMusicCount": 5449,
+  "categoryEligibleVideoCount": 5445,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
     "before": 0,
@@ -3326,7 +3326,7 @@
   },
   "contentReviewCount": 527,
   "contentTypeCounts": {
-    "song": 5373,
+    "song": 5304,
     "live_song": 141,
     "album": 4,
     "other": 34,
@@ -3334,7 +3334,9 @@
   },
   "unresolvedChannelIds": [],
   "channelsWithoutUploads": [],
-  "channelsWithoutVideos": [],
+  "channelsWithoutVideos": [
+    "UCXa6Mb5QgzYjRV_D1VlYoKQ"
+  ],
   "channelsWithoutAcceptedMusic": [],
   "allIndexedChannelsVisible": true,
   "publishedFeedVideoCount": 5453,
