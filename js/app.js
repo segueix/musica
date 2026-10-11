@@ -2792,7 +2792,7 @@ function getShareLabel(videoData) {
 
 // Function to handle custom sharing logic
 async function shareVideo(videoData) {
-    const shareUrl = buildAppShareUrl(`v=${encodeURIComponent(videoData.id)}`);
+    const shareUrl = SegueixApp.utils.shareCodecs.buildEntityShareUrl('canco', videoData.id);
     const copyText = shareUrl;
 
     if (navigator.share) {
@@ -2874,7 +2874,9 @@ async function shareChannelProfile(channelId, fallback = {}) {
     const query = fallback.programId
         ? `program=${encodeURIComponent(fallback.programId)}&channel=${encodeURIComponent(channelData.id)}&programName=${encodeURIComponent(fallback.programName || '')}`
         : `channel=${encodeURIComponent(channelData.id)}`;
-    const shareUrl = buildAppShareUrl(query, 'segueix');
+    const shareUrl = fallback.programId
+        ? buildAppShareUrl(query, 'segueix')
+        : SegueixApp.utils.shareCodecs.buildEntityShareUrl('artista', channelData.id);
     const copyText = shareUrl;
 
     if (navigator.share) {

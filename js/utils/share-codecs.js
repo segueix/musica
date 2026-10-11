@@ -29,6 +29,14 @@
         return `${SHARE_BASE_URL}${queryString ? `?${queryString}` : ''}${normalizedHash}`;
     }
 
+    // Pàgines HTML pròpies: els robots socials no executen el JavaScript de l'app.
+    function buildEntityShareUrl(kind, id) {
+        if (!['canco', 'artista'].includes(kind) || !/^[A-Za-z0-9_-]+$/.test(String(id || ''))) {
+            return SHARE_BASE_URL;
+        }
+        return `${SHARE_BASE_URL}compartir/${kind}/${id}.html`;
+    }
+
     // Llegeix el paràmetre `t` (segon d'inici de reproducció). Els enllaços generats
     // abans del juliol de 2026 hi portaven un Date.now() en mil·lisegons com a cache
     // buster; aquests valors s'ignoren perquè no són un segon d'inici vàlid.
@@ -110,6 +118,7 @@
         decodeImportPayload,
         buildImportUrl,
         buildAppShareUrl,
+        buildEntityShareUrl,
         parseShareStartSeconds,
         SHARE_BASE_URL,
         MAX_SHARE_START_SECONDS,
