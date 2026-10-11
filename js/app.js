@@ -13183,10 +13183,12 @@ async function openChannelProfileLegacyImpl(channelId) {
     if (channelProfileHandle) {
         if (channel?.handle) {
             const cleanHandle = String(channel.handle).trim();
-            const youtubeChannelUrl = cleanHandle.startsWith('@')
+            // Nom visible editorial; l’enllaç conserva el canal real indexat.
+            const displayHandle = profileId === 'UCLyS6_AjQKIbL4C2BByWjmQ' ? '@elspets' : cleanHandle;
+            const youtubeChannelUrl = cleanHandle.startsWith('@') && profileId !== 'UCLyS6_AjQKIbL4C2BByWjmQ'
                 ? `https://www.youtube.com/${cleanHandle}`
                 : `https://www.youtube.com/channel/${profileId}`;
-            channelProfileHandle.innerHTML = `<a href="${youtubeChannelUrl}" class="channel-profile-handle-link" target="_blank" rel="noopener noreferrer">${escapeHtml(cleanHandle)}</a>`;
+            channelProfileHandle.innerHTML = `<a href="${youtubeChannelUrl}" class="channel-profile-handle-link" target="_blank" rel="noopener noreferrer">${escapeHtml(displayHandle)}</a>`;
             channelProfileHandle.classList.remove('hidden');
         } else {
             channelProfileHandle.innerHTML = '';
