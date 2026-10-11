@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-10-11T21:57:08.899Z",
+  "generatedAt": "2026-10-11T22:08:27.161Z",
   "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
   "restrictedVideoCount": 21,
   "restrictedVideosAdded": [],
   "deepPagesFetched": 0,
   "deepChannelCount": 18,
-  "topicChannelCount": 301,
-  "governedChannelCount": 104,
+  "topicChannelCount": 300,
+  "governedChannelCount": 102,
   "topicCoverage": [
     {
       "id": "UCqaEtRht2jakBhGFLzS617w",
@@ -78,14 +78,6 @@
       "name": "Doctor Prats",
       "songs": 28,
       "matched": 28,
-      "coverage": 1,
-      "governs": true
-    },
-    {
-      "id": "UCYLw9esbkWTiWH9PoSlnjXw",
-      "name": "elspetsoficial",
-      "songs": 3,
-      "matched": 3,
       "coverage": 1,
       "governs": true
     },
@@ -782,14 +774,6 @@
       "name": "Aspencat",
       "songs": 28,
       "matched": 22,
-      "coverage": 0.79,
-      "governs": true
-    },
-    {
-      "id": "UCV4rGI-t1ehir__UXavnbZg",
-      "name": "discmedielspets",
-      "songs": 33,
-      "matched": 26,
       "coverage": 0.79,
       "governs": true
     },
@@ -1785,13 +1769,6 @@
       "tracks": 16,
       "selected": 0,
       "withClip": 11
-    },
-    {
-      "id": "UC0EB-hSs5R5X4DGiSkY_-mw",
-      "name": "Els Pets",
-      "tracks": 352,
-      "selected": 30,
-      "withClip": 28
     },
     {
       "id": "UC86_pXaC6Kh_U-ouv4OZ_DQ",
@@ -3334,32 +3311,32 @@
       "withClip": 0
     }
   ],
-  "indexedChannelCount": 544,
-  "resolvedChannelCount": 544,
-  "feedChannelCount": 544,
-  "rawPublicVideoCount": 6050,
-  "feedVideoCount": 5526,
-  "acceptedMusicCount": 5486,
-  "categoryEligibleVideoCount": 5482,
+  "indexedChannelCount": 542,
+  "resolvedChannelCount": 542,
+  "feedChannelCount": 542,
+  "rawPublicVideoCount": 6079,
+  "feedVideoCount": 5558,
+  "acceptedMusicCount": 5518,
+  "categoryEligibleVideoCount": 5514,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
     "before": 0,
     "matched": 0,
     "rejected": 0
   },
-  "contentReviewCount": 530,
+  "contentReviewCount": 527,
   "contentTypeCounts": {
-    "song": 5333,
-    "live_song": 149,
+    "song": 5373,
+    "live_song": 141,
     "album": 4,
     "other": 34,
-    "review": 530
+    "review": 527
   },
   "unresolvedChannelIds": [],
   "channelsWithoutUploads": [],
   "channelsWithoutVideos": [],
   "channelsWithoutAcceptedMusic": [],
   "allIndexedChannelsVisible": true,
-  "publishedFeedVideoCount": 5471,
+  "publishedFeedVideoCount": 5453,
   "publishedShortVideoCount": 0
 }
