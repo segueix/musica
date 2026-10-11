@@ -15225,6 +15225,44 @@
       }
     },
     {
+      "name": "L'Ham de Foc",
+      "displayName": "L'Ham de Foc",
+      "aliases": [
+        "L’Ham de Foc"
+      ],
+      "genres": [
+        "Folk i arrel"
+      ],
+      "territories": [
+        "País Valencià"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UC711R927_H-bOzQGHu7B5Pg",
+            "handle": null,
+            "name": "L'Ham de Foc - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-11",
+        "genre:manual",
+        "https://www.youtube.com/channel/UC711R927_H-bOzQGHu7B5Pg"
+      ],
+      "notes": "Alta del canal Tema a Folk i arrel a petició de l’usuari. Canal contrastat a YouTube; mantenir els filtres de contingut i idioma del catàleg."
+    },
+    {
       "name": "L'Odi Social",
       "displayName": "L'Odi Social",
       "aliases": [
