@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-11T21:28:52.691Z",
-  "retainedVideoCount": 913,
+  "generatedAt": "2026-10-11T21:33:35.624Z",
+  "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
   "restrictedVideoCount": 21,
   "restrictedVideosAdded": [],
   "deepPagesFetched": 0,
   "deepChannelCount": 18,
-  "topicChannelCount": 300,
+  "topicChannelCount": 301,
   "governedChannelCount": 104,
   "topicCoverage": [
     {
@@ -1251,11 +1251,8 @@
     }
   ],
   "topicGovernance": "apply",
-  "governedReclassified": {
-    "other": 250,
-    "song": 27
-  },
-  "topicHiddenCount": 302,
+  "governedReclassified": {},
+  "topicHiddenCount": 0,
   "topicChannels": [
     {
       "id": "UClwN1cpIrafSRa8MbOMAvvQ",
@@ -2068,6 +2065,13 @@
       "tracks": 28,
       "selected": 14,
       "withClip": 10
+    },
+    {
+      "id": "UCK3mJ6ChV2a26kecZHDb4lg",
+      "name": "Hereus Del Beat",
+      "tracks": 26,
+      "selected": 16,
+      "withClip": 0
     },
     {
       "id": "UCy8MYPwq8ezeihgBh4dgEdg",
@@ -3330,72 +3334,32 @@
       "withClip": 0
     }
   ],
-  "indexedChannelCount": 542,
-  "resolvedChannelCount": 542,
-  "feedChannelCount": 542,
-  "rawPublicVideoCount": 12072,
-  "feedVideoCount": 10194,
-  "acceptedMusicCount": 10401,
-  "categoryEligibleVideoCount": 10297,
+  "indexedChannelCount": 544,
+  "resolvedChannelCount": 544,
+  "feedChannelCount": 544,
+  "rawPublicVideoCount": 5997,
+  "feedVideoCount": 5463,
+  "acceptedMusicCount": 5433,
+  "categoryEligibleVideoCount": 5429,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
-    "before": 1282,
+    "before": 0,
     "matched": 0,
-    "rejected": 1282
+    "rejected": 0
   },
   "contentReviewCount": 530,
   "contentTypeCounts": {
-    "song": 9952,
-    "live_song": 345,
-    "album": 104,
-    "other": 1141,
+    "song": 5288,
+    "live_song": 141,
+    "album": 4,
+    "other": 34,
     "review": 530
   },
   "unresolvedChannelIds": [],
   "channelsWithoutUploads": [],
-  "channelsWithoutVideos": [
-    "UCETR11eCJC5Z9mitj6MbASw",
-    "UCMj8K97SgGnI9OdJIHBH-Sw",
-    "UCmwGTBibm2bt9oF-P7ECSmQ",
-    "UCOEzuNu9yvO0AFTnSVKk4LQ",
-    "UCRLHVqJybtjS5ODPP5iAv4w",
-    "UCvdm27ITzhd3bsnftrBmFUg",
-    "UCf-q-2ikL2X1ZFd0HSj7Eiw",
-    "UCFI6QGe27kctP5lGeugsrhA",
-    "UC8hpq3EHqyG09og9xy3qOFg",
-    "UCRdGqpbhydDXIl83A9E8-2Q",
-    "UCr8kBnuIa6LPmhZSxbwVs7w",
-    "UCfcp4MZZ3t309KMOLo7JJag",
-    "UC1yaXYiC2Ab3tus3lTDljtw",
-    "UCwYR6Axoc2mEKz89P8t4N5Q",
-    "UCQAWPZGGc_4JqXq53ATaSBQ",
-    "UCHXlSnGKv7tdBxMw2F-FMkw",
-    "UCLKx4vBoCOKwB2x280VFmng",
-    "UCboGC6e3sTTIO9C6lHxifnA",
-    "UCfMqjIyA0G1cVGNlFXXoJhA",
-    "UCYcAA6W7ef4ZOWat8JjaARQ",
-    "UC9i1uNb0GFrISNB2pctkvRg",
-    "UCYPbYGqAXm8gaYGVY-ANVXA",
-    "UC5Fb0Xo8Xx6gVrFPoVsZluw",
-    "UCMNP5PWXks1_Es7e5Fs2LOg",
-    "UCJ6EMs_13PLDvRSHi-XqRwQ",
-    "UCXa6Mb5QgzYjRV_D1VlYoKQ",
-    "UC7IUL5Ba9dhBVPnTLe9RHhQ",
-    "UCHVIvz-1UD7NLa_FBveiFnw",
-    "UCz35Q7e_ulwY_uRqg5zDxeQ",
-    "UCHWqKBzUJqglcjVIMViPE0A",
-    "UCUsvtjzfis5NZY8qj8BY_FQ",
-    "UCg6lVNl78-THJI1w8dSy0bA"
-  ],
-  "channelsWithoutAcceptedMusic": [
-    "UCUSjRkF72RR1E8Rl4SWtVsQ",
-    "UCQOqsrBqC_4Ibu_MJrBpK_g",
-    "UC5CGdoxqbma-pqkAHPjkq9w",
-    "UC_eW1AyvwaPsQA5YAuOC3YQ",
-    "UC4S5WcSVzMhUd-UwKKpKp5w",
-    "UCdwDeWJ4aJ9RAURZERmWquA"
-  ],
+  "channelsWithoutVideos": [],
+  "channelsWithoutAcceptedMusic": [],
   "allIndexedChannelsVisible": true,
-  "publishedFeedVideoCount": 5428,
+  "publishedFeedVideoCount": 5455,
   "publishedShortVideoCount": 0
 }
