@@ -99,6 +99,9 @@ function mergeAlbumCatalog(previous, videos, channels, { hiddenIds = new Set(), 
   for (const video of videos || []) {
     const meta = extractAlbum(video?.description);
     if (!meta) continue;
+    // Una reedició digital no canvia l'any original verificat del disc.
+    const manualYear = video.originalYearSource === 'manual' ? Number(video.originalYear) : 0;
+    const albumYear = manualYear || meta.year;
     const artist = canonicalArtist(video, channels);
     const key = normalizeTitle(video?.title);
     if (!artist || !key) continue;
@@ -113,12 +116,12 @@ function mergeAlbumCatalog(previous, videos, channels, { hiddenIds = new Set(), 
         trackIds: [],
         keys: [],
       };
-      if (meta.year) album.year = meta.year;
+      if (albumYear) album.year = albumYear;
       (catalog.artists[artist] ||= { albums: [] }).albums.push(album);
       byArtistTitle.set(lookup, album);
     }
 
-    if (!album.year && meta.year) album.year = meta.year;
+    if (manualYear || (!album.year && albumYear)) album.year = albumYear;
     if (!album.trackIds.includes(String(video.id))) album.trackIds.push(String(video.id));
     if (!album.keys.includes(key)) album.keys.push(key);
     if (!newKeysByAlbum.has(album.id)) newKeysByAlbum.set(album.id, new Set());
@@ -180,4 +183,5 @@ module.exports = {
   canonicalArtist,
   mergeAlbumCatalog,
 };
+
 

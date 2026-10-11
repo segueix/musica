@@ -233,6 +233,19 @@ function mergeCandidate(artist, candidate, now) {
     return changed;
 }
 
+// La descoberta pot descartar candidats automàtics febles, però mai una alta de l'editor.
+// Les exclusions explícites continuen tenint prioritat, també sobre els canals verificats.
+function shouldKeepArtist(artist, exclusions) {
+    if (isExcluded(exclusions, artist)) return false;
+    if (PSEUDO_ARTIST_MBIDS.has(artist.musicbrainzId) && artist.reviewStatus === 'pendent' && !artist.active) return false;
+    const sources = artist.sources || [];
+    if (sources.some((source) => source === 'youtube:manual-verified' || source.startsWith('manual-user-'))) return true;
+    if (artist.reviewStatus !== 'pendent' || artist.active || artist.notes) return true;
+    return sources.some((source) =>
+        source === 'wikidata:native-language-catalan-musician' || source === 'wikidata:performed-catalan-work'
+    );
+}
+
 async function main() {
     const candidates = await discover();
     const data = loadDatabase();
@@ -257,18 +270,8 @@ async function main() {
         }
     }
 
-    const strongSources = new Set([
-        'wikidata:native-language-catalan-musician',
-        'wikidata:performed-catalan-work',
-    ]);
     const beforePrune = data.artists.length;
-    data.artists = data.artists.filter((artist) => {
-        if (isExcluded(exclusions, artist)) return false;
-        if (PSEUDO_ARTIST_MBIDS.has(artist.musicbrainzId) && artist.reviewStatus === 'pendent' && !artist.active) return false;
-        if (artist.reviewStatus !== 'pendent' || artist.active || artist.notes) return true;
-        const evidence = artist.sources.filter((source) => source.startsWith('wikidata:'));
-        return evidence.some((source) => strongSources.has(source));
-    });
+    data.artists = data.artists.filter((artist) => shouldKeepArtist(artist, exclusions));
     const pruned = beforePrune - data.artists.length;
 
     data.artists.sort((a, b) => a.name.localeCompare(b.name, 'ca', { sensitivity: 'base' }));
@@ -289,7 +292,12 @@ async function main() {
     fs.writeFileSync(OUTPUT, JSON.stringify(data, null, 2) + '\n');
 }
 
-main().catch((error) => {
-    console.error(`❌ ${error.message}`);
-    process.exit(1);
-});
+if (require.main === module) {
+    main().catch((error) => {
+        console.error(`❌ ${error.message}`);
+        process.exit(1);
+    });
+}
+
+module.exports = { shouldKeepArtist };
+

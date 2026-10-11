@@ -4,6 +4,18 @@ import albumModule from '../scripts/lib/albums_musica.js';
 const { extractAlbum, mergeAlbumCatalog } = albumModule;
 
 describe('catàleg local de discos', () => {
+  it('mostra l’any original verificat i corregeix l’any d’una reedició ja catalogada', () => {
+    const tracks = ['a', 'b'].map(id => ({
+      id, title: id, channelId: 'UC1', channelTitle: 'Serrat',
+      description: `Provided to YouTube by Ariola\n\n${id} · Serrat\n\nDisc antic\n\nReleased on: 2000-07-20`,
+      originalYear: 1967, originalYearSource: 'manual',
+    }));
+    const prior = mergeAlbumCatalog({}, tracks.map(({ originalYearSource, ...v }) => v), {});
+    expect(prior.artists.Serrat.albums[0].year).toBe(2000);
+    const result = mergeAlbumCatalog(prior, tracks, {});
+    expect(result.artists.Serrat.albums[0].year).toBe(1967);
+  });
+
   it('conserva les sessions convidades encara que només tinguin una pista i no arribin des de Topic', () => {
     const session = {
       id: 'live_carme_session', title: 'Club Social Carme (en directe)',
@@ -70,4 +82,5 @@ describe('catàleg local de discos', () => {
     expect(catalog.artists.Artista).toBeUndefined();
   });
 });
+
 

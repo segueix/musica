@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-11T22:10:00.000Z",
+  "updatedAt": "2026-10-11T23:03:20.925Z",
   "artists": [
     {
       "name": "2 Princeses Barbudes",
@@ -1796,6 +1796,69 @@
         }
       },
       "genresRaw": []
+    },
+    {
+      "name": "Anna Andreu",
+      "aliases": [],
+      "genres": [
+        "Pop",
+        "Cançó d'autor"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCSDuvSwql52flui2567reQw",
+            "handle": "@annaandreu",
+            "name": "Anna Andreu",
+            "type": "official",
+            "primary": true
+          },
+          {
+            "id": "UCBwmzKj56CGeAPmEFgqz0dg",
+            "handle": null,
+            "name": "Anna Andreu - Topic",
+            "type": "topic",
+            "primary": false
+          }
+        ],
+        "candidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-09-29",
+        "genre:manual",
+        "youtube:manual-verified",
+        "manual-user-2026-10-02",
+        "manual-user-2026-10-12"
+      ],
+      "lastChecked": "2026-10-11T23:03:20.925Z",
+      "notes": "Restauració de la fitxa i dels canals anteriors a la baixa automàtica accidental del 2026-10-05, autoritzada per l’editor el 2026-10-12.",
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.510Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.510Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
     },
     {
       "name": "Anna Ferrer",
@@ -12511,6 +12574,60 @@
       "genresRaw": []
     },
     {
+      "name": "Guillem Ramisa",
+      "aliases": [],
+      "genres": [
+        "Cançó d'autor"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCtEZ1MK5EscjssXcqEYGOng",
+            "handle": null,
+            "name": null,
+            "type": "official",
+            "primary": true
+          }
+        ],
+        "candidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-09-29",
+        "genre:manual",
+        "youtube:manual-verified",
+        "manual-user-2026-10-12"
+      ],
+      "lastChecked": "2026-10-11T23:03:20.925Z",
+      "notes": "Restauració de la fitxa i dels canals anteriors a la baixa automàtica accidental del 2026-10-05, autoritzada per l’editor el 2026-10-12.",
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.553Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.553Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
+    },
+    {
       "name": "Guillermina Motta",
       "aliases": [],
       "genres": [
@@ -14090,6 +14207,62 @@
           "musicbrainzTagsCheckedAt": null,
           "musicbrainzReleaseCheckedAt": null,
           "wikidataWorkCheckedAt": "2026-10-11T12:45:48.866Z",
+          "wikidataRaw": [],
+          "wikidataWorkRaw": [],
+          "musicbrainzRaw": [],
+          "musicbrainzTagsRaw": [],
+          "musicbrainzReleaseRaw": [],
+          "unmappedRaw": [],
+          "status": "sense-dades",
+          "wikidataWorkEvidence": []
+        }
+      }
+    },
+    {
+      "name": "Joan Manuel Serrat",
+      "aliases": [
+        "Joan Manuel Serrat i Teresa"
+      ],
+      "genres": [
+        "Cançó d'autor"
+      ],
+      "territories": [],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": "Q312753",
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UC9twmdozj_iXRhX_FRZMwzw",
+            "handle": "@joanmanuelserrat",
+            "name": "Joan Manuel Serrat",
+            "type": "official",
+            "primary": true
+          }
+        ],
+        "candidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-09-29",
+        "genre:manual",
+        "youtube:manual-verified",
+        "manual-user-2026-10-12"
+      ],
+      "lastChecked": "2026-10-11T23:03:20.925Z",
+      "notes": "Només les gravacions dels nou discos d’estudi en català de 1967–1989. Selecció tancada per ID; canal visible @joanmanuelserrat. Les pistes distribuïdes per Ariola provenen del canal Topic verificat.",
+      "genresRaw": [],
+      "enrichment": {
+        "genres": {
+          "checkedAt": "2026-10-04T12:18:29.561Z",
+          "musicbrainzCheckedAt": null,
+          "musicbrainzTagsCheckedAt": null,
+          "musicbrainzReleaseCheckedAt": null,
+          "wikidataWorkCheckedAt": "2026-10-04T12:18:29.561Z",
           "wikidataRaw": [],
           "wikidataWorkRaw": [],
           "musicbrainzRaw": [],

@@ -1,4 +1,353 @@
 {
   "_ajuda": "Excepcions verificades de l'any original d'una cançó, per identificador de vídeo de YouTube. Manen sobre l'evidència automàtica (Released on / ℗ de la descripció) i sobre la llista d'artistes antics de musica-classica.json: serveixen, per exemple, per marcar com a música actual una cançó nova d'un artista veterà, o com a antiga una pujada recent d'un arxiu. Format: \"<videoId>\": { \"year\": 2024, \"date\": \"2024-05-03\" (opcional), \"note\": \"on s'ha verificat\" }. No s'hi inventa cap any: si no es pot verificar, no hi va.",
-  "songs": {}
+  "songs": {
+    "CzyJSeByAmk": {
+      "year": 1967,
+      "note": "Ara Que Tinc Vint Anys: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "R2S7dW4uHOk": {
+      "year": 1967,
+      "note": "Ara Que Tinc Vint Anys: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "w2ErayDltGY": {
+      "year": 1967,
+      "note": "Ara Que Tinc Vint Anys: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "fuBjo_-EMdg": {
+      "year": 1967,
+      "note": "Ara Que Tinc Vint Anys: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "5qsG5uHAI3E": {
+      "year": 1967,
+      "note": "Ara Que Tinc Vint Anys: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "Grd2LOtXa2M": {
+      "year": 1967,
+      "note": "Ara Que Tinc Vint Anys: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "uFb-KohKSx8": {
+      "year": 1967,
+      "note": "Ara Que Tinc Vint Anys: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "o9wbfrl_rd8": {
+      "year": 1967,
+      "note": "Ara Que Tinc Vint Anys: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "P2Ld2D-0GDA": {
+      "year": 1967,
+      "note": "Ara Que Tinc Vint Anys: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "CreR1-is5l8": {
+      "year": 1967,
+      "note": "Ara Que Tinc Vint Anys: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "nY6DZt7ciK4": {
+      "year": 1968,
+      "note": "Cançons Tradicionals: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "PK1qiPl1nMk": {
+      "year": 1968,
+      "note": "Cançons Tradicionals: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "z3_iLjeS1MU": {
+      "year": 1968,
+      "note": "Cançons Tradicionals: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "pabFi28gnOY": {
+      "year": 1968,
+      "note": "Cançons Tradicionals: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "ZfND5C7HDZM": {
+      "year": 1968,
+      "note": "Cançons Tradicionals: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "DmPD_cXd9b8": {
+      "year": 1968,
+      "note": "Cançons Tradicionals: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "OSMs3Zhns9k": {
+      "year": 1968,
+      "note": "Cançons Tradicionals: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "hBdcWwhdvpg": {
+      "year": 1968,
+      "note": "Cançons Tradicionals: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "ttJ2FfTmrMM": {
+      "year": 1968,
+      "note": "Cançons Tradicionals: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "4Vzi8m0osnE": {
+      "year": 1968,
+      "note": "Cançons Tradicionals: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "68bOPCgfY54": {
+      "year": 1969,
+      "note": "Com Ho Fa El Vent: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "tkFA0ZGNs88": {
+      "year": 1969,
+      "note": "Com Ho Fa El Vent: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "R0xZ9vrnOwg": {
+      "year": 1969,
+      "note": "Com Ho Fa El Vent: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "MmA72r0rxZg": {
+      "year": 1969,
+      "note": "Com Ho Fa El Vent: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "dap5Ik7pgPo": {
+      "year": 1969,
+      "note": "Com Ho Fa El Vent: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "_pPmOXDWkoI": {
+      "year": 1969,
+      "note": "Com Ho Fa El Vent: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "RMAQS3XtoXI": {
+      "year": 1969,
+      "note": "Com Ho Fa El Vent: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "HwdXKHxhyTI": {
+      "year": 1969,
+      "note": "Com Ho Fa El Vent: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "pmm45Qa9Rns": {
+      "year": 1969,
+      "note": "Com Ho Fa El Vent: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "3cSaERmREJM": {
+      "year": 1969,
+      "note": "Com Ho Fa El Vent: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "9qH1aRZDTO8": {
+      "year": 1970,
+      "note": "Serrat 4 (20 De Maç): any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "GdqOXeMADUQ": {
+      "year": 1970,
+      "note": "Serrat 4 (20 De Maç): any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "Y7Qtilc5V1U": {
+      "year": 1970,
+      "note": "Serrat 4 (20 De Maç): any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "XsuAsjftkP4": {
+      "year": 1970,
+      "note": "Serrat 4 (20 De Maç): any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "Q_GSComTYaY": {
+      "year": 1970,
+      "note": "Serrat 4 (20 De Maç): any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "xAIBLCrG6Q0": {
+      "year": 1970,
+      "note": "Serrat 4 (20 De Maç): any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "H8f_hmK8tsg": {
+      "year": 1970,
+      "note": "Serrat 4 (20 De Maç): any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "eCaNFcRrx-w": {
+      "year": 1970,
+      "note": "Serrat 4 (20 De Maç): any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "rZ4ezMKs3G0": {
+      "year": 1970,
+      "note": "Serrat 4 (20 De Maç): any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "d--vfX71fHY": {
+      "year": 1970,
+      "note": "Serrat 4 (20 De Maç): any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "LXLXQ3eEC4c": {
+      "year": 1973,
+      "note": "Per Al Meu Amic: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "c1YeF3sgxcY": {
+      "year": 1973,
+      "note": "Per Al Meu Amic: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "89aVHl9A534": {
+      "year": 1973,
+      "note": "Per Al Meu Amic: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "04j7s4a6LIE": {
+      "year": 1973,
+      "note": "Per Al Meu Amic: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "HZgTQkWublc": {
+      "year": 1973,
+      "note": "Per Al Meu Amic: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "-rqoW37FozM": {
+      "year": 1973,
+      "note": "Per Al Meu Amic: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "04UvPyaNwYk": {
+      "year": 1973,
+      "note": "Per Al Meu Amic: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "yL3TTU1hgb0": {
+      "year": 1973,
+      "note": "Per Al Meu Amic: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "nBkini2HdHQ": {
+      "year": 1973,
+      "note": "Per Al Meu Amic: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "NDl46UCt_bk": {
+      "year": 1977,
+      "note": "Res No Es Mesqui: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "beqlExuzIa0": {
+      "year": 1977,
+      "note": "Res No Es Mesqui: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "zZKJZwU4eog": {
+      "year": 1977,
+      "note": "Res No Es Mesqui: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "jJuP8Zrked0": {
+      "year": 1977,
+      "note": "Res No Es Mesqui: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "nlHx4M2rg4w": {
+      "year": 1977,
+      "note": "Res No Es Mesqui: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "O3gjWEsr0Kg": {
+      "year": 1977,
+      "note": "Res No Es Mesqui: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "uvxQHB_1Bg0": {
+      "year": 1977,
+      "note": "Res No Es Mesqui: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "-k7Z3oCzUGQ": {
+      "year": 1977,
+      "note": "Res No Es Mesqui: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "pagcQFydIvw": {
+      "year": 1977,
+      "note": "Res No Es Mesqui: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "q7kyY5WLxCc": {
+      "year": 1980,
+      "note": "Tal Com Raja: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "qpj9CNpj-4c": {
+      "year": 1980,
+      "note": "Tal Com Raja: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "1FYlA0KP1Z0": {
+      "year": 1980,
+      "note": "Tal Com Raja: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "xjAZ71eHMjQ": {
+      "year": 1980,
+      "note": "Tal Com Raja: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "kMA5in1aNao": {
+      "year": 1980,
+      "note": "Tal Com Raja: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "Sfui12gUxUY": {
+      "year": 1980,
+      "note": "Tal Com Raja: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "yCWEVH7vt_w": {
+      "year": 1980,
+      "note": "Tal Com Raja: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "YJx2Iw8CAm8": {
+      "year": 1980,
+      "note": "Tal Com Raja: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "1Df_kLDtQ6A": {
+      "year": 1980,
+      "note": "Tal Com Raja: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "RJNEiGkQR-I": {
+      "year": 1980,
+      "note": "Tal Com Raja: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "eOVB-ukk9KA": {
+      "year": 1984,
+      "note": "Fa Vint Anys Que Tinc Vint Anys: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "VLqoVCTfzfc": {
+      "year": 1984,
+      "note": "Fa Vint Anys Que Tinc Vint Anys: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "ofEKG75KDpc": {
+      "year": 1984,
+      "note": "Fa Vint Anys Que Tinc Vint Anys: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "U1ZMg93mStU": {
+      "year": 1984,
+      "note": "Fa Vint Anys Que Tinc Vint Anys: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "k2ObP5rKBGQ": {
+      "year": 1984,
+      "note": "Fa Vint Anys Que Tinc Vint Anys: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "Vy9eNPUtTKY": {
+      "year": 1984,
+      "note": "Fa Vint Anys Que Tinc Vint Anys: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "_59OwASt6Pw": {
+      "year": 1984,
+      "note": "Fa Vint Anys Que Tinc Vint Anys: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "8iIoprBTypE": {
+      "year": 1984,
+      "note": "Fa Vint Anys Que Tinc Vint Anys: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "r9AI_FM4buU": {
+      "year": 1984,
+      "note": "Fa Vint Anys Que Tinc Vint Anys: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "90rdInCb2sk": {
+      "year": 1984,
+      "note": "Fa Vint Anys Que Tinc Vint Anys: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "R7plejswoXo": {
+      "year": 1989,
+      "note": "Material Sensible: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "SFRO49WEX5I": {
+      "year": 1989,
+      "note": "Material Sensible: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "7sMjFopGabA": {
+      "year": 1989,
+      "note": "Material Sensible: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "7DB3bbXEorc": {
+      "year": 1989,
+      "note": "Material Sensible: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "HHdxjvASpFA": {
+      "year": 1989,
+      "note": "Material Sensible: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "rmL7im6wYcY": {
+      "year": 1989,
+      "note": "Material Sensible: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "VI0RGPFmTD0": {
+      "year": 1989,
+      "note": "Material Sensible: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "5nHDbV7cmbw": {
+      "year": 1989,
+      "note": "Material Sensible: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    },
+    "v8mzSVyzs6E": {
+      "year": 1989,
+      "note": "Material Sensible: any original segons https://jmserrat.com/ca/discografia/ i Sony Music. YouTube indica la reedició digital de 2000."
+    }
+  }
 }

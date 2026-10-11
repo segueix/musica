@@ -1,0 +1,678 @@
+{
+  "reviewedOn": "2026-10-12",
+  "reason": "Restauració autoritzada per l’editor després de la baixa accidental de candidats manuals del 2026-10-05.",
+  "restoredArtists": [
+    {
+      "name": "Anna Andreu",
+      "genres": [
+        "Pop",
+        "Cançó d'autor"
+      ],
+      "channels": [
+        {
+          "id": "UCSDuvSwql52flui2567reQw",
+          "handle": "@annaandreu",
+          "name": "Anna Andreu",
+          "type": "official",
+          "primary": true
+        },
+        {
+          "id": "UCBwmzKj56CGeAPmEFgqz0dg",
+          "handle": null,
+          "name": "Anna Andreu - Topic",
+          "type": "topic",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "name": "Guillem Ramisa",
+      "genres": [
+        "Cançó d'autor"
+      ],
+      "channels": [
+        {
+          "id": "UCtEZ1MK5EscjssXcqEYGOng",
+          "handle": null,
+          "name": null,
+          "type": "official",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "name": "Joan Manuel Serrat",
+      "genres": [
+        "Cançó d'autor"
+      ],
+      "channels": [
+        {
+          "id": "UC9twmdozj_iXRhX_FRZMwzw",
+          "handle": "@joanmanuelserrat",
+          "name": "Joan Manuel Serrat",
+          "type": "official",
+          "primary": true
+        }
+      ]
+    }
+  ],
+  "paulFuster": {
+    "album": "Repte",
+    "year": 2012,
+    "channelId": "UCCYgQLqvl_nmSk4-WPDGPIg",
+    "videoIds": [
+      "y65epQLp8M8",
+      "wWkZLKWoAmY",
+      "TJ2TmPjnXlY",
+      "ZGhaVWXhi1k",
+      "R0mn00Vm0Rk",
+      "z6SUMiERJF4",
+      "agi8_eqWoLs",
+      "A_HBMcQK1Ek",
+      "uY1R5ss014o",
+      "_kB-JNuy7Qo"
+    ],
+    "status": "Ja recuperat; selecció reforçada als deu IDs del disc català."
+  },
+  "serrat": {
+    "officialChannelId": "UC9twmdozj_iXRhX_FRZMwzw",
+    "handle": "@joanmanuelserrat",
+    "distributorChannelId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+    "scope": "Nou discos d’estudi en català, 1967–1989.",
+    "sources": [
+      "https://jmserrat.com/ca/discografia/",
+      "https://www.sonymusic.es/lanzamientos/serrat-lanza-discografia-una-caja-de-12-cd-con-toda-su-obra-en-catalan/",
+      "https://www.youtube.com/@joanmanuelserrat/releases"
+    ],
+    "albumCount": 9,
+    "trackCount": 87,
+    "albums": [
+      {
+        "title": "Ara Que Tinc Vint Anys",
+        "originalYear": 1967,
+        "playlistUrl": "https://www.youtube.com/playlist?list=OLAK5uy_nQUQ0y4DOtY8b83q7vjkvmS0zsxydoiMQ&hl=en",
+        "tracks": [
+          {
+            "id": "CzyJSeByAmk",
+            "title": "Ara Que Tinc Vint Anys",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 152
+          },
+          {
+            "id": "R2S7dW4uHOk",
+            "title": "La Tieta",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 354
+          },
+          {
+            "id": "w2ErayDltGY",
+            "title": "Balada Per un Trobador",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 193
+          },
+          {
+            "id": "fuBjo_-EMdg",
+            "title": "Una Guitarra",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 169
+          },
+          {
+            "id": "5qsG5uHAI3E",
+            "title": "Els Vells Amants",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 217
+          },
+          {
+            "id": "Grd2LOtXa2M",
+            "title": "Canço de Bressol",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 263
+          },
+          {
+            "id": "uFb-KohKSx8",
+            "title": "El Drapaire",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 188
+          },
+          {
+            "id": "o9wbfrl_rd8",
+            "title": "La Mort de L'Avi",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 176
+          },
+          {
+            "id": "P2Ld2D-0GDA",
+            "title": "Me'n Vaig a Peu",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 191
+          },
+          {
+            "id": "CreR1-is5l8",
+            "title": "Els Titelles",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 274
+          }
+        ]
+      },
+      {
+        "title": "Cançons Tradicionals",
+        "originalYear": 1968,
+        "playlistUrl": "https://www.youtube.com/playlist?list=OLAK5uy_mZME2WxcTcV1aS8Mx-9ht-e3f9A6mJfTA&hl=en",
+        "tracks": [
+          {
+            "id": "nY6DZt7ciK4",
+            "title": "El Testament D'Amelia",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 206
+          },
+          {
+            "id": "PK1qiPl1nMk",
+            "title": "La Preso del Rei de Franca",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 177
+          },
+          {
+            "id": "z3_iLjeS1MU",
+            "title": "El Comte Arnau",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 189
+          },
+          {
+            "id": "pabFi28gnOY",
+            "title": "La Canco del Lladre",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 161
+          },
+          {
+            "id": "ZfND5C7HDZM",
+            "title": "L'Estudiant de Vic",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 282
+          },
+          {
+            "id": "DmPD_cXd9b8",
+            "title": "La Dama D'Arago",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 206
+          },
+          {
+            "id": "OSMs3Zhns9k",
+            "title": "El Ball de la Civada",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 155
+          },
+          {
+            "id": "hBdcWwhdvpg",
+            "title": "Canco de Batre",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 107
+          },
+          {
+            "id": "ttJ2FfTmrMM",
+            "title": "El Rossinyol",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 199
+          },
+          {
+            "id": "4Vzi8m0osnE",
+            "title": "La Preso de Lleida",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 244
+          }
+        ]
+      },
+      {
+        "title": "Com Ho Fa El Vent",
+        "originalYear": 1969,
+        "playlistUrl": "https://www.youtube.com/playlist?list=OLAK5uy_kTqZCXIgcS65mXgICw86HsraoEjc2--Lg&hl=en",
+        "tracks": [
+          {
+            "id": "68bOPCgfY54",
+            "title": "Com Ho Fa el Vent",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 96
+          },
+          {
+            "id": "tkFA0ZGNs88",
+            "title": "Paraules D'Amor",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 240
+          },
+          {
+            "id": "R0xZ9vrnOwg",
+            "title": "La Carmeta",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 150
+          },
+          {
+            "id": "MmA72r0rxZg",
+            "title": "De Mica en Mica",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 276
+          },
+          {
+            "id": "dap5Ik7pgPo",
+            "title": "En Qualsevol Lloc",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 155
+          },
+          {
+            "id": "_pPmOXDWkoI",
+            "title": "Saps",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 197
+          },
+          {
+            "id": "RMAQS3XtoXI",
+            "title": "Cami Avall",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 221
+          },
+          {
+            "id": "HwdXKHxhyTI",
+            "title": "L'Olivera",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 213
+          },
+          {
+            "id": "pmm45Qa9Rns",
+            "title": "Marta",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 305
+          },
+          {
+            "id": "3cSaERmREJM",
+            "title": "Canco de Matinada",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 159
+          }
+        ]
+      },
+      {
+        "title": "Serrat 4 (20 De Maç)",
+        "originalYear": 1970,
+        "playlistUrl": "https://www.youtube.com/playlist?list=OLAK5uy_mfyPy3t_o7e1djq2-WvXZ9Dk4xq6Xg55o&hl=en",
+        "tracks": [
+          {
+            "id": "9qH1aRZDTO8",
+            "title": "20 de Marc",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 168
+          },
+          {
+            "id": "GdqOXeMADUQ",
+            "title": "Els Veremadors",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 279
+          },
+          {
+            "id": "Y7Qtilc5V1U",
+            "title": "Conillet de Vellut",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 167
+          },
+          {
+            "id": "XsuAsjftkP4",
+            "title": "El Meu Carrer",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 223
+          },
+          {
+            "id": "Q_GSComTYaY",
+            "title": "Bon Dia",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 133
+          },
+          {
+            "id": "xAIBLCrG6Q0",
+            "title": "Canco Per a en Joan Salvat Papasseit",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 237
+          },
+          {
+            "id": "H8f_hmK8tsg",
+            "title": "Quasi una Dona",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 189
+          },
+          {
+            "id": "eCaNFcRrx-w",
+            "title": "Temps de Pluja",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 183
+          },
+          {
+            "id": "rZ4ezMKs3G0",
+            "title": "Adeu, Adeu Amor Meu I Sort",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 146
+          },
+          {
+            "id": "d--vfX71fHY",
+            "title": "Mare Lola",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 265
+          }
+        ]
+      },
+      {
+        "title": "Per Al Meu Amic",
+        "originalYear": 1973,
+        "playlistUrl": "https://www.youtube.com/playlist?list=OLAK5uy_mj_nxpQHxgfG0YTlDT3TR223hGtQZhhh8&hl=en",
+        "tracks": [
+          {
+            "id": "LXLXQ3eEC4c",
+            "title": "Helena",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 275
+          },
+          {
+            "id": "c1YeF3sgxcY",
+            "title": "Menuda",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 238
+          },
+          {
+            "id": "89aVHl9A534",
+            "title": "La Primera",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 286
+          },
+          {
+            "id": "04j7s4a6LIE",
+            "title": "Caminant Per L'Herba",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 295
+          },
+          {
+            "id": "HZgTQkWublc",
+            "title": "Pare",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 220
+          },
+          {
+            "id": "-rqoW37FozM",
+            "title": "Els Falziots",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 158
+          },
+          {
+            "id": "04UvPyaNwYk",
+            "title": "Canco Per a la Meva Mestra",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 244
+          },
+          {
+            "id": "yL3TTU1hgb0",
+            "title": "El Vell",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 187
+          },
+          {
+            "id": "nBkini2HdHQ",
+            "title": "Per al Meu Amic",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 275
+          }
+        ]
+      },
+      {
+        "title": "Res No Es Mesqui",
+        "originalYear": 1977,
+        "playlistUrl": "https://www.youtube.com/playlist?list=OLAK5uy_kSuT-Q5DvMJKkgYqcca3PAr4Iczmgee3g&hl=en",
+        "tracks": [
+          {
+            "id": "NDl46UCt_bk",
+            "title": "Res No Es Mesqui",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 205
+          },
+          {
+            "id": "beqlExuzIa0",
+            "title": "Canço de L'Amor Efimera",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 200
+          },
+          {
+            "id": "zZKJZwU4eog",
+            "title": "Quina Grua el Meu Estel",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 348
+          },
+          {
+            "id": "jJuP8Zrked0",
+            "title": "Si Jo Fos Pescador",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 134
+          },
+          {
+            "id": "nlHx4M2rg4w",
+            "title": "Pregaria",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 89
+          },
+          {
+            "id": "O3gjWEsr0Kg",
+            "title": "Collita de Fruits",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 454
+          },
+          {
+            "id": "uvxQHB_1Bg0",
+            "title": "Pantalons Llargs",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 110
+          },
+          {
+            "id": "-k7Z3oCzUGQ",
+            "title": "Deixare la Ciutat",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 163
+          },
+          {
+            "id": "pagcQFydIvw",
+            "title": "Canço Per a en Joan Salvat Papasseit",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 272
+          }
+        ]
+      },
+      {
+        "title": "Tal Com Raja",
+        "originalYear": 1980,
+        "playlistUrl": "https://www.youtube.com/playlist?list=OLAK5uy_mhi993NzIecC1LdBxFcsV9iTm0XP3MrY0&hl=en",
+        "tracks": [
+          {
+            "id": "q7kyY5WLxCc",
+            "title": "Temps Era Temps",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 219
+          },
+          {
+            "id": "qpj9CNpj-4c",
+            "title": "Canço de L'Amor Petit",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 158
+          },
+          {
+            "id": "1FYlA0KP1Z0",
+            "title": "Es Quan Dormo Que Hi Veig Clar",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 161
+          },
+          {
+            "id": "xjAZ71eHMjQ",
+            "title": "Si No Us Sap Greu",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 169
+          },
+          {
+            "id": "kMA5in1aNao",
+            "title": "Fins Que Cal Dir-Se Adeu",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 299
+          },
+          {
+            "id": "Sfui12gUxUY",
+            "title": "El Gall",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 154
+          },
+          {
+            "id": "yCWEVH7vt_w",
+            "title": "La Noia Que S'Ha Posat a Ballar",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 199
+          },
+          {
+            "id": "YJx2Iw8CAm8",
+            "title": "Vaig Com Les Aus",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 214
+          },
+          {
+            "id": "1Df_kLDtQ6A",
+            "title": "Jocs I Joguines",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 211
+          },
+          {
+            "id": "RJNEiGkQR-I",
+            "title": "Per Que la Gent S'Avorreix Tant?",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 183
+          }
+        ]
+      },
+      {
+        "title": "Fa Vint Anys Que Tinc Vint Anys",
+        "originalYear": 1984,
+        "playlistUrl": "https://www.youtube.com/playlist?list=OLAK5uy_kH9hWNI5xEOGAwbs5jFpp-qknacyRodFA&hl=en",
+        "tracks": [
+          {
+            "id": "eOVB-ukk9KA",
+            "title": "Plany al Mar",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 223
+          },
+          {
+            "id": "VLqoVCTfzfc",
+            "title": "La Consciencia",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 191
+          },
+          {
+            "id": "ofEKG75KDpc",
+            "title": "Aixo Que en Diuen Estar Enamorat",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 348
+          },
+          {
+            "id": "U1ZMg93mStU",
+            "title": "Carta Postuma a Helena Francis",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 213
+          },
+          {
+            "id": "k2ObP5rKBGQ",
+            "title": "El Falco (Poema de J. Carner)",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 118
+          },
+          {
+            "id": "Vy9eNPUtTKY",
+            "title": "Aixo S'Esta Ensorrant",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 227
+          },
+          {
+            "id": "_59OwASt6Pw",
+            "title": "Infants (Poema de Pere Quart)",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 206
+          },
+          {
+            "id": "8iIoprBTypE",
+            "title": "El Mon Esta Ben Girat",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 187
+          },
+          {
+            "id": "r9AI_FM4buU",
+            "title": "Seria Fantastic",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 230
+          },
+          {
+            "id": "90rdInCb2sk",
+            "title": "Fa Vint Anys Que Tinc Vint Anys",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 153
+          }
+        ]
+      },
+      {
+        "title": "Material Sensible",
+        "originalYear": 1989,
+        "playlistUrl": "https://www.youtube.com/playlist?list=OLAK5uy_k4cvcEdV83JCj-ruC94-7qK09pTMpUghM&hl=en",
+        "tracks": [
+          {
+            "id": "R7plejswoXo",
+            "title": "Barcelona I Jo",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 264
+          },
+          {
+            "id": "SFRO49WEX5I",
+            "title": "La Lluna",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 228
+          },
+          {
+            "id": "7sMjFopGabA",
+            "title": "Kubala",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 170
+          },
+          {
+            "id": "7DB3bbXEorc",
+            "title": "La Rosa de L'Adeu",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 238
+          },
+          {
+            "id": "HHdxjvASpFA",
+            "title": "Si No Fos Per Tu",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 276
+          },
+          {
+            "id": "rmL7im6wYcY",
+            "title": "Salam Rashid",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 357
+          },
+          {
+            "id": "VI0RGPFmTD0",
+            "title": "En Paus",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 166
+          },
+          {
+            "id": "5nHDbV7cmbw",
+            "title": "Per Construir un Bell Somni",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 258
+          },
+          {
+            "id": "v8mzSVyzs6E",
+            "title": "Malson Per Entregues",
+            "uploaderId": "UCrUiOJEGdgQEh6Ol4tPLJNg",
+            "durationSeconds": 403
+          }
+        ]
+      }
+    ]
+  },
+  "automaticPruning": "Es preserven manual-user-* i youtube:manual-verified; les exclusions explícites segueixen manant."
+}

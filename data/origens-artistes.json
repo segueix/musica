@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-12",
+  "updatedAt": "2026-10-11T23:03:20.925Z",
   "attribution": {
     "text": "Coordenades de referència: GeoNames, via Open-Meteo. CC BY 4.0.",
     "sources": [
@@ -9711,6 +9711,54 @@
       "reviewedOn": "2026-10-12",
       "assignmentSource": "manual-review",
       "locked": true
+    },
+    "artist:anna-andreu": {
+      "name": "Anna Andreu",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3110101"
+      ],
+      "confidence": "alta",
+      "basis": "Sant Quirze del Vallès, origen indicat a la fitxa biogràfica del CCCB.",
+      "sources": [
+        "https://www.cccb.org/en/w/participants/anna-andreu"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:guillem-ramisa": {
+      "name": "Guillem Ramisa",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3111465"
+      ],
+      "confidence": "alta",
+      "basis": "Roda de Ter, origen indicat a la biografia oficial de l’artista.",
+      "sources": [
+        "https://guillemramisa.com/info/"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:joan-manuel-serrat": {
+      "name": "Joan Manuel Serrat",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "Barcelona (Poble-sec), origen indicat a la biografia oficial de l’artista.",
+      "sources": [
+        "https://jmserrat.com/ca/biografia/"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true
     }
   },
   "channels": {
@@ -10252,7 +10300,11 @@
     "UCnmFh1j3xvDfrw20AqVgegw": "artist:derbi-junior",
     "UCjPkVZQJXgxwbkx2yE5uHig": "artist:derbi-junior",
     "UC1GY1MkV-zNT_8Mv-GANOLA": "artist:els-bourbons",
-    "UC8vbtHPcQvQEuQi2wcwK6aQ": "artist:tornaveus"
+    "UC8vbtHPcQvQEuQi2wcwK6aQ": "artist:tornaveus",
+    "UCSDuvSwql52flui2567reQw": "artist:anna-andreu",
+    "UCBwmzKj56CGeAPmEFgqz0dg": "artist:anna-andreu",
+    "UCtEZ1MK5EscjssXcqEYGOng": "artist:guillem-ramisa",
+    "UC9twmdozj_iXRhX_FRZMwzw": "artist:joan-manuel-serrat"
   },
   "excludedProfiles": {
     "UCdezTX23syEeAJJAb2oOkKA": {

@@ -1,3 +1,13 @@
+## [2026-10-12] - La descoberta esborrava artistes verificats manualment
+
+**Causa comprovada:** el commit `f515896b722080dffa630d94c01a5807f90166c0` (2026-10-05) va eliminar Anna Andreu, Guillem Ramisa i Paul Fuster. Les fitxes tenien canals verificats i fonts `manual-user-*` / `youtube:manual-verified`, però encara `reviewStatus: pendent`, `active: false` i notes buides. La poda de `descobrir_artistes_musica.js` només acceptava dues evidències de Wikidata i les considerava candidats febles. Les altres quatre baixes del mateix commit sí que responien al registre d’exclusions.
+
+**Correcció:** `shouldKeepArtist()` preserva les incorporacions i verificacions manuals abans de descartar candidats febles. Les exclusions explícites continuen tenint prioritat. Prova de regressió amb els estats antics dels tres artistes, candidats automàtics i retirades explícites. Anna Andreu i Guillem Ramisa es restauren amb els mateixos canals i gèneres, ara aprovats. Paul Fuster ja s’havia reincorporat el 2026-10-06: es reforça la selecció de *Repte* als deu IDs exactes.
+
+**Serrat, nova indicació de l’editor:** es retira només la seva exclusió global i es recupera `@joanmanuelserrat`, amb 87 pistes dels nou discos d’estudi en català de 1967–1989. Els llançaments apareixen al canal oficial, però el distribuïdor de les gravacions és `UCrUiOJEGdgQEh6Ol4tPLJNg`: `allowedExternalVideos` autoritza cada parella ID/canal sense obrir la resta del repertori. Les cinc pistes de menys de dos minuts són cançons completes, registrades com a falsos Shorts. La revisió d’idioma i l’any original queden fixats per ID. `albums_musica.js` respecta l’any verificat manualment en comptes de mostrar la reedició de 2000, també en discos ja catalogats.
+
+**Traçabilitat:** `docs/revisions/2026-10-12-restauracio-artistes.json` conté les llistes originals, els títols, els anys i els IDs verificats. El feed i els índexs es regeneren pel workflow ordinari només per als canals afectats; no s’editen manualment. Orígens incorporats amb fonts: Anna Andreu (Sant Quirze del Vallès), Guillem Ramisa (Roda de Ter) i Serrat (Barcelona).
+
 ## [2026-10-09] - Directes: ràdio pròpia i sessions convidades a la discografia
 
 **Petició:** clicar un directe engega una ràdio només de directes; les set sessions de Club Social Carme també són a la discografia dels artistes participants. Maria Jaume queda només a Pop.
@@ -1852,3 +1862,4 @@ Verificació: taxonomia separada, decoració de vídeos d'arxiu, grup amb tots d
 ## [2026-10-11] - Origen a la fitxa: HTML nou amb JS antic
 
 En verificar la primera publicació, la fitxa contenia `apOrigin` però quedava buit: el navegador conservava la URL anterior d'`artist-page.js`. Com en els casos de memòria cau descrits més amunt, s'han versionat les URLs del JS modificat i de `portada.css` a `20261011-origen-1`, a més de regenerar el service worker. Les dades viuen a `data/origens-artistes.json`; només es mostren assignacions validades i les respostes antigues no poden pintar un altre artista. Proves: `tests/artist-origin.test.js`.
+
