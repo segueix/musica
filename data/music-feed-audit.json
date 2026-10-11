@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-11T12:31:14.995Z",
+  "generatedAt": "2026-10-11T12:38:05.920Z",
   "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
   "restrictedVideoCount": 21,
@@ -2229,8 +2229,8 @@
     {
       "id": "UC5u7o5L26RuDowQsqOJDm0w",
       "name": "La Coixinera",
-      "tracks": 1,
-      "selected": 1,
+      "tracks": 49,
+      "selected": 41,
       "withClip": 0
     },
     {
@@ -3322,10 +3322,10 @@
   "indexedChannelCount": 543,
   "resolvedChannelCount": 543,
   "feedChannelCount": 543,
-  "rawPublicVideoCount": 5926,
-  "feedVideoCount": 5382,
-  "acceptedMusicCount": 5342,
-  "categoryEligibleVideoCount": 5338,
+  "rawPublicVideoCount": 5991,
+  "feedVideoCount": 5447,
+  "acceptedMusicCount": 5407,
+  "categoryEligibleVideoCount": 5403,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
     "before": 0,
@@ -3334,7 +3334,7 @@
   },
   "contentReviewCount": 550,
   "contentTypeCounts": {
-    "song": 5201,
+    "song": 5266,
     "live_song": 137,
     "album": 4,
     "other": 34,
@@ -3345,6 +3345,6 @@
   "channelsWithoutVideos": [],
   "channelsWithoutAcceptedMusic": [],
   "allIndexedChannelsVisible": true,
-  "publishedFeedVideoCount": 5382,
+  "publishedFeedVideoCount": 5407,
   "publishedShortVideoCount": 0
 }
