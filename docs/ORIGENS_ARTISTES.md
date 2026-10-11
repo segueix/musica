@@ -2,7 +2,7 @@
 
 ## Estat: 11 d'octubre de 2026
 
-La fitxa mostra les assignacions validades de 120 artistes (214 canals oficials i Topic). En prémer la línia «Origen» o «Vinculat a» es despleguen el motiu i les fonts. Els perfils de programes i els artistes encara sense assignació no mostren la línia.
+La fitxa mostra les assignacions validades de 150 artistes (267 canals oficials i Topic). En prémer la línia «Origen» o «Vinculat a» es despleguen el motiu i les fonts. Els perfils de programes i els artistes encara sense assignació no mostren la línia.
 
 El [pilot inicial](ORIGENS_PILOT_30.md) tenia 22 casos documentats i 8 pendents. Una segona revisió ha validat Dusminguet, La Coixinera, Ebri Knight, Joan Miquel Oliver, Xarim Aresté i la vinculació de La Troba Kung-Fú amb la Garriga. Per a aquest últim, la biografia de Fourni Produccions a WOMEX documenta l'estudi propi a la Fournier; no afirmem que sigui el municipi de formació.
 
@@ -14,8 +14,8 @@ El [pilot inicial](ORIGENS_PILOT_30.md) tenia 22 casos documentats i 8 pendents.
 
 - `artists`: assignació única per artista, relació `origin` o `associated`, llocs, fonts, explicació, data, estat i bloqueig manual.
 - `channels`: canals oficials i Topic associats a l'artista del catàleg. En afegir canals cal ampliar aquest mapa després de confirmar la identitat.
-- `places`: llocs normalitzats reutilitzables. Hi ha 75 poblacions amb identificador GeoNames i coordenades de referència del nucli o municipi; no són domicilis ni coordenades personals. La jerarquia administrativa del proveïdor no s'utilitza per assignar el municipi (pot tenir discrepàncies).
-- Formentera i Mallorca es mantenen a escala d'illa; Camp de Tarragona, Camp de Túria i Montseny a escala territorial. Aquests cinc llocs no tenen coordenades puntuals. Marala conserva les tres poblacions documentades.
+- `places`: llocs normalitzats reutilitzables. Hi ha 86 poblacions amb identificador GeoNames i coordenades de referència del nucli o municipi; no són domicilis ni coordenades personals. La jerarquia administrativa del proveïdor no s'utilitza per assignar el municipi (pot tenir discrepàncies).
+- Formentera i Mallorca es mantenen a escala d'illa; Camp de Tarragona, Camp de Túria i Montseny a escala territorial. També es documenten Vallès, Comtat, Alcoià, Horta Sud i Maresme. Aquests deu llocs territorials no tenen coordenades puntuals. Marala conserva les tres poblacions documentades.
 
 Les coordenades provenen de **GeoNames, generalment via Open-Meteo**, amb atribució CC BY 4.0. Cada població desa la consulta d'origen i la data. Referències: <https://www.geonames.org/> i <https://open-meteo.com/en/docs/geocoding-api>.
 
@@ -62,3 +62,11 @@ Forja queda assignat a Terrassa amb `assignmentSource: user-correction` i `locke
 Bocc queda assignat a Barcelona, amb la biografia del grup a Bandcamp i la fitxa del festival CastellHell com a fonts. Era el següent grup pendent amb 20 cançons/directes al feed. [Decisió i fonts](revisions/2026-10-11-origen-bocc.json).
 
 Palau s'ha eliminat del catàleg i de la llista de canals verificats, amb exclusió editorial temporal pel nom exacte. S'ha retirat també l'etiqueta incorrecta de les metadades del feed i de l'índex de canals. El canal, les cançons i l'origen de Ferran Palau es conserven íntegrament.
+
+## Cinquè lot de 30 artistes (11 d’octubre de 2026)
+
+S’han aplicat les 30 assignacions i es preserven íntegrament les 120 anteriors, incloses les correccions editorials. [Decisions i fonts del lot](revisions/2026-10-11-origens-lot-05.json). La priorització continua basada en cançons i directes presents al feed, no en tota la discografia.
+
+26 artistes tenen una o més poblacions assignades. Hey Zuri conserva Canals, l’Alcúdia de Crespins i Llanera de Ranes; Boom Boom Fighters, Mataró i Girona. Lluís Llach es vincula a Verges per l’arrelament des de la infància, distingint-lo del naixement a Girona. Vicky l’Arròs es vincula a Barcelona segons la localitat publicada per l’artista.
+
+Quatre artistes mantenen la precisió territorial acreditada, pendent de concretar municipi: Brot Bord (Vallès), Cactus Troop (Comtat i Alcoià), Bèrnia (Horta Sud) i Still Ill (Maresme). No tenen coordenades puntuals i no s’han de convertir automàticament en centres municipals per calcular distàncies. Les assignacions són manuals i protegides; la ràdio per proximitat continua pendent.
