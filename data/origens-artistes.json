@@ -335,6 +335,200 @@
       "territory": "País Valencià",
       "source": "https://geocoding-api.open-meteo.com/v1/get?id=2509954&language=ca",
       "checkedOn": "2026-10-11"
+    },
+    "geonames:3108110": {
+      "name": "Tiana",
+      "type": "municipality",
+      "geonamesId": 3108110,
+      "coordinates": {
+        "latitude": 41.48201,
+        "longitude": 2.26702,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Tiana&count=5&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:3128760": {
+      "name": "Barcelona",
+      "type": "municipality",
+      "geonamesId": 3128760,
+      "coordinates": {
+        "latitude": 41.38879,
+        "longitude": 2.15899,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Barcelona&count=5&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:3121456": {
+      "name": "Girona",
+      "type": "municipality",
+      "geonamesId": 3121456,
+      "coordinates": {
+        "latitude": 41.98311,
+        "longitude": 2.82493,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Girona&count=5&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:3122912": {
+      "name": "Esparreguera",
+      "type": "municipality",
+      "geonamesId": 3122912,
+      "coordinates": {
+        "latitude": 41.53809,
+        "longitude": 1.87025,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Esparreguera&count=5&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:3110642": {
+      "name": "Sant Feliu de Llobregat",
+      "type": "municipality",
+      "geonamesId": 3110642,
+      "coordinates": {
+        "latitude": 41.38333,
+        "longitude": 2.05,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Sant+Feliu+de+Llobregat&count=5&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:3111199": {
+      "name": "Sabadell",
+      "type": "municipality",
+      "geonamesId": 3111199,
+      "coordinates": {
+        "latitude": 41.54329,
+        "longitude": 2.10942,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Sabadell&count=5&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:3108286": {
+      "name": "Terrassa",
+      "type": "municipality",
+      "geonamesId": 3108286,
+      "coordinates": {
+        "latitude": 41.56667,
+        "longitude": 2.01667,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Terrassa&count=5&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:3118514": {
+      "name": "Lleida",
+      "type": "municipality",
+      "geonamesId": 3118514,
+      "coordinates": {
+        "latitude": 41.61674,
+        "longitude": 0.62218,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Lleida&count=5&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:3108288": {
+      "name": "Tarragona",
+      "type": "municipality",
+      "geonamesId": 3108288,
+      "coordinates": {
+        "latitude": 41.11905,
+        "longitude": 1.24544,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Tarragona&count=5&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:3124661": {
+      "name": "Constantí",
+      "type": "municipality",
+      "geonamesId": 3124661,
+      "coordinates": {
+        "latitude": 41.15392,
+        "longitude": 1.21262,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Constant%C3%AD&count=5&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:2515624": {
+      "name": "sa Pobla",
+      "type": "municipality",
+      "geonamesId": 2515624,
+      "coordinates": {
+        "latitude": 39.7692,
+        "longitude": 3.02394,
+        "precision": "settlement_reference"
+      },
+      "territory": "Illes Balears",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=sa+Pobla&count=5&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:2510868": {
+      "name": "Sineu",
+      "type": "municipality",
+      "geonamesId": 2510868,
+      "coordinates": {
+        "latitude": 39.64254,
+        "longitude": 3.01034,
+        "precision": "settlement_reference"
+      },
+      "territory": "Illes Balears",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Sineu&count=5&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:3116474": {
+      "name": "Montgat",
+      "type": "municipality",
+      "geonamesId": 3116474,
+      "coordinates": {
+        "latitude": 41.46859,
+        "longitude": 2.28001,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Montgat&count=5&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:3126317": {
+      "name": "Cardedeu",
+      "type": "municipality",
+      "geonamesId": 3126317,
+      "coordinates": {
+        "latitude": 41.63976,
+        "longitude": 2.35739,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Cardedeu&count=5&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "territory:mallorca": {
+      "name": "Mallorca",
+      "type": "island",
+      "coordinates": null,
+      "territory": "Illes Balears"
+    },
+    "territory:camp-de-turia": {
+      "name": "Camp de Túria",
+      "type": "region",
+      "coordinates": null,
+      "territory": "País Valencià"
     }
   },
   "artists": {
@@ -845,6 +1039,494 @@
       "reviewedOn": "2026-10-11",
       "assignmentSource": "user-correction",
       "locked": true
+    },
+    "artist:pau-riba-i-romeva": {
+      "name": "Pau Riba i Romeva",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:3108110"
+      ],
+      "confidence": "alta",
+      "basis": "Vinculació artística i cultural amb Tiana, recollida per l'Ajuntament. Va néixer a Palma; no s'equipara aquesta vinculació al lloc de naixement.",
+      "sources": [
+        "https://tiana.cat/info/",
+        "https://tiana.cat/dioptria55-grec-riba-tiana/",
+        "https://www.edicionscalligraf.com/es/autores/280-riba-pau-2"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:companyia-electrica-dharma": {
+      "name": "Companyia Elèctrica Dharma",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "Grup nascut al barri de Sants de Barcelona, segons el documental i els arxius de RTVE.",
+      "sources": [
+        "https://www.rtve.es/play/noticias/20230428/companyia-electrica-dharma-50-anys-envelats-i-zeleste/2442127.shtml"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:quico-pi-de-la-serra": {
+      "name": "Quico Pi de la Serra",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "Cantautor barceloní, identificat així en la biografia de L'Auditori i el Museu de la Música.",
+      "sources": [
+        "https://www.auditori.cat/ca/new/museu-musica-inaugura-exposicio-les-guitarres-den-quico-pi-de-la-serra-instruments-cedits-per-lartista/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:blaumut": {
+      "name": "Blaumut",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "La banda s'identifica públicament amb Barcelona. L'entrevista als membres situa a la ciutat una etapa de formació del grup; no s'assigna un lloc de naixement comú als integrants.",
+      "sources": [
+        "https://www.auva.cat/entrevistem-a-blaumut/",
+        "https://www.enderrock.cat/noticia/23854/blaumut-es-deixa-anar-vull"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:pol-bordas": {
+      "name": "Pol Bordas",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3121456"
+      ],
+      "confidence": "alta",
+      "basis": "L'entrevista documenta la criança, la formació musical i els primers projectes amb companys d'institut a Girona.",
+      "sources": [
+        "https://www.tagmag.es/tags/descubriendo-a-pol-bordas"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:ferran-palau": {
+      "name": "Ferran Palau",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3122912"
+      ],
+      "confidence": "alta",
+      "basis": "Origen i infància a Esparreguera documentats en entrevistes al músic.",
+      "sources": [
+        "https://www.ara.cat/cultura/ferran-palau-crooner-suburbis-misteriosos_1_2627701.html",
+        "https://www.eltemps.cat/article/61854/ferran-palau"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:joan-dausa": {
+      "name": "Joan Dausà",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3110642"
+      ],
+      "confidence": "alta",
+      "basis": "Identificat com a músic santfeliuenc pel butlletí municipal i per les entrevistes de 3Cat.",
+      "sources": [
+        "https://www.santfeliu.org/butlleti/452/breus16.html",
+        "https://www.3cat.cat/3catinfo/joan-dausa-jo-faig-musica-per-connectar-amb-la-gent/noticia/3312289/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:ven-nus": {
+      "name": "Ven'nus",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3111199"
+      ],
+      "confidence": "alta",
+      "basis": "Valèria Núñez Saurí és identificada com a cantautora de Sabadell en entrevistes independents.",
+      "sources": [
+        "https://www.diaridesabadell.com/oci-cultura/2023/03/26/vennus-cava-urpi-sabadell/",
+        "https://www.eltemps.cat/article/67130/vennus-mai-vista-trista-es-un-disc-molt-lluminos-un-cant-a-lesperanca"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:vidres-a-la-sang": {
+      "name": "Vidres a la Sang",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3108286"
+      ],
+      "confidence": "alta",
+      "basis": "Banda originària de Terrassa, corroborada per la fitxa del festival CastellHell i la crònica biogràfica d'El Nacional.",
+      "sources": [
+        "https://www.castellhell.party/es/band/vidres-a-la-sang",
+        "https://www.elnacional.cat/ca/cultura/vidres-sang-grup-death-metal-sona-palau-generalitat_1353214_102_amp.html"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:renaldo-clara": {
+      "name": "Renaldo & Clara",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3118514"
+      ],
+      "confidence": "alta",
+      "basis": "Projecte de Clara Viñals arrelat a Lleida, ciutat indicada al Bandcamp del grup i al documental de RTVE.",
+      "sources": [
+        "https://renaldoclara.bandcamp.com/",
+        "https://www.rtve.es/rtve/20211103/renaldo-i-clara-efecte-collins/2213361.shtml"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:exili-a-elba": {
+      "name": "Exili a Elba",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "El concurs Sona9 identifica la formació amb Barcelona; la presentació d'Enderrock coincideix.",
+      "sources": [
+        "https://www.enderrock.cat/sona9/noticia/609/finalistes/premi/popular",
+        "https://www.enderrock.cat/noticia/10661/exili-elba-expatriats-bon-grat"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:ginesta": {
+      "name": "Ginestà",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "La biografia oficial situa l'origen dels germans Serrasolsas a Sant Andreu de Palomar, Barcelona.",
+      "sources": [
+        "https://www.ginestamusic.com/info",
+        "https://www.mataro.cat/ca/portal-entitats/voluntariat/campanyes-de-difusio-del-voluntariat/viu-el-voluntariat-2024-participants/ginesta"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:opcio-k-95": {
+      "name": "Opció K-95",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "Grup format a Barcelona, vinculat al barri de Gràcia, segons la fitxa del promotor i la premsa musical.",
+      "sources": [
+        "https://www.losnotaspunkrockers.com/opci%C3%B3-k95",
+        "https://www.lafactoriadelritmo.com/protagonista/opcio-k-95/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:vittara": {
+      "name": "Vittara",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "La biografia de la discogràfica Delirics identifica Vittara com a grup barceloní.",
+      "sources": [
+        "https://www.delirics.cat/vittara"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:angoixa": {
+      "name": "Angoixa",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "El perfil oficial del grup a Bandcamp indica Barcelona. Es registra com a vinculació, sense inferir el municipi exacte de formació a partir d'aquesta ubicació.",
+      "sources": [
+        "https://angoixadeathmetal.bandcamp.com/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:crim": {
+      "name": "Crim",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3108288"
+      ],
+      "confidence": "alta",
+      "basis": "La biografia de l'agència HFMN documenta explícitament l'origen a Tarragona.",
+      "sources": [
+        "https://www.hfmncrew.cat/es/epk-crim-aaa/bio-crim/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:damaris-gelabert": {
+      "name": "Dàmaris Gelabert",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:3126317"
+      ],
+      "confidence": "alta",
+      "basis": "Vinculació artística i pedagògica amb Cardedeu: hi desenvolupa el projecte Espai Totsona i forma part del cens cultural municipal. No s'indica com a lloc de naixement.",
+      "sources": [
+        "https://www.cardedeu.cat/temes/cultura/cens-cultural-de-cardedeu/damaris-gelabert.html",
+        "https://www.damarisgelabert.com/escoles/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:doctor-prats": {
+      "name": "Doctor Prats",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3108286"
+      ],
+      "confidence": "alta",
+      "basis": "La web oficial identifica explícitament Terrassa com a punt de partida del grup.",
+      "sources": [
+        "https://www.doctorprats.cat/",
+        "https://produccionssubmarines.com/artistes/doctor-prats/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:manu-guix": {
+      "name": "Manu Guix",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "La biografia oficial documenta el naixement i la formació musical a Barcelona.",
+      "sources": [
+        "https://www.manuguix.com/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:els-pets": {
+      "name": "Els Pets",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3124661"
+      ],
+      "confidence": "alta",
+      "basis": "Grup format a Constantí, segons RTVE i la seva agència de representació RGB.",
+      "sources": [
+        "https://www.rtve.es/rtve/20211117/els-pets-efecte-collins/2226489.shtml",
+        "https://rgb.cat/management/els-pets/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:valtonyc": {
+      "name": "Valtònyc",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:2515624",
+        "geonames:2510868"
+      ],
+      "confidence": "alta",
+      "basis": "Vinculació amb sa Pobla, on va néixer, i Sineu, on va viure i començar a compondre. Es conserven totes dues poblacions per no reduir la trajectòria al lloc de naixement.",
+      "sources": [
+        "https://www.mmvv.cat/ca/artista/valtonyc/897/2018",
+        "https://www.totpla.cat/2023/10/29/valtonyc-torna-a-trepitjar-sineu/",
+        "https://www.ara.cat/politica/proces/l-exraper-mallorqui-estima-puigdemont-puig-no-comin_1_5271477.html"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:lildami": {
+      "name": "Lildami",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3108286"
+      ],
+      "confidence": "alta",
+      "basis": "La fitxa del Sona9 identifica Terrassa, concordant amb les entrevistes i la vinculació pública del músic a la ciutat.",
+      "sources": [
+        "https://www.enderrock.cat/sona9/grup2017/127/lildami",
+        "https://www.diarideterrassa.com/terrassa/2019/02/10/meva-aposta-musical-diferent/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:senyor-oca": {
+      "name": "Senyor Oca",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "Barcelona és la ciutat declarada a la fitxa del Sona9, corroborada per la crònica dels primers discos.",
+      "sources": [
+        "https://www.enderrock.cat/sona9/grup2017/17/senyor/oca",
+        "https://www.enderrock.cat/noticia/16607/avancem-pendol-nou-tema-senyor-oca"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:31-fam": {
+      "name": "31 FAM",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3111199"
+      ],
+      "confidence": "alta",
+      "basis": "La biografia de Delirics documenta explícitament la formació del grup a Sabadell.",
+      "sources": [
+        "https://www.delirics.cat/31fam"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:mama-dousha": {
+      "name": "Mama Dousha",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "Projecte barceloní segons la fitxa del Sona9. El músic identifica el Poblenou com el seu barri en entrevista.",
+      "sources": [
+        "https://www.enderrock.cat/sona9/grup2020/124/mama/dousha",
+        "https://www.enderrock.cat/noticia/30926/mama-dousha-voler-agradar-tothom-malediccio"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:baya-baye": {
+      "name": "Baya Baye",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3116474"
+      ],
+      "confidence": "alta",
+      "basis": "Artista de Montgat segons l'entrevista del Diari de Barcelona i el perfil de Macarrisme Català.",
+      "sources": [
+        "https://www.diaridebarcelona.cat/w/el-cam%C3%AD-no-%C3%A9s-senzill-perqu%C3%A8-ens-tanquem-moltes-portes-per-com-som.-tamb%C3%A9-ens-les-tanquen",
+        "https://macarrismecatala.com/baya-baye/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:fades": {
+      "name": "Fades",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "territory:mallorca"
+      ],
+      "confidence": "alta",
+      "basis": "Projecte nascut a Mallorca segons la discogràfica i l'entrevista al grup. Es manté l'escala insular: les fonts també descriuen una trajectòria entre Manacor i Barcelona, sense establir un únic municipi d'origen.",
+      "sources": [
+        "https://www.satelitek.com/artistas/fades",
+        "https://www.mondosonoro.com/entrevistas/fades/",
+        "https://www.fim.cat/es/artistas/fades/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:rapsodes": {
+      "name": "Rapsodes",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "territory:camp-de-turia"
+      ],
+      "confidence": "alta",
+      "basis": "La discogràfica Mésdemil presenta Rapsodes com a formació del Camp de Túria. Es conserva la comarca, sense assignar a tot el grup la població d'un sol membre.",
+      "sources": [
+        "https://mesdemil.bandcamp.com/album/rapsodes-ouiea"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:sopa-de-cabra": {
+      "name": "Sopa de Cabra",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3121456"
+      ],
+      "confidence": "alta",
+      "basis": "Grup nascut al Barri Vell de Girona, segons la fitxa del Festival de la Porta Ferrada i la biografia d'Enderrock.",
+      "sources": [
+        "https://www.portaferrada.cat/artists/sopa-de-cabra/",
+        "https://www.enderrock.cat/noticia/5807/biografia-actualitzada-sopa-cabra"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
     }
   },
   "channels": {
@@ -888,6 +1570,62 @@
     "UCqcQJRrcXc_rLSwGVo4dP5g": "artist:rita-payes",
     "UCVowitUeUXlew8bjVjBOtUQ": "artist:peret",
     "UC711R927_H-bOzQGHu7B5Pg": "artist:l-ham-de-foc",
-    "UCrQY3EI5TJXNbCwkXcDLp7A": "artist:al-tall"
+    "UCrQY3EI5TJXNbCwkXcDLp7A": "artist:al-tall",
+    "UCGQuY2Y9jeqLRxhs0l9-jVw": "artist:pau-riba-i-romeva",
+    "UC5u_IqqHbJKvmeSXSyCyFyg": "artist:pau-riba-i-romeva",
+    "UCxS0kQKC52EoOEWQD02Md2Q": "artist:companyia-electrica-dharma",
+    "UCerj0bWFVJdAmPWVti9Uhlw": "artist:quico-pi-de-la-serra",
+    "UCQkOO8WejzCPcbzL7sc6iGg": "artist:quico-pi-de-la-serra",
+    "UC99ULQORmyZtD4bngOa48hw": "artist:blaumut",
+    "UCs5SsCyZ5g5q3dGMBI3NS8w": "artist:blaumut",
+    "UCgTB-WFdzE-byKvUR5QVnFQ": "artist:pol-bordas",
+    "UCtpjQosTHLms2EiAUrTgaAg": "artist:pol-bordas",
+    "UCkGNJczVoESUwmJ3oejyM5w": "artist:ferran-palau",
+    "UCLVVwenUJa9rmSCcH1EF-wg": "artist:ferran-palau",
+    "UCxV6tncwBxl3K7SsUn7YyjA": "artist:joan-dausa",
+    "UC71mv_2wTJu623lsX2ow5nA": "artist:joan-dausa",
+    "UCvh8nurHojZHGiQy532Bn2w": "artist:ven-nus",
+    "UCouT_0PiTMYVIG5wcTYfpcg": "artist:ven-nus",
+    "UCWWnWo4E1RqWDOX4-y1jwfQ": "artist:vidres-a-la-sang",
+    "UCZKSBZ8hKicoNtWdq1hzTfw": "artist:vidres-a-la-sang",
+    "UCifCAnA0yoCuJUz8SdYOrfw": "artist:renaldo-clara",
+    "UCB3ktCqywNPK-19VWCpEseA": "artist:renaldo-clara",
+    "UCCjjqhwGK59J_vn4l0MjYSA": "artist:exili-a-elba",
+    "UCOpeaEtE-7hK7ZXGEVWMyRw": "artist:exili-a-elba",
+    "UC5nvjukz73UjS-GpzieyTxw": "artist:ginesta",
+    "UCn3FfkjgKlzE1oNSnOM67BQ": "artist:ginesta",
+    "UCCBTyMmUoeGrciYMzrwWiUw": "artist:opcio-k-95",
+    "UCbGPnNJlInAmzdWNFmLzwjw": "artist:vittara",
+    "UC7HPer-lgFJBnjfNJ_J1Q4g": "artist:vittara",
+    "UCOwCZBGNBYlvxmZn2BbmhFQ": "artist:angoixa",
+    "UC7CW0LUdtTnZfYmuayRJEmQ": "artist:angoixa",
+    "UCJhcsyqAVHFHmghWFkmIx4w": "artist:crim",
+    "UCZ7V4w0VrZPSM21CiYNuk7g": "artist:crim",
+    "UCh4gZwRHxIetWXbJnp0XefQ": "artist:damaris-gelabert",
+    "UCIumPBt0bPxqjeDXi_dZtgg": "artist:damaris-gelabert",
+    "UCn26f9Y9kg_AguUTaqNQUDw": "artist:doctor-prats",
+    "UCXnvbcjY11hEzjvWXUTjQ8Q": "artist:doctor-prats",
+    "UC__Mo7bZ2F69jnSKPmpvJfA": "artist:manu-guix",
+    "UCktEHtqRuLsGxFCQAG8dRtQ": "artist:manu-guix",
+    "UCYLw9esbkWTiWH9PoSlnjXw": "artist:els-pets",
+    "UC0EB-hSs5R5X4DGiSkY_-mw": "artist:els-pets",
+    "UCV4rGI-t1ehir__UXavnbZg": "artist:els-pets",
+    "UC3fuMj55qp3YmD2B2mPBgOw": "artist:valtonyc",
+    "UCsl_oTZ8vww29O9G0NAX-gA": "artist:valtonyc",
+    "UCQ6n5CV9T-UkapgZ9brdthQ": "artist:lildami",
+    "UCmc3hpV4unUfKQbfvfCYaTQ": "artist:lildami",
+    "UC9aKnizc9niMNJGRL1lnwTg": "artist:senyor-oca",
+    "UCWdaWh8h5Uov97df5vX4RCw": "artist:senyor-oca",
+    "UC9X30uS2tBqnVwEqpmA32xQ": "artist:31-fam",
+    "UCEMDA-ZXzEUlJjZ-avy0Pvg": "artist:31-fam",
+    "UCTMFD-Apnft0QQL3S8wM37Q": "artist:mama-dousha",
+    "UCcRTdMWUEXFLtpvle3p_qug": "artist:mama-dousha",
+    "UC2rhPnAmAa_Sa9XlK0whmDA": "artist:baya-baye",
+    "UCfZSav-wsnpACenDMoHE6BA": "artist:baya-baye",
+    "UCOIKmdvEIfeusxwvykuxSew": "artist:fades",
+    "UCqlbDl192qJeA3gpIFkVhVA": "artist:rapsodes",
+    "UCuvGkVD3aN6ncVC6-EN8Wfw": "artist:rapsodes",
+    "UCleNuGpCliL0P7B2eAI4U_Q": "artist:sopa-de-cabra",
+    "UCElrxQjQH5yoQAZU8fNtgpw": "artist:sopa-de-cabra"
   }
 }
