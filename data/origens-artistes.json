@@ -1948,6 +1948,97 @@
       "territory": "Catalunya",
       "source": "https://geocoding-api.open-meteo.com/v1/search?name=Ulldecona&count=10&language=ca&format=json",
       "checkedOn": "2026-10-11"
+    },
+    "geonames:3183284": {
+      "name": "l’Alguer",
+      "type": "municipality",
+      "geonamesId": 3183284,
+      "coordinates": {
+        "latitude": 40.55969,
+        "longitude": 8.31953,
+        "precision": "settlement_reference"
+      },
+      "territory": "Sardenya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Alghero&count=10&language=ca&format=json",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:2511138": {
+      "name": "Santa Maria del Camí",
+      "type": "municipality",
+      "geonamesId": 2511138,
+      "coordinates": {
+        "latitude": 39.65111,
+        "longitude": 2.77317,
+        "precision": "settlement_reference"
+      },
+      "territory": "Illes Balears",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Santa+Maria+del+Cami&count=10&language=ca&format=json",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:2512073": {
+      "name": "Rafelbunyol",
+      "type": "municipality",
+      "geonamesId": 2512073,
+      "coordinates": {
+        "latitude": 39.58876,
+        "longitude": -0.33457,
+        "precision": "settlement_reference"
+      },
+      "territory": "País Valencià",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Rafelbunyol&count=10&language=ca&format=json",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:2522007": {
+      "name": "Alginet",
+      "type": "municipality",
+      "geonamesId": 2522007,
+      "coordinates": {
+        "latitude": 39.26667,
+        "longitude": -0.46667,
+        "precision": "settlement_reference"
+      },
+      "territory": "País Valencià",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Alginet&count=10&language=ca&format=json",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:3113254": {
+      "name": "Polinyà",
+      "type": "municipality",
+      "geonamesId": 3113254,
+      "coordinates": {
+        "latitude": 41.55,
+        "longitude": 2.15,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Polinya&count=10&language=ca&format=json",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:2517367": {
+      "name": "Gandia",
+      "type": "municipality",
+      "geonamesId": 2517367,
+      "coordinates": {
+        "latitude": 38.96667,
+        "longitude": -0.18333,
+        "precision": "settlement_reference"
+      },
+      "territory": "País Valencià",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Gandia&count=10&language=ca&format=json",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:3129803": {
+      "name": "Arbizu",
+      "type": "municipality",
+      "geonamesId": 3129803,
+      "coordinates": {
+        "latitude": 42.91545,
+        "longitude": -2.03917,
+        "precision": "settlement_reference"
+      },
+      "territory": "Navarra",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Arbizu&count=10&language=ca&format=json",
+      "checkedOn": "2026-10-11"
     }
   },
   "artists": {
@@ -7884,6 +7975,489 @@
       "reviewedOn": "2026-10-11",
       "assignmentSource": "manual-review",
       "locked": true
+    },
+    "artist:at-versaris": {
+      "name": "At Versaris",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:3128760",
+        "geonames:3111199",
+        "geonames:3115171"
+      ],
+      "confidence": "alta",
+      "basis": "El segell situa el projecte entre Sants, Sabadell i Olesa; es conserven les tres vinculacions, amb Sants normalitzat a Barcelona.",
+      "sources": [
+        "https://www.ppf.cat/index.php/cat/artistes/at-versaris"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:guillem-gisbert-i-puig": {
+      "name": "Guillem Gisbert i Puig",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "L’entrevista d’ARA documenta Barcelona com a lloc de naixement de Guillem Gisbert, cantant de Manel.",
+      "sources": [
+        "https://es.ara.cat/criaturas/guillem-gisbert-concierto-roxette-sant-jordi_130_5060743.html"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:franca-masu": {
+      "name": "Franca Masu",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3183284"
+      ],
+      "confidence": "alta",
+      "basis": "La Gran Enciclopèdia Catalana documenta l’Alguer com a ciutat natal de Franca Masu.",
+      "sources": [
+        "https://www.enciclopedia.cat/gran-enciclopedia-catalana/franca-masu"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:la-brigada": {
+      "name": "La Brigada",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:3105184"
+      ],
+      "confidence": "alta",
+      "basis": "El perfil propi de La Brigada a Bandcamp indica Vilanova i la Geltrú com a localitat.",
+      "sources": [
+        "https://labrigada.bandcamp.com/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:llorenc-de-santamaria": {
+      "name": "Llorenç de Santamaria",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:2511138"
+      ],
+      "confidence": "alta",
+      "basis": "L’entrevista de dBalears identifica Santa Maria del Camí com a municipi de naixement de Llorenç Rosselló i Horrach.",
+      "sources": [
+        "https://www.dbalears.cat/balears/cultura/2021/01/01/347239/llorenc-santamaria-algunes-radios-mai-varen-posar-canco-catala.html"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:mariona-sagarra": {
+      "name": "Mariona Sagarra",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "La biografia oficial de Mariona Sagarra i Trias la presenta com a barcelonina.",
+      "sources": [
+        "https://marionasagarra.com/bio/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:miquela-llado-i-vidal": {
+      "name": "Miquela Lladó i Vidal",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:2512989"
+      ],
+      "confidence": "alta",
+      "basis": "El retrat d’Enderrock identifica Miquela Lladó com a cantant i compositora de Palma.",
+      "sources": [
+        "https://www.enderrock.cat/noticia/31600/miquela-llado-tresor-illa"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:narcis-perich-i-serra": {
+      "name": "Narcís Perich i Serra",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3130422"
+      ],
+      "confidence": "alta",
+      "basis": "El reportatge de la revista Alella documenta l’origen alellenc del músic Narcís Perich.",
+      "sources": [
+        "https://www.revistaalella.cat/documents/revistaalella.cat/revistes/alella-357_web.pdf"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:nina": {
+      "name": "Nina",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "La Gran Enciclopèdia Catalana situa el naixement a Barcelona i identifica Nina amb Anna Maria Agustí.",
+      "sources": [
+        "https://www.enciclopedia.cat/gran-enciclopedia-catalana/nina"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:ocults": {
+      "name": "Ocults",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:2514216"
+      ],
+      "confidence": "alta",
+      "basis": "La història discogràfica situa la formació d’Ocults a Manacor. La menció errònia d’illa en la font no es trasllada a les dades: Manacor és un municipi de Mallorca.",
+      "sources": [
+        "https://no80s-gruposnacionales.blogspot.com/2008/07/els-ocults.html"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:pep-laguarda": {
+      "name": "Pep Laguarda",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:2512073"
+      ],
+      "confidence": "alta",
+      "basis": "La biografia de Memòria Valencianista documenta el naixement de Josep Laguarda i Pérez a Rafelbunyol.",
+      "sources": [
+        "https://memoriavalencianista.cat/biografies/laguarda-perez-josep"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:pirat-s-sound-sistema": {
+      "name": "Pirat's Sound Sistema",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:3128760",
+        "territory:maresme"
+      ],
+      "confidence": "alta",
+      "basis": "El segell situa el grup al barri de Sants de Barcelona i al Maresme. Es conserven el municipi i la comarca sense inventar un municipi maresmenc.",
+      "sources": [
+        "https://ppf.cat/index.php/cat/artistes/pirat-s-sound-sistema"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:pulpopop": {
+      "name": "Pulpopop",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:3121456"
+      ],
+      "confidence": "alta",
+      "basis": "La memòria municipal del Patronat Call de Girona identifica Pulpopop com a grup gironí i documenta el projecte musical dedicat a la ciutat.",
+      "sources": [
+        "https://www.girona.cat/adminwebs/docs/m/e/memoria_2016_final_web.pdf"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:quart-primera": {
+      "name": "Quart Primera",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "La fitxa d’Acords Català situa la creació del grup de Pere Jou a Barcelona.",
+      "sources": [
+        "https://www.acordscatala.cat/ca/quart-primera"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:ramon-calduch-i-gimeno": {
+      "name": "Ramon Calduch i Gimeno",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3116527"
+      ],
+      "confidence": "alta",
+      "basis": "La Gran Enciclopèdia Catalana documenta el naixement de Ramon Calduch a Montcada i Reixac.",
+      "sources": [
+        "https://www.enciclopedia.cat/gran-enciclopedia-catalana/ramon-calduch-i-gimeno"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:remigi-palmero-i-rua": {
+      "name": "Remigi Palmero i Ruà",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:2522007"
+      ],
+      "confidence": "alta",
+      "basis": "Memòria Valencianista documenta el naixement de Remigi Palmero a Alginet.",
+      "sources": [
+        "https://memoriavalencianista.cat/biografies/palmero-rua-remigi"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:reina": {
+      "name": "Reïna",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:2514216"
+      ],
+      "confidence": "alta",
+      "basis": "La fitxa del festival BIME presenta Reïna com a grup de Manacor establert a Barcelona; es distingeix l’origen de la residència posterior.",
+      "sources": [
+        "https://bime.org/recurso/reina/4f593f02-7a0a-4938-b00e-f2a5271a41f3"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:roger-padros-de-la-torre": {
+      "name": "Roger Padrós de la Torre",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3113254"
+      ],
+      "confidence": "alta",
+      "basis": "L’entrevista d’Univers Enderrock identifica Roger Padrós com a polinyanenc.",
+      "sources": [
+        "https://www.enderrock.cat/noticia/28063/mon-roger-padros-univers-enderrock"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:salome": {
+      "name": "Salomé",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "La Gran Enciclopèdia Catalana documenta el naixement de Maria Rosa Marco i Poquet, Salomé, a Barcelona.",
+      "sources": [
+        "https://www.enciclopedia.cat/gran-enciclopedia-catalana/salome-0"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:sense-sal": {
+      "name": "Sense Sal",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3108286"
+      ],
+      "confidence": "alta",
+      "basis": "JazzTerrassa presenta Sense Sal com un projecte d’amics de Terrassa i voltants; no s’atribueix el mateix municipi natal a tots els membres.",
+      "sources": [
+        "https://www.jazzterrassa.org/en/grup/sense-sal"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:strombers": {
+      "name": "Strombers",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3126293"
+      ],
+      "confidence": "alta",
+      "basis": "El portal ésAdir de 3Cat identifica Strombers com a grup musical de Cardona.",
+      "sources": [
+        "https://www.esadir.cat/Nomspropis/Entitats/Cultura/Strombers"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:teresa-rebull": {
+      "name": "Teresa Rebull",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3111199"
+      ],
+      "confidence": "alta",
+      "basis": "L’arxiu de RTVE Catalunya documenta que Teresa Rebull va néixer a Sabadell.",
+      "sources": [
+        "https://www.rtve.es/play/noticias/20150416/mor-teresa-rebullcantautora-nova-canco-catalana/1131281.shtml"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:xucu-pa": {
+      "name": "Xucu-pà",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3115093"
+      ],
+      "confidence": "alta",
+      "basis": "La campanya de reedició del grup identifica Xucu-Pà amb la tradició de grups de música olotina.",
+      "sources": [
+        "https://www.verkami.com/projects/12546-reedicio-del-disc-ja-estem-encinta-de-xucu-pa"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:zoo": {
+      "name": "ZOO",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:2517367"
+      ],
+      "confidence": "alta",
+      "basis": "El dossier oficial del segell presenta ZOO com un col·lectiu de músics de Gandia.",
+      "sources": [
+        "https://ppf.cat/DossierZOOcatcasten.pdf"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:zetak": {
+      "name": "Zetak",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:3129803"
+      ],
+      "confidence": "alta",
+      "basis": "La plataforma cultural del Govern Basc presenta Zetak com el projecte del músic d’Arbizu Pello Reparaz. Es registra aquesta vinculació sense inferir un municipi de formació de tota la banda.",
+      "sources": [
+        "https://www.kulturklik.euskadi.eus/creacion/2019122714312010/zetak-/kulturklik/es/webkklik00-detalle/es/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:concepcio-supervia-i-pascual": {
+      "name": "Concepció Supervia i Pascual",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "La biografia publicada a La Farga documenta el naixement de Concepció Supervia a Barcelona.",
+      "sources": [
+        "https://revistalafarga.cat/wp-content/uploads/2022/03/FM1995-6.pdf"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:emili-vendrell-i-coutier": {
+      "name": "Emili Vendrell i Coutier",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "L’entrada del pare a la Gran Enciclopèdia Catalana documenta també el fill Emili Vendrell i Coutier, nascut a Barcelona el 1924. No es confonen les dues identitats.",
+      "sources": [
+        "https://www.enciclopedia.cat/gran-enciclopedia-catalana/emili-vendrell-i-ibars"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:enric-madriguera-i-rodon": {
+      "name": "Enric Madriguera i Rodon",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "La Gran Enciclopèdia Catalana documenta Barcelona com a lloc de naixement del violinista Enric Madriguera.",
+      "sources": [
+        "https://www.enciclopedia.cat/gran-enciclopedia-catalana/enric-madriguera-i-rodon"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:joaquim-homs-i-oller": {
+      "name": "Joaquim Homs i Oller",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "La Reial Acadèmia Catalana de Belles Arts de Sant Jordi documenta el naixement de Joaquim Homs a Barcelona.",
+      "sources": [
+        "https://www.racba.org/es/academic/homs-i-oller-joaquim/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:francesca-madriguera-i-rodon": {
+      "name": "Francesca Madriguera i Rodon",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3120431"
+      ],
+      "confidence": "alta",
+      "basis": "La publicació de l’Institut d’Estudis Catalans documenta que Francesca Madriguera, coneguda com Paquita Madriguera, va néixer a Igualada.",
+      "sources": [
+        "https://publicacions.iec.cat/repository/pdf/00000353/00000040.pdf"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
     }
   },
   "channels": {
@@ -8389,7 +8963,13 @@
     "UCzEhOnMgbk8TPud1OI7NDbw": "artist:orxata-sound-system",
     "UCLKx4vBoCOKwB2x280VFmng": "artist:orxata-sound-system",
     "UClVTg1yrfwH3ku46CPlO7xg": "artist:suu",
-    "UCeza8RPly8qpRBT2VyPBhRQ": "artist:umpah-pah"
+    "UCeza8RPly8qpRBT2VyPBhRQ": "artist:umpah-pah",
+    "UCgoAYxK_KHyGjHQ50pgUq0Q": "artist:ocults",
+    "UCC5cC2LyXLOPVR5jh25IBCA": "artist:reina",
+    "UC9i1uNb0GFrISNB2pctkvRg": "artist:reina",
+    "UCcMzzxk70aJr9DecqJN6hhw": "artist:roger-padros-de-la-torre",
+    "UCtOU3Q4qYA0FrcA1jtTjTvw": "artist:xucu-pa",
+    "UCBh82sG2OKv1J6Ij43mdFiw": "artist:zoo"
   },
   "excludedProfiles": {
     "UCdezTX23syEeAJJAb2oOkKA": {
