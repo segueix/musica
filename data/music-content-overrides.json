@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-11T21:29:54.227Z",
+  "updatedAt": "2026-10-11T21:45:42.460Z",
   "description": "Decisions manuals sobre el tipus de contingut de vídeos concrets. Manen sobre el classificador automàtic (scripts/lib/classificar_contingut_musical.js) i el pipeline (scripts/update_music_feed.js) les reaplica a cada generació del feed. Tipus permesos: song, live_song, album, other. Un vídeo revisat aquí surt de data/music-content-review.json.",
   "videos": [
     {
@@ -6512,6 +6512,30 @@
       "contentType": "song",
       "title": "Vademecum - 2012",
       "note": "Cançó de la selecció de l’editor dins les llistes oficials de Vademecum FAM; crèdits musicals i durada verificats a YouTube. Revisió 2026-10-11."
+    },
+    {
+      "id": "JnheDLkXrpg",
+      "contentType": "song",
+      "title": "Subliminal - PIKIN",
+      "note": "Cançó original de Subliminal recuperada per petició expressa de l’editor. Canal publicador VEVO verificat; 2026-10-11."
+    },
+    {
+      "id": "zrAlQo--fhc",
+      "contentType": "song",
+      "title": "Subliminal - Foto Familiar",
+      "note": "Cançó original de Subliminal recuperada per petició expressa de l’editor. Canal publicador VEVO verificat; 2026-10-11."
+    },
+    {
+      "id": "HNhJ3kSmerU",
+      "contentType": "song",
+      "title": "Subliminal - Radios i TVs",
+      "note": "Cançó original de Subliminal recuperada per petició expressa de l’editor. Canal publicador VEVO verificat; 2026-10-11."
+    },
+    {
+      "id": "Mmf_VNXdDhs",
+      "contentType": "song",
+      "title": "Subliminal - Presumit",
+      "note": "Cançó original de Subliminal recuperada per petició expressa de l’editor. Canal publicador VEVO verificat; 2026-10-11."
     }
   ]
 }

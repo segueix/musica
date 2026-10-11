@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-11T21:37:11.138Z",
+  "updatedAt": "2026-10-11T21:45:42.460Z",
   "description": "Llista blanca per a canals on Segueix Música només ha d'ingerir vídeos concrets. Admet títols exactes, fragments obligatoris i fragments exclosos.",
   "channels": {
     "UCKpscwdWlVaMqcA81vLI7OA": {
@@ -9,15 +9,29 @@
     },
     "UCz35Q7e_ulwY_uRqg5zDxeQ": {
       "artist": "Subliminal",
-      "note": "Canal antic/mixt de Subliminal: només es conserven aquestes sis cançons seleccionades manualment. La icona del grup surt de la caràtula de PIKIN.",
+      "note": "Recuperació expressa de les quatre cançons originals indicada per l’editor el 2026-10-11. YouTube les mostra al canal d’artista però el publicador verificat és SubliminalVEVO. Caràtula de PIKIN; sense els dos remescles de Presumit.",
       "avatarFromAllowedTitle": "Subliminal - PIKIN",
       "allowedTitles": [
         "Subliminal - PIKIN",
-        "Subliminal - Presumit (Miki Hernandez & Tony D. Mambo Remix)",
-        "Subliminal - Presumit (Akaparson Remix)",
         "Subliminal - Foto Familiar",
         "Subliminal - Radios i TVs",
         "Subliminal - Presumit"
+      ],
+      "allowedVideoIds": [
+        "JnheDLkXrpg",
+        "zrAlQo--fhc",
+        "HNhJ3kSmerU",
+        "Mmf_VNXdDhs"
+      ],
+      "allowedExternalVideos": {
+        "JnheDLkXrpg": "UCurNpmNfpz7XDqblb-wwnnA",
+        "zrAlQo--fhc": "UCurNpmNfpz7XDqblb-wwnnA",
+        "HNhJ3kSmerU": "UCurNpmNfpz7XDqblb-wwnnA",
+        "Mmf_VNXdDhs": "UCurNpmNfpz7XDqblb-wwnnA"
+      },
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song"
       ]
     },
     "UCqA3KzIrZxgA27NEEyVZdrQ": {

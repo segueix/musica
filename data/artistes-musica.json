@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-11T21:29:54.227Z",
+  "updatedAt": "2026-10-11T21:45:42.460Z",
   "artists": [
     {
       "name": "2 Princeses Barbudes",
@@ -31194,8 +31194,12 @@
     {
       "name": "Subliminal",
       "aliases": [],
-      "genres": [],
-      "territories": [],
+      "genres": [
+        "Urbana"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
       "languages": [
         "ca"
       ],
@@ -31217,10 +31221,13 @@
       "active": true,
       "sources": [
         "https://www.youtube.com/channel/UCz35Q7e_ulwY_uRqg5zDxeQ",
-        "manual-user-2026-09-30"
+        "manual-user-2026-09-30",
+        "genre:manual",
+        "manual-user-2026-10-11",
+        "https://www.youtube.com/channel/UCurNpmNfpz7XDqblb-wwnnA"
       ],
-      "lastChecked": "2026-09-30T15:00:00.000Z",
-      "notes": "Alta manual verificada. Nom visible forçat a Subliminal; només s'accepten al feed les sis cançons autoritzades a data/music-channel-video-allowlist.json.",
+      "lastChecked": "2026-10-11T21:45:42.460Z",
+      "notes": "Recuperació de quatre cançons originals: PIKIN, Presumit, Foto Familiar i Radios i TVs. Només IDs autoritzats; canals d’artista i VEVO verificats. Caràtula de PIKIN. Origen Badalona confirmat per l’editor.",
       "genresRaw": [],
       "enrichment": {
         "genres": {
