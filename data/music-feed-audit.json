@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-10-11T22:24:39.666Z",
+  "generatedAt": "2026-10-11T23:09:22.676Z",
   "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
   "restrictedVideoCount": 21,
   "restrictedVideosAdded": [],
   "deepPagesFetched": 0,
-  "deepChannelCount": 18,
-  "topicChannelCount": 300,
-  "governedChannelCount": 102,
+  "deepChannelCount": 19,
+  "topicChannelCount": 301,
+  "governedChannelCount": 103,
   "topicCoverage": [
     {
       "id": "UCqaEtRht2jakBhGFLzS617w",
@@ -287,6 +287,14 @@
       "songs": 44,
       "matched": 43,
       "coverage": 0.98,
+      "governs": true
+    },
+    {
+      "id": "UCSDuvSwql52flui2567reQw",
+      "name": "Anna Andreu",
+      "songs": 40,
+      "matched": 39,
+      "coverage": 0.97,
       "governs": true
     },
     {
@@ -1235,7 +1243,10 @@
     }
   ],
   "topicGovernance": "apply",
-  "governedReclassified": {},
+  "governedReclassified": {
+    "other": 2,
+    "song": 5
+  },
   "topicHiddenCount": 0,
   "topicChannels": [
     {
@@ -1349,6 +1360,13 @@
       "tracks": 38,
       "selected": 38,
       "withClip": 13
+    },
+    {
+      "id": "UCBwmzKj56CGeAPmEFgqz0dg",
+      "name": "Anna Andreu",
+      "tracks": 41,
+      "selected": 2,
+      "withClip": 29
     },
     {
       "id": "UCALf4AsnFm6WhQSD6RGV5pg",
@@ -2690,8 +2708,8 @@
     {
       "id": "UCCYgQLqvl_nmSk4-WPDGPIg",
       "name": "Paul Fuster",
-      "tracks": 39,
-      "selected": 35,
+      "tracks": 10,
+      "selected": 10,
       "withClip": 0
     },
     {
@@ -3311,32 +3329,32 @@
       "withClip": 0
     }
   ],
-  "indexedChannelCount": 541,
-  "resolvedChannelCount": 541,
-  "feedChannelCount": 541,
-  "rawPublicVideoCount": 5974,
-  "feedVideoCount": 5453,
-  "acceptedMusicCount": 5413,
-  "categoryEligibleVideoCount": 5409,
+  "indexedChannelCount": 545,
+  "resolvedChannelCount": 545,
+  "feedChannelCount": 545,
+  "rawPublicVideoCount": 6162,
+  "feedVideoCount": 5615,
+  "acceptedMusicCount": 5597,
+  "categoryEligibleVideoCount": 5593,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
-    "before": 0,
+    "before": 23,
     "matched": 0,
-    "rejected": 0
+    "rejected": 23
   },
-  "contentReviewCount": 527,
+  "contentReviewCount": 529,
   "contentTypeCounts": {
-    "song": 5268,
-    "live_song": 141,
+    "song": 5451,
+    "live_song": 142,
     "album": 4,
-    "other": 34,
-    "review": 527
+    "other": 36,
+    "review": 529
   },
   "unresolvedChannelIds": [],
   "channelsWithoutUploads": [],
   "channelsWithoutVideos": [],
   "channelsWithoutAcceptedMusic": [],
   "allIndexedChannelsVisible": true,
-  "publishedFeedVideoCount": 5453,
+  "publishedFeedVideoCount": 5495,
   "publishedShortVideoCount": 0
 }
