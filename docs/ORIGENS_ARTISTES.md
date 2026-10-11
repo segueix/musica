@@ -2,7 +2,7 @@
 
 ## Estat: 11 d'octubre de 2026
 
-La fitxa mostra les assignacions validades de 179 artistes (317 canals oficials i Topic). En prémer la línia «Origen» o «Vinculat a» es despleguen el motiu i les fonts. Els perfils de programes i els artistes encara sense assignació no mostren la línia.
+La fitxa mostra les assignacions validades de 209 artistes (348 canals oficials i Topic). En prémer la línia «Origen» o «Vinculat a» es despleguen el motiu i les fonts. Els perfils de programes i els artistes encara sense assignació no mostren la línia.
 
 El [pilot inicial](ORIGENS_PILOT_30.md) tenia 22 casos documentats i 8 pendents. Una segona revisió ha validat Dusminguet, La Coixinera, Ebri Knight, Joan Miquel Oliver, Xarim Aresté i la vinculació de La Troba Kung-Fú amb la Garriga. Per a aquest últim, la biografia de Fourni Produccions a WOMEX documenta l'estudi propi a la Fournier; no afirmem que sigui el municipi de formació.
 
@@ -14,7 +14,7 @@ El [pilot inicial](ORIGENS_PILOT_30.md) tenia 22 casos documentats i 8 pendents.
 
 - `artists`: assignació única per artista, relació `origin` o `associated`, llocs, fonts, explicació, data, estat i bloqueig manual.
 - `channels`: canals oficials i Topic associats a l'artista del catàleg. En afegir canals cal ampliar aquest mapa després de confirmar la identitat.
-- `places`: llocs normalitzats reutilitzables. Hi ha 95 poblacions amb identificador GeoNames i coordenades de referència del nucli o municipi; no són domicilis ni coordenades personals. La jerarquia administrativa del proveïdor no s'utilitza per assignar el municipi (pot tenir discrepàncies).
+- `places`: llocs normalitzats reutilitzables. Hi ha 103 poblacions amb identificador GeoNames i coordenades de referència del nucli o municipi; no són domicilis ni coordenades personals. La jerarquia administrativa del proveïdor no s'utilitza per assignar el municipi (pot tenir discrepàncies).
 - Formentera i Mallorca es mantenen a escala d'illa; Camp de Tarragona, Camp de Túria i Montseny a escala territorial. També es documenten Vallès, Comtat, Alcoià, Horta Sud i Maresme. Aquests deu llocs territorials no tenen coordenades puntuals. Marala conserva les tres poblacions documentades.
 
 Les coordenades provenen de **GeoNames, generalment via Open-Meteo**, amb atribució CC BY 4.0. Cada població desa la consulta d'origen i la data. Referències: <https://www.geonames.org/> i <https://open-meteo.com/en/docs/geocoding-api>.
@@ -78,3 +78,11 @@ S’han revisat 30 artistes: 29 assignacions aplicades i PunkAIres pendent de co
 Brot Bord queda a Cardedeu i Still Ill a Alella. Cactus Troop conserva el Comtat i l’Alcoià i Bèrnia l’Horta Sud, ara amb confirmació editorial. Les quatre entrades es protegeixen amb `assignmentSource: user-correction` i `locked: true`. Es preserven les altres 146 assignacions anteriors.
 
 Xavi Sarrià es vincula a València per l’arrelament a Benimaclet, sense confondre’l amb el naixement a Barcelona. OKDW es vincula a Cubelles segons la presentació de Virts a la Universitat de Barcelona; Svetlana a Barcelona i All Crü a Sabadell segons les localitats publicades pels projectes. La ràdio per proximitat continua pendent.
+
+## Setè lot de 30 artistes (11 d’octubre de 2026)
+
+S’han aplicat 30 assignacions noves i s’han preservat íntegrament les 179 anteriors, incloses les correccions editorials. [Decisions i fonts](revisions/2026-10-11-origens-lot-07.json).
+
+PunkAIres, que havia quedat pendent al sisè lot, s’ha retirat del catàleg i dels handles verificats per petició editorial. S’ha afegit a les exclusions permanents perquè les actualitzacions automàtiques no el reincorporin. El circuit de validació i purga retira el canal del feed i dels índexs derivats. La menció pendent del lot anterior es conserva només com a registre històric.
+
+Batec conserva els dos municipis d’origen, Rubí i Almacelles. Da Souza queda a Mallorca i Autodestrucció vinculat al Montseny, sense coordenades puntuals. Amargor i Baixa Fidelitat queden vinculats a Barcelona i FP a Vic segons els perfils propis. Duble Buble s’assigna a l’Esquirol i Assot a Breda (la Selva). Coses s’assigna a Barcelona segons el relat de la formació de Jordi Fàbregas. La ràdio per proximitat continua pendent.

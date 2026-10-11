@@ -1302,6 +1302,110 @@
       "territory": "Catalunya",
       "source": "https://geocoding-api.open-meteo.com/v1/search?name=Sant+Quirze+del+Vall%C3%A8s&count=5&language=ca&format=json&countryCode=ES",
       "checkedOn": "2026-10-11"
+    },
+    "geonames:3110983": {
+      "name": "Salt",
+      "type": "municipality",
+      "geonamesId": 3110983,
+      "coordinates": {
+        "latitude": 41.97489,
+        "longitude": 2.79281,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Salt&count=5&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:3129028": {
+      "name": "Badalona",
+      "type": "municipality",
+      "geonamesId": 3129028,
+      "coordinates": {
+        "latitude": 41.45004,
+        "longitude": 2.24741,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Badalona&count=5&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:3110934": {
+      "name": "Santpedor",
+      "type": "municipality",
+      "geonamesId": 3110934,
+      "coordinates": {
+        "latitude": 41.78309,
+        "longitude": 1.84673,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Santpedor&count=5&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:3127655": {
+      "name": "Breda",
+      "type": "municipality",
+      "geonamesId": 3127655,
+      "coordinates": {
+        "latitude": 41.74833,
+        "longitude": 2.55964,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Breda&count=5&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:3130331": {
+      "name": "Almacelles",
+      "type": "municipality",
+      "geonamesId": 3130331,
+      "coordinates": {
+        "latitude": 41.73216,
+        "longitude": 0.43722,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Almacelles&count=5&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:3109799": {
+      "name": "l’Esquirol",
+      "type": "municipality",
+      "geonamesId": 3109799,
+      "coordinates": {
+        "latitude": 42.03333,
+        "longitude": 2.36667,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=l%27Esquirol&count=5&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:3128978": {
+      "name": "Balaguer",
+      "type": "municipality",
+      "geonamesId": 3128978,
+      "coordinates": {
+        "latitude": 41.79117,
+        "longitude": 0.81094,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Balaguer&count=5&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:3124630": {
+      "name": "Corbera d’Ebre",
+      "type": "municipality",
+      "geonamesId": 3124630,
+      "coordinates": {
+        "latitude": 41.07733,
+        "longitude": 0.47667,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Corbera&count=20&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
     }
   },
   "artists": {
@@ -4303,6 +4407,489 @@
       "reviewedOn": "2026-10-11",
       "assignmentSource": "manual-review",
       "locked": true
+    },
+    "artist:adria-punti": {
+      "name": "Adrià Puntí",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3110983"
+      ],
+      "confidence": "alta",
+      "basis": "La biografia de la Biblioteca Virtual situa el naixement a Salt.",
+      "sources": [
+        "https://bibliotecavirtual.diba.cat/ca/musica/adria-punti"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:albert-fibla": {
+      "name": "Albert Fibla",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3129028"
+      ],
+      "confidence": "alta",
+      "basis": "Òmnium presenta Albert Fibla com a cantautor de Badalona.",
+      "sources": [
+        "https://www.omnium.cat/ca/albert-fibla-estrena-el-seu-ultim-treball-a-badalona-convidat-per-omnium/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:allergiques-al-pollen": {
+      "name": "Al·lèrgiques al Pol·len",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "La presentació del grup situa la formació al barri de Gràcia de Barcelona.",
+      "sources": [
+        "https://www.mmvv.cat/ca/artista/al-lergiques-al-pol-len/1429",
+        "https://santceloni.cat/34515?per_imprimir=1"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:amargor": {
+      "name": "Amargor",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "El perfil propi de Bandcamp declara Barcelona. S'assigna com a localitat vinculada, sense deduir el lloc de naixement dels membres.",
+      "sources": [
+        "https://amargor-dsbm.bandcamp.com/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:anais-vila": {
+      "name": "Anaïs Vila",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3110934"
+      ],
+      "confidence": "alta",
+      "basis": "La biografia de la seva agència acredita Santpedor com a lloc de naixement.",
+      "sources": [
+        "https://www.oa2produccions.cat/anais-vila/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:andreu-rife-i-oro": {
+      "name": "Andreu Rifé i Oro",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "La fitxa biogràfica de la Sala Beckett situa el naixement a Barcelona.",
+      "sources": [
+        "https://www.salabeckett.cat/membre/andreu-2/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:animal": {
+      "name": "Animal",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3110101"
+      ],
+      "confidence": "alta",
+      "basis": "L'entrevista de VilaWeb identifica Animal com a conjunt de Sant Quirze del Vallès.",
+      "sources": [
+        "https://www.vilaweb.cat/noticies/animal-de-cop-sembla-que-tot-sigui-molt-gros/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:assot": {
+      "name": "Assot",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3127655"
+      ],
+      "confidence": "alta",
+      "basis": "Enderrock situa la formació a Breda, a la Selva. La ubicació Breda als Països Baixos del desplegable de Bandcamp no correspon al grup del Montseny.",
+      "sources": [
+        "https://www.enderrock.cat/noticia/30104/sis-bandes-protagonistes-nou-catalunya-triomfant"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:autodestruccio": {
+      "name": "Autodestrucció",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "territory:montseny"
+      ],
+      "confidence": "alta",
+      "basis": "Bankrobber vincula Càndid Coll i el seu projecte Autodestrucció a l'escena del Montseny. Es conserva la precisió territorial, sense atribuir-li un municipi ni coordenades puntuals.",
+      "sources": [
+        "https://bankrobber.net/producto/com-una-dent-d-all/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:avalot": {
+      "name": "Avalot",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3111933"
+      ],
+      "confidence": "alta",
+      "basis": "La nota de premsa del festival ARF 2007 identifica Avalot com a grup de heavy metal de Reus.",
+      "sources": [
+        "https://webfacil.tinet.cat/usuaris/jlavall/Nota_de_Premsa_ARF2007_20090418142538.pdf"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:baixa-fidelitat": {
+      "name": "Baixa Fidelitat",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "El perfil propi a Bandcamp declara Barcelona; es registra com a localitat associada al projecte.",
+      "sources": [
+        "https://baixafidelitat.bandcamp.com/album/socialdem-crata"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:batec": {
+      "name": "Batec",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3111294",
+        "geonames:3130331"
+      ],
+      "confidence": "alta",
+      "basis": "La biografia pròpia situa la formació del grup entre Rubí i Almacelles. Es conserven les dues poblacions.",
+      "sources": [
+        "https://batec.bandcamp.com/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:budellam": {
+      "name": "Budellam",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3119099"
+      ],
+      "confidence": "alta",
+      "basis": "El segell El Forat identifica Budellam com a grup de la Roca del Vallès en la seva discografia.",
+      "sources": [
+        "https://elforatsantandreu.blogspot.com/p/ediciones.html"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:coses": {
+      "name": "Coses",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "Jordi Fàbregas explica en una entrevista que ell i els altres membres van traslladar-se a Barcelona i hi van iniciar Coses. S'assigna l'origen del grup, no les poblacions natals dels seus components.",
+      "sources": [
+        "https://www.vilaweb.cat/noticies/jordi-fabregas-vivim-molta-creativitat-a-la-musica-folk-i-aixo-shauria-de-fer-visible-amb-mes-normalitat/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:da-souza": {
+      "name": "Da Souza",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "territory:mallorca"
+      ],
+      "confidence": "alta",
+      "basis": "IB3 identifica el grup com a mallorquí. Es conserva l'origen insular compartit sense imposar una única població als membres ni confondre'l amb l'etapa de formació a Barcelona.",
+      "sources": [
+        "https://ib3.org/els-mallorquins-da-souza-sacomiaden-despres-de-10-anys-de-musica-i-4-treballs-discografics",
+        "https://www.elnacional.cat/es/cultura/entrevista-da-souza-lluis-angel-boleros-salsa-agredolca-mallorca-antonia-font_627278_102.html"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:desperta-ferro": {
+      "name": "Desperta Ferro",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3111199"
+      ],
+      "confidence": "alta",
+      "basis": "La revista La Farga identifica el grup de punk Desperta Ferro amb Sabadell. Es diferencia de les formacions homònimes de cultura popular.",
+      "sources": [
+        "https://revistalafarga.cat/wp-content/uploads/2022/03/212.pdf"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:dijous-paella": {
+      "name": "Dijous Paella",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "El programa municipal de la Mercè 2008 presenta Dijous Paella amb la procedència Barcelona.",
+      "sources": [
+        "https://www.barcelona.cat/lamerce/sites/default/files/2022-03/programa-definitiu-merce-08.pdf"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:dr-calypso": {
+      "name": "Dr. Calypso",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "La presentació del segell Redstar73 situa la formació de Dr. Calypso a Barcelona.",
+      "sources": [
+        "https://redstar73.wordpress.com/2011/12/05/dr-calypso-la-thorpe-brass-diss-17-desembre-2000-h-sala-apolo-bcn/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:duble-buble": {
+      "name": "Duble Buble",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3109799"
+      ],
+      "confidence": "alta",
+      "basis": "Ràdio Manlleu identifica Duble Buble com a grup format a l'Esquirol; no s'atribueix al municipi de l'emissora.",
+      "sources": [
+        "https://www.elter.net/societat/22844-exitos-retorn-dels-duble-buble-sobre-els-escenaris"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:el-gitano-de-balaguer": {
+      "name": "El Gitano de Balaguer",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128978"
+      ],
+      "confidence": "alta",
+      "basis": "La presentació del documental i l'entrevista amb els directors a SER Catalunya acrediten Balaguer com a origen de l'artista.",
+      "sources": [
+        "https://cadenaser.com/cataluna/2025/11/01/el-gitano-de-balaguer-salut-mental-addiccions-musica-i-vida-sercat/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:els-detectors": {
+      "name": "Els Detectors",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3116562"
+      ],
+      "confidence": "alta",
+      "basis": "La retrospectiva d'Auva situa la formació dels Detectors a Molins de Rei.",
+      "sources": [
+        "https://www.auva.cat/recordem-detectors/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:enric-barbat": {
+      "name": "Enric Barbat",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "L'Enciclopèdia Catalana acredita Barcelona com a lloc de naixement. No es confon amb la residència posterior a Menorca.",
+      "sources": [
+        "https://www.enciclopedia.cat/gran-enciclopedia-catalana/enric-barbat-i-botey"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:enric-hernaez": {
+      "name": "Enric Hernàez",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "3Cat identifica Enric Hernàez com a cantautor barceloní.",
+      "sources": [
+        "https://www.3cat.cat/3catinfo/mor-el-cantautor-barceloni-enric-hernaez-als-68-anys/noticia/3366534/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:falciots-ninja": {
+      "name": "Falciots Ninja",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "La fitxa del Mercat de Música Viva de Vic situa la banda a Barcelona.",
+      "sources": [
+        "https://www.mmvv.cat/ca/artista/falciots-ninja/887/2018"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:figa-flawas": {
+      "name": "Figa Flawas",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3106492"
+      ],
+      "confidence": "alta",
+      "basis": "La biografia de l'agència acredita Valls com a origen del duet.",
+      "sources": [
+        "https://www.oa2produccions.cat/figo-flawas/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:foscor": {
+      "name": "Foscor",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "La biografia del management situa la creació de Foscor a Barcelona.",
+      "sources": [
+        "https://patriciathomasmanagement.com/bands-e-o/foscor/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:fp": {
+      "name": "FP",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:3106050"
+      ],
+      "confidence": "alta",
+      "basis": "La banda declara Vic al seu perfil propi de Bandcamp. Es registra la localitat associada al projecte.",
+      "sources": [
+        "https://fptheband.bandcamp.com/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:galgo-lento": {
+      "name": "Galgo Lento",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3108286"
+      ],
+      "confidence": "alta",
+      "basis": "La fitxa de Cases de la Música acredita Terrassa com a lloc de naixement de Martí Galán, Galgo Lento.",
+      "sources": [
+        "https://casadelamusica.cat/index.php/fitxes-artistes/754-galgo-lento"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:gra-fort": {
+      "name": "Gra Fort",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3124630"
+      ],
+      "confidence": "alta",
+      "basis": "Marfanta identifica Gra Fort com a grup de Corbera d'Ebre, a la Terra Alta.",
+      "sources": [
+        "https://www.marfanta.com/2022/04/12/la-tomaquera-la-terrats-i-la-carleta/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:guillermina-motta": {
+      "name": "Guillermina Motta",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "La biografia i entrevista d'Enderrock identifica Barcelona com a lloc de naixement.",
+      "sources": [
+        "https://www.enderrock.cat/edr/numero999/noticia/1460"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
     }
   },
   "channels": {
@@ -4622,6 +5209,37 @@
     "UCHdLUidEVvmo-4p1h895hcA": "artist:zombi-pujol",
     "UCPJBMmuD2mgN4liF9Rc12mw": "artist:9son",
     "UCETR11eCJC5Z9mitj6MbASw": "artist:9son",
-    "UC-JNcJrzWSw2RtL-3TqYoeQ": "artist:adala"
+    "UC-JNcJrzWSw2RtL-3TqYoeQ": "artist:adala",
+    "UCDiHZrbEw6zc_DaFl5wsmRA": "artist:adria-punti",
+    "UCz-O8jJsp_uT_vORvd9Etbg": "artist:albert-fibla",
+    "UC-wNy0amkJJUTaukKo61Tfw": "artist:allergiques-al-pollen",
+    "UCMj8K97SgGnI9OdJIHBH-Sw": "artist:allergiques-al-pollen",
+    "UCoOJY5SD3f0RvSk6uhRVZ_A": "artist:amargor",
+    "UCPzAMvgbZZqisrkmVSgqIHg": "artist:anais-vila",
+    "UCOuye30wynoiY9VfWM8BFWg": "artist:andreu-rife-i-oro",
+    "UCg2Go1mJnKlXnMvy1VhlZTw": "artist:animal",
+    "UCgAPpOaGsoDsXdEQKLB6gnQ": "artist:assot",
+    "UC8yBjieIRVNRxjAVi0FO1DQ": "artist:autodestruccio",
+    "UCcG2ayuF3B2xDZIVH2LNefg": "artist:avalot",
+    "UCk0dxKPgahJyFPV_F1VWVuA": "artist:baixa-fidelitat",
+    "UCmgvpf_Hz64idSYh4hFGHkQ": "artist:batec",
+    "UCxaFjfjCeRo1dUZXm_YtM6w": "artist:budellam",
+    "UCnBMdEFrntxHSNXpIO7HXFA": "artist:coses",
+    "UC9qAJ8qxZth4Ic8D-OV52RQ": "artist:da-souza",
+    "UCtad7HKeiW-TwPgX-ZIOGZw": "artist:desperta-ferro",
+    "UCXPmz-dujGuIrhnf5v5Fxrg": "artist:dijous-paella",
+    "UCX95O_Gs_2ob3p86_MgldhA": "artist:dr-calypso",
+    "UCU1eUJDhuxK2wGF21vhpNzQ": "artist:duble-buble",
+    "UCfEMFCX--mYjYsAWSKvKMhA": "artist:el-gitano-de-balaguer",
+    "UCXgOGaZ8NyliSq0XjPt-iPA": "artist:els-detectors",
+    "UCc-fcN1V8NLdND4zBDMBrnA": "artist:enric-barbat",
+    "UCpdGiiitzh2ypWsOaSyvL0A": "artist:enric-hernaez",
+    "UCLbuprK567zLAC6ZzamsDLQ": "artist:falciots-ninja",
+    "UCqmGotHSCTvuq95XQ4XwaVQ": "artist:figa-flawas",
+    "UCpWzqKujkmJvGIAt5QgBgBQ": "artist:foscor",
+    "UCdontCcTg9y1senwNiJFECg": "artist:fp",
+    "UCXh0ap-a-fIbQBYfCxASKCw": "artist:galgo-lento",
+    "UC5PqMEE9b8osizQXQSdVkNQ": "artist:gra-fort",
+    "UCyhZSV8Dh0pQi09p1vECRVA": "artist:guillermina-motta"
   }
 }
