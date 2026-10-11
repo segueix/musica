@@ -238,17 +238,62 @@
     },
     "UC5u7o5L26RuDowQsqOJDm0w": {
       "artist": "La Coixinera",
-      "note": "Selecció inicial de cançons en català contrastada el 2026-10-05. Només ampliar amb verificació del repertori; exclou peces en altres idiomes. Canal Tema sol·licitat expressament el 2026-10-11; Mar i Muntanya identificada al catàleg del Tema (cjimvRZnGwc).",
-      "allowedTitleContains": [
-        "Mar i muntanya"
+      "note": "Revisió documental 2026-10-11: 49 pistes autoritzades del canal Tema; català i instrumental. Nou casos pendents d'evidència suficient; Astoaren Kanta (basc) continua fora. Fonts i decisions: docs/revisions/2026-10-11-folk-tema.json.",
+      "allowedVideoIds": [
+        "g4cWtucI8Rc",
+        "gcQPMoTsUEo",
+        "xyS7JvucOT8",
+        "orqDiFiNV5Q",
+        "Lxf8VrjAYNw",
+        "h55Ot9g0KA8",
+        "ghZt8OUTkuA",
+        "nXVzGlMfMnI",
+        "ZWi_7bu_q8U",
+        "FyI7l2aoDBo",
+        "8XlQaW0Qrs8",
+        "DVVsXMWYIek",
+        "81npoWV1Nq0",
+        "-zDKeaQAz4Q",
+        "44Oms2qKGDc",
+        "NsEKrQumpF4",
+        "jBRrpgemIeU",
+        "MFuljLXZFbw",
+        "Otnd9Dm6xRc",
+        "IYwUjOVOcK8",
+        "XXL14crMwDg",
+        "mLhfjh__6Ro",
+        "_Uw6jfbAVZc",
+        "oCjQzqVUmOc",
+        "0dFPh_yTiWo",
+        "e0CMKyyrHMQ",
+        "rdv-IbCwwwI",
+        "bZw-dAyxTBI",
+        "Fu7alr_v4Po",
+        "wbnoJ7ekExQ",
+        "7YpBrC5sRwI",
+        "uoSnq0KgBZs",
+        "KA665uMCuTg",
+        "ZgO6qM48ir8",
+        "pRB_4_w-UAI",
+        "Q6A4-0BysYQ",
+        "lYTUgG5mc3o",
+        "f5gBaXdkLVM",
+        "ldeg0dpKqFk",
+        "JcYyBY7vwuE",
+        "fUEN2bIQPBs",
+        "WDXtk8YX6dQ",
+        "QbszVIa-FCc",
+        "m7q5oI8WgjU",
+        "ut0QekWK67Q",
+        "cjimvRZnGwc",
+        "WLfhzt7gz_k",
+        "yp28XYXfPJQ",
+        "hW5i5_A8KKU"
       ],
       "acceptedMusicOnly": true,
       "allowedContentTypes": [
         "song",
         "live_song"
-      ],
-      "allowedVideoIds": [
-        "cjimvRZnGwc"
       ]
     },
     "UC5Fb0Xo8Xx6gVrFPoVsZluw": {
@@ -4355,6 +4400,18 @@
         "El último gol Live"
       ],
       "note": "Exclusió manual de Trapezista i El último gol Live sol·licitada el 2026-10-09."
+    },
+    "UC711R927_H-bOzQGHu7B5Pg": {
+      "artist": "L'Ham de Foc",
+      "note": "Revisió documental 2026-10-11: repertori català i instrumental dels discos U, Cançó de dona i home i Cor de porc. Andarletto en judeocastellà, exclosa. Illes pendent de verificació, sense aprovació lingüística. Fonts: docs/revisions/2026-10-11-folk-tema.json.",
+      "deniedTitleContains": [
+        "Andarletto"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
     }
   }
 }
