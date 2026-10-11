@@ -2,7 +2,7 @@
 
 ## Estat: 11 d'octubre de 2026
 
-La fitxa mostra les assignacions validades de 150 artistes (267 canals oficials i Topic). En prémer la línia «Origen» o «Vinculat a» es despleguen el motiu i les fonts. Els perfils de programes i els artistes encara sense assignació no mostren la línia.
+La fitxa mostra les assignacions validades de 179 artistes (317 canals oficials i Topic). En prémer la línia «Origen» o «Vinculat a» es despleguen el motiu i les fonts. Els perfils de programes i els artistes encara sense assignació no mostren la línia.
 
 El [pilot inicial](ORIGENS_PILOT_30.md) tenia 22 casos documentats i 8 pendents. Una segona revisió ha validat Dusminguet, La Coixinera, Ebri Knight, Joan Miquel Oliver, Xarim Aresté i la vinculació de La Troba Kung-Fú amb la Garriga. Per a aquest últim, la biografia de Fourni Produccions a WOMEX documenta l'estudi propi a la Fournier; no afirmem que sigui el municipi de formació.
 
@@ -14,7 +14,7 @@ El [pilot inicial](ORIGENS_PILOT_30.md) tenia 22 casos documentats i 8 pendents.
 
 - `artists`: assignació única per artista, relació `origin` o `associated`, llocs, fonts, explicació, data, estat i bloqueig manual.
 - `channels`: canals oficials i Topic associats a l'artista del catàleg. En afegir canals cal ampliar aquest mapa després de confirmar la identitat.
-- `places`: llocs normalitzats reutilitzables. Hi ha 86 poblacions amb identificador GeoNames i coordenades de referència del nucli o municipi; no són domicilis ni coordenades personals. La jerarquia administrativa del proveïdor no s'utilitza per assignar el municipi (pot tenir discrepàncies).
+- `places`: llocs normalitzats reutilitzables. Hi ha 95 poblacions amb identificador GeoNames i coordenades de referència del nucli o municipi; no són domicilis ni coordenades personals. La jerarquia administrativa del proveïdor no s'utilitza per assignar el municipi (pot tenir discrepàncies).
 - Formentera i Mallorca es mantenen a escala d'illa; Camp de Tarragona, Camp de Túria i Montseny a escala territorial. També es documenten Vallès, Comtat, Alcoià, Horta Sud i Maresme. Aquests deu llocs territorials no tenen coordenades puntuals. Marala conserva les tres poblacions documentades.
 
 Les coordenades provenen de **GeoNames, generalment via Open-Meteo**, amb atribució CC BY 4.0. Cada població desa la consulta d'origen i la data. Referències: <https://www.geonames.org/> i <https://open-meteo.com/en/docs/geocoding-api>.
@@ -69,4 +69,12 @@ S’han aplicat les 30 assignacions i es preserven íntegrament les 120 anterior
 
 26 artistes tenen una o més poblacions assignades. Hey Zuri conserva Canals, l’Alcúdia de Crespins i Llanera de Ranes; Boom Boom Fighters, Mataró i Girona. Lluís Llach es vincula a Verges per l’arrelament des de la infància, distingint-lo del naixement a Girona. Vicky l’Arròs es vincula a Barcelona segons la localitat publicada per l’artista.
 
-Quatre artistes mantenen la precisió territorial acreditada, pendent de concretar municipi: Brot Bord (Vallès), Cactus Troop (Comtat i Alcoià), Bèrnia (Horta Sud) i Still Ill (Maresme). No tenen coordenades puntuals i no s’han de convertir automàticament en centres municipals per calcular distàncies. Les assignacions són manuals i protegides; la ràdio per proximitat continua pendent.
+La revisió inicial va mantenir quatre casos a escala territorial. Posteriorment, l’editor ha concretat Brot Bord a Cardedeu i Still Ill a Alella, i ha confirmat Cactus Troop al Comtat i l’Alcoià i Bèrnia a l’Horta Sud. Aquests dos últims conserven l’escala comarcal sense coordenades puntuals. Les assignacions són manuals i protegides; la ràdio per proximitat continua pendent.
+
+## Sisè lot de 30 artistes (11 d’octubre de 2026)
+
+S’han revisat 30 artistes: 29 assignacions aplicades i PunkAIres pendent de confirmar població. No s’infereix l’origen pels títols de les cançons ni pel col·lectiu homònim Dràstik Punkaires. [Decisions, fonts i correccions editorials](revisions/2026-10-11-origens-lot-06.json).
+
+Brot Bord queda a Cardedeu i Still Ill a Alella. Cactus Troop conserva el Comtat i l’Alcoià i Bèrnia l’Horta Sud, ara amb confirmació editorial. Les quatre entrades es protegeixen amb `assignmentSource: user-correction` i `locked: true`. Es preserven les altres 146 assignacions anteriors.
+
+Xavi Sarrià es vincula a València per l’arrelament a Benimaclet, sense confondre’l amb el naixement a Barcelona. OKDW es vincula a Cubelles segons la presentació de Virts a la Universitat de Barcelona; Svetlana a Barcelona i All Crü a Sabadell segons les localitats publicades pels projectes. La ràdio per proximitat continua pendent.

@@ -1,0 +1,853 @@
+{
+  "reviewedOn": "2026-10-11",
+  "batch": 6,
+  "selection": {
+    "method": "30 artistes pendents amb més cançons i directes al feed, sumant els seus canals; desempat per nom.",
+    "feedGeneratedAt": "2026-10-11T15:01:49.358Z"
+  },
+  "summary": {
+    "reviewed": 30,
+    "applied": 29,
+    "pending": 1,
+    "editorialCorrections": 4,
+    "totals": {
+      "artists": 179,
+      "channels": 317,
+      "places": 105,
+      "municipalities": 95
+    }
+  },
+  "corrections": [
+    {
+      "artistId": "artist:brot-bord",
+      "previousAssignment": {
+        "name": "Brot Bord",
+        "status": "validated",
+        "relation": "origin",
+        "placeIds": [
+          "territory:valles"
+        ],
+        "confidence": "alta",
+        "basis": "El segell Kasba presenta el grup com a banda del Vallès. No s'ha acreditat un municipi concret ni quina de les dues comarques; es manté la precisió territorial de la font.",
+        "sources": [
+          "https://www.kasbamusic.com/es/2023/12/brot-bord-i-fly-shit-publiquen-dema-el-seu-album-conjunt/"
+        ],
+        "reviewedOn": "2026-10-11",
+        "assignmentSource": "manual-review",
+        "locked": true
+      },
+      "assignment": {
+        "name": "Brot Bord",
+        "status": "validated",
+        "relation": "origin",
+        "placeIds": [
+          "geonames:3126317"
+        ],
+        "confidence": "alta",
+        "basis": "Origen a Cardedeu confirmat manualment per l'editor del catàleg el 11 d'octubre de 2026. Les fonts enllaçades documenten la identitat i el context del projecte; aquesta assignació prové de la confirmació editorial.",
+        "sources": [
+          "https://www.kasbamusic.com/es/2023/12/brot-bord-i-fly-shit-publiquen-dema-el-seu-album-conjunt/"
+        ],
+        "reviewedOn": "2026-10-11",
+        "assignmentSource": "user-correction",
+        "locked": true
+      }
+    },
+    {
+      "artistId": "artist:still-ill",
+      "previousAssignment": {
+        "name": "Still Ill",
+        "status": "validated",
+        "relation": "origin",
+        "placeIds": [
+          "territory:maresme"
+        ],
+        "confidence": "alta",
+        "basis": "L'entrevista escolar identifica explícitament Still Ill com a raper maresmenc. No es traslladen automàticament al seu perfil individual els municipis atribuïts al conjunt de Lágrimas de Sangre.",
+        "sources": [
+          "https://agora.xtec.cat/iesvilatzara/noticies-portada/alumnes-de-4t-posen-en-practica-els-processos-de-produccio-radiofonica-amb-una-entrevista-al-raper-maresmenc-still-ill/",
+          "https://guspira.net/ca/still-ill-presenta-nou-disc-en-catala-allo-que-mai-no-mor/"
+        ],
+        "reviewedOn": "2026-10-11",
+        "assignmentSource": "manual-review",
+        "locked": true
+      },
+      "assignment": {
+        "name": "Still Ill",
+        "status": "validated",
+        "relation": "origin",
+        "placeIds": [
+          "geonames:3130422"
+        ],
+        "confidence": "alta",
+        "basis": "Origen a Alella confirmat manualment per l'editor del catàleg el 11 d'octubre de 2026. Les fonts enllaçades documenten la identitat i el context del projecte; aquesta assignació prové de la confirmació editorial.",
+        "sources": [
+          "https://agora.xtec.cat/iesvilatzara/noticies-portada/alumnes-de-4t-posen-en-practica-els-processos-de-produccio-radiofonica-amb-una-entrevista-al-raper-maresmenc-still-ill/",
+          "https://guspira.net/ca/still-ill-presenta-nou-disc-en-catala-allo-que-mai-no-mor/"
+        ],
+        "reviewedOn": "2026-10-11",
+        "assignmentSource": "user-correction",
+        "locked": true
+      }
+    },
+    {
+      "artistId": "artist:cactus-troop",
+      "previousAssignment": {
+        "name": "Cactus Troop",
+        "status": "validated",
+        "relation": "origin",
+        "placeIds": [
+          "territory:el-comtat",
+          "territory:l-alcoia"
+        ],
+        "confidence": "alta",
+        "basis": "La presentació del concert situa els tres fundadors al Comtat i l'Alcoià. Es conserven les dues comarques, sense atribuir a tot el grup el municipi d'un únic membre.",
+        "sources": [
+          "https://www.icapalancia.com/2024/09/24/sabado-28-de-septiembre-actuacion-en-geldo-de-cactus-troop/",
+          "https://www.elguaitadormusical.cat/grups/cactus"
+        ],
+        "reviewedOn": "2026-10-11",
+        "assignmentSource": "manual-review",
+        "locked": true
+      },
+      "assignment": {
+        "name": "Cactus Troop",
+        "status": "validated",
+        "relation": "origin",
+        "placeIds": [
+          "territory:el-comtat",
+          "territory:l-alcoia"
+        ],
+        "confidence": "alta",
+        "basis": "Origen a el Comtat, l'Alcoià confirmat manualment per l'editor del catàleg el 11 d'octubre de 2026. Les fonts enllaçades documenten la identitat i el context del projecte; aquesta assignació prové de la confirmació editorial.",
+        "sources": [
+          "https://www.icapalancia.com/2024/09/24/sabado-28-de-septiembre-actuacion-en-geldo-de-cactus-troop/",
+          "https://www.elguaitadormusical.cat/grups/cactus"
+        ],
+        "reviewedOn": "2026-10-11",
+        "assignmentSource": "user-correction",
+        "locked": true
+      }
+    },
+    {
+      "artistId": "artist:bernia",
+      "previousAssignment": {
+        "name": "Bèrnia",
+        "status": "validated",
+        "relation": "associated",
+        "placeIds": [
+          "territory:horta-sud"
+        ],
+        "confidence": "alta",
+        "basis": "Les presentacions del grup situen la majoria de les integrants a l'Horta Sud. La fitxa Sona9 indica València (Horta Sud), una referència que no permet atribuir amb seguretat València ciutat; es conserva la vinculació comarcal.",
+        "sources": [
+          "https://www.enderrock.cat/sona9/grup/254/bernia",
+          "https://macma.org/cultura/altaveu-cultural/ressenya-de-juny26-amb-el-cor-plenet"
+        ],
+        "reviewedOn": "2026-10-11",
+        "assignmentSource": "manual-review",
+        "locked": true
+      },
+      "assignment": {
+        "name": "Bèrnia",
+        "status": "validated",
+        "relation": "origin",
+        "placeIds": [
+          "territory:horta-sud"
+        ],
+        "confidence": "alta",
+        "basis": "Origen a Horta Sud confirmat manualment per l'editor del catàleg el 11 d'octubre de 2026. Les fonts enllaçades documenten la identitat i el context del projecte; aquesta assignació prové de la confirmació editorial.",
+        "sources": [
+          "https://www.enderrock.cat/sona9/grup/254/bernia",
+          "https://macma.org/cultura/altaveu-cultural/ressenya-de-juny26-amb-el-cor-plenet"
+        ],
+        "reviewedOn": "2026-10-11",
+        "assignmentSource": "user-correction",
+        "locked": true
+      }
+    }
+  ],
+  "artists": [
+    {
+      "artistId": "artist:gatzara",
+      "name": "Gatzara",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3116562"
+      ],
+      "confidence": "alta",
+      "basis": "El grup es presenta al seu Bandcamp com a punk-rock de Molins sense Rei, nom alternatiu de Molins de Rei.",
+      "sources": [
+        "https://gatzara.bandcamp.com/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 15,
+      "channelIds": [
+        "UCZn28rxOtata8FamPOLCDug",
+        "UCgV7p1tbKMGsNjvg8Zhm4YQ"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:orella-d-os",
+      "name": "Orella d'Ós",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3117200"
+      ],
+      "confidence": "alta",
+      "basis": "L'Ajuntament documenta el grup com a formació local de Matadepera.",
+      "sources": [
+        "https://www.matadepera.cat/actualitat/agenda/concert-del-grup-local-orella-dos"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 15,
+      "channelIds": [
+        "UCy3TyYTl8wJh8Ana3CP0QeA",
+        "UCQqdEQ1Nh5l1XIVqvBgj_3Q"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:siderland",
+      "name": "Siderland",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "La seva agència situa el naixement del grup a Barcelona.",
+      "sources": [
+        "https://rambla.cat/management/siderland/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 15,
+      "channelIds": [
+        "UC9NDkhmm_3ZBjxnIh2d2paA",
+        "UC9MmM6M38qypkn7Z3zNXhUQ"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:socunbohemio",
+      "name": "Socunbohemio",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "El dossier de la FiM identifica Artur Viñas com a músic barceloní.",
+      "sources": [
+        "https://www.fim.cat/wp-content/uploads/2023/03/Dossier-FiM-Vila-seca-2023.pdf"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 15,
+      "channelIds": [
+        "UC7IUL5Ba9dhBVPnTLe9RHhQ",
+        "UCu7TLBQJJLaaxlhD_li0BcA"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:svetlana",
+      "name": "Svetlana",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "El duet publica al seu web que té la base a Barcelona.",
+      "sources": [
+        "https://www.svetlana.cat/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 15,
+      "channelIds": [
+        "UCCo52K6zPcI8QXDKr2DgjBg",
+        "UCTdiD8UkDXr2DdbFRfQbRgQ"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:the-demencials",
+      "name": "The Demencials",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3106050"
+      ],
+      "confidence": "alta",
+      "basis": "El Bandcamp del grup identifica Vic com la seva localitat.",
+      "sources": [
+        "https://thedemencials.bandcamp.com/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 15,
+      "channelIds": [
+        "UCkbE2-0JpyMzPFxZJ9Ev8aA",
+        "UChFT46QMLdzzwd04aCTeyqg"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:triquell",
+      "name": "Triquell",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3110101"
+      ],
+      "confidence": "alta",
+      "basis": "El programa municipal presenta Triquell com el cantant de Sant Quirze que actua al seu poble.",
+      "sources": [
+        "https://www.santquirzevalles.cat/actualitat/noticies/triquell-julieta-pep-plaza-i-la-companyia-electrica-dharma-seran-els-plats-forts-de-la-festa-major-de-sant-quirze-2023-1/programafm2023_web.pdf"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 15,
+      "channelIds": [
+        "UCIE6UEv7aCNJq-Jw9F0mJ7A",
+        "UCLFu97uScrsLlOlKd9ff5aw"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:all-cru",
+      "name": "All Crü",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:3111199"
+      ],
+      "confidence": "alta",
+      "basis": "El perfil de concerts del grup identifica Sabadell com a ciutat d'origen; Enderrock també documenta l'arrelament vallesà.",
+      "sources": [
+        "https://www.bandsintown.com/es/e/108175452-all-cru-at-pavello-poliesportiu-i-gym-bellpuig",
+        "https://www.enderrock.cat/edr/numero1000/disc/10984"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 14,
+      "channelIds": [
+        "UCyNWjZ1IhLo8Iy6nUMEz0rw",
+        "UC_tsO4hz22Lk0jb1CEIFPmw"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:gusset",
+      "name": "Gusset",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3117164"
+      ],
+      "confidence": "alta",
+      "basis": "L'entrevista identifica Albert Coca com a mataroní i la programació municipal ho corrobora.",
+      "sources": [
+        "https://www.enderrock.cat/noticia/29146/gusset-agradaria-sentir-musica-catala-estil-post-malone-frank-ocean",
+        "https://www.mataro.cat/ca/actualitat/agenda/gusset"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 14,
+      "channelIds": [
+        "UCUFf95lc9BoH8zy0Tn1Tm9w",
+        "UCRdGqpbhydDXIl83A9E8-2Q"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:judit-neddermann",
+      "name": "Judit Neddermann",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3110516"
+      ],
+      "confidence": "alta",
+      "basis": "La biografia del festival documenta el naixement a Vilassar de Mar; el web de l'artista hi situa els inicis musicals.",
+      "sources": [
+        "https://www.festivaldetorroella.cat/es/programacion/c/2162-judit-neddermann.html",
+        "https://juditneddermann.com/biografia/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 14,
+      "channelIds": [
+        "UC4EQHZ_4xtQoX1fBGtTQPGg"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:miki-nunez",
+      "name": "Miki Núñez",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3108286"
+      ],
+      "confidence": "alta",
+      "basis": "El programa municipal de concert identifica el cantant amb Terrassa.",
+      "sources": [
+        "https://www.girona.cat/adminwebs/docs/1/1/11-24_programa_de_ma_sccc.pdf"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 14,
+      "channelIds": [
+        "UCSw_OmWJnY0Dz311MEzdHFA",
+        "UCJ_erOhxsuzi3KYLngXMeJw"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:scorpio",
+      "name": "Scorpio",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "La presentació de Clara, Scorpio, a Eufòria indica que és de Barcelona.",
+      "sources": [
+        "https://www.diaridebarcelona.cat/w/test-quin-concursant-euforia-ets-tv3-nou-concurs-musical"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 14,
+      "channelIds": [
+        "UCqe8mqoQPb27d2qD-ggOY0Q"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:silvia-perez-cruz",
+      "name": "Sílvia Pérez Cruz",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3114567"
+      ],
+      "confidence": "alta",
+      "basis": "La biografia de l'Auditori identifica Palafrugell com a població d'origen.",
+      "sources": [
+        "https://www.auditori.cat/ca/artist/silvia-perez-cruz/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 14,
+      "channelIds": [
+        "UCXa6Mb5QgzYjRV_D1VlYoKQ",
+        "UCXoDEBc8CPWptFtzb_mmLiQ"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:xavi-sarria",
+      "name": "Xavi Sarrià",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:2509954"
+      ],
+      "confidence": "alta",
+      "basis": "Es prioritza l'arrelament a Benimaclet, barri de València, documentat per la biografia oficial i les entrevistes, sense confondre'l amb el naixement a Barcelona.",
+      "sources": [
+        "https://xavisarria.cat/bio/",
+        "https://www.eltemps.cat/article/2649/benvinguts-a-la-republica-quasi-independent-de-benimaclet"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 14,
+      "channelIds": [
+        "UCEoFM5PntDSV-nDGm_vBvcg",
+        "UCi2I26VMjcl9e5jfRxaBPbA"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:albert-pla-i-alvarez",
+      "name": "Albert Pla i Álvarez",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3111199"
+      ],
+      "confidence": "alta",
+      "basis": "La biografia de la seva editorial documenta el naixement a Sabadell.",
+      "sources": [
+        "https://takatuka.cat/ca/autores/albert-pla/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 13,
+      "channelIds": [
+        "UCqaEtRht2jakBhGFLzS617w",
+        "UCd2So3hzPhKQs2Vdoo6FJuA"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:cesk-freixas",
+      "name": "Cesk Freixas",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3110142"
+      ],
+      "confidence": "alta",
+      "basis": "El mateix artista publica Sant Pere de Riudebitlles com a població natal.",
+      "sources": [
+        "https://ceskfreixas.aixeta.cat/ca/info"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 13,
+      "channelIds": [
+        "UCP621eWrPlC6uLrXE1tm99w"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:esperit-de-vi",
+      "name": "Esperit de Vi",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128201"
+      ],
+      "confidence": "alta",
+      "basis": "La seva agència presenta el grup com a procedent de Berga; el Verkami del grup documenta membres del Berguedà.",
+      "sources": [
+        "https://www.hfmncrew.cat/es/bandas/esperit-de-vi/",
+        "https://www.verkami.com/projects/38312-primer-disc-desperit-de-vi"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 13,
+      "channelIds": [
+        "UCSBN6Ppa03Wh9WCXE4skixg"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:jaume-sisa-i-mestres",
+      "name": "Jaume Sisa i Mestres",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "La biografia del CCCB situa l'origen de Sisa al Poble-sec de Barcelona.",
+      "sources": [
+        "https://www.cccb.org/es/w/participantes/jaume-sisa"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 13,
+      "channelIds": [
+        "UCr9ukjgwk2JtABN23sPiPGQ"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:la-iaia",
+      "name": "La Iaia",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3106050"
+      ],
+      "confidence": "alta",
+      "basis": "L'Ajuntament de Vic documenta La Iaia com a grup vigatà i hi situa el debut.",
+      "sources": [
+        "https://www.vic.cat/ajuntament/comunicacio-i-protocol/noticies/el-grup-vigata-201cla-iaia201d-guanya-el-concurs"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 13,
+      "channelIds": [
+        "UCuH5h0CPXPIccfyvgZgF09w",
+        "UCl3RfIF60BFTx93il4D11nQ"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:miquel",
+      "name": "miquel",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3120431"
+      ],
+      "confidence": "alta",
+      "basis": "L'entrevista identifica Miquel Nafria com a cantautor igualadí, distingint aquest origen de la residència a Barcelona.",
+      "sources": [
+        "https://www.enderrock.cat/noticia/25239/miquel-faig-classificacio-taxonomica-dels-diferents-finals-histories-amor"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 13,
+      "channelIds": [
+        "UC7Hb62h0GUUgaPe0v0kdY3A"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:mushkaa",
+      "name": "Mushkaa",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3110516"
+      ],
+      "confidence": "alta",
+      "basis": "La ràdio municipal identifica l'artista com a vilassarenca.",
+      "sources": [
+        "https://vilassarradio.cat/lartista-vilassarenca-mushka-cap-de-cartell-de-les-santes-de-mataro/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 13,
+      "channelIds": [
+        "UC9Jl8Rcjs5ZUi8Wf1JnFzlw",
+        "UCQAWPZGGc_4JqXq53ATaSBQ"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:okdw",
+      "name": "okdw",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:3124201"
+      ],
+      "confidence": "alta",
+      "basis": "La Universitat de Barcelona situa el projecte de Virts Martos a Cubelles, on resideix l'artista; s'etiqueta com a vinculació.",
+      "sources": [
+        "https://www.ub.edu/cultura/activitats/altres-concerts/tornen-els-vespres-de-la-ub-amb-un-cartell-emergent-festiu-i-ballable"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 13,
+      "channelIds": [
+        "UCVJ3B4L5NoSuarmZKopumzQ",
+        "UCHXlSnGKv7tdBxMw2F-FMkw"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:ovidi-montllor-i-mengual",
+      "name": "Ovidi Montllor i Mengual",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:2522098"
+      ],
+      "confidence": "alta",
+      "basis": "La biografia de l'Associació d'Escriptors i la crònica municipal documenten l'origen alcoià.",
+      "sources": [
+        "https://www.escriptors.cat/autors/montlloro/biografia",
+        "https://www.alcoi.org/ca/areas/gabinet/ovidi/20_cronica.html"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 13,
+      "channelIds": [
+        "UC4Ub0k-i6pWS76AUXOBf_6w"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:pastorets-rock",
+      "name": "Pastorets Rock",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3118514"
+      ],
+      "confidence": "alta",
+      "basis": "La seva agència presenta Pastorets Rock com a banda lleidatana.",
+      "sources": [
+        "https://www.oa2produccions.cat/pastorets-rock/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 13,
+      "channelIds": [
+        "UCb9iNJl8JS-5gx1d29X8Sjw",
+        "UC2UnG44LjrVvcgzlK8Bte5Q"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:punkaires",
+      "name": "PunkAIres",
+      "status": "pending",
+      "applied": false,
+      "feedSongCount": 13,
+      "channelIds": [
+        "UCEZDsPoB5Tz7LvCJLWrZLuA"
+      ],
+      "placeIds": [],
+      "sources": [
+        "https://www.youtube.com/@PunkAIres"
+      ],
+      "basis": "No s'ha localitzat una font que acrediti la població del projecte. No s'infereix a partir dels títols de cançons ni es confon amb el col·lectiu Dràstik Punkaires."
+    },
+    {
+      "artistId": "artist:pupilles",
+      "name": "Pupil·les",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:2509954"
+      ],
+      "confidence": "alta",
+      "basis": "La presentació municipal situa el punt de trobada i formació del grup a Benimaclet, València, amb membres de diverses poblacions.",
+      "sources": [
+        "https://alzira.es/dema-es-posen-a-la-venda-les-entrades-per-al-concert-de-zoo-i-pupilles-a-alzira/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 13,
+      "channelIds": [
+        "UCIX5CqhHETyi1Xx4JzcGjZg",
+        "UCzxleD2G_7JNCMufgoF3KLw"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:udol",
+      "name": "Udol",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3127035"
+      ],
+      "confidence": "alta",
+      "basis": "Els mateixos músics identifiquen Caldes de Montbui com el seu poble a la presentació del disc.",
+      "sources": [
+        "https://www.verkami.com/projects/21990-udol-en-vinil-153-lliures-i-17-salaris"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 13,
+      "channelIds": [
+        "UCQz3jf86vHTtfVwXd-rOSrA",
+        "UCrxpjvY7G2ffEklcmSHm5og",
+        "UCYnT07O7RJlNvU_sNq6EsZQ"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:zombi-pujol",
+      "name": "Zombi Pujol",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3119099"
+      ],
+      "confidence": "alta",
+      "basis": "El Bandcamp del grup identifica la Roca del Vallès com la seva localitat.",
+      "sources": [
+        "https://zombipujol.bandcamp.com/album/metaversions"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 13,
+      "channelIds": [
+        "UCHdLUidEVvmo-4p1h895hcA"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:9son",
+      "name": "9SON",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "La fitxa del grup al Sona9 indica Barcelona, Barcelonès.",
+      "sources": [
+        "https://www.enderrock.cat/sona9/grup2011/76/son"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 12,
+      "channelIds": [
+        "UCPJBMmuD2mgN4liF9Rc12mw",
+        "UCETR11eCJC5Z9mitj6MbASw"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:adala",
+      "name": "Adala",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "El mateix artista documenta les arrels a Torre Baró, Barcelona, on va néixer i créixer.",
+      "sources": [
+        "https://adala.cat/les-nostres-arrels/",
+        "https://adala.cat/contacte/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "feedSongCount": 12,
+      "channelIds": [
+        "UC-JNcJrzWSw2RtL-3TqYoeQ"
+      ],
+      "applied": true
+    }
+  ]
+}
