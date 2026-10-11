@@ -15,15 +15,19 @@
         ],
         "precision": "municipi"
       },
-      "confidence": "mitjana",
-      "status": "pendent_revisio",
-      "basis": "Formació del grup atribuïda a la Garriga; falta corroboració primària.",
+      "confidence": "alta",
+      "status": "validat",
+      "basis": "L'editorial del projecte de Joan Garriga identifica Dusminguet com a banda de la Garriga.",
       "sources": [
-        "https://es.wikipedia.org/wiki/Dusminguet"
+        "https://es.wikipedia.org/wiki/Dusminguet",
+        "https://godalledicions.cat/titols/bodas-de-sangre/"
       ],
       "checkedOn": "2026-10-11",
       "coordinates": null,
-      "applied": false
+      "applied": true,
+      "placeIds": [
+        "geonames:3119694"
+      ]
     },
     {
       "artistName": "La Troba Kung-Fú",
@@ -37,16 +41,19 @@
         ],
         "precision": "municipi"
       },
-      "confidence": "baixa",
-      "status": "pendent_revisio",
-      "basis": "Vincle del fundador amb la Garriga; no basta per establir origen del grup. Altres fonts indiquen Barcelona.",
+      "confidence": "alta",
+      "status": "validat",
+      "basis": "La biografia publicada per Fourni Produccions documenta l'estudi propi del grup a la Fournier, a la Garriga. Es valida només la vinculació artística; el municipi de formació continua sense resoldre.",
       "sources": [
         "https://www.womex.com/virtual/fourni_produccions/la_troba_kung_fu",
         "https://es.wikipedia.org/wiki/La_Troba_Kung-F%C3%BA"
       ],
       "checkedOn": "2026-10-11",
       "coordinates": null,
-      "applied": false
+      "applied": true,
+      "placeIds": [
+        "geonames:3119694"
+      ]
     },
     {
       "artistName": "La Coixinera",
@@ -60,15 +67,19 @@
         ],
         "precision": "municipi"
       },
-      "confidence": "mitjana",
-      "status": "pendent_revisio",
-      "basis": "Enderrock identifica explícitament el grup com a mataroní.",
+      "confidence": "alta",
+      "status": "validat",
+      "basis": "L'Ajuntament de Mataró explicita que La Coixinera neix a Mataró l'any 2001.",
       "sources": [
-        "https://www.enderrock.cat/folksons/artista/2296/coixinera"
+        "https://www.enderrock.cat/folksons/artista/2296/coixinera",
+        "https://www.mataro.cat/ca/actualitat/agenda/jaume-punsola-i-felix-jurado?set_language=es"
       ],
       "checkedOn": "2026-10-11",
       "coordinates": null,
-      "applied": false
+      "applied": true,
+      "placeIds": [
+        "geonames:3117164"
+      ]
     },
     {
       "artistName": "L'Ham de Foc",
@@ -105,15 +116,19 @@
         ],
         "precision": "municipi"
       },
-      "confidence": "mitjana",
-      "status": "pendent_revisio",
-      "basis": "El Temps situa el naixement de la banda a Argentona.",
+      "confidence": "alta",
+      "status": "validat",
+      "basis": "L'entrevista situa la formació a Argentona, corroborant El Temps.",
       "sources": [
-        "https://www.eltemps.cat/article/13344/el-passamuntanyes-folk-debri-knight"
+        "https://www.eltemps.cat/article/13344/el-passamuntanyes-folk-debri-knight",
+        "https://www.mondosonoro.com/entrevistas/ebri-knight/"
       ],
       "checkedOn": "2026-10-11",
       "coordinates": null,
-      "applied": false
+      "applied": true,
+      "placeIds": [
+        "geonames:3129607"
+      ]
     },
     {
       "artistName": "Fetus",
@@ -128,7 +143,7 @@
         "precision": "municipi"
       },
       "confidence": "alta",
-      "status": "proposta_documentada",
+      "status": "validat",
       "basis": "El líder explica l'elecció de músics de la Bisbal; el festival els integra en l'escena local.",
       "sources": [
         "https://www.ara.cat/girona/bisbal-municipi-mes-musics-catalunya-concentracio_1_5028041.html",
@@ -136,7 +151,10 @@
       ],
       "checkedOn": "2026-10-11",
       "coordinates": null,
-      "applied": false
+      "applied": true,
+      "placeIds": [
+        "geonames:3119952"
+      ]
     },
     {
       "artistName": "Mazoni",
@@ -151,7 +169,7 @@
         "precision": "municipi"
       },
       "confidence": "alta",
-      "status": "proposta_documentada",
+      "status": "validat",
       "basis": "Entrevista i programació del festival documenten la vinculació a l'escena bisbalenca.",
       "sources": [
         "https://www.vilaweb.cat/noticies/entrevista-mazoni-banderes-per-daltonics/",
@@ -159,7 +177,10 @@
       ],
       "checkedOn": "2026-10-11",
       "coordinates": null,
-      "applied": false
+      "applied": true,
+      "placeIds": [
+        "geonames:3119952"
+      ]
     },
     {
       "artistName": "El Petit de Cal Eril",
@@ -174,7 +195,7 @@
         "precision": "municipi"
       },
       "confidence": "alta",
-      "status": "proposta_documentada",
+      "status": "validat",
       "basis": "Entrevista sobre el projecte de Joan Pons a Guissona; RTVE situa el nom en la casa familiar.",
       "sources": [
         "https://uniopagesos.cat/la-terra/joan-pons-dun-producte-valoro-que-sigui-autentic-i-amb-aixo-la-mongeta-del-ganxet-i-el-petit-de-cal-eril-som-identics/",
@@ -182,7 +203,10 @@
       ],
       "checkedOn": "2026-10-11",
       "coordinates": null,
-      "applied": false
+      "applied": true,
+      "placeIds": [
+        "geonames:3120929"
+      ]
     },
     {
       "artistName": "Quimi Portet",
@@ -198,7 +222,7 @@
         "precision": "municipi"
       },
       "confidence": "alta",
-      "status": "proposta_documentada",
+      "status": "validat",
       "basis": "El MMVV el presenta com a músic de Vic. Hi ha discrepància entre biografia i entrevista sobre el naixement; aquesta proposta només afirma vinculació artística.",
       "sources": [
         "https://www.mmvv.cat/es/artista/quimi-portet/1560",
@@ -207,7 +231,10 @@
       ],
       "checkedOn": "2026-10-11",
       "coordinates": null,
-      "applied": false
+      "applied": true,
+      "placeIds": [
+        "geonames:3106050"
+      ]
     },
     {
       "artistName": "Joan Masdéu",
@@ -223,14 +250,17 @@
         "precision": "municipi"
       },
       "confidence": "alta",
-      "status": "proposta_documentada",
+      "status": "validat",
       "basis": "L'Ajuntament documenta origen i reconeixement local com a pregoner.",
       "sources": [
         "https://www.reus.cat/noticia/joan-masdeu-pregoner-de-la-festa-major-de-sant-pere-2011"
       ],
       "checkedOn": "2026-10-11",
       "coordinates": null,
-      "applied": false
+      "applied": true,
+      "placeIds": [
+        "geonames:3111933"
+      ]
     },
     {
       "artistName": "Joan Miquel Oliver",
@@ -244,16 +274,20 @@
         ],
         "precision": "municipi"
       },
-      "confidence": "mitjana",
-      "status": "pendent_revisio",
-      "basis": "Biografies culturals indiquen Sóller; cal distingir dada natal i identificació artística.",
+      "confidence": "alta",
+      "status": "validat",
+      "basis": "Òmnium l'identifica com a músic solleric, corroborant les biografies culturals.",
       "sources": [
         "https://www.talentib.com/es/autor/joan-miquel-oliver/",
-        "https://www.cccb.org/ca/w/participants/joan-miquel-oliver"
+        "https://www.cccb.org/ca/w/participants/joan-miquel-oliver",
+        "https://www.omnium.cat/ca/tics-oliver-marcianet/"
       ],
       "checkedOn": "2026-10-11",
       "coordinates": null,
-      "applied": false
+      "applied": true,
+      "placeIds": [
+        "geonames:2510821"
+      ]
     },
     {
       "artistName": "Xarim Aresté",
@@ -267,15 +301,19 @@
         ],
         "precision": "municipi"
       },
-      "confidence": "mitjana",
-      "status": "pendent_revisio",
-      "basis": "Entrevista situa la primera banda a Flix i el vincle amb la Ribera d'Ebre.",
+      "confidence": "alta",
+      "status": "validat",
+      "basis": "Enderrock l'identifica com a músic de Flix, concordant amb l'entrevista sobre els inicis.",
       "sources": [
-        "https://cadenaser.com/cataluna/2024/03/13/xarim-areste-cada-dia-es-una-mort-sercat/"
+        "https://cadenaser.com/cataluna/2024/03/13/xarim-areste-cada-dia-es-una-mort-sercat/",
+        "https://www.enderrock.cat/edr/numero509/noticia/2760"
       ],
       "checkedOn": "2026-10-11",
       "coordinates": null,
-      "applied": false
+      "applied": true,
+      "placeIds": [
+        "geonames:3122407"
+      ]
     },
     {
       "artistName": "Tesa",
@@ -290,7 +328,7 @@
         "precision": "municipi"
       },
       "confidence": "alta",
-      "status": "proposta_documentada",
+      "status": "validat",
       "basis": "Entrevista identifica la rapera amb Almussafes, concordant amb el directori musical valencià.",
       "sources": [
         "https://www.vilaweb.cat/noticies/entrevista-tesa-rural/",
@@ -298,7 +336,10 @@
       ],
       "checkedOn": "2026-10-11",
       "coordinates": null,
-      "applied": false
+      "applied": true,
+      "placeIds": [
+        "geonames:2521845"
+      ]
     },
     {
       "artistName": "Feliu Ventura",
@@ -314,7 +355,7 @@
         "precision": "municipi"
       },
       "confidence": "alta",
-      "status": "proposta_documentada",
+      "status": "validat",
       "basis": "Entrevistes documenten origen i identificació amb Xàtiva.",
       "sources": [
         "https://beteve.cat/artic/feliu-ventura-convocatoria/",
@@ -322,7 +363,10 @@
       ],
       "checkedOn": "2026-10-11",
       "coordinates": null,
-      "applied": false
+      "applied": true,
+      "placeIds": [
+        "geonames:2516345"
+      ]
     },
     {
       "artistName": "Montse Castellà",
@@ -338,14 +382,17 @@
         "precision": "municipi"
       },
       "confidence": "alta",
-      "status": "proposta_documentada",
+      "status": "validat",
       "basis": "Autodefinició explícita a la web oficial com a tortosina.",
       "sources": [
         "https://www.montsecastella.cat/"
       ],
       "checkedOn": "2026-10-11",
       "coordinates": null,
-      "applied": false
+      "applied": true,
+      "placeIds": [
+        "geonames:3107677"
+      ]
     },
     {
       "artistName": "Tomeu Penya",
@@ -360,7 +407,7 @@
         "precision": "municipi"
       },
       "confidence": "alta",
-      "status": "proposta_documentada",
+      "status": "validat",
       "basis": "Biografia oficial i entrevista coincideixen en origen i identificació amb Vilafranca.",
       "sources": [
         "https://tomeupenya.cat/bio/",
@@ -368,7 +415,10 @@
       ],
       "checkedOn": "2026-10-11",
       "coordinates": null,
-      "applied": false
+      "applied": true,
+      "placeIds": [
+        "geonames:2509600"
+      ]
     },
     {
       "artistName": "Júlia Colom",
@@ -384,7 +434,7 @@
         "precision": "municipi"
       },
       "confidence": "alta",
-      "status": "proposta_documentada",
+      "status": "validat",
       "basis": "La cantant explica que hi ha crescut i s'hi identifica explícitament.",
       "sources": [
         "https://www.ara.cat/cultura/musica/julia-colom-miramar-radios-tractors-cantar_128_4764744.html",
@@ -392,7 +442,10 @@
       ],
       "checkedOn": "2026-10-11",
       "coordinates": null,
-      "applied": false
+      "applied": true,
+      "placeIds": [
+        "geonames:2509929"
+      ]
     },
     {
       "artistName": "Caïm Riba",
@@ -408,7 +461,7 @@
         "precision": "illa"
       },
       "confidence": "alta",
-      "status": "proposta_documentada",
+      "status": "validat",
       "basis": "Entrevistes documenten origen i relació amb Formentera; no es proposa cap nucli concret.",
       "sources": [
         "https://www.enderrock.cat/edr/numero8/noticia/54",
@@ -416,7 +469,10 @@
       ],
       "checkedOn": "2026-10-11",
       "coordinates": null,
-      "applied": false
+      "applied": true,
+      "placeIds": [
+        "territory:formentera"
+      ]
     },
     {
       "artistName": "Paul Fuster",
@@ -431,7 +487,7 @@
         "precision": "municipi"
       },
       "confidence": "alta",
-      "status": "proposta_documentada",
+      "status": "validat",
       "basis": "Residència i activitat creativa documentades a Cardona en diferents etapes; nascut als EUA.",
       "sources": [
         "https://www.ara.cat/cultura/paul-fuster-musica-medicina-vibracional_1_1611058.html",
@@ -439,7 +495,10 @@
       ],
       "checkedOn": "2026-10-11",
       "coordinates": null,
-      "applied": false
+      "applied": true,
+      "placeIds": [
+        "geonames:3126293"
+      ]
     },
     {
       "artistName": "Marala",
@@ -456,7 +515,7 @@
         "precision": "multipoblacio"
       },
       "confidence": "alta",
-      "status": "proposta_documentada",
+      "status": "validat",
       "basis": "La discogràfica enumera tres localitats i una entrevista confirma els orígens de les integrants; conservar totes tres, amb context històric.",
       "sources": [
         "https://www.ppf.cat/index.php/cat/artistes/marala",
@@ -464,7 +523,12 @@
       ],
       "checkedOn": "2026-10-11",
       "coordinates": null,
-      "applied": false
+      "applied": true,
+      "placeIds": [
+        "geonames:3110718",
+        "geonames:2512989",
+        "geonames:2512825"
+      ]
     },
     {
       "artistName": "Roba Estesa",
@@ -480,14 +544,17 @@
         "precision": "territori"
       },
       "confidence": "alta",
-      "status": "proposta_documentada",
+      "status": "validat",
       "basis": "La discogràfica situa el naixement del grup al Camp de Tarragona; no atribuir-lo a Tarragona ciutat.",
       "sources": [
         "https://halleyrecords.com/artist/roba-estesa/"
       ],
       "checkedOn": "2026-10-11",
       "coordinates": null,
-      "applied": false
+      "applied": true,
+      "placeIds": [
+        "territory:camp-de-tarragona"
+      ]
     },
     {
       "artistName": "Les Cruet",
@@ -502,7 +569,7 @@
         "precision": "territori"
       },
       "confidence": "alta",
-      "status": "proposta_documentada",
+      "status": "validat",
       "basis": "Discogràfica i entrevista identifiquen l'entorn del Montseny; no demostren el municipi homònim.",
       "sources": [
         "https://bankrobber.net/producto/eco-les-cruet-vinil/",
@@ -510,7 +577,10 @@
       ],
       "checkedOn": "2026-10-11",
       "coordinates": null,
-      "applied": false
+      "applied": true,
+      "placeIds": [
+        "territory:montseny"
+      ]
     },
     {
       "artistName": "Anna Ferrer",
@@ -525,7 +595,7 @@
         "precision": "municipi"
       },
       "confidence": "alta",
-      "status": "proposta_documentada",
+      "status": "validat",
       "basis": "Entrevista biogràfica i informació del pregó documenten origen i vincle amb Maó.",
       "sources": [
         "https://elperiodic.ad/entrevista/anna-ferrer-06-10-2022/",
@@ -533,7 +603,10 @@
       ],
       "checkedOn": "2026-10-11",
       "coordinates": null,
-      "applied": false
+      "applied": true,
+      "placeIds": [
+        "geonames:2514301"
+      ]
     },
     {
       "artistName": "Sandra Bautista",
@@ -549,7 +622,7 @@
         "precision": "municipi"
       },
       "confidence": "alta",
-      "status": "proposta_documentada",
+      "status": "validat",
       "basis": "Sona9 la identifica amb Martorelles i font municipal confirma la criança; no confondre amb Santa Maria de Martorelles.",
       "sources": [
         "https://www.3cat.cat/3catinfo/el-concurs-18sona9-inicia-la-fase-final/noticia/2878907/",
@@ -557,7 +630,10 @@
       ],
       "checkedOn": "2026-10-11",
       "coordinates": null,
-      "applied": false
+      "applied": true,
+      "placeIds": [
+        "geonames:3117330"
+      ]
     },
     {
       "artistName": "Frans Cuspinera",
@@ -572,7 +648,7 @@
         "precision": "municipi"
       },
       "confidence": "alta",
-      "status": "proposta_documentada",
+      "status": "validat",
       "basis": "Biografia de concurs i entrevista el situen com a cantant garriguenc.",
       "sources": [
         "https://www.enderrock.cat/sons/grupssons2017/pagina3",
@@ -580,7 +656,10 @@
       ],
       "checkedOn": "2026-10-11",
       "coordinates": null,
-      "applied": false
+      "applied": true,
+      "placeIds": [
+        "geonames:3119694"
+      ]
     },
     {
       "artistName": "Al Tall",
@@ -617,7 +696,7 @@
         "precision": "municipi"
       },
       "confidence": "alta",
-      "status": "proposta_documentada",
+      "status": "validat",
       "basis": "Ràdio Pego explicita que la formació va néixer a Pego; coincideix amb el directori musical.",
       "sources": [
         "https://www.radiopego.com/quinto-romantic-dimoni-i-abril-acompanyaran-la-gossa-sorda-en-lultim-aquelarre/",
@@ -625,7 +704,10 @@
       ],
       "checkedOn": "2026-10-11",
       "coordinates": null,
-      "applied": false
+      "applied": true,
+      "placeIds": [
+        "geonames:6559502"
+      ]
     },
     {
       "artistName": "Els Jóvens",
@@ -641,7 +723,7 @@
         "precision": "municipi"
       },
       "confidence": "alta",
-      "status": "proposta_documentada",
+      "status": "validat",
       "basis": "L'IVC i entrevista als músics situen el nucli creatiu i naixement del projecte a Sant Vicent.",
       "sources": [
         "https://ivc.gva.es/val/ivc-val/els-jovens-en-concert-v",
@@ -649,7 +731,10 @@
       ],
       "checkedOn": "2026-10-11",
       "coordinates": null,
-      "applied": false
+      "applied": true,
+      "placeIds": [
+        "geonames:2511032"
+      ]
     },
     {
       "artistName": "Rita Payés",
@@ -665,7 +750,7 @@
         "precision": "municipi"
       },
       "confidence": "alta",
-      "status": "proposta_documentada",
+      "status": "validat",
       "basis": "Entrevistes independents coincideixen en l'origen i identificació amb Vilassar de Mar.",
       "sources": [
         "https://www.vogue.es/articulos/rita-payes-de-camino-al-camino-entrevista-musica",
@@ -673,7 +758,10 @@
       ],
       "checkedOn": "2026-10-11",
       "coordinates": null,
-      "applied": false
+      "applied": true,
+      "placeIds": [
+        "geonames:3110516"
+      ]
     },
     {
       "artistName": "Peret",
@@ -688,14 +776,24 @@
         "precision": "municipi"
       },
       "confidence": "alta",
-      "status": "proposta_documentada",
+      "status": "validat",
       "basis": "L'Ajuntament documenta origen i reconeixement com a fill predilecte.",
       "sources": [
         "https://www.mataro.cat/ca/actualitat/noticies/2011/el-cantant-i-artista-mataroni-peret-sera-nomenat"
       ],
       "checkedOn": "2026-10-11",
       "coordinates": null,
-      "applied": false
+      "applied": true,
+      "placeIds": [
+        "geonames:3117164"
+      ]
     }
-  ]
+  ],
+  "application": {
+    "date": "2026-10-11",
+    "validated": 28,
+    "pending": 2,
+    "runtimeCatalog": "data/origens-artistes.json",
+    "note": "Les assignacions validades es mostren a la fitxa; la ràdio per proximitat encara no està activada."
+  }
 }

@@ -122,8 +122,72 @@
     };
     let bound = false;
     let albumsPromise = null;
+    let originsPromise = null;
+    let originRequest = 0;
 
     const $ = id => window.document?.getElementById?.(id) || null;
+
+    // Només les assignacions revisades; els canals oficials i Topic comparteixen artista.
+    function originModel(catalog, channelId) {
+        if (catalog?.schemaVersion !== 1) return null;
+        const key = catalog?.channels?.[text(channelId)];
+        const entry = key ? catalog?.artists?.[key] : null;
+        if (entry?.status !== 'validated' || !Array.isArray(entry.placeIds)) return null;
+        const places = entry.placeIds.map(id => catalog.places?.[id]).filter(place => text(place?.name));
+        if (!places.length || places.length !== entry.placeIds.length) return null;
+        const label = entry.relation === 'origin' ? 'Origen' : entry.relation === 'associated' ? 'Vinculat a' : '';
+        if (!label) return null;
+        const sources = (Array.isArray(entry.sources) ? entry.sources : []).filter(url => /^https:\/\//i.test(url));
+        if (!sources.length) return null;
+        return {
+            label,
+            places,
+            basis: text(entry.basis),
+            sources,
+        };
+    }
+
+    function originHtml(model) {
+        if (!model) return '';
+        const names = model.places.map(place => escapeHtml(place.name)).join(' · ');
+        return `<summary>${escapeHtml(model.label)}: ${names}</summary>
+            <div class="ap-origin__details"><p>${escapeHtml(model.basis)}</p>
+            <ul>${model.sources.map((url, index) => `<li><a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">Font ${index + 1}</a></li>`).join('')}</ul></div>`;
+    }
+
+    async function loadOrigins() {
+        if (!originsPromise) {
+            originsPromise = (async () => {
+                try {
+                    const path = 'data/origens-artistes.json';
+                    const response = await window.fetch(window.appDataUrl?.(path) || path, { cache: 'no-store' });
+                    if (!response.ok) throw new Error('HTTP ' + response.status);
+                    return await response.json();
+                } catch (_error) {
+                    return null;
+                }
+            })();
+        }
+        const result = await originsPromise;
+        // Una fallada temporal no ha d'amagar l'origen durant tota la sessió.
+        if (!result) originsPromise = null;
+        return result;
+    }
+
+    async function showOrigin(channelId, program) {
+        const request = ++originRequest;
+        const section = $('apOrigin');
+        if (!section) return;
+        section.hidden = true;
+        section.open = false;
+        section.innerHTML = '';
+        if (program || !channelId) return;
+        const catalog = await loadOrigins();
+        if (request !== originRequest || state.channelId !== channelId) return;
+        const model = originModel(catalog, channelId);
+        section.innerHTML = originHtml(model);
+        section.hidden = !model;
+    }
 
     function toast(message) {
         const fn = app.features.shellNav?.toast;
@@ -316,6 +380,7 @@
             labels: (music?.CATEGORY_GROUPS || []).map(group => group.label),
         });
         setBio(description);
+        void showOrigin(state.channelId, state.program);
         renderRadios();
         // «Les teves categories»: afegir o treure aquest grup de les categories pròpies (user-categories.js)
         app.features.userCategories?.showForArtist?.({ channelId: state.channelId, name: state.name, program });
@@ -372,6 +437,8 @@
         songsOf,
         radiosModel,
         bioModel,
+        originModel,
+        originHtml,
         albumsModel,
         availableSongsLabel,
         showProfile,

@@ -2,6 +2,8 @@
 
 Data de revisió: 2026-10-11.
 
+> Actualització posterior: la [integració a les fitxes](ORIGENS_ARTISTES.md) ja publica 28 assignacions validades. En queden dues pendents. Les xifres de la resta d'aquest document descriuen el resultat inicial del pilot; el JSON conté l'estat actual.
+
 ## Abast i resultat
 
 Prova documental assistida per establir el criteri de la futura Ràdio a prop teu. No és encara un indexador automàtic ni modifica les fitxes públiques. Resultat: 22 propostes amb confiança alta, 7 mitjana i 1 baixa. La confiança es refereix a l'afirmació concreta (origen o vinculació), no a una precisió municipal garantida.

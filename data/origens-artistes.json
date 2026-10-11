@@ -1,0 +1,846 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-10-11",
+  "attribution": {
+    "text": "Coordenades de referència: GeoNames, via Open-Meteo. CC BY 4.0.",
+    "sources": [
+      "https://www.geonames.org/",
+      "https://open-meteo.com/en/docs/geocoding-api"
+    ]
+  },
+  "places": {
+    "geonames:3119694": {
+      "name": "la Garriga",
+      "type": "municipality",
+      "geonamesId": 3119694,
+      "coordinates": {
+        "latitude": 41.68333,
+        "longitude": 2.28333,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=la+Garriga&count=10&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:3117164": {
+      "name": "Mataró",
+      "type": "municipality",
+      "geonamesId": 3117164,
+      "coordinates": {
+        "latitude": 41.54211,
+        "longitude": 2.4445,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Matar%C3%B3&count=10&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:3129607": {
+      "name": "Argentona",
+      "type": "municipality",
+      "geonamesId": 3129607,
+      "coordinates": {
+        "latitude": 41.55336,
+        "longitude": 2.40114,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Argentona&count=10&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:3119952": {
+      "name": "la Bisbal d'Empordà",
+      "type": "municipality",
+      "geonamesId": 3119952,
+      "coordinates": {
+        "latitude": 41.95,
+        "longitude": 3.05,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=la+Bisbal+d%27Empord%C3%A0&count=10&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:3120929": {
+      "name": "Guissona",
+      "type": "municipality",
+      "geonamesId": 3120929,
+      "coordinates": {
+        "latitude": 41.78333,
+        "longitude": 1.3,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Guissona&count=10&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:3106050": {
+      "name": "Vic",
+      "type": "municipality",
+      "geonamesId": 3106050,
+      "coordinates": {
+        "latitude": 41.93012,
+        "longitude": 2.25486,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Vic&count=10&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:3111933": {
+      "name": "Reus",
+      "type": "municipality",
+      "geonamesId": 3111933,
+      "coordinates": {
+        "latitude": 41.15612,
+        "longitude": 1.10687,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Reus&count=10&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:2510821": {
+      "name": "Sóller",
+      "type": "municipality",
+      "geonamesId": 2510821,
+      "coordinates": {
+        "latitude": 39.76623,
+        "longitude": 2.71521,
+        "precision": "settlement_reference"
+      },
+      "territory": "Illes Balears",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=S%C3%B3ller&count=10&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:3122407": {
+      "name": "Flix",
+      "type": "municipality",
+      "geonamesId": 3122407,
+      "coordinates": {
+        "latitude": 41.23074,
+        "longitude": 0.55008,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Flix&count=10&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:2521845": {
+      "name": "Almussafes",
+      "type": "municipality",
+      "geonamesId": 2521845,
+      "coordinates": {
+        "latitude": 39.28333,
+        "longitude": -0.41667,
+        "precision": "settlement_reference"
+      },
+      "territory": "País Valencià",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Almussafes&count=10&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:2516345": {
+      "name": "Xàtiva",
+      "type": "municipality",
+      "geonamesId": 2516345,
+      "coordinates": {
+        "latitude": 38.99042,
+        "longitude": -0.51852,
+        "precision": "settlement_reference"
+      },
+      "territory": "País Valencià",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=X%C3%A0tiva&count=10&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:3107677": {
+      "name": "Tortosa",
+      "type": "municipality",
+      "geonamesId": 3107677,
+      "coordinates": {
+        "latitude": 40.81249,
+        "longitude": 0.5216,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Tortosa&count=10&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:2509600": {
+      "name": "Vilafranca de Bonany",
+      "type": "municipality",
+      "geonamesId": 2509600,
+      "coordinates": {
+        "latitude": 39.56894,
+        "longitude": 3.08815,
+        "precision": "settlement_reference"
+      },
+      "territory": "Illes Balears",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Vilafranca+de+Bonany&count=10&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:2509929": {
+      "name": "Valldemossa",
+      "type": "municipality",
+      "geonamesId": 2509929,
+      "coordinates": {
+        "latitude": 39.71042,
+        "longitude": 2.6223,
+        "precision": "settlement_reference"
+      },
+      "territory": "Illes Balears",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Valldemossa&count=10&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:3126293": {
+      "name": "Cardona",
+      "type": "municipality",
+      "geonamesId": 3126293,
+      "coordinates": {
+        "latitude": 41.91371,
+        "longitude": 1.67855,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Cardona&count=10&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:3110718": {
+      "name": "Sant Cugat del Vallès",
+      "type": "municipality",
+      "geonamesId": 3110718,
+      "coordinates": {
+        "latitude": 41.47063,
+        "longitude": 2.08611,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Sant+Cugat+del+Vall%C3%A8s&count=10&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:2512989": {
+      "name": "Palma",
+      "type": "municipality",
+      "geonamesId": 2512989,
+      "coordinates": {
+        "latitude": 39.56939,
+        "longitude": 2.65024,
+        "precision": "settlement_reference"
+      },
+      "territory": "Illes Balears",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Palma&count=10&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:2512825": {
+      "name": "Pedreguer",
+      "type": "municipality",
+      "geonamesId": 2512825,
+      "coordinates": {
+        "latitude": 38.79312,
+        "longitude": 0.03411,
+        "precision": "settlement_reference"
+      },
+      "territory": "País Valencià",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Pedreguer&count=10&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:2514301": {
+      "name": "Maó",
+      "type": "municipality",
+      "geonamesId": 2514301,
+      "coordinates": {
+        "latitude": 39.88853,
+        "longitude": 4.26583,
+        "precision": "settlement_reference"
+      },
+      "territory": "Illes Balears",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Ma%C3%B3&count=10&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:3117330": {
+      "name": "Martorelles",
+      "type": "municipality",
+      "geonamesId": 3117330,
+      "coordinates": {
+        "latitude": 41.53333,
+        "longitude": 2.23333,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Martorelles&count=10&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:6559502": {
+      "name": "Pego",
+      "type": "municipality",
+      "geonamesId": 6559502,
+      "coordinates": {
+        "latitude": 38.84305,
+        "longitude": -0.11707,
+        "precision": "settlement_reference"
+      },
+      "territory": "País Valencià",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Pego&count=10&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:2511032": {
+      "name": "Sant Vicent del Raspeig",
+      "type": "municipality",
+      "geonamesId": 2511032,
+      "coordinates": {
+        "latitude": 38.3964,
+        "longitude": -0.5255,
+        "precision": "settlement_reference"
+      },
+      "territory": "País Valencià",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Sant+Vicent+del+Raspeig&count=10&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "geonames:3110516": {
+      "name": "Vilassar de Mar",
+      "type": "municipality",
+      "geonamesId": 3110516,
+      "coordinates": {
+        "latitude": 41.50507,
+        "longitude": 2.39227,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Vilassar+de+Mar&count=10&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-11"
+    },
+    "territory:formentera": {
+      "name": "Formentera",
+      "type": "island",
+      "coordinates": null
+    },
+    "territory:camp-de-tarragona": {
+      "name": "Camp de Tarragona",
+      "type": "region",
+      "coordinates": null
+    },
+    "territory:montseny": {
+      "name": "Montseny",
+      "type": "region",
+      "coordinates": null
+    }
+  },
+  "artists": {
+    "artist:dusminguet": {
+      "name": "Dusminguet",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3119694"
+      ],
+      "confidence": "alta",
+      "basis": "L'editorial del projecte de Joan Garriga identifica Dusminguet com a banda de la Garriga.",
+      "sources": [
+        "https://es.wikipedia.org/wiki/Dusminguet",
+        "https://godalledicions.cat/titols/bodas-de-sangre/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:la-troba-kung-fu": {
+      "name": "La Troba Kung-Fú",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:3119694"
+      ],
+      "confidence": "alta",
+      "basis": "La biografia publicada per Fourni Produccions documenta l'estudi propi del grup a la Fournier, a la Garriga. Es valida només la vinculació artística; el municipi de formació continua sense resoldre.",
+      "sources": [
+        "https://www.womex.com/virtual/fourni_produccions/la_troba_kung_fu",
+        "https://es.wikipedia.org/wiki/La_Troba_Kung-F%C3%BA"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:la-coixinera": {
+      "name": "La Coixinera",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3117164"
+      ],
+      "confidence": "alta",
+      "basis": "L'Ajuntament de Mataró explicita que La Coixinera neix a Mataró l'any 2001.",
+      "sources": [
+        "https://www.enderrock.cat/folksons/artista/2296/coixinera",
+        "https://www.mataro.cat/ca/actualitat/agenda/jaume-punsola-i-felix-jurado?set_language=es"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:ebri-knight": {
+      "name": "Ebri Knight",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3129607"
+      ],
+      "confidence": "alta",
+      "basis": "L'entrevista situa la formació a Argentona, corroborant El Temps.",
+      "sources": [
+        "https://www.eltemps.cat/article/13344/el-passamuntanyes-folk-debri-knight",
+        "https://www.mondosonoro.com/entrevistas/ebri-knight/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:fetus": {
+      "name": "Fetus",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3119952"
+      ],
+      "confidence": "alta",
+      "basis": "El líder explica l'elecció de músics de la Bisbal; el festival els integra en l'escena local.",
+      "sources": [
+        "https://www.ara.cat/girona/bisbal-municipi-mes-musics-catalunya-concentracio_1_5028041.html",
+        "https://www.itacacultura.cat/ca/programacio/c/11917-liverpool-empordanes.html"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:mazoni": {
+      "name": "Mazoni",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3119952"
+      ],
+      "confidence": "alta",
+      "basis": "Entrevista i programació del festival documenten la vinculació a l'escena bisbalenca.",
+      "sources": [
+        "https://www.vilaweb.cat/noticies/entrevista-mazoni-banderes-per-daltonics/",
+        "https://www.itacacultura.cat/ca/programacio/c/11917-liverpool-empordanes.html"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:el-petit-de-cal-eril": {
+      "name": "El Petit de Cal Eril",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3120929"
+      ],
+      "confidence": "alta",
+      "basis": "Entrevista sobre el projecte de Joan Pons a Guissona; RTVE situa el nom en la casa familiar.",
+      "sources": [
+        "https://uniopagesos.cat/la-terra/joan-pons-dun-producte-valoro-que-sigui-autentic-i-amb-aixo-la-mongeta-del-ganxet-i-el-petit-de-cal-eril-som-identics/",
+        "https://www.rtve.es/rtve/20211027/petit-cal-eril-efecte-collins/2205801.shtml"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:quimi-portet": {
+      "name": "Quimi Portet",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:3106050"
+      ],
+      "confidence": "alta",
+      "basis": "El MMVV el presenta com a músic de Vic. Hi ha discrepància entre biografia i entrevista sobre el naixement; aquesta proposta només afirma vinculació artística.",
+      "sources": [
+        "https://www.mmvv.cat/es/artista/quimi-portet/1560",
+        "https://www.quimiportet.cat/bio.html",
+        "https://www.elnacional.cat/es/cultura/quimi-portet-vecino-colegio_102084_102.html"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:joan-masdeu": {
+      "name": "Joan Masdéu",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3111933"
+      ],
+      "confidence": "alta",
+      "basis": "L'Ajuntament documenta origen i reconeixement local com a pregoner.",
+      "sources": [
+        "https://www.reus.cat/noticia/joan-masdeu-pregoner-de-la-festa-major-de-sant-pere-2011"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:joan-miquel-oliver": {
+      "name": "Joan Miquel Oliver",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:2510821"
+      ],
+      "confidence": "alta",
+      "basis": "Òmnium l'identifica com a músic solleric, corroborant les biografies culturals.",
+      "sources": [
+        "https://www.talentib.com/es/autor/joan-miquel-oliver/",
+        "https://www.cccb.org/ca/w/participants/joan-miquel-oliver",
+        "https://www.omnium.cat/ca/tics-oliver-marcianet/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:xarim-areste": {
+      "name": "Xarim Aresté",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3122407"
+      ],
+      "confidence": "alta",
+      "basis": "Enderrock l'identifica com a músic de Flix, concordant amb l'entrevista sobre els inicis.",
+      "sources": [
+        "https://cadenaser.com/cataluna/2024/03/13/xarim-areste-cada-dia-es-una-mort-sercat/",
+        "https://www.enderrock.cat/edr/numero509/noticia/2760"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:tesa": {
+      "name": "Tesa",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:2521845"
+      ],
+      "confidence": "alta",
+      "basis": "Entrevista identifica la rapera amb Almussafes, concordant amb el directori musical valencià.",
+      "sources": [
+        "https://www.vilaweb.cat/noticies/entrevista-tesa-rural/",
+        "https://musicaenvalencia.es/artista/102/tesa"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:feliu-ventura": {
+      "name": "Feliu Ventura",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:2516345"
+      ],
+      "confidence": "alta",
+      "basis": "Entrevistes documenten origen i identificació amb Xàtiva.",
+      "sources": [
+        "https://beteve.cat/artic/feliu-ventura-convocatoria/",
+        "https://www.elcritic.cat/entrevistes/feliu-ventura-la-meva-generacio-queda-marcada-per-la-ratzia-de-garzon-el-92-i-assassinat-de-guillem-agullo-48232"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:montse-castella": {
+      "name": "Montse Castellà",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3107677"
+      ],
+      "confidence": "alta",
+      "basis": "Autodefinició explícita a la web oficial com a tortosina.",
+      "sources": [
+        "https://www.montsecastella.cat/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:tomeu-penya": {
+      "name": "Tomeu Penya",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:2509600"
+      ],
+      "confidence": "alta",
+      "basis": "Biografia oficial i entrevista coincideixen en origen i identificació amb Vilafranca.",
+      "sources": [
+        "https://tomeupenya.cat/bio/",
+        "https://www.enderrock.cat/noticia/23632/tomeu-penya-fet-ric-coneixements-sentiments-fent-agrada"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:julia-colom": {
+      "name": "Júlia Colom",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:2509929"
+      ],
+      "confidence": "alta",
+      "basis": "La cantant explica que hi ha crescut i s'hi identifica explícitament.",
+      "sources": [
+        "https://www.ara.cat/cultura/musica/julia-colom-miramar-radios-tractors-cantar_128_4764744.html",
+        "https://www.dbalears.cat/balears/cultura/2023/10/21/385971/julia-colom-souza-son-els-principals-guanyadors-dels-premis-enderrock-musica-balear.html"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:caim-riba": {
+      "name": "Caïm Riba",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "territory:formentera"
+      ],
+      "confidence": "alta",
+      "basis": "Entrevistes documenten origen i relació amb Formentera; no es proposa cap nucli concret.",
+      "sources": [
+        "https://www.enderrock.cat/edr/numero8/noticia/54",
+        "https://www.poparb.cat/2014/cartell/caim-riba/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:paul-fuster": {
+      "name": "Paul Fuster",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:3126293"
+      ],
+      "confidence": "alta",
+      "basis": "Residència i activitat creativa documentades a Cardona en diferents etapes; nascut als EUA.",
+      "sources": [
+        "https://www.ara.cat/cultura/paul-fuster-musica-medicina-vibracional_1_1611058.html",
+        "https://www.rtve.es/play/noticias/20160614/escucha-exclusiva-go-between-nuevo-disco-paul-fuster/1358369.shtml"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:marala": {
+      "name": "Marala",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:3110718",
+        "geonames:2512989",
+        "geonames:2512825"
+      ],
+      "confidence": "alta",
+      "basis": "La discogràfica enumera tres localitats i una entrevista confirma els orígens de les integrants; conservar totes tres, amb context històric.",
+      "sources": [
+        "https://www.ppf.cat/index.php/cat/artistes/marala",
+        "https://www.totsantcugat.cat/actualitat/cultura/selma-bruna-som-tres-dones-que-s-ho-passen-molt-be-fent-musica_200594102.html"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:roba-estesa": {
+      "name": "Roba Estesa",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "territory:camp-de-tarragona"
+      ],
+      "confidence": "alta",
+      "basis": "La discogràfica situa el naixement del grup al Camp de Tarragona; no atribuir-lo a Tarragona ciutat.",
+      "sources": [
+        "https://halleyrecords.com/artist/roba-estesa/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:les-cruet": {
+      "name": "Les Cruet",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "territory:montseny"
+      ],
+      "confidence": "alta",
+      "basis": "Discogràfica i entrevista identifiquen l'entorn del Montseny; no demostren el municipi homònim.",
+      "sources": [
+        "https://bankrobber.net/producto/eco-les-cruet-vinil/",
+        "https://directa.cat/si-no-noto-que-ploro-en-el-proces-creatiu-i-que-mho-crec-no-ho-puc-defensar-cap-a-fora/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:anna-ferrer": {
+      "name": "Anna Ferrer",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:2514301"
+      ],
+      "confidence": "alta",
+      "basis": "Entrevista biogràfica i informació del pregó documenten origen i vincle amb Maó.",
+      "sources": [
+        "https://elperiodic.ad/entrevista/anna-ferrer-06-10-2022/",
+        "https://ib3.org/la-cantant-anna-ferrer-pregonera-2026-de-mao-shan-de-conservar-els-llocs-de-trobada"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:sandra-bautista": {
+      "name": "Sandra Bautista",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3117330"
+      ],
+      "confidence": "alta",
+      "basis": "Sona9 la identifica amb Martorelles i font municipal confirma la criança; no confondre amb Santa Maria de Martorelles.",
+      "sources": [
+        "https://www.3cat.cat/3catinfo/el-concurs-18sona9-inicia-la-fase-final/noticia/2878907/",
+        "https://www.santamariademartorelles.cat/actualitat/noticies/1776-festival-guspira.html"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:frans-cuspinera": {
+      "name": "Frans Cuspinera",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3119694"
+      ],
+      "confidence": "alta",
+      "basis": "Biografia de concurs i entrevista el situen com a cantant garriguenc.",
+      "sources": [
+        "https://www.enderrock.cat/sons/grupssons2017/pagina3",
+        "https://www.totcerdanyola.cat/actualitat/cultura/frans-cuspinera-calella-em-va-fer-retrobar-la-meva-relacio-amb-la-musica_1953904102.html"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:la-gossa-sorda": {
+      "name": "La Gossa Sorda",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:6559502"
+      ],
+      "confidence": "alta",
+      "basis": "Ràdio Pego explicita que la formació va néixer a Pego; coincideix amb el directori musical.",
+      "sources": [
+        "https://www.radiopego.com/quinto-romantic-dimoni-i-abril-acompanyaran-la-gossa-sorda-en-lultim-aquelarre/",
+        "https://www.musicaenvalencia.es/artista/342/la-gossa-sorda"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:els-jovens": {
+      "name": "Els Jóvens",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:2511032"
+      ],
+      "confidence": "alta",
+      "basis": "L'IVC i entrevista als músics situen el nucli creatiu i naixement del projecte a Sant Vicent.",
+      "sources": [
+        "https://ivc.gva.es/val/ivc-val/els-jovens-en-concert-v",
+        "https://revistasao.cat/pep-mirambell-dels-jovens-el-mes-important-que-ens-emportem-daquesta-experiencia-es-que-la-gent-ens-haja-rebut-amb-tant-dentusiasme/"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:rita-payes": {
+      "name": "Rita Payés",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3110516"
+      ],
+      "confidence": "alta",
+      "basis": "Entrevistes independents coincideixen en l'origen i identificació amb Vilassar de Mar.",
+      "sources": [
+        "https://www.vogue.es/articulos/rita-payes-de-camino-al-camino-entrevista-musica",
+        "https://www.elperiodico.cat/oci-i-cultura/20221202/entrevista-rita-payes-com-la-piel-auditori-79444710"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:peret": {
+      "name": "Peret",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3117164"
+      ],
+      "confidence": "alta",
+      "basis": "L'Ajuntament documenta origen i reconeixement com a fill predilecte.",
+      "sources": [
+        "https://www.mataro.cat/ca/actualitat/noticies/2011/el-cantant-i-artista-mataroni-peret-sera-nomenat"
+      ],
+      "reviewedOn": "2026-10-11",
+      "assignmentSource": "manual-review",
+      "locked": true
+    }
+  },
+  "channels": {
+    "UCOXyxBFPQ97GO6PQqiJSvkw": "artist:dusminguet",
+    "UC63BTrp525uyzMd-YTMAt_w": "artist:la-troba-kung-fu",
+    "UC5u7o5L26RuDowQsqOJDm0w": "artist:la-coixinera",
+    "UC3pZduX_rJBAuisKRJYKatw": "artist:ebri-knight",
+    "UC1n7SLx5qYPP1HzKh-rvyng": "artist:ebri-knight",
+    "UCDbEp5W8Obkk2YmYtWB-F5A": "artist:fetus",
+    "UCwg6xDQi5POlksfrsjjwFyA": "artist:mazoni",
+    "UCQc-T583XUy2JAfeun2_0mg": "artist:el-petit-de-cal-eril",
+    "UCWq2Sd65Q2V6PhDzOBMTb5Q": "artist:quimi-portet",
+    "UCD-JAmWvBJA0pW83zFtheiQ": "artist:quimi-portet",
+    "UCmTclPozSbbvY0khfHnaMgw": "artist:joan-masdeu",
+    "UCIu7jGN31S41R-S24-AnJuQ": "artist:joan-masdeu",
+    "UCEV_8wEQansDoZnwNW1Z1Vw": "artist:joan-miquel-oliver",
+    "UCVCila0PYCYGNb7ThkN2Tlw": "artist:xarim-areste",
+    "UCx82VgJTTf_cKHahlakKfFg": "artist:tesa",
+    "UCqjjCCORy-B_NznEv8LqU-g": "artist:feliu-ventura",
+    "UC-1A04_-NE4nuEor7HG7aSg": "artist:feliu-ventura",
+    "UCCQqI6aPYDi_aGJsfDr_gqA": "artist:montse-castella",
+    "UCQXQh0zJqh0smX0vvOLNxag": "artist:montse-castella",
+    "UCsOxXt5l7XmAc6AvMQDRV4A": "artist:tomeu-penya",
+    "UCx4dYUR3m6jehjW7mYdSX7g": "artist:julia-colom",
+    "UC5ZFlRWjcVMSl7gpMFgCuwQ": "artist:julia-colom",
+    "UCszfsK0D7h1kZ6eSOhlB9cA": "artist:caim-riba",
+    "UC_JVj-OoxEnO0fhw7VQP2lg": "artist:caim-riba",
+    "UCCYgQLqvl_nmSk4-WPDGPIg": "artist:paul-fuster",
+    "UCD1xceEEywgVv2tMX5kMi6Q": "artist:marala",
+    "UCfOJHONAYVLmmA5lwE117vw": "artist:roba-estesa",
+    "UCl4HM-ELckbc7ToCDTyAvVQ": "artist:roba-estesa",
+    "UCQgZIJD-VO5fH80azRymksg": "artist:les-cruet",
+    "UCsoJ33SEemrtWrM5hTqPKYQ": "artist:anna-ferrer",
+    "UC_Nx-tsTDRubDg1dbd5jwAw": "artist:sandra-bautista",
+    "UC3AV402A_vdbG18-cpYsX-Q": "artist:sandra-bautista",
+    "UCOGyDtQsutPHkVRfp0mJ_GQ": "artist:frans-cuspinera",
+    "UCIw0fqxE56SUZRCVd2FI09Q": "artist:la-gossa-sorda",
+    "UCq7L4buafGO2yHcjCdnaGxg": "artist:els-jovens",
+    "UCf-q-2ikL2X1ZFd0HSj7Eiw": "artist:els-jovens",
+    "UCYPbYGqAXm8gaYGVY-ANVXA": "artist:rita-payes",
+    "UCqcQJRrcXc_rLSwGVo4dP5g": "artist:rita-payes",
+    "UCVowitUeUXlew8bjVjBOtUQ": "artist:peret"
+  }
+}

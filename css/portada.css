@@ -6459,3 +6459,13 @@ body.is-video-pip .video-placeholder.is-placeholder-hidden {
     font-weight: 600;
 }
 .mq-play:disabled { cursor: default; opacity: 0.65; }
+
+/* Origen revisat, amb les fonts accessibles sense sortir de la fitxa. */
+.ap-origin { margin-top: 8px; color: var(--pt-text); overflow-wrap: anywhere; }
+.ap-origin[hidden] { display: none; }
+.ap-origin summary { min-height: 44px; padding: 10px 0; cursor: pointer; font-weight: 600; }
+.ap-origin summary:focus-visible { outline: 2px solid var(--pt-accent, #D6ED84); outline-offset: 3px; }
+.ap-origin__details { padding: 0 0 8px; font-size: 0.9rem; line-height: 1.5; }
+.ap-origin__details p { margin: 0; }
+.ap-origin__details ul { display: flex; flex-wrap: wrap; gap: 4px 16px; padding: 0; list-style: none; }
+.ap-origin__details a { display: inline-block; padding: 10px 0; color: var(--pt-accent, #D6ED84); }
