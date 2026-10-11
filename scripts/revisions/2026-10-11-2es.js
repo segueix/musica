@@ -52,7 +52,7 @@ if (!artist.genres.includes('Urbana')) {
 }
 const feed = read('data/feed.json');
 const archivePath = 'data/archive/channels/' + channelId + '.json';
-const archive = read(archivePath);
+const archive = fs.existsSync(path.join(root, archivePath)) ? read(archivePath) : { channelId, videos: [] };
 const existing = new Map([...archive.videos, ...feed.videos.filter(v => v.channelId === channelId)].map(v => [v.id, v]));
 assert(Object.keys(songs).every(id => existing.has(id)), 'Falten metadades verificades');
 assert([...existing.values()].every(v => v.channelId === channelId));
