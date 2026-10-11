@@ -1847,3 +1847,8 @@ La categoria conjunta desapareix dels xips, configuració, descoberta, portada i
 Migració local: preferències inicials i darrera ràdio expandides als dos estils, vista antiga retornada a Inici, memòria cau i ordre de xips regenerats. Les sessions de ràdio antigues recuperen els dos estils separats. La ruta antiga /punk-metal redirigeix a /punk sense mantenir una tercera categoria. Analítica: codis separats per les noves visites; l'etiqueta anterior només es conserva per identificar dades històriques.
 
 Verificació: taxonomia separada, decoració de vídeos d'arxiu, grup amb tots dos estils, migració idempotent i rutes SEO.
+
+
+## [2026-10-11] - Origen a la fitxa: HTML nou amb JS antic
+
+En verificar la primera publicació, la fitxa contenia `apOrigin` però quedava buit: el navegador conservava la URL anterior d'`artist-page.js`. Com en els casos de memòria cau descrits més amunt, s'han versionat les URLs del JS modificat i de `portada.css` a `20261011-origen-1`, a més de regenerar el service worker. Les dades viuen a `data/origens-artistes.json`; només es mostren assignacions validades i les respostes antigues no poden pintar un altre artista. Proves: `tests/artist-origin.test.js`.
