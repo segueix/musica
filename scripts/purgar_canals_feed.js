@@ -27,6 +27,7 @@ const FILES = {
     catalogState: path.join(ROOT, 'data', 'music-catalog-state.json'),
     albums: path.join(ROOT, 'data', 'albums-musica.json'),
     audit: path.join(ROOT, 'data', 'music-feed-audit.json'),
+    contentAudit: path.join(ROOT, 'data', 'music-content-audit.json'),
 };
 const ARCHIVE_DIR = path.join(ROOT, 'data', 'archive', 'channels');
 
@@ -54,6 +55,7 @@ const WRITERS = {
     catalogState: json2,
     albums: value => JSON.stringify(value),
     audit: json2,
+    contentAudit: json2,
 };
 
 function main() {
@@ -99,6 +101,22 @@ function main() {
     if (purged.audit) {
         purged.audit.indexedChannelCount = active.size;
         purged.audit.allIndexedChannelsVisible = Object.keys(purged.feed.channels || {}).length === active.size;
+    }
+    // Les proves del workflow s'executen abans de regenerar el feed.
+    // Manté coherents les auditories també en aquest estat intermedi.
+    for (const key of ['audit', 'contentAudit']) {
+        if (!purged[key]) continue;
+        purged[key] = {
+            ...purged[key],
+            publishedFeedVideoCount: purged.feed.videos.length,
+            publishedShortVideoCount: purged.feed.videos.filter(video => video.isShort === true).length,
+        };
+    }
+    if (purged.contentAudit && purged.review) {
+        const audit = purged.contentAudit;
+        audit.reviewCount = purged.review.videos.length;
+        audit.typeCounts = { ...audit.typeCounts, review: audit.reviewCount };
+        audit.rawPublicVideoCount = Object.values(audit.typeCounts).reduce((sum, count) => sum + count, 0);
     }
     const archives = removed.map(id => path.join(ARCHIVE_DIR, `${id}.json`)).filter(file => fs.existsSync(file));
 
