@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-11T12:05:43.014Z",
+  "generatedAt": "2026-10-11T12:31:14.995Z",
   "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
   "restrictedVideoCount": 21,
@@ -1055,14 +1055,6 @@
       "songs": 15,
       "matched": 5,
       "coverage": 0.33,
-      "governs": false
-    },
-    {
-      "id": "UCsAbCGSmpvZ7Ym2WNklg44A",
-      "name": "La Coixinera Compayia de saraus",
-      "songs": 14,
-      "matched": 4,
-      "coverage": 0.29,
       "governs": false
     },
     {
@@ -2237,9 +2229,9 @@
     {
       "id": "UC5u7o5L26RuDowQsqOJDm0w",
       "name": "La Coixinera",
-      "tracks": 59,
-      "selected": 40,
-      "withClip": 3
+      "tracks": 1,
+      "selected": 1,
+      "withClip": 0
     },
     {
       "id": "UCMzWN1obqqsyoTQxZ-WsPXA",
@@ -3327,13 +3319,13 @@
       "withClip": 0
     }
   ],
-  "indexedChannelCount": 544,
-  "resolvedChannelCount": 544,
-  "feedChannelCount": 544,
-  "rawPublicVideoCount": 5953,
-  "feedVideoCount": 5409,
-  "acceptedMusicCount": 5369,
-  "categoryEligibleVideoCount": 5365,
+  "indexedChannelCount": 543,
+  "resolvedChannelCount": 543,
+  "feedChannelCount": 543,
+  "rawPublicVideoCount": 5926,
+  "feedVideoCount": 5382,
+  "acceptedMusicCount": 5342,
+  "categoryEligibleVideoCount": 5338,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
     "before": 0,
@@ -3342,7 +3334,7 @@
   },
   "contentReviewCount": 550,
   "contentTypeCounts": {
-    "song": 5228,
+    "song": 5201,
     "live_song": 137,
     "album": 4,
     "other": 34,
@@ -3353,6 +3345,6 @@
   "channelsWithoutVideos": [],
   "channelsWithoutAcceptedMusic": [],
   "allIndexedChannelsVisible": true,
-  "publishedFeedVideoCount": 5383,
+  "publishedFeedVideoCount": 5382,
   "publishedShortVideoCount": 0
 }
