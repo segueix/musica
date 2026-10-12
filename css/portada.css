@@ -6473,7 +6473,7 @@ body.is-video-pip .video-placeholder.is-placeholder-hidden {
 
 /* Llistes: cerca dins de l'editor i marca compacta al mòbil. */
 .brand-copy { display: flex; flex-direction: column; min-width: 0; }
-.brand-subtitle { font-size: 0.6875rem; color: var(--pt-muted, #b8c2ba); white-space: nowrap; }
+.brand-subtitle { font-size: 1rem; font-weight: 700; line-height: 1.25; color: var(--pt-accent); white-space: nowrap; }
 .brand-cat { display: none; }
 .lucky-description { margin: 4px 12px 0 0; font-size: .85rem; color: var(--text-secondary); }
 .playlist-add-songs { min-height: 44px; padding: 8px 12px; margin: 8px 0; border: 1px solid var(--pt-line); border-radius: 10px; background: transparent; color: var(--pt-accent); cursor: pointer; }
@@ -6489,4 +6489,10 @@ body.is-video-pip .video-placeholder.is-placeholder-hidden {
     .brand-cat { display: inline; }
     .brand-copy { padding-bottom: 4px; }
     @container (max-width: 130px) { .brand-copy { display: none; } }
+}
+
+
+@media (min-width: 769px) {
+    .app-header .brand-tag { display: none; }
+    .app-header .brand-copy { gap: 2px; }
 }
