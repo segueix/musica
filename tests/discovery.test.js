@@ -366,6 +366,26 @@ describe('«Tria el teu so»', () => {
         expect(labels).not.toContain('Mitjans');
     });
 
+    it('compta una sola vegada els canals oficial i Topic, amb un avatar per artista', () => {
+        const { discovery } = load({
+            SegueixMusicCategories: {
+                artistKeyForChannel: id => ['Official', 'Topic'].includes(id) ? 'artist:one' : '',
+            },
+        });
+        const channels = [
+            { id: 'Official', avatar: 'one.jpg', categories: ['Pop', 'Rock'] },
+            { id: 'Topic', categories: ['Pop', 'Rock'] },
+            { id: 'Other', avatar: 'other.jpg', categories: ['Pop'] },
+        ];
+        const styles = discovery.summarizeStyles({
+            channels,
+            videos: [song('Official', 10), song('Topic', 1), song('Other', 5), song('Other', 8)],
+        });
+        expect(styles.find(s => s.label === 'Pop').artists).toBe(2);
+        expect(styles.find(s => s.label === 'Rock').artists).toBe(1);
+        expect(styles.find(s => s.label === 'Pop').avatars).toEqual(['one.jpg', 'other.jpg']);
+    });
+
     it('els estils secundaris queden darrere dels accessibles', () => {
         const { discovery } = load();
         const extra = [

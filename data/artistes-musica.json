@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-11T23:03:20.925Z",
+  "updatedAt": "2026-10-12T07:30:06.204Z",
   "artists": [
     {
       "name": "2 Princeses Barbudes",
@@ -35773,6 +35773,46 @@
       ],
       "lastChecked": "2026-10-11T21:29:54.227Z",
       "notes": "Incorporació a Urbana i procedència confirmades per l’editor el 2026-10-11. Canal Hereus Del Beat - Topic indicat per l’editor; discografia automàtica. Detall: docs/revisions/2026-10-11-urban-vademecum-hereus.json."
+    },
+    {
+      "name": "Lladruc",
+      "aliases": [],
+      "genres": [
+        "Punk"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCvab9QKJ1NEdMJObwZkA39A",
+            "handle": "@Lladrucband",
+            "name": "Lladruc",
+            "type": "official",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-12",
+        "youtube:manual-verified",
+        "genre:manual",
+        "https://www.youtube.com/@Lladrucband/releases",
+        "https://linktr.ee/lladruc"
+      ],
+      "lastChecked": "2026-10-12T07:30:06.204Z",
+      "notes": "Selecció de l’editor: només els llançaments organitzats per discos de @Lladrucband. Ho tornarem a fer (11 pistes, 2026) i Som-hi nois (1 pista, 2025). IDs i canal distribuïdor verificats; no s’indexen altres pujades ni directes.",
+      "genresRaw": []
     }
   ]
 }

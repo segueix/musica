@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-11T23:12:58.056Z",
+  "updatedAt": "2026-10-12T07:30:06.204Z",
   "description": "Llista blanca per a canals on Segueix Música només ha d'ingerir vídeos concrets. Admet títols exactes, fragments obligatoris i fragments exclosos.",
   "channels": {
     "UCKpscwdWlVaMqcA81vLI7OA": {
@@ -5060,6 +5060,42 @@
         "VI0RGPFmTD0": "UCrUiOJEGdgQEh6Ol4tPLJNg",
         "5nHDbV7cmbw": "UCrUiOJEGdgQEh6Ol4tPLJNg",
         "v8mzSVyzs6E": "UCrUiOJEGdgQEh6Ol4tPLJNg"
+      },
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song"
+      ]
+    },
+    "UCvab9QKJ1NEdMJObwZkA39A": {
+      "artist": "Lladruc",
+      "note": "Selecció de l’editor: els dos llançaments de @Lladrucband, Ho tornarem a fer i Som-hi nois. Només les dotze pistes verificades de les llistes oficials. Evidència a docs/revisions/2026-10-12-lladruc.json.",
+      "allowedVideoIds": [
+        "23f0EndK-Wc",
+        "fp4FMA3hPpo",
+        "gRcgYvpi9kw",
+        "Qu2qHiY_FDo",
+        "osvxXjXJhX8",
+        "XwkCV7jLqEM",
+        "LjuR5ZjOK2I",
+        "sFDSxHRos9I",
+        "x0JVRs30Y6Y",
+        "kVyoHF3wjzA",
+        "few3Qg3rnsM",
+        "A0D9rrBRlVc"
+      ],
+      "allowedExternalVideos": {
+        "23f0EndK-Wc": "UCvAEtGYl0fBFB5S42LcpiLg",
+        "fp4FMA3hPpo": "UCvAEtGYl0fBFB5S42LcpiLg",
+        "gRcgYvpi9kw": "UCvAEtGYl0fBFB5S42LcpiLg",
+        "Qu2qHiY_FDo": "UCvAEtGYl0fBFB5S42LcpiLg",
+        "osvxXjXJhX8": "UCvAEtGYl0fBFB5S42LcpiLg",
+        "XwkCV7jLqEM": "UCvAEtGYl0fBFB5S42LcpiLg",
+        "LjuR5ZjOK2I": "UCvAEtGYl0fBFB5S42LcpiLg",
+        "sFDSxHRos9I": "UCvAEtGYl0fBFB5S42LcpiLg",
+        "x0JVRs30Y6Y": "UCvAEtGYl0fBFB5S42LcpiLg",
+        "kVyoHF3wjzA": "UCvAEtGYl0fBFB5S42LcpiLg",
+        "few3Qg3rnsM": "UCvAEtGYl0fBFB5S42LcpiLg",
+        "A0D9rrBRlVc": "UCvAEtGYl0fBFB5S42LcpiLg"
       },
       "acceptedMusicOnly": true,
       "allowedContentTypes": [

@@ -631,22 +631,31 @@
         const stats = new Map();
         toArray(videos).forEach(video => {
             if (!isPlayable(video)) return;
-            const key = artistKeyOf(video);
+            const channelKey = artistKeyOf(video);
+            const channelId = video.channelId || video.snippet?.channelId || '';
+            const key = window.SegueixMusicCategories?.artistKeyForChannel?.(channelId) || channelKey;
             if (!key) return;
             stylesOf(video, channelMap).forEach(style => {
                 if (!stats.has(style)) stats.set(style, { artists: new Map() });
                 const artists = stats.get(style).artists;
                 const at = timestampOf(video);
-                if (!artists.has(key) || at > artists.get(key)) artists.set(key, at);
+                const channel = channelMap.get(channelKey);
+                const avatar = channel?.avatar || channel?.thumbnail || '';
+                const previous = artists.get(key);
+                if (!previous || at > previous.at) {
+                    artists.set(key, { at, avatar: avatar || previous?.avatar || '' });
+                } else if (!previous.avatar && avatar) {
+                    previous.avatar = avatar;
+                }
             });
         });
         return styleLabels()
             .filter(label => stats.has(label))
             .map(label => {
                 const artists = stats.get(label).artists;
-                const avatars = [...artists.entries()]
-                    .sort((a, b) => b[1] - a[1])
-                    .map(([key]) => channelMap.get(key)?.avatar || channelMap.get(key)?.thumbnail || '')
+                const avatars = [...artists.values()]
+                    .sort((a, b) => b.at - a.at)
+                    .map(artist => artist.avatar)
                     .filter(Boolean)
                     .slice(0, avatarsPerStyle);
                 return { label, artists: artists.size, avatars, primary: PRIMARY_STYLES.includes(label) };
@@ -843,4 +852,3 @@
         summarizeStyles,
     };
 })(window);
-

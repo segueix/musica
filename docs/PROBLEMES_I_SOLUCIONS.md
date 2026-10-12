@@ -1,3 +1,11 @@
+## [2026-10-12] - Categories amb artistes únics i alta de Lladruc
+
+**Problema:** `summarizeStyles()` comptava els canals publicadors com si fossin artistes diferents; oficial i Topic duplicaven el nombre i les caràtules. Les rajoles de categories personals també comptaven els IDs desats sense agrupar-los.
+
+**Correcció:** els dos recomptes fan servir `SegueixMusicCategories.artistKeyForChannel()`; mantenen el canal com a alternativa quan no hi ha una identitat coneguda. Cada artista compta una sola vegada a cada estil, amb una caràtula; les seleccions i canals de les categories personals es conserven íntegres. Es mantenen el filtre de cançons reproduïbles i l’ordre de novetat de les caràtules. Versions de les dues URLs de scripts actualitzades i service worker regenerat. Proves amb oficial + Topic, artistes amb diversos estils, caràtula absent al Topic i preservació dels IDs desats.
+
+**Lladruc:** canal oficial `UCvab9QKJ1NEdMJObwZkA39A` (`@Lladrucband`), Punk, origen Vallès segons el canal i Linktree. Selecció tancada de les dotze pistes dels llançaments *Ho tornarem a fer* i *Som-hi nois*, amb parelles ID/canal distribuïdor verificades. Traçabilitat a `docs/revisions/2026-10-12-lladruc.json`. El feed i els discos es generen amb el pipeline ordinari.
+
 ## [2026-10-12] - Orígens revisats sense vincle al canal publicat
 
 **Causa comprovada:** ASSAC! (Barcelona), The Cabrians (Mataró) i Pesta Porcina (Torelló) tenien fitxes validades a `artists` d’`origens-artistes.json`, però els tres IDs publicats faltaven a `channels`. La fitxa consulta per ID de canal, de manera que la població no es mostrava tot i existir.
@@ -1870,4 +1878,3 @@ Verificació: taxonomia separada, decoració de vídeos d'arxiu, grup amb tots d
 ## [2026-10-11] - Origen a la fitxa: HTML nou amb JS antic
 
 En verificar la primera publicació, la fitxa contenia `apOrigin` però quedava buit: el navegador conservava la URL anterior d'`artist-page.js`. Com en els casos de memòria cau descrits més amunt, s'han versionat les URLs del JS modificat i de `portada.css` a `20261011-origen-1`, a més de regenerar el service worker. Les dades viuen a `data/origens-artistes.json`; només es mostren assignacions validades i les respostes antigues no poden pintar un altre artista. Proves: `tests/artist-origin.test.js`.
-

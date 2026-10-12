@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-12T07:22:39.417Z",
+  "updatedAt": "2026-10-12T07:30:06.204Z",
   "attribution": {
     "text": "Coordenades de referència: GeoNames, via Open-Meteo. CC BY 4.0.",
     "sources": [
@@ -9759,6 +9759,23 @@
       "reviewedOn": "2026-10-12",
       "assignmentSource": "manual-review",
       "locked": true
+    },
+    "artist:lladruc": {
+      "name": "Lladruc",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "territory:valles"
+      ],
+      "confidence": "alta",
+      "basis": "El canal oficial descriu el grup com a format el 2023 al Vallès. La presentació pròpia a Linktree confirma Oi! del Vallès; no s’infereix cap municipi.",
+      "sources": [
+        "https://www.youtube.com/@Lladrucband",
+        "https://linktr.ee/lladruc"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true
     }
   },
   "channels": {
@@ -10307,7 +10324,8 @@
     "UC9twmdozj_iXRhX_FRZMwzw": "artist:joan-manuel-serrat",
     "UCzyjfdkAmiRCOjJGuUVbqYg": "artist:assac",
     "UC-N1gUYe6UmwHOSQAUPH2-A": "artist:the-cabrians",
-    "UCeZTzF8dhFsh_BcqHUzygjg": "artist:pesta-porcina"
+    "UCeZTzF8dhFsh_BcqHUzygjg": "artist:pesta-porcina",
+    "UCvab9QKJ1NEdMJObwZkA39A": "artist:lladruc"
   },
   "excludedProfiles": {
     "UCdezTX23syEeAJJAb2oOkKA": {

@@ -24,6 +24,21 @@ beforeEach(() => {
 });
 
 describe('les teves categories: dades', () => {
+    it('les rajoles compten artistes únics sense modificar els canals desats', () => {
+        const api = loadScript('js/features/user-categories.js', {
+            SegueixMusicCategories: {
+                artistKeyForChannel: id => ['UC1', 'UCtopic'].includes(id) ? 'artist:one' : '',
+            },
+        }).SegueixApp.features.userCategories;
+        const list = [{ id: 'a', name: 'Favorits', artists: ['UCtopic', 'UC1', 'UC2'] }];
+        const tiles = api.tilesFor(list, { channels: [
+            { id: 'UCtopic' }, { id: 'UC1', avatar: 'one.jpg' }, { id: 'UC2', avatar: 'two.jpg' },
+        ] });
+        expect(tiles[0].artists).toBe(2);
+        expect(tiles[0].avatars).toEqual(['one.jpg', 'two.jpg']);
+        expect(list[0].artists).toHaveLength(3);
+    });
+
     it('crea una categoria amb el nom net i rebutja noms buits, repetits o d’estils', () => {
         const first = uc.addCategory([], '  Festa   «major» ', { reserved: ['Pop'], id: 'a' });
         expect(first.error).toBe('');

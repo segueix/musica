@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-11T23:03:20.925Z",
+  "updatedAt": "2026-10-12T07:30:06.204Z",
   "channels": [
     {
       "artist": "Svetlana",
@@ -1162,6 +1162,15 @@
       "primary": true,
       "verified": true,
       "source": "https://www.youtube.com/watch?v=BCzg-AMTtzw"
+    },
+    {
+      "artist": "Lladruc",
+      "handle": "@Lladrucband",
+      "channelId": "UCvab9QKJ1NEdMJObwZkA39A",
+      "type": "official",
+      "primary": true,
+      "verified": true,
+      "source": "manual-user-2026-10-12"
     }
   ]
 }

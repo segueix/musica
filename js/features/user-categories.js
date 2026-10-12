@@ -153,17 +153,24 @@
     // Rajoles de la portada per a les categories pròpies (mateixa forma que discovery.summarizeStyles()).
     function tilesFor(list, { channels } = {}) {
         const map = channelMap(channels);
-        return sanitize(list).map(item => ({
-            label: item.name,
-            id: item.id,
-            user: true,
-            artists: item.artists.length,
-            avatars: item.artists
-                .map(id => map.get(channelKey(id)))
-                .map(channel => text(channel?.avatar || channel?.thumbnail))
-                .filter(Boolean)
-                .slice(0, AVATARS),
-        }));
+        return sanitize(list).map(item => {
+            const artists = new Map();
+            item.artists.forEach(id => {
+                const key = window.SegueixMusicCategories?.artistKeyForChannel?.(id) || channelKey(id);
+                const channel = map.get(channelKey(id));
+                const avatar = text(channel?.avatar || channel?.thumbnail);
+                if (!artists.has(key) || !artists.get(key)) artists.set(key, avatar);
+            });
+            return {
+                label: item.name,
+                id: item.id,
+                user: true,
+                artists: artists.size,
+                avatars: [...artists.values()]
+                    .filter(Boolean)
+                    .slice(0, AVATARS),
+            };
+        });
     }
 
     // Ordre de «Tria el teu so»: el que ha triat l'usuari arrossegant (`order`, noms) i, si no, estils principals →
