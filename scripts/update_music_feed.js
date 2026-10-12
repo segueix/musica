@@ -858,16 +858,19 @@ async function main(){
     if(teSubtitolsCastella(videos[i]) && !allowsSpanishSubtitles(channelVideoAllowlist,videos[i])){ videos.splice(i,1); withSpanishSubtitles++; }
   }
   if(withSpanishSubtitles) console.log(`🙈 ${withSpanishSubtitles} vídeos amb subtítols en castellà descartats`);
-  // Cançons que entren al feed per primera vegada: a la llista de revisió d'idioma (amb la descripció sencera).
-  // Les que tenen al títol una marca segura d'una altra llengua (ñ, ¿, á, -ción…) es descarten soles, però queden al
-  // document («descartades») per si ha estat un error. No es miren els noms dels artistes (col·laboracions).
-  const artistNamesForReview=unique((db.artists||[]).filter(a=>a.reviewStatus!=='rebutjat').flatMap(a=>[a.name,a.displayName,...(a.aliases||[])]));
-  const languageReview=revisioIdiomes.updatePending(readJsonSafe(LANGUAGE_REVIEW_FILE,revisioIdiomes.emptyState()),videos,{hiddenIds,namesOf:()=>artistNamesForReview});
+  // Només els artistes vigilats entren a revisió. Un títol sospitós no amaga cap cançó.
+  const languagePolicy=revisioIdiomes.loadPolicy();
+  const languageReview=revisioIdiomes.updatePending(readJsonSafe(LANGUAGE_REVIEW_FILE,revisioIdiomes.emptyState()),videos,{hiddenIds,policy:languagePolicy,namesOf:video=>namesOfChannel(video.channelId)});
   fs.writeFileSync(LANGUAGE_REVIEW_FILE,revisioIdiomes.serializeState(languageReview.state));
+  // Exclusivament decisions editorials explícites reutilitzables, mai heurístiques de títol.
   if(languageReview.discardedIds.size){
+    const hiddenFile=path.join(process.cwd(),'data','hidden-videos.json');
+    const payload=readJsonSafe(hiddenFile,{videoIds:[]});
+    for(const id of languageReview.discardedIds) hiddenIds.add(id);
+    fs.writeFileSync(hiddenFile,JSON.stringify({...payload,videoIds:[...new Set([...(payload.videoIds||[]),...languageReview.discardedIds])]},null,2)+'\n');
     for(let i=videos.length-1;i>=0;i--) if(languageReview.discardedIds.has(String(videos[i].id))) videos.splice(i,1);
   }
-  console.log(`🗣️ Revisió d'idioma: ${languageReview.added} cançons noves pendents, ${languageReview.discarded} descartades per l'idioma del títol (${languageReview.state.pendents.length} pendents, ${languageReview.state.descartades.length} descartades)`);
+  console.log(`🗣️ Revisió d'idioma: ${languageReview.state.pendents.length} pendents d’artistes vigilats, ${languageReview.trusted} acceptades per confiança editorial, ${languageReview.state.artistesPendents.length} artistes nous per classificar`);
   videos.sort((a,b)=>(Date.parse(b.publishedAt||'')||0)-(Date.parse(a.publishedAt||'')||0));
   review.sort((a,b)=>(Date.parse(b.publishedAt||'')||0)-(Date.parse(a.publishedAt||'')||0));
   channelIndex.sort((a,b)=>a.name.localeCompare(b.name,'ca',{sensitivity:'base'}));
@@ -976,3 +979,4 @@ async function main(){
 }
 
 main().catch(error=>{console.error('❌',error.stack||error.message);process.exit(1);});
+

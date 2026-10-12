@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { createRequire } from 'module';
+import fs from 'node:fs';
 
 const require = createRequire(import.meta.url);
 const {
@@ -9,124 +10,318 @@ const {
     applyReview,
     serializeState,
     detectNonCatalan,
+    loadPolicy,
 } = require('../scripts/lib/revisio_idiomes.js');
-
+const { createPolicy, recordingKey } = require('../scripts/lib/politica_idiomes.js');
+const registry = {
+    schemaVersion: 1,
+    vigilats: [
+        {
+            artista: 'Vigilat',
+            aliases: ['Vigilat oficial'],
+            canals: ['watch', 'watch-topic'],
+        },
+    ],
+    confianca: [{ artista: 'Habitual', aliases: [], canals: ['trusted', 'trusted-topic'] }],
+    discsVerificats: [],
+};
+const policy = createPolicy(registry);
+const now = '2026-10-12T12:00:00Z';
+const update = (state, videos, extra = {}) => updatePending(state, videos, { policy, now, ...extra });
 const song = (id, extra = {}) => ({
     id,
-    channelTitle: 'Artista',
+    channelId: 'watch',
+    channelTitle: 'Vigilat',
     title: `Cançó ${id}`,
     contentType: 'song',
     publishedAt: '2026-10-01T10:00:00Z',
     ...extra,
 });
+const entry = (id, extra = {}) => ({
+    id,
+    artista: 'Vigilat',
+    titol: `Cançó ${id}`,
+    ...extra,
+});
 
-describe("revisió d'idioma de les cançons noves", () => {
-    it('afegeix només les cançons que no s’han revisat mai', () => {
-        const state = seedReviewed(emptyState(), [song('a'), song('b')]);
-        const { state: next, added } = updatePending(state, [song('a'), song('b'), song('c'), song('d')], {
-            now: '2026-10-02T00:00:00Z',
-        });
-        expect(added).toBe(2);
-        expect(next.pendents.map(item => item.id)).toEqual(['c', 'd']);
-        expect(next.pendents[0]).toMatchObject({ artista: 'Artista', titol: 'Cançó c', publicada: '2026-10-01' });
-        // Una segona generació no les repeteix
-        expect(updatePending(next, [song('c'), song('d')]).added).toBe(0);
-    });
-
-    it('no hi posa Shorts, vídeos que no són cançons ni cançons ja amagades', () => {
-        const { state } = updatePending(
-            emptyState(),
-            [
-                song('short', { isShort: true }),
-                song('entrevista', { contentType: 'other' }),
-                song('amagada'),
-                song('directe', { contentType: 'live_song' }),
-            ],
-            { hiddenIds: new Set(['amagada']) }
-        );
-        expect(state.pendents.map(item => item.id)).toEqual(['directe']);
-    });
-
-    it('de les pistes «Provided to YouTube» en guarda el disc', () => {
-        const description = 'Provided to YouTube by RGB\n\nBon dia · Els Pets\n\nBrillant\n\n℗ 1997 RGB';
-        const { state } = updatePending(emptyState(), [song('t', { description })]);
-        expect(state.pendents[0].descripcio).toBe('Disc: Brillant');
-    });
-
-    it('treu de les pendents les que ja no són al feed', () => {
-        const { state } = updatePending(emptyState(), [song('a'), song('b')]);
-        expect(updatePending(state, [song('a')]).state.pendents.map(item => item.id)).toEqual(['a']);
-    });
-
-    it('en aplicar la revisió amaga les triades i buida les pendents', () => {
-        const { state } = updatePending(emptyState(), [song('ca'), song('es'), song('en')]);
-        const result = applyReview(state, { videoIds: ['vella'] }, ['es', 'en']);
-        expect(result.unknown).toEqual([]);
-        expect(result.hidden.videoIds).toEqual(['vella', 'es', 'en']);
-        expect(result.hiddenCount).toBe(2);
-        expect(result.keptCount).toBe(1);
-        expect(result.state.pendents).toEqual([]);
-        expect(result.state.revisades).toEqual(['ca', 'en', 'es']);
-        // La que es queda (en català) no torna a sortir
-        expect(updatePending(result.state, [song('ca')]).added).toBe(0);
-        expect(applyReview(state, { videoIds: [] }, ['no-hi-és']).unknown).toEqual(['no-hi-és']);
-    });
-
-    it('es desa en un JSON que es torna a llegir igual', () => {
-        const { state } = updatePending(seedReviewed(emptyState(), [song('a')]), [song('a'), song('b')], {
-            now: '2026-10-02T00:00:00Z',
-        });
-        expect(JSON.parse(serializeState(state))).toEqual(state);
-        expect(JSON.parse(serializeState(emptyState()))).toEqual(emptyState());
-    });
-
-    it('descarta sol el títol amb marques que el català no fa servir', () => {
-        expect(detectNonCatalan('La Revolución')).toMatch(/castellà/);
-        expect(detectNonCatalan('Son tus ojos dos puñales - Anna Ferrer', ['Anna Ferrer'])).toMatch(/ñ/);
-        expect(detectNonCatalan('¡Bomba a Bomba!')).toMatch(/¿/);
-        expect(detectNonCatalan('Tres lágrimas')).toMatch(/á/);
-        expect(detectNonCatalan('Grândola, vila morena')).toMatch(/portuguès/);
-        expect(detectNonCatalan('Doraemon No Uta (ドラえもんのうた)')).toBe('');
-        expect(detectNonCatalan('ドラえもんのうた')).toMatch(/alfabet/);
-        // Català (també amb accents oberts i tancats, ela geminada i ce trencada)
-        for (const title of ['Què és el que vols', 'Sóc de la terra', 'La cançó del lladre', 'Col·lecció', 'Així']) {
-            expect(detectNonCatalan(title), title).toBe('');
-        }
-        // No es miren els artistes, les col·laboracions ni el context entre parèntesis
-        expect(detectNonCatalan('PAULA MONTALBÁN - 3. ERRORS', ['Paula Montalbán'])).toBe('');
-        expect(detectNonCatalan('Tot és més fàcil - Sara Roy ft.Miki Núñez (A)MAR', ['Sara Roy'])).toBe('');
-        expect(detectNonCatalan("Txarango - 17 Com una lluna a l'aigua_feat. Iñaki Marquiegui", ['Txarango'])).toBe('');
-        expect(detectNonCatalan("Una Lluna A L'Aigua (Operación Triunfo 2018)")).toBe('');
-        expect(detectNonCatalan('EL CAMÍ - Lildami, Miki Núñez', ['Lildami', 'Miki Núñez'])).toBe('');
-    });
-
-    it('les descartades surten del feed però queden al document per si cal recuperar-les', () => {
-        const videos = [song('ca', { title: 'Bon dia' }), song('es', { title: 'La Revolución' })];
-        const { state, added, discarded, discardedIds } = updatePending(emptyState(), videos);
-        expect(added).toBe(1);
-        expect(discarded).toBe(1);
-        expect([...discardedIds]).toEqual(['es']);
-        expect(state.descartades[0]).toMatchObject({ id: 'es', motiu: '-ción (castellà)' });
-        // A la generació següent la descartada ja no és al feed, però continua al document
-        const next = updatePending(state, [videos[0]]);
-        expect(next.state.descartades.map(item => item.id)).toEqual(['es']);
-        expect(next.discarded).toBe(0);
-    });
-
-    it('en revisar, les descartades s’amaguen menys les recuperades', () => {
-        const { state } = updatePending(emptyState(), [
-            song('ca', { title: 'Bon dia' }),
-            song('es', { title: 'La Revolución' }),
-            song('viñarock', { title: 'Al Viñarock 2014' }),
+describe('filtre d’idioma per artista', () => {
+    it('revisa oficial i Topic del vigilat i registra la confiança sense verificar lletres', () => {
+        const { state } = update(emptyState(), [
+            song('a'),
+            song('b', { channelId: 'watch-topic', channelTitle: 'Un nom canviat' }),
+            song('c', { channelId: 'trusted', channelTitle: 'Habitual' }),
+            song('d', {
+                channelId: 'trusted-topic',
+                channelTitle: 'Habitual - Topic',
+            }),
         ]);
-        const result = applyReview(state, { videoIds: [] }, [], { rescueIds: ['viñarock'] });
+        expect(state.pendents.map((x) => x.id).sort()).toEqual(['a', 'b']);
+        expect(state.acceptadesPerArtista.map((x) => x.id).sort()).toEqual(['c', 'd']);
+        expect(state.acceptadesPerArtista.every((x) => x.criteri === 'confianca-artista')).toBe(true);
+        expect(state.revisades).toEqual([]);
+        expect(state.decisions).toEqual([]);
+    });
+
+    it('només crea una alta per artista nou, sense confiar en un homònim', () => {
+        const { state } = update(emptyState(), [
+            song('a', { channelId: 'unknown', channelTitle: 'Habitual' }),
+            song('b', { channelId: 'unknown', channelTitle: 'Habitual' }),
+        ]);
+        expect(state.pendents).toEqual([]);
+        expect(state.acceptadesPerArtista).toEqual([]);
+        expect(state.artistesPendents).toHaveLength(1);
+        expect(state.artistesPendents[0].canals).toEqual(['unknown']);
+    });
+
+    it('dos canals assignats al mateix artista nou generen una sola classificació', () => {
+        const p = createPolicy(registry, {
+            artists: [
+                {
+                    name: 'Nou',
+                    youtube: { channels: [{ id: 'nou-oficial' }, { id: 'nou-topic' }] },
+                },
+            ],
+        });
+        const result = update(
+            emptyState(),
+            [song('a', { channelId: 'nou-oficial' }), song('b', { channelId: 'nou-topic' })],
+            { policy: p }
+        );
+        expect(result.state.artistesPendents).toHaveLength(1);
+        expect(result.state.artistesPendents[0].canals).toEqual(['nou-oficial', 'nou-topic']);
+    });
+
+    it('comparteix política amb un Topic assignat després i resol les altes classificades', () => {
+        const db = {
+            artists: [
+                {
+                    name: 'Habitual',
+                    youtube: {
+                        channels: [{ id: 'new-topic', name: 'Habitual - Topic' }],
+                    },
+                },
+            ],
+        };
+        const p = createPolicy(registry, db);
+        expect(p.resolve(song('a', { channelId: 'new-topic' })).mode).toBe('confianca');
+        const before = update(emptyState(), [song('a', { channelId: 'new-topic', channelTitle: 'Habitual' })]).state;
+        const after = update(before, [song('a', { channelId: 'new-topic' })], {
+            policy: p,
+        }).state;
+        expect(after.artistesPendents).toEqual([]);
+        expect(after.acceptadesPerArtista).toHaveLength(1);
+    });
+
+    it('una absència o corrupció del registre no aprova tot el catàleg', () => {
+        expect(() => createPolicy(null)).toThrow();
+        expect(() => createPolicy({ schemaVersion: 1 })).toThrow();
+    });
+
+    it('un títol sospitós només aporta un indici, fins i tot en un artista vigilat', () => {
+        const { state, discardedIds } = update(emptyState(), [
+            song('a', { title: 'La Revolución' }),
+            song('b', { channelId: 'trusted', title: 'Al Viñarock' }),
+        ]);
+        expect(state.pendents[0]).toMatchObject({
+            id: 'a',
+            indici: '-ción (castellà)',
+        });
+        expect(state.acceptadesPerArtista[0].id).toBe('b');
+        expect(state.descartades).toEqual([]);
+        expect(discardedIds.size).toBe(0);
+        expect(detectNonCatalan('Doraemon No Uta (ドラえもんのうた)')).toBe('');
+        expect(detectNonCatalan('Tot és més fàcil - Sara Roy ft.Miki Núñez (A)MAR', ['Sara Roy'])).toBe('');
+    });
+
+    it('migra els descartaments antics sense excloure’ls i preserva les exclusions/decisions', () => {
+        const before = {
+            ...emptyState(),
+            pendents: [entry('a'), entry('hidden'), entry('done')],
+            descartades: [
+                entry('b', {
+                    artista: 'Habitual',
+                    titol: 'Ballarines Mecániques',
+                    motiu: 'á',
+                }),
+                entry('c', { titol: 'Demá', motiu: 'á' }),
+            ],
+            revisades: ['done'],
+        };
+        const { state, discardedIds } = update(before, [], {
+            hiddenIds: new Set(['hidden']),
+        });
+        expect(state.pendents.map((x) => x.id).sort()).toEqual(['a', 'c']);
+        expect(state.acceptadesPerArtista.map((x) => x.id)).toEqual(['b']);
+        expect(state.revisades).toEqual(['done']);
+        expect(state.pendents.find((x) => x.id === 'c').motiuAnterior).toBe('á');
+        expect(discardedIds.size).toBe(0);
+        expect(update(state, [], { hiddenIds: new Set(['hidden']) }).state).toEqual(state);
+        expect(JSON.parse(serializeState(state))).toEqual(state);
+    });
+
+    it('la confiança és revocable sense esborrar revisions explícites', () => {
+        const first = update(emptyState(), [song('a', { channelId: 'trusted', channelTitle: 'Habitual' })]).state;
+        const p = createPolicy({
+            ...registry,
+            vigilats: [...registry.vigilats, ...registry.confianca],
+            confianca: [],
+        });
+        const next = update(first, [], { policy: p }).state;
+        expect(next.acceptadesPerArtista).toEqual([]);
+        expect(next.pendents.map((x) => x.id)).toEqual(['a']);
+        const reviewed = applyReview(next, { videoIds: [] }, [], {
+            keepIds: ['a'],
+            now,
+        }).state;
+        expect(update(reviewed, [song('a', { channelId: 'trusted' })], { policy: p }).state.pendents).toEqual([]);
+    });
+
+    it('no torna a posar revisades, ocultes, Shorts ni contingut no musical a la cua', () => {
+        const before = seedReviewed(emptyState(), [song('done')]);
+        const { state } = update(
+            before,
+            [
+                song('done'),
+                song('hidden'),
+                song('short', { isShort: true }),
+                song('other', { contentType: 'other' }),
+                song('live', { contentType: 'live_song' }),
+            ],
+            { hiddenIds: new Set(['hidden']) }
+        );
+        expect(state.pendents.map((x) => x.id)).toEqual(['live']);
+    });
+
+    it('guarda el disc de la descripció i no perd dubtes en actualitzacions parcials', () => {
+        const first = update(emptyState(), [
+            song('a', {
+                description: 'Provided to YouTube by RGB\n\nBon dia · Vigilat\n\nBrillant\n\n℗ 1997 RGB',
+            }),
+        ]).state;
+        expect(first.pendents[0].descripcio).toBe('Disc: Brillant');
+        expect(update(first, []).state).toEqual(first);
+    });
+});
+
+describe('decisions explícites i memòria', () => {
+    it('una revisió parcial deixa els altres dubtes pendents i no amaga descartaments automàtics antics', () => {
+        const before = update(emptyState(), [song('ca'), song('es'), song('dubte')]).state;
+        before.descartades = [entry('antic', { motiu: 'ñ' })];
+        const result = applyReview(before, { videoIds: ['preexistent'] }, ['es'], {
+            keepIds: ['ca'],
+            now,
+        });
         expect(result.unknown).toEqual([]);
-        expect(result.hidden.videoIds).toEqual(['es']);
-        expect(result.rescuedCount).toBe(1);
-        expect(result.state.descartades).toEqual([]);
-        expect(result.state.revisades).toEqual(['ca', 'es', 'viñarock']);
-        // La recuperada torna al feed i ja no es descarta
-        expect(updatePending(result.state, [song('viñarock', { title: 'Al Viñarock 2014' })]).discarded).toBe(0);
-        expect(applyReview(state, { videoIds: [] }, [], { rescueIds: ['ca'] }).unknown).toEqual(['ca']);
+        expect(result.hidden.videoIds).toEqual(['preexistent', 'es']);
+        expect(result.state.pendents.map((x) => x.id)).toEqual(['dubte']);
+        expect(result.state.descartades.map((x) => x.id)).toEqual(['antic']);
+        expect(result.state.revisades).toEqual(['ca', 'es']);
+        expect(result.state.decisions).toHaveLength(2);
+        expect(applyReview(before, { videoIds: [] }, ['inexistent']).unknown).toEqual(['inexistent']);
+        expect(applyReview(before, { videoIds: [] }, ['ca'], { keepIds: ['ca'] }).unknown).toEqual(['ca']);
+    });
+
+    it('reutilitza només decisions autoritzades amb font i sense marques de versió', () => {
+        const first = update(emptyState(), [song('a', { title: 'Llum' })]).state;
+        const reviewed = applyReview(first, { videoIds: [] }, [], {
+            keepIds: ['a'],
+            source: 'https://artist.example/lletra',
+            reuseWorks: true,
+            now,
+        }).state;
+        const result = update(reviewed, [
+            song('topic', { channelId: 'watch-topic', title: 'Llum' }),
+            song('remix', { title: 'Llum (Remix)' }),
+            song('live', { title: 'Llum', contentType: 'live_song' }),
+            song('feat', { title: 'Llum feat. Una altra veu' }),
+        ]);
+        expect(result.state.pendents.map((x) => x.id).sort()).toEqual(['feat', 'live', 'remix']);
+        expect(result.state.revisades).toContain('topic');
+        expect(result.reused).toBe(1);
+        const unshared = applyReview(first, { videoIds: [] }, [], {
+            keepIds: ['a'],
+            now,
+        }).state;
+        expect(update(unshared, [song('topic', { title: 'Llum' })]).state.pendents).toHaveLength(1);
+    });
+
+    it('una exclusió contrastada es reaplica al duplicat però no a un altre artista', () => {
+        const first = update(emptyState(), [song('a', { title: 'Obra' })]).state;
+        const reviewed = applyReview(first, { videoIds: ['old'] }, ['a'], {
+            source: 'https://artist.example/lletra',
+            reuseWorks: true,
+            now,
+        }).state;
+        const result = update(reviewed, [
+            song('copy', { title: 'Obra' }),
+            song('other', { channelId: 'trusted', title: 'Obra' }),
+        ]);
+        expect([...result.discardedIds]).toEqual(['copy']);
+        expect(result.state.acceptadesPerArtista.map((x) => x.id)).toEqual(['other']);
+    });
+
+    it('un disc verificat només resol els IDs comprovats i l’artista exacte', () => {
+        const p = createPolicy({
+            ...registry,
+            discsVerificats: [
+                {
+                    artista: 'Vigilat',
+                    titol: 'Un disc',
+                    accio: 'conserva',
+                    font: 'https://artist.example/disc',
+                    videoIds: ['a'],
+                },
+            ],
+        });
+        const result = update(emptyState(), [song('a'), song('b')], { policy: p });
+        expect(result.state.pendents.map((x) => x.id)).toEqual(['b']);
+        expect(result.state.revisades).toEqual(['a']);
+    });
+
+    it('no reutilitza títols de canals compartits ni homònims', () => {
+        expect(
+            recordingKey(song('a'), {
+                key: 'compartit',
+                artista: 'Compartit',
+                canalCompartit: true,
+            })
+        ).toBe('');
+        expect(recordingKey(song('a'), { key: 'nou', artista: 'Nou', mode: 'nou' })).toBe('');
+    });
+});
+
+describe('catàleg real', () => {
+    it('vigila Dusminguet, Troba, Gertrudis, Vademecum i els homònims detectats', () => {
+        const p = loadPolicy();
+        for (const id of [
+            'UCOXyxBFPQ97GO6PQqiJSvkw',
+            'UC63BTrp525uyzMd-YTMAt_w',
+            'UChYQSBa6bIG2yArpLA4ykvA',
+            'UCvqTGNjxbWceoaz4pkBSEzg',
+            'UC_X_KBioMYCrmZyI7hbL8Pw',
+            'UCIBWCquq4qqhRWKD6nOdR4w',
+            'UCx82VgJTTf_cKHahlakKfFg',
+        ]) {
+            expect(p.resolve({ channelId: id }).mode, id).toBe('vigilats');
+        }
+    });
+
+    it('tots els casos que queden a la cua són vigilats i una segona passada és estable', () => {
+        const state = JSON.parse(fs.readFileSync('data/revisio-idiomes.json'));
+        const feed = JSON.parse(fs.readFileSync('data/feed.json'));
+        const hiddenIds = new Set(JSON.parse(fs.readFileSync('data/hidden-videos.json')).videoIds);
+        const p = loadPolicy();
+        const first = updatePending(state, feed.videos, {
+            policy: p,
+            hiddenIds,
+            now,
+        });
+        expect(first.state.pendents.every((x) => p.resolve(x).mode === 'vigilats')).toBe(true);
+        expect(first.discardedIds.size).toBe(0);
+        expect(updatePending(first.state, feed.videos, { policy: p, hiddenIds, now }).state).toEqual(first.state);
+        expect(first.state.artistesPendents).toEqual([]);
+        expect(first.state.revisades).toEqual(state.revisades);
+        expect(first.state.pendents.some((x) => ['Tesa', 'Still Ill'].includes(x.artista))).toBe(true);
+        expect(first.state.pendents.every((x) => !hiddenIds.has(x.id))).toBe(true);
     });
 });

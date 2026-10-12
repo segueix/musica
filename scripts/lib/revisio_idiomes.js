@@ -1,17 +1,11 @@
 'use strict';
 
-// Revisió d'idioma de les cançons noves. Cada generació del feed (update_music_feed.js) afegeix a
-// data/revisio-idiomes.json les cançons que hi entren per primera vegada («pendents»). Quan l'usuari ho demana, un
-// agent (Claude) les revisa, li ensenya quines no són en català i, amb el seu vistiplau,
-// scripts/aplicar_revisio_idiomes.js amaga aquestes (data/hidden-videos.json) i passa totes les pendents a
-// «revisades», de manera que la llista torna a quedar buida fins que n'entrin de noves.
-
+// Només els artistes vigilats entren a la cua; la confiança editorial queda separada de les revisions.
 const { cleanTitle } = require('../../js/song-title.js');
-
+const { createPolicy, recordingKey } = require('./politica_idiomes');
 const SONG_TYPES = new Set(['song', 'live_song']);
 
-// Marques que el català no fa servir mai: el títol que en té es descarta sol (va a «descartades», on es pot
-// recuperar si ha estat un error).
+// Pistes per orientar la revisió. MAI són un motiu d'exclusió automàtica.
 const MARKERS = [
     [/[ñÑ]/, 'ñ (castellà)'],
     [/[¿¡]/, '¿ ¡ (castellà)'],
@@ -43,7 +37,7 @@ function songPart(title, names = []) {
     return text.replace(/\s+/g, ' ').trim();
 }
 
-// Motiu pel qual el títol no és en català (o '' si no n'hi ha cap marca segura).
+// Indici al títol, sense inferir l’idioma de la lletra.
 function detectNonCatalan(title, names = []) {
     const text = songPart(title, names);
     for (const [pattern, reason] of MARKERS) if (pattern.test(text)) return reason;
@@ -52,15 +46,26 @@ function detectNonCatalan(title, names = []) {
 const DESCRIPTION_EXCERPT = 160;
 
 function emptyState() {
-    return { updatedAt: null, pendents: [], descartades: [], revisades: [] };
+    return {
+        updatedAt: null,
+        pendents: [],
+        descartades: [],
+        revisades: [],
+        acceptadesPerArtista: [],
+        artistesPendents: [],
+        decisions: [],
+    };
 }
 
 function normalizeState(state) {
     return {
         updatedAt: state?.updatedAt || null,
-        pendents: Array.isArray(state?.pendents) ? state.pendents.filter(item => item?.id) : [],
-        descartades: Array.isArray(state?.descartades) ? state.descartades.filter(item => item?.id) : [],
+        pendents: Array.isArray(state?.pendents) ? state.pendents.filter((item) => item?.id) : [],
+        descartades: Array.isArray(state?.descartades) ? state.descartades.filter((item) => item?.id) : [],
         revisades: Array.isArray(state?.revisades) ? state.revisades.map(String) : [],
+        acceptadesPerArtista: (state?.acceptadesPerArtista || []).filter((item) => item?.id),
+        artistesPendents: state?.artistesPendents || [],
+        decisions: (state?.decisions || []).filter((item) => item?.id),
     };
 }
 
@@ -73,7 +78,7 @@ function excerpt(text) {
     // segona repeteix el títol i l'artista).
     const lines = String(text || '')
         .split('\n')
-        .map(line => line.trim())
+        .map((line) => line.trim())
         .filter(Boolean);
     if (/^provided to youtube/i.test(lines[0] || '') && lines[2])
         return `Disc: ${lines[2]}`.slice(0, DESCRIPTION_EXCERPT);
@@ -87,6 +92,7 @@ function pendingEntry(video, addedAt) {
     return {
         id: String(video.id),
         artista: String(video.channelTitle || ''),
+        canalId: String(video.channelId || ''),
         titol: String(video.title || ''),
         descripcio: excerpt(video.description),
         publicada: String(video.publishedAt || '').slice(0, 10),
@@ -94,47 +100,160 @@ function pendingEntry(video, addedAt) {
     };
 }
 
-// Afegeix al document les cançons del feed que no s'han revisat mai: a «descartades» si el títol té una marca segura
-// d'una altra llengua (la generació les treu del feed) i a «pendents» la resta. Treu de «pendents» les que ja no
-// són al feed (ocultes o retirades); les descartades s'hi queden fins a la revisió. `hiddenIds`: les ja amagades
-// no s'hi tornen a posar. `namesOf(video)`: noms d'artistes que no s'han de mirar (l'artista i els col·laboradors).
-function updatePending(state, videos, { now = new Date().toISOString(), hiddenIds = new Set(), namesOf } = {}) {
-    const current = normalizeState(state);
-    const reviewed = new Set(current.revisades);
-    const inFeed = new Map();
-    for (const video of videos || []) {
-        if (isReviewable(video) && !hiddenIds.has(String(video.id))) inFeed.set(String(video.id), video);
-    }
-    const pendents = current.pendents.filter(item => inFeed.has(String(item.id)));
-    const descartades = current.descartades.filter(item => !hiddenIds.has(String(item.id)));
-    const known = new Set([...pendents, ...descartades].map(item => String(item.id)));
-    let added = 0;
-    let discarded = 0;
-    for (const [id, video] of inFeed) {
-        if (reviewed.has(id) || known.has(id)) continue;
-        const names = [video.channelTitle, ...(typeof namesOf === 'function' ? namesOf(video) || [] : [])];
-        const motiu = detectNonCatalan(video.title, names.filter(Boolean));
-        if (motiu) {
-            descartades.push({ ...pendingEntry(video, now), motiu });
-            discarded++;
-        } else {
-            pendents.push(pendingEntry(video, now));
-            added++;
-        }
-        known.add(id);
-    }
-    const byArtist = (a, b) => a.artista.localeCompare(b.artista, 'ca') || a.titol.localeCompare(b.titol, 'ca');
-    pendents.sort(byArtist);
-    descartades.sort(byArtist);
+function loadPolicy() {
+    return createPolicy(
+        require('../../data/artistes-vigilats-idioma.json'),
+        require('../../data/artistes-musica.json')
+    );
+}
+
+function videoFromEntry(item) {
     return {
-        state: { updatedAt: now, pendents, descartades, revisades: current.revisades },
-        added,
-        discarded,
-        discardedIds: new Set(descartades.map(item => String(item.id))),
+        id: item.id,
+        channelId: item.canalId,
+        channelTitle: item.artista,
+        title: item.titol,
+        contentType: item.tipus || 'song',
+        publishedAt: item.publicada,
+        description: item.descripcio,
     };
 }
 
-// Totes les cançons del feed com a revisades (punt de partida: el repertori actual ja s'ha revisat).
+// Conserva també els dubtes fora del feed actiu (arxiu, torns Topic, descartaments antics).
+// Una generació parcial no és una revisió i no ha d'esborrar dubtes sense resoldre.
+function updatePending(
+    state,
+    videos,
+    { now = new Date().toISOString(), hiddenIds = new Set(), namesOf, policy = loadPolicy() } = {}
+) {
+    const current = normalizeState(state);
+    const reviewed = new Set(current.revisades);
+    const previous = new Map(
+        [...current.pendents, ...current.descartades, ...current.acceptadesPerArtista].map((item) => [
+            String(item.id),
+            item,
+        ])
+    );
+    const candidates = new Map([...previous].map(([id, item]) => [id, videoFromEntry(item)]));
+    for (const video of videos || []) {
+        if (isReviewable(video)) candidates.set(String(video.id), video);
+        else if (video?.id) candidates.delete(String(video.id));
+    }
+    const decisions = new Map(current.decisions.map((item) => [item.id, item]));
+    const workDecisions = new Map();
+    for (const decision of current.decisions) {
+        if (!decision.reutilitza || !decision.obra) continue;
+        const prior = workDecisions.get(decision.obra);
+        workDecisions.set(decision.obra, prior && prior.accio !== decision.accio ? { conflicte: true } : decision);
+    }
+    const pendents = [];
+    const accepted = new Map();
+    const onboarding = new Map();
+    for (const item of current.artistesPendents) {
+        const artist = policy.resolve({ channelId: item.canals?.[0], channelTitle: item.artista });
+        if (artist.mode !== 'nou') continue;
+        const old = onboarding.get(artist.key);
+        onboarding.set(artist.key, {
+            ...item,
+            key: artist.key,
+            artista: artist.artista,
+            canals: [...new Set([...(old?.canals || []), ...(item.canals || [])])],
+        });
+    }
+    const discardedIds = new Set();
+    const previousPendingIds = new Set(current.pendents.map((item) => item.id));
+    let added = 0;
+    let trusted = 0;
+    let reused = 0;
+    for (const [id, video] of candidates) {
+        accepted.delete(id);
+        if (hiddenIds.has(id)) continue;
+        const artist = policy.resolve(video);
+        const obra = recordingKey(video, artist);
+        const saved = decisions.get(id) || workDecisions.get(obra);
+        const disc = policy.discs.find(
+            (item) => item.artista === artist.artista && item.videoIds?.includes(id) && item.font
+        );
+        const decision = saved && !saved.conflicte ? saved : disc;
+        if (decision && ['conserva', 'amaga'].includes(decision.accio)) {
+            if (decision.accio === 'amaga') discardedIds.add(id);
+            if (!decisions.has(id)) {
+                decisions.set(id, {
+                    id,
+                    accio: decision.accio,
+                    artista: artist.artista,
+                    titol: video.title,
+                    ...(decision.font ? { font: decision.font } : {}),
+                    origen: decision.id ? `decisio:${decision.id}` : `disc:${disc.titol}`,
+                    data: now,
+                });
+                reused++;
+            }
+            reviewed.add(id);
+            continue;
+        }
+        if (reviewed.has(id)) continue;
+        const old = previous.get(id);
+        const entry = {
+            ...pendingEntry(video, old?.afegida || now),
+            descripcio: video.description ? excerpt(video.description) : old?.descripcio || '',
+            artistaId: artist.key,
+            tipus: video.contentType,
+            ...(obra ? { obra } : {}),
+        };
+        if (artist.mode === 'confianca') {
+            accepted.set(id, {
+                ...entry,
+                criteri: 'confianca-artista',
+                acceptada: old?.acceptada || now,
+            });
+            if (!old?.acceptada) trusted++;
+        } else if (artist.mode === 'vigilats') {
+            const names = [video.channelTitle, ...(typeof namesOf === 'function' ? namesOf(video) || [] : [])];
+            const indici = detectNonCatalan(video.title, names.filter(Boolean));
+            pendents.push({
+                ...entry,
+                ...(indici ? { indici } : {}),
+                ...(old?.motiu
+                    ? { motiuAnterior: old.motiu }
+                    : old?.motiuAnterior
+                      ? { motiuAnterior: old.motiuAnterior }
+                      : {}),
+            });
+            if (!previousPendingIds.has(id)) added++;
+        } else {
+            const item = onboarding.get(artist.key) || {
+                key: artist.key,
+                artista: artist.artista,
+                canals: [],
+                primeraDeteccio: now,
+            };
+            if (video.channelId && !item.canals.includes(video.channelId)) item.canals.push(video.channelId);
+            onboarding.set(artist.key, item);
+        }
+    }
+    const byArtist = (a, b) =>
+        a.artista.localeCompare(b.artista, 'ca') || String(a.titol || '').localeCompare(String(b.titol || ''), 'ca');
+    return {
+        state: {
+            ...current,
+            updatedAt: now,
+            pendents: pendents.sort(byArtist),
+            descartades: [],
+            revisades: [...reviewed].sort(),
+            acceptadesPerArtista: [...accepted.values()].sort(byArtist),
+            artistesPendents: [...onboarding.values()].sort(byArtist),
+            decisions: [...decisions.values()].sort((a, b) => a.id.localeCompare(b.id)),
+        },
+        added,
+        trusted,
+        reused,
+        discarded: discardedIds.size,
+        discardedIds,
+    };
+}
+
+// Compatibilitat amb la inicialització històrica. El CLI actual usa confiança, no aquesta aprovació massiva.
 function seedReviewed(state, videos) {
     const current = normalizeState(state);
     const reviewed = new Set(current.revisades);
@@ -142,51 +261,82 @@ function seedReviewed(state, videos) {
     return { ...current, revisades: [...reviewed].sort() };
 }
 
-// Aplica la revisió. De les pendents s'amaguen les `hideIds`; de les descartades s'amaguen totes menys les
-// `rescueIds` (recuperades: eren en català i tornen al feed a la propera generació). Totes passen a revisades.
-function applyReview(state, hiddenPayload, hideIds = [], { now = new Date().toISOString(), rescueIds = [] } = {}) {
+// Només resol els IDs explícits; no converteix els dubtes restants en aprovats ni amaga títols automàticament.
+function applyReview(
+    state,
+    hiddenPayload,
+    hideIds = [],
+    { now = new Date().toISOString(), rescueIds = [], keepIds = [], source = '', reuseWorks = false } = {}
+) {
     const current = normalizeState(state);
-    const pendingIds = new Set(current.pendents.map(item => String(item.id)));
-    const discardedIds = new Set(current.descartades.map(item => String(item.id)));
-    const unknown = [
-        ...hideIds.map(String).filter(id => !pendingIds.has(id)),
-        ...rescueIds.map(String).filter(id => !discardedIds.has(id)),
-    ];
-    const rescue = new Set(rescueIds.map(String).filter(id => discardedIds.has(id)));
-    const hide = [
-        ...hideIds.map(String).filter(id => pendingIds.has(id)),
-        ...[...discardedIds].filter(id => !rescue.has(id)),
-    ];
+    const entries = new Map([...current.pendents, ...current.descartades].map((item) => [String(item.id), item]));
+    const hide = new Set(hideIds.map(String));
+    const keep = new Set([...keepIds, ...rescueIds].map(String));
+    const selected = new Set([...hide, ...keep]);
+    const unknown = [...selected].filter((id) => !entries.has(id) || (hide.has(id) && keep.has(id)));
+    if (unknown.length)
+        return {
+            state: current,
+            hidden: hiddenPayload,
+            unknown,
+            hiddenCount: 0,
+            keptCount: 0,
+            rescuedCount: 0,
+        };
     const hidden = new Set((hiddenPayload?.videoIds || []).map(String));
-    const newlyHidden = [...new Set(hide)].filter(id => !hidden.has(id));
-    const reviewed = new Set(current.revisades);
-    pendingIds.forEach(id => reviewed.add(id));
-    discardedIds.forEach(id => reviewed.add(id));
+    const newlyHidden = [...hide].filter((id) => !hidden.has(id));
+    const decisions = new Map(current.decisions.map((item) => [item.id, item]));
+    for (const id of selected) {
+        const entry = entries.get(id);
+        decisions.set(id, {
+            id,
+            accio: hide.has(id) ? 'amaga' : 'conserva',
+            data: now,
+            artista: entry.artista,
+            titol: entry.titol,
+            ...(source ? { font: source } : {}),
+            ...(entry.obra && reuseWorks && source ? { obra: entry.obra, reutilitza: true } : {}),
+        });
+    }
     return {
-        state: { updatedAt: now, pendents: [], descartades: [], revisades: [...reviewed].sort() },
-        hidden: { ...hiddenPayload, videoIds: [...(hiddenPayload?.videoIds || []), ...newlyHidden] },
+        state: {
+            ...current,
+            updatedAt: now,
+            pendents: current.pendents.filter((item) => !selected.has(item.id)),
+            descartades: current.descartades.filter((item) => !selected.has(item.id)),
+            revisades: [...new Set([...current.revisades, ...selected])].sort(),
+            decisions: [...decisions.values()],
+        },
+        hidden: {
+            ...hiddenPayload,
+            videoIds: [...(hiddenPayload?.videoIds || []), ...newlyHidden],
+        },
         hiddenCount: newlyHidden.length,
-        keptCount: pendingIds.size - hideIds.filter(id => pendingIds.has(String(id))).length,
-        rescuedCount: rescue.size,
+        keptCount: keep.size,
+        rescuedCount: rescueIds.length,
         unknown,
     };
 }
 
-// JSON llegible: una cançó pendent per línia i un identificador revisat per línia (diffs de git petits).
+// Una entrada per línia: conserva explícitament la confiança i la memòria de decisions.
 function serializeState(state) {
     const current = normalizeState(state);
-    const pendents = current.pendents.map(item => `    ${JSON.stringify(item)}`).join(',\n');
-    const revisades = current.revisades.map(id => `    ${JSON.stringify(id)}`).join(',\n');
-    const descartades = current.descartades.map(item => `    ${JSON.stringify(item)}`).join(',\n');
-    return [
-        '{',
-        `  "updatedAt": ${JSON.stringify(current.updatedAt)},`,
-        `  "pendents": [${pendents ? `\n${pendents}\n  ` : ''}],`,
-        `  "descartades": [${descartades ? `\n${descartades}\n  ` : ''}],`,
-        `  "revisades": [${revisades ? `\n${revisades}\n  ` : ''}]`,
-        '}',
-        '',
-    ].join('\n');
+    return (
+        '{\n' +
+        Object.entries(current)
+            .map(([key, value]) => {
+                const content = Array.isArray(value)
+                    ? '[' +
+                      (value.length
+                          ? '\n' + value.map((item) => `    ${JSON.stringify(item)}`).join(',\n') + '\n  '
+                          : '') +
+                      ']'
+                    : JSON.stringify(value);
+                return `  ${JSON.stringify(key)}: ${content}`;
+            })
+            .join(',\n') +
+        '\n}\n'
+    );
 }
 
 module.exports = {
@@ -198,4 +348,5 @@ module.exports = {
     isReviewable,
     detectNonCatalan,
     songPart,
+    loadPolicy,
 };

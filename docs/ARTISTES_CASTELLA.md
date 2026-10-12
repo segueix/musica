@@ -1,4 +1,6 @@
-# Artistes vigilats per cançons en castellà (i basc)
+# Historial de revisions per idioma
+
+> Des del 2026-10-12 la font operativa és `data/artistes-vigilats-idioma.json`, amb el document generat [Artistes vigilats per idioma](ARTISTES_VIGILATS_IDIOMA.md). Les taules de sota són històriques: no determinen qui entra a la cua. Només es revisen les cançons dels artistes vigilats; la confiança editorial es registra separadament. El títol ja no provoca descartaments automàtics. Les instruccions operatives actuals són al nou document.
 
 Llista dels artistes a qui **ja hem amagat cançons en castellà (o basc)**. Són els que més probablement en tornaran a
 tenir quan el feed musical incorpori vídeos nous: cal repassar-los primer cada vegada que es demani «revisa el
@@ -77,32 +79,14 @@ Itaca Band es retira íntegrament, amb tots dos canals. De La Madam només es bl
 
 ## Cançons noves (des del 2026-10-02)
 
-Les cançons que entren al feed per primera vegada queden a `data/revisio-idiomes.json` fins que un agent les revisa
-amb el vistiplau de l'usuari: vegeu «Revisió d'idioma de les cançons noves» a `CLAUDE.md`
-(`node scripts/aplicar_revisio_idiomes.js --llista` / `--amaga=…`). Aquesta taula continua sent la llista d'artistes on
-és més probable que n'apareguin.
+Les incorporacions segueixen la política del [registre únic](ARTISTES_VIGILATS_IDIOMA.md). Per llistar les cançons visibles dels artistes vigilats, inclosos els seus canals Topic:
 
-## Com es fa servir
+```bash
+node scripts/revisar_castella_vigilats.js
+node scripts/revisar_castella_vigilats.js --artista="Sisa"
+```
 
-1. Mira les cançons visibles dels artistes d'aquesta llista (les més noves primer):
-   ```bash
-   node scripts/revisar_castella_vigilats.js                       # tots els artistes de la taula
-   node scripts/revisar_castella_vigilats.js --since=2026-10-01     # només els vídeos publicats des d'aquesta data
-   node scripts/revisar_castella_vigilats.js --artista="Sisa"       # un sol artista
-   ```
-2. Mira cada títol (i, si dubtes, la descripció: la lletra és el criteri, **no** `defaultAudioLanguage`, que és poc
-   fiable). En aquesta revisió, la petició «només català» exclou també les cançons amb estrofes substancials en altres llengües. Conserva les expressions breus, els instrumentals i l’occità/aranès; deixa els dubtes pendents.
-3. Amaga'ls: afegeix la regla de l'artista a `REGLES` de `scripts/ocultar_titols_castella.js` i executa
-   `node scripts/ocultar_titols_castella.js` (o afegeix l'ID a `data/hidden-videos.json` si és un cas puntual: un
-   Short, un àlbum, etc., que la regla no mira perquè només tracta `song`/`live_song`).
-4. Actualitza aquesta taula (ocultes, motiu, notes), la data de dalt i `docs/PROBLEMES_I_SOLUCIONS.md`.
-5. Comprova amb `node scripts/ocultar_titols_castella.js --dry-run` que no queda res pendent i amb
-   `npx vitest run tests/ocultar-titols-castella.test.js`.
-
-El script llegeix els artistes d'aquesta taula: **la primera columna ha de ser `**Nom exacte al feed**`** (el
-`channelTitle`). Un artista que no és a la taula no es repassa. **Trampa:** les claus de `REGLES` també han de ser el
-`channelTitle` exacte (un canal que canvia de nom, p. ex. «Txarango Oficial» → «Txarango», deixa la regla morta sense cap
-avís).
+No deduïu l’idioma de la lletra només pel títol ni per `defaultAudioLanguage`. Respecteu l’abast demanat per l’usuari. Les exclusions editorials prèvies es conserven; les noves decisions han de tenir evidència. El castellà, basc i altres llengües, incloses estrofes substancials dins una peça mixta, queden exclosos segons el criteri actual; català, occità/aranès i instrumentals es conserven.
 
 ## Cançó d'autor (títols castellans, 2026-10-01)
 
@@ -303,3 +287,4 @@ Regles preventives a `data/music-channel-video-allowlist.json`:
 Noves obres excloses: Dusminguet — Jackeline/Jaqueline (francès), Habibi (àrab), La muralla (castellà), La dansa de l’imbècil (català/castellà), Rock & Roll (castellà/anglès); La Troba Kung-Fú — Oriente Miedo/Miede (castellà/català/anglès), Stop Blood i Shame Blues (català/anglès); Gertrudis — Pantalones i Mundo Uaka (castellà), Amor XXL (català/anglès). S’apliquen també els IDs de les exclusions ja documentades que faltaven al catàleg.
 
 Es conserven els casos dubtosos i set remescles sense verificació de la veu. Gran dubtà, Disco jonki, Go, Calor calor, Rock Rumberu i Tontolava no s’exclouen pel títol. Registre amb IDs, fonts i limitacions: [revisió](revisions/2026-10-12-dusminguet-troba-gertrudis.json).
+

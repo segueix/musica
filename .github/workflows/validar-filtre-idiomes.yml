@@ -1,0 +1,39 @@
+name: Validar filtre d'idiomes
+
+on:
+  push:
+    paths:
+      - 'scripts/lib/revisio_idiomes.js'
+      - 'scripts/lib/politica_idiomes.js'
+      - 'scripts/aplicar_revisio_idiomes.js'
+      - 'scripts/revisar_castella_vigilats.js'
+      - 'scripts/documentar_vigilancia_idiomes.js'
+      - 'data/artistes-vigilats-idioma.json'
+      - 'docs/ARTISTES_VIGILATS_IDIOMA.md'
+      - 'tests/revisio-idiomes.test.js'
+      - 'tests/revisar-castella-vigilats.test.js'
+      - '.github/workflows/validar-filtre-idiomes.yml'
+  pull_request:
+    paths:
+      - 'scripts/lib/*idiomes.js'
+      - 'scripts/*idiomes.js'
+      - 'data/artistes-vigilats-idioma.json'
+      - 'tests/*idiomes.test.js'
+      - '.github/workflows/validar-filtre-idiomes.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  valida:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '20'
+          cache: npm
+      - run: npm ci
+      - run: npx vitest run tests/revisio-idiomes.test.js tests/revisar-castella-vigilats.test.js tests/ocultar-titols-castella.test.js
+      - run: node scripts/documentar_vigilancia_idiomes.js --check
+      - run: node scripts/aplicar_revisio_idiomes.js --actualitza --dry-run

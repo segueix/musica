@@ -1,0 +1,143 @@
+# Artistes vigilats per idioma
+
+Document generat de `data/artistes-vigilats-idioma.json`, l’única font operativa. No editeu la taula a mà.
+
+Actualitzat: 2026-10-12. 109 entrades vigilades i 268 artistes de confiança editorial. Inclou antecedents sense canal actiu, per si es reincorporen.
+
+## Política
+
+- Només les cançons noves dels artistes vigilats entren a `pendents`. Català, occità/aranès i instrumentals es poden conservar; les expressions breus no equivalen a estrofes en altres llengües.
+- La resta del catàleg classificat s’accepta per confiança en l’artista, registrada a `acceptadesPerArtista`. Això no certifica la lletra de cada cançó. Pot passar alguna excepció.
+- Un artista desconegut genera una sola entrada a `artistesPendents`, sense una cua per cadascuna de les seves cançons. Es classifica una vegada afegint-lo a `confianca` o `vigilats` amb els canals i àlies. La classificació no oculta contingut.
+- Els IDs de canal prevalen sobre els noms. Les assignacions oficial/Topic de la base d’artistes comparteixen política. Un ID desconegut no hereta confiança d’un homònim.
+- Els títols només aporten indicis: no generen exclusions automàtiques. Les exclusions editorials ja existents continuen vigents.
+- Les decisions per ID es conserven. Només amb font i `--mateixa-obra` es pot reutilitzar una decisió entre duplicats; remescles, directes, instrumentals i col·laboracions no hereten aquesta decisió pel títol. No s’ha activat reutilització massiva de les revisions antigues sense evidència suficient.
+- `discsVerificats` permet decisions d’un disc contrastat: `artista`, `titol`, `accio` (`conserva`/`amaga`), `font` i `videoIds` de les pistes comprovades. No s’infereix que tot un disc sigui català perquè el títol ho sembli.
+
+## Manteniment
+
+Quan aparegui una excepció, moveu l’artista de `confianca` a `vigilats` i indiqueu-ne el motiu i la font. En aplicar la política, les acceptacions per confiança es tornen a revisar, incloses les conservades fora del feed actiu. Les decisions explícites anteriors es mantenen. L’antic camp `revisades` es preserva com a llegat; no implica que les lletres fossin totes comprovades.
+
+```bash
+node scripts/documentar_vigilancia_idiomes.js
+node scripts/aplicar_revisio_idiomes.js --actualitza --dry-run
+node scripts/aplicar_revisio_idiomes.js --actualitza
+node scripts/aplicar_revisio_idiomes.js --llista
+node scripts/aplicar_revisio_idiomes.js --conserva=ID --amaga=ALTRE_ID --font=URL --dry-run
+```
+
+La revisió només resol els IDs indicats: la resta queda pendent. Afegiu `--mateixa-obra` exclusivament si la font permet aplicar la decisió a la mateixa obra sense canviar-ne llengua o versió. No marqueu una obra reutilitzable si té versions catalana/castellana amb el mateix títol. Cap ordre anterior consulta YouTube.
+
+## Registre de vigilància
+
+| Artista | Àlies | Canals oficials / Topic | Motiu | Fonts |
+| --- | --- | --- | --- | --- |
+| 31 FAM | 31 FAM - Topic | `UC9X30uS2tBqnVwEqpmA32xQ`, `UCEMDA-ZXzEUlJjZ-avy0Pvg` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| 9SON | 9 Son, 9SON Oficial, 9Son - Topic, 9Son | `UCPJBMmuD2mgN4liF9Rc12mw`, `UCETR11eCJC5Z9mitj6MbASw` | Antecedents d’exclusions o dubtes de llengua documentats; no implica que tot el repertori sigui multilingüe. | `docs/ARTISTES_CASTELLA.md` |
+| Acros | ACROS - Topic, ACROS | `UCrmKSeRAoGbFoEiLv36EzWg` | Antecedents d’exclusions o dubtes de llengua documentats; no implica que tot el repertori sigui multilingüe. | `docs/ARTISTES_CASTELLA.md` |
+| Adala |  | `UC-JNcJrzWSw2RtL-3TqYoeQ` | Antecedents d’exclusions o dubtes de llengua documentats; no implica que tot el repertori sigui multilingüe. | `docs/ARTISTES_CASTELLA.md` |
+| Adrià Puntí |  | `UCDiHZrbEw6zc_DaFl5wsmRA` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| Albert Pla i Álvarez | Albert Pla, ALBERT PLA, Albert Pla - Topic | `UCqaEtRht2jakBhGFLzS617w`, `UCd2So3hzPhKQs2Vdoo6FJuA` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| Alfred Garcia | Alfred García, alfredgarcia, Alfred García - Topic | `UCego8MWd7DkJXnGl9WQAbTQ`, `UC0O9bre-V-kOYKAspxwS1uA` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| Anaïs Vila |  | `UCPzAMvgbZZqisrkmVSgqIHg` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| Andreu Rifé i Oro | Andreu Rifé | `UCOuye30wynoiY9VfWM8BFWg` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| Animal | AnimalGrup | `UCg2Go1mJnKlXnMvy1VhlZTw` | Antecedents d’exclusions o dubtes de llengua documentats; no implica que tot el repertori sigui multilingüe. | `docs/ARTISTES_CASTELLA.md` |
+| Anna Andreu | Anna Andreu - Topic | `UCSDuvSwql52flui2567reQw`, `UCBwmzKj56CGeAPmEFgqz0dg` | Antecedents d’exclusions o dubtes de llengua documentats; no implica que tot el repertori sigui multilingüe. | `docs/ARTISTES_CASTELLA.md` |
+| Atupa |  | Sense canal assignat | Dubte anterior pendent de comprovar; vigilància provisional, sense certificar una llengua pel títol. | `data/revisio-idiomes.json` |
+| Au Rora | Au Rora - Topic | `UCDdlTgzfniVZApbfmtGpUPg`, `UCOEzuNu9yvO0AFTnSVKk4LQ` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| Auxili | Auxili - Topic, AUXILI | `UCflfVr855Oze52vJjp_gmfg`, `UCF61X-XZzSKlfnn3JIMIm9g` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| Ayryn | AYRYN, Ayryn - Topic | `UCRgcGfe-4b4n3quUIKZa_AA`, `UCF0gz817gR4oCPDwd6bqRuw` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| Baya Baye | BAYA BAYE, Baya Baye - Topic | `UC2rhPnAmAa_Sa9XlK0whmDA`, `UCfZSav-wsnpACenDMoHE6BA` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| Boom Boom Fighters | Boom Boom Fighters & Cookah P, Boom Boom Fighters - Topic | `UCMIJ1Y_N61x72rTIAeyzRKA` | Antecedents d’exclusions o dubtes de llengua documentats; no implica que tot el repertori sigui multilingüe. | `docs/ARTISTES_CASTELLA.md` |
+| Brams | Brams - Topic | `UCuk-lO3FpbukFk5lcPx29_g` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| Buhos | Buhos - Topic | `UCyR3Vf_s-Mo30j6oqN4Aq_w`, `UClt-kDY-yDORa6XkI5leFjg` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| Cactus Troop | Cactus, CACTUS | `UCcerGnBUfuDhx0QwW2Ua9tA` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| Ceaxe | Ceaxe - Topic | `UCBKjT0edCSrQhqufwWaX5Zw`, `UCu05DiznV7Z3jDMGr6w5WTQ` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| Club Social Carme | club_social_carme | `UCdezTX23syEeAJJAb2oOkKA` | Canal de diversos intèrprets: no es pot estendre la confiança d’un grup a tots els participants. | `data/artistes-musica.json` |
+| Crim | Crim - Topic | `UCJhcsyqAVHFHmghWFkmIx4w`, `UCZ7V4w0VrZPSM21CiYNuk7g` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| Cristina Monllau |  | `UCw1jsv2eynibpElkwzdJa2g` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| Dàmaris Gelabert | Dàmaris Gelabert - Topic | `UCh4gZwRHxIetWXbJnp0XefQ`, `UCIumPBt0bPxqjeDXi_dZtgg` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| Daveu | DAVEU)), DAVEU - Topic, DAVEU | `UCFRzEt990b8xiMQ9soWNegw`, `UCQgDn86_83DIsAggpRadifg` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| Dr. Calypso |  | `UCX95O_Gs_2ob3p86_MgldhA` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| Dusminguet | Dusminguet - Topic | `UCOXyxBFPQ97GO6PQqiJSvkw` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| Ebri Knight | Ebri Knight - Topic | `UC3pZduX_rJBAuisKRJYKatw`, `UC1n7SLx5qYPP1HzKh-rvyng` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| El Petit de Cal Eril | el petit de cal eril | `UCQc-T583XUy2JAfeun2_0mg` | Cançons en altres llengües identificades al contrast de fonts; exclusions proposades encara no aplicades. | `docs/revisions/2026-10-12-revisio-idiomes-massiva.json` |
+| El Pony Pisador | El Pony Pisador - Topic | `UCUSjRkF72RR1E8Rl4SWtVsQ`, `UCBMrWboBJ7RC04ul-MNY0xA` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| Elo | elo | `UCBUcv--dB2dFkl6qhRO3JKA` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| Enric Hernàez |  | `UCpdGiiitzh2ypWsOaSyvL0A` | Dubte anterior pendent de comprovar; vigilància provisional, sense certificar una llengua pel títol. | `data/revisio-idiomes.json` |
+| Flashy Ice Cream | Flashy Ice Cream - Topic | `UCP-htfoFgQy1RLlGNntsQXw`, `UCnRFXP9nR0fh9BeIH7pZsZQ` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| Frans Cuspinera |  | `UCOGyDtQsutPHkVRfp0mJ_GQ` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| Gertrudis | Gertrudis - Topic | `UChYQSBa6bIG2yArpLA4ykvA`, `UCvqTGNjxbWceoaz4pkBSEzg` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| Gessamí Boada | Gessamí Boada - Topic | `UCPsEb7F9DceUz4TsdfyuiBw`, `UCRa2GTtcn1mkkSfPYQOGPhw` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| Gossos | Gossos - Topic, GOSSOS | `UCW4XOsm7cOFbfoHPa9dFlVA`, `UCDAuX43C1s8r_fH6-tU3SHQ` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| Guillermina Motta | Guillermina Motta - Topic | `UCyhZSV8Dh0pQi09p1vECRVA` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| Itaca Band |  | Sense canal assignat | Antecedents d’exclusions o dubtes de llengua documentats; no implica que tot el repertori sigui multilingüe. | `docs/ARTISTES_CASTELLA.md` |
+| Jaume Sisa i Mestres | Sisa | `UCr9ukjgwk2JtABN23sPiPGQ` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| Joan Colomo | Joan Colomo - Topic | `UCOROc49SeQwE15TiuBflV0g`, `UCsNO9JMYvNgA6hEWFuhBk_w` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| Joan Dausà | Joan Dausà - Topic | `UCxV6tncwBxl3K7SsUn7YyjA`, `UC71mv_2wTJu623lsX2ow5nA` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| Joan Manuel Serrat | Joan Manuel Serrat i Teresa | `UC9twmdozj_iXRhX_FRZMwzw` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| Joan Miquel Oliver | Joan Miquel Oliver - Topic | `UCEV_8wEQansDoZnwNW1Z1Vw` | Antecedents d’exclusions o dubtes de llengua documentats; no implica que tot el repertori sigui multilingüe. | `docs/ARTISTES_CASTELLA.md` |
+| Jofre Bardagí Grima | Jofre Bardagí, Jofre Bardagí - Topic | `UCr0fPzOAhNwQbzy774xccOw`, `UC0BpfOdqXtofFVBklStzYMA` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| Judit Neddermann |  | `UC4EQHZ_4xtQoX1fBGtTQPGg` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| Júlia Colom | Júlia Colom - Topic | `UCx4dYUR3m6jehjW7mYdSX7g`, `UC5ZFlRWjcVMSl7gpMFgCuwQ` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| Júlia Cruz | Júlia Cruz , Júlia Cruz - Topic | `UCAwpv0YEBlWCi9OeqTCw4FA`, `UCNKGOTgFuVUOWK2djkKi3DQ` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| Julieta | Julieta - Topic | `UCHx3kmBag2FCtnNFdd8qZ8A`, `UCK4JIjpr1EofBTYKpm-H5QQ` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| KOP | KOP - Topic | `UCvSMpTrqlrZxYbhZoTbsQoA`, `UCC66jsgEM01kvhvwJ59xttA` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| La Banda del Yuyu | Banda del Yuyu, La Banda del Yuyu - Topic | `UCQOqsrBqC_4Ibu_MJrBpK_g`, `UCSJ3UWpeU4pVvvuK0flmaeg` | Antecedents d’exclusions o dubtes de llengua documentats; no implica que tot el repertori sigui multilingüe. | `docs/ARTISTES_CASTELLA.md` |
+| La Madam | La Madam - Topic, Madam(s) - Topic, Madam(s) | `UCCjTaOHQqmy0VD2vkZVxxoA`, `UCcCWhlBeuoXoqEXUcCZaTxQ` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| La Pegatina | La Pegatina - Topic | `UCr8kBnuIa6LPmhZSxbwVs7w`, `UCMepRsHQTgYZd3u__Xbj_6A` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| La Sra. Tomasa |  | Sense canal assignat | Antecedents d’exclusions o dubtes de llengua documentats; no implica que tot el repertori sigui multilingüe. | `docs/ARTISTES_CASTELLA.md` |
+| La Tour de Carol | La Tour De Carol - Topic, La Tour De Carol | `UC5CGdoxqbma-pqkAHPjkq9w`, `UC8DHU0fP67z2wgVm7Lkvrzw` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| La Trinca | La Trinca - Topic | `UCKpscwdWlVaMqcA81vLI7OA` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| La Troba Kung-Fú | La Troba Kung-Fú - Topic | `UC63BTrp525uyzMd-YTMAt_w` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| Lídia Pujol |  | `UCgAWzLHswq5VtYxCEMWGAng` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| Lluís Llach i Grande | Lluís Llach | `UCRorZVV2oAZON-OvXaQQD2g`, `UCqkZBXlCnTsfff_xxEyaTMA` | Antecedents d’exclusions o dubtes de llengua documentats; no implica que tot el repertori sigui multilingüe. | `docs/ARTISTES_CASTELLA.md` |
+| Malson Atmosfèric | Malson Atmosferic, Malson Atmosfèric - Topic | `UCVeo5x9sEwL4yxoo-004zqw`, `UCyOpYZK-23D5O5ih1d5I4yQ` | Antecedents d’exclusions o dubtes de llengua documentats; no implica que tot el repertori sigui multilingüe. | `docs/ARTISTES_CASTELLA.md` |
+| Manu Guix | Manu Guix Oficial, Manu Guix - Topic | `UC__Mo7bZ2F69jnSKPmpvJfA`, `UCktEHtqRuLsGxFCQAG8dRtQ` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| Marina Rossell | Marina Rossell - Topic | `UCtFrz4JJnpJq7dhxLNRwkdA`, `UC5sHcbjiKxYUZ3G_0BQNBYQ` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| Mariona Escoda i Sendra | Mariona Escoda, Mariona Escoda - Topic | `UC_97DSVzzRp28ew8nKB255g`, `UC82RhPbZ6uly1CbqivbZqxQ` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| MARLENA |  | Sense canal assignat | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js` |
+| Mazoni | Mazoni - Topic | `UCwg6xDQi5POlksfrsjjwFyA` | Antecedents d’exclusions o dubtes de llengua documentats; no implica que tot el repertori sigui multilingüe. | `docs/ARTISTES_CASTELLA.md` |
+| Miki Núñez | Miki Nuñez, Miki Núñez - Topic | `UCSw_OmWJnY0Dz311MEzdHFA`, `UCJ_erOhxsuzi3KYLngXMeJw` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| miquel |  | `UC7Hb62h0GUUgaPe0v0kdY3A` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| Mishima | Mishima - Topic, MISHIMA | `UCG2FXKF44MdeDbLb66yb-rQ`, `UC_z4NPeGNySemAwaAihgbaQ` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| Montse Castellà | Montse Castellà - Cantautora, Montse Castellà - Topic | `UCCQqI6aPYDi_aGJsfDr_gqA`, `UCQXQh0zJqh0smX0vvOLNxag` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| Mushkaa | Mushkaa - Topic | `UC9Jl8Rcjs5ZUi8Wf1JnFzlw`, `UCQAWPZGGc_4JqXq53ATaSBQ` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| Muyayo Rif |  | Sense canal assignat | Antecedents d’exclusions o dubtes de llengua documentats; no implica que tot el repertori sigui multilingüe. | `docs/ARTISTES_CASTELLA.md` |
+| Ocults | Ocults - Topic | `UCgoAYxK_KHyGjHQ50pgUq0Q` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| Opció K-95 | Opció K-95 - Topic, Opcio K-95, Opcio K-95 - Topic | `UCCBTyMmUoeGrciYMzrwWiUw` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| Pawn Gang | P.A.W.N. Gang, PAWNGANG HUSTLAS, P.A.W.N. Gang - Topic | `UCK3HgaeRN0-5mJkqvyB1hBA`, `UC7b5PnElhJTDn_kM4ipKO7g` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| Pere Tàpias | Pere Tapias | `UCYECw-23usgJzg1MnHRFFQQ` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| Pupil·les | Pupilles, PUPIL·LES, Pupil·les - Topic | `UCIX5CqhHETyi1Xx4JzcGjZg`, `UCzxleD2G_7JNCMufgoF3KLw` | Antecedents d’exclusions o dubtes de llengua documentats; no implica que tot el repertori sigui multilingüe. | `docs/ARTISTES_CASTELLA.md` |
+| Quico Pi de la Serra | Quico Pi de la Serra - Topic, Pi de la Serra | `UCerj0bWFVJdAmPWVti9Uhlw`, `UCQkOO8WejzCPcbzL7sc6iGg` | Antecedents d’exclusions o dubtes de llengua documentats; no implica que tot el repertori sigui multilingüe. | `docs/ARTISTES_CASTELLA.md` |
+| Rapsodes | Rapsodes Oficial, Rapsodes - Topic | `UCqlbDl192qJeA3gpIFkVhVA`, `UCuvGkVD3aN6ncVC6-EN8Wfw` | Antecedents d’exclusions o dubtes de llengua documentats; no implica que tot el repertori sigui multilingüe. | `docs/ARTISTES_CASTELLA.md` |
+| Raydibaum | Raydibaum - Topic | `UCCKRS2KD1i75evCURPuHQXA` | Cançons en altres llengües identificades al contrast de fonts; exclusions proposades encara no aplicades. | `docs/revisions/2026-10-12-revisio-idiomes-massiva.json` |
+| Roba Estesa | Roba Estesa - Topic | `UCfOJHONAYVLmmA5lwE117vw`, `UCl4HM-ELckbc7ToCDTyAvVQ` | Antecedents d’exclusions o dubtes de llengua documentats; no implica que tot el repertori sigui multilingüe. | `docs/ARTISTES_CASTELLA.md` |
+| Roger Mas i Solé | Roger Mas, Roger Mas - Topic | `UCTnoklTTyDXYYtT5_nmxUVQ`, `UC7kOHFUIoTiH9RrPznoJDEQ` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| Sabor de Gràcia | Sabor de Gracia, Sabor de Gracia - Topic, SABOR DE GRACIA | `UClTLWZcaxCMgkk58dQna18A` | Antecedents d’exclusions o dubtes de llengua documentats; no implica que tot el repertori sigui multilingüe. | `docs/ARTISTES_CASTELLA.md` |
+| Sandra Bautista | Sandra Bautista - Topic | `UC_Nx-tsTDRubDg1dbd5jwAw`, `UC3AV402A_vdbG18-cpYsX-Q` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| Sandra Monfort | Sandra Monfort - Topic | `UCIO1gtVvX9gixocD0TvfSYw`, `UC61e5MNaLbrBMiSc5XeQp1Q` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| Sangtraït | Sangtraït - Topic | `UC6a_paoSt1YYKOFZwPGdEYw` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| Sara Roy | Sara Roy - Topic | `UC4tHQwYKnZ0frCoqwMmgMkQ`, `UC-4TrBQbbqx6ZjJDzLnjFJQ` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| Scorpio |  | `UCqe8mqoQPb27d2qD-ggOY0Q` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| Sexenni |  | `UCGVJBGRTkU_qagiq1mkc2pg` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| Siderland | Siderland - Topic | `UC9NDkhmm_3ZBjxnIh2d2paA`, `UC9MmM6M38qypkn7Z3zNXhUQ` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| Sílvia Comes |  | `UCOQizv5kl-XBONzbo3RKHdw` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| Sílvia Pérez Cruz | silviaperezcruz, Silvia Pérez Cruz - Topic | `UCXa6Mb5QgzYjRV_D1VlYoKQ`, `UCXoDEBc8CPWptFtzb_mmLiQ` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| Sopa de Cabra | Sopa de Cabra - Topic | `UCleNuGpCliL0P7B2eAI4U_Q`, `UCElrxQjQH5yoQAZU8fNtgpw` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| Stay Homas | STAY HOMAS, Stay Homas - Topic | `UC0PtwzSikWRnftscW9uI_Ug`, `UCerRtDlJWXCmBMgGYjq6gYQ` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| Still Ill | Still ill, Still Ill - Topic | `UCIBWCquq4qqhRWKD6nOdR4w` | Repertori multilingüe i homònims detectats al catàleg; cal verificar també la identitat. | `docs/ARTISTES_CASTELLA.md`, `docs/revisions/2026-10-12-revisio-idiomes-massiva.json` |
+| Suu | SUU | `UClVTg1yrfwH3ku46CPlO7xg` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| Tesa | Tesa - Topic | `UCx82VgJTTf_cKHahlakKfFg` | Repertori multilingüe i homònims detectats al catàleg; cal verificar també la identitat. | `docs/ARTISTES_CASTELLA.md`, `docs/revisions/2026-10-12-revisio-idiomes-massiva.json` |
+| The Demencials | The Demencials - Topic | `UCkbE2-0JpyMzPFxZJ9Ev8aA`, `UChFT46QMLdzzwd04aCTeyqg` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| The Tyets | The Tyets - Topic | `UC--8TyZ2PM0NFHWXCzQrUqw`, `UC0iUpe1JY-IBHXDSXIxTcCg` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| Tomeu Penya | Tomeu Penya - Topic | `UCsOxXt5l7XmAc6AvMQDRV4A` | Dubte anterior pendent de comprovar; vigilància provisional, sense certificar una llengua pel títol. | `data/revisio-idiomes.json` |
+| Toti Soler | Toti Soler - Topic | `UC8RrEDfmV-rQsQpURsY6krA`, `UCGCmSXoJ_f046wxT7OHUDMA` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| Triquell | Triquell - Topic | `UCIE6UEv7aCNJq-Jw9F0mJ7A`, `UCLFu97uScrsLlOlKd9ff5aw` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| Txarango | Txarango - Topic | `UCmtykAu3QbU-yVO6Jirm1_Q`, `UCIDxAwPe8cNl_-NawMu4pDQ` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| Umpah-Pah | Umpah Pah - Topic, Umpah Pah | `UCeza8RPly8qpRBT2VyPBhRQ` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| Vademecum FAM | Vademecum, Nu Drama | `UC_X_KBioMYCrmZyI7hbL8Pw` | Cançons en altres llengües identificades al contrast de fonts; exclusions proposades encara no aplicades. | `docs/revisions/2026-10-12-revisio-idiomes-massiva.json` |
+| Valtònyc | Valtonyc, Josep Valtonyc, Valtonyc - Topic | `UC3fuMj55qp3YmD2B2mPBgOw`, `UCsl_oTZ8vww29O9G0NAX-gA` | Antecedents d’exclusions o dubtes de llengua documentats; no implica que tot el repertori sigui multilingüe. | `docs/ARTISTES_CASTELLA.md` |
+| Ven'nus | VEN'NUS, Ven'nus - Topic | `UCvh8nurHojZHGiQy532Bn2w`, `UCouT_0PiTMYVIG5wcTYfpcg` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| Xavier de Bétera | Xavier de Bétera - Topic | `UC7jgH-7_BlpoPdV5XmriR1w`, `UCfdDfonaXBiLPTxprpCigGQ` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| Xeic! | Xeic, XEIC, XEIC! - Topic, XEIC! | `UC4ZpvBvQ4jzY_Ppwho9rSiw`, `UCNS4k4s7_GRMNpKBlRfpfTQ` | Antecedents d’exclusions o dubtes de llengua documentats; no implica que tot el repertori sigui multilingüe. | `docs/ARTISTES_CASTELLA.md` |

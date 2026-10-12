@@ -1,0 +1,4140 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-10-12",
+  "criteri": "Només els artistes vigilats passen per revisió de cançons. Confiança editorial del catàleg existent, no verificació individual de lletres. Les altes noves es classifiquen una vegada.",
+  "vigilats": [
+    {
+      "artista": "31 FAM",
+      "aliases": [
+        "31 FAM - Topic"
+      ],
+      "canals": [
+        "UC9X30uS2tBqnVwEqpmA32xQ",
+        "UCEMDA-ZXzEUlJjZ-avy0Pvg"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "9SON",
+      "aliases": [
+        "9 Son",
+        "9SON Oficial",
+        "9Son - Topic",
+        "9Son"
+      ],
+      "canals": [
+        "UCPJBMmuD2mgN4liF9Rc12mw",
+        "UCETR11eCJC5Z9mitj6MbASw"
+      ],
+      "motiu": "Antecedents d’exclusions o dubtes de llengua documentats; no implica que tot el repertori sigui multilingüe.",
+      "fonts": [
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Acros",
+      "aliases": [
+        "ACROS - Topic",
+        "ACROS"
+      ],
+      "canals": [
+        "UCrmKSeRAoGbFoEiLv36EzWg"
+      ],
+      "motiu": "Antecedents d’exclusions o dubtes de llengua documentats; no implica que tot el repertori sigui multilingüe.",
+      "fonts": [
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Adala",
+      "aliases": [],
+      "canals": [
+        "UC-JNcJrzWSw2RtL-3TqYoeQ"
+      ],
+      "motiu": "Antecedents d’exclusions o dubtes de llengua documentats; no implica que tot el repertori sigui multilingüe.",
+      "fonts": [
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Adrià Puntí",
+      "aliases": [],
+      "canals": [
+        "UCDiHZrbEw6zc_DaFl5wsmRA"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Albert Pla i Álvarez",
+      "aliases": [
+        "Albert Pla",
+        "ALBERT PLA",
+        "Albert Pla - Topic"
+      ],
+      "canals": [
+        "UCqaEtRht2jakBhGFLzS617w",
+        "UCd2So3hzPhKQs2Vdoo6FJuA"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Alfred Garcia",
+      "aliases": [
+        "Alfred García",
+        "alfredgarcia",
+        "Alfred García - Topic"
+      ],
+      "canals": [
+        "UCego8MWd7DkJXnGl9WQAbTQ",
+        "UC0O9bre-V-kOYKAspxwS1uA"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Anaïs Vila",
+      "aliases": [],
+      "canals": [
+        "UCPzAMvgbZZqisrkmVSgqIHg"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Andreu Rifé i Oro",
+      "aliases": [
+        "Andreu Rifé"
+      ],
+      "canals": [
+        "UCOuye30wynoiY9VfWM8BFWg"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Animal",
+      "aliases": [
+        "AnimalGrup"
+      ],
+      "canals": [
+        "UCg2Go1mJnKlXnMvy1VhlZTw"
+      ],
+      "motiu": "Antecedents d’exclusions o dubtes de llengua documentats; no implica que tot el repertori sigui multilingüe.",
+      "fonts": [
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Anna Andreu",
+      "aliases": [
+        "Anna Andreu - Topic"
+      ],
+      "canals": [
+        "UCSDuvSwql52flui2567reQw",
+        "UCBwmzKj56CGeAPmEFgqz0dg"
+      ],
+      "motiu": "Antecedents d’exclusions o dubtes de llengua documentats; no implica que tot el repertori sigui multilingüe.",
+      "fonts": [
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Atupa",
+      "aliases": [],
+      "canals": [],
+      "motiu": "Dubte anterior pendent de comprovar; vigilància provisional, sense certificar una llengua pel títol.",
+      "fonts": [
+        "data/revisio-idiomes.json"
+      ]
+    },
+    {
+      "artista": "Au Rora",
+      "aliases": [
+        "Au Rora - Topic"
+      ],
+      "canals": [
+        "UCDdlTgzfniVZApbfmtGpUPg",
+        "UCOEzuNu9yvO0AFTnSVKk4LQ"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Auxili",
+      "aliases": [
+        "Auxili - Topic",
+        "AUXILI"
+      ],
+      "canals": [
+        "UCflfVr855Oze52vJjp_gmfg",
+        "UCF61X-XZzSKlfnn3JIMIm9g"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Ayryn",
+      "aliases": [
+        "AYRYN",
+        "Ayryn - Topic"
+      ],
+      "canals": [
+        "UCRgcGfe-4b4n3quUIKZa_AA",
+        "UCF0gz817gR4oCPDwd6bqRuw"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Baya Baye",
+      "aliases": [
+        "BAYA BAYE",
+        "Baya Baye - Topic"
+      ],
+      "canals": [
+        "UC2rhPnAmAa_Sa9XlK0whmDA",
+        "UCfZSav-wsnpACenDMoHE6BA"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Boom Boom Fighters",
+      "aliases": [
+        "Boom Boom Fighters & Cookah P",
+        "Boom Boom Fighters - Topic"
+      ],
+      "canals": [
+        "UCMIJ1Y_N61x72rTIAeyzRKA"
+      ],
+      "motiu": "Antecedents d’exclusions o dubtes de llengua documentats; no implica que tot el repertori sigui multilingüe.",
+      "fonts": [
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Brams",
+      "aliases": [
+        "Brams - Topic"
+      ],
+      "canals": [
+        "UCuk-lO3FpbukFk5lcPx29_g"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Buhos",
+      "aliases": [
+        "Buhos - Topic"
+      ],
+      "canals": [
+        "UCyR3Vf_s-Mo30j6oqN4Aq_w",
+        "UClt-kDY-yDORa6XkI5leFjg"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Cactus Troop",
+      "aliases": [
+        "Cactus",
+        "CACTUS"
+      ],
+      "canals": [
+        "UCcerGnBUfuDhx0QwW2Ua9tA"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Ceaxe",
+      "aliases": [
+        "Ceaxe - Topic"
+      ],
+      "canals": [
+        "UCBKjT0edCSrQhqufwWaX5Zw",
+        "UCu05DiznV7Z3jDMGr6w5WTQ"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Club Social Carme",
+      "aliases": [
+        "club_social_carme"
+      ],
+      "canals": [
+        "UCdezTX23syEeAJJAb2oOkKA"
+      ],
+      "motiu": "Canal de diversos intèrprets: no es pot estendre la confiança d’un grup a tots els participants.",
+      "fonts": [
+        "data/artistes-musica.json"
+      ],
+      "canalCompartit": true
+    },
+    {
+      "artista": "Crim",
+      "aliases": [
+        "Crim - Topic"
+      ],
+      "canals": [
+        "UCJhcsyqAVHFHmghWFkmIx4w",
+        "UCZ7V4w0VrZPSM21CiYNuk7g"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Cristina Monllau",
+      "aliases": [],
+      "canals": [
+        "UCw1jsv2eynibpElkwzdJa2g"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Dàmaris Gelabert",
+      "aliases": [
+        "Dàmaris Gelabert - Topic"
+      ],
+      "canals": [
+        "UCh4gZwRHxIetWXbJnp0XefQ",
+        "UCIumPBt0bPxqjeDXi_dZtgg"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Daveu",
+      "aliases": [
+        "DAVEU))",
+        "DAVEU - Topic",
+        "DAVEU"
+      ],
+      "canals": [
+        "UCFRzEt990b8xiMQ9soWNegw",
+        "UCQgDn86_83DIsAggpRadifg"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Dr. Calypso",
+      "aliases": [],
+      "canals": [
+        "UCX95O_Gs_2ob3p86_MgldhA"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Dusminguet",
+      "aliases": [
+        "Dusminguet - Topic"
+      ],
+      "canals": [
+        "UCOXyxBFPQ97GO6PQqiJSvkw"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Ebri Knight",
+      "aliases": [
+        "Ebri Knight - Topic"
+      ],
+      "canals": [
+        "UC3pZduX_rJBAuisKRJYKatw",
+        "UC1n7SLx5qYPP1HzKh-rvyng"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "El Petit de Cal Eril",
+      "aliases": [
+        "el petit de cal eril"
+      ],
+      "canals": [
+        "UCQc-T583XUy2JAfeun2_0mg"
+      ],
+      "motiu": "Cançons en altres llengües identificades al contrast de fonts; exclusions proposades encara no aplicades.",
+      "fonts": [
+        "docs/revisions/2026-10-12-revisio-idiomes-massiva.json"
+      ]
+    },
+    {
+      "artista": "El Pony Pisador",
+      "aliases": [
+        "El Pony Pisador - Topic"
+      ],
+      "canals": [
+        "UCUSjRkF72RR1E8Rl4SWtVsQ",
+        "UCBMrWboBJ7RC04ul-MNY0xA"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Elo",
+      "aliases": [
+        "elo"
+      ],
+      "canals": [
+        "UCBUcv--dB2dFkl6qhRO3JKA"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Enric Hernàez",
+      "aliases": [],
+      "canals": [
+        "UCpdGiiitzh2ypWsOaSyvL0A"
+      ],
+      "motiu": "Dubte anterior pendent de comprovar; vigilància provisional, sense certificar una llengua pel títol.",
+      "fonts": [
+        "data/revisio-idiomes.json"
+      ]
+    },
+    {
+      "artista": "Flashy Ice Cream",
+      "aliases": [
+        "Flashy Ice Cream - Topic"
+      ],
+      "canals": [
+        "UCP-htfoFgQy1RLlGNntsQXw",
+        "UCnRFXP9nR0fh9BeIH7pZsZQ"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Frans Cuspinera",
+      "aliases": [],
+      "canals": [
+        "UCOGyDtQsutPHkVRfp0mJ_GQ"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Gertrudis",
+      "aliases": [
+        "Gertrudis - Topic"
+      ],
+      "canals": [
+        "UChYQSBa6bIG2yArpLA4ykvA",
+        "UCvqTGNjxbWceoaz4pkBSEzg"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Gessamí Boada",
+      "aliases": [
+        "Gessamí Boada - Topic"
+      ],
+      "canals": [
+        "UCPsEb7F9DceUz4TsdfyuiBw",
+        "UCRa2GTtcn1mkkSfPYQOGPhw"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Gossos",
+      "aliases": [
+        "Gossos - Topic",
+        "GOSSOS"
+      ],
+      "canals": [
+        "UCW4XOsm7cOFbfoHPa9dFlVA",
+        "UCDAuX43C1s8r_fH6-tU3SHQ"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Guillermina Motta",
+      "aliases": [
+        "Guillermina Motta - Topic"
+      ],
+      "canals": [
+        "UCyhZSV8Dh0pQi09p1vECRVA"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Itaca Band",
+      "aliases": [],
+      "canals": [],
+      "motiu": "Antecedents d’exclusions o dubtes de llengua documentats; no implica que tot el repertori sigui multilingüe.",
+      "fonts": [
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Jaume Sisa i Mestres",
+      "aliases": [
+        "Sisa"
+      ],
+      "canals": [
+        "UCr9ukjgwk2JtABN23sPiPGQ"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Joan Colomo",
+      "aliases": [
+        "Joan Colomo - Topic"
+      ],
+      "canals": [
+        "UCOROc49SeQwE15TiuBflV0g",
+        "UCsNO9JMYvNgA6hEWFuhBk_w"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Joan Dausà",
+      "aliases": [
+        "Joan Dausà - Topic"
+      ],
+      "canals": [
+        "UCxV6tncwBxl3K7SsUn7YyjA",
+        "UC71mv_2wTJu623lsX2ow5nA"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Joan Manuel Serrat",
+      "aliases": [
+        "Joan Manuel Serrat i Teresa"
+      ],
+      "canals": [
+        "UC9twmdozj_iXRhX_FRZMwzw"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Joan Miquel Oliver",
+      "aliases": [
+        "Joan Miquel Oliver - Topic"
+      ],
+      "canals": [
+        "UCEV_8wEQansDoZnwNW1Z1Vw"
+      ],
+      "motiu": "Antecedents d’exclusions o dubtes de llengua documentats; no implica que tot el repertori sigui multilingüe.",
+      "fonts": [
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Jofre Bardagí Grima",
+      "aliases": [
+        "Jofre Bardagí",
+        "Jofre Bardagí - Topic"
+      ],
+      "canals": [
+        "UCr0fPzOAhNwQbzy774xccOw",
+        "UC0BpfOdqXtofFVBklStzYMA"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Judit Neddermann",
+      "aliases": [],
+      "canals": [
+        "UC4EQHZ_4xtQoX1fBGtTQPGg"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Júlia Colom",
+      "aliases": [
+        "Júlia Colom - Topic"
+      ],
+      "canals": [
+        "UCx4dYUR3m6jehjW7mYdSX7g",
+        "UC5ZFlRWjcVMSl7gpMFgCuwQ"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Júlia Cruz",
+      "aliases": [
+        "Júlia Cruz ",
+        "Júlia Cruz - Topic"
+      ],
+      "canals": [
+        "UCAwpv0YEBlWCi9OeqTCw4FA",
+        "UCNKGOTgFuVUOWK2djkKi3DQ"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Julieta",
+      "aliases": [
+        "Julieta - Topic"
+      ],
+      "canals": [
+        "UCHx3kmBag2FCtnNFdd8qZ8A",
+        "UCK4JIjpr1EofBTYKpm-H5QQ"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "KOP",
+      "aliases": [
+        "KOP - Topic"
+      ],
+      "canals": [
+        "UCvSMpTrqlrZxYbhZoTbsQoA",
+        "UCC66jsgEM01kvhvwJ59xttA"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "La Banda del Yuyu",
+      "aliases": [
+        "Banda del Yuyu",
+        "La Banda del Yuyu - Topic"
+      ],
+      "canals": [
+        "UCQOqsrBqC_4Ibu_MJrBpK_g",
+        "UCSJ3UWpeU4pVvvuK0flmaeg"
+      ],
+      "motiu": "Antecedents d’exclusions o dubtes de llengua documentats; no implica que tot el repertori sigui multilingüe.",
+      "fonts": [
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "La Madam",
+      "aliases": [
+        "La Madam - Topic",
+        "Madam(s) - Topic",
+        "Madam(s)"
+      ],
+      "canals": [
+        "UCCjTaOHQqmy0VD2vkZVxxoA",
+        "UCcCWhlBeuoXoqEXUcCZaTxQ"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "La Pegatina",
+      "aliases": [
+        "La Pegatina - Topic"
+      ],
+      "canals": [
+        "UCr8kBnuIa6LPmhZSxbwVs7w",
+        "UCMepRsHQTgYZd3u__Xbj_6A"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "La Sra. Tomasa",
+      "aliases": [],
+      "canals": [],
+      "motiu": "Antecedents d’exclusions o dubtes de llengua documentats; no implica que tot el repertori sigui multilingüe.",
+      "fonts": [
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "La Tour de Carol",
+      "aliases": [
+        "La Tour De Carol - Topic",
+        "La Tour De Carol"
+      ],
+      "canals": [
+        "UC5CGdoxqbma-pqkAHPjkq9w",
+        "UC8DHU0fP67z2wgVm7Lkvrzw"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "La Trinca",
+      "aliases": [
+        "La Trinca - Topic"
+      ],
+      "canals": [
+        "UCKpscwdWlVaMqcA81vLI7OA"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "La Troba Kung-Fú",
+      "aliases": [
+        "La Troba Kung-Fú - Topic"
+      ],
+      "canals": [
+        "UC63BTrp525uyzMd-YTMAt_w"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Lídia Pujol",
+      "aliases": [],
+      "canals": [
+        "UCgAWzLHswq5VtYxCEMWGAng"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Lluís Llach i Grande",
+      "aliases": [
+        "Lluís Llach"
+      ],
+      "canals": [
+        "UCRorZVV2oAZON-OvXaQQD2g",
+        "UCqkZBXlCnTsfff_xxEyaTMA"
+      ],
+      "motiu": "Antecedents d’exclusions o dubtes de llengua documentats; no implica que tot el repertori sigui multilingüe.",
+      "fonts": [
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Malson Atmosfèric",
+      "aliases": [
+        "Malson Atmosferic",
+        "Malson Atmosfèric - Topic"
+      ],
+      "canals": [
+        "UCVeo5x9sEwL4yxoo-004zqw",
+        "UCyOpYZK-23D5O5ih1d5I4yQ"
+      ],
+      "motiu": "Antecedents d’exclusions o dubtes de llengua documentats; no implica que tot el repertori sigui multilingüe.",
+      "fonts": [
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Manu Guix",
+      "aliases": [
+        "Manu Guix Oficial",
+        "Manu Guix - Topic"
+      ],
+      "canals": [
+        "UC__Mo7bZ2F69jnSKPmpvJfA",
+        "UCktEHtqRuLsGxFCQAG8dRtQ"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Marina Rossell",
+      "aliases": [
+        "Marina Rossell - Topic"
+      ],
+      "canals": [
+        "UCtFrz4JJnpJq7dhxLNRwkdA",
+        "UC5sHcbjiKxYUZ3G_0BQNBYQ"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Mariona Escoda i Sendra",
+      "aliases": [
+        "Mariona Escoda",
+        "Mariona Escoda - Topic"
+      ],
+      "canals": [
+        "UC_97DSVzzRp28ew8nKB255g",
+        "UC82RhPbZ6uly1CbqivbZqxQ"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "MARLENA",
+      "aliases": [],
+      "canals": [],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js"
+      ]
+    },
+    {
+      "artista": "Mazoni",
+      "aliases": [
+        "Mazoni - Topic"
+      ],
+      "canals": [
+        "UCwg6xDQi5POlksfrsjjwFyA"
+      ],
+      "motiu": "Antecedents d’exclusions o dubtes de llengua documentats; no implica que tot el repertori sigui multilingüe.",
+      "fonts": [
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Miki Núñez",
+      "aliases": [
+        "Miki Nuñez",
+        "Miki Núñez - Topic"
+      ],
+      "canals": [
+        "UCSw_OmWJnY0Dz311MEzdHFA",
+        "UCJ_erOhxsuzi3KYLngXMeJw"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "miquel",
+      "aliases": [],
+      "canals": [
+        "UC7Hb62h0GUUgaPe0v0kdY3A"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Mishima",
+      "aliases": [
+        "Mishima - Topic",
+        "MISHIMA"
+      ],
+      "canals": [
+        "UCG2FXKF44MdeDbLb66yb-rQ",
+        "UC_z4NPeGNySemAwaAihgbaQ"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Montse Castellà",
+      "aliases": [
+        "Montse Castellà - Cantautora",
+        "Montse Castellà - Topic"
+      ],
+      "canals": [
+        "UCCQqI6aPYDi_aGJsfDr_gqA",
+        "UCQXQh0zJqh0smX0vvOLNxag"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Mushkaa",
+      "aliases": [
+        "Mushkaa - Topic"
+      ],
+      "canals": [
+        "UC9Jl8Rcjs5ZUi8Wf1JnFzlw",
+        "UCQAWPZGGc_4JqXq53ATaSBQ"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Muyayo Rif",
+      "aliases": [],
+      "canals": [],
+      "motiu": "Antecedents d’exclusions o dubtes de llengua documentats; no implica que tot el repertori sigui multilingüe.",
+      "fonts": [
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Ocults",
+      "aliases": [
+        "Ocults - Topic"
+      ],
+      "canals": [
+        "UCgoAYxK_KHyGjHQ50pgUq0Q"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Opció K-95",
+      "aliases": [
+        "Opció K-95 - Topic",
+        "Opcio K-95",
+        "Opcio K-95 - Topic"
+      ],
+      "canals": [
+        "UCCBTyMmUoeGrciYMzrwWiUw"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Pawn Gang",
+      "aliases": [
+        "P.A.W.N. Gang",
+        "PAWNGANG HUSTLAS",
+        "P.A.W.N. Gang - Topic"
+      ],
+      "canals": [
+        "UCK3HgaeRN0-5mJkqvyB1hBA",
+        "UC7b5PnElhJTDn_kM4ipKO7g"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Pere Tàpias",
+      "aliases": [
+        "Pere Tapias"
+      ],
+      "canals": [
+        "UCYECw-23usgJzg1MnHRFFQQ"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Pupil·les",
+      "aliases": [
+        "Pupilles",
+        "PUPIL·LES",
+        "Pupil·les - Topic"
+      ],
+      "canals": [
+        "UCIX5CqhHETyi1Xx4JzcGjZg",
+        "UCzxleD2G_7JNCMufgoF3KLw"
+      ],
+      "motiu": "Antecedents d’exclusions o dubtes de llengua documentats; no implica que tot el repertori sigui multilingüe.",
+      "fonts": [
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Quico Pi de la Serra",
+      "aliases": [
+        "Quico Pi de la Serra - Topic",
+        "Pi de la Serra"
+      ],
+      "canals": [
+        "UCerj0bWFVJdAmPWVti9Uhlw",
+        "UCQkOO8WejzCPcbzL7sc6iGg"
+      ],
+      "motiu": "Antecedents d’exclusions o dubtes de llengua documentats; no implica que tot el repertori sigui multilingüe.",
+      "fonts": [
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Rapsodes",
+      "aliases": [
+        "Rapsodes Oficial",
+        "Rapsodes - Topic"
+      ],
+      "canals": [
+        "UCqlbDl192qJeA3gpIFkVhVA",
+        "UCuvGkVD3aN6ncVC6-EN8Wfw"
+      ],
+      "motiu": "Antecedents d’exclusions o dubtes de llengua documentats; no implica que tot el repertori sigui multilingüe.",
+      "fonts": [
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Raydibaum",
+      "aliases": [
+        "Raydibaum - Topic"
+      ],
+      "canals": [
+        "UCCKRS2KD1i75evCURPuHQXA"
+      ],
+      "motiu": "Cançons en altres llengües identificades al contrast de fonts; exclusions proposades encara no aplicades.",
+      "fonts": [
+        "docs/revisions/2026-10-12-revisio-idiomes-massiva.json"
+      ]
+    },
+    {
+      "artista": "Roba Estesa",
+      "aliases": [
+        "Roba Estesa - Topic"
+      ],
+      "canals": [
+        "UCfOJHONAYVLmmA5lwE117vw",
+        "UCl4HM-ELckbc7ToCDTyAvVQ"
+      ],
+      "motiu": "Antecedents d’exclusions o dubtes de llengua documentats; no implica que tot el repertori sigui multilingüe.",
+      "fonts": [
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Roger Mas i Solé",
+      "aliases": [
+        "Roger Mas",
+        "Roger Mas - Topic"
+      ],
+      "canals": [
+        "UCTnoklTTyDXYYtT5_nmxUVQ",
+        "UC7kOHFUIoTiH9RrPznoJDEQ"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Sabor de Gràcia",
+      "aliases": [
+        "Sabor de Gracia",
+        "Sabor de Gracia - Topic",
+        "SABOR DE GRACIA"
+      ],
+      "canals": [
+        "UClTLWZcaxCMgkk58dQna18A"
+      ],
+      "motiu": "Antecedents d’exclusions o dubtes de llengua documentats; no implica que tot el repertori sigui multilingüe.",
+      "fonts": [
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Sandra Bautista",
+      "aliases": [
+        "Sandra Bautista - Topic"
+      ],
+      "canals": [
+        "UC_Nx-tsTDRubDg1dbd5jwAw",
+        "UC3AV402A_vdbG18-cpYsX-Q"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Sandra Monfort",
+      "aliases": [
+        "Sandra Monfort - Topic"
+      ],
+      "canals": [
+        "UCIO1gtVvX9gixocD0TvfSYw",
+        "UC61e5MNaLbrBMiSc5XeQp1Q"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Sangtraït",
+      "aliases": [
+        "Sangtraït - Topic"
+      ],
+      "canals": [
+        "UC6a_paoSt1YYKOFZwPGdEYw"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Sara Roy",
+      "aliases": [
+        "Sara Roy - Topic"
+      ],
+      "canals": [
+        "UC4tHQwYKnZ0frCoqwMmgMkQ",
+        "UC-4TrBQbbqx6ZjJDzLnjFJQ"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Scorpio",
+      "aliases": [],
+      "canals": [
+        "UCqe8mqoQPb27d2qD-ggOY0Q"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Sexenni",
+      "aliases": [],
+      "canals": [
+        "UCGVJBGRTkU_qagiq1mkc2pg"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Siderland",
+      "aliases": [
+        "Siderland - Topic"
+      ],
+      "canals": [
+        "UC9NDkhmm_3ZBjxnIh2d2paA",
+        "UC9MmM6M38qypkn7Z3zNXhUQ"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Sílvia Comes",
+      "aliases": [],
+      "canals": [
+        "UCOQizv5kl-XBONzbo3RKHdw"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Sílvia Pérez Cruz",
+      "aliases": [
+        "silviaperezcruz",
+        "Silvia Pérez Cruz - Topic"
+      ],
+      "canals": [
+        "UCXa6Mb5QgzYjRV_D1VlYoKQ",
+        "UCXoDEBc8CPWptFtzb_mmLiQ"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Sopa de Cabra",
+      "aliases": [
+        "Sopa de Cabra - Topic"
+      ],
+      "canals": [
+        "UCleNuGpCliL0P7B2eAI4U_Q",
+        "UCElrxQjQH5yoQAZU8fNtgpw"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Stay Homas",
+      "aliases": [
+        "STAY HOMAS",
+        "Stay Homas - Topic"
+      ],
+      "canals": [
+        "UC0PtwzSikWRnftscW9uI_Ug",
+        "UCerRtDlJWXCmBMgGYjq6gYQ"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Still Ill",
+      "aliases": [
+        "Still ill",
+        "Still Ill - Topic"
+      ],
+      "canals": [
+        "UCIBWCquq4qqhRWKD6nOdR4w"
+      ],
+      "motiu": "Repertori multilingüe i homònims detectats al catàleg; cal verificar també la identitat.",
+      "fonts": [
+        "docs/ARTISTES_CASTELLA.md",
+        "docs/revisions/2026-10-12-revisio-idiomes-massiva.json"
+      ],
+      "canalCompartit": true
+    },
+    {
+      "artista": "Suu",
+      "aliases": [
+        "SUU"
+      ],
+      "canals": [
+        "UClVTg1yrfwH3ku46CPlO7xg"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Tesa",
+      "aliases": [
+        "Tesa - Topic"
+      ],
+      "canals": [
+        "UCx82VgJTTf_cKHahlakKfFg"
+      ],
+      "motiu": "Repertori multilingüe i homònims detectats al catàleg; cal verificar també la identitat.",
+      "fonts": [
+        "docs/ARTISTES_CASTELLA.md",
+        "docs/revisions/2026-10-12-revisio-idiomes-massiva.json"
+      ],
+      "canalCompartit": true
+    },
+    {
+      "artista": "The Demencials",
+      "aliases": [
+        "The Demencials - Topic"
+      ],
+      "canals": [
+        "UCkbE2-0JpyMzPFxZJ9Ev8aA",
+        "UChFT46QMLdzzwd04aCTeyqg"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "The Tyets",
+      "aliases": [
+        "The Tyets - Topic"
+      ],
+      "canals": [
+        "UC--8TyZ2PM0NFHWXCzQrUqw",
+        "UC0iUpe1JY-IBHXDSXIxTcCg"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Tomeu Penya",
+      "aliases": [
+        "Tomeu Penya - Topic"
+      ],
+      "canals": [
+        "UCsOxXt5l7XmAc6AvMQDRV4A"
+      ],
+      "motiu": "Dubte anterior pendent de comprovar; vigilància provisional, sense certificar una llengua pel títol.",
+      "fonts": [
+        "data/revisio-idiomes.json"
+      ]
+    },
+    {
+      "artista": "Toti Soler",
+      "aliases": [
+        "Toti Soler - Topic"
+      ],
+      "canals": [
+        "UC8RrEDfmV-rQsQpURsY6krA",
+        "UCGCmSXoJ_f046wxT7OHUDMA"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Triquell",
+      "aliases": [
+        "Triquell - Topic"
+      ],
+      "canals": [
+        "UCIE6UEv7aCNJq-Jw9F0mJ7A",
+        "UCLFu97uScrsLlOlKd9ff5aw"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Txarango",
+      "aliases": [
+        "Txarango - Topic"
+      ],
+      "canals": [
+        "UCmtykAu3QbU-yVO6Jirm1_Q",
+        "UCIDxAwPe8cNl_-NawMu4pDQ"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Umpah-Pah",
+      "aliases": [
+        "Umpah Pah - Topic",
+        "Umpah Pah"
+      ],
+      "canals": [
+        "UCeza8RPly8qpRBT2VyPBhRQ"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Vademecum FAM",
+      "aliases": [
+        "Vademecum",
+        "Nu Drama"
+      ],
+      "canals": [
+        "UC_X_KBioMYCrmZyI7hbL8Pw"
+      ],
+      "motiu": "Cançons en altres llengües identificades al contrast de fonts; exclusions proposades encara no aplicades.",
+      "fonts": [
+        "docs/revisions/2026-10-12-revisio-idiomes-massiva.json"
+      ]
+    },
+    {
+      "artista": "Valtònyc",
+      "aliases": [
+        "Valtonyc",
+        "Josep Valtonyc",
+        "Valtonyc - Topic"
+      ],
+      "canals": [
+        "UC3fuMj55qp3YmD2B2mPBgOw",
+        "UCsl_oTZ8vww29O9G0NAX-gA"
+      ],
+      "motiu": "Antecedents d’exclusions o dubtes de llengua documentats; no implica que tot el repertori sigui multilingüe.",
+      "fonts": [
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Ven'nus",
+      "aliases": [
+        "VEN'NUS",
+        "Ven'nus - Topic"
+      ],
+      "canals": [
+        "UCvh8nurHojZHGiQy532Bn2w",
+        "UCouT_0PiTMYVIG5wcTYfpcg"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Xavier de Bétera",
+      "aliases": [
+        "Xavier de Bétera - Topic"
+      ],
+      "canals": [
+        "UC7jgH-7_BlpoPdV5XmriR1w",
+        "UCfdDfonaXBiLPTxprpCigGQ"
+      ],
+      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "fonts": [
+        "scripts/ocultar_titols_castella.js",
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    },
+    {
+      "artista": "Xeic!",
+      "aliases": [
+        "Xeic",
+        "XEIC",
+        "XEIC! - Topic",
+        "XEIC!"
+      ],
+      "canals": [
+        "UC4ZpvBvQ4jzY_Ppwho9rSiw",
+        "UCNS4k4s7_GRMNpKBlRfpfTQ"
+      ],
+      "motiu": "Antecedents d’exclusions o dubtes de llengua documentats; no implica que tot el repertori sigui multilingüe.",
+      "fonts": [
+        "docs/ARTISTES_CASTELLA.md"
+      ]
+    }
+  ],
+  "confianca": [
+    {
+      "artista": "2 Princeses Barbudes",
+      "aliases": [
+        "2princesesbarbudes",
+        "2princesesbarbudes - Topic"
+      ],
+      "canals": [
+        "UClwN1cpIrafSRa8MbOMAvvQ"
+      ]
+    },
+    {
+      "artista": "2ES",
+      "aliases": [],
+      "canals": [
+        "UCjEehp73GI2mh9Rkv31QT9w"
+      ]
+    },
+    {
+      "artista": "Al Tall",
+      "aliases": [
+        "Al Tall - Topic"
+      ],
+      "canals": [
+        "UCrQY3EI5TJXNbCwkXcDLp7A"
+      ]
+    },
+    {
+      "artista": "Albert Fibla",
+      "aliases": [],
+      "canals": [
+        "UCz-O8jJsp_uT_vORvd9Etbg"
+      ]
+    },
+    {
+      "artista": "All Crü",
+      "aliases": [
+        "All Cru",
+        "ALL CRÜ",
+        "All Crü - Topic"
+      ],
+      "canals": [
+        "UCyNWjZ1IhLo8Iy6nUMEz0rw",
+        "UC_tsO4hz22Lk0jb1CEIFPmw"
+      ]
+    },
+    {
+      "artista": "Al·lèrgiques al Pol·len",
+      "aliases": [
+        "Al·lèrgiques al pol·len - Topic",
+        "Al·lèrgiques al pol·len"
+      ],
+      "canals": [
+        "UC-wNy0amkJJUTaukKo61Tfw",
+        "UCMj8K97SgGnI9OdJIHBH-Sw"
+      ]
+    },
+    {
+      "artista": "Alosa",
+      "aliases": [
+        "Alosa - Topic"
+      ],
+      "canals": [
+        "UCmSxzoNUcVfwLgrwt97QASA",
+        "UC5RFGXhh0Yq6w7EAzrSJXAw"
+      ]
+    },
+    {
+      "artista": "Amargor",
+      "aliases": [
+        "AMARGOR - Topic",
+        "AMARGOR"
+      ],
+      "canals": [
+        "UCoOJY5SD3f0RvSk6uhRVZ_A"
+      ]
+    },
+    {
+      "artista": "Ambauka",
+      "aliases": [
+        "Ambaüka",
+        "Ambaükatunàbia",
+        "AMBAUKA Música i espectacles familiars"
+      ],
+      "canals": [
+        "UCkbrYK7kel3WIW1ZSsxNvoQ"
+      ]
+    },
+    {
+      "artista": "Andrea Motis",
+      "aliases": [
+        "Andrea Motis - Topic"
+      ],
+      "canals": [
+        "UCmwGTBibm2bt9oF-P7ECSmQ",
+        "UCQSsmLNT3tKUD3m_XsZpfHA"
+      ]
+    },
+    {
+      "artista": "Angoixa",
+      "aliases": [
+        "Angoixa (Death metal)",
+        "Angoixa - Topic"
+      ],
+      "canals": [
+        "UCOwCZBGNBYlvxmZn2BbmhFQ",
+        "UC7CW0LUdtTnZfYmuayRJEmQ"
+      ]
+    },
+    {
+      "artista": "Anna Ferrer",
+      "aliases": [],
+      "canals": [
+        "UCsoJ33SEemrtWrM5hTqPKYQ"
+      ]
+    },
+    {
+      "artista": "Antònia Font",
+      "aliases": [
+        "Antònia Font - Topic"
+      ],
+      "canals": [
+        "UCeiYZJsHIDALiJkzRkFWlAQ",
+        "UCALf4AsnFm6WhQSD6RGV5pg"
+      ]
+    },
+    {
+      "artista": "Apologia",
+      "aliases": [
+        "Apologia Grup"
+      ],
+      "canals": [
+        "UCkIaaBrbzpnm0jbPXxNGwPw"
+      ]
+    },
+    {
+      "artista": "Ara Va de Bo",
+      "aliases": [
+        "Ara Va de Bo - Topic"
+      ],
+      "canals": [
+        "UCnc-ydOqTCAyaVjB5h6Yk8w"
+      ]
+    },
+    {
+      "artista": "Ariox",
+      "aliases": [
+        "Ariox - Topic",
+        "ariox"
+      ],
+      "canals": [
+        "UC5wqkIyYD4y1lLYN40BL9lg"
+      ]
+    },
+    {
+      "artista": "Aspencat",
+      "aliases": [
+        "Aspencat - Topic"
+      ],
+      "canals": [
+        "UCcyD1Q9V5wfaGD1Z5CH1Nlw",
+        "UCnygquYeJppJcbgD085undw"
+      ]
+    },
+    {
+      "artista": "ASSAC!",
+      "aliases": [
+        "Assac",
+        "cerinobalzano"
+      ],
+      "canals": [
+        "UCzyjfdkAmiRCOjJGuUVbqYg"
+      ]
+    },
+    {
+      "artista": "Assot",
+      "aliases": [
+        "Assot - Topic"
+      ],
+      "canals": [
+        "UCgAPpOaGsoDsXdEQKLB6gnQ"
+      ]
+    },
+    {
+      "artista": "Astral Warrior",
+      "aliases": [
+        "Astral Warrior - Topic"
+      ],
+      "canals": [
+        "UC7auRFIxjfkrZdsWPe7R_Qg",
+        "UCh_dOmbZ0ZkjBEYDH96NNqQ"
+      ]
+    },
+    {
+      "artista": "Autodestrucció",
+      "aliases": [
+        "Autodestrucció - Topic"
+      ],
+      "canals": [
+        "UC8yBjieIRVNRxjAVi0FO1DQ"
+      ]
+    },
+    {
+      "artista": "Avalot",
+      "aliases": [
+        "Avalot - Topic"
+      ],
+      "canals": [
+        "UCcG2ayuF3B2xDZIVH2LNefg"
+      ]
+    },
+    {
+      "artista": "Bacora",
+      "aliases": [
+        "Bacora - Topic"
+      ],
+      "canals": [
+        "UCHf4JVtqfIL_emZFYmchjkw"
+      ]
+    },
+    {
+      "artista": "Baixa Fidelitat",
+      "aliases": [
+        "Baixa Fidelitat - Topic"
+      ],
+      "canals": [
+        "UCk0dxKPgahJyFPV_F1VWVuA"
+      ]
+    },
+    {
+      "artista": "Banda Neon",
+      "aliases": [],
+      "canals": [
+        "UC8EgQzp733Go-yRbPKR3FHg"
+      ]
+    },
+    {
+      "artista": "Bars",
+      "aliases": [
+        "The Bars - Topic"
+      ],
+      "canals": [
+        "UCoQKWzy03Eh7EFrjM0Tuv1Q"
+      ]
+    },
+    {
+      "artista": "Batec",
+      "aliases": [
+        "Batec - Topic",
+        "BATEC"
+      ],
+      "canals": [
+        "UCmgvpf_Hz64idSYh4hFGHkQ"
+      ]
+    },
+    {
+      "artista": "Bèrnia",
+      "aliases": [
+        "bernia - Topic",
+        "bernia"
+      ],
+      "canals": [
+        "UC7Y0TrjWk-TcCLcoCXulf0Q",
+        "UCdFUlEKax2JWJ58pdL2zNvw"
+      ]
+    },
+    {
+      "artista": "Bestiari",
+      "aliases": [
+        "Bestiari banda"
+      ],
+      "canals": [
+        "UCf0MYgzgqhRYuimo71a2dYQ"
+      ]
+    },
+    {
+      "artista": "Blaumut",
+      "aliases": [
+        "Blaumut Oficial",
+        "Blaumut - Topic"
+      ],
+      "canals": [
+        "UC99ULQORmyZtD4bngOa48hw",
+        "UCs5SsCyZ5g5q3dGMBI3NS8w"
+      ]
+    },
+    {
+      "artista": "Blay Tritono",
+      "aliases": [
+        "Blay Tritono - Topic"
+      ],
+      "canals": [
+        "UC8eN3E2fiYV0wtMwds1ZK9g"
+      ]
+    },
+    {
+      "artista": "Bocc",
+      "aliases": [
+        "Bocc - Topic"
+      ],
+      "canals": [
+        "UCR5qRB1oeWWJF8QhX7WmuXQ"
+      ]
+    },
+    {
+      "artista": "Bonestorm",
+      "aliases": [
+        "Bonestorm - Topic"
+      ],
+      "canals": [
+        "UCJXKRxaUXEg0kpgb-Kd8uDg",
+        "UCGPjtE1NFB1I8oDJ_Mx3O_Q"
+      ]
+    },
+    {
+      "artista": "Brigada Moreneta",
+      "aliases": [
+        "Brigada Moreneta - Topic"
+      ],
+      "canals": [
+        "UCcqVDo23bg_lYmIan70ZhhA",
+        "UCDxlvPSUVbtUrLsKDpGV_lw"
+      ]
+    },
+    {
+      "artista": "Brot Bord",
+      "aliases": [
+        "Brot Bord - Topic"
+      ],
+      "canals": [
+        "UCc2hL_Q_Fi_nKHLptRFnw3w",
+        "UCghKNKEskCkE55Wl5A-ggiQ"
+      ]
+    },
+    {
+      "artista": "Budellam",
+      "aliases": [
+        "nebur seth onilecram"
+      ],
+      "canals": [
+        "UCxaFjfjCeRo1dUZXm_YtM6w"
+      ]
+    },
+    {
+      "artista": "Caïm Riba",
+      "aliases": [
+        "Caim Riba",
+        "Caïm Riba - Topic"
+      ],
+      "canals": [
+        "UCszfsK0D7h1kZ6eSOhlB9cA",
+        "UC_JVj-OoxEnO0fhw7VQP2lg"
+      ]
+    },
+    {
+      "artista": "Carme Canela",
+      "aliases": [
+        "Carme Canela - Topic"
+      ],
+      "canals": [
+        "UCe_v26nxcgIzZxxvRDkHOrw"
+      ]
+    },
+    {
+      "artista": "Celobert",
+      "aliases": [
+        "Celobert - Topic"
+      ],
+      "canals": [
+        "UCwjV0xSIDOp3SqY9A9dCsZA",
+        "UCw_gCGC1C3gvm5DTgWVmNHw"
+      ]
+    },
+    {
+      "artista": "Cesk Freixas",
+      "aliases": [],
+      "canals": [
+        "UCP621eWrPlC6uLrXE1tm99w"
+      ]
+    },
+    {
+      "artista": "Clara Peya",
+      "aliases": [
+        "Clara Peya - Topic"
+      ],
+      "canals": [
+        "UCRLHVqJybtjS5ODPP5iAv4w",
+        "UC52R4wjmZztT-anyAJpU18A"
+      ]
+    },
+    {
+      "artista": "Cloe Riembau",
+      "aliases": [
+        "Cloe Riembau - Topic"
+      ],
+      "canals": [
+        "UCE5UIlWPKCJ-9LJXlQB-05g",
+        "UCvdm27ITzhd3bsnftrBmFUg"
+      ]
+    },
+    {
+      "artista": "Coça",
+      "aliases": [
+        "Coça - Topic"
+      ],
+      "canals": [
+        "UCPRiU_lr3A-0m0GmF098EkA"
+      ]
+    },
+    {
+      "artista": "Companyia Elèctrica Dharma",
+      "aliases": [],
+      "canals": [
+        "UCxS0kQKC52EoOEWQD02Md2Q"
+      ]
+    },
+    {
+      "artista": "Corrandes són corrandes",
+      "aliases": [
+        "Corrandes són Corrandes - Topic",
+        "Corrandes són Corrandes"
+      ],
+      "canals": [
+        "UCYzpmEEhGtncFPgZSocnrtQ",
+        "UCTsSJXhTo6HpqmtSh8-p31A"
+      ]
+    },
+    {
+      "artista": "Coses",
+      "aliases": [
+        "Coses - Topic"
+      ],
+      "canals": [
+        "UCnBMdEFrntxHSNXpIO7HXFA"
+      ]
+    },
+    {
+      "artista": "Da Souza",
+      "aliases": [
+        "Da Souza - Topic"
+      ],
+      "canals": [
+        "UC9qAJ8qxZth4Ic8D-OV52RQ"
+      ]
+    },
+    {
+      "artista": "Daltabaix",
+      "aliases": [
+        "Daltabaix - Topic"
+      ],
+      "canals": [
+        "UCMI_YX4hq_6gmj5KXiSMCEQ",
+        "UCke5e6w0YsmcfxvngW4An3A"
+      ]
+    },
+    {
+      "artista": "Dan Peralbo & El Comboi",
+      "aliases": [
+        "Dan Peralbo i El Comboi",
+        "Dan Peralbo i El Comboi - Topic"
+      ],
+      "canals": [
+        "UCwtCbak4LIxDWURhumzu7Ng",
+        "UC-oiQp1FzuQJxnelkrBHKXQ"
+      ]
+    },
+    {
+      "artista": "dani6ix & IZZKID",
+      "aliases": [
+        "dani6ix & IZZKID - Topic"
+      ],
+      "canals": [
+        "UClDOnKVw4NDr-UyX7nnhlBw",
+        "UCtPmA1K41AHE5kYd-klIP8w"
+      ]
+    },
+    {
+      "artista": "Derbi Junior",
+      "aliases": [
+        "Derbi Junior - Topic"
+      ],
+      "canals": [
+        "UCnmFh1j3xvDfrw20AqVgegw",
+        "UCjPkVZQJXgxwbkx2yE5uHig"
+      ]
+    },
+    {
+      "artista": "Desperta Ferro",
+      "aliases": [
+        "Desperta Ferro - Topic"
+      ],
+      "canals": [
+        "UCtad7HKeiW-TwPgX-ZIOGZw"
+      ]
+    },
+    {
+      "artista": "Dijous Paella",
+      "aliases": [
+        "Dijous Paella - Topic"
+      ],
+      "canals": [
+        "UCXPmz-dujGuIrhnf5v5Fxrg"
+      ]
+    },
+    {
+      "artista": "Doctor Prats",
+      "aliases": [
+        "Doctor Prats - Topic"
+      ],
+      "canals": [
+        "UCn26f9Y9kg_AguUTaqNQUDw",
+        "UCXnvbcjY11hEzjvWXUTjQ8Q"
+      ]
+    },
+    {
+      "artista": "Duble Buble",
+      "aliases": [
+        "Duble Buble - Topic"
+      ],
+      "canals": [
+        "UCU1eUJDhuxK2wGF21vhpNzQ"
+      ]
+    },
+    {
+      "artista": "El Diluvi",
+      "aliases": [
+        "El Diluvi - Topic",
+        "el Diluvi"
+      ],
+      "canals": [
+        "UC-QeigkuT0jVePTpc6laJxw",
+        "UC1z2kyYBoovz6rXDKVbBH0g"
+      ]
+    },
+    {
+      "artista": "El Gitano de Balaguer",
+      "aliases": [],
+      "canals": [
+        "UCfEMFCX--mYjYsAWSKvKMhA"
+      ]
+    },
+    {
+      "artista": "El Nota",
+      "aliases": [
+        "elputunota",
+        "El Nota - Topic"
+      ],
+      "canals": [
+        "UChMW6YylOdFelVBHnIsXM4Q",
+        "UCCNpPo0bc8xsWYXVMvhg63Q"
+      ]
+    },
+    {
+      "artista": "El Pont d'Arcalís",
+      "aliases": [
+        "El Pont d'Arcalís - Topic"
+      ],
+      "canals": [
+        "UChRlRycsUvrvZZ-upnGunLw"
+      ]
+    },
+    {
+      "artista": "El Pot Petit",
+      "aliases": [],
+      "canals": [
+        "UCZqDq4Dl1ZxBQMlQgiEW5Kw"
+      ]
+    },
+    {
+      "artista": "Electrotoylets",
+      "aliases": [
+        "ElectroToylets - Topic",
+        "ElectroToylets"
+      ],
+      "canals": [
+        "UCWmht-NuFvH4O3rkURaNFeQ"
+      ]
+    },
+    {
+      "artista": "Els Amics de les Arts",
+      "aliases": [
+        "Els Amics De Les Arts - Topic",
+        "Els Amics De Les Arts"
+      ],
+      "canals": [
+        "UCbP-zt6f5hDkqqVVnJcooHQ",
+        "UCPKDz8plx4-C1nhZKhhAhfQ"
+      ]
+    },
+    {
+      "artista": "Els Atrapasomnis",
+      "aliases": [],
+      "canals": [
+        "UCQbdJKk_c_MfT3OaO6rIISA"
+      ]
+    },
+    {
+      "artista": "Els Bourbons",
+      "aliases": [
+        "Els Bourbons - Topic"
+      ],
+      "canals": [
+        "UC1GY1MkV-zNT_8Mv-GANOLA"
+      ]
+    },
+    {
+      "artista": "Els Catarres",
+      "aliases": [
+        "Els Catarres - Topic"
+      ],
+      "canals": [
+        "UCtrNm68UynCzT6DBC4Xq5sg",
+        "UCuaeVeuqfAO6a8EFjtmh6Ug"
+      ]
+    },
+    {
+      "artista": "Els Detectors",
+      "aliases": [
+        "Detectors",
+        "ElsDetectors"
+      ],
+      "canals": [
+        "UCXgOGaZ8NyliSq0XjPt-iPA"
+      ]
+    },
+    {
+      "artista": "Els Jóvens",
+      "aliases": [
+        "Els Jovens",
+        "Els Jóvens - Topic"
+      ],
+      "canals": [
+        "UCq7L4buafGO2yHcjCdnaGxg",
+        "UCf-q-2ikL2X1ZFd0HSj7Eiw"
+      ]
+    },
+    {
+      "artista": "Els Pets",
+      "aliases": [],
+      "canals": [
+        "UCLyS6_AjQKIbL4C2BByWjmQ"
+      ]
+    },
+    {
+      "artista": "En Brut",
+      "aliases": [
+        "EN-BRUT",
+        "En-Brut",
+        "EN-BRUT - Topic"
+      ],
+      "canals": [
+        "UCnJ4T56eu1dxFBWin7Z7C3A",
+        "UC86_pXaC6Kh_U-ouv4OZ_DQ"
+      ]
+    },
+    {
+      "artista": "En Rick",
+      "aliases": [],
+      "canals": [
+        "UC6qcca_Zv5qzn-Iw32etw1A"
+      ]
+    },
+    {
+      "artista": "Enemic Interior",
+      "aliases": [
+        "Enemic Interior - Topic"
+      ],
+      "canals": [
+        "UCAEf3q8jStY3hXlEtfoI0nA"
+      ]
+    },
+    {
+      "artista": "enMatu",
+      "aliases": [
+        "enMatu - Topic"
+      ],
+      "canals": [
+        "UCt7sVSd8TURhAqiI_M6eCwQ",
+        "UC87QlZfkr-dn0qiIh21OnFA"
+      ]
+    },
+    {
+      "artista": "Enric Barbat",
+      "aliases": [],
+      "canals": [
+        "UCc-fcN1V8NLdND4zBDMBrnA"
+      ]
+    },
+    {
+      "artista": "Entropia",
+      "aliases": [
+        "ENTROPIA Anarkosatanisme",
+        "Entropia - Topic"
+      ],
+      "canals": [
+        "UCT-wRacXWBQKqr1z6ZGoubw",
+        "UCayj6r8npsfkvYupNj8YC4A"
+      ]
+    },
+    {
+      "artista": "Esperit de Vi",
+      "aliases": [
+        "Esperit De Vi"
+      ],
+      "canals": [
+        "UCSBN6Ppa03Wh9WCXE4skixg"
+      ]
+    },
+    {
+      "artista": "Esquirols",
+      "aliases": [
+        "Esquirols - Topic"
+      ],
+      "canals": [
+        "UCv6aLx9OL9Qzc2nmNT5_IdA"
+      ]
+    },
+    {
+      "artista": "Exili a Elba",
+      "aliases": [
+        "Exili A Elba",
+        "Exili a Elba - Topic"
+      ],
+      "canals": [
+        "UCCjjqhwGK59J_vn4l0MjYSA",
+        "UCOpeaEtE-7hK7ZXGEVWMyRw"
+      ]
+    },
+    {
+      "artista": "Fades",
+      "aliases": [
+        "FADES"
+      ],
+      "canals": [
+        "UCOIKmdvEIfeusxwvykuxSew"
+      ]
+    },
+    {
+      "artista": "Falç de Fetillera",
+      "aliases": [
+        "Falç de Metzinera",
+        "Falç de Fetillera - Topic"
+      ],
+      "canals": [
+        "UCgVBViL3I9YWFVBHIyvcpjg",
+        "UC8GlOjZpZMKHieUbeJ9eh7g"
+      ]
+    },
+    {
+      "artista": "Falciots Ninja",
+      "aliases": [
+        "Falciots Ninja - Topic"
+      ],
+      "canals": [
+        "UCLbuprK567zLAC6ZzamsDLQ"
+      ]
+    },
+    {
+      "artista": "Família Fracàs",
+      "aliases": [
+        "Família Fracàs - Topic"
+      ],
+      "canals": [
+        "UC6RbhWqXkSqfJDawc7pyPxQ"
+      ]
+    },
+    {
+      "artista": "Feliu Ventura",
+      "aliases": [],
+      "canals": [
+        "UCqjjCCORy-B_NznEv8LqU-g",
+        "UC-1A04_-NE4nuEor7HG7aSg"
+      ]
+    },
+    {
+      "artista": "Ferran Palau",
+      "aliases": [
+        "Ferran Palau - Topic"
+      ],
+      "canals": [
+        "UCkGNJczVoESUwmJ3oejyM5w",
+        "UCLVVwenUJa9rmSCcH1EF-wg"
+      ]
+    },
+    {
+      "artista": "Fetus",
+      "aliases": [
+        "Fetus - Topic"
+      ],
+      "canals": [
+        "UCDbEp5W8Obkk2YmYtWB-F5A"
+      ]
+    },
+    {
+      "artista": "Figa Flawas",
+      "aliases": [],
+      "canals": [
+        "UCqmGotHSCTvuq95XQ4XwaVQ"
+      ]
+    },
+    {
+      "artista": "Forja",
+      "aliases": [
+        "Forja - Topic"
+      ],
+      "canals": [
+        "UCBaZT9T1jD6ggbVikvr0nAw",
+        "UCmciKowevXGORJnZGaZVrsg"
+      ]
+    },
+    {
+      "artista": "Foscor",
+      "aliases": [
+        "Foscor - Topic"
+      ],
+      "canals": [
+        "UCpWzqKujkmJvGIAt5QgBgBQ"
+      ]
+    },
+    {
+      "artista": "Fox System",
+      "aliases": [
+        "Fox System - Topic"
+      ],
+      "canals": [
+        "UClEkW6DS-3DfOcxGMouE_7A",
+        "UCwCcA6f2KDLJi58xX2se6DA"
+      ]
+    },
+    {
+      "artista": "FP",
+      "aliases": [
+        "FP - Topic"
+      ],
+      "canals": [
+        "UCdontCcTg9y1senwNiJFECg"
+      ]
+    },
+    {
+      "artista": "Frontpilsen",
+      "aliases": [
+        "Front Pilsen",
+        "Frontpilsen Toni Napo"
+      ],
+      "canals": [
+        "UCOxRObgDa7GRNF7UaO7B83w"
+      ]
+    },
+    {
+      "artista": "GadeGANG",
+      "aliases": [],
+      "canals": [
+        "UCLV9S1AX8_K0kA8MIqWS52w"
+      ]
+    },
+    {
+      "artista": "Galgo Lento",
+      "aliases": [],
+      "canals": [
+        "UCXh0ap-a-fIbQBYfCxASKCw"
+      ]
+    },
+    {
+      "artista": "Gato Pérez",
+      "aliases": [
+        "Gato Perez - Topic",
+        "Gato Perez"
+      ],
+      "canals": [
+        "UCxZhZaJrcH8nHdrKx4ij0sw"
+      ]
+    },
+    {
+      "artista": "Gatzara",
+      "aliases": [
+        "GATZARA",
+        "GATZARA - Topic"
+      ],
+      "canals": [
+        "UCZn28rxOtata8FamPOLCDug",
+        "UCgV7p1tbKMGsNjvg8Zhm4YQ"
+      ]
+    },
+    {
+      "artista": "Gavina.mp3",
+      "aliases": [
+        "GAVINA.MP3",
+        "gavina.mp3 - Topic",
+        "gavina.mp3"
+      ],
+      "canals": [
+        "UCUTFIQKXld2UO6NRCxiM8qw",
+        "UC2abGPf4WfBi0LXHYMKX_aQ"
+      ]
+    },
+    {
+      "artista": "Germà Negre",
+      "aliases": [
+        "Germà Negre - Topic"
+      ],
+      "canals": [
+        "UC_nlyjkIdPSWKkzbWK7Q-0w",
+        "UCFI6QGe27kctP5lGeugsrhA"
+      ]
+    },
+    {
+      "artista": "Ginestà",
+      "aliases": [
+        "Ginestà - Topic"
+      ],
+      "canals": [
+        "UC5nvjukz73UjS-GpzieyTxw",
+        "UCn3FfkjgKlzE1oNSnOM67BQ"
+      ]
+    },
+    {
+      "artista": "Gra Fort",
+      "aliases": [
+        "Gra Fort - Topic"
+      ],
+      "canals": [
+        "UC5PqMEE9b8osizQXQSdVkNQ"
+      ]
+    },
+    {
+      "artista": "Groggy Rude",
+      "aliases": [
+        "Groggy Rude - Topic"
+      ],
+      "canals": [
+        "UC8hpq3EHqyG09og9xy3qOFg",
+        "UCG1eXBwVPsRtMl1xw0PmIKA"
+      ]
+    },
+    {
+      "artista": "Grup de Folk",
+      "aliases": [
+        "Grup de folk - Topic",
+        "Grup de folk"
+      ],
+      "canals": [
+        "UC8efMlZQ7vQ1cTO6MbspafA"
+      ]
+    },
+    {
+      "artista": "Guaita'ls",
+      "aliases": [
+        "Guaita’ls",
+        "Guaita'ls Ska",
+        "Guaita'ls - Topic"
+      ],
+      "canals": [
+        "UCqCzt7Atzt9MRZ1PNnQreMA",
+        "UChp3Qj6gtmg9chsHHDFyVyg"
+      ]
+    },
+    {
+      "artista": "Guillem Ramisa",
+      "aliases": [],
+      "canals": [
+        "UCtEZ1MK5EscjssXcqEYGOng"
+      ]
+    },
+    {
+      "artista": "GUINEU",
+      "aliases": [
+        "Guineu",
+        "GUINEU POP",
+        "GUINEU - Topic"
+      ],
+      "canals": [
+        "UC_IYrpsrhfYwUw70rJAqzvA",
+        "UCmSRj6Efnlu1ogPW_G8K4gw"
+      ]
+    },
+    {
+      "artista": "Gusset",
+      "aliases": [
+        "gusset",
+        "gusset - Topic"
+      ],
+      "canals": [
+        "UCUFf95lc9BoH8zy0Tn1Tm9w",
+        "UCRdGqpbhydDXIl83A9E8-2Q"
+      ]
+    },
+    {
+      "artista": "Hèctor Vila",
+      "aliases": [],
+      "canals": [
+        "UCfY137sqCUb5DJNrjiiy6iQ"
+      ]
+    },
+    {
+      "artista": "Herba Negra",
+      "aliases": [
+        "HerbaNegra",
+        "Herba Negra - Topic"
+      ],
+      "canals": [
+        "UCyNgOgsiiy5cSgyfEqveONw",
+        "UCNzhlSBbPNlsZ563SKvvggg"
+      ]
+    },
+    {
+      "artista": "Hereus del Beat",
+      "aliases": [
+        "Hereus Del Beat - Topic",
+        "Hereus Del Beat"
+      ],
+      "canals": [
+        "UCK3mJ6ChV2a26kecZHDb4lg"
+      ]
+    },
+    {
+      "artista": "Herois de la Katalunya Interior",
+      "aliases": [
+        "Herois de la Katalunya Interior - Topic"
+      ],
+      "canals": [
+        "UCy8MYPwq8ezeihgBh4dgEdg"
+      ]
+    },
+    {
+      "artista": "Hey Zuri",
+      "aliases": [
+        "Hey Zuri "
+      ],
+      "canals": [
+        "UCFYeKYCzLGjyCuVW12j07Hg"
+      ]
+    },
+    {
+      "artista": "Icestorm",
+      "aliases": [],
+      "canals": [
+        "UCcjUSZZ1Aqt74OqoXtkb51A"
+      ]
+    },
+    {
+      "artista": "Inadaptats",
+      "aliases": [
+        "Inadaptats - Topic"
+      ],
+      "canals": [
+        "UCHU_RiP5nttdIcrT37Y7-uA",
+        "UCby9BHawLhftHyR37pEztHg"
+      ]
+    },
+    {
+      "artista": "Isaak Aguilà",
+      "aliases": [
+        "Isaak Aguilà - Topic"
+      ],
+      "canals": [
+        "UC76gEcL7sivyILBfwe54ETw",
+        "UCS9aWKrOcJsSqsJqBEouqAg"
+      ]
+    },
+    {
+      "artista": "Ja t'ho diré",
+      "aliases": [
+        "Ja T'ho Dire - Topic",
+        "Ja T'ho Dire"
+      ],
+      "canals": [
+        "UCixgCOsYckV_5zjYJpb5GGg"
+      ]
+    },
+    {
+      "artista": "Jaume Barri",
+      "aliases": [
+        "Jaume Barri - Topic"
+      ],
+      "canals": [
+        "UCMWf6XTheiTNyzFHQr5A2fQ"
+      ]
+    },
+    {
+      "artista": "Jo Jet i Maria Ribot",
+      "aliases": [
+        "Jo Jet i Maria Ribot - Topic"
+      ],
+      "canals": [
+        "UCiZ0Vjlvr_CNXtUU0WzSy1A",
+        "UCzQX193kQwe6E3QbRLPz59g"
+      ]
+    },
+    {
+      "artista": "Joan Isaac",
+      "aliases": [],
+      "canals": [
+        "UCcDS4PowmsXc6R3ACE7Vgfg"
+      ]
+    },
+    {
+      "artista": "Joan Masdéu",
+      "aliases": [
+        "Joan Masdeu",
+        "Joan Masdéu - Topic"
+      ],
+      "canals": [
+        "UCmTclPozSbbvY0khfHnaMgw",
+        "UCIu7jGN31S41R-S24-AnJuQ"
+      ]
+    },
+    {
+      "artista": "Jordi Sabatés",
+      "aliases": [
+        "Jordi Sabatés - Topic"
+      ],
+      "canals": [
+        "UCw04zTLucny6vY-O5-qE21A"
+      ]
+    },
+    {
+      "artista": "Jordi Tonietti",
+      "aliases": [
+        "Jordi Tonietti - Topic"
+      ],
+      "canals": [
+        "UCvrdIqqti5520O_bz3ik57Q"
+      ]
+    },
+    {
+      "artista": "Josep Tero",
+      "aliases": [],
+      "canals": [
+        "UC7ixOUPG3ydQjkUZ4pPqvhA"
+      ]
+    },
+    {
+      "artista": "Karda Fàstik",
+      "aliases": [
+        "Karda Fastik",
+        "Karda Fàstik - Topic"
+      ],
+      "canals": [
+        "UCGXRDt9r8BA1eJbl3dxh1GA"
+      ]
+    },
+    {
+      "artista": "Kayo Malayo",
+      "aliases": [
+        "Kayo Malayo - Topic"
+      ],
+      "canals": [
+        "UCkJn1Oupgp27jlFzFl7I2Ag"
+      ]
+    },
+    {
+      "artista": "Kiddi",
+      "aliases": [],
+      "canals": [
+        "UCREWI0yP_fZNpVsqt-t5wIw"
+      ]
+    },
+    {
+      "artista": "Kitsch",
+      "aliases": [
+        "KitschVideos"
+      ],
+      "canals": [
+        "UC3Z-76-_uT1IbUU9c8fP2mg"
+      ]
+    },
+    {
+      "artista": "knocKouts",
+      "aliases": [
+        "Knockout",
+        "KnockOut"
+      ],
+      "canals": [
+        "UCqA3KzIrZxgA27NEEyVZdrQ"
+      ]
+    },
+    {
+      "artista": "Korruption Found",
+      "aliases": [
+        "Korruption Found - Topic",
+        "korruptionfound"
+      ],
+      "canals": [
+        "UCCNmteQmEPFZTuM8joXB2Vw",
+        "UClGOkwEfKOBUuvepYGT9AUQ"
+      ]
+    },
+    {
+      "artista": "L'arannà",
+      "aliases": [],
+      "canals": [
+        "UCmmjpWToEL-YuLqYEenGS0A"
+      ]
+    },
+    {
+      "artista": "L'Ham de Foc",
+      "aliases": [
+        "L’Ham de Foc",
+        "L'Ham de Foc - Topic"
+      ],
+      "canals": [
+        "UC711R927_H-bOzQGHu7B5Pg"
+      ]
+    },
+    {
+      "artista": "L'Odi Social",
+      "aliases": [
+        "Odio Social",
+        "L’Odi Social",
+        "L'Odi Social - Topic"
+      ],
+      "canals": [
+        "UCkS1qH6mVR8T0hqyHJs0jnA"
+      ]
+    },
+    {
+      "artista": "La Coixinera",
+      "aliases": [
+        "La Coixinera - Topic"
+      ],
+      "canals": [
+        "UC5u7o5L26RuDowQsqOJDm0w"
+      ]
+    },
+    {
+      "artista": "La Fúmiga",
+      "aliases": [
+        "La Fúmiga - Topic"
+      ],
+      "canals": [
+        "UCqS1orLRAAy1ftfFiJj7XOg",
+        "UCMzWN1obqqsyoTQxZ-WsPXA"
+      ]
+    },
+    {
+      "artista": "La Gossa Sorda",
+      "aliases": [
+        "La Gossa Sorda - Topic"
+      ],
+      "canals": [
+        "UCIw0fqxE56SUZRCVd2FI09Q"
+      ]
+    },
+    {
+      "artista": "La Iaia",
+      "aliases": [
+        "Ernest Crusats",
+        "Ernest Crusats - Topic"
+      ],
+      "canals": [
+        "UCuH5h0CPXPIccfyvgZgF09w",
+        "UCl3RfIF60BFTx93il4D11nQ"
+      ]
+    },
+    {
+      "artista": "La Ludwig Band",
+      "aliases": [
+        "La Ludwig Band - Topic"
+      ],
+      "canals": [
+        "UC1M7jLDag1ddbI6e-arvfGw",
+        "UCdtYbFDkfHhAQgY8AzDMVwQ"
+      ]
+    },
+    {
+      "artista": "La Mousse",
+      "aliases": [
+        "La Mousse - Topic"
+      ],
+      "canals": [
+        "UCdobjCKfq5FbF7eQL6C1VLw",
+        "UCRxi4RlTmeoc97rxkLxTiBQ"
+      ]
+    },
+    {
+      "artista": "La Tresca i la Verdesca",
+      "aliases": [
+        "La Tresca i la Verdesca - Topic"
+      ],
+      "canals": [
+        "UCIdj5otREH5qxyPbKjAx2Sw"
+      ]
+    },
+    {
+      "artista": "La Vella Dixieland",
+      "aliases": [
+        "La Vella Dixieland - Topic"
+      ],
+      "canals": [
+        "UCDxUh6YqVfCZ-DwSDQy1mNQ"
+      ]
+    },
+    {
+      "artista": "Lal'ba",
+      "aliases": [
+        "Lal'Ba",
+        "Lal'Ba - Topic",
+        "LAL'BA MUSIC"
+      ],
+      "canals": [
+        "UC2WMiCvYBSXvRjYIB0yrpEg",
+        "UCFYEAYfftkeTPVQk70lVapQ"
+      ]
+    },
+    {
+      "artista": "Lali BeGood",
+      "aliases": [
+        "Lali BeGood - Topic"
+      ],
+      "canals": [
+        "UC3Bb6mYAwuWFLzNrro83tQA"
+      ]
+    },
+    {
+      "artista": "Landry el Rumbero",
+      "aliases": [
+        "Landry",
+        "Landry el Rumbero - Topic"
+      ],
+      "canals": [
+        "UCSuJ17uSSb8B4WOyFUNW9GQ"
+      ]
+    },
+    {
+      "artista": "Lax'n'Busto",
+      "aliases": [
+        "discmedilaxnbusto"
+      ],
+      "canals": [
+        "UCHiwFlJ6-Ggj_mG0Okfq_HQ"
+      ]
+    },
+    {
+      "artista": "Les Aranyes",
+      "aliases": [
+        "Les Aranyes - Topic"
+      ],
+      "canals": [
+        "UCN8HPAk-E5ZtrkLrDf7cR7A",
+        "UC3v9pZ9RLUMaaBrr877QPmA"
+      ]
+    },
+    {
+      "artista": "Les Buch",
+      "aliases": [
+        "Les Buch - Topic"
+      ],
+      "canals": [
+        "UCNy0mWkgdGm_-fqav1J59dQ"
+      ]
+    },
+    {
+      "artista": "Les Cruet",
+      "aliases": [
+        "Les Cruet - Topic"
+      ],
+      "canals": [
+        "UCQgZIJD-VO5fH80azRymksg"
+      ]
+    },
+    {
+      "artista": "Les Salvatges",
+      "aliases": [
+        "Les Salvatges - Topic"
+      ],
+      "canals": [
+        "UC5prxpApFpUCRDrjIyIJjEg"
+      ]
+    },
+    {
+      "artista": "Les Testarudes",
+      "aliases": [
+        "Les Testarudes - Topic"
+      ],
+      "canals": [
+        "UCICi6PgGxMiqrzwepxP0VZA",
+        "UCHbefcM_E94xfrGz6CWC9vQ"
+      ]
+    },
+    {
+      "artista": "Lildami",
+      "aliases": [
+        "Lildami - Topic"
+      ],
+      "canals": [
+        "UCQ6n5CV9T-UkapgZ9brdthQ",
+        "UCmc3hpV4unUfKQbfvfCYaTQ"
+      ]
+    },
+    {
+      "artista": "Lladruc",
+      "aliases": [],
+      "canals": [
+        "UCvab9QKJ1NEdMJObwZkA39A"
+      ]
+    },
+    {
+      "artista": "Magalí Datzira",
+      "aliases": [
+        "Magalí Datzira - Topic"
+      ],
+      "canals": [
+        "UCfcp4MZZ3t309KMOLo7JJag",
+        "UCG5zbsU-wyiM9QP5oYKhB4A"
+      ]
+    },
+    {
+      "artista": "Magalí Sare",
+      "aliases": [
+        "Magalí Sare - Topic"
+      ],
+      "canals": [
+        "UC1yaXYiC2Ab3tus3lTDljtw",
+        "UCPCYIT1ovAuKG8uedKp8QNA"
+      ]
+    },
+    {
+      "artista": "Mai Halis",
+      "aliases": [
+        "Mai Halis - Topic"
+      ],
+      "canals": [
+        "UCelei-fP98dp5R8j-tLBnNw",
+        "UCwYR6Axoc2mEKz89P8t4N5Q"
+      ]
+    },
+    {
+      "artista": "Maig",
+      "aliases": [],
+      "canals": [
+        "UCiJN7Igpjbpar_06XNFubcg"
+      ]
+    },
+    {
+      "artista": "Mainasons",
+      "aliases": [
+        "Maina Sons",
+        "Mainasons - Topic"
+      ],
+      "canals": [
+        "UC5h-dMbHSH3tikTmTSnfGjQ",
+        "UCT9peuXLxzh-dx3r49F13qg"
+      ]
+    },
+    {
+      "artista": "Mama Dousha",
+      "aliases": [
+        "Mama Dousha - Topic"
+      ],
+      "canals": [
+        "UCTMFD-Apnft0QQL3S8wM37Q",
+        "UCcRTdMWUEXFLtpvle3p_qug"
+      ]
+    },
+    {
+      "artista": "Mandanga!",
+      "aliases": [
+        "Mandanga! - Topic"
+      ],
+      "canals": [
+        "UC03QvbTvYBOyxApwRdt4k_w"
+      ]
+    },
+    {
+      "artista": "Manel",
+      "aliases": [],
+      "canals": [
+        "UCYQm8GQEmBsi6KxKOird7_w"
+      ]
+    },
+    {
+      "artista": "Mar Grimalt",
+      "aliases": [
+        "Mar Grimalt - Topic"
+      ],
+      "canals": [
+        "UC_eW1AyvwaPsQA5YAuOC3YQ",
+        "UCf3r3A5NWE_xJr3CjFBeyog"
+      ]
+    },
+    {
+      "artista": "Mar Pujol",
+      "aliases": [
+        "Mar Pujol - Topic"
+      ],
+      "canals": [
+        "UC57d8FV0O8sOiK6-K-gWNHA",
+        "UCrkGlLnid_710UIFOrWVpAQ"
+      ]
+    },
+    {
+      "artista": "Marala",
+      "aliases": [
+        "Marala Trio"
+      ],
+      "canals": [
+        "UCD1xceEEywgVv2tMX5kMi6Q"
+      ]
+    },
+    {
+      "artista": "Maria Bertomeu i Soria",
+      "aliases": [
+        "La Maria"
+      ],
+      "canals": [
+        "UCe2Nri7Kj182fGm2CmWyfMw"
+      ]
+    },
+    {
+      "artista": "Maria Betriu",
+      "aliases": [
+        "Maria Betriu Jazz Band",
+        "Maria Betriu - Topic"
+      ],
+      "canals": [
+        "UC18hp60b-j4DdzwEcWe9wrw"
+      ]
+    },
+    {
+      "artista": "Maria del Mar Bonet",
+      "aliases": [
+        "Maria Del Mar Bonet - Topic",
+        "Maria Del Mar Bonet"
+      ],
+      "canals": [
+        "UCJtO_dvu5AOSjtz1cWWpV0Q",
+        "UCLgDhaK2cT63xw3fKKkU1_g"
+      ]
+    },
+    {
+      "artista": "Maria Jaume",
+      "aliases": [],
+      "canals": [
+        "UCfObID-K4ycs8Dllm-fLGEg",
+        "UC3QJ1xC8aCwQdvTy-HTRwew"
+      ]
+    },
+    {
+      "artista": "MASSAVIU",
+      "aliases": [
+        "Massaviu"
+      ],
+      "canals": [
+        "UCh1_-QpgzIdG-3QfCMfZi6w"
+      ]
+    },
+    {
+      "artista": "Masvi",
+      "aliases": [
+        "MasviVEVO"
+      ],
+      "canals": [
+        "UCoybSbI2HaLsHZnY1RG8LEQ"
+      ]
+    },
+    {
+      "artista": "Mendra",
+      "aliases": [
+        "Mendra - Topic"
+      ],
+      "canals": [
+        "UCokFPjgxi7i2ONsHr8wHj6g",
+        "UCtTPgp6W1WefOGfV3maG7JA"
+      ]
+    },
+    {
+      "artista": "Milícians",
+      "aliases": [
+        "Milícians - Topic"
+      ],
+      "canals": [
+        "UCzv2Zdpkuk5RefgIRkXggCw"
+      ]
+    },
+    {
+      "artista": "Minibús intergalàctic",
+      "aliases": [
+        "Minibús Intergalàctic",
+        "Minibús Intergalàctic - Topic"
+      ],
+      "canals": [
+        "UC6DmhC1mZqfYnQM72mg3PKw",
+        "UC2Dowy9wOm0M5R25Mu7v34w"
+      ]
+    },
+    {
+      "artista": "Miquel Gil",
+      "aliases": [
+        "Miquel Gil - Topic"
+      ],
+      "canals": [
+        "UCrTJ5_xgCZyb-Rt3dp1eUxg"
+      ]
+    },
+    {
+      "artista": "Moksha",
+      "aliases": [
+        "MOKSHA - Topic",
+        "MOKSHA"
+      ],
+      "canals": [
+        "UC3uMAvZMHLOMo3OSDjqAVYQ"
+      ]
+    },
+    {
+      "artista": "Moto Clua",
+      "aliases": [
+        "Moto Clua - Topic"
+      ],
+      "canals": [
+        "UC3bvpTw40rgvnsZA1wCZeIQ"
+      ]
+    },
+    {
+      "artista": "Mr. Freak Ska",
+      "aliases": [
+        "Mr. Freak Ska - Topic"
+      ],
+      "canals": [
+        "UCElR_cmETBNoC7Rs6STl0BA"
+      ]
+    },
+    {
+      "artista": "N'Gai N'Gai",
+      "aliases": [
+        "N'Gai N'Gai - Topic"
+      ],
+      "canals": [
+        "UCUDIBEazNh-20moPTsT_f2w"
+      ]
+    },
+    {
+      "artista": "Naina",
+      "aliases": [
+        "NAINA",
+        "NAINA - Topic"
+      ],
+      "canals": [
+        "UCJCUdj8MStJsApyF1oiFTVA",
+        "UCTn8anEMvCsxpCMhyajKjrg"
+      ]
+    },
+    {
+      "artista": "Núria Feliu i Mestres",
+      "aliases": [
+        "Núria Feliu",
+        "Nuria Feliu"
+      ],
+      "canals": [
+        "UCjqasQj33NeNED2MJNHThjA"
+      ]
+    },
+    {
+      "artista": "Nyandú",
+      "aliases": [
+        "Nyandú - Topic"
+      ],
+      "canals": [
+        "UCntzpmXOeNsqe2AfOFTCUZg"
+      ]
+    },
+    {
+      "artista": "Obeses",
+      "aliases": [
+        "OBESES - Topic",
+        "OBESES"
+      ],
+      "canals": [
+        "UCjdNldGc9QMmr-mpOQjy7Zg"
+      ]
+    },
+    {
+      "artista": "Obrint Pas",
+      "aliases": [
+        "Obrint Pas - Topic"
+      ],
+      "canals": [
+        "UCBHDy6i_tQcWOjczk47PQyA",
+        "UCPMX7e8_PQtgqcDHzzbfX7g"
+      ]
+    },
+    {
+      "artista": "okdw",
+      "aliases": [
+        "OKDW - Topic",
+        "OKDW"
+      ],
+      "canals": [
+        "UCVJ3B4L5NoSuarmZKopumzQ",
+        "UCHXlSnGKv7tdBxMw2F-FMkw"
+      ]
+    },
+    {
+      "artista": "Oques Grasses",
+      "aliases": [
+        "Oques Grasses - Topic"
+      ],
+      "canals": [
+        "UCJD6uhnBA8eppY5QmQfJZwA",
+        "UCtq1tANqWFsrmS5XmCXY8qQ"
+      ]
+    },
+    {
+      "artista": "Orella d'Ós",
+      "aliases": [
+        "Orella d'Ós - Topic"
+      ],
+      "canals": [
+        "UCy3TyYTl8wJh8Ana3CP0QeA",
+        "UCQqdEQ1Nh5l1XIVqvBgj_3Q"
+      ]
+    },
+    {
+      "artista": "Orquestra Mirasol",
+      "aliases": [
+        "Orquestra Mirasol - Topic"
+      ],
+      "canals": [
+        "UCJJ6X0cboaPc-rl_XeafowQ"
+      ]
+    },
+    {
+      "artista": "Orxata Sound System",
+      "aliases": [
+        "ORXATA",
+        "Orxata Sound System - Topic"
+      ],
+      "canals": [
+        "UCzEhOnMgbk8TPud1OI7NDbw",
+        "UCLKx4vBoCOKwB2x280VFmng"
+      ]
+    },
+    {
+      "artista": "Ósserp",
+      "aliases": [
+        "Ósserp - Topic"
+      ],
+      "canals": [
+        "UCCmgW83QdTLEGTkEc6uyJ6Q"
+      ]
+    },
+    {
+      "artista": "Ouineta",
+      "aliases": [
+        "Ouineta - Topic"
+      ],
+      "canals": [
+        "UCn_A4CBnBwlD8OTXSz0_FHQ",
+        "UCuOXOJ1KW_sCpse10ImvXRg"
+      ]
+    },
+    {
+      "artista": "Ovidi Montllor i Mengual",
+      "aliases": [
+        "Ovidi Montllor"
+      ],
+      "canals": [
+        "UC4Ub0k-i6pWS76AUXOBf_6w"
+      ]
+    },
+    {
+      "artista": "Panellet",
+      "aliases": [
+        "Panellet - Topic"
+      ],
+      "canals": [
+        "UCDX2tkKsA-KRAxfE6p_kVuQ"
+      ]
+    },
+    {
+      "artista": "Pantaleó",
+      "aliases": [
+        "Pantaleo",
+        "Pantaleó - Topic"
+      ],
+      "canals": [
+        "UCgYkYD0ZgH2zk3Cnhh_belA"
+      ]
+    },
+    {
+      "artista": "Pastorets Rock",
+      "aliases": [
+        "Pastorets rock - Topic",
+        "Pastorets rock"
+      ],
+      "canals": [
+        "UCb9iNJl8JS-5gx1d29X8Sjw",
+        "UC2UnG44LjrVvcgzlK8Bte5Q"
+      ]
+    },
+    {
+      "artista": "Pau Riba i Romeva",
+      "aliases": [
+        "Pau Riba",
+        "Pau Riba - Topic"
+      ],
+      "canals": [
+        "UCGQuY2Y9jeqLRxhs0l9-jVw",
+        "UC5u_IqqHbJKvmeSXSyCyFyg"
+      ]
+    },
+    {
+      "artista": "Pau Vallvé Navarro",
+      "aliases": [
+        "Pau Vallvé",
+        "Pau Vallvé - Topic",
+        "PAU VALLVÉ"
+      ],
+      "canals": [
+        "UCNzFLySm2-AVSBe_hyiY5Vw",
+        "UCeYxr0JNg6FD1jeBPiERkZQ"
+      ]
+    },
+    {
+      "artista": "Paul Fuster",
+      "aliases": [
+        "Paul Fuster - Topic"
+      ],
+      "canals": [
+        "UCCYgQLqvl_nmSk4-WPDGPIg"
+      ]
+    },
+    {
+      "artista": "Paula Montalbán",
+      "aliases": [
+        "Paula Montalban Gay",
+        "PAULA MONTALBÁN - Topic",
+        "PAULA MONTALBÁN"
+      ],
+      "canals": [
+        "UCZJX-lH3Hs2EfgNigx7F0Hg",
+        "UCboGC6e3sTTIO9C6lHxifnA"
+      ]
+    },
+    {
+      "artista": "Pegasus",
+      "aliases": [
+        "Pegasus - Topic"
+      ],
+      "canals": [
+        "UCYVzNqs1SsMzBHLli6QUHaw"
+      ]
+    },
+    {
+      "artista": "Pep Puigdemont",
+      "aliases": [
+        "Pep Puigdemont - Topic"
+      ],
+      "canals": [
+        "UCZZOt0pWmzrTf3P97R7be6g"
+      ]
+    },
+    {
+      "artista": "Peret",
+      "aliases": [
+        "Peret - Topic"
+      ],
+      "canals": [
+        "UCVowitUeUXlew8bjVjBOtUQ"
+      ]
+    },
+    {
+      "artista": "Pesta Porcina",
+      "aliases": [
+        "Jofredalmau"
+      ],
+      "canals": [
+        "UCeZTzF8dhFsh_BcqHUzygjg"
+      ]
+    },
+    {
+      "artista": "Pilseners",
+      "aliases": [
+        "Pilseners - Topic"
+      ],
+      "canals": [
+        "UCcCicDkn0YDxOeir49bCwPQ",
+        "UCfMqjIyA0G1cVGNlFXXoJhA"
+      ]
+    },
+    {
+      "artista": "Pixamandúrries",
+      "aliases": [
+        "Pixamandurries",
+        "Pixamandurries - Topic"
+      ],
+      "canals": [
+        "UCXQsHe-XMB9xWUxtRLFAWQg"
+      ]
+    },
+    {
+      "artista": "Pla Moguda",
+      "aliases": [
+        "PLA MOGUDA"
+      ],
+      "canals": [
+        "UCEMQa0poTrwLZPEbB0HGJTA"
+      ]
+    },
+    {
+      "artista": "Pol Bordas",
+      "aliases": [
+        "Pol Bordas - Topic"
+      ],
+      "canals": [
+        "UCgTB-WFdzE-byKvUR5QVnFQ",
+        "UCtpjQosTHLms2EiAUrTgaAg"
+      ]
+    },
+    {
+      "artista": "Poor Tràmit",
+      "aliases": [
+        "Poor Tramit",
+        "POOR TRÀMIT",
+        "Poor Tràmit - Topic"
+      ],
+      "canals": [
+        "UC9HWLecmAeJ3MrNdDHEMDBA",
+        "UCvKAZWUa6tY8b5RBergLr0Q"
+      ]
+    },
+    {
+      "artista": "Quico el Célio, el Noi i el Mut de Ferreries",
+      "aliases": [
+        "Quico el Célio",
+        "Quico El Célio, El Noi i El Mut de Ferreries - Topic",
+        "Quico el Célio, el Noi i el Mut de Ferreries - Topic",
+        "Quico El Célio, El Noi i El Mut de Ferreries"
+      ],
+      "canals": [
+        "UCv_7jwmDsQHYpxisi82fQng",
+        "UCYcAA6W7ef4ZOWat8JjaARQ"
+      ]
+    },
+    {
+      "artista": "Quimi Portet",
+      "aliases": [
+        "Quimi Portet - Topic"
+      ],
+      "canals": [
+        "UCWq2Sd65Q2V6PhDzOBMTb5Q",
+        "UCD-JAmWvBJA0pW83zFtheiQ"
+      ]
+    },
+    {
+      "artista": "Raimon",
+      "aliases": [],
+      "canals": [
+        "UCljKJq4zWfaxTUdptZgtTQA"
+      ]
+    },
+    {
+      "artista": "Ramon Muntaner i Torruella",
+      "aliases": [
+        "Ramon Muntaner"
+      ],
+      "canals": [
+        "UCn4V6rDw7Gz1R6F2qyt2IrQ"
+      ]
+    },
+    {
+      "artista": "Ratpenat",
+      "aliases": [
+        "Ratpenat - Topic"
+      ],
+      "canals": [
+        "UC0Us9bY-uMslfHcmZSVirRw"
+      ]
+    },
+    {
+      "artista": "Reggae per Xics",
+      "aliases": [
+        "The Penguins",
+        "The Penguins - Reggae per Xics",
+        "Reggae Per Xics"
+      ],
+      "canals": [
+        "UC2pBZWFY9BTr7u6lZWPMROQ"
+      ]
+    },
+    {
+      "artista": "Reïna",
+      "aliases": [
+        "REÏNA",
+        "Reïna - Topic"
+      ],
+      "canals": [
+        "UCC5cC2LyXLOPVR5jh25IBCA",
+        "UC9i1uNb0GFrISNB2pctkvRg"
+      ]
+    },
+    {
+      "artista": "Remei de Ca la Fresca",
+      "aliases": [
+        "REMEI DE CA LA FRESCA",
+        "Remei de Ca la Fresca - Topic"
+      ],
+      "canals": [
+        "UCIpVysRnHTbek1TON9dIF6Q",
+        "UCPLzO9EvgvibAyZCgJDxwyg"
+      ]
+    },
+    {
+      "artista": "Renaldo & Clara",
+      "aliases": [
+        "Renaldo & Clara - Topic"
+      ],
+      "canals": [
+        "UCifCAnA0yoCuJUz8SdYOrfw",
+        "UCB3ktCqywNPK-19VWCpEseA"
+      ]
+    },
+    {
+      "artista": "Rita Payés",
+      "aliases": [
+        "Rita Payés - Topic",
+        "Rita Payes"
+      ],
+      "canals": [
+        "UCYPbYGqAXm8gaYGVY-ANVXA",
+        "UCqcQJRrcXc_rLSwGVo4dP5g"
+      ]
+    },
+    {
+      "artista": "RIU",
+      "aliases": [
+        "RIU - Música Popular dels PPCC"
+      ],
+      "canals": [
+        "UC5Fb0Xo8Xx6gVrFPoVsZluw"
+      ]
+    },
+    {
+      "artista": "Roger Padrós de la Torre",
+      "aliases": [
+        "Roger Padrós"
+      ],
+      "canals": [
+        "UCcMzzxk70aJr9DecqJN6hhw"
+      ]
+    },
+    {
+      "artista": "Roser Dresaire",
+      "aliases": [
+        "Roser Dresaire - Topic"
+      ],
+      "canals": [
+        "UCweQDbLnNXxU6M14_vSP7KQ",
+        "UCjdDE__u_koL76SqkY0jYJg"
+      ]
+    },
+    {
+      "artista": "Saïm",
+      "aliases": [
+        "Saïm - Topic"
+      ],
+      "canals": [
+        "UCiUT6UwoOJsthloLMK0pSig"
+      ]
+    },
+    {
+      "artista": "Samfaina de Colors",
+      "aliases": [
+        "Samfaina de Colors - Topic"
+      ],
+      "canals": [
+        "UCnNhpfMHfVCIGQI3HjxTkxg"
+      ]
+    },
+    {
+      "artista": "Sau",
+      "aliases": [
+        "Sau - Topic"
+      ],
+      "canals": [
+        "UC0njIX_vDoAZaqKR5N8AavA"
+      ]
+    },
+    {
+      "artista": "Scotty DK",
+      "aliases": [
+        "Scotty Dk - Topic",
+        "Scotty Dk"
+      ],
+      "canals": [
+        "UCUlJ_OU8GDvRqHTTzfkqz4A"
+      ]
+    },
+    {
+      "artista": "Secta Sònica",
+      "aliases": [
+        "Secta Sònica - Topic"
+      ],
+      "canals": [
+        "UC_htjc02Q62QuGP1EOyOSnQ"
+      ]
+    },
+    {
+      "artista": "Senyor Oca",
+      "aliases": [
+        "Senyor Oca - Topic"
+      ],
+      "canals": [
+        "UC9aKnizc9niMNJGRL1lnwTg",
+        "UCWdaWh8h5Uov97df5vX4RCw"
+      ]
+    },
+    {
+      "artista": "Sidonie",
+      "aliases": [],
+      "canals": [
+        "UCJ6EMs_13PLDvRSHi-XqRwQ"
+      ]
+    },
+    {
+      "artista": "Skatalà",
+      "aliases": [],
+      "canals": [
+        "UCUWHtSvVKAhJn-zsf38q2TQ"
+      ]
+    },
+    {
+      "artista": "Smoking Souls",
+      "aliases": [
+        "Smoking Souls - Topic",
+        "SMOKING SOULS"
+      ],
+      "canals": [
+        "UCtHWEhEdI_nkFQmE2Ewzrnw",
+        "UCYy5FHJ4Oq0RKqxqoGlF3Gw"
+      ]
+    },
+    {
+      "artista": "Socunbohemio",
+      "aliases": [
+        "Socunbohemio - Topic"
+      ],
+      "canals": [
+        "UC7IUL5Ba9dhBVPnTLe9RHhQ",
+        "UCu7TLBQJJLaaxlhD_li0BcA"
+      ]
+    },
+    {
+      "artista": "Sodi",
+      "aliases": [
+        "SODI",
+        "Sodi - Topic"
+      ],
+      "canals": [
+        "UComWnHwPvgdPBmjYs10aG-A",
+        "UChOihf6aBgxh7HpWFLGIQdA"
+      ]
+    },
+    {
+      "artista": "Solk",
+      "aliases": [
+        "Solk Música d'arrel"
+      ],
+      "canals": [
+        "UCHVIvz-1UD7NLa_FBveiFnw"
+      ]
+    },
+    {
+      "artista": "Sota Terra",
+      "aliases": [
+        "Sota Terra - Topic"
+      ],
+      "canals": [
+        "UCUTor5MG45HnmxOEc2HrUhA"
+      ]
+    },
+    {
+      "artista": "Subliminal",
+      "aliases": [],
+      "canals": [
+        "UCz35Q7e_ulwY_uRqg5zDxeQ"
+      ]
+    },
+    {
+      "artista": "Svetlana",
+      "aliases": [
+        "Svetlana - Topic",
+        "SVETLANA"
+      ],
+      "canals": [
+        "UCCo52K6zPcI8QXDKr2DgjBg",
+        "UCTdiD8UkDXr2DdbFRfQbRgQ"
+      ]
+    },
+    {
+      "artista": "Tancat per defunció",
+      "aliases": [],
+      "canals": [
+        "UCGbtwR91T2vj1mrT12bAEXw"
+      ]
+    },
+    {
+      "artista": "Tano!",
+      "aliases": [
+        "Tano! - Topic"
+      ],
+      "canals": [
+        "UCTgyTOC4u7Dw0AvH3-4uC9w"
+      ]
+    },
+    {
+      "artista": "Tashkenti",
+      "aliases": [
+        "Tashkenti - Topic"
+      ],
+      "canals": [
+        "UCkxi7wy2VhKCMzoxoVEF9pg"
+      ]
+    },
+    {
+      "artista": "Tempestat",
+      "aliases": [
+        "Tempestat - Topic"
+      ],
+      "canals": [
+        "UCxVQcJujZLvClGNyvobPRyQ",
+        "UC50KRxJXBWgOj3Q05CDAs8w"
+      ]
+    },
+    {
+      "artista": "Teràpia de Shock",
+      "aliases": [
+        "Terapia de Xoc",
+        "Teràpia de Xoc",
+        "Terapia de Shock",
+        "Teràpia De Shock",
+        "Teràpia de Shock - Topic",
+        "TerapiaDeShock"
+      ],
+      "canals": [
+        "UC4S5WcSVzMhUd-UwKKpKp5w",
+        "UCIJjTYBxYUHPFir2cZj0wKQ",
+        "UCnO3DG7B2cyiu5zoNstHEfA"
+      ]
+    },
+    {
+      "artista": "Terratombats",
+      "aliases": [
+        "Terratombats CAT",
+        "Terratombats - Topic"
+      ],
+      "canals": [
+        "UCAx9peaZFIswCLSlT77e1Cg",
+        "UCrAazkwonIdGi_TGkzXkoCw"
+      ]
+    },
+    {
+      "artista": "Thanatopraxy",
+      "aliases": [
+        "thanatopraxy - Topic",
+        "thanatopraxy"
+      ],
+      "canals": [
+        "UCZ9JPgA_kLvdtOpbIzs8Yew"
+      ]
+    },
+    {
+      "artista": "The Anti-Patiks",
+      "aliases": [
+        "The Anti-Patiks - Topic"
+      ],
+      "canals": [
+        "UCARSXSWwSje53JsJgzLCtpA",
+        "UCuBUwUHwHaYGai1Enee7DSw"
+      ]
+    },
+    {
+      "artista": "The Cabrians",
+      "aliases": [
+        "Cabrians",
+        "Mr.Freak Ska"
+      ],
+      "canals": [
+        "UC-N1gUYe6UmwHOSQAUPH2-A"
+      ]
+    },
+    {
+      "artista": "Tiger Menja Zebra",
+      "aliases": [
+        "Tiger menja zebra - Topic",
+        "Tiger menja zebra"
+      ],
+      "canals": [
+        "UCQMMHfq3-mXuozgrnyx-Gcg"
+      ]
+    },
+    {
+      "artista": "Tornaveus",
+      "aliases": [
+        "Tornaveus Polifonies"
+      ],
+      "canals": [
+        "UC8vbtHPcQvQEuQi2wcwK6aQ"
+      ]
+    },
+    {
+      "artista": "Trèvol",
+      "aliases": [
+        "Trèvol grup",
+        "TRÈVOL",
+        "Trèvol - Topic"
+      ],
+      "canals": [
+        "UCz3aiLj85sLBimSrPwNcQcQ",
+        "UCF6nxIBqp7vuVu51PGC7x5w"
+      ]
+    },
+    {
+      "artista": "Udol",
+      "aliases": [
+        "UDOL BAND",
+        "Udol - Topic",
+        "Udol Band"
+      ],
+      "canals": [
+        "UCQz3jf86vHTtfVwXd-rOSrA",
+        "UCrxpjvY7G2ffEklcmSHm5og",
+        "UCYnT07O7RJlNvU_sNq6EsZQ"
+      ]
+    },
+    {
+      "artista": "ultralone",
+      "aliases": [],
+      "canals": [
+        "UC2Q-E-1tamuyLrKRMd0Wmbg"
+      ]
+    },
+    {
+      "artista": "Una Bèstia Incontrolable",
+      "aliases": [
+        "Una Bèstia Incontrolable - Topic"
+      ],
+      "canals": [
+        "UCdvCXh3zd4i8SLE_l_6AEDw"
+      ]
+    },
+    {
+      "artista": "Urbàlia Rurana",
+      "aliases": [
+        "Urbalia Rurana",
+        "Urbàlia Rurana - Topic"
+      ],
+      "canals": [
+        "UCSsJFD5CFYZ3fe24qhtsejA",
+        "UCMIVDQMYttFV6h1aRIeQN-w"
+      ]
+    },
+    {
+      "artista": "Vàlius",
+      "aliases": [
+        "vàlius - Topic",
+        "vàlius"
+      ],
+      "canals": [
+        "UCc20bll252Rwc71ILMnWVcA"
+      ]
+    },
+    {
+      "artista": "Vicens Martín Dream Big Band",
+      "aliases": [
+        "Vicens Martín",
+        "Vicens Martín Dream Big Band & Gemma Abrié",
+        "Vicens Martín - Topic"
+      ],
+      "canals": [
+        "UCpj14cymb-6wmeXwI4hmFxA"
+      ]
+    },
+    {
+      "artista": "Vicky l’Arròs",
+      "aliases": [
+        "Vicky L'Arròs",
+        "Vicky L'Arròs - Topic"
+      ],
+      "canals": [
+        "UCl8a9NTTy-1sx1zB3lOAd5A"
+      ]
+    },
+    {
+      "artista": "Vidres a la Sang",
+      "aliases": [
+        "Vidres a la sang official",
+        "Vidres a la Sang - Topic",
+        "Vidres a la sang"
+      ],
+      "canals": [
+        "UCWWnWo4E1RqWDOX4-y1jwfQ",
+        "UCZKSBZ8hKicoNtWdq1hzTfw"
+      ]
+    },
+    {
+      "artista": "Vinnie Kairos",
+      "aliases": [
+        "VINNIE KAIROS"
+      ],
+      "canals": [
+        "UCmsQN-zOoJXlhKtbkRS702A"
+      ]
+    },
+    {
+      "artista": "Vittara",
+      "aliases": [
+        "VITTARA",
+        "Vittara - Topic"
+      ],
+      "canals": [
+        "UCbGPnNJlInAmzdWNFmLzwjw",
+        "UC7HPer-lgFJBnjfNJ_J1Q4g"
+      ]
+    },
+    {
+      "artista": "Voltor",
+      "aliases": [],
+      "canals": [
+        "UCdwDeWJ4aJ9RAURZERmWquA"
+      ]
+    },
+    {
+      "artista": "Vrademargk",
+      "aliases": [
+        "Vrademarg",
+        "VRADEMARGKofficial",
+        "Vrademargk - Topic"
+      ],
+      "canals": [
+        "UC5b2TCGWRI0ulWbpeCm9dnw",
+        "UC0Ury5l6zFGf9ws25up1ucg"
+      ]
+    },
+    {
+      "artista": "Whiskyn's",
+      "aliases": [
+        "Whiskyn's - Topic"
+      ],
+      "canals": [
+        "UCFjpMGciAkOrjXrjxduOPog"
+      ]
+    },
+    {
+      "artista": "X-Fanekaes",
+      "aliases": [
+        "X-Fanekaes - Topic"
+      ],
+      "canals": [
+        "UCYcENw_M0RUKP-sXuR3odHQ"
+      ]
+    },
+    {
+      "artista": "Xanguito",
+      "aliases": [
+        "Xanguito - Topic"
+      ],
+      "canals": [
+        "UCP0uejjEVTNrMf2etM3qUwg",
+        "UCHWqKBzUJqglcjVIMViPE0A"
+      ]
+    },
+    {
+      "artista": "Xarim Aresté",
+      "aliases": [
+        "Xarim Areste",
+        "Xarim Aresté - Topic"
+      ],
+      "canals": [
+        "UCVCila0PYCYGNb7ThkN2Tlw"
+      ]
+    },
+    {
+      "artista": "Xavi Sarrià",
+      "aliases": [
+        "Xavi Sarrià - Topic"
+      ],
+      "canals": [
+        "UCEoFM5PntDSV-nDGm_vBvcg",
+        "UCi2I26VMjcl9e5jfRxaBPbA"
+      ]
+    },
+    {
+      "artista": "Xavier Baró",
+      "aliases": [],
+      "canals": [
+        "UC40skFzEdR6EMg4FeL7U6OQ"
+      ]
+    },
+    {
+      "artista": "Xenia Casado",
+      "aliases": [
+        "XeniaCasadoVEVO"
+      ],
+      "canals": [
+        "UC8QspJi5zwZj3rOVYHKKVUQ"
+      ]
+    },
+    {
+      "artista": "Xesco Boix",
+      "aliases": [
+        "Xesco Boix - Topic"
+      ],
+      "canals": [
+        "UC5DkIn4ZKBgGKqvpa0JyZlg"
+      ]
+    },
+    {
+      "artista": "Xicu",
+      "aliases": [
+        "xicu - Topic",
+        "xicu"
+      ],
+      "canals": [
+        "UCsZbZ9zubb6i4stTRiuiabw",
+        "UCUsvtjzfis5NZY8qj8BY_FQ"
+      ]
+    },
+    {
+      "artista": "Xiula",
+      "aliases": [
+        "Xiula - Topic"
+      ],
+      "canals": [
+        "UCwLcftQS2zEOfwD9jSl2TXA"
+      ]
+    },
+    {
+      "artista": "Xucu-pà",
+      "aliases": [
+        "Xucu-Pà"
+      ],
+      "canals": [
+        "UCtOU3Q4qYA0FrcA1jtTjTvw"
+      ]
+    },
+    {
+      "artista": "Ypnosi",
+      "aliases": [
+        "YPNOSI - Topic",
+        "YPNOSI"
+      ],
+      "canals": [
+        "UCqqRg6HX-P769DEoffrQMEQ",
+        "UCg6lVNl78-THJI1w8dSy0bA"
+      ]
+    },
+    {
+      "artista": "Zombi Pujol",
+      "aliases": [
+        "Zombi Pujol - Topic"
+      ],
+      "canals": [
+        "UCHdLUidEVvmo-4p1h895hcA"
+      ]
+    },
+    {
+      "artista": "ZOO",
+      "aliases": [
+        "ZOO POSSE"
+      ],
+      "canals": [
+        "UCBh82sG2OKv1J6Ij43mdFiw"
+      ]
+    }
+  ],
+  "discsVerificats": []
+}

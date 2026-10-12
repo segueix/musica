@@ -1568,3 +1568,13 @@ En verificar la primera publicació, la fitxa contenia `apOrigin` però quedava 
 ## 2026-10-12 — Exclusions d’idioma incompletes als discos
 
 Les regles per títol es materialitzaven només sobre el feed. Una obra exclosa podia tenir altres IDs al catàleg Topic o l’historial que no constaven a hidden-videos.json. En revisar Dusminguet, La Troba Kung-Fú i Gertrudis s’han encreuat les tres fonts i afegit 61 IDs al registre central, que aplica el client. No s’han editat dades generades. Les noves regles inclouen variants d’apòstrof/accent i l’àlies Topic de Gertrudis. Els remescles sense prova de veu i els títols sense lletra es deixen sense nova exclusió; aquesta actuació no certifica tot el repertori restant. Vegeu docs/revisions/2026-10-12-dusminguet-troba-gertrudis.json.
+
+
+
+## 2026-10-12 — Cua d’idioma limitada als artistes vigilats
+
+La cua creixia perquè tots els vídeos nous hi entraven i les marques ortogràfiques del títol produïen descartaments. La política central és ara `data/artistes-vigilats-idioma.json`, documentada a `docs/ARTISTES_VIGILATS_IDIOMA.md`. Agrupa IDs oficials/Topic i àlies; la resta del catàleg classificat passa per confiança editorial, registrada separadament de les revisions individuals. Un artista desconegut genera una alta pendent, no una revisió per cançó. Els descartaments antics passen a dubtes o confiança, mai a noves exclusions només pel títol. Els IDs ocults i les decisions prèvies es conserven.
+
+`applyReview()` només resol els IDs explícits: abans aprovava tots els dubtes restants i amagava tots els descartaments ortogràfics. La memòria permet decisions per ID, obres explícitament reutilitzables amb font i discos amb pistes verificades; no hereta decisions a remescles/directes/col·laboracions per un títol net semblant. La confiança es pot revocar movent un artista a vigilància, sense esborrar decisions individuals. Les cues fora del feed actiu es preserven perquè una lectura parcial del catàleg no les resol.
+
+Proves de migració, idempotència, homònims, Topic, exclusions i revisions parcials a `tests/revisio-idiomes.test.js`. Cap consulta a YouTube ni edició manual del feed.

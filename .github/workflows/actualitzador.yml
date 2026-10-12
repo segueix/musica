@@ -41,5 +41,6 @@ jobs:
         # Si main ha canviat mentrestant: git pull --rebase i es torna a provar (no es perd la quota gastada).
         run: >-
           bash scripts/publicar_dades.sh "data: actualitza feed musical"
-          data/feed.json js/channels-ca.json data/music-feed-audit.json data/revisio-idiomes.json
+          data/feed.json js/channels-ca.json data/music-feed-audit.json data/revisio-idiomes.json data/hidden-videos.json
           data/music-topic-catalog.json data/music-topic-review.json
+
