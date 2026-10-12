@@ -30,6 +30,7 @@ jobs:
         run: |
           node - <<'NODE'
           const fs = require('fs');
+          (async () => {
           const key = process.env.YOUTUBE_API_KEY_SERVER;
           if (!key) throw new Error('Falta la clau de YouTube');
           const targets = [
@@ -94,6 +95,8 @@ jobs:
           const file = 'docs/revisions/2026-10-12-tardor-blat-quinto-descoberta.json';
           fs.writeFileSync(file, JSON.stringify(report, null, 2) + '\n');
           fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, 'Canals i vídeos identificats. Sense modificar encara el catàleg. Quota estimada: ' + quota + '.\n');
+          })().catch(error => { console.error(error.message); process.exitCode = 1; });
           NODE
       - name: Desa la verificació
-        run: bash scripts/publicar_dades.sh 'docs: verifica canals de Tardor, Àlex Blat i Quinto' docs/revisions/2026-10-12-tardor-blat-quinto-descoberta.json
+        run: |
+          bash scripts/publicar_dades.sh 'docs: verifica canals de Tardor, Àlex Blat i Quinto' docs/revisions/2026-10-12-tardor-blat-quinto-descoberta.json
