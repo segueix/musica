@@ -6401,11 +6401,11 @@ body.is-video-pip .video-placeholder.is-placeholder-hidden {
 .playlist-song-result button:disabled { background: transparent; color: var(--text-secondary); cursor: default; }
 
 
-/* ---------- Marca: logo + «Segueix!» + «Música en català» (2026-10-12) ----------
-   Un sol bloc de marca (logotip) igual a l'ordinador i al mòbil: el logo fa l'alçada de les dues línies i, a sota de
-   «Segueix!», «Música en català» en versaletes llima espaiades (com «En català» de la pantalla d'espera), alineat a
-   l'esquerra amb el nom. Al mòbil la marca és un contenidor: si no hi cap el text llarg (< 140 px) passa a
-   «Música CAT», i a 320 px (< 110 px) tot es fa una mica més petit; el nom no desapareix mai. */
+/* ---------- Marca: logo + «Segueix! Música» + «En català» (2026-10-12) ----------
+   El mateix logotip que la pantalla d'espera, a l'ordinador i al mòbil: logo de l'alçada de les dues línies,
+   «Segueix!» amb «Música» al costat (Fraunces, llima) i a sota «En català» en versaletes espaiades i terracota,
+   alineat a l'esquerra amb el nom. Al mòbil la marca és un contenidor i la lletra s'ajusta a l'espai que deixen la
+   cerca i les icones (a 320 px el logo i el text es fan més petits); cap paraula no s'amaga. */
 .app-header .brand {
     display: flex;
     align-items: center;
@@ -6436,32 +6436,37 @@ body.is-video-pip .video-placeholder.is-placeholder-hidden {
     margin-left: 1px;
 }
 
+.brand-music {
+    margin-left: 0.3em;
+    color: var(--pt-accent);
+    font-family: var(--pt-display);
+    font-weight: 600;
+    letter-spacing: 0;
+}
+
 .brand-tag {
     display: block;
     margin-top: 3px;
-    color: var(--pt-accent);
+    color: var(--pt-terracotta);
     font-size: 0.6875rem;
     font-weight: 700;
     line-height: 1.15;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
     white-space: nowrap;
-}
-
-.brand-tag__short {
-    display: none;
 }
 
 @media (max-width: 768px) {
     .app-header .brand {
         container-type: inline-size;
-        gap: 8px;
+        gap: 0;
         overflow: hidden;
     }
 
     .app-header .brand-logo {
         width: 34px;
         height: 34px;
+        margin-right: 8px;
         border-radius: 8px;
     }
 
@@ -6472,55 +6477,621 @@ body.is-video-pip .video-placeholder.is-placeholder-hidden {
     .brand-tag {
         margin-top: 2px;
         font-size: 0.5625rem;
-        letter-spacing: 0.08em;
+        letter-spacing: 0.14em;
     }
 
-    @container (max-width: 139px) {
-        .brand-tag__long {
-            display: none;
-        }
-
-        .brand-tag__short {
-            display: inline;
-        }
-    }
-
-    @container (max-width: 109px) {
+    /* 375–393 px d'ample */
+    @container (max-width: 169px) {
         .app-header .brand-logo {
-            width: 28px;
-            height: 28px;
-            border-radius: 8px;
+            width: 30px;
+            height: 30px;
         }
 
         .app-header .brand-name {
-            font-size: 0.9375rem;
+            font-size: 0.90625rem;
+        }
+    }
+
+    /* 360 px */
+    @container (max-width: 139px) {
+        .app-header .brand-logo {
+            width: 28px;
+            height: 28px;
+        }
+
+        .app-header .brand-name {
+            font-size: 0.8125rem;
         }
 
         .brand-tag {
-            letter-spacing: 0.04em;
+            font-size: 0.5rem;
+            letter-spacing: 0.12em;
+        }
+    }
+
+    /* 320 px: no hi cap el logo al costat de «Segueix! Música»; el text és la marca */
+    @container (max-width: 109px) {
+        .app-header .brand-logo {
+            display: none;
+        }
+
+        .app-header .brand-name {
+            font-size: 0.78rem;
         }
     }
 }
 
 
-/* Descoberta secundària: després dels estils, sense competir amb la ràdio personal. */
-.pt-near { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 20px; border: 1px solid var(--pt-line); border-radius: 14px; }
-.pt-near h2 { margin: 0 0 5px; font-size: 1.125rem; }
-.pt-near p { margin: 0; color: var(--text-secondary); }
-.pt-near button, .near-dialog button { min-height: 44px; border: 1px solid var(--pt-line); border-radius: 10px; padding: 10px 14px; background: var(--pt-bg, #141615); color: var(--pt-text, #f4f0e8); font: inherit; cursor: pointer; }
-.pt-near button { flex: none; color: var(--pt-accent); }
-.near-dialog { width: min(640px, calc(100vw - 32px)); max-height: 85dvh; box-sizing: border-box; padding: 24px; border: 1px solid var(--pt-line); border-radius: 16px; background: var(--pt-bg, #141615); color: var(--pt-text, #f4f0e8); overflow-y: auto; }
-.near-dialog::backdrop { background: rgba(0,0,0,.7); }
-.near-heading, .near-search { display: flex; gap: 12px; align-items: center; }
-.near-heading { justify-content: space-between; } .near-heading h2 { margin: 0; }
-.near-dialog form { margin-top: 20px; } .near-dialog label { display: block; margin-bottom: 8px; }
-.near-search input { min-width: 0; flex: 1; padding: 12px; min-height: 44px; border: 1px solid var(--pt-line); border-radius: 10px; background: var(--pt-bg); color: var(--pt-text); font: inherit; box-sizing: border-box; }
-.near-actions { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0; }
-.near-actions [data-near-play] { background: var(--pt-accent); color: #141615; font-weight: 700; }
-.near-dialog button:disabled { opacity: .45; cursor: default; }
-.near-dialog :focus-visible, .pt-near button:focus-visible { outline: 2px solid var(--pt-accent); outline-offset: 3px; }
-.near-dialog li { padding: 8px 0; } .near-dialog li span, .near-dialog small { display: block; }
-.near-dialog small, .near-help { color: var(--text-secondary); font-size: .85rem; line-height: 1.5; }
-.near-dialog a { color: var(--pt-accent); }
-.near-locations { display: grid; gap: 6px; max-height: 230px; overflow-y: auto; } .near-locations button { text-align: left; }
-@media (max-width: 600px) { .pt-near { align-items: flex-start; flex-direction: column; gap: 12px; } .near-dialog { padding: 16px; } }
+/* ---------- «A prop teu» (js/features/nearby-radio.js; 2026-10-12) ----------
+   Portada: targeta destacada just després de «Comença per aquí», amb un radar (anelles i punts) i el pin. Amb una
+   localitat desada, «Engega la ràdio» la posa en marxa d'un toc (data-near-quick); sense, «Utilitza la meva ubicació»
+   i «Tria una localitat» obren el diàleg directament al pas que toca. Diàleg: centrat a l'ordinador i a pantalla
+   completa al mòbil, capçalera i botons fixos, i la llista amb el número, l'artista, la cançó i els km en una càpsula. */
+.pt-near {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    overflow: hidden;
+    padding: 22px 20px 20px;
+    border: 1px solid var(--pt-line);
+    border-radius: var(--pt-radius-lg, 16px);
+    background:
+        radial-gradient(120% 140% at 100% 0%, rgba(217, 138, 112, 0.22) 0%, rgba(217, 138, 112, 0) 55%),
+        var(--pt-surface);
+}
+
+.pt-near__radar {
+    position: absolute;
+    top: -46px;
+    right: -46px;
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+    background: repeating-radial-gradient(circle, rgba(214, 237, 132, 0.2) 0 1px, transparent 1px 30px);
+    pointer-events: none;
+}
+
+.pt-near__pin {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--pt-accent);
+    color: var(--pt-on-accent, #141615);
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 0 8px rgba(214, 237, 132, 0.16);
+}
+
+.pt-near__pin svg {
+    width: 24px;
+    height: 24px;
+}
+
+.pt-near__dot {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--pt-terracotta);
+}
+
+.pt-near__dot--1 { top: 30%; left: 24%; }
+.pt-near__dot--2 { top: 68%; left: 70%; width: 8px; height: 8px; }
+.pt-near__dot--3 { top: 22%; left: 76%; width: 6px; height: 6px; background: var(--pt-text); }
+
+.pt-near__body {
+    position: relative;
+    display: grid;
+    gap: 8px;
+    min-width: 0;
+    padding-right: 110px;
+}
+
+.pt-near__title {
+    margin: 0;
+    font-family: var(--pt-display);
+    font-size: clamp(1.6rem, 5.4vw, 2.1rem);
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--pt-text);
+}
+
+.pt-near__text {
+    margin: 0;
+    max-width: 46ch;
+    color: var(--pt-muted);
+    font-size: 0.9375rem;
+    line-height: 1.45;
+}
+
+.pt-near__place {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin: 2px 0 0;
+    color: var(--pt-text);
+    font-size: 0.9375rem;
+}
+
+.pt-near__place svg {
+    width: 18px;
+    height: 18px;
+    flex: none;
+    color: var(--pt-accent);
+}
+
+.pt-near__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.pt-near__actions .pt-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+.pt-near button:focus-visible {
+    outline: 2px solid var(--pt-accent);
+    outline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+    /* Al mòbil el radar queda a dalt a la dreta, darrere del títol, i el text passa per sota */
+    .pt-near__radar {
+        top: -42px;
+        right: -42px;
+        width: 160px;
+        height: 160px;
+        opacity: 0.85;
+    }
+
+    .pt-near__body {
+        padding-right: 0;
+    }
+
+    .pt-near__title,
+    .pt-near .pt-eyebrow {
+        padding-right: 96px;
+    }
+
+    .pt-near__actions .pt-btn {
+        flex: 1 1 100%;
+    }
+}
+
+@media (min-width: 769px) {
+    .pt-near {
+        padding: 28px 32px;
+    }
+
+    .pt-near__radar {
+        top: 50%;
+        right: 6%;
+        width: 240px;
+        height: 240px;
+        transform: translateY(-50%);
+    }
+
+    .pt-near__body {
+        padding-right: 300px;
+    }
+}
+
+/* Diàleg */
+.near-dialog {
+    position: fixed;
+    inset: 0;
+    display: none;
+    flex-direction: column;
+    width: min(680px, calc(100vw - 32px));
+    max-width: none;
+    height: min(820px, calc(100dvh - 48px));
+    max-height: none;
+    margin: auto;
+    padding: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+    border: 1px solid var(--pt-line);
+    border-radius: 16px;
+    background: var(--pt-bg, #141615);
+    color: var(--pt-text, #f4f0e8);
+}
+
+.near-dialog[open] {
+    display: flex;
+}
+
+.near-dialog::backdrop {
+    background: rgba(0, 0, 0, 0.72);
+}
+
+.near-dialog button {
+    min-height: 44px;
+    border: 1px solid var(--pt-line);
+    border-radius: 12px;
+    padding: 10px 16px;
+    background: var(--pt-surface);
+    color: var(--pt-text);
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.near-dialog button:hover:not(:disabled) {
+    border-color: var(--pt-accent);
+}
+
+.near-dialog button:disabled {
+    opacity: 0.45;
+    cursor: default;
+}
+
+.near-dialog :focus-visible {
+    outline: 2px solid var(--pt-accent);
+    outline-offset: 3px;
+}
+
+.near-dialog svg {
+    width: 20px;
+    height: 20px;
+    flex: none;
+}
+
+.near-head {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 20px;
+    border-bottom: 1px solid var(--pt-line);
+}
+
+.near-head__icon {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    flex: none;
+    border-radius: 50%;
+    background: var(--pt-accent);
+    color: var(--pt-on-accent, #141615);
+}
+
+.near-head__text {
+    flex: 1;
+    min-width: 0;
+}
+
+.near-eyebrow {
+    margin: 0;
+    color: var(--pt-terracotta);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.near-head h2 {
+    margin: 0;
+    font-family: var(--pt-display);
+    font-size: 1.5rem;
+    line-height: 1.15;
+}
+
+.near-dialog .near-close {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    padding: 0;
+    border-radius: 50%;
+}
+
+.near-body {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    padding: 16px 20px 20px;
+    overscroll-behavior: contain;
+}
+
+.near-intro {
+    margin: 0 0 14px;
+    color: var(--pt-muted);
+    line-height: 1.45;
+}
+
+.near-current {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 10px 10px 14px;
+    border: 1px solid var(--pt-line);
+    border-radius: 12px;
+    background: var(--pt-surface);
+}
+
+.near-dialog.has-origin .near-current {
+    display: flex;
+}
+
+.near-current__label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+}
+
+.near-current__label svg {
+    color: var(--pt-accent);
+}
+
+.near-dialog .near-link {
+    flex: none;
+    background: transparent;
+    color: var(--pt-accent);
+}
+
+.near-where {
+    display: none;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.near-dialog.is-editing .near-where {
+    display: grid;
+}
+
+.near-dialog.is-editing:not(.has-origin) .near-where {
+    margin-top: 0;
+}
+
+.near-dialog .near-gps {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 52px;
+    border-color: transparent;
+    background: var(--pt-accent);
+    color: var(--pt-on-accent, #141615);
+    font-size: 1rem;
+}
+
+.near-or {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0;
+    color: var(--pt-muted);
+    font-size: 0.8125rem;
+}
+
+.near-or::before,
+.near-or::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--pt-line);
+}
+
+.near-search {
+    display: flex;
+    gap: 8px;
+}
+
+.near-search input {
+    flex: 1;
+    min-width: 0;
+    min-height: 48px;
+    box-sizing: border-box;
+    padding: 12px 14px;
+    border: 1px solid var(--pt-line);
+    border-radius: 12px;
+    background: var(--pt-surface);
+    color: var(--pt-text);
+    font: inherit;
+    font-size: 1rem;
+}
+
+.near-locations {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 8px;
+    max-height: 260px;
+    overflow-y: auto;
+}
+
+.near-locations:empty {
+    display: none;
+}
+
+.near-dialog .near-place {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-align: left;
+    font-weight: 400;
+}
+
+.near-place svg {
+    color: var(--pt-accent);
+}
+
+.near-place strong,
+.near-place small {
+    display: block;
+}
+
+.near-place small {
+    color: var(--pt-muted);
+    font-size: 0.8125rem;
+}
+
+.near-status {
+    margin: 12px 0 0;
+    color: var(--pt-muted);
+    font-size: 0.875rem;
+    line-height: 1.45;
+}
+
+.near-status:empty {
+    display: none;
+}
+
+.near-results:empty {
+    display: none;
+}
+
+.near-results {
+    margin-top: 16px;
+}
+
+.near-results__head h3 {
+    margin: 0;
+    font-family: var(--pt-display);
+    font-size: 1.25rem;
+}
+
+.near-results__head p {
+    margin: 2px 0 10px;
+    color: var(--pt-muted);
+    font-size: 0.8125rem;
+}
+
+.near-list {
+    display: grid;
+    gap: 6px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.near-row {
+    display: grid;
+    grid-template-columns: 32px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    border-radius: 12px;
+    background: var(--pt-surface);
+}
+
+.near-row__rank {
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--pt-surface-2, #2a2f2b);
+    color: var(--pt-accent);
+    font-size: 0.875rem;
+    font-weight: 800;
+}
+
+.near-row__text {
+    display: grid;
+    min-width: 0;
+}
+
+.near-row__text strong,
+.near-row__text span,
+.near-row__text small {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.near-row__text span {
+    font-size: 0.9375rem;
+}
+
+.near-row__text small {
+    color: var(--pt-muted);
+    font-size: 0.8125rem;
+}
+
+.near-row__km {
+    padding: 4px 10px;
+    border-radius: var(--pt-radius-pill, 999px);
+    background: rgba(214, 237, 132, 0.14);
+    color: var(--pt-accent);
+    font-size: 0.8125rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.near-empty {
+    color: var(--pt-muted);
+}
+
+.near-help {
+    margin: 18px 0 0;
+    color: var(--pt-muted);
+    font-size: 0.8125rem;
+    line-height: 1.5;
+}
+
+.near-help a {
+    color: var(--pt-accent);
+}
+
+.near-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 14px 20px calc(14px + var(--safe-bottom, 0px));
+    border-top: 1px solid var(--pt-line);
+    background: var(--pt-bg, #141615);
+}
+
+.near-actions[hidden] {
+    display: none;
+}
+
+.near-dialog .near-play {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1 1 auto;
+    justify-content: center;
+    border-color: transparent;
+    background: var(--pt-accent);
+    color: var(--pt-on-accent, #141615);
+}
+
+@media (max-width: 600px) {
+    .near-dialog {
+        width: 100vw;
+        height: 100dvh;
+        border: 0;
+        border-radius: 0;
+    }
+
+    .near-head {
+        padding: calc(12px + var(--safe-top, 0px)) 16px 12px;
+    }
+
+    .near-body {
+        padding: 14px 16px 16px;
+    }
+
+    .near-actions {
+        padding: 12px 16px calc(12px + var(--safe-bottom, 0px));
+    }
+
+    .near-actions .near-play {
+        flex-basis: 100%;
+    }
+
+    .near-actions button:not(.near-play) {
+        flex: 1 1 0;
+        padding-inline: 10px;
+    }
+}
