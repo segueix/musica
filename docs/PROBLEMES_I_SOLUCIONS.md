@@ -1,3 +1,9 @@
+## [2026-10-12] - «A prop teu»: caràtules amb distància i tipus de ràdio per popularitat
+
+La targeta i la llista ara tenen caràtules (com «La teva ràdio» i la cua) amb els km. Les caràtules de la portada necessiten les dades (orígens + historial): `cardHtml()` és síncron, així que pinta el radar i programa `hydrateCard()`, que en acabar substitueix `[data-near-art]`; el resultat es guarda a `state.card` (zona + tipus) perquè els repintats de la portada el mostrin de seguida. **Trampa:** `hydrateCard()` fa servir `computeRows()`, que escriu a `state.rows`; si el diàleg és obert es restaura el que s'hi veu.
+
+Tipus de ràdio: `rankByType()` ordena les cançons d'un artista per `viewCount` (desc. o asc.) o delega en el motor. «Joies amagades» evita els vídeos amb 0 visualitzacions si l'artista en té d'altres. En tancar el diàleg la targeta es torna a pintar (zona nova).
+
 ## [2026-10-12] - «A prop teu» més visible i usable; marca «Segueix! Música · En català»
 
 **Problema:** la targeta «A prop teu» era una caixa de text al fons de la portada (després de tots els estils) i calia obrir el diàleg cada vegada, fins i tot amb la localitat desada. El diàleg sortia enganxat a dalt a l'esquerra (el `margin` del `<dialog>` quedava anul·lat pels estils globals), sense jerarquia i, al mòbil, amb els botons barrejats amb la llista.

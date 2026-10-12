@@ -120,3 +120,31 @@ describe('«A prop teu» a la portada', () => {
   expect(block).toMatch(/\.near-body \{[\s\S]*?overflow-y: auto;/);
  });
 });
+
+describe('tipus de ràdio «A prop teu»', () => {
+ const tracks = [{ id: 'a', viewCount: 500 }, { id: 'b', viewCount: 20000 }, { id: 'c', viewCount: 0 }, { id: 'd', viewCount: 40 }];
+ it('«Les més escoltades» posa la cançó amb més visualitzacions de cada artista', () => {
+  expect(api.rankByType(tracks, 'popular')[0].id).toBe('b');
+ });
+ it('«Joies amagades» posa la menys escoltada amb alguna escolta', () => {
+  expect(api.rankByType(tracks, 'hidden')[0].id).toBe('d');
+  expect(api.rankByType([{ id: 'z', viewCount: 0 }], 'hidden')[0].id).toBe('z');
+ });
+ it('«Equilibrada» (i sense visualitzacions) delega en el motor', () => {
+  const engine = list => [...list].reverse();
+  expect(api.rankByType(tracks, 'mix', engine)[0].id).toBe('d');
+  expect(api.rankByType([{ id: 'x' }, { id: 'y' }], 'popular', engine)[0].id).toBe('y');
+ });
+ it('l’ordre per distància no depèn del tipus', () => {
+  const rows = build({ rank: list => api.rankByType(list, 'popular') });
+  expect(rows.map(r => r.artist)).toEqual(['Primer', 'Tercer', 'Segon']);
+ });
+ it('la targeta porta el selector de tres tipus i les caràtules amb km', () => {
+  const html = loadScript('js/features/nearby-radio.js', { document: { addEventListener() {} } }).SegueixApp.features.nearbyRadio.cardHtml();
+  expect(html).toContain('Quina ràdio vols?');
+  for (const label of ['Les més escoltades', 'Equilibrada', 'Joies amagades']) expect(html).toContain(label);
+  const src = readFileSync('js/features/nearby-radio.js', 'utf8');
+  expect(src).toContain('class="pt-near__km"');
+  expect(src).toContain('class="near-row__cover"');
+ });
+});

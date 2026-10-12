@@ -49,6 +49,22 @@
             return { artistId: group.artistId, artist: group.artist.name, relation: group.artist.relation, location, video };
         }).filter(Boolean).sort((a, b) => a.location.distance - b.location.distance || a.artist.localeCompare(b.artist, 'ca'));
     }
+    // Tipus de ràdio: quina cançó de cada artista hi posem (els artistes i l'ordre per distància no canvien).
+    const TYPES = [
+        { id: 'popular', label: 'Les més escoltades', hint: 'De cada artista, la cançó amb més visualitzacions.' },
+        { id: 'mix', label: 'Equilibrada', hint: 'De cada artista, la cançó que tria el motor segons el teu gust.' },
+        { id: 'hidden', label: 'Joies amagades', hint: 'De cada artista, una cançó menys escoltada.' },
+    ];
+    const typeKey = 'segueix_nearby_type_v1';
+    const views = video => (Number.isFinite(Number(video?.viewCount)) ? Number(video.viewCount) : null);
+    function rankByType(tracks, type, engineRank = items => items) {
+        if (type !== 'popular' && type !== 'hidden') return engineRank(tracks);
+        const known = tracks.filter(v => views(v) !== null);
+        if (!known.length) return engineRank(tracks);
+        // Joies amagades: les menys escoltades, però amb alguna escolta (un vídeo a 0 sol ser un error o una pujada fallida)
+        const pool = type === 'hidden' && known.some(v => views(v) > 0) ? known.filter(v => views(v) > 0) : known;
+        return [...pool].sort((a, b) => (type === 'popular' ? views(b) - views(a) : views(a) - views(b)));
+    }
     function remotePlace(item) {
         if (!/^PPL/.test(item.feature_code || '')) return null;
         const territory = item.country_code === 'AD' ? 'Andorra' : item.country_code === 'FR' && item.admin2_id === 2984885 ? 'Catalunya Nord' :
@@ -57,7 +73,7 @@
         if (!territory || !validPoint(coordinates)) return null;
         return { id: `geonames:${item.id}`, name: item.name, territory, detail: item.admin3 || item.admin2 || '', coordinates, type: 'municipality' };
     }
-    const state = { catalog: null, references: null, videos: [], origin: null, rows: [], offset: 0, version: 0, searchVersion: 0, dialog: null };
+    const state = { catalog: null, references: null, videos: [], origin: null, rows: [], offset: 0, version: 0, searchVersion: 0, dialog: null, type: null, card: null, cardLoading: null };
     async function json(url) {
         const response = await fetch(url, { signal: AbortSignal.timeout(12000) });
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
@@ -93,10 +109,34 @@
         } catch (_) { return null; }
     }
     function batchRows() { return state.rows.slice(state.offset, state.offset + PAGE); }
+    function currentType() {
+        if (!state.type) {
+            try { state.type = localStorage.getItem(typeKey); } catch (_) { /* Sense preferència */ }
+            if (!TYPES.some(t => t.id === state.type)) state.type = 'mix';
+        }
+        return state.type;
+    }
+    function cover(video) {
+        const own = typeof getPreferredThumbnail === 'function' ? getPreferredThumbnail(video) : video?.thumbnail;
+        return own || `https://i.ytimg.com/vi/${encodeURIComponent(String(video?.id || ''))}/mqdefault.jpg`;
+    }
+    function viewsLabel(video) {
+        const n = views(video);
+        if (n === null) return '';
+        const short = typeof formatViews === 'function' ? formatViews(n) : n;
+        return `${short} visualitzacions`;
+    }
+    function typeHtml(name) {
+        const type = currentType();
+        return `<fieldset class="pt-mode near-type"><legend class="pt-mode__legend">Quina ràdio vols?</legend>
+            <div class="pt-mode__options near-type__options">${TYPES.map(t => `<label class="pt-mode__opt"><input type="radio" name="${name}" value="${t.id}"${t.id === type ? ' checked' : ''}><span>${t.label}</span></label>`).join('')}</div>
+            <p class="pt-mode__hint" data-near-type-hint>${esc(TYPES.find(t => t.id === type).hint)}</p></fieldset>`;
+    }
     function rowHtml(row, index) {
         const where = `${row.relation === 'associated' ? 'Vinculat a ' : ''}${esc(row.location.name)}${row.location.approximate ? ` · ref. ${esc(row.location.reference)}` : ''}`;
-        return `<li class="near-row"><span class="near-row__rank" aria-hidden="true">${state.offset + index + 1}</span>
-            <span class="near-row__text"><strong>${esc(row.artist)}</strong><span>${esc(row.video.title)}</span><small>${where}</small></span>
+        const seen = viewsLabel(row.video);
+        return `<li class="near-row"><span class="near-row__cover"><img src="${esc(cover(row.video))}" alt="" loading="lazy" decoding="async" width="64" height="64"><span class="near-row__rank" aria-hidden="true">${state.offset + index + 1}</span></span>
+            <span class="near-row__text"><strong>${esc(row.video.title)}</strong><span>${esc(row.artist)}</span><small>${where}${seen ? ` · ${seen}` : ''}</small></span>
             <span class="near-row__km">${km(row.location.distance)}<span class="pt-sr-only"> aprox.</span></span></li>`;
     }
     function renderRows() {
@@ -107,7 +147,7 @@
         $('[data-near-current-name]').textContent = has ? state.origin.name : '';
         const from = state.offset + 1, to = state.offset + batch.length;
         $('[data-near-results]').innerHTML = !has ? '' : batch.length
-            ? `<div class="near-results__head"><h3>A prop de ${esc(state.origin.name)}</h3><p>Artistes ${from}–${to} de ${state.rows.length} · del més proper al més llunyà</p></div><ol class="near-list">${batch.map(rowHtml).join('')}</ol>`
+            ? `<div class="near-results__head"><h3>A prop de ${esc(state.origin.name)}</h3><p>${esc(TYPES.find(t => t.id === currentType()).label)} · artistes ${from}–${to} de ${state.rows.length}, del més proper al més llunyà</p></div><ol class="near-list">${batch.map(rowHtml).join('')}</ol>`
             : '<p class="near-empty">No hem trobat artistes amb cançons disponibles i localització revisada.</p>';
         $('[data-near-play]').disabled = !batch.length;
         $('[data-near-more]').disabled = state.offset + PAGE >= state.rows.length;
@@ -118,7 +158,7 @@
         const selection = app.features.musicSelection;
         const signals = app.features.musicSignals?.snapshot?.();
         state.rows = buildRows({ videos: state.videos, origin: state.origin.coordinates, catalog: state.catalog, references: state.references, avoidIds,
-            rank: tracks => selection?.isEnabled?.() ? selection.rankFeed(tracks, { ctx: selection.getAppContext(state.videos), signals }) : tracks });
+            rank: tracks => rankByType(tracks, currentType(), items => selection?.isEnabled?.() ? selection.rankFeed(items, { ctx: selection.getAppContext(state.videos), signals }) : items) });
     }
     function rebuild(avoidIds = new Set()) {
         computeRows(avoidIds);
@@ -126,7 +166,7 @@
     }
     function playRows() {
         const videos = batchRows().map(r => ({ ...r.video, nearbyLocation: `${r.location.name} · ${Math.round(r.location.distance)} km aprox.${r.location.approximate ? ' · ref. ' + r.location.reference : ''}` }));
-        return videos.length > 0 && app.features.musicQueue.playSelection(videos, `A prop teu · ${state.origin.name}`);
+        return videos.length > 0 && app.features.musicQueue.playSelection(videos, `A prop teu · ${state.origin.name}${currentType() === 'mix' ? '' : ` · ${TYPES.find(t => t.id === currentType()).label}`}`);
     }
     function setEditing(editing) {
         state.dialog.classList.toggle('is-editing', editing);
@@ -189,6 +229,7 @@
                         <div class="near-search"><input id="nearQuery" data-near-query type="search" placeholder="Vic, Gandia, Manacor…" autocomplete="off" enterkeyhint="search"><button type="submit">Cerca</button></div></form>
                     <div data-near-locations class="near-locations"></div>
                 </section>
+                <div class="near-type-wrap">${typeHtml('nearType')}</div>
                 <p data-near-status class="near-status" role="status" aria-live="polite"></p>
                 <section data-near-results class="near-results" aria-live="polite"></section>
                 <p class="near-help">Catalunya, Catalunya Nord, Andorra, País Valencià i Illes Balears. La ubicació es consulta només quan ho demanes i no es desa; la localitat triada a mà es recorda en aquest dispositiu. Localitats: <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a> / GeoNames.</p>
@@ -199,7 +240,13 @@
         $('[data-near-close]').addEventListener('click', () => dialog.close());
         // Clic fora (al fons) tanca, com els altres diàlegs de l'app.
         dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close(); });
-        dialog.addEventListener('close', () => { state.version++; state.searchVersion++; state.opener?.focus?.(); });
+        dialog.addEventListener('close', () => {
+            state.version++; state.searchVersion++;
+            // La targeta de la portada mostra la zona i les caràtules de la localitat triada ara
+            const card = document.querySelector('.pt-near');
+            if (card) card.outerHTML = cardHtml();
+            (document.contains(state.opener) ? state.opener : document.querySelector('.pt-near [data-near-quick], .pt-near [data-near-open]'))?.focus?.();
+        });
         $('[data-near-form]').addEventListener('submit', search);
         $('[data-near-query]').addEventListener('input', () => { state.searchVersion++; $('[data-near-locations]').replaceChildren(); });
         $('[data-near-gps]').addEventListener('click', locate);
@@ -249,6 +296,32 @@
         } catch (_) { open(button); }
         finally { button.disabled = false; if (label) label.textContent = text; }
     }
+    function cardArtHtml(saved) {
+        const rows = saved && state.card?.place === saved.name && state.card?.type === currentType() ? state.card.rows : null;
+        if (!rows?.length) {
+            return `<div class="pt-near__radar" aria-hidden="true"><span class="pt-near__pin">${PIN}</span><span class="pt-near__dot pt-near__dot--1"></span><span class="pt-near__dot pt-near__dot--2"></span><span class="pt-near__dot pt-near__dot--3"></span></div>`;
+        }
+        return `<ul class="pt-near__covers" aria-label="Els més propers">${rows.map(r => `<li><img src="${esc(cover(r.video))}" alt="" loading="lazy" decoding="async" width="96" height="96"><span class="pt-near__km">${km(r.location.distance)}</span><span class="pt-sr-only">${esc(r.artist)}</span></li>`).join('')}</ul>`;
+    }
+    // Les caràtules dels tres artistes més propers es calculen en segon pla i es pinten quan hi són.
+    function hydrateCard() {
+        const saved = savedPlace();
+        if (!saved || typeof document.querySelector !== 'function') return;
+        const type = currentType();
+        if (state.card?.place === saved.name && state.card?.type === type) return paintCardArt();
+        if (state.cardLoading) return;
+        state.cardLoading = load().then(() => {
+            const keep = { origin: state.origin, rows: state.rows, offset: state.offset };
+            state.origin = saved; computeRows();
+            state.card = { place: saved.name, type, rows: state.rows.slice(0, 3) };
+            if (state.dialog?.open) Object.assign(state, keep); // no trepitgem el que es veu al diàleg
+            paintCardArt();
+        }).catch(() => {}).finally(() => { state.cardLoading = null; });
+    }
+    function paintCardArt() {
+        const art = document.querySelector('.pt-near [data-near-art]');
+        if (art) art.innerHTML = cardArtHtml(savedPlace());
+    }
     function cardHtml() {
         const saved = savedPlace();
         const actions = saved
@@ -256,22 +329,38 @@
                <button type="button" class="pt-btn pt-btn--ghost pt-btn--sm" data-near-open="search">${PIN}<span>Canvia la ubicació</span></button>`
             : `<button type="button" class="pt-btn pt-btn--primary" data-near-open="gps">${PIN}<span>Utilitza la meva ubicació</span></button>
                <button type="button" class="pt-btn pt-btn--ghost pt-btn--sm" data-near-open="search"><span>Tria una localitat</span></button>`;
-        return `<section class="pt-section pt-near" aria-labelledby="ptH-near" data-pt-section="near">
-            <div class="pt-near__radar" aria-hidden="true"><span class="pt-near__pin">${PIN}</span><span class="pt-near__dot pt-near__dot--1"></span><span class="pt-near__dot pt-near__dot--2"></span><span class="pt-near__dot pt-near__dot--3"></span></div>
+        if (saved && typeof setTimeout === 'function') setTimeout(hydrateCard, 0);
+        return `<section class="pt-section pt-near${saved ? ' has-place' : ''}" aria-labelledby="ptH-near" data-pt-section="near">
+            <div class="pt-near__art" data-near-art>${cardArtHtml(saved)}</div>
             <div class="pt-near__body">
                 <p class="pt-eyebrow">Ràdio de proximitat</p>
                 <h2 class="pt-near__title" id="ptH-near">A prop teu</h2>
                 <p class="pt-near__text">Escolta 20 artistes del teu voltant, del més proper al més llunyà: una cançó de cadascun.</p>
                 ${saved ? `<p class="pt-near__place">${PIN}<span>La teva zona: <strong>${esc(saved.name)}</strong></span></p>` : ''}
+                ${typeHtml('ptNearType')}
                 <div class="pt-near__actions">${actions}</div>
             </div>
         </section>`;
     }
+    function setType(type) {
+        if (!TYPES.some(t => t.id === type) || type === currentType()) return;
+        state.type = type;
+        try { localStorage.setItem(typeKey, type); } catch (_) { /* Opcional */ }
+        const hint = TYPES.find(t => t.id === type).hint;
+        document.querySelectorAll('input[name="ptNearType"], input[name="nearType"]').forEach(input => { input.checked = input.value === type; });
+        document.querySelectorAll('[data-near-type-hint]').forEach(el => { el.textContent = hint; });
+        if (state.dialog?.open && state.origin) { state.offset = 0; rebuild(); status(''); }
+        hydrateCard();
+    }
+    document.addEventListener('change', event => {
+        const input = event.target;
+        if (input?.matches?.('input[name="ptNearType"], input[name="nearType"]')) setType(input.value);
+    });
     document.addEventListener('click', event => {
         const quick = event.target.closest?.('[data-near-quick]');
         if (quick) return quickPlay(quick);
         const button = event.target.closest?.('[data-near-open]');
         if (button) open(button, button.dataset.nearOpen || '');
     });
-    app.features.nearbyRadio = { distance, artistLocation, buildRows, remotePlace, cardHtml, open, quickPlay };
+    app.features.nearbyRadio = { distance, artistLocation, buildRows, remotePlace, rankByType, TYPES, cardHtml, open, quickPlay };
 })(window);

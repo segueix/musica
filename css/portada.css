@@ -6975,24 +6975,46 @@ body.is-video-pip .video-placeholder.is-placeholder-hidden {
 
 .near-row {
     display: grid;
-    grid-template-columns: 32px minmax(0, 1fr) auto;
+    grid-template-columns: 56px minmax(0, 1fr) auto;
     align-items: center;
     gap: 12px;
-    padding: 10px 12px;
+    padding: 8px 12px 8px 8px;
     border-radius: 12px;
     background: var(--pt-surface);
 }
 
+.near-row__cover {
+    position: relative;
+    width: 56px;
+    height: 56px;
+}
+
+.near-row__cover img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--pt-radius-sm);
+    object-fit: cover;
+    background: var(--pt-surface-2);
+}
+
 .near-row__rank {
+    position: absolute;
+    left: -4px;
+    top: -4px;
     display: grid;
     place-items: center;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    background: var(--pt-surface-2, #2a2f2b);
-    color: var(--pt-accent);
-    font-size: 0.875rem;
+    min-width: 22px;
+    height: 22px;
+    padding: 0 4px;
+    box-sizing: border-box;
+    border: 2px solid var(--pt-surface);
+    border-radius: var(--pt-radius-pill, 999px);
+    background: var(--pt-accent);
+    color: var(--pt-on-accent, #141615);
+    font-size: 0.75rem;
     font-weight: 800;
+    line-height: 1;
 }
 
 .near-row__text {
@@ -7093,5 +7115,119 @@ body.is-video-pip .video-placeholder.is-placeholder-hidden {
     .near-actions button:not(.near-play) {
         flex: 1 1 0;
         padding-inline: 10px;
+    }
+}
+
+
+/* ---------- «A prop teu»: caràtules amb la distància i tipus de ràdio (2026-10-12) ----------
+   Amb una zona desada, la targeta mostra les caràtules dels tres artistes més propers (com el collage de «La teva
+   ràdio») amb els km a sota de cadascuna; sense zona, el radar. El selector «Quina ràdio vols?» fa servir els botons
+   de mode de la portada (.pt-mode) amb tres opcions: les més escoltades, equilibrada i joies amagades. */
+.near-type__options {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    max-width: 520px;
+}
+
+@media (min-width: 560px) {
+    .near-type__options {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+.pt-near .near-type {
+    margin: 6px 0 0;
+}
+
+.near-type-wrap {
+    margin-top: 16px;
+}
+
+.near-dialog .near-type .pt-mode__opt span {
+    padding: 4px 6px;
+}
+
+.pt-near__covers {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    display: flex;
+    margin: 0;
+    padding: 0 0 12px;
+    list-style: none;
+}
+
+.pt-near__covers li {
+    position: relative;
+    margin-left: -16px;
+}
+
+.pt-near__covers li:first-child {
+    margin-left: 0;
+}
+
+.pt-near__covers img {
+    display: block;
+    width: 52px;
+    height: 52px;
+    border: 2px solid var(--pt-surface);
+    border-radius: var(--pt-radius-sm);
+    object-fit: cover;
+    background: var(--pt-surface-2);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.pt-near__covers li:nth-child(1) img { transform: rotate(-5deg); }
+.pt-near__covers li:nth-child(2) img { transform: translateY(4px) rotate(2deg); }
+.pt-near__covers li:nth-child(3) img { transform: rotate(6deg); }
+
+.pt-near__km {
+    position: absolute;
+    left: 50%;
+    bottom: -12px;
+    padding: 2px 7px;
+    border: 2px solid var(--pt-surface);
+    border-radius: var(--pt-radius-pill, 999px);
+    background: var(--pt-accent);
+    color: var(--pt-on-accent, #141615);
+    font-size: 0.6875rem;
+    font-weight: 800;
+    line-height: 1.2;
+    white-space: nowrap;
+    transform: translateX(-50%);
+}
+
+@media (max-width: 600px) {
+    .pt-near.has-place .pt-near__title,
+    .pt-near.has-place .pt-eyebrow {
+        padding-right: 132px;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 768px) {
+    .pt-near__body {
+        padding-right: 170px;
+    }
+}
+
+@media (min-width: 769px) {
+    .pt-near__covers {
+        top: 50%;
+        right: 40px;
+        transform: translateY(-50%);
+    }
+
+    .pt-near__covers li {
+        margin-left: -26px;
+    }
+
+    .pt-near__covers img {
+        width: 104px;
+        height: 104px;
+    }
+
+    .pt-near__km {
+        bottom: -10px;
+        padding: 3px 10px;
+        font-size: 0.8125rem;
     }
 }
