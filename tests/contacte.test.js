@@ -93,17 +93,14 @@ describe('Contacte i suggeriment d’artistes', () => {
         expect(strip).not.toContain('Abans de suggerir');
     });
 
-    it('a mòbil la marca no se solapa amb la cerca: «Música» va sota «Segueix!» i, si no hi cap el nom, damunt del logo', () => {
+    it('a mòbil la marca no se solapa amb la cerca: el text de sota el nom s’escurça si no hi cap', () => {
         const css = fs.readFileSync(path.join(root, 'css', 'portada.css'), 'utf8');
-        const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
-        expect(css).toMatch(/\.app-header \.brand \{\s*container-type: inline-size;\s*overflow: hidden;/);
-        // «Música» a sota de «Segueix!», alineat a la dreta (les dues paraules acaben a la mateixa vertical)
-        expect(css).toMatch(
-            /\.app-header \.brand-tag \{\s*position: absolute;\s*top: calc\(100% - \d+px\);\s*right: 0;/
+        const block = css.slice(css.indexOf('Marca: logo + «Segueix!» + «Música en català»'));
+        expect(block).toMatch(
+            /\.app-header \.brand \{\s*container-type: inline-size;\s*gap: \d+px;\s*overflow: hidden;/
         );
-        expect(css).toMatch(/@container \(max-width: 130px\) \{\s*\.app-header \.brand-name \{\s*display: none;/);
-        expect(html).toContain('<span class="brand-mark__tag" aria-hidden="true">Música</span>');
-        expect(css).toMatch(/@media \(max-width: 768px\) \{\s*\.brand-mark__tag \{\s*position: absolute;/);
+        expect(block).toMatch(/@container \(max-width: 139px\) \{[\s\S]*?\.brand-tag__short \{\s*display: inline;/);
+        expect(block).toMatch(/@container \(max-width: 109px\) \{\s*\.app-header \.brand-logo \{/);
     });
 
     it('la pàgina «Informació per a artistes» és de música: ràdios, visualitzacions, sense ànim de lucre i formulari', () => {

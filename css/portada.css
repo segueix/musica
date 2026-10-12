@@ -174,14 +174,6 @@ body {
     margin-left: -4px;
 }
 
-.brand-tag {
-    font-family: var(--pt-display);
-    font-size: 1.0625rem;
-    font-weight: 600;
-    letter-spacing: 0;
-    color: var(--pt-accent);
-}
-
 .search {
     justify-self: center;
     max-width: 640px;
@@ -330,10 +322,6 @@ body {
 
     .brand-name {
         font-size: 1.0625rem;
-    }
-
-    .brand-tag {
-        font-size: 1rem;
     }
 
     .search {
@@ -5898,46 +5886,6 @@ body.is-video-pip .video-placeholder.is-placeholder-hidden {
     color: var(--pt-text);
 }
 
-/* ---------- Capçalera mòbil: la marca no es solapa amb la cerca ----------
-   La columna de la marca és el que sobra entre la cerca i les icones (≈ 170 px a 393 px d'ample). Amb les
-   tipografies reals «Segueix! Música» en fa uns 195 i es menjava la icona de cerca. Al mòbil «Música» no va al
-   costat del nom: va petit **a sota de «Segueix!», alineat a la dreta** (les dues paraules acaben a la mateixa
-   vertical). La marca és un contenidor: si no hi cap «Segueix!» (≤ 130 px), només queda el logo i «Música» passa a
-   sobre el logo, a baix a la dreta (.brand-mark__tag). */
-@media (max-width: 768px) {
-    .app-header .brand {
-        container-type: inline-size;
-        overflow: hidden;
-        /* espai perquè «Música» pugui sortir per sota del nom (o del logo) sense quedar retallat */
-        padding-block: 4px;
-    }
-
-    .app-header .brand-name {
-        position: relative;
-    }
-
-    .app-header .brand-tag {
-        position: absolute;
-        top: calc(100% - 7px);
-        right: 0;
-        font-size: 0.6875rem;
-        font-weight: 700;
-        line-height: 1;
-        white-space: nowrap;
-        pointer-events: none;
-    }
-
-    @container (max-width: 130px) {
-        .app-header .brand-name {
-            display: none;
-        }
-
-        .app-header .brand-mark__tag {
-            display: block;
-        }
-    }
-}
-
 /* ---------- Artistes de la categoria (js/features/category-artists.js) ----------
    Sota la cançó destacada d'un estil o d'una categoria pròpia: els perfils dels artistes.
    Mòbil: una sola filera amb scroll lateral. Ordinador: una filera plegada i, si n'hi ha més dels que hi caben,
@@ -6124,36 +6072,6 @@ body.is-video-pip .video-placeholder.is-placeholder-hidden {
     display: none;
 }
 
-
-/* ---------- Marca: «Música» damunt del logo (només al mòbil quan no hi cap el nom; capçalera mòbil, més amunt) ---------- */
-.brand-mark {
-    position: relative;
-    display: block;
-    flex: none;
-}
-
-.brand-mark__tag {
-    display: none;
-}
-
-@media (max-width: 768px) {
-    .brand-mark__tag {
-        position: absolute;
-        right: -23px;
-        bottom: -4px;
-        display: none;
-        padding: 0 3px;
-        border-radius: var(--pt-radius-pill);
-        background: var(--pt-bg);
-        color: var(--pt-accent);
-        font-family: var(--pt-display);
-        font-size: 0.625rem;
-        font-weight: 700;
-        line-height: 1.25;
-        white-space: nowrap;
-        pointer-events: none;
-    }
-}
 
 /* ---------- Pantalla d'espera: «Música» sota «Segueix!» ---------- */
 .intro-splash-brand {
@@ -6471,10 +6389,7 @@ body.is-video-pip .video-placeholder.is-placeholder-hidden {
 .ap-origin__details a { display: inline-block; padding: 10px 0; color: var(--pt-accent, #D6ED84); }
 
 
-/* Llistes: cerca dins de l'editor i marca compacta al mòbil. */
-.brand-copy { display: flex; flex-direction: column; min-width: 0; }
-.brand-subtitle { font-size: 1rem; font-weight: 700; line-height: 1.25; color: var(--pt-accent); white-space: nowrap; }
-.brand-cat { display: none; }
+/* Llistes: cerca dins de l'editor. */
 .lucky-description { margin: 4px 12px 0 0; font-size: .85rem; color: var(--text-secondary); }
 .playlist-add-songs { min-height: 44px; padding: 8px 12px; margin: 8px 0; border: 1px solid var(--pt-line); border-radius: 10px; background: transparent; color: var(--pt-accent); cursor: pointer; }
 .playlist-song-search { width: 100%; box-sizing: border-box; min-height: 44px; padding: 12px; border: 1px solid var(--pt-line); border-radius: 10px; background: var(--pt-bg); color: var(--pt-text); font: inherit; }
@@ -6484,15 +6399,105 @@ body.is-video-pip .video-placeholder.is-placeholder-hidden {
 .playlist-song-result small { display: block; color: var(--text-secondary); }
 .playlist-song-result button { flex: none; min-height: 44px; border-radius: 8px; padding: 8px 10px; background: var(--pt-accent); color: #141615; border: 0; cursor: pointer; }
 .playlist-song-result button:disabled { background: transparent; color: var(--text-secondary); cursor: default; }
-@media (max-width: 768px) {
-    .brand-subtitle { display: none; }
-    .brand-cat { display: inline; }
-    .brand-copy { padding-bottom: 4px; }
-    @container (max-width: 130px) { .brand-copy { display: none; } }
+
+
+/* ---------- Marca: logo + «Segueix!» + «Música en català» (2026-10-12) ----------
+   Un sol bloc de marca (logotip) igual a l'ordinador i al mòbil: el logo fa l'alçada de les dues línies i, a sota de
+   «Segueix!», «Música en català» en versaletes llima espaiades (com «En català» de la pantalla d'espera), alineat a
+   l'esquerra amb el nom. Al mòbil la marca és un contenidor: si no hi cap el text llarg (< 140 px) passa a
+   «Música CAT», i a 320 px (< 110 px) tot es fa una mica més petit; el nom no desapareix mai. */
+.app-header .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
 }
 
+.app-header .brand-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+}
 
-@media (min-width: 769px) {
-    .app-header .brand-tag { display: none; }
-    .app-header .brand-copy { gap: 2px; }
+.brand-copy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 0;
+}
+
+.app-header .brand-name {
+    gap: 0;
+    font-size: 1.25rem;
+    line-height: 1.05;
+}
+
+.app-header .brand-bang {
+    margin-left: 1px;
+}
+
+.brand-tag {
+    display: block;
+    margin-top: 3px;
+    color: var(--pt-accent);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.brand-tag__short {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .app-header .brand {
+        container-type: inline-size;
+        gap: 8px;
+        overflow: hidden;
+    }
+
+    .app-header .brand-logo {
+        width: 34px;
+        height: 34px;
+        border-radius: 8px;
+    }
+
+    .app-header .brand-name {
+        font-size: 1.0625rem;
+    }
+
+    .brand-tag {
+        margin-top: 2px;
+        font-size: 0.5625rem;
+        letter-spacing: 0.08em;
+    }
+
+    @container (max-width: 139px) {
+        .brand-tag__long {
+            display: none;
+        }
+
+        .brand-tag__short {
+            display: inline;
+        }
+    }
+
+    @container (max-width: 109px) {
+        .app-header .brand-logo {
+            width: 28px;
+            height: 28px;
+            border-radius: 8px;
+        }
+
+        .app-header .brand-name {
+            font-size: 0.9375rem;
+        }
+
+        .brand-tag {
+            letter-spacing: 0.04em;
+        }
+    }
 }
