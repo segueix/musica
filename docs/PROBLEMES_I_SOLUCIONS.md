@@ -1,3 +1,14 @@
+## [2026-10-12] - «Acabades de sortir» canviava d'una vegada a l'altra
+
+**Símptoma:** a vegades la fila mostrava les novetats més actuals i, més tard (o en tornar a obrir l'app), en faltaven algunes o n'hi entraven de més antigues.
+
+**Causes:**
+1. **La «destacada» invisible.** `buildModel()` triava una novetat destacada (`pickFeatured()`: puntua més un artista que ja coneixes o un videoclip) i la **treia** de la fila, però la portada ja no la pinta com a targeta (només n'agafa la caràtula per al collage de «La teva ràdio»). Com que depèn del gust, en escoltar música la destacada canviava i la cançó que faltava a la fila era una altra; sovint era justament la més nova.
+2. **Dos camins de càrrega amb dades diferents.** `YouTubeAPI.getPopularVideos()` (el de cada dia: `loadVideosFromAPI`, i també la còpia de `catube_feed_v1`) copiava els vídeos camp per camp i **perdia `originalYear`**, `topicTrack`, `originalTitle`… Sense l'any original, `isNewRelease()` prenia per estrena qualsevol reedició pujada fa poc (amb el feed del 2026-10-12: 146 «estrenes» en lloc de 98). L'altre camí (`loadVideos()`, `YouTubeAPI.feedVideos`) sí que les tenia: la fila variava segons per on s'havia carregat.
+3. **(Intencionat)** `filterOutWatchedVideos()` amaga de Novetats les cançons ja escoltades: en escoltar-ne una, n'entra una de més antiga.
+
+**Solució:** la destacada ja no es «pren» (no es treu de cap fila) i `getPopularVideos()` conserva tots els camps (`...v`). Proves: `tests/portada.test.js` («Acabades de sortir» estable) i `tests/novetats-estables.test.js`. La causa 3 es manté (regla de Novetats).
+
 ## [2026-10-12] - «A prop teu»: caràtules amb distància i tipus de ràdio per popularitat
 
 La targeta i la llista ara tenen caràtules (com «La teva ràdio» i la cua) amb els km. Les caràtules de la portada necessiten les dades (orígens + historial): `cardHtml()` és síncron, així que pinta el radar i programa `hydrateCard()`, que en acabar substitueix `[data-near-art]`; el resultat es guarda a `state.card` (zona + tipus) perquè els repintats de la portada el mostrin de seguida. **Trampa:** `hydrateCard()` fa servir `computeRows()`, que escriu a `state.rows`; si el diàleg és obert es restaura el que s'hi veu.

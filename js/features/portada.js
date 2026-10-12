@@ -159,10 +159,10 @@
             isNew,
             now,
         });
-        if (featured) {
-            take(featured.video);
-            model.featured = featured;
-        }
+        // No es «pren»: la destacada ja no es pinta com a targeta (només dona una caràtula al collage de «La teva
+        // ràdio»). Abans es treia d'«Acabades de sortir», i com que es tria pel gust (artista conegut, videoclip),
+        // la novetat que faltava a la fila canviava a mesura que l'usuari escoltava.
+        if (featured) model.featured = featured;
 
         // D · acabades de sortir: cronològic, un vídeo per artista a la fila
         const seenFresh = new Set();
