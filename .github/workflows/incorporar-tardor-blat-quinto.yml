@@ -8,9 +8,9 @@ concurrency:
   group: music-data-writer
   cancel-in-progress: false
 jobs:
-  revisar:
+  incorporar:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 25
     permissions:
       contents: write
     steps:
@@ -18,29 +18,79 @@ jobs:
         with:
           ref: main
           fetch-depth: 1
-      - name: Extreu les evidències sense consultar YouTube
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '20'
+          cache: npm
+      - name: Instal·la dependències i conserva el catàleg anterior
+        run: |
+          npm ci
+          cp js/channels-ca.json /tmp/channels-before.json
+      - name: Aplica només les tres altes revisades
+        run: |
+          node --check scripts/revisions/incorporar_tardor_blat_quinto.js
+          node scripts/revisions/incorporar_tardor_blat_quinto.js
+          node scripts/documentar_vigilancia_idiomes.js
+          node scripts/purgar_canals_feed.js
+          node scripts/aplicar_revisio_manual_musical.js
+          npm run music:validate
+      - name: Prova les exclusions i el tipus de gravació
         run: |
           node - <<'NODE'
-          const fs=require('fs');
-          const r=JSON.parse(fs.readFileSync('docs/revisions/2026-10-12-tardor-blat-quinto-descoberta.json','utf8'));
-          const o=JSON.parse(fs.readFileSync('data/origens-artistes.json','utf8'));
-          const lines=[];
-          for(const a of r.artists){
-            lines.push('# '+a.name,JSON.stringify(a.existingArtists));
-            for(const c of a.channels){
-              lines.push('## '+c.id+' '+c.name);
-              for(const v of c.videos){
-                lines.push('### '+v.id+' '+v.title);
-                const d=String(v.description||'');
-                const full=c.id===a.officialId && a.name!=='Tardor';
-                lines.push((full?d:d.slice(0,1200)).replace(/\r?\n/g,' ⏎ '));
-              }
-            }
-          }
-          lines.push('# Llocs existents');
-          lines.push(JSON.stringify(Object.entries(o.places).filter(([id,p])=>['València','Valencia','Benidorm','Pego'].includes(p.name)),null,2));
-          fs.writeFileSync('docs/revisions/2026-10-12-tardor-blat-quinto-detalls.md',lines.join('\n')+'\n');
+          const assert=require('node:assert/strict');
+          const {CONFIG,KNOWN_BILINGUAL,exclusion,contentType}=require('./scripts/revisions/incorporar_tardor_blat_quinto.js');
+          const [t,b,q]=CONFIG;
+          const v=(id,title,channelId,description='')=>({id,title,channelId,description,duration:'PT3M',embeddable:true});
+          for(const id of KNOWN_BILINGUAL) assert(exclusion(t,{id:t.topic},v(id,'',t.topic)));
+          assert.equal(exclusion(t,{id:t.topic},v('q1SqBfyayUw','Nevar a València',t.topic)),null);
+          assert(exclusion(q,{id:q.topic},v('5q-9YyMkff4','PLAN',q.topic,'Alex Quinto Fernandez Atlas Club')));
+          assert(exclusion(q,{id:q.topic},v('5q-9YyMkff4','LLUM',q.topic,'Alex Quinto Fernandez Atlas Club')));
+          assert.equal(exclusion(q,{id:q.topic},v('WRdYU14R1D4','LLUM',q.topic,"Josep Quinto Mengual Primavera d'Hivern")),null);
+          assert(exclusion(q,{id:q.topic},v('WRdYU14R1D4','LLUM','UCbJVlPOepjJiteagmmSaoTA',"Josep Quinto Mengual Primavera d'Hivern")));
+          assert.equal(contentType(v('8KeF3Je5Zas','A la vida',b.official)),'live_song');
+          assert.equal(new Set(CONFIG.flatMap(c=>[c.official,c.topic])).size,6);
+          console.log('11 comprovacions específiques superades.');
           NODE
-      - name: Desa els detalls de revisió
+          node scripts/test_music_content_classifier.js
+      - name: Sincronitza exclusivament els sis canals seleccionats
+        env:
+          YOUTUBE_API_KEY_SERVER: ${{ secrets.YOUTUBE_API_KEY_SERVER }}
+          MUSIC_VIDEOS_PER_CHANNEL: '50'
+          MUSIC_TOPIC_GOVERNANCE: apply
+          MUSIC_TOPIC_FULL_READ: '1'
         run: |
-          bash scripts/publicar_dades.sh 'docs: crèdits i evidències dels tres artistes' docs/revisions/2026-10-12-tardor-blat-quinto-detalls.md
+          test -n "$MUSIC_TARGET_CHANNELS"
+          node scripts/update_music_feed.js
+          node scripts/aplicar_revisio_manual_musical.js
+      - name: Regenera historial, cerca i pàgines compartides
+        run: |
+          node scripts/archivar_feed_musical.js
+          npm run search:index:hybrid:rebuild
+          node scripts/generar_pagines_compartir.js
+          node scripts/documentar_vigilancia_idiomes.js
+          node scripts/documentar_vigilancia_idiomes.js --check
+      - name: Executa totes les proves
+        run: |
+          npx vitest run --reporter=json --outputFile=/tmp/tardor-blat-quinto-tests.json
+      - name: Comprova el resultat publicable i preserva la resta del catàleg
+        run: |
+          node scripts/revisions/incorporar_tardor_blat_quinto.js --verify
+          node - <<'NODE'
+          const fs=require('fs');
+          const assert=require('node:assert/strict');
+          const read=p=>JSON.parse(fs.readFileSync(p,'utf8'));
+          const before=read('/tmp/channels-before.json').channels;
+          const after=read('js/channels-ca.json').channels;
+          const current=new Set(after.map(c=>c.id));
+          for(const c of before) if(c.id!=='UC9zX7R05JQ1P30RGvtjHizQ') assert(current.has(c.id),'S’ha perdut un canal aliè a aquestes altes: '+c.id);
+          const tests=read('/tmp/tardor-blat-quinto-tests.json');
+          assert.equal(tests.numFailedTests,0);
+          const p='docs/revisions/2026-10-12-tardor-blat-quinto.json';
+          const r=read(p);
+          r.validation={passedTests:tests.numPassedTests,totalTests:tests.numTotalTests,failedTests:tests.numFailedTests,artistBase:'passed',languageWatchDocument:'passed',previousChannelsPreserved:true,channelsBefore:before.length,channelsAfter:after.length};
+          fs.writeFileSync(p,JSON.stringify(r,null,2)+'\n');
+          fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,'## Alta musical\n\n'+r.artists.map(a=>a.name+' — '+a.origin+': '+a.recordingsPublished+' enregistraments.').join('\n\n')+'\n\nProves superades: '+tests.numPassedTests+'.\n');
+          NODE
+      - name: Publica les altes i tots els derivats junts
+        run: |
+          bash scripts/publicar_dades.sh 'feat: indexa Tardor, Àlex Blat i Quinto amb repertori català verificat' data js/channels-ca.json compartir docs/ARTISTES_VIGILATS_IDIOMA.md docs/revisions/2026-10-12-tardor-blat-quinto.json
