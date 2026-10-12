@@ -54,6 +54,12 @@ function cleanAlbum(album) {
     keys: [...new Set((album.keys || []).map(String).filter(Boolean))],
   };
   if (album.sourceChannelId) out.sourceChannelId = String(album.sourceChannelId);
+  for (const field of ['type', 'sourceType', 'sourceUrl', 'coverUrl']) {
+    if (album[field]) out[field] = String(album[field]);
+  }
+  if (Array.isArray(album.trackGroups)) out.trackGroups = album.trackGroups.map(t => ({
+    title: String(t.title || ''), videoIds: [...new Set((t.videoIds || []).map(String))],
+  }));
   const year = Number(album.year || 0);
   if (year) out.year = year;
   return out;
@@ -183,5 +189,3 @@ module.exports = {
   canonicalArtist,
   mergeAlbumCatalog,
 };
-
-

@@ -1,3 +1,13 @@
+## [2026-10-12] - Llançaments prioritaris: pilot Anna Andreu
+
+**Causa:** el catàleg només reconeixia descripcions «Provided to YouTube by». Els àudios oficials d’Anna Andreu indiquen «Àlbum», i les llistes també inclouen àlbums sencers i directes. Inferir-los només dels últims vídeos deixava discos incomplets.
+
+**Correcció:** registre revisat `data/llancaments-musicals.json`, amb prioritat llançament > llista oficial > discografia contrastada > inferència. El pipeline recupera totes les pistes declarades, respecta les exclusions i les decisions manuals, agrupa variants oficial/Topic i conserva ordre, tipus i caràtula. La fitxa selecciona una versió disponible per pista i manté l’ordre del disc. Les llistes es comproven setmanalment amb paginació; les novetats queden pendents a `data/llancaments-estat.json`, sense incorporar contingut no revisat. Un error conserva l’última lectura.
+
+**Pilot:** Anna Andreu: *Els Mals Costums*, *La mida* i *Vigília* (8 pistes cadascun), *Tots els cingles* (2 pistes catalanes disponibles; excloses les castellanes i la pista exclusiva física). Ordre i caràtules contrastats amb Hidden Track Records. Lladruc conserva els seus 12 vídeos, ara amb àlbum i senzill explícits. El vincle territorial vigent de Lladruc és Sabadell. No s’ha estès encara la revisió editorial a tots els artistes.
+
+**Verificació:** proves de prioritat, agrupació, ocultació, paginació, memòria cau, errors, propietari de llista i delimitació dels canals. Les dades generades es publiquen exclusivament pel pipeline.
+
 ## [2026-10-12] - Categories amb artistes únics i alta de Lladruc
 
 **Problema:** `summarizeStyles()` comptava els canals publicadors com si fossin artistes diferents; oficial i Topic duplicaven el nombre i les caràtules. Les rajoles de categories personals també comptaven els IDs desats sense agrupar-los.

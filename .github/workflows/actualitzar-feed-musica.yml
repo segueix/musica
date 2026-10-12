@@ -10,6 +10,7 @@ on:
     paths:
       # Revisions de dades: només es tornen a llegir els canals afectats.
       - "data/falsos-shorts.json"
+      - "data/llancaments-musicals.json"
       - "data/music-channel-video-allowlist.json"
   workflow_run:
     workflows:
@@ -91,8 +92,15 @@ jobs:
             const readAt=(sha,path)=>JSON.parse(execFileSync('git',['show',sha+':'+path],{encoding:'utf8'}));
             const rules='data/music-channel-video-allowlist.json';
             const shorts='data/falsos-shorts.json';
+            const releases='data/llancaments-musicals.json';
+            const readOptional=(sha,path)=>{
+              const result=require('child_process').spawnSync('git',['show',sha+':'+path],{encoding:'utf8'});
+              if(result.status!==0) return {releases:[]};
+              return JSON.parse(result.stdout);
+            };
             reviewed=canalsRevisats({
               abans:readAt(before,rules),despres:readAt(after,rules),
+              releasesAbans:readOptional(before,releases),releasesDespres:readOptional(after,releases),
               shortsAbans:readAt(before,shorts),shortsDespres:readAt(after,shorts),feed,actuals:current
             });
           }
@@ -127,7 +135,7 @@ jobs:
 
       - name: Prova catàleg, any original i revisions manuals
         if: steps.scope.outputs.work == 'true'
-        run: npx vitest run tests/cataleg-musical.test.js tests/any-original.test.js tests/music-content-overrides.test.js tests/channel-video-allowlist.test.js tests/canals-revisats.test.js tests/subtitols-castella.test.js tests/aprimar-feed.test.js tests/canal-tema.test.js tests/revisio-idiomes.test.js tests/quota-feed.test.js
+        run: npx vitest run tests/cataleg-musical.test.js tests/any-original.test.js tests/music-content-overrides.test.js tests/channel-video-allowlist.test.js tests/canals-revisats.test.js tests/subtitols-castella.test.js tests/aprimar-feed.test.js tests/canal-tema.test.js tests/revisio-idiomes.test.js tests/quota-feed.test.js tests/llancaments-musicals.test.js
 
       - name: Genera feed
         if: steps.scope.outputs.run_api == 'true'

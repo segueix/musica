@@ -1,8 +1,16 @@
 'use strict';
 
 // Una revisió de seleccions/falsos Shorts només necessita consultar els canals afectats.
-function canalsRevisats({ abans, despres, shortsAbans, shortsDespres, feed, actuals }) {
+function canalsRevisats({ abans, despres, shortsAbans, shortsDespres, releasesAbans = {}, releasesDespres = {}, feed, actuals }) {
     const ids = new Set();
+    const before = new Map((releasesAbans.releases || []).map(r => [r.id, r]));
+    const after = new Map((releasesDespres.releases || []).map(r => [r.id, r]));
+    for (const key of new Set([...before.keys(), ...after.keys()])) {
+        if (JSON.stringify(before.get(key)) === JSON.stringify(after.get(key))) continue;
+        for (const release of [before.get(key), after.get(key)]) {
+            for (const id of release?.channelIds || []) ids.add(id);
+        }
+    }
     const rulesBefore = abans.channels || {};
     const rulesAfter = despres.channels || {};
     for (const id of new Set([...Object.keys(rulesBefore), ...Object.keys(rulesAfter)])) {

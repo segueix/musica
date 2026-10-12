@@ -90,12 +90,14 @@
         const albums = (Array.isArray(entry?.albums) ? entry.albums : [])
             .map(album => ({
                 ...album,
-                visibleTrackIds: (Array.isArray(album?.trackIds) ? album.trackIds : [])
+                visibleTrackIds: (Array.isArray(album?.trackGroups)
+                    ? album.trackGroups.map(track => (track.videoIds || []).find(id => songIds.has(String(id)))).filter(Boolean)
+                    : Array.isArray(album?.trackIds) ? album.trackIds : [])
                     .map(String)
                     .filter(trackId => songIds.has(trackId)),
             }))
             .filter(album => album.visibleTrackIds.length > 0);
-        const assigned = new Set(albums.flatMap(album => album.visibleTrackIds));
+        const assigned = new Set(albums.flatMap(album => album.trackIds || album.visibleTrackIds));
         const otherIds = songs.map(video => String(video.id)).filter(videoId => !assigned.has(videoId));
         return { artist, albums, otherIds, hasAlbums: albums.length > 0 };
     }
@@ -244,11 +246,12 @@
         grid.innerHTML = [
             ...state.albums.albums.map(album => {
                 const count = album.visibleTrackIds.length;
-                const meta = [album.year || '', availableSongsLabel(count)].filter(Boolean).join(' · ');
+                const kind = { album: 'Àlbum', ep: 'EP', single: 'Senzill', live: 'Directe' }[album.type] || '';
+                const meta = [kind, album.year || '', availableSongsLabel(count)].filter(Boolean).join(' · ');
                 return `
                     <button class="ap-album-card ${selected === album.id ? 'is-active' : ''}" type="button"
                         data-ap-album="${escapeHtml(album.id)}" aria-pressed="${selected === album.id}">
-                        <img class="ap-album-cover" src="${albumCover(album.coverVideoId)}"
+                        <img class="ap-album-cover" src="${escapeHtml(/^https:\/\//.test(album.coverUrl || '') ? album.coverUrl : albumCover(album.coverVideoId))}"
                             alt="Caràtula de ${escapeHtml(album.title)}" loading="lazy">
                         <span class="ap-album-title">${escapeHtml(album.title)}</span>
                         <span class="ap-album-meta">${escapeHtml(meta)}</span>
@@ -303,7 +306,10 @@
                 : new Set(
                       state.albums.albums.find(album => String(album.id) === selected)?.visibleTrackIds || []
                   );
-        return list.filter(video => ids.has(String(video?.id || '')));
+        const filtered = list.filter(video => ids.has(String(video?.id || '')));
+        if (selected === OTHER_ALBUM_ID) return filtered;
+        const order = new Map([...ids].map((id, index) => [id, index]));
+        return filtered.sort((a, b) => order.get(String(a.id)) - order.get(String(b.id)));
     }
 
     const isAlbumFilterActive = () => Boolean(state.selectedAlbumId);
@@ -451,4 +457,3 @@
         measureBio,
     };
 })(window);
-

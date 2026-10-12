@@ -12,6 +12,7 @@ const { slimFeed, serializeFeed } = require('./lib/aprimar_feed');
 const tema = require('./lib/canal_tema');
 const revisioIdiomes = require('./lib/revisio_idiomes');
 const albumsMusic = require('./lib/albums_musica');
+const releasesMusic = require('./lib/llancaments_musicals');
 const restriccions = require('./lib/restriccions_youtube');
 const { REGLES: SPANISH_TITLE_RULES } = require('./ocultar_titols_castella');
 const { resolveChannelDisplayName, findNameOverride, loadNameOverrides, stripOfficialWord } = require('./lib/nom_canal');
@@ -52,6 +53,8 @@ const TOPIC_REVIEW_FILE = path.join(process.cwd(), 'data', 'music-topic-review.j
 // Cançons noves pendents de revisar l'idioma (les revisa un agent amb el vistiplau de l'usuari).
 const LANGUAGE_REVIEW_FILE = path.join(process.cwd(), 'data', 'revisio-idiomes.json');
 const ALBUMS_FILE = path.join(process.cwd(), 'data', 'albums-musica.json');
+const RELEASES_FILE = path.join(process.cwd(), 'data', 'llancaments-musicals.json');
+const RELEASES_STATE_FILE = path.join(process.cwd(), 'data', 'llancaments-estat.json');
 const DEEP_PAGE_BUDGET = Math.max(0, Number.parseInt(process.env.MUSIC_DEEP_PAGE_BUDGET || String(catalog.DEFAULTS.deepPageBudget), 10));
 const EXTRA_DEEP_CHANNELS = String(process.env.MUSIC_DEEP_CHANNELS || '').split(',').map(v=>v.trim()).filter(Boolean);
 const VIDEOS_PER_CHANNEL = Math.max(1, Math.min(50, Number.parseInt(process.env.MUSIC_VIDEOS_PER_CHANNEL || '50', 10)));
@@ -241,6 +244,19 @@ async function main(){
   const uploadsByChannel=new Map();
 
   const contentOverrides=loadContentOverrides(CONTENT_OVERRIDES_FILE);
+  const releasesRegistry=readJsonSafe(RELEASES_FILE,{releases:[]});
+  const releaseIds=releasesMusic.idsByChannel(releasesRegistry,new Set(ids));
+  const releasesState=await releasesMusic.refreshSources(releasesRegistry,
+    readJsonSafe(RELEASES_STATE_FILE,{}),api,{activeIds:new Set(ids)});
+  fs.writeFileSync(RELEASES_STATE_FILE,JSON.stringify(releasesState,null,2)+'\n');
+  // Les pistes han estat verificades; una decisió manual anterior continua tenint prioritat.
+  for(const videoIds of releaseIds.values()){
+    for(const videoId of videoIds){
+      if(!contentOverrides.has(videoId)) contentOverrides.set(videoId,{
+        contentType:'song',note:'Pista de llançament oficial revisada',
+      });
+    }
+  }
   if(contentOverrides.size) console.log('✍️ Revisions manuals de contingut:',contentOverrides.size);
   const channelVideoAllowlist=loadChannelVideoAllowlist(CHANNEL_VIDEO_ALLOWLIST_FILE);
   if(channelVideoAllowlist.size) console.log('🎯 Canals amb llista blanca de vídeos:',channelVideoAllowlist.size);
@@ -369,6 +385,9 @@ async function main(){
     retainedIdsByChannel.set(id,catalog.pickRetained(previousByChannel.get(id),fresh).map(v=>v.id));
   }
   const retainedSet=new Set([...retainedIdsByChannel.values()].flat());
+  for(const [id,videoIds] of releaseIds){
+    freshIdsByChannel.set(id,unique([...(freshIdsByChannel.get(id)||[]),...videoIds]));
+  }
   const allVideoIds=unique([
     ...[...freshIdsByChannel.values()].flat(),
     ...[...deepIdsByChannel.values()].flat(),
@@ -548,7 +567,7 @@ async function main(){
   for(const id of ids){
     const carriedIds=retainedIdsByChannel.get(id)||[];
     const keepDeep=(deepIdsByChannel.get(id)||[]).filter(videoId=>deepAllowed.has(videoId));
-    playlistVideoIds.set(id,unique([...(freshIdsByChannel.get(id)||[]),...keepDeep,...carriedIds]));
+    playlistVideoIds.set(id,unique([...(freshIdsByChannel.get(id)||[]),...(releaseIds.get(id)||[]),...keepDeep,...carriedIds]));
   }
 
   const manualDates=fs.existsSync(ORIGINAL_DATES_FILE)?parseManualDates(JSON.parse(fs.readFileSync(ORIGINAL_DATES_FILE,'utf8'))):new Map();
@@ -878,6 +897,7 @@ async function main(){
     channels,
     {hiddenIds,generatedAt}
   );
+  releasesMusic.applyReleaseCatalog(albumCatalog,releasesRegistry,{channels,hiddenIds});
   fs.writeFileSync(ALBUMS_FILE,JSON.stringify(albumCatalog));
   const albumCount=Object.values(albumCatalog.artists||{}).reduce((sum,entry)=>sum+(entry.albums||[]).length,0);
   console.log('💿 Catàleg local de discos:',albumCount,'discos de',Object.keys(albumCatalog.artists||{}).length,'artistes.');
