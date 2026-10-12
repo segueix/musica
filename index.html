@@ -52,7 +52,7 @@
     
     <!-- CSS -->
     <link rel="stylesheet" href="css/styles.css?v=20260929-home-playlists-4">
-    <link rel="stylesheet" href="css/portada.css?v=20261012-a-prop-4">
+    <link rel="stylesheet" href="css/portada.css?v=20261012-a-prop-5">
     
     <link rel="stylesheet" href="css/google-drive-sync.css">
     <!-- Icons (Lucide via CDN) -->
@@ -405,6 +405,8 @@
                     <button class="ap-albums-all is-active" id="apAlbumsAll" type="button" data-ap-album="" aria-pressed="true">Totes</button>
                 </div>
                 <div class="ap-albums-grid" id="apAlbumsGrid"></div>
+                <!-- Ràdio del disc triat: només les seves cançons (artist-page.js, renderAlbums) -->
+                <div class="ap-album-radio" id="apAlbumRadio" hidden></div>
             </section>
             <div class="ap-songs-head">
                 <h2 class="ap-songs-title">Cançons</h2>
@@ -929,7 +931,7 @@
     <script src="js/utils/helpers.js"></script>
     <script src="js/utils/storage.js"></script>
     <script src="js/utils/id-codecs.js"></script>
-    <script src="js/utils/share-codecs.js?v=20261012-a-prop-1"></script>
+    <script src="js/utils/share-codecs.js?v=20261012-radio-wa-1"></script>
     <script src="js/google-drive-config.js?v=20261007-oauth-1"></script>
     <script src="js/utils/music-data.js?v=20261007-space-1"></script>
     <script src="js/utils/drive-sync-model.js"></script>
@@ -953,16 +955,16 @@
     <script src="js/features/discovery.js?v=20261012-artistes-unics-1"></script>
     <script src="js/features/music-selection.js?v=20261007-radar-copy-1"></script>
     <script src="js/features/music-signals.js?v=20261007-auto-1"></script>
-    <script src="js/features/music-queue.js?v=20261012-proximitat-1"></script>
+    <script src="js/features/music-queue.js?v=20261012-a-prop-5"></script>
     <script src="js/features/system-player.js"></script>
     <script src="js/features/drive-mode.js"></script>
     <script src="js/features/home-playlists.js?v=20261005-nomes-inici-1"></script>
     <script src="js/features/my-music.js?v=20260930-la-teva-musica-1"></script>
     <script src="js/features/shell-nav.js?v=20260930-portada-1"></script>
     <script src="js/features/youtube-subscribe.js?v=20261008-subscriu-4"></script>
-    <script src="js/features/nearby-radio.js?v=20261012-a-prop-4"></script>
+    <script src="js/features/nearby-radio.js?v=20261012-a-prop-5"></script>
     <script src="js/features/portada.js?v=20261012-a-prop-2"></script>
-    <script src="js/features/artist-page.js?v=20261012-llancaments-1"></script>
+    <script src="js/features/artist-page.js?v=20261012-disc-1"></script>
     <script src="js/features/user-categories.js?v=20261012-artistes-unics-1"></script>
     <script src="js/features/alphabet-index.js?v=20261004-az-1"></script>
     <script src="js/features/category-artists.js?v=20261005-artistes-categoria-1"></script>
@@ -974,7 +976,7 @@
     <script src="js/features/analytics-admin.js?v=20261006-music-analytics-1"></script>
 
     <!-- Main app entrypoint -->
-    <script src="js/app.js?v=20261012-a-prop-1"></script>
+    <script src="js/app.js?v=20261012-radio-wa-1"></script>
     <script src="js/features/tv-learning.js?v=20260924-learning-v1"></script>
     <script src="js/features/smart-feed.js?v=20260924-smart-feed-v1"></script>
     <script src="js/features/tv-live-queue.js?v=20260924-live-session-v1"></script>

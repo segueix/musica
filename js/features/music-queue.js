@@ -654,6 +654,23 @@
         );
     }
 
+    // Ràdio d'un disc (fitxa d'artista): només les cançons del disc, ordenades pel motor com una ràdio d'artista;
+    // «Barreja» es queda dins del disc. Nom «Ràdio «<disc>»». Retorna true si ha començat (calen almenys dues cançons).
+    function startAlbumRadio(videos, options = {}) {
+        if (typeof loadVideoInSequence !== 'function' || document.body.classList.contains('segueix-tv-active')) {
+            return false;
+        }
+        const pool = searchPool(videos, ARTIST_RADIO_POOL);
+        const album = String(options.album || '').trim();
+        if (pool.length < 2 || !album) return false;
+        return launchPoolRadio(
+            pool,
+            pickPoolSeed(pool, options),
+            { title: `Ràdio «${album}»`, artist: String(options.artist || '').trim(), channelId: options.channelId },
+            options
+        );
+    }
+
     // Ràdio d'una categoria pròpia (user-categories.js): només cançons dels grups que l'usuari hi ha posat, ordenades
     // pel motor segons el gust i el mode de descoberta (com una ràdio d'artista), amb el nom «Ràdio <categoria>».
     // Retorna true si ha començat (calen almenys dues cançons).
@@ -1105,6 +1122,16 @@
         }
     }
 
+    // «A prop teu»: primer la distància (i el lloc), després el títol i el grup. Les cues desades abans només
+    // porten `nearbyLocation` («Vic · 12 km aprox.»).
+    function nearbyLine(video) {
+        if (video.nearbyKm) {
+            const place = video.nearbyPlace ? ` · ${escapeText(video.nearbyPlace)}` : '';
+            return `<span class="mq-near"><strong>${escapeText(video.nearbyKm)}</strong>${place}</span>`;
+        }
+        return video.nearbyLocation ? `<span class="mq-near">${escapeText(video.nearbyLocation)}</span>` : '';
+    }
+
     function renderItem(video, index, { active = false, draggable = true } = {}) {
         const unavailable = unavailableVideos.has(String(video.id));
         const duration = typeof getVideoDisplayDuration === 'function' ? getVideoDisplayDuration(video) : '';
@@ -1117,8 +1144,8 @@
                         ${active && !unavailable ? '<span class="mq-eq" aria-hidden="true"><i></i><i></i><i></i></span>' : ''}
                     </span>
                     <span class="mq-text">
+                        ${nearbyLine(video)}
                         <span class="mq-title">${escapeText(video.title)}</span>
-                        ${video.nearbyLocation ? `<span class="mq-artist">${escapeText(video.nearbyLocation)}</span>` : ''}
                         ${unavailable ? '<span class="mq-unavailable">No disponible</span>' : ''}
                         <span class="mq-artist">${escapeText(video.channelTitle || '')}${queuedIds.has(String(video.id)) && !active ? ' · <span class="mq-added">Afegida per tu</span>' : ''}</span>
                     </span>
@@ -1823,6 +1850,7 @@
         nearbyPool: videos => searchPool(videos, Infinity).filter(video => !unavailableVideos.has(String(video.id))),
         startFromSearch,
         startArtistRadio,
+        startAlbumRadio,
         startCategoryRadio,
         startStyleRadio,
         saveAsPlaylist,

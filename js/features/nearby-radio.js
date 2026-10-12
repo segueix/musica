@@ -139,8 +139,7 @@
         const where = `${row.relation === 'associated' ? 'Vinculat a ' : ''}${esc(row.location.name)}${row.location.approximate ? ` · ref. ${esc(row.location.reference)}` : ''}`;
         const seen = viewsLabel(row.video);
         return `<li class="near-row"><span class="near-row__cover"><img src="${esc(cover(row.video))}" alt="" loading="lazy" decoding="async" width="64" height="64"><span class="near-row__rank" aria-hidden="true">${state.offset + index + 1}</span></span>
-            <span class="near-row__text"><strong>${esc(row.video.title)}</strong><span>${esc(row.artist)}</span><small>${where}${seen ? ` · ${seen}` : ''}</small></span>
-            <span class="near-row__km">${km(row.location.distance)}<span class="pt-sr-only"> aprox.</span></span></li>`;
+            <span class="near-row__text"><span class="near-row__km">${km(row.location.distance)}<span class="pt-sr-only"> aprox.</span></span><strong>${esc(row.video.title)}</strong><span>${esc(row.artist)}</span><small>${where}${seen ? ` · ${seen}` : ''}</small></span></li>`;
     }
     function renderRows() {
         if (!state.dialog) return;
@@ -170,7 +169,12 @@
         renderRows();
     }
     function playRows() {
-        const videos = batchRows().map(r => ({ ...r.video, nearbyLocation: `${r.location.name} · ${Math.round(r.location.distance)} km aprox.${r.location.approximate ? ' · ref. ' + r.location.reference : ''}` }));
+        const videos = batchRows().map(r => ({
+            ...r.video,
+            nearbyKm: km(r.location.distance),
+            nearbyPlace: `${r.relation === 'associated' ? 'vinculat a ' : ''}${r.location.name}${r.location.approximate ? ` · ref. ${r.location.reference}` : ''}`,
+            nearbyLocation: `${r.location.name} · ${Math.round(r.location.distance)} km aprox.${r.location.approximate ? ' · ref. ' + r.location.reference : ''}`,
+        }));
         return videos.length > 0 && app.features.musicQueue.playSelection(videos, `A prop teu · ${state.origin.name}${currentType() === 'mix' ? '' : ` · ${TYPES.find(t => t.id === currentType()).label}`}`);
     }
     function setEditing(editing) {
@@ -325,7 +329,10 @@
         // El diàleg és modal (capa superior): la finestra de compartir quedaria a sota i no es podria tocar
         if (state.dialog?.open) state.dialog.close();
         if (typeof _showShareOptionsModal === 'function') {
-            _showShareOptionsModal('Ràdio', name, url, { type: 'radio', count: PAGE, text: `Escolta els artistes de prop de ${place.name} a Segueix Música.` });
+            // La pàgina compartir/radio/radio-<municipi>.html fa que WhatsApp digui «Ràdio Vic»
+            const show = extra => _showShareOptionsModal('Ràdio', name, url, { type: 'radio', count: PAGE, ...extra });
+            if (typeof radioLinkOptions === 'function') radioLinkOptions(name, url).then(show, () => show({}));
+            else show({});
         }
         return url;
     }

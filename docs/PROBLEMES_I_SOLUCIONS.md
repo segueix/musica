@@ -1,3 +1,9 @@
+## [2026-10-12] - WhatsApp: l'enllaç d'una ràdio diu «Ràdio <nom>»
+
+**Problema:** en compartir l'enllaç d'una ràdio a WhatsApp, la previsualització era la genèrica de l'app: el robot de WhatsApp llegeix les etiquetes Open Graph de l'HTML i no executa JavaScript, i `?importData=` apunta a `index.html`. GitHub Pages és estàtic: no hi ha cap manera de canviar l'`og:title` segons el paràmetre.
+
+**Solució:** una pàgina estàtica per a cada nom de ràdio conegut, `compartir/radio/<slug>.html`, amb `og:title` «Ràdio <nom>» i un script que redirigeix a l'app amb el mateix `location.search` (el robot no el veu). Les genera `generar_pagines_compartir.js` (estils, ràdios generals, municipis de `data/municipis-radio.json`, llocs dels orígens i artistes; ~2.500 pàgines, ~4 MB) i deixa la llista a `compartir/radio/index.json`, que l'app llegeix en compartir (`resolveRadioShare()`). **Trampes:** (1) el títol i el slug s'han de calcular igual a l'app i al generador: el generador carrega `share-codecs.js` amb `vm` en lloc de copiar-ne la lògica; (2) el generador esborra tota la carpeta `compartir/` a cada execució, per això les ràdios es generen dins el mateix `generate()`; (3) el QR de la imatge no canvia (l'enllaç més llarg podia passar de `MAX_QR_URL_LENGTH`); (4) un nom sense pàgina va a la genèrica i el nom viatja en el text del missatge.
+
 Warning: truncated output (original token count: 81021)
 Total output lines: 1955
 
