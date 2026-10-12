@@ -171,3 +171,15 @@ describe('compartir «A prop teu»', () => {
   expect(app).toMatch(/if \(payload\.type === 'nearby'\) \{\s*SegueixApp\.features\.nearbyRadio\?\.openShared\?\.\(payload\);\s*return;/);
  });
 });
+
+it('«A prop teu»: primer la distància, després la cançó i el grup (llista i cua)', () => {
+ const near = readFileSync('js/features/nearby-radio.js', 'utf8');
+ const row = near.slice(near.indexOf('<span class="near-row__text">'));
+ expect(row.indexOf('near-row__km')).toBeLessThan(row.indexOf('row.video.title'));
+ expect(row.indexOf('row.video.title')).toBeLessThan(row.indexOf('row.artist'));
+ const mq = readFileSync('js/features/music-queue.js', 'utf8');
+ const text = mq.slice(mq.indexOf('<span class="mq-text">'));
+ expect(text.indexOf('${nearbyLine(video)}')).toBeLessThan(text.indexOf('mq-title'));
+ expect(text.indexOf('mq-title')).toBeLessThan(text.indexOf('video.channelTitle'));
+ expect(near).toContain('nearbyKm: km(r.location.distance)');
+});

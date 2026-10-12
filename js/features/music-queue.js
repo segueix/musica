@@ -1122,6 +1122,16 @@
         }
     }
 
+    // «A prop teu»: primer la distància (i el lloc), després el títol i el grup. Les cues desades abans només
+    // porten `nearbyLocation` («Vic · 12 km aprox.»).
+    function nearbyLine(video) {
+        if (video.nearbyKm) {
+            const place = video.nearbyPlace ? ` · ${escapeText(video.nearbyPlace)}` : '';
+            return `<span class="mq-near"><strong>${escapeText(video.nearbyKm)}</strong>${place}</span>`;
+        }
+        return video.nearbyLocation ? `<span class="mq-near">${escapeText(video.nearbyLocation)}</span>` : '';
+    }
+
     function renderItem(video, index, { active = false, draggable = true } = {}) {
         const unavailable = unavailableVideos.has(String(video.id));
         const duration = typeof getVideoDisplayDuration === 'function' ? getVideoDisplayDuration(video) : '';
@@ -1134,8 +1144,8 @@
                         ${active && !unavailable ? '<span class="mq-eq" aria-hidden="true"><i></i><i></i><i></i></span>' : ''}
                     </span>
                     <span class="mq-text">
+                        ${nearbyLine(video)}
                         <span class="mq-title">${escapeText(video.title)}</span>
-                        ${video.nearbyLocation ? `<span class="mq-artist">${escapeText(video.nearbyLocation)}</span>` : ''}
                         ${unavailable ? '<span class="mq-unavailable">No disponible</span>' : ''}
                         <span class="mq-artist">${escapeText(video.channelTitle || '')}${queuedIds.has(String(video.id)) && !active ? ' · <span class="mq-added">Afegida per tu</span>' : ''}</span>
                     </span>
