@@ -1,3 +1,7 @@
+## [2026-10-12] - Compartir «A prop teu» amb la localitat triada
+
+L'enllaç (`?importData=`, tipus `nearby`) no porta cançons sinó la localitat (nom, territori, coordenades del municipi a 3 decimals) i el tipus de ràdio: qui l'obre calcula els artistes amb el seu catàleg. Privacitat: només es pot compartir una localitat triada; la posició del GPS mai surt de l'aparell. **Trampes:** (1) l'enllaç es processa en arrencar, abans que el feed hagi carregat: `load()` espera `YouTubeAPI.feedLoaded` (fins a 20 s) o la llista sortiria buida; (2) el diàleg és un `<dialog>` modal a la capa superior, i la finestra de compartir (un `div` amb `z-index`) quedava a sota i no es podia tocar: `share()` tanca el diàleg abans d'obrir-la; (3) la localitat i el tipus rebuts no es desen: en tancar el diàleg es tornen a llegir els de l'usuari (`origin.shared`).
+
 ## [2026-10-12] - Mòbil: «Música» retallat a la marca de la capçalera
 
 **Símptoma:** al mòbil la marca «Segueix! Música» sortia amb «Música» tallat a la dreta.

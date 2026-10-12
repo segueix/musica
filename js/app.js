@@ -13817,6 +13817,12 @@ function handleImportDataParam() {
         return;
     }
 
+    // «A prop teu» compartida: obre la ràdio de proximitat amb la localitat de qui l'ha compartida
+    if (payload.type === 'nearby') {
+        SegueixApp.features.nearbyRadio?.openShared?.(payload);
+        return;
+    }
+
     if (!['playlist', 'radio', 'category'].includes(payload.type)) return;
 
     const typeLabels = {
