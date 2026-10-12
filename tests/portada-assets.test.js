@@ -120,7 +120,7 @@ describe('index.html de Segueix Música', () => {
     it('identifica el producte com a Segueix Música', () => {
         expect(html).toContain('<title>Segueix Música · La teva plaça musical en català</title>');
         expect(html).toContain('<meta name="theme-color" content="#141615">');
-        expect(html).toContain('<span class="brand-tag">Música</span>');
+        expect(html).toContain('<span class="brand-tag__long">Música en català</span>');
         expect(manifest.name).toMatch(/Segueix Música/);
         expect(manifest.theme_color).toBe('#141615');
         expect(manifest.background_color).toBe('#141615');
