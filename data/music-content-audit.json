@@ -1,41 +1,26 @@
 {
-  "generatedAt": "2026-10-12T07:56:00.722Z",
-  "rawPublicVideoCount": 6062,
-  "feedVideoCount": 5536,
-  "acceptedMusicCount": 5497,
-  "categoryEligibleVideoCount": 5493,
+  "generatedAt": "2026-10-12T19:29:27.246Z",
+  "rawPublicVideoCount": 6081,
+  "feedVideoCount": 5543,
+  "acceptedMusicCount": 5517,
+  "categoryEligibleVideoCount": 5513,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
-    "before": 2,
+    "before": 0,
     "matched": 0,
-    "rejected": 2
+    "rejected": 0
   },
-  "rejectedOrReviewCount": 565,
+  "rejectedOrReviewCount": 564,
   "reviewCount": 529,
   "typeCounts": {
-    "song": 5351,
-    "live_song": 142,
+    "song": 5354,
+    "live_song": 159,
     "album": 4,
-    "other": 36,
+    "other": 35,
     "review": 529
   },
   "channelsWithoutAcceptedMusic": [],
-  "rejectedSamples": [
-    {
-      "id": "GiYIyBqhGSA",
-      "title": "EL TRO DEL SENYAL En directe a L'Auditori de Barcelona",
-      "channelTitle": "Anna Andreu",
-      "durationSeconds": 257,
-      "musicReason": "no és a la discografia del canal Tema"
-    },
-    {
-      "id": "ffdyRGdkodU",
-      "title": "Anna Andreu 'Vigília' (Àudio sencer)",
-      "channelTitle": "Anna Andreu",
-      "durationSeconds": 1469,
-      "musicReason": "no és a la discografia del canal Tema"
-    }
-  ],
-  "publishedFeedVideoCount": 5507,
+  "rejectedSamples": [],
+  "publishedFeedVideoCount": 5549,
   "publishedShortVideoCount": 0
 }

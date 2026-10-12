@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-12T07:56:00.722Z",
+  "generatedAt": "2026-10-12T19:29:27.246Z",
   "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
   "restrictedVideoCount": 21,
   "restrictedVideosAdded": [],
   "deepPagesFetched": 0,
   "deepChannelCount": 19,
-  "topicChannelCount": 301,
+  "topicChannelCount": 304,
   "governedChannelCount": 103,
   "topicCoverage": [
     {
@@ -1243,10 +1243,7 @@
     }
   ],
   "topicGovernance": "apply",
-  "governedReclassified": {
-    "other": 2,
-    "song": 4
-  },
+  "governedReclassified": {},
   "topicHiddenCount": 0,
   "topicChannels": [
     {
@@ -1929,6 +1926,20 @@
       "withClip": 0
     },
     {
+      "id": "UCemRvkxHIe6M0528tlf2Gpw",
+      "name": "Franca Masu",
+      "tracks": 21,
+      "selected": 21,
+      "withClip": 0
+    },
+    {
+      "id": "UC6Md27ZZOIr6Qvr1-nC1ARw",
+      "name": "Franca Masu",
+      "tracks": 1,
+      "selected": 1,
+      "withClip": 0
+    },
+    {
       "id": "UCOGyDtQsutPHkVRfp0mJ_GQ",
       "name": "Frans Cuspinera",
       "tracks": 16,
@@ -2004,6 +2015,13 @@
       "tracks": 46,
       "selected": 2,
       "withClip": 33
+    },
+    {
+      "id": "UCRK-i4JVJi6CwcPZ1BjaLQw",
+      "name": "Grup Coral de l'Agrupació Catalana d'Itàlia",
+      "tracks": 11,
+      "selected": 11,
+      "withClip": 0
     },
     {
       "id": "UC8efMlZQ7vQ1cTO6MbspafA",
@@ -3329,32 +3347,34 @@
       "withClip": 0
     }
   ],
-  "indexedChannelCount": 546,
-  "resolvedChannelCount": 546,
-  "feedChannelCount": 546,
-  "rawPublicVideoCount": 6062,
-  "feedVideoCount": 5536,
-  "acceptedMusicCount": 5497,
-  "categoryEligibleVideoCount": 5493,
+  "indexedChannelCount": 553,
+  "resolvedChannelCount": 553,
+  "feedChannelCount": 553,
+  "rawPublicVideoCount": 6081,
+  "feedVideoCount": 5543,
+  "acceptedMusicCount": 5517,
+  "categoryEligibleVideoCount": 5513,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
-    "before": 2,
+    "before": 0,
     "matched": 0,
-    "rejected": 2
+    "rejected": 0
   },
   "contentReviewCount": 529,
   "contentTypeCounts": {
-    "song": 5351,
-    "live_song": 142,
+    "song": 5354,
+    "live_song": 159,
     "album": 4,
-    "other": 36,
+    "other": 35,
     "review": 529
   },
   "unresolvedChannelIds": [],
   "channelsWithoutUploads": [],
-  "channelsWithoutVideos": [],
+  "channelsWithoutVideos": [
+    "UC9zX7R05JQ1P30RGvtjHizQ"
+  ],
   "channelsWithoutAcceptedMusic": [],
   "allIndexedChannelsVisible": true,
-  "publishedFeedVideoCount": 5507,
+  "publishedFeedVideoCount": 5549,
   "publishedShortVideoCount": 0
 }
