@@ -85,3 +85,38 @@ it('carrega el catàleg amb YouTubeAPI lexical encara que no existeixi a window'
  await ctx.load();
  expect(ctx.state.videos.map(v => v.id)).toEqual(['hot', 'archive']);
 });
+
+describe('«A prop teu» a la portada', () => {
+ const store = {};
+ const ls = { getItem: k => store[k] ?? null, setItem: (k, v) => { store[k] = String(v); }, removeItem: k => { delete store[k]; } };
+ const card = () => loadScript('js/features/nearby-radio.js', { document: { addEventListener() {} }, localStorage: ls }).SegueixApp.features.nearbyRadio.cardHtml();
+ it('sense localitat desada ofereix la ubicació i triar una localitat', () => {
+  const html = card();
+  expect(html).toContain('data-near-open="gps"');
+  expect(html).toContain('data-near-open="search"');
+  expect(html).not.toContain('data-near-quick');
+ });
+ it('amb una localitat desada la ràdio s’engega d’un toc i es pot canviar la ubicació', () => {
+  store.segueix_nearby_manual_v1 = JSON.stringify({ name: 'Vic <b>', territory: 'Catalunya', coordinates: point(41.93) });
+  const html = card();
+  expect(html).toContain('data-near-quick');
+  expect(html).toContain('La teva zona: <strong>Vic &lt;b&gt;</strong>');
+  expect(html).toContain('Canvia la ubicació');
+  delete store.segueix_nearby_manual_v1;
+ });
+ it('surt just després de «Comença per aquí», abans de les novetats', () => {
+  const src = readFileSync('js/features/portada.js', 'utf8');
+  const lead = src.indexOf('${model.lead ? leadHtml(model.lead)');
+  const near = src.indexOf('nearbyRadio?.cardHtml?.()');
+  const fresh = src.indexOf('${model.fresh ? freshHtml(');
+  expect(lead).toBeLessThan(near);
+  expect(near).toBeLessThan(fresh);
+ });
+ it('el diàleg és a pantalla completa al mòbil i té els botons fixos a baix', () => {
+  const css = readFileSync('css/portada.css', 'utf8');
+  const block = css.slice(css.indexOf('«A prop teu» (js/features/nearby-radio.js'));
+  expect(block).toMatch(/\.near-dialog \{[\s\S]*?margin: auto;/);
+  expect(block).toMatch(/@media \(max-width: 600px\) \{\s*\.near-dialog \{\s*width: 100vw;\s*height: 100dvh;/);
+  expect(block).toMatch(/\.near-body \{[\s\S]*?overflow-y: auto;/);
+ });
+});

@@ -1,3 +1,11 @@
+## [2026-10-12] - «A prop teu» més visible i usable; marca «Segueix! Música · En català»
+
+**Problema:** la targeta «A prop teu» era una caixa de text al fons de la portada (després de tots els estils) i calia obrir el diàleg cada vegada, fins i tot amb la localitat desada. El diàleg sortia enganxat a dalt a l'esquerra (el `margin` del `<dialog>` quedava anul·lat pels estils globals), sense jerarquia i, al mòbil, amb els botons barrejats amb la llista.
+
+**Solució:** la targeta va just després de «Comença per aquí», amb un radar decoratiu, i amb una localitat desada fa «Engega la ràdio» d'un toc (`quickPlay()`: carrega les dades, calcula les files amb `computeRows()` i crida `playSelection()` sense diàleg; si falla, obre el diàleg). El diàleg porta `position: fixed; inset: 0; margin: auto` explícits (centrat), és a pantalla completa al mòbil i té capçalera i botons fixos. **Trampa:** `renderRows()` i `status()` han de tolerar que el diàleg encara no existeixi (el camí d'un toc no el crea).
+
+La marca torna a ser «Segueix! Música» amb «En català» a sota (colors de la pantalla d'espera). A 320 px no hi cap el logo amb el nom sencer: s'amaga el logo, no cap paraula.
+
 ## [2026-10-12] - Ràdio secundària «A prop teu»
 
 Targeta sota «Tria el teu so», abans dels directes. Diàleg amb localitat manual o geolocalització puntual, sense radi: 20 artistes únics per proximitat, una pista de cadascun. «Altres cançons» conserva artistes i ordre; «20 artistes més» mostra el següent lot sense repetir. La selecció és revisable abans d’iniciar el reproductor (primer toc manual de YouTube conservat).

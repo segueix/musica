@@ -79,21 +79,58 @@
             .filter(([, p]) => p.type === 'municipality' && territories.has(p.territory) && validPoint(p.coordinates) && fold(p.name).includes(fold(query)))
             .map(([id, p]) => ({ ...p, id }));
     }
-    const $ = selector => state.dialog.querySelector(selector);
-    function status(message) { $('[data-near-status]').textContent = message; }
-    function renderRows() {
-        const batch = state.rows.slice(state.offset, state.offset + 20);
-        $('[data-near-results]').innerHTML = batch.length ? `<p><strong>${esc(state.origin.name)}</strong> · ${batch.length} artistes, del més proper al més llunyà</p><ol start="${state.offset + 1}">${batch.map(row => `<li><strong>${esc(row.artist)}</strong><span>${esc(row.video.title)}</span><small>${row.relation === 'associated' ? 'Vinculat a ' : ''}${esc(row.location.name)} · ${row.location.distance < 1 ? 'menys d’1' : Math.round(row.location.distance)} km aprox.${row.location.approximate ? ` · referència: ${esc(row.location.reference)}` : ''}</small></li>`).join('')}</ol>` : '<p>No hem trobat artistes amb cançons disponibles i localització revisada.</p>';
-        $('[data-near-play]').disabled = !batch.length;
-        $('[data-near-more]').disabled = state.offset + 20 >= state.rows.length;
-        $('[data-near-other]').disabled = !batch.length;
+    const $ = selector => state.dialog?.querySelector(selector);
+    const PIN = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/></svg>';
+    const PLAY = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 5.5v13l11-6.5-11-6.5Z" fill="currentColor"/></svg>';
+    const CROSS = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
+    const PAGE = 20;
+    function status(message) { const el = $('[data-near-status]'); if (el) el.textContent = message; }
+    function km(value) { return value < 1 ? '< 1 km' : `${Math.round(value)} km`; }
+    function savedPlace() {
+        try {
+            const saved = JSON.parse(localStorage.getItem(storageKey));
+            return saved?.name && territories.has(saved.territory) && validPoint(saved.coordinates) ? saved : null;
+        } catch (_) { return null; }
     }
-    function rebuild(avoidIds = new Set()) {
+    function batchRows() { return state.rows.slice(state.offset, state.offset + PAGE); }
+    function rowHtml(row, index) {
+        const where = `${row.relation === 'associated' ? 'Vinculat a ' : ''}${esc(row.location.name)}${row.location.approximate ? ` · ref. ${esc(row.location.reference)}` : ''}`;
+        return `<li class="near-row"><span class="near-row__rank" aria-hidden="true">${state.offset + index + 1}</span>
+            <span class="near-row__text"><strong>${esc(row.artist)}</strong><span>${esc(row.video.title)}</span><small>${where}</small></span>
+            <span class="near-row__km">${km(row.location.distance)}<span class="pt-sr-only"> aprox.</span></span></li>`;
+    }
+    function renderRows() {
+        if (!state.dialog) return;
+        const batch = batchRows();
+        const has = Boolean(state.origin);
+        state.dialog.classList.toggle('has-origin', has);
+        $('[data-near-current-name]').textContent = has ? state.origin.name : '';
+        const from = state.offset + 1, to = state.offset + batch.length;
+        $('[data-near-results]').innerHTML = !has ? '' : batch.length
+            ? `<div class="near-results__head"><h3>A prop de ${esc(state.origin.name)}</h3><p>Artistes ${from}–${to} de ${state.rows.length} · del més proper al més llunyà</p></div><ol class="near-list">${batch.map(rowHtml).join('')}</ol>`
+            : '<p class="near-empty">No hem trobat artistes amb cançons disponibles i localització revisada.</p>';
+        $('[data-near-play]').disabled = !batch.length;
+        $('[data-near-more]').disabled = state.offset + PAGE >= state.rows.length;
+        $('[data-near-other]').disabled = !batch.length;
+        state.dialog.querySelector('.near-actions').hidden = !has;
+    }
+    function computeRows(avoidIds = new Set()) {
         const selection = app.features.musicSelection;
         const signals = app.features.musicSignals?.snapshot?.();
         state.rows = buildRows({ videos: state.videos, origin: state.origin.coordinates, catalog: state.catalog, references: state.references, avoidIds,
             rank: tracks => selection?.isEnabled?.() ? selection.rankFeed(tracks, { ctx: selection.getAppContext(state.videos), signals }) : tracks });
+    }
+    function rebuild(avoidIds = new Set()) {
+        computeRows(avoidIds);
         renderRows();
+    }
+    function playRows() {
+        const videos = batchRows().map(r => ({ ...r.video, nearbyLocation: `${r.location.name} · ${Math.round(r.location.distance)} km aprox.${r.location.approximate ? ' · ref. ' + r.location.reference : ''}` }));
+        return videos.length > 0 && app.features.musicQueue.playSelection(videos, `A prop teu · ${state.origin.name}`);
+    }
+    function setEditing(editing) {
+        state.dialog.classList.toggle('is-editing', editing);
+        if (editing) setTimeout(() => $('[data-near-query]')?.focus(), 0);
     }
     function selectPlace(place, manual = true) {
         state.version++; state.searchVersion++;
@@ -102,7 +139,8 @@
         if (manual) {
             try { localStorage.setItem(storageKey, JSON.stringify({ id: place.id, name: place.name, territory: place.territory, coordinates: place.coordinates })); } catch (_) { /* Opcional */ }
         }
-        rebuild(); status('Distàncies en línia recta. Per a comarques i illes fem servir la capital o referència indicada.');
+        rebuild(); setEditing(false);
+        status('Distàncies en línia recta. Per a comarques i illes fem servir la capital o la referència indicada.');
     }
     async function search(event) {
         event.preventDefault();
@@ -113,7 +151,7 @@
         const paint = places => {
             if (version !== state.searchVersion || !state.dialog.open) return;
             const unique = [...new Map(places.map(p => [p.id, p])).values()].slice(0, 30);
-            $('[data-near-locations]').innerHTML = unique.map((p, i) => `<button type="button" data-near-place="${i}">${esc(p.name)}<small>${esc(p.detail ? p.detail + ' · ' : '')}${esc(p.territory)}</small></button>`).join('');
+            $('[data-near-locations]').innerHTML = unique.map((p, i) => `<button type="button" class="near-place" data-near-place="${i}">${PIN}<span><strong>${esc(p.name)}</strong><small>${esc(p.detail ? p.detail + ' · ' : '')}${esc(p.territory)}</small></span></button>`).join('');
             $('[data-near-locations]').querySelectorAll('button').forEach((button, i) => button.addEventListener('click', () => selectPlace(unique[i])));
             return unique.length;
         };
@@ -135,31 +173,46 @@
         }, () => { if (version === state.version && state.dialog.open) status('No hem pogut obtenir la ubicació. Pots triar una localitat sense donar permís.'); }, { enableHighAccuracy: false, timeout: 10000, maximumAge: 300000 });
     }
     function createDialog() {
-        const dialog = document.createElement('dialog'); dialog.className = 'near-dialog';
+        const dialog = document.createElement('dialog'); dialog.className = 'near-dialog is-editing';
         dialog.setAttribute('aria-labelledby', 'nearTitle');
-        dialog.innerHTML = `<div class="near-heading"><h2 id="nearTitle">A prop teu</h2><button type="button" data-near-close aria-label="Tanca">×</button></div>
-            <p>20 artistes, una cançó de cadascun, per ordre de proximitat.</p>
-            <button type="button" data-near-gps>Utilitza la meva ubicació</button>
-            <form data-near-form><label for="nearQuery">O tria una localitat</label><div class="near-search"><input id="nearQuery" data-near-query type="search" placeholder="Població" autocomplete="off"><button type="submit">Cerca</button></div></form>
-            <p class="near-help">Catalunya, Catalunya Nord, Andorra, País Valencià i Illes Balears. La ubicació es consulta només quan ho demanes i no es desa.</p>
-            <div data-near-locations class="near-locations"></div><p data-near-status role="status" aria-live="polite"></p>
-            <div class="near-actions"><button type="button" data-near-play disabled>Engega la ràdio</button><button type="button" data-near-other disabled>Altres cançons</button><button type="button" data-near-more disabled>20 artistes més</button></div>
-            <div data-near-results></div><p class="near-help">Localitats: <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a> / GeoNames. La localitat triada manualment es recorda en aquest dispositiu.</p>`;
+        dialog.innerHTML = `<header class="near-head"><span class="near-head__icon">${PIN}</span>
+                <div class="near-head__text"><p class="near-eyebrow">Ràdio de proximitat</p><h2 id="nearTitle">A prop teu</h2></div>
+                <button type="button" class="near-close" data-near-close aria-label="Tanca">${CROSS}</button></header>
+            <div class="near-body">
+                <p class="near-intro">20 artistes del teu voltant, una cançó de cadascun, del més proper al més llunyà.</p>
+                <div class="near-current"><span class="near-current__label">${PIN}<span>Ubicació: <strong data-near-current-name></strong></span></span>
+                    <button type="button" class="near-link" data-near-change>Canvia</button></div>
+                <section class="near-where" aria-label="Tria la ubicació">
+                    <button type="button" class="near-gps" data-near-gps>${PIN}<span>Utilitza la meva ubicació</span></button>
+                    <p class="near-or"><span>o cerca una localitat</span></p>
+                    <form data-near-form><label for="nearQuery" class="pt-sr-only">Cerca una localitat</label>
+                        <div class="near-search"><input id="nearQuery" data-near-query type="search" placeholder="Vic, Gandia, Manacor…" autocomplete="off" enterkeyhint="search"><button type="submit">Cerca</button></div></form>
+                    <div data-near-locations class="near-locations"></div>
+                </section>
+                <p data-near-status class="near-status" role="status" aria-live="polite"></p>
+                <section data-near-results class="near-results" aria-live="polite"></section>
+                <p class="near-help">Catalunya, Catalunya Nord, Andorra, País Valencià i Illes Balears. La ubicació es consulta només quan ho demanes i no es desa; la localitat triada a mà es recorda en aquest dispositiu. Localitats: <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a> / GeoNames.</p>
+            </div>
+            <footer class="near-actions" hidden><button type="button" class="near-play" data-near-play disabled>${PLAY}<span>Engega la ràdio</span></button>
+                <button type="button" data-near-other disabled>Altres cançons</button><button type="button" data-near-more disabled>20 artistes més</button></footer>`;
         document.body.append(dialog); state.dialog = dialog;
         $('[data-near-close]').addEventListener('click', () => dialog.close());
-        dialog.addEventListener('close', () => { state.version++; state.searchVersion++; state.opener?.focus(); });
+        // Clic fora (al fons) tanca, com els altres diàlegs de l'app.
+        dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close(); });
+        dialog.addEventListener('close', () => { state.version++; state.searchVersion++; state.opener?.focus?.(); });
         $('[data-near-form]').addEventListener('submit', search);
         $('[data-near-query]').addEventListener('input', () => { state.searchVersion++; $('[data-near-locations]').replaceChildren(); });
         $('[data-near-gps]').addEventListener('click', locate);
-        $('[data-near-more]').addEventListener('click', () => { state.offset += 20; renderRows(); status('Els següents artistes per proximitat. Prem «Engega la ràdio» per escoltar-los.'); });
-        $('[data-near-other]').addEventListener('click', () => { rebuild(new Set(state.rows.map(r => String(r.video.id)))); status('Selecció renovada: canviem la cançó quan l’artista té alternatives disponibles.'); });
+        $('[data-near-change]').addEventListener('click', () => setEditing(!dialog.classList.contains('is-editing')));
+        $('[data-near-more]').addEventListener('click', () => { state.offset += PAGE; renderRows(); $('.near-body').scrollTop = 0; status('Els següents artistes per proximitat. Prem «Engega la ràdio» per escoltar-los.'); });
+        $('[data-near-other]').addEventListener('click', () => { rebuild(new Set(state.rows.map(r => String(r.video.id)))); status('Selecció renovada: canviem la cançó quan l’artista en té d’altres.'); });
         $('[data-near-play]').addEventListener('click', () => {
-            const videos = state.rows.slice(state.offset, state.offset + 20).map(r => ({ ...r.video, nearbyLocation: `${r.location.name} · ${Math.round(r.location.distance)} km aprox.${r.location.approximate ? ' · ref. ' + r.location.reference : ''}` }));
-            if (app.features.musicQueue.playSelection(videos, `A prop teu · ${state.origin.name}`)) dialog.close();
+            if (playRows()) dialog.close();
             else status('No s’ha pogut iniciar la ràdio. Surt del mode TV i torna-ho a provar.');
         });
     }
-    async function open(opener) {
+    // action: 'gps' demana la ubicació de seguida; 'search' obre el cercador de localitats.
+    async function open(opener, action = '') {
         if (!state.dialog) createDialog();
         state.opener = opener; state.dialog.showModal();
         $('[data-near-gps]').disabled = true; $('[data-near-query]').disabled = true;
@@ -172,16 +225,53 @@
             if (version !== state.version || !state.dialog.open) return;
             $('[data-near-gps]').disabled = false; $('[data-near-query]').disabled = false;
             $('[data-near-form] button').disabled = false;
-            if (state.origin) rebuild();
-            else {
-                try { const saved = JSON.parse(localStorage.getItem(storageKey)); if (saved?.name && territories.has(saved.territory) && validPoint(saved.coordinates)) selectPlace(saved, false); } catch (_) { /* Sense preferència */ }
-            }
-            status(state.origin ? 'Pots escoltar la selecció o canviar la ubicació.' : 'Utilitza la ubicació o cerca una localitat.');
+            if (!state.origin) { const saved = savedPlace(); if (saved) selectPlace(saved, false); }
+            else rebuild();
+            setEditing(!state.origin || action === 'search');
+            status(state.origin ? 'Pots escoltar la selecció o canviar la ubicació.' : 'Utilitza la teva ubicació o cerca una localitat.');
+            if (action === 'gps') locate();
         } catch (_) { if (version === state.version) status('No s’han pogut carregar les dades. Tanca i torna-ho a provar.'); }
     }
-    function cardHtml() {
-        return '<section class="pt-near" aria-label="Descoberta per proximitat"><div><h2>A prop teu</h2><p>Descobreix 20 artistes, del més proper al més llunyà.</p></div><button type="button" data-near-open>Tria una ubicació</button></section>';
+    // Un toc des de la portada: engega directament la ràdio de la localitat desada.
+    async function quickPlay(button) {
+        const saved = savedPlace();
+        if (!saved) return open(button);
+        button.disabled = true;
+        const label = button.querySelector('span');
+        const text = label?.textContent;
+        if (label) label.textContent = 'Preparant…';
+        try {
+            await load();
+            state.origin = saved; state.offset = 0;
+            computeRows();
+            renderRows();
+            if (!playRows()) open(button);
+        } catch (_) { open(button); }
+        finally { button.disabled = false; if (label) label.textContent = text; }
     }
-    document.addEventListener('click', event => { const button = event.target.closest?.('[data-near-open]'); if (button) open(button); });
-    app.features.nearbyRadio = { distance, artistLocation, buildRows, remotePlace, cardHtml, open };
+    function cardHtml() {
+        const saved = savedPlace();
+        const actions = saved
+            ? `<button type="button" class="pt-btn pt-btn--primary pt-near__play" data-near-quick>${PLAY}<span>Engega la ràdio</span></button>
+               <button type="button" class="pt-btn pt-btn--ghost pt-btn--sm" data-near-open="search">${PIN}<span>Canvia la ubicació</span></button>`
+            : `<button type="button" class="pt-btn pt-btn--primary" data-near-open="gps">${PIN}<span>Utilitza la meva ubicació</span></button>
+               <button type="button" class="pt-btn pt-btn--ghost pt-btn--sm" data-near-open="search"><span>Tria una localitat</span></button>`;
+        return `<section class="pt-section pt-near" aria-labelledby="ptH-near" data-pt-section="near">
+            <div class="pt-near__radar" aria-hidden="true"><span class="pt-near__pin">${PIN}</span><span class="pt-near__dot pt-near__dot--1"></span><span class="pt-near__dot pt-near__dot--2"></span><span class="pt-near__dot pt-near__dot--3"></span></div>
+            <div class="pt-near__body">
+                <p class="pt-eyebrow">Ràdio de proximitat</p>
+                <h2 class="pt-near__title" id="ptH-near">A prop teu</h2>
+                <p class="pt-near__text">Escolta 20 artistes del teu voltant, del més proper al més llunyà: una cançó de cadascun.</p>
+                ${saved ? `<p class="pt-near__place">${PIN}<span>La teva zona: <strong>${esc(saved.name)}</strong></span></p>` : ''}
+                <div class="pt-near__actions">${actions}</div>
+            </div>
+        </section>`;
+    }
+    document.addEventListener('click', event => {
+        const quick = event.target.closest?.('[data-near-quick]');
+        if (quick) return quickPlay(quick);
+        const button = event.target.closest?.('[data-near-open]');
+        if (button) open(button, button.dataset.nearOpen || '');
+    });
+    app.features.nearbyRadio = { distance, artistLocation, buildRows, remotePlace, cardHtml, open, quickPlay };
 })(window);
