@@ -7209,3 +7209,43 @@ body.is-video-pip .video-placeholder.is-placeholder-hidden {
         font-size: 0.8125rem;
     }
 }
+
+
+/* ---------- «A prop teu»: compartir amb la localitat triada (2026-10-12) ----------
+   «Comparteix» a la fila «Ubicació: Vic» del diàleg (només amb una localitat triada; mai amb el GPS) i a la targeta
+   de la portada, al costat de «Canvia la ubicació». */
+.near-current__tools {
+    display: inline-flex;
+    flex: none;
+    gap: 6px;
+}
+
+.near-dialog .near-share {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.near-dialog .near-share[hidden] {
+    display: none;
+}
+
+.near-dialog .near-share svg {
+    width: 18px;
+    height: 18px;
+}
+
+@media (max-width: 600px) {
+    .pt-near__actions .pt-btn--ghost {
+        flex: 1 1 0;
+        padding-inline: 10px;
+    }
+
+    .near-dialog .near-share span {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+    }
+}

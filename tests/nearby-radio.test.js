@@ -148,3 +148,26 @@ describe('tipus de ràdio «A prop teu»', () => {
   expect(src).toContain('class="near-row__cover"');
  });
 });
+
+describe('compartir «A prop teu»', () => {
+ const codecs = loadScript('js/utils/share-codecs.js').SegueixApp.utils.shareCodecs;
+ const vic = { name: 'Vic', territory: 'Catalunya', coordinates: { latitude: 41.930123, longitude: 2.254987 } };
+ it('el payload porta només la localitat triada (coordenades del municipi arrodonides) i el tipus', () => {
+  const payload = codecs.buildImportPayload({ type: 'nearby', name: 'A prop de Vic', place: vic, kind: 'hidden' });
+  expect(payload).toMatchObject({ type: 'nearby', name: 'A prop de Vic', kind: 'hidden', place: { n: 'Vic', t: 'Catalunya', lat: 41.93, lon: 2.255 } });
+  expect(payload.items).toBeUndefined();
+ });
+ it('en obrir l’enllaç, només s’accepta una localitat dels cinc territoris amb coordenades vàlides', () => {
+  expect(api.placeFromPayload({ place: { n: 'Vic', t: 'Catalunya', lat: 41.93, lon: 2.255 } })).toMatchObject({ name: 'Vic', shared: true });
+  expect(api.placeFromPayload({ place: { n: 'Madrid', t: 'Madrid', lat: 40.4, lon: -3.7 } })).toBeNull();
+  expect(api.placeFromPayload({ place: { n: 'Vic', t: 'Catalunya', lat: 'x', lon: 2 } })).toBeNull();
+  expect(api.placeFromPayload({})).toBeNull();
+ });
+ it('la ubicació del GPS no es pot compartir', () => {
+  expect(api.share({ name: 'La teva ubicació', coordinates: { latitude: 41.9, longitude: 2.2 } })).toBeNull();
+ });
+ it('app.js obre la ràdio compartida en rebre un enllaç «nearby»', () => {
+  const app = readFileSync('js/app.js', 'utf8');
+  expect(app).toMatch(/if \(payload\.type === 'nearby'\) \{\s*SegueixApp\.features\.nearbyRadio\?\.openShared\?\.\(payload\);\s*return;/);
+ });
+});

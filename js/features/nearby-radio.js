@@ -86,6 +86,8 @@
         }
         // youtube.js declara un const global lexical, no una propietat de window.
         const youtube = typeof YouTubeAPI !== 'undefined' ? YouTubeAPI : window.YouTubeAPI;
+        // Un enllaç compartit s'obre en arrencar, abans que el feed hagi carregat: s'espera (fins a 20 s).
+        for (let i = 0; i < 80 && youtube.feedLoaded === false; i++) await new Promise(resolve => setTimeout(resolve, 250));
         const history = await youtube.ensureStyleHistory();
         const pool = youtube.filterHiddenVideos([...(youtube.feedVideos || []), ...(history || [])]);
         state.videos = app.features.musicQueue.nearbyPool(pool);
@@ -99,6 +101,7 @@
     const PIN = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/></svg>';
     const PLAY = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 5.5v13l11-6.5-11-6.5Z" fill="currentColor"/></svg>';
     const CROSS = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
+    const SHARE = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="18" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="6" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="18" cy="19" r="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4" fill="none" stroke="currentColor" stroke-width="2"/></svg>';
     const PAGE = 20;
     function status(message) { const el = $('[data-near-status]'); if (el) el.textContent = message; }
     function km(value) { return value < 1 ? '< 1 km' : `${Math.round(value)} km`; }
@@ -145,6 +148,8 @@
         const has = Boolean(state.origin);
         state.dialog.classList.toggle('has-origin', has);
         $('[data-near-current-name]').textContent = has ? state.origin.name : '';
+        // Només es comparteix una localitat triada (amb nom i territori), mai la posició del GPS
+        $('[data-near-share]').hidden = !shareablePlace(state.origin);
         const from = state.offset + 1, to = state.offset + batch.length;
         $('[data-near-results]').innerHTML = !has ? '' : batch.length
             ? `<div class="near-results__head"><h3>A prop de ${esc(state.origin.name)}</h3><p>${esc(TYPES.find(t => t.id === currentType()).label)} · artistes ${from}–${to} de ${state.rows.length}, del més proper al més llunyà</p></div><ol class="near-list">${batch.map(rowHtml).join('')}</ol>`
@@ -221,7 +226,8 @@
             <div class="near-body">
                 <p class="near-intro">20 artistes del teu voltant, una cançó de cadascun, del més proper al més llunyà.</p>
                 <div class="near-current"><span class="near-current__label">${PIN}<span>Ubicació: <strong data-near-current-name></strong></span></span>
-                    <button type="button" class="near-link" data-near-change>Canvia</button></div>
+                    <span class="near-current__tools"><button type="button" class="near-link near-share" data-near-share aria-label="Comparteix aquesta ràdio">${SHARE}<span>Comparteix</span></button>
+                    <button type="button" class="near-link" data-near-change>Canvia</button></span></div>
                 <section class="near-where" aria-label="Tria la ubicació">
                     <button type="button" class="near-gps" data-near-gps>${PIN}<span>Utilitza la meva ubicació</span></button>
                     <p class="near-or"><span>o cerca una localitat</span></p>
@@ -242,6 +248,8 @@
         dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close(); });
         dialog.addEventListener('close', () => {
             state.version++; state.searchVersion++;
+            // Una ràdio compartida no substitueix la zona ni el tipus de l'usuari: en tancar, es tornen a llegir els seus
+            if (state.origin?.shared) { state.origin = null; state.rows = []; state.type = null; }
             // La targeta de la portada mostra la zona i les caràtules de la localitat triada ara
             const card = document.querySelector('.pt-near');
             if (card) card.outerHTML = cardHtml();
@@ -250,6 +258,7 @@
         $('[data-near-form]').addEventListener('submit', search);
         $('[data-near-query]').addEventListener('input', () => { state.searchVersion++; $('[data-near-locations]').replaceChildren(); });
         $('[data-near-gps]').addEventListener('click', locate);
+        $('[data-near-share]').addEventListener('click', () => share(state.origin));
         $('[data-near-change]').addEventListener('click', () => setEditing(!dialog.classList.contains('is-editing')));
         $('[data-near-more]').addEventListener('click', () => { state.offset += PAGE; renderRows(); $('.near-body').scrollTop = 0; status('Els següents artistes per proximitat. Prem «Engega la ràdio» per escoltar-los.'); });
         $('[data-near-other]').addEventListener('click', () => { rebuild(new Set(state.rows.map(r => String(r.video.id)))); status('Selecció renovada: canviem la cançó quan l’artista en té d’altres.'); });
@@ -296,6 +305,45 @@
         } catch (_) { open(button); }
         finally { button.disabled = false; if (label) label.textContent = text; }
     }
+    function shareablePlace(place) {
+        return Boolean(place?.name && territories.has(place.territory) && validPoint(place.coordinates));
+    }
+    function shareName(place) {
+        const type = currentType();
+        return `A prop de ${place.name}${type === 'mix' ? '' : ` · ${TYPES.find(t => t.id === type).label}`}`;
+    }
+    // Comparteix la ràdio amb la localitat triada (nom + coordenades del municipi) i el tipus de ràdio.
+    function share(place) {
+        const codecs = app.utils?.shareCodecs;
+        if (!shareablePlace(place) || !codecs) {
+            status('Per compartir-la, tria una localitat (la ubicació del GPS no es comparteix).');
+            return null;
+        }
+        const name = shareName(place);
+        const url = codecs.buildImportUrl(codecs.buildImportPayload({ type: 'nearby', name, place, kind: currentType() }));
+        if (!url) return null;
+        // El diàleg és modal (capa superior): la finestra de compartir quedaria a sota i no es podria tocar
+        if (state.dialog?.open) state.dialog.close();
+        if (typeof _showShareOptionsModal === 'function') {
+            _showShareOptionsModal('Ràdio', name, url, { type: 'radio', count: PAGE, text: `Escolta els artistes de prop de ${place.name} a Segueix Música.` });
+        }
+        return url;
+    }
+    // Llegeix el lloc d'un enllaç compartit; null si no és d'un dels cinc territoris o les coordenades no valen.
+    function placeFromPayload(payload) {
+        const p = payload?.place || {};
+        const place = { name: String(p.n || '').slice(0, 80), territory: String(p.t || ''), coordinates: { latitude: Number(p.lat), longitude: Number(p.lon) }, shared: true };
+        return shareablePlace(place) ? place : null;
+    }
+    async function openShared(payload) {
+        const place = placeFromPayload(payload);
+        if (!place) return false;
+        if (TYPES.some(t => t.id === payload.kind)) state.type = payload.kind; // només per a aquesta ràdio: no es desa
+        state.origin = place; state.offset = 0;
+        await open(null);
+        if (state.dialog?.open && state.origin === place) status(`Ràdio compartida: artistes de prop de ${place.name}. Prem «Engega la ràdio» per escoltar-la.`);
+        return true;
+    }
     function cardArtHtml(saved) {
         const rows = saved && state.card?.place === saved.name && state.card?.type === currentType() ? state.card.rows : null;
         if (!rows?.length) {
@@ -326,7 +374,8 @@
         const saved = savedPlace();
         const actions = saved
             ? `<button type="button" class="pt-btn pt-btn--primary pt-near__play" data-near-quick>${PLAY}<span>Engega la ràdio</span></button>
-               <button type="button" class="pt-btn pt-btn--ghost pt-btn--sm" data-near-open="search">${PIN}<span>Canvia la ubicació</span></button>`
+               <button type="button" class="pt-btn pt-btn--ghost pt-btn--sm" data-near-open="search">${PIN}<span>Canvia la ubicació</span></button>
+               <button type="button" class="pt-btn pt-btn--ghost pt-btn--sm pt-near__share" data-near-share-card aria-label="Comparteix la ràdio de ${esc(saved.name)}">${SHARE}<span>Comparteix</span></button>`
             : `<button type="button" class="pt-btn pt-btn--primary" data-near-open="gps">${PIN}<span>Utilitza la meva ubicació</span></button>
                <button type="button" class="pt-btn pt-btn--ghost pt-btn--sm" data-near-open="search"><span>Tria una localitat</span></button>`;
         if (saved && typeof setTimeout === 'function') setTimeout(hydrateCard, 0);
@@ -357,10 +406,11 @@
         if (input?.matches?.('input[name="ptNearType"], input[name="nearType"]')) setType(input.value);
     });
     document.addEventListener('click', event => {
+        if (event.target.closest?.('[data-near-share-card]')) return share(savedPlace());
         const quick = event.target.closest?.('[data-near-quick]');
         if (quick) return quickPlay(quick);
         const button = event.target.closest?.('[data-near-open]');
         if (button) open(button, button.dataset.nearOpen || '');
     });
-    app.features.nearbyRadio = { distance, artistLocation, buildRows, remotePlace, rankByType, TYPES, cardHtml, open, quickPlay };
+    app.features.nearbyRadio = { distance, artistLocation, buildRows, remotePlace, rankByType, TYPES, cardHtml, open, quickPlay, share, openShared, placeFromPayload };
 })(window);

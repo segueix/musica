@@ -50,7 +50,7 @@
     }
 
     // Construeix el payload mínim per a compartició ràpida
-    // data: { type: 'playlist'|'radio'|'category'|'history', name: string, items: Array }
+    // data: { type: 'playlist'|'radio'|'category'|'history'|'nearby', name: string, items: Array }
     //       («radio» i «playlist» porten ID de vídeos; la ràdio es reprodueix tal com va, la llista es desa)
     function buildImportPayload(data) {
         const sourceItems = Array.isArray(data.items) ? data.items : [];
@@ -65,6 +65,25 @@
                       })
                       .filter(Boolean)
                 : sourceItems;
+
+        // «A prop teu»: no porta cançons sinó la localitat triada per l'usuari (mai coordenades GPS) i el tipus de
+        // ràdio. Qui obre l'enllaç calcula els 20 artistes més propers amb el seu catàleg.
+        if (data.type === 'nearby') {
+            const place = data.place || {};
+            const round = n => Math.round(Number(n) * 1000) / 1000;
+            return {
+                v: PAYLOAD_VERSION,
+                type: 'nearby',
+                name: data.name || place.name || '',
+                place: {
+                    n: String(place.name || ''),
+                    t: String(place.territory || ''),
+                    lat: round(place.coordinates?.latitude),
+                    lon: round(place.coordinates?.longitude),
+                },
+                kind: data.kind || '',
+            };
+        }
 
         return {
             v: PAYLOAD_VERSION,
