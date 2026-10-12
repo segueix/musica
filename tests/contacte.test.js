@@ -93,11 +93,13 @@ describe('Contacte i suggeriment d’artistes', () => {
         expect(strip).not.toContain('Abans de suggerir');
     });
 
-    it('a mòbil la marca no se solapa amb la cerca: la lletra s’ajusta a l’espai i a 320 px només queda el text', () => {
+    it('a mòbil la marca no se solapa amb la cerca: «Música» sempre sencer: la lletra s’ajusta a l’ample de la marca i a 320 px només queda el text', () => {
         const css = fs.readFileSync(path.join(root, 'css', 'portada.css'), 'utf8');
         const block = css.slice(css.indexOf('Marca: logo + «Segueix! Música» + «En català»'));
         expect(block).toMatch(/\.app-header \.brand \{\s*container-type: inline-size;\s*gap: 0;\s*overflow: hidden;/);
-        expect(block).toMatch(/@container \(max-width: 139px\) \{\s*\.app-header \.brand-logo \{/);
+        // «Música» sempre sencer: la lletra depèn de l'ample de la marca (cqi), no de rem (lletra gran de la configuració)
+        expect(block).toMatch(/\.app-header \.brand-name \{\s*font-size: min\(1\.0625rem, calc\(\(100cqi - 40px\) \/ 7\.9\)\);/);
+        expect(block).toMatch(/\.brand-tag \{[^}]*font-size: min\(0\.5625rem, calc\(\(100cqi - 40px\) \/ 7\.8\)\);/);
         expect(block).toMatch(/@container \(max-width: 109px\) \{\s*\.app-header \.brand-logo \{\s*display: none;/);
     });
 
