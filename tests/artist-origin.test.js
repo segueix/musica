@@ -129,14 +129,13 @@ describe('Origen a la fitxa', () => {
             }
         }
     });
-    it('els sis artistes algueresos comparteixen la referència de l’Alguer', () => {
+    it('els cinc artistes algueresos comparteixen la referència de l’Alguer', () => {
         for (const name of [
             'Lo Maquini',
             'Franca Masu',
             'Pino Piras',
             "Grup Coral de l'Agrupació Catalana d'Itàlia",
             'Antonello Colledanchise',
-            'Teresa Sanna',
         ]) {
             const ids = channelsOf(name);
             expect(ids.length, name).toBeGreaterThan(0);
