@@ -77,6 +77,17 @@ describe('fitxa d’artista: ràdios i presentació', () => {
         expect(model.otherIds).toEqual(['3']);
         expect(model.hasAlbums).toBe(true);
     });
+
+    it('«Ràdio del disc» només amb un disc triat de dues cançons o més', () => {
+        expect(page.albumRadioModel({ title: 'Disc A' }, 4)).toEqual({
+            title: 'Disc A',
+            label: 'Ràdio del disc',
+            meta: '4 cançons disponibles',
+        });
+        expect(page.albumRadioModel({ title: 'Disc A' }, 1)).toBeNull();
+        expect(page.albumRadioModel(null, 5)).toBeNull();
+        expect(html).toContain('id="apAlbumRadio"');
+    });
 });
 
 describe('fitxa d’artista: HTML i CSS', () => {

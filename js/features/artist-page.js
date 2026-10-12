@@ -14,6 +14,9 @@
     const MAX_STYLES = 3;
     const MIN_SONGS = 2;
     const ALBUMS_URL = 'data/albums-musica.json';
+    // Disc (cercle amb el forat del mig) per al botó «Ràdio del disc»
+    const RADIO_ICON =
+        '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/></svg>';
     const OTHER_ALBUM_ID = '__other';
 
     const text = value => String(value ?? '').trim();
@@ -266,7 +269,46 @@
                    </button>`
                 : '',
         ].join('');
+        renderAlbumRadio();
         section.hidden = false;
+    }
+
+    // Disc triat (no «Singles i altres»): botó «Ràdio del disc» amb només les seves cançons.
+    function selectedAlbum() {
+        const id = state.selectedAlbumId;
+        if (!id || id === OTHER_ALBUM_ID) return null;
+        return state.albums.albums.find(album => String(album.id) === id) || null;
+    }
+
+    function albumRadioModel(album, songCount) {
+        if (!album || songCount < 2) return null;
+        return { title: String(album.title || ''), label: 'Ràdio del disc', meta: availableSongsLabel(songCount) };
+    }
+
+    function renderAlbumRadio() {
+        const wrap = $('apAlbumRadio');
+        if (!wrap) return;
+        const album = selectedAlbum();
+        const model = albumRadioModel(album, album ? filterSongs(state.songs).length : 0);
+        wrap.hidden = !model;
+        wrap.innerHTML = model
+            ? `<span class="ap-album-radio__text"><strong>${escapeHtml(model.title)}</strong><span>${escapeHtml(model.meta)}</span></span>
+               <button class="ap-radio ap-radio--artist ap-album-radio__btn" type="button" data-ap-album-radio
+                   aria-label="Ràdio del disc «${escapeHtml(model.title)}»">${RADIO_ICON}<span>${model.label}</span></button>`
+            : '';
+    }
+
+    function startAlbumRadio() {
+        const album = selectedAlbum();
+        const started =
+            album &&
+            app.features.musicQueue?.startAlbumRadio?.(filterSongs(state.songs), {
+                album: album.title,
+                artist: state.name,
+                channelId: state.channelId,
+            });
+        if (!started) toast('Aquest disc té massa poques cançons per fer una ràdio.');
+        return Boolean(started);
     }
 
     async function loadAndRenderAlbums(channelId, videos) {
@@ -423,6 +465,7 @@
         if (radio && !radio.disabled) {
             return radio.dataset.apRadio === 'style' ? startStyleRadio() : startArtistRadio();
         }
+        if (target?.closest?.('[data-ap-album-radio]')) return startAlbumRadio();
         const album = target?.closest?.('[data-ap-album]');
         if (album) return selectAlbum(album.dataset.apAlbum || '');
         if (target?.closest?.('#apBioToggle')) return toggleBio();
@@ -446,6 +489,7 @@
         originModel,
         originHtml,
         albumsModel,
+        albumRadioModel,
         availableSongsLabel,
         showProfile,
         setSongs,

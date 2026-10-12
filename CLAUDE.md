@@ -388,6 +388,7 @@ const likes = ctx2.SegueixApp.features.likes;
 - Només es presenta com a «Disc» un llançament amb almenys **2 títols diferents**; els senzills i les cançons sense assignació fiable van a «Singles i altres».
 - Un videoclip del canal oficial hereta el disc només si `artista + títol normalitzat` coincideix amb **un únic disc** Topic. Si és ambigu, no s'inventa cap relació.
 - UI: `js/features/artist-page.js` pinta «Discos» amb caràtules; tocar un disc filtra la graella de cançons. `Totes` restaura el repertori. Fora de `#channelPage` no es mostra cap disc.
+- **Ràdio del disc (2026-10-12):** amb un disc triat (no «Singles i altres») i almenys 2 cançons, sota les caràtules surt la franja `#apAlbumRadio` (nom del disc, cançons disponibles i botó llima «Ràdio del disc», `[data-ap-album-radio]`) → `musicQueue.startAlbumRadio(cançons del disc, { album, artist, channelId })`: ràdio tancada com la d'artista (`launchPoolRadio`, ordre del motor, «Barreja» es queda dins del disc), nom «Ràdio «<disc>»». Proves: `tests/music-queue-selection.test.js`, `tests/artist-page.test.js`.
 
 ### Sense Shorts (2026-10-04)
 

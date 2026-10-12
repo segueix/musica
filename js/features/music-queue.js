@@ -654,6 +654,23 @@
         );
     }
 
+    // Ràdio d'un disc (fitxa d'artista): només les cançons del disc, ordenades pel motor com una ràdio d'artista;
+    // «Barreja» es queda dins del disc. Nom «Ràdio «<disc>»». Retorna true si ha començat (calen almenys dues cançons).
+    function startAlbumRadio(videos, options = {}) {
+        if (typeof loadVideoInSequence !== 'function' || document.body.classList.contains('segueix-tv-active')) {
+            return false;
+        }
+        const pool = searchPool(videos, ARTIST_RADIO_POOL);
+        const album = String(options.album || '').trim();
+        if (pool.length < 2 || !album) return false;
+        return launchPoolRadio(
+            pool,
+            pickPoolSeed(pool, options),
+            { title: `Ràdio «${album}»`, artist: String(options.artist || '').trim(), channelId: options.channelId },
+            options
+        );
+    }
+
     // Ràdio d'una categoria pròpia (user-categories.js): només cançons dels grups que l'usuari hi ha posat, ordenades
     // pel motor segons el gust i el mode de descoberta (com una ràdio d'artista), amb el nom «Ràdio <categoria>».
     // Retorna true si ha començat (calen almenys dues cançons).
@@ -1823,6 +1840,7 @@
         nearbyPool: videos => searchPool(videos, Infinity).filter(video => !unavailableVideos.has(String(video.id))),
         startFromSearch,
         startArtistRadio,
+        startAlbumRadio,
         startCategoryRadio,
         startStyleRadio,
         saveAsPlaylist,

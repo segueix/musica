@@ -7249,3 +7249,44 @@ body.is-video-pip .video-placeholder.is-placeholder-hidden {
         clip: rect(0 0 0 0);
     }
 }
+
+
+/* ---------- Fitxa d'artista: «Ràdio del disc» (2026-10-12) ----------
+   En triar un disc, sota les caràtules: el nom del disc, les cançons disponibles i el botó llima «Ràdio del disc»
+   (només les cançons d'aquell disc; artist-page.js renderAlbumRadio()). No surt amb «Singles i altres». */
+#channelPage .ap-album-radio {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 12px;
+    padding: 10px 10px 10px 14px;
+    border: 1px solid var(--pt-line);
+    border-radius: var(--pt-radius);
+    background: var(--pt-surface);
+}
+
+#channelPage .ap-album-radio[hidden] {
+    display: none;
+}
+
+#channelPage .ap-album-radio__text {
+    display: grid;
+    min-width: 0;
+}
+
+#channelPage .ap-album-radio__text strong {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#channelPage .ap-album-radio__text span {
+    color: var(--pt-muted);
+    font-size: 0.8125rem;
+}
+
+#channelPage .ap-album-radio__btn {
+    flex: none;
+    padding: 0 16px;
+}
