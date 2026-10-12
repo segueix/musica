@@ -1,3 +1,9 @@
+## [2026-10-12] - Orígens revisats sense vincle al canal publicat
+
+**Causa comprovada:** ASSAC! (Barcelona), The Cabrians (Mataró) i Pesta Porcina (Torelló) tenien fitxes validades a `artists` d’`origens-artistes.json`, però els tres IDs publicats faltaven a `channels`. La fitxa consulta per ID de canal, de manera que la població no es mostrava tot i existir.
+
+**Correcció:** afegits els tres vincles als artistes ja revisats. Contrastats els 545 canals publicats amb els artistes, els llocs i el model real de la fitxa: 544 amb localització resoluble i Club Social Carme exclòs expressament. Cap discrepància entre el nom de l’artista del canal i l’assignació. La prova de cobertura de `tests/artist-origin.test.js` recorre tots els canals publicats, incloses les exclusions explícites; abans del canvi detecta ASSAC! sense localització.
+
 ## [2026-10-12] - La descoberta esborrava artistes verificats manualment
 
 **Causa comprovada:** el commit `f515896b722080dffa630d94c01a5807f90166c0` (2026-10-05) va eliminar Anna Andreu, Guillem Ramisa i Paul Fuster. Les fitxes tenien canals verificats i fonts `manual-user-*` / `youtube:manual-verified`, però encara `reviewStatus: pendent`, `active: false` i notes buides. La poda de `descobrir_artistes_musica.js` només acceptava dues evidències de Wikidata i les considerava candidats febles. Les altres quatre baixes del mateix commit sí que responien al registre d’exclusions.

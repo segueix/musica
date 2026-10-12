@@ -8,6 +8,18 @@ const channelsOf = name => Object.entries(catalog.channels)
     .filter(([, key]) => catalog.artists[key].name === name).map(([id]) => id);
 
 describe('Origen a la fitxa', () => {
+    it('cada canal publicat té un origen resoluble o una exclusió explícita', () => {
+        const channels = JSON.parse(readFileSync(new URL('../js/channels-ca.json', import.meta.url), 'utf8')).channels;
+        const api = page();
+        for (const channel of channels) {
+            if (catalog.excludedProfiles?.[channel.id]) {
+                expect(catalog.channels[channel.id], channel.name).toBeUndefined();
+                continue;
+            }
+            expect(api.originModel(catalog, channel.id), channel.name + ' · ' + channel.id).not.toBeNull();
+        }
+    });
+
     it('comparteix la vinculació entre canal oficial i Topic', () => {
         const channels = channelsOf('Quimi Portet');
         expect(channels.length).toBeGreaterThan(1);
