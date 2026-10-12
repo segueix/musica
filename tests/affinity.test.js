@@ -139,4 +139,11 @@ describe('Per afinitat: «Si t’agrada X, prova Y»', () => {
         expect(app).toMatch(/title === 'Recomanat per a tu' && selectedCategory === 'Descobreix'/);
         expect(css).toContain('.af-card__why');
     });
+
+    it('a Descobreix no hi ha cançons sota el mapa', () => {
+        expect(app).toMatch(/homePage\?\.classList\.toggle\('is-discover', discover\)/);
+        expect(app).toMatch(/function skipDiscoverGrid\(\)/);
+        expect((app.match(/if \(skipDiscoverGrid\(\)\) return;/g) || []).length).toBe(2);
+        expect(css).toMatch(/#homePage\.is-discover #videosGrid,[^{]*\{\s*display: none;/);
+    });
 });
