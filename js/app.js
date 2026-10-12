@@ -4606,11 +4606,12 @@ function bindPlaylistEvents() {
         createPlaylistBtn.addEventListener('click', () => {
             const name = playlistNameInput?.value?.trim();
             if (!name) return;
-            createPlaylist(name);
+            const created = createPlaylist(name);
             if (playlistNameInput) {
                 playlistNameInput.value = '';
             }
             renderPlaylistsPage();
+            if (created) openPlaylistSongSearch(created.id);
         });
     }
 
@@ -4790,6 +4791,10 @@ function initEventListeners() {
     if (shortCloseBtn) shortCloseBtn.addEventListener('click', () => closeShortModal());
 }
 
+function canAutoApplyAppUpdate() {
+    return document.visibilityState === 'hidden' && !isVideoPipOpen();
+}
+
 async function initAppUpdater() {
     const updateBadge = document.getElementById('updateBadge');
 
@@ -4827,7 +4832,7 @@ async function initAppUpdater() {
         // - ocult/segon pla: el podem activar sense interrompre l'usuari.
         const handleWaitingWorker = () => {
             if (!swRegistration?.waiting || !hadControllerOnLoad) return;
-            if (document.visibilityState === 'hidden') {
+            if (canAutoApplyAppUpdate()) {
                 applyUpdate();
             } else {
                 showUpdateNotice();
@@ -4879,7 +4884,7 @@ async function initAppUpdater() {
 
             // Si un controllerchange inesperat ha arribat mentre érem visibles,
             // ajornem la recàrrega fins ara. En el flux normal, el waiting s'activa aquí.
-            if (reloadWhenHidden) {
+            if (reloadWhenHidden && canAutoApplyAppUpdate()) {
                 window.location.reload();
                 return;
             }
@@ -4903,7 +4908,7 @@ async function initAppUpdater() {
             // Només recarreguem immediatament si l'usuari ho ha demanat o si l'app
             // ja és en segon pla. Qualsevol altre controllerchange queda ajornat:
             // cap toc, scroll, play o buffering pot fer "saltar" l'app.
-            if (userRequestedUpdate || document.visibilityState === 'hidden') {
+            if (userRequestedUpdate || canAutoApplyAppUpdate()) {
                 window.location.reload();
                 return;
             }
@@ -8534,6 +8539,7 @@ function createPlaylist(name, video) {
     }
     playlists.push(playlist);
     savePlaylists(playlists);
+    return playlist;
 }
 
 function addVideoToPlaylist(playlistId, video) {
@@ -8777,7 +8783,8 @@ async function renderPlaylistsPageLegacyImpl() {
                             title="Compartir llista">
                         <i data-lucide="share-2"></i>
                     </button>
-                    <div class="playlist-card-meta">${videoCount} vídeos</div>
+                    <div class="playlist-card-meta">${videoCount} cançons</div>
+                    <button class="playlist-add-songs" type="button" data-add-songs="${escapeHtml(list.id)}">+ Afegeix cançons</button>
                     ${videosMarkup}
                 </div>
             </div>
@@ -9516,7 +9523,9 @@ function exitPlaylistMode({ showQueueMessage = false } = {}) {
 }
 
 function openPlaylistModal(video) {
+    SegueixApp.features.library?.cancelSongPicker?.();
     if (!playlistModal || !playlistModalBody) return;
+    document.getElementById('playlistModalTitle').textContent = 'Afegir a una llista';
     activePlaylistVideo = video;
     // Mostrar modal immediatament, diferir el renderitzat del contingut
     playlistModal.classList.remove('hidden');
@@ -9531,6 +9540,27 @@ function closePlaylistModal() {
     playlistModal.setAttribute('aria-hidden', 'true');
     unlockBodyScroll();
     activePlaylistVideo = null;
+    SegueixApp.features.library?.cancelSongPicker?.();
+}
+
+function openPlaylistSongSearch(playlistId) {
+    const list = getPlaylists().find(item => item.id === playlistId);
+    if (!list || !playlistModal || !playlistModalBody) return;
+    activePlaylistVideo = null;
+    document.getElementById('playlistModalTitle').textContent = `Afegeix cançons a «${list.name}»`;
+    playlistModal.classList.remove('hidden');
+    playlistModal.setAttribute('aria-hidden', 'false');
+    lockBodyScroll();
+    SegueixApp.features.library.openSongPicker({
+        body: playlistModalBody,
+        getList: () => getPlaylists().find(item => item.id === playlistId),
+        initialVideos: YouTubeAPI.filterHiddenVideos(YouTubeAPI.feedVideos || []),
+        loadVideos: () => YouTubeAPI.ensureStyleHistory(),
+        add: video => {
+            addVideoToPlaylist(playlistId, getPlaylistVideoData(video));
+            renderPlaylistsPage();
+        },
+    });
 }
 
 function renderPlaylistModal() {
@@ -9790,6 +9820,9 @@ function playVideoFromPlaylistIndex(index) {
 }
 
 function bindPlaylistListInteractions() {
+    playlistsList?.querySelectorAll('[data-add-songs]').forEach(button => {
+        button.onclick = () => openPlaylistSongSearch(button.dataset.addSongs);
+    });
     if (!playlistsList || isPlaylistListBound) return;
 
     playlistsList.addEventListener('click', event => {
@@ -14212,6 +14245,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         setTimeout(() => completeBootstrapProgressOverlay(), 180);
     }
 });
+
 
 
 

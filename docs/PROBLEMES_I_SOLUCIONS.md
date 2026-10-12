@@ -1,3 +1,11 @@
+## [2026-10-12] - Cercador a les llistes, marca i actualització amb vídeo flotant
+
+Les llistes noves obren el cercador de cançons i les existents tenen «Afegeix cançons». La cerca local combina feed i historial musical filtrat, per títol/artista sense accents, exclou Shorts i contingut no musical i evita IDs duplicats. Les cançons afegides es marquen i es desen amb el mateix circuit de llistes i sincronització. Les respostes tardanes no modifiquen un altre modal.
+
+«Sempre tinc sort» incorpora «Canvi automàtic de color de fons». La capçalera mostra «Descobreix música en català» a l’ordinador i «Música CAT» al mòbil, conservant el canvi al logo en amplades petites.
+
+**Revisió del segon pla:** la pausa amb pestanya amagada és intencionada segons les polítiques de YouTube (https://developers.google.com/youtube/terms/developer-policies, apartat III.I.9). Es conserva l’excepció quan el vídeo és visible a la finestra flotant del sistema. S’ha detectat un conflicte: l’actualitzador del service worker podia activar-se i recarregar mentre aquesta finestra seguia oberta. Les tres vies automàtiques d’activació/recàrrega ara comproven que no hi hagi vídeo flotant; l’actualització explícita continua disponible. No s’afegeix reproducció amb pantalla apagada.
+
 ## [2026-10-12] - Llançaments prioritaris: pilot Anna Andreu
 
 **Causa:** el catàleg només reconeixia descripcions «Provided to YouTube by». Els àudios oficials d’Anna Andreu indiquen «Àlbum», i les llistes també inclouen àlbums sencers i directes. Inferir-los només dels últims vídeos deixava discos incomplets.
@@ -1888,3 +1896,4 @@ Verificació: taxonomia separada, decoració de vídeos d'arxiu, grup amb tots d
 ## [2026-10-11] - Origen a la fitxa: HTML nou amb JS antic
 
 En verificar la primera publicació, la fitxa contenia `apOrigin` però quedava buit: el navegador conservava la URL anterior d'`artist-page.js`. Com en els casos de memòria cau descrits més amunt, s'han versionat les URLs del JS modificat i de `portada.css` a `20261011-origen-1`, a més de regenerar el service worker. Les dades viuen a `data/origens-artistes.json`; només es mostren assignacions validades i les respostes antigues no poden pintar un altre artista. Proves: `tests/artist-origin.test.js`.
+

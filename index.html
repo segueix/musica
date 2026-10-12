@@ -52,7 +52,7 @@
     
     <!-- CSS -->
     <link rel="stylesheet" href="css/styles.css?v=20260929-home-playlists-4">
-    <link rel="stylesheet" href="css/portada.css?v=20261011-origen-1">
+    <link rel="stylesheet" href="css/portada.css?v=20261012-llistes-1">
     
     <link rel="stylesheet" href="css/google-drive-sync.css">
     <!-- Icons (Lucide via CDN) -->
@@ -111,12 +111,12 @@
         <button class="sidebar-toggle" id="sidebarToggle" type="button" aria-controls="sidebar" aria-expanded="true" aria-label="Plega el menú lateral" title="Plega el menú lateral">
             <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6.5h16M4 12h16M4 17.5h16"/></svg>
         </button>
-        <a class="brand" href="./" aria-label="Segueix Música, inici">
+        <a class="brand" href="./" aria-label="Segueix Música: descobreix música en català, inici">
             <span class="brand-mark">
                 <img class="brand-logo" src="img/icon-192.png" alt="" width="32" height="32">
-                <span class="brand-mark__tag" aria-hidden="true">Música</span>
+                <span class="brand-mark__tag" aria-hidden="true">Música CAT</span>
             </span>
-            <span class="brand-name">Segueix<span class="brand-bang">!</span><span class="brand-tag">Música</span></span>
+            <span class="brand-copy"><span class="brand-name">Segueix<span class="brand-bang">!</span><span class="brand-tag">Música<span class="brand-cat"> CAT</span></span></span><span class="brand-subtitle">Descobreix música en català</span></span>
         </a>
 
         <form class="search" role="search" action="/search">
@@ -693,9 +693,9 @@
                 </div>
                 <div class="settings-section lucky-section">
                     <div class="lucky-row">
-                        <span class="setting-label lucky-label">Sempre tinc sort</span>
+                        <div><span class="setting-label lucky-label">Sempre tinc sort</span><p id="luckyDescription" class="lucky-description">Canvi automàtic de color de fons</p></div>
                         <label class="toggle-switch" for="luckyToggle">
-                            <input type="checkbox" id="luckyToggle">
+                            <input type="checkbox" id="luckyToggle" aria-describedby="luckyDescription">
                             <span class="toggle-slider"></span>
                         </label>
                     </div>
@@ -973,7 +973,7 @@
     <script src="js/features/analytics-admin.js?v=20261006-music-analytics-1"></script>
 
     <!-- Main app entrypoint -->
-    <script src="js/app.js?v=20261008-native-search-2"></script>
+    <script src="js/app.js?v=20261012-llistes-1"></script>
     <script src="js/features/tv-learning.js?v=20260924-learning-v1"></script>
     <script src="js/features/smart-feed.js?v=20260924-smart-feed-v1"></script>
     <script src="js/features/tv-live-queue.js?v=20260924-live-session-v1"></script>
@@ -989,3 +989,4 @@
 
 </body>
 </html>
+

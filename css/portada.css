@@ -6469,3 +6469,24 @@ body.is-video-pip .video-placeholder.is-placeholder-hidden {
 .ap-origin__details p { margin: 0; }
 .ap-origin__details ul { display: flex; flex-wrap: wrap; gap: 4px 16px; padding: 0; list-style: none; }
 .ap-origin__details a { display: inline-block; padding: 10px 0; color: var(--pt-accent, #D6ED84); }
+
+
+/* Llistes: cerca dins de l'editor i marca compacta al mòbil. */
+.brand-copy { display: flex; flex-direction: column; min-width: 0; }
+.brand-subtitle { font-size: 0.6875rem; color: var(--pt-muted, #b8c2ba); white-space: nowrap; }
+.brand-cat { display: none; }
+.lucky-description { margin: 4px 12px 0 0; font-size: .85rem; color: var(--text-secondary); }
+.playlist-add-songs { min-height: 44px; padding: 8px 12px; margin: 8px 0; border: 1px solid var(--pt-line); border-radius: 10px; background: transparent; color: var(--pt-accent); cursor: pointer; }
+.playlist-song-search { width: 100%; box-sizing: border-box; min-height: 44px; padding: 12px; border: 1px solid var(--pt-line); border-radius: 10px; background: var(--pt-bg); color: var(--pt-text); font: inherit; }
+.playlist-song-results { display: grid; gap: 8px; max-height: 48vh; overflow-y: auto; margin-top: 12px; }
+.playlist-song-result { display: flex; gap: 12px; align-items: center; padding: 8px 0; }
+.playlist-song-result .song-copy { flex: 1; min-width: 0; overflow-wrap: anywhere; }
+.playlist-song-result small { display: block; color: var(--text-secondary); }
+.playlist-song-result button { flex: none; min-height: 44px; border-radius: 8px; padding: 8px 10px; background: var(--pt-accent); color: #141615; border: 0; cursor: pointer; }
+.playlist-song-result button:disabled { background: transparent; color: var(--text-secondary); cursor: default; }
+@media (max-width: 768px) {
+    .brand-subtitle { display: none; }
+    .brand-cat { display: inline; }
+    .brand-copy { padding-bottom: 4px; }
+    @container (max-width: 130px) { .brand-copy { display: none; } }
+}
