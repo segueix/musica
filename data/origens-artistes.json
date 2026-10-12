@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-12T19:24:00.061702Z",
+  "updatedAt": "2026-10-12T20:45:33.058Z",
   "attribution": {
     "text": "Coordenades de referència: GeoNames, via Open-Meteo. CC BY 4.0.",
     "sources": [
@@ -2288,6 +2288,19 @@
       "name": "Lluçanès",
       "type": "region",
       "coordinates": null
+    },
+    "geonames:2521088": {
+      "name": "Benidorm",
+      "type": "municipality",
+      "geonamesId": 2521088,
+      "coordinates": {
+        "latitude": 38.53816,
+        "longitude": -0.13098,
+        "precision": "settlement_reference"
+      },
+      "territory": "País Valencià",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Benidorm&count=10&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-12"
     }
   },
   "artists": {
@@ -9840,6 +9853,54 @@
       "reviewedOn": "2026-10-12",
       "assignmentSource": "manual-review",
       "locked": true
+    },
+    "artist:tardor": {
+      "name": "Tardor",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:2509954"
+      ],
+      "confidence": "alta",
+      "basis": "Formació de València documentada pel grup i la seva agència. No es confon amb bandes homònimes.",
+      "sources": [
+        "https://tardor.band/"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:alex-blat": {
+      "name": "Àlex Blat",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:2521088"
+      ],
+      "confidence": "alta",
+      "basis": "L’entrevista directa identifica Benidorm com a origen; l’artista explica que hi va viure fins als vuit anys i després es traslladà a València. Projecte independent de Tardor.",
+      "sources": [
+        "https://www.enderrock.cat/noticia/27814/alex-blat-volia-fugir-competencia-entre-bandes-perque-ja-estava-molt-cansat"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:quinto": {
+      "name": "Quinto",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:6559502"
+      ],
+      "confidence": "alta",
+      "basis": "La fitxa de l’agència identifica Josep Quinto com a originari de Pego, a la Marina Alta. Els crèdits permeten separar-lo dels homònims.",
+      "sources": [
+        "https://www.pro21cultural.com/project/quinto/"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true
     }
   },
   "channels": {
@@ -10395,7 +10456,13 @@
     "UC6Md27ZZOIr6Qvr1-nC1ARw": "artist:franca-masu",
     "UCbClaYsnJEk_-Iqs33UwgLQ": "artist:pino-piras",
     "UCRK-i4JVJi6CwcPZ1BjaLQw": "artist:grup-coral-de-l-agrupacio-catalana-d-italia",
-    "UCF0A3xfKG43O6CfPb6cXI5A": "artist:antonello-colledanchise"
+    "UCF0A3xfKG43O6CfPb6cXI5A": "artist:antonello-colledanchise",
+    "UCmnRoubcIKBdSZfa12Sh08w": "artist:tardor",
+    "UCfVobdq05T0LJLrCIUbwqYQ": "artist:tardor",
+    "UC6SBLhrf0nLYU-_a9iqwWqw": "artist:alex-blat",
+    "UCqXrOm2JFPasb_oKqguIm4g": "artist:alex-blat",
+    "UCFPGW7hAaXSfcPueygR_25A": "artist:quinto",
+    "UCbJVlPOepjJiteagmmSaoTA": "artist:quinto"
   },
   "excludedProfiles": {
     "UCdezTX23syEeAJJAb2oOkKA": {

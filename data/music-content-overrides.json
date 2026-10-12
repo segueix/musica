@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-12T19:45:24.630419Z",
+  "updatedAt": "2026-10-12T20:45:33.058Z",
   "description": "Decisions manuals sobre el tipus de contingut de vídeos concrets. Manen sobre el classificador automàtic (scripts/lib/classificar_contingut_musical.js) i el pipeline (scripts/update_music_feed.js) les reaplica a cada generació del feed. Tipus permesos: song, live_song, album, other. Un vídeo revisat aquí surt de data/music-content-review.json.",
   "videos": [
     {
@@ -7825,6 +7825,1296 @@
       "contentType": "live_song",
       "title": "No Res",
       "note": "Franca Masu, 10 Anys: gravacions en directe entre 2001 i 2010 documentades a https://www.enderrock.cat/folksons/disc/783/anys"
+    },
+    {
+      "id": "twUWHbJ3raU",
+      "contentType": "song",
+      "title": "Trenta-sis",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "jE7bWCLpaks",
+      "contentType": "song",
+      "title": "Hi havia una ciutat",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "Ihvt-MGDYwo",
+      "contentType": "song",
+      "title": "L'instint",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "7uNiGif5IKw",
+      "contentType": "song",
+      "title": "Si el món s'apaga",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "WCvhFK0RiPU",
+      "contentType": "song",
+      "title": "Si el món s'apaga",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "d4s2vG2sMEw",
+      "contentType": "song",
+      "title": "Trenta-sis",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "RPF_mYpcNiA",
+      "contentType": "song",
+      "title": "Baix de l'aigua",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "WAgC4Igxo0I",
+      "contentType": "song",
+      "title": "Hi havia una ciutat",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "ezbxcliTpTY",
+      "contentType": "song",
+      "title": "Digne de Recordar",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "YURUtgY9WFw",
+      "contentType": "song",
+      "title": "Estimada Germana (Julio Bustamante)",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "Z98EIispviw",
+      "contentType": "song",
+      "title": "M.",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "Zwq8_0cCUlc",
+      "contentType": "song",
+      "title": "Puff el Drac Màgic (Paco Muñoz)",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "M9dAN1meaAk",
+      "contentType": "song",
+      "title": "Reencarnació",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "uU1Wx4z_Zhc",
+      "contentType": "song",
+      "title": "No Necessite Més",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "dzyL69pShkQ",
+      "contentType": "song",
+      "title": "Nostàlgia de Futur (121dB)",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "xNfBRrNSfjE",
+      "contentType": "song",
+      "title": "Deu de Ser Amor (Remigi Palmero)",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "rncKlIKlAo4",
+      "contentType": "live_song",
+      "title": "Energia (En Directe)",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "G81J0y_Ap_A",
+      "contentType": "song",
+      "title": "Tens una Alegria Contagiosa",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "9qFhtjnhIkg",
+      "contentType": "song",
+      "title": "Benidorm Si S’acaba el Món",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "4qp2GJRlksM",
+      "contentType": "song",
+      "title": "Vull Ser Com Tu",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "JUQ984O2dl0",
+      "contentType": "song",
+      "title": "El Verd de L'Estiu (Inòpia)",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "nQNW8yWabXs",
+      "contentType": "song",
+      "title": "En Coalició",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "H5xnWOq022o",
+      "contentType": "song",
+      "title": "Cims I Abismes (Pep Laguarda)",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "82SUt9jg1xo",
+      "contentType": "song",
+      "title": "Cançó de la Mort",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "mW9b64dClkY",
+      "contentType": "song",
+      "title": "Cigarrets (El Corredor Polonés)",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "rUF7OE9mYfs",
+      "contentType": "song",
+      "title": "Els Cosins",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "Gs3KpzsmgJ4",
+      "contentType": "song",
+      "title": "Estimada Germana (Julio Bustamante)",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "yeLu-OLPVkA",
+      "contentType": "song",
+      "title": "La Gràcia Que Tens Quan Camines (Gener)",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "u73VPxvlXvI",
+      "contentType": "song",
+      "title": "Menteta (El Trineu Tanoka)",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "9f7svf3SI8M",
+      "contentType": "song",
+      "title": "Samarretes Velles (Sant Gatxo)",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "hB5U1n3rdNo",
+      "contentType": "song",
+      "title": "Cadència Trencada (Arthur Caravan)",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "WZs--mkit7k",
+      "contentType": "song",
+      "title": "Si No M’agrades és Perquè Mai Somrius",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "98Ypjrj_KjE",
+      "contentType": "song",
+      "title": "Digne de Recordar",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "lmoK33-mlyU",
+      "contentType": "song",
+      "title": "Somnis (Pinka)",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "h_eer8jV148",
+      "contentType": "song",
+      "title": "Les Joies (Les Deesses Mortes)",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "BqpVhfC8zyw",
+      "contentType": "song",
+      "title": "La pols",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "K3sG31NlIqM",
+      "contentType": "song",
+      "title": "Sena",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "2AVuPn-hBhU",
+      "contentType": "song",
+      "title": "Ontàrio",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "4MySxRWbRj4",
+      "contentType": "song",
+      "title": "Triangle",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "cx_uknXIVxo",
+      "contentType": "song",
+      "title": "Vint-i-set",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "fJQX0mSnfRA",
+      "contentType": "song",
+      "title": "Abans no se'ns mengen els lleons",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "wA_SgdkRISw",
+      "contentType": "song",
+      "title": "L'excepció",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "rvZTajBOQnY",
+      "contentType": "song",
+      "title": "La conjectura Twombly",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "FU7keXZmRoM",
+      "contentType": "song",
+      "title": "La cançó de Pau i Joanne",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "JDAp-LplzZk",
+      "contentType": "song",
+      "title": "Energia",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "hnrCDm1l7zw",
+      "contentType": "song",
+      "title": "Carta a mi mateix",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "74wHOhY9IrQ",
+      "contentType": "song",
+      "title": "Baix de l'aigua",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "ocPPiiwntEs",
+      "contentType": "song",
+      "title": "Quan Abril Acabe",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "L0WfZSQQHeo",
+      "contentType": "song",
+      "title": "Creuarem La Ciutat",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "0hTEVjTnywk",
+      "contentType": "song",
+      "title": "Mirar Cap Endavant",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "xdU4DUtqS3Q",
+      "contentType": "song",
+      "title": "La Plaça Dels Herois",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "E4FC0_HnIJY",
+      "contentType": "song",
+      "title": "Bona Nit I Bona Sort",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "omP_d13HmvI",
+      "contentType": "song",
+      "title": "Vint-I-Dos",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "s7WvnRg8p2E",
+      "contentType": "song",
+      "title": "Canvis Que No Esperàvem",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "uYspDI-OFKI",
+      "contentType": "song",
+      "title": "Dubtes",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "WKF0Px6EN_c",
+      "contentType": "song",
+      "title": "Baix De L'aigua",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "e3IeB45x7qM",
+      "contentType": "song",
+      "title": "Espiral De Silenci",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "zgLD0qvySz8",
+      "contentType": "song",
+      "title": "Lys/Mad",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "-uRy8gLgMK4",
+      "contentType": "song",
+      "title": "A Betlem me'n vull anar",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "aTCU56TqfLE",
+      "contentType": "song",
+      "title": "L'Eufòria",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "GB9fvG-p2Oo",
+      "contentType": "song",
+      "title": "És això el que ens fa grans",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "BhcOBq5cYq0",
+      "contentType": "song",
+      "title": "Vull que comprem una casa",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "TKFDU_YcCSM",
+      "contentType": "song",
+      "title": "Patraix",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "FaCf_PJ7lqU",
+      "contentType": "song",
+      "title": "La clau de tot",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "OZ-VSDdSXc4",
+      "contentType": "song",
+      "title": "La corda",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "Ou2aQ7FJ82Y",
+      "contentType": "song",
+      "title": "Catamarà",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "BzkjsO8qs9Q",
+      "contentType": "song",
+      "title": "La llum incondicional",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "Qa4-PquD40g",
+      "contentType": "song",
+      "title": "Vint-i-huit",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "XbD0kZUMbCM",
+      "contentType": "song",
+      "title": "Marjal",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "faqskgDau2o",
+      "contentType": "song",
+      "title": "El final",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "q1SqBfyayUw",
+      "contentType": "song",
+      "title": "Nevar a València",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "tnrMlDzPSzA",
+      "contentType": "song",
+      "title": "Autoretrat",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "s1JoKKkKDPE",
+      "contentType": "song",
+      "title": "L'eufòria",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "WAhnS10nMP8",
+      "contentType": "song",
+      "title": "L'INSTINT.",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "SkLrsVvc3p0",
+      "contentType": "song",
+      "title": "SI EL MÓN S’APAGA.",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "6m3BwbscAH4",
+      "contentType": "song",
+      "title": "TRENTA-SIS.",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "8vAO3u3bqVE",
+      "contentType": "song",
+      "title": "HI HAVIA UNA CIUTAT.",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "kTXzwTBsAac",
+      "contentType": "live_song",
+      "title": "Tardor - Baix de l'aigua (en directe 2023)",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "kQX4LOovWiM",
+      "contentType": "live_song",
+      "title": "Tardor - Energia (en directe 2023)",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "tQS-S3VCTXg",
+      "contentType": "song",
+      "title": "Tardor - Tens una alegria contagiosa (Videoclip)",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "KNf0L7ndWRw",
+      "contentType": "song",
+      "title": "Tardor - Si no m’agrades és perquè mai somrius",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "FcHBbaXKBRQ",
+      "contentType": "song",
+      "title": "Tardor - Benidorm si s’acaba el món",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "E79kJAsXp-k",
+      "contentType": "song",
+      "title": "Tardor - M.",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "apT28JuEq9U",
+      "contentType": "song",
+      "title": "Tardor - En coalició",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "hlIRLSrXaNg",
+      "contentType": "song",
+      "title": "Tardor - Reencarnació",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "5MkEM_txAxM",
+      "contentType": "song",
+      "title": "Tardor - Tens una alegria contagiosa",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "66yw9MBeR0k",
+      "contentType": "song",
+      "title": "Tardor - Els cosins",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "CEOtd4TQ9Dk",
+      "contentType": "song",
+      "title": "Tardor - Digne de recordar",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "DDynfuR8znA",
+      "contentType": "song",
+      "title": "Tardor - No necessite més",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "c_6T1RtjY9w",
+      "contentType": "song",
+      "title": "Tardor - Cançó de la mort",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "_gHwe89yjn0",
+      "contentType": "song",
+      "title": "Tardor - Vull ser com tu",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "zpTFLnUtCzI",
+      "contentType": "song",
+      "title": "Tardor - Digne de recordar (Nou senzill)",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "7jk4YzdFjRY",
+      "contentType": "song",
+      "title": "Tardor - El final",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "YBGTicbIgLw",
+      "contentType": "song",
+      "title": "Tardor - La clau de tot",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "709FVGzKt_k",
+      "contentType": "song",
+      "title": "Tardor - Vull que comprem una casa",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "C2AAyCdTmds",
+      "contentType": "song",
+      "title": "Tardor - Marjal",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "DXMNv4sSnEU",
+      "contentType": "song",
+      "title": "Tardor - La corda",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "HsFIL16Ts5Y",
+      "contentType": "song",
+      "title": "Tardor - Vint-i-huit",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "Wfcg22U9XDI",
+      "contentType": "song",
+      "title": "Tardor - Nevar a València",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "axgtubcXOrs",
+      "contentType": "song",
+      "title": "Tardor - La llum incondicional",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "jOcuphwa2-E",
+      "contentType": "song",
+      "title": "Tardor - Catamarà",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "sJsIDPNvvX8",
+      "contentType": "song",
+      "title": "Tardor - Autoretrat",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "o1eQUo7If3g",
+      "contentType": "song",
+      "title": "Tardor - Patraix",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "ilrY5y-Z6bY",
+      "contentType": "song",
+      "title": "És això el que ens fa grans - Cançó per al centenari del València CF (Tardor)",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "7OA_oPG5M84",
+      "contentType": "live_song",
+      "title": "Tardor - Vull que comprem una casa (Vídeo directe)",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "VDQMmzF1Cr8",
+      "contentType": "live_song",
+      "title": "Tardor - El Final (Vídeo directe)",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "AvDwWsCCNIw",
+      "contentType": "song",
+      "title": "Tardor - Nevar a València (Videoclip)",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "wpqTvKrbD0g",
+      "contentType": "song",
+      "title": "Tardor - La llum incondicional",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "mJ27YhkwMmc",
+      "contentType": "live_song",
+      "title": "Tardor - L' Eufòria (En directe - Presentació Canet Rock 2016)",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "MT4chhV4nWA",
+      "contentType": "song",
+      "title": "L' Eufòria - Tardor (Videoclip)",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "xRATFZWhh8s",
+      "contentType": "live_song",
+      "title": "Tardor - Ontàrio al balcó de l'Ajuntament (València)",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "YP3LrPjePIc",
+      "contentType": "song",
+      "title": "Energia - Tardor (Nou Videoclip)",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "8Mf3LQZC3wc",
+      "contentType": "song",
+      "title": "XI. Carta a mi mateix - Una ciutat invisible (Tardor)",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "h2ZIcsmA51M",
+      "contentType": "song",
+      "title": "X.La conjectura Twombly - Una ciutat invisible (Tardor)",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "kE8kiYASWpA",
+      "contentType": "song",
+      "title": "IX.Energia - Una ciutat invisible (Tardor)",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "2x2CohZVPms",
+      "contentType": "song",
+      "title": "VIII.La cançó de Paul i Joanne - Una ciutat invisible (Tardor)",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "BM91dxZgHfo",
+      "contentType": "song",
+      "title": "VII.Triangle - Una ciutat invisible (Tardor)",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "mjKRbk2pVP4",
+      "contentType": "song",
+      "title": "VI.L'excepció - Una ciutat invisible (Tardor)",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "F9GQ3J1vaoE",
+      "contentType": "song",
+      "title": "V. Abans no se'ns mengen els lleons - Una ciutat invisible (Tardor)",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "u6RoAJlIXRg",
+      "contentType": "song",
+      "title": "IV. Vint-i-set - Una ciutat invisible (Tardor)",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "6HdGP0t2zR0",
+      "contentType": "song",
+      "title": "III.Ontàrio - Una ciutat invisible (Tardor)",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "BALukye0A4k",
+      "contentType": "song",
+      "title": "II.La pols - Una ciutat invisible (Tardor)",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "fubjEddtUo0",
+      "contentType": "song",
+      "title": "I.Sena - Una ciutat invisible (Tardor)",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "-YzsMZtmDLo",
+      "contentType": "song",
+      "title": "Ontàrio - Tardor",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "NkQnNXH3iTo",
+      "contentType": "song",
+      "title": "Sant Rafael",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "nFrYuE-OJmo",
+      "contentType": "song",
+      "title": "El cel de casa",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "cz5caGzqTgI",
+      "contentType": "song",
+      "title": "La llum que tu tens",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "mbUYLe9cn6I",
+      "contentType": "song",
+      "title": "Sant Rafael",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "JlRuX5EJ19Y",
+      "contentType": "song",
+      "title": "Declaració D'intencions",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "VdldUJVusEQ",
+      "contentType": "song",
+      "title": "Les Llums de Nadal",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "GN0JFxYKCEs",
+      "contentType": "song",
+      "title": "El cel de casa",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "Ck47g2QF8xw",
+      "contentType": "song",
+      "title": "Dosconeguts",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "FS-pTerotPg",
+      "contentType": "song",
+      "title": "Declaració d'intencions",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "n0c1vin9ROA",
+      "contentType": "song",
+      "title": "Juguem amb el Món",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "KXrKVtxQpAA",
+      "contentType": "song",
+      "title": "La Cúmbia Frugal",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "0s0ueIDz-Gg",
+      "contentType": "song",
+      "title": "La Cúmbia Frugal",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "iZBhZIx_40Y",
+      "contentType": "song",
+      "title": "No Seria Jo",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "dKsJS3NJWCo",
+      "contentType": "song",
+      "title": "Declaració d'intencions",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "I8zF3WfnJrI",
+      "contentType": "song",
+      "title": "La Meua",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "EPQPkyPOnWg",
+      "contentType": "song",
+      "title": "Jessica",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "2KpXpw0DT3Q",
+      "contentType": "song",
+      "title": "Què Bé Fer Res",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "pdTvTzOxyNM",
+      "contentType": "song",
+      "title": "La Veritat",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "NygeB2NkxAU",
+      "contentType": "song",
+      "title": "Dosconeguts",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "CELjiuP071Q",
+      "contentType": "song",
+      "title": "A la Vida",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "CxriS4fbLCQ",
+      "contentType": "song",
+      "title": "Sant Rafael",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "9P7smeSSBc0",
+      "contentType": "song",
+      "title": "Declaració d'intencions",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "fKrwM4IOEL4",
+      "contentType": "song",
+      "title": "Gota de Rosada",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "2x5fZEjZ_GY",
+      "contentType": "song",
+      "title": "La Veritat",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "odwO3AqgY7g",
+      "contentType": "song",
+      "title": "La llum que tu tens",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "4mZaQVTEGoc",
+      "contentType": "song",
+      "title": "Dosconeguts - Àlex Blat FT. J.Winston (Frida)",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "QPv7aQF-5JI",
+      "contentType": "song",
+      "title": "LA CÚMBIA FRUGAL - Àlex Blat ft. Carles Chiner (Lyric Video)",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "FyoTgDeNVIA",
+      "contentType": "song",
+      "title": "LA LLUM QUE TU TENS - Àlex Blat ft. May Ibáñez (Lyric Video)",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "8KeF3Je5Zas",
+      "contentType": "live_song",
+      "title": "ÀLEX BLAT - A la vida",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "mxANFd9RRDU",
+      "contentType": "song",
+      "title": "ÀLEX BLAT - La veritat (Videoclip)",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "pIh9qSf3p4E",
+      "contentType": "song",
+      "title": "ÀLEX BLAT - Sant Rafael (Videoclip)",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "unsoOu9wHKs",
+      "contentType": "song",
+      "title": "ÀLEX BLAT - Declaració d'intencions (Videoclip)",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "przS4BVU8wg",
+      "contentType": "song",
+      "title": "CASTIGAT",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "WRdYU14R1D4",
+      "contentType": "song",
+      "title": "LLUM",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "zeWWREQWJHg",
+      "contentType": "song",
+      "title": "Marrons",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "5402KsBU7RY",
+      "contentType": "song",
+      "title": "SENSE SENYAL",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "12xepYBk7PU",
+      "contentType": "song",
+      "title": "QUÈ DIR-TE?",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "eI0rDoLXMNc",
+      "contentType": "song",
+      "title": "No Hi Ha Res Urgent",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "UakS9UGMnbU",
+      "contentType": "song",
+      "title": "UELCOM TU DE PARADAIS",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "2D7hnFBcIJg",
+      "contentType": "song",
+      "title": "Les Hores Mortes",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "jcDrRAimDoY",
+      "contentType": "song",
+      "title": "PÀNIC",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "nF6POgLdlyc",
+      "contentType": "song",
+      "title": "Demà Canvie De Vida",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "TnwMS9aZd_8",
+      "contentType": "song",
+      "title": "1DELSNOSTRES",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "GXSLG5f9-fk",
+      "contentType": "song",
+      "title": "ZKITTLEZ",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "_T_LXgT5ivg",
+      "contentType": "song",
+      "title": "A Punt De Perdre",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "JJDGShHAG3o",
+      "contentType": "song",
+      "title": "ACCIÒMO",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "5_hBDnwPb5g",
+      "contentType": "song",
+      "title": "CAIGUDA LLIURE",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "TIJaFy7NmIc",
+      "contentType": "song",
+      "title": "LLUM",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "oAUWVBG2EbQ",
+      "contentType": "song",
+      "title": "PÀNIC",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "0XMjjCJG8tY",
+      "contentType": "song",
+      "title": "UELCOM TU DE PARADAIS",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "wmX4Yju2Jis",
+      "contentType": "song",
+      "title": "ZKITTLEZ",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "Yye2QHTULhg",
+      "contentType": "song",
+      "title": "Les Hores Mortes",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "OxJfR8Q-MPk",
+      "contentType": "song",
+      "title": "Demà Canvie De Vida",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "61eKWdMSR5o",
+      "contentType": "song",
+      "title": "No Hi Ha Res Urgent",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "a6CG8SUsSNQ",
+      "contentType": "song",
+      "title": "CAIGUDA LLIURE",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "KJxMrorLSDA",
+      "contentType": "song",
+      "title": "Marrons",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "MI8-GdvNgRw",
+      "contentType": "song",
+      "title": "ACCIÒMO",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "fvS6GFNhnVw",
+      "contentType": "song",
+      "title": "A Punt De Perdre",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "dwdTMhNE394",
+      "contentType": "song",
+      "title": "1DELSNOSTRES",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "ac2XMCihymg",
+      "contentType": "song",
+      "title": "SENSE SENYAL",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "CUGcksID9pw",
+      "contentType": "song",
+      "title": "SENSE SENYAL",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "GhNaaLUI-Rc",
+      "contentType": "song",
+      "title": "CAIGUDA LLIURE",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "Hd_31b4tjs0",
+      "contentType": "song",
+      "title": "1DELSNOSTRES",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "ZMoyogkW2vY",
+      "contentType": "song",
+      "title": "Demà Canvie De Vida",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "dYYBzjOvG34",
+      "contentType": "song",
+      "title": "Les Hores Mortes",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "VDyvh1-7Ecw",
+      "contentType": "song",
+      "title": "Ara què fem?",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "8umkej6h2wU",
+      "contentType": "song",
+      "title": "128",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "8vQg7iWMWfM",
+      "contentType": "song",
+      "title": "128",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "_Sf9FngKg-8",
+      "contentType": "song",
+      "title": "Ethos",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "hrHnmh42vd8",
+      "contentType": "song",
+      "title": "Però",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "1-2A89TqM2o",
+      "contentType": "song",
+      "title": "Petjades",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "G0GoeqUYKnw",
+      "contentType": "song",
+      "title": "Ara què fem?",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "Z77qGw0xYWU",
+      "contentType": "song",
+      "title": "Blanc i negre",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "2iUH7W-nbWg",
+      "contentType": "song",
+      "title": "Blanc i negre",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "cedBssYwGLA",
+      "contentType": "song",
+      "title": "Petjades",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "Go81Aq2Ecb0",
+      "contentType": "song",
+      "title": "Tota la nit",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "rzB9WKiJ5yo",
+      "contentType": "song",
+      "title": "QUINTO - CASTIGAT  [official music video]",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "xU3V8leUuLo",
+      "contentType": "song",
+      "title": "QUINTO & LA XICA - Què dir-te?",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "YczVUOIUfis",
+      "contentType": "song",
+      "title": "QUINTO - LLUM [official music video]",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "IM4wvzBPPdU",
+      "contentType": "song",
+      "title": "QUINTO & EL BLARSE - PÀNIC",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "KgZE8GqcBs4",
+      "contentType": "song",
+      "title": "QUINTO - ACCIÒMO",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "3EAVNINpr_E",
+      "contentType": "song",
+      "title": "QUINTO & ROMÀNTIC DIMONI - Sense senyal",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "Z2qnwQTvOv0",
+      "contentType": "song",
+      "title": "QUINTO & ABRIL - Caiguda lliure",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "xhmohD1DNdA",
+      "contentType": "song",
+      "title": "QUINTO - 1DELSNOSTRES",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "GPlUi9Sv_3w",
+      "contentType": "song",
+      "title": "QUINTO - Demà Canvie De Vida [official music video]",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "uihhZVfjvd8",
+      "contentType": "song",
+      "title": "QUINTO - Les hores mortes [official music video]",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "9q_RNT2lua0",
+      "contentType": "song",
+      "title": "QUINTO x SANDRA MONFORT x GINESTÀ - Tota la nit (Festivern) [official music video]",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "YFrUsZROcD8",
+      "contentType": "song",
+      "title": "QUINTO - Blanc i Negre [official music video]",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "Ftq9IH_wBcc",
+      "contentType": "song",
+      "title": "QUINTO & ESTHER - Petjades [official music video]",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "lQa8mEAj_X8",
+      "contentType": "song",
+      "title": "QUINTO - 128 [official music video]",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "hsrcgs0aa2k",
+      "contentType": "song",
+      "title": "QUINTO - Ara què fem? [official music video]",
+      "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
     }
   ]
 }

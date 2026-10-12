@@ -1,19 +1,27 @@
 {
-  "generatedAt": "2026-10-12T19:49:52.945Z",
+  "generatedAt": "2026-10-12T20:45:37.966Z",
   "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
   "restrictedVideoCount": 21,
   "restrictedVideosAdded": [],
   "deepPagesFetched": 0,
   "deepChannelCount": 19,
-  "topicChannelCount": 304,
-  "governedChannelCount": 103,
+  "topicChannelCount": 307,
+  "governedChannelCount": 106,
   "topicCoverage": [
     {
       "id": "UCqaEtRht2jakBhGFLzS617w",
       "name": "ALBERT PLA",
       "songs": 6,
       "matched": 6,
+      "coverage": 1,
+      "governs": true
+    },
+    {
+      "id": "UCqXrOm2JFPasb_oKqguIm4g",
+      "name": "Àlex Blat",
+      "songs": 7,
+      "matched": 7,
       "coverage": 1,
       "governs": true
     },
@@ -222,6 +230,14 @@
       "name": "Quimi Portet",
       "songs": 17,
       "matched": 17,
+      "coverage": 1,
+      "governs": true
+    },
+    {
+      "id": "UCbJVlPOepjJiteagmmSaoTA",
+      "name": "quinto__v",
+      "songs": 15,
+      "matched": 15,
       "coverage": 1,
       "governs": true
     },
@@ -810,6 +826,14 @@
       "governs": true
     },
     {
+      "id": "UCfVobdq05T0LJLrCIUbwqYQ",
+      "name": "Tardor",
+      "songs": 51,
+      "matched": 39,
+      "coverage": 0.76,
+      "governs": true
+    },
+    {
       "id": "UCnO3DG7B2cyiu5zoNstHEfA",
       "name": "TerapiaDeShock",
       "songs": 29,
@@ -1300,6 +1324,13 @@
       "name": "Albert Pla",
       "tracks": 193,
       "selected": 40,
+      "withClip": 6
+    },
+    {
+      "id": "UC6SBLhrf0nLYU-_a9iqwWqw",
+      "name": "Àlex Blat",
+      "tracks": 25,
+      "selected": 25,
       "withClip": 6
     },
     {
@@ -2829,6 +2860,13 @@
       "withClip": 16
     },
     {
+      "id": "UCFPGW7hAaXSfcPueygR_25A",
+      "name": "Quinto",
+      "tracks": 44,
+      "selected": 44,
+      "withClip": 15
+    },
+    {
       "id": "UCn4V6rDw7Gz1R6F2qyt2IrQ",
       "name": "Ramon Muntaner",
       "tracks": 119,
@@ -3072,6 +3110,13 @@
       "tracks": 54,
       "selected": 14,
       "withClip": 0
+    },
+    {
+      "id": "UCmnRoubcIKBdSZfa12Sh08w",
+      "name": "Tardor",
+      "tracks": 73,
+      "selected": 73,
+      "withClip": 30
     },
     {
       "id": "UCkxi7wy2VhKCMzoxoVEF9pg",
@@ -3347,13 +3392,13 @@
       "withClip": 0
     }
   ],
-  "indexedChannelCount": 553,
-  "resolvedChannelCount": 553,
-  "feedChannelCount": 553,
-  "rawPublicVideoCount": 6081,
-  "feedVideoCount": 5558,
-  "acceptedMusicCount": 5517,
-  "categoryEligibleVideoCount": 5513,
+  "indexedChannelCount": 558,
+  "resolvedChannelCount": 558,
+  "feedChannelCount": 558,
+  "rawPublicVideoCount": 6287,
+  "feedVideoCount": 5764,
+  "acceptedMusicCount": 5723,
+  "categoryEligibleVideoCount": 5719,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
     "before": 0,
@@ -3362,8 +3407,8 @@
   },
   "contentReviewCount": 529,
   "contentTypeCounts": {
-    "song": 5344,
-    "live_song": 169,
+    "song": 5549,
+    "live_song": 170,
     "album": 4,
     "other": 35,
     "review": 529
@@ -3373,6 +3418,6 @@
   "channelsWithoutVideos": [],
   "channelsWithoutAcceptedMusic": [],
   "allIndexedChannelsVisible": true,
-  "publishedFeedVideoCount": 5549,
+  "publishedFeedVideoCount": 5660,
   "publishedShortVideoCount": 0
 }

@@ -2,7 +2,7 @@
 
 Document generat de `data/artistes-vigilats-idioma.json`, l’única font operativa. No editeu la taula a mà.
 
-Actualitzat: 2026-10-12. 111 entrades vigilades i 272 artistes de confiança editorial. Inclou antecedents sense canal actiu, per si es reincorporen.
+Actualitzat: 2026-10-12. 113 entrades vigilades i 272 artistes de confiança editorial. Inclou antecedents sense canal actiu, per si es reincorporen.
 
 ## Política
 
@@ -142,3 +142,6 @@ La revisió només resol els IDs indicats: la resta queda pendent. Afegiu `--mat
 | Ven'nus | VEN'NUS, Ven'nus - Topic | `UCvh8nurHojZHGiQy532Bn2w`, `UCouT_0PiTMYVIG5wcTYfpcg` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
 | Xavier de Bétera | Xavier de Bétera - Topic | `UC7jgH-7_BlpoPdV5XmriR1w`, `UCfdDfonaXBiLPTxprpCigGQ` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
 | Xeic! | Xeic, XEIC, XEIC! - Topic, XEIC! | `UC4ZpvBvQ4jzY_Ppwho9rSiw`, `UCNS4k4s7_GRMNpKBlRfpfTQ` | Antecedents d’exclusions o dubtes de llengua documentats; no implica que tot el repertori sigui multilingüe. | `docs/ARTISTES_CASTELLA.md` |
+| Tardor | Tardor - Topic, Tardor | `UCmnRoubcIKBdSZfa12Sh08w`, `UCfVobdq05T0LJLrCIUbwqYQ` | Versió Trovam EUxChange multilingüe exclosa. Alta tancada als enregistraments seleccionats; les novetats requereixen revisió. | `https://tardor.band/`, `https://www.pro21cultural.com/project/tardor/`, `https://www.enderrock.cat/noticia/23805/mural-sonor-pais-valencia-canta`, `https://www.enderrock.cat/noticia/30622/canco-tardor-es-canta-ara-quatre-llengues-europees-minoritzades` |
+| Àlex Blat | Alex Blat, Àlex Martínez Orts, Alexandre Martínez Orts, Àlex Blat - Topic, Àlex Blat | `UC6SBLhrf0nLYU-_a9iqwWqw`, `UCqXrOm2JFPasb_oKqguIm4g` | L’Oblit amb Ciudad Jara conté estrofes en castellà: se n’exclouen les tres gravacions localitzades. Revisió de futures col·laboracions. | `https://www.enderrock.cat/noticia/27814/alex-blat-volia-fugir-competencia-entre-bandes-perque-ja-estava-molt-cansat`, `https://www.primaveradh.com/tenda/val/producte/alex-blat-cd-la-veritat/`, `https://www.enderrock.cat/noticia/22955/alex-blat-he-intentat-fer-album-molt-senzill-molt-organic-molt-pur`, `https://www.youtube.com/watch?v=jfO-YY-q6Do` |
+| Quinto | Josep Quinto, Josep Quinto Mengual, Quinto - Topic, quinto__v | `UCFPGW7hAaXSfcPueygR_25A`, `UCbJVlPOepjJiteagmmSaoTA` | Canal Tema compartit amb homònims. Només IDs amb identitat Josep Quinto Mengual i repertori contrastat; no s’importa el catàleg d’Alex Quinto Fernandez / Atlas Club. | `https://www.pro21cultural.com/project/quinto/`, `https://www.enderrock.cat/noticia/28143/quinto-demostra-versatilitat-ep-debut`, `https://www.enderrock.cat/noticia/30990/quinto-vivim-renaixement-feixisme-mort-cultura-nostre-pais`, `https://www.enderrock.cat/noticia/31971/noves-cancons-catala-son-mar-pujol-max-navarro-mazoni-pep-gimeno-botifarra` |

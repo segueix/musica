@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-12T19:29:55.617Z",
+  "generatedAt": "2026-10-12T20:45:39.107Z",
   "strategy": {
     "mode": "hybrid",
     "monthlyRecentYears": 2
@@ -19,7 +19,7 @@
       "month": 9,
       "granularity": "month",
       "file": "search_index_2025_09.json",
-      "itemCount": 176
+      "itemCount": 177
     },
     {
       "key": "2025_08",
@@ -67,7 +67,7 @@
       "month": 3,
       "granularity": "month",
       "file": "search_index_2025_03.json",
-      "itemCount": 1443
+      "itemCount": 1484
     },
     {
       "key": "2025_02",
@@ -99,7 +99,7 @@
       "month": null,
       "granularity": "year",
       "file": "search_index_2023.json",
-      "itemCount": 500
+      "itemCount": 502
     },
     {
       "key": "2022",
@@ -131,7 +131,7 @@
       "month": null,
       "granularity": "year",
       "file": "search_index_2019.json",
-      "itemCount": 270
+      "itemCount": 307
     },
     {
       "key": "2018",
@@ -139,7 +139,7 @@
       "month": null,
       "granularity": "year",
       "file": "search_index_2018.json",
-      "itemCount": 296
+      "itemCount": 309
     },
     {
       "key": "2017",
@@ -155,7 +155,7 @@
       "month": null,
       "granularity": "year",
       "file": "search_index_2016.json",
-      "itemCount": 189
+      "itemCount": 191
     },
     {
       "key": "2015",
@@ -171,7 +171,7 @@
       "month": null,
       "granularity": "year",
       "file": "search_index_2014.json",
-      "itemCount": 732
+      "itemCount": 740
     },
     {
       "key": "2013",

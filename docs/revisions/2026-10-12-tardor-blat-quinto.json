@@ -1,0 +1,940 @@
+{
+  "schemaVersion": 1,
+  "reviewedOn": "2026-10-12",
+  "generatedAt": "2026-10-12T20:45:33.058Z",
+  "method": "Identitat pels canals facilitats, editor real i crèdits de distribució. Selecció documental de repertori i contrast de les lletres oficials disponibles. No s’ha fet una escolta íntegra de totes les pistes. Llistes tancades per ID.",
+  "artists": [
+    {
+      "name": "Tardor",
+      "origin": "València",
+      "originId": "geonames:2509954",
+      "genres": [
+        "Pop",
+        "Rock"
+      ],
+      "sources": [
+        "https://tardor.band/",
+        "https://www.pro21cultural.com/project/tardor/",
+        "https://www.enderrock.cat/noticia/23805/mural-sonor-pais-valencia-canta",
+        "https://www.enderrock.cat/noticia/30622/canco-tardor-es-canta-ara-quatre-llengues-europees-minoritzades"
+      ],
+      "channels": [
+        {
+          "id": "UCmnRoubcIKBdSZfa12Sh08w",
+          "name": "Tardor - Topic",
+          "type": "topic",
+          "primary": true,
+          "selectedRecordings": 73,
+          "allowedVideoIds": [
+            "twUWHbJ3raU",
+            "jE7bWCLpaks",
+            "Ihvt-MGDYwo",
+            "7uNiGif5IKw",
+            "WCvhFK0RiPU",
+            "d4s2vG2sMEw",
+            "RPF_mYpcNiA",
+            "WAgC4Igxo0I",
+            "ezbxcliTpTY",
+            "YURUtgY9WFw",
+            "Z98EIispviw",
+            "Zwq8_0cCUlc",
+            "M9dAN1meaAk",
+            "uU1Wx4z_Zhc",
+            "dzyL69pShkQ",
+            "xNfBRrNSfjE",
+            "rncKlIKlAo4",
+            "G81J0y_Ap_A",
+            "9qFhtjnhIkg",
+            "4qp2GJRlksM",
+            "JUQ984O2dl0",
+            "nQNW8yWabXs",
+            "H5xnWOq022o",
+            "82SUt9jg1xo",
+            "mW9b64dClkY",
+            "rUF7OE9mYfs",
+            "Gs3KpzsmgJ4",
+            "yeLu-OLPVkA",
+            "u73VPxvlXvI",
+            "9f7svf3SI8M",
+            "hB5U1n3rdNo",
+            "WZs--mkit7k",
+            "98Ypjrj_KjE",
+            "lmoK33-mlyU",
+            "h_eer8jV148",
+            "BqpVhfC8zyw",
+            "K3sG31NlIqM",
+            "2AVuPn-hBhU",
+            "4MySxRWbRj4",
+            "cx_uknXIVxo",
+            "fJQX0mSnfRA",
+            "wA_SgdkRISw",
+            "rvZTajBOQnY",
+            "FU7keXZmRoM",
+            "JDAp-LplzZk",
+            "hnrCDm1l7zw",
+            "74wHOhY9IrQ",
+            "ocPPiiwntEs",
+            "L0WfZSQQHeo",
+            "0hTEVjTnywk",
+            "xdU4DUtqS3Q",
+            "E4FC0_HnIJY",
+            "omP_d13HmvI",
+            "s7WvnRg8p2E",
+            "uYspDI-OFKI",
+            "WKF0Px6EN_c",
+            "e3IeB45x7qM",
+            "zgLD0qvySz8",
+            "-uRy8gLgMK4",
+            "aTCU56TqfLE",
+            "GB9fvG-p2Oo",
+            "BhcOBq5cYq0",
+            "TKFDU_YcCSM",
+            "FaCf_PJ7lqU",
+            "OZ-VSDdSXc4",
+            "Ou2aQ7FJ82Y",
+            "BzkjsO8qs9Q",
+            "Qa4-PquD40g",
+            "XbD0kZUMbCM",
+            "faqskgDau2o",
+            "q1SqBfyayUw",
+            "tnrMlDzPSzA",
+            "s1JoKKkKDPE"
+          ]
+        },
+        {
+          "id": "UCfVobdq05T0LJLrCIUbwqYQ",
+          "name": "Tardor",
+          "type": "official",
+          "primary": false,
+          "selectedRecordings": 51,
+          "allowedVideoIds": [
+            "WAhnS10nMP8",
+            "SkLrsVvc3p0",
+            "6m3BwbscAH4",
+            "8vAO3u3bqVE",
+            "kTXzwTBsAac",
+            "kQX4LOovWiM",
+            "tQS-S3VCTXg",
+            "KNf0L7ndWRw",
+            "FcHBbaXKBRQ",
+            "E79kJAsXp-k",
+            "apT28JuEq9U",
+            "hlIRLSrXaNg",
+            "5MkEM_txAxM",
+            "66yw9MBeR0k",
+            "CEOtd4TQ9Dk",
+            "DDynfuR8znA",
+            "c_6T1RtjY9w",
+            "_gHwe89yjn0",
+            "zpTFLnUtCzI",
+            "7jk4YzdFjRY",
+            "YBGTicbIgLw",
+            "709FVGzKt_k",
+            "C2AAyCdTmds",
+            "DXMNv4sSnEU",
+            "HsFIL16Ts5Y",
+            "Wfcg22U9XDI",
+            "axgtubcXOrs",
+            "jOcuphwa2-E",
+            "sJsIDPNvvX8",
+            "o1eQUo7If3g",
+            "ilrY5y-Z6bY",
+            "7OA_oPG5M84",
+            "VDQMmzF1Cr8",
+            "AvDwWsCCNIw",
+            "wpqTvKrbD0g",
+            "mJ27YhkwMmc",
+            "MT4chhV4nWA",
+            "xRATFZWhh8s",
+            "YP3LrPjePIc",
+            "8Mf3LQZC3wc",
+            "h2ZIcsmA51M",
+            "kE8kiYASWpA",
+            "2x2CohZVPms",
+            "BM91dxZgHfo",
+            "mjKRbk2pVP4",
+            "F9GQ3J1vaoE",
+            "u6RoAJlIXRg",
+            "6HdGP0t2zR0",
+            "BALukye0A4k",
+            "fubjEddtUo0",
+            "-YzsMZtmDLo"
+          ]
+        }
+      ],
+      "excludedRecordings": [
+        {
+          "id": "ql53lHBpHDI",
+          "title": "Nevar a València (Trovam EUxChange)",
+          "channelId": "UCmnRoubcIKBdSZfa12Sh08w",
+          "reason": "Lletra bilingüe o multilingüe contrastada; no compleix el criteri del català."
+        },
+        {
+          "id": "XUQmtzMGCDk",
+          "title": "Tornem.",
+          "channelId": "UCfVobdq05T0LJLrCIUbwqYQ",
+          "reason": "Anunci, promoció, documental, concert complet o enregistrament encara no seleccionat."
+        },
+        {
+          "id": "UGDwNXvX3mE",
+          "title": "Concert de confinament (num. 4) - Tardor",
+          "channelId": "UCfVobdq05T0LJLrCIUbwqYQ",
+          "reason": "No és una cançó individual de durada contrastada."
+        },
+        {
+          "id": "7RjIbcCC4SI",
+          "title": "Versions en confinament - Tardor",
+          "channelId": "UCfVobdq05T0LJLrCIUbwqYQ",
+          "reason": "No és una cançó individual de durada contrastada."
+        },
+        {
+          "id": "KAksj3-Ep6Q",
+          "title": "Concert de confinament - Tardor",
+          "channelId": "UCfVobdq05T0LJLrCIUbwqYQ",
+          "reason": "No és una cançó individual de durada contrastada."
+        },
+        {
+          "id": "sKoYUq3JBjE",
+          "title": "Tardor - Benidorm si s'acaba el món (Quarantine edition)",
+          "channelId": "UCfVobdq05T0LJLrCIUbwqYQ",
+          "reason": "Anunci, promoció, documental, concert complet o enregistrament encara no seleccionat."
+        },
+        {
+          "id": "ue-1_aJJuAs",
+          "title": "La Primavera a casa - Tardor",
+          "channelId": "UCfVobdq05T0LJLrCIUbwqYQ",
+          "reason": "No és una cançó individual de durada contrastada."
+        },
+        {
+          "id": "CG4smoXo0Q8",
+          "title": "Tardor - El Mal Pas (Àlbum complet)",
+          "channelId": "UCfVobdq05T0LJLrCIUbwqYQ",
+          "reason": "No és una cançó individual de durada contrastada."
+        },
+        {
+          "id": "Y786ubif_Mk",
+          "title": "Tardor a Los Conciertos de Radio 3 (2018)",
+          "channelId": "UCfVobdq05T0LJLrCIUbwqYQ",
+          "reason": "No és una cançó individual de durada contrastada."
+        },
+        {
+          "id": "paj4wo3W2H8",
+          "title": "'Navegarem bicicletes' (Descobrint la gravació de 'Patraix')",
+          "channelId": "UCfVobdq05T0LJLrCIUbwqYQ",
+          "reason": "Anunci, promoció, documental, concert complet o enregistrament encara no seleccionat."
+        },
+        {
+          "id": "oIjBfsZzMEQ",
+          "title": "Tardor - Patraix (Àlbum complet)",
+          "channelId": "UCfVobdq05T0LJLrCIUbwqYQ",
+          "reason": "No és una cançó individual de durada contrastada."
+        },
+        {
+          "id": "Uvv7TkViBxg",
+          "title": "El procés de l'Eufòria - Tardor",
+          "channelId": "UCfVobdq05T0LJLrCIUbwqYQ",
+          "reason": "Anunci, promoció, documental, concert complet o enregistrament encara no seleccionat."
+        },
+        {
+          "id": "Fm3uBOdZTz0",
+          "title": "Sota la ciutat invisible - 'Cursa de cavalls' (Tardor)",
+          "channelId": "UCfVobdq05T0LJLrCIUbwqYQ",
+          "reason": "Anunci, promoció, documental, concert complet o enregistrament encara no seleccionat."
+        },
+        {
+          "id": "Yte05fJk-rs",
+          "title": "Tardor - Una ciutat invisible",
+          "channelId": "UCfVobdq05T0LJLrCIUbwqYQ",
+          "reason": "Anunci, promoció, documental, concert complet o enregistrament encara no seleccionat."
+        }
+      ],
+      "publication": [
+        {
+          "id": "UCmnRoubcIKBdSZfa12Sh08w",
+          "type": "topic",
+          "hot": 19,
+          "archive": 54,
+          "recordings": 73
+        },
+        {
+          "id": "UCfVobdq05T0LJLrCIUbwqYQ",
+          "type": "official",
+          "hot": 15,
+          "archive": 36,
+          "recordings": 51
+        }
+      ],
+      "recordingsPublished": 124
+    },
+    {
+      "name": "Àlex Blat",
+      "origin": "Benidorm",
+      "originId": "geonames:2521088",
+      "genres": [
+        "Cançó d'autor",
+        "Pop"
+      ],
+      "sources": [
+        "https://www.enderrock.cat/noticia/27814/alex-blat-volia-fugir-competencia-entre-bandes-perque-ja-estava-molt-cansat",
+        "https://www.primaveradh.com/tenda/val/producte/alex-blat-cd-la-veritat/",
+        "https://www.enderrock.cat/noticia/22955/alex-blat-he-intentat-fer-album-molt-senzill-molt-organic-molt-pur",
+        "https://www.youtube.com/watch?v=jfO-YY-q6Do"
+      ],
+      "channels": [
+        {
+          "id": "UC6SBLhrf0nLYU-_a9iqwWqw",
+          "name": "Àlex Blat - Topic",
+          "type": "topic",
+          "primary": true,
+          "selectedRecordings": 25,
+          "allowedVideoIds": [
+            "NkQnNXH3iTo",
+            "nFrYuE-OJmo",
+            "cz5caGzqTgI",
+            "mbUYLe9cn6I",
+            "JlRuX5EJ19Y",
+            "VdldUJVusEQ",
+            "GN0JFxYKCEs",
+            "Ck47g2QF8xw",
+            "FS-pTerotPg",
+            "n0c1vin9ROA",
+            "KXrKVtxQpAA",
+            "0s0ueIDz-Gg",
+            "iZBhZIx_40Y",
+            "dKsJS3NJWCo",
+            "I8zF3WfnJrI",
+            "EPQPkyPOnWg",
+            "2KpXpw0DT3Q",
+            "pdTvTzOxyNM",
+            "NygeB2NkxAU",
+            "CELjiuP071Q",
+            "CxriS4fbLCQ",
+            "9P7smeSSBc0",
+            "fKrwM4IOEL4",
+            "2x5fZEjZ_GY",
+            "odwO3AqgY7g"
+          ]
+        },
+        {
+          "id": "UCqXrOm2JFPasb_oKqguIm4g",
+          "name": "Àlex Blat",
+          "type": "official",
+          "primary": false,
+          "selectedRecordings": 7,
+          "allowedVideoIds": [
+            "4mZaQVTEGoc",
+            "QPv7aQF-5JI",
+            "FyoTgDeNVIA",
+            "8KeF3Je5Zas",
+            "mxANFd9RRDU",
+            "pIh9qSf3p4E",
+            "unsoOu9wHKs"
+          ]
+        }
+      ],
+      "excludedRecordings": [
+        {
+          "id": "f5kNt3okLEQ",
+          "title": "L'oblit",
+          "channelId": "UC6SBLhrf0nLYU-_a9iqwWqw",
+          "reason": "Lletra bilingüe o multilingüe contrastada; no compleix el criteri del català."
+        },
+        {
+          "id": "R1rlHiuWYlg",
+          "title": "L'Oblit",
+          "channelId": "UC6SBLhrf0nLYU-_a9iqwWqw",
+          "reason": "Lletra bilingüe o multilingüe contrastada; no compleix el criteri del català."
+        },
+        {
+          "id": "jfO-YY-q6Do",
+          "title": "ÀLEX BLAT - L'Oblit (ft. Ciudad Jara) [Videoclip]",
+          "channelId": "UCqXrOm2JFPasb_oKqguIm4g",
+          "reason": "Lletra bilingüe o multilingüe contrastada; no compleix el criteri del català."
+        },
+        {
+          "id": "JdpDATUyack",
+          "title": "ÀLEX BLAT - Declaració d'intencions (Tràiler)",
+          "channelId": "UCqXrOm2JFPasb_oKqguIm4g",
+          "reason": "Tràiler, no la cançó completa."
+        }
+      ],
+      "publication": [
+        {
+          "id": "UC6SBLhrf0nLYU-_a9iqwWqw",
+          "type": "topic",
+          "hot": 12,
+          "archive": 13,
+          "recordings": 25
+        },
+        {
+          "id": "UCqXrOm2JFPasb_oKqguIm4g",
+          "type": "official",
+          "hot": 7,
+          "archive": 0,
+          "recordings": 7
+        }
+      ],
+      "recordingsPublished": 32
+    },
+    {
+      "name": "Quinto",
+      "origin": "Pego",
+      "originId": "geonames:6559502",
+      "genres": [
+        "Urbana",
+        "Rap / Hip-hop",
+        "Pop"
+      ],
+      "sources": [
+        "https://www.pro21cultural.com/project/quinto/",
+        "https://www.enderrock.cat/noticia/28143/quinto-demostra-versatilitat-ep-debut",
+        "https://www.enderrock.cat/noticia/30990/quinto-vivim-renaixement-feixisme-mort-cultura-nostre-pais",
+        "https://www.enderrock.cat/noticia/31971/noves-cancons-catala-son-mar-pujol-max-navarro-mazoni-pep-gimeno-botifarra"
+      ],
+      "channels": [
+        {
+          "id": "UCFPGW7hAaXSfcPueygR_25A",
+          "name": "Quinto - Topic",
+          "type": "topic",
+          "primary": true,
+          "selectedRecordings": 44,
+          "allowedVideoIds": [
+            "przS4BVU8wg",
+            "WRdYU14R1D4",
+            "zeWWREQWJHg",
+            "5402KsBU7RY",
+            "12xepYBk7PU",
+            "eI0rDoLXMNc",
+            "UakS9UGMnbU",
+            "2D7hnFBcIJg",
+            "jcDrRAimDoY",
+            "nF6POgLdlyc",
+            "TnwMS9aZd_8",
+            "GXSLG5f9-fk",
+            "_T_LXgT5ivg",
+            "JJDGShHAG3o",
+            "5_hBDnwPb5g",
+            "TIJaFy7NmIc",
+            "oAUWVBG2EbQ",
+            "0XMjjCJG8tY",
+            "wmX4Yju2Jis",
+            "Yye2QHTULhg",
+            "OxJfR8Q-MPk",
+            "61eKWdMSR5o",
+            "a6CG8SUsSNQ",
+            "KJxMrorLSDA",
+            "MI8-GdvNgRw",
+            "fvS6GFNhnVw",
+            "dwdTMhNE394",
+            "ac2XMCihymg",
+            "CUGcksID9pw",
+            "GhNaaLUI-Rc",
+            "Hd_31b4tjs0",
+            "ZMoyogkW2vY",
+            "dYYBzjOvG34",
+            "VDyvh1-7Ecw",
+            "8umkej6h2wU",
+            "8vQg7iWMWfM",
+            "_Sf9FngKg-8",
+            "hrHnmh42vd8",
+            "1-2A89TqM2o",
+            "G0GoeqUYKnw",
+            "Z77qGw0xYWU",
+            "2iUH7W-nbWg",
+            "cedBssYwGLA",
+            "Go81Aq2Ecb0"
+          ]
+        },
+        {
+          "id": "UCbJVlPOepjJiteagmmSaoTA",
+          "name": "quinto__v",
+          "type": "official",
+          "primary": false,
+          "selectedRecordings": 15,
+          "allowedVideoIds": [
+            "rzB9WKiJ5yo",
+            "xU3V8leUuLo",
+            "YczVUOIUfis",
+            "IM4wvzBPPdU",
+            "KgZE8GqcBs4",
+            "3EAVNINpr_E",
+            "Z2qnwQTvOv0",
+            "xhmohD1DNdA",
+            "GPlUi9Sv_3w",
+            "uihhZVfjvd8",
+            "9q_RNT2lua0",
+            "YFrUsZROcD8",
+            "Ftq9IH_wBcc",
+            "lQa8mEAj_X8",
+            "hsrcgs0aa2k"
+          ]
+        }
+      ],
+      "excludedRecordings": [
+        {
+          "id": "GpSJ84H-nLE",
+          "title": "Alhamdulillah",
+          "channelId": "UCFPGW7hAaXSfcPueygR_25A",
+          "reason": "Homònim o identitat de l’enregistrament no acreditada com Josep Quinto Mengual."
+        },
+        {
+          "id": "res52qQ6AMU",
+          "title": "Frío Polar",
+          "channelId": "UCFPGW7hAaXSfcPueygR_25A",
+          "reason": "Homònim o identitat de l’enregistrament no acreditada com Josep Quinto Mengual."
+        },
+        {
+          "id": "xMqTStmzFrg",
+          "title": "Pico De Loro",
+          "channelId": "UCFPGW7hAaXSfcPueygR_25A",
+          "reason": "Homònim o identitat de l’enregistrament no acreditada com Josep Quinto Mengual."
+        },
+        {
+          "id": "u2tImotjPjI",
+          "title": "Marginados",
+          "channelId": "UCFPGW7hAaXSfcPueygR_25A",
+          "reason": "Homònim o identitat de l’enregistrament no acreditada com Josep Quinto Mengual."
+        },
+        {
+          "id": "Ym3JRqkz_64",
+          "title": "Dos Bandos",
+          "channelId": "UCFPGW7hAaXSfcPueygR_25A",
+          "reason": "Homònim o identitat de l’enregistrament no acreditada com Josep Quinto Mengual."
+        },
+        {
+          "id": "eWzieTjqLIk",
+          "title": "Aunque Me Duela",
+          "channelId": "UCFPGW7hAaXSfcPueygR_25A",
+          "reason": "Homònim o identitat de l’enregistrament no acreditada com Josep Quinto Mengual."
+        },
+        {
+          "id": "x0tQME2TKxY",
+          "title": "Tu Casa Tus Reglas",
+          "channelId": "UCFPGW7hAaXSfcPueygR_25A",
+          "reason": "Homònim o identitat de l’enregistrament no acreditada com Josep Quinto Mengual."
+        },
+        {
+          "id": "baTw_1VzCLY",
+          "title": "Fat and Skinny",
+          "channelId": "UCFPGW7hAaXSfcPueygR_25A",
+          "reason": "Homònim o identitat de l’enregistrament no acreditada com Josep Quinto Mengual."
+        },
+        {
+          "id": "6NeppOy22G8",
+          "title": "Dos Bandos",
+          "channelId": "UCFPGW7hAaXSfcPueygR_25A",
+          "reason": "Homònim o identitat de l’enregistrament no acreditada com Josep Quinto Mengual."
+        },
+        {
+          "id": "heUW1fWYYmw",
+          "title": "Fat and Skinny",
+          "channelId": "UCFPGW7hAaXSfcPueygR_25A",
+          "reason": "Homònim o identitat de l’enregistrament no acreditada com Josep Quinto Mengual."
+        },
+        {
+          "id": "nSJVPy9fY8M",
+          "title": "Bienvenido a L'H",
+          "channelId": "UCFPGW7hAaXSfcPueygR_25A",
+          "reason": "Homònim o identitat de l’enregistrament no acreditada com Josep Quinto Mengual."
+        },
+        {
+          "id": "wCJorEWkLO4",
+          "title": "Sad Bandit",
+          "channelId": "UCFPGW7hAaXSfcPueygR_25A",
+          "reason": "Homònim o identitat de l’enregistrament no acreditada com Josep Quinto Mengual."
+        },
+        {
+          "id": "ZQb_EFgwXqk",
+          "title": "Dicen Que Soy",
+          "channelId": "UCFPGW7hAaXSfcPueygR_25A",
+          "reason": "Homònim o identitat de l’enregistrament no acreditada com Josep Quinto Mengual."
+        },
+        {
+          "id": "wYjMxy01B0E",
+          "title": "Suposiciones",
+          "channelId": "UCFPGW7hAaXSfcPueygR_25A",
+          "reason": "Homònim o identitat de l’enregistrament no acreditada com Josep Quinto Mengual."
+        },
+        {
+          "id": "FRprZPI-Peo",
+          "title": "El Límite Es El Cielo",
+          "channelId": "UCFPGW7hAaXSfcPueygR_25A",
+          "reason": "Homònim o identitat de l’enregistrament no acreditada com Josep Quinto Mengual."
+        },
+        {
+          "id": "PK1NeQhzRDE",
+          "title": "En Vano",
+          "channelId": "UCFPGW7hAaXSfcPueygR_25A",
+          "reason": "Homònim o identitat de l’enregistrament no acreditada com Josep Quinto Mengual."
+        },
+        {
+          "id": "3S__Bij7no0",
+          "title": "Barkatu",
+          "channelId": "UCFPGW7hAaXSfcPueygR_25A",
+          "reason": "Homònim o identitat de l’enregistrament no acreditada com Josep Quinto Mengual."
+        },
+        {
+          "id": "CATuPHn5vuA",
+          "title": "C. Kita el Tangana",
+          "channelId": "UCFPGW7hAaXSfcPueygR_25A",
+          "reason": "Homònim o identitat de l’enregistrament no acreditada com Josep Quinto Mengual."
+        },
+        {
+          "id": "Cv3tKRIucE4",
+          "title": "Tú Nunca Pierdes",
+          "channelId": "UCFPGW7hAaXSfcPueygR_25A",
+          "reason": "Homònim o identitat de l’enregistrament no acreditada com Josep Quinto Mengual."
+        },
+        {
+          "id": "FK47rQxpi2A",
+          "title": "7 estrofas (INTRO)",
+          "channelId": "UCFPGW7hAaXSfcPueygR_25A",
+          "reason": "Homònim o identitat de l’enregistrament no acreditada com Josep Quinto Mengual."
+        },
+        {
+          "id": "FKAr_EX2Z8o",
+          "title": "Yiny León (OUTRO)",
+          "channelId": "UCFPGW7hAaXSfcPueygR_25A",
+          "reason": "Homònim o identitat de l’enregistrament no acreditada com Josep Quinto Mengual."
+        },
+        {
+          "id": "YVB-Je-4ipI",
+          "title": "Las Letras de North Face",
+          "channelId": "UCFPGW7hAaXSfcPueygR_25A",
+          "reason": "Homònim o identitat de l’enregistrament no acreditada com Josep Quinto Mengual."
+        },
+        {
+          "id": "dFOMEFOWFgo",
+          "title": "Solo Pienso en Ti",
+          "channelId": "UCFPGW7hAaXSfcPueygR_25A",
+          "reason": "Homònim o identitat de l’enregistrament no acreditada com Josep Quinto Mengual."
+        },
+        {
+          "id": "oMFV0evp9-o",
+          "title": "Guerrero Por La Necesidad",
+          "channelId": "UCFPGW7hAaXSfcPueygR_25A",
+          "reason": "Homònim o identitat de l’enregistrament no acreditada com Josep Quinto Mengual."
+        },
+        {
+          "id": "KCjEsIv375g",
+          "title": "Bienvenido a L'H",
+          "channelId": "UCFPGW7hAaXSfcPueygR_25A",
+          "reason": "Homònim o identitat de l’enregistrament no acreditada com Josep Quinto Mengual."
+        },
+        {
+          "id": "EZxMM3tARak",
+          "title": "Jocelyn Flores",
+          "channelId": "UCFPGW7hAaXSfcPueygR_25A",
+          "reason": "Homònim o identitat de l’enregistrament no acreditada com Josep Quinto Mengual."
+        },
+        {
+          "id": "qCb-vEOj89s",
+          "title": "Barkatu",
+          "channelId": "UCFPGW7hAaXSfcPueygR_25A",
+          "reason": "Homònim o identitat de l’enregistrament no acreditada com Josep Quinto Mengual."
+        },
+        {
+          "id": "c47Tn4rjQ18",
+          "title": "Amor de Callejón",
+          "channelId": "UCFPGW7hAaXSfcPueygR_25A",
+          "reason": "Homònim o identitat de l’enregistrament no acreditada com Josep Quinto Mengual."
+        },
+        {
+          "id": "AAPtDTgnnLI",
+          "title": "Las Letras de North Face",
+          "channelId": "UCFPGW7hAaXSfcPueygR_25A",
+          "reason": "Homònim o identitat de l’enregistrament no acreditada com Josep Quinto Mengual."
+        },
+        {
+          "id": "hnrJj2gc7Q8",
+          "title": "Pena y Colchón",
+          "channelId": "UCFPGW7hAaXSfcPueygR_25A",
+          "reason": "Homònim o identitat de l’enregistrament no acreditada com Josep Quinto Mengual."
+        },
+        {
+          "id": "ZneYvjTHhUE",
+          "title": "Pena y Colchón 2",
+          "channelId": "UCFPGW7hAaXSfcPueygR_25A",
+          "reason": "Homònim o identitat de l’enregistrament no acreditada com Josep Quinto Mengual."
+        },
+        {
+          "id": "ZWGCRSivdOg",
+          "title": "C. Kita el Tangana",
+          "channelId": "UCFPGW7hAaXSfcPueygR_25A",
+          "reason": "Homònim o identitat de l’enregistrament no acreditada com Josep Quinto Mengual."
+        },
+        {
+          "id": "kmo4Gbdeyzg",
+          "title": "Lágrimas de Ángel",
+          "channelId": "UCFPGW7hAaXSfcPueygR_25A",
+          "reason": "Homònim o identitat de l’enregistrament no acreditada com Josep Quinto Mengual."
+        },
+        {
+          "id": "FLmyTPTF09Q",
+          "title": "El Lado Donde Duermes",
+          "channelId": "UCFPGW7hAaXSfcPueygR_25A",
+          "reason": "Homònim o identitat de l’enregistrament no acreditada com Josep Quinto Mengual."
+        },
+        {
+          "id": "fa-R1SClkio",
+          "title": "Sad Bandit",
+          "channelId": "UCFPGW7hAaXSfcPueygR_25A",
+          "reason": "Homònim o identitat de l’enregistrament no acreditada com Josep Quinto Mengual."
+        },
+        {
+          "id": "mdcEmTcZIKg",
+          "title": "Murph",
+          "channelId": "UCFPGW7hAaXSfcPueygR_25A",
+          "reason": "Homònim o identitat de l’enregistrament no acreditada com Josep Quinto Mengual."
+        },
+        {
+          "id": "K_NYozio4pA",
+          "title": "Corsé",
+          "channelId": "UCFPGW7hAaXSfcPueygR_25A",
+          "reason": "Homònim o identitat de l’enregistrament no acreditada com Josep Quinto Mengual."
+        },
+        {
+          "id": "y4stnmKLtDo",
+          "title": "El Combo De Los Galácticos",
+          "channelId": "UCFPGW7hAaXSfcPueygR_25A",
+          "reason": "Homònim o identitat de l’enregistrament no acreditada com Josep Quinto Mengual."
+        },
+        {
+          "id": "G8y-jXcUr0c",
+          "title": "Tú Nunca Pierdes",
+          "channelId": "UCFPGW7hAaXSfcPueygR_25A",
+          "reason": "Homònim o identitat de l’enregistrament no acreditada com Josep Quinto Mengual."
+        },
+        {
+          "id": "rfyQ_t0eoO8",
+          "title": "La Práctica",
+          "channelId": "UCFPGW7hAaXSfcPueygR_25A",
+          "reason": "Homònim o identitat de l’enregistrament no acreditada com Josep Quinto Mengual."
+        },
+        {
+          "id": "vgVM15QqzyY",
+          "title": "Aunque Quieran",
+          "channelId": "UCFPGW7hAaXSfcPueygR_25A",
+          "reason": "Homònim o identitat de l’enregistrament no acreditada com Josep Quinto Mengual."
+        },
+        {
+          "id": "ZEbSQ2Xpins",
+          "title": "El Límite Es El Cielo",
+          "channelId": "UCFPGW7hAaXSfcPueygR_25A",
+          "reason": "Homònim o identitat de l’enregistrament no acreditada com Josep Quinto Mengual."
+        },
+        {
+          "id": "T3p_jhLXoOY",
+          "title": "Agua en Mis Ojitos",
+          "channelId": "UCFPGW7hAaXSfcPueygR_25A",
+          "reason": "Homònim o identitat de l’enregistrament no acreditada com Josep Quinto Mengual."
+        },
+        {
+          "id": "ZCYZTIvuT7M",
+          "title": "El Bueno De Los Malos",
+          "channelId": "UCFPGW7hAaXSfcPueygR_25A",
+          "reason": "Homònim o identitat de l’enregistrament no acreditada com Josep Quinto Mengual."
+        },
+        {
+          "id": "5q-9YyMkff4",
+          "title": "PLAN",
+          "channelId": "UCFPGW7hAaXSfcPueygR_25A",
+          "reason": "Homònim o identitat de l’enregistrament no acreditada com Josep Quinto Mengual."
+        },
+        {
+          "id": "uNNG1iqTG9Y",
+          "title": "VISIÓN",
+          "channelId": "UCFPGW7hAaXSfcPueygR_25A",
+          "reason": "Homònim o identitat de l’enregistrament no acreditada com Josep Quinto Mengual."
+        },
+        {
+          "id": "9WmwvtsjX8k",
+          "title": "Bellissima",
+          "channelId": "UCFPGW7hAaXSfcPueygR_25A",
+          "reason": "Homònim o identitat de l’enregistrament no acreditada com Josep Quinto Mengual."
+        },
+        {
+          "id": "nZ4Nmm1ETUg",
+          "title": "QUINTO - Fresstyle Sessions Vol.2 - Sueca",
+          "channelId": "UCbJVlPOepjJiteagmmSaoTA",
+          "reason": "Promoció, fragment breu o sessió encara no contrastada per al catàleg."
+        },
+        {
+          "id": "kjc72JfCUyI",
+          "title": "QUINTO - Freestyle Sessions Vol.1 - Xaló",
+          "channelId": "UCbJVlPOepjJiteagmmSaoTA",
+          "reason": "Promoció, fragment breu o sessió encara no contrastada per al catàleg."
+        },
+        {
+          "id": "hoXVP2OX6mY",
+          "title": "QUINTO x EL BLARSE - PÀNIC",
+          "channelId": "UCbJVlPOepjJiteagmmSaoTA",
+          "reason": "Promoció, fragment breu o sessió encara no contrastada per al catàleg."
+        },
+        {
+          "id": "5indawUtjME",
+          "title": "D C D V està fora!",
+          "channelId": "UCbJVlPOepjJiteagmmSaoTA",
+          "reason": "Promoció, fragment breu o sessió encara no contrastada per al catàleg."
+        },
+        {
+          "id": "KdobNk8yFaE",
+          "title": "CAIGUDA LLIURE x ABRIL. #newmusic",
+          "channelId": "UCbJVlPOepjJiteagmmSaoTA",
+          "reason": "Promoció, fragment breu o sessió encara no contrastada per al catàleg."
+        },
+        {
+          "id": "geq6id3t-i8",
+          "title": "ESTA NIT A LES 00",
+          "channelId": "UCbJVlPOepjJiteagmmSaoTA",
+          "reason": "Promoció, fragment breu o sessió encara no contrastada per al catàleg."
+        },
+        {
+          "id": "F1bhBW2dC_Y",
+          "title": "22/01 A TOTES LES PLATAFORMES #music #musica",
+          "channelId": "UCbJVlPOepjJiteagmmSaoTA",
+          "reason": "Promoció, fragment breu o sessió encara no contrastada per al catàleg."
+        },
+        {
+          "id": "pDi0M7i-kb4",
+          "title": "QUINTO ALTEA 2024",
+          "channelId": "UCbJVlPOepjJiteagmmSaoTA",
+          "reason": "Promoció, fragment breu o sessió encara no contrastada per al catàleg."
+        },
+        {
+          "id": "_inOpVYCtxs",
+          "title": "FESTIVERN❄️🔥",
+          "channelId": "UCbJVlPOepjJiteagmmSaoTA",
+          "reason": "Promoció, fragment breu o sessió encara no contrastada per al catàleg."
+        },
+        {
+          "id": "FoN17BZP4Lc",
+          "title": "PRESENTACIÓ V. PEGO",
+          "channelId": "UCbJVlPOepjJiteagmmSaoTA",
+          "reason": "Promoció, fragment breu o sessió encara no contrastada per al catàleg."
+        }
+      ],
+      "publication": [
+        {
+          "id": "UCFPGW7hAaXSfcPueygR_25A",
+          "type": "topic",
+          "hot": 43,
+          "archive": 1,
+          "recordings": 44
+        },
+        {
+          "id": "UCbJVlPOepjJiteagmmSaoTA",
+          "type": "official",
+          "hot": 15,
+          "archive": 0,
+          "recordings": 15
+        }
+      ],
+      "recordingsPublished": 59
+    }
+  ],
+  "languageExclusions": [
+    "ql53lHBpHDI",
+    "jfO-YY-q6Do",
+    "f5kNt3okLEQ",
+    "R1rlHiuWYlg"
+  ],
+  "pendingChannels": [
+    {
+      "id": "UCzqxLyTRSy6pgyruKRcv6XQ",
+      "artist": "Tardor",
+      "reason": "Tema secundari amb dues pistes; no s’incorpora sense contrast addicional d’identitat i llengua."
+    }
+  ],
+  "preservedRemovals": [
+    {
+      "name": "Teresa Sanna",
+      "channelId": "UC9zX7R05JQ1P30RGvtjHizQ"
+    }
+  ],
+  "publication": {
+    "checkedAt": "2026-10-12T20:46:52.613Z",
+    "recordingsPublished": 215,
+    "activeArtists": 3,
+    "targetChannels": 6,
+    "status": "verified",
+    "note": "Compta enregistraments i versions, no composicions úniques. Catàleg, arxiu i pàgines compartides comprovats."
+  },
+  "validation": {
+    "passedTests": 1142,
+    "totalTests": 1148,
+    "failedTests": 6,
+    "failures": [
+      {
+        "suite": "tests/portada-assets.test.js",
+        "test": "index.html de Segueix Música la navegació té les vistes demanades a escriptori i a mòbil",
+        "reason": "AssertionError: expected 'id=\"sidebar\" aria-label=\"Navegació pr…' to contain '<span>Artistes</span>'"
+      },
+      {
+        "suite": "tests/segueix-tv-quality.test.js",
+        "test": "qualitat i seqüenciació de Segueix TV força una nova versió del cache estàtic",
+        "reason": "AssertionError: expected '// Service Worker per PWA — dos cache…' to contain 'const CACHE_VERSION = \\'tvq20260924a1…'"
+      },
+      {
+        "suite": "tests/song-title.test.js",
+        "test": "sobre el feed real no queda cap parèntesi ni claudàtor amb «videoclip», «vídeo» o «oficial»",
+        "reason": "AssertionError: expected [ Array(1) ] to deeply equal []"
+      },
+      {
+        "suite": "tests/tv-category-header.test.js",
+        "test": "títols de TV i capçalera de Segueix TV posa la informació al costat del títol Segueix TV",
+        "reason": "AssertionError: expected '(function (window) {\\n    \\'use stric…' to contain 'Què és Segueix TV?'"
+      },
+      {
+        "suite": "tests/tv-learning.test.js",
+        "test": "aprenentatge local de les TV posa la informació completa al costat del mode bucle",
+        "reason": "AssertionError: expected '// App Principal\\n\\nconst SegueixApp …' to contain '<strong>6. Descoberta.</strong>'"
+      },
+      {
+        "suite": "tests/tv-programming.test.js",
+        "test": "programació de TV inclou el nou controlador al precache del service worker",
+        "reason": "AssertionError: expected '// Service Worker per PWA — dos cache…' to contain 'const CACHE_VERSION = \\'e2a40924f7c1\\''"
+      }
+    ],
+    "regressions": 0,
+    "baselineCompared": true,
+    "newTitles": "passed",
+    "baselineFailures": [
+      {
+        "suite": "tests/portada-assets.test.js",
+        "test": "index.html de Segueix Música la navegació té les vistes demanades a escriptori i a mòbil",
+        "reason": "AssertionError: expected 'id=\"sidebar\" aria-label=\"Navegació pr…' to contain '<span>Artistes</span>'"
+      },
+      {
+        "suite": "tests/segueix-tv-quality.test.js",
+        "test": "qualitat i seqüenciació de Segueix TV força una nova versió del cache estàtic",
+        "reason": "AssertionError: expected '// Service Worker per PWA — dos cache…' to contain 'const CACHE_VERSION = \\'tvq20260924a1…'"
+      },
+      {
+        "suite": "tests/song-title.test.js",
+        "test": "sobre el feed real no queda cap parèntesi ni claudàtor amb «videoclip», «vídeo» o «oficial»",
+        "reason": "AssertionError: expected [ Array(1) ] to deeply equal []"
+      },
+      {
+        "suite": "tests/tv-category-header.test.js",
+        "test": "títols de TV i capçalera de Segueix TV posa la informació al costat del títol Segueix TV",
+        "reason": "AssertionError: expected '(function (window) {\\n    \\'use stric…' to contain 'Què és Segueix TV?'"
+      },
+      {
+        "suite": "tests/tv-learning.test.js",
+        "test": "aprenentatge local de les TV posa la informació completa al costat del mode bucle",
+        "reason": "AssertionError: expected '// App Principal\\n\\nconst SegueixApp …' to contain '<strong>6. Descoberta.</strong>'"
+      },
+      {
+        "suite": "tests/tv-programming.test.js",
+        "test": "programació de TV inclou el nou controlador al precache del service worker",
+        "reason": "AssertionError: expected '// Service Worker per PWA — dos cache…' to contain 'const CACHE_VERSION = \\'e2a40924f7c1\\''"
+      }
+    ],
+    "artistBase": "passed",
+    "languageWatchDocument": "passed",
+    "previousChannelsPreserved": true,
+    "channelsBefore": 552,
+    "channelsAfter": 558
+  }
+}

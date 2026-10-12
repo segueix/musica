@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-12T19:36:10.282987Z",
+  "updatedAt": "2026-10-12T20:45:33.058Z",
   "artists": [
     {
       "name": "2 Princeses Barbudes",
@@ -36032,7 +36032,7 @@
         "searchCandidates": []
       },
       "confidence": "alta",
-      "reviewStatus": "pendent",
+      "reviewStatus": "rebutjat",
       "active": false,
       "sources": [
         "https://www.enderrock.cat/noticia/28876/teresa-sanna-tinc-moltes-ganes-comenci-aquesta-bonica-aventura",
@@ -36041,9 +36041,155 @@
         "genre:manual"
       ],
       "lastChecked": "2026-10-12T19:24:00.061702Z",
-      "notes": "Alta editorial demanada. Identitat del canal Teresa comprovada amb els tres senzills citats a l’entrevista d’Enderrock. Sense Tema inequívoc. No s’ha localitzat encara cap gravació catalana de Marina o Lo Nassaiolo a YouTube; selecció tancada buida fins a obtenir un vídeo verificat. S’exclouen els senzills italians, covers angleses i homònims.",
+      "notes": "Retirada expressament per l’usuari el 12-10-2026. No reincorporar en sincronitzacions automàtiques.",
       "genresRaw": [],
       "displayName": "Teresa Sanna"
+    },
+    {
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "aliases": [],
+      "sources": [
+        "https://tardor.band/",
+        "https://www.pro21cultural.com/project/tardor/",
+        "https://www.enderrock.cat/noticia/23805/mural-sonor-pais-valencia-canta",
+        "https://www.enderrock.cat/noticia/30622/canco-tardor-es-canta-ara-quatre-llengues-europees-minoritzades"
+      ],
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCmnRoubcIKBdSZfa12Sh08w",
+            "handle": null,
+            "name": "Tardor - Topic",
+            "type": "topic",
+            "primary": true
+          },
+          {
+            "id": "UCfVobdq05T0LJLrCIUbwqYQ",
+            "handle": "@tardor-band",
+            "name": "Tardor",
+            "type": "official",
+            "primary": false
+          }
+        ]
+      },
+      "name": "Tardor",
+      "displayName": "Tardor",
+      "genres": [
+        "Pop",
+        "Rock"
+      ],
+      "territories": [
+        "País Valencià"
+      ],
+      "languages": [
+        "català"
+      ],
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-12",
+      "notes": "Versió Trovam EUxChange multilingüe exclosa. Alta tancada als enregistraments seleccionats; les novetats requereixen revisió. Vegeu docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "aliases": [
+        "Alex Blat",
+        "Àlex Martínez Orts",
+        "Alexandre Martínez Orts"
+      ],
+      "sources": [
+        "https://www.enderrock.cat/noticia/27814/alex-blat-volia-fugir-competencia-entre-bandes-perque-ja-estava-molt-cansat",
+        "https://www.primaveradh.com/tenda/val/producte/alex-blat-cd-la-veritat/",
+        "https://www.enderrock.cat/noticia/22955/alex-blat-he-intentat-fer-album-molt-senzill-molt-organic-molt-pur",
+        "https://www.youtube.com/watch?v=jfO-YY-q6Do"
+      ],
+      "youtube": {
+        "channels": [
+          {
+            "id": "UC6SBLhrf0nLYU-_a9iqwWqw",
+            "handle": null,
+            "name": "Àlex Blat - Topic",
+            "type": "topic",
+            "primary": true
+          },
+          {
+            "id": "UCqXrOm2JFPasb_oKqguIm4g",
+            "handle": "@alexblatmusica",
+            "name": "Àlex Blat",
+            "type": "official",
+            "primary": false
+          }
+        ]
+      },
+      "name": "Àlex Blat",
+      "displayName": "Àlex Blat",
+      "genres": [
+        "Cançó d'autor",
+        "Pop"
+      ],
+      "territories": [
+        "País Valencià"
+      ],
+      "languages": [
+        "català"
+      ],
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-12",
+      "notes": "L’Oblit amb Ciudad Jara conté estrofes en castellà: se n’exclouen les tres gravacions localitzades. Revisió de futures col·laboracions. Vegeu docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "aliases": [
+        "Josep Quinto",
+        "Josep Quinto Mengual"
+      ],
+      "sources": [
+        "https://www.pro21cultural.com/project/quinto/",
+        "https://www.enderrock.cat/noticia/28143/quinto-demostra-versatilitat-ep-debut",
+        "https://www.enderrock.cat/noticia/30990/quinto-vivim-renaixement-feixisme-mort-cultura-nostre-pais",
+        "https://www.enderrock.cat/noticia/31971/noves-cancons-catala-son-mar-pujol-max-navarro-mazoni-pep-gimeno-botifarra"
+      ],
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCFPGW7hAaXSfcPueygR_25A",
+            "handle": null,
+            "name": "Quinto - Topic",
+            "type": "topic",
+            "primary": true
+          },
+          {
+            "id": "UCbJVlPOepjJiteagmmSaoTA",
+            "handle": "@quinto__v",
+            "name": "quinto__v",
+            "type": "official",
+            "primary": false
+          }
+        ]
+      },
+      "name": "Quinto",
+      "displayName": "Quinto",
+      "genres": [
+        "Urbana",
+        "Rap / Hip-hop",
+        "Pop"
+      ],
+      "territories": [
+        "País Valencià"
+      ],
+      "languages": [
+        "català"
+      ],
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-12",
+      "notes": "Canal Tema compartit amb homònims. Només IDs amb identitat Josep Quinto Mengual i repertori contrastat; no s’importa el catàleg d’Alex Quinto Fernandez / Atlas Club. Vegeu docs/revisions/2026-10-12-tardor-blat-quinto.json"
     }
   ]
 }
