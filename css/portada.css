@@ -8037,3 +8037,11 @@ body.am-full-open {
         scroll-snap-align: start;
     }
 }
+
+/* Descobreix: sota el mapa no hi ha cap graella de cançons (app.js: syncArtistMap() posa .is-discover i
+   skipDiscoverGrid() no la pinta). No hi tornis a posar vídeos sota el mapa. */
+#homePage.is-discover #videosGrid,
+#homePage.is-discover .grid-layout-controls,
+#homePage.is-discover .category-keywords-inline {
+    display: none;
+}

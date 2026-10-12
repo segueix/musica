@@ -8194,6 +8194,7 @@ async function navigateToSearchResults(query) {
     SegueixApp.features.categoryArtists?.hide?.();
     SegueixApp.features.artistMap?.hide?.();
     SegueixApp.features.affinity?.hide?.();
+    homePage?.classList.remove('is-discover');
 
     if (!videosGrid) {
         return;
@@ -8252,8 +8253,11 @@ function bindSearchResults(container) {
 // categoria pròpia hi ha una filera amb els perfils dels artistes que hi pertanyen. A la resta de vistes s'amaga.
 // «Música d'arreu» (artist-map.js): el mapa dels artistes només surt a Descobreix.
 // A Descobreix també hi ha «Per afinitat» (affinity.js), a dalt de tot, en lloc de la cançó destacada.
+// Descobreix no té graella de cançons sota el mapa: `#homePage.is-discover` l'amaga (portada.css) i
+// skipDiscoverGrid() evita pintar-la.
 function syncArtistMap() {
     const discover = selectedCategory === 'Descobreix';
+    homePage?.classList.toggle('is-discover', discover);
     [
         [SegueixApp.features.affinity, document.getElementById('affinitySection')],
         [SegueixApp.features.artistMap, document.getElementById('artistMap')],
@@ -8262,6 +8266,14 @@ function syncArtistMap() {
         if (discover) feature.show(container);
         else feature.hide(container);
     });
+}
+
+// A Descobreix no es pinta cap cançó a la graella (només «Per afinitat» i el mapa). Retorna true si l'ha buidada.
+function skipDiscoverGrid() {
+    if (selectedCategory !== 'Descobreix' || !videosGrid) return false;
+    if (_batchRenderAbort) _batchRenderAbort.aborted = true;
+    videosGrid.innerHTML = '';
+    return true;
 }
 
 function syncCategoryArtists() {
@@ -8319,6 +8331,7 @@ function renderVideos(videos) {
     const featured = getFeaturedVideoForSection(videos, getHeroSectionKey());
     updateHero(featured, 'api');
     syncCategoryArtists();
+    if (skipDiscoverGrid()) return;
 
     const listVideos = featured ? videos.filter(video => String(video.id) !== String(featured.id)) : videos;
 
@@ -12448,6 +12461,7 @@ function renderStaticVideos(videos) {
     const featured = getFeaturedVideoForSection(videos, getHeroSectionKey());
     updateHero(featured, 'static');
     syncCategoryArtists();
+    if (skipDiscoverGrid()) return;
     const listVideos = featured ? videos.filter(video => String(video.id) !== String(featured.id)) : videos;
 
     setupDelegatedVideoCardClicks(videosGrid, 'static');
