@@ -670,6 +670,7 @@
   },
   "validation": {
     "tests": "356 proves superades en 29 fitxers; validació de la base i del document de vigilància superades",
-    "lint": "5 errors i 180 avisos preexistents en JS no modificat"
+    "lint": "5 errors i 180 avisos preexistents en JS no modificat",
+    "manualSnapshot": "El gate de coherència ha detectat el feed anterior al canvi de tipus. S’ha executat scripts/aplicar_revisio_manual_musical.js sense API: 5 canvis de tipus al feed calent i 38 proves del gate superades. Es sincronitza únicament el Topic principal de Franca Masu per reaplicar-ho també a l’arxiu."
   }
 }
