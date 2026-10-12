@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-12T19:29:55.039Z",
+  "generatedAt": "2026-10-12T19:49:52.945Z",
   "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
   "restrictedVideoCount": 21,
@@ -1926,17 +1926,17 @@
       "withClip": 0
     },
     {
-      "id": "UCemRvkxHIe6M0528tlf2Gpw",
-      "name": "Franca Masu",
-      "tracks": 21,
-      "selected": 21,
-      "withClip": 0
-    },
-    {
       "id": "UC6Md27ZZOIr6Qvr1-nC1ARw",
       "name": "Franca Masu",
       "tracks": 1,
       "selected": 1,
+      "withClip": 0
+    },
+    {
+      "id": "UCemRvkxHIe6M0528tlf2Gpw",
+      "name": "Franca Masu",
+      "tracks": 21,
+      "selected": 21,
       "withClip": 0
     },
     {
@@ -3351,7 +3351,7 @@
   "resolvedChannelCount": 553,
   "feedChannelCount": 553,
   "rawPublicVideoCount": 6081,
-  "feedVideoCount": 5556,
+  "feedVideoCount": 5558,
   "acceptedMusicCount": 5517,
   "categoryEligibleVideoCount": 5513,
   "shortVideoCount": 0,
@@ -3362,17 +3362,15 @@
   },
   "contentReviewCount": 529,
   "contentTypeCounts": {
-    "song": 5351,
-    "live_song": 162,
+    "song": 5344,
+    "live_song": 169,
     "album": 4,
     "other": 35,
     "review": 529
   },
   "unresolvedChannelIds": [],
   "channelsWithoutUploads": [],
-  "channelsWithoutVideos": [
-    "UC9zX7R05JQ1P30RGvtjHizQ"
-  ],
+  "channelsWithoutVideos": [],
   "channelsWithoutAcceptedMusic": [],
   "allIndexedChannelsVisible": true,
   "publishedFeedVideoCount": 5549,
