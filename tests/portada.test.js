@@ -87,13 +87,26 @@ const historyOf = ids =>
             .map(v => ({ ...v, viewedAt: new Date(NOW - i * 3600000).toISOString() }))
     );
 
+// La destacada no es pinta com a targeta (només una caràtula del collage): no compta com a fila.
 const idsOfModel = model => [
-    model.featured?.video.id,
     ...(model.fresh?.videos || []).map(v => v.id),
     ...(model.radar?.items || []).map(i => i.video.id),
     ...(model.live?.videos || []).map(v => v.id),
     ...(model.lead?.kind === 'start' ? model.lead.items.map(i => i.id) : []),
 ];
+
+describe('«Acabades de sortir» estable', () => {
+    it('la cançó més nova hi és sempre, encara que sigui la destacada', () => {
+        const newest = [...recent]
+            .filter(v => v.contentType === 'song' && !v.isShort)
+            .sort((a, b) => Date.parse(b.publishedAt) - Date.parse(a.publishedAt))[0];
+        const fresh = portada.buildModel(context());
+        expect(fresh.fresh.videos[0].id).toBe(newest.id);
+        // amb historial la destacada canvia (artista conegut), però la fila no
+        const withHistory = portada.buildModel(context({ history: historyOf(['C5', 'C6']) }));
+        expect(withHistory.fresh.videos.map(v => v.id)).toEqual(fresh.fresh.videos.map(v => v.id));
+    });
+});
 
 describe('model de la portada sense historial (primera visita)', () => {
     const model = portada.buildModel(context());

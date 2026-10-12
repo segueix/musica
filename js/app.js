@@ -6664,8 +6664,11 @@ function renderFeedLegacyImpl() {
     }
 
     // Filtrar vídeos ja vistos dels feeds. «Recomanat per a tu» no: una cançó que t'agrada pot tornar
-    // (el motor de selecció ja aplica descans i rotació); Novetats i les categories continuen ocultant-les.
-    if (!(isRecommendedPage && SegueixApp.features.musicSelection?.isEnabled?.())) {
+    // (el motor de selecció ja aplica descans i rotació). La portada (Inici) tampoc: «Acabades de sortir» és la
+    // llista fixa de les estrenes més recents, encara que ja les hagis escoltat (2026-10-12). Les categories
+    // continuen ocultant-les.
+    const keepWatchedNovetats = selectedCategory === 'Novetats' && Boolean(SegueixApp.features.portada);
+    if (!keepWatchedNovetats && !(isRecommendedPage && SegueixApp.features.musicSelection?.isEnabled?.())) {
         filtered = filterOutWatchedVideos(filtered);
     }
 

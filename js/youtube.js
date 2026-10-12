@@ -1184,7 +1184,11 @@ const YouTubeAPI = {
         console.log(`iuTube: Mostrant ${this.feedVideos.length} vídeos des de ${FEED_URL}`);
         
         // Transformar al format esperat
+        // Es conserven TOTS els camps del feed (originalYear, topicTrack, originalTitle…): sense l'any original, una
+        // reedició pujada fa poc passava per estrena en aquest camí i no a l'altre (loadVideos), i «Acabades de
+        // sortir» canviava segons per on s'havia carregat la portada.
         const videos = this.feedVideos.map(v => ({
+            ...v,
             id: v.id,
             title: v.title,
             thumbnail: v.thumbnail,
