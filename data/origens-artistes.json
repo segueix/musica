@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-12T07:30:06.204Z",
+  "updatedAt": "2026-10-12T07:37:43.184Z",
   "attribution": {
     "text": "Coordenades de referència: GeoNames, via Open-Meteo. CC BY 4.0.",
     "sources": [
@@ -9763,18 +9763,18 @@
     "artist:lladruc": {
       "name": "Lladruc",
       "status": "validated",
-      "relation": "origin",
+      "relation": "associated",
       "placeIds": [
-        "territory:valles"
+        "geonames:3111199"
       ],
       "confidence": "alta",
-      "basis": "El canal oficial descriu el grup com a format el 2023 al Vallès. La presentació pròpia a Linktree confirma Oi! del Vallès; no s’infereix cap municipi.",
+      "basis": "Vinculació amb Sabadell indicada expressament per l’editor el 12 d’octubre de 2026. El grup situa el seu origen general al Vallès; Sabadell s’assigna com a població vinculada.",
       "sources": [
         "https://www.youtube.com/@Lladrucband",
         "https://linktr.ee/lladruc"
       ],
       "reviewedOn": "2026-10-12",
-      "assignmentSource": "manual-review",
+      "assignmentSource": "user-correction",
       "locked": true
     }
   },
