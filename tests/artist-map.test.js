@@ -140,7 +140,9 @@ describe('Música d’arreu: mapa dels artistes', () => {
     it('és a Descobreix, després dels artistes de la categoria', () => {
         expect(html.indexOf('id="artistMap"')).toBeGreaterThan(html.indexOf('id="categoryArtists"'));
         expect(html.indexOf('js/features/artist-map.js')).toBeLessThan(html.indexOf('js/app.js'));
-        expect(app).toMatch(/selectedCategory === 'Descobreix'\) feature\.show\(container\)/);
+        expect(app).toMatch(
+            /const discover = selectedCategory === 'Descobreix';[\s\S]*?if \(discover\) feature\.show\(container\)/
+        );
         expect(css).toContain('.am-dot .am-mark');
     });
 
@@ -170,6 +172,12 @@ describe('Música d’arreu: mapa dels artistes', () => {
         expect(feature.zoneModel(model.points, [[0, 0]])).toBeNull();
         const html = feature.zonePanelHtml(zone);
         expect(html).toContain('data-am-zone-play');
+        // Esborrar és la goma de sobre el mapa, no un botó del lateral
+        expect(html).not.toContain('Esborra la zona');
+        const withZone = feature.html(base, model, { zone });
+        expect(withZone).toMatch(/data-am-clear[^>]*aria-label="Esborra la selecció"/);
+        expect(withZone).not.toMatch(/data-am-clear[^>]*hidden/);
+        expect(feature.html(base, model)).toMatch(/data-am-clear[^>]*hidden/);
         expect(html).toContain('La teva zona');
     });
 

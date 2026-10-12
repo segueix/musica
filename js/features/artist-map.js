@@ -246,6 +246,7 @@
     const ICON = {
         full: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
         close: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
+        erase: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m7 21-4.3-4.3a1 1 0 0 1 0-1.4l10-10a1 1 0 0 1 1.4 0l5.6 5.6a1 1 0 0 1 0 1.4L12 20.1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 21h14M5.5 12.5l6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
         draw: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 14c-1.5 2.5.5 5 3.5 4.5 2.5-.4 2.7-3 5.2-3.4 2.3-.4 3.8 1.1 5.3 2.9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="m13.5 4.5 4 4L10 16l-4.5 1 1-4.5 7-8Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>',
         play: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 5.5v13l11-6.5-11-6.5Z" fill="currentColor"/></svg>',
     };
@@ -307,8 +308,7 @@
         if (!zone?.artists.length) return panelHtml(null);
         return `<div class="am-panel__head"><div><p class="am-panel__eyebrow">La teva zona</p><h3>${esc(zone.name)}</h3>
                 <p>${placesLabel(zone.places.length)} · ${artistsLabel(zone.artists.length)}</p></div>
-                <div class="am-panel__actions"><button type="button" class="am-radio" data-am-zone-play>${ICON.play}<span>Escolta la zona</span></button>
-                <button type="button" class="am-ghost" data-am-zone-clear>Esborra la zona</button></div></div>
+                <div class="am-panel__actions"><button type="button" class="am-radio" data-am-zone-play>${ICON.play}<span>Escolta la zona</span></button></div></div>
             <ul class="am-artists">${artistItems(zone.artists, true)}</ul>`;
     }
 
@@ -370,6 +370,7 @@
                 <div class="am-stage">
                     ${mapSvg(base, model, selectedId, zone)}
                     <div class="am-tools">
+                        <button type="button" class="am-tool am-tool--erase" data-am-clear aria-label="Esborra la selecció" title="Esborra la selecció"${zone || selectedId ? '' : ' hidden'}>${ICON.erase}</button>
                         <button type="button" class="am-tool am-tool--draw" data-am-draw aria-pressed="false">${ICON.draw}<span>Dibuixa una zona</span></button>
                         <button type="button" class="am-tool am-tool--full" data-am-full aria-label="Mapa a pantalla completa"><span class="am-ico-full">${ICON.full}</span><span class="am-ico-close">${ICON.close}</span></button>
                     </div>
@@ -488,6 +489,9 @@
         document.body.classList.toggle('am-full-open', state.full);
         const draw = container.querySelector('[data-am-draw]');
         if (draw) draw.setAttribute('aria-pressed', String(state.drawing));
+        // La goma només surt quan hi ha alguna cosa triada (una zona dibuixada o un lloc)
+        const erase = container.querySelector('[data-am-clear]');
+        if (erase) erase.hidden = !(state.zone || state.selectedId);
         const full = container.querySelector('[data-am-full]');
         if (full)
             full.setAttribute('aria-label', state.full ? 'Tanca la pantalla completa' : 'Mapa a pantalla completa');
@@ -538,6 +542,7 @@
         if (panel)
             panel.innerHTML = point ? panelHtml(point) : state.zone ? zonePanelHtml(state.zone) : panelHtml(null);
         if (point && focusPanel && !state.full) panel?.scrollIntoView?.({ block: 'nearest', behavior: 'smooth' });
+        syncModes();
     }
 
     function openRadio(placeId) {
@@ -605,14 +610,20 @@
         if (lasso) lasso.setAttribute('d', polygonPath(zone.polygon));
         const panel = state.container.querySelector('.am-panel');
         if (panel) panel.innerHTML = zonePanelHtml(zone);
+        syncModes();
     }
 
-    function clearZone() {
+    // La goma: treu la zona dibuixada i el lloc triat
+    function clearSelection() {
         state.zone = null;
-        state.container.querySelectorAll('.am-dot.is-in-zone').forEach(dot => dot.classList.remove('is-in-zone'));
+        state.selectedId = '';
+        state.container
+            .querySelectorAll('.am-dot.is-in-zone, .am-dot.is-active')
+            .forEach(dot => dot.classList.remove('is-in-zone', 'is-active'));
         state.container.querySelector('.am-lasso')?.setAttribute('d', '');
         const panel = state.container.querySelector('.am-panel');
         if (panel) panel.innerHTML = panelHtml(null);
+        syncModes();
     }
 
     // Traç a mà alçada: punts de l'SVG; en acabar es tanca i es busquen els artistes de dins
@@ -690,7 +701,7 @@
         if (target.closest?.('[data-am-full]')) return setFull(!state.full);
         if (target.closest?.('[data-am-draw]')) return setDrawing(!state.drawing);
         if (target.closest?.('[data-am-zone-play]')) return state.zone && startZoneRadio(state.zone);
-        if (target.closest?.('[data-am-zone-clear]')) return clearZone();
+        if (target.closest?.('[data-am-clear]')) return clearSelection();
         const style = target.closest?.('[data-am-style]');
         if (style) {
             state.style = style.dataset.amStyle || '';
