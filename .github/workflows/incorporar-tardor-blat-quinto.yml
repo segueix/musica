@@ -32,7 +32,7 @@ jobs:
           node scripts/revisions/incorporar_tardor_blat_quinto.js
           node scripts/documentar_vigilancia_idiomes.js
           node scripts/purgar_canals_feed.js
-          node scripts/aplicar_revisio_manual_musical.js
+          node scripts/aplicar_revisio_manual_musical.js > /tmp/manual-before.log
           npm run music:validate
       - name: Prova les exclusions i el tipus de gravació
         run: |
@@ -61,7 +61,7 @@ jobs:
         run: |
           test -n "$MUSIC_TARGET_CHANNELS"
           node scripts/update_music_feed.js
-          node scripts/aplicar_revisio_manual_musical.js
+          node scripts/aplicar_revisio_manual_musical.js > /tmp/manual-after.log
       - name: Regenera historial, cerca i pàgines compartides
         run: |
           node scripts/archivar_feed_musical.js
@@ -69,9 +69,9 @@ jobs:
           node scripts/generar_pagines_compartir.js
           node scripts/documentar_vigilancia_idiomes.js
           node scripts/documentar_vigilancia_idiomes.js --check
-      - name: Executa totes les proves
+      - name: Executa totes les proves i contrasta qualsevol fallada amb HEAD
         run: |
-          npx vitest run --reporter=json --outputFile=/tmp/tardor-blat-quinto-tests.json
+          node scripts/revisions/provar_altes_musicals.js
       - name: Comprova el resultat publicable i preserva la resta del catàleg
         run: |
           node scripts/revisions/incorporar_tardor_blat_quinto.js --verify
@@ -83,14 +83,25 @@ jobs:
           const after=read('js/channels-ca.json').channels;
           const current=new Set(after.map(c=>c.id));
           for(const c of before) if(c.id!=='UC9zX7R05JQ1P30RGvtjHizQ') assert(current.has(c.id),'S’ha perdut un canal aliè a aquestes altes: '+c.id);
-          const tests=read('/tmp/tardor-blat-quinto-tests.json');
-          assert.equal(tests.numFailedTests,0);
+          const tests=read('/tmp/tardor-blat-quinto-validation.json');
+          assert.equal(tests.regressions,0);
           const p='docs/revisions/2026-10-12-tardor-blat-quinto.json';
           const r=read(p);
-          r.validation={passedTests:tests.numPassedTests,totalTests:tests.numTotalTests,failedTests:tests.numFailedTests,artistBase:'passed',languageWatchDocument:'passed',previousChannelsPreserved:true,channelsBefore:before.length,channelsAfter:after.length};
+          r.validation={...tests,artistBase:'passed',languageWatchDocument:'passed',previousChannelsPreserved:true,channelsBefore:before.length,channelsAfter:after.length};
           fs.writeFileSync(p,JSON.stringify(r,null,2)+'\n');
-          fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,'## Alta musical\n\n'+r.artists.map(a=>a.name+' — '+a.origin+': '+a.recordingsPublished+' enregistraments.').join('\n\n')+'\n\nProves superades: '+tests.numPassedTests+'.\n');
+          fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,'## Alta musical\n\n'+r.artists.map(a=>a.name+' — '+a.origin+': '+a.recordingsPublished+' enregistraments.').join('\n\n')+'\n\nProves superades: '+tests.passedTests+'. Fallades preexistents: '+tests.failedTests+'. Regressions: 0.\n');
           NODE
       - name: Publica les altes i tots els derivats junts
         run: |
           bash scripts/publicar_dades.sh 'feat: indexa Tardor, Àlex Blat i Quinto amb repertori català verificat' data js/channels-ca.json compartir docs/ARTISTES_VIGILATS_IDIOMA.md docs/revisions/2026-10-12-tardor-blat-quinto.json
+      - name: Conserva el diagnòstic si alguna prova falla
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: diagnostic-altes-musicals
+          path: |
+            /tmp/tardor-blat-quinto-tests.json
+            /tmp/tardor-blat-quinto-baseline-tests.json
+            /tmp/tardor-blat-quinto-validation.json
+            docs/revisions/2026-10-12-tardor-blat-quinto.json
+          retention-days: 1
