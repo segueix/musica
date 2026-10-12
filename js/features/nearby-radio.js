@@ -351,6 +351,15 @@
         if (state.dialog?.open && state.origin === place) status(`Ràdio compartida: artistes de prop de ${place.name}. Prem «Engega la ràdio» per escoltar-la.`);
         return true;
     }
+    // Obre la ràdio d'un lloc del mapa «Música d'arreu» (no es desa com a zona de l'usuari).
+    async function openPlace(point) {
+        const place = { name: String(point?.name || ''), territory: String(point?.territory || ''), coordinates: point?.coordinates, shared: true };
+        if (!place.name || !validPoint(place.coordinates)) return false;
+        state.origin = place; state.offset = 0;
+        await open(null);
+        if (state.dialog?.open && state.origin === place) status(`Artistes de prop de ${place.name}. Prem «Engega la ràdio» per escoltar-la.`);
+        return true;
+    }
     function cardArtHtml(saved) {
         const rows = saved && state.card?.place === saved.name && state.card?.type === currentType() ? state.card.rows : null;
         if (!rows?.length) {
@@ -419,5 +428,5 @@
         const button = event.target.closest?.('[data-near-open]');
         if (button) open(button, button.dataset.nearOpen || '');
     });
-    app.features.nearbyRadio = { distance, artistLocation, buildRows, remotePlace, rankByType, TYPES, cardHtml, open, quickPlay, share, openShared, placeFromPayload };
+    app.features.nearbyRadio = { distance, artistLocation, buildRows, remotePlace, rankByType, TYPES, cardHtml, open, quickPlay, share, openShared, openPlace, placeFromPayload };
 })(window);

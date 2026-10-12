@@ -6734,6 +6734,7 @@ function renderFeedLegacyImpl() {
         featuredVideoBySection.delete(getHeroSectionKey());
         updateHero(null);
         SegueixApp.features.categoryArtists?.hide?.();
+        syncArtistMap();
         if (videosGrid) {
             if (selectedCategory === 'Radar') {
                 videosGrid.innerHTML = `
@@ -8188,6 +8189,7 @@ async function navigateToSearchResults(query) {
     featuredVideoBySection.delete(getHeroSectionKey());
     updateHero(null);
     SegueixApp.features.categoryArtists?.hide?.();
+    SegueixApp.features.artistMap?.hide?.();
 
     if (!videosGrid) {
         return;
@@ -8244,7 +8246,17 @@ function bindSearchResults(container) {
 
 // Artistes de la categoria (js/features/category-artists.js): sota la cançó destacada d'un estil (Pop, Rock…) o d'una
 // categoria pròpia hi ha una filera amb els perfils dels artistes que hi pertanyen. A la resta de vistes s'amaga.
+// «Música d'arreu» (artist-map.js): el mapa dels artistes només surt a Descobreix.
+function syncArtistMap() {
+    const feature = SegueixApp.features.artistMap;
+    const container = document.getElementById('artistMap');
+    if (!feature || !container) return;
+    if (selectedCategory === 'Descobreix') feature.show(container);
+    else feature.hide(container);
+}
+
 function syncCategoryArtists() {
+    syncArtistMap();
     const feature = SegueixApp.features.categoryArtists;
     if (!feature) return;
     const category = normalizeCustomTag(selectedCategory);
