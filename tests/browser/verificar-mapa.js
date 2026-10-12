@@ -8,6 +8,8 @@
 //
 // Comprova, a mòbil (390 px) i ordinador (1280 px): el mapa surt a Descobreix i no a Inici, té punts, tocar-ne un
 // mostra els artistes al panell, el zoom canvia el viewBox, la pàgina no es desborda i tocar un artista obre la fitxa.
+// Gestos: mòbil, pessic amb dos dits (CDP), pantalla completa i un dit que mou el mapa, i dibuixar una zona amb el
+// dit engega la ràdio de la zona; ordinador, arrossegar amb el ratolí, roda amunt/avall amb zoom i Ctrl + roda.
 
 const http = require('http');
 const fs = require('fs');
@@ -139,11 +141,156 @@ async function check(browser, width, height, tag) {
     await ctx.close();
 }
 
+const viewBox = page => page.getAttribute('#artistMap .am-svg', 'viewBox');
+const touch = (cdp, type, points) =>
+    cdp.send('Input.dispatchTouchEvent', { type, touchPoints: points.map(([x, y], id) => ({ x, y, id })) });
+async function svgCenter(page) {
+    const box = await page.locator('#artistMap .am-svg').boundingBox();
+    return { x: box.x + box.width / 2, y: box.y + box.height / 2, box };
+}
+
+async function mobileGestures(browser) {
+    const { ctx, page, errors } = await open(browser, 390, 844);
+    const cdp = await ctx.newCDPSession(page);
+    await page.locator('#artistMap .am-stage').scrollIntoViewIfNeeded();
+    let c = await svgCenter(page);
+    const before = await viewBox(page);
+    // Pessic amb dos dits: els dits s'allunyen
+    await touch(cdp, 'touchStart', [
+        [c.x - 20, c.y],
+        [c.x + 20, c.y],
+    ]);
+    for (let i = 1; i <= 8; i++)
+        await touch(cdp, 'touchMove', [
+            [c.x - 20 - i * 10, c.y],
+            [c.x + 20 + i * 10, c.y],
+        ]);
+    await touch(cdp, 'touchEnd', []);
+    const pinched = await viewBox(page);
+    ok('mòbil: el pessic apropa el mapa', Number(pinched.split(' ')[2]) < Number(before.split(' ')[2]), [
+        before,
+        pinched,
+    ]);
+    // Dos dits cap amunt: el mapa es mou
+    await touch(cdp, 'touchStart', [
+        [c.x - 30, c.y + 60],
+        [c.x + 30, c.y + 60],
+    ]);
+    for (let i = 1; i <= 6; i++)
+        await touch(cdp, 'touchMove', [
+            [c.x - 30, c.y + 60 - i * 15],
+            [c.x + 30, c.y + 60 - i * 15],
+        ]);
+    await touch(cdp, 'touchEnd', []);
+    const moved = await viewBox(page);
+    ok('mòbil: dos dits mouen el mapa', moved.split(' ')[1] !== pinched.split(' ')[1], [pinched, moved]);
+    // Pantalla completa (amb el mapa sencer, per a la captura)
+    await page.click('[data-am-zoom="0"]');
+    await page.click('[data-am-full]');
+    await page.waitForTimeout(200);
+    const full = await page.evaluate(() => {
+        const r = document.getElementById('artistMap').getBoundingClientRect();
+        return { cls: document.getElementById('artistMap').className, w: r.width, h: r.height, top: r.top };
+    });
+    ok(
+        'mòbil: pantalla completa',
+        /is-full/.test(full.cls) && full.w === 390 && full.h === 844 && full.top === 0,
+        full
+    );
+    c = await svgCenter(page);
+    if (OUT) await page.screenshot({ path: path.join(OUT, 'mapa-mobil-complet.png') });
+    await page.click('[data-am-zoom="1"]');
+    const fullBefore = await viewBox(page);
+    await touch(cdp, 'touchStart', [[c.x, c.y]]);
+    for (let i = 1; i <= 6; i++) await touch(cdp, 'touchMove', [[c.x + i * 12, c.y + i * 12]]);
+    await touch(cdp, 'touchEnd', []);
+    ok('mòbil: a pantalla completa un dit mou el mapa', (await viewBox(page)) !== fullBefore);
+    // Mapa sencer i dibuix d'una zona al voltant de Barcelona
+    await page.click('[data-am-zoom="0"]');
+    await page.click('[data-am-draw]');
+    ok('mòbil: mode dibuix', (await page.getAttribute('[data-am-draw]', 'aria-pressed')) === 'true');
+    if (OUT) await page.screenshot({ path: path.join(OUT, 'mapa-mobil-dibuix.png') });
+    const bcn = await page.evaluate(() => {
+        const dot = document.querySelector('#artistMap .am-dot[aria-label^="Barcelona:"] .am-mark');
+        const r = dot.getBoundingClientRect();
+        return { x: r.left + r.width / 2, y: r.top + r.height / 2 };
+    });
+    const ring = [];
+    for (let a = 0; a <= 360; a += 15)
+        ring.push([bcn.x + 40 * Math.cos((a * Math.PI) / 180), bcn.y + 40 * Math.sin((a * Math.PI) / 180)]);
+    await touch(cdp, 'touchStart', [ring[0]]);
+    for (const p of ring.slice(1)) await touch(cdp, 'touchMove', [p]);
+    if (OUT) await page.screenshot({ path: path.join(OUT, 'mapa-mobil-zona.png') });
+    await touch(cdp, 'touchEnd', []);
+    await page.waitForTimeout(1500);
+    const radio = await page.evaluate(() => ({
+        name: window.SegueixApp.features.musicQueue?.playlistName?.(),
+        full: document.getElementById('artistMap').classList.contains('is-full'),
+    }));
+    ok(
+        'mòbil: dibuixar una zona engega la seva ràdio',
+        /^Ràdio Barcelona/.test(radio.name || '') && !radio.full,
+        radio
+    );
+    // Engegar qualsevol ràdio aquí (YouTube bloquejat) dona aquest error de l'iframe buit: no és del mapa
+    const own = errors.filter(message => !/localStorage.*Access is denied/.test(message));
+    ok('mòbil (gestos): sense errors', own.length === 0, own);
+    await ctx.close();
+}
+
+async function desktopGestures(browser) {
+    const { ctx, page, errors } = await open(browser, 1280, 900);
+    await page.locator('#artistMap .am-stage').scrollIntoViewIfNeeded();
+    const c = await svgCenter(page);
+    const before = await viewBox(page);
+    await page.mouse.move(c.x, c.y);
+    await page.keyboard.down('Control');
+    await page.mouse.wheel(0, -300);
+    await page.keyboard.up('Control');
+    await page.waitForTimeout(100);
+    const zoomed = await viewBox(page);
+    ok('ordinador: Ctrl + roda apropa', Number(zoomed.split(' ')[2]) < Number(before.split(' ')[2]), [before, zoomed]);
+    await page.mouse.move(c.x, c.y);
+    await page.mouse.down();
+    await page.mouse.move(c.x + 60, c.y + 80, { steps: 6 });
+    await page.mouse.up();
+    const dragged = await viewBox(page);
+    ok('ordinador: arrossegar amb el ratolí mou el mapa', dragged !== zoomed, [zoomed, dragged]);
+    const scrollY = await page.evaluate(() => window.scrollY);
+    await page.mouse.wheel(0, 200);
+    await page.waitForTimeout(100);
+    const wheeled = await viewBox(page);
+    ok('ordinador: la roda mou el mapa amunt i avall', wheeled.split(' ')[1] !== dragged.split(' ')[1], [
+        dragged,
+        wheeled,
+    ]);
+    ok('ordinador: i no fa scroll de la pàgina', (await page.evaluate(() => window.scrollY)) === scrollY);
+    await page.click('[data-am-zoom="0"]');
+    await page.click('[data-am-full]');
+    await page.waitForTimeout(200);
+    await page.evaluate(() =>
+        document
+            .querySelector('#artistMap .am-dot[aria-label^="Girona:"]')
+            ?.dispatchEvent(new MouseEvent('click', { bubbles: true }))
+    );
+    await page.waitForTimeout(200);
+    if (OUT) await page.screenshot({ path: path.join(OUT, 'mapa-ordinador-complet.png') });
+    await page.keyboard.press('Escape');
+    ok(
+        'ordinador: Esc tanca la pantalla completa',
+        !(await page.getAttribute('#artistMap', 'class')).includes('is-full')
+    );
+    ok('ordinador (gestos): sense errors', errors.length === 0, errors);
+    await ctx.close();
+}
+
 server.listen(PORT, async () => {
     const browser = await chromium.launch({ executablePath: CHROMIUM_PATH });
     try {
         await check(browser, 390, 844, 'mobil');
         await check(browser, 1280, 900, 'ordinador');
+        await mobileGestures(browser);
+        await desktopGestures(browser);
     } finally {
         await browser.close();
         server.close();

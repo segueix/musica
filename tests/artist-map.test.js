@@ -141,6 +141,70 @@ describe('Música d’arreu: mapa dels artistes', () => {
         expect(html.indexOf('id="artistMap"')).toBeGreaterThan(html.indexOf('id="categoryArtists"'));
         expect(html.indexOf('js/features/artist-map.js')).toBeLessThan(html.indexOf('js/app.js'));
         expect(app).toMatch(/selectedCategory === 'Descobreix'\) feature\.show\(container\)/);
-        expect(css).toContain('.am-dot circle');
+        expect(css).toContain('.am-dot .am-mark');
+    });
+
+    it('dibuixar una zona: troba els llocs de dins i els artistes sense repetir', () => {
+        const square = [
+            [0, 0],
+            [10, 0],
+            [10, 10],
+            [0, 10],
+        ];
+        expect(feature.pointInPolygon([5, 5], square)).toBe(true);
+        expect(feature.pointInPolygon([15, 5], square)).toBe(false);
+        const model = feature.buildModel({ base, catalog, references, groups });
+        const vic = model.points.find(p => p.id === 'vic');
+        const around = [
+            [vic.x - 20, vic.y - 20],
+            [vic.x + 20, vic.y - 20],
+            [vic.x + 20, vic.y + 20],
+            [vic.x - 20, vic.y + 20],
+        ];
+        const zone = feature.zoneModel(model.points, around);
+        // Vic i la comarca (aproximada a Vic) queden dins; Bernat només un cop
+        expect(zone.places.map(p => p.id).sort()).toEqual(['osona', 'vic']);
+        expect(zone.artists.map(a => a.name)).toEqual(['Amagat', 'Antònia', 'Bernat', 'Dídac']);
+        expect(zone.channelIds.sort()).toEqual(['ca', 'cb', 'cd', 'cf']);
+        expect(zone.name).toMatch(/i voltants$/);
+        expect(feature.zoneModel(model.points, [[0, 0]])).toBeNull();
+        const html = feature.zonePanelHtml(zone);
+        expect(html).toContain('data-am-zone-play');
+        expect(html).toContain('La teva zona');
+    });
+
+    it('la ràdio d’una zona agafa les cançons més escoltades de cada artista', () => {
+        const videos = [
+            { id: '1', channelId: 'ca', viewCount: 10 },
+            { id: '2', channelId: 'ca', viewCount: 300 },
+            { id: '3', channelId: 'ca', viewCount: 50 },
+            { id: '4', channelId: 'cb', viewCount: 5 },
+            { id: '5', channelId: 'zz', viewCount: 999 },
+            { id: '2', channelId: 'ca', viewCount: 300 },
+        ];
+        expect(feature.zoneSongs(videos, ['ca', 'cb'], 2).map(v => v.id)).toEqual(['2', '3', '4']);
+    });
+
+    it('zoom i desplaçament: el punt de sota el dit no es mou i no se surt del mapa', () => {
+        const box = base.viewBox;
+        const rect = { left: 0, top: 0, width: 500, height: 500 * (box[3] / box[2]) };
+        const view = [...box];
+        const point = feature.clientToSvg(view, rect, 200, 300);
+        const zoomed = feature.viewKeeping(point, rect, 200, 300, box[2] / 2, box);
+        const again = feature.clientToSvg(zoomed, rect, 200, 300);
+        expect(again[0]).toBeCloseTo(point[0], 6);
+        expect(again[1]).toBeCloseTo(point[1], 6);
+        expect(feature.clampView([-500, -500, box[2] / 2], box).slice(0, 2)).toEqual([0, 0]);
+        expect(feature.clampView([0, 0, box[2] * 3], box)[2]).toBe(box[2]);
+        expect(feature.clampView([0, 0, 1], box)[2]).toBeCloseTo(box[2] / 6, 6);
+    });
+
+    it('té pantalla completa, mode dibuix i gestos de dos dits', () => {
+        const out = feature.html(base, feature.buildModel({ base, catalog, references, groups }));
+        expect(out).toContain('data-am-full');
+        expect(out).toContain('data-am-draw');
+        expect(out).toContain('class="am-lasso"');
+        expect(css).toMatch(/\.artist-map\.is-full \{[^}]*position: fixed/);
+        expect(css).toMatch(/\.artist-map\.is-drawing \.am-svg \{[^}]*touch-action: none/);
     });
 });
