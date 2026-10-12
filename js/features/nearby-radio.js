@@ -68,8 +68,10 @@
             const [catalog, references] = await Promise.all([json('data/origens-artistes.json'), json('data/proximitat-musical.json')]);
             state.catalog = catalog; state.references = references;
         }
-        const history = await window.YouTubeAPI.ensureStyleHistory();
-        const pool = window.YouTubeAPI.filterHiddenVideos([...(window.YouTubeAPI.feedVideos || []), ...(history || [])]);
+        // youtube.js declara un const global lexical, no una propietat de window.
+        const youtube = typeof YouTubeAPI !== 'undefined' ? YouTubeAPI : window.YouTubeAPI;
+        const history = await youtube.ensureStyleHistory();
+        const pool = youtube.filterHiddenVideos([...(youtube.feedVideos || []), ...(history || [])]);
         state.videos = app.features.musicQueue.nearbyPool(pool);
     }
     function localPlaces(query) {

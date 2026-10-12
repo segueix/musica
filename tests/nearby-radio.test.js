@@ -75,3 +75,13 @@ it('el reproductor conserva els 20 artistes i no els barreja en actualitzar gust
  expect(ctx.activePlaylistQueue.map(v => v.id)).toEqual(songs.map(v => v.id));
  expect(queue.playlistName()).toBe('A prop teu · la Garriga');
 });
+it('carrega el catàleg amb YouTubeAPI lexical encara que no existeixi a window', async () => {
+ const { runInNewContext } = await import('node:vm');
+ const source = readFileSync('js/features/nearby-radio.js', 'utf8');
+ const start = source.indexOf('    async function load()');
+ const code = source.slice(start, source.indexOf('    function localPlaces', start));
+ const ctx = { window: {}, state: { catalog: {}, videos: [] }, app: { features: { musicQueue: { nearbyPool: list => list.filter(v => v.id !== 'blocked') } } } };
+ runInNewContext(`const YouTubeAPI = { feedVideos: [{id:'hot'}, {id:'hidden'}], ensureStyleHistory: async () => [{id:'archive'}, {id:'blocked'}], filterHiddenVideos: list => list.filter(v => v.id !== 'hidden') };\n${code}`, ctx);
+ await ctx.load();
+ expect(ctx.state.videos.map(v => v.id)).toEqual(['hot', 'archive']);
+});
