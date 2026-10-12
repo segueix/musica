@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-12T19:24:00.061702Z",
+  "updatedAt": "2026-10-12T19:36:10.282987Z",
   "description": "Llista blanca per a canals on Segueix Música només ha d'ingerir vídeos concrets. Admet títols exactes, fragments obligatoris i fragments exclosos.",
   "channels": {
     "UCKpscwdWlVaMqcA81vLI7OA": {
@@ -5104,7 +5104,7 @@
     },
     "UCC8QalNBRaG59H4QEwJjwJg": {
       "artist": "Lo Maquini",
-      "note": "Canal propi verificat; no s’ha localitzat cap Tema inequívoc. Sis interpretacions musicals en alguerès (CantAlguer i Festa de les Maries), inclosa És un amic. No s’incorpora l’entrevista EYSCj1NXI-g.",
+      "note": "Canal propi verificat; no s’ha localitzat cap Tema inequívoc. Sis interpretacions musicals en alguerès (CantAlguer i Festa de les Maries), inclosa És un amic. No s’incorpora l’entrevista EYSCj1NXI-g. La versió de Pels anys que no hem viscut es conserva com a cançó/cover; la resta són interpretacions de concerts.",
       "allowedVideoIds": [
         "IfsTvOn0Fig",
         "PmxeA9hki8c",
@@ -5122,7 +5122,7 @@
     },
     "UCemRvkxHIe6M0528tlf2Gpw": {
       "artist": "Franca Masu",
-      "note": "Prioritat a dos canals Topic verificats. Selecció catalana: les 10 pistes d’Alguímia, 11 de 10 Anys (sense Aquamare ni Astrolicamus) i Desde Mallorca a l’Alguer de CORDEMAR. Les altres peces dels canals no s’importen.",
+      "note": "Prioritat a dos canals Topic verificats. Selecció catalana: les 10 pistes d’Alguímia, 11 de 10 Anys (sense Aquamare ni Astrolicamus) i Desde Mallorca a l’Alguer de CORDEMAR. Les altres peces dels canals no s’importen. Les pistes de 10 Anys es classifiquen com a gravacions en directe.",
       "allowedVideoIds": [
         "D0VDonarLT8",
         "-4xh_G7Uygc",
@@ -5185,7 +5185,7 @@
     },
     "UCRK-i4JVJi6CwcPZ1BjaLQw": {
       "artist": "Grup Coral de l'Agrupació Catalana d'Itàlia",
-      "note": "Canal Topic verificat, prioritzat. Només el repertori històric del grup coral recollit a Lo País Meu (Cançons de l’Alguer, 50 Anys). Les dues pistes finals acreditades a Lluciana Sari sola no s’atribueixen al grup. L’EP complet pujat a vinilissim no es presenta com una cançó individual.",
+      "note": "Canal Topic verificat, prioritzat. Només el repertori històric del grup coral recollit a Lo País Meu (Cançons de l’Alguer, 50 Anys). Les dues pistes finals acreditades a Lluciana Sari sola no s’atribueixen al grup. L’EP complet pujat a vinilissim no es presenta com una cançó individual. Les 11 pistes del Topic s’han recuperat i comprovat amb l’API oficial de YouTube; selecció fixa per ID.",
       "allowedTitles": [
         "Lo País Meu",
         "La Verema",
@@ -5204,7 +5204,20 @@
       "allowedContentTypes": [
         "song"
       ],
-      "avatarFromFirstAllowedVideo": true
+      "avatarFromFirstAllowedVideo": true,
+      "allowedVideoIds": [
+        "eK0YLO5hFWo",
+        "Z2RPDhUjsf8",
+        "eArRZ3-80FI",
+        "q3moUzG6wG8",
+        "yZADFxUYC-U",
+        "FS3VauMzLxs",
+        "9ugTsPpmdMY",
+        "WbOazfE--po",
+        "GqMTlxK5GH4",
+        "wmSpfCWTy8A",
+        "EoSV7Ks4ej0"
+      ]
     },
     "UCF0A3xfKG43O6CfPb6cXI5A": {
       "artist": "Antonello Colledanchise",

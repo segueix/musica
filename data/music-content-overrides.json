@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-12T19:24:00.061702Z",
+  "updatedAt": "2026-10-12T19:36:10.282987Z",
   "description": "Decisions manuals sobre el tipus de contingut de vídeos concrets. Manen sobre el classificador automàtic (scripts/lib/classificar_contingut_musical.js) i el pipeline (scripts/update_music_feed.js) les reaplica a cada generació del feed. Tipus permesos: song, live_song, album, other. Un vídeo revisat aquí surt de data/music-content-review.json.",
   "videos": [
     {
@@ -7660,7 +7660,7 @@
     },
     {
       "id": "PmxeA9hki8c",
-      "contentType": "live_song",
+      "contentType": "song",
       "title": "Lo Maquini - Pels anys que no hem viscut (cover de PAU VALLVÉ)",
       "note": "Selecció editorial algueresa 2026-10-12; gravació i intèrpret comprovats al publicador."
     },
@@ -7759,6 +7759,72 @@
       "contentType": "live_song",
       "title": "Com se'n vola lo temps (1991). Antonello Colledanchise",
       "note": "Selecció editorial algueresa 2026-10-12; gravació i intèrpret comprovats al publicador."
+    },
+    {
+      "id": "D0VDonarLT8",
+      "contentType": "live_song",
+      "title": "Cor Meu",
+      "note": "Franca Masu, 10 Anys: gravacions en directe entre 2001 i 2010 documentades a https://www.enderrock.cat/folksons/disc/783/anys"
+    },
+    {
+      "id": "-4xh_G7Uygc",
+      "contentType": "live_song",
+      "title": "L'adéu",
+      "note": "Franca Masu, 10 Anys: gravacions en directe entre 2001 i 2010 documentades a https://www.enderrock.cat/folksons/disc/783/anys"
+    },
+    {
+      "id": "gXYxFKMsUZk",
+      "contentType": "live_song",
+      "title": "Passa Jesucrist",
+      "note": "Franca Masu, 10 Anys: gravacions en directe entre 2001 i 2010 documentades a https://www.enderrock.cat/folksons/disc/783/anys"
+    },
+    {
+      "id": "gl7nKZjm-Xs",
+      "contentType": "live_song",
+      "title": "Tria La Vida",
+      "note": "Franca Masu, 10 Anys: gravacions en directe entre 2001 i 2010 documentades a https://www.enderrock.cat/folksons/disc/783/anys"
+    },
+    {
+      "id": "WKPoK7eIklw",
+      "contentType": "live_song",
+      "title": "Núvol Blau",
+      "note": "Franca Masu, 10 Anys: gravacions en directe entre 2001 i 2010 documentades a https://www.enderrock.cat/folksons/disc/783/anys"
+    },
+    {
+      "id": "NrU-X1Pg4k8",
+      "contentType": "live_song",
+      "title": "Ave Maria",
+      "note": "Franca Masu, 10 Anys: gravacions en directe entre 2001 i 2010 documentades a https://www.enderrock.cat/folksons/disc/783/anys"
+    },
+    {
+      "id": "BYBuki1lfs0",
+      "contentType": "live_song",
+      "title": "Amargantango",
+      "note": "Franca Masu, 10 Anys: gravacions en directe entre 2001 i 2010 documentades a https://www.enderrock.cat/folksons/disc/783/anys"
+    },
+    {
+      "id": "Ez-0Y9CCLgs",
+      "contentType": "live_song",
+      "title": "Quedar-Me Sola",
+      "note": "Franca Masu, 10 Anys: gravacions en directe entre 2001 i 2010 documentades a https://www.enderrock.cat/folksons/disc/783/anys"
+    },
+    {
+      "id": "CD_MwDGx9HE",
+      "contentType": "live_song",
+      "title": "Mirant Estrelles",
+      "note": "Franca Masu, 10 Anys: gravacions en directe entre 2001 i 2010 documentades a https://www.enderrock.cat/folksons/disc/783/anys"
+    },
+    {
+      "id": "Ungl49uC4XY",
+      "contentType": "live_song",
+      "title": "Lo Nassaiolo",
+      "note": "Franca Masu, 10 Anys: gravacions en directe entre 2001 i 2010 documentades a https://www.enderrock.cat/folksons/disc/783/anys"
+    },
+    {
+      "id": "bOfxkDHMIFI",
+      "contentType": "live_song",
+      "title": "No Res",
+      "note": "Franca Masu, 10 Anys: gravacions en directe entre 2001 i 2010 documentades a https://www.enderrock.cat/folksons/disc/783/anys"
     }
   ]
 }
