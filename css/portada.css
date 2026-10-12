@@ -6457,6 +6457,9 @@ body.is-video-pip .video-placeholder.is-placeholder-hidden {
 }
 
 @media (max-width: 768px) {
+    /* La lletra es mesura amb l'espai real de la marca (100cqi = ample de .brand), no amb rem: amb la lletra
+       gran de la configuració o del mòbil, «Música» quedava retallat. «Segueix! Música» fa ~7,6 em d'ample
+       (Roboto + Fraunces) i «EN CATALÀ» ~7,2 em; 40 px són el logo i el seu marge. */
     .app-header .brand {
         container-type: inline-size;
         gap: 0;
@@ -6464,49 +6467,20 @@ body.is-video-pip .video-placeholder.is-placeholder-hidden {
     }
 
     .app-header .brand-logo {
-        width: 34px;
-        height: 34px;
+        width: 30px;
+        height: 30px;
         margin-right: 8px;
         border-radius: 8px;
     }
 
     .app-header .brand-name {
-        font-size: 1.0625rem;
+        font-size: min(1.0625rem, calc((100cqi - 40px) / 7.9));
     }
 
     .brand-tag {
         margin-top: 2px;
-        font-size: 0.5625rem;
+        font-size: min(0.5625rem, calc((100cqi - 40px) / 7.8));
         letter-spacing: 0.14em;
-    }
-
-    /* 375–393 px d'ample */
-    @container (max-width: 169px) {
-        .app-header .brand-logo {
-            width: 30px;
-            height: 30px;
-        }
-
-        .app-header .brand-name {
-            font-size: 0.90625rem;
-        }
-    }
-
-    /* 360 px */
-    @container (max-width: 139px) {
-        .app-header .brand-logo {
-            width: 28px;
-            height: 28px;
-        }
-
-        .app-header .brand-name {
-            font-size: 0.8125rem;
-        }
-
-        .brand-tag {
-            font-size: 0.5rem;
-            letter-spacing: 0.12em;
-        }
     }
 
     /* 320 px: no hi cap el logo al costat de «Segueix! Música»; el text és la marca */
@@ -6516,7 +6490,11 @@ body.is-video-pip .video-placeholder.is-placeholder-hidden {
         }
 
         .app-header .brand-name {
-            font-size: 0.78rem;
+            font-size: min(1rem, calc(100cqi / 7.9));
+        }
+
+        .brand-tag {
+            font-size: min(0.5625rem, calc(100cqi / 7.8));
         }
     }
 }

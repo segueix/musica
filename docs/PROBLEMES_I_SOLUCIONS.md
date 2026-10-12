@@ -1,3 +1,11 @@
+## [2026-10-12] - Mòbil: «Música» retallat a la marca de la capçalera
+
+**Símptoma:** al mòbil la marca «Segueix! Música» sortia amb «Música» tallat a la dreta.
+
+**Causa:** la lletra de la marca anava en `rem` per trams d'ample. Amb la mida de lletra més gran (la de la configuració canvia `font-size` de `<html>`; també la del sistema), el text creixia però l'espai de la marca (la columna entre el logo i la cerca, amb `overflow: hidden`) no: a 360–412 px «Música» sortia de la caixa. Amb la mida per defecte hi cabia amb 1 px de marge.
+
+**Solució:** la lletra de la marca es calcula amb l'ample real del contenidor: `min(1.0625rem, calc((100cqi - 40px) / 7.9))` per al nom i `/ 7.8` per a «En català» (40 px = logo + marge). Comprovat a 320–430 px amb lletra de 16, 19 i 22 px: sempre queden ≥ 4 px de marge. Prova: `tests/contacte.test.js`.
+
 ## [2026-10-12] - «Acabades de sortir» canviava d'una vegada a l'altra
 
 **Símptoma:** a vegades la fila mostrava les novetats més actuals i, més tard (o en tornar a obrir l'app), en faltaven algunes o n'hi entraven de més antigues.
