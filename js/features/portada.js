@@ -566,6 +566,7 @@
                 ${model.fresh ? freshHtml(model.fresh, Boolean(options.freshExpanded), now, model.reasons) : ''}
                 ${model.radar ? radarHtml(model.radar) : ''}
                 ${stylesHtml(model.styles, Boolean(options.stylesExpanded))}
+                ${app.features.nearbyRadio?.cardHtml?.() || ''}
                 ${model.live ? liveHtml(model.live, now) : ''}
             </div>`;
     }
@@ -1401,3 +1402,4 @@
         getModel: () => state.model,
     };
 })(window);
+

@@ -832,6 +832,8 @@
     // un seguiment o un control de preferència: només es renova el que encara no s'ha anunciat).
     function regenerate({ keepNext = false } = {}) {
         if (!isPlaylistMode || activePlaylistId !== QUEUE_ID) return;
+        // La descoberta geogràfica conserva l'ordre i els artistes; es renova des d’«A prop teu».
+        if (radioLabel.startsWith('A prop teu ·')) return;
         const current = activePlaylistQueue[currentPlaylistIndex];
         if (!current) return;
         if (!keepNext && !searchRadio) {
@@ -1116,6 +1118,7 @@
                     </span>
                     <span class="mq-text">
                         <span class="mq-title">${escapeText(video.title)}</span>
+                        ${video.nearbyLocation ? `<span class="mq-artist">${escapeText(video.nearbyLocation)}</span>` : ''}
                         ${unavailable ? '<span class="mq-unavailable">No disponible</span>' : ''}
                         <span class="mq-artist">${escapeText(video.channelTitle || '')}${queuedIds.has(String(video.id)) && !active ? ' · <span class="mq-added">Afegida per tu</span>' : ''}</span>
                     </span>
@@ -1408,7 +1411,7 @@
     // Símbol de barrejar («Genera de nou la ràdio»): sense text, dins el grup de símbols del nom de la ràdio, perquè
     // mai quedi sol a una fila del capçal. Només les ràdios es poden regenerar.
     function regenerateButtonHtml() {
-        if (activePlaylistId !== QUEUE_ID) return '';
+        if (activePlaylistId !== QUEUE_ID || radioLabel.startsWith('A prop teu ·')) return '';
         const label = 'Barreja la ràdio: genera’n una de nova';
         return `<button type="button" class="mq-shuffle" data-mq-regenerate aria-label="${label}" title="${label}">${ICONS.shuffle}</button>`;
     }
@@ -1817,6 +1820,7 @@
         getLastRadio,
         resumeLast,
         playSelection,
+        nearbyPool: videos => searchPool(videos, Infinity).filter(video => !unavailableVideos.has(String(video.id))),
         startFromSearch,
         startArtistRadio,
         startCategoryRadio,
@@ -1844,5 +1848,6 @@
         QUEUE_ID,
     };
 })(window);
+
 
 

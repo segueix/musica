@@ -6501,3 +6501,26 @@ body.is-video-pip .video-placeholder.is-placeholder-hidden {
         }
     }
 }
+
+
+/* Descoberta secundària: després dels estils, sense competir amb la ràdio personal. */
+.pt-near { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 20px; border: 1px solid var(--pt-line); border-radius: 14px; }
+.pt-near h2 { margin: 0 0 5px; font-size: 1.125rem; }
+.pt-near p { margin: 0; color: var(--text-secondary); }
+.pt-near button, .near-dialog button { min-height: 44px; border: 1px solid var(--pt-line); border-radius: 10px; padding: 10px 14px; background: var(--pt-bg, #141615); color: var(--pt-text, #f4f0e8); font: inherit; cursor: pointer; }
+.pt-near button { flex: none; color: var(--pt-accent); }
+.near-dialog { width: min(640px, calc(100vw - 32px)); max-height: 85dvh; box-sizing: border-box; padding: 24px; border: 1px solid var(--pt-line); border-radius: 16px; background: var(--pt-bg, #141615); color: var(--pt-text, #f4f0e8); overflow-y: auto; }
+.near-dialog::backdrop { background: rgba(0,0,0,.7); }
+.near-heading, .near-search { display: flex; gap: 12px; align-items: center; }
+.near-heading { justify-content: space-between; } .near-heading h2 { margin: 0; }
+.near-dialog form { margin-top: 20px; } .near-dialog label { display: block; margin-bottom: 8px; }
+.near-search input { min-width: 0; flex: 1; padding: 12px; min-height: 44px; border: 1px solid var(--pt-line); border-radius: 10px; background: var(--pt-bg); color: var(--pt-text); font: inherit; box-sizing: border-box; }
+.near-actions { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0; }
+.near-actions [data-near-play] { background: var(--pt-accent); color: #141615; font-weight: 700; }
+.near-dialog button:disabled { opacity: .45; cursor: default; }
+.near-dialog :focus-visible, .pt-near button:focus-visible { outline: 2px solid var(--pt-accent); outline-offset: 3px; }
+.near-dialog li { padding: 8px 0; } .near-dialog li span, .near-dialog small { display: block; }
+.near-dialog small, .near-help { color: var(--text-secondary); font-size: .85rem; line-height: 1.5; }
+.near-dialog a { color: var(--pt-accent); }
+.near-locations { display: grid; gap: 6px; max-height: 230px; overflow-y: auto; } .near-locations button { text-align: left; }
+@media (max-width: 600px) { .pt-near { align-items: flex-start; flex-direction: column; gap: 12px; } .near-dialog { padding: 16px; } }

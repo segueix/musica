@@ -1,0 +1,174 @@
+{
+  "schemaVersion": 1,
+  "reviewedOn": "2026-10-12",
+  "attribution": "Coordenades: GeoNames via Open-Meteo (CC BY 4.0). Referències territorials editorials; no alteren l’origen dels artistes.",
+  "places": {
+    "geonames:2515036": {
+      "name": "Llíria",
+      "type": "municipality",
+      "territory": "País Valencià",
+      "coordinates": {
+        "latitude": 39.62894,
+        "longitude": -0.59783
+      },
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Llíria&language=ca",
+      "checkedOn": "2026-10-12"
+    },
+    "geonames:2987914": {
+      "name": "Perpinyà",
+      "type": "municipality",
+      "territory": "Catalunya Nord",
+      "coordinates": {
+        "latitude": 42.69764,
+        "longitude": 2.89541
+      },
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Perpignan&language=ca",
+      "checkedOn": "2026-10-12"
+    },
+    "geonames:2516479": {
+      "name": "Eivissa",
+      "type": "municipality",
+      "territory": "Illes Balears",
+      "coordinates": {
+        "latitude": 38.90883,
+        "longitude": 1.43296
+      },
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Ibiza&language=ca",
+      "checkedOn": "2026-10-12"
+    },
+    "geonames:2511381": {
+      "name": "Sant Francesc Xavier",
+      "type": "municipality",
+      "territory": "Illes Balears",
+      "coordinates": {
+        "latitude": 38.70566,
+        "longitude": 1.42893
+      },
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Sant%20Francesc%20de%20Formentera&language=ca",
+      "checkedOn": "2026-10-12"
+    }
+  },
+  "references": {
+    "territory:formentera": {
+      "placeIds": [
+        "geonames:2511381"
+      ],
+      "kind": "capital"
+    },
+    "territory:camp-de-tarragona": {
+      "placeIds": [
+        "geonames:3108288"
+      ],
+      "kind": "territorial_reference"
+    },
+    "territory:montseny": {
+      "placeIds": [
+        "geonames:3110813"
+      ],
+      "kind": "territorial_reference"
+    },
+    "territory:mallorca": {
+      "placeIds": [
+        "geonames:2512989"
+      ],
+      "kind": "capital"
+    },
+    "territory:camp-de-turia": {
+      "placeIds": [
+        "geonames:2515036"
+      ],
+      "kind": "capital"
+    },
+    "territory:valles": {
+      "placeIds": [
+        "geonames:3121145",
+        "geonames:3111199",
+        "geonames:3108286"
+      ],
+      "kind": "territorial_reference"
+    },
+    "territory:el-comtat": {
+      "placeIds": [
+        "geonames:2519382"
+      ],
+      "kind": "capital"
+    },
+    "territory:l-alcoia": {
+      "placeIds": [
+        "geonames:2522098"
+      ],
+      "kind": "capital"
+    },
+    "territory:horta-sud": {
+      "placeIds": [
+        "geonames:2510279"
+      ],
+      "kind": "capital"
+    },
+    "territory:maresme": {
+      "placeIds": [
+        "geonames:3117164"
+      ],
+      "kind": "capital"
+    },
+    "territory:la-safor": {
+      "placeIds": [
+        "geonames:2517367"
+      ],
+      "kind": "capital"
+    },
+    "territory:la-vall-d-albaida": {
+      "placeIds": [
+        "geonames:2513106"
+      ],
+      "kind": "capital"
+    },
+    "territory:baix-llobregat": {
+      "placeIds": [
+        "geonames:3110642"
+      ],
+      "kind": "capital"
+    },
+    "territory:barcelones": {
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "kind": "capital"
+    },
+    "territory:catalunya-nord": {
+      "placeIds": [
+        "geonames:2987914"
+      ],
+      "kind": "territorial_reference"
+    },
+    "territory:plana-de-vic": {
+      "placeIds": [
+        "geonames:3106050"
+      ],
+      "kind": "territorial_reference"
+    },
+    "territory:eivissa": {
+      "placeIds": [
+        "geonames:2516479"
+      ],
+      "kind": "capital"
+    },
+    "territory:llucanes": {
+      "placeIds": [
+        "geonames:3112878"
+      ],
+      "kind": "capital"
+    }
+  },
+  "notes": {
+    "territory:montseny": "Sant Celoni com a referència del Baix Montseny, no capital oficial del massís.",
+    "territory:valles": "Granollers, Sabadell i Terrassa: mínim de distància a les capitals de les dues comarques."
+  },
+  "sources": [
+    "https://www.formentera.es/ca/llocs-dinteres/arquitectures-religioses/sant-francesc",
+    "https://visitlliria.es/la-ciudad-de-lliria/",
+    "https://fundaciohortasud.org/en/horta-sud-region/",
+    "https://www.santceloni.cat/document.php?id=17354",
+    "https://open-meteo.com/en/docs/geocoding-api"
+  ]
+}

@@ -1,3 +1,15 @@
+## [2026-10-12] - Ràdio secundària «A prop teu»
+
+Targeta sota «Tria el teu so», abans dels directes. Diàleg amb localitat manual o geolocalització puntual, sense radi: 20 artistes únics per proximitat, una pista de cadascun. «Altres cançons» conserva artistes i ordre; «20 artistes més» mostra el següent lot sense repetir. La selecció és revisable abans d’iniciar el reproductor (primer toc manual de YouTube conservat).
+
+`nearby-radio.js` fa Haversine localment sobre els orígens validats i agrupa oficial/Topic per la identitat del registre d’orígens. El motor musical escull una pista de cada artista; abans es filtren ocults, bloquejats, rebutjats, Shorts, contingut no musical i vídeos ja detectats com a no disponibles. La cua manté l’ordre geogràfic en actualitzar gustos i no ofereix barreja automàtica; es pot renovar des del diàleg. La distància aproximada i la referència també es mostren a la cua.
+
+`data/proximitat-musical.json` aporta referències a les 18 zones sense municipi. Les capitals no esdevenen l’origen real: els artistes conserven comarca/illa i es mostra «referència: …». Vallès utilitza Granollers, Sabadell i Terrassa (la més propera); Montseny utilitza Sant Celoni com a referència del Baix Montseny, sense atribuir una capital oficial al massís. No es modifica `origens-artistes.json`.
+
+Cerca manual amb localitats conegudes i Open-Meteo/GeoNames, filtrada per identificadors territorials de Catalunya, País Valencià, Balears, Pirineus Orientals i Andorra. Es descarten aeroports i altres territoris. Errors de xarxa conserven resultats locals; respostes antigues no trepitgen una selecció nova. No cal que el poble tingui un artista indexat.
+
+Privacitat: geolocalització només al clic, sense seguiment ni desar/enviar coordenades GPS. La preferència manual es desa amb clau local `segueix_nearby_manual_v1`, fora de la configuració sincronitzada. Una precisió pitjor de 10 km remet a la selecció manual. La consulta externa només envia el nom cercat. Proves amb els cinc territoris, distàncies, capitals, múltiples vincles, duplicats, lots i integració de cua.
+
 ## [2026-10-12] - Cercador a les llistes, marca i actualització amb vídeo flotant
 
 Les llistes noves obren el cercador de cançons i les existents tenen «Afegeix cançons». La cerca local combina feed i historial musical filtrat, per títol/artista sense accents, exclou Shorts i contingut no musical i evita IDs duplicats. Les cançons afegides es marquen i es desen amb el mateix circuit de llistes i sincronització. Les respostes tardanes no modifiquen un altre modal.
@@ -1896,4 +1908,5 @@ Verificació: taxonomia separada, decoració de vídeos d'arxiu, grup amb tots d
 ## [2026-10-11] - Origen a la fitxa: HTML nou amb JS antic
 
 En verificar la primera publicació, la fitxa contenia `apOrigin` però quedava buit: el navegador conservava la URL anterior d'`artist-page.js`. Com en els casos de memòria cau descrits més amunt, s'han versionat les URLs del JS modificat i de `portada.css` a `20261011-origen-1`, a més de regenerar el service worker. Les dades viuen a `data/origens-artistes.json`; només es mostren assignacions validades i les respostes antigues no poden pintar un altre artista. Proves: `tests/artist-origin.test.js`.
+
 
