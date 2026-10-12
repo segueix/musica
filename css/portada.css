@@ -7437,7 +7437,7 @@ body.is-video-pip .video-placeholder.is-placeholder-hidden {
     cursor: pointer;
     outline: none;
 }
-.am-dot circle {
+.am-dot .am-mark {
     fill: rgba(214, 237, 132, 0.55);
     stroke: var(--pt-accent);
     stroke-width: 1.5;
@@ -7448,18 +7448,18 @@ body.is-video-pip .video-placeholder.is-placeholder-hidden {
     transform-origin: center;
     transform: scale(calc(1 / var(--am-zoom, 1)));
 }
-.am-dot.is-approx circle {
+.am-dot.is-approx .am-mark {
     stroke-dasharray: 3 2;
 }
-.am-dot:hover circle,
-.am-dot:focus-visible circle {
+.am-dot:hover .am-mark,
+.am-dot:focus-visible .am-mark {
     fill: var(--pt-accent);
 }
-.am-dot:focus-visible circle {
+.am-dot:focus-visible .am-mark {
     stroke: var(--pt-text);
     stroke-width: 3;
 }
-.am-dot.is-active circle {
+.am-dot.is-active .am-mark {
     fill: var(--pt-terracotta);
     stroke: var(--pt-text);
     stroke-width: 2;
@@ -7627,5 +7627,255 @@ body.is-video-pip .video-placeholder.is-placeholder-hidden {
         max-height: 55vh;
         overflow-y: auto;
         overscroll-behavior: contain;
+    }
+}
+
+/* «Música d'arreu»: gestos, pantalla completa i dibuixar una zona (2026-10-12) */
+.am-dot .am-hit {
+    fill: transparent;
+    stroke: none;
+    transform-box: fill-box;
+    transform-origin: center;
+    transform: scale(calc(1 / var(--am-zoom, 1)));
+}
+.am-dot.is-in-zone .am-mark {
+    fill: var(--pt-accent);
+    stroke: var(--pt-text);
+}
+.am-lasso {
+    fill: rgba(214, 237, 132, 0.14);
+    stroke: var(--pt-accent);
+    stroke-width: 2;
+    stroke-dasharray: 6 4;
+    stroke-linejoin: round;
+    vector-effect: non-scaling-stroke;
+    pointer-events: none;
+}
+.artist-map.is-zoomed .am-svg {
+    cursor: grab;
+}
+.artist-map.is-dragging .am-svg {
+    cursor: grabbing;
+}
+.artist-map.is-drawing .am-svg {
+    cursor: crosshair;
+    touch-action: none;
+}
+.am-tools {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 8px;
+}
+.am-tool {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0 12px;
+    border: 1px solid var(--pt-line);
+    border-radius: var(--pt-radius-pill);
+    background: var(--pt-surface-2);
+    color: var(--pt-text);
+    font: inherit;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+.am-tool svg {
+    width: 20px;
+    height: 20px;
+    flex: none;
+}
+.am-tool--full {
+    padding: 0;
+}
+.am-tool:hover {
+    border-color: var(--pt-accent);
+}
+.am-tool[aria-pressed='true'] {
+    border-color: var(--pt-accent);
+    background: var(--pt-accent);
+    color: var(--pt-on-accent);
+}
+.am-ico-close,
+.artist-map.is-full .am-ico-full {
+    display: none;
+}
+.artist-map.is-full .am-ico-close {
+    display: inline-flex;
+}
+.am-hint {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    max-width: calc(100% - 80px);
+    margin: 0;
+    padding: 6px 10px;
+    border-radius: 8px;
+    background: rgba(20, 22, 21, 0.82);
+    color: var(--pt-muted);
+    font-size: 0.8125rem;
+    line-height: 1.3;
+    pointer-events: none;
+}
+.am-hint > span {
+    display: none;
+}
+.am-hint__mouse {
+    display: inline !important;
+}
+.artist-map.is-full .am-hint__mouse {
+    display: none !important;
+}
+.artist-map.is-full .am-hint__full-mouse {
+    display: inline;
+}
+@media (pointer: coarse) {
+    .am-hint__mouse,
+    .artist-map.is-full .am-hint__full-mouse {
+        display: none !important;
+    }
+    .am-hint__touch {
+        display: inline;
+    }
+    .artist-map.is-full .am-hint__touch {
+        display: none;
+    }
+    .artist-map.is-full .am-hint__full-touch {
+        display: inline;
+    }
+}
+.artist-map.is-drawing .am-hint > span {
+    display: none !important;
+}
+.artist-map.is-drawing .am-hint .am-hint__draw {
+    display: inline !important;
+    color: var(--pt-accent);
+}
+.am-panel__eyebrow {
+    margin: 0 0 2px !important;
+    color: var(--pt-terracotta) !important;
+    font-size: 0.75rem !important;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+.am-panel__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: flex-end;
+}
+.am-radio {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+.am-radio svg {
+    width: 18px;
+    height: 18px;
+}
+.am-ghost {
+    min-height: 44px;
+    padding: 0 14px;
+    border: 1px solid var(--pt-line);
+    border-radius: var(--pt-radius-pill);
+    background: transparent;
+    color: var(--pt-text);
+    font: inherit;
+    cursor: pointer;
+}
+.am-artist__place {
+    color: var(--pt-muted) !important;
+}
+
+/* Pantalla completa: el mapa ocupa tota la pantalla, per sobre de la capçalera i la navegació */
+body.am-full-open {
+    overflow: hidden;
+}
+.artist-map.is-full {
+    position: fixed;
+    inset: 0;
+    z-index: 3000;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: max(12px, env(safe-area-inset-top)) 12px max(12px, env(safe-area-inset-bottom));
+    border: 0;
+    border-radius: 0;
+    background: var(--pt-bg);
+}
+.artist-map.is-full .am-head .pt-eyebrow,
+.artist-map.is-full .am-sub,
+.artist-map.is-full .am-territories,
+.artist-map.is-full .am-outside,
+.artist-map.is-full .am-list {
+    display: none;
+}
+.artist-map.is-full .am-title {
+    font-size: 1.25rem;
+}
+.artist-map.is-full .am-styles {
+    flex: none;
+    margin: 8px 0;
+}
+.artist-map.is-full .am-body {
+    flex: 1;
+    min-height: 0;
+    grid-template-rows: minmax(0, 1fr) auto;
+    gap: 10px;
+}
+.artist-map.is-full .am-stage {
+    min-height: 0;
+    height: 100%;
+}
+.artist-map.is-full .am-svg {
+    width: 100%;
+    height: 100%;
+    max-height: none;
+    touch-action: none;
+}
+.artist-map.is-full .am-panel {
+    max-height: 34vh;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+}
+.artist-map.is-full .am-artists {
+    max-height: none;
+}
+@media (min-width: 1025px) {
+    .artist-map.is-full .am-body {
+        grid-template-columns: minmax(0, 1fr) 360px;
+        grid-template-rows: minmax(0, 1fr);
+    }
+    .artist-map.is-full .am-panel {
+        max-height: none;
+        height: 100%;
+    }
+}
+@media (max-width: 360px) {
+    .am-tool--draw span {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        white-space: nowrap;
+    }
+    .am-tool--draw {
+        padding: 0;
+    }
+}
+@media (max-width: 600px) {
+    .am-panel__actions {
+        justify-content: stretch;
+    }
+    .am-panel__actions > * {
+        flex: 1;
     }
 }

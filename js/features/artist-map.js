@@ -111,6 +111,7 @@
                 artistId,
                 name: group.name || artist.name,
                 channelId: String(group.id),
+                channelIds: ids.map(String),
                 avatar: group.avatar || group.thumbnail || '',
                 styles: categories,
                 relation: artist.relation || 'origin',
@@ -158,9 +159,104 @@
     const styleLabel = name => String(name).charAt(0).toLocaleUpperCase('ca') + String(name).slice(1);
     const radiusOf = count => Math.round((5 + 3.2 * Math.sqrt(Math.max(1, count))) * 10) / 10;
     const artistsLabel = n => (n === 1 ? '1 artista' : `${n} artistes`);
+    const placesLabel = n => (n === 1 ? '1 lloc' : `${n} llocs`);
 
-    function mapSvg(base, model, selectedId = '') {
+    // ---------- Zona dibuixada (pur) ----------
+
+    // Raig horitzontal: el punt és dins si travessa un nombre senar de costats del polígon.
+    function pointInPolygon([x, y], polygon) {
+        let inside = false;
+        for (let i = 0, j = polygon.length - 1; i < polygon.length; j = i++) {
+            const [xi, yi] = polygon[i];
+            const [xj, yj] = polygon[j];
+            if (yi > y !== yj > y && x < ((xj - xi) * (y - yi)) / (yj - yi) + xi) inside = !inside;
+        }
+        return inside;
+    }
+
+    // Llocs i artistes (sense repetir) que queden dins la zona; els llocs amb més artistes primer.
+    function zoneModel(points, polygon) {
+        if (!Array.isArray(polygon) || polygon.length < 3) return null;
+        const places = (Array.isArray(points) ? points : []).filter(point =>
+            pointInPolygon([point.x, point.y], polygon)
+        );
+        const artists = new Map();
+        places.forEach(place =>
+            place.artists.forEach(artist => {
+                if (!artists.has(artist.channelId)) artists.set(artist.channelId, { ...artist, place: place.name });
+            })
+        );
+        const sorted = [...places].sort((a, b) => b.artists.length - a.artists.length);
+        return {
+            polygon,
+            places: sorted,
+            artists: [...artists.values()].sort((a, b) => a.name.localeCompare(b.name, 'ca')),
+            channelIds: [...new Set([...artists.values()].flatMap(a => a.channelIds || [a.channelId]))],
+            name: !sorted.length ? '' : sorted.length === 1 ? sorted[0].name : `${sorted[0].name} i voltants`,
+        };
+    }
+
+    // Cançons de la zona: les més escoltades de cada canal (perArtist), perquè cap artista no s'emporti la ràdio.
+    function zoneSongs(videos, channelIds, perArtist = 8) {
+        const wanted = new Set((channelIds || []).map(String));
+        const byChannel = new Map();
+        const seen = new Set();
+        (Array.isArray(videos) ? videos : []).forEach(video => {
+            const channelId = String(video?.channelId || '');
+            if (!wanted.has(channelId) || !video.id || seen.has(video.id)) return;
+            seen.add(video.id);
+            if (!byChannel.has(channelId)) byChannel.set(channelId, []);
+            byChannel.get(channelId).push(video);
+        });
+        return [...byChannel.values()].flatMap(list =>
+            list.sort((a, b) => (Number(b.viewCount) || 0) - (Number(a.viewCount) || 0)).slice(0, perArtist)
+        );
+    }
+
+    // ---------- Vista (pur): viewBox, zoom i el punt que queda sota el dit ----------
+
+    function clampView(view, baseBox, maxZoom = MAX_ZOOM) {
+        const [bx, by, bw, bh] = baseBox;
+        let [x, y, w] = view;
+        w = Math.min(bw, Math.max(bw / maxZoom, w));
+        const h = w * (bh / bw);
+        x = Math.min(bx + bw - w, Math.max(bx, x));
+        y = Math.min(by + bh - h, Math.max(by, y));
+        return [x, y, w, h];
+    }
+    // L'SVG es dibuixa amb «meet»: pot quedar una franja buida (pantalla completa). rect = mida a la pantalla.
+    function fit(rect, w, h) {
+        const s = Math.min(rect.width / w, rect.height / h);
+        return { s, offX: (rect.width - w * s) / 2, offY: (rect.height - h * s) / 2 };
+    }
+    function clientToSvg(view, rect, clientX, clientY) {
+        const [x, y, w, h] = view;
+        const { s, offX, offY } = fit(rect, w, h);
+        return [x + (clientX - rect.left - offX) / s, y + (clientY - rect.top - offY) / s];
+    }
+    // ViewBox d'amplada `width` que deixa el punt `point` de l'SVG sota (clientX, clientY).
+    function viewKeeping(point, rect, clientX, clientY, width, baseBox) {
+        const h = width * (baseBox[3] / baseBox[2]);
+        const { s, offX, offY } = fit(rect, width, h);
+        return [point[0] - (clientX - rect.left - offX) / s, point[1] - (clientY - rect.top - offY) / s, width, h];
+    }
+
+    // ---------- HTML (pur) ----------
+
+    const ICON = {
+        full: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+        close: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
+        draw: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 14c-1.5 2.5.5 5 3.5 4.5 2.5-.4 2.7-3 5.2-3.4 2.3-.4 3.8 1.1 5.3 2.9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="m13.5 4.5 4 4L10 16l-4.5 1 1-4.5 7-8Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>',
+        play: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 5.5v13l11-6.5-11-6.5Z" fill="currentColor"/></svg>',
+    };
+    const polygonPath = polygon =>
+        polygon?.length
+            ? `M${polygon.map(([x, y]) => `${Math.round(x * 10) / 10} ${Math.round(y * 10) / 10}`).join('L')}Z`
+            : '';
+
+    function mapSvg(base, model, selectedId = '', zone = null) {
         const [x0, y0, w, h] = base.viewBox;
+        const inZone = new Set((zone?.places || []).map(place => place.id));
         const shapes = base.shapes
             .map(shape => `<path class="am-shape am-shape--${shape.kind}" d="${shape.d}"></path>`)
             .join('');
@@ -173,37 +269,50 @@
         const dots = model.points
             .map(point => {
                 const label = `${point.name}: ${artistsLabel(point.artists.length)}`;
-                return `<g class="am-dot${point.id === selectedId ? ' is-active' : ''}${point.approximate ? ' is-approx' : ''}" data-am-place="${esc(point.id)}"
-                    role="button" tabindex="0" aria-label="${esc(label)}">
+                const classes = `am-dot${point.id === selectedId ? ' is-active' : ''}${point.approximate ? ' is-approx' : ''}${inZone.has(point.id) ? ' is-in-zone' : ''}`;
+                return `<g class="${classes}" data-am-place="${esc(point.id)}" role="button" tabindex="0" aria-label="${esc(label)}">
                     <title>${esc(label)}</title>
-                    <circle cx="${Math.round(point.x * 10) / 10}" cy="${Math.round(point.y * 10) / 10}" r="${radiusOf(point.artists.length)}"></circle>
+                    <circle class="am-hit" cx="${Math.round(point.x * 10) / 10}" cy="${Math.round(point.y * 10) / 10}" r="${radiusOf(point.artists.length) + 9}"></circle>
+                    <circle class="am-mark" cx="${Math.round(point.x * 10) / 10}" cy="${Math.round(point.y * 10) / 10}" r="${radiusOf(point.artists.length)}"></circle>
                 </g>`;
             })
             .join('');
         return `<svg class="am-svg" viewBox="${x0} ${y0} ${w} ${h}" role="img" aria-label="Mapa dels Països Catalans amb els artistes">
-            <g class="am-layer">${shapes}${insetHtml}<g class="am-dots">${dots}</g></g></svg>`;
+            <g class="am-layer">${shapes}${insetHtml}<path class="am-lasso" d="${polygonPath(zone?.polygon)}"></path><g class="am-dots">${dots}</g></g></svg>`;
+    }
+
+    function artistItems(artists, withPlace = false) {
+        return artists
+            .map(
+                artist => `<li><button type="button" class="am-artist" data-am-artist="${esc(artist.channelId)}">
+                    <img src="${esc(artist.avatar || FALLBACK_AVATAR)}" alt="" loading="lazy" decoding="async" width="40" height="40">
+                    <span><strong>${esc(artist.name)}</strong>${withPlace && artist.place ? `<small class="am-artist__place">${esc(artist.place)}</small>` : ''}${artist.relation === 'associated' ? '<small>Vinculat</small>' : ''}</span></button></li>`
+            )
+            .join('');
     }
 
     function panelHtml(point) {
         if (!point) {
-            return `<p class="am-panel__hint">Toca un punt del mapa per veure els artistes d'aquell lloc i escoltar-ne la ràdio.</p>`;
+            return `<p class="am-panel__hint">Toca un punt del mapa per veure els artistes d'aquell lloc i escoltar-ne la ràdio, o <strong>dibuixa una zona</strong> i sonarà la seva música.</p>`;
         }
         const where = point.approximate
             ? `${esc(point.territory)} · ubicació aproximada (${esc(point.reference)})`
             : esc(point.territory);
-        const artists = point.artists
-            .map(
-                artist => `<li><button type="button" class="am-artist" data-am-artist="${esc(artist.channelId)}">
-                    <img src="${esc(artist.avatar || FALLBACK_AVATAR)}" alt="" loading="lazy" decoding="async" width="40" height="40">
-                    <span><strong>${esc(artist.name)}</strong>${artist.relation === 'associated' ? '<small>Vinculat</small>' : ''}</span></button></li>`
-            )
-            .join('');
         return `<div class="am-panel__head"><div><h3>${esc(point.name)}</h3><p>${where} · ${artistsLabel(point.artists.length)}</p></div>
                 <button type="button" class="am-radio" data-am-radio="${esc(point.id)}">Ràdio d'aquí</button></div>
-            <ul class="am-artists">${artists}</ul>`;
+            <ul class="am-artists">${artistItems(point.artists)}</ul>`;
     }
 
-    function html(base, model, { selectedId = '', style = '' } = {}) {
+    function zonePanelHtml(zone) {
+        if (!zone?.artists.length) return panelHtml(null);
+        return `<div class="am-panel__head"><div><p class="am-panel__eyebrow">La teva zona</p><h3>${esc(zone.name)}</h3>
+                <p>${placesLabel(zone.places.length)} · ${artistsLabel(zone.artists.length)}</p></div>
+                <div class="am-panel__actions"><button type="button" class="am-radio" data-am-zone-play>${ICON.play}<span>Escolta la zona</span></button>
+                <button type="button" class="am-ghost" data-am-zone-clear>Esborra la zona</button></div></div>
+            <ul class="am-artists">${artistItems(zone.artists, true)}</ul>`;
+    }
+
+    function html(base, model, { selectedId = '', style = '', zone = null } = {}) {
         const selected = model.points.find(point => point.id === selectedId) || null;
         const territories = model.territories.map(t => `<li><strong>${t.count}</strong> ${esc(t.name)}</li>`).join('');
         const styleChips = [
@@ -259,10 +368,21 @@
             <div class="am-styles" role="group" aria-label="Filtra per estil">${styleChips}</div>
             <div class="am-body">
                 <div class="am-stage">
-                    ${mapSvg(base, model, selectedId)}
+                    ${mapSvg(base, model, selectedId, zone)}
+                    <div class="am-tools">
+                        <button type="button" class="am-tool am-tool--draw" data-am-draw aria-pressed="false">${ICON.draw}<span>Dibuixa una zona</span></button>
+                        <button type="button" class="am-tool am-tool--full" data-am-full aria-label="Mapa a pantalla completa"><span class="am-ico-full">${ICON.full}</span><span class="am-ico-close">${ICON.close}</span></button>
+                    </div>
+                    <p class="am-hint" aria-live="polite">
+                        <span class="am-hint__touch">Mou o apropa el mapa amb dos dits</span>
+                        <span class="am-hint__full-touch">Un dit per moure't, dos per apropar</span>
+                        <span class="am-hint__mouse">Arrossega per moure't · Ctrl + roda per apropar</span>
+                        <span class="am-hint__full-mouse">Arrossega per moure't · roda per apropar</span>
+                        <span class="am-hint__draw">Dibuixa una zona amb el dit o el ratolí: sonarà la música dels seus artistes</span>
+                    </p>
                     <div class="am-zoom"><button type="button" data-am-zoom="1" aria-label="Apropa">+</button><button type="button" data-am-zoom="-1" aria-label="Allunya">−</button><button type="button" data-am-zoom="0" aria-label="Mapa sencer">⤢</button></div>
                 </div>
-                <div class="am-panel" aria-live="polite">${panelHtml(selected)}</div>
+                <div class="am-panel" aria-live="polite">${zone && !selected ? zonePanelHtml(zone) : panelHtml(selected)}</div>
             </div>
             ${outside}
             <details class="am-list"><summary>Llista per territoris</summary>${list}</details>`;
@@ -279,6 +399,11 @@
         model: null,
         view: null,
         bound: false,
+        full: false,
+        drawing: false,
+        zone: null,
+        songs: null,
+        songsLoading: null,
     };
 
     async function json(url) {
@@ -299,13 +424,40 @@
         return state.loading;
     }
 
+    function youtubeApi() {
+        return typeof YouTubeAPI !== 'undefined' ? YouTubeAPI : window.YouTubeAPI;
+    }
+
     function artistGroups() {
-        const youtube = typeof YouTubeAPI !== 'undefined' ? YouTubeAPI : window.YouTubeAPI;
-        return youtube?.getArtistGroups?.() || [];
+        return youtubeApi()?.getArtistGroups?.() || [];
     }
 
     function hiddenChannels() {
         return typeof getHiddenChannelIds === 'function' ? getHiddenChannelIds() : [];
+    }
+
+    // Cançons per a la ràdio d'una zona (feed + historial dels estils), com «A prop teu». Es demanen en entrar al
+    // mode de dibuix: en acabar el traç la ràdio comença de seguida (dins del gest de l'usuari, per l'autoplay).
+    function loadSongs() {
+        if (state.songs) return Promise.resolve(state.songs);
+        if (!state.songsLoading) {
+            const youtube = youtubeApi();
+            state.songsLoading = Promise.resolve(youtube?.ensureStyleHistory?.())
+                .then(history => {
+                    const all = [...(youtube?.feedVideos || []), ...(history || [])];
+                    state.songs = youtube?.filterHiddenVideos ? youtube.filterHiddenVideos(all) : all;
+                    return state.songs;
+                })
+                .catch(() => (state.songs = youtube?.feedVideos || []))
+                .finally(() => {
+                    state.songsLoading = null;
+                });
+        }
+        return state.songsLoading;
+    }
+
+    function toast(message) {
+        app.features.shellNav?.toast?.(message);
     }
 
     function paint() {
@@ -318,46 +470,62 @@
             hiddenIds: hiddenChannels(),
         });
         if (state.selectedId && !state.model.points.some(p => p.id === state.selectedId)) state.selectedId = '';
-        container.innerHTML = html(state.data.base, state.model, { selectedId: state.selectedId, style: state.style });
-        state.view = null;
+        if (state.zone) state.zone = zoneModel(state.model.points, state.zone.polygon);
+        container.innerHTML = html(state.data.base, state.model, {
+            selectedId: state.selectedId,
+            style: state.style,
+            zone: state.zone,
+        });
+        syncModes();
         applyView();
     }
 
-    // Zoom i desplaçament: es canvia el viewBox de l'SVG (sense llibreries)
-    function fullView() {
-        return [...state.data.base.viewBox];
+    function syncModes() {
+        const container = state.container;
+        if (!container) return;
+        container.classList.toggle('is-full', state.full);
+        container.classList.toggle('is-drawing', state.drawing);
+        document.body.classList.toggle('am-full-open', state.full);
+        const draw = container.querySelector('[data-am-draw]');
+        if (draw) draw.setAttribute('aria-pressed', String(state.drawing));
+        const full = container.querySelector('[data-am-full]');
+        if (full)
+            full.setAttribute('aria-label', state.full ? 'Tanca la pantalla completa' : 'Mapa a pantalla completa');
+    }
+
+    // ---------- Zoom i desplaçament: es canvia el viewBox de l'SVG (sense llibreries) ----------
+
+    const baseBox = () => state.data.base.viewBox;
+    const svgEl = () => state.container?.querySelector('.am-svg');
+    function currentView() {
+        if (!state.view) state.view = [...baseBox()];
+        return state.view;
     }
     function applyView() {
-        const svg = state.container?.querySelector('.am-svg');
+        const svg = svgEl();
         if (!svg) return;
-        if (!state.view) state.view = fullView();
-        const [x, y, w, h] = state.view;
+        const [x, y, w, h] = currentView();
         svg.setAttribute('viewBox', `${x} ${y} ${w} ${h}`);
-        const zoom = state.data.base.viewBox[2] / w;
-        svg.style.setProperty('--am-zoom', String(zoom));
+        svg.style.setProperty('--am-zoom', String(baseBox()[2] / w));
+        state.container.classList.toggle('is-zoomed', w < baseBox()[2] - 0.5);
     }
-    function clampView(view) {
-        const [bx, by, bw, bh] = state.data.base.viewBox;
-        let [x, y, w, h] = view;
-        w = Math.min(bw, Math.max(bw / MAX_ZOOM, w));
-        h = w * (bh / bw);
-        x = Math.min(bx + bw - w, Math.max(bx, x));
-        y = Math.min(by + bh - h, Math.max(by, y));
-        return [x, y, w, h];
-    }
-    function zoomBy(factor, cx, cy) {
-        const [x, y, w, h] = state.view || fullView();
-        const nw = w / factor;
-        const nh = h / factor;
-        const px = cx ?? x + w / 2;
-        const py = cy ?? y + h / 2;
-        state.view = clampView([px - ((px - x) * nw) / w, py - ((py - y) * nh) / h, nw, nh]);
+    function setView(view) {
+        const before = currentView().join(',');
+        state.view = clampView(view, baseBox());
         applyView();
+        return state.view.join(',') !== before;
     }
-    function svgPoint(svg, clientX, clientY) {
+    // Zoom al voltant d'un punt de la pantalla (el centre del mapa si no se'n dona cap)
+    function zoomBy(factor, clientX, clientY) {
+        const svg = svgEl();
+        if (!svg) return;
         const rect = svg.getBoundingClientRect();
-        const [x, y, w, h] = state.view || fullView();
-        return [x + ((clientX - rect.left) / rect.width) * w, y + ((clientY - rect.top) / rect.height) * h];
+        const cx = clientX ?? rect.left + rect.width / 2;
+        const cy = clientY ?? rect.top + rect.height / 2;
+        const view = currentView();
+        const point = clientToSvg(view, rect, cx, cy);
+        const width = clampView([0, 0, view[2] / factor], baseBox())[2];
+        setView(viewKeeping(point, rect, cx, cy, width, baseBox()));
     }
 
     function selectPlace(id, { focusPanel = false } = {}) {
@@ -367,21 +535,145 @@
             .querySelectorAll('.am-dot')
             .forEach(dot => dot.classList.toggle('is-active', dot.dataset.amPlace === state.selectedId));
         const panel = state.container.querySelector('.am-panel');
-        if (panel) panel.innerHTML = panelHtml(point);
-        if (point && focusPanel) panel?.scrollIntoView?.({ block: 'nearest', behavior: 'smooth' });
+        if (panel)
+            panel.innerHTML = point ? panelHtml(point) : state.zone ? zonePanelHtml(state.zone) : panelHtml(null);
+        if (point && focusPanel && !state.full) panel?.scrollIntoView?.({ block: 'nearest', behavior: 'smooth' });
     }
 
     function openRadio(placeId) {
         const point = state.model?.points.find(p => p.id === placeId);
         if (!point) return;
+        setFull(false);
         const opening = app.features.nearbyRadio?.openPlace?.({
             name: point.approximate ? point.reference : point.name,
             territory: point.territory,
             coordinates: point.coordinates,
         });
         Promise.resolve(opening).then(ok => {
-            if (!ok) app.features.shellNav?.toast?.('No s’ha pogut obrir la ràdio d’aquest lloc.');
+            if (!ok) toast('No s’ha pogut obrir la ràdio d’aquest lloc.');
         });
+    }
+
+    // Un pare amb transformació trenca el «position: fixed»: a pantalla completa el mapa penja de <body> i, en
+    // tancar-la, torna al seu lloc (els gestors són del mateix element i continuen funcionant).
+    function setFull(on) {
+        if (state.full === Boolean(on)) return;
+        state.full = Boolean(on);
+        const container = state.container;
+        if (state.full && container && container.parentNode !== document.body) {
+            state.placeholder = document.createComment('artistMap');
+            container.before(state.placeholder);
+            document.body.appendChild(container);
+        } else if (!state.full && state.placeholder) {
+            state.placeholder.replaceWith(container);
+            state.placeholder = null;
+        }
+        syncModes();
+        // La mida de l'SVG canvia: el viewBox continua sent el mateix
+        applyView();
+    }
+
+    function setDrawing(on) {
+        state.drawing = Boolean(on);
+        syncModes();
+        if (state.drawing) loadSongs();
+    }
+
+    // ---------- Ràdio d'una zona ----------
+
+    function startZoneRadio(zone) {
+        const start = songs => {
+            const pool = zoneSongs(songs, zone.channelIds);
+            setFull(false);
+            const ok = app.features.musicQueue?.startCategoryRadio?.(pool, { name: zone.name });
+            if (!ok) toast('No hi ha prou cançons d’aquesta zona per fer-ne una ràdio.');
+            return Boolean(ok);
+        };
+        if (state.songs) return start(state.songs);
+        return loadSongs().then(start);
+    }
+
+    function showZone(zone) {
+        state.zone = zone;
+        state.selectedId = '';
+        const inZone = new Set(zone.places.map(place => place.id));
+        state.container.querySelectorAll('.am-dot').forEach(dot => {
+            dot.classList.toggle('is-in-zone', inZone.has(dot.dataset.amPlace));
+            dot.classList.remove('is-active');
+        });
+        const lasso = state.container.querySelector('.am-lasso');
+        if (lasso) lasso.setAttribute('d', polygonPath(zone.polygon));
+        const panel = state.container.querySelector('.am-panel');
+        if (panel) panel.innerHTML = zonePanelHtml(zone);
+    }
+
+    function clearZone() {
+        state.zone = null;
+        state.container.querySelectorAll('.am-dot.is-in-zone').forEach(dot => dot.classList.remove('is-in-zone'));
+        state.container.querySelector('.am-lasso')?.setAttribute('d', '');
+        const panel = state.container.querySelector('.am-panel');
+        if (panel) panel.innerHTML = panelHtml(null);
+    }
+
+    // Traç a mà alçada: punts de l'SVG; en acabar es tanca i es busquen els artistes de dins
+    const lasso = {
+        points: null,
+        length: 0,
+        last: null,
+        start(clientX, clientY) {
+            const svg = svgEl();
+            if (!svg) return;
+            this.rect = svg.getBoundingClientRect();
+            this.points = [clientToSvg(currentView(), this.rect, clientX, clientY)];
+            this.length = 0;
+            this.last = [clientX, clientY];
+        },
+        add(clientX, clientY) {
+            if (!this.points) return;
+            const step = Math.hypot(clientX - this.last[0], clientY - this.last[1]);
+            if (step < 3) return;
+            this.length += step;
+            this.last = [clientX, clientY];
+            this.points.push(clientToSvg(currentView(), this.rect, clientX, clientY));
+            state.container.querySelector('.am-lasso')?.setAttribute('d', polygonPath(this.points));
+        },
+        cancel() {
+            this.points = null;
+            state.container?.querySelector('.am-lasso')?.setAttribute('d', polygonPath(state.zone?.polygon));
+        },
+        // Retorna true si era un traç (no un toc)
+        finish() {
+            const points = this.points;
+            this.points = null;
+            if (!points || points.length < 3 || this.length < 40) {
+                state.container.querySelector('.am-lasso')?.setAttribute('d', polygonPath(state.zone?.polygon));
+                return false;
+            }
+            const zone = zoneModel(state.model.points, points);
+            if (!zone?.artists.length) {
+                state.container.querySelector('.am-lasso')?.setAttribute('d', polygonPath(state.zone?.polygon));
+                toast('No hi ha cap artista dins d’aquesta zona. Prova-ho amb una zona més gran.');
+                return true;
+            }
+            showZone(zone);
+            setDrawing(false);
+            toast(`Ràdio ${zone.name}: ${artistsLabel(zone.artists.length)}`);
+            startZoneRadio(zone);
+            return true;
+        },
+    };
+
+    // ---------- Esdeveniments ----------
+
+    // Després d'arrossegar, pessigar o dibuixar, el «click» que el navegador envia no ha de triar cap punt
+    function swallowNextClick(container) {
+        const swallow = e => {
+            if (!e.target.closest?.('.am-svg')) return; // un botó de fora del mapa (pantalla completa…) sí que val
+            e.stopPropagation();
+            e.preventDefault();
+        };
+        container.addEventListener('click', swallow, { capture: true });
+        setTimeout(() => container.removeEventListener('click', swallow, { capture: true }), 350);
     }
 
     function onClick(event) {
@@ -395,6 +687,10 @@
             } else zoomBy(step > 0 ? 1.6 : 1 / 1.6);
             return;
         }
+        if (target.closest?.('[data-am-full]')) return setFull(!state.full);
+        if (target.closest?.('[data-am-draw]')) return setDrawing(!state.drawing);
+        if (target.closest?.('[data-am-zone-play]')) return state.zone && startZoneRadio(state.zone);
+        if (target.closest?.('[data-am-zone-clear]')) return clearZone();
         const style = target.closest?.('[data-am-style]');
         if (style) {
             state.style = style.dataset.amStyle || '';
@@ -404,6 +700,7 @@
         if (radio) return openRadio(radio.dataset.amRadio);
         const artist = target.closest?.('[data-am-artist]');
         if (artist) {
+            setFull(false);
             if (typeof openChannelProfile === 'function') openChannelProfile(artist.dataset.amArtist);
             return;
         }
@@ -422,42 +719,56 @@
         }
     }
 
-    // Arrossegar per moure el mapa (quan hi ha zoom) i la rodeta del ratolí per apropar
-    function bindStage(container) {
+    function onDocumentKey(event) {
+        if (event.key !== 'Escape' || state.container?.classList.contains('hidden')) return;
+        if (state.drawing) {
+            lasso.cancel();
+            setDrawing(false);
+        } else if (state.full) setFull(false);
+    }
+
+    // Ratolí (i llapis): arrossegar mou el mapa; en mode dibuix, dibuixa. Els dits van per bindTouch().
+    function bindMouse(container) {
         let drag = null;
         container.addEventListener('pointerdown', event => {
+            if (event.pointerType === 'touch' || event.button !== 0) return;
             const svg = event.target.closest?.('.am-svg');
-            if (!svg || !state.view || state.view[2] >= state.data.base.viewBox[2]) return;
+            if (!svg) return;
+            if (state.drawing) {
+                event.preventDefault();
+                svg.setPointerCapture?.(event.pointerId);
+                lasso.start(event.clientX, event.clientY);
+                drag = { id: event.pointerId, draw: true };
+                return;
+            }
+            const rect = svg.getBoundingClientRect();
             drag = {
                 id: event.pointerId,
+                rect,
                 x: event.clientX,
                 y: event.clientY,
-                view: [...state.view],
+                grab: clientToSvg(currentView(), rect, event.clientX, event.clientY),
                 moved: false,
-                svg,
             };
         });
         container.addEventListener('pointermove', event => {
             if (!drag || drag.id !== event.pointerId) return;
-            const rect = drag.svg.getBoundingClientRect();
-            const dx = ((event.clientX - drag.x) / rect.width) * drag.view[2];
-            const dy = ((event.clientY - drag.y) / rect.height) * drag.view[3];
-            if (Math.abs(event.clientX - drag.x) + Math.abs(event.clientY - drag.y) > 6) drag.moved = true;
-            if (!drag.moved) return;
-            state.view = clampView([drag.view[0] - dx, drag.view[1] - dy, drag.view[2], drag.view[3]]);
-            applyView();
+            if (drag.draw) return lasso.add(event.clientX, event.clientY);
+            if (!drag.moved && Math.abs(event.clientX - drag.x) + Math.abs(event.clientY - drag.y) < 5) return;
+            if (!drag.moved) {
+                drag.moved = true;
+                container.classList.add('is-dragging');
+            }
+            setView(viewKeeping(drag.grab, drag.rect, event.clientX, event.clientY, currentView()[2], baseBox()));
         });
         const end = event => {
-            if (drag?.moved) {
-                // Un arrossegament no és un toc: no s'ha de triar el punt on s'acaba
-                const swallow = e => {
-                    e.stopPropagation();
-                    e.preventDefault();
-                };
-                container.addEventListener('click', swallow, { capture: true, once: true });
-                setTimeout(() => container.removeEventListener('click', swallow, { capture: true }), 0);
-            }
-            if (!event || drag?.id === event.pointerId) drag = null;
+            if (!drag || drag.id !== event.pointerId) return;
+            if (drag.draw) {
+                if (event.type === 'pointercancel') lasso.cancel();
+                else if (lasso.finish()) swallowNextClick(container);
+            } else if (drag.moved) swallowNextClick(container);
+            container.classList.remove('is-dragging');
+            drag = null;
         };
         container.addEventListener('pointerup', end);
         container.addEventListener('pointercancel', end);
@@ -465,14 +776,129 @@
             'wheel',
             event => {
                 const svg = event.target.closest?.('.am-svg');
-                if (!svg || (!event.ctrlKey && !event.metaKey && Math.abs(event.deltaY) < 1)) return;
-                if (!event.ctrlKey && !event.metaKey && !state.view) return; // sense zoom, la rodeta fa scroll de la pàgina
-                event.preventDefault();
-                const [cx, cy] = svgPoint(svg, event.clientX, event.clientY);
-                zoomBy(event.deltaY < 0 ? 1.25 : 1 / 1.25, cx, cy);
+                if (!svg) return;
+                const rect = svg.getBoundingClientRect();
+                // Ctrl/⌘ + roda (i el pessic del trackpad) o pantalla completa: zoom on hi ha el ratolí
+                if (event.ctrlKey || event.metaKey || state.full) {
+                    event.preventDefault();
+                    zoomBy(Math.exp(-event.deltaY * (event.ctrlKey ? 0.01 : 0.0025)), event.clientX, event.clientY);
+                    return;
+                }
+                // Amb zoom, la roda mou el mapa amunt i avall; a la vora (o sense zoom) fa scroll de la pàgina
+                if (!state.container.classList.contains('is-zoomed')) return;
+                const [x, y, w, h] = currentView();
+                const { s } = fit(rect, w, h);
+                if (setView([x + event.deltaX / s, y + event.deltaY / s, w, h])) event.preventDefault();
             },
             { passive: false }
         );
+    }
+
+    // Dits: dos dits mouen i apropen el mapa (un dit fa scroll de la pàgina, tret de la pantalla completa, on un
+    // dit també mou el mapa); en mode dibuix, un dit dibuixa la zona.
+    function bindTouch(container) {
+        let touch = null;
+        const centroid = touches => {
+            const a = touches[0];
+            const b = touches[1];
+            return {
+                x: (a.clientX + b.clientX) / 2,
+                y: (a.clientY + b.clientY) / 2,
+                d: Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY),
+            };
+        };
+        const startPinch = (svg, touches) => {
+            const rect = svg.getBoundingClientRect();
+            const c = centroid(touches);
+            return {
+                mode: 'pinch',
+                rect,
+                d0: Math.max(c.d, 1),
+                w0: currentView()[2],
+                grab: clientToSvg(currentView(), rect, c.x, c.y),
+                moved: true,
+            };
+        };
+        const startPan = (svg, t) => {
+            const rect = svg.getBoundingClientRect();
+            return {
+                mode: 'pan',
+                rect,
+                x: t.clientX,
+                y: t.clientY,
+                grab: clientToSvg(currentView(), rect, t.clientX, t.clientY),
+                moved: false,
+            };
+        };
+        container.addEventListener(
+            'touchstart',
+            event => {
+                const svg = event.target.closest?.('.am-svg');
+                if (!svg) return;
+                if (event.touches.length >= 2) {
+                    lasso.cancel();
+                    touch = startPinch(svg, event.touches);
+                    event.preventDefault();
+                    return;
+                }
+                const t = event.touches[0];
+                if (state.drawing) {
+                    lasso.start(t.clientX, t.clientY);
+                    touch = { mode: 'draw' };
+                } else if (state.full) touch = startPan(svg, t);
+                else touch = null;
+            },
+            { passive: false }
+        );
+        container.addEventListener(
+            'touchmove',
+            event => {
+                const svg = event.target.closest?.('.am-svg') || svgEl();
+                if (event.touches.length >= 2 && svg) {
+                    if (touch?.mode !== 'pinch') {
+                        if (touch?.mode === 'draw') lasso.cancel();
+                        touch = startPinch(svg, event.touches);
+                    }
+                    if (event.cancelable) event.preventDefault();
+                    const c = centroid(event.touches);
+                    const width = clampView([0, 0, touch.w0 / (c.d / touch.d0)], baseBox())[2];
+                    setView(viewKeeping(touch.grab, touch.rect, c.x, c.y, width, baseBox()));
+                    return;
+                }
+                if (!touch) return;
+                const t = event.touches[0];
+                if (touch.mode === 'draw') {
+                    if (event.cancelable) event.preventDefault();
+                    lasso.add(t.clientX, t.clientY);
+                } else if (touch.mode === 'pan') {
+                    if (event.cancelable) event.preventDefault();
+                    if (!touch.moved && Math.abs(t.clientX - touch.x) + Math.abs(t.clientY - touch.y) < 6) return;
+                    touch.moved = true;
+                    setView(viewKeeping(touch.grab, touch.rect, t.clientX, t.clientY, currentView()[2], baseBox()));
+                }
+            },
+            { passive: false }
+        );
+        const end = event => {
+            if (!touch) return;
+            if (touch.mode === 'draw' && event.touches.length === 0) {
+                if (event.type === 'touchcancel') lasso.cancel();
+                else if (lasso.finish()) swallowNextClick(container);
+            }
+            if (touch.moved) swallowNextClick(container);
+            const svg = svgEl();
+            // D'un pessic a un sol dit: a pantalla completa es continua movent; a la pàgina, s'acaba
+            touch =
+                event.touches.length === 1 && touch.mode === 'pinch' && state.full && svg
+                    ? { ...startPan(svg, event.touches[0]), moved: true }
+                    : null;
+        };
+        container.addEventListener('touchend', end);
+        container.addEventListener('touchcancel', end);
+        // Safari: que el pessic sobre el mapa no faci zoom de tota la pàgina
+        container.addEventListener('gesturestart', event => {
+            if (event.target.closest?.('.am-svg')) event.preventDefault();
+        });
     }
 
     async function show(container) {
@@ -483,7 +909,9 @@
             state.bound = true;
             container.addEventListener('click', onClick);
             container.addEventListener('keydown', onKey);
-            bindStage(container);
+            document.addEventListener('keydown', onDocumentKey);
+            bindMouse(container);
+            bindTouch(container);
         }
         if (!state.data) container.innerHTML = '<p class="am-loading">Carregant el mapa…</p>';
         try {
@@ -493,6 +921,7 @@
             const signature = `${artistGroups().length}|${hiddenChannels().length}`;
             if (state.signature === signature && container.querySelector('.am-svg')) return;
             state.signature = signature;
+            state.songs = null; // les cançons de la zona es tornen a llegir amb el feed nou
             paint();
         } catch (_error) {
             container.innerHTML =
@@ -502,8 +931,31 @@
 
     function hide(container) {
         const target = container || state.container;
-        if (target) target.classList.add('hidden');
+        if (!target) return;
+        target.classList.add('hidden');
+        if (target === state.container) {
+            lasso.cancel();
+            state.drawing = false;
+            setFull(false);
+            syncModes();
+        }
     }
 
-    app.features.artistMap = { project, resolvePlace, buildModel, html, panelHtml, radiusOf, show, hide };
+    app.features.artistMap = {
+        project,
+        resolvePlace,
+        buildModel,
+        html,
+        panelHtml,
+        zonePanelHtml,
+        radiusOf,
+        pointInPolygon,
+        zoneModel,
+        zoneSongs,
+        clampView,
+        clientToSvg,
+        viewKeeping,
+        show,
+        hide,
+    };
 })(window);

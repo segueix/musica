@@ -1590,3 +1590,12 @@ Proves de migració, idempotència, homònims, Topic, exclusions i revisions par
   - `show()` es crida a cada `renderVideos()`: només repinta si canvien els artistes (nombre de grups o canals amagats), si no es perdria el zoom i el lloc triat.
   - Un arrossegament per moure el mapa no ha de triar el punt on s'acaba: s'empassa el `click` següent.
   - Barcelona té un centenar d'artistes: al mòbil la llista del panell té scroll propi (`max-height: 55vh`).
+
+## 2026-10-12 — Mapa d'artistes: dos dits, pantalla completa i dibuixar una zona
+
+- **Un dit o dos?** A la pàgina, un dit ha de continuar fent scroll. `touch-action: pan-y` a l'SVG i un `touchmove` **no passiu** que fa `preventDefault()` quan hi ha dos dits: si els dos dits toquen abans de moure's, el navegador no comença l'scroll i el mapa es mou i s'apropa. A pantalla completa i en mode dibuix, `touch-action: none`.
+- **`position: fixed` dins d'un pare transformat** queda relatiu al pare (sortia amb 6.000 px d'alçada i desplaçat). A pantalla completa el contenidor es mou a `<body>` i un comentari en guarda el lloc per tornar-lo.
+- **El «click» després d'un gest:** després d'arrossegar, pessigar o dibuixar s'empassa el clic **només si cau dins l'SVG**; si no, també s'empassava el toc al botó de pantalla completa fet just després.
+- **Pantalla completa amb «meet»:** l'SVG ocupa tota l'àrea i el viewBox hi cap amb franges; per passar de la pantalla a l'SVG cal tenir en compte l'escala i la franja (`fit()` / `clientToSvg()`), no el rectangle sencer.
+- **Autoplay:** la ràdio d'una zona s'engega en acabar el traç. Les cançons es carreguen en entrar al mode dibuix perquè no hi hagi cap `await` entre el gest i la reproducció.
+- A l'entorn de prova (YouTube bloquejat), engegar **qualsevol** ràdio al mòbil dona «Failed to read the 'localStorage' property… Access is denied»: és de l'iframe buit, no del mapa (`verificar-mapa.js` el filtra).
