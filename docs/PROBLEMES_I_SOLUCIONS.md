@@ -1578,3 +1578,15 @@ La cua creixia perquè tots els vídeos nous hi entraven i les marques ortogràf
 `applyReview()` només resol els IDs explícits: abans aprovava tots els dubtes restants i amagava tots els descartaments ortogràfics. La memòria permet decisions per ID, obres explícitament reutilitzables amb font i discos amb pistes verificades; no hereta decisions a remescles/directes/col·laboracions per un títol net semblant. La confiança es pot revocar movent un artista a vigilància, sense esborrar decisions individuals. Les cues fora del feed actiu es preserven perquè una lectura parcial del catàleg no les resol.
 
 Proves de migració, idempotència, homònims, Topic, exclusions i revisions parcials a `tests/revisio-idiomes.test.js`. Cap consulta a YouTube ni edició manual del feed.
+
+## 2026-10-12 — «Música d'arreu»: un mapa que creix sol amb els grups nous
+
+- **Demanda:** mapa dels Països Catalans amb la ubicació dels artistes, que s'hi vagin sumant grups a mesura que arriben dades.
+- **Solució:** el mapa de base (`data/mapa-base.json`, generat un sol cop per `scripts/generar_mapa_base.js`) només porta els contorns i la **projecció**; els punts els calcula el client (`artist-map.js`, `buildModel()`) cada vegada amb `origens-artistes.json` + `YouTubeAPI.getArtistGroups()`. Validar un artista nou o afegir-ne el canal fa que surti sense tocar el mapa.
+- **Trampes:**
+  - Douglas-Peucker amb anells tancats: el primer i l'últim punt són iguals (longitud 0) i el camí sortia buit; amb longitud 0 cal fer servir la distància al punt.
+  - Les comarques/illes (`territory:*`) no tenen coordenades: van a la capital de `proximitat-musical.json` → `references`, marcades com a aproximades.
+  - Amb zoom (viewBox) els cercles es farien enormes: `transform: scale(calc(1 / var(--am-zoom)))` amb `transform-box: fill-box`; les vores amb `vector-effect: non-scaling-stroke`.
+  - `show()` es crida a cada `renderVideos()`: només repinta si canvien els artistes (nombre de grups o canals amagats), si no es perdria el zoom i el lloc triat.
+  - Un arrossegament per moure el mapa no ha de triar el punt on s'acaba: s'empassa el `click` següent.
+  - Barcelona té un centenar d'artistes: al mòbil la llista del panell té scroll propi (`max-height: 55vh`).

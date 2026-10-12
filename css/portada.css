@@ -7321,3 +7321,311 @@ body.is-video-pip .video-placeholder.is-placeholder-hidden {
     color: var(--pt-accent);
     font-weight: 800;
 }
+
+/* ========== «Música d'arreu»: mapa dels artistes (Descobreix, artist-map.js) ========== */
+.artist-map {
+    margin: 8px 0 28px;
+    padding: 20px;
+    border: 1px solid var(--pt-line);
+    border-radius: var(--pt-radius-lg);
+    background: var(--pt-surface);
+    color: var(--pt-text);
+}
+.artist-map.hidden {
+    display: none;
+}
+.am-loading {
+    margin: 0;
+    color: var(--pt-muted);
+}
+.am-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 12px 24px;
+}
+.am-title {
+    margin: 2px 0 4px;
+    font-family: var(--pt-display);
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    line-height: 1.1;
+}
+.am-sub {
+    margin: 0;
+    color: var(--pt-muted);
+}
+.am-territories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 14px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: var(--pt-muted);
+    font-size: 0.875rem;
+}
+.am-territories strong {
+    color: var(--pt-accent);
+}
+.am-styles {
+    display: flex;
+    gap: 8px;
+    margin: 16px 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+.am-chip {
+    flex: none;
+    min-height: 36px;
+    padding: 0 14px;
+    border: 1px solid var(--pt-line);
+    border-radius: var(--pt-radius-pill);
+    background: var(--pt-surface-2);
+    color: var(--pt-text);
+    font: inherit;
+    font-size: 0.875rem;
+    cursor: pointer;
+}
+.am-chip.is-active {
+    border-color: var(--pt-accent);
+    background: var(--pt-accent);
+    color: var(--pt-on-accent);
+}
+.am-body {
+    display: grid;
+    gap: 16px;
+}
+.am-stage {
+    position: relative;
+    border-radius: var(--pt-radius);
+    background: #18201f;
+    overflow: hidden;
+}
+.am-svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 72vh;
+    touch-action: pan-y;
+    user-select: none;
+}
+.am-shape {
+    stroke-linejoin: round;
+    vector-effect: non-scaling-stroke;
+}
+.am-shape--pc {
+    fill: var(--pt-surface-3);
+    stroke: rgba(244, 240, 232, 0.35);
+    stroke-width: 1;
+}
+.am-shape--context {
+    fill: var(--pt-surface);
+    stroke: rgba(244, 240, 232, 0.08);
+    stroke-width: 1;
+}
+.am-inset rect {
+    fill: #18201f;
+    stroke: var(--pt-line);
+    vector-effect: non-scaling-stroke;
+}
+.am-inset text {
+    fill: var(--pt-muted);
+    font-size: 22px;
+}
+.am-dot {
+    cursor: pointer;
+    outline: none;
+}
+.am-dot circle {
+    fill: rgba(214, 237, 132, 0.55);
+    stroke: var(--pt-accent);
+    stroke-width: 1.5;
+    vector-effect: non-scaling-stroke;
+    transition: fill 0.15s ease;
+    /* Amb zoom els punts no es fan més grans: es veuen els del costat */
+    transform-box: fill-box;
+    transform-origin: center;
+    transform: scale(calc(1 / var(--am-zoom, 1)));
+}
+.am-dot.is-approx circle {
+    stroke-dasharray: 3 2;
+}
+.am-dot:hover circle,
+.am-dot:focus-visible circle {
+    fill: var(--pt-accent);
+}
+.am-dot:focus-visible circle {
+    stroke: var(--pt-text);
+    stroke-width: 3;
+}
+.am-dot.is-active circle {
+    fill: var(--pt-terracotta);
+    stroke: var(--pt-text);
+    stroke-width: 2;
+}
+.am-zoom {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.am-zoom button {
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--pt-line);
+    border-radius: 50%;
+    background: var(--pt-surface-2);
+    color: var(--pt-text);
+    font-size: 1.25rem;
+    line-height: 1;
+    cursor: pointer;
+}
+.am-zoom button:hover,
+.am-radio:hover,
+.am-artist:hover {
+    border-color: var(--pt-accent);
+}
+.am-panel {
+    min-width: 0;
+}
+.am-panel__hint {
+    margin: 0;
+    color: var(--pt-muted);
+}
+.am-panel__head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+}
+.am-panel__head h3 {
+    margin: 0;
+    font-family: var(--pt-display);
+    font-size: 1.375rem;
+}
+.am-panel__head p {
+    margin: 2px 0 0;
+    color: var(--pt-muted);
+    font-size: 0.875rem;
+}
+.am-radio {
+    flex: none;
+    min-height: 44px;
+    padding: 0 16px;
+    border: 1px solid var(--pt-accent);
+    border-radius: var(--pt-radius-pill);
+    background: var(--pt-accent);
+    color: var(--pt-on-accent);
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+.am-artists {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 8px;
+    margin: 14px 0 0;
+    padding: 0;
+    list-style: none;
+}
+.am-artist {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    min-height: 52px;
+    padding: 6px 10px 6px 6px;
+    border: 1px solid var(--pt-line);
+    border-radius: var(--pt-radius-sm);
+    background: var(--pt-surface-2);
+    color: var(--pt-text);
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+}
+.am-artist img {
+    flex: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.am-artist span {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+.am-artist strong {
+    overflow: hidden;
+    font-weight: 600;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.am-artist small {
+    color: var(--pt-terracotta);
+    font-size: 0.75rem;
+}
+.am-outside,
+.am-list {
+    margin-top: 14px;
+    color: var(--pt-muted);
+}
+.am-outside summary,
+.am-list summary {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    color: var(--pt-text);
+    cursor: pointer;
+}
+.am-list h4 {
+    margin: 12px 0 4px;
+    color: var(--pt-text);
+}
+.am-list ul {
+    margin: 0;
+    padding-left: 18px;
+}
+.am-link {
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--pt-accent);
+    font: inherit;
+    text-decoration: underline;
+    cursor: pointer;
+}
+@media (min-width: 1025px) {
+    .am-body {
+        grid-template-columns: minmax(0, 1.6fr) minmax(280px, 1fr);
+        align-items: start;
+    }
+    .am-panel {
+        max-height: 72vh;
+        overflow-y: auto;
+    }
+    .am-artists {
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 600px) {
+    .artist-map {
+        margin-inline: -4px;
+        padding: 16px 12px;
+    }
+    .am-panel__head {
+        flex-direction: column;
+    }
+    .am-radio {
+        width: 100%;
+    }
+    /* Barcelona en té un centenar: la llista té el seu scroll i no s'allarga la pàgina */
+    .am-artists {
+        max-height: 55vh;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+    }
+}
