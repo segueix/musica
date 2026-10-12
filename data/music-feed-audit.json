@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-12T07:33:04.126Z",
+  "generatedAt": "2026-10-12T07:56:00.722Z",
   "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
   "restrictedVideoCount": 21,
@@ -292,9 +292,9 @@
     {
       "id": "UCSDuvSwql52flui2567reQw",
       "name": "Anna Andreu",
-      "songs": 40,
-      "matched": 39,
-      "coverage": 0.97,
+      "songs": 41,
+      "matched": 40,
+      "coverage": 0.98,
       "governs": true
     },
     {
@@ -1243,7 +1243,10 @@
     }
   ],
   "topicGovernance": "apply",
-  "governedReclassified": {},
+  "governedReclassified": {
+    "other": 2,
+    "song": 4
+  },
   "topicHiddenCount": 0,
   "topicChannels": [
     {
@@ -3329,22 +3332,22 @@
   "indexedChannelCount": 546,
   "resolvedChannelCount": 546,
   "feedChannelCount": 546,
-  "rawPublicVideoCount": 6030,
-  "feedVideoCount": 5507,
-  "acceptedMusicCount": 5466,
-  "categoryEligibleVideoCount": 5462,
+  "rawPublicVideoCount": 6062,
+  "feedVideoCount": 5536,
+  "acceptedMusicCount": 5497,
+  "categoryEligibleVideoCount": 5493,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
-    "before": 0,
+    "before": 2,
     "matched": 0,
-    "rejected": 0
+    "rejected": 2
   },
   "contentReviewCount": 529,
   "contentTypeCounts": {
-    "song": 5320,
+    "song": 5351,
     "live_song": 142,
     "album": 4,
-    "other": 35,
+    "other": 36,
     "review": 529
   },
   "unresolvedChannelIds": [],

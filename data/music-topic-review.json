@@ -1,7 +1,10 @@
 {
-  "generatedAt": "2026-10-12T07:33:04.126Z",
+  "generatedAt": "2026-10-12T07:56:00.722Z",
   "mode": "apply",
-  "reclassified": {},
+  "reclassified": {
+    "other": 2,
+    "song": 4
+  },
   "hiddenFromTopic": [],
   "videos": [
     {
@@ -89,9 +92,23 @@
       "to": "song"
     },
     {
+      "id": "QAr713wG3TI",
+      "channelTitle": "Anna Andreu",
+      "title": "'Letargo y Despertar' d'Anna Andreu",
+      "from": "review",
+      "to": "song"
+    },
+    {
       "id": "p3NesYndiBg",
       "channelTitle": "Anna Andreu",
       "title": "'Quietud' d'Anna Andreu ft. Rita Payés i Pol Batlle",
+      "from": "review",
+      "to": "song"
+    },
+    {
+      "id": "f1MXDLREBrc",
+      "channelTitle": "Anna Andreu",
+      "title": "Anna Andreu 'Els mals costums' (Audio oficial - complet)",
       "from": "review",
       "to": "song"
     },
@@ -110,6 +127,20 @@
       "to": "song"
     },
     {
+      "id": "U-8YwBg0R_U",
+      "channelTitle": "Anna Andreu",
+      "title": "Anna Andreu 'La mida' (Audio oficial sencer)",
+      "from": "review",
+      "to": "song"
+    },
+    {
+      "id": "ffdyRGdkodU",
+      "channelTitle": "Anna Andreu",
+      "title": "Anna Andreu 'Vigília' (Àudio sencer)",
+      "from": "review",
+      "to": "other"
+    },
+    {
       "id": "ffdyRGdkodU",
       "channelTitle": "Anna Andreu",
       "title": "Anna Andreu 'Vigília' (Àudio sencer)",
@@ -122,6 +153,20 @@
       "title": "EL TRO DEL SENYAL En directe a L'Auditori de Barcelona",
       "from": "review",
       "to": "other"
+    },
+    {
+      "id": "GiYIyBqhGSA",
+      "channelTitle": "Anna Andreu",
+      "title": "EL TRO DEL SENYAL En directe a L'Auditori de Barcelona",
+      "from": "review",
+      "to": "other"
+    },
+    {
+      "id": "xiG1Pg3oxU4",
+      "channelTitle": "Anna Andreu",
+      "title": "Torrent Sanguini (directe)",
+      "from": "review",
+      "to": "song"
     },
     {
       "id": "xiG1Pg3oxU4",
