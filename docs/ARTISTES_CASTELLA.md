@@ -293,3 +293,13 @@ Regles preventives a `data/music-channel-video-allowlist.json`:
 - **La Coixinera:** selecció ampliada d’1 a 49 pistes del Tema (català i instrumental). Astoaren Kanta continua exclosa (basc). Nou pistes continuen pendents; no s’ha obert el canal indiscriminadament.
 - **L’Ham de Foc:** revisió dels tres discos U, Cançó de dona i home i Cor de porc. Andarletto (`QY5wOLeAFhw`) exclosa per lletra en judeocastellà; regla persistent per títol al filtre del canal. Illes continua pendent de confirmar l’idioma o la condició instrumental.
 - Revisió documental de discos, autories, repertori i lletres disponibles, no audició íntegra. [Decisions i fonts per pista](revisions/2026-10-11-folk-tema.json).
+
+
+
+## Revisió 2026-10-12 — Dusminguet, La Troba Kung-Fú i Gertrudis
+
+61 IDs nous exclosos (25 Dusminguet, 13 La Troba Kung-Fú, 23 Gertrudis), comptant versions i recopilatoris. La revisió cobreix l’inventari de 334 IDs dels tres artistes al feed, l’historial i el catàleg Topic, sense considerar verificades totes les peces que resten.
+
+Noves obres excloses: Dusminguet — Jackeline/Jaqueline (francès), Habibi (àrab), La muralla (castellà), La dansa de l’imbècil (català/castellà), Rock & Roll (castellà/anglès); La Troba Kung-Fú — Oriente Miedo/Miede (castellà/català/anglès), Stop Blood i Shame Blues (català/anglès); Gertrudis — Pantalones i Mundo Uaka (castellà), Amor XXL (català/anglès). S’apliquen també els IDs de les exclusions ja documentades que faltaven al catàleg.
+
+Es conserven els casos dubtosos i set remescles sense verificació de la veu. Gran dubtà, Disco jonki, Go, Calor calor, Rock Rumberu i Tontolava no s’exclouen pel títol. Registre amb IDs, fonts i limitacions: [revisió](revisions/2026-10-12-dusminguet-troba-gertrudis.json).

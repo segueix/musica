@@ -572,7 +572,7 @@ afegeix('Ebri Knight', [
     'Global Ice',
 ]);
 afegeix('Toti Soler', ['Todos Os Sonhos do Mundo', 'El Corazón Es Agua']);
-afegeix('Gertrudis', [
+afegeix(['Gertrudis', 'Gertrudis - Topic'], [
     'Carita De Rosa',
     'Bota Pa La Lambon',
     'Almejilla',
@@ -849,6 +849,20 @@ afegeix(
     ]
 );
 
+// Revisió del 2026-10-12: lletres contrastades; inclou versions i recopilatoris.
+afegeix(['Dusminguet', 'Dusminguet - Topic'], [
+    'Jackeline', 'Jaqueline', 'Habibi', 'La muralla',
+    "La dansa de l'imbècil", "La dansa de l'imbécil",
+    'La dansa de l´imbècil', 'La dansa de l´imbécil',
+    'La dansa de l’imbècil', 'La dansa de l’imbécil', 'Rock & Roll',
+]);
+afegeix(['La Troba Kung-Fú', 'La Troba Kung-Fú - Topic'], [
+    'Oriente Miedo', 'Oriente Miede', 'Stop Blood', 'Shame Blues',
+]);
+afegeix(['Gertrudis', 'Gertrudis - Topic'], [
+    'Pantalones', 'Mundo Uaka', 'Amor XXL',
+]);
+
 function esCastella(video) {
     const regla = REGLES[video.channelTitle];
     if (!regla) return false;
@@ -875,4 +889,5 @@ function main() {
 
 if (require.main === module) main();
 module.exports = { esCastella, REGLES };
+
 
