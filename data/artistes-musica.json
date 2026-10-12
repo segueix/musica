@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-12T17:59:02.573Z",
+  "updatedAt": "2026-10-12T19:24:00.061702Z",
   "artists": [
     {
       "name": "2 Princeses Barbudes",
@@ -11065,17 +11065,38 @@
       "name": "Franca Masu",
       "aliases": [],
       "genres": [
-        "Folk i arrel",
-        "Jazz / Blues"
+        "Jazz / Blues",
+        "Cançó d'autor"
       ],
-      "territories": [],
+      "territories": [
+        "Alguer"
+      ],
       "languages": [
-        "ca"
+        "ca",
+        "it",
+        "es",
+        "pt",
+        "sc"
       ],
       "wikidataId": "Q568158",
       "musicbrainzId": "47f9bd13-ca39-408b-b467-f25eb56de3d7",
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCemRvkxHIe6M0528tlf2Gpw",
+            "handle": null,
+            "name": "Franca Masu - Topic",
+            "type": "topic",
+            "primary": true
+          },
+          {
+            "id": "UC6Md27ZZOIr6Qvr1-nC1ARw",
+            "handle": null,
+            "name": "Franca Masu - Topic",
+            "type": "topic",
+            "primary": false
+          }
+        ],
         "candidates": [],
         "searchCandidates": [
           {
@@ -11124,17 +11145,21 @@
           }
         ]
       },
-      "confidence": "pendent",
-      "reviewStatus": "pendent",
-      "active": false,
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
         "https://www.wikidata.org/wiki/Q568158",
         "wikidata:languages-spoken-catalan",
         "wikidata:native-language-catalan",
-        "wikidata:native-language-catalan-musician"
+        "wikidata:native-language-catalan-musician",
+        "https://www.enciclopedia.cat/gran-enciclopedia-catalana/franca-masu",
+        "manual-user-2026-10-12",
+        "youtube:manual-verified",
+        "genre:manual"
       ],
-      "lastChecked": "2026-09-25T15:54:37.999Z",
-      "notes": "",
+      "lastChecked": "2026-10-12T19:24:00.061702Z",
+      "notes": "Prioritat a dos canals Topic verificats. Selecció catalana: les 10 pistes d’Alguímia, 11 de 10 Anys (sense Aquamare ni Astrolicamus) i Desde Mallorca a l’Alguer de CORDEMAR. Les altres peces dels canals no s’importen.",
       "enrichment": {
         "musicbrainz": {
           "checkedAt": "2026-09-25T15:54:37.999Z",
@@ -35819,6 +35844,204 @@
         }
       },
       "displayName": "ZOO"
+    },
+    {
+      "name": "Lo Maquini",
+      "aliases": [],
+      "genres": [
+        "Rock"
+      ],
+      "territories": [
+        "Alguer"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCC8QalNBRaG59H4QEwJjwJg",
+            "handle": "@lomaquini",
+            "name": "Lo Maquini",
+            "type": "official",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://www.plataforma-llengua.cat/que-fem/noticies/6686/lo-grup-algueres-lo-maquini-guanya-la-quarta-edicio-del-cantalguer-amb-la-canco-inedita-es-un-amic",
+        "manual-user-2026-10-12",
+        "youtube:manual-verified",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-12T19:24:00.061702Z",
+      "notes": "Canal propi verificat; no s’ha localitzat cap Tema inequívoc. Sis interpretacions musicals en alguerès (CantAlguer i Festa de les Maries), inclosa És un amic. No s’incorpora l’entrevista EYSCj1NXI-g.",
+      "genresRaw": []
+    },
+    {
+      "name": "Pino Piras",
+      "aliases": [],
+      "genres": [
+        "Cançó d'autor"
+      ],
+      "territories": [
+        "Alguer"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCbClaYsnJEk_-Iqs33UwgLQ",
+            "handle": null,
+            "name": "Pino Piras",
+            "type": "official",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://pinopiras.it/discografia/",
+        "manual-user-2026-10-12",
+        "youtube:manual-verified",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-12T19:24:00.061702Z",
+      "notes": "Arxiu propi de Pino Piras verificat: cinc gravacions originals. Sense Tema propi verificat. No s’atribueixen al cantautor les versions de Claudia Crabuzza, Franca Masu o altres intèrprets. Concerts complets, documentals i teatre queden fora.",
+      "genresRaw": []
+    },
+    {
+      "name": "Grup Coral de l'Agrupació Catalana d'Itàlia",
+      "aliases": [],
+      "genres": [
+        "Folk i arrel"
+      ],
+      "territories": [
+        "Alguer"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCRK-i4JVJi6CwcPZ1BjaLQw",
+            "handle": null,
+            "name": "Grup Coral de l'Agrupació Catalana d'Itàlia - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://www.enderrock.cat/disc/896/meu-pais-cancons-alguer-50-anys",
+        "manual-user-2026-10-12",
+        "youtube:manual-verified",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-12T19:24:00.061702Z",
+      "notes": "Canal Topic verificat, prioritzat. Només el repertori històric del grup coral recollit a Lo País Meu (Cançons de l’Alguer, 50 Anys). Les dues pistes finals acreditades a Lluciana Sari sola no s’atribueixen al grup. L’EP complet pujat a vinilissim no es presenta com una cançó individual.",
+      "genresRaw": []
+    },
+    {
+      "name": "Antonello Colledanchise",
+      "aliases": [],
+      "genres": [
+        "Cançó d'autor"
+      ],
+      "territories": [
+        "Alguer"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCF0A3xfKG43O6CfPb6cXI5A",
+            "handle": "@pantareialghero8175",
+            "name": "panta rei Alghero",
+            "type": "other",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://www.plataforma-llengua.cat/que-fem/noticies/4622/antologia-algueresa-antonello-colledanchise-i-paolo-dessi-al-festival-barnasants",
+        "manual-user-2026-10-12",
+        "youtube:manual-verified",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-12T19:24:00.061702Z",
+      "notes": "No s’ha localitzat un Tema propi verificat. Selecció de set interpretacions del cantautor al canal vinculat panta rei Alghero; descripcions que identifiquen l’intèrpret i la llengua algueresa. No s’importen altres cantants, entrevistes ni cançons sardes o italianes del canal.",
+      "genresRaw": []
+    },
+    {
+      "name": "Teresa Sanna",
+      "aliases": [],
+      "genres": [
+        "Pop",
+        "Cançó d'autor"
+      ],
+      "territories": [
+        "Alguer"
+      ],
+      "languages": [
+        "ca",
+        "it",
+        "en"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UC9zX7R05JQ1P30RGvtjHizQ",
+            "handle": null,
+            "name": "Teresa",
+            "type": "official",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "https://www.enderrock.cat/noticia/28876/teresa-sanna-tinc-moltes-ganes-comenci-aquesta-bonica-aventura",
+        "manual-user-2026-10-12",
+        "youtube:manual-verified",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-12T19:24:00.061702Z",
+      "notes": "Alta editorial demanada. Identitat del canal Teresa comprovada amb els tres senzills citats a l’entrevista d’Enderrock. Sense Tema inequívoc. No s’ha localitzat encara cap gravació catalana de Marina o Lo Nassaiolo a YouTube; selecció tancada buida fins a obtenir un vídeo verificat. S’exclouen els senzills italians, covers angleses i homònims.",
+      "genresRaw": []
     }
   ]
 }

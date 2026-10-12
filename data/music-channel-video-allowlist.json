@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-12T07:30:06.204Z",
+  "updatedAt": "2026-10-12T19:24:00.061702Z",
   "description": "Llista blanca per a canals on Segueix Música només ha d'ingerir vídeos concrets. Admet títols exactes, fragments obligatoris i fragments exclosos.",
   "channels": {
     "UCKpscwdWlVaMqcA81vLI7OA": {
@@ -5101,6 +5101,140 @@
       "allowedContentTypes": [
         "song"
       ]
+    },
+    "UCC8QalNBRaG59H4QEwJjwJg": {
+      "artist": "Lo Maquini",
+      "note": "Canal propi verificat; no s’ha localitzat cap Tema inequívoc. Sis interpretacions musicals en alguerès (CantAlguer i Festa de les Maries), inclosa És un amic. No s’incorpora l’entrevista EYSCj1NXI-g.",
+      "allowedVideoIds": [
+        "IfsTvOn0Fig",
+        "PmxeA9hki8c",
+        "8AbOp0ZyGMk",
+        "7E--atPZk_I",
+        "l-1PVv4pqrg",
+        "bLf8lLBmTXc"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "avatarVideoId": "IfsTvOn0Fig"
+    },
+    "UCemRvkxHIe6M0528tlf2Gpw": {
+      "artist": "Franca Masu",
+      "note": "Prioritat a dos canals Topic verificats. Selecció catalana: les 10 pistes d’Alguímia, 11 de 10 Anys (sense Aquamare ni Astrolicamus) i Desde Mallorca a l’Alguer de CORDEMAR. Les altres peces dels canals no s’importen.",
+      "allowedVideoIds": [
+        "D0VDonarLT8",
+        "-4xh_G7Uygc",
+        "gXYxFKMsUZk",
+        "gl7nKZjm-Xs",
+        "WKPoK7eIklw",
+        "NrU-X1Pg4k8",
+        "BYBuki1lfs0",
+        "Ez-0Y9CCLgs",
+        "CD_MwDGx9HE",
+        "Ungl49uC4XY",
+        "bOfxkDHMIFI",
+        "SlwlAS28buA",
+        "fz7A5TTGp5s",
+        "OawpsdEFuk4",
+        "z-91Qs6xESU",
+        "PxQD1U294o0",
+        "xQPO9YsZW9Y",
+        "Oycm0hA3B4s",
+        "OA6IHY7tlY8",
+        "_cKKuPP-3TY",
+        "slG00pfoER8"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "avatarVideoId": "D0VDonarLT8"
+    },
+    "UC6Md27ZZOIr6Qvr1-nC1ARw": {
+      "artist": "Franca Masu",
+      "note": "Prioritat a dos canals Topic verificats. Selecció catalana: les 10 pistes d’Alguímia, 11 de 10 Anys (sense Aquamare ni Astrolicamus) i Desde Mallorca a l’Alguer de CORDEMAR. Les altres peces dels canals no s’importen.",
+      "allowedVideoIds": [
+        "CZgb_2rh3dg"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "avatarVideoId": "CZgb_2rh3dg"
+    },
+    "UCbClaYsnJEk_-Iqs33UwgLQ": {
+      "artist": "Pino Piras",
+      "note": "Arxiu propi de Pino Piras verificat: cinc gravacions originals. Sense Tema propi verificat. No s’atribueixen al cantautor les versions de Claudia Crabuzza, Franca Masu o altres intèrprets. Concerts complets, documentals i teatre queden fora.",
+      "allowedVideoIds": [
+        "InX0Y3rH8ik",
+        "4_CshUtmmwg",
+        "VmiSYGtou5s",
+        "tN86XMWkwu0",
+        "ZzJep8lEhS4"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "avatarVideoId": "VmiSYGtou5s"
+    },
+    "UCRK-i4JVJi6CwcPZ1BjaLQw": {
+      "artist": "Grup Coral de l'Agrupació Catalana d'Itàlia",
+      "note": "Canal Topic verificat, prioritzat. Només el repertori històric del grup coral recollit a Lo País Meu (Cançons de l’Alguer, 50 Anys). Les dues pistes finals acreditades a Lluciana Sari sola no s’atribueixen al grup. L’EP complet pujat a vinilissim no es presenta com una cançó individual.",
+      "allowedTitles": [
+        "Lo País Meu",
+        "La Verema",
+        "Rosa Ardenta",
+        "Lluna Plena",
+        "Nadal",
+        "Mariner, Bon Mariner",
+        "Primavera",
+        "Bella Alguer",
+        "Vida del Mariner de L’Alguer",
+        "Collidora D’Oliva",
+        "Pescador de Bogamari",
+        "Voldria Tornar"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song"
+      ],
+      "avatarFromFirstAllowedVideo": true
+    },
+    "UCF0A3xfKG43O6CfPb6cXI5A": {
+      "artist": "Antonello Colledanchise",
+      "note": "No s’ha localitzat un Tema propi verificat. Selecció de set interpretacions del cantautor al canal vinculat panta rei Alghero; descripcions que identifiquen l’intèrpret i la llengua algueresa. No s’importen altres cantants, entrevistes ni cançons sardes o italianes del canal.",
+      "allowedVideoIds": [
+        "YqVOUcxtPhs",
+        "cYKJ462-vNg",
+        "N0d8TY8-UPg",
+        "iZYnoqRCoU8",
+        "8vtONqetIUU",
+        "c8QfsdIENUk",
+        "CKYdS7VlB3U"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "avatarVideoId": "cYKJ462-vNg"
+    },
+    "UC9zX7R05JQ1P30RGvtjHizQ": {
+      "artist": "Teresa Sanna",
+      "note": "Alta editorial demanada. Identitat del canal Teresa comprovada amb els tres senzills citats a l’entrevista d’Enderrock. Sense Tema inequívoc. No s’ha localitzat encara cap gravació catalana de Marina o Lo Nassaiolo a YouTube; selecció tancada buida fins a obtenir un vídeo verificat. S’exclouen els senzills italians, covers angleses i homònims.",
+      "allowedVideoIds": [],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "avatarVideoId": null
     }
   }
 }

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-12T07:37:43.184Z",
+  "updatedAt": "2026-10-12T19:24:00.061702Z",
   "attribution": {
     "text": "Coordenades de referència: GeoNames, via Open-Meteo. CC BY 4.0.",
     "sources": [
@@ -8267,11 +8267,11 @@
         "geonames:3183284"
       ],
       "confidence": "alta",
-      "basis": "La Gran Enciclopèdia Catalana documenta l’Alguer com a ciutat natal de Franca Masu.",
+      "basis": "Alguímia: antologia de poesia algueresa; 10 Anys: documentació explícita de les dues excepcions lingüístiques; CORDEMAR: versió catalana identificada.",
       "sources": [
         "https://www.enciclopedia.cat/gran-enciclopedia-catalana/franca-masu"
       ],
-      "reviewedOn": "2026-10-11",
+      "reviewedOn": "2026-10-12",
       "assignmentSource": "manual-review",
       "locked": true
     },
@@ -9776,6 +9776,86 @@
       "reviewedOn": "2026-10-12",
       "assignmentSource": "user-correction",
       "locked": true
+    },
+    "artist:lo-maquini": {
+      "name": "Lo Maquini",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3183284"
+      ],
+      "confidence": "alta",
+      "basis": "Presentació del grup i lletres publicades al canal; fonts del CantAlguer.",
+      "sources": [
+        "https://www.plataforma-llengua.cat/que-fem/noticies/6686/lo-grup-algueres-lo-maquini-guanya-la-quarta-edicio-del-cantalguer-amb-la-canco-inedita-es-un-amic"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:pino-piras": {
+      "name": "Pino Piras",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3183284"
+      ],
+      "confidence": "alta",
+      "basis": "Cançoner oficial i descripcions de les gravacions originals, amb Pino Piras com a intèrpret.",
+      "sources": [
+        "https://pinopiras.it/discografia/"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:grup-coral-de-l-agrupacio-catalana-d-italia": {
+      "name": "Grup Coral de l'Agrupació Catalana d'Itàlia",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3183284"
+      ],
+      "confidence": "alta",
+      "basis": "Discografia, crèdits i repertori alguerès dels enregistraments històrics.",
+      "sources": [
+        "https://www.enderrock.cat/disc/896/meu-pais-cancons-alguer-50-anys"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:antonello-colledanchise": {
+      "name": "Antonello Colledanchise",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3183284"
+      ],
+      "confidence": "alta",
+      "basis": "Descripcions del publicador: canzone algherese i interpretació d’Antonello Colledanchise.",
+      "sources": [
+        "https://www.plataforma-llengua.cat/que-fem/noticies/4622/antologia-algueresa-antonello-colledanchise-i-paolo-dessi-al-festival-barnasants"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:teresa-sanna": {
+      "name": "Teresa Sanna",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3183284"
+      ],
+      "confidence": "alta",
+      "basis": "Origen i identitat documentats; pendent d’un enregistrament català disponible a YouTube.",
+      "sources": [
+        "https://www.enderrock.cat/noticia/28876/teresa-sanna-tinc-moltes-ganes-comenci-aquesta-bonica-aventura"
+      ],
+      "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true
     }
   },
   "channels": {
@@ -10325,7 +10405,14 @@
     "UCzyjfdkAmiRCOjJGuUVbqYg": "artist:assac",
     "UC-N1gUYe6UmwHOSQAUPH2-A": "artist:the-cabrians",
     "UCeZTzF8dhFsh_BcqHUzygjg": "artist:pesta-porcina",
-    "UCvab9QKJ1NEdMJObwZkA39A": "artist:lladruc"
+    "UCvab9QKJ1NEdMJObwZkA39A": "artist:lladruc",
+    "UCC8QalNBRaG59H4QEwJjwJg": "artist:lo-maquini",
+    "UCemRvkxHIe6M0528tlf2Gpw": "artist:franca-masu",
+    "UC6Md27ZZOIr6Qvr1-nC1ARw": "artist:franca-masu",
+    "UCbClaYsnJEk_-Iqs33UwgLQ": "artist:pino-piras",
+    "UCRK-i4JVJi6CwcPZ1BjaLQw": "artist:grup-coral-de-l-agrupacio-catalana-d-italia",
+    "UCF0A3xfKG43O6CfPb6cXI5A": "artist:antonello-colledanchise",
+    "UC9zX7R05JQ1P30RGvtjHizQ": "artist:teresa-sanna"
   },
   "excludedProfiles": {
     "UCdezTX23syEeAJJAb2oOkKA": {

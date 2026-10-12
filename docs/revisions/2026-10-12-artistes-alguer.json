@@ -1,0 +1,554 @@
+{
+  "schemaVersion": 1,
+  "reviewedOn": "2026-10-12",
+  "requestedArtists": [
+    "Lo Maquini",
+    "Franca Masu",
+    "Pino Piras",
+    "Grup Coral de l'Agrupació Catalana d'Itàlia",
+    "Antonello Colledanchise",
+    "Teresa Sanna"
+  ],
+  "method": "Metadades del canal, publicador real i gravacions de YouTube; fonts documentals i lletres quan són disponibles. No s’ha fet escolta íntegra de totes les pistes. Preferència Topic quan el canal és inequívoc. No s’atribueixen versions alienes a l’autor original.",
+  "selections": [
+    {
+      "artist": "Lo Maquini",
+      "status": "validated",
+      "channels": [
+        {
+          "id": "UCC8QalNBRaG59H4QEwJjwJg",
+          "handle": "@lomaquini",
+          "name": "Lo Maquini",
+          "type": "official",
+          "primary": true
+        }
+      ],
+      "videoIds": [
+        "IfsTvOn0Fig",
+        "PmxeA9hki8c",
+        "8AbOp0ZyGMk",
+        "7E--atPZk_I",
+        "l-1PVv4pqrg",
+        "bLf8lLBmTXc"
+      ],
+      "languageBasis": "Presentació del grup i lletres publicades al canal; fonts del CantAlguer.",
+      "notes": "Canal propi verificat; no s’ha localitzat cap Tema inequívoc. Sis interpretacions musicals en alguerès (CantAlguer i Festa de les Maries), inclosa És un amic. No s’incorpora l’entrevista EYSCj1NXI-g.",
+      "sources": [
+        "https://www.plataforma-llengua.cat/que-fem/noticies/6686/lo-grup-algueres-lo-maquini-guanya-la-quarta-edicio-del-cantalguer-amb-la-canco-inedita-es-un-amic"
+      ]
+    },
+    {
+      "artist": "Franca Masu",
+      "status": "validated",
+      "channels": [
+        {
+          "id": "UCemRvkxHIe6M0528tlf2Gpw",
+          "handle": null,
+          "name": "Franca Masu - Topic",
+          "type": "topic",
+          "primary": true
+        },
+        {
+          "id": "UC6Md27ZZOIr6Qvr1-nC1ARw",
+          "handle": null,
+          "name": "Franca Masu - Topic",
+          "type": "topic",
+          "primary": false
+        }
+      ],
+      "videoIds": [
+        "D0VDonarLT8",
+        "-4xh_G7Uygc",
+        "gXYxFKMsUZk",
+        "gl7nKZjm-Xs",
+        "WKPoK7eIklw",
+        "NrU-X1Pg4k8",
+        "BYBuki1lfs0",
+        "Ez-0Y9CCLgs",
+        "CD_MwDGx9HE",
+        "Ungl49uC4XY",
+        "bOfxkDHMIFI",
+        "SlwlAS28buA",
+        "fz7A5TTGp5s",
+        "OawpsdEFuk4",
+        "z-91Qs6xESU",
+        "PxQD1U294o0",
+        "xQPO9YsZW9Y",
+        "Oycm0hA3B4s",
+        "OA6IHY7tlY8",
+        "_cKKuPP-3TY",
+        "slG00pfoER8",
+        "CZgb_2rh3dg"
+      ],
+      "languageBasis": "Alguímia: antologia de poesia algueresa; 10 Anys: documentació explícita de les dues excepcions lingüístiques; CORDEMAR: versió catalana identificada.",
+      "notes": "Prioritat a dos canals Topic verificats. Selecció catalana: les 10 pistes d’Alguímia, 11 de 10 Anys (sense Aquamare ni Astrolicamus) i Desde Mallorca a l’Alguer de CORDEMAR. Les altres peces dels canals no s’importen.",
+      "sources": [
+        "https://www.enciclopedia.cat/gran-enciclopedia-catalana/franca-masu"
+      ]
+    },
+    {
+      "artist": "Pino Piras",
+      "status": "validated",
+      "channels": [
+        {
+          "id": "UCbClaYsnJEk_-Iqs33UwgLQ",
+          "handle": null,
+          "name": "Pino Piras",
+          "type": "official",
+          "primary": true
+        }
+      ],
+      "videoIds": [
+        "InX0Y3rH8ik",
+        "4_CshUtmmwg",
+        "VmiSYGtou5s",
+        "tN86XMWkwu0",
+        "ZzJep8lEhS4"
+      ],
+      "languageBasis": "Cançoner oficial i descripcions de les gravacions originals, amb Pino Piras com a intèrpret.",
+      "notes": "Arxiu propi de Pino Piras verificat: cinc gravacions originals. Sense Tema propi verificat. No s’atribueixen al cantautor les versions de Claudia Crabuzza, Franca Masu o altres intèrprets. Concerts complets, documentals i teatre queden fora.",
+      "sources": [
+        "https://pinopiras.it/discografia/"
+      ]
+    },
+    {
+      "artist": "Grup Coral de l'Agrupació Catalana d'Itàlia",
+      "status": "validated",
+      "channels": [
+        {
+          "id": "UCRK-i4JVJi6CwcPZ1BjaLQw",
+          "handle": null,
+          "name": "Grup Coral de l'Agrupació Catalana d'Itàlia - Topic",
+          "type": "topic",
+          "primary": true
+        }
+      ],
+      "videoIds": [],
+      "languageBasis": "Discografia, crèdits i repertori alguerès dels enregistraments històrics.",
+      "notes": "Canal Topic verificat, prioritzat. Només el repertori històric del grup coral recollit a Lo País Meu (Cançons de l’Alguer, 50 Anys). Les dues pistes finals acreditades a Lluciana Sari sola no s’atribueixen al grup. L’EP complet pujat a vinilissim no es presenta com una cançó individual.",
+      "sources": [
+        "https://www.enderrock.cat/disc/896/meu-pais-cancons-alguer-50-anys"
+      ]
+    },
+    {
+      "artist": "Antonello Colledanchise",
+      "status": "validated",
+      "channels": [
+        {
+          "id": "UCF0A3xfKG43O6CfPb6cXI5A",
+          "handle": "@pantareialghero8175",
+          "name": "panta rei Alghero",
+          "type": "other",
+          "primary": true
+        }
+      ],
+      "videoIds": [
+        "YqVOUcxtPhs",
+        "cYKJ462-vNg",
+        "N0d8TY8-UPg",
+        "iZYnoqRCoU8",
+        "8vtONqetIUU",
+        "c8QfsdIENUk",
+        "CKYdS7VlB3U"
+      ],
+      "languageBasis": "Descripcions del publicador: canzone algherese i interpretació d’Antonello Colledanchise.",
+      "notes": "No s’ha localitzat un Tema propi verificat. Selecció de set interpretacions del cantautor al canal vinculat panta rei Alghero; descripcions que identifiquen l’intèrpret i la llengua algueresa. No s’importen altres cantants, entrevistes ni cançons sardes o italianes del canal.",
+      "sources": [
+        "https://www.plataforma-llengua.cat/que-fem/noticies/4622/antologia-algueresa-antonello-colledanchise-i-paolo-dessi-al-festival-barnasants"
+      ]
+    },
+    {
+      "artist": "Teresa Sanna",
+      "status": "awaiting-catalan-recording",
+      "channels": [
+        {
+          "id": "UC9zX7R05JQ1P30RGvtjHizQ",
+          "handle": null,
+          "name": "Teresa",
+          "type": "official",
+          "primary": true
+        }
+      ],
+      "videoIds": [],
+      "languageBasis": "Origen i identitat documentats; pendent d’un enregistrament català disponible a YouTube.",
+      "notes": "Alta editorial demanada. Identitat del canal Teresa comprovada amb els tres senzills citats a l’entrevista d’Enderrock. Sense Tema inequívoc. No s’ha localitzat encara cap gravació catalana de Marina o Lo Nassaiolo a YouTube; selecció tancada buida fins a obtenir un vídeo verificat. S’exclouen els senzills italians, covers angleses i homònims.",
+      "sources": [
+        "https://www.enderrock.cat/noticia/28876/teresa-sanna-tinc-moltes-ganes-comenci-aquesta-bonica-aventura"
+      ]
+    }
+  ],
+  "rejectedExamples": [
+    {
+      "id": "EYSCj1NXI-g",
+      "reason": "Entrevista, no és la gravació d’És un amic."
+    },
+    {
+      "id": "4X4uckVyk9o",
+      "reason": "Enllaç trobat a Shazam: les metadades reals són Bad Bunny, no el grup coral."
+    },
+    {
+      "channelId": "UC8qWHoNNH2vYcntZDDtPebg",
+      "reason": "Teresa Official: homònim filipí, no Teresa Sanna."
+    }
+  ],
+  "checkedRecordings": [
+    {
+      "id": "IfsTvOn0Fig",
+      "title": "PRIMER PREMI CANTALGUER 2025 | Lo Maquini - És un amic",
+      "channelId": "UCC8QalNBRaG59H4QEwJjwJg",
+      "channel": "Lo Maquini",
+      "duration": 247,
+      "embeddable": true,
+      "publishDate": "2025-11-04T23:54:45-08:00"
+    },
+    {
+      "id": "PmxeA9hki8c",
+      "title": "Lo Maquini - Pels anys que no hem viscut (cover de PAU VALLVÉ)",
+      "channelId": "UCC8QalNBRaG59H4QEwJjwJg",
+      "channel": "Lo Maquini",
+      "duration": 186,
+      "embeddable": true,
+      "publishDate": "2025-09-27T05:03:59-07:00"
+    },
+    {
+      "id": "8AbOp0ZyGMk",
+      "title": "FESTA DE LES MARIES 2025 | Lo Maquini - Alba al balaguer",
+      "channelId": "UCC8QalNBRaG59H4QEwJjwJg",
+      "channel": "Lo Maquini",
+      "duration": 190,
+      "embeddable": true,
+      "publishDate": "2025-09-09T06:23:27-07:00"
+    },
+    {
+      "id": "7E--atPZk_I",
+      "title": "CONCERT COL·LECTIU CANTALGUER | Lo Maquini - Alba al Balaguer",
+      "channelId": "UCC8QalNBRaG59H4QEwJjwJg",
+      "channel": "Lo Maquini",
+      "duration": 192,
+      "embeddable": true,
+      "publishDate": "2025-05-19T10:03:51-07:00"
+    },
+    {
+      "id": "l-1PVv4pqrg",
+      "title": "CANTALGUER 2024| Lo Maquini - Alabama (cover de Antonello Colledanchise)",
+      "channelId": "UCC8QalNBRaG59H4QEwJjwJg",
+      "channel": "Lo Maquini",
+      "duration": 183,
+      "embeddable": true
+    },
+    {
+      "id": "bLf8lLBmTXc",
+      "title": "CANTALGUER 2024| Lo Maquini - Bar en mig",
+      "channelId": "UCC8QalNBRaG59H4QEwJjwJg",
+      "channel": "Lo Maquini",
+      "duration": 242,
+      "embeddable": true
+    },
+    {
+      "id": "D0VDonarLT8",
+      "title": "Cor Meu",
+      "channelId": "UCemRvkxHIe6M0528tlf2Gpw",
+      "channel": "Franca Masu - Topic",
+      "duration": 424,
+      "embeddable": true,
+      "publishDate": "2014-11-08T20:38:56-08:00"
+    },
+    {
+      "id": "-4xh_G7Uygc",
+      "title": "L'adéu",
+      "channelId": "UCemRvkxHIe6M0528tlf2Gpw",
+      "channel": "Franca Masu - Topic",
+      "duration": 278,
+      "embeddable": true,
+      "publishDate": "2014-11-05T19:01:18-08:00"
+    },
+    {
+      "id": "gXYxFKMsUZk",
+      "title": "Passa Jesucrist",
+      "channelId": "UCemRvkxHIe6M0528tlf2Gpw",
+      "channel": "Franca Masu - Topic",
+      "duration": 392,
+      "embeddable": true,
+      "publishDate": "2014-11-08T14:50:04-08:00"
+    },
+    {
+      "id": "gl7nKZjm-Xs",
+      "title": "Tria La Vida",
+      "channelId": "UCemRvkxHIe6M0528tlf2Gpw",
+      "channel": "Franca Masu - Topic",
+      "duration": 316,
+      "embeddable": true,
+      "publishDate": "2014-11-08T15:51:51-08:00"
+    },
+    {
+      "id": "WKPoK7eIklw",
+      "title": "Núvol Blau",
+      "channelId": "UCemRvkxHIe6M0528tlf2Gpw",
+      "channel": "Franca Masu - Topic",
+      "duration": 257,
+      "embeddable": true,
+      "publishDate": "2014-11-05T19:39:40-08:00"
+    },
+    {
+      "id": "NrU-X1Pg4k8",
+      "title": "Ave Maria",
+      "channelId": "UCemRvkxHIe6M0528tlf2Gpw",
+      "channel": "Franca Masu - Topic",
+      "duration": 343,
+      "embeddable": true,
+      "publishDate": "2014-11-07T22:32:30-08:00"
+    },
+    {
+      "id": "BYBuki1lfs0",
+      "title": "Amargantango",
+      "channelId": "UCemRvkxHIe6M0528tlf2Gpw",
+      "channel": "Franca Masu - Topic",
+      "duration": 221,
+      "embeddable": true,
+      "publishDate": "2014-11-08T18:46:32-08:00"
+    },
+    {
+      "id": "Ez-0Y9CCLgs",
+      "title": "Quedar-Me Sola",
+      "channelId": "UCemRvkxHIe6M0528tlf2Gpw",
+      "channel": "Franca Masu - Topic",
+      "duration": 334,
+      "embeddable": true,
+      "publishDate": "2014-11-08T20:43:25-08:00"
+    },
+    {
+      "id": "CD_MwDGx9HE",
+      "title": "Mirant Estrelles",
+      "channelId": "UCemRvkxHIe6M0528tlf2Gpw",
+      "channel": "Franca Masu - Topic",
+      "duration": 384,
+      "embeddable": true,
+      "publishDate": "2014-11-07T21:33:26-08:00"
+    },
+    {
+      "id": "Ungl49uC4XY",
+      "title": "Lo Nassaiolo",
+      "channelId": "UCemRvkxHIe6M0528tlf2Gpw",
+      "channel": "Franca Masu - Topic",
+      "duration": 383,
+      "embeddable": true,
+      "publishDate": "2014-11-08T13:52:03-08:00"
+    },
+    {
+      "id": "bOfxkDHMIFI",
+      "title": "No Res",
+      "channelId": "UCemRvkxHIe6M0528tlf2Gpw",
+      "channel": "Franca Masu - Topic",
+      "duration": 362,
+      "embeddable": true,
+      "publishDate": "2014-11-08T13:46:12-08:00"
+    },
+    {
+      "id": "SlwlAS28buA",
+      "title": "L & aposEsperanÃ§a",
+      "channelId": "UCemRvkxHIe6M0528tlf2Gpw",
+      "channel": "Franca Masu - Topic",
+      "duration": 242,
+      "embeddable": true,
+      "publishDate": "2014-11-08T17:48:44-08:00"
+    },
+    {
+      "id": "fz7A5TTGp5s",
+      "title": "Passa Jesucrist",
+      "channelId": "UCemRvkxHIe6M0528tlf2Gpw",
+      "channel": "Franca Masu - Topic",
+      "duration": 300,
+      "embeddable": true,
+      "publishDate": "2014-11-08T21:38:21-08:00"
+    },
+    {
+      "id": "OawpsdEFuk4",
+      "title": "Minyona Morena",
+      "channelId": "UCemRvkxHIe6M0528tlf2Gpw",
+      "channel": "Franca Masu - Topic",
+      "duration": 330,
+      "embeddable": true,
+      "publishDate": "2014-11-08T20:40:56-08:00"
+    },
+    {
+      "id": "z-91Qs6xESU",
+      "title": "Carreronet",
+      "channelId": "UCemRvkxHIe6M0528tlf2Gpw",
+      "channel": "Franca Masu - Topic",
+      "duration": 178,
+      "embeddable": true,
+      "publishDate": "2014-11-07T23:30:51-08:00"
+    },
+    {
+      "id": "PxQD1U294o0",
+      "title": "Cor Meu",
+      "channelId": "UCemRvkxHIe6M0528tlf2Gpw",
+      "channel": "Franca Masu - Topic",
+      "duration": 333,
+      "embeddable": true,
+      "publishDate": "2014-11-08T19:42:59-08:00"
+    },
+    {
+      "id": "xQPO9YsZW9Y",
+      "title": "Veu Acorada",
+      "channelId": "UCemRvkxHIe6M0528tlf2Gpw",
+      "channel": "Franca Masu - Topic",
+      "duration": 208,
+      "embeddable": true,
+      "publishDate": "2014-11-07T20:37:33-08:00"
+    },
+    {
+      "id": "Oycm0hA3B4s",
+      "title": "Set",
+      "channelId": "UCemRvkxHIe6M0528tlf2Gpw",
+      "channel": "Franca Masu - Topic",
+      "duration": 251,
+      "embeddable": true,
+      "publishDate": "2014-11-05T19:22:15-08:00"
+    },
+    {
+      "id": "OA6IHY7tlY8",
+      "title": "Desperta-te (Serenada a Tereseta)",
+      "channelId": "UCemRvkxHIe6M0528tlf2Gpw",
+      "channel": "Franca Masu - Topic",
+      "duration": 200,
+      "embeddable": true,
+      "publishDate": "2014-11-08T12:53:39-08:00"
+    },
+    {
+      "id": "_cKKuPP-3TY",
+      "title": "Lo Nassaiolo",
+      "channelId": "UCemRvkxHIe6M0528tlf2Gpw",
+      "channel": "Franca Masu - Topic",
+      "duration": 270,
+      "embeddable": true,
+      "publishDate": "2014-11-08T12:49:59-08:00"
+    },
+    {
+      "id": "slG00pfoER8",
+      "title": "La Nau",
+      "channelId": "UCemRvkxHIe6M0528tlf2Gpw",
+      "channel": "Franca Masu - Topic",
+      "duration": 370,
+      "embeddable": true,
+      "publishDate": "2014-11-08T13:51:55-08:00"
+    },
+    {
+      "id": "CZgb_2rh3dg",
+      "title": "Desde Mallorca a l'Alguer",
+      "channelId": "UC6Md27ZZOIr6Qvr1-nC1ARw",
+      "channel": "Franca Masu - Topic",
+      "duration": 257,
+      "embeddable": true,
+      "publishDate": "2025-03-20T13:55:18-07:00"
+    },
+    {
+      "id": "InX0Y3rH8ik",
+      "title": "La ginqueta, RAI 2 1985",
+      "channelId": "UCbClaYsnJEk_-Iqs33UwgLQ",
+      "channel": "Pino Piras",
+      "duration": 490,
+      "embeddable": true,
+      "publishDate": "2018-08-27T05:45:52-07:00"
+    },
+    {
+      "id": "4_CshUtmmwg",
+      "title": "La falsa iglésia, TRC 1985",
+      "channelId": "UCbClaYsnJEk_-Iqs33UwgLQ",
+      "channel": "Pino Piras",
+      "duration": 203,
+      "embeddable": true,
+      "publishDate": "2018-08-27T05:38:32-07:00"
+    },
+    {
+      "id": "VmiSYGtou5s",
+      "title": "Blanca mare dolenta, Festival della canzone algherese - Teatro Selva 1985",
+      "channelId": "UCbClaYsnJEk_-Iqs33UwgLQ",
+      "channel": "Pino Piras",
+      "duration": 257,
+      "embeddable": true,
+      "publishDate": "2018-08-27T05:30:37-07:00"
+    },
+    {
+      "id": "tN86XMWkwu0",
+      "title": "Sant Miquel humanitzat, Festival della canzone algherese Teatro Selva 1988",
+      "channelId": "UCbClaYsnJEk_-Iqs33UwgLQ",
+      "channel": "Pino Piras",
+      "duration": 283,
+      "embeddable": true,
+      "publishDate": "2018-08-27T05:20:54-07:00"
+    },
+    {
+      "id": "ZzJep8lEhS4",
+      "title": "Lo rei Serafí, Cançons de casa nostra Teatro Selva 1983",
+      "channelId": "UCbClaYsnJEk_-Iqs33UwgLQ",
+      "channel": "Pino Piras",
+      "duration": 249,
+      "embeddable": true,
+      "publishDate": "2018-08-27T05:08:50-07:00"
+    },
+    {
+      "id": "YqVOUcxtPhs",
+      "title": "Antonello Colledanchise. L'estaca. Festival Marellengua Teatre Civic L'Alguer,",
+      "channelId": "UCF0A3xfKG43O6CfPb6cXI5A",
+      "channel": "panta rei Alghero",
+      "duration": 261,
+      "embeddable": true,
+      "publishDate": "2026-10-12T00:00:39-07:00"
+    },
+    {
+      "id": "cYKJ462-vNg",
+      "title": "Mon pare  (1993). Antonello Colledanchise",
+      "channelId": "UCF0A3xfKG43O6CfPb6cXI5A",
+      "channel": "panta rei Alghero",
+      "duration": 223,
+      "embeddable": true,
+      "publishDate": "2019-08-27T21:49:50-07:00"
+    },
+    {
+      "id": "N0d8TY8-UPg",
+      "title": "Ninna Nanna (1973) Antonello Colledanchise",
+      "channelId": "UCF0A3xfKG43O6CfPb6cXI5A",
+      "channel": "panta rei Alghero",
+      "duration": 219,
+      "embeddable": true,
+      "publishDate": "2019-08-27T20:53:45-07:00"
+    },
+    {
+      "id": "iZYnoqRCoU8",
+      "title": "Alabama (1972). Antonello Colledanchise. Per \"Un mon millor\"",
+      "channelId": "UCF0A3xfKG43O6CfPb6cXI5A",
+      "channel": "panta rei Alghero",
+      "duration": 170,
+      "embeddable": true,
+      "publishDate": "2019-08-26T14:48:25-07:00"
+    },
+    {
+      "id": "8vtONqetIUU",
+      "title": "La porta - Antonello Colledanchise. BarnaSants a L'Alguer. 04 Luglio 2021",
+      "channelId": "UCF0A3xfKG43O6CfPb6cXI5A",
+      "channel": "panta rei Alghero",
+      "duration": 308,
+      "embeddable": true,
+      "publishDate": "2022-11-01T02:49:46-07:00"
+    },
+    {
+      "id": "c8QfsdIENUk",
+      "title": "Ave Maria algherese. Antonello Colledanchise. Barumini 8 Giugno 2019",
+      "channelId": "UCF0A3xfKG43O6CfPb6cXI5A",
+      "channel": "panta rei Alghero",
+      "duration": 211,
+      "embeddable": true,
+      "publishDate": "2019-06-14T14:27:54-07:00"
+    },
+    {
+      "id": "CKYdS7VlB3U",
+      "title": "Com se'n vola lo temps (1991). Antonello Colledanchise",
+      "channelId": "UCF0A3xfKG43O6CfPb6cXI5A",
+      "channel": "panta rei Alghero",
+      "duration": 174,
+      "embeddable": true,
+      "publishDate": "2019-08-27T21:40:20-07:00"
+    }
+  ]
+}

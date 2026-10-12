@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-11T23:12:58.056Z",
+  "updatedAt": "2026-10-12T19:24:00.061702Z",
   "description": "Decisions manuals sobre el tipus de contingut de vídeos concrets. Manen sobre el classificador automàtic (scripts/lib/classificar_contingut_musical.js) i el pipeline (scripts/update_music_feed.js) les reaplica a cada generació del feed. Tipus permesos: song, live_song, album, other. Un vídeo revisat aquí surt de data/music-content-review.json.",
   "videos": [
     {
@@ -7651,6 +7651,114 @@
       "id": "HwdXKHxhyTI",
       "contentType": "song",
       "note": "L’Olivera: pista d’estudi de Com ho fa el vent (1969), Ariola. El classificador trobava «live» dins d’«Olivera» i la marcava erròniament com a directe. Verificat a https://www.youtube.com/watch?v=HwdXKHxhyTI el 2026-10-12."
+    },
+    {
+      "id": "IfsTvOn0Fig",
+      "contentType": "live_song",
+      "title": "PRIMER PREMI CANTALGUER 2025 | Lo Maquini - És un amic",
+      "note": "Selecció editorial algueresa 2026-10-12; gravació i intèrpret comprovats al publicador."
+    },
+    {
+      "id": "PmxeA9hki8c",
+      "contentType": "live_song",
+      "title": "Lo Maquini - Pels anys que no hem viscut (cover de PAU VALLVÉ)",
+      "note": "Selecció editorial algueresa 2026-10-12; gravació i intèrpret comprovats al publicador."
+    },
+    {
+      "id": "8AbOp0ZyGMk",
+      "contentType": "live_song",
+      "title": "FESTA DE LES MARIES 2025 | Lo Maquini - Alba al balaguer",
+      "note": "Selecció editorial algueresa 2026-10-12; gravació i intèrpret comprovats al publicador."
+    },
+    {
+      "id": "7E--atPZk_I",
+      "contentType": "live_song",
+      "title": "CONCERT COL·LECTIU CANTALGUER | Lo Maquini - Alba al Balaguer",
+      "note": "Selecció editorial algueresa 2026-10-12; gravació i intèrpret comprovats al publicador."
+    },
+    {
+      "id": "l-1PVv4pqrg",
+      "contentType": "live_song",
+      "title": "CANTALGUER 2024| Lo Maquini - Alabama (cover de Antonello Colledanchise)",
+      "note": "Selecció editorial algueresa 2026-10-12; gravació i intèrpret comprovats al publicador."
+    },
+    {
+      "id": "bLf8lLBmTXc",
+      "contentType": "live_song",
+      "title": "CANTALGUER 2024| Lo Maquini - Bar en mig",
+      "note": "Selecció editorial algueresa 2026-10-12; gravació i intèrpret comprovats al publicador."
+    },
+    {
+      "id": "InX0Y3rH8ik",
+      "contentType": "song",
+      "title": "La ginqueta, RAI 2 1985",
+      "note": "Selecció editorial algueresa 2026-10-12; gravació i intèrpret comprovats al publicador."
+    },
+    {
+      "id": "4_CshUtmmwg",
+      "contentType": "live_song",
+      "title": "La falsa iglésia, TRC 1985",
+      "note": "Selecció editorial algueresa 2026-10-12; gravació i intèrpret comprovats al publicador."
+    },
+    {
+      "id": "VmiSYGtou5s",
+      "contentType": "live_song",
+      "title": "Blanca mare dolenta, Festival della canzone algherese - Teatro Selva 1985",
+      "note": "Selecció editorial algueresa 2026-10-12; gravació i intèrpret comprovats al publicador."
+    },
+    {
+      "id": "tN86XMWkwu0",
+      "contentType": "live_song",
+      "title": "Sant Miquel humanitzat, Festival della canzone algherese Teatro Selva 1988",
+      "note": "Selecció editorial algueresa 2026-10-12; gravació i intèrpret comprovats al publicador."
+    },
+    {
+      "id": "ZzJep8lEhS4",
+      "contentType": "live_song",
+      "title": "Lo rei Serafí, Cançons de casa nostra Teatro Selva 1983",
+      "note": "Selecció editorial algueresa 2026-10-12; gravació i intèrpret comprovats al publicador."
+    },
+    {
+      "id": "YqVOUcxtPhs",
+      "contentType": "live_song",
+      "title": "Antonello Colledanchise. L'estaca. Festival Marellengua Teatre Civic L'Alguer,",
+      "note": "Selecció editorial algueresa 2026-10-12; gravació i intèrpret comprovats al publicador."
+    },
+    {
+      "id": "cYKJ462-vNg",
+      "contentType": "live_song",
+      "title": "Mon pare  (1993). Antonello Colledanchise",
+      "note": "Selecció editorial algueresa 2026-10-12; gravació i intèrpret comprovats al publicador."
+    },
+    {
+      "id": "N0d8TY8-UPg",
+      "contentType": "live_song",
+      "title": "Ninna Nanna (1973) Antonello Colledanchise",
+      "note": "Selecció editorial algueresa 2026-10-12; gravació i intèrpret comprovats al publicador."
+    },
+    {
+      "id": "iZYnoqRCoU8",
+      "contentType": "live_song",
+      "title": "Alabama (1972). Antonello Colledanchise. Per \"Un mon millor\"",
+      "note": "Selecció editorial algueresa 2026-10-12; gravació i intèrpret comprovats al publicador."
+    },
+    {
+      "id": "8vtONqetIUU",
+      "contentType": "live_song",
+      "title": "La porta - Antonello Colledanchise. BarnaSants a L'Alguer. 04 Luglio 2021",
+      "note": "Selecció editorial algueresa 2026-10-12; gravació i intèrpret comprovats al publicador."
+    },
+    {
+      "id": "c8QfsdIENUk",
+      "contentType": "live_song",
+      "title": "Ave Maria algherese. Antonello Colledanchise. Barumini 8 Giugno 2019",
+      "note": "Selecció editorial algueresa 2026-10-12; gravació i intèrpret comprovats al publicador."
+    },
+    {
+      "id": "CKYdS7VlB3U",
+      "contentType": "live_song",
+      "title": "Com se'n vola lo temps (1991). Antonello Colledanchise",
+      "note": "Selecció editorial algueresa 2026-10-12; gravació i intèrpret comprovats al publicador."
     }
   ]
 }
