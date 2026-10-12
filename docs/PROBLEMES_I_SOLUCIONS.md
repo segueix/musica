@@ -7,7 +7,7 @@
 2. **Dos camins de càrrega amb dades diferents.** `YouTubeAPI.getPopularVideos()` (el de cada dia: `loadVideosFromAPI`, i també la còpia de `catube_feed_v1`) copiava els vídeos camp per camp i **perdia `originalYear`**, `topicTrack`, `originalTitle`… Sense l'any original, `isNewRelease()` prenia per estrena qualsevol reedició pujada fa poc (amb el feed del 2026-10-12: 146 «estrenes» en lloc de 98). L'altre camí (`loadVideos()`, `YouTubeAPI.feedVideos`) sí que les tenia: la fila variava segons per on s'havia carregat.
 3. **(Intencionat)** `filterOutWatchedVideos()` amaga de Novetats les cançons ja escoltades: en escoltar-ne una, n'entra una de més antiga.
 
-**Solució:** la destacada ja no es «pren» (no es treu de cap fila) i `getPopularVideos()` conserva tots els camps (`...v`). Proves: `tests/portada.test.js` («Acabades de sortir» estable) i `tests/novetats-estables.test.js`. La causa 3 es manté (regla de Novetats).
+**Solució:** la destacada ja no es «pren» (no es treu de cap fila) i `getPopularVideos()` conserva tots els camps (`...v`). Proves: `tests/portada.test.js` («Acabades de sortir» estable) i `tests/novetats-estables.test.js`. Després, a petició de l'usuari, la causa 3 també s'ha tret: a la portada (`selectedCategory === 'Novetats'` amb `portada`) `renderFeedLegacyImpl()` ja no crida `filterOutWatchedVideos()` (`keepWatchedNovetats`), i «Acabades de sortir» mostra sempre les estrenes més recents, escoltades o no. Les categories continuen amagant les escoltades.
 
 ## [2026-10-12] - «A prop teu»: caràtules amb distància i tipus de ràdio per popularitat
 

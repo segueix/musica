@@ -37,4 +37,11 @@ describe('novetats estables', () => {
             contentType: 'song',
         });
     });
+
+    it('a la portada «Acabades de sortir» no amaga les cançons ja escoltades', () => {
+        const app = readFileSync('js/app.js', 'utf8');
+        expect(app).toMatch(
+            /const keepWatchedNovetats = selectedCategory === 'Novetats' && Boolean\(SegueixApp\.features\.portada\);\s*if \(!keepWatchedNovetats && [^\n]*\{\s*filtered = filterOutWatchedVideos\(filtered\);/
+        );
+    });
 });
