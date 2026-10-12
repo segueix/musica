@@ -8,9 +8,9 @@ concurrency:
   group: music-data-writer
   cancel-in-progress: false
 jobs:
-  verificar:
+  revisar:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 10
     permissions:
       contents: write
     steps:
@@ -18,77 +18,29 @@ jobs:
         with:
           ref: main
           fetch-depth: 1
-      - uses: actions/setup-node@v5
-        with:
-          node-version: '20'
-      - name: Comprova canals a partir dels enregistraments
-        env:
-          YOUTUBE_API_KEY_SERVER: ${{ secrets.YOUTUBE_API_KEY_SERVER }}
+      - name: Extreu les evidències sense consultar YouTube
         run: |
           node - <<'NODE'
-          const fs = require('fs');
-          (async () => {
-            const key = process.env.YOUTUBE_API_KEY_SERVER;
-            if (!key) throw new Error('Falta la clau de YouTube');
-            const targets = [
-              {name:'Tardor', handle:'@tardor-band', ids:['UCfVobdq05T0LJLrCIUbwqYQ','UCzqxLyTRSy6pgyruKRcv6XQ','UCmnRoubcIKBdSZfa12Sh08w']},
-              {name:'Àlex Blat', handle:'@alexblatmusica', ids:['UCqXrOm2JFPasb_oKqguIm4g','UC6SBLhrf0nLYU-_a9iqwWqw']},
-              {name:'Quinto', handle:'@quinto__v', ids:[]},
-            ];
-            const norm = s => String(s || '').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();
-            let quota=0;
-            async function api(endpoint,args) {
-              quota += endpoint === 'search' ? 100 : 1;
-              const u=new URL('https://www.googleapis.com/youtube/v3/'+endpoint);
-              Object.entries({...args,key}).forEach(([k,v])=>u.searchParams.set(k,String(v)));
-              const r=await fetch(u,{signal:AbortSignal.timeout(30000)});
-              const j=await r.json();
-              if(!r.ok) throw new Error(endpoint+': '+(j.error?.message||r.status));
-              return j;
-            }
-            const report={reviewedOn:new Date().toISOString(),artists:[]};
-            const base=JSON.parse(fs.readFileSync('data/artistes-musica.json','utf8'));
-            const origins=JSON.parse(fs.readFileSync('data/origens-artistes.json','utf8'));
-            const summary=[];
-            for(const t of targets) {
-              const official=(await api('channels',{part:'snippet,contentDetails,statistics',forHandle:t.handle})).items?.[0];
-              if(!official) throw new Error('No es resol '+t.handle);
-              const candidates=new Set([...t.ids,official.id]);
-              const searchResults=[];
-              if(t.name==='Quinto') {
-                for(const query of ['Quinto Petjades','Quinto Demà Canvie De Vida']) {
-                  for(const x of (await api('search',{part:'snippet',type:'video',q:query,maxResults:20})).items||[]) {
-                    const id=x.snippet.channelId, title=x.snippet.channelTitle;
-                    searchResults.push({id,title,videoId:x.id.videoId,videoTitle:x.snippet.title});
-                    if(norm(title).replace(/ (topic|tema)$/,'')==='quinto'||id===official.id) candidates.add(id);
-                  }
-                }
+          const fs=require('fs');
+          const r=JSON.parse(fs.readFileSync('docs/revisions/2026-10-12-tardor-blat-quinto-descoberta.json','utf8'));
+          const o=JSON.parse(fs.readFileSync('data/origens-artistes.json','utf8'));
+          const lines=[];
+          for(const a of r.artists){
+            lines.push('# '+a.name,JSON.stringify(a.existingArtists));
+            for(const c of a.channels){
+              lines.push('## '+c.id+' '+c.name);
+              for(const v of c.videos){
+                lines.push('### '+v.id+' '+v.title);
+                const d=String(v.description||'');
+                const full=c.id===a.officialId && a.name!=='Tardor';
+                lines.push((full?d:d.slice(0,1200)).replace(/\r?\n/g,' ⏎ '));
               }
-              const metadata=(await api('channels',{part:'snippet,contentDetails,statistics',id:[...candidates].join(',')})).items||[];
-              const entry={name:t.name,handle:t.handle,officialId:official.id,searchResults,channels:[],existingArtists:base.artists.filter(a=>[a.name,a.displayName,...(a.aliases||[])].some(n=>norm(n)===norm(t.name))),originPlaces:Object.entries(origins.places).filter(([id,p])=>JSON.stringify(p).includes(t.name==='Quinto'?'Pego':'València'))};
-              for(const c of metadata) {
-                const videos=[];
-                let token;
-                for(let page=0;page<4;page++) {
-                  const r=await api('playlistItems',{part:'contentDetails',playlistId:c.contentDetails.relatedPlaylists.uploads,maxResults:50,...(token?{pageToken:token}:{})});
-                  const ids=(r.items||[]).map(v=>v.contentDetails.videoId);
-                  if(ids.length) for(const v of (await api('videos',{part:'snippet,contentDetails,status,statistics',id:ids.join(',')})).items||[]) videos.push({id:v.id,title:v.snippet.title,channelId:v.snippet.channelId,publishedAt:v.snippet.publishedAt,duration:v.contentDetails.duration,embeddable:v.status.embeddable,viewCount:Number(v.statistics.viewCount||0),description:v.snippet.description,defaultAudioLanguage:v.snippet.defaultAudioLanguage||null,regionRestriction:v.contentDetails.regionRestriction||null});
-                  token=r.nextPageToken;
-                  if(!token) break;
-                }
-                entry.channels.push({id:c.id,name:c.snippet.title,handle:c.snippet.customUrl||null,description:c.snippet.description,avatar:c.snippet.thumbnails?.high?.url||c.snippet.thumbnails?.default?.url||'',subscriberCount:Number(c.statistics.subscriberCount||0),complete:!token,videos});
-                summary.push('\n## '+t.name+' — '+c.snippet.title+' — '+c.id+'\n');
-                for(const v of videos) summary.push(v.id+' | '+v.title+' | '+v.duration+' | editor: '+v.channelId);
-                console.log(JSON.stringify({artist:t.name,channel:c.snippet.title,id:c.id,count:videos.length,complete:!token}));
-              }
-              report.artists.push(entry);
             }
-            report.estimatedQuotaUnits=quota;
-            fs.writeFileSync('docs/revisions/2026-10-12-tardor-blat-quinto-descoberta.json',JSON.stringify(report,null,2)+'\n');
-            fs.writeFileSync('docs/revisions/2026-10-12-tardor-blat-quinto-resum.md',summary.join('\n')+'\n');
-            fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,'Canals identificats sense modificar encara el catàleg. Quota estimada: '+quota+'.\n');
-          })().catch(e=>{console.error(e.message);process.exitCode=1;});
+          }
+          lines.push('# Llocs existents');
+          lines.push(JSON.stringify(Object.entries(o.places).filter(([id,p])=>['València','Valencia','Benidorm','Pego'].includes(p.name)),null,2));
+          fs.writeFileSync('docs/revisions/2026-10-12-tardor-blat-quinto-detalls.md',lines.join('\n')+'\n');
           NODE
-      - name: Desa la verificació
+      - name: Desa els detalls de revisió
         run: |
-          bash scripts/publicar_dades.sh 'docs: verifica canals de Tardor, Àlex Blat i Quinto' docs/revisions/2026-10-12-tardor-blat-quinto-descoberta.json docs/revisions/2026-10-12-tardor-blat-quinto-resum.md
+          bash scripts/publicar_dades.sh 'docs: crèdits i evidències dels tres artistes' docs/revisions/2026-10-12-tardor-blat-quinto-detalls.md
