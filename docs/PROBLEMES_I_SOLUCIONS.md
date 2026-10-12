@@ -1599,3 +1599,10 @@ Proves de migració, idempotència, homònims, Topic, exclusions i revisions par
 - **Pantalla completa amb «meet»:** l'SVG ocupa tota l'àrea i el viewBox hi cap amb franges; per passar de la pantalla a l'SVG cal tenir en compte l'escala i la franja (`fit()` / `clientToSvg()`), no el rectangle sencer.
 - **Autoplay:** la ràdio d'una zona s'engega en acabar el traç. Les cançons es carreguen en entrar al mode dibuix perquè no hi hagi cap `await` entre el gest i la reproducció.
 - A l'entorn de prova (YouTube bloquejat), engegar **qualsevol** ràdio al mòbil dona «Failed to read the 'localStorage' property… Access is denied»: és de l'iframe buit, no del mapa (`verificar-mapa.js` el filtra).
+
+## 2026-10-12 — Descobreix: «Per afinitat» en lloc de la cançó destacada
+
+- **«Recomanat per a tu» a Descobreix:** és el títol que posen `loadVideosFromAPILegacyImpl()` / `loadVideosLegacyImpl()` mentre carreguen, i es podia quedar. `setPageTitle()` el canvia per «Descobreix» quan la vista és Descobreix.
+- **Treure la cançó destacada sense perdre-la:** amagar només `#heroSection` hauria tret la cançó de la llista (els renders filtren `featured`). `getFeaturedVideoForSection()` torna `null` a Descobreix i la cançó es queda a la graella.
+- **Època d'un artista:** l'any de pujada a YouTube enganya (Lax'n'Busto sortia «Dels 10»). Es fa servir l'any original quan el feed el sap; amb només pujades anteriors al 2013 l'any serveix per comparar però no es mostra cap etiqueta d'època.
+- **Prova al navegador:** `getHistoryItems()` té memòria cau (`_historyItemsCache`): després d'escriure `catube_history` cal posar-la a `null`.

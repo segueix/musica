@@ -5490,6 +5490,8 @@ function hideLoading() {
 }
 
 function setPageTitle(title) {
+    // «Recomanat per a tu» és el títol de càrrega: a Descobreix no s'hi ha de veure mai
+    if (title === 'Recomanat per a tu' && selectedCategory === 'Descobreix') title = 'Descobreix';
     if (pageTitle) {
         pageTitle.classList.remove('page-title--with-actions', 'page-title--user-category', 'page-title--style');
         pageTitle.dataset.title = title;
@@ -5546,7 +5548,8 @@ function getHeroSectionKey() {
 }
 
 function getFeaturedVideoForSection(videos, sectionKey) {
-    if (!Array.isArray(videos) || videos.length === 0) {
+    // Descobreix no té cançó destacada: a dalt hi ha «Per afinitat» (affinity.js)
+    if (!Array.isArray(videos) || videos.length === 0 || selectedCategory === 'Descobreix') {
         if (sectionKey) {
             featuredVideoBySection.delete(sectionKey);
         }
@@ -8190,6 +8193,7 @@ async function navigateToSearchResults(query) {
     updateHero(null);
     SegueixApp.features.categoryArtists?.hide?.();
     SegueixApp.features.artistMap?.hide?.();
+    SegueixApp.features.affinity?.hide?.();
 
     if (!videosGrid) {
         return;
@@ -8247,12 +8251,17 @@ function bindSearchResults(container) {
 // Artistes de la categoria (js/features/category-artists.js): sota la cançó destacada d'un estil (Pop, Rock…) o d'una
 // categoria pròpia hi ha una filera amb els perfils dels artistes que hi pertanyen. A la resta de vistes s'amaga.
 // «Música d'arreu» (artist-map.js): el mapa dels artistes només surt a Descobreix.
+// A Descobreix també hi ha «Per afinitat» (affinity.js), a dalt de tot, en lloc de la cançó destacada.
 function syncArtistMap() {
-    const feature = SegueixApp.features.artistMap;
-    const container = document.getElementById('artistMap');
-    if (!feature || !container) return;
-    if (selectedCategory === 'Descobreix') feature.show(container);
-    else feature.hide(container);
+    const discover = selectedCategory === 'Descobreix';
+    [
+        [SegueixApp.features.affinity, document.getElementById('affinitySection')],
+        [SegueixApp.features.artistMap, document.getElementById('artistMap')],
+    ].forEach(([feature, container]) => {
+        if (!feature || !container) return;
+        if (discover) feature.show(container);
+        else feature.hide(container);
+    });
 }
 
 function syncCategoryArtists() {
