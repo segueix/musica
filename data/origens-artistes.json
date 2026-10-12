@@ -9840,22 +9840,6 @@
       "reviewedOn": "2026-10-12",
       "assignmentSource": "manual-review",
       "locked": true
-    },
-    "artist:teresa-sanna": {
-      "name": "Teresa Sanna",
-      "status": "validated",
-      "relation": "origin",
-      "placeIds": [
-        "geonames:3183284"
-      ],
-      "confidence": "alta",
-      "basis": "Origen i identitat documentats; pendent d’un enregistrament català disponible a YouTube.",
-      "sources": [
-        "https://www.enderrock.cat/noticia/28876/teresa-sanna-tinc-moltes-ganes-comenci-aquesta-bonica-aventura"
-      ],
-      "reviewedOn": "2026-10-12",
-      "assignmentSource": "manual-review",
-      "locked": true
     }
   },
   "channels": {
@@ -10411,8 +10395,7 @@
     "UC6Md27ZZOIr6Qvr1-nC1ARw": "artist:franca-masu",
     "UCbClaYsnJEk_-Iqs33UwgLQ": "artist:pino-piras",
     "UCRK-i4JVJi6CwcPZ1BjaLQw": "artist:grup-coral-de-l-agrupacio-catalana-d-italia",
-    "UCF0A3xfKG43O6CfPb6cXI5A": "artist:antonello-colledanchise",
-    "UC9zX7R05JQ1P30RGvtjHizQ": "artist:teresa-sanna"
+    "UCF0A3xfKG43O6CfPb6cXI5A": "artist:antonello-colledanchise"
   },
   "excludedProfiles": {
     "UCdezTX23syEeAJJAb2oOkKA": {
