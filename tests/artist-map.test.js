@@ -215,4 +215,10 @@ describe('Música d’arreu: mapa dels artistes', () => {
         expect(css).toMatch(/\.artist-map\.is-full \{[^}]*position: fixed/);
         expect(css).toMatch(/\.artist-map\.is-drawing \.am-svg \{[^}]*touch-action: none/);
     });
+
+    it('parla dels llocs «on es parla en català», no dels Països Catalans', () => {
+        const out = feature.html(base, feature.buildModel({ base, catalog, references, groups }));
+        expect(out).toContain('llocs on es parla en català');
+        expect(out).not.toContain('Països Catalans');
+    });
 });

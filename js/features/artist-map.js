@@ -1,4 +1,4 @@
-// «Música d'arreu»: mapa dels Països Catalans amb els artistes al seu municipi (vista Descobreix).
+// «Música d'arreu»: mapa dels llocs on es parla en català amb els artistes al seu municipi (vista Descobreix).
 // Implementació directa (patró 2). El model (buildModel, project) i l'HTML són purs i es proven a
 // tests/artist-map.test.js; app.js (syncArtistMap) el mostra només a Descobreix.
 //
@@ -278,7 +278,7 @@
                 </g>`;
             })
             .join('');
-        return `<svg class="am-svg" viewBox="${x0} ${y0} ${w} ${h}" role="img" aria-label="Mapa dels Països Catalans amb els artistes">
+        return `<svg class="am-svg" viewBox="${x0} ${y0} ${w} ${h}" role="img" aria-label="Mapa dels artistes dels llocs on es parla en català">
             <g class="am-layer">${shapes}${insetHtml}<path class="am-lasso" d="${polygonPath(zone?.polygon)}"></path><g class="am-dots">${dots}</g></g></svg>`;
     }
 
@@ -362,7 +362,7 @@
         return `
             <div class="am-head">
                 <div><p class="pt-eyebrow">Descobreix</p><h2 class="am-title">Música d'arreu</h2>
-                <p class="am-sub">${artistsLabel(model.artistCount)} en ${model.placeCount} llocs dels Països Catalans</p></div>
+                <p class="am-sub">${artistsLabel(model.artistCount)} en ${model.placeCount} llocs on es parla en català</p></div>
                 <ul class="am-territories">${territories}</ul>
             </div>
             <div class="am-styles" role="group" aria-label="Filtra per estil">${styleChips}</div>
