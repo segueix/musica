@@ -131,7 +131,68 @@
         return `${SHARE_BASE_URL}?importData=${encoded}`;
     }
 
+    // ---------- Ràdios: títol i pàgina de previsualització ----------
+    // WhatsApp i les altres xarxes no executen JavaScript: el títol de la previsualització surt de l'HTML estàtic.
+    // Per a cada ràdio amb nom conegut (estils, municipis, artistes) hi ha una pàgina compartir/radio/<slug>.html
+    // amb «Ràdio <nom>» (scripts/generar_pagines_compartir.js) que redirigeix a l'app amb el mateix ?importData=.
+    function radioShareTitle(name) {
+        const clean = String(name || '')
+            .replace(/\s+/g, ' ')
+            .trim();
+        if (!clean) return 'Ràdio';
+        const near = clean.match(/^a prop de (.+?)(?: · .+)?$/i);
+        if (near) return `Ràdio ${near[1].trim()}`;
+        if (/^(r[àa]dio\b|la teva r[àa]dio$)/i.test(clean)) return clean;
+        return `Ràdio ${clean}`;
+    }
+
+    function radioShareSlug(title) {
+        return String(title || '')
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '')
+            .toLowerCase()
+            .replace(/l·l/g, 'll')
+            .replace(/[^a-z0-9]+/g, '-')
+            .replace(/^-+|-+$/g, '')
+            .slice(0, 90)
+            .replace(/-+$/g, '');
+    }
+
+    // URL de la pàgina de la ràdio (o la genèrica si no n'hi ha) amb el mateix paràmetre que l'enllaç de l'app.
+    function buildRadioPageUrl(slug, importUrl) {
+        const query = String(importUrl || '').split('?')[1] || '';
+        const page = slug ? `${slug}.html` : 'index.html';
+        return `${SHARE_BASE_URL}compartir/radio/${page}${query ? `?${query}` : ''}`;
+    }
+
+    let radioPagesPromise = null;
+    function loadRadioPages() {
+        if (!radioPagesPromise) {
+            radioPagesPromise = fetch('compartir/radio/index.json', { cache: 'no-cache' })
+                .then(response => (response.ok ? response.json() : []))
+                .then(list => new Set(Array.isArray(list) ? list : list?.slugs || []))
+                .catch(() => {
+                    radioPagesPromise = null;
+                    return new Set();
+                });
+        }
+        return radioPagesPromise;
+    }
+
+    // { title, url, hasPage }: url és la pàgina amb «Ràdio <nom>» si existeix; si no, la genèrica.
+    async function resolveRadioShare(name, importUrl) {
+        const title = radioShareTitle(name);
+        const slug = radioShareSlug(title);
+        const pages = await loadRadioPages();
+        const hasPage = Boolean(slug && pages.has(slug));
+        return { title, url: buildRadioPageUrl(hasPage ? slug : '', importUrl), hasPage };
+    }
+
     app.utils.shareCodecs = {
+        radioShareTitle,
+        radioShareSlug,
+        buildRadioPageUrl,
+        resolveRadioShare,
         buildImportPayload,
         encodeImportPayload,
         decodeImportPayload,

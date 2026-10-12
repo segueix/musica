@@ -13591,7 +13591,19 @@ async function _shareVideoList(type, name, items) {
     const payload = codecs.buildImportPayload({ type, name, items: songs });
     const url = codecs.buildImportUrl(payload);
     if (!url) return alert('No s’ha pogut preparar l’enllaç de la llista.');
-    return _showShareOptionsModal(type === 'radio' ? 'Ràdio' : 'Llista', name, url, { type, count: songs.length });
+    if (type !== 'radio') return _showShareOptionsModal('Llista', name, url, { type, count: songs.length });
+    return _showShareOptionsModal('Ràdio', name, url, { type, count: songs.length, ...(await radioLinkOptions(name, url)) });
+}
+
+// Enllaç d'una ràdio per a WhatsApp i companyia: la pàgina compartir/radio/<slug>.html fa que la previsualització digui
+// «Ràdio Pop», «Ràdio Vic»… Si el nom no en té (una cerca, una categoria pròpia), la genèrica i el nom en el missatge.
+async function radioLinkOptions(name, importUrl) {
+    try {
+        const share = await SegueixApp.utils.shareCodecs.resolveRadioShare(name, importUrl);
+        return { linkUrl: share.url, linkTitle: share.title, text: share.hasPage ? '' : share.title };
+    } catch (_error) {
+        return {};
+    }
 }
 
 function _readStoredPlaylists() {
@@ -13702,7 +13714,9 @@ async function _showShareOptionsModal(typeLabel, name, shareUrl, options = {}) {
 
     // Per evitar trencar la previsualització Open Graph en apps com WhatsApp,
     // la compartició nativa de l'enllaç envia només URL + title (sense camp text).
-    const shareText = model?.caption || `${typeLabel}: ${name}`;
+    const shareText = options?.linkTitle || model?.caption || `${typeLabel}: ${name}`;
+    // Una ràdio s'enllaça amb la seva pàgina de previsualització (títol «Ràdio <nom>»); el QR continua sent l'enllaç curt.
+    const linkUrl = options?.linkUrl || shareUrl;
     // Una categoria porta un missatge amb el nom i els grups (options.text): les ràdios i llistes no en porten.
     const messageText = typeof options?.text === 'string' ? options.text.trim() : '';
 
@@ -13710,7 +13724,7 @@ async function _showShareOptionsModal(typeLabel, name, shareUrl, options = {}) {
         if (hasNativeShare) {
             try {
                 await navigator.share(
-                    messageText ? { title: shareText, text: messageText, url: shareUrl } : { title: shareText, url: shareUrl }
+                    messageText ? { title: shareText, text: messageText, url: linkUrl } : { title: shareText, url: linkUrl }
                 );
                 modal.remove();
             } catch (_e) {
@@ -13720,7 +13734,7 @@ async function _showShareOptionsModal(typeLabel, name, shareUrl, options = {}) {
         }
         // Fallback desktop sense Web Share: copia només la URL (sense text addicional)
         try {
-            await navigator.clipboard.writeText(messageText ? `${messageText}\n${shareUrl}` : shareUrl);
+            await navigator.clipboard.writeText(messageText ? `${messageText}\n${linkUrl}` : linkUrl);
             const btn = modal.querySelector('#shareOptShare');
             btn.innerHTML = '<i data-lucide="check"></i><span>Enllaç copiat!</span>';
             btn.style.background = '#2ecc71';

@@ -325,7 +325,10 @@
         // El diàleg és modal (capa superior): la finestra de compartir quedaria a sota i no es podria tocar
         if (state.dialog?.open) state.dialog.close();
         if (typeof _showShareOptionsModal === 'function') {
-            _showShareOptionsModal('Ràdio', name, url, { type: 'radio', count: PAGE, text: `Escolta els artistes de prop de ${place.name} a Segueix Música.` });
+            // La pàgina compartir/radio/radio-<municipi>.html fa que WhatsApp digui «Ràdio Vic»
+            const show = extra => _showShareOptionsModal('Ràdio', name, url, { type: 'radio', count: PAGE, ...extra });
+            if (typeof radioLinkOptions === 'function') radioLinkOptions(name, url).then(show, () => show({}));
+            else show({});
         }
         return url;
     }
