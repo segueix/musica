@@ -1,0 +1,76 @@
+name: Supervisio general llengua principal
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/supervisio-cataleg-idioma-20261013.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  inventari:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+          fetch-depth: 1
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '20'
+      - name: Inspecciona els enregistraments visibles sense modificar el cataleg
+        env:
+          YOUTUBE_API_KEY_SERVER: ${{ secrets.YOUTUBE_API_KEY_SERVER }}
+        run: |
+          node - <<'NODE'
+          const fs=require('node:fs');
+          const {execFileSync}=require('node:child_process');
+          const read=f=>JSON.parse(fs.readFileSync(f,'utf8'));
+          (async()=>{
+            const feed=read('data/feed.json');
+            const hidden=new Set(read('data/hidden-videos.json').videoIds);
+            const videos=new Map();
+            for(const file of fs.readdirSync('data/archive/channels').filter(f=>f.endsWith('.json')))
+              for(const v of read('data/archive/channels/'+file).videos || []) videos.set(v.id,v);
+            for(const v of feed.videos) videos.set(v.id,v);
+            const visible=[...videos.values()].filter(v=>!hidden.has(v.id)&&feed.channels[v.channelId]&&['song','live_song'].includes(v.contentType)&&v.isShort!==true);
+            const key=process.env.YOUTUBE_API_KEY_SERVER;
+            if(!key)throw Error('Falta la configuracio de YouTube');
+            const result={checkedAt:new Date().toISOString(),sourceCommit:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),visibleRecordings:visible.length,publishedChannels:Object.keys(feed.channels).length,metadata:[],missing:[],requests:0,complete:false};
+            const output='/tmp/musica-idioma-audit';fs.mkdirSync(output,{recursive:true});
+            for(let offset=0;offset<visible.length;offset+=50){
+              const batch=visible.slice(offset,offset+50);
+              const url=new URL('https://www.googleapis.com/youtube/v3/videos');
+              url.searchParams.set('part','snippet,contentDetails,status');
+              url.searchParams.set('id',batch.map(v=>v.id).join(','));url.searchParams.set('key',key);
+              let response,payload;
+              for(let attempt=0;attempt<3;attempt++){
+                response=await fetch(url,{signal:AbortSignal.timeout(30000)});result.requests++;
+                payload=await response.json();
+                if(response.ok)break;
+                if(response.status<500&&response.status!==429)break;
+                await new Promise(resolve=>setTimeout(resolve,1000*(attempt+1)));
+              }
+              if(!response.ok){result.error='YouTube '+response.status+' '+(payload.error?.errors?.[0]?.reason || 'request failed');break;}
+              const found=new Set();
+              for(const v of payload.items || []){
+                found.add(v.id);
+                const local=videos.get(v.id),channel=feed.channels[local.channelId];
+                result.metadata.push({id:v.id,artist:channel.artists?.join(', ') || channel.name,localChannelId:local.channelId,title:v.snippet.title,channelId:v.snippet.channelId,channelTitle:v.snippet.channelTitle,description:v.snippet.description || '',audioLanguage:v.snippet.defaultAudioLanguage || null,metadataLanguage:v.snippet.defaultLanguage || null,duration:v.contentDetails.duration,embeddable:v.status.embeddable,regionRestriction:v.contentDetails.regionRestriction || null});
+              }
+              result.missing.push(...batch.filter(v=>!found.has(v.id)).map(v=>({id:v.id,title:v.title,channelId:v.channelId})));
+              if(offset%1000===0)console.log('Metadades consultades: '+result.metadata.length+' / '+visible.length);
+            }
+            result.complete=!result.error&&result.metadata.length+result.missing.length===visible.length;
+            fs.writeFileSync(output+'/metadata.json',JSON.stringify(result));
+            fs.writeFileSync(output+'/summary.json',JSON.stringify({...result,metadata:undefined},null,2));
+            console.log(JSON.stringify({visible:visible.length,metadata:result.metadata.length,missing:result.missing.length,requests:result.requests,complete:result.complete,error:result.error}));
+            if(!result.complete)process.exitCode=1;
+          })().catch(error=>{console.error(error.message);process.exitCode=1;});
+          NODE
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: supervisio-idioma-metadata
+          path: /tmp/musica-idioma-audit/
+          retention-days: 1
