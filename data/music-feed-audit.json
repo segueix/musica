@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-13T06:25:08.536Z",
+  "generatedAt": "2026-10-13T06:55:04.029Z",
   "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
   "restrictedVideoCount": 21,
   "restrictedVideosAdded": [],
   "deepPagesFetched": 0,
   "deepChannelCount": 19,
-  "topicChannelCount": 315,
+  "topicChannelCount": 316,
   "governedChannelCount": 108,
   "topicCoverage": [
     {
@@ -887,6 +887,14 @@
       "songs": 15,
       "matched": 11,
       "coverage": 0.73,
+      "governs": false
+    },
+    {
+      "id": "UCT59tXHgcrnLCerfyEGDghw",
+      "name": "Pepet i marieta",
+      "songs": 49,
+      "matched": 35,
+      "coverage": 0.71,
       "governs": false
     },
     {
@@ -2865,6 +2873,13 @@
       "withClip": 0
     },
     {
+      "id": "UCPzFXRl5ozCmX7i4CjI3Odw",
+      "name": "Pepet i Marieta",
+      "tracks": 48,
+      "selected": 48,
+      "withClip": 26
+    },
+    {
       "id": "UCYECw-23usgJzg1MnHRFFQQ",
       "name": "Pere Tapias",
       "tracks": 127,
@@ -3488,13 +3503,13 @@
       "withClip": 0
     }
   ],
-  "indexedChannelCount": 571,
-  "resolvedChannelCount": 571,
-  "feedChannelCount": 571,
-  "rawPublicVideoCount": 6502,
-  "feedVideoCount": 5979,
-  "acceptedMusicCount": 5938,
-  "categoryEligibleVideoCount": 5934,
+  "indexedChannelCount": 573,
+  "resolvedChannelCount": 573,
+  "feedChannelCount": 573,
+  "rawPublicVideoCount": 6445,
+  "feedVideoCount": 5922,
+  "acceptedMusicCount": 5881,
+  "categoryEligibleVideoCount": 5877,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
     "before": 0,
@@ -3503,8 +3518,8 @@
   },
   "contentReviewCount": 529,
   "contentTypeCounts": {
-    "song": 5765,
-    "live_song": 169,
+    "song": 5704,
+    "live_song": 173,
     "album": 4,
     "other": 35,
     "review": 529
@@ -3514,6 +3529,6 @@
   "channelsWithoutVideos": [],
   "channelsWithoutAcceptedMusic": [],
   "allIndexedChannelsVisible": true,
-  "publishedFeedVideoCount": 5825,
+  "publishedFeedVideoCount": 5856,
   "publishedShortVideoCount": 0
 }

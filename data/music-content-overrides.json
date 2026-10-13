@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-13T06:25:04.516Z",
+  "updatedAt": "2026-10-13T06:55:01.321Z",
   "description": "Decisions manuals sobre el tipus de contingut de vídeos concrets. Manen sobre el classificador automàtic (scripts/lib/classificar_contingut_musical.js) i el pipeline (scripts/update_music_feed.js) les reaplica a cada generació del feed. Tipus permesos: song, live_song, album, other. Un vídeo revisat aquí surt de data/music-content-review.json.",
   "videos": [
     {
@@ -11173,6 +11173,588 @@
       "contentType": "song",
       "title": "Borriana Big Band - Lladres (Videoclip oficial)",
       "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "nlMjxqiJ7kg",
+      "contentType": "song",
+      "title": "Ses platges seran sempre nostres - Pepet i Marieta ft Abril Bordes i Riangost",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "vQa8eS6P9og",
+      "contentType": "song",
+      "title": "Ses platges seran sempre nostres",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "EqlTVWyXfl8",
+      "contentType": "song",
+      "title": "Pepet i Marieta I La Placeta de les Iaies (Videoclip Oficial)",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "G9atw_ivROY",
+      "contentType": "song",
+      "title": "La placeta de les iaies",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "flCY0DKy5J4",
+      "contentType": "song",
+      "title": "PEPET I MARIETA I SEMPRE AVANT a la memòria de Paco Albiol (videoclip)",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "x0WknSxdjkg",
+      "contentType": "song",
+      "title": "Sempre avant",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "ilVFZObqMRo",
+      "contentType": "song",
+      "title": "GERMÀ I Pepet i Marieta ft. Animalístic (Videoclip)",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "jUjeYNPwGaU",
+      "contentType": "song",
+      "title": "Germà",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "UkwIyD5fjnk",
+      "contentType": "song",
+      "title": "PEPET I MARIETA & CACTUS - L'Onada amb Berti i Mar Lolailo (Videoclip)",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "wmrF_tP2A18",
+      "contentType": "song",
+      "title": "L'Onada",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "WZvBTT65CNw",
+      "contentType": "song",
+      "title": "ROCKSTAR I PEPET I MARIETA prod. The Tyets i Jaume Quilez (Videoclip)",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "s0RxLBFbxBo",
+      "contentType": "song",
+      "title": "Rock Star",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "j95nHIt41ZA",
+      "contentType": "song",
+      "title": "PEPET I MARIETA, Sexenni - CRIDA YÉ! (Videoclip oficial)",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "naR3edJIS78",
+      "contentType": "song",
+      "title": "Crida Yé!",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "IjNZaTV2CMA",
+      "contentType": "song",
+      "title": "NO A LA MAT I PEPET I MARIETA amb Ebri Knight, El Diluvi, Tesa i Xavi Sarrià (Videoclip oficial)",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "Ue5whrcVdxI",
+      "contentType": "song",
+      "title": "No a la MAT",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "5omLoKwA4Hc",
+      "contentType": "song",
+      "title": "MALLORCA ETS TU I PEPET I MARIETA feat. OR (Videoclip oficial)",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "Tv9DIG56ixM",
+      "contentType": "song",
+      "title": "\"Mallorca ets tu\" de Pepet i marieta feat. OR (O-Erra) (Videolyric)",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "6txO181HSdY",
+      "contentType": "song",
+      "title": "Mallorca ets tu",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "xKYMphHBEnI",
+      "contentType": "song",
+      "title": "\"La reina de la festa\" de Pepet i marieta (Videolyric)",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "pmFm0lS93GQ",
+      "contentType": "song",
+      "title": "La reina de la festa",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "eYvoQQPJZhM",
+      "contentType": "song",
+      "title": "\"Molt més que un tros de mar\" de Pepet i marieta (Videolyric)",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "LWcIBtdklbc",
+      "contentType": "song",
+      "title": "Molt més que un tros de mar",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "uBbchqUF1us",
+      "contentType": "song",
+      "title": "\"La sortida\" de Pepet i marieta (Videolyric)",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "LTmrUalriHI",
+      "contentType": "song",
+      "title": "La sortida",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "Xu8lPgBmeJA",
+      "contentType": "song",
+      "title": "\"Ni amo ni senyor\" de Pepet i marieta feat. Mario Coloma (Videolyric)",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "Wza0mz7iOT0",
+      "contentType": "song",
+      "title": "Ni amo ni senyor",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "wvG1KtBqHWw",
+      "contentType": "song",
+      "title": "\"Tot anirà bé\" de Pepet i marieta (Videolyric)",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "6A6P1Z35E34",
+      "contentType": "song",
+      "title": "Tot anirà bé",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "hWs_xpkZJmQ",
+      "contentType": "song",
+      "title": "CANTA I PEPET I MARIETA feat. Miquel d'Oques Grasses (Videoclip)",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "SajV15PVcXA",
+      "contentType": "song",
+      "title": "Canta",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "3HbrrctUzdc",
+      "contentType": "song",
+      "title": "Canta",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "3iSU6DQx3yE",
+      "contentType": "song",
+      "title": "Pepet i marieta “Som l’Aplec” amb Aspencat, Obrint Pas, La Gossa Sorda i Pau Puig",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "MRDgs9Mhcug",
+      "contentType": "live_song",
+      "title": "\"Som l'Aplec dels Ports\" de Pepet i marieta (versió acústica)",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "kpSgSvRybek",
+      "contentType": "song",
+      "title": "Som L'Aplec",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "5uhq5anByHk",
+      "contentType": "song",
+      "title": "BON NADAL DIFERENT!🎄Pepet i marieta (Videolyric Oficial)",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "MG1UpRedpys",
+      "contentType": "song",
+      "title": "Un nadal diferent",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "iIhtQZcIGRM",
+      "contentType": "song",
+      "title": "LA VACUNA I PEPET I MARIETA feat. The Tyets (videoclip oficial)",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "9cowSCaFxz0",
+      "contentType": "song",
+      "title": "La vacuna",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "I8U2ihiBJmI",
+      "contentType": "song",
+      "title": "La vacuna",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "5Ukdl7rkkqk",
+      "contentType": "live_song",
+      "title": "Pepet i marieta - \"Somriu\" al confinament",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "oi5tLvJrdvg",
+      "contentType": "song",
+      "title": "Pepet i marieta - Somriu (Videoclip Oficial)",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "abgkFc98sFQ",
+      "contentType": "song",
+      "title": "\"Somriu\", Pepet i marieta (videolyrics)",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "jacgfxlLEoE",
+      "contentType": "song",
+      "title": "Somriu",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "mkgaH8Vyu9E",
+      "contentType": "song",
+      "title": "Pepet i marieta  'Me moles'",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "1xswd_VyTDY",
+      "contentType": "live_song",
+      "title": "Pepet i marieta - Me moles feat. Xanguito (Mallorquins i Catalans)",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "LMyoEAXOMm0",
+      "contentType": "song",
+      "title": "Me moles",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "VsScHJlyIh4",
+      "contentType": "song",
+      "title": "Pepet i marieta - Per Quinquennals (Videoclip Oficial)",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "x8PF8LiTEnk",
+      "contentType": "song",
+      "title": "Per Quinquennals",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "PPM7fJmWJjE",
+      "contentType": "song",
+      "title": "Pepet i marieta - Imperfectes ( Videoclip Oficial )",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "H0gfnq1VkWA",
+      "contentType": "song",
+      "title": "Imperfectes",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "Qw15QvqLfeo",
+      "contentType": "song",
+      "title": "Jubilat, Pepet i marieta feat. Las Migas",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "pxsWLY6AI3Y",
+      "contentType": "song",
+      "title": "Jubilat",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "nyNihETl4mE",
+      "contentType": "song",
+      "title": "\"Frontera\", Pepet i marieta #9octubre",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "dTNQhSTKeP0",
+      "contentType": "song",
+      "title": "\"Frontera\", Pepet i Marieta (videolyrics)",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "iotRPMpMuH0",
+      "contentType": "song",
+      "title": "Frontera",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "o1gBqpaDCtg",
+      "contentType": "song",
+      "title": "Pepet i marieta - SÚPER GUAI (Videoclip Oficial)",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "O035A9wvR-I",
+      "contentType": "song",
+      "title": "SÚPER GUAI de Pepet i marieta - La sal de la vida (Videolyric)",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "V0JfTgOYfuc",
+      "contentType": "song",
+      "title": "Súper Guai",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "7jtu1kuW5tU",
+      "contentType": "song",
+      "title": "Súper Guai",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "kBaX8CxBahM",
+      "contentType": "song",
+      "title": "Súper Guay",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "q_0ej7ADIDM",
+      "contentType": "song",
+      "title": "JUNTS de Pepet i marieta, a la memòria de Paco Albiol #sempreavant",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "CKJPmixTU_w",
+      "contentType": "song",
+      "title": "Junts",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "DRhA3Z1TI74",
+      "contentType": "song",
+      "title": "10 ANYS de Pepet i marieta del disc La sal de la vida Videolyric",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "BCuUGQDK7v4",
+      "contentType": "song",
+      "title": "10 Anys",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "6DkmamfrUEY",
+      "contentType": "song",
+      "title": "10 anys",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "ZgKjqc1LH1Q",
+      "contentType": "song",
+      "title": "ADÉU de Pepet i marieta del disc La sal de la vida (Videolyric)",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "oo2jA-arV2s",
+      "contentType": "live_song",
+      "title": "\"Adéu\" de Josep Bordes (veu de Pepet i marieta) a l'Ermita d'Alendo",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "DaOCpWRR_2c",
+      "contentType": "song",
+      "title": "Adéu",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "PA31-x3h5TU",
+      "contentType": "song",
+      "title": "Adéu",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "xlPNV9lRQDg",
+      "contentType": "song",
+      "title": "L'AMOR ÉS UN AMIC de Pepet i marieta del disc La sal de la vida (videolyric)",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "RntAqSroSAs",
+      "contentType": "song",
+      "title": "L'amor és un Amic",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "GVMI9Swh64k",
+      "contentType": "song",
+      "title": "LA NINETA DELS MEUS ULLS de Pepet i marieta (feat. La Gossa Sorda) del disc \"La sal de la vida\"",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "zzxBHArzbus",
+      "contentType": "song",
+      "title": "La Nineta dels Meus Ulls",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "e8PGF0hxofs",
+      "contentType": "song",
+      "title": "La nineta dels meus ulls",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "eE3kTz2x7Is",
+      "contentType": "song",
+      "title": "UOIOIO de Pepet i marieta (feat. La Pegatina, Bongo Botrako i Pirat's) del disc La sal de la vida",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "LfRv6YBX5U4",
+      "contentType": "song",
+      "title": "Uoioio",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "nXTydfxqUik",
+      "contentType": "song",
+      "title": "Uoioio",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "ZTuOhhXVyLc",
+      "contentType": "song",
+      "title": "Uoioio",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "fiGE8DdHWBg",
+      "contentType": "song",
+      "title": "La cançó de l'estiu de TV3 - Corre l'estiu de Pepet i marieta #uoioio",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "k2fkK8WFOJc",
+      "contentType": "song",
+      "title": "Corre l'estiu - La cançó de l'estiu de TV3",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "2nyVo7P_WMY",
+      "contentType": "song",
+      "title": "RUMBA DEL Sí - PEPET I MARIETA #referendumcatalunya",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "ixR3Zf9WZsQ",
+      "contentType": "song",
+      "title": "Rumba del #SíSí - Flashmob per la Independència 12/07/2014 Girona",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "SvJEMxT_vpc",
+      "contentType": "song",
+      "title": "NO AL CASTOR - \"No ho volem\" de Pepet i marieta #StopCastor #Nohovolem!",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "bzMzga2r9aQ",
+      "contentType": "song",
+      "title": "VIA CATALANA - The Catalan Way song - \"La via\" de Pepet i marieta - (English Subtitles)",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "ar2Hs7JNw5g",
+      "contentType": "song",
+      "title": "LA VIA - PEPET I MARIETA - VIA CATALANA per la Independencia de Catalunya - The Catalan Way",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "FbSlQLhBgFQ",
+      "contentType": "song",
+      "title": "La Via",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "MIL3yJPfW8c",
+      "contentType": "song",
+      "title": "La Via",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "Bc6G7xijqEY",
+      "contentType": "song",
+      "title": "La Via",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "yi-XW3V9xqI",
+      "contentType": "song",
+      "title": "Pepet i marieta - \"Sí\" #llibertatpresospolitics",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "gMBfa8y2cr4",
+      "contentType": "song",
+      "title": "Sí",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "tIHzwf4UTzs",
+      "contentType": "song",
+      "title": "\"L'EDUCACIÓ NO ES TOCA\" de Pepet i marieta  SOS Educació Pública",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "rYq_dO4fj7A",
+      "contentType": "song",
+      "title": "L'EDUCACIÓ NO ES TOCA de Pepet i marieta - Flashmob per l'educació pública",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "-WOUHb5XWAM",
+      "contentType": "song",
+      "title": "L'educació No Es Toca",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "XfXNaqvZlk8",
+      "contentType": "song",
+      "title": "L'educació no es toca",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "EC82d9B_Vo4",
+      "contentType": "song",
+      "title": "\"Tornar a ser infants\", Pepet i marieta - Bon nadal i millor 2017!!!",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "aQH0pQALvOY",
+      "contentType": "song",
+      "title": "JA VE'L NADAL - Pepet i Marieta #bonesfestes",
+      "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
     }
   ]
 }

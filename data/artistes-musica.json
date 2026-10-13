@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-13T06:25:04.516Z",
+  "updatedAt": "2026-10-13T06:55:01.321Z",
   "artists": [
     {
       "name": "2 Princeses Barbudes",
@@ -26127,17 +26127,34 @@
       "aliases": [],
       "genres": [
         "Pop",
-        "Rock",
+        "Rumba / Mestissatge",
         "Ska / Reggae"
       ],
-      "territories": [],
+      "territories": [
+        "Catalunya"
+      ],
       "languages": [
         "ca"
       ],
       "wikidataId": "Q20104300",
       "musicbrainzId": "a87d45e2-2d41-41c1-9bbb-d958d0096657",
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCPzFXRl5ozCmX7i4CjI3Odw",
+            "name": "Pepet i Marieta - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": true
+          },
+          {
+            "id": "UCT59tXHgcrnLCerfyEGDghw",
+            "name": "Pepet i marieta",
+            "handle": "@pepetimarieta",
+            "type": "official",
+            "primary": false
+          }
+        ],
         "candidates": [],
         "searchCandidates": [
           {
@@ -26187,15 +26204,19 @@
           }
         ]
       },
-      "confidence": "pendent",
-      "reviewStatus": "pendent",
-      "active": false,
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
         "https://www.wikidata.org/wiki/Q20104300",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "https://produccionssubmarines.com/artistes/pepet-i-marieta/",
+        "https://www.youtube.com/@pepetimarieta",
+        "genre:manual",
+        "docs/revisions/2026-10-13-pepet-marieta-alta.json"
       ],
-      "lastChecked": "2026-09-25T15:56:11.498Z",
-      "notes": "",
+      "lastChecked": "2026-10-13",
+      "notes": "Selecció tancada de 97 enregistraments. Repertori multilingüe: les altres pistes i les novetats requereixen revisió. docs/revisions/2026-10-13-pepet-marieta-alta.json",
       "enrichment": {
         "musicbrainz": {
           "checkedAt": "2026-09-25T15:56:11.498Z",
@@ -26251,7 +26272,8 @@
         "ska-rock",
         "patxanga",
         "pop-rock"
-      ]
+      ],
+      "displayName": "Pepet i Marieta"
     },
     {
       "name": "Pere Tàpias",
