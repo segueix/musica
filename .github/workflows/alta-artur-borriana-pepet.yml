@@ -55,14 +55,21 @@ jobs:
           npm run search:index:hybrid:rebuild
           node scripts/generar_pagines_compartir.js
           node scripts/documentar_vigilancia_idiomes.js --check
-      - name: Comprova totes les proves contra la situació anterior
+      - name: Comprova proves i codi contra la situació anterior
         run: |
           node scripts/revisions/provar_altes_musicals.js
-          npm run lint > /tmp/pepet-lint.log 2>&1
-          tail -5 /tmp/pepet-lint.log
+          node scripts/revisions/verificar_lint_pepet.js
       - name: Verifica enregistraments, filtres i conservació dels altres artistes
         run: |
           node scripts/revisions/incorporar_pepet_marieta.js --verify
+          node - <<'NODE'
+          const fs=require('fs');
+          const file='docs/revisions/2026-10-13-pepet-marieta-alta.json';
+          const report=JSON.parse(fs.readFileSync(file,'utf8'));
+          report.publication.lint=JSON.parse(fs.readFileSync('/tmp/pepet-lint-summary.json','utf8'));
+          fs.writeFileSync(file,JSON.stringify(report,null,2)+'\n');
+          fs.appendFileSync('docs/revisions/2026-10-13-pepet-marieta-alta.md','\nControl de codi: '+report.publication.lint.errors+' errors i '+report.publication.lint.warnings+' avisos preexistents reproduïts idènticament sobre HEAD; cap diagnòstic nou.\n');
+          NODE
           node scripts/actualitzar_versio_sw.js
       - name: Publica l’alta i els derivats en un sol commit
         run: |
@@ -94,6 +101,8 @@ jobs:
             docs/revisions/2026-10-13-pepet-marieta-alta.json
             docs/revisions/2026-10-13-pepet-marieta-alta.md
             /tmp/tardor-blat-quinto-validation.json
-            /tmp/pepet-lint.log
+            /tmp/pepet-lint-summary.json
+            /tmp/pepet-lint-current.json
+            /tmp/pepet-lint-baseline.json
             /tmp/pepet-manual.log
           retention-days: 1
