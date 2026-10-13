@@ -9,7 +9,7 @@ on:
       - 'scripts/generar_pagines_compartir.js'
       - '.github/workflows/publicar-comparticio-musica.yml'
   workflow_run:
-    workflows: ['Actualitzar feed musical', 'Actualitzar feed només dels grups nous', 'Arxivar feed musical', 'Aplicar vídeos ocults', 'Actualitzar Service Worker Música']
+    workflows: ['Actualitzar feed musical', 'Actualitzar feed només dels grups nous', 'Arxivar feed musical', 'Aplicar vídeos ocults', 'Actualitzar Service Worker Música', "Mantenir cobertura d'afinitats"]
     types: [completed]
   workflow_dispatch:
 
