@@ -1023,6 +1023,38 @@
       "reviewedAt": "2026-10-13",
       "confidence": 0.55,
       "method": "restored-from-documented-catalog"
+    },
+    {
+      "artist": "Pirat's Sound Sistema",
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "facets": [
+        "reggae",
+        "dancehall"
+      ],
+      "sources": [
+        "https://ppf.cat/index.php/cat/artistes/pirat-s-sound-sistema"
+      ],
+      "reviewedAt": "2026-10-13",
+      "confidence": 0.9,
+      "method": "source-review"
+    },
+    {
+      "artist": "Txarango",
+      "genres": [
+        "Rumba / Mestissatge"
+      ],
+      "facets": [
+        "mestissatge",
+        "reggae"
+      ],
+      "sources": [
+        "https://www.llull.cat/catala/recursos/musica_cb_mestissatge.cfm"
+      ],
+      "reviewedAt": "2026-10-13",
+      "confidence": 0.9,
+      "method": "source-review"
     }
   ],
   "relations": [

@@ -8523,17 +8523,16 @@
     "artist:pirat-s-sound-sistema": {
       "name": "Pirat's Sound Sistema",
       "status": "validated",
-      "relation": "associated",
+      "relation": "origin",
       "placeIds": [
-        "geonames:3128760",
-        "territory:maresme"
+        "geonames:3128760"
       ],
       "confidence": "alta",
-      "basis": "El segell situa el grup al barri de Sants de Barcelona i al Maresme. Es conserven el municipi i la comarca sense inventar un municipi maresmenc.",
+      "basis": "Origen a Sants, Barcelona; municipi indicat per l’usuari i documentat pel segell.",
       "sources": [
         "https://ppf.cat/index.php/cat/artistes/pirat-s-sound-sistema"
       ],
-      "reviewedOn": "2026-10-11",
+      "reviewedOn": "2026-10-13",
       "assignmentSource": "manual-review",
       "locked": true
     },
@@ -10896,7 +10895,8 @@
     "UCtUZyH-IDq1HqnwUrGT1NYg": "artist:sacrogermen",
     "UC1CjXeunopycRzEbV5kpEQg": "artist:sacrogermen",
     "UCViiIPCMCLZHQSUP16yQuKA": "artist:uc",
-    "UCU-dJEBd9MTBRQ_Zc1pHwww": "artist:la-iaia"
+    "UCU-dJEBd9MTBRQ_Zc1pHwww": "artist:la-iaia",
+    "UC8r4joFv4Q0LczFyYvW7Lsg": "artist:pirat-s-sound-sistema"
   },
   "excludedProfiles": {
     "UCdezTX23syEeAJJAb2oOkKA": {

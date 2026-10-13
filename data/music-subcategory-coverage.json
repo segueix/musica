@@ -1,5 +1,5 @@
 {
-  "musicalArtists": 407,
+  "musicalArtists": 408,
   "minimumArtists": 5,
   "subcategories": [
     {
@@ -477,10 +477,11 @@
         "ska-classic",
         "mestissatge"
       ],
-      "artistCount": 1,
+      "artistCount": 2,
       "nucleus": false,
       "artists": [
-        "Adala"
+        "Adala",
+        "Pirat's Sound Sistema"
       ]
     },
     {
@@ -613,7 +614,7 @@
       "label": "Pop — pendent d’afinar",
       "category": "Pop",
       "neighbours": [],
-      "artistCount": 39,
+      "artistCount": 38,
       "nucleus": true,
       "artists": [
         "Alfred Garcia",
@@ -653,7 +654,6 @@
         "Siderland",
         "Suu",
         "The Tyets",
-        "Txarango",
         "Xicu"
       ]
     },
@@ -1152,7 +1152,7 @@
         "rumba",
         "rumba-general"
       ],
-      "artistCount": 15,
+      "artistCount": 16,
       "nucleus": true,
       "artists": [
         "9SON",
@@ -1169,6 +1169,7 @@
         "Sabor de Gràcia",
         "Tashkenti",
         "Terratombats",
+        "Txarango",
         "Xeic!"
       ]
     },
@@ -4034,6 +4035,15 @@
       ]
     },
     {
+      "artist": "Pirat's Sound Sistema",
+      "category": "Ska / Reggae",
+      "subcategory": "reggae",
+      "basis": "editorial",
+      "sources": [
+        "https://ppf.cat/index.php/cat/artistes/pirat-s-sound-sistema"
+      ]
+    },
+    {
       "artist": "Pixamandúrries",
       "category": "Punk",
       "subcategory": "punk-hardcore",
@@ -4766,11 +4776,11 @@
     },
     {
       "artist": "Txarango",
-      "category": "Pop",
-      "subcategory": "pop-general",
-      "basis": "category-fallback",
+      "category": "Rumba / Mestissatge",
+      "subcategory": "mestissatge",
+      "basis": "editorial",
       "sources": [
-        "https://diumenge.ara.cat/premium/suplements/ara_tu/detenir-carrer-seguent-actuavem-merce_1_3859635.html"
+        "https://www.llull.cat/catala/recursos/musica_cb_mestissatge.cfm"
       ]
     },
     {

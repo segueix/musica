@@ -28389,14 +28389,24 @@
       "genres": [
         "Ska / Reggae"
       ],
-      "territories": [],
+      "territories": [
+        "Catalunya"
+      ],
       "languages": [
         "ca"
       ],
       "wikidataId": "Q11941698",
       "musicbrainzId": "089a0280-9aaf-4d0f-8bc2-f0f0cba5d449",
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UC8r4joFv4Q0LczFyYvW7Lsg",
+            "name": "Pirat's Sound Sistema - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": true
+          }
+        ],
         "candidates": [],
         "searchCandidates": [
           {
@@ -28442,15 +28452,17 @@
           }
         ]
       },
-      "confidence": "pendent",
-      "reviewStatus": "pendent",
-      "active": false,
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
         "https://www.wikidata.org/wiki/Q11941698",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "https://ppf.cat/index.php/cat/artistes/pirat-s-sound-sistema",
+        "genre:manual"
       ],
-      "lastChecked": "2026-09-25T15:56:12.967Z",
-      "notes": "",
+      "lastChecked": "2026-10-13",
+      "notes": "Alta del canal Tema indicat per l’usuari. Barcelona (Sants). Reggae / Dancehall. Selecció editorial amb quatre pistes pendents de contrast lingüístic; no s’afirma verificació íntegra de totes les lletres.",
       "enrichment": {
         "musicbrainz": {
           "checkedAt": "2026-09-25T15:56:12.967Z",
@@ -28493,7 +28505,14 @@
         "roots reggae",
         "dancehall",
         "ragga"
-      ]
+      ],
+      "genreReview": {
+        "reviewedAt": "2026-10-13",
+        "method": "source-review",
+        "sources": [
+          "https://ppf.cat/index.php/cat/artistes/pirat-s-sound-sistema"
+        ]
+      }
     },
     {
       "name": "Pixamandúrries",
@@ -35958,8 +35977,7 @@
       "name": "Txarango",
       "aliases": [],
       "genres": [
-        "Pop",
-        "Ska / Reggae"
+        "Rumba / Mestissatge"
       ],
       "territories": [],
       "languages": [
@@ -35991,7 +36009,9 @@
       "sources": [
         "https://www.wikidata.org/wiki/Q19694152",
         "wikidata:performed-catalan-work",
-        "manual-user-2026-10-02"
+        "manual-user-2026-10-02",
+        "https://www.llull.cat/catala/recursos/musica_cb_mestissatge.cfm",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-25T15:44:05.402Z",
       "notes": "",
@@ -36035,6 +36055,13 @@
           "musicbrainzReleaseRaw": [],
           "wikidataWorkEvidence": []
         }
+      },
+      "genreReview": {
+        "reviewedAt": "2026-10-13",
+        "method": "source-review",
+        "sources": [
+          "https://www.llull.cat/catala/recursos/musica_cb_mestissatge.cfm"
+        ]
       }
     },
     {

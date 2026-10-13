@@ -1,15 +1,12 @@
 {
-  "generatedAt": "2026-10-13T18:30:59.814Z",
+  "generatedAt": "2026-10-13T20:15:05.186Z",
   "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
   "restrictedVideoCount": 23,
-  "restrictedVideosAdded": [
-    "AJMmxp2x2Xc",
-    "eozHjuDsjQ8"
-  ],
+  "restrictedVideosAdded": [],
   "deepPagesFetched": 0,
   "deepChannelCount": 19,
-  "topicChannelCount": 338,
+  "topicChannelCount": 339,
   "governedChannelCount": 121,
   "topicCoverage": [
     {
@@ -1431,7 +1428,7 @@
   ],
   "topicGovernance": "apply",
   "governedReclassified": {},
-  "topicHiddenCount": 1,
+  "topicHiddenCount": 0,
   "topicChannels": [
     {
       "id": "UClwN1cpIrafSRa8MbOMAvvQ",
@@ -3114,6 +3111,13 @@
       "withClip": 0
     },
     {
+      "id": "UC8r4joFv4Q0LczFyYvW7Lsg",
+      "name": "Pirat's Sound Sistema",
+      "tracks": 65,
+      "selected": 65,
+      "withClip": 0
+    },
+    {
       "id": "UCXQsHe-XMB9xWUxtRLFAWQg",
       "name": "Pixamandurries",
       "tracks": 13,
@@ -3772,24 +3776,24 @@
       "withClip": 0
     }
   ],
-  "indexedChannelCount": 613,
-  "resolvedChannelCount": 613,
-  "feedChannelCount": 613,
-  "rawPublicVideoCount": 6824,
-  "feedVideoCount": 6286,
-  "acceptedMusicCount": 6260,
-  "categoryEligibleVideoCount": 6255,
+  "indexedChannelCount": 614,
+  "resolvedChannelCount": 614,
+  "feedChannelCount": 614,
+  "rawPublicVideoCount": 6856,
+  "feedVideoCount": 6333,
+  "acceptedMusicCount": 6292,
+  "categoryEligibleVideoCount": 6288,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
-    "before": 13,
+    "before": 0,
     "matched": 0,
-    "rejected": 13
+    "rejected": 0
   },
   "contentReviewCount": 529,
   "contentTypeCounts": {
-    "song": 6083,
+    "song": 6116,
     "live_song": 172,
-    "album": 5,
+    "album": 4,
     "other": 35,
     "review": 529
   },
@@ -3798,6 +3802,6 @@
   "channelsWithoutVideos": [],
   "channelsWithoutAcceptedMusic": [],
   "allIndexedChannelsVisible": true,
-  "publishedFeedVideoCount": 6268,
+  "publishedFeedVideoCount": 6281,
   "publishedShortVideoCount": 0
 }
