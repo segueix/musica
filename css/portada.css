@@ -8054,3 +8054,24 @@ body.am-full-open {
     color: var(--pt-muted);
     white-space: nowrap;
 }
+
+/* Pantalla de càrrega «Preparant Segueix…» (bootstrap-progress, app.js): amb els colors de l'app, no en vermell */
+.bootstrap-progress-overlay {
+    background: rgba(20, 22, 21, 0.94); /* --pt-bg */
+}
+.bootstrap-progress-title {
+    color: var(--pt-text);
+    font-family: var(--pt-display);
+}
+.bootstrap-progress-message {
+    color: var(--pt-muted);
+}
+.bootstrap-progress-track {
+    background: var(--pt-surface-3);
+}
+.bootstrap-progress-bar {
+    background: var(--pt-accent); /* llima, com els botons principals */
+}
+.bootstrap-progress-percent {
+    color: var(--pt-accent);
+}
