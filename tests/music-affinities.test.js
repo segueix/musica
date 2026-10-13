@@ -21,7 +21,7 @@ function select(videos, extra = {}) {
 }
 
 describe('pilot editorial Ska / Reggae', () => {
-    it('documenta 14 perfils i 22 canals únics del catàleg, sense canal ambigu', () => {
+    it('conserva els 14 perfils històrics i respecta el trasllat de Txarango a Mestissatge', () => {
         const channels = JSON.parse(readFileSync('js/channels-ca.json', 'utf8')).channels;
         const ids = profiles.flatMap(p => p.channelIds);
         expect(profiles).toHaveLength(14);
@@ -30,7 +30,12 @@ describe('pilot editorial Ska / Reggae', () => {
             expect(p.facets.length).toBeGreaterThan(0);
             expect(p.sources.every(url => url.startsWith('https://'))).toBe(true);
             expect(p.reviewedAt).toBe('2026-10-13');
-            for (const id of p.channelIds) expect(channels.find(c => c.id === id)?.categories).toContain(A.category);
+            for (const id of p.channelIds) {
+                const categories = channels.find(c => c.id === id)?.categories;
+                if (p.artist === 'Txarango') {
+                    expect(categories).toEqual(['Rumba / Mestissatge']);
+                } else expect(categories).toContain(A.category);
+            }
         }
         expect(A.profileOf({ channelId: 'UC-N1gUYe6UmwHOSQAUPH2-A' })).toBeNull();
     });

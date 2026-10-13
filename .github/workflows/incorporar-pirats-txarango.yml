@@ -1,4 +1,5 @@
 name: Incorporar Pirats i reclassificar Txarango
+# La validació inclou el trasllat editorial de Txarango.
 on:
   push:
     branches: [main]
