@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-13T16:29:17.052Z",
+  "updatedAt": "2026-10-13T16:42:54.412Z",
   "artists": [
     {
       "name": "2 Princeses Barbudes",
@@ -37388,6 +37388,47 @@
       ],
       "lastChecked": "2026-10-13",
       "notes": "Identitat Pep Hernández Durany resolta pels crèdits. El menol i Ney contenen estrofes substancials en castellà; resta sense evidència suficient. Vilassar documentat sense precisar municipi. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "aliases": [
+        "Uc",
+        "UC d’Eivissa",
+        "UC"
+      ],
+      "sources": [
+        "manual-user-2026-10-13",
+        "https://www.youtube.com/channel/UCViiIPCMCLZHQSUP16yQuKA",
+        "genre:manual"
+      ],
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCViiIPCMCLZHQSUP16yQuKA",
+            "handle": null,
+            "name": "UC - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ]
+      },
+      "name": "UC",
+      "displayName": "UC",
+      "genres": [
+        "Folk i arrel"
+      ],
+      "territories": [
+        "Illes Balears"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-13",
+      "notes": "L’usuari confirma el repertori català del canal excepte Chinekem Kaa, que queda exclosa. Categoria Folk i arrel. Imatge: caràtula de Camins de Migjorn. Acceptació per indicació expressa de l’usuari; no s’afirma haver verificat les lletres íntegres. docs/revisions/2026-10-13-uc-alta.json"
     }
   ]
 }

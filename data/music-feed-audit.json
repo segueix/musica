@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-13T16:29:20.165Z",
+  "generatedAt": "2026-10-13T16:42:56.988Z",
   "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
   "restrictedVideoCount": 21,
   "restrictedVideosAdded": [],
   "deepPagesFetched": 0,
   "deepChannelCount": 19,
-  "topicChannelCount": 336,
+  "topicChannelCount": 337,
   "governedChannelCount": 119,
   "topicCoverage": [
     {
@@ -3543,6 +3543,13 @@
       "withClip": 32
     },
     {
+      "id": "UCViiIPCMCLZHQSUP16yQuKA",
+      "name": "UC",
+      "tracks": 57,
+      "selected": 57,
+      "withClip": 0
+    },
+    {
       "id": "UCrxpjvY7G2ffEklcmSHm5og",
       "name": "Udol",
       "tracks": 10,
@@ -3718,13 +3725,13 @@
       "withClip": 0
     }
   ],
-  "indexedChannelCount": 611,
-  "resolvedChannelCount": 606,
-  "feedChannelCount": 606,
-  "rawPublicVideoCount": 6742,
-  "feedVideoCount": 6219,
-  "acceptedMusicCount": 6178,
-  "categoryEligibleVideoCount": 6174,
+  "indexedChannelCount": 612,
+  "resolvedChannelCount": 607,
+  "feedChannelCount": 607,
+  "rawPublicVideoCount": 6769,
+  "feedVideoCount": 6246,
+  "acceptedMusicCount": 6205,
+  "categoryEligibleVideoCount": 6201,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
     "before": 0,
@@ -3733,7 +3740,7 @@
   },
   "contentReviewCount": 529,
   "contentTypeCounts": {
-    "song": 6003,
+    "song": 6030,
     "live_song": 171,
     "album": 4,
     "other": 35,
@@ -3744,6 +3751,6 @@
   "channelsWithoutVideos": [],
   "channelsWithoutAcceptedMusic": [],
   "allIndexedChannelsVisible": false,
-  "publishedFeedVideoCount": 6189,
+  "publishedFeedVideoCount": 6201,
   "publishedShortVideoCount": 0
 }

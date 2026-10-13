@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-13T16:29:17.052Z",
+  "updatedAt": "2026-10-13T16:42:54.412Z",
   "description": "Decisions manuals sobre el tipus de contingut de vídeos concrets. Manen sobre el classificador automàtic (scripts/lib/classificar_contingut_musical.js) i el pipeline (scripts/update_music_feed.js) les reaplica a cada generació del feed. Tipus permesos: song, live_song, album, other. Un vídeo revisat aquí surt de data/music-content-review.json.",
   "videos": [
     {
@@ -14515,6 +14515,348 @@
       "contentType": "song",
       "title": "En Es Desert",
       "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "orBHDmjwxxU",
+      "contentType": "song",
+      "title": "La Presó de Nàpols",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-uc-alta.json"
+    },
+    {
+      "id": "KTg6JvRtbHQ",
+      "contentType": "song",
+      "title": "Bona Nit",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-uc-alta.json"
+    },
+    {
+      "id": "XrCvwkSDP5c",
+      "contentType": "song",
+      "title": "Goigs de nadal",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-uc-alta.json"
+    },
+    {
+      "id": "gA0-RDmqtAE",
+      "contentType": "song",
+      "title": "Bon Dia",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-uc-alta.json"
+    },
+    {
+      "id": "yYUMPsR21zA",
+      "contentType": "song",
+      "title": "Sa Nostra Ciutat d'Eivissa",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-uc-alta.json"
+    },
+    {
+      "id": "y7nHW6Vksfw",
+      "contentType": "song",
+      "title": "De jo et vas Despediguent",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-uc-alta.json"
+    },
+    {
+      "id": "npDCW_gV_qM",
+      "contentType": "song",
+      "title": "Paràbola de la barca i de l'amor",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-uc-alta.json"
+    },
+    {
+      "id": "mQifqL7DgY4",
+      "contentType": "song",
+      "title": "UC - Anàrem a Sant Miguel",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-uc-alta.json"
+    },
+    {
+      "id": "fhHp2kz3OlI",
+      "contentType": "song",
+      "title": "La Presó de Nàpols",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-uc-alta.json"
+    },
+    {
+      "id": "bK98rcx-D38",
+      "contentType": "song",
+      "title": "Com Voleu Germans Que Canti",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-uc-alta.json"
+    },
+    {
+      "id": "Rwka3mpw8hQ",
+      "contentType": "song",
+      "title": "N'escrivaneta",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-uc-alta.json"
+    },
+    {
+      "id": "Rev4tBVp1R4",
+      "contentType": "song",
+      "title": "Sa Serena Cau Menuda",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-uc-alta.json"
+    },
+    {
+      "id": "8zc-Q3DfCcY",
+      "contentType": "song",
+      "title": "Jo he Fet Una Cançó Nova",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-uc-alta.json"
+    },
+    {
+      "id": "q8VcUX8Cnp4",
+      "contentType": "song",
+      "title": "Terra Natal",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-uc-alta.json"
+    },
+    {
+      "id": "jM1ia7oKwl4",
+      "contentType": "song",
+      "title": "Deixa'l Anar, L'ocell",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-uc-alta.json"
+    },
+    {
+      "id": "t7jGnTiLYzU",
+      "contentType": "song",
+      "title": "Setembre-Octubre",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-uc-alta.json"
+    },
+    {
+      "id": "bJ2mK0N4eZ8",
+      "contentType": "song",
+      "title": "Farigola i Romanins",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-uc-alta.json"
+    },
+    {
+      "id": "zXGiZQPjBUs",
+      "contentType": "song",
+      "title": "Pròleg",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-uc-alta.json"
+    },
+    {
+      "id": "9W7t6Tv6YGM",
+      "contentType": "song",
+      "title": "Riba",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-uc-alta.json"
+    },
+    {
+      "id": "MsZDHu_SAmU",
+      "contentType": "song",
+      "title": "D'ara Endavant",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-uc-alta.json"
+    },
+    {
+      "id": "u8Cd7BiPcMM",
+      "contentType": "song",
+      "title": "La Blava Cançó Dels Horitzons",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-uc-alta.json"
+    },
+    {
+      "id": "q-yOrt3W6AE",
+      "contentType": "song",
+      "title": "Vull Pensar Sempre en Tu",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-uc-alta.json"
+    },
+    {
+      "id": "ftN4puLuKCM",
+      "contentType": "song",
+      "title": "Eivissa Davant Els Ulls",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-uc-alta.json"
+    },
+    {
+      "id": "lhgtETWe_VU",
+      "contentType": "song",
+      "title": "A Beatriu",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-uc-alta.json"
+    },
+    {
+      "id": "Olyx5eqSqCs",
+      "contentType": "song",
+      "title": "Illa Fidel",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-uc-alta.json"
+    },
+    {
+      "id": "MCMPPTY6t84",
+      "contentType": "song",
+      "title": "El Cavaller Pelegrí",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-uc-alta.json"
+    },
+    {
+      "id": "llyIvD6OUxM",
+      "contentType": "song",
+      "title": "La filla del Rei de França",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-uc-alta.json"
+    },
+    {
+      "id": "uXIjEP1RCkc",
+      "contentType": "song",
+      "title": "En una boira espessa",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-uc-alta.json"
+    },
+    {
+      "id": "LBthYWTwAso",
+      "contentType": "song",
+      "title": "Cap de Barbaria",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-uc-alta.json"
+    },
+    {
+      "id": "7ZpR0DJQpPs",
+      "contentType": "song",
+      "title": "La Dida",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-uc-alta.json"
+    },
+    {
+      "id": "nLmZslNT57Y",
+      "contentType": "song",
+      "title": "S'home des senaió",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-uc-alta.json"
+    },
+    {
+      "id": "XZQE4LezTSI",
+      "contentType": "song",
+      "title": "Cançó de vesprada",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-uc-alta.json"
+    },
+    {
+      "id": "OXDSgwqP-Rw",
+      "contentType": "song",
+      "title": "Un capvespre et portaré a Formentera",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-uc-alta.json"
+    },
+    {
+      "id": "OraSs4CiSjg",
+      "contentType": "song",
+      "title": "Ara hem 'gafat una usança",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-uc-alta.json"
+    },
+    {
+      "id": "Kqh7vx5-RDw",
+      "contentType": "song",
+      "title": "Cançó de fosca",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-uc-alta.json"
+    },
+    {
+      "id": "RlLcEI3ug-M",
+      "contentType": "song",
+      "title": "Roseret de mil nou fulles",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-uc-alta.json"
+    },
+    {
+      "id": "OjkrG5sXNRE",
+      "contentType": "song",
+      "title": "Formentera",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-uc-alta.json"
+    },
+    {
+      "id": "2NFXJvHP8pU",
+      "contentType": "song",
+      "title": "Sense tu",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-uc-alta.json"
+    },
+    {
+      "id": "magvKpj7WrI",
+      "contentType": "song",
+      "title": "Gaita de sa Portella",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-uc-alta.json"
+    },
+    {
+      "id": "BEzhhU8fyEY",
+      "contentType": "song",
+      "title": "Gaita de sa Portella",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-uc-alta.json"
+    },
+    {
+      "id": "lBVr_p4pwOk",
+      "contentType": "song",
+      "title": "Jo Tenc Una Enamorada",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-uc-alta.json"
+    },
+    {
+      "id": "7LpqxiV0hb0",
+      "contentType": "song",
+      "title": "Ses Germanes Captives",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-uc-alta.json"
+    },
+    {
+      "id": "yn1-bGlfiqI",
+      "contentType": "song",
+      "title": "Sa Despedida",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-uc-alta.json"
+    },
+    {
+      "id": "qHvb2VEEjng",
+      "contentType": "song",
+      "title": "Goigs de Nadal",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-uc-alta.json"
+    },
+    {
+      "id": "kB4XuitGlUM",
+      "contentType": "song",
+      "title": "Sa Carta Que m'Enviares",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-uc-alta.json"
+    },
+    {
+      "id": "dK-h1D8JcBI",
+      "contentType": "song",
+      "title": "Rosa Vera",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-uc-alta.json"
+    },
+    {
+      "id": "-WXBo7TMHgU",
+      "contentType": "song",
+      "title": "Bona Nit",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-uc-alta.json"
+    },
+    {
+      "id": "QpqGHFPy3vU",
+      "contentType": "song",
+      "title": "Sonada de Xeremia",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-uc-alta.json"
+    },
+    {
+      "id": "soqioFWW5XQ",
+      "contentType": "song",
+      "title": "Sa Garrapinyada",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-uc-alta.json"
+    },
+    {
+      "id": "_JR9pjgp6iY",
+      "contentType": "song",
+      "title": "Sa Lluna Pagesa",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-uc-alta.json"
+    },
+    {
+      "id": "CruxociaTuU",
+      "contentType": "song",
+      "title": "An es Vedrà Vaig Anar",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-uc-alta.json"
+    },
+    {
+      "id": "qONY64IUxFI",
+      "contentType": "song",
+      "title": "Sona Viola, Sona",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-uc-alta.json"
+    },
+    {
+      "id": "KH61acBR7jg",
+      "contentType": "song",
+      "title": "Sa Calera",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-uc-alta.json"
+    },
+    {
+      "id": "G6GBYUSpjyQ",
+      "contentType": "song",
+      "title": "Des Que No Hi Ha Eleccions",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-uc-alta.json"
+    },
+    {
+      "id": "VXKbOKgirWQ",
+      "contentType": "song",
+      "title": "Flors de Baladre",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-uc-alta.json"
+    },
+    {
+      "id": "sshU_MmAhz4",
+      "contentType": "song",
+      "title": "En Aquesta Illa Tan Pobre",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-uc-alta.json"
+    },
+    {
+      "id": "KxamItmf74g",
+      "contentType": "song",
+      "title": "Es Pobres No Podem Viure",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-uc-alta.json"
     }
   ]
 }
