@@ -1,0 +1,106 @@
+name: Classificar Tiger Menja Zebra i La Trinca
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/classificar-tiger-trinca.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: music-data-writer
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  classificar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '20'
+          cache: npm
+      - name: Prepara la revisio
+        run: |
+          npm ci
+          echo "EDITORIAL_BASE_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+          node --check scripts/revisions/classificar_tiger_trinca_20261013.js
+          npm run music:validate
+      - name: Comprova que nomes canvia categories
+        run: |
+          node - <<'NODE'
+          const assert = require('node:assert/strict');
+          const {transform, categories} = require('./scripts/revisions/classificar_tiger_trinca_20261013.js');
+          const map = new Map([['target', {genres:['Altres'], categories:['Altres estils'], primaryCategory:'Altres estils'}]]);
+          const fixture = {channels:{target:{name:'Artista',genres:['Pop'],categories:['Pop']},other:{genres:['Rock']}},videos:[{id:'song1',channelId:'target',title:'Cançó',viewCount:42,categories:['Pop']},{id:'song2',channelId:'other',categories:['Rock']}]};
+          const other = JSON.stringify(fixture.videos[1]);
+          const originalIds = fixture.videos.map(video => video.id);
+          transform(fixture,map);
+          assert.deepEqual(fixture.channels.target.categories,['Altres estils']);
+          assert.deepEqual(fixture.videos[0].categories,['Altres estils']);
+          assert.equal(fixture.videos[0].title,'Cançó');
+          assert.equal(fixture.videos[0].viewCount,42);
+          assert.equal(JSON.stringify(fixture.videos[1]),other);
+          assert.deepEqual(fixture.videos.map(video => video.id),originalIds);
+          const once = JSON.stringify(fixture);
+          transform(fixture,map);
+          assert.equal(JSON.stringify(fixture),once);
+          transform(fixture,map,true);
+          assert.deepEqual(categories(['Altres']),['Altres estils']);
+          assert.deepEqual(categories(['Electrònica']),['Electrònica']);
+          console.log('Transformació acotada i idempotent comprovada.');
+          NODE
+      - name: Aplica les dues classificacions sense API
+        run: |
+          node scripts/revisions/classificar_tiger_trinca_20261013.js
+          npm run music:validate
+      - name: Valida les proves i les fallades preexistents
+        run: node scripts/revisions/provar_altes_musicals.js
+      - name: Verifica el resultat i la conservacio de dades
+        run: |
+          node scripts/revisions/classificar_tiger_trinca_20261013.js --verify
+          git diff --exit-code -- 'js/**/*.js' 'js/*.js' ':!js/channels-ca.json'
+          npm run lint > /tmp/tiger-trinca-lint.log 2>&1 || lint_status=$?
+          if [ "${lint_status:-0}" -ne 0 ]; then
+            echo 'El codi JavaScript de l’aplicació no ha canviat. Es conserva el diagnòstic de lint preexistent:'
+            tail -n 4 /tmp/tiger-trinca-lint.log
+          fi
+      - name: Publica sense sobreescriure canvis concurrents
+        run: |
+          git fetch origin main
+          test "$(git rev-parse origin/main)" = "$EDITORIAL_BASE_SHA"
+          node - <<'NODE'
+          const fs = require('node:fs');
+          const {execFileSync} = require('node:child_process');
+          const r = JSON.parse(fs.readFileSync('docs/revisions/2026-10-13-tiger-trinca-categories.json','utf8'));
+          const files = ['data/artistes-musica.json', ...r.files.filter(file => file.changed).map(file => file.file), 'docs/revisions/2026-10-13-tiger-trinca-categories.json', 'docs/revisions/2026-10-13-tiger-trinca-categories.md'];
+          execFileSync('git',['add','--',...files],{stdio:'inherit'});
+          NODE
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          if ! git diff --cached --quiet; then
+            git commit -m 'data: Tiger Menja Zebra a Electrònica i La Trinca només a Altres estils'
+            git push origin HEAD:main
+          fi
+      - name: Prepara el lloc actualitzat
+        run: |
+          mkdir _site
+          git archive HEAD | tar -x -C _site
+          rm -rf _site/.github _site/tests _site/scripts _site/functions _site/docs
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - name: Desplega les classificacions
+        id: deployment
+        uses: actions/deploy-pages@v4
