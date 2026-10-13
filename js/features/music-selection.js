@@ -744,6 +744,7 @@
         const top = cfg.general.top;
         const sequence = preceding.map(video => ({
             id: idOf(video),
+            video,
             artist: featuresOf(options.ctx, video).artist,
             tier: featuresOf(options.ctx, video).tier,
             style: featuresOf(options.ctx, video).primaryStyle,
@@ -823,6 +824,7 @@
                         break;
                     }
                     let s = c.base;
+                    if (options.flow) s += options.flow.transition(c.video, last?.video, options.seed);
                     if (eraTargets) {
                         s += cfg.gain.era * (eraTargets[c.f.tier] - eraCount[c.f.tier] / total);
                     }
@@ -854,7 +856,7 @@
             usedWork.add(c.f.keys.work);
             usedRecordings.push(c.f.keys);
             usedIndex.add(c.f.keys);
-            sequence.push({ id: c.f.id, artist: c.f.artist, tier: c.f.tier, style: c.f.primaryStyle, fam: c.fam });
+            sequence.push({ video: c.video, id: c.f.id, artist: c.f.artist, tier: c.f.tier, style: c.f.primaryStyle, fam: c.fam });
             eraCount[c.f.tier] += 1;
             famCount[c.fam] += 1;
             if (mix && c.tags && c.tags.length) {
@@ -1054,6 +1056,10 @@
             useCooldown: options.useCooldown !== false,
             mix,
             artistOf: ctx.artistKeyOf,
+            seed,
+            flow: options.affinities !== false && app.features.musicAffinities?.isActive(options.category, policy, mix)
+                ? app.features.musicAffinities
+                : null,
         });
         const stats = shares(result.picked);
         const newArtists = discover
@@ -1355,3 +1361,4 @@
         knownArtistCount,
     };
 })(window);
+

@@ -1,0 +1,38 @@
+name: Validar pilot afinitats Ska
+on:
+  push:
+    branches: [pilot/afinitats-ska]
+    paths:
+      - 'js/features/music-affinities.js'
+      - 'js/features/music-selection.js'
+      - 'tests/music-affinities.test.js'
+      - 'scripts/revisions/validar_afinitats_ska.js'
+      - '.github/workflows/validar-afinitats-ska.yml'
+permissions:
+  contents: write
+concurrency:
+  group: pilot-afinitats-ska
+  cancel-in-progress: false
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - name: Proves completes, lint i simulació del catàleg
+        run: node scripts/revisions/validar_afinitats_ska.js b3deaf6dd797f3bb256ae54fabbeff0c6430d575
+      - run: npm run sw:version
+      - name: Desa verificació i precache a la branca del pilot
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add sw.js docs/revisions/2026-10-13-afinitats-ska.json
+          git commit -m 'test: verifica afinitats Ska i actualitza precache'
+          git push origin HEAD:pilot/afinitats-ska

@@ -175,3 +175,32 @@ El context (antiguitat, popularitat, claus) es calcula una vegada per feed i es 
 - Sense snapshots de visualitzacions no hi ha «tendència recent»: la popularitat és acumulada i normalitzada.
 - Música TV (`segueixTV.rank`) i les files de la portada per canal no fan servir la identitat d'artista.
 - Els percentatges 65/25/10, els pesos i els descansos són punts de partida per validar.
+
+
+
+## Pilot d'afinitats Ska / Reggae (2026-10-13)
+
+`js/features/music-affinities.js` és la font de perfils editorials: 14 artistes, 22 canals,
+facetes documentades, fonts, confiança editorial i data de revisió. Les facetes són presència
+documentada, no pesos acústics ni etiquetes certes de totes les gravacions. La confiança és
+una decisió editorial conservadora, no una probabilitat estadística.
+
+Només `selectRadio` amb categoria única exacta `Ska / Reggae`, política `general` i sense mescla
+aplica l'ajust: 0,12 × [0,8 × (afinitat amb anterior − 0,5) + 0,2 × (afinitat amb inicial − 0,5)].
+L'afinitat és Jaccard de facetes, atenuada cap a 0,5 per la confiança mínima dels dos perfils.
+L'ajust queda entre −0,06 i +0,06 i actua DINS de la selecció sota restriccions; no reordena després.
+Els pesos base 45/20/15/10/10 i els filtres de categoria continuen vigents. No afecta altres estils,
+mescles, cerca, ràdio d'artista, llistes ni seleccions manuals. `affinities: false` permet comparar
+amb el motor anterior. El pilot no garanteix una transició acústica: falta escolta humana.
+
+La manca de perfil és neutral (0,5). Les versions live/directe/acústic/remix no hereten perfil;
+`trackOverrides` reserva excepcions documentades per ID exacte, de moment buit. No s'inventen BPM,
+energia, instrumentació o relacions personals. Les afinitats es calculen, sense base de dades externa
+ni peticions en reproducció; el script es carrega abans del motor i entra al precache.
+
+Canal pendent: `UC-N1gUYe6UmwHOSQAUPH2-A` mostra Mr.Freak Ska però té identitat canònica The Cabrians.
+Es deixa neutral fins a resoldre la identitat. Brams només té rock documentat al perfil; no s'infereix
+ska de totes les cançons per pertànyer a la categoria. Guaita'ls i Kayo Malayo tenen fonts secundàries
+i confiança menor. L'expansió exigeix fonts i proves per categoria; no s'activen categories noves
+automàticament en afegir perfils. El pool previ conserva el seu límit: les afinitats no poden recuperar
+candidates descartades abans per la puntuació base.
