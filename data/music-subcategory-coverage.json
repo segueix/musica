@@ -106,7 +106,7 @@
       "label": "Rock — pendent d’afinar",
       "category": "Rock",
       "neighbours": [],
-      "artistCount": 27,
+      "artistCount": 26,
       "nucleus": true,
       "artists": [
         "Aspencat",
@@ -123,7 +123,6 @@
         "La Tour de Carol",
         "Lo Maquini",
         "Obeses",
-        "Obrint Pas",
         "Ocults",
         "Orella d'Ós",
         "Pastorets Rock",
@@ -429,9 +428,10 @@
         "ska-revival",
         "ska-classic"
       ],
-      "artistCount": 1,
+      "artistCount": 2,
       "nucleus": false,
       "artists": [
+        "Obrint Pas",
         "Skatalà"
       ]
     },
@@ -3787,11 +3787,11 @@
     },
     {
       "artist": "Obrint Pas",
-      "category": "Rock",
-      "subcategory": "rock-general",
-      "basis": "category-fallback",
+      "category": "Ska / Reggae",
+      "subcategory": "ska-punk",
+      "basis": "editorial",
       "sources": [
-        "https://ppf.cat/index.php/es/artistas/obrint-pas"
+        "https://ppf.cat/index.php/cat/artistes/obrint-pas"
       ]
     },
     {
