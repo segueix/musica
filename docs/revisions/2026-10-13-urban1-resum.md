@@ -1,6 +1,5 @@
 # Neisha
-Registres previs: []
-## Neisha - Topic | UCYL4dFN0bEcSC1nQD1ww4_w | null
+## Neisha - Topic | UCYL4dFN0bEcSC1nQD1ww4_w | null | true
 ih3D30nxpO8 | Decebre un àngel | PT3M19S
 s1OvxW8f79w | 3Bé | PT3M30S
 KK4gPs8I98U | De missió | PT2M54S
@@ -28,7 +27,7 @@ is5vQ-OfBoU | Estira-i-arronsa | PT3M3S
 sXpQDyDkuyc | Les Prada | PT1M53S
 2DsQb8sx5-k | Piscis | PT2M44S
 xAL2gAOON18 | One Piece / EVA (Sped Up Nightcore Version) | PT2M13S
-## Neisha | UC-XeMWmg61MRESFhKFTTx-g | @neisha7495
+## Neisha | UC-XeMWmg61MRESFhKFTTx-g | @neisha7495 | true
 Q5uakpeht4M | Neisha - Jesús Gil amb MLAGRASA i L-street | PT3M43S
 c9pfGQmPp2s | Neisha - Delulu (amb ZebaKnizel) | PT2M36S
 JtHfGiEriaQ | Neisha - De missió (amb Wasp) | PT2M54S
@@ -56,8 +55,7 @@ ADtcaViKcTk | Neisha "Dolcesa Bruna" - La nit de l'amor (ACTE II) | PT2M42S
 zvH_G1kZEkA | Neisha "Dolcesa Bruna" - Tinc un desfici (ACTE I) | PT2M51S
 
 # AVANT
-Registres previs: []
-## AVANT | UC0j6Wq2VUm6b1tDsEalkRhw | @avant_020
+## AVANT | UC0j6Wq2VUm6b1tDsEalkRhw | @avant_020 | true
 rgsyXqE7Kak | NOSALTRES🔥Disponible per tot arreu 'EP NOSALTRES' 💿#musicaencatala #valència  #valencia #català | PT13S
 cWPAKdclWlA | CADA NIT🌜Disponible per tot arreu 'EP NOSALTRES' 💿#musicaencatala #valencia #músicacatalana #trap | PT21S
 vR20n4wn7GE | QUAN NO ESTEM JUNTS💔Disponible per tot arreu 'EP NOSALTRES' 💿#valencia  #musicaencatala #català | PT16S
@@ -86,8 +84,7 @@ pe_7n9RWIfA | AVANT - ARA QUE EM VEU (Video Oficial) | PT3M9S
 oIQnUG0XSng | AVANT - TOT EL DIA (Prod. PolBeats) | PT2M45S
 
 # Xisk
-Registres previs: []
-## Xisk - Topic | UCZKEilLSE62Ewxa1NueYwcQ | null
+## Xisk - Topic | UCZKEilLSE62Ewxa1NueYwcQ | null | true
 byCouW2heDY | S3xtape | PT2M33S
 S0bvH7k2rtg | Sauvatge | PT2M41S
 0GYGAKXjupo | AKEST LLOK | PT3M31S
@@ -123,10 +120,35 @@ CYivgNwb5sw | Càmera Lenta | PT3M13S
 SsSiVeLn0nc | Back/amor | PT3M29S
 iwm4z5__Qu4 | Càmera Lenta | PT3M13S
 Jb1tYU3Iai4 | Kards verds taken | PT2M46S
+## Xisk - Topic | UCVbLGSDOHQLraXRXBpraZRg | null | true
+wjpcG4RtQjk | Medusa | PT3M46S
+R5iSjGlHDSY | Caloret (feat. Na Kate & Martins) | PT3M53S
+X25W6K2IS-E | Sal (feat. Soldat Urbain & Madi) | PT3M54S
+oVs6731iWW4 | Pensava era mel (feat. Amulet & Pau Calafell) | PT3M
+5Vfipn2dWb4 | De Madrid al Búnker (feat. Xertis) | PT3M36S
+awuEbCRt798 | Tripi (feat. Martins) | PT2M47S
+qr97ERHbt3g | Ruta | PT3M29S
+viM9KcL9RL8 | Salvatge Pau | PT2M25S
+Fd_IdemQaxs | Tornarà | PT3M18S
+UXCf_XSpI3k | Intro (Amor sense casa) | PT2M15S
+948X6nTczQA | De Madrid al Búnker (feat. Xertis) | PT3M36S
+4P-7Es3V50M | Tripi (feat. martins) | PT2M47S
+sXgLP7WYVhU | Tornarà | PT3M18S
+gkyVkTA75Fw | Sal (feat. Soldat Urbain & Madi) | PT3M54S
+UZ_BGqMhkJQ | Salvatge Pau | PT2M25S
+AjQQ6gkzatM | Ruta | PT3M29S
+## Xisk | UCYCaG33IVxlUbYcwJsHGM4Q | @xisk_musik | true
+XesgSl26dl0 | Xisk - Reina (videoclip) | PT3M9S
+5pKQrOkJQTY | Xisk - 1Lokura (videoclip) | PT2M27S
+Ns4oR-5G-lY | Xisk - sinceritat (videoclip) | PT2M49S
+PPB-U4lRbFE | Pensava era mel - Xisk | PT3M1S
+## Xisk | UCYqpUkiHEn0Kx-pjUk41eyw | @xisk007 | true
+9Gk6tyIN-8c | The GOAT Doing GOAT Things 🐐 | PT46S
+O7PKifUu20Y | which one you are picking 😍#viral #edit #song #peace | PT27S
+CtaeX5s4axg | #ronaldo #motivation #shorts #viral #football #ishowspeed #wspeed #messi #ronaldoedit | PT19S
 
 # Fortuu
-Registres previs: []
-## Fortuu | UCNY281d7mNCt3yqfQvhXbFQ | @fortuu42
+## Fortuu | UCNY281d7mNCt3yqfQvhXbFQ | @fortuu42 | true
 wocR9ivdH6M | dosXtres - Fortuu, Maken Row | PT27S
 idBHwToLEmw | dosXtres - Fortuu, Maken Row | PT27S
 GifTkXXhivo | dosXtres - Fortuu, Maken Row | PT2M41S
@@ -157,10 +179,42 @@ LV86tp7nN-c | Joc de Nens - Fortuu ft. DK (Video Oficial) | PT3M15S
 TjbI7As-Bxw | La forma amb la que em mires - Fortuu, Centvi (VIDEOLYRIC) | PT3M27S
 jULsjuQgUpU | N.V.Q.M. - Fortuu, Prod. Cornell (Visualizer) | PT3M11S
 Zwdgo6u9HgA | Lluna Plena ft. Barek, Tina (prod. emv) // Lyric Video | PT2M37S
+## Fortuu - Topic | UC0WM1w4n_f4A-AZAve2QeIg | null | true
+QRVrAjrv-vA | dosXtres | PT2M41S
+zgdKUNAZXTw | amorGENUÍ | PT2M9S
+gpTHnNzTRq8 | aquellacançó | PT1M55S
+-w-boW5-9co | Posa'm Trap | PT3M58S
+0buykG2YFUk | Entre Estrelles | PT2M48S
+CWv0IuR8KsU | Des de Girona pel Món | PT2M18S
+I3H9qCTuWdM | 4t2a | PT2M42S
+uDZ-iIvxhaY | Somnis | PT3M53S
+9AtPflaWrG0 | Santorini | PT2M46S
+2kOw-FlrsOY | Des de Girona pel Món | PT2M18S
+QSqzx6Fi8-A | Entre Estrelles | PT2M48S
+aiZCzEv1ssQ | Cada Pàgina | PT2M42S
+Jig3VRbQzaw | Tu, Jo i el Mar | PT3M20S
+-C4oZxDIbco | Shorty | PT2M59S
+Dk1AyghqPjE | Em va Robar el Cora (feat. Moll) | PT3M33S
+AYGpO6ptz_o | Els Meus | PT2M43S
+yTqrBt9Fzcw | Com Si No Demà (feat. Monges) | PT3M47S
+hWpTQ1lOyL4 | Oblida'm (feat. Arti) | PT3M17S
+5AiPu4_hi4c | Dir-nos Adeu | PT1M44S
+mQNGW4NbQWk | Family (feat. Hattyy) | PT2M54S
+zb3j8q_N4OU | Joc de Nens | PT3M12S
+QAt-lk0f28I | Les 3:00 (feat. Barek) | PT3M10S
+55N2zuHNIk0 | Family (feat. Hattyy) | PT2M54S
+qGKfyh3iEx4 | Joc de Nens | PT3M12S
+D-akiyfI6JI | La forma amb la que em mires | PT3M27S
+9L3uI6_jFsY | ET VULL CONÈIXER A TU | PT3M1S
+sbuU6dsGHJY | 101% | PT2M29S
+YqU2i0IXUZU | NO ÉS TÍMIDA | PT3M3S
+dimzcNJzV9c | N.V.Q.M. | PT3M11S
+d9LznzDAdDo | Lluna Plena (feat. Barek, Tina) | PT2M36S
+tUcxXdHqSSc | Només diga'm per què | PT3M6S
+_M-URAn62LU | Si vols de mi (feat. Count Mode) | PT3M24S
 
 # Aina Koda
-Registres previs: []
-## Aina Koda | UCgcep1Xo6pgoWcfV0eYZIpQ | @ainakoda
+## Aina Koda | UCgcep1Xo6pgoWcfV0eYZIpQ | @ainakoda | true
 _rvKlpp_cZ8 | Aina Koda - Si tu no estàs (Videoclip Oficial) | PT2M49S
 yquUmfxtj6Q | Aina Koda - La gata (Videoclip Oficial) | PT2M22S
 dK4hS_VMXmw | Aina Koda - Sensacions (Videoclip Oficial) | PT3M20S
@@ -211,7 +265,7 @@ JKalNbwDD9A | ESCENA QUOTIDIANA - KODA (VIDEOCLIP) | PT2M10S
 XtEifVQGIYQ | Nit improvisada - Koda | PT2M54S
 wZodwzqknVg | KODA - KODA EN EL MIC🎤 | PT2M25S
 0eWvpuK5-TU | KODA  - QUERIDA ESPAÑA | PT2M29S
-## Aina Koda - Topic | UCP7N7ojEtXWVZZez87PiIWw | null
+## Aina Koda - Topic | UCP7N7ojEtXWVZZez87PiIWw | null | true
 U7sus0MjRL8 | Si tu no estàs | PT2M49S
 k4eWcm8vrH0 | Billar | PT2M26S
 Zh9B68K6h5E | Plàstek | PT1M57S
