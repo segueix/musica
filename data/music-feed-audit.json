@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-10-13T06:55:04.029Z",
+  "generatedAt": "2026-10-13T14:04:45.982Z",
   "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
   "restrictedVideoCount": 21,
   "restrictedVideosAdded": [],
   "deepPagesFetched": 0,
   "deepChannelCount": 19,
-  "topicChannelCount": 316,
-  "governedChannelCount": 108,
+  "topicChannelCount": 320,
+  "governedChannelCount": 112,
   "topicCoverage": [
     {
       "id": "UCqaEtRht2jakBhGFLzS617w",
@@ -124,6 +124,14 @@
     {
       "id": "UCBaZT9T1jD6ggbVikvr0nAw",
       "name": "Forja",
+      "songs": 21,
+      "matched": 21,
+      "coverage": 1,
+      "governs": true
+    },
+    {
+      "id": "UCNY281d7mNCt3yqfQvhXbFQ",
+      "name": "Fortuu",
       "songs": 21,
       "matched": 21,
       "coverage": 1,
@@ -302,6 +310,14 @@
       "name": "Xiomara Abello",
       "songs": 6,
       "matched": 6,
+      "coverage": 1,
+      "governs": true
+    },
+    {
+      "id": "UCYCaG33IVxlUbYcwJsHGM4Q",
+      "name": "Xisk",
+      "songs": 2,
+      "matched": 2,
       "coverage": 1,
       "governs": true
     },
@@ -511,6 +527,14 @@
       "songs": 39,
       "matched": 36,
       "coverage": 0.92,
+      "governs": true
+    },
+    {
+      "id": "UCgcep1Xo6pgoWcfV0eYZIpQ",
+      "name": "Aina Koda",
+      "songs": 23,
+      "matched": 21,
+      "coverage": 0.91,
       "governs": true
     },
     {
@@ -758,6 +782,14 @@
       "name": "Gertrudis",
       "songs": 31,
       "matched": 25,
+      "coverage": 0.81,
+      "governs": true
+    },
+    {
+      "id": "UC-XeMWmg61MRESFhKFTTx-g",
+      "name": "Neisha",
+      "songs": 16,
+      "matched": 13,
       "coverage": 0.81,
       "governs": true
     },
@@ -1352,6 +1384,13 @@
       "tracks": 147,
       "selected": 40,
       "withClip": 0
+    },
+    {
+      "id": "UCP7N7ojEtXWVZZez87PiIWw",
+      "name": "Aina Koda",
+      "tracks": 30,
+      "selected": 30,
+      "withClip": 20
     },
     {
       "id": "UCrQY3EI5TJXNbCwkXcDLp7A",
@@ -2017,6 +2056,13 @@
       "tracks": 43,
       "selected": 43,
       "withClip": 20
+    },
+    {
+      "id": "UC0WM1w4n_f4A-AZAve2QeIg",
+      "name": "Fortuu",
+      "tracks": 25,
+      "selected": 25,
+      "withClip": 21
     },
     {
       "id": "UCpWzqKujkmJvGIAt5QgBgBQ",
@@ -2731,6 +2777,13 @@
       "tracks": 36,
       "selected": 9,
       "withClip": 15
+    },
+    {
+      "id": "UCYL4dFN0bEcSC1nQD1ww4_w",
+      "name": "Neisha",
+      "tracks": 27,
+      "selected": 27,
+      "withClip": 13
     },
     {
       "id": "UCntzpmXOeNsqe2AfOFTCUZg",
@@ -3475,6 +3528,13 @@
       "withClip": 4
     },
     {
+      "id": "UCZKEilLSE62Ewxa1NueYwcQ",
+      "name": "Xisk",
+      "tracks": 20,
+      "selected": 20,
+      "withClip": 2
+    },
+    {
       "id": "UCwLcftQS2zEOfwD9jSl2TXA",
       "name": "Xiula",
       "tracks": 2,
@@ -3503,13 +3563,13 @@
       "withClip": 0
     }
   ],
-  "indexedChannelCount": 573,
-  "resolvedChannelCount": 573,
-  "feedChannelCount": 573,
-  "rawPublicVideoCount": 6445,
-  "feedVideoCount": 5922,
-  "acceptedMusicCount": 5881,
-  "categoryEligibleVideoCount": 5877,
+  "indexedChannelCount": 582,
+  "resolvedChannelCount": 582,
+  "feedChannelCount": 582,
+  "rawPublicVideoCount": 6548,
+  "feedVideoCount": 6025,
+  "acceptedMusicCount": 5984,
+  "categoryEligibleVideoCount": 5980,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
     "before": 0,
@@ -3518,8 +3578,8 @@
   },
   "contentReviewCount": 529,
   "contentTypeCounts": {
-    "song": 5704,
-    "live_song": 173,
+    "song": 5809,
+    "live_song": 171,
     "album": 4,
     "other": 35,
     "review": 529
@@ -3529,6 +3589,6 @@
   "channelsWithoutVideos": [],
   "channelsWithoutAcceptedMusic": [],
   "allIndexedChannelsVisible": true,
-  "publishedFeedVideoCount": 5847,
+  "publishedFeedVideoCount": 5993,
   "publishedShortVideoCount": 0
 }

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-13T06:55:01.321Z",
+  "updatedAt": "2026-10-13T14:04:42.110Z",
   "attribution": {
     "text": "Coordenades de referència: GeoNames, via Open-Meteo. CC BY 4.0.",
     "sources": [
@@ -2352,6 +2352,32 @@
       },
       "territory": "País Valencià",
       "source": "https://geocoding-api.open-meteo.com/v1/search?name=Borriana&count=10&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-13"
+    },
+    "geonames:3122205": {
+      "name": "Fornells de la Selva",
+      "type": "municipality",
+      "geonamesId": 3122205,
+      "coordinates": {
+        "latitude": 41.93159,
+        "longitude": 2.80907,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Fornells+de+la+Selva&count=10&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-13"
+    },
+    "geonames:2512433": {
+      "name": "Polinyà de Xúquer",
+      "type": "municipality",
+      "geonamesId": 2512433,
+      "coordinates": {
+        "latitude": 39.2,
+        "longitude": -0.36667,
+        "precision": "settlement_reference"
+      },
+      "territory": "País Valencià",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Poliny%C3%A0+de+X%C3%BAquer&count=10&language=ca&format=json&countryCode=ES",
       "checkedOn": "2026-10-13"
     }
   },
@@ -10017,6 +10043,86 @@
       "reviewedOn": "2026-10-13",
       "assignmentSource": "manual-review",
       "locked": true
+    },
+    "artist:neisha": {
+      "name": "Neisha",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "Artista barcelonina: projecte en solitari identificat pel seu segell, les edicions Delirics i els canals concordants. No és la cantant eslovena homònima.",
+      "sources": [
+        "https://www.enderrock.cat/noticia/29744/neisha-es-presenta-missio-seu-ascens-presidenta-cuntalunya"
+      ],
+      "reviewedOn": "2026-10-13",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:avant": {
+      "name": "AVANT",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:2509954"
+      ],
+      "confidence": "alta",
+      "basis": "Duo de Benimaclet, barri de València, format per Tomàs Torres Martín i Pol Mut Gosp segons el segell. La coordenada és municipal, no un punt inventat del barri.",
+      "sources": [
+        "https://www.ppf.cat/index.php/cat/artistes/avant"
+      ],
+      "reviewedOn": "2026-10-13",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:xisk": {
+      "name": "Xisk",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:2512989"
+      ],
+      "confidence": "alta",
+      "basis": "Xisca Garau, artista palmesana. El canal oficial coincideix amb els vídeos del segell; els crèdits del Tema identifiquen Francisca Garau Cañellas.",
+      "sources": [
+        "https://www.enderrock.cat/noticia/30286/xisk-sent-teu-foc-1lokura"
+      ],
+      "reviewedOn": "2026-10-13",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:fortuu": {
+      "name": "Fortuu",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3122205"
+      ],
+      "confidence": "alta",
+      "basis": "Roger Fortuny, de Fornells de la Selva, identificat per la fitxa del segell, l’entrevista i la biografia dels canals.",
+      "sources": [
+        "https://rgb.cat/management/fortuu/"
+      ],
+      "reviewedOn": "2026-10-13",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:aina-koda": {
+      "name": "Aina Koda",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:2512433"
+      ],
+      "confidence": "alta",
+      "basis": "Projecte d’Aina Nogueroles i Adam González; la fitxa del segell identifica Polinyà de Xúquer com el poble del grup. No s’utilitza Koda com a àlies genèric desvinculat dels canals.",
+      "sources": [
+        "https://guspira.net/en/aina-koda/"
+      ],
+      "reviewedOn": "2026-10-13",
+      "assignmentSource": "manual-review",
+      "locked": true
     }
   },
   "channels": {
@@ -10593,7 +10699,16 @@
     "UC0mpgagkHjI-FH_66M6sJmA": "artist:borriana-big-band",
     "UCkpK4wG17WYBZyqjjLqKgHg": "artist:borriana-big-band",
     "UCPzFXRl5ozCmX7i4CjI3Odw": "artist:pepet-i-marieta",
-    "UCT59tXHgcrnLCerfyEGDghw": "artist:pepet-i-marieta"
+    "UCT59tXHgcrnLCerfyEGDghw": "artist:pepet-i-marieta",
+    "UCYL4dFN0bEcSC1nQD1ww4_w": "artist:neisha",
+    "UC-XeMWmg61MRESFhKFTTx-g": "artist:neisha",
+    "UC0j6Wq2VUm6b1tDsEalkRhw": "artist:avant",
+    "UCZKEilLSE62Ewxa1NueYwcQ": "artist:xisk",
+    "UCYCaG33IVxlUbYcwJsHGM4Q": "artist:xisk",
+    "UC0WM1w4n_f4A-AZAve2QeIg": "artist:fortuu",
+    "UCNY281d7mNCt3yqfQvhXbFQ": "artist:fortuu",
+    "UCP7N7ojEtXWVZZez87PiIWw": "artist:aina-koda",
+    "UCgcep1Xo6pgoWcfV0eYZIpQ": "artist:aina-koda"
   },
   "excludedProfiles": {
     "UCdezTX23syEeAJJAb2oOkKA": {

@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-13T06:55:01.321Z",
+  "updatedAt": "2026-10-13T14:04:42.110Z",
   "description": "Decisions manuals sobre el tipus de contingut de vídeos concrets. Manen sobre el classificador automàtic (scripts/lib/classificar_contingut_musical.js) i el pipeline (scripts/update_music_feed.js) les reaplica a cada generació del feed. Tipus permesos: song, live_song, album, other. Un vídeo revisat aquí surt de data/music-content-review.json.",
   "videos": [
     {
@@ -11755,6 +11755,1074 @@
       "contentType": "song",
       "title": "JA VE'L NADAL - Pepet i Marieta #bonesfestes",
       "note": "Enregistrament complet de la selecció editorial. docs/revisions/2026-10-13-pepet-marieta-alta.json"
+    },
+    {
+      "id": "ih3D30nxpO8",
+      "contentType": "song",
+      "title": "Decebre un àngel",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "s1OvxW8f79w",
+      "contentType": "song",
+      "title": "3Bé",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "KK4gPs8I98U",
+      "contentType": "song",
+      "title": "De missió",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "FSDiegQ2j9I",
+      "contentType": "song",
+      "title": "Delulu",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "CRlXjPazCok",
+      "contentType": "song",
+      "title": "Jesús Gil",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "OTGvgdTtFME",
+      "contentType": "song",
+      "title": "Les Prada",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "A9yQk6Gq88Y",
+      "contentType": "song",
+      "title": "Jesús Gil",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "UbYrY5BTjg0",
+      "contentType": "song",
+      "title": "Delulu",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "JMPCjXHq1uQ",
+      "contentType": "song",
+      "title": "De missió",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "YJeIlEY3igc",
+      "contentType": "song",
+      "title": "Friki, chingona",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "U3NVF21HpcE",
+      "contentType": "song",
+      "title": "Ending",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "-8mHiT4vuow",
+      "contentType": "song",
+      "title": "Opening",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "Jl7bAjMG940",
+      "contentType": "song",
+      "title": "Piscis",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "E1v3QOtTp3A",
+      "contentType": "song",
+      "title": "One Piece / EVA",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "oiFHXI_NKz8",
+      "contentType": "song",
+      "title": "Res en algo",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "Rrgfa8-ZwNI",
+      "contentType": "song",
+      "title": "One Piece / EVA",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "wKGo-45LXKo",
+      "contentType": "song",
+      "title": "Jove Boy Bye",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "mze1FbXp4M8",
+      "contentType": "song",
+      "title": "Cowboy Bebop / per mullar-se",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "zGmtPiGv0Nk",
+      "contentType": "song",
+      "title": "Estira-i-arronsa",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "_JP2_9bao0o",
+      "contentType": "song",
+      "title": "Flow carnavalesc",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "F0DuFSDk5ys",
+      "contentType": "song",
+      "title": "Ai Ui",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "LVDt-DuRMpk",
+      "contentType": "song",
+      "title": "3Bé",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "is5vQ-OfBoU",
+      "contentType": "song",
+      "title": "Estira-i-arronsa",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "5J0uUgC7A9A",
+      "contentType": "song",
+      "title": "Succubus",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "sXpQDyDkuyc",
+      "contentType": "song",
+      "title": "Les Prada",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "2DsQb8sx5-k",
+      "contentType": "song",
+      "title": "Piscis",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "xAL2gAOON18",
+      "contentType": "song",
+      "title": "One Piece / EVA (Sped Up Nightcore Version)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "Q5uakpeht4M",
+      "contentType": "song",
+      "title": "Neisha - Jesús Gil amb MLAGRASA i L-street",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "c9pfGQmPp2s",
+      "contentType": "song",
+      "title": "Neisha - Delulu (amb ZebaKnizel)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "JtHfGiEriaQ",
+      "contentType": "song",
+      "title": "Neisha - De missió (amb Wasp)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "mtXflRautAE",
+      "contentType": "song",
+      "title": "Neisha - Les Prada (amb L-street)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "sJssGdT3KEI",
+      "contentType": "song",
+      "title": "Neisha - 3Bé (amb @malanima_)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "ybg9INftQ1M",
+      "contentType": "song",
+      "title": "Neisha - Friki, chingona (amb Eurowitch) vídeo líric oficial",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "VXUE1ZTYwSU",
+      "contentType": "song",
+      "title": "Neisha - Cowboy Bebop/per mullar-se (amb Merca Bae) vídeo líric oficial",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "Z2eHetXqM2c",
+      "contentType": "song",
+      "title": "Neisha - Jove Boy Bye (amb Eurowitch) vídeo líric oficial",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "2_kWt9oOmYU",
+      "contentType": "song",
+      "title": "Neisha - Succubus (amb Asra3) vídeo líric oficial",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "b8cVyaRZoco",
+      "contentType": "song",
+      "title": "Neisha - Opening (amb Iced Coffeeboy i Hélène Clavel) audio oficial",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "n-7YJxtFHb0",
+      "contentType": "song",
+      "title": "Neisha - Flow carnavalesc (amb SINNAZ) vídeo líric oficial",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "MGvn3o78woQ",
+      "contentType": "song",
+      "title": "Neisha - Ending (amb Iced Coffeeboy i Hélène Clavel) audio oficial",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "3FtdFha1X24",
+      "contentType": "song",
+      "title": "Neisha - Res en algo (amb Svcio) vídeo líric oficial",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "s0M6R_C2NSA",
+      "contentType": "song",
+      "title": "Neisha - One Piece/EVA (amb Merca Bae) vídeo líric oficial",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "LBAA0h0nfsY",
+      "contentType": "song",
+      "title": "Neisha - Piscis (amb Lil Guiu, L-street, Víctor Ventosa) vídeo musical oficial",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "PjRpugO159M",
+      "contentType": "song",
+      "title": "Neisha - Estira-i-arronsa (amb L-ment) vídeo musical oficial",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "zd6UQV6dyMI",
+      "contentType": "song",
+      "title": "Neisha \"Dolcesa Bruna\" - Rosa als llavis (ACTE III)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "ADtcaViKcTk",
+      "contentType": "song",
+      "title": "Neisha \"Dolcesa Bruna\" - La nit de l'amor (ACTE II)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "zvH_G1kZEkA",
+      "contentType": "song",
+      "title": "Neisha \"Dolcesa Bruna\" - Tinc un desfici (ACTE I)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "s6Ewo3WSpf4",
+      "contentType": "song",
+      "title": "AVANT - ABANS DE VORE EL SOL (Visualizer) | NOSALTRES",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "rf95CDQxCDk",
+      "contentType": "song",
+      "title": "AVANT - TOT O RES (Visualizer) | NOSALTRES",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "DLumBkevUpg",
+      "contentType": "song",
+      "title": "AVANT - CADA NIT (Visualizer) | NOSALTRES",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "h6w5uRB4opk",
+      "contentType": "song",
+      "title": "AVANT - QUAN NO ESTEM JUNTS (Visualizer) | NOSALTRES",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "qN1-VeRyoXo",
+      "contentType": "song",
+      "title": "AVANT - NOSALTRES (Video Oficial) | NOSALTRES",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "UfsVEIK7q30",
+      "contentType": "song",
+      "title": "AVANT - NO EM PARA (Visualizer) | NOSALTRES",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "PWKOOUdZtv4",
+      "contentType": "song",
+      "title": "AVANT - ABRAÇOS VIRTUALS (Video Oficial)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "OrlMVuD1QAM",
+      "contentType": "song",
+      "title": "AVANT - MÉS FORT (Video Oficial)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "pe_7n9RWIfA",
+      "contentType": "song",
+      "title": "AVANT - ARA QUE EM VEU (Video Oficial)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "oIQnUG0XSng",
+      "contentType": "song",
+      "title": "AVANT - TOT EL DIA (Prod. PolBeats)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "byCouW2heDY",
+      "contentType": "song",
+      "title": "S3xtape",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "S0bvH7k2rtg",
+      "contentType": "song",
+      "title": "Sauvatge",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "y_UCugHizI4",
+      "contentType": "song",
+      "title": "Bad Bitx",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "H1j6KfRZJt8",
+      "contentType": "song",
+      "title": "1Lokura",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "D1kfn4dvg9g",
+      "contentType": "song",
+      "title": "FADA",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "WtKXScD8oeU",
+      "contentType": "song",
+      "title": "Sirena",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "QuZOuohWRQM",
+      "contentType": "song",
+      "title": "Kara",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "NKntY20V7SM",
+      "contentType": "song",
+      "title": "Reina",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "sJNcpab3xy4",
+      "contentType": "song",
+      "title": "Kap",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "V-962oWhypQ",
+      "contentType": "song",
+      "title": "Reina",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "-YZ-5gpHLaw",
+      "contentType": "song",
+      "title": "Bad Bitx",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "IZTf4U3Repg",
+      "contentType": "song",
+      "title": "FADA",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "48ZcDnqZ4oY",
+      "contentType": "song",
+      "title": "1Lokura",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "XIpq9XDUt4E",
+      "contentType": "song",
+      "title": "Kap",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "UAhJlsAzHzA",
+      "contentType": "song",
+      "title": "S3xtape",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "qp3ypeTJ2qY",
+      "contentType": "song",
+      "title": "Kara",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "yV_VnnGpVoM",
+      "contentType": "song",
+      "title": "Sirena",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "owi0gwbO9Is",
+      "contentType": "song",
+      "title": "Sauvatge",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "UDGxN5gbgzw",
+      "contentType": "song",
+      "title": "Bad Bitx",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "1TdnZq4RvFo",
+      "contentType": "song",
+      "title": "1Lokura",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "XesgSl26dl0",
+      "contentType": "song",
+      "title": "Xisk - Reina (videoclip)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "5pKQrOkJQTY",
+      "contentType": "song",
+      "title": "Xisk - 1Lokura (videoclip)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "QRVrAjrv-vA",
+      "contentType": "song",
+      "title": "dosXtres",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "zgdKUNAZXTw",
+      "contentType": "song",
+      "title": "amorGENUÍ",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "gpTHnNzTRq8",
+      "contentType": "song",
+      "title": "aquellacançó",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "-w-boW5-9co",
+      "contentType": "song",
+      "title": "Posa'm Trap",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "0buykG2YFUk",
+      "contentType": "song",
+      "title": "Entre Estrelles",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "CWv0IuR8KsU",
+      "contentType": "song",
+      "title": "Des de Girona pel Món",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "I3H9qCTuWdM",
+      "contentType": "song",
+      "title": "4t2a",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "uDZ-iIvxhaY",
+      "contentType": "song",
+      "title": "Somnis",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "9AtPflaWrG0",
+      "contentType": "song",
+      "title": "Santorini",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "2kOw-FlrsOY",
+      "contentType": "song",
+      "title": "Des de Girona pel Món",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "QSqzx6Fi8-A",
+      "contentType": "song",
+      "title": "Entre Estrelles",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "aiZCzEv1ssQ",
+      "contentType": "song",
+      "title": "Cada Pàgina",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "Jig3VRbQzaw",
+      "contentType": "song",
+      "title": "Tu, Jo i el Mar",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "-C4oZxDIbco",
+      "contentType": "song",
+      "title": "Shorty",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "Dk1AyghqPjE",
+      "contentType": "song",
+      "title": "Em va Robar el Cora (feat. Moll)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "AYGpO6ptz_o",
+      "contentType": "song",
+      "title": "Els Meus",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "yTqrBt9Fzcw",
+      "contentType": "song",
+      "title": "Com Si No Demà (feat. Monges)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "hWpTQ1lOyL4",
+      "contentType": "song",
+      "title": "Oblida'm (feat. Arti)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "5AiPu4_hi4c",
+      "contentType": "song",
+      "title": "Dir-nos Adeu",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "zb3j8q_N4OU",
+      "contentType": "song",
+      "title": "Joc de Nens",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "QAt-lk0f28I",
+      "contentType": "song",
+      "title": "Les 3:00 (feat. Barek)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "qGKfyh3iEx4",
+      "contentType": "song",
+      "title": "Joc de Nens",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "D-akiyfI6JI",
+      "contentType": "song",
+      "title": "La forma amb la que em mires",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "dimzcNJzV9c",
+      "contentType": "song",
+      "title": "N.V.Q.M.",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "d9LznzDAdDo",
+      "contentType": "song",
+      "title": "Lluna Plena (feat. Barek, Tina)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "GifTkXXhivo",
+      "contentType": "song",
+      "title": "dosXtres - Fortuu, Maken Row",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "Q4FHj12zsfM",
+      "contentType": "song",
+      "title": "amorGENUÍ - Fortuu, Sofbois",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "1PICoKoZVrU",
+      "contentType": "song",
+      "title": "aquellacancó - Fortuu, Sofbois",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "36e_syWkL_8",
+      "contentType": "song",
+      "title": "Somnis - Fortuu (prod. Sofbois)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "sGMl3mEt__E",
+      "contentType": "song",
+      "title": "4t2a - Fortuu (prod. DK)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "1JjMNfrlqWY",
+      "contentType": "song",
+      "title": "Posa'm Trap - Fortuu",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "-pldFM3qImU",
+      "contentType": "song",
+      "title": "Santorini - Fortuu (prod. BlueLemon)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "_cV9RiYxqQo",
+      "contentType": "song",
+      "title": "Des de Girona pel Món - Fortuu, Quimo (Video Oficial)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "YNZyVmQZtKI",
+      "contentType": "song",
+      "title": "Entre Estrelles - Fortuu (Video Oficial)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "jw7g6WeeEtU",
+      "contentType": "song",
+      "title": "Cada Pàgina - Fortuu, Hattyy (Video Oficial)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "sdvUvEcmsvw",
+      "contentType": "song",
+      "title": "Tu, Jo i el Mar - Fortuu (Visualizer)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "FpdOr6M0IfI",
+      "contentType": "song",
+      "title": "Shorty - Fortuu (Video Oficial)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "g9lPRn8lqxw",
+      "contentType": "song",
+      "title": "Els Meus - Fortuu (Video Oficial)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "qt7w3rp1vcA",
+      "contentType": "song",
+      "title": "Oblida'm - Fortuu ft. Arti (Video Oficial)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "V-Unybvx6Ok",
+      "contentType": "song",
+      "title": "Em va Robar el Cora - Fortuu ft. Moll (Visualizer)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "RKZmTUsegBQ",
+      "contentType": "song",
+      "title": "Dir-nos Adeu - Fortuu (Visualizer)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "PNct0e234no",
+      "contentType": "song",
+      "title": "Com Si No Demà - Fortuu ft. Monges (Video Oficial)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "aI-P4mWzuFw",
+      "contentType": "song",
+      "title": "Les 3:00 - Fortuu ft. Barek (Visualizer)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "LV86tp7nN-c",
+      "contentType": "song",
+      "title": "Joc de Nens - Fortuu ft. DK (Video Oficial)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "TjbI7As-Bxw",
+      "contentType": "song",
+      "title": "La forma amb la que em mires - Fortuu, Centvi (VIDEOLYRIC)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "jULsjuQgUpU",
+      "contentType": "song",
+      "title": "N.V.Q.M. - Fortuu, Prod. Cornell (Visualizer)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "Zwdgo6u9HgA",
+      "contentType": "song",
+      "title": "Lluna Plena ft. Barek, Tina (prod. emv) // Lyric Video",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "k4eWcm8vrH0",
+      "contentType": "song",
+      "title": "Billar",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "Zh9B68K6h5E",
+      "contentType": "song",
+      "title": "Plàstek",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "lvXv8POTPW8",
+      "contentType": "song",
+      "title": "Les sobres no se tiren",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "qUEiblydiDY",
+      "contentType": "song",
+      "title": "Sensacions",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "OiIeTfpNcWM",
+      "contentType": "song",
+      "title": "La gata",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "D_CQ0CbHUX0",
+      "contentType": "song",
+      "title": "Billar",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "GILUT3a5THU",
+      "contentType": "song",
+      "title": "T'HAS ALÇAT",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "ZZtQnO8zARk",
+      "contentType": "song",
+      "title": "Plàstek",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "F1oPi9YgDH4",
+      "contentType": "live_song",
+      "title": "Passe (Live)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "7_KIVul-K3E",
+      "contentType": "song",
+      "title": "Als Amics De Tristor",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "njtJEP-AtIA",
+      "contentType": "song",
+      "title": "L'Engany",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "fhrgpkGf1E8",
+      "contentType": "song",
+      "title": "20:11 DANA",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "5wEOYH3_UcM",
+      "contentType": "song",
+      "title": "Som Del Llevant",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "uYVgJZZUhEs",
+      "contentType": "song",
+      "title": "Eclipse",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "jTVjMFFDbZg",
+      "contentType": "song",
+      "title": "La cançó de les dones",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "_Nw5VdgbpwY",
+      "contentType": "song",
+      "title": "Turra",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "gdLMRODVz7c",
+      "contentType": "song",
+      "title": "Passe",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "5wa7VLfvYSM",
+      "contentType": "song",
+      "title": "Pam Pam",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "WX1HEuQWkqI",
+      "contentType": "song",
+      "title": "Menú del Dia",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "ghZXmKThN_M",
+      "contentType": "song",
+      "title": "Moniatos",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "P2dmkrJMKp8",
+      "contentType": "song",
+      "title": "Viatge Espacial",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "ntZVNhiPDfg",
+      "contentType": "song",
+      "title": "Polinyà de Xúquer",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "lNMTzsaS97Y",
+      "contentType": "song",
+      "title": "Passe",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "GPMQjuTSTHY",
+      "contentType": "song",
+      "title": "Tu i Jo",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "0ufALuiiuiE",
+      "contentType": "song",
+      "title": "Coda",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "litAbjOOfNM",
+      "contentType": "song",
+      "title": "Històries Valencianes",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "Qfw-IFTxG_s",
+      "contentType": "song",
+      "title": "El Mòbil",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "sAGKe-mc5Zc",
+      "contentType": "song",
+      "title": "El Mòbil",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "l980BJwUMXk",
+      "contentType": "song",
+      "title": "Polinyà de Xúquer",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "8unvi5mIS1U",
+      "contentType": "song",
+      "title": "Tu i Jo",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "yquUmfxtj6Q",
+      "contentType": "song",
+      "title": "Aina Koda - La gata (Videoclip Oficial)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "dK4hS_VMXmw",
+      "contentType": "song",
+      "title": "Aina Koda - Sensacions (Videoclip Oficial)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "LRNNYJvydJM",
+      "contentType": "song",
+      "title": "Aina Koda - Les sobres no se tiren (Videoclip Oficial)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "VuIJFy0fYnk",
+      "contentType": "song",
+      "title": "Aina Koda - Billar (Videoclip Oficial)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "P2yvJa9cjCc",
+      "contentType": "song",
+      "title": "Aina Koda - T'has alçat (Visualizer Oficial)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "H4ahelZbhXo",
+      "contentType": "song",
+      "title": "Aina Koda - Plàstek (Videoclip Oficial)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "wKyfK5-yg4g",
+      "contentType": "song",
+      "title": "Aina Koda - Maria Beneyto (Lyric Video)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "U17MOxUeX1E",
+      "contentType": "song",
+      "title": "Aina Koda - 20:11 (DANA)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "VGc9xl57DvQ",
+      "contentType": "song",
+      "title": "Aina Koda - Som del Llevant (Videoclip Oficial)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "DMv9FaRStDc",
+      "contentType": "song",
+      "title": "Aina Koda feat. Allstendres - Eclipse (Videolyric)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "6GIK9575j4w",
+      "contentType": "song",
+      "title": "AINA KODA - Cançó de les dones (VIDEOLYRIC)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "DEzYA6E3OKA",
+      "contentType": "song",
+      "title": "AINA KODA - \"TURRA\" (Videoclip Oficial)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "8ajUoJWvsaI",
+      "contentType": "song",
+      "title": "AINA KODA - Coda [PERCAL]",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "UFCt1JOYz-k",
+      "contentType": "song",
+      "title": "AINA KODA & SOCIOLOGIA ANIMAL - Històries Valencianes [PERCAL]",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "cAjS4AoKPO4",
+      "contentType": "song",
+      "title": "AINA KODA - Moniatos [PERCAL]",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "eswW2KBF2Gk",
+      "contentType": "song",
+      "title": "AINA KODA & AINA PALMER - Pam Pam [PERCAL]",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "4oNSHjnTdec",
+      "contentType": "song",
+      "title": "AINA KODA - Menú del dia [PERCAL]",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "aASgUps6q_0",
+      "contentType": "song",
+      "title": "AINA KODA - Passe [PERCAL]",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "i-aO_GKgRZw",
+      "contentType": "song",
+      "title": "AINA KODA - Viatge Espacial [PERCAL]",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "VbbrjLsLl5A",
+      "contentType": "song",
+      "title": "AINA KODA & ELDEMURO - EL MÒBIL (VIDEOCLIP OFICIAL)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "yMHf0NP8Fsc",
+      "contentType": "song",
+      "title": "AINA KODA - TU I JO (VIDEOCLIP OFICIAL)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "JOywFWynBOc",
+      "contentType": "song",
+      "title": "POLINYÀ DE XÚQUER | AINA KODA (VIDEOCLIP)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "X8pCuRRusN0",
+      "contentType": "live_song",
+      "title": "PASSE - AINA KODA (Live)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
     }
   ]
 }
