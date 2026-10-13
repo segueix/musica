@@ -1,4 +1,4 @@
-name: Alta Artur Borriana Pepet
+name: Incorporar Pepet i Marieta
 on:
   push:
     branches: [main]
@@ -9,26 +9,91 @@ concurrency:
   cancel-in-progress: false
 permissions:
   contents: write
+  pages: write
+  id-token: write
 jobs:
-  revisar:
+  incorporar:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    env:
+      MUSIC_TARGET_CHANNELS: UCPzFXRl5ozCmX7i4CjI3Odw,UCT59tXHgcrnLCerfyEGDghw
     steps:
       - uses: actions/checkout@v5
         with:
           ref: main
+          fetch-depth: 1
       - uses: actions/setup-node@v5
         with:
           node-version: '20'
-      - name: Consulta acotada de canals i enregistraments
+          cache: npm
+      - name: Prepara les comprovacions
+        run: |
+          npm ci
+          node --check scripts/revisions/incorporar_pepet_marieta.js
+      - name: Aplica la selecció i preserva la resta del catàleg
+        run: |
+          node scripts/revisions/incorporar_pepet_marieta.js
+          node scripts/documentar_vigilancia_idiomes.js
+          npm run music:validate
+          node scripts/test_music_content_classifier.js
+      - name: Consulta exclusivament els dos canals de Pepet i Marieta
         env:
           YOUTUBE_API_KEY_SERVER: ${{ secrets.YOUTUBE_API_KEY_SERVER }}
-        run: node scripts/revisions/descobrir_artur_borriana_pepet.js
-      - name: Desa la consulta per a la revisió editorial
+          MUSIC_VIDEOS_PER_CHANNEL: '50'
+          MUSIC_TOPIC_GOVERNANCE: apply
+          MUSIC_TOPIC_FULL_READ: '1'
         run: |
-          bash scripts/publicar_dades.sh "docs: consulta dels canals d’Artur Àlvarez, Borriana Big Band i Pepet i Marieta" docs/revisions/2026-10-13-artur-borriana-pepet-*
-      - uses: actions/upload-artifact@v4
+          test -n "$MUSIC_TARGET_CHANNELS"
+          node scripts/update_music_feed.js
+          node scripts/aplicar_revisio_manual_musical.js > /tmp/pepet-manual.log 2>&1
+      - name: Regenera arxiu, cerca i pàgines compartides
+        run: |
+          node scripts/archivar_feed_musical.js
+          npm run search:index:hybrid:rebuild
+          node scripts/generar_pagines_compartir.js
+          node scripts/documentar_vigilancia_idiomes.js --check
+      - name: Comprova totes les proves contra la situació anterior
+        run: |
+          node scripts/revisions/provar_altes_musicals.js
+          npm run lint > /tmp/pepet-lint.log 2>&1
+          tail -5 /tmp/pepet-lint.log
+      - name: Verifica enregistraments, filtres i conservació dels altres artistes
+        run: |
+          node scripts/revisions/incorporar_pepet_marieta.js --verify
+          node scripts/actualitzar_versio_sw.js
+      - name: Publica l’alta i els derivats en un sol commit
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add data js/channels-ca.json compartir sw.js docs/ARTISTES_VIGILATS_IDIOMA.md docs/revisions/2026-10-13-pepet-marieta-alta.json docs/revisions/2026-10-13-pepet-marieta-alta.md
+          git diff --cached --stat | tail -5
+          git commit -m 'data: incorpora la selecció en català de Pepet i Marieta'
+          # No es força cap conflicte ni es trepitgen canvis concurrents.
+          git pull --rebase origin main
+          git push origin HEAD:main
+      - name: Prepara el lloc estàtic amb el catàleg publicat
+        run: |
+          mkdir _site
+          git archive HEAD | tar -x -C _site
+          rm -rf _site/.github _site/tests _site/scripts _site/functions _site/docs
+      - uses: actions/upload-pages-artifact@v3
         with:
-          name: metadades-artur-borriana-pepet
-          path: docs/revisions/2026-10-13-artur-borriana-pepet-*
+          path: _site
+      - name: Desplega l’alta de Pepet i Marieta
+        id: deployment
+        uses: actions/deploy-pages@v4
+      - name: Conserva el diagnòstic
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: diagnostic-alta-pepet-marieta
+          path: |
+            docs/revisions/2026-10-13-pepet-marieta-alta.json
+            docs/revisions/2026-10-13-pepet-marieta-alta.md
+            /tmp/tardor-blat-quinto-validation.json
+            /tmp/pepet-lint.log
+            /tmp/pepet-manual.log
           retention-days: 1
