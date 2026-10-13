@@ -133,7 +133,7 @@
         // Un arranjament diferent necessita revisió pròpia abans d'heretar el perfil.
         if (
             video.contentType === 'live_song' ||
-            /\b(live|directe|ac[uú]stic[oa]?|unplugged|remix)\b/i.test(video.title || '')
+            /\b(live|direct[eo]|en viu|en vivo|acoustic|ac[uú]stic[oa]?|unplugged|remix)\b/i.test(video.title || '')
         ) {
             return null;
         }

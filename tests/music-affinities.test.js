@@ -41,7 +41,7 @@ describe('pilot editorial Ska / Reggae', () => {
     it('deixa neutrals els desconeguts i els arranjaments no revisats', () => {
         const seed = find('Les Testarudes');
         expect(A.similarity(seed, { channelId: 'unknown' })).toBe(0.5);
-        for (const title of ['Tema Live', 'Tema (directe)', 'Tema acústic', 'Tema Remix']) {
+        for (const title of ['Tema Live', 'Tema (directe)', 'Tema acústic', 'Tema acoustic', 'Tema en vivo', 'Tema Remix']) {
             expect(A.profileOf({ ...seed, title })).toBeNull();
         }
         expect(A.profileOf({ ...seed, contentType: 'live_song' })).toBeNull();
