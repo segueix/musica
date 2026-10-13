@@ -982,7 +982,7 @@ function createBootstrapProgressOverlay(profile = {}) {
     overlay.setAttribute('aria-live', 'polite');
     overlay.innerHTML = `
         <div class="bootstrap-progress-content">
-            <h2 class="bootstrap-progress-title">Preparant Segueix...</h2>
+            <h2 class="bootstrap-progress-title">Preparant Segueix <span class="bootstrap-progress-brand">Música</span>…</h2>
             <p class="bootstrap-progress-message" id="bootstrapProgressMessage">Iniciant aplicació...</p>
             <div class="bootstrap-progress-track" aria-hidden="true">
                 <div class="bootstrap-progress-bar" id="bootstrapProgressBar"></div>

@@ -8075,3 +8075,8 @@ body.am-full-open {
 .bootstrap-progress-percent {
     color: var(--pt-accent);
 }
+.bootstrap-progress-brand {
+    color: var(--pt-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}

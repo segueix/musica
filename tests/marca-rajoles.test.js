@@ -44,5 +44,9 @@ describe('marca i rajoles de la portada', () => {
     it('la barra de càrrega inicial és llima, no vermella', () => {
         const portadaCss = readFileSync('css/portada.css', 'utf8');
         expect(portadaCss).toMatch(/\.bootstrap-progress-bar \{[^}]*background: var\(--pt-accent\)/);
+        expect(readFileSync('js/app.js', 'utf8')).toContain(
+            'Preparant Segueix <span class="bootstrap-progress-brand">Música</span>'
+        );
+        expect(portadaCss).toMatch(/\.bootstrap-progress-brand \{[^}]*color: var\(--pt-accent\);[^}]*text-transform: uppercase/);
     });
 });
