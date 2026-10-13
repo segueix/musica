@@ -1,0 +1,990 @@
+{
+  "skaUnchangedSimulations": 14,
+  "base": "3e7cb1e79046e88c59e8f3703b61ed29f30159fd",
+  "checkedAt": "2026-10-13T17:53:38.285Z",
+  "profiles": 23,
+  "catalogSongs": 351,
+  "profiledSongs": 336,
+  "passedTests": 1170,
+  "unchangedFailedTests": 7,
+  "newFailures": 0,
+  "lintFilesWithUnchangedDiagnostics": 25,
+  "simulations": 69,
+  "before": {
+    "affinity": 0.20187836438923396,
+    "artists": 14.666666666666666
+  },
+  "after": {
+    "affinity": 0.31338026224982735,
+    "artists": 14.666666666666666
+  },
+  "caveat": "Afinitat editorial, no qualitat acústica comprovada amb escolta.",
+  "examples": [
+    {
+      "artist": "Amargor",
+      "sample": 1,
+      "before": {
+        "artists": 14,
+        "relaxedLevel": 0,
+        "affinity": 0.19083333333333335
+      },
+      "after": {
+        "artists": 15,
+        "relaxedLevel": 0,
+        "affinity": 0.32374999999999987
+      }
+    },
+    {
+      "artist": "Amargor",
+      "sample": 2,
+      "before": {
+        "artists": 14,
+        "relaxedLevel": 0,
+        "affinity": 0.1938809523809524
+      },
+      "after": {
+        "artists": 14,
+        "relaxedLevel": 0,
+        "affinity": 0.2783809523809523
+      }
+    },
+    {
+      "artist": "Amargor",
+      "sample": 3,
+      "before": {
+        "artists": 15,
+        "relaxedLevel": 0,
+        "affinity": 0.24949999999999997
+      },
+      "after": {
+        "artists": 17,
+        "relaxedLevel": 0,
+        "affinity": 0.34533333333333327
+      }
+    },
+    {
+      "artist": "Angoixa",
+      "sample": 1,
+      "before": {
+        "artists": 15,
+        "relaxedLevel": 0,
+        "affinity": 0.2020476190476191
+      },
+      "after": {
+        "artists": 16,
+        "relaxedLevel": 0,
+        "affinity": 0.32283333333333325
+      }
+    },
+    {
+      "artist": "Angoixa",
+      "sample": 2,
+      "before": {
+        "artists": 14,
+        "relaxedLevel": 0,
+        "affinity": 0.17575000000000002
+      },
+      "after": {
+        "artists": 14,
+        "relaxedLevel": 0,
+        "affinity": 0.2869166666666666
+      }
+    },
+    {
+      "artist": "Angoixa",
+      "sample": 3,
+      "before": {
+        "artists": 14,
+        "relaxedLevel": 0,
+        "affinity": 0.16775
+      },
+      "after": {
+        "artists": 14,
+        "relaxedLevel": 0,
+        "affinity": 0.37399999999999994
+      }
+    },
+    {
+      "artist": "Assot",
+      "sample": 1,
+      "before": {
+        "artists": 15,
+        "relaxedLevel": 0,
+        "affinity": 0.23333333333333334
+      },
+      "after": {
+        "artists": 16,
+        "relaxedLevel": 0,
+        "affinity": 0.368
+      }
+    },
+    {
+      "artist": "Assot",
+      "sample": 2,
+      "before": {
+        "artists": 15,
+        "relaxedLevel": 0,
+        "affinity": 0.1605
+      },
+      "after": {
+        "artists": 14,
+        "relaxedLevel": 0,
+        "affinity": 0.29499999999999993
+      }
+    },
+    {
+      "artist": "Assot",
+      "sample": 3,
+      "before": {
+        "artists": 15,
+        "relaxedLevel": 0,
+        "affinity": 0.19174999999999998
+      },
+      "after": {
+        "artists": 14,
+        "relaxedLevel": 0,
+        "affinity": 0.3766666666666666
+      }
+    },
+    {
+      "artist": "Astral Warrior",
+      "sample": 1,
+      "before": {
+        "artists": 14,
+        "relaxedLevel": 0,
+        "affinity": 0.2308333333333333
+      },
+      "after": {
+        "artists": 15,
+        "relaxedLevel": 0,
+        "affinity": 0.3301666666666666
+      }
+    },
+    {
+      "artist": "Astral Warrior",
+      "sample": 2,
+      "before": {
+        "artists": 14,
+        "relaxedLevel": 0,
+        "affinity": 0.21283333333333326
+      },
+      "after": {
+        "artists": 14,
+        "relaxedLevel": 0,
+        "affinity": 0.2871666666666667
+      }
+    },
+    {
+      "artist": "Astral Warrior",
+      "sample": 3,
+      "before": {
+        "artists": 14,
+        "relaxedLevel": 0,
+        "affinity": 0.22849999999999998
+      },
+      "after": {
+        "artists": 14,
+        "relaxedLevel": 0,
+        "affinity": 0.3591666666666666
+      }
+    },
+    {
+      "artist": "Avalot",
+      "sample": 1,
+      "before": {
+        "artists": 15,
+        "relaxedLevel": 0,
+        "affinity": 0.21583333333333338
+      },
+      "after": {
+        "artists": 15,
+        "relaxedLevel": 0,
+        "affinity": 0.3346666666666666
+      }
+    },
+    {
+      "artist": "Avalot",
+      "sample": 2,
+      "before": {
+        "artists": 15,
+        "relaxedLevel": 0,
+        "affinity": 0.17991666666666667
+      },
+      "after": {
+        "artists": 15,
+        "relaxedLevel": 0,
+        "affinity": 0.2534166666666666
+      }
+    },
+    {
+      "artist": "Avalot",
+      "sample": 3,
+      "before": {
+        "artists": 15,
+        "relaxedLevel": 0,
+        "affinity": 0.18091666666666667
+      },
+      "after": {
+        "artists": 14,
+        "relaxedLevel": 0,
+        "affinity": 0.38049999999999995
+      }
+    },
+    {
+      "artist": "Bestiari",
+      "sample": 1,
+      "before": {
+        "artists": 15,
+        "relaxedLevel": 0,
+        "affinity": 0.192
+      },
+      "after": {
+        "artists": 15,
+        "relaxedLevel": 0,
+        "affinity": 0.34524999999999995
+      }
+    },
+    {
+      "artist": "Bestiari",
+      "sample": 2,
+      "before": {
+        "artists": 13,
+        "relaxedLevel": 0,
+        "affinity": 0.23699999999999996
+      },
+      "after": {
+        "artists": 15,
+        "relaxedLevel": 0,
+        "affinity": 0.3538333333333333
+      }
+    },
+    {
+      "artist": "Bestiari",
+      "sample": 3,
+      "before": {
+        "artists": 13,
+        "relaxedLevel": 0,
+        "affinity": 0.23283333333333328
+      },
+      "after": {
+        "artists": 13,
+        "relaxedLevel": 0,
+        "affinity": 0.3194999999999999
+      }
+    },
+    {
+      "artist": "Bocc",
+      "sample": 1,
+      "before": {
+        "artists": 15,
+        "relaxedLevel": 0,
+        "affinity": 0.1728809523809524
+      },
+      "after": {
+        "artists": 16,
+        "relaxedLevel": 0,
+        "affinity": 0.3358809523809524
+      }
+    },
+    {
+      "artist": "Bocc",
+      "sample": 2,
+      "before": {
+        "artists": 14,
+        "relaxedLevel": 0,
+        "affinity": 0.15050000000000002
+      },
+      "after": {
+        "artists": 14,
+        "relaxedLevel": 0,
+        "affinity": 0.2996666666666666
+      }
+    },
+    {
+      "artist": "Bocc",
+      "sample": 3,
+      "before": {
+        "artists": 14,
+        "relaxedLevel": 0,
+        "affinity": 0.20625000000000004
+      },
+      "after": {
+        "artists": 14,
+        "relaxedLevel": 0,
+        "affinity": 0.28183333333333327
+      }
+    },
+    {
+      "artist": "Entropia",
+      "sample": 1,
+      "before": {
+        "artists": 14,
+        "relaxedLevel": 0,
+        "affinity": 0.23575000000000004
+      },
+      "after": {
+        "artists": 15,
+        "relaxedLevel": 0,
+        "affinity": 0.3274166666666666
+      }
+    },
+    {
+      "artist": "Entropia",
+      "sample": 2,
+      "before": {
+        "artists": 14,
+        "relaxedLevel": 0,
+        "affinity": 0.19291666666666668
+      },
+      "after": {
+        "artists": 15,
+        "relaxedLevel": 0,
+        "affinity": 0.20941666666666667
+      }
+    },
+    {
+      "artist": "Entropia",
+      "sample": 3,
+      "before": {
+        "artists": 16,
+        "relaxedLevel": 0,
+        "affinity": 0.21216666666666667
+      },
+      "after": {
+        "artists": 16,
+        "relaxedLevel": 0,
+        "affinity": 0.30199999999999994
+      }
+    },
+    {
+      "artist": "Falç de Fetillera",
+      "sample": 1,
+      "before": {
+        "artists": 15,
+        "relaxedLevel": 0,
+        "affinity": 0.20083333333333334
+      },
+      "after": {
+        "artists": 15,
+        "relaxedLevel": 0,
+        "affinity": 0.33666666666666656
+      }
+    },
+    {
+      "artist": "Falç de Fetillera",
+      "sample": 2,
+      "before": {
+        "artists": 14,
+        "relaxedLevel": 0,
+        "affinity": 0.15200000000000002
+      },
+      "after": {
+        "artists": 14,
+        "relaxedLevel": 0,
+        "affinity": 0.2503333333333332
+      }
+    },
+    {
+      "artist": "Falç de Fetillera",
+      "sample": 3,
+      "before": {
+        "artists": 15,
+        "relaxedLevel": 0,
+        "affinity": 0.22133333333333338
+      },
+      "after": {
+        "artists": 14,
+        "relaxedLevel": 0,
+        "affinity": 0.3494166666666666
+      }
+    },
+    {
+      "artist": "Forja",
+      "sample": 1,
+      "before": {
+        "artists": 15,
+        "relaxedLevel": 0,
+        "affinity": 0.19666666666666668
+      },
+      "after": {
+        "artists": 15,
+        "relaxedLevel": 0,
+        "affinity": 0.3583333333333333
+      }
+    },
+    {
+      "artist": "Forja",
+      "sample": 2,
+      "before": {
+        "artists": 14,
+        "relaxedLevel": 0,
+        "affinity": 0.14871428571428572
+      },
+      "after": {
+        "artists": 14,
+        "relaxedLevel": 0,
+        "affinity": 0.2587142857142856
+      }
+    },
+    {
+      "artist": "Forja",
+      "sample": 3,
+      "before": {
+        "artists": 15,
+        "relaxedLevel": 0,
+        "affinity": 0.2237142857142857
+      },
+      "after": {
+        "artists": 14,
+        "relaxedLevel": 0,
+        "affinity": 0.3447142857142858
+      }
+    },
+    {
+      "artist": "Foscor",
+      "sample": 1,
+      "before": {
+        "artists": 15,
+        "relaxedLevel": 0,
+        "affinity": 0.21200000000000002
+      },
+      "after": {
+        "artists": 14,
+        "relaxedLevel": 0,
+        "affinity": 0.30246428571428563
+      }
+    },
+    {
+      "artist": "Foscor",
+      "sample": 2,
+      "before": {
+        "artists": 15,
+        "relaxedLevel": 0,
+        "affinity": 0.16704761904761906
+      },
+      "after": {
+        "artists": 15,
+        "relaxedLevel": 0,
+        "affinity": 0.2628333333333332
+      }
+    },
+    {
+      "artist": "Foscor",
+      "sample": 3,
+      "before": {
+        "artists": 15,
+        "relaxedLevel": 0,
+        "affinity": 0.21366666666666667
+      },
+      "after": {
+        "artists": 15,
+        "relaxedLevel": 0,
+        "affinity": 0.3578333333333333
+      }
+    },
+    {
+      "artist": "Icestorm",
+      "sample": 1,
+      "before": {
+        "artists": 15,
+        "relaxedLevel": 0,
+        "affinity": 0.18866666666666668
+      },
+      "after": {
+        "artists": 13,
+        "relaxedLevel": 0,
+        "affinity": 0.3251666666666667
+      }
+    },
+    {
+      "artist": "Icestorm",
+      "sample": 2,
+      "before": {
+        "artists": 15,
+        "relaxedLevel": 0,
+        "affinity": 0.21788095238095234
+      },
+      "after": {
+        "artists": 14,
+        "relaxedLevel": 0,
+        "affinity": 0.3117142857142856
+      }
+    },
+    {
+      "artist": "Icestorm",
+      "sample": 3,
+      "before": {
+        "artists": 15,
+        "relaxedLevel": 0,
+        "affinity": 0.2331666666666667
+      },
+      "after": {
+        "artists": 15,
+        "relaxedLevel": 0,
+        "affinity": 0.3474999999999999
+      }
+    },
+    {
+      "artist": "KOP",
+      "sample": 1,
+      "before": {
+        "artists": 15,
+        "relaxedLevel": 0,
+        "affinity": 0.19616666666666666
+      },
+      "after": {
+        "artists": 14,
+        "relaxedLevel": 0,
+        "affinity": 0.3141666666666666
+      }
+    },
+    {
+      "artist": "KOP",
+      "sample": 2,
+      "before": {
+        "artists": 15,
+        "relaxedLevel": 0,
+        "affinity": 0.17204761904761906
+      },
+      "after": {
+        "artists": 15,
+        "relaxedLevel": 0,
+        "affinity": 0.2103809523809524
+      }
+    },
+    {
+      "artist": "KOP",
+      "sample": 3,
+      "before": {
+        "artists": 15,
+        "relaxedLevel": 0,
+        "affinity": 0.21866666666666665
+      },
+      "after": {
+        "artists": 15,
+        "relaxedLevel": 0,
+        "affinity": 0.31116666666666665
+      }
+    },
+    {
+      "artist": "Korruption Found",
+      "sample": 1,
+      "before": {
+        "artists": 16,
+        "relaxedLevel": 0,
+        "affinity": 0.2668333333333333
+      },
+      "after": {
+        "artists": 16,
+        "relaxedLevel": 0,
+        "affinity": 0.34688095238095235
+      }
+    },
+    {
+      "artist": "Korruption Found",
+      "sample": 2,
+      "before": {
+        "artists": 14,
+        "relaxedLevel": 0,
+        "affinity": 0.1365
+      },
+      "after": {
+        "artists": 15,
+        "relaxedLevel": 0,
+        "affinity": 0.3337499999999999
+      }
+    },
+    {
+      "artist": "Korruption Found",
+      "sample": 3,
+      "before": {
+        "artists": 15,
+        "relaxedLevel": 0,
+        "affinity": 0.22691666666666666
+      },
+      "after": {
+        "artists": 14,
+        "relaxedLevel": 0,
+        "affinity": 0.37649999999999995
+      }
+    },
+    {
+      "artist": "Moksha",
+      "sample": 1,
+      "before": {
+        "artists": 15,
+        "relaxedLevel": 0,
+        "affinity": 0.20725
+      },
+      "after": {
+        "artists": 15,
+        "relaxedLevel": 0,
+        "affinity": 0.32966666666666666
+      }
+    },
+    {
+      "artist": "Moksha",
+      "sample": 2,
+      "before": {
+        "artists": 15,
+        "relaxedLevel": 0,
+        "affinity": 0.14508333333333334
+      },
+      "after": {
+        "artists": 15,
+        "relaxedLevel": 0,
+        "affinity": 0.16708333333333336
+      }
+    },
+    {
+      "artist": "Moksha",
+      "sample": 3,
+      "before": {
+        "artists": 16,
+        "relaxedLevel": 0,
+        "affinity": 0.17283333333333337
+      },
+      "after": {
+        "artists": 16,
+        "relaxedLevel": 0,
+        "affinity": 0.3679999999999999
+      }
+    },
+    {
+      "artist": "Ósserp",
+      "sample": 1,
+      "before": {
+        "artists": 15,
+        "relaxedLevel": 0,
+        "affinity": 0.22079761904761902
+      },
+      "after": {
+        "artists": 15,
+        "relaxedLevel": 0,
+        "affinity": 0.3294166666666666
+      }
+    },
+    {
+      "artist": "Ósserp",
+      "sample": 2,
+      "before": {
+        "artists": 13,
+        "relaxedLevel": 0,
+        "affinity": 0.23233333333333328
+      },
+      "after": {
+        "artists": 13,
+        "relaxedLevel": 0,
+        "affinity": 0.3052499999999999
+      }
+    },
+    {
+      "artist": "Ósserp",
+      "sample": 3,
+      "before": {
+        "artists": 15,
+        "relaxedLevel": 0,
+        "affinity": 0.21325
+      },
+      "after": {
+        "artists": 15,
+        "relaxedLevel": 0,
+        "affinity": 0.30333333333333323
+      }
+    },
+    {
+      "artist": "Pesta Porcina",
+      "sample": 1,
+      "before": {
+        "artists": 15,
+        "relaxedLevel": 0,
+        "affinity": 0.22974999999999998
+      },
+      "after": {
+        "artists": 15,
+        "relaxedLevel": 0,
+        "affinity": 0.3365833333333333
+      }
+    },
+    {
+      "artist": "Pesta Porcina",
+      "sample": 2,
+      "before": {
+        "artists": 15,
+        "relaxedLevel": 0,
+        "affinity": 0.16508333333333333
+      },
+      "after": {
+        "artists": 15,
+        "relaxedLevel": 0,
+        "affinity": 0.25791666666666657
+      }
+    },
+    {
+      "artist": "Pesta Porcina",
+      "sample": 3,
+      "before": {
+        "artists": 16,
+        "relaxedLevel": 0,
+        "affinity": 0.23033333333333328
+      },
+      "after": {
+        "artists": 16,
+        "relaxedLevel": 0,
+        "affinity": 0.3603333333333333
+      }
+    },
+    {
+      "artist": "Sangtraït",
+      "sample": 1,
+      "before": {
+        "artists": 14,
+        "relaxedLevel": 0,
+        "affinity": 0.19616666666666668
+      },
+      "after": {
+        "artists": 14,
+        "relaxedLevel": 0,
+        "affinity": 0.30466666666666664
+      }
+    },
+    {
+      "artist": "Sangtraït",
+      "sample": 2,
+      "before": {
+        "artists": 14,
+        "relaxedLevel": 0,
+        "affinity": 0.21641666666666665
+      },
+      "after": {
+        "artists": 14,
+        "relaxedLevel": 0,
+        "affinity": 0.20591666666666666
+      }
+    },
+    {
+      "artist": "Sangtraït",
+      "sample": 3,
+      "before": {
+        "artists": 15,
+        "relaxedLevel": 0,
+        "affinity": 0.21366666666666667
+      },
+      "after": {
+        "artists": 14,
+        "relaxedLevel": 0,
+        "affinity": 0.3479999999999999
+      }
+    },
+    {
+      "artist": "Tempestat",
+      "sample": 1,
+      "before": {
+        "artists": 15,
+        "relaxedLevel": 0,
+        "affinity": 0.202
+      },
+      "after": {
+        "artists": 15,
+        "relaxedLevel": 0,
+        "affinity": 0.3140833333333332
+      }
+    },
+    {
+      "artist": "Tempestat",
+      "sample": 2,
+      "before": {
+        "artists": 15,
+        "relaxedLevel": 0,
+        "affinity": 0.13954761904761906
+      },
+      "after": {
+        "artists": 15,
+        "relaxedLevel": 0,
+        "affinity": 0.29171428571428565
+      }
+    },
+    {
+      "artist": "Tempestat",
+      "sample": 3,
+      "before": {
+        "artists": 15,
+        "relaxedLevel": 0,
+        "affinity": 0.24199999999999994
+      },
+      "after": {
+        "artists": 17,
+        "relaxedLevel": 0,
+        "affinity": 0.3378333333333333
+      }
+    },
+    {
+      "artist": "Thanatopraxy",
+      "sample": 1,
+      "before": {
+        "artists": 14,
+        "relaxedLevel": 0,
+        "affinity": 0.25266666666666665
+      },
+      "after": {
+        "artists": 14,
+        "relaxedLevel": 0,
+        "affinity": 0.34266666666666656
+      }
+    },
+    {
+      "artist": "Thanatopraxy",
+      "sample": 2,
+      "before": {
+        "artists": 14,
+        "relaxedLevel": 0,
+        "affinity": 0.20516666666666664
+      },
+      "after": {
+        "artists": 14,
+        "relaxedLevel": 0,
+        "affinity": 0.2693809523809523
+      }
+    },
+    {
+      "artist": "Thanatopraxy",
+      "sample": 3,
+      "before": {
+        "artists": 14,
+        "relaxedLevel": 0,
+        "affinity": 0.22199999999999992
+      },
+      "after": {
+        "artists": 14,
+        "relaxedLevel": 0,
+        "affinity": 0.3361666666666666
+      }
+    },
+    {
+      "artist": "Udol",
+      "sample": 1,
+      "before": {
+        "artists": 14,
+        "relaxedLevel": 0,
+        "affinity": 0.19574999999999998
+      },
+      "after": {
+        "artists": 13,
+        "relaxedLevel": 0,
+        "affinity": 0.32899999999999996
+      }
+    },
+    {
+      "artist": "Udol",
+      "sample": 2,
+      "before": {
+        "artists": 14,
+        "relaxedLevel": 0,
+        "affinity": 0.16208333333333336
+      },
+      "after": {
+        "artists": 14,
+        "relaxedLevel": 0,
+        "affinity": 0.20941666666666667
+      }
+    },
+    {
+      "artist": "Udol",
+      "sample": 3,
+      "before": {
+        "artists": 16,
+        "relaxedLevel": 0,
+        "affinity": 0.18716666666666665
+      },
+      "after": {
+        "artists": 15,
+        "relaxedLevel": 0,
+        "affinity": 0.3229999999999999
+      }
+    },
+    {
+      "artist": "Vidres a la Sang",
+      "sample": 1,
+      "before": {
+        "artists": 17,
+        "relaxedLevel": 0,
+        "affinity": 0.19071428571428573
+      },
+      "after": {
+        "artists": 17,
+        "relaxedLevel": 0,
+        "affinity": 0.2981309523809522
+      }
+    },
+    {
+      "artist": "Vidres a la Sang",
+      "sample": 2,
+      "before": {
+        "artists": 14,
+        "relaxedLevel": 0,
+        "affinity": 0.24433333333333335
+      },
+      "after": {
+        "artists": 14,
+        "relaxedLevel": 0,
+        "affinity": 0.30383333333333323
+      }
+    },
+    {
+      "artist": "Vidres a la Sang",
+      "sample": 3,
+      "before": {
+        "artists": 14,
+        "relaxedLevel": 0,
+        "affinity": 0.23099999999999996
+      },
+      "after": {
+        "artists": 14,
+        "relaxedLevel": 0,
+        "affinity": 0.31183333333333324
+      }
+    },
+    {
+      "artist": "Vrademargk",
+      "sample": 1,
+      "before": {
+        "artists": 16,
+        "relaxedLevel": 0,
+        "affinity": 0.2483333333333333
+      },
+      "after": {
+        "artists": 16,
+        "relaxedLevel": 0,
+        "affinity": 0.3228809523809523
+      }
+    },
+    {
+      "artist": "Vrademargk",
+      "sample": 2,
+      "before": {
+        "artists": 14,
+        "relaxedLevel": 0,
+        "affinity": 0.17350000000000002
+      },
+      "after": {
+        "artists": 14,
+        "relaxedLevel": 0,
+        "affinity": 0.28999999999999987
+      }
+    },
+    {
+      "artist": "Vrademargk",
+      "sample": 3,
+      "before": {
+        "artists": 14,
+        "relaxedLevel": 0,
+        "affinity": 0.15108333333333335
+      },
+      "after": {
+        "artists": 14,
+        "relaxedLevel": 0,
+        "affinity": 0.3378333333333333
+      }
+    }
+  ]
+}
