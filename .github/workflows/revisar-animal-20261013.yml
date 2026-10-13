@@ -27,9 +27,19 @@ jobs:
         with:
           node-version: '20'
           cache: npm
-      - name: Prepara les comprovacions
+      - name: Prepara les comprovacions i normalitza el registre
         run: |
           npm ci > /tmp/animal-install.log 2>&1
+          node - <<'NODE'
+          const fs=require('node:fs');
+          const file='scripts/revisions/revisar_animal_20261013.js';
+          const code=fs.readFileSync(file,'utf8');
+          const before="language.updatedAt=now; write('data/revisio-idiomes.json',language);";
+          if(!code.includes('language.revisades.sort();')) {
+            if(code.split(before).length!==2) throw Error('No es pot aplicar la normalització de manera inequívoca');
+            fs.writeFileSync(file,code.replace(before,'language.revisades.sort();\n    '+before));
+          }
+          NODE
           node --check scripts/revisions/revisar_animal_20261013.js
       - name: Aplica nomes les exclusions documentades
         run: |
@@ -79,7 +89,7 @@ jobs:
           node scripts/actualitzar_versio_sw.js
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
-          git add data/hidden-videos.json data/revisio-idiomes.json data/music-channel-video-allowlist.json data/artistes-vigilats-idioma.json data/feed.json data/archive/channels data/history-pool.json data/historial-musical.json data/albums-musica.json data/music-content-audit.json data/music-feed-audit.json data/search_index_*.json docs/ARTISTES_VIGILATS_IDIOMA.md docs/revisions/2026-10-13-animal-* compartir sw.js
+          git add scripts/revisions/revisar_animal_20261013.js data/hidden-videos.json data/revisio-idiomes.json data/music-channel-video-allowlist.json data/artistes-vigilats-idioma.json data/feed.json data/archive/channels data/history-pool.json data/historial-musical.json data/albums-musica.json data/music-content-audit.json data/music-feed-audit.json data/search_index_*.json docs/ARTISTES_VIGILATS_IDIOMA.md docs/revisions/2026-10-13-animal-* compartir sw.js
           git commit -m 'Retira Bam Bam i consolida les exclusions d’Animal'
           git pull --rebase origin main
           git push origin HEAD:main
