@@ -1,0 +1,71 @@
+name: Incorporar Pirats i reclassificar Txarango
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/incorporar-pirats-txarango.yml'
+      - 'scripts/revisions/incorporar_pirats_txarango.js'
+  workflow_dispatch:
+concurrency:
+  group: music-data-writer
+  cancel-in-progress: false
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+jobs:
+  incorporar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '24'
+          cache: npm
+      - name: Prepara i aplica la selecció editorial
+        run: |
+          git pull --ff-only origin main
+          npm ci
+          node scripts/revisions/incorporar_pirats_txarango.js
+          npm run music:validate
+      - name: Indexa només el canal Tema indicat
+        env:
+          YOUTUBE_API_KEY_SERVER: ${{ secrets.YOUTUBE_API_KEY_SERVER }}
+          MUSIC_TARGET_CHANNELS: 'UC8r4joFv4Q0LczFyYvW7Lsg'
+          MUSIC_VIDEOS_PER_CHANNEL: '50'
+          MUSIC_TOPIC_GOVERNANCE: 'apply'
+          MUSIC_TOPIC_FULL_READ: '1'
+        run: node scripts/update_music_feed.js
+      - name: Actualitza categories, afinitats, historial i cerca
+        run: |
+          node scripts/generar_afinitats_musica.js --repair-catalog
+          node scripts/archivar_feed_musical.js
+          npm run search:index:hybrid:rebuild
+          node scripts/generar_pagines_compartir.js
+          node scripts/documentar_vigilancia_idiomes.js
+          node scripts/revisions/incorporar_pirats_txarango.js --verify
+      - name: Proves completes comparades amb la base
+        run: node scripts/revisions/provar_altes_musicals.js
+      - name: Lint comparat amb la base
+        run: node scripts/revisions/verificar_lint_pepet.js
+      - name: Publica les dades validades
+        run: |
+          npm run sw:version
+          bash scripts/publicar_dades.sh "data: incorpora Pirat's i passa Txarango a mestissatge" data js/channels-ca.json js/features/music-affinity-catalog.js compartir sw.js docs/ARTISTES_VIGILATS_IDIOMA.md docs/revisions/2026-10-13-pirats-txarango-alta.json
+      - name: Prepara el lloc estàtic
+        run: |
+          mkdir _site
+          git archive HEAD | tar -x -C _site
+          rm -rf _site/.github _site/tests _site/scripts _site/functions _site/docs
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - name: Publica a GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
