@@ -38,9 +38,9 @@ jobs:
               const r=await fetch(u,{signal:AbortSignal.timeout(30000)}),j=await r.json();
               if(!r.ok)throw Error(resource+': '+(j.error?.message||r.status));return j;
             }
-            const targets=[{"name":"Lepanto 41","aliases":["Lepanto 41"],"queries":["Lepanto 41 GALÀCTICA","Lepanto 41 Topic"]},{"name":"Colomet","aliases":["Colomet"],"queries":["Colomet Com la Dua Lipa","Colomet Topic"]},{"name":"Malánima","aliases":["Malánima","Malanima"],"queries":["Malánima Boig X Tu","Malánima Topic"]},{"name":"Sacrogermen","aliases":["Sacrogermen"],"queries":["Sacrogermen Al lots Pedra","Sacrogermen Topic"]},{"name":"ThatKid","aliases":["ThatKid","That Kid"],"queries":["ThatKid XXL Gyal","ThatKid català Topic"]}];
+            const targets=[{name:"ThatKid",aliases:["ThatKid","That Kid"],queries:["ThatKid Cheque","ThatKid Que dius","ThatKid Superstar 9cyon"]}];
             const base=JSON.parse(fs.readFileSync('data/artistes-musica.json','utf8'));
-            const report={checkedAt:new Date().toISOString(),artists:[]};
+            const report=JSON.parse(fs.readFileSync('docs/revisions/2026-10-13-urban4-descoberta.json','utf8'));report.artists=report.artists.filter(a=>a.name!=='ThatKid');report.checkedAt=new Date().toISOString();
             for(const t of targets){
               const candidates=new Set(),results=[];
               if(t.handle){const c=(await api('channels',{part:'snippet,contentDetails',forHandle:t.handle})).items?.[0];if(c)candidates.add(c.id);}
