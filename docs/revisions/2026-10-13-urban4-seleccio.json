@@ -1,0 +1,474 @@
+{
+  "artists": [
+    {
+      "name": "Lepanto 41",
+      "aliases": [],
+      "key": "artist:lepanto41",
+      "territory": "Catalunya",
+      "genres": [
+        "Urbana",
+        "Pop"
+      ],
+      "place": "Mataró",
+      "placeId": "geonames:3117164",
+      "placeAliases": [
+        "Mataró"
+      ],
+      "originSource": "https://maresmusic.cat/projectes-2024/",
+      "basis": "Origen documentat per la font citada.",
+      "sources": [
+        "https://maresmusic.cat/projectes-2024/",
+        "manual-user-2026-10-13"
+      ],
+      "note": "Selecció estricta per ID amb lletra contrastada. La resta queda pendent de revisió lingüística.",
+      "lyricSources": {
+        "Ez460GDqO64": "https://www.shazam.com/song/1817835573/4-cales",
+        "xsMptvoEtoo": "https://www.shazam.com/song/1817835573/4-cales",
+        "DqNC2KtPA2w": "https://www.shazam.com/song/1817835573/4-cales",
+        "BxzHaPvvA8g": "https://www.shazam.com/song/1879877854/emerg%C3%A8ncia",
+        "l1fzg4ETaWw": "https://www.shazam.com/song/1879877851/al-fet-i-amagar",
+        "g1-Ktw7V6K8": "https://www.shazam.com/song/1879877846/fuigdemont",
+        "tZxpDoARDsQ": "https://www.shazam.com/song/1879877845/diguem-que-fem",
+        "oWS7-E3DABQ": "https://www.shazam.com/song/1879877452/trencant-el-top",
+        "5qmWgOPpHsw": "https://www.shazam.com/song/1879877451/estar-amb-mi",
+        "hQTqcOXFNXA": "https://www.shazam.com/song/1878900283/som-emergents",
+        "clew34Qf0dA": "https://www.shazam.com/song/1878900283/som-emergents"
+      },
+      "channels": [
+        {
+          "id": "UCGpOiCofkMyiYcpL5auYfUA",
+          "type": "official",
+          "primary": false,
+          "allowedVideoIds": [
+            "l1fzg4ETaWw",
+            "tZxpDoARDsQ",
+            "oWS7-E3DABQ",
+            "g1-Ktw7V6K8",
+            "hQTqcOXFNXA",
+            "Ez460GDqO64",
+            "BxzHaPvvA8g",
+            "5qmWgOPpHsw",
+            "clew34Qf0dA",
+            "xsMptvoEtoo"
+          ]
+        },
+        {
+          "id": "UCvq1qQ0IvGNIy6MY6VupS7A",
+          "type": "topic",
+          "primary": true,
+          "allowedVideoIds": [
+            "DqNC2KtPA2w"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Colomet",
+      "aliases": [
+        "Paloma Aparici"
+      ],
+      "key": "artist:colomet",
+      "territory": "País Valencià",
+      "genres": [
+        "Urbana",
+        "Pop"
+      ],
+      "place": "Bèlgida",
+      "placeId": null,
+      "placeAliases": [
+        "Bèlgida"
+      ],
+      "originSource": "https://www.apuntmedia.es/noticies/cultura/entrevistem-colomet-motiu-seu-nou-treball-22_1_1593169.html",
+      "basis": "Origen documentat per la font citada.",
+      "sources": [
+        "https://www.apuntmedia.es/noticies/cultura/entrevistem-colomet-motiu-seu-nou-treball-22_1_1593169.html",
+        "manual-user-2026-10-13"
+      ],
+      "note": "Selecció estricta per ID amb lletra contrastada. La resta queda pendent de revisió lingüística.",
+      "lyricSources": {
+        "dJren3P02DI": "https://www.youtube.com/watch?v=dJren3P02DI",
+        "vHWzbZ51ZeE": "https://www.youtube.com/watch?v=vHWzbZ51ZeE",
+        "XQrWHayk1xU": "https://www.youtube.com/watch?v=vHWzbZ51ZeE",
+        "K1mx3S6GlA0": "https://www.youtube.com/watch?v=K1mx3S6GlA0",
+        "xAqh14xBUDE": "https://www.youtube.com/watch?v=K1mx3S6GlA0",
+        "W54zUTj_ano": "https://www.youtube.com/watch?v=K1mx3S6GlA0",
+        "SJTcSi4-zNg": "https://www.youtube.com/watch?v=SJTcSi4-zNg",
+        "_Tuj6RA15PE": "https://www.youtube.com/watch?v=SJTcSi4-zNg",
+        "kEkKpqXERVo": "https://www.youtube.com/watch?v=kEkKpqXERVo",
+        "3f0H7AzReYQ": "https://www.youtube.com/watch?v=kEkKpqXERVo",
+        "aGXSDUTxKus": "https://www.youtube.com/watch?v=aGXSDUTxKus",
+        "FwtVX4kLxYk": "https://www.youtube.com/watch?v=aGXSDUTxKus",
+        "yRpaLjzSf70": "https://www.youtube.com/watch?v=yRpaLjzSf70",
+        "aSSi3jzJC7U": "https://www.youtube.com/watch?v=yRpaLjzSf70",
+        "hS2H_kDOL6Y": "https://www.shazam.com/song/1743476528/en-vist",
+        "IXMVVjNSGxM": "https://www.shazam.com/song/1743476528/en-vist",
+        "xkc6unNAx9Q": "https://www.shazam.com/song/1817357743/aigua-gel%C3%A0-versi%C3%B3",
+        "Bl3pZaJors4": "https://www.shazam.com/song/1817357734/intro"
+      },
+      "channels": [
+        {
+          "id": "UCEL148nCbkVKRKKGvKUah9w",
+          "type": "topic",
+          "primary": true,
+          "allowedVideoIds": [
+            "aSSi3jzJC7U",
+            "Bl3pZaJors4",
+            "XQrWHayk1xU",
+            "hS2H_kDOL6Y",
+            "xAqh14xBUDE",
+            "xkc6unNAx9Q",
+            "IXMVVjNSGxM",
+            "_Tuj6RA15PE",
+            "3f0H7AzReYQ",
+            "W54zUTj_ano",
+            "FwtVX4kLxYk"
+          ]
+        },
+        {
+          "id": "UCG7tTcmfyT2g8-p_RrTicPw",
+          "type": "official",
+          "primary": false,
+          "allowedVideoIds": [
+            "dJren3P02DI",
+            "vHWzbZ51ZeE",
+            "K1mx3S6GlA0",
+            "yRpaLjzSf70",
+            "SJTcSi4-zNg",
+            "kEkKpqXERVo",
+            "aGXSDUTxKus"
+          ]
+        }
+      ],
+      "bounds": [
+        38.7,
+        39,
+        -0.6,
+        -0.3
+      ]
+    },
+    {
+      "name": "Sacrogermen",
+      "aliases": [
+        "SACROGERMEN",
+        "Julià Xamarrí"
+      ],
+      "key": "artist:sacrogermen",
+      "territory": "Illes Balears",
+      "genres": [
+        "Rap / Hip-hop",
+        "Urbana"
+      ],
+      "place": "Felanitx",
+      "placeId": "geonames:2517750",
+      "placeAliases": [
+        "Felanitx"
+      ],
+      "originSource": "https://sacrogermen.bandcamp.com/",
+      "basis": "Origen documentat per la font citada.",
+      "sources": [
+        "https://sacrogermen.bandcamp.com/",
+        "manual-user-2026-10-13"
+      ],
+      "note": "Selecció estricta per ID amb lletra contrastada. La resta queda pendent de revisió lingüística.",
+      "lyricSources": {
+        "Kin9DxOtXZE": "https://sacrogermen.bandcamp.com/album/judici",
+        "3amhrWnay5s": "https://sacrogermen.bandcamp.com/album/judici",
+        "LyMozbAVgpM": "https://sacrogermen.bandcamp.com/album/judici",
+        "CFf_pBfmktM": "https://sacrogermen.bandcamp.com/album/judici",
+        "F959du8RnfY": "https://sacrogermen.bandcamp.com/album/judici",
+        "fvolQCivCMo": "https://sacrogermen.bandcamp.com/album/judici",
+        "DqaCt70zSwg": "https://sacrogermen.bandcamp.com/album/judici",
+        "Vs846hW9dV4": "https://sacrogermen.bandcamp.com/album/judici",
+        "JMlBCbS4Zr8": "https://sacrogermen.bandcamp.com/album/judici",
+        "6vggpaswZ5Q": "https://sacrogermen.bandcamp.com/album/judici",
+        "d008ktr-JpY": "https://sacrogermen.bandcamp.com/album/judici",
+        "Ckf6QgDLpbo": "https://sacrogermen.bandcamp.com/album/judici",
+        "E1CUXvhsqFI": "https://sacrogermen.bandcamp.com/album/judici",
+        "MPTQfZM1EN8": "https://sacrogermen.bandcamp.com/album/judici",
+        "yW95_UwmDJM": "https://sacrogermen.bandcamp.com/album/judici",
+        "St1syUdisiw": "https://sacrogermen.bandcamp.com/album/judici",
+        "D0mnBfr3ylI": "https://sacrogermen.bandcamp.com/album/judici",
+        "9X5XMzKAdQU": "https://sacrogermen.bandcamp.com/album/judici",
+        "Vqhs9bUNvcU": "https://sacrogermen.bandcamp.com/album/judici",
+        "YqrREAH8esY": "https://sacrogermen.bandcamp.com/album/judici",
+        "TRetU_E3Qz8": "https://sacrogermen.bandcamp.com/album/judici",
+        "h1_-O-Umv8U": "https://sacrogermen.bandcamp.com/album/judici",
+        "8GXG_F1NVDs": "https://sacrogermen.bandcamp.com/album/judici",
+        "IaHn0FRF6jU": "https://sacrogermen.bandcamp.com/album/judici",
+        "oIjP0h63lCU": "https://sacrogermen.bandcamp.com/album/riuen-com-un-oasi",
+        "RN60VuxR08g": "https://sacrogermen.bandcamp.com/album/riuen-com-un-oasi",
+        "mBlU1jhhGow": "https://sacrogermen.bandcamp.com/album/riuen-com-un-oasi",
+        "WAGfAVzp1QQ": "https://sacrogermen.bandcamp.com/album/riuen-com-un-oasi",
+        "pY7vHQsq1MM": "https://sacrogermen.bandcamp.com/album/riuen-com-un-oasi",
+        "mfiJH-xKHa0": "https://sacrogermen.bandcamp.com/album/riuen-com-un-oasi",
+        "wNZQODiS2YQ": "https://sacrogermen.bandcamp.com/album/riuen-com-un-oasi",
+        "7V_ZQwHjWD0": "https://sacrogermen.bandcamp.com/album/riuen-com-un-oasi",
+        "WM-gLhniZuA": "https://sacrogermen.bandcamp.com/album/riuen-com-un-oasi",
+        "R5cBIQl1lmI": "https://sacrogermen.bandcamp.com/album/riuen-com-un-oasi",
+        "j7CJrZFQrLY": "https://sacrogermen.bandcamp.com/album/riuen-com-un-oasi",
+        "aPL3bKK_Hxk": "https://sacrogermen.bandcamp.com/album/comprom-s-amb-sa-banya-de-cabra",
+        "4TugxODbEbA": "https://sacrogermen.bandcamp.com/album/comprom-s-amb-sa-banya-de-cabra",
+        "go5piF0bx-0": "https://sacrogermen.bandcamp.com/album/comprom-s-amb-sa-banya-de-cabra",
+        "ZaKWnqZkJtk": "https://sacrogermen.bandcamp.com/album/comprom-s-amb-sa-banya-de-cabra",
+        "F9X5GKxD6cw": "https://sacrogermen.bandcamp.com/album/comprom-s-amb-sa-banya-de-cabra",
+        "TYZZd_JmTmE": "https://sacrogermen.bandcamp.com/album/comprom-s-amb-sa-banya-de-cabra",
+        "MJxfehoHd1A": "https://sacrogermen.bandcamp.com/album/comprom-s-amb-sa-banya-de-cabra",
+        "FCXZ9QECcBw": "https://sacrogermen.bandcamp.com/album/comprom-s-amb-sa-banya-de-cabra",
+        "2-KH98jClok": "https://sacrogermen.bandcamp.com/album/comprom-s-amb-sa-banya-de-cabra",
+        "nNlHggCy09U": "https://sacrogermen.bandcamp.com/album/comprom-s-amb-sa-banya-de-cabra",
+        "YTN3GcE31u4": "https://sacrogermen.bandcamp.com/album/comprom-s-amb-sa-banya-de-cabra",
+        "DPzG0rrT7UM": "https://www.youtube.com/watch?v=DPzG0rrT7UM",
+        "43Le8d1bMH0": "https://www.youtube.com/watch?v=DPzG0rrT7UM",
+        "cz1RwN2yapY": "https://www.youtube.com/watch?v=cz1RwN2yapY",
+        "UX6JJ-H3ejo": "https://www.youtube.com/watch?v=cz1RwN2yapY",
+        "n701g8WMDas": "https://www.youtube.com/watch?v=n701g8WMDas",
+        "PGEPMuVApEI": "https://www.youtube.com/watch?v=n701g8WMDas",
+        "gndM4LioI5E": "https://www.youtube.com/watch?v=gndM4LioI5E",
+        "ZtdHYWvaF9E": "https://www.youtube.com/watch?v=gndM4LioI5E"
+      },
+      "channels": [
+        {
+          "id": "UCtUZyH-IDq1HqnwUrGT1NYg",
+          "type": "official",
+          "primary": false,
+          "allowedVideoIds": [
+            "Kin9DxOtXZE",
+            "LyMozbAVgpM",
+            "F959du8RnfY",
+            "DqaCt70zSwg",
+            "JMlBCbS4Zr8",
+            "d008ktr-JpY",
+            "E1CUXvhsqFI",
+            "yW95_UwmDJM",
+            "D0mnBfr3ylI",
+            "Vqhs9bUNvcU",
+            "TRetU_E3Qz8",
+            "8GXG_F1NVDs",
+            "DPzG0rrT7UM",
+            "cz1RwN2yapY",
+            "n701g8WMDas",
+            "R5cBIQl1lmI",
+            "mfiJH-xKHa0",
+            "WAGfAVzp1QQ",
+            "oIjP0h63lCU",
+            "wNZQODiS2YQ",
+            "F9X5GKxD6cw",
+            "gndM4LioI5E",
+            "MJxfehoHd1A",
+            "go5piF0bx-0",
+            "aPL3bKK_Hxk"
+          ]
+        },
+        {
+          "id": "UC1CjXeunopycRzEbV5kpEQg",
+          "type": "topic",
+          "primary": true,
+          "allowedVideoIds": [
+            "3amhrWnay5s",
+            "9X5XMzKAdQU",
+            "6vggpaswZ5Q",
+            "IaHn0FRF6jU",
+            "h1_-O-Umv8U",
+            "MPTQfZM1EN8",
+            "St1syUdisiw",
+            "CFf_pBfmktM",
+            "fvolQCivCMo",
+            "Vs846hW9dV4",
+            "Ckf6QgDLpbo",
+            "YqrREAH8esY",
+            "43Le8d1bMH0",
+            "UX6JJ-H3ejo",
+            "PGEPMuVApEI",
+            "7V_ZQwHjWD0",
+            "RN60VuxR08g",
+            "j7CJrZFQrLY",
+            "pY7vHQsq1MM",
+            "WM-gLhniZuA",
+            "mBlU1jhhGow",
+            "ZtdHYWvaF9E",
+            "2-KH98jClok",
+            "4TugxODbEbA",
+            "FCXZ9QECcBw",
+            "TYZZd_JmTmE",
+            "YTN3GcE31u4",
+            "ZaKWnqZkJtk",
+            "nNlHggCy09U"
+          ]
+        }
+      ]
+    }
+  ],
+  "deferredArtists": [
+    {
+      "name": "Malánima",
+      "aliases": [
+        "Malànima",
+        "MALÁNIMA"
+      ],
+      "territory": "Illes Balears",
+      "genres": [
+        "Pop",
+        "Electrònica"
+      ],
+      "sources": [
+        "https://ib-musicat.cat/bandes/malanima/",
+        "manual-user-2026-10-13"
+      ],
+      "note": "Boig X Tu és mixt amb estrofes en castellà. Ai, Carinyo no té lletra íntegra accessible a les fonts consultades. No s’aprova cap tema pel títol.",
+      "channels": [
+        {
+          "id": "UCGmho2bwHxnwlsIc11CgNpQ",
+          "handle": "@malanima_",
+          "name": "MALÁNIMA",
+          "type": "official",
+          "primary": false
+        },
+        {
+          "id": "UCwQqL8LR87I8bPcFNU5zLFw",
+          "handle": null,
+          "name": "Malánima - Topic",
+          "type": "topic",
+          "primary": true
+        },
+        {
+          "id": "UCZcdiQvGBNZY2Juk3QEovZA",
+          "handle": null,
+          "name": "Malánima - Topic",
+          "type": "topic",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "name": "ThatKid",
+      "aliases": [
+        "Thatkid"
+      ],
+      "territory": "Catalunya",
+      "genres": [
+        "Urbana"
+      ],
+      "sources": [
+        "https://sidecar.es/en/sladmobb-thatkid/",
+        "manual-user-2026-10-13"
+      ],
+      "note": "Identitat Pep Hernández Durany resolta pels crèdits. El menol i Ney contenen estrofes substancials en castellà; resta sense evidència suficient. Vilassar documentat sense precisar municipi.",
+      "channels": [
+        {
+          "id": "UC5N8pkZTmXd8EDRxqhtrDbg",
+          "handle": null,
+          "name": "ThatKid - Topic",
+          "type": "topic",
+          "primary": true
+        },
+        {
+          "id": "UCxnSSRmXNzweOe_gShnOb_A",
+          "handle": "@thatkidwya",
+          "name": "Thatkid",
+          "type": "official",
+          "primary": false
+        }
+      ]
+    }
+  ],
+  "languageExclusions": [
+    {
+      "artist": "Colomet",
+      "ids": [
+        "TvvDo-VIH4c",
+        "dgfL5lWYQEs",
+        "u_ZX0NALt_4"
+      ],
+      "source": "https://www.youtube.com/watch?v=TvvDo-VIH4c",
+      "reason": "Big Danger: estrofes i tornades substancials en anglès."
+    },
+    {
+      "artist": "Colomet",
+      "ids": [
+        "zejKY1FeDWc"
+      ],
+      "source": "https://www.shazam.com/song/1817357735/5-segundos-2015",
+      "reason": "5 Segundos 2015: lletra en castellà."
+    },
+    {
+      "artist": "Colomet",
+      "ids": [
+        "cQR_2hcqSRE"
+      ],
+      "source": "https://www.shazam.com/song/1817357740/gostosinho",
+      "reason": "Gostosinho: parts substancials en castellà i portuguès."
+    },
+    {
+      "artist": "Colomet",
+      "ids": [
+        "Q1jgtrAejh8"
+      ],
+      "source": "https://www.shazam.com/song/1817357739/shiny",
+      "reason": "Shiny: tornada extensa en castellà."
+    },
+    {
+      "artist": "Colomet",
+      "ids": [
+        "OnXgPhBkKQw"
+      ],
+      "source": "https://www.shazam.com/song/1743476385/amb-la-lluna",
+      "reason": "Amb la Lluna: tornada reiterada amb parts substancials en castellà i anglès."
+    },
+    {
+      "artist": "Sacrogermen",
+      "ids": [
+        "4GSSyrlvvP8",
+        "iS9WieFQkLY"
+      ],
+      "source": "https://www.youtube.com/watch?v=4GSSyrlvvP8",
+      "reason": "Emasculación: lletra en castellà."
+    },
+    {
+      "artist": "Sacrogermen",
+      "ids": [
+        "B1qrjaSCVCI",
+        "tStCV3jd82o"
+      ],
+      "source": "https://sacrogermen.bandcamp.com/album/riuen-com-un-oasi",
+      "reason": "Disculpes Formals: estrofes substancials en anglès i portuguès."
+    },
+    {
+      "artist": "Malánima",
+      "ids": [
+        "kKfPATVvFvw",
+        "b0e9BDQV-UM",
+        "84YrnP3bZxQ"
+      ],
+      "source": "https://www.youtube.com/watch?v=EZWIenVmEZo",
+      "reason": "Boig X Tu: estrofes substancials en castellà."
+    },
+    {
+      "artist": "ThatKid",
+      "ids": [
+        "gio0VVuTmYI",
+        "6cROxX2hho4",
+        "Cqu9GWNMIKM"
+      ],
+      "source": "https://www.youtube.com/watch?v=gio0VVuTmYI",
+      "reason": "El menol: predomini del castellà amb fragments catalans."
+    },
+    {
+      "artist": "ThatKid",
+      "ids": [
+        "JXeL_LzRJcI",
+        "tL9qQkq9FnM",
+        "3BRvL5wnD7w",
+        "w4FTGulPGg4"
+      ],
+      "source": "https://www.shazam.com/es-es/song/1732202657/ney-feat-9cyon",
+      "reason": "Ney: lletra principalment en castellà, frase catalana breu."
+    }
+  ],
+  "formatExclusions": [
+    "R0TEEaa-njw",
+    "eKYjHOFrS60",
+    "WQCFJ52AXks"
+  ],
+  "identityExclusions": [],
+  "method": "Revisió individual amb lletres publicades per artistes, segells, Bandcamp i Shazam. No s’ha escoltat íntegrament l’àudio. Ni el títol ni la llengua declarada acrediten una cançó. Català, occità i instrumentals; expressions breus admeses, estrofes o tornades substancials en altres llengües excloses. IDs explícits; resta pendent. Versions i videoclips compten com enregistraments, no composicions úniques."
+}
