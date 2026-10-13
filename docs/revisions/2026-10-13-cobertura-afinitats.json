@@ -1,0 +1,3575 @@
+{
+  "indexedArtists": 406,
+  "musicalArtists": 405,
+  "channels": 608,
+  "withoutGenre": [],
+  "withoutAffinity": [],
+  "programs": [
+    "Club Social Carme"
+  ],
+  "restored": [
+    "Acros",
+    "Adala",
+    "Alosa",
+    "Anna Ferrer",
+    "Ceaxe",
+    "Celobert",
+    "Cloe Riembau",
+    "Corrandes són corrandes",
+    "Cristina Monllau",
+    "Dan Peralbo & El Comboi",
+    "El Nota",
+    "Elo",
+    "En Rick",
+    "GUINEU",
+    "Herba Negra",
+    "Hey Zuri",
+    "Ja t'ho diré",
+    "knocKouts",
+    "La Mousse",
+    "Mai Halis",
+    "Malson Atmosfèric",
+    "Marala",
+    "miquel",
+    "N'Gai N'Gai",
+    "Ocults",
+    "okdw",
+    "Paula Montalbán",
+    "Poor Tràmit",
+    "Pupil·les",
+    "Quico el Célio, el Noi i el Mut de Ferreries",
+    "Rapsodes",
+    "Reïna",
+    "RIU",
+    "Roser Dresaire",
+    "Sara Roy",
+    "Scotty DK",
+    "Siderland",
+    "Sodi",
+    "Solk",
+    "Still Ill",
+    "Suu",
+    "Svetlana",
+    "Tancat per defunció",
+    "Tesa",
+    "Tornaveus",
+    "Trèvol",
+    "Umpah-Pah",
+    "Urbàlia Rurana",
+    "Valtònyc",
+    "Vinnie Kairos",
+    "Vittara",
+    "Voltor",
+    "Whiskyn's"
+  ],
+  "changedMetadata": 2182,
+  "evidenceLevels": {
+    "detailed": 87,
+    "reviewed": 53,
+    "catalog-genres": 82,
+    "category-only": 183
+  },
+  "caveat": "La cobertura bàsica per gènere no equival a revisió acústica ni a subestils verificats. Els perfils editorials detallats prevalen en carregar el motor.",
+  "base": "8f74d6e21f8c60a0e37dfc37998193ae7546e4b9",
+  "passedTests": 1184,
+  "unchangedFailedTests": 7,
+  "newFailures": 0,
+  "unchangedLintFiles": 25,
+  "simulations": 582,
+  "skaRadios": 16,
+  "knockoutsRadios": 1,
+  "checks": [
+    {
+      "category": "Infantil",
+      "seed": "2 Princeses Barbudes",
+      "songs": 39,
+      "artists": 13
+    },
+    {
+      "category": "Infantil",
+      "seed": "Ambauka",
+      "songs": 39,
+      "artists": 13
+    },
+    {
+      "category": "Infantil",
+      "seed": "Ara Va de Bo",
+      "songs": 39,
+      "artists": 13
+    },
+    {
+      "category": "Infantil",
+      "seed": "Dàmaris Gelabert",
+      "songs": 39,
+      "artists": 13
+    },
+    {
+      "category": "Infantil",
+      "seed": "El Pot Petit",
+      "songs": 39,
+      "artists": 15
+    },
+    {
+      "category": "Infantil",
+      "seed": "Els Atrapasomnis",
+      "songs": 39,
+      "artists": 12
+    },
+    {
+      "category": "Infantil",
+      "seed": "Jaume Barri",
+      "songs": 39,
+      "artists": 14
+    },
+    {
+      "category": "Infantil",
+      "seed": "Jordi Tonietti",
+      "songs": 39,
+      "artists": 14
+    },
+    {
+      "category": "Infantil",
+      "seed": "La Tresca i la Verdesca",
+      "songs": 39,
+      "artists": 12
+    },
+    {
+      "category": "Infantil",
+      "seed": "Lali BeGood",
+      "songs": 39,
+      "artists": 12
+    },
+    {
+      "category": "Infantil",
+      "seed": "Landry el Rumbero",
+      "songs": 39,
+      "artists": 14
+    },
+    {
+      "category": "Infantil",
+      "seed": "Mainasons",
+      "songs": 39,
+      "artists": 12
+    },
+    {
+      "category": "Infantil",
+      "seed": "Pep Puigdemont",
+      "songs": 39,
+      "artists": 14
+    },
+    {
+      "category": "Infantil",
+      "seed": "Reggae per Xics",
+      "songs": 39,
+      "artists": 14
+    },
+    {
+      "category": "Infantil",
+      "seed": "Samfaina de Colors",
+      "songs": 39,
+      "artists": 13
+    },
+    {
+      "category": "Infantil",
+      "seed": "Xesco Boix",
+      "songs": 39,
+      "artists": 15
+    },
+    {
+      "category": "Infantil",
+      "seed": "Xiula",
+      "songs": 39,
+      "artists": 13
+    },
+    {
+      "category": "Urban",
+      "seed": "2ES",
+      "songs": 39,
+      "artists": 30
+    },
+    {
+      "category": "Urban",
+      "seed": "31 FAM",
+      "songs": 39,
+      "artists": 27
+    },
+    {
+      "category": "Urban",
+      "seed": "Ariox",
+      "songs": 39,
+      "artists": 26
+    },
+    {
+      "category": "Urban",
+      "seed": "Ayryn",
+      "songs": 39,
+      "artists": 28
+    },
+    {
+      "category": "Urban",
+      "seed": "Baya Baye",
+      "songs": 39,
+      "artists": 28
+    },
+    {
+      "category": "Urban",
+      "seed": "Boom Boom Fighters",
+      "songs": 39,
+      "artists": 28
+    },
+    {
+      "category": "Urban",
+      "seed": "Cactus Troop",
+      "songs": 39,
+      "artists": 24
+    },
+    {
+      "category": "Urban",
+      "seed": "Ceaxe",
+      "songs": 39,
+      "artists": 27
+    },
+    {
+      "category": "Urban",
+      "seed": "dani6ix & IZZKID",
+      "songs": 39,
+      "artists": 26
+    },
+    {
+      "category": "Urban",
+      "seed": "El Nota",
+      "songs": 39,
+      "artists": 28
+    },
+    {
+      "category": "Urban",
+      "seed": "Elo",
+      "songs": 39,
+      "artists": 27
+    },
+    {
+      "category": "Urban",
+      "seed": "enMatu",
+      "songs": 39,
+      "artists": 27
+    },
+    {
+      "category": "Urban",
+      "seed": "Fades",
+      "songs": 39,
+      "artists": 28
+    },
+    {
+      "category": "Urban",
+      "seed": "Figa Flawas",
+      "songs": 39,
+      "artists": 26
+    },
+    {
+      "category": "Urban",
+      "seed": "Flashy Ice Cream",
+      "songs": 39,
+      "artists": 24
+    },
+    {
+      "category": "Urban",
+      "seed": "Galgo Lento",
+      "songs": 39,
+      "artists": 30
+    },
+    {
+      "category": "Urban",
+      "seed": "Gusset",
+      "songs": 39,
+      "artists": 27
+    },
+    {
+      "category": "Urban",
+      "seed": "Herba Negra",
+      "songs": 39,
+      "artists": 28
+    },
+    {
+      "category": "Urban",
+      "seed": "Hereus del Beat",
+      "songs": 39,
+      "artists": 30
+    },
+    {
+      "category": "Urban",
+      "seed": "Julieta",
+      "songs": 39,
+      "artists": 23
+    },
+    {
+      "category": "Urban",
+      "seed": "Kiddi",
+      "songs": 39,
+      "artists": 27
+    },
+    {
+      "category": "Urban",
+      "seed": "Lal'ba",
+      "songs": 39,
+      "artists": 27
+    },
+    {
+      "category": "Urban",
+      "seed": "Lildami",
+      "songs": 39,
+      "artists": 25
+    },
+    {
+      "category": "Urban",
+      "seed": "Maig",
+      "songs": 39,
+      "artists": 27
+    },
+    {
+      "category": "Urban",
+      "seed": "Malson Atmosfèric",
+      "songs": 39,
+      "artists": 25
+    },
+    {
+      "category": "Urban",
+      "seed": "MASSAVIU",
+      "songs": 39,
+      "artists": 28
+    },
+    {
+      "category": "Urban",
+      "seed": "Masvi",
+      "songs": 39,
+      "artists": 27
+    },
+    {
+      "category": "Urban",
+      "seed": "Mushkaa",
+      "songs": 39,
+      "artists": 26
+    },
+    {
+      "category": "Urban",
+      "seed": "Naina",
+      "songs": 39,
+      "artists": 29
+    },
+    {
+      "category": "Urban",
+      "seed": "Orxata Sound System",
+      "songs": 39,
+      "artists": 29
+    },
+    {
+      "category": "Urban",
+      "seed": "Pawn Gang",
+      "songs": 39,
+      "artists": 25
+    },
+    {
+      "category": "Urban",
+      "seed": "Pol Bordas",
+      "songs": 39,
+      "artists": 26
+    },
+    {
+      "category": "Urban",
+      "seed": "Poor Tràmit",
+      "songs": 39,
+      "artists": 27
+    },
+    {
+      "category": "Urban",
+      "seed": "Pupil·les",
+      "songs": 39,
+      "artists": 26
+    },
+    {
+      "category": "Urban",
+      "seed": "Rapsodes",
+      "songs": 39,
+      "artists": 26
+    },
+    {
+      "category": "Urban",
+      "seed": "Scorpio",
+      "songs": 39,
+      "artists": 27
+    },
+    {
+      "category": "Urban",
+      "seed": "Scotty DK",
+      "songs": 39,
+      "artists": 31
+    },
+    {
+      "category": "Urban",
+      "seed": "Still Ill",
+      "songs": 39,
+      "artists": 27
+    },
+    {
+      "category": "Urban",
+      "seed": "Subliminal",
+      "songs": 39,
+      "artists": 30
+    },
+    {
+      "category": "Urban",
+      "seed": "Svetlana",
+      "songs": 39,
+      "artists": 26
+    },
+    {
+      "category": "Urban",
+      "seed": "Tesa",
+      "songs": 39,
+      "artists": 27
+    },
+    {
+      "category": "Urban",
+      "seed": "The Tyets",
+      "songs": 39,
+      "artists": 27
+    },
+    {
+      "category": "Urban",
+      "seed": "ultralone",
+      "songs": 39,
+      "artists": 30
+    },
+    {
+      "category": "Urban",
+      "seed": "Vademecum FAM",
+      "songs": 39,
+      "artists": 28
+    },
+    {
+      "category": "Urban",
+      "seed": "Valtònyc",
+      "songs": 39,
+      "artists": 25
+    },
+    {
+      "category": "Urban",
+      "seed": "Vinnie Kairos",
+      "songs": 39,
+      "artists": 26
+    },
+    {
+      "category": "Urban",
+      "seed": "Xenia Casado",
+      "songs": 39,
+      "artists": 30
+    },
+    {
+      "category": "Urban",
+      "seed": "ZOO",
+      "songs": 39,
+      "artists": 29
+    },
+    {
+      "category": "Urban",
+      "seed": "Quinto",
+      "songs": 39,
+      "artists": 26
+    },
+    {
+      "category": "Urban",
+      "seed": "Neisha",
+      "songs": 39,
+      "artists": 32
+    },
+    {
+      "category": "Urban",
+      "seed": "AVANT",
+      "songs": 39,
+      "artists": 25
+    },
+    {
+      "category": "Urban",
+      "seed": "Xisk",
+      "songs": 39,
+      "artists": 29
+    },
+    {
+      "category": "Urban",
+      "seed": "Fortuu",
+      "songs": 39,
+      "artists": 28
+    },
+    {
+      "category": "Urban",
+      "seed": "Aina Koda",
+      "songs": 39,
+      "artists": 25
+    },
+    {
+      "category": "Urban",
+      "seed": "BTZ",
+      "songs": 39,
+      "artists": 28
+    },
+    {
+      "category": "Urban",
+      "seed": "Sa Pena",
+      "songs": 39,
+      "artists": 26
+    },
+    {
+      "category": "Urban",
+      "seed": "Flakko",
+      "songs": 39,
+      "artists": 27
+    },
+    {
+      "category": "Urban",
+      "seed": "Plan-ET",
+      "songs": 39,
+      "artists": 30
+    },
+    {
+      "category": "Urban",
+      "seed": "Malifeta",
+      "songs": 39,
+      "artists": 29
+    },
+    {
+      "category": "Urban",
+      "seed": "Cloe",
+      "songs": 39,
+      "artists": 27
+    },
+    {
+      "category": "Urban",
+      "seed": "Slad Mobb",
+      "songs": 39,
+      "artists": 32
+    },
+    {
+      "category": "Urban",
+      "seed": "Lepanto 41",
+      "songs": 39,
+      "artists": 28
+    },
+    {
+      "category": "Urban",
+      "seed": "Colomet",
+      "songs": 39,
+      "artists": 29
+    },
+    {
+      "category": "Urban",
+      "seed": "Sacrogermen",
+      "songs": 39,
+      "artists": 27
+    },
+    {
+      "category": "Rap / Hip-hop",
+      "seed": "31 FAM",
+      "songs": 39,
+      "artists": 20
+    },
+    {
+      "category": "Rap / Hip-hop",
+      "seed": "Baya Baye",
+      "songs": 39,
+      "artists": 19
+    },
+    {
+      "category": "Rap / Hip-hop",
+      "seed": "Cactus Troop",
+      "songs": 39,
+      "artists": 22
+    },
+    {
+      "category": "Rap / Hip-hop",
+      "seed": "El Nota",
+      "songs": 39,
+      "artists": 22
+    },
+    {
+      "category": "Rap / Hip-hop",
+      "seed": "Flashy Ice Cream",
+      "songs": 39,
+      "artists": 22
+    },
+    {
+      "category": "Rap / Hip-hop",
+      "seed": "Herba Negra",
+      "songs": 39,
+      "artists": 20
+    },
+    {
+      "category": "Rap / Hip-hop",
+      "seed": "Lildami",
+      "songs": 39,
+      "artists": 22
+    },
+    {
+      "category": "Rap / Hip-hop",
+      "seed": "Malson Atmosfèric",
+      "songs": 39,
+      "artists": 21
+    },
+    {
+      "category": "Rap / Hip-hop",
+      "seed": "Mushkaa",
+      "songs": 39,
+      "artists": 23
+    },
+    {
+      "category": "Rap / Hip-hop",
+      "seed": "Pawn Gang",
+      "songs": 39,
+      "artists": 22
+    },
+    {
+      "category": "Rap / Hip-hop",
+      "seed": "Poor Tràmit",
+      "songs": 39,
+      "artists": 23
+    },
+    {
+      "category": "Rap / Hip-hop",
+      "seed": "Pupil·les",
+      "songs": 39,
+      "artists": 23
+    },
+    {
+      "category": "Rap / Hip-hop",
+      "seed": "Rapsodes",
+      "songs": 39,
+      "artists": 21
+    },
+    {
+      "category": "Rap / Hip-hop",
+      "seed": "Senyor Oca",
+      "songs": 39,
+      "artists": 23
+    },
+    {
+      "category": "Rap / Hip-hop",
+      "seed": "Still Ill",
+      "songs": 39,
+      "artists": 23
+    },
+    {
+      "category": "Rap / Hip-hop",
+      "seed": "Tesa",
+      "songs": 39,
+      "artists": 24
+    },
+    {
+      "category": "Rap / Hip-hop",
+      "seed": "ultralone",
+      "songs": 39,
+      "artists": 21
+    },
+    {
+      "category": "Rap / Hip-hop",
+      "seed": "Valtònyc",
+      "songs": 39,
+      "artists": 20
+    },
+    {
+      "category": "Rap / Hip-hop",
+      "seed": "Vinnie Kairos",
+      "songs": 39,
+      "artists": 22
+    },
+    {
+      "category": "Rap / Hip-hop",
+      "seed": "ZOO",
+      "songs": 39,
+      "artists": 22
+    },
+    {
+      "category": "Rap / Hip-hop",
+      "seed": "Quinto",
+      "songs": 39,
+      "artists": 21
+    },
+    {
+      "category": "Rap / Hip-hop",
+      "seed": "Malparlat",
+      "songs": 39,
+      "artists": 20
+    },
+    {
+      "category": "Rap / Hip-hop",
+      "seed": "AVANT",
+      "songs": 39,
+      "artists": 21
+    },
+    {
+      "category": "Rap / Hip-hop",
+      "seed": "Aina Koda",
+      "songs": 39,
+      "artists": 23
+    },
+    {
+      "category": "Rap / Hip-hop",
+      "seed": "BTZ",
+      "songs": 39,
+      "artists": 22
+    },
+    {
+      "category": "Rap / Hip-hop",
+      "seed": "Flakko",
+      "songs": 39,
+      "artists": 21
+    },
+    {
+      "category": "Rap / Hip-hop",
+      "seed": "Sacrogermen",
+      "songs": 39,
+      "artists": 22
+    },
+    {
+      "category": "Rumba / Mestissatge",
+      "seed": "9SON",
+      "songs": 39,
+      "artists": 17
+    },
+    {
+      "category": "Rumba / Mestissatge",
+      "seed": "Animal",
+      "songs": 39,
+      "artists": 16
+    },
+    {
+      "category": "Rumba / Mestissatge",
+      "seed": "Banda Neon",
+      "songs": 39,
+      "artists": 17
+    },
+    {
+      "category": "Rumba / Mestissatge",
+      "seed": "Dijous Paella",
+      "songs": 39,
+      "artists": 17
+    },
+    {
+      "category": "Rumba / Mestissatge",
+      "seed": "Dusminguet",
+      "songs": 39,
+      "artists": 15
+    },
+    {
+      "category": "Rumba / Mestissatge",
+      "seed": "El Diluvi",
+      "songs": 39,
+      "artists": 17
+    },
+    {
+      "category": "Rumba / Mestissatge",
+      "seed": "Falciots Ninja",
+      "songs": 39,
+      "artists": 16
+    },
+    {
+      "category": "Rumba / Mestissatge",
+      "seed": "Gato Pérez",
+      "songs": 39,
+      "artists": 16
+    },
+    {
+      "category": "Rumba / Mestissatge",
+      "seed": "Gertrudis",
+      "songs": 39,
+      "artists": 18
+    },
+    {
+      "category": "Rumba / Mestissatge",
+      "seed": "Kayo Malayo",
+      "songs": 39,
+      "artists": 16
+    },
+    {
+      "category": "Rumba / Mestissatge",
+      "seed": "La Banda del Yuyu",
+      "songs": 39,
+      "artists": 16
+    },
+    {
+      "category": "Rumba / Mestissatge",
+      "seed": "La Fúmiga",
+      "songs": 39,
+      "artists": 14
+    },
+    {
+      "category": "Rumba / Mestissatge",
+      "seed": "La Gossa Sorda",
+      "songs": 39,
+      "artists": 16
+    },
+    {
+      "category": "Rumba / Mestissatge",
+      "seed": "La Pegatina",
+      "songs": 39,
+      "artists": 16
+    },
+    {
+      "category": "Rumba / Mestissatge",
+      "seed": "La Troba Kung-Fú",
+      "songs": 39,
+      "artists": 17
+    },
+    {
+      "category": "Rumba / Mestissatge",
+      "seed": "Oques Grasses",
+      "songs": 39,
+      "artists": 17
+    },
+    {
+      "category": "Rumba / Mestissatge",
+      "seed": "Pepet i Marieta",
+      "songs": 39,
+      "artists": 17
+    },
+    {
+      "category": "Rumba / Mestissatge",
+      "seed": "Peret",
+      "songs": 39,
+      "artists": 18
+    },
+    {
+      "category": "Rumba / Mestissatge",
+      "seed": "Roba Estesa",
+      "songs": 39,
+      "artists": 14
+    },
+    {
+      "category": "Rumba / Mestissatge",
+      "seed": "Sabor de Gràcia",
+      "songs": 39,
+      "artists": 18
+    },
+    {
+      "category": "Rumba / Mestissatge",
+      "seed": "Stay Homas",
+      "songs": 39,
+      "artists": 17
+    },
+    {
+      "category": "Rumba / Mestissatge",
+      "seed": "Tashkenti",
+      "songs": 39,
+      "artists": 17
+    },
+    {
+      "category": "Rumba / Mestissatge",
+      "seed": "Terratombats",
+      "songs": 39,
+      "artists": 16
+    },
+    {
+      "category": "Rumba / Mestissatge",
+      "seed": "Xanguito",
+      "songs": 39,
+      "artists": 17
+    },
+    {
+      "category": "Rumba / Mestissatge",
+      "seed": "Xavi Sarrià",
+      "songs": 39,
+      "artists": 14
+    },
+    {
+      "category": "Rumba / Mestissatge",
+      "seed": "Xeic!",
+      "songs": 39,
+      "artists": 14
+    },
+    {
+      "category": "Ska / Reggae",
+      "seed": "Adala",
+      "songs": 39,
+      "artists": 12
+    },
+    {
+      "category": "Ska / Reggae",
+      "seed": "Aspencat",
+      "songs": 39,
+      "artists": 11
+    },
+    {
+      "category": "Ska / Reggae",
+      "seed": "Auxili",
+      "songs": 39,
+      "artists": 13
+    },
+    {
+      "category": "Ska / Reggae",
+      "seed": "Boom Boom Fighters",
+      "songs": 39,
+      "artists": 12
+    },
+    {
+      "category": "Ska / Reggae",
+      "seed": "Brams",
+      "songs": 39,
+      "artists": 11
+    },
+    {
+      "category": "Ska / Reggae",
+      "seed": "Dr. Calypso",
+      "songs": 39,
+      "artists": 12
+    },
+    {
+      "category": "Ska / Reggae",
+      "seed": "Guaita'ls",
+      "songs": 39,
+      "artists": 12
+    },
+    {
+      "category": "Ska / Reggae",
+      "seed": "Kayo Malayo",
+      "songs": 39,
+      "artists": 12
+    },
+    {
+      "category": "Ska / Reggae",
+      "seed": "knocKouts",
+      "songs": 39,
+      "artists": 12
+    },
+    {
+      "category": "Ska / Reggae",
+      "seed": "La Pegatina",
+      "songs": 39,
+      "artists": 12
+    },
+    {
+      "category": "Ska / Reggae",
+      "seed": "Les Testarudes",
+      "songs": 39,
+      "artists": 12
+    },
+    {
+      "category": "Ska / Reggae",
+      "seed": "Mr. Freak Ska",
+      "songs": 39,
+      "artists": 12
+    },
+    {
+      "category": "Ska / Reggae",
+      "seed": "Obrint Pas",
+      "songs": 39,
+      "artists": 12
+    },
+    {
+      "category": "Ska / Reggae",
+      "seed": "Pepet i Marieta",
+      "songs": 39,
+      "artists": 12
+    },
+    {
+      "category": "Ska / Reggae",
+      "seed": "Skatalà",
+      "songs": 39,
+      "artists": 12
+    },
+    {
+      "category": "Ska / Reggae",
+      "seed": "The Cabrians",
+      "songs": 39,
+      "artists": 13
+    },
+    {
+      "category": "Ska / Reggae",
+      "seed": "Txarango",
+      "songs": 39,
+      "artists": 13
+    },
+    {
+      "category": "Rock",
+      "seed": "Adrià Puntí",
+      "songs": 39,
+      "artists": 30
+    },
+    {
+      "category": "Rock",
+      "seed": "Al·lèrgiques al Pol·len",
+      "songs": 39,
+      "artists": 27
+    },
+    {
+      "category": "Rock",
+      "seed": "Antònia Font",
+      "songs": 39,
+      "artists": 28
+    },
+    {
+      "category": "Rock",
+      "seed": "Aspencat",
+      "songs": 39,
+      "artists": 25
+    },
+    {
+      "category": "Rock",
+      "seed": "Bars",
+      "songs": 39,
+      "artists": 25
+    },
+    {
+      "category": "Rock",
+      "seed": "Bèrnia",
+      "songs": 39,
+      "artists": 29
+    },
+    {
+      "category": "Rock",
+      "seed": "Brams",
+      "songs": 39,
+      "artists": 27
+    },
+    {
+      "category": "Rock",
+      "seed": "Buhos",
+      "songs": 39,
+      "artists": 27
+    },
+    {
+      "category": "Rock",
+      "seed": "Companyia Elèctrica Dharma",
+      "songs": 39,
+      "artists": 29
+    },
+    {
+      "category": "Rock",
+      "seed": "Crim",
+      "songs": 39,
+      "artists": 28
+    },
+    {
+      "category": "Rock",
+      "seed": "Dan Peralbo & El Comboi",
+      "songs": 39,
+      "artists": 27
+    },
+    {
+      "category": "Rock",
+      "seed": "Derbi Junior",
+      "songs": 39,
+      "artists": 28
+    },
+    {
+      "category": "Rock",
+      "seed": "Doctor Prats",
+      "songs": 39,
+      "artists": 28
+    },
+    {
+      "category": "Rock",
+      "seed": "Duble Buble",
+      "songs": 39,
+      "artists": 26
+    },
+    {
+      "category": "Rock",
+      "seed": "Els Amics de les Arts",
+      "songs": 39,
+      "artists": 29
+    },
+    {
+      "category": "Rock",
+      "seed": "Els Bourbons",
+      "songs": 39,
+      "artists": 27
+    },
+    {
+      "category": "Rock",
+      "seed": "Els Catarres",
+      "songs": 39,
+      "artists": 28
+    },
+    {
+      "category": "Rock",
+      "seed": "Els Detectors",
+      "songs": 39,
+      "artists": 27
+    },
+    {
+      "category": "Rock",
+      "seed": "Els Pets",
+      "songs": 39,
+      "artists": 28
+    },
+    {
+      "category": "Rock",
+      "seed": "Esther Querol Forner",
+      "songs": 39,
+      "artists": 27
+    },
+    {
+      "category": "Rock",
+      "seed": "Exili a Elba",
+      "songs": 39,
+      "artists": 28
+    },
+    {
+      "category": "Rock",
+      "seed": "Gossos",
+      "songs": 39,
+      "artists": 26
+    },
+    {
+      "category": "Rock",
+      "seed": "Hey Zuri",
+      "songs": 39,
+      "artists": 25
+    },
+    {
+      "category": "Rock",
+      "seed": "Ja t'ho diré",
+      "songs": 39,
+      "artists": 28
+    },
+    {
+      "category": "Rock",
+      "seed": "Joan Colomo",
+      "songs": 39,
+      "artists": 28
+    },
+    {
+      "category": "Rock",
+      "seed": "Joan Masdéu",
+      "songs": 39,
+      "artists": 26
+    },
+    {
+      "category": "Rock",
+      "seed": "Karda Fàstik",
+      "songs": 39,
+      "artists": 28
+    },
+    {
+      "category": "Rock",
+      "seed": "Kitsch",
+      "songs": 39,
+      "artists": 29
+    },
+    {
+      "category": "Rock",
+      "seed": "La Ludwig Band",
+      "songs": 39,
+      "artists": 29
+    },
+    {
+      "category": "Rock",
+      "seed": "La Madam",
+      "songs": 39,
+      "artists": 27
+    },
+    {
+      "category": "Rock",
+      "seed": "La Tour de Carol",
+      "songs": 39,
+      "artists": 27
+    },
+    {
+      "category": "Rock",
+      "seed": "Lax'n'Busto",
+      "songs": 39,
+      "artists": 27
+    },
+    {
+      "category": "Rock",
+      "seed": "Mai Halis",
+      "songs": 39,
+      "artists": 27
+    },
+    {
+      "category": "Rock",
+      "seed": "Minibús intergalàctic",
+      "songs": 39,
+      "artists": 31
+    },
+    {
+      "category": "Rock",
+      "seed": "Moto Clua",
+      "songs": 39,
+      "artists": 30
+    },
+    {
+      "category": "Rock",
+      "seed": "N'Gai N'Gai",
+      "songs": 39,
+      "artists": 27
+    },
+    {
+      "category": "Rock",
+      "seed": "Nyandú",
+      "songs": 39,
+      "artists": 27
+    },
+    {
+      "category": "Rock",
+      "seed": "Obeses",
+      "songs": 39,
+      "artists": 26
+    },
+    {
+      "category": "Rock",
+      "seed": "Obrint Pas",
+      "songs": 39,
+      "artists": 28
+    },
+    {
+      "category": "Rock",
+      "seed": "Ocults",
+      "songs": 39,
+      "artists": 28
+    },
+    {
+      "category": "Rock",
+      "seed": "Orella d'Ós",
+      "songs": 39,
+      "artists": 27
+    },
+    {
+      "category": "Rock",
+      "seed": "Pastorets Rock",
+      "songs": 39,
+      "artists": 26
+    },
+    {
+      "category": "Rock",
+      "seed": "Pau Riba i Romeva",
+      "songs": 39,
+      "artists": 30
+    },
+    {
+      "category": "Rock",
+      "seed": "Pegasus",
+      "songs": 39,
+      "artists": 28
+    },
+    {
+      "category": "Rock",
+      "seed": "Pla Moguda",
+      "songs": 39,
+      "artists": 31
+    },
+    {
+      "category": "Rock",
+      "seed": "Raydibaum",
+      "songs": 39,
+      "artists": 28
+    },
+    {
+      "category": "Rock",
+      "seed": "Remei de Ca la Fresca",
+      "songs": 39,
+      "artists": 28
+    },
+    {
+      "category": "Rock",
+      "seed": "Sangtraït",
+      "songs": 39,
+      "artists": 28
+    },
+    {
+      "category": "Rock",
+      "seed": "Sau",
+      "songs": 39,
+      "artists": 28
+    },
+    {
+      "category": "Rock",
+      "seed": "Sexenni",
+      "songs": 39,
+      "artists": 27
+    },
+    {
+      "category": "Rock",
+      "seed": "Smoking Souls",
+      "songs": 39,
+      "artists": 30
+    },
+    {
+      "category": "Rock",
+      "seed": "Sodi",
+      "songs": 39,
+      "artists": 27
+    },
+    {
+      "category": "Rock",
+      "seed": "Sopa de Cabra",
+      "songs": 39,
+      "artists": 25
+    },
+    {
+      "category": "Rock",
+      "seed": "Tancat per defunció",
+      "songs": 39,
+      "artists": 29
+    },
+    {
+      "category": "Rock",
+      "seed": "Teràpia de Shock",
+      "songs": 39,
+      "artists": 25
+    },
+    {
+      "category": "Rock",
+      "seed": "The Demencials",
+      "songs": 39,
+      "artists": 27
+    },
+    {
+      "category": "Rock",
+      "seed": "Tomeu Penya",
+      "songs": 39,
+      "artists": 29
+    },
+    {
+      "category": "Rock",
+      "seed": "Triquell",
+      "songs": 39,
+      "artists": 28
+    },
+    {
+      "category": "Rock",
+      "seed": "Umpah-Pah",
+      "songs": 39,
+      "artists": 27
+    },
+    {
+      "category": "Rock",
+      "seed": "Whiskyn's",
+      "songs": 39,
+      "artists": 28
+    },
+    {
+      "category": "Rock",
+      "seed": "Xavi Sarrià",
+      "songs": 39,
+      "artists": 29
+    },
+    {
+      "category": "Rock",
+      "seed": "Xeic!",
+      "songs": 39,
+      "artists": 28
+    },
+    {
+      "category": "Rock",
+      "seed": "Xucu-pà",
+      "songs": 39,
+      "artists": 29
+    },
+    {
+      "category": "Rock",
+      "seed": "Ypnosi",
+      "songs": 39,
+      "artists": 28
+    },
+    {
+      "category": "Rock",
+      "seed": "Lo Maquini",
+      "songs": 39,
+      "artists": 30
+    },
+    {
+      "category": "Rock",
+      "seed": "Tardor",
+      "songs": 39,
+      "artists": 26
+    },
+    {
+      "category": "Rock",
+      "seed": "La Iaia",
+      "songs": 39,
+      "artists": 26
+    },
+    {
+      "category": "Cançó d'autor",
+      "seed": "Adrià Puntí",
+      "songs": 39,
+      "artists": 25
+    },
+    {
+      "category": "Cançó d'autor",
+      "seed": "Albert Fibla",
+      "songs": 39,
+      "artists": 27
+    },
+    {
+      "category": "Cançó d'autor",
+      "seed": "Albert Pla i Álvarez",
+      "songs": 39,
+      "artists": 25
+    },
+    {
+      "category": "Cançó d'autor",
+      "seed": "Alfred Garcia",
+      "songs": 39,
+      "artists": 26
+    },
+    {
+      "category": "Cançó d'autor",
+      "seed": "Anaïs Vila",
+      "songs": 39,
+      "artists": 27
+    },
+    {
+      "category": "Cançó d'autor",
+      "seed": "Andreu Rifé i Oro",
+      "songs": 39,
+      "artists": 25
+    },
+    {
+      "category": "Cançó d'autor",
+      "seed": "Anna Andreu",
+      "songs": 39,
+      "artists": 29
+    },
+    {
+      "category": "Cançó d'autor",
+      "seed": "Au Rora",
+      "songs": 39,
+      "artists": 26
+    },
+    {
+      "category": "Cançó d'autor",
+      "seed": "Caïm Riba",
+      "songs": 39,
+      "artists": 24
+    },
+    {
+      "category": "Cançó d'autor",
+      "seed": "Cesk Freixas",
+      "songs": 39,
+      "artists": 25
+    },
+    {
+      "category": "Cançó d'autor",
+      "seed": "Coses",
+      "songs": 39,
+      "artists": 26
+    },
+    {
+      "category": "Cançó d'autor",
+      "seed": "El Gitano de Balaguer",
+      "songs": 39,
+      "artists": 28
+    },
+    {
+      "category": "Cançó d'autor",
+      "seed": "Enric Barbat",
+      "songs": 39,
+      "artists": 27
+    },
+    {
+      "category": "Cançó d'autor",
+      "seed": "Enric Hernàez",
+      "songs": 39,
+      "artists": 30
+    },
+    {
+      "category": "Cançó d'autor",
+      "seed": "Feliu Ventura",
+      "songs": 39,
+      "artists": 28
+    },
+    {
+      "category": "Cançó d'autor",
+      "seed": "Franca Masu",
+      "songs": 39,
+      "artists": 26
+    },
+    {
+      "category": "Cançó d'autor",
+      "seed": "Frans Cuspinera",
+      "songs": 39,
+      "artists": 27
+    },
+    {
+      "category": "Cançó d'autor",
+      "seed": "Gessamí Boada",
+      "songs": 39,
+      "artists": 26
+    },
+    {
+      "category": "Cançó d'autor",
+      "seed": "Guillem Ramisa",
+      "songs": 39,
+      "artists": 26
+    },
+    {
+      "category": "Cançó d'autor",
+      "seed": "Guillermina Motta",
+      "songs": 39,
+      "artists": 25
+    },
+    {
+      "category": "Cançó d'autor",
+      "seed": "Hèctor Vila",
+      "songs": 39,
+      "artists": 27
+    },
+    {
+      "category": "Cançó d'autor",
+      "seed": "Isaak Aguilà",
+      "songs": 39,
+      "artists": 28
+    },
+    {
+      "category": "Cançó d'autor",
+      "seed": "Jaume Sisa i Mestres",
+      "songs": 39,
+      "artists": 29
+    },
+    {
+      "category": "Cançó d'autor",
+      "seed": "Joan Colomo",
+      "songs": 39,
+      "artists": 28
+    },
+    {
+      "category": "Cançó d'autor",
+      "seed": "Joan Dausà",
+      "songs": 39,
+      "artists": 25
+    },
+    {
+      "category": "Cançó d'autor",
+      "seed": "Joan Isaac",
+      "songs": 39,
+      "artists": 26
+    },
+    {
+      "category": "Cançó d'autor",
+      "seed": "Joan Manuel Serrat",
+      "songs": 39,
+      "artists": 26
+    },
+    {
+      "category": "Cançó d'autor",
+      "seed": "Joan Miquel Oliver",
+      "songs": 39,
+      "artists": 26
+    },
+    {
+      "category": "Cançó d'autor",
+      "seed": "Jofre Bardagí Grima",
+      "songs": 39,
+      "artists": 24
+    },
+    {
+      "category": "Cançó d'autor",
+      "seed": "Josep Tero",
+      "songs": 39,
+      "artists": 26
+    },
+    {
+      "category": "Cançó d'autor",
+      "seed": "Judit Neddermann",
+      "songs": 39,
+      "artists": 25
+    },
+    {
+      "category": "Cançó d'autor",
+      "seed": "Júlia Cruz",
+      "songs": 39,
+      "artists": 27
+    },
+    {
+      "category": "Cançó d'autor",
+      "seed": "L'arannà",
+      "songs": 39,
+      "artists": 25
+    },
+    {
+      "category": "Cançó d'autor",
+      "seed": "Lídia Pujol",
+      "songs": 39,
+      "artists": 26
+    },
+    {
+      "category": "Cançó d'autor",
+      "seed": "Lluís Llach i Grande",
+      "songs": 39,
+      "artists": 27
+    },
+    {
+      "category": "Cançó d'autor",
+      "seed": "Manu Guix",
+      "songs": 39,
+      "artists": 27
+    },
+    {
+      "category": "Cançó d'autor",
+      "seed": "Mar Pujol",
+      "songs": 39,
+      "artists": 25
+    },
+    {
+      "category": "Cançó d'autor",
+      "seed": "Maria del Mar Bonet",
+      "songs": 39,
+      "artists": 26
+    },
+    {
+      "category": "Cançó d'autor",
+      "seed": "Marina Rossell",
+      "songs": 39,
+      "artists": 29
+    },
+    {
+      "category": "Cançó d'autor",
+      "seed": "Mazoni",
+      "songs": 39,
+      "artists": 27
+    },
+    {
+      "category": "Cançó d'autor",
+      "seed": "Miki Núñez",
+      "songs": 39,
+      "artists": 24
+    },
+    {
+      "category": "Cançó d'autor",
+      "seed": "Miquel Gil",
+      "songs": 39,
+      "artists": 26
+    },
+    {
+      "category": "Cançó d'autor",
+      "seed": "Montse Castellà",
+      "songs": 39,
+      "artists": 28
+    },
+    {
+      "category": "Cançó d'autor",
+      "seed": "Ovidi Montllor i Mengual",
+      "songs": 39,
+      "artists": 27
+    },
+    {
+      "category": "Cançó d'autor",
+      "seed": "Pau Riba i Romeva",
+      "songs": 39,
+      "artists": 26
+    },
+    {
+      "category": "Cançó d'autor",
+      "seed": "Pau Vallvé Navarro",
+      "songs": 39,
+      "artists": 24
+    },
+    {
+      "category": "Cançó d'autor",
+      "seed": "Paul Fuster",
+      "songs": 39,
+      "artists": 28
+    },
+    {
+      "category": "Cançó d'autor",
+      "seed": "Pere Tàpias",
+      "songs": 39,
+      "artists": 28
+    },
+    {
+      "category": "Cançó d'autor",
+      "seed": "Quico Pi de la Serra",
+      "songs": 39,
+      "artists": 26
+    },
+    {
+      "category": "Cançó d'autor",
+      "seed": "Quimi Portet",
+      "songs": 39,
+      "artists": 29
+    },
+    {
+      "category": "Cançó d'autor",
+      "seed": "Raimon",
+      "songs": 39,
+      "artists": 28
+    },
+    {
+      "category": "Cançó d'autor",
+      "seed": "Ramon Muntaner i Torruella",
+      "songs": 39,
+      "artists": 27
+    },
+    {
+      "category": "Cançó d'autor",
+      "seed": "Roger Mas i Solé",
+      "songs": 39,
+      "artists": 27
+    },
+    {
+      "category": "Cançó d'autor",
+      "seed": "Roser Dresaire",
+      "songs": 39,
+      "artists": 22
+    },
+    {
+      "category": "Cançó d'autor",
+      "seed": "Sandra Bautista",
+      "songs": 39,
+      "artists": 29
+    },
+    {
+      "category": "Cançó d'autor",
+      "seed": "Sílvia Comes",
+      "songs": 39,
+      "artists": 27
+    },
+    {
+      "category": "Cançó d'autor",
+      "seed": "Sílvia Pérez Cruz",
+      "songs": 39,
+      "artists": 26
+    },
+    {
+      "category": "Cançó d'autor",
+      "seed": "Toti Soler",
+      "songs": 39,
+      "artists": 29
+    },
+    {
+      "category": "Cançó d'autor",
+      "seed": "Xarim Aresté",
+      "songs": 39,
+      "artists": 29
+    },
+    {
+      "category": "Cançó d'autor",
+      "seed": "Xavier Baró",
+      "songs": 39,
+      "artists": 27
+    },
+    {
+      "category": "Cançó d'autor",
+      "seed": "Pino Piras",
+      "songs": 39,
+      "artists": 26
+    },
+    {
+      "category": "Cançó d'autor",
+      "seed": "Antonello Colledanchise",
+      "songs": 39,
+      "artists": 27
+    },
+    {
+      "category": "Cançó d'autor",
+      "seed": "Àlex Blat",
+      "songs": 39,
+      "artists": 25
+    },
+    {
+      "category": "Cançó d'autor",
+      "seed": "Xiomara Abello",
+      "songs": 39,
+      "artists": 27
+    },
+    {
+      "category": "Cançó d'autor",
+      "seed": "Artur Àlvarez",
+      "songs": 39,
+      "artists": 24
+    },
+    {
+      "category": "Folk i arrel",
+      "seed": "Al Tall",
+      "songs": 39,
+      "artists": 24
+    },
+    {
+      "category": "Folk i arrel",
+      "seed": "Alosa",
+      "songs": 39,
+      "artists": 24
+    },
+    {
+      "category": "Folk i arrel",
+      "seed": "Anna Ferrer",
+      "songs": 39,
+      "artists": 21
+    },
+    {
+      "category": "Folk i arrel",
+      "seed": "Companyia Elèctrica Dharma",
+      "songs": 39,
+      "artists": 19
+    },
+    {
+      "category": "Folk i arrel",
+      "seed": "Corrandes són corrandes",
+      "songs": 39,
+      "artists": 24
+    },
+    {
+      "category": "Folk i arrel",
+      "seed": "Coses",
+      "songs": 39,
+      "artists": 24
+    },
+    {
+      "category": "Folk i arrel",
+      "seed": "Ebri Knight",
+      "songs": 39,
+      "artists": 24
+    },
+    {
+      "category": "Folk i arrel",
+      "seed": "El Diluvi",
+      "songs": 39,
+      "artists": 22
+    },
+    {
+      "category": "Folk i arrel",
+      "seed": "El Pont d'Arcalís",
+      "songs": 39,
+      "artists": 24
+    },
+    {
+      "category": "Folk i arrel",
+      "seed": "El Pony Pisador",
+      "songs": 39,
+      "artists": 22
+    },
+    {
+      "category": "Folk i arrel",
+      "seed": "Electrotoylets",
+      "songs": 39,
+      "artists": 22
+    },
+    {
+      "category": "Folk i arrel",
+      "seed": "Els Jóvens",
+      "songs": 39,
+      "artists": 24
+    },
+    {
+      "category": "Folk i arrel",
+      "seed": "Esquirols",
+      "songs": 39,
+      "artists": 22
+    },
+    {
+      "category": "Folk i arrel",
+      "seed": "Falç de Fetillera",
+      "songs": 39,
+      "artists": 22
+    },
+    {
+      "category": "Folk i arrel",
+      "seed": "Germà Negre",
+      "songs": 39,
+      "artists": 25
+    },
+    {
+      "category": "Folk i arrel",
+      "seed": "Ginestà",
+      "songs": 39,
+      "artists": 21
+    },
+    {
+      "category": "Folk i arrel",
+      "seed": "Grup de Folk",
+      "songs": 39,
+      "artists": 22
+    },
+    {
+      "category": "Folk i arrel",
+      "seed": "Jo Jet i Maria Ribot",
+      "songs": 39,
+      "artists": 22
+    },
+    {
+      "category": "Folk i arrel",
+      "seed": "Júlia Colom",
+      "songs": 39,
+      "artists": 23
+    },
+    {
+      "category": "Folk i arrel",
+      "seed": "Júlia Cruz",
+      "songs": 39,
+      "artists": 24
+    },
+    {
+      "category": "Folk i arrel",
+      "seed": "L'Ham de Foc",
+      "songs": 39,
+      "artists": 22
+    },
+    {
+      "category": "Folk i arrel",
+      "seed": "La Coixinera",
+      "songs": 39,
+      "artists": 23
+    },
+    {
+      "category": "Folk i arrel",
+      "seed": "Ernest Crusats",
+      "songs": 39,
+      "artists": 25
+    },
+    {
+      "category": "Folk i arrel",
+      "seed": "La Ludwig Band",
+      "songs": 39,
+      "artists": 23
+    },
+    {
+      "category": "Folk i arrel",
+      "seed": "Manel",
+      "songs": 39,
+      "artists": 21
+    },
+    {
+      "category": "Folk i arrel",
+      "seed": "Mar Grimalt",
+      "songs": 39,
+      "artists": 23
+    },
+    {
+      "category": "Folk i arrel",
+      "seed": "Marala",
+      "songs": 39,
+      "artists": 21
+    },
+    {
+      "category": "Folk i arrel",
+      "seed": "Maria Bertomeu i Soria",
+      "songs": 39,
+      "artists": 27
+    },
+    {
+      "category": "Folk i arrel",
+      "seed": "Miquel Gil",
+      "songs": 39,
+      "artists": 24
+    },
+    {
+      "category": "Folk i arrel",
+      "seed": "Pastorets Rock",
+      "songs": 39,
+      "artists": 22
+    },
+    {
+      "category": "Folk i arrel",
+      "seed": "Quico el Célio, el Noi i el Mut de Ferreries",
+      "songs": 39,
+      "artists": 25
+    },
+    {
+      "category": "Folk i arrel",
+      "seed": "Roba Estesa",
+      "songs": 39,
+      "artists": 23
+    },
+    {
+      "category": "Folk i arrel",
+      "seed": "Sandra Monfort",
+      "songs": 39,
+      "artists": 25
+    },
+    {
+      "category": "Folk i arrel",
+      "seed": "Sílvia Pérez Cruz",
+      "songs": 39,
+      "artists": 22
+    },
+    {
+      "category": "Folk i arrel",
+      "seed": "Tesa",
+      "songs": 39,
+      "artists": 22
+    },
+    {
+      "category": "Folk i arrel",
+      "seed": "Tomeu Penya",
+      "songs": 39,
+      "artists": 21
+    },
+    {
+      "category": "Folk i arrel",
+      "seed": "Tornaveus",
+      "songs": 39,
+      "artists": 25
+    },
+    {
+      "category": "Folk i arrel",
+      "seed": "Trèvol",
+      "songs": 39,
+      "artists": 22
+    },
+    {
+      "category": "Folk i arrel",
+      "seed": "Urbàlia Rurana",
+      "songs": 39,
+      "artists": 24
+    },
+    {
+      "category": "Folk i arrel",
+      "seed": "Xavier de Bétera",
+      "songs": 39,
+      "artists": 20
+    },
+    {
+      "category": "Folk i arrel",
+      "seed": "Grup Coral de l'Agrupació Catalana d'Itàlia",
+      "songs": 39,
+      "artists": 23
+    },
+    {
+      "category": "Folk i arrel",
+      "seed": "Xiomara Abello",
+      "songs": 39,
+      "artists": 22
+    },
+    {
+      "category": "Folk i arrel",
+      "seed": "Borriana Big Band",
+      "songs": 39,
+      "artists": 23
+    },
+    {
+      "category": "Folk i arrel",
+      "seed": "UC",
+      "songs": 39,
+      "artists": 24
+    },
+    {
+      "category": "Pop",
+      "seed": "Alfred Garcia",
+      "songs": 39,
+      "artists": 33
+    },
+    {
+      "category": "Pop",
+      "seed": "Al·lèrgiques al Pol·len",
+      "songs": 39,
+      "artists": 31
+    },
+    {
+      "category": "Pop",
+      "seed": "Animal",
+      "songs": 39,
+      "artists": 28
+    },
+    {
+      "category": "Pop",
+      "seed": "Anna Andreu",
+      "songs": 39,
+      "artists": 30
+    },
+    {
+      "category": "Pop",
+      "seed": "Antònia Font",
+      "songs": 39,
+      "artists": 29
+    },
+    {
+      "category": "Pop",
+      "seed": "Ariox",
+      "songs": 39,
+      "artists": 30
+    },
+    {
+      "category": "Pop",
+      "seed": "Au Rora",
+      "songs": 39,
+      "artists": 33
+    },
+    {
+      "category": "Pop",
+      "seed": "Ayryn",
+      "songs": 39,
+      "artists": 29
+    },
+    {
+      "category": "Pop",
+      "seed": "Bèrnia",
+      "songs": 39,
+      "artists": 31
+    },
+    {
+      "category": "Pop",
+      "seed": "Blaumut",
+      "songs": 39,
+      "artists": 28
+    },
+    {
+      "category": "Pop",
+      "seed": "Buhos",
+      "songs": 39,
+      "artists": 35
+    },
+    {
+      "category": "Pop",
+      "seed": "Caïm Riba",
+      "songs": 39,
+      "artists": 33
+    },
+    {
+      "category": "Pop",
+      "seed": "Ceaxe",
+      "songs": 39,
+      "artists": 31
+    },
+    {
+      "category": "Pop",
+      "seed": "Celobert",
+      "songs": 39,
+      "artists": 31
+    },
+    {
+      "category": "Pop",
+      "seed": "Cloe Riembau",
+      "songs": 39,
+      "artists": 31
+    },
+    {
+      "category": "Pop",
+      "seed": "Cristina Monllau",
+      "songs": 39,
+      "artists": 31
+    },
+    {
+      "category": "Pop",
+      "seed": "Da Souza",
+      "songs": 39,
+      "artists": 31
+    },
+    {
+      "category": "Pop",
+      "seed": "dani6ix & IZZKID",
+      "songs": 39,
+      "artists": 33
+    },
+    {
+      "category": "Pop",
+      "seed": "Daveu",
+      "songs": 39,
+      "artists": 31
+    },
+    {
+      "category": "Pop",
+      "seed": "Doctor Prats",
+      "songs": 39,
+      "artists": 28
+    },
+    {
+      "category": "Pop",
+      "seed": "Duble Buble",
+      "songs": 39,
+      "artists": 30
+    },
+    {
+      "category": "Pop",
+      "seed": "El Petit de Cal Eril",
+      "songs": 39,
+      "artists": 30
+    },
+    {
+      "category": "Pop",
+      "seed": "Elo",
+      "songs": 39,
+      "artists": 30
+    },
+    {
+      "category": "Pop",
+      "seed": "Els Amics de les Arts",
+      "songs": 39,
+      "artists": 30
+    },
+    {
+      "category": "Pop",
+      "seed": "Els Catarres",
+      "songs": 39,
+      "artists": 29
+    },
+    {
+      "category": "Pop",
+      "seed": "Els Detectors",
+      "songs": 39,
+      "artists": 30
+    },
+    {
+      "category": "Pop",
+      "seed": "Els Jóvens",
+      "songs": 39,
+      "artists": 32
+    },
+    {
+      "category": "Pop",
+      "seed": "Els Pets",
+      "songs": 39,
+      "artists": 31
+    },
+    {
+      "category": "Pop",
+      "seed": "En Rick",
+      "songs": 39,
+      "artists": 31
+    },
+    {
+      "category": "Pop",
+      "seed": "enMatu",
+      "songs": 39,
+      "artists": 30
+    },
+    {
+      "category": "Pop",
+      "seed": "Esther Querol Forner",
+      "songs": 39,
+      "artists": 30
+    },
+    {
+      "category": "Pop",
+      "seed": "Fades",
+      "songs": 39,
+      "artists": 30
+    },
+    {
+      "category": "Pop",
+      "seed": "Ferran Palau",
+      "songs": 39,
+      "artists": 32
+    },
+    {
+      "category": "Pop",
+      "seed": "Figa Flawas",
+      "songs": 39,
+      "artists": 31
+    },
+    {
+      "category": "Pop",
+      "seed": "Gavina.mp3",
+      "songs": 39,
+      "artists": 31
+    },
+    {
+      "category": "Pop",
+      "seed": "Ginestà",
+      "songs": 39,
+      "artists": 29
+    },
+    {
+      "category": "Pop",
+      "seed": "Gossos",
+      "songs": 39,
+      "artists": 33
+    },
+    {
+      "category": "Pop",
+      "seed": "GUINEU",
+      "songs": 39,
+      "artists": 33
+    },
+    {
+      "category": "Pop",
+      "seed": "Gusset",
+      "songs": 39,
+      "artists": 32
+    },
+    {
+      "category": "Pop",
+      "seed": "Hey Zuri",
+      "songs": 39,
+      "artists": 30
+    },
+    {
+      "category": "Pop",
+      "seed": "Ja t'ho diré",
+      "songs": 39,
+      "artists": 31
+    },
+    {
+      "category": "Pop",
+      "seed": "Jo Jet i Maria Ribot",
+      "songs": 39,
+      "artists": 35
+    },
+    {
+      "category": "Pop",
+      "seed": "Joan Dausà",
+      "songs": 39,
+      "artists": 27
+    },
+    {
+      "category": "Pop",
+      "seed": "Joan Masdéu",
+      "songs": 39,
+      "artists": 29
+    },
+    {
+      "category": "Pop",
+      "seed": "Jofre Bardagí Grima",
+      "songs": 39,
+      "artists": 32
+    },
+    {
+      "category": "Pop",
+      "seed": "Júlia Colom",
+      "songs": 39,
+      "artists": 34
+    },
+    {
+      "category": "Pop",
+      "seed": "Julieta",
+      "songs": 39,
+      "artists": 29
+    },
+    {
+      "category": "Pop",
+      "seed": "Kiddi",
+      "songs": 39,
+      "artists": 29
+    },
+    {
+      "category": "Pop",
+      "seed": "La Fúmiga",
+      "songs": 39,
+      "artists": 28
+    },
+    {
+      "category": "Pop",
+      "seed": "La Mousse",
+      "songs": 39,
+      "artists": 29
+    },
+    {
+      "category": "Pop",
+      "seed": "Lal'ba",
+      "songs": 39,
+      "artists": 30
+    },
+    {
+      "category": "Pop",
+      "seed": "Lax'n'Busto",
+      "songs": 39,
+      "artists": 32
+    },
+    {
+      "category": "Pop",
+      "seed": "Magalí Sare",
+      "songs": 39,
+      "artists": 31
+    },
+    {
+      "category": "Pop",
+      "seed": "Mai Halis",
+      "songs": 39,
+      "artists": 29
+    },
+    {
+      "category": "Pop",
+      "seed": "Maig",
+      "songs": 39,
+      "artists": 32
+    },
+    {
+      "category": "Pop",
+      "seed": "Mama Dousha",
+      "songs": 39,
+      "artists": 31
+    },
+    {
+      "category": "Pop",
+      "seed": "Manel",
+      "songs": 39,
+      "artists": 31
+    },
+    {
+      "category": "Pop",
+      "seed": "Maria Jaume",
+      "songs": 39,
+      "artists": 34
+    },
+    {
+      "category": "Pop",
+      "seed": "Mariona Escoda i Sendra",
+      "songs": 39,
+      "artists": 30
+    },
+    {
+      "category": "Pop",
+      "seed": "MASSAVIU",
+      "songs": 39,
+      "artists": 28
+    },
+    {
+      "category": "Pop",
+      "seed": "Masvi",
+      "songs": 39,
+      "artists": 32
+    },
+    {
+      "category": "Pop",
+      "seed": "Miki Núñez",
+      "songs": 39,
+      "artists": 33
+    },
+    {
+      "category": "Pop",
+      "seed": "miquel",
+      "songs": 39,
+      "artists": 29
+    },
+    {
+      "category": "Pop",
+      "seed": "Mishima",
+      "songs": 39,
+      "artists": 31
+    },
+    {
+      "category": "Pop",
+      "seed": "N'Gai N'Gai",
+      "songs": 39,
+      "artists": 31
+    },
+    {
+      "category": "Pop",
+      "seed": "Naina",
+      "songs": 39,
+      "artists": 29
+    },
+    {
+      "category": "Pop",
+      "seed": "Nyandú",
+      "songs": 39,
+      "artists": 29
+    },
+    {
+      "category": "Pop",
+      "seed": "okdw",
+      "songs": 39,
+      "artists": 29
+    },
+    {
+      "category": "Pop",
+      "seed": "Oques Grasses",
+      "songs": 39,
+      "artists": 30
+    },
+    {
+      "category": "Pop",
+      "seed": "Ouineta",
+      "songs": 39,
+      "artists": 29
+    },
+    {
+      "category": "Pop",
+      "seed": "Pantaleó",
+      "songs": 39,
+      "artists": 31
+    },
+    {
+      "category": "Pop",
+      "seed": "Pau Vallvé Navarro",
+      "songs": 39,
+      "artists": 32
+    },
+    {
+      "category": "Pop",
+      "seed": "Paula Montalbán",
+      "songs": 39,
+      "artists": 32
+    },
+    {
+      "category": "Pop",
+      "seed": "Pepet i Marieta",
+      "songs": 39,
+      "artists": 32
+    },
+    {
+      "category": "Pop",
+      "seed": "Pol Bordas",
+      "songs": 39,
+      "artists": 31
+    },
+    {
+      "category": "Pop",
+      "seed": "Reïna",
+      "songs": 39,
+      "artists": 32
+    },
+    {
+      "category": "Pop",
+      "seed": "Renaldo & Clara",
+      "songs": 39,
+      "artists": 31
+    },
+    {
+      "category": "Pop",
+      "seed": "Roger Padrós de la Torre",
+      "songs": 39,
+      "artists": 31
+    },
+    {
+      "category": "Pop",
+      "seed": "Roser Dresaire",
+      "songs": 39,
+      "artists": 33
+    },
+    {
+      "category": "Pop",
+      "seed": "Sara Roy",
+      "songs": 39,
+      "artists": 31
+    },
+    {
+      "category": "Pop",
+      "seed": "Sau",
+      "songs": 39,
+      "artists": 31
+    },
+    {
+      "category": "Pop",
+      "seed": "Sense Sal",
+      "songs": 39,
+      "artists": 30
+    },
+    {
+      "category": "Pop",
+      "seed": "Sexenni",
+      "songs": 39,
+      "artists": 30
+    },
+    {
+      "category": "Pop",
+      "seed": "Siderland",
+      "songs": 39,
+      "artists": 33
+    },
+    {
+      "category": "Pop",
+      "seed": "Socunbohemio",
+      "songs": 39,
+      "artists": 29
+    },
+    {
+      "category": "Pop",
+      "seed": "Sodi",
+      "songs": 39,
+      "artists": 32
+    },
+    {
+      "category": "Pop",
+      "seed": "Sopa de Cabra",
+      "songs": 39,
+      "artists": 30
+    },
+    {
+      "category": "Pop",
+      "seed": "Stay Homas",
+      "songs": 39,
+      "artists": 30
+    },
+    {
+      "category": "Pop",
+      "seed": "Suu",
+      "songs": 39,
+      "artists": 31
+    },
+    {
+      "category": "Pop",
+      "seed": "Svetlana",
+      "songs": 39,
+      "artists": 30
+    },
+    {
+      "category": "Pop",
+      "seed": "Teràpia de Shock",
+      "songs": 39,
+      "artists": 30
+    },
+    {
+      "category": "Pop",
+      "seed": "The Tyets",
+      "songs": 39,
+      "artists": 32
+    },
+    {
+      "category": "Pop",
+      "seed": "Triquell",
+      "songs": 39,
+      "artists": 29
+    },
+    {
+      "category": "Pop",
+      "seed": "Txarango",
+      "songs": 39,
+      "artists": 30
+    },
+    {
+      "category": "Pop",
+      "seed": "Umpah-Pah",
+      "songs": 39,
+      "artists": 31
+    },
+    {
+      "category": "Pop",
+      "seed": "Ven'nus",
+      "songs": 39,
+      "artists": 31
+    },
+    {
+      "category": "Pop",
+      "seed": "Vittara",
+      "songs": 39,
+      "artists": 34
+    },
+    {
+      "category": "Pop",
+      "seed": "Whiskyn's",
+      "songs": 39,
+      "artists": 29
+    },
+    {
+      "category": "Pop",
+      "seed": "Xanguito",
+      "songs": 39,
+      "artists": 29
+    },
+    {
+      "category": "Pop",
+      "seed": "Xicu",
+      "songs": 39,
+      "artists": 31
+    },
+    {
+      "category": "Pop",
+      "seed": "Tardor",
+      "songs": 39,
+      "artists": 30
+    },
+    {
+      "category": "Pop",
+      "seed": "Àlex Blat",
+      "songs": 39,
+      "artists": 31
+    },
+    {
+      "category": "Pop",
+      "seed": "Quinto",
+      "songs": 39,
+      "artists": 30
+    },
+    {
+      "category": "Pop",
+      "seed": "Cloe",
+      "songs": 39,
+      "artists": 30
+    },
+    {
+      "category": "Pop",
+      "seed": "La Xica",
+      "songs": 39,
+      "artists": 33
+    },
+    {
+      "category": "Pop",
+      "seed": "Karlus",
+      "songs": 39,
+      "artists": 31
+    },
+    {
+      "category": "Pop",
+      "seed": "Lepanto 41",
+      "songs": 39,
+      "artists": 28
+    },
+    {
+      "category": "Pop",
+      "seed": "Colomet",
+      "songs": 39,
+      "artists": 31
+    },
+    {
+      "category": "Punk",
+      "seed": "All Crü",
+      "songs": 39,
+      "artists": 26
+    },
+    {
+      "category": "Punk",
+      "seed": "Apologia",
+      "songs": 39,
+      "artists": 25
+    },
+    {
+      "category": "Punk",
+      "seed": "ASSAC!",
+      "songs": 39,
+      "artists": 26
+    },
+    {
+      "category": "Punk",
+      "seed": "Autodestrucció",
+      "songs": 39,
+      "artists": 25
+    },
+    {
+      "category": "Punk",
+      "seed": "Bacora",
+      "songs": 39,
+      "artists": 25
+    },
+    {
+      "category": "Punk",
+      "seed": "Baixa Fidelitat",
+      "songs": 39,
+      "artists": 25
+    },
+    {
+      "category": "Punk",
+      "seed": "Batec",
+      "songs": 39,
+      "artists": 23
+    },
+    {
+      "category": "Punk",
+      "seed": "Bestiari",
+      "songs": 39,
+      "artists": 24
+    },
+    {
+      "category": "Punk",
+      "seed": "Bonestorm",
+      "songs": 39,
+      "artists": 23
+    },
+    {
+      "category": "Punk",
+      "seed": "Brigada Moreneta",
+      "songs": 39,
+      "artists": 24
+    },
+    {
+      "category": "Punk",
+      "seed": "Brot Bord",
+      "songs": 39,
+      "artists": 25
+    },
+    {
+      "category": "Punk",
+      "seed": "Budellam",
+      "songs": 39,
+      "artists": 27
+    },
+    {
+      "category": "Punk",
+      "seed": "Coça",
+      "songs": 39,
+      "artists": 25
+    },
+    {
+      "category": "Punk",
+      "seed": "Crim",
+      "songs": 39,
+      "artists": 23
+    },
+    {
+      "category": "Punk",
+      "seed": "Daltabaix",
+      "songs": 39,
+      "artists": 24
+    },
+    {
+      "category": "Punk",
+      "seed": "Desperta Ferro",
+      "songs": 39,
+      "artists": 21
+    },
+    {
+      "category": "Punk",
+      "seed": "Ebri Knight",
+      "songs": 39,
+      "artists": 25
+    },
+    {
+      "category": "Punk",
+      "seed": "En Brut",
+      "songs": 39,
+      "artists": 22
+    },
+    {
+      "category": "Punk",
+      "seed": "Enemic Interior",
+      "songs": 39,
+      "artists": 22
+    },
+    {
+      "category": "Punk",
+      "seed": "Esperit de Vi",
+      "songs": 39,
+      "artists": 25
+    },
+    {
+      "category": "Punk",
+      "seed": "Família Fracàs",
+      "songs": 39,
+      "artists": 24
+    },
+    {
+      "category": "Punk",
+      "seed": "Fetus",
+      "songs": 39,
+      "artists": 23
+    },
+    {
+      "category": "Punk",
+      "seed": "Fox System",
+      "songs": 39,
+      "artists": 23
+    },
+    {
+      "category": "Punk",
+      "seed": "FP",
+      "songs": 39,
+      "artists": 24
+    },
+    {
+      "category": "Punk",
+      "seed": "Frontpilsen",
+      "songs": 39,
+      "artists": 24
+    },
+    {
+      "category": "Punk",
+      "seed": "Gatzara",
+      "songs": 39,
+      "artists": 27
+    },
+    {
+      "category": "Punk",
+      "seed": "Gra Fort",
+      "songs": 39,
+      "artists": 23
+    },
+    {
+      "category": "Punk",
+      "seed": "Groggy Rude",
+      "songs": 39,
+      "artists": 23
+    },
+    {
+      "category": "Punk",
+      "seed": "Inadaptats",
+      "songs": 39,
+      "artists": 25
+    },
+    {
+      "category": "Punk",
+      "seed": "L'Odi Social",
+      "songs": 39,
+      "artists": 26
+    },
+    {
+      "category": "Punk",
+      "seed": "Les Aranyes",
+      "songs": 39,
+      "artists": 25
+    },
+    {
+      "category": "Punk",
+      "seed": "Les Buch",
+      "songs": 39,
+      "artists": 25
+    },
+    {
+      "category": "Punk",
+      "seed": "Les Cruet",
+      "songs": 39,
+      "artists": 24
+    },
+    {
+      "category": "Punk",
+      "seed": "Les Salvatges",
+      "songs": 39,
+      "artists": 26
+    },
+    {
+      "category": "Punk",
+      "seed": "Lladruc",
+      "songs": 39,
+      "artists": 23
+    },
+    {
+      "category": "Punk",
+      "seed": "Mandanga!",
+      "songs": 39,
+      "artists": 26
+    },
+    {
+      "category": "Punk",
+      "seed": "Mendra",
+      "songs": 39,
+      "artists": 26
+    },
+    {
+      "category": "Punk",
+      "seed": "Milícians",
+      "songs": 39,
+      "artists": 23
+    },
+    {
+      "category": "Punk",
+      "seed": "Opció K-95",
+      "songs": 39,
+      "artists": 22
+    },
+    {
+      "category": "Punk",
+      "seed": "Panellet",
+      "songs": 39,
+      "artists": 24
+    },
+    {
+      "category": "Punk",
+      "seed": "Pilseners",
+      "songs": 39,
+      "artists": 26
+    },
+    {
+      "category": "Punk",
+      "seed": "Pixamandúrries",
+      "songs": 39,
+      "artists": 24
+    },
+    {
+      "category": "Punk",
+      "seed": "Ratpenat",
+      "songs": 39,
+      "artists": 24
+    },
+    {
+      "category": "Punk",
+      "seed": "Saïm",
+      "songs": 39,
+      "artists": 24
+    },
+    {
+      "category": "Punk",
+      "seed": "Sota Terra",
+      "songs": 39,
+      "artists": 24
+    },
+    {
+      "category": "Punk",
+      "seed": "Tano!",
+      "songs": 39,
+      "artists": 24
+    },
+    {
+      "category": "Punk",
+      "seed": "The Anti-Patiks",
+      "songs": 39,
+      "artists": 23
+    },
+    {
+      "category": "Punk",
+      "seed": "The Demencials",
+      "songs": 39,
+      "artists": 22
+    },
+    {
+      "category": "Punk",
+      "seed": "Una Bèstia Incontrolable",
+      "songs": 39,
+      "artists": 25
+    },
+    {
+      "category": "Punk",
+      "seed": "Vàlius",
+      "songs": 39,
+      "artists": 21
+    },
+    {
+      "category": "Punk",
+      "seed": "Vicky l’Arròs",
+      "songs": 39,
+      "artists": 23
+    },
+    {
+      "category": "Punk",
+      "seed": "X-Fanekaes",
+      "songs": 39,
+      "artists": 25
+    },
+    {
+      "category": "Punk",
+      "seed": "Zombi Pujol",
+      "songs": 39,
+      "artists": 21
+    },
+    {
+      "category": "Heavy / Metal",
+      "seed": "Amargor",
+      "songs": 39,
+      "artists": 17
+    },
+    {
+      "category": "Heavy / Metal",
+      "seed": "Angoixa",
+      "songs": 39,
+      "artists": 16
+    },
+    {
+      "category": "Heavy / Metal",
+      "seed": "Assot",
+      "songs": 39,
+      "artists": 20
+    },
+    {
+      "category": "Heavy / Metal",
+      "seed": "Astral Warrior",
+      "songs": 39,
+      "artists": 18
+    },
+    {
+      "category": "Heavy / Metal",
+      "seed": "Avalot",
+      "songs": 39,
+      "artists": 18
+    },
+    {
+      "category": "Heavy / Metal",
+      "seed": "Bestiari",
+      "songs": 39,
+      "artists": 17
+    },
+    {
+      "category": "Heavy / Metal",
+      "seed": "Bocc",
+      "songs": 39,
+      "artists": 16
+    },
+    {
+      "category": "Heavy / Metal",
+      "seed": "Entropia",
+      "songs": 39,
+      "artists": 18
+    },
+    {
+      "category": "Heavy / Metal",
+      "seed": "Falç de Fetillera",
+      "songs": 39,
+      "artists": 18
+    },
+    {
+      "category": "Heavy / Metal",
+      "seed": "Forja",
+      "songs": 39,
+      "artists": 17
+    },
+    {
+      "category": "Heavy / Metal",
+      "seed": "Foscor",
+      "songs": 39,
+      "artists": 17
+    },
+    {
+      "category": "Heavy / Metal",
+      "seed": "Icestorm",
+      "songs": 39,
+      "artists": 17
+    },
+    {
+      "category": "Heavy / Metal",
+      "seed": "KOP",
+      "songs": 39,
+      "artists": 16
+    },
+    {
+      "category": "Heavy / Metal",
+      "seed": "Korruption Found",
+      "songs": 39,
+      "artists": 17
+    },
+    {
+      "category": "Heavy / Metal",
+      "seed": "Moksha",
+      "songs": 39,
+      "artists": 17
+    },
+    {
+      "category": "Heavy / Metal",
+      "seed": "Ósserp",
+      "songs": 39,
+      "artists": 18
+    },
+    {
+      "category": "Heavy / Metal",
+      "seed": "Pesta Porcina",
+      "songs": 39,
+      "artists": 18
+    },
+    {
+      "category": "Heavy / Metal",
+      "seed": "Sangtraït",
+      "songs": 39,
+      "artists": 17
+    },
+    {
+      "category": "Heavy / Metal",
+      "seed": "Tempestat",
+      "songs": 39,
+      "artists": 17
+    },
+    {
+      "category": "Heavy / Metal",
+      "seed": "Thanatopraxy",
+      "songs": 39,
+      "artists": 16
+    },
+    {
+      "category": "Heavy / Metal",
+      "seed": "Udol",
+      "songs": 39,
+      "artists": 17
+    },
+    {
+      "category": "Heavy / Metal",
+      "seed": "Vidres a la Sang",
+      "songs": 39,
+      "artists": 19
+    },
+    {
+      "category": "Heavy / Metal",
+      "seed": "Vrademargk",
+      "songs": 39,
+      "artists": 17
+    },
+    {
+      "category": "Jazz / Blues",
+      "seed": "Andrea Motis",
+      "songs": 39,
+      "artists": 14
+    },
+    {
+      "category": "Jazz / Blues",
+      "seed": "Blay Tritono",
+      "songs": 39,
+      "artists": 17
+    },
+    {
+      "category": "Jazz / Blues",
+      "seed": "Carme Canela",
+      "songs": 39,
+      "artists": 14
+    },
+    {
+      "category": "Jazz / Blues",
+      "seed": "Clara Peya",
+      "songs": 39,
+      "artists": 13
+    },
+    {
+      "category": "Jazz / Blues",
+      "seed": "Franca Masu",
+      "songs": 39,
+      "artists": 16
+    },
+    {
+      "category": "Jazz / Blues",
+      "seed": "Jordi Sabatés",
+      "songs": 39,
+      "artists": 15
+    },
+    {
+      "category": "Jazz / Blues",
+      "seed": "Judit Neddermann",
+      "songs": 39,
+      "artists": 11
+    },
+    {
+      "category": "Jazz / Blues",
+      "seed": "La Vella Dixieland",
+      "songs": 39,
+      "artists": 14
+    },
+    {
+      "category": "Jazz / Blues",
+      "seed": "Magalí Datzira",
+      "songs": 39,
+      "artists": 15
+    },
+    {
+      "category": "Jazz / Blues",
+      "seed": "Magalí Sare",
+      "songs": 39,
+      "artists": 13
+    },
+    {
+      "category": "Jazz / Blues",
+      "seed": "Maria Betriu",
+      "songs": 39,
+      "artists": 12
+    },
+    {
+      "category": "Jazz / Blues",
+      "seed": "Núria Feliu i Mestres",
+      "songs": 39,
+      "artists": 14
+    },
+    {
+      "category": "Jazz / Blues",
+      "seed": "Orquestra Mirasol",
+      "songs": 39,
+      "artists": 14
+    },
+    {
+      "category": "Jazz / Blues",
+      "seed": "Pegasus",
+      "songs": 39,
+      "artists": 12
+    },
+    {
+      "category": "Jazz / Blues",
+      "seed": "Rita Payés",
+      "songs": 39,
+      "artists": 16
+    },
+    {
+      "category": "Jazz / Blues",
+      "seed": "Secta Sònica",
+      "songs": 39,
+      "artists": 13
+    },
+    {
+      "category": "Jazz / Blues",
+      "seed": "Vicens Martín Dream Big Band",
+      "songs": 39,
+      "artists": 13
+    },
+    {
+      "category": "Jazz / Blues",
+      "seed": "Borriana Big Band",
+      "songs": 39,
+      "artists": 13
+    },
+    {
+      "category": "Indie",
+      "seed": "Celobert",
+      "songs": 39,
+      "artists": 20
+    },
+    {
+      "category": "Indie",
+      "seed": "Clara Peya",
+      "songs": 39,
+      "artists": 22
+    },
+    {
+      "category": "Indie",
+      "seed": "Cloe Riembau",
+      "songs": 39,
+      "artists": 22
+    },
+    {
+      "category": "Indie",
+      "seed": "Cristina Monllau",
+      "songs": 39,
+      "artists": 21
+    },
+    {
+      "category": "Indie",
+      "seed": "Da Souza",
+      "songs": 39,
+      "artists": 22
+    },
+    {
+      "category": "Indie",
+      "seed": "Derbi Junior",
+      "songs": 39,
+      "artists": 21
+    },
+    {
+      "category": "Indie",
+      "seed": "Exili a Elba",
+      "songs": 39,
+      "artists": 21
+    },
+    {
+      "category": "Indie",
+      "seed": "Falciots Ninja",
+      "songs": 39,
+      "artists": 22
+    },
+    {
+      "category": "Indie",
+      "seed": "Ferran Palau",
+      "songs": 39,
+      "artists": 20
+    },
+    {
+      "category": "Indie",
+      "seed": "Galgo Lento",
+      "songs": 39,
+      "artists": 22
+    },
+    {
+      "category": "Indie",
+      "seed": "GUINEU",
+      "songs": 39,
+      "artists": 21
+    },
+    {
+      "category": "Indie",
+      "seed": "Kitsch",
+      "songs": 39,
+      "artists": 21
+    },
+    {
+      "category": "Indie",
+      "seed": "Ernest Crusats",
+      "songs": 39,
+      "artists": 23
+    },
+    {
+      "category": "Indie",
+      "seed": "La Tour de Carol",
+      "songs": 39,
+      "artists": 20
+    },
+    {
+      "category": "Indie",
+      "seed": "Minibús intergalàctic",
+      "songs": 39,
+      "artists": 21
+    },
+    {
+      "category": "Indie",
+      "seed": "Mishima",
+      "songs": 39,
+      "artists": 21
+    },
+    {
+      "category": "Indie",
+      "seed": "Orella d'Ós",
+      "songs": 39,
+      "artists": 22
+    },
+    {
+      "category": "Indie",
+      "seed": "Pantaleó",
+      "songs": 39,
+      "artists": 21
+    },
+    {
+      "category": "Indie",
+      "seed": "Paula Montalbán",
+      "songs": 39,
+      "artists": 21
+    },
+    {
+      "category": "Indie",
+      "seed": "Pla Moguda",
+      "songs": 39,
+      "artists": 21
+    },
+    {
+      "category": "Indie",
+      "seed": "Raydibaum",
+      "songs": 39,
+      "artists": 23
+    },
+    {
+      "category": "Indie",
+      "seed": "Remei de Ca la Fresca",
+      "songs": 39,
+      "artists": 22
+    },
+    {
+      "category": "Indie",
+      "seed": "Renaldo & Clara",
+      "songs": 39,
+      "artists": 20
+    },
+    {
+      "category": "Indie",
+      "seed": "Socunbohemio",
+      "songs": 39,
+      "artists": 21
+    },
+    {
+      "category": "Indie",
+      "seed": "Sodi",
+      "songs": 39,
+      "artists": 20
+    },
+    {
+      "category": "Indie",
+      "seed": "Vàlius",
+      "songs": 39,
+      "artists": 23
+    },
+    {
+      "category": "Indie",
+      "seed": "Vittara",
+      "songs": 39,
+      "artists": 20
+    },
+    {
+      "category": "Electrònica",
+      "seed": "Daveu",
+      "songs": 39,
+      "artists": 17
+    },
+    {
+      "category": "Electrònica",
+      "seed": "Electrotoylets",
+      "songs": 39,
+      "artists": 20
+    },
+    {
+      "category": "Electrònica",
+      "seed": "En Rick",
+      "songs": 39,
+      "artists": 18
+    },
+    {
+      "category": "Electrònica",
+      "seed": "GadeGANG",
+      "songs": 39,
+      "artists": 19
+    },
+    {
+      "category": "Electrònica",
+      "seed": "Gavina.mp3",
+      "songs": 39,
+      "artists": 18
+    },
+    {
+      "category": "Electrònica",
+      "seed": "Herois de la Katalunya Interior",
+      "songs": 39,
+      "artists": 21
+    },
+    {
+      "category": "Electrònica",
+      "seed": "L'arannà",
+      "songs": 39,
+      "artists": 20
+    },
+    {
+      "category": "Electrònica",
+      "seed": "La Mousse",
+      "songs": 39,
+      "artists": 20
+    },
+    {
+      "category": "Electrònica",
+      "seed": "Mama Dousha",
+      "songs": 39,
+      "artists": 18
+    },
+    {
+      "category": "Electrònica",
+      "seed": "Mar Grimalt",
+      "songs": 39,
+      "artists": 20
+    },
+    {
+      "category": "Electrònica",
+      "seed": "Orxata Sound System",
+      "songs": 39,
+      "artists": 19
+    },
+    {
+      "category": "Electrònica",
+      "seed": "Ouineta",
+      "songs": 39,
+      "artists": 18
+    },
+    {
+      "category": "Electrònica",
+      "seed": "Sandra Monfort",
+      "songs": 39,
+      "artists": 19
+    },
+    {
+      "category": "Electrònica",
+      "seed": "Svetlana",
+      "songs": 39,
+      "artists": 18
+    },
+    {
+      "category": "Electrònica",
+      "seed": "Tiger Menja Zebra",
+      "songs": 39,
+      "artists": 20
+    },
+    {
+      "category": "Electrònica",
+      "seed": "Vicky l’Arròs",
+      "songs": 39,
+      "artists": 18
+    },
+    {
+      "category": "Electrònica",
+      "seed": "Xisk",
+      "songs": 39,
+      "artists": 20
+    },
+    {
+      "category": "Electrònica",
+      "seed": "Sa Pena",
+      "songs": 39,
+      "artists": 20
+    },
+    {
+      "category": "Electrònica",
+      "seed": "Malifeta",
+      "songs": 39,
+      "artists": 19
+    },
+    {
+      "category": "Electrònica",
+      "seed": "Slad Mobb",
+      "songs": 39,
+      "artists": 20
+    },
+    {
+      "category": "Electrònica",
+      "seed": "La Xica",
+      "songs": 39,
+      "artists": 20
+    },
+    {
+      "category": "Electrònica",
+      "seed": "Karlus",
+      "songs": 39,
+      "artists": 19
+    },
+    {
+      "category": "Altres estils",
+      "seed": "La Trinca",
+      "songs": 33,
+      "artists": 4
+    },
+    {
+      "category": "Altres estils",
+      "seed": "okdw",
+      "songs": 33,
+      "artists": 4
+    },
+    {
+      "category": "Altres estils",
+      "seed": "Tiger Menja Zebra",
+      "songs": 33,
+      "artists": 4
+    },
+    {
+      "category": "Altres estils",
+      "seed": "Tornaveus",
+      "songs": 33,
+      "artists": 4
+    }
+  ]
+}
