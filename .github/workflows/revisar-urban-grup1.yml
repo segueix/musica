@@ -1,24 +1,20 @@
-name: Incorporar grup urba 1
-
+name: Precisar origen del grup urba 1
 on:
   push:
     branches: [main]
     paths: ['.github/workflows/revisar-urban-grup1.yml']
   workflow_dispatch:
-
 concurrency:
   group: music-data-writer
   cancel-in-progress: false
-
 permissions:
   contents: write
   pages: write
   id-token: write
-
 jobs:
-  incorporar:
+  origen:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 10
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -30,88 +26,91 @@ jobs:
         with:
           node-version: '20'
           cache: npm
-      - name: Prepara les dades i els controls
+      - name: Prepara la verificacio
         run: |
           npm ci
           echo "EDITORIAL_BASE_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
-          cp js/channels-ca.json /tmp/urban1-channels-before.json
-          node --check scripts/revisions/incorporar_urban_grup1.js
+      - name: Precisa el municipi sense consultar YouTube
+        run: |
           node - <<'NODE'
           const fs=require('node:fs');
           const assert=require('node:assert/strict');
-          const {technicalReason,seconds}=require('./scripts/revisions/incorporar_urban_grup1.js');
-          const p=JSON.parse(fs.readFileSync('docs/revisions/2026-10-13-urban1-seleccio.json','utf8'));
-          assert.deepEqual(p.artists.map(a=>a.name),['Neisha','AVANT','Xisk','Fortuu','Aina Koda']);
-          const channels=p.artists.flatMap(a=>a.channels.map(c=>c.id));
-          assert.equal(new Set(channels).size,9);
-          const banned=new Set(p.languageExclusions.flatMap(e=>e.ids));
-          for(const a of p.artists){
-            assert.equal(a.channels.filter(c=>c.primary).length,1);
-            for(const c of a.channels)for(const id of c.ids.split(/\s+/)){assert(/^[A-Za-z0-9_-]{11}$/.test(id));assert(!banned.has(id));}
-          }
-          const sample={id:'b8cVyaRZoco',channelId:channels[0],embeddable:true,duration:'PT1M9S'};
-          assert.equal(technicalReason(sample,channels[0]),null);
-          assert(technicalReason({...sample,embeddable:false},channels[0]));
-          assert(technicalReason(sample,'wrong-uploader'));
-          assert(technicalReason({...sample,regionRestriction:{blocked:['ES']}},channels[0]));
-          assert(technicalReason({...sample,duration:'PT1H'},channels[0]));
-          assert.equal(seconds('PT1M9S'),69);
-          console.log('Identitats, exclusions, durades i editors comprovats.');
+          const crypto=require('node:crypto');
+          const read=f=>JSON.parse(fs.readFileSync(f,'utf8'));
+          const write=(f,v)=>fs.writeFileSync(f,JSON.stringify(v,null,2)+'\n');
+          const norm=s=>String(s||'').normalize('NFD').replace(/\p{Diacritic}/gu,'').toLowerCase();
+          const hash=f=>crypto.createHash('sha256').update(fs.readFileSync(f)).digest('hex');
+          (async()=>{
+            const protectedFiles=['data/feed.json','js/channels-ca.json','data/music-channel-video-allowlist.json','data/hidden-videos.json'];
+            const protectedBefore=protectedFiles.map(hash);
+            const source='https://www.firab.org/ca/programacion/562/';
+            const originFile='data/origens-artistes.json';
+            const origins=read(originFile);
+            const prior=JSON.parse(JSON.stringify(origins));
+            const entries=Object.entries(origins.artists).filter(([,a])=>a.name==='Xisk');
+            assert.equal(entries.length,1);
+            const [artistId,artist]=entries[0];
+            let place=Object.entries(origins.places).find(([,p])=>p.type==='municipality'&&norm(p.name)==='marratxi');
+            if(!place){
+              for(const name of ['Marratxí','Marratxi']){
+                const u=new URL('https://geocoding-api.open-meteo.com/v1/search');
+                for(const[k,v]of Object.entries({name,count:10,language:'ca',format:'json',countryCode:'ES'}))u.searchParams.set(k,String(v));
+                const response=await fetch(u,{signal:AbortSignal.timeout(30000)});
+                assert(response.ok,'Geocodificació no disponible');
+                const results=(await response.json()).results||[];
+                const p=results.find(p=>norm(p.name)==='marratxi'&&p.country_code==='ES'&&/^PPL/.test(p.feature_code));
+                if(!p)continue;
+                assert(p.latitude>39.5&&p.latitude<39.8&&p.longitude>2.6&&p.longitude<3);
+                const id='geonames:'+p.id;
+                assert(!origins.places[id],'Municipi amb identificador que cal reconciliar');
+                const value={name:'Marratxí',type:'municipality',geonamesId:p.id,coordinates:{latitude:p.latitude,longitude:p.longitude,precision:'settlement_reference'},territory:'Illes Balears',source:u.href,checkedOn:'2026-10-13'};
+                origins.places[id]=value;place=[id,value];break;
+              }
+            }
+            assert(place,'No es pot identificar el municipi de Marratxí');
+            artist.placeIds=[place[0]];
+            artist.basis='Xisca Garau és originària de Pòrtol, nucli del municipi de Marratxí. La fitxa de Fira B! de l’Institut d’Estudis Baleàrics acredita Pòrtol. El mapa utilitza la referència municipal de Marratxí, no Palma ni una coordenada inventada del nucli.';
+            artist.sources=[source,'https://www.mtxi.es/xisk-revolucio-electronica-amb-accent-portola/'];
+            artist.reviewedOn='2026-10-13';
+            assert.equal(artist.relation,'origin');
+            for(const[id,a]of Object.entries(prior.artists))if(id!==artistId)assert.deepEqual(origins.artists[id],a);
+            assert.deepEqual(origins.channels,prior.channels);
+            origins.updatedAt=new Date().toISOString();
+            const selectionFile='docs/revisions/2026-10-13-urban1-seleccio.json';
+            const selection=read(selectionFile),config=selection.artists.find(a=>a.name==='Xisk');
+            config.place='Marratxí';config.locality='Pòrtol';config.placeAliases=['Marratxí','Marratxi'];config.placeId=place[0];config.bounds=[39.5,39.8,2.6,3];config.originSource=source;config.basis=artist.basis;
+            config.sources=[...new Set([...config.sources,source])];
+            const reportFile='docs/revisions/2026-10-13-urban1-alta.json';
+            const report=read(reportFile),entry=report.artists.find(a=>a.name==='Xisk');
+            entry.place='Pòrtol (Marratxí)';entry.municipality='Marratxí';entry.originPlaceId=place[0];entry.sources=[...new Set([...entry.sources,source])];
+            report.originCorrection={artist:'Xisk',previous:'Palma',locality:'Pòrtol',municipality:'Marratxí',source,checkedAt:new Date().toISOString()};
+            const summaryFile='docs/revisions/2026-10-13-urban1-alta.md';
+            const summary=fs.readFileSync(summaryFile,'utf8');
+            assert(summary.includes('Xisk — Palma')||summary.includes('Xisk — Pòrtol (Marratxí)'));
+            write(originFile,origins);write(selectionFile,selection);write(reportFile,report);
+            fs.writeFileSync(summaryFile,summary.replace('Xisk — Palma','Xisk — Pòrtol (Marratxí)'));
+            assert.deepEqual(protectedFiles.map(hash),protectedBefore);
+            assert.equal(report.publication.recordings,178);
+            console.log(JSON.stringify({artist:'Xisk',locality:'Pòrtol',municipality:place[1],recordingsUnchanged:178}));
+          })().catch(e=>{console.error(e.stack);process.exitCode=1;});
           NODE
-      - name: Aplica nomes les cinc altes
+      - name: Verifica origens i regenera previsualitzacions
         run: |
-          node scripts/revisions/incorporar_urban_grup1.js
-          node scripts/documentar_vigilancia_idiomes.js
           npm run music:validate
-      - name: Sincronitza exclusivament els nou canals seleccionats
-        env:
-          YOUTUBE_API_KEY_SERVER: ${{ secrets.YOUTUBE_API_KEY_SERVER }}
-          MUSIC_VIDEOS_PER_CHANNEL: '50'
-          MUSIC_TOPIC_GOVERNANCE: 'apply'
-          MUSIC_TOPIC_FULL_READ: '1'
-        run: |
-          test -n "$MUSIC_TARGET_CHANNELS"
-          node scripts/update_music_feed.js
-      - name: Regenera arxiu, cerca i pagines compartides
-        run: |
-          node scripts/archivar_feed_musical.js
-          npm run search:index:hybrid:rebuild
+          npx vitest run tests/artist-origin.test.js
           node scripts/generar_pagines_compartir.js
-          node scripts/documentar_vigilancia_idiomes.js
-          node scripts/documentar_vigilancia_idiomes.js --check
-      - name: Verifica proves i lint sense regressions
-        run: |
-          node - <<'NODE'
-          const fs=require('node:fs');
-          const source=fs.readFileSync('scripts/revisions/provar_altes_musicals.js','utf8');
-          const old='docs/revisions/2026-10-12-tardor-blat-quinto.json';
-          if(!source.includes(old))throw Error('El verificador ha canviat; cal revisar-lo');
-          fs.writeFileSync('scripts/revisions/.provar-urban1-temporal.js',source.replace(old,'docs/revisions/2026-10-13-urban1-alta.json'));
-          NODE
-          node scripts/revisions/.provar-urban1-temporal.js
-          rm scripts/revisions/.provar-urban1-temporal.js
-          node scripts/revisions/verificar_lint_pepet.js
-      - name: Comprova les publicacions i preserva el cataleg anterior
-        run: |
-          node scripts/revisions/incorporar_urban_grup1.js --verify
-          node - <<'NODE'
-          const fs=require('node:fs');
-          const r=JSON.parse(fs.readFileSync('docs/revisions/2026-10-13-urban1-alta.json','utf8'));
-          if(r.validation.regressions || r.lint.newDiagnostics)throw Error('Hi ha regressions');
-          fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,fs.readFileSync('docs/revisions/2026-10-13-urban1-alta.md','utf8'));
-          NODE
-      - name: Publica sense sobreescriure canvis concurrents
+      - name: Desa nomes la precisio geografica i les pagines generades
         run: |
           git fetch origin main
           test "$(git rev-parse origin/main)" = "$EDITORIAL_BASE_SHA"
-          git add data js/channels-ca.json compartir docs/revisions/2026-10-13-urban1-alta.json docs/revisions/2026-10-13-urban1-alta.md docs/ARTISTES_VIGILATS_IDIOMA.md
+          git add data/origens-artistes.json docs/revisions/2026-10-13-urban1-seleccio.json docs/revisions/2026-10-13-urban1-alta.json docs/revisions/2026-10-13-urban1-alta.md compartir
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
           if ! git diff --cached --quiet; then
-            git commit -m 'data: indexa Neisha, AVANT, Xisk, Fortuu i Aina Koda'
+            git commit -m 'data: situa Xisk a Pòrtol amb la referència municipal de Marratxí'
             git push origin HEAD:main
           fi
-      - name: Prepara el lloc estatic actualitzat
+      - name: Prepara el lloc corregit
         run: |
           mkdir _site
           git archive HEAD | tar -x -C _site
@@ -119,18 +118,6 @@ jobs:
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
-      - name: Desplega les cinc altes
+      - name: Desplega el mapa corregit
         id: deployment
         uses: actions/deploy-pages@v4
-      - name: Conserva el resum i les comprovacions
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: urban1-resultat
-          retention-days: 1
-          path: |
-            docs/revisions/2026-10-13-urban1-alta.json
-            docs/revisions/2026-10-13-urban1-alta.md
-            /tmp/tardor-blat-quinto-validation.json
-            /tmp/tardor-blat-quinto-tests.json
-            /tmp/pepet-lint-summary.json
