@@ -130,8 +130,8 @@ async function check(browser, width, height, tag) {
     const before = await page.getAttribute('.am-svg', 'viewBox');
     await page.click('[data-am-zoom="1"]');
     ok(`${tag}: el zoom apropa`, (await page.getAttribute('.am-svg', 'viewBox')) !== before);
-    await page.click('[data-am-zoom="0"]');
-    ok(`${tag}: el mapa sencer torna`, (await page.getAttribute('.am-svg', 'viewBox')) === before);
+    await page.click('[data-am-zoom="-1"]');
+    ok(`${tag}: allunyar torna al mapa sencer`, (await page.getAttribute('.am-svg', 'viewBox')) === before);
     const name = (await page.textContent('.am-panel .am-artist strong')).trim();
     await page.click('.am-panel .am-artist');
     await page.waitForSelector('#channelPage:not(.hidden)', { timeout: 10000 });
@@ -153,6 +153,10 @@ async function check(browser, width, height, tag) {
     await ctx.close();
 }
 
+// Sense botó «mapa sencer»: allunyar fins al màxim
+async function fullMap(page) {
+    for (let i = 0; i < 5; i++) await page.click('[data-am-zoom="-1"]');
+}
 const viewBox = page => page.getAttribute('#artistMap .am-svg', 'viewBox');
 const touch = (cdp, type, points) =>
     cdp.send('Input.dispatchTouchEvent', { type, touchPoints: points.map(([x, y], id) => ({ x, y, id })) });
@@ -197,7 +201,7 @@ async function mobileGestures(browser) {
     const moved = await viewBox(page);
     ok('mòbil: dos dits mouen el mapa', moved.split(' ')[1] !== pinched.split(' ')[1], [pinched, moved]);
     // Pantalla completa (amb el mapa sencer, per a la captura)
-    await page.click('[data-am-zoom="0"]');
+    await fullMap(page);
     await page.click('[data-am-full]');
     await page.waitForTimeout(200);
     const full = await page.evaluate(() => {
@@ -218,7 +222,7 @@ async function mobileGestures(browser) {
     await touch(cdp, 'touchEnd', []);
     ok('mòbil: a pantalla completa un dit mou el mapa', (await viewBox(page)) !== fullBefore);
     // Mapa sencer i dibuix d'una zona al voltant de Barcelona
-    await page.click('[data-am-zoom="0"]');
+    await fullMap(page);
     await page.click('[data-am-draw]');
     ok('mòbil: mode dibuix', (await page.getAttribute('[data-am-draw]', 'aria-pressed')) === 'true');
     if (OUT) await page.screenshot({ path: path.join(OUT, 'mapa-mobil-dibuix.png') });
@@ -277,7 +281,7 @@ async function desktopGestures(browser) {
         wheeled,
     ]);
     ok('ordinador: i no fa scroll de la pàgina', (await page.evaluate(() => window.scrollY)) === scrollY);
-    await page.click('[data-am-zoom="0"]');
+    await fullMap(page);
     await page.click('[data-am-full]');
     await page.waitForTimeout(200);
     await page.evaluate(() =>

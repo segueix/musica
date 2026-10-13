@@ -230,4 +230,11 @@ describe('Música d’arreu: mapa dels artistes', () => {
         expect(app).toMatch(/history\.state\?\.mapReturn && SegueixApp\.state\.mapReturn[\s\S]{0,40}history\.back\(\)/);
         expect(app).toMatch(/if \(discover\) SegueixApp\.features\.artistMap\?\.restoreReturn\?\.\(\)/);
     });
+
+    it('no té el botó «mapa sencer» (la fletxa en dues direccions): el «−» ja hi torna', () => {
+        const out = feature.html(base, feature.buildModel({ base, catalog, references, groups }));
+        expect(out).not.toContain('data-am-zoom="0"');
+        expect(out).not.toContain('⤢');
+        expect(out).toContain('data-am-zoom="-1"');
+    });
 });
