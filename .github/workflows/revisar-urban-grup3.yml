@@ -39,14 +39,11 @@ jobs:
               if(!r.ok)throw Error(resource+': '+(j.error?.message||r.status));return j;
             }
             const targets=[
-              {name:'Malifeta',aliases:['Malifeta'],queries:['Malifeta Xinxeta','Malifeta Brega Topic']},
-              {name:'Cloe',aliases:['Cloe','Cloe music'],queries:['Cloe Trampa Aubor','Cloe Com un nai amb ferrari Topic']},
-              {name:'Slad Mobb',aliases:['Slad Mobb','SladMobb'],queries:['Slad Mobb Som la clau','Slad Mobb Topic']},
-              {name:'La Xica',aliases:['La Xica','LaXica'],queries:['La Xica A fer la ma','La Xica Lluny Topic']},
-              {name:'Karlus',aliases:['Karlus'],queries:['Karlus Sa tornada','Karlus Nova Ebusus Topic']}
+              {name:'Cloe',aliases:['Cloe'],handle:'@albagvalls',queries:[]},
+              {name:'La Xica',aliases:['La Xica','LaXica'],queries:['"LA XICA" "ALABATRE"','"LA XICA" "Tarongina"']}
             ];
             const base=JSON.parse(fs.readFileSync('data/artistes-musica.json','utf8'));
-            const report={checkedAt:new Date().toISOString(),artists:[]};
+            const report=JSON.parse(fs.readFileSync('docs/revisions/2026-10-13-urban3-descoberta.json','utf8'));
             for(const t of targets){
               const candidates=new Set(),results=[];
               if(t.handle){const c=(await api('channels',{part:'snippet,contentDetails',forHandle:t.handle})).items?.[0];if(c)candidates.add(c.id);}
@@ -73,10 +70,10 @@ jobs:
                 entry.channels.push({id:c.id,name:c.snippet.title,handle:c.snippet.customUrl||null,description:c.snippet.description,avatar:c.snippet.thumbnails?.high?.url||'',complete:!token,videos});
                 console.log(JSON.stringify({artist:t.name,channel:c.snippet.title,id:c.id,videos:videos.length,complete:!token}));
               }
-              report.artists.push(entry);
+              const old=report.artists.find(a=>a.name===entry.name); if(old){old.searchResults.push(...entry.searchResults); for(const c of entry.channels)if(!old.channels.some(x=>x.id===c.id))old.channels.push(c);}else report.artists.push(entry);
             }
             const stem='docs/revisions/2026-10-13-urban3';
-            report.estimatedQuotaUnits=quota;
+            report.estimatedQuotaUnits+=quota;
             fs.writeFileSync(stem+'-descoberta.json',JSON.stringify(report,null,2)+'\n');
             fs.writeFileSync(stem+'-resum.md',report.artists.map(a=>'# '+a.name+'\n'+a.channels.map(c=>'## '+c.name+' | '+c.id+' | '+c.handle+' | '+c.complete+'\n'+c.videos.map(v=>v.id+' | '+v.title+' | '+v.duration).join('\n')).join('\n')).join('\n\n')+'\n');
           })().catch(e=>{console.error(e.stack);process.exitCode=1});
