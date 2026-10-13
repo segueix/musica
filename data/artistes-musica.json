@@ -349,7 +349,10 @@
     {
       "name": "Acros",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Rap / Hip-hop",
+        "Urbana"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -417,7 +420,8 @@
       "sources": [
         "manual-user-2026-10-05",
         "https://www.radiorahim.cat/artista/acros/",
-        "youtube:targeted-search-verified"
+        "youtube:targeted-search-verified",
+        "genre:manual"
       ],
       "lastChecked": "2026-10-05T09:46:00.000Z",
       "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal(s) YouTube verificat(s) amb cerca dirigida.",
@@ -446,12 +450,21 @@
           "wikidataWorkEvidence": []
         }
       },
-      "genresRaw": []
+      "genresRaw": [],
+      "genreReview": {
+        "reviewedAt": "2026-10-13",
+        "method": "source-review",
+        "sources": [
+          "https://www.radiorahim.cat/artista/acros/"
+        ]
+      }
     },
     {
       "name": "Adala",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Ska / Reggae"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -491,7 +504,9 @@
       "sources": [
         "manual-user-2026-10-05",
         "https://adala.cat/",
-        "youtube:targeted-search-verified"
+        "youtube:targeted-search-verified",
+        "https://adala.cat/borncelona-2/",
+        "genre:manual"
       ],
       "lastChecked": "2026-10-05T13:41:40.211Z",
       "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal(s) YouTube verificat(s) amb cerca dirigida. Restricció explícita de l’usuari 2026-10-05: només el canal UC-JNcJrzWSw2RtL-3TqYoeQ. Canal Topic retirat i bloquejat per evitar reincorporacions.",
@@ -520,7 +535,14 @@
           "wikidataWorkEvidence": []
         }
       },
-      "genresRaw": []
+      "genresRaw": [],
+      "genreReview": {
+        "reviewedAt": "2026-10-13",
+        "method": "source-review",
+        "sources": [
+          "https://adala.cat/borncelona-2/"
+        ]
+      }
     },
     {
       "name": "Adrià Puntí",
@@ -1051,7 +1073,8 @@
         "https://www.enderrock.cat/noticia/27814/alex-blat-volia-fugir-competencia-entre-bandes-perque-ja-estava-molt-cansat",
         "https://www.primaveradh.com/tenda/val/producte/alex-blat-cd-la-veritat/",
         "https://www.enderrock.cat/noticia/22955/alex-blat-he-intentat-fer-album-molt-senzill-molt-organic-molt-pur",
-        "https://www.youtube.com/watch?v=jfO-YY-q6Do"
+        "https://www.youtube.com/watch?v=jfO-YY-q6Do",
+        "genre:manual"
       ],
       "youtube": {
         "channels": [
@@ -1073,7 +1096,10 @@
       },
       "name": "Àlex Blat",
       "displayName": "Àlex Blat",
-      "genres": [],
+      "genres": [
+        "Cançó d'autor",
+        "Pop"
+      ],
       "territories": [
         "País Valencià"
       ],
@@ -1102,6 +1128,16 @@
           "status": "sense-dades",
           "wikidataWorkEvidence": []
         }
+      },
+      "genreReview": {
+        "reviewedAt": "2026-10-13",
+        "method": "restored-from-documented-catalog",
+        "sources": [
+          "https://www.enderrock.cat/noticia/27814/alex-blat-volia-fugir-competencia-entre-bandes-perque-ja-estava-molt-cansat",
+          "https://www.primaveradh.com/tenda/val/producte/alex-blat-cd-la-veritat/",
+          "https://www.enderrock.cat/noticia/22955/alex-blat-he-intentat-fer-album-molt-senzill-molt-organic-molt-pur",
+          "https://www.youtube.com/watch?v=jfO-YY-q6Do"
+        ]
       }
     },
     {
@@ -1355,7 +1391,9 @@
     {
       "name": "Alosa",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Folk i arrel"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -1386,7 +1424,8 @@
       "sources": [
         "https://www.youtube.com/channel/UCmSxzoNUcVfwLgrwt97QASA",
         "https://www.enderrock.cat/disc/11297/primer-cant-mati",
-        "manual-user-2026-10-02"
+        "manual-user-2026-10-02",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-30T12:15:00.000Z",
       "notes": "Alta manual verificada: duet de folk d'arrel catalana i canal oficial de YouTube.",
@@ -1407,6 +1446,14 @@
           "status": "sense-dades",
           "wikidataWorkEvidence": []
         }
+      },
+      "genreReview": {
+        "reviewedAt": "2026-10-13",
+        "method": "restored-from-documented-catalog",
+        "sources": [
+          "https://www.youtube.com/channel/UCmSxzoNUcVfwLgrwt97QASA",
+          "https://www.enderrock.cat/disc/11297/primer-cant-mati"
+        ]
       }
     },
     {
@@ -1996,7 +2043,9 @@
     {
       "name": "Anna Ferrer",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Folk i arrel"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -2019,7 +2068,8 @@
       "active": true,
       "sources": [
         "https://www.youtube.com/channel/UCsoJ33SEemrtWrM5hTqPKYQ",
-        "https://www.enderrock.cat/noticies/etiqueta/Anna%2BFerrer"
+        "https://www.enderrock.cat/noticies/etiqueta/Anna%2BFerrer",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-30T12:15:00.000Z",
       "notes": "Alta manual verificada: artista menorquina de folk i arrel amb repertori en català i canal oficial d'artista.",
@@ -2040,6 +2090,14 @@
           "status": "sense-dades",
           "wikidataWorkEvidence": []
         }
+      },
+      "genreReview": {
+        "reviewedAt": "2026-10-13",
+        "method": "restored-from-documented-catalog",
+        "sources": [
+          "https://www.youtube.com/channel/UCsoJ33SEemrtWrM5hTqPKYQ",
+          "https://www.enderrock.cat/noticies/etiqueta/Anna%2BFerrer"
+        ]
       }
     },
     {
@@ -2559,7 +2617,8 @@
         "https://arturalvarez.bandcamp.com/album/entre-versos-i-pinzells-contemporanis-2013",
         "https://music.apple.com/us/artist/artur-%C3%A1lvarez/1574030401",
         "https://music.amazon.com/albums/B0G4XHHNM7",
-        "https://music.amazon.com/tracks/B0F22MC16S"
+        "https://music.amazon.com/tracks/B0F22MC16S",
+        "genre:manual"
       ],
       "youtube": {
         "channels": [
@@ -2588,7 +2647,9 @@
       },
       "name": "Artur Àlvarez",
       "displayName": "Artur Àlvarez",
-      "genres": [],
+      "genres": [
+        "Cançó d'autor"
+      ],
       "territories": [
         "País Valencià"
       ],
@@ -2617,6 +2678,21 @@
           "status": "sense-dades",
           "wikidataWorkEvidence": []
         }
+      },
+      "genreReview": {
+        "reviewedAt": "2026-10-13",
+        "method": "restored-from-documented-catalog",
+        "sources": [
+          "https://arturalvarez.bandcamp.com/",
+          "https://www.musicaenvalencia.es/artista/250/artur-%25c3%2580lvarez",
+          "https://arturalvarez.bandcamp.com/album/estell-s-a-ritme-de-blues-2024",
+          "https://arturalvarez.bandcamp.com/album/a-lombra-de-la-morera-2023",
+          "https://arturalvarez.bandcamp.com/album/pols-del-meu-cam-artur-lvarez-canta-a-bernat-artola-2008",
+          "https://arturalvarez.bandcamp.com/album/entre-versos-i-pinzells-contemporanis-2013",
+          "https://music.apple.com/us/artist/artur-%C3%A1lvarez/1574030401",
+          "https://music.amazon.com/albums/B0G4XHHNM7",
+          "https://music.amazon.com/tracks/B0F22MC16S"
+        ]
       }
     },
     {
@@ -4787,7 +4863,8 @@
         "https://www.verkami.com/projects/24679-nou-disc-baixamar-borriana-big-band",
         "https://www.nomepierdoniuna.net/borriana-big-band-no-deconstruimos-los-hits-en-valenciano-les-damos-sonoridad-de-gran-orquesta/",
         "https://music.amazon.es/albums/B07H5QZ45P",
-        "https://music.apple.com/us/album/peix-enamorat/1497706941"
+        "https://music.apple.com/us/album/peix-enamorat/1497706941",
+        "genre:manual"
       ],
       "youtube": {
         "channels": [
@@ -4809,7 +4886,10 @@
       },
       "name": "Borriana Big Band",
       "displayName": "Borriana Big Band",
-      "genres": [],
+      "genres": [
+        "Jazz / Blues",
+        "Folk i arrel"
+      ],
       "territories": [
         "País Valencià"
       ],
@@ -4838,6 +4918,18 @@
           "status": "sense-dades",
           "wikidataWorkEvidence": []
         }
+      },
+      "genreReview": {
+        "reviewedAt": "2026-10-13",
+        "method": "restored-from-documented-catalog",
+        "sources": [
+          "https://asociacionbigbands.com/bigband/borriana-big-band/",
+          "https://www.valencianmusicoffice.com/en/artist/a4091d8d-ee08-4ba1-ab62-16443ce62529",
+          "https://www.verkami.com/projects/24679-nou-disc-baixamar-borriana-big-band",
+          "https://www.nomepierdoniuna.net/borriana-big-band-no-deconstruimos-los-hits-en-valenciano-les-damos-sonoridad-de-gran-orquesta/",
+          "https://music.amazon.es/albums/B07H5QZ45P",
+          "https://music.apple.com/us/album/peix-enamorat/1497706941"
+        ]
       }
     },
     {
@@ -6013,7 +6105,10 @@
     {
       "name": "Ceaxe",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Pop",
+        "Urbana"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -6045,7 +6140,9 @@
       "sources": [
         "manual-user-2026-09-29",
         "youtube:manual-verified",
-        "manual-user-2026-10-02"
+        "manual-user-2026-10-02",
+        "https://www.delirics.cat/es/ceaxe",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-29T11:23:48.558Z",
       "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
@@ -6066,12 +6163,22 @@
           "status": "sense-dades",
           "wikidataWorkEvidence": []
         }
+      },
+      "genreReview": {
+        "reviewedAt": "2026-10-13",
+        "method": "source-review",
+        "sources": [
+          "https://www.delirics.cat/es/ceaxe"
+        ]
       }
     },
     {
       "name": "Celobert",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Pop",
+        "Indie / Alternativa"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -6103,7 +6210,9 @@
       "sources": [
         "https://www.enderrock.cat/noticia/31880/celobert-posa-veu-ruptura-ulls-bruns",
         "youtube:manual-verified",
-        "manual-user-2026-10-02"
+        "manual-user-2026-10-02",
+        "https://www.casadelamusica.cat/index.php/fitxes-artistes/3580-celobert",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-28T15:53:50.745Z",
       "notes": "EPs 2025-26; indie-pop en català.",
@@ -6124,6 +6233,13 @@
           "status": "sense-dades",
           "wikidataWorkEvidence": []
         }
+      },
+      "genreReview": {
+        "reviewedAt": "2026-10-13",
+        "method": "source-review",
+        "sources": [
+          "https://www.casadelamusica.cat/index.php/fitxes-artistes/3580-celobert"
+        ]
       }
     },
     {
@@ -6366,7 +6482,10 @@
     {
       "name": "Cloe Riembau",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Pop",
+        "Indie / Alternativa"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -6398,7 +6517,9 @@
       "sources": [
         "https://www.enderrock.cat/noticia/30628/nous-discos-catala-2026",
         "youtube:manual-verified",
-        "manual-user-2026-10-02"
+        "manual-user-2026-10-02",
+        "https://www.mmvv.cat/ca/artista/cloe-riembau/1527",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-28T15:55:19.249Z",
       "notes": "Guanyadora del Sona9; debut indie-pop el 2026.",
@@ -6419,6 +6540,13 @@
           "status": "sense-dades",
           "wikidataWorkEvidence": []
         }
+      },
+      "genreReview": {
+        "reviewedAt": "2026-10-13",
+        "method": "source-review",
+        "sources": [
+          "https://www.mmvv.cat/ca/artista/cloe-riembau/1527"
+        ]
       }
     },
     {
@@ -6864,7 +6992,9 @@
     {
       "name": "Corrandes són corrandes",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Folk i arrel"
+      ],
       "territories": [
         "Catalunya"
       ],
@@ -6940,7 +7070,8 @@
       "sources": [
         "https://www.enderrock.cat/sons/grupsons2020/24/corrandes/son/corrandes",
         "https://www.youtube.com/channel/UCYzpmEEhGtncFPgZSocnrtQ",
-        "https://www.youtube.com/channel/UCTsSJXhTo6HpqmtSh8-p31A"
+        "https://www.youtube.com/channel/UCTsSJXhTo6HpqmtSh8-p31A",
+        "genre:manual"
       ],
       "lastChecked": "2026-10-05T13:00:17.655Z",
       "notes": "Cançó d’arrel i improvisada de la Catalunya Vella. Alta de folk i arrel 2026-10-05; canals contrastats amb la identitat i el repertori del grup; selecció catalana limitada per llista blanca.",
@@ -6969,7 +7100,16 @@
           "wikidataWorkEvidence": []
         }
       },
-      "genresRaw": []
+      "genresRaw": [],
+      "genreReview": {
+        "reviewedAt": "2026-10-13",
+        "method": "restored-from-documented-catalog",
+        "sources": [
+          "https://www.enderrock.cat/sons/grupsons2020/24/corrandes/son/corrandes",
+          "https://www.youtube.com/channel/UCYzpmEEhGtncFPgZSocnrtQ",
+          "https://www.youtube.com/channel/UCTsSJXhTo6HpqmtSh8-p31A"
+        ]
+      }
     },
     {
       "name": "Coses",
@@ -7141,7 +7281,10 @@
     {
       "name": "Cristina Monllau",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Pop",
+        "Indie / Alternativa"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -7165,7 +7308,8 @@
       "active": false,
       "sources": [
         "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026",
-        "youtube:manual-verified"
+        "youtube:manual-verified",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-28T15:53:50.745Z",
       "notes": "Classificada al Sona9 2026 com a pop-indie.",
@@ -7186,6 +7330,13 @@
           "status": "sense-dades",
           "wikidataWorkEvidence": []
         }
+      },
+      "genreReview": {
+        "reviewedAt": "2026-10-13",
+        "method": "restored-from-documented-catalog",
+        "sources": [
+          "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026"
+        ]
       }
     },
     {
@@ -7424,7 +7575,9 @@
     {
       "name": "Dan Peralbo & El Comboi",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Rock"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -7456,7 +7609,9 @@
       "sources": [
         "https://www.3cat.cat/3cat/catorze-veus-per-entendre-el-futur-del-pop-catala/audio/1244294/",
         "youtube:manual-verified",
-        "manual-user-2026-10-02"
+        "manual-user-2026-10-02",
+        "https://www.cruillabarcelona.cat/artists/dan-peralbo/",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-28T15:53:50.745Z",
       "notes": "Inclòs entre les noves veus del pop català.",
@@ -7478,6 +7633,13 @@
           "status": "sense-dades",
           "wikidataWorkEvidence": []
         }
+      },
+      "genreReview": {
+        "reviewedAt": "2026-10-13",
+        "method": "source-review",
+        "sources": [
+          "https://www.cruillabarcelona.cat/artists/dan-peralbo/"
+        ]
       }
     },
     {
@@ -8440,7 +8602,10 @@
     {
       "name": "El Nota",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Rap / Hip-hop",
+        "Urbana"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -8512,7 +8677,9 @@
       "sources": [
         "manual-user-2026-10-05",
         "youtube:targeted-video-search-verified",
-        "https://www.youtube.com/@elputunota"
+        "https://www.youtube.com/@elputunota",
+        "https://elnota.bandcamp.com/album/anem-a-fer-ho-f-cil",
+        "genre:manual"
       ],
       "lastChecked": "2026-10-05T09:47:00.000Z",
       "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canals oficial i Topic verificats a partir de «Tampoc és tan difícil».",
@@ -8541,7 +8708,14 @@
           "wikidataWorkEvidence": []
         }
       },
-      "genresRaw": []
+      "genresRaw": [],
+      "genreReview": {
+        "reviewedAt": "2026-10-13",
+        "method": "source-review",
+        "sources": [
+          "https://elnota.bandcamp.com/album/anem-a-fer-ho-f-cil"
+        ]
+      }
     },
     {
       "name": "El Petit de Cal Eril",
@@ -9063,7 +9237,10 @@
     {
       "name": "Elo",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Pop",
+        "Urbana"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -9087,7 +9264,8 @@
       "active": false,
       "sources": [
         "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026",
-        "youtube:manual-verified"
+        "youtube:manual-verified",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-28T15:55:20.497Z",
       "notes": "Sona9 2026: pop urbà.",
@@ -9108,6 +9286,13 @@
           "status": "sense-dades",
           "wikidataWorkEvidence": []
         }
+      },
+      "genreReview": {
+        "reviewedAt": "2026-10-13",
+        "method": "restored-from-documented-catalog",
+        "sources": [
+          "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026"
+        ]
       }
     },
     {
@@ -9912,7 +10097,10 @@
     {
       "name": "En Rick",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Pop",
+        "Electrònica"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -9936,7 +10124,8 @@
       "active": false,
       "sources": [
         "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026",
-        "youtube:manual-verified"
+        "youtube:manual-verified",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-28T15:55:20.407Z",
       "notes": "Sona9 2026: pop electrònic.",
@@ -9957,6 +10146,13 @@
           "status": "sense-dades",
           "wikidataWorkEvidence": []
         }
+      },
+      "genreReview": {
+        "reviewedAt": "2026-10-13",
+        "method": "restored-from-documented-catalog",
+        "sources": [
+          "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026"
+        ]
       }
     },
     {
@@ -13726,7 +13922,10 @@
     {
       "name": "GUINEU",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Pop",
+        "Indie / Alternativa"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -13758,7 +13957,8 @@
       "sources": [
         "https://icec.gencat.cat/ca/actualitat/noticies/detall/Noticia_PrimaveraPro25",
         "youtube:manual-verified",
-        "manual-user-2026-10-02"
+        "manual-user-2026-10-02",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-28T15:55:18.252Z",
       "notes": "Font oficial la descriu com indie-pop català.",
@@ -13780,6 +13980,13 @@
           "status": "sense-dades",
           "wikidataWorkEvidence": []
         }
+      },
+      "genreReview": {
+        "reviewedAt": "2026-10-13",
+        "method": "restored-from-documented-catalog",
+        "sources": [
+          "https://icec.gencat.cat/ca/actualitat/noticies/detall/Noticia_PrimaveraPro25"
+        ]
       }
     },
     {
@@ -13900,7 +14107,10 @@
     {
       "name": "Herba Negra",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Rap / Hip-hop",
+        "Urbana"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -13973,7 +14183,9 @@
       "active": true,
       "sources": [
         "manual-user-2026-10-05",
-        "youtube:targeted-search-verified"
+        "youtube:targeted-search-verified",
+        "https://www.apuntmedia.es/programes/lestudi/programes/28-08-2018-ona-nua-herba-negra_134_1300187.html",
+        "genre:manual"
       ],
       "lastChecked": "2026-10-05T09:46:00.000Z",
       "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal(s) YouTube verificat(s) amb cerca dirigida.",
@@ -14002,7 +14214,14 @@
           "wikidataWorkEvidence": []
         }
       },
-      "genresRaw": []
+      "genresRaw": [],
+      "genreReview": {
+        "reviewedAt": "2026-10-13",
+        "method": "source-review",
+        "sources": [
+          "https://www.apuntmedia.es/programes/lestudi/programes/28-08-2018-ona-nua-herba-negra_134_1300187.html"
+        ]
+      }
     },
     {
       "name": "Hereus del Beat",
@@ -14139,7 +14358,10 @@
     {
       "name": "Hey Zuri",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Pop",
+        "Rock"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -14163,7 +14385,8 @@
       "active": false,
       "sources": [
         "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026",
-        "youtube:manual-verified"
+        "youtube:manual-verified",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-28T15:55:19.975Z",
       "notes": "Classificat al Sona9 2026 com a pop-rock.",
@@ -14184,6 +14407,13 @@
           "status": "sense-dades",
           "wikidataWorkEvidence": []
         }
+      },
+      "genreReview": {
+        "reviewedAt": "2026-10-13",
+        "method": "restored-from-documented-catalog",
+        "sources": [
+          "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026"
+        ]
       }
     },
     {
@@ -14535,7 +14765,10 @@
     {
       "name": "Ja t'ho diré",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Pop",
+        "Rock"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -14559,7 +14792,9 @@
       "active": false,
       "sources": [
         "manual-user-2026-09-29",
-        "youtube:manual-verified"
+        "youtube:manual-verified",
+        "https://www.enciclopedia.cat/gran-enciclopedia-catalana/ja-tho-dire",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-29T11:23:49.623Z",
       "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
@@ -14580,6 +14815,13 @@
           "status": "sense-dades",
           "wikidataWorkEvidence": []
         }
+      },
+      "genreReview": {
+        "reviewedAt": "2026-10-13",
+        "method": "source-review",
+        "sources": [
+          "https://www.enciclopedia.cat/gran-enciclopedia-catalana/ja-tho-dire"
+        ]
       }
     },
     {
@@ -17092,7 +17334,9 @@
         "Knockout",
         "KnockOut"
       ],
-      "genres": [],
+      "genres": [
+        "Ska / Reggae"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -17115,7 +17359,9 @@
       "active": true,
       "sources": [
         "https://www.youtube.com/channel/UCqA3KzIrZxgA27NEEyVZdrQ",
-        "manual-user-2026-10-03"
+        "manual-user-2026-10-03",
+        "https://www.liquidatormusic.com/tienda/es/ska-actual-lp/11473-knockouts-party.html",
+        "genre:manual"
       ],
       "lastChecked": "2026-10-03T17:12:00.000Z",
       "notes": "Alta manual. Canal mixt: només s'accepten cançons amb «KnockOut»/«knocKouts» al títol; «Citylights» queda exclosa; categoria Ska / Reggae; la imatge visible es pren d'una miniatura d'un vídeo acceptat.",
@@ -17136,6 +17382,13 @@
           "status": "sense-dades",
           "wikidataWorkEvidence": []
         }
+      },
+      "genreReview": {
+        "reviewedAt": "2026-10-13",
+        "method": "source-review",
+        "sources": [
+          "https://www.liquidatormusic.com/tienda/es/ska-actual-lp/11473-knockouts-party.html"
+        ]
       }
     },
     {
@@ -18490,13 +18743,6 @@
             "name": "La iaia - Topic",
             "type": "topic",
             "primary": true
-          },
-          {
-            "id": "UCuH5h0CPXPIccfyvgZgF09w",
-            "handle": null,
-            "name": null,
-            "type": "official",
-            "primary": false
           }
         ]
       },
@@ -18726,7 +18972,10 @@
     {
       "name": "La Mousse",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Pop",
+        "Electrònica"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -18758,7 +19007,8 @@
       "sources": [
         "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026",
         "youtube:manual-verified",
-        "manual-user-2026-10-02"
+        "manual-user-2026-10-02",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-28T15:55:20.173Z",
       "notes": "Classificat al Sona9 2026 com a pop electrònic.",
@@ -18779,6 +19029,13 @@
           "status": "sense-dades",
           "wikidataWorkEvidence": []
         }
+      },
+      "genreReview": {
+        "reviewedAt": "2026-10-13",
+        "method": "restored-from-documented-catalog",
+        "sources": [
+          "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026"
+        ]
       }
     },
     {
@@ -21061,7 +21318,10 @@
     {
       "name": "Mai Halis",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Pop",
+        "Rock"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -21093,7 +21353,8 @@
       "sources": [
         "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026",
         "youtube:manual-verified",
-        "manual-user-2026-10-02"
+        "manual-user-2026-10-02",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-28T15:55:20.258Z",
       "notes": "Classificat al Sona9 2026 com a pop-rock.",
@@ -21114,6 +21375,13 @@
           "status": "sense-dades",
           "wikidataWorkEvidence": []
         }
+      },
+      "genreReview": {
+        "reviewedAt": "2026-10-13",
+        "method": "restored-from-documented-catalog",
+        "sources": [
+          "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026"
+        ]
       }
     },
     {
@@ -21384,7 +21652,8 @@
         "https://escolavalenciana.bandcamp.com/track/taronja",
         "https://escolavalenciana.bandcamp.com/track/somnis",
         "https://www.elritmodelacalle.com/malparlat-sin-pelos-en-la-lengua/",
-        "https://www.enderrock.cat/barcelonasound/disc/9510/sentimantral"
+        "https://www.enderrock.cat/barcelonasound/disc/9510/sentimantral",
+        "genre:manual"
       ],
       "youtube": {
         "channels": [
@@ -21406,7 +21675,9 @@
       },
       "name": "Malparlat",
       "displayName": "Malparlat",
-      "genres": [],
+      "genres": [
+        "Rap / Hip-hop"
+      ],
       "territories": [
         "País Valencià"
       ],
@@ -21435,6 +21706,18 @@
           "status": "sense-dades",
           "wikidataWorkEvidence": []
         }
+      },
+      "genreReview": {
+        "reviewedAt": "2026-10-13",
+        "method": "restored-from-documented-catalog",
+        "sources": [
+          "https://revistamirall.com/2022/06/21/entrevista-amb-malparlat/",
+          "https://ivc.gva.es/val/audiovisual/malparlat-v",
+          "https://escolavalenciana.bandcamp.com/track/taronja",
+          "https://escolavalenciana.bandcamp.com/track/somnis",
+          "https://www.elritmodelacalle.com/malparlat-sin-pelos-en-la-lengua/",
+          "https://www.enderrock.cat/barcelonasound/disc/9510/sentimantral"
+        ]
       }
     },
     {
@@ -21442,7 +21725,10 @@
       "aliases": [
         "Malson Atmosferic"
       ],
-      "genres": [],
+      "genres": [
+        "Rap / Hip-hop",
+        "Urbana"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -21519,7 +21805,9 @@
       "sources": [
         "manual-user-2026-10-05",
         "https://malsonatmosferic.bandcamp.com/",
-        "youtube:targeted-search-verified"
+        "youtube:targeted-search-verified",
+        "https://malsonatmosferic.bandcamp.com/album/carn-de-can-demos",
+        "genre:manual"
       ],
       "lastChecked": "2026-10-05T09:46:00.000Z",
       "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal(s) YouTube verificat(s) amb cerca dirigida.",
@@ -21548,7 +21836,14 @@
           "wikidataWorkEvidence": []
         }
       },
-      "genresRaw": []
+      "genresRaw": [],
+      "genreReview": {
+        "reviewedAt": "2026-10-13",
+        "method": "source-review",
+        "sources": [
+          "https://malsonatmosferic.bandcamp.com/album/carn-de-can-demos"
+        ]
+      }
     },
     {
       "name": "Mama Dousha",
@@ -22088,7 +22383,9 @@
       "aliases": [
         "Marala Trio"
       ],
-      "genres": [],
+      "genres": [
+        "Folk i arrel"
+      ],
       "territories": [
         "Catalunya",
         "Illes Balears",
@@ -22114,7 +22411,8 @@
       "reviewStatus": "aprovat",
       "active": true,
       "sources": [
-        "https://propaganda-pel-fet.cat/index.php/cat/artistes/marala"
+        "https://propaganda-pel-fet.cat/index.php/cat/artistes/marala",
+        "genre:manual"
       ],
       "lastChecked": "2026-10-05T12:57:41.033Z",
       "notes": "Trio de Selma Bruna, Clara Fiol i Sandra Monfort. Evitar l’artista homònima colombiana. Selecció explícita de repertori català; no incloure Canción del Varear. Alta de folk i arrel 2026-10-05; canal verificat i selecció catalana limitada per llista blanca.",
@@ -22135,6 +22433,13 @@
           "status": "sense-dades",
           "wikidataWorkEvidence": []
         }
+      },
+      "genreReview": {
+        "reviewedAt": "2026-10-13",
+        "method": "restored-from-documented-catalog",
+        "sources": [
+          "https://propaganda-pel-fet.cat/index.php/cat/artistes/marala"
+        ]
       }
     },
     {
@@ -23493,7 +23798,9 @@
     {
       "name": "miquel",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Pop"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -23517,7 +23824,8 @@
       "active": false,
       "sources": [
         "https://www.3cat.cat/3cat/catorze-veus-per-entendre-el-futur-del-pop-catala/audio/1244294/",
-        "youtube:manual-verified"
+        "youtube:manual-verified",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-28T15:55:18.614Z",
       "notes": "Inclòs entre les noves veus del pop català.",
@@ -23538,6 +23846,13 @@
           "status": "sense-dades",
           "wikidataWorkEvidence": []
         }
+      },
+      "genreReview": {
+        "reviewedAt": "2026-10-13",
+        "method": "restored-from-documented-catalog",
+        "sources": [
+          "https://www.3cat.cat/3cat/catorze-veus-per-entendre-el-futur-del-pop-catala/audio/1244294/"
+        ]
       }
     },
     {
@@ -24433,7 +24748,10 @@
     {
       "name": "N'Gai N'Gai",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Pop",
+        "Rock"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -24457,7 +24775,9 @@
       "active": false,
       "sources": [
         "manual-user-2026-09-29",
-        "youtube:manual-verified"
+        "youtube:manual-verified",
+        "https://www.enderrock.cat/disc/7879/roll",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-29T11:23:49.878Z",
       "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
@@ -24478,6 +24798,13 @@
           "status": "sense-dades",
           "wikidataWorkEvidence": []
         }
+      },
+      "genreReview": {
+        "reviewedAt": "2026-10-13",
+        "method": "source-review",
+        "sources": [
+          "https://www.enderrock.cat/disc/7879/roll"
+        ]
       }
     },
     {
@@ -25219,7 +25546,9 @@
     {
       "name": "Ocults",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Rock"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -25243,7 +25572,9 @@
       "active": false,
       "sources": [
         "manual-user-2026-09-29",
-        "youtube:manual-verified"
+        "youtube:manual-verified",
+        "https://www.centpercent.cat/moviment-rock-catala-ona-que-passa-damunt/",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-29T11:23:49.943Z",
       "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
@@ -25264,12 +25595,22 @@
           "status": "sense-dades",
           "wikidataWorkEvidence": []
         }
+      },
+      "genreReview": {
+        "reviewedAt": "2026-10-13",
+        "method": "source-review",
+        "sources": [
+          "https://www.centpercent.cat/moviment-rock-catala-ona-que-passa-damunt/"
+        ]
       }
     },
     {
       "name": "okdw",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Pop",
+        "Funk / Soul / R&B"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -25301,7 +25642,8 @@
       "sources": [
         "https://icec.gencat.cat/ca/actualitat/noticies/detall/Noticia_PrimaveraPro25",
         "youtube:manual-verified",
-        "manual-user-2026-10-02"
+        "manual-user-2026-10-02",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-28T15:53:50.745Z",
       "notes": "Font oficial: fusió de R&B, soul i pop en català.",
@@ -25322,6 +25664,13 @@
           "status": "sense-dades",
           "wikidataWorkEvidence": []
         }
+      },
+      "genreReview": {
+        "reviewedAt": "2026-10-13",
+        "method": "restored-from-documented-catalog",
+        "sources": [
+          "https://icec.gencat.cat/ca/actualitat/noticies/detall/Noticia_PrimaveraPro25"
+        ]
       }
     },
     {
@@ -27016,7 +27365,10 @@
     {
       "name": "Paula Montalbán",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Pop",
+        "Indie / Alternativa"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -27048,7 +27400,8 @@
       "sources": [
         "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026",
         "youtube:manual-verified",
-        "manual-user-2026-10-02"
+        "manual-user-2026-10-02",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-28T15:55:19.892Z",
       "notes": "Classificada al Sona9 2026 com a pop alternatiu.",
@@ -27070,6 +27423,13 @@
           "status": "sense-dades",
           "wikidataWorkEvidence": []
         }
+      },
+      "genreReview": {
+        "reviewedAt": "2026-10-13",
+        "method": "restored-from-documented-catalog",
+        "sources": [
+          "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026"
+        ]
       }
     },
     {
@@ -28371,7 +28731,10 @@
       "aliases": [
         "Poor Tramit"
       ],
-      "genres": [],
+      "genres": [
+        "Rap / Hip-hop",
+        "Urbana"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -28446,7 +28809,9 @@
       "sources": [
         "manual-user-2026-10-05",
         "https://www.radiorahim.cat/",
-        "youtube:targeted-search-verified"
+        "youtube:targeted-search-verified",
+        "https://www.radiorahim.cat/artista/poor-tramit/",
+        "genre:manual"
       ],
       "lastChecked": "2026-10-05T09:46:00.000Z",
       "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal(s) YouTube verificat(s) amb cerca dirigida.",
@@ -28475,7 +28840,14 @@
           "wikidataWorkEvidence": []
         }
       },
-      "genresRaw": []
+      "genresRaw": [],
+      "genreReview": {
+        "reviewedAt": "2026-10-13",
+        "method": "source-review",
+        "sources": [
+          "https://www.radiorahim.cat/artista/poor-tramit/"
+        ]
+      }
     },
     {
       "name": "Pulpopop",
@@ -28583,7 +28955,10 @@
       "aliases": [
         "Pupilles"
       ],
-      "genres": [],
+      "genres": [
+        "Rap / Hip-hop",
+        "Urbana"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -28660,7 +29035,9 @@
       "sources": [
         "manual-user-2026-10-05",
         "https://musicaenvalencia.es/artista/90/pupil%C2%B7les",
-        "youtube:targeted-search-verified"
+        "youtube:targeted-search-verified",
+        "https://www.enderrock.cat/noticia/15644/pupilles-tenir-micro-pujar-escenari-guanyar-espai-poder-dona-se-negat",
+        "genre:manual"
       ],
       "lastChecked": "2026-10-05T09:46:00.000Z",
       "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal(s) YouTube verificat(s) amb cerca dirigida.",
@@ -28689,7 +29066,14 @@
           "wikidataWorkEvidence": []
         }
       },
-      "genresRaw": []
+      "genresRaw": [],
+      "genreReview": {
+        "reviewedAt": "2026-10-13",
+        "method": "source-review",
+        "sources": [
+          "https://www.enderrock.cat/noticia/15644/pupilles-tenir-micro-pujar-escenari-guanyar-espai-poder-dona-se-negat"
+        ]
+      }
     },
     {
       "name": "Quart Primera",
@@ -28937,7 +29321,9 @@
       "aliases": [
         "Quico el Célio"
       ],
-      "genres": [],
+      "genres": [
+        "Folk i arrel"
+      ],
       "territories": [
         "Catalunya"
       ],
@@ -29013,7 +29399,8 @@
       "sources": [
         "https://www.quicoelcelio.com/",
         "https://www.youtube.com/channel/UCv_7jwmDsQHYpxisi82fQng",
-        "https://www.youtube.com/channel/UCYcAA6W7ef4ZOWat8JjaARQ"
+        "https://www.youtube.com/channel/UCYcAA6W7ef4ZOWat8JjaARQ",
+        "genre:manual"
       ],
       "lastChecked": "2026-10-05T13:00:17.655Z",
       "notes": "Cançó tradicional de les Terres de l’Ebre. El web oficial apunta al canal compartit TubalEspectacles; preferir un canal propi o Topic verificat. Alta de folk i arrel 2026-10-05; canals contrastats amb la identitat i el repertori del grup; selecció catalana limitada per llista blanca.",
@@ -29042,7 +29429,16 @@
           "wikidataWorkEvidence": []
         }
       },
-      "genresRaw": []
+      "genresRaw": [],
+      "genreReview": {
+        "reviewedAt": "2026-10-13",
+        "method": "restored-from-documented-catalog",
+        "sources": [
+          "https://www.quicoelcelio.com/",
+          "https://www.youtube.com/channel/UCv_7jwmDsQHYpxisi82fQng",
+          "https://www.youtube.com/channel/UCYcAA6W7ef4ZOWat8JjaARQ"
+        ]
+      }
     },
     {
       "name": "Quico Pi de la Serra",
@@ -29178,7 +29574,8 @@
         "https://www.pro21cultural.com/project/quinto/",
         "https://www.enderrock.cat/noticia/28143/quinto-demostra-versatilitat-ep-debut",
         "https://www.enderrock.cat/noticia/30990/quinto-vivim-renaixement-feixisme-mort-cultura-nostre-pais",
-        "https://www.enderrock.cat/noticia/31971/noves-cancons-catala-son-mar-pujol-max-navarro-mazoni-pep-gimeno-botifarra"
+        "https://www.enderrock.cat/noticia/31971/noves-cancons-catala-son-mar-pujol-max-navarro-mazoni-pep-gimeno-botifarra",
+        "genre:manual"
       ],
       "youtube": {
         "channels": [
@@ -29200,7 +29597,11 @@
       },
       "name": "Quinto",
       "displayName": "Quinto",
-      "genres": [],
+      "genres": [
+        "Urbana",
+        "Rap / Hip-hop",
+        "Pop"
+      ],
       "territories": [
         "País Valencià"
       ],
@@ -29229,6 +29630,16 @@
           "status": "sense-dades",
           "wikidataWorkEvidence": []
         }
+      },
+      "genreReview": {
+        "reviewedAt": "2026-10-13",
+        "method": "restored-from-documented-catalog",
+        "sources": [
+          "https://www.pro21cultural.com/project/quinto/",
+          "https://www.enderrock.cat/noticia/28143/quinto-demostra-versatilitat-ep-debut",
+          "https://www.enderrock.cat/noticia/30990/quinto-vivim-renaixement-feixisme-mort-cultura-nostre-pais",
+          "https://www.enderrock.cat/noticia/31971/noves-cancons-catala-son-mar-pujol-max-navarro-mazoni-pep-gimeno-botifarra"
+        ]
       }
     },
     {
@@ -29458,7 +29869,10 @@
     {
       "name": "Rapsodes",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Rap / Hip-hop",
+        "Urbana"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -29536,7 +29950,9 @@
       "active": true,
       "sources": [
         "manual-user-2026-10-05",
-        "youtube:targeted-search-verified"
+        "youtube:targeted-search-verified",
+        "https://www.enderrock.cat/noticia/10613/herba-negra-nova-onada-rap-valencia",
+        "genre:manual"
       ],
       "lastChecked": "2026-10-05T09:46:00.000Z",
       "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal(s) YouTube verificat(s) amb cerca dirigida.",
@@ -29565,7 +29981,14 @@
           "wikidataWorkEvidence": []
         }
       },
-      "genresRaw": []
+      "genresRaw": [],
+      "genreReview": {
+        "reviewedAt": "2026-10-13",
+        "method": "source-review",
+        "sources": [
+          "https://www.enderrock.cat/noticia/10613/herba-negra-nova-onada-rap-valencia"
+        ]
+      }
     },
     {
       "name": "Rapsusklei",
@@ -29873,7 +30296,9 @@
     {
       "name": "Reïna",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Pop"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -29905,7 +30330,8 @@
       "sources": [
         "https://www.3cat.cat/3cat/catorze-veus-per-entendre-el-futur-del-pop-catala/audio/1244294/",
         "youtube:manual-verified",
-        "manual-user-2026-10-02"
+        "manual-user-2026-10-02",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-28T15:55:18.792Z",
       "notes": "Inclòs entre les noves veus del pop català.",
@@ -29926,6 +30352,13 @@
           "status": "sense-dades",
           "wikidataWorkEvidence": []
         }
+      },
+      "genreReview": {
+        "reviewedAt": "2026-10-13",
+        "method": "restored-from-documented-catalog",
+        "sources": [
+          "https://www.3cat.cat/3cat/catorze-veus-per-entendre-el-futur-del-pop-catala/audio/1244294/"
+        ]
       }
     },
     {
@@ -30268,7 +30701,9 @@
       "aliases": [
         "RIU - Música Popular dels PPCC"
       ],
-      "genres": [],
+      "genres": [
+        "Folk i arrel"
+      ],
       "territories": [
         "Catalunya"
       ],
@@ -30310,7 +30745,8 @@
       "active": true,
       "sources": [
         "https://riumusica.bandcamp.com/album/riu",
-        "https://www.youtube.com/channel/UC5Fb0Xo8Xx6gVrFPoVsZluw"
+        "https://www.youtube.com/channel/UC5Fb0Xo8Xx6gVrFPoVsZluw",
+        "genre:manual"
       ],
       "lastChecked": "2026-10-05T13:00:17.655Z",
       "notes": "Música popular dels Països Catalans. Canal històric enllaçat pel grup: https://www.youtube.com/user/RIUmusicaPPCC . Alta de folk i arrel 2026-10-05; canals contrastats amb la identitat i el repertori del grup; selecció catalana limitada per llista blanca.",
@@ -30339,7 +30775,15 @@
           "wikidataWorkEvidence": []
         }
       },
-      "genresRaw": []
+      "genresRaw": [],
+      "genreReview": {
+        "reviewedAt": "2026-10-13",
+        "method": "restored-from-documented-catalog",
+        "sources": [
+          "https://riumusica.bandcamp.com/album/riu",
+          "https://www.youtube.com/channel/UC5Fb0Xo8Xx6gVrFPoVsZluw"
+        ]
+      }
     },
     {
       "name": "Roba Estesa",
@@ -30644,7 +31088,10 @@
     {
       "name": "Roser Dresaire",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Pop",
+        "Cançó d'autor"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -30676,7 +31123,8 @@
       "sources": [
         "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026",
         "youtube:manual-verified",
-        "manual-user-2026-10-02"
+        "manual-user-2026-10-02",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-28T15:55:19.804Z",
       "notes": "Classificada al Sona9 2026 com a pop d'autor.",
@@ -30697,6 +31145,13 @@
           "status": "sense-dades",
           "wikidataWorkEvidence": []
         }
+      },
+      "genreReview": {
+        "reviewedAt": "2026-10-13",
+        "method": "restored-from-documented-catalog",
+        "sources": [
+          "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026"
+        ]
       }
     },
     {
@@ -31364,7 +31819,9 @@
     {
       "name": "Sara Roy",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Pop"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -31396,7 +31853,8 @@
       "sources": [
         "https://www.enderrock.cat/noticia/30487/premis-primera-fila-2025-premien-vintena-artistes-catalans",
         "youtube:manual-verified",
-        "manual-user-2026-10-02"
+        "manual-user-2026-10-02",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-28T15:55:20.799Z",
       "notes": "Premiada dins la gala dedicada a artistes de pop en català.",
@@ -31417,6 +31875,13 @@
           "status": "sense-dades",
           "wikidataWorkEvidence": []
         }
+      },
+      "genreReview": {
+        "reviewedAt": "2026-10-13",
+        "method": "restored-from-documented-catalog",
+        "sources": [
+          "https://www.enderrock.cat/noticia/30487/premis-primera-fila-2025-premien-vintena-artistes-catalans"
+        ]
       }
     },
     {
@@ -31599,7 +32064,9 @@
     {
       "name": "Scotty DK",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Urbana"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -31625,7 +32092,9 @@
         "manual-user-2026-09-29",
         "youtube:manual-verified",
         "manual-user-2026-10-02",
-        "manual-user-2026-10-12"
+        "manual-user-2026-10-12",
+        "https://primerafila.cat/actualitat/novetats/2025/07/markos-i-scotty-dk-sacsegen-lestiu-amb-ximixanga-un-merengue-electronic/",
+        "genre:manual"
       ],
       "lastChecked": "2026-10-11T22:23:00.000Z",
       "notes": "Canal únic indicat per l’editor: UCUlJ_OU8GDvRqHTTzfkqz4A. Origen: Granollers. Substitueix el canal oficial anterior.",
@@ -31647,6 +32116,13 @@
           "status": "sense-dades",
           "wikidataWorkEvidence": []
         }
+      },
+      "genreReview": {
+        "reviewedAt": "2026-10-13",
+        "method": "source-review",
+        "sources": [
+          "https://primerafila.cat/actualitat/novetats/2025/07/markos-i-scotty-dk-sacsegen-lestiu-amb-ximixanga-un-merengue-electronic/"
+        ]
       }
     },
     {
@@ -31990,7 +32466,9 @@
     {
       "name": "Siderland",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Pop"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -32022,7 +32500,8 @@
       "sources": [
         "https://www.3cat.cat/3cat/17072026/video/6415833/",
         "youtube:manual-verified",
-        "manual-user-2026-10-02"
+        "manual-user-2026-10-02",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-28T15:55:19.404Z",
       "notes": "3Cat: el pop català que més balla.",
@@ -32043,6 +32522,13 @@
           "status": "sense-dades",
           "wikidataWorkEvidence": []
         }
+      },
+      "genreReview": {
+        "reviewedAt": "2026-10-13",
+        "method": "restored-from-documented-catalog",
+        "sources": [
+          "https://www.3cat.cat/3cat/17072026/video/6415833/"
+        ]
       }
     },
     {
@@ -32553,7 +33039,11 @@
     {
       "name": "Sodi",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Pop",
+        "Rock",
+        "Indie / Alternativa"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -32585,7 +33075,9 @@
       "sources": [
         "https://www.enderrock.cat/noticia/31101/vine-enderrock-sona-maig-amb-quinto-vittara-sodi-ginesta",
         "youtube:manual-verified",
-        "manual-user-2026-10-02"
+        "manual-user-2026-10-02",
+        "https://www.fim.cat/artistes/sodi/",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-28T15:55:19.594Z",
       "notes": "Guanyador de premis Sona9 2025; debut discogràfic 2026.",
@@ -32606,12 +33098,21 @@
           "status": "sense-dades",
           "wikidataWorkEvidence": []
         }
+      },
+      "genreReview": {
+        "reviewedAt": "2026-10-13",
+        "method": "source-review",
+        "sources": [
+          "https://www.fim.cat/artistes/sodi/"
+        ]
       }
     },
     {
       "name": "Solk",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Folk i arrel"
+      ],
       "territories": [
         "Catalunya",
         "País Valencià"
@@ -32678,7 +33179,8 @@
       "sources": [
         "https://elcom.cat/artistes/solk",
         "https://linktr.ee/solkmusicaivers",
-        "https://www.kasbamusic.com/en/2023/08/divendres-es-publica-absencia-el-primer-single-del-nou-disc-de-solk/"
+        "https://www.kasbamusic.com/en/2023/08/divendres-es-publica-absencia-el-primer-single-del-nou-disc-de-solk/",
+        "genre:manual"
       ],
       "lastChecked": "2026-10-05T13:02:49.851Z",
       "notes": "Grup d’arrel de les Terres de l’Ebre i el Maestrat. Canal enllaçat directament al Linktree del grup. Selecció catalana inicial: Absència, sobre la traducció de Josep Piera del poema d’Abu Bakr el Tortosí. Altres peces pendents d’ampliar amb verificació.",
@@ -32707,7 +33209,16 @@
           "wikidataWorkEvidence": []
         }
       },
-      "genresRaw": []
+      "genresRaw": [],
+      "genreReview": {
+        "reviewedAt": "2026-10-13",
+        "method": "restored-from-documented-catalog",
+        "sources": [
+          "https://elcom.cat/artistes/solk",
+          "https://linktr.ee/solkmusicaivers",
+          "https://www.kasbamusic.com/en/2023/08/divendres-es-publica-absencia-el-primer-single-del-nou-disc-de-solk/"
+        ]
+      }
     },
     {
       "name": "Sopa de Cabra",
@@ -32959,7 +33470,10 @@
       "aliases": [
         "Still ill"
       ],
-      "genres": [],
+      "genres": [
+        "Rap / Hip-hop",
+        "Urbana"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -33029,7 +33543,8 @@
       "sources": [
         "manual-user-2026-10-05",
         "https://guspira.net/ca/still-ill-presenta-nou-disc-en-catala-allo-que-mai-no-mor/",
-        "youtube:targeted-search-verified"
+        "youtube:targeted-search-verified",
+        "genre:manual"
       ],
       "lastChecked": "2026-10-05T09:46:00.000Z",
       "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal(s) YouTube verificat(s) amb cerca dirigida.",
@@ -33058,7 +33573,14 @@
           "wikidataWorkEvidence": []
         }
       },
-      "genresRaw": []
+      "genresRaw": [],
+      "genreReview": {
+        "reviewedAt": "2026-10-13",
+        "method": "source-review",
+        "sources": [
+          "https://guspira.net/ca/still-ill-presenta-nou-disc-en-catala-allo-que-mai-no-mor/"
+        ]
+      }
     },
     {
       "name": "Strombers",
@@ -33221,7 +33743,9 @@
     {
       "name": "Suu",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Pop"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -33245,7 +33769,9 @@
       "active": false,
       "sources": [
         "https://www.enderrock.cat/noticia/30487/premis-primera-fila-2025-premien-vintena-artistes-catalans",
-        "youtube:manual-verified"
+        "youtube:manual-verified",
+        "https://halleyrecords.com/artist/suu/",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-28T15:53:50.745Z",
       "notes": "Premiada el 2025.",
@@ -33266,12 +33792,23 @@
           "status": "sense-dades",
           "wikidataWorkEvidence": []
         }
+      },
+      "genreReview": {
+        "reviewedAt": "2026-10-13",
+        "method": "source-review",
+        "sources": [
+          "https://halleyrecords.com/artist/suu/"
+        ]
       }
     },
     {
       "name": "Svetlana",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Pop",
+        "Electrònica",
+        "Urbana"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -33303,7 +33840,9 @@
       "sources": [
         "https://www.enderrock.cat/noticia/30487/premis-primera-fila-2025-premien-vintena-artistes-catalans",
         "youtube:manual-verified",
-        "manual-user-2026-10-02"
+        "manual-user-2026-10-02",
+        "https://svetlana.cat/",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-28T15:53:50.745Z",
       "notes": "Premiats el 2025 i presents en cartells 2026.",
@@ -33324,12 +33863,21 @@
           "status": "sense-dades",
           "wikidataWorkEvidence": []
         }
+      },
+      "genreReview": {
+        "reviewedAt": "2026-10-13",
+        "method": "source-review",
+        "sources": [
+          "https://svetlana.cat/"
+        ]
       }
     },
     {
       "name": "Tancat per defunció",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Rock"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -33351,7 +33899,9 @@
       "reviewStatus": "aprovat",
       "active": true,
       "sources": [
-        "manual-user-2026-10-05"
+        "manual-user-2026-10-05",
+        "https://www.enderrock.cat/noticia/21177/cancons-cremen-tancat-defuncio",
+        "genre:manual"
       ],
       "lastChecked": "2026-10-05T10:25:00.000Z",
       "notes": "Alta manual a petició de l'usuari (2026-10-05). Canal de YouTube indicat directament per l'usuari.",
@@ -33372,6 +33922,13 @@
           "status": "sense-dades",
           "wikidataWorkEvidence": []
         }
+      },
+      "genreReview": {
+        "reviewedAt": "2026-10-13",
+        "method": "source-review",
+        "sources": [
+          "https://www.enderrock.cat/noticia/21177/cancons-cremen-tancat-defuncio"
+        ]
       }
     },
     {
@@ -33437,7 +33994,8 @@
         "https://tardor.band/",
         "https://www.pro21cultural.com/project/tardor/",
         "https://www.enderrock.cat/noticia/23805/mural-sonor-pais-valencia-canta",
-        "https://www.enderrock.cat/noticia/30622/canco-tardor-es-canta-ara-quatre-llengues-europees-minoritzades"
+        "https://www.enderrock.cat/noticia/30622/canco-tardor-es-canta-ara-quatre-llengues-europees-minoritzades",
+        "genre:manual"
       ],
       "youtube": {
         "channels": [
@@ -33459,7 +34017,10 @@
       },
       "name": "Tardor",
       "displayName": "Tardor",
-      "genres": [],
+      "genres": [
+        "Pop",
+        "Rock"
+      ],
       "territories": [
         "País Valencià"
       ],
@@ -33488,6 +34049,16 @@
           "status": "sense-dades",
           "wikidataWorkEvidence": []
         }
+      },
+      "genreReview": {
+        "reviewedAt": "2026-10-13",
+        "method": "restored-from-documented-catalog",
+        "sources": [
+          "https://tardor.band/",
+          "https://www.pro21cultural.com/project/tardor/",
+          "https://www.enderrock.cat/noticia/23805/mural-sonor-pais-valencia-canta",
+          "https://www.enderrock.cat/noticia/30622/canco-tardor-es-canta-ara-quatre-llengues-europees-minoritzades"
+        ]
       }
     },
     {
@@ -34060,7 +34631,11 @@
     {
       "name": "Tesa",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Rap / Hip-hop",
+        "Urbana",
+        "Folk i arrel"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -34125,7 +34700,9 @@
       "sources": [
         "manual-user-2026-10-05",
         "https://musicaenvalencia.es/artista/102/tesa",
-        "youtube:targeted-search-verified"
+        "youtube:targeted-search-verified",
+        "https://www.discmedi.com/es/hip-hop-rap/hip-hop/rap_darrel",
+        "genre:manual"
       ],
       "lastChecked": "2026-10-05T09:46:00.000Z",
       "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal(s) YouTube verificat(s) amb cerca dirigida.",
@@ -34154,7 +34731,14 @@
           "wikidataWorkEvidence": []
         }
       },
-      "genresRaw": []
+      "genresRaw": [],
+      "genreReview": {
+        "reviewedAt": "2026-10-13",
+        "method": "source-review",
+        "sources": [
+          "https://www.discmedi.com/es/hip-hop-rap/hip-hop/rap_darrel"
+        ]
+      }
     },
     {
       "name": "Thanatopraxy",
@@ -34954,7 +35538,10 @@
     {
       "name": "Tornaveus",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Folk i arrel",
+        "Coral / Vocal"
+      ],
       "territories": [
         "Catalunya"
       ],
@@ -34997,7 +35584,8 @@
       "active": true,
       "sources": [
         "https://tornaveuspolifonies.wordpress.com/",
-        "https://www.youtube.com/channel/UC8vbtHPcQvQEuQi2wcwK6aQ"
+        "https://www.youtube.com/channel/UC8vbtHPcQvQEuQi2wcwK6aQ",
+        "genre:manual"
       ],
       "lastChecked": "2026-10-05T13:00:17.655Z",
       "notes": "Polifonies tradicionals catalanes. No donar per català el repertori litúrgic en llatí. Alta de folk i arrel 2026-10-05; canals contrastats amb la identitat i el repertori del grup; selecció catalana limitada per llista blanca.",
@@ -35026,7 +35614,15 @@
           "wikidataWorkEvidence": []
         }
       },
-      "genresRaw": []
+      "genresRaw": [],
+      "genreReview": {
+        "reviewedAt": "2026-10-13",
+        "method": "restored-from-documented-catalog",
+        "sources": [
+          "https://tornaveuspolifonies.wordpress.com/",
+          "https://www.youtube.com/channel/UC8vbtHPcQvQEuQi2wcwK6aQ"
+        ]
+      }
     },
     {
       "name": "Toti Soler",
@@ -35159,7 +35755,9 @@
       "aliases": [
         "Trèvol grup"
       ],
-      "genres": [],
+      "genres": [
+        "Folk i arrel"
+      ],
       "territories": [
         "Catalunya"
       ],
@@ -35236,7 +35834,8 @@
       "sources": [
         "https://www.enderrock.cat/sons/grupsons2023/22/trevol",
         "https://www.youtube.com/channel/UCz3aiLj85sLBimSrPwNcQcQ",
-        "https://www.youtube.com/channel/UCF6nxIBqp7vuVu51PGC7x5w"
+        "https://www.youtube.com/channel/UCF6nxIBqp7vuVu51PGC7x5w",
+        "genre:manual"
       ],
       "lastChecked": "2026-10-05T13:00:17.655Z",
       "notes": "Folk fusió d’arrel; repertori català, instrumental i d’altres tradicions. Selecció de cançons en català, sense aprovar tot el canal. Alta de folk i arrel 2026-10-05; canals contrastats amb la identitat i el repertori del grup; selecció catalana limitada per llista blanca.",
@@ -35265,7 +35864,16 @@
           "wikidataWorkEvidence": []
         }
       },
-      "genresRaw": []
+      "genresRaw": [],
+      "genreReview": {
+        "reviewedAt": "2026-10-13",
+        "method": "restored-from-documented-catalog",
+        "sources": [
+          "https://www.enderrock.cat/sons/grupsons2023/22/trevol",
+          "https://www.youtube.com/channel/UCz3aiLj85sLBimSrPwNcQcQ",
+          "https://www.youtube.com/channel/UCF6nxIBqp7vuVu51PGC7x5w"
+        ]
+      }
     },
     {
       "name": "Triquell",
@@ -35618,7 +36226,10 @@
     {
       "name": "Umpah-Pah",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Pop",
+        "Rock"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -35642,7 +36253,9 @@
       "active": false,
       "sources": [
         "manual-user-2026-09-29",
-        "youtube:manual-verified"
+        "youtube:manual-verified",
+        "https://bibliotecavirtual.diba.cat/ca/musica/adria-punti",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-29T11:23:50.137Z",
       "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
@@ -35664,6 +36277,13 @@
           "status": "sense-dades",
           "wikidataWorkEvidence": []
         }
+      },
+      "genreReview": {
+        "reviewedAt": "2026-10-13",
+        "method": "source-review",
+        "sources": [
+          "https://bibliotecavirtual.diba.cat/ca/musica/adria-punti"
+        ]
       }
     },
     {
@@ -35725,7 +36345,9 @@
       "aliases": [
         "Urbalia Rurana"
       ],
-      "genres": [],
+      "genres": [
+        "Folk i arrel"
+      ],
       "territories": [
         "País Valencià"
       ],
@@ -35804,7 +36426,8 @@
       "sources": [
         "https://www.monfolk.com/artistes/urbalia-rurana/",
         "https://www.youtube.com/channel/UCSsJFD5CFYZ3fe24qhtsejA",
-        "https://www.youtube.com/channel/UCMIVDQMYttFV6h1aRIeQN-w"
+        "https://www.youtube.com/channel/UCMIVDQMYttFV6h1aRIeQN-w",
+        "genre:manual"
       ],
       "lastChecked": "2026-10-05T13:00:17.655Z",
       "notes": "Folk valencià i mediterrani; comprovar l’idioma de cada peça del repertori mediterrani. Alta de folk i arrel 2026-10-05; canals contrastats amb la identitat i el repertori del grup; selecció catalana limitada per llista blanca.",
@@ -35833,7 +36456,16 @@
           "wikidataWorkEvidence": []
         }
       },
-      "genresRaw": []
+      "genresRaw": [],
+      "genreReview": {
+        "reviewedAt": "2026-10-13",
+        "method": "restored-from-documented-catalog",
+        "sources": [
+          "https://www.monfolk.com/artistes/urbalia-rurana/",
+          "https://www.youtube.com/channel/UCSsJFD5CFYZ3fe24qhtsejA",
+          "https://www.youtube.com/channel/UCMIVDQMYttFV6h1aRIeQN-w"
+        ]
+      }
     },
     {
       "name": "Vademecum FAM",
@@ -35959,7 +36591,10 @@
       "aliases": [
         "Valtonyc"
       ],
-      "genres": [],
+      "genres": [
+        "Rap / Hip-hop",
+        "Urbana"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -36036,7 +36671,9 @@
       "sources": [
         "manual-user-2026-10-05",
         "https://www.radiorahim.cat/",
-        "youtube:targeted-search-verified"
+        "youtube:targeted-search-verified",
+        "https://www.radiorahim.cat/artista/valtonyc/",
+        "genre:manual"
       ],
       "lastChecked": "2026-10-05T09:46:00.000Z",
       "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal(s) YouTube verificat(s) amb cerca dirigida.",
@@ -36065,7 +36702,14 @@
           "wikidataWorkEvidence": []
         }
       },
-      "genresRaw": []
+      "genresRaw": [],
+      "genreReview": {
+        "reviewedAt": "2026-10-13",
+        "method": "source-review",
+        "sources": [
+          "https://www.radiorahim.cat/artista/valtonyc/"
+        ]
+      }
     },
     {
       "name": "Ven'nus",
@@ -36336,7 +36980,10 @@
     {
       "name": "Vinnie Kairos",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Rap / Hip-hop",
+        "Urbana"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -36406,7 +37053,8 @@
       "sources": [
         "manual-user-2026-10-05",
         "https://www.radiorahim.cat/artista/vinnie-kairos/",
-        "youtube:targeted-search-verified"
+        "youtube:targeted-search-verified",
+        "genre:manual"
       ],
       "lastChecked": "2026-10-05T09:46:00.000Z",
       "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal(s) YouTube verificat(s) amb cerca dirigida.",
@@ -36435,12 +37083,22 @@
           "wikidataWorkEvidence": []
         }
       },
-      "genresRaw": []
+      "genresRaw": [],
+      "genreReview": {
+        "reviewedAt": "2026-10-13",
+        "method": "source-review",
+        "sources": [
+          "https://www.radiorahim.cat/artista/vinnie-kairos/"
+        ]
+      }
     },
     {
       "name": "Vittara",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Pop",
+        "Indie / Alternativa"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -36472,7 +37130,8 @@
       "sources": [
         "https://www.enderrock.cat/noticia/31101/vine-enderrock-sona-maig-amb-quinto-vittara-sodi-ginesta",
         "youtube:manual-verified",
-        "manual-user-2026-10-02"
+        "manual-user-2026-10-02",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-28T15:55:19.508Z",
       "notes": "Grup indie-pop barceloní amb disc 2026.",
@@ -36493,12 +37152,23 @@
           "status": "sense-dades",
           "wikidataWorkEvidence": []
         }
+      },
+      "genreReview": {
+        "reviewedAt": "2026-10-13",
+        "method": "restored-from-documented-catalog",
+        "sources": [
+          "https://www.enderrock.cat/noticia/31101/vine-enderrock-sona-maig-amb-quinto-vittara-sodi-ginesta"
+        ]
       }
     },
     {
       "name": "Voltor",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Punk",
+        "Rock",
+        "Ska / Reggae"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -36566,7 +37236,9 @@
       "active": true,
       "sources": [
         "manual-user-2026-10-05",
-        "youtube:targeted-search-verified"
+        "youtube:targeted-search-verified",
+        "https://en.wikipedia.org/wiki/Voltor",
+        "genre:manual"
       ],
       "lastChecked": "2026-10-05T09:46:00.000Z",
       "notes": "Alta manual a petició de l'usuari (2026-10-05). Repertori català verificat; canal(s) YouTube verificat(s) amb cerca dirigida.",
@@ -36595,7 +37267,14 @@
           "wikidataWorkEvidence": []
         }
       },
-      "genresRaw": []
+      "genresRaw": [],
+      "genreReview": {
+        "reviewedAt": "2026-10-13",
+        "method": "source-review",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Voltor"
+        ]
+      }
     },
     {
       "name": "Vrademargk",
@@ -36665,7 +37344,10 @@
     {
       "name": "Whiskyn's",
       "aliases": [],
-      "genres": [],
+      "genres": [
+        "Pop",
+        "Rock"
+      ],
       "territories": [],
       "languages": [
         "ca"
@@ -36689,7 +37371,9 @@
       "active": false,
       "sources": [
         "manual-user-2026-09-29",
-        "youtube:manual-verified"
+        "youtube:manual-verified",
+        "https://25rockcatala.wordpress.com/2016/05/01/whiskyns/",
+        "genre:manual"
       ],
       "lastChecked": "2026-09-29T11:23:50.221Z",
       "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
@@ -36710,6 +37394,13 @@
           "status": "sense-dades",
           "wikidataWorkEvidence": []
         }
+      },
+      "genreReview": {
+        "reviewedAt": "2026-10-13",
+        "method": "source-review",
+        "sources": [
+          "https://25rockcatala.wordpress.com/2016/05/01/whiskyns/"
+        ]
       }
     },
     {
@@ -37381,7 +38072,8 @@
         "https://www.enderrock.cat/edrvalencia/numero10/disc/7696",
         "https://escolavalenciana.bandcamp.com/track/morisc-passat",
         "https://escolavalenciana.bandcamp.com/track/xiomara-abello-ideal",
-        "https://xiomaraabello.bandcamp.com/album/flor-de-xicoia"
+        "https://xiomaraabello.bandcamp.com/album/flor-de-xicoia",
+        "genre:manual"
       ],
       "youtube": {
         "channels": [
@@ -37410,7 +38102,10 @@
       },
       "name": "Xiomara Abello",
       "displayName": "Xiomara Abello",
-      "genres": [],
+      "genres": [
+        "Cançó d'autor",
+        "Folk i arrel"
+      ],
       "territories": [
         "País Valencià"
       ],
@@ -37439,6 +38134,18 @@
           "status": "sense-dades",
           "wikidataWorkEvidence": []
         }
+      },
+      "genreReview": {
+        "reviewedAt": "2026-10-13",
+        "method": "restored-from-documented-catalog",
+        "sources": [
+          "https://www.santamagdalena.es/es/la-cantautora-xiomara-abello-presenta-disco-teles/",
+          "https://musicaenvalencia.es/artista/117/xiomara-abello",
+          "https://www.enderrock.cat/edrvalencia/numero10/disc/7696",
+          "https://escolavalenciana.bandcamp.com/track/morisc-passat",
+          "https://escolavalenciana.bandcamp.com/track/xiomara-abello-ideal",
+          "https://xiomaraabello.bandcamp.com/album/flor-de-xicoia"
+        ]
       }
     },
     {
