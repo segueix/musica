@@ -1,13 +1,16 @@
 {
-  "generatedAt": "2026-10-13T16:57:09.598Z",
+  "generatedAt": "2026-10-13T18:30:59.814Z",
   "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
-  "restrictedVideoCount": 21,
-  "restrictedVideosAdded": [],
+  "restrictedVideoCount": 23,
+  "restrictedVideosAdded": [
+    "AJMmxp2x2Xc",
+    "eozHjuDsjQ8"
+  ],
   "deepPagesFetched": 0,
   "deepChannelCount": 19,
   "topicChannelCount": 338,
-  "governedChannelCount": 119,
+  "governedChannelCount": 121,
   "topicCoverage": [
     {
       "id": "UCqaEtRht2jakBhGFLzS617w",
@@ -242,6 +245,14 @@
       "governs": true
     },
     {
+      "id": "UCGmho2bwHxnwlsIc11CgNpQ",
+      "name": "MALÁNIMA",
+      "songs": 8,
+      "matched": 8,
+      "coverage": 1,
+      "governs": true
+    },
+    {
       "id": "UCZ_RdKPMxRUQv4j3XX8Hsjg",
       "name": "MALIFETA",
       "songs": 18,
@@ -318,6 +329,14 @@
       "name": "Tempestat",
       "songs": 1,
       "matched": 1,
+      "coverage": 1,
+      "governs": true
+    },
+    {
+      "id": "UCxnSSRmXNzweOe_gShnOb_A",
+      "name": "Thatkid",
+      "songs": 31,
+      "matched": 31,
       "coverage": 1,
       "governs": true
     },
@@ -1412,7 +1431,7 @@
   ],
   "topicGovernance": "apply",
   "governedReclassified": {},
-  "topicHiddenCount": 0,
+  "topicHiddenCount": 1,
   "topicChannels": [
     {
       "id": "UClwN1cpIrafSRa8MbOMAvvQ",
@@ -2717,6 +2736,20 @@
       "withClip": 0
     },
     {
+      "id": "UCwQqL8LR87I8bPcFNU5zLFw",
+      "name": "Malánima",
+      "tracks": 8,
+      "selected": 2,
+      "withClip": 8
+    },
+    {
+      "id": "UCZcdiQvGBNZY2Juk3QEovZA",
+      "name": "Malánima",
+      "tracks": 12,
+      "selected": 3,
+      "withClip": 8
+    },
+    {
       "id": "UCoYEPFahaDY_6-VUEOeQ_IA",
       "name": "Malifeta",
       "tracks": 19,
@@ -3473,6 +3506,13 @@
       "withClip": 0
     },
     {
+      "id": "UC5N8pkZTmXd8EDRxqhtrDbg",
+      "name": "ThatKid",
+      "tracks": 165,
+      "selected": 27,
+      "withClip": 29
+    },
+    {
       "id": "UCARSXSWwSje53JsJgzLCtpA",
       "name": "The Anti-Patiks",
       "tracks": 23,
@@ -3733,23 +3773,23 @@
     }
   ],
   "indexedChannelCount": 613,
-  "resolvedChannelCount": 608,
-  "feedChannelCount": 608,
-  "rawPublicVideoCount": 6787,
-  "feedVideoCount": 6264,
-  "acceptedMusicCount": 6223,
-  "categoryEligibleVideoCount": 6219,
+  "resolvedChannelCount": 613,
+  "feedChannelCount": 613,
+  "rawPublicVideoCount": 6824,
+  "feedVideoCount": 6286,
+  "acceptedMusicCount": 6260,
+  "categoryEligibleVideoCount": 6255,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
-    "before": 0,
+    "before": 13,
     "matched": 0,
-    "rejected": 0
+    "rejected": 13
   },
   "contentReviewCount": 529,
   "contentTypeCounts": {
-    "song": 6034,
-    "live_song": 185,
-    "album": 4,
+    "song": 6083,
+    "live_song": 172,
+    "album": 5,
     "other": 35,
     "review": 529
   },
@@ -3757,7 +3797,7 @@
   "channelsWithoutUploads": [],
   "channelsWithoutVideos": [],
   "channelsWithoutAcceptedMusic": [],
-  "allIndexedChannelsVisible": false,
-  "publishedFeedVideoCount": 6216,
+  "allIndexedChannelsVisible": true,
+  "publishedFeedVideoCount": 6268,
   "publishedShortVideoCount": 0
 }
