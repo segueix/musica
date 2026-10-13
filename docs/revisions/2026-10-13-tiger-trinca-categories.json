@@ -1,0 +1,85 @@
+{
+  "reviewedOn": "2026-10-13",
+  "status": "verified",
+  "artists": [
+    {
+      "name": "Tiger Menja Zebra",
+      "canonicalName": "Tiger Menja Zebra",
+      "before": [
+        "Electrònica",
+        "Experimental / Avantguarda"
+      ],
+      "genres": [
+        "Electrònica",
+        "Experimental / Avantguarda"
+      ],
+      "categories": [
+        "Electrònica",
+        "Altres estils"
+      ],
+      "primaryCategory": "Electrònica",
+      "channels": [
+        "UCQMMHfq3-mXuozgrnyx-Gcg"
+      ]
+    },
+    {
+      "name": "La Trinca",
+      "canonicalName": "La Trinca",
+      "before": [],
+      "genres": [
+        "Altres"
+      ],
+      "categories": [
+        "Altres estils"
+      ],
+      "primaryCategory": "Altres estils",
+      "channels": [
+        "UCKpscwdWlVaMqcA81vLI7OA"
+      ]
+    }
+  ],
+  "method": "Assignació editorial explícita. Electrònica principal a Tiger Menja Zebra, conservant els altres gèneres previs; La Trinca exclusivament a Altres estils. Marques manuals persistents.",
+  "youtubeRequests": 0,
+  "unrelatedArtistsPreserved": 466,
+  "recordingsAdded": 0,
+  "recordingsRemoved": 0,
+  "canonicalHash": "11b5adcb46049afd94eff6414ca820a4fa5ed11b8d9afdedee7490b1c5eda4f6",
+  "files": [
+    {
+      "file": "js/channels-ca.json",
+      "matched": 2,
+      "changed": true,
+      "expectedHash": "a4b42e3d298ed8a9a8279102ae2963ee5ecb2c4fcea4e520213ed989cc79d874"
+    },
+    {
+      "file": "data/feed.json",
+      "matched": 23,
+      "changed": true,
+      "expectedHash": "b08ee551ddfa42dccf38ba2a367cdf3578076c1e485bb23cfc7f3cbc3fffc856"
+    },
+    {
+      "file": "data/history-pool.json",
+      "matched": 6,
+      "changed": true,
+      "expectedHash": "91ac9d0b87c9fc14131c4c3ad19541e768a1b604197dbedcf9c3496e71d9f063"
+    },
+    {
+      "file": "data/historial-musical.json",
+      "matched": 0,
+      "changed": false,
+      "expectedHash": "1bb1835ae4426396203a0ac8ebef0d06caee747fa766312f6e354d89c0e44cd4"
+    },
+    {
+      "file": "data/archive/channels/UCKpscwdWlVaMqcA81vLI7OA.json",
+      "matched": 36,
+      "changed": true,
+      "expectedHash": "6fd847da68f301f1224ed73d3ad5d78bc4223c38d30e69ac42b4a23d780582ce"
+    }
+  ],
+  "protectedFiles": {
+    "data/hidden-videos.json": "54634ac24ea174ded78003e12c7549a4ee22e938c1fcb8337176b7409eea9651",
+    "data/music-channel-video-allowlist.json": "0dfd7aeefc60dd88b3ce95c8eddc647e24ba48de88654ca838592ee81aa9b42b",
+    "data/origens-artistes.json": "919f9d8b711076dcf60018757b5d9e284ea4ce9f86c6128b07f06d7e4772afb4"
+  },
+  "verifiedAt": "2026-10-13T12:47:58.757Z"
+}
