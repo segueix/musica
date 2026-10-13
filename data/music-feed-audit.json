@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-13T20:15:05.186Z",
-  "retainedVideoCount": 0,
+  "generatedAt": "2026-10-13T22:19:29.903Z",
+  "retainedVideoCount": 816,
   "unverifiedVideoCount": 0,
   "restrictedVideoCount": 23,
   "restrictedVideosAdded": [],
@@ -770,6 +770,14 @@
       "governs": true
     },
     {
+      "id": "UCJtO_dvu5AOSjtz1cWWpV0Q",
+      "name": "Maria del Mar Bonet",
+      "songs": 19,
+      "matched": 16,
+      "coverage": 0.84,
+      "governs": true
+    },
+    {
       "id": "UCh4gZwRHxIetWXbJnp0XefQ",
       "name": "Dàmaris Gelabert",
       "songs": 23,
@@ -798,14 +806,6 @@
       "name": "Germà Negre",
       "songs": 41,
       "matched": 34,
-      "coverage": 0.83,
-      "governs": true
-    },
-    {
-      "id": "UCJtO_dvu5AOSjtz1cWWpV0Q",
-      "name": "Maria del Mar Bonet",
-      "songs": 18,
-      "matched": 15,
       "coverage": 0.83,
       "governs": true
     },
@@ -1427,8 +1427,11 @@
     }
   ],
   "topicGovernance": "apply",
-  "governedReclassified": {},
-  "topicHiddenCount": 0,
+  "governedReclassified": {
+    "other": 244,
+    "song": 27
+  },
+  "topicHiddenCount": 398,
   "topicChannels": [
     {
       "id": "UClwN1cpIrafSRa8MbOMAvvQ",
@@ -2757,7 +2760,7 @@
       "id": "UCYZ_QLkQxtK8uif-J2Nxmig",
       "name": "MALPARLAT",
       "tracks": 26,
-      "selected": 26,
+      "selected": 24,
       "withClip": 1
     },
     {
@@ -2813,8 +2816,8 @@
       "id": "UCLgDhaK2cT63xw3fKKkU1_g",
       "name": "Maria Del Mar Bonet",
       "tracks": 470,
-      "selected": 35,
-      "withClip": 15
+      "selected": 34,
+      "withClip": 16
     },
     {
       "id": "UC3QJ1xC8aCwQdvTy-HTRwew",
@@ -3513,7 +3516,7 @@
       "id": "UC5N8pkZTmXd8EDRxqhtrDbg",
       "name": "ThatKid",
       "tracks": 165,
-      "selected": 27,
+      "selected": 18,
       "withClip": 29
     },
     {
@@ -3779,29 +3782,67 @@
   "indexedChannelCount": 614,
   "resolvedChannelCount": 614,
   "feedChannelCount": 614,
-  "rawPublicVideoCount": 6856,
-  "feedVideoCount": 6333,
-  "acceptedMusicCount": 6292,
-  "categoryEligibleVideoCount": 6288,
+  "rawPublicVideoCount": 13929,
+  "feedVideoCount": 11906,
+  "acceptedMusicCount": 12274,
+  "categoryEligibleVideoCount": 12169,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
-    "before": 0,
+    "before": 1322,
     "matched": 0,
-    "rejected": 0
+    "rejected": 1322
   },
   "contentReviewCount": 529,
   "contentTypeCounts": {
-    "song": 6116,
-    "live_song": 172,
-    "album": 4,
-    "other": 35,
+    "song": 11747,
+    "live_song": 422,
+    "album": 105,
+    "other": 1126,
     "review": 529
   },
   "unresolvedChannelIds": [],
   "channelsWithoutUploads": [],
-  "channelsWithoutVideos": [],
-  "channelsWithoutAcceptedMusic": [],
+  "channelsWithoutVideos": [
+    "UCETR11eCJC5Z9mitj6MbASw",
+    "UCMj8K97SgGnI9OdJIHBH-Sw",
+    "UCmwGTBibm2bt9oF-P7ECSmQ",
+    "UCOEzuNu9yvO0AFTnSVKk4LQ",
+    "UCRLHVqJybtjS5ODPP5iAv4w",
+    "UCvdm27ITzhd3bsnftrBmFUg",
+    "UCf-q-2ikL2X1ZFd0HSj7Eiw",
+    "UCFI6QGe27kctP5lGeugsrhA",
+    "UC8hpq3EHqyG09og9xy3qOFg",
+    "UCRdGqpbhydDXIl83A9E8-2Q",
+    "UCr8kBnuIa6LPmhZSxbwVs7w",
+    "UCfcp4MZZ3t309KMOLo7JJag",
+    "UC1yaXYiC2Ab3tus3lTDljtw",
+    "UCwYR6Axoc2mEKz89P8t4N5Q",
+    "UCQAWPZGGc_4JqXq53ATaSBQ",
+    "UCHXlSnGKv7tdBxMw2F-FMkw",
+    "UCLKx4vBoCOKwB2x280VFmng",
+    "UCboGC6e3sTTIO9C6lHxifnA",
+    "UCfMqjIyA0G1cVGNlFXXoJhA",
+    "UCYcAA6W7ef4ZOWat8JjaARQ",
+    "UC9i1uNb0GFrISNB2pctkvRg",
+    "UCYPbYGqAXm8gaYGVY-ANVXA",
+    "UC5Fb0Xo8Xx6gVrFPoVsZluw",
+    "UCJ6EMs_13PLDvRSHi-XqRwQ",
+    "UCXa6Mb5QgzYjRV_D1VlYoKQ",
+    "UC7IUL5Ba9dhBVPnTLe9RHhQ",
+    "UCHVIvz-1UD7NLa_FBveiFnw",
+    "UCHWqKBzUJqglcjVIMViPE0A",
+    "UCUsvtjzfis5NZY8qj8BY_FQ",
+    "UCg6lVNl78-THJI1w8dSy0bA"
+  ],
+  "channelsWithoutAcceptedMusic": [
+    "UCUSjRkF72RR1E8Rl4SWtVsQ",
+    "UCQOqsrBqC_4Ibu_MJrBpK_g",
+    "UC5CGdoxqbma-pqkAHPjkq9w",
+    "UC_eW1AyvwaPsQA5YAuOC3YQ",
+    "UC4S5WcSVzMhUd-UwKKpKp5w",
+    "UCdwDeWJ4aJ9RAURZERmWquA"
+  ],
   "allIndexedChannelsVisible": true,
-  "publishedFeedVideoCount": 6281,
+  "publishedFeedVideoCount": 6284,
   "publishedShortVideoCount": 0
 }
