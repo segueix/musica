@@ -13,6 +13,7 @@ on:
       - "data/llancaments-musicals.json"
       - "data/music-channel-video-allowlist.json"
   workflow_run:
+    branches: [main]
     workflows:
       - "Validar base musical"
       - "Cercar canals YouTube"
