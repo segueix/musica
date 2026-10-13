@@ -5,11 +5,19 @@ on:
     paths: ['.github/workflows/supervisio-cataleg-idioma-20261013.yml']
   workflow_dispatch:
 permissions:
-  contents: read
+  contents: write
+  pages: write
+  id-token: write
+concurrency:
+  group: music-data-writer
+  cancel-in-progress: false
 jobs:
-  inventari:
+  publicar:
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v5
         with:
@@ -18,59 +26,83 @@ jobs:
       - uses: actions/setup-node@v5
         with:
           node-version: '20'
-      - name: Inspecciona els enregistraments visibles sense modificar el cataleg
-        env:
-          YOUTUBE_API_KEY_SERVER: ${{ secrets.YOUTUBE_API_KEY_SERVER }}
+          cache: npm
+      - name: Prepara la validacio
         run: |
+          npm ci > /tmp/supervisio-install.log 2>&1
+          node --check scripts/revisions/supervisar_idioma_20261013.js
+      - name: Aplica nomes les decisions documentades
+        run: |
+          node scripts/revisions/supervisar_idioma_20261013.js
+          npm run music:validate
+      - name: Regenera cerca i comparticio sense consultar YouTube
+        run: |
+          npm run search:index:hybrid:rebuild
+          node scripts/generar_pagines_compartir.js
+          node scripts/revisions/supervisar_idioma_20261013.js --verify
+      - name: Prova les exclusions i els casos que cal conservar
+        run: |
+          npx vitest run tests/supervisio-idioma-20261013.test.js tests/animal-idioma.test.js tests/channel-video-allowlist.test.js tests/revisio-idiomes.test.js
+      - name: Compara la suite completa amb la linia base
+        run: |
+          node scripts/revisions/provar_altes_musicals.js > /tmp/supervisio-tests.log 2>&1 || { tail -n 40 /tmp/supervisio-tests.log; exit 1; }
+          tail -n 1 /tmp/supervisio-tests.log
+      - name: Verifica preservacio i compara els diagnostics de codi
+        run: |
+          node scripts/revisions/supervisar_idioma_20261013.js --verify
           node - <<'NODE'
           const fs=require('node:fs');
-          const {execFileSync}=require('node:child_process');
-          const read=f=>JSON.parse(fs.readFileSync(f,'utf8'));
-          (async()=>{
-            const feed=read('data/feed.json');
-            const hidden=new Set(read('data/hidden-videos.json').videoIds);
-            const videos=new Map();
-            for(const file of fs.readdirSync('data/archive/channels').filter(f=>f.endsWith('.json')))
-              for(const v of read('data/archive/channels/'+file).videos || []) videos.set(v.id,v);
-            for(const v of feed.videos) videos.set(v.id,v);
-            const visible=[...videos.values()].filter(v=>!hidden.has(v.id)&&feed.channels[v.channelId]&&['song','live_song'].includes(v.contentType)&&v.isShort!==true);
-            const key=process.env.YOUTUBE_API_KEY_SERVER;
-            if(!key)throw Error('Falta la configuracio de YouTube');
-            const result={checkedAt:new Date().toISOString(),sourceCommit:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),visibleRecordings:visible.length,publishedChannels:Object.keys(feed.channels).length,metadata:[],missing:[],requests:0,complete:false};
-            const output='/tmp/musica-idioma-audit';fs.mkdirSync(output,{recursive:true});
-            for(let offset=0;offset<visible.length;offset+=50){
-              const batch=visible.slice(offset,offset+50);
-              const url=new URL('https://www.googleapis.com/youtube/v3/videos');
-              url.searchParams.set('part','snippet,contentDetails,status');
-              url.searchParams.set('id',batch.map(v=>v.id).join(','));url.searchParams.set('key',key);
-              let response,payload;
-              for(let attempt=0;attempt<3;attempt++){
-                response=await fetch(url,{signal:AbortSignal.timeout(30000)});result.requests++;
-                payload=await response.json();
-                if(response.ok)break;
-                if(response.status<500&&response.status!==429)break;
-                await new Promise(resolve=>setTimeout(resolve,1000*(attempt+1)));
-              }
-              if(!response.ok){result.error='YouTube '+response.status+' '+(payload.error?.errors?.[0]?.reason || 'request failed');break;}
-              const found=new Set();
-              for(const v of payload.items || []){
-                found.add(v.id);
-                const local=videos.get(v.id),channel=feed.channels[local.channelId];
-                result.metadata.push({id:v.id,artist:channel.artists?.join(', ') || channel.name,localChannelId:local.channelId,title:v.snippet.title,channelId:v.snippet.channelId,channelTitle:v.snippet.channelTitle,description:v.snippet.description || '',audioLanguage:v.snippet.defaultAudioLanguage || null,metadataLanguage:v.snippet.defaultLanguage || null,duration:v.contentDetails.duration,embeddable:v.status.embeddable,regionRestriction:v.contentDetails.regionRestriction || null});
-              }
-              result.missing.push(...batch.filter(v=>!found.has(v.id)).map(v=>({id:v.id,title:v.title,channelId:v.channelId})));
-              if(offset%1000===0)console.log('Metadades consultades: '+result.metadata.length+' / '+visible.length);
-            }
-            result.complete=!result.error&&result.metadata.length+result.missing.length===visible.length;
-            fs.writeFileSync(output+'/metadata.json',JSON.stringify(result));
-            fs.writeFileSync(output+'/summary.json',JSON.stringify({...result,metadata:undefined},null,2));
-            console.log(JSON.stringify({visible:visible.length,metadata:result.metadata.length,missing:result.missing.length,requests:result.requests,complete:result.complete,error:result.error}));
-            if(!result.complete)process.exitCode=1;
-          })().catch(error=>{console.error(error.message);process.exitCode=1;});
+          const path=require('node:path');
+          const assert=require('node:assert/strict');
+          const {spawnSync,execFileSync}=require('node:child_process');
+          const root=process.cwd(), baseline='/tmp/musica-abans-altes';
+          function lint(cwd) {
+            const r=spawnSync(process.execPath,[path.join(root,'node_modules/eslint/bin/eslint.js'),'js/**/*.js','--format','json'],{cwd,encoding:'utf8',maxBuffer:8*1024*1024});
+            if(r.error || ![0,1].includes(r.status)) throw Error('No es pot executar ESLint');
+            return JSON.parse(r.stdout).map(f=>({file:path.relative(cwd,f.filePath),errors:f.errorCount,warnings:f.warningCount,messages:f.messages}));
+          }
+          if(!fs.existsSync(baseline)) {
+            execFileSync('git',['worktree','add','--detach',baseline,'HEAD']);
+            fs.symlinkSync(path.join(root,'node_modules'),path.join(baseline,'node_modules'),'dir');
+          }
+          const current=lint(root);
+          assert.deepEqual(current,lint(baseline),'ESLint ha detectat diagnostics nous');
+          const validation=JSON.parse(fs.readFileSync('/tmp/tardor-blat-quinto-validation.json','utf8'));
+          const prefix='docs/revisions/2026-10-13-supervisio-idioma-resultat';
+          const report=JSON.parse(fs.readFileSync(prefix+'.json','utf8'));
+          report.tests={passed:validation.passedTests,preexistingFailures:validation.failedTests,regressions:validation.regressions};
+          report.lint={preexistingErrors:current.reduce((n,f)=>n+f.errors,0),preexistingWarnings:current.reduce((n,f)=>n+f.warnings,0),newDiagnostics:0};
+          report.baselineCommit=execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim();
+          fs.writeFileSync(prefix+'.json',JSON.stringify(report,null,2)+'\n');
+          fs.appendFileSync(prefix+'.md','\nProves: '+report.tests.passed+' superades; '+report.tests.preexistingFailures+' fallades anteriors reproduïdes; '+report.tests.regressions+' regressions. ESLint: cap diagnòstic nou.\n');
+          console.log(JSON.stringify({tests:report.tests,lint:report.lint}));
           NODE
-      - uses: actions/upload-artifact@v4
-        if: always()
+      - name: Publica sense sobreescriure canvis concurrents
+        run: |
+          node scripts/actualitzar_versio_sw.js
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add data/hidden-videos.json data/revisio-idiomes.json data/music-channel-video-allowlist.json data/feed.json data/archive/channels data/history-pool.json data/historial-musical.json data/albums-musica.json data/music-topic-catalog.json data/music-content-audit.json data/music-feed-audit.json data/search_index_*.json docs/revisions/2026-10-13-supervisio-idioma-resultat.json docs/revisions/2026-10-13-supervisio-idioma-resultat.md compartir sw.js
+          git commit -m 'Retira 44 enregistraments sense català com a llengua principal'
+          git pull --rebase origin main
+          git push origin HEAD:main
+      - name: Prepara el lloc estatic
+        run: |
+          mkdir _site
+          git archive HEAD | tar -x -C _site
+          rm -rf _site/.github _site/tests _site/scripts _site/functions _site/docs
+      - uses: actions/upload-pages-artifact@v3
         with:
-          name: supervisio-idioma-metadata
-          path: /tmp/musica-idioma-audit/
+          path: _site
+      - name: Desplega el cataleg revisat
+        id: deployment
+        uses: actions/deploy-pages@v4
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: diagnostic-supervisio-idioma
+          path: |
+            /tmp/supervisio-tests.log
+            /tmp/tardor-blat-quinto-validation.json
+            /tmp/tardor-blat-quinto-tests.json
           retention-days: 1
