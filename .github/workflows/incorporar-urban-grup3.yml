@@ -51,7 +51,8 @@ jobs:
       - name: Verifica publicacio i preservacio
         run: node scripts/revisions/incorporar_urban_grup3.js --verify
       - name: Publica dades validades
-        run: bash scripts/publicar_dades.sh 'data: incorpora grup 3 amb revisio de temes' data js/channels-ca.json compartir docs/revisions/2026-10-13-urban3-alta.json docs/revisions/2026-10-13-urban3-alta.md
+        run: |
+          bash scripts/publicar_dades.sh 'data: incorpora grup 3 amb revisio de temes' data js/channels-ca.json compartir docs/revisions/2026-10-13-urban3-alta.json docs/revisions/2026-10-13-urban3-alta.md
       - uses: actions/upload-artifact@v4
         if: always()
         with:
