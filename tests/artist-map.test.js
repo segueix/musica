@@ -216,9 +216,18 @@ describe('Música d’arreu: mapa dels artistes', () => {
         expect(css).toMatch(/\.artist-map\.is-drawing \.am-svg \{[^}]*touch-action: none/);
     });
 
-    it('parla dels llocs «on es parla en català», no dels Països Catalans', () => {
+    it('es presenta com «Les nostres terres, els nostres músics», no com els Països Catalans', () => {
         const out = feature.html(base, feature.buildModel({ base, catalog, references, groups }));
-        expect(out).toContain('llocs on es parla en català');
+        expect(out).toContain('Les nostres terres, els nostres músics');
         expect(out).not.toContain('Països Catalans');
+    });
+
+    it('en obrir un artista des del mapa, «enrere» hi torna', () => {
+        expect(typeof feature.restoreReturn).toBe('function');
+        const src = readFileSync('js/features/artist-map.js', 'utf8');
+        expect(src).toMatch(/rememberReturn\(\{ push: true \}\);\s*if \(typeof openChannelProfile/);
+        expect(src).toMatch(/mapReturn: true/);
+        expect(app).toMatch(/history\.state\?\.mapReturn && SegueixApp\.state\.mapReturn[\s\S]{0,40}history\.back\(\)/);
+        expect(app).toMatch(/if \(discover\) SegueixApp\.features\.artistMap\?\.restoreReturn\?\.\(\)/);
     });
 });

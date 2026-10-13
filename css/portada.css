@@ -8045,3 +8045,12 @@ body.am-full-open {
 #homePage.is-discover .category-keywords-inline {
     display: none;
 }
+
+/* Mapa: «Les nostres terres, els nostres músics» i el recompte, més discret */
+.am-sub {
+    color: var(--pt-text);
+}
+.am-count {
+    color: var(--pt-muted);
+    white-space: nowrap;
+}
