@@ -480,6 +480,12 @@
             </section>`;
     }
 
+    // «Tots els estils»: una rajola més de la graella, al costat de «Crea una categoria»
+    const ICON_GRID =
+        '<svg viewBox="0 0 24 24" focusable="false"><rect x="4" y="4" width="7" height="7" rx="2" fill="currentColor"/><rect x="13" y="4" width="7" height="7" rx="2" fill="currentColor"/><rect x="4" y="13" width="7" height="7" rx="2" fill="currentColor"/><rect x="13" y="13" width="7" height="7" rx="2" fill="currentColor"/></svg>';
+    const ICON_LESS =
+        '<svg viewBox="0 0 24 24" focusable="false"><path d="m6 15 6-6 6 6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
     function stylesHtml(styles, expanded) {
         if (!styles.length) return '';
         const secondary = styles.filter(style => !style.primary);
@@ -517,19 +523,23 @@
                         .map(style => tile(style, false))
                         .join('')}
                     ${secondary.map(style => tile(style, true)).join('')}
-                    <li class="pt-style-cell pt-style-cell--add">
+                    <li class="pt-style-cell pt-style-cell--add pt-style-cell--actions">
                         <button type="button" class="pt-style pt-style--add" data-uc-create>
                             <span class="pt-style__plus" aria-hidden="true">+</span>
                             <span class="pt-style__label">Crea una categoria</span>
                             <span class="pt-style__count">Els teus grups</span>
                         </button>
+                        ${
+                            secondary.length
+                                ? `<button type="button" class="pt-style pt-style--more" data-pt-all-styles aria-expanded="${expanded}" aria-controls="ptStyles">
+                            <span class="pt-style__plus pt-style__plus--more" aria-hidden="true">${expanded ? ICON_LESS : ICON_GRID}</span>
+                            <span class="pt-style__label">${expanded ? 'Menys estils' : 'Tots els estils'}</span>
+                            <span class="pt-style__count">${expanded ? 'Plega la llista' : `+${secondary.length} estils més`}</span>
+                        </button>`
+                                : ''
+                        }
                     </li>
                 </ul>
-                ${
-                    secondary.length
-                        ? `<button type="button" class="pt-btn pt-btn--ghost pt-styles__toggle" data-pt-all-styles aria-expanded="${expanded}" aria-controls="ptStyles">${expanded ? 'Menys estils' : 'Tots els estils'}</button>`
-                        : ''
-                }
             </section>`;
     }
 

@@ -8080,3 +8080,45 @@ body.am-full-open {
     text-transform: uppercase;
     letter-spacing: 0.04em;
 }
+
+/* ---------- «Tria el teu so»: «Tots els estils» és una rajola, al costat de «Crea una categoria» ----------
+   A l'ordinador les dues rajoles entren a la graella com les altres (display: contents). Al mòbil van juntes en una
+   fila pròpia de dues columnes. «Tots els estils» porta la icona de graella en llima (o la fletxa per plegar). */
+.pt-style-cell--actions {
+    display: contents;
+}
+
+.pt-style--more {
+    justify-content: center;
+    border-color: rgba(214, 237, 132, 0.45);
+    background: var(--pt-surface-2);
+}
+
+.pt-style--more:hover,
+.pt-style--more:focus-visible {
+    border-color: var(--pt-accent);
+    background: var(--pt-surface-3);
+}
+
+.pt-style--more[aria-expanded='true'] {
+    background: transparent;
+}
+
+.pt-style__plus--more {
+    background: var(--pt-accent);
+    color: var(--pt-on-accent);
+}
+
+.pt-style__plus--more svg {
+    width: 16px;
+    height: 16px;
+}
+
+@media (max-width: 768px) {
+    .pt-style-cell--actions {
+        display: grid;
+        grid-column: 1 / -1;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+}
