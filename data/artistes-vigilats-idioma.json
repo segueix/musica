@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-12",
+  "updatedAt": "2026-10-13",
   "criteri": "Només els artistes vigilats passen per revisió de cançons. Confiança editorial del catàleg existent, no verificació individual de lletres. Les altes noves es classifiquen una vegada.",
   "vigilats": [
     {
@@ -1642,6 +1642,72 @@
         "https://www.enderrock.cat/noticia/31971/noves-cancons-catala-son-mar-pujol-max-navarro-mazoni-pep-gimeno-botifarra"
       ],
       "canalCompartit": true
+    },
+    {
+      "artista": "Malparlat",
+      "aliases": [
+        "MALPARLAT",
+        "Alfons Pérez Daràs",
+        "Malparlat",
+        "MALPARLAT - Topic",
+        "MALPARLAT TV"
+      ],
+      "canals": [
+        "UCYZ_QLkQxtK8uif-J2Nxmig",
+        "UCVmppHKiBolLy_N0uKkbWfA"
+      ],
+      "motiu": "Projecte Malparlat: selecció documental en català. Fora els vídeos divulgatius, tallers, promocions i instrumentals duplicats; sis pistes requereixen contrast addicional de llengua. L’etapa El Blüe no es dona per revisada en aquesta alta.",
+      "fonts": [
+        "https://revistamirall.com/2022/06/21/entrevista-amb-malparlat/",
+        "https://ivc.gva.es/val/audiovisual/malparlat-v",
+        "https://escolavalenciana.bandcamp.com/track/taronja",
+        "https://escolavalenciana.bandcamp.com/track/somnis",
+        "https://www.elritmodelacalle.com/malparlat-sin-pelos-en-la-lengua/",
+        "https://www.enderrock.cat/barcelonasound/disc/9510/sentimantral"
+      ]
+    },
+    {
+      "artista": "Xiomara Abello",
+      "aliases": [
+        "Xiomara Abelló",
+        "Xiomara Abello",
+        "Xiomara Abello - Topic"
+      ],
+      "canals": [
+        "UCNwoEDBqOp6F_HmTvp7cjvw",
+        "UCdNEdTr3yqzc6eYUMt6I3KA",
+        "UCvKDCx209GA2OXyoWG449WA"
+      ],
+      "motiu": "Repertori multilingüe: selecció documental limitada als IDs indicats. Ideal i Morisc passat tenen lletra publicada contrastada. No es considera revisada tota la discografia ni es dedueix la llengua només del títol. Les altres pistes i col·laboracions romanen fora de la selecció fins al contrast.",
+      "fonts": [
+        "https://www.santamagdalena.es/es/la-cantautora-xiomara-abello-presenta-disco-teles/",
+        "https://musicaenvalencia.es/artista/117/xiomara-abello",
+        "https://www.enderrock.cat/edrvalencia/numero10/disc/7696",
+        "https://escolavalenciana.bandcamp.com/track/morisc-passat",
+        "https://escolavalenciana.bandcamp.com/track/xiomara-abello-ideal",
+        "https://xiomaraabello.bandcamp.com/album/flor-de-xicoia"
+      ]
+    },
+    {
+      "artista": "Esther",
+      "aliases": [
+        "ESTHER",
+        "Esther Querol",
+        "Esther Querol Forner",
+        "ESTHER - Topic"
+      ],
+      "canals": [
+        "UCouw5jG-XQKAuUA4FHGDwGw",
+        "UCS52L7FhuL9P1ZvXxDJwv4g",
+        "UCrJr-rEu-grrBNj0TfWUEmA"
+      ],
+      "motiu": "Dos canals Tema de la mateixa Esther Querol Forner, agrupats amb el canal oficial. Fora Wish You Were Here, resums, promocions i trobades. Selecció documental dels discos en català i de la versió Si tanque els ulls.",
+      "fonts": [
+        "https://www.diarilaveu.cat/cultura/esther-sobre-el-nou-disc-crec-que-es-emocional-autentic-i-caotic-585090/",
+        "https://www.valencianmusicoffice.com/artist/ec810b9f-fd21-4b3a-ad2d-8789fcbf898c",
+        "https://www.enderrock.cat/noticia/25374/esther-soc-nena-trista-pero-done-llum-esperanca-amb-cancons",
+        "https://www.youtube.com/watch?v=oIJBi4dBwJk"
+      ]
     }
   ],
   "confianca": [

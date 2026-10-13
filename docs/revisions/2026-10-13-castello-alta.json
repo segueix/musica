@@ -1,0 +1,1095 @@
+{
+  "schemaVersion": 1,
+  "reviewedOn": "2026-10-13",
+  "generatedAt": "2026-10-13T06:03:32.382Z",
+  "method": "Selecció documental de repertori; identitat pels canals, crèdits i edicions. No s’ha fet escolta íntegra ni verificació integral de totes les lletres. Les comprovacions de lletra completa s’identifiquen separadament. Llistes tancades per ID.",
+  "artists": [
+    {
+      "name": "Malparlat",
+      "canonicalName": "Malparlat",
+      "place": "Nules",
+      "relation": "origin",
+      "genres": [
+        "Rap / Hip-hop"
+      ],
+      "sources": [
+        "https://revistamirall.com/2022/06/21/entrevista-amb-malparlat/",
+        "https://ivc.gva.es/val/audiovisual/malparlat-v",
+        "https://escolavalenciana.bandcamp.com/track/taronja",
+        "https://escolavalenciana.bandcamp.com/track/somnis",
+        "https://www.elritmodelacalle.com/malparlat-sin-pelos-en-la-lengua/",
+        "https://www.enderrock.cat/barcelonasound/disc/9510/sentimantral"
+      ],
+      "note": "Projecte Malparlat: selecció documental en català. Fora els vídeos divulgatius, tallers, promocions i instrumentals duplicats; sis pistes requereixen contrast addicional de llengua. L’etapa El Blüe no es dona per revisada en aquesta alta.",
+      "channels": [
+        {
+          "id": "UCYZ_QLkQxtK8uif-J2Nxmig",
+          "type": "topic",
+          "primary": true,
+          "allowedVideoIds": [
+            "8HDKh2HNk3Q",
+            "mo-xPajzut8",
+            "WdCcWX-isTM",
+            "FH7vXyOsMbE",
+            "PbEFX0zHHww",
+            "gOmrUSJdf7E",
+            "ksnCW-Yji38",
+            "x9RpPlgHV9I",
+            "aW6RtMaWp-Q",
+            "hplj96dDFe0",
+            "C984CCphKIU",
+            "EmX0c-HnPWE",
+            "HjnUlQ3vvGw",
+            "HqhsEpLVWps",
+            "Jzr7cxHHSDc",
+            "LfmGFp43wjg",
+            "MC3lHIEkIcg",
+            "VzatLIqtHms",
+            "WV9ePfQye3w",
+            "ZB1hnxTL8dE",
+            "ZXM9XJ9lzmI",
+            "iE5iMufoPWQ",
+            "z8PDJT7M70A",
+            "zJ6dZpfaBvE",
+            "AtQC1mO7hCw",
+            "IchaQqDV3LY"
+          ],
+          "selected": 26,
+          "publication": {
+            "hot": 12,
+            "archive": 14,
+            "recordings": 26
+          }
+        },
+        {
+          "id": "UCVmppHKiBolLy_N0uKkbWfA",
+          "type": "official",
+          "primary": false,
+          "allowedVideoIds": [
+            "WAgo9paQZ8M",
+            "AfhBzkHVAWg",
+            "WP08ct1SgZE",
+            "Z--_tLryeUo",
+            "OGioJA_Rkuw",
+            "N0vlG9NQkYI",
+            "duh9xZjdx1Y",
+            "JxqHTBR-lx8",
+            "mL3bA4OD5-w"
+          ],
+          "selected": 9,
+          "publication": {
+            "hot": 9,
+            "archive": 0,
+            "recordings": 9
+          }
+        }
+      ],
+      "notSelected": [
+        {
+          "id": "IZS2sreJdBo",
+          "title": "Cançó de la caçadora (instrumental)",
+          "channelId": "UCYZ_QLkQxtK8uif-J2Nxmig",
+          "reason": "Base instrumental alternativa a la versió vocal ja considerada."
+        },
+        {
+          "id": "3nGMDioE02w",
+          "title": "La Cort de la Quarantamaula (instrumental)",
+          "channelId": "UCYZ_QLkQxtK8uif-J2Nxmig",
+          "reason": "Base instrumental alternativa a la versió vocal ja considerada."
+        },
+        {
+          "id": "coGXXmh2UvI",
+          "title": "Nit de bruixes (instrumental)",
+          "channelId": "UCYZ_QLkQxtK8uif-J2Nxmig",
+          "reason": "Base instrumental alternativa a la versió vocal ja considerada."
+        },
+        {
+          "id": "OSrMHTreCfc",
+          "title": "No changes",
+          "channelId": "UCYZ_QLkQxtK8uif-J2Nxmig",
+          "reason": "Llengua pendent de contrast addicional; no s’afirma que sigui en una altra llengua."
+        },
+        {
+          "id": "qgD4vktStsM",
+          "title": "Imperfeccions",
+          "channelId": "UCYZ_QLkQxtK8uif-J2Nxmig",
+          "reason": "Llengua pendent de contrast addicional; no s’afirma que sigui en una altra llengua."
+        },
+        {
+          "id": "OI9B97mEA7k",
+          "title": "Kanbghik",
+          "channelId": "UCYZ_QLkQxtK8uif-J2Nxmig",
+          "reason": "Llengua pendent de contrast addicional; no s’afirma que sigui en una altra llengua."
+        },
+        {
+          "id": "bFltlLiuhbw",
+          "title": "Ma Mare Em Busca Nóvia",
+          "channelId": "UCYZ_QLkQxtK8uif-J2Nxmig",
+          "reason": "Llengua pendent de contrast addicional; no s’afirma que sigui en una altra llengua."
+        },
+        {
+          "id": "gRQT-p0Gvlc",
+          "title": "Plou",
+          "channelId": "UCYZ_QLkQxtK8uif-J2Nxmig",
+          "reason": "Llengua pendent de contrast addicional; no s’afirma que sigui en una altra llengua."
+        },
+        {
+          "id": "uUdK1xi6A_Q",
+          "title": "De Monstres i Homes",
+          "channelId": "UCYZ_QLkQxtK8uif-J2Nxmig",
+          "reason": "Llengua pendent de contrast addicional; no s’afirma que sigui en una altra llengua."
+        },
+        {
+          "id": "4SqPnuVYC5U",
+          "title": "AL-AZRAQ @ EL BLAU @ el malson de Jaume I",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "sItNXEWKfrY",
+          "title": "ESPANTACRIATURES @ L'origen dels monstres valencians",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "1_7OURD6Fu0",
+          "title": "IUNSTIR @ La Deessa Mare ibèrica",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "yMdgSKEyw38",
+          "title": "EL REI LLOP @ Muhammad Ibn Mardanis",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "Tvm1Y44dCSY",
+          "title": "MARIOLA @ Els fets darrere de la llegenda que va donar nom a la serra",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "PH3TndtDjVM",
+          "title": "KAUKOR @ El DÉU guerrer i llaurador edetà @ patrimoni valencià",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "4dZBFHzEAks",
+          "title": "IBERICO EUSKERA @ Fonaments de la teoria bascoiberista i si té fonaments o no...",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "qwWbFRdGt2c",
+          "title": "LA MORT IBERA @ la cultura funerària ibèrica i el que hem heretat",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "cF45aDVbfwU",
+          "title": "SAMHAIN o BELIWEN @ Què celebrarien els ibers?",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "kzmBa7Dm2tw",
+          "title": "LA MOMA @ El ball valencià que lliga amb l'antiga ISHTAR",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "D96bQqodKbI",
+          "title": "L'AIGUA I VALÈNCIA @ La relació dels valencians amb l'aigua",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "XfKlTzLwBtE",
+          "title": "BALANSIYA @ La València islàmica, el JARDÍ més gran de la península",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "EhYemA5l6LY",
+          "title": "VALENTIA EDETANÖRUM @ La València romana, la nostra gènesi👇🏻👇🏻👇🏻",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "Wgl1GQFT4EQ",
+          "title": "TYRIS @ La València ibèrica? Va existir...?",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "QQvii3qe3DM",
+          "title": "IBERS... BERBERS? @ el contacte amb els pobles nord-africans",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "tr6lndEABSg",
+          "title": "LLENGUA IBERA @ nivell bàsic",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "z5iWmSdPXTk",
+          "title": "ILERCAVÒNIA @ El regne que brolla com un arbre al voltant de L'EBRE i el misteri de TYRYKA",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "eoWNaHbIeBk",
+          "title": "CIUTATS PERDUDES D'EDETÀNIA @ Ciutats sense nom, perdudes en la història",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "orVZmT8R-sc",
+          "title": "CONTESTÀNIA @ El regne iber de la falcata i els grans monuments",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "4Pb2uaou0I4",
+          "title": "AITANA @ L'origen del NOM més VALENCIÀ",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "xJU3W5R0FBA",
+          "title": "EDETÀNIA @ El regne iber de la ceràmica i les grans Ciutats Estat",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "XIDxGjHOY1Y",
+          "title": "Angloma & Carboni @ DVICI feat MALPARLAT",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "hoF3aajuThI",
+          "title": "PREMI OVIDI 🏆 REACCIÓ amb CABRAFOTUDA i SIMMER VALENCIANA 📺 XXXVé Curs Sociolingüística La Nucia",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "B7IcVCGyT8o",
+          "title": "Creació de Contingut 🧐 Polèmica 🤔 Reflexió",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "LgXqxYZXkLc",
+          "title": "Making of 'Espantacriatures' @ MALPARLAT #Sentimantral 4K",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "7bHKYA3taRI",
+          "title": "EMPATIA 💫 Rap & Educació Emocional 🤬 MALPARLAT #VideoTaller",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "ZUFyEcagNjQ",
+          "title": "El RAP & el VALENCIÀ ⚡ Punts en comú 🤬 Història #Malparlat #CreaEnValencià",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "nfaeFoLAfHg",
+          "title": "És el Rap... Poesia? 🎤 MALPARLAT 🤬 amb les #Valençubers #SantJordi #25Abril",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "llLn5EhSXMg",
+          "title": "Etiquetes, estereotips i... Música Urbana 🤬 MALPARLAT #Valençubers",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "A7eKjO9ig8U",
+          "title": "📞 PREGUNTES Malparlades 🤬 Vol. 1 | Alfons Respon 🍊 #valençubers",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "3vvPfD3jdI8",
+          "title": "Quan fer ART és un RISC 🎨 Gestió del HATE 🤬 MALPARLAT TV #Valençuber",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "KHtE_SKuvEE",
+          "title": "MALPARLAT 💜 El monstre de l'armari | amb Aitana Ferrer | DOCUMENTAL #NoÉsNo (Àudio en directe)",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "wPLU3pbbwaU",
+          "title": "Inanna ⚡ EXPLICACIÓ | Influències i inspiració 🤓 Vídeo documental",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "5mtzFRvoXtc",
+          "title": "La importància del DOBLATGE VALENCIÀ 🎙️ MALPARLAT TV ⚡",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "puReL61qa4k",
+          "title": "1000 SUBS! 💙 CONCERTS post-confinament? 🎶 FIDEUÀ de RAP en VALENCIÀ 🥘 GRÀCIES 🤜🤛 Malparlat 🤬",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Durada no corresponent a una cançó individual seleccionada."
+        },
+        {
+          "id": "81GWTYRhthw",
+          "title": "MALPARLAT 🤬 Bruno Soriano 2020 ⚽ Mare, vull tornar a jugar al futbol Part II + MAKING OF 📽️",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "xdZvoIUSTWI",
+          "title": "Àlbums HIPHOP dels 80 📀💿 IMPRESCINDIBLES #TallerDeRap 🎤 ep. 7 MALPARLAT TV #Dècades #SempreTeuaACasa",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "RQNX0lLVLTw",
+          "title": "Taller de RAP 🎤 EP  6 HIPHOP als mitjans 🎥 MALPARLAT TV #SempreTeuaACasa",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "UvRYvbbDJ_Q",
+          "title": "Kanbghik 🌘 MALPARLAT & Elena Serrano 🤬 Videoclip / Videolyric #PoèticamentIncorrecte",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "-y7GfM27bA0",
+          "title": "TALLER DE RAP 🎤 Ep. 5 Una breu classe d'història 🤬 MALPARLAT TV #SempreTeuaACasa #JoAprencACasa",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "202xSK6IP2I",
+          "title": "2/2 ESPECIAL SANT JORDI 🐲 Top comics 📚 MALPARLAT TV",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "hdY_QCdiA_g",
+          "title": "1/2 🐲 ESPECIAL SANT JORDI 📚 Top20 comics significatius (per a mi!!) i poc reconeguts 🤓 PRIMERA PART",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "nsKeY_VWxIs",
+          "title": "Taller de RAP 🎤 EP. 4 2Pac VS Notorious B.I.G. + La memòria 🤬 MALPARLAT #SempreTeuaACasa",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "ELlrc6wtDGM",
+          "title": "Taller de RAP 🎤 Ep. 3 Producció musical i CÓM RAPEJAR! 🤬 MALPARLAT #JoAprencACasa #SempreTeuaACasa",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "wPLPBsHDnHU",
+          "title": "Taller de RAP 🎤 Ep. 2 El DJ i cóm escriure una cançó 🤬 MALPARLAT #JoAprencACasa #SempreTeuaACasa",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "vM9cjJ8hQns",
+          "title": "Taller de RAP 🎤 EP. 1 Introducció 🤬 MALPARLAT #JoAprencACasa #SempreTeuaACasa",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "jxHhKH7_sbs",
+          "title": "HEROIS EN CONFINAMENT ✌️😎 Malparlat TV #COVID19 #PositivismeValentuber",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "Nht-uUcIBlM",
+          "title": "DIA DEL PARE 🧔🏻 especial #COVID19 #QuedatACasa",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "BIIsaIIApuI",
+          "title": "APOCALIPSIS ZOMBIS 🧟‍♂️🧟‍♀️ especial #COVID19 #CoronaVirus #QuedateEnCasa",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "3rxHbkBJSZA",
+          "title": "ALFONS - I diu aixina @ RAP EN VALENCIÀ 2018 | EL BLÜE",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "yhUnfG49eaQ",
+          "title": "RAP DE LA PAELLA 🥘 À Punt / Family Duo /Alfons El Blüe",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "FQP-Wj2Bql8",
+          "title": "\"TE INVITO A MIRAR\" - Campeonato Valencia/España/Europa Vídeo-Submarino - EL BLÜE / CRESSI",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "OEQCC-S63Is",
+          "title": "EL BLÜE - CASTELLÓ (DUS-ME AMB TÚ...)",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "-xfFny7y45E",
+          "title": "EL BLÜE - A la Lluna - DOCUMENTAL - Hip Hop + Dolçaina + Entrevista",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "-EKjPfMcrwI",
+          "title": "EL BLÜE  - Vos Sent Prop #SomRiure EP HD",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "Vy3F7cM7GJ0",
+          "title": "EL BLÜE - PERDONA'M, MARE #SomRiure EP avançament adelanto",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "c4iSowsLJK0",
+          "title": "#JUNTSHEMPUJAT ASCENS ARTANA C F  14 15 ALFONS EL BLÜE",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "CjZ5snwW5PE",
+          "title": "Rita VS Mònica Oltra | Èpiques Batalles Rap dels Valencians | El Blüe",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "9IvwMOt-rFg",
+          "title": "EL BLÜE - Gangstelló @ Magdalena2015",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "53HwanNuMu8",
+          "title": "SHIN CHAN li demana a Misae el nou disc del Blüe #EfectePapallona (en valencià, Canal 9)",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "H3vYpKL0oBo",
+          "title": "Alfons - Insomni @ Inèdits EL BLÜE",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "681HQW43jrY",
+          "title": "Bruno Soriano | El Blüe @ Cançó / Homenatge",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "cndxbnhf4YU",
+          "title": "ATLANTIS @ El Blüe & Manu de MALNOM | Videoclip | Meloncia Films",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "NwztgbY1qD4",
+          "title": "EL BLÜE feat PAU ALABAJOS - Acció i Reacció VIDEOCLIP #EfectePapallona",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "sDYtrkAO5Qg",
+          "title": "VIDEOCLIP El Blüe - David VS Goliath feat Halberto el Cheff de EL LÍMITE #EfectePapallona",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "YKtrS9NE2rc",
+          "title": "Especial Guanyadors Rockpenat 2013 @ El Blüe",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "4kd4KYgC_-0",
+          "title": "VIDEOCLIP EL BLÜE - SILENCI (RAP EN VALENCIÀ 2012)",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "ssfKnFw39bY",
+          "title": "Promo - Silenci Videoclip",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "CM_bwafzJAw",
+          "title": "El Blüe, Paupa Man, Gosp, C'nsenom, Jezie, Putu Nota, Meser, Chispa, Maldecap, Ark - Silenci",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "cXvXG7r9dpQ",
+          "title": "El Blüe - Red Bull Tour Bus 2012 UJI",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "sHJf7s804WE",
+          "title": "Malcriat Records (Q-Ro Banton, Bololo, Maldecap) feat. Blüe (UNDERGROUND VALENCIÀ) Prod. Malcriat",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "pKu0lBqdO_o",
+          "title": "El Blüe - Silenci (Rap en Valencià 2012)",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "eqFpFweTfeI",
+          "title": "EL BLÜE - Primavera Valenciana (DnB Remix) LIVE (DJ SINIC, CIVUE, KAOS)",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "GOBXyAVb304",
+          "title": "VIDEOCLIP El Blüe - B.L.Ü.E. 2011 Rap en valencià",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "TxxandRe3Ag",
+          "title": "EL BLÜE - Alfons Pérez (QUI VA MATAR A ALFONS PÉREZ?) RAP EN VALENCIÀ",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "O3FZfSNoZ9Y",
+          "title": "EL BLÜE - Blau cel (QUI VA MATAR A ALFONS PÉREZ?) RAP EN VALENCIÀ",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "_Orv86Wib4U",
+          "title": "EL BLÜE -  19 (QUI VA MATAR A ALFONS PÉREZ?) RAP EN VALENCIÀ",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "udXqePzLLxY",
+          "title": "EL BLÜE - Bang Bang! (QUI VA MATAR A ALFONS PÉREZ?) RAP EN VALENCIÀ",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "jHnHfp49TZQ",
+          "title": "EL BLÜE - Reina de la nit feat Hipno, Ark, Kaos, Chispa & Azid",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "jm8c8KR2rBg",
+          "title": "EL BLÜE - Guerrer de l'espai (QUI VA MATAR A ALFONS PÉREZ?) RAP EN VALENCIÀ",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "p2-ep_tmpX0",
+          "title": "EL BLÜE - El més way (QUI VA MATAR A ALFONS PÉREZ?) RAP EN VALENCIÀ",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "YmPbTwhIK74",
+          "title": "EL BLÜE - Fletxes de Cupido feat Ainoa Ferrer de Tirant lo Rock (RAP EN VALENCIÀ)",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "cjIhWRcsNiE",
+          "title": "EL BLÜE -  Zoocietat feat Dj Xenivax (QUI VA MATAR A ALFONS PÉREZ?) RAP EN VALENCIÀ",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "ugcOaGqmiZs",
+          "title": "EL BLÜE - B.L.Ü.E. (QUI VA MATAR A ALFONS PÉREZ?) RAP EN VALENCIÀ",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "Xym1LFd1dtA",
+          "title": "LES FORCES DE LA NATURA (2011) - EL BLÜE & ARK",
+          "channelId": "UCVmppHKiBolLy_N0uKkbWfA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        }
+      ],
+      "recordingsPublished": 35
+    },
+    {
+      "name": "Xiomara Abello",
+      "canonicalName": "Xiomara Abello",
+      "place": "Santa Magdalena de Polpís",
+      "relation": "associated",
+      "genres": [
+        "Cançó d'autor",
+        "Folk i arrel"
+      ],
+      "sources": [
+        "https://www.santamagdalena.es/es/la-cantautora-xiomara-abello-presenta-disco-teles/",
+        "https://musicaenvalencia.es/artista/117/xiomara-abello",
+        "https://www.enderrock.cat/edrvalencia/numero10/disc/7696",
+        "https://escolavalenciana.bandcamp.com/track/morisc-passat",
+        "https://escolavalenciana.bandcamp.com/track/xiomara-abello-ideal",
+        "https://xiomaraabello.bandcamp.com/album/flor-de-xicoia"
+      ],
+      "note": "Repertori multilingüe: selecció documental limitada als IDs indicats. Ideal i Morisc passat tenen lletra publicada contrastada. No es considera revisada tota la discografia ni es dedueix la llengua només del títol. Les altres pistes i col·laboracions romanen fora de la selecció fins al contrast.",
+      "channels": [
+        {
+          "id": "UCNwoEDBqOp6F_HmTvp7cjvw",
+          "type": "topic",
+          "primary": true,
+          "allowedVideoIds": [
+            "x_yRv3w6gqs",
+            "RycTQsLX8Jg",
+            "eaOJRj4OrC0",
+            "o3-M0ZEOagk",
+            "0niVsLxSDNU",
+            "3t9glRDYxQQ",
+            "KQdR2-Et9q8",
+            "-o1RLtATx4k",
+            "4vUpsSTO2fY",
+            "A6bzi2X2k3U"
+          ],
+          "selected": 10,
+          "publication": {
+            "hot": 10,
+            "archive": 0,
+            "recordings": 10
+          }
+        },
+        {
+          "id": "UCdNEdTr3yqzc6eYUMt6I3KA",
+          "type": "topic",
+          "primary": false,
+          "allowedVideoIds": [
+            "ymo4oItxods",
+            "EZ2ppa6IBe4",
+            "LmpYR8pCCrA"
+          ],
+          "selected": 3,
+          "publication": {
+            "hot": 3,
+            "archive": 0,
+            "recordings": 3
+          }
+        },
+        {
+          "id": "UCvKDCx209GA2OXyoWG449WA",
+          "type": "official",
+          "primary": false,
+          "allowedVideoIds": [
+            "B0GedhS3zzQ",
+            "NIIMsDNNNLU",
+            "S7XFLel8BfE",
+            "6ZoN_Uu0uCs",
+            "QkPN0hRHYbo",
+            "HqiiLJ8OaIg"
+          ],
+          "selected": 6,
+          "publication": {
+            "hot": 6,
+            "archive": 0,
+            "recordings": 6
+          }
+        }
+      ],
+      "notSelected": [
+        {
+          "id": "lOh6RRBuLwY",
+          "title": "Nit Aventurera (feat. Alberto Alcalá)",
+          "channelId": "UCNwoEDBqOp6F_HmTvp7cjvw",
+          "reason": "Pista fora de la selecció catalana documentada; pendent de contrast individual."
+        },
+        {
+          "id": "2lktPv_tQFw",
+          "title": "Amorrua (feat. Hutsun)",
+          "channelId": "UCNwoEDBqOp6F_HmTvp7cjvw",
+          "reason": "Pista fora de la selecció catalana documentada; pendent de contrast individual."
+        },
+        {
+          "id": "skxYplfQhFI",
+          "title": "Dia de Neteja (feat. Ángela Furquet)",
+          "channelId": "UCNwoEDBqOp6F_HmTvp7cjvw",
+          "reason": "Pista fora de la selecció catalana documentada; pendent de contrast individual."
+        },
+        {
+          "id": "yz8AjZN3RcY",
+          "title": "Soltar",
+          "channelId": "UCdNEdTr3yqzc6eYUMt6I3KA",
+          "reason": "Pista fora de la selecció catalana documentada; pendent de contrast individual."
+        },
+        {
+          "id": "zNR643N5fbA",
+          "title": "Orfeu",
+          "channelId": "UCdNEdTr3yqzc6eYUMt6I3KA",
+          "reason": "Pista fora de la selecció catalana documentada; pendent de contrast individual."
+        },
+        {
+          "id": "fiIegnvs5gA",
+          "title": "Cicle",
+          "channelId": "UCdNEdTr3yqzc6eYUMt6I3KA",
+          "reason": "Pista fora de la selecció catalana documentada; pendent de contrast individual."
+        },
+        {
+          "id": "wKB1lPo6sNE",
+          "title": "Versos en Pago",
+          "channelId": "UCdNEdTr3yqzc6eYUMt6I3KA",
+          "reason": "Pista fora de la selecció catalana documentada; pendent de contrast individual."
+        },
+        {
+          "id": "rCOry67Aahs",
+          "title": "Entramado",
+          "channelId": "UCdNEdTr3yqzc6eYUMt6I3KA",
+          "reason": "Pista fora de la selecció catalana documentada; pendent de contrast individual."
+        },
+        {
+          "id": "V2MaGJaCOlg",
+          "title": "Aceituneros",
+          "channelId": "UCdNEdTr3yqzc6eYUMt6I3KA",
+          "reason": "Pista fora de la selecció catalana documentada; pendent de contrast individual."
+        },
+        {
+          "id": "yVndWZb2SFg",
+          "title": "So de Saó - Xiomara Abello (Teaser)",
+          "channelId": "UCvKDCx209GA2OXyoWG449WA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "G2SsDvEbLq4",
+          "title": "De bandes i volades: Xiomara Abello amb banda simfònica (teaser)",
+          "channelId": "UCvKDCx209GA2OXyoWG449WA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "43kCYwndXhE",
+          "title": "Xiomara e Bia - \"Havanera Tita i fado\"",
+          "channelId": "UCvKDCx209GA2OXyoWG449WA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "nPNMKrPTj-0",
+          "title": "\"Orfeu\" - Xiomara Abello ft. Caracolí (Buenos Aires 2019)",
+          "channelId": "UCvKDCx209GA2OXyoWG449WA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "mdwRrhSYMgc",
+          "title": "\"Canción sencilla\" - Xiomara Abello",
+          "channelId": "UCvKDCx209GA2OXyoWG449WA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "Ypge9yssYuo",
+          "title": "Xiomara Abello - Teaser \"Entre teles\"",
+          "channelId": "UCvKDCx209GA2OXyoWG449WA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "aqFiQ8KtO7M",
+          "title": "Xiomara Abello (Homenaje a Silvio Rodriguez) - Cuevas de Cañart",
+          "channelId": "UCvKDCx209GA2OXyoWG449WA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        }
+      ],
+      "recordingsPublished": 19
+    },
+    {
+      "name": "Esther",
+      "canonicalName": "Esther Querol Forner",
+      "place": "Vinaròs",
+      "relation": "origin",
+      "genres": [
+        "Pop",
+        "Rock"
+      ],
+      "sources": [
+        "https://www.diarilaveu.cat/cultura/esther-sobre-el-nou-disc-crec-que-es-emocional-autentic-i-caotic-585090/",
+        "https://www.valencianmusicoffice.com/artist/ec810b9f-fd21-4b3a-ad2d-8789fcbf898c",
+        "https://www.enderrock.cat/noticia/25374/esther-soc-nena-trista-pero-done-llum-esperanca-amb-cancons",
+        "https://www.youtube.com/watch?v=oIJBi4dBwJk"
+      ],
+      "note": "Dos canals Tema de la mateixa Esther Querol Forner, agrupats amb el canal oficial. Fora Wish You Were Here, resums, promocions i trobades. Selecció documental dels discos en català i de la versió Si tanque els ulls.",
+      "channels": [
+        {
+          "id": "UCouw5jG-XQKAuUA4FHGDwGw",
+          "type": "topic",
+          "primary": true,
+          "allowedVideoIds": [
+            "nTshvfToJHw",
+            "P1I7xKIBiwk",
+            "cxDketM1ctw",
+            "El1iEZYtsgE",
+            "OTQcVJ5fFxE",
+            "w-9vTbD5epA",
+            "yvMnSCcGmEo",
+            "VvWdhY9ac6A",
+            "BBcetvhBhvY",
+            "S-uk9ZF9W9U",
+            "ooakU_P9Ciw"
+          ],
+          "selected": 11,
+          "publication": {
+            "hot": 11,
+            "archive": 0,
+            "recordings": 11
+          }
+        },
+        {
+          "id": "UCS52L7FhuL9P1ZvXxDJwv4g",
+          "type": "topic",
+          "primary": false,
+          "allowedVideoIds": [
+            "0JUwTmuBgng",
+            "YPnnvHC4BZc",
+            "zjnYPVUnIg8",
+            "s93GW4_6Hys",
+            "66XakzdM5Zc",
+            "R776Ir91v0s",
+            "8fC8zbfD4rY",
+            "zKIeaZxNgKM",
+            "Y10ka2H0aTQ",
+            "9shpyU-9LLw",
+            "o_tYCmAmJ7o",
+            "GwSbyTdgYhY",
+            "8QImdqJUCMk",
+            "4Q-v8ZaI-cQ",
+            "lX8P0pYXCaY",
+            "WPTzJAOe6cU",
+            "fixwhjSTKj8",
+            "tgT3fD_cW8c",
+            "3mBCjbnRDR4",
+            "rbuHM5VETU4",
+            "vW1P_0TnvBQ"
+          ],
+          "selected": 21,
+          "publication": {
+            "hot": 12,
+            "archive": 9,
+            "recordings": 21
+          }
+        },
+        {
+          "id": "UCrJr-rEu-grrBNj0TfWUEmA",
+          "type": "official",
+          "primary": false,
+          "allowedVideoIds": [
+            "oIJBi4dBwJk",
+            "K1nzUA5YP7c",
+            "yC53MwBG-kM",
+            "_i_4D2MwN_w",
+            "oTC44qcp4UM",
+            "btSUYWiIsWs",
+            "a4hdzAgEv6g",
+            "JREp-eKvCkU",
+            "9QqlApb0Rtw",
+            "CzLzNpio16s",
+            "dQf2uO_0Xf4",
+            "9EY1sqpDwqo",
+            "E0uNpUDg6nI",
+            "kNowAo1w460",
+            "Jg7JKmjckGI"
+          ],
+          "selected": 15,
+          "publication": {
+            "hot": 13,
+            "archive": 2,
+            "recordings": 15
+          }
+        }
+      ],
+      "notSelected": [
+        {
+          "id": "VBjxh8M-PHI",
+          "title": "On ens veiem este estiu????? #GIRATOTCOMENÇA #GIRADESTIU",
+          "channelId": "UCrJr-rEu-grrBNj0TfWUEmA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "y4dL3Fo6d8c",
+          "title": "ESTHER - Vídeo-resum del concert a Dénia (29/11/2025)",
+          "channelId": "UCrJr-rEu-grrBNj0TfWUEmA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "R7PjWNOAgdQ",
+          "title": " VIDEO-RESUM DEL CONCERT A LA FIRA TROVAM (CASTELLÓ DE LA PLANA) 14/11/2025",
+          "channelId": "UCrJr-rEu-grrBNj0TfWUEmA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "cq81_IaU2nI",
+          "title": "Meet and great del concert a Razzmatazz (Barcelona) 19/11/2025",
+          "channelId": "UCrJr-rEu-grrBNj0TfWUEmA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "U5YMZXtvDGY",
+          "title": "ESTHER - Video-resum concert presentació Tot comença a la Sala Repvblicca (Mislata, València)",
+          "channelId": "UCrJr-rEu-grrBNj0TfWUEmA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "fTq6brEaAek",
+          "title": "TOT COMENÇA disponible el 28/02 a totes les plataformes digitals! (Welcome to the new era)",
+          "channelId": "UCrJr-rEu-grrBNj0TfWUEmA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "Aig_XG5AQRQ",
+          "title": "VIDEO-RESUM DEL CONCERT DE FI DE GIRA DE \"LES CARTES QUE MAI VAIG CREMAR\"",
+          "channelId": "UCrJr-rEu-grrBNj0TfWUEmA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "BZaYrAaMw2g",
+          "title": "VIDEO-RESUM DEL FESTIVERN 2023💖",
+          "channelId": "UCrJr-rEu-grrBNj0TfWUEmA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "r70grPVrUsQ",
+          "title": "VIDEO-RESUM DEL CONCERT AL FESPORRAT A ALTEA",
+          "channelId": "UCrJr-rEu-grrBNj0TfWUEmA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "nZ4VM3DFEDI",
+          "title": "'WISH YOU WERE HERE' ESTHER ft. ÀLEX BLAT (cover en directe, al concert de Fi de Gira)",
+          "channelId": "UCrJr-rEu-grrBNj0TfWUEmA",
+          "reason": "Versió en anglès de Wish You Were Here."
+        },
+        {
+          "id": "aErxtAZsg-0",
+          "title": "VIDEO-RESUM DEL CONCERT AL FESLLOC💛",
+          "channelId": "UCrJr-rEu-grrBNj0TfWUEmA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        },
+        {
+          "id": "JNrNE4jqJ6I",
+          "title": "Estudi - PART 1",
+          "channelId": "UCrJr-rEu-grrBNj0TfWUEmA",
+          "reason": "Vídeo no seleccionat: promoció, divulgació, etapa anterior o llengua/contingut pendent de contrast."
+        }
+      ],
+      "recordingsPublished": 47
+    }
+  ],
+  "preservedOtherArtists": 463,
+  "preservedPublishedChannels": 558,
+  "publication": {
+    "checkedAt": "2026-10-13T06:04:48.446Z",
+    "artists": 3,
+    "channels": 8,
+    "recordings": 101,
+    "status": "verified"
+  },
+  "validation": {
+    "passedTests": 1142,
+    "totalTests": 1148,
+    "failedTests": 6,
+    "failures": [
+      {
+        "suite": "tests/portada-assets.test.js",
+        "test": "index.html de Segueix Música la navegació té les vistes demanades a escriptori i a mòbil",
+        "reason": "AssertionError: expected 'id=\"sidebar\" aria-label=\"Navegació pr…' to contain '<span>Artistes</span>'"
+      },
+      {
+        "suite": "tests/segueix-tv-quality.test.js",
+        "test": "qualitat i seqüenciació de Segueix TV força una nova versió del cache estàtic",
+        "reason": "AssertionError: expected '// Service Worker per PWA — dos cache…' to contain 'const CACHE_VERSION = \\'tvq20260924a1…'"
+      },
+      {
+        "suite": "tests/song-title.test.js",
+        "test": "sobre el feed real no queda cap parèntesi ni claudàtor amb «videoclip», «vídeo» o «oficial»",
+        "reason": "AssertionError: expected [ Array(1) ] to deeply equal []"
+      },
+      {
+        "suite": "tests/tv-category-header.test.js",
+        "test": "títols de TV i capçalera de Segueix TV posa la informació al costat del títol Segueix TV",
+        "reason": "AssertionError: expected '(function (window) {\\n    \\'use stric…' to contain 'Què és Segueix TV?'"
+      },
+      {
+        "suite": "tests/tv-learning.test.js",
+        "test": "aprenentatge local de les TV posa la informació completa al costat del mode bucle",
+        "reason": "AssertionError: expected '// App Principal\\n\\nconst SegueixApp …' to contain '<strong>6. Descoberta.</strong>'"
+      },
+      {
+        "suite": "tests/tv-programming.test.js",
+        "test": "programació de TV inclou el nou controlador al precache del service worker",
+        "reason": "AssertionError: expected '// Service Worker per PWA — dos cache…' to contain 'const CACHE_VERSION = \\'e2a40924f7c1\\''"
+      }
+    ],
+    "regressions": 0,
+    "baselineCompared": true,
+    "newTitles": "passed",
+    "baselineFailures": [
+      {
+        "suite": "tests/portada-assets.test.js",
+        "test": "index.html de Segueix Música la navegació té les vistes demanades a escriptori i a mòbil",
+        "reason": "AssertionError: expected 'id=\"sidebar\" aria-label=\"Navegació pr…' to contain '<span>Artistes</span>'"
+      },
+      {
+        "suite": "tests/segueix-tv-quality.test.js",
+        "test": "qualitat i seqüenciació de Segueix TV força una nova versió del cache estàtic",
+        "reason": "AssertionError: expected '// Service Worker per PWA — dos cache…' to contain 'const CACHE_VERSION = \\'tvq20260924a1…'"
+      },
+      {
+        "suite": "tests/song-title.test.js",
+        "test": "sobre el feed real no queda cap parèntesi ni claudàtor amb «videoclip», «vídeo» o «oficial»",
+        "reason": "AssertionError: expected [ Array(1) ] to deeply equal []"
+      },
+      {
+        "suite": "tests/tv-category-header.test.js",
+        "test": "títols de TV i capçalera de Segueix TV posa la informació al costat del títol Segueix TV",
+        "reason": "AssertionError: expected '(function (window) {\\n    \\'use stric…' to contain 'Què és Segueix TV?'"
+      },
+      {
+        "suite": "tests/tv-learning.test.js",
+        "test": "aprenentatge local de les TV posa la informació completa al costat del mode bucle",
+        "reason": "AssertionError: expected '// App Principal\\n\\nconst SegueixApp …' to contain '<strong>6. Descoberta.</strong>'"
+      },
+      {
+        "suite": "tests/tv-programming.test.js",
+        "test": "programació de TV inclou el nou controlador al precache del service worker",
+        "reason": "AssertionError: expected '// Service Worker per PWA — dos cache…' to contain 'const CACHE_VERSION = \\'e2a40924f7c1\\''"
+      }
+    ]
+  }
+}

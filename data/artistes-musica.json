@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-12T20:45:33.058Z",
+  "updatedAt": "2026-10-13T06:03:32.382Z",
   "artists": [
     {
       "name": "2 Princeses Barbudes",
@@ -9927,18 +9927,48 @@
     },
     {
       "name": "Esther Querol Forner",
-      "aliases": [],
-      "genres": [
-        "Pop"
+      "aliases": [
+        "ESTHER",
+        "Esther Querol",
+        "Esther Querol Forner",
+        "Esther"
       ],
-      "territories": [],
+      "genres": [
+        "Pop",
+        "Rock"
+      ],
+      "territories": [
+        "País Valencià"
+      ],
       "languages": [
-        "ca"
+        "català"
       ],
       "wikidataId": "Q116727730",
       "musicbrainzId": "2ee83e5a-15c1-4239-96ce-47074f1f827f",
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCouw5jG-XQKAuUA4FHGDwGw",
+            "handle": null,
+            "name": "ESTHER - Topic",
+            "type": "topic",
+            "primary": true
+          },
+          {
+            "id": "UCS52L7FhuL9P1ZvXxDJwv4g",
+            "handle": null,
+            "name": "ESTHER - Topic",
+            "type": "topic",
+            "primary": false
+          },
+          {
+            "id": "UCrJr-rEu-grrBNj0TfWUEmA",
+            "handle": "@socesther",
+            "name": "ESTHER",
+            "type": "official",
+            "primary": false
+          }
+        ],
         "candidates": [],
         "searchCandidates": [
           {
@@ -9981,17 +10011,21 @@
           }
         ]
       },
-      "confidence": "pendent",
-      "reviewStatus": "pendent",
-      "active": false,
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
         "https://www.wikidata.org/wiki/Q116727730",
         "wikidata:native-language-catalan",
         "wikidata:performed-catalan-work",
-        "wikidata:native-language-catalan-musician"
+        "wikidata:native-language-catalan-musician",
+        "https://www.diarilaveu.cat/cultura/esther-sobre-el-nou-disc-crec-que-es-emocional-autentic-i-caotic-585090/",
+        "https://www.valencianmusicoffice.com/artist/ec810b9f-fd21-4b3a-ad2d-8789fcbf898c",
+        "https://www.enderrock.cat/noticia/25374/esther-soc-nena-trista-pero-done-llum-esperanca-amb-cancons",
+        "https://www.youtube.com/watch?v=oIJBi4dBwJk"
       ],
-      "lastChecked": "2026-09-25T15:54:36.662Z",
-      "notes": "",
+      "lastChecked": "2026-10-13",
+      "notes": "Dos canals Tema de la mateixa Esther Querol Forner, agrupats amb el canal oficial. Fora Wish You Were Here, resums, promocions i trobades. Selecció documental dels discos en català i de la versió Si tanque els ulls. docs/revisions/2026-10-13-castello-alta.json",
       "enrichment": {
         "musicbrainz": {
           "checkedAt": "2026-09-25T15:54:36.662Z",
@@ -10026,7 +10060,8 @@
       },
       "genresRaw": [
         "pop"
-      ]
+      ],
+      "displayName": "Esther"
     },
     {
       "name": "Exili a Elba",
@@ -36190,6 +36225,115 @@
       "active": true,
       "lastChecked": "2026-10-12",
       "notes": "Canal Tema compartit amb homònims. Només IDs amb identitat Josep Quinto Mengual i repertori contrastat; no s’importa el catàleg d’Alex Quinto Fernandez / Atlas Club. Vegeu docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "aliases": [
+        "MALPARLAT",
+        "Alfons Pérez Daràs",
+        "Malparlat"
+      ],
+      "sources": [
+        "https://revistamirall.com/2022/06/21/entrevista-amb-malparlat/",
+        "https://ivc.gva.es/val/audiovisual/malparlat-v",
+        "https://escolavalenciana.bandcamp.com/track/taronja",
+        "https://escolavalenciana.bandcamp.com/track/somnis",
+        "https://www.elritmodelacalle.com/malparlat-sin-pelos-en-la-lengua/",
+        "https://www.enderrock.cat/barcelonasound/disc/9510/sentimantral"
+      ],
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCYZ_QLkQxtK8uif-J2Nxmig",
+            "handle": null,
+            "name": "MALPARLAT - Topic",
+            "type": "topic",
+            "primary": true
+          },
+          {
+            "id": "UCVmppHKiBolLy_N0uKkbWfA",
+            "handle": "@malparlattv",
+            "name": "MALPARLAT TV",
+            "type": "official",
+            "primary": false
+          }
+        ]
+      },
+      "name": "Malparlat",
+      "displayName": "Malparlat",
+      "genres": [
+        "Rap / Hip-hop"
+      ],
+      "territories": [
+        "País Valencià"
+      ],
+      "languages": [
+        "català"
+      ],
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-13",
+      "notes": "Projecte Malparlat: selecció documental en català. Fora els vídeos divulgatius, tallers, promocions i instrumentals duplicats; sis pistes requereixen contrast addicional de llengua. L’etapa El Blüe no es dona per revisada en aquesta alta. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "aliases": [
+        "Xiomara Abelló",
+        "Xiomara Abello"
+      ],
+      "sources": [
+        "https://www.santamagdalena.es/es/la-cantautora-xiomara-abello-presenta-disco-teles/",
+        "https://musicaenvalencia.es/artista/117/xiomara-abello",
+        "https://www.enderrock.cat/edrvalencia/numero10/disc/7696",
+        "https://escolavalenciana.bandcamp.com/track/morisc-passat",
+        "https://escolavalenciana.bandcamp.com/track/xiomara-abello-ideal",
+        "https://xiomaraabello.bandcamp.com/album/flor-de-xicoia"
+      ],
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCNwoEDBqOp6F_HmTvp7cjvw",
+            "handle": null,
+            "name": "Xiomara Abello - Topic",
+            "type": "topic",
+            "primary": true
+          },
+          {
+            "id": "UCdNEdTr3yqzc6eYUMt6I3KA",
+            "handle": null,
+            "name": "Xiomara Abello - Topic",
+            "type": "topic",
+            "primary": false
+          },
+          {
+            "id": "UCvKDCx209GA2OXyoWG449WA",
+            "handle": "@xiomaraabello7045",
+            "name": "Xiomara Abello",
+            "type": "official",
+            "primary": false
+          }
+        ]
+      },
+      "name": "Xiomara Abello",
+      "displayName": "Xiomara Abello",
+      "genres": [
+        "Cançó d'autor",
+        "Folk i arrel"
+      ],
+      "territories": [
+        "País Valencià"
+      ],
+      "languages": [
+        "català"
+      ],
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-13",
+      "notes": "Repertori multilingüe: selecció documental limitada als IDs indicats. Ideal i Morisc passat tenen lletra publicada contrastada. No es considera revisada tota la discografia ni es dedueix la llengua només del títol. Les altres pistes i col·laboracions romanen fora de la selecció fins al contrast. docs/revisions/2026-10-13-castello-alta.json"
     }
   ]
 }

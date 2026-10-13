@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-12T20:45:33.058Z",
+  "updatedAt": "2026-10-13T06:03:32.382Z",
   "description": "Decisions manuals sobre el tipus de contingut de vídeos concrets. Manen sobre el classificador automàtic (scripts/lib/classificar_contingut_musical.js) i el pipeline (scripts/update_music_feed.js) les reaplica a cada generació del feed. Tipus permesos: song, live_song, album, other. Un vídeo revisat aquí surt de data/music-content-review.json.",
   "videos": [
     {
@@ -9115,6 +9115,612 @@
       "contentType": "song",
       "title": "QUINTO - Ara què fem? [official music video]",
       "note": "Selecció editorial del 12-10-2026; enregistrament complet, editor verificat. docs/revisions/2026-10-12-tardor-blat-quinto.json"
+    },
+    {
+      "id": "8HDKh2HNk3Q",
+      "contentType": "song",
+      "title": "Nit de bruixes",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "mo-xPajzut8",
+      "contentType": "song",
+      "title": "Cançó de la caçadora",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "WdCcWX-isTM",
+      "contentType": "song",
+      "title": "La Cort de la Quarantamaula",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "FH7vXyOsMbE",
+      "contentType": "song",
+      "title": "Pots comptar amb mi",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "PbEFX0zHHww",
+      "contentType": "song",
+      "title": "Taronja",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "gOmrUSJdf7E",
+      "contentType": "song",
+      "title": "Memòria fotogràfica",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "ksnCW-Yji38",
+      "contentType": "song",
+      "title": "El monstre de l'armari",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "x9RpPlgHV9I",
+      "contentType": "song",
+      "title": "David Albelda",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "aW6RtMaWp-Q",
+      "contentType": "song",
+      "title": "No tinc cap perra",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "hplj96dDFe0",
+      "contentType": "song",
+      "title": "Idiocràcia",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "C984CCphKIU",
+      "contentType": "song",
+      "title": "A Fer la Mà",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "EmX0c-HnPWE",
+      "contentType": "song",
+      "title": "La Llengua de Ma Casa",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "HjnUlQ3vvGw",
+      "contentType": "song",
+      "title": "Rap & Poesia",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "HqhsEpLVWps",
+      "contentType": "song",
+      "title": "Pots Comptar Amb Mi",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "Jzr7cxHHSDc",
+      "contentType": "song",
+      "title": "Quan Estem Junts",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "LfmGFp43wjg",
+      "contentType": "song",
+      "title": "Mil Llibres",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "MC3lHIEkIcg",
+      "contentType": "song",
+      "title": "Espantacriatures",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "VzatLIqtHms",
+      "contentType": "song",
+      "title": "La Vida en Xarxes",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "WV9ePfQye3w",
+      "contentType": "song",
+      "title": "La Fera Ferotge",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "ZB1hnxTL8dE",
+      "contentType": "song",
+      "title": "Emporta-te'l a Casa",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "ZXM9XJ9lzmI",
+      "contentType": "song",
+      "title": "Carolina",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "iE5iMufoPWQ",
+      "contentType": "song",
+      "title": "Somnis",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "z8PDJT7M70A",
+      "contentType": "song",
+      "title": "Aigües Mortes",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "zJ6dZpfaBvE",
+      "contentType": "song",
+      "title": "Inanna",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "AtQC1mO7hCw",
+      "contentType": "song",
+      "title": "David Albelda",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "IchaQqDV3LY",
+      "contentType": "song",
+      "title": "Taronja",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "WAgo9paQZ8M",
+      "contentType": "song",
+      "title": "Pots comptar amb mi 🤜🏻🤛🏿 MALPARLAT feat Rubén Felis 🤬 #Sentimantral",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "AfhBzkHVAWg",
+      "contentType": "song",
+      "title": "NOU CLIP! Rap & Poesia 💔 MALPARLAT 🤬 #Sentimantral",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "WP08ct1SgZE",
+      "contentType": "song",
+      "title": "CAROLINA 📺 MALPARLAT 💔 Nou videoclip! Canal 9 #RTVV #ÀPunt",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "Z--_tLryeUo",
+      "contentType": "song",
+      "title": "MALPARLAT & OFÈLIA | ɨռǟռռǟ ⚡ New clip 4k!",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "OGioJA_Rkuw",
+      "contentType": "song",
+      "title": "NOU TEMA! ⚡ Quan estem junts 💛 MALPARLAT & LA PEPA CASES 🤬 La Plana Baixa Style! 🎶",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "N0vlG9NQkYI",
+      "contentType": "song",
+      "title": "MALPARLAT 📸 MEMÒRIA FOTOGRÀFICA #POÈTICAMENTINCORRECTE VIDEOCLIP",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "duh9xZjdx1Y",
+      "contentType": "song",
+      "title": "MALPARLAT 🤬 No tinc cap perra feat Jorge Peri & Marc Zaragozá #VIDEOCLIP",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "JxqHTBR-lx8",
+      "contentType": "song",
+      "title": "DAVID ALBELDA 💊 MALPARLAT HD 2019 #POETICAMENTINCORRECTE #RAPENVALENCIÀ",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "mL3bA4OD5-w",
+      "contentType": "song",
+      "title": "TARONJA 🍊 MALPARLAT HD 2019 #POÈTICAMENTINCORRECTE #RAPENVALENCIÀ",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "x_yRv3w6gqs",
+      "contentType": "song",
+      "title": "Les Plegadores",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "RycTQsLX8Jg",
+      "contentType": "song",
+      "title": "Cant a la Vida",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "eaOJRj4OrC0",
+      "contentType": "song",
+      "title": "Eixos Ulls",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "o3-M0ZEOagk",
+      "contentType": "song",
+      "title": "La Cartògrafa",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "0niVsLxSDNU",
+      "contentType": "song",
+      "title": "Pena, Aigua, Aire",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "3t9glRDYxQQ",
+      "contentType": "song",
+      "title": "Entre Teles, Fils i Agulles",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "KQdR2-Et9q8",
+      "contentType": "song",
+      "title": "Deserta el Fosc",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "-o1RLtATx4k",
+      "contentType": "song",
+      "title": "Ideal",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "4vUpsSTO2fY",
+      "contentType": "song",
+      "title": "Temps Per Davant",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "A6bzi2X2k3U",
+      "contentType": "song",
+      "title": "Toc de Cuirs",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "ymo4oItxods",
+      "contentType": "song",
+      "title": "Morisc passat",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "EZ2ppa6IBe4",
+      "contentType": "song",
+      "title": "Aquesta terra",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "LmpYR8pCCrA",
+      "contentType": "song",
+      "title": "Flor de xicoia",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "B0GedhS3zzQ",
+      "contentType": "song",
+      "title": "Les Plegadores - Xiomara Abello",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "NIIMsDNNNLU",
+      "contentType": "live_song",
+      "title": "Xiomara Abello & Agrupació Musical de Sta. Magdalena de Polpís. \"Flor de xicoia\"",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "S7XFLel8BfE",
+      "contentType": "song",
+      "title": "\"Entre teles, fils i agulles\" - Xiomara Abello",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "6ZoN_Uu0uCs",
+      "contentType": "song",
+      "title": "Xiomara Abello ft. Raquel Lúa & Sergio del Campo - Morisc passat",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "QkPN0hRHYbo",
+      "contentType": "song",
+      "title": "Ideal (videoclip oficial) - Xiomara Abello",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "HqiiLJ8OaIg",
+      "contentType": "live_song",
+      "title": "Xiomara Abello & Diego Barberà - Cant a la vida",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "nTshvfToJHw",
+      "contentType": "song",
+      "title": "Des d'aquí dalt",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "P1I7xKIBiwk",
+      "contentType": "song",
+      "title": "Torno a mi",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "cxDketM1ctw",
+      "contentType": "song",
+      "title": "Fet (a) a mida",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "El1iEZYtsgE",
+      "contentType": "song",
+      "title": "La millor de les mentires",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "OTQcVJ5fFxE",
+      "contentType": "song",
+      "title": "Tot comença",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "w-9vTbD5epA",
+      "contentType": "song",
+      "title": "Si te'n vas",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "yvMnSCcGmEo",
+      "contentType": "song",
+      "title": "Al menjador",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "VvWdhY9ac6A",
+      "contentType": "song",
+      "title": "Des d'aquí dalt",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "BBcetvhBhvY",
+      "contentType": "song",
+      "title": "Si te'n vas",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "S-uk9ZF9W9U",
+      "contentType": "song",
+      "title": "Torno a mi",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "ooakU_P9Ciw",
+      "contentType": "song",
+      "title": "Tot comença",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "0JUwTmuBgng",
+      "contentType": "song",
+      "title": "El Teu Llibre Preferit",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "YPnnvHC4BZc",
+      "contentType": "song",
+      "title": "Tres Per Quatre",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "zjnYPVUnIg8",
+      "contentType": "song",
+      "title": "La millor de les mentires",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "s93GW4_6Hys",
+      "contentType": "song",
+      "title": "Xiqueta del sol",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "66XakzdM5Zc",
+      "contentType": "song",
+      "title": "Massa Tard",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "R776Ir91v0s",
+      "contentType": "song",
+      "title": "El Teu Llibre Preferit",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "8fC8zbfD4rY",
+      "contentType": "song",
+      "title": "Mar en calma",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "zKIeaZxNgKM",
+      "contentType": "song",
+      "title": "Vies Paral·leles",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "Y10ka2H0aTQ",
+      "contentType": "song",
+      "title": "Inevitable",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "9shpyU-9LLw",
+      "contentType": "song",
+      "title": "Monstres",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "o_tYCmAmJ7o",
+      "contentType": "song",
+      "title": "Vies Paral·leles",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "GwSbyTdgYhY",
+      "contentType": "song",
+      "title": "L'espelma",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "8QImdqJUCMk",
+      "contentType": "song",
+      "title": "Tinc una casa menuda",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "4Q-v8ZaI-cQ",
+      "contentType": "song",
+      "title": "Dimecres",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "lX8P0pYXCaY",
+      "contentType": "song",
+      "title": "Monstres",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "WPTzJAOe6cU",
+      "contentType": "song",
+      "title": "Transversal",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "fixwhjSTKj8",
+      "contentType": "song",
+      "title": "Dimecres",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "tgT3fD_cW8c",
+      "contentType": "song",
+      "title": "Dimecres (Remix)",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "3mBCjbnRDR4",
+      "contentType": "song",
+      "title": "Respirar",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "rbuHM5VETU4",
+      "contentType": "song",
+      "title": "Xiqueta del sol",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "vW1P_0TnvBQ",
+      "contentType": "song",
+      "title": "Trens",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "oIJBi4dBwJk",
+      "contentType": "song",
+      "title": "ESTHER - Si tanque els ulls (Videoclip)",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "K1nzUA5YP7c",
+      "contentType": "song",
+      "title": "ESTHER - Fet(a) a mida (Videoclip)",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "yC53MwBG-kM",
+      "contentType": "song",
+      "title": "ESTHER - Al menjador (Videoclip)",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "_i_4D2MwN_w",
+      "contentType": "song",
+      "title": "ESTHER - Des d'aquí dalt (Videoclip)",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "oTC44qcp4UM",
+      "contentType": "song",
+      "title": "ESTHER - Si te'n vas (Videoclip)",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "btSUYWiIsWs",
+      "contentType": "song",
+      "title": "ESTHER - Torno a mi (Videoclip)",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "a4hdzAgEv6g",
+      "contentType": "song",
+      "title": "ESTHER - Tot comença (Videoclip)",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "JREp-eKvCkU",
+      "contentType": "song",
+      "title": "ESTHER - La millor de les mentires (Videoclip)",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "9QqlApb0Rtw",
+      "contentType": "song",
+      "title": "ESTHER - Dimecres (Videoclip)",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "CzLzNpio16s",
+      "contentType": "song",
+      "title": "ESTHER - Xiqueta del sol  (Videoclip)",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "dQf2uO_0Xf4",
+      "contentType": "song",
+      "title": "ESTHER - Tres per quatre (Videolyric)",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "9EY1sqpDwqo",
+      "contentType": "song",
+      "title": "ESTHER - Massa tard (Videoclip)",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "E0uNpUDg6nI",
+      "contentType": "song",
+      "title": "ESTHER - Monstres (Videoclip)",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "kNowAo1w460",
+      "contentType": "song",
+      "title": "ESTHER - El teu llibre preferit (Videoclip)",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "Jg7JKmjckGI",
+      "contentType": "song",
+      "title": "ESTHER - Vies paral·leles (Videoclip)",
+      "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
     }
   ]
 }

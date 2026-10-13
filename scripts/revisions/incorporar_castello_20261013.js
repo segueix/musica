@@ -76,7 +76,7 @@ const CONFIG = [
 const LYRIC_SOURCES = {
     PbEFX0zHHww: 'https://escolavalenciana.bandcamp.com/track/taronja',
     IchaQqDV3LY: 'https://escolavalenciana.bandcamp.com/track/taronja',
-    mL3bA4OD5-w: 'https://escolavalenciana.bandcamp.com/track/taronja'
+    'mL3bA4OD5-w': 'https://escolavalenciana.bandcamp.com/track/taronja'
 };
 // Claus amb guions necessiten literals explícits.
 Object.assign(LYRIC_SOURCES, {

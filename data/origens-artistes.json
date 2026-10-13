@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-12T20:45:33.058Z",
+  "updatedAt": "2026-10-13T06:03:32.382Z",
   "attribution": {
     "text": "Coordenades de referència: GeoNames, via Open-Meteo. CC BY 4.0.",
     "sources": [
@@ -2301,6 +2301,32 @@
       "territory": "País Valencià",
       "source": "https://geocoding-api.open-meteo.com/v1/search?name=Benidorm&count=10&language=ca&format=json&countryCode=ES",
       "checkedOn": "2026-10-12"
+    },
+    "geonames:2513180": {
+      "name": "Nules",
+      "type": "municipality",
+      "geonamesId": 2513180,
+      "coordinates": {
+        "latitude": 39.85362,
+        "longitude": -0.15643,
+        "precision": "settlement_reference"
+      },
+      "territory": "País Valencià",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Nules&count=10&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-13"
+    },
+    "geonames:3109824": {
+      "name": "Santa Magdalena de Polpís",
+      "type": "municipality",
+      "geonamesId": 3109824,
+      "coordinates": {
+        "latitude": 40.35625,
+        "longitude": 0.30258,
+        "precision": "settlement_reference"
+      },
+      "territory": "País Valencià",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Santa+Magdalena+de+Pulpis&count=10&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-13"
     }
   },
   "artists": {
@@ -9509,18 +9535,18 @@
       "locked": true
     },
     "artist:esther-querol-forner": {
-      "name": "Esther Querol Forner",
+      "name": "Esther",
       "status": "validated",
       "relation": "origin",
       "placeIds": [
         "geonames:3104584"
       ],
       "confidence": "alta",
-      "basis": "Identitat completa de la cantant ESTHER, nascuda a Vinaròs.",
+      "basis": "Esther Querol Forner, de Vinaròs: es reutilitza la identitat existent i els crèdits de les edicions oficials, sense crear un homònim.",
       "sources": [
-        "https://lletraferit.com/musica/esther-arrel-i-personalitat/"
+        "https://www.diarilaveu.cat/cultura/esther-sobre-el-nou-disc-crec-que-es-emocional-autentic-i-caotic-585090/"
       ],
-      "reviewedOn": "2026-10-12",
+      "reviewedOn": "2026-10-13",
       "assignmentSource": "manual-review",
       "locked": true
     },
@@ -9899,6 +9925,38 @@
         "https://www.pro21cultural.com/project/quinto/"
       ],
       "reviewedOn": "2026-10-12",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:malparlat": {
+      "name": "Malparlat",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:2513180"
+      ],
+      "confidence": "alta",
+      "basis": "L’entrevista directa situa Alfons Pérez Daràs a Nules. El seu canal també identifica Nules com el seu poble.",
+      "sources": [
+        "https://revistamirall.com/2022/06/21/entrevista-amb-malparlat/"
+      ],
+      "reviewedOn": "2026-10-13",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:xiomara-abello": {
+      "name": "Xiomara Abello",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:3109824"
+      ],
+      "confidence": "alta",
+      "basis": "L’Ajuntament acredita les arrels magdaleneres. S’indica vinculació, no s’atribueix un lloc de naixement a partir de les arrels familiars.",
+      "sources": [
+        "https://www.santamagdalena.es/es/la-cantautora-xiomara-abello-presenta-disco-teles/"
+      ],
+      "reviewedOn": "2026-10-13",
       "assignmentSource": "manual-review",
       "locked": true
     }
@@ -10462,7 +10520,15 @@
     "UC6SBLhrf0nLYU-_a9iqwWqw": "artist:alex-blat",
     "UCqXrOm2JFPasb_oKqguIm4g": "artist:alex-blat",
     "UCFPGW7hAaXSfcPueygR_25A": "artist:quinto",
-    "UCbJVlPOepjJiteagmmSaoTA": "artist:quinto"
+    "UCbJVlPOepjJiteagmmSaoTA": "artist:quinto",
+    "UCYZ_QLkQxtK8uif-J2Nxmig": "artist:malparlat",
+    "UCVmppHKiBolLy_N0uKkbWfA": "artist:malparlat",
+    "UCNwoEDBqOp6F_HmTvp7cjvw": "artist:xiomara-abello",
+    "UCdNEdTr3yqzc6eYUMt6I3KA": "artist:xiomara-abello",
+    "UCvKDCx209GA2OXyoWG449WA": "artist:xiomara-abello",
+    "UCouw5jG-XQKAuUA4FHGDwGw": "artist:esther-querol-forner",
+    "UCS52L7FhuL9P1ZvXxDJwv4g": "artist:esther-querol-forner",
+    "UCrJr-rEu-grrBNj0TfWUEmA": "artist:esther-querol-forner"
   },
   "excludedProfiles": {
     "UCdezTX23syEeAJJAb2oOkKA": {
