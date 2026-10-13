@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "reviewedOn": "2026-10-13",
+  "criterion": "El català ha de ser la llengua principal cantada. Les frases puntuals, els préstecs i les traduccions escrites no provoquen baixes. Es mantenen instrumentals i exclusions anteriors. Només es retiren els IDs explícits; sense bloquejos basats en títols.",
+  "scope": {
+    "checkedAt": "2026-10-13T10:33:52.939Z",
+    "sourceCommit": "f3d2c2fcdd4a8c4a9cd7914536af336f5aa43d52",
+    "visibleRecordings": 12581,
+    "publishedChannels": 573,
+    "requests": 252,
+    "complete": true,
+    "metadataReceived": 12581,
+    "missingMetadata": 0,
+    "pendingBefore": 765,
+    "visiblePendingBefore": 746,
+    "metadataSha256": "7b26fca3d75e5c58e6fcaca9f2db01b2eb148ee2c46b622edea536c1a3810b57",
+    "method": "Cribratge global de metadades del feed i arxiu, seguit de contrast documental de casos concrets. No és una escolta ni una revisió íntegra de 12.581 lletres. Les fonts de cada enregistrament inclouen el seu URL de YouTube; les lletres completes no es reprodueixen en aquest document."
+  },
+  "remove": [
+    {"artist":"El Petit de Cal Eril","channelIds":["UCQc-T583XUy2JAfeun2_0mg"],"ids":["sjCdAj4MOWY","520Xxi0T4Ks"],"language":"castellà","method":"lletra-oficial","reason":"Las cosas que creo: original CAST; àudio i videoclip. Entrevista de l’autor i lletra oficial.","sources":["https://www.elnacional.cat/ca/cultura/entrevista-petit-cal-eril-nscalh_648896_102_amp.html"]},
+    {"artist":"El Petit de Cal Eril","channelIds":["UCQc-T583XUy2JAfeun2_0mg"],"ids":["2gKD2_sUohU","6CEYp6s_yg4"],"language":"italià","method":"lletra-oficial","reason":"Non tornerai: original ITA; CAST i ENG són traduccions escrites. Àudio i videoclip.","sources":["https://www.elnacional.cat/ca/cultura/entrevista-petit-cal-eril-nscalh_648896_102_amp.html"]},
+    {"artist":"Scorpio","channelIds":["UCqe8mqoQPb27d2qD-ggOY0Q"],"ids":["3a7g6Pfzz6g","hxygUujP-go"],"language":"anglès i castellà","method":"lletra-oficial","reason":"L00K i Go Away: lletres íntegres oficials en anglès i castellà, sense català.","sources":[]},
+    {"artist":"Scorpio","channelIds":["UCqe8mqoQPb27d2qD-ggOY0Q"],"ids":["v1WwoIelWWE"],"language":"anglès","method":"lletra-oficial","reason":"Piece Of Sky: lletra íntegra oficial en anglès.","sources":[]},
+    {"artist":"Julieta","channelIds":["UCHx3kmBag2FCtnNFdd8qZ8A"],"ids":["t_x2uYnYpEU"],"language":"castellà","method":"lletra-oficial","reason":"Oh la la: estrofes i tornada castellanes. No és la cançó homònima d’Antònia Font.","sources":[]},
+    {"artist":"Mushkaa","channelIds":["UC9Jl8Rcjs5ZUi8Wf1JnFzlw"],"ids":["35KkoU2cVvg"],"language":"castellà principal; català secundari","method":"lletra-oficial","reason":"Turra Malvada: tornada reiterada i estrofa llarga d’Akilon en castellà; català minoritari. Criteri de llengua principal.","sources":[]},
+    {"artist":"Cactus Troop","channelIds":["UCcerGnBUfuDhx0QwW2Ua9tA"],"ids":["lsavBF_i_oc"],"language":"anglès principal; castellà i català secundaris","method":"lletra-oficial","reason":"STAY HOME SAFE: cinc tornades angleses i primera estrofa anglesa/castellana; segona estrofa catalana minoritària.","sources":[]},
+    {"artist":"Marina Rossell","channelIds":["UC5sHcbjiKxYUZ3G_0BQNBYQ"],"ids":["fVbNBSe1Nlk","_hVdG2LZ0_g","ohbHExePj0k","LNdl2J03H4M","BpvxsSzq_tA","5PLadhss5QQ","YyIO7wjrjOA","AUakGiL3T6I","vgtPegvbOzM"],"language":"castellà","method":"edició-documentada","reason":"Ha Llovido: edició contrastada en crèdits i documentació. No equival a escolta individual de totes les pistes.","sources":["https://marinarossell.com/bio/","https://elpais.com/diario/1996/06/25/cultura/835653608_850215.html"]},
+    {"artist":"Marina Rossell","channelIds":["UC5sHcbjiKxYUZ3G_0BQNBYQ"],"ids":["p-aOWkyI2S4","WHBGYbBppn8","pfWGZG4KuDA","-VcO4_Sz6pw","GgxdkwyB8JE","uPqKRPBvJ4Y","ffGqjkP9HiM"],"language":"castellà","method":"edició-documentada","reason":"Y Rodará el Mundo: edició contrastada en crèdits i documentació. No equival a escolta individual de totes les pistes.","sources":["https://marinarossell.com/marina-rossell-recrea-la-cancion-centroamericana-en-y-rodara-el-mundo-el-pais/","https://elpais.com/diario/2000/03/28/andalucia/954195757_850215.html"]},
+    {"artist":"Mishima","channelIds":["UC_z4NPeGNySemAwaAihgbaQ"],"ids":["bjNkZJ0wlY0","_7n9gCngCgU","XZTe1q4eHiY","6p17RzWYJwk","Se6IkB8TEco","kRyAW1D-rcs","Nj_m0HIq1oQ","QUk1rxv081c"],"language":"anglès","method":"edició-documentada","reason":"Lipstick Traces: l’autor identifica Covards com l’única peça no cantada en anglès. Covards es conserva.","sources":["https://www.ara.cat/cultura/llengua-pop-catala-lestandard-transgressio_1_1900556.html","https://www.mishima.cat/album/lipstick-traces/"]},
+    {"artist":"Raydibaum","channelIds":["UCCKRS2KD1i75evCURPuHQXA"],"ids":["ZNTJff1vQes","ubsu0P5d3gc","LhAxEKyAfXU"],"language":"anglès","method":"edició-documentada","reason":"Grided Elephant: entrevista al grup documenta els dos primers treballs en anglès. Edició comprovada als crèdits.","sources":["https://www.ara.cat/cultura/raydibaum-canvien-sobreviure_1_2893819.html","https://www.enderrock.cat/noticia/9748/10-anys-raydibaum"]},
+    {"artist":"El Pony Pisador","channelIds":["UCBMrWboBJ7RC04ul-MNY0xA"],"ids":["9lGskUbTPeM","FKvq72yY6Ug","QDhT1QEbk5g","iQ-3hMQSO34","kudysvuDgAg","GCDxt6bwx4I"],"language":"anglès","method":"lletra-oficial-web","reason":"Sis lletres angleses publicades íntegrament pel grup; no és una deducció basada en el títol.","sources":["https://elponypisador.com/musica/"]},
+    {"artist":"El Pony Pisador","channelIds":["UCBMrWboBJ7RC04ul-MNY0xA"],"ids":["m2iDYE6JCYE"],"language":"tuvà","method":"lletra-oficial-web","reason":"Daglarym: cançó tuvana identificada pel grup, lletra original i traducció catalana. No és una instrumental.","sources":["https://elponypisador.com/musica/"]}
+  ],
+  "keep": [
+    {"ids":["VIItW5YC9mY"],"language":"català","method":"declaració-autor","reason":"Covards és l’excepció catalana de Lipstick Traces.","sources":["https://www.ara.cat/cultura/llengua-pop-catala-lestandard-transgressio_1_1900556.html"]},
+    {"ids":["2eHNWv_VXnk","MWorzPep-lE"],"language":"català","method":"lletra-oficial","reason":"Cauen les estrelles: original català; CAST i ENG són traduccions escrites.","sources":[]},
+    {"ids":["kE8kiYASWpA"],"language":"català","method":"lletra-oficial","reason":"Energia: original valencià/català; la traducció castellana escrita no és l’àudio.","sources":[]},
+    {"ids":["0_VCqryfoZM"],"language":"català principal","method":"lletra-oficial","reason":"Oh La La d’Antònia Font: català principal malgrat expressions franceses; obra diferent de la de Julieta.","sources":[]},
+    {"ids":["44_rLf5xkts"],"language":"català","method":"lletra-oficial-web","reason":"Bartomeu el Portuguès: lletra catalana publicada.","sources":["https://elponypisador.com/musica/"]},
+    {"ids":["QEhEbeMLES8","3Ije1SL9--E"],"language":"instrumental o vocalització no lèxica","method":"descripció-oficial","reason":"Dolores i From Erin to Tuva: suites instrumentals, amb recursos vocals no lèxics en la segona; sense nova exclusió lingüística.","sources":["https://elponypisador.com/musica/"]}
+  ],
+  "pendingFocusedChecks": [
+    {"artist":"Cactus Troop","ids":["Hk9lVy4WT70","i80Ous1f1FM"],"reason":"Directe de STAY HOME SAFE i peça mixta: contrastar l’àudio concret; no traslladar automàticament la decisió de l’estudi."},
+    {"artist":"Scorpio","ids":["Z0ZkGDOlYt8"],"reason":"ALABABALÀ: lletra mixta i vocalitzacions; llengua principal no resolta."},
+    {"artist":"Adala","ids":["iR9oNlNoY2I","Wt36winFpGw","jJ8an2o93pg","CoAR05fVFI8","VC9stjzAqrk"],"reason":"Crèdits disponibles però falta contrastar tota la lletra."},
+    {"artist":"Anaïs Vila","ids":["d26a8S9G8-4","rT5tHj7i00k","7mmusqLYQ4A"],"reason":"Disc multilingüe: completar el contrast per enregistrament."},
+    {"artist":"Anna Ferrer","ids":["kcTJOKUadYY","legC-Qofoog","PL252-84B8E"],"reason":"Cal contrastar cada versió, no decidir per títol."},
+    {"artist":"Sílvia Pérez Cruz","ids":["iz0DBq9VsFg","gnqbnT_ODKw","cp1NNTWYB38","esxUFB0y9Kc","RlRfBH88Jho","I3cZLTy6hlo","FKjPBF3mHYM","45WKCiR1cR8","85vptASO2sA","B5KCvlYtLnk","LN9uqDJ6rho"],"reason":"Repertori multilingüe; contrastar cada enregistrament i no només l’original de la cançó."},
+    {"artist":"Tesa","ids":["TesLy3pPiN0","wJi2rln_Obo","yAOvq3zRcGQ","5Lo3njtyJ8s","ofedU_hH39w","T6zRkeQDFqk","fF331XwC6FM","b3KuiHSq30A","aYZf4Jjaba4","CiKvJRKexCU","OW6-96RBkj0","iLFaTImk28Y","Ur3H6aubMno","KVaThwJcsgs"],"reason":"Possible barreja d’homònims (crèdits My Proud Mountain); revisar identitat, no descartar instrumentals com a lletres estrangeres."},
+    {"artist":"Still Ill","ids":["O7nuhwFypIE","UZx18DLq_IU","Ttra6rp4Kko","o6Mp0tr26Go","AjJhBZKqXcw","7cIpDY5SiPI","rSYaVOqM4ys","jLRCC-Z5t_A","dblPN60zKHc","X80VOkp4KG4","9gnCJJ19v6Q","tdAXV7o6fyk","2rAHzk7ErHY","9MaRGn8c7oc"],"reason":"Possible canal Tema amb homònims: contrastar la identitat de cada disc."}
+  ]
+}
