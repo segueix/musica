@@ -1,0 +1,119 @@
+name: Revisar grup urba 1
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/revisar-urban-grup1.yml']
+  workflow_dispatch:
+concurrency:
+  group: music-data-writer
+  cancel-in-progress: false
+permissions:
+  contents: write
+jobs:
+  descobrir:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '20'
+      - name: Consulta nomes els cinc projectes
+        env:
+          YOUTUBE_API_KEY_SERVER: ${{ secrets.YOUTUBE_API_KEY_SERVER }}
+        run: |
+          node - <<'NODE'
+          const fs = require('node:fs');
+          const norm = x => String(x || '').normalize('NFD').replace(/\p{Diacritic}/gu,'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();
+          const base = JSON.parse(fs.readFileSync('data/artistes-musica.json','utf8'));
+          const published = JSON.parse(fs.readFileSync('js/channels-ca.json','utf8')).channels;
+          const origins = JSON.parse(fs.readFileSync('data/origens-artistes.json','utf8'));
+          (async () => {
+            const key = process.env.YOUTUBE_API_KEY_SERVER;
+            if (!key) throw Error('Falta la clau de YouTube');
+            let quota = 0;
+            async function api(resource, args) {
+              quota += resource === 'search' ? 100 : 1;
+              const u = new URL('https://www.googleapis.com/youtube/v3/' + resource);
+              for (const [k,v] of Object.entries({...args,key})) u.searchParams.set(k,String(v));
+              const r = await fetch(u,{signal:AbortSignal.timeout(30000)});
+              const j = await r.json();
+              if (!r.ok) throw Error(resource+': '+(j.error?.message || r.status));
+              return j;
+            }
+            const targets = [
+              {name:'Neisha',anchors:['De missió','Anime en català']},
+              {name:'AVANT',anchors:['Abraços virtuals','Més fort']},
+              {name:'Xisk',anchors:['KARA','Viu en pau']},
+              {name:'Fortuu',anchors:['DosXtres','Entre estrelles']},
+              {name:'Aina Koda',anchors:['La gata','Percal']}
+            ];
+            const report = {checkedAt:new Date().toISOString(), artists:[]};
+            for (const t of targets) {
+              const candidates = new Set(), results = [];
+              for (const anchor of t.anchors) {
+                const j = await api('search',{part:'snippet',type:'video',q:t.name+' '+anchor,maxResults:12});
+                for (const v of j.items || []) {
+                  const s = v.snippet;
+                  results.push({id:v.id.videoId,title:s.title,channelId:s.channelId,channelTitle:s.channelTitle});
+                  const n = norm(s.channelTitle).replace(/ (topic|tema|official|oficial)$/,'');
+                  if (n === norm(t.name)) candidates.add(s.channelId);
+                }
+              }
+              if (candidates.size > 6) throw Error('Cal desambiguar '+t.name);
+              const metadata = candidates.size ? (await api('channels',{part:'snippet,contentDetails,statistics',id:[...candidates].join(',')})).items || [] : [];
+              const matches = a => [a.name,a.displayName,...(a.aliases || []),...(a.artists || [])].some(x=>norm(x)===norm(t.name));
+              const entry = {name:t.name,searchResults:results,existing:base.artists.filter(matches),published:published.filter(matches),origins:Object.entries(origins.artists).filter(([,a])=>matches(a)),channels:[]};
+              for (const c of metadata) {
+                let token;
+                const videos = [];
+                for (let page=0;page<5;page++) {
+                  const p = await api('playlistItems',{part:'contentDetails',playlistId:c.contentDetails.relatedPlaylists.uploads,maxResults:50,...(token?{pageToken:token}:{})});
+                  const ids = (p.items||[]).map(v=>v.contentDetails.videoId);
+                  if (ids.length) {
+                    const d = await api('videos',{part:'snippet,contentDetails,status,statistics',id:ids.join(',')});
+                    for (const v of d.items||[]) videos.push({id:v.id,title:v.snippet.title,description:v.snippet.description,channelId:v.snippet.channelId,publishedAt:v.snippet.publishedAt,duration:v.contentDetails.duration,embeddable:v.status.embeddable,viewCount:Number(v.statistics.viewCount||0),defaultAudioLanguage:v.snippet.defaultAudioLanguage||null,regionRestriction:v.contentDetails.regionRestriction||null});
+                  }
+                  token = p.nextPageToken;
+                  if (!token) break;
+                }
+                entry.channels.push({id:c.id,name:c.snippet.title,handle:c.snippet.customUrl||null,description:c.snippet.description,avatar:c.snippet.thumbnails?.high?.url||'',complete:!token,videos});
+                console.log(JSON.stringify({artist:t.name,channel:c.snippet.title,id:c.id,count:videos.length,complete:!token}));
+              }
+              report.artists.push(entry);
+              const slug = norm(t.name).replace(/ /g,'-');
+              fs.writeFileSync('docs/revisions/2026-10-13-urban1-'+slug+'.json',JSON.stringify(entry,null,2)+'\n');
+            }
+            report.estimatedQuotaUnits = quota;
+            const stem = 'docs/revisions/2026-10-13-urban1';
+            fs.writeFileSync(stem+'-descoberta.json',JSON.stringify(report,null,2)+'\n');
+            fs.writeFileSync(stem+'-resum.md',report.artists.map(a=>'# '+a.name+'\nRegistres previs: '+JSON.stringify(a.existing)+'\n'+a.channels.map(c=>'## '+c.name+' | '+c.id+' | '+c.handle+'\n'+c.videos.map(v=>v.id+' | '+v.title+' | '+v.duration).join('\n')).join('\n')).join('\n\n')+'\n');
+          })().catch(e=>{console.error(e.stack);process.exitCode=1;});
+          NODE
+      - name: Desa la descoberta documental
+        run: |
+          bash scripts/publicar_dades.sh 'docs: descoberta dels cinc artistes del grup urbà 1' docs/revisions/2026-10-13-urban1-*.json docs/revisions/2026-10-13-urban1-resum.md
+      - uses: actions/upload-artifact@v4
+        with:
+          name: urban1-revisio
+          retention-days: 1
+          path: |
+            docs/revisions/2026-10-13-urban1-*.json
+            docs/revisions/2026-10-13-urban1-resum.md
+            data/artistes-musica.json
+            data/origens-artistes.json
+            data/artistes-vigilats-idioma.json
+            data/music-channel-video-allowlist.json
+            data/revisio-idiomes.json
+            data/music-content-overrides.json
+            data/hidden-videos.json
+            data/falsos-shorts.json
+            data/noms-canals.json
+            data/music-genres.json
+            js/channels-ca.json
+            scripts/revisions/*.js
+            scripts/lib/politica_idiomes.js
+            scripts/lib/revisio_idiomes.js
+            scripts/update_music_feed.js
