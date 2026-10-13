@@ -1,0 +1,39 @@
+name: Validar pilot afinitats Punk
+on:
+  push:
+    branches: [pilot/afinitats-punk]
+    paths:
+      - 'js/features/music-affinities.js'
+      - 'js/features/music-selection.js'
+      - 'tests/music-affinities.test.js'
+      - 'tests/music-affinities-punk.test.js'
+      - 'scripts/revisions/validar_afinitats_punk.js'
+      - '.github/workflows/validar-afinitats-punk.yml'
+permissions:
+  contents: write
+concurrency:
+  group: pilot-afinitats-punk
+  cancel-in-progress: false
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - name: Proves completes, lint i simulació del catàleg
+        run: node scripts/revisions/validar_afinitats_punk.js f3cd49414692bf1604445ebf40753b73d8ed7147
+      - run: npm run sw:version
+      - name: Desa verificació i precache a la branca del pilot
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add sw.js docs/revisions/2026-10-13-afinitats-punk.json
+          git commit -m 'test: verifica afinitats Punk i actualitza precache'
+          git push origin HEAD:pilot/afinitats-punk

@@ -20,7 +20,7 @@ describe('afinitats Heavy / Metal', () => {
         const channels=JSON.parse(readFileSync('js/channels-ca.json','utf8')).channels;
         const ids=profiles.flatMap(p=>p.channelIds);
         expect(ids.length).toBe(35);
-        expect(new Set(A.profiles.flatMap(p=>p.channelIds)).size).toBe(57);
+        expect(new Set(ids).size).toBe(35);
         expect(ids.sort()).toEqual(channels.filter(c=>c.categories.includes(category)).map(c=>c.id).sort());
         for(const p of profiles){
             expect(p.sources.length).toBeGreaterThan(0);
@@ -58,15 +58,16 @@ describe('afinitats Heavy / Metal', () => {
         for(const title of ['Tema (directe)','Tema (acoustic)','Tema (remix)'])expect(A.similarity(seed,{...seed,title})).toBe(0.5);
         expect(A.transition({channelId:'unknown'},seed,seed)).toBe(0);
     });
-    it('només activa Ska i Heavy com a categories úniques', () => {
+    it('activa Heavy com a categoria única i respecta els altres modes', () => {
         expect(A.isActive(category)).toBe(true);
         expect(A.isActive([category])).toBe(true);
         expect(A.isActive('Ska / Reggae')).toBe(true);
         const videos=profiles.map(p=>song(p));
-        for(const opts of [{category:'Rock'},{category:'Punk'},{category:''},
+        for(const opts of [{category:'Rock'},{category:'Pop'},{category:''},
             {category:[category,'Ska / Reggae']},{policy:'search'},{policy:'historic'},
             {mix:{labels:[category,'Punk'],tagOf:()=>[category]}}]){
             expect(select(videos,opts)).toEqual(select(videos,{...opts,affinities:false}));
         }
     });
 });
+

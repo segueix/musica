@@ -231,3 +231,27 @@ Proves: afinitats entre subestils, separació d'artistes, neutralitat de version
 no activació en mescles/cerca/llistes i invariància exacta dels perfils i resultats Ska.
 Informe de simulacions sobre el feed: `docs/revisions/2026-10-13-afinitats-heavy.json`.
 L'afinitat editorial mesurada no equival a qualitat acústica percebuda; queda pendent escolta humana.
+
+
+## Ampliació a Punk (2026-10-13)
+
+53 artistes i 70 canals revisats: 51 perfils amb subestils documentats i dos pendents
+(Coça i Vàlius) amb afinitat neutral. Bestiari comparteix un únic perfil amb Heavy.
+S'activa el mateix ajust màxim ±0,06 en ràdios de categoria única `Punk`.
+Es distingeixen punk rock, pop punk, Oi!, hardcore, post-hardcore, emo, screamo,
+folk punk, garage punk, crust i altres trets acreditats a les fonts de cada perfil.
+No afegim una etiqueta genèrica punk a tots els perfils: amagaria les diferències.
+`folk` i `traditional` són trets editorials de connexió, no mesures d'àudio.
+La confiança de les noves assignacions és 0,8; les etiquetes d'un disc són una
+aproximació al repertori, no una revisió acústica de cada cançó.
+
+ASSAC!, Budellam, Mendra i Vàlius tenen canals compartits o homònims: el perfil
+només s'aplica als IDs de vídeo ja aprovats al catàleg, separats per canal.
+Els vídeos nous d'aquests canals requereixen revisió explícita del perfil.
+Directes, acústics, remixos, subestils pendents i artistes desconeguts continuen
+neutrals i elegibles. No es modifiquen el catàleg, les categories ni les mescles.
+
+Les proves cobreixen les transicions, els canals compartits, la neutralitat,
+la varietat i els modes exclosos. La validació completa compara les errades i
+el lint amb la base exacta i comprova cues idèntiques per a Ska i Heavy.
+Informe: `docs/revisions/2026-10-13-afinitats-punk.json`.
