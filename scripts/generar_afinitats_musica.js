@@ -11,10 +11,15 @@ const channels = read('js/channels-ca.json');
 const reviews = read('data/music-affinity-review.json');
 const allow = read('data/music-channel-video-allowlist.json').channels;
 const indexed = new Set(channels.channels.map(c => c.id));
+for (const [id, decision] of Object.entries(reviews.channelOwners || {})) {
+    assert(db.artists.some(a => a.name === decision.artist && a.youtube?.channels?.some(c => c.id === id)), 'Titular editorial absent: ' + id);
+    for (const a of db.artists) if (a.name !== decision.artist) a.youtube.channels = a.youtube.channels.filter(c => c.id !== id);
+}
 const artists = db.artists.filter(a => a.youtube?.channels?.some(c => indexed.has(c.id)));
 const programNames = new Set(['Club Social Carme']);
 const categoryOf = genres => CATEGORY_GROUPS.filter(c => c.genres.some(g => genres.includes(g))).map(c => c.label);
 const reviewed = new Map(reviews.artists.map(a => [a.artist, a]));
+const repaired = new Set([...reviewed.keys(), ...Object.values(reviews.channelOwners || {}).map(d => d.artist)]);
 const restored = [];
 for (const a of artists) {
     const review = reviewed.get(a.name);
@@ -35,11 +40,12 @@ for (const a of artists) for (const c of a.youtube.channels.filter(c => indexed.
 let changedSongs = 0;
 function refresh(item) {
     const a = canonical.get(item.channelId || item.id);
-    if (!a || !reviewed.has(a.name)) return;
+    if (!a || !repaired.has(a.name)) return;
     const categories = categoryOf(a.genres);
     if (JSON.stringify(item.categories) !== JSON.stringify(categories)) changedSongs++;
     item.categories = categories;
     item.genres = a.genres;
+    if (reviews.channelOwners?.[item.channelId || item.id] && Array.isArray(item.artists)) item.artists = [a.name];
 }
 for (const c of channels.channels) refresh(c);
 if (process.argv.includes('--repair-catalog')) {
@@ -52,8 +58,9 @@ if (process.argv.includes('--repair-catalog')) {
         const walk = node => {
             if (!node || typeof node !== 'object') return;
             if (node.channelId) refresh(node);
-            if (node.channels && !Array.isArray(node.channels)) for (const [id, c] of Object.entries(node.channels)) if (canonical.has(id) && reviewed.has(canonical.get(id).name)) {
+            if (node.channels && !Array.isArray(node.channels)) for (const [id, c] of Object.entries(node.channels)) if (canonical.has(id) && repaired.has(canonical.get(id).name)) {
                 c.categories = categoryOf(canonical.get(id).genres); c.genres = canonical.get(id).genres;
+                if (reviews.channelOwners?.[id] && Array.isArray(c.artists)) c.artists = [canonical.get(id).name];
             }
             if (Array.isArray(node.channels)) node.channels.forEach(refresh);
             for (const v of Object.values(node)) if (v && typeof v === 'object') walk(v);

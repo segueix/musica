@@ -1621,7 +1621,7 @@ la fitxa conservava «Ska / Reggae» només a les notes. `getCandidates` les des
 abans del càlcul d'afinitats. L'enriquidor substituïa els gèneres per una llista buida
 quan no trobava etiquetes externes i no existia el marcador `genre:manual`.
 
-**Correcció:** restauració documental de 53 artistes, preservació de gèneres previs
+**Correcció:** restauració documental de 60 artistes, preservació de gèneres previs
 quan no hi ha dades noves, perfils de cobertura per a tots els artistes musicals
 publicats i vincles de membres compartits Knockouts–Dr. Calypso/Skatalà/Frontpilsen.
 El catàleg generat distingeix perfils detallats i bàsics; no interpreta absència de

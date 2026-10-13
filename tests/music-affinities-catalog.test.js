@@ -28,6 +28,8 @@ describe('cobertura completa d’afinitats', () => {
         const published = new Set(channels.map(c => c.id));
         expect(A.profiles).toHaveLength(db.artists.filter(a => a.name !== 'Club Social Carme' && a.youtube?.channels?.some(c => published.has(c.id))).length);
         expect(find('Club Social Carme')).toBeUndefined();
+        expect(find('Ernest Crusats').channelIds).toContain('UCuH5h0CPXPIccfyvgZgF09w');
+        expect(find('La Iaia').channelIds).not.toContain('UCuH5h0CPXPIccfyvgZgF09w');
     });
     it('Knockouts té 10 cançons elegibles a Ska i les relacions són simètriques', () => {
         const p = find('knocKouts');

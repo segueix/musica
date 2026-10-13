@@ -235,7 +235,7 @@ L'afinitat editorial mesurada no equival a qualitat acústica percebuda; queda p
 
 ## Ampliació a Punk (2026-10-13)
 
-53 artistes i 70 canals revisats: 51 perfils amb subestils documentats i dos pendents
+60 artistes i 70 canals revisats: 51 perfils amb subestils documentats i dos pendents
 (Coça i Vàlius) amb afinitat neutral. Bestiari comparteix un únic perfil amb Heavy.
 S'activa el mateix ajust màxim ±0,06 en ràdios de categoria única `Punk`.
 Es distingeixen punk rock, pop punk, Oi!, hardcore, post-hardcore, emo, screamo,
@@ -269,7 +269,7 @@ Les ràdios de qualsevol categoria única poden usar l'ajust acotat ±0,06. Les
 mescles i altres modes mantenen la selecció anterior. Els vídeos desconeguts i
 les versions sense revisió pròpia continuen neutrals i elegibles.
 
-`data/music-affinity-review.json` documenta la recuperació de 53 classificacions
+`data/music-affinity-review.json` documenta la recuperació de 60 classificacions
 perdudes i tres vincles de membres compartits entre Knockouts i Dr. Calypso,
 Skatalà i Frontpilsen. Cada vincle afegeix com a màxim 0,08 a la similitud editorial
 (màxim 1), sempre després del filtre de categoria. No fa entrar Frontpilsen a Ska.
