@@ -204,3 +204,30 @@ ska de totes les cançons per pertànyer a la categoria. Guaita'ls i Kayo Malayo
 i confiança menor. L'expansió exigeix fonts i proves per categoria; no s'activen categories noves
 automàticament en afegir perfils. El pool previ conserva el seu límit: les afinitats no poden recuperar
 candidates descartades abans per la puntuació base.
+
+
+
+## Ampliació a Heavy / Metal (2026-10-13)
+
+S'activa el mateix ajust acotat exclusivament a la categoria única `Heavy / Metal`.
+23 perfils cobreixen els 35 canals de la categoria. Cada perfil té fonts, data de revisió
+i confiança editorial. `profilesFor(category)` separa les cohorts; els perfils Ska i els
+seus càlculs es conserven. La llista `enabledCategories` requereix activació explícita.
+
+Facetes: heavy, power, death i death melòdic, black, doom, sludge, grindcore i goregrind,
+hardcore/crossover, folk i metal progressiu. Les etiquetes generals «metal» no puntuen
+com una similitud compartida per tots. Subgèneres com goregrind inclouen també grindcore
+per expressar el parentiu; això és normalització editorial, no anàlisi d'àudio.
+
+Foscor i Forja han evolucionat estilísticament: perfil transversal i confiança reduïda,
+pendent de refinament per llançament. Bestiari només incorpora hardcore documentat: no
+s'infereix un subgènere concret de la seva descripció oberta. Avalot només heavy documentat
+a Enderrock; es descarta el resultat de cerca de Bandcamp amb comentaris aliens i enllaç
+no disponible. Pesta Porcina no es confon amb Metzina Porcina. Les fonts YouTube corresponen
+a les descripcions oficials conservades a `js/channels-ca.json`. Els perfils no afegeixen
+cançons ni alteren el filtre de llengua o l'elegibilitat de les ràdios.
+
+Proves: afinitats entre subestils, separació d'artistes, neutralitat de versions i desconeguts,
+no activació en mescles/cerca/llistes i invariància exacta dels perfils i resultats Ska.
+Informe de simulacions sobre el feed: `docs/revisions/2026-10-13-afinitats-heavy.json`.
+L'afinitat editorial mesurada no equival a qualitat acústica percebuda; queda pendent escolta humana.

@@ -5,13 +5,14 @@ import { loadScript } from './setup.js';
 const app = loadScript('js/features/music-affinities.js').SegueixApp;
 const A = app.features.musicAffinities;
 const E = loadScript('js/features/music-selection.js', { SegueixApp: app }).SegueixApp.features.musicSelection;
+const profiles = A.profilesFor(A.category);
 const NOW = Date.parse('2026-10-13T12:00:00Z');
 const song = (profile, i = 0) => ({
     id: `test-${profile.artist}-${i}`, channelId: profile.channelIds[0], channelTitle: profile.artist,
     title: `Peça ${profile.artist} ${i}`, contentType: 'song', categories: [A.category],
     publishedAt: '2026-01-01T12:00:00Z', durationSeconds: 200, viewCount: 5000,
 });
-const find = name => song(A.profiles.find(p => p.artist === name));
+const find = name => song(profiles.find(p => p.artist === name));
 function select(videos, extra = {}) {
     return E.selectRadio({
         ctx: E.createContext({ videos, now: NOW }), candidates: videos.slice(1), seed: videos[0],
@@ -22,10 +23,10 @@ function select(videos, extra = {}) {
 describe('pilot editorial Ska / Reggae', () => {
     it('documenta 14 perfils i 22 canals únics del catàleg, sense canal ambigu', () => {
         const channels = JSON.parse(readFileSync('js/channels-ca.json', 'utf8')).channels;
-        const ids = A.profiles.flatMap(p => p.channelIds);
-        expect(A.profiles).toHaveLength(14);
+        const ids = profiles.flatMap(p => p.channelIds);
+        expect(profiles).toHaveLength(14);
         expect(new Set(ids).size).toBe(22);
-        for (const p of A.profiles) {
+        for (const p of profiles) {
             expect(p.facets.length).toBeGreaterThan(0);
             expect(p.sources.every(url => url.startsWith('https://'))).toBe(true);
             expect(p.reviewedAt).toBe('2026-10-13');
@@ -57,7 +58,7 @@ describe('pilot editorial Ska / Reggae', () => {
         expect(A.transition(find('Mr. Freak Ska'), previous, seed)).toBeGreaterThan(A.transition(find('Mr. Freak Ska'), seed, seed));
     });
     it('deixa exactament igual les altres categories, mescles i polítiques', () => {
-        const videos = A.profiles.map(p => song(p));
+        const videos = profiles.map(p => song(p));
         for (const options of [
             { category: 'Rock' }, { category: '' }, { category: ['Ska / Reggae', 'Pop'] },
             { policy: 'search' }, { policy: 'artist' }, { policy: 'historic' },
@@ -67,7 +68,7 @@ describe('pilot editorial Ska / Reggae', () => {
         }
     });
     it('conserva diversitat, separació, elegibilitat i artistes sense perfil', () => {
-        const videos = A.profiles.flatMap(p => [song(p), song(p, 1)]);
+        const videos = profiles.flatMap(p => [song(p), song(p, 1)]);
         videos.push(song({ artist: 'Sense perfil', channelIds: ['unknown'] }));
         const queue = select(videos, { count: videos.length - 1 });
         expect(queue).toHaveLength(videos.length - 1);
@@ -86,13 +87,14 @@ describe('pilot editorial Ska / Reggae', () => {
         }
     });
     it('acota l’ajust i permet desactivar-lo sense dependències de xarxa', () => {
-        for (const a of A.profiles) for (const b of A.profiles) {
+        for (const a of profiles) for (const b of profiles) {
             expect(Math.abs(A.transition(song(a), song(b), song(b)))).toBeLessThanOrEqual(0.06000001);
         }
         const bare = loadScript('js/features/music-selection.js').SegueixApp.features.musicSelection;
-        const videos = A.profiles.map(p => song(p));
+        const videos = profiles.map(p => song(p));
         const options = { ctx: bare.createContext({ videos, now: NOW }), candidates: videos.slice(1), seed: videos[0],
             category: A.category, signals: bare.emptySignals(), rng: () => 0.5, count: 18 };
         expect(bare.selectRadio(options).queue).toEqual(select(videos, { affinities: false }));
     });
 });
+

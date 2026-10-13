@@ -41,15 +41,16 @@ const sandbox={SegueixApp:{features:{},utils:{},state:{}},console,localStorage:{
 sandbox.window=sandbox;
 for(const name of ['music-affinities','music-selection'])vm.runInNewContext(fs.readFileSync('js/features/'+name+'.js','utf8'),sandbox);
 const A=sandbox.SegueixApp.features.musicAffinities, E=sandbox.SegueixApp.features.musicSelection;
+const profiles=A.profilesFor ? A.profilesFor(A.category) : A.profiles;
 const feed=JSON.parse(fs.readFileSync('data/feed.json','utf8'));
 const ids=new Set(JSON.parse(fs.readFileSync('js/channels-ca.json','utf8')).channels.filter(c=>c.categories?.includes(A.category)).map(c=>c.id));
 const videos=feed.videos.filter(v=>ids.has(v.channelId)&&['song','live_song'].includes(v.contentType));
 assert(videos.length>20,'No hi ha prou repertori per simular');
-const artistKeyOf=v=>A.profiles.find(p=>p.channelIds.includes(v.channelId))?.artist||v.channelId;
+const artistKeyOf=v=>profiles.find(p=>p.channelIds.includes(v.channelId))?.artist||v.channelId;
 const ctx=E.createContext({videos,now:Date.parse('2026-10-13T12:00:00Z'),artistKeyOf});
 function rng(seed){let a=seed;return()=>{a=(Math.imul(a,1664525)+1013904223)>>>0;return a/4294967296;};}
 const examples=[];
-for(const p of A.profiles){
+for(const p of profiles){
     const seed=videos.find(v=>p.channelIds.includes(v.channelId));if(!seed)continue;
     for(let n=1;n<=3;n++){
         const opts={ctx,seed,candidates:videos.filter(v=>v.id!==seed.id),category:A.category,count:20,signals:E.emptySignals()};
@@ -63,7 +64,7 @@ for(const p of A.profiles){
     }
 }
 const avg=(side,key)=>examples.reduce((sum,x)=>sum+x[side][key],0)/examples.length;
-const report={base,checkedAt:new Date().toISOString(),profiles:A.profiles.length,catalogSongs:videos.length,
+const report={base,checkedAt:new Date().toISOString(),profiles:profiles.length,catalogSongs:videos.length,
     profiledSongs:videos.filter(v=>A.profileOf(v)).length,passedTests:current.numPassedTests,
     unchangedFailedTests:current.numFailedTests,newFailures:0,lintFilesWithUnchangedDiagnostics:diagnostics.length,
     simulations:examples.length,before:{affinity:avg('before','affinity'),artists:avg('before','artists')},
@@ -71,3 +72,4 @@ const report={base,checkedAt:new Date().toISOString(),profiles:A.profiles.length
     caveat:'Afinitat editorial, no qualitat acústica comprovada amb escolta.',examples};
 fs.writeFileSync('docs/revisions/2026-10-13-afinitats-ska.json',JSON.stringify(report,null,2)+'\n');
 console.log(JSON.stringify({...report,examples:undefined}));
+

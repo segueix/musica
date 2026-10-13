@@ -4,7 +4,7 @@
     const app = window.SegueixApp;
     if (!app) return;
     const CATEGORY = 'Ska / Reggae';
-    const profiles = [
+    const skaProfiles = [
         {
             artist: 'Aspencat',
             channelIds: ['UCcyD1Q9V5wfaGD1Z5CH1Nlw', 'UCnygquYeJppJcbgD085undw'],
@@ -120,6 +120,218 @@
             reviewedAt: '2026-10-13',
         },
     ];
+    const heavyProfiles = [
+        {
+            artist: 'Amargor',
+            channelIds: ['UCoOJY5SD3f0RvSk6uhRVZ_A'],
+            facets: ['black-metal', 'raw-black-metal'],
+            confidence: 1,
+            sources: ['https://paral-lel62.cat/en/programacio/catalunya-triomfant-2026-parallel62-eng/'],
+            reviewedAt: '2026-10-13',
+            categories: ['Heavy / Metal'],
+        },
+        {
+            artist: 'Angoixa',
+            channelIds: ['UC7CW0LUdtTnZfYmuayRJEmQ', 'UCOwCZBGNBYlvxmZn2BbmhFQ'],
+            facets: ['death-metal'],
+            confidence: 1,
+            sources: ['https://www.youtube.com/channel/UCOwCZBGNBYlvxmZn2BbmhFQ'],
+            reviewedAt: '2026-10-13',
+            categories: ['Heavy / Metal'],
+        },
+        {
+            artist: 'Assot',
+            channelIds: ['UCgAPpOaGsoDsXdEQKLB6gnQ'],
+            facets: ['death-metal', 'sludge'],
+            confidence: 0.9,
+            sources: ['https://assot.bandcamp.com/album/bullen-les-calderes'],
+            reviewedAt: '2026-10-13',
+            categories: ['Heavy / Metal'],
+        },
+        {
+            artist: 'Astral Warrior',
+            channelIds: ['UC7auRFIxjfkrZdsWPe7R_Qg', 'UCh_dOmbZ0ZkjBEYDH96NNqQ'],
+            facets: ['heavy-metal', 'power-metal'],
+            confidence: 1,
+            sources: ['https://astralwarriors.bandcamp.com/album/metalunya'],
+            reviewedAt: '2026-10-13',
+            categories: ['Heavy / Metal'],
+        },
+        {
+            artist: 'Avalot',
+            channelIds: ['UCcG2ayuF3B2xDZIVH2LNefg'],
+            facets: ['heavy-metal'],
+            confidence: 0.7,
+            sources: ['https://www.enderrock.cat/disc/2180/somnis'],
+            reviewedAt: '2026-10-13',
+            categories: ['Heavy / Metal'],
+        },
+        {
+            artist: 'Bestiari',
+            channelIds: ['UCf0MYgzgqhRYuimo71a2dYQ'],
+            facets: ['hardcore'],
+            confidence: 0.8,
+            sources: ['https://www.youtube.com/channel/UCf0MYgzgqhRYuimo71a2dYQ'],
+            reviewedAt: '2026-10-13',
+            categories: ['Heavy / Metal'],
+        },
+        {
+            artist: 'Bocc',
+            channelIds: ['UCR5qRB1oeWWJF8QhX7WmuXQ'],
+            facets: ['death-metal', 'doom-metal'],
+            confidence: 1,
+            sources: ['https://bocc.bandcamp.com/music'],
+            reviewedAt: '2026-10-13',
+            categories: ['Heavy / Metal'],
+        },
+        {
+            artist: 'Entropia',
+            channelIds: ['UCayj6r8npsfkvYupNj8YC4A', 'UCT-wRacXWBQKqr1z6ZGoubw'],
+            facets: ['doom-metal', 'drone'],
+            confidence: 1,
+            sources: ['https://www.youtube.com/channel/UCT-wRacXWBQKqr1z6ZGoubw'],
+            reviewedAt: '2026-10-13',
+            categories: ['Heavy / Metal'],
+        },
+        {
+            artist: 'Falç de Fetillera',
+            channelIds: ['UCgVBViL3I9YWFVBHIyvcpjg', 'UC8GlOjZpZMKHieUbeJ9eh7g'],
+            facets: ['doom-metal', 'folk'],
+            confidence: 1,
+            sources: ['https://www.youtube.com/channel/UCgVBViL3I9YWFVBHIyvcpjg'],
+            reviewedAt: '2026-10-13',
+            categories: ['Heavy / Metal'],
+        },
+        {
+            artist: 'Forja',
+            channelIds: ['UCBaZT9T1jD6ggbVikvr0nAw', 'UCmciKowevXGORJnZGaZVrsg'],
+            facets: ['folk', 'symphonic-metal', 'power-metal', 'death-metal'],
+            confidence: 0.8,
+            sources: ['https://www.forja-metal.com/', 'https://forja.bandcamp.com/album/tornant-de-la-batalla'],
+            reviewedAt: '2026-10-13',
+            categories: ['Heavy / Metal'],
+        },
+        {
+            artist: 'Foscor',
+            channelIds: ['UCpWzqKujkmJvGIAt5QgBgBQ'],
+            facets: ['black-metal', 'post-metal', 'progressive-metal'],
+            confidence: 0.7,
+            sources: ['https://www.season-of-mist.com/bands/foscor/'],
+            reviewedAt: '2026-10-13',
+            categories: ['Heavy / Metal'],
+        },
+        {
+            artist: 'Icestorm',
+            channelIds: ['UCcjUSZZ1Aqt74OqoXtkb51A'],
+            facets: ['death-metal', 'melodic-death-metal'],
+            confidence: 0.9,
+            sources: ['https://icestorm.bandcamp.com/'],
+            reviewedAt: '2026-10-13',
+            categories: ['Heavy / Metal'],
+        },
+        {
+            artist: 'KOP',
+            channelIds: ['UCvSMpTrqlrZxYbhZoTbsQoA', 'UCC66jsgEM01kvhvwJ59xttA'],
+            facets: ['hardcore', 'punk', 'crossover'],
+            confidence: 1,
+            sources: ['https://www.oa2produccions.cat/kop-2/'],
+            reviewedAt: '2026-10-13',
+            categories: ['Heavy / Metal'],
+        },
+        {
+            artist: 'Korruption Found',
+            channelIds: ['UCCNmteQmEPFZTuM8joXB2Vw', 'UClGOkwEfKOBUuvepYGT9AUQ'],
+            facets: ['death-metal', 'black-metal'],
+            confidence: 1,
+            sources: ['https://www.youtube.com/channel/UClGOkwEfKOBUuvepYGT9AUQ'],
+            reviewedAt: '2026-10-13',
+            categories: ['Heavy / Metal'],
+        },
+        {
+            artist: 'Moksha',
+            channelIds: ['UC3uMAvZMHLOMo3OSDjqAVYQ'],
+            facets: ['grindcore', 'hardcore'],
+            confidence: 0.9,
+            sources: ['https://bcmoksha.bandcamp.com/track/cavalgant-la-corda-fluixa'],
+            reviewedAt: '2026-10-13',
+            categories: ['Heavy / Metal'],
+        },
+        {
+            artist: 'Ósserp',
+            channelIds: ['UCCmgW83QdTLEGTkEc6uyJ6Q'],
+            facets: ['death-metal', 'black-metal', 'grindcore'],
+            confidence: 1,
+            sources: ['https://osserp.bandcamp.com/album/els-nous-cants-de-la-sibil-la'],
+            reviewedAt: '2026-10-13',
+            categories: ['Heavy / Metal'],
+        },
+        {
+            artist: 'Pesta Porcina',
+            channelIds: ['UCeZTzF8dhFsh_BcqHUzygjg'],
+            facets: ['goregrind', 'grindcore'],
+            confidence: 0.8,
+            sources: ['https://www.metal-archives.com/bands/Pesta_Porcina/23250'],
+            reviewedAt: '2026-10-13',
+            categories: ['Heavy / Metal'],
+        },
+        {
+            artist: 'Sangtraït',
+            channelIds: ['UC6a_paoSt1YYKOFZwPGdEYw'],
+            facets: ['heavy-metal', 'hard-rock'],
+            confidence: 0.8,
+            sources: ['https://en.wikipedia.org/wiki/Sangtra%C3%AFt'],
+            reviewedAt: '2026-10-13',
+            categories: ['Heavy / Metal'],
+        },
+        {
+            artist: 'Tempestat',
+            channelIds: ['UCxVQcJujZLvClGNyvobPRyQ', 'UC50KRxJXBWgOj3Q05CDAs8w'],
+            facets: ['black-metal', 'grindcore', 'crust'],
+            confidence: 1,
+            sources: ['https://www.youtube.com/channel/UCxVQcJujZLvClGNyvobPRyQ'],
+            reviewedAt: '2026-10-13',
+            categories: ['Heavy / Metal'],
+        },
+        {
+            artist: 'Thanatopraxy',
+            channelIds: ['UCZ9JPgA_kLvdtOpbIzs8Yew'],
+            facets: ['goregrind', 'grindcore'],
+            confidence: 0.8,
+            sources: ['https://www.metal-archives.com/bands/Thanatopraxy/3540484882'],
+            reviewedAt: '2026-10-13',
+            categories: ['Heavy / Metal'],
+        },
+        {
+            artist: 'Udol',
+            channelIds: ['UCrxpjvY7G2ffEklcmSHm5og', 'UCQz3jf86vHTtfVwXd-rOSrA', 'UCYnT07O7RJlNvU_sNq6EsZQ'],
+            facets: ['doom-metal'],
+            confidence: 1,
+            sources: ['https://udol.bandcamp.com/music'],
+            reviewedAt: '2026-10-13',
+            categories: ['Heavy / Metal'],
+        },
+        {
+            artist: 'Vidres a la Sang',
+            channelIds: ['UCWWnWo4E1RqWDOX4-y1jwfQ', 'UCZKSBZ8hKicoNtWdq1hzTfw'],
+            facets: ['black-metal', 'death-metal', 'heavy-metal', 'progressive-metal'],
+            confidence: 0.9,
+            sources: ['https://vidresalasang.bandcamp.com/album/virtut-del-desenc-s'],
+            reviewedAt: '2026-10-13',
+            categories: ['Heavy / Metal'],
+        },
+        {
+            artist: 'Vrademargk',
+            channelIds: ['UC5b2TCGWRI0ulWbpeCm9dnw', 'UC0Ury5l6zFGf9ws25up1ucg'],
+            facets: ['death-metal', 'melodic-death-metal'],
+            confidence: 0.8,
+            sources: ['https://vrademargk.bandcamp.com/album/the-black-chamber'],
+            reviewedAt: '2026-10-13',
+            categories: ['Heavy / Metal'],
+        },
+    ];
+    const profiles = [...skaProfiles.map(profile => ({ ...profile, categories: [CATEGORY] })), ...heavyProfiles];
+    const enabledCategories = [CATEGORY, 'Heavy / Metal'];
+    const profilesFor = category => profiles.filter(profile => profile.categories.includes(category));
     const byChannel = new Map();
     profiles.forEach(profile => profile.channelIds.forEach(id => byChannel.set(id, profile)));
     // Les excepcions futures han de portar facets, confidence, sources i reviewedAt.
@@ -152,7 +364,7 @@
 
     function isActive(category, policy = 'general', mix = null) {
         const categories = Array.isArray(category) ? category : [category];
-        return policy === 'general' && !mix && categories.length === 1 && categories[0] === CATEGORY;
+        return policy === 'general' && !mix && categories.length === 1 && enabledCategories.includes(categories[0]);
     }
 
     // Ajust màxim ±0,06, només entre candidates que ja compleixen les restriccions.
@@ -165,6 +377,8 @@
     app.features.musicAffinities = {
         category: CATEGORY,
         profiles,
+        profilesFor,
+        enabledCategories,
         profileOf,
         similarity,
         isActive,

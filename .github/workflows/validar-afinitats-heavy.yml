@@ -1,0 +1,39 @@
+name: Validar pilot afinitats Heavy
+on:
+  push:
+    branches: [pilot/afinitats-heavy]
+    paths:
+      - 'js/features/music-affinities.js'
+      - 'js/features/music-selection.js'
+      - 'tests/music-affinities.test.js'
+      - 'tests/music-affinities-heavy.test.js'
+      - 'scripts/revisions/validar_afinitats_heavy.js'
+      - '.github/workflows/validar-afinitats-heavy.yml'
+permissions:
+  contents: write
+concurrency:
+  group: pilot-afinitats-heavy
+  cancel-in-progress: false
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - name: Proves completes, lint i simulació del catàleg
+        run: node scripts/revisions/validar_afinitats_heavy.js 3e7cb1e79046e88c59e8f3703b61ed29f30159fd
+      - run: npm run sw:version
+      - name: Desa verificació i precache a la branca del pilot
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add sw.js docs/revisions/2026-10-13-afinitats-heavy.json
+          git commit -m 'test: verifica afinitats Heavy i actualitza precache'
+          git push origin HEAD:pilot/afinitats-heavy
