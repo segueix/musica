@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-13T16:54:17.378Z",
+  "updatedAt": "2026-10-13T16:57:07.006Z",
   "description": "Decisions manuals sobre el tipus de contingut de vídeos concrets. Manen sobre el classificador automàtic (scripts/lib/classificar_contingut_musical.js) i el pipeline (scripts/update_music_feed.js) les reaplica a cada generació del feed. Tipus permesos: song, live_song, album, other. Un vídeo revisat aquí surt de data/music-content-review.json.",
   "videos": [
     {
