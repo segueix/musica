@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "reviewedOn": "2026-10-13",
+  "method": "Selecció documental per edició, identitat i repertori. Les lletres oficials consultades consten separadament a lyricSources. No s’ha fet una escolta íntegra ni una verificació completa de totes les lletres. Cap novetat futura o homònim s’accepta automàticament. Els préstecs lèxics aïllats no equivalen per si sols a una estrofa en una altra llengua.",
+  "artists": [
+    {
+      "name": "Neisha", "key": "artist:neisha", "aliases": [], "genres": ["Urbana"], "territory": "Catalunya",
+      "place": "Barcelona", "placeAliases": ["Barcelona"], "placeId": "geonames:3128760", "bounds": [41,42,1,3],
+      "originSource": "https://www.enderrock.cat/noticia/29744/neisha-es-presenta-missio-seu-ascens-presidenta-cuntalunya",
+      "sources": ["https://www.delirics.cat/en/neisha", "https://www.delirics.cat/post/neisha-presenta-nou-sigle-les-prada", "https://www.enderrock.cat/noticia/29744/neisha-es-presenta-missio-seu-ascens-presidenta-cuntalunya"],
+      "basis": "Artista barcelonina: projecte en solitari identificat pel seu segell, les edicions Delirics i els canals concordants. No és la cantant eslovena homònima.",
+      "note": "Selecció documental de les edicions catalanes identificades pel segell i del projecte Dolcesa Bruna. Opening i Ending són peces vocals completes, amb lletra catalana publicada; no es descarten per la durada. Fora promocions i entrevista. Cap aprovació automàtica de novetats.",
+      "channels": [
+        {"id":"UCYL4dFN0bEcSC1nQD1ww4_w", "type":"topic", "primary":true, "ids":"ih3D30nxpO8 s1OvxW8f79w KK4gPs8I98U FSDiegQ2j9I CRlXjPazCok OTGvgdTtFME A9yQk6Gq88Y UbYrY5BTjg0 JMPCjXHq1uQ YJeIlEY3igc U3NVF21HpcE -8mHiT4vuow Jl7bAjMG940 E1v3QOtTp3A oiFHXI_NKz8 Rrgfa8-ZwNI wKGo-45LXKo mze1FbXp4M8 zGmtPiGv0Nk _JP2_9bao0o F0DuFSDk5ys LVDt-DuRMpk is5vQ-OfBoU 5J0uUgC7A9A sXpQDyDkuyc 2DsQb8sx5-k xAL2gAOON18"},
+        {"id":"UC-XeMWmg61MRESFhKFTTx-g", "type":"official", "primary":false, "ids":"Q5uakpeht4M c9pfGQmPp2s JtHfGiEriaQ mtXflRautAE sJssGdT3KEI ybg9INftQ1M VXUE1ZTYwSU Z2eHetXqM2c 2_kWt9oOmYU b8cVyaRZoco n-7YJxtFHb0 MGvn3o78woQ 3FtdFha1X24 s0M6R_C2NSA LBAA0h0nfsY PjRpugO159M zd6UQV6dyMI ADtcaViKcTk zvH_G1kZEkA"}
+      ],
+      "lyricSources": {"b8cVyaRZoco":"https://www.youtube.com/watch?v=b8cVyaRZoco", "-8mHiT4vuow":"https://www.youtube.com/watch?v=b8cVyaRZoco", "MGvn3o78woQ":"https://www.youtube.com/watch?v=MGvn3o78woQ", "U3NVF21HpcE":"https://www.youtube.com/watch?v=MGvn3o78woQ"}
+    },
+    {
+      "name":"AVANT", "key":"artist:avant", "aliases":[], "genres":["Urbana","Rap / Hip-hop"], "territory":"País Valencià",
+      "place":"València", "placeAliases":["València"], "placeId":"geonames:2509954", "bounds":[39,40,-1,0],
+      "originSource":"https://www.ppf.cat/index.php/cat/artistes/avant", "sources":["https://www.ppf.cat/index.php/cat/artistes/avant"],
+      "basis":"Duo de Benimaclet, barri de València, format per Tomàs Torres Martín i Pol Mut Gosp segons el segell. La coordenada és municipal, no un punt inventat del barri.",
+      "note":"Canal oficial verificat; el Tema queda pendent perquè la cerca retorna nombrosos homònims. Repertori propi i EP Nosaltres, amb les lletres oficials disponibles contrastades. Les pistes completes de menys de dos minuts no són promocions.",
+      "channels":[{"id":"UC0j6Wq2VUm6b1tDsEalkRhw", "type":"official", "primary":true, "ids":"s6Ewo3WSpf4 rf95CDQxCDk DLumBkevUpg h6w5uRB4opk qN1-VeRyoXo UfsVEIK7q30 PWKOOUdZtv4 OrlMVuD1QAM pe_7n9RWIfA oIQnUG0XSng"}],
+      "lyricSources":{"s6Ewo3WSpf4":"https://www.youtube.com/watch?v=s6Ewo3WSpf4", "rf95CDQxCDk":"https://www.youtube.com/watch?v=rf95CDQxCDk", "DLumBkevUpg":"https://www.youtube.com/watch?v=DLumBkevUpg", "h6w5uRB4opk":"https://www.youtube.com/watch?v=h6w5uRB4opk", "qN1-VeRyoXo":"https://www.youtube.com/watch?v=qN1-VeRyoXo", "UfsVEIK7q30":"https://www.youtube.com/watch?v=UfsVEIK7q30", "PWKOOUdZtv4":"https://www.youtube.com/watch?v=PWKOOUdZtv4", "OrlMVuD1QAM":"https://www.youtube.com/watch?v=OrlMVuD1QAM", "pe_7n9RWIfA":"https://www.youtube.com/watch?v=pe_7n9RWIfA"}
+    },
+    {
+      "name":"Xisk", "key":"artist:xisk", "aliases":["Xisca Garau","Francisca Garau Cañellas"], "genres":["Urbana","Electrònica"], "territory":"Illes Balears",
+      "place":"Palma", "placeAliases":["Palma","Palma de Mallorca"], "placeId":"geonames:2512989", "bounds":[39,40,2,3],
+      "originSource":"https://www.enderrock.cat/noticia/30286/xisk-sent-teu-foc-1lokura",
+      "sources":["https://www.delirics.cat/xisk", "https://www.enderrock.cat/noticia/30286/xisk-sent-teu-foc-1lokura"],
+      "basis":"Xisca Garau, artista palmesana. El canal oficial coincideix amb els vídeos del segell; els crèdits del Tema identifiquen Francisca Garau Cañellas.",
+      "note":"Primera selecció documental de Dolenties i els seus senzills. Sinceritat queda fora perquè la lletra publicada conté una tornada català-anglès. Es deixa pendent la resta de Viu en Pau, l’edició Paràsit i el Tema antic fins a contrast individual. Cap canal homònim esportiu incorporat.",
+      "channels":[
+        {"id":"UCZKEilLSE62Ewxa1NueYwcQ", "type":"topic", "primary":true, "ids":"byCouW2heDY S0bvH7k2rtg y_UCugHizI4 H1j6KfRZJt8 D1kfn4dvg9g WtKXScD8oeU QuZOuohWRQM NKntY20V7SM sJNcpab3xy4 V-962oWhypQ -YZ-5gpHLaw IZTf4U3Repg 48ZcDnqZ4oY XIpq9XDUt4E UAhJlsAzHzA qp3ypeTJ2qY yV_VnnGpVoM owi0gwbO9Is UDGxN5gbgzw 1TdnZq4RvFo"},
+        {"id":"UCYCaG33IVxlUbYcwJsHGM4Q", "type":"official", "primary":false, "ids":"XesgSl26dl0 5pKQrOkJQTY"}
+      ], "lyricSources":{}
+    },
+    {
+      "name":"Fortuu", "key":"artist:fortuu", "aliases":["Roger Fortuny"], "genres":["Urbana"], "territory":"Catalunya",
+      "place":"Fornells de la Selva", "placeAliases":["Fornells de la Selva"], "bounds":[41.8,42.1,2.5,3],
+      "originSource":"https://rgb.cat/management/fortuu/",
+      "sources":["https://rgb.cat/management/fortuu/", "https://www.enderrock.cat/noticia/29262/fortuu-girona-escena-urbana-petita-pero-expansio", "https://www.enderrock.cat/noticia/31243/fortuu-signa-amb-maken-row-carta-amor-dosxtres"],
+      "basis":"Roger Fortuny, de Fornells de la Selva, identificat per la fitxa del segell, l’entrevista i la biografia dels canals.",
+      "note":"Tema i canal oficial concordants. Selecció dels treballs 42 i Sobre l’Sky, senzills recents i peces amb lletra disponible. Family queda fora per frases cantades en anglès; no es rebutja només pel títol. Altres col·laboracions antigues queden pendents, i no s’importen els canals sencers del segell.",
+      "channels":[
+        {"id":"UC0WM1w4n_f4A-AZAve2QeIg", "type":"topic", "primary":true, "ids":"QRVrAjrv-vA zgdKUNAZXTw gpTHnNzTRq8 -w-boW5-9co 0buykG2YFUk CWv0IuR8KsU I3H9qCTuWdM uDZ-iIvxhaY 9AtPflaWrG0 2kOw-FlrsOY QSqzx6Fi8-A aiZCzEv1ssQ Jig3VRbQzaw -C4oZxDIbco Dk1AyghqPjE AYGpO6ptz_o yTqrBt9Fzcw hWpTQ1lOyL4 5AiPu4_hi4c zb3j8q_N4OU QAt-lk0f28I qGKfyh3iEx4 D-akiyfI6JI dimzcNJzV9c d9LznzDAdDo"},
+        {"id":"UCNY281d7mNCt3yqfQvhXbFQ", "type":"official", "primary":false, "ids":"GifTkXXhivo Q4FHj12zsfM 1PICoKoZVrU 36e_syWkL_8 sGMl3mEt__E 1JjMNfrlqWY -pldFM3qImU _cV9RiYxqQo YNZyVmQZtKI jw7g6WeeEtU sdvUvEcmsvw FpdOr6M0IfI g9lPRn8lqxw qt7w3rp1vcA V-Unybvx6Ok RKZmTUsegBQ PNct0e234no aI-P4mWzuFw LV86tp7nN-c TjbI7As-Bxw jULsjuQgUpU Zwdgo6u9HgA"}
+      ],
+      "lyricSources":{"g9lPRn8lqxw":"https://www.youtube.com/watch?v=g9lPRn8lqxw", "AYGpO6ptz_o":"https://www.youtube.com/watch?v=g9lPRn8lqxw", "jULsjuQgUpU":"https://www.youtube.com/watch?v=jULsjuQgUpU", "dimzcNJzV9c":"https://www.youtube.com/watch?v=jULsjuQgUpU", "Zwdgo6u9HgA":"https://www.youtube.com/watch?v=Zwdgo6u9HgA", "d9LznzDAdDo":"https://www.youtube.com/watch?v=Zwdgo6u9HgA"}
+    },
+    {
+      "name":"Aina Koda", "key":"artist:aina-koda", "aliases":["Aina Nogueroles","Aina Nogueroles Aparici"], "genres":["Rap / Hip-hop","Urbana"], "territory":"País Valencià",
+      "place":"Polinyà de Xúquer", "placeAliases":["Polinyà de Xúquer","Polinyà del Xúquer","Polinya de Xuquer"], "bounds":[39,39.5,-0.6,-0.2],
+      "originSource":"https://guspira.net/en/aina-koda/",
+      "sources":["https://guspira.net/en/aina-koda/", "https://guspirarecords.bandcamp.com/album/la-gata", "https://guspirarecords.bandcamp.com/album/percal"],
+      "basis":"Projecte d’Aina Nogueroles i Adam González; la fitxa del segell identifica Polinyà de Xúquer com el poble del grup. No s’utilitza Koda com a àlies genèric desvinculat dels canals.",
+      "note":"Selecció catalana de La gata i Percal, senzills i poesia musicada. No s’importa sencera l’etapa anterior: Julio Verne és en castellà segons la lletra. Si tu no estàs, Ixos, He tornat i Diumenge de matí queden fora d’aquesta selecció estricta pels passatges en altres llengües. La resta de pistes antigues no es dona per revisada.",
+      "channels":[
+        {"id":"UCP7N7ojEtXWVZZez87PiIWw", "type":"topic", "primary":true, "ids":"k4eWcm8vrH0 Zh9B68K6h5E lvXv8POTPW8 qUEiblydiDY OiIeTfpNcWM D_CQ0CbHUX0 GILUT3a5THU ZZtQnO8zARk F1oPi9YgDH4 7_KIVul-K3E njtJEP-AtIA fhrgpkGf1E8 5wEOYH3_UcM uYVgJZZUhEs jTVjMFFDbZg _Nw5VdgbpwY gdLMRODVz7c 5wa7VLfvYSM WX1HEuQWkqI ghZXmKThN_M P2dmkrJMKp8 ntZVNhiPDfg lNMTzsaS97Y GPMQjuTSTHY 0ufALuiiuiE litAbjOOfNM Qfw-IFTxG_s sAGKe-mc5Zc l980BJwUMXk 8unvi5mIS1U"},
+        {"id":"UCgcep1Xo6pgoWcfV0eYZIpQ", "type":"official", "primary":false, "ids":"yquUmfxtj6Q dK4hS_VMXmw LRNNYJvydJM VuIJFy0fYnk P2yvJa9cjCc H4ahelZbhXo wKyfK5-yg4g U17MOxUeX1E VGc9xl57DvQ DMv9FaRStDc 6GIK9575j4w DEzYA6E3OKA 8ajUoJWvsaI UFCt1JOYz-k cAjS4AoKPO4 eswW2KBF2Gk 4oNSHjnTdec aASgUps6q_0 i-aO_GKgRZw VbbrjLsLl5A yMHf0NP8Fsc JOywFWynBOc X8pCuRRusN0"}
+      ],
+      "liveIds":["X8pCuRRusN0","F1oPi9YgDH4"],
+      "lyricSources":{
+        "yquUmfxtj6Q":"https://www.youtube.com/watch?v=yquUmfxtj6Q", "OiIeTfpNcWM":"https://www.youtube.com/watch?v=yquUmfxtj6Q",
+        "dK4hS_VMXmw":"https://www.youtube.com/watch?v=dK4hS_VMXmw", "qUEiblydiDY":"https://www.youtube.com/watch?v=dK4hS_VMXmw",
+        "LRNNYJvydJM":"https://www.youtube.com/watch?v=LRNNYJvydJM", "lvXv8POTPW8":"https://www.youtube.com/watch?v=LRNNYJvydJM",
+        "VuIJFy0fYnk":"https://www.youtube.com/watch?v=VuIJFy0fYnk", "k4eWcm8vrH0":"https://www.youtube.com/watch?v=VuIJFy0fYnk", "D_CQ0CbHUX0":"https://www.youtube.com/watch?v=VuIJFy0fYnk",
+        "P2yvJa9cjCc":"https://www.youtube.com/watch?v=P2yvJa9cjCc", "GILUT3a5THU":"https://www.youtube.com/watch?v=P2yvJa9cjCc",
+        "H4ahelZbhXo":"https://www.youtube.com/watch?v=H4ahelZbhXo", "Zh9B68K6h5E":"https://www.youtube.com/watch?v=H4ahelZbhXo", "ZZtQnO8zARk":"https://www.youtube.com/watch?v=H4ahelZbhXo",
+        "wKyfK5-yg4g":"https://www.youtube.com/watch?v=wKyfK5-yg4g", "7_KIVul-K3E":"https://www.youtube.com/watch?v=wKyfK5-yg4g", "njtJEP-AtIA":"https://www.youtube.com/watch?v=wKyfK5-yg4g",
+        "U17MOxUeX1E":"https://www.youtube.com/watch?v=U17MOxUeX1E", "fhrgpkGf1E8":"https://www.youtube.com/watch?v=U17MOxUeX1E",
+        "VGc9xl57DvQ":"https://www.youtube.com/watch?v=VGc9xl57DvQ", "5wEOYH3_UcM":"https://www.youtube.com/watch?v=VGc9xl57DvQ",
+        "DMv9FaRStDc":"https://www.youtube.com/watch?v=DMv9FaRStDc", "uYVgJZZUhEs":"https://www.youtube.com/watch?v=DMv9FaRStDc",
+        "DEzYA6E3OKA":"https://www.youtube.com/watch?v=DEzYA6E3OKA", "_Nw5VdgbpwY":"https://www.youtube.com/watch?v=DEzYA6E3OKA",
+        "VbbrjLsLl5A":"https://www.youtube.com/watch?v=VbbrjLsLl5A", "Qfw-IFTxG_s":"https://www.youtube.com/watch?v=VbbrjLsLl5A", "sAGKe-mc5Zc":"https://www.youtube.com/watch?v=VbbrjLsLl5A",
+        "yMHf0NP8Fsc":"https://www.youtube.com/watch?v=yMHf0NP8Fsc", "GPMQjuTSTHY":"https://www.youtube.com/watch?v=yMHf0NP8Fsc", "8unvi5mIS1U":"https://www.youtube.com/watch?v=yMHf0NP8Fsc"
+      }
+    }
+  ],
+  "languageExclusions":[
+    {"artist":"Xisk", "ids":["Ns4oR-5G-lY","XnKILjki7hM","0QBseF1Ym_Y"], "source":"https://www.youtube.com/watch?v=Ns4oR-5G-lY", "reason":"Tornada amb frases cantades en català i anglès segons la lletra oficial."},
+    {"artist":"Fortuu", "ids":["j2qMjgbvauo","mQNGW4NbQWk","55N2zuHNIk0"], "source":"https://www.youtube.com/watch?v=j2qMjgbvauo", "reason":"Conté frases cantades en anglès, a més del català, segons la lletra oficial."},
+    {"artist":"Aina Koda", "ids":["FsTGoTSFR9I","cTMZoWJNjSg"], "source":"https://www.youtube.com/watch?v=FsTGoTSFR9I", "reason":"Lletra publicada en castellà."},
+    {"artist":"Aina Koda", "ids":["_rvKlpp_cZ8","U7sus0MjRL8"], "source":"https://www.youtube.com/watch?v=_rvKlpp_cZ8", "reason":"Conté passatges en castellà a la lletra publicada."},
+    {"artist":"Aina Koda", "ids":["HWA0efUO4Tg","rNyk-jUTuWM","nvRiYBcTsTw"], "source":"https://www.youtube.com/watch?v=HWA0efUO4Tg", "reason":"Selecció estricta: cites cantades en castellà i anglès a la lletra publicada."},
+    {"artist":"Aina Koda", "ids":["MGnNzMHeKb8","bD6UT7Ki19k","bqkdkOeF8P4"], "source":"https://www.youtube.com/watch?v=MGnNzMHeKb8", "reason":"Selecció estricta: una frase en castellà a la lletra publicada."},
+    {"artist":"Aina Koda", "ids":["4oSkszv8Rf8"], "source":"https://www.youtube.com/watch?v=4oSkszv8Rf8", "reason":"Selecció estricta: cites en anglès i italià a la lletra publicada."}
+  ]
+}
