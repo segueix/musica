@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-13T16:12:29.616Z",
+  "updatedAt": "2026-10-13T16:29:17.052Z",
   "description": "Decisions manuals sobre el tipus de contingut de vídeos concrets. Manen sobre el classificador automàtic (scripts/lib/classificar_contingut_musical.js) i el pipeline (scripts/update_music_feed.js) les reaplica a cada generació del feed. Tipus permesos: song, live_song, album, other. Un vídeo revisat aquí surt de data/music-content-review.json.",
   "videos": [
     {
@@ -14023,6 +14023,498 @@
       "contentType": "song",
       "title": "Karlus - Sa tornada (Capítol 1)",
       "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "l1fzg4ETaWw",
+      "contentType": "song",
+      "title": "9. AL FET I AMAGAR - Lepanto 41, sankki, Xandri (Visualizer)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "tZxpDoARDsQ",
+      "contentType": "song",
+      "title": "6. DIGUE'M QUE FEM - Lepanto 41, DeBron, Selves (Visualizer)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "oWS7-E3DABQ",
+      "contentType": "song",
+      "title": "3. TRENCANT EL TOP! - Lepanto 41, Liljlayy, Alcaa (Visualizer)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "g1-Ktw7V6K8",
+      "contentType": "song",
+      "title": "7. FUIGDEMONT - Lepanto 41, 13XAN, PracciBtz (Visualizer)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "hQTqcOXFNXA",
+      "contentType": "song",
+      "title": "10. SOM EMERGENTS - Lepanto 41, BUBU348, Selves (Visualizer)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "Ez460GDqO64",
+      "contentType": "song",
+      "title": "4. 4 CALES - Lepanto 41, Døls, Xandri (Visualizer)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "BxzHaPvvA8g",
+      "contentType": "song",
+      "title": "12. EMERGÈNCIA - Lepanto 41, Xandri (Visualizer)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "5qmWgOPpHsw",
+      "contentType": "song",
+      "title": "2. ESTAR AMB MI - Lepanto 41, Marti Cabello, Xandri (Visualizer)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "clew34Qf0dA",
+      "contentType": "song",
+      "title": "SOM EMERGENTS- Lepanto 41, BUBU348, Selves (VIDEOCLIP OFICIAL)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "xsMptvoEtoo",
+      "contentType": "song",
+      "title": "4 CALES - Lepanto 41 X Døls  (Videoclip Oficial)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "DqNC2KtPA2w",
+      "contentType": "song",
+      "title": "4 CALES",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "aSSi3jzJC7U",
+      "contentType": "song",
+      "title": "Com la Dua Lipa",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "Bl3pZaJors4",
+      "contentType": "song",
+      "title": "Intro",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "XQrWHayk1xU",
+      "contentType": "song",
+      "title": "Blau Mediterrani",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "hS2H_kDOL6Y",
+      "contentType": "song",
+      "title": "En Vist",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "xAqh14xBUDE",
+      "contentType": "song",
+      "title": "Si torne",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "xkc6unNAx9Q",
+      "contentType": "song",
+      "title": "Aigua Gelà Versió",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "IXMVVjNSGxM",
+      "contentType": "song",
+      "title": "En Vist",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "_Tuj6RA15PE",
+      "contentType": "song",
+      "title": "Per Tu",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "3f0H7AzReYQ",
+      "contentType": "song",
+      "title": "Massa Benimaclet",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "W54zUTj_ano",
+      "contentType": "song",
+      "title": "Si torne",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "FwtVX4kLxYk",
+      "contentType": "song",
+      "title": "DxVida",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "vHWzbZ51ZeE",
+      "contentType": "song",
+      "title": "Colomet, Andrea Ferri - Blau Mediterrani ( Official Video )",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "K1mx3S6GlA0",
+      "contentType": "song",
+      "title": "SI TORNE - Colomet (Official Video)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "yRpaLjzSf70",
+      "contentType": "song",
+      "title": "Com la Dua Lipa - Colomet",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "SJTcSi4-zNg",
+      "contentType": "song",
+      "title": "Colomet - PER TU (Official Video)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "kEkKpqXERVo",
+      "contentType": "song",
+      "title": "Colomet - MASSA BENIMACLET (Official Video)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "aGXSDUTxKus",
+      "contentType": "song",
+      "title": "DxVida  - Colomet  ( Clip Oficial )",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "Kin9DxOtXZE",
+      "contentType": "song",
+      "title": "SACROGERMEN - JUDICI 12 Jorn del Judici",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "LyMozbAVgpM",
+      "contentType": "song",
+      "title": "SACROGERMEN - JUDICI 11 Caigut",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "F959du8RnfY",
+      "contentType": "song",
+      "title": "SACROGERMEN - JUDICI 10 Maxima Culpa",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "DqaCt70zSwg",
+      "contentType": "song",
+      "title": "SACROGERMEN - JUDICI 9 Temples de Plàstic",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "JMlBCbS4Zr8",
+      "contentType": "song",
+      "title": "SACROGERMEN - JUDICI 8 Al·lot Vei Cercant Venjança",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "d008ktr-JpY",
+      "contentType": "song",
+      "title": "SACROGERMEN - JUDICI 7 Absalom",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "E1CUXvhsqFI",
+      "contentType": "song",
+      "title": "SACROGERMEN - JUDICI 6 Carn Corrupta",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "yW95_UwmDJM",
+      "contentType": "song",
+      "title": "SACROGERMEN - JUDICI 5 Fuga Curta",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "D0mnBfr3ylI",
+      "contentType": "song",
+      "title": "SACROGERMEN - JUDICI 4 Dret Sobre Un Claper",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "Vqhs9bUNvcU",
+      "contentType": "song",
+      "title": "SACROGERMEN - JUDICI 3 Mercaders Envoltant-me",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "TRetU_E3Qz8",
+      "contentType": "song",
+      "title": "SACROGERMEN - JUDICI 2 Es Feltre",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "8GXG_F1NVDs",
+      "contentType": "song",
+      "title": "SACROGERMEN - JUDICI 1 Acusacions",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "DPzG0rrT7UM",
+      "contentType": "song",
+      "title": "SACROGERMEN - Al·lots de Pedra",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "cz1RwN2yapY",
+      "contentType": "song",
+      "title": "SACROGERMEN ☥ LOTOPHAGÍA",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "n701g8WMDas",
+      "contentType": "song",
+      "title": "SACROGERMEN - Cera",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "R5cBIQl1lmI",
+      "contentType": "song",
+      "title": "SACROGERMEN - 5 Enyorança🔹Riuen Com Un Oasi",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "mfiJH-xKHa0",
+      "contentType": "song",
+      "title": "SACROGERMEN - 3 Holofernes🔹Riuen Com Un Oasi",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "WAGfAVzp1QQ",
+      "contentType": "song",
+      "title": "SACROGERMEN - 2 Tribu de s'Aigua🔹Riuen Com Un Oasi",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "oIjP0h63lCU",
+      "contentType": "song",
+      "title": "SACROGERMEN - 1 Bruna i Garrida🔹Riuen Com Un Oasi",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "wNZQODiS2YQ",
+      "contentType": "song",
+      "title": "SACROGERMEN - Holofernes",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "F9X5GKxD6cw",
+      "contentType": "song",
+      "title": "SACROGERMEN - Seté Segell",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "gndM4LioI5E",
+      "contentType": "song",
+      "title": "SACROGERMEN - Cannes",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "MJxfehoHd1A",
+      "contentType": "song",
+      "title": "SACROGERMEN - Somriure d'Estrella",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "go5piF0bx-0",
+      "contentType": "song",
+      "title": "SACROGERMEN - Arrecés",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "aPL3bKK_Hxk",
+      "contentType": "song",
+      "title": "SACROGERMEN - Jo Som",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "3amhrWnay5s",
+      "contentType": "song",
+      "title": "Jorn del Judici",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "9X5XMzKAdQU",
+      "contentType": "song",
+      "title": "Dret Sobre Un Claper",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "6vggpaswZ5Q",
+      "contentType": "song",
+      "title": "Al·lot Vei Cercant Venjança",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "IaHn0FRF6jU",
+      "contentType": "song",
+      "title": "Acusacions",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "h1_-O-Umv8U",
+      "contentType": "song",
+      "title": "Es Feltre",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "MPTQfZM1EN8",
+      "contentType": "song",
+      "title": "Carn Corrupta",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "St1syUdisiw",
+      "contentType": "song",
+      "title": "Fuga Curta",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "CFf_pBfmktM",
+      "contentType": "song",
+      "title": "Caigut",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "fvolQCivCMo",
+      "contentType": "song",
+      "title": "Maxima Culpa",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "Vs846hW9dV4",
+      "contentType": "song",
+      "title": "Temples de Plàstic",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "Ckf6QgDLpbo",
+      "contentType": "song",
+      "title": "Absalom",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "YqrREAH8esY",
+      "contentType": "song",
+      "title": "Mercaders Envoltant-me",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "43Le8d1bMH0",
+      "contentType": "song",
+      "title": "Al·lots de Pedra",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "UX6JJ-H3ejo",
+      "contentType": "song",
+      "title": "Lotophagía",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "PGEPMuVApEI",
+      "contentType": "song",
+      "title": "Cera",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "7V_ZQwHjWD0",
+      "contentType": "song",
+      "title": "Holofernes",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "RN60VuxR08g",
+      "contentType": "song",
+      "title": "Bruna i Garrida",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "j7CJrZFQrLY",
+      "contentType": "song",
+      "title": "Enyorança",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "pY7vHQsq1MM",
+      "contentType": "song",
+      "title": "Tribu de s'Aigua",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "WM-gLhniZuA",
+      "contentType": "song",
+      "title": "Holofernes",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "mBlU1jhhGow",
+      "contentType": "song",
+      "title": "Bruna i Garrida",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "ZtdHYWvaF9E",
+      "contentType": "song",
+      "title": "Cannes",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "2-KH98jClok",
+      "contentType": "song",
+      "title": "Tons Albins",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "4TugxODbEbA",
+      "contentType": "song",
+      "title": "Jo Som",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "FCXZ9QECcBw",
+      "contentType": "song",
+      "title": "Somriure D'Estrella",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "TYZZd_JmTmE",
+      "contentType": "song",
+      "title": "Seté Segell",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "YTN3GcE31u4",
+      "contentType": "song",
+      "title": "Una Torre Amb Cames",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "ZaKWnqZkJtk",
+      "contentType": "song",
+      "title": "Arrecés",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "id": "nNlHggCy09U",
+      "contentType": "song",
+      "title": "En Es Desert",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban4-alta.json"
     }
   ]
 }

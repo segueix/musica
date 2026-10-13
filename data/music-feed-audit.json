@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-10-13T16:12:32.867Z",
+  "generatedAt": "2026-10-13T16:29:20.165Z",
   "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
   "restrictedVideoCount": 21,
   "restrictedVideosAdded": [],
   "deepPagesFetched": 0,
   "deepChannelCount": 19,
-  "topicChannelCount": 330,
-  "governedChannelCount": 118,
+  "topicChannelCount": 336,
+  "governedChannelCount": 119,
   "topicCoverage": [
     {
       "id": "UCqaEtRht2jakBhGFLzS617w",
@@ -78,6 +78,14 @@
       "name": "Ceaxe",
       "songs": 9,
       "matched": 9,
+      "coverage": 1,
+      "governs": true
+    },
+    {
+      "id": "UCG7tTcmfyT2g8-p_RrTicPw",
+      "name": "Colomet",
+      "songs": 6,
+      "matched": 6,
       "coverage": 1,
       "governs": true
     },
@@ -1186,6 +1194,14 @@
       "governs": false
     },
     {
+      "id": "UCtUZyH-IDq1HqnwUrGT1NYg",
+      "name": "SACROGERMEN",
+      "songs": 24,
+      "matched": 9,
+      "coverage": 0.38,
+      "governs": false
+    },
+    {
       "id": "UCAwpv0YEBlWCi9OeqTCw4FA",
       "name": "Júlia Cruz",
       "songs": 3,
@@ -1803,6 +1819,13 @@
       "tracks": 18,
       "selected": 10,
       "withClip": 0
+    },
+    {
+      "id": "UCEL148nCbkVKRKKGvKUah9w",
+      "name": "Colomet",
+      "tracks": 11,
+      "selected": 11,
+      "withClip": 6
     },
     {
       "id": "UCTsSJXhTo6HpqmtSh8-p31A",
@@ -2596,6 +2619,13 @@
       "withClip": 0
     },
     {
+      "id": "UCvq1qQ0IvGNIy6MY6VupS7A",
+      "name": "Lepanto 41",
+      "tracks": 1,
+      "selected": 1,
+      "withClip": 1
+    },
+    {
       "id": "UC3v9pZ9RLUMaaBrr877QPmA",
       "name": "Les Aranyes",
       "tracks": 14,
@@ -3205,6 +3235,13 @@
       "withClip": 0
     },
     {
+      "id": "UC1CjXeunopycRzEbV5kpEQg",
+      "name": "SACROGERMEN",
+      "tracks": 29,
+      "selected": 29,
+      "withClip": 9
+    },
+    {
       "id": "UCiUT6UwoOJsthloLMK0pSig",
       "name": "Saïm",
       "tracks": 43,
@@ -3681,13 +3718,13 @@
       "withClip": 0
     }
   ],
-  "indexedChannelCount": 600,
-  "resolvedChannelCount": 600,
-  "feedChannelCount": 600,
-  "rawPublicVideoCount": 6669,
-  "feedVideoCount": 6145,
-  "acceptedMusicCount": 6105,
-  "categoryEligibleVideoCount": 6101,
+  "indexedChannelCount": 611,
+  "resolvedChannelCount": 606,
+  "feedChannelCount": 606,
+  "rawPublicVideoCount": 6742,
+  "feedVideoCount": 6219,
+  "acceptedMusicCount": 6178,
+  "categoryEligibleVideoCount": 6174,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
     "before": 0,
@@ -3696,7 +3733,7 @@
   },
   "contentReviewCount": 529,
   "contentTypeCounts": {
-    "song": 5930,
+    "song": 6003,
     "live_song": 171,
     "album": 4,
     "other": 35,
@@ -3706,7 +3743,7 @@
   "channelsWithoutUploads": [],
   "channelsWithoutVideos": [],
   "channelsWithoutAcceptedMusic": [],
-  "allIndexedChannelsVisible": true,
-  "publishedFeedVideoCount": 6137,
+  "allIndexedChannelsVisible": false,
+  "publishedFeedVideoCount": 6189,
   "publishedShortVideoCount": 0
 }

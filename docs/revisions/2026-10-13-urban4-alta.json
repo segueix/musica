@@ -1,0 +1,698 @@
+{
+  "schemaVersion": 1,
+  "reviewedOn": "2026-10-13",
+  "generatedAt": "2026-10-13T16:29:17.052Z",
+  "method": "Revisió individual amb lletres publicades per artistes, segells, Bandcamp i Shazam. No s’ha escoltat íntegrament l’àudio. Ni el títol ni la llengua declarada acrediten una cançó. Català, occità i instrumentals; expressions breus admeses, estrofes o tornades substancials en altres llengües excloses. IDs explícits; resta pendent. Versions i videoclips compten com enregistraments, no composicions úniques.",
+  "artists": [
+    {
+      "name": "Lepanto 41",
+      "canonicalName": "Lepanto 41",
+      "place": "Mataró",
+      "territory": "Catalunya",
+      "genres": [
+        "Urbana",
+        "Pop"
+      ],
+      "note": "Selecció estricta per ID amb lletra contrastada. La resta queda pendent de revisió lingüística.",
+      "sources": [
+        "https://maresmusic.cat/projectes-2024/",
+        "manual-user-2026-10-13"
+      ],
+      "channels": [
+        {
+          "id": "UCGpOiCofkMyiYcpL5auYfUA",
+          "type": "official",
+          "primary": false,
+          "selected": 10,
+          "allowedVideoIds": [
+            "l1fzg4ETaWw",
+            "tZxpDoARDsQ",
+            "oWS7-E3DABQ",
+            "g1-Ktw7V6K8",
+            "hQTqcOXFNXA",
+            "Ez460GDqO64",
+            "BxzHaPvvA8g",
+            "5qmWgOPpHsw",
+            "clew34Qf0dA",
+            "xsMptvoEtoo"
+          ],
+          "lyricVerified": 10,
+          "publication": {
+            "hot": 10,
+            "archive": 0,
+            "recordings": 10,
+            "notPublished": []
+          }
+        },
+        {
+          "id": "UCvq1qQ0IvGNIy6MY6VupS7A",
+          "type": "topic",
+          "primary": true,
+          "selected": 1,
+          "allowedVideoIds": [
+            "DqNC2KtPA2w"
+          ],
+          "lyricVerified": 1,
+          "publication": {
+            "hot": 1,
+            "archive": 0,
+            "recordings": 1,
+            "notPublished": []
+          }
+        }
+      ],
+      "notSelected": [
+        {
+          "id": "eFBDhdlKGKs",
+          "title": "V/Botant-Videoclip Oficial Lepanto41&Xandri",
+          "channelId": "UCGpOiCofkMyiYcpL5auYfUA",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "dOAz-IuY58s",
+          "title": "5. PER ON T'AMAGUES? - Lepanto 41, Wilagosjr, BECO (Visualizer)",
+          "channelId": "UCGpOiCofkMyiYcpL5auYfUA",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "_VWwjkA2gZY",
+          "title": "8. GALÀCTICA - Lepanto 41, Fortuu, Sarco911 (Visualizer)",
+          "channelId": "UCGpOiCofkMyiYcpL5auYfUA",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "PXidEig3AuE",
+          "title": "11. EL CAMÍ - Lepanto 41, Lemurixx, Selves (Visualizer)",
+          "channelId": "UCGpOiCofkMyiYcpL5auYfUA",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "8uMR3_HBmEI",
+          "title": "1. BURJKHALIFA - Lepanto 41, Selves (Visualizer)",
+          "channelId": "UCGpOiCofkMyiYcpL5auYfUA",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "z5s0JX_wFLU",
+          "title": "EL CAMÍ - Lepanto41,Lemurixx, Selves (VIDEOCLIP OFICIAL)",
+          "channelId": "UCGpOiCofkMyiYcpL5auYfUA",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "zfKcaGBE54Q",
+          "title": "Aquella Lady (videoclip)",
+          "channelId": "UCGpOiCofkMyiYcpL5auYfUA",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "9ZAJMsRUsoo",
+          "title": "Multicolor- Lepanto 41",
+          "channelId": "UCGpOiCofkMyiYcpL5auYfUA",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "4W_vfntgOUM",
+          "title": "EL CAMÍ",
+          "channelId": "UCvq1qQ0IvGNIy6MY6VupS7A",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "8K0Cudaxgnc",
+          "title": "PER ON T'AMAGUES?",
+          "channelId": "UCvq1qQ0IvGNIy6MY6VupS7A",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "fy2W5H2Gs4g",
+          "title": "GALÀCTICA",
+          "channelId": "UCvq1qQ0IvGNIy6MY6VupS7A",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "69THOsxnTX8",
+          "title": "COl·lOCAT",
+          "channelId": "UCvq1qQ0IvGNIy6MY6VupS7A",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "k7y70VuXMVQ",
+          "title": "Aquella Lady (Speed Up)",
+          "channelId": "UCvq1qQ0IvGNIy6MY6VupS7A",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "0G0jk3GnPpE",
+          "title": "el que sento x tu",
+          "channelId": "UCvq1qQ0IvGNIy6MY6VupS7A",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "Ta_0BM-R0NY",
+          "title": "MULTICOLOR",
+          "channelId": "UCvq1qQ0IvGNIy6MY6VupS7A",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "a-gvRyArVag",
+          "title": "Aquella Lady",
+          "channelId": "UCvq1qQ0IvGNIy6MY6VupS7A",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        }
+      ],
+      "recordingsPublished": 11
+    },
+    {
+      "name": "Colomet",
+      "canonicalName": "Colomet",
+      "place": "Bèlgida",
+      "territory": "País Valencià",
+      "genres": [
+        "Urbana",
+        "Pop"
+      ],
+      "note": "Selecció estricta per ID amb lletra contrastada. La resta queda pendent de revisió lingüística.",
+      "sources": [
+        "https://www.apuntmedia.es/noticies/cultura/entrevistem-colomet-motiu-seu-nou-treball-22_1_1593169.html",
+        "manual-user-2026-10-13"
+      ],
+      "channels": [
+        {
+          "id": "UCEL148nCbkVKRKKGvKUah9w",
+          "type": "topic",
+          "primary": true,
+          "selected": 11,
+          "allowedVideoIds": [
+            "aSSi3jzJC7U",
+            "Bl3pZaJors4",
+            "XQrWHayk1xU",
+            "hS2H_kDOL6Y",
+            "xAqh14xBUDE",
+            "xkc6unNAx9Q",
+            "IXMVVjNSGxM",
+            "_Tuj6RA15PE",
+            "3f0H7AzReYQ",
+            "W54zUTj_ano",
+            "FwtVX4kLxYk"
+          ],
+          "lyricVerified": 11,
+          "publication": {
+            "hot": 11,
+            "archive": 0,
+            "recordings": 11,
+            "notPublished": []
+          }
+        },
+        {
+          "id": "UCG7tTcmfyT2g8-p_RrTicPw",
+          "type": "official",
+          "primary": false,
+          "selected": 6,
+          "allowedVideoIds": [
+            "vHWzbZ51ZeE",
+            "K1mx3S6GlA0",
+            "yRpaLjzSf70",
+            "SJTcSi4-zNg",
+            "kEkKpqXERVo",
+            "aGXSDUTxKus"
+          ],
+          "lyricVerified": 6,
+          "publication": {
+            "hot": 6,
+            "archive": 0,
+            "recordings": 6,
+            "notPublished": []
+          }
+        }
+      ],
+      "notSelected": [
+        {
+          "id": "dJren3P02DI",
+          "title": "Colomet, Carlos Vera Tamarit - Feliç funeral (Lyric Video)",
+          "channelId": "UCG7tTcmfyT2g8-p_RrTicPw",
+          "reason": "Identitat o editor no coincident"
+        },
+        {
+          "id": "J-cSIOU8IZg",
+          "title": "Blau",
+          "channelId": "UCEL148nCbkVKRKKGvKUah9w",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "OnXgPhBkKQw",
+          "title": "Amb La Lluna",
+          "channelId": "UCEL148nCbkVKRKKGvKUah9w",
+          "reason": "Amb la Lluna: tornada reiterada amb parts substancials en castellà i anglès."
+        },
+        {
+          "id": "Q1jgtrAejh8",
+          "title": "Shiny",
+          "channelId": "UCEL148nCbkVKRKKGvKUah9w",
+          "reason": "Shiny: tornada extensa en castellà."
+        },
+        {
+          "id": "cQR_2hcqSRE",
+          "title": "Gostosinho",
+          "channelId": "UCEL148nCbkVKRKKGvKUah9w",
+          "reason": "Gostosinho: parts substancials en castellà i portuguès."
+        },
+        {
+          "id": "dgfL5lWYQEs",
+          "title": "Big Danger",
+          "channelId": "UCEL148nCbkVKRKKGvKUah9w",
+          "reason": "Big Danger: estrofes i tornades substancials en anglès."
+        },
+        {
+          "id": "kiqaF9zmbMA",
+          "title": "5 Segundos 2024",
+          "channelId": "UCEL148nCbkVKRKKGvKUah9w",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "zejKY1FeDWc",
+          "title": "5 Segundos 2015",
+          "channelId": "UCEL148nCbkVKRKKGvKUah9w",
+          "reason": "5 Segundos 2015: lletra en castellà."
+        },
+        {
+          "id": "u_ZX0NALt_4",
+          "title": "Big Danger",
+          "channelId": "UCEL148nCbkVKRKKGvKUah9w",
+          "reason": "Big Danger: estrofes i tornades substancials en anglès."
+        },
+        {
+          "id": "TvvDo-VIH4c",
+          "title": "Big Danger - Colomet ( Official Video )",
+          "channelId": "UCG7tTcmfyT2g8-p_RrTicPw",
+          "reason": "Big Danger: estrofes i tornades substancials en anglès."
+        }
+      ],
+      "recordingsPublished": 17
+    },
+    {
+      "name": "Sacrogermen",
+      "canonicalName": "Sacrogermen",
+      "place": "Felanitx",
+      "territory": "Illes Balears",
+      "genres": [
+        "Rap / Hip-hop",
+        "Urbana"
+      ],
+      "note": "Selecció estricta per ID amb lletra contrastada. La resta queda pendent de revisió lingüística.",
+      "sources": [
+        "https://sacrogermen.bandcamp.com/",
+        "manual-user-2026-10-13"
+      ],
+      "channels": [
+        {
+          "id": "UCtUZyH-IDq1HqnwUrGT1NYg",
+          "type": "official",
+          "primary": false,
+          "selected": 25,
+          "allowedVideoIds": [
+            "Kin9DxOtXZE",
+            "LyMozbAVgpM",
+            "F959du8RnfY",
+            "DqaCt70zSwg",
+            "JMlBCbS4Zr8",
+            "d008ktr-JpY",
+            "E1CUXvhsqFI",
+            "yW95_UwmDJM",
+            "D0mnBfr3ylI",
+            "Vqhs9bUNvcU",
+            "TRetU_E3Qz8",
+            "8GXG_F1NVDs",
+            "DPzG0rrT7UM",
+            "cz1RwN2yapY",
+            "n701g8WMDas",
+            "R5cBIQl1lmI",
+            "mfiJH-xKHa0",
+            "WAGfAVzp1QQ",
+            "oIjP0h63lCU",
+            "wNZQODiS2YQ",
+            "F9X5GKxD6cw",
+            "gndM4LioI5E",
+            "MJxfehoHd1A",
+            "go5piF0bx-0",
+            "aPL3bKK_Hxk"
+          ],
+          "lyricVerified": 25,
+          "publication": {
+            "hot": 12,
+            "archive": 13,
+            "recordings": 25,
+            "notPublished": []
+          }
+        },
+        {
+          "id": "UC1CjXeunopycRzEbV5kpEQg",
+          "type": "topic",
+          "primary": true,
+          "selected": 29,
+          "allowedVideoIds": [
+            "3amhrWnay5s",
+            "9X5XMzKAdQU",
+            "6vggpaswZ5Q",
+            "IaHn0FRF6jU",
+            "h1_-O-Umv8U",
+            "MPTQfZM1EN8",
+            "St1syUdisiw",
+            "CFf_pBfmktM",
+            "fvolQCivCMo",
+            "Vs846hW9dV4",
+            "Ckf6QgDLpbo",
+            "YqrREAH8esY",
+            "43Le8d1bMH0",
+            "UX6JJ-H3ejo",
+            "PGEPMuVApEI",
+            "7V_ZQwHjWD0",
+            "RN60VuxR08g",
+            "j7CJrZFQrLY",
+            "pY7vHQsq1MM",
+            "WM-gLhniZuA",
+            "mBlU1jhhGow",
+            "ZtdHYWvaF9E",
+            "2-KH98jClok",
+            "4TugxODbEbA",
+            "FCXZ9QECcBw",
+            "TYZZd_JmTmE",
+            "YTN3GcE31u4",
+            "ZaKWnqZkJtk",
+            "nNlHggCy09U"
+          ],
+          "lyricVerified": 29,
+          "publication": {
+            "hot": 12,
+            "archive": 17,
+            "recordings": 29,
+            "notPublished": []
+          }
+        }
+      ],
+      "notSelected": [
+        {
+          "id": "R0TEEaa-njw",
+          "title": "SACROGERMEN - JUDICI (Full Album)",
+          "channelId": "UCtUZyH-IDq1HqnwUrGT1NYg",
+          "reason": "Àlbum complet o format no seleccionat com a cançó individual."
+        },
+        {
+          "id": "4GSSyrlvvP8",
+          "title": "SACROGERMEN - Emasculación",
+          "channelId": "UCtUZyH-IDq1HqnwUrGT1NYg",
+          "reason": "Emasculación: lletra en castellà."
+        },
+        {
+          "id": "B1qrjaSCVCI",
+          "title": "SACROGERMEN - 4 Disculpes Formals🔹Riuen Com Un Oasi",
+          "channelId": "UCtUZyH-IDq1HqnwUrGT1NYg",
+          "reason": "Disculpes Formals: estrofes substancials en anglès i portuguès."
+        },
+        {
+          "id": "eKYjHOFrS60",
+          "title": "SACROGERMEN - Compromís Amb Sa Banya De Cabra (Full EP)",
+          "channelId": "UCtUZyH-IDq1HqnwUrGT1NYg",
+          "reason": "Àlbum complet o format no seleccionat com a cançó individual."
+        },
+        {
+          "id": "iS9WieFQkLY",
+          "title": "Emasculación",
+          "channelId": "UC1CjXeunopycRzEbV5kpEQg",
+          "reason": "Emasculación: lletra en castellà."
+        },
+        {
+          "id": "tStCV3jd82o",
+          "title": "Disculpes Formals",
+          "channelId": "UC1CjXeunopycRzEbV5kpEQg",
+          "reason": "Disculpes Formals: estrofes substancials en anglès i portuguès."
+        }
+      ],
+      "recordingsPublished": 54
+    }
+  ],
+  "languageExclusions": [
+    {
+      "artist": "Colomet",
+      "ids": [
+        "TvvDo-VIH4c",
+        "dgfL5lWYQEs",
+        "u_ZX0NALt_4"
+      ],
+      "source": "https://www.youtube.com/watch?v=TvvDo-VIH4c",
+      "reason": "Big Danger: estrofes i tornades substancials en anglès."
+    },
+    {
+      "artist": "Colomet",
+      "ids": [
+        "zejKY1FeDWc"
+      ],
+      "source": "https://www.shazam.com/song/1817357735/5-segundos-2015",
+      "reason": "5 Segundos 2015: lletra en castellà."
+    },
+    {
+      "artist": "Colomet",
+      "ids": [
+        "cQR_2hcqSRE"
+      ],
+      "source": "https://www.shazam.com/song/1817357740/gostosinho",
+      "reason": "Gostosinho: parts substancials en castellà i portuguès."
+    },
+    {
+      "artist": "Colomet",
+      "ids": [
+        "Q1jgtrAejh8"
+      ],
+      "source": "https://www.shazam.com/song/1817357739/shiny",
+      "reason": "Shiny: tornada extensa en castellà."
+    },
+    {
+      "artist": "Colomet",
+      "ids": [
+        "OnXgPhBkKQw"
+      ],
+      "source": "https://www.shazam.com/song/1743476385/amb-la-lluna",
+      "reason": "Amb la Lluna: tornada reiterada amb parts substancials en castellà i anglès."
+    },
+    {
+      "artist": "Sacrogermen",
+      "ids": [
+        "4GSSyrlvvP8",
+        "iS9WieFQkLY"
+      ],
+      "source": "https://www.youtube.com/watch?v=4GSSyrlvvP8",
+      "reason": "Emasculación: lletra en castellà."
+    },
+    {
+      "artist": "Sacrogermen",
+      "ids": [
+        "B1qrjaSCVCI",
+        "tStCV3jd82o"
+      ],
+      "source": "https://sacrogermen.bandcamp.com/album/riuen-com-un-oasi",
+      "reason": "Disculpes Formals: estrofes substancials en anglès i portuguès."
+    },
+    {
+      "artist": "Malánima",
+      "ids": [
+        "kKfPATVvFvw",
+        "b0e9BDQV-UM",
+        "84YrnP3bZxQ"
+      ],
+      "source": "https://www.youtube.com/watch?v=EZWIenVmEZo",
+      "reason": "Boig X Tu: estrofes substancials en castellà."
+    },
+    {
+      "artist": "ThatKid",
+      "ids": [
+        "gio0VVuTmYI",
+        "6cROxX2hho4",
+        "Cqu9GWNMIKM"
+      ],
+      "source": "https://www.youtube.com/watch?v=gio0VVuTmYI",
+      "reason": "El menol: predomini del castellà amb fragments catalans."
+    },
+    {
+      "artist": "ThatKid",
+      "ids": [
+        "JXeL_LzRJcI",
+        "tL9qQkq9FnM",
+        "3BRvL5wnD7w",
+        "w4FTGulPGg4"
+      ],
+      "source": "https://www.shazam.com/es-es/song/1732202657/ney-feat-9cyon",
+      "reason": "Ney: lletra principalment en castellà, frase catalana breu."
+    }
+  ],
+  "preservedOtherArtists": 482,
+  "preservedCanonicalHash": "fe70945b0889adb7370fac46e0e78c05d37fc65551613702d185ac448264591f",
+  "deferredArtists": [
+    {
+      "name": "Malánima",
+      "aliases": [
+        "Malànima",
+        "MALÁNIMA"
+      ],
+      "territory": "Illes Balears",
+      "genres": [
+        "Pop",
+        "Electrònica"
+      ],
+      "sources": [
+        "https://ib-musicat.cat/bandes/malanima/",
+        "manual-user-2026-10-13"
+      ],
+      "note": "Boig X Tu és mixt amb estrofes en castellà. Ai, Carinyo no té lletra íntegra accessible a les fonts consultades. No s’aprova cap tema pel títol.",
+      "channels": [
+        {
+          "id": "UCGmho2bwHxnwlsIc11CgNpQ",
+          "handle": "@malanima_",
+          "name": "MALÁNIMA",
+          "type": "official",
+          "primary": false
+        },
+        {
+          "id": "UCwQqL8LR87I8bPcFNU5zLFw",
+          "handle": null,
+          "name": "Malánima - Topic",
+          "type": "topic",
+          "primary": true
+        },
+        {
+          "id": "UCZcdiQvGBNZY2Juk3QEovZA",
+          "handle": null,
+          "name": "Malánima - Topic",
+          "type": "topic",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "name": "ThatKid",
+      "aliases": [
+        "Thatkid"
+      ],
+      "territory": "Catalunya",
+      "genres": [
+        "Urbana"
+      ],
+      "sources": [
+        "https://sidecar.es/en/sladmobb-thatkid/",
+        "manual-user-2026-10-13"
+      ],
+      "note": "Identitat Pep Hernández Durany resolta pels crèdits. El menol i Ney contenen estrofes substancials en castellà; resta sense evidència suficient. Vilassar documentat sense precisar municipi.",
+      "channels": [
+        {
+          "id": "UC5N8pkZTmXd8EDRxqhtrDbg",
+          "handle": null,
+          "name": "ThatKid - Topic",
+          "type": "topic",
+          "primary": true
+        },
+        {
+          "id": "UCxnSSRmXNzweOe_gShnOb_A",
+          "handle": "@thatkidwya",
+          "name": "Thatkid",
+          "type": "official",
+          "primary": false
+        }
+      ]
+    }
+  ],
+  "preservedPublishedChannels": 600,
+  "publication": {
+    "checkedAt": "2026-10-13T16:30:40.912Z",
+    "artists": 3,
+    "deferredArtists": 2,
+    "channels": 6,
+    "recordings": 82,
+    "status": "verified"
+  },
+  "validation": {
+    "passedTests": 1157,
+    "totalTests": 1164,
+    "failedTests": 7,
+    "failures": [
+      {
+        "suite": "tests/artist-origin.test.js",
+        "test": "Origen a la fitxa cada canal publicat té un origen resoluble o una exclusió explícita",
+        "reason": "AssertionError: BTZ · UCcYEaa06Rifj3dOcoBemmEQ: expected null not to be null"
+      },
+      {
+        "suite": "tests/portada-assets.test.js",
+        "test": "index.html de Segueix Música la navegació té les vistes demanades a escriptori i a mòbil",
+        "reason": "AssertionError: expected 'id=\"sidebar\" aria-label=\"Navegació pr…' to contain '<span>Artistes</span>'"
+      },
+      {
+        "suite": "tests/segueix-tv-quality.test.js",
+        "test": "qualitat i seqüenciació de Segueix TV força una nova versió del cache estàtic",
+        "reason": "AssertionError: expected '// Service Worker per PWA — dos cache…' to contain 'const CACHE_VERSION = \\'tvq20260924a1…'"
+      },
+      {
+        "suite": "tests/song-title.test.js",
+        "test": "sobre el feed real no queda cap parèntesi ni claudàtor amb «videoclip», «vídeo» o «oficial»",
+        "reason": "AssertionError: expected [ Array(1) ] to deeply equal []"
+      },
+      {
+        "suite": "tests/tv-category-header.test.js",
+        "test": "títols de TV i capçalera de Segueix TV posa la informació al costat del títol Segueix TV",
+        "reason": "AssertionError: expected '(function (window) {\\n    \\'use stric…' to contain 'Què és Segueix TV?'"
+      },
+      {
+        "suite": "tests/tv-learning.test.js",
+        "test": "aprenentatge local de les TV posa la informació completa al costat del mode bucle",
+        "reason": "AssertionError: expected '// App Principal\\n\\nconst SegueixApp …' to contain '<strong>6. Descoberta.</strong>'"
+      },
+      {
+        "suite": "tests/tv-programming.test.js",
+        "test": "programació de TV inclou el nou controlador al precache del service worker",
+        "reason": "AssertionError: expected '// Service Worker per PWA — dos cache…' to contain 'const CACHE_VERSION = \\'e2a40924f7c1\\''"
+      }
+    ],
+    "regressions": 0,
+    "baselineCompared": true,
+    "newTitles": "passed",
+    "baselineFailures": [
+      {
+        "suite": "tests/artist-origin.test.js",
+        "test": "Origen a la fitxa cada canal publicat té un origen resoluble o una exclusió explícita",
+        "reason": "AssertionError: BTZ · UCcYEaa06Rifj3dOcoBemmEQ: expected null not to be null"
+      },
+      {
+        "suite": "tests/portada-assets.test.js",
+        "test": "index.html de Segueix Música la navegació té les vistes demanades a escriptori i a mòbil",
+        "reason": "AssertionError: expected 'id=\"sidebar\" aria-label=\"Navegació pr…' to contain '<span>Artistes</span>'"
+      },
+      {
+        "suite": "tests/segueix-tv-quality.test.js",
+        "test": "qualitat i seqüenciació de Segueix TV força una nova versió del cache estàtic",
+        "reason": "AssertionError: expected '// Service Worker per PWA — dos cache…' to contain 'const CACHE_VERSION = \\'tvq20260924a1…'"
+      },
+      {
+        "suite": "tests/song-title.test.js",
+        "test": "sobre el feed real no queda cap parèntesi ni claudàtor amb «videoclip», «vídeo» o «oficial»",
+        "reason": "AssertionError: expected [ Array(1) ] to deeply equal []"
+      },
+      {
+        "suite": "tests/tv-category-header.test.js",
+        "test": "títols de TV i capçalera de Segueix TV posa la informació al costat del títol Segueix TV",
+        "reason": "AssertionError: expected '(function (window) {\\n    \\'use stric…' to contain 'Què és Segueix TV?'"
+      },
+      {
+        "suite": "tests/tv-learning.test.js",
+        "test": "aprenentatge local de les TV posa la informació completa al costat del mode bucle",
+        "reason": "AssertionError: expected '// App Principal\\n\\nconst SegueixApp …' to contain '<strong>6. Descoberta.</strong>'"
+      },
+      {
+        "suite": "tests/tv-programming.test.js",
+        "test": "programació de TV inclou el nou controlador al precache del service worker",
+        "reason": "AssertionError: expected '// Service Worker per PWA — dos cache…' to contain 'const CACHE_VERSION = \\'e2a40924f7c1\\''"
+      }
+    ]
+  },
+  "lint": {
+    "files": 65,
+    "errors": 5,
+    "warnings": 184,
+    "baselineCompared": true,
+    "newDiagnostics": 0
+  }
+}

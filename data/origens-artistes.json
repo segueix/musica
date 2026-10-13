@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-13T16:12:29.616Z",
+  "updatedAt": "2026-10-13T16:29:17.052Z",
   "attribution": {
     "text": "Coordenades de referència: GeoNames, via Open-Meteo. CC BY 4.0.",
     "sources": [
@@ -2391,6 +2391,19 @@
       },
       "territory": "Illes Balears",
       "source": "https://geocoding-api.open-meteo.com/v1/search?name=Marratx%C3%AD&count=10&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-13"
+    },
+    "geonames:2521175": {
+      "name": "Bèlgida",
+      "type": "municipality",
+      "geonamesId": 2521175,
+      "coordinates": {
+        "latitude": 38.85,
+        "longitude": -0.46667,
+        "precision": "settlement_reference"
+      },
+      "territory": "País Valencià",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=B%C3%A8lgida&count=10&language=ca&format=json&countryCode=ES",
       "checkedOn": "2026-10-13"
     }
   },
@@ -10217,6 +10230,54 @@
       "reviewedOn": "2026-10-13",
       "assignmentSource": "manual-review",
       "locked": true
+    },
+    "artist:lepanto41": {
+      "name": "Lepanto 41",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3117164"
+      ],
+      "confidence": "alta",
+      "basis": "Origen documentat per la font citada.",
+      "sources": [
+        "https://maresmusic.cat/projectes-2024/"
+      ],
+      "reviewedOn": "2026-10-13",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:colomet": {
+      "name": "Colomet",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:2521175"
+      ],
+      "confidence": "alta",
+      "basis": "Origen documentat per la font citada.",
+      "sources": [
+        "https://www.apuntmedia.es/noticies/cultura/entrevistem-colomet-motiu-seu-nou-treball-22_1_1593169.html"
+      ],
+      "reviewedOn": "2026-10-13",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:sacrogermen": {
+      "name": "Sacrogermen",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:2517750"
+      ],
+      "confidence": "alta",
+      "basis": "Origen documentat per la font citada.",
+      "sources": [
+        "https://sacrogermen.bandcamp.com/"
+      ],
+      "reviewedOn": "2026-10-13",
+      "assignmentSource": "manual-review",
+      "locked": true
     }
   },
   "channels": {
@@ -10813,7 +10874,13 @@
     "UCy5b5j1mswlPfnHGDbnnkjQ": "artist:la-xica",
     "UCb7vIttlw_joSrFeiZD7EpQ": "artist:la-xica",
     "UCnVX15n_ddY6mfuwp811tfg": "artist:karlus",
-    "UCLqpYgIUgoyQNzpNiwVadPw": "artist:karlus"
+    "UCLqpYgIUgoyQNzpNiwVadPw": "artist:karlus",
+    "UCGpOiCofkMyiYcpL5auYfUA": "artist:lepanto41",
+    "UCvq1qQ0IvGNIy6MY6VupS7A": "artist:lepanto41",
+    "UCEL148nCbkVKRKKGvKUah9w": "artist:colomet",
+    "UCG7tTcmfyT2g8-p_RrTicPw": "artist:colomet",
+    "UCtUZyH-IDq1HqnwUrGT1NYg": "artist:sacrogermen",
+    "UC1CjXeunopycRzEbV5kpEQg": "artist:sacrogermen"
   },
   "excludedProfiles": {
     "UCdezTX23syEeAJJAb2oOkKA": {

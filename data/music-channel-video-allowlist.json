@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-13T16:12:29.616Z",
+  "updatedAt": "2026-10-13T16:29:17.052Z",
   "description": "Llista blanca per a canals on Segueix Música només ha d'ingerir vídeos concrets. Admet títols exactes, fragments obligatoris i fragments exclosos.",
   "channels": {
     "UCKpscwdWlVaMqcA81vLI7OA": {
@@ -6803,6 +6803,154 @@
         "78ayD0TolBY",
         "Jows9iG-6Uw",
         "9YYozAiq1tY"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCGpOiCofkMyiYcpL5auYfUA": {
+      "artist": "Lepanto 41",
+      "note": "Selecció estricta per ID amb lletra contrastada. La resta queda pendent de revisió lingüística. docs/revisions/2026-10-13-urban4-alta.json",
+      "allowedVideoIds": [
+        "l1fzg4ETaWw",
+        "tZxpDoARDsQ",
+        "oWS7-E3DABQ",
+        "g1-Ktw7V6K8",
+        "hQTqcOXFNXA",
+        "Ez460GDqO64",
+        "BxzHaPvvA8g",
+        "5qmWgOPpHsw",
+        "clew34Qf0dA",
+        "xsMptvoEtoo"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCvq1qQ0IvGNIy6MY6VupS7A": {
+      "artist": "Lepanto 41",
+      "note": "Selecció estricta per ID amb lletra contrastada. La resta queda pendent de revisió lingüística. docs/revisions/2026-10-13-urban4-alta.json",
+      "allowedVideoIds": [
+        "DqNC2KtPA2w"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCEL148nCbkVKRKKGvKUah9w": {
+      "artist": "Colomet",
+      "note": "Selecció estricta per ID amb lletra contrastada. La resta queda pendent de revisió lingüística. docs/revisions/2026-10-13-urban4-alta.json",
+      "allowedVideoIds": [
+        "aSSi3jzJC7U",
+        "Bl3pZaJors4",
+        "XQrWHayk1xU",
+        "hS2H_kDOL6Y",
+        "xAqh14xBUDE",
+        "xkc6unNAx9Q",
+        "IXMVVjNSGxM",
+        "_Tuj6RA15PE",
+        "3f0H7AzReYQ",
+        "W54zUTj_ano",
+        "FwtVX4kLxYk"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCG7tTcmfyT2g8-p_RrTicPw": {
+      "artist": "Colomet",
+      "note": "Selecció estricta per ID amb lletra contrastada. La resta queda pendent de revisió lingüística. docs/revisions/2026-10-13-urban4-alta.json",
+      "allowedVideoIds": [
+        "vHWzbZ51ZeE",
+        "K1mx3S6GlA0",
+        "yRpaLjzSf70",
+        "SJTcSi4-zNg",
+        "kEkKpqXERVo",
+        "aGXSDUTxKus"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCtUZyH-IDq1HqnwUrGT1NYg": {
+      "artist": "Sacrogermen",
+      "note": "Selecció estricta per ID amb lletra contrastada. La resta queda pendent de revisió lingüística. docs/revisions/2026-10-13-urban4-alta.json",
+      "allowedVideoIds": [
+        "Kin9DxOtXZE",
+        "LyMozbAVgpM",
+        "F959du8RnfY",
+        "DqaCt70zSwg",
+        "JMlBCbS4Zr8",
+        "d008ktr-JpY",
+        "E1CUXvhsqFI",
+        "yW95_UwmDJM",
+        "D0mnBfr3ylI",
+        "Vqhs9bUNvcU",
+        "TRetU_E3Qz8",
+        "8GXG_F1NVDs",
+        "DPzG0rrT7UM",
+        "cz1RwN2yapY",
+        "n701g8WMDas",
+        "R5cBIQl1lmI",
+        "mfiJH-xKHa0",
+        "WAGfAVzp1QQ",
+        "oIjP0h63lCU",
+        "wNZQODiS2YQ",
+        "F9X5GKxD6cw",
+        "gndM4LioI5E",
+        "MJxfehoHd1A",
+        "go5piF0bx-0",
+        "aPL3bKK_Hxk"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UC1CjXeunopycRzEbV5kpEQg": {
+      "artist": "Sacrogermen",
+      "note": "Selecció estricta per ID amb lletra contrastada. La resta queda pendent de revisió lingüística. docs/revisions/2026-10-13-urban4-alta.json",
+      "allowedVideoIds": [
+        "3amhrWnay5s",
+        "9X5XMzKAdQU",
+        "6vggpaswZ5Q",
+        "IaHn0FRF6jU",
+        "h1_-O-Umv8U",
+        "MPTQfZM1EN8",
+        "St1syUdisiw",
+        "CFf_pBfmktM",
+        "fvolQCivCMo",
+        "Vs846hW9dV4",
+        "Ckf6QgDLpbo",
+        "YqrREAH8esY",
+        "43Le8d1bMH0",
+        "UX6JJ-H3ejo",
+        "PGEPMuVApEI",
+        "7V_ZQwHjWD0",
+        "RN60VuxR08g",
+        "j7CJrZFQrLY",
+        "pY7vHQsq1MM",
+        "WM-gLhniZuA",
+        "mBlU1jhhGow",
+        "ZtdHYWvaF9E",
+        "2-KH98jClok",
+        "4TugxODbEbA",
+        "FCXZ9QECcBw",
+        "TYZZd_JmTmE",
+        "YTN3GcE31u4",
+        "ZaKWnqZkJtk",
+        "nNlHggCy09U"
       ],
       "acceptedMusicOnly": true,
       "allowedContentTypes": [

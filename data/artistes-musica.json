@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-13T16:12:29.616Z",
+  "updatedAt": "2026-10-13T16:29:17.052Z",
   "artists": [
     {
       "name": "2 Princeses Barbudes",
@@ -37147,6 +37147,247 @@
       "active": true,
       "lastChecked": "2026-10-13",
       "notes": "Artista de Jesús, Eivissa; ubicació conservadora a l’illa. Quatre obres amb lletra catalana publicada. La resta, incloses les metadades ca sense lletra, pendent. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "aliases": [
+        "Lepanto 41"
+      ],
+      "sources": [
+        "https://maresmusic.cat/projectes-2024/",
+        "manual-user-2026-10-13",
+        "genre:manual"
+      ],
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCGpOiCofkMyiYcpL5auYfUA",
+            "handle": "@lepanto41",
+            "name": "Lepanto 41",
+            "type": "official",
+            "primary": false
+          },
+          {
+            "id": "UCvq1qQ0IvGNIy6MY6VupS7A",
+            "handle": null,
+            "name": "Lepanto 41 - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ]
+      },
+      "name": "Lepanto 41",
+      "displayName": "Lepanto 41",
+      "genres": [
+        "Urbana",
+        "Pop"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-13",
+      "notes": "Selecció estricta per ID amb lletra contrastada. La resta queda pendent de revisió lingüística. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "aliases": [
+        "Paloma Aparici",
+        "Colomet"
+      ],
+      "sources": [
+        "https://www.apuntmedia.es/noticies/cultura/entrevistem-colomet-motiu-seu-nou-treball-22_1_1593169.html",
+        "manual-user-2026-10-13",
+        "genre:manual"
+      ],
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCEL148nCbkVKRKKGvKUah9w",
+            "handle": null,
+            "name": "Colomet - Topic",
+            "type": "topic",
+            "primary": true
+          },
+          {
+            "id": "UCG7tTcmfyT2g8-p_RrTicPw",
+            "handle": "@colomet22",
+            "name": "Colomet",
+            "type": "official",
+            "primary": false
+          }
+        ]
+      },
+      "name": "Colomet",
+      "displayName": "Colomet",
+      "genres": [
+        "Urbana",
+        "Pop"
+      ],
+      "territories": [
+        "País Valencià"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-13",
+      "notes": "Selecció estricta per ID amb lletra contrastada. La resta queda pendent de revisió lingüística. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "aliases": [
+        "SACROGERMEN",
+        "Julià Xamarrí",
+        "Sacrogermen"
+      ],
+      "sources": [
+        "https://sacrogermen.bandcamp.com/",
+        "manual-user-2026-10-13",
+        "genre:manual"
+      ],
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCtUZyH-IDq1HqnwUrGT1NYg",
+            "handle": "@sacrogermen",
+            "name": "SACROGERMEN",
+            "type": "official",
+            "primary": false
+          },
+          {
+            "id": "UC1CjXeunopycRzEbV5kpEQg",
+            "handle": null,
+            "name": "SACROGERMEN - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ]
+      },
+      "name": "Sacrogermen",
+      "displayName": "Sacrogermen",
+      "genres": [
+        "Rap / Hip-hop",
+        "Urbana"
+      ],
+      "territories": [
+        "Illes Balears"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-13",
+      "notes": "Selecció estricta per ID amb lletra contrastada. La resta queda pendent de revisió lingüística. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "name": "Malánima",
+      "displayName": "Malánima",
+      "aliases": [
+        "Malànima",
+        "MALÁNIMA"
+      ],
+      "genres": [
+        "Pop",
+        "Electrònica"
+      ],
+      "territories": [
+        "Illes Balears"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCGmho2bwHxnwlsIc11CgNpQ",
+            "handle": "@malanima_",
+            "name": "MALÁNIMA",
+            "type": "official",
+            "primary": false
+          },
+          {
+            "id": "UCwQqL8LR87I8bPcFNU5zLFw",
+            "handle": null,
+            "name": "Malánima - Topic",
+            "type": "topic",
+            "primary": true
+          },
+          {
+            "id": "UCZcdiQvGBNZY2Juk3QEovZA",
+            "handle": null,
+            "name": "Malánima - Topic",
+            "type": "topic",
+            "primary": false
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "https://ib-musicat.cat/bandes/malanima/",
+        "manual-user-2026-10-13",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-13",
+      "notes": "Boig X Tu és mixt amb estrofes en castellà. Ai, Carinyo no té lletra íntegra accessible a les fonts consultades. No s’aprova cap tema pel títol. docs/revisions/2026-10-13-urban4-alta.json"
+    },
+    {
+      "name": "ThatKid",
+      "displayName": "ThatKid",
+      "aliases": [
+        "Thatkid"
+      ],
+      "genres": [
+        "Urbana"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UC5N8pkZTmXd8EDRxqhtrDbg",
+            "handle": null,
+            "name": "ThatKid - Topic",
+            "type": "topic",
+            "primary": true
+          },
+          {
+            "id": "UCxnSSRmXNzweOe_gShnOb_A",
+            "handle": "@thatkidwya",
+            "name": "Thatkid",
+            "type": "official",
+            "primary": false
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "https://sidecar.es/en/sladmobb-thatkid/",
+        "manual-user-2026-10-13",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-13",
+      "notes": "Identitat Pep Hernández Durany resolta pels crèdits. El menol i Ney contenen estrofes substancials en castellà; resta sense evidència suficient. Vilassar documentat sense precisar municipi. docs/revisions/2026-10-13-urban4-alta.json"
     }
   ]
 }
