@@ -161,6 +161,27 @@ zAcfHxWXlcY | L'amor és un accident - LA XICA | PT3M55S
 2GjFxEQmqKA | Tarongina - LA XICA | PT2M51S
 NKjeERS2_G8 | Amagatall - LA XICA | PT3M43S
 x-XujV9txXU | Endimonià - LA XICA | PT3M2S
+## La Xica - Topic | UCb7vIttlw_joSrFeiZD7EpQ | null | true
+AduHuObNET0 | Palmera Destroy (LA XICA x Orxata) | PT3M58S
+3gCfyOJS090 | Tabú | PT3M9S
+ft9wvfJNbIU | Endimonià | PT3M8S
+EvSjblqW2VE | Ja no plou ᐸ3 | PT2M42S
+1f7zXMoq0mE | La pàtria dels àngels | PT2M28S
+NrXSLdHjIoI | Santa Paciència | PT3M13S
+jyMvX-r3pP4 | malomalo | PT3M35S
+2VFIuip0M00 | L’amor és un accident | PT3M57S
+YTyf9Ek72G0 | A fer la mà | PT3M34S
+IXzwFfLcf3c | Tarongina | PT2M52S
+bXXG3zcAbtM | Amagatall | PT3M43S
+s1F6Kz8u8iw | Núvol | PT2M46S
+FJdXquEkrDE | àngel i dimoni | PT2M33S
+ThU5B1bkxUo | Santa Paciència | PT3M13S
+ch9qlLICvCQ | L’amor és un accident | PT3M57S
+2TKCj_igUuM | Ja no plou ᐸ3 | PT2M42S
+IcVTsYYJ2ns | Núvol | PT2M46S
+_ZHdFWPhhAM | Tarongina | PT2M52S
+SjQBFj6lXEY | Endimonià | PT3M8S
+uXlwApUo2Oc | Amagatall | PT3M43S
 
 # Karlus
 ## Karlus - Topic | UCnVX15n_ddY6mfuwp811tfg | null | true
