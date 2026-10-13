@@ -1,4 +1,4 @@
-name: Revisar altes musicals Castello
+name: Incorporar artistes Castello
 on:
   push:
     branches: [main]
@@ -9,79 +9,95 @@ concurrency:
   cancel-in-progress: false
 permissions:
   contents: write
+  pages: write
+  id-token: write
 jobs:
-  descobrir:
+  incorporar:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v5
         with:
           ref: main
+          fetch-depth: 1
       - uses: actions/setup-node@v5
         with:
           node-version: '20'
-      - name: Consulta publica de les tres identitats
+          cache: npm
+      - name: Prepara i valida el script acotat
+        run: |
+          npm ci
+          cp js/channels-ca.json /tmp/castello-channels-before.json
+          node - <<'NODE'
+          const fs=require('fs');
+          const f='scripts/revisions/incorporar_castello_20261013.js';
+          let c=fs.readFileSync(f,'utf8');
+          c=c.replace('    mL3bA4OD5-w:', "    'mL3bA4OD5-w':");
+          fs.writeFileSync(f,c);
+          NODE
+          node --check scripts/revisions/incorporar_castello_20261013.js
+      - name: Aplica les tres identitats i les seleccions documentades
+        run: |
+          node scripts/revisions/incorporar_castello_20261013.js
+          node scripts/documentar_vigilancia_idiomes.js
+          npm run music:validate
+          node scripts/test_music_content_classifier.js
+      - name: Sincronitza nomes els vuit canals seleccionats
         env:
           YOUTUBE_API_KEY_SERVER: ${{ secrets.YOUTUBE_API_KEY_SERVER }}
+          MUSIC_VIDEOS_PER_CHANNEL: '50'
+          MUSIC_TOPIC_GOVERNANCE: apply
+          MUSIC_TOPIC_FULL_READ: '1'
+        run: |
+          test -n "$MUSIC_TARGET_CHANNELS"
+          node scripts/update_music_feed.js
+          node scripts/aplicar_revisio_manual_musical.js > /tmp/castello-manual.log 2>&1
+      - name: Regenera arxiu, cerca i pagines compartides
+        run: |
+          node scripts/archivar_feed_musical.js
+          npm run search:index:hybrid:rebuild
+          node scripts/generar_pagines_compartir.js
+          node scripts/documentar_vigilancia_idiomes.js --check
+      - name: Verifica les proves sense admetre regressions
         run: |
           node - <<'NODE'
           const fs=require('fs');
-          (async()=>{
-            const key=process.env.YOUTUBE_API_KEY_SERVER;
-            if(!key) throw Error('Falta la clau de YouTube');
-            const norm=x=>String(x||'').normalize('NFD').replace(/\p{Diacritic}/gu,'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();
-            async function api(endpoint,args){
-              const u=new URL('https://www.googleapis.com/youtube/v3/'+endpoint);
-              for(const[k,v]of Object.entries({...args,key}))u.searchParams.set(k,v);
-              const r=await fetch(u,{signal:AbortSignal.timeout(30000)});const j=await r.json();
-              if(!r.ok)throw Error(endpoint+': '+j.error?.message);return j;
-            }
-            const targets=[
-              {name:'Malparlat',queries:['Malparlat Taronja','Malparlat Rap i poesia Provided to YouTube']},
-              {name:'Xiomara Abello',queries:['Xiomara Abello Morisc passat','Xiomara Abello Flor de xicoia Provided to YouTube']},
-              {name:'Esther',queries:['Esther Tot comença','Esther Les cartes que mai vaig cremar Provided to YouTube']}
-            ];
-            const report={checkedAt:new Date().toISOString(),artists:[]};
-            const lines=[],details=[];
-            const base=JSON.parse(fs.readFileSync('data/artistes-musica.json'));
-            for(const t of targets){
-              const candidates=new Set();const results=[];
-              for(const q of t.queries){
-                const found=await api('search',{part:'snippet',type:'video',q,maxResults:15});
-                for(const v of found.items||[]){
-                  results.push({id:v.id.videoId,title:v.snippet.title,channelId:v.snippet.channelId,channelTitle:v.snippet.channelTitle});
-                  const n=norm(v.snippet.channelTitle).replace(/ (topic|tema|tv)$/,'');
-                  if(n===norm(t.name)||(t.name==='Xiomara Abello'&&n.includes('xiomara abello')))candidates.add(v.snippet.channelId);
-                }
-              }
-              if(candidates.size>8)throw Error('Massa candidats: '+t.name);
-              const channels=candidates.size?(await api('channels',{part:'snippet,contentDetails',id:[...candidates].join(',')})).items||[]:[];
-              const entry={name:t.name,searchResults:results,channels:[]};
-              lines.push('\n# '+t.name+'\n'+JSON.stringify({existing:base.artists.filter(a=>[a.name,a.displayName,...(a.aliases||[])].some(n=>norm(n).includes(norm(t.name)))).map(a=>({name:a.name,displayName:a.displayName,active:a.active,channels:a.youtube?.channels}))}));
-              for(const c of channels){
-                const videos=[];let token;
-                for(let page=0;page<5;page++){
-                  const p=await api('playlistItems',{part:'contentDetails',playlistId:c.contentDetails.relatedPlaylists.uploads,maxResults:50,...(token?{pageToken:token}:{})});
-                  const ids=(p.items||[]).map(x=>x.contentDetails.videoId);
-                  if(ids.length){
-                    const d=await api('videos',{part:'snippet,contentDetails,status',id:ids.join(',')});
-                    for(const v of d.items||[])videos.push({id:v.id,title:v.snippet.title,description:v.snippet.description,channelId:v.snippet.channelId,publishedAt:v.snippet.publishedAt,duration:v.contentDetails.duration,regionRestriction:v.contentDetails.regionRestriction||null,embeddable:v.status.embeddable});
-                  }
-                  token=p.nextPageToken;if(!token)break;
-                }
-                entry.channels.push({id:c.id,name:c.snippet.title,handle:c.snippet.customUrl||null,complete:!token,videos});
-                const heading='\n## '+t.name+' | '+c.snippet.title+' | '+c.id+' | '+(c.snippet.customUrl||'')+'\n';
-                lines.push(heading,...videos.map(v=>v.id+' | '+v.title+' | '+v.duration));
-                details.push(heading,...videos.flatMap(v=>['### '+v.id+' | '+v.title,v.description.replace(/\n/g,' ⏎ ')]));
-                console.log(JSON.stringify({artist:t.name,channel:c.snippet.title,id:c.id,videos:videos.length,complete:!token}));
-              }
-              report.artists.push(entry);
-            }
-            fs.writeFileSync('docs/revisions/2026-10-13-castello-descoberta.json',JSON.stringify(report,null,2)+'\n');
-            fs.writeFileSync('docs/revisions/2026-10-13-castello-resum.md',lines.join('\n')+'\n');
-            fs.writeFileSync('docs/revisions/2026-10-13-castello-detalls.md',details.join('\n')+'\n');
-          })().catch(e=>{console.error(e.message);process.exitCode=1});
+          const f='scripts/revisions/provar_altes_musicals.js';
+          const text=fs.readFileSync(f,'utf8').replaceAll('docs/revisions/2026-10-12-tardor-blat-quinto.json','docs/revisions/2026-10-13-castello-alta.json');
+          fs.writeFileSync('scripts/revisions/.provar_castello_temporal.js',text);
           NODE
-      - name: Desa nomes la consulta
+          node scripts/revisions/.provar_castello_temporal.js
+          rm scripts/revisions/.provar_castello_temporal.js
+      - name: Comprova registres publicables i conserva el cataleg anterior
         run: |
-          bash scripts/publicar_dades.sh "docs: canals de Malparlat, Xiomara Abello i Esther" docs/revisions/2026-10-13-castello-descoberta.json docs/revisions/2026-10-13-castello-resum.md docs/revisions/2026-10-13-castello-detalls.md
+          node scripts/revisions/incorporar_castello_20261013.js --verify
+          npm run lint > /tmp/castello-lint.log 2>&1 || echo "Avisos de lint del codi existent; s’adjunta el registre"
+          node scripts/actualitzar_versio_sw.js
+      - name: Publica les dades i els derivats junts
+        run: |
+          bash scripts/publicar_dades.sh "data: incorpora Malparlat, Xiomara Abello i Esther amb seleccio catalana" data js/channels-ca.json docs/ARTISTES_VIGILATS_IDIOMA.md docs/revisions/2026-10-13-castello-alta.json docs/revisions/2026-10-13-castello-alta.md scripts/revisions/incorporar_castello_20261013.js compartir sw.js
+      - name: Prepara el lloc estatic amb el cataleg publicat
+        run: |
+          mkdir _site
+          git archive HEAD | tar -x -C _site
+          rm -rf _site/.github _site/tests _site/scripts _site/functions _site/docs
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - name: Desplega les tres altes
+        id: deployment
+        uses: actions/deploy-pages@v4
+      - name: Conserva nomes el diagnostic en cas d’error
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: diagnostic-altes-castello
+          path: |
+            /tmp/tardor-blat-quinto-validation.json
+            /tmp/castello-lint.log
+            /tmp/castello-manual.log
+            docs/revisions/2026-10-13-castello-alta.json
+          retention-days: 1
