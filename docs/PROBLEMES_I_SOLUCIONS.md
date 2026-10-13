@@ -1606,3 +1606,9 @@ Proves de migració, idempotència, homònims, Topic, exclusions i revisions par
 - **Treure la cançó destacada sense perdre-la:** amagar només `#heroSection` hauria tret la cançó de la llista (els renders filtren `featured`). `getFeaturedVideoForSection()` torna `null` a Descobreix i la cançó es queda a la graella.
 - **Època d'un artista:** l'any de pujada a YouTube enganya (Lax'n'Busto sortia «Dels 10»). Es fa servir l'any original quan el feed el sap; amb només pujades anteriors al 2013 l'any serveix per comparar però no es mostra cap etiqueta d'època.
 - **Prova al navegador:** `getHistoryItems()` té memòria cau (`_historyItemsCache`): després d'escriure `catube_history` cal posar-la a `null`.
+
+## 2026-10-13 — Tornar al mapa després d'obrir un artista o una ràdio
+
+- **Problema:** des del mapa de Descobreix, en obrir un artista i fer-ne una ràdio, «enrere» no tornava al mapa: el botó de la fitxa (`#channelBackBtn`) porta sempre a «Artistes i grups» (`showFollow()`), i la fitxa no deixa cap entrada a l'historial, de manera que l'enrere del sistema des de la fitxa sortia de Descobreix.
+- **Solució:** `artist-map.js` (`rememberReturn({ push: true })`) desa on era el mapa (`SegueixApp.state.mapReturn`, desplaçament respecte al contenidor) i afegeix una entrada `{ category: 'Descobreix', mapReturn: true }`. El popstate de categoria ja torna a Descobreix; `syncArtistMap()` crida `restoreReturn()`, que fa scroll al mapa (torna a provar uns quants cops perquè la pàgina encara s'està pintant). `#channelBackBtn` fa `history.back()` quan l'entrada és del mapa. Si es va a una altra vista, `mapReturn` s'oblida (i caduca als 30 min).
+- **Verificació:** `node tests/browser/verificar-mapa.js` («enrere des de la fitxa torna al mapa»).

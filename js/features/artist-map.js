@@ -1,4 +1,4 @@
-// «Música d'arreu»: mapa dels Països Catalans amb els artistes al seu municipi (vista Descobreix).
+// «Música d'arreu»: mapa dels llocs on es parla en català amb els artistes al seu municipi (vista Descobreix).
 // Implementació directa (patró 2). El model (buildModel, project) i l'HTML són purs i es proven a
 // tests/artist-map.test.js; app.js (syncArtistMap) el mostra només a Descobreix.
 //
@@ -278,7 +278,7 @@
                 </g>`;
             })
             .join('');
-        return `<svg class="am-svg" viewBox="${x0} ${y0} ${w} ${h}" role="img" aria-label="Mapa dels Països Catalans amb els artistes">
+        return `<svg class="am-svg" viewBox="${x0} ${y0} ${w} ${h}" role="img" aria-label="Mapa: les nostres terres, els nostres músics">
             <g class="am-layer">${shapes}${insetHtml}<path class="am-lasso" d="${polygonPath(zone?.polygon)}"></path><g class="am-dots">${dots}</g></g></svg>`;
     }
 
@@ -362,7 +362,7 @@
         return `
             <div class="am-head">
                 <div><p class="pt-eyebrow">Descobreix</p><h2 class="am-title">Música d'arreu</h2>
-                <p class="am-sub">${artistsLabel(model.artistCount)} en ${model.placeCount} llocs dels Països Catalans</p></div>
+                <p class="am-sub">Les nostres terres, els nostres músics <span class="am-count">· ${artistsLabel(model.artistCount)} en ${placesLabel(model.placeCount)}</span></p></div>
                 <ul class="am-territories">${territories}</ul>
             </div>
             <div class="am-styles" role="group" aria-label="Filtra per estil">${styleChips}</div>
@@ -549,6 +549,7 @@
         const point = state.model?.points.find(p => p.id === placeId);
         if (!point) return;
         setFull(false);
+        rememberReturn();
         const opening = app.features.nearbyRadio?.openPlace?.({
             name: point.approximate ? point.reference : point.name,
             territory: point.territory,
@@ -561,6 +562,46 @@
 
     // Un pare amb transformació trenca el «position: fixed»: a pantalla completa el mapa penja de <body> i, en
     // tancar-la, torna al seu lloc (els gestors són del mateix element i continuen funcionant).
+    // ---------- Tornar al mapa ----------
+    // En obrir un artista (o una ràdio) des del mapa es recorda on era el mapa a la pàgina. Amb `push` s'afegeix una
+    // entrada a l'historial (la fitxa d'artista no en fa cap): «enrere» —el del sistema, el de la fitxa o el de
+    // després d'una ràdio— torna a Descobreix i restoreReturn() (cridat per syncArtistMap() d'app.js) hi fa scroll.
+    const RETURN_TTL = 30 * 60 * 1000;
+    function rememberReturn({ push = false } = {}) {
+        const container = state.container;
+        if (!container) return;
+        const top = container.getBoundingClientRect().top + window.scrollY;
+        app.state.mapReturn = { offset: window.scrollY - top, at: Date.now(), pushed: push };
+        if (!push) return;
+        try {
+            const current = window.history.state || {};
+            window.history.pushState(
+                { ...current, appPage: 'home', category: 'Descobreix', mapReturn: true },
+                '',
+                window.location.href
+            );
+        } catch (_error) {
+            /* Sense historial: el botó de la fitxa farà el de sempre */
+        }
+    }
+    function restoreReturn() {
+        const target = app.state.mapReturn;
+        app.state.mapReturn = null;
+        const container = state.container;
+        if (!target || !container || Date.now() - target.at > RETURN_TTL) return false;
+        let tries = 0;
+        const go = () => {
+            if (container.classList.contains('hidden')) return;
+            const top = container.getBoundingClientRect().top + window.scrollY;
+            const y = Math.max(0, top + target.offset);
+            window.scrollTo(0, y);
+            // La pàgina encara s'està pintant (cançons, «Per afinitat»): es torna a provar uns quants cops
+            if (Math.abs(window.scrollY - y) > 2 && ++tries < 12) setTimeout(go, 80);
+        };
+        requestAnimationFrame(() => requestAnimationFrame(go));
+        return true;
+    }
+
     function setFull(on) {
         if (state.full === Boolean(on)) return;
         state.full = Boolean(on);
@@ -590,6 +631,7 @@
         const start = songs => {
             const pool = zoneSongs(songs, zone.channelIds);
             setFull(false);
+            rememberReturn();
             const ok = app.features.musicQueue?.startCategoryRadio?.(pool, { name: zone.name });
             if (!ok) toast('No hi ha prou cançons d’aquesta zona per fer-ne una ràdio.');
             return Boolean(ok);
@@ -712,6 +754,7 @@
         const artist = target.closest?.('[data-am-artist]');
         if (artist) {
             setFull(false);
+            rememberReturn({ push: true });
             if (typeof openChannelProfile === 'function') openChannelProfile(artist.dataset.amArtist);
             return;
         }
@@ -953,6 +996,7 @@
     }
 
     app.features.artistMap = {
+        restoreReturn,
         project,
         resolvePlace,
         buildModel,

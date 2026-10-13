@@ -4654,6 +4654,11 @@ function bindChannelEvents() {
     if (channelBackBtn) {
         channelBackBtn.addEventListener('click', event => {
             event.preventDefault();
+            // Fitxa oberta des del mapa de Descobreix (artist-map.js hi ha afegit una entrada a l'historial): torna al mapa
+            if (history.state?.mapReturn && SegueixApp.state.mapReturn) {
+                history.back();
+                return;
+            }
             const scrollY = segueixScrollYBeforeChannel;
             segueixScrollYBeforeChannel = null;
             showFollow(activeFollowTab || 'all', scrollY !== null ? { scrollY } : {});
@@ -8258,6 +8263,12 @@ function bindSearchResults(container) {
 function syncArtistMap() {
     const discover = selectedCategory === 'Descobreix';
     homePage?.classList.toggle('is-discover', discover);
+    // Tornant d'un artista o d'una ràdio oberts des del mapa: scroll al mapa (si s'ha anat a una altra vista, s'oblida)
+    const homeVisible = homePage && !homePage.classList.contains('hidden');
+    if (homeVisible && SegueixApp.state.mapReturn) {
+        if (discover) SegueixApp.features.artistMap?.restoreReturn?.();
+        else SegueixApp.state.mapReturn = null;
+    }
     [
         [SegueixApp.features.affinity, document.getElementById('affinitySection')],
         [SegueixApp.features.artistMap, document.getElementById('artistMap')],

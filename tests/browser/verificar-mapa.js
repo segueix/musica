@@ -137,6 +137,18 @@ async function check(browser, width, height, tag) {
     await page.waitForSelector('#channelPage:not(.hidden)', { timeout: 10000 });
     await page.waitForTimeout(500);
     ok(`${tag}: tocar un artista obre la fitxa`, (await page.textContent('#channelPage')).includes(name), name);
+    // «Enrere» des de la fitxa torna al mapa (no a «Artistes i grups»)
+    await page.click('#channelBackBtn');
+    await page.waitForTimeout(1200);
+    const back = await page.evaluate(() => {
+        const r = document.getElementById('artistMap').getBoundingClientRect();
+        return {
+            home: !document.getElementById('homePage').classList.contains('hidden'),
+            follow: !document.getElementById('followPage').classList.contains('hidden'),
+            mapOnScreen: r.top < innerHeight && r.bottom > 0,
+        };
+    });
+    ok(`${tag}: enrere des de la fitxa torna al mapa`, back.home && !back.follow && back.mapOnScreen, back);
     ok(`${tag}: sense errors`, errors.length === 0, errors);
     await ctx.close();
 }
