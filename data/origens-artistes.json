@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-13T15:23:50.661Z",
+  "updatedAt": "2026-10-13T16:12:29.616Z",
   "attribution": {
     "text": "Coordenades de referència: GeoNames, via Open-Meteo. CC BY 4.0.",
     "sources": [
@@ -10137,6 +10137,86 @@
       "reviewedOn": "2026-10-13",
       "assignmentSource": "manual-review",
       "locked": true
+    },
+    "artist:malifeta": {
+      "name": "Malifeta",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "territory:la-safor"
+      ],
+      "confidence": "alta",
+      "basis": "Origen documentat a la font citada; no s’infereix del lloc d’actuació.",
+      "sources": [
+        "https://massacriticasafor.com/revista/una-canco/malifeta-la-nit/"
+      ],
+      "reviewedOn": "2026-10-13",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:cloe": {
+      "name": "Cloe",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3122826"
+      ],
+      "confidence": "alta",
+      "basis": "Origen documentat a la font citada; no s’infereix del lloc d’actuació.",
+      "sources": [
+        "https://www.enderrock.cat/edr/numero537/noticia/3082"
+      ],
+      "reviewedOn": "2026-10-13",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:slad-mobb": {
+      "name": "Slad Mobb",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "Origen documentat a la font citada; no s’infereix del lloc d’actuació.",
+      "sources": [
+        "https://primerafila.cat/opinio/discs/2025/06/la-slad-mobb-obra-les-portes-de-barcelona-amb-la-clau-de-la-ciutat/"
+      ],
+      "reviewedOn": "2026-10-13",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:la-xica": {
+      "name": "La Xica",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:2509954"
+      ],
+      "confidence": "alta",
+      "basis": "Origen documentat a la font citada; no s’infereix del lloc d’actuació.",
+      "sources": [
+        "https://www.diarilaveu.cat/opinio/febrer-on-fire-les-veus-femenines-de-la-musica-valenciana-622773/"
+      ],
+      "reviewedOn": "2026-10-13",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:karlus": {
+      "name": "Karlus",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "territory:eivissa"
+      ],
+      "confidence": "alta",
+      "basis": "Origen documentat a la font citada; no s’infereix del lloc d’actuació.",
+      "sources": [
+        "https://www.enderrock.cat/noticia/30211/karlus-eivissa-convertit-lloc-menys-habitable-som-aqui"
+      ],
+      "reviewedOn": "2026-10-13",
+      "assignmentSource": "manual-review",
+      "locked": true
     }
   },
   "channels": {
@@ -10724,7 +10804,16 @@
     "UCP7N7ojEtXWVZZez87PiIWw": "artist:aina-koda",
     "UCgcep1Xo6pgoWcfV0eYZIpQ": "artist:aina-koda",
     "UCEOjwllkTYUqljRethReusQ": "artist:sense-sal",
-    "UCOkIGVfu3W-Xzuyh-esacsg": "artist:sense-sal"
+    "UCOkIGVfu3W-Xzuyh-esacsg": "artist:sense-sal",
+    "UCoYEPFahaDY_6-VUEOeQ_IA": "artist:malifeta",
+    "UCZ_RdKPMxRUQv4j3XX8Hsjg": "artist:malifeta",
+    "UClWAIVcJyNLYxyEsjiRkC2Q": "artist:cloe",
+    "UCLlMLN6XXNcLR0WI85PF-Fw": "artist:slad-mobb",
+    "UCvo0uuqowZ9QIEUnHNTB0EQ": "artist:slad-mobb",
+    "UCy5b5j1mswlPfnHGDbnnkjQ": "artist:la-xica",
+    "UCb7vIttlw_joSrFeiZD7EpQ": "artist:la-xica",
+    "UCnVX15n_ddY6mfuwp811tfg": "artist:karlus",
+    "UCLqpYgIUgoyQNzpNiwVadPw": "artist:karlus"
   },
   "excludedProfiles": {
     "UCdezTX23syEeAJJAb2oOkKA": {

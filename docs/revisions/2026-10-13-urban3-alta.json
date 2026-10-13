@@ -1,0 +1,1330 @@
+{
+  "schemaVersion": 1,
+  "reviewedOn": "2026-10-13",
+  "generatedAt": "2026-10-13T16:12:29.616Z",
+  "method": "Revisió per enregistrament. Identitat, editor, durada i disponibilitat contrastats amb YouTube; llengua contrastada amb lletres publicades. Les versions Tema s’associen a la mateixa obra amb títol i crèdits coincidents. Es toleren préstecs i expressions breus, no estrofes en altres llengües. Les metadades de llengua soles no aproven cap peça. La selecció no equival a una audició íntegra de cada versió. La resta queda bloquejada per llista tancada i documentada com a pendent, promoció o homònim.",
+  "artists": [
+    {
+      "name": "Malifeta",
+      "canonicalName": "Malifeta",
+      "place": "la Safor",
+      "territory": "País Valencià",
+      "genres": [
+        "Urbana",
+        "Electrònica"
+      ],
+      "note": "Repertori plurilingüe: només lletres catalanes contrastades. Ales negres, Ídol i Llengua negra queden pendents de criteri sobre citacions i tornades.",
+      "sources": [
+        "https://massacriticasafor.com/revista/una-canco/malifeta-la-nit/",
+        "manual-user-2026-10-13"
+      ],
+      "channels": [
+        {
+          "id": "UCoYEPFahaDY_6-VUEOeQ_IA",
+          "type": "topic",
+          "primary": true,
+          "selected": 19,
+          "allowedVideoIds": [
+            "0R2x2oRGblw",
+            "7btQeG2yeec",
+            "lTmPEFfPZPY",
+            "cfXN1mcpSJY",
+            "MPjuCXInABs",
+            "TW_egPbrvZ0",
+            "Z0obFDOH2Hs",
+            "uOodG_W8Rlo",
+            "WiONFLj0914",
+            "E0mKE5cuqP0",
+            "-QCViMeHvaQ",
+            "7vlwFMvRKtk",
+            "tZQM78HRTfE",
+            "NmmvWSoppuk",
+            "ZBmw8zfWrJ0",
+            "fTcE0x0uSs8",
+            "W4Etd0d61Aw",
+            "Xs8cZmLDxz0",
+            "e2mPMCAJu0M"
+          ],
+          "lyricVerified": 19,
+          "publication": {
+            "hot": 19,
+            "archive": 0,
+            "recordings": 19,
+            "notPublished": []
+          }
+        },
+        {
+          "id": "UCZ_RdKPMxRUQv4j3XX8Hsjg",
+          "type": "official",
+          "primary": false,
+          "selected": 18,
+          "allowedVideoIds": [
+            "IbyKChD7BNI",
+            "cwU3lLgCMBs",
+            "vIIKXGeNTsM",
+            "XfsmKYBQ3aY",
+            "RIugcmXvqJ0",
+            "T5OnzLL3y8A",
+            "PX0PrpZSe8w",
+            "7rbttxfhEko",
+            "usvFMLzpR2g",
+            "2rkQyPKWtYw",
+            "VmPNPjomemY",
+            "htsG_dkDpX0",
+            "9PHjEoQ5dyE",
+            "LwwBJwZg9zY",
+            "B8svh78ES2k",
+            "KMk_7iy_TQs",
+            "OQenadEc4Zk",
+            "2jHNvzw4iR4"
+          ],
+          "lyricVerified": 18,
+          "publication": {
+            "hot": 17,
+            "archive": 0,
+            "recordings": 17,
+            "notPublished": [
+              "htsG_dkDpX0"
+            ]
+          }
+        }
+      ],
+      "notSelected": [
+        {
+          "id": "yw7kpjELxZw",
+          "title": "ROVELLET DE L'OU",
+          "channelId": "UCoYEPFahaDY_6-VUEOeQ_IA",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "dyWiJLyoQB8",
+          "title": "ALES NEGRES",
+          "channelId": "UCoYEPFahaDY_6-VUEOeQ_IA",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "1kFqZzfT-Xk",
+          "title": "ÍDOL",
+          "channelId": "UCoYEPFahaDY_6-VUEOeQ_IA",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "rYFuAA7LqwQ",
+          "title": "Llengua negra",
+          "channelId": "UCoYEPFahaDY_6-VUEOeQ_IA",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "LL_HVpcWYQg",
+          "title": "Se7en",
+          "channelId": "UCoYEPFahaDY_6-VUEOeQ_IA",
+          "reason": "Estrofes o fragments substancials en altres llengües; fora del criteri lingüístic."
+        },
+        {
+          "id": "2-AMRidcJ3Q",
+          "title": "Xinxeta",
+          "channelId": "UCoYEPFahaDY_6-VUEOeQ_IA",
+          "reason": "Estrofes o fragments substancials en altres llengües; fora del criteri lingüístic."
+        },
+        {
+          "id": "JK3iOw7bLWw",
+          "title": "Coenta",
+          "channelId": "UCoYEPFahaDY_6-VUEOeQ_IA",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "EhvsBXm3t7s",
+          "title": "Si me dices",
+          "channelId": "UCoYEPFahaDY_6-VUEOeQ_IA",
+          "reason": "Estrofes o fragments substancials en altres llengües; fora del criteri lingüístic."
+        },
+        {
+          "id": "P5YjXr-MGPA",
+          "title": "Coenta (Dasousa version)",
+          "channelId": "UCoYEPFahaDY_6-VUEOeQ_IA",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "X_wctT7gHs4",
+          "title": "T'estime Si He Begut",
+          "channelId": "UCoYEPFahaDY_6-VUEOeQ_IA",
+          "reason": "Estrofes o fragments substancials en altres llengües; fora del criteri lingüístic."
+        },
+        {
+          "id": "e_wabmEG9TU",
+          "title": "BREGA A LES SALES - MALIFETA 2027",
+          "channelId": "UCZ_RdKPMxRUQv4j3XX8Hsjg",
+          "reason": "Promoció o fragment, no cançó completa."
+        },
+        {
+          "id": "RKlDltJp-3I",
+          "title": "CAP 3 ROVELLET DE L'OU ft. Sandra Monfort",
+          "channelId": "UCZ_RdKPMxRUQv4j3XX8Hsjg",
+          "reason": "Promoció o fragment, no cançó completa."
+        },
+        {
+          "id": "Jb6xZZFpaAw",
+          "title": "CAP 2 DE NIT",
+          "channelId": "UCZ_RdKPMxRUQv4j3XX8Hsjg",
+          "reason": "Promoció o fragment, no cançó completa."
+        },
+        {
+          "id": "o89tgjLQIOs",
+          "title": "MALIFETA - Ales negres ft. Toni S. ZOO (videolyric) Prod. pxllt",
+          "channelId": "UCZ_RdKPMxRUQv4j3XX8Hsjg",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "Un0BCAvMbFc",
+          "title": "MALIFETA - Rovellet de l'ou ft. Sandra Monfort (videolyric) Prod. pxllt",
+          "channelId": "UCZ_RdKPMxRUQv4j3XX8Hsjg",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "Lf7LxjbmgZw",
+          "title": "MALIFETA - Ídol (videolyric) Prod. pxllt",
+          "channelId": "UCZ_RdKPMxRUQv4j3XX8Hsjg",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "v4Zrhm8rbJU",
+          "title": "CAP 1 BREGA",
+          "channelId": "UCZ_RdKPMxRUQv4j3XX8Hsjg",
+          "reason": "Promoció o fragment, no cançó completa."
+        },
+        {
+          "id": "1rWtGe1Y59M",
+          "title": "NOU DISC 2026!!! 💿💿💿💿",
+          "channelId": "UCZ_RdKPMxRUQv4j3XX8Hsjg",
+          "reason": "Promoció o fragment, no cançó completa."
+        },
+        {
+          "id": "zEyXaNbUeuE",
+          "title": "MALIFETA ON TOUUUUUR 🪩",
+          "channelId": "UCZ_RdKPMxRUQv4j3XX8Hsjg",
+          "reason": "Promoció o fragment, no cançó completa."
+        },
+        {
+          "id": "kFo_3Yc31iQ",
+          "title": "MALIFETA - HEM ANAT I HEM TOURNAT - GIRA 2025",
+          "channelId": "UCZ_RdKPMxRUQv4j3XX8Hsjg",
+          "reason": "Promoció o fragment, no cançó completa."
+        },
+        {
+          "id": "hz89FvTysxs",
+          "title": "MALIFETA - 06 LLENGUA NEGRA",
+          "channelId": "UCZ_RdKPMxRUQv4j3XX8Hsjg",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "2Y0FYcNzhPg",
+          "title": "MALIFETA - 05 SI ME DICES",
+          "channelId": "UCZ_RdKPMxRUQv4j3XX8Hsjg",
+          "reason": "Estrofes o fragments substancials en altres llengües; fora del criteri lingüístic."
+        },
+        {
+          "id": "Td6OE1bpfSw",
+          "title": "MALIFETA- 02 SE7EN",
+          "channelId": "UCZ_RdKPMxRUQv4j3XX8Hsjg",
+          "reason": "Estrofes o fragments substancials en altres llengües; fora del criteri lingüístic."
+        },
+        {
+          "id": "dUe8O670ofQ",
+          "title": "MALIFETA - T'ESTIME SI HE BEGUT",
+          "channelId": "UCZ_RdKPMxRUQv4j3XX8Hsjg",
+          "reason": "Estrofes o fragments substancials en altres llengües; fora del criteri lingüístic."
+        },
+        {
+          "id": "zmqkG0jVBIw",
+          "title": "MALIFETA - COENTA",
+          "channelId": "UCZ_RdKPMxRUQv4j3XX8Hsjg",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "qd_s0Tj8RFM",
+          "title": "MALIFETA - XINXETA",
+          "channelId": "UCZ_RdKPMxRUQv4j3XX8Hsjg",
+          "reason": "Estrofes o fragments substancials en altres llengües; fora del criteri lingüístic."
+        }
+      ],
+      "recordingsPublished": 36
+    },
+    {
+      "name": "Cloe",
+      "canonicalName": "Cloe",
+      "place": "Esplugues de Llobregat",
+      "territory": "Catalunya",
+      "genres": [
+        "Urbana",
+        "Pop"
+      ],
+      "note": "Cloe (Alba Gómez), diferenciada de Cloe Riembau i dels homònims italians del canal Tema. Sin saber el que pendent; AYRYN no s’atribueix a Cloe.",
+      "sources": [
+        "https://www.enderrock.cat/edr/numero537/noticia/3082",
+        "manual-user-2026-10-13"
+      ],
+      "channels": [
+        {
+          "id": "UClWAIVcJyNLYxyEsjiRkC2Q",
+          "type": "topic",
+          "primary": true,
+          "selected": 20,
+          "allowedVideoIds": [
+            "c-XTxtOWSZs",
+            "5MjcAgpm570",
+            "Dd8HFa32Gvg",
+            "6WV8n2cvtfA",
+            "tZV8xGKGGzY",
+            "YK2CMxDlQqE",
+            "yo0lJLWQheI",
+            "9m6humf40eM",
+            "1CJNTnn1giA",
+            "UiQ0alFj374",
+            "XXjo-q4zj2E",
+            "AvyZU17GwpY",
+            "dYFg6XVhB7I",
+            "-uEMi0FO7H4",
+            "LXmcHhsjpsA",
+            "0CwPkO_51us",
+            "i0TUo6kO2BY",
+            "Ubc5i1DvUXU",
+            "wOSG-QIWH0s",
+            "xyKKTaK0mEY"
+          ],
+          "lyricVerified": 20,
+          "publication": {
+            "hot": 12,
+            "archive": 8,
+            "recordings": 20,
+            "notPublished": []
+          }
+        }
+      ],
+      "notSelected": [
+        {
+          "id": "QM4jJyUu-x4",
+          "title": "Anche senza te",
+          "channelId": "UClWAIVcJyNLYxyEsjiRkC2Q",
+          "reason": "Homònim: no correspon a aquesta artista."
+        },
+        {
+          "id": "nI0oT54QZl8",
+          "title": "Samba De Laour",
+          "channelId": "UClWAIVcJyNLYxyEsjiRkC2Q",
+          "reason": "Homònim: no correspon a aquesta artista."
+        },
+        {
+          "id": "-Wm6CdhQ0y0",
+          "title": "La Dolce Vita",
+          "channelId": "UClWAIVcJyNLYxyEsjiRkC2Q",
+          "reason": "Homònim: no correspon a aquesta artista."
+        },
+        {
+          "id": "TzfFUPoY9Y0",
+          "title": "Sin saber el que",
+          "channelId": "UClWAIVcJyNLYxyEsjiRkC2Q",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "OPMVSFwUAGo",
+          "title": "AYRYN - DÉJÀ VU",
+          "channelId": "UCRgcGfe-4b4n3quUIKZa_AA",
+          "reason": "Canal no atribuït a aquesta identitat."
+        },
+        {
+          "id": "UNlzGHCqbdE",
+          "title": "AYRYN - BLINDADA",
+          "channelId": "UCRgcGfe-4b4n3quUIKZa_AA",
+          "reason": "Canal no atribuït a aquesta identitat."
+        },
+        {
+          "id": "nTaU8OAIe1M",
+          "title": "AYRYN-Apropar-me (Visualizer)",
+          "channelId": "UCRgcGfe-4b4n3quUIKZa_AA",
+          "reason": "Canal no atribuït a aquesta identitat."
+        },
+        {
+          "id": "fi5uTNx9IlQ",
+          "title": "AYRYN - NO ESPERIS RES feat. CLOE",
+          "channelId": "UCRgcGfe-4b4n3quUIKZa_AA",
+          "reason": "Canal no atribuït a aquesta identitat."
+        },
+        {
+          "id": "gn7MYNzWSBw",
+          "title": "AYRYN -TREMOLAR",
+          "channelId": "UCRgcGfe-4b4n3quUIKZa_AA",
+          "reason": "Canal no atribuït a aquesta identitat."
+        },
+        {
+          "id": "SfKr5W0YnCA",
+          "title": "TEASER TREMOLAR",
+          "channelId": "UCRgcGfe-4b4n3quUIKZa_AA",
+          "reason": "Canal no atribuït a aquesta identitat."
+        }
+      ],
+      "recordingsPublished": 20
+    },
+    {
+      "name": "Slad Mobb",
+      "canonicalName": "Slad Mobb",
+      "place": "Barcelona",
+      "territory": "Catalunya",
+      "genres": [
+        "Urbana",
+        "Electrònica"
+      ],
+      "note": "Col·lectiu de Sants, Barcelona. Selecció limitada a Tira-ho, amb lletra publicada en català i interjeccions breus angleses. No s’aproven àlbums sencers ni temes per la metadada ca: TNT Billets en mostra un fals positiu.",
+      "sources": [
+        "https://primerafila.cat/opinio/discs/2025/06/la-slad-mobb-obra-les-portes-de-barcelona-amb-la-clau-de-la-ciutat/",
+        "manual-user-2026-10-13"
+      ],
+      "channels": [
+        {
+          "id": "UCLlMLN6XXNcLR0WI85PF-Fw",
+          "type": "official",
+          "primary": false,
+          "selected": 1,
+          "allowedVideoIds": [
+            "F1xfhma7iaY"
+          ],
+          "lyricVerified": 1,
+          "publication": {
+            "hot": 1,
+            "archive": 0,
+            "recordings": 1,
+            "notPublished": []
+          }
+        },
+        {
+          "id": "UCvo0uuqowZ9QIEUnHNTB0EQ",
+          "type": "topic",
+          "primary": true,
+          "selected": 1,
+          "allowedVideoIds": [
+            "kDfb428s_GY"
+          ],
+          "lyricVerified": 1,
+          "publication": {
+            "hot": 1,
+            "archive": 0,
+            "recordings": 1,
+            "notPublished": []
+          }
+        }
+      ],
+      "notSelected": [
+        {
+          "id": "o9tc3srWPzQ",
+          "title": "Slad Mobb - Som la Clau (Prod. 60k Cvndy & 60k Solitaire)",
+          "channelId": "UCLlMLN6XXNcLR0WI85PF-Fw",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "Xu3sbAmbIXs",
+          "title": "33myselff, Litro, Zadi Plug - JOVE SLAD LIFE (Prod. 60k Solitaire)",
+          "channelId": "UCLlMLN6XXNcLR0WI85PF-Fw",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "djR-NvGmTMQ",
+          "title": "Zadi Plug, Litro, 33myselff, Xarlyto - Es Igual (Prod. 60k Solitaire)",
+          "channelId": "UCLlMLN6XXNcLR0WI85PF-Fw",
+          "reason": "Estrofes o fragments substancials en altres llengües; fora del criteri lingüístic."
+        },
+        {
+          "id": "0eGy-n7PEHY",
+          "title": "Zadi Plug, Xarlyto & 33myselff - TNT Billets (Prod. 60k Cvndy)",
+          "channelId": "UCLlMLN6XXNcLR0WI85PF-Fw",
+          "reason": "Estrofes o fragments substancials en altres llengües; fora del criteri lingüístic."
+        },
+        {
+          "id": "tddFUtbtqm0",
+          "title": "Zadi Plug, 33myselff, Icy Vedo & Thatkid - Mala & Boujee (Prod. 60k Cvndy & 60k Solitaire)",
+          "channelId": "UCLlMLN6XXNcLR0WI85PF-Fw",
+          "reason": "Estrofes o fragments substancials en altres llengües; fora del criteri lingüístic."
+        },
+        {
+          "id": "Q5fphVzABME",
+          "title": "33myselff, Zadi Plug, Litro & Xarlyto - GAUDÍ (Videoclip)",
+          "channelId": "UCLlMLN6XXNcLR0WI85PF-Fw",
+          "reason": "Estrofes o fragments substancials en altres llengües; fora del criteri lingüístic."
+        },
+        {
+          "id": "lEAfH5zsUr4",
+          "title": "Zadi Plug, Xarlyto & Litro - LAMINE (Prod. 60k Cvndy & 60k Solitaire) Video Oficial",
+          "channelId": "UCLlMLN6XXNcLR0WI85PF-Fw",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "mIJx4gRA13A",
+          "title": "Xarlyto, Zadi Plug & 33myselff - JABULANI (Prod. 60k Cvndy & 60k Solitaire) Video Oficial",
+          "channelId": "UCLlMLN6XXNcLR0WI85PF-Fw",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "zNFlYgt04cs",
+          "title": "Zadi Plug - Si algun dia em deixes (Video Oficial)",
+          "channelId": "UCLlMLN6XXNcLR0WI85PF-Fw",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "wrXa9tJDMa4",
+          "title": "Zadi Plug - Spiritual (Video Oficial)",
+          "channelId": "UCLlMLN6XXNcLR0WI85PF-Fw",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "kR6TavPBcDA",
+          "title": "Xarlyto, Zadi Plug, 33myselff & Vietnam Keed  - LONELY (Prod. 60k Solitaire)",
+          "channelId": "UCLlMLN6XXNcLR0WI85PF-Fw",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "MhACE5xJ_9w",
+          "title": "33myselff & Zadi Plug - So Far Awaits (Video Oficial)",
+          "channelId": "UCLlMLN6XXNcLR0WI85PF-Fw",
+          "reason": "Estrofes o fragments substancials en altres llengües; fora del criteri lingüístic."
+        },
+        {
+          "id": "oR9FNKKMZz0",
+          "title": "Xarlyto & 60K Cvndy - erOt1c4 (Official Video)",
+          "channelId": "UCLlMLN6XXNcLR0WI85PF-Fw",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "QIxm0jAV0gQ",
+          "title": "Zadi Plug - Slime Freestyle (prod. Mario Thugger)",
+          "channelId": "UCLlMLN6XXNcLR0WI85PF-Fw",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "24GTkjj10O0",
+          "title": "ZADI, LITRO, XARLYTO, GABE FRISCO - HITMAKERS Ft. LEBRØN, SKINNY VR (Prod. 60 KARTEL)",
+          "channelId": "UCLlMLN6XXNcLR0WI85PF-Fw",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "nnYwXSl7U6M",
+          "title": "Zadi Plug - SPIDER (Prod. 60 Kartel)",
+          "channelId": "UCLlMLN6XXNcLR0WI85PF-Fw",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "ke6-ukp0Y8o",
+          "title": "Som la Clau",
+          "channelId": "UCvo0uuqowZ9QIEUnHNTB0EQ",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "vu7mfjR_PF4",
+          "title": "XXL Gyal",
+          "channelId": "UCvo0uuqowZ9QIEUnHNTB0EQ",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "8-zlyvDAzPo",
+          "title": "Carioca",
+          "channelId": "UCvo0uuqowZ9QIEUnHNTB0EQ",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "eE6TAydpSmM",
+          "title": "CEO",
+          "channelId": "UCvo0uuqowZ9QIEUnHNTB0EQ",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "g9Ua1DELO0E",
+          "title": "Si tu hi ets (The One)",
+          "channelId": "UCvo0uuqowZ9QIEUnHNTB0EQ",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "Xx9-nesJaN8",
+          "title": "Jove Slad Life",
+          "channelId": "UCvo0uuqowZ9QIEUnHNTB0EQ",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "PaTpeBN7Dgw",
+          "title": "Es Igual",
+          "channelId": "UCvo0uuqowZ9QIEUnHNTB0EQ",
+          "reason": "Estrofes o fragments substancials en altres llengües; fora del criteri lingüístic."
+        },
+        {
+          "id": "TNft8u2iq8w",
+          "title": "Es Igual",
+          "channelId": "UCvo0uuqowZ9QIEUnHNTB0EQ",
+          "reason": "Estrofes o fragments substancials en altres llengües; fora del criteri lingüístic."
+        },
+        {
+          "id": "QCoikc8vxo8",
+          "title": "Herència",
+          "channelId": "UCvo0uuqowZ9QIEUnHNTB0EQ",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "vzwk9UkXQR8",
+          "title": "TNT Billets",
+          "channelId": "UCvo0uuqowZ9QIEUnHNTB0EQ",
+          "reason": "Estrofes o fragments substancials en altres llengües; fora del criteri lingüístic."
+        },
+        {
+          "id": "AWJn0eVLNDM",
+          "title": "Rick Online",
+          "channelId": "UCvo0uuqowZ9QIEUnHNTB0EQ",
+          "reason": "Estrofes o fragments substancials en altres llengües; fora del criteri lingüístic."
+        },
+        {
+          "id": "DCZ8dGbUWuY",
+          "title": "Mala & Boujee",
+          "channelId": "UCvo0uuqowZ9QIEUnHNTB0EQ",
+          "reason": "Estrofes o fragments substancials en altres llengües; fora del criteri lingüístic."
+        },
+        {
+          "id": "9QXUPMlmICE",
+          "title": "Trànsit",
+          "channelId": "UCvo0uuqowZ9QIEUnHNTB0EQ",
+          "reason": "Estrofes o fragments substancials en altres llengües; fora del criteri lingüístic."
+        },
+        {
+          "id": "oJjSd3Qryrs",
+          "title": "Herència",
+          "channelId": "UCvo0uuqowZ9QIEUnHNTB0EQ",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "tS67Hi8Ws3w",
+          "title": "La Clau de la Ciutat",
+          "channelId": "UCvo0uuqowZ9QIEUnHNTB0EQ",
+          "reason": "Estrofes o fragments substancials en altres llengües; fora del criteri lingüístic."
+        },
+        {
+          "id": "A2D-HeZUpYQ",
+          "title": "Gaudí",
+          "channelId": "UCvo0uuqowZ9QIEUnHNTB0EQ",
+          "reason": "Estrofes o fragments substancials en altres llengües; fora del criteri lingüístic."
+        },
+        {
+          "id": "leY5z9hvJpg",
+          "title": "Mala & Boujee",
+          "channelId": "UCvo0uuqowZ9QIEUnHNTB0EQ",
+          "reason": "Estrofes o fragments substancials en altres llengües; fora del criteri lingüístic."
+        },
+        {
+          "id": "C0GFp3ej5qs",
+          "title": "Gaudí",
+          "channelId": "UCvo0uuqowZ9QIEUnHNTB0EQ",
+          "reason": "Estrofes o fragments substancials en altres llengües; fora del criteri lingüístic."
+        },
+        {
+          "id": "g6rc0uWbDrs",
+          "title": "Lamine",
+          "channelId": "UCvo0uuqowZ9QIEUnHNTB0EQ",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "zizKxSno8jI",
+          "title": "Jabulani",
+          "channelId": "UCvo0uuqowZ9QIEUnHNTB0EQ",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "SL_eXn05plo",
+          "title": "Vull saber de tu",
+          "channelId": "UCvo0uuqowZ9QIEUnHNTB0EQ",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "Nkf9B7fZe64",
+          "title": "Slad (Intro)",
+          "channelId": "UCvo0uuqowZ9QIEUnHNTB0EQ",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "Y0HveIJqYqI",
+          "title": "Insomnia (Interlude)",
+          "channelId": "UCvo0uuqowZ9QIEUnHNTB0EQ",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "W38V82DG75A",
+          "title": "Raphinha",
+          "channelId": "UCvo0uuqowZ9QIEUnHNTB0EQ",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "EKAyElnI-lY",
+          "title": "Num. 1",
+          "channelId": "UCvo0uuqowZ9QIEUnHNTB0EQ",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "MbMbhKDB7l4",
+          "title": "Marte",
+          "channelId": "UCvo0uuqowZ9QIEUnHNTB0EQ",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "Xhm8thd4Kac",
+          "title": "Hitmakers",
+          "channelId": "UCvo0uuqowZ9QIEUnHNTB0EQ",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "CBZFvb-NYY8",
+          "title": "All In",
+          "channelId": "UCvo0uuqowZ9QIEUnHNTB0EQ",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "h6k6wshnGWg",
+          "title": "Lonely",
+          "channelId": "UCvo0uuqowZ9QIEUnHNTB0EQ",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "Ma2Zklw1NV0",
+          "title": "Te Tengo",
+          "channelId": "UCvo0uuqowZ9QIEUnHNTB0EQ",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "9sx5l8icWKI",
+          "title": "Resonancia",
+          "channelId": "UCvo0uuqowZ9QIEUnHNTB0EQ",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        }
+      ],
+      "recordingsPublished": 2
+    },
+    {
+      "name": "La Xica",
+      "canonicalName": "La Xica",
+      "place": "València",
+      "territory": "País Valencià",
+      "genres": [
+        "Electrònica",
+        "Pop"
+      ],
+      "note": "Marina Bolea, de Benimaclet. Set obres contrastades amb la lletra publicada al canal oficial; altres peces pendents sense aprovació per títol.",
+      "sources": [
+        "https://www.diarilaveu.cat/opinio/febrer-on-fire-les-veus-femenines-de-la-musica-valenciana-622773/",
+        "manual-user-2026-10-13"
+      ],
+      "channels": [
+        {
+          "id": "UCy5b5j1mswlPfnHGDbnnkjQ",
+          "type": "official",
+          "primary": false,
+          "selected": 7,
+          "allowedVideoIds": [
+            "GPzEH1XJTYc",
+            "jz89dL9SKh8",
+            "t-RYM6DuJCE",
+            "zAcfHxWXlcY",
+            "2GjFxEQmqKA",
+            "NKjeERS2_G8",
+            "x-XujV9txXU"
+          ],
+          "lyricVerified": 7,
+          "publication": {
+            "hot": 7,
+            "archive": 0,
+            "recordings": 7,
+            "notPublished": []
+          }
+        },
+        {
+          "id": "UCb7vIttlw_joSrFeiZD7EpQ",
+          "type": "topic",
+          "primary": true,
+          "selected": 14,
+          "allowedVideoIds": [
+            "NrXSLdHjIoI",
+            "ThU5B1bkxUo",
+            "s1F6Kz8u8iw",
+            "IcVTsYYJ2ns",
+            "EvSjblqW2VE",
+            "2TKCj_igUuM",
+            "2VFIuip0M00",
+            "ch9qlLICvCQ",
+            "IXzwFfLcf3c",
+            "_ZHdFWPhhAM",
+            "bXXG3zcAbtM",
+            "uXlwApUo2Oc",
+            "ft9wvfJNbIU",
+            "SjQBFj6lXEY"
+          ],
+          "lyricVerified": 14,
+          "publication": {
+            "hot": 14,
+            "archive": 0,
+            "recordings": 14,
+            "notPublished": []
+          }
+        }
+      ],
+      "notSelected": [
+        {
+          "id": "hWXDWKxrOpM",
+          "title": "PALMERA DESTROY💋🌴 LA XICA x ORXATA",
+          "channelId": "UCy5b5j1mswlPfnHGDbnnkjQ",
+          "reason": "Promoció o fragment, no cançó completa."
+        },
+        {
+          "id": "m401VemF2ps",
+          "title": "Palmera Destroy - LA XICA x Orxata",
+          "channelId": "UCy5b5j1mswlPfnHGDbnnkjQ",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "AC8VZkpBCy8",
+          "title": "A fer la mà - LA XICA",
+          "channelId": "UCy5b5j1mswlPfnHGDbnnkjQ",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "g3CjdYFq49E",
+          "title": "malomalo - LA XICA",
+          "channelId": "UCy5b5j1mswlPfnHGDbnnkjQ",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "gyC8-gJNUEs",
+          "title": "Tabú - LA XICA",
+          "channelId": "UCy5b5j1mswlPfnHGDbnnkjQ",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "j3H88vLHX6A",
+          "title": "La pàtria dels àngels - LA XICA",
+          "channelId": "UCy5b5j1mswlPfnHGDbnnkjQ",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "muOm3jK_RTM",
+          "title": "àngel i dimoni - LA XICA",
+          "channelId": "UCy5b5j1mswlPfnHGDbnnkjQ",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "AduHuObNET0",
+          "title": "Palmera Destroy (LA XICA x Orxata)",
+          "channelId": "UCb7vIttlw_joSrFeiZD7EpQ",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "3gCfyOJS090",
+          "title": "Tabú",
+          "channelId": "UCb7vIttlw_joSrFeiZD7EpQ",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "1f7zXMoq0mE",
+          "title": "La pàtria dels àngels",
+          "channelId": "UCb7vIttlw_joSrFeiZD7EpQ",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "jyMvX-r3pP4",
+          "title": "malomalo",
+          "channelId": "UCb7vIttlw_joSrFeiZD7EpQ",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "YTyf9Ek72G0",
+          "title": "A fer la mà",
+          "channelId": "UCb7vIttlw_joSrFeiZD7EpQ",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "FJdXquEkrDE",
+          "title": "àngel i dimoni",
+          "channelId": "UCb7vIttlw_joSrFeiZD7EpQ",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        }
+      ],
+      "recordingsPublished": 21
+    },
+    {
+      "name": "Karlus",
+      "canonicalName": "Karlus",
+      "place": "Eivissa (illa)",
+      "territory": "Illes Balears",
+      "genres": [
+        "Electrònica",
+        "Pop"
+      ],
+      "note": "Artista de Jesús, Eivissa; ubicació conservadora a l’illa. Quatre obres amb lletra catalana publicada. La resta, incloses les metadades ca sense lletra, pendent.",
+      "sources": [
+        "https://www.enderrock.cat/noticia/30211/karlus-eivissa-convertit-lloc-menys-habitable-som-aqui",
+        "manual-user-2026-10-13"
+      ],
+      "channels": [
+        {
+          "id": "UCnVX15n_ddY6mfuwp811tfg",
+          "type": "topic",
+          "primary": true,
+          "selected": 7,
+          "allowedVideoIds": [
+            "S9QR6S9Csno",
+            "INWeii0thAQ",
+            "-TY12EmWiIQ",
+            "FL1XnrV3U1k",
+            "kRKaABVBuqQ",
+            "ZclORxEbEGU",
+            "jnvfTT9yiMM"
+          ],
+          "lyricVerified": 7,
+          "publication": {
+            "hot": 7,
+            "archive": 0,
+            "recordings": 7,
+            "notPublished": []
+          }
+        },
+        {
+          "id": "UCLqpYgIUgoyQNzpNiwVadPw",
+          "type": "official",
+          "primary": false,
+          "selected": 4,
+          "allowedVideoIds": [
+            "5-NLs4FOiMw",
+            "78ayD0TolBY",
+            "Jows9iG-6Uw",
+            "9YYozAiq1tY"
+          ],
+          "lyricVerified": 4,
+          "publication": {
+            "hot": 4,
+            "archive": 0,
+            "recordings": 4,
+            "notPublished": []
+          }
+        }
+      ],
+      "notSelected": [
+        {
+          "id": "bNrG0dxpobA",
+          "title": "KYOTO",
+          "channelId": "UCnVX15n_ddY6mfuwp811tfg",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "o_scHZ5PeBA",
+          "title": "PS2 CUMBIA",
+          "channelId": "UCnVX15n_ddY6mfuwp811tfg",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "-QZllpECLqI",
+          "title": "RITUAL",
+          "channelId": "UCnVX15n_ddY6mfuwp811tfg",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "03ddArmbsWE",
+          "title": "GUAJIRA",
+          "channelId": "UCnVX15n_ddY6mfuwp811tfg",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "E_Bad0tUdx4",
+          "title": "Tot lo que som",
+          "channelId": "UCnVX15n_ddY6mfuwp811tfg",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "XX2abrWVc9g",
+          "title": "Es pou (Capítol 2)",
+          "channelId": "UCnVX15n_ddY6mfuwp811tfg",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "tE7PATWVGIE",
+          "title": "Permís a sa majora",
+          "channelId": "UCnVX15n_ddY6mfuwp811tfg",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "Qz8xQeCt908",
+          "title": "Angelet fictici",
+          "channelId": "UCnVX15n_ddY6mfuwp811tfg",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "sgvqZMP7lZE",
+          "title": "NOVA EBUSUS",
+          "channelId": "UCnVX15n_ddY6mfuwp811tfg",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "IqNKMcthj_4",
+          "title": "Metamorfosi",
+          "channelId": "UCnVX15n_ddY6mfuwp811tfg",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "2BktgEZtBIY",
+          "title": "Sonada",
+          "channelId": "UCnVX15n_ddY6mfuwp811tfg",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "pGkrMw8q9NY",
+          "title": "RAJA",
+          "channelId": "UCnVX15n_ddY6mfuwp811tfg",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "-AswQl0ssYA",
+          "title": "Malnom",
+          "channelId": "UCnVX15n_ddY6mfuwp811tfg",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "VL7YX-jHl5o",
+          "title": "Indulgència (objecte)",
+          "channelId": "UCnVX15n_ddY6mfuwp811tfg",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "VsVWjBg4V48",
+          "title": "LINDO:)",
+          "channelId": "UCnVX15n_ddY6mfuwp811tfg",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "vQcHX73aj5M",
+          "title": "he llorado",
+          "channelId": "UCnVX15n_ddY6mfuwp811tfg",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "zMup3qh6glA",
+          "title": "Armadura",
+          "channelId": "UCnVX15n_ddY6mfuwp811tfg",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "jhG7KCBjYbI",
+          "title": "Indulgència (subjecte)",
+          "channelId": "UCnVX15n_ddY6mfuwp811tfg",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "9uvrs7wb_Ho",
+          "title": "he llorado",
+          "channelId": "UCnVX15n_ddY6mfuwp811tfg",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "bf4yxoC0sy0",
+          "title": "buu",
+          "channelId": "UCnVX15n_ddY6mfuwp811tfg",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "O3IL8rsNNTw",
+          "title": "3DÉN",
+          "channelId": "UCnVX15n_ddY6mfuwp811tfg",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "QLviVtK6f0k",
+          "title": "sóc un àngel",
+          "channelId": "UCnVX15n_ddY6mfuwp811tfg",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "4zTyhs7aGO8",
+          "title": "es fameliar",
+          "channelId": "UCnVX15n_ddY6mfuwp811tfg",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "RhRtGjJ6RdU",
+          "title": "te jurc",
+          "channelId": "UCnVX15n_ddY6mfuwp811tfg",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "W3m6ZlaQxz8",
+          "title": "groc i negre",
+          "channelId": "UCnVX15n_ddY6mfuwp811tfg",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "UoGW64Gx6FE",
+          "title": "aliens",
+          "channelId": "UCnVX15n_ddY6mfuwp811tfg",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "RE_Ikkj8lfw",
+          "title": "Karlus - NOVA EBUSUS",
+          "channelId": "UCLqpYgIUgoyQNzpNiwVadPw",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "p6JhnDvcgLk",
+          "title": "Karlus - Metamorfosi",
+          "channelId": "UCLqpYgIUgoyQNzpNiwVadPw",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "ZcBXWXbuNKk",
+          "title": "Karlus - Angelet fictici",
+          "channelId": "UCLqpYgIUgoyQNzpNiwVadPw",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "dD3Z8uIgXTs",
+          "title": "Karlus - Sonada",
+          "channelId": "UCLqpYgIUgoyQNzpNiwVadPw",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "qUEyLuMD6GE",
+          "title": "Karlus - Permís a sa majora",
+          "channelId": "UCLqpYgIUgoyQNzpNiwVadPw",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "Z9cwgbvb68E",
+          "title": "Karlus - Es pou (Capítol 2)",
+          "channelId": "UCLqpYgIUgoyQNzpNiwVadPw",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "rjwNr6s4aBw",
+          "title": "Karlus - RAJA",
+          "channelId": "UCLqpYgIUgoyQNzpNiwVadPw",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "J1QGHMqPflA",
+          "title": "Karlus - Tot lo que som",
+          "channelId": "UCLqpYgIUgoyQNzpNiwVadPw",
+          "reason": "Pendent de contrast suficient de la llengua; no aprovat."
+        },
+        {
+          "id": "hVYWo-gXacs",
+          "title": "SA TORNADA 16/05",
+          "channelId": "UCLqpYgIUgoyQNzpNiwVadPw",
+          "reason": "Promoció o fragment, no cançó completa."
+        }
+      ],
+      "recordingsPublished": 11
+    }
+  ],
+  "languageExclusions": [
+    {
+      "artist": "Malifeta",
+      "ids": [
+        "Td6OE1bpfSw",
+        "LL_HVpcWYQg"
+      ],
+      "source": "https://www.youtube.com/watch?v=Td6OE1bpfSw",
+      "reason": "Estrofes o fragments substancials en altres llengües; fora del criteri lingüístic."
+    },
+    {
+      "artist": "Malifeta",
+      "ids": [
+        "2Y0FYcNzhPg",
+        "EhvsBXm3t7s"
+      ],
+      "source": "https://www.youtube.com/watch?v=2Y0FYcNzhPg",
+      "reason": "Estrofes o fragments substancials en altres llengües; fora del criteri lingüístic."
+    },
+    {
+      "artist": "Malifeta",
+      "ids": [
+        "qd_s0Tj8RFM",
+        "2-AMRidcJ3Q"
+      ],
+      "source": "https://www.youtube.com/watch?v=qd_s0Tj8RFM",
+      "reason": "Estrofes o fragments substancials en altres llengües; fora del criteri lingüístic."
+    },
+    {
+      "artist": "Malifeta",
+      "ids": [
+        "dUe8O670ofQ",
+        "X_wctT7gHs4"
+      ],
+      "source": "https://www.youtube.com/watch?v=dUe8O670ofQ",
+      "reason": "Estrofes o fragments substancials en altres llengües; fora del criteri lingüístic."
+    },
+    {
+      "artist": "Slad Mobb",
+      "ids": [
+        "djR-NvGmTMQ",
+        "PaTpeBN7Dgw",
+        "TNft8u2iq8w"
+      ],
+      "source": "https://lirik.web.id/s/slad-mobb-zadi-plug-litro/lirik-lagu-slad-mobb-zadi-plug-litro-es-igual/",
+      "reason": "Estrofes o fragments substancials en altres llengües; fora del criteri lingüístic."
+    },
+    {
+      "artist": "Slad Mobb",
+      "ids": [
+        "MhACE5xJ_9w"
+      ],
+      "source": "https://www.youtube.com/watch?v=MhACE5xJ_9w",
+      "reason": "Estrofes o fragments substancials en altres llengües; fora del criteri lingüístic."
+    },
+    {
+      "artist": "Slad Mobb",
+      "ids": [
+        "tS67Hi8Ws3w"
+      ],
+      "source": "https://www.shazam.com/song/1802163068/la-clau-de-la-ciutat",
+      "reason": "Estrofes o fragments substancials en altres llengües; fora del criteri lingüístic."
+    },
+    {
+      "artist": "Slad Mobb",
+      "ids": [
+        "0eGy-n7PEHY",
+        "vzwk9UkXQR8"
+      ],
+      "source": "https://www.shazam.com/song/1802163055/tnt-billets",
+      "reason": "Estrofes o fragments substancials en altres llengües; fora del criteri lingüístic."
+    },
+    {
+      "artist": "Slad Mobb",
+      "ids": [
+        "9QXUPMlmICE"
+      ],
+      "source": "https://www.shazam.com/song/1802162775/trànsit",
+      "reason": "Estrofes o fragments substancials en altres llengües; fora del criteri lingüístic."
+    },
+    {
+      "artist": "Slad Mobb",
+      "ids": [
+        "AWJn0eVLNDM"
+      ],
+      "source": "https://www.shazam.com/song/1802162773/rick-online",
+      "reason": "Estrofes o fragments substancials en altres llengües; fora del criteri lingüístic."
+    },
+    {
+      "artist": "Slad Mobb",
+      "ids": [
+        "Q5fphVzABME",
+        "A2D-HeZUpYQ",
+        "C0GFp3ej5qs"
+      ],
+      "source": "https://www.shazam.com/song/1802163057/gaudí",
+      "reason": "Estrofes o fragments substancials en altres llengües; fora del criteri lingüístic."
+    },
+    {
+      "artist": "Slad Mobb",
+      "ids": [
+        "tddFUtbtqm0",
+        "DCZ8dGbUWuY",
+        "leY5z9hvJpg"
+      ],
+      "source": "https://www.shazam.com/song/1802162779/mala-and-boujee",
+      "reason": "Estrofes o fragments substancials en altres llengües; fora del criteri lingüístic."
+    }
+  ],
+  "preservedOtherArtists": 477,
+  "preservedCanonicalHash": "8ac8a459042ad9065c418cf792b1c7df30f65b7bca196e44bc2b4e00b4952047",
+  "preservedPublishedChannels": 591,
+  "publication": {
+    "checkedAt": "2026-10-13T16:13:57.025Z",
+    "artists": 5,
+    "channels": 9,
+    "recordings": 90,
+    "status": "verified"
+  },
+  "validation": {
+    "passedTests": 1157,
+    "totalTests": 1164,
+    "failedTests": 7,
+    "failures": [
+      {
+        "suite": "tests/artist-origin.test.js",
+        "test": "Origen a la fitxa cada canal publicat té un origen resoluble o una exclusió explícita",
+        "reason": "AssertionError: BTZ · UCcYEaa06Rifj3dOcoBemmEQ: expected null not to be null"
+      },
+      {
+        "suite": "tests/portada-assets.test.js",
+        "test": "index.html de Segueix Música la navegació té les vistes demanades a escriptori i a mòbil",
+        "reason": "AssertionError: expected 'id=\"sidebar\" aria-label=\"Navegació pr…' to contain '<span>Artistes</span>'"
+      },
+      {
+        "suite": "tests/segueix-tv-quality.test.js",
+        "test": "qualitat i seqüenciació de Segueix TV força una nova versió del cache estàtic",
+        "reason": "AssertionError: expected '// Service Worker per PWA — dos cache…' to contain 'const CACHE_VERSION = \\'tvq20260924a1…'"
+      },
+      {
+        "suite": "tests/song-title.test.js",
+        "test": "sobre el feed real no queda cap parèntesi ni claudàtor amb «videoclip», «vídeo» o «oficial»",
+        "reason": "AssertionError: expected [ Array(1) ] to deeply equal []"
+      },
+      {
+        "suite": "tests/tv-category-header.test.js",
+        "test": "títols de TV i capçalera de Segueix TV posa la informació al costat del títol Segueix TV",
+        "reason": "AssertionError: expected '(function (window) {\\n    \\'use stric…' to contain 'Què és Segueix TV?'"
+      },
+      {
+        "suite": "tests/tv-learning.test.js",
+        "test": "aprenentatge local de les TV posa la informació completa al costat del mode bucle",
+        "reason": "AssertionError: expected '// App Principal\\n\\nconst SegueixApp …' to contain '<strong>6. Descoberta.</strong>'"
+      },
+      {
+        "suite": "tests/tv-programming.test.js",
+        "test": "programació de TV inclou el nou controlador al precache del service worker",
+        "reason": "AssertionError: expected '// Service Worker per PWA — dos cache…' to contain 'const CACHE_VERSION = \\'e2a40924f7c1\\''"
+      }
+    ],
+    "regressions": 0,
+    "baselineCompared": true,
+    "newTitles": "passed",
+    "baselineFailures": [
+      {
+        "suite": "tests/artist-origin.test.js",
+        "test": "Origen a la fitxa cada canal publicat té un origen resoluble o una exclusió explícita",
+        "reason": "AssertionError: BTZ · UCcYEaa06Rifj3dOcoBemmEQ: expected null not to be null"
+      },
+      {
+        "suite": "tests/portada-assets.test.js",
+        "test": "index.html de Segueix Música la navegació té les vistes demanades a escriptori i a mòbil",
+        "reason": "AssertionError: expected 'id=\"sidebar\" aria-label=\"Navegació pr…' to contain '<span>Artistes</span>'"
+      },
+      {
+        "suite": "tests/segueix-tv-quality.test.js",
+        "test": "qualitat i seqüenciació de Segueix TV força una nova versió del cache estàtic",
+        "reason": "AssertionError: expected '// Service Worker per PWA — dos cache…' to contain 'const CACHE_VERSION = \\'tvq20260924a1…'"
+      },
+      {
+        "suite": "tests/song-title.test.js",
+        "test": "sobre el feed real no queda cap parèntesi ni claudàtor amb «videoclip», «vídeo» o «oficial»",
+        "reason": "AssertionError: expected [ Array(1) ] to deeply equal []"
+      },
+      {
+        "suite": "tests/tv-category-header.test.js",
+        "test": "títols de TV i capçalera de Segueix TV posa la informació al costat del títol Segueix TV",
+        "reason": "AssertionError: expected '(function (window) {\\n    \\'use stric…' to contain 'Què és Segueix TV?'"
+      },
+      {
+        "suite": "tests/tv-learning.test.js",
+        "test": "aprenentatge local de les TV posa la informació completa al costat del mode bucle",
+        "reason": "AssertionError: expected '// App Principal\\n\\nconst SegueixApp …' to contain '<strong>6. Descoberta.</strong>'"
+      },
+      {
+        "suite": "tests/tv-programming.test.js",
+        "test": "programació de TV inclou el nou controlador al precache del service worker",
+        "reason": "AssertionError: expected '// Service Worker per PWA — dos cache…' to contain 'const CACHE_VERSION = \\'e2a40924f7c1\\''"
+      }
+    ]
+  },
+  "lint": {
+    "files": 65,
+    "errors": 5,
+    "warnings": 184,
+    "baselineCompared": true,
+    "newDiagnostics": 0
+  }
+}

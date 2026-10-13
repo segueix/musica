@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-13T16:03:25.264Z",
+  "updatedAt": "2026-10-13T16:12:29.616Z",
   "artists": [
     {
       "name": "2 Princeses Barbudes",
@@ -36914,6 +36914,239 @@
       "active": true,
       "lastChecked": "2026-10-13T15:23:50.661Z",
       "notes": "Alta sol·licitada el 2026-10-13. Selecció inicial per ID; resta del repertori pendent de revisió. Fonts i selecció: docs/revisions/2026-10-13-urban2-alta.json."
+    },
+    {
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "aliases": [
+        "Malifeta"
+      ],
+      "sources": [
+        "https://massacriticasafor.com/revista/una-canco/malifeta-la-nit/",
+        "manual-user-2026-10-13",
+        "genre:manual"
+      ],
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCoYEPFahaDY_6-VUEOeQ_IA",
+            "handle": null,
+            "name": "Malifeta - Topic",
+            "type": "topic",
+            "primary": true
+          },
+          {
+            "id": "UCZ_RdKPMxRUQv4j3XX8Hsjg",
+            "handle": "@malifeta",
+            "name": "MALIFETA",
+            "type": "official",
+            "primary": false
+          }
+        ]
+      },
+      "name": "Malifeta",
+      "displayName": "Malifeta",
+      "genres": [
+        "Urbana",
+        "Electrònica"
+      ],
+      "territories": [
+        "País Valencià"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-13",
+      "notes": "Repertori plurilingüe: només lletres catalanes contrastades. Ales negres, Ídol i Llengua negra queden pendents de criteri sobre citacions i tornades. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "aliases": [
+        "Alba Gómez",
+        "Alba Gómez Valls",
+        "Cloe"
+      ],
+      "sources": [
+        "https://www.enderrock.cat/edr/numero537/noticia/3082",
+        "manual-user-2026-10-13",
+        "genre:manual"
+      ],
+      "youtube": {
+        "channels": [
+          {
+            "id": "UClWAIVcJyNLYxyEsjiRkC2Q",
+            "handle": null,
+            "name": "Cloe - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ]
+      },
+      "name": "Cloe",
+      "displayName": "Cloe",
+      "genres": [
+        "Urbana",
+        "Pop"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-13",
+      "notes": "Cloe (Alba Gómez), diferenciada de Cloe Riembau i dels homònims italians del canal Tema. Sin saber el que pendent; AYRYN no s’atribueix a Cloe. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "aliases": [
+        "SLADMOBB",
+        "Slad Mobb"
+      ],
+      "sources": [
+        "https://primerafila.cat/opinio/discs/2025/06/la-slad-mobb-obra-les-portes-de-barcelona-amb-la-clau-de-la-ciutat/",
+        "manual-user-2026-10-13",
+        "genre:manual"
+      ],
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCLlMLN6XXNcLR0WI85PF-Fw",
+            "handle": "@sladtv",
+            "name": "SLAD MOBB",
+            "type": "official",
+            "primary": false
+          },
+          {
+            "id": "UCvo0uuqowZ9QIEUnHNTB0EQ",
+            "handle": null,
+            "name": "Slad Mobb - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ]
+      },
+      "name": "Slad Mobb",
+      "displayName": "Slad Mobb",
+      "genres": [
+        "Urbana",
+        "Electrònica"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-13",
+      "notes": "Col·lectiu de Sants, Barcelona. Selecció limitada a Tira-ho, amb lletra publicada en català i interjeccions breus angleses. No s’aproven àlbums sencers ni temes per la metadada ca: TNT Billets en mostra un fals positiu. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "aliases": [
+        "Marina Bolea",
+        "La Xica"
+      ],
+      "sources": [
+        "https://www.diarilaveu.cat/opinio/febrer-on-fire-les-veus-femenines-de-la-musica-valenciana-622773/",
+        "manual-user-2026-10-13",
+        "genre:manual"
+      ],
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCy5b5j1mswlPfnHGDbnnkjQ",
+            "handle": "@laxicaxica",
+            "name": "LA XICA",
+            "type": "official",
+            "primary": false
+          },
+          {
+            "id": "UCb7vIttlw_joSrFeiZD7EpQ",
+            "handle": null,
+            "name": "La Xica - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ]
+      },
+      "name": "La Xica",
+      "displayName": "La Xica",
+      "genres": [
+        "Electrònica",
+        "Pop"
+      ],
+      "territories": [
+        "País Valencià"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-13",
+      "notes": "Marina Bolea, de Benimaclet. Set obres contrastades amb la lletra publicada al canal oficial; altres peces pendents sense aprovació per títol. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "aliases": [
+        "Carlos Ramis Palau",
+        "Karlus"
+      ],
+      "sources": [
+        "https://www.enderrock.cat/noticia/30211/karlus-eivissa-convertit-lloc-menys-habitable-som-aqui",
+        "manual-user-2026-10-13",
+        "genre:manual"
+      ],
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCnVX15n_ddY6mfuwp811tfg",
+            "handle": null,
+            "name": "Karlus - Topic",
+            "type": "topic",
+            "primary": true
+          },
+          {
+            "id": "UCLqpYgIUgoyQNzpNiwVadPw",
+            "handle": "@kkkkarlus",
+            "name": "Karlus",
+            "type": "official",
+            "primary": false
+          }
+        ]
+      },
+      "name": "Karlus",
+      "displayName": "Karlus",
+      "genres": [
+        "Electrònica",
+        "Pop"
+      ],
+      "territories": [
+        "Illes Balears"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-13",
+      "notes": "Artista de Jesús, Eivissa; ubicació conservadora a l’illa. Quatre obres amb lletra catalana publicada. La resta, incloses les metadades ca sense lletra, pendent. docs/revisions/2026-10-13-urban3-alta.json"
     }
   ]
 }

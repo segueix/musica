@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-13T15:40:55.694Z",
+  "updatedAt": "2026-10-13T16:12:29.616Z",
   "description": "Decisions manuals sobre el tipus de contingut de vídeos concrets. Manen sobre el classificador automàtic (scripts/lib/classificar_contingut_musical.js) i el pipeline (scripts/update_music_feed.js) les reaplica a cada generació del feed. Tipus permesos: song, live_song, album, other. Un vídeo revisat aquí surt de data/music-content-review.json.",
   "videos": [
     {
@@ -13477,6 +13477,552 @@
       "contentType": "song",
       "title": "Lifestyle",
       "note": "Revisió dels pendents: docs/revisions/2026-10-13-urban2-revisio-pendents.json"
+    },
+    {
+      "id": "0R2x2oRGblw",
+      "contentType": "song",
+      "title": "DINAMITA",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "7btQeG2yeec",
+      "contentType": "song",
+      "title": "DE NIT",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "lTmPEFfPZPY",
+      "contentType": "song",
+      "title": "DE NIT",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "cfXN1mcpSJY",
+      "contentType": "song",
+      "title": "PROCESSÓ",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "MPjuCXInABs",
+      "contentType": "song",
+      "title": "RABOSETA",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "TW_egPbrvZ0",
+      "contentType": "song",
+      "title": "VERMUT",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "Z0obFDOH2Hs",
+      "contentType": "song",
+      "title": "INFLAMABLES",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "uOodG_W8Rlo",
+      "contentType": "song",
+      "title": "BREGA",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "WiONFLj0914",
+      "contentType": "song",
+      "title": "BREGA",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "E0mKE5cuqP0",
+      "contentType": "song",
+      "title": "APEGALOSA",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "-QCViMeHvaQ",
+      "contentType": "song",
+      "title": "LAMBO",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "7vlwFMvRKtk",
+      "contentType": "song",
+      "title": "Aborronà",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "tZQM78HRTfE",
+      "contentType": "song",
+      "title": "Edat",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "NmmvWSoppuk",
+      "contentType": "song",
+      "title": "Toni",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "ZBmw8zfWrJ0",
+      "contentType": "song",
+      "title": "Emili Baró, 14",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "fTcE0x0uSs8",
+      "contentType": "song",
+      "title": "Papallona",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "W4Etd0d61Aw",
+      "contentType": "song",
+      "title": "Intro",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "Xs8cZmLDxz0",
+      "contentType": "song",
+      "title": "La cançó de l'estiu",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "e2mPMCAJu0M",
+      "contentType": "song",
+      "title": "La Cançó de L'estiu",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "IbyKChD7BNI",
+      "contentType": "song",
+      "title": "MALIFETA - DINAMITA (Vídeo Oficial) Prod. pxllt",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "cwU3lLgCMBs",
+      "contentType": "song",
+      "title": "MALIFETA - De nit (videolyric) Prod. pxllt",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "vIIKXGeNTsM",
+      "contentType": "song",
+      "title": "MALIFETA - DE NIT (Video Oficial) Prod. pxllt",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "XfsmKYBQ3aY",
+      "contentType": "song",
+      "title": "MALIFETA - Processó (videolyric) Prod. pxllt",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "RIugcmXvqJ0",
+      "contentType": "song",
+      "title": "MALIFETA - Raboseta (videolyric) Prod. pxllt",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "T5OnzLL3y8A",
+      "contentType": "song",
+      "title": "MALIFETA - Vermut (videolyric) Prod. pxllt",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "PX0PrpZSe8w",
+      "contentType": "song",
+      "title": "MALIFETA - Inflamables ft. Quinto (videolyric) Prod. pxllt",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "7rbttxfhEko",
+      "contentType": "song",
+      "title": "MALIFETA - Brega (videolyric) Prod. pxllt",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "usvFMLzpR2g",
+      "contentType": "song",
+      "title": "MALIFETA - BREGA (Vídeo Oficial) Prod. pxllt",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "2rkQyPKWtYw",
+      "contentType": "song",
+      "title": "MALIFETA - Apegalosa (videolyric) Prod. pxllt",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "VmPNPjomemY",
+      "contentType": "song",
+      "title": "MALIFETA - LAMBO Prod. Pxllt (phone music video)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "htsG_dkDpX0",
+      "contentType": "song",
+      "title": "MALIFETA - ABORRONÀ (Official Video)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "9PHjEoQ5dyE",
+      "contentType": "song",
+      "title": "MALIFETA - 08 EDAT",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "LwwBJwZg9zY",
+      "contentType": "song",
+      "title": "MALIFETA - 07 TONI",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "B8svh78ES2k",
+      "contentType": "song",
+      "title": "MALIFETA - 04 EMILI BARÓ, 14",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "KMk_7iy_TQs",
+      "contentType": "song",
+      "title": "MALIFETA- 03 PAPALLONA",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "OQenadEc4Zk",
+      "contentType": "song",
+      "title": "MALIFETA - 01 INTRO feat. JONATAN PENALBA",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "2jHNvzw4iR4",
+      "contentType": "song",
+      "title": "MALIFETA - LA CANÇÓ DE L'ESTIU",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "c-XTxtOWSZs",
+      "contentType": "song",
+      "title": "Trampa",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "5MjcAgpm570",
+      "contentType": "song",
+      "title": "Trampa",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "Dd8HFa32Gvg",
+      "contentType": "song",
+      "title": "P*TA SEXY",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "6WV8n2cvtfA",
+      "contentType": "song",
+      "title": "P*TA SEXY",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "tZV8xGKGGzY",
+      "contentType": "song",
+      "title": "LOCOS",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "YK2CMxDlQqE",
+      "contentType": "song",
+      "title": "LOCOS",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "yo0lJLWQheI",
+      "contentType": "song",
+      "title": "Entre el fum",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "9m6humf40eM",
+      "contentType": "song",
+      "title": "Entre el fum",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "1CJNTnn1giA",
+      "contentType": "song",
+      "title": "No em rentes",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "UiQ0alFj374",
+      "contentType": "song",
+      "title": "No em rentes",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "XXjo-q4zj2E",
+      "contentType": "song",
+      "title": "Tensió",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "AvyZU17GwpY",
+      "contentType": "song",
+      "title": "Tot aquest temps",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "dYFg6XVhB7I",
+      "contentType": "song",
+      "title": "En el club",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "-uEMi0FO7H4",
+      "contentType": "song",
+      "title": "En el club",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "LXmcHhsjpsA",
+      "contentType": "song",
+      "title": "Replay",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "0CwPkO_51us",
+      "contentType": "song",
+      "title": "Souls Making Sex (Remix)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "i0TUo6kO2BY",
+      "contentType": "song",
+      "title": "Crítica",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "Ubc5i1DvUXU",
+      "contentType": "song",
+      "title": "Com un nai amb ferrari",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "wOSG-QIWH0s",
+      "contentType": "song",
+      "title": "La que sempre volies",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "xyKKTaK0mEY",
+      "contentType": "song",
+      "title": "Fanatika",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "F1xfhma7iaY",
+      "contentType": "song",
+      "title": "33myselff, Xarlyto & Zadi Plug -TIRA-HO (prod. @0000sense_nom2025 & @60kcvndy)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "kDfb428s_GY",
+      "contentType": "song",
+      "title": "Tira-ho",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "GPzEH1XJTYc",
+      "contentType": "song",
+      "title": "Santa Paciència - LA XICA",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "jz89dL9SKh8",
+      "contentType": "song",
+      "title": "Núvol - LA XICA",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "t-RYM6DuJCE",
+      "contentType": "song",
+      "title": "Ja no plou - LA XICA",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "zAcfHxWXlcY",
+      "contentType": "song",
+      "title": "L'amor és un accident - LA XICA",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "2GjFxEQmqKA",
+      "contentType": "song",
+      "title": "Tarongina - LA XICA",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "NKjeERS2_G8",
+      "contentType": "song",
+      "title": "Amagatall - LA XICA",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "x-XujV9txXU",
+      "contentType": "song",
+      "title": "Endimonià - LA XICA",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "NrXSLdHjIoI",
+      "contentType": "song",
+      "title": "Santa Paciència",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "ThU5B1bkxUo",
+      "contentType": "song",
+      "title": "Santa Paciència",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "s1F6Kz8u8iw",
+      "contentType": "song",
+      "title": "Núvol",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "IcVTsYYJ2ns",
+      "contentType": "song",
+      "title": "Núvol",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "EvSjblqW2VE",
+      "contentType": "song",
+      "title": "Ja no plou ᐸ3",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "2TKCj_igUuM",
+      "contentType": "song",
+      "title": "Ja no plou ᐸ3",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "2VFIuip0M00",
+      "contentType": "song",
+      "title": "L’amor és un accident",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "ch9qlLICvCQ",
+      "contentType": "song",
+      "title": "L’amor és un accident",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "IXzwFfLcf3c",
+      "contentType": "song",
+      "title": "Tarongina",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "_ZHdFWPhhAM",
+      "contentType": "song",
+      "title": "Tarongina",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "bXXG3zcAbtM",
+      "contentType": "song",
+      "title": "Amagatall",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "uXlwApUo2Oc",
+      "contentType": "song",
+      "title": "Amagatall",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "ft9wvfJNbIU",
+      "contentType": "song",
+      "title": "Endimonià",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "SjQBFj6lXEY",
+      "contentType": "song",
+      "title": "Endimonià",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "S9QR6S9Csno",
+      "contentType": "song",
+      "title": "Cau menuda (amb na Sara)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "INWeii0thAQ",
+      "contentType": "song",
+      "title": "Fantasma",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "-TY12EmWiIQ",
+      "contentType": "song",
+      "title": "Fantasma",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "FL1XnrV3U1k",
+      "contentType": "song",
+      "title": "Eros (Capítol 3)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "kRKaABVBuqQ",
+      "contentType": "song",
+      "title": "Eros (Capítol 3)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "ZclORxEbEGU",
+      "contentType": "song",
+      "title": "Sa tornada (Capítol 1)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "jnvfTT9yiMM",
+      "contentType": "song",
+      "title": "Sa tornada (Capítol 1)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "5-NLs4FOiMw",
+      "contentType": "song",
+      "title": "Karlus - Cau menuda (amb na Sara)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "78ayD0TolBY",
+      "contentType": "song",
+      "title": "Karlus - Fantasma (Lyric Video)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "Jows9iG-6Uw",
+      "contentType": "song",
+      "title": "Karlus - Eros (Capítol 3)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
+    },
+    {
+      "id": "9YYozAiq1tY",
+      "contentType": "song",
+      "title": "Karlus - Sa tornada (Capítol 1)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban3-alta.json"
     }
   ]
 }

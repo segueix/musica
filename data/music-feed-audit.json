@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-10-13T15:52:56.844Z",
+  "generatedAt": "2026-10-13T16:12:32.867Z",
   "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
   "restrictedVideoCount": 21,
   "restrictedVideosAdded": [],
   "deepPagesFetched": 0,
   "deepChannelCount": 19,
-  "topicChannelCount": 325,
-  "governedChannelCount": 115,
+  "topicChannelCount": 330,
+  "governedChannelCount": 118,
   "topicCoverage": [
     {
       "id": "UCqaEtRht2jakBhGFLzS617w",
@@ -202,6 +202,14 @@
       "governs": true
     },
     {
+      "id": "UCLqpYgIUgoyQNzpNiwVadPw",
+      "name": "Karlus",
+      "songs": 4,
+      "matched": 4,
+      "coverage": 1,
+      "governs": true
+    },
+    {
       "id": "UCr8kBnuIa6LPmhZSxbwVs7w",
       "name": "La Pegatina",
       "songs": 8,
@@ -222,6 +230,14 @@
       "name": "Lildami",
       "songs": 39,
       "matched": 39,
+      "coverage": 1,
+      "governs": true
+    },
+    {
+      "id": "UCZ_RdKPMxRUQv4j3XX8Hsjg",
+      "name": "MALIFETA",
+      "songs": 18,
+      "matched": 18,
       "coverage": 1,
       "governs": true
     },
@@ -678,6 +694,14 @@
       "name": "Júlia Colom",
       "songs": 29,
       "matched": 25,
+      "coverage": 0.86,
+      "governs": true
+    },
+    {
+      "id": "UCy5b5j1mswlPfnHGDbnnkjQ",
+      "name": "LA XICA",
+      "songs": 7,
+      "matched": 6,
       "coverage": 0.86,
       "governs": true
     },
@@ -1760,6 +1784,13 @@
       "withClip": 28
     },
     {
+      "id": "UClWAIVcJyNLYxyEsjiRkC2Q",
+      "name": "Cloe",
+      "tracks": 20,
+      "selected": 20,
+      "withClip": 0
+    },
+    {
       "id": "UCvdm27ITzhd3bsnftrBmFUg",
       "name": "Cloe Riembau",
       "tracks": 13,
@@ -2404,6 +2435,13 @@
       "withClip": 0
     },
     {
+      "id": "UCnVX15n_ddY6mfuwp811tfg",
+      "name": "Karlus",
+      "tracks": 7,
+      "selected": 7,
+      "withClip": 4
+    },
+    {
       "id": "UCkJn1Oupgp27jlFzFl7I2Ag",
       "name": "Kayo Malayo",
       "tracks": 30,
@@ -2530,6 +2568,13 @@
       "withClip": 0
     },
     {
+      "id": "UCb7vIttlw_joSrFeiZD7EpQ",
+      "name": "La Xica",
+      "tracks": 14,
+      "selected": 14,
+      "withClip": 6
+    },
+    {
       "id": "UCFYEAYfftkeTPVQk70lVapQ",
       "name": "Lal'Ba",
       "tracks": 16,
@@ -2633,6 +2678,13 @@
       "tracks": 4,
       "selected": 4,
       "withClip": 0
+    },
+    {
+      "id": "UCoYEPFahaDY_6-VUEOeQ_IA",
+      "name": "Malifeta",
+      "tracks": 19,
+      "selected": 19,
+      "withClip": 16
     },
     {
       "id": "UCYZ_QLkQxtK8uif-J2Nxmig",
@@ -3258,6 +3310,13 @@
       "withClip": 0
     },
     {
+      "id": "UCvo0uuqowZ9QIEUnHNTB0EQ",
+      "name": "Slad Mobb",
+      "tracks": 1,
+      "selected": 1,
+      "withClip": 1
+    },
+    {
       "id": "UCYy5FHJ4Oq0RKqxqoGlF3Gw",
       "name": "Smoking Souls",
       "tracks": 111,
@@ -3622,23 +3681,23 @@
       "withClip": 0
     }
   ],
-  "indexedChannelCount": 591,
-  "resolvedChannelCount": 591,
-  "feedChannelCount": 591,
-  "rawPublicVideoCount": 6623,
-  "feedVideoCount": 6099,
-  "acceptedMusicCount": 6059,
-  "categoryEligibleVideoCount": 6055,
+  "indexedChannelCount": 600,
+  "resolvedChannelCount": 600,
+  "feedChannelCount": 600,
+  "rawPublicVideoCount": 6669,
+  "feedVideoCount": 6145,
+  "acceptedMusicCount": 6105,
+  "categoryEligibleVideoCount": 6101,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
-    "before": 1,
+    "before": 0,
     "matched": 0,
-    "rejected": 1
+    "rejected": 0
   },
   "contentReviewCount": 529,
   "contentTypeCounts": {
-    "song": 5877,
-    "live_song": 178,
+    "song": 5930,
+    "live_song": 171,
     "album": 4,
     "other": 35,
     "review": 529
@@ -3648,6 +3707,6 @@
   "channelsWithoutVideos": [],
   "channelsWithoutAcceptedMusic": [],
   "allIndexedChannelsVisible": true,
-  "publishedFeedVideoCount": 6055,
+  "publishedFeedVideoCount": 6137,
   "publishedShortVideoCount": 0
 }

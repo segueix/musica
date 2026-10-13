@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-13T15:40:55.694Z",
+  "updatedAt": "2026-10-13T16:12:29.616Z",
   "description": "Llista blanca per a canals on Segueix Música només ha d'ingerir vídeos concrets. Admet títols exactes, fragments obligatoris i fragments exclosos.",
   "channels": {
     "UCKpscwdWlVaMqcA81vLI7OA": {
@@ -6613,6 +6613,196 @@
         "n7R84qO_D_w",
         "Ea3qlOjEeaU",
         "_2NZYrI0KlA"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCoYEPFahaDY_6-VUEOeQ_IA": {
+      "artist": "Malifeta",
+      "note": "Repertori plurilingüe: només lletres catalanes contrastades. Ales negres, Ídol i Llengua negra queden pendents de criteri sobre citacions i tornades. docs/revisions/2026-10-13-urban3-alta.json",
+      "allowedVideoIds": [
+        "0R2x2oRGblw",
+        "7btQeG2yeec",
+        "lTmPEFfPZPY",
+        "cfXN1mcpSJY",
+        "MPjuCXInABs",
+        "TW_egPbrvZ0",
+        "Z0obFDOH2Hs",
+        "uOodG_W8Rlo",
+        "WiONFLj0914",
+        "E0mKE5cuqP0",
+        "-QCViMeHvaQ",
+        "7vlwFMvRKtk",
+        "tZQM78HRTfE",
+        "NmmvWSoppuk",
+        "ZBmw8zfWrJ0",
+        "fTcE0x0uSs8",
+        "W4Etd0d61Aw",
+        "Xs8cZmLDxz0",
+        "e2mPMCAJu0M"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCZ_RdKPMxRUQv4j3XX8Hsjg": {
+      "artist": "Malifeta",
+      "note": "Repertori plurilingüe: només lletres catalanes contrastades. Ales negres, Ídol i Llengua negra queden pendents de criteri sobre citacions i tornades. docs/revisions/2026-10-13-urban3-alta.json",
+      "allowedVideoIds": [
+        "IbyKChD7BNI",
+        "cwU3lLgCMBs",
+        "vIIKXGeNTsM",
+        "XfsmKYBQ3aY",
+        "RIugcmXvqJ0",
+        "T5OnzLL3y8A",
+        "PX0PrpZSe8w",
+        "7rbttxfhEko",
+        "usvFMLzpR2g",
+        "2rkQyPKWtYw",
+        "VmPNPjomemY",
+        "htsG_dkDpX0",
+        "9PHjEoQ5dyE",
+        "LwwBJwZg9zY",
+        "B8svh78ES2k",
+        "KMk_7iy_TQs",
+        "OQenadEc4Zk",
+        "2jHNvzw4iR4"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UClWAIVcJyNLYxyEsjiRkC2Q": {
+      "artist": "Cloe",
+      "note": "Cloe (Alba Gómez), diferenciada de Cloe Riembau i dels homònims italians del canal Tema. Sin saber el que pendent; AYRYN no s’atribueix a Cloe. docs/revisions/2026-10-13-urban3-alta.json",
+      "allowedVideoIds": [
+        "c-XTxtOWSZs",
+        "5MjcAgpm570",
+        "Dd8HFa32Gvg",
+        "6WV8n2cvtfA",
+        "tZV8xGKGGzY",
+        "YK2CMxDlQqE",
+        "yo0lJLWQheI",
+        "9m6humf40eM",
+        "1CJNTnn1giA",
+        "UiQ0alFj374",
+        "XXjo-q4zj2E",
+        "AvyZU17GwpY",
+        "dYFg6XVhB7I",
+        "-uEMi0FO7H4",
+        "LXmcHhsjpsA",
+        "0CwPkO_51us",
+        "i0TUo6kO2BY",
+        "Ubc5i1DvUXU",
+        "wOSG-QIWH0s",
+        "xyKKTaK0mEY"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCLlMLN6XXNcLR0WI85PF-Fw": {
+      "artist": "Slad Mobb",
+      "note": "Col·lectiu de Sants, Barcelona. Selecció limitada a Tira-ho, amb lletra publicada en català i interjeccions breus angleses. No s’aproven àlbums sencers ni temes per la metadada ca: TNT Billets en mostra un fals positiu. docs/revisions/2026-10-13-urban3-alta.json",
+      "allowedVideoIds": [
+        "F1xfhma7iaY"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCvo0uuqowZ9QIEUnHNTB0EQ": {
+      "artist": "Slad Mobb",
+      "note": "Col·lectiu de Sants, Barcelona. Selecció limitada a Tira-ho, amb lletra publicada en català i interjeccions breus angleses. No s’aproven àlbums sencers ni temes per la metadada ca: TNT Billets en mostra un fals positiu. docs/revisions/2026-10-13-urban3-alta.json",
+      "allowedVideoIds": [
+        "kDfb428s_GY"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCy5b5j1mswlPfnHGDbnnkjQ": {
+      "artist": "La Xica",
+      "note": "Marina Bolea, de Benimaclet. Set obres contrastades amb la lletra publicada al canal oficial; altres peces pendents sense aprovació per títol. docs/revisions/2026-10-13-urban3-alta.json",
+      "allowedVideoIds": [
+        "GPzEH1XJTYc",
+        "jz89dL9SKh8",
+        "t-RYM6DuJCE",
+        "zAcfHxWXlcY",
+        "2GjFxEQmqKA",
+        "NKjeERS2_G8",
+        "x-XujV9txXU"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCb7vIttlw_joSrFeiZD7EpQ": {
+      "artist": "La Xica",
+      "note": "Marina Bolea, de Benimaclet. Set obres contrastades amb la lletra publicada al canal oficial; altres peces pendents sense aprovació per títol. docs/revisions/2026-10-13-urban3-alta.json",
+      "allowedVideoIds": [
+        "NrXSLdHjIoI",
+        "ThU5B1bkxUo",
+        "s1F6Kz8u8iw",
+        "IcVTsYYJ2ns",
+        "EvSjblqW2VE",
+        "2TKCj_igUuM",
+        "2VFIuip0M00",
+        "ch9qlLICvCQ",
+        "IXzwFfLcf3c",
+        "_ZHdFWPhhAM",
+        "bXXG3zcAbtM",
+        "uXlwApUo2Oc",
+        "ft9wvfJNbIU",
+        "SjQBFj6lXEY"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCnVX15n_ddY6mfuwp811tfg": {
+      "artist": "Karlus",
+      "note": "Artista de Jesús, Eivissa; ubicació conservadora a l’illa. Quatre obres amb lletra catalana publicada. La resta, incloses les metadades ca sense lletra, pendent. docs/revisions/2026-10-13-urban3-alta.json",
+      "allowedVideoIds": [
+        "S9QR6S9Csno",
+        "INWeii0thAQ",
+        "-TY12EmWiIQ",
+        "FL1XnrV3U1k",
+        "kRKaABVBuqQ",
+        "ZclORxEbEGU",
+        "jnvfTT9yiMM"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCLqpYgIUgoyQNzpNiwVadPw": {
+      "artist": "Karlus",
+      "note": "Artista de Jesús, Eivissa; ubicació conservadora a l’illa. Quatre obres amb lletra catalana publicada. La resta, incloses les metadades ca sense lletra, pendent. docs/revisions/2026-10-13-urban3-alta.json",
+      "allowedVideoIds": [
+        "5-NLs4FOiMw",
+        "78ayD0TolBY",
+        "Jows9iG-6Uw",
+        "9YYozAiq1tY"
       ],
       "acceptedMusicOnly": true,
       "allowedContentTypes": [

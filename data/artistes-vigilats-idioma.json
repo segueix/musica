@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-13T15:23:50.661Z",
+  "updatedAt": "2026-10-13",
   "criteri": "Només els artistes vigilats passen per revisió de cançons. Confiança editorial del catàleg existent, no verificació individual de lletres. Les altes noves es classifiquen una vegada.",
   "vigilats": [
     {
@@ -1940,6 +1940,93 @@
       "fonts": [
         "https://www.youtube.com/@sensesal",
         "https://www.jazzterrassa.org/en/grup/sense-sal"
+      ]
+    },
+    {
+      "artista": "Malifeta",
+      "aliases": [
+        "Malifeta",
+        "Malifeta - Topic",
+        "MALIFETA"
+      ],
+      "canals": [
+        "UCoYEPFahaDY_6-VUEOeQ_IA",
+        "UCZ_RdKPMxRUQv4j3XX8Hsjg"
+      ],
+      "motiu": "Repertori plurilingüe: només lletres catalanes contrastades. Ales negres, Ídol i Llengua negra queden pendents de criteri sobre citacions i tornades.",
+      "fonts": [
+        "https://massacriticasafor.com/revista/una-canco/malifeta-la-nit/",
+        "manual-user-2026-10-13"
+      ]
+    },
+    {
+      "artista": "Cloe",
+      "aliases": [
+        "Alba Gómez",
+        "Alba Gómez Valls",
+        "Cloe",
+        "Cloe - Topic"
+      ],
+      "canals": [
+        "UClWAIVcJyNLYxyEsjiRkC2Q"
+      ],
+      "motiu": "Cloe (Alba Gómez), diferenciada de Cloe Riembau i dels homònims italians del canal Tema. Sin saber el que pendent; AYRYN no s’atribueix a Cloe.",
+      "fonts": [
+        "https://www.enderrock.cat/edr/numero537/noticia/3082",
+        "manual-user-2026-10-13"
+      ]
+    },
+    {
+      "artista": "Slad Mobb",
+      "aliases": [
+        "SLADMOBB",
+        "Slad Mobb",
+        "SLAD MOBB",
+        "Slad Mobb - Topic"
+      ],
+      "canals": [
+        "UCLlMLN6XXNcLR0WI85PF-Fw",
+        "UCvo0uuqowZ9QIEUnHNTB0EQ"
+      ],
+      "motiu": "Col·lectiu de Sants, Barcelona. Selecció limitada a Tira-ho, amb lletra publicada en català i interjeccions breus angleses. No s’aproven àlbums sencers ni temes per la metadada ca: TNT Billets en mostra un fals positiu.",
+      "fonts": [
+        "https://primerafila.cat/opinio/discs/2025/06/la-slad-mobb-obra-les-portes-de-barcelona-amb-la-clau-de-la-ciutat/",
+        "manual-user-2026-10-13"
+      ]
+    },
+    {
+      "artista": "La Xica",
+      "aliases": [
+        "Marina Bolea",
+        "La Xica",
+        "LA XICA",
+        "La Xica - Topic"
+      ],
+      "canals": [
+        "UCy5b5j1mswlPfnHGDbnnkjQ",
+        "UCb7vIttlw_joSrFeiZD7EpQ"
+      ],
+      "motiu": "Marina Bolea, de Benimaclet. Set obres contrastades amb la lletra publicada al canal oficial; altres peces pendents sense aprovació per títol.",
+      "fonts": [
+        "https://www.diarilaveu.cat/opinio/febrer-on-fire-les-veus-femenines-de-la-musica-valenciana-622773/",
+        "manual-user-2026-10-13"
+      ]
+    },
+    {
+      "artista": "Karlus",
+      "aliases": [
+        "Carlos Ramis Palau",
+        "Karlus",
+        "Karlus - Topic"
+      ],
+      "canals": [
+        "UCnVX15n_ddY6mfuwp811tfg",
+        "UCLqpYgIUgoyQNzpNiwVadPw"
+      ],
+      "motiu": "Artista de Jesús, Eivissa; ubicació conservadora a l’illa. Quatre obres amb lletra catalana publicada. La resta, incloses les metadades ca sense lletra, pendent.",
+      "fonts": [
+        "https://www.enderrock.cat/noticia/30211/karlus-eivissa-convertit-lloc-menys-habitable-som-aqui",
+        "manual-user-2026-10-13"
       ]
     }
   ],
