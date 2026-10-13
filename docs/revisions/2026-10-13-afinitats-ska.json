@@ -1,0 +1,611 @@
+{
+  "base": "b3deaf6dd797f3bb256ae54fabbeff0c6430d575",
+  "checkedAt": "2026-10-13T17:23:48.844Z",
+  "profiles": 14,
+  "catalogSongs": 237,
+  "profiledSongs": 233,
+  "passedTests": 1164,
+  "unchangedFailedTests": 7,
+  "newFailures": 0,
+  "lintFilesWithUnchangedDiagnostics": 25,
+  "simulations": 42,
+  "before": {
+    "affinity": 0.32944501133786847,
+    "artists": 10.30952380952381
+  },
+  "after": {
+    "affinity": 0.38214172335600904,
+    "artists": 10.30952380952381
+  },
+  "caveat": "Afinitat editorial, no qualitat acústica comprovada amb escolta.",
+  "examples": [
+    {
+      "artist": "Aspencat",
+      "sample": 1,
+      "before": {
+        "artists": 11,
+        "relaxedLevel": 1,
+        "affinity": 0.332
+      },
+      "after": {
+        "artists": 10,
+        "relaxedLevel": 1,
+        "affinity": 0.393
+      }
+    },
+    {
+      "artist": "Aspencat",
+      "sample": 2,
+      "before": {
+        "artists": 10,
+        "relaxedLevel": 1,
+        "affinity": 0.36104761904761906
+      },
+      "after": {
+        "artists": 10,
+        "relaxedLevel": 1,
+        "affinity": 0.38471428571428573
+      }
+    },
+    {
+      "artist": "Aspencat",
+      "sample": 3,
+      "before": {
+        "artists": 10,
+        "relaxedLevel": 1,
+        "affinity": 0.2818809523809524
+      },
+      "after": {
+        "artists": 10,
+        "relaxedLevel": 1,
+        "affinity": 0.3733333333333334
+      }
+    },
+    {
+      "artist": "Auxili",
+      "sample": 1,
+      "before": {
+        "artists": 10,
+        "relaxedLevel": 1,
+        "affinity": 0.3383333333333334
+      },
+      "after": {
+        "artists": 10,
+        "relaxedLevel": 1,
+        "affinity": 0.3986666666666667
+      }
+    },
+    {
+      "artist": "Auxili",
+      "sample": 2,
+      "before": {
+        "artists": 10,
+        "relaxedLevel": 1,
+        "affinity": 0.3448333333333333
+      },
+      "after": {
+        "artists": 10,
+        "relaxedLevel": 1,
+        "affinity": 0.38066666666666665
+      }
+    },
+    {
+      "artist": "Auxili",
+      "sample": 3,
+      "before": {
+        "artists": 10,
+        "relaxedLevel": 1,
+        "affinity": 0.3591666666666667
+      },
+      "after": {
+        "artists": 11,
+        "relaxedLevel": 1,
+        "affinity": 0.3969285714285715
+      }
+    },
+    {
+      "artist": "Boom Boom Fighters",
+      "sample": 1,
+      "before": {
+        "artists": 9,
+        "relaxedLevel": 1,
+        "affinity": 0.3221666666666667
+      },
+      "after": {
+        "artists": 10,
+        "relaxedLevel": 1,
+        "affinity": 0.3661666666666667
+      }
+    },
+    {
+      "artist": "Boom Boom Fighters",
+      "sample": 2,
+      "before": {
+        "artists": 11,
+        "relaxedLevel": 1,
+        "affinity": 0.2946666666666667
+      },
+      "after": {
+        "artists": 10,
+        "relaxedLevel": 1,
+        "affinity": 0.3706666666666666
+      }
+    },
+    {
+      "artist": "Boom Boom Fighters",
+      "sample": 3,
+      "before": {
+        "artists": 10,
+        "relaxedLevel": 1,
+        "affinity": 0.2917142857142857
+      },
+      "after": {
+        "artists": 10,
+        "relaxedLevel": 1,
+        "affinity": 0.40716666666666673
+      }
+    },
+    {
+      "artist": "Brams",
+      "sample": 1,
+      "before": {
+        "artists": 10,
+        "relaxedLevel": 1,
+        "affinity": 0.3413333333333334
+      },
+      "after": {
+        "artists": 10,
+        "relaxedLevel": 1,
+        "affinity": 0.40421428571428575
+      }
+    },
+    {
+      "artist": "Brams",
+      "sample": 2,
+      "before": {
+        "artists": 10,
+        "relaxedLevel": 1,
+        "affinity": 0.34404761904761905
+      },
+      "after": {
+        "artists": 10,
+        "relaxedLevel": 1,
+        "affinity": 0.4063333333333333
+      }
+    },
+    {
+      "artist": "Brams",
+      "sample": 3,
+      "before": {
+        "artists": 10,
+        "relaxedLevel": 1,
+        "affinity": 0.35066666666666674
+      },
+      "after": {
+        "artists": 10,
+        "relaxedLevel": 1,
+        "affinity": 0.3860476190476191
+      }
+    },
+    {
+      "artist": "Dr. Calypso",
+      "sample": 1,
+      "before": {
+        "artists": 11,
+        "relaxedLevel": 1,
+        "affinity": 0.3065952380952381
+      },
+      "after": {
+        "artists": 11,
+        "relaxedLevel": 1,
+        "affinity": 0.38504761904761914
+      }
+    },
+    {
+      "artist": "Dr. Calypso",
+      "sample": 2,
+      "before": {
+        "artists": 11,
+        "relaxedLevel": 1,
+        "affinity": 0.35492857142857154
+      },
+      "after": {
+        "artists": 11,
+        "relaxedLevel": 1,
+        "affinity": 0.36771428571428577
+      }
+    },
+    {
+      "artist": "Dr. Calypso",
+      "sample": 3,
+      "before": {
+        "artists": 11,
+        "relaxedLevel": 1,
+        "affinity": 0.3393809523809524
+      },
+      "after": {
+        "artists": 11,
+        "relaxedLevel": 1,
+        "affinity": 0.35650000000000004
+      }
+    },
+    {
+      "artist": "Guaita'ls",
+      "sample": 1,
+      "before": {
+        "artists": 11,
+        "relaxedLevel": 1,
+        "affinity": 0.30288095238095236
+      },
+      "after": {
+        "artists": 11,
+        "relaxedLevel": 1,
+        "affinity": 0.4073095238095239
+      }
+    },
+    {
+      "artist": "Guaita'ls",
+      "sample": 2,
+      "before": {
+        "artists": 11,
+        "relaxedLevel": 1,
+        "affinity": 0.35492857142857154
+      },
+      "after": {
+        "artists": 10,
+        "relaxedLevel": 1,
+        "affinity": 0.4013809523809524
+      }
+    },
+    {
+      "artist": "Guaita'ls",
+      "sample": 3,
+      "before": {
+        "artists": 11,
+        "relaxedLevel": 1,
+        "affinity": 0.35438095238095235
+      },
+      "after": {
+        "artists": 11,
+        "relaxedLevel": 1,
+        "affinity": 0.33233333333333337
+      }
+    },
+    {
+      "artist": "Kayo Malayo",
+      "sample": 1,
+      "before": {
+        "artists": 10,
+        "relaxedLevel": 1,
+        "affinity": 0.30250000000000005
+      },
+      "after": {
+        "artists": 11,
+        "relaxedLevel": 1,
+        "affinity": 0.3576666666666667
+      }
+    },
+    {
+      "artist": "Kayo Malayo",
+      "sample": 2,
+      "before": {
+        "artists": 11,
+        "relaxedLevel": 1,
+        "affinity": 0.32704761904761914
+      },
+      "after": {
+        "artists": 11,
+        "relaxedLevel": 1,
+        "affinity": 0.38733333333333336
+      }
+    },
+    {
+      "artist": "Kayo Malayo",
+      "sample": 3,
+      "before": {
+        "artists": 11,
+        "relaxedLevel": 1,
+        "affinity": 0.3105952380952381
+      },
+      "after": {
+        "artists": 11,
+        "relaxedLevel": 1,
+        "affinity": 0.3816666666666667
+      }
+    },
+    {
+      "artist": "La Pegatina",
+      "sample": 1,
+      "before": {
+        "artists": 10,
+        "relaxedLevel": 1,
+        "affinity": 0.32271428571428573
+      },
+      "after": {
+        "artists": 10,
+        "relaxedLevel": 1,
+        "affinity": 0.382
+      }
+    },
+    {
+      "artist": "La Pegatina",
+      "sample": 2,
+      "before": {
+        "artists": 10,
+        "relaxedLevel": 1,
+        "affinity": 0.3398333333333333
+      },
+      "after": {
+        "artists": 10,
+        "relaxedLevel": 1,
+        "affinity": 0.4043333333333333
+      }
+    },
+    {
+      "artist": "La Pegatina",
+      "sample": 3,
+      "before": {
+        "artists": 10,
+        "relaxedLevel": 1,
+        "affinity": 0.3118809523809524
+      },
+      "after": {
+        "artists": 10,
+        "relaxedLevel": 1,
+        "affinity": 0.3675476190476191
+      }
+    },
+    {
+      "artist": "Les Testarudes",
+      "sample": 1,
+      "before": {
+        "artists": 10,
+        "relaxedLevel": 1,
+        "affinity": 0.34883333333333344
+      },
+      "after": {
+        "artists": 10,
+        "relaxedLevel": 1,
+        "affinity": 0.4014285714285714
+      }
+    },
+    {
+      "artist": "Les Testarudes",
+      "sample": 2,
+      "before": {
+        "artists": 11,
+        "relaxedLevel": 1,
+        "affinity": 0.35116666666666674
+      },
+      "after": {
+        "artists": 10,
+        "relaxedLevel": 1,
+        "affinity": 0.37659523809523815
+      }
+    },
+    {
+      "artist": "Les Testarudes",
+      "sample": 3,
+      "before": {
+        "artists": 10,
+        "relaxedLevel": 1,
+        "affinity": 0.28004761904761905
+      },
+      "after": {
+        "artists": 11,
+        "relaxedLevel": 1,
+        "affinity": 0.34616666666666673
+      }
+    },
+    {
+      "artist": "Mr. Freak Ska",
+      "sample": 1,
+      "before": {
+        "artists": 10,
+        "relaxedLevel": 1,
+        "affinity": 0.38
+      },
+      "after": {
+        "artists": 10,
+        "relaxedLevel": 1,
+        "affinity": 0.3957619047619048
+      }
+    },
+    {
+      "artist": "Mr. Freak Ska",
+      "sample": 2,
+      "before": {
+        "artists": 11,
+        "relaxedLevel": 1,
+        "affinity": 0.35116666666666674
+      },
+      "after": {
+        "artists": 11,
+        "relaxedLevel": 1,
+        "affinity": 0.3942619047619048
+      }
+    },
+    {
+      "artist": "Mr. Freak Ska",
+      "sample": 3,
+      "before": {
+        "artists": 10,
+        "relaxedLevel": 1,
+        "affinity": 0.32521428571428573
+      },
+      "after": {
+        "artists": 10,
+        "relaxedLevel": 1,
+        "affinity": 0.33333333333333337
+      }
+    },
+    {
+      "artist": "Obrint Pas",
+      "sample": 1,
+      "before": {
+        "artists": 10,
+        "relaxedLevel": 1,
+        "affinity": 0.32492857142857146
+      },
+      "after": {
+        "artists": 10,
+        "relaxedLevel": 1,
+        "affinity": 0.38316666666666677
+      }
+    },
+    {
+      "artist": "Obrint Pas",
+      "sample": 2,
+      "before": {
+        "artists": 10,
+        "relaxedLevel": 1,
+        "affinity": 0.327047619047619
+      },
+      "after": {
+        "artists": 10,
+        "relaxedLevel": 1,
+        "affinity": 0.3802619047619048
+      }
+    },
+    {
+      "artist": "Obrint Pas",
+      "sample": 3,
+      "before": {
+        "artists": 10,
+        "relaxedLevel": 1,
+        "affinity": 0.33166666666666667
+      },
+      "after": {
+        "artists": 10,
+        "relaxedLevel": 1,
+        "affinity": 0.39616666666666667
+      }
+    },
+    {
+      "artist": "Pepet i Marieta",
+      "sample": 1,
+      "before": {
+        "artists": 9,
+        "relaxedLevel": 1,
+        "affinity": 0.3258809523809524
+      },
+      "after": {
+        "artists": 10,
+        "relaxedLevel": 1,
+        "affinity": 0.3346666666666667
+      }
+    },
+    {
+      "artist": "Pepet i Marieta",
+      "sample": 2,
+      "before": {
+        "artists": 11,
+        "relaxedLevel": 1,
+        "affinity": 0.2851666666666667
+      },
+      "after": {
+        "artists": 10,
+        "relaxedLevel": 1,
+        "affinity": 0.36554761904761907
+      }
+    },
+    {
+      "artist": "Pepet i Marieta",
+      "sample": 3,
+      "before": {
+        "artists": 10,
+        "relaxedLevel": 1,
+        "affinity": 0.35404761904761906
+      },
+      "after": {
+        "artists": 10,
+        "relaxedLevel": 1,
+        "affinity": 0.38338095238095243
+      }
+    },
+    {
+      "artist": "Skatalà",
+      "sample": 1,
+      "before": {
+        "artists": 11,
+        "relaxedLevel": 1,
+        "affinity": 0.33121428571428574
+      },
+      "after": {
+        "artists": 11,
+        "relaxedLevel": 1,
+        "affinity": 0.4093809523809525
+      }
+    },
+    {
+      "artist": "Skatalà",
+      "sample": 2,
+      "before": {
+        "artists": 11,
+        "relaxedLevel": 1,
+        "affinity": 0.3745476190476191
+      },
+      "after": {
+        "artists": 11,
+        "relaxedLevel": 1,
+        "affinity": 0.37121428571428583
+      }
+    },
+    {
+      "artist": "Skatalà",
+      "sample": 3,
+      "before": {
+        "artists": 11,
+        "relaxedLevel": 1,
+        "affinity": 0.35571428571428576
+      },
+      "after": {
+        "artists": 10,
+        "relaxedLevel": 1,
+        "affinity": 0.37983333333333336
+      }
+    },
+    {
+      "artist": "Txarango",
+      "sample": 1,
+      "before": {
+        "artists": 9,
+        "relaxedLevel": 1,
+        "affinity": 0.3037142857142857
+      },
+      "after": {
+        "artists": 10,
+        "relaxedLevel": 1,
+        "affinity": 0.3613333333333334
+      }
+    },
+    {
+      "artist": "Txarango",
+      "sample": 2,
+      "before": {
+        "artists": 10,
+        "relaxedLevel": 1,
+        "affinity": 0.3395476190476191
+      },
+      "after": {
+        "artists": 10,
+        "relaxedLevel": 1,
+        "affinity": 0.41121428571428575
+      }
+    },
+    {
+      "artist": "Txarango",
+      "sample": 3,
+      "before": {
+        "artists": 10,
+        "relaxedLevel": 1,
+        "affinity": 0.2572619047619048
+      },
+      "after": {
+        "artists": 10,
+        "relaxedLevel": 1,
+        "affinity": 0.42750000000000005
+      }
+    }
+  ]
+}
