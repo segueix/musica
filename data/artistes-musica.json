@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-13T16:42:54.412Z",
+  "updatedAt": "2026-10-13T16:54:17.378Z",
   "artists": [
     {
       "name": "2 Princeses Barbudes",
@@ -17570,7 +17570,7 @@
       ]
     },
     {
-      "name": "La Iaia",
+      "name": "Ernest Crusats",
       "aliases": [],
       "genres": [
         "Indie / Alternativa",
@@ -17580,8 +17580,8 @@
       "languages": [
         "ca"
       ],
-      "wikidataId": "Q20103096",
-      "musicbrainzId": "58ee88f1-1e69-447d-a0ef-3cfea08d7a04",
+      "wikidataId": null,
+      "musicbrainzId": null,
       "youtube": {
         "channels": [
           {
@@ -17604,39 +17604,11 @@
       "reviewStatus": "pendent",
       "active": false,
       "sources": [
-        "https://www.wikidata.org/wiki/Q20103096",
-        "wikidata:performed-catalan-work",
         "genre:manual",
         "manual-user-2026-10-02"
       ],
       "lastChecked": "2026-09-25T15:44:05.402Z",
-      "notes": "",
-      "genresRaw": [
-        "indie folk",
-        "música tradicional",
-        "pop-rock"
-      ],
-      "enrichment": {
-        "genres": {
-          "checkedAt": "2026-10-12T11:54:40.750Z",
-          "musicbrainzCheckedAt": "2026-09-25T16:48:29.484Z",
-          "wikidataRaw": [
-            "indie folk",
-            "música tradicional",
-            "pop-rock"
-          ],
-          "musicbrainzRaw": [],
-          "unmappedRaw": [],
-          "status": "classificat",
-          "wikidataWorkRaw": [],
-          "musicbrainzTagsRaw": [],
-          "musicbrainzTagsCheckedAt": null,
-          "musicbrainzReleaseCheckedAt": null,
-          "wikidataWorkCheckedAt": null,
-          "musicbrainzReleaseRaw": [],
-          "wikidataWorkEvidence": []
-        }
-      },
+      "notes": "Identitat solista separada de La Iaia segons noms i crèdits dels canals. Estat previ preservat. docs/revisions/2026-10-13-la-iaia-alta.json",
       "displayName": "Ernest Crusats"
     },
     {
@@ -37429,6 +37401,46 @@
       "active": true,
       "lastChecked": "2026-10-13",
       "notes": "L’usuari confirma el repertori català del canal excepte Chinekem Kaa, que queda exclosa. Categoria Folk i arrel. Imatge: caràtula de Camins de Migjorn. Acceptació per indicació expressa de l’usuari; no s’afirma haver verificat les lletres íntegres. docs/revisions/2026-10-13-uc-alta.json"
+    },
+    {
+      "wikidataId": "Q20103096",
+      "musicbrainzId": "58ee88f1-1e69-447d-a0ef-3cfea08d7a04",
+      "aliases": [
+        "la iaia",
+        "La Iaia"
+      ],
+      "sources": [
+        "manual-user-2026-10-13",
+        "https://www.youtube.com/channel/UCU-dJEBd9MTBRQ_Zc1pHwww",
+        "genre:manual"
+      ],
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCU-dJEBd9MTBRQ_Zc1pHwww",
+            "handle": null,
+            "name": "La iaia - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ]
+      },
+      "name": "La Iaia",
+      "displayName": "La Iaia",
+      "genres": [
+        "Rock"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-13",
+      "notes": "Totes les 63 pistes del canal Tema indicat per l’usuari, classificades a Rock i registrades per llançaments. Es conserven les dues edicions d’On és la màgia? agrupades per cançó. XXL i la pista En viu són directes. Canals d’Ernest Crusats separats de La Iaia. docs/revisions/2026-10-13-la-iaia-alta.json"
     }
   ]
 }

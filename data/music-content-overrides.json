@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-13T16:42:54.412Z",
+  "updatedAt": "2026-10-13T16:54:17.378Z",
   "description": "Decisions manuals sobre el tipus de contingut de vídeos concrets. Manen sobre el classificador automàtic (scripts/lib/classificar_contingut_musical.js) i el pipeline (scripts/update_music_feed.js) les reaplica a cada generació del feed. Tipus permesos: song, live_song, album, other. Un vídeo revisat aquí surt de data/music-content-review.json.",
   "videos": [
     {
@@ -14857,6 +14857,384 @@
       "contentType": "song",
       "title": "Es Pobres No Podem Viure",
       "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-uc-alta.json"
+    },
+    {
+      "id": "BbyHocDtirQ",
+      "contentType": "live_song",
+      "title": "L'arbre Que Vol Ser Humà (En viu)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-la-iaia-alta.json"
+    },
+    {
+      "id": "PxHqHkGJfgA",
+      "contentType": "song",
+      "title": "L'ós",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-la-iaia-alta.json"
+    },
+    {
+      "id": "eY5wFhFy2aM",
+      "contentType": "song",
+      "title": "El Meu Gos Se'n Va",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-la-iaia-alta.json"
+    },
+    {
+      "id": "bqkQuPO2BN4",
+      "contentType": "song",
+      "title": "Una altra vegada",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-la-iaia-alta.json"
+    },
+    {
+      "id": "4a7YrZMk5PU",
+      "contentType": "song",
+      "title": "El Meu Vaixell",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-la-iaia-alta.json"
+    },
+    {
+      "id": "5uuI3bPq27k",
+      "contentType": "song",
+      "title": "La Noia De L'estació",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-la-iaia-alta.json"
+    },
+    {
+      "id": "9jvWRy0P9Ak",
+      "contentType": "song",
+      "title": "L'Última Nit",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-la-iaia-alta.json"
+    },
+    {
+      "id": "B6apa1FYdmo",
+      "contentType": "song",
+      "title": "No Trobo El Meu Lloc",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-la-iaia-alta.json"
+    },
+    {
+      "id": "X1XDb8za-nE",
+      "contentType": "song",
+      "title": "La Platja",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-la-iaia-alta.json"
+    },
+    {
+      "id": "XXvcYHopH6o",
+      "contentType": "song",
+      "title": "Declaració De Principis",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-la-iaia-alta.json"
+    },
+    {
+      "id": "e64PVykgJ20",
+      "contentType": "song",
+      "title": "L'Home Que Pasa",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-la-iaia-alta.json"
+    },
+    {
+      "id": "qealnlqGQWo",
+      "contentType": "song",
+      "title": "Jo Vull Ser La Meva Iaia",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-la-iaia-alta.json"
+    },
+    {
+      "id": "sAfHIiI7_KE",
+      "contentType": "song",
+      "title": "Ella Cus",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-la-iaia-alta.json"
+    },
+    {
+      "id": "umAyKe4-EoM",
+      "contentType": "song",
+      "title": "Explosió",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-la-iaia-alta.json"
+    },
+    {
+      "id": "vL8kNBJIwv4",
+      "contentType": "song",
+      "title": "Uh!",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-la-iaia-alta.json"
+    },
+    {
+      "id": "v_LPjf8KQ_o",
+      "contentType": "song",
+      "title": "No Se Fer Cançons",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-la-iaia-alta.json"
+    },
+    {
+      "id": "xsWdjVN1Ttg",
+      "contentType": "song",
+      "title": "Sota L'arbre",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-la-iaia-alta.json"
+    },
+    {
+      "id": "-q7endjftC0",
+      "contentType": "live_song",
+      "title": "L'accident! (En Directe)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-la-iaia-alta.json"
+    },
+    {
+      "id": "4nyK4R36Sl0",
+      "contentType": "live_song",
+      "title": "Declaració de Principis (En Directe)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-la-iaia-alta.json"
+    },
+    {
+      "id": "6RaO3Gg9Rzc",
+      "contentType": "live_song",
+      "title": "El Nen de Les Estrelles (En Directe)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-la-iaia-alta.json"
+    },
+    {
+      "id": "DlPM7TNisPg",
+      "contentType": "live_song",
+      "title": "La Platja (En Directe)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-la-iaia-alta.json"
+    },
+    {
+      "id": "NOATSLdoEsM",
+      "contentType": "live_song",
+      "title": "Totes Les Promeses (En Directe)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-la-iaia-alta.json"
+    },
+    {
+      "id": "N_qFVM32pJ0",
+      "contentType": "live_song",
+      "title": "L'ós (En Directe)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-la-iaia-alta.json"
+    },
+    {
+      "id": "PdhhROUIfQE",
+      "contentType": "live_song",
+      "title": "El Meu Gos Se'n Va (En Directe)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-la-iaia-alta.json"
+    },
+    {
+      "id": "SCSV4lpC460",
+      "contentType": "live_song",
+      "title": "El Cicle (En Directe)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-la-iaia-alta.json"
+    },
+    {
+      "id": "VwUyympxTwc",
+      "contentType": "live_song",
+      "title": "On Ets Matilda? (En Directe)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-la-iaia-alta.json"
+    },
+    {
+      "id": "j7qwA2LBfHk",
+      "contentType": "live_song",
+      "title": "On és el Meu Cap? (En Directe)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-la-iaia-alta.json"
+    },
+    {
+      "id": "jqyE2ikeOAw",
+      "contentType": "live_song",
+      "title": "Sota L'arbre (En Directe)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-la-iaia-alta.json"
+    },
+    {
+      "id": "mbzp4mY0jMY",
+      "contentType": "live_song",
+      "title": "El Meu Vaixell (En Directe)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-la-iaia-alta.json"
+    },
+    {
+      "id": "ofvyg0ITFgI",
+      "contentType": "live_song",
+      "title": "L'arbre Que Vol Ser Humà (En Directe)",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-la-iaia-alta.json"
+    },
+    {
+      "id": "1VdpGiI27aM",
+      "contentType": "song",
+      "title": "El Meu Gos Se'N Va",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-la-iaia-alta.json"
+    },
+    {
+      "id": "DW5Q8E_3sBA",
+      "contentType": "song",
+      "title": "El Cicle",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-la-iaia-alta.json"
+    },
+    {
+      "id": "GJ-XJNhn-4U",
+      "contentType": "song",
+      "title": "L'ós",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-la-iaia-alta.json"
+    },
+    {
+      "id": "HgrDKKzlHIk",
+      "contentType": "song",
+      "title": "On és el Meu Cap?",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-la-iaia-alta.json"
+    },
+    {
+      "id": "UO8r9Axse4c",
+      "contentType": "song",
+      "title": "El Nen de Les Estrelles",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-la-iaia-alta.json"
+    },
+    {
+      "id": "g6fil8qqoyg",
+      "contentType": "song",
+      "title": "On Ets Matilda?",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-la-iaia-alta.json"
+    },
+    {
+      "id": "hQ8ZO2HqHA8",
+      "contentType": "song",
+      "title": "Assassí en Sèrie",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-la-iaia-alta.json"
+    },
+    {
+      "id": "nCLHgTubMJs",
+      "contentType": "song",
+      "title": "L'Arbre Que Vol Ser Humà",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-la-iaia-alta.json"
+    },
+    {
+      "id": "w9JC_KxrAKo",
+      "contentType": "song",
+      "title": "Totes Les Promeses",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-la-iaia-alta.json"
+    },
+    {
+      "id": "xb8ArrsRCMk",
+      "contentType": "song",
+      "title": "L'Accident!",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-la-iaia-alta.json"
+    },
+    {
+      "id": "5WJIn1WjstI",
+      "contentType": "song",
+      "title": "Clar! Clar! Clar!",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-la-iaia-alta.json"
+    },
+    {
+      "id": "EycXODXik6Q",
+      "contentType": "song",
+      "title": "Mariona",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-la-iaia-alta.json"
+    },
+    {
+      "id": "HloXEvJu8UY",
+      "contentType": "song",
+      "title": "He après a aparellar-me els mitjons",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-la-iaia-alta.json"
+    },
+    {
+      "id": "U71DckmISAY",
+      "contentType": "song",
+      "title": "Un i mig",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-la-iaia-alta.json"
+    },
+    {
+      "id": "VCsK-Mnylqg",
+      "contentType": "song",
+      "title": "Soc un gerro ple d'aigua",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-la-iaia-alta.json"
+    },
+    {
+      "id": "g8pUD5Fy84U",
+      "contentType": "song",
+      "title": "Casa no és casa",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-la-iaia-alta.json"
+    },
+    {
+      "id": "lMZhzHQKjG4",
+      "contentType": "song",
+      "title": "3/24",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-la-iaia-alta.json"
+    },
+    {
+      "id": "q8iWf35NLAw",
+      "contentType": "song",
+      "title": "Dissabtes bons",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-la-iaia-alta.json"
+    },
+    {
+      "id": "xDqdhm09-54",
+      "contentType": "song",
+      "title": "La millor flor del balcó",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-la-iaia-alta.json"
+    },
+    {
+      "id": "zdReq64xYSo",
+      "contentType": "song",
+      "title": "No sé què fer amb la meva vida",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-la-iaia-alta.json"
+    },
+    {
+      "id": "FfNAqHAMJW0",
+      "contentType": "song",
+      "title": "No sé què fer amb la meva vida",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-la-iaia-alta.json"
+    },
+    {
+      "id": "b3QeBad_j5g",
+      "contentType": "song",
+      "title": "L'ós",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-la-iaia-alta.json"
+    },
+    {
+      "id": "uy28yYwj5qI",
+      "contentType": "song",
+      "title": "El Nen de Les Estrelles",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-la-iaia-alta.json"
+    },
+    {
+      "id": "qC48ubIOgXc",
+      "contentType": "song",
+      "title": "L'Accident!",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-la-iaia-alta.json"
+    },
+    {
+      "id": "tevHp7grKto",
+      "contentType": "song",
+      "title": "Assassí en Sèrie",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-la-iaia-alta.json"
+    },
+    {
+      "id": "hTHxbimj6yM",
+      "contentType": "song",
+      "title": "El Cicle",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-la-iaia-alta.json"
+    },
+    {
+      "id": "iY7pY2jIKac",
+      "contentType": "song",
+      "title": "Totes Les Promeses",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-la-iaia-alta.json"
+    },
+    {
+      "id": "Zs5fwJ2HYgQ",
+      "contentType": "song",
+      "title": "L'Arbre Que Vol Ser Humà",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-la-iaia-alta.json"
+    },
+    {
+      "id": "NATlQRL5fys",
+      "contentType": "song",
+      "title": "El Meu Gos Se'N Va",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-la-iaia-alta.json"
+    },
+    {
+      "id": "MrvO0iWoT5Q",
+      "contentType": "song",
+      "title": "On Ets Matilda?",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-la-iaia-alta.json"
+    },
+    {
+      "id": "5PrqtHnrZ_s",
+      "contentType": "song",
+      "title": "On és el Meu Cap?",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-la-iaia-alta.json"
+    },
+    {
+      "id": "JQ6GPWIIlL8",
+      "contentType": "song",
+      "title": "Declaracio De Principis",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-la-iaia-alta.json"
+    },
+    {
+      "id": "q-a9WsHcJMQ",
+      "contentType": "song",
+      "title": "Wa Yeah!",
+      "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-la-iaia-alta.json"
     }
   ]
 }

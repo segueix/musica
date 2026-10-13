@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-13T16:42:54.412Z",
+  "updatedAt": "2026-10-13T16:54:17.378Z",
   "attribution": {
     "text": "Coordenades de referència: GeoNames, via Open-Meteo. CC BY 4.0.",
     "sources": [
@@ -5237,11 +5237,11 @@
         "geonames:3106050"
       ],
       "confidence": "alta",
-      "basis": "L'Ajuntament de Vic documenta La Iaia com a grup vigatà i hi situa el debut.",
+      "basis": "Origen a Vic indicat per l’usuari i documentat per l’Ajuntament.",
       "sources": [
         "https://www.vic.cat/ajuntament/comunicacio-i-protocol/noticies/el-grup-vigata-201cla-iaia201d-guanya-el-concurs"
       ],
-      "reviewedOn": "2026-10-11",
+      "reviewedOn": "2026-10-13",
       "assignmentSource": "manual-review",
       "locked": true
     },
@@ -10592,8 +10592,6 @@
     "UCP621eWrPlC6uLrXE1tm99w": "artist:cesk-freixas",
     "UCSBN6Ppa03Wh9WCXE4skixg": "artist:esperit-de-vi",
     "UCr9ukjgwk2JtABN23sPiPGQ": "artist:jaume-sisa-i-mestres",
-    "UCuH5h0CPXPIccfyvgZgF09w": "artist:la-iaia",
-    "UCl3RfIF60BFTx93il4D11nQ": "artist:la-iaia",
     "UC7Hb62h0GUUgaPe0v0kdY3A": "artist:miquel",
     "UC9Jl8Rcjs5ZUi8Wf1JnFzlw": "artist:mushkaa",
     "UCQAWPZGGc_4JqXq53ATaSBQ": "artist:mushkaa",
@@ -10897,7 +10895,8 @@
     "UCG7tTcmfyT2g8-p_RrTicPw": "artist:colomet",
     "UCtUZyH-IDq1HqnwUrGT1NYg": "artist:sacrogermen",
     "UC1CjXeunopycRzEbV5kpEQg": "artist:sacrogermen",
-    "UCViiIPCMCLZHQSUP16yQuKA": "artist:uc"
+    "UCViiIPCMCLZHQSUP16yQuKA": "artist:uc",
+    "UCU-dJEBd9MTBRQ_Zc1pHwww": "artist:la-iaia"
   },
   "excludedProfiles": {
     "UCdezTX23syEeAJJAb2oOkKA": {
