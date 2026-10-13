@@ -786,6 +786,8 @@
 
         while (picked.length < count && remaining.length) {
             const win = windowOf();
+            const windowArtists = new Map();
+            win.forEach(item => windowArtists.set(item.artist, (windowArtists.get(item.artist) || 0) + 1));
             const histInWindow = win.filter(item => item.tier === 'historic').length;
             const last = sequence[sequence.length - 1];
             const total = sequence.length || 1;
@@ -799,12 +801,13 @@
                 const cool = recentSet(level);
                 const lastArtists = gap > 0 ? sequence.slice(-gap).map(item => item.artist) : [];
                 let bestScore = -Infinity;
+                const artistGroups = new Map();
                 const limit = Math.min(remaining.length, lookahead);
                 for (let i = 0; i < limit; i++) {
                     const c = remaining[i];
                     if (usedIds.has(c.f.id)) continue;
                     if (c.f.artist && lastArtists.includes(c.f.artist)) continue;
-                    if (c.f.artist && win.filter(item => item.artist === c.f.artist).length >= perArtist) continue;
+                    if (c.f.artist && (windowArtists.get(c.f.artist) || 0) >= perArtist) continue;
                     if (c.f.tier === 'historic') {
                         if (histInWindow >= histMax) continue;
                         if (!allowConsecutive && !level.consecutive && last?.tier === 'historic') continue;
@@ -823,6 +826,18 @@
                         chosenLevel = li;
                         break;
                     }
+                    if (options.artistFirst) {
+                        const key = c.f.artist || c.f.id;
+                        if (!artistGroups.has(key)) {artistGroups.set(key, {
+                            key, candidates: [], eras: new Set(), familiarities: new Set(), tags: new Set(),
+                        });}
+                        const group = artistGroups.get(key);
+                        group.candidates.push({ item: c, index: i });
+                        group.eras.add(c.f.tier);
+                        group.familiarities.add(c.fam);
+                        (c.tags || []).forEach(tag => group.tags.add(tag));
+                        continue;
+                    }
                     let s = c.base;
                     if (options.flow) s += options.flow.transition(c.video, last?.video, options.seed);
                     if (eraTargets) {
@@ -834,7 +849,7 @@
                         s += cfg.gain.familiarity * clamp(famTargets[c.fam] - famCount[c.fam] / used, -0.25, 0.25);
                     }
                     if (mix) s += cfg.gain.style * clamp(mixDeficit(c), -0.4, 0.4);
-                    if (c.f.artist) s -= 0.05 * win.filter(item => item.artist === c.f.artist).length;
+                    if (c.f.artist) s -= 0.05 * (windowArtists.get(c.f.artist) || 0);
                     if (
                         c.f.primaryStyle &&
                         sequence.slice(-3).filter(item => item.style === c.f.primaryStyle).length >= 3
@@ -846,6 +861,51 @@
                         chosen = i;
                         chosenLevel = li;
                     }
+                }
+                if (options.artistFirst && artistGroups.size) {
+                    const groups = [...artistGroups.values()].sort((a, b) => a.key.localeCompare(b.key));
+                    let bestTier = Infinity;
+                    groups.forEach(group => {
+                        // El perfil és del grup; el nombre de cançons no dona cap bitllet addicional.
+                        const representative = group.candidates.find(c => options.flow?.profileOf(c.item.video))
+                            || group.candidates[0];
+                        group.video = representative.item.video;
+                        group.f = representative.item.f;
+                        group.tier = options.subcategoryFlow?.tier(group.video, last?.video) ?? 0;
+                        bestTier = Math.min(bestTier, group.tier);
+                    });
+                    let winner = null;
+                    const leastPlayed = Math.min(...groups.filter(g => g.tier === bestTier)
+                        .map(g => windowArtists.get(g.key) || 0));
+                    for (const group of groups) {
+                        if (group.tier !== bestTier) continue;
+                        if (li > 0 && (windowArtists.get(group.key) || 0) > leastPlayed) continue;
+                        let score = cfg.weights.taste * (options.artistPreferences.get(group.key) || 0);
+                        score -= 0.6 * skipPenalty(options.signals.artists[group.key], cfg.taste.artistSkipsToPenalize, now, cfg);
+                        if (options.flow) score += options.flow.transition(group.video, last?.video, options.seed);
+                        if (eraTargets) {score += cfg.gain.era * [...group.eras].reduce((sum, tier) =>
+                            sum + eraTargets[tier] - eraCount[tier] / total, 0) / group.eras.size;}
+                        if (famTargets) {
+                            const used = famCount.known + famCount.affine + famCount.surprise || 1;
+                            score += cfg.gain.familiarity * [...group.familiarities].reduce((sum, fam) =>
+                                sum + clamp(famTargets[fam] - famCount[fam] / used, -0.25, 0.25), 0)
+                                / group.familiarities.size;
+                        }
+                        if (mix) score += cfg.gain.style * clamp(mixDeficit({ tags: [...group.tags] }), -0.4, 0.4);
+                        score -= 0.15 * (windowArtists.get(group.key) || 0);
+                        // Sorteig ponderat amb UNA oportunitat per artista. Cap suma/màxim de pistes.
+                        const weight = Math.exp(clamp(score / 0.2, -20, 20));
+                        const race = -Math.log(Math.max(1e-12, Math.min(1 - 1e-12, options.rng()))) / weight;
+                        if (!winner || race < winner.race) winner = { group, race };
+                    }
+                    // Només després de triar l'artista es valoren les cançons (gust, actualitat, popularitat...).
+                    let songScore = -Infinity;
+                    for (const c of winner.group.candidates) {
+                        let score = c.item.base;
+                        if (eraTargets) score += cfg.gain.era * (eraTargets[c.item.f.tier] - eraCount[c.item.f.tier] / total);
+                        if (score > songScore) { songScore = score; chosen = c.index; }
+                    }
+                    chosenLevel = li;
                 }
             }
             if (chosen < 0) break;
@@ -933,6 +993,32 @@
         return items.filter(item => keep.has(item));
     }
 
+    // Mateix pressupost de pistes per artista, amb representació d'antiguitat/familiaritat.
+    // Si les restriccions esgoten aquesta mostra, selectRadio reintenta amb tot el catàleg.
+    function trimArtistPool(items, count) {
+        const artists = new Map();
+        for (const item of items) {
+            const key = item.f.artist || item.f.id;
+            if (!artists.has(key)) artists.set(key, []);
+            artists.get(key).push(item);
+        }
+        const limit = Math.max(6, Math.ceil(count / Math.max(1, artists.size)) * 2);
+        const keep = new Set();
+        for (const list of artists.values()) {
+            const works = new Set();
+            const cells = new Map();
+            for (const item of list) {
+                if (works.size < limit && !works.has(item.f.keys.work)) {
+                    keep.add(item); works.add(item.f.keys.work);
+                }
+                const cell = item.f.tier + ':' + item.fam + ':' + (item.tags || []).join('|');
+                const n = cells.get(cell) || 0;
+                if (n < 2) { keep.add(item); cells.set(cell, n + 1); }
+            }
+        }
+        return items.filter(item => keep.has(item));
+    }
+
     function recentTimesFrom(signals) {
         const map = new Map();
         signals.recent.forEach(entry => {
@@ -980,7 +1066,9 @@
         const hasEnough = knownArtistCount(signals) >= 3;
         // `mix`: { labels, tagOf } perquè la ràdio barregi diversos estils a parts iguals.
         const mix = options.mix && toArray(options.mix.labels).length > 1 ? options.mix : null;
-        let built = buildItems(toArray(options.candidates), ctx, signals, seed, rng);
+        const artistFirst = options.artistFirst !== false;
+        // El soroll per cançó donaria més oportunitats als catàlegs grans abans del sorteig d'artista.
+        let built = buildItems(toArray(options.candidates), ctx, signals, seed, artistFirst ? null : rng);
         let relaxedDiscovery = false;
         if (discover) {
             const found = discoveryPool(built, signals, count, cfg);
@@ -988,7 +1076,19 @@
             relaxedDiscovery = found.relaxed;
         }
         if (mix) built.forEach(item => (item.tags = mix.tagOf(item.video)));
-        const items = trimPool(built, cfg.queue.pool);
+        // No retallem per puntuació de cançó: podria eliminar artistes amb un catàleg petit.
+        const items = artistFirst ? trimArtistPool(built, count) : trimPool(built, cfg.queue.pool);
+        // Un cor o una escolta explícita també compta si el resum d'artista encara no s'ha sincronitzat.
+        // Es pren el senyal més fort: tenir més pistes indexades no suma cap preferència.
+        const artistPreferences = new Map();
+        if (artistFirst) {for (const item of built) {
+            const key = item.f.artist || item.f.id;
+            artistPreferences.set(key, Math.max(artistPreferences.get(key) || 0,
+                artistTaste(key, signals, ctx.now, cfg), songTaste(item.f.id, signals, ctx.now, cfg)));
+        }}
+        const flow = options.affinities !== false && app.features.musicAffinities?.isActive(options.category, policy, mix)
+            ? app.features.musicAffinities : null;
+        const subcategoryFlow = flow?.radioContext?.(items.map(item => item.video), seed) || null;
         const pref = eraPreference(ctx, signals, { policy });
 
         // Objectius d'antiguitat: 65/25/10 per defecte, adaptats a una preferència forta i al que hi ha.
@@ -1040,7 +1140,7 @@
         const recentIds = signals.recent
             .filter(entry => ctx.now - (Number(entry?.at) || 0) < sessionMs)
             .map(entry => String(entry?.id || ''));
-        const result = runSelection(items, {
+        const selectionOptions = {
             cfg,
             ctx,
             count,
@@ -1057,10 +1157,16 @@
             mix,
             artistOf: ctx.artistKeyOf,
             seed,
-            flow: options.affinities !== false && app.features.musicAffinities?.isActive(options.category, policy, mix)
-                ? app.features.musicAffinities
-                : null,
-        });
+            flow,
+            subcategoryFlow,
+            artistFirst,
+            artistPreferences,
+            rng,
+        };
+        let result = runSelection(items, selectionOptions);
+        if (artistFirst && result.picked.length < count && items.length < built.length) {
+            result = runSelection(built, selectionOptions);
+        }
         const stats = shares(result.picked);
         const newArtists = discover
             ? new Set(result.picked.filter(c => isNewArtist(c.f.artist, signals)).map(c => c.f.artist)).size
@@ -1072,6 +1178,9 @@
                 mode: discover ? 'new' : hasEnough ? mode : 'variety',
                 requested: requestedMode,
                 discover: discover ? { artists: newArtists, relaxed: relaxedDiscovery } : null,
+                artistFirst,
+                subcategory: subcategoryFlow ? { id: subcategoryFlow.seedSubcategory,
+                    artists: subcategoryFlow.seedArtists, minimumArtists: subcategoryFlow.minimumArtists } : null,
                 // La nota que s'ensenya: primer el que explica una degradació (poca música actual, pocs artistes).
                 note: notes.find(n => n !== NOTE_VARIETY && n !== NOTE_NONE) || notes[0] || '',
                 notes,
@@ -1361,4 +1470,5 @@
         knownArtistCount,
     };
 })(window);
+
 

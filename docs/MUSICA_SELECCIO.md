@@ -287,3 +287,40 @@ els perfils en canviar la base o les seleccions i falla davant un artista sense
 gènere. Els workflows de feed, descoberta i enriquiment executen també
 `node scripts/generar_afinitats_musica.js --repair-catalog` abans de publicar; els commits del bot no disparen un segon workflow de GitHub Actions.
 Qualsevol workflow nou d’alta ha de mantenir aquesta comprovació.
+
+
+
+## 2026-10-13 — Una subcategoria per artista i selecció en dos passos
+
+Aquesta política substitueix la comparació de múltiples facets a les ràdios. Cada perfil generat (esquema 2)
+porta una `primaryCategory` i una única `subcategory`. Les categories de navegació existents es conserven;
+no donen entrades addicionals al sorteig. Les antigues facets són evidència de migració, sense punts al motor.
+`data/music-subcategories.json` defineix subcategories, prioritats de migració, veïnatges simètrics i excepcions
+editorials. Els casos sense detall tenen un únic subestil general marcat com a pendent, sense inventar-ne un.
+Les excepcions documentades prevalen. Moto Clua segueix la indicació editorial de l’usuari (rock progressiu);
+La Iaia: folk-rock; Remei de Ca la Fresca: rock psicodèlic. Són subcategories veïnes.
+
+Cinc artistes diferents amb repertori candidat formen un nucli. Les pistes i els canals oficial/Topic
+no es compten per separat. Amb menys de cinc, el mateix subestil i els veïns entren al mateix nivell;
+amb cinc o més, primer el mateix, després veïns i finalment la resta de la categoria. Els filtres previs,
+els descansos i els límits de repetició prevalen sempre; mai no s’afegeix repertori fora del conjunt triat.
+El recompte publicat a `data/music-subcategory-coverage.json` és de catàleg; la ràdio el recalcula amb les
+cançons candidates. No es força cap etiqueta per assolir cinc artistes.
+
+`selectRadio` fa un sorteig ponderat per artista canònic entre els elegibles del nivell musical més proper.
+El pes considera el gust per l’artista, salts, objectius d’època/descoberta i rotació a la cua, mai suma
+puntuacions de pistes ni visualitzacions. Cada artista té una sola oportunitat per torn. Després tria la
+cançó més adequada amb la puntuació existent i l’objectiu d’època. El soroll per pista queda fora del
+sorteig d’artista. Una mostra per artista conserva representants de cada època/familiaritat; si no permet
+omplir la cua, es reintenta amb tot el conjunt. `artistFirst:false` permet comparar amb el motor anterior.
+Les llistes i el feed mantenen el seu ordre/política. Les ràdios mixtes mantenen el repartiment d’estils.
+
+La similitud de subcategoria és igual per a tots: 0,9 mateix subestil; 0,7 veí; 0,4 mateixa categoria;
+0,2 altra; 0,5 desconegut. Només entre compatibles s’hi afegeix fins a 0,06 per components compartits
+amb font i fins a 0,02 per distància entre municipis validats (mateix municipi 1, descens lineal fins a
+50 km). Cap GPS ni localització de l’oient. Les comarques/illes no s’aproximen amb capitals.
+L’ajust de transició continua acotat a ±0,06. El nombre de fonts o facets no augmenta la similitud.
+Els directes i arranjaments alternatius mantenen afinitat neutral, sense segones subcategories per pista.
+
+Proves: `tests/music-subcategories.test.js`: cobertura, una etiqueta, cinc artistes, relacions simètriques,
+igualtat d’oportunitats amb 1/50 pistes, catàlegs grans, identitat oficial/Topic, cors i exclusions.

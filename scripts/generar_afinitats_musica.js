@@ -119,6 +119,18 @@ const sandbox = { SegueixApp: { features: {} }, SegueixMusicAffinityCatalog: cat
 sandbox.window = sandbox;
 vm.runInNewContext(fs.readFileSync('js/features/music-affinities.js', 'utf8'), sandbox);
 const runtimeProfiles = sandbox.SegueixApp.features.musicAffinities.profiles;
+const { classifyProfiles } = require('./lib/subcategories_musicals');
+const single = classifyProfiles(runtimeProfiles, artists, read('data/music-subcategories.json'),
+    read('data/origens-artistes.json'), CATEGORY_GROUPS);
+const singleCatalog = { schemaVersion: 2, ...single, relations: reviews.relations };
+fs.writeFileSync('js/features/music-affinity-catalog.js', '/* eslint-disable */\n// Generat per scripts/generar_afinitats_musica.js. No editar a mà.\nwindow.SegueixMusicAffinityCatalog = ' + JSON.stringify(singleCatalog) + ';\n');
+save('data/music-subcategory-coverage.json', {
+    musicalArtists: single.profiles.length,
+    minimumArtists: single.minimumArtists,
+    subcategories: single.subcategories,
+    assignments: single.profiles.map(p => ({ artist: p.artist, category: p.primaryCategory,
+        subcategory: p.subcategory, basis: p.subcategoryBasis, sources: p.subcategorySources })),
+});
 const missingProfiles = artists.filter(a => !programNames.has(a.name) && !runtimeProfiles.some(p => p.artist === a.name && p.facets.length));
 assert.equal(missingProfiles.length, 0, 'Cobertura incompleta');
 const report = { indexedArtists: artists.length, musicalArtists: profiles.length, channels: indexed.size,
@@ -128,3 +140,4 @@ const report = { indexedArtists: artists.length, musicalArtists: profiles.length
     caveat: 'La cobertura bàsica per gènere no equival a revisió acústica ni a subestils verificats. Els perfils editorials detallats prevalen en carregar el motor.' };
 save('data/music-affinity-coverage.json', report);
 console.log(JSON.stringify(report));
+

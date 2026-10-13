@@ -907,6 +907,10 @@
         ? [...new Set(profiles.flatMap(profile => profile.categories))]
         : [CATEGORY, 'Heavy / Metal', 'Punk'];
     const relations = catalog?.relations || [];
+    const singleSubcategory = catalog?.schemaVersion >= 2;
+    const subcategories = catalog?.subcategories || [];
+    const subcategoryById = new Map(subcategories.map(s => [s.id, s]));
+    const minimumArtists = catalog?.minimumArtists || 5;
     // Compartir músics és una relació documental, no una mesura del so.
     function relationOf(left, right) {
         if (!left || !right || left.artist === right.artist) return null;
@@ -946,6 +950,14 @@
     function similarity(a, b) {
         const left = profileOf(a);
         const right = profileOf(b);
+        if (singleSubcategory) {
+            if (!left || !right) return 0.5;
+            const style = subcategorySimilarity(left, right);
+            // Els vincles personals/geogràfics només reforcen estils compatibles.
+            if (style < 0.7) return style;
+            const relation = relationOf(left, right);
+            return Math.min(1, style + (relation ? 0.06 * relation.confidence : 0) + 0.02 * proximity(left, right));
+        }
         if (!left || !right || !left.facets.length || !right.facets.length) return 0.5;
         const union = new Set([...left.facets, ...right.facets]);
         const common = left.facets.filter(facet => right.facets.includes(facet)).length;
@@ -953,6 +965,56 @@
         const style = 0.5 + ((union.size ? common / union.size : 0.5) - 0.5) * confidence;
         const relation = relationOf(left, right);
         return Math.min(1, style + (relation ? 0.08 * relation.confidence : 0));
+    }
+
+    function subcategorySimilarity(left, right) {
+        if (!left?.subcategory || !right?.subcategory) return 0.5;
+        if (left.subcategory === right.subcategory) return 0.9;
+        if (subcategoryById.get(left.subcategory)?.neighbours.includes(right.subcategory)) return 0.7;
+        return left.primaryCategory === right.primaryCategory ? 0.4 : 0.2;
+    }
+
+    function proximity(left, right) {
+        let best = 0;
+        for (const a of left.places || []) {for (const b of right.places || []) {
+            if (a.id === b.id) return 1;
+            const rad = Math.PI / 180;
+            const h = Math.sin((a.latitude - b.latitude) * rad / 2) ** 2
+                + Math.cos(a.latitude * rad) * Math.cos(b.latitude * rad)
+                * Math.sin((a.longitude - b.longitude) * rad / 2) ** 2;
+            const km = 6371 * 2 * Math.asin(Math.sqrt(Math.min(1, h)));
+            best = Math.max(best, Math.max(0, 1 - km / 50));
+        }}
+        return best;
+    }
+
+    // El recompte és d'artistes amb cançons candidates, no de canals ni de pistes.
+    // Amb menys de cinc, el nucli s'obre des del principi als subestils veïns.
+    function radioContext(videos, seed) {
+        if (!singleSubcategory) return null;
+        const supply = new Map();
+        for (const video of [...videos, seed].filter(Boolean)) {
+            const profile = profileOf(video);
+            if (!profile) continue;
+            if (!supply.has(profile.subcategory)) supply.set(profile.subcategory, new Set());
+            supply.get(profile.subcategory).add(profile.artist);
+        }
+        return {
+            tier(candidate, previous) {
+                const target = profileOf(seed) || profileOf(previous);
+                const profile = profileOf(candidate);
+                if (!target || !profile) return 2;
+                if (profile.subcategory === target.subcategory) return 0;
+                const neighbours = subcategoryById.get(target.subcategory)?.neighbours || [];
+                if (neighbours.includes(profile.subcategory)) {
+                    return (supply.get(target.subcategory)?.size || 0) < minimumArtists ? 0 : 1;
+                }
+                return 2;
+            },
+            minimumArtists,
+            seedSubcategory: profileOf(seed)?.subcategory || null,
+            seedArtists: supply.get(profileOf(seed)?.subcategory)?.size || 0,
+        };
     }
 
     function isActive(category, policy = 'general', mix = null) {
@@ -974,9 +1036,15 @@
         enabledCategories,
         profileOf,
         relations,
+        singleSubcategory,
+        subcategories,
+        subcategorySimilarity,
+        proximity,
+        radioContext,
         relationOf,
         similarity,
         isActive,
         transition,
     };
 })(window);
+

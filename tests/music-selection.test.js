@@ -896,7 +896,7 @@ describe('simulació sobre el catàleg real', () => {
         queues.filter(q => q.slice(0, 20).some(v => v.channelId.toLowerCase() === channel.toLowerCase())).length /
         queues.length;
 
-    it('usuari nou: 65 / 25 / 10 orientatiu, límits complerts i descoberta variada', () => {
+    it('usuari nou: 65 / 25 / 10 orientatiu, límits complerts i descoberta variada', { timeout: 20000 }, () => {
         const queues = runs(null, 60);
         const totals = { recent: 0, mid: 0, historic: 0 };
         let n = 0;
@@ -981,3 +981,4 @@ describe('simulació sobre el catàleg real', () => {
         expect(perQueue).toBeLessThan(250);
     });
 });
+

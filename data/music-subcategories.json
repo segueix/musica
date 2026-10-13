@@ -1,0 +1,963 @@
+{
+  "schemaVersion": 1,
+  "minimumArtists": 5,
+  "subcategories": [
+    {
+      "id": "rock-progressiu",
+      "label": "Rock progressiu",
+      "category": "Rock",
+      "facets": [
+        "progressive-rock"
+      ],
+      "neighbours": [
+        "rock-psicodelic",
+        "folk-rock"
+      ],
+      "priority": 18
+    },
+    {
+      "id": "rock-psicodelic",
+      "label": "Rock psicodèlic",
+      "category": "Rock",
+      "facets": [
+        "psychedelic-rock",
+        "psychedelic"
+      ],
+      "neighbours": [
+        "rock-progressiu",
+        "folk-rock",
+        "garage-rock",
+        "indie-rock"
+      ],
+      "priority": 19
+    },
+    {
+      "id": "folk-rock",
+      "label": "Folk-rock",
+      "category": "Rock",
+      "facets": [
+        "folk-rock"
+      ],
+      "neighbours": [
+        "rock-progressiu",
+        "rock-psicodelic",
+        "rock-pop",
+        "pop-folk",
+        "indie-folk",
+        "autor-folk"
+      ],
+      "priority": 20
+    },
+    {
+      "id": "hard-rock",
+      "label": "Hard rock",
+      "category": "Rock",
+      "facets": [
+        "hard-rock"
+      ],
+      "neighbours": [
+        "garage-rock",
+        "metal-heavy"
+      ],
+      "priority": 21
+    },
+    {
+      "id": "garage-rock",
+      "label": "Garage rock",
+      "category": "Rock",
+      "facets": [
+        "garage-rock"
+      ],
+      "neighbours": [
+        "rock-psicodelic",
+        "indie-rock",
+        "hard-rock",
+        "metal-heavy"
+      ],
+      "priority": 22
+    },
+    {
+      "id": "rock-pop",
+      "label": "Pop-rock",
+      "category": "Rock",
+      "facets": [
+        "pop"
+      ],
+      "neighbours": [
+        "folk-rock",
+        "pop-folk",
+        "indie-folk",
+        "autor-folk",
+        "pop-rock",
+        "indie-rock"
+      ],
+      "priority": 105
+    },
+    {
+      "id": "rock-general",
+      "label": "Rock — pendent d’afinar",
+      "category": "Rock",
+      "facets": [],
+      "neighbours": [],
+      "priority": 106
+    },
+    {
+      "id": "punk-hardcore",
+      "label": "Hardcore punk",
+      "category": "Punk",
+      "facets": [
+        "hardcore",
+        "crust",
+        "grindcore"
+      ],
+      "neighbours": [
+        "punk-post",
+        "metal-grind"
+      ],
+      "priority": 12
+    },
+    {
+      "id": "punk-post",
+      "label": "Post-hardcore",
+      "category": "Punk",
+      "facets": [
+        "post-hardcore",
+        "screamo",
+        "emo",
+        "math-rock"
+      ],
+      "neighbours": [
+        "punk-hardcore",
+        "metal-grind",
+        "punk-electronic"
+      ],
+      "priority": 6
+    },
+    {
+      "id": "punk-oi",
+      "label": "Oi! / Street punk",
+      "category": "Punk",
+      "facets": [
+        "oi",
+        "street-punk"
+      ],
+      "neighbours": [
+        "punk-rock",
+        "punk-pop",
+        "punk-garage"
+      ],
+      "priority": 9
+    },
+    {
+      "id": "punk-folk",
+      "label": "Folk-punk",
+      "category": "Punk",
+      "facets": [
+        "folk-punk"
+      ],
+      "neighbours": [
+        "punk-rock",
+        "ska-punk"
+      ],
+      "priority": 8
+    },
+    {
+      "id": "punk-pop",
+      "label": "Pop-punk",
+      "category": "Punk",
+      "facets": [
+        "pop-punk",
+        "melodic-punk",
+        "surf-punk"
+      ],
+      "neighbours": [
+        "punk-rock",
+        "punk-oi",
+        "punk-garage"
+      ],
+      "priority": 10
+    },
+    {
+      "id": "punk-garage",
+      "label": "Garage punk",
+      "category": "Punk",
+      "facets": [
+        "garage-punk"
+      ],
+      "neighbours": [
+        "punk-rock",
+        "punk-oi",
+        "punk-pop"
+      ],
+      "priority": 11
+    },
+    {
+      "id": "punk-electronic",
+      "label": "Electropunk",
+      "category": "Punk",
+      "facets": [
+        "electropunk"
+      ],
+      "neighbours": [
+        "punk-post"
+      ],
+      "priority": 7
+    },
+    {
+      "id": "punk-rock",
+      "label": "Punk-rock",
+      "category": "Punk",
+      "facets": [
+        "punk-rock"
+      ],
+      "neighbours": [
+        "punk-oi",
+        "punk-pop",
+        "punk-garage",
+        "punk-folk",
+        "ska-punk"
+      ],
+      "priority": 13
+    },
+    {
+      "id": "punk-general",
+      "label": "Punk — pendent d’afinar",
+      "category": "Punk",
+      "facets": [],
+      "neighbours": [],
+      "priority": 115
+    },
+    {
+      "id": "metal-black",
+      "label": "Black metal",
+      "category": "Heavy / Metal",
+      "facets": [
+        "black-metal",
+        "raw-black-metal"
+      ],
+      "neighbours": [
+        "metal-death",
+        "metal-doom"
+      ],
+      "priority": 3
+    },
+    {
+      "id": "metal-death",
+      "label": "Death metal",
+      "category": "Heavy / Metal",
+      "facets": [
+        "death-metal",
+        "melodic-death-metal"
+      ],
+      "neighbours": [
+        "metal-black",
+        "metal-doom"
+      ],
+      "priority": 4
+    },
+    {
+      "id": "metal-doom",
+      "label": "Doom / Sludge",
+      "category": "Heavy / Metal",
+      "facets": [
+        "doom-metal",
+        "sludge",
+        "drone"
+      ],
+      "neighbours": [
+        "metal-black",
+        "metal-death",
+        "metal-progressiu",
+        "metal-heavy"
+      ],
+      "priority": 2
+    },
+    {
+      "id": "metal-progressiu",
+      "label": "Metal progressiu / Post-metal",
+      "category": "Heavy / Metal",
+      "facets": [
+        "progressive-metal",
+        "post-metal"
+      ],
+      "neighbours": [
+        "metal-doom",
+        "metal-heavy"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "metal-grind",
+      "label": "Grindcore",
+      "category": "Heavy / Metal",
+      "facets": [
+        "grindcore",
+        "goregrind"
+      ],
+      "neighbours": [
+        "punk-hardcore",
+        "punk-post"
+      ],
+      "priority": 0
+    },
+    {
+      "id": "metal-heavy",
+      "label": "Heavy / Power metal",
+      "category": "Heavy / Metal",
+      "facets": [
+        "heavy-metal",
+        "power-metal",
+        "symphonic-metal"
+      ],
+      "neighbours": [
+        "hard-rock",
+        "garage-rock",
+        "metal-progressiu",
+        "metal-doom"
+      ],
+      "priority": 5
+    },
+    {
+      "id": "metal-general",
+      "label": "Metal — pendent d’afinar",
+      "category": "Heavy / Metal",
+      "facets": [],
+      "neighbours": [],
+      "priority": 122
+    },
+    {
+      "id": "ska-punk",
+      "label": "Ska-punk",
+      "category": "Ska / Reggae",
+      "facets": [
+        "punk",
+        "punk-rock",
+        "hardcore"
+      ],
+      "neighbours": [
+        "punk-folk",
+        "punk-rock",
+        "ska-revival",
+        "ska-classic"
+      ],
+      "priority": 15
+    },
+    {
+      "id": "ska-revival",
+      "label": "Ska revival",
+      "category": "Ska / Reggae",
+      "facets": [
+        "ska-revival"
+      ],
+      "neighbours": [
+        "ska-classic",
+        "ska-punk"
+      ],
+      "priority": 14
+    },
+    {
+      "id": "ska-classic",
+      "label": "Ska / Rocksteady",
+      "category": "Ska / Reggae",
+      "facets": [
+        "ska",
+        "rocksteady"
+      ],
+      "neighbours": [
+        "ska-revival",
+        "ska-punk",
+        "reggae",
+        "mestissatge"
+      ],
+      "priority": 16
+    },
+    {
+      "id": "reggae",
+      "label": "Reggae / Dancehall",
+      "category": "Ska / Reggae",
+      "facets": [
+        "reggae",
+        "dancehall"
+      ],
+      "neighbours": [
+        "ska-classic",
+        "mestissatge"
+      ],
+      "priority": 17
+    },
+    {
+      "id": "ska-general",
+      "label": "Ska / Reggae — pendent d’afinar",
+      "category": "Ska / Reggae",
+      "facets": [],
+      "neighbours": [],
+      "priority": 127
+    },
+    {
+      "id": "pop-electronic",
+      "label": "Electropop",
+      "category": "Pop",
+      "facets": [
+        "electropop",
+        "electronic"
+      ],
+      "neighbours": [
+        "pop-indie",
+        "electronica-pop",
+        "urban-pop"
+      ],
+      "priority": 128
+    },
+    {
+      "id": "pop-indie",
+      "label": "Indie pop",
+      "category": "Pop",
+      "facets": [
+        "indie-pop",
+        "alternative-pop",
+        "indie",
+        "lo-fi"
+      ],
+      "neighbours": [
+        "pop-electronic",
+        "electronica-pop",
+        "indie-pop",
+        "pop-folk"
+      ],
+      "priority": 129
+    },
+    {
+      "id": "pop-folk",
+      "label": "Folk-pop",
+      "category": "Pop",
+      "facets": [
+        "folk",
+        "traditional"
+      ],
+      "neighbours": [
+        "folk-rock",
+        "rock-pop",
+        "indie-folk",
+        "autor-folk",
+        "pop-indie",
+        "indie-pop"
+      ],
+      "priority": 130
+    },
+    {
+      "id": "pop-rock",
+      "label": "Pop-rock",
+      "category": "Pop",
+      "facets": [
+        "rock"
+      ],
+      "neighbours": [
+        "rock-pop",
+        "indie-rock"
+      ],
+      "priority": 131
+    },
+    {
+      "id": "pop-general",
+      "label": "Pop — pendent d’afinar",
+      "category": "Pop",
+      "facets": [],
+      "neighbours": [],
+      "priority": 132
+    },
+    {
+      "id": "indie-rock",
+      "label": "Indie rock",
+      "category": "Indie",
+      "facets": [
+        "indie-rock",
+        "rock",
+        "garage-rock"
+      ],
+      "neighbours": [
+        "rock-psicodelic",
+        "garage-rock",
+        "rock-pop",
+        "pop-rock"
+      ],
+      "priority": 133
+    },
+    {
+      "id": "indie-folk",
+      "label": "Indie folk",
+      "category": "Indie",
+      "facets": [
+        "folk",
+        "traditional"
+      ],
+      "neighbours": [
+        "folk-rock",
+        "rock-pop",
+        "pop-folk",
+        "autor-folk"
+      ],
+      "priority": 134
+    },
+    {
+      "id": "indie-pop",
+      "label": "Indie pop",
+      "category": "Indie",
+      "facets": [
+        "indie-pop",
+        "pop",
+        "alternative-pop"
+      ],
+      "neighbours": [
+        "pop-indie",
+        "pop-folk"
+      ],
+      "priority": 135
+    },
+    {
+      "id": "indie-general",
+      "label": "Indie — pendent d’afinar",
+      "category": "Indie",
+      "facets": [],
+      "neighbours": [],
+      "priority": 136
+    },
+    {
+      "id": "urban-trap",
+      "label": "Trap",
+      "category": "Urban",
+      "facets": [
+        "trap"
+      ],
+      "neighbours": [
+        "urban-rap",
+        "rap-trap"
+      ],
+      "priority": 137
+    },
+    {
+      "id": "urban-reggaeton",
+      "label": "Reggaeton / Dancehall",
+      "category": "Urban",
+      "facets": [
+        "reggaeton",
+        "dancehall"
+      ],
+      "neighbours": [
+        "urban-electronic",
+        "urban-pop"
+      ],
+      "priority": 138
+    },
+    {
+      "id": "urban-electronic",
+      "label": "Urban electrònic",
+      "category": "Urban",
+      "facets": [
+        "electronic",
+        "electro",
+        "house",
+        "techno"
+      ],
+      "neighbours": [
+        "urban-reggaeton",
+        "urban-pop"
+      ],
+      "priority": 139
+    },
+    {
+      "id": "urban-rap",
+      "label": "Rap urbà",
+      "category": "Urban",
+      "facets": [
+        "rap"
+      ],
+      "neighbours": [
+        "urban-trap",
+        "rap-trap",
+        "rap-general",
+        "rap-fusion"
+      ],
+      "priority": 140
+    },
+    {
+      "id": "urban-pop",
+      "label": "Pop urbà",
+      "category": "Urban",
+      "facets": [
+        "pop"
+      ],
+      "neighbours": [
+        "urban-reggaeton",
+        "urban-electronic",
+        "pop-electronic"
+      ],
+      "priority": 141
+    },
+    {
+      "id": "urban-general",
+      "label": "Urban — pendent d’afinar",
+      "category": "Urban",
+      "facets": [],
+      "neighbours": [],
+      "priority": 142
+    },
+    {
+      "id": "rap-trap",
+      "label": "Trap / Rap",
+      "category": "Rap / Hip-hop",
+      "facets": [
+        "trap"
+      ],
+      "neighbours": [
+        "urban-trap",
+        "urban-rap"
+      ],
+      "priority": 143
+    },
+    {
+      "id": "rap-fusion",
+      "label": "Rap fusió",
+      "category": "Rap / Hip-hop",
+      "facets": [
+        "reggae",
+        "folk",
+        "mestissatge",
+        "electronic"
+      ],
+      "neighbours": [
+        "urban-rap",
+        "rap-general"
+      ],
+      "priority": 144
+    },
+    {
+      "id": "rap-general",
+      "label": "Rap / Hip-hop",
+      "category": "Rap / Hip-hop",
+      "facets": [
+        "rap"
+      ],
+      "neighbours": [
+        "urban-rap",
+        "rap-fusion"
+      ],
+      "priority": 145
+    },
+    {
+      "id": "folk-tradicional",
+      "label": "Folk tradicional",
+      "category": "Folk i arrel",
+      "facets": [
+        "traditional",
+        "cant-valencia-d-estil",
+        "havanera"
+      ],
+      "neighbours": [
+        "folk-fusio",
+        "folk-general"
+      ],
+      "priority": 146
+    },
+    {
+      "id": "folk-fusio",
+      "label": "Folk fusió",
+      "category": "Folk i arrel",
+      "facets": [
+        "rock",
+        "pop",
+        "electronic",
+        "jazz-fusion"
+      ],
+      "neighbours": [
+        "folk-tradicional",
+        "folk-general"
+      ],
+      "priority": 147
+    },
+    {
+      "id": "folk-general",
+      "label": "Folk i arrel — pendent d’afinar",
+      "category": "Folk i arrel",
+      "facets": [],
+      "neighbours": [
+        "folk-tradicional",
+        "folk-fusio"
+      ],
+      "priority": 148
+    },
+    {
+      "id": "autor-nova-canco",
+      "label": "Nova Cançó",
+      "category": "Cançó d'autor",
+      "facets": [
+        "nova-canco",
+        "canco-protesta"
+      ],
+      "neighbours": [
+        "autor-folk",
+        "autor-pop",
+        "autor-general"
+      ],
+      "priority": 149
+    },
+    {
+      "id": "autor-folk",
+      "label": "Cançó d’autor folk",
+      "category": "Cançó d'autor",
+      "facets": [
+        "folk",
+        "traditional"
+      ],
+      "neighbours": [
+        "folk-rock",
+        "rock-pop",
+        "pop-folk",
+        "indie-folk",
+        "autor-nova-canco",
+        "autor-pop",
+        "autor-general"
+      ],
+      "priority": 150
+    },
+    {
+      "id": "autor-pop",
+      "label": "Cançó d’autor pop",
+      "category": "Cançó d'autor",
+      "facets": [
+        "pop"
+      ],
+      "neighbours": [
+        "autor-nova-canco",
+        "autor-folk",
+        "autor-general"
+      ],
+      "priority": 151
+    },
+    {
+      "id": "autor-general",
+      "label": "Cançó d’autor — pendent d’afinar",
+      "category": "Cançó d'autor",
+      "facets": [],
+      "neighbours": [
+        "autor-nova-canco",
+        "autor-folk",
+        "autor-pop"
+      ],
+      "priority": 152
+    },
+    {
+      "id": "electronica-ball",
+      "label": "Electrònica de ball",
+      "category": "Electrònica",
+      "facets": [
+        "house",
+        "techno",
+        "electro"
+      ],
+      "neighbours": [
+        "electronica-pop",
+        "electronica-experimental",
+        "electronica-general"
+      ],
+      "priority": 153
+    },
+    {
+      "id": "electronica-pop",
+      "label": "Pop electrònic",
+      "category": "Electrònica",
+      "facets": [
+        "electropop",
+        "pop"
+      ],
+      "neighbours": [
+        "pop-electronic",
+        "pop-indie",
+        "electronica-ball",
+        "electronica-experimental",
+        "electronica-general"
+      ],
+      "priority": 154
+    },
+    {
+      "id": "electronica-experimental",
+      "label": "Electrònica experimental",
+      "category": "Electrònica",
+      "facets": [
+        "experimental",
+        "drone"
+      ],
+      "neighbours": [
+        "electronica-ball",
+        "electronica-pop",
+        "electronica-general"
+      ],
+      "priority": 155
+    },
+    {
+      "id": "electronica-general",
+      "label": "Electrònica — pendent d’afinar",
+      "category": "Electrònica",
+      "facets": [],
+      "neighbours": [
+        "electronica-ball",
+        "electronica-pop",
+        "electronica-experimental"
+      ],
+      "priority": 156
+    },
+    {
+      "id": "rumba",
+      "label": "Rumba",
+      "category": "Rumba / Mestissatge",
+      "facets": [
+        "rumba",
+        "flamenc",
+        "flamenco"
+      ],
+      "neighbours": [
+        "mestissatge",
+        "rumba-general"
+      ],
+      "priority": 157
+    },
+    {
+      "id": "mestissatge",
+      "label": "Mestissatge",
+      "category": "Rumba / Mestissatge",
+      "facets": [
+        "mestissatge",
+        "cumbia",
+        "reggae",
+        "ska"
+      ],
+      "neighbours": [
+        "ska-classic",
+        "reggae",
+        "rumba",
+        "rumba-general"
+      ],
+      "priority": 158
+    },
+    {
+      "id": "rumba-general",
+      "label": "Rumba / Mestissatge — pendent d’afinar",
+      "category": "Rumba / Mestissatge",
+      "facets": [],
+      "neighbours": [
+        "rumba",
+        "mestissatge"
+      ],
+      "priority": 159
+    },
+    {
+      "id": "jazz-fusio",
+      "label": "Jazz fusió",
+      "category": "Jazz / Blues",
+      "facets": [
+        "jazz-fusion",
+        "funk"
+      ],
+      "neighbours": [
+        "jazz",
+        "jazz-general"
+      ],
+      "priority": 160
+    },
+    {
+      "id": "jazz",
+      "label": "Jazz",
+      "category": "Jazz / Blues",
+      "facets": [
+        "jazz"
+      ],
+      "neighbours": [
+        "jazz-fusio",
+        "jazz-general"
+      ],
+      "priority": 161
+    },
+    {
+      "id": "jazz-general",
+      "label": "Jazz / Blues — pendent d’afinar",
+      "category": "Jazz / Blues",
+      "facets": [],
+      "neighbours": [
+        "jazz-fusio",
+        "jazz"
+      ],
+      "priority": 162
+    },
+    {
+      "id": "altres-funk",
+      "label": "Funk / Soul / R&B",
+      "category": "Altres estils",
+      "facets": [
+        "funk",
+        "soul",
+        "r-and-b",
+        "funk-soul-r-and-b"
+      ],
+      "neighbours": [],
+      "priority": 163
+    },
+    {
+      "id": "altres-vocal",
+      "label": "Coral / Vocal",
+      "category": "Altres estils",
+      "facets": [
+        "vocal"
+      ],
+      "neighbours": [],
+      "priority": 164
+    },
+    {
+      "id": "altres-experimental",
+      "label": "Experimental",
+      "category": "Altres estils",
+      "facets": [
+        "experimental"
+      ],
+      "neighbours": [],
+      "priority": 165
+    },
+    {
+      "id": "altres-general",
+      "label": "Altres estils — pendent d’afinar",
+      "category": "Altres estils",
+      "facets": [],
+      "neighbours": [],
+      "priority": 166
+    },
+    {
+      "id": "infantil",
+      "label": "Música infantil",
+      "category": "Infantil",
+      "facets": [
+        "children"
+      ],
+      "neighbours": [],
+      "priority": 167
+    }
+  ],
+  "overrides": {
+    "Moto Clua": {
+      "subcategory": "rock-progressiu",
+      "basis": "Criteri editorial de l’usuari, 2026-10-13; revisar el repertori si s’afina la classificació.",
+      "sources": []
+    },
+    "La Iaia": {
+      "subcategory": "folk-rock",
+      "basis": "Classificació editorial predominant a partir d’indie folk i pop-rock; una única subcategoria.",
+      "sources": [
+        "https://ca.wikipedia.org/wiki/La_Iaia"
+      ]
+    },
+    "Remei de Ca la Fresca": {
+      "subcategory": "rock-psicodelic",
+      "basis": "Rock psicodèlic amb elements progressius documentats.",
+      "sources": [
+        "https://www.elperiodico.cat/oci-i-cultura/20250105/remei-ca-fresca-montseny-indomit-113126258"
+      ]
+    }
+  }
+}

@@ -1,0 +1,39 @@
+name: Validar subcategoria única i equitat
+on:
+  push:
+    branches: [fix/subcategoria-unica]
+    paths:
+      - 'data/music-subcategories.json'
+      - 'scripts/lib/subcategories_musicals.js'
+      - 'scripts/generar_afinitats_musica.js'
+      - 'js/features/music-affinities.js'
+      - 'js/features/music-selection.js'
+      - 'tests/music-*.test.js'
+      - 'scripts/revisions/validar_subcategoria_unica.js'
+      - '.github/workflows/validar-subcategoria-unica.yml'
+permissions:
+  contents: write
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: node scripts/generar_afinitats_musica.js
+      - run: node scripts/revisions/validar_subcategoria_unica.js 9eb23ec0d1e47457ccf7442ea3f835d51f827780
+      - run: npm run sw:version
+      - name: Desa classificació i verificació
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add data/music-subcategory-coverage.json data/music-affinity-coverage.json js/features/music-affinity-catalog.js docs/revisions/2026-10-13-subcategoria-unica.json sw.js
+          git commit -m 'data: genera subcategories úniques i verifica les ràdios'
+          git push origin HEAD:fix/subcategoria-unica
+

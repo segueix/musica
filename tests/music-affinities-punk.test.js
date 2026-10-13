@@ -56,10 +56,10 @@ describe('afinitats Punk', () => {
             expect(A.similarity(song(seed), song(near))).toBe(A.similarity(song(near), song(seed)));
         }
     });
-    it('orienta la tria dins del selector real', () => {
+    it('manté compatible el pilot per facets amb el selector anterior', () => {
         const videos = ['Lladruc', 'Tano!', 'Opció K-95'].map(n => song(n));
-        expect(select(videos, { count: 1 })[0].id).toBe(videos[2].id);
-        expect(select(videos, { count: 1, affinities: false })[0].id).toBe(videos[1].id);
+        expect(select(videos, { count: 1, artistFirst: false })[0].id).toBe(videos[2].id);
+        expect(select(videos, { count: 1, affinities: false, artistFirst: false })[0].id).toBe(videos[1].id);
     });
     it('no propaga perfils a vídeos no revisats dels canals compartits', () => {
         for (const name of ['ASSAC!', 'Budellam', 'Mendra', 'Vàlius']) {
@@ -107,3 +107,4 @@ describe('afinitats Punk', () => {
         }
     });
 });
+

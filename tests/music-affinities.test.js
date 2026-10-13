@@ -48,10 +48,10 @@ describe('pilot editorial Ska / Reggae', () => {
         expect(A.profileOf({ ...seed, contentType: 'live_song' })).toBeNull();
         expect(A.transition({ channelId: 'unknown' }, seed, seed)).toBe(0);
     });
-    it('guia la següent tria per la cançó anterior mantenint el rumb inicial', () => {
+    it('manté compatible el pilot per facets amb el selector anterior', () => {
         const seed = find('La Pegatina');
         const previous = find('Les Testarudes');
-        const options = { count: 1, preceding: [seed, previous] };
+        const options = { count: 1, preceding: [seed, previous], artistFirst: false };
         const videos = [seed, find('Brams'), find('Mr. Freak Ska')];
         expect(select(videos, options)[0].channelId).toBe(find('Mr. Freak Ska').channelId);
         expect(select(videos, { ...options, affinities: false })[0].channelId).toBe(find('Brams').channelId);
@@ -97,4 +97,5 @@ describe('pilot editorial Ska / Reggae', () => {
         expect(bare.selectRadio(options).queue).toEqual(select(videos, { affinities: false }));
     });
 });
+
 

@@ -43,16 +43,16 @@ describe('cobertura completa d’afinitats', () => {
     });
     it('les relacions augmenten lleument la proximitat sense obrir la categoria', () => {
         const p = find('knocKouts'), other = find('Dr. Calypso');
-        const common = p.facets.filter(f => other.facets.includes(f)).length;
-        const plain = .5 + (common / new Set([...p.facets, ...other.facets]).size - .5) * Math.min(p.confidence, other.confidence);
-        expect(A.similarity(song(p.artist), song(other.artist))).toBeCloseTo(plain + .08);
+        const plain = A.subcategorySimilarity(p, other);
+        const expected = plain < .7 ? plain : Math.min(1, plain + .06 + .02 * A.proximity(p, other));
+        expect(A.similarity(song(p.artist), song(other.artist))).toBeCloseTo(expected);
         const videos = feed.videos.filter(v => v.categories.includes('Ska / Reggae'));
         const seed = videos.find(v => p.channelIds.includes(v.channelId));
         const q = E.selectRadio({ctx:E.createContext({videos}),seed,candidates:videos.filter(v=>v.id!==seed.id),category:'Ska / Reggae',count:39,signals:E.emptySignals(),rng:()=>.5}).queue;
         expect(q.every(v=>v.categories.includes('Ska / Reggae'))).toBe(true);
         expect(q.some(v=>find('Frontpilsen').channelIds.includes(v.channelId))).toBe(false);
     });
-    it('els perfils bàsics pesen menys i no es presenten com a revisió detallada', () => {
+    it('els perfils bàsics conserven la procedència sense presentar-se com a revisió detallada', () => {
         const basic = A.profiles.filter(p => p.evidenceLevel === 'category-only');
         expect(basic.length).toBeGreaterThan(0);
         expect(basic.every(p => p.confidence <= .3 && p.reviewedAt === null)).toBe(true);
@@ -78,3 +78,4 @@ describe('cobertura completa d’afinitats', () => {
         expect(preserveGenres({genres:['Pop']},['unknown'],allowed)).toEqual(['Pop']);
     });
 });
+

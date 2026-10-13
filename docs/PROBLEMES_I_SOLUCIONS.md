@@ -1630,3 +1630,16 @@ recerca com a incompatibilitat. Club Social Carme conserva el tractament de prog
 **Verificació:** cobertura de cada canal, elegibilitat de les cançons de Knockouts,
 restriccions de canals compartits, relacions simètriques, protecció de gèneres,
 comparació amb la base de proves/lint i simulacions de totes les categories.
+
+
+
+## 2026-10-13 — Igualtat entre artistes amb una única subcategoria
+
+Les múltiples facets i el sorteig sobre pistes podien afavorir artistes amb més metadades o més repertori.
+El catàleg d’afinitats ara té una categoria principal i una sola subcategoria per artista. El motor tria
+primer l’artista i després la cançó, conserva tots els artistes al conjunt de treball i només retalla
+pistes dins de cada grup (amb reintent complet si no pot omplir). Un mínim de cinc artistes elegibles
+activa el nucli; els més petits incorporen subcategories veïnes. Els vincles de músics i municipis només
+reforcen compatibilitats sonores. Les fonts i les classificacions pendents continuen visibles a l’informe.
+No es canvia el feed, el repertori, la vigilància d’idiomes ni la quota de YouTube. Vegeu
+`docs/MUSICA_SELECCIO.md` i `tests/music-subcategories.test.js`.

@@ -8,6 +8,9 @@ on:
       - 'data/music-channel-video-allowlist.json'
       - 'js/channels-ca.json'
       - 'scripts/generar_afinitats_musica.js'
+      - 'scripts/lib/subcategories_musicals.js'
+      - 'data/music-subcategories.json'
+      - 'data/origens-artistes.json'
   workflow_dispatch:
 permissions:
   contents: write
@@ -29,14 +32,15 @@ jobs:
           git reset --hard origin/main
       - run: npm ci
       - run: node scripts/generar_afinitats_musica.js --repair-catalog
-      - run: npx vitest run tests/music-affinities-catalog.test.js
+      - run: npx vitest run tests/music-affinities-catalog.test.js tests/music-subcategories.test.js
       - run: npm run sw:version
       - name: Desa perfils actualitzats
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
-          git add data/music-affinity-coverage.json data/artistes-musica.json js/channels-ca.json data/feed.json data/history-pool.json data/historial-musical.json data/archive/channels js/features/music-affinity-catalog.js sw.js
+          git add data/music-subcategory-coverage.json data/music-affinity-coverage.json data/artistes-musica.json js/channels-ca.json data/feed.json data/history-pool.json data/historial-musical.json data/archive/channels js/features/music-affinity-catalog.js sw.js
           if ! git diff --cached --quiet; then
             git commit -m 'data: actualitza cobertura d’afinitats'
             git push origin HEAD:main
           fi
+
