@@ -255,3 +255,35 @@ Les proves cobreixen les transicions, els canals compartits, la neutralitat,
 la varietat i els modes exclosos. La validació completa compara les errades i
 el lint amb la base exacta i comprova cues idèntiques per a Ska i Heavy.
 Informe: `docs/revisions/2026-10-13-afinitats-punk.json`.
+
+## Cobertura de tot el catàleg i relacions documentades (2026-10-13)
+
+`music-affinity-catalog.js`, generat abans de carregar el motor, cobreix cada artista
+musical indexat. Els 87 perfils detallats prevalen sobre el perfil general; Coça i
+Vàlius tenen ara perfil bàsic Punk. La resta es basa en revisió documental (0,7),
+gèneres originals del catàleg (0,55) o només categories (0,3). Aquest últim nivell
+és cobertura bàsica, no una recerca de subestils ni una anàlisi acústica. El camp
+`evidenceLevel` permet auditar aquesta diferència. No s'inventen vincles personals.
+
+Les ràdios de qualsevol categoria única poden usar l'ajust acotat ±0,06. Les
+mescles i altres modes mantenen la selecció anterior. Els vídeos desconeguts i
+les versions sense revisió pròpia continuen neutrals i elegibles.
+
+`data/music-affinity-review.json` documenta la recuperació de 53 classificacions
+perdudes i tres vincles de membres compartits entre Knockouts i Dr. Calypso,
+Skatalà i Frontpilsen. Cada vincle afegeix com a màxim 0,08 a la similitud editorial
+(màxim 1), sempre després del filtre de categoria. No fa entrar Frontpilsen a Ska.
+Les afinitats ajuden a ordenar; tenir perfil no garanteix aparèixer en cada ràdio.
+
+El generador valida cobertura de tots els canals publicats, encara que el camp
+`active` d'una fitxa antiga estigui desactualitzat. Club Social Carme és un programa
+amb diversos artistes: no es tracta com un grup ni s'inventa un estil comú.
+Els canals amb selecció restringida només hereten perfils als vídeos identificats;
+si la regla antiga és per títol, es congelen els IDs ja publicats al feed.
+
+`preservar_generes.js` evita esborrar gèneres quan la font externa retorna buit.
+Les decisions revisades porten `genre:manual`. El workflow de cobertura regenera
+els perfils en canviar la base o les seleccions i falla davant un artista sense
+gènere. Les altes fetes per altres workflows amb GITHUB_TOKEN han d'executar també
+`node scripts/generar_afinitats_musica.js --repair-catalog` abans de publicar, ja
+que els commits del bot no disparen un segon workflow de GitHub Actions.

@@ -2,6 +2,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const { preserveGenres } = require('./lib/preservar_generes');
 
 const DB_FILE = path.join(process.cwd(), 'data', 'artistes-musica.json');
 const TAXONOMY_FILE = path.join(process.cwd(), 'data', 'music-genres.json');
@@ -469,9 +470,7 @@ async function main() {
                 ? (mapped.unmappedRaw.length ? 'parcial' : 'classificat')
                 : 'per-revisar';
 
-        if (!(artist.sources || []).includes('genre:manual')) {
-            artist.genres = mapped.labels.filter((label) => allowedLabels.has(label));
-        }
+        artist.genres = preserveGenres(artist, mapped.labels, allowedLabels);
 
         if (raw.length) rawArtists += 1;
         if (artist.genres.length) mappedArtists += 1;
@@ -508,3 +507,4 @@ if (require.main === module) {
         process.exit(1);
     });
 }
+

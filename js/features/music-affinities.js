@@ -1,5 +1,5 @@
 // Perfils editorials documentats: no són mesures d'àudio ni etiquetes de totes les cançons.
-// Font única de dades del pilot; nous estils requereixen revisió i activació explícita.
+// Els perfils detallats completen el catàleg generat i les relacions documentades.
 (function (window) {
     const app = window.SegueixApp;
     if (!app) return;
@@ -878,12 +878,44 @@
             categories: ['Punk'],
         },
     ];
-    const profiles = [
+    const detailedProfiles = [
         ...skaProfiles.map(profile => ({ ...profile, categories: [CATEGORY] })),
         ...heavyProfiles,
         ...punkProfiles,
     ];
-    const enabledCategories = [CATEGORY, 'Heavy / Metal', 'Punk'];
+    const catalog = window.SegueixMusicAffinityCatalog;
+    const detailedByChannel = new Map();
+    detailedProfiles.forEach(profile => profile.channelIds.forEach(id => detailedByChannel.set(id, profile)));
+    const profiles = catalog
+        ? catalog.profiles.map(base => {
+              const detailed = base.channelIds.map(id => detailedByChannel.get(id)).find(Boolean);
+              if (!detailed?.facets.length) return base;
+              return {
+                  ...base,
+                  facets: detailed.facets,
+                  confidence: detailed.confidence,
+                  sources: detailed.sources,
+                  reviewedAt: detailed.reviewedAt,
+                  evidenceLevel: 'detailed',
+                  ...(detailed.allowedVideoIdsByChannel
+                      ? { allowedVideoIdsByChannel: detailed.allowedVideoIdsByChannel }
+                      : {}),
+              };
+          })
+        : detailedProfiles;
+    const enabledCategories = catalog
+        ? [...new Set(profiles.flatMap(profile => profile.categories))]
+        : [CATEGORY, 'Heavy / Metal', 'Punk'];
+    const relations = catalog?.relations || [];
+    // Compartir músics és una relació documental, no una mesura del so.
+    function relationOf(left, right) {
+        if (!left || !right || left.artist === right.artist) return null;
+        return (
+            relations.find(
+                relation => relation.artists.includes(left.artist) && relation.artists.includes(right.artist)
+            ) || null
+        );
+    }
     const profilesFor = category => profiles.filter(profile => profile.categories.includes(category));
     const byChannel = new Map();
     profiles.forEach(profile => profile.channelIds.forEach(id => byChannel.set(id, profile)));
@@ -905,8 +937,9 @@
         const channelId = video.channelId || video.snippet?.channelId;
         const profile = byChannel.get(channelId);
         // Canals compartits o homònims: només els vídeos identificats en la revisió del catàleg.
-        if (profile?.allowedVideoIdsByChannel && !profile.allowedVideoIdsByChannel[channelId]?.includes(video.id))
-            {return null;}
+        if (profile?.allowedVideoIdsByChannel && !profile.allowedVideoIdsByChannel[channelId]?.includes(video.id)) {
+            return null;
+        }
         return profile || null;
     }
 
@@ -917,7 +950,9 @@
         const union = new Set([...left.facets, ...right.facets]);
         const common = left.facets.filter(facet => right.facets.includes(facet)).length;
         const confidence = Math.min(left.confidence, right.confidence);
-        return 0.5 + ((union.size ? common / union.size : 0.5) - 0.5) * confidence;
+        const style = 0.5 + ((union.size ? common / union.size : 0.5) - 0.5) * confidence;
+        const relation = relationOf(left, right);
+        return Math.min(1, style + (relation ? 0.08 * relation.confidence : 0));
     }
 
     function isActive(category, policy = 'general', mix = null) {
@@ -938,6 +973,8 @@
         profilesFor,
         enabledCategories,
         profileOf,
+        relations,
+        relationOf,
         similarity,
         isActive,
         transition,

@@ -1612,3 +1612,21 @@ Proves de migració, idempotència, homònims, Topic, exclusions i revisions par
 - **Problema:** des del mapa de Descobreix, en obrir un artista i fer-ne una ràdio, «enrere» no tornava al mapa: el botó de la fitxa (`#channelBackBtn`) porta sempre a «Artistes i grups» (`showFollow()`), i la fitxa no deixa cap entrada a l'historial, de manera que l'enrere del sistema des de la fitxa sortia de Descobreix.
 - **Solució:** `artist-map.js` (`rememberReturn({ push: true })`) desa on era el mapa (`SegueixApp.state.mapReturn`, desplaçament respecte al contenidor) i afegeix una entrada `{ category: 'Descobreix', mapReturn: true }`. El popstate de categoria ja torna a Descobreix; `syncArtistMap()` crida `restoreReturn()`, que fa scroll al mapa (torna a provar uns quants cops perquè la pàgina encara s'està pintant). `#channelBackBtn` fa `history.back()` quan l'entrada és del mapa. Si es va a una altra vista, `mapReturn` s'oblida (i caduca als 30 min).
 - **Verificació:** `node tests/browser/verificar-mapa.js` («enrere des de la fitxa torna al mapa»).
+
+
+## 2026-10-13 — Knockouts no entrava a cap ràdio Ska i altres artistes sense gènere
+
+**Causa comprovada:** les 10 cançons i el canal de Knockouts tenien `categories: []`;
+la fitxa conservava «Ska / Reggae» només a les notes. `getCandidates` les descartava
+abans del càlcul d'afinitats. L'enriquidor substituïa els gèneres per una llista buida
+quan no trobava etiquetes externes i no existia el marcador `genre:manual`.
+
+**Correcció:** restauració documental de 53 artistes, preservació de gèneres previs
+quan no hi ha dades noves, perfils de cobertura per a tots els artistes musicals
+publicats i vincles de membres compartits Knockouts–Dr. Calypso/Skatalà/Frontpilsen.
+El catàleg generat distingeix perfils detallats i bàsics; no interpreta absència de
+recerca com a incompatibilitat. Club Social Carme conserva el tractament de programa.
+
+**Verificació:** cobertura de cada canal, elegibilitat de les cançons de Knockouts,
+restriccions de canals compartits, relacions simètriques, protecció de gèneres,
+comparació amb la base de proves/lint i simulacions de totes les categories.

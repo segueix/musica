@@ -1,0 +1,38 @@
+name: Mantenir cobertura d'afinitats
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'data/artistes-musica.json'
+      - 'data/music-affinity-review.json'
+      - 'data/music-channel-video-allowlist.json'
+      - 'js/channels-ca.json'
+      - 'scripts/generar_afinitats_musica.js'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: music-data-writer
+  cancel-in-progress: false
+jobs:
+  cobertura:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: node scripts/generar_afinitats_musica.js --repair-catalog
+      - run: npx vitest run tests/music-affinities-catalog.test.js
+      - run: npm run sw:version
+      - name: Desa perfils actualitzats
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add data/music-affinity-coverage.json data/artistes-musica.json js/channels-ca.json data/feed.json data/history-pool.json data/historial-musical.json data/archive/channels js/features/music-affinity-catalog.js sw.js
+          if ! git diff --cached --quiet; then
+            git commit -m 'data: actualitza cobertura d’afinitats'
+            git push origin HEAD:main
+          fi

@@ -1,0 +1,917 @@
+{
+  "schemaVersion": 1,
+  "artists": [
+    {
+      "artist": "Acros",
+      "genres": [
+        "Rap / Hip-hop",
+        "Urbana"
+      ],
+      "facets": [
+        "rap"
+      ],
+      "sources": [
+        "https://www.radiorahim.cat/artista/acros/"
+      ],
+      "reviewedAt": "2026-10-13",
+      "confidence": 0.7,
+      "method": "source-review"
+    },
+    {
+      "artist": "Adala",
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "facets": [
+        "reggae"
+      ],
+      "sources": [
+        "https://adala.cat/borncelona-2/"
+      ],
+      "reviewedAt": "2026-10-13",
+      "confidence": 0.7,
+      "method": "source-review"
+    },
+    {
+      "artist": "Alosa",
+      "genres": [
+        "Folk i arrel"
+      ],
+      "facets": [
+        "folk"
+      ],
+      "sources": [
+        "https://www.youtube.com/channel/UCmSxzoNUcVfwLgrwt97QASA",
+        "https://www.enderrock.cat/disc/11297/primer-cant-mati"
+      ],
+      "reviewedAt": "2026-10-13",
+      "confidence": 0.7,
+      "method": "restored-from-documented-catalog"
+    },
+    {
+      "artist": "Anna Ferrer",
+      "genres": [
+        "Folk i arrel"
+      ],
+      "facets": [
+        "folk"
+      ],
+      "sources": [
+        "https://www.youtube.com/channel/UCsoJ33SEemrtWrM5hTqPKYQ",
+        "https://www.enderrock.cat/noticies/etiqueta/Anna%2BFerrer"
+      ],
+      "reviewedAt": "2026-10-13",
+      "confidence": 0.7,
+      "method": "restored-from-documented-catalog"
+    },
+    {
+      "artist": "Ceaxe",
+      "genres": [
+        "Pop",
+        "Urbana"
+      ],
+      "facets": [
+        "pop",
+        "urban"
+      ],
+      "sources": [
+        "https://www.delirics.cat/es/ceaxe"
+      ],
+      "reviewedAt": "2026-10-13",
+      "confidence": 0.7,
+      "method": "source-review"
+    },
+    {
+      "artist": "Celobert",
+      "genres": [
+        "Pop",
+        "Indie / Alternativa"
+      ],
+      "facets": [
+        "indie-pop"
+      ],
+      "sources": [
+        "https://www.casadelamusica.cat/index.php/fitxes-artistes/3580-celobert"
+      ],
+      "reviewedAt": "2026-10-13",
+      "confidence": 0.7,
+      "method": "source-review"
+    },
+    {
+      "artist": "Cloe Riembau",
+      "genres": [
+        "Pop",
+        "Indie / Alternativa"
+      ],
+      "facets": [
+        "indie-pop"
+      ],
+      "sources": [
+        "https://www.mmvv.cat/ca/artista/cloe-riembau/1527"
+      ],
+      "reviewedAt": "2026-10-13",
+      "confidence": 0.7,
+      "method": "source-review"
+    },
+    {
+      "artist": "Corrandes són corrandes",
+      "genres": [
+        "Folk i arrel"
+      ],
+      "facets": [
+        "traditional"
+      ],
+      "sources": [
+        "https://www.enderrock.cat/sons/grupsons2020/24/corrandes/son/corrandes",
+        "https://www.youtube.com/channel/UCYzpmEEhGtncFPgZSocnrtQ",
+        "https://www.youtube.com/channel/UCTsSJXhTo6HpqmtSh8-p31A"
+      ],
+      "reviewedAt": "2026-10-13",
+      "confidence": 0.7,
+      "method": "restored-from-documented-catalog"
+    },
+    {
+      "artist": "Cristina Monllau",
+      "genres": [
+        "Pop",
+        "Indie / Alternativa"
+      ],
+      "facets": [
+        "indie-pop"
+      ],
+      "sources": [
+        "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026"
+      ],
+      "reviewedAt": "2026-10-13",
+      "confidence": 0.7,
+      "method": "restored-from-documented-catalog"
+    },
+    {
+      "artist": "Dan Peralbo & El Comboi",
+      "genres": [
+        "Rock"
+      ],
+      "facets": [
+        "rock"
+      ],
+      "sources": [
+        "https://www.cruillabarcelona.cat/artists/dan-peralbo/"
+      ],
+      "reviewedAt": "2026-10-13",
+      "confidence": 0.7,
+      "method": "source-review"
+    },
+    {
+      "artist": "El Nota",
+      "genres": [
+        "Rap / Hip-hop",
+        "Urbana"
+      ],
+      "facets": [
+        "rap"
+      ],
+      "sources": [
+        "https://elnota.bandcamp.com/album/anem-a-fer-ho-f-cil"
+      ],
+      "reviewedAt": "2026-10-13",
+      "confidence": 0.7,
+      "method": "source-review"
+    },
+    {
+      "artist": "Elo",
+      "genres": [
+        "Pop",
+        "Urbana"
+      ],
+      "facets": [
+        "pop",
+        "urban"
+      ],
+      "sources": [
+        "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026"
+      ],
+      "reviewedAt": "2026-10-13",
+      "confidence": 0.7,
+      "method": "restored-from-documented-catalog"
+    },
+    {
+      "artist": "En Rick",
+      "genres": [
+        "Pop",
+        "Electrònica"
+      ],
+      "facets": [
+        "electropop"
+      ],
+      "sources": [
+        "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026"
+      ],
+      "reviewedAt": "2026-10-13",
+      "confidence": 0.7,
+      "method": "restored-from-documented-catalog"
+    },
+    {
+      "artist": "GUINEU",
+      "genres": [
+        "Pop",
+        "Indie / Alternativa"
+      ],
+      "facets": [
+        "indie-pop"
+      ],
+      "sources": [
+        "https://icec.gencat.cat/ca/actualitat/noticies/detall/Noticia_PrimaveraPro25"
+      ],
+      "reviewedAt": "2026-10-13",
+      "confidence": 0.7,
+      "method": "restored-from-documented-catalog"
+    },
+    {
+      "artist": "Herba Negra",
+      "genres": [
+        "Rap / Hip-hop",
+        "Urbana"
+      ],
+      "facets": [
+        "rap",
+        "soul",
+        "funk"
+      ],
+      "sources": [
+        "https://www.apuntmedia.es/programes/lestudi/programes/28-08-2018-ona-nua-herba-negra_134_1300187.html"
+      ],
+      "reviewedAt": "2026-10-13",
+      "confidence": 0.7,
+      "method": "source-review"
+    },
+    {
+      "artist": "Hey Zuri",
+      "genres": [
+        "Pop",
+        "Rock"
+      ],
+      "facets": [
+        "pop",
+        "rock"
+      ],
+      "sources": [
+        "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026"
+      ],
+      "reviewedAt": "2026-10-13",
+      "confidence": 0.7,
+      "method": "restored-from-documented-catalog"
+    },
+    {
+      "artist": "Ja t'ho diré",
+      "genres": [
+        "Pop",
+        "Rock"
+      ],
+      "facets": [
+        "pop",
+        "rock"
+      ],
+      "sources": [
+        "https://www.enciclopedia.cat/gran-enciclopedia-catalana/ja-tho-dire"
+      ],
+      "reviewedAt": "2026-10-13",
+      "confidence": 0.7,
+      "method": "source-review"
+    },
+    {
+      "artist": "knocKouts",
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "facets": [
+        "ska",
+        "ska-revival"
+      ],
+      "sources": [
+        "https://www.liquidatormusic.com/tienda/es/ska-actual-lp/11473-knockouts-party.html"
+      ],
+      "reviewedAt": "2026-10-13",
+      "confidence": 0.7,
+      "method": "source-review"
+    },
+    {
+      "artist": "La Mousse",
+      "genres": [
+        "Pop",
+        "Electrònica"
+      ],
+      "facets": [
+        "electropop"
+      ],
+      "sources": [
+        "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026"
+      ],
+      "reviewedAt": "2026-10-13",
+      "confidence": 0.7,
+      "method": "restored-from-documented-catalog"
+    },
+    {
+      "artist": "Mai Halis",
+      "genres": [
+        "Pop",
+        "Rock"
+      ],
+      "facets": [
+        "pop",
+        "rock"
+      ],
+      "sources": [
+        "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026"
+      ],
+      "reviewedAt": "2026-10-13",
+      "confidence": 0.7,
+      "method": "restored-from-documented-catalog"
+    },
+    {
+      "artist": "Malson Atmosfèric",
+      "genres": [
+        "Rap / Hip-hop",
+        "Urbana"
+      ],
+      "facets": [
+        "rap",
+        "trap"
+      ],
+      "sources": [
+        "https://malsonatmosferic.bandcamp.com/album/carn-de-can-demos"
+      ],
+      "reviewedAt": "2026-10-13",
+      "confidence": 0.7,
+      "method": "source-review"
+    },
+    {
+      "artist": "Marala",
+      "genres": [
+        "Folk i arrel"
+      ],
+      "facets": [
+        "folk",
+        "traditional"
+      ],
+      "sources": [
+        "https://propaganda-pel-fet.cat/index.php/cat/artistes/marala"
+      ],
+      "reviewedAt": "2026-10-13",
+      "confidence": 0.7,
+      "method": "restored-from-documented-catalog"
+    },
+    {
+      "artist": "miquel",
+      "genres": [
+        "Pop"
+      ],
+      "facets": [
+        "pop"
+      ],
+      "sources": [
+        "https://www.3cat.cat/3cat/catorze-veus-per-entendre-el-futur-del-pop-catala/audio/1244294/"
+      ],
+      "reviewedAt": "2026-10-13",
+      "confidence": 0.7,
+      "method": "restored-from-documented-catalog"
+    },
+    {
+      "artist": "N'Gai N'Gai",
+      "genres": [
+        "Pop",
+        "Rock"
+      ],
+      "facets": [
+        "pop",
+        "rock"
+      ],
+      "sources": [
+        "https://www.enderrock.cat/disc/7879/roll"
+      ],
+      "reviewedAt": "2026-10-13",
+      "confidence": 0.7,
+      "method": "source-review"
+    },
+    {
+      "artist": "Ocults",
+      "genres": [
+        "Rock"
+      ],
+      "facets": [
+        "rock"
+      ],
+      "sources": [
+        "https://www.centpercent.cat/moviment-rock-catala-ona-que-passa-damunt/"
+      ],
+      "reviewedAt": "2026-10-13",
+      "confidence": 0.7,
+      "method": "source-review"
+    },
+    {
+      "artist": "okdw",
+      "genres": [
+        "Pop",
+        "Funk / Soul / R&B"
+      ],
+      "facets": [
+        "pop",
+        "soul",
+        "r-and-b"
+      ],
+      "sources": [
+        "https://icec.gencat.cat/ca/actualitat/noticies/detall/Noticia_PrimaveraPro25"
+      ],
+      "reviewedAt": "2026-10-13",
+      "confidence": 0.7,
+      "method": "restored-from-documented-catalog"
+    },
+    {
+      "artist": "Paula Montalbán",
+      "genres": [
+        "Pop",
+        "Indie / Alternativa"
+      ],
+      "facets": [
+        "alternative-pop"
+      ],
+      "sources": [
+        "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026"
+      ],
+      "reviewedAt": "2026-10-13",
+      "confidence": 0.7,
+      "method": "restored-from-documented-catalog"
+    },
+    {
+      "artist": "Poor Tràmit",
+      "genres": [
+        "Rap / Hip-hop",
+        "Urbana"
+      ],
+      "facets": [
+        "rap"
+      ],
+      "sources": [
+        "https://www.radiorahim.cat/artista/poor-tramit/"
+      ],
+      "reviewedAt": "2026-10-13",
+      "confidence": 0.7,
+      "method": "source-review"
+    },
+    {
+      "artist": "Pupil·les",
+      "genres": [
+        "Rap / Hip-hop",
+        "Urbana"
+      ],
+      "facets": [
+        "rap"
+      ],
+      "sources": [
+        "https://www.enderrock.cat/noticia/15644/pupilles-tenir-micro-pujar-escenari-guanyar-espai-poder-dona-se-negat"
+      ],
+      "reviewedAt": "2026-10-13",
+      "confidence": 0.7,
+      "method": "source-review"
+    },
+    {
+      "artist": "Quico el Célio, el Noi i el Mut de Ferreries",
+      "genres": [
+        "Folk i arrel"
+      ],
+      "facets": [
+        "traditional"
+      ],
+      "sources": [
+        "https://www.quicoelcelio.com/",
+        "https://www.youtube.com/channel/UCv_7jwmDsQHYpxisi82fQng",
+        "https://www.youtube.com/channel/UCYcAA6W7ef4ZOWat8JjaARQ"
+      ],
+      "reviewedAt": "2026-10-13",
+      "confidence": 0.7,
+      "method": "restored-from-documented-catalog"
+    },
+    {
+      "artist": "Rapsodes",
+      "genres": [
+        "Rap / Hip-hop",
+        "Urbana"
+      ],
+      "facets": [
+        "rap"
+      ],
+      "sources": [
+        "https://www.enderrock.cat/noticia/10613/herba-negra-nova-onada-rap-valencia"
+      ],
+      "reviewedAt": "2026-10-13",
+      "confidence": 0.7,
+      "method": "source-review"
+    },
+    {
+      "artist": "Reïna",
+      "genres": [
+        "Pop"
+      ],
+      "facets": [
+        "pop"
+      ],
+      "sources": [
+        "https://www.3cat.cat/3cat/catorze-veus-per-entendre-el-futur-del-pop-catala/audio/1244294/"
+      ],
+      "reviewedAt": "2026-10-13",
+      "confidence": 0.7,
+      "method": "restored-from-documented-catalog"
+    },
+    {
+      "artist": "RIU",
+      "genres": [
+        "Folk i arrel"
+      ],
+      "facets": [
+        "folk",
+        "traditional"
+      ],
+      "sources": [
+        "https://riumusica.bandcamp.com/album/riu",
+        "https://www.youtube.com/channel/UC5Fb0Xo8Xx6gVrFPoVsZluw"
+      ],
+      "reviewedAt": "2026-10-13",
+      "confidence": 0.7,
+      "method": "restored-from-documented-catalog"
+    },
+    {
+      "artist": "Roser Dresaire",
+      "genres": [
+        "Pop",
+        "Cançó d'autor"
+      ],
+      "facets": [
+        "pop",
+        "singer-songwriter"
+      ],
+      "sources": [
+        "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026"
+      ],
+      "reviewedAt": "2026-10-13",
+      "confidence": 0.7,
+      "method": "restored-from-documented-catalog"
+    },
+    {
+      "artist": "Sara Roy",
+      "genres": [
+        "Pop"
+      ],
+      "facets": [
+        "pop"
+      ],
+      "sources": [
+        "https://www.enderrock.cat/noticia/30487/premis-primera-fila-2025-premien-vintena-artistes-catalans"
+      ],
+      "reviewedAt": "2026-10-13",
+      "confidence": 0.7,
+      "method": "restored-from-documented-catalog"
+    },
+    {
+      "artist": "Scotty DK",
+      "genres": [
+        "Urbana"
+      ],
+      "facets": [
+        "urban"
+      ],
+      "sources": [
+        "https://primerafila.cat/actualitat/novetats/2025/07/markos-i-scotty-dk-sacsegen-lestiu-amb-ximixanga-un-merengue-electronic/"
+      ],
+      "reviewedAt": "2026-10-13",
+      "confidence": 0.7,
+      "method": "source-review"
+    },
+    {
+      "artist": "Siderland",
+      "genres": [
+        "Pop"
+      ],
+      "facets": [
+        "pop"
+      ],
+      "sources": [
+        "https://www.3cat.cat/3cat/17072026/video/6415833/"
+      ],
+      "reviewedAt": "2026-10-13",
+      "confidence": 0.7,
+      "method": "restored-from-documented-catalog"
+    },
+    {
+      "artist": "Sodi",
+      "genres": [
+        "Pop",
+        "Rock",
+        "Indie / Alternativa"
+      ],
+      "facets": [
+        "pop",
+        "rock",
+        "indie-rock"
+      ],
+      "sources": [
+        "https://www.fim.cat/artistes/sodi/"
+      ],
+      "reviewedAt": "2026-10-13",
+      "confidence": 0.7,
+      "method": "source-review"
+    },
+    {
+      "artist": "Solk",
+      "genres": [
+        "Folk i arrel"
+      ],
+      "facets": [
+        "folk",
+        "traditional"
+      ],
+      "sources": [
+        "https://elcom.cat/artistes/solk",
+        "https://linktr.ee/solkmusicaivers",
+        "https://www.kasbamusic.com/en/2023/08/divendres-es-publica-absencia-el-primer-single-del-nou-disc-de-solk/"
+      ],
+      "reviewedAt": "2026-10-13",
+      "confidence": 0.7,
+      "method": "restored-from-documented-catalog"
+    },
+    {
+      "artist": "Still Ill",
+      "genres": [
+        "Rap / Hip-hop",
+        "Urbana"
+      ],
+      "facets": [
+        "rap"
+      ],
+      "sources": [
+        "https://guspira.net/ca/still-ill-presenta-nou-disc-en-catala-allo-que-mai-no-mor/"
+      ],
+      "reviewedAt": "2026-10-13",
+      "confidence": 0.7,
+      "method": "source-review"
+    },
+    {
+      "artist": "Suu",
+      "genres": [
+        "Pop"
+      ],
+      "facets": [
+        "pop"
+      ],
+      "sources": [
+        "https://halleyrecords.com/artist/suu/"
+      ],
+      "reviewedAt": "2026-10-13",
+      "confidence": 0.7,
+      "method": "source-review"
+    },
+    {
+      "artist": "Svetlana",
+      "genres": [
+        "Pop",
+        "Electrònica",
+        "Urbana"
+      ],
+      "facets": [
+        "electropop",
+        "house",
+        "reggaeton"
+      ],
+      "sources": [
+        "https://svetlana.cat/"
+      ],
+      "reviewedAt": "2026-10-13",
+      "confidence": 0.7,
+      "method": "source-review"
+    },
+    {
+      "artist": "Tancat per defunció",
+      "genres": [
+        "Rock"
+      ],
+      "facets": [
+        "rock"
+      ],
+      "sources": [
+        "https://www.enderrock.cat/noticia/21177/cancons-cremen-tancat-defuncio"
+      ],
+      "reviewedAt": "2026-10-13",
+      "confidence": 0.7,
+      "method": "source-review"
+    },
+    {
+      "artist": "Tesa",
+      "genres": [
+        "Rap / Hip-hop",
+        "Urbana",
+        "Folk i arrel"
+      ],
+      "facets": [
+        "rap",
+        "traditional",
+        "electronic"
+      ],
+      "sources": [
+        "https://www.discmedi.com/es/hip-hop-rap/hip-hop/rap_darrel"
+      ],
+      "reviewedAt": "2026-10-13",
+      "confidence": 0.7,
+      "method": "source-review"
+    },
+    {
+      "artist": "Tornaveus",
+      "genres": [
+        "Folk i arrel",
+        "Coral / Vocal"
+      ],
+      "facets": [
+        "traditional",
+        "vocal"
+      ],
+      "sources": [
+        "https://tornaveuspolifonies.wordpress.com/",
+        "https://www.youtube.com/channel/UC8vbtHPcQvQEuQi2wcwK6aQ"
+      ],
+      "reviewedAt": "2026-10-13",
+      "confidence": 0.7,
+      "method": "restored-from-documented-catalog"
+    },
+    {
+      "artist": "Trèvol",
+      "genres": [
+        "Folk i arrel"
+      ],
+      "facets": [
+        "folk",
+        "traditional"
+      ],
+      "sources": [
+        "https://www.enderrock.cat/sons/grupsons2023/22/trevol",
+        "https://www.youtube.com/channel/UCz3aiLj85sLBimSrPwNcQcQ",
+        "https://www.youtube.com/channel/UCF6nxIBqp7vuVu51PGC7x5w"
+      ],
+      "reviewedAt": "2026-10-13",
+      "confidence": 0.7,
+      "method": "restored-from-documented-catalog"
+    },
+    {
+      "artist": "Umpah-Pah",
+      "genres": [
+        "Pop",
+        "Rock"
+      ],
+      "facets": [
+        "pop",
+        "rock"
+      ],
+      "sources": [
+        "https://bibliotecavirtual.diba.cat/ca/musica/adria-punti"
+      ],
+      "reviewedAt": "2026-10-13",
+      "confidence": 0.7,
+      "method": "source-review"
+    },
+    {
+      "artist": "Urbàlia Rurana",
+      "genres": [
+        "Folk i arrel"
+      ],
+      "facets": [
+        "folk",
+        "traditional"
+      ],
+      "sources": [
+        "https://www.monfolk.com/artistes/urbalia-rurana/",
+        "https://www.youtube.com/channel/UCSsJFD5CFYZ3fe24qhtsejA",
+        "https://www.youtube.com/channel/UCMIVDQMYttFV6h1aRIeQN-w"
+      ],
+      "reviewedAt": "2026-10-13",
+      "confidence": 0.7,
+      "method": "restored-from-documented-catalog"
+    },
+    {
+      "artist": "Valtònyc",
+      "genres": [
+        "Rap / Hip-hop",
+        "Urbana"
+      ],
+      "facets": [
+        "rap"
+      ],
+      "sources": [
+        "https://www.radiorahim.cat/artista/valtonyc/"
+      ],
+      "reviewedAt": "2026-10-13",
+      "confidence": 0.7,
+      "method": "source-review"
+    },
+    {
+      "artist": "Vinnie Kairos",
+      "genres": [
+        "Rap / Hip-hop",
+        "Urbana"
+      ],
+      "facets": [
+        "rap"
+      ],
+      "sources": [
+        "https://www.radiorahim.cat/artista/vinnie-kairos/"
+      ],
+      "reviewedAt": "2026-10-13",
+      "confidence": 0.7,
+      "method": "source-review"
+    },
+    {
+      "artist": "Vittara",
+      "genres": [
+        "Pop",
+        "Indie / Alternativa"
+      ],
+      "facets": [
+        "indie-pop"
+      ],
+      "sources": [
+        "https://www.enderrock.cat/noticia/31101/vine-enderrock-sona-maig-amb-quinto-vittara-sodi-ginesta"
+      ],
+      "reviewedAt": "2026-10-13",
+      "confidence": 0.7,
+      "method": "restored-from-documented-catalog"
+    },
+    {
+      "artist": "Voltor",
+      "genres": [
+        "Punk",
+        "Rock",
+        "Ska / Reggae"
+      ],
+      "facets": [
+        "hardcore",
+        "ska"
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Voltor"
+      ],
+      "reviewedAt": "2026-10-13",
+      "confidence": 0.7,
+      "method": "source-review"
+    },
+    {
+      "artist": "Whiskyn's",
+      "genres": [
+        "Pop",
+        "Rock"
+      ],
+      "facets": [
+        "pop",
+        "rock"
+      ],
+      "sources": [
+        "https://25rockcatala.wordpress.com/2016/05/01/whiskyns/"
+      ],
+      "reviewedAt": "2026-10-13",
+      "confidence": 0.7,
+      "method": "source-review"
+    }
+  ],
+  "relations": [
+    {
+      "artists": [
+        "knocKouts",
+        "Dr. Calypso"
+      ],
+      "type": "shared-members",
+      "confidence": 1,
+      "sources": [
+        "https://www.liquidatormusic.com/tienda/es/ska-actual-lp/11473-knockouts-party.html"
+      ],
+      "reviewedAt": "2026-10-13"
+    },
+    {
+      "artists": [
+        "knocKouts",
+        "Skatalà"
+      ],
+      "type": "shared-members",
+      "confidence": 1,
+      "sources": [
+        "https://www.liquidatormusic.com/tienda/es/ska-actual-lp/11473-knockouts-party.html"
+      ],
+      "reviewedAt": "2026-10-13"
+    },
+    {
+      "artists": [
+        "knocKouts",
+        "Frontpilsen"
+      ],
+      "type": "shared-members",
+      "confidence": 1,
+      "sources": [
+        "https://www.liquidatormusic.com/tienda/es/ska-actual-lp/11473-knockouts-party.html"
+      ],
+      "reviewedAt": "2026-10-13"
+    }
+  ]
+}

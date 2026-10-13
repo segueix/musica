@@ -1,0 +1,37 @@
+name: Validar cobertura completa d'afinitats
+on:
+  push:
+    branches: [fix/cobertura-afinitats]
+    paths:
+      - 'data/music-affinity-review.json'
+      - 'js/features/music-affinities.js'
+      - 'scripts/generar_afinitats_musica.js'
+      - 'scripts/lib/preservar_generes.js'
+      - 'scripts/revisions/validar_cobertura_afinitats.js'
+      - 'tests/music-affinities*.test.js'
+      - '.github/workflows/validar-cobertura-afinitats.yml'
+permissions:
+  contents: write
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: node scripts/generar_afinitats_musica.js --repair-catalog
+      - run: node scripts/revisions/validar_cobertura_afinitats.js 8f74d6e21f8c60a0e37dfc37998193ae7546e4b9
+      - run: npm run sw:version
+      - name: Desa catàleg reparat, perfils i verificació
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add data/music-affinity-coverage.json data/artistes-musica.json js/channels-ca.json data/feed.json data/history-pool.json data/historial-musical.json data/archive/channels js/features/music-affinity-catalog.js docs/revisions/2026-10-13-cobertura-afinitats.json sw.js
+          git commit -m 'fix: restaura gèneres i genera cobertura completa verificada'
+          git push origin HEAD:fix/cobertura-afinitats

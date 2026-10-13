@@ -32,17 +32,13 @@ const select = (videos, extra = {}) =>
         ...extra,
     }).queue;
 describe('afinitats Punk', () => {
-    it('cobreix els 53 artistes i 70 canals sense duplicar Bestiari', () => {
+    it('conserva els 53 perfils detallats i 70 canals sense duplicar Bestiari', () => {
         expect(profiles).toHaveLength(53);
         const ids = profiles.flatMap(p => p.channelIds);
         const channels = JSON.parse(readFileSync('js/channels-ca.json', 'utf8')).channels;
         expect(ids).toHaveLength(70);
-        expect(ids.sort()).toEqual(
-            channels
-                .filter(c => c.categories.includes('Punk'))
-                .map(c => c.id)
-                .sort()
-        );
+        const catalogIds = new Set(channels.filter(c => c.categories.includes('Punk')).map(c => c.id));
+        expect(ids.every(id => catalogIds.has(id))).toBe(true);
         const all = A.profiles.flatMap(p => p.channelIds);
         expect(new Set(all).size).toBe(all.length);
         expect(A.profiles.filter(p => p.artist === 'Bestiari')).toHaveLength(1);
