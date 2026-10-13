@@ -1,0 +1,80 @@
+name: Revisar grup urba 4
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/revisar-urban-grup4.yml']
+  workflow_dispatch:
+concurrency:
+  group: music-data-writer
+  cancel-in-progress: false
+permissions:
+  contents: write
+jobs:
+  descobrir:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '20'
+      - name: Consulta nomes les cinc identitats
+        env:
+          YOUTUBE_API_KEY_SERVER: ${{ secrets.YOUTUBE_API_KEY_SERVER }}
+        run: |
+          node - <<'NODE'
+          const fs=require('node:fs');
+          (async()=>{
+            const key=process.env.YOUTUBE_API_KEY_SERVER;
+            if(!key) throw Error('Falta la clau de YouTube');
+            const norm=x=>String(x||'').normalize('NFD').replace(/\p{Diacritic}/gu,'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();
+            let quota=0;
+            async function api(resource,args){
+              quota+=resource==='search'?100:1;
+              const u=new URL('https://www.googleapis.com/youtube/v3/'+resource);
+              for(const[k,v]of Object.entries({...args,key}))u.searchParams.set(k,String(v));
+              const r=await fetch(u,{signal:AbortSignal.timeout(30000)}),j=await r.json();
+              if(!r.ok)throw Error(resource+': '+(j.error?.message||r.status));return j;
+            }
+            const targets=[{"name":"Lepanto 41","aliases":["Lepanto 41"],"queries":["Lepanto 41 GALÀCTICA","Lepanto 41 Topic"]},{"name":"Colomet","aliases":["Colomet"],"queries":["Colomet Com la Dua Lipa","Colomet Topic"]},{"name":"Malánima","aliases":["Malánima","Malanima"],"queries":["Malánima Boig X Tu","Malánima Topic"]},{"name":"Sacrogermen","aliases":["Sacrogermen"],"queries":["Sacrogermen Al lots Pedra","Sacrogermen Topic"]},{"name":"ThatKid","aliases":["ThatKid","That Kid"],"queries":["ThatKid XXL Gyal","ThatKid català Topic"]}];
+            const base=JSON.parse(fs.readFileSync('data/artistes-musica.json','utf8'));
+            const report={checkedAt:new Date().toISOString(),artists:[]};
+            for(const t of targets){
+              const candidates=new Set(),results=[];
+              if(t.handle){const c=(await api('channels',{part:'snippet,contentDetails',forHandle:t.handle})).items?.[0];if(c)candidates.add(c.id);}
+              for(const q of t.queries){
+                for(const v of (await api('search',{part:'snippet',type:'video',q,maxResults:15})).items||[]){
+                  results.push({id:v.id.videoId,title:v.snippet.title,channelId:v.snippet.channelId,channelTitle:v.snippet.channelTitle});
+                  const n=norm(v.snippet.channelTitle).replace(/ (topic|tema|music|musica|official|oficial|tv)$/,'');
+                  if(t.aliases.map(norm).includes(n))candidates.add(v.snippet.channelId);
+                }
+              }
+              const existing=base.artists.filter(a=>[a.name,a.displayName,...(a.aliases||[])].some(n=>t.aliases.map(norm).includes(norm(n))));
+              for(const a of existing)for(const c of a.youtube?.channels||[])if(/^UC[A-Za-z0-9_-]{22}$/.test(c.id))candidates.add(c.id);
+              if(candidates.size>6)throw Error('Cal desambiguar '+t.name);
+              const channels=candidates.size?(await api('channels',{part:'snippet,contentDetails',id:[...candidates].join(',')})).items||[]:[];
+              const entry={name:t.name,existing,searchResults:results,channels:[]};
+              for(const c of channels){
+                const videos=[];let token;
+                for(let page=0;page<5;page++){
+                  const p=await api('playlistItems',{part:'contentDetails',playlistId:c.contentDetails.relatedPlaylists.uploads,maxResults:50,...(token?{pageToken:token}:{})});
+                  const ids=(p.items||[]).map(v=>v.contentDetails.videoId);
+                  if(ids.length)for(const v of (await api('videos',{part:'snippet,contentDetails,status,statistics',id:ids.join(',')})).items||[])videos.push({id:v.id,title:v.snippet.title,description:v.snippet.description,channelId:v.snippet.channelId,publishedAt:v.snippet.publishedAt,duration:v.contentDetails.duration,embeddable:v.status.embeddable,viewCount:Number(v.statistics.viewCount||0),defaultAudioLanguage:v.snippet.defaultAudioLanguage||null,regionRestriction:v.contentDetails.regionRestriction||null});
+                  token=p.nextPageToken;if(!token)break;
+                }
+                entry.channels.push({id:c.id,name:c.snippet.title,handle:c.snippet.customUrl||null,description:c.snippet.description,avatar:c.snippet.thumbnails?.high?.url||'',complete:!token,videos});
+                console.log(JSON.stringify({artist:t.name,channel:c.snippet.title,id:c.id,videos:videos.length,complete:!token}));
+              }
+              report.artists.push(entry);
+            }
+            const stem='docs/revisions/2026-10-13-urban4';
+            report.estimatedQuotaUnits=quota;
+            fs.writeFileSync(stem+'-descoberta.json',JSON.stringify(report,null,2)+'\n');
+            fs.writeFileSync(stem+'-resum.md',report.artists.map(a=>'# '+a.name+'\n'+a.channels.map(c=>'## '+c.name+' | '+c.id+' | '+c.handle+' | '+c.complete+'\n'+c.videos.map(v=>v.id+' | '+v.title+' | '+v.duration).join('\n')).join('\n')).join('\n\n')+'\n');
+          })().catch(e=>{console.error(e.stack);process.exitCode=1});
+          NODE
+      - name: Desa la descoberta documental
+        run: |
+          bash scripts/publicar_dades.sh 'docs: descoberta del grup urbà 4' docs/revisions/2026-10-13-urban4-descoberta.json docs/revisions/2026-10-13-urban4-resum.md
