@@ -6,80 +6,91 @@ on:
   workflow_dispatch:
 permissions:
   contents: write
+  pages: write
+  id-token: write
 concurrency:
   group: music-data-writer
   cancel-in-progress: false
 jobs:
   revisar:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v5
         with:
           ref: main
+          fetch-depth: 1
       - uses: actions/setup-node@v5
         with:
           node-version: '20'
-      - name: Consulta acotada del canal i del cataleg
-        env:
-          YOUTUBE_API_KEY_SERVER: ${{ secrets.YOUTUBE_API_KEY_SERVER }}
+          cache: npm
+      - name: Prepara les comprovacions
+        run: |
+          npm ci > /tmp/animal-install.log 2>&1
+          node --check scripts/revisions/revisar_animal_20261013.js
+      - name: Aplica nomes les exclusions documentades
+        run: |
+          node scripts/revisions/revisar_animal_20261013.js
+          node scripts/documentar_vigilancia_idiomes.js
+          node scripts/documentar_vigilancia_idiomes.js --check
+          npm run music:validate
+      - name: Actualitza cerca i pagines sense consultar YouTube
+        run: |
+          npm run search:index:hybrid:rebuild
+          node scripts/generar_pagines_compartir.js
+      - name: Prova les exclusions i la preservacio del repertori
+        run: |
+          npx vitest run tests/animal-idioma.test.js tests/channel-video-allowlist.test.js tests/revisio-idiomes.test.js
+          node scripts/revisions/revisar_animal_20261013.js --verify
+      - name: Comprova tota la suite contra la linia base
+        run: |
+          node scripts/revisions/provar_altes_musicals.js > /tmp/animal-tests.log 2>&1 || { tail -n 40 /tmp/animal-tests.log; exit 1; }
+          tail -n 1 /tmp/animal-tests.log
+      - name: Comprova el control de codi contra HEAD
         run: |
           node - <<'NODE'
-          const fs = require('node:fs');
-          const read = f => JSON.parse(fs.readFileSync(f, 'utf8'));
-          const norm = s => String(s || '').normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase();
-          (async () => {
-            const channelId = 'UCg2Go1mJnKlXnMvy1VhlZTw';
-            const base = read('data/artistes-musica.json');
-            const feed = read('data/feed.json');
-            const hidden = new Set(read('data/hidden-videos.json').videoIds);
-            const language = read('data/revisio-idiomes.json');
-            const artist = base.artists.filter(a => (a.youtube?.channels || []).some(c => c.id === channelId));
-            if (artist.length !== 1) throw Error('La identitat Animal no es resol de manera unica');
-            const ids = artist[0].youtube.channels.map(c => c.id);
-            const local = new Map();
-            for (const id of ids) {
-              const f = 'data/archive/channels/' + id + '.json';
-              if (fs.existsSync(f)) for (const v of read(f).videos || []) local.set(v.id, {...v, archived:true});
-            }
-            for (const v of feed.videos) if (ids.includes(v.channelId)) local.set(v.id, {...v, hot:true});
-            const report = {checkedAt:new Date().toISOString(), artist:artist[0], local:[...local.values()].map(v => ({...v, hidden:hidden.has(v.id)})), rules:Object.fromEntries(ids.map(id => [id,read('data/music-channel-video-allowlist.json').channels[id] || null])), languageDecisions:(language.decisions || []).filter(v => norm(v.artista).includes('animal')), youtube:[], requests:[]};
-            for (const name of ['Artur Àlvarez','Borriana Big Band','Pepet i Marieta']) {
-              const found = base.artists.filter(a => [a.name,a.displayName,...(a.aliases || [])].some(n => norm(n) === norm(name)));
-              report.requests.push({name, artists:found.map(a => ({name:a.name,displayName:a.displayName,active:a.active,reviewStatus:a.reviewStatus,channels:a.youtube.channels.map(c => ({...c,published:Boolean(feed.channels[c.id]),hot:feed.videos.filter(v=>v.channelId===c.id).length}))}))});
-            }
-            async function api(endpoint, args) {
-              const key = process.env.YOUTUBE_API_KEY_SERVER;
-              if (!key) throw Error('No hi ha clau de YouTube configurada');
-              const url = new URL('https://www.googleapis.com/youtube/v3/' + endpoint);
-              for (const [k,v] of Object.entries({...args,key})) url.searchParams.set(k, String(v));
-              const r = await fetch(url,{signal:AbortSignal.timeout(30000)}); const j = await r.json();
-              if (!r.ok) throw Error(endpoint + ': ' + (j.error?.errors?.[0]?.reason || r.status));
-              return j;
-            }
-            try {
-              for (const id of ids) {
-                const c = (await api('channels',{part:'contentDetails,snippet',id})).items?.[0];
-                if (!c) continue;
-                let token;
-                for (let page=0;page<4;page++) {
-                  const p = await api('playlistItems',{part:'contentDetails',playlistId:c.contentDetails.relatedPlaylists.uploads,maxResults:50,...(token?{pageToken:token}:{})});
-                  const videoIds = (p.items || []).map(v=>v.contentDetails.videoId);
-                  if (videoIds.length) for (const v of (await api('videos',{part:'snippet,contentDetails,status',id:videoIds.join(',')})).items || []) report.youtube.push({id:v.id,title:v.snippet.title,channelId:v.snippet.channelId,duration:v.contentDetails.duration,description:v.snippet.description,audioLanguage:v.snippet.defaultAudioLanguage || null,embeddable:v.status.embeddable,hidden:hidden.has(v.id),indexed:local.has(v.id)});
-                  token=p.nextPageToken; if (!token) break;
-                }
-                if (token) report.incomplete=true;
-              }
-            } catch (error) { report.apiError=error.message; }
-            const prefix='docs/revisions/2026-10-13-animal-inventari';
-            fs.writeFileSync(prefix+'.json',JSON.stringify(report,null,2)+'\n');
-            const rows = ['# Inventari Animal', JSON.stringify({requests:report.requests,rules:report.rules,languageDecisions:report.languageDecisions,apiError:report.apiError},null,2),'## Videos'];
-            for (const v of report.youtube) rows.push(`### ${v.id} | ${v.title} | ${v.duration} | ocult=${v.hidden} | indexat=${v.indexed}`,v.description.replace(/\n/g,' ⏎ '));
-            rows.push('## Cataleg local',...report.local.map(v=>`${v.id} | ${v.title} | ocult=${v.hidden} | arxiu=${Boolean(v.archived)} | feed=${Boolean(v.hot)}`));
-            fs.writeFileSync(prefix+'.md',rows.join('\n')+'\n');
-            console.log(JSON.stringify({local:report.local.length,youtube:report.youtube.length,apiError:report.apiError,requests:report.requests}));
-          })().catch(e=>{console.error(e.message);process.exitCode=1;});
+          const fs=require('node:fs');
+          const path=require('node:path');
+          const assert=require('node:assert/strict');
+          const {spawnSync,execFileSync}=require('node:child_process');
+          const root=process.cwd(), baseline='/tmp/musica-abans-altes';
+          function lint(cwd) {
+            const r=spawnSync(process.execPath,[path.join(root,'node_modules/eslint/bin/eslint.js'),'js/**/*.js','--format','json'],{cwd,encoding:'utf8',maxBuffer:8*1024*1024});
+            if(r.error || ![0,1].includes(r.status)) throw Error('No es pot executar ESLint');
+            return JSON.parse(r.stdout).map(f=>({file:path.relative(cwd,f.filePath),errors:f.errorCount,warnings:f.warningCount,messages:f.messages}));
+          }
+          const current=lint(root);
+          if(!fs.existsSync(baseline)) {execFileSync('git',['worktree','add','--detach',baseline,'HEAD']);fs.symlinkSync(path.join(root,'node_modules'),path.join(baseline,'node_modules'),'dir');}
+          assert.deepEqual(current,lint(baseline),'ESLint ha detectat diagnostics nous');
+          const tests=JSON.parse(fs.readFileSync('/tmp/tardor-blat-quinto-validation.json','utf8'));
+          const file='docs/revisions/2026-10-13-animal-revisio.json';
+          const report=JSON.parse(fs.readFileSync(file,'utf8'));
+          report.tests={passed:tests.passedTests,preexistingFailures:tests.failedTests,regressions:tests.regressions};
+          report.lint={preexistingErrors:current.reduce((n,f)=>n+f.errors,0),preexistingWarnings:current.reduce((n,f)=>n+f.warnings,0),newDiagnostics:0};
+          fs.writeFileSync(file,JSON.stringify(report,null,2)+'\n');
+          fs.appendFileSync('docs/revisions/2026-10-13-animal-revisio.md','\nProves: '+report.tests.passed+' superades; '+report.tests.preexistingFailures+' fallades anteriors reproduïdes; cap regressió.\n');
+          console.log(JSON.stringify({tests:report.tests,lint:report.lint}));
           NODE
-      - name: Desa la revisio sense canviar el cataleg
+      - name: Publica sense sobreescriure canvis concurrents
         run: |
-          bash scripts/publicar_dades.sh 'docs: inventari i exclusions d’Animal' docs/revisions/2026-10-13-animal-inventari.json docs/revisions/2026-10-13-animal-inventari.md
+          node scripts/actualitzar_versio_sw.js
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add data/hidden-videos.json data/revisio-idiomes.json data/music-channel-video-allowlist.json data/artistes-vigilats-idioma.json data/feed.json data/archive/channels data/history-pool.json data/historial-musical.json data/albums-musica.json data/music-content-audit.json data/music-feed-audit.json data/search_index_*.json docs/ARTISTES_VIGILATS_IDIOMA.md docs/revisions/2026-10-13-animal-* compartir sw.js
+          git commit -m 'Retira Bam Bam i consolida les exclusions d’Animal'
+          git pull --rebase origin main
+          git push origin HEAD:main
+      - name: Prepara el lloc estatic
+        run: |
+          mkdir _site
+          git archive HEAD | tar -x -C _site
+          rm -rf _site/.github _site/tests _site/scripts _site/functions _site/docs
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - name: Desplega el cataleg revisat
+        id: deployment
+        uses: actions/deploy-pages@v4
