@@ -1,0 +1,5107 @@
+{
+  "musicalArtists": 407,
+  "minimumArtists": 5,
+  "subcategories": [
+    {
+      "id": "rock-progressiu",
+      "label": "Rock progressiu",
+      "category": "Rock",
+      "neighbours": [
+        "rock-psicodelic",
+        "folk-rock"
+      ],
+      "artistCount": 2,
+      "nucleus": false,
+      "artists": [
+        "Companyia Elèctrica Dharma",
+        "Moto Clua"
+      ]
+    },
+    {
+      "id": "rock-psicodelic",
+      "label": "Rock psicodèlic",
+      "category": "Rock",
+      "neighbours": [
+        "rock-progressiu",
+        "folk-rock",
+        "garage-rock",
+        "indie-rock"
+      ],
+      "artistCount": 3,
+      "nucleus": false,
+      "artists": [
+        "Minibús intergalàctic",
+        "Pau Riba i Romeva",
+        "Remei de Ca la Fresca"
+      ]
+    },
+    {
+      "id": "folk-rock",
+      "label": "Folk-rock",
+      "category": "Rock",
+      "neighbours": [
+        "rock-progressiu",
+        "rock-psicodelic",
+        "rock-pop",
+        "pop-folk",
+        "indie-folk",
+        "autor-folk"
+      ],
+      "artistCount": 2,
+      "nucleus": false,
+      "artists": [
+        "La Iaia",
+        "Xavi Sarrià"
+      ]
+    },
+    {
+      "id": "hard-rock",
+      "label": "Hard rock",
+      "category": "Rock",
+      "neighbours": [
+        "garage-rock",
+        "metal-heavy"
+      ],
+      "artistCount": 1,
+      "nucleus": false,
+      "artists": [
+        "Sangtraït"
+      ]
+    },
+    {
+      "id": "garage-rock",
+      "label": "Garage rock",
+      "category": "Rock",
+      "neighbours": [
+        "rock-psicodelic",
+        "indie-rock",
+        "hard-rock",
+        "metal-heavy"
+      ],
+      "artistCount": 0,
+      "nucleus": false,
+      "artists": []
+    },
+    {
+      "id": "rock-pop",
+      "label": "Pop-rock",
+      "category": "Rock",
+      "neighbours": [
+        "folk-rock",
+        "pop-folk",
+        "indie-folk",
+        "autor-folk",
+        "pop-rock",
+        "indie-rock"
+      ],
+      "artistCount": 2,
+      "nucleus": false,
+      "artists": [
+        "Joan Colomo",
+        "La Ludwig Band"
+      ]
+    },
+    {
+      "id": "rock-general",
+      "label": "Rock — pendent d’afinar",
+      "category": "Rock",
+      "neighbours": [],
+      "artistCount": 27,
+      "nucleus": true,
+      "artists": [
+        "Aspencat",
+        "Bars",
+        "Brams",
+        "Crim",
+        "Dan Peralbo & El Comboi",
+        "Derbi Junior",
+        "Els Bourbons",
+        "Exili a Elba",
+        "Karda Fàstik",
+        "Kitsch",
+        "La Madam",
+        "La Tour de Carol",
+        "Lo Maquini",
+        "Obeses",
+        "Obrint Pas",
+        "Ocults",
+        "Orella d'Ós",
+        "Pastorets Rock",
+        "Pla Moguda",
+        "Raydibaum",
+        "Sidonie",
+        "Smoking Souls",
+        "Tancat per defunció",
+        "The Demencials",
+        "Tomeu Penya",
+        "Xucu-pà",
+        "Ypnosi"
+      ]
+    },
+    {
+      "id": "punk-hardcore",
+      "label": "Hardcore punk",
+      "category": "Punk",
+      "neighbours": [
+        "punk-post",
+        "metal-grind"
+      ],
+      "artistCount": 14,
+      "nucleus": true,
+      "artists": [
+        "ASSAC!",
+        "Autodestrucció",
+        "Bestiari",
+        "Bonestorm",
+        "Brot Bord",
+        "Budellam",
+        "En Brut",
+        "L'Odi Social",
+        "Mandanga!",
+        "Pixamandúrries",
+        "Ratpenat",
+        "Sota Terra",
+        "Una Bèstia Incontrolable",
+        "Voltor"
+      ]
+    },
+    {
+      "id": "punk-post",
+      "label": "Post-hardcore",
+      "category": "Punk",
+      "neighbours": [
+        "punk-hardcore",
+        "metal-grind",
+        "punk-electronic"
+      ],
+      "artistCount": 5,
+      "nucleus": true,
+      "artists": [
+        "Daltabaix",
+        "FP",
+        "Mendra",
+        "Saïm",
+        "Tano!"
+      ]
+    },
+    {
+      "id": "punk-oi",
+      "label": "Oi! / Street punk",
+      "category": "Punk",
+      "neighbours": [
+        "punk-rock",
+        "punk-pop",
+        "punk-garage"
+      ],
+      "artistCount": 10,
+      "nucleus": true,
+      "artists": [
+        "Desperta Ferro",
+        "Enemic Interior",
+        "Frontpilsen",
+        "Gatzara",
+        "Groggy Rude",
+        "Inadaptats",
+        "Lladruc",
+        "Milícians",
+        "Opció K-95",
+        "Pilseners"
+      ]
+    },
+    {
+      "id": "punk-folk",
+      "label": "Folk-punk",
+      "category": "Punk",
+      "neighbours": [
+        "punk-rock",
+        "ska-punk"
+      ],
+      "artistCount": 2,
+      "nucleus": false,
+      "artists": [
+        "Fetus",
+        "X-Fanekaes"
+      ]
+    },
+    {
+      "id": "punk-pop",
+      "label": "Pop-punk",
+      "category": "Punk",
+      "neighbours": [
+        "punk-rock",
+        "punk-oi",
+        "punk-garage"
+      ],
+      "artistCount": 6,
+      "nucleus": true,
+      "artists": [
+        "Baixa Fidelitat",
+        "Esperit de Vi",
+        "Fox System",
+        "Les Buch",
+        "Les Salvatges",
+        "Panellet"
+      ]
+    },
+    {
+      "id": "punk-garage",
+      "label": "Garage punk",
+      "category": "Punk",
+      "neighbours": [
+        "punk-rock",
+        "punk-oi",
+        "punk-pop"
+      ],
+      "artistCount": 1,
+      "nucleus": false,
+      "artists": [
+        "Zombi Pujol"
+      ]
+    },
+    {
+      "id": "punk-electronic",
+      "label": "Electropunk",
+      "category": "Punk",
+      "neighbours": [
+        "punk-post"
+      ],
+      "artistCount": 0,
+      "nucleus": false,
+      "artists": []
+    },
+    {
+      "id": "punk-rock",
+      "label": "Punk-rock",
+      "category": "Punk",
+      "neighbours": [
+        "punk-oi",
+        "punk-pop",
+        "punk-garage",
+        "punk-folk",
+        "ska-punk"
+      ],
+      "artistCount": 9,
+      "nucleus": true,
+      "artists": [
+        "All Crü",
+        "Apologia",
+        "Bacora",
+        "Batec",
+        "Brigada Moreneta",
+        "Família Fracàs",
+        "Gra Fort",
+        "Les Cruet",
+        "The Anti-Patiks"
+      ]
+    },
+    {
+      "id": "punk-general",
+      "label": "Punk — pendent d’afinar",
+      "category": "Punk",
+      "neighbours": [],
+      "artistCount": 3,
+      "nucleus": false,
+      "artists": [
+        "Coça",
+        "Les Aranyes",
+        "Vàlius"
+      ]
+    },
+    {
+      "id": "metal-black",
+      "label": "Black metal",
+      "category": "Heavy / Metal",
+      "neighbours": [
+        "metal-death",
+        "metal-doom"
+      ],
+      "artistCount": 2,
+      "nucleus": false,
+      "artists": [
+        "Amargor",
+        "Korruption Found"
+      ]
+    },
+    {
+      "id": "metal-death",
+      "label": "Death metal",
+      "category": "Heavy / Metal",
+      "neighbours": [
+        "metal-black",
+        "metal-doom"
+      ],
+      "artistCount": 4,
+      "nucleus": false,
+      "artists": [
+        "Angoixa",
+        "Forja",
+        "Icestorm",
+        "Vrademargk"
+      ]
+    },
+    {
+      "id": "metal-doom",
+      "label": "Doom / Sludge",
+      "category": "Heavy / Metal",
+      "neighbours": [
+        "metal-black",
+        "metal-death",
+        "metal-progressiu",
+        "metal-heavy"
+      ],
+      "artistCount": 4,
+      "nucleus": false,
+      "artists": [
+        "Assot",
+        "Bocc",
+        "Entropia",
+        "Udol"
+      ]
+    },
+    {
+      "id": "metal-progressiu",
+      "label": "Metal progressiu / Post-metal",
+      "category": "Heavy / Metal",
+      "neighbours": [
+        "metal-doom",
+        "metal-heavy"
+      ],
+      "artistCount": 2,
+      "nucleus": false,
+      "artists": [
+        "Foscor",
+        "Vidres a la Sang"
+      ]
+    },
+    {
+      "id": "metal-grind",
+      "label": "Grindcore",
+      "category": "Heavy / Metal",
+      "neighbours": [
+        "punk-hardcore",
+        "punk-post"
+      ],
+      "artistCount": 5,
+      "nucleus": true,
+      "artists": [
+        "Moksha",
+        "Ósserp",
+        "Pesta Porcina",
+        "Tempestat",
+        "Thanatopraxy"
+      ]
+    },
+    {
+      "id": "metal-heavy",
+      "label": "Heavy / Power metal",
+      "category": "Heavy / Metal",
+      "neighbours": [
+        "hard-rock",
+        "garage-rock",
+        "metal-progressiu",
+        "metal-doom"
+      ],
+      "artistCount": 2,
+      "nucleus": false,
+      "artists": [
+        "Astral Warrior",
+        "Avalot"
+      ]
+    },
+    {
+      "id": "metal-general",
+      "label": "Metal — pendent d’afinar",
+      "category": "Heavy / Metal",
+      "neighbours": [],
+      "artistCount": 1,
+      "nucleus": false,
+      "artists": [
+        "KOP"
+      ]
+    },
+    {
+      "id": "ska-punk",
+      "label": "Ska-punk",
+      "category": "Ska / Reggae",
+      "neighbours": [
+        "punk-folk",
+        "punk-rock",
+        "ska-revival",
+        "ska-classic"
+      ],
+      "artistCount": 1,
+      "nucleus": false,
+      "artists": [
+        "Skatalà"
+      ]
+    },
+    {
+      "id": "ska-revival",
+      "label": "Ska revival",
+      "category": "Ska / Reggae",
+      "neighbours": [
+        "ska-classic",
+        "ska-punk"
+      ],
+      "artistCount": 1,
+      "nucleus": false,
+      "artists": [
+        "knocKouts"
+      ]
+    },
+    {
+      "id": "ska-classic",
+      "label": "Ska / Rocksteady",
+      "category": "Ska / Reggae",
+      "neighbours": [
+        "ska-revival",
+        "ska-punk",
+        "reggae",
+        "mestissatge"
+      ],
+      "artistCount": 5,
+      "nucleus": true,
+      "artists": [
+        "Auxili",
+        "Dr. Calypso",
+        "Guaita'ls",
+        "Les Testarudes",
+        "Mr. Freak Ska"
+      ]
+    },
+    {
+      "id": "reggae",
+      "label": "Reggae / Dancehall",
+      "category": "Ska / Reggae",
+      "neighbours": [
+        "ska-classic",
+        "mestissatge"
+      ],
+      "artistCount": 1,
+      "nucleus": false,
+      "artists": [
+        "Adala"
+      ]
+    },
+    {
+      "id": "ska-general",
+      "label": "Ska / Reggae — pendent d’afinar",
+      "category": "Ska / Reggae",
+      "neighbours": [],
+      "artistCount": 1,
+      "nucleus": false,
+      "artists": [
+        "The Cabrians"
+      ]
+    },
+    {
+      "id": "pop-electronic",
+      "label": "Electropop",
+      "category": "Pop",
+      "neighbours": [
+        "pop-indie",
+        "electronica-pop",
+        "urban-pop"
+      ],
+      "artistCount": 12,
+      "nucleus": true,
+      "artists": [
+        "Daveu",
+        "Doctor Prats",
+        "En Rick",
+        "Gavina.mp3",
+        "Julieta",
+        "La Mousse",
+        "Malánima",
+        "Mama Dousha",
+        "Ouineta",
+        "Svetlana",
+        "Ven'nus",
+        "Xanguito"
+      ]
+    },
+    {
+      "id": "pop-indie",
+      "label": "Indie pop",
+      "category": "Pop",
+      "neighbours": [
+        "pop-electronic",
+        "electronica-pop",
+        "indie-pop",
+        "pop-folk"
+      ],
+      "artistCount": 13,
+      "nucleus": true,
+      "artists": [
+        "Al·lèrgiques al Pol·len",
+        "Celobert",
+        "Cloe Riembau",
+        "Cristina Monllau",
+        "GUINEU",
+        "Jo Jet i Maria Ribot",
+        "Manel",
+        "Maria Jaume",
+        "Mishima",
+        "Pantaleó",
+        "Paula Montalbán",
+        "Socunbohemio",
+        "Vittara"
+      ]
+    },
+    {
+      "id": "pop-folk",
+      "label": "Folk-pop",
+      "category": "Pop",
+      "neighbours": [
+        "folk-rock",
+        "rock-pop",
+        "indie-folk",
+        "autor-folk",
+        "pop-indie",
+        "indie-pop"
+      ],
+      "artistCount": 5,
+      "nucleus": true,
+      "artists": [
+        "Antònia Font",
+        "Els Amics de les Arts",
+        "Ginestà",
+        "Júlia Colom",
+        "Pepet i Marieta"
+      ]
+    },
+    {
+      "id": "pop-rock",
+      "label": "Pop-rock",
+      "category": "Pop",
+      "neighbours": [
+        "rock-pop",
+        "indie-rock"
+      ],
+      "artistCount": 25,
+      "nucleus": true,
+      "artists": [
+        "Bèrnia",
+        "Buhos",
+        "Duble Buble",
+        "Els Detectors",
+        "Els Pets",
+        "Gossos",
+        "Hey Zuri",
+        "Ja t'ho diré",
+        "Joan Masdéu",
+        "La Fúmiga",
+        "Lax'n'Busto",
+        "Mai Halis",
+        "N'Gai N'Gai",
+        "Nyandú",
+        "Pau Vallvé Navarro",
+        "Renaldo & Clara",
+        "Sau",
+        "Sodi",
+        "Sopa de Cabra",
+        "Stay Homas",
+        "Tardor",
+        "Teràpia de Shock",
+        "Triquell",
+        "Umpah-Pah",
+        "Whiskyn's"
+      ]
+    },
+    {
+      "id": "pop-general",
+      "label": "Pop — pendent d’afinar",
+      "category": "Pop",
+      "neighbours": [],
+      "artistCount": 39,
+      "nucleus": true,
+      "artists": [
+        "Alfred Garcia",
+        "Anna Andreu",
+        "Ariox",
+        "Au Rora",
+        "Ayryn",
+        "Blaumut",
+        "Ceaxe",
+        "dani6ix & IZZKID",
+        "El Petit de Cal Eril",
+        "Elo",
+        "Els Catarres",
+        "enMatu",
+        "Esther Querol Forner",
+        "Fades",
+        "Ferran Palau",
+        "Figa Flawas",
+        "Gusset",
+        "Joan Dausà",
+        "Jofre Bardagí Grima",
+        "Lal'ba",
+        "Maig",
+        "Mariona Escoda i Sendra",
+        "Miki Núñez",
+        "miquel",
+        "Naina",
+        "okdw",
+        "Oques Grasses",
+        "Pol Bordas",
+        "Reïna",
+        "Roger Padrós de la Torre",
+        "Roser Dresaire",
+        "Sara Roy",
+        "Sense Sal",
+        "Sexenni",
+        "Siderland",
+        "Suu",
+        "The Tyets",
+        "Txarango",
+        "Xicu"
+      ]
+    },
+    {
+      "id": "indie-rock",
+      "label": "Indie rock",
+      "category": "Indie",
+      "neighbours": [
+        "rock-psicodelic",
+        "garage-rock",
+        "rock-pop",
+        "pop-rock"
+      ],
+      "artistCount": 0,
+      "nucleus": false,
+      "artists": []
+    },
+    {
+      "id": "indie-folk",
+      "label": "Indie folk",
+      "category": "Indie",
+      "neighbours": [
+        "folk-rock",
+        "rock-pop",
+        "pop-folk",
+        "autor-folk"
+      ],
+      "artistCount": 1,
+      "nucleus": false,
+      "artists": [
+        "Ernest Crusats"
+      ]
+    },
+    {
+      "id": "indie-pop",
+      "label": "Indie pop",
+      "category": "Indie",
+      "neighbours": [
+        "pop-indie",
+        "pop-folk"
+      ],
+      "artistCount": 1,
+      "nucleus": false,
+      "artists": [
+        "Da Souza"
+      ]
+    },
+    {
+      "id": "indie-general",
+      "label": "Indie — pendent d’afinar",
+      "category": "Indie",
+      "neighbours": [],
+      "artistCount": 1,
+      "nucleus": false,
+      "artists": [
+        "Falciots Ninja"
+      ]
+    },
+    {
+      "id": "urban-trap",
+      "label": "Trap",
+      "category": "Urban",
+      "neighbours": [
+        "urban-rap",
+        "rap-trap"
+      ],
+      "artistCount": 4,
+      "nucleus": false,
+      "artists": [
+        "31 FAM",
+        "Lildami",
+        "Mushkaa",
+        "Orxata Sound System"
+      ]
+    },
+    {
+      "id": "urban-reggaeton",
+      "label": "Reggaeton / Dancehall",
+      "category": "Urban",
+      "neighbours": [
+        "urban-electronic",
+        "urban-pop"
+      ],
+      "artistCount": 1,
+      "nucleus": false,
+      "artists": [
+        "Boom Boom Fighters"
+      ]
+    },
+    {
+      "id": "urban-electronic",
+      "label": "Urban electrònic",
+      "category": "Urban",
+      "neighbours": [
+        "urban-reggaeton",
+        "urban-pop"
+      ],
+      "artistCount": 4,
+      "nucleus": false,
+      "artists": [
+        "Malifeta",
+        "Sa Pena",
+        "Slad Mobb",
+        "Xisk"
+      ]
+    },
+    {
+      "id": "urban-rap",
+      "label": "Rap urbà",
+      "category": "Urban",
+      "neighbours": [
+        "urban-trap",
+        "rap-trap",
+        "rap-general",
+        "rap-fusion"
+      ],
+      "artistCount": 9,
+      "nucleus": true,
+      "artists": [
+        "AVANT",
+        "Baya Baye",
+        "BTZ",
+        "Cactus Troop",
+        "Flakko",
+        "Pawn Gang",
+        "Quinto",
+        "ultralone",
+        "ZOO"
+      ]
+    },
+    {
+      "id": "urban-pop",
+      "label": "Pop urbà",
+      "category": "Urban",
+      "neighbours": [
+        "urban-reggaeton",
+        "urban-electronic",
+        "pop-electronic"
+      ],
+      "artistCount": 6,
+      "nucleus": true,
+      "artists": [
+        "Cloe",
+        "Colomet",
+        "Kiddi",
+        "Lepanto 41",
+        "MASSAVIU",
+        "Masvi"
+      ]
+    },
+    {
+      "id": "urban-general",
+      "label": "Urban — pendent d’afinar",
+      "category": "Urban",
+      "neighbours": [],
+      "artistCount": 13,
+      "nucleus": true,
+      "artists": [
+        "2ES",
+        "Flashy Ice Cream",
+        "Fortuu",
+        "Galgo Lento",
+        "Hereus del Beat",
+        "Neisha",
+        "Plan-ET",
+        "Scorpio",
+        "Scotty DK",
+        "Subliminal",
+        "ThatKid",
+        "Vademecum FAM",
+        "Xenia Casado"
+      ]
+    },
+    {
+      "id": "rap-trap",
+      "label": "Trap / Rap",
+      "category": "Rap / Hip-hop",
+      "neighbours": [
+        "urban-trap",
+        "urban-rap"
+      ],
+      "artistCount": 1,
+      "nucleus": false,
+      "artists": [
+        "Malson Atmosfèric"
+      ]
+    },
+    {
+      "id": "rap-fusion",
+      "label": "Rap fusió",
+      "category": "Rap / Hip-hop",
+      "neighbours": [
+        "urban-rap",
+        "rap-general"
+      ],
+      "artistCount": 1,
+      "nucleus": false,
+      "artists": [
+        "Tesa"
+      ]
+    },
+    {
+      "id": "rap-general",
+      "label": "Rap / Hip-hop",
+      "category": "Rap / Hip-hop",
+      "neighbours": [
+        "urban-rap",
+        "rap-fusion"
+      ],
+      "artistCount": 13,
+      "nucleus": true,
+      "artists": [
+        "Acros",
+        "Aina Koda",
+        "El Nota",
+        "Herba Negra",
+        "Malparlat",
+        "Poor Tràmit",
+        "Pupil·les",
+        "Rapsodes",
+        "Sacrogermen",
+        "Senyor Oca",
+        "Still Ill",
+        "Valtònyc",
+        "Vinnie Kairos"
+      ]
+    },
+    {
+      "id": "folk-tradicional",
+      "label": "Folk tradicional",
+      "category": "Folk i arrel",
+      "neighbours": [
+        "folk-fusio",
+        "folk-general"
+      ],
+      "artistCount": 11,
+      "nucleus": true,
+      "artists": [
+        "Al Tall",
+        "Corrandes són corrandes",
+        "El Pony Pisador",
+        "Marala",
+        "Maria Bertomeu i Soria",
+        "Quico el Célio, el Noi i el Mut de Ferreries",
+        "RIU",
+        "Solk",
+        "Tornaveus",
+        "Trèvol",
+        "Urbàlia Rurana"
+      ]
+    },
+    {
+      "id": "folk-fusio",
+      "label": "Folk fusió",
+      "category": "Folk i arrel",
+      "neighbours": [
+        "folk-tradicional",
+        "folk-general"
+      ],
+      "artistCount": 1,
+      "nucleus": false,
+      "artists": [
+        "Els Jóvens"
+      ]
+    },
+    {
+      "id": "folk-general",
+      "label": "Folk i arrel — pendent d’afinar",
+      "category": "Folk i arrel",
+      "neighbours": [
+        "folk-tradicional",
+        "folk-fusio"
+      ],
+      "artistCount": 19,
+      "nucleus": true,
+      "artists": [
+        "Alosa",
+        "Anna Ferrer",
+        "Coses",
+        "Ebri Knight",
+        "El Diluvi",
+        "El Pont d'Arcalís",
+        "Esquirols",
+        "Falç de Fetillera",
+        "Germà Negre",
+        "Grup Coral de l'Agrupació Catalana d'Itàlia",
+        "Grup de Folk",
+        "Júlia Cruz",
+        "L'Ham de Foc",
+        "La Coixinera",
+        "Miquel Gil",
+        "Roba Estesa",
+        "Sílvia Pérez Cruz",
+        "UC",
+        "Xavier de Bétera"
+      ]
+    },
+    {
+      "id": "autor-nova-canco",
+      "label": "Nova Cançó",
+      "category": "Cançó d'autor",
+      "neighbours": [
+        "autor-folk",
+        "autor-pop",
+        "autor-general"
+      ],
+      "artistCount": 6,
+      "nucleus": true,
+      "artists": [
+        "Cesk Freixas",
+        "Joan Manuel Serrat",
+        "Lluís Llach i Grande",
+        "Maria del Mar Bonet",
+        "Ovidi Montllor i Mengual",
+        "Ramon Muntaner i Torruella"
+      ]
+    },
+    {
+      "id": "autor-folk",
+      "label": "Cançó d’autor folk",
+      "category": "Cançó d'autor",
+      "neighbours": [
+        "folk-rock",
+        "rock-pop",
+        "pop-folk",
+        "indie-folk",
+        "autor-nova-canco",
+        "autor-pop",
+        "autor-general"
+      ],
+      "artistCount": 4,
+      "nucleus": false,
+      "artists": [
+        "Jaume Sisa i Mestres",
+        "Judit Neddermann",
+        "Toti Soler",
+        "Xiomara Abello"
+      ]
+    },
+    {
+      "id": "autor-pop",
+      "label": "Cançó d’autor pop",
+      "category": "Cançó d'autor",
+      "neighbours": [
+        "autor-nova-canco",
+        "autor-folk",
+        "autor-general"
+      ],
+      "artistCount": 3,
+      "nucleus": false,
+      "artists": [
+        "Àlex Blat",
+        "Caïm Riba",
+        "Joan Miquel Oliver"
+      ]
+    },
+    {
+      "id": "autor-general",
+      "label": "Cançó d’autor — pendent d’afinar",
+      "category": "Cançó d'autor",
+      "neighbours": [
+        "autor-nova-canco",
+        "autor-folk",
+        "autor-pop"
+      ],
+      "artistCount": 37,
+      "nucleus": true,
+      "artists": [
+        "Adrià Puntí",
+        "Albert Fibla",
+        "Albert Pla i Álvarez",
+        "Anaïs Vila",
+        "Andreu Rifé i Oro",
+        "Antonello Colledanchise",
+        "Artur Àlvarez",
+        "El Gitano de Balaguer",
+        "Enric Barbat",
+        "Enric Hernàez",
+        "Feliu Ventura",
+        "Frans Cuspinera",
+        "Gessamí Boada",
+        "Guillem Ramisa",
+        "Guillermina Motta",
+        "Hèctor Vila",
+        "Isaak Aguilà",
+        "Joan Isaac",
+        "Josep Tero",
+        "L'arannà",
+        "Lídia Pujol",
+        "Manu Guix",
+        "Mar Pujol",
+        "Marina Rossell",
+        "Mazoni",
+        "Montse Castellà",
+        "Paul Fuster",
+        "Pere Tàpias",
+        "Pino Piras",
+        "Quico Pi de la Serra",
+        "Quimi Portet",
+        "Raimon",
+        "Roger Mas i Solé",
+        "Sandra Bautista",
+        "Sílvia Comes",
+        "Xarim Aresté",
+        "Xavier Baró"
+      ]
+    },
+    {
+      "id": "electronica-ball",
+      "label": "Electrònica de ball",
+      "category": "Electrònica",
+      "neighbours": [
+        "electronica-pop",
+        "electronica-experimental",
+        "electronica-general"
+      ],
+      "artistCount": 0,
+      "nucleus": false,
+      "artists": []
+    },
+    {
+      "id": "electronica-pop",
+      "label": "Pop electrònic",
+      "category": "Electrònica",
+      "neighbours": [
+        "pop-electronic",
+        "pop-indie",
+        "electronica-ball",
+        "electronica-experimental",
+        "electronica-general"
+      ],
+      "artistCount": 2,
+      "nucleus": false,
+      "artists": [
+        "Karlus",
+        "La Xica"
+      ]
+    },
+    {
+      "id": "electronica-experimental",
+      "label": "Electrònica experimental",
+      "category": "Electrònica",
+      "neighbours": [
+        "electronica-ball",
+        "electronica-pop",
+        "electronica-general"
+      ],
+      "artistCount": 1,
+      "nucleus": false,
+      "artists": [
+        "Tiger Menja Zebra"
+      ]
+    },
+    {
+      "id": "electronica-general",
+      "label": "Electrònica — pendent d’afinar",
+      "category": "Electrònica",
+      "neighbours": [
+        "electronica-ball",
+        "electronica-pop",
+        "electronica-experimental"
+      ],
+      "artistCount": 6,
+      "nucleus": true,
+      "artists": [
+        "Electrotoylets",
+        "GadeGANG",
+        "Herois de la Katalunya Interior",
+        "Mar Grimalt",
+        "Sandra Monfort",
+        "Vicky l’Arròs"
+      ]
+    },
+    {
+      "id": "rumba",
+      "label": "Rumba",
+      "category": "Rumba / Mestissatge",
+      "neighbours": [
+        "mestissatge",
+        "rumba-general"
+      ],
+      "artistCount": 2,
+      "nucleus": false,
+      "artists": [
+        "Gertrudis",
+        "La Pegatina"
+      ]
+    },
+    {
+      "id": "mestissatge",
+      "label": "Mestissatge",
+      "category": "Rumba / Mestissatge",
+      "neighbours": [
+        "ska-classic",
+        "reggae",
+        "rumba",
+        "rumba-general"
+      ],
+      "artistCount": 15,
+      "nucleus": true,
+      "artists": [
+        "9SON",
+        "Animal",
+        "Banda Neon",
+        "Dijous Paella",
+        "Dusminguet",
+        "Gato Pérez",
+        "Kayo Malayo",
+        "La Banda del Yuyu",
+        "La Gossa Sorda",
+        "La Troba Kung-Fú",
+        "Peret",
+        "Sabor de Gràcia",
+        "Tashkenti",
+        "Terratombats",
+        "Xeic!"
+      ]
+    },
+    {
+      "id": "rumba-general",
+      "label": "Rumba / Mestissatge — pendent d’afinar",
+      "category": "Rumba / Mestissatge",
+      "neighbours": [
+        "rumba",
+        "mestissatge"
+      ],
+      "artistCount": 0,
+      "nucleus": false,
+      "artists": []
+    },
+    {
+      "id": "jazz-fusio",
+      "label": "Jazz fusió",
+      "category": "Jazz / Blues",
+      "neighbours": [
+        "jazz",
+        "jazz-general"
+      ],
+      "artistCount": 0,
+      "nucleus": false,
+      "artists": []
+    },
+    {
+      "id": "jazz",
+      "label": "Jazz",
+      "category": "Jazz / Blues",
+      "neighbours": [
+        "jazz-fusio",
+        "jazz-general"
+      ],
+      "artistCount": 3,
+      "nucleus": false,
+      "artists": [
+        "Franca Masu",
+        "Magalí Sare",
+        "Núria Feliu i Mestres"
+      ]
+    },
+    {
+      "id": "jazz-general",
+      "label": "Jazz / Blues — pendent d’afinar",
+      "category": "Jazz / Blues",
+      "neighbours": [
+        "jazz-fusio",
+        "jazz"
+      ],
+      "artistCount": 14,
+      "nucleus": true,
+      "artists": [
+        "Andrea Motis",
+        "Blay Tritono",
+        "Borriana Big Band",
+        "Carme Canela",
+        "Clara Peya",
+        "Jordi Sabatés",
+        "La Vella Dixieland",
+        "Magalí Datzira",
+        "Maria Betriu",
+        "Orquestra Mirasol",
+        "Pegasus",
+        "Rita Payés",
+        "Secta Sònica",
+        "Vicens Martín Dream Big Band"
+      ]
+    },
+    {
+      "id": "altres-funk",
+      "label": "Funk / Soul / R&B",
+      "category": "Altres estils",
+      "neighbours": [],
+      "artistCount": 0,
+      "nucleus": false,
+      "artists": []
+    },
+    {
+      "id": "altres-vocal",
+      "label": "Coral / Vocal",
+      "category": "Altres estils",
+      "neighbours": [],
+      "artistCount": 0,
+      "nucleus": false,
+      "artists": []
+    },
+    {
+      "id": "altres-experimental",
+      "label": "Experimental",
+      "category": "Altres estils",
+      "neighbours": [],
+      "artistCount": 0,
+      "nucleus": false,
+      "artists": []
+    },
+    {
+      "id": "altres-general",
+      "label": "Altres estils — pendent d’afinar",
+      "category": "Altres estils",
+      "neighbours": [],
+      "artistCount": 1,
+      "nucleus": false,
+      "artists": [
+        "La Trinca"
+      ]
+    },
+    {
+      "id": "infantil",
+      "label": "Música infantil",
+      "category": "Infantil",
+      "neighbours": [],
+      "artistCount": 17,
+      "nucleus": true,
+      "artists": [
+        "2 Princeses Barbudes",
+        "Ambauka",
+        "Ara Va de Bo",
+        "Dàmaris Gelabert",
+        "El Pot Petit",
+        "Els Atrapasomnis",
+        "Jaume Barri",
+        "Jordi Tonietti",
+        "La Tresca i la Verdesca",
+        "Lali BeGood",
+        "Landry el Rumbero",
+        "Mainasons",
+        "Pep Puigdemont",
+        "Reggae per Xics",
+        "Samfaina de Colors",
+        "Xesco Boix",
+        "Xiula"
+      ]
+    }
+  ],
+  "assignments": [
+    {
+      "artist": "2 Princeses Barbudes",
+      "category": "Infantil",
+      "subcategory": "infantil",
+      "basis": "documented-tags",
+      "sources": [
+        "https://2princesesbarbudes.bandcamp.com/album/enciclop-dia-baixeta-de-la-nit",
+        "https://www.argia.eus/argia-astekaria/2446/gaueko-entziklopedia-koxkorra"
+      ]
+    },
+    {
+      "artist": "2ES",
+      "category": "Urban",
+      "subcategory": "urban-general",
+      "basis": "category-fallback",
+      "sources": [
+        "data/artistes-musica.json"
+      ]
+    },
+    {
+      "artist": "31 FAM",
+      "category": "Urban",
+      "subcategory": "urban-trap",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q63343992"
+      ]
+    },
+    {
+      "artist": "9SON",
+      "category": "Rumba / Mestissatge",
+      "subcategory": "mestissatge",
+      "basis": "documented-tags",
+      "sources": [
+        "data/artistes-musica.json"
+      ]
+    },
+    {
+      "artist": "Acros",
+      "category": "Rap / Hip-hop",
+      "subcategory": "rap-general",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.radiorahim.cat/artista/acros/"
+      ]
+    },
+    {
+      "artist": "Adala",
+      "category": "Ska / Reggae",
+      "subcategory": "reggae",
+      "basis": "documented-tags",
+      "sources": [
+        "https://adala.cat/borncelona-2/"
+      ]
+    },
+    {
+      "artist": "Adrià Puntí",
+      "category": "Cançó d'autor",
+      "subcategory": "autor-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.youtube.com/channel/UCDiHZrbEw6zc_DaFl5wsmRA"
+      ]
+    },
+    {
+      "artist": "Aina Koda",
+      "category": "Rap / Hip-hop",
+      "subcategory": "rap-general",
+      "basis": "documented-tags",
+      "sources": [
+        "https://guspira.net/en/aina-koda/",
+        "https://guspirarecords.bandcamp.com/album/la-gata",
+        "https://guspirarecords.bandcamp.com/album/percal"
+      ]
+    },
+    {
+      "artist": "Al Tall",
+      "category": "Folk i arrel",
+      "subcategory": "folk-tradicional",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q2306388",
+        "https://www.cervantesvirtual.com/portales/al_tall/discografia/",
+        "https://www.youtube.com/channel/UCrQY3EI5TJXNbCwkXcDLp7A"
+      ]
+    },
+    {
+      "artist": "Albert Fibla",
+      "category": "Cançó d'autor",
+      "subcategory": "autor-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.youtube.com/channel/UCz-O8jJsp_uT_vORvd9Etbg"
+      ]
+    },
+    {
+      "artist": "Albert Pla i Álvarez",
+      "category": "Cançó d'autor",
+      "subcategory": "autor-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q942636"
+      ]
+    },
+    {
+      "artist": "Àlex Blat",
+      "category": "Cançó d'autor",
+      "subcategory": "autor-pop",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.enderrock.cat/noticia/27814/alex-blat-volia-fugir-competencia-entre-bandes-perque-ja-estava-molt-cansat",
+        "https://www.primaveradh.com/tenda/val/producte/alex-blat-cd-la-veritat/",
+        "https://www.enderrock.cat/noticia/22955/alex-blat-he-intentat-fer-album-molt-senzill-molt-organic-molt-pur",
+        "https://www.youtube.com/watch?v=jfO-YY-q6Do"
+      ]
+    },
+    {
+      "artist": "Alfred Garcia",
+      "category": "Pop",
+      "subcategory": "pop-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.enderrock.cat/noticia/30487/premis-primera-fila-2025-premien-vintena-artistes-catalans"
+      ]
+    },
+    {
+      "artist": "All Crü",
+      "category": "Punk",
+      "subcategory": "punk-rock",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.youtube.com/channel/UCyNWjZ1IhLo8Iy6nUMEz0rw"
+      ]
+    },
+    {
+      "artist": "Al·lèrgiques al Pol·len",
+      "category": "Pop",
+      "subcategory": "pop-indie",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q117714888"
+      ]
+    },
+    {
+      "artist": "Alosa",
+      "category": "Folk i arrel",
+      "subcategory": "folk-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.youtube.com/channel/UCmSxzoNUcVfwLgrwt97QASA",
+        "https://www.enderrock.cat/disc/11297/primer-cant-mati"
+      ]
+    },
+    {
+      "artist": "Amargor",
+      "category": "Heavy / Metal",
+      "subcategory": "metal-black",
+      "basis": "documented-tags",
+      "sources": [
+        "https://paral-lel62.cat/en/programacio/catalunya-triomfant-2026-parallel62-eng/"
+      ]
+    },
+    {
+      "artist": "Ambauka",
+      "category": "Infantil",
+      "subcategory": "infantil",
+      "basis": "documented-tags",
+      "sources": [
+        "https://ambauka.cat/"
+      ]
+    },
+    {
+      "artist": "Anaïs Vila",
+      "category": "Cançó d'autor",
+      "subcategory": "autor-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.youtube.com/channel/UCPzAMvgbZZqisrkmVSgqIHg"
+      ]
+    },
+    {
+      "artist": "Andrea Motis",
+      "category": "Jazz / Blues",
+      "subcategory": "jazz-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://andreamotis.com/emotional-dance/",
+        "https://www.discmedi.com/en/jazz-latin-jazz/jazz/emotional_dance",
+        "https://www.youtube.com/channel/UCmwGTBibm2bt9oF-P7ECSmQ",
+        "https://www.youtube.com/watch?v=HONjd4S9h8c"
+      ]
+    },
+    {
+      "artist": "Andreu Rifé i Oro",
+      "category": "Cançó d'autor",
+      "subcategory": "autor-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q930586"
+      ]
+    },
+    {
+      "artist": "Angoixa",
+      "category": "Heavy / Metal",
+      "subcategory": "metal-death",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.youtube.com/channel/UCOwCZBGNBYlvxmZn2BbmhFQ"
+      ]
+    },
+    {
+      "artist": "Animal",
+      "category": "Rumba / Mestissatge",
+      "subcategory": "mestissatge",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.youtube.com/watch?v=6ZnwCG_Qn0s"
+      ]
+    },
+    {
+      "artist": "Anna Andreu",
+      "category": "Pop",
+      "subcategory": "pop-general",
+      "basis": "category-fallback",
+      "sources": [
+        "data/artistes-musica.json"
+      ]
+    },
+    {
+      "artist": "Anna Ferrer",
+      "category": "Folk i arrel",
+      "subcategory": "folk-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.youtube.com/channel/UCsoJ33SEemrtWrM5hTqPKYQ",
+        "https://www.enderrock.cat/noticies/etiqueta/Anna%2BFerrer"
+      ]
+    },
+    {
+      "artist": "Antonello Colledanchise",
+      "category": "Cançó d'autor",
+      "subcategory": "autor-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.plataforma-llengua.cat/que-fem/noticies/4622/antologia-algueresa-antonello-colledanchise-i-paolo-dessi-al-festival-barnasants"
+      ]
+    },
+    {
+      "artist": "Antònia Font",
+      "category": "Pop",
+      "subcategory": "pop-folk",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q2733436"
+      ]
+    },
+    {
+      "artist": "Apologia",
+      "category": "Punk",
+      "subcategory": "punk-rock",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.youtube.com/channel/UCkIaaBrbzpnm0jbPXxNGwPw"
+      ]
+    },
+    {
+      "artist": "Ara Va de Bo",
+      "category": "Infantil",
+      "subcategory": "infantil",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.detotunamica.net/cantaesplai/ca/lletra.php?id=136"
+      ]
+    },
+    {
+      "artist": "Ariox",
+      "category": "Pop",
+      "subcategory": "pop-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q109460984",
+        "https://www.youtube.com/channel/UC5wqkIyYD4y1lLYN40BL9lg"
+      ]
+    },
+    {
+      "artist": "Artur Àlvarez",
+      "category": "Cançó d'autor",
+      "subcategory": "autor-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://arturalvarez.bandcamp.com/",
+        "https://www.musicaenvalencia.es/artista/250/artur-%25c3%2580lvarez",
+        "https://arturalvarez.bandcamp.com/album/estell-s-a-ritme-de-blues-2024",
+        "https://arturalvarez.bandcamp.com/album/a-lombra-de-la-morera-2023",
+        "https://arturalvarez.bandcamp.com/album/pols-del-meu-cam-artur-lvarez-canta-a-bernat-artola-2008",
+        "https://arturalvarez.bandcamp.com/album/entre-versos-i-pinzells-contemporanis-2013",
+        "https://music.apple.com/us/artist/artur-%C3%A1lvarez/1574030401",
+        "https://music.amazon.com/albums/B0G4XHHNM7",
+        "https://music.amazon.com/tracks/B0F22MC16S"
+      ]
+    },
+    {
+      "artist": "Aspencat",
+      "category": "Rock",
+      "subcategory": "rock-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://halleyrecords.com/artist/aspencat/"
+      ]
+    },
+    {
+      "artist": "ASSAC!",
+      "category": "Punk",
+      "subcategory": "punk-hardcore",
+      "basis": "documented-tags",
+      "sources": [
+        "https://assac.bandcamp.com/community"
+      ]
+    },
+    {
+      "artist": "Assot",
+      "category": "Heavy / Metal",
+      "subcategory": "metal-doom",
+      "basis": "documented-tags",
+      "sources": [
+        "https://assot.bandcamp.com/album/bullen-les-calderes"
+      ]
+    },
+    {
+      "artist": "Astral Warrior",
+      "category": "Heavy / Metal",
+      "subcategory": "metal-heavy",
+      "basis": "documented-tags",
+      "sources": [
+        "https://astralwarriors.bandcamp.com/album/metalunya"
+      ]
+    },
+    {
+      "artist": "Au Rora",
+      "category": "Pop",
+      "subcategory": "pop-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.enderrock.cat/noticia/30783/festa-dels-premis-enderrock-2026-comptara-amb-maig-enmatu-minova-au-rora"
+      ]
+    },
+    {
+      "artist": "Autodestrucció",
+      "category": "Punk",
+      "subcategory": "punk-hardcore",
+      "basis": "documented-tags",
+      "sources": [
+        "https://saltamarges.bandcamp.com/album/neva-a-tot-arreu"
+      ]
+    },
+    {
+      "artist": "Auxili",
+      "category": "Ska / Reggae",
+      "subcategory": "ska-classic",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.propaganda-pel-fet.cat/index.php/cat/artistes/auxili"
+      ]
+    },
+    {
+      "artist": "Avalot",
+      "category": "Heavy / Metal",
+      "subcategory": "metal-heavy",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.enderrock.cat/disc/2180/somnis"
+      ]
+    },
+    {
+      "artist": "AVANT",
+      "category": "Urban",
+      "subcategory": "urban-rap",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.ppf.cat/index.php/cat/artistes/avant"
+      ]
+    },
+    {
+      "artist": "Ayryn",
+      "category": "Pop",
+      "subcategory": "pop-general",
+      "basis": "category-fallback",
+      "sources": [
+        "data/artistes-musica.json"
+      ]
+    },
+    {
+      "artist": "Bacora",
+      "category": "Punk",
+      "subcategory": "punk-rock",
+      "basis": "documented-tags",
+      "sources": [
+        "https://bacora.bandcamp.com/album/antifans"
+      ]
+    },
+    {
+      "artist": "Baixa Fidelitat",
+      "category": "Punk",
+      "subcategory": "punk-pop",
+      "basis": "documented-tags",
+      "sources": [
+        "https://baixafidelitat.bandcamp.com/album/baixa-fidelitat"
+      ]
+    },
+    {
+      "artist": "Banda Neon",
+      "category": "Rumba / Mestissatge",
+      "subcategory": "mestissatge",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.youtube.com/channel/UC8EgQzp733Go-yRbPKR3FHg"
+      ]
+    },
+    {
+      "artist": "Bars",
+      "category": "Rock",
+      "subcategory": "rock-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.youtube.com/channel/UCoQKWzy03Eh7EFrjM0Tuv1Q"
+      ]
+    },
+    {
+      "artist": "Batec",
+      "category": "Punk",
+      "subcategory": "punk-rock",
+      "basis": "documented-tags",
+      "sources": [
+        "https://batec.bandcamp.com/album/ara-i-sempre"
+      ]
+    },
+    {
+      "artist": "Baya Baye",
+      "category": "Urban",
+      "subcategory": "urban-rap",
+      "basis": "documented-tags",
+      "sources": [
+        "data/artistes-musica.json"
+      ]
+    },
+    {
+      "artist": "Bèrnia",
+      "category": "Pop",
+      "subcategory": "pop-rock",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026"
+      ]
+    },
+    {
+      "artist": "Bestiari",
+      "category": "Punk",
+      "subcategory": "punk-hardcore",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.youtube.com/channel/UCf0MYgzgqhRYuimo71a2dYQ"
+      ]
+    },
+    {
+      "artist": "Blaumut",
+      "category": "Pop",
+      "subcategory": "pop-general",
+      "basis": "category-fallback",
+      "sources": [
+        "data/artistes-musica.json"
+      ]
+    },
+    {
+      "artist": "Blay Tritono",
+      "category": "Jazz / Blues",
+      "subcategory": "jazz-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://onaedicions.cat/botiga/?p=32",
+        "https://lafonoteca.net/disco/clot-20/"
+      ]
+    },
+    {
+      "artist": "Bocc",
+      "category": "Heavy / Metal",
+      "subcategory": "metal-doom",
+      "basis": "documented-tags",
+      "sources": [
+        "https://bocc.bandcamp.com/music"
+      ]
+    },
+    {
+      "artist": "Bonestorm",
+      "category": "Punk",
+      "subcategory": "punk-hardcore",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.youtube.com/channel/UCJXKRxaUXEg0kpgb-Kd8uDg"
+      ]
+    },
+    {
+      "artist": "Boom Boom Fighters",
+      "category": "Urban",
+      "subcategory": "urban-reggaeton",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.sala-apolo.com/cat/event/curtciruit-boom-boom-fighters-cookah-p-5080"
+      ]
+    },
+    {
+      "artist": "Borriana Big Band",
+      "category": "Jazz / Blues",
+      "subcategory": "jazz-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://asociacionbigbands.com/bigband/borriana-big-band/",
+        "https://www.valencianmusicoffice.com/en/artist/a4091d8d-ee08-4ba1-ab62-16443ce62529",
+        "https://www.verkami.com/projects/24679-nou-disc-baixamar-borriana-big-band",
+        "https://www.nomepierdoniuna.net/borriana-big-band-no-deconstruimos-los-hits-en-valenciano-les-damos-sonoridad-de-gran-orquesta/",
+        "https://music.amazon.es/albums/B07H5QZ45P",
+        "https://music.apple.com/us/album/peix-enamorat/1497706941"
+      ]
+    },
+    {
+      "artist": "Brams",
+      "category": "Rock",
+      "subcategory": "rock-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.youtube.com/channel/UCuk-lO3FpbukFk5lcPx29_g"
+      ]
+    },
+    {
+      "artist": "Brigada Moreneta",
+      "category": "Punk",
+      "subcategory": "punk-rock",
+      "basis": "documented-tags",
+      "sources": [
+        "https://lafurapenedes.cat/presentats-actes-barraca-festa-major-vilafranca/"
+      ]
+    },
+    {
+      "artist": "Brot Bord",
+      "category": "Punk",
+      "subcategory": "punk-hardcore",
+      "basis": "documented-tags",
+      "sources": [
+        "https://brotbord.bandcamp.com/album/brot-bord"
+      ]
+    },
+    {
+      "artist": "BTZ",
+      "category": "Urban",
+      "subcategory": "urban-rap",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.enderrock.cat/edr/numero477/noticia/2477",
+        "https://www.enderrock.cat/edr/numero463/noticia/2334",
+        "https://los40.com/2023/06/16/stay-homas-amb-the-tyets-miki-nunez-i-alvert-donen-la-benvinguda-a-lestiu-amb-noves-cancons/",
+        "https://www.3cat.cat/324/els-cinc-videoclips-destacats-de-la-setmana-de-magali-datzira-a-la-sra-tomasa/noticia-amp/3309878/"
+      ]
+    },
+    {
+      "artist": "Budellam",
+      "category": "Punk",
+      "subcategory": "punk-hardcore",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.lafactoriadelritmo.com/spanish-hardcore-report/punetazos-de-ritmo-directos-al-estomago/"
+      ]
+    },
+    {
+      "artist": "Buhos",
+      "category": "Pop",
+      "subcategory": "pop-rock",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q3354889"
+      ]
+    },
+    {
+      "artist": "Cactus Troop",
+      "category": "Urban",
+      "subcategory": "urban-rap",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q96692189"
+      ]
+    },
+    {
+      "artist": "Caïm Riba",
+      "category": "Cançó d'autor",
+      "subcategory": "autor-pop",
+      "basis": "documented-tags",
+      "sources": [
+        "https://rgb.cat/management/caim-riba/"
+      ]
+    },
+    {
+      "artist": "Carme Canela",
+      "category": "Jazz / Blues",
+      "subcategory": "jazz-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.coveralia.com/letras/postal-carme-canela.php",
+        "https://www.coveralia.com/letras/desapareixer-dins-del-llit-carme-canela.php",
+        "https://rodamots.cat/escreix/carme-canela-retrat-en-blanc-i-negre/",
+        "https://www.youtube.com/channel/UCe_v26nxcgIzZxxvRDkHOrw"
+      ]
+    },
+    {
+      "artist": "Ceaxe",
+      "category": "Pop",
+      "subcategory": "pop-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.delirics.cat/es/ceaxe"
+      ]
+    },
+    {
+      "artist": "Celobert",
+      "category": "Pop",
+      "subcategory": "pop-indie",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.casadelamusica.cat/index.php/fitxes-artistes/3580-celobert"
+      ]
+    },
+    {
+      "artist": "Cesk Freixas",
+      "category": "Cançó d'autor",
+      "subcategory": "autor-nova-canco",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q2947051"
+      ]
+    },
+    {
+      "artist": "Clara Peya",
+      "category": "Jazz / Blues",
+      "subcategory": "jazz-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://clarapeya.bandcamp.com/album/estat-de-larva",
+        "https://www.enderrock.cat/noticia/21377/clara-peya-confinament-fet-veure-necessito-quotidianitat-afecte-tacte",
+        "https://vidarecords.bandcamp.com/album/perif-ria",
+        "https://www.youtube.com/channel/UCRLHVqJybtjS5ODPP5iAv4w",
+        "https://www.youtube.com/watch?v=VxRMQvipzng"
+      ]
+    },
+    {
+      "artist": "Cloe",
+      "category": "Urban",
+      "subcategory": "urban-pop",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.enderrock.cat/edr/numero537/noticia/3082"
+      ]
+    },
+    {
+      "artist": "Cloe Riembau",
+      "category": "Pop",
+      "subcategory": "pop-indie",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.mmvv.cat/ca/artista/cloe-riembau/1527"
+      ]
+    },
+    {
+      "artist": "Coça",
+      "category": "Punk",
+      "subcategory": "punk-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://cossapunk.bandcamp.com/album/vacances-a-baviera",
+        "https://www.youtube.com/channel/UCPRiU_lr3A-0m0GmF098EkA"
+      ]
+    },
+    {
+      "artist": "Colomet",
+      "category": "Urban",
+      "subcategory": "urban-pop",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.apuntmedia.es/noticies/cultura/entrevistem-colomet-motiu-seu-nou-treball-22_1_1593169.html"
+      ]
+    },
+    {
+      "artist": "Companyia Elèctrica Dharma",
+      "category": "Rock",
+      "subcategory": "rock-progressiu",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q4894861"
+      ]
+    },
+    {
+      "artist": "Corrandes són corrandes",
+      "category": "Folk i arrel",
+      "subcategory": "folk-tradicional",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.enderrock.cat/sons/grupsons2020/24/corrandes/son/corrandes",
+        "https://www.youtube.com/channel/UCYzpmEEhGtncFPgZSocnrtQ",
+        "https://www.youtube.com/channel/UCTsSJXhTo6HpqmtSh8-p31A"
+      ]
+    },
+    {
+      "artist": "Coses",
+      "category": "Folk i arrel",
+      "subcategory": "folk-general",
+      "basis": "category-fallback",
+      "sources": [
+        "data/artistes-musica.json"
+      ]
+    },
+    {
+      "artist": "Crim",
+      "category": "Rock",
+      "subcategory": "rock-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.youtube.com/channel/UCJhcsyqAVHFHmghWFkmIx4w"
+      ]
+    },
+    {
+      "artist": "Cristina Monllau",
+      "category": "Pop",
+      "subcategory": "pop-indie",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026"
+      ]
+    },
+    {
+      "artist": "Da Souza",
+      "category": "Indie",
+      "subcategory": "indie-pop",
+      "basis": "documented-tags",
+      "sources": [
+        "https://dasouza.bandcamp.com/"
+      ]
+    },
+    {
+      "artist": "Daltabaix",
+      "category": "Punk",
+      "subcategory": "punk-post",
+      "basis": "documented-tags",
+      "sources": [
+        "https://elsdaltabaix.bandcamp.com/album/per-no-cremar-ho-tot"
+      ]
+    },
+    {
+      "artist": "Dàmaris Gelabert",
+      "category": "Infantil",
+      "subcategory": "infantil",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q22964539"
+      ]
+    },
+    {
+      "artist": "Dan Peralbo & El Comboi",
+      "category": "Rock",
+      "subcategory": "rock-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.cruillabarcelona.cat/artists/dan-peralbo/"
+      ]
+    },
+    {
+      "artist": "dani6ix & IZZKID",
+      "category": "Pop",
+      "subcategory": "pop-general",
+      "basis": "category-fallback",
+      "sources": [
+        "data/artistes-musica.json"
+      ]
+    },
+    {
+      "artist": "Daveu",
+      "category": "Pop",
+      "subcategory": "pop-electronic",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026"
+      ]
+    },
+    {
+      "artist": "Derbi Junior",
+      "category": "Rock",
+      "subcategory": "rock-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.3cat.cat/3cat/catorze-veus-per-entendre-el-futur-del-pop-catala/audio/1244294/"
+      ]
+    },
+    {
+      "artist": "Desperta Ferro",
+      "category": "Punk",
+      "subcategory": "punk-oi",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.areapirata.com/prodotto/desperta-ferro-segueu-arran/"
+      ]
+    },
+    {
+      "artist": "Dijous Paella",
+      "category": "Rumba / Mestissatge",
+      "subcategory": "mestissatge",
+      "basis": "documented-tags",
+      "sources": [
+        "data/artistes-musica.json"
+      ]
+    },
+    {
+      "artist": "Doctor Prats",
+      "category": "Pop",
+      "subcategory": "pop-electronic",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q24074759"
+      ]
+    },
+    {
+      "artist": "Dr. Calypso",
+      "category": "Ska / Reggae",
+      "subcategory": "ska-classic",
+      "basis": "documented-tags",
+      "sources": [
+        "https://ca.wikipedia.org/wiki/Dr._Calypso"
+      ]
+    },
+    {
+      "artist": "Duble Buble",
+      "category": "Pop",
+      "subcategory": "pop-rock",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q11917802"
+      ]
+    },
+    {
+      "artist": "Dusminguet",
+      "category": "Rumba / Mestissatge",
+      "subcategory": "mestissatge",
+      "basis": "documented-tags",
+      "sources": [
+        "https://es.wikipedia.org/wiki/Dusminguet",
+        "https://www.youtube.com/channel/UCOXyxBFPQ97GO6PQqiJSvkw"
+      ]
+    },
+    {
+      "artist": "Ebri Knight",
+      "category": "Folk i arrel",
+      "subcategory": "folk-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://ebriknight.bandcamp.com/track/bruixes"
+      ]
+    },
+    {
+      "artist": "El Diluvi",
+      "category": "Folk i arrel",
+      "subcategory": "folk-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q56402663"
+      ]
+    },
+    {
+      "artist": "El Gitano de Balaguer",
+      "category": "Cançó d'autor",
+      "subcategory": "autor-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.youtube.com/channel/UCfEMFCX--mYjYsAWSKvKMhA"
+      ]
+    },
+    {
+      "artist": "El Nota",
+      "category": "Rap / Hip-hop",
+      "subcategory": "rap-general",
+      "basis": "documented-tags",
+      "sources": [
+        "https://elnota.bandcamp.com/album/anem-a-fer-ho-f-cil"
+      ]
+    },
+    {
+      "artist": "El Petit de Cal Eril",
+      "category": "Pop",
+      "subcategory": "pop-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.youtube.com/channel/UCQc-T583XUy2JAfeun2_0mg",
+        "https://www.youtube.com/@elpetitdecalerilmusica"
+      ]
+    },
+    {
+      "artist": "El Pont d'Arcalís",
+      "category": "Folk i arrel",
+      "subcategory": "folk-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q192427",
+        "https://materialsescolafolk.tradicionarius.cat/inici/el-pont-darcal%C3%ADs/la-m%C3%BAsica",
+        "https://www.youtube.com/channel/UChRlRycsUvrvZZ-upnGunLw"
+      ]
+    },
+    {
+      "artist": "El Pony Pisador",
+      "category": "Folk i arrel",
+      "subcategory": "folk-tradicional",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q83800179"
+      ]
+    },
+    {
+      "artist": "El Pot Petit",
+      "category": "Infantil",
+      "subcategory": "infantil",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.potpetit.com/bases-io-partitures/"
+      ]
+    },
+    {
+      "artist": "Electrotoylets",
+      "category": "Electrònica",
+      "subcategory": "electronica-general",
+      "basis": "category-fallback",
+      "sources": [
+        "data/artistes-musica.json"
+      ]
+    },
+    {
+      "artist": "Elo",
+      "category": "Pop",
+      "subcategory": "pop-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026"
+      ]
+    },
+    {
+      "artist": "Els Amics de les Arts",
+      "category": "Pop",
+      "subcategory": "pop-folk",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q3324333"
+      ]
+    },
+    {
+      "artist": "Els Atrapasomnis",
+      "category": "Infantil",
+      "subcategory": "infantil",
+      "basis": "documented-tags",
+      "sources": [
+        "https://elsatrapasomnis.cat/nosaltres/"
+      ]
+    },
+    {
+      "artist": "Els Bourbons",
+      "category": "Rock",
+      "subcategory": "rock-general",
+      "basis": "category-fallback",
+      "sources": [
+        "data/artistes-musica.json"
+      ]
+    },
+    {
+      "artist": "Els Catarres",
+      "category": "Pop",
+      "subcategory": "pop-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q3774740"
+      ]
+    },
+    {
+      "artist": "Els Detectors",
+      "category": "Pop",
+      "subcategory": "pop-rock",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.youtube.com/channel/UCXgOGaZ8NyliSq0XjPt-iPA"
+      ]
+    },
+    {
+      "artist": "Els Jóvens",
+      "category": "Folk i arrel",
+      "subcategory": "folk-fusio",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.enderrock.cat/disc/7250/jovens"
+      ]
+    },
+    {
+      "artist": "Els Pets",
+      "category": "Pop",
+      "subcategory": "pop-rock",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q1333372"
+      ]
+    },
+    {
+      "artist": "En Brut",
+      "category": "Punk",
+      "subcategory": "punk-hardcore",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.youtube.com/channel/UCnJ4T56eu1dxFBWin7Z7C3A"
+      ]
+    },
+    {
+      "artist": "En Rick",
+      "category": "Pop",
+      "subcategory": "pop-electronic",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026"
+      ]
+    },
+    {
+      "artist": "Enemic Interior",
+      "category": "Punk",
+      "subcategory": "punk-oi",
+      "basis": "documented-tags",
+      "sources": [
+        "https://flexidiscos.bandcamp.com/album/enemic-interior"
+      ]
+    },
+    {
+      "artist": "enMatu",
+      "category": "Pop",
+      "subcategory": "pop-general",
+      "basis": "category-fallback",
+      "sources": [
+        "data/artistes-musica.json"
+      ]
+    },
+    {
+      "artist": "Enric Barbat",
+      "category": "Cançó d'autor",
+      "subcategory": "autor-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.youtube.com/channel/UCc-fcN1V8NLdND4zBDMBrnA"
+      ]
+    },
+    {
+      "artist": "Enric Hernàez",
+      "category": "Cançó d'autor",
+      "subcategory": "autor-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.youtube.com/channel/UCpdGiiitzh2ypWsOaSyvL0A"
+      ]
+    },
+    {
+      "artist": "Entropia",
+      "category": "Heavy / Metal",
+      "subcategory": "metal-doom",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.youtube.com/channel/UCT-wRacXWBQKqr1z6ZGoubw"
+      ]
+    },
+    {
+      "artist": "Ernest Crusats",
+      "category": "Indie",
+      "subcategory": "indie-folk",
+      "basis": "documented-tags",
+      "sources": [
+        "data/artistes-musica.json"
+      ]
+    },
+    {
+      "artist": "Esperit de Vi",
+      "category": "Punk",
+      "subcategory": "punk-pop",
+      "basis": "documented-tags",
+      "sources": [
+        "https://esperitdevi.bandcamp.com/album/dissil-ncia"
+      ]
+    },
+    {
+      "artist": "Esquirols",
+      "category": "Folk i arrel",
+      "subcategory": "folk-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q11920737",
+        "https://www.memoria.cat/records-personals/torna-torna-serrallona-1980-cinque-disc-desquirols-i-el-seu-context/",
+        "https://www.youtube.com/channel/UCv6aLx9OL9Qzc2nmNT5_IdA"
+      ]
+    },
+    {
+      "artist": "Esther Querol Forner",
+      "category": "Pop",
+      "subcategory": "pop-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q116727730",
+        "https://www.diarilaveu.cat/cultura/esther-sobre-el-nou-disc-crec-que-es-emocional-autentic-i-caotic-585090/",
+        "https://www.valencianmusicoffice.com/artist/ec810b9f-fd21-4b3a-ad2d-8789fcbf898c",
+        "https://www.enderrock.cat/noticia/25374/esther-soc-nena-trista-pero-done-llum-esperanca-amb-cancons",
+        "https://www.youtube.com/watch?v=oIJBi4dBwJk"
+      ]
+    },
+    {
+      "artist": "Exili a Elba",
+      "category": "Rock",
+      "subcategory": "rock-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://exiliaelba.bandcamp.com/"
+      ]
+    },
+    {
+      "artist": "Fades",
+      "category": "Pop",
+      "subcategory": "pop-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q65969348"
+      ]
+    },
+    {
+      "artist": "Falç de Fetillera",
+      "category": "Folk i arrel",
+      "subcategory": "folk-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.youtube.com/channel/UCgVBViL3I9YWFVBHIyvcpjg"
+      ]
+    },
+    {
+      "artist": "Falciots Ninja",
+      "category": "Indie",
+      "subcategory": "indie-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.mmvv.cat/ca/artista/falciots-ninja/887/2018"
+      ]
+    },
+    {
+      "artist": "Família Fracàs",
+      "category": "Punk",
+      "subcategory": "punk-rock",
+      "basis": "documented-tags",
+      "sources": [
+        "https://familiafracas.bandcamp.com/music"
+      ]
+    },
+    {
+      "artist": "Feliu Ventura",
+      "category": "Cançó d'autor",
+      "subcategory": "autor-general",
+      "basis": "category-fallback",
+      "sources": [
+        "data/artistes-musica.json"
+      ]
+    },
+    {
+      "artist": "Ferran Palau",
+      "category": "Pop",
+      "subcategory": "pop-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q56163087"
+      ]
+    },
+    {
+      "artist": "Fetus",
+      "category": "Punk",
+      "subcategory": "punk-folk",
+      "basis": "documented-tags",
+      "sources": [
+        "https://surtdecasa.cat/emporda/musica/entrevista-fetus"
+      ]
+    },
+    {
+      "artist": "Figa Flawas",
+      "category": "Pop",
+      "subcategory": "pop-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q107292982"
+      ]
+    },
+    {
+      "artist": "Flakko",
+      "category": "Urban",
+      "subcategory": "urban-rap",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.enderrock.cat/noticia/30395/noves-cancons-catala-son-rosalia-gossa-sorda-sexenni-amb-miki-nunez-gavinamp3"
+      ]
+    },
+    {
+      "artist": "Flashy Ice Cream",
+      "category": "Urban",
+      "subcategory": "urban-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q97190892"
+      ]
+    },
+    {
+      "artist": "Forja",
+      "category": "Heavy / Metal",
+      "subcategory": "metal-death",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.forja-metal.com/",
+        "https://forja.bandcamp.com/album/tornant-de-la-batalla"
+      ]
+    },
+    {
+      "artist": "Fortuu",
+      "category": "Urban",
+      "subcategory": "urban-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://rgb.cat/management/fortuu/",
+        "https://www.enderrock.cat/noticia/29262/fortuu-girona-escena-urbana-petita-pero-expansio",
+        "https://www.enderrock.cat/noticia/31243/fortuu-signa-amb-maken-row-carta-amor-dosxtres"
+      ]
+    },
+    {
+      "artist": "Foscor",
+      "category": "Heavy / Metal",
+      "subcategory": "metal-progressiu",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.season-of-mist.com/bands/foscor/"
+      ]
+    },
+    {
+      "artist": "Fox System",
+      "category": "Punk",
+      "subcategory": "punk-pop",
+      "basis": "documented-tags",
+      "sources": [
+        "https://foxsystem.bandcamp.com/album/fox-system"
+      ]
+    },
+    {
+      "artist": "FP",
+      "category": "Punk",
+      "subcategory": "punk-post",
+      "basis": "documented-tags",
+      "sources": [
+        "https://fptheband.bandcamp.com/album/ciment"
+      ]
+    },
+    {
+      "artist": "Franca Masu",
+      "category": "Jazz / Blues",
+      "subcategory": "jazz",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q568158",
+        "https://www.enciclopedia.cat/gran-enciclopedia-catalana/franca-masu"
+      ]
+    },
+    {
+      "artist": "Frans Cuspinera",
+      "category": "Cançó d'autor",
+      "subcategory": "autor-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.youtube.com/channel/UCOGyDtQsutPHkVRfp0mJ_GQ"
+      ]
+    },
+    {
+      "artist": "Frontpilsen",
+      "category": "Punk",
+      "subcategory": "punk-oi",
+      "basis": "documented-tags",
+      "sources": [
+        "https://no80s-gruposnacionales.blogspot.com/2008/07/frontpilsen.html"
+      ]
+    },
+    {
+      "artist": "GadeGANG",
+      "category": "Electrònica",
+      "subcategory": "electronica-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.youtube.com/channel/UCLV9S1AX8_K0kA8MIqWS52w"
+      ]
+    },
+    {
+      "artist": "Galgo Lento",
+      "category": "Urban",
+      "subcategory": "urban-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.youtube.com/channel/UCXh0ap-a-fIbQBYfCxASKCw"
+      ]
+    },
+    {
+      "artist": "Gato Pérez",
+      "category": "Rumba / Mestissatge",
+      "subcategory": "mestissatge",
+      "basis": "documented-tags",
+      "sources": [
+        "data/artistes-musica.json"
+      ]
+    },
+    {
+      "artist": "Gatzara",
+      "category": "Punk",
+      "subcategory": "punk-oi",
+      "basis": "documented-tags",
+      "sources": [
+        "https://gatzara.bandcamp.com/album/single-digital-maig-2024"
+      ]
+    },
+    {
+      "artist": "Gavina.mp3",
+      "category": "Pop",
+      "subcategory": "pop-electronic",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.youtube.com/channel/UCUTFIQKXld2UO6NRCxiM8qw",
+        "https://www.enderrock.cat/sona9/grup2024/86/gavinamp3"
+      ]
+    },
+    {
+      "artist": "Germà Negre",
+      "category": "Folk i arrel",
+      "subcategory": "folk-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q20875980",
+        "https://www.germanegre.cat/",
+        "https://www.youtube.com/channel/UC_nlyjkIdPSWKkzbWK7Q-0w",
+        "https://www.youtube.com/channel/UCFI6QGe27kctP5lGeugsrhA"
+      ]
+    },
+    {
+      "artist": "Gertrudis",
+      "category": "Rumba / Mestissatge",
+      "subcategory": "rumba",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q28945042"
+      ]
+    },
+    {
+      "artist": "Gessamí Boada",
+      "category": "Cançó d'autor",
+      "subcategory": "autor-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.youtube.com/channel/UCPsEb7F9DceUz4TsdfyuiBw"
+      ]
+    },
+    {
+      "artist": "Ginestà",
+      "category": "Pop",
+      "subcategory": "pop-folk",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q77583436"
+      ]
+    },
+    {
+      "artist": "Gossos",
+      "category": "Pop",
+      "subcategory": "pop-rock",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q3315896"
+      ]
+    },
+    {
+      "artist": "Gra Fort",
+      "category": "Punk",
+      "subcategory": "punk-rock",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.enderrock.cat/disc/579/sirga"
+      ]
+    },
+    {
+      "artist": "Groggy Rude",
+      "category": "Punk",
+      "subcategory": "punk-oi",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.youtube.com/channel/UCG1eXBwVPsRtMl1xw0PmIKA"
+      ]
+    },
+    {
+      "artist": "Grup Coral de l'Agrupació Catalana d'Itàlia",
+      "category": "Folk i arrel",
+      "subcategory": "folk-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.enderrock.cat/disc/896/meu-pais-cancons-alguer-50-anys"
+      ]
+    },
+    {
+      "artist": "Grup de Folk",
+      "category": "Folk i arrel",
+      "subcategory": "folk-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.enciclopedia.cat/gran-enciclopedia-de-la-musica/grup-de-folk"
+      ]
+    },
+    {
+      "artist": "Guaita'ls",
+      "category": "Ska / Reggae",
+      "subcategory": "ska-classic",
+      "basis": "documented-tags",
+      "sources": [
+        "https://es-academic.com/dic.nsf/eswiki/1300668/"
+      ]
+    },
+    {
+      "artist": "Guillem Ramisa",
+      "category": "Cançó d'autor",
+      "subcategory": "autor-general",
+      "basis": "category-fallback",
+      "sources": [
+        "data/artistes-musica.json"
+      ]
+    },
+    {
+      "artist": "Guillermina Motta",
+      "category": "Cançó d'autor",
+      "subcategory": "autor-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q9001292",
+        "https://www.youtube.com/channel/UCyhZSV8Dh0pQi09p1vECRVA"
+      ]
+    },
+    {
+      "artist": "GUINEU",
+      "category": "Pop",
+      "subcategory": "pop-indie",
+      "basis": "documented-tags",
+      "sources": [
+        "https://icec.gencat.cat/ca/actualitat/noticies/detall/Noticia_PrimaveraPro25"
+      ]
+    },
+    {
+      "artist": "Gusset",
+      "category": "Pop",
+      "subcategory": "pop-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.enderrock.cat/noticia/30487/premis-primera-fila-2025-premien-vintena-artistes-catalans"
+      ]
+    },
+    {
+      "artist": "Hèctor Vila",
+      "category": "Cançó d'autor",
+      "subcategory": "autor-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.youtube.com/channel/UCfY137sqCUb5DJNrjiiy6iQ"
+      ]
+    },
+    {
+      "artist": "Herba Negra",
+      "category": "Rap / Hip-hop",
+      "subcategory": "rap-general",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.apuntmedia.es/programes/lestudi/programes/28-08-2018-ona-nua-herba-negra_134_1300187.html"
+      ]
+    },
+    {
+      "artist": "Hereus del Beat",
+      "category": "Urban",
+      "subcategory": "urban-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.youtube.com/channel/UCK3mJ6ChV2a26kecZHDb4lg"
+      ]
+    },
+    {
+      "artist": "Herois de la Katalunya Interior",
+      "category": "Electrònica",
+      "subcategory": "electronica-general",
+      "basis": "category-fallback",
+      "sources": [
+        "data/artistes-musica.json"
+      ]
+    },
+    {
+      "artist": "Hey Zuri",
+      "category": "Pop",
+      "subcategory": "pop-rock",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026"
+      ]
+    },
+    {
+      "artist": "Icestorm",
+      "category": "Heavy / Metal",
+      "subcategory": "metal-death",
+      "basis": "documented-tags",
+      "sources": [
+        "https://icestorm.bandcamp.com/"
+      ]
+    },
+    {
+      "artist": "Inadaptats",
+      "category": "Punk",
+      "subcategory": "punk-oi",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q3753043"
+      ]
+    },
+    {
+      "artist": "Isaak Aguilà",
+      "category": "Cançó d'autor",
+      "subcategory": "autor-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.youtube.com/channel/UCS9aWKrOcJsSqsJqBEouqAg",
+        "https://www.youtube.com/channel/UC76gEcL7sivyILBfwe54ETw"
+      ]
+    },
+    {
+      "artist": "Ja t'ho diré",
+      "category": "Pop",
+      "subcategory": "pop-rock",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.enciclopedia.cat/gran-enciclopedia-catalana/ja-tho-dire"
+      ]
+    },
+    {
+      "artist": "Jaume Barri",
+      "category": "Infantil",
+      "subcategory": "infantil",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.detotunamica.net/cantaesplai/ca/lletra.php?id=136"
+      ]
+    },
+    {
+      "artist": "Jaume Sisa i Mestres",
+      "category": "Cançó d'autor",
+      "subcategory": "autor-folk",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q3110913"
+      ]
+    },
+    {
+      "artist": "Jo Jet i Maria Ribot",
+      "category": "Pop",
+      "subcategory": "pop-indie",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q114963738"
+      ]
+    },
+    {
+      "artist": "Joan Colomo",
+      "category": "Rock",
+      "subcategory": "rock-pop",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q16189612"
+      ]
+    },
+    {
+      "artist": "Joan Dausà",
+      "category": "Pop",
+      "subcategory": "pop-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q21950809"
+      ]
+    },
+    {
+      "artist": "Joan Isaac",
+      "category": "Cançó d'autor",
+      "subcategory": "autor-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.youtube.com/channel/UCcDS4PowmsXc6R3ACE7Vgfg"
+      ]
+    },
+    {
+      "artist": "Joan Manuel Serrat",
+      "category": "Cançó d'autor",
+      "subcategory": "autor-nova-canco",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q312753"
+      ]
+    },
+    {
+      "artist": "Joan Masdéu",
+      "category": "Pop",
+      "subcategory": "pop-rock",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.joanmasdeu.com/"
+      ]
+    },
+    {
+      "artist": "Joan Miquel Oliver",
+      "category": "Cançó d'autor",
+      "subcategory": "autor-pop",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q4895645",
+        "https://www.youtube.com/channel/UCEV_8wEQansDoZnwNW1Z1Vw"
+      ]
+    },
+    {
+      "artist": "Jofre Bardagí Grima",
+      "category": "Pop",
+      "subcategory": "pop-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q11928196"
+      ]
+    },
+    {
+      "artist": "Jordi Sabatés",
+      "category": "Jazz / Blues",
+      "subcategory": "jazz-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.enderrock.cat/disc/5010/senyor-dels-anells",
+        "https://barcelonaartorchestra.com/index.php/musica-laietana/"
+      ]
+    },
+    {
+      "artist": "Jordi Tonietti",
+      "category": "Infantil",
+      "subcategory": "infantil",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.cantut.cat/index.php/canconer/cancons/item/2416-en-joan-petit"
+      ]
+    },
+    {
+      "artist": "Josep Tero",
+      "category": "Cançó d'autor",
+      "subcategory": "autor-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.youtube.com/channel/UC7ixOUPG3ydQjkUZ4pPqvhA"
+      ]
+    },
+    {
+      "artist": "Judit Neddermann",
+      "category": "Cançó d'autor",
+      "subcategory": "autor-folk",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q17338014"
+      ]
+    },
+    {
+      "artist": "Júlia Colom",
+      "category": "Pop",
+      "subcategory": "pop-folk",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.youtube.com/channel/UCx4dYUR3m6jehjW7mYdSX7g",
+        "https://www.enderrock.cat/disc/11440"
+      ]
+    },
+    {
+      "artist": "Júlia Cruz",
+      "category": "Folk i arrel",
+      "subcategory": "folk-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.3cat.cat/3cat/catorze-veus-per-entendre-el-futur-del-pop-catala/audio/1244294/"
+      ]
+    },
+    {
+      "artist": "Julieta",
+      "category": "Pop",
+      "subcategory": "pop-electronic",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q115388935"
+      ]
+    },
+    {
+      "artist": "Karda Fàstik",
+      "category": "Rock",
+      "subcategory": "rock-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.youtube.com/channel/UCGXRDt9r8BA1eJbl3dxh1GA"
+      ]
+    },
+    {
+      "artist": "Karlus",
+      "category": "Electrònica",
+      "subcategory": "electronica-pop",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.enderrock.cat/noticia/30211/karlus-eivissa-convertit-lloc-menys-habitable-som-aqui"
+      ]
+    },
+    {
+      "artist": "Kayo Malayo",
+      "category": "Rumba / Mestissatge",
+      "subcategory": "mestissatge",
+      "basis": "documented-tags",
+      "sources": [
+        "https://ca.wikipedia.org/wiki/Kayo_Malayo"
+      ]
+    },
+    {
+      "artist": "Kiddi",
+      "category": "Urban",
+      "subcategory": "urban-pop",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.youtube.com/@kiddireal"
+      ]
+    },
+    {
+      "artist": "Kitsch",
+      "category": "Rock",
+      "subcategory": "rock-general",
+      "basis": "category-fallback",
+      "sources": [
+        "data/artistes-musica.json"
+      ]
+    },
+    {
+      "artist": "knocKouts",
+      "category": "Ska / Reggae",
+      "subcategory": "ska-revival",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.liquidatormusic.com/tienda/es/ska-actual-lp/11473-knockouts-party.html"
+      ]
+    },
+    {
+      "artist": "KOP",
+      "category": "Heavy / Metal",
+      "subcategory": "metal-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.oa2produccions.cat/kop-2/"
+      ]
+    },
+    {
+      "artist": "Korruption Found",
+      "category": "Heavy / Metal",
+      "subcategory": "metal-black",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.youtube.com/channel/UClGOkwEfKOBUuvepYGT9AUQ"
+      ]
+    },
+    {
+      "artist": "L'arannà",
+      "category": "Cançó d'autor",
+      "subcategory": "autor-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.3cat.cat/3cat/catorze-veus-per-entendre-el-futur-del-pop-catala/audio/1244294/"
+      ]
+    },
+    {
+      "artist": "L'Ham de Foc",
+      "category": "Folk i arrel",
+      "subcategory": "folk-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.youtube.com/channel/UC711R927_H-bOzQGHu7B5Pg"
+      ]
+    },
+    {
+      "artist": "L'Odi Social",
+      "category": "Punk",
+      "subcategory": "punk-hardcore",
+      "basis": "documented-tags",
+      "sources": [
+        "https://lodisocial.bandcamp.com/album/que-pagui-pujol-esventats-extras-reissue"
+      ]
+    },
+    {
+      "artist": "La Banda del Yuyu",
+      "category": "Rumba / Mestissatge",
+      "subcategory": "mestissatge",
+      "basis": "documented-tags",
+      "sources": [
+        "data/artistes-musica.json"
+      ]
+    },
+    {
+      "artist": "La Coixinera",
+      "category": "Folk i arrel",
+      "subcategory": "folk-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.cantut.cat/festival/programacio/la-coixinera",
+        "https://www.youtube.com/channel/UCsAbCGSmpvZ7Ym2WNklg44A",
+        "https://www.youtube.com/channel/UC5u7o5L26RuDowQsqOJDm0w"
+      ]
+    },
+    {
+      "artist": "La Fúmiga",
+      "category": "Pop",
+      "subcategory": "pop-rock",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q63641972"
+      ]
+    },
+    {
+      "artist": "La Gossa Sorda",
+      "category": "Rumba / Mestissatge",
+      "subcategory": "mestissatge",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q3174522",
+        "https://www.youtube.com/channel/UCIw0fqxE56SUZRCVd2FI09Q"
+      ]
+    },
+    {
+      "artist": "La Iaia",
+      "category": "Rock",
+      "subcategory": "folk-rock",
+      "basis": "editorial",
+      "sources": [
+        "https://ca.wikipedia.org/wiki/La_Iaia"
+      ]
+    },
+    {
+      "artist": "La Ludwig Band",
+      "category": "Rock",
+      "subcategory": "rock-pop",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q109441792"
+      ]
+    },
+    {
+      "artist": "La Madam",
+      "category": "Rock",
+      "subcategory": "rock-general",
+      "basis": "category-fallback",
+      "sources": [
+        "data/artistes-musica.json"
+      ]
+    },
+    {
+      "artist": "La Mousse",
+      "category": "Pop",
+      "subcategory": "pop-electronic",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026"
+      ]
+    },
+    {
+      "artist": "La Pegatina",
+      "category": "Rumba / Mestissatge",
+      "subcategory": "rumba",
+      "basis": "documented-tags",
+      "sources": [
+        "https://lapegatina.com/biografia/"
+      ]
+    },
+    {
+      "artist": "La Tour de Carol",
+      "category": "Rock",
+      "subcategory": "rock-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.youtube.com/channel/UC5CGdoxqbma-pqkAHPjkq9w",
+        "https://www.enderrock.cat/noticies/etiqueta/La%2BTour%2Bde%2BCarol"
+      ]
+    },
+    {
+      "artist": "La Tresca i la Verdesca",
+      "category": "Infantil",
+      "subcategory": "infantil",
+      "basis": "documented-tags",
+      "sources": [
+        "https://blocs.xtec.cat/bondiaambmelodia/2023/11/29/per-un-instant-la-tresca-i-la-verdesca/",
+        "https://latresca.com/discografia/la-tresca-i-la-verdesca/"
+      ]
+    },
+    {
+      "artist": "La Trinca",
+      "category": "Altres estils",
+      "subcategory": "altres-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q4895526",
+        "https://www.youtube.com/channel/UCKpscwdWlVaMqcA81vLI7OA"
+      ]
+    },
+    {
+      "artist": "La Troba Kung-Fú",
+      "category": "Rumba / Mestissatge",
+      "subcategory": "mestissatge",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q1817487",
+        "https://www.youtube.com/channel/UC63BTrp525uyzMd-YTMAt_w"
+      ]
+    },
+    {
+      "artist": "La Vella Dixieland",
+      "category": "Jazz / Blues",
+      "subcategory": "jazz-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.enderrock.cat/disc/5233/vella-dixieland",
+        "https://contrabaix.com/la-vella-dixieland/"
+      ]
+    },
+    {
+      "artist": "La Xica",
+      "category": "Electrònica",
+      "subcategory": "electronica-pop",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.diarilaveu.cat/opinio/febrer-on-fire-les-veus-femenines-de-la-musica-valenciana-622773/"
+      ]
+    },
+    {
+      "artist": "Lal'ba",
+      "category": "Pop",
+      "subcategory": "pop-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q118175642"
+      ]
+    },
+    {
+      "artist": "Lali BeGood",
+      "category": "Infantil",
+      "subcategory": "infantil",
+      "basis": "documented-tags",
+      "sources": [
+        "https://lali-begood.bandcamp.com/album/el-jard-secret"
+      ]
+    },
+    {
+      "artist": "Landry el Rumbero",
+      "category": "Infantil",
+      "subcategory": "infantil",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.youtube.com/watch?v=CZWZQ9WKaVA",
+        "https://www.cantut.cat/index.php/canconer/cancons/item/2416-en-joan-petit"
+      ]
+    },
+    {
+      "artist": "Lax'n'Busto",
+      "category": "Pop",
+      "subcategory": "pop-rock",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q3075731"
+      ]
+    },
+    {
+      "artist": "Lepanto 41",
+      "category": "Urban",
+      "subcategory": "urban-pop",
+      "basis": "documented-tags",
+      "sources": [
+        "https://maresmusic.cat/projectes-2024/"
+      ]
+    },
+    {
+      "artist": "Les Aranyes",
+      "category": "Punk",
+      "subcategory": "punk-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.youtube.com/channel/UCN8HPAk-E5ZtrkLrDf7cR7A"
+      ]
+    },
+    {
+      "artist": "Les Buch",
+      "category": "Punk",
+      "subcategory": "punk-pop",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.kasbamusic.com/es/2024/05/ya-en-la-calle-catalunya-explota/"
+      ]
+    },
+    {
+      "artist": "Les Cruet",
+      "category": "Punk",
+      "subcategory": "punk-rock",
+      "basis": "documented-tags",
+      "sources": [
+        "https://ca.wikipedia.org/wiki/Les_Cruet"
+      ]
+    },
+    {
+      "artist": "Les Salvatges",
+      "category": "Punk",
+      "subcategory": "punk-pop",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.casadelamusica.cat/index.php/agenda/agenda-concerts?catid=129&id=4468%3A20261030-re-lessalvatges&view=article"
+      ]
+    },
+    {
+      "artist": "Les Testarudes",
+      "category": "Ska / Reggae",
+      "subcategory": "ska-classic",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.fim.cat/es/artistas/les-testarudes/"
+      ]
+    },
+    {
+      "artist": "Lídia Pujol",
+      "category": "Cançó d'autor",
+      "subcategory": "autor-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.youtube.com/channel/UCgAWzLHswq5VtYxCEMWGAng"
+      ]
+    },
+    {
+      "artist": "Lildami",
+      "category": "Urban",
+      "subcategory": "urban-trap",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q42716817"
+      ]
+    },
+    {
+      "artist": "Lladruc",
+      "category": "Punk",
+      "subcategory": "punk-oi",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.youtube.com/channel/UCvab9QKJ1NEdMJObwZkA39A"
+      ]
+    },
+    {
+      "artist": "Lluís Llach i Grande",
+      "category": "Cançó d'autor",
+      "subcategory": "autor-nova-canco",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q7999"
+      ]
+    },
+    {
+      "artist": "Lo Maquini",
+      "category": "Rock",
+      "subcategory": "rock-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.plataforma-llengua.cat/que-fem/noticies/6686/lo-grup-algueres-lo-maquini-guanya-la-quarta-edicio-del-cantalguer-amb-la-canco-inedita-es-un-amic"
+      ]
+    },
+    {
+      "artist": "Magalí Datzira",
+      "category": "Jazz / Blues",
+      "subcategory": "jazz-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://magalidatzira.bandcamp.com/album/la-salut-i-la-bellesa",
+        "https://www.youtube.com/channel/UCfcp4MZZ3t309KMOLo7JJag",
+        "https://www.youtube.com/watch?v=pFX6SBz7zYo"
+      ]
+    },
+    {
+      "artist": "Magalí Sare",
+      "category": "Jazz / Blues",
+      "subcategory": "jazz",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q64760623"
+      ]
+    },
+    {
+      "artist": "Mai Halis",
+      "category": "Pop",
+      "subcategory": "pop-rock",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026"
+      ]
+    },
+    {
+      "artist": "Maig",
+      "category": "Pop",
+      "subcategory": "pop-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.enderrock.cat/noticia/30783/festa-dels-premis-enderrock-2026-comptara-amb-maig-enmatu-minova-au-rora"
+      ]
+    },
+    {
+      "artist": "Mainasons",
+      "category": "Infantil",
+      "subcategory": "infantil",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.verkami.com/projects/15126-mainasons-vol2/blog"
+      ]
+    },
+    {
+      "artist": "Malánima",
+      "category": "Pop",
+      "subcategory": "pop-electronic",
+      "basis": "documented-tags",
+      "sources": [
+        "https://ib-musicat.cat/bandes/malanima/"
+      ]
+    },
+    {
+      "artist": "Malifeta",
+      "category": "Urban",
+      "subcategory": "urban-electronic",
+      "basis": "documented-tags",
+      "sources": [
+        "https://massacriticasafor.com/revista/una-canco/malifeta-la-nit/"
+      ]
+    },
+    {
+      "artist": "Malparlat",
+      "category": "Rap / Hip-hop",
+      "subcategory": "rap-general",
+      "basis": "documented-tags",
+      "sources": [
+        "https://revistamirall.com/2022/06/21/entrevista-amb-malparlat/",
+        "https://ivc.gva.es/val/audiovisual/malparlat-v",
+        "https://escolavalenciana.bandcamp.com/track/taronja",
+        "https://escolavalenciana.bandcamp.com/track/somnis",
+        "https://www.elritmodelacalle.com/malparlat-sin-pelos-en-la-lengua/",
+        "https://www.enderrock.cat/barcelonasound/disc/9510/sentimantral"
+      ]
+    },
+    {
+      "artist": "Malson Atmosfèric",
+      "category": "Rap / Hip-hop",
+      "subcategory": "rap-trap",
+      "basis": "documented-tags",
+      "sources": [
+        "https://malsonatmosferic.bandcamp.com/album/carn-de-can-demos"
+      ]
+    },
+    {
+      "artist": "Mama Dousha",
+      "category": "Pop",
+      "subcategory": "pop-electronic",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q115940783"
+      ]
+    },
+    {
+      "artist": "Mandanga!",
+      "category": "Punk",
+      "subcategory": "punk-hardcore",
+      "basis": "documented-tags",
+      "sources": [
+        "https://mandangabcn.bandcamp.com/album/de-la-guantera-al-finestral"
+      ]
+    },
+    {
+      "artist": "Manel",
+      "category": "Pop",
+      "subcategory": "pop-indie",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q3131908"
+      ]
+    },
+    {
+      "artist": "Manu Guix",
+      "category": "Cançó d'autor",
+      "subcategory": "autor-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q6752273"
+      ]
+    },
+    {
+      "artist": "Mar Grimalt",
+      "category": "Electrònica",
+      "subcategory": "electronica-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.3cat.cat/3cat/catorze-veus-per-entendre-el-futur-del-pop-catala/audio/1244294/"
+      ]
+    },
+    {
+      "artist": "Mar Pujol",
+      "category": "Cançó d'autor",
+      "subcategory": "autor-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.3cat.cat/3cat/catorze-veus-per-entendre-el-futur-del-pop-catala/audio/1244294/"
+      ]
+    },
+    {
+      "artist": "Marala",
+      "category": "Folk i arrel",
+      "subcategory": "folk-tradicional",
+      "basis": "documented-tags",
+      "sources": [
+        "https://propaganda-pel-fet.cat/index.php/cat/artistes/marala"
+      ]
+    },
+    {
+      "artist": "Maria Bertomeu i Soria",
+      "category": "Folk i arrel",
+      "subcategory": "folk-tradicional",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q117089920"
+      ]
+    },
+    {
+      "artist": "Maria Betriu",
+      "category": "Jazz / Blues",
+      "subcategory": "jazz-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.enderrock.cat/disc/5909/jazz-catala",
+        "https://www.verkami.com/projects/10333-maria-betriu-canta-standards-de-jazz-en-catala",
+        "https://www.youtube.com/channel/UC18hp60b-j4DdzwEcWe9wrw"
+      ]
+    },
+    {
+      "artist": "Maria del Mar Bonet",
+      "category": "Cançó d'autor",
+      "subcategory": "autor-nova-canco",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q237042"
+      ]
+    },
+    {
+      "artist": "Maria Jaume",
+      "category": "Pop",
+      "subcategory": "pop-indie",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q99654322"
+      ]
+    },
+    {
+      "artist": "Marina Rossell",
+      "category": "Cançó d'autor",
+      "subcategory": "autor-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q452094"
+      ]
+    },
+    {
+      "artist": "Mariona Escoda i Sendra",
+      "category": "Pop",
+      "subcategory": "pop-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q112660609"
+      ]
+    },
+    {
+      "artist": "MASSAVIU",
+      "category": "Urban",
+      "subcategory": "urban-pop",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.youtube.com/channel/UCh1_-QpgzIdG-3QfCMfZi6w",
+        "https://www.enderrock.cat/sona9/grup2020/38/massaviu"
+      ]
+    },
+    {
+      "artist": "Masvi",
+      "category": "Urban",
+      "subcategory": "urban-pop",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.youtube.com/channel/UCoybSbI2HaLsHZnY1RG8LEQ"
+      ]
+    },
+    {
+      "artist": "Mazoni",
+      "category": "Cançó d'autor",
+      "subcategory": "autor-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.youtube.com/channel/UCwg6xDQi5POlksfrsjjwFyA"
+      ]
+    },
+    {
+      "artist": "Mendra",
+      "category": "Punk",
+      "subcategory": "punk-post",
+      "basis": "documented-tags",
+      "sources": [
+        "https://saltamarges.bandcamp.com/album/hostal-hostil"
+      ]
+    },
+    {
+      "artist": "Miki Núñez",
+      "category": "Pop",
+      "subcategory": "pop-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.enderrock.cat/noticia/30487/premis-primera-fila-2025-premien-vintena-artistes-catalans"
+      ]
+    },
+    {
+      "artist": "Milícians",
+      "category": "Punk",
+      "subcategory": "punk-oi",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.milicians.com/biografia/"
+      ]
+    },
+    {
+      "artist": "Minibús intergalàctic",
+      "category": "Rock",
+      "subcategory": "rock-psicodelic",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q132131698"
+      ]
+    },
+    {
+      "artist": "miquel",
+      "category": "Pop",
+      "subcategory": "pop-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.3cat.cat/3cat/catorze-veus-per-entendre-el-futur-del-pop-catala/audio/1244294/"
+      ]
+    },
+    {
+      "artist": "Miquel Gil",
+      "category": "Folk i arrel",
+      "subcategory": "folk-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://miquelgil.com/biografia05/",
+        "https://miquelgil.com/discografia/"
+      ]
+    },
+    {
+      "artist": "Mishima",
+      "category": "Pop",
+      "subcategory": "pop-indie",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q4888175"
+      ]
+    },
+    {
+      "artist": "Moksha",
+      "category": "Heavy / Metal",
+      "subcategory": "metal-grind",
+      "basis": "documented-tags",
+      "sources": [
+        "https://bcmoksha.bandcamp.com/track/cavalgant-la-corda-fluixa"
+      ]
+    },
+    {
+      "artist": "Montse Castellà",
+      "category": "Cançó d'autor",
+      "subcategory": "autor-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.youtube.com/channel/UCCQqI6aPYDi_aGJsfDr_gqA"
+      ]
+    },
+    {
+      "artist": "Moto Clua",
+      "category": "Rock",
+      "subcategory": "rock-progressiu",
+      "basis": "editorial",
+      "sources": []
+    },
+    {
+      "artist": "Mr. Freak Ska",
+      "category": "Ska / Reggae",
+      "subcategory": "ska-classic",
+      "basis": "documented-tags",
+      "sources": [
+        "https://mrfreakska.bandcamp.com/album/ska-de-vells"
+      ]
+    },
+    {
+      "artist": "Mushkaa",
+      "category": "Urban",
+      "subcategory": "urban-trap",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q113500634"
+      ]
+    },
+    {
+      "artist": "N'Gai N'Gai",
+      "category": "Pop",
+      "subcategory": "pop-rock",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.enderrock.cat/disc/7879/roll"
+      ]
+    },
+    {
+      "artist": "Naina",
+      "category": "Pop",
+      "subcategory": "pop-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.enderrock.cat/noticia/30628/nous-discos-catala-2026"
+      ]
+    },
+    {
+      "artist": "Neisha",
+      "category": "Urban",
+      "subcategory": "urban-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.delirics.cat/en/neisha",
+        "https://www.delirics.cat/post/neisha-presenta-nou-sigle-les-prada",
+        "https://www.enderrock.cat/noticia/29744/neisha-es-presenta-missio-seu-ascens-presidenta-cuntalunya"
+      ]
+    },
+    {
+      "artist": "Núria Feliu i Mestres",
+      "category": "Jazz / Blues",
+      "subcategory": "jazz",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q9051329"
+      ]
+    },
+    {
+      "artist": "Nyandú",
+      "category": "Pop",
+      "subcategory": "pop-rock",
+      "basis": "documented-tags",
+      "sources": [
+        "data/artistes-musica.json"
+      ]
+    },
+    {
+      "artist": "Obeses",
+      "category": "Rock",
+      "subcategory": "rock-general",
+      "basis": "category-fallback",
+      "sources": [
+        "data/artistes-musica.json"
+      ]
+    },
+    {
+      "artist": "Obrint Pas",
+      "category": "Rock",
+      "subcategory": "rock-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://ppf.cat/index.php/es/artistas/obrint-pas"
+      ]
+    },
+    {
+      "artist": "Ocults",
+      "category": "Rock",
+      "subcategory": "rock-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.centpercent.cat/moviment-rock-catala-ona-que-passa-damunt/"
+      ]
+    },
+    {
+      "artist": "okdw",
+      "category": "Pop",
+      "subcategory": "pop-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://icec.gencat.cat/ca/actualitat/noticies/detall/Noticia_PrimaveraPro25"
+      ]
+    },
+    {
+      "artist": "Opció K-95",
+      "category": "Punk",
+      "subcategory": "punk-oi",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q4895718"
+      ]
+    },
+    {
+      "artist": "Oques Grasses",
+      "category": "Pop",
+      "subcategory": "pop-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q20108558"
+      ]
+    },
+    {
+      "artist": "Orella d'Ós",
+      "category": "Rock",
+      "subcategory": "rock-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026"
+      ]
+    },
+    {
+      "artist": "Orquestra Mirasol",
+      "category": "Jazz / Blues",
+      "subcategory": "jazz-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.enderrock.cat/disc/5471/salsa-catalana",
+        "https://www.dlsi.ua.es/~inesta/Prog/SPE/orqmirasol-e.html"
+      ]
+    },
+    {
+      "artist": "Orxata Sound System",
+      "category": "Urban",
+      "subcategory": "urban-trap",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q9053350"
+      ]
+    },
+    {
+      "artist": "Ósserp",
+      "category": "Heavy / Metal",
+      "subcategory": "metal-grind",
+      "basis": "documented-tags",
+      "sources": [
+        "https://osserp.bandcamp.com/album/els-nous-cants-de-la-sibil-la"
+      ]
+    },
+    {
+      "artist": "Ouineta",
+      "category": "Pop",
+      "subcategory": "pop-electronic",
+      "basis": "documented-tags",
+      "sources": [
+        "https://icec.gencat.cat/ca/actualitat/noticies/detall/Noticia_PrimaveraPro26"
+      ]
+    },
+    {
+      "artist": "Ovidi Montllor i Mengual",
+      "category": "Cançó d'autor",
+      "subcategory": "autor-nova-canco",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q2734296"
+      ]
+    },
+    {
+      "artist": "Panellet",
+      "category": "Punk",
+      "subcategory": "punk-pop",
+      "basis": "documented-tags",
+      "sources": [
+        "https://panellet.bandcamp.com/album/aloha"
+      ]
+    },
+    {
+      "artist": "Pantaleó",
+      "category": "Pop",
+      "subcategory": "pop-indie",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.musicaglobal.com/ca/artistes/pantaleo/"
+      ]
+    },
+    {
+      "artist": "Pastorets Rock",
+      "category": "Rock",
+      "subcategory": "rock-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q19716150"
+      ]
+    },
+    {
+      "artist": "Pau Riba i Romeva",
+      "category": "Rock",
+      "subcategory": "rock-psicodelic",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q9056991"
+      ]
+    },
+    {
+      "artist": "Pau Vallvé Navarro",
+      "category": "Pop",
+      "subcategory": "pop-rock",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q11940577"
+      ]
+    },
+    {
+      "artist": "Paul Fuster",
+      "category": "Cançó d'autor",
+      "subcategory": "autor-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.youtube.com/channel/UCCYgQLqvl_nmSk4-WPDGPIg",
+        "https://www.enderrock.cat/disc/918/repte",
+        "https://music.amazon.com/tracks/B007EAHWUK"
+      ]
+    },
+    {
+      "artist": "Paula Montalbán",
+      "category": "Pop",
+      "subcategory": "pop-indie",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026"
+      ]
+    },
+    {
+      "artist": "Pawn Gang",
+      "category": "Urban",
+      "subcategory": "urban-rap",
+      "basis": "documented-tags",
+      "sources": [
+        "data/artistes-musica.json"
+      ]
+    },
+    {
+      "artist": "Pegasus",
+      "category": "Jazz / Blues",
+      "subcategory": "jazz-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://santiarisa.cat/pegasus/",
+        "https://www.pegasus.cat/ca/discografia/discografia.html",
+        "https://www.youtube.com/channel/UCYVzNqs1SsMzBHLli6QUHaw"
+      ]
+    },
+    {
+      "artist": "Pep Puigdemont",
+      "category": "Infantil",
+      "subcategory": "infantil",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.puigdemont.net/publicac.php",
+        "https://www.puigdemont.net/mp3.php"
+      ]
+    },
+    {
+      "artist": "Pepet i Marieta",
+      "category": "Pop",
+      "subcategory": "pop-folk",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.youtube.com/channel/UCPzFXRl5ozCmX7i4CjI3Odw"
+      ]
+    },
+    {
+      "artist": "Pere Tàpias",
+      "category": "Cançó d'autor",
+      "subcategory": "autor-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.youtube.com/channel/UCYECw-23usgJzg1MnHRFFQQ"
+      ]
+    },
+    {
+      "artist": "Peret",
+      "category": "Rumba / Mestissatge",
+      "subcategory": "mestissatge",
+      "basis": "documented-tags",
+      "sources": [
+        "data/artistes-musica.json"
+      ]
+    },
+    {
+      "artist": "Pesta Porcina",
+      "category": "Heavy / Metal",
+      "subcategory": "metal-grind",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.metal-archives.com/bands/Pesta_Porcina/23250"
+      ]
+    },
+    {
+      "artist": "Pilseners",
+      "category": "Punk",
+      "subcategory": "punk-oi",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q20104364"
+      ]
+    },
+    {
+      "artist": "Pino Piras",
+      "category": "Cançó d'autor",
+      "subcategory": "autor-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://pinopiras.it/discografia/"
+      ]
+    },
+    {
+      "artist": "Pixamandúrries",
+      "category": "Punk",
+      "subcategory": "punk-hardcore",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.enderrock.cat/disc/8389/dels-rics-dels-pobres"
+      ]
+    },
+    {
+      "artist": "Pla Moguda",
+      "category": "Rock",
+      "subcategory": "rock-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026"
+      ]
+    },
+    {
+      "artist": "Plan-ET",
+      "category": "Urban",
+      "subcategory": "urban-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://tomeupenya.cat/2025/03/21/nova-collaboracio-de-tomeu-penya/",
+        "https://www.enderrock.cat/noticia/30034/50-cancons-estiu-catala-2025"
+      ]
+    },
+    {
+      "artist": "Pol Bordas",
+      "category": "Pop",
+      "subcategory": "pop-general",
+      "basis": "category-fallback",
+      "sources": [
+        "data/artistes-musica.json"
+      ]
+    },
+    {
+      "artist": "Poor Tràmit",
+      "category": "Rap / Hip-hop",
+      "subcategory": "rap-general",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.radiorahim.cat/artista/poor-tramit/"
+      ]
+    },
+    {
+      "artist": "Pupil·les",
+      "category": "Rap / Hip-hop",
+      "subcategory": "rap-general",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.enderrock.cat/noticia/15644/pupilles-tenir-micro-pujar-escenari-guanyar-espai-poder-dona-se-negat"
+      ]
+    },
+    {
+      "artist": "Quico el Célio, el Noi i el Mut de Ferreries",
+      "category": "Folk i arrel",
+      "subcategory": "folk-tradicional",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.quicoelcelio.com/",
+        "https://www.youtube.com/channel/UCv_7jwmDsQHYpxisi82fQng",
+        "https://www.youtube.com/channel/UCYcAA6W7ef4ZOWat8JjaARQ"
+      ]
+    },
+    {
+      "artist": "Quico Pi de la Serra",
+      "category": "Cançó d'autor",
+      "subcategory": "autor-general",
+      "basis": "category-fallback",
+      "sources": [
+        "data/artistes-musica.json"
+      ]
+    },
+    {
+      "artist": "Quimi Portet",
+      "category": "Cançó d'autor",
+      "subcategory": "autor-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.youtube.com/channel/UCWq2Sd65Q2V6PhDzOBMTb5Q"
+      ]
+    },
+    {
+      "artist": "Quinto",
+      "category": "Urban",
+      "subcategory": "urban-rap",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.pro21cultural.com/project/quinto/",
+        "https://www.enderrock.cat/noticia/28143/quinto-demostra-versatilitat-ep-debut",
+        "https://www.enderrock.cat/noticia/30990/quinto-vivim-renaixement-feixisme-mort-cultura-nostre-pais",
+        "https://www.enderrock.cat/noticia/31971/noves-cancons-catala-son-mar-pujol-max-navarro-mazoni-pep-gimeno-botifarra"
+      ]
+    },
+    {
+      "artist": "Raimon",
+      "category": "Cançó d'autor",
+      "subcategory": "autor-general",
+      "basis": "category-fallback",
+      "sources": [
+        "data/artistes-musica.json"
+      ]
+    },
+    {
+      "artist": "Ramon Muntaner i Torruella",
+      "category": "Cançó d'autor",
+      "subcategory": "autor-nova-canco",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q9066293"
+      ]
+    },
+    {
+      "artist": "Rapsodes",
+      "category": "Rap / Hip-hop",
+      "subcategory": "rap-general",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.enderrock.cat/noticia/10613/herba-negra-nova-onada-rap-valencia"
+      ]
+    },
+    {
+      "artist": "Ratpenat",
+      "category": "Punk",
+      "subcategory": "punk-hardcore",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.kasbamusic.com/es/2025/03/ratpenat-presentan-su-cuarto-album-cami-a-linfern/"
+      ]
+    },
+    {
+      "artist": "Raydibaum",
+      "category": "Rock",
+      "subcategory": "rock-general",
+      "basis": "category-fallback",
+      "sources": [
+        "data/artistes-musica.json"
+      ]
+    },
+    {
+      "artist": "Reggae per Xics",
+      "category": "Infantil",
+      "subcategory": "infantil",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.fim.cat/artistes/reggae-per-xics/"
+      ]
+    },
+    {
+      "artist": "Reïna",
+      "category": "Pop",
+      "subcategory": "pop-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.3cat.cat/3cat/catorze-veus-per-entendre-el-futur-del-pop-catala/audio/1244294/"
+      ]
+    },
+    {
+      "artist": "Remei de Ca la Fresca",
+      "category": "Rock",
+      "subcategory": "rock-psicodelic",
+      "basis": "editorial",
+      "sources": [
+        "https://www.elperiodico.cat/oci-i-cultura/20250105/remei-ca-fresca-montseny-indomit-113126258"
+      ]
+    },
+    {
+      "artist": "Renaldo & Clara",
+      "category": "Pop",
+      "subcategory": "pop-rock",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q21089255"
+      ]
+    },
+    {
+      "artist": "Rita Payés",
+      "category": "Jazz / Blues",
+      "subcategory": "jazz-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.shazam.com/es-mx/song/1735922079/un-tros-dahir-feat-eudald-payc3a9s",
+        "https://www.youtube.com/watch?v=WjYm5D9hijI",
+        "https://www.youtube.com/channel/UCYPbYGqAXm8gaYGVY-ANVXA",
+        "https://www.youtube.com/watch?v=WjYm5D9hijI"
+      ]
+    },
+    {
+      "artist": "RIU",
+      "category": "Folk i arrel",
+      "subcategory": "folk-tradicional",
+      "basis": "documented-tags",
+      "sources": [
+        "https://riumusica.bandcamp.com/album/riu",
+        "https://www.youtube.com/channel/UC5Fb0Xo8Xx6gVrFPoVsZluw"
+      ]
+    },
+    {
+      "artist": "Roba Estesa",
+      "category": "Folk i arrel",
+      "subcategory": "folk-general",
+      "basis": "category-fallback",
+      "sources": [
+        "data/artistes-musica.json"
+      ]
+    },
+    {
+      "artist": "Roger Mas i Solé",
+      "category": "Cançó d'autor",
+      "subcategory": "autor-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q1629629"
+      ]
+    },
+    {
+      "artist": "Roger Padrós de la Torre",
+      "category": "Pop",
+      "subcategory": "pop-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q123415362"
+      ]
+    },
+    {
+      "artist": "Roser Dresaire",
+      "category": "Pop",
+      "subcategory": "pop-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026"
+      ]
+    },
+    {
+      "artist": "Sa Pena",
+      "category": "Urban",
+      "subcategory": "urban-electronic",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.youtube.com/watch?v=syNga2zsd40",
+        "https://www.youtube.com/watch?v=JSNX30J5PH4",
+        "https://www.youtube.com/watch?v=1IA5LLbGfik",
+        "https://www.youtube.com/watch?v=pSfUNXG2BxU"
+      ]
+    },
+    {
+      "artist": "Sabor de Gràcia",
+      "category": "Rumba / Mestissatge",
+      "subcategory": "mestissatge",
+      "basis": "documented-tags",
+      "sources": [
+        "data/artistes-musica.json"
+      ]
+    },
+    {
+      "artist": "Sacrogermen",
+      "category": "Rap / Hip-hop",
+      "subcategory": "rap-general",
+      "basis": "documented-tags",
+      "sources": [
+        "https://sacrogermen.bandcamp.com/"
+      ]
+    },
+    {
+      "artist": "Saïm",
+      "category": "Punk",
+      "subcategory": "punk-post",
+      "basis": "documented-tags",
+      "sources": [
+        "https://saimtheband.bandcamp.com/album/precipitacions"
+      ]
+    },
+    {
+      "artist": "Samfaina de Colors",
+      "category": "Infantil",
+      "subcategory": "infantil",
+      "basis": "documented-tags",
+      "sources": [
+        "https://samfainadecolors.bandcamp.com/album/els-cistells-de-la-caputxeta"
+      ]
+    },
+    {
+      "artist": "Sandra Bautista",
+      "category": "Cançó d'autor",
+      "subcategory": "autor-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.youtube.com/channel/UC_Nx-tsTDRubDg1dbd5jwAw"
+      ]
+    },
+    {
+      "artist": "Sandra Monfort",
+      "category": "Electrònica",
+      "subcategory": "electronica-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.3cat.cat/3cat/catorze-veus-per-entendre-el-futur-del-pop-catala/audio/1244294/"
+      ]
+    },
+    {
+      "artist": "Sangtraït",
+      "category": "Rock",
+      "subcategory": "hard-rock",
+      "basis": "documented-tags",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Sangtra%C3%AFt"
+      ]
+    },
+    {
+      "artist": "Sara Roy",
+      "category": "Pop",
+      "subcategory": "pop-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.enderrock.cat/noticia/30487/premis-primera-fila-2025-premien-vintena-artistes-catalans"
+      ]
+    },
+    {
+      "artist": "Sau",
+      "category": "Pop",
+      "subcategory": "pop-rock",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q2786919"
+      ]
+    },
+    {
+      "artist": "Scorpio",
+      "category": "Urban",
+      "subcategory": "urban-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q113137746"
+      ]
+    },
+    {
+      "artist": "Scotty DK",
+      "category": "Urban",
+      "subcategory": "urban-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://primerafila.cat/actualitat/novetats/2025/07/markos-i-scotty-dk-sacsegen-lestiu-amb-ximixanga-un-merengue-electronic/"
+      ]
+    },
+    {
+      "artist": "Secta Sònica",
+      "category": "Jazz / Blues",
+      "subcategory": "jazz-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://lafonoteca.net/disco/fred-pedralbes/"
+      ]
+    },
+    {
+      "artist": "Sense Sal",
+      "category": "Pop",
+      "subcategory": "pop-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q11948184",
+        "https://www.youtube.com/@sensesal",
+        "https://www.jazzterrassa.org/en/grup/sense-sal"
+      ]
+    },
+    {
+      "artist": "Senyor Oca",
+      "category": "Rap / Hip-hop",
+      "subcategory": "rap-general",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q43218306"
+      ]
+    },
+    {
+      "artist": "Sexenni",
+      "category": "Pop",
+      "subcategory": "pop-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q118593752"
+      ]
+    },
+    {
+      "artist": "Siderland",
+      "category": "Pop",
+      "subcategory": "pop-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.3cat.cat/3cat/17072026/video/6415833/"
+      ]
+    },
+    {
+      "artist": "Sidonie",
+      "category": "Rock",
+      "subcategory": "rock-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.youtube.com/channel/UCJ6EMs_13PLDvRSHi-XqRwQ"
+      ]
+    },
+    {
+      "artist": "Sílvia Comes",
+      "category": "Cançó d'autor",
+      "subcategory": "autor-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.youtube.com/channel/UCOQizv5kl-XBONzbo3RKHdw"
+      ]
+    },
+    {
+      "artist": "Sílvia Pérez Cruz",
+      "category": "Folk i arrel",
+      "subcategory": "folk-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q9081084"
+      ]
+    },
+    {
+      "artist": "Skatalà",
+      "category": "Ska / Reggae",
+      "subcategory": "ska-punk",
+      "basis": "documented-tags",
+      "sources": [
+        "https://skatala.bandcamp.com/album/un-de-nou"
+      ]
+    },
+    {
+      "artist": "Slad Mobb",
+      "category": "Urban",
+      "subcategory": "urban-electronic",
+      "basis": "documented-tags",
+      "sources": [
+        "https://primerafila.cat/opinio/discs/2025/06/la-slad-mobb-obra-les-portes-de-barcelona-amb-la-clau-de-la-ciutat/"
+      ]
+    },
+    {
+      "artist": "Smoking Souls",
+      "category": "Rock",
+      "subcategory": "rock-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q50411198"
+      ]
+    },
+    {
+      "artist": "Socunbohemio",
+      "category": "Pop",
+      "subcategory": "pop-indie",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q109644522"
+      ]
+    },
+    {
+      "artist": "Sodi",
+      "category": "Pop",
+      "subcategory": "pop-rock",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.fim.cat/artistes/sodi/"
+      ]
+    },
+    {
+      "artist": "Solk",
+      "category": "Folk i arrel",
+      "subcategory": "folk-tradicional",
+      "basis": "documented-tags",
+      "sources": [
+        "https://elcom.cat/artistes/solk",
+        "https://linktr.ee/solkmusicaivers",
+        "https://www.kasbamusic.com/en/2023/08/divendres-es-publica-absencia-el-primer-single-del-nou-disc-de-solk/"
+      ]
+    },
+    {
+      "artist": "Sopa de Cabra",
+      "category": "Pop",
+      "subcategory": "pop-rock",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q3752591"
+      ]
+    },
+    {
+      "artist": "Sota Terra",
+      "category": "Punk",
+      "subcategory": "punk-hardcore",
+      "basis": "documented-tags",
+      "sources": [
+        "https://violenceintheveins.bandcamp.com/album/split-w-sota-terra-tempestat"
+      ]
+    },
+    {
+      "artist": "Stay Homas",
+      "category": "Pop",
+      "subcategory": "pop-rock",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q90712655"
+      ]
+    },
+    {
+      "artist": "Still Ill",
+      "category": "Rap / Hip-hop",
+      "subcategory": "rap-general",
+      "basis": "documented-tags",
+      "sources": [
+        "https://guspira.net/ca/still-ill-presenta-nou-disc-en-catala-allo-que-mai-no-mor/"
+      ]
+    },
+    {
+      "artist": "Subliminal",
+      "category": "Urban",
+      "subcategory": "urban-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.youtube.com/channel/UCz35Q7e_ulwY_uRqg5zDxeQ",
+        "https://www.youtube.com/channel/UCurNpmNfpz7XDqblb-wwnnA"
+      ]
+    },
+    {
+      "artist": "Suu",
+      "category": "Pop",
+      "subcategory": "pop-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://halleyrecords.com/artist/suu/"
+      ]
+    },
+    {
+      "artist": "Svetlana",
+      "category": "Pop",
+      "subcategory": "pop-electronic",
+      "basis": "documented-tags",
+      "sources": [
+        "https://svetlana.cat/"
+      ]
+    },
+    {
+      "artist": "Tancat per defunció",
+      "category": "Rock",
+      "subcategory": "rock-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.enderrock.cat/noticia/21177/cancons-cremen-tancat-defuncio"
+      ]
+    },
+    {
+      "artist": "Tano!",
+      "category": "Punk",
+      "subcategory": "punk-post",
+      "basis": "documented-tags",
+      "sources": [
+        "https://saltamarges.bandcamp.com/album/intanostellar"
+      ]
+    },
+    {
+      "artist": "Tardor",
+      "category": "Pop",
+      "subcategory": "pop-rock",
+      "basis": "documented-tags",
+      "sources": [
+        "https://tardor.band/",
+        "https://www.pro21cultural.com/project/tardor/",
+        "https://www.enderrock.cat/noticia/23805/mural-sonor-pais-valencia-canta",
+        "https://www.enderrock.cat/noticia/30622/canco-tardor-es-canta-ara-quatre-llengues-europees-minoritzades"
+      ]
+    },
+    {
+      "artist": "Tashkenti",
+      "category": "Rumba / Mestissatge",
+      "subcategory": "mestissatge",
+      "basis": "documented-tags",
+      "sources": [
+        "data/artistes-musica.json"
+      ]
+    },
+    {
+      "artist": "Tempestat",
+      "category": "Heavy / Metal",
+      "subcategory": "metal-grind",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.youtube.com/channel/UCxVQcJujZLvClGNyvobPRyQ"
+      ]
+    },
+    {
+      "artist": "Teràpia de Shock",
+      "category": "Pop",
+      "subcategory": "pop-rock",
+      "basis": "documented-tags",
+      "sources": [
+        "https://terapiadeshock.cat/"
+      ]
+    },
+    {
+      "artist": "Terratombats",
+      "category": "Rumba / Mestissatge",
+      "subcategory": "mestissatge",
+      "basis": "documented-tags",
+      "sources": [
+        "data/artistes-musica.json"
+      ]
+    },
+    {
+      "artist": "Tesa",
+      "category": "Rap / Hip-hop",
+      "subcategory": "rap-fusion",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.discmedi.com/es/hip-hop-rap/hip-hop/rap_darrel"
+      ]
+    },
+    {
+      "artist": "Thanatopraxy",
+      "category": "Heavy / Metal",
+      "subcategory": "metal-grind",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.metal-archives.com/bands/Thanatopraxy/3540484882"
+      ]
+    },
+    {
+      "artist": "ThatKid",
+      "category": "Urban",
+      "subcategory": "urban-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://sidecar.es/en/sladmobb-thatkid/"
+      ]
+    },
+    {
+      "artist": "The Anti-Patiks",
+      "category": "Punk",
+      "subcategory": "punk-rock",
+      "basis": "documented-tags",
+      "sources": [
+        "https://the-anti-patiks.bandcamp.com/album/les-pitjors-can-ons-del-punk-rock-catal-2"
+      ]
+    },
+    {
+      "artist": "The Cabrians",
+      "category": "Ska / Reggae",
+      "subcategory": "ska-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.youtube.com/watch?v=PFPcb0S0d0c",
+        "https://www.youtube.com/channel/UC-N1gUYe6UmwHOSQAUPH2-A"
+      ]
+    },
+    {
+      "artist": "The Demencials",
+      "category": "Rock",
+      "subcategory": "rock-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q110485652"
+      ]
+    },
+    {
+      "artist": "The Tyets",
+      "category": "Pop",
+      "subcategory": "pop-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q101461756"
+      ]
+    },
+    {
+      "artist": "Tiger Menja Zebra",
+      "category": "Electrònica",
+      "subcategory": "electronica-experimental",
+      "basis": "documented-tags",
+      "sources": [
+        "https://tigermenjazebra.bandcamp.com/album/admirables",
+        "https://hiddentrackrecords.bandcamp.com/album/anarquia-i-mal-de-cap",
+        "https://zombipujol.bandcamp.com/album/mediocritat-i-putamerdisme",
+        "https://www.youtube.com/channel/UCukPK3uNQMGRUhLbmZO7PkQ"
+      ]
+    },
+    {
+      "artist": "Tomeu Penya",
+      "category": "Rock",
+      "subcategory": "rock-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q2917088",
+        "https://www.youtube.com/channel/UCsOxXt5l7XmAc6AvMQDRV4A"
+      ]
+    },
+    {
+      "artist": "Tornaveus",
+      "category": "Folk i arrel",
+      "subcategory": "folk-tradicional",
+      "basis": "documented-tags",
+      "sources": [
+        "https://tornaveuspolifonies.wordpress.com/",
+        "https://www.youtube.com/channel/UC8vbtHPcQvQEuQi2wcwK6aQ"
+      ]
+    },
+    {
+      "artist": "Toti Soler",
+      "category": "Cançó d'autor",
+      "subcategory": "autor-folk",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q2618737"
+      ]
+    },
+    {
+      "artist": "Trèvol",
+      "category": "Folk i arrel",
+      "subcategory": "folk-tradicional",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.enderrock.cat/sons/grupsons2023/22/trevol",
+        "https://www.youtube.com/channel/UCz3aiLj85sLBimSrPwNcQcQ",
+        "https://www.youtube.com/channel/UCF6nxIBqp7vuVu51PGC7x5w"
+      ]
+    },
+    {
+      "artist": "Triquell",
+      "category": "Pop",
+      "subcategory": "pop-rock",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q112663470"
+      ]
+    },
+    {
+      "artist": "Txarango",
+      "category": "Pop",
+      "subcategory": "pop-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://diumenge.ara.cat/premium/suplements/ara_tu/detenir-carrer-seguent-actuavem-merce_1_3859635.html"
+      ]
+    },
+    {
+      "artist": "UC",
+      "category": "Folk i arrel",
+      "subcategory": "folk-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.youtube.com/channel/UCViiIPCMCLZHQSUP16yQuKA"
+      ]
+    },
+    {
+      "artist": "Udol",
+      "category": "Heavy / Metal",
+      "subcategory": "metal-doom",
+      "basis": "documented-tags",
+      "sources": [
+        "https://udol.bandcamp.com/music"
+      ]
+    },
+    {
+      "artist": "ultralone",
+      "category": "Urban",
+      "subcategory": "urban-rap",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.youtube.com/channel/UC2Q-E-1tamuyLrKRMd0Wmbg"
+      ]
+    },
+    {
+      "artist": "Umpah-Pah",
+      "category": "Pop",
+      "subcategory": "pop-rock",
+      "basis": "documented-tags",
+      "sources": [
+        "https://bibliotecavirtual.diba.cat/ca/musica/adria-punti"
+      ]
+    },
+    {
+      "artist": "Una Bèstia Incontrolable",
+      "category": "Punk",
+      "subcategory": "punk-hardcore",
+      "basis": "documented-tags",
+      "sources": [
+        "https://lavidaesunmus.bandcamp.com/album/observant-com-el-m-n-es-destrueix-lp"
+      ]
+    },
+    {
+      "artist": "Urbàlia Rurana",
+      "category": "Folk i arrel",
+      "subcategory": "folk-tradicional",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.monfolk.com/artistes/urbalia-rurana/",
+        "https://www.youtube.com/channel/UCSsJFD5CFYZ3fe24qhtsejA",
+        "https://www.youtube.com/channel/UCMIVDQMYttFV6h1aRIeQN-w"
+      ]
+    },
+    {
+      "artist": "Vademecum FAM",
+      "category": "Urban",
+      "subcategory": "urban-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.youtube.com/@VademecumFAM"
+      ]
+    },
+    {
+      "artist": "Vàlius",
+      "category": "Punk",
+      "subcategory": "punk-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://valius.bandcamp.com/album/obligaci",
+        "https://valius.bandcamp.com/album/senyal",
+        "https://valius.bandcamp.com/album/fam",
+        "https://valius.bandcamp.com/album/escola",
+        "https://www.youtube.com/channel/UClaGLb0HvCGlcm7g-AGEZ1g"
+      ]
+    },
+    {
+      "artist": "Valtònyc",
+      "category": "Rap / Hip-hop",
+      "subcategory": "rap-general",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.radiorahim.cat/artista/valtonyc/"
+      ]
+    },
+    {
+      "artist": "Ven'nus",
+      "category": "Pop",
+      "subcategory": "pop-electronic",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q109467090"
+      ]
+    },
+    {
+      "artist": "Vicens Martín Dream Big Band",
+      "category": "Jazz / Blues",
+      "subcategory": "jazz-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://vicensmartin.bandcamp.com/album/els-fruits-saborosos-gemma-abri-vicens-mart-n-dream-big-band",
+        "https://www.youtube.com/channel/UCpj14cymb-6wmeXwI4hmFxA"
+      ]
+    },
+    {
+      "artist": "Vicky l’Arròs",
+      "category": "Electrònica",
+      "subcategory": "electronica-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://vickylarros.bandcamp.com/album/kitty"
+      ]
+    },
+    {
+      "artist": "Vidres a la Sang",
+      "category": "Heavy / Metal",
+      "subcategory": "metal-progressiu",
+      "basis": "documented-tags",
+      "sources": [
+        "https://vidresalasang.bandcamp.com/album/virtut-del-desenc-s"
+      ]
+    },
+    {
+      "artist": "Vinnie Kairos",
+      "category": "Rap / Hip-hop",
+      "subcategory": "rap-general",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.radiorahim.cat/artista/vinnie-kairos/"
+      ]
+    },
+    {
+      "artist": "Vittara",
+      "category": "Pop",
+      "subcategory": "pop-indie",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.enderrock.cat/noticia/31101/vine-enderrock-sona-maig-amb-quinto-vittara-sodi-ginesta"
+      ]
+    },
+    {
+      "artist": "Voltor",
+      "category": "Punk",
+      "subcategory": "punk-hardcore",
+      "basis": "documented-tags",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Voltor"
+      ]
+    },
+    {
+      "artist": "Vrademargk",
+      "category": "Heavy / Metal",
+      "subcategory": "metal-death",
+      "basis": "documented-tags",
+      "sources": [
+        "https://vrademargk.bandcamp.com/album/the-black-chamber"
+      ]
+    },
+    {
+      "artist": "Whiskyn's",
+      "category": "Pop",
+      "subcategory": "pop-rock",
+      "basis": "documented-tags",
+      "sources": [
+        "https://25rockcatala.wordpress.com/2016/05/01/whiskyns/"
+      ]
+    },
+    {
+      "artist": "X-Fanekaes",
+      "category": "Punk",
+      "subcategory": "punk-folk",
+      "basis": "documented-tags",
+      "sources": [
+        "https://xfanekaes.bandcamp.com/album/sexe-cassalla-i-punkfolk"
+      ]
+    },
+    {
+      "artist": "Xanguito",
+      "category": "Pop",
+      "subcategory": "pop-electronic",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q109692476"
+      ]
+    },
+    {
+      "artist": "Xarim Aresté",
+      "category": "Cançó d'autor",
+      "subcategory": "autor-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.youtube.com/channel/UCVCila0PYCYGNb7ThkN2Tlw"
+      ]
+    },
+    {
+      "artist": "Xavi Sarrià",
+      "category": "Rock",
+      "subcategory": "folk-rock",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q11955284"
+      ]
+    },
+    {
+      "artist": "Xavier Baró",
+      "category": "Cançó d'autor",
+      "subcategory": "autor-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.youtube.com/channel/UC40skFzEdR6EMg4FeL7U6OQ"
+      ]
+    },
+    {
+      "artist": "Xavier de Bétera",
+      "category": "Folk i arrel",
+      "subcategory": "folk-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q28971615"
+      ]
+    },
+    {
+      "artist": "Xeic!",
+      "category": "Rumba / Mestissatge",
+      "subcategory": "mestissatge",
+      "basis": "documented-tags",
+      "sources": [
+        "data/artistes-musica.json"
+      ]
+    },
+    {
+      "artist": "Xenia Casado",
+      "category": "Urban",
+      "subcategory": "urban-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.youtube.com/channel/UC8QspJi5zwZj3rOVYHKKVUQ",
+        "https://www.fim.cat/artistes/xenia-casado/"
+      ]
+    },
+    {
+      "artist": "Xesco Boix",
+      "category": "Infantil",
+      "subcategory": "infantil",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.contesdelmon.org/mm/file/not%C3%ADcies/canconer_xesco_boix.pdf"
+      ]
+    },
+    {
+      "artist": "Xicu",
+      "category": "Pop",
+      "subcategory": "pop-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q110261491"
+      ]
+    },
+    {
+      "artist": "Xiomara Abello",
+      "category": "Cançó d'autor",
+      "subcategory": "autor-folk",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.santamagdalena.es/es/la-cantautora-xiomara-abello-presenta-disco-teles/",
+        "https://musicaenvalencia.es/artista/117/xiomara-abello",
+        "https://www.enderrock.cat/edrvalencia/numero10/disc/7696",
+        "https://escolavalenciana.bandcamp.com/track/morisc-passat",
+        "https://escolavalenciana.bandcamp.com/track/xiomara-abello-ideal",
+        "https://xiomaraabello.bandcamp.com/album/flor-de-xicoia"
+      ]
+    },
+    {
+      "artist": "Xisk",
+      "category": "Urban",
+      "subcategory": "urban-electronic",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.delirics.cat/xisk",
+        "https://www.enderrock.cat/noticia/30286/xisk-sent-teu-foc-1lokura"
+      ]
+    },
+    {
+      "artist": "Xiula",
+      "category": "Infantil",
+      "subcategory": "infantil",
+      "basis": "documented-tags",
+      "sources": [
+        "https://xiula.bandcamp.com/album/cuarto-lagarto",
+        "https://xiula.bandcamp.com/track/verdura-i-peix"
+      ]
+    },
+    {
+      "artist": "Xucu-pà",
+      "category": "Rock",
+      "subcategory": "rock-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q112921118"
+      ]
+    },
+    {
+      "artist": "Ypnosi",
+      "category": "Rock",
+      "subcategory": "rock-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://music.amazon.es/albums/B0FWFMQ748"
+      ]
+    },
+    {
+      "artist": "Zombi Pujol",
+      "category": "Punk",
+      "subcategory": "punk-garage",
+      "basis": "documented-tags",
+      "sources": [
+        "https://zombipujol.bandcamp.com/album/imbecil-litat-t-ctica"
+      ]
+    },
+    {
+      "artist": "ZOO",
+      "category": "Urban",
+      "subcategory": "urban-rap",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q19832676"
+      ]
+    }
+  ]
+}
