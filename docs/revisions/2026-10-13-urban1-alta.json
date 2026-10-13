@@ -279,7 +279,7 @@
     {
       "name": "Xisk",
       "canonicalName": "Xisk",
-      "place": "Palma",
+      "place": "Pòrtol (Marratxí)",
       "territory": "Illes Balears",
       "genres": [
         "Urbana",
@@ -288,7 +288,8 @@
       "note": "Primera selecció documental de Dolenties i els seus senzills. Sinceritat queda fora perquè la lletra publicada conté una tornada català-anglès. Es deixa pendent la resta de Viu en Pau, l’edició Paràsit i el Tema antic fins a contrast individual. Cap canal homònim esportiu incorporat.",
       "sources": [
         "https://www.delirics.cat/xisk",
-        "https://www.enderrock.cat/noticia/30286/xisk-sent-teu-foc-1lokura"
+        "https://www.enderrock.cat/noticia/30286/xisk-sent-teu-foc-1lokura",
+        "https://www.firab.org/ca/programacion/562/"
       ],
       "channels": [
         {
@@ -562,7 +563,9 @@
           "reason": "Canal no seleccionat; no s’atribueix automàticament per coincidència del nom."
         }
       ],
-      "recordingsPublished": 22
+      "recordingsPublished": 22,
+      "municipality": "Marratxí",
+      "originPlaceId": "geonames:2514097"
     },
     {
       "name": "Fortuu",
@@ -1270,5 +1273,13 @@
     "warnings": 184,
     "baselineCompared": true,
     "newDiagnostics": 0
+  },
+  "originCorrection": {
+    "artist": "Xisk",
+    "previous": "Palma",
+    "locality": "Pòrtol",
+    "municipality": "Marratxí",
+    "source": "https://www.firab.org/ca/programacion/562/",
+    "checkedAt": "2026-10-13T14:10:20.360Z"
   }
 }

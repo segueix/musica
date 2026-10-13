@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-13T14:04:42.110Z",
+  "updatedAt": "2026-10-13T14:10:20.358Z",
   "attribution": {
     "text": "Coordenades de referència: GeoNames, via Open-Meteo. CC BY 4.0.",
     "sources": [
@@ -2378,6 +2378,19 @@
       },
       "territory": "País Valencià",
       "source": "https://geocoding-api.open-meteo.com/v1/search?name=Poliny%C3%A0+de+X%C3%BAquer&count=10&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-13"
+    },
+    "geonames:2514097": {
+      "name": "Marratxí",
+      "type": "municipality",
+      "geonamesId": 2514097,
+      "coordinates": {
+        "latitude": 39.62142,
+        "longitude": 2.7253,
+        "precision": "settlement_reference"
+      },
+      "territory": "Illes Balears",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Marratx%C3%AD&count=10&language=ca&format=json&countryCode=ES",
       "checkedOn": "2026-10-13"
     }
   },
@@ -10081,12 +10094,13 @@
       "status": "validated",
       "relation": "origin",
       "placeIds": [
-        "geonames:2512989"
+        "geonames:2514097"
       ],
       "confidence": "alta",
-      "basis": "Xisca Garau, artista palmesana. El canal oficial coincideix amb els vídeos del segell; els crèdits del Tema identifiquen Francisca Garau Cañellas.",
+      "basis": "Xisca Garau és originària de Pòrtol, nucli del municipi de Marratxí. La fitxa de Fira B! de l’Institut d’Estudis Baleàrics acredita Pòrtol. El mapa utilitza la referència municipal de Marratxí, no Palma ni una coordenada inventada del nucli.",
       "sources": [
-        "https://www.enderrock.cat/noticia/30286/xisk-sent-teu-foc-1lokura"
+        "https://www.firab.org/ca/programacion/562/",
+        "https://www.mtxi.es/xisk-revolucio-electronica-amb-accent-portola/"
       ],
       "reviewedOn": "2026-10-13",
       "assignmentSource": "manual-review",
