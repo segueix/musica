@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-13T15:48:40.911Z",
+  "generatedAt": "2026-10-13T15:52:27.734Z",
   "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
   "restrictedVideoCount": 21,
@@ -2078,8 +2078,8 @@
       "id": "UCf6zqvW8RqxzfaSda0-nIuA",
       "name": "FLAKKO",
       "tracks": 19,
-      "selected": 18,
-      "withClip": 2
+      "selected": 19,
+      "withClip": 0
     },
     {
       "id": "UCnRFXP9nR0fh9BeIH7pZsZQ",
@@ -3625,20 +3625,20 @@
   "indexedChannelCount": 591,
   "resolvedChannelCount": 591,
   "feedChannelCount": 591,
-  "rawPublicVideoCount": 6622,
-  "feedVideoCount": 6098,
-  "acceptedMusicCount": 6058,
-  "categoryEligibleVideoCount": 6054,
+  "rawPublicVideoCount": 6584,
+  "feedVideoCount": 6061,
+  "acceptedMusicCount": 6020,
+  "categoryEligibleVideoCount": 6016,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
-    "before": 1,
+    "before": 0,
     "matched": 0,
-    "rejected": 1
+    "rejected": 0
   },
   "contentReviewCount": 529,
   "contentTypeCounts": {
-    "song": 5876,
-    "live_song": 178,
+    "song": 5845,
+    "live_song": 171,
     "album": 4,
     "other": 35,
     "review": 529

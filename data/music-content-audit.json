@@ -1,20 +1,20 @@
 {
-  "generatedAt": "2026-10-13T15:48:40.911Z",
-  "rawPublicVideoCount": 6622,
-  "feedVideoCount": 6098,
-  "acceptedMusicCount": 6058,
-  "categoryEligibleVideoCount": 6054,
+  "generatedAt": "2026-10-13T15:52:27.734Z",
+  "rawPublicVideoCount": 6584,
+  "feedVideoCount": 6061,
+  "acceptedMusicCount": 6020,
+  "categoryEligibleVideoCount": 6016,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
-    "before": 1,
+    "before": 0,
     "matched": 0,
-    "rejected": 1
+    "rejected": 0
   },
   "rejectedOrReviewCount": 564,
   "reviewCount": 529,
   "typeCounts": {
-    "song": 5876,
-    "live_song": 178,
+    "song": 5845,
+    "live_song": 171,
     "album": 4,
     "other": 35,
     "review": 529
