@@ -1,0 +1,81 @@
+name: Revisar altes musicals Castello
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/revisar-altes-castello.yml']
+  workflow_dispatch:
+concurrency:
+  group: music-data-writer
+  cancel-in-progress: false
+permissions:
+  contents: write
+jobs:
+  descobrir:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '20'
+      - name: Consulta publica de les tres identitats
+        env:
+          YOUTUBE_API_KEY_SERVER: ${{ secrets.YOUTUBE_API_KEY_SERVER }}
+        run: |
+          node - <<'NODE'
+          const fs=require('fs');
+          (async()=>{
+            const key=process.env.YOUTUBE_API_KEY_SERVER;
+            if(!key) throw Error('Falta la clau de YouTube');
+            const norm=x=>String(x||'').normalize('NFD').replace(/\p{Diacritic}/gu,'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();
+            async function api(endpoint,args){
+              const u=new URL('https://www.googleapis.com/youtube/v3/'+endpoint);
+              for(const[k,v]of Object.entries({...args,key}))u.searchParams.set(k,v);
+              const r=await fetch(u,{signal:AbortSignal.timeout(30000)});const j=await r.json();
+              if(!r.ok)throw Error(endpoint+': '+j.error?.message);return j;
+            }
+            const targets=[
+              {name:'Malparlat',queries:['Malparlat Taronja','Malparlat Rap i poesia Provided to YouTube']},
+              {name:'Xiomara Abello',queries:['Xiomara Abello Morisc passat','Xiomara Abello Flor de xicoia Provided to YouTube']},
+              {name:'Esther',queries:['Esther Tot comença','Esther Les cartes que mai vaig cremar Provided to YouTube']}
+            ];
+            const report={checkedAt:new Date().toISOString(),artists:[]};
+            const lines=[];
+            for(const t of targets){
+              const candidates=new Set();const results=[];
+              for(const q of t.queries){
+                const found=await api('search',{part:'snippet',type:'video',q,maxResults:15});
+                for(const v of found.items||[]){
+                  results.push({id:v.id.videoId,title:v.snippet.title,channelId:v.snippet.channelId,channelTitle:v.snippet.channelTitle});
+                  const n=norm(v.snippet.channelTitle).replace(/ (topic|tema|tv)$/,'');
+                  if(n===norm(t.name)||(t.name==='Xiomara Abello'&&n.includes('xiomara abello')))candidates.add(v.snippet.channelId);
+                }
+              }
+              if(candidates.size>8)throw Error('Massa candidats: '+t.name);
+              const channels=candidates.size?(await api('channels',{part:'snippet,contentDetails',id:[...candidates].join(',')})).items||[]:[];
+              const entry={name:t.name,searchResults:results,channels:[]};
+              for(const c of channels){
+                const videos=[];let token;
+                for(let page=0;page<5;page++){
+                  const p=await api('playlistItems',{part:'contentDetails',playlistId:c.contentDetails.relatedPlaylists.uploads,maxResults:50,...(token?{pageToken:token}:{})});
+                  const ids=(p.items||[]).map(x=>x.contentDetails.videoId);
+                  if(ids.length){
+                    const details=await api('videos',{part:'snippet,contentDetails,status',id:ids.join(',')});
+                    for(const v of details.items||[])videos.push({id:v.id,title:v.snippet.title,description:v.snippet.description,channelId:v.snippet.channelId,publishedAt:v.snippet.publishedAt,duration:v.contentDetails.duration,regionRestriction:v.contentDetails.regionRestriction||null,embeddable:v.status.embeddable});
+                  }
+                  token=p.nextPageToken;if(!token)break;
+                }
+                entry.channels.push({id:c.id,name:c.snippet.title,handle:c.snippet.customUrl||null,complete:!token,videos});
+                lines.push('\n## '+t.name+' | '+c.snippet.title+' | '+c.id+' | '+(c.snippet.customUrl||'')+'\n',...videos.map(v=>v.id+' | '+v.title+' | '+v.duration));
+                console.log(JSON.stringify({artist:t.name,channel:c.snippet.title,id:c.id,videos:videos.length,complete:!token}));
+              }
+              report.artists.push(entry);
+            }
+            fs.writeFileSync('docs/revisions/2026-10-13-castello-descoberta.json',JSON.stringify(report,null,2)+'\n');
+            fs.writeFileSync('docs/revisions/2026-10-13-castello-resum.md',lines.join('\n')+'\n');
+          })().catch(e=>{console.error(e.message);process.exitCode=1});
+          NODE
+      - name: Desa nomes la consulta publica
+        run: bash scripts/publicar_dades.sh "docs: canals públics de Malparlat, Xiomara Abello i Esther" docs/revisions/2026-10-13-castello-descoberta.json docs/revisions/2026-10-13-castello-resum.md
