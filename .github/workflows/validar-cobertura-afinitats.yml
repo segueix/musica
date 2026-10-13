@@ -26,7 +26,7 @@ jobs:
           cache: npm
       - run: npm ci
       - run: node scripts/generar_afinitats_musica.js --repair-catalog
-      - run: node scripts/revisions/validar_cobertura_afinitats.js 8f74d6e21f8c60a0e37dfc37998193ae7546e4b9
+      - run: node scripts/revisions/validar_cobertura_afinitats.js 03b3b90c85616c0f2b53352013fd6df51b3fdc25
       - run: npm run sw:version
       - name: Desa catàleg reparat, perfils i verificació
         run: |

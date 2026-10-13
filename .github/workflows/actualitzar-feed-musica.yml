@@ -169,8 +169,15 @@ jobs:
         if: steps.scope.outputs.work == 'true'
         run: npm run search:index:hybrid:rebuild
 
+      - name: Actualitza i comprova totes les afinitats
+        if: steps.scope.outputs.work == 'true'
+        run: |
+          node scripts/generar_afinitats_musica.js --repair-catalog
+          node scripts/actualitzar_versio_sw.js
+
       - name: Publica feed i índex en un sol commit
         if: steps.scope.outputs.work == 'true'
         # Si main ha canviat mentrestant: git pull --rebase i es torna a provar (no es perd la quota gastada).
         run: |
-          bash scripts/publicar_dades.sh "data: actualitza feed i índex musical" data js/channels-ca.json
+          bash scripts/publicar_dades.sh "data: actualitza feed i índex musical" data js/channels-ca.json js/features/music-affinity-catalog.js sw.js
+

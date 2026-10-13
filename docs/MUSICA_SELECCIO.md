@@ -284,6 +284,6 @@ si la regla antiga és per títol, es congelen els IDs ja publicats al feed.
 `preservar_generes.js` evita esborrar gèneres quan la font externa retorna buit.
 Les decisions revisades porten `genre:manual`. El workflow de cobertura regenera
 els perfils en canviar la base o les seleccions i falla davant un artista sense
-gènere. Les altes fetes per altres workflows amb GITHUB_TOKEN han d'executar també
-`node scripts/generar_afinitats_musica.js --repair-catalog` abans de publicar, ja
-que els commits del bot no disparen un segon workflow de GitHub Actions.
+gènere. Els workflows de feed, descoberta i enriquiment executen també
+`node scripts/generar_afinitats_musica.js --repair-catalog` abans de publicar; els commits del bot no disparen un segon workflow de GitHub Actions.
+Qualsevol workflow nou d’alta ha de mantenir aquesta comprovació.

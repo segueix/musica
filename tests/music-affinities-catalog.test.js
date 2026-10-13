@@ -24,7 +24,9 @@ describe('cobertura completa d’afinitats', () => {
             expect(owners[0].sources.length, c.name).toBeGreaterThan(0);
             expect(c.categories.length, c.name).toBeGreaterThan(0);
         }
-        expect(A.profiles.length).toBeGreaterThanOrEqual(405);
+        const db = JSON.parse(readFileSync('data/artistes-musica.json', 'utf8'));
+        const published = new Set(channels.map(c => c.id));
+        expect(A.profiles).toHaveLength(db.artists.filter(a => a.name !== 'Club Social Carme' && a.youtube?.channels?.some(c => published.has(c.id))).length);
         expect(find('Club Social Carme')).toBeUndefined();
     });
     it('Knockouts té 10 cançons elegibles a Ska i les relacions són simètriques', () => {

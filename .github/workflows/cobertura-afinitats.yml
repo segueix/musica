@@ -23,6 +23,10 @@ jobs:
         with:
           node-version: '24'
           cache: npm
+      - name: Sincronitza main abans de regenerar
+        run: |
+          git fetch origin main
+          git reset --hard origin/main
       - run: npm ci
       - run: node scripts/generar_afinitats_musica.js --repair-catalog
       - run: npx vitest run tests/music-affinities-catalog.test.js

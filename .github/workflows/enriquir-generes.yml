@@ -2,6 +2,7 @@ name: Enriquir gèneres musicals
 
 on:
   push:
+    branches: [main]
     paths:
       - "data/music-genres.json"
       - "scripts/enriquir_generes_musica.js"
@@ -42,11 +43,16 @@ jobs:
       - name: Valida la base
         run: node scripts/validar_artistes_musica.js
 
+      - name: Actualitza i comprova totes les afinitats
+        run: |
+          node scripts/generar_afinitats_musica.js --repair-catalog
+          node scripts/actualitzar_versio_sw.js
+
       - name: Publica canvis
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/artistes-musica.json
+          git add data js/channels-ca.json js/features/music-affinity-catalog.js sw.js
 
           if git diff --cached --quiet; then
             echo "Sense canvis de gèneres."
@@ -64,7 +70,9 @@ jobs:
           git reset --hard origin/main
           node scripts/enriquir_generes_musica.js
           node scripts/validar_artistes_musica.js
-          git add data/artistes-musica.json
+          node scripts/generar_afinitats_musica.js --repair-catalog
+          node scripts/actualitzar_versio_sw.js
+          git add data js/channels-ca.json js/features/music-affinity-catalog.js sw.js
 
           if git diff --cached --quiet; then
             echo "Sense canvis després de resincronitzar."
@@ -73,3 +81,4 @@ jobs:
 
           git commit -m "data: actualitza gèneres musicals"
           git push origin HEAD:main
+

@@ -2,6 +2,7 @@ name: Descobrir artistes de música
 
 on:
   push:
+    branches: [main]
     paths:
       - "scripts/descobrir_artistes_musica.js"
       - "scripts/enriquir_artistes_musicbrainz.js"
@@ -54,11 +55,16 @@ jobs:
       - name: Valida la base
         run: node scripts/validar_artistes_musica.js
 
+      - name: Actualitza i comprova totes les afinitats
+        run: |
+          node scripts/generar_afinitats_musica.js --repair-catalog
+          node scripts/actualitzar_versio_sw.js
+
       - name: Publica canvis
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/artistes-musica.json
+          git add data js/channels-ca.json js/features/music-affinity-catalog.js sw.js
 
           if git diff --cached --quiet; then
             echo "Sense artistes nous."
@@ -67,3 +73,4 @@ jobs:
 
           git commit -m "data: actualitza candidats musicals"
           git push origin HEAD:main
+
