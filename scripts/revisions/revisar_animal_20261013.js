@@ -66,6 +66,7 @@ function apply() {
     hidden.updatedAt=now; write('data/hidden-videos.json',hidden);
     const reviewed=new Set(language.revisades);
     for(const k of ['pendents','descartades','acceptadesPerArtista']) language[k]=(language[k] || []).filter(v=>!reviewed.has(v.id));
+    language.revisades.sort();
     language.updatedAt=now; write('data/revisio-idiomes.json',language);
     const allow=read('data/music-channel-video-allowlist.json');
     const rule=allow.channels[CHANNEL] || {};

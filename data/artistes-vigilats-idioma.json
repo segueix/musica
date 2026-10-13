@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-13T06:55:01.321Z",
+  "updatedAt": "2026-10-13",
   "criteri": "Només els artistes vigilats passen per revisió de cançons. Confiança editorial del catàleg existent, no verificació individual de lletres. Les altes noves es classifiquen una vegada.",
   "vigilats": [
     {
@@ -140,9 +140,13 @@
       "canals": [
         "UCg2Go1mJnKlXnMvy1VhlZTw"
       ],
-      "motiu": "Antecedents d’exclusions o dubtes de llengua documentats; no implica que tot el repertori sigui multilingüe.",
+      "motiu": "Repertori català amb quatre obres excloses en anglès/castellà. Les novetats i col·laboracions continuen subjectes a revisió. docs/revisions/2026-10-13-animal-revisio.json",
       "fonts": [
-        "docs/ARTISTES_CASTELLA.md"
+        "docs/ARTISTES_CASTELLA.md",
+        "https://www.youtube.com/watch?v=2fCmI1lebgI",
+        "https://www.youtube.com/watch?v=OfNF7ynrPmI",
+        "https://www.youtube.com/watch?v=O8pDDoHLjJ8",
+        "https://www.youtube.com/watch?v=Bk__T96E5Qg"
       ]
     },
     {

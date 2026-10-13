@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-13T06:55:01.321Z",
+  "updatedAt": "2026-10-13T08:47:32.185Z",
   "description": "Llista blanca per a canals on Segueix Música només ha d'ingerir vídeos concrets. Admet títols exactes, fragments obligatoris i fragments exclosos.",
   "channels": {
     "UCKpscwdWlVaMqcA81vLI7OA": {
@@ -6124,6 +6124,16 @@
         "song",
         "live_song"
       ]
+    },
+    "UCg2Go1mJnKlXnMvy1VhlZTw": {
+      "deniedTitleContains": [
+        "Bam bam",
+        "Mil huellas",
+        "Todo lo que tengo",
+        "Sabio sin razón"
+      ],
+      "artist": "Animal",
+      "note": "Quatre obres excloses per lletra oficial contrastada: Bam bam (anglès), Mil huellas, Todo lo que tengo i Sabio sin razón (castellà). No és una exclusió general del canal. Vegeu docs/revisions/2026-10-13-animal-revisio.json"
     }
   }
 }

@@ -2,7 +2,7 @@
 
 Document generat de `data/artistes-vigilats-idioma.json`, l’única font operativa. No editeu la taula a mà.
 
-Actualitzat: 2026-10-13T06:55:01.321Z. 119 entrades vigilades i 272 artistes de confiança editorial. Inclou antecedents sense canal actiu, per si es reincorporen.
+Actualitzat: 2026-10-13. 119 entrades vigilades i 272 artistes de confiança editorial. Inclou antecedents sense canal actiu, per si es reincorporen.
 
 ## Política
 
@@ -41,7 +41,7 @@ La revisió només resol els IDs indicats: la resta queda pendent. Afegiu `--mat
 | Alfred Garcia | Alfred García, alfredgarcia, Alfred García - Topic | `UCego8MWd7DkJXnGl9WQAbTQ`, `UC0O9bre-V-kOYKAspxwS1uA` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
 | Anaïs Vila |  | `UCPzAMvgbZZqisrkmVSgqIHg` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
 | Andreu Rifé i Oro | Andreu Rifé | `UCOuye30wynoiY9VfWM8BFWg` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
-| Animal | AnimalGrup | `UCg2Go1mJnKlXnMvy1VhlZTw` | Antecedents d’exclusions o dubtes de llengua documentats; no implica que tot el repertori sigui multilingüe. | `docs/ARTISTES_CASTELLA.md` |
+| Animal | AnimalGrup | `UCg2Go1mJnKlXnMvy1VhlZTw` | Repertori català amb quatre obres excloses en anglès/castellà. Les novetats i col·laboracions continuen subjectes a revisió. docs/revisions/2026-10-13-animal-revisio.json | `docs/ARTISTES_CASTELLA.md`, `https://www.youtube.com/watch?v=2fCmI1lebgI`, `https://www.youtube.com/watch?v=OfNF7ynrPmI`, `https://www.youtube.com/watch?v=O8pDDoHLjJ8`, `https://www.youtube.com/watch?v=Bk__T96E5Qg` |
 | Anna Andreu | Anna Andreu - Topic | `UCSDuvSwql52flui2567reQw`, `UCBwmzKj56CGeAPmEFgqz0dg` | Antecedents d’exclusions o dubtes de llengua documentats; no implica que tot el repertori sigui multilingüe. | `docs/ARTISTES_CASTELLA.md` |
 | Atupa |  | Sense canal assignat | Dubte anterior pendent de comprovar; vigilància provisional, sense certificar una llengua pel títol. | `data/revisio-idiomes.json` |
 | Au Rora | Au Rora - Topic | `UCDdlTgzfniVZApbfmtGpUPg`, `UCOEzuNu9yvO0AFTnSVKk4LQ` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
