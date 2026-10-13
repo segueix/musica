@@ -381,7 +381,7 @@
                         <span class="am-hint__full-mouse">Arrossega per moure't · roda per apropar</span>
                         <span class="am-hint__draw">Dibuixa una zona amb el dit o el ratolí: sonarà la música dels seus artistes</span>
                     </p>
-                    <div class="am-zoom"><button type="button" data-am-zoom="1" aria-label="Apropa">+</button><button type="button" data-am-zoom="-1" aria-label="Allunya">−</button><button type="button" data-am-zoom="0" aria-label="Mapa sencer">⤢</button></div>
+                    <div class="am-zoom"><button type="button" data-am-zoom="1" aria-label="Apropa">+</button><button type="button" data-am-zoom="-1" aria-label="Allunya">−</button></div>
                 </div>
                 <div class="am-panel" aria-live="polite">${zone && !selected ? zonePanelHtml(zone) : panelHtml(selected)}</div>
             </div>
