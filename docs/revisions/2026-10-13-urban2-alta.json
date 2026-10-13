@@ -1,0 +1,226 @@
+{
+  "schemaVersion": 1,
+  "reviewedOn": "2026-10-13",
+  "method": "Alta amb selecció inicial acotada: lletres oficials quan disponibles, metadades d’idioma i selecció documental de mitjans. No és una revisió íntegra de les discografies. La resta de pistes no s’aprova per defecte.",
+  "artists": [
+    {
+      "name": "BTZ",
+      "territory": "Catalunya",
+      "genres": [
+        "Urbana",
+        "Rap / Hip-hop"
+      ],
+      "channels": [
+        {
+          "id": "UCcYEaa06Rifj3dOcoBemmEQ",
+          "handle": "@btzofficial_",
+          "name": "BTZ",
+          "type": "official",
+          "primary": false,
+          "allowedVideoIds": [
+            "50XYpeasJbE",
+            "weM9c0_n7cI",
+            "Deut3g3-_5A",
+            "L1HRPnvyJx4"
+          ]
+        },
+        {
+          "id": "UClEd4A7MtTmIPSB_v7r7APA",
+          "handle": null,
+          "name": "BTZ - Topic",
+          "type": "topic",
+          "primary": true,
+          "allowedVideoIds": [
+            "if_KonDiYrQ",
+            "8zsDdSWy_7Y",
+            "wnv1HdDzbKw",
+            "50s2vD7WFJs",
+            "udXQRxJadwk"
+          ]
+        }
+      ],
+      "sources": [
+        "https://www.enderrock.cat/edr/numero477/noticia/2477",
+        "https://www.enderrock.cat/edr/numero463/noticia/2334",
+        "https://los40.com/2023/06/16/stay-homas-amb-the-tyets-miki-nunez-i-alvert-donen-la-benvinguda-a-lestiu-amb-noves-cancons/",
+        "https://www.3cat.cat/324/els-cinc-videoclips-destacats-de-la-setmana-de-magali-datzira-a-la-sra-tomasa/noticia-amp/3309878/"
+      ],
+      "selectedRecordings": 9,
+      "remaining": "Pendent de revisió; no autoritzat per la llista blanca."
+    },
+    {
+      "name": "Sa Pena",
+      "territory": "País Valencià",
+      "genres": [
+        "Urbana",
+        "Electrònica"
+      ],
+      "channels": [
+        {
+          "id": "UC-IgP47EUNYq687PT6WZ4gQ",
+          "handle": "@sapena627",
+          "name": "Sa Pena",
+          "type": "official",
+          "primary": false,
+          "allowedVideoIds": [
+            "syNga2zsd40",
+            "JSNX30J5PH4",
+            "1IA5LLbGfik",
+            "pSfUNXG2BxU"
+          ]
+        },
+        {
+          "id": "UCyNGJutrN-ISgp5qUAGUmiw",
+          "handle": null,
+          "name": "Sa Pena - Topic",
+          "type": "topic",
+          "primary": true,
+          "allowedVideoIds": [
+            "EkVFj2mKNWk",
+            "Ertmp3-HCmY",
+            "gGWboLB1EIo",
+            "tzzlOyRaf6Q",
+            "_PjQwvKfEGM",
+            "zIU0CyAP2s8",
+            "UgIAu97keOo",
+            "if3o0IP7M0s"
+          ]
+        }
+      ],
+      "sources": [
+        "https://www.youtube.com/watch?v=syNga2zsd40",
+        "https://www.youtube.com/watch?v=JSNX30J5PH4",
+        "https://www.youtube.com/watch?v=1IA5LLbGfik",
+        "https://www.youtube.com/watch?v=pSfUNXG2BxU"
+      ],
+      "selectedRecordings": 12,
+      "remaining": "Pendent de revisió; no autoritzat per la llista blanca."
+    },
+    {
+      "name": "Flakko",
+      "territory": "Illes Balears",
+      "genres": [
+        "Urbana",
+        "Rap / Hip-hop"
+      ],
+      "channels": [
+        {
+          "id": "UCyzX-sJRQkIWqBeyasLk9rw",
+          "handle": "@massaprim",
+          "name": "FLAKKO",
+          "type": "official",
+          "primary": false,
+          "allowedVideoIds": [
+            "omGwFY8Kipg"
+          ]
+        },
+        {
+          "id": "UCf6zqvW8RqxzfaSda0-nIuA",
+          "handle": null,
+          "name": "FLAKKO - Topic",
+          "type": "topic",
+          "primary": true,
+          "allowedVideoIds": [
+            "1o_VpGg3Uo0"
+          ]
+        }
+      ],
+      "sources": [
+        "https://www.enderrock.cat/noticia/30395/noves-cancons-catala-son-rosalia-gossa-sorda-sexenni-amb-miki-nunez-gavinamp3"
+      ],
+      "selectedRecordings": 2,
+      "remaining": "Pendent de revisió; no autoritzat per la llista blanca."
+    },
+    {
+      "name": "Plan-ET",
+      "territory": "Illes Balears",
+      "genres": [
+        "Urbana"
+      ],
+      "channels": [
+        {
+          "id": "UC_DpS_aFZdvKqblz0PtYT5Q",
+          "handle": null,
+          "name": "Plan-Et - Topic",
+          "type": "topic",
+          "primary": true,
+          "allowedVideoIds": [
+            "w1eoEiICMo4",
+            "kYwCam6zn_c"
+          ]
+        }
+      ],
+      "sources": [
+        "https://tomeupenya.cat/2025/03/21/nova-collaboracio-de-tomeu-penya/",
+        "https://www.enderrock.cat/noticia/30034/50-cancons-estiu-catala-2025"
+      ],
+      "selectedRecordings": 2,
+      "remaining": "Pendent de revisió; no autoritzat per la llista blanca."
+    },
+    {
+      "name": "Sense Sal",
+      "territory": "Catalunya",
+      "genres": [
+        "Pop"
+      ],
+      "channels": [
+        {
+          "id": "UCEOjwllkTYUqljRethReusQ",
+          "handle": null,
+          "name": "Sense Sal - Topic",
+          "type": "topic",
+          "primary": true,
+          "allowedVideoIds": [
+            "4Auq-ZAFHIg",
+            "F-JIe94MRyU",
+            "FV68Vohie_Q",
+            "Lh-DS05OWf0",
+            "OkjuveLdU8o",
+            "WDfcuh3TCJs",
+            "kmthqG0GRAE",
+            "nkp2cRZQoTk",
+            "Rix4cyZ5dN0",
+            "PmQI6irBk-E",
+            "_ymig1e2dM4",
+            "B-ctQjFUO9w",
+            "47x6RmZjUtc",
+            "t15e-pVkzUw",
+            "K6IM38Wv2wY",
+            "Lw4bz8LRyZ0"
+          ]
+        },
+        {
+          "id": "UCOkIGVfu3W-Xzuyh-esacsg",
+          "handle": "@sensesal",
+          "name": "Sense Sal",
+          "type": "official",
+          "primary": false,
+          "allowedVideoIds": [
+            "SdAGhNbZAMc",
+            "eDNuhofGAoM",
+            "DMGHVBkN3_U",
+            "t_iZLipEMcc",
+            "A1uoNApon2o",
+            "JHirg4hxyyI",
+            "n6vRd-iO6t0",
+            "W3jvpbglHPQ",
+            "fg1npRYy59s",
+            "ZR3Ro8uzRFQ",
+            "gLXqdn4hXIw",
+            "I6joJF21QLs",
+            "L7_6LAg3368",
+            "4_Fi1ZoAb_4",
+            "iCiBCeGzsk8",
+            "Ri-aGEvVvKM"
+          ]
+        }
+      ],
+      "sources": [
+        "https://www.youtube.com/@sensesal",
+        "https://www.jazzterrassa.org/en/grup/sense-sal"
+      ],
+      "selectedRecordings": 32,
+      "remaining": "Pendent de revisió; no autoritzat per la llista blanca."
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-13T14:04:42.110Z",
+  "updatedAt": "2026-10-13T15:23:50.661Z",
   "artists": [
     {
       "name": "2 Princeses Barbudes",
@@ -30060,14 +30060,31 @@
       "genres": [
         "Pop"
       ],
-      "territories": [],
+      "territories": [
+        "Catalunya"
+      ],
       "languages": [
         "ca"
       ],
       "wikidataId": "Q11948184",
       "musicbrainzId": "3da1a961-aa59-4872-8143-4072334d34e3",
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCEOjwllkTYUqljRethReusQ",
+            "handle": null,
+            "name": "Sense Sal - Topic",
+            "type": "topic",
+            "primary": true
+          },
+          {
+            "id": "UCOkIGVfu3W-Xzuyh-esacsg",
+            "handle": "@sensesal",
+            "name": "Sense Sal",
+            "type": "official",
+            "primary": false
+          }
+        ],
         "candidates": [],
         "searchCandidates": [
           {
@@ -30117,15 +30134,19 @@
           }
         ]
       },
-      "confidence": "pendent",
-      "reviewStatus": "pendent",
-      "active": false,
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
         "https://www.wikidata.org/wiki/Q11948184",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "https://www.youtube.com/@sensesal",
+        "https://www.jazzterrassa.org/en/grup/sense-sal",
+        "genre:manual",
+        "manual-user-2026-10-13"
       ],
-      "lastChecked": "2026-09-25T15:56:34.949Z",
-      "notes": "",
+      "lastChecked": "2026-10-13T15:23:50.661Z",
+      "notes": "Alta sol·licitada el 2026-10-13. Selecció inicial per ID; resta del repertori pendent de revisió. Fonts i selecció: docs/revisions/2026-10-13-urban2-alta.json.",
       "enrichment": {
         "musicbrainz": {
           "checkedAt": "2026-09-25T15:56:34.949Z",
@@ -30167,7 +30188,8 @@
       },
       "genresRaw": [
         "pop"
-      ]
+      ],
+      "displayName": "Sense Sal"
     },
     {
       "name": "Senyor Oca",
@@ -36706,6 +36728,192 @@
       "active": true,
       "lastChecked": "2026-10-13",
       "notes": "Selecció catalana de La gata i Percal, senzills i poesia musicada. No s’importa sencera l’etapa anterior: Julio Verne és en castellà segons la lletra. Si tu no estàs, Ixos, He tornat i Diumenge de matí queden fora d’aquesta selecció estricta pels passatges en altres llengües. La resta de pistes antigues no es dona per revisada. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "name": "BTZ",
+      "aliases": [
+        "Bat Cheaterz",
+        "BAT Cheaterz"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCcYEaa06Rifj3dOcoBemmEQ",
+            "handle": "@btzofficial_",
+            "name": "BTZ",
+            "type": "official",
+            "primary": false
+          },
+          {
+            "id": "UClEd4A7MtTmIPSB_v7r7APA",
+            "handle": null,
+            "name": "BTZ - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ]
+      },
+      "sources": [
+        "https://www.enderrock.cat/edr/numero477/noticia/2477",
+        "https://www.enderrock.cat/edr/numero463/noticia/2334",
+        "https://los40.com/2023/06/16/stay-homas-amb-the-tyets-miki-nunez-i-alvert-donen-la-benvinguda-a-lestiu-amb-noves-cancons/",
+        "https://www.3cat.cat/324/els-cinc-videoclips-destacats-de-la-setmana-de-magali-datzira-a-la-sra-tomasa/noticia-amp/3309878/",
+        "genre:manual",
+        "manual-user-2026-10-13"
+      ],
+      "displayName": "BTZ",
+      "genres": [
+        "Urbana",
+        "Rap / Hip-hop"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-13T15:23:50.661Z",
+      "notes": "Alta sol·licitada el 2026-10-13. Selecció inicial per ID; resta del repertori pendent de revisió. Fonts i selecció: docs/revisions/2026-10-13-urban2-alta.json."
+    },
+    {
+      "name": "Sa Pena",
+      "aliases": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UC-IgP47EUNYq687PT6WZ4gQ",
+            "handle": "@sapena627",
+            "name": "Sa Pena",
+            "type": "official",
+            "primary": false
+          },
+          {
+            "id": "UCyNGJutrN-ISgp5qUAGUmiw",
+            "handle": null,
+            "name": "Sa Pena - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ]
+      },
+      "sources": [
+        "https://www.youtube.com/watch?v=syNga2zsd40",
+        "https://www.youtube.com/watch?v=JSNX30J5PH4",
+        "https://www.youtube.com/watch?v=1IA5LLbGfik",
+        "https://www.youtube.com/watch?v=pSfUNXG2BxU",
+        "genre:manual",
+        "manual-user-2026-10-13"
+      ],
+      "displayName": "Sa Pena",
+      "genres": [
+        "Urbana",
+        "Electrònica"
+      ],
+      "territories": [
+        "País Valencià"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-13T15:23:50.661Z",
+      "notes": "Alta sol·licitada el 2026-10-13. Selecció inicial per ID; resta del repertori pendent de revisió. Fonts i selecció: docs/revisions/2026-10-13-urban2-alta.json."
+    },
+    {
+      "name": "Flakko",
+      "aliases": [
+        "FLAKKO"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCyzX-sJRQkIWqBeyasLk9rw",
+            "handle": "@massaprim",
+            "name": "FLAKKO",
+            "type": "official",
+            "primary": false
+          },
+          {
+            "id": "UCf6zqvW8RqxzfaSda0-nIuA",
+            "handle": null,
+            "name": "FLAKKO - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ]
+      },
+      "sources": [
+        "https://www.enderrock.cat/noticia/30395/noves-cancons-catala-son-rosalia-gossa-sorda-sexenni-amb-miki-nunez-gavinamp3",
+        "genre:manual",
+        "manual-user-2026-10-13"
+      ],
+      "displayName": "Flakko",
+      "genres": [
+        "Urbana",
+        "Rap / Hip-hop"
+      ],
+      "territories": [
+        "Illes Balears"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-13T15:23:50.661Z",
+      "notes": "Alta sol·licitada el 2026-10-13. Selecció inicial per ID; resta del repertori pendent de revisió. Fonts i selecció: docs/revisions/2026-10-13-urban2-alta.json."
+    },
+    {
+      "name": "Plan-ET",
+      "aliases": [
+        "Plan-Et"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UC_DpS_aFZdvKqblz0PtYT5Q",
+            "handle": null,
+            "name": "Plan-Et - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ]
+      },
+      "sources": [
+        "https://tomeupenya.cat/2025/03/21/nova-collaboracio-de-tomeu-penya/",
+        "https://www.enderrock.cat/noticia/30034/50-cancons-estiu-catala-2025",
+        "genre:manual",
+        "manual-user-2026-10-13"
+      ],
+      "displayName": "Plan-ET",
+      "genres": [
+        "Urbana"
+      ],
+      "territories": [
+        "Illes Balears"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-13T15:23:50.661Z",
+      "notes": "Alta sol·licitada el 2026-10-13. Selecció inicial per ID; resta del repertori pendent de revisió. Fonts i selecció: docs/revisions/2026-10-13-urban2-alta.json."
     }
   ]
 }

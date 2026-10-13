@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-13T14:04:42.110Z",
+  "updatedAt": "2026-10-13T15:23:50.661Z",
   "description": "Decisions manuals sobre el tipus de contingut de vídeos concrets. Manen sobre el classificador automàtic (scripts/lib/classificar_contingut_musical.js) i el pipeline (scripts/update_music_feed.js) les reaplica a cada generació del feed. Tipus permesos: song, live_song, album, other. Un vídeo revisat aquí surt de data/music-content-review.json.",
   "videos": [
     {
@@ -12823,6 +12823,348 @@
       "contentType": "live_song",
       "title": "PASSE - AINA KODA (Live)",
       "note": "Enregistrament complet seleccionat per ID; editor verificat. docs/revisions/2026-10-13-urban1-alta.json"
+    },
+    {
+      "id": "50XYpeasJbE",
+      "contentType": "song",
+      "title": "BTZ - LA LLAVOR (Official Visualizer) #COSMOS",
+      "note": "Alta sol·licitada el 2026-10-13. Selecció inicial per ID; resta del repertori pendent de revisió. Fonts i selecció: docs/revisions/2026-10-13-urban2-alta.json."
+    },
+    {
+      "id": "weM9c0_n7cI",
+      "contentType": "song",
+      "title": "SOMNIS - BTZ  (Official Visualizer)",
+      "note": "Alta sol·licitada el 2026-10-13. Selecció inicial per ID; resta del repertori pendent de revisió. Fonts i selecció: docs/revisions/2026-10-13-urban2-alta.json."
+    },
+    {
+      "id": "Deut3g3-_5A",
+      "contentType": "song",
+      "title": "TROPICAL - BTZ  (Official Video)",
+      "note": "Alta sol·licitada el 2026-10-13. Selecció inicial per ID; resta del repertori pendent de revisió. Fonts i selecció: docs/revisions/2026-10-13-urban2-alta.json."
+    },
+    {
+      "id": "L1HRPnvyJx4",
+      "contentType": "song",
+      "title": "GOING UP - BTZ (Official Video)",
+      "note": "Alta sol·licitada el 2026-10-13. Selecció inicial per ID; resta del repertori pendent de revisió. Fonts i selecció: docs/revisions/2026-10-13-urban2-alta.json."
+    },
+    {
+      "id": "if_KonDiYrQ",
+      "contentType": "song",
+      "title": "LA LLAVOR",
+      "note": "Alta sol·licitada el 2026-10-13. Selecció inicial per ID; resta del repertori pendent de revisió. Fonts i selecció: docs/revisions/2026-10-13-urban2-alta.json."
+    },
+    {
+      "id": "8zsDdSWy_7Y",
+      "contentType": "song",
+      "title": "Somnis",
+      "note": "Alta sol·licitada el 2026-10-13. Selecció inicial per ID; resta del repertori pendent de revisió. Fonts i selecció: docs/revisions/2026-10-13-urban2-alta.json."
+    },
+    {
+      "id": "wnv1HdDzbKw",
+      "contentType": "song",
+      "title": "LA LLAVOR",
+      "note": "Alta sol·licitada el 2026-10-13. Selecció inicial per ID; resta del repertori pendent de revisió. Fonts i selecció: docs/revisions/2026-10-13-urban2-alta.json."
+    },
+    {
+      "id": "50s2vD7WFJs",
+      "contentType": "song",
+      "title": "Going up",
+      "note": "Alta sol·licitada el 2026-10-13. Selecció inicial per ID; resta del repertori pendent de revisió. Fonts i selecció: docs/revisions/2026-10-13-urban2-alta.json."
+    },
+    {
+      "id": "udXQRxJadwk",
+      "contentType": "song",
+      "title": "Tropical",
+      "note": "Alta sol·licitada el 2026-10-13. Selecció inicial per ID; resta del repertori pendent de revisió. Fonts i selecció: docs/revisions/2026-10-13-urban2-alta.json."
+    },
+    {
+      "id": "syNga2zsd40",
+      "contentType": "song",
+      "title": "Sa Pena - Vida",
+      "note": "Alta sol·licitada el 2026-10-13. Selecció inicial per ID; resta del repertori pendent de revisió. Fonts i selecció: docs/revisions/2026-10-13-urban2-alta.json."
+    },
+    {
+      "id": "JSNX30J5PH4",
+      "contentType": "song",
+      "title": "Sa Pena - Desobeir (Prod Pxllt)",
+      "note": "Alta sol·licitada el 2026-10-13. Selecció inicial per ID; resta del repertori pendent de revisió. Fonts i selecció: docs/revisions/2026-10-13-urban2-alta.json."
+    },
+    {
+      "id": "1IA5LLbGfik",
+      "contentType": "song",
+      "title": "Sa Pena - Hui Sí",
+      "note": "Alta sol·licitada el 2026-10-13. Selecció inicial per ID; resta del repertori pendent de revisió. Fonts i selecció: docs/revisions/2026-10-13-urban2-alta.json."
+    },
+    {
+      "id": "pSfUNXG2BxU",
+      "contentType": "song",
+      "title": "Sa Pena - Nosa",
+      "note": "Alta sol·licitada el 2026-10-13. Selecció inicial per ID; resta del repertori pendent de revisió. Fonts i selecció: docs/revisions/2026-10-13-urban2-alta.json."
+    },
+    {
+      "id": "EkVFj2mKNWk",
+      "contentType": "song",
+      "title": "Vida",
+      "note": "Alta sol·licitada el 2026-10-13. Selecció inicial per ID; resta del repertori pendent de revisió. Fonts i selecció: docs/revisions/2026-10-13-urban2-alta.json."
+    },
+    {
+      "id": "Ertmp3-HCmY",
+      "contentType": "song",
+      "title": "Desobeir",
+      "note": "Alta sol·licitada el 2026-10-13. Selecció inicial per ID; resta del repertori pendent de revisió. Fonts i selecció: docs/revisions/2026-10-13-urban2-alta.json."
+    },
+    {
+      "id": "gGWboLB1EIo",
+      "contentType": "song",
+      "title": "Vida",
+      "note": "Alta sol·licitada el 2026-10-13. Selecció inicial per ID; resta del repertori pendent de revisió. Fonts i selecció: docs/revisions/2026-10-13-urban2-alta.json."
+    },
+    {
+      "id": "tzzlOyRaf6Q",
+      "contentType": "song",
+      "title": "Desobeir",
+      "note": "Alta sol·licitada el 2026-10-13. Selecció inicial per ID; resta del repertori pendent de revisió. Fonts i selecció: docs/revisions/2026-10-13-urban2-alta.json."
+    },
+    {
+      "id": "_PjQwvKfEGM",
+      "contentType": "song",
+      "title": "Nosa",
+      "note": "Alta sol·licitada el 2026-10-13. Selecció inicial per ID; resta del repertori pendent de revisió. Fonts i selecció: docs/revisions/2026-10-13-urban2-alta.json."
+    },
+    {
+      "id": "zIU0CyAP2s8",
+      "contentType": "song",
+      "title": "Hui sí",
+      "note": "Alta sol·licitada el 2026-10-13. Selecció inicial per ID; resta del repertori pendent de revisió. Fonts i selecció: docs/revisions/2026-10-13-urban2-alta.json."
+    },
+    {
+      "id": "UgIAu97keOo",
+      "contentType": "song",
+      "title": "Hui Sí",
+      "note": "Alta sol·licitada el 2026-10-13. Selecció inicial per ID; resta del repertori pendent de revisió. Fonts i selecció: docs/revisions/2026-10-13-urban2-alta.json."
+    },
+    {
+      "id": "if3o0IP7M0s",
+      "contentType": "song",
+      "title": "Nosa",
+      "note": "Alta sol·licitada el 2026-10-13. Selecció inicial per ID; resta del repertori pendent de revisió. Fonts i selecció: docs/revisions/2026-10-13-urban2-alta.json."
+    },
+    {
+      "id": "omGwFY8Kipg",
+      "contentType": "song",
+      "title": "¡massaprim!",
+      "note": "Alta sol·licitada el 2026-10-13. Selecció inicial per ID; resta del repertori pendent de revisió. Fonts i selecció: docs/revisions/2026-10-13-urban2-alta.json."
+    },
+    {
+      "id": "1o_VpGg3Uo0",
+      "contentType": "song",
+      "title": "¡massaprim!",
+      "note": "Alta sol·licitada el 2026-10-13. Selecció inicial per ID; resta del repertori pendent de revisió. Fonts i selecció: docs/revisions/2026-10-13-urban2-alta.json."
+    },
+    {
+      "id": "w1eoEiICMo4",
+      "contentType": "song",
+      "title": "Tant d'Amor (feat. Tomeu Penya)",
+      "note": "Alta sol·licitada el 2026-10-13. Selecció inicial per ID; resta del repertori pendent de revisió. Fonts i selecció: docs/revisions/2026-10-13-urban2-alta.json."
+    },
+    {
+      "id": "kYwCam6zn_c",
+      "contentType": "song",
+      "title": "Tant d'Amor (feat. Tomeu Penya)",
+      "note": "Alta sol·licitada el 2026-10-13. Selecció inicial per ID; resta del repertori pendent de revisió. Fonts i selecció: docs/revisions/2026-10-13-urban2-alta.json."
+    },
+    {
+      "id": "4Auq-ZAFHIg",
+      "contentType": "song",
+      "title": "Color d'esperança (La Marató)",
+      "note": "Alta sol·licitada el 2026-10-13. Selecció inicial per ID; resta del repertori pendent de revisió. Fonts i selecció: docs/revisions/2026-10-13-urban2-alta.json."
+    },
+    {
+      "id": "F-JIe94MRyU",
+      "contentType": "song",
+      "title": "Mira'm Als Ulls",
+      "note": "Alta sol·licitada el 2026-10-13. Selecció inicial per ID; resta del repertori pendent de revisió. Fonts i selecció: docs/revisions/2026-10-13-urban2-alta.json."
+    },
+    {
+      "id": "FV68Vohie_Q",
+      "contentType": "song",
+      "title": "La Vall",
+      "note": "Alta sol·licitada el 2026-10-13. Selecció inicial per ID; resta del repertori pendent de revisió. Fonts i selecció: docs/revisions/2026-10-13-urban2-alta.json."
+    },
+    {
+      "id": "Lh-DS05OWf0",
+      "contentType": "song",
+      "title": "Descansa",
+      "note": "Alta sol·licitada el 2026-10-13. Selecció inicial per ID; resta del repertori pendent de revisió. Fonts i selecció: docs/revisions/2026-10-13-urban2-alta.json."
+    },
+    {
+      "id": "OkjuveLdU8o",
+      "contentType": "song",
+      "title": "És Aquesta Nit",
+      "note": "Alta sol·licitada el 2026-10-13. Selecció inicial per ID; resta del repertori pendent de revisió. Fonts i selecció: docs/revisions/2026-10-13-urban2-alta.json."
+    },
+    {
+      "id": "WDfcuh3TCJs",
+      "contentType": "song",
+      "title": "Vine'm a Buscar",
+      "note": "Alta sol·licitada el 2026-10-13. Selecció inicial per ID; resta del repertori pendent de revisió. Fonts i selecció: docs/revisions/2026-10-13-urban2-alta.json."
+    },
+    {
+      "id": "kmthqG0GRAE",
+      "contentType": "song",
+      "title": "Fins Que Surti el Sol",
+      "note": "Alta sol·licitada el 2026-10-13. Selecció inicial per ID; resta del repertori pendent de revisió. Fonts i selecció: docs/revisions/2026-10-13-urban2-alta.json."
+    },
+    {
+      "id": "nkp2cRZQoTk",
+      "contentType": "song",
+      "title": "Constel·lacions",
+      "note": "Alta sol·licitada el 2026-10-13. Selecció inicial per ID; resta del repertori pendent de revisió. Fonts i selecció: docs/revisions/2026-10-13-urban2-alta.json."
+    },
+    {
+      "id": "Rix4cyZ5dN0",
+      "contentType": "song",
+      "title": "Mira On Som",
+      "note": "Alta sol·licitada el 2026-10-13. Selecció inicial per ID; resta del repertori pendent de revisió. Fonts i selecció: docs/revisions/2026-10-13-urban2-alta.json."
+    },
+    {
+      "id": "PmQI6irBk-E",
+      "contentType": "song",
+      "title": "Com Abans",
+      "note": "Alta sol·licitada el 2026-10-13. Selecció inicial per ID; resta del repertori pendent de revisió. Fonts i selecció: docs/revisions/2026-10-13-urban2-alta.json."
+    },
+    {
+      "id": "_ymig1e2dM4",
+      "contentType": "song",
+      "title": "Estima Lliure",
+      "note": "Alta sol·licitada el 2026-10-13. Selecció inicial per ID; resta del repertori pendent de revisió. Fonts i selecció: docs/revisions/2026-10-13-urban2-alta.json."
+    },
+    {
+      "id": "B-ctQjFUO9w",
+      "contentType": "song",
+      "title": "La Sortida",
+      "note": "Alta sol·licitada el 2026-10-13. Selecció inicial per ID; resta del repertori pendent de revisió. Fonts i selecció: docs/revisions/2026-10-13-urban2-alta.json."
+    },
+    {
+      "id": "47x6RmZjUtc",
+      "contentType": "song",
+      "title": "La Sortida",
+      "note": "Alta sol·licitada el 2026-10-13. Selecció inicial per ID; resta del repertori pendent de revisió. Fonts i selecció: docs/revisions/2026-10-13-urban2-alta.json."
+    },
+    {
+      "id": "t15e-pVkzUw",
+      "contentType": "song",
+      "title": "Crida amb mi",
+      "note": "Alta sol·licitada el 2026-10-13. Selecció inicial per ID; resta del repertori pendent de revisió. Fonts i selecció: docs/revisions/2026-10-13-urban2-alta.json."
+    },
+    {
+      "id": "K6IM38Wv2wY",
+      "contentType": "song",
+      "title": "Brilla salvatge",
+      "note": "Alta sol·licitada el 2026-10-13. Selecció inicial per ID; resta del repertori pendent de revisió. Fonts i selecció: docs/revisions/2026-10-13-urban2-alta.json."
+    },
+    {
+      "id": "Lw4bz8LRyZ0",
+      "contentType": "song",
+      "title": "Huracà",
+      "note": "Alta sol·licitada el 2026-10-13. Selecció inicial per ID; resta del repertori pendent de revisió. Fonts i selecció: docs/revisions/2026-10-13-urban2-alta.json."
+    },
+    {
+      "id": "SdAGhNbZAMc",
+      "contentType": "song",
+      "title": "Sense Sal - Mira on som (videoclip oficial)",
+      "note": "Alta sol·licitada el 2026-10-13. Selecció inicial per ID; resta del repertori pendent de revisió. Fonts i selecció: docs/revisions/2026-10-13-urban2-alta.json."
+    },
+    {
+      "id": "eDNuhofGAoM",
+      "contentType": "song",
+      "title": "Sense Sal - Color d'Esperança (Marató TV3)",
+      "note": "Alta sol·licitada el 2026-10-13. Selecció inicial per ID; resta del repertori pendent de revisió. Fonts i selecció: docs/revisions/2026-10-13-urban2-alta.json."
+    },
+    {
+      "id": "DMGHVBkN3_U",
+      "contentType": "song",
+      "title": "Sense Sal - Com abans (Vídeo oficial)",
+      "note": "Alta sol·licitada el 2026-10-13. Selecció inicial per ID; resta del repertori pendent de revisió. Fonts i selecció: docs/revisions/2026-10-13-urban2-alta.json."
+    },
+    {
+      "id": "t_iZLipEMcc",
+      "contentType": "song",
+      "title": "Sense Sal - Estima Lliure (videoclip oficial)",
+      "note": "Alta sol·licitada el 2026-10-13. Selecció inicial per ID; resta del repertori pendent de revisió. Fonts i selecció: docs/revisions/2026-10-13-urban2-alta.json."
+    },
+    {
+      "id": "A1uoNApon2o",
+      "contentType": "song",
+      "title": "Sense Sal - 'La Sortida feat. Miki Núñez' (Videoclip Oficial)",
+      "note": "Alta sol·licitada el 2026-10-13. Selecció inicial per ID; resta del repertori pendent de revisió. Fonts i selecció: docs/revisions/2026-10-13-urban2-alta.json."
+    },
+    {
+      "id": "JHirg4hxyyI",
+      "contentType": "song",
+      "title": "Sense Sal - La Sortida (Videoclip oficial)",
+      "note": "Alta sol·licitada el 2026-10-13. Selecció inicial per ID; resta del repertori pendent de revisió. Fonts i selecció: docs/revisions/2026-10-13-urban2-alta.json."
+    },
+    {
+      "id": "n6vRd-iO6t0",
+      "contentType": "song",
+      "title": "Constel·lacions (amb Doctor Prats) - Sense Sal [Només tenim la veu, 2017]",
+      "note": "Alta sol·licitada el 2026-10-13. Selecció inicial per ID; resta del repertori pendent de revisió. Fonts i selecció: docs/revisions/2026-10-13-urban2-alta.json."
+    },
+    {
+      "id": "W3jvpbglHPQ",
+      "contentType": "song",
+      "title": "Mira'm als ulls - Sense Sal [Només tenim la veu, 2017]",
+      "note": "Alta sol·licitada el 2026-10-13. Selecció inicial per ID; resta del repertori pendent de revisió. Fonts i selecció: docs/revisions/2026-10-13-urban2-alta.json."
+    },
+    {
+      "id": "fg1npRYy59s",
+      "contentType": "song",
+      "title": "Descansa - Sense Sal [Només tenim la veu, 2017]",
+      "note": "Alta sol·licitada el 2026-10-13. Selecció inicial per ID; resta del repertori pendent de revisió. Fonts i selecció: docs/revisions/2026-10-13-urban2-alta.json."
+    },
+    {
+      "id": "ZR3Ro8uzRFQ",
+      "contentType": "song",
+      "title": "La Vall - Sense Sal [Només tenim la veu, 2017]",
+      "note": "Alta sol·licitada el 2026-10-13. Selecció inicial per ID; resta del repertori pendent de revisió. Fonts i selecció: docs/revisions/2026-10-13-urban2-alta.json."
+    },
+    {
+      "id": "gLXqdn4hXIw",
+      "contentType": "song",
+      "title": "Vine'm a buscar - Sense Sal [Només tenim la veu, 2017]",
+      "note": "Alta sol·licitada el 2026-10-13. Selecció inicial per ID; resta del repertori pendent de revisió. Fonts i selecció: docs/revisions/2026-10-13-urban2-alta.json."
+    },
+    {
+      "id": "I6joJF21QLs",
+      "contentType": "song",
+      "title": "Fins que surti el sol (amb Carlos Sadness) - Sense Sal [Només tenim la veu, 2017]",
+      "note": "Alta sol·licitada el 2026-10-13. Selecció inicial per ID; resta del repertori pendent de revisió. Fonts i selecció: docs/revisions/2026-10-13-urban2-alta.json."
+    },
+    {
+      "id": "L7_6LAg3368",
+      "contentType": "song",
+      "title": "És aquesta nit - Sense Sal (Videoclip) [Només tenim la veu, 2017]",
+      "note": "Alta sol·licitada el 2026-10-13. Selecció inicial per ID; resta del repertori pendent de revisió. Fonts i selecció: docs/revisions/2026-10-13-urban2-alta.json."
+    },
+    {
+      "id": "4_Fi1ZoAb_4",
+      "contentType": "song",
+      "title": "CRIDA AMB MI - Sense Sal (Videoclip)",
+      "note": "Alta sol·licitada el 2026-10-13. Selecció inicial per ID; resta del repertori pendent de revisió. Fonts i selecció: docs/revisions/2026-10-13-urban2-alta.json."
+    },
+    {
+      "id": "iCiBCeGzsk8",
+      "contentType": "song",
+      "title": "Brilla Salvatge - SENSE SAL (Videoclip oficial)",
+      "note": "Alta sol·licitada el 2026-10-13. Selecció inicial per ID; resta del repertori pendent de revisió. Fonts i selecció: docs/revisions/2026-10-13-urban2-alta.json."
+    },
+    {
+      "id": "Ri-aGEvVvKM",
+      "contentType": "song",
+      "title": "Huracà - Sense Sal amb Txarango (Algun lloc al món)",
+      "note": "Alta sol·licitada el 2026-10-13. Selecció inicial per ID; resta del repertori pendent de revisió. Fonts i selecció: docs/revisions/2026-10-13-urban2-alta.json."
     }
   ]
 }
