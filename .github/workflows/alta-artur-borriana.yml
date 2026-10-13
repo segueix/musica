@@ -10,80 +10,39 @@ concurrency:
 permissions:
   contents: write
 jobs:
-  descobrir:
+  resum:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v5
         with:
           ref: main
-      - uses: actions/setup-node@v5
-        with:
-          node-version: '20'
-      - name: Consulta acotada dels dos artistes
-        env:
-          YOUTUBE_API_KEY_SERVER: ${{ secrets.YOUTUBE_API_KEY_SERVER }}
+      - name: Resumeix les dades ja consultades
         run: |
           node - <<'NODE'
           const fs=require('node:fs');
-          (async()=>{
-            const key=process.env.YOUTUBE_API_KEY_SERVER;
-            if(!key)throw Error('Falta la clau configurada de YouTube');
-            let quota=0;
-            const norm=s=>String(s||'').normalize('NFD').replace(/\p{Diacritic}/gu,'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();
-            async function api(endpoint,args){
-              quota+=endpoint==='search'?100:1;
-              const u=new URL('https://www.googleapis.com/youtube/v3/'+endpoint);
-              for(const[k,v]of Object.entries({...args,key}))u.searchParams.set(k,String(v));
-              const r=await fetch(u,{signal:AbortSignal.timeout(30000)});const j=await r.json();
-              if(!r.ok)throw Error(endpoint+': '+(j.error?.message||r.status));return j;
-            }
-            const base=JSON.parse(fs.readFileSync('data/artistes-musica.json','utf8'));
-            const origins=JSON.parse(fs.readFileSync('data/origens-artistes.json','utf8'));
-            const report={checkedAt:new Date().toISOString(),artists:[]};const lines=[];
-            for(const t of [
-              {name:'Artur Àlvarez',queries:['Artur Alvarez Estellés','Artur Alvarez Poesia cantada']},
-              {name:'Borriana Big Band',queries:['Borriana Big Band Camals mullats','Borriana Big Band Peix enamorat']}
-            ]){
-              const candidates=new Set(),results=[];
-              for(const q of t.queries){
-                const found=await api('search',{part:'snippet',type:'video',q,maxResults:15});
-                for(const v of found.items||[]){
-                  results.push({id:v.id.videoId,title:v.snippet.title,channelId:v.snippet.channelId,channelTitle:v.snippet.channelTitle});
-                  const n=norm(v.snippet.channelTitle).replace(/ (topic|tema|oficial|official)$/,'');
-                  if(n.includes(norm(t.name))||(t.name==='Artur Àlvarez'&&n==='arturalvarez')||(t.name==='Borriana Big Band'&&n==='borrianabigband'))candidates.add(v.snippet.channelId);
-                }
+          const j=JSON.parse(fs.readFileSync('docs/revisions/2026-10-13-artur-borriana-descoberta.json','utf8'));
+          const out=[];
+          for(const a of j.artists){
+            out.push('# '+a.name,JSON.stringify({existing:a.existing}));
+            for(const c of a.channels){
+              const albums={};
+              for(const v of c.videos){
+                const d=v.description.split(/[\r\n]+/).map(s=>s.trim()).filter(Boolean);
+                const album=/^Provided to YouTube/i.test(d[0]||'')?d[2]:'[canal oficial]';
+                albums[album]=(albums[album]||0)+1;
               }
-              if(candidates.size>8)throw Error('Identitat ambigua: '+t.name);
-              const channels=candidates.size?(await api('channels',{part:'snippet,contentDetails,statistics',id:[...candidates].join(',')})).items||[]:[];
-              const entry={name:t.name,searchResults:results,channels:[],existing:base.artists.filter(a=>[a.name,a.displayName,...(a.aliases||[])].some(n=>norm(n).includes(norm(t.name))))};
-              lines.push('\n# '+t.name+'\n',JSON.stringify({existing:entry.existing}),JSON.stringify({searchResults:results}));
-              for(const c of channels){
-                const videos=[];let token;
-                for(let page=0;page<14;page++){
-                  const p=await api('playlistItems',{part:'contentDetails',playlistId:c.contentDetails.relatedPlaylists.uploads,maxResults:50,...(token?{pageToken:token}:{})});
-                  const ids=(p.items||[]).map(x=>x.contentDetails.videoId);
-                  if(ids.length){
-                    const details=await api('videos',{part:'snippet,contentDetails,status,statistics',id:ids.join(',')});
-                    for(const v of details.items||[])videos.push({id:v.id,title:v.snippet.title,description:v.snippet.description,channelId:v.snippet.channelId,publishedAt:v.snippet.publishedAt,duration:v.contentDetails.duration,regionRestriction:v.contentDetails.regionRestriction||null,embeddable:v.status.embeddable,viewCount:Number(v.statistics.viewCount||0),defaultAudioLanguage:v.snippet.defaultAudioLanguage||null});
-                  }
-                  token=p.nextPageToken;if(!token)break;
-                }
-                entry.channels.push({id:c.id,name:c.snippet.title,handle:c.snippet.customUrl||null,description:c.snippet.description,avatar:c.snippet.thumbnails?.high?.url||'',complete:!token,videos});
-                lines.push('\n## '+c.snippet.title+' | '+c.id+' | '+(c.snippet.customUrl||'')+' | complet='+!token+'\n',...videos.map(v=>v.id+' | '+v.title+' | '+v.duration+' | '+String(v.description).split('\n').filter(Boolean).slice(1,4).join(' / ')));
-                console.log(JSON.stringify({artist:t.name,channel:c.snippet.title,id:c.id,videos:videos.length,complete:!token}));
+              out.push('## '+c.id+' | '+c.name+' | '+c.handle+' | complet='+c.complete+' | vídeos='+c.videos.length,JSON.stringify({albums}));
+              for(const v of c.videos){
+                const d=v.description.split(/[\r\n]+/).map(s=>s.trim()).filter(Boolean);
+                const album=/^Provided to YouTube/i.test(d[0]||'')?d[2]:'';
+                out.push([v.id,v.title,v.duration,album].join(' | ').replace(/[\r\n]+/g,' '));
               }
-              report.artists.push(entry);
             }
-            report.estimatedQuota=quota;
-            report.originPlaces=Object.entries(origins.places).filter(([,p])=>['castello de la plana','castellon de la plana','borriana','burriana'].includes(norm(p.name)));
-            report.existingOrigins=Object.entries(origins.artists).filter(([,a])=>/artur.*lvarez|borriana big band/i.test(a.name));
-            fs.mkdirSync('docs/revisions',{recursive:true});
-            fs.writeFileSync('docs/revisions/2026-10-13-artur-borriana-descoberta.json',JSON.stringify(report,null,2)+'\n');
-            fs.writeFileSync('docs/revisions/2026-10-13-artur-borriana-resum.md',lines.join('\n')+'\n\n# Orígens\n'+JSON.stringify({places:report.originPlaces,artists:report.existingOrigins},null,2)+'\n');
-            console.log('Quota estimada:',quota);
-          })().catch(e=>{console.error(e.message);process.exitCode=1});
+          }
+          out.push('# Orígens',JSON.stringify({places:j.originPlaces,artists:j.existingOrigins}));
+          fs.writeFileSync('docs/revisions/2026-10-13-artur-borriana-compacte.md',out.join('\n')+'\n');
           NODE
-      - name: Desa la consulta per revisar-la
+      - name: Desa el resum
         run: |
-          bash scripts/publicar_dades.sh "docs: consulta d’Artur Àlvarez i Borriana Big Band" docs/revisions/2026-10-13-artur-borriana-descoberta.json docs/revisions/2026-10-13-artur-borriana-resum.md
+          bash scripts/publicar_dades.sh "docs: discografia compacta d’Artur Àlvarez i Borriana Big Band" docs/revisions/2026-10-13-artur-borriana-compacte.md
