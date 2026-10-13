@@ -1,0 +1,109 @@
+{
+  "artists": [
+    {
+      "name": "UC",
+      "aliases": [
+        "Uc",
+        "UC d’Eivissa"
+      ],
+      "key": "artist:uc",
+      "territory": "Illes Balears",
+      "genres": [
+        "Folk i arrel"
+      ],
+      "place": "Eivissa (illa)",
+      "placeId": "territory:eivissa",
+      "placeAliases": [
+        "Eivissa (illa)"
+      ],
+      "originSource": "https://www.youtube.com/channel/UCViiIPCMCLZHQSUP16yQuKA",
+      "basis": "Grup d’Eivissa identificat per l’usuari i pels crèdits del repertori.",
+      "sources": [
+        "manual-user-2026-10-13",
+        "https://www.youtube.com/channel/UCViiIPCMCLZHQSUP16yQuKA"
+      ],
+      "note": "L’usuari confirma el repertori català del canal excepte Chinekem Kaa, que queda exclosa. Categoria Folk i arrel. Imatge: caràtula de Camins de Migjorn. Acceptació per indicació expressa de l’usuari; no s’afirma haver verificat les lletres íntegres.",
+      "lyricSources": {},
+      "channels": [
+        {
+          "id": "UCViiIPCMCLZHQSUP16yQuKA",
+          "type": "topic",
+          "primary": true,
+          "avatarVideoId": "npDCW_gV_qM",
+          "allowedVideoIds": [
+            "orBHDmjwxxU",
+            "KTg6JvRtbHQ",
+            "XrCvwkSDP5c",
+            "gA0-RDmqtAE",
+            "yYUMPsR21zA",
+            "y7nHW6Vksfw",
+            "npDCW_gV_qM",
+            "mQifqL7DgY4",
+            "fhHp2kz3OlI",
+            "bK98rcx-D38",
+            "Rwka3mpw8hQ",
+            "Rev4tBVp1R4",
+            "8zc-Q3DfCcY",
+            "q8VcUX8Cnp4",
+            "jM1ia7oKwl4",
+            "t7jGnTiLYzU",
+            "bJ2mK0N4eZ8",
+            "zXGiZQPjBUs",
+            "9W7t6Tv6YGM",
+            "MsZDHu_SAmU",
+            "u8Cd7BiPcMM",
+            "q-yOrt3W6AE",
+            "ftN4puLuKCM",
+            "lhgtETWe_VU",
+            "Olyx5eqSqCs",
+            "MCMPPTY6t84",
+            "llyIvD6OUxM",
+            "uXIjEP1RCkc",
+            "LBthYWTwAso",
+            "7ZpR0DJQpPs",
+            "nLmZslNT57Y",
+            "XZQE4LezTSI",
+            "OXDSgwqP-Rw",
+            "OraSs4CiSjg",
+            "Kqh7vx5-RDw",
+            "RlLcEI3ug-M",
+            "OjkrG5sXNRE",
+            "2NFXJvHP8pU",
+            "magvKpj7WrI",
+            "BEzhhU8fyEY",
+            "lBVr_p4pwOk",
+            "7LpqxiV0hb0",
+            "yn1-bGlfiqI",
+            "qHvb2VEEjng",
+            "kB4XuitGlUM",
+            "dK-h1D8JcBI",
+            "-WXBo7TMHgU",
+            "QpqGHFPy3vU",
+            "soqioFWW5XQ",
+            "_JR9pjgp6iY",
+            "CruxociaTuU",
+            "qONY64IUxFI",
+            "KH61acBR7jg",
+            "G6GBYUSpjyQ",
+            "VXKbOKgirWQ",
+            "sshU_MmAhz4",
+            "KxamItmf74g"
+          ]
+        }
+      ]
+    }
+  ],
+  "languageExclusions": [
+    {
+      "artist": "UC",
+      "ids": [
+        "wmsBKGPyKW4"
+      ],
+      "source": "manual-user-2026-10-13",
+      "reason": "Exclusió expressa de l’usuari: Chinekem Kaa, crèdits UC / Felix Ndukwe, Mama Africa."
+    }
+  ],
+  "formatExclusions": [],
+  "identityExclusions": [],
+  "method": "Canal i repertori aprovats expressament per l’usuari, excepte Chinekem Kaa. Consulta completa del canal: 58 pistes, 57 seleccionades per ID. Sense afirmar revisió de lletres íntegres. Exclusions anteriors preservades i futurs vídeos fora de la selecció."
+}
