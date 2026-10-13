@@ -40,7 +40,8 @@ jobs:
             }
             const stem='docs/revisions/2026-10-13-urban1';
             const report=JSON.parse(fs.readFileSync(stem+'-descoberta.json','utf8'));
-            for(const name of ['AVANT','Fortuu','Xisk']){
+            report.artists.find(a=>a.name==='AVANT').topicStatus='No verificat: la cerca de canals retorna massa homònims. No s’incorpora cap d’aquests candidats només pel nom.';
+            for(const name of ['Fortuu','Xisk']){
               const a=report.artists.find(a=>a.name===name), candidates=new Set();
               const results=(await api('search',{part:'snippet',type:'channel',q:'"'+name+'" '+(name==='Xisk'?'music':'Topic'),maxResults:12})).items||[];
               a.additionalSearch=results.map(v=>({id:v.id.channelId,title:v.snippet.title,description:v.snippet.description}));
@@ -50,7 +51,7 @@ jobs:
                 if(v){a.referenceVideo={id:v.id,title:v.snippet.title,channelId:v.snippet.channelId,channelTitle:v.snippet.channelTitle};if(norm(v.snippet.channelTitle).includes('xisk'))candidates.add(v.snippet.channelId);}
               }
               for(const c of a.channels)candidates.delete(c.id);
-              if(candidates.size>5)throw Error('Cal desambiguar '+name);
+              if(candidates.size>5){a.pendingCandidates=[...candidates];continue;}
               const channels=candidates.size?(await api('channels',{part:'snippet,contentDetails',id:[...candidates].join(',')})).items||[]:[];
               for(const c of channels){
                 const videos=[];let token;
