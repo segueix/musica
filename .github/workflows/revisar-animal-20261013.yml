@@ -1,0 +1,85 @@
+name: Revisar repertori Animal
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/revisar-animal-20261013.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: music-data-writer
+  cancel-in-progress: false
+jobs:
+  revisar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '20'
+      - name: Consulta acotada del canal i del cataleg
+        env:
+          YOUTUBE_API_KEY_SERVER: ${{ secrets.YOUTUBE_API_KEY_SERVER }}
+        run: |
+          node - <<'NODE'
+          const fs = require('node:fs');
+          const read = f => JSON.parse(fs.readFileSync(f, 'utf8'));
+          const norm = s => String(s || '').normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase();
+          (async () => {
+            const channelId = 'UCg2Go1mJnKlXnMvy1VhlZTw';
+            const base = read('data/artistes-musica.json');
+            const feed = read('data/feed.json');
+            const hidden = new Set(read('data/hidden-videos.json').videoIds);
+            const language = read('data/revisio-idiomes.json');
+            const artist = base.artists.filter(a => (a.youtube?.channels || []).some(c => c.id === channelId));
+            if (artist.length !== 1) throw Error('La identitat Animal no es resol de manera unica');
+            const ids = artist[0].youtube.channels.map(c => c.id);
+            const local = new Map();
+            for (const id of ids) {
+              const f = 'data/archive/channels/' + id + '.json';
+              if (fs.existsSync(f)) for (const v of read(f).videos || []) local.set(v.id, {...v, archived:true});
+            }
+            for (const v of feed.videos) if (ids.includes(v.channelId)) local.set(v.id, {...v, hot:true});
+            const report = {checkedAt:new Date().toISOString(), artist:artist[0], local:[...local.values()].map(v => ({...v, hidden:hidden.has(v.id)})), rules:Object.fromEntries(ids.map(id => [id,read('data/music-channel-video-allowlist.json').channels[id] || null])), languageDecisions:(language.decisions || []).filter(v => norm(v.artista).includes('animal')), youtube:[], requests:[]};
+            for (const name of ['Artur Àlvarez','Borriana Big Band','Pepet i Marieta']) {
+              const found = base.artists.filter(a => [a.name,a.displayName,...(a.aliases || [])].some(n => norm(n) === norm(name)));
+              report.requests.push({name, artists:found.map(a => ({name:a.name,displayName:a.displayName,active:a.active,reviewStatus:a.reviewStatus,channels:a.youtube.channels.map(c => ({...c,published:Boolean(feed.channels[c.id]),hot:feed.videos.filter(v=>v.channelId===c.id).length}))}))});
+            }
+            async function api(endpoint, args) {
+              const key = process.env.YOUTUBE_API_KEY_SERVER;
+              if (!key) throw Error('No hi ha clau de YouTube configurada');
+              const url = new URL('https://www.googleapis.com/youtube/v3/' + endpoint);
+              for (const [k,v] of Object.entries({...args,key})) url.searchParams.set(k, String(v));
+              const r = await fetch(url,{signal:AbortSignal.timeout(30000)}); const j = await r.json();
+              if (!r.ok) throw Error(endpoint + ': ' + (j.error?.errors?.[0]?.reason || r.status));
+              return j;
+            }
+            try {
+              for (const id of ids) {
+                const c = (await api('channels',{part:'contentDetails,snippet',id})).items?.[0];
+                if (!c) continue;
+                let token;
+                for (let page=0;page<4;page++) {
+                  const p = await api('playlistItems',{part:'contentDetails',playlistId:c.contentDetails.relatedPlaylists.uploads,maxResults:50,...(token?{pageToken:token}:{})});
+                  const videoIds = (p.items || []).map(v=>v.contentDetails.videoId);
+                  if (videoIds.length) for (const v of (await api('videos',{part:'snippet,contentDetails,status',id:videoIds.join(',')})).items || []) report.youtube.push({id:v.id,title:v.snippet.title,channelId:v.snippet.channelId,duration:v.contentDetails.duration,description:v.snippet.description,audioLanguage:v.snippet.defaultAudioLanguage || null,embeddable:v.status.embeddable,hidden:hidden.has(v.id),indexed:local.has(v.id)});
+                  token=p.nextPageToken; if (!token) break;
+                }
+                if (token) report.incomplete=true;
+              }
+            } catch (error) { report.apiError=error.message; }
+            const prefix='docs/revisions/2026-10-13-animal-inventari';
+            fs.writeFileSync(prefix+'.json',JSON.stringify(report,null,2)+'\n');
+            const rows = ['# Inventari Animal', JSON.stringify({requests:report.requests,rules:report.rules,languageDecisions:report.languageDecisions,apiError:report.apiError},null,2),'## Videos'];
+            for (const v of report.youtube) rows.push(`### ${v.id} | ${v.title} | ${v.duration} | ocult=${v.hidden} | indexat=${v.indexed}`,v.description.replace(/\n/g,' ⏎ '));
+            rows.push('## Cataleg local',...report.local.map(v=>`${v.id} | ${v.title} | ocult=${v.hidden} | arxiu=${Boolean(v.archived)} | feed=${Boolean(v.hot)}`));
+            fs.writeFileSync(prefix+'.md',rows.join('\n')+'\n');
+            console.log(JSON.stringify({local:report.local.length,youtube:report.youtube.length,apiError:report.apiError,requests:report.requests}));
+          })().catch(e=>{console.error(e.message);process.exitCode=1;});
+          NODE
+      - name: Desa la revisio sense canviar el cataleg
+        run: |
+          bash scripts/publicar_dades.sh 'docs: inventari i exclusions d’Animal' docs/revisions/2026-10-13-animal-inventari.json docs/revisions/2026-10-13-animal-inventari.md
