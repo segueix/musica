@@ -39,13 +39,13 @@ jobs:
               if(!r.ok)throw Error(resource+': '+(j.error?.message||r.status));return j;
             }
             const targets=[
-              {name:'Cloe',aliases:['Cloe'],handle:'@albagvalls',queries:[]},
-              {name:'La Xica',aliases:['La Xica','LaXica'],queries:['"LA XICA" "ALABATRE"','"LA XICA" "Tarongina"']}
+              {name:'Cloe',aliases:['Cloe'],videoIds:['84sLC4niugE','Uwf2uxXnbNg','fi5uTNx9IlQ'],queries:[]}
             ];
             const base=JSON.parse(fs.readFileSync('data/artistes-musica.json','utf8'));
             const report=JSON.parse(fs.readFileSync('docs/revisions/2026-10-13-urban3-descoberta.json','utf8'));
             for(const t of targets){
               const candidates=new Set(),results=[];
+              for(const v of (await api('videos',{part:'snippet',id:t.videoIds.join(',')})).items||[])candidates.add(v.snippet.channelId);
               if(t.handle){const c=(await api('channels',{part:'snippet,contentDetails',forHandle:t.handle})).items?.[0];if(c)candidates.add(c.id);}
               for(const q of t.queries){
                 for(const v of (await api('search',{part:'snippet',type:'video',q,maxResults:15})).items||[]){
