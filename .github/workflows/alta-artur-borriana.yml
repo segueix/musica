@@ -10,39 +10,56 @@ concurrency:
 permissions:
   contents: write
 jobs:
-  resum:
+  contrast:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v5
         with:
           ref: main
-      - name: Resumeix les dades ja consultades
+      - name: Completa només la consulta del Tema de D’ací
+        env:
+          YOUTUBE_API_KEY_SERVER: ${{ secrets.YOUTUBE_API_KEY_SERVER }}
         run: |
           node - <<'NODE'
           const fs=require('node:fs');
-          const j=JSON.parse(fs.readFileSync('docs/revisions/2026-10-13-artur-borriana-descoberta.json','utf8'));
-          const out=[];
-          for(const a of j.artists){
-            out.push('# '+a.name,JSON.stringify({existing:a.existing}));
-            for(const c of a.channels){
-              const albums={};
-              for(const v of c.videos){
-                const d=v.description.split(/[\r\n]+/).map(s=>s.trim()).filter(Boolean);
-                const album=/^Provided to YouTube/i.test(d[0]||'')?d[2]:'[canal oficial]';
-                albums[album]=(albums[album]||0)+1;
-              }
-              out.push('## '+c.id+' | '+c.name+' | '+c.handle+' | complet='+c.complete+' | vídeos='+c.videos.length,JSON.stringify({albums}));
-              for(const v of c.videos){
-                const d=v.description.split(/[\r\n]+/).map(s=>s.trim()).filter(Boolean);
-                const album=/^Provided to YouTube/i.test(d[0]||'')?d[2]:'';
-                out.push([v.id,v.title,v.duration,album].join(' | ').replace(/[\r\n]+/g,' '));
-              }
+          (async()=>{
+            const file='docs/revisions/2026-10-13-artur-borriana-descoberta.json';
+            const j=JSON.parse(fs.readFileSync(file,'utf8'));
+            const a=j.artists.find(x=>x.name==='Borriana Big Band');
+            async function api(e,args){
+              const u=new URL('https://www.googleapis.com/youtube/v3/'+e);
+              for(const[k,v]of Object.entries({...args,key:process.env.YOUTUBE_API_KEY_SERVER}))u.searchParams.set(k,String(v));
+              const r=await fetch(u,{signal:AbortSignal.timeout(30000)});const x=await r.json();
+              if(!r.ok)throw Error(e+': '+(x.error?.message||r.status));return x;
             }
-          }
-          out.push('# Orígens',JSON.stringify({places:j.originPlaces,artists:j.existingOrigins}));
-          fs.writeFileSync('docs/revisions/2026-10-13-artur-borriana-compacte.md',out.join('\n')+'\n');
+            const s=await api('search',{part:'snippet',type:'video',q:'"Borriana Big Band" "Lladres"',maxResults:20});
+            j.extraSearch=(s.items||[]).map(v=>({id:v.id.videoId,title:v.snippet.title,channelId:v.snippet.channelId,channelTitle:v.snippet.channelTitle}));
+            const found=[...new Set(j.extraSearch.filter(v=>/borriana.*big.*band/i.test(v.channelTitle)).map(v=>v.channelId))].filter(id=>!a.channels.some(c=>c.id===id));
+            for(const id of found){
+              const c=(await api('channels',{part:'snippet,contentDetails',id})).items?.[0];if(!c)continue;
+              const videos=[];let token;
+              for(let page=0;page<4;page++){
+                const p=await api('playlistItems',{part:'contentDetails',playlistId:c.contentDetails.relatedPlaylists.uploads,maxResults:50,...(token?{pageToken:token}:{})});
+                const ids=(p.items||[]).map(v=>v.contentDetails.videoId);
+                if(ids.length)for(const v of (await api('videos',{part:'snippet,contentDetails,status,statistics',id:ids.join(',')})).items||[])videos.push({id:v.id,title:v.snippet.title,description:v.snippet.description,channelId:v.snippet.channelId,publishedAt:v.snippet.publishedAt,duration:v.contentDetails.duration,regionRestriction:v.contentDetails.regionRestriction||null,embeddable:v.status.embeddable,viewCount:Number(v.statistics.viewCount||0)});
+                token=p.nextPageToken;if(!token)break;
+              }
+              a.channels.push({id:c.id,name:c.snippet.title,handle:c.snippet.customUrl||null,description:c.snippet.description,avatar:c.snippet.thumbnails?.high?.url||'',complete:!token,videos});
+            }
+            fs.writeFileSync(file,JSON.stringify(j,null,2)+'\n');
+            const lines=['# Borriana: consulta suplementària',JSON.stringify(j.extraSearch)];
+            for(const c of a.channels){
+              lines.push('\n## '+c.id+' | '+c.name+' | complet='+c.complete);
+              for(const v of c.videos)lines.push(v.id+' | '+v.title+' | '+v.duration,JSON.stringify(v.description));
+            }
+            const art=j.artists.find(x=>x.name==='Artur Àlvarez');
+            const selected=new Set(['M_33Pidanpk','S_ZffzTjV4I','MHQzVoMuuSw','nrReH-3p9bg','bHOsy9O-NyE','HOTFgcEAnVc','DU99o8ZTPlI','tYqQm-vKAB0','o1eehcHgmtg','HGDOBirCVQo','ne90UfhxSIs','Hib-hCAOdek','uqic5oHTfPs','gwbAphnpx6Q','OLz1b07ygmg','WKl_S8s6MyQ','EoPHDI0SSnw','CSQRgTs6y9s','q5NlfoK6gZU','0tAHv37ze2Y','1vfjs-TaDhQ','D4_CPgNTfMQ','IrWBVJ3RtkA','RlxxHBS-oCM','vwDpuqjM_qs','fqJtzYpL3Ek','_xJiKRQyMoU']);
+            lines.push('\n# Artur: gravacions per contrastar');
+            for(const c of art.channels)for(const v of c.videos)if(selected.has(v.id))lines.push('## '+v.id+' | '+v.title+' | '+v.duration,JSON.stringify(v.description));
+            fs.writeFileSync('docs/revisions/2026-10-13-artur-borriana-detalls.md',lines.join('\n')+'\n');
+          })().catch(e=>{console.error(e.message);process.exitCode=1});
           NODE
-      - name: Desa el resum
+      - name: Desa el contrast
         run: |
-          bash scripts/publicar_dades.sh "docs: discografia compacta d’Artur Àlvarez i Borriana Big Band" docs/revisions/2026-10-13-artur-borriana-compacte.md
+          bash scripts/publicar_dades.sh "docs: contrast final dels canals i gravacions" docs/revisions/2026-10-13-artur-borriana-descoberta.json docs/revisions/2026-10-13-artur-borriana-detalls.md
