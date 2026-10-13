@@ -42,7 +42,8 @@ jobs:
               {name:'Esther',queries:['Esther Tot comença','Esther Les cartes que mai vaig cremar Provided to YouTube']}
             ];
             const report={checkedAt:new Date().toISOString(),artists:[]};
-            const lines=[];
+            const lines=[],details=[];
+            const base=JSON.parse(fs.readFileSync('data/artistes-musica.json'));
             for(const t of targets){
               const candidates=new Set();const results=[];
               for(const q of t.queries){
@@ -56,26 +57,31 @@ jobs:
               if(candidates.size>8)throw Error('Massa candidats: '+t.name);
               const channels=candidates.size?(await api('channels',{part:'snippet,contentDetails',id:[...candidates].join(',')})).items||[]:[];
               const entry={name:t.name,searchResults:results,channels:[]};
+              lines.push('\n# '+t.name+'\n'+JSON.stringify({existing:base.artists.filter(a=>[a.name,a.displayName,...(a.aliases||[])].some(n=>norm(n).includes(norm(t.name)))).map(a=>({name:a.name,displayName:a.displayName,active:a.active,channels:a.youtube?.channels}))}));
               for(const c of channels){
                 const videos=[];let token;
                 for(let page=0;page<5;page++){
                   const p=await api('playlistItems',{part:'contentDetails',playlistId:c.contentDetails.relatedPlaylists.uploads,maxResults:50,...(token?{pageToken:token}:{})});
                   const ids=(p.items||[]).map(x=>x.contentDetails.videoId);
                   if(ids.length){
-                    const details=await api('videos',{part:'snippet,contentDetails,status',id:ids.join(',')});
-                    for(const v of details.items||[])videos.push({id:v.id,title:v.snippet.title,description:v.snippet.description,channelId:v.snippet.channelId,publishedAt:v.snippet.publishedAt,duration:v.contentDetails.duration,regionRestriction:v.contentDetails.regionRestriction||null,embeddable:v.status.embeddable});
+                    const d=await api('videos',{part:'snippet,contentDetails,status',id:ids.join(',')});
+                    for(const v of d.items||[])videos.push({id:v.id,title:v.snippet.title,description:v.snippet.description,channelId:v.snippet.channelId,publishedAt:v.snippet.publishedAt,duration:v.contentDetails.duration,regionRestriction:v.contentDetails.regionRestriction||null,embeddable:v.status.embeddable});
                   }
                   token=p.nextPageToken;if(!token)break;
                 }
                 entry.channels.push({id:c.id,name:c.snippet.title,handle:c.snippet.customUrl||null,complete:!token,videos});
-                lines.push('\n## '+t.name+' | '+c.snippet.title+' | '+c.id+' | '+(c.snippet.customUrl||'')+'\n',...videos.map(v=>v.id+' | '+v.title+' | '+v.duration));
+                const heading='\n## '+t.name+' | '+c.snippet.title+' | '+c.id+' | '+(c.snippet.customUrl||'')+'\n';
+                lines.push(heading,...videos.map(v=>v.id+' | '+v.title+' | '+v.duration));
+                details.push(heading,...videos.flatMap(v=>['### '+v.id+' | '+v.title,v.description.replace(/\n/g,' ⏎ ')]));
                 console.log(JSON.stringify({artist:t.name,channel:c.snippet.title,id:c.id,videos:videos.length,complete:!token}));
               }
               report.artists.push(entry);
             }
             fs.writeFileSync('docs/revisions/2026-10-13-castello-descoberta.json',JSON.stringify(report,null,2)+'\n');
             fs.writeFileSync('docs/revisions/2026-10-13-castello-resum.md',lines.join('\n')+'\n');
+            fs.writeFileSync('docs/revisions/2026-10-13-castello-detalls.md',details.join('\n')+'\n');
           })().catch(e=>{console.error(e.message);process.exitCode=1});
           NODE
-      - name: Desa nomes la consulta publica
-        run: bash scripts/publicar_dades.sh "docs: canals públics de Malparlat, Xiomara Abello i Esther" docs/revisions/2026-10-13-castello-descoberta.json docs/revisions/2026-10-13-castello-resum.md
+      - name: Desa nomes la consulta
+        run: |
+          bash scripts/publicar_dades.sh "docs: canals de Malparlat, Xiomara Abello i Esther" docs/revisions/2026-10-13-castello-descoberta.json docs/revisions/2026-10-13-castello-resum.md docs/revisions/2026-10-13-castello-detalls.md
