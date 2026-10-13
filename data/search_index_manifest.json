@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-13T08:47:33.000Z",
+  "generatedAt": "2026-10-13T10:58:59.418Z",
   "strategy": {
     "mode": "hybrid",
     "monthlyRecentYears": 2
@@ -67,7 +67,7 @@
       "month": 3,
       "granularity": "month",
       "file": "search_index_2025_03.json",
-      "itemCount": 1533
+      "itemCount": 1517
     },
     {
       "key": "2025_02",
@@ -75,7 +75,7 @@
       "month": 2,
       "granularity": "month",
       "file": "search_index_2025_02.json",
-      "itemCount": 61
+      "itemCount": 56
     },
     {
       "key": "2025_01",
@@ -91,7 +91,7 @@
       "month": null,
       "granularity": "year",
       "file": "search_index_2024.json",
-      "itemCount": 1179
+      "itemCount": 1168
     },
     {
       "key": "2023",
@@ -115,7 +115,7 @@
       "month": null,
       "granularity": "year",
       "file": "search_index_2021.json",
-      "itemCount": 359
+      "itemCount": 357
     },
     {
       "key": "2020",
@@ -171,7 +171,7 @@
       "month": null,
       "granularity": "year",
       "file": "search_index_2014.json",
-      "itemCount": 740
+      "itemCount": 738
     },
     {
       "key": "2013",

@@ -1,0 +1,1301 @@
+{
+  "reviewedOn": "2026-10-13",
+  "appliedAt": "2026-10-13T10:58:58.211Z",
+  "criterion": "El català ha de ser la llengua principal cantada. Les frases puntuals, els préstecs i les traduccions escrites no provoquen baixes. Es mantenen instrumentals i exclusions anteriors. Només es retiren els IDs explícits; sense bloquejos basats en títols.",
+  "scope": {
+    "checkedAt": "2026-10-13T10:33:52.939Z",
+    "sourceCommit": "f3d2c2fcdd4a8c4a9cd7914536af336f5aa43d52",
+    "visibleRecordings": 12581,
+    "publishedChannels": 573,
+    "requests": 252,
+    "complete": true,
+    "metadataReceived": 12581,
+    "missingMetadata": 0,
+    "pendingBefore": 765,
+    "visiblePendingBefore": 746,
+    "metadataSha256": "7b26fca3d75e5c58e6fcaca9f2db01b2eb148ee2c46b622edea536c1a3810b57",
+    "method": "Cribratge global de metadades del feed i arxiu, seguit de contrast documental de casos concrets. No és una escolta ni una revisió íntegra de 12.581 lletres. Les fonts de cada enregistrament inclouen el seu URL de YouTube; les lletres completes no es reprodueixen en aquest document."
+  },
+  "visibleBefore": 12581,
+  "visibleAfter": 12537,
+  "removedRecordings": 44,
+  "newlyHidden": 44,
+  "byArtist": {
+    "El Petit de Cal Eril": 4,
+    "Scorpio": 3,
+    "Julieta": 1,
+    "Mushkaa": 1,
+    "Cactus Troop": 1,
+    "Marina Rossell": 16,
+    "Mishima": 8,
+    "Raydibaum": 3,
+    "El Pony Pisador": 7
+  },
+  "removedByFile": {
+    "data/feed.json": 8,
+    "data/history-pool.json": 2,
+    "data/historial-musical.json": 36,
+    "data/archive/channels/UC5sHcbjiKxYUZ3G_0BQNBYQ.json": 16,
+    "data/archive/channels/UC9Jl8Rcjs5ZUi8Wf1JnFzlw.json": 1,
+    "data/archive/channels/UCBMrWboBJ7RC04ul-MNY0xA.json": 7,
+    "data/archive/channels/UCCKRS2KD1i75evCURPuHQXA.json": 2,
+    "data/archive/channels/UCQc-T583XUy2JAfeun2_0mg.json": 2,
+    "data/archive/channels/UC_z4NPeGNySemAwaAihgbaQ.json": 8
+  },
+  "excluded": [
+    {
+      "id": "sjCdAj4MOWY",
+      "action": "amaga",
+      "artist": "El Petit de Cal Eril",
+      "title": "El Petit de Cal Eril - Las cosas que creo [audio oficial]",
+      "channelId": "UCQc-T583XUy2JAfeun2_0mg",
+      "language": "castellà",
+      "method": "lletra-oficial",
+      "reason": "Las cosas que creo: original CAST; àudio i videoclip. Entrevista de l’autor i lletra oficial.",
+      "sources": [
+        "https://www.youtube.com/watch?v=sjCdAj4MOWY",
+        "https://www.elnacional.cat/ca/cultura/entrevista-petit-cal-eril-nscalh_648896_102_amp.html"
+      ],
+      "alreadyHidden": false,
+      "priorDecision": null
+    },
+    {
+      "id": "520Xxi0T4Ks",
+      "action": "amaga",
+      "artist": "El Petit de Cal Eril",
+      "title": "El Petit de Cal Eril - Las cosas que creo",
+      "channelId": "UCQc-T583XUy2JAfeun2_0mg",
+      "language": "castellà",
+      "method": "lletra-oficial",
+      "reason": "Las cosas que creo: original CAST; àudio i videoclip. Entrevista de l’autor i lletra oficial.",
+      "sources": [
+        "https://www.youtube.com/watch?v=520Xxi0T4Ks",
+        "https://www.elnacional.cat/ca/cultura/entrevista-petit-cal-eril-nscalh_648896_102_amp.html"
+      ],
+      "alreadyHidden": false,
+      "priorDecision": null
+    },
+    {
+      "id": "2gKD2_sUohU",
+      "action": "amaga",
+      "artist": "El Petit de Cal Eril",
+      "title": "El Petit de Cal Eril - Non Tornerai [Audio oficial]",
+      "channelId": "UCQc-T583XUy2JAfeun2_0mg",
+      "language": "italià",
+      "method": "lletra-oficial",
+      "reason": "Non tornerai: original ITA; CAST i ENG són traduccions escrites. Àudio i videoclip.",
+      "sources": [
+        "https://www.youtube.com/watch?v=2gKD2_sUohU",
+        "https://www.elnacional.cat/ca/cultura/entrevista-petit-cal-eril-nscalh_648896_102_amp.html"
+      ],
+      "alreadyHidden": false,
+      "priorDecision": null
+    },
+    {
+      "id": "6CEYp6s_yg4",
+      "action": "amaga",
+      "artist": "El Petit de Cal Eril",
+      "title": "El Petit de Cal Eril - Non Tornerai [Clip Oficial]",
+      "channelId": "UCQc-T583XUy2JAfeun2_0mg",
+      "language": "italià",
+      "method": "lletra-oficial",
+      "reason": "Non tornerai: original ITA; CAST i ENG són traduccions escrites. Àudio i videoclip.",
+      "sources": [
+        "https://www.youtube.com/watch?v=6CEYp6s_yg4",
+        "https://www.elnacional.cat/ca/cultura/entrevista-petit-cal-eril-nscalh_648896_102_amp.html"
+      ],
+      "alreadyHidden": false,
+      "priorDecision": null
+    },
+    {
+      "id": "3a7g6Pfzz6g",
+      "action": "amaga",
+      "artist": "Scorpio",
+      "title": "Scorpio - L00K",
+      "channelId": "UCqe8mqoQPb27d2qD-ggOY0Q",
+      "language": "anglès i castellà",
+      "method": "lletra-oficial",
+      "reason": "L00K i Go Away: lletres íntegres oficials en anglès i castellà, sense català.",
+      "sources": [
+        "https://www.youtube.com/watch?v=3a7g6Pfzz6g"
+      ],
+      "alreadyHidden": false,
+      "priorDecision": null
+    },
+    {
+      "id": "hxygUujP-go",
+      "action": "amaga",
+      "artist": "Scorpio",
+      "title": "Scorpio - Go Away",
+      "channelId": "UCqe8mqoQPb27d2qD-ggOY0Q",
+      "language": "anglès i castellà",
+      "method": "lletra-oficial",
+      "reason": "L00K i Go Away: lletres íntegres oficials en anglès i castellà, sense català.",
+      "sources": [
+        "https://www.youtube.com/watch?v=hxygUujP-go"
+      ],
+      "alreadyHidden": false,
+      "priorDecision": null
+    },
+    {
+      "id": "v1WwoIelWWE",
+      "action": "amaga",
+      "artist": "Scorpio",
+      "title": "Scorpio - Piece Of Sky",
+      "channelId": "UCqe8mqoQPb27d2qD-ggOY0Q",
+      "language": "anglès",
+      "method": "lletra-oficial",
+      "reason": "Piece Of Sky: lletra íntegra oficial en anglès.",
+      "sources": [
+        "https://www.youtube.com/watch?v=v1WwoIelWWE"
+      ],
+      "alreadyHidden": false,
+      "priorDecision": null
+    },
+    {
+      "id": "t_x2uYnYpEU",
+      "action": "amaga",
+      "artist": "Julieta",
+      "title": "Julieta - Oh la la (Audio Oficial)",
+      "channelId": "UCHx3kmBag2FCtnNFdd8qZ8A",
+      "language": "castellà",
+      "method": "lletra-oficial",
+      "reason": "Oh la la: estrofes i tornada castellanes. No és la cançó homònima d’Antònia Font.",
+      "sources": [
+        "https://www.youtube.com/watch?v=t_x2uYnYpEU"
+      ],
+      "alreadyHidden": false,
+      "priorDecision": null
+    },
+    {
+      "id": "35KkoU2cVvg",
+      "action": "amaga",
+      "artist": "Mushkaa",
+      "title": "8. Turra Malvada - Mushkaa i Akilon 34O (Visualizer) | SexySensible",
+      "channelId": "UC9Jl8Rcjs5ZUi8Wf1JnFzlw",
+      "language": "castellà principal; català secundari",
+      "method": "lletra-oficial",
+      "reason": "Turra Malvada: tornada reiterada i estrofa llarga d’Akilon en castellà; català minoritari. Criteri de llengua principal.",
+      "sources": [
+        "https://www.youtube.com/watch?v=35KkoU2cVvg"
+      ],
+      "alreadyHidden": false,
+      "priorDecision": null
+    },
+    {
+      "id": "lsavBF_i_oc",
+      "action": "amaga",
+      "artist": "Cactus Troop",
+      "title": "CACTUS - STAY HOME SAFE",
+      "channelId": "UCcerGnBUfuDhx0QwW2Ua9tA",
+      "language": "anglès principal; castellà i català secundaris",
+      "method": "lletra-oficial",
+      "reason": "STAY HOME SAFE: cinc tornades angleses i primera estrofa anglesa/castellana; segona estrofa catalana minoritària.",
+      "sources": [
+        "https://www.youtube.com/watch?v=lsavBF_i_oc"
+      ],
+      "alreadyHidden": false,
+      "priorDecision": null
+    },
+    {
+      "id": "fVbNBSe1Nlk",
+      "action": "amaga",
+      "artist": "Marina Rossell",
+      "title": "Amigo Es",
+      "channelId": "UC5sHcbjiKxYUZ3G_0BQNBYQ",
+      "language": "castellà",
+      "method": "edició-documentada",
+      "reason": "Ha Llovido: edició contrastada en crèdits i documentació. No equival a escolta individual de totes les pistes.",
+      "sources": [
+        "https://www.youtube.com/watch?v=fVbNBSe1Nlk",
+        "https://marinarossell.com/bio/",
+        "https://elpais.com/diario/1996/06/25/cultura/835653608_850215.html"
+      ],
+      "alreadyHidden": false,
+      "priorDecision": null
+    },
+    {
+      "id": "_hVdG2LZ0_g",
+      "action": "amaga",
+      "artist": "Marina Rossell",
+      "title": "Si las Palabras Curan",
+      "channelId": "UC5sHcbjiKxYUZ3G_0BQNBYQ",
+      "language": "castellà",
+      "method": "edició-documentada",
+      "reason": "Ha Llovido: edició contrastada en crèdits i documentació. No equival a escolta individual de totes les pistes.",
+      "sources": [
+        "https://www.youtube.com/watch?v=_hVdG2LZ0_g",
+        "https://marinarossell.com/bio/",
+        "https://elpais.com/diario/1996/06/25/cultura/835653608_850215.html"
+      ],
+      "alreadyHidden": false,
+      "priorDecision": null
+    },
+    {
+      "id": "ohbHExePj0k",
+      "action": "amaga",
+      "artist": "Marina Rossell",
+      "title": "Ha Llovido",
+      "channelId": "UC5sHcbjiKxYUZ3G_0BQNBYQ",
+      "language": "castellà",
+      "method": "edició-documentada",
+      "reason": "Ha Llovido: edició contrastada en crèdits i documentació. No equival a escolta individual de totes les pistes.",
+      "sources": [
+        "https://www.youtube.com/watch?v=ohbHExePj0k",
+        "https://marinarossell.com/bio/",
+        "https://elpais.com/diario/1996/06/25/cultura/835653608_850215.html"
+      ],
+      "alreadyHidden": false,
+      "priorDecision": null
+    },
+    {
+      "id": "LNdl2J03H4M",
+      "action": "amaga",
+      "artist": "Marina Rossell",
+      "title": "Adios",
+      "channelId": "UC5sHcbjiKxYUZ3G_0BQNBYQ",
+      "language": "castellà",
+      "method": "edició-documentada",
+      "reason": "Ha Llovido: edició contrastada en crèdits i documentació. No equival a escolta individual de totes les pistes.",
+      "sources": [
+        "https://www.youtube.com/watch?v=LNdl2J03H4M",
+        "https://marinarossell.com/bio/",
+        "https://elpais.com/diario/1996/06/25/cultura/835653608_850215.html"
+      ],
+      "alreadyHidden": false,
+      "priorDecision": null
+    },
+    {
+      "id": "BpvxsSzq_tA",
+      "action": "amaga",
+      "artist": "Marina Rossell",
+      "title": "Deslumbrada",
+      "channelId": "UC5sHcbjiKxYUZ3G_0BQNBYQ",
+      "language": "castellà",
+      "method": "edició-documentada",
+      "reason": "Ha Llovido: edició contrastada en crèdits i documentació. No equival a escolta individual de totes les pistes.",
+      "sources": [
+        "https://www.youtube.com/watch?v=BpvxsSzq_tA",
+        "https://marinarossell.com/bio/",
+        "https://elpais.com/diario/1996/06/25/cultura/835653608_850215.html"
+      ],
+      "alreadyHidden": false,
+      "priorDecision": null
+    },
+    {
+      "id": "5PLadhss5QQ",
+      "action": "amaga",
+      "artist": "Marina Rossell",
+      "title": "La Musica Me Ayuda",
+      "channelId": "UC5sHcbjiKxYUZ3G_0BQNBYQ",
+      "language": "castellà",
+      "method": "edició-documentada",
+      "reason": "Ha Llovido: edició contrastada en crèdits i documentació. No equival a escolta individual de totes les pistes.",
+      "sources": [
+        "https://www.youtube.com/watch?v=5PLadhss5QQ",
+        "https://marinarossell.com/bio/",
+        "https://elpais.com/diario/1996/06/25/cultura/835653608_850215.html"
+      ],
+      "alreadyHidden": false,
+      "priorDecision": null
+    },
+    {
+      "id": "YyIO7wjrjOA",
+      "action": "amaga",
+      "artist": "Marina Rossell",
+      "title": "Ojala",
+      "channelId": "UC5sHcbjiKxYUZ3G_0BQNBYQ",
+      "language": "castellà",
+      "method": "edició-documentada",
+      "reason": "Ha Llovido: edició contrastada en crèdits i documentació. No equival a escolta individual de totes les pistes.",
+      "sources": [
+        "https://www.youtube.com/watch?v=YyIO7wjrjOA",
+        "https://marinarossell.com/bio/",
+        "https://elpais.com/diario/1996/06/25/cultura/835653608_850215.html"
+      ],
+      "alreadyHidden": false,
+      "priorDecision": null
+    },
+    {
+      "id": "AUakGiL3T6I",
+      "action": "amaga",
+      "artist": "Marina Rossell",
+      "title": "Los Angeles Estan de Moda",
+      "channelId": "UC5sHcbjiKxYUZ3G_0BQNBYQ",
+      "language": "castellà",
+      "method": "edició-documentada",
+      "reason": "Ha Llovido: edició contrastada en crèdits i documentació. No equival a escolta individual de totes les pistes.",
+      "sources": [
+        "https://www.youtube.com/watch?v=AUakGiL3T6I",
+        "https://marinarossell.com/bio/",
+        "https://elpais.com/diario/1996/06/25/cultura/835653608_850215.html"
+      ],
+      "alreadyHidden": false,
+      "priorDecision": null
+    },
+    {
+      "id": "vgtPegvbOzM",
+      "action": "amaga",
+      "artist": "Marina Rossell",
+      "title": "Yo Vengo a Ofrecer Mi Corazon",
+      "channelId": "UC5sHcbjiKxYUZ3G_0BQNBYQ",
+      "language": "castellà",
+      "method": "edició-documentada",
+      "reason": "Ha Llovido: edició contrastada en crèdits i documentació. No equival a escolta individual de totes les pistes.",
+      "sources": [
+        "https://www.youtube.com/watch?v=vgtPegvbOzM",
+        "https://marinarossell.com/bio/",
+        "https://elpais.com/diario/1996/06/25/cultura/835653608_850215.html"
+      ],
+      "alreadyHidden": false,
+      "priorDecision": null
+    },
+    {
+      "id": "p-aOWkyI2S4",
+      "action": "amaga",
+      "artist": "Marina Rossell",
+      "title": "Tu Corazon y el Mio",
+      "channelId": "UC5sHcbjiKxYUZ3G_0BQNBYQ",
+      "language": "castellà",
+      "method": "edició-documentada",
+      "reason": "Y Rodará el Mundo: edició contrastada en crèdits i documentació. No equival a escolta individual de totes les pistes.",
+      "sources": [
+        "https://www.youtube.com/watch?v=p-aOWkyI2S4",
+        "https://marinarossell.com/marina-rossell-recrea-la-cancion-centroamericana-en-y-rodara-el-mundo-el-pais/",
+        "https://elpais.com/diario/2000/03/28/andalucia/954195757_850215.html"
+      ],
+      "alreadyHidden": false,
+      "priorDecision": null
+    },
+    {
+      "id": "WHBGYbBppn8",
+      "action": "amaga",
+      "artist": "Marina Rossell",
+      "title": "Evocación",
+      "channelId": "UC5sHcbjiKxYUZ3G_0BQNBYQ",
+      "language": "castellà",
+      "method": "edició-documentada",
+      "reason": "Y Rodará el Mundo: edició contrastada en crèdits i documentació. No equival a escolta individual de totes les pistes.",
+      "sources": [
+        "https://www.youtube.com/watch?v=WHBGYbBppn8",
+        "https://marinarossell.com/marina-rossell-recrea-la-cancion-centroamericana-en-y-rodara-el-mundo-el-pais/",
+        "https://elpais.com/diario/2000/03/28/andalucia/954195757_850215.html"
+      ],
+      "alreadyHidden": false,
+      "priorDecision": null
+    },
+    {
+      "id": "pfWGZG4KuDA",
+      "action": "amaga",
+      "artist": "Marina Rossell",
+      "title": "Vengo de Tu Sonrisa",
+      "channelId": "UC5sHcbjiKxYUZ3G_0BQNBYQ",
+      "language": "castellà",
+      "method": "edició-documentada",
+      "reason": "Y Rodará el Mundo: edició contrastada en crèdits i documentació. No equival a escolta individual de totes les pistes.",
+      "sources": [
+        "https://www.youtube.com/watch?v=pfWGZG4KuDA",
+        "https://marinarossell.com/marina-rossell-recrea-la-cancion-centroamericana-en-y-rodara-el-mundo-el-pais/",
+        "https://elpais.com/diario/2000/03/28/andalucia/954195757_850215.html"
+      ],
+      "alreadyHidden": false,
+      "priorDecision": null
+    },
+    {
+      "id": "-VcO4_Sz6pw",
+      "action": "amaga",
+      "artist": "Marina Rossell",
+      "title": "Como a Ti Te Gusta",
+      "channelId": "UC5sHcbjiKxYUZ3G_0BQNBYQ",
+      "language": "castellà",
+      "method": "edició-documentada",
+      "reason": "Y Rodará el Mundo: edició contrastada en crèdits i documentació. No equival a escolta individual de totes les pistes.",
+      "sources": [
+        "https://www.youtube.com/watch?v=-VcO4_Sz6pw",
+        "https://marinarossell.com/marina-rossell-recrea-la-cancion-centroamericana-en-y-rodara-el-mundo-el-pais/",
+        "https://elpais.com/diario/2000/03/28/andalucia/954195757_850215.html"
+      ],
+      "alreadyHidden": false,
+      "priorDecision": null
+    },
+    {
+      "id": "GgxdkwyB8JE",
+      "action": "amaga",
+      "artist": "Marina Rossell",
+      "title": "Emiliano Zapata",
+      "channelId": "UC5sHcbjiKxYUZ3G_0BQNBYQ",
+      "language": "castellà",
+      "method": "edició-documentada",
+      "reason": "Y Rodará el Mundo: edició contrastada en crèdits i documentació. No equival a escolta individual de totes les pistes.",
+      "sources": [
+        "https://www.youtube.com/watch?v=GgxdkwyB8JE",
+        "https://marinarossell.com/marina-rossell-recrea-la-cancion-centroamericana-en-y-rodara-el-mundo-el-pais/",
+        "https://elpais.com/diario/2000/03/28/andalucia/954195757_850215.html"
+      ],
+      "alreadyHidden": false,
+      "priorDecision": null
+    },
+    {
+      "id": "uPqKRPBvJ4Y",
+      "action": "amaga",
+      "artist": "Marina Rossell",
+      "title": "Plazos Traicioneros",
+      "channelId": "UC5sHcbjiKxYUZ3G_0BQNBYQ",
+      "language": "castellà",
+      "method": "edició-documentada",
+      "reason": "Y Rodará el Mundo: edició contrastada en crèdits i documentació. No equival a escolta individual de totes les pistes.",
+      "sources": [
+        "https://www.youtube.com/watch?v=uPqKRPBvJ4Y",
+        "https://marinarossell.com/marina-rossell-recrea-la-cancion-centroamericana-en-y-rodara-el-mundo-el-pais/",
+        "https://elpais.com/diario/2000/03/28/andalucia/954195757_850215.html"
+      ],
+      "alreadyHidden": false,
+      "priorDecision": null
+    },
+    {
+      "id": "ffGqjkP9HiM",
+      "action": "amaga",
+      "artist": "Marina Rossell",
+      "title": "Solo para Locos",
+      "channelId": "UC5sHcbjiKxYUZ3G_0BQNBYQ",
+      "language": "castellà",
+      "method": "edició-documentada",
+      "reason": "Y Rodará el Mundo: edició contrastada en crèdits i documentació. No equival a escolta individual de totes les pistes.",
+      "sources": [
+        "https://www.youtube.com/watch?v=ffGqjkP9HiM",
+        "https://marinarossell.com/marina-rossell-recrea-la-cancion-centroamericana-en-y-rodara-el-mundo-el-pais/",
+        "https://elpais.com/diario/2000/03/28/andalucia/954195757_850215.html"
+      ],
+      "alreadyHidden": false,
+      "priorDecision": null
+    },
+    {
+      "id": "bjNkZJ0wlY0",
+      "action": "amaga",
+      "artist": "Mishima",
+      "title": "Scared",
+      "channelId": "UC_z4NPeGNySemAwaAihgbaQ",
+      "language": "anglès",
+      "method": "edició-documentada",
+      "reason": "Lipstick Traces: l’autor identifica Covards com l’única peça no cantada en anglès. Covards es conserva.",
+      "sources": [
+        "https://www.youtube.com/watch?v=bjNkZJ0wlY0",
+        "https://www.ara.cat/cultura/llengua-pop-catala-lestandard-transgressio_1_1900556.html",
+        "https://www.mishima.cat/album/lipstick-traces/"
+      ],
+      "alreadyHidden": false,
+      "priorDecision": null
+    },
+    {
+      "id": "_7n9gCngCgU",
+      "action": "amaga",
+      "artist": "Mishima",
+      "title": "Time After Time",
+      "channelId": "UC_z4NPeGNySemAwaAihgbaQ",
+      "language": "anglès",
+      "method": "edició-documentada",
+      "reason": "Lipstick Traces: l’autor identifica Covards com l’única peça no cantada en anglès. Covards es conserva.",
+      "sources": [
+        "https://www.youtube.com/watch?v=_7n9gCngCgU",
+        "https://www.ara.cat/cultura/llengua-pop-catala-lestandard-transgressio_1_1900556.html",
+        "https://www.mishima.cat/album/lipstick-traces/"
+      ],
+      "alreadyHidden": false,
+      "priorDecision": null
+    },
+    {
+      "id": "XZTe1q4eHiY",
+      "action": "amaga",
+      "artist": "Mishima",
+      "title": "Wasn't She Pretty?",
+      "channelId": "UC_z4NPeGNySemAwaAihgbaQ",
+      "language": "anglès",
+      "method": "edició-documentada",
+      "reason": "Lipstick Traces: l’autor identifica Covards com l’única peça no cantada en anglès. Covards es conserva.",
+      "sources": [
+        "https://www.youtube.com/watch?v=XZTe1q4eHiY",
+        "https://www.ara.cat/cultura/llengua-pop-catala-lestandard-transgressio_1_1900556.html",
+        "https://www.mishima.cat/album/lipstick-traces/"
+      ],
+      "alreadyHidden": false,
+      "priorDecision": null
+    },
+    {
+      "id": "6p17RzWYJwk",
+      "action": "amaga",
+      "artist": "Mishima",
+      "title": "In the Land of My Dreams",
+      "channelId": "UC_z4NPeGNySemAwaAihgbaQ",
+      "language": "anglès",
+      "method": "edició-documentada",
+      "reason": "Lipstick Traces: l’autor identifica Covards com l’única peça no cantada en anglès. Covards es conserva.",
+      "sources": [
+        "https://www.youtube.com/watch?v=6p17RzWYJwk",
+        "https://www.ara.cat/cultura/llengua-pop-catala-lestandard-transgressio_1_1900556.html",
+        "https://www.mishima.cat/album/lipstick-traces/"
+      ],
+      "alreadyHidden": false,
+      "priorDecision": null
+    },
+    {
+      "id": "Se6IkB8TEco",
+      "action": "amaga",
+      "artist": "Mishima",
+      "title": "Younger",
+      "channelId": "UC_z4NPeGNySemAwaAihgbaQ",
+      "language": "anglès",
+      "method": "edició-documentada",
+      "reason": "Lipstick Traces: l’autor identifica Covards com l’única peça no cantada en anglès. Covards es conserva.",
+      "sources": [
+        "https://www.youtube.com/watch?v=Se6IkB8TEco",
+        "https://www.ara.cat/cultura/llengua-pop-catala-lestandard-transgressio_1_1900556.html",
+        "https://www.mishima.cat/album/lipstick-traces/"
+      ],
+      "alreadyHidden": false,
+      "priorDecision": null
+    },
+    {
+      "id": "kRyAW1D-rcs",
+      "action": "amaga",
+      "artist": "Mishima",
+      "title": "As Time Signs Your Skin",
+      "channelId": "UC_z4NPeGNySemAwaAihgbaQ",
+      "language": "anglès",
+      "method": "edició-documentada",
+      "reason": "Lipstick Traces: l’autor identifica Covards com l’única peça no cantada en anglès. Covards es conserva.",
+      "sources": [
+        "https://www.youtube.com/watch?v=kRyAW1D-rcs",
+        "https://www.ara.cat/cultura/llengua-pop-catala-lestandard-transgressio_1_1900556.html",
+        "https://www.mishima.cat/album/lipstick-traces/"
+      ],
+      "alreadyHidden": false,
+      "priorDecision": null
+    },
+    {
+      "id": "Nj_m0HIq1oQ",
+      "action": "amaga",
+      "artist": "Mishima",
+      "title": "The Doppelganger",
+      "channelId": "UC_z4NPeGNySemAwaAihgbaQ",
+      "language": "anglès",
+      "method": "edició-documentada",
+      "reason": "Lipstick Traces: l’autor identifica Covards com l’única peça no cantada en anglès. Covards es conserva.",
+      "sources": [
+        "https://www.youtube.com/watch?v=Nj_m0HIq1oQ",
+        "https://www.ara.cat/cultura/llengua-pop-catala-lestandard-transgressio_1_1900556.html",
+        "https://www.mishima.cat/album/lipstick-traces/"
+      ],
+      "alreadyHidden": false,
+      "priorDecision": null
+    },
+    {
+      "id": "QUk1rxv081c",
+      "action": "amaga",
+      "artist": "Mishima",
+      "title": "Letter to Lo",
+      "channelId": "UC_z4NPeGNySemAwaAihgbaQ",
+      "language": "anglès",
+      "method": "edició-documentada",
+      "reason": "Lipstick Traces: l’autor identifica Covards com l’única peça no cantada en anglès. Covards es conserva.",
+      "sources": [
+        "https://www.youtube.com/watch?v=QUk1rxv081c",
+        "https://www.ara.cat/cultura/llengua-pop-catala-lestandard-transgressio_1_1900556.html",
+        "https://www.mishima.cat/album/lipstick-traces/"
+      ],
+      "alreadyHidden": false,
+      "priorDecision": null
+    },
+    {
+      "id": "ZNTJff1vQes",
+      "action": "amaga",
+      "artist": "Raydibaum",
+      "title": "Grided Elephant",
+      "channelId": "UCCKRS2KD1i75evCURPuHQXA",
+      "language": "anglès",
+      "method": "edició-documentada",
+      "reason": "Grided Elephant: entrevista al grup documenta els dos primers treballs en anglès. Edició comprovada als crèdits.",
+      "sources": [
+        "https://www.youtube.com/watch?v=ZNTJff1vQes",
+        "https://www.ara.cat/cultura/raydibaum-canvien-sobreviure_1_2893819.html",
+        "https://www.enderrock.cat/noticia/9748/10-anys-raydibaum"
+      ],
+      "alreadyHidden": false,
+      "priorDecision": null
+    },
+    {
+      "id": "ubsu0P5d3gc",
+      "action": "amaga",
+      "artist": "Raydibaum",
+      "title": "Satellite",
+      "channelId": "UCCKRS2KD1i75evCURPuHQXA",
+      "language": "anglès",
+      "method": "edició-documentada",
+      "reason": "Grided Elephant: entrevista al grup documenta els dos primers treballs en anglès. Edició comprovada als crèdits.",
+      "sources": [
+        "https://www.youtube.com/watch?v=ubsu0P5d3gc",
+        "https://www.ara.cat/cultura/raydibaum-canvien-sobreviure_1_2893819.html",
+        "https://www.enderrock.cat/noticia/9748/10-anys-raydibaum"
+      ],
+      "alreadyHidden": false,
+      "priorDecision": null
+    },
+    {
+      "id": "LhAxEKyAfXU",
+      "action": "amaga",
+      "artist": "Raydibaum",
+      "title": "Come",
+      "channelId": "UCCKRS2KD1i75evCURPuHQXA",
+      "language": "anglès",
+      "method": "edició-documentada",
+      "reason": "Grided Elephant: entrevista al grup documenta els dos primers treballs en anglès. Edició comprovada als crèdits.",
+      "sources": [
+        "https://www.youtube.com/watch?v=LhAxEKyAfXU",
+        "https://www.ara.cat/cultura/raydibaum-canvien-sobreviure_1_2893819.html",
+        "https://www.enderrock.cat/noticia/9748/10-anys-raydibaum"
+      ],
+      "alreadyHidden": false,
+      "priorDecision": null
+    },
+    {
+      "id": "9lGskUbTPeM",
+      "action": "amaga",
+      "artist": "El Pony Pisador",
+      "title": "Maggie May",
+      "channelId": "UCBMrWboBJ7RC04ul-MNY0xA",
+      "language": "anglès",
+      "method": "lletra-oficial-web",
+      "reason": "Sis lletres angleses publicades íntegrament pel grup; no és una deducció basada en el títol.",
+      "sources": [
+        "https://www.youtube.com/watch?v=9lGskUbTPeM",
+        "https://elponypisador.com/musica/"
+      ],
+      "alreadyHidden": false,
+      "priorDecision": null
+    },
+    {
+      "id": "FKvq72yY6Ug",
+      "action": "amaga",
+      "artist": "El Pony Pisador",
+      "title": "Roll down",
+      "channelId": "UCBMrWboBJ7RC04ul-MNY0xA",
+      "language": "anglès",
+      "method": "lletra-oficial-web",
+      "reason": "Sis lletres angleses publicades íntegrament pel grup; no és una deducció basada en el títol.",
+      "sources": [
+        "https://www.youtube.com/watch?v=FKvq72yY6Ug",
+        "https://elponypisador.com/musica/"
+      ],
+      "alreadyHidden": false,
+      "priorDecision": null
+    },
+    {
+      "id": "QDhT1QEbk5g",
+      "action": "amaga",
+      "artist": "El Pony Pisador",
+      "title": "A drop of Nelson's blood",
+      "channelId": "UCBMrWboBJ7RC04ul-MNY0xA",
+      "language": "anglès",
+      "method": "lletra-oficial-web",
+      "reason": "Sis lletres angleses publicades íntegrament pel grup; no és una deducció basada en el títol.",
+      "sources": [
+        "https://www.youtube.com/watch?v=QDhT1QEbk5g",
+        "https://elponypisador.com/musica/"
+      ],
+      "alreadyHidden": false,
+      "priorDecision": null
+    },
+    {
+      "id": "iQ-3hMQSO34",
+      "action": "amaga",
+      "artist": "El Pony Pisador",
+      "title": "The Saucy Arabella",
+      "channelId": "UCBMrWboBJ7RC04ul-MNY0xA",
+      "language": "anglès",
+      "method": "lletra-oficial-web",
+      "reason": "Sis lletres angleses publicades íntegrament pel grup; no és una deducció basada en el títol.",
+      "sources": [
+        "https://www.youtube.com/watch?v=iQ-3hMQSO34",
+        "https://elponypisador.com/musica/"
+      ],
+      "alreadyHidden": false,
+      "priorDecision": null
+    },
+    {
+      "id": "kudysvuDgAg",
+      "action": "amaga",
+      "artist": "El Pony Pisador",
+      "title": "Johnny Comes Down to Hilo",
+      "channelId": "UCBMrWboBJ7RC04ul-MNY0xA",
+      "language": "anglès",
+      "method": "lletra-oficial-web",
+      "reason": "Sis lletres angleses publicades íntegrament pel grup; no és una deducció basada en el títol.",
+      "sources": [
+        "https://www.youtube.com/watch?v=kudysvuDgAg",
+        "https://elponypisador.com/musica/"
+      ],
+      "alreadyHidden": false,
+      "priorDecision": null
+    },
+    {
+      "id": "GCDxt6bwx4I",
+      "action": "amaga",
+      "artist": "El Pony Pisador",
+      "title": "(Porrus Track) Scarborough Fair",
+      "channelId": "UCBMrWboBJ7RC04ul-MNY0xA",
+      "language": "anglès",
+      "method": "lletra-oficial-web",
+      "reason": "Sis lletres angleses publicades íntegrament pel grup; no és una deducció basada en el títol.",
+      "sources": [
+        "https://www.youtube.com/watch?v=GCDxt6bwx4I",
+        "https://elponypisador.com/musica/"
+      ],
+      "alreadyHidden": false,
+      "priorDecision": null
+    },
+    {
+      "id": "m2iDYE6JCYE",
+      "action": "amaga",
+      "artist": "El Pony Pisador",
+      "title": "Daglarym",
+      "channelId": "UCBMrWboBJ7RC04ul-MNY0xA",
+      "language": "tuvà",
+      "method": "lletra-oficial-web",
+      "reason": "Daglarym: cançó tuvana identificada pel grup, lletra original i traducció catalana. No és una instrumental.",
+      "sources": [
+        "https://www.youtube.com/watch?v=m2iDYE6JCYE",
+        "https://elponypisador.com/musica/"
+      ],
+      "alreadyHidden": false,
+      "priorDecision": null
+    }
+  ],
+  "explicitlyKept": [
+    {
+      "id": "VIItW5YC9mY",
+      "action": "conserva",
+      "artist": "Mishima",
+      "title": "Covards",
+      "channelId": "UC_z4NPeGNySemAwaAihgbaQ",
+      "language": "català",
+      "method": "declaració-autor",
+      "reason": "Covards és l’excepció catalana de Lipstick Traces.",
+      "sources": [
+        "https://www.youtube.com/watch?v=VIItW5YC9mY",
+        "https://www.ara.cat/cultura/llengua-pop-catala-lestandard-transgressio_1_1900556.html"
+      ],
+      "alreadyHidden": false,
+      "priorDecision": null
+    },
+    {
+      "id": "2eHNWv_VXnk",
+      "action": "conserva",
+      "artist": "El Petit de Cal Eril",
+      "title": "El Petit de Cal Eril - Cauen les estrelles [Audio Oficial]",
+      "channelId": "UCQc-T583XUy2JAfeun2_0mg",
+      "language": "català",
+      "method": "lletra-oficial",
+      "reason": "Cauen les estrelles: original català; CAST i ENG són traduccions escrites.",
+      "sources": [
+        "https://www.youtube.com/watch?v=2eHNWv_VXnk"
+      ],
+      "alreadyHidden": false,
+      "priorDecision": null
+    },
+    {
+      "id": "MWorzPep-lE",
+      "action": "conserva",
+      "artist": "El Petit de Cal Eril",
+      "title": "El Petit de Cal Eril - Cauen les estrelles [Clip Oficial]",
+      "channelId": "UCQc-T583XUy2JAfeun2_0mg",
+      "language": "català",
+      "method": "lletra-oficial",
+      "reason": "Cauen les estrelles: original català; CAST i ENG són traduccions escrites.",
+      "sources": [
+        "https://www.youtube.com/watch?v=MWorzPep-lE"
+      ],
+      "alreadyHidden": false,
+      "priorDecision": null
+    },
+    {
+      "id": "kE8kiYASWpA",
+      "action": "conserva",
+      "artist": "Tardor",
+      "title": "IX.Energia - Una ciutat invisible (Tardor)",
+      "channelId": "UCfVobdq05T0LJLrCIUbwqYQ",
+      "language": "català",
+      "method": "lletra-oficial",
+      "reason": "Energia: original valencià/català; la traducció castellana escrita no és l’àudio.",
+      "sources": [
+        "https://www.youtube.com/watch?v=kE8kiYASWpA"
+      ],
+      "alreadyHidden": false,
+      "priorDecision": {
+        "id": "kE8kiYASWpA",
+        "accio": "conserva",
+        "artista": "Tardor",
+        "titol": "IX.Energia - Una ciutat invisible (Tardor)",
+        "font": "https://tardor.band/",
+        "origen": "docs/revisions/2026-10-12-tardor-blat-quinto.json",
+        "data": "2026-10-12T20:45:33.058Z"
+      }
+    },
+    {
+      "id": "0_VCqryfoZM",
+      "action": "conserva",
+      "artist": "Antònia Font",
+      "title": "Antònia Font - Oh La La (Videoclip Oficial)",
+      "channelId": "UCeiYZJsHIDALiJkzRkFWlAQ",
+      "language": "català principal",
+      "method": "lletra-oficial",
+      "reason": "Oh La La d’Antònia Font: català principal malgrat expressions franceses; obra diferent de la de Julieta.",
+      "sources": [
+        "https://www.youtube.com/watch?v=0_VCqryfoZM"
+      ],
+      "alreadyHidden": false,
+      "priorDecision": null
+    },
+    {
+      "id": "44_rLf5xkts",
+      "action": "conserva",
+      "artist": "El Pony Pisador",
+      "title": "Bartomeu el Portuguès",
+      "channelId": "UCBMrWboBJ7RC04ul-MNY0xA",
+      "language": "català",
+      "method": "lletra-oficial-web",
+      "reason": "Bartomeu el Portuguès: lletra catalana publicada.",
+      "sources": [
+        "https://www.youtube.com/watch?v=44_rLf5xkts",
+        "https://elponypisador.com/musica/"
+      ],
+      "alreadyHidden": false,
+      "priorDecision": null
+    },
+    {
+      "id": "QEhEbeMLES8",
+      "action": "conserva",
+      "artist": "El Pony Pisador",
+      "title": "Dolores",
+      "channelId": "UCBMrWboBJ7RC04ul-MNY0xA",
+      "language": "instrumental o vocalització no lèxica",
+      "method": "descripció-oficial",
+      "reason": "Dolores i From Erin to Tuva: suites instrumentals, amb recursos vocals no lèxics en la segona; sense nova exclusió lingüística.",
+      "sources": [
+        "https://www.youtube.com/watch?v=QEhEbeMLES8",
+        "https://elponypisador.com/musica/"
+      ],
+      "alreadyHidden": false,
+      "priorDecision": null
+    },
+    {
+      "id": "3Ije1SL9--E",
+      "action": "conserva",
+      "artist": "El Pony Pisador",
+      "title": "From Erin to Tuva",
+      "channelId": "UCBMrWboBJ7RC04ul-MNY0xA",
+      "language": "instrumental o vocalització no lèxica",
+      "method": "descripció-oficial",
+      "reason": "Dolores i From Erin to Tuva: suites instrumentals, amb recursos vocals no lèxics en la segona; sense nova exclusió lingüística.",
+      "sources": [
+        "https://www.youtube.com/watch?v=3Ije1SL9--E",
+        "https://elponypisador.com/musica/"
+      ],
+      "alreadyHidden": false,
+      "priorDecision": null
+    }
+  ],
+  "pendingBefore": 765,
+  "pendingAfter": 723,
+  "focusedPending": [
+    {
+      "id": "Hk9lVy4WT70",
+      "artist": "Cactus Troop",
+      "title": "CACTUS - STAY HOME SAFE - DIRECTE TROVAM 2020",
+      "reason": "Directe de STAY HOME SAFE i peça mixta: contrastar l’àudio concret; no traslladar automàticament la decisió de l’estudi.",
+      "source": "https://www.youtube.com/watch?v=Hk9lVy4WT70"
+    },
+    {
+      "id": "i80Ous1f1FM",
+      "artist": "Cactus Troop",
+      "title": "CACTUS - S'HA ACABAT LA BROMA (SHOTS VOL. 1)",
+      "reason": "Directe de STAY HOME SAFE i peça mixta: contrastar l’àudio concret; no traslladar automàticament la decisió de l’estudi.",
+      "source": "https://www.youtube.com/watch?v=i80Ous1f1FM"
+    },
+    {
+      "id": "Z0ZkGDOlYt8",
+      "artist": "Scorpio",
+      "title": "ALABABALÀ - Scorpio",
+      "reason": "ALABABALÀ: lletra mixta i vocalitzacions; llengua principal no resolta.",
+      "source": "https://www.youtube.com/watch?v=Z0ZkGDOlYt8"
+    },
+    {
+      "id": "iR9oNlNoY2I",
+      "artist": "Adala",
+      "title": "1 Cold In Paradise - Adala [Cel LP]",
+      "reason": "Crèdits disponibles però falta contrastar tota la lletra.",
+      "source": "https://www.youtube.com/watch?v=iR9oNlNoY2I"
+    },
+    {
+      "id": "Wt36winFpGw",
+      "artist": "Adala",
+      "title": "3  December - Adala [Cel LP]",
+      "reason": "Crèdits disponibles però falta contrastar tota la lletra.",
+      "source": "https://www.youtube.com/watch?v=Wt36winFpGw"
+    },
+    {
+      "id": "jJ8an2o93pg",
+      "artist": "Adala",
+      "title": "4  What Can I say - Adala [Cel LP]",
+      "reason": "Crèdits disponibles però falta contrastar tota la lletra.",
+      "source": "https://www.youtube.com/watch?v=jJ8an2o93pg"
+    },
+    {
+      "id": "CoAR05fVFI8",
+      "artist": "Adala",
+      "title": "8  Look Inside - Adala [Cel LP]",
+      "reason": "Crèdits disponibles però falta contrastar tota la lletra.",
+      "source": "https://www.youtube.com/watch?v=CoAR05fVFI8"
+    },
+    {
+      "id": "VC9stjzAqrk",
+      "artist": "Adala",
+      "title": "SANTA SALUT & ADALA - BALA PERDIDA",
+      "reason": "Crèdits disponibles però falta contrastar tota la lletra.",
+      "source": "https://www.youtube.com/watch?v=VC9stjzAqrk"
+    },
+    {
+      "id": "d26a8S9G8-4",
+      "artist": "Anaïs Vila",
+      "title": "Goodbye",
+      "reason": "Disc multilingüe: completar el contrast per enregistrament.",
+      "source": "https://www.youtube.com/watch?v=d26a8S9G8-4"
+    },
+    {
+      "id": "rT5tHj7i00k",
+      "artist": "Anaïs Vila",
+      "title": "Come Back And Dance",
+      "reason": "Disc multilingüe: completar el contrast per enregistrament.",
+      "source": "https://www.youtube.com/watch?v=rT5tHj7i00k"
+    },
+    {
+      "id": "7mmusqLYQ4A",
+      "artist": "Anaïs Vila",
+      "title": "I Don’t Need You",
+      "reason": "Disc multilingüe: completar el contrast per enregistrament.",
+      "source": "https://www.youtube.com/watch?v=7mmusqLYQ4A"
+    },
+    {
+      "id": "kcTJOKUadYY",
+      "artist": "Anna Ferrer",
+      "title": "Son tus ojos dos puñales - Anna Ferrer",
+      "reason": "Cal contrastar cada versió, no decidir per títol.",
+      "source": "https://www.youtube.com/watch?v=kcTJOKUadYY"
+    },
+    {
+      "id": "legC-Qofoog",
+      "artist": "Anna Ferrer",
+      "title": "YO ME PREGUNTO - ANNA FERRER",
+      "reason": "Cal contrastar cada versió, no decidir per títol.",
+      "source": "https://www.youtube.com/watch?v=legC-Qofoog"
+    },
+    {
+      "id": "PL252-84B8E",
+      "artist": "Anna Ferrer",
+      "title": "Yo me pregunto (videoacústico) - Anna Ferrer",
+      "reason": "Cal contrastar cada versió, no decidir per títol.",
+      "source": "https://www.youtube.com/watch?v=PL252-84B8E"
+    },
+    {
+      "id": "iz0DBq9VsFg",
+      "artist": "Sílvia Pérez Cruz",
+      "title": "The Sound Of Silence (MA. Live In Tokio)",
+      "reason": "Repertori multilingüe; contrastar cada enregistrament i no només l’original de la cançó.",
+      "source": "https://www.youtube.com/watch?v=iz0DBq9VsFg"
+    },
+    {
+      "id": "gnqbnT_ODKw",
+      "artist": "Sílvia Pérez Cruz",
+      "title": "Estrela, Estrela (MA. Live In Tokio)",
+      "reason": "Repertori multilingüe; contrastar cada enregistrament i no només l’original de la cançó.",
+      "source": "https://www.youtube.com/watch?v=gnqbnT_ODKw"
+    },
+    {
+      "id": "cp1NNTWYB38",
+      "artist": "Sílvia Pérez Cruz",
+      "title": "Oración Del Remanso (MA. Live In Tokio)",
+      "reason": "Repertori multilingüe; contrastar cada enregistrament i no només l’original de la cançó.",
+      "source": "https://www.youtube.com/watch?v=cp1NNTWYB38"
+    },
+    {
+      "id": "esxUFB0y9Kc",
+      "artist": "Sílvia Pérez Cruz",
+      "title": "No Surprises (MA. Live In Tokio)",
+      "reason": "Repertori multilingüe; contrastar cada enregistrament i no només l’original de la cançó.",
+      "source": "https://www.youtube.com/watch?v=esxUFB0y9Kc"
+    },
+    {
+      "id": "RlRfBH88Jho",
+      "artist": "Sílvia Pérez Cruz",
+      "title": "Niño Mudo (MA. Live In Tokio)",
+      "reason": "Repertori multilingüe; contrastar cada enregistrament i no només l’original de la cançó.",
+      "source": "https://www.youtube.com/watch?v=RlRfBH88Jho"
+    },
+    {
+      "id": "I3cZLTy6hlo",
+      "artist": "Sílvia Pérez Cruz",
+      "title": "La Llorona (MA. Live In Tokio)",
+      "reason": "Repertori multilingüe; contrastar cada enregistrament i no només l’original de la cançó.",
+      "source": "https://www.youtube.com/watch?v=I3cZLTy6hlo"
+    },
+    {
+      "id": "FKjPBF3mHYM",
+      "artist": "Sílvia Pérez Cruz",
+      "title": "The Man Who Sold The World",
+      "reason": "Repertori multilingüe; contrastar cada enregistrament i no només l’original de la cançó.",
+      "source": "https://www.youtube.com/watch?v=FKjPBF3mHYM"
+    },
+    {
+      "id": "45WKCiR1cR8",
+      "artist": "Sílvia Pérez Cruz",
+      "title": "Menuda",
+      "reason": "Repertori multilingüe; contrastar cada enregistrament i no només l’original de la cançó.",
+      "source": "https://www.youtube.com/watch?v=45WKCiR1cR8"
+    },
+    {
+      "id": "85vptASO2sA",
+      "artist": "Sílvia Pérez Cruz",
+      "title": "Carabelas Nada (Acústico)",
+      "reason": "Repertori multilingüe; contrastar cada enregistrament i no només l’original de la cançó.",
+      "source": "https://www.youtube.com/watch?v=85vptASO2sA"
+    },
+    {
+      "id": "B5KCvlYtLnk",
+      "artist": "Sílvia Pérez Cruz",
+      "title": "I Get Along Without You Very Well (Except Sometimes)",
+      "reason": "Repertori multilingüe; contrastar cada enregistrament i no només l’original de la cançó.",
+      "source": "https://www.youtube.com/watch?v=B5KCvlYtLnk"
+    },
+    {
+      "id": "LN9uqDJ6rho",
+      "artist": "Sílvia Pérez Cruz",
+      "title": "Acabou Chorare",
+      "reason": "Repertori multilingüe; contrastar cada enregistrament i no només l’original de la cançó.",
+      "source": "https://www.youtube.com/watch?v=LN9uqDJ6rho"
+    },
+    {
+      "id": "TesLy3pPiN0",
+      "artist": "Tesa",
+      "title": "You Send Me (Original Mix)",
+      "reason": "Possible barreja d’homònims (crèdits My Proud Mountain); revisar identitat, no descartar instrumentals com a lletres estrangeres.",
+      "source": "https://www.youtube.com/watch?v=TesLy3pPiN0"
+    },
+    {
+      "id": "wJi2rln_Obo",
+      "artist": "Tesa",
+      "title": "Interval 3",
+      "reason": "Possible barreja d’homònims (crèdits My Proud Mountain); revisar identitat, no descartar instrumentals com a lletres estrangeres.",
+      "source": "https://www.youtube.com/watch?v=wJi2rln_Obo"
+    },
+    {
+      "id": "yAOvq3zRcGQ",
+      "artist": "Tesa",
+      "title": "II",
+      "reason": "Possible barreja d’homònims (crèdits My Proud Mountain); revisar identitat, no descartar instrumentals com a lletres estrangeres.",
+      "source": "https://www.youtube.com/watch?v=yAOvq3zRcGQ"
+    },
+    {
+      "id": "5Lo3njtyJ8s",
+      "artist": "Tesa",
+      "title": "IV",
+      "reason": "Possible barreja d’homònims (crèdits My Proud Mountain); revisar identitat, no descartar instrumentals com a lletres estrangeres.",
+      "source": "https://www.youtube.com/watch?v=5Lo3njtyJ8s"
+    },
+    {
+      "id": "ofedU_hH39w",
+      "artist": "Tesa",
+      "title": "I",
+      "reason": "Possible barreja d’homònims (crèdits My Proud Mountain); revisar identitat, no descartar instrumentals com a lletres estrangeres.",
+      "source": "https://www.youtube.com/watch?v=ofedU_hH39w"
+    },
+    {
+      "id": "T6zRkeQDFqk",
+      "artist": "Tesa",
+      "title": "III",
+      "reason": "Possible barreja d’homònims (crèdits My Proud Mountain); revisar identitat, no descartar instrumentals com a lletres estrangeres.",
+      "source": "https://www.youtube.com/watch?v=T6zRkeQDFqk"
+    },
+    {
+      "id": "fF331XwC6FM",
+      "artist": "Tesa",
+      "title": "VI",
+      "reason": "Possible barreja d’homònims (crèdits My Proud Mountain); revisar identitat, no descartar instrumentals com a lletres estrangeres.",
+      "source": "https://www.youtube.com/watch?v=fF331XwC6FM"
+    },
+    {
+      "id": "b3KuiHSq30A",
+      "artist": "Tesa",
+      "title": "V",
+      "reason": "Possible barreja d’homònims (crèdits My Proud Mountain); revisar identitat, no descartar instrumentals com a lletres estrangeres.",
+      "source": "https://www.youtube.com/watch?v=b3KuiHSq30A"
+    },
+    {
+      "id": "aYZf4Jjaba4",
+      "artist": "Tesa",
+      "title": "Control 1",
+      "reason": "Possible barreja d’homònims (crèdits My Proud Mountain); revisar identitat, no descartar instrumentals com a lletres estrangeres.",
+      "source": "https://www.youtube.com/watch?v=aYZf4Jjaba4"
+    },
+    {
+      "id": "CiKvJRKexCU",
+      "artist": "Tesa",
+      "title": "T",
+      "reason": "Possible barreja d’homònims (crèdits My Proud Mountain); revisar identitat, no descartar instrumentals com a lletres estrangeres.",
+      "source": "https://www.youtube.com/watch?v=CiKvJRKexCU"
+    },
+    {
+      "id": "OW6-96RBkj0",
+      "artist": "Tesa",
+      "title": "O",
+      "reason": "Possible barreja d’homònims (crèdits My Proud Mountain); revisar identitat, no descartar instrumentals com a lletres estrangeres.",
+      "source": "https://www.youtube.com/watch?v=OW6-96RBkj0"
+    },
+    {
+      "id": "iLFaTImk28Y",
+      "artist": "Tesa",
+      "title": "H",
+      "reason": "Possible barreja d’homònims (crèdits My Proud Mountain); revisar identitat, no descartar instrumentals com a lletres estrangeres.",
+      "source": "https://www.youtube.com/watch?v=iLFaTImk28Y"
+    },
+    {
+      "id": "Ur3H6aubMno",
+      "artist": "Tesa",
+      "title": "G",
+      "reason": "Possible barreja d’homònims (crèdits My Proud Mountain); revisar identitat, no descartar instrumentals com a lletres estrangeres.",
+      "source": "https://www.youtube.com/watch?v=Ur3H6aubMno"
+    },
+    {
+      "id": "KVaThwJcsgs",
+      "artist": "Tesa",
+      "title": "S",
+      "reason": "Possible barreja d’homònims (crèdits My Proud Mountain); revisar identitat, no descartar instrumentals com a lletres estrangeres.",
+      "source": "https://www.youtube.com/watch?v=KVaThwJcsgs"
+    },
+    {
+      "id": "O7nuhwFypIE",
+      "artist": "Still Ill",
+      "title": "ALL OUT",
+      "reason": "Possible canal Tema amb homònims: contrastar la identitat de cada disc.",
+      "source": "https://www.youtube.com/watch?v=O7nuhwFypIE"
+    },
+    {
+      "id": "UZx18DLq_IU",
+      "artist": "Still Ill",
+      "title": "PAIN IN THINGS",
+      "reason": "Possible canal Tema amb homònims: contrastar la identitat de cada disc.",
+      "source": "https://www.youtube.com/watch?v=UZx18DLq_IU"
+    },
+    {
+      "id": "Ttra6rp4Kko",
+      "artist": "Still Ill",
+      "title": "DEFINITION OF A BASTARD",
+      "reason": "Possible canal Tema amb homònims: contrastar la identitat de cada disc.",
+      "source": "https://www.youtube.com/watch?v=Ttra6rp4Kko"
+    },
+    {
+      "id": "o6Mp0tr26Go",
+      "artist": "Still Ill",
+      "title": "NO PART",
+      "reason": "Possible canal Tema amb homònims: contrastar la identitat de cada disc.",
+      "source": "https://www.youtube.com/watch?v=o6Mp0tr26Go"
+    },
+    {
+      "id": "AjJhBZKqXcw",
+      "artist": "Still Ill",
+      "title": "Photograph / Note",
+      "reason": "Possible canal Tema amb homònims: contrastar la identitat de cada disc.",
+      "source": "https://www.youtube.com/watch?v=AjJhBZKqXcw"
+    },
+    {
+      "id": "7cIpDY5SiPI",
+      "artist": "Still Ill",
+      "title": "In the Blood",
+      "reason": "Possible canal Tema amb homònims: contrastar la identitat de cada disc.",
+      "source": "https://www.youtube.com/watch?v=7cIpDY5SiPI"
+    },
+    {
+      "id": "rSYaVOqM4ys",
+      "artist": "Still Ill",
+      "title": "Black and Blue",
+      "reason": "Possible canal Tema amb homònims: contrastar la identitat de cada disc.",
+      "source": "https://www.youtube.com/watch?v=rSYaVOqM4ys"
+    },
+    {
+      "id": "jLRCC-Z5t_A",
+      "artist": "Still Ill",
+      "title": "The Path to Paradise (Ends in Hell)",
+      "reason": "Possible canal Tema amb homònims: contrastar la identitat de cada disc.",
+      "source": "https://www.youtube.com/watch?v=jLRCC-Z5t_A"
+    },
+    {
+      "id": "dblPN60zKHc",
+      "artist": "Still Ill",
+      "title": "Never Sleep",
+      "reason": "Possible canal Tema amb homònims: contrastar la identitat de cada disc.",
+      "source": "https://www.youtube.com/watch?v=dblPN60zKHc"
+    },
+    {
+      "id": "X80VOkp4KG4",
+      "artist": "Still Ill",
+      "title": "First",
+      "reason": "Possible canal Tema amb homònims: contrastar la identitat de cada disc.",
+      "source": "https://www.youtube.com/watch?v=X80VOkp4KG4"
+    },
+    {
+      "id": "9gnCJJ19v6Q",
+      "artist": "Still Ill",
+      "title": "S9",
+      "reason": "Possible canal Tema amb homònims: contrastar la identitat de cada disc.",
+      "source": "https://www.youtube.com/watch?v=9gnCJJ19v6Q"
+    },
+    {
+      "id": "tdAXV7o6fyk",
+      "artist": "Still Ill",
+      "title": "Street Rat",
+      "reason": "Possible canal Tema amb homònims: contrastar la identitat de cada disc.",
+      "source": "https://www.youtube.com/watch?v=tdAXV7o6fyk"
+    },
+    {
+      "id": "2rAHzk7ErHY",
+      "artist": "Still Ill",
+      "title": "Still Got to F U C K",
+      "reason": "Possible canal Tema amb homònims: contrastar la identitat de cada disc.",
+      "source": "https://www.youtube.com/watch?v=2rAHzk7ErHY"
+    },
+    {
+      "id": "9MaRGn8c7oc",
+      "artist": "Still Ill",
+      "title": "Bounce",
+      "reason": "Possible canal Tema amb homònims: contrastar la identitat de cada disc.",
+      "source": "https://www.youtube.com/watch?v=9MaRGn8c7oc"
+    }
+  ],
+  "limits": "No s’han escoltat totes les gravacions ni verificat totes les lletres. 17 baixes contrastades amb lletres oficials i 27 amb documentació de les edicions. Els casos no resolts no s’aproven ni s’oculten automàticament.",
+  "verification": {
+    "status": "passed",
+    "checkedAt": "2026-10-13T11:00:13.783Z",
+    "nonTargetRecordingsUnchanged": true,
+    "artistCatalogUnchanged": true,
+    "previousExclusionsPreserved": true,
+    "playbackIndexesClean": true
+  },
+  "tests": {
+    "passed": 1158,
+    "preexistingFailures": 6,
+    "regressions": 0
+  },
+  "lint": {
+    "preexistingErrors": 5,
+    "preexistingWarnings": 184,
+    "newDiagnostics": 0
+  },
+  "baselineCommit": "eff0df0e79b52e8cf8df0896c38dbce251d16b69"
+}
