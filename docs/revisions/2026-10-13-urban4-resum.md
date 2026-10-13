@@ -159,4 +159,215 @@ ZaKWnqZkJtk | Arrecés | PT3M8S
 nNlHggCy09U | En Es Desert | PT3M2S
 
 # ThatKid
-
+## ThatKid - Topic | UC5N8pkZTmXd8EDRxqhtrDbg | null | true
+tCkxAu8zTh4 | velada | PT2M24S
+f8t06NJWVUE | za | PT1M51S
+d2hvsHtfRGQ | no t puedo odiar | PT2M27S
+dajf-Z1SpL8 | missu | PT1M46S
+7JjIXnQhFPk | superman | PT2M39S
+MJnpA0ha6rA | missu | PT1M46S
+dWdTeDAHp7o | se q tu pasas | PT2M50S
+pX2fp5ThCQ0 | fluye | PT2M37S
+OLP-RKN11I0 | Lova | PT3M5S
+IiXe2MZEdBU | la del pulpo | PT2M38S
+BqICB1AJ_Ik | stoner | PT2M32S
+UUryXvBzXvs | Lova | PT3M5S
+AJMmxp2x2Xc | FUCK ICE | PT2M40S
+IgcSBrXZH_4 | la class | PT3M51S
+JL86kCzxX3s | online | PT2M47S
+KDLItYOj12g | new day | PT1M50S
+lPDuW2icLcM | buggin | PT2M16S
+HriVHBnI_8c | Chanel | PT1M28S
+LnAQgf27_-Q | Hechizos | PT2M22S
+gmgn0dXsjUA | #catalanjazZ | PT1M39S
+gwtG5U7B7Pg | RWYTA (intro) | PT2M2S
+sftZYLnHXJ8 | MANIPURA | PT2M41S
+0XilsTi6Z40 | PIJAS LAS X | PT2M31S
+EawLNQChTz8 | 2B | PT1M49S
+Oto9xx-rtaw | GORDO | PT2M20S
+z0_IFUo4ULE | PEP UNIVERSITY | PT1M59S
+z7ibjL3xzQ8 | NIRVANA | PT1M45S
+Fj80STElNF4 | Besito | PT2M57S
+GF4C8rkJQj8 | Verte | PT2M38S
+JXeL_LzRJcI | Ney | PT2M32S
+bBpTWNxud4w | Más que ayer | PT2M20S
+tOYLBGH6Vq0 | Supa sexii | PT2M1S
+vcrhRt0lZ2o | Que dius? | PT1M43S
+6JaaSx4XW3U | japanese | PT2M18S
+Fy61OASfE68 | bottomless | PT1M52S
+Gcf2Fm6edk4 | medusa | PT2M27S
+OdZ_Bcd3PLI | doja | PT2M
+QZ2mEkcJiM8 | pretty fly hoe | PT1M48S
+bJftX10L3sM | ICONA | PT1M13S
+bSyYAfjVf-8 | paloma wool | PT1M46S
+dDgZ9ABI4lg | king size | PT2M15S
+j7ZMy99gYRk | no2 | PT2M6S
+qgVKXW3vh90 | geekin | PT2M33S
+r2MboxnDB1U | isdin | PT1M56S
+sTMZPUj5bJM | chihiro | PT2M16S
+wSQnYUUHDTc | tesla | PT1M45S
+AYjutYsuTN0 | Bótalo | PT1M58S
+XWnHHhlhDnw | Sexxx! (feat. Nostos) | PT2M7S
+rXJrgmLC_Cg | Matrix⁂ (feat. Nostos) | PT2M12S
+rbdiX6jtRks | PIJAS LAS X RMX | PT3M10S
+jA31TFN0Vz0 | GORDO | PT2M20S
+cF0EvclGak0 | bellaca | PT2M3S
+0TPA9HgiK2s | 4u | PT2M22S
+7Iglk7m5abI | faya | PT2M11S
+85Yn5uRYHao | roma o milan | PT2M14S
+O4EkN5Q5kPA | 2:22 | PT2M23S
+Y0zfqwRAEPE | mimesi freestyle | PT3M38S
+ghsD3cnvmNQ | puedosolo | PT2M25S
+qyrHC6DDNs8 | madwrld | PT3M22S
+uUcfc9uGJ1Q | Granota | PT1M56S
+znxndavdlMc | fingers! | PT2M12S
+K0JvpBdk3k4 | PEP UNIVERSITY | PT1M59S
+6y_o5V53cRE | hott | PT1M45S
+drHhefJM6nI | atada+ヾ✸.+:。ﾟ☆ | PT1M58S
+eeI27uO4_Sg | que dius? | PT1M43S
+vtHubUsU_r8 | Superstar | PT2M47S
+1kP4vZCND5Y | medusa | PT2M27S
+tL9qQkq9FnM | Ney | PT2M32S
+6WW_G9TXqe4 | kodak30 | PT1M59S
+T5C_YqDMpBc | tourxbcn | PT1M11S
+9si-ZHdYivs | Bótalo | PT1M58S
+1-OAtMAh9hc | backflips | PT2M43S
+vtYpE404HUo | MANIPURA | PT2M41S
+_wdfIW4BN1g | Cheque | PT2M42S
+TQX5LmVB7G8 | ICONA | PT1M13S
+GmJANqiIAn8 | Granota | PT1M56S
+O2Ngg3FAblc | mudarme a tu ciudad | PT2M4S
+f9nESoxApUY | Sol sulet | PT1M48S
+J9Mf0k2RELg | Bestie | PT3M
+TCrQ972um44 | 15 Pt. 2 | PT1M26S
+6cROxX2hho4 | el menol | PT1M49S
+ZMPVArScc0I | On the sly | PT1M53S
+mVfDJyaslJw | bout nun | PT1M44S
+bK8YAKLi-N0 | mala² | PT2M53S
+0vSd9dRAm_c | penguin | PT2M21S
+y6ddTnBHvCg | perky | PT2M24S
+ylSAzoE9i3o | PTSD (feat. Sisc!) | PT2M41S
+1Qd5CeKG3GQ | PIJAS LAS X | PT2M31S
+oXBwaoXMzis | GORDO | PT2M20S
+7yN81iHeq_o | PIJAS LAS X RMX (feat. yyy891, Shako) | PT3M10S
+10Pn5Yg3yAo | CAC BLAC 2 | PT2M20S
+hN1pQZ7F_VQ | TITO FLOREN | PT1M59S
+gJM3dUle2Vw | 2B | PT1M49S
+7lV1Lsexcqs | NIRVANA | PT1M45S
+6xFiQXrAIUQ | PEP UNIVERSITY | PT1M59S
+748bZ8FWd4g | PIJAS LAS X RMX (feat. yyy891 & Shako) | PT3M10S
+JrwEnvme0go | NIRVANA | PT1M45S
+-Nr10yHuack | GORDO (feat. alberrrt) | PT2M20S
+lgoSfkdPios | 2B | PT1M49S
+oZzBC3eXHvM | PEP UNIVERSITY | PT1M59S
+Oj7n918VTRU | PIJAS LAS X | PT2M31S
+waqkfno4ZJ4 | GORDO (feat. alberrrt) | PT2M20S
+Wa4m5ecFA-8 | PEP UNIVERSITY | PT1M59S
+ySxfPLCF4xI | hott | PT1M45S
+bCI00uR6198 | la class (feat. gldn hoe & PlugBoy) | PT3M51S
+vNU68EsYC0M | buggin (feat. DEEZYNTD) | PT2M16S
+VJcDAboIbXw | new day | PT1M50S
+neVHAFz1_AQ | online | PT2M47S
+izdXBehbZEk | king size (feat. Nostos) | PT2M15S
+qcrYlNi4_cA | medusa | PT2M27S
+Y0gcGx60xkQ | chihiro | PT2M16S
+sML5mXxy7a4 | geekin | PT2M33S
+fIZetlW3ACw | pretty fly hoe | PT1M48S
+1PLFtc2_Npc | no2 | PT2M6S
+NbzZcaNxD10 | doja | PT2M
+q0x-fITy7lE | ICONA | PT1M13S
+kJ1H7jOiErA | japanese | PT2M18S
+izNQtUddJ6Q | paloma wool | PT1M46S
+L5r1dnSy6m4 | isdin | PT1M56S
+cpb7tJK1JLk | bottomless | PT1M52S
+Mwi0M-JbtBo | tesla | PT1M45S
+oXYNd6wJAJo | ICONA | PT1M13S
+LFpdWdqz6nY | medusa (feat. yvngrobv) | PT2M21S
+lNogxIrYkgI | mala² (feat. Mda & ambeats) | PT2M53S
+8lCpkuzzods | kodak30 | PT1M59S
+Cqu9GWNMIKM | el menol (feat. marcsicko) | PT1M49S
+Jtx9uSX-8Ag | Granota (feat. prodd.nicco) | PT1M56S
+A5WnezWbvR8 | 2:22 | PT2M23S
+8mNm1Iumj7M | bellaca | PT2M3S
+9IfZxjGyrzU | faya | PT2M11S
+HhUM4W5e-l0 | roma o milan (feat. 808bujal) | PT2M14S
+J6Ixo_lxALw | puedosolo | PT2M25S
+cSjz6pwjtAA | madwrld | PT3M22S
+UUTpbkjPvDA | mimesi freestyle (feat. Nadddot) | PT3M38S
+66X4M_ighJ4 | fingers! | PT2M12S
+cZrDdCoQFBc | 4u (feat. Icy Vedo) | PT2M22S
+wkBvH2DNzs8 | Granota (feat. prodd.nicco) | PT1M56S
+u88kxENpnr8 | mudarme a tu ciudad (feat. marcsicko) | PT2M4S
+IGr8pqNYoyY | Cheque | PT2M42S
+YM0r-hBsdd8 | Superstar (feat. 9cyon) | PT2M47S
+BPIvJ_-lsrw | On the sly | PT1M53S
+bqDZLTzlI7M | backflips (feat. damnpablo) | PT2M43S
+IHGFv7FvPF8 | Besito (feat. Vampi) | PT2M57S
+3BRvL5wnD7w | Ney (feat. 9cyon) | PT2M32S
+sgvEllYrFFA | Supa sexii (feat. Eric Löwe) | PT2M1S
+4zA3qyv6Zro | Más que ayer (feat. caos!) | PT2M20S
+5TzvTt6vHF4 | Verte | PT2M38S
+aW_Vz4YcY8M | Que dius? (feat. 9cyon) | PT1M43S
+dice_6dWQH8 | que dius? (feat. 9cyon) | PT1M43S
+w4FTGulPGg4 | Ney (feat. 9cyon) | PT2M32S
+w3nax2YYEKo | Sol sulet | PT1M48S
+w6ceOKV89AQ | atada+ヾ✸.+:。ﾟ☆ | PT1M58S
+Jyu4ot3m7NY | 15 Pt. 2 | PT1M26S
+ua3G_jO2rx8 | Bótalo | PT1M58S
+6U5A3-xcPzE | Sexxx! | PT2M7S
+HOkmjMQt7rM | Matrix⁂ (feat. Vampi) | PT2M12S
+hCoNdGJksAk | Bótalo | PT1M58S
+XzTO9yorhq0 | #catalanjazZ | PT1M39S
+NrBgnhNiESE | RWYTA (intro) | PT2M2S
+Uxx5s_a6ieE | Chanel (feat. Vampi) | PT1M28S
+sVTBBwiyHpY | Hechizos (feat. 9cyon) | PT2M22S
+hDnsMDdinDo | MANIPURA (feat. i9ryuk) | PT2M41S
+TWoiYN0OIec | MANIPURA (feat. i9ryuk) | PT2M41S
+1SZv5_pq5W0 | Bestie (feat. Lil Zuca) | PT3M
+8ogjtjFaWc8 | tourxbcn | PT1M11S
+## Thatkid | UCxnSSRmXNzweOe_gShnOb_A | @thatkidwya | true
+q78UTYReHJY | Thatkid, yvngrobv - za (Videoclip Oficial) | PT1M53S
+qpcqI5pTLJU | Thatkid, yvngrobv - no t puedo odiar (Videoclip Oficial) | PT2M28S
+3wuk_G06myk | Thatkid, yvngrobv, Holyuno - velada (Videoclip Oficial) | PT2M27S
+Wkkb_bTc7y0 | Thatkid, yvngrobv - superman (Videoclip Oficial) | PT2M39S
+rzKU_ycb5kk | Thatkid, yvngrobv - missu (Videoclip Oficial) | PT1M48S
+z1Za4FCSPTE | Thatkid, 9sanz - Se q tu pasas (Videoclip Oficial) | PT2M52S
+Hfxhtndssqo | Thatkid, yvngrobv, Harry Bass - Lova (Videoclip Oficial) | PT3M16S
+eozHjuDsjQ8 | Thatkid, Sisc!, Criss! - FUCK ICE (Videoclip Oficial) | PT2M39S
+cnOZ5wu2NFE | Thatkid, Sar1m - bout nun (Videoclip Oficial) | PT1M43S
+DLt0iqIKPhQ | TELFAR - THATKID (ONESHOT BY @444trll) | PT1M50S
+Ey7eM061CZw | Thatkid, Criss! - penguin (Audio Oficial) | PT2M21S
+7-X8Ziup6lA | Thatkid, 33myselff - perky (Videoclip Oficial) | PT2M47S
+wqb0WYINBrw | Thatkid - 2B (Audio Oficial) | PT1M49S
+nbxH1bw2YqU | Thatkid - PIJAS LAS X RMX (feat. yyy891, Shako) (Audio Oficial) | PT3M10S
+g0k2d0A0qwM | Thatkid - TITO FLOREN (Audio Oficial) | PT1M59S
+jn1hLV3yo8M | Thatkid - CAC BLAC 2 (Audio Oficial) | PT2M20S
+EhPPRI9zMJQ | Thatkid - NIRVANA (Audio Oficial) | PT1M45S
+-zqyh6Reqy4 | Thatkid - PTSD (feat. Sisc!) (Audio Oficial) | PT2M41S
+piDrpSp_nCk | Thatkid - PIJAS LAS X (Official Video) | PT2M33S
+rr7z1TILY-Q | Thatkid - GORDO (Official Video) | PT2M20S
+3wwYUUAWiS8 | Thatkid - PEP UNIVERSITY (Official Video) | PT2M3S
+RZVwvj_5Cjo | Thatkid - Japanese (Official Video) | PT2M8S
+IQ9TmCCp_OE | Thatkid - Online (Official music video) | PT2M47S
+fmMwZxB8GN8 | Thatkid - medusa (Lyiric video) | PT2M27S
+nkEo1YaJ0pI | Thatkid - ICONA (Lyric video) | PT1M13S
+trCGl8ph1_Y | Thatkid - paloma wool (Lyric video | PT2M18S
+5J0SjtCN_8g | Thatkid - bottomless (Lyric video) | PT2M18S
+7Ph7ORtlxUc | Thatkid - Japanese (Lyric video) | PT2M18S
+9JFSimOewxI | Thatkid - doja (Lyric video) | PT2M
+DA9zrDV_gRU | Thatkid - chihiro (Lyric video) | PT2M16S
+DKQCRfbhUeI | Thatkid, Nostos - king size (Lyric video) | PT2M15S
+E61ls87VcuU | Thatkid - pretty fly hoe (Lyric video) | PT1M48S
+MhVHphrwU3I | Thatkid - tesla (Lyric video) | PT1M37S
+MnKq8ovsWkY | Thatkid - geekin (Lyric video) | PT2M33S
+RofuyWRwSqM | Thatkid - isdin (Lyric video) | PT2M18S
+ThLwYK0QAIc | Thatkid - no2  (Lyric video) | PT2M6S
+B41eDT5Yixs | Thatkid - ICONA + isdin (Official Video) | PT3M27S
+tkQ1WpZiE3Y | Thatkid - medusa (Directed by @nachoalmira & @mykexclamacion) [official video] | PT2M16S
+9tmIXojHIsE | Thatkid - mala² (feat. Mda & ambeats) [official video] | PT2M54S
+gio0VVuTmYI | el menol - Thatkid, marcsicko (Directed by Linus.mariscal) | PT1M47S
+6Goj1_QIf3Q | Thatkid, nino rucci, Sneaky wh - fingers! (Official Video) | PT2M12S
+qvnlHQ71dBc | Thatkid, prodd.nicco - Granota (Official video) | PT2M2S
+QMWP2oHf2TE | Thatkid - On the sly (Official Video) | PT2M3S
+oE1Aizh5B9I | Thatkid, damnpablo - Backflips (Official Video) | PT2M43S
+Dp5iYtDeBqo | Thatkid - Sol sulet | PT1M49S
