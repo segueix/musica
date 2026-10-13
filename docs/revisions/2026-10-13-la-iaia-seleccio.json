@@ -1,0 +1,792 @@
+{
+  "artists": [
+    {
+      "name": "La Iaia",
+      "aliases": [
+        "la iaia"
+      ],
+      "key": "artist:la-iaia",
+      "territory": "Catalunya",
+      "genres": [
+        "Rock"
+      ],
+      "place": "Vic",
+      "placeId": "geonames:3106050",
+      "placeAliases": [
+        "Vic"
+      ],
+      "originSource": "https://www.vic.cat/ajuntament/comunicacio-i-protocol/noticies/el-grup-vigata-201cla-iaia201d-guanya-el-concurs",
+      "basis": "Origen a Vic indicat per l’usuari i documentat per l’Ajuntament.",
+      "sources": [
+        "manual-user-2026-10-13",
+        "https://www.youtube.com/channel/UCU-dJEBd9MTBRQ_Zc1pHwww"
+      ],
+      "note": "Totes les 63 pistes del canal Tema indicat per l’usuari, classificades a Rock i registrades per llançaments. Es conserven les dues edicions d’On és la màgia? agrupades per cançó. XXL i la pista En viu són directes. Canals d’Ernest Crusats separats de La Iaia.",
+      "lyricSources": {},
+      "liveIds": [
+        "BbyHocDtirQ",
+        "-q7endjftC0",
+        "4nyK4R36Sl0",
+        "6RaO3Gg9Rzc",
+        "DlPM7TNisPg",
+        "NOATSLdoEsM",
+        "N_qFVM32pJ0",
+        "PdhhROUIfQE",
+        "SCSV4lpC460",
+        "VwUyympxTwc",
+        "j7qwA2LBfHk",
+        "jqyE2ikeOAw",
+        "mbzp4mY0jMY",
+        "ofvyg0ITFgI"
+      ],
+      "channels": [
+        {
+          "id": "UCU-dJEBd9MTBRQ_Zc1pHwww",
+          "type": "topic",
+          "primary": true,
+          "allowedVideoIds": [
+            "BbyHocDtirQ",
+            "PxHqHkGJfgA",
+            "eY5wFhFy2aM",
+            "bqkQuPO2BN4",
+            "4a7YrZMk5PU",
+            "5uuI3bPq27k",
+            "9jvWRy0P9Ak",
+            "B6apa1FYdmo",
+            "X1XDb8za-nE",
+            "XXvcYHopH6o",
+            "e64PVykgJ20",
+            "qealnlqGQWo",
+            "sAfHIiI7_KE",
+            "umAyKe4-EoM",
+            "vL8kNBJIwv4",
+            "v_LPjf8KQ_o",
+            "xsWdjVN1Ttg",
+            "-q7endjftC0",
+            "4nyK4R36Sl0",
+            "6RaO3Gg9Rzc",
+            "DlPM7TNisPg",
+            "NOATSLdoEsM",
+            "N_qFVM32pJ0",
+            "PdhhROUIfQE",
+            "SCSV4lpC460",
+            "VwUyympxTwc",
+            "j7qwA2LBfHk",
+            "jqyE2ikeOAw",
+            "mbzp4mY0jMY",
+            "ofvyg0ITFgI",
+            "1VdpGiI27aM",
+            "DW5Q8E_3sBA",
+            "GJ-XJNhn-4U",
+            "HgrDKKzlHIk",
+            "UO8r9Axse4c",
+            "g6fil8qqoyg",
+            "hQ8ZO2HqHA8",
+            "nCLHgTubMJs",
+            "w9JC_KxrAKo",
+            "xb8ArrsRCMk",
+            "5WJIn1WjstI",
+            "EycXODXik6Q",
+            "HloXEvJu8UY",
+            "U71DckmISAY",
+            "VCsK-Mnylqg",
+            "g8pUD5Fy84U",
+            "lMZhzHQKjG4",
+            "q8iWf35NLAw",
+            "xDqdhm09-54",
+            "zdReq64xYSo",
+            "FfNAqHAMJW0",
+            "b3QeBad_j5g",
+            "uy28yYwj5qI",
+            "qC48ubIOgXc",
+            "tevHp7grKto",
+            "hTHxbimj6yM",
+            "iY7pY2jIKac",
+            "Zs5fwJ2HYgQ",
+            "NATlQRL5fys",
+            "MrvO0iWoT5Q",
+            "5PrqtHnrZ_s",
+            "JQ6GPWIIlL8",
+            "q-a9WsHcJMQ"
+          ]
+        }
+      ]
+    }
+  ],
+  "languageExclusions": [],
+  "formatExclusions": [],
+  "identityExclusions": [],
+  "releases": [
+    {
+      "id": "release:la-iaia:colleccio-global-2014",
+      "status": "validated",
+      "artist": "La Iaia",
+      "title": "Col·lecció Global 2014",
+      "year": 2014,
+      "type": "album",
+      "sourceType": "discography",
+      "sourceUrl": "https://www.youtube.com/channel/UCU-dJEBd9MTBRQ_Zc1pHwww",
+      "metadataSource": "https://www.youtube.com/watch?v=BbyHocDtirQ",
+      "channelIds": [
+        "UCU-dJEBd9MTBRQ_Zc1pHwww"
+      ],
+      "coverVideoId": "BbyHocDtirQ",
+      "tracks": [
+        {
+          "title": "L'arbre Que Vol Ser Humà (En viu)",
+          "videos": [
+            {
+              "id": "BbyHocDtirQ",
+              "channelId": "UCU-dJEBd9MTBRQ_Zc1pHwww"
+            }
+          ]
+        },
+        {
+          "title": "L'ós",
+          "videos": [
+            {
+              "id": "PxHqHkGJfgA",
+              "channelId": "UCU-dJEBd9MTBRQ_Zc1pHwww"
+            }
+          ]
+        },
+        {
+          "title": "El Meu Gos Se'n Va",
+          "videos": [
+            {
+              "id": "eY5wFhFy2aM",
+              "channelId": "UCU-dJEBd9MTBRQ_Zc1pHwww"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "release:la-iaia:una-altra-vegada",
+      "status": "validated",
+      "artist": "La Iaia",
+      "title": "Una altra vegada",
+      "year": 2011,
+      "type": "single",
+      "sourceType": "discography",
+      "sourceUrl": "https://www.youtube.com/channel/UCU-dJEBd9MTBRQ_Zc1pHwww",
+      "metadataSource": "https://www.youtube.com/watch?v=bqkQuPO2BN4",
+      "channelIds": [
+        "UCU-dJEBd9MTBRQ_Zc1pHwww"
+      ],
+      "coverVideoId": "bqkQuPO2BN4",
+      "tracks": [
+        {
+          "title": "Una altra vegada",
+          "videos": [
+            {
+              "id": "bqkQuPO2BN4",
+              "channelId": "UCU-dJEBd9MTBRQ_Zc1pHwww"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "release:la-iaia:les-ratlles-del-banyador",
+      "status": "validated",
+      "artist": "La Iaia",
+      "title": "Les Ratlles Del Banyador",
+      "year": 2011,
+      "type": "album",
+      "sourceType": "discography",
+      "sourceUrl": "https://www.youtube.com/channel/UCU-dJEBd9MTBRQ_Zc1pHwww",
+      "metadataSource": "https://www.youtube.com/watch?v=4a7YrZMk5PU",
+      "channelIds": [
+        "UCU-dJEBd9MTBRQ_Zc1pHwww"
+      ],
+      "coverVideoId": "4a7YrZMk5PU",
+      "tracks": [
+        {
+          "title": "El Meu Vaixell",
+          "videos": [
+            {
+              "id": "4a7YrZMk5PU",
+              "channelId": "UCU-dJEBd9MTBRQ_Zc1pHwww"
+            }
+          ]
+        },
+        {
+          "title": "La Noia De L'estació",
+          "videos": [
+            {
+              "id": "5uuI3bPq27k",
+              "channelId": "UCU-dJEBd9MTBRQ_Zc1pHwww"
+            }
+          ]
+        },
+        {
+          "title": "L'Última Nit",
+          "videos": [
+            {
+              "id": "9jvWRy0P9Ak",
+              "channelId": "UCU-dJEBd9MTBRQ_Zc1pHwww"
+            }
+          ]
+        },
+        {
+          "title": "No Trobo El Meu Lloc",
+          "videos": [
+            {
+              "id": "B6apa1FYdmo",
+              "channelId": "UCU-dJEBd9MTBRQ_Zc1pHwww"
+            }
+          ]
+        },
+        {
+          "title": "La Platja",
+          "videos": [
+            {
+              "id": "X1XDb8za-nE",
+              "channelId": "UCU-dJEBd9MTBRQ_Zc1pHwww"
+            }
+          ]
+        },
+        {
+          "title": "Declaració De Principis",
+          "videos": [
+            {
+              "id": "XXvcYHopH6o",
+              "channelId": "UCU-dJEBd9MTBRQ_Zc1pHwww"
+            }
+          ]
+        },
+        {
+          "title": "L'Home Que Pasa",
+          "videos": [
+            {
+              "id": "e64PVykgJ20",
+              "channelId": "UCU-dJEBd9MTBRQ_Zc1pHwww"
+            }
+          ]
+        },
+        {
+          "title": "Jo Vull Ser La Meva Iaia",
+          "videos": [
+            {
+              "id": "qealnlqGQWo",
+              "channelId": "UCU-dJEBd9MTBRQ_Zc1pHwww"
+            }
+          ]
+        },
+        {
+          "title": "Ella Cus",
+          "videos": [
+            {
+              "id": "sAfHIiI7_KE",
+              "channelId": "UCU-dJEBd9MTBRQ_Zc1pHwww"
+            }
+          ]
+        },
+        {
+          "title": "Explosió",
+          "videos": [
+            {
+              "id": "umAyKe4-EoM",
+              "channelId": "UCU-dJEBd9MTBRQ_Zc1pHwww"
+            }
+          ]
+        },
+        {
+          "title": "Uh!",
+          "videos": [
+            {
+              "id": "vL8kNBJIwv4",
+              "channelId": "UCU-dJEBd9MTBRQ_Zc1pHwww"
+            }
+          ]
+        },
+        {
+          "title": "No Se Fer Cançons",
+          "videos": [
+            {
+              "id": "v_LPjf8KQ_o",
+              "channelId": "UCU-dJEBd9MTBRQ_Zc1pHwww"
+            }
+          ]
+        },
+        {
+          "title": "Sota L'arbre",
+          "videos": [
+            {
+              "id": "xsWdjVN1Ttg",
+              "channelId": "UCU-dJEBd9MTBRQ_Zc1pHwww"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "release:la-iaia:xxl",
+      "status": "validated",
+      "artist": "La Iaia",
+      "title": "XXL",
+      "year": 2014,
+      "type": "live",
+      "sourceType": "discography",
+      "sourceUrl": "https://www.youtube.com/channel/UCU-dJEBd9MTBRQ_Zc1pHwww",
+      "metadataSource": "https://www.youtube.com/watch?v=-q7endjftC0",
+      "channelIds": [
+        "UCU-dJEBd9MTBRQ_Zc1pHwww"
+      ],
+      "coverVideoId": "-q7endjftC0",
+      "tracks": [
+        {
+          "title": "L'accident! (En Directe)",
+          "videos": [
+            {
+              "id": "-q7endjftC0",
+              "channelId": "UCU-dJEBd9MTBRQ_Zc1pHwww"
+            }
+          ]
+        },
+        {
+          "title": "Declaració de Principis (En Directe)",
+          "videos": [
+            {
+              "id": "4nyK4R36Sl0",
+              "channelId": "UCU-dJEBd9MTBRQ_Zc1pHwww"
+            }
+          ]
+        },
+        {
+          "title": "El Nen de Les Estrelles (En Directe)",
+          "videos": [
+            {
+              "id": "6RaO3Gg9Rzc",
+              "channelId": "UCU-dJEBd9MTBRQ_Zc1pHwww"
+            }
+          ]
+        },
+        {
+          "title": "La Platja (En Directe)",
+          "videos": [
+            {
+              "id": "DlPM7TNisPg",
+              "channelId": "UCU-dJEBd9MTBRQ_Zc1pHwww"
+            }
+          ]
+        },
+        {
+          "title": "Totes Les Promeses (En Directe)",
+          "videos": [
+            {
+              "id": "NOATSLdoEsM",
+              "channelId": "UCU-dJEBd9MTBRQ_Zc1pHwww"
+            }
+          ]
+        },
+        {
+          "title": "L'ós (En Directe)",
+          "videos": [
+            {
+              "id": "N_qFVM32pJ0",
+              "channelId": "UCU-dJEBd9MTBRQ_Zc1pHwww"
+            }
+          ]
+        },
+        {
+          "title": "El Meu Gos Se'n Va (En Directe)",
+          "videos": [
+            {
+              "id": "PdhhROUIfQE",
+              "channelId": "UCU-dJEBd9MTBRQ_Zc1pHwww"
+            }
+          ]
+        },
+        {
+          "title": "El Cicle (En Directe)",
+          "videos": [
+            {
+              "id": "SCSV4lpC460",
+              "channelId": "UCU-dJEBd9MTBRQ_Zc1pHwww"
+            }
+          ]
+        },
+        {
+          "title": "On Ets Matilda? (En Directe)",
+          "videos": [
+            {
+              "id": "VwUyympxTwc",
+              "channelId": "UCU-dJEBd9MTBRQ_Zc1pHwww"
+            }
+          ]
+        },
+        {
+          "title": "On és el Meu Cap? (En Directe)",
+          "videos": [
+            {
+              "id": "j7qwA2LBfHk",
+              "channelId": "UCU-dJEBd9MTBRQ_Zc1pHwww"
+            }
+          ]
+        },
+        {
+          "title": "Sota L'arbre (En Directe)",
+          "videos": [
+            {
+              "id": "jqyE2ikeOAw",
+              "channelId": "UCU-dJEBd9MTBRQ_Zc1pHwww"
+            }
+          ]
+        },
+        {
+          "title": "El Meu Vaixell (En Directe)",
+          "videos": [
+            {
+              "id": "mbzp4mY0jMY",
+              "channelId": "UCU-dJEBd9MTBRQ_Zc1pHwww"
+            }
+          ]
+        },
+        {
+          "title": "L'arbre Que Vol Ser Humà (En Directe)",
+          "videos": [
+            {
+              "id": "ofvyg0ITFgI",
+              "channelId": "UCU-dJEBd9MTBRQ_Zc1pHwww"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "release:la-iaia:on-es-la-magia",
+      "status": "validated",
+      "artist": "La Iaia",
+      "title": "On és la màgia?",
+      "year": 2014,
+      "type": "album",
+      "sourceType": "discography",
+      "sourceUrl": "https://www.youtube.com/channel/UCU-dJEBd9MTBRQ_Zc1pHwww",
+      "metadataSource": "https://www.youtube.com/watch?v=1VdpGiI27aM",
+      "channelIds": [
+        "UCU-dJEBd9MTBRQ_Zc1pHwww"
+      ],
+      "coverVideoId": "1VdpGiI27aM",
+      "tracks": [
+        {
+          "title": "El Meu Gos Se'N Va",
+          "videos": [
+            {
+              "id": "1VdpGiI27aM",
+              "channelId": "UCU-dJEBd9MTBRQ_Zc1pHwww"
+            },
+            {
+              "id": "NATlQRL5fys",
+              "channelId": "UCU-dJEBd9MTBRQ_Zc1pHwww"
+            }
+          ]
+        },
+        {
+          "title": "El Cicle",
+          "videos": [
+            {
+              "id": "DW5Q8E_3sBA",
+              "channelId": "UCU-dJEBd9MTBRQ_Zc1pHwww"
+            },
+            {
+              "id": "hTHxbimj6yM",
+              "channelId": "UCU-dJEBd9MTBRQ_Zc1pHwww"
+            }
+          ]
+        },
+        {
+          "title": "L'ós",
+          "videos": [
+            {
+              "id": "GJ-XJNhn-4U",
+              "channelId": "UCU-dJEBd9MTBRQ_Zc1pHwww"
+            },
+            {
+              "id": "b3QeBad_j5g",
+              "channelId": "UCU-dJEBd9MTBRQ_Zc1pHwww"
+            }
+          ]
+        },
+        {
+          "title": "On és el Meu Cap?",
+          "videos": [
+            {
+              "id": "HgrDKKzlHIk",
+              "channelId": "UCU-dJEBd9MTBRQ_Zc1pHwww"
+            },
+            {
+              "id": "5PrqtHnrZ_s",
+              "channelId": "UCU-dJEBd9MTBRQ_Zc1pHwww"
+            }
+          ]
+        },
+        {
+          "title": "El Nen de Les Estrelles",
+          "videos": [
+            {
+              "id": "UO8r9Axse4c",
+              "channelId": "UCU-dJEBd9MTBRQ_Zc1pHwww"
+            },
+            {
+              "id": "uy28yYwj5qI",
+              "channelId": "UCU-dJEBd9MTBRQ_Zc1pHwww"
+            }
+          ]
+        },
+        {
+          "title": "On Ets Matilda?",
+          "videos": [
+            {
+              "id": "g6fil8qqoyg",
+              "channelId": "UCU-dJEBd9MTBRQ_Zc1pHwww"
+            },
+            {
+              "id": "MrvO0iWoT5Q",
+              "channelId": "UCU-dJEBd9MTBRQ_Zc1pHwww"
+            }
+          ]
+        },
+        {
+          "title": "Assassí en Sèrie",
+          "videos": [
+            {
+              "id": "hQ8ZO2HqHA8",
+              "channelId": "UCU-dJEBd9MTBRQ_Zc1pHwww"
+            },
+            {
+              "id": "tevHp7grKto",
+              "channelId": "UCU-dJEBd9MTBRQ_Zc1pHwww"
+            }
+          ]
+        },
+        {
+          "title": "L'Arbre Que Vol Ser Humà",
+          "videos": [
+            {
+              "id": "nCLHgTubMJs",
+              "channelId": "UCU-dJEBd9MTBRQ_Zc1pHwww"
+            },
+            {
+              "id": "Zs5fwJ2HYgQ",
+              "channelId": "UCU-dJEBd9MTBRQ_Zc1pHwww"
+            }
+          ]
+        },
+        {
+          "title": "Totes Les Promeses",
+          "videos": [
+            {
+              "id": "w9JC_KxrAKo",
+              "channelId": "UCU-dJEBd9MTBRQ_Zc1pHwww"
+            },
+            {
+              "id": "iY7pY2jIKac",
+              "channelId": "UCU-dJEBd9MTBRQ_Zc1pHwww"
+            }
+          ]
+        },
+        {
+          "title": "L'Accident!",
+          "videos": [
+            {
+              "id": "xb8ArrsRCMk",
+              "channelId": "UCU-dJEBd9MTBRQ_Zc1pHwww"
+            },
+            {
+              "id": "qC48ubIOgXc",
+              "channelId": "UCU-dJEBd9MTBRQ_Zc1pHwww"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "release:la-iaia:tornar-a-ser-u",
+      "status": "validated",
+      "artist": "La Iaia",
+      "title": "Tornar a ser u",
+      "year": 2017,
+      "type": "album",
+      "sourceType": "discography",
+      "sourceUrl": "https://www.youtube.com/channel/UCU-dJEBd9MTBRQ_Zc1pHwww",
+      "metadataSource": "https://www.youtube.com/watch?v=5WJIn1WjstI",
+      "channelIds": [
+        "UCU-dJEBd9MTBRQ_Zc1pHwww"
+      ],
+      "coverVideoId": "5WJIn1WjstI",
+      "tracks": [
+        {
+          "title": "Clar! Clar! Clar!",
+          "videos": [
+            {
+              "id": "5WJIn1WjstI",
+              "channelId": "UCU-dJEBd9MTBRQ_Zc1pHwww"
+            }
+          ]
+        },
+        {
+          "title": "Mariona",
+          "videos": [
+            {
+              "id": "EycXODXik6Q",
+              "channelId": "UCU-dJEBd9MTBRQ_Zc1pHwww"
+            }
+          ]
+        },
+        {
+          "title": "He après a aparellar-me els mitjons",
+          "videos": [
+            {
+              "id": "HloXEvJu8UY",
+              "channelId": "UCU-dJEBd9MTBRQ_Zc1pHwww"
+            }
+          ]
+        },
+        {
+          "title": "Un i mig",
+          "videos": [
+            {
+              "id": "U71DckmISAY",
+              "channelId": "UCU-dJEBd9MTBRQ_Zc1pHwww"
+            }
+          ]
+        },
+        {
+          "title": "Soc un gerro ple d'aigua",
+          "videos": [
+            {
+              "id": "VCsK-Mnylqg",
+              "channelId": "UCU-dJEBd9MTBRQ_Zc1pHwww"
+            }
+          ]
+        },
+        {
+          "title": "Casa no és casa",
+          "videos": [
+            {
+              "id": "g8pUD5Fy84U",
+              "channelId": "UCU-dJEBd9MTBRQ_Zc1pHwww"
+            }
+          ]
+        },
+        {
+          "title": "3/24",
+          "videos": [
+            {
+              "id": "lMZhzHQKjG4",
+              "channelId": "UCU-dJEBd9MTBRQ_Zc1pHwww"
+            }
+          ]
+        },
+        {
+          "title": "Dissabtes bons",
+          "videos": [
+            {
+              "id": "q8iWf35NLAw",
+              "channelId": "UCU-dJEBd9MTBRQ_Zc1pHwww"
+            }
+          ]
+        },
+        {
+          "title": "La millor flor del balcó",
+          "videos": [
+            {
+              "id": "xDqdhm09-54",
+              "channelId": "UCU-dJEBd9MTBRQ_Zc1pHwww"
+            }
+          ]
+        },
+        {
+          "title": "No sé què fer amb la meva vida",
+          "videos": [
+            {
+              "id": "zdReq64xYSo",
+              "channelId": "UCU-dJEBd9MTBRQ_Zc1pHwww"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "release:la-iaia:no-se-que-fer-amb-la-meva-vida",
+      "status": "validated",
+      "artist": "La Iaia",
+      "title": "No sé què fer amb la meva vida",
+      "year": 2017,
+      "type": "single",
+      "sourceType": "discography",
+      "sourceUrl": "https://www.youtube.com/channel/UCU-dJEBd9MTBRQ_Zc1pHwww",
+      "metadataSource": "https://www.youtube.com/watch?v=FfNAqHAMJW0",
+      "channelIds": [
+        "UCU-dJEBd9MTBRQ_Zc1pHwww"
+      ],
+      "coverVideoId": "FfNAqHAMJW0",
+      "tracks": [
+        {
+          "title": "No sé què fer amb la meva vida",
+          "videos": [
+            {
+              "id": "FfNAqHAMJW0",
+              "channelId": "UCU-dJEBd9MTBRQ_Zc1pHwww"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "release:la-iaia:festival-2015",
+      "status": "validated",
+      "artist": "La Iaia",
+      "title": "Festival 2015",
+      "year": 2015,
+      "type": "single",
+      "sourceType": "discography",
+      "sourceUrl": "https://www.youtube.com/channel/UCU-dJEBd9MTBRQ_Zc1pHwww",
+      "metadataSource": "https://www.youtube.com/watch?v=JQ6GPWIIlL8",
+      "channelIds": [
+        "UCU-dJEBd9MTBRQ_Zc1pHwww"
+      ],
+      "coverVideoId": "JQ6GPWIIlL8",
+      "tracks": [
+        {
+          "title": "Declaracio De Principis",
+          "videos": [
+            {
+              "id": "JQ6GPWIIlL8",
+              "channelId": "UCU-dJEBd9MTBRQ_Zc1pHwww"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "release:la-iaia:el-pop-d-antonia-font-versions-halogenes",
+      "status": "validated",
+      "artist": "La Iaia",
+      "title": "El Pop D'Antònia Font : Versions Halògenes",
+      "year": 2012,
+      "type": "single",
+      "sourceType": "discography",
+      "sourceUrl": "https://www.youtube.com/channel/UCU-dJEBd9MTBRQ_Zc1pHwww",
+      "metadataSource": "https://www.youtube.com/watch?v=q-a9WsHcJMQ",
+      "channelIds": [
+        "UCU-dJEBd9MTBRQ_Zc1pHwww"
+      ],
+      "coverVideoId": "q-a9WsHcJMQ",
+      "tracks": [
+        {
+          "title": "Wa Yeah!",
+          "videos": [
+            {
+              "id": "q-a9WsHcJMQ",
+              "channelId": "UCU-dJEBd9MTBRQ_Zc1pHwww"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "method": "Incorporació íntegra del canal Tema sol·licitat per l’usuari. Llançaments i variants obtinguts de les metadades del distribuïdor. No s’afirma verificació íntegra de les lletres; autorització editorial de l’usuari. Sense atribuir el repertori d’Ernest Crusats al grup."
+}

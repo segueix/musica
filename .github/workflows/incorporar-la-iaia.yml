@@ -1,0 +1,64 @@
+name: Incorporar La Iaia
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/incorporar-la-iaia.yml'
+      - 'scripts/revisions/incorporar_la_iaia.js'
+      - 'docs/revisions/2026-10-13-la-iaia-seleccio.json'
+  workflow_dispatch:
+concurrency:
+  group: music-data-writer
+  cancel-in-progress: false
+permissions:
+  contents: write
+jobs:
+  incorporar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '20'
+      - name: Sincronitza i prepara
+        run: |
+          git fetch origin main
+          git reset --hard origin/main
+          cp js/channels-ca.json /tmp/la-iaia-channels-before.json
+          npm ci
+      - name: Aplica nomes la seleccio revisada
+        run: |
+          node scripts/revisions/incorporar_la_iaia.js
+          npm run music:validate
+      - name: Actualitza nomes el canal La Iaia
+        env:
+          YOUTUBE_API_KEY_SERVER: ${{ secrets.YOUTUBE_API_KEY_SERVER }}
+          MUSIC_VIDEOS_PER_CHANNEL: '50'
+          MUSIC_TOPIC_GOVERNANCE: 'apply'
+          MUSIC_TOPIC_FULL_READ: '1'
+        run: |
+          node scripts/update_music_feed.js
+          node scripts/archivar_feed_musical.js
+          npm run search:index:hybrid:rebuild
+          node scripts/generar_pagines_compartir.js
+      - name: Proves completes comparades amb la base
+        run: node scripts/revisions/provar_altes_musicals.js
+      - name: Lint comparat amb la base
+        run: node scripts/revisions/verificar_lint_pepet.js
+      - name: Verifica publicacio i preservacio
+        run: node scripts/revisions/incorporar_la_iaia.js --verify
+      - name: Publica dades validades
+        run: |
+          bash scripts/publicar_dades.sh 'data: incorpora La Iaia per llancaments' data js/channels-ca.json compartir docs/revisions/2026-10-13-la-iaia-alta.json docs/revisions/2026-10-13-la-iaia-alta.md
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: la-iaia-validacio
+          retention-days: 7
+          path: |
+            docs/revisions/2026-10-13-la-iaia-alta.*
+            /tmp/tardor-blat-quinto-validation.json
+            /tmp/pepet-lint-summary.json
