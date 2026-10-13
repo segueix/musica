@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-13T06:03:32.382Z",
+  "updatedAt": "2026-10-13T06:25:04.516Z",
   "artists": [
     {
       "name": "2 Princeses Barbudes",
@@ -36334,6 +36334,119 @@
       "active": true,
       "lastChecked": "2026-10-13",
       "notes": "Repertori multilingüe: selecció documental limitada als IDs indicats. Ideal i Morisc passat tenen lletra publicada contrastada. No es considera revisada tota la discografia ni es dedueix la llengua només del títol. Les altres pistes i col·laboracions romanen fora de la selecció fins al contrast. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "aliases": [
+        "Artur Álvarez",
+        "Artur Alvarez",
+        "Artur Àlvarez i Boix",
+        "Artur Álvarez i Boix"
+      ],
+      "sources": [
+        "https://arturalvarez.bandcamp.com/",
+        "https://www.musicaenvalencia.es/artista/250/artur-%25c3%2580lvarez",
+        "https://arturalvarez.bandcamp.com/album/estell-s-a-ritme-de-blues-2024",
+        "https://arturalvarez.bandcamp.com/album/a-lombra-de-la-morera-2023",
+        "https://arturalvarez.bandcamp.com/album/pols-del-meu-cam-artur-lvarez-canta-a-bernat-artola-2008",
+        "https://arturalvarez.bandcamp.com/album/entre-versos-i-pinzells-contemporanis-2013",
+        "https://music.apple.com/us/artist/artur-%C3%A1lvarez/1574030401",
+        "https://music.amazon.com/albums/B0G4XHHNM7",
+        "https://music.amazon.com/tracks/B0F22MC16S"
+      ],
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCVYpBf3wwqOh8qNLR8wwK0w",
+            "handle": null,
+            "name": "Artur Álvarez - Topic",
+            "type": "topic",
+            "primary": true
+          },
+          {
+            "id": "UC65z9PhviUEqHbMbW18FwNA",
+            "handle": null,
+            "name": "Artur Álvarez i Boix - Topic",
+            "type": "topic",
+            "primary": false
+          },
+          {
+            "id": "UCl7wAYdirfC_DZ26TdXBIDw",
+            "handle": "@arturalvarez-cantautor",
+            "name": "Artur Álvarez",
+            "type": "official",
+            "primary": false
+          }
+        ]
+      },
+      "name": "Artur Àlvarez",
+      "displayName": "Artur Àlvarez",
+      "genres": [
+        "Cançó d'autor"
+      ],
+      "territories": [
+        "País Valencià"
+      ],
+      "languages": [
+        "català"
+      ],
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-13",
+      "notes": "Dos canals Tema agrupats: discografia principal i homenatge a Bernat Artola. Repertori català documentat i selecció de 17 gravacions del canal oficial, quatre declarades en directe. Fora recitacions explícites, introduccions i peces amb tipus de contingut pendent; no s’importen indiscriminadament les versions en altres llengües, poemaris ni resums del canal propi. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "aliases": [
+        "Borrianabigband",
+        "Baixamar (Borriana Big Band)"
+      ],
+      "sources": [
+        "https://asociacionbigbands.com/bigband/borriana-big-band/",
+        "https://www.valencianmusicoffice.com/en/artist/a4091d8d-ee08-4ba1-ab62-16443ce62529",
+        "https://www.verkami.com/projects/24679-nou-disc-baixamar-borriana-big-band",
+        "https://www.nomepierdoniuna.net/borriana-big-band-no-deconstruimos-los-hits-en-valenciano-les-damos-sonoridad-de-gran-orquesta/",
+        "https://music.amazon.es/albums/B07H5QZ45P",
+        "https://music.apple.com/us/album/peix-enamorat/1497706941"
+      ],
+      "youtube": {
+        "channels": [
+          {
+            "id": "UC0mpgagkHjI-FH_66M6sJmA",
+            "handle": null,
+            "name": "Borriana Big Band - Topic",
+            "type": "topic",
+            "primary": true
+          },
+          {
+            "id": "UCkpK4wG17WYBZyqjjLqKgHg",
+            "handle": "@borrianabigband4621",
+            "name": "Borrianabigband",
+            "type": "official",
+            "primary": false
+          }
+        ]
+      },
+      "name": "Borriana Big Band",
+      "displayName": "Borriana Big Band",
+      "genres": [
+        "Jazz / Blues",
+        "Folk i arrel"
+      ],
+      "territories": [
+        "País Valencià"
+      ],
+      "languages": [
+        "català"
+      ],
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "lastChecked": "2026-10-13",
+      "notes": "Tema de Peix enamorat prioritari; D’ací es recupera del canal oficial perquè no s’ha localitzat un Tema inequívoc d’aquest disc. Inclou Qualsevol nit pot sortir el sol instrumental i la versió casolana de Quan caminàvem. Exclosos anuncis, vídeo promocional, Mix Popular i Camí del Senillar pendents de contrast de contingut. docs/revisions/2026-10-13-artur-borriana-alta.json"
     }
   ]
 }

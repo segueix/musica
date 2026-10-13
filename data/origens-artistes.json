@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-13T06:03:32.382Z",
+  "updatedAt": "2026-10-13T06:25:04.516Z",
   "attribution": {
     "text": "Coordenades de referència: GeoNames, via Open-Meteo. CC BY 4.0.",
     "sources": [
@@ -2326,6 +2326,32 @@
       },
       "territory": "País Valencià",
       "source": "https://geocoding-api.open-meteo.com/v1/search?name=Santa+Magdalena+de+Pulpis&count=10&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-13"
+    },
+    "geonames:2519752": {
+      "name": "Castelló de la Plana",
+      "type": "municipality",
+      "geonamesId": 2519752,
+      "coordinates": {
+        "latitude": 39.98567,
+        "longitude": -0.04935,
+        "precision": "settlement_reference"
+      },
+      "territory": "País Valencià",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Castell%C3%B3+de+la+Plana&count=10&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-13"
+    },
+    "geonames:2520709": {
+      "name": "Borriana",
+      "type": "municipality",
+      "geonamesId": 2520709,
+      "coordinates": {
+        "latitude": 39.88901,
+        "longitude": -0.08499,
+        "precision": "settlement_reference"
+      },
+      "territory": "País Valencià",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Borriana&count=10&language=ca&format=json&countryCode=ES",
       "checkedOn": "2026-10-13"
     }
   },
@@ -9959,6 +9985,38 @@
       "reviewedOn": "2026-10-13",
       "assignmentSource": "manual-review",
       "locked": true
+    },
+    "artist:artur-alvarez": {
+      "name": "Artur Àlvarez",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:2519752"
+      ],
+      "confidence": "alta",
+      "basis": "La biografia publicada pel mateix cantautor a Bandcamp identifica Castelló de la Plana com a origen. Els dos canals Tema i el canal propi corresponen a Artur Álvarez i Boix.",
+      "sources": [
+        "https://arturalvarez.bandcamp.com/"
+      ],
+      "reviewedOn": "2026-10-13",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:borriana-big-band": {
+      "name": "Borriana Big Band",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:2520709"
+      ],
+      "confidence": "alta",
+      "basis": "La presentació del grup a l’Associació de Big Bands identifica Borriana, capital de la Plana Baixa. La fitxa de Valencian Music Office confirma municipi i estils Jazz i Roots.",
+      "sources": [
+        "https://asociacionbigbands.com/bigband/borriana-big-band/"
+      ],
+      "reviewedOn": "2026-10-13",
+      "assignmentSource": "manual-review",
+      "locked": true
     }
   },
   "channels": {
@@ -10528,7 +10586,12 @@
     "UCvKDCx209GA2OXyoWG449WA": "artist:xiomara-abello",
     "UCouw5jG-XQKAuUA4FHGDwGw": "artist:esther-querol-forner",
     "UCS52L7FhuL9P1ZvXxDJwv4g": "artist:esther-querol-forner",
-    "UCrJr-rEu-grrBNj0TfWUEmA": "artist:esther-querol-forner"
+    "UCrJr-rEu-grrBNj0TfWUEmA": "artist:esther-querol-forner",
+    "UCVYpBf3wwqOh8qNLR8wwK0w": "artist:artur-alvarez",
+    "UC65z9PhviUEqHbMbW18FwNA": "artist:artur-alvarez",
+    "UCl7wAYdirfC_DZ26TdXBIDw": "artist:artur-alvarez",
+    "UC0mpgagkHjI-FH_66M6sJmA": "artist:borriana-big-band",
+    "UCkpK4wG17WYBZyqjjLqKgHg": "artist:borriana-big-band"
   },
   "excludedProfiles": {
     "UCdezTX23syEeAJJAb2oOkKA": {

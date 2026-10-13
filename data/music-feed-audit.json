@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-13T06:03:35.973Z",
+  "generatedAt": "2026-10-13T06:25:08.536Z",
   "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
   "restrictedVideoCount": 21,
   "restrictedVideosAdded": [],
   "deepPagesFetched": 0,
   "deepChannelCount": 19,
-  "topicChannelCount": 312,
+  "topicChannelCount": 315,
   "governedChannelCount": 108,
   "topicCoverage": [
     {
@@ -1018,6 +1018,22 @@
       "governs": false
     },
     {
+      "id": "UCkpK4wG17WYBZyqjjLqKgHg",
+      "name": "Borrianabigband",
+      "songs": 22,
+      "matched": 12,
+      "coverage": 0.55,
+      "governs": false
+    },
+    {
+      "id": "UCl7wAYdirfC_DZ26TdXBIDw",
+      "name": "Artur Álvarez",
+      "songs": 17,
+      "matched": 9,
+      "coverage": 0.53,
+      "governs": false
+    },
+    {
       "id": "UC3fuMj55qp3YmD2B2mPBgOw",
       "name": "Josep Valtonyc",
       "songs": 42,
@@ -1442,6 +1458,20 @@
       "withClip": 0
     },
     {
+      "id": "UCVYpBf3wwqOh8qNLR8wwK0w",
+      "name": "Artur Álvarez",
+      "tracks": 180,
+      "selected": 180,
+      "withClip": 8
+    },
+    {
+      "id": "UC65z9PhviUEqHbMbW18FwNA",
+      "name": "Artur Álvarez i Boix",
+      "tracks": 12,
+      "selected": 12,
+      "withClip": 8
+    },
+    {
       "id": "UCnygquYeJppJcbgD085undw",
       "name": "Aspencat",
       "tracks": 42,
@@ -1566,6 +1596,13 @@
       "tracks": 46,
       "selected": 39,
       "withClip": 0
+    },
+    {
+      "id": "UC0mpgagkHjI-FH_66M6sJmA",
+      "name": "Borriana Big Band",
+      "tracks": 11,
+      "selected": 11,
+      "withClip": 11
     },
     {
       "id": "UCuk-lO3FpbukFk5lcPx29_g",
@@ -3451,13 +3488,13 @@
       "withClip": 0
     }
   ],
-  "indexedChannelCount": 566,
-  "resolvedChannelCount": 566,
-  "feedChannelCount": 566,
-  "rawPublicVideoCount": 6285,
-  "feedVideoCount": 5762,
-  "acceptedMusicCount": 5721,
-  "categoryEligibleVideoCount": 5717,
+  "indexedChannelCount": 571,
+  "resolvedChannelCount": 571,
+  "feedChannelCount": 571,
+  "rawPublicVideoCount": 6502,
+  "feedVideoCount": 5979,
+  "acceptedMusicCount": 5938,
+  "categoryEligibleVideoCount": 5934,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
     "before": 0,
@@ -3466,8 +3503,8 @@
   },
   "contentReviewCount": 529,
   "contentTypeCounts": {
-    "song": 5552,
-    "live_song": 165,
+    "song": 5765,
+    "live_song": 169,
     "album": 4,
     "other": 35,
     "review": 529
@@ -3477,6 +3514,6 @@
   "channelsWithoutVideos": [],
   "channelsWithoutAcceptedMusic": [],
   "allIndexedChannelsVisible": true,
-  "publishedFeedVideoCount": 5737,
+  "publishedFeedVideoCount": 5825,
   "publishedShortVideoCount": 0
 }

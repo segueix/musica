@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-13T06:03:32.382Z",
+  "updatedAt": "2026-10-13T06:25:04.516Z",
   "description": "Decisions manuals sobre el tipus de contingut de vídeos concrets. Manen sobre el classificador automàtic (scripts/lib/classificar_contingut_musical.js) i el pipeline (scripts/update_music_feed.js) les reaplica a cada generació del feed. Tipus permesos: song, live_song, album, other. Un vídeo revisat aquí surt de data/music-content-review.json.",
   "videos": [
     {
@@ -9721,6 +9721,1458 @@
       "contentType": "song",
       "title": "ESTHER - Vies paral·leles (Videoclip)",
       "note": "Gravació seleccionada; editor contrastat. docs/revisions/2026-10-13-castello-alta.json"
+    },
+    {
+      "id": "PStOeabllgg",
+      "contentType": "song",
+      "title": "Estudi biogràfic (feat. Poema de Constatí Llombart)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "mkjFkK2xoT4",
+      "contentType": "song",
+      "title": "A la torre de marfil (feat. Poema de Miquel Peris)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "wtnu31km8wg",
+      "contentType": "song",
+      "title": "Cant de València (feat. Poema de Vicent Wenceslau Querol)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "ymQloU08Lds",
+      "contentType": "song",
+      "title": "Sabia que vindries (feat. Poema de Vicent Andrés Estellés)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "yt79IQdj2VA",
+      "contentType": "song",
+      "title": "La cançó dels pins (feat. Poema de Francesc Almela i Vives)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "3EXDSRTQGWI",
+      "contentType": "song",
+      "title": "Pols (feat. Poema de Bernat Artola)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "408tsQN-A3U",
+      "contentType": "song",
+      "title": "La senyera (feat. Poema de Jacint Labaila)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "9lJwxIy6n5A",
+      "contentType": "song",
+      "title": "Só qui só (feat. Poema de Joan de Timoneda)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "BdikBG8domQ",
+      "contentType": "song",
+      "title": "Les formigues (feat. Poema de Enric Soler i Godes)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "LJHnIamZ3-o",
+      "contentType": "song",
+      "title": "Arbres (feat. Poema de Xavier Casp)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "Ml7RbZbcfu4",
+      "contentType": "song",
+      "title": "Cançó de sega (feat. Poema de Carles Salvador)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "QQs72Ve36Pc",
+      "contentType": "song",
+      "title": "Recerca (feat. Poema de Maria Beneyto)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "V_v0rcu2t7s",
+      "contentType": "song",
+      "title": "Leixant a part l'estil dels trobadors (feat. Poema d'Ausiàs March)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "_yeNWJM-n-c",
+      "contentType": "song",
+      "title": "Quatre vents (feat. Poema de Josep Maria Puig i Torralva)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "eV1aLpJdAJ8",
+      "contentType": "song",
+      "title": "Si en lo mal temps... (feat. Poema de Joan Roís de Cornella)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "o3zigsLJ75w",
+      "contentType": "song",
+      "title": "Desert d'amics (feat. Poema de Jordi de Sant Jordi)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "rA0HLWfKXz8",
+      "contentType": "song",
+      "title": "Era tardor (feat. Poema de Joan Fuster)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "rPGyrdmK8uo",
+      "contentType": "song",
+      "title": "Missatge (feat. Poema de Teodor Llorente)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "rR43vncMVDw",
+      "contentType": "song",
+      "title": "L'encesa (feat. Poema de Maria Ibars)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "tAG1sJk-dFs",
+      "contentType": "song",
+      "title": "L'hortolana riu (feat. Poema de Miquel Duran)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "-itzFFNxfus",
+      "contentType": "song",
+      "title": "Hi ha instants que no tornaran",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "E4_s9-TdkdI",
+      "contentType": "song",
+      "title": "Caminar sense rebentar",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "FEmDTpAPIyc",
+      "contentType": "song",
+      "title": "De tornada de quasi tot",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "KLXwGYL9UIU",
+      "contentType": "song",
+      "title": "M'havia oblidat de mi",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "T6XaZrxQYQw",
+      "contentType": "song",
+      "title": "Pujar / Baixar",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "UgLmCEe0Q7E",
+      "contentType": "song",
+      "title": "Jugar a ser déus",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "Vky3lMlRgHQ",
+      "contentType": "song",
+      "title": "Tota petjada és camí",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "pTToWzuBt64",
+      "contentType": "song",
+      "title": "D'un altre món",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "GOnUkRtkh60",
+      "contentType": "song",
+      "title": "Sóc el Vaixell que son velam desplega (feat. Poema de Miquel Peris)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "k-IBGvT764w",
+      "contentType": "song",
+      "title": "Blau (feat. Poema d'Alba Fluixà)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "-N_e1nRKk6E",
+      "contentType": "song",
+      "title": "Deixeu que el vent retorne al meu país (feat. Poema de Manel Pitarch)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "02Xl44KCrl8",
+      "contentType": "song",
+      "title": "Cançó de l'Home Parat (feat. Poema de V. A. Estellés)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "42U5cZoLhCE",
+      "contentType": "song",
+      "title": "Ballem (feat. Poema de Susanna Lliberós)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "BiYBI6s8Gho",
+      "contentType": "song",
+      "title": "Descoberta (feat. Poema de Vicent Panya)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "bGDTUStspI4",
+      "contentType": "song",
+      "title": "L'Espina (feat. Poema de Bernat Artola)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "gVAcEL6Xwko",
+      "contentType": "song",
+      "title": "Tens Set (feat. Poema de Manel Alonso)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "pUwMeNkd6v0",
+      "contentType": "song",
+      "title": "Estranya i pròpia (feat. Poema de Berna Blanch)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "tv9qymY3zWo",
+      "contentType": "song",
+      "title": "Fulles (feat. Poema de Josep Lluís Abad)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "1N8WdKSRBis",
+      "contentType": "song",
+      "title": "Se me'n fot (feat. Poema de Miquel Peris)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "8GsYGstUP-o",
+      "contentType": "song",
+      "title": "La Nostra Ciutat (feat. Poema de Lluís Meseguer)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "G4nfQSOXa2o",
+      "contentType": "song",
+      "title": "Paraules, música i pinzells (Homenatge)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "Lo5LNwRGw20",
+      "contentType": "song",
+      "title": "Vida, Foscor, Vida (feat. Mònica Meló)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "PdWu_xKLD3Y",
+      "contentType": "song",
+      "title": "Tresors de Bona Traça (feat. Poema d'Isabel Marín)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "V_9uBL0mMQU",
+      "contentType": "song",
+      "title": "Cançó de Bressol per a l'Infant Nàufrag (feat. Poema de Rosabel Gumbau)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "XbZCiKyOWQ4",
+      "contentType": "song",
+      "title": "A Boqueta Nit (feat. Poema de Joan B. Campos)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "b-D9HYpfU1Y",
+      "contentType": "song",
+      "title": "La Mar és Sols un Ritu (feat. Poema de Vicent P. Serra)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "gHWgOfzW5MU",
+      "contentType": "song",
+      "title": "Sóc Vianant Sense Via ni Festa (feat. Poema de Bernat Artola)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "mss0wpi6V4U",
+      "contentType": "song",
+      "title": "Si No Arribes Mai (feat. Poema de Romà Bernad)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "oePlNc0DVRc",
+      "contentType": "song",
+      "title": "Podria Haver-te Escrit Més de Deu Mil Cançons (feat. Poema de Gràcia Jiménez)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "r6OG53_zsoI",
+      "contentType": "song",
+      "title": "Aromes de la Plana (feat. Poema de Vicent Jaume Almela)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "sFBHuYFaGp4",
+      "contentType": "song",
+      "title": "Filla del Nord (feat. Poema de Francesc Mompó)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "sx5MLnfQeu8",
+      "contentType": "song",
+      "title": "Súplica (feat. Poema de Maria Carme Arnau)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "u-D46PaK8_0",
+      "contentType": "song",
+      "title": "Al Bellmig (feat. Poema d'Antoni Pitarch)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "pKeuF9YIw_s",
+      "contentType": "song",
+      "title": "Paisatge en Blau",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "cUHG7_HIpCk",
+      "contentType": "song",
+      "title": "Els Ulls, On Són?",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "40Hjzy22Jko",
+      "contentType": "song",
+      "title": "Terra",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "4A9TNmG8AdQ",
+      "contentType": "song",
+      "title": "La Nit de Sant Joan",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "9IwiSTzAQQA",
+      "contentType": "song",
+      "title": "Quan et Somriu l'Alba",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "JsvPf09UGxg",
+      "contentType": "song",
+      "title": "Dona de l'Art",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "LhRvCdlU18g",
+      "contentType": "song",
+      "title": "Versos d'Amor a Berlín",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "QYUnvTNe9GQ",
+      "contentType": "song",
+      "title": "La Tardor als Ports",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "SMZQmdEHHk0",
+      "contentType": "song",
+      "title": "Sobreviure",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "Z_EGJmUzEbw",
+      "contentType": "song",
+      "title": "Paisatge d'infància",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "bgmjhI_BRg4",
+      "contentType": "song",
+      "title": "Oxigen",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "mBVAr4-zz1E",
+      "contentType": "song",
+      "title": "Per la Mare Natura",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "oqILcqQmerY",
+      "contentType": "song",
+      "title": "Serra d'Espadà",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "wnBJwkKqTVo",
+      "contentType": "song",
+      "title": "A l'Ombra de la Morera",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "xUCdaaRFlog",
+      "contentType": "song",
+      "title": "Paisatges",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "y3UIw7SMw90",
+      "contentType": "song",
+      "title": "Mai Sabràs Més que una Pedra",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "0hlOgKFTXe8",
+      "contentType": "song",
+      "title": "Trencant cadenes",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "2A09XdisoHM",
+      "contentType": "song",
+      "title": "Oxigen",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "2waLSCri07E",
+      "contentType": "song",
+      "title": "Mals Somnis",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "Ao2xNbYZ9Hc",
+      "contentType": "song",
+      "title": "No pretenc res més",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "H50yqJBAa-4",
+      "contentType": "song",
+      "title": "Terra",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "LoDkFRz-vwc",
+      "contentType": "song",
+      "title": "Els ulls, on són?",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "Rpnw6NI9yZ0",
+      "contentType": "song",
+      "title": "Respirem",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "UJG0v6E16sE",
+      "contentType": "song",
+      "title": "Per la mare natura",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "lONvgF5ZlD8",
+      "contentType": "song",
+      "title": "Ofegats a la bambolla",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "s70LTHh1JSM",
+      "contentType": "song",
+      "title": "Deixam dibuixar-te un espai",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "5Gyvu41AtUk",
+      "contentType": "song",
+      "title": "Un futur lliure (feat. Poema de Vicent Penya)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "9He0kd9D7oY",
+      "contentType": "song",
+      "title": "Súplica (feat. Poema de Maria Carme Arnau)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "Kfhx_E9pRMM",
+      "contentType": "song",
+      "title": "Filla del Nord (feat. Poema de Francesc Mompó)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "Mzatsl5-J88",
+      "contentType": "song",
+      "title": "Podria haver-te escrit més de deu mil cançons (feat. Poema de Gràcia Jiménez)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "Q3ysAtZLfRg",
+      "contentType": "song",
+      "title": "Tens set (feat. Poema de Manel Alonso)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "aRkHic-bkK0",
+      "contentType": "song",
+      "title": "Albuferenc (feat. Poema de Berna Blanch)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "iLUitXycbR8",
+      "contentType": "song",
+      "title": "Parc del Laberint (feat. Poema de Josep Porcar)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "wC9dd_fLVBM",
+      "contentType": "song",
+      "title": "Blau (feat. Poema d'Alba Fluixà)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "xVvJtVU4MN4",
+      "contentType": "song",
+      "title": "Out (feat. Poema de Susanna Lliberós)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "zUltYGB6U5g",
+      "contentType": "song",
+      "title": "Pre (s) festes (feat. Poema d'Àngels Moreno)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "HTBlQfJimjY",
+      "contentType": "song",
+      "title": "La mar en la memòria (feat. Poema de Francesc Mompó)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "HjPrnNT7l4w",
+      "contentType": "song",
+      "title": "Ai mar, amor (feat. Poema de Susanna Lliberós)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "IVa-Qxiv4wE",
+      "contentType": "song",
+      "title": "Maresia (feat. Poema de Reis Lliberós)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "KMl2YnaZO_A",
+      "contentType": "song",
+      "title": "Cançó de bressol per a l'infant nàufrag (feat. Poema de Rosabel Gumbau)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "QnxP5v2ISss",
+      "contentType": "song",
+      "title": "Descoberta (feat. Poema de Vicent Penya)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "bORsAq8dQvE",
+      "contentType": "song",
+      "title": "Però a mar guardava esculls (feat. Poema de Manel Alonso)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "ewB9d_le1hA",
+      "contentType": "song",
+      "title": "Ona Dona (feat. Poema de Aina Garcia-Carbó)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "ftm9Iqow9IA",
+      "contentType": "song",
+      "title": "Vic de dos mars (feat. Poema de Gràcia Jiménez)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "k3B61hQqylI",
+      "contentType": "song",
+      "title": "És femenina la mar (feat. Poema de Josep Lluís Abad)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "lvC38tseSYg",
+      "contentType": "song",
+      "title": "Mar endins (feat. Poema de Maria Carme Arnau)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "ozexixaTyk8",
+      "contentType": "song",
+      "title": "Tot és mar (feat. Poema de Manel Pitarch)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "uzsyOM6V0X0",
+      "contentType": "song",
+      "title": "Estranya i pròpia (feat. Poema de Berna Blanch)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "3sgKs71N7n4",
+      "contentType": "song",
+      "title": "Jo sóc la terra",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "DJX2x36RYNY",
+      "contentType": "song",
+      "title": "Presoner (feat. Joan Villalonga)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "KzpQWbFW4Wg",
+      "contentType": "song",
+      "title": "L'espina",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "OhH63vzLizE",
+      "contentType": "song",
+      "title": "Flor vermella (feat. Ángel Belinchón)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "OruYqxo614s",
+      "contentType": "song",
+      "title": "A l'altra pinyol (feat. Ferran Bosch)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "SHMRgcnk3AI",
+      "contentType": "song",
+      "title": "En la nit quieta (feat. Ferran Bellido)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "bQVEzcZOC0M",
+      "contentType": "song",
+      "title": "Se me'n fot",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "dIqsFghaiHI",
+      "contentType": "song",
+      "title": "Xiula el vent (feat. Muntsa)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "itsWkACRpRM",
+      "contentType": "song",
+      "title": "La Lluna minva",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "s4HV-YNOIAk",
+      "contentType": "song",
+      "title": "Jo sóc lo port",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "uTZgVlPQExc",
+      "contentType": "song",
+      "title": "La clau (feat. F.J. Silvestre)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "vGsYmoB8l8I",
+      "contentType": "song",
+      "title": "Mai sabré (feat. Ángel Belinchón)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "3aSfDmZRCw8",
+      "contentType": "song",
+      "title": "La mar és sols un ritu (feat. Poema de Vicent Pau Serra)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "5FR44Gv803M",
+      "contentType": "song",
+      "title": "Deixeu que el vent retorne al meu país (feat. Poema de Manel Pitarch)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "9XlhO2SZQO4",
+      "contentType": "song",
+      "title": "Vida, foscor, vida (feat. Poema de Mònica Meló)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "AtDRSSgrLtk",
+      "contentType": "song",
+      "title": "Tresors de bona traça (feat. Poema d'Isabel Marín)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "CNryjay1rkk",
+      "contentType": "song",
+      "title": "Fulles (feat. Poema de Josep Lluís Abad)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "CkGUI0wEgGo",
+      "contentType": "song",
+      "title": "La nostra ciutat (feat. Poema de Lluís Meseguer)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "EToAdtMd-ak",
+      "contentType": "song",
+      "title": "Al bellmig (feat. Poema d'Antoni Pitarch)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "JAkP_Syn3-c",
+      "contentType": "song",
+      "title": "Paraules, música i pinzells",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "K4UZQVKbhIA",
+      "contentType": "song",
+      "title": "Amor trencat (feat. Poema de Nel·lo Navarro)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "NI-rZGQGvs0",
+      "contentType": "song",
+      "title": "Empelt (feat. Poema de Josep Porcar)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "XviBIRyLB3Q",
+      "contentType": "song",
+      "title": "Si no arribes mai (feat. Poema de Romà Bernad)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "aa4EAx8nmWI",
+      "contentType": "song",
+      "title": "Vaixell Somiador (feat. Poema de Vicent Jaume Almela)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "b8PJJB9Rc7E",
+      "contentType": "song",
+      "title": "Caus (feat. Poema de Rosabel Gumbau)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "ftcQ5mpUFTo",
+      "contentType": "song",
+      "title": "A boqueta nit (feat. Poema de Joan B. Campos)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "p7zyU66vZBg",
+      "contentType": "song",
+      "title": "Ballem (feat. Poema de Susanna Lliberós)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "08qsPG6wlB0",
+      "contentType": "song",
+      "title": "Fes soneta",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "62AAwm4_VRU",
+      "contentType": "song",
+      "title": "Mai no voldré per llit pedra de mabre",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "C611SG9cHcI",
+      "contentType": "song",
+      "title": "Estel que Lluu ma Nit",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "CD1ukYlfu0k",
+      "contentType": "song",
+      "title": "A la Torre de Marfil",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "LTTe2VYh4oM",
+      "contentType": "song",
+      "title": "Sóc el vaixell que son velam desplega",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "Q3bJ6FelnfQ",
+      "contentType": "song",
+      "title": "Jo he vist",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "SRa0cgtbsYE",
+      "contentType": "song",
+      "title": "Cante per fora, plore per dins",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "ZAyCfQr7QO8",
+      "contentType": "song",
+      "title": "Vull retrobar allò que el seny rebutja",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "hj0k51ZMdzs",
+      "contentType": "song",
+      "title": "Vespre de Tardor",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "mM6PR8gPCI8",
+      "contentType": "song",
+      "title": "Caragola",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "1jk91yQdRyI",
+      "contentType": "song",
+      "title": "Baixant del Penyagolosa (feat. Amb la poesia d'Albert Vernet)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "1k965fmEh54",
+      "contentType": "song",
+      "title": "Aromes de la Plana (feat. Amb la poesia de Vicent Jaume Almela)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "Bcxy-gcwFyQ",
+      "contentType": "song",
+      "title": "Marina del Grau (feat. Amb la poesia de Vicent Jaume Almela)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "K_pgJ2KeqzU",
+      "contentType": "song",
+      "title": "I la gavina segueix el seu vol",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "Pn7Wyaw28wk",
+      "contentType": "song",
+      "title": "Al peu de Penyagolosa (feat. Amb la poesia d'Albert Vernet)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "TPL8XN-GDSw",
+      "contentType": "song",
+      "title": "La Nit de Sant Joan",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "f3pwwcqKGP0",
+      "contentType": "song",
+      "title": "Els ulls del meu mar",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "fpiOQ2X6dnc",
+      "contentType": "song",
+      "title": "Serra d'Espadà",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "hUlKpM9f3_I",
+      "contentType": "song",
+      "title": "L'hivern als Ports",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "l2kCbk2Ivjo",
+      "contentType": "song",
+      "title": "La Tardor als Ports",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "nU9KYbcFGDY",
+      "contentType": "song",
+      "title": "Paisatges",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "uOK1N6dllvg",
+      "contentType": "song",
+      "title": "Paisatge d'infància",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "zMKVBRAZ6Ec",
+      "contentType": "song",
+      "title": "Paisatge en blau",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "4-0Y7lOnDUs",
+      "contentType": "song",
+      "title": "Colofó",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "4vki7LS2bWE",
+      "contentType": "song",
+      "title": "La Plana al Cor",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "G5-j3jCSLoc",
+      "contentType": "song",
+      "title": "Festes de la Magdalena",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "G5HAq5AxuQM",
+      "contentType": "song",
+      "title": "Mare de Deu del Lledó",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "OXo9bqlDaNw",
+      "contentType": "song",
+      "title": "Nova gent",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "ZJCjWrdaYoA",
+      "contentType": "song",
+      "title": "Fundació-Assentament",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "cd3aN3nsNOM",
+      "contentType": "song",
+      "title": "Ermites",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "dk8zylZVL-Q",
+      "contentType": "song",
+      "title": "Fonts",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "gr_KPB8Fjws",
+      "contentType": "song",
+      "title": "Carrers i Places",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "mWfhT1ONOI8",
+      "contentType": "song",
+      "title": "Llibre de Quadrelles",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "uK2ZIgyiy9w",
+      "contentType": "song",
+      "title": "Fadrí",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "4v2aA5pk6rI",
+      "contentType": "song",
+      "title": "Preserve molt la meua soledat",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "Llkiu5gw36w",
+      "contentType": "song",
+      "title": "Cançó de la rosa de paper",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "W18tOiq66Po",
+      "contentType": "song",
+      "title": "Cançó de l'home parat",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "Xni45XmssSg",
+      "contentType": "song",
+      "title": "Ací em pariren, ací estic",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "a1gDFifdrpU",
+      "contentType": "song",
+      "title": "Enyore un temps que no és vingut encara",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "lV2hBCaYi3o",
+      "contentType": "song",
+      "title": "Professió de vell roder",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "la9jnjML9W8",
+      "contentType": "song",
+      "title": "Cançó de la lluna",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "rMnnQHcJpj0",
+      "contentType": "song",
+      "title": "Assumiràs la veu d'un poble",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "wd8SUqR8cyQ",
+      "contentType": "song",
+      "title": "Amor i amor",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "xDLa_ZAbBaY",
+      "contentType": "song",
+      "title": "Plens de sol de bon matí",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "AMy5-1qacJk",
+      "contentType": "song",
+      "title": "A l'ombra de la morera",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "0k5o8cnGWVg",
+      "contentType": "song",
+      "title": "Quan et somriu l'alba",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "DNdXF8AkSS0",
+      "contentType": "song",
+      "title": "Mai sabràs més que una pedra",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "OZIVm0AJiXE",
+      "contentType": "song",
+      "title": "Després del fum",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "bepmosgQ43o",
+      "contentType": "song",
+      "title": "Dic pàtria i dic mar",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "ffADNyF30oA",
+      "contentType": "song",
+      "title": "Batre les ales",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "fu9TVM57stQ",
+      "contentType": "song",
+      "title": "Pell de Tardor",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "xkS7mV4GBq0",
+      "contentType": "song",
+      "title": "Sobreviure",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "uVtb2HRY3d8",
+      "contentType": "song",
+      "title": "Formigues",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "xyclih5yo78",
+      "contentType": "song",
+      "title": "Solitari",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "izPb_NVHs3k",
+      "contentType": "song",
+      "title": "Alba",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "cqlK7MtdQ5g",
+      "contentType": "song",
+      "title": "Anhel",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "ePzNQ6DDtcY",
+      "contentType": "song",
+      "title": "Música",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "Q-6k9pTJndo",
+      "contentType": "song",
+      "title": "Boires Baixes",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "T3jDHud3q-Q",
+      "contentType": "song",
+      "title": "Sóc Vianant Sense Via ni Festa",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "J_zXxgB_W0s",
+      "contentType": "song",
+      "title": "Timoner",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "EXSW0hZysZQ",
+      "contentType": "song",
+      "title": "La Nit",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "8N7U3SWeBko",
+      "contentType": "song",
+      "title": "Camí Fondo",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "Axq2HYxayU8",
+      "contentType": "song",
+      "title": "Tardoral",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "7F1Z2XNkS_w",
+      "contentType": "song",
+      "title": "Les Muses",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "M_33Pidanpk",
+      "contentType": "song",
+      "title": "PLENS DE SOL DE BON MATÍ-Artur Álvarez canta VICENT ANDRÉS ESTELLÉS",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "S_ZffzTjV4I",
+      "contentType": "song",
+      "title": "D'UN ALTRE MÓN-Artur Álvarez",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "MHQzVoMuuSw",
+      "contentType": "live_song",
+      "title": "AMOR I AMOR - ESTELLÉS a ritme de blues-Artur Álvarez",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "nrReH-3p9bg",
+      "contentType": "live_song",
+      "title": "CANÇÓ DE L'HOME PARAT-ESTELLÉS a ritme de blues\"-Artur Álvarez",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "bHOsy9O-NyE",
+      "contentType": "live_song",
+      "title": "ENYORE UN TEMPS QUE NO ÉS VINGUT ENCARA...-ESTELLÉS a ritme de blues-Artur Álvarez",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "HOTFgcEAnVc",
+      "contentType": "live_song",
+      "title": "CANÇÓ DE LA ROSA DE PAPER-\"ESTELLÉS a ritme de blues\"-Artur Álvarez",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "DU99o8ZTPlI",
+      "contentType": "song",
+      "title": "ARTUR ÁLVAREZ canta ESTELLÉS en els 100 D'ESTELLÉS. CANÇÓ DE LA LLUNA",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "tYqQm-vKAB0",
+      "contentType": "song",
+      "title": "ARTUR ÁLVAREZ canta ESTELLÉS en els 100 D'ESTELLÉS. CANÇÓ DE L'HOME PARAT",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "HGDOBirCVQo",
+      "contentType": "song",
+      "title": "TARDORAL (Bernat Artola)-ARTUR ÁLVAREZ",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "o1eehcHgmtg",
+      "contentType": "song",
+      "title": "A L'OMBRA DE LA MORERA-Artur Álvarez",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "ne90UfhxSIs",
+      "contentType": "song",
+      "title": "\"Oxigen\" - CD TERRA - Artur Álvarez",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "Hib-hCAOdek",
+      "contentType": "song",
+      "title": "\"A la bambolla\" -CD TERRA-Artur Álvarez",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "uqic5oHTfPs",
+      "contentType": "song",
+      "title": "\"Terra\" -CD TERRA-Artur Álvarez",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "gwbAphnpx6Q",
+      "contentType": "song",
+      "title": "MALS SOMNIS -CD TERRA-Artur Álvarez",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "OLz1b07ygmg",
+      "contentType": "song",
+      "title": "ELS ULL, ON SÓN? -CD TERRA-Artur Álvarez",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "WKl_S8s6MyQ",
+      "contentType": "song",
+      "title": "DEIXA'M DIBUIXAR-TE UN ESPAI-CD TERRA-Artur Álvarez",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "EoPHDI0SSnw",
+      "contentType": "song",
+      "title": "VIDEOCLIP: DONA DE L' ART - Artur Àlvarez",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "SYQiwOsxt00",
+      "contentType": "song",
+      "title": "I Tu, Sols Tu",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "i86FObGBpUA",
+      "contentType": "song",
+      "title": "Havanera Del Peix Enamorat",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "EQST2BAWZ5o",
+      "contentType": "song",
+      "title": "Quan Caminàvem",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "vs4H3Dgyhk4",
+      "contentType": "song",
+      "title": "Història D'un Amor Alternatiu",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "ojtJ132AivM",
+      "contentType": "song",
+      "title": "Tio Pep (feat. Toni de l'Hostal)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "8nnwNcRqjwE",
+      "contentType": "song",
+      "title": "Arenilla de Borriana (feat. Xavier De Bétera)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "CAbJSzuEdtA",
+      "contentType": "song",
+      "title": "Rosa de Paper",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "du3bgc-sXG0",
+      "contentType": "song",
+      "title": "Què Vos Passa Valencians",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "uI6aR8ltc3c",
+      "contentType": "song",
+      "title": "Les Teues Mans",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "y1iVIZhS8PA",
+      "contentType": "song",
+      "title": "Tio Canya",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "zQ4d9eCADik",
+      "contentType": "song",
+      "title": "Adéu",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "oQJQRBmSY8A",
+      "contentType": "song",
+      "title": "Borriana Big Band - Quan caminàvem",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "q0djJIesNgc",
+      "contentType": "song",
+      "title": "Borriana Big Band amb Toni de l'Hostal - Tio Pep",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "jI1AwsOiMeM",
+      "contentType": "song",
+      "title": "Borriana Big Band - Adéu",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "pgXM1aw0xf4",
+      "contentType": "song",
+      "title": "Borriana Big Band - Què Vos Passa Valencians",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "NHTBx9jDmk0",
+      "contentType": "song",
+      "title": "Borriana Big Band - Havanera del Peix Enamorat",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "wQy4cRFKTys",
+      "contentType": "song",
+      "title": "BORRIANA BIG BAND - I tu, sols tu",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "uZFfJxyiFZ4",
+      "contentType": "song",
+      "title": "Borriana Big Band - Rosa de Paper",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "UR6ehRzR6OY",
+      "contentType": "song",
+      "title": "Borriana Big Band - Arenilla de Borriana",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "jBZ-QjQcKhw",
+      "contentType": "song",
+      "title": "Borriana Big Band - Història d'un Amor Alternatiu",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "NSPIK3r8QDQ",
+      "contentType": "song",
+      "title": "Borriana Big Band - Les Teues Mans",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "tZ6oJbyc6zk",
+      "contentType": "song",
+      "title": "Borriana Big Band - Tio Canya",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "M5kSnC-2zqc",
+      "contentType": "song",
+      "title": "Borriana Big Band - Quan Caminàvem (Versió casolana)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "uX5pRtpI0gQ",
+      "contentType": "song",
+      "title": "Borriana Big Band - Que Tinguem Sort",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "bvIh0E7R7MQ",
+      "contentType": "song",
+      "title": "Borriana Big Band - La Flama",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "TmMx0UKE5AQ",
+      "contentType": "song",
+      "title": "Borriana Big Band - Camals Mullats",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "dQSG0PpCI8o",
+      "contentType": "song",
+      "title": "Borriana Big Band - Malaguenya de Barxeta (Amb Pep Gimeno \"Botifarra\")",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "pIluiaIVT6Q",
+      "contentType": "song",
+      "title": "Borriana Big Band - Qualsevol Nit Pot Sortir El Sol",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "7Gppinu-_cY",
+      "contentType": "song",
+      "title": "Borriana Big Band - Què Volen Aquesta Gent",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "1L7MC4sp3J8",
+      "contentType": "song",
+      "title": "Borriana Big Band - Inventari (Amb Pau Alabajos)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "3t9aGeUCoT8",
+      "contentType": "song",
+      "title": "Borriana Big Band - Al Vent",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "UOBuJjzxnEY",
+      "contentType": "song",
+      "title": "Borriana Big Band - M'aclame a Tu",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
+    },
+    {
+      "id": "MvhDk4rRBFo",
+      "contentType": "song",
+      "title": "Borriana Big Band - Lladres (Videoclip oficial)",
+      "note": "Enregistrament complet de la selecció documental; editor contrastat. docs/revisions/2026-10-13-artur-borriana-alta.json"
     }
   ]
 }
