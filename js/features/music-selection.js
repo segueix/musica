@@ -872,6 +872,13 @@
                         group.video = representative.item.video;
                         group.f = representative.item.f;
                         group.tier = options.subcategoryFlow?.tier(group.video, last?.video) ?? 0;
+                        if (options.discover) {
+                            const fresh = isNewArtist(group.key, options.signals);
+                            const heardHere = sequence.some(item => item.artist === group.key);
+                            // Descoberta pura: primer artistes nous diferents, després repeticions,
+                            // i només al final els poc coneguts que completen una cua escassa.
+                            group.tier += (fresh ? heardHere ? 1 : 0 : 2) * 3;
+                        }
                         bestTier = Math.min(bestTier, group.tier);
                     });
                     let winner = null;
@@ -1161,6 +1168,7 @@
             subcategoryFlow,
             artistFirst,
             artistPreferences,
+            discover,
             rng,
         };
         let result = runSelection(items, selectionOptions);
