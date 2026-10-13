@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-13T15:26:21.943Z",
+  "generatedAt": "2026-10-13T15:48:40.911Z",
   "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
   "restrictedVideoCount": 21,
@@ -7,7 +7,7 @@
   "deepPagesFetched": 0,
   "deepChannelCount": 19,
   "topicChannelCount": 325,
-  "governedChannelCount": 113,
+  "governedChannelCount": 115,
   "topicCoverage": [
     {
       "id": "UCqaEtRht2jakBhGFLzS617w",
@@ -66,6 +66,14 @@
       "governs": true
     },
     {
+      "id": "UCcYEaa06Rifj3dOcoBemmEQ",
+      "name": "BTZ",
+      "songs": 5,
+      "matched": 5,
+      "coverage": 1,
+      "governs": true
+    },
+    {
       "id": "UCBKjT0edCSrQhqufwWaX5Zw",
       "name": "Ceaxe",
       "songs": 9,
@@ -108,6 +116,14 @@
     {
       "id": "UCqjjCCORy-B_NznEv8LqU-g",
       "name": "Feliu Ventura",
+      "songs": 2,
+      "matched": 2,
+      "coverage": 1,
+      "governs": true
+    },
+    {
+      "id": "UCyzX-sJRQkIWqBeyasLk9rw",
+      "name": "FLAKKO",
       "songs": 2,
       "matched": 2,
       "coverage": 1,
@@ -254,14 +270,6 @@
       "name": "Renaldo & Clara",
       "songs": 26,
       "matched": 26,
-      "coverage": 1,
-      "governs": true
-    },
-    {
-      "id": "UCOkIGVfu3W-Xzuyh-esacsg",
-      "name": "Sense Sal",
-      "songs": 15,
-      "matched": 15,
       "coverage": 1,
       "governs": true
     },
@@ -846,6 +854,14 @@
       "name": "Rita Payés",
       "songs": 41,
       "matched": 33,
+      "coverage": 0.8,
+      "governs": true
+    },
+    {
+      "id": "UCOkIGVfu3W-Xzuyh-esacsg",
+      "name": "Sense Sal",
+      "songs": 35,
+      "matched": 28,
       "coverage": 0.8,
       "governs": true
     },
@@ -1697,9 +1713,9 @@
     {
       "id": "UClEd4A7MtTmIPSB_v7r7APA",
       "name": "BTZ",
-      "tracks": 5,
-      "selected": 5,
-      "withClip": 4
+      "tracks": 6,
+      "selected": 6,
+      "withClip": 5
     },
     {
       "id": "UClt-kDY-yDORa6XkI5leFjg",
@@ -2061,9 +2077,9 @@
     {
       "id": "UCf6zqvW8RqxzfaSda0-nIuA",
       "name": "FLAKKO",
-      "tracks": 1,
-      "selected": 1,
-      "withClip": 0
+      "tracks": 19,
+      "selected": 18,
+      "withClip": 2
     },
     {
       "id": "UCnRFXP9nR0fh9BeIH7pZsZQ",
@@ -3202,9 +3218,9 @@
     {
       "id": "UCEOjwllkTYUqljRethReusQ",
       "name": "Sense Sal",
-      "tracks": 16,
-      "selected": 16,
-      "withClip": 14
+      "tracks": 25,
+      "selected": 25,
+      "withClip": 23
     },
     {
       "id": "UCWdaWh8h5Uov97df5vX4RCw",
@@ -3609,10 +3625,10 @@
   "indexedChannelCount": 591,
   "resolvedChannelCount": 591,
   "feedChannelCount": 591,
-  "rawPublicVideoCount": 6571,
-  "feedVideoCount": 6047,
-  "acceptedMusicCount": 6007,
-  "categoryEligibleVideoCount": 6003,
+  "rawPublicVideoCount": 6622,
+  "feedVideoCount": 6098,
+  "acceptedMusicCount": 6058,
+  "categoryEligibleVideoCount": 6054,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
     "before": 1,
@@ -3621,8 +3637,8 @@
   },
   "contentReviewCount": 529,
   "contentTypeCounts": {
-    "song": 5832,
-    "live_song": 171,
+    "song": 5876,
+    "live_song": 178,
     "album": 4,
     "other": 35,
     "review": 529
@@ -3632,6 +3648,6 @@
   "channelsWithoutVideos": [],
   "channelsWithoutAcceptedMusic": [],
   "allIndexedChannelsVisible": true,
-  "publishedFeedVideoCount": 6039,
+  "publishedFeedVideoCount": 6055,
   "publishedShortVideoCount": 0
 }
