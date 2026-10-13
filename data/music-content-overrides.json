@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-13T15:23:50.661Z",
+  "updatedAt": "2026-10-13T15:40:55.694Z",
   "description": "Decisions manuals sobre el tipus de contingut de vídeos concrets. Manen sobre el classificador automàtic (scripts/lib/classificar_contingut_musical.js) i el pipeline (scripts/update_music_feed.js) les reaplica a cada generació del feed. Tipus permesos: song, live_song, album, other. Un vídeo revisat aquí surt de data/music-content-review.json.",
   "videos": [
     {
@@ -13165,6 +13165,318 @@
       "contentType": "song",
       "title": "Huracà - Sense Sal amb Txarango (Algun lloc al món)",
       "note": "Alta sol·licitada el 2026-10-13. Selecció inicial per ID; resta del repertori pendent de revisió. Fonts i selecció: docs/revisions/2026-10-13-urban2-alta.json."
+    },
+    {
+      "id": "oTQ8kraUchs",
+      "contentType": "live_song",
+      "title": "Mira'm als ulls (versió confinada) - Sense Sal",
+      "note": "Revisió dels pendents: docs/revisions/2026-10-13-urban2-revisio-pendents.json"
+    },
+    {
+      "id": "zGoi8809x6Q",
+      "contentType": "song",
+      "title": "Fins que surti el sol - Sense Sal (Videoclip MUSICALLY style)",
+      "note": "Revisió dels pendents: docs/revisions/2026-10-13-urban2-revisio-pendents.json"
+    },
+    {
+      "id": "PPlQvnq9nzo",
+      "contentType": "song",
+      "title": "SENSE SAL - Travessarem muntanyes (WALK THE MOON cover / WOTE tribute)",
+      "note": "Revisió dels pendents: docs/revisions/2026-10-13-urban2-revisio-pendents.json"
+    },
+    {
+      "id": "34Kqsd617ew",
+      "contentType": "song",
+      "title": "Entre nosaltres - Sense Sal ('Algun lloc al món')",
+      "note": "Revisió dels pendents: docs/revisions/2026-10-13-urban2-revisio-pendents.json"
+    },
+    {
+      "id": "eYbsaUS8kIk",
+      "contentType": "song",
+      "title": "1. Tinc un nou pla - Sense Sal (Algun lloc al món)",
+      "note": "Revisió dels pendents: docs/revisions/2026-10-13-urban2-revisio-pendents.json"
+    },
+    {
+      "id": "9qDngzuQ-6w",
+      "contentType": "live_song",
+      "title": "Nadal Sense Sal - Rere el vidre (concert a un aparador)",
+      "note": "Revisió dels pendents: docs/revisions/2026-10-13-urban2-revisio-pendents.json"
+    },
+    {
+      "id": "G-Ti_6dREPo",
+      "contentType": "song",
+      "title": "6. Berlín - Sense Sal",
+      "note": "Revisió dels pendents: docs/revisions/2026-10-13-urban2-revisio-pendents.json"
+    },
+    {
+      "id": "67mhclbaSgk",
+      "contentType": "song",
+      "title": "2. Protocols - Sense Sal",
+      "note": "Revisió dels pendents: docs/revisions/2026-10-13-urban2-revisio-pendents.json"
+    },
+    {
+      "id": "GOJZrPW94wA",
+      "contentType": "song",
+      "title": "8. Esperança - Sense Sal",
+      "note": "Revisió dels pendents: docs/revisions/2026-10-13-urban2-revisio-pendents.json"
+    },
+    {
+      "id": "lYq8_194Ny0",
+      "contentType": "song",
+      "title": "1. Puch-x-10 - Sense Sal",
+      "note": "Revisió dels pendents: docs/revisions/2026-10-13-urban2-revisio-pendents.json"
+    },
+    {
+      "id": "_S81maTLlPA",
+      "contentType": "song",
+      "title": "5. Secrets - Sense Sal",
+      "note": "Revisió dels pendents: docs/revisions/2026-10-13-urban2-revisio-pendents.json"
+    },
+    {
+      "id": "aL0w5u0tvTQ",
+      "contentType": "live_song",
+      "title": "Sense Sal per emportar - Ara",
+      "note": "Revisió dels pendents: docs/revisions/2026-10-13-urban2-revisio-pendents.json"
+    },
+    {
+      "id": "7HZ5p7bCP3E",
+      "contentType": "song",
+      "title": "Sense sal - Noia de foc i glaç",
+      "note": "Revisió dels pendents: docs/revisions/2026-10-13-urban2-revisio-pendents.json"
+    },
+    {
+      "id": "--BG3_jaSh4",
+      "contentType": "live_song",
+      "title": "Sense sal a la Jazz cava \"Gat i gos\"",
+      "note": "Revisió dels pendents: docs/revisions/2026-10-13-urban2-revisio-pendents.json"
+    },
+    {
+      "id": "8d1pq1Bt8II",
+      "contentType": "live_song",
+      "title": "Sense sal a la Jazz Cava \"D'aquí a 5 anys\"",
+      "note": "Revisió dels pendents: docs/revisions/2026-10-13-urban2-revisio-pendents.json"
+    },
+    {
+      "id": "6b9oBR8Snv4",
+      "contentType": "live_song",
+      "title": "Sense sal - D'aquí a 5 anys",
+      "note": "Revisió dels pendents: docs/revisions/2026-10-13-urban2-revisio-pendents.json"
+    },
+    {
+      "id": "yFtt5asLUbI",
+      "contentType": "song",
+      "title": "Demà sortirà el sol - Sense sal",
+      "note": "Revisió dels pendents: docs/revisions/2026-10-13-urban2-revisio-pendents.json"
+    },
+    {
+      "id": "16aANNvL_U4",
+      "contentType": "song",
+      "title": "Secrets - Sense Sal [Videoclip]",
+      "note": "Revisió dels pendents: docs/revisions/2026-10-13-urban2-revisio-pendents.json"
+    },
+    {
+      "id": "n7R84qO_D_w",
+      "contentType": "song",
+      "title": "Sense Sal - Ara (by Celofan Audiovisual)",
+      "note": "Revisió dels pendents: docs/revisions/2026-10-13-urban2-revisio-pendents.json"
+    },
+    {
+      "id": "qnrOczcTh8g",
+      "contentType": "song",
+      "title": "Entre nosaltres",
+      "note": "Revisió dels pendents: docs/revisions/2026-10-13-urban2-revisio-pendents.json"
+    },
+    {
+      "id": "LHKUhS2ffFo",
+      "contentType": "song",
+      "title": "Tinc un nou pla",
+      "note": "Revisió dels pendents: docs/revisions/2026-10-13-urban2-revisio-pendents.json"
+    },
+    {
+      "id": "rj2QgG4x7r0",
+      "contentType": "song",
+      "title": "Puch X-10",
+      "note": "Revisió dels pendents: docs/revisions/2026-10-13-urban2-revisio-pendents.json"
+    },
+    {
+      "id": "K_Q-rvhjO24",
+      "contentType": "song",
+      "title": "Secrets",
+      "note": "Revisió dels pendents: docs/revisions/2026-10-13-urban2-revisio-pendents.json"
+    },
+    {
+      "id": "YhPtosarB6g",
+      "contentType": "song",
+      "title": "Berlin",
+      "note": "Revisió dels pendents: docs/revisions/2026-10-13-urban2-revisio-pendents.json"
+    },
+    {
+      "id": "3mNukVs6u08",
+      "contentType": "song",
+      "title": "Esperança",
+      "note": "Revisió dels pendents: docs/revisions/2026-10-13-urban2-revisio-pendents.json"
+    },
+    {
+      "id": "44nKReNbcnA",
+      "contentType": "song",
+      "title": "Protocols",
+      "note": "Revisió dels pendents: docs/revisions/2026-10-13-urban2-revisio-pendents.json"
+    },
+    {
+      "id": "J-rjD-89dVQ",
+      "contentType": "song",
+      "title": "Ara",
+      "note": "Revisió dels pendents: docs/revisions/2026-10-13-urban2-revisio-pendents.json"
+    },
+    {
+      "id": "JZ6w7ImG-Ic",
+      "contentType": "song",
+      "title": "Noia de foc i glaç",
+      "note": "Revisió dels pendents: docs/revisions/2026-10-13-urban2-revisio-pendents.json"
+    },
+    {
+      "id": "Ea3qlOjEeaU",
+      "contentType": "live_song",
+      "title": "Guardo un lloc (I will wait - Mumford and Sons Cover)  - Sense Sal",
+      "note": "Revisió dels pendents: docs/revisions/2026-10-13-urban2-revisio-pendents.json"
+    },
+    {
+      "id": "_2NZYrI0KlA",
+      "contentType": "song",
+      "title": "Fars i Onades - Sense Sal",
+      "note": "Revisió dels pendents: docs/revisions/2026-10-13-urban2-revisio-pendents.json"
+    },
+    {
+      "id": "hcPQTSBq9hI",
+      "contentType": "song",
+      "title": "Myotragus (Intro)",
+      "note": "Revisió dels pendents: docs/revisions/2026-10-13-urban2-revisio-pendents.json"
+    },
+    {
+      "id": "zjp4XYlp9NU",
+      "contentType": "song",
+      "title": "Puta Nirvi",
+      "note": "Revisió dels pendents: docs/revisions/2026-10-13-urban2-revisio-pendents.json"
+    },
+    {
+      "id": "XHDeoO3ZcZo",
+      "contentType": "song",
+      "title": "Doberets (feat. Plan-ET)",
+      "note": "Revisió dels pendents: docs/revisions/2026-10-13-urban2-revisio-pendents.json"
+    },
+    {
+      "id": "hLI3uSZKVcc",
+      "contentType": "song",
+      "title": "Llucmajor",
+      "note": "Revisió dels pendents: docs/revisions/2026-10-13-urban2-revisio-pendents.json"
+    },
+    {
+      "id": "M9dE4Gc5u1M",
+      "contentType": "song",
+      "title": "Fet pols",
+      "note": "Revisió dels pendents: docs/revisions/2026-10-13-urban2-revisio-pendents.json"
+    },
+    {
+      "id": "UFHDgm2qo8I",
+      "contentType": "song",
+      "title": "1altrepik",
+      "note": "Revisió dels pendents: docs/revisions/2026-10-13-urban2-revisio-pendents.json"
+    },
+    {
+      "id": "ev5TqdCNZaM",
+      "contentType": "song",
+      "title": "Sobrassada",
+      "note": "Revisió dels pendents: docs/revisions/2026-10-13-urban2-revisio-pendents.json"
+    },
+    {
+      "id": "F3OMllaygss",
+      "contentType": "song",
+      "title": "Guiri",
+      "note": "Revisió dels pendents: docs/revisions/2026-10-13-urban2-revisio-pendents.json"
+    },
+    {
+      "id": "RHyn2uBUqC4",
+      "contentType": "song",
+      "title": "DPM",
+      "note": "Revisió dels pendents: docs/revisions/2026-10-13-urban2-revisio-pendents.json"
+    },
+    {
+      "id": "BMcXtZ1MuZM",
+      "contentType": "song",
+      "title": "Regalima",
+      "note": "Revisió dels pendents: docs/revisions/2026-10-13-urban2-revisio-pendents.json"
+    },
+    {
+      "id": "IciraJsQEUk",
+      "contentType": "song",
+      "title": "Impacient",
+      "note": "Revisió dels pendents: docs/revisions/2026-10-13-urban2-revisio-pendents.json"
+    },
+    {
+      "id": "uamV4RW4iU8",
+      "contentType": "song",
+      "title": "D.B.D.V",
+      "note": "Revisió dels pendents: docs/revisions/2026-10-13-urban2-revisio-pendents.json"
+    },
+    {
+      "id": "W7wye69xmUY",
+      "contentType": "song",
+      "title": "kia$",
+      "note": "Revisió dels pendents: docs/revisions/2026-10-13-urban2-revisio-pendents.json"
+    },
+    {
+      "id": "dbjjBDD4Vqc",
+      "contentType": "song",
+      "title": "Remugar",
+      "note": "Revisió dels pendents: docs/revisions/2026-10-13-urban2-revisio-pendents.json"
+    },
+    {
+      "id": "4xRIGL2FAtM",
+      "contentType": "song",
+      "title": "Remugar",
+      "note": "Revisió dels pendents: docs/revisions/2026-10-13-urban2-revisio-pendents.json"
+    },
+    {
+      "id": "AK8J3xpPvNU",
+      "contentType": "song",
+      "title": "Doberets (feat. Plan-ET)",
+      "note": "Revisió dels pendents: docs/revisions/2026-10-13-urban2-revisio-pendents.json"
+    },
+    {
+      "id": "sptlN2wXoGI",
+      "contentType": "song",
+      "title": "Sobrassada",
+      "note": "Revisió dels pendents: docs/revisions/2026-10-13-urban2-revisio-pendents.json"
+    },
+    {
+      "id": "FawOwuPvAZw",
+      "contentType": "song",
+      "title": "remugar-videoclip",
+      "note": "Revisió dels pendents: docs/revisions/2026-10-13-urban2-revisio-pendents.json"
+    },
+    {
+      "id": "ZhDR3CMiUk0",
+      "contentType": "song",
+      "title": "Cap de suro",
+      "note": "Revisió dels pendents: docs/revisions/2026-10-13-urban2-revisio-pendents.json"
+    },
+    {
+      "id": "IXqfE2pcVDQ",
+      "contentType": "song",
+      "title": "CAP DE SURO",
+      "note": "Revisió dels pendents: docs/revisions/2026-10-13-urban2-revisio-pendents.json"
+    },
+    {
+      "id": "AnENLDa2qpI",
+      "contentType": "song",
+      "title": "LIFESTYLE - BTZ(Official One-Shot)",
+      "note": "Revisió dels pendents: docs/revisions/2026-10-13-urban2-revisio-pendents.json"
+    },
+    {
+      "id": "shbCQI8QaBI",
+      "contentType": "song",
+      "title": "Lifestyle",
+      "note": "Revisió dels pendents: docs/revisions/2026-10-13-urban2-revisio-pendents.json"
     }
   ]
 }

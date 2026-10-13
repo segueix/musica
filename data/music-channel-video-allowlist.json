@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-13T15:23:50.661Z",
+  "updatedAt": "2026-10-13T15:40:55.694Z",
   "description": "Llista blanca per a canals on Segueix Música només ha d'ingerir vídeos concrets. Admet títols exactes, fragments obligatoris i fragments exclosos.",
   "channels": {
     "UCKpscwdWlVaMqcA81vLI7OA": {
@@ -6414,12 +6414,13 @@
     },
     "UCcYEaa06Rifj3dOcoBemmEQ": {
       "artist": "BTZ",
-      "note": "Alta sol·licitada el 2026-10-13. Selecció inicial per ID; resta del repertori pendent de revisió. Fonts i selecció: docs/revisions/2026-10-13-urban2-alta.json.",
+      "note": "Selecció ampliada després de revisar el pendent. Fonts i decisions per vídeo: docs/revisions/2026-10-13-urban2-revisio-pendents.json. Les peces sense evidència suficient continuen excloses per llista explícita.",
       "allowedVideoIds": [
         "50XYpeasJbE",
         "weM9c0_n7cI",
         "Deut3g3-_5A",
-        "L1HRPnvyJx4"
+        "L1HRPnvyJx4",
+        "AnENLDa2qpI"
       ],
       "acceptedMusicOnly": true,
       "allowedContentTypes": [
@@ -6429,13 +6430,14 @@
     },
     "UClEd4A7MtTmIPSB_v7r7APA": {
       "artist": "BTZ",
-      "note": "Alta sol·licitada el 2026-10-13. Selecció inicial per ID; resta del repertori pendent de revisió. Fonts i selecció: docs/revisions/2026-10-13-urban2-alta.json.",
+      "note": "Selecció ampliada després de revisar el pendent. Fonts i decisions per vídeo: docs/revisions/2026-10-13-urban2-revisio-pendents.json. Les peces sense evidència suficient continuen excloses per llista explícita.",
       "allowedVideoIds": [
         "if_KonDiYrQ",
         "8zsDdSWy_7Y",
         "wnv1HdDzbKw",
         "50s2vD7WFJs",
-        "udXQRxJadwk"
+        "udXQRxJadwk",
+        "shbCQI8QaBI"
       ],
       "acceptedMusicOnly": true,
       "allowedContentTypes": [
@@ -6479,9 +6481,11 @@
     },
     "UCyzX-sJRQkIWqBeyasLk9rw": {
       "artist": "Flakko",
-      "note": "Alta sol·licitada el 2026-10-13. Selecció inicial per ID; resta del repertori pendent de revisió. Fonts i selecció: docs/revisions/2026-10-13-urban2-alta.json.",
+      "note": "Selecció ampliada després de revisar el pendent. Fonts i decisions per vídeo: docs/revisions/2026-10-13-urban2-revisio-pendents.json. Les peces sense evidència suficient continuen excloses per llista explícita.",
       "allowedVideoIds": [
-        "omGwFY8Kipg"
+        "omGwFY8Kipg",
+        "FawOwuPvAZw",
+        "IXqfE2pcVDQ"
       ],
       "acceptedMusicOnly": true,
       "allowedContentTypes": [
@@ -6491,9 +6495,27 @@
     },
     "UCf6zqvW8RqxzfaSda0-nIuA": {
       "artist": "Flakko",
-      "note": "Alta sol·licitada el 2026-10-13. Selecció inicial per ID; resta del repertori pendent de revisió. Fonts i selecció: docs/revisions/2026-10-13-urban2-alta.json.",
+      "note": "Selecció ampliada després de revisar el pendent. Fonts i decisions per vídeo: docs/revisions/2026-10-13-urban2-revisio-pendents.json. Les peces sense evidència suficient continuen excloses per llista explícita.",
       "allowedVideoIds": [
-        "1o_VpGg3Uo0"
+        "1o_VpGg3Uo0",
+        "hcPQTSBq9hI",
+        "zjp4XYlp9NU",
+        "XHDeoO3ZcZo",
+        "hLI3uSZKVcc",
+        "M9dE4Gc5u1M",
+        "UFHDgm2qo8I",
+        "ev5TqdCNZaM",
+        "F3OMllaygss",
+        "RHyn2uBUqC4",
+        "BMcXtZ1MuZM",
+        "IciraJsQEUk",
+        "uamV4RW4iU8",
+        "W7wye69xmUY",
+        "dbjjBDD4Vqc",
+        "4xRIGL2FAtM",
+        "AK8J3xpPvNU",
+        "sptlN2wXoGI",
+        "ZhDR3CMiUk0"
       ],
       "acceptedMusicOnly": true,
       "allowedContentTypes": [
@@ -6516,7 +6538,7 @@
     },
     "UCEOjwllkTYUqljRethReusQ": {
       "artist": "Sense Sal",
-      "note": "Alta sol·licitada el 2026-10-13. Selecció inicial per ID; resta del repertori pendent de revisió. Fonts i selecció: docs/revisions/2026-10-13-urban2-alta.json.",
+      "note": "Selecció ampliada després de revisar el pendent. Fonts i decisions per vídeo: docs/revisions/2026-10-13-urban2-revisio-pendents.json. Les peces sense evidència suficient continuen excloses per llista explícita.",
       "allowedVideoIds": [
         "4Auq-ZAFHIg",
         "F-JIe94MRyU",
@@ -6533,7 +6555,16 @@
         "47x6RmZjUtc",
         "t15e-pVkzUw",
         "K6IM38Wv2wY",
-        "Lw4bz8LRyZ0"
+        "Lw4bz8LRyZ0",
+        "qnrOczcTh8g",
+        "LHKUhS2ffFo",
+        "rj2QgG4x7r0",
+        "K_Q-rvhjO24",
+        "YhPtosarB6g",
+        "3mNukVs6u08",
+        "44nKReNbcnA",
+        "J-rjD-89dVQ",
+        "JZ6w7ImG-Ic"
       ],
       "acceptedMusicOnly": true,
       "allowedContentTypes": [
@@ -6543,7 +6574,7 @@
     },
     "UCOkIGVfu3W-Xzuyh-esacsg": {
       "artist": "Sense Sal",
-      "note": "Alta sol·licitada el 2026-10-13. Selecció inicial per ID; resta del repertori pendent de revisió. Fonts i selecció: docs/revisions/2026-10-13-urban2-alta.json.",
+      "note": "Selecció ampliada després de revisar el pendent. Fonts i decisions per vídeo: docs/revisions/2026-10-13-urban2-revisio-pendents.json. Les peces sense evidència suficient continuen excloses per llista explícita.",
       "allowedVideoIds": [
         "SdAGhNbZAMc",
         "eDNuhofGAoM",
@@ -6560,7 +6591,28 @@
         "L7_6LAg3368",
         "4_Fi1ZoAb_4",
         "iCiBCeGzsk8",
-        "Ri-aGEvVvKM"
+        "Ri-aGEvVvKM",
+        "oTQ8kraUchs",
+        "zGoi8809x6Q",
+        "PPlQvnq9nzo",
+        "34Kqsd617ew",
+        "eYbsaUS8kIk",
+        "9qDngzuQ-6w",
+        "G-Ti_6dREPo",
+        "67mhclbaSgk",
+        "GOJZrPW94wA",
+        "lYq8_194Ny0",
+        "_S81maTLlPA",
+        "aL0w5u0tvTQ",
+        "7HZ5p7bCP3E",
+        "--BG3_jaSh4",
+        "8d1pq1Bt8II",
+        "6b9oBR8Snv4",
+        "yFtt5asLUbI",
+        "16aANNvL_U4",
+        "n7R84qO_D_w",
+        "Ea3qlOjEeaU",
+        "_2NZYrI0KlA"
       ],
       "acceptedMusicOnly": true,
       "allowedContentTypes": [
