@@ -155,8 +155,14 @@ async function apply() {
         assert(!db.artists.some(x=>x.name===a.name),'Alta ja present: '+a.name);
         let place;
         if(a.region) {
-            place='territory:'+a.slug;
+            place='territory:emporda';
             origins.places[place]={name:a.place,type:'region',coordinates:null,territory:a.territory};
+            const proximity=read('data/proximitat-musical.json');
+            assert(origins.places['geonames:3122453'].name==='Figueres');
+            assert(origins.places['geonames:3119952'].name==="la Bisbal d'Empordà");
+            proximity.references[place]={placeIds:['geonames:3122453','geonames:3119952'],kind:'territorial_reference'};
+            proximity.notes[place]='Figueres i la Bisbal d’Empordà: mínim de distància a les capitals de les dues comarques; no atribueix un municipi d’origen al grup.';
+            write('data/proximitat-musical.json',proximity);
         } else place=await placeFor(a,origins);
         const key='artist:'+a.slug;
         origins.artists[key]={name:a.name,status:'validated',relation:'origin',placeIds:[place],confidence:'alta',basis:a.basis,sources:[a.source],reviewedOn:'2026-10-14',assignmentSource:'manual-review',locked:true};
