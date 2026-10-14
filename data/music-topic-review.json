@@ -1,7 +1,10 @@
 {
-  "generatedAt": "2026-10-14T06:30:44.333Z",
+  "generatedAt": "2026-10-14T07:26:35.055Z",
   "mode": "apply",
-  "reclassified": {},
+  "reclassified": {
+    "other": 11,
+    "song": 1
+  },
   "hiddenFromTopic": [],
   "videos": [
     {
@@ -225,6 +228,20 @@
       "id": "nWDOmgK9Efg",
       "channelTitle": "Aspencat",
       "title": "Aspencat Temps",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "-etBwKIKNZw",
+      "channelTitle": "Atzembla",
+      "title": "Atzembla - El tour viatge (Resum de Gira)",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "iLlfdYvqbrs",
+      "channelTitle": "Atzembla",
+      "title": "Atzembla a Olazti (Nafarroa)",
       "from": "song",
       "to": "other"
     },
@@ -705,6 +722,27 @@
       "to": "other"
     },
     {
+      "id": "kPgnFkemS1g",
+      "channelTitle": "Eskassa Llibertat",
+      "title": "eskassa llibertat a l'acampada jove '09 VICTORIA",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "6n9R00JR8r8",
+      "channelTitle": "Eskassa Llibertat",
+      "title": "Eskassa LLibertat TV (Acustic de Tot el Dia Xop a SOM Ràdio)",
+      "from": "live_song",
+      "to": "other"
+    },
+    {
+      "id": "sS0aqh2qRB8",
+      "channelTitle": "Eskassa Llibertat",
+      "title": "Súria (al carrer) Eskassa LLibertat",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "4bcoFiOOarM",
       "channelTitle": "Exili A Elba",
       "title": "Aparences a l'Antiga Fàbrica Estrella Damm",
@@ -1066,6 +1104,20 @@
       "channelTitle": "Julieta",
       "title": "Un dia amb la Ju (Festival B)",
       "from": "review",
+      "to": "other"
+    },
+    {
+      "id": "hM-b-7XKEUw",
+      "channelTitle": "Kalabranda",
+      "title": "Kalabranda - Concert 09/01/16 Sala Ovella Negra",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "mOHzl2liiOU",
+      "channelTitle": "Kalabranda",
+      "title": "Kalabranda - Remei 2016 (Arenys de Munt)",
+      "from": "song",
       "to": "other"
     },
     {
@@ -1821,6 +1873,41 @@
       "id": "KkYgo-Tczu0",
       "channelTitle": "The Tyets",
       "title": "TY DJ SET by The Tyets @ LA FOLIE DOUCE ALPE D'HUEZ (Full set)",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "fflwJY51LZE",
+      "channelTitle": "Trast",
+      "title": "Gràcies família, gràcies Trastos",
+      "from": "review",
+      "to": "other"
+    },
+    {
+      "id": "fE0htYmJcMI",
+      "channelTitle": "Trast",
+      "title": "Nova oportunitat (des del confinament)",
+      "from": "review",
+      "to": "song"
+    },
+    {
+      "id": "6P6-JWElz6o",
+      "channelTitle": "Trast",
+      "title": "Still Young - The Cat Empire (cover Trast en català)",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "gri_R_07a88",
+      "channelTitle": "Trast",
+      "title": "Trast a 'La Primera Pedra' de Rac1",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "dpNe4v61Hx0",
+      "channelTitle": "Trast",
+      "title": "Trast en ruta - Gira #Diaridematinada",
       "from": "song",
       "to": "other"
     },

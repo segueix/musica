@@ -1,5 +1,5 @@
 {
-  "musicalArtists": 416,
+  "musicalArtists": 431,
   "minimumArtists": 5,
   "subcategories": [
     {
@@ -428,14 +428,18 @@
         "ska-revival",
         "ska-classic"
       ],
-      "artistCount": 5,
+      "artistCount": 9,
       "nucleus": true,
       "artists": [
         "Obrint Pas",
         "Skatalà",
         "Agraviats",
         "Oprimits",
-        "Skaparapid"
+        "Skaparapid",
+        "Atzembla",
+        "Eskassa Llibertat",
+        "Kòdul",
+        "Skafam"
       ]
     },
     {
@@ -463,7 +467,7 @@
         "reggae",
         "mestissatge"
       ],
-      "artistCount": 7,
+      "artistCount": 14,
       "nucleus": true,
       "artists": [
         "Auxili",
@@ -472,7 +476,14 @@
         "Les Testarudes",
         "Mr. Freak Ska",
         "Dekrèpits",
-        "Es Reboster"
+        "Es Reboster",
+        "AlQuadrat",
+        "CampikiPugui",
+        "Kalabranda",
+        "Ovella Xao",
+        "Repúblika Ska",
+        "Terra Ferma Ska Band",
+        "Trast"
       ]
     },
     {
@@ -483,12 +494,16 @@
         "ska-classic",
         "mestissatge"
       ],
-      "artistCount": 3,
-      "nucleus": false,
+      "artistCount": 7,
+      "nucleus": true,
       "artists": [
         "Adala",
         "Pirat's Sound Sistema",
-        "Maitips"
+        "Maitips",
+        "Dring Dublé",
+        "El Veïnat",
+        "La Bundu Band",
+        "Mascarats"
       ]
     },
     {
@@ -5191,6 +5206,152 @@
       "basis": "editorial",
       "sources": [
         "https://maitips.bandcamp.com/album/inventa-el-m-n"
+      ]
+    },
+    {
+      "artist": "AlQuadrat",
+      "category": "Ska / Reggae",
+      "subcategory": "ska-classic",
+      "basis": "editorial",
+      "sources": [
+        "https://www.timeout.cat/barcelona/ca/musica/alquadrat",
+        "https://www.viasona.cat/grup/alquadrat"
+      ]
+    },
+    {
+      "artist": "Atzembla",
+      "category": "Ska / Reggae",
+      "subcategory": "ska-punk",
+      "basis": "editorial",
+      "sources": [
+        "https://ca.wikipedia.org/wiki/Atzembla_(grup_musical)",
+        "https://www.tresdeu.com/2018/08/atzembla-instint/",
+        "docs/revisions/2026-10-14-ska3-atzembla.md"
+      ]
+    },
+    {
+      "artist": "CampikiPugui",
+      "category": "Ska / Reggae",
+      "subcategory": "ska-classic",
+      "basis": "editorial",
+      "sources": [
+        "https://www.selvacultura.cat/ca/programacio/c/1795-campikipugui.html",
+        "https://music.apple.com/us/artist/campikipugui/1209822356"
+      ]
+    },
+    {
+      "artist": "Dring Dublé",
+      "category": "Ska / Reggae",
+      "subcategory": "reggae",
+      "basis": "editorial",
+      "sources": [
+        "https://produbsa.bandcamp.com/album/dring-dubl-cremals-feat-lester-mc"
+      ]
+    },
+    {
+      "artist": "El Veïnat",
+      "category": "Ska / Reggae",
+      "subcategory": "reggae",
+      "basis": "editorial",
+      "sources": [
+        "https://naciodigital.cat/osona/cultura-i-mitjans/el-moscou-estrena-terrassa-amb-el-concert-del-veinat.html"
+      ]
+    },
+    {
+      "artist": "Eskassa Llibertat",
+      "category": "Ska / Reggae",
+      "subcategory": "ska-punk",
+      "basis": "editorial",
+      "sources": [
+        "https://www.viasona.cat/grup/eskassa-llibertat",
+        "https://eskassallibertat.bandcamp.com/"
+      ]
+    },
+    {
+      "artist": "Kalabranda",
+      "category": "Ska / Reggae",
+      "subcategory": "ska-classic",
+      "basis": "editorial",
+      "sources": [
+        "https://arenysdemunt-prd.diba.cat/media/import/documents/news/Cartell_Remei_Jove_2019.pdf"
+      ]
+    },
+    {
+      "artist": "Kòdul",
+      "category": "Ska / Reggae",
+      "subcategory": "ska-punk",
+      "basis": "editorial",
+      "sources": [
+        "https://indicat.blogspot.com/2012/12/kodul-enceta-un-verkami-per-al-proper.html",
+        "docs/revisions/2026-10-14-ska3-kodul.md"
+      ]
+    },
+    {
+      "artist": "La Bundu Band",
+      "category": "Ska / Reggae",
+      "subcategory": "reggae",
+      "basis": "editorial",
+      "sources": [
+        "https://www.verkami.com/projects/7252-nou-disc-de-la-bundu-band-sembrant-beats-recollint-revolucio",
+        "https://www.reverbnation.com/labunduband/songs"
+      ]
+    },
+    {
+      "artist": "Mascarats",
+      "category": "Ska / Reggae",
+      "subcategory": "reggae",
+      "basis": "editorial",
+      "sources": [
+        "https://www.youtube.com/channel/UC9Ytb6_hvQB1cH5iLYGAYKg",
+        "http://www.mascarats.cat"
+      ]
+    },
+    {
+      "artist": "Ovella Xao",
+      "category": "Ska / Reggae",
+      "subcategory": "ska-classic",
+      "basis": "editorial",
+      "sources": [
+        "https://www.youtube.com/channel/UC61lW1hjlSwAgBDWO3yVRBw"
+      ]
+    },
+    {
+      "artist": "Repúblika Ska",
+      "category": "Ska / Reggae",
+      "subcategory": "ska-classic",
+      "basis": "editorial",
+      "sources": [
+        "https://www.auva.cat/entrevistem-a-republika-ska/",
+        "https://www.segre.com/ca/cultura/231227/republika-ska-torna-als-escenaris-10-anys-despres_293231.html"
+      ]
+    },
+    {
+      "artist": "Skafam",
+      "category": "Ska / Reggae",
+      "subcategory": "ska-punk",
+      "basis": "editorial",
+      "sources": [
+        "https://www.decibel.cat/grups/grups.php?accio=grup&id=329",
+        "https://www.viasona.cat/grup/skafam"
+      ]
+    },
+    {
+      "artist": "Terra Ferma Ska Band",
+      "category": "Ska / Reggae",
+      "subcategory": "ska-classic",
+      "basis": "editorial",
+      "sources": [
+        "https://surtdecasa.cat/camp/musica/terra-ferma-un-brot-de-llum"
+      ]
+    },
+    {
+      "artist": "Trast",
+      "category": "Ska / Reggae",
+      "subcategory": "ska-classic",
+      "basis": "editorial",
+      "sources": [
+        "https://surtdecasa.cat/camp/agenda/bonobos-trast/52854",
+        "https://www.youtube.com/channel/UC0vBr1BrHrWE07vDPy1tQcw"
       ]
     }
   ]

@@ -1,26 +1,328 @@
 {
-  "generatedAt": "2026-10-14T06:30:44.333Z",
-  "rawPublicVideoCount": 6844,
-  "feedVideoCount": 6321,
-  "acceptedMusicCount": 6280,
-  "categoryEligibleVideoCount": 6276,
+  "generatedAt": "2026-10-14T07:26:35.055Z",
+  "rawPublicVideoCount": 7399,
+  "feedVideoCount": 6815,
+  "acceptedMusicCount": 6740,
+  "categoryEligibleVideoCount": 6728,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
-    "before": 0,
+    "before": 61,
     "matched": 0,
-    "rejected": 0
+    "rejected": 61
   },
-  "rejectedOrReviewCount": 564,
-  "reviewCount": 529,
+  "rejectedOrReviewCount": 659,
+  "reviewCount": 581,
   "typeCounts": {
-    "song": 6104,
-    "live_song": 172,
-    "album": 4,
-    "other": 35,
-    "review": 529
+    "song": 6535,
+    "live_song": 193,
+    "album": 12,
+    "other": 78,
+    "review": 581
   },
   "channelsWithoutAcceptedMusic": [],
-  "rejectedSamples": [],
-  "publishedFeedVideoCount": 6321,
+  "rejectedSamples": [
+    {
+      "id": "5rrfpA_urag",
+      "title": "Emisión en directo de Al Quadrat",
+      "channelTitle": "AlQuadrat",
+      "durationSeconds": 0,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "2YyHYcQ6B3o",
+      "title": "AlQuadrat - Gente conectada (Making Of)",
+      "channelTitle": "AlQuadrat",
+      "durationSeconds": 733,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "FjmGWsGOj7U",
+      "title": "AlQuadrat & Cybee - Trencant Setges 2014",
+      "channelTitle": "AlQuadrat",
+      "durationSeconds": 27,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "BQf7_o35Abg",
+      "title": "Making-Of 'Llençols' - Presente (2013)",
+      "channelTitle": "AlQuadrat",
+      "durationSeconds": 171,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "818Czk8GpVM",
+      "title": "AlQuadrat News - Tardor 2013",
+      "channelTitle": "AlQuadrat",
+      "durationSeconds": 43,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "p0BRBZKAq0s",
+      "title": "Atzembla - Instint (Making Of)",
+      "channelTitle": "Atzembla",
+      "durationSeconds": 256,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "-etBwKIKNZw",
+      "title": "Atzembla - El tour viatge (Resum de Gira)",
+      "channelTitle": "Atzembla",
+      "durationSeconds": 208,
+      "musicReason": "no és a la discografia del canal Tema"
+    },
+    {
+      "id": "iLlfdYvqbrs",
+      "title": "Atzembla a Olazti (Nafarroa)",
+      "channelTitle": "Atzembla",
+      "durationSeconds": 484,
+      "musicReason": "no és a la discografia del canal Tema"
+    },
+    {
+      "id": "cyzGEa4TK2Q",
+      "title": "Atenció!",
+      "channelTitle": "El Veïnat",
+      "durationSeconds": 27,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "T3ztouUFFAc",
+      "title": "Eskassa Llibertat - Ràdio Llibertat: Última hora",
+      "channelTitle": "Eskassa Llibertat",
+      "durationSeconds": 22,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "6n9R00JR8r8",
+      "title": "Eskassa LLibertat TV (Acustic de Tot el Dia Xop a SOM Ràdio)",
+      "channelTitle": "Eskassa Llibertat",
+      "durationSeconds": 213,
+      "musicReason": "no és a la discografia del canal Tema"
+    },
+    {
+      "id": "p6588hiluts",
+      "title": "Eskassa LLibertat promoció 4 de Setembre 2010",
+      "channelTitle": "Eskassa Llibertat",
+      "durationSeconds": 77,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "sS0aqh2qRB8",
+      "title": "Súria (al carrer) Eskassa LLibertat",
+      "channelTitle": "Eskassa Llibertat",
+      "durationSeconds": 261,
+      "musicReason": "no és a la discografia del canal Tema"
+    },
+    {
+      "id": "kPgnFkemS1g",
+      "title": "eskassa llibertat a l'acampada jove '09 VICTORIA",
+      "channelTitle": "Eskassa Llibertat",
+      "durationSeconds": 234,
+      "musicReason": "no és a la discografia del canal Tema"
+    },
+    {
+      "id": "mOHzl2liiOU",
+      "title": "Kalabranda - Remei 2016 (Arenys de Munt)",
+      "channelTitle": "Kalabranda",
+      "durationSeconds": 394,
+      "musicReason": "no és a la discografia del canal Tema"
+    },
+    {
+      "id": "hM-b-7XKEUw",
+      "title": "Kalabranda - Concert 09/01/16 Sala Ovella Negra",
+      "channelTitle": "Kalabranda",
+      "durationSeconds": 322,
+      "musicReason": "no és a la discografia del canal Tema"
+    },
+    {
+      "id": "mW4WdkqeC4U",
+      "title": "NOU VIDEOCLIP - Kòdul",
+      "channelTitle": "Kòdul",
+      "durationSeconds": 21,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "IsFsZIKfs8c",
+      "title": "Com serà la nostra resposta? - Kòdul",
+      "channelTitle": "Kòdul",
+      "durationSeconds": 156,
+      "musicReason": "descripció inequívoca de contingut no musical"
+    },
+    {
+      "id": "OGW3wefaFlE",
+      "title": "23 d'abril - Que no ens parin!",
+      "channelTitle": "Kòdul",
+      "durationSeconds": 30,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "S2dJK9G0TKY",
+      "title": "Per Reis, videoclip d'Empremta",
+      "channelTitle": "Kòdul",
+      "durationSeconds": 17,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "uzLKQ1yRPFM",
+      "title": "Concert de comiat de La Bundu Band amb \"Àlex Vendrell\"",
+      "channelTitle": "La Bundu Band",
+      "durationSeconds": 37,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "YHignIFJuxQ",
+      "title": "Calamardo interpreta un fragment de \"Mai Sabrem\" de La Bundu Band",
+      "channelTitle": "La Bundu Band",
+      "durationSeconds": 17,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "E378kFY5H8w",
+      "title": "[TEASER] PORTES SENSE PANY",
+      "channelTitle": "Mascarats",
+      "durationSeconds": 16,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "34S-rc6s_q8",
+      "title": "Documental: Els carrers seran sempre nostres - Mascarats",
+      "channelTitle": "Mascarats",
+      "durationSeconds": 2621,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "9bBk8gd9eTA",
+      "title": "Tràiler documental \"Els carrers seran sempre nostres\" - Mascarats",
+      "channelTitle": "Mascarats",
+      "durationSeconds": 176,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "fRRVWa_5joU",
+      "title": "[TEASER] ELS CARRERS SERAN SEMPRE NOSTRES",
+      "channelTitle": "Mascarats",
+      "durationSeconds": 30,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "eDpCXqNFgEE",
+      "title": "Teaser - Mai més presons",
+      "channelTitle": "Mascarats",
+      "durationSeconds": 27,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "f1uuT4fEN5E",
+      "title": "Preses falses Maskarats",
+      "channelTitle": "Mascarats",
+      "durationSeconds": 23,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "uGY6X3LIir8",
+      "title": "WELCOME TO THE OVELLA XAO'S HOUSE - Making Of \"Cant Corral\"",
+      "channelTitle": "Ovella Xao",
+      "durationSeconds": 99,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "AR0sdWPFybA",
+      "title": "Terra Ferma | Tornem a la sembra - CONCERT ACÚSTIC des del confinament",
+      "channelTitle": "Terra Ferma Ska Band",
+      "durationSeconds": 1120,
+      "musicReason": "concert o sessió llarga, no una sola cançó"
+    },
+    {
+      "id": "oz16g7t-r_Q",
+      "title": "TERRA FERMA - NAUFRAGI - TEASER VIDEOCLIP",
+      "channelTitle": "Terra Ferma Ska Band",
+      "durationSeconds": 24,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "ZaMBTuiJFxk",
+      "title": "Terra Ferma - TEASER D'ELS NOUS BATECS",
+      "channelTitle": "Terra Ferma Ska Band",
+      "durationSeconds": 21,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "patDqpOfGYs",
+      "title": "Terra Ferma - 01. Preludi [Un Brot de Llum, 2018]",
+      "channelTitle": "Terra Ferma Ska Band",
+      "durationSeconds": 38,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "EgOBJrUJnWo",
+      "title": "Terra Ferma - Teaser 'Aixecant El Vol' (26/5/2015)",
+      "channelTitle": "Terra Ferma Ska Band",
+      "durationSeconds": 72,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "6P6-JWElz6o",
+      "title": "Still Young - The Cat Empire (cover Trast en català)",
+      "channelTitle": "Trast",
+      "durationSeconds": 260,
+      "musicReason": "no és a la discografia del canal Tema"
+    },
+    {
+      "id": "j2OQHn3CbHo",
+      "title": "24/5 estrenem 'Nova oportunitat'!",
+      "channelTitle": "Trast",
+      "durationSeconds": 16,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "fflwJY51LZE",
+      "title": "Gràcies família, gràcies Trastos",
+      "channelTitle": "Trast",
+      "durationSeconds": 144,
+      "musicReason": "no és a la discografia del canal Tema"
+    },
+    {
+      "id": "gri_R_07a88",
+      "title": "Trast a 'La Primera Pedra' de Rac1",
+      "channelTitle": "Trast",
+      "durationSeconds": 761,
+      "musicReason": "no és a la discografia del canal Tema"
+    },
+    {
+      "id": "n7Y0jte2VS4",
+      "title": "Trast a l'estudi - El Detonant (part 4)",
+      "channelTitle": "Trast",
+      "durationSeconds": 131,
+      "musicReason": "descripció inequívoca de contingut no musical"
+    },
+    {
+      "id": "hNPKC9WF3a0",
+      "title": "Trast a l'estudi - El Detonant (part 3)",
+      "channelTitle": "Trast",
+      "durationSeconds": 145,
+      "musicReason": "descripció inequívoca de contingut no musical"
+    },
+    {
+      "id": "EjclmKGd-g0",
+      "title": "Trast a l'estudi - El Detonant (part 2)",
+      "channelTitle": "Trast",
+      "durationSeconds": 115,
+      "musicReason": "descripció inequívoca de contingut no musical"
+    },
+    {
+      "id": "QSS17nuyWdw",
+      "title": "Trast a l'estudi - El Detonant (part 1)",
+      "channelTitle": "Trast",
+      "durationSeconds": 139,
+      "musicReason": "descripció inequívoca de contingut no musical"
+    },
+    {
+      "id": "dpNe4v61Hx0",
+      "title": "Trast en ruta - Gira #Diaridematinada",
+      "channelTitle": "Trast",
+      "durationSeconds": 173,
+      "musicReason": "no és a la discografia del canal Tema"
+    }
+  ],
+  "publishedFeedVideoCount": 6557,
   "publishedShortVideoCount": 0
 }

@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-10-14T06:30:44.333Z",
+  "generatedAt": "2026-10-14T07:26:35.055Z",
   "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
   "restrictedVideoCount": 23,
   "restrictedVideosAdded": [],
   "deepPagesFetched": 0,
   "deepChannelCount": 19,
-  "topicChannelCount": 348,
-  "governedChannelCount": 121,
+  "topicChannelCount": 364,
+  "governedChannelCount": 125,
   "topicCoverage": [
     {
       "id": "UCqaEtRht2jakBhGFLzS617w",
@@ -474,6 +474,14 @@
       "governs": true
     },
     {
+      "id": "UCG-fbhvlr6lGbl2DhKGFFhA",
+      "name": "Atzembla",
+      "songs": 42,
+      "matched": 40,
+      "coverage": 0.95,
+      "governs": true
+    },
+    {
       "id": "UC99ULQORmyZtD4bngOa48hw",
       "name": "Blaumut",
       "songs": 41,
@@ -655,6 +663,22 @@
       "songs": 28,
       "matched": 25,
       "coverage": 0.89,
+      "governs": true
+    },
+    {
+      "id": "UC0vBr1BrHrWE07vDPy1tQcw",
+      "name": "Trast",
+      "songs": 38,
+      "matched": 34,
+      "coverage": 0.89,
+      "governs": true
+    },
+    {
+      "id": "UC4BSwwuqk6O9ELABBgsgWGQ",
+      "name": "eskassallibertat",
+      "songs": 24,
+      "matched": 21,
+      "coverage": 0.88,
       "governs": true
     },
     {
@@ -938,6 +962,14 @@
       "governs": true
     },
     {
+      "id": "UCbxd8rksufs9jtwDGXrN8YQ",
+      "name": "Kalabranda",
+      "songs": 9,
+      "matched": 7,
+      "coverage": 0.78,
+      "governs": true
+    },
+    {
       "id": "UCfOJHONAYVLmmA5lwE117vw",
       "name": "Roba Estesa",
       "songs": 41,
@@ -1034,6 +1066,14 @@
       "governs": false
     },
     {
+      "id": "UCT3FFtIl_wpwLu0pL4ruUDA",
+      "name": "Terra Ferma",
+      "songs": 16,
+      "matched": 11,
+      "coverage": 0.69,
+      "governs": false
+    },
+    {
       "id": "UCK3HgaeRN0-5mJkqvyB1hBA",
       "name": "PAWNGANG HUSTLAS",
       "songs": 47,
@@ -1090,6 +1130,22 @@
       "governs": false
     },
     {
+      "id": "UCMr0zO3JvMllHSSfxSawDUQ",
+      "name": "bunduband",
+      "songs": 12,
+      "matched": 7,
+      "coverage": 0.58,
+      "governs": false
+    },
+    {
+      "id": "UCd8BT2JBV0_DQOKbseg7_4w",
+      "name": "Mascarats Grup",
+      "songs": 31,
+      "matched": 18,
+      "coverage": 0.58,
+      "governs": false
+    },
+    {
       "id": "UCUFf95lc9BoH8zy0Tn1Tm9w",
       "name": "gusset",
       "songs": 21,
@@ -1138,6 +1194,22 @@
       "governs": false
     },
     {
+      "id": "UCW0x-9uiF7yZMI9hEYTVMDQ",
+      "name": "El Veïnat",
+      "songs": 11,
+      "matched": 6,
+      "coverage": 0.55,
+      "governs": false
+    },
+    {
+      "id": "UCRy88DHkwZTozU2PfetY0bA",
+      "name": "Al Quadrat",
+      "songs": 41,
+      "matched": 22,
+      "coverage": 0.54,
+      "governs": false
+    },
+    {
       "id": "UCl7wAYdirfC_DZ26TdXBIDw",
       "name": "Artur Álvarez",
       "songs": 17,
@@ -1158,6 +1230,14 @@
       "name": "La Mousse",
       "songs": 2,
       "matched": 1,
+      "coverage": 0.5,
+      "governs": false
+    },
+    {
+      "id": "UCWwKFCPkzG5Njr-kcpl9dag",
+      "name": "Ovella Xao",
+      "songs": 38,
+      "matched": 19,
       "coverage": 0.5,
       "governs": false
     },
@@ -1191,6 +1271,22 @@
       "songs": 24,
       "matched": 11,
       "coverage": 0.46,
+      "governs": false
+    },
+    {
+      "id": "UCvvFaqxr4vKR-fuF87BwaYA",
+      "name": "Kòdul",
+      "songs": 39,
+      "matched": 18,
+      "coverage": 0.46,
+      "governs": false
+    },
+    {
+      "id": "UCa3diMkg9yChODo1MPUGgNw",
+      "name": "RepublikaSka",
+      "songs": 23,
+      "matched": 10,
+      "coverage": 0.43,
       "governs": false
     },
     {
@@ -1427,7 +1523,10 @@
     }
   ],
   "topicGovernance": "apply",
-  "governedReclassified": {},
+  "governedReclassified": {
+    "other": 11,
+    "song": 1
+  },
   "topicHiddenCount": 0,
   "topicChannels": [
     {
@@ -1536,6 +1635,13 @@
       "withClip": 10
     },
     {
+      "id": "UCSyQZszUB66TBDSGfMDcGNg",
+      "name": "AlQuadrat",
+      "tracks": 32,
+      "selected": 6,
+      "withClip": 22
+    },
+    {
       "id": "UCoOJY5SD3f0RvSk6uhRVZ_A",
       "name": "AMARGOR",
       "tracks": 15,
@@ -1632,6 +1738,13 @@
       "tracks": 17,
       "selected": 16,
       "withClip": 6
+    },
+    {
+      "id": "UC39UUfaafpeQRfaU5dcJ0ug",
+      "name": "Atzembla",
+      "tracks": 54,
+      "selected": 3,
+      "withClip": 33
     },
     {
       "id": "UCOEzuNu9yvO0AFTnSVKk4LQ",
@@ -1800,6 +1913,13 @@
       "tracks": 63,
       "selected": 38,
       "withClip": 9
+    },
+    {
+      "id": "UCB91Q5KFhtxFhqdnemnI5Ew",
+      "name": "CampikiPugui",
+      "tracks": 7,
+      "selected": 6,
+      "withClip": 0
     },
     {
       "id": "UCe_v26nxcgIzZxxvRDkHOrw",
@@ -1977,6 +2097,13 @@
       "withClip": 0
     },
     {
+      "id": "UCgbhHxO5Pvf0pCYr6f-BNyw",
+      "name": "Dring dublé",
+      "tracks": 1,
+      "selected": 1,
+      "withClip": 0
+    },
+    {
       "id": "UCOXyxBFPQ97GO6PQqiJSvkw",
       "name": "Dusminguet",
       "tracks": 78,
@@ -2024,6 +2151,13 @@
       "tracks": 106,
       "selected": 40,
       "withClip": 0
+    },
+    {
+      "id": "UC3rSnb7CCMA8IrOTEhwPuYg",
+      "name": "El Veïnat",
+      "tracks": 17,
+      "selected": 8,
+      "withClip": 6
     },
     {
       "id": "UCWmht-NuFvH4O3rkURaNFeQ",
@@ -2115,6 +2249,13 @@
       "tracks": 3,
       "selected": 3,
       "withClip": 0
+    },
+    {
+      "id": "UC1iF5VxSLKfoIzlpbtQVL5g",
+      "name": "Eskassa Llibertat",
+      "tracks": 22,
+      "selected": 1,
+      "withClip": 18
     },
     {
       "id": "UCv6aLx9OL9Qzc2nmNT5_IdA",
@@ -2509,6 +2650,13 @@
       "withClip": 31
     },
     {
+      "id": "UCjL17J5dAE9sMDuX4VvhP1Q",
+      "name": "Kalabranda",
+      "tracks": 9,
+      "selected": 0,
+      "withClip": 7
+    },
+    {
       "id": "UCGXRDt9r8BA1eJbl3dxh1GA",
       "name": "Karda Fàstik",
       "tracks": 12,
@@ -2528,6 +2676,13 @@
       "tracks": 30,
       "selected": 26,
       "withClip": 0
+    },
+    {
+      "id": "UC04isma3OjnDslXzt-Ed3Jw",
+      "name": "Kòdul",
+      "tracks": 27,
+      "selected": 8,
+      "withClip": 13
     },
     {
       "id": "UCC66jsgEM01kvhvwJ59xttA",
@@ -2563,6 +2718,20 @@
       "tracks": 53,
       "selected": 40,
       "withClip": 0
+    },
+    {
+      "id": "UCwPrdShME-yrqB1hDvkUqPw",
+      "name": "La Bundu Band",
+      "tracks": 56,
+      "selected": 33,
+      "withClip": 5
+    },
+    {
+      "id": "UCeXegD6_JMqPbUBEzkGinHw",
+      "name": "LA BUNDU BAND (QUIMERA RECORDS 2010))",
+      "tracks": 14,
+      "selected": 11,
+      "withClip": 5
     },
     {
       "id": "UC5u7o5L26RuDowQsqOJDm0w",
@@ -2887,6 +3056,13 @@
       "withClip": 6
     },
     {
+      "id": "UC9Ytb6_hvQB1cH5iLYGAYKg",
+      "name": "Mascarats",
+      "tracks": 20,
+      "selected": 5,
+      "withClip": 15
+    },
+    {
       "id": "UCwg6xDQi5POlksfrsjjwFyA",
       "name": "Mazoni",
       "tracks": 167,
@@ -3067,6 +3243,13 @@
       "tracks": 34,
       "selected": 8,
       "withClip": 12
+    },
+    {
+      "id": "UC61lW1hjlSwAgBDWO3yVRBw",
+      "name": "Ovella Xao",
+      "tracks": 26,
+      "selected": 10,
+      "withClip": 16
     },
     {
       "id": "UC7b5PnElhJTDn_kM4ipKO7g",
@@ -3293,6 +3476,13 @@
       "withClip": 19
     },
     {
+      "id": "UCmKA6KQvu6Ol0gv7PHNMPqQ",
+      "name": "Repúblika Ska",
+      "tracks": 13,
+      "selected": 1,
+      "withClip": 10
+    },
+    {
       "id": "UCqcQJRrcXc_rLSwGVo4dP5g",
       "name": "Rita Payes",
       "tracks": 61,
@@ -3440,6 +3630,13 @@
       "withClip": 0
     },
     {
+      "id": "UCw9QWACP-8N1COxwr8u8Ckw",
+      "name": "Skafam",
+      "tracks": 14,
+      "selected": 12,
+      "withClip": 0
+    },
+    {
       "id": "UCLlsd1LOmkAMoqbSE36JBZg",
       "name": "Skaparapid",
       "tracks": 5,
@@ -3552,6 +3749,13 @@
       "withClip": 20
     },
     {
+      "id": "UCyS2GxjCglNX_8TY7LDlmlw",
+      "name": "Terra Ferma Ska Band",
+      "tracks": 29,
+      "selected": 15,
+      "withClip": 9
+    },
+    {
       "id": "UCrAazkwonIdGi_TGkzXkoCw",
       "name": "Terratombats",
       "tracks": 24,
@@ -3634,6 +3838,13 @@
       "tracks": 495,
       "selected": 40,
       "withClip": 17
+    },
+    {
+      "id": "UCajdvXC8lGH7n7d8mrhyZJw",
+      "name": "Trast",
+      "tracks": 34,
+      "selected": 2,
+      "withClip": 32
     },
     {
       "id": "UCF6nxIBqp7vuVu51PGC7x5w",
@@ -3839,36 +4050,34 @@
       "withClip": 0
     }
   ],
-  "indexedChannelCount": 625,
-  "resolvedChannelCount": 625,
-  "feedChannelCount": 625,
-  "rawPublicVideoCount": 6844,
-  "feedVideoCount": 6321,
-  "acceptedMusicCount": 6280,
-  "categoryEligibleVideoCount": 6276,
+  "indexedChannelCount": 653,
+  "resolvedChannelCount": 653,
+  "feedChannelCount": 653,
+  "rawPublicVideoCount": 7399,
+  "feedVideoCount": 6815,
+  "acceptedMusicCount": 6740,
+  "categoryEligibleVideoCount": 6728,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
-    "before": 0,
+    "before": 61,
     "matched": 0,
-    "rejected": 0
+    "rejected": 61
   },
-  "contentReviewCount": 529,
+  "contentReviewCount": 581,
   "contentTypeCounts": {
-    "song": 6104,
-    "live_song": 172,
-    "album": 4,
-    "other": 35,
-    "review": 529
+    "song": 6535,
+    "live_song": 193,
+    "album": 12,
+    "other": 78,
+    "review": 581
   },
   "unresolvedChannelIds": [],
   "channelsWithoutUploads": [],
   "channelsWithoutVideos": [
-    "UCnjicJo0XLp_UQYr7QqDZzQ",
-    "UCo_8QxIsvo49zaYqqeYxsOQ",
-    "UC8qc9EKB0In0JdqOwu896mQ"
+    "UCjL17J5dAE9sMDuX4VvhP1Q"
   ],
   "channelsWithoutAcceptedMusic": [],
   "allIndexedChannelsVisible": true,
-  "publishedFeedVideoCount": 6321,
+  "publishedFeedVideoCount": 6557,
   "publishedShortVideoCount": 0
 }
