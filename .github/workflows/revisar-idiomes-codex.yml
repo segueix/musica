@@ -1,0 +1,68 @@
+name: Revisió d'idiomes amb Codex (proves sense API)
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, codex/idiomes-auto-20261014]
+    paths:
+      - AGENTS.md
+      - .agents/skills/revisar-idiomes/**
+      - scripts/revisar_idiomes_codex.cjs
+      - scripts/test_revisio_codex.cjs
+      - docs/REVISIO_AUTOMATICA_IDIOMES.md
+      - .github/workflows/revisar-idiomes-codex.yml
+  pull_request:
+    paths:
+      - scripts/revisar_idiomes_codex.cjs
+      - scripts/test_revisio_codex.cjs
+      - .github/workflows/revisar-idiomes-codex.yml
+
+permissions:
+  contents: read
+
+concurrency:
+  group: idiomes-codex-test-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  proves:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+      - run: node --test scripts/test_revisio_codex.cjs
+      - name: Prova amb la cua real, sense resoldre ni publicar decisions
+        run: |
+          mkdir -p reports/idiomes-codex
+          node scripts/revisar_idiomes_codex.cjs estat > reports/idiomes-codex/estat.json
+          node scripts/revisar_idiomes_codex.cjs prepara --limit=50 > reports/idiomes-codex/preparacio.json
+          node scripts/revisar_idiomes_codex.cjs estat
+          git diff --exit-code -- data/ js/ sw.js
+          cp -r docs/revisions/idiomes-codex reports/idiomes-codex/lots
+      - uses: actions/upload-artifact@v4
+        with:
+          name: idiomes-codex-prova-${{ github.run_id }}
+          path: reports/idiomes-codex/
+          retention-days: 14
+
+  qualitat:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - name: Lint independent del resultat dels tests
+        run: npm run lint
+      - name: Bateria general
+        run: npm test -- --maxWorkers=2

@@ -9,3 +9,7 @@ feed_updates.js
 # Feed reduït generat pel pipeline però no llegit per cap client (només l'usen els
 # scripts que el generen). Es manté al disc, fora de git.
 data/recent-feed.json
+
+# Transaccions locals de revisió Codex; no publicar còpies de recuperació.
+.cache/idiomes-codex*
+*.idiomes-tmp
