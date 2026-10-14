@@ -2,7 +2,7 @@ name: Revisar ska grup 1
 on:
   push:
     branches: [main]
-    paths: ['scripts/revisions/descobrir_ska_grup1.js']
+    paths: ['scripts/revisions/descobrir_ska_grup1.js', '.github/workflows/revisar-ska-grup1.yml']
   workflow_dispatch:
 concurrency:
   group: music-data-writer
@@ -25,4 +25,5 @@ jobs:
           YOUTUBE_API_KEY_SERVER: ${{ secrets.YOUTUBE_API_KEY_SERVER }}
         run: node scripts/revisions/descobrir_ska_grup1.js
       - name: Desa les metadades
-        run: bash scripts/publicar_dades.sh 'docs: descoberta ska grup 1' docs/revisions/2026-10-14-ska1*
+        run: |
+          bash scripts/publicar_dades.sh 'docs: descoberta ska grup 1' docs/revisions/2026-10-14-ska1*
