@@ -5,7 +5,7 @@ const assert = require('node:assert/strict');
 const OUT = 'docs/revisions/2026-10-14-ska1';
 const norm = x => String(x || '').normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
 const targets = [
-{name:'Ki Sap',slug:'ki-sap',aliases:['Ki-Sap','Ki Sap Official'],queries:['"Ki Sap" "A vora barranc"','"Ki Sap" reggae','"Ki Sap" Topic']},
+{name:'Ki Sap',slug:'ki-sap',known:['UCo_8QxIsvo49zaYqqeYxsOQ','UC8qc9EKB0In0JdqOwu896mQ','UCnjicJo0XLp_UQYr7QqDZzQ'],aliases:['Ki-Sap','Ki Sap Official'],queries:['"Ki Sap" "A vora barranc"','"Ki Sap" reggae','"Ki Sap" Topic']},
 {name:'Dekrèpits',slug:'dekrepits',aliases:['Dekrepits','dekrepitsTV'],queries:['"Dekrepits" Boletaires'],known:['UC0YqrtTHYipbZsG119z2k7g','UCKTrsy9eH-cD9geEnh2SB3w']}
 ];
 async function main() {
