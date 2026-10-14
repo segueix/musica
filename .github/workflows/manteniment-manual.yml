@@ -1,0 +1,44 @@
+name: Manteniment musical manual
+
+on:
+  workflow_dispatch:
+    inputs:
+      tasca:
+        description: "Només per petició expressa; les revisions habituals es fan a la sessió"
+        type: choice
+        default: arxiu
+        options: [arxiu, afinitats, ocults, aprimar, auditoria]
+permissions:
+  contents: write
+concurrency:
+  group: music-data-writer
+  cancel-in-progress: false
+jobs:
+  manteniment:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+      - name: Executa només la tasca triada
+        env:
+          TASCA: ${{ inputs.tasca }}
+        run: |
+          git pull --ff-only origin main
+          case "$TASCA" in
+            arxiu)
+              node scripts/purgar_canals_feed.js
+              node scripts/archivar_feed_musical.js
+              node scripts/generar_index_cerca.js ;;
+            afinitats) node scripts/generar_afinitats_musica.js --repair-catalog ;;
+            ocults) node scripts/ocultar_titols_castella.js ;;
+            aprimar) node scripts/aprimar_feed.js ;;
+            auditoria) node scripts/auditar_elegibilitat_musica.js ;;
+            *) echo 'Tasca no admesa' >&2; exit 2 ;;
+          esac
+          bash scripts/publicar_dades.sh "data: manteniment manual ($TASCA)" data js/channels-ca.json js/features/music-affinity-catalog.js

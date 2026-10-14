@@ -1,0 +1,90 @@
+name: Validar base musical
+
+on:
+  push:
+    paths:
+      - "data/artistes-musica.json"
+      - "data/artistes-musica.schema.json"
+      - "scripts/validar_artistes_musica.js"
+      - "scripts/enriquir_artistes_musicbrainz.js"
+      - "scripts/cercar_canals_youtube.js"
+      - "tests/musicbrainz-enrichment.test.js"
+      - "tests/youtube-search-candidates.test.js"
+      - "data/music-genres.json"
+      - "scripts/enriquir_generes_musica.js"
+      - "tests/music-genres.test.js"
+      - "tests/arxiu-musical.test.js"
+      - "scripts/lib/arxiu_musical.js"
+      - "scripts/lib/albums_musica.js"
+      - "scripts/archivar_feed_musical.js"
+      - "tests/albums-musica.test.js"
+      - "scripts/update_music_history_views.js"
+      - "scripts/update_music_feed.js"
+      - "scripts/lib/subtitols_castella.js"
+      - "tests/subtitols-castella.test.js"
+      - ".github/workflows/actualitzar-feed-musica.yml"
+      - ".github/workflows/validar-musica.yml"
+  pull_request:
+    paths:
+      - "data/artistes-musica.json"
+      - "data/artistes-musica.schema.json"
+      - "scripts/validar_artistes_musica.js"
+      - "scripts/enriquir_artistes_musicbrainz.js"
+      - "scripts/cercar_canals_youtube.js"
+      - "tests/musicbrainz-enrichment.test.js"
+      - "tests/youtube-search-candidates.test.js"
+      - "data/music-genres.json"
+      - "scripts/enriquir_generes_musica.js"
+      - "tests/music-genres.test.js"
+      - "tests/arxiu-musical.test.js"
+      - "scripts/lib/arxiu_musical.js"
+      - "scripts/lib/albums_musica.js"
+      - "scripts/archivar_feed_musical.js"
+      - "tests/albums-musica.test.js"
+      - "scripts/update_music_history_views.js"
+      - "scripts/lib/subtitols_castella.js"
+      - "tests/subtitols-castella.test.js"
+      - ".github/workflows/validar-musica.yml"
+  workflow_dispatch:
+
+jobs:
+  valida:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Setup Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: "20"
+
+      - name: Instal·la dependències
+        run: npm ci
+
+      - name: Test parser MusicBrainz
+        run: npx vitest run tests/musicbrainz-enrichment.test.js
+
+      - name: Test puntuació cerca YouTube
+        run: npx vitest run tests/youtube-search-candidates.test.js
+
+      - name: Test normalització de gèneres
+        run: npx vitest run tests/music-genres.test.js
+
+      - name: Comprova sintaxi dels generadors
+        run: |
+          node --check scripts/update_music_feed.js
+          node --check scripts/archivar_feed_musical.js
+          node --check scripts/update_music_history_views.js
+
+      - name: Prova feed calent i historial
+        run: npx vitest run tests/arxiu-musical.test.js
+
+      - name: Prova coherència del pipeline musical
+        run: npx vitest run tests/music-content-overrides.test.js tests/subtitols-castella.test.js
+
+      - name: Prova metadades de discos sense API
+        run: npx vitest run tests/albums-musica.test.js
+
+      - name: Valida la base d'artistes
+        run: node scripts/validar_artistes_musica.js

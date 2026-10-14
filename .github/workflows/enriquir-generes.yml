@@ -1,12 +1,7 @@
 name: Enriquir gèneres musicals
 
+# Manteniment programat o execució manual explícita. Cap push ni encadenament.
 on:
-  push:
-    branches: [main]
-    paths:
-      - "data/music-genres.json"
-      - "scripts/enriquir_generes_musica.js"
-      - ".github/workflows/enriquir-generes.yml"
   schedule:
     - cron: "17 6 * * 0"
   workflow_dispatch:
@@ -14,71 +9,27 @@ on:
 concurrency:
   group: music-data-writer
   cancel-in-progress: false
-
+permissions:
+  contents: write
 jobs:
   generes:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 15
-
-    permissions:
-      contents: write
-
     steps:
-      - name: Checkout
-        uses: actions/checkout@v5
-
-      - name: Setup Node
-        uses: actions/setup-node@v5
+      - uses: actions/checkout@v5
         with:
-          node-version: "20"
-
-      - name: Sincronitza amb l'últim main
+          ref: main
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+      - name: Sincronitza main
+        run: git pull --ff-only origin main
+      - name: Enriqueix i valida
         run: |
-          git fetch origin main
-          git reset --hard origin/main
-
-      - name: Enriqueix gèneres
-        run: node scripts/enriquir_generes_musica.js
-
-      - name: Valida la base
-        run: node scripts/validar_artistes_musica.js
-
-      - name: Actualitza i comprova totes les afinitats
-        run: |
-          node scripts/generar_afinitats_musica.js --repair-catalog
-          node scripts/actualitzar_versio_sw.js
-
-      - name: Publica canvis
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data js/channels-ca.json js/features/music-affinity-catalog.js sw.js
-
-          if git diff --cached --quiet; then
-            echo "Sense canvis de gèneres."
-            exit 0
-          fi
-
-          git commit -m "data: actualitza gèneres musicals"
-
-          if git push origin HEAD:main; then
-            exit 0
-          fi
-
-          echo "Main ha avançat; recalculant gèneres sobre l'últim estat..."
-          git fetch origin main
-          git reset --hard origin/main
           node scripts/enriquir_generes_musica.js
           node scripts/validar_artistes_musica.js
           node scripts/generar_afinitats_musica.js --repair-catalog
-          node scripts/actualitzar_versio_sw.js
-          git add data js/channels-ca.json js/features/music-affinity-catalog.js sw.js
-
-          if git diff --cached --quiet; then
-            echo "Sense canvis després de resincronitzar."
-            exit 0
-          fi
-
-          git commit -m "data: actualitza gèneres musicals"
-          git push origin HEAD:main
-
+      - name: Desa les dades; la publicació espera al torn diari
+        run: >-
+          bash scripts/publicar_dades.sh "data: actualitza gèneres musicals" data js/channels-ca.json js/features/music-affinity-catalog.js

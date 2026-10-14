@@ -138,54 +138,38 @@ describe('què fa el workflow «Actualitzar feed musical»', () => {
     const summer = new Date('2026-07-01T18:04:00Z');
     const winter = new Date('2026-12-01T19:20:00Z');
 
-    it('l’actualització general és a les 20 h de Madrid, a l’estiu i a l’hivern', () => {
+    it('un sol cron local a les 20 h funciona tot l’any', () => {
         expect(madridOffsetHours(summer)).toBe(2);
         expect(madridOffsetHours(winter)).toBe(1);
-        expect(generalSchedule(summer)).toBe('0 18 * * *');
-        expect(generalSchedule(winter)).toBe('0 19 * * *');
-        expect(decideScope({ event: 'schedule', schedule: '0 18 * * *', now: summer })).toMatchObject({
-            work: true,
-            runApi: true,
-            targetIds: [],
-        });
-        expect(decideScope({ event: 'schedule', schedule: '0 19 * * *', now: summer })).toMatchObject({
-            work: false,
-            runApi: false,
-        });
-        expect(decideScope({ event: 'schedule', schedule: '0 19 * * *', now: winter }).runApi).toBe(true);
-        expect(decideScope({ event: 'schedule', schedule: '0 18 * * *', now: winter }).work).toBe(false);
+        expect(generalSchedule(summer)).toBe('0 20 * * *');
+        expect(generalSchedule(winter)).toBe('0 20 * * *');
+        for (const now of [summer, winter]) {
+            expect(decideScope({ event: 'schedule', schedule: '0 20 * * *', now })).toMatchObject({
+                work: true, runApi: true, targetIds: [],
+            });
+            expect(decideScope({ event: 'schedule', schedule: '0 18 * * *', now }).work).toBe(false);
+            expect(decideScope({ event: 'schedule', schedule: '0 19 * * *', now }).work).toBe(false);
+        }
     });
 
-    it('només baixes: es purguen sense API; altes: només els canals nous', () => {
-        expect(decideScope({ event: 'workflow_run', removed: [id(3)] })).toMatchObject({
-            work: true,
-            runApi: false,
-            targetIds: [],
-        });
-        expect(decideScope({ event: 'workflow_run', added: [id(5)], removed: [id(3)] })).toMatchObject({
-            work: true,
-            runApi: true,
-            targetIds: [id(5)],
-        });
-        expect(decideScope({ event: 'workflow_run' })).toMatchObject({ work: false, runApi: false });
-    });
-
-    it('un push només consulta els canals revisats; la resta espera a les 20 h', () => {
-        expect(decideScope({ event: 'push', reviewed: [id(7)] })).toMatchObject({ runApi: true, targetIds: [id(7)] });
-        expect(decideScope({ event: 'push' })).toMatchObject({ work: false, runApi: false });
+    it('altes, baixes i revisions no encadenen actualitzacions de YouTube', () => {
+        for (const event of ['push', 'workflow_run', 'pull_request']) {
+            expect(decideScope({ event, added: [id(5)], reviewed: [id(7)], removed: [id(3)] })).toMatchObject({
+                work: false, runApi: false, targetIds: [], removed: [id(3)],
+            });
+        }
         expect(decideScope({ event: 'workflow_dispatch' })).toMatchObject({ runApi: true, targetIds: [] });
     });
 
-    it('el workflow té els dos crons de les 20 h, purga les baixes i publica amb rebase', () => {
+    it('el workflow té un sol cron local, purga baixes i publica amb rebase', () => {
         const workflow = read('.github/workflows/actualitzar-feed-musica.yml');
-        expect(workflow).toContain('cron: "0 18 * * *"');
-        expect(workflow).toContain('cron: "0 19 * * *"');
-        expect(workflow.match(/cron:/g)).toHaveLength(2);
+        expect(workflow).toContain('cron: "0 20 * * *"');
+        expect(workflow).toContain('timezone: "Europe/Madrid"');
+        expect(workflow.match(/cron:/g)).toHaveLength(1);
+        expect(workflow).not.toMatch(/^  (push|workflow_run):/m);
         expect(workflow).toContain('decideScope(');
         expect(workflow).toContain('node scripts/purgar_canals_feed.js');
         expect(workflow).toContain('bash scripts/publicar_dades.sh');
-        expect(workflow).not.toContain('scripts/update_music_feed.js"\n');
-        // Només la generació gasta quota
         expect(workflow).toMatch(/- name: Genera feed\n\s+if: steps\.scope\.outputs\.run_api == 'true'/);
     });
 

@@ -3,13 +3,27 @@ name: Publicar previsualitzacions Música
 on:
   push:
     branches: [main]
+    # Només fitxers del sistema; un canvi de catàleg no inicia un desplegament.
     paths:
-      - 'data/**'
-      - 'js/**'
+      - '*.html'
+      - 'css/**'
+      - 'js/**/*.js'
+      - '!js/features/music-affinity-catalog.js'
+      - 'sw.js'
+      - 'manifest.json'
+      - 'assets/**'
+      - 'images/**'
+      - 'img/**'
+      - 'icons/**'
+      - 'fonts/**'
+      - 'robots.txt'
       - 'scripts/generar_pagines_compartir.js'
+      - 'scripts/actualitzar_versio_sw.js'
       - '.github/workflows/publicar-comparticio-musica.yml'
   workflow_run:
-    workflows: ['Actualitzar feed musical', 'Actualitzar feed només dels grups nous', 'Arxivar feed musical', 'Aplicar vídeos ocults', 'Actualitzar Service Worker Música', "Mantenir cobertura d'afinitats"]
+    branches: [main]
+    # Una sola publicació després del torn diari o d'una actualització MANUAL demanada.
+    workflows: ['Actualitzar feed musical', 'Actualitzar feed només dels grups nous', 'Actualitzador feed musical (manual)', 'Manteniment musical manual']
     types: [completed]
   workflow_dispatch:
 
@@ -24,8 +38,12 @@ permissions:
 
 jobs:
   publica:
-    if: github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'main')
+    if: >-
+      github.ref == 'refs/heads/main' &&
+      (github.event_name != 'workflow_run' ||
+      (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'main'))
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -35,28 +53,19 @@ jobs:
           ref: main
       - uses: actions/setup-node@v5
         with:
-          node-version: '20'
-      - name: Sincronitza i genera les pàgines
+          node-version: '22'
+      - name: Genera pàgines i versió del Service Worker en la mateixa feina
         run: |
           git pull --ff-only origin main
           node scripts/generar_pagines_compartir.js
           node scripts/actualitzar_versio_sw.js
-      - name: Desa les pàgines per als desplegaments des de main
-        run: |
-          git config user.name 'github-actions[bot]'
-          git config user.email 'github-actions[bot]@users.noreply.github.com'
-          git add compartir sw.js
-          if ! git diff --cached --quiet; then
-            git commit -m 'chore: actualitza previsualitzacions musicals'
-            git push origin HEAD:main
-          fi
+          bash scripts/publicar_dades.sh "chore: actualitza previsualitzacions musicals" compartir sw.js
       - name: Prepara el lloc estàtic
         run: |
           mkdir _site
           git archive HEAD | tar -x -C _site
-          rm -rf _site/.github _site/tests _site/scripts _site/functions _site/docs
-      # Un nom per intent: en tornar a executar el job, l'artefacte del primer intent continua
-      # existint i deploy-pages fallava amb «Multiple artifacts named github-pages».
+          rm -rf _site/.github _site/.agents _site/tests _site/scripts _site/functions _site/docs
+          rm -f _site/AGENTS.md _site/CLAUDE.md
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site

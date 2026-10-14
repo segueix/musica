@@ -17,3 +17,13 @@ Quan l’usuari demani revisar/validar pendents d’idioma, fer un lot o continu
 ## Proves
 
 `node --test scripts/test_revisio_codex.cjs` comprova aquest procés sense xarxa ni dependències. Executa també les proves existents rellevants i `npm run lint`. No atribueixis errors al codi anterior sense comparar amb la base.
+
+## Quota de GitHub Actions (2026-10-14)
+
+La política vigent és `docs/ACCIONS_I_QUOTA.md` i preval sobre els disparadors històrics descrits a CLAUDE.md.
+- No creïs workflows temporals per a grups, lots, captures de context o revisions. Fes aquestes feines i proves dins la sessió.
+- No executis Actions, reintents ni actualitzacions de YouTube per una alta, una baixa, una revisió o un commit editorial. Els grups esperen al torn diari de les 20 h Europe/Madrid, tret d'una petició expressa de l'usuari per avançar-lo.
+- No restauris els workflows de `docs/actions-arxivades/2026-10-14/` a `.github/workflows`: són una còpia històrica, no instruccions vigents.
+- Una PR de dades no ha d'engegar runners. Les comprovacions del sistema són una sola validació a la PR; no la repeteixis en push, fusió, contra la base i després sobre main.
+- Publicació, Service Worker i previsualitzacions comparteixen una feina. No afegeixis encadenaments per arxiu, auditoria ni afinitats.
+- Abans de publicar canvis de workflows, executa `node --test scripts/test_workflow_quota.cjs` i comprova permisos, filtres i calendari.

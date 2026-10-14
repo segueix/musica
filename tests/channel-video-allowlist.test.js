@@ -11,10 +11,10 @@ import {
 } from '../scripts/lib/filtre_videos_canal.js';
 
 describe('llista blanca de vídeos per canal', () => {
-  it('reintenta només les seleccions del commit validat encara que els canals ja existeixin', () => {
+  it('les seleccions del commit validat esperen al torn diari', () => {
     const scope = decideScope({ event: 'workflow_run', added: [], reviewed: ['UCtopic', 'UCcollection'] });
-    expect(scope.runApi).toBe(true);
-    expect(scope.targetIds).toEqual(['UCcollection', 'UCtopic']);
+    expect(scope.runApi).toBe(false);
+    expect(scope.targetIds).toEqual([]);
     expect(decideScope({ event: 'workflow_run' }).runApi).toBe(false);
   });
   it('recupera un fals Short absent del feed sense tancar el repertori futur del canal', () => {
