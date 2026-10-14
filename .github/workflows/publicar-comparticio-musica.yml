@@ -55,9 +55,14 @@ jobs:
           mkdir _site
           git archive HEAD | tar -x -C _site
           rm -rf _site/.github _site/tests _site/scripts _site/functions _site/docs
+      # Un nom per intent: en tornar a executar el job, l'artefacte del primer intent continua
+      # existint i deploy-pages fallava amb «Multiple artifacts named github-pages».
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
+          name: github-pages-${{ github.run_attempt }}
       - name: Publica a GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          artifact_name: github-pages-${{ github.run_attempt }}
