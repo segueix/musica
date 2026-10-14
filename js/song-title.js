@@ -167,7 +167,7 @@
         (Array.isArray(list) ? list : [list]).forEach(value => {
             // «Artista - Topic» (canal automàtic de YouTube Music) i «ArtistaVEVO»
             const cleaned = String(value ?? '')
-                .replace(/(?:\s*[-–—]\s*|\s+)topic\s*$/i, '')
+                .replace(/(?:\s*[-–—]\s*|\s+)(?:t[oò]pic|tema|oficial|official)\s*$/i, '')
                 .replace(/vevo\s*$/i, '')
                 .trim();
             const list2 = words(cleaned);
@@ -226,6 +226,19 @@
 
     function removeArtist(text, names) {
         if (!names.length) return text;
+
+        // «Artista - Topic - Cançó» i «Cançó - Artista - Tema»: el marcador
+        // pertany al crèdit del canal, mai a una cançó que es digui «Tema».
+        const autoChannel = text.match(/^(.+?)\s[-–—]\s(?:t[oò]pic|tema)\s[-–—]\s(.+)$/i);
+        if (autoChannel) {
+            const match = matchName(autoChannel[1], names);
+            if (match && isCredit(match, 0)) return autoChannel[2];
+        }
+        const channelTail = text.match(/^(.+)\s[-–—]\s(.+?)\s[-–—]\s(?:t[oò]pic|tema)$/i);
+        if (channelTail) {
+            const match = matchName(channelTail[2], names);
+            if (match && isCredit(match, 0)) return channelTail[1];
+        }
 
         // Crèdit a l'inici: «Artista - Cançó», «Artista, Convidat & Altre - Cançó»
         const dash = text.match(new RegExp(`^(.+?)${DASH.source}(.+)$`));

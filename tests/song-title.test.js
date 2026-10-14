@@ -62,6 +62,14 @@ describe('referències a videoclip, vídeo i oficial', () => {
 });
 
 describe('nom de l’artista', () => {
+    it('neteja els crèdits Topic/Tema sense esborrar un títol legítim', () => {
+        expect(clean('Atzembla - Clara nit (video ofocial)', 'Atzembla - Tema')).toBe('Clara nit');
+        expect(clean('Atzembla - Topic - Clara nit', 'Atzembla - Topic')).toBe('Clara nit');
+        expect(clean('Clara nit - Atzembla - Tema', 'Atzembla - Tema')).toBe('Clara nit');
+        expect(clean('Trast - Serem - oficial', 'Trast Oficial')).toBe('Serem');
+        expect(clean('El tema', 'Atzembla - Tema')).toBe('El tema');
+        expect(clean('Atzembla - Tema', 'Atzembla - Topic')).toBe('Tema');
+    });
     it('al davant: «Artista - Cançó» i amb convidats', () => {
         expect(clean('Derbi Junior - El vi que alimenta', 'Derbi Junior')).toBe('El vi que alimenta');
         expect(

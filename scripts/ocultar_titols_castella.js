@@ -921,6 +921,10 @@ for (const canal of ["AlQuadrat","Al Quadrat","AlQuadrat - Topic","Al Quadrat - 
     };
 }
 
+// Baixa explícita de l'usuari (2026-10-14), contrastada amb la lletra publicada
+// pel grup: https://www.youtube.com/watch?v=jCpKVgzWtUI
+afegeix(['Repúblika Ska', 'RepublikaSka', 'República Ska', 'Repúblika Ska - Topic', 'Repúblika Ska - Tema'], ['Mi amigo José', 'Mi amigo Jose']);
+
 function esCastella(video) {
     const regla = REGLES[video.channelTitle];
     if (!regla) return false;

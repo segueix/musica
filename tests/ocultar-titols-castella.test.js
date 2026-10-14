@@ -5,6 +5,17 @@ import { describe, expect, it } from 'vitest';
 const { esCastella } = createRequire(import.meta.url)('../scripts/ocultar_titols_castella.js');
 const song = (channelTitle, title) => ({ channelTitle, title, contentType: 'song' });
 
+describe('Repúblika Ska: baixa editorial persistent', () => {
+    it('retira Mi Amigo José del canal oficial i dels canals automàtics', () => {
+        for (const canal of ['RepublikaSka', 'Repúblika Ska', 'Repúblika Ska - Topic', 'Repúblika Ska - Tema']) {
+            expect(esCastella(song(canal, '06. MI AMIGO JOSÉ - REPÚBLIKA SKA (JA SOM AQUÍ!)'))).toBe(true);
+            expect(esCastella(song(canal, 'Mi amigo Jose'))).toBe(true);
+            expect(esCastella(song(canal, 'Entre llençols'))).toBe(false);
+        }
+        expect(esCastella(song('Un altre artista', 'Mi amigo José'))).toBe(false);
+    });
+});
+
 describe('AlQuadrat: revisió de títols i lletres del 2026-10-14', () => {
     const canals = ['AlQuadrat', 'Al Quadrat', 'AlQuadrat - Topic', 'Al Quadrat - Topic'];
 

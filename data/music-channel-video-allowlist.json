@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-13T16:57:07.006Z",
+  "updatedAt": "2026-10-14T09:50:00.000Z",
   "description": "Llista blanca per a canals on Segueix Música només ha d'ingerir vídeos concrets. Admet títols exactes, fragments obligatoris i fragments exclosos.",
   "channels": {
     "UCKpscwdWlVaMqcA81vLI7OA": {
@@ -2258,10 +2258,22 @@
     },
     "UCxZhZaJrcH8nHdrKx4ij0sw": {
       "artist": "Gato Pérez",
-      "note": "Alta manual 2026-10-07. Selecció inicial de repertori amb llista tancada per canal. No s’autoritza tota la discografia; la resta queda pendent de revisió.",
+      "note": "Alta manual 2026-10-07. Selecció inicial de repertori amb llista tancada per canal. No s’autoritza tota la discografia; la resta queda pendent de revisió. Revisió 2026-10-14: s’afegeixen les deu pistes de Flaires de Barcelunya (EMI, 1983), disc íntegrament català documentat a La Fonoteca; IDs i ordre a llancaments-musicals.json.",
       "allowedTitles": [
         "La rumba de Barcelona",
-        "Rumba de Barcelona"
+        "Rumba de Barcelona",
+        "Els morenus d'en Martínez",
+        "L'hereu de Can Bruguera",
+        "La dama de l'Ovni",
+        "Mariner de Ribera",
+        "Tanguillu canicular",
+        "Rumba laietana",
+        "Al carrer de la cera",
+        "Senyor Botiguer",
+        "Passejant Del Vallés",
+        "BCN BCN",
+        "Senyor botiguer",
+        "Passejant pel Vallès"
       ],
       "acceptedMusicOnly": true,
       "allowedContentTypes": [

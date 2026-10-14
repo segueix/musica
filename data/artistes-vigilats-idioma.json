@@ -2339,6 +2339,67 @@
         "https://www.youtube.com/channel/UC0vBr1BrHrWE07vDPy1tQcw",
         "docs/revisions/2026-10-14-ska4-alta.json"
       ]
+    },
+    {
+      "artista": "Atzembla",
+      "aliases": [
+        "Atzembla - Topic",
+        "Atzembla"
+      ],
+      "canals": [
+        "UC39UUfaafpeQRfaU5dcJ0ug",
+        "UCG-fbhvlr6lGbl2DhKGFFhA"
+      ],
+      "motiu": "Revisió 2026-10-14: fragments cantats en altres llengües comprovats en publicacions oficials. Revisió individual de les noves peces.",
+      "fonts": [
+        "docs/revisions/2026-10-14-noves-incorporacions.md"
+      ]
+    },
+    {
+      "artista": "Mascarats",
+      "aliases": [
+        "Mascarats Grup",
+        "Mascarats - Topic"
+      ],
+      "canals": [
+        "UC9Ytb6_hvQB1cH5iLYGAYKg",
+        "UCd8BT2JBV0_DQOKbseg7_4w"
+      ],
+      "motiu": "Revisió 2026-10-14: fragments cantats en altres llengües comprovats en publicacions oficials. Revisió individual de les noves peces.",
+      "fonts": [
+        "docs/revisions/2026-10-14-noves-incorporacions.md"
+      ]
+    },
+    {
+      "artista": "Repúblika Ska",
+      "aliases": [
+        "RepublikaSka",
+        "República Ska",
+        "Repúblika Ska - Topic"
+      ],
+      "canals": [
+        "UCmKA6KQvu6Ol0gv7PHNMPqQ",
+        "UCa3diMkg9yChODo1MPUGgNw"
+      ],
+      "motiu": "Revisió 2026-10-14: fragments cantats en altres llengües comprovats en publicacions oficials. Revisió individual de les noves peces.",
+      "fonts": [
+        "docs/revisions/2026-10-14-noves-incorporacions.md"
+      ]
+    },
+    {
+      "artista": "Terra Ferma Ska Band",
+      "aliases": [
+        "Terra Ferma",
+        "Terra Ferma Ska Band - Topic"
+      ],
+      "canals": [
+        "UCyS2GxjCglNX_8TY7LDlmlw",
+        "UCT3FFtIl_wpwLu0pL4ruUDA"
+      ],
+      "motiu": "Revisió 2026-10-14: Cada Instant (amb Koers) conté una estrofa cantada en anglès, publicada amb la lletra oficial. Revisió individual de les noves peces.",
+      "fonts": [
+        "https://www.youtube.com/watch?v=KTjaC5tAB8w"
+      ]
     }
   ],
   "confianca": [
@@ -4929,14 +4990,6 @@
       ]
     },
     {
-      "artista": "Atzembla",
-      "aliases": [],
-      "canals": [
-        "UC39UUfaafpeQRfaU5dcJ0ug",
-        "UCG-fbhvlr6lGbl2DhKGFFhA"
-      ]
-    },
-    {
       "artista": "CampikiPugui",
       "aliases": [],
       "canals": [
@@ -4980,41 +5033,10 @@
       ]
     },
     {
-      "artista": "Mascarats",
-      "aliases": [
-        "Mascarats Grup"
-      ],
-      "canals": [
-        "UC9Ytb6_hvQB1cH5iLYGAYKg",
-        "UCd8BT2JBV0_DQOKbseg7_4w"
-      ]
-    },
-    {
-      "artista": "Repúblika Ska",
-      "aliases": [
-        "RepublikaSka",
-        "República Ska"
-      ],
-      "canals": [
-        "UCmKA6KQvu6Ol0gv7PHNMPqQ",
-        "UCa3diMkg9yChODo1MPUGgNw"
-      ]
-    },
-    {
       "artista": "Skafam",
       "aliases": [],
       "canals": [
         "UCw9QWACP-8N1COxwr8u8Ckw"
-      ]
-    },
-    {
-      "artista": "Terra Ferma Ska Band",
-      "aliases": [
-        "Terra Ferma"
-      ],
-      "canals": [
-        "UCyS2GxjCglNX_8TY7LDlmlw",
-        "UCT3FFtIl_wpwLu0pL4ruUDA"
       ]
     },
     {
@@ -5078,6 +5100,25 @@
         "CZgb_2rh3dg"
       ],
       "criteri": "Selecció editorial contrastada amb documentació del disc; no només la llengua del títol."
+    },
+    {
+      "artista": "Gato Pérez",
+      "titol": "Flaires de Barcelunya",
+      "accio": "conserva",
+      "font": "https://lafonoteca.net/disco/flaires-de-barcelunya/",
+      "videoIds": [
+        "nJvjN5gAM1M",
+        "f6_LDvCqFe4",
+        "C5y0pWdto-Q",
+        "Nzq2wH2DMh0",
+        "toiueNIBXY8",
+        "9pqVOufKhgI",
+        "ry6DTiouaUk",
+        "o4tlgdWTLEw",
+        "MfpDziulL08",
+        "oRjmw8uoyys"
+      ],
+      "criteri": "Edició EMI 1983, enregistrada el 1982, documentada íntegrament en català. Deu pistes contrastades amb les publicacions de Parlophone Spain al canal Topic. Revisió 2026-10-14."
     }
   ]
 }
