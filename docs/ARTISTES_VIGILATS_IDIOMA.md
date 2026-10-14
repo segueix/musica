@@ -2,7 +2,7 @@
 
 Document generat de `data/artistes-vigilats-idioma.json`, l’única font operativa. No editeu la taula a mà.
 
-Actualitzat: 2026-10-13. 150 entrades vigilades i 271 artistes de confiança editorial. Inclou antecedents sense canal actiu, per si es reincorporen.
+Actualitzat: 2026-10-14. 155 entrades vigilades i 281 artistes de confiança editorial. Inclou antecedents sense canal actiu, per si es reincorporen.
 
 ## Política
 
@@ -35,7 +35,7 @@ La revisió només resol els IDs indicats: la resta queda pendent. Afegiu `--mat
 | 31 FAM | 31 FAM - Topic | `UC9X30uS2tBqnVwEqpmA32xQ`, `UCEMDA-ZXzEUlJjZ-avy0Pvg` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
 | 9SON | 9 Son, 9SON Oficial, 9Son - Topic, 9Son | `UCPJBMmuD2mgN4liF9Rc12mw`, `UCETR11eCJC5Z9mitj6MbASw` | Antecedents d’exclusions o dubtes de llengua documentats; no implica que tot el repertori sigui multilingüe. | `docs/ARTISTES_CASTELLA.md` |
 | Acros | ACROS - Topic, ACROS | `UCrmKSeRAoGbFoEiLv36EzWg` | Antecedents d’exclusions o dubtes de llengua documentats; no implica que tot el repertori sigui multilingüe. | `docs/ARTISTES_CASTELLA.md` |
-| Adala |  | `UC-JNcJrzWSw2RtL-3TqYoeQ` | Antecedents d’exclusions o dubtes de llengua documentats; no implica que tot el repertori sigui multilingüe. | `docs/ARTISTES_CASTELLA.md` |
+| Adala | ADALA, Adala Music, Adala - Topic | `UC-JNcJrzWSw2RtL-3TqYoeQ` | Antecedents d’exclusions o dubtes de llengua documentats; no implica que tot el repertori sigui multilingüe. | `docs/ARTISTES_CASTELLA.md` |
 | Adrià Puntí |  | `UCDiHZrbEw6zc_DaFl5wsmRA` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
 | Albert Pla i Álvarez | Albert Pla, ALBERT PLA, Albert Pla - Topic | `UCqaEtRht2jakBhGFLzS617w`, `UCd2So3hzPhKQs2Vdoo6FJuA` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
 | Alfred Garcia | Alfred García, alfredgarcia, Alfred García - Topic | `UCego8MWd7DkJXnGl9WQAbTQ`, `UC0O9bre-V-kOYKAspxwS1uA` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
@@ -182,3 +182,8 @@ La revisió només resol els IDs indicats: la resta queda pendent. Afegiu `--mat
 | Skaparapid |  | `UCLlsd1LOmkAMoqbSE36JBZg` | Catàleg parcial: només IDs revisats. Altres idiomes, formats i novetats requereixen revisió. | `https://open.spotify.com/artist/0KS8PpA5dt2xO2nGB7wMlS`, `docs/revisions/2026-10-14-ska2-alta.json` |
 | Es Reboster |  | `UCoEb3Xheb3cPwhNMFEhc_5g` | Catàleg parcial: només IDs revisats. Altres idiomes, formats i novetats requereixen revisió. | `https://www.dbalears.cat/balears/cultura/2007/04/28/146584/es-reboster-presenta-sono-qui-musica-festiva-amb-lletres-de-pes.html`, `docs/revisions/2026-10-14-ska2-alta.json` |
 | Maitips |  | `UCLOmT2Ut3zN8IFEtlSgUKmQ` | Catàleg parcial: només IDs revisats. Altres idiomes, formats i novetats requereixen revisió. | `https://maitips.bandcamp.com/album/inventa-el-m-n`, `docs/revisions/2026-10-14-ska2-alta.json` |
+| AlQuadrat | Al Quadrat | `UCSyQZszUB66TBDSGfMDcGNg`, `UCRy88DHkwZTozU2PfetY0bA` | Repertori majoritàriament en castellà (Gente conectada, Azúcar y sal…) amb cançons en català (Llençols, Tornarem a començar). | `https://www.timeout.cat/barcelona/ca/musica/alquadrat`, `https://www.viasona.cat/grup/alquadrat`, `docs/revisions/2026-10-14-ska4-alta.json` |
+| Dring Dublé | Dring Duble | `UCgbhHxO5Pvf0pCYr6f-BNyw` | Catàleg poc documentat: el canal Tema no mostra pistes des d’aquí; cal revisar cada cançó que arribi. | `https://produbsa.bandcamp.com/album/dring-dubl-cremals-feat-lester-mc`, `docs/revisions/2026-10-14-ska4-alta.json` |
+| La Bundu Band | bunduband | `UCwPrdShME-yrqB1hDvkUqPw`, `UCeXegD6_JMqPbUBEzkGinHw`, `UCMr0zO3JvMllHSSfxSawDUQ` | Hi ha títols en castellà (Fruta fresca) i col·laboracions: cal revisar cançó per cançó. | `https://www.verkami.com/projects/7252-nou-disc-de-la-bundu-band-sembrant-beats-recollint-revolucio`, `https://www.reverbnation.com/labunduband/songs`, `docs/revisions/2026-10-14-ska4-alta.json` |
+| Ovella Xao |  | `UC61lW1hjlSwAgBDWO3yVRBw`, `UCWwKFCPkzG5Njr-kcpl9dag` | Algun títol en castellà (La canción del viajero): cal revisar cançó per cançó. | `https://www.youtube.com/channel/UC61lW1hjlSwAgBDWO3yVRBw`, `docs/revisions/2026-10-14-ska4-alta.json` |
+| Trast |  | `UCajdvXC8lGH7n7d8mrhyZJw`, `UC0vBr1BrHrWE07vDPy1tQcw` | Alguna cançó en castellà (Somos lo que somos, amb Emon): cal revisar cançó per cançó. | `https://surtdecasa.cat/camp/agenda/bonobos-trast/52854`, `https://www.youtube.com/channel/UC0vBr1BrHrWE07vDPy1tQcw`, `docs/revisions/2026-10-14-ska4-alta.json` |

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-13",
+  "updatedAt": "2026-10-14",
   "criteri": "Només els artistes vigilats passen per revisió de cançons. Confiança editorial del catàleg existent, no verificació individual de lletres. Les altes noves es classifiquen una vegada.",
   "vigilats": [
     {
@@ -51,7 +51,11 @@
     },
     {
       "artista": "Adala",
-      "aliases": [],
+      "aliases": [
+        "ADALA",
+        "Adala Music",
+        "Adala - Topic"
+      ],
       "canals": [
         "UC-JNcJrzWSw2RtL-3TqYoeQ"
       ],
@@ -2260,6 +2264,80 @@
       "fonts": [
         "https://maitips.bandcamp.com/album/inventa-el-m-n",
         "docs/revisions/2026-10-14-ska2-alta.json"
+      ]
+    },
+    {
+      "artista": "AlQuadrat",
+      "aliases": [
+        "Al Quadrat"
+      ],
+      "canals": [
+        "UCSyQZszUB66TBDSGfMDcGNg",
+        "UCRy88DHkwZTozU2PfetY0bA"
+      ],
+      "motiu": "Repertori majoritàriament en castellà (Gente conectada, Azúcar y sal…) amb cançons en català (Llençols, Tornarem a començar).",
+      "fonts": [
+        "https://www.timeout.cat/barcelona/ca/musica/alquadrat",
+        "https://www.viasona.cat/grup/alquadrat",
+        "docs/revisions/2026-10-14-ska4-alta.json"
+      ]
+    },
+    {
+      "artista": "Dring Dublé",
+      "aliases": [
+        "Dring Duble"
+      ],
+      "canals": [
+        "UCgbhHxO5Pvf0pCYr6f-BNyw"
+      ],
+      "motiu": "Catàleg poc documentat: el canal Tema no mostra pistes des d’aquí; cal revisar cada cançó que arribi.",
+      "fonts": [
+        "https://produbsa.bandcamp.com/album/dring-dubl-cremals-feat-lester-mc",
+        "docs/revisions/2026-10-14-ska4-alta.json"
+      ]
+    },
+    {
+      "artista": "La Bundu Band",
+      "aliases": [
+        "bunduband"
+      ],
+      "canals": [
+        "UCwPrdShME-yrqB1hDvkUqPw",
+        "UCeXegD6_JMqPbUBEzkGinHw",
+        "UCMr0zO3JvMllHSSfxSawDUQ"
+      ],
+      "motiu": "Hi ha títols en castellà (Fruta fresca) i col·laboracions: cal revisar cançó per cançó.",
+      "fonts": [
+        "https://www.verkami.com/projects/7252-nou-disc-de-la-bundu-band-sembrant-beats-recollint-revolucio",
+        "https://www.reverbnation.com/labunduband/songs",
+        "docs/revisions/2026-10-14-ska4-alta.json"
+      ]
+    },
+    {
+      "artista": "Ovella Xao",
+      "aliases": [],
+      "canals": [
+        "UC61lW1hjlSwAgBDWO3yVRBw",
+        "UCWwKFCPkzG5Njr-kcpl9dag"
+      ],
+      "motiu": "Algun títol en castellà (La canción del viajero): cal revisar cançó per cançó.",
+      "fonts": [
+        "https://www.youtube.com/channel/UC61lW1hjlSwAgBDWO3yVRBw",
+        "docs/revisions/2026-10-14-ska4-alta.json"
+      ]
+    },
+    {
+      "artista": "Trast",
+      "aliases": [],
+      "canals": [
+        "UCajdvXC8lGH7n7d8mrhyZJw",
+        "UC0vBr1BrHrWE07vDPy1tQcw"
+      ],
+      "motiu": "Alguna cançó en castellà (Somos lo que somos, amb Emon): cal revisar cançó per cançó.",
+      "fonts": [
+        "https://surtdecasa.cat/camp/agenda/bonobos-trast/52854",
+        "https://www.youtube.com/channel/UC0vBr1BrHrWE07vDPy1tQcw",
+        "docs/revisions/2026-10-14-ska4-alta.json"
       ]
     }
   ],
@@ -4848,6 +4926,95 @@
       ],
       "canals": [
         "UCCmgW83QdTLEGTkEc6uyJ6Q"
+      ]
+    },
+    {
+      "artista": "Atzembla",
+      "aliases": [],
+      "canals": [
+        "UC39UUfaafpeQRfaU5dcJ0ug",
+        "UCG-fbhvlr6lGbl2DhKGFFhA"
+      ]
+    },
+    {
+      "artista": "CampikiPugui",
+      "aliases": [],
+      "canals": [
+        "UCB91Q5KFhtxFhqdnemnI5Ew"
+      ]
+    },
+    {
+      "artista": "El Veïnat",
+      "aliases": [],
+      "canals": [
+        "UC3rSnb7CCMA8IrOTEhwPuYg",
+        "UCW0x-9uiF7yZMI9hEYTVMDQ"
+      ]
+    },
+    {
+      "artista": "Eskassa Llibertat",
+      "aliases": [
+        "eskassallibertat"
+      ],
+      "canals": [
+        "UC1iF5VxSLKfoIzlpbtQVL5g",
+        "UC4BSwwuqk6O9ELABBgsgWGQ"
+      ]
+    },
+    {
+      "artista": "Kalabranda",
+      "aliases": [],
+      "canals": [
+        "UCjL17J5dAE9sMDuX4VvhP1Q",
+        "UCbxd8rksufs9jtwDGXrN8YQ"
+      ]
+    },
+    {
+      "artista": "Kòdul",
+      "aliases": [
+        "Kodul"
+      ],
+      "canals": [
+        "UC04isma3OjnDslXzt-Ed3Jw",
+        "UCvvFaqxr4vKR-fuF87BwaYA"
+      ]
+    },
+    {
+      "artista": "Mascarats",
+      "aliases": [
+        "Mascarats Grup"
+      ],
+      "canals": [
+        "UC9Ytb6_hvQB1cH5iLYGAYKg",
+        "UCd8BT2JBV0_DQOKbseg7_4w"
+      ]
+    },
+    {
+      "artista": "Repúblika Ska",
+      "aliases": [
+        "RepublikaSka",
+        "República Ska"
+      ],
+      "canals": [
+        "UCmKA6KQvu6Ol0gv7PHNMPqQ",
+        "UCa3diMkg9yChODo1MPUGgNw"
+      ]
+    },
+    {
+      "artista": "Skafam",
+      "aliases": [],
+      "canals": [
+        "UCw9QWACP-8N1COxwr8u8Ckw"
+      ]
+    },
+    {
+      "artista": "Terra Ferma Ska Band",
+      "aliases": [
+        "Terra Ferma"
+      ],
+      "canals": [
+        "UCyS2GxjCglNX_8TY7LDlmlw",
+        "UCT3FFtIl_wpwLu0pL4ruUDA"
       ]
     }
   ],

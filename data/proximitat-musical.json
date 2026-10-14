@@ -46,6 +46,17 @@
       },
       "source": "https://geocoding-api.open-meteo.com/v1/search?name=Sant%20Francesc%20de%20Formentera&language=ca",
       "checkedOn": "2026-10-12"
+    },
+    "geonames:3109982": {
+      "name": "Santa Coloma de Farners",
+      "type": "municipality",
+      "territory": "Catalunya",
+      "coordinates": {
+        "latitude": 41.86667,
+        "longitude": 2.66667
+      },
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Santa%20Coloma%20de%20Farners&language=ca",
+      "checkedOn": "2026-10-14"
     }
   },
   "references": {
@@ -165,6 +176,12 @@
         "geonames:3119952"
       ],
       "kind": "territorial_reference"
+    },
+    "territory:selva": {
+      "placeIds": [
+        "geonames:3109982"
+      ],
+      "kind": "capital"
     }
   },
   "notes": {

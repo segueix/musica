@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-14T06:26:53.987Z",
+  "updatedAt": "2026-10-14T07:20:22.536Z",
   "artists": [
     {
       "name": "2 Princeses Barbudes",
@@ -39136,6 +39136,766 @@
         "method": "source-review",
         "sources": [
           "https://maitips.bandcamp.com/album/inventa-el-m-n"
+        ]
+      }
+    },
+    {
+      "name": "AlQuadrat",
+      "aliases": [
+        "Al Quadrat"
+      ],
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCSyQZszUB66TBDSGfMDcGNg",
+            "name": "AlQuadrat - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": true
+          },
+          {
+            "id": "UCRy88DHkwZTozU2PfetY0bA",
+            "name": "Al Quadrat",
+            "handle": "@AlQuadratgrup",
+            "type": "official",
+            "primary": false
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://www.timeout.cat/barcelona/ca/musica/alquadrat",
+        "https://www.viasona.cat/grup/alquadrat",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-14T07:20:22.536Z",
+      "notes": "Projecte musical nascut el 2009 a Sant Quirze del Vallès; barreja rumba, ska, reggae i pop. Alta de la llista ska de l’usuari: canal Tema prioritari. docs/revisions/2026-10-14-ska4-alta.json",
+      "genreReview": {
+        "reviewedAt": "2026-10-14",
+        "method": "source-review",
+        "sources": [
+          "https://www.timeout.cat/barcelona/ca/musica/alquadrat",
+          "https://www.viasona.cat/grup/alquadrat"
+        ]
+      }
+    },
+    {
+      "name": "Atzembla",
+      "aliases": [],
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "territories": [
+        "País Valencià"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": "Q55811636",
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UC39UUfaafpeQRfaU5dcJ0ug",
+            "name": "Atzembla - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": true
+          },
+          {
+            "id": "UCG-fbhvlr6lGbl2DhKGFFhA",
+            "name": "Atzembla",
+            "handle": "@atzemblagrup",
+            "type": "official",
+            "primary": false
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://ca.wikipedia.org/wiki/Atzembla_(grup_musical)",
+        "https://www.tresdeu.com/2018/08/atzembla-instint/",
+        "docs/revisions/2026-10-14-ska3-atzembla.md",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-14T07:20:22.536Z",
+      "notes": "Grup de Montcada (l'Horta Nord) format el 2008; punk, rock i ska. Alta de la llista ska de l’usuari: canal Tema prioritari. docs/revisions/2026-10-14-ska4-alta.json",
+      "genreReview": {
+        "reviewedAt": "2026-10-14",
+        "method": "source-review",
+        "sources": [
+          "https://ca.wikipedia.org/wiki/Atzembla_(grup_musical)",
+          "https://www.tresdeu.com/2018/08/atzembla-instint/",
+          "docs/revisions/2026-10-14-ska3-atzembla.md"
+        ]
+      }
+    },
+    {
+      "name": "CampikiPugui",
+      "aliases": [],
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCB91Q5KFhtxFhqdnemnI5Ew",
+            "name": "CampikiPugui - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://www.selvacultura.cat/ca/programacio/c/1795-campikipugui.html",
+        "https://music.apple.com/us/artist/campikipugui/1209822356",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-14T07:20:22.536Z",
+      "notes": "Grup de mestissatge ska, rock i reggae de la Selva (programació de Selva Cultura); EP «Una altra nit» (2017). Municipi no documentat. Alta de la llista ska de l’usuari: canal Tema prioritari. docs/revisions/2026-10-14-ska4-alta.json",
+      "genreReview": {
+        "reviewedAt": "2026-10-14",
+        "method": "source-review",
+        "sources": [
+          "https://www.selvacultura.cat/ca/programacio/c/1795-campikipugui.html",
+          "https://music.apple.com/us/artist/campikipugui/1209822356"
+        ]
+      }
+    },
+    {
+      "name": "Dring Dublé",
+      "aliases": [
+        "Dring Duble"
+      ],
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCgbhHxO5Pvf0pCYr6f-BNyw",
+            "name": "Dring dublé - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "mitjana",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://produbsa.bandcamp.com/album/dring-dubl-cremals-feat-lester-mc",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-14T07:20:22.536Z",
+      "notes": "Grup de dub i ska; el senzill «Crema'ls» (2002) es va gravar als Estudis Sa Iaia de Sabadell (ProDubSA, Ripollet). Vinculació, no municipi de formació. Alta de la llista ska de l’usuari: canal Tema prioritari. docs/revisions/2026-10-14-ska4-alta.json",
+      "genreReview": {
+        "reviewedAt": "2026-10-14",
+        "method": "source-review",
+        "sources": [
+          "https://produbsa.bandcamp.com/album/dring-dubl-cremals-feat-lester-mc"
+        ]
+      }
+    },
+    {
+      "name": "El Veïnat",
+      "aliases": [],
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UC3rSnb7CCMA8IrOTEhwPuYg",
+            "name": "El Veïnat - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": true
+          },
+          {
+            "id": "UCW0x-9uiF7yZMI9hEYTVMDQ",
+            "name": "El Veïnat",
+            "handle": "@elveinatTV",
+            "type": "official",
+            "primary": false
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://naciodigital.cat/osona/cultura-i-mitjans/el-moscou-estrena-terrassa-amb-el-concert-del-veinat.html",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-14T07:20:22.536Z",
+      "notes": "Grup de reggae i ska de Vilassar de Mar nascut a finals del 2011 (Correllengua); disc «Perquè el món et senti». Alta de la llista ska de l’usuari: canal Tema prioritari. docs/revisions/2026-10-14-ska4-alta.json",
+      "genreReview": {
+        "reviewedAt": "2026-10-14",
+        "method": "source-review",
+        "sources": [
+          "https://naciodigital.cat/osona/cultura-i-mitjans/el-moscou-estrena-terrassa-amb-el-concert-del-veinat.html"
+        ]
+      }
+    },
+    {
+      "name": "Eskassa Llibertat",
+      "aliases": [
+        "eskassallibertat"
+      ],
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UC1iF5VxSLKfoIzlpbtQVL5g",
+            "name": "Eskassa Llibertat - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": true
+          },
+          {
+            "id": "UC4BSwwuqk6O9ELABBgsgWGQ",
+            "name": "eskassallibertat",
+            "handle": "@eskassallibertat",
+            "type": "official",
+            "primary": false
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://www.viasona.cat/grup/eskassa-llibertat",
+        "https://eskassallibertat.bandcamp.com/",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-14T07:20:22.536Z",
+      "notes": "Grup d’ska format a Terrassa el 2008; «Despertem!» (2010), «#SingleEskassa» (2012) i «Ràdio Llibertat» (2013). Alta de la llista ska de l’usuari: canal Tema prioritari. docs/revisions/2026-10-14-ska4-alta.json",
+      "genreReview": {
+        "reviewedAt": "2026-10-14",
+        "method": "source-review",
+        "sources": [
+          "https://www.viasona.cat/grup/eskassa-llibertat",
+          "https://eskassallibertat.bandcamp.com/"
+        ]
+      }
+    },
+    {
+      "name": "Kalabranda",
+      "aliases": [],
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCjL17J5dAE9sMDuX4VvhP1Q",
+            "name": "Kalabranda - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": true
+          },
+          {
+            "id": "UCbxd8rksufs9jtwDGXrN8YQ",
+            "name": "Kalabranda",
+            "handle": "@kalabranda5262",
+            "type": "official",
+            "primary": false
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://arenysdemunt-prd.diba.cat/media/import/documents/news/Cartell_Remei_Jove_2019.pdf",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-14T07:20:22.536Z",
+      "notes": "Banda d'Arenys de Munt (Aula de Música d'Arenys de Munt, cartell de les Festes del Remei 2019); disc «Desperta la fera». Alta de la llista ska de l’usuari: canal Tema prioritari. docs/revisions/2026-10-14-ska4-alta.json",
+      "genreReview": {
+        "reviewedAt": "2026-10-14",
+        "method": "source-review",
+        "sources": [
+          "https://arenysdemunt-prd.diba.cat/media/import/documents/news/Cartell_Remei_Jove_2019.pdf"
+        ]
+      }
+    },
+    {
+      "name": "Kòdul",
+      "aliases": [
+        "Kodul"
+      ],
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UC04isma3OjnDslXzt-Ed3Jw",
+            "name": "Kòdul - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": true
+          },
+          {
+            "id": "UCvvFaqxr4vKR-fuF87BwaYA",
+            "name": "Kòdul",
+            "handle": "@tvkodul",
+            "type": "official",
+            "primary": false
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://indicat.blogspot.com/2012/12/kodul-enceta-un-verkami-per-al-proper.html",
+        "docs/revisions/2026-10-14-ska3-kodul.md",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-14T07:20:22.536Z",
+      "notes": "Banda festiva i reivindicativa de Sallent (Bages), activa uns 12 anys; darrer disc «Sense mirar enrere» (Propaganda pel Fet!, 2016). Alta de la llista ska de l’usuari: canal Tema prioritari. docs/revisions/2026-10-14-ska4-alta.json",
+      "genreReview": {
+        "reviewedAt": "2026-10-14",
+        "method": "source-review",
+        "sources": [
+          "https://indicat.blogspot.com/2012/12/kodul-enceta-un-verkami-per-al-proper.html",
+          "docs/revisions/2026-10-14-ska3-kodul.md"
+        ]
+      }
+    },
+    {
+      "name": "La Bundu Band",
+      "aliases": [
+        "bunduband"
+      ],
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCwPrdShME-yrqB1hDvkUqPw",
+            "name": "La Bundu Band - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": true
+          },
+          {
+            "id": "UCeXegD6_JMqPbUBEzkGinHw",
+            "name": "LA BUNDU BAND (QUIMERA RECORDS 2010)) - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": false
+          },
+          {
+            "id": "UCMr0zO3JvMllHSSfxSawDUQ",
+            "name": "bunduband",
+            "handle": "@bunduband",
+            "type": "official",
+            "primary": false
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://www.verkami.com/projects/7252-nou-disc-de-la-bundu-band-sembrant-beats-recollint-revolucio",
+        "https://www.reverbnation.com/labunduband/songs",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-14T07:20:22.536Z",
+      "notes": "Banda del Maresme (Arenys de Munt); «Guerrer rebel» (Quimera, 2010), «Sembrant beats, recollint revolució» (Kasba, 2014) i «Cat Samurai». Alta de la llista ska de l’usuari: canal Tema prioritari. docs/revisions/2026-10-14-ska4-alta.json",
+      "genreReview": {
+        "reviewedAt": "2026-10-14",
+        "method": "source-review",
+        "sources": [
+          "https://www.verkami.com/projects/7252-nou-disc-de-la-bundu-band-sembrant-beats-recollint-revolucio",
+          "https://www.reverbnation.com/labunduband/songs"
+        ]
+      }
+    },
+    {
+      "name": "Mascarats",
+      "aliases": [
+        "Mascarats Grup"
+      ],
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UC9Ytb6_hvQB1cH5iLYGAYKg",
+            "name": "Mascarats - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": true
+          },
+          {
+            "id": "UCd8BT2JBV0_DQOKbseg7_4w",
+            "name": "Mascarats Grup",
+            "handle": "@MascaratsGrup",
+            "type": "official",
+            "primary": false
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://www.youtube.com/channel/UC9Ytb6_hvQB1cH5iLYGAYKg",
+        "http://www.mascarats.cat",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-14T07:20:22.536Z",
+      "notes": "Grup de música reivindicativa format a la Sénia que barreja rock i reggae; «Trencarem l’imaginari» (2017) i «Distopia». Alta de la llista ska de l’usuari: canal Tema prioritari. docs/revisions/2026-10-14-ska4-alta.json",
+      "genreReview": {
+        "reviewedAt": "2026-10-14",
+        "method": "source-review",
+        "sources": [
+          "https://www.youtube.com/channel/UC9Ytb6_hvQB1cH5iLYGAYKg",
+          "http://www.mascarats.cat"
+        ]
+      }
+    },
+    {
+      "name": "Ovella Xao",
+      "aliases": [],
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UC61lW1hjlSwAgBDWO3yVRBw",
+            "name": "Ovella Xao - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": true
+          },
+          {
+            "id": "UCWwKFCPkzG5Njr-kcpl9dag",
+            "name": "Ovella Xao",
+            "handle": "@OvellaXao",
+            "type": "official",
+            "primary": false
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://www.youtube.com/channel/UC61lW1hjlSwAgBDWO3yVRBw",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-14T07:20:22.536Z",
+      "notes": "Grup de música festiva nascut a Sabadell el 2014; «Trempera matinera», «#Pastureig» i «Cant corral» (2018). Alta de la llista ska de l’usuari: canal Tema prioritari. docs/revisions/2026-10-14-ska4-alta.json",
+      "genreReview": {
+        "reviewedAt": "2026-10-14",
+        "method": "source-review",
+        "sources": [
+          "https://www.youtube.com/channel/UC61lW1hjlSwAgBDWO3yVRBw"
+        ]
+      }
+    },
+    {
+      "name": "Repúblika Ska",
+      "aliases": [
+        "RepublikaSka",
+        "República Ska"
+      ],
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCmKA6KQvu6Ol0gv7PHNMPqQ",
+            "name": "Repúblika Ska - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": true
+          },
+          {
+            "id": "UCa3diMkg9yChODo1MPUGgNw",
+            "name": "RepublikaSka",
+            "handle": "@RepublikaSka",
+            "type": "official",
+            "primary": false
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://www.auva.cat/entrevistem-a-republika-ska/",
+        "https://www.segre.com/ca/cultura/231227/republika-ska-torna-als-escenaris-10-anys-despres_293231.html",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-14T07:20:22.536Z",
+      "notes": "Banda d’ska de Lleida formada el 2008; «Ja som aquí» (2011) i «Resistirem» (2013). Alta de la llista ska de l’usuari: canal Tema prioritari. docs/revisions/2026-10-14-ska4-alta.json",
+      "genreReview": {
+        "reviewedAt": "2026-10-14",
+        "method": "source-review",
+        "sources": [
+          "https://www.auva.cat/entrevistem-a-republika-ska/",
+          "https://www.segre.com/ca/cultura/231227/republika-ska-torna-als-escenaris-10-anys-despres_293231.html"
+        ]
+      }
+    },
+    {
+      "name": "Skafam",
+      "aliases": [],
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCw9QWACP-8N1COxwr8u8Ckw",
+            "name": "Skafam - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://www.decibel.cat/grups/grups.php?accio=grup&id=329",
+        "https://www.viasona.cat/grup/skafam",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-14T07:20:22.536Z",
+      "notes": "Skamot Antifeixista d'Arenys de Munt: ska-punk amb rock, funk i reggae; disc «Riem» (2007). Alta de la llista ska de l’usuari: canal Tema prioritari. docs/revisions/2026-10-14-ska4-alta.json",
+      "genreReview": {
+        "reviewedAt": "2026-10-14",
+        "method": "source-review",
+        "sources": [
+          "https://www.decibel.cat/grups/grups.php?accio=grup&id=329",
+          "https://www.viasona.cat/grup/skafam"
+        ]
+      }
+    },
+    {
+      "name": "Terra Ferma Ska Band",
+      "aliases": [
+        "Terra Ferma"
+      ],
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCyS2GxjCglNX_8TY7LDlmlw",
+            "name": "Terra Ferma Ska Band - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": true
+          },
+          {
+            "id": "UCT3FFtIl_wpwLu0pL4ruUDA",
+            "name": "Terra Ferma",
+            "handle": "@TerraFermagrup",
+            "type": "official",
+            "primary": false
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://surtdecasa.cat/camp/musica/terra-ferma-un-brot-de-llum",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-14T07:20:22.536Z",
+      "notes": "Projecte nascut a Reus el 2014; «Aixecant el vol» (2015), «Un brot de llum» (2018) i «Sobre viure» (2020). Alta de la llista ska de l’usuari: canal Tema prioritari. docs/revisions/2026-10-14-ska4-alta.json",
+      "genreReview": {
+        "reviewedAt": "2026-10-14",
+        "method": "source-review",
+        "sources": [
+          "https://surtdecasa.cat/camp/musica/terra-ferma-un-brot-de-llum"
+        ]
+      }
+    },
+    {
+      "name": "Trast",
+      "aliases": [],
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCajdvXC8lGH7n7d8mrhyZJw",
+            "name": "Trast - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": true
+          },
+          {
+            "id": "UC0vBr1BrHrWE07vDPy1tQcw",
+            "name": "Trast",
+            "handle": "@trastmusica",
+            "type": "official",
+            "primary": false
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://surtdecasa.cat/camp/agenda/bonobos-trast/52854",
+        "https://www.youtube.com/channel/UC0vBr1BrHrWE07vDPy1tQcw",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-14T07:20:22.536Z",
+      "notes": "Festa, mestissatge i compromís des del Baix Llobregat (canal oficial); «Diari de matinada», «El detonant» (2016) i «Serem». Alta de la llista ska de l’usuari: canal Tema prioritari. docs/revisions/2026-10-14-ska4-alta.json",
+      "genreReview": {
+        "reviewedAt": "2026-10-14",
+        "method": "source-review",
+        "sources": [
+          "https://surtdecasa.cat/camp/agenda/bonobos-trast/52854",
+          "https://www.youtube.com/channel/UC0vBr1BrHrWE07vDPy1tQcw"
         ]
       }
     }

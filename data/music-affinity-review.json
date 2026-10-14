@@ -1189,6 +1189,273 @@
       "reviewedAt": "2026-10-14",
       "confidence": 0.9,
       "method": "source-review"
+    },
+    {
+      "artist": "AlQuadrat",
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "facets": [
+        "ska",
+        "reggae",
+        "rumba",
+        "pop"
+      ],
+      "sources": [
+        "https://www.timeout.cat/barcelona/ca/musica/alquadrat",
+        "https://www.viasona.cat/grup/alquadrat"
+      ],
+      "reviewedAt": "2026-10-14",
+      "confidence": 0.85,
+      "method": "source-review"
+    },
+    {
+      "artist": "Atzembla",
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "facets": [
+        "ska",
+        "punk",
+        "rock"
+      ],
+      "sources": [
+        "https://ca.wikipedia.org/wiki/Atzembla_(grup_musical)",
+        "https://www.tresdeu.com/2018/08/atzembla-instint/",
+        "docs/revisions/2026-10-14-ska3-atzembla.md"
+      ],
+      "reviewedAt": "2026-10-14",
+      "confidence": 0.85,
+      "method": "source-review"
+    },
+    {
+      "artist": "CampikiPugui",
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "facets": [
+        "ska",
+        "reggae",
+        "rock"
+      ],
+      "sources": [
+        "https://www.selvacultura.cat/ca/programacio/c/1795-campikipugui.html",
+        "https://music.apple.com/us/artist/campikipugui/1209822356"
+      ],
+      "reviewedAt": "2026-10-14",
+      "confidence": 0.85,
+      "method": "source-review"
+    },
+    {
+      "artist": "Dring Dublé",
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "facets": [
+        "reggae",
+        "dub",
+        "ska"
+      ],
+      "sources": [
+        "https://produbsa.bandcamp.com/album/dring-dubl-cremals-feat-lester-mc"
+      ],
+      "reviewedAt": "2026-10-14",
+      "confidence": 0.85,
+      "method": "source-review"
+    },
+    {
+      "artist": "El Veïnat",
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "facets": [
+        "reggae",
+        "ska"
+      ],
+      "sources": [
+        "https://naciodigital.cat/osona/cultura-i-mitjans/el-moscou-estrena-terrassa-amb-el-concert-del-veinat.html"
+      ],
+      "reviewedAt": "2026-10-14",
+      "confidence": 0.85,
+      "method": "source-review"
+    },
+    {
+      "artist": "Eskassa Llibertat",
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "facets": [
+        "ska",
+        "punk",
+        "rock"
+      ],
+      "sources": [
+        "https://www.viasona.cat/grup/eskassa-llibertat",
+        "https://eskassallibertat.bandcamp.com/"
+      ],
+      "reviewedAt": "2026-10-14",
+      "confidence": 0.85,
+      "method": "source-review"
+    },
+    {
+      "artist": "Kalabranda",
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "facets": [
+        "ska",
+        "rock"
+      ],
+      "sources": [
+        "https://arenysdemunt-prd.diba.cat/media/import/documents/news/Cartell_Remei_Jove_2019.pdf"
+      ],
+      "reviewedAt": "2026-10-14",
+      "confidence": 0.85,
+      "method": "source-review"
+    },
+    {
+      "artist": "Kòdul",
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "facets": [
+        "ska",
+        "rock",
+        "punk"
+      ],
+      "sources": [
+        "https://indicat.blogspot.com/2012/12/kodul-enceta-un-verkami-per-al-proper.html",
+        "docs/revisions/2026-10-14-ska3-kodul.md"
+      ],
+      "reviewedAt": "2026-10-14",
+      "confidence": 0.85,
+      "method": "source-review"
+    },
+    {
+      "artist": "La Bundu Band",
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "facets": [
+        "reggae",
+        "dub",
+        "ska",
+        "hip-hop"
+      ],
+      "sources": [
+        "https://www.verkami.com/projects/7252-nou-disc-de-la-bundu-band-sembrant-beats-recollint-revolucio",
+        "https://www.reverbnation.com/labunduband/songs"
+      ],
+      "reviewedAt": "2026-10-14",
+      "confidence": 0.85,
+      "method": "source-review"
+    },
+    {
+      "artist": "Mascarats",
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "facets": [
+        "reggae",
+        "rock",
+        "ska"
+      ],
+      "sources": [
+        "https://www.youtube.com/channel/UC9Ytb6_hvQB1cH5iLYGAYKg",
+        "http://www.mascarats.cat"
+      ],
+      "reviewedAt": "2026-10-14",
+      "confidence": 0.85,
+      "method": "source-review"
+    },
+    {
+      "artist": "Ovella Xao",
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "facets": [
+        "ska",
+        "mestissatge",
+        "rumba"
+      ],
+      "sources": [
+        "https://www.youtube.com/channel/UC61lW1hjlSwAgBDWO3yVRBw"
+      ],
+      "reviewedAt": "2026-10-14",
+      "confidence": 0.85,
+      "method": "source-review"
+    },
+    {
+      "artist": "Repúblika Ska",
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "facets": [
+        "ska",
+        "reggae"
+      ],
+      "sources": [
+        "https://www.auva.cat/entrevistem-a-republika-ska/",
+        "https://www.segre.com/ca/cultura/231227/republika-ska-torna-als-escenaris-10-anys-despres_293231.html"
+      ],
+      "reviewedAt": "2026-10-14",
+      "confidence": 0.85,
+      "method": "source-review"
+    },
+    {
+      "artist": "Skafam",
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "facets": [
+        "ska",
+        "punk",
+        "rock",
+        "reggae"
+      ],
+      "sources": [
+        "https://www.decibel.cat/grups/grups.php?accio=grup&id=329",
+        "https://www.viasona.cat/grup/skafam"
+      ],
+      "reviewedAt": "2026-10-14",
+      "confidence": 0.85,
+      "method": "source-review"
+    },
+    {
+      "artist": "Terra Ferma Ska Band",
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "facets": [
+        "ska",
+        "reggae",
+        "funk",
+        "rap"
+      ],
+      "sources": [
+        "https://surtdecasa.cat/camp/musica/terra-ferma-un-brot-de-llum"
+      ],
+      "reviewedAt": "2026-10-14",
+      "confidence": 0.85,
+      "method": "source-review"
+    },
+    {
+      "artist": "Trast",
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "facets": [
+        "ska",
+        "mestissatge",
+        "reggae"
+      ],
+      "sources": [
+        "https://surtdecasa.cat/camp/agenda/bonobos-trast/52854",
+        "https://www.youtube.com/channel/UC0vBr1BrHrWE07vDPy1tQcw"
+      ],
+      "reviewedAt": "2026-10-14",
+      "confidence": 0.85,
+      "method": "source-review"
     }
   ],
   "relations": [
