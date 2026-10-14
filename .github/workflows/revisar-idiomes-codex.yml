@@ -1,0 +1,94 @@
+name: Revisió d'idiomes amb Codex (proves sense API)
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, codex/idiomes-auto-20261014]
+    paths:
+      - AGENTS.md
+      - .agents/skills/revisar-idiomes/**
+      - scripts/revisar_idiomes_codex.cjs
+      - scripts/test_revisio_codex.cjs
+      - docs/REVISIO_AUTOMATICA_IDIOMES.md
+      - .github/workflows/revisar-idiomes-codex.yml
+  pull_request:
+    paths:
+      - scripts/revisar_idiomes_codex.cjs
+      - scripts/test_revisio_codex.cjs
+      - .github/workflows/revisar-idiomes-codex.yml
+
+permissions:
+  contents: read
+
+concurrency:
+  group: idiomes-codex-test-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  proves:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+      - run: node --test scripts/test_revisio_codex.cjs
+      - name: Prova amb la cua real, sense resoldre ni publicar decisions
+        run: |
+          mkdir -p reports/idiomes-codex
+          node scripts/revisar_idiomes_codex.cjs estat > reports/idiomes-codex/estat.json
+          node scripts/revisar_idiomes_codex.cjs prepara --limit=50 > reports/idiomes-codex/preparacio.json
+          node scripts/revisar_idiomes_codex.cjs estat
+          git diff --exit-code -- data/ js/ sw.js
+          cp -r docs/revisions/idiomes-codex reports/idiomes-codex/lots
+      - uses: actions/upload-artifact@v4
+        with:
+          name: idiomes-codex-prova-${{ github.run_id }}
+          path: reports/idiomes-codex/
+          retention-days: 14
+
+  qualitat:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        # La base permet distingir errors previs; no es silencien les fallades.
+        revisio: [actual, base]
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+          ref: ${{ matrix.revisio == 'base' && (github.event.pull_request.base.sha || 'f4d0671bf5a4123220a572fa9b2f5385d595370b') || github.sha }}
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: mkdir -p reports/qualitat
+      - name: Lint independent
+        id: lint
+        continue-on-error: true
+        run: npm run lint -- --format=json --output-file=reports/qualitat/lint.json
+      - name: Bateria general independent
+        id: tests
+        continue-on-error: true
+        run: npm test -- --maxWorkers=2 --reporter=json --outputFile=reports/qualitat/tests.json
+      - name: Desa els diagnòstics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: idiomes-codex-qualitat-${{ matrix.revisio }}-${{ github.run_id }}
+          path: reports/qualitat/
+          retention-days: 14
+      - name: Manté visibles les fallades generals
+        if: always()
+        env:
+          LINT_RESULT: ${{ steps.lint.outcome }}
+          TEST_RESULT: ${{ steps.tests.outcome }}
+        run: |
+          echo "Lint: $LINT_RESULT; tests: $TEST_RESULT"
+          test "$LINT_RESULT" = success && test "$TEST_RESULT" = success
