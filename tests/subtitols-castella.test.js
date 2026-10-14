@@ -73,12 +73,12 @@ describe('integració al pipeline', () => {
         expect(source).toContain('teSubtitolsCastella(videos[i])');
     });
 
-    it('el workflow diari corre cada dia i els canvis del detector passen per validació abans d’actualitzar el feed', () => {
+    it('el workflow segueix el calendari vigent i valida el detector abans d’actualitzar el feed', () => {
         const updateWorkflow = read('.github/workflows/actualitzar-feed-musica.yml');
         const validationWorkflow = read('.github/workflows/validar-musica.yml');
-        expect(updateWorkflow).toMatch(/cron: "\d+ \d+ \* \* \*"/);
+        expect(updateWorkflow).toContain('cron: "' + require('../scripts/lib/abast_feed.js').generalSchedule() + '"');
         expect(updateWorkflow).toContain('"Validar base musical"');
-        // Un canvi del detector ja no dispara el feed (gastava quota): s'aplica a l'actualització diària de les 20 h,
+        // Un canvi del detector ja no dispara el feed (gastava quota): s'aplica a l'actualització programada de les 20 h,
         // que abans de generar torna a passar aquesta prova.
         expect(updateWorkflow).toContain('tests/subtitols-castella.test.js');
         expect(validationWorkflow).toContain('scripts/lib/subtitols_castella.js');

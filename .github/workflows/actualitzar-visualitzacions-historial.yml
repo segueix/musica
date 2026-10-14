@@ -1,8 +1,8 @@
 name: Actualitzar visualitzacions historial musical
 
+# Estalvi provisional d’octubre de 2026: només manual. Revisar el calendari l’1 de novembre.
+# Vegeu docs/ESTALVI_ACTIONS_OCTUBRE_2026.md; no es reactiva automàticament.
 on:
-  schedule:
-    - cron: "23 9 * * 0"
   workflow_dispatch:
 
 concurrency:

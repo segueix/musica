@@ -68,7 +68,7 @@ for (const name of approved) {
 test('el feed només té un cron local i conserva els torns dels Tema', () => {
     const s = read('actualitzar-feed-musica.yml');
     assert.equal((onBlock(s).match(/cron:/g) || []).length, 1);
-    assert.match(s, /cron: "0 20 \* \* \*"\n\s+timezone: "Europe\/Madrid"/);
+    assert.match(s, /cron: "0 20 2-30\/2 \* \*"\n\s+timezone: "Europe\/Madrid"/);
     assert.match(s, /MUSIC_TOPIC_FULL_DAYS: "7"/);
     assert.match(s, /if: github.ref == 'refs\/heads\/main'/);
     assert.match(s, /node scripts\/archivar_feed_musical.js/);
@@ -80,9 +80,9 @@ for (const date of ['2026-01-01', '2026-03-29', '2026-07-01', '2026-10-25', '202
     test(`cron local únic, inclosos canvis d’hora: ${date}`, () => {
         const now = new Date(date + 'T18:05:00Z');
         assert.ok([1, 2].includes(madridOffsetHours(now)));
-        assert.equal(generalSchedule(now), '0 20 * * *');
-        assert.equal(decideScope({ event: 'schedule', schedule: '0 20 * * *', now }).runApi, true);
-        for (const schedule of ['', '0 18 * * *', '0 19 * * *']) {
+        assert.equal(generalSchedule(now), '0 20 2-30/2 * *');
+        assert.equal(decideScope({ event: 'schedule', schedule: '0 20 2-30/2 * *', now }).runApi, true);
+        for (const schedule of ['', '0 20 * * *', '0 18 * * *', '0 19 * * *']) {
             assert.equal(decideScope({ event: 'schedule', schedule, now }).runApi, false);
         }
     });
@@ -132,10 +132,16 @@ test('una sola feina CI, cancel·lació de versions antigues i cap comparativa d
     assert.equal((validator.match(/runs-on:/g) || []).length, 1);
     assert.equal((validator.match(/npx vitest run/g) || []).length, 1);
 });
-test('es conserven exactament les sis tasques programades i cap cron per a un grup', () => {
+test('durant l’estalvi només el feed conserva un calendari automàtic', () => {
     const scheduled = approved.filter(name => /^  schedule:/m.test(onBlock(read(name))));
     assert.deepEqual(scheduled, [
-        'actualitzar-feed-musica.yml', 'actualitzar-visualitzacions-historial.yml',
-        'cercar-canals-youtube.yml', 'descobrir-musica.yml', 'enriquir-generes.yml', 'revisar_shorts.yml',
+        'actualitzar-feed-musica.yml',
     ]);
+});
+
+
+test('calendari reduït: nou passades entre el 14 i el 31 d’octubre', () => {
+    assert.equal(generalSchedule(), '0 20 2-30/2 * *');
+    const days = Array.from({ length: 18 }, (_, n) => n + 14).filter(d => d >= 2 && d <= 30 && d % 2 === 0);
+    assert.deepEqual(days, [14, 16, 18, 20, 22, 24, 26, 28, 30]);
 });

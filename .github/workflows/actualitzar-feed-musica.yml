@@ -1,9 +1,10 @@
 name: Actualitzar feed musical
 
-# Canvis de grups, seleccions i revisions: esperen al torn diari; mai push ni workflow_run.
+# Canvis de grups, seleccions i revisions: esperen al torn programat; mai push ni workflow_run.
 on:
   schedule:
-    - cron: "0 20 * * *"
+    # Estalvi provisional d’octubre: dies parells; revisar l’1 de novembre.
+    - cron: "0 20 2-30/2 * *"
       timezone: "Europe/Madrid"
   workflow_dispatch:
     inputs:
@@ -89,4 +90,4 @@ jobs:
       - name: Publica totes les dades en un sol commit
         if: steps.scope.outputs.work == 'true'
         run: >-
-          bash scripts/publicar_dades.sh "data: actualització musical diària" data js/channels-ca.json js/features/music-affinity-catalog.js
+          bash scripts/publicar_dades.sh "data: actualització musical programada" data js/channels-ca.json js/features/music-affinity-catalog.js

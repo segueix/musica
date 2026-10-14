@@ -141,10 +141,11 @@ describe('què fa el workflow «Actualitzar feed musical»', () => {
     it('un sol cron local a les 20 h funciona tot l’any', () => {
         expect(madridOffsetHours(summer)).toBe(2);
         expect(madridOffsetHours(winter)).toBe(1);
-        expect(generalSchedule(summer)).toBe('0 20 * * *');
-        expect(generalSchedule(winter)).toBe('0 20 * * *');
+        expect(generalSchedule(summer)).toBe('0 20 2-30/2 * *');
+        expect(generalSchedule(winter)).toBe('0 20 2-30/2 * *');
         for (const now of [summer, winter]) {
-            expect(decideScope({ event: 'schedule', schedule: '0 20 * * *', now })).toMatchObject({
+            expect(decideScope({ event: 'schedule', schedule: '0 20 * * *', now }).work).toBe(false);
+            expect(decideScope({ event: 'schedule', schedule: '0 20 2-30/2 * *', now })).toMatchObject({
                 work: true, runApi: true, targetIds: [],
             });
             expect(decideScope({ event: 'schedule', schedule: '0 18 * * *', now }).work).toBe(false);
@@ -163,7 +164,7 @@ describe('què fa el workflow «Actualitzar feed musical»', () => {
 
     it('el workflow té un sol cron local, purga baixes i publica amb rebase', () => {
         const workflow = read('.github/workflows/actualitzar-feed-musica.yml');
-        expect(workflow).toContain('cron: "0 20 * * *"');
+        expect(workflow).toContain('cron: "0 20 2-30/2 * *"');
         expect(workflow).toContain('timezone: "Europe/Madrid"');
         expect(workflow.match(/cron:/g)).toHaveLength(1);
         expect(workflow).not.toMatch(/^  (push|workflow_run):/m);
