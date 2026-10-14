@@ -2405,6 +2405,38 @@
       "territory": "País Valencià",
       "source": "https://geocoding-api.open-meteo.com/v1/search?name=B%C3%A8lgida&count=10&language=ca&format=json&countryCode=ES",
       "checkedOn": "2026-10-13"
+    },
+    "geonames:3127773": {
+      "name": "Borriol",
+      "type": "municipality",
+      "geonamesId": 3127773,
+      "coordinates": {
+        "latitude": 40.04249,
+        "longitude": -0.07025,
+        "precision": "settlement_reference"
+      },
+      "territory": "País Valencià",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Borriol&count=10&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-14"
+    },
+    "territory:emporda": {
+      "name": "Empordà",
+      "type": "region",
+      "coordinates": null,
+      "territory": "Catalunya"
+    },
+    "geonames:3110771": {
+      "name": "Amer",
+      "type": "municipality",
+      "geonamesId": 3110771,
+      "coordinates": {
+        "latitude": 42.01053,
+        "longitude": 2.60204,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Amer&count=10&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-14"
     }
   },
   "artists": {
@@ -10293,6 +10325,54 @@
       "reviewedOn": "2026-10-13",
       "assignmentSource": "manual-review",
       "locked": true
+    },
+    "artist:agraviats": {
+      "name": "Agraviats",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3127773"
+      ],
+      "confidence": "alta",
+      "basis": "Origen a Borriol; ska amb influència punk i evolució cap al reggae, funk i swing.",
+      "sources": [
+        "https://www.verkami.com/projects/1857-torn-de-paraula-nou-disc-d-agraviats"
+      ],
+      "reviewedOn": "2026-10-14",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:dekrepits": {
+      "name": "Dekrèpits",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "territory:emporda"
+      ],
+      "confidence": "alta",
+      "basis": "Banda empordanesa de ska i reggae amb música tradicional i acordió. Es conserva l’origen comarcal, sense atribuir un municipi no contrastat.",
+      "sources": [
+        "https://medirflash.cat/dekrepits.cfm"
+      ],
+      "reviewedOn": "2026-10-14",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:deskarats": {
+      "name": "Deskarats",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3110771"
+      ],
+      "confidence": "alta",
+      "basis": "Banda d’Amer; ska amb referents Skatalà, Madness i The Toasters, i evolució cap a guitarres rock.",
+      "sources": [
+        "https://www.enderrock.cat/noticia/6667/comenca-festival-deskarats"
+      ],
+      "reviewedOn": "2026-10-14",
+      "assignmentSource": "manual-review",
+      "locked": true
     }
   },
   "channels": {
@@ -10896,7 +10976,11 @@
     "UC1CjXeunopycRzEbV5kpEQg": "artist:sacrogermen",
     "UCViiIPCMCLZHQSUP16yQuKA": "artist:uc",
     "UCU-dJEBd9MTBRQ_Zc1pHwww": "artist:la-iaia",
-    "UC8r4joFv4Q0LczFyYvW7Lsg": "artist:pirat-s-sound-sistema"
+    "UC8r4joFv4Q0LczFyYvW7Lsg": "artist:pirat-s-sound-sistema",
+    "UClM-LZwhDXymZaKrjGrDnzg": "artist:agraviats",
+    "UCKTrsy9eH-cD9geEnh2SB3w": "artist:dekrepits",
+    "UCKPv-OAeyx3OeKgn48iPbUQ": "artist:deskarats",
+    "UClrbmaOS1Mrd6tBAya40gaQ": "artist:deskarats"
   },
   "excludedProfiles": {
     "UCdezTX23syEeAJJAb2oOkKA": {

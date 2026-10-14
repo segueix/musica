@@ -1,5 +1,5 @@
 {
-  "musicalArtists": 408,
+  "musicalArtists": 411,
   "minimumArtists": 5,
   "subcategories": [
     {
@@ -428,11 +428,12 @@
         "ska-revival",
         "ska-classic"
       ],
-      "artistCount": 2,
+      "artistCount": 3,
       "nucleus": false,
       "artists": [
         "Obrint Pas",
-        "Skatalà"
+        "Skatalà",
+        "Agraviats"
       ]
     },
     {
@@ -443,10 +444,11 @@
         "ska-classic",
         "ska-punk"
       ],
-      "artistCount": 1,
+      "artistCount": 2,
       "nucleus": false,
       "artists": [
-        "knocKouts"
+        "knocKouts",
+        "Deskarats"
       ]
     },
     {
@@ -459,14 +461,15 @@
         "reggae",
         "mestissatge"
       ],
-      "artistCount": 5,
+      "artistCount": 6,
       "nucleus": true,
       "artists": [
         "Auxili",
         "Dr. Calypso",
         "Guaita'ls",
         "Les Testarudes",
-        "Mr. Freak Ska"
+        "Mr. Freak Ska",
+        "Dekrèpits"
       ]
     },
     {
@@ -5111,6 +5114,33 @@
       "basis": "documented-tags",
       "sources": [
         "https://www.wikidata.org/wiki/Q19832676"
+      ]
+    },
+    {
+      "artist": "Agraviats",
+      "category": "Ska / Reggae",
+      "subcategory": "ska-punk",
+      "basis": "editorial",
+      "sources": [
+        "https://www.verkami.com/projects/1857-torn-de-paraula-nou-disc-d-agraviats"
+      ]
+    },
+    {
+      "artist": "Dekrèpits",
+      "category": "Ska / Reggae",
+      "subcategory": "ska-classic",
+      "basis": "editorial",
+      "sources": [
+        "https://medirflash.cat/dekrepits.cfm"
+      ]
+    },
+    {
+      "artist": "Deskarats",
+      "category": "Ska / Reggae",
+      "subcategory": "ska-revival",
+      "basis": "editorial",
+      "sources": [
+        "https://www.enderrock.cat/noticia/6667/comenca-festival-deskarats"
       ]
     }
   ]

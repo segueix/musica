@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-13T18:30:26.994Z",
+  "updatedAt": "2026-10-14T06:08:07.394Z",
   "artists": [
     {
       "name": "2 Princeses Barbudes",
@@ -38786,6 +38786,190 @@
         }
       },
       "displayName": "ZOO"
+    },
+    {
+      "name": "Agraviats",
+      "aliases": [],
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "territories": [
+        "País Valencià"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UClM-LZwhDXymZaKrjGrDnzg",
+            "name": "Agraviats - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://www.verkami.com/projects/1857-torn-de-paraula-nou-disc-d-agraviats",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-14T06:08:07.394Z",
+      "notes": "Origen a Borriol; ska amb influència punk i evolució cap al reggae, funk i swing. Selecció parcial contrastada; no importació de tot el canal. docs/revisions/2026-10-14-ska1-alta.json",
+      "genreReview": {
+        "reviewedAt": "2026-10-14",
+        "method": "source-review",
+        "sources": [
+          "https://www.verkami.com/projects/1857-torn-de-paraula-nou-disc-d-agraviats"
+        ]
+      }
+    },
+    {
+      "name": "Dekrèpits",
+      "aliases": [
+        "Dekrepits"
+      ],
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCKTrsy9eH-cD9geEnh2SB3w",
+            "name": "Dekrèpits - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://medirflash.cat/dekrepits.cfm",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-14T06:08:07.394Z",
+      "notes": "Banda empordanesa de ska i reggae amb música tradicional i acordió. Es conserva l’origen comarcal, sense atribuir un municipi no contrastat. Selecció parcial contrastada; no importació de tot el canal. docs/revisions/2026-10-14-ska1-alta.json",
+      "genreReview": {
+        "reviewedAt": "2026-10-14",
+        "method": "source-review",
+        "sources": [
+          "https://medirflash.cat/dekrepits.cfm"
+        ]
+      }
+    },
+    {
+      "name": "Deskarats",
+      "aliases": [],
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCKPv-OAeyx3OeKgn48iPbUQ",
+            "name": "Deskarats - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": true
+          },
+          {
+            "id": "UClrbmaOS1Mrd6tBAya40gaQ",
+            "name": "Deskarats - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": false
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://www.enderrock.cat/noticia/6667/comenca-festival-deskarats",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-14T06:08:07.394Z",
+      "notes": "Banda d’Amer; ska amb referents Skatalà, Madness i The Toasters, i evolució cap a guitarres rock. Selecció parcial contrastada; no importació de tot el canal. docs/revisions/2026-10-14-ska1-alta.json",
+      "genreReview": {
+        "reviewedAt": "2026-10-14",
+        "method": "source-review",
+        "sources": [
+          "https://www.enderrock.cat/noticia/6667/comenca-festival-deskarats"
+        ]
+      }
+    },
+    {
+      "name": "Ki Sap",
+      "aliases": [
+        "Ki-Sap"
+      ],
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "territories": [
+        "País Valencià"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCnjicJo0XLp_UQYr7QqDZzQ",
+            "name": "Ki Sap - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": true
+          },
+          {
+            "id": "UCo_8QxIsvo49zaYqqeYxsOQ",
+            "name": "KisapTV",
+            "handle": "@kisaptv",
+            "type": "official",
+            "primary": false
+          },
+          {
+            "id": "UC8qc9EKB0In0JdqOwu896mQ",
+            "name": "Ki Sap Channel",
+            "handle": "@kisapchannel2662",
+            "type": "official",
+            "primary": false
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "https://www.valenciaska.net/grup/ki-sap/",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-14T06:08:07.394Z",
+      "notes": "Canal Tema i canals propis revisats. A vora barranc no localitzada als canals revisats; Al dia següent està fragmentada i Mira quina trola manca contrast lingüístic suficient. Cap pista aprovada. docs/revisions/2026-10-14-ska1-alta.json"
     }
   ]
 }

@@ -2,7 +2,7 @@
 
 Document generat de `data/artistes-vigilats-idioma.json`, l’única font operativa. No editeu la taula a mà.
 
-Actualitzat: 2026-10-13. 142 entrades vigilades i 271 artistes de confiança editorial. Inclou antecedents sense canal actiu, per si es reincorporen.
+Actualitzat: 2026-10-13. 146 entrades vigilades i 271 artistes de confiança editorial. Inclou antecedents sense canal actiu, per si es reincorporen.
 
 ## Política
 
@@ -174,3 +174,7 @@ La revisió només resol els IDs indicats: la resta queda pendent. Afegiu `--mat
 | UC | Uc, UC d’Eivissa, UC, UC - Topic | `UCViiIPCMCLZHQSUP16yQuKA` | L’usuari confirma el repertori català del canal excepte Chinekem Kaa, que queda exclosa. Categoria Folk i arrel. Imatge: caràtula de Camins de Migjorn. Acceptació per indicació expressa de l’usuari; no s’afirma haver verificat les lletres íntegres. | `manual-user-2026-10-13`, `https://www.youtube.com/channel/UCViiIPCMCLZHQSUP16yQuKA` |
 | La Iaia | la iaia, La Iaia, La iaia - Topic | `UCU-dJEBd9MTBRQ_Zc1pHwww` | Totes les 63 pistes del canal Tema indicat per l’usuari, classificades a Rock i registrades per llançaments. Es conserven les dues edicions d’On és la màgia? agrupades per cançó. XXL i la pista En viu són directes. Canals d’Ernest Crusats separats de La Iaia. | `manual-user-2026-10-13`, `https://www.youtube.com/channel/UCU-dJEBd9MTBRQ_Zc1pHwww` |
 | Pirat's Sound Sistema | Pirat's Sound Sistema - Topic | `UC8r4joFv4Q0LczFyYvW7Lsg` | Revisió de novetats i de quatre pistes pendents de contrast lingüístic. Selecció actual per llista blanca. | `https://ppf.cat/index.php/cat/artistes/pirat-s-sound-sistema`, `docs/revisions/2026-10-13-pirats-txarango-alta.json` |
+| Agraviats |  | `UClM-LZwhDXymZaKrjGrDnzg` | Catàleg parcial: només IDs revisats. Altres idiomes, formats i novetats requereixen revisió. | `https://www.verkami.com/projects/1857-torn-de-paraula-nou-disc-d-agraviats`, `docs/revisions/2026-10-14-ska1-alta.json` |
+| Dekrèpits | Dekrepits | `UCKTrsy9eH-cD9geEnh2SB3w` | Catàleg parcial: només IDs revisats. Altres idiomes, formats i novetats requereixen revisió. | `https://medirflash.cat/dekrepits.cfm`, `docs/revisions/2026-10-14-ska1-alta.json` |
+| Deskarats |  | `UCKPv-OAeyx3OeKgn48iPbUQ`, `UClrbmaOS1Mrd6tBAya40gaQ` | Catàleg parcial: només IDs revisats. Altres idiomes, formats i novetats requereixen revisió. | `https://www.enderrock.cat/noticia/6667/comenca-festival-deskarats`, `docs/revisions/2026-10-14-ska1-alta.json` |
+| Ki Sap | Ki-Sap | `UCnjicJo0XLp_UQYr7QqDZzQ`, `UCo_8QxIsvo49zaYqqeYxsOQ`, `UC8qc9EKB0In0JdqOwu896mQ` | Canal Tema i canals propis revisats. A vora barranc no localitzada als canals revisats; Al dia següent està fragmentada i Mira quina trola manca contrast lingüístic suficient. Cap pista aprovada. | `https://www.valenciaska.net/grup/ki-sap/`, `docs/revisions/2026-10-14-ska1-alta.json` |

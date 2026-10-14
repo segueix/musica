@@ -158,11 +158,19 @@
         "geonames:3112878"
       ],
       "kind": "capital"
+    },
+    "territory:emporda": {
+      "placeIds": [
+        "geonames:3122453",
+        "geonames:3119952"
+      ],
+      "kind": "territorial_reference"
     }
   },
   "notes": {
     "territory:montseny": "Sant Celoni com a referència del Baix Montseny, no capital oficial del massís.",
-    "territory:valles": "Granollers, Sabadell i Terrassa: mínim de distància a les capitals de les dues comarques."
+    "territory:valles": "Granollers, Sabadell i Terrassa: mínim de distància a les capitals de les dues comarques.",
+    "territory:emporda": "Figueres i la Bisbal d’Empordà: mínim de distància a les capitals de les dues comarques; no atribueix un municipi d’origen al grup."
   },
   "sources": [
     "https://www.formentera.es/ca/llocs-dinteres/arquitectures-religioses/sant-francesc",
