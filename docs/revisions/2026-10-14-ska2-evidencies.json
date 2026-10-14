@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-14T06:21:44.318Z",
+  "checkedAt": "2026-10-14T06:22:34.860Z",
   "videos": [
     {
       "kind": "youtube#video",
@@ -1172,6 +1172,383 @@
         "publicStatsViewable": true,
         "madeForKids": false
       }
+    }
+  ],
+  "channels": [
+    {
+      "id": "UCRkcYFZB875HJysWmWSSexw",
+      "name": "Adrià P.G.",
+      "handle": "@adria.p.g.",
+      "description": "",
+      "complete": true,
+      "videos": [
+        {
+          "kind": "youtube#video",
+          "etag": "o-EmYCQvxx3CK8n9fN-cEvBn-Cc",
+          "id": "hSn8vtSy0N4",
+          "snippet": {
+            "publishedAt": "2024-08-10T21:59:59Z",
+            "channelId": "UCRkcYFZB875HJysWmWSSexw",
+            "title": "ME, MYSELF AND WHAT?",
+            "description": "Fresh Music Show",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/hSn8vtSy0N4/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/hSn8vtSy0N4/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/hSn8vtSy0N4/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/hSn8vtSy0N4/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/hSn8vtSy0N4/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "Adrià P.G.",
+            "categoryId": "10",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "es",
+            "localized": {
+              "title": "ME, MYSELF AND WHAT?",
+              "description": "Fresh Music Show"
+            }
+          },
+          "contentDetails": {
+            "duration": "PT1M11S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          }
+        },
+        {
+          "kind": "youtube#video",
+          "etag": "44qjxxadAQY7QivIy28VbUxh-TA",
+          "id": "JrE7UaKgCLs",
+          "snippet": {
+            "publishedAt": "2024-08-10T18:40:48Z",
+            "channelId": "UCRkcYFZB875HJysWmWSSexw",
+            "title": "ME, MYSELF AND WHAT?",
+            "description": "Fresh Music Show",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/JrE7UaKgCLs/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/JrE7UaKgCLs/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/JrE7UaKgCLs/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/JrE7UaKgCLs/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/JrE7UaKgCLs/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "Adrià P.G.",
+            "categoryId": "10",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "es",
+            "localized": {
+              "title": "ME, MYSELF AND WHAT?",
+              "description": "Fresh Music Show"
+            }
+          },
+          "contentDetails": {
+            "duration": "PT1M11S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": true
+          }
+        },
+        {
+          "kind": "youtube#video",
+          "etag": "greaywYxUAHNx1QmZUGIKDMTySo",
+          "id": "Hokap6A8Unc",
+          "snippet": {
+            "publishedAt": "2019-04-20T14:04:47Z",
+            "channelId": "UCRkcYFZB875HJysWmWSSexw",
+            "title": "Wacky Tobacco- Down by the Riverside",
+            "description": "Song of the album Wacky Tobacco-Their greatest adventures-Down by the Riverside.\nVideo by Teresa Monserrat Mas",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/Hokap6A8Unc/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/Hokap6A8Unc/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/Hokap6A8Unc/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              }
+            },
+            "channelTitle": "Adrià P.G.",
+            "tags": [
+              "Down by the Riverside",
+              "Swing",
+              "Wacky Tobacco"
+            ],
+            "categoryId": "10",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "en",
+            "localized": {
+              "title": "Wacky Tobacco- Down by the Riverside",
+              "description": "Song of the album Wacky Tobacco-Their greatest adventures-Down by the Riverside.\nVideo by Teresa Monserrat Mas"
+            }
+          },
+          "contentDetails": {
+            "duration": "PT2M59S",
+            "dimension": "2d",
+            "definition": "hd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          }
+        },
+        {
+          "kind": "youtube#video",
+          "etag": "3A816Y7zMueP94EAVoDOXf2f8ns",
+          "id": "lpSKPXyyPtI",
+          "snippet": {
+            "publishedAt": "2013-09-16T11:23:41Z",
+            "channelId": "UCRkcYFZB875HJysWmWSSexw",
+            "title": "OPRIMITS  - RESISTIREM",
+            "description": "OPRIMITS- RESISTIREM - ENDAVANT (2013)",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/lpSKPXyyPtI/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/lpSKPXyyPtI/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/lpSKPXyyPtI/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/lpSKPXyyPtI/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              }
+            },
+            "channelTitle": "Adrià P.G.",
+            "tags": [
+              "OPRIMITS",
+              "RESISTIREM",
+              "ENDAVANT"
+            ],
+            "categoryId": "10",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "es",
+            "localized": {
+              "title": "OPRIMITS  - RESISTIREM",
+              "description": "OPRIMITS- RESISTIREM - ENDAVANT (2013)"
+            }
+          },
+          "contentDetails": {
+            "duration": "PT2M53S",
+            "dimension": "2d",
+            "definition": "sd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          }
+        },
+        {
+          "kind": "youtube#video",
+          "etag": "sDRB46OO9JImqhlsYWDvzxgXsnA",
+          "id": "p5Qg6KJzl4s",
+          "snippet": {
+            "publishedAt": "2013-05-19T04:06:24Z",
+            "channelId": "UCRkcYFZB875HJysWmWSSexw",
+            "title": "dancingpoints",
+            "description": "Primeres proves amb after effects, any 2007",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/p5Qg6KJzl4s/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/p5Qg6KJzl4s/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/p5Qg6KJzl4s/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/p5Qg6KJzl4s/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              }
+            },
+            "channelTitle": "Adrià P.G.",
+            "categoryId": "22",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "ca",
+            "localized": {
+              "title": "dancingpoints",
+              "description": "Primeres proves amb after effects, any 2007"
+            }
+          },
+          "contentDetails": {
+            "duration": "PT31S",
+            "dimension": "2d",
+            "definition": "sd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          }
+        },
+        {
+          "kind": "youtube#video",
+          "etag": "oSw-P-7kO3m207nhS5XjNgHELEg",
+          "id": "AcbAyvndb5E",
+          "snippet": {
+            "publishedAt": "2013-05-18T18:08:05Z",
+            "channelId": "UCRkcYFZB875HJysWmWSSexw",
+            "title": "ENDAVANT Tema del nou disc d'Oprimits (Endavant 2013)",
+            "description": "OPRIMITS, Endavant. tema del nou disc d'Oprimits (Endavant 2013)\nVideo clip no oficial del dissenyador oficial ;)",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/AcbAyvndb5E/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/AcbAyvndb5E/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/AcbAyvndb5E/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/AcbAyvndb5E/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              }
+            },
+            "channelTitle": "Adrià P.G.",
+            "tags": [
+              "OPRIMITS"
+            ],
+            "categoryId": "22",
+            "liveBroadcastContent": "none",
+            "defaultLanguage": "ca",
+            "localized": {
+              "title": "ENDAVANT Tema del nou disc d'Oprimits (Endavant 2013)",
+              "description": "OPRIMITS, Endavant. tema del nou disc d'Oprimits (Endavant 2013)\nVideo clip no oficial del dissenyador oficial ;)"
+            }
+          },
+          "contentDetails": {
+            "duration": "PT3M5S",
+            "dimension": "2d",
+            "definition": "sd",
+            "caption": "false",
+            "licensedContent": false,
+            "contentRating": {},
+            "projection": "rectangular"
+          },
+          "status": {
+            "uploadStatus": "processed",
+            "privacyStatus": "public",
+            "license": "youtube",
+            "embeddable": true,
+            "publicStatsViewable": true,
+            "madeForKids": false
+          }
+        }
+      ]
     }
   ]
 }
