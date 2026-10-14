@@ -1,0 +1,97 @@
+name: Revisar Adala 2026-10-14
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/revisar-adala-20261014.yml'
+      - 'scripts/revisions/revisar_adala_20261014.js'
+  workflow_dispatch:
+concurrency:
+  group: music-data-writer
+  cancel-in-progress: false
+permissions:
+  contents: write
+jobs:
+  revisar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '20'
+      - name: Prepara dependencies
+        run: npm ci
+      - name: Registra les proves i el lint de la base
+        run: |
+          npm test -- --reporter=json --outputFile=/tmp/adala-tests-before.json > /tmp/adala-tests-before.log 2>&1 || true
+          npx eslint . --format=json --output-file=/tmp/adala-lint-before.json > /tmp/adala-lint-before.log 2>&1 || true
+          test -s /tmp/adala-tests-before.json
+          test -s /tmp/adala-lint-before.json
+      - name: Aplica la revisio sense modificar el feed
+        run: |
+          node --check scripts/revisions/revisar_adala_20261014.js
+          node scripts/revisions/revisar_adala_20261014.js
+          node scripts/revisions/revisar_adala_20261014.js --verify
+          npx vitest run tests/ocultar-titols-castella.test.js tests/adala-idioma.test.js
+      - name: Comprova que no hi ha regressions
+        run: |
+          npm test -- --reporter=json --outputFile=/tmp/adala-tests-after.json > /tmp/adala-tests-after.log 2>&1 || true
+          npx eslint . --format=json --output-file=/tmp/adala-lint-after.json > /tmp/adala-lint-after.log 2>&1 || true
+          node <<'NODE'
+          const fs = require('fs');
+          const assert = require('node:assert/strict');
+          const read = f => JSON.parse(fs.readFileSync(f, 'utf8'));
+          const failures = report => (report.testResults || []).flatMap(test => {
+            const results = (test.assertionResults || []).filter(a => a.status === 'failed').map(a => test.name + ' :: ' + a.fullName);
+            if (test.status === 'failed' && results.length === 0) results.push(test.name + ' :: suite');
+            return results;
+          });
+          const before = read('/tmp/adala-tests-before.json');
+          const after = read('/tmp/adala-tests-after.json');
+          assert(after.numTotalTests >= before.numTotalTests + 3, 'No s\'han executat els tests nous');
+          const previousFailures = new Set(failures(before));
+          const newFailures = failures(after).filter(name => !previousFailures.has(name));
+          assert.deepEqual(newFailures, [], 'Regressions als tests');
+          const lintCounts = report => {
+            const counts = new Map();
+            for (const file of report) for (const message of file.messages || []) if (message.severity === 2) {
+              const key = file.filePath + ' :: ' + message.ruleId + ' :: ' + message.message;
+              counts.set(key, (counts.get(key) || 0) + 1);
+            }
+            return counts;
+          };
+          const oldLint = lintCounts(read('/tmp/adala-lint-before.json'));
+          const newLint = lintCounts(read('/tmp/adala-lint-after.json'));
+          for (const [key, count] of newLint) assert(count <= (oldLint.get(key) || 0), 'Nou error de lint: ' + key);
+          const file = 'docs/revisions/2026-10-14-adala-resultat.json';
+          const report = read(file);
+          report.validation = { testsBefore: before.numTotalTests, testsAfter: after.numTotalTests, failedTestsBefore: before.numFailedTests, failedTestsAfter: after.numFailedTests, newTestFailures: 0, newLintErrors: 0 };
+          fs.writeFileSync(file, JSON.stringify(report, null, 2) + '\n');
+          console.log(JSON.stringify(report.validation, null, 2));
+          NODE
+      - name: Publica nomes els quatre fitxers revisats
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add -- scripts/ocultar_titols_castella.js data/hidden-videos.json tests/adala-idioma.test.js docs/revisions/2026-10-14-adala-resultat.json
+          if git diff --cached --quiet; then
+            echo 'Sense canvis pendents.'
+          else
+            git commit -m "data: retira Bala Perdida i aparta el repertori angles d'Adala"
+            git push origin HEAD:main
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: adala-revisio-20261014
+          retention-days: 7
+          path: |
+            docs/revisions/2026-10-14-adala-resultat.json
+            /tmp/adala-tests-*.json
+            /tmp/adala-tests-*.log
+            /tmp/adala-lint-*.json
+            /tmp/adala-lint-*.log
