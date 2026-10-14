@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-14T05:57:39.423Z",
+  "checkedAt": "2026-10-14T05:58:26.572Z",
   "artists": [
     {
       "name": "Ki Sap",
@@ -10,6 +10,20 @@
           "handle": null,
           "count": 12,
           "complete": true
+        },
+        {
+          "id": "UCo_8QxIsvo49zaYqqeYxsOQ",
+          "name": "KisapTV",
+          "handle": "@kisaptv",
+          "count": 3,
+          "complete": true
+        },
+        {
+          "id": "UC8qc9EKB0In0JdqOwu896mQ",
+          "name": "Ki Sap Channel",
+          "handle": "@kisapchannel2662",
+          "count": 14,
+          "complete": true
         }
       ]
     },
@@ -17,21 +31,21 @@
       "name": "Dekrèpits",
       "channels": [
         {
-          "id": "UCKTrsy9eH-cD9geEnh2SB3w",
-          "name": "Dekrèpits - Topic",
-          "handle": null,
-          "count": 1,
-          "complete": true
-        },
-        {
           "id": "UC0YqrtTHYipbZsG119z2k7g",
           "name": "dekrepitsTV",
           "handle": "@dekrepitstv",
           "count": 6,
           "complete": true
+        },
+        {
+          "id": "UCKTrsy9eH-cD9geEnh2SB3w",
+          "name": "Dekrèpits - Topic",
+          "handle": null,
+          "count": 1,
+          "complete": true
         }
       ]
     }
   ],
-  "calls": 12
+  "calls": 16
 }
