@@ -215,7 +215,13 @@ function verify() {
     const all=[...feed.videos];
     for(const f of fs.readdirSync('data/archive/channels').filter(f=>f.endsWith('.json'))) all.push(...read('data/archive/channels/'+f).videos);
     const allIds=new Set(all.map(v=>v.id));
-    assert(r.previousVideoIds.every(id=>allIds.has(id)),'Repertori previ perdut');
+    const lost=r.previousVideoIds.filter(id=>!allIds.has(id));
+    if(lost.length) {
+        const hidden=new Set(read('data/hidden-videos.json').videoIds);
+        const lang=read('data/revisio-idiomes.json');
+        console.log(JSON.stringify({missingPreviousVideos:lost.map(id=>({id,hidden:hidden.has(id),decisions:lang.decisions.filter(d=>d.id===id)}))}));
+    }
+    assert(!lost.length,'Repertori previ perdut');
     const sandbox={window:{}};
     vm.runInNewContext(fs.readFileSync('js/features/music-affinity-catalog.js','utf8'),sandbox);
     const profiles=sandbox.window.SegueixMusicAffinityCatalog.profiles;
