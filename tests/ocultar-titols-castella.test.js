@@ -37,6 +37,7 @@ describe('AlQuadrat: revisió de títols i lletres del 2026-10-14', () => {
         const review = read('docs/revisions/2026-10-14-alquadrat-idioma.json');
         const hidden = new Set(read('data/hidden-videos.json').videoIds);
         for (const video of review.removed) expect(hidden.has(video.id), video.title).toBe(true);
+        for (const video of review.removedPromotions) expect(hidden.has(video.id), video.title).toBe(true);
         for (const video of review.retained) expect(hidden.has(video.id), video.title).toBe(false);
         expect(hidden.has('niwuifAO84U')).toBe(true); // Shia, canal oficial (arxiu).
         expect(hidden.has('5d9N8vjRjhY')).toBe(true); // Shia, canal Tema.

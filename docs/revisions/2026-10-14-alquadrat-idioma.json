@@ -442,22 +442,10 @@
       "verification": "Lletra catalana publicada a la descripció oficial."
     },
     {
-      "id": "Dm0jPeYFGi8",
-      "title": "'Felice' - AlQuadrat",
-      "contentType": "song",
-      "note": "Vídeo promocional. Aquesta revisió lingüística cobreix les cançons identificables, no atribueix un idioma a tot el muntatge."
-    },
-    {
       "id": "BQf7_o35Abg",
       "title": "Making-Of 'Llençols' - Presente (2013)",
       "contentType": "other",
       "note": "Material no musical; no forma part de la selecció de cançons."
-    },
-    {
-      "id": "2oM5-sgoCDo",
-      "title": "AlQuadrat - Minigira \"PRESENTE\" 2013",
-      "contentType": "song",
-      "note": "Vídeo promocional. Aquesta revisió lingüística cobreix les cançons identificables, no atribueix un idioma a tot el muntatge."
     },
     {
       "id": "b0crBqLlVe0",
@@ -466,12 +454,6 @@
       "language": "ca",
       "source": "https://soundcloud.com/alquadrat/14-la-rumbia-ft-marta-trujillo",
       "verification": "Transcripció automàtica completa de l’àudio oficial, revisada per idioma."
-    },
-    {
-      "id": "lT_nZEvYhXg",
-      "title": "AlQuadrat Presenta!",
-      "contentType": "song",
-      "note": "Vídeo promocional. Aquesta revisió lingüística cobreix les cançons identificables, no atribueix un idioma a tot el muntatge."
     },
     {
       "id": "gC35nZP_yQM",
@@ -522,5 +504,31 @@
     "lint": "npm run lint: 5 errors preexistents a js/data.js i js/features/home-sections.js; fitxers idèntics a main i no modificats.",
     "scope": "Només s’afegeixen IDs dels dos canals d’AlQuadrat; cap exclusió anterior eliminada.",
     "publication": "Publicació explícita: no s’executa el materialitzador global perquè el dry-run proposa 10 cançons de Serrat alienes a aquesta revisió."
-  }
+  },
+  "removedPromotions": [
+    {
+      "id": "Dm0jPeYFGi8",
+      "title": "'Felice' - AlQuadrat",
+      "contentType": "song",
+      "note": "Vídeo promocional. Aquesta revisió lingüística cobreix les cançons identificables, no atribueix un idioma a tot el muntatge.",
+      "reason": "Vídeo promocional classificat com a cançó. Retirat del repertori musical revisat, sense atribuir idioma al muntatge.",
+      "source": "https://www.youtube.com/watch?v=Dm0jPeYFGi8"
+    },
+    {
+      "id": "2oM5-sgoCDo",
+      "title": "AlQuadrat - Minigira \"PRESENTE\" 2013",
+      "contentType": "song",
+      "note": "Vídeo promocional. Aquesta revisió lingüística cobreix les cançons identificables, no atribueix un idioma a tot el muntatge.",
+      "reason": "Vídeo promocional classificat com a cançó. Retirat del repertori musical revisat, sense atribuir idioma al muntatge.",
+      "source": "https://www.youtube.com/watch?v=2oM5-sgoCDo"
+    },
+    {
+      "id": "lT_nZEvYhXg",
+      "title": "AlQuadrat Presenta!",
+      "contentType": "song",
+      "note": "Vídeo promocional. Aquesta revisió lingüística cobreix les cançons identificables, no atribueix un idioma a tot el muntatge.",
+      "reason": "Vídeo promocional classificat com a cançó. Retirat del repertori musical revisat, sense atribuir idioma al muntatge.",
+      "source": "https://www.youtube.com/watch?v=lT_nZEvYhXg"
+    }
+  ]
 }
