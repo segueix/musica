@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-14T06:08:10.302Z",
+  "generatedAt": "2026-10-14T06:26:56.668Z",
   "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
   "restrictedVideoCount": 23,
   "restrictedVideosAdded": [],
   "deepPagesFetched": 0,
   "deepChannelCount": 19,
-  "topicChannelCount": 344,
+  "topicChannelCount": 348,
   "governedChannelCount": 121,
   "topicCoverage": [
     {
@@ -2103,6 +2103,13 @@
       "withClip": 8
     },
     {
+      "id": "UCoEb3Xheb3cPwhNMFEhc_5g",
+      "name": "Es Reboster",
+      "tracks": 3,
+      "selected": 3,
+      "withClip": 0
+    },
+    {
       "id": "UCv6aLx9OL9Qzc2nmNT5_IdA",
       "name": "Esquirols",
       "tracks": 89,
@@ -2761,6 +2768,13 @@
       "withClip": 0
     },
     {
+      "id": "UCLOmT2Ut3zN8IFEtlSgUKmQ",
+      "name": "Maitips",
+      "tracks": 11,
+      "selected": 11,
+      "withClip": 0
+    },
+    {
       "id": "UCwQqL8LR87I8bPcFNU5zLFw",
       "name": "Malánima",
       "tracks": 8,
@@ -3003,6 +3017,13 @@
       "name": "Opció K-95",
       "tracks": 49,
       "selected": 40,
+      "withClip": 0
+    },
+    {
+      "id": "UCF4BwKBwBRZIpylrvVqQmBQ",
+      "name": "Oprimits",
+      "tracks": 1,
+      "selected": 1,
       "withClip": 0
     },
     {
@@ -3412,6 +3433,13 @@
       "withClip": 0
     },
     {
+      "id": "UCLlsd1LOmkAMoqbSE36JBZg",
+      "name": "Skaparapid",
+      "tracks": 5,
+      "selected": 5,
+      "withClip": 0
+    },
+    {
       "id": "UCUWHtSvVKAhJn-zsf38q2TQ",
       "name": "Skatalà",
       "tracks": 57,
@@ -3804,13 +3832,13 @@
       "withClip": 0
     }
   ],
-  "indexedChannelCount": 621,
-  "resolvedChannelCount": 618,
-  "feedChannelCount": 618,
-  "rawPublicVideoCount": 6824,
-  "feedVideoCount": 6289,
-  "acceptedMusicCount": 6260,
-  "categoryEligibleVideoCount": 6256,
+  "indexedChannelCount": 625,
+  "resolvedChannelCount": 622,
+  "feedChannelCount": 622,
+  "rawPublicVideoCount": 6844,
+  "feedVideoCount": 6321,
+  "acceptedMusicCount": 6280,
+  "categoryEligibleVideoCount": 6276,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
     "before": 0,
@@ -3819,7 +3847,7 @@
   },
   "contentReviewCount": 529,
   "contentTypeCounts": {
-    "song": 6084,
+    "song": 6104,
     "live_song": 172,
     "album": 4,
     "other": 35,
@@ -3830,6 +3858,6 @@
   "channelsWithoutVideos": [],
   "channelsWithoutAcceptedMusic": [],
   "allIndexedChannelsVisible": false,
-  "publishedFeedVideoCount": 6301,
+  "publishedFeedVideoCount": 6321,
   "publishedShortVideoCount": 0
 }

@@ -2437,6 +2437,19 @@
       "territory": "Catalunya",
       "source": "https://geocoding-api.open-meteo.com/v1/search?name=Amer&count=10&language=ca&format=json&countryCode=ES",
       "checkedOn": "2026-10-14"
+    },
+    "geonames:2511143": {
+      "name": "Santa Margalida",
+      "type": "municipality",
+      "geonamesId": 2511143,
+      "coordinates": {
+        "latitude": 39.70143,
+        "longitude": 3.10215,
+        "precision": "settlement_reference"
+      },
+      "territory": "Illes Balears",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Santa+Margalida&count=10&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-14"
     }
   },
   "artists": {
@@ -10373,6 +10386,70 @@
       "reviewedOn": "2026-10-14",
       "assignmentSource": "manual-review",
       "locked": true
+    },
+    "artist:oprimits": {
+      "name": "Oprimits",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "territory:mallorca"
+      ],
+      "confidence": "alta",
+      "basis": "Formació mallorquina de ska, rock i reggae amb influència punk. Origen insular documentat pel mateix grup.",
+      "sources": [
+        "https://www.verkami.com/projects/3513-oprimits-seguim-endavant"
+      ],
+      "reviewedOn": "2026-10-14",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:skaparapid": {
+      "name": "Skaparapid",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:2509954"
+      ],
+      "confidence": "alta",
+      "basis": "Grup nascut a València al Kasal Popular; ska combatiu amb influència punk. Repertori multilingüe seleccionat per cançó.",
+      "sources": [
+        "https://open.spotify.com/artist/0KS8PpA5dt2xO2nGB7wMlS"
+      ],
+      "reviewedOn": "2026-10-14",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:es-reboster": {
+      "name": "Es Reboster",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:2511143"
+      ],
+      "confidence": "alta",
+      "basis": "Banda nascuda a Santa Margalida amb base ska i reggae i influències pop-rock.",
+      "sources": [
+        "https://www.dbalears.cat/balears/cultura/2007/04/28/146584/es-reboster-presenta-sono-qui-musica-festiva-amb-lletres-de-pes.html"
+      ],
+      "reviewedOn": "2026-10-14",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:maitips": {
+      "name": "Maitips",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3106492"
+      ],
+      "confidence": "alta",
+      "basis": "Grup de Valls amb arrels ska i evolució cap al reggae i el rock, segons la presentació del seu Bandcamp.",
+      "sources": [
+        "https://maitips.bandcamp.com/album/inventa-el-m-n"
+      ],
+      "reviewedOn": "2026-10-14",
+      "assignmentSource": "manual-review",
+      "locked": true
     }
   },
   "channels": {
@@ -10980,7 +11057,11 @@
     "UClM-LZwhDXymZaKrjGrDnzg": "artist:agraviats",
     "UCKTrsy9eH-cD9geEnh2SB3w": "artist:dekrepits",
     "UCKPv-OAeyx3OeKgn48iPbUQ": "artist:deskarats",
-    "UClrbmaOS1Mrd6tBAya40gaQ": "artist:deskarats"
+    "UClrbmaOS1Mrd6tBAya40gaQ": "artist:deskarats",
+    "UCF4BwKBwBRZIpylrvVqQmBQ": "artist:oprimits",
+    "UCLlsd1LOmkAMoqbSE36JBZg": "artist:skaparapid",
+    "UCoEb3Xheb3cPwhNMFEhc_5g": "artist:es-reboster",
+    "UCLOmT2Ut3zN8IFEtlSgUKmQ": "artist:maitips"
   },
   "excludedProfiles": {
     "UCdezTX23syEeAJJAb2oOkKA": {

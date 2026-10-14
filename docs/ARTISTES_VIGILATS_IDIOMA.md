@@ -2,7 +2,7 @@
 
 Document generat de `data/artistes-vigilats-idioma.json`, l’única font operativa. No editeu la taula a mà.
 
-Actualitzat: 2026-10-13. 146 entrades vigilades i 271 artistes de confiança editorial. Inclou antecedents sense canal actiu, per si es reincorporen.
+Actualitzat: 2026-10-13. 150 entrades vigilades i 271 artistes de confiança editorial. Inclou antecedents sense canal actiu, per si es reincorporen.
 
 ## Política
 
@@ -178,3 +178,7 @@ La revisió només resol els IDs indicats: la resta queda pendent. Afegiu `--mat
 | Dekrèpits | Dekrepits | `UCKTrsy9eH-cD9geEnh2SB3w` | Catàleg parcial: només IDs revisats. Altres idiomes, formats i novetats requereixen revisió. | `https://medirflash.cat/dekrepits.cfm`, `docs/revisions/2026-10-14-ska1-alta.json` |
 | Deskarats |  | `UCKPv-OAeyx3OeKgn48iPbUQ`, `UClrbmaOS1Mrd6tBAya40gaQ` | Catàleg parcial: només IDs revisats. Altres idiomes, formats i novetats requereixen revisió. | `https://www.enderrock.cat/noticia/6667/comenca-festival-deskarats`, `docs/revisions/2026-10-14-ska1-alta.json` |
 | Ki Sap | Ki-Sap | `UCnjicJo0XLp_UQYr7QqDZzQ`, `UCo_8QxIsvo49zaYqqeYxsOQ`, `UC8qc9EKB0In0JdqOwu896mQ` | Canal Tema i canals propis revisats. A vora barranc no localitzada als canals revisats; Al dia següent està fragmentada i Mira quina trola manca contrast lingüístic suficient. Cap pista aprovada. | `https://www.valenciaska.net/grup/ki-sap/`, `docs/revisions/2026-10-14-ska1-alta.json` |
+| Oprimits |  | `UCF4BwKBwBRZIpylrvVqQmBQ` | Catàleg parcial: només IDs revisats. Altres idiomes, formats i novetats requereixen revisió. | `https://www.verkami.com/projects/3513-oprimits-seguim-endavant`, `docs/revisions/2026-10-14-ska2-alta.json` |
+| Skaparapid |  | `UCLlsd1LOmkAMoqbSE36JBZg` | Catàleg parcial: només IDs revisats. Altres idiomes, formats i novetats requereixen revisió. | `https://open.spotify.com/artist/0KS8PpA5dt2xO2nGB7wMlS`, `docs/revisions/2026-10-14-ska2-alta.json` |
+| Es Reboster |  | `UCoEb3Xheb3cPwhNMFEhc_5g` | Catàleg parcial: només IDs revisats. Altres idiomes, formats i novetats requereixen revisió. | `https://www.dbalears.cat/balears/cultura/2007/04/28/146584/es-reboster-presenta-sono-qui-musica-festiva-amb-lletres-de-pes.html`, `docs/revisions/2026-10-14-ska2-alta.json` |
+| Maitips |  | `UCLOmT2Ut3zN8IFEtlSgUKmQ` | Catàleg parcial: només IDs revisats. Altres idiomes, formats i novetats requereixen revisió. | `https://maitips.bandcamp.com/album/inventa-el-m-n`, `docs/revisions/2026-10-14-ska2-alta.json` |

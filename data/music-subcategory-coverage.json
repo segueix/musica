@@ -1,5 +1,5 @@
 {
-  "musicalArtists": 411,
+  "musicalArtists": 415,
   "minimumArtists": 5,
   "subcategories": [
     {
@@ -428,12 +428,14 @@
         "ska-revival",
         "ska-classic"
       ],
-      "artistCount": 3,
-      "nucleus": false,
+      "artistCount": 5,
+      "nucleus": true,
       "artists": [
         "Obrint Pas",
         "Skatalà",
-        "Agraviats"
+        "Agraviats",
+        "Oprimits",
+        "Skaparapid"
       ]
     },
     {
@@ -461,7 +463,7 @@
         "reggae",
         "mestissatge"
       ],
-      "artistCount": 6,
+      "artistCount": 7,
       "nucleus": true,
       "artists": [
         "Auxili",
@@ -469,7 +471,8 @@
         "Guaita'ls",
         "Les Testarudes",
         "Mr. Freak Ska",
-        "Dekrèpits"
+        "Dekrèpits",
+        "Es Reboster"
       ]
     },
     {
@@ -480,11 +483,12 @@
         "ska-classic",
         "mestissatge"
       ],
-      "artistCount": 2,
+      "artistCount": 3,
       "nucleus": false,
       "artists": [
         "Adala",
-        "Pirat's Sound Sistema"
+        "Pirat's Sound Sistema",
+        "Maitips"
       ]
     },
     {
@@ -5141,6 +5145,42 @@
       "basis": "editorial",
       "sources": [
         "https://www.enderrock.cat/noticia/6667/comenca-festival-deskarats"
+      ]
+    },
+    {
+      "artist": "Oprimits",
+      "category": "Ska / Reggae",
+      "subcategory": "ska-punk",
+      "basis": "editorial",
+      "sources": [
+        "https://www.verkami.com/projects/3513-oprimits-seguim-endavant"
+      ]
+    },
+    {
+      "artist": "Skaparapid",
+      "category": "Ska / Reggae",
+      "subcategory": "ska-punk",
+      "basis": "editorial",
+      "sources": [
+        "https://open.spotify.com/artist/0KS8PpA5dt2xO2nGB7wMlS"
+      ]
+    },
+    {
+      "artist": "Es Reboster",
+      "category": "Ska / Reggae",
+      "subcategory": "ska-classic",
+      "basis": "editorial",
+      "sources": [
+        "https://www.dbalears.cat/balears/cultura/2007/04/28/146584/es-reboster-presenta-sono-qui-musica-festiva-amb-lletres-de-pes.html"
+      ]
+    },
+    {
+      "artist": "Maitips",
+      "category": "Ska / Reggae",
+      "subcategory": "reggae",
+      "basis": "editorial",
+      "sources": [
+        "https://maitips.bandcamp.com/album/inventa-el-m-n"
       ]
     }
   ]

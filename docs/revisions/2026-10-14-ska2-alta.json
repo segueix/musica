@@ -1,0 +1,952 @@
+{
+  "reviewedAt": "2026-10-14T06:26:53.987Z",
+  "artists": [
+    {
+      "name": "Oprimits",
+      "place": "Mallorca",
+      "category": "Ska / Reggae",
+      "subcategory": "ska-punk",
+      "channels": [
+        {
+          "id": "UCF4BwKBwBRZIpylrvVqQmBQ",
+          "allowedVideoIds": [
+            "rZV7LihcMhU"
+          ],
+          "allowedExternalVideos": {
+            "rZV7LihcMhU": "UCf1CFHoZ7F177qxj9ZXrjkg"
+          }
+        }
+      ],
+      "notSelected": [
+        {
+          "id": "1oeqlczoJdo",
+          "title": "Gra6",
+          "channelId": "UCF4BwKBwBRZIpylrvVqQmBQ",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "4Ez371GQC44",
+          "title": "Som Oprimits",
+          "channelId": "UCF4BwKBwBRZIpylrvVqQmBQ",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "4PA5642eoBc",
+          "title": "Sense tu",
+          "channelId": "UCF4BwKBwBRZIpylrvVqQmBQ",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "7D8btPY2aFo",
+          "title": "Correllengua",
+          "channelId": "UCF4BwKBwBRZIpylrvVqQmBQ",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "7l9qvefB-gY",
+          "title": "Mai no Deixis",
+          "channelId": "UCF4BwKBwBRZIpylrvVqQmBQ",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "90bTH3jzKG4",
+          "title": "Benvinguts al Món",
+          "channelId": "UCF4BwKBwBRZIpylrvVqQmBQ",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "CO2WaDQoqiU",
+          "title": "Corrupte Naturalment",
+          "channelId": "UCF4BwKBwBRZIpylrvVqQmBQ",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "HayNxu7_Tr0",
+          "title": "Dies de Revolucions",
+          "channelId": "UCF4BwKBwBRZIpylrvVqQmBQ",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "KR1BufMJHDU",
+          "title": "Cop D'efecte",
+          "channelId": "UCF4BwKBwBRZIpylrvVqQmBQ",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "Kh-t_SOGBrg",
+          "title": "Resistirem",
+          "channelId": "UCF4BwKBwBRZIpylrvVqQmBQ",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "VA1zZavHqMU",
+          "title": "Endavant",
+          "channelId": "UCF4BwKBwBRZIpylrvVqQmBQ",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "rdn1C59dxns",
+          "title": "Solidaritat",
+          "channelId": "UCF4BwKBwBRZIpylrvVqQmBQ",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        }
+      ],
+      "recordingsPublished": 1
+    },
+    {
+      "name": "Skaparapid",
+      "place": "València",
+      "category": "Ska / Reggae",
+      "subcategory": "ska-punk",
+      "channels": [
+        {
+          "id": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "allowedVideoIds": [
+            "U8RvUBPOh-w",
+            "k7pAyP6vRyQ",
+            "c8kLZMaaxpQ",
+            "voMVtKDgto4",
+            "csuFwPshrmE"
+          ],
+          "allowedExternalVideos": {}
+        }
+      ],
+      "notSelected": [
+        {
+          "id": "-xEgU25DG3U",
+          "title": "Love for Ska",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "DxCm4en7M5s",
+          "title": "Rebelde Corazón",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "OGZ5V5LRJ_M",
+          "title": "30 Años",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "Qm62k8h-m1I",
+          "title": "Califato Independent",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "AFSCihKLSE4",
+          "title": "Somos",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "70s1ABBZks0",
+          "title": "Tras la Mordaza",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "PAwHXJSFeKY",
+          "title": "Madre",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "ZJKZeU4acEo",
+          "title": "Amor por el Ska",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "5pe464H9uYw",
+          "title": "Desapareix",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "XMYrxlCGtvQ",
+          "title": "Guillem",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "ZinPbXlyLhM",
+          "title": "Buenas Vibraciones",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "us9ehiL2sGU",
+          "title": "Amor por el Ska",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "jiomSRpXS7M",
+          "title": "Califato Independent",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "CIKZZDcWaaY",
+          "title": "Fronteras Invisibles",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "SJCVJzJMsxg",
+          "title": "Somos",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "i-5tFP-gqrA",
+          "title": "Desapareix",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "oHVi96APELM",
+          "title": "Guillem",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "0vVmDNHzYW8",
+          "title": "30 Años",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "ZBWITIunpgI",
+          "title": "Rebelde Corazón",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "jpchhHJpbB0",
+          "title": "Tras la Mordaza",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "8gjxf38XP0E",
+          "title": "Pesadilla Laboral",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "BJvN-vrO1i8",
+          "title": "Que Trabaje el Rey",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "v8P8TwZsfS8",
+          "title": "De la Cuna a la Tumba",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "SGw-d0otRaQ",
+          "title": "Amor Sin Odio",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "ywP63-7C9rY",
+          "title": "Argentosis",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "u482KqeT7n4",
+          "title": "A 100 Km X Neurona",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "xsoNdlUwo4I",
+          "title": "Plantita Ska",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "IBQsGkptvzE",
+          "title": "Temps Perdut",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "xVtODETHkCk",
+          "title": "Torturador",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "YDMsWaynSe4",
+          "title": "Sharp Ska",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "qo-q9CwfHpo",
+          "title": "Che Che Chechenia",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "IpGJcgb2BdE",
+          "title": "Konfesión",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "gwv6QSbThuQ",
+          "title": "Ska en el Vito",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "UG1dJjBpzjg",
+          "title": "El Ball de la Gent Rara",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "nbW5maz666g",
+          "title": "Dona Rebel·la't",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "vk7t1OazW4A",
+          "title": "Alejamos Lo Cercano",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "1BMGZHFOgfM",
+          "title": "Dime, Dime",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "7WtacWKjNiM",
+          "title": "Pesadilla Laboral",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "BX0XrZNyTVw",
+          "title": "Kolors",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Frase en castellà: no compleix el criteri íntegrament en català."
+        },
+        {
+          "id": "plRN246sneE",
+          "title": "Abajo en el Sur",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "25jUYLHC-rc",
+          "title": "Donant la Kanya",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "1YehDN86ujA",
+          "title": "A 100 Km/Neurona",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "C5Cs7DAg_7s",
+          "title": "La Patria Tenía un Precio",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "ENG8LEyiA74",
+          "title": "Historia de...",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "QPJZSkpagVs",
+          "title": "El Presidente",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "SxcGh0SN4Ko",
+          "title": "Klon",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "tyf0JTD6t7o",
+          "title": "Pippi-Jazz",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "UMRbJWn9STI",
+          "title": "Plantita Ska",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "Zu49Pxge7Rk",
+          "title": "Parábola de la Televisión y el Buen Espectador",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "tNSAOjOxdtM",
+          "title": "Punto y Raya",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "_OU-3pRqpWw",
+          "title": "Tuareg",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "d4DxgfMQjhA",
+          "title": "Pesadilla Laboral",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "EPAyBrxEn5k",
+          "title": "Que Empiece Ya!",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "Qt2dQi5R6zE",
+          "title": "Sharp Ska",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "ROk8AKOgv5I",
+          "title": "Viejos Karkamales",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "Te35ZGT06ls",
+          "title": "Arroja la Bomba",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "LMuHaaNHxuQ",
+          "title": "Obsesiónat",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Fragments en castellà a la lletra publicada; pendent de contrast amb l’enregistrament."
+        },
+        {
+          "id": "MFoUWoYR35c",
+          "title": "Desvelos",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "NBTr0fAMtUU",
+          "title": "Insumisión",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "Nbrz8A5Y8jk",
+          "title": "Abajo el Sur",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "uDSzhHUuVrA",
+          "title": "... Se Realmente Acreditas",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "vuJcBkIWH_w",
+          "title": "Dime, Dime",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "xXNIQqIRK7o",
+          "title": "Intro",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "ylMypDE2ANk",
+          "title": "Kolors",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Frase en castellà: no compleix el criteri íntegrament en català."
+        },
+        {
+          "id": "Vgolxm0Wpvs",
+          "title": "De la Cuna a la Tumba",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "WBbt4XPVAJY",
+          "title": "Che Che Chechenia",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "i5z6417jS2M",
+          "title": "Alejamos Lo Cercano",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "luCGHadvIgA",
+          "title": "Itoiz",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "mTAcxEcg-6g",
+          "title": "Torturador",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "oP-b2NxaP8Y",
+          "title": "El Sueño Americano",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "sAH6IQsOoG8",
+          "title": "Skazoo",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "svX54Q9pzuU",
+          "title": "Amor Sin Odio",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "ak4n_pBADKA",
+          "title": "Kompartiendo Escenario",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "arou1f0xgbY",
+          "title": "Movilízate",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "cBwwtBR94RE",
+          "title": "Tio Javi",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "gHxcNIkZcAY",
+          "title": "Ekilibrio",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "2DZwl5jCTKs",
+          "title": "Pelusas Power",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "7iTdIeEzpY8",
+          "title": "Provincias (Bonus Track)",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "DAfuCPo5z5c",
+          "title": "Argentosis",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "DLdduIuBKLQ",
+          "title": "Fuerza para Vivir",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "DrYkgqsIfqs",
+          "title": "Konfesión",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "FrnxSvqeHyw",
+          "title": "Denuncia",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "SVTKrayNR6Y",
+          "title": "Hipertrola",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "xR-evAX74ck",
+          "title": "Que Trabaje el Rey",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "WqBUlBHxCwI",
+          "title": "Per Ké",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Final en castellà: no compleix el criteri íntegrament en català."
+        },
+        {
+          "id": "Y-ogvEWXwPs",
+          "title": "Nikanor",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "l0uykBZIPZk",
+          "title": "No a la Mafia de la Heroína",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "r6bOLDfZV0s",
+          "title": "O Kompact do Papa",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "fNpBbVv1v_c",
+          "title": "Ska en el Vito",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "jIeoDhVmwpo",
+          "title": "Trabajando al Sol",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "0Ien3EVF3Mw",
+          "title": "Barrio El Karmen",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "0UxkFb-h1Eo",
+          "title": "Hay Que Guay",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "4BALC53nMLw",
+          "title": "Marujeo",
+          "channelId": "UCLlsd1LOmkAMoqbSE36JBZg",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        }
+      ],
+      "recordingsPublished": 5
+    },
+    {
+      "name": "Es Reboster",
+      "place": "Santa Margalida",
+      "category": "Ska / Reggae",
+      "subcategory": "ska-classic",
+      "channels": [
+        {
+          "id": "UCoEb3Xheb3cPwhNMFEhc_5g",
+          "allowedVideoIds": [
+            "RauFHQdu0dU",
+            "OkjLvp-hFPw",
+            "rNKzMlPOj9U"
+          ],
+          "allowedExternalVideos": {}
+        }
+      ],
+      "notSelected": [
+        {
+          "id": "56JfcLv0xEQ",
+          "title": "Màgia",
+          "channelId": "UCoEb3Xheb3cPwhNMFEhc_5g",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "9fEeVRAF2jo",
+          "title": "Miralls",
+          "channelId": "UCoEb3Xheb3cPwhNMFEhc_5g",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "MUmFyj3vLPk",
+          "title": "Baile",
+          "channelId": "UCoEb3Xheb3cPwhNMFEhc_5g",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "NXBCDzmHwOU",
+          "title": "Solitud",
+          "channelId": "UCoEb3Xheb3cPwhNMFEhc_5g",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "NkCpdQFOQUE",
+          "title": "Insomni",
+          "channelId": "UCoEb3Xheb3cPwhNMFEhc_5g",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "X8ZSlNTW4bo",
+          "title": "Ruleta",
+          "channelId": "UCoEb3Xheb3cPwhNMFEhc_5g",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "XC7oIjdZxwo",
+          "title": "Wow",
+          "channelId": "UCoEb3Xheb3cPwhNMFEhc_5g",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "ZemvzQOYArU",
+          "title": "Camí",
+          "channelId": "UCoEb3Xheb3cPwhNMFEhc_5g",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "fiBWZDUYRek",
+          "title": "Malcriada",
+          "channelId": "UCoEb3Xheb3cPwhNMFEhc_5g",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "fynBbm6Doj0",
+          "title": "9Món",
+          "channelId": "UCoEb3Xheb3cPwhNMFEhc_5g",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "-ShF4QxtNzU",
+          "title": "Lliure",
+          "channelId": "UCoEb3Xheb3cPwhNMFEhc_5g",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "5BlmJtsVfdg",
+          "title": "Black & White",
+          "channelId": "UCoEb3Xheb3cPwhNMFEhc_5g",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "Aigq6UUKsfs",
+          "title": "Ira",
+          "channelId": "UCoEb3Xheb3cPwhNMFEhc_5g",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "Alg3vatRTBw",
+          "title": "Què En Farem?",
+          "channelId": "UCoEb3Xheb3cPwhNMFEhc_5g",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "DKPDJlzPJBU",
+          "title": "Suerte",
+          "channelId": "UCoEb3Xheb3cPwhNMFEhc_5g",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "FEKvjDRXd04",
+          "title": "Nit D'Estiu",
+          "channelId": "UCoEb3Xheb3cPwhNMFEhc_5g",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "L8a2ytL6Qi0",
+          "title": "Esclaus De Guerra",
+          "channelId": "UCoEb3Xheb3cPwhNMFEhc_5g",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "PJKXKW1sTgw",
+          "title": "Sono Qui!",
+          "channelId": "UCoEb3Xheb3cPwhNMFEhc_5g",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "aiWmKQOZ1PQ",
+          "title": "MarRoc",
+          "channelId": "UCoEb3Xheb3cPwhNMFEhc_5g",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "gGiBpoHaUlI",
+          "title": "Un Món Insegur",
+          "channelId": "UCoEb3Xheb3cPwhNMFEhc_5g",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "kqLksXEI2Qo",
+          "title": "Sa Roqueta",
+          "channelId": "UCoEb3Xheb3cPwhNMFEhc_5g",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "mY5QRO_xMH0",
+          "title": "Immigrant",
+          "channelId": "UCoEb3Xheb3cPwhNMFEhc_5g",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        }
+      ],
+      "recordingsPublished": 3
+    },
+    {
+      "name": "Maitips",
+      "place": "Valls",
+      "category": "Ska / Reggae",
+      "subcategory": "reggae",
+      "channels": [
+        {
+          "id": "UCLOmT2Ut3zN8IFEtlSgUKmQ",
+          "allowedVideoIds": [
+            "6Hr8olNd37U",
+            "rVzp0C7d4P0",
+            "S9Ng3ED7gO8",
+            "u8Oqwz9a1MM",
+            "hD90y2CLwR4",
+            "nqof8LP9Vpc",
+            "oTI_JexoYwU",
+            "aEZG1969Ev8",
+            "gmCHDuCQ6OE",
+            "kYqxD0eJXiE",
+            "90ckY2sNHNU"
+          ],
+          "allowedExternalVideos": {}
+        }
+      ],
+      "notSelected": [
+        {
+          "id": "rMZo14DUqA4",
+          "title": "Adiu, Ça Va?",
+          "channelId": "UCLOmT2Ut3zN8IFEtlSgUKmQ",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "tRtRJE2ec-s",
+          "title": "Inventa el món",
+          "channelId": "UCLOmT2Ut3zN8IFEtlSgUKmQ",
+          "reason": "Lletra en català i basc; exclosa pel criteri íntegrament en català."
+        },
+        {
+          "id": "a0Tp7G-xLa8",
+          "title": "Fem Poble",
+          "channelId": "UCLOmT2Ut3zN8IFEtlSgUKmQ",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "AQIsFjW69mo",
+          "title": "Tocar el Cel",
+          "channelId": "UCLOmT2Ut3zN8IFEtlSgUKmQ",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "6v_-rbkZrOM",
+          "title": "Cuba",
+          "channelId": "UCLOmT2Ut3zN8IFEtlSgUKmQ",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "RhaWJzSDUoY",
+          "title": "Titelles",
+          "channelId": "UCLOmT2Ut3zN8IFEtlSgUKmQ",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "mBZQKDB_Sjk",
+          "title": "Tierra",
+          "channelId": "UCLOmT2Ut3zN8IFEtlSgUKmQ",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "WLUFYn_ignM",
+          "title": "Pas Del Temps",
+          "channelId": "UCLOmT2Ut3zN8IFEtlSgUKmQ",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "W9044ZS-DkA",
+          "title": "Vells Ideals",
+          "channelId": "UCLOmT2Ut3zN8IFEtlSgUKmQ",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "VkwWps3hd0o",
+          "title": "Nen Soldat",
+          "channelId": "UCLOmT2Ut3zN8IFEtlSgUKmQ",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "b3YLvZ9DXXo",
+          "title": "Aixi Es La Vida",
+          "channelId": "UCLOmT2Ut3zN8IFEtlSgUKmQ",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "jYzSSIHVoyI",
+          "title": "Biberons",
+          "channelId": "UCLOmT2Ut3zN8IFEtlSgUKmQ",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "Qe8COcs8Nyc",
+          "title": "Somni Reflex",
+          "channelId": "UCLOmT2Ut3zN8IFEtlSgUKmQ",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        },
+        {
+          "id": "Yx0x3IsElyE",
+          "title": "Kaixo",
+          "channelId": "UCLOmT2Ut3zN8IFEtlSgUKmQ",
+          "reason": "Pendent de contrast lingüístic, format o duplicat; no publicat."
+        }
+      ],
+      "recordingsPublished": 11
+    }
+  ],
+  "deferredArtists": [],
+  "otherArtistsHash": "e7d21e29d4cd23550d112a16d2eda4ffb0fb34124ed8db73b69c1ca7ced9e0bd",
+  "previouslyHiddenVideoIds": [],
+  "method": "Selecció acotada per ID amb fonts lingüístiques i discogràfiques. Lletres publicades contrastades, sense afirmar escolta íntegra dels enregistraments. Canals Tema prioritaris; la resta del repertori requereix revisió.",
+  "publication": {
+    "checkedAt": "2026-10-14T06:27:02.551Z",
+    "artists": 4,
+    "deferredArtists": 0,
+    "recordings": 20,
+    "status": "verified"
+  }
+}

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-14T06:08:07.394Z",
+  "updatedAt": "2026-10-14T06:26:53.987Z",
   "artists": [
     {
       "name": "2 Princeses Barbudes",
@@ -38970,6 +38970,174 @@
       ],
       "lastChecked": "2026-10-14T06:08:07.394Z",
       "notes": "Canal Tema i canals propis revisats. A vora barranc no localitzada als canals revisats; Al dia següent està fragmentada i Mira quina trola manca contrast lingüístic suficient. Cap pista aprovada. docs/revisions/2026-10-14-ska1-alta.json"
+    },
+    {
+      "name": "Oprimits",
+      "aliases": [],
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "territories": [
+        "Illes Balears"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCF4BwKBwBRZIpylrvVqQmBQ",
+            "name": "Oprimits - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://www.verkami.com/projects/3513-oprimits-seguim-endavant",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-14T06:26:53.987Z",
+      "notes": "Formació mallorquina de ska, rock i reggae amb influència punk. Origen insular documentat pel mateix grup. Selecció parcial contrastada; no importació de tot el canal. docs/revisions/2026-10-14-ska2-alta.json",
+      "genreReview": {
+        "reviewedAt": "2026-10-14",
+        "method": "source-review",
+        "sources": [
+          "https://www.verkami.com/projects/3513-oprimits-seguim-endavant"
+        ]
+      }
+    },
+    {
+      "name": "Skaparapid",
+      "aliases": [],
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "territories": [
+        "País Valencià"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCLlsd1LOmkAMoqbSE36JBZg",
+            "name": "Skaparapid - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://open.spotify.com/artist/0KS8PpA5dt2xO2nGB7wMlS",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-14T06:26:53.987Z",
+      "notes": "Grup nascut a València al Kasal Popular; ska combatiu amb influència punk. Repertori multilingüe seleccionat per cançó. Selecció parcial contrastada; no importació de tot el canal. docs/revisions/2026-10-14-ska2-alta.json",
+      "genreReview": {
+        "reviewedAt": "2026-10-14",
+        "method": "source-review",
+        "sources": [
+          "https://open.spotify.com/artist/0KS8PpA5dt2xO2nGB7wMlS"
+        ]
+      }
+    },
+    {
+      "name": "Es Reboster",
+      "aliases": [],
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "territories": [
+        "Illes Balears"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCoEb3Xheb3cPwhNMFEhc_5g",
+            "name": "Es Reboster - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://www.dbalears.cat/balears/cultura/2007/04/28/146584/es-reboster-presenta-sono-qui-musica-festiva-amb-lletres-de-pes.html",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-14T06:26:53.987Z",
+      "notes": "Banda nascuda a Santa Margalida amb base ska i reggae i influències pop-rock. Selecció parcial contrastada; no importació de tot el canal. docs/revisions/2026-10-14-ska2-alta.json",
+      "genreReview": {
+        "reviewedAt": "2026-10-14",
+        "method": "source-review",
+        "sources": [
+          "https://www.dbalears.cat/balears/cultura/2007/04/28/146584/es-reboster-presenta-sono-qui-musica-festiva-amb-lletres-de-pes.html"
+        ]
+      }
+    },
+    {
+      "name": "Maitips",
+      "aliases": [],
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCLOmT2Ut3zN8IFEtlSgUKmQ",
+            "name": "Maitips - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://maitips.bandcamp.com/album/inventa-el-m-n",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-14T06:26:53.987Z",
+      "notes": "Grup de Valls amb arrels ska i evolució cap al reggae i el rock, segons la presentació del seu Bandcamp. Selecció parcial contrastada; no importació de tot el canal. docs/revisions/2026-10-14-ska2-alta.json",
+      "genreReview": {
+        "reviewedAt": "2026-10-14",
+        "method": "source-review",
+        "sources": [
+          "https://maitips.bandcamp.com/album/inventa-el-m-n"
+        ]
+      }
     }
   ]
 }
