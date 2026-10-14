@@ -21,6 +21,12 @@ async function main() {
     const ids='D2AU-ehbPqE,HLZRisGSnJY,rZV7LihcMhU,NhKPBq51wCc,smZoMUG5ohw,lpSKPXyyPtI';
     const videos=(await api('videos',{part:'snippet,contentDetails,status',id:ids})).items||[];
     const evidence={checkedAt:new Date().toISOString(),videos};
+    evidence.channels=[];
+    for(const c of (await api('channels',{part:'snippet,contentDetails',id:'UCRkcYFZB875HJysWmWSSexw'})).items||[]) {
+        const p=await api('playlistItems',{part:'contentDetails',playlistId:c.contentDetails.relatedPlaylists.uploads,maxResults:50});
+        const details=await api('videos',{part:'snippet,contentDetails,status',id:(p.items||[]).map(v=>v.contentDetails.videoId).join(',')});
+        evidence.channels.push({id:c.id,name:c.snippet.title,handle:c.snippet.customUrl||null,description:c.snippet.description,complete:!p.nextPageToken,videos:details.items});
+    }
     fs.writeFileSync(OUT+'-evidencies.json',JSON.stringify(evidence,null,2)+'\n');
     console.log(JSON.stringify({videos:videos.length,calls}));
 }
