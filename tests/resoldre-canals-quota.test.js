@@ -47,8 +47,10 @@ describe('resoldre_canals_verificats: quota de l’API', () => {
         expect(isQuotaError(clau)).toBe(false);
     });
 
-    it('el workflow només s’executa en pujades a main (no a les branques de les PR)', () => {
+    it('el workflow espera al cron o a una ordre manual i només escriu a main', () => {
         const workflow = readFileSync('.github/workflows/cercar-canals-youtube.yml', 'utf8');
-        expect(workflow).toMatch(/push:\n(?:\s+#.*\n)*\s+branches:\n\s+- main\n\s+paths:/);
+        expect(workflow).not.toMatch(/^  push:/m);
+        expect(workflow).toContain('cron:');
+        expect(workflow).toContain("if: github.ref == 'refs/heads/main'");
     });
 });

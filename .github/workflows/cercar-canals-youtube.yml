@@ -1,72 +1,38 @@
 name: Cercar canals YouTube
 
+# Manteniment programat o execució manual explícita. Cap push ni encadenament.
 on:
-  push:
-    # Només a main: el job treballa sempre sobre l'últim main (git reset) i hi publica. En una branca, una fusió de
-    # main que porta aquests fitxers el disparava i, si la quota de l'API era esgotada, la PR sortia en vermell.
-    branches:
-      - main
-    paths:
-      - "scripts/cercar_canals_youtube.js"
-      - "scripts/resoldre_canals_verificats.js"
-      - "data/youtube-verified-handles.json"
-      - "data/youtube-search-targets.json"
-      - "tests/youtube-search-candidates.test.js"
-      - ".github/workflows/cercar-canals-youtube.yml"
   schedule:
-    # 08:17 UTC: després del reinici de quota a mitjanit PT tant a l'estiu com a l'hivern.
     - cron: "17 8 * * *"
   workflow_dispatch:
 
 concurrency:
   group: music-data-writer
   cancel-in-progress: false
-
+permissions:
+  contents: write
 jobs:
   cerca:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 10
-
-    permissions:
-      contents: write
-
     steps:
-      - name: Checkout
-        uses: actions/checkout@v5
-
-      - name: Setup Node
-        uses: actions/setup-node@v5
+      - uses: actions/checkout@v5
         with:
-          node-version: "20"
-
-      - name: Sincronitza amb l'últim main
+          ref: main
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+      - name: Sincronitza main
+        run: git pull --ff-only origin main
+      - name: Resol canals verificats i cerca candidats
+        env:
+          YOUTUBE_API_KEY_SERVER: ${{ secrets.YOUTUBE_API_KEY_SERVER }}
         run: |
-          git fetch origin main
-          git reset --hard origin/main
-
-      - name: Resol canals verificats
-        env:
-          YOUTUBE_API_KEY_SERVER: ${{ secrets.YOUTUBE_API_KEY_SERVER }}
-        run: node scripts/resoldre_canals_verificats.js
-
-      - name: Cerca canals candidats
-        env:
-          YOUTUBE_API_KEY_SERVER: ${{ secrets.YOUTUBE_API_KEY_SERVER }}
-        run: node scripts/cercar_canals_youtube.js --limit=25
-
+          node scripts/resoldre_canals_verificats.js
+          node scripts/cercar_canals_youtube.js --limit=25
       - name: Valida la base
         run: node scripts/validar_artistes_musica.js
-
-      - name: Publica canvis
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/artistes-musica.json
-
-          if git diff --cached --quiet; then
-            echo "Sense canvis de cerca."
-            exit 0
-          fi
-
-          git commit -m "data: resol canals YouTube verificats"
-          git push origin HEAD:main
+      - name: Desa els canals; no activa el feed
+        run: >-
+          bash scripts/publicar_dades.sh "data: resol canals YouTube verificats" data/artistes-musica.json
