@@ -63,6 +63,14 @@ async function main() {
         fs.writeFileSync(OUT+'-'+t.slug+'.json',JSON.stringify(entry,null,2)+'\n');
         report.artists.push({name:t.name,channels:entry.channels.map(c=>({id:c.id,name:c.name,handle:c.handle,count:c.videos.length,complete:c.complete}))});
     }
+    const evidence=[];
+    for(const q of ['"Oprimits" "lletra"','"Oprimits" "Endavant"','"Oprimits" "Som Oprimits"','"Oprimits" "Resistirem"','"Oprimits" "Correllengua"','"Oprimits" "Sense tu"','"Es Reboster" "lletra"','"Es Reboster" "Dona"','"Es Reboster" "5:32"','"Es Reboster" "Sa Roqueta"','"Skaparapid" "Temps Perdut"','"Skaparapid" "Guillem"','"Skaparapid" "Desapareix"']) {
+        const results=await api('search',{part:'snippet',type:'video',q,maxResults:8});
+        const ids=(results.items||[]).map(v=>v.id.videoId);
+        if(ids.length) evidence.push({query:q,videos:(await api('videos',{part:'snippet,contentDetails,status',id:ids.join(',')})).items});
+    }
+    evidence.push({query:'Fonts localitzades en cerca web',videos:(await api('videos',{part:'snippet,contentDetails,status',id:'D2AU-ehbPqE,HLZRisGSnJY,rZV7LihcMhU,NhKPBq51wCc,smZoMUG5ohw'})).items});
+    fs.writeFileSync(OUT+'-evidencies.json',JSON.stringify(evidence,null,2)+'\n');
     report.calls = calls;
     fs.writeFileSync(OUT+'-descoberta.json',JSON.stringify(report,null,2)+'\n');
     console.log(JSON.stringify(report));
