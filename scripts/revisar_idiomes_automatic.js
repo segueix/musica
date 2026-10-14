@@ -121,9 +121,10 @@ async function run({ root = process.cwd(), args = process.argv.slice(2), env = p
     cache.items ||= {};
     const key = opts.offline ? '' : env.OPENAI_API_KEY || '';
     const youtubeKey = opts.offline ? '' : env.YOUTUBE_API_KEY_SERVER || env.YOUTUBE_API_KEY || '';
-    const capabilities = core.hash({ ai: Boolean(key), youtube: Boolean(youtubeKey), ...opts });
+    const capabilities = core.capabilityFingerprint({ ai: Boolean(key), youtube: Boolean(youtubeKey),
+        model: opts.model, webSearch: opts.webSearch });
     const batch = core.selectBatch(state.pendents, cache, { limit: opts.limit, now,
-        policyHash: core.hash([registry.discsVerificats || [], state.decisions || []]), capabilities });
+        policyHash: entry => core.evidenceFingerprint(entry, state, registry), capabilities });
     const stats = { youtubeRequests: 0, aiRequests: 0, searchRequests: 0, inputTokens: 0, outputTokens: 0 };
     const local = new Map();
     // Recupera descripcions completes presents al catàleg; no usa els resums de 160 caràcters de pendents.

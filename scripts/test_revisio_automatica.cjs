@@ -136,3 +136,51 @@ test('execució integral offline: informe i checkpoint; cap canvi al catàleg', 
         assert.ok(!fs.readFileSync(path.join(root, 'reports/idiomes-auto/latest.json'), 'utf8').includes('vent imaginari'));
     } finally { fs.rmSync(root, { recursive: true, force: true }); }
 });
+
+
+test('canviar el límit del lot no invalida la memòria cau', () => {
+    const config = { ai: true, youtube: true, model: 'model-test', webSearch: true };
+    const a = core.capabilityFingerprint({ ...config, limit: 25 });
+    const b = core.capabilityFingerprint({ ...config, limit: 100 });
+    assert.equal(a, b);
+    const e = core.selectBatch([entry()], {}, { limit: 1, now, capabilities: a })[0];
+    const cache = { items: { [e.id]: core.checkpoint({}, e, { status: 'pendent', reason: 'sense-proves' }, now) } };
+    assert.equal(core.selectBatch([entry()], cache, { limit: 100, now, capabilities: b }).length, 0);
+});
+test('canviar pressupostos no reinicia els intents editorials', () => {
+    const config = { ai: true, youtube: true, model: 'model-test', webSearch: true };
+    assert.equal(core.capabilityFingerprint({ ...config, maxAi: 5, maxSearch: 1 }),
+        core.capabilityFingerprint({ ...config, maxAi: 25, maxSearch: 10 }));
+});
+test('model o eines noves invaliden resultats només si estan disponibles', () => {
+    const config = { ai: false, youtube: true, model: 'a', webSearch: true };
+    assert.equal(core.capabilityFingerprint(config), core.capabilityFingerprint({ ...config, model: 'b' }));
+    assert.notEqual(core.capabilityFingerprint({ ...config, ai: true }),
+        core.capabilityFingerprint({ ...config, ai: true, model: 'b' }));
+});
+test('decisions i discos aliens no invaliden una entrada', () => {
+    const before = core.evidenceFingerprint(entry(), {}, {});
+    const after = core.evidenceFingerprint(entry(), { decisions: [
+        { id: 'bbbbbbbbbbb', accio: 'conserva', font: 'https://example.org' },
+    ] }, { discsVerificats: [{ artista: 'Artista', accio: 'conserva',
+        font: 'https://example.org/disc', videoIds: ['bbbbbbbbbbb'] }] });
+    assert.equal(before, after);
+});
+test('una decisió nova reinicia només el vídeo afectat', () => {
+    const entries = [entry(), entry('bbbbbbbbbbb')];
+    const beforePolicy = e => core.evidenceFingerprint(e, {}, {});
+    const selected = core.selectBatch(entries, {}, { limit: 2, now, policyHash: beforePolicy });
+    const cache = { items: Object.fromEntries(selected.map(e => [e.id,
+        core.checkpoint({}, e, { status: 'pendent', reason: 'sense-proves' }, now)])) };
+    const afterPolicy = e => core.evidenceFingerprint(e, { decisions: [
+        { id: 'bbbbbbbbbbb', accio: 'amaga', font: 'https://example.org' },
+    ] }, {});
+    assert.deepEqual(core.selectBatch(entries, cache, { limit: 2, now, policyHash: afterPolicy }).map(e => e.id),
+        ['bbbbbbbbbbb']);
+});
+test('reordenar proves equivalents no invalida el progrés', () => {
+    const a = { id: entry().id, accio: 'conserva', font: 'https://example.org/a' };
+    const b = { id: entry().id, accio: 'conserva', font: 'https://example.org/b' };
+    assert.equal(core.evidenceFingerprint(entry(), { decisions: [a, b] }, {}),
+        core.evidenceFingerprint(entry(), { decisions: [b, a, a] }, {}));
+});

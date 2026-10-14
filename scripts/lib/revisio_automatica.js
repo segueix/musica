@@ -11,7 +11,7 @@ const LANGUAGES = ['ca', 'es', 'en', 'fr', 'it', 'oc', 'other', 'und'];
 
 function fingerprint(entry, policyHash, capabilities) {
     // No incloure updatedAt: canvia a cada generació encara que la peça sigui la mateixa.
-    return hash([VERSION, entry.id, entry.artistaId, entry.canalId, entry.titol,
+    return hash([VERSION, entry.id, entry.artistaId, entry.artista, entry.canalId, entry.titol,
         entry.tipus, entry.descripcio, policyHash, capabilities]);
 }
 
@@ -22,7 +22,8 @@ function selectBatch(entries, cache, { limit = 100, now, policyHash = '', capabi
     for (const entry of entries) {
         if (!validId(entry.id) || seen.has(entry.id)) continue;
         seen.add(entry.id);
-        const fp = fingerprint(entry, policyHash, capabilities);
+        const policy = typeof policyHash === 'function' ? policyHash(entry) : policyHash;
+        const fp = fingerprint(entry, policy, capabilities);
         const old = cache.items?.[entry.id];
         if (old?.fingerprint === fp && (old.attempts >= 3 || Date.parse(old.retryAt) > Date.parse(now))) continue;
         // Alterna artistes i tipus; no consumeix tot el lot amb el primer artista de l'alfabet.
@@ -46,12 +47,33 @@ function selectBatch(entries, cache, { limit = 100, now, policyHash = '', capabi
     return selected;
 }
 
-function documentaryEvidence(entry, state, registry) {
+function documentaryRecords(entry, state, registry) {
     const exact = (state.decisions || []).filter(d => d.id === entry.id && /^https:\/\//.test(d.font || '')
         && ['conserva', 'amaga'].includes(d.accio) && d.criteri !== 'confianca-artista');
     const discs = (registry.discsVerificats || []).filter(d => d.artista === entry.artista
         && d.videoIds?.includes(entry.id) && /^https:\/\//.test(d.font || '')
         && ['conserva', 'amaga'].includes(d.accio));
+    return { exact, discs };
+}
+
+function evidenceFingerprint(entry, state, registry) {
+    const { exact, discs } = documentaryRecords(entry, state, registry);
+    // Una decisió sobre un altre vídeo o disc no reinicia el progrés d’aquest.
+    const values = [
+        ...exact.map(d => ['video', d.accio, d.font, d.criteri || '']),
+        ...discs.map(d => ['disc', d.accio, d.font]),
+    ].map(value => JSON.stringify(value)).sort();
+    return hash(unique(values));
+}
+
+function capabilityFingerprint({ ai, youtube, model, webSearch }) {
+    // Mida de lot, pressupostos i mode d’execució no canvien les proves d’una peça.
+    return hash({ ai: Boolean(ai), youtube: Boolean(youtube),
+        model: ai ? model : null, webSearch: Boolean(ai && webSearch) });
+}
+
+function documentaryEvidence(entry, state, registry) {
+    const { exact, discs } = documentaryRecords(entry, state, registry);
     const evidence = [...exact, ...discs];
     if (!evidence.length) return null;
     if (unique(evidence.map(d => d.accio)).length !== 1) return { status: 'pendent', reason: 'fonts-en-conflicte' };
@@ -134,4 +156,4 @@ function summary(results) {
 }
 
 module.exports = { VERSION, hash, validId, normalize, fingerprint, selectBatch,
-    documentaryEvidence, descriptionSource, lyricCandidate, checkAnalysis, checkpoint, summary };
+    evidenceFingerprint, capabilityFingerprint, documentaryEvidence, descriptionSource, lyricCandidate, checkAnalysis, checkpoint, summary };
