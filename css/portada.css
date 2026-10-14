@@ -4640,6 +4640,30 @@ body.drive-mode .dm-info[hidden] {
     }
 }
 
+#channelPage .ap-albums-views {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    justify-content: flex-end;
+}
+#channelPage .ap-albums-grid.is-overview {
+    grid-auto-flow: row;
+    grid-auto-columns: auto;
+    grid-template-columns: repeat(auto-fill, minmax(138px, 1fr));
+    overflow-x: visible;
+    margin-inline: 0;
+    padding-inline: 0;
+}
+#channelPage .ap-album-meta {
+    white-space: normal;
+}
+#channelPage .ap-album-card:disabled {
+    cursor: default;
+}
+#channelVideosGrid[hidden] {
+    display: none;
+}
+
 /* ---------- Controls sota el reproductor (#playerExternalControls) ----------
    Anterior · play/pausa · següent · finestra flotant · m'agrada, fora de l'iframe de YouTube (no s'hi posa res al
    damunt). Mateix estil que els botons d'icona de l'app: rodons, superfície 2, vora fina, llima en passar-hi per

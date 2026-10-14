@@ -1,5 +1,7 @@
 'use strict';
 
+const { cleanTitle } = require('../../js/song-title');
+
 // Catàleg local de discos. No fa cap crida de xarxa: aprofita les descripcions que update_music_feed.js
 // ja ha rebut de YouTube i les converteix en metadades persistents abans que l'aprimador les elimini.
 
@@ -24,6 +26,38 @@ function extractAlbum(description) {
   const released = lines.find(line => /^released on:\s*\d{4}-\d{2}-\d{2}/i.test(line)) || '';
   const year = Number((released.match(/(\d{4})/) || [])[1] || 0) || 0;
   return { title, year };
+}
+
+// Només una declaració explícita del disc; no caràtules, hashtags ni llistes genèriques.
+function extractOfficialAlbum(description, artist = '') {
+  const lines = String(description || '').split(/\r?\n/).map(line => line.trim());
+  const titles = new Set();
+  const artistPattern = String(artist).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const owner = artistPattern ? `(?:(?:de\\s+|d[’'])${artistPattern}\\s*[,:]?\\s*)?` : '';
+  const quotedTitle = '(?:"([^"\\n]{2,120})"|«([^»\\n]{2,120})»|“([^”\\n]{2,120})”|\'([^\'\\n]{2,120})\')';
+  const explicit = new RegExp(`(?:disc|disco|àlbum|album)\\s+${owner}${quotedTitle}`, 'iu');
+  for (const line of lines) {
+    const field = line.match(/^(?:àlbum|album|disc|disco)\s*:\s*(.{2,120})$/iu);
+    const sentence = /(?:cançó|canción|tema|forma part|extret[ao]?)/iu.test(line)
+      ? line.match(explicit)
+      : null;
+    const title = (field?.[1] || sentence?.slice(1).find(Boolean) || '').trim();
+    if (title && !/https?:|www\./i.test(title)) titles.add(title);
+  }
+  return titles.size === 1 ? { title: [...titles][0], year: 0 } : null;
+}
+
+function songKey(video, artist) {
+  // Neteja conservadora: «07 Cançó - Artista \"Disc\"» no es pot convertir en «Disc».
+  // Els marcadors de directe, remix i col·laboració es conserven.
+  let title = cleanTitle(video.originalTitle || video.title, { artists: [] });
+  for (const name of new Set([artist, video.channelTitle].filter(Boolean))) {
+    const escaped = name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    title = title.replace(new RegExp(`^${escaped}\\s+[-–—:]\\s+`, 'iu'), '')
+      .replace(new RegExp(`\\s+[-–—]\\s+${escaped}(?:\\s+["«“].*["»”])?$`, 'iu'), '');
+  }
+  title = title.replace(/^\d{1,2}[.)]\s+|^0\d\s+/, '');
+  return normalizeTitle(title);
 }
 
 function hash32(value) {
@@ -71,9 +105,10 @@ function mergeAlbumCatalog(previous, videos, channels, { hiddenIds = new Set(), 
     generatedFrom: previous?.generatedFrom || 'metadades Topic rebudes pel generador',
     generatedAt,
     strategy:
-      'Metadades Topic locals; discos amb >=2 cançons. Videoclips hereten disc només amb coincidència única de títol+artista.',
+      'Llançaments verificats prioritaris; metadades explícites Topic/oficials amb >=2 cançons. Coincidències úniques per artista; pistes parcials conservades entre actualitzacions.',
     channels: { ...(previous?.channels || {}) },
     artists: {},
+    pendingAlbums: {},
   };
 
   for (const [artist, entry] of Object.entries(previous?.artists || {})) {
@@ -81,14 +116,23 @@ function mergeAlbumCatalog(previous, videos, channels, { hiddenIds = new Set(), 
       albums: (entry?.albums || []).map(cleanAlbum),
     };
   }
+  // Una primera pista queda pendent: dues actualitzacions parcials poden completar el mateix disc.
+  for (const [artist, albums] of Object.entries(previous?.pendingAlbums || {})) {
+    if (!Object.values(channels).some(c => c.artists?.includes(artist) || c.name === artist)) continue;
+    const entry = catalog.artists[artist] ||= { albums: [] };
+    for (const album of albums) {
+      if (!entry.albums.some(a => a.id === album.id)) entry.albums.push(cleanAlbum(album));
+    }
+  }
 
   const byArtistTitle = new Map();
   const byArtistKey = new Map();
 
   function indexAlbum(artist, album) {
-    const titleKey = artist + '\u0000' + String(album.title || '');
+    const titleKey = artist + '\u0000' + normalizeTitle(album.title);
     byArtistTitle.set(titleKey, album);
-    for (const key of album.keys || []) {
+    for (const rawKey of album.keys || []) {
+      const key = normalizeTitle(rawKey);
       const lookup = artist + '\u0000' + key;
       if (!byArtistKey.has(lookup)) byArtistKey.set(lookup, new Set());
       byArtistKey.get(lookup).add(album);
@@ -103,16 +147,21 @@ function mergeAlbumCatalog(previous, videos, channels, { hiddenIds = new Set(), 
   const coverViews = new Map();
 
   for (const video of videos || []) {
-    const meta = extractAlbum(video?.description);
+    if (hiddenIds.has(String(video?.id)) || video?.isShort ||
+        (video?.contentType && !['song', 'live_song'].includes(video.contentType))) continue;
+    const topicMeta = extractAlbum(video?.description);
+    // Un directe/remix no hereta el disc d'estudi esmentat al text promocional.
+    const isVariant = /\b(?:live|directe|directo|ac[uú]stic[ao]?|acoustic|remix|cover)\b/i.test(video?.originalTitle || video?.title || '');
+    const artist = canonicalArtist(video, channels);
+    const meta = topicMeta || (!isVariant && extractOfficialAlbum(video?.description, artist));
     if (!meta) continue;
     // Una reedició digital no canvia l'any original verificat del disc.
     const manualYear = video.originalYearSource === 'manual' ? Number(video.originalYear) : 0;
     const albumYear = manualYear || meta.year;
-    const artist = canonicalArtist(video, channels);
-    const key = normalizeTitle(video?.title);
+    const key = songKey(video, artist);
     if (!artist || !key) continue;
 
-    const lookup = artist + '\u0000' + meta.title;
+    const lookup = artist + '\u0000' + normalizeTitle(meta.title);
     let album = byArtistTitle.get(lookup);
     if (!album) {
       album = {
@@ -121,6 +170,8 @@ function mergeAlbumCatalog(previous, videos, channels, { hiddenIds = new Set(), 
         coverVideoId: '',
         trackIds: [],
         keys: [],
+        sourceType: topicMeta ? 'topic_metadata' : 'channel_metadata',
+        sourceUrl: `https://www.youtube.com/watch?v=${encodeURIComponent(video.id)}`,
       };
       if (albumYear) album.year = albumYear;
       (catalog.artists[artist] ||= { albums: [] }).albums.push(album);
@@ -148,8 +199,10 @@ function mergeAlbumCatalog(previous, videos, channels, { hiddenIds = new Set(), 
   // Propaga disc a videoclips/àudios oficials només quan la mateixa cançó apunta a un únic disc.
   for (const video of videos || []) {
     const id = String(video?.id || '');
+    if (hiddenIds.has(id) || video?.isShort ||
+        (video?.contentType && !['song', 'live_song'].includes(video.contentType))) continue;
     const artist = canonicalArtist(video, channels);
-    const key = normalizeTitle(video?.title);
+    const key = songKey(video, artist);
     if (!id || !artist || !key) continue;
     const matches = [...(byArtistKey.get(artist + '\u0000' + key) || [])];
     if (matches.length !== 1) continue;
@@ -160,10 +213,18 @@ function mergeAlbumCatalog(previous, videos, channels, { hiddenIds = new Set(), 
   // Un llançament nou d'una sola pista és un single: no es presenta com a disc.
   for (const [artist, entry] of Object.entries(catalog.artists)) {
     entry.albums = entry.albums
+      .map(album => {
+        album.trackIds = (album.trackIds || []).filter(id => !hiddenIds.has(id));
+        if (hiddenIds.has(album.coverVideoId)) album.coverVideoId = album.trackIds[0] || '';
+        return album;
+      })
       .filter(album => {
+        if (!album.trackIds.length) return false;
         const existed = (previous?.artists?.[artist]?.albums || []).some(old => String(old.id) === String(album.id));
         const knownKeys = new Set(album.keys || []);
-        return existed || knownKeys.size >= 2 || (newKeysByAlbum.get(album.id)?.size || 0) >= 2;
+        const ready = existed || knownKeys.size >= 2 || (newKeysByAlbum.get(album.id)?.size || 0) >= 2;
+        if (!ready) (catalog.pendingAlbums[artist] ||= []).push(cleanAlbum(album));
+        return ready;
       })
       .map(cleanAlbum)
       .sort((a, b) => (Number(b.year) || 0) - (Number(a.year) || 0) || a.title.localeCompare(b.title, 'ca'));
@@ -186,6 +247,7 @@ function mergeAlbumCatalog(previous, videos, channels, { hiddenIds = new Set(), 
 module.exports = {
   normalizeTitle,
   extractAlbum,
+  extractOfficialAlbum,
   canonicalArtist,
   mergeAlbumCatalog,
 };

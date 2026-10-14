@@ -52,7 +52,7 @@
     
     <!-- CSS -->
     <link rel="stylesheet" href="css/styles.css?v=20260929-home-playlists-4">
-    <link rel="stylesheet" href="css/portada.css?v=20261013-estils-1">
+    <link rel="stylesheet" href="css/portada.css?v=20261014-discos">
     
     <link rel="stylesheet" href="css/google-drive-sync.css">
     <!-- Icons (Lucide via CDN) -->
@@ -344,7 +344,7 @@
         </div>
 
         <div class="page hidden ap-page" id="channelPage">
-            <!-- Fitxa d'artista (js/features/artist-page.js?v=20261014-radio-artista): barra superior amb enrere i les dues ràdios -->
+            <!-- Fitxa d'artista: barra superior amb enrere i les dues ràdios -->
             <div class="ap-top">
                 <button class="channel-back-btn" id="channelBackBtn" type="button" aria-label="Tornar enrere">
                     <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M19 12H5M12 19l-7-7 7-7"/></svg>
@@ -404,14 +404,17 @@
             <section class="ap-albums" id="apAlbums" aria-labelledby="apAlbumsTitle" hidden>
                 <div class="ap-albums-head">
                     <h2 class="ap-albums-title" id="apAlbumsTitle">Discos</h2>
-                    <button class="ap-albums-all is-active" id="apAlbumsAll" type="button" data-ap-album="" aria-pressed="true">Totes</button>
+                    <div class="ap-albums-views" aria-label="Vista del repertori">
+                        <button class="ap-albums-all" id="apAlbumsOverview" type="button" data-ap-album="__albums__" aria-pressed="false">Discos</button>
+                        <button class="ap-albums-all" id="apAlbumsAll" type="button" data-ap-album="" aria-pressed="false">Totes les cançons</button>
+                    </div>
                 </div>
                 <div class="ap-albums-grid" id="apAlbumsGrid"></div>
                 <!-- Ràdio del disc triat: només les seves cançons (artist-page.js, renderAlbums) -->
                 <div class="ap-album-radio" id="apAlbumRadio" hidden></div>
             </section>
             <div class="ap-songs-head">
-                <h2 class="ap-songs-title">Cançons</h2>
+                <h2 class="ap-songs-title" id="apSongsTitle">Cançons</h2>
                 <div class="channel-search-wrap channel-search-wrap--desktop">
                     <input id="channelSearchInputDesktop" class="channel-search-input" type="search" placeholder="Cerca dins del canal..." aria-label="Cerca vídeos dins del canal">
                 </div>
@@ -968,7 +971,7 @@
     <script src="js/features/youtube-subscribe.js?v=20261008-subscriu-4"></script>
     <script src="js/features/nearby-radio.js?v=20261012-mapa-1"></script>
     <script src="js/features/portada.js?v=20261013-estils-1"></script>
-    <script src="js/features/artist-page.js?v=20261014-radio-artista"></script>
+    <script src="js/features/artist-page.js?v=20261014-discos"></script>
     <script src="js/features/user-categories.js?v=20261012-artistes-unics-1"></script>
     <script src="js/features/alphabet-index.js?v=20261004-az-1"></script>
     <script src="js/features/category-artists.js?v=20261005-artistes-categoria-1"></script>
@@ -982,7 +985,7 @@
     <script src="js/features/analytics-admin.js?v=20261006-music-analytics-1"></script>
 
     <!-- Main app entrypoint -->
-    <script src="js/app.js?v=20261013-carrega-2"></script>
+    <script src="js/app.js?v=20261014-discos"></script>
     <script src="js/features/tv-learning.js?v=20260924-learning-v1"></script>
     <script src="js/features/smart-feed.js?v=20260924-smart-feed-v1"></script>
     <script src="js/features/tv-live-queue.js?v=20260924-live-session-v1"></script>

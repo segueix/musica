@@ -14,6 +14,7 @@
     const MAX_STYLES = 3;
     const MIN_SONGS = 2;
     const ALBUMS_URL = 'data/albums-musica.json';
+    const OVERVIEW_ALBUM_ID = '__albums__';
     // Disc (cercle amb el forat del mig) per al botó «Ràdio del disc»
     const RADIO_ICON =
         '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/></svg>';
@@ -99,7 +100,11 @@
                     .map(String)
                     .filter(trackId => songIds.has(trackId)),
             }))
-            .filter(album => album.visibleTrackIds.length > 0);
+            // Un llançament verificat continua visible mentre arriben les pistes.
+            .filter(album => album.visibleTrackIds.length > 0 ||
+                (album.trackIds?.length && ['release', 'official_playlist', 'discography'].includes(album.sourceType)))
+            .sort((a, b) => Number(a.type === 'single') - Number(b.type === 'single') ||
+                (Number(b.year) || 0) - (Number(a.year) || 0) || a.title.localeCompare(b.title, 'ca'));
         const assigned = new Set(albums.flatMap(album => album.trackIds || album.visibleTrackIds));
         const otherIds = songs.map(video => String(video.id)).filter(videoId => !assigned.has(videoId));
         return { artist, albums, otherIds, hasAlbums: albums.length > 0 };
@@ -127,6 +132,7 @@
     };
     let bound = false;
     let albumsPromise = null;
+    let albumsRequest = 0;
     let originsPromise = null;
     let originRequest = 0;
 
@@ -235,6 +241,18 @@
         return total === 1 ? '1 cançó disponible' : `${total} cançons disponibles`;
     }
 
+    function albumAvailabilityLabel(album) {
+        const count = album.visibleTrackIds.length;
+        if (!count) return 'Pistes pendents d’incorporar';
+        const total = album.trackGroups?.length || 0;
+        return total > count ? `${count} de ${total} cançons disponibles` : availableSongsLabel(count);
+    }
+
+    function isAlbumsOverview(channelId = '', query = '') {
+        return (!channelId || text(channelId) === state.channelId) && !text(query) &&
+            state.albums.hasAlbums && state.selectedAlbumId === OVERVIEW_ALBUM_ID;
+    }
+
     function renderAlbums() {
         const section = $('apAlbums');
         const grid = $('apAlbumsGrid');
@@ -245,15 +263,24 @@
         }
 
         const selected = state.selectedAlbumId;
-        if (all) all.classList.toggle('is-active', !selected);
+        if (all) {
+            all.classList.toggle('is-active', !selected);
+            all.setAttribute('aria-pressed', String(!selected));
+        }
+        const overview = $('apAlbumsOverview');
+        if (overview) {
+            overview.classList.toggle('is-active', selected === OVERVIEW_ALBUM_ID);
+            overview.setAttribute('aria-pressed', String(selected === OVERVIEW_ALBUM_ID));
+        }
+        grid.classList.toggle('is-overview', selected === OVERVIEW_ALBUM_ID);
         grid.innerHTML = [
             ...state.albums.albums.map(album => {
                 const count = album.visibleTrackIds.length;
                 const kind = { album: 'Àlbum', ep: 'EP', single: 'Senzill', live: 'Directe' }[album.type] || '';
-                const meta = [kind, album.year || '', availableSongsLabel(count)].filter(Boolean).join(' · ');
+                const meta = [kind, album.year || '', albumAvailabilityLabel(album)].filter(Boolean).join(' · ');
                 return `
                     <button class="ap-album-card ${selected === album.id ? 'is-active' : ''}" type="button"
-                        data-ap-album="${escapeHtml(album.id)}" aria-pressed="${selected === album.id}">
+                        data-ap-album="${escapeHtml(album.id)}" aria-pressed="${selected === album.id}" ${count ? '' : 'disabled'}>
                         <img class="ap-album-cover" src="${escapeHtml(/^https:\/\//.test(album.coverUrl || '') ? album.coverUrl : albumCover(album.coverVideoId))}"
                             alt="Caràtula de ${escapeHtml(album.title)}" loading="lazy">
                         <span class="ap-album-title">${escapeHtml(album.title)}</span>
@@ -264,7 +291,7 @@
                 ? `<button class="ap-album-card ap-album-card--other ${selected === OTHER_ALBUM_ID ? 'is-active' : ''}"
                         type="button" data-ap-album="${OTHER_ALBUM_ID}" aria-pressed="${selected === OTHER_ALBUM_ID}">
                         <span class="ap-album-other-icon" aria-hidden="true">♪</span>
-                        <span class="ap-album-title">Singles i altres</span>
+                        <span class="ap-album-title">Altres cançons</span>
                         <span class="ap-album-meta">${availableSongsLabel(state.albums.otherIds.length)}</span>
                    </button>`
                 : '',
@@ -314,17 +341,23 @@
     async function loadAndRenderAlbums(channelId, videos) {
         if (state.program) return hideAlbums();
         const expected = text(channelId);
+        const request = ++albumsRequest;
         const catalog = await loadAlbumsCatalog();
-        if (expected !== state.channelId) return;
+        if (expected !== state.channelId || request !== albumsRequest) return;
+        const hadAlbums = state.albums.hasAlbums;
         state.albums = albumsModel(catalog, { channelId: expected, videos });
-        state.selectedAlbumId = '';
+        if (!state.albums.hasAlbums) state.selectedAlbumId = '';
+        else if (!hadAlbums) state.selectedAlbumId = OVERVIEW_ALBUM_ID;
         renderAlbums();
+        const query = text($('channelSearchInputDesktop')?.value) || text($('channelSearchInputMobile')?.value);
+        if (typeof window.renderChannelVideos === 'function') window.renderChannelVideos(query);
     }
 
     function selectAlbum(albumId = '') {
         const next = text(albumId);
         const valid =
             !next ||
+            next === OVERVIEW_ALBUM_ID ||
             next === OTHER_ALBUM_ID ||
             state.albums.albums.some(album => String(album.id) === next);
         if (!valid) return false;
@@ -341,7 +374,7 @@
         const list = Array.isArray(videos) ? videos : [];
         if (channelId && text(channelId) !== state.channelId) return list;
         const selected = state.selectedAlbumId;
-        if (!selected) return list;
+        if (!selected || selected === OVERVIEW_ALBUM_ID) return list;
         const ids =
             selected === OTHER_ALBUM_ID
                 ? new Set(state.albums.otherIds)
@@ -354,7 +387,7 @@
         return filtered.sort((a, b) => order.get(String(a.id)) - order.get(String(b.id)));
     }
 
-    const isAlbumFilterActive = () => Boolean(state.selectedAlbumId);
+    const isAlbumFilterActive = () => Boolean(state.selectedAlbumId && state.selectedAlbumId !== OVERVIEW_ALBUM_ID);
 
     function renderRadios() {
         const wrap = $('apRadios');
@@ -491,6 +524,8 @@
         albumsModel,
         albumRadioModel,
         availableSongsLabel,
+        albumAvailabilityLabel,
+        isAlbumsOverview,
         showProfile,
         setSongs,
         selectAlbum,

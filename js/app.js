@@ -13367,6 +13367,15 @@ function renderChannelVideos(query = '') {
 
 function renderChannelVideosLegacyImpl(query = '') {
     if (!channelVideosGrid) return;
+    // L'entrada al perfil presenta una caràtula per disc. La cerca continua sobre totes les cançons.
+    const albumOverview = SegueixApp.features.artistPage?.isAlbumsOverview?.(currentChannelId, query);
+    const songHeading = document.getElementById('apSongsTitle');
+    if (songHeading) songHeading.textContent = albumOverview ? 'Cerca una cançó' : 'Cançons';
+    channelVideosGrid.hidden = Boolean(albumOverview);
+    if (albumOverview) {
+        channelVideosGrid.innerHTML = '';
+        return;
+    }
     if (isChannelHidden(currentChannelId)) {
         channelVideosGrid.innerHTML = '<div class="empty-state">Has ocultat aquest canal del feed.</div>';
         return;

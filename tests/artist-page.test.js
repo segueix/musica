@@ -88,6 +88,75 @@ describe('fitxa d’artista: ràdios i presentació', () => {
         expect(page.albumRadioModel(null, 5)).toBeNull();
         expect(html).toContain('id="apAlbumRadio"');
     });
+
+    it('manté un disc verificat pendent i indica una disponibilitat parcial sense inventar pistes', () => {
+        const catalog = { channels: { UC1: 'Artista' }, artists: { Artista: { albums: [
+            { id: 'verified', title: 'Disc pendent', sourceType: 'release', trackIds: ['a', 'b'],
+              trackGroups: [{ videoIds: ['a'] }, { videoIds: ['b'] }] },
+            { id: 'inferred', title: 'Inferit buit', trackIds: ['c'] },
+        ] } } };
+        const empty = page.albumsModel(catalog, { channelId: 'UC1', videos: [] });
+        expect(empty.albums.map(a => a.id)).toEqual(['verified']);
+        expect(page.albumAvailabilityLabel(empty.albums[0])).toBe('Pistes pendents d’incorporar');
+        const partial = page.albumsModel(catalog, { channelId: 'UC1', videos: [{ id: 'b' }] });
+        expect(page.albumAvailabilityLabel(partial.albums[0])).toBe('1 de 2 cançons disponibles');
+    });
+
+    it('obre els discos per defecte, deixa cercar i conserva el filtre quan arriba més historial', async () => {
+        const catalog = { channels: { UC1: 'Artista' }, artists: { Artista: { albums: [
+            { id: 'disc', title: 'Disc', trackIds: ['a', 'b'] },
+        ] } } };
+        const ctx = loadScript('js/features/artist-page.js', {
+            document: { getElementById: () => null },
+            YouTubeAPI: { loadAlbumsCatalog: async () => catalog },
+        });
+        const feature = ctx.SegueixApp.features.artistPage;
+        feature.showProfile({ channelId: 'UC1', name: 'Artista' });
+        feature.setSongs([{ id: 'a' }, { id: 'other' }], 'UC1');
+        await new Promise(resolve => setTimeout(resolve, 0));
+        expect(feature.isAlbumsOverview('UC1')).toBe(true);
+        expect(feature.isAlbumsOverview('UC1', 'cançó')).toBe(false);
+        expect(feature.isAlbumsOverview('other')).toBe(false);
+        feature.selectAlbum('disc');
+        expect(feature.filterSongs([{ id: 'other' }, { id: 'a' }], 'UC1')).toEqual([{ id: 'a' }]);
+        feature.setSongs([{ id: 'a' }, { id: 'b' }], 'UC1');
+        await new Promise(resolve => setTimeout(resolve, 0));
+        expect(feature.isAlbumFilterActive()).toBe(true);
+        expect(feature.filterSongs([{ id: 'b' }, { id: 'a' }], 'UC1').map(v => v.id)).toEqual(['a', 'b']);
+        feature.selectAlbum('');
+        expect(feature.isAlbumsOverview('UC1')).toBe(false);
+        expect(feature.isAlbumFilterActive()).toBe(false);
+    });
+
+    it('pinta la vista inicial i la fitxa pendent desactivada, amb els controls accessibles', async () => {
+        const nodes = new Map(['apAlbums', 'apAlbumsGrid', 'apAlbumsAll', 'apAlbumsOverview'].map(id => {
+            const classes = new Set();
+            return [id, { innerHTML: '', hidden: true, attributes: {},
+                setAttribute(key, value) { this.attributes[key] = value; },
+                classList: { toggle(key, on) { if (on) classes.add(key); else classes.delete(key); },
+                    contains(key) { return classes.has(key); } },
+            }];
+        }));
+        const catalog = { channels: { UC1: 'Artista' }, artists: { Artista: { albums: [
+            { id: 'pending', title: 'Disc pendent', sourceType: 'release', trackIds: ['a', 'b'] },
+        ] } } };
+        const ctx = loadScript('js/features/artist-page.js', {
+            document: { getElementById: id => nodes.get(id) || null },
+            YouTubeAPI: { loadAlbumsCatalog: async () => catalog },
+        });
+        const feature = ctx.SegueixApp.features.artistPage;
+        feature.showProfile({ channelId: 'UC1', name: 'Artista' });
+        feature.setSongs([], 'UC1');
+        await new Promise(resolve => setTimeout(resolve, 0));
+        expect(nodes.get('apAlbums').hidden).toBe(false);
+        expect(nodes.get('apAlbumsGrid').classList.contains('is-overview')).toBe(true);
+        expect(nodes.get('apAlbumsGrid').innerHTML).toContain('disabled');
+        expect(nodes.get('apAlbumsGrid').innerHTML).toContain('Pistes pendents d’incorporar');
+        expect(nodes.get('apAlbumsOverview').attributes['aria-pressed']).toBe('true');
+        feature.selectAlbum('');
+        expect(nodes.get('apAlbumsAll').attributes['aria-pressed']).toBe('true');
+        expect(nodes.get('apAlbumsOverview').attributes['aria-pressed']).toBe('false');
+    });
 });
 
 describe('fitxa d’artista: HTML i CSS', () => {

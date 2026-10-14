@@ -1648,3 +1648,14 @@ No es canvia el feed, el repertori, la vigilància d’idiomes ni la quota de Yo
 ## [2026-10-14] — Ràdio d’estil des de la fitxa d’artista
 
 El botó passa les cançons de la fitxa a `startStyleRadio` com a `seedVideos`. El motor tria la primera només entre aquestes; la resta continua amb els estils de l’artista. La ràdio es diu «Ràdio <cançó inicial>», amb el títol net, i conserva el nom en barrejar, desar, compartir i restaurar la sessió. Les ràdios obertes des d’un estil continuen portant el nom de l’estil. Sense cançons pròpies no s’engega una altra artista per substitució. Proves: `tests/music-queue-selection.test.js`.
+
+
+## 2026-10-14 — Discos com a entrada del perfil i agrupació progressiva
+
+La fitxa repetia totes les caràtules de les pistes sota els discos i amagava els llançaments verificats sense pistes carregades. Ara entra a la vista Discos; tocar-ne un mostra les cançons disponibles, «Totes les cançons» recupera el repertori i la cerca funciona també des de la vista inicial. Els llançaments verificats buits es mostren desactivats amb «Pistes pendents d’incorporar».
+
+El motor compartit amb el torn del feed aprofita declaracions explícites de disc als canals oficials i metadades Topic. Conserva `pendingAlbums` entre torns fins a tenir dues cançons diferents; relaciona videoclips només per artista i títol inequívocs, conservant els marcadors de versions. No s’infereixen discos per imatges ni s’accepten llistes genèriques. Es respecten ocults i fonts editorials prioritàries. No es modifica el calendari ni es fan crides API addicionals.
+
+Reconstrucció local: `node scripts/reconstruir_discos_musica.js --evidence=docs/revisions/2026-10-14-discos-evidencies.json`. El fitxer d’evidències conserva només fragments de metadades de vídeos ja existents; no valida idiomes ni afegeix pistes. El generador ordinari reutilitza directament les descripcions que ja rep. Detalls a `docs/DISCOS_AUTOMATICS.md`.
+
+Proves: 35 comprovacions de catàleg, fitxa i llançaments; sintaxi i lint dels JS modificats sense errors. A la còpia local, la suite disponible passa 197 proves i falla en el cas preexistent «UNOFFICIAL RMX»; el lint general manté cinc errors previs. Tots dos s’han reproduït sobre la base. Les URLs dels assets modificats s’han versionat per evitar reutilitzar la interfície antiga.
