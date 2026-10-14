@@ -1,11 +1,573 @@
 {
-  "generatedAt": "2026-10-14T08:53:48.572Z",
+  "generatedAt": "2026-10-14T21:21:50.252Z",
   "mode": "apply",
-  "reclassified": {},
-  "hiddenFromTopic": [],
+  "reclassified": {
+    "other": 250,
+    "song": 28
+  },
+  "hiddenFromTopic": [
+    "31 FAM · A Letter 2 Grandma",
+    "31 FAM · CONDENAO",
+    "31 FAM · Cuento",
+    "31 FAM · Make It Rain INTRO",
+    "31 FAM · Mente de Loco",
+    "31 FAM · PURGATORY",
+    "31 FAM · Por La Música",
+    "31 FAM · ROMPE",
+    "31 FAM · Rip Hoe",
+    "31 FAM · Sabor a Menta",
+    "31 FAM · Se Lo Debo",
+    "31 FAM · Sincero",
+    "31 FAM · TUVE SUERTE",
+    "31 FAM · Te Gusto",
+    "31 FAM · Touchdown",
+    "ACROS · Another vandal (feat. Phil Tyler)",
+    "ACROS · Cold one (feat. Phil Tyler)",
+    "ACROS · Day Ones",
+    "ACROS · Dream chaser",
+    "ACROS · Echoes From The Past",
+    "ACROS · Fear the day",
+    "ACROS · For the writers (feat. Garabato Beats)",
+    "ACROS · Forever young (D & B Remix)",
+    "ACROS · Grey clouds",
+    "ACROS · Growing threat (feat. Dextah)",
+    "ACROS · Hard Times",
+    "ACROS · Higher place",
+    "ACROS · In the zone",
+    "ACROS · Keep my head down",
+    "ACROS · Life goes on (feat. Maxi Beatz)",
+    "ACROS · Lifestyle",
+    "ACROS · Lockdown",
+    "ACROS · Nothings what it seems to be",
+    "ACROS · Path of decline (feat. Dextah)",
+    "ACROS · Raised on that Task Force (feat. Chester P)",
+    "ACROS · Realism intro (feat. Dextah)",
+    "ACROS · Reality Check",
+    "ACROS · Same Old Story",
+    "ACROS · Self Inflicted (feat. dextah)",
+    "ACROS · Set it straight (feat. Maxi Beatz)",
+    "ACROS · Statistics (feat. Dextah)",
+    "ACROS · Stop the ride (feat. Maxi Beatz)",
+    "ACROS · Striving for more (feat. Pitch 92)",
+    "ACROS · Surviving (feat. Verbz & Maxi Beatz)",
+    "ACROS · T B E",
+    "ACROS · Take a look around",
+    "ACROS · The Revenant",
+    "ACROS · The Scene",
+    "ACROS · The Take",
+    "ACROS · Vent 64",
+    "ACROS · War report (feat. Maxi Beatz)",
+    "ACROS · Wasted talent",
+    "ACROS · What we waiting for",
+    "ACROS · Wits End",
+    "ACROS · Writers Block",
+    "Adrià Puntí · Barba Azul",
+    "Adrià Puntí · Color de Higado",
+    "Adrià Puntí · El Gitanillo de Tiana",
+    "Adrià Puntí · El Preludio del Adiós",
+    "Adrià Puntí · En Cuarentena",
+    "Adrià Puntí · Entre Tu y Tu Yo",
+    "Adrià Puntí · La Columna de Simeon",
+    "Adrià Puntí · Peladilla Amarga",
+    "Adrià Puntí · Si",
+    "Adrià Puntí · Sueño Dormido (Al Fondo de un Abrebadero)",
+    "Adrià Puntí · Tocayo",
+    "Adrià Puntí · Un Compendio en Mi Menor",
+    "AlQuadrat · A NINGÚN LUGAR",
+    "AlQuadrat · Arenal",
+    "AlQuadrat · Blanca",
+    "AlQuadrat · LO PASARÁS BIEN",
+    "AlQuadrat · No Te Puedo Olvidar",
+    "Albert Pla · Alboraya",
+    "Albert Pla · Añoro",
+    "Albert Pla · Buscando",
+    "Albert Pla · Carta Al Rey Melchor",
+    "Albert Pla · Ciego",
+    "Albert Pla · Corazón",
+    "Albert Pla · El Bar de la Esquina",
+    "Albert Pla · El Camion De La Basura",
+    "Albert Pla · El Gallo Eduardo Montenegro",
+    "Albert Pla · El Lado Mas Bestia de la Vida",
+    "Albert Pla · Enterrador De Cementerios",
+    "Albert Pla · Hongos",
+    "Albert Pla · Joaquin el Necio",
+    "Albert Pla · Juerga Catalana",
+    "Albert Pla · La Colilla",
+    "Albert Pla · La Dama De La Guadaña",
+    "Albert Pla · La Dejo O No La Dejo",
+    "Albert Pla · La Diferencia",
+    "Albert Pla · Lola La Loca",
+    "Albert Pla · Marcelino Arroyo Del Charco",
+    "Albert Pla · Mañana Lo Dejo",
+    "Albert Pla · Mi Esqueleto",
+    "Albert Pla · Mujer Mala",
+    "Albert Pla · No Quise Hacerle Daño",
+    "Albert Pla · Pepe Botika",
+    "Albert Pla · Pobre Muchacha",
+    "Albert Pla · Que Mas Me Da Si Da O No Da",
+    "Albert Pla · Salsa Pa'l Nene",
+    "Albert Pla · Soy Rebelde",
+    "Albert Pla · Soñando",
+    "Albert Pla · Sufre Como Yo",
+    "Albert Pla · Veintegenarios",
+    "Alfred García · Amar Pelos Dois",
+    "Alfred García · Cicatriz (1016 En Directo: Fin De Gira)",
+    "Alfred García · City Of Stars (En Directo En El Palau Sant Jordi / 2018)",
+    "Alfred García · Comunicado Oficial",
+    "Alfred García · Comunicado Oficial (1016 En Directo: Fin De Gira)",
+    "Alfred García · Cuando Duermes",
+    "Alfred García · De La Tierra Hasta Marte",
+    "Alfred García · Don't Stop The Music",
+    "Alfred García · El Mismo Sol (Operación Triunfo 2017)",
+    "Alfred García · Everytime You Go Away (Operación Triunfo 2017)",
+    "Alfred García · Get It Together",
+    "Alfred García · Himno Del Prat",
+    "Alfred García · Insurrección (1016 En Directo: Fin De Gira)",
+    "Alfred García · La Chica De Ayer (1016 En Directo: Fin De Gira)",
+    "Alfred García · La Ciudad",
+    "Alfred García · Madrid",
+    "Alfred García · Maldita Dulzura (Operación Triunfo 2017)",
+    "Alfred García · No Cuentes Conmigo",
+    "Alfred García · Que Nos Sigan Las Luces",
+    "Alfred García · Rock With You",
+    "Alfred García · Sign Of The Times",
+    "Alfred García · Solo Si Es Contigo (Operación Triunfo 2017)",
+    "Alfred García · Todo Mi Amor Eres Tú (I Just Can't Stop Loving You) (Operación Triunfo 2017)",
+    "Alfred García · Tu Canción (En Directo En El Palau Sant Jordi / 2018)",
+    "Alfred García · Vete De Mí (Operación Triunfo 2017)",
+    "Alfred García · Wonder",
+    "Anaïs Vila · But We Are Still Here",
+    "Anaïs Vila · The Calm",
+    "Andreu Rifé · Crimen",
+    "Andreu Rifé · Dos Rombos",
+    "Andreu Rifé · Mañana de Ayer, de Hoy",
+    "Andreu Rifé · Quién Fuera",
+    "Andreu Rifé · Sácate la Ternura",
+    "Auxili · Imposibles",
+    "Auxili · Rude Girl",
+    "Ayryn · Nada",
+    "Ayryn · Si tu te vas",
+    "Ayryn · Ya no lloro",
+    "Baya Baye · Fin de Año",
+    "Baya Baye · Flames",
+    "Baya Baye · Hustle Hard",
+    "Baya Baye · La Cumbia del Papu",
+    "Baya Baye · Orujo de Hierbas",
+    "Baya Baye · Pa Ke Me Invitas",
+    "Baya Baye · Tutto Passa",
+    "Boom Boom Fighters · I Know a Spot",
+    "Brams · Rojo Separatista",
+    "Brams · Two Girls",
+    "Brams · ¿Qué pone en tu DNI?",
+    "Buhos · Cerca de ti",
+    "Buhos · Ha Sido Ramón",
+    "Buhos · La última y Nos Vamos",
+    "Buhos · Se Acelera",
+    "Buhos · Sweet Caroline",
+    "Buhos · Today is the day",
+    "Buhos · Vuela Aunque Duela",
+    "Ceaxe · BAILA SOLA",
+    "Ceaxe · CUANDO EL RESTO TE FALTE",
+    "Ceaxe · DIME MI AMOR",
+    "Ceaxe · Jodido",
+    "Ceaxe · Lo Que No Cumplimos",
+    "Ceaxe · Mírame de Nuevo",
+    "Ceaxe · Nos Matamos",
+    "Ceaxe · PA TI",
+    "Ceaxe · PA TI II",
+    "Ceaxe · POR LO NUESTRO",
+    "Ceaxe · Prometi",
+    "Ceaxe · SE REVELÓ",
+    "Ceaxe · Si Te Preguntan X Mi",
+    "Ceaxe · TE ARREPENTISTE",
+    "Ceaxe · Tu y Yo",
+    "Ceaxe · Tú",
+    "Crim · Blue Blood, Red Sky",
+    "Crim · Bullfight",
+    "Crim · Eternal Cold",
+    "Crim · Hard Bass Attack",
+    "Crim · Our Father You Who Art In Hell",
+    "Crim · Prince Of The Rodeo (Turbonegro Cover)",
+    "Crim · Watch Your Back (Cock Sparrer Cover)",
+    "Crim · Welcome My Enemy",
+    "Dr. Calypso · Born to be alive",
+    "Dr. Calypso · Keep On Walkin'",
+    "Dr. Calypso · Let's Try Again",
+    "Dr. Calypso · Live Together",
+    "Dr. Calypso · Mr. Happiness",
+    "Dr. Calypso · Por Favor",
+    "Dr. Calypso · Reggae Lovers",
+    "Dr. Calypso · Slow Boat To Trinidad",
+    "Dr. Calypso · Special Girl",
+    "Dr. Calypso · The power of the latin soul",
+    "Dr. Calypso · Tu Rostro",
+    "Dusminguet · Africa",
+    "Dusminguet · Ai Maria!",
+    "Dusminguet · Babilonia",
+    "Dusminguet · Carretera del miedo",
+    "Dusminguet · Cumbia bruja",
+    "Dusminguet · Decimero",
+    "Dusminguet · Habibi",
+    "Dusminguet · Jackeline",
+    "Dusminguet · José",
+    "Dusminguet · La Dansa De L´imbécil",
+    "Dusminguet · La muralla",
+    "Dusminguet · La rumba del solterón",
+    "Dusminguet · Le cha cha chá",
+    "Dusminguet · Maneras",
+    "Dusminguet · Manketú",
+    "Dusminguet · Marihuana",
+    "Dusminguet · Mi arte",
+    "Dusminguet · Nass la garriga",
+    "Dusminguet · One Way",
+    "Dusminguet · Plegando velas",
+    "Dusminguet · Ritmo americano",
+    "Dusminguet · San Cristóbal",
+    "Dusminguet · Se va, se va (Far Away from Campo)",
+    "Dusminguet · Siento",
+    "Dusminguet · Son del campesino",
+    "Dusminguet · Sonajeros",
+    "Dusminguet · Sopetón",
+    "Dàmaris Gelabert · El Baile de Izquierda y Derecha",
+    "Dàmaris Gelabert · Las Estaciones",
+    "Dàmaris Gelabert · Los Días de la Semana",
+    "Dàmaris Gelabert · Los Meses del Año",
+    "Dàmaris Gelabert · ¡A Recoger!",
+    "Ebri Knight · Campesino",
+    "Ebri Knight · El Pueblo Unido (feat. Talco & Aspencat)",
+    "Ebri Knight · Global Ice",
+    "Ebri Knight · The Hills of Connemara",
+    "El Pony Pisador · Bully in the Alley",
+    "El Pony Pisador · Don't Forget Your Old Shipmate",
+    "El Pony Pisador · El Guisote del Tío Benito (corvus corax)",
+    "El Pony Pisador · Essequibo River",
+    "El Pony Pisador · Haul Away Joe",
+    "El Pony Pisador · John Kanaka",
+    "El Pony Pisador · Johnny Comes Down to Hilo",
+    "El Pony Pisador · Lime Scurvy",
+    "El Pony Pisador · Paddy Lay Back",
+    "El Pony Pisador · Pass Around the Grog",
+    "El Pony Pisador · Pay Me My Money Down",
+    "El Pony Pisador · Roll the Woodpile Down",
+    "El Pony Pisador · Rolling in the Morning",
+    "El Pony Pisador · Sam's gone away",
+    "El Pony Pisador · Santianna",
+    "El Pony Pisador · Wellerman",
+    "El Pony Pisador · Whip Jamboree",
+    "Flashy Ice Cream · Aleluya",
+    "Flashy Ice Cream · Forever Young",
+    "Flashy Ice Cream · Toda la noche",
+    "Frans Cuspinera · Siempre Contigo",
+    "Frans Cuspinera · Árbol Torcido",
+    "Gertrudis · Al Sentir La Rumba",
+    "Gertrudis · Almejilla",
+    "Gertrudis · Bota Pa La Lambon",
+    "Gertrudis · Carita De Rosa",
+    "Gertrudis · Manos Arriba",
+    "Gertrudis · Oye",
+    "Gertrudis · Rúa da Raiña",
+    "Gessamí Boada · Beautiful World",
+    "Gessamí Boada · Beneath the Shady Water",
+    "Gessamí Boada · Constellations",
+    "Gessamí Boada · Last Day on Earth",
+    "Gessamí Boada · Los Dos",
+    "Gessamí Boada · Love Is You",
+    "Gessamí Boada · Moving On",
+    "Gessamí Boada · Oh What a Night",
+    "Gessamí Boada · Qué Más Da",
+    "Gessamí Boada · Shivering Clouds",
+    "Gessamí Boada · Unique",
+    "Gessamí Boada · Use Your Imagination",
+    "Gessamí Boada · Whispering Leaves",
+    "Gessamí Boada · White Flowers",
+    "Gossos · Baby Only You",
+    "Gossos · Club Tonight (feat. Lluís Coll)",
+    "Gossos · Doraemon No Uta (Doraemon)",
+    "Gossos · La calle 24",
+    "Guillermina Motta · Aquellos Tiempos Del Cuple (Remasterizado 2024)",
+    "Guillermina Motta · Cuando Sea Muy Vieja",
+    "Guillermina Motta · Jamás Olvidaré Al Hombre Que Quiso Ponerme Un Piso (Remasterizado 2024)",
+    "Guillermina Motta · La Bella Encarna (Remasterizado 2024)",
+    "Guillermina Motta · Yo en Amores Soy Muy Ligera",
+    "Joan Colomo · A diestro y siniestro",
+    "Joan Colomo · El Nuevo Orden Cósmico",
+    "Joan Colomo · El abismo de uno mismo",
+    "Joan Colomo · Producto Interior Bruto",
+    "Joan Colomo · Reses Sociales",
+    "Joan Colomo · Solo se vive una vez",
+    "Joan Colomo · Todo es tan jodidamente relativo",
+    "Joan Miquel Oliver · Robot mayordomo",
+    "Jofre Bardagí · Aquellas pequeñas cosas",
+    "Jofre Bardagí · Cantares",
+    "Jofre Bardagí · Es caprichoso el azar (feat. Sole Giménez)",
+    "Jofre Bardagí · Fiesta",
+    "Jofre Bardagí · Hoy puede ser un gran día (feat. Depedro)",
+    "Jofre Bardagí · Mediterráneo",
+    "Jofre Bardagí · Para la libertad",
+    "Jofre Bardagí · Penélope",
+    "Jofre Bardagí · Señora",
+    "Jofre Bardagí · Una mujer desnuda y en lo oscuro (feat. Joan Manuel Serrat, Josep Maria Bardagi)",
+    "Júlia Colom · Canta para seguir",
+    "Júlia Cruz · Para llegar",
+    "KOP · A Gasolina",
+    "KOP · Cicatrices",
+    "KOP · Desalojos (Live)",
+    "KOP · Desalojos Son Disturbios",
+    "KOP · En el medio del ring",
+    "KOP · Freedom",
+    "KOP · Golpe Radikal",
+    "KOP · La Lucha Continúa",
+    "KOP · La Tormenta: 25.11.00",
+    "KOP · No Te Rindas",
+    "KOP · Nuestros Barrios",
+    "KOP · Tu Voz Estalla Dentro",
+    "KOP · Utzi Bakean",
+    "KOP · We're Not Angels",
+    "Kayo Malayo · Eco",
+    "Kayo Malayo · El Muro",
+    "Kayo Malayo · Fuera de Control",
+    "Kayo Malayo · Gasolina (Radio Edit)",
+    "La Banda del Yuyu · Como un Viejo",
+    "La Banda del Yuyu · Despierta",
+    "La Tour De Carol · A TODO TREN",
+    "La Tour De Carol · M'aider",
+    "La Tour De Carol · ragazza spettacolare",
+    "La Trinca · El Barón De Bidé (Remasterizado)",
+    "La Trinca · El IVA Hecho Fácil",
+    "La Trinca · Ele Manolo! (Remasterizado)",
+    "La Trinca · La Guerra Verdulera (Remasterizado)",
+    "La Trinca · Quiero una Novia Pechugona",
+    "La Trinca · Sube all Avión",
+    "La Troba Kung-Fú · Be Rebel",
+    "La Troba Kung-Fú · Cariñosa",
+    "La Troba Kung-Fú · Como Acordeón",
+    "La Troba Kung-Fú · Cumbia Infierno",
+    "La Troba Kung-Fú · María Hernández",
+    "La Troba Kung-Fú · Rúmbia",
+    "La Troba Kung-Fú · Subway Walk",
+    "La Troba Kung-Fú · Within Human Law",
+    "La Troba Kung-Fú · Y Se Ríe la Muerte",
+    "La Troba Kung-Fú · Yo Soy",
+    "Lídia Pujol · Ad mortem festinamus",
+    "Lídia Pujol · El Cristo de los piojos",
+    "Lídia Pujol · Me Quedaré Soltera",
+    "Lídia Pujol · Mi Primera Comunión",
+    "Lídia Pujol · Mi Querida España",
+    "Lídia Pujol · Nada de Nada",
+    "Lídia Pujol · Polorum regina",
+    "Lídia Pujol · Que Despierte La Novia",
+    "Lídia Pujol · Ramito de Violetas",
+    "Lídia Pujol · Sogna fiore mio",
+    "Lídia Pujol · Stella splendens (Bonus Track)",
+    "Lídia Pujol · Y una madre",
+    "MISHIMA · Del Montón",
+    "MISHIMA · Every second",
+    "MISHIMA · Lullaby of Barcelona",
+    "MISHIMA · My Whole Life Crying",
+    "Malson Atmosfèric · Paradise",
+    "Manu Guix · Greased Lightnin'",
+    "Manu Guix · Había una vez",
+    "Manu Guix · La compañía de la fantasía",
+    "Manu Guix · Magicas Notas (Those Magic Changes)",
+    "Manu Guix · Noches De Amor (Summer Nights)",
+    "Marina Rossell · De Que Hablas Habanera",
+    "Marina Rossell · El Meteco (Le Métèque)",
+    "Marina Rossell · Grândola, vila morena (feat. Enric Montefusco)",
+    "Marina Rossell · La Bella Lola (feat. Port Bo)",
+    "Marina Rossell · Mi Madre Fue una Mulata (feat. Port Bo)",
+    "Marina Rossell · Mi Soledad (Ma Solitude)",
+    "Marina Rossell · Si Me Quieres Escribir",
+    "Marina Rossell · Y una Rosa Roja",
+    "Mariona Escoda · Everybody's changing (Acústic en directe)",
+    "Mariona Escoda · Juno (Acústic en directe)",
+    "Mariona Escoda · Maniac (Acústic en directe)",
+    "Mariona Escoda · Requiem (Dear Evan Hansen, Acústic en directe)",
+    "Mazoni · Never Push a Sailor",
+    "Mazoni · Ocean",
+    "Mazoni · You and me",
+    "Miki Núñez · Ahora",
+    "Miki Núñez · Alma Mía",
+    "Miki Núñez · Apaga La Luz",
+    "Miki Núñez · Can We Dance",
+    "Miki Núñez · El Patio",
+    "Miki Núñez · Encender Las Calles",
+    "Miki Núñez · Hijos De La Tierra (Operación Triunfo 2018)",
+    "Miki Núñez · La Cabaña",
+    "Miki Núñez · La Escalera",
+    "Miki Núñez · La Última Palabra",
+    "Miki Núñez · Los 7 Males",
+    "Miki Núñez · Nadie Se Salva",
+    "Miki Núñez · Promesas Que No Valen Nada",
+    "Miki Núñez · Quédate En Madrid",
+    "Miki Núñez · Some Nights",
+    "Miki Núñez · Tanto Tiempo",
+    "Miki Núñez · Vivir Al 100%",
+    "Miki Núñez · Y Escribir",
+    "Montse Castellà · A Orillas Del Río Ebro",
+    "Montse Castellà · Flor de las Bellas Ciudades del Mundo",
+    "Montse Castellà · No hay poeta solitario",
+    "Montse Castellà · ¿Quién mejor que tú?",
+    "Opció K-95 · A World To Win",
+    "Opció K-95 · Kill The Bastards",
+    "Opció K-95 · Nation of Oi!",
+    "Opció K-95 · No more colours one army",
+    "Opció K-95 · We're Free",
+    "Opció K-95 · Working Class Hell",
+    "Pere Tapias · Moreno de la Fe",
+    "Pere Tapias · Oye José María",
+    "Rapsodes · Coses de la vida",
+    "Raydibaum · Come",
+    "Raydibaum · Grided Elephant",
+    "Raydibaum · Satellite",
+    "Roba Estesa · 1312",
+    "Roba Estesa · EL ᐸ3 A 1K",
+    "Roba Estesa · Ohorea (Orgull)",
+    "Roger Mas · Amore che vieni, amore che vai",
+    "Roger Mas · La Bien Pagá",
+    "Roger Mas · La Llorona",
+    "Sandra Bautista · Canta el cuco",
+    "Sandra Bautista · Dejar sentirse ahogao",
+    "Sandra Bautista · El último gol",
+    "Sandra Bautista · GRACIAS",
+    "Sandra Bautista · Os narradores do cinema mudo",
+    "Sandra Bautista · Pandela",
+    "Sandra Bautista · Vid amurallada",
+    "Sangtraït · Tentando a la Suerte",
+    "Sara Roy · Maybe",
+    "Sara Roy · PARTE DE MÍ",
+    "Siderland · La Vida Líquida",
+    "Siderland · Let Me Love Ya",
+    "Sopa de Cabra · Cardíaco y Acabado",
+    "Sopa de Cabra · El Sexo (Que Me Hace Feliz)",
+    "Sopa de Cabra · Mundo Infierno",
+    "Sopa de Cabra · Sin Hablar",
+    "Sopa de Cabra · Todo Lo Que Se",
+    "Sopa de Cabra · Viviendo a Tu Alrededor",
+    "Still Ill · Building The Beast",
+    "Still Ill · DOLL HOUSE",
+    "Still Ill · Focalicemos",
+    "Still Ill · Frozen Souls",
+    "Still Ill · Gratitud",
+    "Still Ill · HEART SF",
+    "Still Ill · Issuereallyfine",
+    "Still Ill · Lost All Faith",
+    "Still Ill · MY WAR ISN'T OVER YET",
+    "Still Ill · Matchpoint",
+    "Still Ill · Minutes To Midnight",
+    "Still Ill · Misoginia y Monoflow",
+    "Still Ill · NO NEW STARS",
+    "Still Ill · Primal Evil",
+    "Still Ill · R.a.F",
+    "Still Ill · STILL LIFE",
+    "Still Ill · Si Uno No Se Rinde",
+    "Still Ill · THE WAY THINGS ARE",
+    "Still Ill · The Greater Fool",
+    "Still Ill · Time Machine",
+    "Still Ill · Viacheslav Agafonov (Bonus Track)",
+    "Still Ill · Violent Few",
+    "Sílvia Comes · Bolero para Gil de Biedma",
+    "Sílvia Comes · Canción de Aniversario",
+    "Sílvia Comes · Canción de los Caracoles Que Van al Entierro",
+    "Sílvia Comes · Carta Canción",
+    "Sílvia Comes · Carta de Amor",
+    "Sílvia Comes · Casida a una Casada",
+    "Sílvia Comes · Como los Erizos",
+    "Sílvia Comes · Cuando Muera",
+    "Sílvia Comes · Cuando el Eco del Eco",
+    "Sílvia Comes · Después de Hablar",
+    "Sílvia Comes · Dije Mi Amor",
+    "Sílvia Comes · Días D",
+    "Sílvia Comes · El Cuento de los Dos Suicidas",
+    "Sílvia Comes · En Retaguardia",
+    "Sílvia Comes · Faltando un Pedaco",
+    "Sílvia Comes · He Dormido",
+    "Sílvia Comes · Letanía. Carta a la Luna",
+    "Sílvia Comes · Malest Cornifici Tuo Catulo",
+    "Sílvia Comes · Nana a la Nena de la Pena",
+    "Sílvia Comes · Para Estar Contigo",
+    "Sílvia Comes · Peeping Tom",
+    "Sílvia Comes · Silencio de Nieve",
+    "Sílvia Comes · Suceso",
+    "Sílvia Comes · Todo Asusta",
+    "Sílvia Comes · Un Hombre Con Su Amor",
+    "Sílvia Comes · Versos Que Escribí Dormida",
+    "Sílvia Comes · Viene la Ausencia",
+    "Sílvia Pérez Cruz · Ayuda (Martín) (Mov.3: Mi Jardín)",
+    "Sílvia Pérez Cruz · Barquito de papel",
+    "Sílvia Pérez Cruz · Capitana",
+    "Sílvia Pérez Cruz · Cerca De Tu Casa",
+    "Sílvia Pérez Cruz · Chundwa (Chacarera)",
+    "Sílvia Pérez Cruz · Cucurrucucú Paloma",
+    "Sílvia Pérez Cruz · Debí Llorar",
+    "Sílvia Pérez Cruz · El golpe bajo",
+    "Sílvia Pérez Cruz · El primer beso",
+    "Sílvia Pérez Cruz · Ella Y Yo",
+    "Sílvia Pérez Cruz · Gallo Rojo, Gallo Negro",
+    "Sílvia Pérez Cruz · Gelando",
+    "Sílvia Pérez Cruz · Hymne A L'Amour",
+    "Sílvia Pérez Cruz · Intro: la sed",
+    "Sílvia Pérez Cruz · La Nochera",
+    "Sílvia Pérez Cruz · La Tarde",
+    "Sílvia Pérez Cruz · Loca",
+    "Sílvia Pérez Cruz · Mar muerto",
+    "Sílvia Pérez Cruz · Mañana",
+    "Sílvia Pérez Cruz · Mechita",
+    "Sílvia Pérez Cruz · Mi última canción triste (Mov.3: Mi Jardín)",
+    "Sílvia Pérez Cruz · Moreno",
+    "Sílvia Pérez Cruz · No Hay Tanto Pan",
+    "Sílvia Pérez Cruz · Nombrar es imposible (Mov.5: Renacimiento)",
+    "Sílvia Pérez Cruz · Pequeño Vals Vienés",
+    "Sílvia Pérez Cruz · Qué Dirías De Mi",
+    "Sílvia Pérez Cruz · Salir distinto (Mov.2: La Inmensidad)",
+    "Sílvia Pérez Cruz · Sea Creature",
+    "Sílvia Pérez Cruz · Sólo Se Trata de Vivir",
+    "Sílvia Pérez Cruz · Toda la vida, un día (Mov.4: El Peso)",
+    "Sílvia Pérez Cruz · Tonada De Luna Llena",
+    "Sílvia Pérez Cruz · Verde",
+    "Sílvia Pérez Cruz · Vete De Mí",
+    "Sílvia Pérez Cruz · Ya No Me Quieres",
+    "Sílvia Pérez Cruz · É triste viver sem seu amor",
+    "Tesa · Lauztas Priedes",
+    "ThatKid · Ney (feat. 9cyon)",
+    "The Demencials · El Fuego del Corazón",
+    "The Demencials · We Are",
+    "The Demencials · You Wondering Now",
+    "The Demencials · خالد",
+    "The Tyets · BEBESITA",
+    "The Tyets · Bailoteo",
+    "The Tyets · Let Me Alive",
+    "The Tyets · Me Escapé Con un Trompetista",
+    "The Tyets · Oye Mulata",
+    "The Tyets · Se Queda",
+    "The Tyets · Vaticano",
+    "Toti Soler · El Corazón Es Agua (with Sílvia Pérez Cruz)",
+    "Toti Soler · Todos Os Sonhos do Mundo",
+    "Txarango · 500 Millas",
+    "Txarango · Atrévete a Vivir",
+    "Txarango · Camina Derechito",
+    "Txarango · Corazón Viajero",
+    "Txarango · El Martillo",
+    "Txarango · La Vuelta al Mundo",
+    "Txarango · Mr. Tambourine Man",
+    "Txarango · Por Ambos Lados",
+    "Txarango · Resiste y Grita",
+    "Txarango · Sueña Como un Niño",
+    "Txarango · Tom Dooley / Verde, Verde / Esta Es Tu Tierra",
+    "Txarango · Volveremos",
+    "Valtonyc · Aunque Duela",
+    "Valtonyc · Bailar en Tiempos de Guerra",
+    "Valtonyc · En Paz Descanse",
+    "Valtonyc · Fuego y Rabia",
+    "Valtonyc · He Comprendido",
+    "Valtonyc · No Hay Trato",
+    "Valtonyc · Nunca Más Veré La Primavera En Tu Clítoris",
+    "Ven'nus · I JAZZ WANT MY G BACK",
+    "Xavi Sarrià · No s'apaguen les estreles (BSO La mort de Guillem)"
+  ],
   "videos": [
     {
       "id": "lowN2QPICGk",
+      "channelId": "UC9X30uS2tBqnVwEqpmA32xQ",
       "channelTitle": "31 FAM",
       "title": "31 FAM - Unplugged (al Palau de la Música)",
       "from": "song",
@@ -19,7 +581,23 @@
       "to": "other"
     },
     {
+      "id": "77wC_8UKtMI",
+      "channelId": "UCPJBMmuD2mgN4liF9Rc12mw",
+      "channelTitle": "9SON",
+      "title": "9SON Apolo 28 març 15",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "7_9Pjm4yUo4",
+      "channelTitle": "9SON",
+      "title": "9SON Avançament del disc #ÍSSIM",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "7_9Pjm4yUo4",
+      "channelId": "UCPJBMmuD2mgN4liF9Rc12mw",
       "channelTitle": "9SON",
       "title": "9SON Avançament del disc #ÍSSIM",
       "from": "song",
@@ -33,7 +611,23 @@
       "to": "other"
     },
     {
+      "id": "unwOAO70FTE",
+      "channelId": "UCPJBMmuD2mgN4liF9Rc12mw",
+      "channelTitle": "9SON",
+      "title": "9SON Gira de Sol a Sol 2016",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "O_s7gsNKA7U",
+      "channelTitle": "9SON",
+      "title": "9SON versiona Juan Luís Guerra - LIVE",
+      "from": "live_song",
+      "to": "other"
+    },
+    {
+      "id": "O_s7gsNKA7U",
+      "channelId": "UCPJBMmuD2mgN4liF9Rc12mw",
       "channelTitle": "9SON",
       "title": "9SON versiona Juan Luís Guerra - LIVE",
       "from": "live_song",
@@ -47,7 +641,23 @@
       "to": "other"
     },
     {
+      "id": "cIvG1z1fyjI",
+      "channelId": "UCPJBMmuD2mgN4liF9Rc12mw",
+      "channelTitle": "9SON",
+      "title": "CORASON LIVE",
+      "from": "live_song",
+      "to": "other"
+    },
+    {
       "id": "7uXgjFX1kCs",
+      "channelTitle": "9SON",
+      "title": "ÍSSIM Complet",
+      "from": "review",
+      "to": "other"
+    },
+    {
+      "id": "7uXgjFX1kCs",
+      "channelId": "UCPJBMmuD2mgN4liF9Rc12mw",
       "channelTitle": "9SON",
       "title": "ÍSSIM Complet",
       "from": "review",
@@ -61,7 +671,23 @@
       "to": "other"
     },
     {
+      "id": "KwaVCx5bijs",
+      "channelId": "UCPJBMmuD2mgN4liF9Rc12mw",
+      "channelTitle": "9SON",
+      "title": "Pau Benavent opina de 9SON",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "_1s_IMQCJJs",
+      "channelTitle": "9SON",
+      "title": "TORNAREM A NÉIXER",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "_1s_IMQCJJs",
+      "channelId": "UCPJBMmuD2mgN4liF9Rc12mw",
       "channelTitle": "9SON",
       "title": "TORNAREM A NÉIXER",
       "from": "song",
@@ -75,7 +701,16 @@
       "to": "song"
     },
     {
+      "id": "yfRC1KLCNNc",
+      "channelId": "UCqaEtRht2jakBhGFLzS617w",
+      "channelTitle": "ALBERT PLA",
+      "title": "Así se hizo \"El Mortadela\" - Albert Pla",
+      "from": "review",
+      "to": "song"
+    },
+    {
       "id": "B9Z8dEiv4-g",
+      "channelId": "UCmSxzoNUcVfwLgrwt97QASA",
       "channelTitle": "Alosa",
       "title": "ALOSA presenta EL PRIMER CANT DEL MATÍ",
       "from": "song",
@@ -89,7 +724,23 @@
       "to": "song"
     },
     {
+      "id": "QAr713wG3TI",
+      "channelId": "UCSDuvSwql52flui2567reQw",
+      "channelTitle": "Anna Andreu",
+      "title": "'Letargo y Despertar' d'Anna Andreu",
+      "from": "review",
+      "to": "song"
+    },
+    {
       "id": "f1MXDLREBrc",
+      "channelTitle": "Anna Andreu",
+      "title": "Anna Andreu 'Els mals costums' (Audio oficial - complet)",
+      "from": "review",
+      "to": "song"
+    },
+    {
+      "id": "f1MXDLREBrc",
+      "channelId": "UCSDuvSwql52flui2567reQw",
       "channelTitle": "Anna Andreu",
       "title": "Anna Andreu 'Els mals costums' (Audio oficial - complet)",
       "from": "review",
@@ -103,6 +754,14 @@
       "to": "song"
     },
     {
+      "id": "U-8YwBg0R_U",
+      "channelId": "UCSDuvSwql52flui2567reQw",
+      "channelTitle": "Anna Andreu",
+      "title": "Anna Andreu 'La mida' (Audio oficial sencer)",
+      "from": "review",
+      "to": "song"
+    },
+    {
       "id": "ffdyRGdkodU",
       "channelTitle": "Anna Andreu",
       "title": "Anna Andreu 'Vigília' (Àudio sencer)",
@@ -110,7 +769,16 @@
       "to": "other"
     },
     {
+      "id": "ffdyRGdkodU",
+      "channelId": "UCSDuvSwql52flui2567reQw",
+      "channelTitle": "Anna Andreu",
+      "title": "Anna Andreu 'Vigília' (Àudio sencer)",
+      "from": "review",
+      "to": "other"
+    },
+    {
       "id": "GiYIyBqhGSA",
+      "channelId": "UCSDuvSwql52flui2567reQw",
       "channelTitle": "Anna Andreu",
       "title": "EL TRO DEL SENYAL En directe a L'Auditori de Barcelona",
       "from": "review",
@@ -118,6 +786,7 @@
     },
     {
       "id": "xiG1Pg3oxU4",
+      "channelId": "UCSDuvSwql52flui2567reQw",
       "channelTitle": "Anna Andreu",
       "title": "Torrent Sanguini (directe)",
       "from": "review",
@@ -131,7 +800,23 @@
       "to": "other"
     },
     {
+      "id": "E7bDxvzraqk",
+      "channelId": "UCeiYZJsHIDALiJkzRkFWlAQ",
+      "channelTitle": "Antònia Font",
+      "title": "Antònia Font - Merchandising",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "JyF-3kxWOdQ",
+      "channelTitle": "Antònia Font",
+      "title": "Nous partons pour la France",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "JyF-3kxWOdQ",
+      "channelId": "UCeiYZJsHIDALiJkzRkFWlAQ",
       "channelTitle": "Antònia Font",
       "title": "Nous partons pour la France",
       "from": "song",
@@ -145,7 +830,23 @@
       "to": "other"
     },
     {
+      "id": "9rnkUa3JaR8",
+      "channelId": "UCeiYZJsHIDALiJkzRkFWlAQ",
+      "channelTitle": "Antònia Font",
+      "title": "Resum concert El Tingladu",
+      "from": "review",
+      "to": "other"
+    },
+    {
       "id": "2ZGbPDi08Ac",
+      "channelTitle": "Antònia Font",
+      "title": "Resum concert Festival Cruïlla",
+      "from": "review",
+      "to": "other"
+    },
+    {
+      "id": "2ZGbPDi08Ac",
+      "channelId": "UCeiYZJsHIDALiJkzRkFWlAQ",
       "channelTitle": "Antònia Font",
       "title": "Resum concert Festival Cruïlla",
       "from": "review",
@@ -159,7 +860,23 @@
       "to": "other"
     },
     {
+      "id": "LShZdi8KOYU",
+      "channelId": "UCeiYZJsHIDALiJkzRkFWlAQ",
+      "channelTitle": "Antònia Font",
+      "title": "Resum Concert Gran Teatre del Liceu de Barcelona",
+      "from": "review",
+      "to": "other"
+    },
+    {
       "id": "AqL-7f1E8W8",
+      "channelTitle": "Antònia Font",
+      "title": "Resum concert Mallorca",
+      "from": "review",
+      "to": "other"
+    },
+    {
+      "id": "AqL-7f1E8W8",
+      "channelId": "UCeiYZJsHIDALiJkzRkFWlAQ",
       "channelTitle": "Antònia Font",
       "title": "Resum concert Mallorca",
       "from": "review",
@@ -173,7 +890,23 @@
       "to": "other"
     },
     {
+      "id": "dcIkZx_5pro",
+      "channelId": "UCeiYZJsHIDALiJkzRkFWlAQ",
+      "channelTitle": "Antònia Font",
+      "title": "Resum concert Palma",
+      "from": "review",
+      "to": "other"
+    },
+    {
       "id": "oSNeXd7zVG4",
+      "channelTitle": "Antònia Font",
+      "title": "Resum concert València",
+      "from": "review",
+      "to": "other"
+    },
+    {
+      "id": "oSNeXd7zVG4",
+      "channelId": "UCeiYZJsHIDALiJkzRkFWlAQ",
       "channelTitle": "Antònia Font",
       "title": "Resum concert València",
       "from": "review",
@@ -187,7 +920,23 @@
       "to": "other"
     },
     {
+      "id": "BQoIEeAHOpg",
+      "channelId": "UCeiYZJsHIDALiJkzRkFWlAQ",
+      "channelTitle": "Antònia Font",
+      "title": "Resum Palau Sant Jordi",
+      "from": "review",
+      "to": "other"
+    },
+    {
       "id": "vVXo5IWxreE",
+      "channelTitle": "Aspencat",
+      "title": "ASPENCAT - Cap a la Mediterrània",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "vVXo5IWxreE",
+      "channelId": "UCcyD1Q9V5wfaGD1Z5CH1Nlw",
       "channelTitle": "Aspencat",
       "title": "ASPENCAT - Cap a la Mediterrània",
       "from": "song",
@@ -201,7 +950,23 @@
       "to": "other"
     },
     {
+      "id": "Dwnnfa1TGoE",
+      "channelId": "UCcyD1Q9V5wfaGD1Z5CH1Nlw",
+      "channelTitle": "Aspencat",
+      "title": "ASPENCAT - Gira Tot és Ara 2016",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "LuWUklViocI",
+      "channelTitle": "Aspencat",
+      "title": "ASPENCAT - Naixen Primaveres al Lluís Vives",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "LuWUklViocI",
+      "channelId": "UCcyD1Q9V5wfaGD1Z5CH1Nlw",
       "channelTitle": "Aspencat",
       "title": "ASPENCAT - Naixen Primaveres al Lluís Vives",
       "from": "song",
@@ -215,7 +980,23 @@
       "to": "other"
     },
     {
+      "id": "QHxXRRaN2dc",
+      "channelId": "UCcyD1Q9V5wfaGD1Z5CH1Nlw",
+      "channelTitle": "Aspencat",
+      "title": "Aspencat al Viñarock 2014 (Queden Matinades)",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "tGLXypkSt2M",
+      "channelTitle": "Aspencat",
+      "title": "Aspencat al Viñarock 2015",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "tGLXypkSt2M",
+      "channelId": "UCcyD1Q9V5wfaGD1Z5CH1Nlw",
       "channelTitle": "Aspencat",
       "title": "Aspencat al Viñarock 2015",
       "from": "song",
@@ -229,7 +1010,23 @@
       "to": "other"
     },
     {
+      "id": "nWDOmgK9Efg",
+      "channelId": "UCcyD1Q9V5wfaGD1Z5CH1Nlw",
+      "channelTitle": "Aspencat",
+      "title": "Aspencat Temps",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "-etBwKIKNZw",
+      "channelTitle": "Atzembla",
+      "title": "Atzembla - El tour viatge (Resum de Gira)",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "-etBwKIKNZw",
+      "channelId": "UCG-fbhvlr6lGbl2DhKGFFhA",
       "channelTitle": "Atzembla",
       "title": "Atzembla - El tour viatge (Resum de Gira)",
       "from": "song",
@@ -243,7 +1040,23 @@
       "to": "other"
     },
     {
+      "id": "iLlfdYvqbrs",
+      "channelId": "UCG-fbhvlr6lGbl2DhKGFFhA",
+      "channelTitle": "Atzembla",
+      "title": "Atzembla a Olazti (Nafarroa)",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "EUliCeghawI",
+      "channelTitle": "AUXILI",
+      "title": "AUXILI  - VIDEO-RESUM FINAL DE LA GIRA 2019 SALA APOLO BARCELONA - 13/11/2019",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "EUliCeghawI",
+      "channelId": "UCflfVr855Oze52vJjp_gmfg",
       "channelTitle": "AUXILI",
       "title": "AUXILI  - VIDEO-RESUM FINAL DE LA GIRA 2019 SALA APOLO BARCELONA - 13/11/2019",
       "from": "song",
@@ -257,7 +1070,23 @@
       "to": "other"
     },
     {
+      "id": "3k6QEnp3ydY",
+      "channelId": "UCflfVr855Oze52vJjp_gmfg",
+      "channelTitle": "AUXILI",
+      "title": "AUXILI - GIRA TRESORS 2018 (Vídeo-resum)",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "WOEA7Ufi7u4",
+      "channelTitle": "AUXILI",
+      "title": "AUXILI - Rabolagartija i Xàtiva - Gira 2019 (Vídeo-Resum #8)",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "WOEA7Ufi7u4",
+      "channelId": "UCflfVr855Oze52vJjp_gmfg",
       "channelTitle": "AUXILI",
       "title": "AUXILI - Rabolagartija i Xàtiva - Gira 2019 (Vídeo-Resum #8)",
       "from": "song",
@@ -271,7 +1100,23 @@
       "to": "other"
     },
     {
+      "id": "51-UVtCY1LY",
+      "channelId": "UCflfVr855Oze52vJjp_gmfg",
+      "channelTitle": "AUXILI",
+      "title": "AUXILI - Rockovy slunovrat - Gira 2019 (Vídeo-Resum #3)",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "zGDOi1GGa1Y",
+      "channelTitle": "AUXILI",
+      "title": "AUXILI A LA SALA RED STAR (Valls) i LA MIRONA (Salt) - GIRA 2019",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "zGDOi1GGa1Y",
+      "channelId": "UCflfVr855Oze52vJjp_gmfg",
       "channelTitle": "AUXILI",
       "title": "AUXILI A LA SALA RED STAR (Valls) i LA MIRONA (Salt) - GIRA 2019",
       "from": "song",
@@ -285,7 +1130,23 @@
       "to": "other"
     },
     {
+      "id": "QvOdZbmGgxI",
+      "channelId": "UC99ULQORmyZtD4bngOa48hw",
+      "channelTitle": "Blaumut",
+      "title": "Blaumut - 0001confinat",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "rwXiQ5IXMl4",
+      "channelTitle": "Blaumut",
+      "title": "Blaumut - De veritat #0001",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "rwXiQ5IXMl4",
+      "channelId": "UC99ULQORmyZtD4bngOa48hw",
       "channelTitle": "Blaumut",
       "title": "Blaumut - De veritat #0001",
       "from": "song",
@@ -299,7 +1160,23 @@
       "to": "other"
     },
     {
+      "id": "IyQv9TVcphc",
+      "channelId": "UC99ULQORmyZtD4bngOa48hw",
+      "channelTitle": "Blaumut",
+      "title": "BLAUMUT al PALAU DE LA MÚSICA amb la JOSB - 3CAT (versió curta)",
+      "from": "review",
+      "to": "other"
+    },
+    {
       "id": "d17vMoF_Pv8",
+      "channelTitle": "Crim",
+      "title": "CRIM \"Blau sang, vermell cel\" @ Estraperlo Club (23/05/2020) Fem d'Aquí STREAMING",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "d17vMoF_Pv8",
+      "channelId": "UCJhcsyqAVHFHmghWFkmIx4w",
       "channelTitle": "Crim",
       "title": "CRIM \"Blau sang, vermell cel\" @ Estraperlo Club (23/05/2020) Fem d'Aquí STREAMING",
       "from": "song",
@@ -313,7 +1190,23 @@
       "to": "other"
     },
     {
+      "id": "a2qpwtFXIr0",
+      "channelId": "UCJhcsyqAVHFHmghWFkmIx4w",
+      "channelTitle": "Crim",
+      "title": "CRIM \"Maneres de viure\" @ Estraperlo Club (23/05/2020) Fem d'Aquí STREAMING",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "CuT188MdV0Q",
+      "channelTitle": "Crim",
+      "title": "CRIM \"Una cançó i una promesa\" @ Estraperlo Club (23/05/2020) Fem d'Aquí STREAMING",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "CuT188MdV0Q",
+      "channelId": "UCJhcsyqAVHFHmghWFkmIx4w",
       "channelTitle": "Crim",
       "title": "CRIM \"Una cançó i una promesa\" @ Estraperlo Club (23/05/2020) Fem d'Aquí STREAMING",
       "from": "song",
@@ -327,7 +1220,23 @@
       "to": "other"
     },
     {
+      "id": "eLNwOTdCK6g",
+      "channelId": "UCJhcsyqAVHFHmghWFkmIx4w",
+      "channelTitle": "Crim",
+      "title": "CRIM \"Vaixells de paper\" @ Estraperlo Club (23/05/2020) Fem d'Aquí STREAMING",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "wWTiMwV7qhc",
+      "channelTitle": "Crim",
+      "title": "CRIM \"Veri caducat\" @ Estraperlo Club (23/05/2020) Fem d'Aquí STREAMING",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "wWTiMwV7qhc",
+      "channelId": "UCJhcsyqAVHFHmghWFkmIx4w",
       "channelTitle": "Crim",
       "title": "CRIM \"Veri caducat\" @ Estraperlo Club (23/05/2020) Fem d'Aquí STREAMING",
       "from": "song",
@@ -341,7 +1250,23 @@
       "to": "other"
     },
     {
+      "id": "8hNm71CUWjQ",
+      "channelId": "UCJhcsyqAVHFHmghWFkmIx4w",
+      "channelTitle": "Crim",
+      "title": "CRIM @ Teatre Auditori Camp de Mart, TARRAGONA (16/05/2021)",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "yN0U-HqdRr4",
+      "channelTitle": "Dàmaris Gelabert",
+      "title": "Concert en família desde l'Espai Totsona - Etapa confinament #cançonsinfantils #família",
+      "from": "review",
+      "to": "other"
+    },
+    {
+      "id": "yN0U-HqdRr4",
+      "channelId": "UCh4gZwRHxIetWXbJnp0XefQ",
       "channelTitle": "Dàmaris Gelabert",
       "title": "Concert en família desde l'Espai Totsona - Etapa confinament #cançonsinfantils #família",
       "from": "review",
@@ -355,7 +1280,23 @@
       "to": "other"
     },
     {
+      "id": "qKVjSOc3nHI",
+      "channelId": "UCh4gZwRHxIetWXbJnp0XefQ",
+      "channelTitle": "Dàmaris Gelabert",
+      "title": "Dàmaris Gelabert - ÉS L'HORA DE L'ORQUESTRA (Nou disc i Concert Extraordinari al Palau de la Música)",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "m8IUrWex0Ts",
+      "channelTitle": "Dàmaris Gelabert",
+      "title": "Dàmaris Gelabert - I Concert en família per a famílies",
+      "from": "review",
+      "to": "other"
+    },
+    {
+      "id": "m8IUrWex0Ts",
+      "channelId": "UCh4gZwRHxIetWXbJnp0XefQ",
       "channelTitle": "Dàmaris Gelabert",
       "title": "Dàmaris Gelabert - I Concert en família per a famílies",
       "from": "review",
@@ -369,7 +1310,23 @@
       "to": "other"
     },
     {
+      "id": "eaUM_k6DrBI",
+      "channelId": "UCh4gZwRHxIetWXbJnp0XefQ",
+      "channelTitle": "Dàmaris Gelabert",
+      "title": "Dàmaris Gelabert - II Concert en família per a famílies",
+      "from": "review",
+      "to": "other"
+    },
+    {
       "id": "SfNuq17SHkQ",
+      "channelTitle": "Dàmaris Gelabert",
+      "title": "Dàmaris Gelabert - III Concert en família per a famílies",
+      "from": "review",
+      "to": "other"
+    },
+    {
+      "id": "SfNuq17SHkQ",
+      "channelId": "UCh4gZwRHxIetWXbJnp0XefQ",
       "channelTitle": "Dàmaris Gelabert",
       "title": "Dàmaris Gelabert - III Concert en família per a famílies",
       "from": "review",
@@ -383,7 +1340,23 @@
       "to": "other"
     },
     {
+      "id": "GbRzUVPeogk",
+      "channelId": "UCh4gZwRHxIetWXbJnp0XefQ",
+      "channelTitle": "Dàmaris Gelabert",
+      "title": "Dàmaris Gelabert - IV Concert en família per a famílies",
+      "from": "review",
+      "to": "other"
+    },
+    {
       "id": "FjApSV2q8ZE",
+      "channelTitle": "Dàmaris Gelabert",
+      "title": "Dàmaris Gelabert - V Concert en família per a famílies ESPECIAL SANT JORDI",
+      "from": "review",
+      "to": "other"
+    },
+    {
+      "id": "FjApSV2q8ZE",
+      "channelId": "UCh4gZwRHxIetWXbJnp0XefQ",
       "channelTitle": "Dàmaris Gelabert",
       "title": "Dàmaris Gelabert - V Concert en família per a famílies ESPECIAL SANT JORDI",
       "from": "review",
@@ -397,7 +1370,23 @@
       "to": "other"
     },
     {
+      "id": "3AZq1c3Ub6g",
+      "channelId": "UCh4gZwRHxIetWXbJnp0XefQ",
+      "channelTitle": "Dàmaris Gelabert",
+      "title": "Dàmaris Gelabert & Convidats - LA FESTA DE LA PAU en llengua de signes",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "DaUlwpS5evA",
+      "channelTitle": "Dàmaris Gelabert",
+      "title": "MOU EL COS - Us estrimem fest #cançonsinfantils #família #cançonsperaprendre",
+      "from": "review",
+      "to": "song"
+    },
+    {
+      "id": "DaUlwpS5evA",
+      "channelId": "UCh4gZwRHxIetWXbJnp0XefQ",
       "channelTitle": "Dàmaris Gelabert",
       "title": "MOU EL COS - Us estrimem fest #cançonsinfantils #família #cançonsperaprendre",
       "from": "review",
@@ -411,7 +1400,23 @@
       "to": "other"
     },
     {
+      "id": "wPkiZCdJRuo",
+      "channelId": "UCn26f9Y9kg_AguUTaqNQUDw",
+      "channelTitle": "Doctor Prats",
+      "title": "01 Karaoke   Caminem lluny",
+      "from": "review",
+      "to": "other"
+    },
+    {
       "id": "VEc4gf-CDA0",
+      "channelTitle": "Doctor Prats",
+      "title": "02 Karaoke   Lliure",
+      "from": "review",
+      "to": "other"
+    },
+    {
+      "id": "VEc4gf-CDA0",
+      "channelId": "UCn26f9Y9kg_AguUTaqNQUDw",
       "channelTitle": "Doctor Prats",
       "title": "02 Karaoke   Lliure",
       "from": "review",
@@ -425,7 +1430,23 @@
       "to": "other"
     },
     {
+      "id": "SQTtbPiTXxk",
+      "channelId": "UCn26f9Y9kg_AguUTaqNQUDw",
+      "channelTitle": "Doctor Prats",
+      "title": "03 Karaoke   Ho tenim tot",
+      "from": "review",
+      "to": "other"
+    },
+    {
       "id": "6NSA7QJPwBw",
+      "channelTitle": "Doctor Prats",
+      "title": "04 Karaoke   Al final tot anirà bé",
+      "from": "review",
+      "to": "other"
+    },
+    {
+      "id": "6NSA7QJPwBw",
+      "channelId": "UCn26f9Y9kg_AguUTaqNQUDw",
       "channelTitle": "Doctor Prats",
       "title": "04 Karaoke   Al final tot anirà bé",
       "from": "review",
@@ -439,7 +1460,23 @@
       "to": "other"
     },
     {
+      "id": "JeHgBvZITKE",
+      "channelId": "UCn26f9Y9kg_AguUTaqNQUDw",
+      "channelTitle": "Doctor Prats",
+      "title": "05 Karaoke   Creuant tempestes",
+      "from": "review",
+      "to": "other"
+    },
+    {
       "id": "cYDm9CgYEH8",
+      "channelTitle": "Doctor Prats",
+      "title": "06 Karaoke   Tu fas",
+      "from": "review",
+      "to": "other"
+    },
+    {
+      "id": "cYDm9CgYEH8",
+      "channelId": "UCn26f9Y9kg_AguUTaqNQUDw",
       "channelTitle": "Doctor Prats",
       "title": "06 Karaoke   Tu fas",
       "from": "review",
@@ -453,7 +1490,23 @@
       "to": "other"
     },
     {
+      "id": "a_jzqHCumYA",
+      "channelId": "UCn26f9Y9kg_AguUTaqNQUDw",
+      "channelTitle": "Doctor Prats",
+      "title": "07 Karaoke   Les teves pigues",
+      "from": "review",
+      "to": "other"
+    },
+    {
       "id": "MBJABVpAAJ4",
+      "channelTitle": "Doctor Prats",
+      "title": "08 Karaoke   Jo vinc de lluny",
+      "from": "review",
+      "to": "other"
+    },
+    {
+      "id": "MBJABVpAAJ4",
+      "channelId": "UCn26f9Y9kg_AguUTaqNQUDw",
       "channelTitle": "Doctor Prats",
       "title": "08 Karaoke   Jo vinc de lluny",
       "from": "review",
@@ -467,7 +1520,23 @@
       "to": "other"
     },
     {
+      "id": "VdW2jV9_HP4",
+      "channelId": "UCn26f9Y9kg_AguUTaqNQUDw",
+      "channelTitle": "Doctor Prats",
+      "title": "09 Karaoke   El raïm es fa pansa",
+      "from": "review",
+      "to": "other"
+    },
+    {
       "id": "c_PcdzMFl0U",
+      "channelTitle": "Doctor Prats",
+      "title": "10 Karaoke   Deixa't anar",
+      "from": "review",
+      "to": "other"
+    },
+    {
+      "id": "c_PcdzMFl0U",
+      "channelId": "UCn26f9Y9kg_AguUTaqNQUDw",
       "channelTitle": "Doctor Prats",
       "title": "10 Karaoke   Deixa't anar",
       "from": "review",
@@ -481,6 +1550,14 @@
       "to": "other"
     },
     {
+      "id": "NXdIoszjazY",
+      "channelId": "UCn26f9Y9kg_AguUTaqNQUDw",
+      "channelTitle": "Doctor Prats",
+      "title": "11 Karaoke   Ara ve ara se'n va",
+      "from": "review",
+      "to": "other"
+    },
+    {
       "id": "iTS0Key8OsE",
       "channelTitle": "Doctor Prats",
       "title": "Adéu Fins Aviat (El Docu)",
@@ -488,7 +1565,16 @@
       "to": "song"
     },
     {
+      "id": "iTS0Key8OsE",
+      "channelId": "UCn26f9Y9kg_AguUTaqNQUDw",
+      "channelTitle": "Doctor Prats",
+      "title": "Adéu Fins Aviat (El Docu)",
+      "from": "review",
+      "to": "song"
+    },
+    {
       "id": "b4Ir-xoS95s",
+      "channelId": "UCn26f9Y9kg_AguUTaqNQUDw",
       "channelTitle": "Doctor Prats",
       "title": "Al final tot anirà bé (en confinament)",
       "from": "review",
@@ -496,6 +1582,7 @@
     },
     {
       "id": "7gZ7C0-wGh8",
+      "channelId": "UCn26f9Y9kg_AguUTaqNQUDw",
       "channelTitle": "Doctor Prats",
       "title": "Doctor Prats - Pel cantó bo (Disc Sencer)",
       "from": "review",
@@ -509,7 +1596,23 @@
       "to": "other"
     },
     {
+      "id": "Neiug7gPMWk",
+      "channelId": "UC3pZduX_rJBAuisKRJYKatw",
+      "channelTitle": "Ebri Knight",
+      "title": "15 ANYS D'EBRIS [2005-2020]",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "itpKqkfU8-8",
+      "channelTitle": "Ebri Knight",
+      "title": "Ebri Knight | Resum gira 2018",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "itpKqkfU8-8",
+      "channelId": "UC3pZduX_rJBAuisKRJYKatw",
       "channelTitle": "Ebri Knight",
       "title": "Ebri Knight | Resum gira 2018",
       "from": "song",
@@ -523,7 +1626,23 @@
       "to": "other"
     },
     {
+      "id": "w1bFZf1HLNM",
+      "channelId": "UC3pZduX_rJBAuisKRJYKatw",
+      "channelTitle": "Ebri Knight",
+      "title": "Ebri Knight a l'Acampada Jove",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "uVMHyAw7hzg",
+      "channelTitle": "Ebri Knight",
+      "title": "Ebri Knight al Mercat de Música Viva de Vic [360º] 15/09/2018",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "uVMHyAw7hzg",
+      "channelId": "UC3pZduX_rJBAuisKRJYKatw",
       "channelTitle": "Ebri Knight",
       "title": "Ebri Knight al Mercat de Música Viva de Vic [360º] 15/09/2018",
       "from": "song",
@@ -537,7 +1656,23 @@
       "to": "other"
     },
     {
+      "id": "9jUfJwJ-hIM",
+      "channelId": "UC3pZduX_rJBAuisKRJYKatw",
+      "channelTitle": "Ebri Knight",
+      "title": "Ebri Knight Resum gira 2019",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "LEvR0iTbb6c",
+      "channelTitle": "Ebri Knight",
+      "title": "Resum Gira Irlanda Ebri Knight 2023",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "LEvR0iTbb6c",
+      "channelId": "UC3pZduX_rJBAuisKRJYKatw",
       "channelTitle": "Ebri Knight",
       "title": "Resum Gira Irlanda Ebri Knight 2023",
       "from": "song",
@@ -551,7 +1686,23 @@
       "to": "other"
     },
     {
+      "id": "E_tu_Y5F1gA",
+      "channelId": "UC-QeigkuT0jVePTpc6laJxw",
+      "channelTitle": "el Diluvi",
+      "title": "el Diluvi - E sonque tu [amb Alidé Sans]",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "2QG95tmvatI",
+      "channelTitle": "el Diluvi",
+      "title": "el Diluvi - E ti, só ti (con SÉS)",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "2QG95tmvatI",
+      "channelId": "UC-QeigkuT0jVePTpc6laJxw",
       "channelTitle": "el Diluvi",
       "title": "el Diluvi - E ti, só ti (con SÉS)",
       "from": "song",
@@ -565,7 +1716,23 @@
       "to": "other"
     },
     {
+      "id": "dKvckXfDuGE",
+      "channelId": "UC-QeigkuT0jVePTpc6laJxw",
+      "channelTitle": "el Diluvi",
+      "title": "el Diluvi - Et à toi seule [avec Núria Jaouen]",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "Q4u6HTmY9jY",
+      "channelTitle": "el Diluvi",
+      "title": "el Diluvi - Ta zu, soilik zu [ Huntzarekin ]",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "Q4u6HTmY9jY",
+      "channelId": "UC-QeigkuT0jVePTpc6laJxw",
       "channelTitle": "el Diluvi",
       "title": "el Diluvi - Ta zu, soilik zu [ Huntzarekin ]",
       "from": "song",
@@ -579,7 +1746,23 @@
       "to": "other"
     },
     {
+      "id": "UKAHFaUp8SE",
+      "channelId": "UC-QeigkuT0jVePTpc6laJxw",
+      "channelTitle": "el Diluvi",
+      "title": "el Diluvi - Tu, namás tu [con Herbamora]",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "VO2vVS1sU1Q",
+      "channelTitle": "el Diluvi",
+      "title": "el Diluvi - Y nomás tu [con Eixam]",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "VO2vVS1sU1Q",
+      "channelId": "UC-QeigkuT0jVePTpc6laJxw",
       "channelTitle": "el Diluvi",
       "title": "el Diluvi - Y nomás tu [con Eixam]",
       "from": "song",
@@ -593,7 +1776,23 @@
       "to": "other"
     },
     {
+      "id": "wAZpPA9SyOY",
+      "channelId": "UC-QeigkuT0jVePTpc6laJxw",
+      "channelTitle": "el Diluvi",
+      "title": "el Diluvi - Y solo tú [con Claudia 'Key Day' Ferrández]",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "SA4LnX_QXXE",
+      "channelTitle": "el Diluvi",
+      "title": "el Diluvi - You, only you [with The Sey Sisters]",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "SA4LnX_QXXE",
+      "channelId": "UC-QeigkuT0jVePTpc6laJxw",
       "channelTitle": "el Diluvi",
       "title": "el Diluvi - You, only you [with The Sey Sisters]",
       "from": "song",
@@ -607,7 +1806,16 @@
       "to": "other"
     },
     {
+      "id": "16D3AuHTomU",
+      "channelId": "UCbP-zt6f5hDkqqVVnJcooHQ",
+      "channelTitle": "Els Amics de les Arts",
+      "title": "20 anys s'Amics, concert de celebració",
+      "from": "review",
+      "to": "other"
+    },
+    {
       "id": "qs5jhN2569E",
+      "channelId": "UCbP-zt6f5hDkqqVVnJcooHQ",
       "channelTitle": "Els Amics de les Arts",
       "title": "Els Amics de les Arts i el Cor Geriona - en directe a la Catedral de Girona 2025",
       "from": "live_song",
@@ -615,6 +1823,7 @@
     },
     {
       "id": "iz8PuisQ5pE",
+      "channelId": "UCbP-zt6f5hDkqqVVnJcooHQ",
       "channelTitle": "Els Amics de les Arts",
       "title": "Els Amics de les Arts i el Cor Geriona assajant a dins de la Catedral de Girona",
       "from": "song",
@@ -628,7 +1837,23 @@
       "to": "other"
     },
     {
+      "id": "90qSyIPHSlg",
+      "channelId": "UCbP-zt6f5hDkqqVVnJcooHQ",
+      "channelTitle": "Els Amics de les Arts",
+      "title": "LES PRESES FALSES - QUÈ TENIM 2025 - 20 Anys d'Amics",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "A5XKkm69YeY",
+      "channelTitle": "Els Amics de les Arts",
+      "title": "Sobre com es va fer 'El senyal que esperaves', amb Sopa de Cabra",
+      "from": "review",
+      "to": "song"
+    },
+    {
+      "id": "A5XKkm69YeY",
+      "channelId": "UCbP-zt6f5hDkqqVVnJcooHQ",
       "channelTitle": "Els Amics de les Arts",
       "title": "Sobre com es va fer 'El senyal que esperaves', amb Sopa de Cabra",
       "from": "review",
@@ -642,7 +1867,23 @@
       "to": "other"
     },
     {
+      "id": "ATEfjhM1Wk4",
+      "channelId": "UCbP-zt6f5hDkqqVVnJcooHQ",
+      "channelTitle": "Els Amics de les Arts",
+      "title": "Sobre com es va fer Louisiana o els camps de cotó, amb Sergio Dalma i Marco Mezquida",
+      "from": "review",
+      "to": "other"
+    },
+    {
       "id": "9aF2jSFaTa0",
+      "channelTitle": "Els Catarres",
+      "title": "\"Tots els Meus Principis · La Gira\" - Els Catarres",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "9aF2jSFaTa0",
+      "channelId": "UCtrNm68UynCzT6DBC4Xq5sg",
       "channelTitle": "Els Catarres",
       "title": "\"Tots els Meus Principis · La Gira\" - Els Catarres",
       "from": "song",
@@ -656,7 +1897,23 @@
       "to": "other"
     },
     {
+      "id": "SLGHMIAtrxw",
+      "channelId": "UCtrNm68UynCzT6DBC4Xq5sg",
+      "channelTitle": "Els Catarres",
+      "title": "▼28 SETEMBRE I 5 OCTUBRE - SILS, LLINARS DEL VALLÈS - ELS CATARRES (TEMP2019)▼",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "hsmjw3Qm-IQ",
+      "channelTitle": "Els Catarres",
+      "title": "▼6 SETEMBRE - OLOT - ELS CATARRES (TEMP2019)▼",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "hsmjw3Qm-IQ",
+      "channelId": "UCtrNm68UynCzT6DBC4Xq5sg",
       "channelTitle": "Els Catarres",
       "title": "▼6 SETEMBRE - OLOT - ELS CATARRES (TEMP2019)▼",
       "from": "song",
@@ -678,6 +1935,7 @@
     },
     {
       "id": "zmGYk4YV1h4",
+      "channelId": "UCt7sVSd8TURhAqiI_M6eCwQ",
       "channelTitle": "enMatu",
       "title": "8. bojan krkic",
       "from": "review",
@@ -691,7 +1949,23 @@
       "to": "other"
     },
     {
+      "id": "DPH0qpx0kxc",
+      "channelId": "UCt7sVSd8TURhAqiI_M6eCwQ",
+      "channelTitle": "enMatu",
+      "title": "enMatu - Cadaqués",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "pz8w8AeOctc",
+      "channelTitle": "enMatu",
+      "title": "enMatu - Malediccions",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "pz8w8AeOctc",
+      "channelId": "UCt7sVSd8TURhAqiI_M6eCwQ",
       "channelTitle": "enMatu",
       "title": "enMatu - Malediccions",
       "from": "song",
@@ -705,7 +1979,23 @@
       "to": "other"
     },
     {
+      "id": "_zQINyu-cxU",
+      "channelId": "UCt7sVSd8TURhAqiI_M6eCwQ",
+      "channelTitle": "enMatu",
+      "title": "enMatu - Neptú",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "oPBsOh0jVDM",
+      "channelTitle": "enMatu",
+      "title": "enMatu - Ni una Llàgrima",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "oPBsOh0jVDM",
+      "channelId": "UCt7sVSd8TURhAqiI_M6eCwQ",
       "channelTitle": "enMatu",
       "title": "enMatu - Ni una Llàgrima",
       "from": "song",
@@ -719,7 +2009,23 @@
       "to": "other"
     },
     {
+      "id": "2ohw4zcSlrU",
+      "channelId": "UCt7sVSd8TURhAqiI_M6eCwQ",
+      "channelTitle": "enMatu",
+      "title": "enMatu - No sé què es pensa",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "kPgnFkemS1g",
+      "channelTitle": "Eskassa Llibertat",
+      "title": "eskassa llibertat a l'acampada jove '09 VICTORIA",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "kPgnFkemS1g",
+      "channelId": "UC4BSwwuqk6O9ELABBgsgWGQ",
       "channelTitle": "Eskassa Llibertat",
       "title": "eskassa llibertat a l'acampada jove '09 VICTORIA",
       "from": "song",
@@ -733,7 +2039,23 @@
       "to": "other"
     },
     {
+      "id": "6n9R00JR8r8",
+      "channelId": "UC4BSwwuqk6O9ELABBgsgWGQ",
+      "channelTitle": "Eskassa Llibertat",
+      "title": "Eskassa LLibertat TV (Acustic de Tot el Dia Xop a SOM Ràdio)",
+      "from": "live_song",
+      "to": "other"
+    },
+    {
       "id": "sS0aqh2qRB8",
+      "channelTitle": "Eskassa Llibertat",
+      "title": "Súria (al carrer) Eskassa LLibertat",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "sS0aqh2qRB8",
+      "channelId": "UC4BSwwuqk6O9ELABBgsgWGQ",
       "channelTitle": "Eskassa Llibertat",
       "title": "Súria (al carrer) Eskassa LLibertat",
       "from": "song",
@@ -747,7 +2069,23 @@
       "to": "other"
     },
     {
+      "id": "4bcoFiOOarM",
+      "channelId": "UCCjjqhwGK59J_vn4l0MjYSA",
+      "channelTitle": "Exili A Elba",
+      "title": "Aparences a l'Antiga Fàbrica Estrella Damm",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "17j3EWKqilI",
+      "channelTitle": "Exili A Elba",
+      "title": "Come together (The Beatles) - Exili a Elba - En viu a \"La Nau\"",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "17j3EWKqilI",
+      "channelId": "UCCjjqhwGK59J_vn4l0MjYSA",
       "channelTitle": "Exili A Elba",
       "title": "Come together (The Beatles) - Exili a Elba - En viu a \"La Nau\"",
       "from": "song",
@@ -761,7 +2099,23 @@
       "to": "other"
     },
     {
+      "id": "PqRQs-LL070",
+      "channelId": "UCCjjqhwGK59J_vn4l0MjYSA",
+      "channelTitle": "Exili A Elba",
+      "title": "Exili a Elba - EPK 2015",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "nPYqF363pyg",
+      "channelTitle": "Exili A Elba",
+      "title": "Exili a Elba - Sona9 - Concert Preliminar Dijous 25.06 - 20h",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "nPYqF363pyg",
+      "channelId": "UCCjjqhwGK59J_vn4l0MjYSA",
       "channelTitle": "Exili A Elba",
       "title": "Exili a Elba - Sona9 - Concert Preliminar Dijous 25.06 - 20h",
       "from": "song",
@@ -775,7 +2129,23 @@
       "to": "other"
     },
     {
+      "id": "rmWpAm0w8Vg",
+      "channelId": "UCCjjqhwGK59J_vn4l0MjYSA",
+      "channelTitle": "Exili A Elba",
+      "title": "He vist una noia - Exili a Elba (Cover The Beatles)",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "aHqSJ_bgZmo",
+      "channelTitle": "Exili A Elba",
+      "title": "Heures - Exili a Elba - Concert Lagaia Books (Badalona)",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "aHqSJ_bgZmo",
+      "channelId": "UCCjjqhwGK59J_vn4l0MjYSA",
       "channelTitle": "Exili A Elba",
       "title": "Heures - Exili a Elba - Concert Lagaia Books (Badalona)",
       "from": "song",
@@ -789,7 +2159,23 @@
       "to": "other"
     },
     {
+      "id": "RbQbWkEluSQ",
+      "channelId": "UCCjjqhwGK59J_vn4l0MjYSA",
+      "channelTitle": "Exili A Elba",
+      "title": "Home I'll Never Be - cover by Exili a Elba",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "Fzypl53rLyU",
+      "channelTitle": "Exili A Elba",
+      "title": "No hi ha llum - Exili a Elba - En viu a \"La Nau\"",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "Fzypl53rLyU",
+      "channelId": "UCCjjqhwGK59J_vn4l0MjYSA",
       "channelTitle": "Exili A Elba",
       "title": "No hi ha llum - Exili a Elba - En viu a \"La Nau\"",
       "from": "song",
@@ -803,7 +2189,16 @@
       "to": "other"
     },
     {
+      "id": "DIUKjeFE3d4",
+      "channelId": "UCCjjqhwGK59J_vn4l0MjYSA",
+      "channelTitle": "Exili A Elba",
+      "title": "Sang Suor i Asfalt a l'Antiga Fàbrica Estrella Damm",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "JnbFm-fKs54",
+      "channelId": "UCkGNJczVoESUwmJ3oejyM5w",
       "channelTitle": "Ferran Palau",
       "title": "Ferran Palau - Parc",
       "from": "review",
@@ -811,6 +2206,7 @@
     },
     {
       "id": "370pjojqy1s",
+      "channelId": "UCkGNJczVoESUwmJ3oejyM5w",
       "channelTitle": "Ferran Palau",
       "title": "Ferran Palau - Parc (AUDIO ÀLBUM)",
       "from": "review",
@@ -824,7 +2220,23 @@
       "to": "other"
     },
     {
+      "id": "zdxGaMEfUkI",
+      "channelId": "UCkGNJczVoESUwmJ3oejyM5w",
+      "channelTitle": "Ferran Palau",
+      "title": "Pablo Maestres & Ferran Palau - PLORA AQUÍ | Escrit i dirigit per Pablo Maestres",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "uY_8X5W8SzQ",
+      "channelTitle": "Gertrudis",
+      "title": "ACTUACIÓ FINAL DE CAMPANYA AL DRET A DECIDIR",
+      "from": "review",
+      "to": "other"
+    },
+    {
+      "id": "uY_8X5W8SzQ",
+      "channelId": "UChYQSBa6bIG2yArpLA4ykvA",
       "channelTitle": "Gertrudis",
       "title": "ACTUACIÓ FINAL DE CAMPANYA AL DRET A DECIDIR",
       "from": "review",
@@ -838,7 +2250,23 @@
       "to": "other"
     },
     {
+      "id": "GVK8GnxQ-gg",
+      "channelId": "UChYQSBa6bIG2yArpLA4ykvA",
+      "channelTitle": "Gertrudis",
+      "title": "ARA VOLO ALT LIVE",
+      "from": "live_song",
+      "to": "other"
+    },
+    {
       "id": "p9diR38kpNY",
+      "channelTitle": "Gertrudis",
+      "title": "AVUI CANVIEM EL MÓN - Gertrudis",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "p9diR38kpNY",
+      "channelId": "UChYQSBa6bIG2yArpLA4ykvA",
       "channelTitle": "Gertrudis",
       "title": "AVUI CANVIEM EL MÓN - Gertrudis",
       "from": "song",
@@ -852,7 +2280,23 @@
       "to": "other"
     },
     {
+      "id": "H4jvHOkQCuE",
+      "channelId": "UChYQSBa6bIG2yArpLA4ykvA",
+      "channelTitle": "Gertrudis",
+      "title": "Gertrudis - Mal vestits",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "ggUW9vqgqSo",
+      "channelTitle": "Gertrudis",
+      "title": "Gertrudis - Rua de Raiña (amb Gabri de Dakidarría)",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "ggUW9vqgqSo",
+      "channelId": "UChYQSBa6bIG2yArpLA4ykvA",
       "channelTitle": "Gertrudis",
       "title": "Gertrudis - Rua de Raiña (amb Gabri de Dakidarría)",
       "from": "song",
@@ -866,7 +2310,23 @@
       "to": "other"
     },
     {
+      "id": "DSujjS4FYDA",
+      "channelId": "UChYQSBa6bIG2yArpLA4ykvA",
+      "channelTitle": "Gertrudis",
+      "title": "Gertrudis a Sons del Món 2017",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "-urD7eQyP58",
+      "channelTitle": "Gertrudis",
+      "title": "Gertrudis XV",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "-urD7eQyP58",
+      "channelId": "UChYQSBa6bIG2yArpLA4ykvA",
       "channelTitle": "Gertrudis",
       "title": "Gertrudis XV",
       "from": "song",
@@ -880,6 +2340,14 @@
       "to": "other"
     },
     {
+      "id": "WjNbwwHEp4U",
+      "channelId": "UChYQSBa6bIG2yArpLA4ykvA",
+      "channelTitle": "Gertrudis",
+      "title": "IMMENS FI DE GIRA 2018 A LA MERCÈ DE BARCELONA!!",
+      "from": "review",
+      "to": "other"
+    },
+    {
       "id": "WZtO87Og5MI",
       "channelTitle": "Gertrudis",
       "title": "SAMARRETA 2015. Amb la col.laboració de Txarango i La Pegatina",
@@ -887,7 +2355,16 @@
       "to": "other"
     },
     {
+      "id": "WZtO87Og5MI",
+      "channelId": "UChYQSBa6bIG2yArpLA4ykvA",
+      "channelTitle": "Gertrudis",
+      "title": "SAMARRETA 2015. Amb la col.laboració de Txarango i La Pegatina",
+      "from": "review",
+      "to": "other"
+    },
+    {
       "id": "Zyal3qirpGc",
+      "channelId": "UChYQSBa6bIG2yArpLA4ykvA",
       "channelTitle": "Gertrudis",
       "title": "Torno Cap a Casa Dasousa Mix",
       "from": "review",
@@ -901,7 +2378,23 @@
       "to": "other"
     },
     {
+      "id": "0SPmOc6T2kk",
+      "channelId": "UCPsEb7F9DceUz4TsdfyuiBw",
+      "channelTitle": "Gessamí Boada",
+      "title": "Concert de presentació de \"12\" - Gessamí Boada (Barcelona)",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "ZVxt31_GMuA",
+      "channelTitle": "GOSSOS",
+      "title": "GO22OS (estrena gira) kursaal i auditori",
+      "from": "review",
+      "to": "other"
+    },
+    {
+      "id": "ZVxt31_GMuA",
+      "channelId": "UCW4XOsm7cOFbfoHPa9dFlVA",
       "channelTitle": "GOSSOS",
       "title": "GO22OS (estrena gira) kursaal i auditori",
       "from": "review",
@@ -915,7 +2408,16 @@
       "to": "other"
     },
     {
+      "id": "0rBFrFvrA00",
+      "channelId": "UCW4XOsm7cOFbfoHPa9dFlVA",
+      "channelTitle": "GOSSOS",
+      "title": "Gossos - On poder anar  \"a reviure\"",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "qoRaZR5h9dQ",
+      "channelId": "UCyNgOgsiiy5cSgyfEqveONw",
       "channelTitle": "HerbaNegra",
       "title": "CAFÉ",
       "from": "review",
@@ -923,6 +2425,7 @@
     },
     {
       "id": "qHv9iAwPrFI",
+      "channelId": "UCyNgOgsiiy5cSgyfEqveONw",
       "channelTitle": "HerbaNegra",
       "title": "COMBAT",
       "from": "review",
@@ -930,6 +2433,7 @@
     },
     {
       "id": "PDnHiVf4OSA",
+      "channelId": "UCyNgOgsiiy5cSgyfEqveONw",
       "channelTitle": "HerbaNegra",
       "title": "HerbaNegra - És molt fort",
       "from": "review",
@@ -943,7 +2447,16 @@
       "to": "other"
     },
     {
+      "id": "dPEZnTSpGBA",
+      "channelId": "UCyNgOgsiiy5cSgyfEqveONw",
+      "channelTitle": "HerbaNegra",
+      "title": "LOCA (amb Andreu de RAPSODES)",
+      "from": "review",
+      "to": "other"
+    },
+    {
       "id": "6i0fS5HSYK4",
+      "channelId": "UCyNgOgsiiy5cSgyfEqveONw",
       "channelTitle": "HerbaNegra",
       "title": "SENSE",
       "from": "review",
@@ -957,7 +2470,16 @@
       "to": "other"
     },
     {
+      "id": "PFTBvBMdGd8",
+      "channelId": "UCyNgOgsiiy5cSgyfEqveONw",
+      "channelTitle": "HerbaNegra",
+      "title": "TOT ANIRÀ BÉ #Sense - Versió confinament",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "WeOcWn9ddcI",
+      "channelId": "UCyNgOgsiiy5cSgyfEqveONw",
       "channelTitle": "HerbaNegra",
       "title": "XANCLES",
       "from": "review",
@@ -971,7 +2493,23 @@
       "to": "other"
     },
     {
+      "id": "gdUcgvupr-U",
+      "channelId": "UCiZ0Vjlvr_CNXtUU0WzSy1A",
+      "channelTitle": "Jo Jet i Maria Ribot",
+      "title": "23/11 MADRID",
+      "from": "review",
+      "to": "other"
+    },
+    {
       "id": "pNJmm-eZFMk",
+      "channelTitle": "Jo Jet i Maria Ribot",
+      "title": "🆘SOS🆘 JJMR feat Sr. Chen",
+      "from": "review",
+      "to": "other"
+    },
+    {
+      "id": "pNJmm-eZFMk",
+      "channelId": "UCiZ0Vjlvr_CNXtUU0WzSy1A",
       "channelTitle": "Jo Jet i Maria Ribot",
       "title": "🆘SOS🆘 JJMR feat Sr. Chen",
       "from": "review",
@@ -985,7 +2523,16 @@
       "to": "other"
     },
     {
+      "id": "NDF-PcXCjQU",
+      "channelId": "UCxV6tncwBxl3K7SsUn7YyjA",
+      "channelTitle": "Joan Dausà",
+      "title": "90 Minutos - India Martinez & Joan Dausà",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "pHcfpXywxwk",
+      "channelId": "UCxV6tncwBxl3K7SsUn7YyjA",
       "channelTitle": "Joan Dausà",
       "title": "concert JO MAI MAI al PALAU SANT JORDI  - JOAN DAUSÀ (LA GRAN BOGERIA)",
       "from": "review",
@@ -999,7 +2546,23 @@
       "to": "other"
     },
     {
+      "id": "rK7CmeA00Sc",
+      "channelId": "UCxV6tncwBxl3K7SsUn7YyjA",
+      "channelTitle": "Joan Dausà",
+      "title": "EL SUPLEMENT de Catalunya Ràdio (amb ROGER ESCAPA), l'endemà del concert de JOAN DAUSÀ a VISTALEGRE",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "Tf64Drd4peE",
+      "channelTitle": "Joan Dausà",
+      "title": "GALLO ROJO, GALLO NEGRO - JOAN DAUSÀ I ZOE BONAFONTE - GALA PREMIS GAUDÍ",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "Tf64Drd4peE",
+      "channelId": "UCxV6tncwBxl3K7SsUn7YyjA",
       "channelTitle": "Joan Dausà",
       "title": "GALLO ROJO, GALLO NEGRO - JOAN DAUSÀ I ZOE BONAFONTE - GALA PREMIS GAUDÍ",
       "from": "song",
@@ -1013,7 +2576,16 @@
       "to": "other"
     },
     {
+      "id": "y5wFSsDrVIw",
+      "channelId": "UCxV6tncwBxl3K7SsUn7YyjA",
+      "channelTitle": "Joan Dausà",
+      "title": "I SI CANTO TRIST - Lluís Llach i Joan Dausà",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "0bVuglLBoeA",
+      "channelId": "UCxV6tncwBxl3K7SsUn7YyjA",
       "channelTitle": "Joan Dausà",
       "title": "JO MAI MAI + JUDIT (la mateixa cançó, la mateixa nit). CSC 06 JOAN DAUSÀ",
       "from": "review",
@@ -1027,7 +2599,23 @@
       "to": "other"
     },
     {
+      "id": "H7FYt65a7g0",
+      "channelId": "UCxV6tncwBxl3K7SsUn7YyjA",
+      "channelTitle": "Joan Dausà",
+      "title": "JOAN DAUSÀ - HO TENIM TOT a RAZZMATAZZ",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "UvD_cb769kM",
+      "channelTitle": "Joan Dausà",
+      "title": "L'1X1 del BARÇA JUGA A RAC1 amb cançons de JOAN DAUSÀ",
+      "from": "review",
+      "to": "other"
+    },
+    {
+      "id": "UvD_cb769kM",
+      "channelId": "UCxV6tncwBxl3K7SsUn7YyjA",
       "channelTitle": "Joan Dausà",
       "title": "L'1X1 del BARÇA JUGA A RAC1 amb cançons de JOAN DAUSÀ",
       "from": "review",
@@ -1041,7 +2629,23 @@
       "to": "other"
     },
     {
+      "id": "eyZZW4GOOLM",
+      "channelId": "UCxV6tncwBxl3K7SsUn7YyjA",
+      "channelTitle": "Joan Dausà",
+      "title": "LABANDA SONORA amb JOAN DAUSÀ",
+      "from": "review",
+      "to": "other"
+    },
+    {
       "id": "zh4GmwIOb8c",
+      "channelTitle": "Joan Dausà",
+      "title": "VIA LLIURE de RAC1 (amb XAVI BUNDÓ), l'endemà del concert de JOAN DAUSÀ a VISTALEGRE",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "zh4GmwIOb8c",
+      "channelId": "UCxV6tncwBxl3K7SsUn7YyjA",
       "channelTitle": "Joan Dausà",
       "title": "VIA LLIURE de RAC1 (amb XAVI BUNDÓ), l'endemà del concert de JOAN DAUSÀ a VISTALEGRE",
       "from": "song",
@@ -1076,7 +2680,23 @@
       "to": "other"
     },
     {
+      "id": "_MoQFDLkEMo",
+      "channelId": "UCr0fPzOAhNwQbzy774xccOw",
+      "channelTitle": "Jofre Bardagí",
+      "title": "Glaucs - Creus a Marató de TV3, 1995",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "hU9yPdFrY3c",
+      "channelTitle": "Jofre Bardagí",
+      "title": "Glaucs - Històries Curtes (Som i Serem, TV3, 1995)",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "hU9yPdFrY3c",
+      "channelId": "UCr0fPzOAhNwQbzy774xccOw",
       "channelTitle": "Jofre Bardagí",
       "title": "Glaucs - Històries Curtes (Som i Serem, TV3, 1995)",
       "from": "song",
@@ -1090,7 +2710,23 @@
       "to": "other"
     },
     {
+      "id": "eCSEa2IUESk",
+      "channelId": "UCr0fPzOAhNwQbzy774xccOw",
+      "channelTitle": "Jofre Bardagí",
+      "title": "Homenatge a Josep Mª Bardagí",
+      "from": "review",
+      "to": "other"
+    },
+    {
       "id": "MA9V0JbT4iM",
+      "channelTitle": "Júlia Colom",
+      "title": "6 year old Júlia Colom \"El Cant de la Sibil·la\"",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "MA9V0JbT4iM",
+      "channelId": "UCx4dYUR3m6jehjW7mYdSX7g",
       "channelTitle": "Júlia Colom",
       "title": "6 year old Júlia Colom \"El Cant de la Sibil·la\"",
       "from": "song",
@@ -1104,7 +2740,23 @@
       "to": "other"
     },
     {
+      "id": "VD8hu4-iHYo",
+      "channelId": "UCHx3kmBag2FCtnNFdd8qZ8A",
+      "channelTitle": "Julieta",
+      "title": "Un dia amb la Ju (Festival B)",
+      "from": "review",
+      "to": "other"
+    },
+    {
       "id": "hM-b-7XKEUw",
+      "channelTitle": "Kalabranda",
+      "title": "Kalabranda - Concert 09/01/16 Sala Ovella Negra",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "hM-b-7XKEUw",
+      "channelId": "UCbxd8rksufs9jtwDGXrN8YQ",
       "channelTitle": "Kalabranda",
       "title": "Kalabranda - Concert 09/01/16 Sala Ovella Negra",
       "from": "song",
@@ -1118,6 +2770,14 @@
       "to": "other"
     },
     {
+      "id": "mOHzl2liiOU",
+      "channelId": "UCbxd8rksufs9jtwDGXrN8YQ",
+      "channelTitle": "Kalabranda",
+      "title": "Kalabranda - Remei 2016 (Arenys de Munt)",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "IMx_GTcquQY",
       "channelTitle": "La Ludwig Band",
       "title": "La Ludwig Band - El mural de la Margot Humbert de \"Gràcies per venir\"",
@@ -1125,7 +2785,16 @@
       "to": "other"
     },
     {
+      "id": "IMx_GTcquQY",
+      "channelId": "UC1M7jLDag1ddbI6e-arvfGw",
+      "channelTitle": "La Ludwig Band",
+      "title": "La Ludwig Band - El mural de la Margot Humbert de \"Gràcies per venir\"",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "ET2b3HIQpu8",
+      "channelId": "UC1M7jLDag1ddbI6e-arvfGw",
       "channelTitle": "La Ludwig Band",
       "title": "La Ludwig Band al Festival Vida i al Canet Rock",
       "from": "song",
@@ -1139,6 +2808,14 @@
       "to": "other"
     },
     {
+      "id": "BY79qXwd30E",
+      "channelId": "UC1M7jLDag1ddbI6e-arvfGw",
+      "channelTitle": "La Ludwig Band",
+      "title": "La Ludwig Band en concert al Teatre Grec - Barcelona (18 de juliol de 2023)",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "RQfUB9ZtbJw",
       "channelTitle": "Malson Atmosfèric",
       "title": "Live Malson Atmosfèric La Mirona 20/01/2023",
@@ -1146,7 +2823,16 @@
       "to": "other"
     },
     {
+      "id": "RQfUB9ZtbJw",
+      "channelId": "UCVeo5x9sEwL4yxoo-004zqw",
+      "channelTitle": "Malson Atmosfèric",
+      "title": "Live Malson Atmosfèric La Mirona 20/01/2023",
+      "from": "live_song",
+      "to": "other"
+    },
+    {
       "id": "7I6Ku7EnctA",
+      "channelId": "UCVeo5x9sEwL4yxoo-004zqw",
       "channelTitle": "Malson Atmosfèric",
       "title": "T'acostes (Marsal Ventura Remix)",
       "from": "review",
@@ -1160,6 +2846,14 @@
       "to": "other"
     },
     {
+      "id": "zTZ5C4LbBsA",
+      "channelId": "UCTMFD-Apnft0QQL3S8wM37Q",
+      "channelTitle": "Mama Dousha",
+      "title": "Catalan Society Remix YouTube",
+      "from": "review",
+      "to": "other"
+    },
+    {
       "id": "IKzqun9x2VY",
       "channelTitle": "Mama Dousha",
       "title": "Mama Dousha - Billy Joe Live Acústic",
@@ -1167,7 +2861,16 @@
       "to": "other"
     },
     {
+      "id": "IKzqun9x2VY",
+      "channelId": "UCTMFD-Apnft0QQL3S8wM37Q",
+      "channelTitle": "Mama Dousha",
+      "title": "Mama Dousha - Billy Joe Live Acústic",
+      "from": "live_song",
+      "to": "other"
+    },
+    {
       "id": "eA_UCRgSiOs",
+      "channelId": "UCTMFD-Apnft0QQL3S8wM37Q",
       "channelTitle": "Mama Dousha",
       "title": "Mama Dousha - Dono fe Live",
       "from": "live_song",
@@ -1181,7 +2884,23 @@
       "to": "other"
     },
     {
+      "id": "1O76VbsgVRc",
+      "channelId": "UCTMFD-Apnft0QQL3S8wM37Q",
+      "channelTitle": "Mama Dousha",
+      "title": "MAMA DOUSHA - The Fruit Sessions I",
+      "from": "live_song",
+      "to": "other"
+    },
+    {
       "id": "0Pzz9xnNqg4",
+      "channelTitle": "Manu Guix",
+      "title": "Manu Guix - Garganta con arena",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "0Pzz9xnNqg4",
+      "channelId": "UC__Mo7bZ2F69jnSKPmpvJfA",
       "channelTitle": "Manu Guix",
       "title": "Manu Guix - Garganta con arena",
       "from": "song",
@@ -1195,7 +2914,23 @@
       "to": "other"
     },
     {
+      "id": "MJf6O-hhqMU",
+      "channelId": "UC__Mo7bZ2F69jnSKPmpvJfA",
+      "channelTitle": "Manu Guix",
+      "title": "Manu Guix - Para seguir en pie",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "qcegqCA-xqM",
+      "channelTitle": "Manu Guix",
+      "title": "Manu Guix - Sueños de un lunático",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "qcegqCA-xqM",
+      "channelId": "UC__Mo7bZ2F69jnSKPmpvJfA",
       "channelTitle": "Manu Guix",
       "title": "Manu Guix - Sueños de un lunático",
       "from": "song",
@@ -1209,7 +2944,23 @@
       "to": "other"
     },
     {
+      "id": "SqqkwNdUoN0",
+      "channelId": "UC__Mo7bZ2F69jnSKPmpvJfA",
+      "channelTitle": "Manu Guix",
+      "title": "Manu Guix - Tiempo para creer",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "aQv_TdsyV5s",
+      "channelTitle": "Mar Pujol",
+      "title": "Mar Pujol - Noctodiürna (amb Marty Ollivant i Laia Pujol)",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "aQv_TdsyV5s",
+      "channelId": "UC57d8FV0O8sOiK6-K-gWNHA",
       "channelTitle": "Mar Pujol",
       "title": "Mar Pujol - Noctodiürna (amb Marty Ollivant i Laia Pujol)",
       "from": "song",
@@ -1223,7 +2974,16 @@
       "to": "other"
     },
     {
+      "id": "317E5tWqv_8",
+      "channelId": "UC57d8FV0O8sOiK6-K-gWNHA",
+      "channelTitle": "Mar Pujol",
+      "title": "Noctodiürna - Mar Pujol (amb Marta Ollivant)",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "5xqq8xjsfmY",
+      "channelId": "UC57d8FV0O8sOiK6-K-gWNHA",
       "channelTitle": "Mar Pujol",
       "title": "Toquen Quarts d'Una",
       "from": "review",
@@ -1237,7 +2997,23 @@
       "to": "other"
     },
     {
+      "id": "RL8mZO7j9is",
+      "channelId": "UCJtO_dvu5AOSjtz1cWWpV0Q",
+      "channelTitle": "Maria del Mar Bonet",
+      "title": "Amic amat Damasc",
+      "from": "review",
+      "to": "other"
+    },
+    {
       "id": "7p_lfZo5lrk",
+      "channelTitle": "Maria del Mar Bonet",
+      "title": "Barcelona vista, Maria del Mar Bonet.",
+      "from": "review",
+      "to": "other"
+    },
+    {
+      "id": "7p_lfZo5lrk",
+      "channelId": "UCJtO_dvu5AOSjtz1cWWpV0Q",
       "channelTitle": "Maria del Mar Bonet",
       "title": "Barcelona vista, Maria del Mar Bonet.",
       "from": "review",
@@ -1251,7 +3027,23 @@
       "to": "other"
     },
     {
+      "id": "5B_2ir7TuAY",
+      "channelId": "UCJtO_dvu5AOSjtz1cWWpV0Q",
+      "channelTitle": "Maria del Mar Bonet",
+      "title": "Cançó \"Oració a la Plaça del Rei\", estiu de 1991",
+      "from": "review",
+      "to": "other"
+    },
+    {
       "id": "OQpeJDgWoBg",
+      "channelTitle": "Maria del Mar Bonet",
+      "title": "Concert \"El Cor del temps\", Palau Sant Jordi de Barcelona, 23 d'abril del 1997",
+      "from": "review",
+      "to": "other"
+    },
+    {
+      "id": "OQpeJDgWoBg",
+      "channelId": "UCJtO_dvu5AOSjtz1cWWpV0Q",
       "channelTitle": "Maria del Mar Bonet",
       "title": "Concert \"El Cor del temps\", Palau Sant Jordi de Barcelona, 23 d'abril del 1997",
       "from": "review",
@@ -1265,7 +3057,23 @@
       "to": "other"
     },
     {
+      "id": "DVY623XzSUQ",
+      "channelId": "UCJtO_dvu5AOSjtz1cWWpV0Q",
+      "channelTitle": "Maria del Mar Bonet",
+      "title": "Concert \"Raixa\" al Palau Musica Catalana, Barcelona, 18 de gener del 2002",
+      "from": "review",
+      "to": "other"
+    },
+    {
       "id": "7dBufrX3QR8",
+      "channelTitle": "Maria del Mar Bonet",
+      "title": "Concert Ben a prop. Maria del Mar Bonet i Manel Camp",
+      "from": "review",
+      "to": "other"
+    },
+    {
+      "id": "7dBufrX3QR8",
+      "channelId": "UCJtO_dvu5AOSjtz1cWWpV0Q",
       "channelTitle": "Maria del Mar Bonet",
       "title": "Concert Ben a prop. Maria del Mar Bonet i Manel Camp",
       "from": "review",
@@ -1279,7 +3087,16 @@
       "to": "other"
     },
     {
+      "id": "2EYgFCdIbdQ",
+      "channelId": "UCJtO_dvu5AOSjtz1cWWpV0Q",
+      "channelTitle": "Maria del Mar Bonet",
+      "title": "El Cor del temps - Amb l'Ensemble de Musique Traditionelle de Tunis 23/5/1997 Barcelona",
+      "from": "review",
+      "to": "other"
+    },
+    {
       "id": "p6SvoUppnaM",
+      "channelId": "UCJtO_dvu5AOSjtz1cWWpV0Q",
       "channelTitle": "Maria del Mar Bonet",
       "title": "El Drac de Na Coca",
       "from": "review",
@@ -1293,7 +3110,23 @@
       "to": "other"
     },
     {
+      "id": "q_DM5Eios5A",
+      "channelId": "UCJtO_dvu5AOSjtz1cWWpV0Q",
+      "channelTitle": "Maria del Mar Bonet",
+      "title": "Especial Maria del Mar Bonet, TVE , 1985 (S. Schaaff)",
+      "from": "review",
+      "to": "other"
+    },
+    {
       "id": "D_rfUbDtkyE",
+      "channelTitle": "Maria del Mar Bonet",
+      "title": "Especial Maria del Mar Bonet, TVE, 1985  (S. Schaaff)",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "D_rfUbDtkyE",
+      "channelId": "UCJtO_dvu5AOSjtz1cWWpV0Q",
       "channelTitle": "Maria del Mar Bonet",
       "title": "Especial Maria del Mar Bonet, TVE, 1985  (S. Schaaff)",
       "from": "song",
@@ -1307,7 +3140,23 @@
       "to": "other"
     },
     {
+      "id": "vl8sioCq7Eo",
+      "channelId": "UCJtO_dvu5AOSjtz1cWWpV0Q",
+      "channelTitle": "Maria del Mar Bonet",
+      "title": "Especial Maria del Mar Bonet, TVE, 1985 (S. Schaaff)",
+      "from": "review",
+      "to": "other"
+    },
+    {
       "id": "-llSVmgGLl4",
+      "channelTitle": "Maria del Mar Bonet",
+      "title": "Los conciertos de Popgrama, TVE. Maria del Mar Bonet i Pi de la Serra. Barcelona, 1980.",
+      "from": "review",
+      "to": "other"
+    },
+    {
+      "id": "-llSVmgGLl4",
+      "channelId": "UCJtO_dvu5AOSjtz1cWWpV0Q",
       "channelTitle": "Maria del Mar Bonet",
       "title": "Los conciertos de Popgrama, TVE. Maria del Mar Bonet i Pi de la Serra. Barcelona, 1980.",
       "from": "review",
@@ -1321,7 +3170,23 @@
       "to": "other"
     },
     {
+      "id": "QhR9ZOsFtr0",
+      "channelId": "UCJtO_dvu5AOSjtz1cWWpV0Q",
+      "channelTitle": "Maria del Mar Bonet",
+      "title": "MAR PALAU",
+      "from": "review",
+      "to": "other"
+    },
+    {
       "id": "_969LYGFf9Y",
+      "channelTitle": "Maria del Mar Bonet",
+      "title": "Maria del Mar Bonet (Tunísia - Catalunya). Realitzadors Jaume Perecaula i Joan Minguell. TV3, 1986",
+      "from": "review",
+      "to": "other"
+    },
+    {
+      "id": "_969LYGFf9Y",
+      "channelId": "UCJtO_dvu5AOSjtz1cWWpV0Q",
       "channelTitle": "Maria del Mar Bonet",
       "title": "Maria del Mar Bonet (Tunísia - Catalunya). Realitzadors Jaume Perecaula i Joan Minguell. TV3, 1986",
       "from": "review",
@@ -1335,7 +3200,23 @@
       "to": "other"
     },
     {
+      "id": "H6J0zVNOFAo",
+      "channelId": "UCJtO_dvu5AOSjtz1cWWpV0Q",
+      "channelTitle": "Maria del Mar Bonet",
+      "title": "Maria del Mar Bonet amb l'Ensemble de Musique Traditionelle de Tunis, dirigida per Fethi Zghonda",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "nu0zBTsTiM4",
+      "channelTitle": "Maria del Mar Bonet",
+      "title": "Maria del Mar Bonet en el programa \"A media voz\", TVE, 1987",
+      "from": "review",
+      "to": "other"
+    },
+    {
+      "id": "nu0zBTsTiM4",
+      "channelId": "UCJtO_dvu5AOSjtz1cWWpV0Q",
       "channelTitle": "Maria del Mar Bonet",
       "title": "Maria del Mar Bonet en el programa \"A media voz\", TVE, 1987",
       "from": "review",
@@ -1349,7 +3230,23 @@
       "to": "other"
     },
     {
+      "id": "mhqNwXNFPvo",
+      "channelId": "UCJtO_dvu5AOSjtz1cWWpV0Q",
+      "channelTitle": "Maria del Mar Bonet",
+      "title": "Maria del Mar Bonet i Manolo Sanlúcar, \"Musical Expréss\", 1981",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "T-d928mOjgE",
+      "channelTitle": "Maria del Mar Bonet",
+      "title": "Maria del Mar Bonet X Ventura Pons. Autor X Autor. Producció SGAE. 1997",
+      "from": "review",
+      "to": "other"
+    },
+    {
+      "id": "T-d928mOjgE",
+      "channelId": "UCJtO_dvu5AOSjtz1cWWpV0Q",
       "channelTitle": "Maria del Mar Bonet",
       "title": "Maria del Mar Bonet X Ventura Pons. Autor X Autor. Producció SGAE. 1997",
       "from": "review",
@@ -1363,7 +3260,23 @@
       "to": "other"
     },
     {
+      "id": "pOx9fX02JsI",
+      "channelId": "UCJtO_dvu5AOSjtz1cWWpV0Q",
+      "channelTitle": "Maria del Mar Bonet",
+      "title": "Musical Express, Maria del Mar Bonet, 1981. Direcció: Àngel Casas",
+      "from": "review",
+      "to": "other"
+    },
+    {
       "id": "GW0J_L1BzpA",
+      "channelTitle": "Maria del Mar Bonet",
+      "title": "Programa musical \"Yo canto\", Maria del Mar Bonet, TVE, 1978",
+      "from": "review",
+      "to": "other"
+    },
+    {
+      "id": "GW0J_L1BzpA",
+      "channelId": "UCJtO_dvu5AOSjtz1cWWpV0Q",
       "channelTitle": "Maria del Mar Bonet",
       "title": "Programa musical \"Yo canto\", Maria del Mar Bonet, TVE, 1978",
       "from": "review",
@@ -1377,6 +3290,14 @@
       "to": "other"
     },
     {
+      "id": "vhCaZTwkgeY",
+      "channelId": "UCtFrz4JJnpJq7dhxLNRwkdA",
+      "channelTitle": "Marina Rossell",
+      "title": "Marina Rossell - Enderrock Awards (March 2023)",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "OA4XNl-4R8s",
       "channelTitle": "Marina Rossell",
       "title": "Marina Rossell - La barca del temps (Auditori Felip Pedrell)",
@@ -1384,7 +3305,23 @@
       "to": "other"
     },
     {
+      "id": "OA4XNl-4R8s",
+      "channelId": "UCtFrz4JJnpJq7dhxLNRwkdA",
+      "channelTitle": "Marina Rossell",
+      "title": "Marina Rossell - La barca del temps (Auditori Felip Pedrell)",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "-0kdqGrZw-U",
+      "channelTitle": "Marina Rossell",
+      "title": "Marina Rossell - La Barca del Temps (Sábado Noche, TVE-1)",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "-0kdqGrZw-U",
+      "channelId": "UCtFrz4JJnpJq7dhxLNRwkdA",
       "channelTitle": "Marina Rossell",
       "title": "Marina Rossell - La Barca del Temps (Sábado Noche, TVE-1)",
       "from": "song",
@@ -1405,7 +3342,24 @@
       "to": "other"
     },
     {
+      "id": "gthvXYvgWjY",
+      "channelId": "UCtFrz4JJnpJq7dhxLNRwkdA",
+      "channelTitle": "Marina Rossell",
+      "title": "Marina Rossell and Antoni Ros-Marbà - El clar país (Tribute at El Palau de la Música Catalana, 2024)",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "4lPbikvARz8",
+      "channelId": "UCtFrz4JJnpJq7dhxLNRwkdA",
+      "channelTitle": "Marina Rossell",
+      "title": "Marina Rossell and Antoni Ros-Marbà - El clar país (Tribute at El Palau de la Música Catalana, 2024)",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "zo39iWFcr20",
+      "channelId": "UCSw_OmWJnY0Dz311MEzdHFA",
       "channelTitle": "Miki Nuñez",
       "title": "Escriurem #Joemcorono - Col·lectiva",
       "from": "review",
@@ -1419,7 +3373,23 @@
       "to": "other"
     },
     {
+      "id": "27gIpemRrEw",
+      "channelId": "UC6DmhC1mZqfYnQM72mg3PKw",
+      "channelTitle": "Minibús Intergalàctic",
+      "title": "Minibús Intergalàctic - Donya Mixeires [Ribaival 2022]",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "viOxRMnFc1c",
+      "channelTitle": "Minibús Intergalàctic",
+      "title": "Minibús Intergalàctic - La nit més bonica",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "viOxRMnFc1c",
+      "channelId": "UC6DmhC1mZqfYnQM72mg3PKw",
       "channelTitle": "Minibús Intergalàctic",
       "title": "Minibús Intergalàctic - La nit més bonica",
       "from": "song",
@@ -1433,7 +3403,23 @@
       "to": "other"
     },
     {
+      "id": "5UZlK2IyEaQ",
+      "channelId": "UC6DmhC1mZqfYnQM72mg3PKw",
+      "channelTitle": "Minibús Intergalàctic",
+      "title": "Minibús Intergalàctic - Romanço del fill vídua",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "Xbiuc58HeFA",
+      "channelTitle": "Minibús Intergalàctic",
+      "title": "Minibús Intergalàctic a l'Ateneu 24 de juny de Girona. 13/01/2024",
+      "from": "review",
+      "to": "other"
+    },
+    {
+      "id": "Xbiuc58HeFA",
+      "channelId": "UC6DmhC1mZqfYnQM72mg3PKw",
       "channelTitle": "Minibús Intergalàctic",
       "title": "Minibús Intergalàctic a l'Ateneu 24 de juny de Girona. 13/01/2024",
       "from": "review",
@@ -1447,6 +3433,14 @@
       "to": "other"
     },
     {
+      "id": "g_4LxauESuo",
+      "channelId": "UC6DmhC1mZqfYnQM72mg3PKw",
+      "channelTitle": "Minibús Intergalàctic",
+      "title": "TAXISTA - Pau Riba / Minibús Intergalàctic - Les Sessions KtEXPliques. (Romanyà, 2022)",
+      "from": "live_song",
+      "to": "other"
+    },
+    {
       "id": "eM1ZdHnYUNc",
       "channelTitle": "Minibús Intergalàctic",
       "title": "THE GAMBLER - Minibús Intergalàctic - Les Sessions KtEXPliques. (Romanyà, 2022)",
@@ -1454,7 +3448,16 @@
       "to": "other"
     },
     {
+      "id": "eM1ZdHnYUNc",
+      "channelId": "UC6DmhC1mZqfYnQM72mg3PKw",
+      "channelTitle": "Minibús Intergalàctic",
+      "title": "THE GAMBLER - Minibús Intergalàctic - Les Sessions KtEXPliques. (Romanyà, 2022)",
+      "from": "live_song",
+      "to": "other"
+    },
+    {
       "id": "yjRjyXn0tKw",
+      "channelId": "UCG2FXKF44MdeDbLb66yb-rQ",
       "channelTitle": "Mishima",
       "title": "David Carabén amb l'OCT48 \"Por de mi\"",
       "from": "review",
@@ -1462,6 +3465,7 @@
     },
     {
       "id": "pRbAPUGsPus",
+      "channelId": "UCG2FXKF44MdeDbLb66yb-rQ",
       "channelTitle": "Mishima",
       "title": "Mishima - Concert al Mobofest 2025",
       "from": "review",
@@ -1469,6 +3473,7 @@
     },
     {
       "id": "kj12WyOysBw",
+      "channelId": "UCG2FXKF44MdeDbLb66yb-rQ",
       "channelTitle": "Mishima",
       "title": "Mishima \"El Jaume i la Laia\"",
       "from": "song",
@@ -1482,7 +3487,23 @@
       "to": "other"
     },
     {
+      "id": "6kgZ9h91b-4",
+      "channelId": "UCG2FXKF44MdeDbLb66yb-rQ",
+      "channelTitle": "Mishima",
+      "title": "Mishima \"Roses\" (versió de \"Flowers\" de Miley Cyrus)",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "_Th8ZPt6w70",
+      "channelTitle": "Mishima",
+      "title": "Mishima #LANSIAQUEGIRA 2015",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "_Th8ZPt6w70",
+      "channelId": "UCG2FXKF44MdeDbLb66yb-rQ",
       "channelTitle": "Mishima",
       "title": "Mishima #LANSIAQUEGIRA 2015",
       "from": "song",
@@ -1496,7 +3517,23 @@
       "to": "other"
     },
     {
+      "id": "1l2nUIkQwNY",
+      "channelId": "UCJD6uhnBA8eppY5QmQfJZwA",
+      "channelTitle": "Oques Grasses",
+      "title": "Oques Grasses - Ball del mànec",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "EZZ-Fu95HrU",
+      "channelTitle": "Oques Grasses",
+      "title": "Oques Grasses - Return to USA 2016",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "EZZ-Fu95HrU",
+      "channelId": "UCJD6uhnBA8eppY5QmQfJZwA",
       "channelTitle": "Oques Grasses",
       "title": "Oques Grasses - Return to USA 2016",
       "from": "song",
@@ -1510,7 +3547,23 @@
       "to": "other"
     },
     {
+      "id": "3QFMjfjCukw",
+      "channelId": "UCn_A4CBnBwlD8OTXSz0_FHQ",
+      "channelTitle": "Ouineta",
+      "title": "APPLE STORE DANCE TO LAST NIGHT BY OUINETA!!!",
+      "from": "review",
+      "to": "other"
+    },
+    {
       "id": "0EnZquA7Hzs",
+      "channelTitle": "PAU VALLVÉ",
+      "title": "PAU VALLVÉ @ Barcelona (07/03/2025)",
+      "from": "review",
+      "to": "other"
+    },
+    {
+      "id": "0EnZquA7Hzs",
+      "channelId": "UCNzFLySm2-AVSBe_hyiY5Vw",
       "channelTitle": "PAU VALLVÉ",
       "title": "PAU VALLVÉ @ Barcelona (07/03/2025)",
       "from": "review",
@@ -1524,7 +3577,16 @@
       "to": "other"
     },
     {
+      "id": "j64phPNoPRQ",
+      "channelId": "UCNzFLySm2-AVSBe_hyiY5Vw",
+      "channelTitle": "PAU VALLVÉ",
+      "title": "PAU VALLVÉ @ MENORCA (30-31/07/2025)",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "OqaBV5grpsk",
+      "channelId": "UCNzFLySm2-AVSBe_hyiY5Vw",
       "channelTitle": "PAU VALLVÉ",
       "title": "PAU VALLVÉ @ Sant Jordi Club (25/04/2026)",
       "from": "review",
@@ -1538,7 +3600,23 @@
       "to": "other"
     },
     {
+      "id": "vpgzyOu1Nec",
+      "channelId": "UCgTB-WFdzE-byKvUR5QVnFQ",
+      "channelTitle": "Pol Bordas",
+      "title": "Pol Bordas - AQUESTA VIDA ÉS NOSTRA",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "W5WqeorIjQE",
+      "channelTitle": "PUPIL·LES",
+      "title": "PUPIL•LES - ESTIMA'T / VÍDEO LÍRIC OFICIAL (AMB TREMENDA JAURÍA)",
+      "from": "review",
+      "to": "song"
+    },
+    {
+      "id": "W5WqeorIjQE",
+      "channelId": "UCIX5CqhHETyi1Xx4JzcGjZg",
       "channelTitle": "PUPIL·LES",
       "title": "PUPIL•LES - ESTIMA'T / VÍDEO LÍRIC OFICIAL (AMB TREMENDA JAURÍA)",
       "from": "review",
@@ -1552,6 +3630,14 @@
       "to": "song"
     },
     {
+      "id": "cd5jMcdmBUI",
+      "channelId": "UCIX5CqhHETyi1Xx4JzcGjZg",
+      "channelTitle": "PUPIL·LES",
+      "title": "PUPIL•LES - SOLA CONTRA MÍ / VÍDEO LÍRIC OFICIAL",
+      "from": "review",
+      "to": "song"
+    },
+    {
       "id": "KF5IOZwhARo",
       "channelTitle": "PUPIL·LES",
       "title": "PUPIL·LES - DEESES",
@@ -1559,7 +3645,16 @@
       "to": "other"
     },
     {
+      "id": "KF5IOZwhARo",
+      "channelId": "UCIX5CqhHETyi1Xx4JzcGjZg",
+      "channelTitle": "PUPIL·LES",
+      "title": "PUPIL·LES - DEESES",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "B93UcGMolhE",
+      "channelId": "UCIpVysRnHTbek1TON9dIF6Q",
       "channelTitle": "REMEI DE CA LA FRESCA",
       "title": "REMEI A L'APOLO (18/12/25 fi de gira): LA FI DE TOTS ELS VOSTRES NEGOCIS NEEEEEEEEETS",
       "from": "song",
@@ -1573,7 +3668,23 @@
       "to": "other"
     },
     {
+      "id": "EuY-8fRKOuA",
+      "channelId": "UCIpVysRnHTbek1TON9dIF6Q",
+      "channelTitle": "REMEI DE CA LA FRESCA",
+      "title": "Remei de Ca la Fresca al Feeel de Betevé",
+      "from": "review",
+      "to": "other"
+    },
+    {
       "id": "MpA8GxSdpAY",
+      "channelTitle": "Roba Estesa",
+      "title": "Al maig cada dia un bolo (resum gira) |  Roba Estesa",
+      "from": "review",
+      "to": "other"
+    },
+    {
+      "id": "MpA8GxSdpAY",
+      "channelId": "UCfOJHONAYVLmmA5lwE117vw",
       "channelTitle": "Roba Estesa",
       "title": "Al maig cada dia un bolo (resum gira) |  Roba Estesa",
       "from": "review",
@@ -1587,7 +3698,23 @@
       "to": "other"
     },
     {
+      "id": "dgGcSHL1Wg8",
+      "channelId": "UCfOJHONAYVLmmA5lwE117vw",
+      "channelTitle": "Roba Estesa",
+      "title": "Cremem el gel (resum gira) | Roba Estesa",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "UiTTuQqHRo0",
+      "channelTitle": "Roba Estesa",
+      "title": "Juliol i blanques mamelletes al sol (resum gira) | Roba Estesa",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "UiTTuQqHRo0",
+      "channelId": "UCfOJHONAYVLmmA5lwE117vw",
       "channelTitle": "Roba Estesa",
       "title": "Juliol i blanques mamelletes al sol (resum gira) | Roba Estesa",
       "from": "song",
@@ -1601,7 +3728,23 @@
       "to": "other"
     },
     {
+      "id": "uPPdbvWJiJY",
+      "channelId": "UCfOJHONAYVLmmA5lwE117vw",
+      "channelTitle": "Roba Estesa",
+      "title": "Juny, comença la calor! (resum gira) | Roba Estesa",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "FwA4EVu4y24",
+      "channelTitle": "Roba Estesa",
+      "title": "L' agost de Roba Estesa (resum gira) | Roba Estesa",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "FwA4EVu4y24",
+      "channelId": "UCfOJHONAYVLmmA5lwE117vw",
       "channelTitle": "Roba Estesa",
       "title": "L' agost de Roba Estesa (resum gira) | Roba Estesa",
       "from": "song",
@@ -1615,7 +3758,23 @@
       "to": "other"
     },
     {
+      "id": "D_veijDUY-s",
+      "channelId": "UCfOJHONAYVLmmA5lwE117vw",
+      "channelTitle": "Roba Estesa",
+      "title": "La nova Roba Estesa",
+      "from": "review",
+      "to": "other"
+    },
+    {
       "id": "GPUFAHUXDUQ",
+      "channelTitle": "Roba Estesa",
+      "title": "Roba Estesa | On Tour: març - abril",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "GPUFAHUXDUQ",
+      "channelId": "UCfOJHONAYVLmmA5lwE117vw",
       "channelTitle": "Roba Estesa",
       "title": "Roba Estesa | On Tour: març - abril",
       "from": "song",
@@ -1629,7 +3788,23 @@
       "to": "other"
     },
     {
+      "id": "qC_GCPDyOVI",
+      "channelId": "UCfOJHONAYVLmmA5lwE117vw",
+      "channelTitle": "Roba Estesa",
+      "title": "ROBA ESTESA i LA FURIA - 3. 1312 (DE LO BO, LO MILLOR, 2024)",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "U51xYpm9Tlo",
+      "channelTitle": "Roba Estesa",
+      "title": "ROBA ESTESA i TREMENDA JAURÍA - 9. EL 🖤 A 1K (DE LO BO, LO MILLOR, 2024)",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "U51xYpm9Tlo",
+      "channelId": "UCfOJHONAYVLmmA5lwE117vw",
       "channelTitle": "Roba Estesa",
       "title": "ROBA ESTESA i TREMENDA JAURÍA - 9. EL 🖤 A 1K (DE LO BO, LO MILLOR, 2024)",
       "from": "song",
@@ -1643,7 +3818,23 @@
       "to": "other"
     },
     {
+      "id": "YirnfCgalvk",
+      "channelId": "UC_Nx-tsTDRubDg1dbd5jwAw",
+      "channelTitle": "Sandra Bautista",
+      "title": "Crowdfunding - Sandra Bautista: Nuevo disco \"INTUIR EL TIGRE\"",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "YsQhzo7xpsI",
+      "channelTitle": "Sandra Bautista",
+      "title": "Horas (Jorge Drexler) - Cover de Sandra Bautista y Jaume Esponella",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "YsQhzo7xpsI",
+      "channelId": "UC_Nx-tsTDRubDg1dbd5jwAw",
       "channelTitle": "Sandra Bautista",
       "title": "Horas (Jorge Drexler) - Cover de Sandra Bautista y Jaume Esponella",
       "from": "song",
@@ -1657,7 +3848,23 @@
       "to": "other"
     },
     {
+      "id": "PfjeIBMNACM",
+      "channelId": "UC_Nx-tsTDRubDg1dbd5jwAw",
+      "channelTitle": "Sandra Bautista",
+      "title": "Sandra Bautista - Mamma, rema - Versione acustica (in italiano)",
+      "from": "live_song",
+      "to": "other"
+    },
+    {
       "id": "j6tqOTgi8_M",
+      "channelTitle": "Sandra Bautista",
+      "title": "Sandra Bautista y Daniel Felices - Un beso de esos (Zenet)",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "j6tqOTgi8_M",
+      "channelId": "UC_Nx-tsTDRubDg1dbd5jwAw",
       "channelTitle": "Sandra Bautista",
       "title": "Sandra Bautista y Daniel Felices - Un beso de esos (Zenet)",
       "from": "song",
@@ -1671,7 +3878,23 @@
       "to": "other"
     },
     {
+      "id": "uid0LAXUtRg",
+      "channelId": "UCIO1gtVvX9gixocD0TvfSYw",
+      "channelTitle": "Sandra Monfort",
+      "title": "“La Mona” Sandra Monfort (Audio)",
+      "from": "review",
+      "to": "other"
+    },
+    {
       "id": "tGu1_1401y4",
+      "channelTitle": "Sandra Monfort",
+      "title": "LA PANADERINA. Sandra Monfort Oliver",
+      "from": "live_song",
+      "to": "other"
+    },
+    {
+      "id": "tGu1_1401y4",
+      "channelId": "UCIO1gtVvX9gixocD0TvfSYw",
       "channelTitle": "Sandra Monfort",
       "title": "LA PANADERINA. Sandra Monfort Oliver",
       "from": "live_song",
@@ -1685,7 +3908,23 @@
       "to": "other"
     },
     {
+      "id": "rNA2_Ar2BRU",
+      "channelId": "UCIO1gtVvX9gixocD0TvfSYw",
+      "channelTitle": "Sandra Monfort",
+      "title": "Plantell II",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "a5nRlMtmZJ0",
+      "channelTitle": "Sandra Monfort",
+      "title": "Xiqueta meua, Sandra Monfort",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "a5nRlMtmZJ0",
+      "channelId": "UCIO1gtVvX9gixocD0TvfSYw",
       "channelTitle": "Sandra Monfort",
       "title": "Xiqueta meua, Sandra Monfort",
       "from": "song",
@@ -1699,7 +3938,16 @@
       "to": "other"
     },
     {
+      "id": "7j8-y7Mv9VE",
+      "channelId": "UCIO1gtVvX9gixocD0TvfSYw",
+      "channelTitle": "Sandra Monfort",
+      "title": "YONAGUNI (cover Bad Bunny) x Sandra Monfort",
+      "from": "review",
+      "to": "other"
+    },
+    {
       "id": "Pn2G_z7PeNk",
+      "channelId": "UC4tHQwYKnZ0frCoqwMmgMkQ",
       "channelTitle": "Sara Roy",
       "title": "COMPARTINT AMB TU LA VIDA - Sara Roy i totes les persones que l'heu fet possible",
       "from": "song",
@@ -1707,6 +3955,7 @@
     },
     {
       "id": "tDEQu9e2Dhg",
+      "channelId": "UC9aKnizc9niMNJGRL1lnwTg",
       "channelTitle": "Senyor Oca",
       "title": "Hola aneguet lleig - Senyor Oca (Dj Zhek prod)",
       "from": "song",
@@ -1714,6 +3963,7 @@
     },
     {
       "id": "WmDrM5Gg0Kw",
+      "channelId": "UC9aKnizc9niMNJGRL1lnwTg",
       "channelTitle": "Senyor Oca",
       "title": "SENYOR OCA - METALL TOUR",
       "from": "review",
@@ -1727,7 +3977,23 @@
       "to": "other"
     },
     {
+      "id": "-S5jrf2oMwE",
+      "channelId": "UCtHWEhEdI_nkFQmE2Ewzrnw",
+      "channelTitle": "SMOKING SOULS",
+      "title": "Ale Rogetxs! Himne del Pego C.F. (versió centenari 1923-2023)",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "aWjzX0wMWMo",
+      "channelTitle": "SMOKING SOULS",
+      "title": "Dos dies al Principal de València- Smoking Souls",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "aWjzX0wMWMo",
+      "channelId": "UCtHWEhEdI_nkFQmE2Ewzrnw",
       "channelTitle": "SMOKING SOULS",
       "title": "Dos dies al Principal de València- Smoking Souls",
       "from": "song",
@@ -1741,7 +4007,23 @@
       "to": "other"
     },
     {
+      "id": "vp3vFmHeMcE",
+      "channelId": "UCtHWEhEdI_nkFQmE2Ewzrnw",
+      "channelTitle": "SMOKING SOULS",
+      "title": "SMOKING SOULS - Pel·lícula en la Sala Apolo (BCN)",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "jTkFbZKkx-E",
+      "channelTitle": "SMOKING SOULS",
+      "title": "SMOKING SOULS - Pel·lícula en la Sala Razzmatazz 1 (BCN)",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "jTkFbZKkx-E",
+      "channelId": "UCtHWEhEdI_nkFQmE2Ewzrnw",
       "channelTitle": "SMOKING SOULS",
       "title": "SMOKING SOULS - Pel·lícula en la Sala Razzmatazz 1 (BCN)",
       "from": "song",
@@ -1755,7 +4037,23 @@
       "to": "other"
     },
     {
+      "id": "wJi7lSLXlEk",
+      "channelId": "UCleNuGpCliL0P7B2eAI4U_Q",
+      "channelTitle": "Sopa de Cabra",
+      "title": "Final de gira Sopa de Cabra 30 anys Ben Endins al Palau Sant Jordi (Festival Cruïlla Tardor)",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "q8LEGbzrbqI",
+      "channelTitle": "Sopa de Cabra",
+      "title": "Sopa de Cabra - Bull d'Ànima | Pol Batlle (Capítol 8)",
+      "from": "review",
+      "to": "other"
+    },
+    {
+      "id": "q8LEGbzrbqI",
+      "channelId": "UCleNuGpCliL0P7B2eAI4U_Q",
       "channelTitle": "Sopa de Cabra",
       "title": "Sopa de Cabra - Bull d'Ànima | Pol Batlle (Capítol 8)",
       "from": "review",
@@ -1769,7 +4067,23 @@
       "to": "other"
     },
     {
+      "id": "jBx9zGk3eeU",
+      "channelId": "UCleNuGpCliL0P7B2eAI4U_Q",
+      "channelTitle": "Sopa de Cabra",
+      "title": "Sopa de Cabra - Bull d'Ànima | Yolanda Sey (Capítol 7)",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "zx9cEXAmd2Q",
+      "channelTitle": "Sopa de Cabra",
+      "title": "Sopa de Cabra - Si quedes amb mi (Directe Porreres 2016)",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "zx9cEXAmd2Q",
+      "channelId": "UCleNuGpCliL0P7B2eAI4U_Q",
       "channelTitle": "Sopa de Cabra",
       "title": "Sopa de Cabra - Si quedes amb mi (Directe Porreres 2016)",
       "from": "song",
@@ -1783,7 +4097,23 @@
       "to": "other"
     },
     {
+      "id": "qf_p3OY93Pg",
+      "channelId": "UCCo52K6zPcI8QXDKr2DgjBg",
+      "channelTitle": "SVETLANA",
+      "title": "SVETLANA - I❤️BCN (Actuació a la gala dels Premis Enderrock 2025)",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "_eL9cA5hyZM",
+      "channelTitle": "TerapiaDeShock",
+      "title": "TERAPIA DE SHOCK - JA ES VEU A VENIR",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "_eL9cA5hyZM",
+      "channelId": "UCnO3DG7B2cyiu5zoNstHEfA",
       "channelTitle": "TerapiaDeShock",
       "title": "TERAPIA DE SHOCK - JA ES VEU A VENIR",
       "from": "song",
@@ -1797,7 +4127,23 @@
       "to": "other"
     },
     {
+      "id": "QrURcG-7M1c",
+      "channelId": "UCnO3DG7B2cyiu5zoNstHEfA",
+      "channelTitle": "TerapiaDeShock",
+      "title": "TERAPIA DE SHOCK - NO ÉS MASSA TART",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "YnoBKLhFNx8",
+      "channelTitle": "TerapiaDeShock",
+      "title": "TERAPIA DE SHOCK - QUAN ELLA BALLA ROCK'N'ROLL",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "YnoBKLhFNx8",
+      "channelId": "UCnO3DG7B2cyiu5zoNstHEfA",
       "channelTitle": "TerapiaDeShock",
       "title": "TERAPIA DE SHOCK - QUAN ELLA BALLA ROCK'N'ROLL",
       "from": "song",
@@ -1811,7 +4157,23 @@
       "to": "other"
     },
     {
+      "id": "x5NwFD_zcdE",
+      "channelId": "UCnO3DG7B2cyiu5zoNstHEfA",
+      "channelTitle": "TerapiaDeShock",
+      "title": "TERAPIA DE SHOCK - SAN FRANCISCO",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "D5buVDroQq4",
+      "channelTitle": "TerapiaDeShock",
+      "title": "TERAPIA DE SHOCK - TERAPIA DE SHOCK",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "D5buVDroQq4",
+      "channelId": "UCnO3DG7B2cyiu5zoNstHEfA",
       "channelTitle": "TerapiaDeShock",
       "title": "TERAPIA DE SHOCK - TERAPIA DE SHOCK",
       "from": "song",
@@ -1825,7 +4187,23 @@
       "to": "other"
     },
     {
+      "id": "usCb557LSwA",
+      "channelId": "UCnO3DG7B2cyiu5zoNstHEfA",
+      "channelTitle": "TerapiaDeShock",
+      "title": "TERAPIA DE SHOCK - TOT VA TAN RAPIT",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "yaBVy6-nlTg",
+      "channelTitle": "TerapiaDeShock",
+      "title": "Terapia de shock i el gat guardiola",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "yaBVy6-nlTg",
+      "channelId": "UCnO3DG7B2cyiu5zoNstHEfA",
       "channelTitle": "TerapiaDeShock",
       "title": "Terapia de shock i el gat guardiola",
       "from": "song",
@@ -1839,7 +4217,23 @@
       "to": "other"
     },
     {
+      "id": "mJlrEslPuj4",
+      "channelId": "UC--8TyZ2PM0NFHWXCzQrUqw",
+      "channelTitle": "The Tyets",
+      "title": "The Tyets - L'ÈPIC FINAL DE GIRA (Concert Complet) [Sant Jordi Club]",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "h8X2VTW45FE",
+      "channelTitle": "The Tyets",
+      "title": "THE TYETS | ACTUACIÓ PREMIS ENDERROCK 2025 (A fora plou)",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "h8X2VTW45FE",
+      "channelId": "UC--8TyZ2PM0NFHWXCzQrUqw",
       "channelTitle": "The Tyets",
       "title": "THE TYETS | ACTUACIÓ PREMIS ENDERROCK 2025 (A fora plou)",
       "from": "song",
@@ -1853,7 +4247,23 @@
       "to": "other"
     },
     {
+      "id": "h982Cj5IDH4",
+      "channelId": "UC--8TyZ2PM0NFHWXCzQrUqw",
+      "channelTitle": "The Tyets",
+      "title": "THE TYETS | EN DIRECTE AL PALAU SANT JORDI - FINALS CUP · KINGS LEAGUE 2023",
+      "from": "live_song",
+      "to": "other"
+    },
+    {
       "id": "GvUJsCouni0",
+      "channelTitle": "The Tyets",
+      "title": "The Tyets, Marlena - Estaré millor demà (En Directe) [L'ÈPIC FINAL DE GIRA al Sant Jordi Club]",
+      "from": "live_song",
+      "to": "other"
+    },
+    {
+      "id": "GvUJsCouni0",
+      "channelId": "UC--8TyZ2PM0NFHWXCzQrUqw",
       "channelTitle": "The Tyets",
       "title": "The Tyets, Marlena - Estaré millor demà (En Directe) [L'ÈPIC FINAL DE GIRA al Sant Jordi Club]",
       "from": "live_song",
@@ -1867,7 +4277,16 @@
       "to": "other"
     },
     {
+      "id": "sKjisOFNsK0",
+      "channelId": "UC--8TyZ2PM0NFHWXCzQrUqw",
+      "channelTitle": "The Tyets",
+      "title": "The Tyets, Mushkaa, Julieta & Cobla Sant Jordi - LA TIETA SESSIONS (Live Session)",
+      "from": "live_song",
+      "to": "other"
+    },
+    {
       "id": "KkYgo-Tczu0",
+      "channelId": "UC--8TyZ2PM0NFHWXCzQrUqw",
       "channelTitle": "The Tyets",
       "title": "TY DJ SET by The Tyets @ LA FOLIE DOUCE ALPE D'HUEZ (Full set)",
       "from": "song",
@@ -1881,7 +4300,23 @@
       "to": "other"
     },
     {
+      "id": "fflwJY51LZE",
+      "channelId": "UC0vBr1BrHrWE07vDPy1tQcw",
+      "channelTitle": "Trast",
+      "title": "Gràcies família, gràcies Trastos",
+      "from": "review",
+      "to": "other"
+    },
+    {
       "id": "fE0htYmJcMI",
+      "channelTitle": "Trast",
+      "title": "Nova oportunitat (des del confinament)",
+      "from": "review",
+      "to": "song"
+    },
+    {
+      "id": "fE0htYmJcMI",
+      "channelId": "UC0vBr1BrHrWE07vDPy1tQcw",
       "channelTitle": "Trast",
       "title": "Nova oportunitat (des del confinament)",
       "from": "review",
@@ -1895,7 +4330,23 @@
       "to": "other"
     },
     {
+      "id": "6P6-JWElz6o",
+      "channelId": "UC0vBr1BrHrWE07vDPy1tQcw",
+      "channelTitle": "Trast",
+      "title": "Still Young - The Cat Empire (cover Trast en català)",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "gri_R_07a88",
+      "channelTitle": "Trast",
+      "title": "Trast a 'La Primera Pedra' de Rac1",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "gri_R_07a88",
+      "channelId": "UC0vBr1BrHrWE07vDPy1tQcw",
       "channelTitle": "Trast",
       "title": "Trast a 'La Primera Pedra' de Rac1",
       "from": "song",
@@ -1909,7 +4360,23 @@
       "to": "other"
     },
     {
+      "id": "dpNe4v61Hx0",
+      "channelId": "UC0vBr1BrHrWE07vDPy1tQcw",
+      "channelTitle": "Trast",
+      "title": "Trast en ruta - Gira #Diaridematinada",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "GIh754woaU4",
+      "channelTitle": "Triquell",
+      "title": "ADN 01: INTRODUCCIÓ AL GREMI / SONS DEL MÓN",
+      "from": "review",
+      "to": "other"
+    },
+    {
+      "id": "GIh754woaU4",
+      "channelId": "UCIE6UEv7aCNJq-Jw9F0mJ7A",
       "channelTitle": "Triquell",
       "title": "ADN 01: INTRODUCCIÓ AL GREMI / SONS DEL MÓN",
       "from": "review",
@@ -1923,7 +4390,23 @@
       "to": "other"
     },
     {
+      "id": "wVA3mHNswnw",
+      "channelId": "UCmtykAu3QbU-yVO6Jirm1_Q",
+      "channelTitle": "Txarango",
+      "title": "Txarango - 17 Com una lluna a l'aigua_feat. Iñaki Marquiegui (Abaraka 2018)",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "Ur3BZVX65n4",
+      "channelTitle": "Xavi Sarrià",
+      "title": "XAVI SARRIÀ I EL COR DE LA FERA - Vídeo resum concerts",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "Ur3BZVX65n4",
+      "channelId": "UCEoFM5PntDSV-nDGm_vBvcg",
       "channelTitle": "Xavi Sarrià",
       "title": "XAVI SARRIÀ I EL COR DE LA FERA - Vídeo resum concerts",
       "from": "song",
@@ -1937,7 +4420,16 @@
       "to": "other"
     },
     {
+      "id": "JhNndcxwp5Q",
+      "channelId": "UCEoFM5PntDSV-nDGm_vBvcg",
+      "channelTitle": "Xavi Sarrià",
+      "title": "XAVI SARRIÀ JAPAN KOREA TOUR 2019",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "VBJIWzDsJmU",
+      "channelId": "UCEoFM5PntDSV-nDGm_vBvcg",
       "channelTitle": "Xavi Sarrià",
       "title": "XAVI SARRIÀ, SALMA ALHAKIM i LA MARIA | CONCERT-MANIFEST x PALESTINA",
       "from": "song",
@@ -1951,7 +4443,23 @@
       "to": "other"
     },
     {
+      "id": "zoF9oR1NYM0",
+      "channelId": "UC4ZpvBvQ4jzY_Ppwho9rSiw",
+      "channelTitle": "XEIC",
+      "title": "Al teu compàs live in Bar Catalunya Granja",
+      "from": "live_song",
+      "to": "other"
+    },
+    {
       "id": "hqA8-vhYsGA",
+      "channelTitle": "XEIC",
+      "title": "La cara de la reina",
+      "from": "review",
+      "to": "song"
+    },
+    {
+      "id": "hqA8-vhYsGA",
+      "channelId": "UC4ZpvBvQ4jzY_Ppwho9rSiw",
       "channelTitle": "XEIC",
       "title": "La cara de la reina",
       "from": "review",
@@ -1965,7 +4473,23 @@
       "to": "other"
     },
     {
+      "id": "Idp0HFJLPE4",
+      "channelId": "UC4ZpvBvQ4jzY_Ppwho9rSiw",
+      "channelTitle": "XEIC",
+      "title": "Xeic! - Mil de veus (Directe)",
+      "from": "song",
+      "to": "other"
+    },
+    {
       "id": "MgB0dEFcUHA",
+      "channelTitle": "XEIC",
+      "title": "Xeic! @ Barraques de Reus 2017",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "MgB0dEFcUHA",
+      "channelId": "UC4ZpvBvQ4jzY_Ppwho9rSiw",
       "channelTitle": "XEIC",
       "title": "Xeic! @ Barraques de Reus 2017",
       "from": "song",
@@ -1979,7 +4503,23 @@
       "to": "other"
     },
     {
+      "id": "Acj9D1zlJzI",
+      "channelId": "UC4ZpvBvQ4jzY_Ppwho9rSiw",
+      "channelTitle": "XEIC",
+      "title": "XEIC! en directe a Vilafranca del Penedès (Tornarem)",
+      "from": "live_song",
+      "to": "other"
+    },
+    {
       "id": "7eIem3W4Yrs",
+      "channelTitle": "XEIC",
+      "title": "Xeic! I Lo gitano blanc a Flix",
+      "from": "song",
+      "to": "other"
+    },
+    {
+      "id": "7eIem3W4Yrs",
+      "channelId": "UC4ZpvBvQ4jzY_Ppwho9rSiw",
       "channelTitle": "XEIC",
       "title": "Xeic! I Lo gitano blanc a Flix",
       "from": "song",
