@@ -1,5 +1,5 @@
 name: Incorporar ska grup 2
-# Selecció per ID contrastada dels quatre artistes.
+# Selecció per ID contrastada; conserva edicions externes autoritzades.
 on:
   push:
     branches: [main]

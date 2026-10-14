@@ -429,7 +429,7 @@ async function main(){
   // Completa els títols de la selecció manual amb les metadades verificades de YouTube.
   for(const [id,tracks] of topicTracksByChannel){
     if(channelVideoAllowlist.get(id)?.allowedVideoIds){
-      topicTracksByChannel.set(id,tracks.filter(t=>detailsById.get(t.id)?.snippet?.channelId===id)
+      topicTracksByChannel.set(id,tracks.filter(t=>isChannelVideoUploaderAllowed(channelVideoAllowlist,id,t.id,detailsById.get(t.id)?.snippet?.channelId))
         .map(t=>({id:t.id,title:detailsById.get(t.id).snippet.title})));
     }
   }
