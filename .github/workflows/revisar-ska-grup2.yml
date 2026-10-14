@@ -1,0 +1,29 @@
+name: Revisar ska grup 2
+on:
+  push:
+    branches: [main]
+    paths: ['scripts/revisions/descobrir_ska_grup2.js', '.github/workflows/revisar-ska-grup2.yml']
+  workflow_dispatch:
+concurrency:
+  group: music-data-writer
+  cancel-in-progress: false
+permissions:
+  contents: write
+jobs:
+  descobrir:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '24'
+      - name: Consulta els quatre artistes
+        env:
+          YOUTUBE_API_KEY_SERVER: ${{ secrets.YOUTUBE_API_KEY_SERVER }}
+        run: node scripts/revisions/descobrir_ska_grup2.js
+      - name: Desa les metadades
+        run: |
+          bash scripts/publicar_dades.sh 'docs: descoberta ska grup 2' docs/revisions/2026-10-14-ska2*
