@@ -53,16 +53,42 @@ jobs:
   qualitat:
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        # La base permet distingir errors previs; no es silencien les fallades.
+        revisio: [actual, base]
     steps:
       - uses: actions/checkout@v5
         with:
           persist-credentials: false
+          ref: ${{ matrix.revisio == 'base' && (github.event.pull_request.base.sha || 'f4d0671bf5a4123220a572fa9b2f5385d595370b') || github.sha }}
       - uses: actions/setup-node@v5
         with:
           node-version: '22'
           cache: npm
       - run: npm ci
-      - name: Lint independent del resultat dels tests
-        run: npm run lint
-      - name: Bateria general
-        run: npm test -- --maxWorkers=2
+      - run: mkdir -p reports/qualitat
+      - name: Lint independent
+        id: lint
+        continue-on-error: true
+        run: npm run lint -- --format=json --output-file=reports/qualitat/lint.json
+      - name: Bateria general independent
+        id: tests
+        continue-on-error: true
+        run: npm test -- --maxWorkers=2 --reporter=json --outputFile=reports/qualitat/tests.json
+      - name: Desa els diagnòstics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: idiomes-codex-qualitat-${{ matrix.revisio }}-${{ github.run_id }}
+          path: reports/qualitat/
+          retention-days: 14
+      - name: Manté visibles les fallades generals
+        if: always()
+        env:
+          LINT_RESULT: ${{ steps.lint.outcome }}
+          TEST_RESULT: ${{ steps.tests.outcome }}
+        run: |
+          echo "Lint: $LINT_RESULT; tests: $TEST_RESULT"
+          test "$LINT_RESULT" = success && test "$TEST_RESULT" = success
