@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-14T07:20:22.536Z",
+  "updatedAt": "2026-10-14T08:51:32.038665+00:00",
   "artists": [
     {
       "name": "2 Princeses Barbudes",
@@ -39896,6 +39896,54 @@
         "sources": [
           "https://surtdecasa.cat/camp/agenda/bonobos-trast/52854",
           "https://www.youtube.com/channel/UC0vBr1BrHrWE07vDPy1tQcw"
+        ]
+      }
+    },
+    {
+      "name": "Niño 5",
+      "aliases": [
+        "Niño5",
+        "Nino 5",
+        "N5"
+      ],
+      "genres": [
+        "Rumba / Mestissatge"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UC3KaUcfeFcIlgO-dssb9n2g",
+            "name": "Niño 5",
+            "handle": "@n5wav",
+            "type": "official",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://www.youtube.com/channel/UC3KaUcfeFcIlgO-dssb9n2g",
+        "https://en-llac.cat/cultura/musica/cor-de-flama/",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-14T08:51:32.038665+00:00",
+      "notes": "Banda del Maresme. Alta i categoria indicades per l’editor; el canal oficial confirma l’origen i la fusió de reggae, hip-hop, electrònica i música cubana. docs/revisions/2026-10-14-nino5-alta.json",
+      "genreReview": {
+        "reviewedAt": "2026-10-14",
+        "method": "source-review",
+        "sources": [
+          "https://www.youtube.com/channel/UC3KaUcfeFcIlgO-dssb9n2g",
+          "https://en-llac.cat/cultura/musica/cor-de-flama/"
         ]
       }
     }

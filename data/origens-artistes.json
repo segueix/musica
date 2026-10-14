@@ -10746,6 +10746,23 @@
       "reviewedOn": "2026-10-14",
       "assignmentSource": "manual-review",
       "locked": true
+    },
+    "artist:nino-5": {
+      "name": "Niño 5",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "territory:maresme"
+      ],
+      "confidence": "alta",
+      "basis": "Origen al Maresme indicat per l’editor i confirmat a la descripció del canal oficial.",
+      "sources": [
+        "https://www.youtube.com/channel/UC3KaUcfeFcIlgO-dssb9n2g",
+        "https://en-llac.cat/cultura/musica/cor-de-flama/"
+      ],
+      "reviewedOn": "2026-10-14",
+      "assignmentSource": "manual-review",
+      "locked": true
     }
   },
   "channels": {
@@ -11385,7 +11402,8 @@
     "UCyS2GxjCglNX_8TY7LDlmlw": "artist:terra-ferma-ska-band",
     "UCT3FFtIl_wpwLu0pL4ruUDA": "artist:terra-ferma-ska-band",
     "UCajdvXC8lGH7n7d8mrhyZJw": "artist:trast",
-    "UC0vBr1BrHrWE07vDPy1tQcw": "artist:trast"
+    "UC0vBr1BrHrWE07vDPy1tQcw": "artist:trast",
+    "UC3KaUcfeFcIlgO-dssb9n2g": "artist:nino-5"
   },
   "excludedProfiles": {
     "UCdezTX23syEeAJJAb2oOkKA": {
