@@ -102,6 +102,7 @@
     let radioMeta = null;
     // Nom de la selecció que s'ha engegat tal com és (p. ex. «Acabades de sortir»); buit en una ràdio normal.
     let radioLabel = '';
+    let radioSeedTitle = '';
     // Ràdio generada amb els resultats d'una cerca: { videos, query }. Les cançons trobades són el conjunt de la
     // ràdio (mai s'hi filtra per estil) i «Barreja» el torna a ordenar sense sortir-ne.
     let searchRadio = null;
@@ -400,6 +401,7 @@
         radioLiveOnly = withWaiting.liveOnly;
         stylePickerOpen = false;
         radioLabel = '';
+        radioSeedTitle = String(options.seedTitle || '').trim();
         searchRadio = null;
         savedListId = '';
         pendingQueue = [];
@@ -499,6 +501,7 @@
         radioLiveOnly = false;
         stylePickerOpen = false;
         radioMeta = { mode: 'none', requested: '', note: '' };
+        radioSeedTitle = '';
         radioLabel = String(label || '');
         searchRadio = null;
         savedListId = '';
@@ -589,6 +592,7 @@
         const title = String(info.title || '').trim();
         searchRadio = { videos: pool, query, artist, title, channelId: String(info.channelId || '') };
         savedListId = '';
+        radioSeedTitle = '';
         radioLabel = title || (artist ? `Ràdio de ${artist}` : query ? `Cerca «${query}»` : 'Cerca');
         queuedIds = waitingIds;
         pendingQueue = [];
@@ -686,7 +690,7 @@
 
     // Ràdio de l'estil (o de la combinació d'estils) d'un artista: la mateixa ràdio d'estil de la resta de l'app
     // (estils barrejats a parts iguals, antiguitat, límit d'artista, descans i mode de descoberta), amb el nom
-    // fix de l'estil. Retorna true si ha començat.
+    // de la cançó inicial quan rep seedVideos de la fitxa; altrament, el de l’estil.
     function startStyleRadio(categories, options = {}) {
         if (typeof loadVideoInSequence !== 'function' || document.body.classList.contains('segueix-tv-active')) {
             return false;
@@ -695,10 +699,16 @@
         if (!styles.length) return false;
         const candidates = getCandidates(null, styles).filter(item => !isRejected(item));
         if (candidates.length < 2) return false;
-        const seed = pickPoolSeed(candidates, options);
+        // Des de la fitxa, la primera sempre pertany a l'artista (també pot venir de l'arxiu).
+        const fromArtist = Array.isArray(options.seedVideos);
+        const seeds = fromArtist ? searchPool(options.seedVideos, ARTIST_RADIO_POOL) : candidates;
+        const seed = pickPoolSeed(seeds, options);
         if (!seed) return false;
+        const seedTitle = fromArtist
+            ? window.SegueixSongTitle?.cleanTitle?.(seed.title, { artists: [seed.channelTitle] }) || seed.title
+            : '';
         clickCategory = null;
-        return launch(seed, styles, options);
+        return launch(seed, styles, { ...options, seedTitle });
     }
 
     // Retorna true si ha engegat la reproducció amb cua (si no, l'app segueix el camí normal).
@@ -995,6 +1005,7 @@
             radioLiveOnly,
             radioMeta,
             radioLabel,
+            radioSeedTitle,
             searchRadio,
             savedListId,
             queuedIds: [...queuedIds],
@@ -1019,6 +1030,7 @@
         radioLiveOnly = saved.radioLiveOnly === true;
         radioMeta = saved.radioMeta && typeof saved.radioMeta === 'object' ? saved.radioMeta : null;
         radioLabel = typeof saved.radioLabel === 'string' ? saved.radioLabel : '';
+        radioSeedTitle = typeof saved.radioSeedTitle === 'string' ? saved.radioSeedTitle : '';
         searchRadio = saved.searchRadio && typeof saved.searchRadio === 'object' ? saved.searchRadio : null;
         savedListId = typeof saved.savedListId === 'string' ? saved.savedListId : '';
         queuedIds = new Set(Array.isArray(saved.queuedIds) ? saved.queuedIds : []);
@@ -1172,6 +1184,7 @@
 
     // Nom de la llista desada: el de la ràdio (estil/estils, cerca o selecció), mai el de la cançó que sona.
     function playlistName() {
+        if (radioSeedTitle) return `Ràdio ${radioSeedTitle}`;
         if (radioLiveOnly) return radioStyles().length ? `Ràdio de directes · ${radioStyles().join(' + ')}` : 'Ràdio de directes';
         if (searchRadioName()) return searchRadioName();
         if (radioLabel) return radioLabel;
@@ -1282,7 +1295,7 @@
     // La llista desa es comparteix per ID (així s'hi enganxa l'estat real de la biblioteca).
     function radioShareName() {
         if (activePlaylistId !== QUEUE_ID) return String(activePlaylistName || '').trim();
-        if (radioLiveOnly) return playlistName();
+        if (radioSeedTitle || radioLiveOnly) return playlistName();
         if (searchRadioName()) return searchRadioName();
         if (radioLabel) return radioLabel;
         const styles = radioStyles();
@@ -1488,7 +1501,7 @@
         const add = availableStyles().length
             ? `<button type="button" class="mq-add-style" data-mq-add-style aria-haspopup="true" aria-expanded="${stylePickerOpen}" aria-label="Afegeix un estil a la ràdio" title="Afegeix un estil a la ràdio">${ICONS.blend}</button>`
             : '';
-        return `<span class="mq-source mq-styles" role="group" aria-label="Estil de la ràdio">${radioLiveOnly ? '<span class="mq-style">Directes</span>' : ''}${chips}<span class="mq-tools">${add}${regenerateButtonHtml()}${saveButtonHtml()}${shareButtonHtml()}</span></span>`;
+        return `<span class="mq-source mq-styles" role="group" aria-label="Estil de la ràdio">${radioLiveOnly ? '<span class="mq-style">Directes</span>' : ''}${radioSeedTitle ? `<span class="mq-style">${escapeText(playlistName())}</span>` : ''}${chips}<span class="mq-tools">${add}${regenerateButtonHtml()}${saveButtonHtml()}${shareButtonHtml()}</span></span>`;
     }
 
     function stylePickerHtml() {
@@ -1876,6 +1889,3 @@
         QUEUE_ID,
     };
 })(window);
-
-
-

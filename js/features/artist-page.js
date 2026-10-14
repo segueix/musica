@@ -58,7 +58,7 @@
         const artist = text(name) || 'l’artista';
         const list = Array.isArray(styles) ? styles : [];
         const artistReady = !loading && songCount >= MIN_SONGS;
-        const styleReady = !loading && list.length > 0;
+        const styleReady = !loading && list.length > 0 && songCount > 0;
         return {
             artist: {
                 enabled: artistReady,
@@ -454,7 +454,7 @@
     }
 
     function startStyleRadio() {
-        const started = app.features.musicQueue?.startStyleRadio?.(state.styles);
+        const started = app.features.musicQueue?.startStyleRadio?.(state.styles, { seedVideos: state.songs });
         if (!started) toast('Aquest estil té massa poques cançons per fer una ràdio.');
         return Boolean(started);
     }

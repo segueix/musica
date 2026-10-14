@@ -1110,3 +1110,34 @@ describe('ràdios de la fitxa d’artista', () => {
     });
 });
 
+
+describe('ràdio d’estil des de la fitxa: primera cançó i nom', () => {
+    it('comença amb l’artista, manté altres artistes i conserva el nom en barrejar i restaurar', () => {
+        const catalog = catalogWithClassics();
+        const own = catalog.filter(v => v.channelId === 'c3');
+        const { queue, ctx } = setup({ catalog });
+        expect(queue.startStyleRadio(['Pop'], { seedVideos: own })).toBe(true);
+        const first = ctx.activePlaylistQueue[0];
+        expect(first.channelId).toBe('c3');
+        expect(ctx.activePlaylistQueue.some(v => v.channelId !== 'c3')).toBe(true);
+        expect(queue.playlistName()).toBe(`Ràdio ${first.title}`);
+        queue.regenerate();
+        expect(ctx.activePlaylistQueue[0].id).toBe(first.id);
+        expect(queue.playlistName()).toBe(`Ràdio ${first.title}`);
+        expect(queue.getShareData().name).toBe(`Ràdio ${first.title}`);
+        const saved = queue.captureSession();
+        const restored = setup({ catalog });
+        expect(restored.queue.restoreSession(saved, first.id)).toBe(true);
+        expect(restored.queue.playlistName()).toBe(`Ràdio ${first.title}`);
+        expect(queue.startStyleRadio(['Pop'])).toBe(true);
+        expect(queue.playlistName()).toBe('Ràdio Pop');
+    });
+
+    it('no substitueix un artista sense cançons per un altre i accepta una única cançó pròpia', () => {
+        const catalog = catalogWithClassics();
+        const { queue, ctx } = setup({ catalog });
+        expect(queue.startStyleRadio(['Pop'], { seedVideos: [] })).toBe(false);
+        expect(queue.startStyleRadio(['Pop'], { seedVideos: [catalog[0]] })).toBe(true);
+        expect(ctx.activePlaylistQueue[0].id).toBe(catalog[0].id);
+    });
+});

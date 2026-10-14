@@ -1643,3 +1643,8 @@ activa el nucli; els més petits incorporen subcategories veïnes. Els vincles d
 reforcen compatibilitats sonores. Les fonts i les classificacions pendents continuen visibles a l’informe.
 No es canvia el feed, el repertori, la vigilància d’idiomes ni la quota de YouTube. Vegeu
 `docs/MUSICA_SELECCIO.md` i `tests/music-subcategories.test.js`.
+
+
+## [2026-10-14] — Ràdio d’estil des de la fitxa d’artista
+
+El botó passa les cançons de la fitxa a `startStyleRadio` com a `seedVideos`. El motor tria la primera només entre aquestes; la resta continua amb els estils de l’artista. La ràdio es diu «Ràdio <cançó inicial>», amb el títol net, i conserva el nom en barrejar, desar, compartir i restaurar la sessió. Les ràdios obertes des d’un estil continuen portant el nom de l’estil. Sense cançons pròpies no s’engega una altra artista per substitució. Proves: `tests/music-queue-selection.test.js`.
