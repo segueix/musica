@@ -104,3 +104,16 @@ describe('ocultar cançons amb títol en castellà', () => {
     });
 });
 
+
+describe('Adala: exclusions editorials i anglès', () => {
+    it('oculta les peces també en directe i preserva el repertori català', () => {
+        for (const title of ["Bala Perdida","Cold In Paradise","December","What Can I Say","Look Inside","Mr Fireman","Mr. Fireman","Money"]) {
+            expect(esCastella(song('Adala', title))).toBe(true);
+            expect(esCastella({ ...song('Adala - Topic', title + ' (Live)'), contentType: 'live_song' })).toBe(true);
+            expect(esCastella(song('Altre artista', title))).toBe(false);
+        }
+        for (const title of ['Drames', 'Quantes Pluges', 'Dama', 'No Plou', 'El foc que mou la Terra']) {
+            expect(esCastella(song('Adala', title))).toBe(false);
+        }
+    });
+});

@@ -863,6 +863,10 @@ afegeix(['Gertrudis', 'Gertrudis - Topic'], [
     'Pantalones', 'Mundo Uaka', 'Amor XXL',
 ]);
 
+// Revisió 2026-10-14: petició de retirar Bala Perdida i repertori amb anglès.
+// Money i Mr. Fireman inclouen català i anglès.
+afegeix(['Adala', 'ADALA', 'Adala Music', 'Adala - Topic'], ["Bala Perdida","Cold In Paradise","December","What Can I Say","Look Inside","Mr Fireman","Mr. Fireman","Money"]);
+
 function esCastella(video) {
     const regla = REGLES[video.channelTitle];
     if (!regla) return false;
