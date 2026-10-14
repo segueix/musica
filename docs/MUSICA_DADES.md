@@ -183,3 +183,13 @@ general programada i manual. La nova acció només s'executa manualment i des de
 L’editor aprova els nou vídeos del canal 2ES excepte **BYE BYE** (`lGT_JGeoULk`) i **It’s my time** (`GtDCepBTk7o`). Els onze estaven classificats com a `review` i arxivats. Les nou aprovacions es desen a `music-content-overrides.json`; les dues exclusions, també a `hidden-videos.json`. La classificació Urbana segueix la presentació del canal. No s’ha inferit l’idioma pels títols: s’ha aplicat la selecció explícita de l’editor.
 
 `node scripts/revisions/2026-10-11-2es.js` reaplica la selecció, recupera les metadades de l’arxiu amb les funcions compartides del pipeline i publica les nou cançons al feed calent, on caben dins del límit de dotze antigues per canal. Retira les entrades de la cua de revisió i actualitza els recomptes. [Selecció completa](revisions/2026-10-11-2es.json).
+
+## Grups ska de la llista de l’usuari (14 d’octubre de 2026)
+
+`node scripts/revisions/incorporar_ska_grup4.js` dona d’alta els 15 grups de la llista que encara no eren a la base: AlQuadrat, Atzembla, CampikiPugui, Dring Dublé, El Veïnat, Eskassa Llibertat, Kalabranda, Kòdul, La Bundu Band, Mascarats, Ovella Xao, Repúblika Ska, Skafam, Terra Ferma Ska Band i Trast. Els altres de la llista (Aspencat, Brams, Deskarats, La Fúmiga, Maitips, Mr. Freak Ska, Obrint Pas, Oprimits, Panellet, Pastorets Rock, Skatalà, Xavi Sarrià) ja hi eren i no es toquen.
+
+- **Canal Tema primer** (`primary: true`); l’oficial s’hi afegeix pels videoclips i `MUSIC_TOPIC_GOVERNANCE=apply` fa que el Tema hi mani. Els Tema s’han identificat per les pistes i els discos a YouTube Music: n’hi ha d’homònims que **no** s’han posat (`SkaFam Music - Tema`, txec; els «Trast - Tema» japonès, italià i txec; el segon «Mascarats - Tema», buit). De CampikiPugui i Skafam només el Tema (l’oficial són versions o no existeix).
+- **Categoria** «Ska / Reggae» i una subcategoria que ja comparteixen altres grups (`ska-punk`, `ska-classic`, `reggae`).
+- **Població** a `origens-artistes.json` (municipis nous: Arenys de Munt, Sallent, la Sénia, Montcada, Sant Quirze del Vallès). CampikiPugui només té comarca (la Selva, referència Santa Coloma de Farners a `proximitat-musical.json`); Trast, el Baix Llobregat; Dring Dublé és una vinculació (Sabadell, on es va gravar), no un origen.
+- **Idioma:** AlQuadrat, Dring Dublé, La Bundu Band, Ovella Xao i Trast van a `vigilats` (hi ha cançons en castellà o el catàleg és poc documentat); la resta, a `confianca`.
+- Les cançons arriben amb **Actions → Actualitzar feed només dels grups nous** (des de `main`) o amb l’actualització diària de les 20 h. Detall: [revisions/2026-10-14-ska4-alta.json](revisions/2026-10-14-ska4-alta.json).

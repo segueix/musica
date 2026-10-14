@@ -1,0 +1,297 @@
+{
+  "reviewedAt": "2026-10-14T07:20:22.536Z",
+  "method": "Canals identificats a YouTube i YouTube Music (pistes, discos i descripció); origen amb fonts públiques. Sense API ni selecció per ID: el canal Tema mana.",
+  "artists": [
+    {
+      "name": "AlQuadrat",
+      "place": "Sant Quirze del Vallès",
+      "relation": "origin",
+      "category": "Ska / Reggae",
+      "subcategory": "ska-classic",
+      "language": "vigilats",
+      "channels": [
+        {
+          "id": "UCSyQZszUB66TBDSGfMDcGNg",
+          "type": "topic",
+          "primary": true
+        },
+        {
+          "id": "UCRy88DHkwZTozU2PfetY0bA",
+          "type": "official",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "name": "Atzembla",
+      "place": "Montcada",
+      "relation": "origin",
+      "category": "Ska / Reggae",
+      "subcategory": "ska-punk",
+      "language": "confianca",
+      "channels": [
+        {
+          "id": "UC39UUfaafpeQRfaU5dcJ0ug",
+          "type": "topic",
+          "primary": true
+        },
+        {
+          "id": "UCG-fbhvlr6lGbl2DhKGFFhA",
+          "type": "official",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "name": "CampikiPugui",
+      "place": "la Selva",
+      "relation": "origin",
+      "category": "Ska / Reggae",
+      "subcategory": "ska-classic",
+      "language": "confianca",
+      "channels": [
+        {
+          "id": "UCB91Q5KFhtxFhqdnemnI5Ew",
+          "type": "topic",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "name": "Dring Dublé",
+      "place": "Sabadell",
+      "relation": "associated",
+      "category": "Ska / Reggae",
+      "subcategory": "reggae",
+      "language": "vigilats",
+      "channels": [
+        {
+          "id": "UCgbhHxO5Pvf0pCYr6f-BNyw",
+          "type": "topic",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "name": "El Veïnat",
+      "place": "Vilassar de Mar",
+      "relation": "origin",
+      "category": "Ska / Reggae",
+      "subcategory": "reggae",
+      "language": "confianca",
+      "channels": [
+        {
+          "id": "UC3rSnb7CCMA8IrOTEhwPuYg",
+          "type": "topic",
+          "primary": true
+        },
+        {
+          "id": "UCW0x-9uiF7yZMI9hEYTVMDQ",
+          "type": "official",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "name": "Eskassa Llibertat",
+      "place": "Terrassa",
+      "relation": "origin",
+      "category": "Ska / Reggae",
+      "subcategory": "ska-punk",
+      "language": "confianca",
+      "channels": [
+        {
+          "id": "UC1iF5VxSLKfoIzlpbtQVL5g",
+          "type": "topic",
+          "primary": true
+        },
+        {
+          "id": "UC4BSwwuqk6O9ELABBgsgWGQ",
+          "type": "official",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "name": "Kalabranda",
+      "place": "Arenys de Munt",
+      "relation": "origin",
+      "category": "Ska / Reggae",
+      "subcategory": "ska-classic",
+      "language": "confianca",
+      "channels": [
+        {
+          "id": "UCjL17J5dAE9sMDuX4VvhP1Q",
+          "type": "topic",
+          "primary": true
+        },
+        {
+          "id": "UCbxd8rksufs9jtwDGXrN8YQ",
+          "type": "official",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "name": "Kòdul",
+      "place": "Sallent",
+      "relation": "origin",
+      "category": "Ska / Reggae",
+      "subcategory": "ska-punk",
+      "language": "confianca",
+      "channels": [
+        {
+          "id": "UC04isma3OjnDslXzt-Ed3Jw",
+          "type": "topic",
+          "primary": true
+        },
+        {
+          "id": "UCvvFaqxr4vKR-fuF87BwaYA",
+          "type": "official",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "name": "La Bundu Band",
+      "place": "Arenys de Munt",
+      "relation": "origin",
+      "category": "Ska / Reggae",
+      "subcategory": "reggae",
+      "language": "vigilats",
+      "channels": [
+        {
+          "id": "UCwPrdShME-yrqB1hDvkUqPw",
+          "type": "topic",
+          "primary": true
+        },
+        {
+          "id": "UCeXegD6_JMqPbUBEzkGinHw",
+          "type": "topic",
+          "primary": false
+        },
+        {
+          "id": "UCMr0zO3JvMllHSSfxSawDUQ",
+          "type": "official",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "name": "Mascarats",
+      "place": "la Sénia",
+      "relation": "origin",
+      "category": "Ska / Reggae",
+      "subcategory": "reggae",
+      "language": "confianca",
+      "channels": [
+        {
+          "id": "UC9Ytb6_hvQB1cH5iLYGAYKg",
+          "type": "topic",
+          "primary": true
+        },
+        {
+          "id": "UCd8BT2JBV0_DQOKbseg7_4w",
+          "type": "official",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "name": "Ovella Xao",
+      "place": "Sabadell",
+      "relation": "origin",
+      "category": "Ska / Reggae",
+      "subcategory": "ska-classic",
+      "language": "vigilats",
+      "channels": [
+        {
+          "id": "UC61lW1hjlSwAgBDWO3yVRBw",
+          "type": "topic",
+          "primary": true
+        },
+        {
+          "id": "UCWwKFCPkzG5Njr-kcpl9dag",
+          "type": "official",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "name": "Repúblika Ska",
+      "place": "Lleida",
+      "relation": "origin",
+      "category": "Ska / Reggae",
+      "subcategory": "ska-classic",
+      "language": "confianca",
+      "channels": [
+        {
+          "id": "UCmKA6KQvu6Ol0gv7PHNMPqQ",
+          "type": "topic",
+          "primary": true
+        },
+        {
+          "id": "UCa3diMkg9yChODo1MPUGgNw",
+          "type": "official",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "name": "Skafam",
+      "place": "Arenys de Munt",
+      "relation": "origin",
+      "category": "Ska / Reggae",
+      "subcategory": "ska-punk",
+      "language": "confianca",
+      "channels": [
+        {
+          "id": "UCw9QWACP-8N1COxwr8u8Ckw",
+          "type": "topic",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "name": "Terra Ferma Ska Band",
+      "place": "Reus",
+      "relation": "origin",
+      "category": "Ska / Reggae",
+      "subcategory": "ska-classic",
+      "language": "confianca",
+      "channels": [
+        {
+          "id": "UCyS2GxjCglNX_8TY7LDlmlw",
+          "type": "topic",
+          "primary": true
+        },
+        {
+          "id": "UCT3FFtIl_wpwLu0pL4ruUDA",
+          "type": "official",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "name": "Trast",
+      "place": "Baix Llobregat",
+      "relation": "origin",
+      "category": "Ska / Reggae",
+      "subcategory": "ska-classic",
+      "language": "vigilats",
+      "channels": [
+        {
+          "id": "UCajdvXC8lGH7n7d8mrhyZJw",
+          "type": "topic",
+          "primary": true
+        },
+        {
+          "id": "UC0vBr1BrHrWE07vDPy1tQcw",
+          "type": "official",
+          "primary": false
+        }
+      ]
+    }
+  ],
+  "skipped": []
+}

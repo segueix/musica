@@ -2450,6 +2450,51 @@
       "territory": "Illes Balears",
       "source": "https://geocoding-api.open-meteo.com/v1/search?name=Santa+Margalida&count=10&language=ca&format=json&countryCode=ES",
       "checkedOn": "2026-10-14"
+    },
+    "geonames:3129660": {
+      "name": "Arenys de Munt",
+      "type": "municipality",
+      "geonamesId": 3129660,
+      "coordinates": {
+        "latitude": 41.61424,
+        "longitude": 2.53972,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Arenys%20de%20Munt&count=10&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-14"
+    },
+    "geonames:3111003": {
+      "name": "Sallent",
+      "type": "municipality",
+      "geonamesId": 3111003,
+      "coordinates": {
+        "latitude": 41.82602,
+        "longitude": 1.8955,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Sallent&count=10&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-14"
+    },
+    "geonames:3119867": {
+      "name": "la Sénia",
+      "type": "municipality",
+      "geonamesId": 3119867,
+      "coordinates": {
+        "latitude": 40.63333,
+        "longitude": 0.28333,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=la%20S%C3%A9nia&count=10&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-14"
+    },
+    "territory:selva": {
+      "name": "la Selva",
+      "type": "region",
+      "coordinates": null,
+      "territory": "Catalunya"
     }
   },
   "artists": {
@@ -10450,6 +10495,257 @@
       "reviewedOn": "2026-10-14",
       "assignmentSource": "manual-review",
       "locked": true
+    },
+    "artist:alquadrat": {
+      "name": "AlQuadrat",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3110101"
+      ],
+      "confidence": "alta",
+      "basis": "Projecte musical nascut el 2009 a Sant Quirze del Vallès; barreja rumba, ska, reggae i pop.",
+      "sources": [
+        "https://www.timeout.cat/barcelona/ca/musica/alquadrat",
+        "https://www.viasona.cat/grup/alquadrat"
+      ],
+      "reviewedOn": "2026-10-14",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:atzembla": {
+      "name": "Atzembla",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:2513703"
+      ],
+      "confidence": "alta",
+      "basis": "Grup de Montcada (l'Horta Nord) format el 2008; punk, rock i ska.",
+      "sources": [
+        "https://ca.wikipedia.org/wiki/Atzembla_(grup_musical)",
+        "https://www.tresdeu.com/2018/08/atzembla-instint/",
+        "docs/revisions/2026-10-14-ska3-atzembla.md"
+      ],
+      "reviewedOn": "2026-10-14",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:campikipugui": {
+      "name": "CampikiPugui",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "territory:selva"
+      ],
+      "confidence": "alta",
+      "basis": "Grup de mestissatge ska, rock i reggae de la Selva (programació de Selva Cultura); EP «Una altra nit» (2017). Municipi no documentat.",
+      "sources": [
+        "https://www.selvacultura.cat/ca/programacio/c/1795-campikipugui.html",
+        "https://music.apple.com/us/artist/campikipugui/1209822356"
+      ],
+      "reviewedOn": "2026-10-14",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:dring-duble": {
+      "name": "Dring Dublé",
+      "status": "validated",
+      "relation": "associated",
+      "placeIds": [
+        "geonames:3111199"
+      ],
+      "confidence": "mitjana",
+      "basis": "Grup de dub i ska; el senzill «Crema'ls» (2002) es va gravar als Estudis Sa Iaia de Sabadell (ProDubSA, Ripollet). Vinculació, no municipi de formació.",
+      "sources": [
+        "https://produbsa.bandcamp.com/album/dring-dubl-cremals-feat-lester-mc"
+      ],
+      "reviewedOn": "2026-10-14",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:el-veinat": {
+      "name": "El Veïnat",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3110516"
+      ],
+      "confidence": "alta",
+      "basis": "Grup de reggae i ska de Vilassar de Mar nascut a finals del 2011 (Correllengua); disc «Perquè el món et senti».",
+      "sources": [
+        "https://naciodigital.cat/osona/cultura-i-mitjans/el-moscou-estrena-terrassa-amb-el-concert-del-veinat.html"
+      ],
+      "reviewedOn": "2026-10-14",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:eskassa-llibertat": {
+      "name": "Eskassa Llibertat",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3108286"
+      ],
+      "confidence": "alta",
+      "basis": "Grup d’ska format a Terrassa el 2008; «Despertem!» (2010), «#SingleEskassa» (2012) i «Ràdio Llibertat» (2013).",
+      "sources": [
+        "https://www.viasona.cat/grup/eskassa-llibertat",
+        "https://eskassallibertat.bandcamp.com/"
+      ],
+      "reviewedOn": "2026-10-14",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:kalabranda": {
+      "name": "Kalabranda",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3129660"
+      ],
+      "confidence": "alta",
+      "basis": "Banda d'Arenys de Munt (Aula de Música d'Arenys de Munt, cartell de les Festes del Remei 2019); disc «Desperta la fera».",
+      "sources": [
+        "https://arenysdemunt-prd.diba.cat/media/import/documents/news/Cartell_Remei_Jove_2019.pdf"
+      ],
+      "reviewedOn": "2026-10-14",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:kodul": {
+      "name": "Kòdul",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3111003"
+      ],
+      "confidence": "alta",
+      "basis": "Banda festiva i reivindicativa de Sallent (Bages), activa uns 12 anys; darrer disc «Sense mirar enrere» (Propaganda pel Fet!, 2016).",
+      "sources": [
+        "https://indicat.blogspot.com/2012/12/kodul-enceta-un-verkami-per-al-proper.html",
+        "docs/revisions/2026-10-14-ska3-kodul.md"
+      ],
+      "reviewedOn": "2026-10-14",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:la-bundu-band": {
+      "name": "La Bundu Band",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3129660"
+      ],
+      "confidence": "alta",
+      "basis": "Banda del Maresme (Arenys de Munt); «Guerrer rebel» (Quimera, 2010), «Sembrant beats, recollint revolució» (Kasba, 2014) i «Cat Samurai».",
+      "sources": [
+        "https://www.verkami.com/projects/7252-nou-disc-de-la-bundu-band-sembrant-beats-recollint-revolucio",
+        "https://www.reverbnation.com/labunduband/songs"
+      ],
+      "reviewedOn": "2026-10-14",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:mascarats": {
+      "name": "Mascarats",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3119867"
+      ],
+      "confidence": "alta",
+      "basis": "Grup de música reivindicativa format a la Sénia que barreja rock i reggae; «Trencarem l’imaginari» (2017) i «Distopia».",
+      "sources": [
+        "https://www.youtube.com/channel/UC9Ytb6_hvQB1cH5iLYGAYKg",
+        "http://www.mascarats.cat"
+      ],
+      "reviewedOn": "2026-10-14",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:ovella-xao": {
+      "name": "Ovella Xao",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3111199"
+      ],
+      "confidence": "alta",
+      "basis": "Grup de música festiva nascut a Sabadell el 2014; «Trempera matinera», «#Pastureig» i «Cant corral» (2018).",
+      "sources": [
+        "https://www.youtube.com/channel/UC61lW1hjlSwAgBDWO3yVRBw"
+      ],
+      "reviewedOn": "2026-10-14",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:republika-ska": {
+      "name": "Repúblika Ska",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3118514"
+      ],
+      "confidence": "alta",
+      "basis": "Banda d’ska de Lleida formada el 2008; «Ja som aquí» (2011) i «Resistirem» (2013).",
+      "sources": [
+        "https://www.auva.cat/entrevistem-a-republika-ska/",
+        "https://www.segre.com/ca/cultura/231227/republika-ska-torna-als-escenaris-10-anys-despres_293231.html"
+      ],
+      "reviewedOn": "2026-10-14",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:skafam": {
+      "name": "Skafam",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3129660"
+      ],
+      "confidence": "alta",
+      "basis": "Skamot Antifeixista d'Arenys de Munt: ska-punk amb rock, funk i reggae; disc «Riem» (2007).",
+      "sources": [
+        "https://www.decibel.cat/grups/grups.php?accio=grup&id=329",
+        "https://www.viasona.cat/grup/skafam"
+      ],
+      "reviewedOn": "2026-10-14",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:terra-ferma-ska-band": {
+      "name": "Terra Ferma Ska Band",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3111933"
+      ],
+      "confidence": "alta",
+      "basis": "Projecte nascut a Reus el 2014; «Aixecant el vol» (2015), «Un brot de llum» (2018) i «Sobre viure» (2020).",
+      "sources": [
+        "https://surtdecasa.cat/camp/musica/terra-ferma-un-brot-de-llum"
+      ],
+      "reviewedOn": "2026-10-14",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:trast": {
+      "name": "Trast",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "territory:baix-llobregat"
+      ],
+      "confidence": "alta",
+      "basis": "Festa, mestissatge i compromís des del Baix Llobregat (canal oficial); «Diari de matinada», «El detonant» (2016) i «Serem».",
+      "sources": [
+        "https://surtdecasa.cat/camp/agenda/bonobos-trast/52854",
+        "https://www.youtube.com/channel/UC0vBr1BrHrWE07vDPy1tQcw"
+      ],
+      "reviewedOn": "2026-10-14",
+      "assignmentSource": "manual-review",
+      "locked": true
     }
   },
   "channels": {
@@ -11061,7 +11357,35 @@
     "UCF4BwKBwBRZIpylrvVqQmBQ": "artist:oprimits",
     "UCLlsd1LOmkAMoqbSE36JBZg": "artist:skaparapid",
     "UCoEb3Xheb3cPwhNMFEhc_5g": "artist:es-reboster",
-    "UCLOmT2Ut3zN8IFEtlSgUKmQ": "artist:maitips"
+    "UCLOmT2Ut3zN8IFEtlSgUKmQ": "artist:maitips",
+    "UCSyQZszUB66TBDSGfMDcGNg": "artist:alquadrat",
+    "UCRy88DHkwZTozU2PfetY0bA": "artist:alquadrat",
+    "UC39UUfaafpeQRfaU5dcJ0ug": "artist:atzembla",
+    "UCG-fbhvlr6lGbl2DhKGFFhA": "artist:atzembla",
+    "UCB91Q5KFhtxFhqdnemnI5Ew": "artist:campikipugui",
+    "UCgbhHxO5Pvf0pCYr6f-BNyw": "artist:dring-duble",
+    "UC3rSnb7CCMA8IrOTEhwPuYg": "artist:el-veinat",
+    "UCW0x-9uiF7yZMI9hEYTVMDQ": "artist:el-veinat",
+    "UC1iF5VxSLKfoIzlpbtQVL5g": "artist:eskassa-llibertat",
+    "UC4BSwwuqk6O9ELABBgsgWGQ": "artist:eskassa-llibertat",
+    "UCjL17J5dAE9sMDuX4VvhP1Q": "artist:kalabranda",
+    "UCbxd8rksufs9jtwDGXrN8YQ": "artist:kalabranda",
+    "UC04isma3OjnDslXzt-Ed3Jw": "artist:kodul",
+    "UCvvFaqxr4vKR-fuF87BwaYA": "artist:kodul",
+    "UCwPrdShME-yrqB1hDvkUqPw": "artist:la-bundu-band",
+    "UCeXegD6_JMqPbUBEzkGinHw": "artist:la-bundu-band",
+    "UCMr0zO3JvMllHSSfxSawDUQ": "artist:la-bundu-band",
+    "UC9Ytb6_hvQB1cH5iLYGAYKg": "artist:mascarats",
+    "UCd8BT2JBV0_DQOKbseg7_4w": "artist:mascarats",
+    "UC61lW1hjlSwAgBDWO3yVRBw": "artist:ovella-xao",
+    "UCWwKFCPkzG5Njr-kcpl9dag": "artist:ovella-xao",
+    "UCmKA6KQvu6Ol0gv7PHNMPqQ": "artist:republika-ska",
+    "UCa3diMkg9yChODo1MPUGgNw": "artist:republika-ska",
+    "UCw9QWACP-8N1COxwr8u8Ckw": "artist:skafam",
+    "UCyS2GxjCglNX_8TY7LDlmlw": "artist:terra-ferma-ska-band",
+    "UCT3FFtIl_wpwLu0pL4ruUDA": "artist:terra-ferma-ska-band",
+    "UCajdvXC8lGH7n7d8mrhyZJw": "artist:trast",
+    "UC0vBr1BrHrWE07vDPy1tQcw": "artist:trast"
   },
   "excludedProfiles": {
     "UCdezTX23syEeAJJAb2oOkKA": {
