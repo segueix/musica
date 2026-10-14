@@ -867,6 +867,60 @@ afegeix(['Gertrudis', 'Gertrudis - Topic'], [
 // Money i Mr. Fireman inclouen català i anglès.
 afegeix(['Adala', 'ADALA', 'Adala Music', 'Adala - Topic'], ["Bala Perdida","Cold In Paradise","December","What Can I Say","Look Inside","Mr Fireman","Mr. Fireman","Money"]);
 
+// Revisió 2026-10-14: AlQuadrat, títols i lletres en castellà.
+// Detall i còpies oficials/Tema: docs/revisions/2026-10-14-alquadrat-idioma.json.
+afegeix(["AlQuadrat","Al Quadrat","AlQuadrat - Topic","Al Quadrat - Topic"], [
+    "Blanca",
+    "La guitarra",
+    "A ningún lugar",
+    "A ningun lugar",
+    "Lo pasarás bien",
+    "Lo pasaras bien",
+    "No te puedo olvidar",
+    "Nubes",
+    "Arenal",
+    "Alegría y verbena",
+    "Alegria y verbena",
+    "Me siento bien",
+    "Enséñame a querer la vida",
+    "Enseñame a querer la vida",
+    "Quiero volverme loco",
+    "Qué ganas de verte",
+    "Que ganas de verte",
+    "Un mundo sin igual",
+    "Caricias de cristal",
+    "Unidos",
+    "Déjate llevar",
+    "Dejate llevar",
+    "Gente conectada",
+    "Faltan besos",
+    "Qué difícil",
+    "Que difícil",
+    "Que dificil",
+    "Alzar las manos",
+    "Somos",
+    "Sinceramente",
+    "Pídeme",
+    "Pideme",
+    "Shia",
+    "Licor de noches",
+    "A pulmón",
+    "A pulmon",
+    "Sin querer",
+    "El toro y la bestia",
+    "Dame tu mano",
+    "Miedo a las alturas",
+    "Los cajones de mi alma",
+    "Pamamá",
+    "Pamama"
+]);
+for (const canal of ["AlQuadrat","Al Quadrat","AlQuadrat - Topic","Al Quadrat - Topic"]) {
+    const anterior = REGLES[canal].titols;
+    REGLES[canal].titols = {
+        test: titol => anterior.test(titol) || /^(?:Al\s?Quadrat\s*[-–—]\s*)?(?:16\.\s*)?Presente(?:\s*\([^)]*\))?\s*!?$/iu.test(titol),
+    };
+}
+
 function esCastella(video) {
     const regla = REGLES[video.channelTitle];
     if (!regla) return false;
@@ -893,5 +947,6 @@ function main() {
 
 if (require.main === module) main();
 module.exports = { esCastella, REGLES };
+
 
 

@@ -1,0 +1,526 @@
+{
+  "date": "2026-10-14",
+  "artist": "AlQuadrat",
+  "channelIds": [
+    "UCRy88DHkwZTozU2PfetY0bA",
+    "UCSyQZszUB66TBDSGfMDcGNg"
+  ],
+  "criterion": "Retirar cançons amb títol o lletra en castellà. Conservar el repertori català.",
+  "sources": [
+    "data/feed.json",
+    "data/archive/channels/UCRy88DHkwZTozU2PfetY0bA.json",
+    "data/music-topic-catalog.json"
+  ],
+  "removed": [
+    {
+      "id": "JSf3CjdMjjQ",
+      "title": "A NINGÚN LUGAR",
+      "channelId": "UCSyQZszUB66TBDSGfMDcGNg",
+      "reason": "títol castellà",
+      "source": "https://www.youtube.com/watch?v=JSf3CjdMjjQ"
+    },
+    {
+      "id": "hqVLV2oYw98",
+      "title": "LO PASARÁS BIEN",
+      "channelId": "UCSyQZszUB66TBDSGfMDcGNg",
+      "reason": "títol castellà",
+      "source": "https://www.youtube.com/watch?v=hqVLV2oYw98"
+    },
+    {
+      "id": "62jYthVDPxM",
+      "title": "No Te Puedo Olvidar",
+      "channelId": "UCSyQZszUB66TBDSGfMDcGNg",
+      "reason": "títol castellà",
+      "source": "https://www.youtube.com/watch?v=62jYthVDPxM"
+    },
+    {
+      "id": "3rTea9Z6AmM",
+      "title": "Blanca",
+      "channelId": "UCSyQZszUB66TBDSGfMDcGNg",
+      "reason": "lletra castellana contrastada",
+      "source": "https://music.apple.com/es/song/blanca/1412746914",
+      "verification": "Idioma identificat en la transcripció automàtica de l’àudio oficial; no s’arxiva la lletra."
+    },
+    {
+      "id": "cZIMhA5_T5U",
+      "title": "Arenal",
+      "channelId": "UCSyQZszUB66TBDSGfMDcGNg",
+      "reason": "lletra castellana contrastada",
+      "source": "https://open.spotify.com/track/5JTeppRhCSVT8GWA8m5HNL"
+    },
+    {
+      "id": "LjBlj4o-BoM",
+      "title": "AlQuadrat - Alegria y Verbena",
+      "channelId": "UCRy88DHkwZTozU2PfetY0bA",
+      "reason": "títol castellà",
+      "source": "https://www.youtube.com/watch?v=LjBlj4o-BoM"
+    },
+    {
+      "id": "EesUs-F9HFw",
+      "title": "AlQuadrat - Me siento bien",
+      "channelId": "UCRy88DHkwZTozU2PfetY0bA",
+      "reason": "títol castellà",
+      "source": "https://www.youtube.com/watch?v=EesUs-F9HFw"
+    },
+    {
+      "id": "9gx5z-xr_Rc",
+      "title": "AlQuadrat - 12. Enseñame A Querer La Vida (ft. Maria del Rio)",
+      "channelId": "UCRy88DHkwZTozU2PfetY0bA",
+      "reason": "títol castellà",
+      "source": "https://www.youtube.com/watch?v=9gx5z-xr_Rc"
+    },
+    {
+      "id": "EdKgCmD8Ijo",
+      "title": "AlQuadrat - 02. La Guitarra",
+      "channelId": "UCRy88DHkwZTozU2PfetY0bA",
+      "reason": "lletra castellana contrastada",
+      "source": "https://soundcloud.com/alquadrat/02-la-guitarra",
+      "verification": "Idioma identificat en la transcripció automàtica de l’àudio oficial; no s’arxiva la lletra."
+    },
+    {
+      "id": "SHDhBLOboqw",
+      "title": "AlQuadrat - 11. Quiero Volverme Loco",
+      "channelId": "UCRy88DHkwZTozU2PfetY0bA",
+      "reason": "títol castellà",
+      "source": "https://www.youtube.com/watch?v=SHDhBLOboqw"
+    },
+    {
+      "id": "ZrlcpO9fvA0",
+      "title": "AlQuadrat - 01. Que Ganas de Verte",
+      "channelId": "UCRy88DHkwZTozU2PfetY0bA",
+      "reason": "títol castellà",
+      "source": "https://www.youtube.com/watch?v=ZrlcpO9fvA0"
+    },
+    {
+      "id": "xRQVqJp74Yg",
+      "title": "AlQuadrat - 13. Un Mundo Sin Igual (ft. Itaca Band)",
+      "channelId": "UCRy88DHkwZTozU2PfetY0bA",
+      "reason": "títol castellà",
+      "source": "https://www.youtube.com/watch?v=xRQVqJp74Yg"
+    },
+    {
+      "id": "8VR8Wvnp3_0",
+      "title": "NUBES - AlQuadrat (Videoclip oficial)",
+      "channelId": "UCRy88DHkwZTozU2PfetY0bA",
+      "reason": "títol castellà",
+      "source": "https://www.youtube.com/watch?v=8VR8Wvnp3_0"
+    },
+    {
+      "id": "rP3M3DhbKWE",
+      "title": "AlQuadrat - Caricias de cristal - Gente Conectada",
+      "channelId": "UCRy88DHkwZTozU2PfetY0bA",
+      "reason": "títol castellà",
+      "source": "https://www.youtube.com/watch?v=rP3M3DhbKWE"
+    },
+    {
+      "id": "tiDASAnvM2E",
+      "title": "AlQuadrat - Unidos (ft. Marta Trujillo)",
+      "channelId": "UCRy88DHkwZTozU2PfetY0bA",
+      "reason": "títol castellà",
+      "source": "https://www.youtube.com/watch?v=tiDASAnvM2E"
+    },
+    {
+      "id": "mK-icH82tB0",
+      "title": "AlQuadrat - Déjate Llevar",
+      "channelId": "UCRy88DHkwZTozU2PfetY0bA",
+      "reason": "títol castellà",
+      "source": "https://www.youtube.com/watch?v=mK-icH82tB0"
+    },
+    {
+      "id": "Fcy_0YctoiE",
+      "title": "AlQuadrat - Gente Conectada",
+      "channelId": "UCRy88DHkwZTozU2PfetY0bA",
+      "reason": "títol castellà",
+      "source": "https://www.youtube.com/watch?v=Fcy_0YctoiE"
+    },
+    {
+      "id": "2OYgO1vL53E",
+      "title": "AlQuadrat - Faltan Besos",
+      "channelId": "UCRy88DHkwZTozU2PfetY0bA",
+      "reason": "títol castellà",
+      "source": "https://www.youtube.com/watch?v=2OYgO1vL53E"
+    },
+    {
+      "id": "fMnCRa_r7oc",
+      "title": "AlQuadrat - Que difícil",
+      "channelId": "UCRy88DHkwZTozU2PfetY0bA",
+      "reason": "lletra castellana a la descripció oficial",
+      "source": "https://www.youtube.com/watch?v=fMnCRa_r7oc"
+    },
+    {
+      "id": "LBxDYZhE3gY",
+      "title": "AlQuadrat - Alzar las manos",
+      "channelId": "UCRy88DHkwZTozU2PfetY0bA",
+      "reason": "títol castellà",
+      "source": "https://www.youtube.com/watch?v=LBxDYZhE3gY"
+    },
+    {
+      "id": "oG6sP29VqKM",
+      "title": "AlQuadrat - Somos",
+      "channelId": "UCRy88DHkwZTozU2PfetY0bA",
+      "reason": "títol castellà",
+      "source": "https://www.youtube.com/watch?v=oG6sP29VqKM"
+    },
+    {
+      "id": "o77mvBgaZvo",
+      "title": "AlQuadrat - Sinceramente (ft. Ferran d'Exceso).",
+      "channelId": "UCRy88DHkwZTozU2PfetY0bA",
+      "reason": "títol castellà",
+      "source": "https://www.youtube.com/watch?v=o77mvBgaZvo"
+    },
+    {
+      "id": "AAlRmZavHEs",
+      "title": "AlQuadrat - Pideme",
+      "channelId": "UCRy88DHkwZTozU2PfetY0bA",
+      "reason": "títol castellà",
+      "source": "https://www.youtube.com/watch?v=AAlRmZavHEs"
+    },
+    {
+      "id": "niwuifAO84U",
+      "title": "AlQuadrat - Shia",
+      "channelId": "UCRy88DHkwZTozU2PfetY0bA",
+      "reason": "lletra castellana a la descripció oficial",
+      "source": "https://www.youtube.com/watch?v=niwuifAO84U"
+    },
+    {
+      "id": "3xvEDGehiQw",
+      "title": "AlQuadrat - 09. Licor De Noches",
+      "channelId": "UCRy88DHkwZTozU2PfetY0bA",
+      "reason": "títol castellà",
+      "source": "https://www.youtube.com/watch?v=3xvEDGehiQw"
+    },
+    {
+      "id": "C7WiHrz6YfY",
+      "title": "AlQuadrat - 10. A Pulmón (ft. Pulmon Beatbox)",
+      "channelId": "UCRy88DHkwZTozU2PfetY0bA",
+      "reason": "títol castellà",
+      "source": "https://www.youtube.com/watch?v=C7WiHrz6YfY"
+    },
+    {
+      "id": "ERdahQ_fEj4",
+      "title": "AlQuadrat - 03. Sin Querer",
+      "channelId": "UCRy88DHkwZTozU2PfetY0bA",
+      "reason": "títol castellà",
+      "source": "https://www.youtube.com/watch?v=ERdahQ_fEj4"
+    },
+    {
+      "id": "aDU04O_Ds3g",
+      "title": "AlQuadrat - 07. El Toro Y La Bestia",
+      "channelId": "UCRy88DHkwZTozU2PfetY0bA",
+      "reason": "títol castellà",
+      "source": "https://www.youtube.com/watch?v=aDU04O_Ds3g"
+    },
+    {
+      "id": "hL-A5W0FVqU",
+      "title": "AlQuadrat - 06. Dame Tu Mano (ft. Rumba Expresso)",
+      "channelId": "UCRy88DHkwZTozU2PfetY0bA",
+      "reason": "títol castellà",
+      "source": "https://www.youtube.com/watch?v=hL-A5W0FVqU"
+    },
+    {
+      "id": "hcvadfsD1Oc",
+      "title": "AlQuadrat - 05. Miedo A Las Alturas",
+      "channelId": "UCRy88DHkwZTozU2PfetY0bA",
+      "reason": "títol castellà",
+      "source": "https://www.youtube.com/watch?v=hcvadfsD1Oc"
+    },
+    {
+      "id": "om9xnlsQyJI",
+      "title": "AlQuadrat - 15. Los Cajones De Mi Alma",
+      "channelId": "UCRy88DHkwZTozU2PfetY0bA",
+      "reason": "títol castellà",
+      "source": "https://www.youtube.com/watch?v=om9xnlsQyJI"
+    },
+    {
+      "id": "T3mazzci8no",
+      "title": "AlQuadrat - 16. Presente",
+      "channelId": "UCRy88DHkwZTozU2PfetY0bA",
+      "reason": "títol castellà",
+      "source": "https://www.youtube.com/watch?v=T3mazzci8no"
+    },
+    {
+      "id": "qylgdku1lCQ",
+      "title": "AlQuadrat - Pamamá",
+      "channelId": "UCRy88DHkwZTozU2PfetY0bA",
+      "reason": "títol castellà",
+      "source": "https://www.youtube.com/watch?v=qylgdku1lCQ"
+    },
+    {
+      "id": "AIySCpxFTvE",
+      "title": "Me siento bien",
+      "channelId": "UCSyQZszUB66TBDSGfMDcGNg",
+      "reason": "títol castellà",
+      "source": "https://www.youtube.com/watch?v=AIySCpxFTvE"
+    },
+    {
+      "id": "FMp-4Ynag4c",
+      "title": "Sinceramente",
+      "channelId": "UCSyQZszUB66TBDSGfMDcGNg",
+      "reason": "títol castellà",
+      "source": "https://www.youtube.com/watch?v=FMp-4Ynag4c"
+    },
+    {
+      "id": "IHAWw9ApwvM",
+      "title": "Alegría y verbena",
+      "channelId": "UCSyQZszUB66TBDSGfMDcGNg",
+      "reason": "títol castellà",
+      "source": "https://www.youtube.com/watch?v=IHAWw9ApwvM"
+    },
+    {
+      "id": "PG2dxVifuoc",
+      "title": "Déjate llevar",
+      "channelId": "UCSyQZszUB66TBDSGfMDcGNg",
+      "reason": "títol castellà",
+      "source": "https://www.youtube.com/watch?v=PG2dxVifuoc"
+    },
+    {
+      "id": "XGoXYlFHu-Q",
+      "title": "Faltan besos",
+      "channelId": "UCSyQZszUB66TBDSGfMDcGNg",
+      "reason": "títol castellà",
+      "source": "https://www.youtube.com/watch?v=XGoXYlFHu-Q"
+    },
+    {
+      "id": "jBYQhDbVG8w",
+      "title": "Alzar las manos",
+      "channelId": "UCSyQZszUB66TBDSGfMDcGNg",
+      "reason": "títol castellà",
+      "source": "https://www.youtube.com/watch?v=jBYQhDbVG8w"
+    },
+    {
+      "id": "lUkkxvUhOA0",
+      "title": "Que difícil",
+      "channelId": "UCSyQZszUB66TBDSGfMDcGNg",
+      "reason": "lletra castellana a la descripció oficial",
+      "source": "https://www.youtube.com/watch?v=fMnCRa_r7oc"
+    },
+    {
+      "id": "q29anF0HKJg",
+      "title": "Unidos",
+      "channelId": "UCSyQZszUB66TBDSGfMDcGNg",
+      "reason": "títol castellà",
+      "source": "https://www.youtube.com/watch?v=q29anF0HKJg"
+    },
+    {
+      "id": "vQWTRvEjWrQ",
+      "title": "Gente conectada",
+      "channelId": "UCSyQZszUB66TBDSGfMDcGNg",
+      "reason": "títol castellà",
+      "source": "https://www.youtube.com/watch?v=vQWTRvEjWrQ"
+    },
+    {
+      "id": "wIuz-9AZg4M",
+      "title": "Caricias de cristal",
+      "channelId": "UCSyQZszUB66TBDSGfMDcGNg",
+      "reason": "títol castellà",
+      "source": "https://www.youtube.com/watch?v=wIuz-9AZg4M"
+    },
+    {
+      "id": "yy1SCqj0gSk",
+      "title": "Somos",
+      "channelId": "UCSyQZszUB66TBDSGfMDcGNg",
+      "reason": "títol castellà",
+      "source": "https://www.youtube.com/watch?v=yy1SCqj0gSk"
+    },
+    {
+      "id": "aDaCtsv8y4I",
+      "title": "Nubes",
+      "channelId": "UCSyQZszUB66TBDSGfMDcGNg",
+      "reason": "títol castellà",
+      "source": "https://www.youtube.com/watch?v=aDaCtsv8y4I"
+    },
+    {
+      "id": "JHnZU6IKki4",
+      "title": "Alegría y Verbena",
+      "channelId": "UCSyQZszUB66TBDSGfMDcGNg",
+      "reason": "títol castellà",
+      "source": "https://www.youtube.com/watch?v=JHnZU6IKki4"
+    },
+    {
+      "id": "sMVIzu7NgDs",
+      "title": "Arenal",
+      "channelId": "UCSyQZszUB66TBDSGfMDcGNg",
+      "reason": "lletra castellana contrastada",
+      "source": "https://open.spotify.com/track/5JTeppRhCSVT8GWA8m5HNL"
+    },
+    {
+      "id": "hHbs5SOGB1Y",
+      "title": "Quiero Volverme Loco",
+      "channelId": "UCSyQZszUB66TBDSGfMDcGNg",
+      "reason": "títol castellà",
+      "source": "https://www.youtube.com/watch?v=hHbs5SOGB1Y"
+    },
+    {
+      "id": "1X9Y6AtthAY",
+      "title": "Que Difícil",
+      "channelId": "UCSyQZszUB66TBDSGfMDcGNg",
+      "reason": "lletra castellana a la descripció oficial",
+      "source": "https://www.youtube.com/watch?v=fMnCRa_r7oc"
+    },
+    {
+      "id": "5d9N8vjRjhY",
+      "title": "Shia",
+      "channelId": "UCSyQZszUB66TBDSGfMDcGNg",
+      "reason": "lletra castellana a la descripció oficial",
+      "source": "https://www.youtube.com/watch?v=niwuifAO84U"
+    },
+    {
+      "id": "1lQDkz8BBBk",
+      "title": "Que Ganas de Verte",
+      "channelId": "UCSyQZszUB66TBDSGfMDcGNg",
+      "reason": "títol castellà",
+      "source": "https://www.youtube.com/watch?v=1lQDkz8BBBk"
+    }
+  ],
+  "retained": [
+    {
+      "id": "-aCdG0hgu64",
+      "title": "Una Vida Esperant-nos",
+      "contentType": "song"
+    },
+    {
+      "id": "VcvV2sMj2zA",
+      "title": "AlQuadrat - Cada nit (ft.Txarango)",
+      "contentType": "song"
+    },
+    {
+      "id": "ACUKHwrE9F8",
+      "title": "AlQuadrat - Deixa'm respirar (ft. Cesk Freixas).",
+      "contentType": "song"
+    },
+    {
+      "id": "lgDIxLK3sl0",
+      "title": "AlQuadrat - Tornarem a Començar",
+      "contentType": "song"
+    },
+    {
+      "id": "28StnSFou7M",
+      "title": "AlQuarat - 04. Llençols",
+      "contentType": "song"
+    },
+    {
+      "id": "bYLxMCI3SAU",
+      "title": "AlQuadrat - 08. Formar Part del Mon (ft. Marta Trujillo)",
+      "contentType": "song",
+      "language": "ca",
+      "source": "https://soundcloud.com/alquadrat/08-formar-part-del-mon-ft",
+      "verification": "Transcripció automàtica de l’àudio oficial, revisada per idioma."
+    },
+    {
+      "id": "x9FjlgSbIcQ",
+      "title": "ALQUADRAT - T'ESTIMO PROU",
+      "contentType": "song"
+    },
+    {
+      "id": "gHOd5DVvfz8",
+      "title": "AlQuadrat - Soc igual que ahir (Lyric Video)",
+      "contentType": "song"
+    },
+    {
+      "id": "D3u-TSyauJg",
+      "title": "Festa Barrakes 2018",
+      "contentType": "song"
+    },
+    {
+      "id": "5rrfpA_urag",
+      "title": "Emisión en directo de Al Quadrat",
+      "contentType": "other",
+      "note": "Material no musical; no forma part de la selecció de cançons."
+    },
+    {
+      "id": "2YyHYcQ6B3o",
+      "title": "AlQuadrat - Gente conectada (Making Of)",
+      "contentType": "other",
+      "note": "Material no musical; no forma part de la selecció de cançons."
+    },
+    {
+      "id": "CQVqr6cMLoY",
+      "title": "AlQuadrat - Sent la Fragancia",
+      "contentType": "song",
+      "language": "ca",
+      "source": "https://www.youtube.com/watch?v=CQVqr6cMLoY",
+      "verification": "Lletra catalana publicada a la descripció oficial."
+    },
+    {
+      "id": "Dm0jPeYFGi8",
+      "title": "'Felice' - AlQuadrat",
+      "contentType": "song",
+      "note": "Vídeo promocional. Aquesta revisió lingüística cobreix les cançons identificables, no atribueix un idioma a tot el muntatge."
+    },
+    {
+      "id": "BQf7_o35Abg",
+      "title": "Making-Of 'Llençols' - Presente (2013)",
+      "contentType": "other",
+      "note": "Material no musical; no forma part de la selecció de cançons."
+    },
+    {
+      "id": "2oM5-sgoCDo",
+      "title": "AlQuadrat - Minigira \"PRESENTE\" 2013",
+      "contentType": "song",
+      "note": "Vídeo promocional. Aquesta revisió lingüística cobreix les cançons identificables, no atribueix un idioma a tot el muntatge."
+    },
+    {
+      "id": "b0crBqLlVe0",
+      "title": "AlQuadrat - 14. La Rumbia (ft. Marta Trujillo)",
+      "contentType": "song",
+      "language": "ca",
+      "source": "https://soundcloud.com/alquadrat/14-la-rumbia-ft-marta-trujillo",
+      "verification": "Transcripció automàtica completa de l’àudio oficial, revisada per idioma."
+    },
+    {
+      "id": "lT_nZEvYhXg",
+      "title": "AlQuadrat Presenta!",
+      "contentType": "song",
+      "note": "Vídeo promocional. Aquesta revisió lingüística cobreix les cançons identificables, no atribueix un idioma a tot el muntatge."
+    },
+    {
+      "id": "gC35nZP_yQM",
+      "title": "Deixa'm respirar",
+      "contentType": "song"
+    },
+    {
+      "id": "pFa72BGjpzw",
+      "title": "Cada nit",
+      "contentType": "song"
+    },
+    {
+      "id": "8ofgtIxBzk0",
+      "title": "T'ESTIMO PROU",
+      "contentType": "song"
+    },
+    {
+      "id": "hvrMH4mvd-Y",
+      "title": "Soc Igual Que Ahir",
+      "contentType": "song"
+    },
+    {
+      "id": "2kPJQmdOSn4",
+      "title": "Tornarem a Començar",
+      "contentType": "song"
+    },
+    {
+      "id": "oc3Xh1Z0pk4",
+      "title": "Llençols",
+      "contentType": "song"
+    },
+    {
+      "id": "FS0NoqVVY5Q",
+      "title": "Sent la Fragància",
+      "contentType": "song",
+      "language": "ca",
+      "source": "https://www.youtube.com/watch?v=CQVqr6cMLoY",
+      "verification": "Lletra catalana publicada a la descripció oficial."
+    },
+    {
+      "id": "nlHzPSbKGVM",
+      "title": "Deixa'M Respirar",
+      "contentType": "song"
+    }
+  ],
+  "validation": {
+    "tests": "10 proves de tests/ocultar-titols-castella.test.js correctes",
+    "lint": "npm run lint: 5 errors preexistents a js/data.js i js/features/home-sections.js; fitxers idèntics a main i no modificats.",
+    "scope": "Només s’afegeixen IDs dels dos canals d’AlQuadrat; cap exclusió anterior eliminada.",
+    "publication": "Publicació explícita: no s’executa el materialitzador global perquè el dry-run proposa 10 cançons de Serrat alienes a aquesta revisió."
+  }
+}

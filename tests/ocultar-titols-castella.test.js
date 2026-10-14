@@ -1,8 +1,48 @@
 import { createRequire } from 'node:module';
+import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 
 const { esCastella } = createRequire(import.meta.url)('../scripts/ocultar_titols_castella.js');
 const song = (channelTitle, title) => ({ channelTitle, title, contentType: 'song' });
+
+describe('AlQuadrat: revisió de títols i lletres del 2026-10-14', () => {
+    const canals = ['AlQuadrat', 'Al Quadrat', 'AlQuadrat - Topic', 'Al Quadrat - Topic'];
+
+    it('retira els títols castellans i les lletres castellanes amb títol ambigu', () => {
+        for (const canal of canals) {
+            for (const title of ['A NINGÚN LUGAR', 'Nubes', 'AlQuadrat - Alegria y Verbena',
+                'Enséñame A Querer La Vida', 'Que difícil', 'Arenal', 'Shia', 'Pamamá', 'Blanca', 'La guitarra',
+                'Presente', 'AlQuadrat - 16. Presente']) {
+                expect(esCastella(song(canal, title)), `${canal}: ${title}`).toBe(true);
+                expect(esCastella({ ...song(canal, title + ' (Live)'), contentType: 'live_song' })).toBe(true);
+                expect(esCastella(song('Altre artista', title))).toBe(false);
+            }
+        }
+    });
+
+    it('preserva les peces catalanes, també quan el títol cita el disc Presente', () => {
+        for (const canal of canals) {
+            for (const title of ['Cada nit', "Deixa'm respirar", 'Tornarem a Començar',
+                'AlQuarat - 04. Llençols', 'Llençols (Presente, 2013)', 'Sent la Fragancia',
+                'Sent la Fragància', 'Soc igual que ahir', "T'estimo prou", 'Una Vida Esperant-nos',
+                'Festa Barrakes 2018', 'La Rumbia (ft. Marta Trujillo)', 'Formar Part del Mon']) {
+                expect(esCastella(song(canal, title)), `${canal}: ${title}`).toBe(false);
+            }
+        }
+        expect(esCastella({ ...song('AlQuadrat', 'Gente conectada (Making Of)'), contentType: 'other' })).toBe(false);
+    });
+
+    it('materialitza totes les còpies revisades, incloses les de fora del feed', () => {
+        const read = path => JSON.parse(readFileSync(new URL(`../${path}`, import.meta.url), 'utf8'));
+        const review = read('docs/revisions/2026-10-14-alquadrat-idioma.json');
+        const hidden = new Set(read('data/hidden-videos.json').videoIds);
+        for (const video of review.removed) expect(hidden.has(video.id), video.title).toBe(true);
+        for (const video of review.retained) expect(hidden.has(video.id), video.title).toBe(false);
+        expect(hidden.has('niwuifAO84U')).toBe(true); // Shia, canal oficial (arxiu).
+        expect(hidden.has('5d9N8vjRjhY')).toBe(true); // Shia, canal Tema.
+        expect(hidden.has('sMVIzu7NgDs')).toBe(true); // Arenal, còpia del recopilatori.
+    });
+});
 
 describe('ocultar cançons amb títol en castellà', () => {
     it('detecta títols en castellà revisats a mà', () => {
