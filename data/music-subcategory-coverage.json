@@ -1,5 +1,5 @@
 {
-  "musicalArtists": 431,
+  "musicalArtists": 432,
   "minimumArtists": 5,
   "subcategories": [
     {
@@ -1175,7 +1175,7 @@
         "rumba",
         "rumba-general"
       ],
-      "artistCount": 16,
+      "artistCount": 17,
       "nucleus": true,
       "artists": [
         "9SON",
@@ -1193,7 +1193,8 @@
         "Tashkenti",
         "Terratombats",
         "Txarango",
-        "Xeic!"
+        "Xeic!",
+        "Niño 5"
       ]
     },
     {
@@ -5352,6 +5353,16 @@
       "sources": [
         "https://surtdecasa.cat/camp/agenda/bonobos-trast/52854",
         "https://www.youtube.com/channel/UC0vBr1BrHrWE07vDPy1tQcw"
+      ]
+    },
+    {
+      "artist": "Niño 5",
+      "category": "Rumba / Mestissatge",
+      "subcategory": "mestissatge",
+      "basis": "editorial",
+      "sources": [
+        "https://www.youtube.com/channel/UC3KaUcfeFcIlgO-dssb9n2g",
+        "https://en-llac.cat/cultura/musica/cor-de-flama/"
       ]
     }
   ]
