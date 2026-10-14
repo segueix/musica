@@ -148,7 +148,7 @@ async function apply() {
     const hidden=new Set(read('data/hidden-videos.json').videoIds);
     const other=db.artists.filter(a=>!TARGETS.includes(a.name));
     const oldFeed=read('data/feed.json');
-    const result={reviewedAt:now,artists:[],deferredArtists:[],otherArtistsHash:digest(other),previousVideoIds:oldFeed.videos.map(v=>v.id),
+    const result={reviewedAt:now,artists:[],deferredArtists:[],otherArtistsHash:digest(other),previousVideoIds:oldFeed.videos.filter(v=>!hidden.has(v.id)).map(v=>v.id),previouslyHiddenVideoIds:oldFeed.videos.filter(v=>hidden.has(v.id)).map(v=>v.id),
         method:'Selecció acotada per ID amb fonts lingüístiques i discogràfiques. Lletres publicades contrastades, sense afirmar escolta íntegra dels enregistraments. Canals Tema prioritaris; la resta del repertori requereix revisió.'};
     for(const a of CONFIG) {
         const snapshot=read('docs/revisions/2026-10-14-ska1-'+a.slug+'.json');
