@@ -1,5 +1,5 @@
 {
-  "musicalArtists": 415,
+  "musicalArtists": 416,
   "minimumArtists": 5,
   "subcategories": [
     {
@@ -496,10 +496,11 @@
       "label": "Ska / Reggae — pendent d’afinar",
       "category": "Ska / Reggae",
       "neighbours": [],
-      "artistCount": 1,
+      "artistCount": 2,
       "nucleus": false,
       "artists": [
-        "The Cabrians"
+        "The Cabrians",
+        "Ki Sap"
       ]
     },
     {
@@ -5145,6 +5146,15 @@
       "basis": "editorial",
       "sources": [
         "https://www.enderrock.cat/noticia/6667/comenca-festival-deskarats"
+      ]
+    },
+    {
+      "artist": "Ki Sap",
+      "category": "Ska / Reggae",
+      "subcategory": "ska-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.valenciaska.net/grup/ki-sap/"
       ]
     },
     {

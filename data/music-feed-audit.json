@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-14T06:26:56.668Z",
+  "generatedAt": "2026-10-14T06:30:44.333Z",
   "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
   "restrictedVideoCount": 23,
@@ -1430,6 +1430,13 @@
   "governedReclassified": {},
   "topicHiddenCount": 0,
   "topicChannels": [
+    {
+      "id": "UCnjicJo0XLp_UQYr7QqDZzQ",
+      "name": "",
+      "tracks": 0,
+      "selected": 0,
+      "withClip": 0
+    },
     {
       "id": "UClwN1cpIrafSRa8MbOMAvvQ",
       "name": "2princesesbarbudes",
@@ -3833,8 +3840,8 @@
     }
   ],
   "indexedChannelCount": 625,
-  "resolvedChannelCount": 622,
-  "feedChannelCount": 622,
+  "resolvedChannelCount": 625,
+  "feedChannelCount": 625,
   "rawPublicVideoCount": 6844,
   "feedVideoCount": 6321,
   "acceptedMusicCount": 6280,
@@ -3855,9 +3862,13 @@
   },
   "unresolvedChannelIds": [],
   "channelsWithoutUploads": [],
-  "channelsWithoutVideos": [],
+  "channelsWithoutVideos": [
+    "UCnjicJo0XLp_UQYr7QqDZzQ",
+    "UCo_8QxIsvo49zaYqqeYxsOQ",
+    "UC8qc9EKB0In0JdqOwu896mQ"
+  ],
   "channelsWithoutAcceptedMusic": [],
-  "allIndexedChannelsVisible": false,
+  "allIndexedChannelsVisible": true,
   "publishedFeedVideoCount": 6321,
   "publishedShortVideoCount": 0
 }
