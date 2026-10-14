@@ -5,10 +5,8 @@ const assert = require('node:assert/strict');
 const OUT = 'docs/revisions/2026-10-14-ska1';
 const norm = x => String(x || '').normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
 const targets = [
-{name:'Agraviats',slug:'agraviats',aliases:['Agraviats Agr'],queries:['Agraviats Topic','Agraviats Mira endavant']},
-{name:'Ki Sap',slug:'ki-sap',aliases:['Ki-Sap'],queries:['Ki Sap Topic','Ki Sap A vora barranc']},
-{name:'Dekrèpits',slug:'dekre pits'.replace(' ',''),aliases:['Dekrepits'],queries:['Dekrepits Topic','Dekrepits Boletaires']},
-{name:'Deskarats',slug:'deskarats',aliases:[],queries:['Deskarats Topic','Deskarats DKS']}
+{name:'Ki Sap',slug:'ki-sap',aliases:['Ki-Sap','Ki Sap Official'],queries:['"Ki Sap" "A vora barranc"','"Ki Sap" reggae','"Ki Sap" Topic']},
+{name:'Dekrèpits',slug:'dekrepits',aliases:['Dekrepits','dekrepitsTV'],queries:['"Dekrepits" Boletaires'],known:['UC0YqrtTHYipbZsG119z2k7g','UCKTrsy9eH-cD9geEnh2SB3w']}
 ];
 async function main() {
     const key = process.env.YOUTUBE_API_KEY_SERVER;
@@ -30,7 +28,7 @@ async function main() {
         const names = new Set([t.name,...t.aliases].map(norm));
         const matchesName = n => names.has(norm(n).replace(/ (topic|tema|oficial|official|music|musica|tv)$/,''));
         const existing = base.artists.filter(a => [a.name,a.displayName,...(a.aliases || [])].some(matchesName));
-        const ids = new Set(existing.flatMap(a => a.youtube?.channels || []).map(c=>c.id));
+        const ids = new Set([...(t.known || []),...existing.flatMap(a => a.youtube?.channels || []).map(c=>c.id)]);
         const results = [];
         for(const q of t.queries) {
             const found = await api('search',{part:'snippet',type:'video',q,maxResults:15});
