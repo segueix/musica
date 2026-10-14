@@ -20,7 +20,7 @@ Quan l’usuari demani revisar/validar pendents d’idioma, fer un lot o continu
 
 ## Mode provisional: 300 minuts fins a final d’octubre
 
-Preval `docs/ESTALVI_ACTIONS_OCTUBRE_2026.md`: Música només s’actualitza en dies parells a les 20 h Europe/Madrid; els cinc manteniments complementaris són només manuals. No reactivis calendaris automàticament. Cal revisar aquest mode l’1 de novembre de 2026.
+Preval `docs/ESTALVI_ACTIONS_OCTUBRE_2026.md`, amb la petició posterior del 14/10 documentada a `docs/CONSULTES_PER_ACTIVITAT.md`: una passada diària a les 20 h Europe/Madrid consulta només canals amb torn vençut (1/3/7 dies segons última publicació). Els cinc manteniments complementaris continuen només manuals. No reactivis altres calendaris automàticament. Cal revisar el pressupost l’1 de novembre de 2026.
 
 ## Quota de GitHub Actions (2026-10-14)
 

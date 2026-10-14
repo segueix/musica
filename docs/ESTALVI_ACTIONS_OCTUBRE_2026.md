@@ -1,20 +1,20 @@
 # Estalvi provisional de GitHub Actions — octubre de 2026
 
-Petició de l’usuari del 14 d’octubre de 2026: reduir primer els calendaris per preservar els 300 minuts restants del compte. Aquesta excepció preval sobre els horaris habituals descrits en altres documents.
+Petició de l’usuari del 14 d’octubre de 2026: reduir primer els calendaris per preservar els 300 minuts restants del compte. Més tard el mateix dia ha demanat consulta diària dels canals amb publicacions de menys d’un any, cada tres dies dels intermedis i setmanal dels de més de tres anys. Aquesta nova petició substitueix només el calendari del feed; detall a `CONSULTES_PER_ACTIVITAT.md`.
 
 ## Configuració aplicada a musica
 
-- `actualitzar-feed-musica.yml`: `0 20 2-30/2 * *`, zona `Europe/Madrid` (dies parells a les 20 h).
-- A l’octubre pendent: 14, 16, 18, 20, 22, 24, 26, 28 i 30. Sense comprovador diari que arrenqui runners els dies que no toca.
+- `actualitzar-feed-musica.yml`: `0 20 * * *`, zona `Europe/Madrid`. Una sola passada diària, amb consulta selectiva dels canals vençuts (1/3/7 dies).
+- El cron anterior de dies parells (`0 20 2-30/2 * *`) queda substituït per la petició posterior. No s’afegeix cap workflow ni cap passada addicional el mateix dia.
 - `revisar_shorts.yml`, `cercar-canals-youtube.yml`, `descobrir-musica.yml`, `enriquir-generes.yml` i `actualitzar-visualitzacions-historial.yml`: sense `schedule`; només `workflow_dispatch`.
 - La publicació després d’una actualització correcta, la CI del sistema i els filtres que eviten accions per canvis de dades es conserven sense canvis.
-- El cron de `scripts/lib/abast_feed.js` i les proves es mantenen alineats amb el YAML; un esdeveniment amb el cron diari anterior es rebutja.
+- El cron de `scripts/lib/abast_feed.js` i les proves es mantenen alineats amb el YAML; un esdeveniment amb el cron de dies parells anterior es rebutja.
 
-No es canvien les dades, els filtres lingüístics, els scripts d’ingesta ni els permisos. Les ordres manuals continuen disponibles però només s’han d’executar per petició expressa. No s’ha executat cap ingesta ni creat cap workflow per provar aquest canvi.
+L’actualitzador tria els canals segons activitat i en desa el torn; els filtres lingüístics i els permisos es conserven. Les ordres manuals continuen disponibles però només s’han d’executar per petició expressa. No s’ha executat cap ingesta real ni creat cap workflow per provar aquest canvi. L’efecte net sobre els minuts d’Actions s’ha de mesurar: hi ha més passades, però menys canals a consultar després de la inicialització.
 
 ## Durada i recuperació
 
-Mode provisional pensat per al que queda d’octubre; revisar l’1 de novembre de 2026. **No hi ha reactivació automàtica**: el calendari reduït continua vigent fins que s’aprovi la recuperació. Això evita tornar a consumir quota sense comprovar-la. El cron de dies parells no és una garantia d’interval exacte de 48 hores al canvi de mes o d’hora.
+Mode provisional pensat per al que queda d’octubre; revisar l’1 de novembre de 2026. **No hi ha reactivació automàtica dels manteniments complementaris**. El feed segueix la nova freqüència selectiva demanada; els altres calendaris continuen desactivats fins que s’aprovi recuperar-los.
 
 Calendaris anteriors (recuperar només els disparadors, no sobreescriure canvis posteriors):
 

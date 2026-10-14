@@ -37,7 +37,7 @@ jobs:
           cache: npm
       - run: npm ci
       - name: Proves sense xarxa de quota i revisió Codex
-        run: node --test scripts/test_workflow_quota.cjs scripts/test_revisio_codex.cjs
+        run: node --test scripts/test_workflow_quota.cjs scripts/test_revisio_codex.cjs scripts/test_activitat_musica.cjs
       - name: Comprova la sintaxi dels generadors
         run: |
           node --check scripts/update_music_feed.js

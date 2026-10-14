@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       discografia_sencera:
-        description: "Llegeix la discografia sencera de tots els canals Tema (si no, una setena part cada dia)"
+        description: "Llegeix la discografia sencera de tots els canals Tema (si no, només els canals amb torn vençut)"
         type: boolean
         default: false
 
@@ -42,5 +42,5 @@ jobs:
         run: >-
           bash scripts/publicar_dades.sh "data: actualitza feed musical"
           data/feed.json js/channels-ca.json data/music-feed-audit.json data/revisio-idiomes.json data/hidden-videos.json
-          data/music-topic-catalog.json data/music-topic-review.json
+          data/music-topic-catalog.json data/music-topic-review.json data/music-channel-polling.json
 

@@ -7,6 +7,7 @@ const { loadContentOverrides, applyContentOverride } = require('./lib/revisio_ma
 const { normalizeVideoTitle, loadChannelVideoAllowlist, isChannelVideoAllowed, allowsSpanishSubtitles, isChannelVideoUploaderAllowed } = require('./lib/filtre_videos_canal');
 const { parseManualDates, stampOriginalYear } = require('./lib/any_original_musical');
 const catalog = require('./lib/cataleg_musical');
+const polling = require('./lib/activitat-canals-musica');
 const { teSubtitolsCastella } = require('./lib/subtitols_castella');
 const { slimFeed, serializeFeed } = require('./lib/aprimar_feed');
 const tema = require('./lib/canal_tema');
@@ -39,8 +40,8 @@ const CATALOG_STATE_FILE = path.join(process.cwd(), 'data', 'music-catalog-state
 const TOPIC_CATALOG_FILE = path.join(process.cwd(), 'data', 'music-topic-catalog.json');
 // Pàgines (de 50) que es llegeixen de cada canal Tema: la discografia sencera fins a 500 pistes.
 const TOPIC_MAX_PAGES = Math.max(1, Number.parseInt(process.env.MUSIC_TOPIC_MAX_PAGES || '10', 10));
-// Discografies per torns (quota): cada dia la primera pàgina de tots els Tema i la sencera d'1/TOPIC_FULL_DAYS dels
-// canals. MUSIC_TOPIC_FULL_READ=1 les llegeix totes senceres (execució manual completa).
+// Només es consulten els canals vençuts segons la seva activitat. Les lectures completes dels Tema
+// es reprenen al primer torn vençut després de TOPIC_FULL_DAYS, sense perdre torns ajornats.
 const TOPIC_FULL_DAYS = Math.max(1, Number.parseInt(process.env.MUSIC_TOPIC_FULL_DAYS || '7', 10));
 const TOPIC_FORCE_FULL_READ = process.env.MUSIC_TOPIC_FULL_READ === '1';
 // Un vídeo del canal propi d'un artista amb Tema publicat fa menys d'aquests dies es manté encara que la cançó
@@ -202,6 +203,8 @@ function collectIndexedChannels(db){
 }
 
 async function main(){
+  const readDate=new Date();
+  const pollingState=polling.loadState(process.cwd());
   const db=JSON.parse(fs.readFileSync(ARTISTS_FILE,'utf8'));
   const allIndexed=collectIndexedChannels(db);
   const previousFeed=readJsonSafe(FEED_FILE,{channels:{},videos:[]});
@@ -212,9 +215,13 @@ async function main(){
       .filter(Boolean)
   );
   const targetMode=requestedTargets.size>0;
-  const indexed=targetMode
+  const candidates=targetMode
     ? new Map([...allIndexed].filter(([id])=>requestedTargets.has(id)))
     : allIndexed;
+  const indexed=new Map([...candidates].filter(([id,meta])=>
+    targetMode || (TOPIC_FORCE_FULL_READ && meta.types.includes('topic')) || !previousFeed.channels?.[id]
+      || polling.isDue(pollingState.channels[id],readDate)
+  ));
   const channelNameOverrides=loadNameOverrides(CHANNEL_NAMES_FILE);
   const ids=[...indexed.keys()];
 
@@ -226,7 +233,7 @@ async function main(){
   console.log(
     targetMode
       ? '🆕 Canals nous a consultar: '+ids.length+' / '+allIndexed.size
-      : '🎵 Canals indexats: '+ids.length
+      : '🎵 Canals a consultar: '+ids.length+' / '+allIndexed.size+'; la resta es conserva sense API'
   );
 
   const channelDetails=new Map();
@@ -239,6 +246,8 @@ async function main(){
   }
 
   const unresolved=ids.filter(id=>!channelDetails.has(id));
+  const failedChannels=new Set(unresolved);
+  const pollResults=new Map();
   const playlistVideoIds=new Map();
   const channelsWithoutUploads=[];
   const uploadsByChannel=new Map();
@@ -261,8 +270,7 @@ async function main(){
   const channelVideoAllowlist=loadChannelVideoAllowlist(CHANNEL_VIDEO_ALLOWLIST_FILE);
   if(channelVideoAllowlist.size) console.log('🎯 Canals amb llista blanca de vídeos:',channelVideoAllowlist.size);
 
-  // Catàleg incremental: el feed anterior és la base. En mode de canals nous, tot el que no és objectiu
-  // es conserva literalment i no provoca cap consulta a YouTube.
+  // Catàleg incremental: els canals ajornats es conserven sense consultar YouTube.
   const previousChannelIndex=readJsonSafe(CHANNELS_FILE,{channels:[]}).channels||[];
   const previousReview=readJsonSafe(REVIEW_FILE,{videos:[]}).videos||[];
   const previousTopicReview=readJsonSafe(TOPIC_REVIEW_FILE,{videos:[]}).videos||[];
@@ -285,34 +293,43 @@ async function main(){
   const previousTopicCatalog=readJsonSafe(TOPIC_CATALOG_FILE,{channels:{}}).channels||{};
   // Tema dels quals avui només s'ha llegit la primera pàgina (la resta de la discografia és la desada)
   const partialTopicIds=new Set();
-  const readDate=new Date();
 
   for(const id of ids){
     const curated=channelVideoAllowlist.get(id)?.allowedVideoIds;
-    if(curated){
-      freshIdsByChannel.set(id,[...curated]);
-      if(topicIds.has(id)) topicTracksByChannel.set(id,[...curated].map(videoId=>({id:videoId,title:''})));
-      continue;
-    }
     const detail=channelDetails.get(id);
     const uploads=detail?.contentDetails?.relatedPlaylists?.uploads;
     if(!uploads){
       channelsWithoutUploads.push(id);
+      failedChannels.add(id);
+      continue;
+    }
+    // La selecció manual limita el repertori, no l'activitat real del canal publicador.
+    if(curated){
+      try{
+        const payload=await api('playlistItems',{part:'contentDetails,status',playlistId:uploads,maxResults:50});
+        pollResults.set(id,{latestPublishedAt:polling.latestPublication(payload.items,readDate)});
+        freshIdsByChannel.set(id,[...curated]);
+        if(topicIds.has(id)) topicTracksByChannel.set(id,[...curated].map(videoId=>({id:videoId,title:''})));
+      }catch(error){
+        failedChannels.add(id);
+        console.warn('⚠️ Activitat de la selecció '+id+': '+error.message);
+      }
       continue;
     }
     uploadsByChannel.set(id,uploads);
     if(topicIds.has(id)){
-      // Canal Tema: discografia (títols per decidir què és cançó de l'artista). Sencera un cop per setmana (torn
-      // del canal), si és nou o si es força; els altres dies només la primera pàgina, amb la resta de la desada.
+      // Canal Tema: lectura completa quan han passat set dies, al proper torn de consulta;
+      // entre lectures completes només la primera pàgina i la discografia desada.
       const savedTracks=previousTopicCatalog[id]?.tracks||[];
-      const fullRead=targetMode || tema.shouldReadFullTopic(id,{
-        date:readDate,days:TOPIC_FULL_DAYS,hasCatalog:savedTracks.length>0,force:TOPIC_FORCE_FULL_READ
-      });
+      const fullRead=targetMode || TOPIC_FORCE_FULL_READ || !savedTracks.length
+        || polling.fullTopicDue(pollingState.channels[id],readDate,TOPIC_FULL_DAYS);
       try{
         const tracks=[];
         let pageToken;
+        let latestPublishedAt=null;
         for(let page=0;page<(fullRead?TOPIC_MAX_PAGES:1);page++){
-          const payload=await api('playlistItems',{part:'snippet,contentDetails',playlistId:uploads,maxResults:50,pageToken});
+          const payload=await api('playlistItems',{part:'snippet,contentDetails,status',playlistId:uploads,maxResults:50,pageToken});
+          if(page===0) latestPublishedAt=polling.latestPublication(payload.items,readDate);
           for(const item of payload.items||[]){
             const videoId=item.contentDetails?.videoId;
             if(videoId) tracks.push({id:videoId,title:item.snippet?.title||''});
@@ -320,6 +337,7 @@ async function main(){
           pageToken=payload.nextPageToken;
           if(!pageToken) break;
         }
+        pollResults.set(id,{latestPublishedAt,fullTopic:fullRead});
         if(fullRead){
           topicTracksByChannel.set(id,tracks);
           freshIdsByChannel.set(id,unique(tracks.map(t=>t.id)));
@@ -331,29 +349,32 @@ async function main(){
         }
       }catch(error){
         console.warn('⚠️ Tema '+id+': '+error.message);
+        failedChannels.add(id);
         freshIdsByChannel.set(id,[]);
       }
       continue;
     }
     try{
       const payload=await api('playlistItems',{
-        part:'contentDetails',
+        part:'contentDetails,status',
         playlistId:uploads,
         maxResults:VIDEOS_PER_CHANNEL
       });
       const fresh=unique((payload.items||[]).map(x=>x.contentDetails?.videoId));
+      pollResults.set(id,{latestPublishedAt:polling.latestPublication(payload.items,readDate)});
       freshIdsByChannel.set(id,fresh);
       catalog.seedDeepState(deepState,id,payload.nextPageToken);
     }catch(error){
       // Fallada transitòria: no se n'esborra el repertori (es conserva el del feed anterior, verificat més avall).
       console.warn('⚠️ '+id+': '+error.message);
+      failedChannels.add(id);
       freshIdsByChannel.set(id,[]);
     }
   }
 
   // Pàgines profundes (només canals de la llista d'antics), amb pressupost de quota acotat i rotatiu.
   let deepPagesFetched=0;
-  for(const step of catalog.planDeepPages(deepState,[...deepChannels].filter(id=>uploadsByChannel.has(id)),{budget:DEEP_PAGE_BUDGET})){
+  for(const step of catalog.planDeepPages(deepState,[...deepChannels].filter(id=>uploadsByChannel.has(id) && !failedChannels.has(id)),{budget:DEEP_PAGE_BUDGET})){
     try{
       const payload=await api('playlistItems',{
         part:'contentDetails',
@@ -374,6 +395,7 @@ async function main(){
   // Repertori conservat: vídeos del feed anterior fora de la finestra actual (els més populars de cada canal).
   const retainedIdsByChannel=new Map();
   for(const id of ids){
+    if(failedChannels.has(id)) continue;
     const fresh=new Set([...(freshIdsByChannel.get(id)||[]),...(deepIdsByChannel.get(id)||[])]);
     // Un Tema llegit sencer no necessita repertori conservat: només si la lectura ha fallat. Si avui només se n'ha
     // llegit la primera pàgina, es conserva (i es torna a verificar) tota la selecció anterior del canal.
@@ -386,6 +408,7 @@ async function main(){
   }
   const retainedSet=new Set([...retainedIdsByChannel.values()].flat());
   for(const [id,videoIds] of releaseIds){
+    if(failedChannels.has(id)) continue;
     freshIdsByChannel.set(id,unique([...(freshIdsByChannel.get(id)||[]),...videoIds]));
   }
   const allVideoIds=unique([
@@ -457,13 +480,13 @@ async function main(){
     return unique([...(meta?.artistNames||[]),...(meta?.aliases||[]),raw,cleanChannelDisplayName(raw)]);
   };
   // Discografia de cada artista (claus de cançó) a partir dels seus Tema.
-  const topicCatalog=targetMode ? {...previousTopicCatalog} : {};
+  const topicCatalog=Object.fromEntries(Object.entries(previousTopicCatalog).filter(([id])=>allIndexed.has(id)));
   const topicKeysByArtist=new Map();
 
-  // En mode de canals nous, reutilitzem la discografia Tema ja guardada dels canals antics.
-  // Això permet governar un canal oficial nou sense tornar a consultar els Topic existents.
-  if(targetMode){
+  // Reutilitzem la discografia Tema dels canals ajornats, sense consultar-los.
+  {
     for(const [topicId,entry] of Object.entries(previousTopicCatalog)){
+      if(topicIds.has(topicId)) continue; // Els canals consultats s'incorporen just a sota.
       const meta=allIndexed.get(topicId);
       if(!meta || !(entry?.tracks||[]).length) continue;
       const names=unique([...meta.artistNames,...meta.aliases,entry.name||'']);
@@ -525,6 +548,20 @@ async function main(){
   }
   // Cançons que ja tenen videoclip al canal propi: la pista del Tema no hi entra.
   const coveredKeysByArtist=new Map();
+  // Un canal oficial ajornat també evita duplicar el seu videoclip des del Tema consultat avui.
+  for(const video of previousFeed.videos||[]){
+    const meta=allIndexed.get(video.channelId);
+    if(!meta?.types.includes('official') || (indexed.has(video.channelId) && !failedChannels.has(video.channelId))
+      || video.contentType!=='song' || video.isShort) continue;
+    const keys=new Set(meta.artistNames.flatMap(name=>[...(topicKeysByArtist.get(name)||[])]));
+    const key=tema.matchedKey(video.title,namesOfChannel(video.channelId),keys);
+    if(!key) continue;
+    for(const name of meta.artistNames){
+      const covered=coveredKeysByArtist.get(name)||new Set();
+      covered.add(key);
+      coveredKeysByArtist.set(name,covered);
+    }
+  }
   // Es mira a tots els canals oficials d'artistes amb Tema (encara que el Tema no hi mani): un videoclip que
   // coincideix amb una pista del Tema fa que la pista no hi entri repetida.
   for(const id of ids){
@@ -571,29 +608,26 @@ async function main(){
   }
 
   const manualDates=fs.existsSync(ORIGINAL_DATES_FILE)?parseManualDates(JSON.parse(fs.readFileSync(ORIGINAL_DATES_FILE,'utf8'))):new Map();
-  const channels=targetMode ? {...(previousFeed.channels||{})} : {};
-  const channelIndex=targetMode
-    ? previousChannelIndex.filter(channel=>!targetIds.has(String(channel?.id||'')))
-    : [];
-  const videos=targetMode
-    ? (previousFeed.videos||[]).filter(video=>!targetIds.has(String(video?.channelId||'')))
-    : [];
-  const review=targetMode
-    ? previousReview.filter(video=>!targetIds.has(String(video?.channelId||'')))
-    : [];
+  // Un canal ajornat o amb error conserva també la fitxa, la revisió i les estadístiques.
+  failedChannels.forEach(id=>targetIds.delete(id));
+  const preserve=id=>allIndexed.has(String(id||'')) && !targetIds.has(String(id||''));
+  const channels=Object.fromEntries(Object.entries(previousFeed.channels||{}).filter(([id])=>preserve(id)));
+  const channelIndex=previousChannelIndex.filter(channel=>preserve(channel?.id));
+  const videos=(previousFeed.videos||[]).filter(video=>preserve(video?.channelId));
+  const review=previousReview.filter(video=>preserve(video?.channelId));
   const rejectedSamples=[];
   const channelsWithoutVideos=[];
   const channelsWithoutAcceptedMusic=[];
   const typeCounts={song:0,live_song:0,album:0,other:0,review:0};
   const governedCounts={};
-  const topicReview=targetMode
-    ? previousTopicReview.filter(video=>!targetIds.has(String(video?.channelId||'')))
-    : [];
+  const refreshedVideoIds=new Set([...targetIds].flatMap(id=>(previousByChannel.get(id)||[]).map(v=>v.id)));
+  const topicReview=previousTopicReview.filter(video=>video.channelId
+    ? preserve(video.channelId) : !refreshedVideoIds.has(video.id));
   let publicVideoCount=videos.length;
   let acceptedMusicCount=0;
   let categoryEligibleVideoCount=0;
 
-  if(targetMode){
+  {
     // Els vídeos «per revisar» dels canals que no es tornen a llegir es compten des de la llista de revisió conservada,
     // no des del feed anterior: des que el feed calent i l'historial van separats, molts ja no són al feed i
     // l'auditoria deixava de quadrar (typeCounts.review 21 contra 425 a music-content-review.json).
@@ -610,23 +644,9 @@ async function main(){
   }
 
   for(const id of ids){
+    if(failedChannels.has(id)) continue;
     const meta=indexed.get(id);
     const detail=channelDetails.get(id);
-    if(!detail){
-      // Canal no resolt (possible fallada transitòria): es conserva el que ja hi havia al feed anterior.
-      const before=previousByChannel.get(id)||[];
-      if(previousFeed.channels?.[id] && before.length){
-        channels[id]=previousFeed.channels[id];
-        for(const v of before){
-          videos.push(v);
-          publicVideoCount++;
-          typeCounts[v.contentType]=(typeCounts[v.contentType]||0)+1;
-          if(['song','live_song','album'].includes(v.contentType)) acceptedMusicCount++;
-          if(v.contentType==='song' || v.contentType==='live_song') categoryEligibleVideoCount++;
-        }
-      }
-      continue;
-    }
     const snippet=detail.snippet||{};
     const categories=meta.categories||[];
     const channelVideoRule=channelVideoAllowlist.get(id);
@@ -698,7 +718,7 @@ async function main(){
       });
       if(finalClassification!==classification){
         governedCounts[finalClassification.contentType]=(governedCounts[finalClassification.contentType]||0)+1;
-        topicReview.push({id:videoId,channelTitle:channel.name,title:item?.snippet?.title||carried?.title||'',from:classification.contentType,to:finalClassification.contentType});
+        topicReview.push({id:videoId,channelId:id,channelTitle:channel.name,title:item?.snippet?.title||carried?.title||'',from:classification.contentType,to:finalClassification.contentType});
         if(TOPIC_GOVERNANCE==='apply') classification=finalClassification;
       }
       if(channelVideoRule?.acceptedMusicOnly && !classification.accepted) continue;
@@ -878,18 +898,14 @@ async function main(){
   const shortCatalogFilter={before:shortBeforeCatalogFilter,matched:shortCatalogMatched,rejected:shortCatalogRejected};
   const generatedAt=new Date().toISOString();
 
-  const mergedTopicCoverage=targetMode
-    ? [
-        ...(previousAudit.topicCoverage||[]).filter(entry=>!targetIds.has(String(entry?.id||''))),
+  const mergedTopicCoverage=[
+        ...(previousAudit.topicCoverage||[]).filter(entry=>preserve(entry?.id)),
         ...topicCoverage
-      ]
-    : topicCoverage;
-  const mergedTopicStats=targetMode
-    ? [
-        ...(previousAudit.topicChannels||[]).filter(entry=>!targetIds.has(String(entry?.id||''))),
+      ];
+  const mergedTopicStats=[
+        ...(previousAudit.topicChannels||[]).filter(entry=>preserve(entry?.id)),
         ...topicStats
-      ]
-    : topicStats;
+      ];
   const allTopicChannelCount=[...allIndexed.values()].filter(meta=>meta.types.includes('topic')).length;
 
   // Abans d'aprimar i eliminar les descripcions, conserva disc + caràtula amb les metadades Topic ja rebudes.
@@ -935,6 +951,7 @@ async function main(){
   fs.writeFileSync(CATALOG_STATE_FILE,JSON.stringify({updatedAt:generatedAt,channels:deepState},null,2)+'\n');
   fs.writeFileSync(AUDIT_FILE,JSON.stringify({
     generatedAt,
+    polling:{requested:ids.length,deferred:allIndexed.size-ids.length,failed:failedChannels.size},
     retainedVideoCount:retainedSet.size,
     unverifiedVideoCount:unverified.size,
     restrictedVideoCount:restrictedIds.length,
@@ -965,6 +982,20 @@ async function main(){
     channelsWithoutAcceptedMusic,
     allIndexedChannelsVisible:Object.keys(channels).length===allIndexed.size
   },null,2)+'\n');
+
+  // Només avança el torn després d'una lectura correcta i d'haver escrit el resultat.
+  // Un error de videos.list sobre repertori conservat es reintenta al proper torn diari.
+  const incompleteChannels=new Set([...unverified].map(id=>previousById.get(id)?.channelId));
+  let checked=0;
+  for(const [id,result] of pollResults){
+    if(failedChannels.has(id) || incompleteChannels.has(id)) continue;
+    polling.recordSuccess(pollingState,id,result,readDate);
+    checked++;
+  }
+  polling.saveState(process.cwd(),pollingState,new Set(allIndexed.keys()),readDate,{
+    indexed:allIndexed.size,requested:ids.length,checked,deferred:allIndexed.size-ids.length,
+    failed:ids.length-checked,
+  });
 
   console.log(
     targetMode ? '✅ Canals nous incorporats:' : '✅ Feed musical:',

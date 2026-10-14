@@ -10,9 +10,9 @@ Lectura de GitHub del 14 d'octubre: 73 execucions creades entre 00.00 i 11.10 UT
 
 ## Regla principal
 
-Canviar artistes, canals, seleccions, idiomes, ocults, orígens o lots de revisió no inicia un runner, ni una ingesta de YouTube, ni una publicació per si mateix. Els nous grups i canvis del catàleg s'incorporen al torn diari de les 20 h Europe/Madrid. Es mantenen els torns de set dies per a les discografies Tema.
+Canviar artistes, canals, seleccions, idiomes, ocults, orígens o lots de revisió no inicia un runner, ni una ingesta de YouTube, ni una publicació per si mateix. Els nous grups i canvis del catàleg s'incorporen al torn diari de les 20 h Europe/Madrid. Les discografies Tema es rellegeixen senceres al primer torn de consulta després d'almenys set dies.
 
-El cron del feed és únic: `0 20 * * *`, amb `timezone: Europe/Madrid`. GitHub gestiona el canvi d'hora; no s'engeguen dos runners per descartar-ne un. Les execucions programades poden retardar-se segons el servei de GitHub; no es promet puntualitat exacta.
+El cron del feed és únic: `0 20 * * *`, amb `timezone: Europe/Madrid`. La petició posterior del 14/10 substitueix el cron provisional de dies parells per aquesta passada diària, consultant només canals vençuts segons `docs/CONSULTES_PER_ACTIVITAT.md` (1/3/7 dies). GitHub gestiona el canvi d'hora; no s'engeguen dos runners per descartar-ne un. Les execucions programades poden retardar-se segons el servei de GitHub; no es promet puntualitat exacta.
 
 ## Workflows actius del sistema
 
@@ -21,11 +21,11 @@ El cron del feed és únic: `0 20 * * *`, amb `timezone: Europe/Madrid`. GitHub 
 | Actualitzar feed musical | Cada dia a les 20 h Europe/Madrid o petició manual expressa |
 | Publicar previsualitzacions Música | Canvis de fitxers del sistema a main; després d'una actualització diària correcta o del manteniment manual explícit |
 | Validar base musical | Una única feina per PR de codi/configuració del sistema a main, o manual |
-| Revisar Shorts | Cada dia a les 03.00 UTC; calendari preexistent |
-| Cercar canals YouTube | Cada dia a les 08.17 UTC; calendari preexistent, sense activar el feed immediat |
-| Descobrir artistes de música | Dilluns a les 04.17 UTC; calendari preexistent |
-| Enriquir gèneres musicals | Diumenge a les 06.17 UTC; calendari preexistent |
-| Actualitzar visualitzacions historial musical | Diumenge a les 09.23 UTC; calendari preexistent |
+| Revisar Shorts | Només manual durant l’estalvi d’octubre |
+| Cercar canals YouTube | Només manual durant l’estalvi d’octubre |
+| Descobrir artistes de música | Només manual durant l’estalvi d’octubre |
+| Enriquir gèneres musicals | Només manual durant l’estalvi d’octubre |
+| Actualitzar visualitzacions historial musical | Només manual durant l’estalvi d’octubre |
 | Actualitzador feed musical (manual) | Només petició manual expressa |
 | Actualitzar feed només dels grups nous | Només petició manual expressa |
 | Manteniment musical manual | Una tasca triada expressament: arxiu, afinitats, ocults, aprimament o auditoria |

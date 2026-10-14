@@ -3,8 +3,8 @@ name: Actualitzar feed musical
 # Canvis de grups, seleccions i revisions: esperen al torn programat; mai push ni workflow_run.
 on:
   schedule:
-    # Estalvi provisional d’octubre: dies parells; revisar l’1 de novembre.
-    - cron: "0 20 2-30/2 * *"
+    # Petició del 14/10: passada diària, només canals amb torn vençut (1/3/7 dies).
+    - cron: "0 20 * * *"
       timezone: "Europe/Madrid"
   workflow_dispatch:
     inputs:
@@ -58,7 +58,7 @@ jobs:
         if: steps.scope.outputs.work == 'true'
         run: |
           node scripts/test_music_content_classifier.js
-          node --test scripts/test_workflow_quota.cjs
+          node --test scripts/test_workflow_quota.cjs scripts/test_activitat_musica.cjs
           npx vitest run tests/cataleg-musical.test.js tests/any-original.test.js tests/music-content-overrides.test.js tests/channel-video-allowlist.test.js tests/canals-revisats.test.js tests/subtitols-castella.test.js tests/aprimar-feed.test.js tests/canal-tema.test.js tests/revisio-idiomes.test.js tests/quota-feed.test.js tests/llancaments-musicals.test.js
       - name: Treu les baixes sense API
         if: steps.scope.outputs.work == 'true'
