@@ -524,11 +524,6 @@
                         .join('')}
                     ${secondary.map(style => tile(style, true)).join('')}
                     <li class="pt-style-cell pt-style-cell--add pt-style-cell--actions">
-                        <button type="button" class="pt-style pt-style--add" data-uc-create>
-                            <span class="pt-style__plus" aria-hidden="true">+</span>
-                            <span class="pt-style__label">Crea una categoria</span>
-                            <span class="pt-style__count">Els teus grups</span>
-                        </button>
                         ${
                             secondary.length
                                 ? `<button type="button" class="pt-style pt-style--more" data-pt-all-styles aria-expanded="${expanded}" aria-controls="ptStyles">
@@ -538,6 +533,11 @@
                         </button>`
                                 : ''
                         }
+                        <button type="button" class="pt-style pt-style--add" data-uc-create>
+                            <span class="pt-style__plus" aria-hidden="true">+</span>
+                            <span class="pt-style__label">Crea una categoria</span>
+                            <span class="pt-style__count">Els teus grups</span>
+                        </button>
                     </li>
                 </ul>
             </section>`;
@@ -1412,4 +1412,5 @@
         getModel: () => state.model,
     };
 })(window);
+
 

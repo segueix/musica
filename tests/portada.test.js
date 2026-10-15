@@ -251,8 +251,8 @@ describe('HTML de les seccions', () => {
         expect(html).toContain('data-pt-style="Rap / Hip-hop"');
         expect(html).toContain('data-pt-all-styles');
         expect(html).toContain('Tots els estils');
-        // És una rajola al costat de «Crea una categoria», no un botó a part sota la graella
-        expect(html).toMatch(/pt-style-cell--actions[\s\S]*data-uc-create[\s\S]*data-pt-all-styles[\s\S]*<\/li>\s*<\/ul>/);
+        // És una rajola a l’esquerra de «Crea una categoria», no un botó a part sota la graella
+        expect(html).toMatch(/pt-style-cell--actions[\s\S]*data-pt-all-styles[\s\S]*data-uc-create[\s\S]*<\/li>\s*<\/ul>/);
         expect(html).not.toContain('pt-styles__toggle');
         // Els estils secundaris queden amagats fins que es demanen
         expect(html).toMatch(/pt-style-cell--extra" hidden/);
@@ -284,3 +284,4 @@ describe('HTML de les seccions', () => {
         expect(card).toContain('&lt;img src=x onerror=alert(1)&gt; &quot;&amp;');
     });
 });
+
