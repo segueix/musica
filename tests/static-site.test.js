@@ -122,7 +122,7 @@ describe('paquet publicable', () => {
         expect(() => validate(out, { sourceCommit: 'b'.repeat(40) })).toThrow(/commit diferent/);
         expect(() => validate(out, { siteUrl: 'https://altre.example/' })).toThrow(/URL diferent/);
     });
-    it.each(['ruta', 'asset', 'hash', 'servidor', 'sitemap', 'index'])('refusa un paquet trencat: %s', defect => {
+    it.each(['ruta', 'asset', 'hash', 'servidor', 'sitemap', 'index', 'taxonomia', 'qr', 'lucide'])('refusa un paquet trencat: %s', defect => {
         const { root, out } = fixture(); build(root);
         if (defect === 'ruta') rmSync(join(out, 'compartir/canco/song0000001.html'));
         if (defect === 'asset') rmSync(join(out, 'css/static-seo.css'));
@@ -130,6 +130,9 @@ describe('paquet publicable', () => {
         if (defect === 'servidor') mkdirSync(join(out, 'functions'));
         if (defect === 'sitemap') writeFileSync(join(out, 'sitemap.xml'), '<loc>https://altre.example/pages.xml</loc>');
         if (defect === 'index') writeFileSync(join(out, 'data/video-channels.json'), '{}');
+        if (defect === 'taxonomia') rmSync(join(out, 'data/music-taxonomy.json'));
+        if (defect === 'qr') rmSync(join(out, 'js/vendor/qr-code-styling.js'));
+        if (defect === 'lucide') rmSync(join(out, 'js/vendor/lucide.js'));
         expect(() => validate(out)).toThrow(/Paquet estàtic:/);
     });
     it('reconstrueix rutes, HTML i índexs quan es retira una cançó', () => {

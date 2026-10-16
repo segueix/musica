@@ -101,6 +101,15 @@ const publisher = read('publicar-comparticio-musica.yml');
 const validator = read('validar-musica.yml');
 const publishPatterns = patterns(publisher, 'push');
 const validatePatterns = patterns(validator, 'pull_request');
+test('impedeix dues fonts de Pages i comprova el contingut després del desplegament', () => {
+    assert.equal(selected('scripts/comprovar_publicacio_estatica.cjs', publishPatterns), true);
+    assert.match(publisher, /gh api "repos\/\$GITHUB_REPOSITORY\/pages" --jq '\.build_type'/);
+    assert.match(publisher, /if \[ "\$build_type" != workflow \]; then[\s\S]*?exit 1/);
+    assert.ok(publisher.indexOf('build_type=') < publisher.indexOf('npm ci'));
+    assert.ok(publisher.indexOf('actions/deploy-pages') < publisher.indexOf('run: node scripts/comprovar_publicacio_estatica.cjs'));
+    assert.doesNotMatch(publisher, /--method (?:POST|PUT|PATCH)|enablement: true/);
+    assert.match(validator, /node --test .*scripts\/test_publicacio_estatica.cjs/);
+});
 for (const file of [
     'data/artistes-musica.json', 'data/hidden-videos.json', 'data/revisio-idiomes.json',
     'data/music-channel-video-allowlist.json', 'data/feed.json', 'data/origens-artistes.json',

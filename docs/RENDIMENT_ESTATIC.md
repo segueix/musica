@@ -1,6 +1,6 @@
 # Rendiment del paquet estàtic — 16/10/2026
 
-Aquest primer apartat documenta les millores preparades a la PR 146 abans del seu desplegament. La integració i el segon lot mòbil es documenten al final. El diagnòstic parteix dels dos informes PageSpeed aportats per l’usuari per a `https://segueix.github.io/musica/`, capturats el 16/10/2026 a les 12:27 CEST: mòbil 28 i escriptori 36. Aquests són resultats de la versió pública anterior, no del paquet optimitzat.
+Aquest primer apartat documenta les millores preparades a la PR 146 abans del seu desplegament. La integració i el segon lot mòbil es documenten més avall. La revisió del tercer informe detecta una publicació duplicada que sobreescriu el paquet optimitzat; vegeu l’últim apartat abans d’interpretar les puntuacions públiques. El diagnòstic parteix dels dos informes PageSpeed aportats per l’usuari per a `https://segueix.github.io/musica/`, capturats el 16/10/2026 a les 12:27 CEST: mòbil 28 i escriptori 36. Aquests són resultats de la versió pública anterior, no del paquet optimitzat.
 
 ## Canvis
 
@@ -88,3 +88,39 @@ No són valors Lighthouse ni comparables directament als 12,7 segons del PDF. El
 Verificació del segon lot: 55 proves dirigides superades; bateria disponible de 357 proves (352 superades i les mateixes 5 fallades anteriors), 87 proves natives de quota/revisió i paquet complet validat. Lint conserva els cinc errors anteriors. Navegador: cerca, selecció de ràdio, Descobreix, exportació/importació JSON i QR sota demanda; sense errors JavaScript ni avisos d’icones. Prova específica bloquejant la descàrrega d’app.js: els tocs prematurs d’acceptar, rebutjar i informació es recuperen correctament, i un consentiment desat no torna a mostrar-se. No s’ha executat cap Action ni s’han canviat els workflows o la ingesta.
 
 Després d’integrar i publicar aquest segon lot cal tornar a executar PageSpeed mòbil. Encara no es pot afirmar que hagi arribat a 78 punts.
+
+
+## Tercer informe: la publicació per branca sobreescriu el paquet
+
+Informe aportat: https://pagespeed.web.dev/analysis/https-segueix-github-io-musica/rlu6z5jxl6?form_factor=mobile, capturat el 16/10/2026 a les 14:09:52 CEST, Lighthouse 13.5.0, Moto G Power i Slow 4G.
+
+| Indicador públic mòbil | Segon informe | Tercer informe |
+| --- | ---: | ---: |
+| Rendiment | 58 | 60 |
+| FCP | 3,2 s | 3,8 s |
+| LCP | 12,7 s | 12,1 s |
+| TBT | 250 ms | 170 ms |
+| CLS | 0 | 0 |
+
+El tercer informe mostra Speed Index 6,3 s, accessibilitat 97, bones pràctiques 96 i SEO 100. El candidat LCP continua sent `p.cookie-banner__text`. El bloqueig millora, però el FCP empitjora; no s’atribueix causalitat a una única comparació. Els 78 punts d’escriptori són la referència comunicada per l’usuari, no una mesura nova feta aquí.
+
+La consola de l’informe registra HTTP 404 per `data/music-taxonomy.json` i les biblioteques `js/vendor/lucide.js`, `sortable.js` i `lz-string.js`. Detecta JS i CSS sense minificar: estalvi estimat de 115 KiB i 23 KiB respectivament. `app.js` transfereix 129,3 KiB, `styles.css` 34 KiB i `portada.css` 37,6 KiB, per sobre del paquet construït. Això invalida considerar aquest informe com una mesura del paquet optimitzat complet.
+
+La configuració de Settings → Pages s’ha comprovat al navegador: **Source = Deploy from a branch, main, / (root)**. El darrer desplegament indicat és el workflow automàtic `pages build and deployment`. Per al mateix commit `0f9ce839769537625cbe152272f6529ce0be6490`:
+
+- Publicador propi: https://github.com/segueix/musica/actions/runs/38898346140; desplegament optimitzat acabat a les 12:08:02 UTC.
+- Publicador automàtic de branca: https://github.com/segueix/musica/actions/runs/38898345117; desplegament acabat a les 12:08:26 UTC, després del propi.
+
+El segon sobreescriu el primer amb els fitxers font. El build local correcte i un workflow verd no garantien que la web pública conservés l’artefacte. `actions/configure-pages@v5` llegeix la configuració existent; no converteix automàticament un lloc existent al mode `workflow`.
+
+Correcció preparada:
+
+1. Abans d’instal·lar dependències, el publicador llegeix `build_type` amb el token existent i s’atura amb una instrucció clara si no és `workflow`. Només fa GET; no canvia configuració ni permisos.
+2. La validació del paquet exigeix explícitament taxonomia i les quatre biblioteques locals, inclòs el QR carregat sota demanda.
+3. Després de desplegar, `comprovar_publicacio_estatica.cjs` compara SHA-256 d’onze respostes públiques amb el paquet: portada, manifest amb commit, SW, taxonomia, biblioteques i JS/CSS principals. Conserva les queries de versió de l’HTML, rebutja 404, redireccions, HTML de fallback i bytes d’una versió diferent. No envia credencials a la web pública. Fins a tres intents, separats per cinc segons, dins de la mateixa feina per tolerar propagació curta.
+
+**Pas de configuració pendent:** a Settings → Pages → Build and deployment → Source, seleccionar **GitHub Actions**. Després integrar aquesta correcció perquè la publicació de main construeixi i verifiqui `_site/`. No s’ha canviat la configuració ni disparat Actions en aquesta revisió. No cal crear un workflow nou, afegir un token, publicar fitxers generats al repositori ni reactivar cap calendari.
+
+Verificació: 97 proves natives superades; 360 proves Vitest (355 superades i exactament les mateixes cinc fallades comparades amb la base). Lint idèntic al de la base, amb cinc errors ja coneguts. Generació i validació del catàleg complet superades. Les proves del comprovador simulen 404, fitxers font, commit antic, fallback HTML, error de xarxa i propagació; no es presenta aquesta simulació com una verificació del desplegament públic.
+
+Un cop la comprovació pública passi, repetir PageSpeed mòbil. La prioritat següent serà el camí de renderització del text inicial; l’informe estima 310 ms de recursos bloquejants, 159 KiB d’imatges millorables, 89 KiB de JS no utilitzat i 59 KiB de CSS no utilitzat. Són diagnòstics del desplegament incorrecte, no estalvis demostrats sobre `_site/`. Les polítiques de cache de GitHub Pages i les imatges externes també condicionen la transferència; a Cloudflare s’haurà de publicar el mateix directori de sortida i comprovar de nou la resposta real.

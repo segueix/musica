@@ -22,6 +22,7 @@ on:
       - 'scripts/optimitzar_web_estatica.cjs'
       - 'scripts/generar_web_estatica.cjs'
       - 'scripts/validar_paquet_estatic.cjs'
+      - 'scripts/comprovar_publicacio_estatica.cjs'
       - 'scripts/lib/filtre_videos_canal.js'
       - 'scripts/generar_pagines_compartir.js'
       - 'scripts/actualitzar_versio_sw.js'
@@ -58,6 +59,15 @@ jobs:
         with:
           ref: main
           persist-credentials: false
+      - name: Exigeix un únic origen de publicació
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          build_type="$(gh api "repos/$GITHUB_REPOSITORY/pages" --jq '.build_type')"
+          if [ "$build_type" != workflow ]; then
+            echo '::error::Pages publica des d’una branca i pot sobreescriure el paquet optimitzat. Canvia Settings → Pages → Build and deployment → Source a GitHub Actions.'
+            exit 1
+          fi
       - uses: actions/setup-node@v5
         with:
           node-version: '22'
@@ -85,4 +95,6 @@ jobs:
         uses: actions/deploy-pages@v4
         with:
           artifact_name: github-pages-${{ github.run_attempt }}
+      - name: Comprova els fitxers que realment serveix la web
+        run: node scripts/comprovar_publicacio_estatica.cjs --out=_site
 

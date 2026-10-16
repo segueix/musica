@@ -1712,3 +1712,14 @@ Després de publicar la PR 146, el nou informe mòbil marca 58 punts, TBT 250 ms
 Les miniatures de «Torna-hi», mosaics i retrats que provenen d’un vídeo encara escapaven de l’ajust de resolució: ara reutilitzen la mateixa normalització de la portada, amb càrrega diferida a les files. El feed comença amb fetch de baixa prioritat i `cache: no-store`; el client consumeix la resposta una sola vegada, sense repetir la descàrrega ni reutilitzar un feed HTTP antic. La taxonomia té una precàrrega `as=fetch`. **No s’han d’incloure aquests JSON al STATIC_ASSETS del SW**: l’extractor exclou els links `preload as=fetch`, amb prova de regressió. El nucli tampoc carrega el complement Shorts que Música no ofereix, tot i conservar-ne HTML ocult antic, evitant peticions a rutes de l’arrel alienes a `/musica/`.
 
 Mesura local comparable: LCP del text 4.128 → 824 ms i arrencada 12.167 → 9.561 ms. No és PageSpeed ni garanteix 78 punts: cal mesurar després de publicar. Detalls de metodologia i límits a `docs/RENDIMENT_ESTATIC.md`.
+
+
+## 2026-10-16 — Pages sobreescrivia la construcció optimitzada amb el codi font
+
+**Símptoma:** després de dues PR de rendiment, PageSpeed mòbil marca 60 però encara detecta JS/CSS sense minificar i 404 de taxonomia i biblioteques que existeixen a `_site/`.
+
+**Causa comprovada:** Settings → Pages conserva `Deploy from a branch` sobre `main` i l’arrel. El publicador propi desplega l’artefacte a les 12:08:02 UTC; `pages build and deployment` el substitueix a les 12:08:26 UTC per al mateix commit. Un èxit del workflow propi no demostrava la versió realment servida. `configure-pages` no canvia el mode d’un lloc existent.
+
+**Correcció preparada:** exigir `build_type=workflow` abans de construir, validar també recursos generats carregats dinàmicament i comparar onze respostes públiques amb hashes del paquet després del desplegament. Comprovació sense credencials públiques, amb temps límit i reintents curts dins la mateixa feina. Cap workflow, runner o calendari addicional. La configuració ha de canviar a Source → GitHub Actions; pendent d’aprovació de l’usuari en preparar aquesta correcció. No s’ha modificat la configuració ni executat Actions.
+
+**Verificació:** proves de publicació antiga, fitxer absent, contingut HTML sota HTTP 200, error de xarxa i propagació curta; catàleg complet construït i validat. Resultats i comparativa dels informes a `docs/RENDIMENT_ESTATIC.md`. No atribuir una nova puntuació a un paquet que encara no s’ha verificat públicament.
