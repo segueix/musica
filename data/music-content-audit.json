@@ -1,23 +1,23 @@
 {
-  "generatedAt": "2026-10-15T20:54:32.253Z",
-  "rawPublicVideoCount": 11264,
-  "feedVideoCount": 9600,
-  "acceptedMusicCount": 9791,
-  "categoryEligibleVideoCount": 9741,
+  "generatedAt": "2026-10-16T05:40:48.391Z",
+  "rawPublicVideoCount": 11260,
+  "feedVideoCount": 9606,
+  "acceptedMusicCount": 9796,
+  "categoryEligibleVideoCount": 9746,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
-    "before": 1026,
+    "before": 1018,
     "matched": 0,
-    "rejected": 1026
+    "rejected": 1018
   },
-  "rejectedOrReviewCount": 1473,
-  "reviewCount": 574,
+  "rejectedOrReviewCount": 1464,
+  "reviewCount": 571,
   "typeCounts": {
-    "song": 9433,
+    "song": 9438,
     "live_song": 308,
     "album": 50,
-    "other": 899,
-    "review": 574
+    "other": 893,
+    "review": 571
   },
   "channelsWithoutAcceptedMusic": [
     "UCUSjRkF72RR1E8Rl4SWtVsQ",
@@ -383,13 +383,6 @@
       "musicReason": "massa curt: probable teaser/fragment"
     },
     {
-      "id": "qNtNa7UgXUk",
-      "title": "BANDA NEON a RAC1 - Entrevista + concert presentació temporada 2025",
-      "channelTitle": "Banda Neon",
-      "durationSeconds": 66,
-      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
       "id": "pjWsRG4lZrM",
       "title": "Banda Neon a ARBÚCIES 2024 #estiu #festamajor  #musica",
       "channelTitle": "Banda Neon",
@@ -450,41 +443,6 @@
       "title": "VALLS, te voy a escribir la canción más bonita del mundo!",
       "channelTitle": "Banda Neon",
       "durationSeconds": 16,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "bvjRbO_8H5Y",
-      "title": "BANDA NEON  a L'ESPLUGA DE FRANCOLÍ",
-      "channelTitle": "Banda Neon",
-      "durationSeconds": 43,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "fue9UYfU3yQ",
-      "title": "BANDA NEON a CANILLO (Andorra)",
-      "channelTitle": "Banda Neon",
-      "durationSeconds": 28,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "7wRCtaYaovY",
-      "title": "BANDA NEON a L'ARMENTERA (Alt Empordà)",
-      "channelTitle": "Banda Neon",
-      "durationSeconds": 35,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "WklhA8KPVX0",
-      "title": "BANDA NEON a TORREDEMBARRA",
-      "channelTitle": "Banda Neon",
-      "durationSeconds": 32,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "azPIvuKcd_o",
-      "title": "BANDA NEON a CAMBRILS",
-      "channelTitle": "Banda Neon",
-      "durationSeconds": 25,
       "musicReason": "massa curt: probable teaser/fragment"
     },
     {
@@ -864,8 +822,50 @@
       "channelTitle": "Celobert",
       "durationSeconds": 59,
       "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "PqKzAm-ujr0",
+      "title": "Celobert - Celobert #shorts",
+      "channelTitle": "Celobert",
+      "durationSeconds": 40,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "U5L-kJNvxZg",
+      "title": "6/05 videoclip “SI TE’N VAS”",
+      "channelTitle": "Cloe Riembau",
+      "durationSeconds": 16,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "Z4ko6aHkFUc",
+      "title": "20/01 “DE MAIG A JUNY”",
+      "channelTitle": "Cloe Riembau",
+      "durationSeconds": 10,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "IF3npGq6a7I",
+      "title": "doleeeermeeee",
+      "channelTitle": "Cloe Riembau",
+      "durationSeconds": 31,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "8hNm71CUWjQ",
+      "title": "CRIM @ Teatre Auditori Camp de Mart, TARRAGONA (16/05/2021)",
+      "channelTitle": "Crim",
+      "durationSeconds": 173,
+      "musicReason": "no és a la discografia del canal Tema"
+    },
+    {
+      "id": "qzrM90fCI1M",
+      "title": "CRIM 10 ANYS Live Streaming (03/01/2021) @ Estraperlo Club",
+      "channelTitle": "Crim",
+      "durationSeconds": 5667,
+      "musicReason": "concert o sessió llarga, no una sola cançó"
     }
   ],
-  "publishedFeedVideoCount": 6599,
+  "publishedFeedVideoCount": 6604,
   "publishedShortVideoCount": 0
 }

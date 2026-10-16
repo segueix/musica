@@ -1,16 +1,14 @@
 {
-  "generatedAt": "2026-10-15T20:54:32.253Z",
+  "generatedAt": "2026-10-16T05:40:48.391Z",
   "polling": {
-    "requested": 356,
-    "deferred": 298,
+    "requested": 355,
+    "deferred": 299,
     "failed": 7
   },
-  "retainedVideoCount": 647,
+  "retainedVideoCount": 648,
   "unverifiedVideoCount": 0,
   "restrictedVideoCount": 25,
-  "restrictedVideosAdded": [
-    "TJvywxg-eeI"
-  ],
+  "restrictedVideosAdded": [],
   "deepPagesFetched": 0,
   "deepChannelCount": 19,
   "topicChannelCount": 364,
@@ -833,6 +831,14 @@
       "governs": true
     },
     {
+      "id": "UCSw_OmWJnY0Dz311MEzdHFA",
+      "name": "Miki Nuñez",
+      "songs": 41,
+      "matched": 34,
+      "coverage": 0.83,
+      "governs": true
+    },
+    {
       "id": "UC_Nx-tsTDRubDg1dbd5jwAw",
       "name": "Sandra Bautista",
       "songs": 24,
@@ -845,14 +851,6 @@
       "name": "Mar Pujol",
       "songs": 17,
       "matched": 14,
-      "coverage": 0.82,
-      "governs": true
-    },
-    {
-      "id": "UCSw_OmWJnY0Dz311MEzdHFA",
-      "name": "Miki Nuñez",
-      "songs": 40,
-      "matched": 33,
       "coverage": 0.82,
       "governs": true
     },
@@ -1465,6 +1463,22 @@
       "governs": false
     },
     {
+      "id": "UCfMqjIyA0G1cVGNlFXXoJhA",
+      "name": "",
+      "songs": 0,
+      "matched": 0,
+      "coverage": 0,
+      "governs": false
+    },
+    {
+      "id": "UC7IUL5Ba9dhBVPnTLe9RHhQ",
+      "name": "",
+      "songs": 0,
+      "matched": 0,
+      "coverage": 0,
+      "governs": false
+    },
+    {
       "id": "UCJXKRxaUXEg0kpgb-Kd8uDg",
       "name": "Bonestorm",
       "songs": 2,
@@ -1553,6 +1567,14 @@
       "governs": false
     },
     {
+      "id": "UCXa6Mb5QgzYjRV_D1VlYoKQ",
+      "name": "silviaperezcruz",
+      "songs": 0,
+      "matched": 0,
+      "coverage": 0,
+      "governs": false
+    },
+    {
       "id": "UC4S5WcSVzMhUd-UwKKpKp5w",
       "name": "Teràpia De Shock",
       "songs": 0,
@@ -1574,7 +1596,7 @@
     "other": 160,
     "song": 15
   },
-  "topicHiddenCount": 190,
+  "topicHiddenCount": 189,
   "topicChannels": [
     {
       "id": "UCnjicJo0XLp_UQYr7QqDZzQ",
@@ -3134,8 +3156,8 @@
       "id": "UCJ_erOhxsuzi3KYLngXMeJw",
       "name": "Miki Núñez",
       "tracks": 137,
-      "selected": 17,
-      "withClip": 30
+      "selected": 16,
+      "withClip": 31
     },
     {
       "id": "UCzv2Zdpkuk5RefgIRkXggCw",
@@ -3673,7 +3695,7 @@
       "id": "UCXoDEBc8CPWptFtzb_mmLiQ",
       "name": "Sílvia Pérez Cruz",
       "tracks": 221,
-      "selected": 42,
+      "selected": 41,
       "withClip": 0
     },
     {
@@ -4100,23 +4122,23 @@
   "indexedChannelCount": 654,
   "resolvedChannelCount": 654,
   "feedChannelCount": 654,
-  "rawPublicVideoCount": 11264,
-  "feedVideoCount": 9600,
-  "acceptedMusicCount": 9791,
-  "categoryEligibleVideoCount": 9741,
+  "rawPublicVideoCount": 11260,
+  "feedVideoCount": 9606,
+  "acceptedMusicCount": 9796,
+  "categoryEligibleVideoCount": 9746,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
-    "before": 1026,
+    "before": 1018,
     "matched": 0,
-    "rejected": 1026
+    "rejected": 1018
   },
-  "contentReviewCount": 574,
+  "contentReviewCount": 571,
   "contentTypeCounts": {
-    "song": 9433,
+    "song": 9438,
     "live_song": 308,
     "album": 50,
-    "other": 899,
-    "review": 574
+    "other": 893,
+    "review": 571
   },
   "unresolvedChannelIds": [],
   "channelsWithoutUploads": [],
@@ -4141,6 +4163,6 @@
     "UCdwDeWJ4aJ9RAURZERmWquA"
   ],
   "allIndexedChannelsVisible": true,
-  "publishedFeedVideoCount": 6599,
+  "publishedFeedVideoCount": 6604,
   "publishedShortVideoCount": 0
 }
