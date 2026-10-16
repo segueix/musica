@@ -1659,3 +1659,13 @@ El motor compartit amb el torn del feed aprofita declaracions explícites de dis
 Reconstrucció local: `node scripts/reconstruir_discos_musica.js --evidence=docs/revisions/2026-10-14-discos-evidencies.json`. El fitxer d’evidències conserva només fragments de metadades de vídeos ja existents; no valida idiomes ni afegeix pistes. El generador ordinari reutilitza directament les descripcions que ja rep. Detalls a `docs/DISCOS_AUTOMATICS.md`.
 
 Proves: 35 comprovacions de catàleg, fitxa i llançaments; sintaxi i lint dels JS modificats sense errors. A la còpia local, la suite disponible passa 197 proves i falla en el cas preexistent «UNOFFICIAL RMX»; el lint general manté cinc errors previs. Tots dos s’han reproduït sobre la base. Les URLs dels assets modificats s’han versionat per evitar reutilitzar la interfície antiga.
+
+
+
+## 2026-10-16 — Primera fase de web estàtica: dades locals i còpies JSON
+
+Petició de retirar analítiques i sincronització amb Drive. S’han eliminat OAuth, el model i els temporitzadors de Drive, el client/panell/PDF d’analítica i la còpia de l’API del repositori. `config-backup.js` ofereix només descarregar i importar JSON, amb el model musical explícit de `music-data.js`, validació de producte/versió/estructura, límit de 8 MB i confirmació abans de substituir dades.
+
+Es conserva la recuperació davant falta d’espai i l’aprenentatge local de les ràdios. La vista importada invalida també la memòria d’historial, refresca cors i biblioteca i conserva la cua i el reproductor. Els consentiments i les dades alienes no entren a la còpia. S’han actualitzat les URLs dels scripts, el precache i els textos de privacitat; les instruccions antigues de Drive queden marcades com a històriques.
+
+64 proves dirigides superades. Lint: mateixos cinc errors previs de data.js/home-sections.js, comprovats contra la base. La suite completa no s’ha executat; dues comprovacions antigues de versió SW/ordre de scripts fallen igualment a la base. Aquesta fase no retira encara tot `functions` ni publica a Cloudflare. Fases i criteris a `docs/CONVERSIO_ESTATICA.md`.

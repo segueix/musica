@@ -432,14 +432,6 @@
             reason: options.reason || 'recommended-feed',
         };
 
-        // Analítica agregada: només registra que el recomanador s'ha utilitzat,
-        // mai els vídeos, canals ni el perfil que ha produït l'ordre.
-        try {
-            app.features.analytics?.track?.('smart_feed_rendered', {
-                surface: 'home',
-                category: 'tot',
-            });
-        } catch {}
 
         return output.map(item => item.video);
     }
@@ -458,3 +450,4 @@
         videoCategories,
     };
 })(window);
+

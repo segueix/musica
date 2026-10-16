@@ -14162,7 +14162,8 @@ var SupportModule = {
     openModal: openSupportModal,
 };
 
-async function refreshSynchronizedMusic(data, previous) {
+async function refreshImportedMusic(data, previous) {
+    invalidateHistoryCache();
     const changed = key => JSON.stringify(data[key]) !== JSON.stringify(previous[key]);
     if (changed('settings')) {
         initBackgroundPicker();
@@ -14180,7 +14181,7 @@ async function refreshSynchronizedMusic(data, previous) {
     });
     for (const event of ['segueix:music-prefs-changed', 'segueix:playlists-changed',
         'segueix:user-categories-changed', 'segueix:discovery-mode-changed']) {
-        window.dispatchEvent(new CustomEvent(event, { detail: { type: 'sync' } }));
+        window.dispatchEvent(new CustomEvent(event, { detail: { type: 'import' } }));
     }
     // Mai es toca la fitxa del reproductor, la cua activa ni un formulari que s’està editant.
     if (document.activeElement?.matches?.('input, textarea, [contenteditable="true"]')) return;
@@ -14200,7 +14201,7 @@ async function refreshSynchronizedMusic(data, previous) {
 }
 
 function configureFeatureRuntimes() {
-    SegueixApp.features.googleDriveSync?.registerRuntime?.({ refreshView: refreshSynchronizedMusic });
+    SegueixApp.features.configBackup?.registerRuntime?.({ refreshView: refreshImportedMusic });
     SegueixApp.features.navigation?.registerRuntime?.({
         handlePlayerVisibilityOnNavigation,
         exitPlaylistMode: exitPlaylistModeForNavigation,
@@ -14308,8 +14309,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 updateBootstrapProgress(66, 'Carregant dades...');
                 await handleInitialUrlParams();
                 await handleSharedPlaylistUrlImport();
-                SegueixApp.features.configSync.register();
-                SegueixApp.features.googleDriveSync.register();
+                SegueixApp.features.configBackup.register();
                 startupCompleted = true;
             })(),
             22000,
@@ -14323,6 +14323,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         setTimeout(() => completeBootstrapProgressOverlay(), 180);
     }
 });
+
 
 
 

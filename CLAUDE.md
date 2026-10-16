@@ -50,7 +50,7 @@ js/
 │   ├── channel.js           # Perfil canal (IIFE + registerRuntime)
 │   ├── player.js            # Reproductor (IIFE + registerRuntime)
 │   ├── shared-playlists.js  # Playlists compartides (IIFE + registerRuntime)
-│   ├── config-sync.js       # Sync configuració (IIFE + registerRuntime)
+│   ├── config-backup.js     # Còpies JSON locals (IIFE + registerRuntime)
 │   ├── shorts.js            # Shorts — REFACTORITZAT (implementació directa, sense hooks)
 │   ├── support.js           # Suport canals — REFACTORITZAT (implementació directa)
 │   ├── likes.js             # Likes/favorits — REFACTORITZAT (implementació directa)
@@ -128,7 +128,7 @@ window.SegueixApp = {
 
 #### Patró 1: IIFE + registerRuntime (majoria de features)
 
-Usat per: `navigation`, `library`, `feed`, `search`, `channel`, `player`, `shared-playlists`, `config-sync`.
+Usat per: `navigation`, `library`, `feed`, `search`, `channel`, `player`, `shared-playlists`, `config-backup`.
 
 ```javascript
 (function (window) {
@@ -433,10 +433,13 @@ const likes = ctx2.SegueixApp.features.likes;
 
 - **«Suggereix un artista o grup»** (2026-10-05) és un **enllaç directe al formulari de Google** (`<a id="addYoutuberBtn" href="…/viewform" target="_blank">` a la franja «Hi falta algú?» de la part superior de `#followPage`; `initSuggestFormLink()` d'`app.js` hi posa `CONFIG.forms.suggestYoutuberUrl` i, a l'app d'escriptori instal·lada, l'obre a la mateixa finestra). **Ja no hi ha `#addYoutuberModal`** ni el botó «Obre el formulari»: no els hi tornis a posar. La nota «Abans de suggerir…» i les fonts d'indexació (Llista.cat, ClapClap…, que eren de Segueix youtubers) s'han esborrat: no les hi tornis a posar. `shell-nav.js` (`suggest`) el clica. **«Informació per a artistes»** (`info-youtubers.html`, nom de fitxer històric; s'obre des del modal de contacte) és la pàgina per als músics: què és el projecte (**sense ànim de lucre, per beneficiar els músics i grups catalans**), **com compten les visualitzacions als seus canals de YouTube** (reproductor oficial, trànsit extern, YouTube decideix què compta i la monetització), **com funcionen els algorismes de les ràdios** (pesos 45/20/15/10/10, mix d'antiguitat 65/25/10, regles d'equitat, quatre modes de descoberta), com s'hi entra, què es veu i quan s'actualitza, consells, com entrar/amagar/sortir i privacitat. **Si canvies els pesos o les regles del motor (`music-selection.js`, `docs/MUSICA_SELECCIO.md`) o què es mostra, actualitza aquesta pàgina** (la prova `tests/contacte.test.js` comprova els pesos). No hi tornis a posar contingut de YouTubers (categories de vídeos, Radar, programes, Shorts al mòbil). **El contacte** (2026-10-05) és a un modal propi, `#contactModal`, que s'obre amb la icona **«@»** (`#contactBtn`) de la capçalera, abans de la configuració, a escriptori i a mòbil (`openContactModal()`, mateix patró que l'altre: entrada a l'historial `modal: 'contact'`, clic fora i Enrere el tanquen): **Telegram** (`t.me/segueix`), **correu** (`info.segueix@gmail.com`), «Informació per a artistes», «Encara no tens Telegram?» i els crèdits. El modal de contacte té l'estil de `portada.css` (`.pt-contact*`, `#contactModal`). No hi tornis a posar Telegram ni el correu a la franja de suggeriment. **Marca de la capçalera (2026-10-12):** el mateix logotip que la pantalla d'espera, a l'ordinador i al mòbil: logo de l'alçada de les dues línies, **«Segueix! Música»** (`.brand-music`, Fraunces llima) i a sota **«En català»** en versaletes terracota espaiades (`.brand-tag`). Al mòbil la marca és un contenidor (`container-type: inline-size`) i **la lletra depèn de l'ample de la marca, no de rem** (`min(1.0625rem, calc((100cqi - 40px) / 7.9))`; 2026-10-12: amb la lletra gran de la configuració o del mòbil, «Música» es retallava): «Música» sempre hi cap sencer. A 320 px (≤ 109 px) s'amaga el logo i queda el text. No hi tornis a posar mides fixes en rem ni trams. Ja no hi ha «Música en català» / «Música CAT» (`.brand-tag__long/__short`), `.brand-mark__tag`, `.brand-subtitle` ni `.brand-cat`: no els hi tornis a posar. Bloc «Marca: logo + «Segueix! Música» + «En català»» al final de `portada.css`; proves a `tests/marca-rajoles.test.js` i `tests/contacte.test.js`. **Pantalla d'espera** (`#intro-splash`): «Segueix!», a sota «Música» (`.intro-splash-brand`, llima) i «En català». No hi tornis a posar el vídeo de YouTube «Coneix-nos» ni Xiuxiuejar (eliminats, com les seves imatges). La crida de la pàgina és la franja `.follow-suggest` (disc llima amb micròfon, «Hi falta algú?», botó llima; selectors `#followPage …` al final de `portada.css`, marge dret per a la columna de lletres). Si canvies el CSS amb HTML nou que en depèn, canvia el `?v=` de l'enllaç a `index.html` (2026-10-04: sortia sense estil per la memòria cau). `suggestYoutuberUrl` (`js/config.js`) és el formulari de Google propi de Segueix Música (2026-10-04), vinculat a un full de càlcul de respostes; l'enllaç ha de ser el públic (`/viewform`), no el d'edició. Prova: `tests/contacte.test.js`.
 
-### Passar la música a un altre aparell (2026-10-06)
+### Passar la música a un altre aparell (2026-10-16)
 
-- Configuració → «Sincronitza amb Google Drive» substitueix tots els fitxers i codis de vinculació anteriors (2026-10-07). Mòduls `music-data.js`, `drive-sync-model.js`, `google-drive-sync.js`; credencial pública a `js/google-drive-config.js`. Només `drive.appdata`, tokens en memòria, metadades per compte, marques d’esborrat i un fitxer per aparell. Vegeu `docs/GOOGLE_DRIVE.md`. No restaureu la transferència de configuració/historial per fitxers, WhatsApp, QR o `/api/sync`. Compartir públicament una llista/categoria continua separat.
-- **No hi ha «Exportar tot» ni «Importar tot»** (eliminats el 2026-10-06): exportaven tot el `localStorage`; no els hi tornis a posar. Detall: `docs/PROBLEMES_I_SOLUCIONS.md` (2026-10-06). Prova: `tests/music-transfer.test.js`.
+- Configuració ofereix únicament **Descarregar .json / Importar .json** per transferir les dades personals. La petició del 16/10 substitueix la instrucció anterior d’utilitzar Drive.
+- `music-data.js` conserva una llista explícita de dades musicals; `config-backup.js` valida producte, versió i estructura, limita el fitxer a 8 MB i demana confirmació abans de substituir les dades. No exportar tot `localStorage`, credencials, memòria cau, cua activa ni consentiments.
+- La importació recupera l’estat anterior si fallen les escriptures i refresca la vista sense recarregar el reproductor. `musicSignals` continua sent aprenentatge local, no analítica de servidor.
+- Google Drive, OAuth, els temporitzadors de sincronització i els mòduls/API d’analítica estan retirats. La compartició pública de cançons i llistes continua separada.
+- Fases pendents de web completament estàtica: `docs/CONVERSIO_ESTATICA.md`.
 
 ### Botons d'icona i colors de la configuració (2026-10-02)
 
@@ -603,5 +606,6 @@ const likes = ctx2.SegueixApp.features.likes;
 5. **Cache del SW:** si afegeixes un script nou a index.html, considera si cal afegir-lo al precache de sw.js
 6. **localStorage:** les claus amb prefix `catube_` són de l'app. `user_liked_videos` és legacy i es fusiona amb `catube_liked_videos`
 7. **No hi ha build step** — els fitxers JS es serveixen tal qual. Qualsevol error de sintaxi trenca l'app sencera
+
 
 

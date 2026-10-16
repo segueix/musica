@@ -113,8 +113,9 @@ describe('feed intel·ligent', () => {
     });
 
     it('carrega i precacheja el nou mòdul', () => {
-        expect(indexSource).toContain('js/features/smart-feed.js?v=20260924-smart-feed-v1');
+        expect(indexSource).toMatch(/src="js\/features\/smart-feed\.js\?v=[^"]+"/);
         expect(swSource).toContain("'./js/features/smart-feed.js'");
         expect(swSource).toMatch(/const CACHE_VERSION = '[a-z0-9_-]+'/i);
     });
 });
+

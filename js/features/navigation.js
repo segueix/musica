@@ -55,7 +55,7 @@
         if (document.getElementById?.('segueixTVFeatureScript')) return;
         const script = document.createElement('script');
         script.id = 'segueixTVFeatureScript';
-        script.src = '/js/features/segueix-tv.js?v=20260919-segueix-tv-label-final-1';
+        script.src = '/js/features/segueix-tv.js?v=20261016-json-1';
         script.defer = true;
         document.head.appendChild(script);
     }
@@ -254,3 +254,4 @@
         showFollow
     };
 })(window);
+

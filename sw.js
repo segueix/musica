@@ -16,7 +16,7 @@
 // migrant els clients automàticament.
 
 // === AUTO-GENERAT per scripts/actualitzar_versio_sw.js — NO EDITAR MANUALMENT ===
-const CACHE_VERSION = '3c86d895ffb2';
+const CACHE_VERSION = '16fa24fa8512';
 const STATIC_ASSETS = [
     './',
     './index.html',
@@ -24,7 +24,6 @@ const STATIC_ASSETS = [
     './img/icon-192.png',
     './css/styles.css',
     './css/portada.css',
-    './css/google-drive-sync.css',
     './js/config.js',
     './js/song-title.js',
     './js/music-categories.js',
@@ -37,9 +36,7 @@ const STATIC_ASSETS = [
     './js/utils/storage.js',
     './js/utils/id-codecs.js',
     './js/utils/share-codecs.js',
-    './js/google-drive-config.js',
     './js/utils/music-data.js',
-    './js/utils/drive-sync-model.js',
     './js/utils/share-card.js',
     './js/utils/qr-share.js',
     './js/utils/config-feedback.js',
@@ -76,11 +73,7 @@ const STATIC_ASSETS = [
     './js/features/artist-map.js',
     './js/features/affinity.js',
     './js/features/shared-playlists.js',
-    './js/features/config-sync.js',
-    './js/features/google-drive-sync.js',
-    './js/features/analytics.js',
-    './js/features/analytics-pdf.js',
-    './js/features/analytics-admin.js',
+    './js/features/config-backup.js',
     './js/app.js',
     './js/features/tv-learning.js',
     './js/features/smart-feed.js',
@@ -267,3 +260,4 @@ async function staleWhileRevalidate(request, cacheName, event) {
     const network = await networkPromise;
     return network || Response.error();
 }
+
