@@ -24,6 +24,9 @@
     --pt-radius: 14px;
     --pt-radius-lg: 16px;
     --pt-radius-pill: 999px; /* xips de categoria i botons amb text (forma de càpsula) */
+    /* Caràtules amb marc blanc (fitxa d'artista, vista d'un estil, artistes, «Per afinitat»): el mínim arrodoniment que
+       es nota (2026-10-16). Amb el marc de 2 px, la imatge queda amb uns 6 px. */
+    --pt-radius-cover: 8px;
 
     --pt-display: 'Fraunces', 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
     --pt-nav-h: 60px; /* navegació inferior (mòbil) */
@@ -4072,6 +4075,7 @@ body #channelPage .ap-top :is(.channel-back-btn, .channel-profile-share-btn, .ap
     position: relative;
     min-width: 0;
     aspect-ratio: 1;
+    border-radius: var(--pt-radius-cover);
     container-type: inline-size;
 }
 
@@ -4085,7 +4089,7 @@ body #channelPage .ap-top :is(.channel-back-btn, .channel-profile-share-btn, .ap
     overflow: hidden;
     /* El marc blanc fi, a totes les caràtules */
     border: 2px solid #fff;
-    border-radius: 2px;
+    border-radius: var(--pt-radius-cover);
     background: var(--pt-surface-2);
     color: #fff;
     font: inherit;
@@ -8385,7 +8389,7 @@ body.am-full-open {
     aspect-ratio: 4 / 5;
     overflow: hidden;
     border: 2px solid #fff;
-    border-radius: 2px;
+    border-radius: var(--pt-radius-cover);
     background: var(--pt-surface-2);
     color: #fff;
 }
@@ -8705,7 +8709,7 @@ body.am-full-open {
     padding: 0;
     overflow: hidden;
     border: 2px solid #fff;
-    border-radius: 2px;
+    border-radius: var(--pt-radius-cover);
     background: var(--pt-surface-2);
     color: #fff;
     text-align: left;
@@ -8872,7 +8876,7 @@ body #followPage .follow-card .follow-toggle-btn.is-followed {
     padding: 0;
     overflow: hidden;
     border: 2px solid #fff;
-    border-radius: 2px;
+    border-radius: var(--pt-radius-cover);
     background: var(--pt-surface-2);
     box-shadow: none;
 }
@@ -9038,7 +9042,7 @@ body #followPage .follow-card .follow-toggle-btn.is-followed {
     padding: 0;
     overflow: hidden;
     border: 2px solid #fff;
-    border-radius: 2px;
+    border-radius: var(--pt-radius-cover);
     background: var(--pt-surface-2);
     color: #fff;
     container-type: inline-size;

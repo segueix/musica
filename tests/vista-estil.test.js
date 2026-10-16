@@ -11,6 +11,23 @@ const swList = fs.readFileSync('scripts/actualitzar_versio_sw.js', 'utf8');
 const css = fs.readFileSync('css/portada.css', 'utf8');
 const block = css.slice(css.indexOf("/* ---------- Vista d'un estil (Pop, Rock…)"));
 
+describe('caràtules amb marc blanc: cantonades', () => {
+    it('totes fan servir el mateix arrodoniment, el mínim que es nota (8 px)', () => {
+        expect(css).toMatch(/--pt-radius-cover: 8px;/);
+        for (const selector of [
+            '#channelPage .ap-card {',
+            '#channelPage .ap-card__art {',
+            '\n.af-card {',
+            '#followPage .follow-card {',
+            '#homePage.is-style-view .hero {',
+            '#homePage.is-style-view #videosGrid .video-card {',
+        ]) {
+            const rule = css.slice(css.indexOf(selector), css.indexOf('}', css.indexOf(selector)));
+            expect(rule, selector).toMatch(/border-radius: var\(--pt-radius-cover\);/);
+        }
+    });
+});
+
 describe('vista d’un estil', () => {
     it('no carrega «Música TV» (segueix-tv.js, herència de Segueix youtubers)', () => {
         expect(navigation).not.toMatch(/segueix-tv\.js/);
