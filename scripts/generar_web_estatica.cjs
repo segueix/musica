@@ -157,7 +157,7 @@ ${schema ? `<script type="application/ld+json">${json(schema)}</script>` : ''}</
             fs.cpSync(path.join(root, folder), path.join(staging, folder), { recursive: true,
                 filter: source => !source.endsWith('.b64') });
         }
-        for (const file of ['index.html', 'manifest.json', 'privacitat.html', 'info-youtubers.html', 'sw.js']) {
+        for (const file of ['index.html', 'manifest.json', 'privacitat.html', 'info-youtubers.html', 'admin-musica.html', 'revisio-artistes.html', 'revisio-cancons.html', 'revisio-noms-artistes.html', 'sw.js']) {
             if (fs.existsSync(path.join(root, file))) fs.copyFileSync(path.join(root, file), path.join(staging, file));
         }
         let index = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
@@ -238,6 +238,7 @@ ${schema ? `<script type="application/ld+json">${json(schema)}</script>` : ''}</
             aliases(old + '/index.html', target, 'Segueix Música'); routes.sections[old] = target;
         }
         write('data/static-routes.json', JSON.stringify(routes));
+        write('data/video-channels.json', JSON.stringify(Object.fromEntries(songs.map(song => [song.id, song.channelId]))));
         write('404.html', layout({ title: 'Aquesta pàgina no està disponible', description: 'Pots tornar a Música o explorar els artistes.', canonical: base, noindex: true,
             body: `<div data-static-recovery data-base="${basePath}"><a class="button" href="${basePath}">Torna a Música</a></div>` }));
 

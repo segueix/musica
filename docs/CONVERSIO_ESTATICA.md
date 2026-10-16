@@ -6,7 +6,7 @@ Petició del 16/10/2026. La retirada de Drive i analítiques és la primera fase
 
 - L’app és HTML/CSS/JavaScript i llegeix el catàleg, els arxius i la cerca des de JSON. El workflow actual de GitHub Pages ja exclou `functions` de l’artefacte.
 - El mapa és propi (`artist-map.js`) i utilitza dades locals (`mapa-base.json`, `origens-artistes.json`, `proximitat-musical.json`). No cal substituir-lo per un servei de mapes.
-- Encara existeixen middleware, rutes SEO d’artistes, vídeos i categories, sitemaps dinàmics i `/api/music-admin`. Si es connecta el repositori directament a Cloudflare, cal retirar o traslladar `functions` fora de l’arrel detectada; excloure-la només de la carpeta de sortida no és suficient.
+- Les fases 2 i 3 substitueixen les rutes i sitemaps dinàmics per fitxers generats i retiren les 38 Functions de l’arrel, incloent middleware i `/api/music-admin`. Cal completar la integració del paquet a la fase 4 abans de desplegar aquesta proposta.
 - Les analítiques de Música apuntaven a `https://segueix.cat/api/music-analytics`, fora d’aquest repositori. Aquesta fase retira el client i la còpia local de l’API; no modifica el desplegament ni les dades històriques d’aquell altre projecte.
 
 ## Fases
@@ -15,7 +15,7 @@ Petició del 16/10/2026. La retirada de Drive i analítiques és la primera fase
 | --- | --- | --- |
 | 1. Dades personals locals | Retirar Drive/OAuth, temporitzadors i analítiques. Oferir Descarregar .json i Importar .json. Actualitzar privacitat i memòria cau. | Implementada en aquesta proposta; proves de còpia entre dos emmagatzematges, validació, cancel·lació, falta d’espai i actualització de vista. |
 | 2. Rutes i SEO estàtics | Generar abans de publicar les pàgines d’artistes, cançons i estils, metadades socials, canònics i sitemaps. Reutilitzar el generador de `compartir/`. Adaptar enllaços, rutes antigues, 404 i arrel de l’app al domini final. | Implementada en aquesta proposta: HTML i sitemaps generats localment. Pendent integrar-ne la publicació a la fase 4. |
-| 3. Dependències del servidor | Retirar middleware i Functions després de substituir-ne les rutes. Adaptar l’administració musical perquè exporti canvis per aplicar-los al repositori. Revisar els camins alternatius de YouTube API al client. | Cap funció de la web pública necessita `/api/` propi, KV ni credencials al navegador. El catàleg públic prové només dels JSON generats. |
+| 3. Dependències del servidor | Retirar middleware i Functions després de substituir-ne les rutes. Adaptar l’administració musical perquè exporti canvis per aplicar-los al repositori. Revisar els camins alternatius de YouTube API al client. | Implementada en aquesta proposta: sense Functions, panell local amb JSON i client que consulta només el catàleg publicat. |
 | 4. Actualització de dades i paquet | Conservar la ingesta de YouTube a GitHub, la passada diària de les 20 h Europe/Madrid i els torns 1/3/7 dies. Integrar generació estàtica, Service Worker i artefacte en una sola publicació. | Un catàleg nou produeix una publicació coherent sense cadenes addicionals d’Actions ni consultes a YouTube per visitant. |
 | 5. Validació i rendiment | Provar cerca, artistes/discos, mapa, ràdios, llistes, reproducció, JSON, enllaços compartits i actualització d’una PWA antiga. Mesurar càrrega mòbil i corregir coll d’ampolla amb dades. | Web funcional sense backend propi; dades fresques i absència de peticions retirades. No es promet una puntuació PageSpeed sense mesurar-la. |
 | 6. Cloudflare | Preparar un desplegament de prova amb l’artefacte estàtic; configurar domini, redireccions i memòria cau; comprovar que no es desplegui cap Function/Worker. Fer el canvi públic després de validar-lo. | Mateix funcionament al domini final i pla de retorn a la versió anterior. |
@@ -47,12 +47,30 @@ La sortida per defecte és `_site/`, exclosa de Git. El domini per defecte és `
 
 El catàleg comprovat produeix 433 artistes (654 canals), 14.489 cançons, 15 estils i 2.561 pàgines compartides de ràdio. Els ocults, canals retirats, Shorts i vídeos fora de les restriccions editorials queden fora de les pàgines generades. Els recomptes canviaran amb les dades.
 
-La sortida exclou `functions` i `scripts`. Les Functions encara existeixen al repositori fins a la fase 3; aquesta fase no canvia els workflows ni publica el paquet. La integració amb la ingesta i el desplegament correspon a la fase 4.
+La sortida exclou `scripts` i el repositori ja no conté `functions`. Aquesta proposta no canvia els workflows ni publica el paquet. La integració amb la ingesta i el desplegament correspon a la fase 4.
+
+## Administració i catàleg sense servidor (fase 3)
+
+`admin-musica.html` és un editor públic de dades públiques: les modificacions són esborranys del navegador, sense capacitat d’escriure a GitHub. Ofereix descarregar i importar `canvis-artistes-musica.json` (`product: segueix-musica-admin`, `version: 1`), separat de la còpia personal de Música. La importació valida abans de demanar confirmació i no substitueix la vista si falla el desat local. Els esborranys del panell antic es conserven i es poden descarregar; no s’apliquen automàticament sobre una base nova.
+
+El fitxer conté la fitxa original i només els camps editorials canviats, o una eliminació explícita. El model compartit `js/admin-changes.js` valida categories, estat, activació i canals. Una fitxa que ha canviat al repositori, una identitat ambigua o una operació repetida fan fallar tot el lot. Els canvis independents d’altres artistes es conserven; els gèneres editats porten `genre:manual` perquè l’enriquiment no els sobreescrigui.
+
+Per aplicar un fitxer revisat en un checkout actualitzat:
+
+```sh
+node scripts/aplicar_canvis_admin.cjs canvis-artistes-musica.json --dry-run
+node scripts/aplicar_canvis_admin.cjs canvis-artistes-musica.json --apply
+```
+
+Sense cap opció, només comprova. `--apply` escriu `data/artistes-musica.json` després de validar el lot complet; no fa commit, no publica ni dispara Actions o consultes de YouTube. Cal revisar el diff i integrar-lo pel procés habitual. Aprovar o eliminar aquí afecta la base editorial; el catàleg publicat canvia quan el procés de dades el regenera.
+
+El client manté el nom intern `YouTubeAPI` per compatibilitat, però s’han retirat els endpoints de YouTube Data API, la configuració de claus i els mètodes remots obsolets. Feed, historial i arxius locals resolen les cançons; `data/video-channels.json`, generat durant el build, permet localitzar una cançó compartida que només sigui a l’arxiu sense consultar tots els canals. Ocults, Shorts i canals retirats no es resolen com a fitxes públiques. Les URLs de reproducció dins l’app conserven `?v=` en qualsevol domini. La reproducció continua utilitzant el reproductor de YouTube; la ingesta de dades als scripts conserva les seves credencials i el calendari habitual.
 
 ## Verificació
 
 - 64 proves dirigides superades: JSON, vista en viu, favorits, senyals locals, recuperació de reproducció, feed i exclusió del progrés local de les còpies.
 - Fase 2: 89 proves dirigides superades en 12 fitxers, incloent generació estàtica, pàgines compartides, URLs del reproductor i regressions de la fase 1. Comprovats domini arrel/subcarpeta, escapament, filtres editorials, canònics, sitemaps, reconstrucció i conservació de la sortida davant errors. Generació completa del catàleg local superada.
+- Fase 3: 112 proves dirigides superades en 16 fitxers. Inclou JSON editorial, conflictes i homònims, aplicació local, cancel·lació/falta d’espai, catàleg sense API, URLs recarregables i regressions de les fases anteriors. Generació completa i presència del panell i les seves dades comprovades. Les proves de les Functions retirades es substitueixen per les de generació i runtime estàtics.
 - `npm run lint`: cinc errors preexistents, reproduïts abans del canvi, a `js/data.js` i `js/features/home-sections.js`; cap error nou.
 - Dues proves d’integració antigues fallen també a la base: una exigeix un hash de SW literal de setembre i l’altra confon una referència inline a user-categories amb l’ordre dels scripts. No s’han modificat aquests casos aliens a la conversió.
 - No s’ha executat la suite completa, ni la reproducció real de YouTube, ni un desplegament a Cloudflare. La comprovació visual al navegador queda pendent: no hi ha Chromium disponible i la descàrrega ha fallat. Les proves del runtime comproven clic, segon inicial, recuperació de rutes i rebuig de redireccions externes.

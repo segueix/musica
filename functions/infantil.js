@@ -1,1 +1,0 @@
-import { handleSeoSectionRequest } from './_lib/section-seo.js';\n\nexport function onRequest(context) {\n  return handleSeoSectionRequest(context, 'infantil');\n}\n

@@ -1677,3 +1677,12 @@ Es conserva la recuperació davant falta d’espai i l’aprenentatge local de l
 Es filtren ocults, canals fora del feed, Shorts i restriccions editorials. Els canals oficial/Topic només s’agrupen mitjançant la identitat editorial; els homònims no es fusionen. El camp `active` de candidats no representa l’estat del catàleg públic. La 404 recupera rutes antigues de vídeo amb el mapa local; manté errors per als IDs desconeguts. El reproductor de les fitxes només carrega YouTube després d’acceptar-lo. El client conserva URLs recarregables en mode estàtic i resol recursos/enllaços a partir de la base de l’app.
 
 89 proves dirigides superades en 12 fitxers. Generació amb el catàleg disponible: 433 artistes, 654 canals, 14.489 cançons, 15 estils i 2.561 ràdios compartides. Lint: mateixos cinc errors previs; cap error nou. No es modifica la ingesta, el calendari ni els workflows. La retirada de Functions i la integració del paquet en la publicació continuen a les fases 3 i 4.
+
+
+## 2026-10-16 — Fase 3: retirada de Functions i administració local
+
+Es retiren les 38 Functions (middleware, SEO, sitemaps i administració). Les seves rutes es generen abans de publicar. El panell deixa de demanar token o escriure a GitHub: desa un esborrany local i descarrega/importa JSON editorial amb `admin-changes.js`. `aplicar_canvis_admin.cjs` valida per defecte i només escriu amb `--apply`. El lot falla complet si una fitxa ha canviat, és ambigua o es repeteix; conserva altres canvis del repositori i marca `genre:manual`. Els esborranys antics es mantenen descarregables.
+
+S’eliminen les consultes i claus de YouTube Data API al client. El nom intern YouTubeAPI continua per compatibilitat: resol des del feed, historial i arxiu publicats. El build genera `data/video-channels.json` per localitzar una cançó només d’arxiu, i copia el panell i les pàgines de revisió. L’app conserva `?v=` també al domini propi, sense escriure rutes que necessitin servidor. No canvien la ingesta, la quota ni els calendaris.
+
+112 proves dirigides superades en 16 fitxers, amb conflictes/homònims, JSON, desat local fallit, consultes exclusivament a fitxers, enllaços i regressions de les fases 1–2. Generació completa del catàleg comprovada. Lint: cinc errors preexistents, cap error nou. Les proves dels handlers retirats s’han substituït per les de generació i runtime estàtics. No s’ha publicat; la integració del paquet al workflow continua a la fase 4. La comprovació visual i la reproducció real de YouTube continuen pendents.
