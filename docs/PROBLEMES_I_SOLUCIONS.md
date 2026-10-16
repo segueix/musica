@@ -1,3 +1,11 @@
+## [2026-10-16] - Descobreix: el mapa mostra de sortida els artistes de la teva zona
+
+**Petició:** a la dreta del mapa, de sortida, els grups de la zona desada a Inici; en triar un lloc o una zona, els d'aquell lloc o zona.
+
+**Solució Implementada:** `homeModel(points, origin)` (pur, `artist-map.js`) ordena els llocs del mapa per distància a la zona desada (`nearbyRadio.savedPlace()`, ara exportat) i en treu els 12 primers artistes sense repetir. `panelHtml(null, home)` els pinta amb «Ràdio d'aquí» quan no hi ha cap lloc ni zona triats (també després de la goma).
+
+**Trampa:** `show()` no repinta el mapa si els artistes de l'app no han canviat (per no perdre el zoom). Si l'usuari canvia la zona a Inici i torna a Descobreix, `refreshHome()` només refà el panell.
+
 ## [2026-10-16] - Descobreix: sense marc blanc als artistes de «Per afinitat» en repòs
 
 **Petició:** treure el marc blanc dels artistes de Descobreix i deixar-lo només al que té el cursor.

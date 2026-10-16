@@ -292,7 +292,49 @@
             .join('');
     }
 
-    function panelHtml(point) {
+    // ---------- La teva zona (pur) ----------
+
+    const HOME_LIMIT = 12;
+    function distanceKm(a, b) {
+        if (!validPoint(a) || !validPoint(b)) return Infinity;
+        const rad = n => (n * Math.PI) / 180;
+        const h =
+            Math.sin(rad(b.latitude - a.latitude) / 2) ** 2 +
+            Math.cos(rad(a.latitude)) * Math.cos(rad(b.latitude)) * Math.sin(rad(b.longitude - a.longitude) / 2) ** 2;
+        return 6371 * 2 * Math.asin(Math.sqrt(Math.min(1, h)));
+    }
+    const kmLabel = km => (km < 1 ? '< 1 km' : `${Math.round(km)} km`);
+
+    // Els artistes més propers a la zona desada a Inici («A prop teu»): els llocs del mapa per distància i, dins de
+    // cada lloc, per nom; cada artista una vegada. Sense zona desada, null.
+    function homeModel(points, origin, limit = HOME_LIMIT) {
+        if (!origin?.name || !validPoint(origin.coordinates)) return null;
+        const seen = new Set();
+        const artists = [];
+        (Array.isArray(points) ? points : [])
+            .map(point => ({ point, km: distanceKm(origin.coordinates, point.coordinates) }))
+            .filter(item => Number.isFinite(item.km))
+            .sort((a, b) => a.km - b.km || a.point.name.localeCompare(b.point.name, 'ca'))
+            .forEach(({ point, km }) =>
+                point.artists.forEach(artist => {
+                    if (artists.length >= limit || seen.has(artist.artistId)) return;
+                    seen.add(artist.artistId);
+                    artists.push({ ...artist, km, place: `${point.name} · ${kmLabel(km)}` });
+                })
+            );
+        return artists.length ? { name: origin.name, artists } : null;
+    }
+
+    function homePanelHtml(home) {
+        return `<div class="am-panel__head"><div><p class="am-panel__eyebrow">La teva zona</p><h3>A prop de ${esc(home.name)}</h3>
+                <p>${home.artists.length === 1 ? 'L’artista més proper' : `Els ${home.artists.length} artistes més propers`}</p></div>
+                <button type="button" class="am-radio" data-am-home-radio>Ràdio d'aquí</button></div>
+            <ul class="am-artists">${artistItems(home.artists, true)}</ul>
+            <p class="am-panel__hint am-panel__hint--after">Toca un punt del mapa o <strong>dibuixa una zona</strong> per veure’n uns altres.</p>`;
+    }
+
+    function panelHtml(point, home = null) {
+        if (!point && home) return homePanelHtml(home);
         if (!point) {
             return `<p class="am-panel__hint">Toca un punt del mapa per veure els artistes d'aquell lloc i escoltar-ne la ràdio, o <strong>dibuixa una zona</strong> i sonarà la seva música.</p>`;
         }
@@ -304,15 +346,15 @@
             <ul class="am-artists">${artistItems(point.artists)}</ul>`;
     }
 
-    function zonePanelHtml(zone) {
-        if (!zone?.artists.length) return panelHtml(null);
+    function zonePanelHtml(zone, home = null) {
+        if (!zone?.artists.length) return panelHtml(null, home);
         return `<div class="am-panel__head"><div><p class="am-panel__eyebrow">La teva zona</p><h3>${esc(zone.name)}</h3>
                 <p>${placesLabel(zone.places.length)} · ${artistsLabel(zone.artists.length)}</p></div>
                 <div class="am-panel__actions"><button type="button" class="am-radio" data-am-zone-play>${ICON.play}<span>Escolta la zona</span></button></div></div>
             <ul class="am-artists">${artistItems(zone.artists, true)}</ul>`;
     }
 
-    function html(base, model, { selectedId = '', style = '', zone = null } = {}) {
+    function html(base, model, { selectedId = '', style = '', zone = null, home = null } = {}) {
         const selected = model.points.find(point => point.id === selectedId) || null;
         const territories = model.territories.map(t => `<li><strong>${t.count}</strong> ${esc(t.name)}</li>`).join('');
         const styleChips = [
@@ -383,7 +425,7 @@
                     </p>
                     <div class="am-zoom"><button type="button" data-am-zoom="1" aria-label="Apropa">+</button><button type="button" data-am-zoom="-1" aria-label="Allunya">−</button></div>
                 </div>
-                <div class="am-panel" aria-live="polite">${zone && !selected ? zonePanelHtml(zone) : panelHtml(selected)}</div>
+                <div class="am-panel" aria-live="polite">${zone && !selected ? zonePanelHtml(zone, home) : panelHtml(selected, home)}</div>
             </div>
             ${outside}
             <details class="am-list"><summary>Llista per territoris</summary>${list}</details>`;
@@ -472,10 +514,12 @@
         });
         if (state.selectedId && !state.model.points.some(p => p.id === state.selectedId)) state.selectedId = '';
         if (state.zone) state.zone = zoneModel(state.model.points, state.zone.polygon);
+        state.home = homeModel(state.model.points, homeOrigin());
         container.innerHTML = html(state.data.base, state.model, {
             selectedId: state.selectedId,
             style: state.style,
             zone: state.zone,
+            home: state.home,
         });
         syncModes();
         applyView();
@@ -540,7 +584,11 @@
             .forEach(dot => dot.classList.toggle('is-active', dot.dataset.amPlace === state.selectedId));
         const panel = state.container.querySelector('.am-panel');
         if (panel)
-            panel.innerHTML = point ? panelHtml(point) : state.zone ? zonePanelHtml(state.zone) : panelHtml(null);
+            panel.innerHTML = point
+                ? panelHtml(point)
+                : state.zone
+                  ? zonePanelHtml(state.zone, state.home)
+                  : panelHtml(null, state.home);
         if (point && focusPanel && !state.full) panel?.scrollIntoView?.({ block: 'nearest', behavior: 'smooth' });
         syncModes();
     }
@@ -651,7 +699,7 @@
         const lasso = state.container.querySelector('.am-lasso');
         if (lasso) lasso.setAttribute('d', polygonPath(zone.polygon));
         const panel = state.container.querySelector('.am-panel');
-        if (panel) panel.innerHTML = zonePanelHtml(zone);
+        if (panel) panel.innerHTML = zonePanelHtml(zone, state.home);
         syncModes();
     }
 
@@ -664,8 +712,33 @@
             .forEach(dot => dot.classList.remove('is-in-zone', 'is-active'));
         state.container.querySelector('.am-lasso')?.setAttribute('d', '');
         const panel = state.container.querySelector('.am-panel');
-        if (panel) panel.innerHTML = panelHtml(null);
+        if (panel) panel.innerHTML = panelHtml(null, state.home);
         syncModes();
+    }
+
+    // La zona desada a Inici («A prop teu»); sense, cap
+    function homeOrigin() {
+        return app.features.nearbyRadio?.savedPlace?.() || null;
+    }
+
+    // En tornar a Descobreix la zona pot haver canviat a Inici: es refà el panell sense repintar el mapa (no es perd
+    // el zoom) si no hi ha cap lloc ni zona triats
+    function refreshHome() {
+        if (!state.model) return;
+        state.home = homeModel(state.model.points, homeOrigin());
+        if (state.selectedId || state.zone) return;
+        const panel = state.container?.querySelector('.am-panel');
+        if (panel) panel.innerHTML = panelHtml(null, state.home);
+    }
+
+    function openHomeRadio() {
+        const origin = homeOrigin();
+        if (!origin) return;
+        setFull(false);
+        rememberReturn();
+        Promise.resolve(app.features.nearbyRadio?.openPlace?.(origin)).then(ok => {
+            if (!ok) toast('No s’ha pogut obrir la ràdio de la teva zona.');
+        });
     }
 
     // Traç a mà alçada: punts de l'SVG; en acabar es tanca i es busquen els artistes de dins
@@ -744,6 +817,7 @@
         if (target.closest?.('[data-am-draw]')) return setDrawing(!state.drawing);
         if (target.closest?.('[data-am-zone-play]')) return state.zone && startZoneRadio(state.zone);
         if (target.closest?.('[data-am-clear]')) return clearSelection();
+        if (target.closest?.('[data-am-home-radio]')) return openHomeRadio();
         const style = target.closest?.('[data-am-style]');
         if (style) {
             state.style = style.dataset.amStyle || '';
@@ -973,7 +1047,7 @@
             if (container.classList.contains('hidden')) return;
             // Es repinta només si han canviat els artistes de l'app (feed nou, canals amagats): no es perd el zoom
             const signature = `${artistGroups().length}|${hiddenChannels().length}`;
-            if (state.signature === signature && container.querySelector('.am-svg')) return;
+            if (state.signature === signature && container.querySelector('.am-svg')) return refreshHome();
             state.signature = signature;
             state.songs = null; // les cançons de la zona es tornen a llegir amb el feed nou
             paint();
@@ -1002,6 +1076,7 @@
         buildModel,
         html,
         panelHtml,
+        homeModel,
         zonePanelHtml,
         radiusOf,
         pointInPolygon,

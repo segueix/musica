@@ -238,3 +238,61 @@ describe('Música d’arreu: mapa dels artistes', () => {
         expect(out).toContain('data-am-zoom="-1"');
     });
 });
+
+describe('«Música d’arreu»: de sortida, els artistes de la teva zona', () => {
+    const artist = (id, name) => ({ artistId: id, name, channelId: `UC${id}` });
+    const points = [
+        {
+            id: 'girona',
+            name: 'Girona',
+            coordinates: { latitude: 41.98, longitude: 2.82 },
+            artists: [artist('c', 'Cc')],
+        },
+        {
+            id: 'vic',
+            name: 'Vic',
+            coordinates: { latitude: 41.93, longitude: 2.254 },
+            artists: [artist('a', 'Aa'), artist('b', 'Bb')],
+        },
+        {
+            id: 'manlleu',
+            name: 'Manlleu',
+            coordinates: { latitude: 42.0, longitude: 2.28 },
+            artists: [artist('a', 'Aa'), artist('d', 'Dd')],
+        },
+    ];
+    const vic = { name: 'Vic', territory: 'Catalunya', coordinates: { latitude: 41.93, longitude: 2.254 } };
+
+    it('ordena per distància a la zona desada, sense repetir cap artista', () => {
+        const home = feature.homeModel(points, vic);
+        expect(home.name).toBe('Vic');
+        expect(home.artists.map(a => a.artistId)).toEqual(['a', 'b', 'd', 'c']);
+        expect(home.artists[0].place).toBe('Vic · < 1 km');
+        expect(home.artists[2].place).toMatch(/^Manlleu · \d+ km$/);
+        expect(feature.homeModel(points, vic, 2).artists).toHaveLength(2);
+    });
+
+    it('sense zona desada no hi ha res i el panell torna a l’ajuda', () => {
+        expect(feature.homeModel(points, null)).toBe(null);
+        expect(feature.homeModel(points, { name: 'X', coordinates: {} })).toBe(null);
+        expect(feature.panelHtml(null, null)).toContain('Toca un punt');
+    });
+
+    it('el panell sense cap lloc triat mostra la zona amb la seva ràdio; un lloc triat mana', () => {
+        const home = feature.homeModel(points, vic);
+        const out = feature.panelHtml(null, home);
+        expect(out).toContain('La teva zona');
+        expect(out).toContain('A prop de Vic');
+        expect(out).toContain('data-am-home-radio');
+        expect(out).toContain('data-am-artist="UCb"');
+        expect(feature.panelHtml(points[0], home)).toContain('data-am-radio="girona"');
+        expect(feature.panelHtml(points[0], home)).not.toContain('La teva zona');
+    });
+
+    it('la zona surt de nearbyRadio.savedPlace() i es refà en tornar a Descobreix', () => {
+        const source = readFileSync('js/features/artist-map.js', 'utf8');
+        expect(source).toMatch(/app\.features\.nearbyRadio\?\.savedPlace\?\.\(\)/);
+        expect(source).toMatch(/container\.querySelector\('\.am-svg'\)\) return refreshHome\(\);/);
+        expect(readFileSync('js/features/nearby-radio.js', 'utf8')).toMatch(/nearbyRadio = \{ savedPlace,/);
+    });
+});

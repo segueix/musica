@@ -428,5 +428,5 @@
         const button = event.target.closest?.('[data-near-open]');
         if (button) open(button, button.dataset.nearOpen || '');
     });
-    app.features.nearbyRadio = { distance, artistLocation, buildRows, remotePlace, rankByType, TYPES, cardHtml, open, quickPlay, share, openShared, openPlace, placeFromPayload };
+    app.features.nearbyRadio = { savedPlace, distance, artistLocation, buildRows, remotePlace, rankByType, TYPES, cardHtml, open, quickPlay, share, openShared, openPlace, placeFromPayload };
 })(window);

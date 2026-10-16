@@ -10795,3 +10795,9 @@ body .mq .mq-item:not(.is-active):focus-within .mq-cover {
         var(--pl-add-4);
     color: var(--pt-accent);
 }
+
+/* Descobreix, mapa: de sortida, els artistes de la teva zona (la d'Inici) al panell de la dreta (2026-10-16) */
+.am-panel__hint--after {
+    margin-top: 14px;
+    font-size: 0.875rem;
+}
