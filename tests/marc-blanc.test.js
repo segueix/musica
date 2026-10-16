@@ -31,10 +31,20 @@ describe('marc blanc', () => {
         );
     });
 
-    it('les protagonistes conserven el marc fix (#1, la que sona, «Per afinitat»)', () => {
+    it('les protagonistes conserven el marc fix (#1, la que sona)', () => {
         const rest = block.slice(0, block.indexOf('}'));
         expect(rest).not.toContain('#apBest');
         expect(rest).not.toContain('.af-card');
         expect(rest).toContain(':not(.is-active)');
+    });
+
+    it('«Per afinitat» (Descobreix): sense marc en repòs, només amb el cursor o el focus', () => {
+        const css = fs.readFileSync('css/portada.css', 'utf8');
+        const af = css.slice(css.indexOf('/* Descobreix, «Per afinitat» (2026-10-16): el marc blanc'));
+        expect(af).toMatch(/\.af-card \{[^}]*border-color: transparent;[^}]*background-clip: padding-box;/);
+        expect(af).toMatch(/\.af-card:focus-within \{\s*border-color: #fff;/);
+        expect(af).toMatch(
+            /@media \(hover: hover\) and \(pointer: fine\) \{[\s\S]*?\.af-card:hover \{\s*border-color: #fff;/
+        );
     });
 });

@@ -10705,3 +10705,29 @@ body .mq .mq-item:not(.is-active):focus-within .mq-cover {
     background: rgba(20, 22, 21, 0.72);
     color: #fff;
 }
+
+/* Descobreix, «Per afinitat» (2026-10-16): el marc blanc també és només un senyal. En repòs les targetes no en
+   porten; apareix a la que té el cursor al damunt o el focus del teclat. El marc hi és, transparent, perquè res
+   no es mogui quan apareix. */
+.af-card {
+    border-color: transparent;
+    background-clip: padding-box;
+    transition: border-color 0.18s ease;
+}
+
+.af-card:focus-within {
+    border-color: #fff;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .af-card {
+        transition:
+            transform 0.18s ease,
+            box-shadow 0.18s ease,
+            border-color 0.18s ease;
+    }
+
+    .af-card:hover {
+        border-color: #fff;
+    }
+}

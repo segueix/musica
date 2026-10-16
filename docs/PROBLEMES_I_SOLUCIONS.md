@@ -1,3 +1,9 @@
+## [2026-10-16] - Descobreix: sense marc blanc als artistes de «Per afinitat» en repòs
+
+**Petició:** treure el marc blanc dels artistes de Descobreix i deixar-lo només al que té el cursor.
+
+**Solució Implementada:** bloc «Descobreix, «Per afinitat»…» al final de `portada.css`: `.af-card` amb `border-color: transparent` i `background-clip: padding-box` (el marc hi és però no es veu, i res no es mou quan apareix); `#fff` en passar-hi el ratolí (`@media (hover: hover) and (pointer: fine)`) i amb `:focus-within`. Proves: `tests/marc-blanc.test.js` i `node tests/browser/verificar-afinitat.js` (comprova que només la targeta amb el cursor té el marc).
+
 ## [2026-10-16] - «La teva música» amb el llenguatge de caràtules
 
 **Petició:** harmonitzar «La teva música» amb la resta de l'app.
