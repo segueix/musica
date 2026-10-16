@@ -127,11 +127,8 @@ async function check(browser, width, height) {
                 ok: items.every(el => {
                     const r = el.getBoundingClientRect();
                     const s = getComputedStyle(el);
-                    return (
-                        Math.abs(r.width - r.height) < 2 &&
-                        s.borderTopColor === 'rgb(255, 255, 255)' &&
-                        parseFloat(s.borderTopWidth) >= 2
-                    );
+                    // Sense marc blanc en repòs (2026-10-16): només en passar-hi el ratolí
+                    return Math.abs(r.width - r.height) < 2 && s.borderTopColor !== 'rgb(255, 255, 255)';
                 }),
             };
         };
@@ -178,7 +175,11 @@ async function check(browser, width, height) {
         ['quick', '«Torna-hi»'],
         ['lists', '«Les teves llistes»'],
     ]) {
-        ok(`${label}: ${name}: caràtules quadrades amb marc blanc`, info[key].n > 0 && info[key].ok, info[key]);
+        ok(
+            `${label}: ${name}: caràtules quadrades, sense marc blanc en repòs`,
+            info[key].n > 0 && info[key].ok,
+            info[key]
+        );
     }
     ok(
         `${label}: la imatge omple les caràtules i el text hi va a dins`,

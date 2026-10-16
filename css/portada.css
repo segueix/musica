@@ -10158,3 +10158,61 @@ body .mq .mq-item.is-active .mq-cover {
 body .mq .mq-item .mq-title {
     font-weight: 700;
 }
+
+/* ---------- El marc blanc com a senyal (2026-10-16) ----------
+   A les graelles i files (fitxa d'artista #2 en endavant, vista d'un estil, cerca, «Artistes i grups», Inici, «Les
+   teves llistes» i la cua de la ràdio) les caràtules NO porten el marc blanc en repòs: només la imatge amb les
+   cantonades `--pt-radius-cover` (el marc hi és però transparent, amb `background-clip: padding-box`, perquè res no
+   es mogui). El marc blanc apareix en passar-hi el ratolí (ordinador) o en enfocar-les amb el teclat: indica on ets.
+   Porten el marc fix només les protagonistes: «La més escoltada» (#apBest), la cançó que sona a la cua i les
+   targetes de «Per afinitat». */
+#channelPage .ap-grid .ap-card__art,
+:is(#homePage.is-style-view #videosGrid, #homePage .search-results .videos-grid) .video-card,
+:is(#followPage, .search-results) .follow-card,
+#homePage.is-portada :is(.pt-card, .pt-portrait, .pt-quick),
+#homePage.is-portada .pt-style:not(.pt-style--add):not(.pt-style--more),
+#homePlaylists .hp-item > .hp-card,
+body .mq .mq-item:not(.is-active) .mq-cover {
+    border-color: transparent;
+    background-clip: padding-box;
+    transition:
+        border-color 0.15s ease,
+        transform 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+/* En enfocar-les amb el teclat (a tots els aparells) */
+#channelPage .ap-grid .ap-card:focus-within .ap-card__art,
+:is(#homePage.is-style-view #videosGrid, #homePage .search-results .videos-grid) .video-card:focus-within,
+:is(#followPage, .search-results) .follow-card:is(:focus-visible, :focus-within),
+#homePage.is-portada :is(.pt-card, .pt-portrait, .pt-quick):focus-within,
+#homePage.is-portada .pt-style:not(.pt-style--add):not(.pt-style--more):focus-visible,
+#homePlaylists .hp-item:focus-within > .hp-card,
+body .mq .mq-item:not(.is-active):focus-within .mq-cover {
+    border-color: #fff;
+}
+
+/* En passar-hi el ratolí (ordinador) */
+@media (hover: hover) and (pointer: fine) {
+    #channelPage .ap-grid .ap-card:hover .ap-card__art,
+    :is(#homePage.is-style-view #videosGrid, #homePage .search-results .videos-grid) .video-card:hover,
+    :is(#followPage, .search-results) .follow-card:hover,
+    #homePage.is-portada :is(.pt-card, .pt-portrait, .pt-quick):hover,
+    #homePage.is-portada .pt-style:not(.pt-style--add):not(.pt-style--more):hover,
+    #homePlaylists .hp-item:hover > .hp-card,
+    body .mq .mq-item:not(.is-active):hover .mq-cover {
+        border-color: #fff;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #channelPage .ap-grid .ap-card__art,
+    :is(#homePage.is-style-view #videosGrid, #homePage .search-results .videos-grid) .video-card,
+    :is(#followPage, .search-results) .follow-card,
+    #homePage.is-portada :is(.pt-card, .pt-portrait, .pt-quick),
+    #homePage.is-portada .pt-style:not(.pt-style--add):not(.pt-style--more),
+    #homePlaylists .hp-item > .hp-card,
+    body .mq .mq-item:not(.is-active) .mq-cover {
+        transition: none;
+    }
+}

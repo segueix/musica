@@ -135,7 +135,8 @@ async function check(browser, width, height, label) {
             artistsBefore: !artists.classList.contains('hidden') && rect(artists).bottom <= rect(grid).top + 1,
             columns: new Set(cards.map(card => Math.round(rect(card).left))).size,
             square: cards.every(card => Math.abs(rect(card).width - rect(card).height) < 2),
-            framed: cards.every(card => getComputedStyle(card).borderTopColor === 'rgb(255, 255, 255)'),
+            // Sense marc blanc en repòs (2026-10-16): només en passar-hi el ratolí
+            framed: cards.every(card => getComputedStyle(card).borderTopColor !== 'rgb(255, 255, 255)'),
             fill: (() => {
                 const thumb = first.querySelector('.video-thumbnail img');
                 return Math.abs(rect(thumb).width - (rect(first).width - 4)) < 2;
@@ -161,7 +162,7 @@ async function check(browser, width, height, label) {
         info.columns === (width >= 1025 ? 4 : 1) && info.gap <= 6,
         [info.columns, info.gap]
     );
-    ok(`${label}: caràtules quadrades, plenes i amb el marc blanc`, info.square && info.framed && info.fill);
+    ok(`${label}: caràtules quadrades i plenes, sense marc blanc en repòs`, info.square && info.framed && info.fill);
     ok(`${label}: el títol a baix de la caràtula`, info.titleLow);
     ok(`${label}: la pàgina no es desborda`, info.pageWidth <= info.viewport, [info.pageWidth, info.viewport]);
     if (OUT) {
@@ -181,6 +182,8 @@ async function check(browser, width, height, label) {
         await page.waitForTimeout(350);
         const after = await page.$eval(sel, el => el.getBoundingClientRect().width);
         ok(`${label}: en passar-hi el ratolí, la caràtula s'amplia una mica`, after > before * 1.02, [before, after]);
+        const hoverFrame = await page.$eval(sel, el => getComputedStyle(el).borderTopColor);
+        ok(`${label}: en passar-hi el ratolí, apareix el marc blanc`, hoverFrame === 'rgb(255, 255, 255)', hoverFrame);
         await page.mouse.move(0, 0);
     }
     // Tocar una caràtula fa sonar la cançó

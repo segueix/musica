@@ -1,3 +1,11 @@
+## [2026-10-16] - El marc blanc com a senyal, no a totes les caràtules
+
+**Petició:** valorar si els marcs blancs valien la pena; l'usuari va acceptar la proposta d'alternar-los amb criteri.
+
+**Solució Implementada:** bloc «El marc blanc com a senyal» al final de `portada.css`: a les graelles i files el marc és transparent en repòs (`border-color: transparent` + `background-clip: padding-box`, perquè la mida no canviï) i blanc en passar-hi el ratolí (ordinador) o en enfocar-les; fix a `#apBest`, a la cançó que sona de la cua i a «Per afinitat».
+
+**Trampa:** sense `background-clip: padding-box`, el fons de la targeta es veu sota el marc transparent i fa una vora fosca. Proves: `tests/marc-blanc.test.js`; opt-in `verificar-fitxa-artista.js`, `verificar-vista-estil.js`, `verificar-llista-artistes.js`, `verificar-inici-caratules.js`.
+
 ## [2026-10-16] - «Artistes i grups»: ràdio de grans èxits en lloc d'amagar; ràdio amb el llenguatge de caràtules
 
 **Petició:** treure «amagar» de la llista d'artistes (ja és a la fitxa) i posar-hi un botó que faci una ràdio amb la música de l'artista per ordre de grans èxits; adaptar la ràdio (llista, botons de selecció i la resta) al disseny de l'app.
