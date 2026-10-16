@@ -1,3 +1,9 @@
+## [2026-10-16] - Mapa: dibuixar una zona mostra els artistes, no engega la ràdio
+
+**Petició:** en seleccionar una zona, que primer surtin els grups a la dreta i que la persona engegui la ràdio quan vulgui.
+
+**Solució Implementada:** `lasso.finish()` d'`artist-map.js` ja no crida `startZoneRadio()`: fa `showZone()` (panell «Zona dibuixada» amb els artistes i «Escolta la zona») i, al mòbil, porta el panell a la vista. La ràdio comença amb `[data-am-zone-play]`. L'etiqueta «La teva zona» queda per a la zona desada a Inici. Proves: `tests/artist-map.test.js` i `node tests/browser/verificar-mapa.js`.
+
 ## [2026-10-16] - Descobreix: el mapa mostra de sortida els artistes de la teva zona
 
 **Petició:** a la dreta del mapa, de sortida, els grups de la zona desada a Inici; en triar un lloc o una zona, els d'aquell lloc o zona.

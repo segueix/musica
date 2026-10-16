@@ -178,7 +178,19 @@ describe('Música d’arreu: mapa dels artistes', () => {
         expect(withZone).toMatch(/data-am-clear[^>]*aria-label="Esborra la selecció"/);
         expect(withZone).not.toMatch(/data-am-clear[^>]*hidden/);
         expect(feature.html(base, model)).toMatch(/data-am-clear[^>]*hidden/);
-        expect(html).toContain('La teva zona');
+        expect(html).toContain('Zona dibuixada');
+        expect(html).not.toContain('La teva zona');
+    });
+
+    it('dibuixar una zona només mostra els seus artistes: la ràdio comença amb «Escolta la zona»', () => {
+        const source = readFileSync('js/features/artist-map.js', 'utf8');
+        const finish = source.slice(
+            source.indexOf('        finish() {'),
+            source.indexOf('    // ---------- Esdeveniments')
+        );
+        expect(finish).toContain('showZone(zone);');
+        expect(finish).not.toContain('startZoneRadio');
+        expect(source).toMatch(/\[data-am-zone-play\]'\)\) return state\.zone && startZoneRadio\(state\.zone\)/);
     });
 
     it('la ràdio d’una zona agafa les cançons més escoltades de cada artista', () => {
