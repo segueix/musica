@@ -591,6 +591,23 @@
     }
 
     // Obre la fitxa: presentació, estils i ràdios (encara sense cançons: s’habiliten amb setSongs()).
+    // La capçalera no s'ha de desplaçar mai per dins (la foto i els botons de dalt pujarien i quedarien tallats).
+    // El CSS hi posa overflow: clip; en navegadors sense clip (Safari < 16) es torna a posar a 0.
+    function pinHero() {
+        const hero = $('apHero');
+        if (!hero) return;
+        hero.scrollTop = 0;
+        hero.scrollLeft = 0;
+        if (hero.dataset.apPinned) return;
+        hero.dataset.apPinned = '1';
+        hero.addEventListener('scroll', () => {
+            if (hero.scrollTop || hero.scrollLeft) {
+                hero.scrollTop = 0;
+                hero.scrollLeft = 0;
+            }
+        });
+    }
+
     function showProfile({
         channelId = '',
         name = '',
@@ -608,6 +625,7 @@
         state.model = null;
         state.list = [];
         state.listKey = '';
+        pinHero();
         showPhoto(avatar);
         showYoutube(program ? '' : youtubeUrl);
         // Mentre arriben les cançons, cap bloc de la fitxa anterior.

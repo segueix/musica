@@ -2921,7 +2921,14 @@ function scrollToChannelFollow() {
     if (!channelProfileFollowBtn) {
         return;
     }
-    channelProfileFollowBtn.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    // «Segueix» és dins la foto de la fitxa: si ja es veu sencer, no es mou res (centrar-lo amagava la part de dalt
+    // de la foto, amb enrere/YouTube/compartir, sota la capçalera de l'app)
+    const rect = channelProfileFollowBtn.getBoundingClientRect();
+    const headerBottom = document.querySelector('.app-header')?.getBoundingClientRect().bottom || 0;
+    const visible = rect.height > 0 && rect.top >= headerBottom && rect.bottom <= window.innerHeight - 72;
+    if (!visible) {
+        channelProfileFollowBtn.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
     channelProfileFollowBtn.focus({ preventScroll: true });
 }
 

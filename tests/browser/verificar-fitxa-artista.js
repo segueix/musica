@@ -253,6 +253,27 @@ async function check(browser, width, height, label) {
         /^https:\/\/www\.youtube\.com\/(@|channel\/)/.test(info.youtubeHref),
         info.youtubeHref
     );
+    // Venint de «Artistes i grups» (#segueix) s'enfoca «Segueix»: la capçalera no s'ha de desplaçar per dins (la foto
+    // desenfocada en sobresurt) ni amagar la part de dalt de la foto
+    const pinned = await page.evaluate(() => {
+        scrollToChannelFollow();
+        document.getElementById('channelProfileFollowBtn').scrollIntoView({ block: 'end' });
+        const hero = document.getElementById('apHero');
+        const res = {
+            scrollTop: hero.scrollTop,
+            offset: Math.round(
+                document.getElementById('channelProfileAvatar').getBoundingClientRect().top -
+                    hero.getBoundingClientRect().top
+            ),
+        };
+        window.scrollTo(0, 0);
+        return res;
+    });
+    ok(
+        `${label}: la foto de la capçalera no puja en enfocar «Segueix»`,
+        pinned.scrollTop === 0 && pinned.offset >= 0,
+        pinned
+    );
     ok(
         `${label}: la més escoltada és la de més visualitzacions`,
         info.bestViews === info.maxViews && info.maxViews > 0,

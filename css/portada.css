@@ -3441,7 +3441,11 @@ body .follow-btn-pill.is-followed:hover {
     gap: 0;
     min-height: clamp(480px, 140vw, 620px);
     padding: 0;
+    /* clip i no només hidden: la foto desenfocada (.ap-hero__photo, inset -40px) en sobresurt, i amb hidden la
+       capçalera era desplaçable per codi: el scrollIntoView del botó «Segueix» (o un focus) la desplaçava 40 px,
+       la foto i els botons de dalt pujaven i quedaven tallats, també a les fitxes següents (2026-10-16) */
     overflow: hidden;
+    overflow: clip;
     border: 1px solid var(--pt-line);
     border-radius: var(--pt-radius-lg);
     background: var(--pt-surface);
