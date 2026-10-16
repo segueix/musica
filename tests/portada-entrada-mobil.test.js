@@ -134,8 +134,9 @@ describe('«La teva ràdio»: de què està feta i primera vegada', () => {
         artistKeys: new Set(['a', 'b', 'c']),
     };
 
-    it('té el selector d’estils de la primera vegada (amagat) i el botó per canviar-los', () => {
-        expect(entry).toMatch(/id="ptFirst"[^>]*hidden/);
+    it('té el selector inicial visible i reserva el botó de canviar estils per als usuaris que ja els han triat', () => {
+        expect(entry).toMatch(/id="ptFirst">/);
+        expect(entry).toContain('data-pt-first-style="Rock"');
         expect(entry).toContain('id="ptFirstChips"');
         expect(entry).toContain('Només t’ho demanem aquesta primera vegada');
         expect(entry).toMatch(/id="ptFirstReset"[^>]*hidden/);

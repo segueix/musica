@@ -1064,6 +1064,7 @@
                 chips.innerHTML = `${toArray(discovery?.choosableStyles?.()).map(chip).join('')}<button type="button" class="pt-chip pt-chip--more" data-pt-first-more aria-expanded="false">Més estils</button>`;
             }
             chips.querySelectorAll('[data-pt-first-style]').forEach(button => {
+                button.disabled = false;
                 const picked = state.firstPick.has(button.dataset.ptFirstStyle);
                 button.setAttribute('aria-pressed', String(picked));
                 // Els estils menys habituals surten sota «Més estils» (però no s'amaga el que ja s'ha triat)
@@ -1071,6 +1072,7 @@
             });
             const more = chips.querySelector('[data-pt-first-more]');
             if (more) {
+                more.disabled = false;
                 more.setAttribute('aria-expanded', String(state.firstMore));
                 more.textContent = state.firstMore ? 'Menys estils' : 'Més estils';
             }
