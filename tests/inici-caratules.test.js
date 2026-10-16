@@ -47,4 +47,20 @@ describe('Inici: caràtules plenes amb marc blanc', () => {
         const video = id => ({ id, thumbnail: `https://i.ytimg.com/vi/${id}/maxresdefault.jpg`, channelId: id });
         expect(portada.radioCovers([video('a'), video('b')]).length).toBe(2);
     });
+    it("«Les teves llistes»: totes plenes d'imatge i de la mateixa mida, sigui quin sigui el nom", () => {
+        const css = fs.readFileSync('css/portada.css', 'utf8');
+        const start = css.indexOf('/* «Les teves llistes»: totes les targetes plenes');
+        expect(start).toBeGreaterThan(-1);
+        const block = css.slice(start);
+        expect(block).toMatch(
+            /#homePlaylists \.hp-item \{[^}]*flex: 0 0 var\(--hp-size\);[^}]*width: var\(--hp-size\);[^}]*min-width: 0;[^}]*align-self: flex-start;/
+        );
+        expect(block).toMatch(/#homePlaylists \.hp-card \.hp-cover \{[^}]*aspect-ratio: auto;/);
+        expect(block).toMatch(
+            /#homePlaylists \.hp-card \.hp-name \{[^}]*white-space: normal;[^}]*-webkit-line-clamp: 2;/
+        );
+        expect(block).toMatch(/#homePlaylists \.hp-add \{[^}]*width: var\(--hp-size\);[^}]*aspect-ratio: 1;/);
+        const source = fs.readFileSync('js/features/home-playlists.js', 'utf8');
+        expect(source).toMatch(/<span class="hp-tile"><img src=/);
+    });
 });

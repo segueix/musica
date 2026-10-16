@@ -21,7 +21,10 @@
         if (thumbs.length >= 4) {
             return `<span class="hp-mosaic">${thumbs
                 .slice(0, 4)
-                .map(src => `<img src="${escapeText(src)}" alt="" loading="lazy" decoding="async">`)
+                .map(
+                    src =>
+                        `<span class="hp-tile"><img src="${escapeText(src)}" alt="" loading="lazy" decoding="async"></span>`
+                )
                 .join('')}</span>`;
         }
         const src = thumbs[0] || 'img/icon-512.png';

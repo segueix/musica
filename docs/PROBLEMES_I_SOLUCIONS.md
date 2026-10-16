@@ -1,3 +1,11 @@
+## [2026-10-16] - «Les teves llistes»: el mosaic no omplia la targeta
+
+**Símptoma:** a Inici, les targetes de les llistes i ràdios desades tenien el mosaic a dalt i el nom i «40 cançons» en una franja fosca a sota; feien amplades diferents (180–227 px) segons el nom.
+
+**Causa:** `.hp-name` té `white-space: nowrap` i un element flex té `min-width: auto`: el nom llarg eixamplava la targeta per sobre de `flex-basis`. Totes s'estiraven a l'alçada de la fila (la de la més ampla), i el mosaic (`position: absolute; inset: 0`, però amb l'`aspect-ratio: 1` de `styles.css`) quedava quadrat amb l'amplada i no arribava a baix.
+
+**Solució Implementada:** bloc «Les teves llistes: totes les targetes plenes…» al final de `portada.css`: `--hp-size` a la fila, l'element amb `flex: 0 0 var(--hp-size)`, `width`, `min-width: 0` i `align-self: flex-start`; el mosaic amb `aspect-ratio: auto`; el nom en dues línies com a màxim (`-webkit-line-clamp: 2`); «Crea una llista» de la mateixa mida. Les miniatures del mosaic van dins `span.hp-tile` per poder ampliar les `hqdefault` sense envair les veïnes. Proves: `tests/inici-caratules.test.js` i `node tests/browser/verificar-inici-caratules.js` (quatre llistes amb noms de llargada diferent).
+
 ## [2026-10-16] - El marc blanc com a senyal, no a totes les caràtules
 
 **Petició:** valorar si els marcs blancs valien la pena; l'usuari va acceptar la proposta d'alternar-los amb criteri.

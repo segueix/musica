@@ -10216,3 +10216,72 @@ body .mq .mq-item:not(.is-active):focus-within .mq-cover {
         transition: none;
     }
 }
+
+/* «Les teves llistes»: totes les targetes plenes d'imatge i de la mateixa mida (2026-10-16).
+   El nom en una línia (nowrap) eixamplava la targeta segons el nom i totes s'estiraven a
+   l'alçada de la més gran: el mosaic, quadrat, deixava a sota una franja fosca amb el nom. */
+#homePlaylists .hp-row {
+    --hp-size: min(42vw, 180px);
+}
+
+#homePlaylists .hp-item {
+    flex: 0 0 var(--hp-size);
+    width: var(--hp-size);
+    min-width: 0;
+    align-self: flex-start;
+}
+
+#homePlaylists .hp-item > .hp-card {
+    flex: none;
+    width: 100%;
+    height: auto;
+    min-width: 0;
+}
+
+#homePlaylists .hp-card .hp-cover {
+    width: auto;
+    height: auto;
+    aspect-ratio: auto;
+}
+
+#homePlaylists .hp-card .hp-name,
+#homePlaylists .hp-card .hp-meta {
+    position: relative;
+    z-index: 1;
+    max-width: 100%;
+}
+
+/* La rajola «Crea una llista» fa la mateixa mida que les llistes */
+#homePlaylists .hp-add {
+    flex: 0 0 var(--hp-size);
+    width: var(--hp-size);
+    min-width: 0;
+    aspect-ratio: 1;
+    align-self: flex-start;
+    border-radius: var(--pt-radius-cover);
+}
+
+/* El nom de la llista sencer (fins a dues línies) en lloc de tallar-lo amb punts suspensius */
+#homePlaylists .hp-card .hp-name {
+    display: -webkit-box;
+    overflow: hidden;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    line-height: 1.2;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+}
+
+/* Cada caràtula del mosaic dins la seva cel·la: les miniatures hqdefault (4:3 amb franges
+   negres d'un vídeo 16:9) s'amplien sense envair les veïnes, com a «La teva ràdio» */
+#homePlaylists .hp-mosaic > .hp-tile {
+    display: block;
+    min-width: 0;
+    min-height: 0;
+    overflow: hidden;
+}
+
+#homePlaylists :is(.hp-mosaic img, .hp-single)[src*='/hqdefault.jpg'] {
+    transform: scale(1.34);
+}

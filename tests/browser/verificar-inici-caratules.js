@@ -105,15 +105,16 @@ async function check(browser, width, height) {
         localStorage.setItem('catube_history', JSON.stringify(history));
         localStorage.setItem(
             'catube_playlists',
-            JSON.stringify([
-                {
-                    id: 'pl1',
-                    name: 'Per córrer',
+            // Noms de llargada diferent: abans el nom eixamplava la targeta i el mosaic no l'omplia
+            JSON.stringify(
+                ['Per córrer', 'Ràdio Pop', "Ràdio Cançó d'autor", 'Ràdio Folk i arrel'].map((name, i) => ({
+                    id: `pl${i + 1}`,
+                    name,
                     videos: vids
-                        .slice(0, 6)
+                        .slice(i * 6, i * 6 + 6)
                         .map(v => ({ id: v.id, title: v.title, thumbnail: v.thumbnail, channelId: v.channelId })),
-                },
-            ])
+                }))
+            )
         );
         _historyItemsCache = null;
         window.SegueixApp.features.shellNav.ACTIONS.home();
@@ -156,6 +157,11 @@ async function check(browser, width, height) {
             portraits: square('#homePage .pt-portrait'),
             quick: square('#homePage .pt-quick'),
             lists: square('#homePlaylists .hp-item > .hp-card'),
+            listsFill: [...document.querySelectorAll('#homePlaylists .hp-item > .hp-card')].map(card => {
+                const a = card.getBoundingClientRect();
+                const b = card.querySelector('.hp-cover').getBoundingClientRect();
+                return Math.round(a.width) + 'x' + Math.round(a.height) + (b.height >= a.height - 6 ? '' : ' buit');
+            }),
             cardFill: filled('.pt-card', '.pt-card__media img'),
             cardText: inside('.pt-card', '.pt-card__title'),
             portraitFill: filled('.pt-portrait', '.pt-portrait__img'),
@@ -184,6 +190,13 @@ async function check(browser, width, height) {
     ok(
         `${label}: la imatge omple les caràtules i el text hi va a dins`,
         info.cardFill && info.cardText && info.portraitFill && info.portraitText && info.quickFill
+    );
+    ok(
+        `${label}: «Les teves llistes»: totes plenes d'imatge i de la mateixa mida`,
+        info.listsFill.length === 4 &&
+            new Set(info.listsFill).size === 1 &&
+            info.listsFill.every(fill => !fill.includes('buit')),
+        info.listsFill
     );
     ok(`${label}: els estils tenen les fotos dels artistes de fons`, info.styleFill);
     ok(`${label}: «La teva ràdio» i «A prop teu» tenen les caràtules de fons`, info.radioFill && info.nearFill, [
