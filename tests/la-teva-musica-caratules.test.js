@@ -60,4 +60,21 @@ describe('«La teva música» amb el llenguatge de caràtules', () => {
         );
         expect(block).toMatch(/#playlistsPage \.playlist-mosaic__tile \{[^}]*overflow: hidden;/);
     });
+
+    it('«+ Afegeix cançons» porta les caràtules de la llista de fons', () => {
+        const app = fs.readFileSync('js/app.js', 'utf8');
+        expect(app).toMatch(/data-add-songs="\$\{escapeHtml\(list\.id\)\}"\$\{playlistAddSongsStyle\(list\)\}>/);
+        const start = app.indexOf('function playlistAddSongsStyle(list)');
+        const fn = new Function(
+            `const escapeHtml = s => s; ${app.slice(start, app.indexOf('\n}\n', start) + 2)}; return playlistAddSongsStyle;`
+        )();
+        expect(fn({ videos: [] })).toBe('');
+        const out = fn({ videos: [{ thumbnail: "https://i.ytimg.com/vi/a/hq'default.jpg" }, { thumbnail: 'b.jpg' }] });
+        expect(out).toContain("--pl-add-1: url('https://i.ytimg.com/vi/a/hqdefault.jpg')");
+        expect(out).toContain("--pl-add-2: url('b.jpg')");
+        expect(out).toContain("--pl-add-4: url('b.jpg')");
+        expect(block).toMatch(
+            /#playlistsPage \.playlist-add-songs\[style\*='--pl-add-1'\] \{[^}]*background-image:[^}]*var\(--pl-add-4\)/
+        );
+    });
 });

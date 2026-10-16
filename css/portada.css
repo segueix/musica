@@ -10755,3 +10755,43 @@ body .mq .mq-item:not(.is-active):focus-within .mq-cover {
     height: 100%;
     object-fit: cover;
 }
+
+/* «+ Afegeix cançons» amb les caràtules de la llista de fons (2026-10-16): quatre en fila (--pl-add-1…4, les posa
+   playlistAddSongsStyle() d'app.js), enfosquides perquè el text blanc es llegeixi */
+#playlistsPage .playlist-add-songs[style*='--pl-add-1'] {
+    min-height: 52px;
+    border-color: rgba(255, 255, 255, 0.7);
+    background-color: var(--pt-surface-2);
+    background-image:
+        linear-gradient(rgba(20, 22, 21, 0.62), rgba(20, 22, 21, 0.62)),
+        var(--pl-add-1),
+        var(--pl-add-2),
+        var(--pl-add-3),
+        var(--pl-add-4);
+    background-position:
+        center,
+        0 50%,
+        33.333% 50%,
+        66.667% 50%,
+        100% 50%;
+    background-repeat: no-repeat;
+    background-size:
+        100% 100%,
+        25% auto,
+        25% auto,
+        25% auto,
+        25% auto;
+    color: #fff;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.8);
+}
+
+#playlistsPage .playlist-add-songs[style*='--pl-add-1']:is(:hover, :focus-visible) {
+    border-color: var(--pt-accent);
+    background-image:
+        linear-gradient(rgba(20, 22, 21, 0.45), rgba(20, 22, 21, 0.45)),
+        var(--pl-add-1),
+        var(--pl-add-2),
+        var(--pl-add-3),
+        var(--pl-add-4);
+    color: var(--pt-accent);
+}
