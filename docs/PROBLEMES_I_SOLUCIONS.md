@@ -1,3 +1,11 @@
+## [2026-10-16] - Vista d'un estil: sense «Música TV», cançó destacada amb la caràtula de fons i cançons en caràtules
+
+**Petició:** treure «Segueix TV» / «Música TV» del selector «Estil» (és de l'altra plataforma); a la vista d'un estil, la cançó destacada amb la caràtula de fons a tot el requadre i el nom del grup més gran i ben situat; a sota, les cançons en quatre columnes amb l'estil de la fitxa d'artista (requadre blanc ple amb la imatge, una mica ampliable); la filera d'artistes, tal com era, abans de les cançons.
+
+**Solució Implementada:** (1) `navigation.js` deixa de carregar `segueix-tv.js` (era qui afegia el xip `.segueix-tv-chip` a la barra; el selector «Estil» el copiava); fora també del precache (`scripts/actualitzar_versio_sw.js`). (2) `syncCategoryArtists()` posa `#homePage.is-style-view` a un estil o a una categoria pròpia; `navigateToSearchResults()` el treu. (3) `index.html`: `#heroChannel` passa just després de `#heroTitle`. (4) `portada.css`, bloc «Vista d'un estil (Pop, Rock…)…»: només CSS sobre el marcatge de sempre (`.hero`, `.video-card` de `createVideoCardAPI()`), de manera que els clics no canvien.
+
+**Trampes:** (1) `#homePage .hero` arrossega regles de tres llocs (`styles.css` base, el bloc «Hero» de `styles.css` i `portada.css`): calen `align-items: flex-start` i `width: 100%` al contingut, o el text queda al mig. (2) `.hero-thumbnail::before/::after` i `.video-thumbnail::before/::after` porten els textos «SEGUEIX!» / «Els nostres YouTubers.» de reserva: aquí `::before` és el degradat i `::after` el play (o res). (3) `.video-info-container` té `flex: 1` (styles.css): sense `flex: none` el títol queda a dalt de la caràtula. (4) `.page` té `contain: paint`: la graella porta `padding: 6px` perquè les caràtules ampliades no perdin el marc. Proves: `tests/vista-estil.test.js`; opt-in `node tests/browser/verificar-vista-estil.js`.
+
 ## [2026-10-16] - Descobreix, «Per afinitat»: la foto del grup omple la targeta
 
 **Petició:** estendre l'estil de la fitxa d'artista i d'«Artistes i grups» a les targetes de «Per afinitat»: la imatge del grup ha de cobrir el fons de la targeta.

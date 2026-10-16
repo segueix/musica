@@ -49,17 +49,6 @@
         document.head.appendChild(spacingLink);
     }
 
-    function installSegueixTVFeature() {
-        const document = window.document;
-        if (!document?.head || typeof document.createElement !== 'function') return;
-        if (document.getElementById?.('segueixTVFeatureScript')) return;
-        const script = document.createElement('script');
-        script.id = 'segueixTVFeatureScript';
-        script.src = window.appDataUrl?.('js/features/segueix-tv.js?v=20261016-json-1') || '/js/features/segueix-tv.js?v=20261016-json-1';
-        script.defer = true;
-        document.head.appendChild(script);
-    }
-
     function installContextTVFeature() {
         const document = window.document;
         if (!document?.head || typeof document.createElement !== 'function') return;
@@ -85,7 +74,6 @@
     installCategoryChipStylesheet();
     installTypographyPolish();
     installSpacingPolish();
-    installSegueixTVFeature();
     installContextTVFeature();
     installTVScrollUIFeature();
 
