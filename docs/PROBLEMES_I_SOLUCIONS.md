@@ -1,3 +1,13 @@
+## [2026-10-16] - Ordinador: «Descobreix» de la barra lateral no responia (el vídeo tapava l'app)
+
+**Símptoma:** a l'ordinador, l'opció «Descobreix» de la barra de l'esquerra «fallava bastant»: sovint no feia res.
+
+**Causa Arrel:** `styles.css` tenia «Forçar pantalla completa real en mode horitzontal» amb `@media (orientation: landscape) and (max-width: 1024px)`, pensat per a un mòbil girat. Però una finestra d'ordinador (o una tauleta) apaïsada de 769–1024 px també ho compleix: en obrir una cançó, `#videoPlayer` passava a `position: fixed` a tota la finestra amb `z-index` màxim i tapava la barra lateral i tota l'app (l'iframe rebia els clics). A 1025 px o més no passava, per això era intermitent (depèn de l'amplada de la finestra). La navegació de `shell-nav.js` (`ACTIONS.discover`) era correcta.
+
+**Solució Implementada:** la regla només s'aplica a un mòbil girat: `@media (orientation: landscape) and (max-height: 500px) and (hover: none) and (pointer: coarse)`. Proves: `tests/reproductor-horitzontal.test.js`; opt-in `node tests/browser/verificar-descobreix-barra.js` («Descobreix» des d'Inici, d'un estil, d'«Artistes i grups», d'una cançó que sona i d'una fitxa d'artista, a 1280 i 900 px, i el mòbil girat continua a pantalla completa).
+
+**Trampa:** no facis servir només l'amplada per detectar un mòbil: hi ha finestres d'ordinador i tauletes de 769–1024 px. Per a comportaments de mòbil girat, combina-hi `max-height` i `pointer: coarse`.
+
 ## [2026-10-16] - «Per afinitat» al mòbil: el marc blanc de la primera targeta quedava tallat
 
 **Símptoma:** a Descobreix, al mòbil, la primera targeta de «Per afinitat» no es veia sencera: li faltava el marc blanc de l'esquerra i la filera quedava tallada abans de la vora dreta.

@@ -6558,8 +6558,11 @@ body {
     margin-bottom: 0;
 }
 
-/* Forçar pantalla completa real en mode horitzontal (landscape) - Versió Anti-Zoom */
-@media (orientation: landscape) and (max-width: 1024px) {
+/* Forçar pantalla completa real en mode horitzontal (landscape) - Versió Anti-Zoom.
+   Només un mòbil girat (tàctil i poca alçada). Abans n'hi havia prou amb `max-width: 1024px`: a l'ordinador, una
+   finestra apaïsada de 769–1024 px posava el vídeo a tota la pantalla, per damunt de la barra lateral («Descobreix»
+   i la resta no responien) i de l'app sencera (2026-10-16). */
+@media (orientation: landscape) and (max-height: 500px) and (hover: none) and (pointer: coarse) {
     #videoPlayer:not(.mini-player-active) {
         /* Fixem la posició respecte a la finestra, no al document */
         position: fixed !important;
