@@ -13300,7 +13300,9 @@ async function openChannelProfileLegacyImpl(channelId) {
     }
     if (channelProfileSubscribers) {
         if (channel?.subscriberCount) {
-            channelProfileSubscribers.textContent = `${formatViews(channel.subscriberCount)} subscriptors`;
+            channelProfileSubscribers.textContent =
+                SegueixApp.features.artistPage?.subscribersLabel?.(channel.subscriberCount) ||
+                `${formatViews(channel.subscriberCount)} subscriptors`;
             channelProfileSubscribers.classList.remove('hidden');
         } else {
             channelProfileSubscribers.textContent = '';
@@ -13314,6 +13316,7 @@ async function openChannelProfileLegacyImpl(channelId) {
             name: channelName,
             description: channel?.description || '',
             categories: channel?.categories || [],
+            avatar: channelAvatar,
         });
     } else if (channelProfileDescription) {
         channelProfileDescription.textContent = channel?.description || 'No hi ha descripció disponible.';
@@ -13388,15 +13391,20 @@ function renderChannelVideos(query = '') {
 
 function renderChannelVideosLegacyImpl(query = '') {
     if (!channelVideosGrid) return;
-    // L'entrada al perfil presenta una caràtula per disc. La cerca continua sobre totes les cançons.
-    const albumOverview = SegueixApp.features.artistPage?.isAlbumsOverview?.(currentChannelId, query);
-    const songHeading = document.getElementById('apSongsTitle');
-    if (songHeading) songHeading.textContent = albumOverview ? 'Cerca una cançó' : 'Cançons';
-    channelVideosGrid.hidden = Boolean(albumOverview);
-    if (albumOverview) {
+    // Fitxa d'artista: la més escoltada, videoclips, directes i la llista de cançons per visualitzacions, cadascuna
+    // amb el play que engega una ràdio (js/features/artist-page.js). Un perfil de programa manté la graella.
+    const artistPage = SegueixApp.features.artistPage;
+    if (!isProgramProfileActive && artistPage?.renderSongs) {
         channelVideosGrid.innerHTML = '';
+        channelVideosGrid.hidden = true;
+        artistPage.renderSongs({
+            videos: (Array.isArray(currentChannelLongVideos) ? currentChannelLongVideos : []).filter(isSongVideo),
+            query,
+            hidden: isChannelHidden(currentChannelId),
+        });
         return;
     }
+    channelVideosGrid.hidden = false;
     if (isChannelHidden(currentChannelId)) {
         channelVideosGrid.innerHTML = '<div class="empty-state">Has ocultat aquest canal del feed.</div>';
         return;
