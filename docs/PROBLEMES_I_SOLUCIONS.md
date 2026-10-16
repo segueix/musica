@@ -2,7 +2,7 @@
 
 **Petició:** les caràtules amb marc blanc, amb les puntes «el mínim possible però perceptible» arrodonides.
 
-**Solució Implementada:** variable `--pt-radius-cover: 8px` a `:root` de `portada.css`, aplicada a `#channelPage .ap-card` i `.ap-card__art` (la fitxa d'artista; el pare també, perquè el fons i l'ombra en ampliar-se no facin cantonades quadrades), `.af-card`, `#followPage .follow-card`, `#homePage.is-style-view .hero` i `#homePage.is-style-view #videosGrid .video-card`. 8 px és el valor més petit permès per `tests/portada-assets.test.js` per sobre de 2 px (que no es notava); amb el marc de 2 px la imatge queda amb uns 6 px d'arrodoniment. Les imatges de dins (radi 0) queden retallades pel pare (`overflow: hidden`). Prova: `tests/vista-estil.test.js`.
+**Solució Implementada:** variable `--pt-radius-cover: 8px` a `:root` de `portada.css`, aplicada a `#channelPage .ap-card` i `.ap-card__art` (la fitxa d'artista; el pare també, perquè el fons i l'ombra en ampliar-se no facin cantonades quadrades), `.af-card`, `#followPage .follow-card`, `#homePage.is-style-view .hero` (que, a petició de l'usuari, ja no porta el marc blanc: vora `1px solid var(--pt-line)`) i `#homePage.is-style-view #videosGrid .video-card`. 8 px és el valor més petit permès per `tests/portada-assets.test.js` per sobre de 2 px (que no es notava); amb el marc de 2 px la imatge queda amb uns 6 px d'arrodoniment. Les imatges de dins (radi 0) queden retallades pel pare (`overflow: hidden`). Prova: `tests/vista-estil.test.js`.
 
 ## [2026-10-16] - Fitxa d'artista amb quatre columnes a l'ordinador; vista d'un estil amb una columna al mòbil
 

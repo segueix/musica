@@ -10,7 +10,8 @@
 //
 // Comprova, a 390 px i a 1280 px:
 //   1) El selector «Estil» ja no té «Música TV» (herència de Segueix youtubers).
-//   2) La cançó destacada té la caràtula de fons a tot el requadre i el nom del grup just sota el títol.
+//   2) La cançó destacada té la caràtula de fons a tot el requadre (sense marc blanc) i el nom del grup just sota el
+//      títol.
 //   3) La filera d'artistes continua abans de les cançons.
 //   4) Les cançons: caràtules quadrades plenes amb la imatge i el marc blanc, quatre columnes a l'ordinador i una al
 //      mòbil (una sota l'altra), amb el títol a baix i el play; a l'ordinador s'amplien una mica en passar-hi el ratolí.
@@ -127,7 +128,7 @@ async function check(browser, width, height, label) {
             heroCover:
                 Math.abs(rect(img).width - (rect(hero).width - 4)) < 3 &&
                 Math.abs(rect(img).height - (rect(hero).height - 4)) < 3,
-            heroFrame: getComputedStyle(hero).borderTopColor === 'rgb(255, 255, 255)',
+            heroNoWhiteFrame: getComputedStyle(hero).borderTopColor !== 'rgb(255, 255, 255)',
             titleInside: rect(title).top > rect(hero).top && rect(title).bottom < rect(hero).bottom,
             channelUnderTitle: rect(channel).top >= rect(title).bottom - 2 && rect(channel).left - rect(title).left < 4,
             channelSize: parseFloat(getComputedStyle(channel).fontSize),
@@ -148,7 +149,7 @@ async function check(browser, width, height, label) {
             viewport: window.innerWidth,
         };
     });
-    ok(`${label}: la caràtula omple la cançó destacada, amb el marc blanc`, info.heroCover && info.heroFrame);
+    ok(`${label}: la caràtula omple la cançó destacada, sense marc blanc`, info.heroCover && info.heroNoWhiteFrame);
     ok(
         `${label}: títol i grup damunt la caràtula, el grup just sota el títol`,
         info.titleInside && info.channelUnderTitle

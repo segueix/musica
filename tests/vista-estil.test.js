@@ -50,7 +50,9 @@ describe('vista d’un estil', () => {
     });
 
     it('la caràtula omple la cançó destacada; les cançons, en quatre columnes de caràtules amb marc blanc', () => {
-        expect(block).toMatch(/#homePage\.is-style-view \.hero \{[^}]*border: 2px solid #fff;/);
+        // La cançó destacada no porta el marc blanc de les caràtules
+        expect(block).toMatch(/#homePage\.is-style-view \.hero \{[^}]*border: 1px solid var\(--pt-line\);/);
+        expect(block).not.toMatch(/#homePage\.is-style-view \.hero \{[^}]*#fff/);
         expect(block).toMatch(/#homePage\.is-style-view \.hero-thumbnail \{[^}]*position: absolute;[^}]*inset: 0;/);
         expect(block).toMatch(/#homePage\.is-style-view #videosGrid \{[^}]*repeat\(4, minmax\(0, 1fr\)\)/);
         expect(block).toMatch(

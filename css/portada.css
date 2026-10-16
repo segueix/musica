@@ -8858,7 +8858,7 @@ body #followPage .follow-card .follow-toggle-btn.is-followed {
 
 /* ---------- Vista d'un estil (Pop, Rock…) i d'una categoria pròpia (2026-10-16) ----------
    `#homePage.is-style-view` el posa syncCategoryArtists() d'app.js. Mateix llenguatge que la fitxa d'artista:
-   (1) la cançó destacada té la caràtula de fons a tot el requadre, amb el text a sobre i el nom del grup gran just sota
+   (1) la cançó destacada té la caràtula de fons a tot el requadre (sense marc blanc), amb el text a sobre i el nom del grup gran just sota
    el títol; (2) la filera d'artistes (#categoryArtists) no canvia; (3) les cançons, en caràtules quadrades plenes amb
    la imatge i un marc blanc fi, amb el títol, el grup i les visualitzacions a dins, en blanc: quatre columnes a
    l'ordinador, tres a la tauleta i una al mòbil (una caràtula sota l'altra), amb el mínim espai; a l'ordinador s'amplien una mica en passar-hi el
@@ -8875,7 +8875,8 @@ body #followPage .follow-card .follow-toggle-btn.is-followed {
     min-height: clamp(340px, 34vw, 460px);
     padding: 0;
     overflow: hidden;
-    border: 2px solid #fff;
+    /* Sense marc blanc (2026-10-16): la vora discreta de la resta de targetes; el marc blanc és de les caràtules */
+    border: 1px solid var(--pt-line);
     border-radius: var(--pt-radius-cover);
     background: var(--pt-surface-2);
     box-shadow: none;
