@@ -42,12 +42,13 @@ jobs:
           cache: npm
       - run: npm ci
       - name: Proves sense xarxa de quota i revisió Codex
-        run: node --test scripts/test_workflow_quota.cjs scripts/test_revisio_codex.cjs scripts/test_activitat_musica.cjs
+        run: node --test scripts/test_workflow_quota.cjs scripts/test_revisio_codex.cjs scripts/test_activitat_musica.cjs scripts/test_publicacio_estatica.cjs
       - name: Comprova la sintaxi dels generadors
         run: |
           node --check scripts/optimitzar_web_estatica.cjs
           node --check scripts/generar_web_estatica.cjs
           node --check scripts/validar_paquet_estatic.cjs
+          node --check scripts/comprovar_publicacio_estatica.cjs
           node --check sw.js
           node --check scripts/update_music_feed.js
           node --check scripts/archivar_feed_musical.js

@@ -41,7 +41,9 @@ function validate(outDir, options = {}) {
     }
     walk(root);
     for (const required of ['index.html', '404.html', 'sw.js', 'css/static-seo.css', 'js/static-seo.js',
-        'data/feed.json', 'data/historial-musical.json', 'data/hidden-videos.json', 'js/channels-ca.json']) file(required);
+        'data/feed.json', 'data/historial-musical.json', 'data/hidden-videos.json', 'js/channels-ca.json',
+        'data/music-taxonomy.json', 'js/vendor/lucide.js', 'js/vendor/lz-string.js',
+        'js/vendor/sortable.js', 'js/vendor/qr-code-styling.js']) file(required);
 
     const localUrlFile = value => {
         const url = new URL(value, base);
