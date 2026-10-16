@@ -38,11 +38,8 @@ describe('sessions de Club Social Carme dins la discografia de cada artista', ()
                 const videos = await api.getArtistVideosWithHistory(channel.id);
                 expect(videos.map(video => video.id)).toEqual([id]);
                 expect(videos[0]).toMatchObject({ channelId: source, contentType: 'live_song' });
-                const model = page.albumsModel(catalog, { channelId: channel.id, videos });
-                expect(model.artist).toBe(artist);
-                expect(model.albums).toHaveLength(1);
-                expect(model.albums[0].visibleTrackIds).toEqual([id]);
-                expect(model.albums[0].title).toContain('(en directe)');
+                // A la fitxa surt a «Directes» (no hi ha discos des del 2026-10-16)
+                expect(page.isLive(videos[0])).toBe(true);
             }
         }
         expect(fetch).toHaveBeenCalledTimes(1);

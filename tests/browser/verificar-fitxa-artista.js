@@ -11,7 +11,8 @@
 // Comprova, a 390 px i a 1280 px:
 //   1) La foto de perfil ocupa tota la capçalera i el nom, les ràdios i compartir hi són al damunt.
 //   2) La més escoltada és la cançó amb més visualitzacions; a l'ordinador va al costat de la capçalera.
-//   3) La llista de cançons va per visualitzacions (de més a menys) i cada fila té el play i la cua.
+//   3) Les cançons són caràtules quadrades amb les dades al damunt, per visualitzacions (de més a menys), de mida
+//      segons les visualitzacions, amb el play i la cua; no hi ha discos.
 //   4) El play d'una cançó engega una ràdio de l'artista que comença per aquella cançó.
 //   5) La pàgina no es desborda i no hi ha errors de JavaScript.
 // Les imatges de YouTube (i.ytimg.com, yt3.ggpht.com) es deixen carregar si hi ha xarxa (per a les captures).
@@ -100,7 +101,7 @@ async function openArtist(browser, width, height) {
     await page.waitForSelector('.pt-sections .pt-section', { timeout: 30000 });
     await page.evaluate(() => document.getElementById('intro-splash')?.remove());
     await page.evaluate(id => window.openChannelProfile(id), CHANNEL);
-    await page.waitForSelector('#apSongs:not([hidden]) .ap-song', { timeout: 20000 });
+    await page.waitForSelector('#apSongs:not([hidden]) .ap-card', { timeout: 20000 });
     await page.waitForTimeout(1200);
     return { ctx, page, errors };
 }
@@ -111,7 +112,7 @@ const layout = page =>
         const hero = document.getElementById('apHero');
         const img = document.getElementById('channelProfileAvatar');
         const best = document.getElementById('apBest');
-        const songs = [...document.querySelectorAll('#apSongs .ap-song')];
+        const songs = [...document.querySelectorAll('#apSongs .ap-card')];
         const views = id => {
             const all = currentChannelLongVideos || [];
             return Number(all.find(video => String(video.id) === id)?.viewCount) || 0;
@@ -134,6 +135,16 @@ const layout = page =>
             rowsWithPlay: songs.every(row => row.querySelector('.ap-play') && row.querySelector('[data-ap-queue]')),
             shelves: [...document.querySelectorAll('#apShelves .ap-section-title')].map(el => el.textContent.trim()),
             stats: document.getElementById('apStats').textContent,
+            noAlbums: !document.getElementById('apAlbums') && !document.querySelector('#channelPage .ap-album-card'),
+            cardRatio: (() => {
+                const art = document.querySelector('#apSongs .ap-card__art');
+                const r = art?.getBoundingClientRect();
+                return r ? Math.round((r.width / r.height) * 100) / 100 : 0;
+            })(),
+            cardWidth: Math.round(document.querySelector('#apSongs .ap-card__art')?.getBoundingClientRect().width || 0),
+            sizes: [...document.querySelectorAll('#apSongs .ap-card')].map(card =>
+                Math.round(card.getBoundingClientRect().width)
+            ),
             pageWidth: document.documentElement.scrollWidth,
             viewport: window.innerWidth,
         };
@@ -177,11 +188,35 @@ async function check(browser, width, height, label) {
         info.songViews.slice(0, 8)
     );
     ok(`${label}: cada cançó té play i cua`, info.rowsWithPlay);
+    ok(
+        `${label}: caràtules quadrades (la primera, gran)`,
+        Math.abs(info.cardRatio - 1) < 0.03 && info.cardWidth >= 240,
+        [info.cardRatio, info.cardWidth]
+    );
+    ok(`${label}: sense discos`, info.noAlbums);
+    ok(
+        `${label}: la mida de les caràtules depèn de les visualitzacions`,
+        new Set(info.sizes).size >= 2 && info.sizes[0] === Math.max(...info.sizes),
+        info.sizes
+    );
     ok(`${label}: la pàgina no es desborda`, info.pageWidth <= info.viewport, [info.pageWidth, info.viewport]);
     console.log(`   ${label}: ${info.stats} · seccions: ${info.shelves.join(', ') || 'cap'}`);
     if (OUT) {
         await page.screenshot({ path: path.join(OUT, `fitxa-${width}.png`) });
         await page.screenshot({ path: path.join(OUT, `fitxa-${width}-sencera.png`), fullPage: true });
+        // El centre i la graella, amb les caràtules ja carregades (són lazy)
+        for (const [id, name] of [
+            ['apShelves', 'centre'],
+            ['apSongs', 'cancons'],
+        ]) {
+            await page.evaluate(target => {
+                const el = document.getElementById(target);
+                window.scrollTo(0, el.getBoundingClientRect().top + window.scrollY - 90);
+            }, id);
+            await page.waitForTimeout(1500);
+            await page.screenshot({ path: path.join(OUT, `fitxa-${width}-${name}.png`) });
+        }
+        await page.evaluate(() => window.scrollTo(0, 0));
     }
     ok(`${label}: sense errors en obrir la fitxa`, errors.length === 0, errors);
     // Origen: el xip es desplega i porta «Ràdio d'aquí», que obre la ràdio «A prop teu» d'aquell lloc
@@ -198,8 +233,8 @@ async function check(browser, width, height, label) {
         }
     }
     // El play d'una cançó de la llista engega la ràdio de l'artista que hi comença
-    const target = await page.$eval('#apSongs .ap-song:nth-child(3) [data-ap-play]', el => el.dataset.apPlay);
-    await page.click('#apSongs .ap-song:nth-child(3) .ap-song__main');
+    const target = await page.$eval('#apSongs .ap-card:nth-child(3) [data-ap-play]', el => el.dataset.apPlay);
+    await page.click('#apSongs .ap-card:nth-child(3) .ap-card__art');
     await page.waitForTimeout(800);
     const radio = await page.evaluate(() => ({
         first: String(activePlaylistQueue?.[0]?.id || ''),

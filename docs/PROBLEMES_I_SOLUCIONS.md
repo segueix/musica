@@ -1,3 +1,25 @@
+## [2026-10-16] - Fitxa d'artista: caràtules quadrades estil punk, de mida segons les visualitzacions
+
+**Petició (després de la de sota):** «caràtules quadrades estil punk amb les dades del vídeo sobre les caràtules, jugar amb les mides de les caràtules segons el nombre de visualitzacions».
+
+**Solució Implementada:** `cardHtml()` fa una caràtula quadrada amb el número, les visualitzacions, «Directe», el títol, l'any i la durada **al damunt** (cintes i adhesius, Impact/Arial Black en majúscules), la cua i el play; `sizeTiers()` (pur) dona la mida per visualitzacions relatives ('xl' / 'l' / 's'); `songCardsHtml()` les calcula sobre tota la llista. CSS (bloc «Caràtules quadrades, estil fanzín punk»): mosaic amb `grid-auto-flow: dense` i files quadrades (`grid-auto-rows: calc((100cqi - …) / var(--ap-cols))`, amb `.ap-songs-wrap` com a contenidor), files de videoclips/directes amb `--ap-tile` per mida, vora clara, `box-shadow: 5px 5px 0 #000`, trama de punts (`radial-gradient`), gir per `nth-child` i filtre gris/contrast que es treu en passar-hi per sobre.
+
+**Trampes conegudes:** (1) `grid-column: span min(…)` no és vàlid: el span ha de ser un enter (`span 3`; el mosaic sempre té ≥ 3 columnes). (2) Una caràtula 'xl' de 3 × 3 només quadra si les files són quadrades: sense `grid-auto-rows` amb `cqi`, `aspect-ratio` i els spans de files no casen. (3) `hqdefault` té franges negres: s'amplia ×1,34 (`img.is-letterboxed`); la `maxresdefault` del feed no en té. (4) Els radis literals de `portada.css` han de ser 2, 8, 10 o 12–16 px (`tests/portada-assets.test.js`): la caràtula fa 2 px. (5) Amb el gir, una caràtula pot tapar 1–2 px de la veïna: en passar-hi per sobre puja (`z-index: 2`) i es posa recta.
+
+---
+
+## [2026-10-16] - Fitxa d'artista: sense discos i amb caràtules de vídeo grans
+
+**Petició:** refer la part central de la fitxa: cap disc («a partir d'ara no n'hi haurà»); el centre i la part de baix amb caràtules de vídeo més grans, amb directes i videoclips si n'hi ha, i les cançons ordenades per visualitzacions, més visual.
+
+**Solució Implementada:** (1) `artist-page.js`: `cardHtml()` (caràtula 16:9 amb visualitzacions, durada i play; títol, any i cua a sota) per a les files de Videoclips i Directes i per a la graella `songCardsHtml()`; s'han tret `albumsModel()`, `selectAlbum()`, `filterSongs()`, la ràdio del disc i la càrrega del catàleg de discos; `playFrom(id)` sempre fa la ràdio de l'artista. (2) `index.html`: fora `#apAlbums`; `#apSongs` és `<ul class="ap-grid">`. (3) `portada.css`: bloc «Caràtules grans» (fila amb scroll lateral, graella d'1/2/auto-fill columnes) i fora els estils de discos, de la llista en files i de les fileres petites. (4) `music-queue.js`: fora `startAlbumRadio()`. (5) `app.js`: el perfil de programa ja no passa per `filterSongs()`.
+
+**Trampes conegudes:** (1) **No** s'ha tret `YouTubeAPI.loadAlbumsCatalog()`: `getArtistVideosWithHistory()` el fa servir per afegir a cada artista les sessions en directe publicades en canals convidats (Club Social Carme), que ara surten a «Directes»; sense el fitxer, la fitxa continua funcionant. (2) El generador continua escrivint `data/albums-musica.json` (no s'ha tocat el pipeline). (3) Les caràtules grans fan servir la `maxresdefault` del feed si hi és i, si no, `hqdefault` (480 px): les pistes «Tema» hi surten amb la caràtula al mig i franges als costats (és la imatge de YouTube).
+
+**Fitxers Afectats:** `index.html`, `css/portada.css`, `js/features/artist-page.js`, `js/features/music-queue.js`, `js/app.js`, `js/youtube.js` (comentari), `sw.js`, `CLAUDE.md`, `tests/artist-page.test.js`, `tests/music-queue-selection.test.js`, `tests/club-social-carme.test.js`, `tests/browser/verificar-fitxa-artista.js`.
+
+---
+
 ## [2026-10-16] - Fitxa d'artista redissenyada: foto de fons, la més escoltada i play que fa ràdio
 
 **Petició:** redissenyar l'interior de la fitxa dels grups i artistes: aprofitar la imatge de perfil i posar-hi al damunt el nom, els subscriptors i l'origen, adaptar-hi les ràdios i compartir; al costat, la caràtula de la cançó amb més visualitzacions; una secció de directes o videoclips si en tenen; i la resta de cançons per visualitzacions, sempre amb el botó de play que genera ràdios.

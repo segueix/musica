@@ -48,129 +48,6 @@ describe('fitxa d’artista: ràdios i presentació', () => {
     it('les cançons de la ràdio no inclouen Shorts', () => {
         expect(page.songsOf([{ id: 'a' }, { id: 'b', isShort: true }, null, {}]).map(v => v.id)).toEqual(['a']);
     });
-
-    it('mostra el recompte com a cançons disponibles', () => {
-        expect(page.availableSongsLabel(1)).toBe('1 cançó disponible');
-        expect(page.availableSongsLabel(2)).toBe('2 cançons disponibles');
-        expect(page.availableSongsLabel(0)).toBe('0 cançons disponibles');
-    });
-
-    it('relaciona només els discos que tenen cançons visibles a la fitxa', () => {
-        const catalog = {
-            channels: { UC1: 'Artista' },
-            artists: {
-                Artista: {
-                    albums: [
-                        { id: 'a1', title: 'Disc A', coverVideoId: 'x', trackIds: ['1', '2'] },
-                        { id: 'a2', title: 'Disc B', coverVideoId: 'y', trackIds: ['9'] },
-                    ],
-                },
-            },
-        };
-        const model = page.albumsModel(catalog, {
-            channelId: 'UC1',
-            videos: [{ id: '1' }, { id: '2' }, { id: '3' }],
-        });
-        expect(model.artist).toBe('Artista');
-        expect(model.albums).toHaveLength(1);
-        expect(model.albums[0].visibleTrackIds).toEqual(['1', '2']);
-        expect(model.otherIds).toEqual(['3']);
-        expect(model.hasAlbums).toBe(true);
-    });
-
-    it('«Ràdio del disc» només amb un disc triat de dues cançons o més', () => {
-        expect(page.albumRadioModel({ title: 'Disc A' }, 4)).toEqual({
-            title: 'Disc A',
-            label: 'Ràdio del disc',
-            meta: '4 cançons disponibles',
-        });
-        expect(page.albumRadioModel({ title: 'Disc A' }, 1)).toBeNull();
-        expect(page.albumRadioModel(null, 5)).toBeNull();
-        expect(html).toContain('id="apAlbumRadio"');
-    });
-
-    it('manté un disc verificat pendent i indica una disponibilitat parcial sense inventar pistes', () => {
-        const catalog = {
-            channels: { UC1: 'Artista' },
-            artists: {
-                Artista: {
-                    albums: [
-                        {
-                            id: 'verified',
-                            title: 'Disc pendent',
-                            sourceType: 'release',
-                            trackIds: ['a', 'b'],
-                            trackGroups: [{ videoIds: ['a'] }, { videoIds: ['b'] }],
-                        },
-                        { id: 'inferred', title: 'Inferit buit', trackIds: ['c'] },
-                    ],
-                },
-            },
-        };
-        const empty = page.albumsModel(catalog, { channelId: 'UC1', videos: [] });
-        expect(empty.albums.map(a => a.id)).toEqual(['verified']);
-        expect(page.albumAvailabilityLabel(empty.albums[0])).toBe('Pistes pendents d’incorporar');
-        const partial = page.albumsModel(catalog, { channelId: 'UC1', videos: [{ id: 'b' }] });
-        expect(page.albumAvailabilityLabel(partial.albums[0])).toBe('1 de 2 cançons disponibles');
-    });
-
-    it('per defecte mostra totes les cançons; un disc filtra la llista i es conserva quan arriba més historial', async () => {
-        const catalog = {
-            channels: { UC1: 'Artista' },
-            artists: { Artista: { albums: [{ id: 'disc', title: 'Disc', trackIds: ['a', 'b'] }] } },
-        };
-        const ctx = loadScript('js/features/artist-page.js', {
-            document: { getElementById: () => null },
-            YouTubeAPI: { loadAlbumsCatalog: async () => catalog },
-        });
-        const feature = ctx.SegueixApp.features.artistPage;
-        feature.showProfile({ channelId: 'UC1', name: 'Artista' });
-        feature.setSongs([{ id: 'a' }, { id: 'other' }], 'UC1');
-        await new Promise(resolve => setTimeout(resolve, 0));
-        expect(feature.isAlbumFilterActive()).toBe(false);
-        expect(feature.filterSongs([{ id: 'other' }, { id: 'a' }], 'UC1')).toHaveLength(2);
-        feature.selectAlbum('disc');
-        expect(feature.filterSongs([{ id: 'other' }, { id: 'a' }], 'UC1')).toEqual([{ id: 'a' }]);
-        feature.setSongs([{ id: 'a' }, { id: 'b' }], 'UC1');
-        await new Promise(resolve => setTimeout(resolve, 0));
-        expect(feature.isAlbumFilterActive()).toBe(true);
-        expect(feature.filterSongs([{ id: 'b' }, { id: 'a' }], 'UC1').map(v => v.id)).toEqual(['a', 'b']);
-        feature.selectAlbum('');
-        expect(feature.isAlbumFilterActive()).toBe(false);
-    });
-
-    it('pinta els discos (també un de pendent, desactivat) i «Totes les cançons» només amb un disc triat', async () => {
-        const nodes = new Map(
-            ['apAlbums', 'apAlbumsGrid', 'apAlbumsAll'].map(id => [id, { innerHTML: '', hidden: true }])
-        );
-        const catalog = {
-            channels: { UC1: 'Artista' },
-            artists: {
-                Artista: {
-                    albums: [
-                        { id: 'pending', title: 'Disc pendent', sourceType: 'release', trackIds: ['a', 'b'] },
-                        { id: 'ok', title: 'Disc', trackIds: ['c', 'd'] },
-                    ],
-                },
-            },
-        };
-        const ctx = loadScript('js/features/artist-page.js', {
-            document: { getElementById: id => nodes.get(id) || null },
-            YouTubeAPI: { loadAlbumsCatalog: async () => catalog },
-        });
-        const feature = ctx.SegueixApp.features.artistPage;
-        feature.showProfile({ channelId: 'UC1', name: 'Artista' });
-        feature.setSongs([{ id: 'c' }, { id: 'd' }], 'UC1');
-        await new Promise(resolve => setTimeout(resolve, 0));
-        expect(nodes.get('apAlbums').hidden).toBe(false);
-        expect(nodes.get('apAlbumsGrid').innerHTML).toContain('disabled');
-        expect(nodes.get('apAlbumsGrid').innerHTML).toContain('Pistes pendents d’incorporar');
-        expect(nodes.get('apAlbumsAll').hidden).toBe(true);
-        feature.selectAlbum('ok');
-        expect(nodes.get('apAlbumsAll').hidden).toBe(false);
-        // Tornar a tocar el disc triat el desfà
-        expect(nodes.get('apAlbumsGrid').innerHTML).toMatch(/data-ap-album=""[^>]*aria-pressed="true"/);
-    });
 });
 
 describe('fitxa d’artista: cançons per visualitzacions', () => {
@@ -240,15 +117,54 @@ describe('fitxa d’artista: cançons per visualitzacions', () => {
         expect(page.heroImage('img/icon-192.png')).toBe('img/icon-192.png');
     });
 
-    it('cada cançó té el play que engega la ràdio i el botó de la cua; el text s’escapa', () => {
-        const html = page.songRowsHtml([{ id: 'x"1', title: '<b>Hola</b>', viewCount: 1500, durationSeconds: 200 }]);
+    it('cada cançó és una caràtula quadrada amb les dades al damunt, el play i la cua; el text s’escapa', () => {
+        const html = page.cardHtml(
+            { id: 'x"1', title: '<b>Hola</b>', viewCount: 1500, durationSeconds: 200, originalYear: 2001 },
+            { rank: 7, size: 'l' }
+        );
+        expect(html).toContain('class="ap-card ap-card--l"');
         expect(html).toContain('data-ap-play="x&quot;1"');
         expect(html).toContain('data-ap-queue="x&quot;1"');
         expect(html).toContain('&lt;b&gt;Hola&lt;/b&gt;');
         expect(html).not.toContain('<b>Hola');
-        expect(html).toContain('1,5 k visualitzacions');
-        expect(html).toContain('3:20');
-        expect(html).toContain('class="ap-play ap-play--sm"');
+        expect(html).toContain('>#7<');
+        expect(html).toContain('1,5 k</span>');
+        expect(html).toContain('2001 · 3:20');
+        expect(html).toContain('aria-label="Ràdio a partir de «&lt;b&gt;Hola&lt;/b&gt;», 1,5 k visualitzacions, 2001"');
+        // hqdefault (4:3 amb franges) s'amplia per omplir el quadrat; la maxresdefault del feed és la més nítida
+        expect(html).toContain('/hqdefault.jpg" alt="" loading="lazy" decoding="async" class="is-letterboxed"');
+        expect(page.cardHtml({ id: 'y', thumbnail: 'https://i.ytimg.com/vi/y/maxresdefault.jpg' })).toContain(
+            'maxresdefault.jpg'
+        );
+        expect(page.cardHtml({ id: 'y' }, { size: 'enorme' })).toContain('ap-card--s');
+    });
+
+    it('la mida de cada caràtula depèn de les visualitzacions', () => {
+        const views = [1000, 900, 700, 500, 300, 290, 100, 50, 10].map((viewCount, i) => ({
+            id: String(i),
+            viewCount,
+        }));
+        expect(page.sizeTiers(views)).toEqual(['xl', 'xl', 'xl', 'l', 'l', 'l', 's', 's', 's']);
+        // Com a molt tres de grans, encara que n'hi hagi més d'acostades a la primera
+        expect(page.sizeTiers([9, 9, 9, 9, 9].map((viewCount, i) => ({ id: String(i), viewCount })))).toEqual([
+            'xl',
+            'xl',
+            'xl',
+            'l',
+            'l',
+        ]);
+        expect(page.sizeTiers([])).toEqual([]);
+        // A la graella, les mides es calculen sobre tota la llista (no canvien amb «Mostra'n més»)
+        const html = page.songCardsHtml(views.slice(0, 7), { all: views });
+        expect(html.match(/ap-card--xl/g)).toHaveLength(3);
+        expect(html.match(/ap-card--l"/g)).toHaveLength(3);
+        expect(html.match(/ap-card--s"/g)).toHaveLength(1);
+    });
+
+    it('un directe porta l’adhesiu «Directe» a la graella però no dins la fila de directes', () => {
+        const live = { id: 'z', title: 'Viu', contentType: 'live_song', viewCount: 10 };
+        expect(page.cardHtml(live, { from: 'list' })).toContain('ap-card__live');
+        expect(page.cardHtml(live, { from: 'lives' })).not.toContain('ap-card__live');
     });
 
     it('la més escoltada porta la caràtula amb el play i el botó de ràdio', () => {
@@ -293,7 +209,7 @@ describe('fitxa d’artista: cançons per visualitzacions', () => {
         const feature = ctx.SegueixApp.features.artistPage;
         feature.showProfile({ channelId: 'UC1', name: 'Txarango' });
         feature.setSongs([{ id: 'a' }, { id: 'b' }], 'UC1');
-        expect(feature.playFrom('b', 'list')).toBe(true);
+        expect(feature.playFrom('b')).toBe(true);
         expect(calls[0].options).toMatchObject({ name: 'Txarango', channelId: 'UC1', seedId: 'b' });
         expect(calls[0].videos.map(v => v.id)).toEqual(['a', 'b']);
     });
@@ -321,8 +237,8 @@ describe('fitxa d’artista: HTML i CSS', () => {
         expect(css).toMatch(/#channelPage \.ap-hero__img\.channel-profile-avatar\s*{[^}]*position:\s*absolute/);
     });
 
-    it('al costat de la capçalera, la més escoltada; després videoclips/directes, discos i cançons', () => {
-        const order = ['id="apHero"', 'id="apBest"', 'id="apShelves"', 'id="apAlbums"', 'id="apSongs"'].map(item =>
+    it('al costat de la capçalera, la més escoltada; després videoclips/directes i la graella de cançons', () => {
+        const order = ['id="apHero"', 'id="apBest"', 'id="apShelves"', 'id="apSongs"'].map(item =>
             channelPage.indexOf(item)
         );
         order.forEach(index => expect(index).toBeGreaterThan(-1));
@@ -344,9 +260,6 @@ describe('fitxa d’artista: HTML i CSS', () => {
             'channelSupportBtn',
             'channelSearchInputDesktop',
             'channelSearchInputMobile',
-            'apAlbums',
-            'apAlbumsGrid',
-            'apAlbumsAll',
             'apSongsTitle',
         ].forEach(id => expect(channelPage, id).toContain(`id="${id}"`));
     });
@@ -359,18 +272,27 @@ describe('fitxa d’artista: HTML i CSS', () => {
         expect(css).toMatch(/\.channel-profile-description\.is-collapsed\s*{[^}]*-webkit-line-clamp:\s*3/);
     });
 
-    it('mostra els discos només dins la fitxa, amb caràtules quadrades i scroll horitzontal', () => {
-        expect(channelPage).toContain('id="apAlbums"');
-        expect(channelPage).toContain('>Discos</h2>');
-        expect(css).toMatch(/\.ap-album-cover[\s\S]*aspect-ratio:\s*1/);
-        expect(css).toMatch(/\.ap-albums-grid[\s\S]*overflow-x:\s*auto/);
+    it('no hi ha discos i les cançons són un mosaic de caràtules quadrades de mides diferents', () => {
+        expect(channelPage).not.toContain('apAlbums');
+        expect(channelPage).not.toContain('>Discos<');
+        expect(css).not.toContain('.ap-album');
+        expect(channelPage).toMatch(/<ul class="ap-grid" id="apSongs"/);
+        expect(css).toMatch(/#channelPage \.ap-card\s*{[^}]*aspect-ratio:\s*1;/);
+        expect(css).toMatch(/#channelPage \.ap-grid\s*{[^}]*grid-auto-flow:\s*dense/);
+        expect(css).toMatch(
+            /#channelPage \.ap-grid \.ap-card--xl\s*{[^}]*grid-column:\s*span 3;[^}]*grid-row:\s*span 3/
+        );
+        expect(css).toMatch(
+            /#channelPage \.ap-grid \.ap-card--l\s*{[^}]*grid-column:\s*span 2;[^}]*grid-row:\s*span 2/
+        );
+        expect(css).toMatch(/#channelPage \.ap-shelf__row\s*{[^}]*overflow-x:\s*auto/);
+        expect(css).toMatch(/#channelPage \.ap-card__queue\s*{[^}]*width:\s*44px/);
     });
 
     it('les icones de la fitxa no depenen de lucide (CDN) i el botó d’enrere és tàctil', () => {
         expect(channelPage).not.toContain('data-lucide');
         expect(css).toMatch(/#channelPage \.ap-top \.channel-back-btn[^{]*{[^}]*width:\s*44px/);
         expect(css).toMatch(/\.ap-radio\s*{[^}]*min-height:\s*48px/);
-        expect(css).toMatch(/#channelPage \.ap-song__queue\s*{[^}]*width:\s*44px/);
     });
 
     it('carrega el mòdul després de music-queue.js i abans d’app.js', () => {

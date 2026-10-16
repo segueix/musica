@@ -13430,12 +13430,8 @@ function renderChannelVideosLegacyImpl(query = '') {
         );
     };
 
-    const albumPage = SegueixApp.features.artistPage;
-    const albumFilteredLongVideos = albumPage?.filterSongs
-        ? albumPage.filterSongs(currentChannelLongVideos, currentChannelId)
-        : currentChannelLongVideos;
     // Al perfil del canal també només cançons (no concerts complets, pel·lícules, entrevistes, ni Shorts).
-    const filteredLongVideos = albumFilteredLongVideos.filter(isSongVideo).filter(filterByQuery);
+    const filteredLongVideos = currentChannelLongVideos.filter(isSongVideo).filter(filterByQuery);
 
     if (normalizedQuery && filteredLongVideos.length === 0) {
         channelVideosGrid.innerHTML = '<div class="empty-state">No s\'han trobat resultats dins d\'aquest canal.</div>';

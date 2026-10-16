@@ -1,12 +1,13 @@
 // Fitxa d'artista: la foto de perfil de fons amb el nom, els subscriptors, l'origen, les ràdios i compartir al damunt;
-// al costat, la cançó més escoltada; després els videoclips i els directes (si en té), els discos i la resta de
-// cançons per visualitzacions. Cada play engega una ràdio de l'artista que comença per aquella cançó.
+// al costat, la cançó més escoltada; a sota, caràtules de vídeo grans: els videoclips i els directes (si en té) i
+// totes les cançons per visualitzacions. Cada play engega una ràdio de l'artista que comença per aquella cançó.
+// La fitxa ja no mostra discos (2026-10-16).
 // Implementació directa (patró 2); el que no toca el DOM és pur i testable:
 //  - artistStyles(): estils de l'artista (el principal primer) per a la «ràdio de l'estil»;
 //  - radiosModel(): quines ràdios es poden engegar i amb quin text;
 //  - bioModel(): presentació neta (sense text de farciment);
 //  - songsModel(): la més escoltada, videoclips, directes i la resta, per visualitzacions;
-//  - bestHtml(), shelvesHtml(), songRowsHtml(): HTML de cada bloc.
+//  - bestHtml(), shelvesHtml(), songCardsHtml(): HTML de cada bloc.
 // La fitxa la pinta openChannelProfileLegacyImpl() (app.js), que crida showProfile(), setSongs() i renderSongs().
 (function (window) {
     const app = window.SegueixApp;
@@ -17,16 +18,11 @@
     // Una combinació de tres estils ja és una barreja prou àmplia; més la diluiria.
     const MAX_STYLES = 3;
     const MIN_SONGS = 2;
-    const ALBUMS_URL = 'data/albums-musica.json';
     // Cançons de la llista que es veuen d'entrada i quantes més se n'hi afegeixen amb «Mostra'n més».
-    const LIST_FIRST = 20;
-    const LIST_STEP = 30;
+    const LIST_FIRST = 18;
+    const LIST_STEP = 24;
     // Videoclips i directes: una fila amb scroll lateral; més enllà d'aquest nombre van a la llista.
     const SHELF_MAX = 24;
-    // Disc (cercle amb el forat del mig) per al botó «Ràdio del disc»
-    const RADIO_ICON =
-        '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/></svg>';
-    const OTHER_ALBUM_ID = '__other';
     const PLAY_ICON =
         '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 5.6v12.8a1 1 0 0 0 1.5.86l10.2-6.4a1 1 0 0 0 0-1.72L9.5 4.74A1 1 0 0 0 8 5.6Z"/></svg>';
     // El mateix símbol que «Afegeix a la cua» de la portada (el «+» sol és «afegeix a una llista»)
@@ -98,46 +94,6 @@
         };
     }
 
-    // Discos visibles en aquesta fitxa. El catàleg es carrega només en obrir un artista.
-    // Un mateix disc pot tenir pistes Topic i videoclips oficials; només compten els IDs que existeixen a la fitxa.
-    function albumsModel(catalog, { channelId = '', videos = [] } = {}) {
-        const id = text(channelId);
-        const artist = text(catalog?.channels?.[id]);
-        const entry = artist ? catalog?.artists?.[artist] : null;
-        const songs = songsOf(videos);
-        const songIds = new Set(songs.map(video => String(video.id)));
-        const albums = (Array.isArray(entry?.albums) ? entry.albums : [])
-            .map(album => ({
-                ...album,
-                visibleTrackIds: (Array.isArray(album?.trackGroups)
-                    ? album.trackGroups
-                          .map(track => (track.videoIds || []).find(id => songIds.has(String(id))))
-                          .filter(Boolean)
-                    : Array.isArray(album?.trackIds)
-                      ? album.trackIds
-                      : []
-                )
-                    .map(String)
-                    .filter(trackId => songIds.has(trackId)),
-            }))
-            // Un llançament verificat continua visible mentre arriben les pistes.
-            .filter(
-                album =>
-                    album.visibleTrackIds.length > 0 ||
-                    (album.trackIds?.length &&
-                        ['release', 'official_playlist', 'discography'].includes(album.sourceType))
-            )
-            .sort(
-                (a, b) =>
-                    Number(a.type === 'single') - Number(b.type === 'single') ||
-                    (Number(b.year) || 0) - (Number(a.year) || 0) ||
-                    a.title.localeCompare(b.title, 'ca')
-            );
-        const assigned = new Set(albums.flatMap(album => album.trackIds || album.visibleTrackIds));
-        const otherIds = songs.map(video => String(video.id)).filter(videoId => !assigned.has(videoId));
-        return { artist, albums, otherIds, hasAlbums: albums.length > 0 };
-    }
-
     // Presentació: el text net (en conserva els salts de línia, però no més d'un de buit seguit).
     function bioModel(description) {
         const clean = text(description)
@@ -201,6 +157,7 @@
     function artOf(video, { square = false, large = false } = {}) {
         const id = encodeURIComponent(text(video?.id));
         const own = text(video?.thumbnail);
+        // La maxresdefault del feed és la més nítida (YouTube la dona en desar el vídeo al feed, així que existeix).
         if (large && /^https:\/\/i\.ytimg\.com\/vi\/[^/]+\/maxresdefault\.jpg$/i.test(own)) return own;
         if (!id) return '';
         return `https://i.ytimg.com/vi/${id}/${square && !large ? 'mqdefault' : 'hqdefault'}.jpg`;
@@ -281,28 +238,85 @@
                 aria-label="${escapeHtml(label)}">${PLAY_ICON}<span>Ràdio a partir d’aquesta</span></button>`;
     }
 
-    function tileHtml(video, from) {
+    const EYE_ICON =
+        '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M1.5 12S5 5 12 5s10.5 7 10.5 7S19 19 12 19 1.5 12 1.5 12Z"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/></svg>';
+
+    // Mida de cada caràtula segons les visualitzacions (relatives a la més escoltada del conjunt): 'xl' (3 × 3) les
+    // que en tenen almenys el 60 %, 'l' (2 × 2) les que en tenen almenys el 28 % i 's' (1 × 1) la resta. La primera
+    // sempre és 'xl'; com a molt MAX_XL grans i un terç de mitjanes, perquè el mosaic no sigui tot igual.
+    const MAX_XL = 3;
+    function sizeTiers(videos) {
+        const list = Array.isArray(videos) ? videos : [];
+        const max = Math.max(1, ...list.map(viewsOf));
+        const maxL = Math.max(1, Math.ceil(list.length / 3));
+        let xl = 0;
+        let l = 0;
+        return list.map((video, index) => {
+            const ratio = viewsOf(video) / max;
+            if (index === 0 || (ratio >= 0.6 && xl < MAX_XL)) {
+                xl += 1;
+                return 'xl';
+            }
+            if (ratio >= 0.28 && l < maxL) {
+                l += 1;
+                return 'l';
+            }
+            return 's';
+        });
+    }
+
+    // Caràtula quadrada amb les dades al damunt (estil fanzín punk): el número (posició per visualitzacions), les
+    // visualitzacions en un adhesiu, el títol en cinta, l'any i la durada, «Afegeix a la cua» i el play. Tota la
+    // caràtula engega la ràdio que comença per la cançó. `size`: 'xl' | 'l' | 's' (sizeTiers()).
+    function cardHtml(video, { from = 'list', rank = 0, size = 's' } = {}) {
         const id = escapeHtml(video.id);
         const title = text(video.title) || 'Cançó';
         const duration = formatDuration(video.durationSeconds);
+        const views = viewsOf(video);
+        const year = songYear(video);
+        const art = artOf(video, { square: true, large: true });
+        const live = isLive(video) && from !== 'lives';
+        const facts = [year ? String(year) : '', duration].filter(Boolean).join(' · ');
+        const label = [`Ràdio a partir de «${title}»`, viewsLabel(views), year ? String(year) : '']
+            .filter(Boolean)
+            .join(', ');
+        const tier = ['xl', 'l', 's'].includes(size) ? size : 's';
         return `
-            <li class="ap-tile">
-                <button class="ap-tile__btn" type="button" data-ap-play="${id}" data-ap-from="${from}"
-                    aria-label="${escapeHtml(`Ràdio a partir de «${title}»`)}">
-                    <span class="ap-tile__art">
-                        <img src="${escapeHtml(artOf(video))}" alt="" loading="lazy" decoding="async">
-                        ${duration ? `<span class="ap-tile__dur">${duration}</span>` : ''}
-                        <span class="ap-play" aria-hidden="true">${PLAY_ICON}</span>
+            <li class="ap-card ap-card--${tier}">
+                <button class="ap-card__art" type="button" data-ap-play="${id}" data-ap-from="${from}"
+                    aria-label="${escapeHtml(label)}">
+                    <img src="${escapeHtml(art)}" alt="" loading="lazy" decoding="async"${isLetterboxed(art) ? ' class="is-letterboxed"' : ''}>
+                    <span class="ap-card__ink" aria-hidden="true"></span>
+                    ${rank ? `<span class="ap-card__rank" aria-hidden="true">#${rank}</span>` : ''}
+                    <span class="ap-card__info" aria-hidden="true">
+                        ${views ? `<span class="ap-card__views">${EYE_ICON}${formatCount(views)}</span>` : ''}
+                        ${live ? '<span class="ap-card__live">Directe</span>' : ''}
+                        <span class="ap-card__title"><span>${escapeHtml(title)}</span></span>
+                        ${facts ? `<span class="ap-card__facts">${escapeHtml(facts)}</span>` : ''}
                     </span>
-                    <span class="ap-tile__title">${escapeHtml(title)}</span>
-                    <span class="ap-tile__meta">${escapeHtml(metaLine(video))}</span>
+                    <span class="ap-play" aria-hidden="true">${PLAY_ICON}</span>
                 </button>
+                <button class="ap-card__queue" type="button" data-ap-queue="${id}" aria-label="${escapeHtml(`Afegeix a la cua: ${title}`)}" title="Afegeix a la cua">${QUEUE_ICON}</button>
             </li>`;
     }
 
-    // Videoclips i directes: una fila cadascun (només si n'hi ha almenys dos), amb la ràdio només d'aquell tipus.
+    // Posició de cada cançó entre totes les de l'artista (per visualitzacions): «#1» és la més escoltada.
+    function rankFor(model) {
+        const ranks = new Map((model?.all || []).map((video, index) => [text(video.id), index + 1]));
+        return video => ranks.get(text(video?.id)) || 0;
+    }
+
+    function cardsHtml(videos, { from = 'list', rankOf = () => 0, tiers = null } = {}) {
+        const list = Array.isArray(videos) ? videos : [];
+        const sizes = tiers || sizeTiers(list);
+        return list.map((video, index) => cardHtml(video, { from, rank: rankOf(video), size: sizes[index] })).join('');
+    }
+
+    // Videoclips i directes: una fila de caràtules quadrades cadascun (només si n'hi ha almenys dos), de mida segons
+    // les visualitzacions, amb la ràdio només d'aquell tipus.
     function shelvesHtml(model, { artist = '' } = {}) {
         const who = text(artist) || 'l’artista';
+        const rankOf = rankFor(model);
         return [
             ['clips', 'Videoclips', model?.clips || [], `Ràdio dels videoclips de ${who}`],
             ['lives', 'Directes', model?.lives || [], `Ràdio dels directes de ${who}`],
@@ -310,41 +324,24 @@
             .filter(([, , items]) => items.length)
             .map(
                 ([key, title, items, radio]) => `
-            <section class="ap-shelf" aria-labelledby="apShelf-${key}">
+            <section class="ap-shelf ap-shelf--${key}" aria-labelledby="apShelf-${key}">
                 <div class="ap-section-head">
                     <h2 class="ap-section-title" id="apShelf-${key}">${title} <span class="ap-count">${items.length}</span></h2>
                     <button class="ap-chip-btn" type="button" data-ap-shelf-radio="${key}" aria-label="${escapeHtml(radio)}">${PLAY_ICON}<span>Ràdio</span></button>
                 </div>
-                <ul class="ap-shelf__row">${items.map(video => tileHtml(video, key)).join('')}</ul>
+                <ul class="ap-shelf__row">${cardsHtml(items, { from: key, rankOf })}</ul>
             </section>`
             )
             .join('');
     }
 
-    // Files de la llista de cançons: número, caràtula, títol, visualitzacions i any, durada, cua i play.
-    function songRowsHtml(videos, { start = 0, from = 'list' } = {}) {
-        return (Array.isArray(videos) ? videos : [])
-            .map((video, index) => {
-                const id = escapeHtml(video.id);
-                const title = text(video.title) || 'Cançó';
-                const duration = formatDuration(video.durationSeconds);
-                const kind = isLive(video) ? ['Directe'] : [];
-                return `
-            <li class="ap-song">
-                <button class="ap-song__main" type="button" data-ap-play="${id}" data-ap-from="${from}"
-                    aria-label="${escapeHtml(`Ràdio a partir de «${title}»`)}">
-                    <span class="ap-song__n" aria-hidden="true">${start + index + 1}</span>
-                    <span class="ap-song__art"><img src="${escapeHtml(artOf(video, { square: true }))}" alt="" loading="lazy" decoding="async"><span class="ap-play ap-play--sm" aria-hidden="true">${PLAY_ICON}</span></span>
-                    <span class="ap-song__text">
-                        <span class="ap-song__title">${escapeHtml(title)}</span>
-                        <span class="ap-song__meta">${escapeHtml(metaLine(video, kind))}</span>
-                    </span>
-                    ${duration ? `<span class="ap-song__dur">${duration}</span>` : ''}
-                </button>
-                <button class="ap-song__queue" type="button" data-ap-queue="${id}" aria-label="${escapeHtml(`Afegeix a la cua: ${title}`)}" title="Afegeix a la cua">${QUEUE_ICON}</button>
-            </li>`;
-            })
-            .join('');
+    // Totes les cançons: mosaic de caràtules en l'ordre que rep (per visualitzacions). Les mides es calculen sobre
+    // tota la llista (no només la pàgina que es veu) perquè no canviïn en prémer «Mostra'n més».
+    function songCardsHtml(videos, { model = null, all = null, from = 'list' } = {}) {
+        const list = Array.isArray(videos) ? videos : [];
+        const full = Array.isArray(all) ? all : list;
+        const tiers = sizeTiers(full).slice(0, list.length);
+        return cardsHtml(list, { from, rankOf: rankFor(model), tiers });
     }
 
     // ---------- DOM ----------
@@ -356,8 +353,6 @@
         songs: [],
         loading: false,
         program: false,
-        albums: { artist: '', albums: [], otherIds: [], hasAlbums: false },
-        selectedAlbumId: '',
         origin: null,
         // Llista de cançons que es veu ara (per al play i la cua) i quantes se'n mostren.
         model: null,
@@ -366,8 +361,6 @@
         listLimit: LIST_FIRST,
     };
     let bound = false;
-    let albumsPromise = null;
-    let albumsRequest = 0;
     let originsPromise = null;
     let originRequest = 0;
 
@@ -463,168 +456,6 @@
         if (typeof fn === 'function') fn(message);
     }
 
-    function hideAlbums() {
-        const section = $('apAlbums');
-        if (section) section.hidden = true;
-        const grid = $('apAlbumsGrid');
-        if (grid) grid.innerHTML = '';
-        state.albums = { artist: '', albums: [], otherIds: [], hasAlbums: false };
-        state.selectedAlbumId = '';
-    }
-
-    async function loadAlbumsCatalog() {
-        const api = typeof YouTubeAPI !== 'undefined' ? YouTubeAPI : window.YouTubeAPI;
-        if (typeof api?.loadAlbumsCatalog === 'function') return api.loadAlbumsCatalog();
-        if (albumsPromise) return albumsPromise;
-        albumsPromise = (async () => {
-            try {
-                const url = typeof window.appDataUrl === 'function' ? window.appDataUrl(ALBUMS_URL) : ALBUMS_URL;
-                const response = await window.fetch(url, { cache: 'no-store' });
-                if (!response.ok) return null;
-                return await response.json();
-            } catch (error) {
-                console.warn('Discos no disponibles:', error);
-                return null;
-            }
-        })();
-        return albumsPromise;
-    }
-
-    function albumCover(videoId) {
-        return videoId ? `https://i.ytimg.com/vi/${encodeURIComponent(videoId)}/hqdefault.jpg` : '';
-    }
-
-    function availableSongsLabel(count) {
-        const total = Math.max(0, Number(count) || 0);
-        return total === 1 ? '1 cançó disponible' : `${total} cançons disponibles`;
-    }
-
-    function albumAvailabilityLabel(album) {
-        const count = album.visibleTrackIds.length;
-        if (!count) return 'Pistes pendents d’incorporar';
-        const total = album.trackGroups?.length || 0;
-        return total > count ? `${count} de ${total} cançons disponibles` : availableSongsLabel(count);
-    }
-
-    function renderAlbums() {
-        const section = $('apAlbums');
-        const grid = $('apAlbumsGrid');
-        const all = $('apAlbumsAll');
-        if (!section || !grid || state.program || !state.albums.hasAlbums) {
-            if (section) section.hidden = true;
-            return;
-        }
-
-        const selected = state.selectedAlbumId;
-        // «Totes les cançons» només hi és quan un disc filtra la llista.
-        if (all) all.hidden = !selected;
-        grid.innerHTML = [
-            ...state.albums.albums.map(album => {
-                const count = album.visibleTrackIds.length;
-                const kind = { album: 'Àlbum', ep: 'EP', single: 'Senzill', live: 'Directe' }[album.type] || '';
-                const meta = [kind, album.year || '', albumAvailabilityLabel(album)].filter(Boolean).join(' · ');
-                return `
-                    <button class="ap-album-card ${selected === album.id ? 'is-active' : ''}" type="button"
-                        data-ap-album="${escapeHtml(selected === album.id ? '' : album.id)}" aria-pressed="${selected === album.id}" ${count ? '' : 'disabled'}>
-                        <img class="ap-album-cover" src="${escapeHtml(/^https:\/\//.test(album.coverUrl || '') ? album.coverUrl : albumCover(album.coverVideoId))}"
-                            alt="Caràtula de ${escapeHtml(album.title)}" loading="lazy">
-                        <span class="ap-album-title">${escapeHtml(album.title)}</span>
-                        <span class="ap-album-meta">${escapeHtml(meta)}</span>
-                    </button>`;
-            }),
-            state.albums.otherIds.length
-                ? `<button class="ap-album-card ap-album-card--other ${selected === OTHER_ALBUM_ID ? 'is-active' : ''}"
-                        type="button" data-ap-album="${selected === OTHER_ALBUM_ID ? '' : OTHER_ALBUM_ID}" aria-pressed="${selected === OTHER_ALBUM_ID}">
-                        <span class="ap-album-other-icon" aria-hidden="true">♪</span>
-                        <span class="ap-album-title">Altres cançons</span>
-                        <span class="ap-album-meta">${availableSongsLabel(state.albums.otherIds.length)}</span>
-                   </button>`
-                : '',
-        ].join('');
-        renderAlbumRadio();
-        section.hidden = false;
-    }
-
-    // Disc triat (no «Singles i altres»): botó «Ràdio del disc» amb només les seves cançons.
-    function selectedAlbum() {
-        const id = state.selectedAlbumId;
-        if (!id || id === OTHER_ALBUM_ID) return null;
-        return state.albums.albums.find(album => String(album.id) === id) || null;
-    }
-
-    function albumRadioModel(album, songCount) {
-        if (!album || songCount < 2) return null;
-        return { title: String(album.title || ''), label: 'Ràdio del disc', meta: availableSongsLabel(songCount) };
-    }
-
-    function renderAlbumRadio() {
-        const wrap = $('apAlbumRadio');
-        if (!wrap) return;
-        const album = selectedAlbum();
-        const model = albumRadioModel(album, album ? filterSongs(state.songs).length : 0);
-        wrap.hidden = !model;
-        wrap.innerHTML = model
-            ? `<span class="ap-album-radio__text"><strong>${escapeHtml(model.title)}</strong><span>${escapeHtml(model.meta)}</span></span>
-               <button class="ap-radio ap-radio--artist ap-album-radio__btn" type="button" data-ap-album-radio
-                   aria-label="Ràdio del disc «${escapeHtml(model.title)}»">${RADIO_ICON}<span>${model.label}</span></button>`
-            : '';
-    }
-
-    function startAlbumRadio() {
-        const album = selectedAlbum();
-        const started =
-            album &&
-            app.features.musicQueue?.startAlbumRadio?.(filterSongs(state.songs), {
-                album: album.title,
-                artist: state.name,
-                channelId: state.channelId,
-            });
-        if (!started) toast('Aquest disc té massa poques cançons per fer una ràdio.');
-        return Boolean(started);
-    }
-
-    async function loadAndRenderAlbums(channelId, videos) {
-        if (state.program) return hideAlbums();
-        const expected = text(channelId);
-        const request = ++albumsRequest;
-        const catalog = await loadAlbumsCatalog();
-        if (expected !== state.channelId || request !== albumsRequest) return;
-        state.albums = albumsModel(catalog, { channelId: expected, videos });
-        if (!state.albums.hasAlbums) state.selectedAlbumId = '';
-        renderAlbums();
-        const query = text($('channelSearchInputDesktop')?.value) || text($('channelSearchInputMobile')?.value);
-        if (typeof window.renderChannelVideos === 'function') window.renderChannelVideos(query);
-    }
-
-    function selectAlbum(albumId = '') {
-        const next = text(albumId);
-        const valid = !next || next === OTHER_ALBUM_ID || state.albums.albums.some(album => String(album.id) === next);
-        if (!valid) return false;
-        state.selectedAlbumId = next;
-        renderAlbums();
-        const query = text($('channelSearchInputDesktop')?.value) || text($('channelSearchInputMobile')?.value);
-        if (typeof window.renderChannelVideos === 'function') window.renderChannelVideos(query);
-        if (next) $('apSongsTitle')?.scrollIntoView?.({ block: 'start', behavior: 'smooth' });
-        return true;
-    }
-
-    function filterSongs(videos, channelId = '') {
-        const list = Array.isArray(videos) ? videos : [];
-        if (channelId && text(channelId) !== state.channelId) return list;
-        const selected = state.selectedAlbumId;
-        if (!selected) return list;
-        const ids =
-            selected === OTHER_ALBUM_ID
-                ? new Set(state.albums.otherIds)
-                : new Set(state.albums.albums.find(album => String(album.id) === selected)?.visibleTrackIds || []);
-        const filtered = list.filter(video => ids.has(String(video?.id || '')));
-        if (selected === OTHER_ALBUM_ID) return filtered;
-        const order = new Map([...ids].map((id, index) => [id, index]));
-        return filtered.sort((a, b) => order.get(String(a.id)) - order.get(String(b.id)));
-    }
-
-    const isAlbumFilterActive = () => Boolean(state.selectedAlbumId);
-
     // ---------- Cançons de la fitxa ----------
 
     // Videoclips: el mateix criteri que «Videoclips oficials» de la portada (home-sections.js).
@@ -661,7 +492,7 @@
         const more = $('apSongsMore');
         if (!list) return;
         const shown = state.list.slice(0, state.listLimit);
-        list.innerHTML = songRowsHtml(shown);
+        list.innerHTML = songCardsHtml(shown, { model: state.model, all: state.list });
         list.hidden = !shown.length;
         if (more) {
             const remaining = state.list.length - shown.length;
@@ -670,16 +501,15 @@
         }
     }
 
-    // Pinta la més escoltada, els videoclips i directes, i la llista de cançons. `videos`: les cançons de
+    // Pinta la més escoltada, els videoclips i directes, i la graella de cançons. `videos`: les cançons de
     // l'artista (app.js ja n'ha tret el que no és música); `query`: cerca dins l'artista; `hidden`: artista amagat.
     function renderSongs({ videos = [], query = '', hidden = false } = {}) {
         const q = text(query);
         const model = songsModel(videos, { isClip });
         state.model = model;
-        const album = isAlbumFilterActive();
 
         setHtml($('apBest'), hidden ? '' : bestHtml(model.best, { artist: state.name }));
-        setHtml($('apShelves'), hidden || q || album ? '' : shelvesHtml(model, { artist: state.name }));
+        setHtml($('apShelves'), hidden || q ? '' : shelvesHtml(model, { artist: state.name }));
 
         const stats = $('apStats');
         if (stats) {
@@ -694,11 +524,10 @@
         let items;
         let heading = 'Cançons';
         if (hidden) items = [];
-        else if (album || q) {
-            items = (album ? filterSongs(model.all) : model.all).filter(video => matchesQuery(video, q));
-            const picked = selectedAlbum();
-            if (album) heading = picked ? `«${text(picked.title)}»` : 'Altres cançons';
-            if (q) heading = album ? `${heading}: resultats` : 'Resultats';
+        else if (q) {
+            // Cercant, totes les cançons que coincideixen (també videoclips i directes), per visualitzacions.
+            items = model.all.filter(video => matchesQuery(video, q));
+            heading = 'Resultats';
         } else {
             items = model.rest;
             if (model.clips.length || model.lives.length) heading = 'Totes les cançons';
@@ -717,16 +546,14 @@
                 ? 'Has amagat aquest artista del feed.'
                 : !model.total
                   ? 'Encara no hi ha cançons d’aquest artista.'
-                  : !items.length && (q || album)
-                    ? q
-                        ? `No hi ha cap cançó amb «${q}».`
-                        : 'Aquest disc encara no té cançons disponibles.'
+                  : !items.length && q
+                    ? `No hi ha cap cançó amb «${q}».`
                     : '';
             empty.textContent = message;
             empty.hidden = !message;
         }
 
-        const key = [state.channelId, q, state.selectedAlbumId].join('|');
+        const key = [state.channelId, q].join('|');
         if (key !== state.listKey) {
             state.listKey = key;
             state.listLimit = LIST_FIRST;
@@ -749,29 +576,16 @@
         );
     }
 
-    // Play d'una cançó: ràdio de l'artista que comença per aquella cançó (amb un disc triat, la ràdio del disc).
-    // Si l'artista només té una cançó, la fa sonar sola.
-    function playFrom(id, from = 'list') {
-        const queue = app.features.musicQueue;
+    // Play d'una cançó: ràdio de l'artista que comença per aquella cançó. Si l'artista només té una cançó, la fa
+    // sonar sola.
+    function playFrom(id) {
         const seedId = text(id);
         if (!seedId) return false;
-        const album = selectedAlbum();
-        let started = false;
-        if (from === 'list' && album) {
-            started = queue?.startAlbumRadio?.(filterSongs(state.songs), {
-                album: album.title,
-                artist: state.name,
-                channelId: state.channelId,
-                seedId,
-            });
-        }
-        if (!started) {
-            started = queue?.startArtistRadio?.(state.songs, {
-                name: state.name,
-                channelId: state.channelId,
-                seedId,
-            });
-        }
+        const started = app.features.musicQueue?.startArtistRadio?.(state.songs, {
+            name: state.name,
+            channelId: state.channelId,
+            seedId,
+        });
         if (started) return true;
         if (typeof window.openVideoFromUserGesture === 'function') {
             window.openVideoFromUserGesture(seedId, 'api');
@@ -896,7 +710,6 @@
         state.model = null;
         state.list = [];
         state.listKey = '';
-        hideAlbums();
         showPhoto(avatar);
         // Mentre arriben les cançons, cap bloc de la fitxa anterior.
         ['apBest', 'apShelves'].forEach(id => setHtml($(id), ''));
@@ -929,7 +742,6 @@
         state.songs = songsOf(videos);
         state.loading = false;
         renderRadios();
-        void loadAndRenderAlbums(state.channelId, state.songs);
     }
 
     function startArtistRadio() {
@@ -952,7 +764,7 @@
         const queueBtn = target?.closest?.('[data-ap-queue]');
         if (queueBtn) return enqueueSong(queueBtn.dataset.apQueue);
         const play = target?.closest?.('[data-ap-play]');
-        if (play) return playFrom(play.dataset.apPlay, play.dataset.apFrom);
+        if (play) return playFrom(play.dataset.apPlay);
         const shelf = target?.closest?.('[data-ap-shelf-radio]');
         if (shelf) return startShelfRadio(shelf.dataset.apShelfRadio);
         if (target?.closest?.('#apSongsMore')) return showMore();
@@ -962,9 +774,6 @@
         if (radio && !radio.disabled) {
             return radio.dataset.apRadio === 'style' ? startStyleRadio() : startArtistRadio();
         }
-        if (target?.closest?.('[data-ap-album-radio]')) return startAlbumRadio();
-        const album = target?.closest?.('[data-ap-album]');
-        if (album) return selectAlbum(album.dataset.apAlbum || '');
         if (target?.closest?.('#apBioToggle')) return toggleBio();
         return undefined;
     }
@@ -985,10 +794,6 @@
         bioModel,
         originModel,
         originHtml,
-        albumsModel,
-        albumRadioModel,
-        availableSongsLabel,
-        albumAvailabilityLabel,
         formatCount,
         viewsLabel,
         subscribersLabel,
@@ -1000,15 +805,14 @@
         songsModel,
         bestHtml,
         shelvesHtml,
-        songRowsHtml,
+        sizeTiers,
+        cardHtml,
+        songCardsHtml,
         matchesQuery,
         showProfile,
         renderSongs,
         playFrom,
         setSongs,
-        selectAlbum,
-        filterSongs,
-        isAlbumFilterActive,
         startArtistRadio,
         startStyleRadio,
         measureBio,

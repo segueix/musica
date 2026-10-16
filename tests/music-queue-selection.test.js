@@ -1075,21 +1075,6 @@ describe('ràdios de la fitxa d’artista', () => {
         expect(queue.playlistName()).toBe('Videoclips de Artista Fitxa');
     });
 
-    it('la ràdio d’un disc només porta les cançons del disc, també en «Barreja»', () => {
-        const catalog = artistCatalog();
-        const { queue, ctx } = setup({ catalog });
-        const disc = catalog.filter(v => v.channelId === 'art').slice(0, 4);
-        expect(queue.startAlbumRadio(disc, { album: 'El disc', artist: 'Artista Fitxa', channelId: 'art' })).toBe(true);
-        const ids = new Set(disc.map(v => v.id));
-        expect(ctx.activePlaylistQueue).toHaveLength(4);
-        expect(ctx.activePlaylistQueue.every(v => ids.has(v.id))).toBe(true);
-        expect(queue.playlistName()).toBe('Ràdio «El disc»');
-        queue.regenerate();
-        expect(ctx.activePlaylistQueue.every(v => ids.has(v.id))).toBe(true);
-        expect(queue.startAlbumRadio(disc.slice(0, 1), { album: 'El disc' })).toBe(false);
-        expect(queue.startAlbumRadio(disc, { album: '' })).toBe(false);
-    });
-
     it('no engega una ràdio d’artista amb una sola cançó ni sense nom', () => {
         const catalog = artistCatalog();
         const { queue, calls } = setup({ catalog });
