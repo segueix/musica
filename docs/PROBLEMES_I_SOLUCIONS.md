@@ -1,3 +1,11 @@
+## [2026-10-16] - «Per afinitat» al mòbil: el marc blanc de la primera targeta quedava tallat
+
+**Símptoma:** a Descobreix, al mòbil, la primera targeta de «Per afinitat» no es veia sencera: li faltava el marc blanc de l'esquerra i la filera quedava tallada abans de la vora dreta.
+
+**Causa Arrel:** la filera (`.af-list`, scroll lateral) sortia 16 px per cada costat (`margin: 0 -16px; padding: 0 16px`) per anar de vora a vora, però `#homePage` té `contain: content` (inclou `paint`) i retalla el que en surt. A més, `scroll-snap-align: start` sense `scroll-padding` enganxava la primera targeta a la vora de la filera (`scrollLeft = 16`), és a dir, dins la franja retallada.
+
+**Solució Implementada:** al mòbil, `.af-list` amb `margin: 0`, `padding: 0 0 4px` i `scroll-padding-inline: 0`: la filera queda dins dels marges de la pàgina, la primera targeta comença a la vora del contingut i, en arribar al final, l'última també es veu sencera. **Trampa:** dins `#homePage` no facis files «de vora a vora» amb marges negatius: el `contain` les retalla. Proves: `tests/affinity.test.js`; opt-in `node tests/browser/verificar-afinitat.js` («la primera i l'última targeta es veuen senceres»).
+
 ## [2026-10-16] - Caràtules amb marc blanc: cantonades una mica arrodonides
 
 **Petició:** les caràtules amb marc blanc, amb les puntes «el mínim possible però perceptible» arrodonides.

@@ -8568,15 +8568,19 @@ body.am-full-open {
 .af-style:hover {
     border-color: var(--pt-accent);
 }
-/* Mòbil: una filera amb scroll lateral, com els artistes de les categories */
+/* Mòbil: una filera amb scroll lateral, com els artistes de les categories. La filera queda dins dels marges de la
+   pàgina (2026-10-16): abans sortia 16 px per cada costat (margin negatiu), però #homePage té `contain: content` i
+   en retallava el que en sortia, i l'ancoratge del scroll hi enganxava la primera targeta: el marc blanc de
+   l'esquerra i la part dreta quedaven tallats. */
 @media (max-width: 768px) {
     .af-list {
         display: flex;
         gap: 4px;
-        margin: 0 -16px;
-        padding: 0 16px 4px;
+        margin: 0;
+        padding: 0 0 4px;
         overflow-x: auto;
         scroll-snap-type: x mandatory;
+        scroll-padding-inline: 0;
         scrollbar-width: none;
     }
     .af-card {

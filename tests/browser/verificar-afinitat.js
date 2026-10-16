@@ -205,6 +205,29 @@ async function run(browser, width, height, taste) {
             info.cards.every(c => !known.includes(c.name)),
             known
         );
+        if (width <= 768) {
+            // Mòbil: la primera targeta (i l'última, en arribar al final) es veu sencera, amb tot el marc blanc
+            // (#homePage té `contain: content` i retalla el que en surt)
+            const visible = await page.evaluate(async () => {
+                const clip = document.getElementById('homePage').getBoundingClientRect();
+                const list = document.querySelector('.af-list');
+                const inside = card => {
+                    const r = card.getBoundingClientRect();
+                    return r.left >= clip.left - 0.5 && r.right <= clip.right + 0.5;
+                };
+                const first = inside(list.querySelector('.af-card'));
+                list.scrollLeft = list.scrollWidth;
+                await new Promise(resolve => setTimeout(resolve, 400));
+                const last = inside(list.querySelector('.af-card:last-child'));
+                list.scrollLeft = 0;
+                return { first, last };
+            });
+            ok(
+                `${tag}: la primera i l'última targeta es veuen senceres, amb el marc blanc`,
+                visible.first && visible.last,
+                visible
+            );
+        }
         const name = info.cards[0].name.trim();
         await page.click('.af-card__main');
         await page.waitForSelector('#channelPage:not(.hidden)', { timeout: 10000 });
