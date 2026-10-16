@@ -558,6 +558,10 @@ const likes = ctx2.SegueixApp.features.likes;
 - **Sense subtítols explicatius visibles** a les seccions (`.pt-head__sub`, `.home-section-subtitle`): continuen a l'HTML per als lectors de pantalla. Botons de capçalera de vidre amb vora blanca.
 - Proves: `tests/inici-caratules.test.js`; opt-in `node tests/browser/verificar-inici-caratules.js` (amb `INICI_SHOTS=` fa captures).
 
+### «La teva música» amb el llenguatge de caràtules (2026-10-16)
+
+- `#playlistsPage` fa servir el llenguatge de la resta de l'app (bloc «La teva música» amb el llenguatge de caràtules» al final de `portada.css`; els clics no canvien). **Historial:** les tres últimes cançons són caràtules quadrades plenes (`.mm-card`, `clamp(180px, 22vw, 260px)`; al mòbil `min(62vw, 240px)`) amb el títol i el grup en blanc al damunt, «Fa 1 h» en càpsula de vidre a dalt a l'esquerra i el play blanc (`::after`); el símbol d'expandir és de vidre amb vora blanca. Desplegat: períodes en càpsula (el triat en llima) i caràtules quadrades de 48 px. **Artistes seguits:** requadres plens amb la foto del grup (`photoUrl()` de `my-music.js`, a 400 px) i el nom a dins, com «Artistes i grups». **Llistes:** la caràtula de la primera cançó fa de fons a dalt (16:9 de l'ample, `--pl-cover: 56.25cqi`, la targeta és un contenidor) i al damunt el nom amb el llapis, el nombre de cançons, compartir i esborrar de vidre i el play blanc; «+ Afegeix cançons» en càpsula; les cançons amb caràtula quadrada. El nom i compartir són **fora** del botó de la caràtula al marcatge (editar el nom no ha de fer sonar la llista) i es posen al damunt amb `top: calc(var(--pl-cover) - …)`: no els moguis dins `.playlist-card-thumb`. Sense subtítol visible. Marc blanc com a senyal (en passar-hi el ratolí o amb el teclat) i ampliació `scale(1.04)`. Prova: `tests/la-teva-musica-caratules.test.js`.
+
 ### Portada de Segueix Música (2026-09-30)
 
 - La vista «Novetats» és **Inici** (la interfície no diu «Novetats»; l'id intern es conserva). `renderVideos()` crida `SegueixApp.features.portada.render(videosGrid, videos, { feed, all })`; si no hi és, cau a `homeSections` i a la graella.

@@ -10285,3 +10285,423 @@ body .mq .mq-item:not(.is-active):focus-within .mq-cover {
 #homePlaylists :is(.hp-mosaic img, .hp-single)[src*='/hqdefault.jpg'] {
     transform: scale(1.34);
 }
+
+/* ==========================================================================
+   «La teva música» amb el llenguatge de caràtules (2026-10-16)
+   Historial, artistes seguits i llistes com la resta de l'app: imatge plena, text en blanc al damunt amb un fosc
+   suau, cantonades --pt-radius-cover, botons de vidre amb vora blanca, el mínim espai entre caràtules i el marc
+   blanc com a senyal (només en passar-hi el ratolí o amb el teclat). Marcatge de my-music.js i
+   renderPlaylistsPageLegacyImpl() (app.js); els clics no canvien.
+   ========================================================================== */
+
+/* Sense subtítol explicatiu visible (continua per als lectors de pantalla) */
+#playlistsPage > .page-subtitle {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+#playlistsPage .mm-link {
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: var(--pt-radius-pill);
+    background: rgba(20, 22, 21, 0.55);
+    color: #fff;
+}
+
+#playlistsPage .mm-link:is(:hover, :focus-visible) {
+    border-color: var(--pt-accent);
+    color: var(--pt-accent);
+}
+
+/* Files: el mínim espai, i marge perquè l'ampliació no es retalli (overflow-x: auto retalla també en vertical) */
+#playlistsPage :is(.mm-history-row, .mm-artists) {
+    gap: 4px;
+    margin: 0 -6px;
+    padding: 6px;
+    scroll-padding-inline: 6px;
+}
+
+/* Historial: les tres últimes cançons, caràtules quadrades plenes */
+#playlistsPage .mm-card {
+    position: relative;
+    isolation: isolate;
+    flex: 0 0 clamp(180px, 22vw, 260px);
+    justify-content: flex-end;
+    gap: 0;
+    min-width: 0;
+    aspect-ratio: 1;
+    padding: 12px 64px 12px 12px;
+    overflow: hidden;
+    border: 2px solid transparent;
+    border-radius: var(--pt-radius-cover);
+    background: var(--pt-surface-2);
+    background-clip: padding-box;
+    color: #fff;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.75);
+}
+
+#playlistsPage .mm-card__thumb {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    aspect-ratio: auto;
+    border-radius: 0;
+}
+
+#playlistsPage .mm-card__thumb::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 0.85) 100%);
+}
+
+/* Les miniatures hqdefault (4:3 amb franges negres d'un vídeo 16:9) s'amplien */
+#playlistsPage :is(.mm-card__thumb img, .playlist-card-thumb img)[src*='/hqdefault.jpg'] {
+    transform: scale(1.34);
+}
+
+#playlistsPage .mm-card__body {
+    position: static;
+}
+
+#playlistsPage .mm-card__title {
+    color: #fff;
+    font-weight: 800;
+}
+
+#playlistsPage .mm-card__meta {
+    color: rgba(255, 255, 255, 0.88);
+}
+
+/* «Fa 1 h»: càpsula de vidre a dalt a l'esquerra */
+#playlistsPage .mm-card__when {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 3px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: var(--pt-radius-pill);
+    background: rgba(20, 22, 21, 0.55);
+    color: #fff;
+    font-size: 0.75rem;
+    text-shadow: none;
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+}
+
+/* El play blanc a baix a la dreta */
+#playlistsPage .mm-card::after {
+    content: '';
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #fff
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23141615' d='M8 5.5v13l11-6.5z'/%3E%3C/svg%3E")
+        center / 22px no-repeat;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+}
+
+/* El símbol d'expandir l'historial: vidre amb vora blanca, de l'alçada de les caràtules */
+#playlistsPage .mm-expand {
+    flex: 0 0 56px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: var(--pt-radius-cover);
+    background: rgba(20, 22, 21, 0.55);
+    color: #fff;
+}
+
+#playlistsPage .mm-expand:is(:hover, :focus-visible, .is-open) {
+    border-color: var(--pt-accent);
+    background: rgba(20, 22, 21, 0.55);
+    color: var(--pt-accent);
+}
+
+/* Historial expandit: períodes en càpsula (el triat en llima) i caràtules quadrades a les files */
+#playlistsPage .mm-panel {
+    border-radius: var(--pt-radius-cover);
+}
+
+#playlistsPage .mm-range {
+    border-color: rgba(255, 255, 255, 0.7);
+    border-radius: var(--pt-radius-pill);
+    background: rgba(20, 22, 21, 0.55);
+    color: #fff;
+}
+
+#playlistsPage .mm-range.is-active {
+    border-color: var(--pt-accent);
+    background: var(--pt-accent);
+    color: var(--pt-on-accent);
+}
+
+#playlistsPage .mm-row__thumb {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--pt-radius-cover);
+}
+
+/* Artistes seguits: requadres plens amb la foto del grup i el nom a dins, com «Artistes i grups» */
+#playlistsPage .mm-artist {
+    position: relative;
+    isolation: isolate;
+    flex: 0 0 clamp(132px, 36vw, 180px);
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 0;
+    aspect-ratio: 1;
+    padding: 10px;
+    overflow: hidden;
+    border: 2px solid transparent;
+    border-radius: var(--pt-radius-cover);
+    background: var(--pt-surface-2);
+    background-clip: padding-box;
+    color: #fff;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.75);
+}
+
+#playlistsPage .mm-artist__avatar {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    width: auto;
+    height: auto;
+    border: 0;
+    border-radius: 0;
+}
+
+#playlistsPage .mm-artist__avatar::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0.82) 100%);
+}
+
+#playlistsPage .mm-artist__name {
+    font-size: 0.9375rem;
+    font-weight: 800;
+    text-align: left;
+}
+
+/* Llistes de reproducció: crear-ne una, en càpsula */
+#playlistsPage .playlist-input {
+    border: 1px solid var(--pt-line);
+    border-radius: var(--pt-radius-pill);
+    background: var(--pt-surface);
+    color: var(--pt-text);
+    font: inherit;
+}
+
+#playlistsPage .playlist-create-btn {
+    padding: 0 20px;
+    border: 1px solid var(--pt-accent);
+    border-radius: var(--pt-radius-pill);
+    background: var(--pt-accent);
+    color: var(--pt-on-accent);
+    font: inherit;
+    font-weight: 800;
+}
+
+/* Cada llista: la caràtula de la primera cançó fa de fons a dalt i al damunt, en blanc, el nom (amb el llapis),
+   el nombre de cançons, compartir i esborrar de vidre i el play blanc. El nom i compartir són fora del botó de la
+   caràtula al marcatge (l'edició del nom no ha de fer sonar la llista): es posen al damunt amb unitats de
+   contenidor (--pl-cover és l'alçada de la caràtula, 16:9 de l'ample de la targeta). */
+#playlistsPage .playlists-list {
+    gap: 12px;
+}
+
+#playlistsPage .playlist-card {
+    --pl-cover: 56.25cqi;
+    container-type: inline-size;
+    border: 1px solid var(--pt-line);
+    border-radius: var(--pt-radius-cover);
+    background: var(--pt-surface);
+    transform: none;
+    box-shadow: none;
+}
+
+#playlistsPage .playlist-card-thumb {
+    height: var(--pl-cover);
+    aspect-ratio: auto;
+    cursor: pointer;
+}
+
+#playlistsPage .playlist-card-thumb::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.85) 100%);
+    pointer-events: none;
+}
+
+#playlistsPage .playlist-card-thumb img {
+    transition: transform 0.25s ease;
+}
+
+#playlistsPage .playlist-play-btn {
+    z-index: 1;
+    left: auto;
+    right: 12px;
+    bottom: 12px;
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    overflow: hidden;
+    border-radius: 50%;
+    background: #fff
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23141615' d='M8 5.5v13l11-6.5z'/%3E%3C/svg%3E")
+        center / 24px no-repeat;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+    color: transparent;
+    font-size: 0;
+}
+
+#playlistsPage .playlist-play-btn > * {
+    display: none;
+}
+
+#playlistsPage .playlist-delete {
+    z-index: 1;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    background: rgba(20, 22, 21, 0.55);
+    color: #fff;
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+}
+
+#playlistsPage .playlist-card-body {
+    gap: 8px;
+    padding: 12px;
+}
+
+#playlistsPage .playlist-card-title-row {
+    position: absolute;
+    z-index: 2;
+    top: calc(var(--pl-cover) - 82px);
+    left: 14px;
+    right: 76px;
+    color: #fff;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.75);
+}
+
+#playlistsPage .playlist-card-title-text {
+    overflow: hidden;
+    font-size: 1.375rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#playlistsPage .playlist-card-meta {
+    position: absolute;
+    z-index: 2;
+    top: calc(var(--pl-cover) - 40px);
+    left: 14px;
+    color: rgba(255, 255, 255, 0.88);
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.75);
+}
+
+#playlistsPage .playlist-card :is(.library-edit-btn, .library-share-btn).btn-round-icon {
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    background: rgba(20, 22, 21, 0.55);
+    color: #fff;
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+}
+
+#playlistsPage .playlist-card .library-share-btn {
+    position: absolute;
+    z-index: 2;
+    top: 10px;
+    right: 56px;
+    width: 40px;
+    height: 40px;
+}
+
+#playlistsPage .playlist-add-songs {
+    margin: 0;
+    border-color: rgba(255, 255, 255, 0.7);
+    border-radius: var(--pt-radius-pill);
+    color: #fff;
+    font: inherit;
+    font-weight: 700;
+}
+
+#playlistsPage .playlist-add-songs:is(:hover, :focus-visible) {
+    border-color: var(--pt-accent);
+    color: var(--pt-accent);
+}
+
+/* Les cançons de la llista: caràtules quadrades */
+#playlistsPage .playlist-video-row {
+    border-radius: var(--pt-radius-cover);
+}
+
+#playlistsPage .playlist-video-thumb {
+    width: 44px;
+    height: 44px;
+    border-radius: var(--pt-radius-cover);
+    object-fit: cover;
+}
+
+/* El marc blanc com a senyal i l'ampliació en passar-hi el ratolí */
+#playlistsPage :is(.mm-card, .mm-artist):focus-visible {
+    border-color: #fff;
+    outline: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    #playlistsPage :is(.mm-card, .mm-artist) {
+        transition:
+            transform 0.18s ease,
+            border-color 0.18s ease;
+    }
+
+    #playlistsPage :is(.mm-card, .mm-artist):is(:hover, :focus-visible) {
+        z-index: 3;
+        border-color: #fff;
+        transform: scale(1.04);
+    }
+
+    #playlistsPage .playlist-card-thumb:hover img {
+        transform: scale(1.04);
+    }
+
+    #playlistsPage .playlist-card-thumb:hover img[src*='/hqdefault.jpg'] {
+        transform: scale(1.39);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #playlistsPage :is(.mm-card, .mm-artist):is(:hover, :focus-visible),
+    #playlistsPage .playlist-card-thumb:hover img {
+        transform: none;
+    }
+}
+
+/* Mòbil: l'historial en una filera amb scroll lateral, caràtules més grans */
+@media (max-width: 768px) {
+    #playlistsPage .mm-card {
+        flex-basis: min(62vw, 240px);
+    }
+}
+
+/* Editar el nom de la llista: el camp, fosc, damunt de la caràtula */
+#playlistsPage .playlist-card-title-row .playlist-title-input {
+    border-color: rgba(255, 255, 255, 0.7);
+    background: rgba(20, 22, 21, 0.72);
+    color: #fff;
+}

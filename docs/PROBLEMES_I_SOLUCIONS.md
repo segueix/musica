@@ -1,3 +1,11 @@
+## [2026-10-16] - «La teva música» amb el llenguatge de caràtules
+
+**Petició:** harmonitzar «La teva música» amb la resta de l'app.
+
+**Solució Implementada:** bloc «La teva música» amb el llenguatge de caràtules» al final de `portada.css`: historial i artistes com a caràtules quadrades plenes amb el text en blanc al damunt, llistes amb la caràtula de fons i el nom, compartir, esborrar i el play al damunt, botons de vidre i marc blanc com a senyal. `my-music.js` demana les fotos dels artistes a 400 px (`photoUrl()`).
+
+**Trampa:** al marcatge de les llistes, el nom (amb l'edició en línia) i compartir són fora de `.playlist-card-thumb`, que té l'`onclick` de reproduir: si s'hi posessin a dins, tocar el camp d'edició faria sonar la llista. Es col·loquen al damunt de la caràtula amb unitats de contenidor (`--pl-cover: 56.25cqi`, `container-type: inline-size` a `.playlist-card`).
+
 ## [2026-10-16] - «Les teves llistes»: el mosaic no omplia la targeta
 
 **Símptoma:** a Inici, les targetes de les llistes i ràdios desades tenien el mosaic a dalt i el nom i «40 cançons» en una franja fosca a sota; feien amplades diferents (180–227 px) segons el nom.
