@@ -1723,3 +1723,12 @@ Mesura local comparable: LCP del text 4.128 → 824 ms i arrencada 12.167 → 9.
 **Correcció preparada:** exigir `build_type=workflow` abans de construir, validar també recursos generats carregats dinàmicament i comparar onze respostes públiques amb hashes del paquet després del desplegament. Comprovació sense credencials públiques, amb temps límit i reintents curts dins la mateixa feina. Cap workflow, runner o calendari addicional. La configuració ha de canviar a Source → GitHub Actions; pendent d’aprovació de l’usuari en preparar aquesta correcció. No s’ha modificat la configuració ni executat Actions.
 
 **Verificació:** proves de publicació antiga, fitxer absent, contingut HTML sota HTTP 200, error de xarxa i propagació curta; catàleg complet construït i validat. Resultats i comparativa dels informes a `docs/RENDIMENT_ESTATIC.md`. No atribuir una nova puntuació a un paquet que encara no s’ha verificat públicament.
+
+
+## 2026-10-16 — Recursos tardans a l’arrencada mòbil del paquet correcte
+
+Amb Pages ja configurat en GitHub Actions i el paquet verificat, PageSpeed arriba a 63; LCP 11,8 s sobre l’avís, TBT 110 ms i CLS 0. El servidor supera l’auditoria de latència. L’avís heretava Roboto externa i tres fulls de retocs visuals s’injectaven des de `navigation.js` en executar els scripts. Ara l’avís té font local estable, i els cinc CSS s’agrupen durant el build mantenint ordre i IDs, amb versió per hash de contingut. La comprovació pública inclou el CSS combinat.
+
+La caràtula de reserva es converteix a WebP sense canviar-ne la resolució (439.705 → 42.774 bytes). Mapa i afinitats passen a càrrega sota demanda, amb deduplicació, reintent i protecció contra canvis de vista durant la baixada. Es conserven al precache per a l’ús offline posterior a l’arrencada; l’activació del SW continua ajornada.
+
+Proves de navegador i del carregador superades. La comparació local redueix el temps d’arrencada, però no demostra una millora de l’LCP: les fonts externes estan bloquejades en aquest assaig. Detalls i limitacions a `docs/RENDIMENT_ESTATIC.md`; cal mesurar el paquet publicat, sense prometre una puntuació. No es creen ni s’executen workflows addicionals.

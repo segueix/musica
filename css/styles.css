@@ -6977,6 +6977,11 @@ body {
 }
 
 .cookie-banner {
+    /* L’avís inicial no espera Google Fonts ni canvia de mètriques quan arriben. */
+    font-family: Arial, sans-serif;
+    font-synthesis: none;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
     position: fixed;
     left: 0;
     right: 0;
@@ -8968,3 +8973,4 @@ textarea,
     -webkit-user-select: text;
     user-select: text;
 }
+

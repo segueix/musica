@@ -2990,7 +2990,7 @@ function getAppBasePath() {
     return SegueixApp.utils?.appBasePath?.() || window.location.pathname.replace(/\/index\.html$/, '/');
 }
 
-const DEFAULT_VIDEO_THUMBNAIL_SRC = 'img/caratula.png';
+const DEFAULT_VIDEO_THUMBNAIL_SRC = 'img/caratula.webp';
 
 // Detecta si una imatge és una caràtula de vídeo (tant pel seu contenidor com per classes pròpies)
 function isVideoThumbnailImage(img) {

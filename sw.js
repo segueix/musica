@@ -16,7 +16,7 @@
 // migrant els clients automàticament.
 
 // === AUTO-GENERAT per scripts/actualitzar_versio_sw.js — NO EDITAR MANUALMENT ===
-const CACHE_VERSION = 'dbee589b7705';
+const CACHE_VERSION = '20432cd3ee77';
 const STATIC_ASSETS = [
     './',
     './index.html',
@@ -24,6 +24,9 @@ const STATIC_ASSETS = [
     './img/icon-192.png',
     './css/styles.css',
     './css/portada.css',
+    './css/category-chips.css',
+    './css/typography-polish.css',
+    './css/spacing-polish.css',
     './js/config.js',
     './js/song-title.js',
     './js/music-categories.js',
@@ -70,8 +73,7 @@ const STATIC_ASSETS = [
     './js/features/user-categories.js',
     './js/features/alphabet-index.js',
     './js/features/category-artists.js',
-    './js/features/artist-map.js',
-    './js/features/affinity.js',
+    './js/features/discover-loader.js',
     './js/features/shared-playlists.js',
     './js/features/config-backup.js',
     './js/app.js',
@@ -79,13 +81,12 @@ const STATIC_ASSETS = [
     './js/features/smart-feed.js',
     './js/features/tv-live-queue.js',
     './js/features/tv-programming.js',
-    './img/caratula.png',
+    './img/caratula.webp',
+    './js/features/artist-map.js',
+    './js/features/affinity.js',
     './js/features/segueix-tv.js',
     './js/features/context-tv.js',
     './js/features/tv-scroll-ui.js',
-    './css/category-chips.css',
-    './css/spacing-polish.css',
-    './css/typography-polish.css',
 ];
 // === FI BLOC AUTO-GENERAT ===
 

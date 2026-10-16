@@ -2,6 +2,56 @@ import { describe, it, expect, vi } from 'vitest';
 import vm from 'node:vm';
 import { readFileSync } from 'node:fs';
 
+function lazyDiscovery() {
+    const scripts = [];
+    const container = () => {
+        const classes = new Set(['hidden']);
+        return { children: [], textContent: '', classList: { add: c => classes.add(c), remove: c => classes.delete(c), contains: c => classes.has(c) }, appendChild(child) { this.children.push(child); } };
+    };
+    const window = { SegueixApp: { features: {} }, appDataUrl: p => '/musica/' + p, document: {
+        createElement: () => ({ remove: vi.fn(), addEventListener: vi.fn() }), head: { appendChild: script => scripts.push(script) },
+    } };
+    vm.runInNewContext(readFileSync('js/features/discover-loader.js', 'utf8'), { window });
+    return { window, scripts, container };
+}
+
+describe('Descobreix sota demanda', () => {
+    it.each(['artistMap', 'affinity'])('no baixa %s a Inici, deduplica show i respecta la navegació durant la baixada', async name => {
+        const { window, scripts, container } = lazyDiscovery();
+        const proxy = window.SegueixApp.features[name], target = container();
+        proxy.hide(target);
+        expect(scripts).toHaveLength(0);
+        const first = proxy.show(target), second = proxy.show(target);
+        expect(scripts).toHaveLength(1);
+        expect(scripts[0].src).toMatch(/^\/musica\/js\/features\//);
+        proxy.hide(target);
+        const real = { show: vi.fn() };
+        window.SegueixApp.features[name] = real;
+        scripts[0].onload();
+        await Promise.all([first, second]);
+        expect(real.show).not.toHaveBeenCalled();
+        expect(target.classList.contains('hidden')).toBe(true);
+    });
+    it('recupera un error de xarxa i mostra la vista una sola vegada amb el retorn pendent', async () => {
+        const { window, scripts, container } = lazyDiscovery();
+        const proxy = window.SegueixApp.features.artistMap, target = container();
+        const failed = proxy.show(target);
+        scripts[0].onerror();
+        await failed;
+        expect(target.textContent).toContain('No s’ha pogut');
+        expect(target.children[0].textContent).toBe('Torna-ho a provar');
+        proxy.restoreReturn();
+        const first = proxy.show(target), second = proxy.show(target);
+        expect(scripts).toHaveLength(2);
+        const real = { show: vi.fn(), restoreReturn: vi.fn() };
+        window.SegueixApp.features.artistMap = real;
+        scripts[1].onload();
+        await Promise.all([first, second]);
+        expect(real.show).toHaveBeenCalledTimes(1);
+        expect(real.restoreReturn).toHaveBeenCalledTimes(1);
+    });
+});
+
 describe('arrencada lleugera', () => {
     it('la TV només observa el mode del body i no l’arbre de targetes', () => {
         const observers = [], frames = [];

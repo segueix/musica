@@ -23,7 +23,9 @@ const SHELL_ASSETS = ['./', './index.html'];
 // formar part del hash/precache igualment: si no, un canvi que només els toqui no
 // bumparia CACHE_VERSION i els clients es quedarien amb la versió antiga (cache-first).
 const EXTRA_ASSETS = [
-    './img/caratula.png',
+    './img/caratula.webp',
+    './js/features/artist-map.js',
+    './js/features/affinity.js',
     './js/features/segueix-tv.js',
     './js/features/context-tv.js',
     './js/features/tv-scroll-ui.js',

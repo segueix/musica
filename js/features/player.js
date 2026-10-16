@@ -7,7 +7,7 @@
     const VIDEO_PATH_PATTERN = /^\/video\/[^/]+$/;
     const APP_SECTION_HASHES = new Set(['#historial', '#llistes', '#segueix']);
     // Respecte a la carpeta de l'app (appBasePath()), mai relativa: la URL canvia en reproduir
-    const DEFAULT_VIDEO_THUMBNAIL_FILE = 'img/caratula.png';
+    const DEFAULT_VIDEO_THUMBNAIL_FILE = 'img/caratula.webp';
     const CONTINUE_SECTION_ID = 'continueWatchingSection';
     const CONTINUE_LIST_ID = 'continueWatchingList';
     const PROGRESS_WRITE_INTERVAL_MS = 10000;

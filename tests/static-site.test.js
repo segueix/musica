@@ -147,6 +147,23 @@ describe('paquet publicable', () => {
 
 
 describe('optimització del paquet', () => {
+    it('carrega els retocs inicials en un sol CSS i conserva els IDs que eviten reinjeccions', () => {
+        const { root, out, put } = fixture();
+        const files = ['styles.css', 'portada.css', 'category-chips.css', 'typography-polish.css', 'spacing-polish.css'];
+        const ids = ['', '', 'categoryChipStylesheet', 'typographyPolishStylesheet', 'spacingPolishStylesheet'];
+        files.forEach((file, i) => put(`css/${file}`, `.order{z-index:${i + 1}}`));
+        put('index.html', '<html><head>' + files.map((file, i) => `<link ${ids[i] ? `id="${ids[i]}"` : ''} rel="stylesheet" href="css/${file}?v=1">`).join('') + '</head><body>App</body></html>');
+        build(root);
+        const html = readFileSync(join(out, 'index.html'), 'utf8');
+        expect(html.match(/<link[^>]*rel="stylesheet"/g)).toHaveLength(1);
+        expect(html).toMatch(/href="css\/initial\.css\?v=[a-f0-9]{12}"/);
+        ids.filter(Boolean).forEach(id => expect(html).toContain(`id="${id}"`));
+        const css = readFileSync(join(out, 'css/initial.css'), 'utf8');
+        expect(css).toContain('z-index:5');
+        const sw = readFileSync(join(out, 'sw.js'), 'utf8');
+        expect(sw).toContain('./css/initial.css');
+        expect(validate(out).songs).toBe(3);
+    });
     it('precarrega el feed sense incorporar les dades al cache de codi', () => {
         const { root, out, put } = fixture();
         const index = readFileSync(join(root, 'index.html'), 'utf8');

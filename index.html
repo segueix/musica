@@ -52,6 +52,10 @@
     <!-- CSS -->
     <link rel="stylesheet" href="css/styles.css?v=20260929-home-playlists-4">
     <link rel="stylesheet" href="css/portada.css?v=20261014-discos">
+    <!-- Aquests retocs ja són necessaris al primer dibuix, no després d’app.js. -->
+    <link id="categoryChipStylesheet" rel="stylesheet" href="css/category-chips.css">
+    <link id="typographyPolishStylesheet" rel="stylesheet" href="css/typography-polish.css">
+    <link id="spacingPolishStylesheet" rel="stylesheet" href="css/spacing-polish.css">
 
     <!-- El catàleg es pot descarregar mentre arriben els scripts de la interfície. -->
     <script id="earlyMusicFeed">
@@ -59,7 +63,7 @@
         window.__segueixInitialFeed = fetch('data/feed.json', { cache: 'no-store', priority: 'low' }).catch(() => null);
     </script>
     <link rel="preload" as="fetch" href="data/music-taxonomy.json" crossorigin fetchpriority="low">
-    
+
     <!-- Llibreries locals generades pel build; mantenen l’ordre sense bloquejar HTML. -->
     <script defer src="js/vendor/lucide.js"></script>
     <!-- lz-string: compressió per a compartició ràpida per URL (Canal A) -->
@@ -994,8 +998,7 @@
     <script defer src="js/features/user-categories.js?v=20261012-artistes-unics-1"></script>
     <script defer src="js/features/alphabet-index.js?v=20261004-az-1"></script>
     <script defer src="js/features/category-artists.js?v=20261005-artistes-categoria-1"></script>
-    <script defer src="js/features/artist-map.js?v=20261013-mapa-6"></script>
-    <script defer src="js/features/affinity.js?v=20261012-afinitat-1"></script>
+    <script defer src="js/features/discover-loader.js"></script>
     <script defer src="js/features/shared-playlists.js"></script>
     <script defer src="js/features/config-backup.js?v=20261016-json-1"></script>
 

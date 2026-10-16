@@ -69,3 +69,13 @@ test('rebutja un paquet sense commit abans de consultar la xarxa', t => {
     fs.writeFileSync(path.join(out, 'static-build.json'), JSON.stringify({ baseUrl: 'https://example.test/', sourceCommit: null }));
     assert.throws(() => checksFor(out), /SOURCE_COMMIT/);
 });
+test('comprova també el CSS inicial combinat amb els bytes reals', async t => {
+    const { out, files, fetchImpl } = fixture(t);
+    files['css/initial.css'] = 'initial';
+    files['index.html'] += '<link rel="stylesheet" href="css/initial.css">';
+    fs.writeFileSync(path.join(out, 'index.html'), files['index.html']);
+    fs.writeFileSync(path.join(out, 'css/initial.css'), files['css/initial.css']);
+    assert.equal((await verifyPublished(out, { fetchImpl })).files, 12);
+    files['css/initial.css'] = 'antic';
+    await assert.rejects(verifyPublished(out, { fetchImpl, attempts: 1 }), /initial\.css/);
+});
