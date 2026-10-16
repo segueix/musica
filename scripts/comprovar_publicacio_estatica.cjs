@@ -27,7 +27,7 @@ function checksFor(outDir) {
         const url = new URL(value.replace(/&amp;/g, '&'), base);
         if (url.origin !== base.origin || !url.pathname.startsWith(base.pathname)) continue;
         const relative = url.pathname.slice(base.pathname.length);
-        if (/^(?:css\/(?:styles|portada)\.css|js\/app\.js|js\/vendor\/[\w-]+\.js)$/.test(relative)) {
+        if (/^(?:css\/(?:styles|portada|initial)\.css|js\/app\.js|js\/vendor\/[\w-]+\.js)$/.test(relative)) {
             paths.set(relative + url.search, relative);
         }
     }

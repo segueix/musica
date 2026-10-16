@@ -3,6 +3,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const esbuild = require('esbuild');
+const { createHash } = require('node:crypto');
 
 function optimize(root, out) {
     const walk = dir => fs.readdirSync(dir, { withFileTypes: true }).flatMap(entry => {
@@ -10,6 +11,25 @@ function optimize(root, out) {
         return entry.isDirectory() ? walk(file) : [file];
     });
     const editorialFile = path.join(out, 'data/artistes-musica.json');
+    // Els retocs injectats després dels scripts alteraven el primer dibuix.
+    // Una sola petició CSS, amb el mateix ordre de cascada i IDs per evitar reinjeccions.
+    const htmlFile = path.join(out, 'index.html');
+    let html = fs.readFileSync(htmlFile, 'utf8');
+    const initialCss = ['styles.css', 'portada.css', 'category-chips.css', 'typography-polish.css', 'spacing-polish.css'];
+    const tags = [...html.matchAll(/<link\b[^>]*>/gi)].map(match => match[0]);
+    const cssTags = initialCss.map(name => tags.find(tag => tag.includes(`href="css/${name}`)));
+    if (cssTags.every(Boolean)) {
+        const css = initialCss.map(name => fs.readFileSync(path.join(out, 'css', name), 'utf8')).join('\n');
+        const version = createHash('sha256').update(css).digest('hex').slice(0, 12);
+        fs.writeFileSync(path.join(out, 'css/initial.css'), css);
+        cssTags.forEach((tag, i) => {
+            const id = tag.match(/\bid="([^"]+)"/)?.[1];
+            html = html.replace(tag, i === 0
+                ? `<link rel="stylesheet" href="css/initial.css?v=${version}">`
+                : id ? `<meta id="${id}" name="segueix-bundled-style" content="css/initial.css">` : '');
+        });
+        fs.writeFileSync(htmlFile, html);
+    }
     if (fs.existsSync(editorialFile)) {
         const editorial = JSON.parse(fs.readFileSync(editorialFile, 'utf8'));
         const artists = (editorial.artists || []).map(artist => ({

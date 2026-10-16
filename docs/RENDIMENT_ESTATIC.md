@@ -124,3 +124,23 @@ Correcció preparada:
 Verificació: 97 proves natives superades; 360 proves Vitest (355 superades i exactament les mateixes cinc fallades comparades amb la base). Lint idèntic al de la base, amb cinc errors ja coneguts. Generació i validació del catàleg complet superades. Les proves del comprovador simulen 404, fitxers font, commit antic, fallback HTML, error de xarxa i propagació; no es presenta aquesta simulació com una verificació del desplegament públic.
 
 Un cop la comprovació pública passi, repetir PageSpeed mòbil. La prioritat següent serà el camí de renderització del text inicial; l’informe estima 310 ms de recursos bloquejants, 159 KiB d’imatges millorables, 89 KiB de JS no utilitzat i 59 KiB de CSS no utilitzat. Són diagnòstics del desplegament incorrecte, no estalvis demostrats sobre `_site/`. Les polítiques de cache de GitHub Pages i les imatges externes també condicionen la transferència; a Cloudflare s’haurà de publicar el mateix directori de sortida i comprovar de nou la resposta real.
+
+
+## Quart lot: càrrega inicial després de corregir Pages
+
+La PR 148 està integrada a `0a7dbd02c80158d4bb5399baccddb3ebc8b56a35`. S’ha comprovat al navegador que Source ja és GitHub Actions. La publicació 38902181567 supera la comprovació del paquet públic el 16/10/2026 a les 12:57:14 UTC.
+
+Informe de les 14:57:52 CEST: https://pagespeed.web.dev/analysis/https-segueix-github-io-musica/c8v003hcm3?form_factor=mobile. Rendiment 63, FCP 3,2 s, LCP 11,8 s, TBT 110 ms, CLS 0 i Speed Index 6,5 s; bones pràctiques i SEO 100, accessibilitat 97. La latència del document supera l’auditoria amb resposta de servidor observada de 4 ms; no és el temps complet de navegació. `app.js` ja transfereix uns 88 KiB minificats. L’avís de consentiment continua sent el candidat LCP. La caràtula de reserva transfereix 430 KiB.
+
+Canvis preparats:
+
+- L’avís utilitza Arial local, amb síntesi i renderització explícites des del CSS inicial. Conserva el text, les opcions i el control de mida de lletra. No espera la font Roboto externa ni n’hereta un canvi tardà.
+- Els retocs de categories, tipografia i espais s’inclouen a l’HTML font abans de la inicialització. El build combina els cinc fulls en `css/initial.css`, mantenint ordre de cascada i IDs perquè `navigation.js` no els torni a injectar. La query de versió es deriva del contingut. En el paquet, una sola petició CSS local substitueix les cinc anteriors (dues inicials i tres dinàmiques). Gzip: 46.403 → 44.518 bytes. El verificador públic comprova també el CSS combinat.
+- Mateixa caràtula de reserva, mateixa resolució 1280 × 720, convertida a WebP qualitat 85: 439.705 → 42.774 bytes (−90,3%). Els dos camins de fallback del reproductor i el precache apunten a WebP; el PNG original es conserva. L’estalvi s’aplica quan es necessita aquesta imatge de reserva.
+- El mapa i la vista d’afinitats només es descarreguen en obrir Descobreix. Un carregador de 709 bytes gzip ajorna 13.027 bytes gzip. Deduplica peticions i mostra un botó de reintent davant errors; una navegació durant la baixada no reobre la vista anterior. El mapa conserva el retorn i el zoom amb el mòdul real. Els dos recursos continuen al precache després de l’arrencada per conservar l’ús offline; no es canvia la política d’activació del SW.
+
+Prova local amb la mateixa metodologia anterior (390 × 844, CPU 4×, latència 150 ms, baixada 200.000 bytes/s, gzip, fonts/imatges externes bloquejades i SW desactivat): arrencada 10.150 → 8.694 ms. En aquesta comparació el LCP local passa de 860 a 1.068 ms; **no demostra una millora d’LCP**. La font externa està bloquejada i no reprodueix el candidat tardà de PageSpeed. No es converteixen aquests números en punts Lighthouse. S’ha descartat l’experiment d’inserir tot el CSS dins de l’HTML; es conserva un recurs CSS cachejable.
+
+Validació: 364 proves Vitest disponibles (359 correctes i exactament les mateixes cinc fallades de la base), 56 proves dirigides superades després dels ajustos, 98 proves natives i els cinc errors de lint anteriors, sense errors nous. Paquet complet construït i validat. Prova de navegador: un únic CSS local, cap descàrrega de mapa/afinitats abans d’obrir Descobreix, SVG del mapa i vista d’afinitats visibles, una petició per mòdul, cap PNG de reserva, cerca, selecció de ràdio, exportació/importació JSON i QR sota demanda; sense errors de JS ni avisos d’icones. Consentiment amb app.js bloquejat: acceptar, rebutjar, informació i decisió desada correctes. No es prova reproducció real d’àudio YouTube.
+
+Aquest lot encara requereix integració i un nou PageSpeed públic. No modifica allotjament, permisos, workflows ni calendari d’ingesta; no s’ha disparat cap Action manualment.
