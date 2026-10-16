@@ -1,3 +1,13 @@
+## [2026-10-16] - Fitxa d'artista: només títols fora de les caràtules, títols d'anònim
+
+**Petició:** treure la cerca de cançons; posar la categoria a la primera secció, amb la primera caràtula; fora de les caràtules, només els títols de les secció, amb l'estètica punk i més juganers; cap text explicatiu fora de les caràtules.
+
+**Solució Implementada:** (1) `index.html`: fora els cercadors i el text d'ajuda de «Cançons»; `#apBio` i `#apUserCats` passen dins la capçalera (`.ap-hero__chips` amb els estils). (2) `artist-page.js`: `bestHtml()` és una caràtula punk més (#1, cinta «La més escoltada»); `punkTitleHtml()` fa els títols amb una peça per lletra (`aria-hidden`) i el text sencer en `.pt-sr-only`; el títol de «Cançons» es pinta així a `renderSongs()`. Si la foto de la capçalera falla, `is-broken` l'amaga. (3) CSS: xips de vidre per a estils i categories (el títol i l'ajuda de `user-categories.js` amagats amb `.uc-artist__head { display: none }`, els contenidors amb `display: contents`), lletres retallades (`.ap-punk__l`, 5 papers per `nth-child`), recompte en adhesiu, «Ràdio» de fila com a adhesiu, «La més escoltada» que omple la columna a l'ordinador.
+
+**Trampes conegudes:** (1) `user-categories.js` continua pintant el títol i l'ajuda (els fa servir el grup `aria-labelledby`): a la fitxa s'amaguen per CSS, no s'esborren. (2) A l'entorn de prova, `yt3.ggpht.com` a vegades respon amb `ERR_BLOCKED_BY_ORB` (també a la portada): la foto de la capçalera no surt; no és un error de l'app. (3) `tests/browser/verificar-categories.js` ja fallava abans en reordenar les rajoles d'Inici; la part de la fitxa passa.
+
+---
+
 ## [2026-10-16] - Fitxa d'artista: caràtules quadrades estil punk, de mida segons les visualitzacions
 
 **Petició (després de la de sota):** «caràtules quadrades estil punk amb les dades del vídeo sobre les caràtules, jugar amb les mides de les caràtules segons el nombre de visualitzacions».

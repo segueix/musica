@@ -51,7 +51,7 @@
     
     <!-- CSS -->
     <link rel="stylesheet" href="css/styles.css?v=20260929-home-playlists-4">
-    <link rel="stylesheet" href="css/portada.css?v=20261016-fitxa-punk">
+    <link rel="stylesheet" href="css/portada.css?v=20261016-fitxa-punk-3">
     <!-- Aquests retocs ja són necessaris al primer dibuix, no després d’app.js. -->
     <link id="categoryChipStylesheet" rel="stylesheet" href="css/category-chips.css">
     <link id="typographyPolishStylesheet" rel="stylesheet" href="css/typography-polish.css">
@@ -404,7 +404,16 @@
                                 <div id="channelSupportBtn" class="channel-support-wrap hidden"></div>
                             </div>
                             <details class="ap-origin" id="apOrigin" hidden></details>
-                            <div id="channelProfileTags"></div>
+                            <!-- Presentació curta: dues línies i «Llegeix-ne més» si no hi cap -->
+                            <section class="ap-bio" id="apBio" aria-label="Presentació" hidden>
+                                <div class="channel-profile-description is-collapsed" id="channelProfileDescription"></div>
+                                <button class="ap-bio__toggle" id="apBioToggle" type="button" aria-expanded="false" aria-controls="channelProfileDescription" hidden>Llegeix-ne més</button>
+                            </section>
+                            <!-- Estils de l'artista i les teves categories (user-categories.js), en una sola filera de xips -->
+                            <div class="ap-hero__chips">
+                                <div id="channelProfileTags"></div>
+                                <section class="uc-artist" id="apUserCats" aria-label="Les teves categories" hidden></section>
+                            </div>
                             <div class="ap-hero__actions">
                                 <div class="ap-radios" id="apRadios" role="group" aria-label="Ràdios de l'artista">
                                     <button class="ap-radio ap-radio--artist" id="apRadioArtist" type="button" data-ap-radio="artist" disabled>
@@ -431,32 +440,15 @@
                         </div>
                     </div>
                 </header>
-                <!-- La cançó amb més visualitzacions: caràtula gran i play (ràdio de l'artista que hi comença) -->
-                <aside class="ap-best" id="apBest" aria-labelledby="apBestTitle" hidden></aside>
+                <!-- La cançó amb més visualitzacions: la primera caràtula (ràdio de l'artista que hi comença) -->
+                <aside class="ap-best" id="apBest" aria-label="La més escoltada" hidden></aside>
             </div>
-            <!-- Presentació curta: tres línies i «Llegeix-ne més» si no hi cap -->
-            <section class="ap-bio" id="apBio" aria-label="Presentació" hidden>
-                <div class="channel-profile-description is-collapsed" id="channelProfileDescription"></div>
-                <button class="ap-bio__toggle" id="apBioToggle" type="button" aria-expanded="false" aria-controls="channelProfileDescription" hidden>Llegeix-ne més</button>
-            </section>
-            <!-- Les teves categories (js/features/user-categories.js): afegir o treure aquest grup de les categories pròpies -->
-            <section class="uc-artist" id="apUserCats" aria-label="Les teves categories" hidden></section>
             <!-- Videoclips i directes (si en té almenys dos de cada) -->
             <div class="ap-shelves" id="apShelves" hidden></div>
             <section class="ap-songs-wrap" aria-labelledby="apSongsTitle">
                 <div class="ap-section-head ap-songs-head">
-                    <div class="ap-songs-heading">
-                        <h2 class="ap-section-title ap-songs-title" id="apSongsTitle">Cançons</h2>
-                        <span class="ap-count" id="apSongsCount" hidden></span>
-                    </div>
-                    <div class="channel-search-wrap channel-search-wrap--desktop">
-                        <input id="channelSearchInputDesktop" class="channel-search-input" type="search" placeholder="Cerca una cançó…" aria-label="Cerca una cançó d'aquest artista">
-                    </div>
-                    <div class="channel-search-wrap channel-search-wrap--mobile">
-                        <input id="channelSearchInputMobile" class="channel-search-input" type="search" placeholder="Cerca una cançó…" aria-label="Cerca una cançó d'aquest artista">
-                    </div>
+                    <h2 class="ap-section-title ap-songs-title" id="apSongsTitle"></h2>
                 </div>
-                <p class="ap-songs-hint">Per visualitzacions. Toca una caràtula per engegar una ràdio de l'artista que comença per aquella cançó.</p>
                 <ul class="ap-grid" id="apSongs" hidden></ul>
                 <p class="empty-state ap-songs-empty" id="apSongsEmpty" hidden></p>
                 <button class="ap-more" id="apSongsMore" type="button" hidden></button>
@@ -996,7 +988,7 @@
     <script defer src="js/features/music-affinities.js?v=20261013-subcategory-1"></script>
     <script defer src="js/features/music-selection.js?v=20261013-subcategory-1"></script>
     <script defer src="js/features/music-signals.js?v=20261007-auto-1"></script>
-    <script defer src="js/features/music-queue.js?v=20261016-fitxa-punk"></script>
+    <script defer src="js/features/music-queue.js?v=20261016-fitxa-punk-3"></script>
     <script defer src="js/features/system-player.js"></script>
     <script defer src="js/features/drive-mode.js"></script>
     <script defer src="js/features/home-playlists.js?v=20261005-nomes-inici-1"></script>
@@ -1005,7 +997,7 @@
     <script defer src="js/features/youtube-subscribe.js?v=20261008-subscriu-4"></script>
     <script defer src="js/features/nearby-radio.js?v=20261012-mapa-1"></script>
     <script defer src="js/features/portada.js?v=20261015-estils-esquerra"></script>
-    <script defer src="js/features/artist-page.js?v=20261016-fitxa-punk"></script>
+    <script defer src="js/features/artist-page.js?v=20261016-fitxa-punk-3"></script>
     <script defer src="js/features/user-categories.js?v=20261012-artistes-unics-1"></script>
     <script defer src="js/features/alphabet-index.js?v=20261004-az-1"></script>
     <script defer src="js/features/category-artists.js?v=20261005-artistes-categoria-1"></script>
@@ -1014,7 +1006,7 @@
     <script defer src="js/features/config-backup.js?v=20261016-json-1"></script>
 
     <!-- Main app entrypoint -->
-    <script defer src="js/app.js?v=20261016-fitxa-punk"></script>
+    <script defer src="js/app.js?v=20261016-fitxa-punk-3"></script>
     <script defer src="js/features/tv-learning.js?v=20260924-learning-v1"></script>
     <script defer src="js/features/smart-feed.js?v=20261016-json-1"></script>
     <script defer src="js/features/tv-live-queue.js?v=20260924-live-session-v1"></script>

@@ -135,6 +135,14 @@ const layout = page =>
             rowsWithPlay: songs.every(row => row.querySelector('.ap-play') && row.querySelector('[data-ap-queue]')),
             shelves: [...document.querySelectorAll('#apShelves .ap-section-title')].map(el => el.textContent.trim()),
             stats: document.getElementById('apStats').textContent,
+            noSearch: !document.querySelector('#channelPage input[type="search"]'),
+            bioInHero:
+                !document.getElementById('apBio') || Boolean(document.getElementById('apBio').closest('#apHero')),
+            catsInHero: Boolean(document.getElementById('apUserCats')?.closest('#apHero')),
+            // Fora de la capçalera i de les caràtules només hi ha els títols de secció (i els botons de ràdio)
+            looseText: [...document.querySelectorAll('#channelPage > :not(.ap-head) p:not([hidden])')]
+                .filter(el => el.offsetParent && el.textContent.trim())
+                .map(el => el.textContent.trim().slice(0, 40)),
             noAlbums: !document.getElementById('apAlbums') && !document.querySelector('#channelPage .ap-album-card'),
             cardRatio: (() => {
                 const art = document.querySelector('#apSongs .ap-card__art');
@@ -194,6 +202,9 @@ async function check(browser, width, height, label) {
         [info.cardRatio, info.cardWidth]
     );
     ok(`${label}: sense discos`, info.noAlbums);
+    ok(`${label}: sense cerca de cançons`, info.noSearch);
+    ok(`${label}: presentació i categories a la primera secció`, info.bioInHero && info.catsInHero);
+    ok(`${label}: cap text explicatiu fora de les caràtules`, info.looseText.length === 0, info.looseText);
     ok(
         `${label}: la mida de les caràtules depèn de les visualitzacions`,
         new Set(info.sizes).size >= 2 && info.sizes[0] === Math.max(...info.sizes),

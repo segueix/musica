@@ -211,31 +211,28 @@
         };
     }
 
-    function metaLine(video, extra = []) {
-        const year = songYear(video);
-        return [...extra, viewsLabel(viewsOf(video)), year ? String(year) : ''].filter(Boolean).join(' · ');
+    // «La més escoltada»: la mateixa caràtula punk que la resta (#1), amb la cinta «La més escoltada» i totes les
+    // dades al damunt; tota la caràtula engega la ràdio de l'artista que hi comença.
+    function bestHtml(video) {
+        if (!video?.id) return '';
+        return `<ul class="ap-best__card">${cardHtml(video, { from: 'best', rank: 1, size: 'xl', tag: 'La més escoltada' })}</ul>`;
     }
 
-    // «La més escoltada»: caràtula gran amb el play (ràdio de l'artista que hi comença), títol i visualitzacions.
-    function bestHtml(video, { artist = '' } = {}) {
-        if (!video?.id) return '';
-        const id = escapeHtml(video.id);
-        const title = escapeHtml(text(video.title) || 'Cançó');
-        const kind = isLive(video) ? 'Directe' : '';
-        const art = artOf(video, { square: true, large: true });
-        const label = `Ràdio de ${text(artist) || 'l’artista'} a partir de «${text(video.title) || 'la cançó'}»`;
-        return `
-            <p class="pt-eyebrow ap-best__eyebrow" id="apBestTitle">La més escoltada</p>
-            <button class="ap-best__art" type="button" data-ap-play="${id}" data-ap-from="best" aria-label="${escapeHtml(label)}">
-                <img src="${escapeHtml(art)}" alt="" decoding="async"${isLetterboxed(art) ? ' class="is-letterboxed"' : ''}>
-                <span class="ap-play ap-play--lg" aria-hidden="true">${PLAY_ICON}</span>
-            </button>
-            <div class="ap-best__text">
-                <h2 class="ap-best__title">${title}</h2>
-                <p class="ap-best__meta">${escapeHtml(metaLine(video, kind ? [kind] : []))}</p>
-            </div>
-            <button class="ap-radio ap-radio--artist ap-best__btn" type="button" data-ap-play="${id}" data-ap-from="best"
-                aria-label="${escapeHtml(label)}">${PLAY_ICON}<span>Ràdio a partir d’aquesta</span></button>`;
+    // Títol de secció com un anònim de lletres retallades: cada lletra amb el seu paper, color i gir (CSS per
+    // nth-child). El text sencer va a aria-label; les lletres són decoratives.
+    function punkTitleHtml(title, count = 0) {
+        const value = text(title);
+        const letters = [...value]
+            .map(char =>
+                char === ' '
+                    ? '<span class="ap-punk__gap"></span>'
+                    : `<span class="ap-punk__l">${escapeHtml(char)}</span>`
+            )
+            .join('');
+        const total = Math.max(0, Math.round(Number(count) || 0));
+        return `<span class="ap-punk" aria-hidden="true">${letters}</span>${
+            total ? `<span class="ap-punk__count" aria-hidden="true">${total}</span>` : ''
+        }<span class="pt-sr-only">${escapeHtml(value)}${total ? ` (${total})` : ''}</span>`;
     }
 
     const EYE_ICON =
@@ -268,7 +265,7 @@
     // Caràtula quadrada amb les dades al damunt (estil fanzín punk): el número (posició per visualitzacions), les
     // visualitzacions en un adhesiu, el títol en cinta, l'any i la durada, «Afegeix a la cua» i el play. Tota la
     // caràtula engega la ràdio que comença per la cançó. `size`: 'xl' | 'l' | 's' (sizeTiers()).
-    function cardHtml(video, { from = 'list', rank = 0, size = 's' } = {}) {
+    function cardHtml(video, { from = 'list', rank = 0, size = 's', tag = '' } = {}) {
         const id = escapeHtml(video.id);
         const title = text(video.title) || 'Cançó';
         const duration = formatDuration(video.durationSeconds);
@@ -289,6 +286,7 @@
                     <span class="ap-card__ink" aria-hidden="true"></span>
                     ${rank ? `<span class="ap-card__rank" aria-hidden="true">#${rank}</span>` : ''}
                     <span class="ap-card__info" aria-hidden="true">
+                        ${tag ? `<span class="ap-card__tag">${escapeHtml(tag)}</span>` : ''}
                         ${views ? `<span class="ap-card__views">${EYE_ICON}${formatCount(views)}</span>` : ''}
                         ${live ? '<span class="ap-card__live">Directe</span>' : ''}
                         <span class="ap-card__title"><span>${escapeHtml(title)}</span></span>
@@ -326,7 +324,7 @@
                 ([key, title, items, radio]) => `
             <section class="ap-shelf ap-shelf--${key}" aria-labelledby="apShelf-${key}">
                 <div class="ap-section-head">
-                    <h2 class="ap-section-title" id="apShelf-${key}">${title} <span class="ap-count">${items.length}</span></h2>
+                    <h2 class="ap-section-title" id="apShelf-${key}">${punkTitleHtml(title, items.length)}</h2>
                     <button class="ap-chip-btn" type="button" data-ap-shelf-radio="${key}" aria-label="${escapeHtml(radio)}">${PLAY_ICON}<span>Ràdio</span></button>
                 </div>
                 <ul class="ap-shelf__row">${cardsHtml(items, { from: key, rankOf })}</ul>
@@ -508,7 +506,7 @@
         const model = songsModel(videos, { isClip });
         state.model = model;
 
-        setHtml($('apBest'), hidden ? '' : bestHtml(model.best, { artist: state.name }));
+        setHtml($('apBest'), hidden ? '' : bestHtml(model.best));
         setHtml($('apShelves'), hidden || q ? '' : shelvesHtml(model, { artist: state.name }));
 
         const stats = $('apStats');
@@ -523,6 +521,7 @@
 
         let items;
         let heading = 'Cançons';
+        // (La cerca dins l'artista ja no és a la fitxa; `query` es manté per si algun camí antic l'envia.)
         if (hidden) items = [];
         else if (q) {
             // Cercant, totes les cançons que coincideixen (també videoclips i directes), per visualitzacions.
@@ -530,16 +529,10 @@
             heading = 'Resultats';
         } else {
             items = model.rest;
-            if (model.clips.length || model.lives.length) heading = 'Totes les cançons';
         }
 
         const title = $('apSongsTitle');
-        if (title) title.textContent = heading;
-        const count = $('apSongsCount');
-        if (count) {
-            count.textContent = items.length ? String(items.length) : '';
-            count.hidden = !items.length;
-        }
+        if (title) setHtml(title, items.length ? punkTitleHtml(heading, items.length) : '');
         const empty = $('apSongsEmpty');
         if (empty) {
             const message = hidden
@@ -686,6 +679,12 @@
         const img = $('channelProfileAvatar');
         const hero = $('apHero');
         const src = heroImage(avatar || img?.getAttribute?.('src') || '');
+        if (img) {
+            // Si la foto no carrega, fora la icona d'imatge trencada (queda el fons de la capçalera).
+            img.classList?.remove?.('is-broken');
+            img.onerror = () => img.classList?.add?.('is-broken');
+            img.onload = () => img.classList?.remove?.('is-broken');
+        }
         if (img && src && img.getAttribute?.('src') !== src) img.src = src;
         if (hero?.style?.setProperty) {
             if (src) hero.style.setProperty('--ap-photo', `url("${src.replace(/["\\\n\r]/g, '')}")`);
@@ -716,9 +715,8 @@
         renderList();
         const stats = $('apStats');
         if (stats) stats.hidden = true;
-        const title = $('apSongsTitle');
-        if (title) title.textContent = 'Cançons';
-        ['apSongsCount', 'apSongsEmpty'].forEach(id => {
+        setHtml($('apSongsTitle'), '');
+        ['apSongsEmpty'].forEach(id => {
             const node = $(id);
             if (node) node.hidden = true;
         });
@@ -806,6 +804,7 @@
         bestHtml,
         shelvesHtml,
         sizeTiers,
+        punkTitleHtml,
         cardHtml,
         songCardsHtml,
         matchesQuery,
