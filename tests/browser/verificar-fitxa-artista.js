@@ -11,7 +11,8 @@
 // Comprova, a 390 px i a 1280 px:
 //   1) La foto de perfil ocupa tota la capçalera i el nom, les ràdios i compartir hi són al damunt.
 //   2) La més escoltada és la cançó amb més visualitzacions; a l'ordinador va al costat de la capçalera.
-//   3) La resta de cançons, per visualitzacions (#2, #3…), en tres columnes de caràtules quadrades iguals amb el
+//   3) La resta de cançons, per visualitzacions (#2, #3…), en tres columnes a l'ordinador i una sola al mòbil (una
+//      sota l'altra), totes amb un marc blanc fi, de caràtules quadrades iguals amb el
 //      mínim espai, les dades al damunt (sense el nom del grup al títol), el play i la cua; cap títol de secció,
 //      cap disc, cap cerca, cap text fora de les caràtules.
 //   4) La presentació és d'una línia i, si no hi cap, tocar-la la desplega.
@@ -147,6 +148,15 @@ const layout = page =>
                     ? Math.round(songs[1].getBoundingClientRect().left - songs[0].getBoundingClientRect().right)
                     : 0,
             sameSize: new Set(songs.map(row => Math.round(row.getBoundingClientRect().width))).size === 1,
+            // Totes les caràtules (també la #1) porten el marc blanc
+            framed: [...document.querySelectorAll('#apBest .ap-card__art, #apSongs .ap-card__art')].every(art => {
+                const style = getComputedStyle(art);
+                return parseFloat(style.borderTopWidth) >= 1 && style.borderTopColor === 'rgb(255, 255, 255)';
+            }),
+            rowGap:
+                songs.length > 1
+                    ? Math.round(songs[1].getBoundingClientRect().top - songs[0].getBoundingClientRect().bottom)
+                    : 0,
             // El nom del grup no ha de sortir dins del títol
             titlesWithName: [...document.querySelectorAll('#apSongs .ap-card__title, #apBest .ap-card__title')]
                 .map(el => el.textContent)
@@ -226,7 +236,15 @@ async function check(browser, width, height, label) {
         info.cardRatio,
         info.cardWidth,
     ]);
-    ok(`${label}: tres columnes amb el mínim espai`, info.columns === 3 && info.gap <= 6, [info.columns, info.gap]);
+    if (width >= 769) {
+        ok(`${label}: tres columnes amb el mínim espai`, info.columns === 3 && info.gap <= 6, [info.columns, info.gap]);
+    } else {
+        ok(`${label}: una caràtula sota l'altra amb el mínim espai`, info.columns === 1 && info.rowGap <= 6, [
+            info.columns,
+            info.rowGap,
+        ]);
+    }
+    ok(`${label}: totes les caràtules amb el marc blanc`, info.framed);
     ok(
         `${label}: numeració seguida (#1 la més escoltada, després #2, #3…)`,
         info.bestRank === '#1' && info.ranks.every((rank, i) => rank === `#${i + 2}`),

@@ -3978,31 +3978,39 @@ body #channelPage .ap-hero .channel-profile-hide-btn.btn-round-icon {
 }
 
 /* ---------- Caràtules quadrades amb les dades al damunt, en blanc (2026-10-16) ----------
-   La més escoltada (#1) i, a sota, la resta de cançons per visualitzacions en tres columnes de caràtules quadrades
-   iguals amb el mínim espai entre elles; sense títols de secció. Sobre la imatge, tot en blanc i sense fons: el
-   número a dalt a l'esquerra, la cua a dalt a la dreta i, a baix, les visualitzacions, el títol, l'any i la durada
-   i el play. Un fosc suau a baix perquè el text es llegeixi. Res no es mou ni gira. */
+   La més escoltada (#1) i, a sota, la resta de cançons per visualitzacions: al mòbil una caràtula sota l'altra (una
+   columna) i a partir de 769 px en tres columnes, sempre quadrades, iguals i amb el mínim espai; sense títols de
+   secció. Totes porten un marc blanc fi. Sobre la imatge, tot en blanc i sense fons: el número a dalt a l'esquerra,
+   la cua a dalt a la dreta i, a baix, les visualitzacions, el títol, l'any i la durada i el play. Un fosc suau a baix
+   perquè el text es llegeixi. Res no es mou ni gira. Cada caràtula és un contenidor: la lletra, els marges i el play
+   creixen amb la seva amplada (cqi), sigui d'una columna o de tres. */
 #channelPage .ap-songs-wrap {
     margin-top: 4px;
-    container-type: inline-size;
 }
 
 #channelPage .ap-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 1fr);
     gap: 4px;
     margin: 0;
     padding: 0;
     list-style: none;
 }
 
+@media (min-width: 769px) {
+    #channelPage .ap-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
 #channelPage .ap-card {
-    --ap-t: clamp(0.72rem, 3.4cqi, 1.35rem);
-    --ap-pad: clamp(6px, 1.6cqi, 14px);
-    --ap-play: clamp(32px, 7cqi, 56px);
+    --ap-t: clamp(0.8rem, 6cqi, 1.9rem);
+    --ap-pad: clamp(8px, 4.5cqi, 20px);
+    --ap-play: clamp(36px, 15cqi, 64px);
     position: relative;
     min-width: 0;
     aspect-ratio: 1;
+    container-type: inline-size;
 }
 
 #channelPage .ap-card__art {
@@ -4013,7 +4021,8 @@ body #channelPage .ap-hero .channel-profile-hide-btn.btn-round-icon {
     height: 100%;
     padding: 0;
     overflow: hidden;
-    border: 0;
+    /* El marc blanc fi, a totes les caràtules */
+    border: 2px solid #fff;
     border-radius: 2px;
     background: var(--pt-surface-2);
     color: #fff;
@@ -4161,33 +4170,23 @@ body #channelPage .ap-hero .channel-profile-hide-btn.btn-round-icon {
     background: rgba(0, 0, 0, 0.35);
 }
 
-/* Petites (mòbil, 3 columnes): sense l'any, la durada ni el cercle del play (tota la caràtula ja és el botó),
-   perquè el títol hi càpiga */
-@container (max-width: 520px) {
-    #channelPage .ap-grid .ap-card {
-        --ap-play: 0px;
-    }
-
-    #channelPage .ap-grid .ap-card__facts,
-    #channelPage .ap-grid .ap-play {
+/* Caràtules estretes (tres columnes en una finestra petita): sense l'any, la durada ni el cercle del play (tota la
+   caràtula ja és el botó), perquè el títol hi càpiga */
+@container (max-width: 220px) {
+    #channelPage .ap-card__facts,
+    #channelPage .ap-card .ap-play {
         display: none;
     }
 
-    #channelPage .ap-grid .ap-card__info {
+    #channelPage .ap-card__info {
         right: var(--ap-pad);
-    }
-
-    #channelPage .ap-grid .ap-card__queue svg {
-        width: 18px;
-        height: 18px;
     }
 }
 
-/* ---------- La més escoltada (#1): marc blanc fi, el número i les visualitzacions en blanc ---------- */
+/* ---------- La més escoltada (#1): la mateixa caràtula, amb l'etiqueta «La més escoltada» ---------- */
 #channelPage .ap-best {
     display: block;
     min-width: 0;
-    container-type: inline-size;
 }
 
 #channelPage .ap-best__card {
@@ -4198,15 +4197,7 @@ body #channelPage .ap-hero .channel-profile-hide-btn.btn-round-icon {
 }
 
 #channelPage .ap-best .ap-card {
-    --ap-t: clamp(1.1rem, 6.5cqi, 1.9rem);
-    --ap-pad: clamp(12px, 4.5cqi, 20px);
-    --ap-play: clamp(48px, 15cqi, 64px);
     width: 100%;
-}
-
-#channelPage .ap-best .ap-card__art {
-    border: 3px solid #fff;
-    border-radius: 2px;
 }
 
 /* ---------- «Mostra'n més» i el missatge d'un artista sense cançons ---------- */

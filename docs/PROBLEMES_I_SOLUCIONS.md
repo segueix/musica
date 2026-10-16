@@ -1,3 +1,13 @@
+## [2026-10-16] - Fitxa d'artista: marc blanc a totes les caràtules i una sola columna al mòbil
+
+**Petició:** el marc blanc fi a totes les caràtules; al mòbil, una caràtula sota l'altra (sense columnes: l'usuari ja fa scroll).
+
+**Solució Implementada:** `portada.css`: `.ap-grid` és d'una columna (mobile first) i de tres a ≥ 769 px; `.ap-card__art` porta `border: 2px solid #fff` (també la #1, que abans en tenia un de propi de 3 px). Cada `.ap-card` és un contenidor (`container-type: inline-size`) i `--ap-t`, `--ap-pad` i `--ap-play` es calculen amb `cqi` de la mateixa caràtula; el `@container` que amaga l'any, la durada i el play només actua en caràtules ≤ 220 px.
+
+**Trampes conegudes:** (1) Abans la lletra es calculava amb l'amplada de la graella (`.ap-songs-wrap` era el contenidor): amb una sola columna al mòbil hauria quedat petitíssima en caràtules grans. Les propietats personalitzades amb `cqi` es resolen on es fan servir (els fills de `.ap-card`), així que agafen la caràtula com a contenidor. (2) Un `@container` només estila els descendents del contenidor: per això la regla de les caràtules estretes apunta a `.ap-card__facts`, `.ap-play` i `.ap-card__info`, no a `.ap-card`.
+
+---
+
 ## [2026-10-16] - Fitxa d'artista: més blanca, tres columnes i títols sense el nom del grup
 
 **Petició:** la capçalera igual, però la presentació en una línia amb punts suspensius que es pugui tocar per veure-la sencera; la #1 a dalt a la dreta (a l'ordinador) amb el número i les visualitzacions en blanc i sense fons, un marc blanc fi i sense moviment; a sota, la resta de cançons per ordre en tres columnes de caràtules quadrades amb el mínim espai, sense videoclips/directes ni títols de secció (al mòbil, la #1 just sota la capçalera); treure el nom del grup dels títols; «tot més blanc i menys punk, però amb visuals grans».

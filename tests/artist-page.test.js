@@ -257,17 +257,18 @@ describe('fitxa d’artista: HTML i CSS', () => {
         expect(css).toMatch(/\.ap-hero__chips \.uc-artist__head\s*{[^}]*display:\s*none/);
     });
 
-    it('la resta de cançons: tres columnes de caràtules quadrades iguals amb el mínim espai, tot en blanc', () => {
+    it('la resta de cançons: una columna al mòbil i tres a l’ordinador, quadrades, amb el mínim espai i en blanc', () => {
         expect(channelPage).toMatch(/<ul class="ap-grid" id="apSongs"/);
+        expect(css).toMatch(/#channelPage \.ap-grid\s*{[^}]*grid-template-columns:\s*minmax\(0, 1fr\);[^}]*gap:\s*4px/);
         expect(css).toMatch(
-            /#channelPage \.ap-grid\s*{[^}]*grid-template-columns:\s*repeat\(3, minmax\(0, 1fr\)\);[^}]*gap:\s*4px/
+            /@media \(min-width: 769px\)\s*{\s*#channelPage \.ap-grid\s*{\s*grid-template-columns:\s*repeat\(3, minmax\(0, 1fr\)\)/
         );
         expect(css).toMatch(/#channelPage \.ap-card\s*{[^}]*aspect-ratio:\s*1;/);
         expect(css).toMatch(/#channelPage \.ap-card__rank\s*{[^}]*color:\s*#fff/);
         // Les visualitzacions, sense fons
         expect(css).not.toMatch(/#channelPage \.ap-card__views\s*{[^}]*background/);
-        // La #1 porta un marc blanc fi i res no gira
-        expect(css).toMatch(/#channelPage \.ap-best \.ap-card__art\s*{[^}]*border:\s*3px solid #fff/);
+        // Totes les caràtules porten un marc blanc fi i res no gira
+        expect(css).toMatch(/#channelPage \.ap-card__art\s*{[^}]*border:\s*2px solid #fff/);
         expect(css).not.toMatch(/#channelPage[^{]*\.ap-card[^{]*{[^}]*rotate\(/);
         expect(css).toMatch(/#channelPage \.ap-card__queue\s*{[^}]*width:\s*44px/);
     });
