@@ -1,3 +1,13 @@
+## [2026-10-16] - Fitxa d'artista: la foto de la capçalera pujava i tallava enrere, «YouTube» i compartir
+
+**Símptoma:** en entrar a la fitxa d'un artista (sobretot des d'«Artistes i grups» o després d'haver-ne obert un), dins la capçalera la foto i els botons de dalt (enrere, «YouTube», compartir) apareixien uns 40 px més amunt, tallats per la vora, i a baix de la capçalera quedava una franja buida.
+
+**Causa Arrel:** (1) `.ap-hero__photo` (la foto desenfocada de fons) té `inset: -40px` i sobresurt de la capçalera. Amb `overflow: hidden`, `#apHero` continua sent un **contenidor desplaçable per codi**: el `scrollIntoView()` de `scrollToChannelFollow()` (es crida quan es ve de `#segueix`) i qualsevol focus desplaçaven la capçalera per dins (`scrollTop = 40`). Com que `#apHero` es reutilitza per a totes les fitxes, el desplaçament quedava per als artistes següents. (2) A més, aquell `scrollIntoView({ block: 'center' })` feia scroll de la pàgina i amagava la part de dalt de la foto sota la capçalera de l'app, encara que «Segueix» ja es veiés.
+
+**Solució Implementada:** (1) `portada.css`: `#channelPage .ap-hero` amb `overflow: clip` (després d'`overflow: hidden` com a reserva): un element amb `clip` no és desplaçable. (2) `artist-page.js`: `pinHero()` (des de `showProfile()`) torna `scrollTop`/`scrollLeft` a 0 i, en navegadors sense `clip` (Safari < 16), els hi torna en cada `scroll`. (3) `app.js`: `scrollToChannelFollow()` només fa scroll si «Segueix» no es veu sencer entre la capçalera de l'app i la navegació de baix.
+
+**Trampa:** `overflow: hidden` no impedeix el desplaçament programàtic (`scrollIntoView`, focus, `scrollTop`); si un fill sobresurt (inset negatiu, transformacions, ombres desenfocades), el contenidor es pot desplaçar. Per retallar sense desplaçament, `overflow: clip`. Proves: `tests/artist-page.test.js` i opt-in `node tests/browser/verificar-fitxa-artista.js` («la foto de la capçalera no puja en enfocar «Segueix»»).
+
 ## [2026-10-16] - Llista d'artistes amb la foto del grup; marc blanc perdut en ampliar les caràtules de les vores
 
 **Petició:** a «Artistes i grups», cada requadre ple amb la foto del grup i a dins el nom, «Segueix» i amagar (com les caràtules de la fitxa). A la fitxa, a l'ordinador, les caràtules dels costats no havien de perdre el marc blanc en ampliar-se.

@@ -190,6 +190,12 @@ describe('fitxa d’artista: cançons per visualitzacions', () => {
 describe('fitxa d’artista: HTML i CSS', () => {
     const channelPage = html.slice(html.indexOf('id="channelPage"'), html.indexOf('id="channelVideosGrid"') + 30);
 
+    it('la capçalera no es pot desplaçar per dins (la foto i els botons de dalt no pugen)', () => {
+        // La foto desenfocada en sobresurt (inset -40px): amb overflow hidden, un scrollIntoView la desplaçava 40 px
+        const rule = css.slice(css.indexOf('#channelPage .ap-hero {'), css.indexOf('#channelPage .ap-hero__photo {'));
+        expect(rule).toMatch(/overflow:\s*clip;/);
+    });
+
     it('la foto de perfil fa de fons de la capçalera i al damunt hi ha el nom, l’origen, les ràdios i compartir', () => {
         const hero = channelPage.slice(channelPage.indexOf('id="apHero"'), channelPage.indexOf('id="apBest"'));
         const photo = hero.indexOf('id="channelProfileAvatar"');
