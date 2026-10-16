@@ -671,6 +671,50 @@
         );
     }
 
+    // ---------- Grans èxits d'un artista ----------
+
+    // Clau d'una cançó per no repetir-la (el videoclip i la del «Tema», o la versió en directe): el títol sense el que
+    // va entre parèntesis o claudàtors, sense accents ni signes.
+    function hitKey(video) {
+        return String(video?.title || '')
+            .replace(/\([^)]*\)|\[[^\]]*\]/g, ' ')
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '')
+            .toLowerCase()
+            .replace(/[^a-z0-9]+/g, ' ')
+            .trim();
+    }
+
+    // Les cançons d'un artista de la més escoltada a la menys escoltada (`viewCount`), sense repetir la mateixa cançó
+    // ni cap Short. Pura (tests/music-queue-selection.test.js).
+    function greatestHits(videos, limit = MAX_QUEUE_LENGTH) {
+        const seenIds = new Set();
+        const seenKeys = new Set();
+        return (Array.isArray(videos) ? videos : [])
+            .filter(video => video?.id && !video.isShort && video.source !== 'static')
+            .map((video, index) => ({ video, index, views: Number(video.viewCount) || 0 }))
+            .sort((a, b) => b.views - a.views || a.index - b.index)
+            .map(item => item.video)
+            .filter(video => {
+                const id = String(video.id);
+                const key = hitKey(video) || id;
+                if (seenIds.has(id) || seenKeys.has(key)) return false;
+                seenIds.add(id);
+                seenKeys.add(key);
+                return true;
+            })
+            .slice(0, limit);
+    }
+
+    // Ràdio de grans èxits (llista d'«Artistes i grups»): les cançons de l'artista per ordre de visualitzacions, en
+    // aquest ordre i sense el motor. Nom «Grans èxits de <artista>». Retorna true si ha començat (calen dues cançons).
+    function startHitsRadio(videos, options = {}) {
+        const name = String(options.name || '').trim();
+        const hits = greatestHits(searchPool(videos, ARTIST_RADIO_POOL));
+        if (hits.length < 2 || !name) return false;
+        return playSelection(hits, `Grans èxits de ${name}`);
+    }
+
     // Ràdio d'una categoria pròpia (user-categories.js): només cançons dels grups que l'usuari hi ha posat, ordenades
     // pel motor segons el gust i el mode de descoberta (com una ràdio d'artista), amb el nom «Ràdio <categoria>».
     // Retorna true si ha començat (calen almenys dues cançons).
@@ -1479,7 +1523,7 @@
             return `<span class="mq-source mq-styles" role="group" aria-label="Origen de la ràdio"><span class="mq-style">Cerca: ${escapeText(searchRadio.query)} · estils barrejats</span><span class="mq-tools">${regenerateButtonHtml()}${saveButtonHtml()}${shareButtonHtml()}</span></span>`;
         }
         if (radioLabel) {
-            return `<span class="mq-source mq-styles" role="group" aria-label="Origen de la ràdio"><span class="mq-style">Selecció: ${escapeText(radioLabel)}</span><span class="mq-tools">${regenerateButtonHtml()}${saveButtonHtml()}${shareButtonHtml()}</span></span>`;
+            return `<span class="mq-source mq-styles" role="group" aria-label="Origen de la ràdio"><span class="mq-style">${escapeText(radioLabel)}</span><span class="mq-tools">${regenerateButtonHtml()}${saveButtonHtml()}${shareButtonHtml()}</span></span>`;
         }
         const styles = radioStyles();
         const chips = styles.length
@@ -1642,8 +1686,10 @@
         const applied = canRegenerate ? radioMeta : null;
         const modeNote = applied?.note ? `<p class="mq-note" role="status">${escapeText(applied.note)}</p>` : '';
 
+        // La caràtula de la cançó que sona fa de fons de la capçalera (portada.css, «Ràdio amb el llenguatge de caràtules»)
+        const art = String(current?.thumbnail || '').replace(/["'()\\\s]/g, '');
         container.innerHTML = `
-            <div class="mq${activePlaylistId === QUEUE_ID ? ' mq--radio' : ''}">
+            <div class="mq${activePlaylistId === QUEUE_ID ? ' mq--radio' : ''}"${art ? ` style="--mq-art: url('${escapeText(art)}')"` : ''}>
                 <div class="mq-head">
                     <h2 class="mq-heading">${activePlaylistId === QUEUE_ID ? 'Ràdio' : 'Llista'}</h2>
                     ${radioNameHtml()}
@@ -1856,6 +1902,8 @@
         getLastRadio,
         resumeLast,
         playSelection,
+        greatestHits,
+        startHitsRadio,
         nearbyPool: videos => searchPool(videos, Infinity).filter(video => !unavailableVideos.has(String(video.id))),
         startFromSearch,
         startArtistRadio,

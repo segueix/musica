@@ -1,3 +1,81 @@
+## [2026-10-16] - Descobreix: sense marc blanc als artistes de «Per afinitat» en repòs
+
+**Petició:** treure el marc blanc dels artistes de Descobreix i deixar-lo només al que té el cursor.
+
+**Solució Implementada:** bloc «Descobreix, «Per afinitat»…» al final de `portada.css`: `.af-card` amb `border-color: transparent` i `background-clip: padding-box` (el marc hi és però no es veu, i res no es mou quan apareix); `#fff` en passar-hi el ratolí (`@media (hover: hover) and (pointer: fine)`) i amb `:focus-within`. Proves: `tests/marc-blanc.test.js` i `node tests/browser/verificar-afinitat.js` (comprova que només la targeta amb el cursor té el marc).
+
+## [2026-10-16] - «La teva música» amb el llenguatge de caràtules
+
+**Petició:** harmonitzar «La teva música» amb la resta de l'app.
+
+**Solució Implementada:** bloc «La teva música» amb el llenguatge de caràtules» al final de `portada.css`: historial i artistes com a caràtules quadrades plenes amb el text en blanc al damunt, llistes amb la caràtula de fons i el nom, compartir, esborrar i el play al damunt, botons de vidre i marc blanc com a senyal. `my-music.js` demana les fotos dels artistes a 400 px (`photoUrl()`).
+
+**Trampa:** al marcatge de les llistes, el nom (amb l'edició en línia) i compartir són fora de `.playlist-card-thumb`, que té l'`onclick` de reproduir: si s'hi posessin a dins, tocar el camp d'edició faria sonar la llista. Es col·loquen al damunt de la caràtula amb unitats de contenidor (`--pl-cover: 56.25cqi`, `container-type: inline-size` a `.playlist-card`).
+
+## [2026-10-16] - «Les teves llistes»: el mosaic no omplia la targeta
+
+**Símptoma:** a Inici, les targetes de les llistes i ràdios desades tenien el mosaic a dalt i el nom i «40 cançons» en una franja fosca a sota; feien amplades diferents (180–227 px) segons el nom.
+
+**Causa:** `.hp-name` té `white-space: nowrap` i un element flex té `min-width: auto`: el nom llarg eixamplava la targeta per sobre de `flex-basis`. Totes s'estiraven a l'alçada de la fila (la de la més ampla), i el mosaic (`position: absolute; inset: 0`, però amb l'`aspect-ratio: 1` de `styles.css`) quedava quadrat amb l'amplada i no arribava a baix.
+
+**Solució Implementada:** bloc «Les teves llistes: totes les targetes plenes…» al final de `portada.css`: `--hp-size` a la fila, l'element amb `flex: 0 0 var(--hp-size)`, `width`, `min-width: 0` i `align-self: flex-start`; el mosaic amb `aspect-ratio: auto`; el nom en dues línies com a màxim (`-webkit-line-clamp: 2`); «Crea una llista» de la mateixa mida. Les miniatures del mosaic van dins `span.hp-tile` per poder ampliar les `hqdefault` sense envair les veïnes. Proves: `tests/inici-caratules.test.js` i `node tests/browser/verificar-inici-caratules.js` (quatre llistes amb noms de llargada diferent).
+
+## [2026-10-16] - El marc blanc com a senyal, no a totes les caràtules
+
+**Petició:** valorar si els marcs blancs valien la pena; l'usuari va acceptar la proposta d'alternar-los amb criteri.
+
+**Solució Implementada:** bloc «El marc blanc com a senyal» al final de `portada.css`: a les graelles i files el marc és transparent en repòs (`border-color: transparent` + `background-clip: padding-box`, perquè la mida no canviï) i blanc en passar-hi el ratolí (ordinador) o en enfocar-les; fix a `#apBest`, a la cançó que sona de la cua i a «Per afinitat».
+
+**Trampa:** sense `background-clip: padding-box`, el fons de la targeta es veu sota el marc transparent i fa una vora fosca. Proves: `tests/marc-blanc.test.js`; opt-in `verificar-fitxa-artista.js`, `verificar-vista-estil.js`, `verificar-llista-artistes.js`, `verificar-inici-caratules.js`.
+
+## [2026-10-16] - «Artistes i grups»: ràdio de grans èxits en lloc d'amagar; ràdio amb el llenguatge de caràtules
+
+**Petició:** treure «amagar» de la llista d'artistes (ja és a la fitxa) i posar-hi un botó que faci una ràdio amb la música de l'artista per ordre de grans èxits; adaptar la ràdio (llista, botons de selecció i la resta) al disseny de l'app.
+
+**Solució Implementada:** (1) `renderFollowPage()` (`app.js`) treu `.follow-hide-btn` i hi posa `.follow-hits-btn[data-follow-hits]` (play blanc); `startArtistHitsRadio()` carrega les cançons amb `YouTubeAPI.getArtistVideosWithHistory()` i crida `musicQueue.startHitsRadio()`, que ordena amb `greatestHits()` (per `viewCount`, sense Shorts ni la mateixa cançó repetida: clau = títol sense parèntesis/claudàtors, sense accents) i les fa sonar amb `playSelection()` («Grans èxits de …», ordre fix, màxim 40). (2) Ràdio: `music-queue.js` posa `--mq-art` (caràtula de la cançó que sona) a `.mq` i el nom d'una selecció sense «Selecció:»; CSS al bloc «Ràdio amb el llenguatge de caràtules» de `portada.css`.
+
+**Trampa:** a l'ordinador, la capçalera de la cua és enganxosa amb `background: #181818` (`styles.css`, selector amb dos id): el fons de la caràtula va en pseudoelements amb `z-index` negatiu dins `isolation: isolate`, que es pinten per damunt d'aquest fons. Proves: `tests/music-queue-selection.test.js` (grans èxits), `tests/llista-artistes.test.js`, `tests/radio-caratules.test.js`; opt-in `node tests/browser/verificar-llista-artistes.js`.
+
+## [2026-10-16] - Lletra nova (Archivo) i cerca amb el llenguatge de caràtules
+
+**Petició:** canviar la lletra perquè s'adapti a l'estètica de caràtules, i que els grups i cançons de la cerca tinguin el mateix estil que la resta.
+
+**Solució Implementada:** (1) Archivo per al text i els títols (`styles.css` `body`, `--pt-display` / `--pt-body` a `portada.css`), Fraunces només per a la marca (`--pt-brand`); `index.html` i `navigation.js` carreguen Archivo + Fraunces en lloc de Roboto + Fraunces (`display=swap`: abans era `optional` i la primera visita podia no mostrar la lletra). (2) La cerca: marcatge nou dels artistes a `search-results.js` (com `renderFollowPage()`), Retorn obre la fitxa (`bindSearchResults()`), i els blocs CSS d'«Artistes i grups» i de la vista d'un estil s'apliquen també a `.search-results` amb `:is(...)`.
+
+**Trampa:** els blocs d'«Artistes i grups» i de la vista d'un estil ara tenen selectors `:is(#followPage, .search-results) …` i `:is(#homePage.is-style-view #videosGrid, #homePage .search-results .videos-grid) …`; si en canvies un, la cerca canvia igual. Proves: `tests/lletra.test.js`, `tests/search-results.test.js`, `tests/vista-estil.test.js`, `tests/llista-artistes.test.js`.
+
+## [2026-10-16] - Inici amb el llenguatge de caràtules
+
+**Petició:** que Inici s'assembli a la resta del disseny (fitxa d'artista, vista d'un estil, «Artistes i grups», «Per afinitat»).
+
+**Solució Implementada:** dos blocs CSS al final de `portada.css` (detall a `CLAUDE.md`, «Inici amb el llenguatge de caràtules») i canvis petits a `portada.js`: fotos dels artistes a 400 px («Fora del teu radar», «Torna-hi») i a 240 px (estils), i les caràtules de «La teva ràdio» dins `span.pt-radio__cover` a `hqdefault`.
+
+**Trampes:** (1) Les miniatures `hqdefault.jpg` són 4:3 amb franges negres d'un vídeo 16:9: en un quadrat es veuen. S'amplien `scale(1.34)` (4/3 ÷ 16/9); si fan de mosaic, cada imatge va dins un requadre amb `overflow: hidden` perquè l'ampliació no envaeixi la veïna (`portada.css` no pot fer servir `clip-path`). (2) `.pt-row` té `overflow-x: auto`, que també retalla en vertical: les files porten marge a dalt i a baix perquè l'ampliació en passar el ratolí no es talli. (3) Els blocs antics de «La teva ràdio» (`.pt-radio__covers` amb consultes de contenidor) i d'«A prop teu» (`.pt-near__covers`) continuen al fitxer (les proves en comproven parts) però a Inici queden sobreescrits pels selectors `#homePage.is-portada #ptRadio …` / `.pt-near.has-place …`. Proves: `tests/inici-caratules.test.js`; opt-in `node tests/browser/verificar-inici-caratules.js`.
+
+## [2026-10-16] - Ordinador: «Descobreix» de la barra lateral no responia (el vídeo tapava l'app)
+
+**Símptoma:** a l'ordinador, l'opció «Descobreix» de la barra de l'esquerra «fallava bastant»: sovint no feia res.
+
+**Causa Arrel:** `styles.css` tenia «Forçar pantalla completa real en mode horitzontal» amb `@media (orientation: landscape) and (max-width: 1024px)`, pensat per a un mòbil girat. Però una finestra d'ordinador (o una tauleta) apaïsada de 769–1024 px també ho compleix: en obrir una cançó, `#videoPlayer` passava a `position: fixed` a tota la finestra amb `z-index` màxim i tapava la barra lateral i tota l'app (l'iframe rebia els clics). A 1025 px o més no passava, per això era intermitent (depèn de l'amplada de la finestra). La navegació de `shell-nav.js` (`ACTIONS.discover`) era correcta.
+
+**Solució Implementada:** la regla només s'aplica a un mòbil girat: `@media (orientation: landscape) and (max-height: 500px) and (hover: none) and (pointer: coarse)`. Proves: `tests/reproductor-horitzontal.test.js`; opt-in `node tests/browser/verificar-descobreix-barra.js` («Descobreix» des d'Inici, d'un estil, d'«Artistes i grups», d'una cançó que sona i d'una fitxa d'artista, a 1280 i 900 px, i el mòbil girat continua a pantalla completa).
+
+**Trampa:** no facis servir només l'amplada per detectar un mòbil: hi ha finestres d'ordinador i tauletes de 769–1024 px. Per a comportaments de mòbil girat, combina-hi `max-height` i `pointer: coarse`.
+
+## [2026-10-16] - «Per afinitat» al mòbil: el marc blanc de la primera targeta quedava tallat
+
+**Símptoma:** a Descobreix, al mòbil, la primera targeta de «Per afinitat» no es veia sencera: li faltava el marc blanc de l'esquerra i la filera quedava tallada abans de la vora dreta.
+
+**Causa Arrel:** la filera (`.af-list`, scroll lateral) sortia 16 px per cada costat (`margin: 0 -16px; padding: 0 16px`) per anar de vora a vora, però `#homePage` té `contain: content` (inclou `paint`) i retalla el que en surt. A més, `scroll-snap-align: start` sense `scroll-padding` enganxava la primera targeta a la vora de la filera (`scrollLeft = 16`), és a dir, dins la franja retallada.
+
+**Solució Implementada:** al mòbil, `.af-list` amb `margin: 0`, `padding: 0 0 4px` i `scroll-padding-inline: 0`: la filera queda dins dels marges de la pàgina, la primera targeta comença a la vora del contingut i, en arribar al final, l'última també es veu sencera. **Trampa:** dins `#homePage` no facis files «de vora a vora» amb marges negatius: el `contain` les retalla. Proves: `tests/affinity.test.js`; opt-in `node tests/browser/verificar-afinitat.js` («la primera i l'última targeta es veuen senceres»).
+
+## [2026-10-16] - Caràtules amb marc blanc: cantonades una mica arrodonides
+
+**Petició:** les caràtules amb marc blanc, amb les puntes «el mínim possible però perceptible» arrodonides.
+
+**Solució Implementada:** variable `--pt-radius-cover: 8px` a `:root` de `portada.css`, aplicada a `#channelPage .ap-card` i `.ap-card__art` (la fitxa d'artista; el pare també, perquè el fons i l'ombra en ampliar-se no facin cantonades quadrades), `.af-card`, `#followPage .follow-card`, `#homePage.is-style-view .hero` (que, a petició de l'usuari, ja no porta el marc blanc: vora `1px solid var(--pt-line)`) i `#homePage.is-style-view #videosGrid .video-card`. 8 px és el valor més petit permès per `tests/portada-assets.test.js` per sobre de 2 px (que no es notava); amb el marc de 2 px la imatge queda amb uns 6 px d'arrodoniment. Les imatges de dins (radi 0) queden retallades pel pare (`overflow: hidden`). Prova: `tests/vista-estil.test.js`.
+
 ## [2026-10-16] - Fitxa d'artista amb quatre columnes a l'ordinador; vista d'un estil amb una columna al mòbil
 
 **Petició:** al mòbil, la vista d'un estil amb una sola columna (com la fitxa d'artista); a l'ordinador, les cançons de la fitxa d'artista en quatre columnes en lloc de tres.

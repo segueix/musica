@@ -526,6 +526,12 @@
 
     // Pàgina de resultats: ràdio a dalt de tot, després els artistes i després els vídeos.
     // `cardHtml(video)` pinta la targeta d'una cançó (la posa app.js, que en té les accions).
+    // Foto del grup prou gran per omplir el requadre (com «Artistes i grups»)
+    function artistPhoto(url) {
+        const src = String(url || '').replace(/^http:\/\//i, 'https://');
+        return /\/\/yt3\.(ggpht|googleusercontent)\.com\//i.test(src) ? src.replace(/=s\d+(?=-|$)/, '=s400') : src;
+    }
+
     function pageHtml(model, helpers = {}) {
         if (!model?.hasResults) return `<div class="search-results" data-search-results>${emptyHtml(model)}</div>`;
         const cardHtml = typeof helpers.cardHtml === 'function' ? helpers.cardHtml : () => '';
@@ -537,13 +543,14 @@
                     ${model.artists
                         .map(
                             artist => `
-                    <div class="follow-card search-channel-card" data-channel-id="${escapeHtml(artist.id)}">
-                        <div class="follow-avatar-wrap">
-                            <img class="follow-avatar" src="${escapeHtml(artist.avatar || FALLBACK_AVATAR)}" alt="${escapeHtml(artist.name || 'Artista')}" loading="lazy">
+                    <div class="follow-card search-channel-card" data-channel-id="${escapeHtml(artist.id)}" role="link" tabindex="0" aria-label="Fitxa de ${escapeHtml(artist.name || 'Artista')}">
+                        <img class="follow-avatar" src="${escapeHtml(artistPhoto(artist.avatar) || FALLBACK_AVATAR)}" alt="" loading="lazy" decoding="async">
+                        <span class="follow-card__shade" aria-hidden="true"></span>
+                        <div class="follow-card__info">
+                            <div class="follow-name">${escapeHtml(artist.name || 'Artista')}</div>
+                            ${artist.style ? `<div class="search-artist-style">${escapeHtml(artist.style)}</div>` : ''}
+                            <button class="follow-toggle-btn" type="button" data-follow-channel="${escapeHtml(artist.id)}" aria-pressed="false">Segueix</button>
                         </div>
-                        <div class="follow-name">${escapeHtml(artist.name || 'Artista')}</div>
-                        ${artist.style ? `<div class="search-artist-style">${escapeHtml(artist.style)}</div>` : ''}
-                        <button class="follow-toggle-btn" type="button" data-follow-channel="${escapeHtml(artist.id)}" aria-pressed="false">Segueix</button>
                     </div>`
                         )
                         .join('')}

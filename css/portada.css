@@ -24,8 +24,15 @@
     --pt-radius: 14px;
     --pt-radius-lg: 16px;
     --pt-radius-pill: 999px; /* xips de categoria i botons amb text (forma de càpsula) */
+    /* Caràtules amb marc blanc (fitxa d'artista, vista d'un estil, artistes, «Per afinitat»): el mínim arrodoniment que
+       es nota (2026-10-16). Amb el marc de 2 px, la imatge queda amb uns 6 px. */
+    --pt-radius-cover: 8px;
 
-    --pt-display: 'Fraunces', 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
+    /* Lletra (2026-10-16): una sola família de pal sec, Archivo, per al text i els títols, que va bé en blanc i en
+       negreta damunt les caràtules. Fraunces queda només per a la marca («Segueix! Música»), que és el logotip. */
+    --pt-display: 'Archivo', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    --pt-body: 'Archivo', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    --pt-brand: 'Fraunces', 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
     --pt-nav-h: 60px; /* navegació inferior (mòbil) */
     --pt-side-open: 0px; /* ample de la navegació lateral quan és desplegada (escriptori) */
     --pt-side-w: var(--pt-side-open); /* espai que ocupa ara: 0 si és plegada (i s'anima, vegeu @property) */
@@ -124,7 +131,7 @@ body {
 
 .intro-splash-title {
     color: var(--pt-text);
-    font-family: var(--pt-display);
+    font-family: var(--pt-brand);
     letter-spacing: 0;
 }
 
@@ -4072,6 +4079,7 @@ body #channelPage .ap-top :is(.channel-back-btn, .channel-profile-share-btn, .ap
     position: relative;
     min-width: 0;
     aspect-ratio: 1;
+    border-radius: var(--pt-radius-cover);
     container-type: inline-size;
 }
 
@@ -4085,7 +4093,7 @@ body #channelPage .ap-top :is(.channel-back-btn, .channel-profile-share-btn, .ap
     overflow: hidden;
     /* El marc blanc fi, a totes les caràtules */
     border: 2px solid #fff;
-    border-radius: 2px;
+    border-radius: var(--pt-radius-cover);
     background: var(--pt-surface-2);
     color: #fff;
     font: inherit;
@@ -6593,7 +6601,7 @@ body.is-video-pip .video-placeholder.is-placeholder-hidden {
 .intro-splash-brand {
     margin: -0.1em 0 0;
     color: var(--pt-accent);
-    font-family: var(--pt-display);
+    font-family: var(--pt-brand);
     font-size: 2rem;
     font-weight: 600;
     line-height: 1;
@@ -6947,7 +6955,7 @@ body.is-video-pip .video-placeholder.is-placeholder-hidden {
 .brand-music {
     margin-left: 0.3em;
     color: var(--pt-accent);
-    font-family: var(--pt-display);
+    font-family: var(--pt-brand);
     font-weight: 600;
     letter-spacing: 0;
 }
@@ -8385,7 +8393,7 @@ body.am-full-open {
     aspect-ratio: 4 / 5;
     overflow: hidden;
     border: 2px solid #fff;
-    border-radius: 2px;
+    border-radius: var(--pt-radius-cover);
     background: var(--pt-surface-2);
     color: #fff;
 }
@@ -8564,15 +8572,19 @@ body.am-full-open {
 .af-style:hover {
     border-color: var(--pt-accent);
 }
-/* Mòbil: una filera amb scroll lateral, com els artistes de les categories */
+/* Mòbil: una filera amb scroll lateral, com els artistes de les categories. La filera queda dins dels marges de la
+   pàgina (2026-10-16): abans sortia 16 px per cada costat (margin negatiu), però #homePage té `contain: content` i
+   en retallava el que en sortia, i l'ancoratge del scroll hi enganxava la primera targeta: el marc blanc de
+   l'esquerra i la part dreta quedaven tallats. */
 @media (max-width: 768px) {
     .af-list {
         display: flex;
         gap: 4px;
-        margin: 0 -16px;
-        padding: 0 16px 4px;
+        margin: 0;
+        padding: 0 0 4px;
         overflow-x: auto;
         scroll-snap-type: x mandatory;
+        scroll-padding-inline: 0;
         scrollbar-width: none;
     }
     .af-card {
@@ -8672,21 +8684,22 @@ body.am-full-open {
    un marc blanc fi i, a dins i en blanc, el nom i «Segueix» a baix i amagar a dalt a la dreta. Mínim espai entre
    requadres: 2 columnes al mòbil, 3 a ≥ 560 px i tantes de ≥ 190 px com hi càpiguen a l'ordinador. A l'ordinador,
    en passar-hi el ratolí, el requadre s'amplia una mica. La graella deixa un marge perquè el requadre ampliat no
-   surti de la pàgina (que retalla el que en sobresurt) i el marc no es perdi. */
-#followPage .follow-grid {
+   surti de la pàgina (que retalla el que en sobresurt) i el marc no es perdi. També els artistes de la pàgina de
+   resultats de la cerca (`.search-results`, mateix marcatge que `renderFollowPage()`). */
+:is(#followPage, .search-results) .follow-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 4px;
     padding: 6px;
 }
 
 @media (min-width: 560px) {
-    #followPage .follow-grid {
+    :is(#followPage, .search-results) .follow-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 }
 
 @media (min-width: 900px) {
-    #followPage .follow-grid {
+    :is(#followPage, .search-results) .follow-grid {
         grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
     }
 }
@@ -8695,7 +8708,7 @@ body.am-full-open {
     padding-right: 34px;
 }
 
-#followPage .follow-card {
+:is(#followPage, .search-results) .follow-card {
     --fc-t: clamp(0.95rem, 7.5cqi, 1.35rem);
     --fc-pad: clamp(8px, 5cqi, 14px);
     position: relative;
@@ -8705,7 +8718,7 @@ body.am-full-open {
     padding: 0;
     overflow: hidden;
     border: 2px solid #fff;
-    border-radius: 2px;
+    border-radius: var(--pt-radius-cover);
     background: var(--pt-surface-2);
     color: #fff;
     text-align: left;
@@ -8713,12 +8726,12 @@ body.am-full-open {
     cursor: pointer;
 }
 
-#followPage .follow-card:focus-visible {
+:is(#followPage, .search-results) .follow-card:focus-visible {
     outline: 3px solid var(--pt-accent);
     outline-offset: 2px;
 }
 
-#followPage .follow-avatar {
+:is(#followPage, .search-results) .follow-avatar {
     position: absolute;
     inset: 0;
     width: 100%;
@@ -8727,7 +8740,7 @@ body.am-full-open {
     object-fit: cover;
 }
 
-#followPage .follow-card__shade {
+:is(#followPage, .search-results) .follow-card__shade {
     position: absolute;
     inset: 0;
     background: linear-gradient(
@@ -8740,7 +8753,7 @@ body.am-full-open {
     pointer-events: none;
 }
 
-#followPage .follow-card__info {
+:is(#followPage, .search-results) .follow-card__info {
     position: absolute;
     left: var(--fc-pad);
     right: var(--fc-pad);
@@ -8751,7 +8764,7 @@ body.am-full-open {
     gap: 8px;
 }
 
-#followPage .follow-name {
+:is(#followPage, .search-results) .follow-name {
     display: -webkit-box;
     max-width: 100%;
     overflow: hidden;
@@ -8766,7 +8779,7 @@ body.am-full-open {
 }
 
 /* «Segueix»: càpsula de vidre amb vora blanca; seguint, en llima */
-body #followPage .follow-card .follow-toggle-btn {
+body :is(#followPage, .search-results) .follow-card .follow-toggle-btn {
     min-width: 0;
     min-height: 36px;
     height: auto;
@@ -8782,59 +8795,68 @@ body #followPage .follow-card .follow-toggle-btn {
     backdrop-filter: blur(8px);
 }
 
-body #followPage .follow-card .follow-toggle-btn:hover {
+body :is(#followPage, .search-results) .follow-card .follow-toggle-btn:hover {
     border-color: #fff;
     background: rgba(20, 22, 21, 0.85);
     color: #fff;
 }
 
-body #followPage .follow-card .follow-toggle-btn.is-followed {
+body :is(#followPage, .search-results) .follow-card .follow-toggle-btn.is-followed {
     border-color: var(--pt-accent);
     background: rgba(20, 22, 21, 0.6);
     color: var(--pt-accent);
 }
 
-/* Amagar: a dalt a la dreta, sense fons, en blanc (44 px de zona tàctil) */
-#followPage .follow-hide-btn {
-    top: 2px;
-    right: 2px;
+/* Ràdio de grans èxits: el play blanc a baix a la dreta, com a les caràtules (44 px de zona tàctil). Amagar
+   l'artista és a la seva fitxa (2026-10-16). */
+:is(#followPage, .search-results) .follow-hits-btn {
+    position: absolute;
+    right: var(--fc-pad);
+    bottom: var(--fc-pad);
     z-index: 1;
-    width: 44px;
-    height: 44px;
+    display: grid;
+    place-items: center;
+    width: clamp(40px, 22cqi, 48px);
+    height: clamp(40px, 22cqi, 48px);
+    padding: 0;
     border: 0;
-    background: transparent;
-    color: #fff;
-    filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.85));
+    border-radius: 50%;
+    background: #fff;
+    color: #141615;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);
+    cursor: pointer;
 }
 
-#followPage .follow-hide-btn svg {
-    width: 22px;
-    height: 22px;
+:is(#followPage, .search-results) .follow-hits-btn svg {
+    width: 46%;
+    height: 46%;
+    margin-left: 6%;
 }
 
-#followPage .follow-hide-btn:hover {
-    background: rgba(0, 0, 0, 0.35);
+:is(#followPage, .search-results) .follow-hits-btn:hover {
+    background: var(--pt-accent);
 }
 
-#followPage .follow-hide-btn.is-hidden {
-    border: 0;
-    background: rgba(0, 0, 0, 0.45);
+:is(#followPage, .search-results) .follow-hits-btn[aria-busy='true'] {
+    opacity: 0.6;
+    cursor: progress;
 }
 
-#followPage .follow-hide-btn.is-hidden::after {
-    height: 26px;
+/* El nom i «Segueix» deixen lloc al play */
+#followPage .follow-card__info {
+    right: calc(var(--fc-pad) + clamp(40px, 22cqi, 48px) + 8px);
 }
 
 /* Ordinador: en passar-hi el ratolí, el requadre s'amplia una mica */
 @media (hover: hover) and (pointer: fine) {
-    #followPage .follow-card {
+    :is(#followPage, .search-results) .follow-card {
         transition:
             transform 0.18s ease,
             box-shadow 0.18s ease;
     }
 
-    #followPage .follow-card:hover,
-    #followPage .follow-card:focus-within {
+    :is(#followPage, .search-results) .follow-card:hover,
+    :is(#followPage, .search-results) .follow-card:focus-within {
         z-index: 3;
         transform: scale(1.04);
         box-shadow: 0 14px 34px rgba(0, 0, 0, 0.55);
@@ -8842,23 +8864,24 @@ body #followPage .follow-card .follow-toggle-btn.is-followed {
 }
 
 @media (prefers-reduced-motion: reduce) {
-    #followPage .follow-card {
+    :is(#followPage, .search-results) .follow-card {
         transition: none;
     }
 
-    #followPage .follow-card:hover,
-    #followPage .follow-card:focus-within {
+    :is(#followPage, .search-results) .follow-card:hover,
+    :is(#followPage, .search-results) .follow-card:focus-within {
         transform: none;
     }
 }
 
 /* ---------- Vista d'un estil (Pop, Rock…) i d'una categoria pròpia (2026-10-16) ----------
    `#homePage.is-style-view` el posa syncCategoryArtists() d'app.js. Mateix llenguatge que la fitxa d'artista:
-   (1) la cançó destacada té la caràtula de fons a tot el requadre, amb el text a sobre i el nom del grup gran just sota
+   (1) la cançó destacada té la caràtula de fons a tot el requadre (sense marc blanc), amb el text a sobre i el nom del grup gran just sota
    el títol; (2) la filera d'artistes (#categoryArtists) no canvia; (3) les cançons, en caràtules quadrades plenes amb
    la imatge i un marc blanc fi, amb el títol, el grup i les visualitzacions a dins, en blanc: quatre columnes a
    l'ordinador, tres a la tauleta i una al mòbil (una caràtula sota l'altra), amb el mínim espai; a l'ordinador s'amplien una mica en passar-hi el
-   ratolí. Els clics (play, afegir a una llista, obrir el grup) són els de sempre: només canvia el CSS. */
+   ratolí. Els clics (play, afegir a una llista, obrir el grup) són els de sempre: només canvia el CSS. Les cançons de
+   la pàgina de resultats de la cerca (`.search-results .videos-grid`) fan servir les mateixes caràtules. */
 
 /* (1) Cançó destacada: la caràtula de fons */
 #homePage.is-style-view .hero {
@@ -8871,8 +8894,9 @@ body #followPage .follow-card .follow-toggle-btn.is-followed {
     min-height: clamp(340px, 34vw, 460px);
     padding: 0;
     overflow: hidden;
-    border: 2px solid #fff;
-    border-radius: 2px;
+    /* Sense marc blanc (2026-10-16): la vora discreta de la resta de targetes; el marc blanc és de les caràtules */
+    border: 1px solid var(--pt-line);
+    border-radius: var(--pt-radius-cover);
     background: var(--pt-surface-2);
     box-shadow: none;
 }
@@ -9009,26 +9033,26 @@ body #followPage .follow-card .follow-toggle-btn.is-followed {
     display: none;
 }
 
-#homePage.is-style-view #videosGrid {
+:is(#homePage.is-style-view #videosGrid, #homePage .search-results .videos-grid) {
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 4px;
     padding: 6px;
 }
 
 @media (max-width: 1024px) {
-    #homePage.is-style-view #videosGrid {
+    :is(#homePage.is-style-view #videosGrid, #homePage .search-results .videos-grid) {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 }
 
 @media (max-width: 768px) {
-    #homePage.is-style-view #videosGrid {
+    :is(#homePage.is-style-view #videosGrid, #homePage .search-results .videos-grid) {
         grid-template-columns: minmax(0, 1fr);
         margin: 0 -6px;
     }
 }
 
-#homePage.is-style-view #videosGrid .video-card {
+:is(#homePage.is-style-view #videosGrid, #homePage .search-results .videos-grid) .video-card {
     --sv-pad: clamp(8px, 6cqi, 16px);
     --sv-play: clamp(34px, 18cqi, 52px);
     position: relative;
@@ -9038,14 +9062,14 @@ body #followPage .follow-card .follow-toggle-btn.is-followed {
     padding: 0;
     overflow: hidden;
     border: 2px solid #fff;
-    border-radius: 2px;
+    border-radius: var(--pt-radius-cover);
     background: var(--pt-surface-2);
     color: #fff;
     container-type: inline-size;
     contain-intrinsic-size: auto 300px;
 }
 
-#homePage.is-style-view #videosGrid .video-thumbnail {
+:is(#homePage.is-style-view #videosGrid, #homePage .search-results .videos-grid) .video-thumbnail {
     position: absolute;
     inset: 0;
     width: auto;
@@ -9057,7 +9081,7 @@ body #followPage .follow-card .follow-toggle-btn.is-followed {
     box-shadow: none;
 }
 
-#homePage.is-style-view #videosGrid .video-thumbnail img {
+:is(#homePage.is-style-view #videosGrid, #homePage .search-results .videos-grid) .video-thumbnail img {
     position: absolute;
     inset: 0;
     width: 100%;
@@ -9067,7 +9091,7 @@ body #followPage .follow-card .follow-toggle-btn.is-followed {
 }
 
 /* Fosc suau a baix perquè el text en blanc es llegeixi */
-#homePage.is-style-view #videosGrid .video-thumbnail::before {
+:is(#homePage.is-style-view #videosGrid, #homePage .search-results .videos-grid) .video-thumbnail::before {
     content: '';
     inset: 0;
     top: 0;
@@ -9085,7 +9109,7 @@ body #followPage .follow-card .follow-toggle-btn.is-followed {
 }
 
 /* El play blanc, sempre visible, a baix a la dreta */
-#homePage.is-style-view #videosGrid .video-thumbnail::after {
+:is(#homePage.is-style-view #videosGrid, #homePage .search-results .videos-grid) .video-thumbnail::after {
     content: '';
     display: block;
     top: auto;
@@ -9105,7 +9129,7 @@ body #followPage .follow-card .follow-toggle-btn.is-followed {
 }
 
 /* La durada, a dalt a l'esquerra (a la dreta hi ha «Afegeix a una llista») */
-#homePage.is-style-view #videosGrid .video-duration-badge {
+:is(#homePage.is-style-view #videosGrid, #homePage .search-results .videos-grid) .video-duration-badge {
     top: var(--sv-pad);
     left: var(--sv-pad);
     right: auto;
@@ -9120,7 +9144,7 @@ body #followPage .follow-card .follow-toggle-btn.is-followed {
     font-weight: 700;
 }
 
-#homePage.is-style-view #videosGrid .video-details {
+:is(#homePage.is-style-view #videosGrid, #homePage .search-results .videos-grid) .video-details {
     position: absolute;
     inset: 0;
     z-index: 3;
@@ -9133,15 +9157,15 @@ body #followPage .follow-card .follow-toggle-btn.is-followed {
     pointer-events: none;
 }
 
-#homePage.is-style-view #videosGrid .video-info-container,
-#homePage.is-style-view #videosGrid .video-info-header {
+:is(#homePage.is-style-view #videosGrid, #homePage .search-results .videos-grid) .video-info-container,
+:is(#homePage.is-style-view #videosGrid, #homePage .search-results .videos-grid) .video-info-header {
     position: static;
     display: block;
     flex: none;
     min-width: 0;
 }
 
-#homePage.is-style-view #videosGrid .video-card-title {
+:is(#homePage.is-style-view #videosGrid, #homePage .search-results .videos-grid) .video-card-title {
     display: -webkit-box;
     margin: 0 0 2px;
     overflow: hidden;
@@ -9154,32 +9178,32 @@ body #followPage .follow-card .follow-toggle-btn.is-followed {
     -webkit-box-orient: vertical;
 }
 
-#homePage.is-style-view #videosGrid .video-metadata,
-#homePage.is-style-view #videosGrid .channel-name,
-#homePage.is-style-view #videosGrid .video-stats {
+:is(#homePage.is-style-view #videosGrid, #homePage .search-results .videos-grid) .video-metadata,
+:is(#homePage.is-style-view #videosGrid, #homePage .search-results .videos-grid) .channel-name,
+:is(#homePage.is-style-view #videosGrid, #homePage .search-results .videos-grid) .video-stats {
     color: #fff;
     font-size: clamp(0.75rem, 5.4cqi, 0.875rem);
     text-shadow: 0 1px 6px rgba(0, 0, 0, 0.75);
 }
 
-#homePage.is-style-view #videosGrid .channel-name {
+:is(#homePage.is-style-view #videosGrid, #homePage .search-results .videos-grid) .channel-name {
     font-weight: 700;
     pointer-events: auto;
 }
 
-#homePage.is-style-view #videosGrid .video-stats {
+:is(#homePage.is-style-view #videosGrid, #homePage .search-results .videos-grid) .video-stats {
     opacity: 0.9;
 }
 
 /* «Afegeix a una llista», a dalt a la dreta, en blanc i sense fons */
-#homePage.is-style-view #videosGrid .video-card-actions {
+:is(#homePage.is-style-view #videosGrid, #homePage .search-results .videos-grid) .video-card-actions {
     position: absolute;
     top: calc(var(--sv-pad) - 8px);
     right: calc(var(--sv-pad) - 8px);
     pointer-events: auto;
 }
 
-#homePage.is-style-view #videosGrid .video-action-btn {
+:is(#homePage.is-style-view #videosGrid, #homePage .search-results .videos-grid) .video-action-btn {
     width: 44px;
     height: 44px;
     border: 0;
@@ -9188,46 +9212,1586 @@ body #followPage .follow-card .follow-toggle-btn.is-followed {
     filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.85));
 }
 
-#homePage.is-style-view #videosGrid .video-action-btn:hover {
+:is(#homePage.is-style-view #videosGrid, #homePage .search-results .videos-grid) .video-action-btn:hover {
     background: rgba(0, 0, 0, 0.35);
     color: var(--pt-accent);
 }
 
 /* Caràtula estreta (tres columnes en una finestra petita): sense la línia de visualitzacions */
 @container (max-width: 200px) {
-    #homePage.is-style-view #videosGrid .video-stats {
+    :is(#homePage.is-style-view #videosGrid, #homePage .search-results .videos-grid) .video-stats {
         display: none;
     }
 }
 
 /* Ordinador: en passar-hi el ratolí, la caràtula s'amplia una mica (la graella deixa marge perquè no es retalli) */
 @media (hover: hover) and (pointer: fine) {
-    #homePage.is-style-view #videosGrid .video-card {
+    :is(#homePage.is-style-view #videosGrid, #homePage .search-results .videos-grid) .video-card {
         transition:
             transform 0.18s ease,
             box-shadow 0.18s ease;
     }
 
-    #homePage.is-style-view #videosGrid .video-card:hover,
-    #homePage.is-style-view #videosGrid .video-card:focus-within {
+    :is(#homePage.is-style-view #videosGrid, #homePage .search-results .videos-grid) .video-card:hover,
+    :is(#homePage.is-style-view #videosGrid, #homePage .search-results .videos-grid) .video-card:focus-within {
         z-index: 3;
         transform: scale(1.04);
         box-shadow: 0 14px 34px rgba(0, 0, 0, 0.55);
         background: var(--pt-surface-2);
     }
 
-    #homePage.is-style-view #videosGrid .video-card:hover .video-thumbnail img {
+    :is(#homePage.is-style-view #videosGrid, #homePage .search-results .videos-grid) .video-card:hover .video-thumbnail img {
         transform: none;
     }
 }
 
 @media (prefers-reduced-motion: reduce) {
-    #homePage.is-style-view #videosGrid .video-card {
+    :is(#homePage.is-style-view #videosGrid, #homePage .search-results .videos-grid) .video-card {
         transition: none;
     }
 
-    #homePage.is-style-view #videosGrid .video-card:hover,
-    #homePage.is-style-view #videosGrid .video-card:focus-within {
+    :is(#homePage.is-style-view #videosGrid, #homePage .search-results .videos-grid) .video-card:hover,
+    :is(#homePage.is-style-view #videosGrid, #homePage .search-results .videos-grid) .video-card:focus-within {
         transform: none;
     }
+}
+
+/* ---------- Inici amb el llenguatge de caràtules (2026-10-16) ----------
+   Fase 1 de la proposta d'Inici: «Torna-hi», «Acabades de sortir», «Fora del teu radar» i «En directe» fan servir el
+   mateix llenguatge que la fitxa d'artista, la vista d'un estil, «Artistes i grups» i «Per afinitat»: caràtula
+   quadrada plena amb la imatge, marc blanc fi i cantonades `--pt-radius-cover`; a dins i en blanc, el títol, el grup i
+   les dades, amb un fosc suau a baix; la durada (i «Gravat en directe») en càpsules de vidre a dalt a l'esquerra,
+   «Afegeix a la cua» i «Desa en una llista» a dalt a la dreta i el play blanc a baix a la dreta; el mínim espai entre
+   caràtules i una petita ampliació en passar el ratolí a l'ordinador. Sense subtítols explicatius a les seccions
+   (continuen a l'HTML per als lectors de pantalla). Només CSS sobre el marcatge de `portada.js`: els clics no canvien. */
+#homePage.is-portada {
+    --pt-cover-w: min(64vw, 236px);
+    --pt-cover-pad: clamp(10px, 6cqi, 14px);
+}
+
+#homePage.is-portada .pt-head__sub {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+/* Files: el mínim espai i marge a dalt i a baix perquè l'ampliació no es retalli (overflow-x: auto retalla també en
+   vertical) */
+#homePage.is-portada .pt-row,
+#homePage.is-portada .pt-quick-list {
+    gap: 4px;
+    padding-top: 8px;
+    padding-bottom: 12px;
+}
+
+/* Botons de les capçaleres: vidre amb vora blanca */
+#homePage.is-portada .pt-head__tools .pt-tool,
+#homePage.is-portada .pt-head__tools .pt-arrow {
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    background: rgba(20, 22, 21, 0.6);
+    color: #fff;
+}
+
+#homePage.is-portada .pt-head__tools .pt-tool:hover,
+#homePage.is-portada .pt-head__tools .pt-arrow:hover:not(:disabled) {
+    border-color: var(--pt-accent);
+    color: var(--pt-accent);
+}
+
+#homePage.is-portada .pt-head__tools .pt-tool--play {
+    border-color: var(--pt-accent);
+    color: var(--pt-accent);
+}
+
+/* (1) Cançons: «Acabades de sortir» i «En directe» */
+#homePage.is-portada .pt-card,
+#homePage.is-portada .pt-card--wide {
+    position: relative;
+    isolation: isolate;
+    width: var(--pt-cover-w);
+    aspect-ratio: 1;
+    overflow: hidden;
+    border: 2px solid #fff;
+    border-radius: var(--pt-radius-cover);
+    background: var(--pt-surface-2);
+    color: #fff;
+    container-type: inline-size;
+}
+
+#homePage.is-portada .pt-card__media {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: auto;
+    border-radius: 0;
+}
+
+#homePage.is-portada .pt-card__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* La miniatura hqdefault (4:3) porta franges negres a dalt i a baix d'un vídeo 16:9: s'amplia 4/3 ÷ 16/9 ≈ 1,34
+   perquè el quadrat només mostri la imatge */
+#homePage.is-portada .pt-card__media img[src*='/hqdefault.jpg'] {
+    transform: scale(1.34);
+}
+
+/* Fosc suau a baix (i una mica a dalt, per a les càpsules) */
+#homePage.is-portada .pt-card__media::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.35) 0%,
+        rgba(0, 0, 0, 0) 26%,
+        rgba(0, 0, 0, 0) 42%,
+        rgba(0, 0, 0, 0.88) 100%
+    );
+    pointer-events: none;
+}
+
+#homePage.is-portada .pt-card__dur,
+#homePage.is-portada .pt-card__badge {
+    top: var(--pt-cover-pad);
+    left: var(--pt-cover-pad);
+    bottom: auto;
+    z-index: 2;
+    padding: 2px 9px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: var(--pt-radius-pill);
+    background: rgba(20, 22, 21, 0.55);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+/* A «En directe» la durada va sota «Gravat en directe» */
+#homePage.is-portada .pt-card__media:has(.pt-card__badge) .pt-card__dur {
+    top: calc(var(--pt-cover-pad) + 28px);
+}
+
+#homePage.is-portada .pt-card__play {
+    right: var(--pt-cover-pad);
+    bottom: var(--pt-cover-pad);
+    z-index: 2;
+    width: clamp(40px, 20cqi, 52px);
+    height: clamp(40px, 20cqi, 52px);
+    background: #fff;
+    color: #141615;
+}
+
+/* El text, a baix i en blanc; la caràtula continua sent el botó per escoltar */
+#homePage.is-portada .pt-card__body {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: var(--pt-cover-pad);
+    padding-right: calc(var(--pt-cover-pad) + clamp(40px, 20cqi, 52px) + 8px);
+    pointer-events: none;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.75);
+}
+
+#homePage.is-portada .pt-card__text {
+    flex: none;
+    gap: 1px;
+}
+
+#homePage.is-portada .pt-card__title,
+#homePage.is-portada .pt-card--wide .pt-card__title {
+    color: #fff;
+    font-family: inherit;
+    font-size: clamp(0.9375rem, 7.5cqi, 1.1875rem);
+    font-weight: 800;
+    line-height: 1.15;
+}
+
+#homePage.is-portada .pt-card .pt-artist {
+    color: #fff;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    pointer-events: auto;
+}
+
+#homePage.is-portada .pt-card__meta,
+#homePage.is-portada .pt-card__reason {
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 0.75rem;
+}
+
+/* «Afegeix a la cua» i «Desa en una llista»: a dalt a la dreta, en blanc i sense fons */
+#homePage.is-portada .pt-card__actions {
+    position: absolute;
+    top: calc(var(--pt-cover-pad) - 10px);
+    right: calc(var(--pt-cover-pad) - 10px);
+    flex-direction: row;
+    gap: 0;
+    pointer-events: auto;
+}
+
+#homePage.is-portada .pt-card__actions .pt-act,
+#homePage.is-portada .pt-portrait__actions .pt-act:not(.pt-act--play) {
+    border: 0;
+    background: transparent;
+    color: #fff;
+    filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.85));
+}
+
+#homePage.is-portada .pt-card__actions .pt-act:hover,
+#homePage.is-portada .pt-portrait__actions .pt-act:not(.pt-act--play):hover {
+    background: rgba(0, 0, 0, 0.35);
+    color: var(--pt-accent);
+}
+
+/* (2) «Fora del teu radar»: la foto del grup omple el requadre */
+#homePage.is-portada .pt-portrait {
+    position: relative;
+    isolation: isolate;
+    justify-content: flex-end;
+    width: var(--pt-cover-w);
+    aspect-ratio: 1;
+    padding: var(--pt-cover-pad);
+    overflow: hidden;
+    border: 2px solid #fff;
+    border-radius: var(--pt-radius-cover);
+    background: var(--pt-surface-2);
+    color: #fff;
+    container-type: inline-size;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.75);
+}
+
+#homePage.is-portada .pt-portrait__img {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    border-radius: 0;
+}
+
+#homePage.is-portada .pt-portrait__img::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.1) 0%,
+        rgba(0, 0, 0, 0) 30%,
+        rgba(0, 0, 0, 0.7) 58%,
+        rgba(0, 0, 0, 0.92) 100%
+    );
+    pointer-events: none;
+}
+
+#homePage.is-portada .pt-portrait__img img {
+    position: absolute;
+    inset: 0;
+}
+
+#homePage.is-portada .pt-portrait__name {
+    margin: 0;
+    color: #fff;
+    font-size: clamp(1rem, 8cqi, 1.25rem);
+    font-weight: 800;
+    text-align: left;
+}
+
+#homePage.is-portada .pt-portrait__reason,
+#homePage.is-portada .pt-portrait__reason--style {
+    min-height: 0;
+    margin: 2px 0 0;
+    color: #fff;
+    font-weight: 700;
+}
+
+#homePage.is-portada .pt-portrait__song {
+    margin: 2px 0 6px;
+    color: rgba(255, 255, 255, 0.88);
+}
+
+#homePage.is-portada .pt-portrait__actions {
+    margin: 0 -6px -6px;
+}
+
+/* El play, blanc com a la resta de caràtules */
+#homePage.is-portada .pt-portrait__actions .pt-act--play {
+    border: 0;
+    background: #fff;
+    color: #141615;
+}
+
+/* (3) «Torna-hi»: caràtules quadrades (cançons amb la caràtula, artistes amb la foto, llistes amb el mosaic) */
+#homePage.is-portada .pt-quick {
+    flex: 0 0 min(42vw, 180px);
+    position: relative;
+    aspect-ratio: 1;
+    overflow: hidden;
+    border: 2px solid #fff;
+    border-radius: var(--pt-radius-cover);
+    background: var(--pt-surface-2);
+    container-type: inline-size;
+}
+
+#homePage.is-portada .pt-quick__main {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 0;
+    min-height: 0;
+    padding: clamp(8px, 6cqi, 12px);
+    border-radius: 0;
+    color: #fff;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.75);
+}
+
+#homePage.is-portada .pt-quick__thumb,
+#homePage.is-portada .pt-quick__thumb--round,
+#homePage.is-portada .pt-quick__thumb--list {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    aspect-ratio: auto;
+    border-radius: 0;
+}
+
+#homePage.is-portada .pt-quick__thumb::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 0.88) 100%);
+    pointer-events: none;
+}
+
+#homePage.is-portada .pt-quick__text {
+    position: relative;
+    z-index: 1;
+}
+
+#homePage.is-portada .pt-quick__kicker {
+    color: #fff;
+    font-size: 0.625rem;
+    opacity: 0.9;
+}
+
+#homePage.is-portada .pt-quick__title {
+    color: #fff;
+    font-size: clamp(0.875rem, 9cqi, 1.0625rem);
+    font-weight: 800;
+    line-height: 1.15;
+}
+
+#homePage.is-portada .pt-quick__sub {
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 0.75rem;
+}
+
+@media (min-width: 900px) {
+    #homePage.is-portada .pt-quick-list {
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        gap: 4px;
+        padding: 6px;
+    }
+}
+
+/* Ordinador: en passar-hi el ratolí, la caràtula s'amplia una mica */
+@media (hover: hover) and (pointer: fine) {
+    #homePage.is-portada :is(.pt-card, .pt-portrait, .pt-quick) {
+        transition:
+            transform 0.18s ease,
+            box-shadow 0.18s ease;
+    }
+
+    #homePage.is-portada :is(.pt-card, .pt-portrait, .pt-quick):is(:hover, :focus-within) {
+        z-index: 3;
+        transform: scale(1.04);
+        box-shadow: 0 14px 34px rgba(0, 0, 0, 0.55);
+    }
+
+    #homePage.is-portada .pt-card__media:hover img {
+        transform: none;
+    }
+
+    #homePage.is-portada .pt-card__media:hover img[src*='/hqdefault.jpg'] {
+        transform: scale(1.34);
+    }
+
+    #homePage.is-portada .pt-quick:hover {
+        background: var(--pt-surface-2);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #homePage.is-portada :is(.pt-card, .pt-portrait, .pt-quick) {
+        transition: none;
+    }
+
+    #homePage.is-portada :is(.pt-card, .pt-portrait, .pt-quick):is(:hover, :focus-within) {
+        transform: none;
+    }
+}
+
+/* ---------- Inici, fases 2 i 3: «La teva ràdio», «Tria el teu so», «A prop teu» i «Les teves llistes» (2026-10-16) ----------
+   Les imatges fan de fons (mosaic) i el text va al damunt, com la cançó destacada d'un estil. Substitueix el collage de
+   caràtules girades de «La teva ràdio» i d'«A prop teu» (els blocs anteriors d'aquest fitxer queden sobreescrits a
+   Inici) i les tres fotos rodones petites de cada estil. */
+
+/* «La teva ràdio»: tres caràtules en mosaic a tot el fons, fosques a l'esquerra (on va el text) */
+#homePage.is-portada #ptRadio {
+    border-radius: var(--pt-radius-cover);
+}
+
+#homePage.is-portada #ptRadio .pt-radio__covers {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    display: grid;
+    grid-auto-columns: minmax(0, 1fr);
+    grid-auto-flow: column;
+    transform: none;
+}
+
+#homePage.is-portada #ptRadio .pt-radio__cover {
+    position: relative;
+    overflow: hidden;
+}
+
+#homePage.is-portada #ptRadio .pt-radio__covers img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    object-fit: cover;
+    /* hqdefault (4:3) amb franges negres d'un vídeo 16:9 */
+    transform: scale(1.34);
+}
+
+#homePage.is-portada #ptRadio .pt-radio__art::after {
+    z-index: 1;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(20, 22, 21, 0.95) 0%,
+            rgba(20, 22, 21, 0.86) 38%,
+            rgba(20, 22, 21, 0.45) 68%,
+            rgba(20, 22, 21, 0.2) 100%
+        ),
+        linear-gradient(180deg, rgba(20, 22, 21, 0) 55%, rgba(20, 22, 21, 0.55) 100%);
+}
+
+#homePage.is-portada #ptRadio .pt-radio__body {
+    position: relative;
+    z-index: 2;
+    max-width: 720px;
+    padding-right: 28px;
+}
+
+#homePage.is-portada #ptRadio :is(.pt-radio__title, .pt-radio__lead, .pt-eyebrow--brand) {
+    padding-right: 0;
+}
+
+/* Els modes: botons de vidre damunt la imatge; el triat, en llima */
+#homePage.is-portada #ptRadio .pt-mode__opt span {
+    background: rgba(20, 22, 21, 0.55);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+}
+
+#homePage.is-portada #ptRadio .pt-mode__opt input:checked + span {
+    background: var(--pt-accent);
+}
+
+@media (max-width: 768px) {
+    #homePage.is-portada #ptRadio .pt-radio__art::after {
+        background: linear-gradient(
+            180deg,
+            rgba(20, 22, 21, 0.45) 0%,
+            rgba(20, 22, 21, 0.82) 38%,
+            rgba(20, 22, 21, 0.94) 100%
+        );
+    }
+
+    #homePage.is-portada #ptRadio .pt-radio__body {
+        padding-right: 16px;
+    }
+}
+
+/* «Tria el teu so»: les fotos dels artistes de cada estil omplen la rajola, amb el nom en blanc al damunt */
+#homePage.is-portada .pt-style:not(.pt-style--add):not(.pt-style--more) {
+    position: relative;
+    isolation: isolate;
+    justify-content: flex-end;
+    min-height: 120px;
+    border: 2px solid #fff;
+    border-radius: var(--pt-radius-cover);
+    background: var(--pt-surface-2);
+    color: #fff;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.75);
+}
+
+#homePage.is-portada .pt-style__faces {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    display: grid;
+    grid-auto-columns: minmax(0, 1fr);
+    grid-auto-flow: column;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+}
+
+#homePage.is-portada .pt-style__faces img,
+#homePage.is-portada .pt-style:hover .pt-style__faces img {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    object-fit: cover;
+}
+
+#homePage.is-portada .pt-style__faces::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.35) 40%, rgba(0, 0, 0, 0.85) 100%);
+}
+
+#homePage.is-portada .pt-style:not(.pt-style--add):not(.pt-style--more) .pt-style__label {
+    color: #fff;
+}
+
+#homePage.is-portada .pt-style:not(.pt-style--add):not(.pt-style--more) .pt-style__count {
+    margin-top: 2px;
+    color: rgba(255, 255, 255, 0.88);
+}
+
+#homePage.is-portada .pt-style:not(.pt-style--add):not(.pt-style--more):hover {
+    border-color: var(--pt-accent);
+    background: var(--pt-surface-2);
+}
+
+/* «A prop teu» amb una zona desada: les caràtules dels tres artistes més propers fan de fons, amb els km */
+#homePage.is-portada .pt-near.has-place .pt-near__covers {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    display: grid;
+    grid-auto-columns: minmax(0, 1fr);
+    grid-auto-flow: column;
+    padding: 0;
+    transform: none;
+}
+
+#homePage.is-portada .pt-near.has-place .pt-near__covers li {
+    position: relative;
+    margin: 0;
+    overflow: hidden;
+}
+
+#homePage.is-portada .pt-near.has-place .pt-near__covers img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    object-fit: cover;
+    transform: none;
+}
+
+#homePage.is-portada .pt-near.has-place .pt-near__covers img[src*='/hqdefault.jpg'] {
+    transform: scale(1.34);
+}
+
+#homePage.is-portada .pt-near.has-place .pt-near__covers::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(20, 22, 21, 0.95) 0%,
+            rgba(20, 22, 21, 0.86) 38%,
+            rgba(20, 22, 21, 0.4) 70%,
+            rgba(20, 22, 21, 0.15) 100%
+        ),
+        linear-gradient(180deg, rgba(20, 22, 21, 0) 55%, rgba(20, 22, 21, 0.5) 100%);
+    pointer-events: none;
+}
+
+/* Els km, en una càpsula de vidre a dalt de cada caràtula */
+#homePage.is-portada .pt-near.has-place .pt-near__km {
+    top: 12px;
+    right: 12px;
+    bottom: auto;
+    left: auto;
+    z-index: 2;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    background: rgba(20, 22, 21, 0.6);
+    color: #fff;
+    transform: none;
+}
+
+#homePage.is-portada .pt-near.has-place .pt-near__body {
+    position: relative;
+    z-index: 2;
+    max-width: 720px;
+    padding-right: 0;
+}
+
+#homePage.is-portada .pt-near.has-place :is(.pt-near__title, .pt-eyebrow) {
+    padding-right: 0;
+}
+
+@media (max-width: 768px) {
+    #homePage.is-portada .pt-near.has-place .pt-near__covers::after {
+        background: linear-gradient(
+            180deg,
+            rgba(20, 22, 21, 0.4) 0%,
+            rgba(20, 22, 21, 0.82) 36%,
+            rgba(20, 22, 21, 0.94) 100%
+        );
+    }
+}
+
+/* «Les teves llistes»: cada llista és una caràtula quadrada (mosaic de les quatre primeres cançons) amb marc blanc */
+#homePlaylists .hp-item {
+    flex-basis: min(42vw, 180px);
+}
+
+#homePlaylists .hp-item > .hp-card {
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 0;
+    aspect-ratio: 1;
+    padding: 12px;
+    padding-right: 60px;
+    overflow: hidden;
+    border: 2px solid #fff;
+    border-radius: var(--pt-radius-cover);
+    background: var(--pt-surface-2);
+    color: #fff;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.75);
+}
+
+#homePlaylists .hp-card .hp-cover {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+#homePlaylists .hp-card .hp-cover::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 0.85) 100%);
+}
+
+/* El play, blanc i sempre visible, a baix a la dreta */
+#homePlaylists .hp-card .hp-play {
+    z-index: 1;
+    right: 10px;
+    bottom: 10px;
+    background-color: #fff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23141615' d='M8 5.5v13l11-6.5z'/%3E%3C/svg%3E");
+    opacity: 1;
+    transform: none;
+}
+
+#homePlaylists .hp-card .hp-name {
+    color: #fff;
+    font-weight: 800;
+}
+
+#homePlaylists .hp-card .hp-meta {
+    color: rgba(255, 255, 255, 0.88);
+}
+
+/* Compartir: vidre amb vora blanca, a dalt a la dreta */
+#homePlaylists .hp-share {
+    top: 8px;
+    right: 8px;
+    border-color: rgba(255, 255, 255, 0.7);
+    background: rgba(20, 22, 21, 0.55);
+    color: #fff;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    #homePlaylists .hp-item,
+    #homePage.is-portada .pt-style:not(.pt-style--add):not(.pt-style--more) {
+        transition:
+            transform 0.18s ease,
+            box-shadow 0.18s ease;
+    }
+
+    #homePlaylists .hp-item:is(:hover, :focus-within),
+    #homePage.is-portada .pt-style:not(.pt-style--add):not(.pt-style--more):is(:hover, :focus-visible) {
+        z-index: 3;
+        transform: scale(1.04);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #homePlaylists .hp-item:is(:hover, :focus-within),
+    #homePage.is-portada .pt-style:not(.pt-style--add):not(.pt-style--more):is(:hover, :focus-visible) {
+        transform: none;
+    }
+}
+
+/* «Les teves llistes»: sense subtítol explicatiu (continua per als lectors de pantalla) i botons de vidre */
+#homePlaylists .home-section-subtitle {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+#homePlaylists :is(.home-section-more, .home-section-arrow) {
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    background: rgba(20, 22, 21, 0.6);
+    color: #fff;
+}
+
+#homePlaylists :is(.home-section-more, .home-section-arrow):hover {
+    border-color: var(--pt-accent);
+    color: var(--pt-accent);
+}
+
+/* Mòbil: els km de les caràtules d'«A prop teu» van a dalt; el text de la targeta baixa una mica perquè no s'hi toquin */
+@media (max-width: 768px) {
+    #homePage.is-portada .pt-near.has-place .pt-near__body {
+        padding-top: 30px;
+    }
+}
+
+/* Cerca: l'estil de l'artista, en blanc dins el requadre (sota el nom) */
+.search-results .follow-card .search-artist-style {
+    margin: -4px 0 0;
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.75);
+}
+
+/* Cerca: sense els botons de 3 o 4 columnes (les cançons fan les caràtules de la vista d'un estil) */
+#homePage:has(.search-results) .grid-layout-controls {
+    display: none;
+}
+
+/* Lletra dels títols (2026-10-16): Archivo, més forta i una mica més compacta, com el text de les caràtules */
+:is(
+        .page-title,
+        .pt-head__title,
+        .pt-radio__title,
+        .pt-near__title,
+        .af-title,
+        .am-title,
+        .hero-title,
+        .channel-profile-name,
+        .uc-page__name,
+        .search-results-title,
+        .home-section-title
+    ) {
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+/* ---------- Ràdio amb el llenguatge de caràtules (2026-10-16) ----------
+   La cua de la ràdio (o de la llista que sona) fa servir el mateix llenguatge que la resta: (1) la capçalera té de fons
+   la caràtula de la cançó que sona (`--mq-art`, la posa music-queue.js), fosca perquè el text es llegeixi, amb el nom
+   de la ràdio en blanc i gran; (2) les eines (estil, barreja, desa, comparteix, «Obre a YouTube») i els quatre modes
+   són botons de vidre amb vora blanca, i el mode triat va en llima; (3) a la cua, les caràtules són quadrades amb el
+   marc blanc i les cantonades de les caràtules; la que sona, més gran. */
+body .mq .mq-head {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    border-radius: var(--pt-radius-cover) var(--pt-radius-cover) 0 0;
+    background: var(--pt-surface-2);
+}
+
+body .mq[style*='--mq-art'] .mq-head::before {
+    content: '';
+    position: absolute;
+    inset: -12px;
+    z-index: -2;
+    background: var(--mq-art) center / cover no-repeat;
+    filter: blur(6px) saturate(1.1);
+    transform: scale(1.05);
+}
+
+body .mq .mq-head::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(180deg, rgba(20, 22, 21, 0.3) 0%, rgba(20, 22, 21, 0.68) 45%, rgba(20, 22, 21, 0.9) 100%);
+}
+
+/* «Ràdio» / «Llista»: etiqueta petita; el nom de la ràdio és el títol */
+body .mq .mq-heading {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+body .mq .mq-head .mq-style {
+    min-height: 0;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: #fff;
+    font-size: 1.375rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
+}
+
+/* Els estils sumats a la ràdio («+ Rock»): càpsules de vidre */
+body .mq .mq-head .mq-style--extra {
+    min-height: 32px;
+    padding: 0 10px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: var(--pt-radius-pill);
+    background: rgba(20, 22, 21, 0.55);
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0;
+}
+
+/* Eines de la capçalera: vidre amb vora blanca */
+body .mq .mq-head :is(.mq-add-style, .mq-shuffle, .mq-save-list, .mq-share, .mq-open-ytm) {
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    background: rgba(20, 22, 21, 0.55);
+    color: #fff;
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+}
+
+body .mq .mq-head :is(.mq-add-style, .mq-shuffle, .mq-save-list, .mq-share, .mq-open-ytm):is(:hover, :focus-visible),
+body .mq .mq-head .mq-add-style[aria-expanded='true'],
+body .mq .mq-head .mq-save-list.is-saved {
+    border-color: var(--pt-accent);
+    color: var(--pt-accent);
+}
+
+body .mq .mq-head .mq-open-ytm {
+    border-radius: var(--pt-radius-pill);
+}
+
+/* Els quatre modes: vidre amb vora blanca; el triat, en llima */
+body .mq .mq-head .mq-mode__opt {
+    border-color: rgba(255, 255, 255, 0.55);
+    background: rgba(20, 22, 21, 0.55);
+    color: #fff;
+}
+
+body .mq .mq-head .mq-mode__opt:hover {
+    border-color: var(--pt-accent);
+    background: rgba(20, 22, 21, 0.7);
+}
+
+body .mq .mq-head .mq-mode__opt.is-active {
+    border-color: var(--pt-accent);
+    background: var(--pt-accent);
+    color: var(--pt-on-accent);
+}
+
+body .mq .mq-head .mq-mode__hint {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Cua: caràtules quadrades amb el marc blanc */
+body .mq .mq-cover {
+    flex-basis: 52px;
+    width: 52px;
+    height: 52px;
+    border: 2px solid #fff;
+    border-radius: var(--pt-radius-cover);
+}
+
+body .mq .mq-item.is-active .mq-cover {
+    flex-basis: 72px;
+    width: 72px;
+    height: 72px;
+}
+
+body .mq .mq-item .mq-title {
+    font-weight: 700;
+}
+
+/* ---------- El marc blanc com a senyal (2026-10-16) ----------
+   A les graelles i files (fitxa d'artista #2 en endavant, vista d'un estil, cerca, «Artistes i grups», Inici, «Les
+   teves llistes» i la cua de la ràdio) les caràtules NO porten el marc blanc en repòs: només la imatge amb les
+   cantonades `--pt-radius-cover` (el marc hi és però transparent, amb `background-clip: padding-box`, perquè res no
+   es mogui). El marc blanc apareix en passar-hi el ratolí (ordinador) o en enfocar-les amb el teclat: indica on ets.
+   Porten el marc fix només les protagonistes: «La més escoltada» (#apBest), la cançó que sona a la cua i les
+   targetes de «Per afinitat». */
+#channelPage .ap-grid .ap-card__art,
+:is(#homePage.is-style-view #videosGrid, #homePage .search-results .videos-grid) .video-card,
+:is(#followPage, .search-results) .follow-card,
+#homePage.is-portada :is(.pt-card, .pt-portrait, .pt-quick),
+#homePage.is-portada .pt-style:not(.pt-style--add):not(.pt-style--more),
+#homePlaylists .hp-item > .hp-card,
+body .mq .mq-item:not(.is-active) .mq-cover {
+    border-color: transparent;
+    background-clip: padding-box;
+    transition:
+        border-color 0.15s ease,
+        transform 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+/* En enfocar-les amb el teclat (a tots els aparells) */
+#channelPage .ap-grid .ap-card:focus-within .ap-card__art,
+:is(#homePage.is-style-view #videosGrid, #homePage .search-results .videos-grid) .video-card:focus-within,
+:is(#followPage, .search-results) .follow-card:is(:focus-visible, :focus-within),
+#homePage.is-portada :is(.pt-card, .pt-portrait, .pt-quick):focus-within,
+#homePage.is-portada .pt-style:not(.pt-style--add):not(.pt-style--more):focus-visible,
+#homePlaylists .hp-item:focus-within > .hp-card,
+body .mq .mq-item:not(.is-active):focus-within .mq-cover {
+    border-color: #fff;
+}
+
+/* En passar-hi el ratolí (ordinador) */
+@media (hover: hover) and (pointer: fine) {
+    #channelPage .ap-grid .ap-card:hover .ap-card__art,
+    :is(#homePage.is-style-view #videosGrid, #homePage .search-results .videos-grid) .video-card:hover,
+    :is(#followPage, .search-results) .follow-card:hover,
+    #homePage.is-portada :is(.pt-card, .pt-portrait, .pt-quick):hover,
+    #homePage.is-portada .pt-style:not(.pt-style--add):not(.pt-style--more):hover,
+    #homePlaylists .hp-item:hover > .hp-card,
+    body .mq .mq-item:not(.is-active):hover .mq-cover {
+        border-color: #fff;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #channelPage .ap-grid .ap-card__art,
+    :is(#homePage.is-style-view #videosGrid, #homePage .search-results .videos-grid) .video-card,
+    :is(#followPage, .search-results) .follow-card,
+    #homePage.is-portada :is(.pt-card, .pt-portrait, .pt-quick),
+    #homePage.is-portada .pt-style:not(.pt-style--add):not(.pt-style--more),
+    #homePlaylists .hp-item > .hp-card,
+    body .mq .mq-item:not(.is-active) .mq-cover {
+        transition: none;
+    }
+}
+
+/* «Les teves llistes»: totes les targetes plenes d'imatge i de la mateixa mida (2026-10-16).
+   El nom en una línia (nowrap) eixamplava la targeta segons el nom i totes s'estiraven a
+   l'alçada de la més gran: el mosaic, quadrat, deixava a sota una franja fosca amb el nom. */
+#homePlaylists .hp-row {
+    --hp-size: min(42vw, 180px);
+}
+
+#homePlaylists .hp-item {
+    flex: 0 0 var(--hp-size);
+    width: var(--hp-size);
+    min-width: 0;
+    align-self: flex-start;
+}
+
+#homePlaylists .hp-item > .hp-card {
+    flex: none;
+    width: 100%;
+    height: auto;
+    min-width: 0;
+}
+
+#homePlaylists .hp-card .hp-cover {
+    width: auto;
+    height: auto;
+    aspect-ratio: auto;
+}
+
+#homePlaylists .hp-card .hp-name,
+#homePlaylists .hp-card .hp-meta {
+    position: relative;
+    z-index: 1;
+    max-width: 100%;
+}
+
+/* La rajola «Crea una llista» fa la mateixa mida que les llistes */
+#homePlaylists .hp-add {
+    flex: 0 0 var(--hp-size);
+    width: var(--hp-size);
+    min-width: 0;
+    aspect-ratio: 1;
+    align-self: flex-start;
+    border-radius: var(--pt-radius-cover);
+}
+
+/* El nom de la llista sencer (fins a dues línies) en lloc de tallar-lo amb punts suspensius */
+#homePlaylists .hp-card .hp-name {
+    display: -webkit-box;
+    overflow: hidden;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    line-height: 1.2;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+}
+
+/* Cada caràtula del mosaic dins la seva cel·la: les miniatures hqdefault (4:3 amb franges
+   negres d'un vídeo 16:9) s'amplien sense envair les veïnes, com a «La teva ràdio» */
+#homePlaylists .hp-mosaic > .hp-tile {
+    display: block;
+    min-width: 0;
+    min-height: 0;
+    overflow: hidden;
+}
+
+#homePlaylists :is(.hp-mosaic img, .hp-single)[src*='/hqdefault.jpg'] {
+    transform: scale(1.34);
+}
+
+/* ==========================================================================
+   «La teva música» amb el llenguatge de caràtules (2026-10-16)
+   Historial, artistes seguits i llistes com la resta de l'app: imatge plena, text en blanc al damunt amb un fosc
+   suau, cantonades --pt-radius-cover, botons de vidre amb vora blanca, el mínim espai entre caràtules i el marc
+   blanc com a senyal (només en passar-hi el ratolí o amb el teclat). Marcatge de my-music.js i
+   renderPlaylistsPageLegacyImpl() (app.js); els clics no canvien.
+   ========================================================================== */
+
+/* Sense subtítol explicatiu visible (continua per als lectors de pantalla) */
+#playlistsPage > .page-subtitle {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+#playlistsPage .mm-link {
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: var(--pt-radius-pill);
+    background: rgba(20, 22, 21, 0.55);
+    color: #fff;
+}
+
+#playlistsPage .mm-link:is(:hover, :focus-visible) {
+    border-color: var(--pt-accent);
+    color: var(--pt-accent);
+}
+
+/* Files: el mínim espai, i marge perquè l'ampliació no es retalli (overflow-x: auto retalla també en vertical) */
+#playlistsPage :is(.mm-history-row, .mm-artists) {
+    gap: 4px;
+    margin: 0 -6px;
+    padding: 6px;
+    scroll-padding-inline: 6px;
+}
+
+/* Historial: les tres últimes cançons, caràtules quadrades plenes */
+#playlistsPage .mm-card {
+    position: relative;
+    isolation: isolate;
+    flex: 0 0 clamp(180px, 22vw, 260px);
+    justify-content: flex-end;
+    gap: 0;
+    min-width: 0;
+    aspect-ratio: 1;
+    padding: 12px 64px 12px 12px;
+    overflow: hidden;
+    border: 2px solid transparent;
+    border-radius: var(--pt-radius-cover);
+    background: var(--pt-surface-2);
+    background-clip: padding-box;
+    color: #fff;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.75);
+}
+
+#playlistsPage .mm-card__thumb {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    aspect-ratio: auto;
+    border-radius: 0;
+}
+
+#playlistsPage .mm-card__thumb::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 0.85) 100%);
+}
+
+/* Les miniatures hqdefault (4:3 amb franges negres d'un vídeo 16:9) s'amplien */
+#playlistsPage :is(.mm-card__thumb img, .playlist-card-thumb img)[src*='/hqdefault.jpg'] {
+    transform: scale(1.34);
+}
+
+#playlistsPage .mm-card__body {
+    position: static;
+}
+
+#playlistsPage .mm-card__title {
+    color: #fff;
+    font-weight: 800;
+}
+
+#playlistsPage .mm-card__meta {
+    color: rgba(255, 255, 255, 0.88);
+}
+
+/* «Fa 1 h»: càpsula de vidre a dalt a l'esquerra */
+#playlistsPage .mm-card__when {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 3px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: var(--pt-radius-pill);
+    background: rgba(20, 22, 21, 0.55);
+    color: #fff;
+    font-size: 0.75rem;
+    text-shadow: none;
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+}
+
+/* El play blanc a baix a la dreta */
+#playlistsPage .mm-card::after {
+    content: '';
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #fff
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23141615' d='M8 5.5v13l11-6.5z'/%3E%3C/svg%3E")
+        center / 22px no-repeat;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+}
+
+/* El símbol d'expandir l'historial: vidre amb vora blanca, de l'alçada de les caràtules */
+#playlistsPage .mm-expand {
+    flex: 0 0 56px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: var(--pt-radius-cover);
+    background: rgba(20, 22, 21, 0.55);
+    color: #fff;
+}
+
+#playlistsPage .mm-expand:is(:hover, :focus-visible, .is-open) {
+    border-color: var(--pt-accent);
+    background: rgba(20, 22, 21, 0.55);
+    color: var(--pt-accent);
+}
+
+/* Historial expandit: períodes en càpsula (el triat en llima) i caràtules quadrades a les files */
+#playlistsPage .mm-panel {
+    border-radius: var(--pt-radius-cover);
+}
+
+#playlistsPage .mm-range {
+    border-color: rgba(255, 255, 255, 0.7);
+    border-radius: var(--pt-radius-pill);
+    background: rgba(20, 22, 21, 0.55);
+    color: #fff;
+}
+
+#playlistsPage .mm-range.is-active {
+    border-color: var(--pt-accent);
+    background: var(--pt-accent);
+    color: var(--pt-on-accent);
+}
+
+#playlistsPage .mm-row__thumb {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--pt-radius-cover);
+}
+
+/* Artistes seguits: requadres plens amb la foto del grup i el nom a dins, com «Artistes i grups» */
+#playlistsPage .mm-artist {
+    position: relative;
+    isolation: isolate;
+    flex: 0 0 clamp(132px, 36vw, 180px);
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 0;
+    aspect-ratio: 1;
+    padding: 10px;
+    overflow: hidden;
+    border: 2px solid transparent;
+    border-radius: var(--pt-radius-cover);
+    background: var(--pt-surface-2);
+    background-clip: padding-box;
+    color: #fff;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.75);
+}
+
+#playlistsPage .mm-artist__avatar {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    width: auto;
+    height: auto;
+    border: 0;
+    border-radius: 0;
+}
+
+#playlistsPage .mm-artist__avatar::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0.82) 100%);
+}
+
+#playlistsPage .mm-artist__name {
+    font-size: 0.9375rem;
+    font-weight: 800;
+    text-align: left;
+}
+
+/* Llistes de reproducció: crear-ne una, en càpsula */
+#playlistsPage .playlist-input {
+    border: 1px solid var(--pt-line);
+    border-radius: var(--pt-radius-pill);
+    background: var(--pt-surface);
+    color: var(--pt-text);
+    font: inherit;
+}
+
+#playlistsPage .playlist-create-btn {
+    padding: 0 20px;
+    border: 1px solid var(--pt-accent);
+    border-radius: var(--pt-radius-pill);
+    background: var(--pt-accent);
+    color: var(--pt-on-accent);
+    font: inherit;
+    font-weight: 800;
+}
+
+/* Cada llista: la caràtula de la primera cançó fa de fons a dalt i al damunt, en blanc, el nom (amb el llapis),
+   el nombre de cançons, compartir i esborrar de vidre i el play blanc. El nom i compartir són fora del botó de la
+   caràtula al marcatge (l'edició del nom no ha de fer sonar la llista): es posen al damunt amb unitats de
+   contenidor (--pl-cover és l'alçada de la caràtula, 16:9 de l'ample de la targeta). */
+#playlistsPage .playlists-list {
+    gap: 12px;
+}
+
+#playlistsPage .playlist-card {
+    --pl-cover: 56.25cqi;
+    container-type: inline-size;
+    border: 1px solid var(--pt-line);
+    border-radius: var(--pt-radius-cover);
+    background: var(--pt-surface);
+    transform: none;
+    box-shadow: none;
+}
+
+#playlistsPage .playlist-card-thumb {
+    height: var(--pl-cover);
+    aspect-ratio: auto;
+    cursor: pointer;
+}
+
+#playlistsPage .playlist-card-thumb::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.85) 100%);
+    pointer-events: none;
+}
+
+#playlistsPage .playlist-card-thumb img {
+    transition: transform 0.25s ease;
+}
+
+#playlistsPage .playlist-play-btn {
+    z-index: 1;
+    left: auto;
+    right: 12px;
+    bottom: 12px;
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    overflow: hidden;
+    border-radius: 50%;
+    background: #fff
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23141615' d='M8 5.5v13l11-6.5z'/%3E%3C/svg%3E")
+        center / 24px no-repeat;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+    color: transparent;
+    font-size: 0;
+}
+
+#playlistsPage .playlist-play-btn > * {
+    display: none;
+}
+
+#playlistsPage .playlist-delete {
+    z-index: 1;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    background: rgba(20, 22, 21, 0.55);
+    color: #fff;
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+}
+
+#playlistsPage .playlist-card-body {
+    gap: 8px;
+    padding: 12px;
+}
+
+#playlistsPage .playlist-card-title-row {
+    position: absolute;
+    z-index: 2;
+    top: calc(var(--pl-cover) - 82px);
+    left: 14px;
+    right: 76px;
+    color: #fff;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.75);
+}
+
+#playlistsPage .playlist-card-title-text {
+    overflow: hidden;
+    font-size: 1.375rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#playlistsPage .playlist-card-meta {
+    position: absolute;
+    z-index: 2;
+    top: calc(var(--pl-cover) - 40px);
+    left: 14px;
+    color: rgba(255, 255, 255, 0.88);
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.75);
+}
+
+#playlistsPage .playlist-card :is(.library-edit-btn, .library-share-btn).btn-round-icon {
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    background: rgba(20, 22, 21, 0.55);
+    color: #fff;
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+}
+
+#playlistsPage .playlist-card .library-share-btn {
+    position: absolute;
+    z-index: 2;
+    top: 10px;
+    right: 56px;
+    width: 40px;
+    height: 40px;
+}
+
+#playlistsPage .playlist-add-songs {
+    margin: 0;
+    border-color: rgba(255, 255, 255, 0.7);
+    border-radius: var(--pt-radius-pill);
+    color: #fff;
+    font: inherit;
+    font-weight: 700;
+}
+
+#playlistsPage .playlist-add-songs:is(:hover, :focus-visible) {
+    border-color: var(--pt-accent);
+    color: var(--pt-accent);
+}
+
+/* Les cançons de la llista: caràtules quadrades */
+#playlistsPage .playlist-video-row {
+    border-radius: var(--pt-radius-cover);
+}
+
+#playlistsPage .playlist-video-thumb {
+    width: 44px;
+    height: 44px;
+    border-radius: var(--pt-radius-cover);
+    object-fit: cover;
+}
+
+/* El marc blanc com a senyal i l'ampliació en passar-hi el ratolí */
+#playlistsPage :is(.mm-card, .mm-artist):focus-visible {
+    border-color: #fff;
+    outline: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    #playlistsPage :is(.mm-card, .mm-artist) {
+        transition:
+            transform 0.18s ease,
+            border-color 0.18s ease;
+    }
+
+    #playlistsPage :is(.mm-card, .mm-artist):is(:hover, :focus-visible) {
+        z-index: 3;
+        border-color: #fff;
+        transform: scale(1.04);
+    }
+
+    #playlistsPage .playlist-card-thumb:hover img {
+        transform: scale(1.04);
+    }
+
+    #playlistsPage .playlist-card-thumb:hover img[src*='/hqdefault.jpg'] {
+        transform: scale(1.39);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #playlistsPage :is(.mm-card, .mm-artist):is(:hover, :focus-visible),
+    #playlistsPage .playlist-card-thumb:hover img {
+        transform: none;
+    }
+}
+
+/* Mòbil: l'historial en una filera amb scroll lateral, caràtules més grans */
+@media (max-width: 768px) {
+    #playlistsPage .mm-card {
+        flex-basis: min(62vw, 240px);
+    }
+}
+
+/* Editar el nom de la llista: el camp, fosc, damunt de la caràtula */
+#playlistsPage .playlist-card-title-row .playlist-title-input {
+    border-color: rgba(255, 255, 255, 0.7);
+    background: rgba(20, 22, 21, 0.72);
+    color: #fff;
+}
+
+/* Descobreix, «Per afinitat» (2026-10-16): el marc blanc també és només un senyal. En repòs les targetes no en
+   porten; apareix a la que té el cursor al damunt o el focus del teclat. El marc hi és, transparent, perquè res
+   no es mogui quan apareix. */
+.af-card {
+    border-color: transparent;
+    background-clip: padding-box;
+    transition: border-color 0.18s ease;
+}
+
+.af-card:focus-within {
+    border-color: #fff;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .af-card {
+        transition:
+            transform 0.18s ease,
+            box-shadow 0.18s ease,
+            border-color 0.18s ease;
+    }
+
+    .af-card:hover {
+        border-color: #fff;
+    }
+}
+
+/* «La teva música»: cada llista amb les quatre primeres caràtules en mosaic (2026-10-16), com a Inici. La
+   caràtula és 16:9 i cada cel·la també ho és. Les miniatures hqdefault s'amplien dins la seva cel·la. */
+#playlistsPage .playlist-mosaic {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+#playlistsPage .playlist-mosaic__tile {
+    display: block;
+    min-width: 0;
+    min-height: 0;
+    overflow: hidden;
+}
+
+#playlistsPage .playlist-mosaic__tile img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* «+ Afegeix cançons» amb les caràtules de la llista de fons (2026-10-16): quatre en fila (--pl-add-1…4, les posa
+   playlistAddSongsStyle() d'app.js), enfosquides perquè el text blanc es llegeixi */
+#playlistsPage .playlist-add-songs[style*='--pl-add-1'] {
+    min-height: 52px;
+    border-color: rgba(255, 255, 255, 0.7);
+    background-color: var(--pt-surface-2);
+    background-image:
+        linear-gradient(rgba(20, 22, 21, 0.62), rgba(20, 22, 21, 0.62)),
+        var(--pl-add-1),
+        var(--pl-add-2),
+        var(--pl-add-3),
+        var(--pl-add-4);
+    background-position:
+        center,
+        0 50%,
+        33.333% 50%,
+        66.667% 50%,
+        100% 50%;
+    background-repeat: no-repeat;
+    background-size:
+        100% 100%,
+        25% auto,
+        25% auto,
+        25% auto,
+        25% auto;
+    color: #fff;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.8);
+}
+
+#playlistsPage .playlist-add-songs[style*='--pl-add-1']:is(:hover, :focus-visible) {
+    border-color: var(--pt-accent);
+    background-image:
+        linear-gradient(rgba(20, 22, 21, 0.45), rgba(20, 22, 21, 0.45)),
+        var(--pl-add-1),
+        var(--pl-add-2),
+        var(--pl-add-3),
+        var(--pl-add-4);
+    color: var(--pt-accent);
 }

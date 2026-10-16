@@ -123,9 +123,10 @@ const layout = page =>
                 const box = card.getBoundingClientRect();
                 return Math.abs(img.width - (box.width - 4)) < 3 && Math.abs(img.height - (box.height - 4)) < 3;
             }),
-            framed: parseFloat(style.borderTopWidth) >= 1 && style.borderTopColor === 'rgb(255, 255, 255)',
+            // Sense marc blanc en repòs (2026-10-16): només en passar-hi el ratolí o en enfocar-lo
+            framed: style.borderTopColor !== 'rgb(255, 255, 255)',
             dataInside: cards.slice(0, 6).every(card =>
-                ['.follow-name', '.follow-hide-btn', '.follow-toggle-btn'].every(sel => {
+                ['.follow-name', '.follow-hits-btn', '.follow-toggle-btn'].every(sel => {
                     const el = card.querySelector(sel);
                     return !el || inside(rect(el), rect(card));
                 })
@@ -144,7 +145,7 @@ async function check(browser, width, height, label) {
     const info = await layout(page);
     ok(`${label}: requadres quadrats`, Math.abs(info.ratio - 1) < 0.03, info.ratio);
     ok(`${label}: la foto omple el requadre`, info.filled);
-    ok(`${label}: marc blanc`, info.framed);
+    ok(`${label}: sense marc blanc en repòs`, info.framed);
     ok(`${label}: nom, «Segueix» i amagar dins el requadre`, info.dataInside && info.hasFollow);
     ok(`${label}: índex alfabètic`, info.azIndex);
     if (width < 560) ok(`${label}: dues columnes`, info.columns === 2, info.columns);

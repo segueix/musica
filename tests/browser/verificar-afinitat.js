@@ -135,7 +135,7 @@ const readInfo = page =>
             name: c.querySelector('.af-card__name').textContent,
             why: c.querySelector('.af-card__why').textContent,
             chips: c.querySelector('.af-card__chips').textContent,
-            // La foto del grup omple tot el fons i la targeta porta el marc blanc
+            // La foto del grup omple tot el fons; en repòs, sense marc blanc (només amb el cursor al damunt)
             photo: (() => {
                 const img = c.querySelector('.af-card__photo');
                 const a = img?.getBoundingClientRect();
@@ -146,7 +146,8 @@ const readInfo = page =>
                     Math.abs(a.width - (b.width - 4)) < 2 &&
                     Math.abs(a.height - (b.height - 4)) < 2 &&
                     getComputedStyle(img).objectFit === 'cover' &&
-                    style.borderTopColor === 'rgb(255, 255, 255)'
+                    style.borderTopWidth === '2px' &&
+                    style.borderTopColor !== 'rgb(255, 255, 255)'
                 );
             })(),
             textInside: (() => {
@@ -189,9 +190,24 @@ async function run(browser, width, height, taste) {
             info.cards.length >= 4 && info.cards.every(c => /^Si t’agrada .+, prova$/.test(c.lead))
         );
         ok(
-            `${tag}: la foto del grup omple la targeta, amb el marc blanc`,
+            `${tag}: la foto del grup omple la targeta, sense marc blanc en repòs`,
             info.cards.every(c => c.photo)
         );
+        if (width > 768) {
+            // Ordinador: el marc blanc només és a la targeta que té el cursor al damunt
+            await page.hover('.af-card:nth-child(2) .af-card__photo', { force: true });
+            await page.waitForTimeout(300);
+            const frames = await page.evaluate(() =>
+                [...document.querySelectorAll('.af-card')].map(c => getComputedStyle(c).borderTopColor)
+            );
+            ok(
+                `${tag}: el marc blanc només a la targeta amb el cursor`,
+                frames[1] === 'rgb(255, 255, 255)' &&
+                    frames.filter(color => color === 'rgb(255, 255, 255)').length === 1,
+                frames
+            );
+            await page.mouse.move(0, 0);
+        }
         ok(
             `${tag}: el nom i «Escolta» van dins la foto`,
             info.cards.every(c => c.textInside)
@@ -205,6 +221,29 @@ async function run(browser, width, height, taste) {
             info.cards.every(c => !known.includes(c.name)),
             known
         );
+        if (width <= 768) {
+            // Mòbil: la primera targeta (i l'última, en arribar al final) es veu sencera, amb tot el marc
+            // (#homePage té `contain: content` i retalla el que en surt)
+            const visible = await page.evaluate(async () => {
+                const clip = document.getElementById('homePage').getBoundingClientRect();
+                const list = document.querySelector('.af-list');
+                const inside = card => {
+                    const r = card.getBoundingClientRect();
+                    return r.left >= clip.left - 0.5 && r.right <= clip.right + 0.5;
+                };
+                const first = inside(list.querySelector('.af-card'));
+                list.scrollLeft = list.scrollWidth;
+                await new Promise(resolve => setTimeout(resolve, 400));
+                const last = inside(list.querySelector('.af-card:last-child'));
+                list.scrollLeft = 0;
+                return { first, last };
+            });
+            ok(
+                `${tag}: la primera i l'última targeta es veuen senceres`,
+                visible.first && visible.last,
+                visible
+            );
+        }
         const name = info.cards[0].name.trim();
         await page.click('.af-card__main');
         await page.waitForSelector('#channelPage:not(.hidden)', { timeout: 10000 });

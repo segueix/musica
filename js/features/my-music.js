@@ -147,6 +147,12 @@
         };
     }
 
+    // Foto del grup a 400 px (les caràtules de «La teva música» la fan servir a tot el requadre)
+    function photoUrl(url) {
+        const src = String(url || '');
+        return /\/\/yt3\.(ggpht|googleusercontent)\.com\//i.test(src) ? src.replace(/=s\d+(?=-|$)/, '=s400') : src;
+    }
+
     const thumbnailOf = video =>
         video.thumbnail || `https://i.ytimg.com/vi/${encodeURIComponent(video.id)}/mqdefault.jpg`;
 
@@ -269,7 +275,7 @@
                         .map(
                             artist => `
                     <button type="button" class="mm-artist" role="listitem" data-mm-artist="${escapeHtml(artist.id)}">
-                        <span class="mm-artist__avatar"><img src="${escapeHtml(artist.avatar || FALLBACK_AVATAR)}" alt="" loading="lazy" decoding="async"></span>
+                        <span class="mm-artist__avatar"><img src="${escapeHtml(photoUrl(artist.avatar) || FALLBACK_AVATAR)}" alt="" loading="lazy" decoding="async"></span>
                         <span class="mm-artist__name">${escapeHtml(artist.name)}</span>
                     </button>`
                         )
@@ -353,6 +359,7 @@
         RANGES,
         state,
         formatWhen,
+        photoUrl,
         dayLabel,
         songsOf,
         buildHistoryModel,

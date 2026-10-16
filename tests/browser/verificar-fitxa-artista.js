@@ -174,11 +174,15 @@ const layout = page =>
                     ? Math.round(songs[1].getBoundingClientRect().left - songs[0].getBoundingClientRect().right)
                     : 0,
             sameSize: new Set(songs.map(row => Math.round(row.getBoundingClientRect().width))).size === 1,
-            // Totes les caràtules (també la #1) porten el marc blanc
-            framed: [...document.querySelectorAll('#apBest .ap-card__art, #apSongs .ap-card__art')].every(art => {
-                const style = getComputedStyle(art);
-                return parseFloat(style.borderTopWidth) >= 1 && style.borderTopColor === 'rgb(255, 255, 255)';
-            }),
+            // El marc blanc és un senyal (2026-10-16): fix a «La més escoltada»; a la resta, només en passar-hi el ratolí
+            framed: (() => {
+                const best = getComputedStyle(document.querySelector('#apBest .ap-card__art'));
+                const rest = [...document.querySelectorAll('#apSongs .ap-card__art')].slice(0, 6);
+                return (
+                    best.borderTopColor === 'rgb(255, 255, 255)' &&
+                    rest.every(art => getComputedStyle(art).borderTopColor !== 'rgb(255, 255, 255)')
+                );
+            })(),
             rowGap:
                 songs.length > 1
                     ? Math.round(songs[1].getBoundingClientRect().top - songs[0].getBoundingClientRect().bottom)
@@ -308,7 +312,7 @@ async function check(browser, width, height, label) {
             info.rowGap,
         ]);
     }
-    ok(`${label}: totes les caràtules amb el marc blanc`, info.framed);
+    ok(`${label}: marc blanc només a «La més escoltada» (la resta, sense marc en repòs)`, info.framed);
     ok(
         `${label}: numeració seguida (#1 la més escoltada, després #2, #3…)`,
         info.bestRank === '#1' && info.ranks.every((rank, i) => rank === `#${i + 2}`),
@@ -331,6 +335,11 @@ async function check(browser, width, height, label) {
         await page.waitForTimeout(350);
         const after = await page.$eval(card, el => el.getBoundingClientRect().width);
         ok(`${label}: en passar-hi el ratolí, la caràtula s'amplia`, after > before * 1.02, [before, after]);
+        const hoverFrame = await page.$eval(
+            card,
+            el => getComputedStyle(el.querySelector('.ap-card__art')).borderTopColor
+        );
+        ok(`${label}: en passar-hi el ratolí, apareix el marc blanc`, hoverFrame === 'rgb(255, 255, 255)', hoverFrame);
         // Les de les vores s'amplien cap a dins: #channelPage (contain: content) retallaria el marc blanc
         const last = width >= 1025 ? 4 : 3;
         for (const sel of [

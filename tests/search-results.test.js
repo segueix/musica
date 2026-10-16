@@ -223,6 +223,25 @@ describe('HTML del menú i de la pàgina', () => {
         expect((html.match(/class="video-card"/g) || []).length).toBe(model('judit').songs.length);
     });
 
+    it('els artistes trobats són requadres plens amb la foto, com a «Artistes i grups» (2026-10-16)', () => {
+        const html = search.pageHtml(model('judit'));
+        const card = html.slice(
+            html.indexOf('search-channel-card'),
+            html.indexOf('</div>\n                    </div>')
+        );
+        expect(card).toContain('role="link"');
+        expect(card).toMatch(/<img class="follow-avatar"[^>]*>\s*<span class="follow-card__shade"/);
+        expect(card).toMatch(/<div class="follow-card__info">\s*<div class="follow-name">/);
+        expect(card).not.toContain('follow-avatar-wrap');
+        expect(search.pageHtml({ ...model('judit') })).toContain('data-follow-channel="c-judit"');
+        // Les cançons fan servir les caràtules de la vista d'un estil (mateix CSS)
+        const css = read('css/portada.css');
+        expect(css).toContain(
+            ':is(#homePage.is-style-view #videosGrid, #homePage .search-results .videos-grid) .video-card {'
+        );
+        expect(css).toContain(':is(#followPage, .search-results) .follow-card {');
+    });
+
     it('sense ràdio possible (menys de 2 cançons) no hi ha botó de ràdio', () => {
         expect(search.pageHtml(model('els ocells'))).not.toContain('data-search-radio');
         expect(search.dropdownHtml(model('els ocells'))).not.toContain('data-result-type="radio"');

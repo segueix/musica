@@ -10,7 +10,8 @@
 //
 // Comprova, a 390 px i a 1280 px:
 //   1) El selector «Estil» ja no té «Música TV» (herència de Segueix youtubers).
-//   2) La cançó destacada té la caràtula de fons a tot el requadre i el nom del grup just sota el títol.
+//   2) La cançó destacada té la caràtula de fons a tot el requadre (sense marc blanc) i el nom del grup just sota el
+//      títol.
 //   3) La filera d'artistes continua abans de les cançons.
 //   4) Les cançons: caràtules quadrades plenes amb la imatge i el marc blanc, quatre columnes a l'ordinador i una al
 //      mòbil (una sota l'altra), amb el títol a baix i el play; a l'ordinador s'amplien una mica en passar-hi el ratolí.
@@ -127,14 +128,15 @@ async function check(browser, width, height, label) {
             heroCover:
                 Math.abs(rect(img).width - (rect(hero).width - 4)) < 3 &&
                 Math.abs(rect(img).height - (rect(hero).height - 4)) < 3,
-            heroFrame: getComputedStyle(hero).borderTopColor === 'rgb(255, 255, 255)',
+            heroNoWhiteFrame: getComputedStyle(hero).borderTopColor !== 'rgb(255, 255, 255)',
             titleInside: rect(title).top > rect(hero).top && rect(title).bottom < rect(hero).bottom,
             channelUnderTitle: rect(channel).top >= rect(title).bottom - 2 && rect(channel).left - rect(title).left < 4,
             channelSize: parseFloat(getComputedStyle(channel).fontSize),
             artistsBefore: !artists.classList.contains('hidden') && rect(artists).bottom <= rect(grid).top + 1,
             columns: new Set(cards.map(card => Math.round(rect(card).left))).size,
             square: cards.every(card => Math.abs(rect(card).width - rect(card).height) < 2),
-            framed: cards.every(card => getComputedStyle(card).borderTopColor === 'rgb(255, 255, 255)'),
+            // Sense marc blanc en repòs (2026-10-16): només en passar-hi el ratolí
+            framed: cards.every(card => getComputedStyle(card).borderTopColor !== 'rgb(255, 255, 255)'),
             fill: (() => {
                 const thumb = first.querySelector('.video-thumbnail img');
                 return Math.abs(rect(thumb).width - (rect(first).width - 4)) < 2;
@@ -148,7 +150,7 @@ async function check(browser, width, height, label) {
             viewport: window.innerWidth,
         };
     });
-    ok(`${label}: la caràtula omple la cançó destacada, amb el marc blanc`, info.heroCover && info.heroFrame);
+    ok(`${label}: la caràtula omple la cançó destacada, sense marc blanc`, info.heroCover && info.heroNoWhiteFrame);
     ok(
         `${label}: títol i grup damunt la caràtula, el grup just sota el títol`,
         info.titleInside && info.channelUnderTitle
@@ -160,7 +162,7 @@ async function check(browser, width, height, label) {
         info.columns === (width >= 1025 ? 4 : 1) && info.gap <= 6,
         [info.columns, info.gap]
     );
-    ok(`${label}: caràtules quadrades, plenes i amb el marc blanc`, info.square && info.framed && info.fill);
+    ok(`${label}: caràtules quadrades i plenes, sense marc blanc en repòs`, info.square && info.framed && info.fill);
     ok(`${label}: el títol a baix de la caràtula`, info.titleLow);
     ok(`${label}: la pàgina no es desborda`, info.pageWidth <= info.viewport, [info.pageWidth, info.viewport]);
     if (OUT) {
@@ -180,6 +182,8 @@ async function check(browser, width, height, label) {
         await page.waitForTimeout(350);
         const after = await page.$eval(sel, el => el.getBoundingClientRect().width);
         ok(`${label}: en passar-hi el ratolí, la caràtula s'amplia una mica`, after > before * 1.02, [before, after]);
+        const hoverFrame = await page.$eval(sel, el => getComputedStyle(el).borderTopColor);
+        ok(`${label}: en passar-hi el ratolí, apareix el marc blanc`, hoverFrame === 'rgb(255, 255, 255)', hoverFrame);
         await page.mouse.move(0, 0);
     }
     // Tocar una caràtula fa sonar la cançó

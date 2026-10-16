@@ -10,13 +10,16 @@ const render = app.slice(
 );
 
 describe('llista d’artistes: requadres plens amb la foto del grup', () => {
-    it('la foto omple el requadre i a dins hi ha el nom, «Segueix» i amagar', () => {
+    it('la foto omple el requadre i a dins hi ha el nom, «Segueix» i la ràdio de grans èxits (no amagar)', () => {
         expect(render).toContain('<img class="follow-avatar"');
         expect(render).not.toContain('follow-avatar-wrap');
         const info = render.slice(render.indexOf('follow-card__info'));
         expect(info.indexOf('follow-name')).toBeGreaterThan(-1);
         expect(info.indexOf('${followButtonHtml}')).toBeGreaterThan(info.indexOf('follow-name'));
-        expect(render).toContain('data-hide-channel=');
+        // Amagar l'artista és a la seva fitxa; aquí hi ha el play de la ràdio de grans èxits
+        expect(render).not.toContain('data-hide-channel=');
+        expect(render).toContain('data-follow-hits="${channel.id}"');
+        expect(app).toMatch(/async function startArtistHitsRadio[\s\S]*musicQueue\?\.startHitsRadio/);
         // És un enllaç a la fitxa, també des del teclat
         expect(render).toContain('role="link" tabindex="0"');
         expect(app).toMatch(/followGrid\.addEventListener\('keydown'/);
@@ -26,19 +29,26 @@ describe('llista d’artistes: requadres plens amb la foto del grup', () => {
 
     it('quadrats, amb marc blanc, mínim espai i 2 columnes al mòbil', () => {
         expect(css).toMatch(
-            /#followPage \.follow-grid\s*{[^}]*grid-template-columns:\s*repeat\(2, minmax\(0, 1fr\)\);[^}]*gap:\s*4px/
+            /:is\(#followPage, \.search-results\) \.follow-grid\s*{[^}]*grid-template-columns:\s*repeat\(2, minmax\(0, 1fr\)\);[^}]*gap:\s*4px/
         );
-        expect(css).toMatch(/#followPage \.follow-card\s*{[^}]*aspect-ratio:\s*1;[^}]*border:\s*2px solid #fff/);
-        expect(css).toMatch(/#followPage \.follow-avatar\s*{[^}]*position:\s*absolute;[^}]*object-fit:\s*cover/);
-        expect(css).toMatch(/#followPage \.follow-hide-btn\s*{[^}]*width:\s*44px;[^}]*height:\s*44px/);
+        expect(css).toMatch(
+            /:is\(#followPage, \.search-results\) \.follow-card\s*{[^}]*aspect-ratio:\s*1;[^}]*border:\s*2px solid #fff/
+        );
+        expect(css).toMatch(
+            /:is\(#followPage, \.search-results\) \.follow-avatar\s*{[^}]*position:\s*absolute;[^}]*object-fit:\s*cover/
+        );
+        expect(css).toMatch(
+            /:is\(#followPage, \.search-results\) \.follow-hits-btn\s*{[^}]*position:\s*absolute;[^}]*border-radius:\s*50%;[^}]*background:\s*#fff/
+        );
+        expect(css).not.toMatch(/\.follow-hide-btn/);
     });
 
     it('a l’ordinador s’amplien en passar-hi el ratolí, sense sortir de la pàgina', () => {
         expect(css).toMatch(
-            /@media \(hover: hover\) and \(pointer: fine\)\s*{[^@]*#followPage \.follow-card:hover[^{]*{[^}]*transform:\s*scale\(1\.04\)/
+            /@media \(hover: hover\) and \(pointer: fine\)\s*{[^@]*:is\(#followPage, \.search-results\) \.follow-card:hover[^{]*{[^}]*transform:\s*scale\(1\.04\)/
         );
         // Marge de la graella perquè el requadre ampliat no surti del contenidor que retalla
-        expect(css).toMatch(/#followPage \.follow-grid\s*{[^}]*padding:\s*6px/);
+        expect(css).toMatch(/:is\(#followPage, \.search-results\) \.follow-grid\s*{[^}]*padding:\s*6px/);
     });
 });
 

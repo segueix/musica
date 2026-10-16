@@ -149,6 +149,16 @@ describe('Per afinitat: «Si t’agrada X, prova Y»', () => {
         expect(card).toMatch(/\.af-card__photo \{[^}]*position: absolute;[^}]*inset: 0;[^}]*object-fit: cover;/);
     });
 
+    it('al mòbil la filera queda dins dels marges: #homePage (contain: content) no talla el marc de la primera', () => {
+        const mobile = css.slice(
+            css.indexOf('/* Mòbil: una filera amb scroll lateral, com els artistes de les categories')
+        );
+        const list = mobile.slice(mobile.indexOf('.af-list {'), mobile.indexOf('}', mobile.indexOf('.af-list {')));
+        expect(list).toMatch(/margin: 0;/);
+        expect(list).not.toMatch(/-16px/);
+        expect(list).toMatch(/scroll-padding-inline: 0;/);
+    });
+
     it('substitueix la cançó destacada i «Recomanat per a tu» a Descobreix', () => {
         expect(html.indexOf('id="affinitySection"')).toBeLessThan(html.indexOf('id="artistMap"'));
         expect(html.indexOf('js/features/affinity.js')).toBeLessThan(html.indexOf('js/app.js'));

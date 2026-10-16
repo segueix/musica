@@ -267,8 +267,8 @@ describe('HTML de les seccions', () => {
         expect(html.toLowerCase()).not.toMatch(/entrades|propers concerts|pròxim concert/);
     });
 
-    it('els retrats demanen una foto petita i els textos són en català', () => {
-        expect(html).toContain('=s240-c-k');
+    it('els retrats demanen una foto prou gran per omplir la caràtula i els textos són en català', () => {
+        expect(html).toContain('=s400-c-k');
         expect(portada.avatarUrl('https://x/y=s800-c-k-c0x00ffffff-no-rj', 96)).toBe(
             'https://x/y=s96-c-k-c0x00ffffff-no-rj'
         );
