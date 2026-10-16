@@ -1,6 +1,6 @@
 # Rendiment del paquet estàtic — 16/10/2026
 
-Millores preparades a la PR 146, sense desplegar. El diagnòstic parteix dels dos informes PageSpeed aportats per l’usuari per a `https://segueix.github.io/musica/`, capturats el 16/10/2026 a les 12:27 CEST: mòbil 28 i escriptori 36. Aquests són resultats de la versió pública anterior, no del paquet optimitzat.
+Aquest primer apartat documenta les millores preparades a la PR 146 abans del seu desplegament. La integració i el segon lot mòbil es documenten al final. El diagnòstic parteix dels dos informes PageSpeed aportats per l’usuari per a `https://segueix.github.io/musica/`, capturats el 16/10/2026 a les 12:27 CEST: mòbil 28 i escriptori 36. Aquests són resultats de la versió pública anterior, no del paquet optimitzat.
 
 ## Canvis
 
@@ -60,3 +60,31 @@ npm run validate:static
 Cal servir `_site/` per provar l’app: les biblioteques locals i la taxonomia es generen durant la construcció. No s’han de servir els fitxers font com si fossin el paquet acabat. El workflow fa aquesta instal·lació dins de l’única feina de publicació existent. Es mantenen calendari, torns, permisos i filtres de quota; no s’ha disparat cap Action.
 
 Després de publicar aquesta branca, cal repetir PageSpeed mòbil/escriptori sobre la URL final i validar una actualització des d’una PWA antiga, la reproducció real i les rutes públiques. La migració a Cloudflare continua sent una fase separada.
+
+## Segon lot: prioritat mòbil, després de publicar la PR 146
+
+La PR 146 es va fusionar a `main` amb `1108c51754c381b645a5474da34cda23f97f0ed8`. El nou informe mòbil aportat per l’usuari, capturat el 16/10/2026 a les 13:14:55, ja mostra 58 punts, FCP 3,2 s, LCP 12,7 s, TBT 250 ms i CLS 0. L’usuari informa de 78 punts a l’ordinador; l’objectiu d’aquest segon lot és acostar-hi el mòbil, sense donar-ho per assolit abans de mesurar la versió publicada.
+
+El candidat LCP identificat és el text de l’avís de consentiment, ocult fins que arriba i s’inicialitza el JavaScript de l’app. A més, continuaven baixant miniatures `maxresdefault` per a «Torna-hi», mosaics de llistes i retrats que utilitzen una coberta de vídeo.
+
+Canvis del segon lot:
+
+- L’avís es mostra des de l’HTML inicial amb un script petit que llegeix la decisió existent. No canvia el text, les opcions ni les condicions de consentiment. No carrega YouTube. Conserva l’últim toc anterior a la inicialització i el transmet als controladors habituals quan estan preparats. Les decisions acceptada/rebutjada, inclosos els formats antics, continuen amagant l’avís; un valor invàlid o emmagatzematge inaccessible el mostren.
+- El feed comença a descarregar-se amb `fetch`, `cache: no-store` i prioritat baixa mentre arriben els scripts. El client consumeix aquesta resposta una sola vegada; si falla, segueix el camí habitual de reintent/fallback. La taxonomia té una precàrrega `as=fetch`. Comprovada una sola petició del feed i conservada la política de frescor. El generador del SW exclou explícitament les precàrregues `as=fetch` del shell, mantenint dades i codi en caches diferents.
+- Les cobertes de «Torna-hi» i de llistes utilitzen `mqdefault` i càrrega diferida; els retrats que fan servir vídeos utilitzen `hqdefault`. Les imatges d’altres proveïdors conserven la URL. La portada comprovada no demana cap `maxresdefault`.
+- Música no ofereix Shorts, tot i conservar-ne HTML ocult antic. El nucli deixa d’injectar-ne el complement visual i, per tant, els seus observadors i les seves peticions. Això evita la petició sobrera a `/js/features/shorts-polish.js` fora de `/musica/` i, en un desplegament a l’arrel, la descàrrega redundant del feed que hauria provocat.
+
+Comparació local amb Chromium 153, pantalla 390 × 844, CPU 4×, latència de 150 ms i límit de baixada de 200.000 bytes/s. Es compara el paquet de la PR 146 amb aquest lot, tots dos sobre un servidor limitat a `/musica/`, amb gzip, context nou, SW desactivat i imatges/fonts externes bloquejades:
+
+| Indicador local | PR 146 | Segon lot |
+| --- | ---: | ---: |
+| LCP del text de consentiment | 4.128 ms | 824 ms |
+| Inici de la petició del feed | 4.246 ms | 594 ms |
+| Final de l’arrencada | 12.167 ms | 9.561 ms |
+| Bloqueig acumulat observat | 1.771 ms | 1.442 ms |
+
+No són valors Lighthouse ni comparables directament als 12,7 segons del PDF. Els errors d’imatge induïts per la prova provoquen fallback i moviments de layout; no s’utilitza aquest assaig per afirmar una millora de CLS, qualitat visual de les portades o transferència real d’imatges. No s’amaga contingut per manipular la mesura: el mateix avís es presenta abans i el catàleg també acaba abans.
+
+Verificació del segon lot: 55 proves dirigides superades; bateria disponible de 357 proves (352 superades i les mateixes 5 fallades anteriors), 87 proves natives de quota/revisió i paquet complet validat. Lint conserva els cinc errors anteriors. Navegador: cerca, selecció de ràdio, Descobreix, exportació/importació JSON i QR sota demanda; sense errors JavaScript ni avisos d’icones. Prova específica bloquejant la descàrrega d’app.js: els tocs prematurs d’acceptar, rebutjar i informació es recuperen correctament, i un consentiment desat no torna a mostrar-se. No s’ha executat cap Action ni s’han canviat els workflows o la ingesta.
+
+Després d’integrar i publicar aquest segon lot cal tornar a executar PageSpeed mòbil. Encara no es pot afirmar que hagi arribat a 78 punts.

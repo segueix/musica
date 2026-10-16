@@ -37,14 +37,5 @@
     })();
     app.utils.appBasePath = app.utils.appBasePath || (() => APP_BASE_PATH);
 
-    // Complement visual dels Shorts. Es carrega de forma independent per mantenir
-    // el mòdul base lleuger i permetre ajustar la UI nativa de l'iframe sense tocar
-    // la lògica sensible de navegació/reproducció.
-    if (window.document?.head && !window.document.getElementById('shortsPolishScript')) {
-        const script = window.document.createElement('script');
-        script.id = 'shortsPolishScript';
-        script.src = '/js/features/shorts-polish.js';
-        script.async = true;
-        window.document.head.appendChild(script);
-    }
+    // Música no ofereix Shorts: no s’injecta el complement antic ni el seu feed paral·lel.
 })(window);

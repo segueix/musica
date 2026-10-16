@@ -1704,3 +1704,11 @@ Els informes PageSpeed identificaven tasques llargues i recomposicions a `tv-scr
 La fusió de vídeos feia una cerca lineal dins d’un bucle sobre tot el feed: es substitueix per un Set. La decoració del feed i l’historial cedeix el fil entre lots de 40 cançons. El build minifica recursos, genera la taxonomia inicial compacta i distribueix biblioteques locals fixades; el QR només es carrega quan es demana. Cal provar `_site/`, no el codi font sense construir.
 
 Regressions a `tests/startup-performance.test.js` i `tests/static-site.test.js`. Resultat local controlat: 5.856 → 2.481 ms de bloqueig (−58%); sense atribuir-hi una puntuació PageSpeed pública. Metodologia, comprovacions i pendents a `docs/RENDIMENT_ESTATIC.md`. No s’han afegit calendaris ni feines Actions.
+
+## 2026-10-16 — LCP mòbil: consentiment tardà i miniatures encara grans
+
+Després de publicar la PR 146, el nou informe mòbil marca 58 punts, TBT 250 ms i CLS 0, però LCP 12,7 s. El candidat LCP és `.cookie-banner__text`, que esperava la inicialització dels scripts tot i ser text estàtic. L’avís ara es presenta en llegir l’HTML si no hi ha una decisió vàlida; un toc prematur es conserva fins que els controladors estiguin preparats. No canvia ni concedeix consentiment automàticament. Proves per decisió antiga, acceptació/rebuig, dades invàlides, emmagatzematge bloquejat i informació.
+
+Les miniatures de «Torna-hi», mosaics i retrats que provenen d’un vídeo encara escapaven de l’ajust de resolució: ara reutilitzen la mateixa normalització de la portada, amb càrrega diferida a les files. El feed comença amb fetch de baixa prioritat i `cache: no-store`; el client consumeix la resposta una sola vegada, sense repetir la descàrrega ni reutilitzar un feed HTTP antic. La taxonomia té una precàrrega `as=fetch`. **No s’han d’incloure aquests JSON al STATIC_ASSETS del SW**: l’extractor exclou els links `preload as=fetch`, amb prova de regressió. El nucli tampoc carrega el complement Shorts que Música no ofereix, tot i conservar-ne HTML ocult antic, evitant peticions a rutes de l’arrel alienes a `/musica/`.
+
+Mesura local comparable: LCP del text 4.128 → 824 ms i arrencada 12.167 → 9.561 ms. No és PageSpeed ni garanteix 78 punts: cal mesurar després de publicar. Detalls de metodologia i límits a `docs/RENDIMENT_ESTATIC.md`.

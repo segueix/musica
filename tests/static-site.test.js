@@ -144,6 +144,18 @@ describe('paquet publicable', () => {
 
 
 describe('optimització del paquet', () => {
+    it('precarrega el feed sense incorporar les dades al cache de codi', () => {
+        const { root, out, put } = fixture();
+        const index = readFileSync(join(root, 'index.html'), 'utf8');
+        put('index.html', index.replace('</head>', '<link rel="preload" as="fetch" href="data/feed.json" crossorigin><link href="data/music-taxonomy.json" as="fetch" rel="preload" crossorigin></head>'));
+        build(root);
+        const sw = readFileSync(join(out, 'sw.js'), 'utf8');
+        const assets = sw.match(/const STATIC_ASSETS = \[([\s\S]*?)\];/)[1];
+        expect(assets).not.toContain('feed.json');
+        expect(assets).not.toContain('music-taxonomy.json');
+        expect(assets).toContain('static-seo.css');
+        expect(validate(out).songs).toBe(3);
+    });
     it('distribueix les icones amb noms numèrics i les llibreries locals', () => {
         const { root, out, put } = fixture();
         put('js/icons.js', `const icons = ['share-2', 'mic-2', 'music-2', 'disc-3'];`);
