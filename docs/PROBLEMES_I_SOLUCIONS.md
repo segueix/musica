@@ -1732,3 +1732,11 @@ Amb Pages ja configurat en GitHub Actions i el paquet verificat, PageSpeed arrib
 La caràtula de reserva es converteix a WebP sense canviar-ne la resolució (439.705 → 42.774 bytes). Mapa i afinitats passen a càrrega sota demanda, amb deduplicació, reintent i protecció contra canvis de vista durant la baixada. Es conserven al precache per a l’ús offline posterior a l’arrencada; l’activació del SW continua ajornada.
 
 Proves de navegador i del carregador superades. La comparació local redueix el temps d’arrencada, però no demostra una millora de l’LCP: les fonts externes estan bloquejades en aquest assaig. Detalls i limitacions a `docs/RENDIMENT_ESTATIC.md`; cal mesurar el paquet publicat, sense prometre una puntuació. No es creen ni s’executen workflows addicionals.
+
+## 2026-10-16 — PageSpeed baixa de 63 a 45 per bloqueig de JavaScript
+
+L’informe `ssrfaj7vqi` sobre la PR 149 millora l’LCP (11,8 → 9,0 s) però empitjora el TBT (110 → 730 ms). Carrega el CSS combinat correcte. La tasca de 1.408 ms atribuïda a `feed.js` inclou els hooks de render d’app.js; un perfil local confirma el càlcul síncron de cohorts del motor i de les files de portada. No s’ha demostrat que tota la diferència entre execucions provingui d’un canvi concret de la PR 149.
+
+Es reparteix la preparació del context en lots de 40 i el model de portada en fases, amb cessió real del fil (`scheduler.yield` o temporitzador; una microtasca no seria suficient). Les versions síncrona i cooperativa comparteixen generadors per conservar els resultats. El context preparat es reutilitza per identitat del catàleg, mida, dia i configuració; no es desen cohorts parcials. Un càlcul de portada tardà no pot sobreescriure una vista nova. La comprovació ha de mesurar el contingut pintat, no només `startup-ready`.
+
+En l’assaig local la tasca màxima baixa de 1.069 a 441 ms i el bloqueig acumulat de 1.855 a 1.343 ms; el contingut complet arriba 245 ms més tard. És una millora de capacitat de resposta, no una garantia de puntuació ni d’LCP. Proves d’equivalència de cohorts/files, invalidació, fallback sense scheduler i navegació durant un render pendent; navegador i paquet complet validats. Metodologia i límits a `docs/RENDIMENT_ESTATIC.md`.

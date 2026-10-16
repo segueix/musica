@@ -300,3 +300,42 @@ describe('miniatures de portada', () => {
         expect(portada.cardHtml({ ...all[0], thumbnail: 'https://example.test/cover.png' })).toContain('https://example.test/cover.png');
     });
 });
+
+describe('portada cooperativa', () => {
+    it.each([false, true])('conserva les mateixes files i ordre amb historial=%s', async withHistory => {
+        const extra = withHistory ? { history: historyOf(['C2', 'C6', 'C10']) } : {};
+        const expected = portada.buildModel(context(extra));
+        const actual = await portada.buildModelAsync(context(extra));
+        expect(actual).toEqual(expected);
+        expect(portada.renderSections(actual)).toBe(portada.renderSections(expected));
+    });
+
+    it('també conserva l’estat buit', async () => {
+        expect(await portada.buildModelAsync(context({ all: [], recent: [] }))).toEqual(
+            portada.buildModel(context({ all: [], recent: [] }))
+        );
+    });
+
+    it.each(['category', 'content'])('un render pendent no trepitja una altra vista: %s', async change => {
+        let release;
+        const pending = new Promise(resolve => { release = resolve; });
+        const grid = {
+            firstElementChild: {}, innerHTML: 'Contingut anterior',
+            addEventListener() {}, setAttribute() {}, removeAttribute() {},
+        };
+        const app = { features: { discovery: {} } };
+        const sandbox = loadScript('js/features/portada.js', {
+            SegueixApp: app, selectedCategory: 'Novetats',
+            document: { readyState: 'loading', addEventListener() {}, getElementById: () => null },
+            addEventListener() {}, scheduler: { yield: () => pending },
+        });
+        expect(app.features.portada.render(grid, [])).toBe(true);
+        if (change === 'category') sandbox.selectedCategory = 'Rock';
+        else grid.firstElementChild = {};
+        grid.innerHTML = 'Vista nova';
+        release();
+        await new Promise(resolve => setTimeout(resolve, 0));
+        expect(grid.innerHTML).toBe('Vista nova');
+        expect(app.features.portada.getModel()).toBe(null);
+    });
+});

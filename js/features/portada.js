@@ -102,7 +102,7 @@
     // ---------- Model (pur) ----------
 
     // ctx: { recent, all, channels, history, liked, followedIds, hiddenIds, playlists, now, rng, isClip, isClassic }
-    function buildModel(ctx = {}) {
+    function* buildModelSteps(ctx = {}) {
         const discovery = ctx.discovery || app.features.discovery;
         const now = ctx.now ?? Date.now();
         const rng = ctx.rng || Math.random;
@@ -151,6 +151,7 @@
         const isNew = typeof ctx.isNewRelease === 'function' ? ctx.isNewRelease : null;
         const newest = isNew ? recent.filter(video => isNew(video)) : recent;
 
+        yield;
         // B · novetat destacada de l'entrada
         const featured = discovery.pickFeatured({
             videos: newest.length ? newest : recent.length ? recent : all,
@@ -185,6 +186,7 @@
             freshRow.forEach(video => taken.delete(String(video.id)));
         }
 
+        yield;
         // G · en directe (es tria abans que el radar perquè és el catàleg més reduït): només actuacions (live_song), un vídeo per artista
         const seenLive = new Set();
         const liveVideos = [];
@@ -206,6 +208,7 @@
             };
         }
 
+        yield;
         // Explicacions honestes («Perquè segueixes…»): només amb senyals reals de l'usuari.
         model.reasons = new Map();
         const selection = ctx.selection || null;
@@ -227,6 +230,7 @@
                   })
                 : [];
 
+        yield;
         // C · «Torna-hi» (amb historial o amb preferides reals) o «Comença per aquí»
         if (model.hasHistory || preferred.length) {
             const items = discovery.pickReturnItems({
@@ -272,6 +276,7 @@
             }
         }
 
+        yield;
         // E · fora del teu radar / per descobrir
         const capped = new Set();
         all.forEach(video => {
@@ -299,10 +304,12 @@
             radarItems.forEach(item => taken.delete(String(item.video.id)));
         }
 
+        yield;
         // F · estils reals i les teves categories (user-categories.js), en l'ordre que hagis triat arrossegant
         model.styleBase = discovery.summarizeStyles({ videos: all, channels });
         model.styles = arrangeStyles(model.styleBase, ctx.userCategories, ctx.styleOrder, channels);
 
+        yield;
         freshRow.forEach(explain);
         model.radar?.items.forEach(item => explain(item.video));
 
@@ -315,6 +322,28 @@
                 .slice(0, FRESH_ALL);
         }
         return model;
+    }
+
+    function buildModel(ctx = {}) {
+        const steps = buildModelSteps(ctx);
+        let step = steps.next();
+        while (!step.done) step = steps.next();
+        return step.value;
+    }
+
+    async function yieldToBrowser() {
+        if (window.scheduler?.yield) await window.scheduler.yield();
+        else await new Promise(resolve => window.setTimeout(resolve, 0));
+    }
+
+    async function buildModelAsync(ctx = {}) {
+        const steps = buildModelSteps(ctx);
+        let step = steps.next();
+        while (!step.done) {
+            await yieldToBrowser();
+            step = steps.next();
+        }
+        return step.value;
     }
 
     // Estils + categories pròpies en l'ordre desat. Sense el mòdul de categories, només els estils.
@@ -620,11 +649,12 @@
                 : null,
             isCurrent: selectionCtx
                 ? video =>
-                      selection.eraOf(video, { now: selectionCtx.now, isClassicArtist: classicArtist }).tier !==
+                      (selectionCtx.features.get(String(video?.id))?.era ||
+                          selection.eraOf(video, { now: selectionCtx.now, isClassicArtist: classicArtist, config: selectionCtx.config })).tier !==
                       'historic'
                 : null,
             isNewRelease: selectionCtx
-                ? video => selection.isNewRelease(video, { now: selectionCtx.now, isClassicArtist: classicArtist })
+                ? video => selection.isNewRelease(video, { now: selectionCtx.now, isClassicArtist: classicArtist, config: selectionCtx.config })
                 : null,
             discovery,
             recent: input.recent,
@@ -676,25 +706,48 @@
         model.lead?.items.forEach(item => item.type === 'song' && add(item.video));
     }
 
-    function paint(input) {
+    let paintRevision = 0;
+
+    async function paint(input) {
         const discovery = app.features.discovery;
         const container = state.container;
         if (!discovery || !container) return false;
-        const model = buildModel(collectContext(input));
-        remember(model);
-        state.model = model;
-        state.featured = model.featured;
-        container.innerHTML = renderSections(model, {
-            freshExpanded: state.expanded.fresh,
-            stylesExpanded: state.expanded.styles,
-        });
-        state.lastSignature = signature();
-        state.rendered = true;
-        container.removeAttribute('aria-busy');
-        updateEntry();
-        syncRowControls();
-        setupStyleSorting();
-        return true;
+        const revision = ++paintRevision;
+        const previousContent = container.firstElementChild;
+        const isCurrent = () => revision === paintRevision && state.container === container &&
+            container.firstElementChild === previousContent &&
+            (typeof selectedCategory === 'undefined' || selectedCategory === 'Novetats');
+        container.setAttribute('aria-busy', 'true');
+        try {
+            // Deixa acabar la tasca del feed; cada fila cedeix després el fil.
+            await yieldToBrowser();
+            if (!isCurrent()) return false;
+            const model = await buildModelAsync(collectContext(input));
+            // Una cerca, un estil o un render més recent poden haver ocupat la graella.
+            if (!isCurrent()) return false;
+            remember(model);
+            state.model = model;
+            state.featured = model.featured;
+            container.innerHTML = renderSections(model, {
+                freshExpanded: state.expanded.fresh,
+                stylesExpanded: state.expanded.styles,
+            });
+            state.lastSignature = signature();
+            state.rendered = true;
+            container.removeAttribute('aria-busy');
+            updateEntry();
+            syncRowControls();
+            setupStyleSorting();
+            return true;
+        } catch (error) {
+            if (isCurrent()) {
+                container.innerHTML = emptyHtml();
+                console.warn('No s’ha pogut preparar la portada:', error);
+            }
+            return false;
+        } finally {
+            if (revision === paintRevision) container.removeAttribute('aria-busy');
+        }
     }
 
     // Refà només una secció (p. ex. en desplegar-la) perquè la resta de files no perdin el desplaçament.
@@ -799,15 +852,15 @@
         swapSection('styles', stylesHtml(state.model.styles, state.expanded.styles));
     }
 
-    // Retorna true si ha pintat la portada (si no, l'app fa servir la graella clàssica).
+    // Retorna true si la portada es fa càrrec del render cooperatiu; false activa la graella clàssica.
     function render(container, videos, options = {}) {
         if (!container || !app.features.discovery) return false;
         state.container = container;
         bind();
         state.lastInput = { recent: toArray(videos), all: toArray(options.all), feed: options.feed };
-        const painted = paint(state.lastInput);
-        if (painted) $('homePage')?.classList.add('is-portada');
-        return painted;
+        $('homePage')?.classList.add('is-portada');
+        paint(state.lastInput);
+        return true;
     }
 
     // Si l'usuari ha escoltat coses mentre era a un altre lloc, en tornar a Inici es refà «Torna-hi».
@@ -1416,6 +1469,7 @@
     app.features.portada = {
         render,
         buildModel,
+        buildModelAsync,
         renderSections,
         cardHtml,
         publishedLabel,

@@ -7382,6 +7382,16 @@ async function loadVideosFromAPILegacyImpl() {
     });
 
     saveFeedCache(result.items, cachedChannels);
+    // Prepara les cohorts del motor en lots abans de pintar. El render reutilitza
+    // el mateix context: no concentra tot el catàleg i la portada en una sola tasca.
+    const selection = SegueixApp.features.musicSelection;
+    if (selection?.isEnabled?.() && selection.prepareAppContext) {
+        try {
+            await selection.prepareAppContext(result.items);
+        } catch (error) {
+            console.warn('No s’ha pogut preparar el motor per lots:', error);
+        }
+    }
     setFeedContext(result.items, getFeedDataForFilter(), renderVideos);
     hideLoading();
 }

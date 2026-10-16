@@ -144,3 +144,34 @@ Prova local amb la mateixa metodologia anterior (390 × 844, CPU 4×, latència 
 Validació: 364 proves Vitest disponibles (359 correctes i exactament les mateixes cinc fallades de la base), 56 proves dirigides superades després dels ajustos, 98 proves natives i els cinc errors de lint anteriors, sense errors nous. Paquet complet construït i validat. Prova de navegador: un únic CSS local, cap descàrrega de mapa/afinitats abans d’obrir Descobreix, SVG del mapa i vista d’afinitats visibles, una petició per mòdul, cap PNG de reserva, cerca, selecció de ràdio, exportació/importació JSON i QR sota demanda; sense errors de JS ni avisos d’icones. Consentiment amb app.js bloquejat: acceptar, rebutjar, informació i decisió desada correctes. No es prova reproducció real d’àudio YouTube.
 
 Aquest lot encara requereix integració i un nou PageSpeed públic. No modifica allotjament, permisos, workflows ni calendari d’ingesta; no s’ha disparat cap Action manualment.
+
+## Cinquè lot: regressió de bloqueig (2026-10-16)
+
+Informe públic `ssrfaj7vqi`, 16/10 a les 15:19 CEST, després de publicar la PR 149 (`6e32508`):
+
+| Mètrica mòbil | Informe anterior `c8v003hcm3` | Nou informe |
+| --- | ---: | ---: |
+| Rendiment | 63 | 45 |
+| FCP | 3,2 s | 3,2 s |
+| LCP | 11,8 s | 9,0 s |
+| TBT | 110 ms | 730 ms |
+| CLS | 0 | 0 |
+| Speed Index | 6,5 s | 7,1 s |
+
+El nou informe carrega `initial.css?v=a91bca60c70a`: és el paquet optimitzat. El principal empitjorament és CPU: JavaScript passa de 0,9 a 3,7 s, i hi ha una tasca de 1.408 ms atribuïda a `feed.js`. Aquest mòdul delega a `setFeedContext`/`renderFeed` d’app.js: l’atribució no significa que la descàrrega del JSON sigui la causa. L’LCP continua sent el text de l’avís, amb menys temps que abans. Dos informes no demostren quina part del canvi de CPU és variació del laboratori o conseqüència de l’última PR; no es culpa l’allotjament ni es retira el WebP, la càrrega sota demanda o el CSS només per la puntuació.
+
+La traça local identifica, dins la tasca del feed, la construcció de cohorts de selecció i el model de files de la portada. Es preparen les cohorts en lots de 40, amb `scheduler.yield()` o temporitzador de reserva; el render reutilitza el context complet. La portada construeix el mateix model cedint el fil entre files. Un render pendent es descarta si una cerca, un estil o un render més recent ha ocupat la graella. Es reutilitza l’antiguitat calculada, incloent-hi la configuració del motor, sense canviar les regles editorials ni retallar el catàleg.
+
+Comparativa local amb Chromium, CPU ×4, 150 ms, 200.000 bytes/s, 390×844, perfils nous, SW i peticions externes bloquejats; observació fins a 18 s després de DOMContentLoaded i mostreig de CPU activat:
+
+| Mesura local | PR 149 | Correcció |
+| --- | ---: | ---: |
+| Tasca més llarga | 1.069 ms | 441 ms |
+| Suma de bloqueig de tasques >50 ms | 1.855 ms | 1.343 ms |
+| Crida síncrona `setFeedContext` | 922 ms | 148 ms |
+| Primeres cançons al DOM de la portada | 9.132 ms | 9.377 ms |
+| LCP local | 980 ms | 1.096 ms |
+
+**Límit:** menys bloqueig (−28%) i una tasca màxima més curta (−59%), però la portada completa arriba 245 ms més tard en aquesta passada. No és un Lighthouse local ni una nova puntuació PageSpeed. L’esdeveniment `startup-ready` ja no equival al model de portada pintat; es mesura també l’aparició real de les cançons. Les fonts i imatges externes bloquejades fan que aquest LCP no serveixi per predir el públic. La correcció queda pendent de fusió, publicació i un nou informe amb el mateix perfil mòbil.
+
+Verificació: 47 proves dirigides; suite completa 367/372 (les mateixes cinc fallades que la base 359/364); 98 proves natives aprovades. Lint conserva els cinc errors previs, cap de nou. Paquet complet construït i validat. Navegador mòbil: portada, selecció de Rock, cerca Obeses, Descobreix sota demanda, exportació/importació JSON i QR correctes, sense errors. No s’ha provat reproducció real de YouTube. Cap workflow afegit o executat manualment.
