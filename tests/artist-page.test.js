@@ -200,6 +200,7 @@ describe('fitxa d’artista: HTML i CSS', () => {
             'id="channelProfileShareBtn"',
             'id="channelProfileSubscribers"',
             'id="apStats"',
+            'id="apYoutubeBtn"',
             'id="apOrigin"',
             'data-ap-radio="artist"',
             'data-ap-radio="style"',
@@ -273,9 +274,27 @@ describe('fitxa d’artista: HTML i CSS', () => {
         expect(css).toMatch(/#channelPage \.ap-card__queue\s*{[^}]*width:\s*44px/);
     });
 
+    it('enrere, YouTube i compartir van fixats dins la foto; a l’ordinador, la caràtula s’amplia en passar-hi', () => {
+        expect(css).toMatch(/#channelPage \.ap-top\s*{[^}]*position:\s*absolute;[^}]*top:\s*var\(--ap-edge\)/);
+        expect(css).toMatch(/#channelPage \.ap-hero\s*{[^}]*padding-top:\s*calc\(var\(--ap-edge\)/);
+        expect(css).toMatch(
+            /@media \(hover: hover\) and \(pointer: fine\)\s*{[^@]*#channelPage \.ap-card:hover[^{]*{[^}]*transform:\s*scale\(1\.04\)/
+        );
+    });
+
+    it('el botó «YouTube» només accepta enllaços de canals de youtube.com', () => {
+        expect(page.youtubeLink('https://www.youtube.com/@thetyets')).toBe('https://www.youtube.com/@thetyets');
+        expect(page.youtubeLink('https://www.youtube.com/channel/UC--8TyZ2PM0NFHWXCzQrUqw')).toBe(
+            'https://www.youtube.com/channel/UC--8TyZ2PM0NFHWXCzQrUqw'
+        );
+        expect(page.youtubeLink('javascript:alert(1)')).toBe('');
+        expect(page.youtubeLink('https://example.com/@x')).toBe('');
+        expect(page.youtubeLink('')).toBe('');
+    });
+
     it('les icones de la fitxa no depenen de lucide (CDN) i el botó d’enrere és tàctil', () => {
         expect(channelPage).not.toContain('data-lucide');
-        expect(css).toMatch(/#channelPage \.ap-top \.channel-back-btn[^{]*{[^}]*width:\s*44px/);
+        expect(css).toMatch(/#channelPage \.ap-top \.channel-back-btn[^{]*{[^}]*width:\s*44px;[^}]*height:\s*44px/);
         expect(css).toMatch(/\.ap-radio\s*{[^}]*min-height:\s*48px/);
     });
 

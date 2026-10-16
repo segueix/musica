@@ -571,6 +571,25 @@
         }
     }
 
+    // Enllaç del canal de YouTube del grup, només si és de youtube.com (botó «YouTube» damunt la foto).
+    function youtubeLink(url) {
+        const value = text(url);
+        return /^https:\/\/(www\.)?youtube\.com\/(@[^/?#\s]+|channel\/[\w-]+)$/.test(value) ? value : '';
+    }
+
+    function showYoutube(url) {
+        const link = $('apYoutubeBtn');
+        if (!link) return;
+        const href = youtubeLink(url);
+        link.hidden = !href;
+        if (href) {
+            link.href = href;
+            link.setAttribute('aria-label', `Obre el canal de YouTube de ${state.name || 'l’artista'}`);
+        } else {
+            link.removeAttribute?.('href');
+        }
+    }
+
     // Obre la fitxa: presentació, estils i ràdios (encara sense cançons: s’habiliten amb setSongs()).
     function showProfile({
         channelId = '',
@@ -579,6 +598,7 @@
         categories = [],
         program = false,
         avatar = '',
+        youtubeUrl = '',
     } = {}) {
         state.channelId = text(channelId);
         state.name = text(name);
@@ -589,6 +609,7 @@
         state.list = [];
         state.listKey = '';
         showPhoto(avatar);
+        showYoutube(program ? '' : youtubeUrl);
         // Mentre arriben les cançons, cap bloc de la fitxa anterior.
         setHtml($('apBest'), '');
         renderList();
@@ -680,6 +701,7 @@
         formatDuration,
         songYear,
         heroImage,
+        youtubeLink,
         artOf,
         songTitle,
         songsModel,

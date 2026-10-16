@@ -3495,33 +3495,80 @@ body .follow-btn-pill.is-followed:hover {
     );
 }
 
+/* Enrere, YouTube i compartir: fixats DINS la foto, a dalt, amb marge respecte de les vores (abans anaven al flux de
+   la capçalera, enganxats a la vora). La capçalera reserva l'espai de dalt (padding-top) perquè el text no hi passi
+   per sota. */
+#channelPage .ap-hero {
+    --ap-edge: 14px;
+    padding-top: calc(var(--ap-edge) + 58px);
+}
+
 #channelPage .ap-top {
+    position: absolute;
+    top: var(--ap-edge);
+    left: var(--ap-edge);
+    right: var(--ap-edge);
+    z-index: 2;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 10px;
     margin: 0;
-    padding: 12px;
+    padding: 0;
+}
+
+#channelPage .ap-top__end {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
 }
 
 #channelPage .ap-top .channel-back-btn,
-#channelPage .ap-top .channel-profile-share-btn.btn-round-icon {
+#channelPage .ap-top .channel-profile-share-btn.btn-round-icon,
+#channelPage .ap-yt {
     flex: none;
     width: 44px;
     height: 44px;
-    border: 1px solid var(--ap-glass-line);
+    border: 1px solid rgba(255, 255, 255, 0.55);
     border-radius: 50%;
-    background: var(--ap-glass);
-    color: var(--pt-text);
+    background: rgba(20, 22, 21, 0.7);
+    color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     transition: background 0.15s ease;
 }
 
+/* «YouTube»: obre el canal del grup a YouTube (càpsula amb el logotip, en blanc) */
+#channelPage .ap-yt {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    width: auto;
+    padding: 0 14px 0 12px;
+    border-radius: var(--pt-radius-pill);
+    font-size: 0.875rem;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+#channelPage .ap-yt svg {
+    width: 22px;
+    height: 22px;
+    flex: none;
+}
+
 #channelPage .ap-top .channel-back-btn:hover,
-#channelPage .ap-top .channel-profile-share-btn.btn-round-icon:hover {
-    background: rgba(20, 22, 21, 0.78);
+#channelPage .ap-top .channel-profile-share-btn.btn-round-icon:hover,
+#channelPage .ap-yt:hover {
+    background: rgba(20, 22, 21, 0.9);
     color: var(--pt-accent);
+}
+
+#channelPage .ap-yt:focus-visible {
+    outline: 3px solid var(--pt-accent);
+    outline-offset: 3px;
 }
 
 #channelPage .ap-hero__meta {
@@ -3906,9 +3953,13 @@ body .follow-btn-pill.is-followed:hover {
     background: var(--pt-text);
 }
 
-body #channelPage .ap-top .channel-profile-share-btn.btn-round-icon,
 body #channelPage .ap-hero .channel-profile-hide-btn.btn-round-icon {
     border: 1px solid var(--ap-glass-line);
+}
+
+/* Els botons de dalt de la foto (enrere, YouTube, compartir): vora blanca (guanya als estils generals de botons) */
+body #channelPage .ap-top :is(.channel-back-btn, .channel-profile-share-btn, .ap-yt) {
+    border: 1px solid rgba(255, 255, 255, 0.55);
 }
 
 /* ---------- Play: el mateix cercle llima a tota la fitxa ---------- */
@@ -4183,6 +4234,33 @@ body #channelPage .ap-hero .channel-profile-hide-btn.btn-round-icon {
     }
 }
 
+/* Ordinador (ratolí): en passar-hi per sobre, la caràtula s'amplia una mica i queda per damunt de les veïnes */
+@media (hover: hover) and (pointer: fine) {
+    #channelPage .ap-card {
+        transition:
+            transform 0.18s ease,
+            box-shadow 0.18s ease;
+    }
+
+    #channelPage .ap-card:hover,
+    #channelPage .ap-card:focus-within {
+        z-index: 3;
+        transform: scale(1.04);
+        box-shadow: 0 14px 34px rgba(0, 0, 0, 0.55);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #channelPage .ap-card {
+        transition: none;
+    }
+
+    #channelPage .ap-card:hover,
+    #channelPage .ap-card:focus-within {
+        transform: none;
+    }
+}
+
 /* ---------- La més escoltada (#1): la mateixa caràtula, amb l'etiqueta «La més escoltada» ---------- */
 #channelPage .ap-best {
     display: block;
@@ -4264,8 +4342,8 @@ body #channelPage .ap-hero .channel-profile-hide-btn.btn-round-icon {
         object-position: 70% 28%;
     }
 
-    #channelPage .ap-top {
-        padding: 16px;
+    #channelPage .ap-hero {
+        --ap-edge: 18px;
     }
 
     #channelPage .ap-hero__text {

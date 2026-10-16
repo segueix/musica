@@ -1,3 +1,13 @@
+## [2026-10-16] - Fitxa d'artista: botons dins la foto, «YouTube» i ampliació en passar el ratolí
+
+**Petició:** a l'ordinador, una petita ampliació de la caràtula en passar-hi el ratolí; els botons d'enrere i compartir de la foto del grup quedaven mig fora de la imatge (ordinador i mòbil); un botó dins la foto del grup per obrir-ne el perfil a YouTube.
+
+**Solució Implementada:** (1) `index.html`: dins `.ap-top`, el grup `.ap-top__end` amb `#apYoutubeBtn` (enllaç, logotip SVG en blanc i «YouTube») i compartir. (2) `portada.css`: `.ap-top` passa a `position: absolute` dins `.ap-hero` (a `--ap-edge` de les vores: 14 / 18 px) i la capçalera reserva l'espai amb `padding-top: calc(var(--ap-edge) + 58px)`; els tres botons, fons `rgba(20, 22, 21, 0.7)`, vora blanca i ombra; ampliació `scale(1.04)` de `.ap-card` a `@media (hover: hover) and (pointer: fine)` (i `:focus-within`), desactivada amb moviment reduït. (3) `app.js` calcula l'URL del canal (`youtubeChannelUrl`, ara fora del bloc de l'@handle) i la passa a `showProfile({ youtubeUrl })`; `artist-page.js` la valida (`youtubeLink()`) i la posa a `#apYoutubeBtn` (amagat als programes o sense URL vàlida).
+
+**Trampes conegudes:** (1) Una regla antiga amb més especificitat (`body #channelPage .ap-top .channel-profile-share-btn.btn-round-icon`) tornava a posar la vora fosca al botó de compartir: ara és `body #channelPage .ap-top :is(...)` amb vora blanca. (2) A l'entorn de prova, `yt3.ggpht.com` respon 429 al navegador (la portada demana moltes fotos): `verificar-fitxa-artista.js` bloqueja les fotos petites i baixa la gran (`=s800`) amb `curl`; les caràtules (`i.ytimg.com`) es baixen amb `route.fetch()` i se serveixen com a imatge (si no, ORB). Sense això, les captures no tenien foto i no es podia veure on queien els botons. (3) No s'ha pogut reproduir exactament el «mig fora» que veia l'usuari; la solució el fa impossible: els botons ja no depenen del flux de la capçalera.
+
+---
+
 ## [2026-10-16] - Fitxa d'artista: marc blanc a totes les caràtules i una sola columna al mòbil
 
 **Petició:** el marc blanc fi a totes les caràtules; al mòbil, una caràtula sota l'altra (sense columnes: l'usuari ja fa scroll).

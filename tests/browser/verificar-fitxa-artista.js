@@ -21,6 +21,8 @@
 // Les imatges de YouTube (i.ytimg.com, yt3.ggpht.com) es deixen carregar si hi ha xarxa (per a les captures).
 
 const http = require('http');
+const { execFileSync } = require('child_process');
+const photoCache = new Map();
 const fs = require('fs');
 const path = require('path');
 let chromium;
@@ -91,7 +93,28 @@ async function openArtist(browser, width, height) {
             return route.fulfill({ status: 200, contentType: 'application/javascript', body: sortable });
         if (/lz-string/.test(url) && lz)
             return route.fulfill({ status: 200, contentType: 'application/javascript', body: lz });
-        if (/^https:\/\/(i\.ytimg\.com|yt3\.(ggpht|googleusercontent)\.com)\//.test(url)) return route.continue();
+        // Fotos de perfil (yt3): l'entorn de prova respon 429 al navegador si se'n demanen moltes. Es bloquegen les
+        // petites (portada) i la gran de la capçalera (=s800) es baixa amb curl, que sí que hi arriba.
+        if (/^https:\/\/yt3\.(ggpht|googleusercontent)\.com\//.test(url)) {
+            if (!/=s800/.test(url)) return route.abort();
+            try {
+                if (!photoCache.has(url)) {
+                    photoCache.set(url, execFileSync('curl', ['-sS', '--max-time', '15', url], { maxBuffer: 8e6 }));
+                }
+                return route.fulfill({ status: 200, contentType: 'image/jpeg', body: photoCache.get(url) });
+            } catch (_) {
+                return route.abort();
+            }
+        }
+        // Caràtules (i.ytimg.com): es baixen des de Node i se serveixen com a imatge (si no, ORB les pot bloquejar)
+        if (/^https:\/\/i\.ytimg\.com\//.test(url)) {
+            return route
+                .fetch()
+                .then(response =>
+                    route.fulfill({ response, headers: { ...response.headers(), 'content-type': 'image/jpeg' } })
+                )
+                .catch(() => route.abort());
+        }
         return route.abort();
     });
     const errors = [];
@@ -130,6 +153,9 @@ const layout = page =>
             name: rect(document.getElementById('channelProfileName')),
             radio: rect(document.getElementById('apRadioArtist')),
             share: rect(document.getElementById('channelProfileShareBtn')),
+            back: rect(document.getElementById('channelBackBtn')),
+            youtube: rect(document.getElementById('apYoutubeBtn')),
+            youtubeHref: document.getElementById('apYoutubeBtn')?.getAttribute('href') || '',
             best: rect(best),
             bestId: best.querySelector('[data-ap-play]')?.dataset.apPlay || '',
             bestViews: views(best.querySelector('[data-ap-play]')?.dataset.apPlay || ''),
@@ -214,6 +240,19 @@ async function check(browser, width, height, label) {
         `${label}: nom, ràdio i compartir damunt la foto`,
         inside(info.name, info.hero) && inside(info.radio, info.hero) && inside(info.share, info.hero)
     );
+    // Enrere, YouTube i compartir: sencers dins la foto, amb marge respecte de les vores
+    const margin = (button, box) =>
+        Math.min(button.left - box.left, box.right - button.right, button.top - box.top, box.bottom - button.bottom);
+    ok(
+        `${label}: enrere, YouTube i compartir sencers dins la foto (≥ 10 px de les vores)`,
+        [info.back, info.youtube, info.share].every(button => button && margin(button, info.img) >= 10),
+        [info.back, info.youtube, info.share].map(button => button && Math.round(margin(button, info.img)))
+    );
+    ok(
+        `${label}: el botó «YouTube» obre el canal del grup`,
+        /^https:\/\/www\.youtube\.com\/(@|channel\/)/.test(info.youtubeHref),
+        info.youtubeHref
+    );
     ok(
         `${label}: la més escoltada és la de més visualitzacions`,
         info.bestViews === info.maxViews && info.maxViews > 0,
@@ -259,6 +298,16 @@ async function check(browser, width, height, label) {
     ok(`${label}: cap text explicatiu fora de les caràtules`, info.looseText.length === 0, info.looseText);
     ok(`${label}: la pàgina no es desborda`, info.pageWidth <= info.viewport, [info.pageWidth, info.viewport]);
     console.log(`   ${label}: ${info.stats}`);
+    if (width >= 769) {
+        // Ordinador: passar el ratolí per sobre d'una caràtula l'amplia una mica
+        const card = '#apSongs .ap-card:nth-child(2)';
+        const before = await page.$eval(card, el => el.getBoundingClientRect().width);
+        await page.hover(card);
+        await page.waitForTimeout(350);
+        const after = await page.$eval(card, el => el.getBoundingClientRect().width);
+        ok(`${label}: en passar-hi el ratolí, la caràtula s'amplia`, after > before * 1.02, [before, after]);
+        await page.mouse.move(0, 0);
+    }
     if (info.bioExpandable) {
         await page.click('#channelProfileDescription');
         const lines = await page.$eval('#channelProfileDescription', d =>

@@ -51,7 +51,7 @@
     
     <!-- CSS -->
     <link rel="stylesheet" href="css/styles.css?v=20260929-home-playlists-4">
-    <link rel="stylesheet" href="css/portada.css?v=20261016-fitxa-columna">
+    <link rel="stylesheet" href="css/portada.css?v=20261016-fitxa-youtube">
     <!-- Aquests retocs ja són necessaris al primer dibuix, no després d’app.js. -->
     <link id="categoryChipStylesheet" rel="stylesheet" href="css/category-chips.css">
     <link id="typographyPolishStylesheet" rel="stylesheet" href="css/typography-polish.css">
@@ -385,9 +385,15 @@
                         <button class="channel-back-btn" id="channelBackBtn" type="button" aria-label="Tornar enrere">
                             <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M19 12H5M12 19l-7-7 7-7"/></svg>
                         </button>
-                        <button class="btn-round-icon channel-profile-share-btn" id="channelProfileShareBtn" type="button" data-share-channel-id="" title="Comparteix l'artista" aria-label="Comparteix l'artista">
-                            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M18 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM6 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM18 22a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>
-                        </button>
+                        <div class="ap-top__end">
+                            <a class="ap-yt" id="apYoutubeBtn" target="_blank" rel="noopener noreferrer" title="Obre el canal a YouTube" hidden>
+                                <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4a2.5 2.5 0 0 0-1.8 1.8C2 8.8 2 12 2 12s0 3.2.4 4.8a2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8c.4-1.6.4-4.8.4-4.8s0-3.2-.4-4.8ZM10 15V9l5.2 3L10 15Z"/></svg>
+                                <span>YouTube</span>
+                            </a>
+                            <button class="btn-round-icon channel-profile-share-btn" id="channelProfileShareBtn" type="button" data-share-channel-id="" title="Comparteix l'artista" aria-label="Comparteix l'artista">
+                                <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M18 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM6 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM18 22a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>
+                            </button>
+                        </div>
                     </div>
                     <div class="channel-profile-meta ap-hero__meta">
                         <div class="channel-profile-text ap-hero__text">
@@ -982,7 +988,7 @@
     <script defer src="js/features/music-affinities.js?v=20261013-subcategory-1"></script>
     <script defer src="js/features/music-selection.js?v=20261013-subcategory-1"></script>
     <script defer src="js/features/music-signals.js?v=20261007-auto-1"></script>
-    <script defer src="js/features/music-queue.js?v=20261016-fitxa-columna"></script>
+    <script defer src="js/features/music-queue.js?v=20261016-fitxa-youtube"></script>
     <script defer src="js/features/system-player.js"></script>
     <script defer src="js/features/drive-mode.js"></script>
     <script defer src="js/features/home-playlists.js?v=20261005-nomes-inici-1"></script>
@@ -991,7 +997,7 @@
     <script defer src="js/features/youtube-subscribe.js?v=20261008-subscriu-4"></script>
     <script defer src="js/features/nearby-radio.js?v=20261012-mapa-1"></script>
     <script defer src="js/features/portada.js?v=20261015-estils-esquerra"></script>
-    <script defer src="js/features/artist-page.js?v=20261016-fitxa-columna"></script>
+    <script defer src="js/features/artist-page.js?v=20261016-fitxa-youtube"></script>
     <script defer src="js/features/user-categories.js?v=20261012-artistes-unics-1"></script>
     <script defer src="js/features/alphabet-index.js?v=20261004-az-1"></script>
     <script defer src="js/features/category-artists.js?v=20261005-artistes-categoria-1"></script>
@@ -1000,7 +1006,7 @@
     <script defer src="js/features/config-backup.js?v=20261016-json-1"></script>
 
     <!-- Main app entrypoint -->
-    <script defer src="js/app.js?v=20261016-fitxa-columna"></script>
+    <script defer src="js/app.js?v=20261016-fitxa-youtube"></script>
     <script defer src="js/features/tv-learning.js?v=20260924-learning-v1"></script>
     <script defer src="js/features/smart-feed.js?v=20261016-json-1"></script>
     <script defer src="js/features/tv-live-queue.js?v=20260924-live-session-v1"></script>

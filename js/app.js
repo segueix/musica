@@ -13283,14 +13283,17 @@ async function openChannelProfileLegacyImpl(channelId) {
     if (channelProfileName) {
         channelProfileName.textContent = channelName;
     }
+    // Canal de YouTube del grup (el del grup és l'oficial si en té): per a l'@handle i el botó «YouTube» de la foto.
+    const profileHandle = String(channel?.handle || '').trim();
+    const youtubeChannelUrl =
+        profileHandle.startsWith('@') && profileId !== 'UCLyS6_AjQKIbL4C2BByWjmQ'
+            ? `https://www.youtube.com/${profileHandle}`
+            : `https://www.youtube.com/channel/${profileId}`;
     if (channelProfileHandle) {
         if (channel?.handle) {
-            const cleanHandle = String(channel.handle).trim();
+            const cleanHandle = profileHandle;
             // Nom visible editorial; l’enllaç conserva el canal real indexat.
             const displayHandle = profileId === 'UCLyS6_AjQKIbL4C2BByWjmQ' ? '@elspets' : cleanHandle;
-            const youtubeChannelUrl = cleanHandle.startsWith('@') && profileId !== 'UCLyS6_AjQKIbL4C2BByWjmQ'
-                ? `https://www.youtube.com/${cleanHandle}`
-                : `https://www.youtube.com/channel/${profileId}`;
             channelProfileHandle.innerHTML = `<a href="${youtubeChannelUrl}" class="channel-profile-handle-link" target="_blank" rel="noopener noreferrer">${escapeHtml(displayHandle)}</a>`;
             channelProfileHandle.classList.remove('hidden');
         } else {
@@ -13317,6 +13320,7 @@ async function openChannelProfileLegacyImpl(channelId) {
             description: channel?.description || '',
             categories: channel?.categories || [],
             avatar: channelAvatar,
+            youtubeUrl: youtubeChannelUrl,
         });
     } else if (channelProfileDescription) {
         channelProfileDescription.textContent = channel?.description || 'No hi ha descripció disponible.';
