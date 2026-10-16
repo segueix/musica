@@ -40,8 +40,9 @@
     <title>Segueix Música · La teva plaça musical en català</title>
 
     <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <meta id="robotoTypographyWeights" name="segueix-fonts" content="css/styles.css">
+    <link id="robotoTypographyWeights" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;900&amp;family=Fraunces:opsz,wght@9..144,600;9..144,700&amp;display=optional" media="print" onload="this.media='all'">
 
     <!-- PWA -->
     <link rel="manifest" href="manifest.json">
@@ -251,7 +252,7 @@
         <!-- Home Page -->
         <div class="page is-portada" id="homePage">
             <!-- B · Entrada directa a la música -->
-            <section class="pt-entry is-first-time" id="portadaEntry" aria-labelledby="ptEntryTitle" aria-busy="true">
+            <section class="pt-entry" id="portadaEntry" aria-labelledby="ptEntryTitle" aria-busy="true">
                 <h1 class="pt-sr-only">Segueix Música · La teva plaça musical</h1>
                 <!-- Continua escoltant: la cançó que sona ara o l'última ràdio (la pinta portada.js; buit si no n'hi ha cap) -->
                 <div class="pt-entry__feature" id="ptFeature"></div>
@@ -261,26 +262,10 @@
                     <div class="pt-radio__body">
                         <p class="pt-eyebrow pt-eyebrow--brand">Ràdio personal</p>
                         <h2 class="pt-radio__title" id="ptEntryTitle">La teva ràdio</h2>
-                        <p class="pt-radio__lead" id="ptRadioLead">Tria fins a tres estils per començar.</p>
+                        <p class="pt-radio__lead" id="ptRadioLead">Barreja el que t’agrada amb música nova, sense parar.</p>
                         <!-- Només la primera vegada (sense historial, m'agrades ni seguits): estils per començar -->
-                        <div class="pt-first" id="ptFirst">
-                            <div class="pt-first__chips" id="ptFirstChips" role="group" aria-label="Estils per començar (fins a tres)">
-                                <button type="button" class="pt-chip" data-pt-first-style="Urban" aria-pressed="false" disabled>Urban</button>
-                                <button type="button" class="pt-chip" data-pt-first-style="Pop" aria-pressed="false" disabled>Pop</button>
-                                <button type="button" class="pt-chip" data-pt-first-style="Rock" aria-pressed="false" disabled>Rock</button>
-                                <button type="button" class="pt-chip" data-pt-first-style="Cançó d&#x27;autor" aria-pressed="false" disabled>Cançó d&#x27;autor</button>
-                                <button type="button" class="pt-chip" data-pt-first-style="Indie" aria-pressed="false" disabled>Indie</button>
-                                <button type="button" class="pt-chip" data-pt-first-style="Rap / Hip-hop" aria-pressed="false" disabled>Rap / Hip-hop</button>
-                                <button type="button" class="pt-chip" data-pt-first-style="Folk i arrel" aria-pressed="false" disabled>Folk i arrel</button>
-                                <button type="button" class="pt-chip" data-pt-first-style="Electrònica" aria-pressed="false" disabled>Electrònica</button>
-                                <button type="button" class="pt-chip pt-chip--extra" data-pt-first-style="Ska / Reggae" aria-pressed="false" disabled hidden>Ska / Reggae</button>
-                                <button type="button" class="pt-chip pt-chip--extra" data-pt-first-style="Rumba / Mestissatge" aria-pressed="false" disabled hidden>Rumba / Mestissatge</button>
-                                <button type="button" class="pt-chip pt-chip--extra" data-pt-first-style="Punk" aria-pressed="false" disabled hidden>Punk</button>
-                                <button type="button" class="pt-chip pt-chip--extra" data-pt-first-style="Heavy / Metal" aria-pressed="false" disabled hidden>Heavy / Metal</button>
-                                <button type="button" class="pt-chip pt-chip--extra" data-pt-first-style="Jazz / Blues" aria-pressed="false" disabled hidden>Jazz / Blues</button>
-                                <button type="button" class="pt-chip pt-chip--extra" data-pt-first-style="Infantil" aria-pressed="false" disabled hidden>Infantil</button>
-                                <button type="button" class="pt-chip pt-chip--more" data-pt-first-more aria-expanded="false" disabled>Més estils</button>
-                            </div>
+                        <div class="pt-first" id="ptFirst" hidden>
+                            <div class="pt-first__chips" id="ptFirstChips" role="group" aria-label="Estils per començar (fins a tres)"></div>
                             <p class="pt-first__note">Només t’ho demanem aquesta primera vegada: després la ràdio s’adapta al que escoltis, t’agradi i segueixis.</p>
                         </div>
                         <div class="pt-entry__cta">
@@ -289,7 +274,7 @@
                                 <span>Engega la ràdio</span>
                             </button>
                         </div>
-                        <fieldset class="pt-mode" hidden>
+                        <fieldset class="pt-mode">
                             <legend class="pt-mode__legend">Quant vols descobrir?</legend>
                             <div class="pt-mode__options">
                                 <label class="pt-mode__opt"><input type="radio" name="ptMode" value="home"><span>Els meus de sempre</span></label>
@@ -304,44 +289,6 @@
                     </div>
                 </article>
             </section>
-            <script id="earlyRadioLayout">
-            (function () {
-                // Només prepara el disseny amb dades locals. Els controladors s’activen amb portada.js.
-                function list(key) {
-                    try { var value = JSON.parse(localStorage.getItem(key) || '[]'); return Array.isArray(value) ? value : []; }
-                    catch (_) { return []; }
-                }
-                var history = list('catube_history').filter(function (v) { return v && !v.isShort; });
-                var liked = list('catube_liked_videos').filter(function (v) { return v && !v.isShort; });
-                var followed = list('catube_follows').map(function (id) { return String(id || '').trim().toLowerCase(); }).filter(Boolean);
-                var labels = Array.from(document.querySelectorAll('[data-pt-first-style]')).map(function (b) { return b.dataset.ptFirstStyle; });
-                var saved = Array.from(new Set(list('catube_first_styles').map(function (s) {
-                    return labels.find(function (label) { return label.toLowerCase() === String(s || '').trim().toLowerCase(); });
-                }).filter(Boolean))).slice(0, 3);
-                var now = Date.now();
-                function within(days) { return history.filter(function (v) {
-                    var time = new Date(v.viewedAt || 0).getTime();
-                    return time > 0 && now - time <= days * 86400000;
-                }); }
-                var recent = within(7);
-                if (recent.length < 3) recent = within(30);
-                if (recent.length < 3) recent = history;
-                var keys = new Set(followed);
-                recent.concat(liked).forEach(function (v) {
-                    var key = String(v.channelId || (v.snippet && v.snippet.channelId) || v.channelTitle || (v.snippet && v.snippet.channelTitle) || '').trim().toLowerCase();
-                    if (key) keys.add(key);
-                });
-                var chooser = !recent.length && !liked.length && !followed.length && !saved.length;
-                var savedOnly = keys.size < 3 && saved.length > 0;
-                document.getElementById('portadaEntry').classList.toggle('is-first-time', chooser);
-                document.getElementById('ptFirst').hidden = !chooser;
-                document.querySelector('#ptRadio .pt-mode').hidden = chooser || savedOnly;
-                document.getElementById('ptFirstReset').hidden = !savedOnly;
-                if (!chooser) document.getElementById('ptRadioLead').textContent = savedOnly
-                    ? 'Feta amb els estils que vas triar: ' + saved.join(', ') + '. S’adaptarà al que escoltis.'
-                    : 'Barreja el que t’agrada amb música nova, sense parar.';
-            })();
-            </script>
             <h1 class="page-title" id="pageTitle">Recomanat per a tu</h1>
             <div class="category-keywords-inline" id="categoryKeywordsInline" style="display: none;"></div>
             <section class="hero" id="heroSection">

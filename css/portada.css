@@ -1889,9 +1889,6 @@ body:has(#homePage.is-portada) .category-selector {
 
 /* Càrrega */
 .pt-skeleton {
-    /* Reserva el primer plec del catàleg: llistes i peu no pugen mentre falten les files. */
-    min-block-size: 100vh;
-    min-block-size: 100svh;
     margin-top: 26px;
 }
 
@@ -8149,4 +8146,3 @@ body.am-full-open {
         gap: 10px;
     }
 }
-

@@ -1740,13 +1740,3 @@ L’informe `ssrfaj7vqi` sobre la PR 149 millora l’LCP (11,8 → 9,0 s) però 
 Es reparteix la preparació del context en lots de 40 i el model de portada en fases, amb cessió real del fil (`scheduler.yield` o temporitzador; una microtasca no seria suficient). Les versions síncrona i cooperativa comparteixen generadors per conservar els resultats. El context preparat es reutilitza per identitat del catàleg, mida, dia i configuració; no es desen cohorts parcials. Un càlcul de portada tardà no pot sobreescriure una vista nova. La comprovació ha de mesurar el contingut pintat, no només `startup-ready`.
 
 En l’assaig local la tasca màxima baixa de 1.069 a 441 ms i el bloqueig acumulat de 1.855 a 1.343 ms; el contingut complet arriba 245 ms més tard. És una millora de capacitat de resposta, no una garantia de puntuació ni d’LCP. Proves d’equivalència de cohorts/files, invalidació, fallback sense scheduler i navegació durant un render pendent; navegador i paquet complet validats. Metodologia i límits a `docs/RENDIMENT_ESTATIC.md`.
-
-## 2026-10-16 — Salt de la portada en passar del carregador al catàleg
-
-Amb la PR 150 publicada, l’informe `zzvsaqx34d` arriba a 82 en ambdós dispositius però detecta CLS 0,196 al mòbil i 0,325 a ordinador. El selector d’estils era buit i ocult a l’HTML; portada.js el desplegava i retirava el selector de descoberta després de la primera pintura. L’esquelet només ocupava uns 200 px: deixava veure les llistes i el peu, que després eren empesos pel catàleg. El CSS de fonts carregat amb `media=print` també podia canviar la tipografia un cop pintada la pàgina.
-
-El selector de primera visita es pinta a l’HTML; `earlyRadioLayout` prepara abans de pintar la disposició dels usuaris amb dades locals. No modifica dades ni inicia la ràdio. Els botons s’habiliten amb els controladors de portada. Les proves comparen aquesta disposició amb la lògica vigent de discovery/portada i comproven que els estils estàtics coincideixin amb els disponibles.
-
-L’esquelet reserva un plec de pantalla i desapareix completament en pintar les files. Roboto i Fraunces es declaren al CSS inicial amb `optional`, sense full de fonts aplicat tardanament. Es conserva l’ID `robotoTypographyWeights` perquè navigation.js no torni a injectar una font amb `swap`.
-
-Amb fonts reals i demores controlades, CLS local mòbil 0,1883 → 0 i ordinador 0,1338 → 0,00036. Es calcula la finestra de sessió màxima, no la suma de tots els salts. La portada completa arriba al mateix temps, però el primer contingut mòbil triga 304 ms més en aquesta passada: no és una garantia de millora de totes les mètriques. Validats preferències, controls, navegació i JSON. Detalls, proves i límits a `docs/RENDIMENT_ESTATIC.md`.
