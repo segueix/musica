@@ -3068,8 +3068,7 @@ function shouldThrottleBackgroundWork() {
 }
 
 async function bootstrapApp() {
-    const bootstrapProfile = detectBootstrapProgressDeviceProfile();
-    createBootstrapProgressOverlay(bootstrapProfile);
+    // La portada ja és visible; el progrés no ha de tapar-la en un dispositiu mòbil.
     updateBootstrapProgress(10, 'Iniciant aplicació...');
 
     if (typeof SegueixApp.dom?.init === 'function') {
@@ -3077,7 +3076,6 @@ async function bootstrapApp() {
     }
 
     initDefaultSmartCategories();
-    initIntroSplash();
     initElements();
     initDesktopSidebarPreference();
     syncHeaderHeightVar();
@@ -3086,7 +3084,8 @@ async function bootstrapApp() {
     // YouTube: no superposem controls propis damunt de l'iframe oficial.
     // La navegació de cua continua disponible fora del reproductor.
     // initQueueNextOverlay();
-    initAppUpdater();
+    // El precache no competeix amb el catàleg durant la primera pantalla.
+    window.addEventListener('segueix:startup-ready', () => initAppUpdater(), { once: true });
     loadGridLayoutPreference();
     loadWatchGridLayoutPreference();
     applyGridLayoutPreference();
@@ -7361,8 +7360,10 @@ async function loadVideosFromAPILegacyImpl() {
         return;
     }
 
+    const knownVideoIds = new Set(cachedAPIVideos.map(video => video.id));
     result.items.forEach(video => {
-        if (!cachedAPIVideos.find(v => v.id === video.id)) {
+        if (!knownVideoIds.has(video.id)) {
+            knownVideoIds.add(video.id);
             cachedAPIVideos.push(video);
         }
         if (video.channelId) {
@@ -14327,6 +14328,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         console.error('Startup pipeline error:', error);
         triggerRecovery('startup-pipeline-error');
     } finally {
+        window.dispatchEvent(new Event('segueix:startup-ready'));
         updateBootstrapProgress(100, 'Tot a punt!');
         setTimeout(() => completeBootstrapProgressOverlay(), 180);
     }

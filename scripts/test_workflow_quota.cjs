@@ -112,7 +112,7 @@ for (const file of [
         assert.equal(selected(file, validatePatterns), false);
     });
 }
-for (const file of ['index.html', 'css/styles.css', 'js/app.js', 'js/features/player.js', 'sw.js', 'icons/logo.png', 'scripts/generar_web_estatica.cjs', 'scripts/validar_paquet_estatic.cjs', 'scripts/lib/filtre_videos_canal.js']) {
+for (const file of ['index.html', 'css/styles.css', 'js/app.js', 'js/features/player.js', 'sw.js', 'icons/logo.png', 'scripts/generar_web_estatica.cjs', 'scripts/optimitzar_web_estatica.cjs', 'scripts/validar_paquet_estatic.cjs', 'package-lock.json', 'scripts/lib/filtre_videos_canal.js']) {
     test(`un canvi del sistema sí publica: ${file}`, () => assert.equal(selected(file, publishPatterns), true));
 }
 test('publicació només sobre main i després d’actualitzacions correctes, mai audit/arxiu/afinitats', () => {
@@ -132,7 +132,7 @@ test('publicació només sobre main i després d’actualitzacions correctes, ma
     assert.ok(publisher.indexOf('npm run validate:static') < publisher.indexOf('actions/upload-pages-artifact'));
     assert.ok(publisher.indexOf('actions/upload-pages-artifact') < publisher.indexOf('actions/deploy-pages'));
     assert.doesNotMatch(publisher, /git pull|git push|git archive|publicar_dades.sh/);
-    assert.doesNotMatch(publisher, /YOUTUBE_API_KEY|npm ci|npm test/);
+    assert.doesNotMatch(publisher, /YOUTUBE_API_KEY|npm test/);
 });
 test('una sola feina CI, cancel·lació de versions antigues i cap comparativa duplicada amb la base', () => {
     assert.match(validator, /cancel-in-progress: true/);

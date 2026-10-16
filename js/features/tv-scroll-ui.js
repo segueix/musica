@@ -10,7 +10,7 @@
     const HEADER_HIDE_START = 72;
     const DIRECTION_DELTA = 7;
 
-    let lastScrollY = Math.max(0, window.scrollY || 0);
+    let lastScrollY = 0;
     let rafPending = false;
     let playerObserver = null;
 
@@ -94,16 +94,15 @@
 
     function syncScrollUI() {
         rafPending = false;
-        const y = Math.max(0, window.scrollY || 0);
-
         syncMobileMiniPlayerControl();
 
         if (!isTVPlayback()) {
             showDesktopHeader();
-            lastScrollY = y;
+            lastScrollY = 0;
             return;
         }
 
+        const y = Math.max(0, window.scrollY || 0);
         const delta = y - lastScrollY;
 
         if (mobileMq.matches) {
@@ -149,11 +148,14 @@
     desktopMq.addEventListener?.('change', scheduleSync);
     mobileMq.addEventListener?.('change', scheduleSync);
 
+    // Només ens interessa entrar/sortir del mode TV, no els milers de canvis
+    // d’icones i targetes dins la portada. Un canvi aliè no programa cap frame.
+    let wasTVPlayback = null;
     const bodyObserver = new MutationObserver(() => {
-        observePlayer();
-        if (!isTVPlayback()) showDesktopHeader();
+        const active = isTVPlayback();
+        if (active === wasTVPlayback) return;
+        wasTVPlayback = active;
         scheduleSync();
-        keepMobilePlayerInline();
     });
 
     function init() {
@@ -161,12 +163,11 @@
         bodyObserver.observe(document.body, {
             attributes: true,
             attributeFilter: ['class'],
-            childList: true,
-            subtree: true,
+            // Sense subtree: les classes dels descendents no canvien el mode TV.
         });
+        wasTVPlayback = isTVPlayback();
         observePlayer();
         scheduleSync();
-        keepMobilePlayerInline();
     }
 
     if (document.readyState === 'loading') {
@@ -175,3 +176,4 @@
         init();
     }
 })(window);
+

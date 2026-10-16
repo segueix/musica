@@ -12,6 +12,20 @@ const STYLE_HISTORY_URL = 'data/historial-musical.json';
 const CHANNELS_FALLBACK_URL = 'js/channels-ca.json';
 const FEED_SNAPSHOT_KEY = 'iutube_feed_snapshot_v1';
 
+// Cedir el fil entre lots permet pintar i respondre als controls mentre es prepara el catàleg.
+async function mapMusicBatch(items, transform) {
+    const result = [];
+    for (let i = 0; i < items.length; i += 40) {
+        const end = Math.min(items.length, i + 40);
+        for (let j = i; j < end; j++) result.push(transform(items[j]));
+        if (end < items.length) {
+            if (window.scheduler?.yield) await window.scheduler.yield();
+            else await new Promise(resolve => setTimeout(resolve, 0));
+        }
+    }
+    return result;
+}
+
 const YouTubeAPI = {
 
     // Configuració de llengua
@@ -52,11 +66,12 @@ const YouTubeAPI = {
         try { localStorage.removeItem('youtube_api_key'); } catch (_) { /* Emmagatzematge no disponible. */ }
 
         // Carregar primer la taxonomia d'artistes perquè el feed ja neixi amb estils musicals.
-        await window.SegueixMusicCategories?.init?.();
+        const taxonomy = window.SegueixMusicCategories?.init?.();
 
-        // Intentar carregar el feed calent i després el petit pool històric de ràdio.
-        await this.loadFeed();
-        await this.loadHistoryPool();
+        // Les descàrregues independents comencen juntes. Els filtres s’apliquen abans de pintar.
+        await this.loadFeed(taxonomy);
+        // La portada no espera la discografia històrica. La ràdio la pot demanar quan calgui.
+        this.loadHistoryPool();
         // L'historial dels estils es demana quan l'app ja és a punt, perquè el primer estil s'obri sense esperar.
         const idle = window.requestIdleCallback || (callback => setTimeout(callback, 1500));
         idle(() => this.ensureStyleHistory(), { timeout: 4000 });
@@ -67,7 +82,7 @@ const YouTubeAPI = {
 
     // ==================== CARREGAR FEED ====================
 
-    applyFeedPayload(feedData, response = null) {
+    applyFeedPayload(feedData, response = null, preparedItems = null) {
         const feedGeneratedAt = feedData?.generatedAt
             || feedData?.meta?.generatedAt
             || response?.headers?.get?.('last-modified');
@@ -86,7 +101,7 @@ const YouTubeAPI = {
         }
 
         // Categories de la base d'artistes i títol net (l'original queda a `originalTitle`)
-        this.feedVideos = this.filterHiddenVideos(feedItems).map(video =>
+        this.feedVideos = preparedItems || this.filterHiddenVideos(feedItems).map(video =>
             window.SegueixMusicCategories?.decorateVideo?.(video, this.artistNamesOf(feedChannelsMap?.[video.channelId])) || video
         );
 
@@ -286,13 +301,15 @@ const YouTubeAPI = {
     },
 
     // Carregar canals i vídeos des del feed
-    async loadFeed() {
-        await this.loadHiddenVideos();
-        const restoredFromSnapshot = this.restoreFeedSnapshot();
+    async loadFeed(taxonomy) {
+        const filters = Promise.all([this.loadHiddenVideos(), taxonomy]);
+        let restoredFromSnapshot = false;
 
         try {
             const feedUrl = window.appDataUrl?.(FEED_URL) || FEED_URL;
             const response = await fetch(feedUrl, { cache: 'no-store' });
+            await filters;
+            restoredFromSnapshot = this.restoreFeedSnapshot();
             if (!response.ok) {
                 console.log('iuTube: Feed no disponible, usant fallback local');
                 if (!restoredFromSnapshot) {
@@ -302,11 +319,17 @@ const YouTubeAPI = {
             }
 
             const feedData = await response.json();
-            const applied = this.applyFeedPayload(feedData, response);
+            const items = Array.isArray(feedData) ? feedData : (feedData.items || feedData.videos || []);
+            const prepared = await mapMusicBatch(this.filterHiddenVideos(items), video =>
+                window.SegueixMusicCategories?.decorateVideo?.(video, this.artistNamesOf(feedData.channels?.[video.channelId])) || video
+            );
+            const applied = this.applyFeedPayload(feedData, response, prepared);
             if (!applied && !restoredFromSnapshot) {
                 await this.loadChannelsFallback();
             }
         } catch (error) {
+            await filters;
+            if (!restoredFromSnapshot) restoredFromSnapshot = this.restoreFeedSnapshot();
             console.log('iuTube: Error carregant el feed:', error.message);
             if (!restoredFromSnapshot) {
                 await this.loadChannelsFallback();
@@ -409,8 +432,7 @@ const YouTubeAPI = {
             }
             const data = await response.json();
             const videos = this.filterHiddenVideos(Array.isArray(data?.videos) ? data.videos : []);
-            this.historyPoolVideos = videos
-                .map(video => this.hydrateArchiveVideo(video))
+            this.historyPoolVideos = (await mapMusicBatch(videos, video => this.hydrateArchiveVideo(video)))
                 .filter(video => video?.id && !video.isShort && ['song', 'live_song'].includes(video.contentType));
             console.log(`iuTube: ${this.historyPoolVideos.length} clàssics carregats al pool de ràdio`);
             return this.historyPoolVideos;
@@ -433,9 +455,9 @@ const YouTubeAPI = {
                 const data = await response.json();
                 const channels = new Map(this.feedChannels.map(channel => [String(channel?.id || ''), channel]));
                 const feedIds = new Set((this.feedVideos || []).map(video => String(video?.id)));
-                this.styleHistoryVideos = this.filterHiddenVideos(Array.isArray(data?.videos) ? data.videos : [])
-                    .filter(video => video?.id && !feedIds.has(String(video.id)) && channels.has(String(video.channelId)))
-                    .map(video => {
+                const history = this.filterHiddenVideos(Array.isArray(data?.videos) ? data.videos : [])
+                    .filter(video => video?.id && !feedIds.has(String(video.id)) && channels.has(String(video.channelId)));
+                this.styleHistoryVideos = await mapMusicBatch(history, video => {
                         const channel = channels.get(String(video.channelId));
                         const base = {
                             ...video,

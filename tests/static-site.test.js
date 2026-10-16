@@ -141,3 +141,29 @@ describe('paquet publicable', () => {
         expect(JSON.parse(readFileSync(join(out, 'data/video-channels.json')))).not.toHaveProperty('song0000001');
     });
 });
+
+
+describe('optimització del paquet', () => {
+    it('distribueix les icones amb noms numèrics i les llibreries locals', () => {
+        const { root, out, put } = fixture();
+        put('js/icons.js', `const icons = ['share-2', 'mic-2', 'music-2', 'disc-3'];`);
+        build(root);
+        const ctx = { window: {} };
+        createRequire(import.meta.url)('node:vm').runInNewContext(readFileSync(join(out, 'js/vendor/lucide.js'), 'utf8'), ctx);
+        for (const name of ['Share2', 'Mic2', 'Music2', 'Disc3']) expect(ctx.window.lucide.icons).toHaveProperty(name);
+        for (const name of ['lz-string.js', 'sortable.js', 'qr-code-styling.js', 'LICENSES.txt']) expect(existsSync(join(out, 'js/vendor', name))).toBe(true);
+    });
+    it('genera una taxonomia lleugera sense alterar les dades editorials', () => {
+        const { root, out, put } = fixture();
+        const original = JSON.parse(readFileSync(join(root, 'data/artistes-musica.json')));
+        original.artists[0].biography = 'Text editorial llarg que no cal per iniciar la portada.';
+        original.artists[0].aliases = ['Àlies'];
+        put('data/artistes-musica.json', original);
+        build(root);
+        const compact = JSON.parse(readFileSync(join(out, 'data/music-taxonomy.json')));
+        expect(compact.artists[0]).not.toHaveProperty('biography');
+        expect(compact.artists[0].aliases).toEqual(['Àlies']);
+        expect(compact.artists[0].youtube.channels).toEqual(original.artists[0].youtube.channels);
+        expect(JSON.parse(readFileSync(join(out, 'data/artistes-musica.json')))).toEqual(original);
+    });
+});

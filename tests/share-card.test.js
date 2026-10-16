@@ -141,12 +141,13 @@ describe('marca', () => {
         expect(card.COLORS.terracotta.toLowerCase()).toBe(token('pt-terracotta'));
     });
 
-    it('«Segueix!» es dibuixa com a l’obertura: Fraunces en majúscules, amb el «!» en llima', () => {
+    it('la targeta conserva la marca i la portada no espera una pantalla d’entrada', () => {
         const source = read('js/utils/share-card.js');
         expect(source).toContain("const word = 'SEGUEIX'");
         expect(source).toContain("ctx.fillStyle = COLORS.accent;\n        ctx.fillText('!'");
         expect(source).toContain('Fraunces');
-        expect(read('index.html')).toMatch(/<h1 class="intro-splash-title">Segueix<span>!<\/span><\/h1>/);
+        expect(read('index.html')).toContain('class="brand-name"');
+        expect(read('index.html')).not.toContain('id="intro-splash"');
     });
 
     it('no hi queda res de Segueix youtubers (caràtula, vermell, segueix.cat)', () => {

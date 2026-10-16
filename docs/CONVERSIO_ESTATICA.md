@@ -17,7 +17,7 @@ Petició del 16/10/2026. La retirada de Drive i analítiques és la primera fase
 | 2. Rutes i SEO estàtics | Generar abans de publicar les pàgines d’artistes, cançons i estils, metadades socials, canònics i sitemaps. Reutilitzar el generador de `compartir/`. Adaptar enllaços, rutes antigues, 404 i arrel de l’app al domini final. | Implementada en aquesta proposta: HTML i sitemaps generats localment. Publicació integrada a la fase 4. |
 | 3. Dependències del servidor | Retirar middleware i Functions després de substituir-ne les rutes. Adaptar l’administració musical perquè exporti canvis per aplicar-los al repositori. Revisar els camins alternatius de YouTube API al client. | Implementada en aquesta proposta: sense Functions, panell local amb JSON i client que consulta només el catàleg publicat. |
 | 4. Actualització de dades i paquet | Conservar la ingesta de YouTube a GitHub, la passada diària de les 20 h Europe/Madrid i els torns 1/3/7 dies. Integrar generació estàtica, Service Worker i artefacte en una sola publicació. | Implementada en aquesta proposta: construcció i validació d’un mateix checkout, seguida de la pujada i el desplegament en una sola feina. |
-| 5. Validació i rendiment | Provar cerca, artistes/discos, mapa, ràdios, llistes, reproducció, JSON, enllaços compartits i actualització d’una PWA antiga. Mesurar càrrega mòbil i corregir coll d’ampolla amb dades. | Web funcional sense backend propi; dades fresques i absència de peticions retirades. No es promet una puntuació PageSpeed sense mesurar-la. |
+| 5. Validació i rendiment | Provar cerca, artistes/discos, mapa, ràdios, llistes, reproducció, JSON, enllaços compartits i actualització d’una PWA antiga. Mesurar càrrega mòbil i corregir coll d’ampolla amb dades. | Optimitzacions i comprovacions locals implementades: vegeu RENDIMENT_ESTATIC.md. Queden pendents PWA antiga, reproducció real i PageSpeed públic després de publicar. |
 | 6. Cloudflare | Preparar un desplegament de prova amb l’artefacte estàtic; configurar domini, redireccions i memòria cau; comprovar que no es desplegui cap Function/Worker. Fer el canvi públic després de validar-lo. | Mateix funcionament al domini final i pla de retorn a la versió anterior. |
 
 ## Còpies JSON
@@ -33,6 +33,8 @@ En canviar de domini, el navegador utilitza un emmagatzematge diferent: cal desc
 Des d’un checkout complet amb les dades del catàleg:
 
 ```sh
+npm ci --ignore-scripts
+node node_modules/esbuild/install.js
 npm run build:static
 npm run build:static -- --site-url=https://musica.example/ --out=/tmp/musica-static
 ```
@@ -70,7 +72,7 @@ El client manté el nom intern `YouTubeAPI` per compatibilitat, però s’han re
 
 `publicar-comparticio-musica.yml` construeix `_site/` amb `npm run build:static`, executa `npm run validate:static`, puja exactament aquesta carpeta i la desplega. Tot passa dins de la mateixa feina i el mateix checkout de main. La URL pública prové de la configuració existent de GitHub Pages; no s’activa ni es canvia Pages des del workflow. `static-build.json` registra la URL, els recomptes i `SOURCE_COMMIT`, el SHA del checkout real.
 
-El publicador ja no fa commits de les pàgines generades ni del SW, ni copia el repositori sencer. Només requereix lectura de contingut, a més dels permisos de Pages i OIDC per al desplegament. La generació utilitza Node i mòduls del repositori, sense instal·lar dependències ni consultar YouTube. La validació comprova rutes i sitemaps, índexs vídeo-canal, assets de la portada, hash del SW i absència de fitxers de servidor, desenvolupament o enllaços no publicables. Si falla, no es puja ni es desplega l’artefacte.
+El publicador ja no fa commits de les pàgines generades ni del SW, ni copia el repositori sencer. Només requereix lectura de contingut, a més dels permisos de Pages i OIDC per al desplegament. La generació utilitza Node i dependències fixades al lockfile per optimitzar el paquet. El workflow instal·la amb `npm ci --ignore-scripts` i prepara esbuild explícitament dins de la mateixa feina, sense consultar YouTube. La validació comprova rutes i sitemaps, índexs vídeo-canal, assets de la portada, hash del SW i absència de fitxers de servidor, desenvolupament o enllaços no publicables. Si falla, no es puja ni es desplega l’artefacte.
 
 La ingesta, la passada de les 20 h Europe/Madrid, els torns 1/3/7 dies i el mínim de 7 dies dels Tema es conserven. Les dades soles no disparen CI ni publicació; s’incorporen després d’una actualització correcta o quan una publicació de codi pren l’estat vigent de main. No s’afegeixen workflows ni calendaris. Les proves estàtiques entren a la mateixa invocació Vitest de l’única feina CI, que continua ometent les PR en esborrany.
 
@@ -92,8 +94,9 @@ npm run validate:static
 - Fase 3: 112 proves dirigides superades en 16 fitxers. Inclou JSON editorial, conflictes i homònims, aplicació local, cancel·lació/falta d’espai, catàleg sense API, URLs recarregables i regressions de les fases anteriors. Generació completa i presència del panell i les seves dades comprovades. Les proves de les Functions retirades es substitueixen per les de generació i runtime estàtics.
 - Fase 4: 128 proves dirigides en 17 fitxers i 85 proves natives de quota/revisió superades. Els 11 YAML són vàlids. Verificats domini/subcarpeta, reconstrucció amb una cançó retirada, rebuig de paquets trencats, dades fresques i separació de pàgines/portada offline. Construcció i validació del catàleg local superades. No s’ha disparat cap workflow.
 - `npm run lint`: cinc errors preexistents, reproduïts abans del canvi, a `js/data.js` i `js/features/home-sections.js`; cap error nou.
-- Dues proves d’integració antigues fallen també a la base: una exigeix un hash de SW literal de setembre i l’altra confon una referència inline a user-categories amb l’ordre dels scripts. No s’han modificat aquests casos aliens a la conversió.
-- No s’ha executat la suite completa, ni la reproducció real de YouTube, ni un desplegament a Cloudflare. La comprovació visual al navegador queda pendent: no hi ha Chromium disponible i la descàrrega ha fallat. Les proves del runtime comproven clic, segon inicial, recuperació de rutes i rebuig de redireccions externes.
+- A la fase 4, dues proves d’integració antigues fallaven també a la base: una exigeix un hash de SW literal de setembre i l’altra confon una referència inline a user-categories amb l’ordre dels scripts. No s’han modificat aquests casos aliens a la conversió.
+- Actualització de rendiment: 343 proves disponibles executades (338 superades; 5 fallades reproduïdes a la base), 87 proves natives superades i paquet comprovat amb Chromium. Cerca, navegació, selecció de ràdio, JSON i càrrega diferida de QR funcionen sense errors. Es redueix un 58% el bloqueig en la prova local controlada; no és una nova puntuació PageSpeed. Detalls, mides i límits a [RENDIMENT_ESTATIC.md](RENDIMENT_ESTATIC.md).
+- Queden pendents reproducció real de YouTube, actualització d’una PWA antiga, PageSpeed de la versió publicada i desplegament a Cloudflare.
 
 ## Referències d’allotjament
 

@@ -2,7 +2,7 @@
 <html lang="ca">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="description" content="Segueix Música és la teva plaça musical en català: escolta novetats i directes, retroba artistes, descobreix escenes noves i desa les teves llistes.">
     <meta name="robots" content="index,follow,max-image-preview:large,max-video-preview:-1">
     <link rel="canonical" href="https://segueix.cat/">
@@ -42,9 +42,8 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap">
-    
+    <link id="robotoTypographyWeights" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;900&amp;family=Fraunces:opsz,wght@9..144,600;9..144,700&amp;display=optional" media="print" onload="this.media='all'">
+
     <!-- PWA -->
     <link rel="manifest" href="manifest.json">
     <link rel="apple-touch-icon" href="img/icon-192.png">
@@ -54,12 +53,11 @@
     <link rel="stylesheet" href="css/styles.css?v=20260929-home-playlists-4">
     <link rel="stylesheet" href="css/portada.css?v=20261014-discos">
     
-    <!-- Icons (Lucide via CDN) -->
-    <script src="https://unpkg.com/lucide@0.563.0"></script>
+    <!-- Llibreries locals generades pel build; mantenen l’ordre sense bloquejar HTML. -->
+    <script defer src="js/vendor/lucide.js"></script>
     <!-- lz-string: compressió per a compartició ràpida per URL (Canal A) -->
-    <script src="https://cdn.jsdelivr.net/npm/lz-string@1.5.0/libs/lz-string.min.js"></script>
-    <!-- qr-code-styling: generació QR amb branding (Fase 4) -->
-    <script src="https://cdn.jsdelivr.net/npm/qr-code-styling@1.8.4/lib/qr-code-styling.js"></script>
+    <script defer src="js/vendor/lz-string.js"></script>
+    <!-- El QR es carrega quan es demana compartir. -->
 </head>
 <body>
     <a class="pt-skip" href="#mainContent">Salta al contingut</a>
@@ -97,13 +95,6 @@
         </div>
     </div>
 
-    <div id="intro-splash" aria-hidden="true">
-        <div class="intro-splash-content">
-            <h1 class="intro-splash-title">Segueix<span>!</span></h1>
-            <p class="intro-splash-brand">Música</p>
-            <p class="intro-splash-tagline">En català</p>
-        </div>
-    </div>
     <!-- Capçalera compacta: marca, cercador i accessos -->
     <header class="app-header">
         <!-- Plega i desplega la navegació lateral (escriptori i tauleta; initDesktopSidebarPreference) -->
@@ -915,76 +906,74 @@
 
     <!-- Scripts -->
     <!-- Base runtime/config -->
-    <script src="js/config.js"></script>
-    <script src="js/song-title.js?v=20261014-noms"></script>
-    <script src="js/music-categories.js"></script>
-    <script src="js/youtube.js?v=20261016-static-3"></script>
-    <script src="js/data.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.6/Sortable.min.js"></script>
+    <script defer src="js/config.js"></script>
+    <script defer src="js/song-title.js?v=20261014-noms"></script>
+    <script defer src="js/music-categories.js"></script>
+    <script defer src="js/youtube.js?v=20261016-static-3"></script>
+    <script defer src="js/data.js"></script>
+    <script defer src="js/vendor/sortable.js"></script>
 
     <!-- Core namespace (must load before utils/features/app) -->
-    <script src="js/core/segueix-app.js?v=20261005-carpeta-app-1"></script>
-    <script src="js/core/state.js"></script>
-    <script src="js/core/dom-registry.js"></script>
+    <script defer src="js/core/segueix-app.js?v=20261005-carpeta-app-1"></script>
+    <script defer src="js/core/state.js"></script>
+    <script defer src="js/core/dom-registry.js"></script>
 
     <!-- Shared utils used by features and app.js -->
-    <script src="js/utils/helpers.js"></script>
-    <script src="js/utils/storage.js"></script>
-    <script src="js/utils/id-codecs.js"></script>
-    <script src="js/utils/share-codecs.js?v=20261016-static-2"></script>
-    <script src="js/utils/music-data.js?v=20261016-json-1"></script>
-    <script src="js/utils/share-card.js"></script>
-    <script src="js/utils/qr-share.js"></script>
-    <script src="js/utils/config-feedback.js"></script>
+    <script defer src="js/utils/helpers.js"></script>
+    <script defer src="js/utils/storage.js"></script>
+    <script defer src="js/utils/id-codecs.js"></script>
+    <script defer src="js/utils/share-codecs.js?v=20261016-static-2"></script>
+    <script defer src="js/utils/music-data.js?v=20261016-json-1"></script>
+    <script defer src="js/utils/share-card.js"></script>
+    <script defer src="js/utils/qr-share.js"></script>
+    <script defer src="js/utils/config-feedback.js"></script>
 
     <!-- Feature modules consumed by app.js -->
-    <script src="js/features/navigation.js?v=20261016-static-2"></script>
-    <script src="js/features/library.js"></script>
-    <script src="js/features/feed.js"></script>
-    <script src="js/features/search.js"></script>
-    <script src="js/features/search-results.js?v=20260930-cerca-1"></script>
-    <script src="js/features/channel.js?v=20261016-static-2"></script>
-    <script src="js/features/player.js?v=20261016-static-3"></script>
-    <script src="js/features/shorts.js"></script>
-    <script src="js/features/support.js"></script>
-    <script src="js/features/likes.js?v=20261007-heart-1"></script>
-    <script src="js/features/home-sections.js"></script>
-    <script src="js/features/category-selector.js"></script>
-    <script src="js/features/discovery.js?v=20261012-artistes-unics-1"></script>
-    <script src="js/features/music-affinity-catalog.js?v=20261013-subcategory-1"></script>
-    <script src="js/features/music-affinities.js?v=20261013-subcategory-1"></script>
-    <script src="js/features/music-selection.js?v=20261013-subcategory-1"></script>
-    <script src="js/features/music-signals.js?v=20261007-auto-1"></script>
-    <script src="js/features/music-queue.js?v=20261014-radio-artista"></script>
-    <script src="js/features/system-player.js"></script>
-    <script src="js/features/drive-mode.js"></script>
-    <script src="js/features/home-playlists.js?v=20261005-nomes-inici-1"></script>
-    <script src="js/features/my-music.js?v=20260930-la-teva-musica-1"></script>
-    <script src="js/features/shell-nav.js?v=20260930-portada-1"></script>
-    <script src="js/features/youtube-subscribe.js?v=20261008-subscriu-4"></script>
-    <script src="js/features/nearby-radio.js?v=20261012-mapa-1"></script>
-    <script src="js/features/portada.js?v=20261015-estils-esquerra"></script>
-    <script src="js/features/artist-page.js?v=20261014-discos"></script>
-    <script src="js/features/user-categories.js?v=20261012-artistes-unics-1"></script>
-    <script src="js/features/alphabet-index.js?v=20261004-az-1"></script>
-    <script src="js/features/category-artists.js?v=20261005-artistes-categoria-1"></script>
-    <script src="js/features/artist-map.js?v=20261013-mapa-6"></script>
-    <script src="js/features/affinity.js?v=20261012-afinitat-1"></script>
-    <script src="js/features/shared-playlists.js"></script>
-    <script src="js/features/config-backup.js?v=20261016-json-1"></script>
+    <script defer src="js/features/navigation.js?v=20261016-static-2"></script>
+    <script defer src="js/features/library.js"></script>
+    <script defer src="js/features/feed.js"></script>
+    <script defer src="js/features/search.js"></script>
+    <script defer src="js/features/search-results.js?v=20260930-cerca-1"></script>
+    <script defer src="js/features/channel.js?v=20261016-static-2"></script>
+    <script defer src="js/features/player.js?v=20261016-static-3"></script>
+    <script defer src="js/features/shorts.js"></script>
+    <script defer src="js/features/support.js"></script>
+    <script defer src="js/features/likes.js?v=20261007-heart-1"></script>
+    <script defer src="js/features/home-sections.js"></script>
+    <script defer src="js/features/category-selector.js"></script>
+    <script defer src="js/features/discovery.js?v=20261012-artistes-unics-1"></script>
+    <script defer src="js/features/music-affinity-catalog.js?v=20261013-subcategory-1"></script>
+    <script defer src="js/features/music-affinities.js?v=20261013-subcategory-1"></script>
+    <script defer src="js/features/music-selection.js?v=20261013-subcategory-1"></script>
+    <script defer src="js/features/music-signals.js?v=20261007-auto-1"></script>
+    <script defer src="js/features/music-queue.js?v=20261014-radio-artista"></script>
+    <script defer src="js/features/system-player.js"></script>
+    <script defer src="js/features/drive-mode.js"></script>
+    <script defer src="js/features/home-playlists.js?v=20261005-nomes-inici-1"></script>
+    <script defer src="js/features/my-music.js?v=20260930-la-teva-musica-1"></script>
+    <script defer src="js/features/shell-nav.js?v=20260930-portada-1"></script>
+    <script defer src="js/features/youtube-subscribe.js?v=20261008-subscriu-4"></script>
+    <script defer src="js/features/nearby-radio.js?v=20261012-mapa-1"></script>
+    <script defer src="js/features/portada.js?v=20261015-estils-esquerra"></script>
+    <script defer src="js/features/artist-page.js?v=20261014-discos"></script>
+    <script defer src="js/features/user-categories.js?v=20261012-artistes-unics-1"></script>
+    <script defer src="js/features/alphabet-index.js?v=20261004-az-1"></script>
+    <script defer src="js/features/category-artists.js?v=20261005-artistes-categoria-1"></script>
+    <script defer src="js/features/artist-map.js?v=20261013-mapa-6"></script>
+    <script defer src="js/features/affinity.js?v=20261012-afinitat-1"></script>
+    <script defer src="js/features/shared-playlists.js"></script>
+    <script defer src="js/features/config-backup.js?v=20261016-json-1"></script>
 
     <!-- Main app entrypoint -->
-    <script src="js/app.js?v=20261016-static-2"></script>
-    <script src="js/features/tv-learning.js?v=20260924-learning-v1"></script>
-    <script src="js/features/smart-feed.js?v=20261016-json-1"></script>
-    <script src="js/features/tv-live-queue.js?v=20260924-live-session-v1"></script>
-    <script src="js/features/tv-programming.js?v=20260924-ara-continuacio-1"></script>
+    <script defer src="js/app.js?v=20261016-static-2"></script>
+    <script defer src="js/features/tv-learning.js?v=20260924-learning-v1"></script>
+    <script defer src="js/features/smart-feed.js?v=20261016-json-1"></script>
+    <script defer src="js/features/tv-live-queue.js?v=20260924-live-session-v1"></script>
+    <script defer src="js/features/tv-programming.js?v=20260924-ara-continuacio-1"></script>
     
     <script>
         // Inicialitzar icons Lucide
-        if (typeof lucide !== 'undefined') {
-            lucide.createIcons();
-        }
+        document.addEventListener('DOMContentLoaded', () => window.refreshIcons?.(), { once: true });
     </script>
     
 

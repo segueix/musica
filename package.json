@@ -26,9 +26,14 @@
     "validate:static": "node scripts/validar_paquet_estatic.cjs"
   },
   "devDependencies": {
+    "esbuild": "0.27.7",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
+    "lucide": "0.563.0",
+    "lz-string": "1.5.0",
     "prettier": "^3.3.0",
+    "qr-code-styling": "1.8.4",
+    "sortablejs": "1.15.6",
     "vitest": "^4.1.0"
   }
 }

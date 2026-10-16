@@ -18,6 +18,8 @@ on:
       - 'fonts/**'
       - 'robots.txt'
       - 'package.json'
+      - 'package-lock.json'
+      - 'scripts/optimitzar_web_estatica.cjs'
       - 'scripts/generar_web_estatica.cjs'
       - 'scripts/validar_paquet_estatic.cjs'
       - 'scripts/lib/filtre_videos_canal.js'
@@ -59,6 +61,9 @@ jobs:
       - uses: actions/setup-node@v5
         with:
           node-version: '22'
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: node node_modules/esbuild/install.js
       - name: Obté la URL pública de Pages
         id: pages
         uses: actions/configure-pages@v5

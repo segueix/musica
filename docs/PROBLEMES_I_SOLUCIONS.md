@@ -1695,3 +1695,12 @@ S’eliminen les consultes i claus de YouTube Data API al client. El nom intern 
 **Solució:** només l’arrel de l’app i `index.html` comparteixen la clau, ignorant els paràmetres `?v=`. La resta de pàgines té una còpia pel seu propi camí. No es desen errors 404 ni redireccions com a portada. El prefix `static-v2-` retira les còpies antigues en activar-se el SW; es manté l’activació ajornada per no interrompre la reproducció. Els índexs `static-routes.json` i `video-channels.json` utilitzen xarxa primer amb fallback local.
 
 **Verificació:** `tests/static-service-worker.test.js` cobreix arrel/subcarpeta, portada, artista, cançó, panell, errors, dades noves, ús offline i activació. El publicador regenera el hash sobre la sortida i `validar_paquet_estatic.cjs` el comprova abans de pujar l’artefacte. Pendent provar l’actualització real d’una PWA antiga a la fase 5.
+
+
+## 2026-10-16 — Bloqueig de la portada musical en mòbil
+
+Els informes PageSpeed identificaven tasques llargues i recomposicions a `tv-scroll-ui.js`. L’observador de tot el subarbre reaccionava als canvis de targetes i icones, i llegia `scrollY` també fora del mode TV. Ara només observa les classes del body i programa treball quan canvia el mode. `refreshIcons` utilitza `root` (el paràmetre `el` era ignorat) i només transforma placeholders pendents, evitant recrear els SVG. Les dimensions de les fileres es llegeixen en un lot abans de modificar atributs.
+
+La fusió de vídeos feia una cerca lineal dins d’un bucle sobre tot el feed: es substitueix per un Set. La decoració del feed i l’historial cedeix el fil entre lots de 40 cançons. El build minifica recursos, genera la taxonomia inicial compacta i distribueix biblioteques locals fixades; el QR només es carrega quan es demana. Cal provar `_site/`, no el codi font sense construir.
+
+Regressions a `tests/startup-performance.test.js` i `tests/static-site.test.js`. Resultat local controlat: 5.856 → 2.481 ms de bloqueig (−58%); sense atribuir-hi una puntuació PageSpeed pública. Metodologia, comprovacions i pendents a `docs/RENDIMENT_ESTATIC.md`. No s’han afegit calendaris ni feines Actions.

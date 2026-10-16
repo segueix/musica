@@ -5,7 +5,7 @@
 })(typeof window !== 'undefined' ? window : null, function (root) {
     'use strict';
 
-    const DATA_URL = 'data/artistes-musica.json';
+    const DATA_URL = root?.SEGUEIX_STATIC_SITE ? 'data/music-taxonomy.json' : 'data/artistes-musica.json';
     const CLASSIC_URL = 'data/musica-classica.json';
     // Ordre dels estils a tota l'app (xips, files, selectors). «Urban» agrupa el gènere «Urbana» de la base d'artistes.
     const CATEGORY_GROUPS = [
@@ -318,3 +318,4 @@
         cleanVideoTitle,
     };
 });
+
