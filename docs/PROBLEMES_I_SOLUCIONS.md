@@ -1,3 +1,11 @@
+## [2026-10-16] - Lletra nova (Archivo) i cerca amb el llenguatge de caràtules
+
+**Petició:** canviar la lletra perquè s'adapti a l'estètica de caràtules, i que els grups i cançons de la cerca tinguin el mateix estil que la resta.
+
+**Solució Implementada:** (1) Archivo per al text i els títols (`styles.css` `body`, `--pt-display` / `--pt-body` a `portada.css`), Fraunces només per a la marca (`--pt-brand`); `index.html` i `navigation.js` carreguen Archivo + Fraunces en lloc de Roboto + Fraunces (`display=swap`: abans era `optional` i la primera visita podia no mostrar la lletra). (2) La cerca: marcatge nou dels artistes a `search-results.js` (com `renderFollowPage()`), Retorn obre la fitxa (`bindSearchResults()`), i els blocs CSS d'«Artistes i grups» i de la vista d'un estil s'apliquen també a `.search-results` amb `:is(...)`.
+
+**Trampa:** els blocs d'«Artistes i grups» i de la vista d'un estil ara tenen selectors `:is(#followPage, .search-results) …` i `:is(#homePage.is-style-view #videosGrid, #homePage .search-results .videos-grid) …`; si en canvies un, la cerca canvia igual. Proves: `tests/lletra.test.js`, `tests/search-results.test.js`, `tests/vista-estil.test.js`, `tests/llista-artistes.test.js`.
+
 ## [2026-10-16] - Inici amb el llenguatge de caràtules
 
 **Petició:** que Inici s'assembli a la resta del disseny (fitxa d'artista, vista d'un estil, «Artistes i grups», «Per afinitat»).

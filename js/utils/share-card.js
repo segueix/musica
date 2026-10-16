@@ -216,13 +216,13 @@
         );
     }
 
-    // Les lletres de la targeta (Fraunces, Roboto) les carrega la pàgina; ens assegurem que són a punt abans de dibuixar.
+    // Les lletres de la targeta (Fraunces, Archivo) les carrega la pàgina; ens assegurem que són a punt abans de dibuixar.
     async function ensureFonts(sampleText) {
         if (!root.document?.fonts?.load) return;
         const load = Promise.all([
             root.document.fonts.load('700 100px Fraunces', sampleText),
-            root.document.fonts.load('900 40px Roboto', sampleText),
-            root.document.fonts.load('700 40px Roboto', sampleText),
+            root.document.fonts.load('900 40px Archivo', sampleText),
+            root.document.fonts.load('700 40px Archivo', sampleText),
         ]).catch(() => {});
         await Promise.race([load, new Promise(resolve => setTimeout(resolve, 1500))]);
     }
@@ -242,7 +242,7 @@
     }
 
     const DISPLAY_FONT = "Fraunces, 'Iowan Old Style', 'Palatino Linotype', Georgia, serif";
-    const SANS_FONT = "Roboto, 'Helvetica Neue', Arial, sans-serif";
+    const SANS_FONT = "Archivo, Roboto, 'Helvetica Neue', Arial, sans-serif";
 
     // «Segueix!» com a l'obertura de l'app: Fraunces en majúscules, crema, i el «!» en llima.
     function drawWordmark(ctx, x, baseline, size) {

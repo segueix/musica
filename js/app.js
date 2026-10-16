@@ -8280,6 +8280,12 @@ function bindSearchResults(container) {
             openVideoFromUserGesture(card.dataset.videoId, 'api');
         }
     });
+    // El requadre d'un artista és un enllaç a la fitxa: també amb Retorn
+    container.addEventListener('keydown', event => {
+        if (event.key !== 'Enter' || event.target.closest('button')) return;
+        const artistCard = event.target.closest('.search-channel-card');
+        if (artistCard) openChannelProfile(artistCard.dataset.channelId);
+    });
 }
 
 // Artistes de la categoria (js/features/category-artists.js): sota la cançó destacada d'un estil (Pop, Rock…) o d'una

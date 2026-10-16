@@ -535,6 +535,11 @@ const likes = ctx2.SegueixApp.features.likes;
 - El QR es genera a la mida en què es dibuixa i amb mòduls d'un nombre enter de píxels; mòduls foscos sobre crema, icona al mig. No el reescalis. Per sobre de `MAX_QR_URL_LENGTH` no hi ha QR.
 - Les imatges que carrega `share-card.js` es resolen respecte al seu `<script>` (l'app canvia la ruta de la URL en reproduir). Verificació opt-in: `node tests/browser/verificar-compartir.js`. Detall i trampes: `docs/PROBLEMES_I_SOLUCIONS.md` (2026-09-30, «Compartir una ràdio o una llista»).
 
+### Lletra i cerca amb el llenguatge de caràtules (2026-10-16)
+
+- **Lletra:** una sola família de pal sec, **Archivo** (Google Fonts, pesos 400–900, `display=swap`), per al text (`body` a `styles.css`, `--pt-body`) i els títols (`--pt-display`). Els títols principals (`.page-title`, `.pt-head__title`, `.pt-radio__title`, `.hero-title`, `.channel-profile-name`…) van a 800 amb `letter-spacing: -0.02em` (bloc «Lletra dels títols» al final de `portada.css`). **Fraunces queda només per a la marca** (`--pt-brand`: `.brand-music` «Música», la pantalla d'espera) i la targeta de compartir (`share-card.js`, que fa servir Archivo per al text). Ja no es carrega Roboto (l'enllaç de `index.html` conserva l'id `robotoTypographyWeights` perquè `navigation.js` no el dupliqui). Prova: `tests/lletra.test.js`.
+- **Cerca:** els artistes de la pàgina de resultats tenen el marcatge dels requadres d'«Artistes i grups» (`search-results.js`: `img.follow-avatar` a 400 px amb `artistPhoto()`, `.follow-card__shade`, `.follow-card__info` amb el nom, l'estil i «Segueix»; `role="link"` i Retorn) i el CSS de `#followPage` s'aplica també a `.search-results` (`:is(#followPage, .search-results)`). Les cançons fan servir les caràtules de la vista d'un estil (`:is(#homePage.is-style-view #videosGrid, #homePage .search-results .videos-grid)`): quatre columnes a l'ordinador, una al mòbil, sense els botons de 3/4 columnes. Prova: `tests/search-results.test.js`.
+
 ### Inici amb el llenguatge de caràtules (2026-10-16)
 
 - Inici fa servir el mateix llenguatge que la fitxa d'artista, la vista d'un estil, «Artistes i grups» i «Per afinitat»: **imatge plena, marc blanc de 2 px, cantonades `--pt-radius-cover` i text en blanc al damunt** amb un fosc suau. Tot és CSS a dos blocs al final de `portada.css` («Inici amb el llenguatge de caràtules» i «Inici, fases 2 i 3»), amb selectors `#homePage.is-portada …` i `#homePlaylists …`, sobre el marcatge de sempre de `portada.js` / `home-playlists.js` / `nearby-radio.js`: els clics no canvien.
@@ -599,7 +604,7 @@ const likes = ctx2.SegueixApp.features.likes;
 |---|---|
 | Lucide Icons 0.563.0 | Icones SVG (via `lucide.createIcons()`); local a `js/vendor/lucide.js` (`npm run vendor:sync`), no CDN |
 | Sortable.js 1.15.6 | Drag & drop de categories/playlists |
-| Google Fonts (Roboto 900) | Tipografia |
+| Google Fonts (Archivo 400–900; Fraunces per a la marca) | Tipografia |
 | YouTube IFrame API | Reproducció de vídeos |
 
 ---

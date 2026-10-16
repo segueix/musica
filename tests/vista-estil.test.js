@@ -18,9 +18,9 @@ describe('caràtules amb marc blanc: cantonades', () => {
             '#channelPage .ap-card {',
             '#channelPage .ap-card__art {',
             '\n.af-card {',
-            '#followPage .follow-card {',
+            ':is(#followPage, .search-results) .follow-card {',
             '#homePage.is-style-view .hero {',
-            '#homePage.is-style-view #videosGrid .video-card {',
+            ':is(#homePage.is-style-view #videosGrid, #homePage .search-results .videos-grid) .video-card {',
         ]) {
             const rule = css.slice(css.indexOf(selector), css.indexOf('}', css.indexOf(selector)));
             expect(rule, selector).toMatch(/border-radius: var\(--pt-radius-cover\);/);
@@ -54,15 +54,17 @@ describe('vista d’un estil', () => {
         expect(block).toMatch(/#homePage\.is-style-view \.hero \{[^}]*border: 1px solid var\(--pt-line\);/);
         expect(block).not.toMatch(/#homePage\.is-style-view \.hero \{[^}]*#fff/);
         expect(block).toMatch(/#homePage\.is-style-view \.hero-thumbnail \{[^}]*position: absolute;[^}]*inset: 0;/);
-        expect(block).toMatch(/#homePage\.is-style-view #videosGrid \{[^}]*repeat\(4, minmax\(0, 1fr\)\)/);
         expect(block).toMatch(
-            /#homePage\.is-style-view #videosGrid \.video-card \{[^}]*aspect-ratio: 1;[^}]*border: 2px solid #fff;/
+            /:is\(#homePage\.is-style-view #videosGrid, #homePage \.search-results \.videos-grid\) \{[^}]*repeat\(4, minmax\(0, 1fr\)\)/
+        );
+        expect(block).toMatch(
+            /:is\(#homePage\.is-style-view #videosGrid, #homePage \.search-results \.videos-grid\) \.video-card \{[^}]*aspect-ratio: 1;[^}]*border: 2px solid #fff;/
         );
         expect(block).toMatch(/\.video-card:hover,[^{]*\{[^}]*transform: scale\(1\.04\)/);
         expect(block).toMatch(/#homePage\.is-style-view \.grid-layout-controls \{\s*display: none;/);
         // Mòbil: una caràtula sota l'altra
         expect(block).toMatch(
-            /@media \(max-width: 768px\) \{\s*#homePage\.is-style-view #videosGrid \{\s*grid-template-columns: minmax\(0, 1fr\);/
+            /@media \(max-width: 768px\) \{\s*:is\(#homePage\.is-style-view #videosGrid, #homePage \.search-results \.videos-grid\) \{\s*grid-template-columns: minmax\(0, 1fr\);/
         );
     });
 });

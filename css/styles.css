@@ -228,7 +228,7 @@ body {
 }
 
 body {
-    font-family: 'Roboto', 'Arial', sans-serif;
+    font-family: 'Archivo', 'Roboto', 'Arial', sans-serif;
     font-size: 1rem;
     background-color: var(--color-background);
     color: var(--color-text);
@@ -6981,7 +6981,7 @@ body {
 
 .cookie-banner {
     /* L’avís inicial no espera Google Fonts ni canvia de mètriques quan arriben. */
-    font-family: Arial, sans-serif;
+    font-family: inherit;
     font-synthesis: none;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
