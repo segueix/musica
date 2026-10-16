@@ -300,7 +300,7 @@
     }
 
     // options: { videos, now, artistKeyOf, isClassicArtist, stylesOf, config }
-    function createContext(options = {}) {
+    function* createContextSteps(options = {}) {
         const cfg = options.config || getConfig();
         const now = options.now ?? Date.now();
         const artistKeyOf = options.artistKeyOf || defaultArtistKey;
@@ -310,12 +310,15 @@
         const tierViews = { recent: [], mid: [], historic: [] };
         const channelViews = new Map();
 
-        toArray(options.videos).forEach(video => {
+        let processed = 0;
+        for (const video of toArray(options.videos)) {
+            if (processed && processed % 40 === 0) yield;
+            processed += 1;
             const id = idOf(video);
-            if (!id || features.has(id)) return;
+            if (!id || features.has(id)) continue;
             // Només les cançons compten per a les cohorts de popularitat (Shorts, entrevistes... es calculen sota demanda).
             const kind = lower(video.contentType).replace(/-/g, '_');
-            if (kind && kind !== 'song' && kind !== 'live_song') return;
+            if (kind && kind !== 'song' && kind !== 'live_song') continue;
             const era = eraOf(video, { now, isClassicArtist, config: cfg });
             const artist = artistKeyOf(video);
             const views = Number(video.viewCount) || 0;
@@ -345,16 +348,20 @@
                 if (!channelViews.has(artist)) channelViews.set(artist, []);
                 channelViews.get(artist).push(Math.log10(views + 1));
             }
-        });
+        }
+        yield;
         Object.values(tierViews).forEach(list => list.sort((a, b) => a - b));
         channelViews.forEach(list => list.sort((a, b) => a - b));
 
         // Popularitat normalitzada: percentil logarítmic dins del seu contingent d'antiguitat (i, en part,
         // dins del canal). Sense visualitzacions o amb una novetat de pocs dies no és «poc popular».
-        features.forEach(f => {
+        processed = 0;
+        for (const f of features.values()) {
+            if (processed && processed % 40 === 0) yield;
+            processed += 1;
             if (f.views <= 0) {
                 f.popularity = NEUTRAL_POPULARITY;
-                return;
+                continue;
             }
             const inTier = percentile(tierViews[f.tier], f.logViews);
             const inChannel =
@@ -363,8 +370,27 @@
             const curated = f.tier === 'historic' && f.curated;
             f.popularity = curated ? 0.15 * inTier + 0.85 * inChannel : 0.65 * inTier + 0.35 * inChannel;
             if (f.ageDays !== null && f.ageDays < 30) f.popularity = Math.max(f.popularity, 0.5);
-        });
+        }
         return { config: cfg, now, features, artistKeyOf, isClassicArtist, stylesOf };
+    }
+
+    // Mateix càlcul i ordre per a ràdios síncrones i arrencada cooperativa.
+    function createContext(options = {}) {
+        const steps = createContextSteps(options);
+        let step = steps.next();
+        while (!step.done) step = steps.next();
+        return step.value;
+    }
+
+    async function createContextAsync(options = {}) {
+        const steps = createContextSteps(options);
+        let step = steps.next();
+        while (!step.done) {
+            if (window.scheduler?.yield) await window.scheduler.yield();
+            else await new Promise(resolve => window.setTimeout(resolve, 0));
+            step = steps.next();
+        }
+        return step.value;
     }
 
     function featuresOf(ctx, video) {
@@ -1403,7 +1429,7 @@
     const contextCache = { videos: null, size: 0, day: 0, ctx: null, cfgKey: '' };
 
     // Context de l'app real (identitat d'artista, llista d'antics, estils). S'invalida quan canvia el feed.
-    function getAppContext(videos, now = Date.now()) {
+    function getAppContext(videos, now = Date.now(), prepared = null) {
         const cfg = getConfig();
         const day = Math.floor(now / DAY);
         const cfgKey = JSON.stringify(cfg);
@@ -1416,10 +1442,22 @@
         ) {
             return contextCache.ctx;
         }
+        const ctx = prepared && JSON.stringify(prepared.config) === cfgKey
+            ? prepared
+            : createContext(appContextOptions(videos, now, cfg));
+        contextCache.videos = videos;
+        contextCache.size = toArray(videos).length;
+        contextCache.day = day;
+        contextCache.cfgKey = cfgKey;
+        contextCache.ctx = ctx;
+        return ctx;
+    }
+
+    function appContextOptions(videos, now, cfg) {
         const music = window.SegueixMusicCategories;
         // El mapa de canals es construeix una sola vegada (no per vídeo).
         const channels = appChannels();
-        const ctx = createContext({
+        return {
             videos,
             now,
             config: cfg,
@@ -1431,13 +1469,13 @@
             stylesOf: app.features.discovery?.stylesOf
                 ? video => app.features.discovery.stylesOf(video, channels).map(lower)
                 : null,
-        });
-        contextCache.videos = videos;
-        contextCache.size = toArray(videos).length;
-        contextCache.day = day;
-        contextCache.cfgKey = cfgKey;
-        contextCache.ctx = ctx;
-        return ctx;
+        };
+    }
+
+    async function prepareAppContext(videos, now = Date.now()) {
+        const cfg = getConfig();
+        const ctx = await createContextAsync(appContextOptions(videos, now, cfg));
+        return getAppContext(videos, now, ctx);
     }
 
     function appChannels() {
@@ -1460,7 +1498,9 @@
         titleKeys,
         isSameRecording,
         createContext,
+        createContextAsync,
         getAppContext,
+        prepareAppContext,
         emptySignals,
         normalizeSignals,
         songTaste,
@@ -1478,5 +1518,6 @@
         knownArtistCount,
     };
 })(window);
+
 
 
