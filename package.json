@@ -23,6 +23,7 @@
     "music:genres": "node scripts/enriquir_generes_musica.js",
     "music:genres:dry": "node scripts/enriquir_generes_musica.js --dry-run",
     "build:static": "node scripts/generar_web_estatica.cjs",
+    "vendor:sync": "node scripts/sincronitzar_vendor.cjs",
     "validate:static": "node scripts/validar_paquet_estatic.cjs"
   },
   "devDependencies": {

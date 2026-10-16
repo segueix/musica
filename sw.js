@@ -16,7 +16,7 @@
 // migrant els clients automàticament.
 
 // === AUTO-GENERAT per scripts/actualitzar_versio_sw.js — NO EDITAR MANUALMENT ===
-const CACHE_VERSION = 'e897b9f64452';
+const CACHE_VERSION = 'a779f2cc1ee3';
 const STATIC_ASSETS = [
     './',
     './index.html',
@@ -27,11 +27,14 @@ const STATIC_ASSETS = [
     './css/category-chips.css',
     './css/typography-polish.css',
     './css/spacing-polish.css',
+    './js/vendor/lucide.js',
+    './js/vendor/lz-string.js',
     './js/config.js',
     './js/song-title.js',
     './js/music-categories.js',
     './js/youtube.js',
     './js/data.js',
+    './js/vendor/sortable.js',
     './js/core/segueix-app.js',
     './js/core/state.js',
     './js/core/dom-registry.js',

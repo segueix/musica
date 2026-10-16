@@ -1,3 +1,15 @@
+## [2026-10-16] - Icones de comentar i compartir buides (i sense arrossegar ni QR): js/vendor donava 404
+
+**Símptoma:** a la fitxa de la cançó, els botons «Comenta» i «Compartir» eren cercles buits, a l'ordinador i al mòbil (amb el «+» del costat, sí). També fallava `tests/browser/verificar-categories.js` en arrossegar rajoles.
+
+**Causa:** des de `94ce7232` (optimització del paquet estàtic) `index.html` demana `js/vendor/lucide.js`, `lz-string.js` i `sortable.js` (i `share-card.js`, `qr-code-styling.js`). Aquests fitxers només es generaven dins el paquet `_site` (`optimitzar_web_estatica.cjs`), no eren al repositori. La web publicada es construïa amb «pages build and deployment» **des d'una branca, servint el repositori tal qual** (sense `static-build.json` ni `sitemap.xml`): tots quatre donaven 404. Sense `lucide`, tot `<i data-lucide>` queda buit (el «+» ja era SVG integrat i per això es veia).
+
+**Solució Implementada:** (1) Els botons de comentar i compartir de la fitxa de la cançó (`app.js`, `.video-metadata-bar`) són ara SVG integrats, com el «+»: no depenen de cap llibreria. (2) `writeVendor()` (extret d'`optimize()` a `scripts/optimitzar_web_estatica.cjs`, que exclou `js/vendor` de la cerca d'icones) i `npm run vendor:sync` (`scripts/sincronitzar_vendor.cjs`) deixen `js/vendor/` al repositori, amb les mateixes 165 icones que el paquet. El paquet `_site` els torna a generar igual. (3) `tests/vendor-local.test.js` comprova que hi són tots els fitxers que demana `index.html` i que `lucide.js` porta totes les icones `data-lucide` del codi.
+
+**Trampes conegudes:** (1) Si s'afegeix una icona `data-lucide` nova cal tornar a executar `npm run vendor:sync` (la prova ho detecta). (2) Com que la web pot estar servida des d'una branca o des del paquet, no hi posis cap fitxer que només generi el paquet si `index.html` el necessita. (3) Amb la branca servida tal qual, `music-categories.js` llegeix `data/artistes-musica.json` (la taxonomia compacta `music-taxonomy.json` només és al paquet) i el CSS no va en un sol fitxer: funciona, però és més lent que el paquet.
+
+---
+
 ## [2026-10-16] - Fitxa d'artista: botons dins la foto, «YouTube» i ampliació en passar el ratolí
 
 **Petició:** a l'ordinador, una petita ampliació de la caràtula en passar-hi el ratolí; els botons d'enrere i compartir de la foto del grup quedaven mig fora de la imatge (ordinador i mòbil); un botó dins la foto del grup per obrir-ne el perfil a YouTube.

@@ -580,7 +580,7 @@ const likes = ctx2.SegueixApp.features.likes;
 
 | Llibreria | Ús |
 |---|---|
-| Lucide Icons 0.563.0 | Icones SVG (via `lucide.createIcons()`) |
+| Lucide Icons 0.563.0 | Icones SVG (via `lucide.createIcons()`); local a `js/vendor/lucide.js` (`npm run vendor:sync`), no CDN |
 | Sortable.js 1.15.6 | Drag & drop de categories/playlists |
 | Google Fonts (Roboto 900) | Tipografia |
 | YouTube IFrame API | Reproducció de vídeos |
@@ -589,6 +589,7 @@ const likes = ctx2.SegueixApp.features.likes;
 
 ## Fitxers generats (no editar manualment)
 
+- `js/vendor/` (`lucide.js` amb només les icones que fa servir el codi, `lz-string.js`, `sortable.js`, `qr-code-styling.js`, `LICENSES.txt`) — generat per `npm run vendor:sync` (`scripts/sincronitzar_vendor.cjs` → `writeVendor()` de `scripts/optimitzar_web_estatica.cjs`, el mateix codi que fa servir el paquet `_site`). **Sí que és versionat** (2026-10-16): `index.html` el demana i la web també s'ha de poder servir tal qual des del repositori (GitHub Pages des d'una branca); sense, les icones `data-lucide` sortien buides i no funcionaven l'arrossegament ni els QR. **Si afegeixes una icona `data-lucide` nova, torna a executar `npm run vendor:sync`** (`tests/vendor-local.test.js` ho comprova).
 - `feed_updates.js` — generat per `scripts/update_feed.js` (al `.gitignore`, **no trackejat**: viu al disc però fora de git)
 - `img/compartir.png` — imatge de les previsualitzacions d'enllaç (1200×630), generada per `scripts/generar_imatge_compartir.js` (Playwright + Google Fonts); **sí que és versionat** i només es regenera si canvia la marca
 - `data/feed.json` — generat pel pipeline de sync
