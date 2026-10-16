@@ -12,9 +12,9 @@ function imageUrl(value, fallback) {
         return url.protocol === 'https:' ? url.href : fallback;
     } catch { return fallback; }
 }
-function render({ kind, id, title, description, image }) {
-    const url = `${BASE}compartir/${kind}/${id}.html`;
-    const target = `${BASE}?${kind === 'canco' ? 'v' : 'channel'}=${encodeURIComponent(id)}`;
+function render({ kind, id, title, description, image, baseUrl = BASE }) {
+    const url = `${baseUrl}compartir/${kind}/${id}.html`;
+    const target = `${baseUrl}?${kind === 'canco' ? 'v' : 'channel'}=${encodeURIComponent(id)}`;
     const safeTarget = JSON.stringify(target).replace(/</g, '\\u003c');
     return `<!doctype html>
 <html lang="ca"><head><meta charset="utf-8">
@@ -47,9 +47,9 @@ function shareCodecs() {
 }
 // Pàgina d'una ràdio: el títol «Ràdio <nom>» és el que surt a la previsualització de WhatsApp. Redirigeix a l'app
 // amb el mateix ?importData= (la ràdio compartida) que porta l'enllaç.
-function renderRadio({ slug, title, description }) {
-    const url = `${BASE}compartir/radio/${slug}.html`;
-    const image = `${BASE}img/compartir.png`;
+function renderRadio({ slug, title, description, baseUrl = BASE }) {
+    const url = `${baseUrl}compartir/radio/${slug}.html`;
+    const image = `${baseUrl}img/compartir.png`;
     return `<!doctype html>
 <html lang="ca"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -70,11 +70,11 @@ function renderRadio({ slug, title, description }) {
 <meta name="twitter:image" content="${escape(image)}">
 <meta name="robots" content="noindex">
 </head><body><h1>${escape(title)}</h1>
-<p><a href="${escape(BASE)}">Obre Segueix Música</a></p>
-<script>const target=new URL(${JSON.stringify(BASE)});target.search=location.search;target.hash=location.hash;location.replace(target.href);</script>
+<p><a href="${escape(baseUrl)}">Obre Segueix Música</a></p>
+<script>const target=new URL(${JSON.stringify(baseUrl)});target.search=location.search;target.hash=location.hash;location.replace(target.href);</script>
 </body></html>\n`;
 }
-function generateRadios(root, out, channels) {
+function generateRadios(root, out, channels, baseUrl = BASE) {
     const read = file => {
         try { return JSON.parse(fs.readFileSync(path.join(root, file), 'utf8')); } catch { return null; }
     };
@@ -104,17 +104,18 @@ function generateRadios(root, out, channels) {
     }
     const dir = path.join(out, 'radio');
     fs.mkdirSync(dir, { recursive: true });
-    for (const page of pages.values()) fs.writeFileSync(path.join(dir, `${page.slug}.html`), renderRadio(page));
+    for (const page of pages.values()) fs.writeFileSync(path.join(dir, `${page.slug}.html`), renderRadio({ ...page, baseUrl }));
     // Pàgina genèrica (ràdios sense nom conegut: cerques, categories pròpies…) i la llista que llegeix l'app
-    fs.writeFileSync(path.join(dir, 'index.html'), renderRadio({ slug: 'index', title: 'Ràdio de Segueix Música', description: 'Escolta aquesta ràdio de música en català a Segueix Música.' }));
+    fs.writeFileSync(path.join(dir, 'index.html'), renderRadio({ baseUrl, slug: 'index', title: 'Ràdio de Segueix Música', description: 'Escolta aquesta ràdio de música en català a Segueix Música.' }));
     fs.writeFileSync(path.join(dir, 'index.json'), JSON.stringify([...pages.keys()].sort()));
     return pages.size;
 }
-function generate(root) {
+function generate(root, options = {}) {
+    const baseUrl = options.baseUrl || BASE;
     const read = file => JSON.parse(fs.readFileSync(path.join(root, file), 'utf8'));
     const feed = read('data/feed.json');
     const hidden = new Set(read('data/hidden-videos.json').videoIds);
-    const channels = feed.channels || {};
+    const channels = options.channels || feed.channels || {};
     const videos = new Map();
     const archiveDir = path.join(root, 'data/archive/channels');
     if (fs.existsSync(archiveDir)) for (const file of fs.readdirSync(archiveDir).filter(f => f.endsWith('.json'))) {
@@ -122,16 +123,20 @@ function generate(root) {
         for (const video of archive.videos || []) videos.set(video.id, video);
     }
     for (const video of feed.videos || []) videos.set(video.id, video);
-    const out = path.join(root, 'compartir');
+    if (options.videos) {
+        videos.clear();
+        for (const video of options.videos) videos.set(video.id, video);
+    }
+    const out = options.outputDir || path.join(root, 'compartir');
     // Només se suprimeix la carpeta generada per aquest script.
     fs.rmSync(out, { recursive: true, force: true });
     for (const kind of ['artista', 'canco']) fs.mkdirSync(path.join(out, kind), { recursive: true });
-    const write = data => fs.writeFileSync(path.join(out, data.kind, `${data.id}.html`), render(data));
+    const write = data => fs.writeFileSync(path.join(out, data.kind, `${data.id}.html`), (options.renderEntity || render)({ ...data, baseUrl }));
     let songs = 0;
     for (const [id, channel] of Object.entries(channels)) {
         if (!validId(id)) continue;
         const title = channel.artists?.join(', ') || channel.name;
-        write({ kind: 'artista', id, title, description: `Escolta ${title} a Segueix Música.`, image: imageUrl(channel.avatar, `${BASE}img/compartir.png`) });
+        write({ kind: 'artista', id, title, description: `Escolta ${title} a Segueix Música.`, image: imageUrl(channel.avatar, `${baseUrl}img/compartir.png`) });
     }
     for (const [id, video] of videos) {
         if (!validId(id) || hidden.has(id) || !channels[video.channelId]) continue;
@@ -141,8 +146,9 @@ function generate(root) {
         write({ kind: 'canco', id, title: `${title} · ${artist}`, description: `Escolta «${title}» de ${artist} a Segueix Música.`, image: imageUrl(video.thumbnail, `https://i.ytimg.com/vi/${id}/hqdefault.jpg`) });
         songs++;
     }
-    const radios = generateRadios(root, out, channels);
+    const radios = generateRadios(root, out, channels, baseUrl);
     return { artists: Object.keys(channels).length, songs, radios };
 }
 module.exports = { render, renderRadio, generate };
 if (require.main === module) console.log(generate(path.resolve(__dirname, '..')));
+

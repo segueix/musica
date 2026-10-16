@@ -1669,3 +1669,11 @@ Petició de retirar analítiques i sincronització amb Drive. S’han eliminat O
 Es conserva la recuperació davant falta d’espai i l’aprenentatge local de les ràdios. La vista importada invalida també la memòria d’historial, refresca cors i biblioteca i conserva la cua i el reproductor. Els consentiments i les dades alienes no entren a la còpia. S’han actualitzat les URLs dels scripts, el precache i els textos de privacitat; les instruccions antigues de Drive queden marcades com a històriques.
 
 64 proves dirigides superades. Lint: mateixos cinc errors previs de data.js/home-sections.js, comprovats contra la base. La suite completa no s’ha executat; dues comprovacions antigues de versió SW/ordre de scripts fallen igualment a la base. Aquesta fase no retira encara tot `functions` ni publica a Cloudflare. Fases i criteris a `docs/CONVERSIO_ESTATICA.md`.
+
+## 2026-10-16 — Fase 2: rutes i SEO generats abans de publicar
+
+`npm run build:static` genera `_site/` amb fitxes d’artista, cançons a les URLs existents de `compartir/canco/`, estils, metadades socials, dades estructurades i sitemaps. Reutilitza els slugs del client i el generador de compartició. El domini públic és configurable i el hash SW es calcula sobre la sortida. La generació no consulta APIs ni modifica el catàleg.
+
+Es filtren ocults, canals fora del feed, Shorts i restriccions editorials. Els canals oficial/Topic només s’agrupen mitjançant la identitat editorial; els homònims no es fusionen. El camp `active` de candidats no representa l’estat del catàleg públic. La 404 recupera rutes antigues de vídeo amb el mapa local; manté errors per als IDs desconeguts. El reproductor de les fitxes només carrega YouTube després d’acceptar-lo. El client conserva URLs recarregables en mode estàtic i resol recursos/enllaços a partir de la base de l’app.
+
+89 proves dirigides superades en 12 fitxers. Generació amb el catàleg disponible: 433 artistes, 654 canals, 14.489 cançons, 15 estils i 2.561 ràdios compartides. Lint: mateixos cinc errors previs; cap error nou. No es modifica la ingesta, el calendari ni els workflows. La retirada de Functions i la integració del paquet en la publicació continuen a les fases 3 i 4.

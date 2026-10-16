@@ -13,3 +13,8 @@ data/recent-feed.json
 # Transaccions locals de revisió Codex; no publicar còpies de recuperació.
 .cache/idiomes-codex*
 *.idiomes-tmp
+
+
+# Sortida regenerable de la web estàtica.
+_site/
+_site.tmp-*/

@@ -3263,7 +3263,9 @@ async function restoreSavedViewState() {
 async function handleInitialUrlParams() {
     const urlParams = new URLSearchParams(window.location.search);
     shouldRestoreViewState =
-        !urlParams.get('v') && !urlParams.get('channel') && !urlParams.get('program') && !urlParams.get('cat') && !urlParams.get('add_tag');
+        !urlParams.get('v') && !urlParams.get('channel') && !urlParams.get('program') && !urlParams.get('cat') && !urlParams.get('add_tag') && !urlParams.get('style');
+    const requestedStyle = urlParams.get('style');
+    const initialStyle = ['Novetats', 'Descobreix', ...(window.SegueixMusicCategories?.CATEGORY_GROUPS || []).map(group => group.label)].includes(requestedStyle) ? requestedStyle : '';
     const addTagParam = urlParams.get('add_tag');
     if (addTagParam) {
         const normalizedTag = normalizeCustomTag(addTagParam);
@@ -3365,6 +3367,12 @@ async function handleInitialUrlParams() {
         setTimeout(() => {
             openPendingDeepLinkVideo();
         }, 100);
+    } else if (initialStyle) {
+        showHome();
+        selectedCategory = initialStyle;
+        localStorage.setItem(LAST_CATEGORY_STORAGE_KEY, initialStyle);
+        renderCategories();
+        await renderFeedAfterCategoryChange();
     } else {
         await restoreSavedViewState();
     }

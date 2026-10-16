@@ -21,7 +21,8 @@
     "music:resolve:youtube:dry": "node scripts/resoldre_canals_youtube.js --dry-run",
     "music:search:youtube": "node scripts/cercar_canals_youtube.js --limit=25",
     "music:genres": "node scripts/enriquir_generes_musica.js",
-    "music:genres:dry": "node scripts/enriquir_generes_musica.js --dry-run"
+    "music:genres:dry": "node scripts/enriquir_generes_musica.js --dry-run",
+    "build:static": "node scripts/generar_web_estatica.cjs"
   },
   "devDependencies": {
     "eslint": "^8.57.0",

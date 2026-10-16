@@ -112,7 +112,7 @@
     // La ruta llegible /video/<slug>-<id> necessita un servidor que la serveixi (functions/video a Cloudflare). GitHub
     // Pages no en té: en recarregar donava 404. Allà la URL es queda amb ?v=<id>, que index.html ja sap obrir.
     function supportsReadableVideoPaths() {
-        return !/\.github\.io$/i.test(String(window.location?.hostname || ''));
+        return !window.SEGUEIX_STATIC_SITE && !/\.github\.io$/i.test(String(window.location?.hostname || ''));
     }
 
     function isReadableVideoPath(pathname) {
@@ -672,3 +672,4 @@
         renderPlaylistRelatedVideos,
     };
 })(window);
+
