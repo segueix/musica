@@ -132,6 +132,23 @@ describe('Per afinitat: «Si t’agrada X, prova Y»', () => {
         expect(out).toContain('data-af-play="y"');
     });
 
+    it('la foto del grup omple el fons de la targeta, amb el marc blanc (com «Artistes i grups»)', () => {
+        const model = feature.buildModel({
+            artists: [
+                artist('x', 'X', ['Pop'], 2010),
+                { ...artist('y', 'Y', ['Pop'], 2011), avatar: 'http://yt3.ggpht.com/abc=s88-c-k-c0x00ffffff-no-rj' },
+            ],
+            taste: { history: [{ channelId: 'x' }] },
+        });
+        const out = feature.html(model);
+        expect(out).toContain('class="af-card__photo" src="https://yt3.ggpht.com/abc=s400-c-k-c0x00ffffff-no-rj"');
+        expect(out.indexOf('af-card__photo')).toBeLessThan(out.indexOf('af-card__main'));
+        expect(out).not.toContain('af-card__avatar');
+        const card = css.slice(css.indexOf('.af-card {'), css.indexOf('.af-card__main {'));
+        expect(card).toMatch(/border: 2px solid #fff;/);
+        expect(card).toMatch(/\.af-card__photo \{[^}]*position: absolute;[^}]*inset: 0;[^}]*object-fit: cover;/);
+    });
+
     it('substitueix la cançó destacada i «Recomanat per a tu» a Descobreix', () => {
         expect(html.indexOf('id="affinitySection"')).toBeLessThan(html.indexOf('id="artistMap"'));
         expect(html.indexOf('js/features/affinity.js')).toBeLessThan(html.indexOf('js/app.js'));

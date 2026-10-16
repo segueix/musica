@@ -1,3 +1,11 @@
+## [2026-10-16] - Descobreix, «Per afinitat»: la foto del grup omple la targeta
+
+**Petició:** estendre l'estil de la fitxa d'artista i d'«Artistes i grups» a les targetes de «Per afinitat»: la imatge del grup ha de cobrir el fons de la targeta.
+
+**Solució Implementada:** (1) `affinity.js`: `cardHtml()` posa `img.af-card__photo` (foto a 400 px amb `photoUrl()`, pura i exportada) i `span.af-card__shade` abans del botó; ja no hi ha l'avatar rodó (`.af-card__avatar`). Una foto que no carrega rep `is-broken` (gestor `error` en captura al contenidor) i queda el fons de la targeta. (2) `portada.css`: targeta `aspect-ratio: 4 / 5` amb marc blanc de 2 px, foto absoluta amb `object-fit: cover`, degradat fosc a baix i, a dins i en blanc, «Si t'agrada X, prova», el nom (2 línies com a màxim), el perquè, els xips (vora blanca) i «Escolta» en càpsula de vidre amb vora blanca (com «Segueix» a «Artistes i grups»). Tota la targeta, menys «Escolta», obre la fitxa. Mínim espai entre targetes (4 px); a l'ordinador, en passar-hi el ratolí, la targeta s'amplia una mica (la llista té `padding: 6px` perquè no es retalli). Al mòbil continua la filera amb scroll lateral. (3) `discover-loader.js` carrega `affinity.js?v=20261016-afinitat-foto` i `index.html` porta `?v=` nous.
+
+**Proves:** `tests/affinity.test.js`; opt-in `node tests/browser/verificar-afinitat.js` (la foto omple la targeta amb el marc blanc; el nom i «Escolta» hi són a dins; baixa les fotos `=s400` amb curl perquè yt3 respon 429 al navegador de prova).
+
 ## [2026-10-16] - Fitxa d'artista: la foto de la capçalera pujava i tallava enrere, «YouTube» i compartir
 
 **Símptoma:** en entrar a la fitxa d'un artista (sobretot des d'«Artistes i grups» o després d'haver-ne obert un), dins la capçalera la foto i els botons de dalt (enrere, «YouTube», compartir) apareixien uns 40 px més amunt, tallats per la vora, i a baix de la capçalera quedava una franja buida.

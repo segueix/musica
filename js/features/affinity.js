@@ -143,6 +143,12 @@
     const PLAY =
         '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 5.5v13l11-6.5-11-6.5Z" fill="currentColor"/></svg>';
 
+    // Foto del grup a 400 px (la de la base sol ser petita): omple tot el fons de la targeta
+    function photoUrl(url) {
+        const src = String(url || '').replace(/^http:\/\//i, 'https://');
+        return /\/\/yt3\.(ggpht|googleusercontent)\.com\//i.test(src) ? src.replace(/=s\d+(?=-|$)/, '=s400') : src;
+    }
+
     function cardHtml(card) {
         const artist = card.artist;
         const chips = [card.style, card.era]
@@ -150,8 +156,9 @@
             .map(text => `<span class="af-chip">${esc(text)}</span>`)
             .join('');
         return `<li class="af-card">
+            <img class="af-card__photo" src="${esc(photoUrl(artist.avatar) || FALLBACK_AVATAR)}" alt="" loading="lazy" decoding="async" width="400" height="400">
+            <span class="af-card__shade" aria-hidden="true"></span>
             <button type="button" class="af-card__main" data-af-artist="${esc(artist.id)}">
-                <img class="af-card__avatar" src="${esc(artist.avatar || FALLBACK_AVATAR)}" alt="" loading="lazy" decoding="async" width="88" height="88">
                 <span class="af-card__lead">Si t’agrada <strong>${esc(card.seed.name)}</strong>, prova</span>
                 <span class="af-card__name">${esc(artist.name)}</span>
                 <span class="af-card__why">${esc(card.reason)}</span>
@@ -289,6 +296,12 @@
         if (!state.bound) {
             state.bound = true;
             container.addEventListener('click', onClick);
+            // Una foto que no carrega no deixa la icona trencada: queda el fons de la targeta
+            container.addEventListener(
+                'error',
+                event => event.target?.classList?.contains('af-card__photo') && event.target.classList.add('is-broken'),
+                true
+            );
             // Seguir o deixar de seguir un artista canvia les propostes
             window.addEventListener?.('segueix:music-prefs-changed', () => {
                 if (!state.container?.classList.contains('hidden')) {
@@ -330,5 +343,5 @@
         if (target) target.classList.add('hidden');
     }
 
-    app.features.affinity = { buildModel, similarity, artistYears, decadeLabel, html, show, hide };
+    app.features.affinity = { buildModel, similarity, artistYears, decadeLabel, photoUrl, html, show, hide };
 })(window);

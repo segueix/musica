@@ -8,6 +8,8 @@
 // l'historial; tocar-ne una obre la fitxa; al mapa, la goma surt quan hi ha un lloc triat i l'esborra.
 
 const http = require('http');
+const { execFileSync } = require('child_process');
+const photoCache = new Map();
 const fs = require('fs');
 const path = require('path');
 let chromium;
@@ -84,6 +86,17 @@ async function open(browser, width, height) {
             return route.fulfill({ status: 200, contentType: 'application/javascript', body: sortable });
         if (/lz-string/.test(url) && lz)
             return route.fulfill({ status: 200, contentType: 'application/javascript', body: lz });
+        // Fotos dels grups de les targetes (=s400): el navegador de prova rep 429 de yt3; es baixen amb curl
+        if (/^https:\/\/yt3\.(ggpht|googleusercontent)\.com\/.*=s400/.test(url)) {
+            try {
+                if (!photoCache.has(url)) {
+                    photoCache.set(url, execFileSync('curl', ['-sS', '--max-time', '15', url], { maxBuffer: 8e6 }));
+                }
+                return route.fulfill({ status: 200, contentType: 'image/jpeg', body: photoCache.get(url) });
+            } catch (_) {
+                return route.abort();
+            }
+        }
         return route.abort();
     });
     const errors = [];
@@ -122,6 +135,26 @@ const readInfo = page =>
             name: c.querySelector('.af-card__name').textContent,
             why: c.querySelector('.af-card__why').textContent,
             chips: c.querySelector('.af-card__chips').textContent,
+            // La foto del grup omple tot el fons i la targeta porta el marc blanc
+            photo: (() => {
+                const img = c.querySelector('.af-card__photo');
+                const a = img?.getBoundingClientRect();
+                const b = c.getBoundingClientRect();
+                const style = getComputedStyle(c);
+                return Boolean(
+                    a &&
+                    Math.abs(a.width - (b.width - 4)) < 2 &&
+                    Math.abs(a.height - (b.height - 4)) < 2 &&
+                    getComputedStyle(img).objectFit === 'cover' &&
+                    style.borderTopColor === 'rgb(255, 255, 255)'
+                );
+            })(),
+            textInside: (() => {
+                const name = c.querySelector('.af-card__name').getBoundingClientRect();
+                const play = c.querySelector('.af-card__play').getBoundingClientRect();
+                const b = c.getBoundingClientRect();
+                return name.top >= b.top && play.bottom <= b.bottom + 0.5 && play.left >= b.left;
+            })(),
         })),
         styles: document.querySelectorAll('.af-style').length,
         pageW: document.documentElement.scrollWidth,
@@ -154,6 +187,14 @@ async function run(browser, width, height, taste) {
         ok(
             `${tag}: targetes «Si t’agrada X, prova Y»`,
             info.cards.length >= 4 && info.cards.every(c => /^Si t’agrada .+, prova$/.test(c.lead))
+        );
+        ok(
+            `${tag}: la foto del grup omple la targeta, amb el marc blanc`,
+            info.cards.every(c => c.photo)
+        );
+        ok(
+            `${tag}: el nom i «Escolta» van dins la foto`,
+            info.cards.every(c => c.textInside)
         );
         ok(
             `${tag}: amb el perquè`,
