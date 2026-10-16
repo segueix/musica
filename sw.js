@@ -16,7 +16,7 @@
 // migrant els clients automàticament.
 
 // === AUTO-GENERAT per scripts/actualitzar_versio_sw.js — NO EDITAR MANUALMENT ===
-const CACHE_VERSION = '21c73909e9df';
+const CACHE_VERSION = 'e5485571554a';
 const STATIC_ASSETS = [
     './',
     './index.html',
@@ -87,7 +87,6 @@ const STATIC_ASSETS = [
     './img/caratula.webp',
     './js/features/artist-map.js',
     './js/features/affinity.js',
-    './js/features/segueix-tv.js',
     './js/features/context-tv.js',
     './js/features/tv-scroll-ui.js',
 ];

@@ -11,7 +11,7 @@
 // Comprova, a 390 px i a 1280 px:
 //   1) La foto de perfil ocupa tota la capçalera i el nom, les ràdios i compartir hi són al damunt.
 //   2) La més escoltada és la cançó amb més visualitzacions; a l'ordinador va al costat de la capçalera.
-//   3) La resta de cançons, per visualitzacions (#2, #3…), en tres columnes a l'ordinador i una sola al mòbil (una
+//   3) La resta de cançons, per visualitzacions (#2, #3…), en quatre columnes a l'ordinador i una sola al mòbil (una
 //      sota l'altra), totes amb un marc blanc fi, de caràtules quadrades iguals amb el
 //      mínim espai, les dades al damunt (sense el nom del grup al títol), el play i la cua; cap títol de secció,
 //      cap disc, cap cerca, cap text fora de les caràtules.
@@ -297,7 +297,11 @@ async function check(browser, width, height, label) {
         info.cardWidth,
     ]);
     if (width >= 769) {
-        ok(`${label}: tres columnes amb el mínim espai`, info.columns === 3 && info.gap <= 6, [info.columns, info.gap]);
+        const cols = width >= 1025 ? 4 : 3;
+        ok(`${label}: ${cols} columnes amb el mínim espai`, info.columns === cols && info.gap <= 6, [
+            info.columns,
+            info.gap,
+        ]);
     } else {
         ok(`${label}: una caràtula sota l'altra amb el mínim espai`, info.columns === 1 && info.rowGap <= 6, [
             info.columns,
@@ -328,7 +332,12 @@ async function check(browser, width, height, label) {
         const after = await page.$eval(card, el => el.getBoundingClientRect().width);
         ok(`${label}: en passar-hi el ratolí, la caràtula s'amplia`, after > before * 1.02, [before, after]);
         // Les de les vores s'amplien cap a dins: #channelPage (contain: content) retallaria el marc blanc
-        for (const sel of ['#apSongs .ap-card:nth-child(1)', '#apSongs .ap-card:nth-child(3)', '#apBest .ap-card']) {
+        const last = width >= 1025 ? 4 : 3;
+        for (const sel of [
+            '#apSongs .ap-card:nth-child(1)',
+            `#apSongs .ap-card:nth-child(${last})`,
+            '#apBest .ap-card',
+        ]) {
             await page.locator(sel).scrollIntoViewIfNeeded();
             await page.hover(sel);
             await page.waitForTimeout(350);

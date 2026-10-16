@@ -26,7 +26,6 @@ const EXTRA_ASSETS = [
     './img/caratula.webp',
     './js/features/artist-map.js',
     './js/features/affinity.js',
-    './js/features/segueix-tv.js',
     './js/features/context-tv.js',
     './js/features/tv-scroll-ui.js',
     './css/category-chips.css',

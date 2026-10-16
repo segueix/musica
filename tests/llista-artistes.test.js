@@ -47,6 +47,12 @@ describe('fitxa d’artista: les caràtules de les vores s’amplien cap a dins'
         expect(css).toMatch(/#channelPage \.ap-card\s*{[^}]*transform-origin:\s*var\(--ap-ox\) var\(--ap-oy\)/);
         expect(css).toMatch(/\.ap-grid \.ap-card:nth-child\(3n \+ 1\)\s*{[^}]*--ap-ox:\s*left/);
         expect(css).toMatch(/\.ap-grid \.ap-card:nth-child\(3n\)\s*{[^}]*--ap-ox:\s*right/);
+        // Ordinador: quatre columnes (la quarta s'amplia des de la dreta)
+        expect(css).toMatch(/\.ap-grid \.ap-card:nth-child\(4n \+ 1\)\s*{[^}]*--ap-ox:\s*left/);
+        expect(css).toMatch(/\.ap-grid \.ap-card:nth-child\(4n\)\s*{[^}]*--ap-ox:\s*right/);
+        expect(css).toMatch(
+            /@media \(min-width: 1025px\) \{\s*#channelPage \.ap-grid \{\s*grid-template-columns: repeat\(4, minmax\(0, 1fr\)\);/
+        );
         expect(css).toMatch(/\.ap-grid \.ap-card:nth-last-child\(-n \+ 3\)\s*{[^}]*--ap-oy:\s*bottom/);
         expect(css).toMatch(/#channelPage \.ap-best \.ap-card\s*{[^}]*--ap-ox:\s*right;[^}]*--ap-oy:\s*top/);
     });

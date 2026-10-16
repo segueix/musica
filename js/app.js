@@ -8227,7 +8227,7 @@ async function navigateToSearchResults(query) {
     SegueixApp.features.categoryArtists?.hide?.();
     SegueixApp.features.artistMap?.hide?.();
     SegueixApp.features.affinity?.hide?.();
-    homePage?.classList.remove('is-discover');
+    homePage?.classList.remove('is-discover', 'is-style-view');
 
     if (!videosGrid) {
         return;
@@ -8323,7 +8323,11 @@ function syncCategoryArtists() {
     const userFeature = SegueixApp.features.userCategories;
     const userCategory = category ? userFeature?.get?.(category) : null;
     const isUser = Boolean(userCategory) && String(userCategory.name).toLowerCase() === category.toLowerCase();
-    if (!category || (!isUser && !isStyleRadioCategory(category))) {
+    const styleView = Boolean(category) && (isUser || isStyleRadioCategory(category));
+    // Vista d'un estil o d'una categoria pròpia: la cançó destacada amb la caràtula de fons i les cançons en caràtules
+    // quadrades amb marc blanc (portada.css, «Vista d'un estil»)
+    homePage?.classList.toggle('is-style-view', styleView);
+    if (!styleView) {
         feature.hide();
         return;
     }

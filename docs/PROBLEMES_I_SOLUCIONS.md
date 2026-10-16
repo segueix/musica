@@ -1,3 +1,27 @@
+## [2026-10-16] - Fitxa d'artista amb quatre columnes a l'ordinador; vista d'un estil amb una columna al mòbil
+
+**Petició:** al mòbil, la vista d'un estil amb una sola columna (com la fitxa d'artista); a l'ordinador, les cançons de la fitxa d'artista en quatre columnes en lloc de tres.
+
+**Solució Implementada:** (1) `portada.css`: `#channelPage .ap-grid` fa 3 columnes a 769–1024 px i 4 a ≥ 1025 px; la vista d'un estil (`#homePage.is-style-view #videosGrid`) fa una columna a ≤ 768 px. (2) L'ampliació en passar el ratolí: les regles de les vores (`--ap-ox` / `--ap-oy`) van per tram, `3n + 1` / `3n` / `nth-last-child(-n + 3)` a la tauleta i `4n + 1` / `4n` / `nth-last-child(-n + 4)` a l'ordinador; sense això la quarta columna s'ampliava des del centre i #channelPage (`contain: content`) en retallava el marc blanc. (3) `artist-page.js`: `LIST_FIRST` passa de 18 a 24 (files senceres amb 3 i 4 columnes).
+
+**Proves:** `tests/llista-artistes.test.js`, `tests/vista-estil.test.js`; opt-in `node tests/browser/verificar-fitxa-artista.js` (4 columnes i la quarta ampliada sense perdre el marc) i `node tests/browser/verificar-vista-estil.js` (una caràtula sota l'altra al mòbil).
+
+## [2026-10-16] - Vista d'un estil: sense «Música TV», cançó destacada amb la caràtula de fons i cançons en caràtules
+
+**Petició:** treure «Segueix TV» / «Música TV» del selector «Estil» (és de l'altra plataforma); a la vista d'un estil, la cançó destacada amb la caràtula de fons a tot el requadre i el nom del grup més gran i ben situat; a sota, les cançons en quatre columnes amb l'estil de la fitxa d'artista (requadre blanc ple amb la imatge, una mica ampliable); la filera d'artistes, tal com era, abans de les cançons.
+
+**Solució Implementada:** (1) `navigation.js` deixa de carregar `segueix-tv.js` (era qui afegia el xip `.segueix-tv-chip` a la barra; el selector «Estil» el copiava); fora també del precache (`scripts/actualitzar_versio_sw.js`). (2) `syncCategoryArtists()` posa `#homePage.is-style-view` a un estil o a una categoria pròpia; `navigateToSearchResults()` el treu. (3) `index.html`: `#heroChannel` passa just després de `#heroTitle`. (4) `portada.css`, bloc «Vista d'un estil (Pop, Rock…)…»: només CSS sobre el marcatge de sempre (`.hero`, `.video-card` de `createVideoCardAPI()`), de manera que els clics no canvien.
+
+**Trampes:** (1) `#homePage .hero` arrossega regles de tres llocs (`styles.css` base, el bloc «Hero» de `styles.css` i `portada.css`): calen `align-items: flex-start` i `width: 100%` al contingut, o el text queda al mig. (2) `.hero-thumbnail::before/::after` i `.video-thumbnail::before/::after` porten els textos «SEGUEIX!» / «Els nostres YouTubers.» de reserva: aquí `::before` és el degradat i `::after` el play (o res). (3) `.video-info-container` té `flex: 1` (styles.css): sense `flex: none` el títol queda a dalt de la caràtula. (4) `.page` té `contain: paint`: la graella porta `padding: 6px` perquè les caràtules ampliades no perdin el marc. Proves: `tests/vista-estil.test.js`; opt-in `node tests/browser/verificar-vista-estil.js`.
+
+## [2026-10-16] - Descobreix, «Per afinitat»: la foto del grup omple la targeta
+
+**Petició:** estendre l'estil de la fitxa d'artista i d'«Artistes i grups» a les targetes de «Per afinitat»: la imatge del grup ha de cobrir el fons de la targeta.
+
+**Solució Implementada:** (1) `affinity.js`: `cardHtml()` posa `img.af-card__photo` (foto a 400 px amb `photoUrl()`, pura i exportada) i `span.af-card__shade` abans del botó; ja no hi ha l'avatar rodó (`.af-card__avatar`). Una foto que no carrega rep `is-broken` (gestor `error` en captura al contenidor) i queda el fons de la targeta. (2) `portada.css`: targeta `aspect-ratio: 4 / 5` amb marc blanc de 2 px, foto absoluta amb `object-fit: cover`, degradat fosc a baix i, a dins i en blanc, «Si t'agrada X, prova», el nom (2 línies com a màxim), el perquè, els xips (vora blanca) i «Escolta» en càpsula de vidre amb vora blanca (com «Segueix» a «Artistes i grups»). Tota la targeta, menys «Escolta», obre la fitxa. Mínim espai entre targetes (4 px); a l'ordinador, en passar-hi el ratolí, la targeta s'amplia una mica (la llista té `padding: 6px` perquè no es retalli). Al mòbil continua la filera amb scroll lateral. (3) `discover-loader.js` carrega `affinity.js?v=20261016-afinitat-foto` i `index.html` porta `?v=` nous.
+
+**Proves:** `tests/affinity.test.js`; opt-in `node tests/browser/verificar-afinitat.js` (la foto omple la targeta amb el marc blanc; el nom i «Escolta» hi són a dins; baixa les fotos `=s400` amb curl perquè yt3 respon 429 al navegador de prova).
+
 ## [2026-10-16] - Fitxa d'artista: la foto de la capçalera pujava i tallava enrere, «YouTube» i compartir
 
 **Símptoma:** en entrar a la fitxa d'un artista (sobretot des d'«Artistes i grups» o després d'haver-ne obert un), dins la capçalera la foto i els botons de dalt (enrere, «YouTube», compartir) apareixien uns 40 px més amunt, tallats per la vora, i a baix de la capçalera quedava una franja buida.
