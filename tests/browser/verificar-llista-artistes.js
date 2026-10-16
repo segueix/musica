@@ -125,7 +125,7 @@ const layout = page =>
             }),
             framed: parseFloat(style.borderTopWidth) >= 1 && style.borderTopColor === 'rgb(255, 255, 255)',
             dataInside: cards.slice(0, 6).every(card =>
-                ['.follow-name', '.follow-hide-btn', '.follow-toggle-btn'].every(sel => {
+                ['.follow-name', '.follow-hits-btn', '.follow-toggle-btn'].every(sel => {
                     const el = card.querySelector(sel);
                     return !el || inside(rect(el), rect(card));
                 })

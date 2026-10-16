@@ -1,3 +1,11 @@
+## [2026-10-16] - «Artistes i grups»: ràdio de grans èxits en lloc d'amagar; ràdio amb el llenguatge de caràtules
+
+**Petició:** treure «amagar» de la llista d'artistes (ja és a la fitxa) i posar-hi un botó que faci una ràdio amb la música de l'artista per ordre de grans èxits; adaptar la ràdio (llista, botons de selecció i la resta) al disseny de l'app.
+
+**Solució Implementada:** (1) `renderFollowPage()` (`app.js`) treu `.follow-hide-btn` i hi posa `.follow-hits-btn[data-follow-hits]` (play blanc); `startArtistHitsRadio()` carrega les cançons amb `YouTubeAPI.getArtistVideosWithHistory()` i crida `musicQueue.startHitsRadio()`, que ordena amb `greatestHits()` (per `viewCount`, sense Shorts ni la mateixa cançó repetida: clau = títol sense parèntesis/claudàtors, sense accents) i les fa sonar amb `playSelection()` («Grans èxits de …», ordre fix, màxim 40). (2) Ràdio: `music-queue.js` posa `--mq-art` (caràtula de la cançó que sona) a `.mq` i el nom d'una selecció sense «Selecció:»; CSS al bloc «Ràdio amb el llenguatge de caràtules» de `portada.css`.
+
+**Trampa:** a l'ordinador, la capçalera de la cua és enganxosa amb `background: #181818` (`styles.css`, selector amb dos id): el fons de la caràtula va en pseudoelements amb `z-index` negatiu dins `isolation: isolate`, que es pinten per damunt d'aquest fons. Proves: `tests/music-queue-selection.test.js` (grans èxits), `tests/llista-artistes.test.js`, `tests/radio-caratules.test.js`; opt-in `node tests/browser/verificar-llista-artistes.js`.
+
 ## [2026-10-16] - Lletra nova (Archivo) i cerca amb el llenguatge de caràtules
 
 **Petició:** canviar la lletra perquè s'adapti a l'estètica de caràtules, i que els grups i cançons de la cerca tinguin el mateix estil que la resta.

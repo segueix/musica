@@ -8969,28 +8969,25 @@ async function renderFollowPage() {
                 </button>
             `
                 : '';
-            // Requadre ple amb la foto del grup i, a dins, el nom, «Segueix» i amagar (com les caràtules de la fitxa)
+            // Requadre ple amb la foto del grup i, a dins, el nom, «Segueix» i el play de la ràdio de grans èxits (com les
+            // caràtules de la fitxa). Amagar l'artista és a la seva fitxa.
             return `
             <div class="follow-card" data-channel-id="${channel.id}" role="link" tabindex="0" aria-label="${escapeHtml(`Fitxa de ${name}`)}">
                 <img class="follow-avatar" src="${escapeHtml(avatar)}" alt="" loading="lazy" decoding="async">
                 <span class="follow-card__shade" aria-hidden="true"></span>
-                <button class="follow-hide-btn" type="button" data-hide-channel="${channel.id}" aria-pressed="false" aria-label="${escapeHtml(`Amaga ${name} del feed`)}" title="Amaga del feed">
-                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                        <path d="M1.5 12s3.5-7 10.5-7 10.5 7 10.5 7-3.5 7-10.5 7S1.5 12 1.5 12Z"></path>
-                        <circle cx="12" cy="12" r="3.5"></circle>
-                    </svg>
-                </button>
                 <div class="follow-card__info">
                     <div class="follow-name">${escapeHtml(name)}</div>
                     ${followButtonHtml}
                 </div>
+                <button class="follow-hits-btn" type="button" data-follow-hits="${channel.id}" data-follow-hits-name="${escapeHtml(name)}" aria-label="${escapeHtml(`Ràdio de grans èxits de ${name}`)}" title="Grans èxits: les cançons més escoltades">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 5.6v12.8a1 1 0 0 0 1.5.86l10.4-6.4a1 1 0 0 0 0-1.72L9.5 4.74A1 1 0 0 0 8 5.6Z"/></svg>
+                </button>
             </div>
         `;
         })
         .join('');
 
     bindFollowButtons(followGrid);
-    bindHideChannelButtons(followGrid);
     _bindFollowGridDelegated();
     // Índex alfabètic a la dreta de la llista (js/features/alphabet-index.js)
     SegueixApp.features.alphabetIndex?.attach?.(followGrid);
@@ -9002,11 +8999,34 @@ function followCardImage(url) {
     return /\/\/yt3\.(ggpht|googleusercontent)\.com\//i.test(src) ? src.replace(/=s\d+(?=-|$)/, '=s400') : src;
 }
 
+// Ràdio de grans èxits d'un artista de la llista: totes les seves cançons (feed + arxiu, oficial i «Tema») per ordre de
+// visualitzacions (musicQueue.startHitsRadio). Mentre arriben les cançons el botó queda ocupat.
+async function startArtistHitsRadio(channelId, name, button) {
+    if (!channelId || button?.getAttribute('aria-busy') === 'true') return;
+    button?.setAttribute('aria-busy', 'true');
+    try {
+        const videos = YouTubeAPI?.getArtistVideosWithHistory
+            ? await YouTubeAPI.getArtistVideosWithHistory(channelId)
+            : await YouTubeAPI.getChannelVideosWithHistory(channelId);
+        const songs = (Array.isArray(videos) ? videos : []).filter(video => isSongVideo(video));
+        if (!SegueixApp.features.musicQueue?.startHitsRadio?.(songs, { name, channelId })) {
+            SegueixApp.features.shellNav?.toast?.('No hi ha prou cançons d’aquest artista per fer-ne una ràdio.');
+        }
+    } finally {
+        button?.removeAttribute('aria-busy');
+    }
+}
+
 // Listener delegat persistent per followGrid (1 sol listener en lloc de N)
 function _bindFollowGridDelegated() {
     if (!followGrid || followGrid.dataset.delegated === 'true') return;
     followGrid.dataset.delegated = 'true';
     followGrid.addEventListener('click', event => {
+        const hits = event.target.closest('[data-follow-hits]');
+        if (hits) {
+            startArtistHitsRadio(hits.dataset.followHits, hits.dataset.followHitsName, hits);
+            return;
+        }
         if (event.target.closest('[data-follow-channel], [data-hide-channel]')) return;
         const card = event.target.closest('.follow-card');
         if (card) {

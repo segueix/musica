@@ -214,9 +214,12 @@ describe('clicar un directe engega una ràdio només de directes', () => {
 
     it('pot encadenar sessions diferents publicades pel mateix canal del Club', () => {
         const catalog = [
-            ...Array.from({ length: 7 }, (_, i) => song('club', 0.2, {
-                contentType: 'live_song', title: 'Grup ' + i + ' · Sessió #' + i,
-            })),
+            ...Array.from({ length: 7 }, (_, i) =>
+                song('club', 0.2, {
+                    contentType: 'live_song',
+                    title: 'Grup ' + i + ' · Sessió #' + i,
+                })
+            ),
             ...mixed().slice(16),
         ];
         const env = setup({ catalog });
@@ -1071,7 +1074,9 @@ describe('ràdios de la fitxa d’artista', () => {
         expect(ctx.activePlaylistQueue.every(v => v.channelId === 'art')).toBe(true);
         expect(new Set(ctx.activePlaylistQueue.map(v => v.id)).size).toBe(ctx.activePlaylistQueue.length);
         // Una fila (videoclips, directes) pot dur el seu nom
-        expect(queue.startArtistRadio(own.slice(0, 3), { name: 'Artista Fitxa', title: 'Videoclips de Artista Fitxa' })).toBe(true);
+        expect(
+            queue.startArtistRadio(own.slice(0, 3), { name: 'Artista Fitxa', title: 'Videoclips de Artista Fitxa' })
+        ).toBe(true);
         expect(queue.playlistName()).toBe('Videoclips de Artista Fitxa');
     });
 
@@ -1109,7 +1114,6 @@ describe('ràdios de la fitxa d’artista', () => {
     });
 });
 
-
 describe('ràdio d’estil des de la fitxa: primera cançó i nom', () => {
     it('comença amb l’artista, manté altres artistes i conserva el nom en barrejar i restaurar', () => {
         const catalog = catalogWithClassics();
@@ -1138,5 +1142,34 @@ describe('ràdio d’estil des de la fitxa: primera cançó i nom', () => {
         expect(queue.startStyleRadio(['Pop'], { seedVideos: [] })).toBe(false);
         expect(queue.startStyleRadio(['Pop'], { seedVideos: [catalog[0]] })).toBe(true);
         expect(ctx.activePlaylistQueue[0].id).toBe(catalog[0].id);
+    });
+});
+
+describe('ràdio de grans èxits (llista d’«Artistes i grups»)', () => {
+    it('ordena les cançons per visualitzacions, sense repetir la mateixa cançó ni cap Short', () => {
+        const env = setup({ catalog: [song('a', 1)] });
+        const v = (id, title, viewCount, extra = {}) => ({ id, title, viewCount, channelId: 'a', ...extra });
+        const hits = env.queue.greatestHits([
+            v('1', 'Cançó baixa', 10),
+            v('2', 'La més escoltada', 900),
+            v('3', 'La més escoltada (En directe)', 500),
+            v('4', 'Segona', 400),
+            v('5', 'Short', 9999, { isShort: true }),
+            v('6', 'LA MÉS ESCOLTADA', 50),
+        ]);
+        expect(hits.map(video => video.id)).toEqual(['2', '4', '1']);
+    });
+
+    it('engega una cua «Grans èxits de …» en aquest ordre, i no ho fa amb menys de dues cançons', () => {
+        const catalog = [
+            song('a', 1, { viewCount: 10 }),
+            song('a', 2, { viewCount: 3000 }),
+            song('a', 3, { viewCount: 500 }),
+        ];
+        const env = setup({ catalog });
+        expect(env.queue.startHitsRadio(catalog, { name: 'Grup A' })).toBe(true);
+        expect(env.ctx.activePlaylistQueue.map(video => video.viewCount)).toEqual([3000, 500, 10]);
+        expect(env.queue.playlistName()).toBe('Grans èxits de Grup A');
+        expect(env.queue.startHitsRadio(catalog.slice(0, 1), { name: 'Grup A' })).toBe(false);
     });
 });
