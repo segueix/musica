@@ -9240,3 +9240,747 @@ body #followPage .follow-card .follow-toggle-btn.is-followed {
         transform: none;
     }
 }
+
+/* ---------- Inici amb el llenguatge de caràtules (2026-10-16) ----------
+   Fase 1 de la proposta d'Inici: «Torna-hi», «Acabades de sortir», «Fora del teu radar» i «En directe» fan servir el
+   mateix llenguatge que la fitxa d'artista, la vista d'un estil, «Artistes i grups» i «Per afinitat»: caràtula
+   quadrada plena amb la imatge, marc blanc fi i cantonades `--pt-radius-cover`; a dins i en blanc, el títol, el grup i
+   les dades, amb un fosc suau a baix; la durada (i «Gravat en directe») en càpsules de vidre a dalt a l'esquerra,
+   «Afegeix a la cua» i «Desa en una llista» a dalt a la dreta i el play blanc a baix a la dreta; el mínim espai entre
+   caràtules i una petita ampliació en passar el ratolí a l'ordinador. Sense subtítols explicatius a les seccions
+   (continuen a l'HTML per als lectors de pantalla). Només CSS sobre el marcatge de `portada.js`: els clics no canvien. */
+#homePage.is-portada {
+    --pt-cover-w: min(64vw, 236px);
+    --pt-cover-pad: clamp(10px, 6cqi, 14px);
+}
+
+#homePage.is-portada .pt-head__sub {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+/* Files: el mínim espai i marge a dalt i a baix perquè l'ampliació no es retalli (overflow-x: auto retalla també en
+   vertical) */
+#homePage.is-portada .pt-row,
+#homePage.is-portada .pt-quick-list {
+    gap: 4px;
+    padding-top: 8px;
+    padding-bottom: 12px;
+}
+
+/* Botons de les capçaleres: vidre amb vora blanca */
+#homePage.is-portada .pt-head__tools .pt-tool,
+#homePage.is-portada .pt-head__tools .pt-arrow {
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    background: rgba(20, 22, 21, 0.6);
+    color: #fff;
+}
+
+#homePage.is-portada .pt-head__tools .pt-tool:hover,
+#homePage.is-portada .pt-head__tools .pt-arrow:hover:not(:disabled) {
+    border-color: var(--pt-accent);
+    color: var(--pt-accent);
+}
+
+#homePage.is-portada .pt-head__tools .pt-tool--play {
+    border-color: var(--pt-accent);
+    color: var(--pt-accent);
+}
+
+/* (1) Cançons: «Acabades de sortir» i «En directe» */
+#homePage.is-portada .pt-card,
+#homePage.is-portada .pt-card--wide {
+    position: relative;
+    isolation: isolate;
+    width: var(--pt-cover-w);
+    aspect-ratio: 1;
+    overflow: hidden;
+    border: 2px solid #fff;
+    border-radius: var(--pt-radius-cover);
+    background: var(--pt-surface-2);
+    color: #fff;
+    container-type: inline-size;
+}
+
+#homePage.is-portada .pt-card__media {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: auto;
+    border-radius: 0;
+}
+
+#homePage.is-portada .pt-card__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* La miniatura hqdefault (4:3) porta franges negres a dalt i a baix d'un vídeo 16:9: s'amplia 4/3 ÷ 16/9 ≈ 1,34
+   perquè el quadrat només mostri la imatge */
+#homePage.is-portada .pt-card__media img[src*='/hqdefault.jpg'] {
+    transform: scale(1.34);
+}
+
+/* Fosc suau a baix (i una mica a dalt, per a les càpsules) */
+#homePage.is-portada .pt-card__media::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.35) 0%,
+        rgba(0, 0, 0, 0) 26%,
+        rgba(0, 0, 0, 0) 42%,
+        rgba(0, 0, 0, 0.88) 100%
+    );
+    pointer-events: none;
+}
+
+#homePage.is-portada .pt-card__dur,
+#homePage.is-portada .pt-card__badge {
+    top: var(--pt-cover-pad);
+    left: var(--pt-cover-pad);
+    bottom: auto;
+    z-index: 2;
+    padding: 2px 9px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: var(--pt-radius-pill);
+    background: rgba(20, 22, 21, 0.55);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+/* A «En directe» la durada va sota «Gravat en directe» */
+#homePage.is-portada .pt-card__media:has(.pt-card__badge) .pt-card__dur {
+    top: calc(var(--pt-cover-pad) + 28px);
+}
+
+#homePage.is-portada .pt-card__play {
+    right: var(--pt-cover-pad);
+    bottom: var(--pt-cover-pad);
+    z-index: 2;
+    width: clamp(40px, 20cqi, 52px);
+    height: clamp(40px, 20cqi, 52px);
+    background: #fff;
+    color: #141615;
+}
+
+/* El text, a baix i en blanc; la caràtula continua sent el botó per escoltar */
+#homePage.is-portada .pt-card__body {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: var(--pt-cover-pad);
+    padding-right: calc(var(--pt-cover-pad) + clamp(40px, 20cqi, 52px) + 8px);
+    pointer-events: none;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.75);
+}
+
+#homePage.is-portada .pt-card__text {
+    flex: none;
+    gap: 1px;
+}
+
+#homePage.is-portada .pt-card__title,
+#homePage.is-portada .pt-card--wide .pt-card__title {
+    color: #fff;
+    font-family: inherit;
+    font-size: clamp(0.9375rem, 7.5cqi, 1.1875rem);
+    font-weight: 800;
+    line-height: 1.15;
+}
+
+#homePage.is-portada .pt-card .pt-artist {
+    color: #fff;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    pointer-events: auto;
+}
+
+#homePage.is-portada .pt-card__meta,
+#homePage.is-portada .pt-card__reason {
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 0.75rem;
+}
+
+/* «Afegeix a la cua» i «Desa en una llista»: a dalt a la dreta, en blanc i sense fons */
+#homePage.is-portada .pt-card__actions {
+    position: absolute;
+    top: calc(var(--pt-cover-pad) - 10px);
+    right: calc(var(--pt-cover-pad) - 10px);
+    flex-direction: row;
+    gap: 0;
+    pointer-events: auto;
+}
+
+#homePage.is-portada .pt-card__actions .pt-act,
+#homePage.is-portada .pt-portrait__actions .pt-act:not(.pt-act--play) {
+    border: 0;
+    background: transparent;
+    color: #fff;
+    filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.85));
+}
+
+#homePage.is-portada .pt-card__actions .pt-act:hover,
+#homePage.is-portada .pt-portrait__actions .pt-act:not(.pt-act--play):hover {
+    background: rgba(0, 0, 0, 0.35);
+    color: var(--pt-accent);
+}
+
+/* (2) «Fora del teu radar»: la foto del grup omple el requadre */
+#homePage.is-portada .pt-portrait {
+    position: relative;
+    isolation: isolate;
+    justify-content: flex-end;
+    width: var(--pt-cover-w);
+    aspect-ratio: 1;
+    padding: var(--pt-cover-pad);
+    overflow: hidden;
+    border: 2px solid #fff;
+    border-radius: var(--pt-radius-cover);
+    background: var(--pt-surface-2);
+    color: #fff;
+    container-type: inline-size;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.75);
+}
+
+#homePage.is-portada .pt-portrait__img {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    border-radius: 0;
+}
+
+#homePage.is-portada .pt-portrait__img::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.1) 0%,
+        rgba(0, 0, 0, 0) 30%,
+        rgba(0, 0, 0, 0.7) 58%,
+        rgba(0, 0, 0, 0.92) 100%
+    );
+    pointer-events: none;
+}
+
+#homePage.is-portada .pt-portrait__img img {
+    position: absolute;
+    inset: 0;
+}
+
+#homePage.is-portada .pt-portrait__name {
+    margin: 0;
+    color: #fff;
+    font-size: clamp(1rem, 8cqi, 1.25rem);
+    font-weight: 800;
+    text-align: left;
+}
+
+#homePage.is-portada .pt-portrait__reason,
+#homePage.is-portada .pt-portrait__reason--style {
+    min-height: 0;
+    margin: 2px 0 0;
+    color: #fff;
+    font-weight: 700;
+}
+
+#homePage.is-portada .pt-portrait__song {
+    margin: 2px 0 6px;
+    color: rgba(255, 255, 255, 0.88);
+}
+
+#homePage.is-portada .pt-portrait__actions {
+    margin: 0 -6px -6px;
+}
+
+/* El play, blanc com a la resta de caràtules */
+#homePage.is-portada .pt-portrait__actions .pt-act--play {
+    border: 0;
+    background: #fff;
+    color: #141615;
+}
+
+/* (3) «Torna-hi»: caràtules quadrades (cançons amb la caràtula, artistes amb la foto, llistes amb el mosaic) */
+#homePage.is-portada .pt-quick {
+    flex: 0 0 min(42vw, 180px);
+    position: relative;
+    aspect-ratio: 1;
+    overflow: hidden;
+    border: 2px solid #fff;
+    border-radius: var(--pt-radius-cover);
+    background: var(--pt-surface-2);
+    container-type: inline-size;
+}
+
+#homePage.is-portada .pt-quick__main {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 0;
+    min-height: 0;
+    padding: clamp(8px, 6cqi, 12px);
+    border-radius: 0;
+    color: #fff;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.75);
+}
+
+#homePage.is-portada .pt-quick__thumb,
+#homePage.is-portada .pt-quick__thumb--round,
+#homePage.is-portada .pt-quick__thumb--list {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    aspect-ratio: auto;
+    border-radius: 0;
+}
+
+#homePage.is-portada .pt-quick__thumb::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 0.88) 100%);
+    pointer-events: none;
+}
+
+#homePage.is-portada .pt-quick__text {
+    position: relative;
+    z-index: 1;
+}
+
+#homePage.is-portada .pt-quick__kicker {
+    color: #fff;
+    font-size: 0.625rem;
+    opacity: 0.9;
+}
+
+#homePage.is-portada .pt-quick__title {
+    color: #fff;
+    font-size: clamp(0.875rem, 9cqi, 1.0625rem);
+    font-weight: 800;
+    line-height: 1.15;
+}
+
+#homePage.is-portada .pt-quick__sub {
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 0.75rem;
+}
+
+@media (min-width: 900px) {
+    #homePage.is-portada .pt-quick-list {
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        gap: 4px;
+        padding: 6px;
+    }
+}
+
+/* Ordinador: en passar-hi el ratolí, la caràtula s'amplia una mica */
+@media (hover: hover) and (pointer: fine) {
+    #homePage.is-portada :is(.pt-card, .pt-portrait, .pt-quick) {
+        transition:
+            transform 0.18s ease,
+            box-shadow 0.18s ease;
+    }
+
+    #homePage.is-portada :is(.pt-card, .pt-portrait, .pt-quick):is(:hover, :focus-within) {
+        z-index: 3;
+        transform: scale(1.04);
+        box-shadow: 0 14px 34px rgba(0, 0, 0, 0.55);
+    }
+
+    #homePage.is-portada .pt-card__media:hover img {
+        transform: none;
+    }
+
+    #homePage.is-portada .pt-card__media:hover img[src*='/hqdefault.jpg'] {
+        transform: scale(1.34);
+    }
+
+    #homePage.is-portada .pt-quick:hover {
+        background: var(--pt-surface-2);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #homePage.is-portada :is(.pt-card, .pt-portrait, .pt-quick) {
+        transition: none;
+    }
+
+    #homePage.is-portada :is(.pt-card, .pt-portrait, .pt-quick):is(:hover, :focus-within) {
+        transform: none;
+    }
+}
+
+/* ---------- Inici, fases 2 i 3: «La teva ràdio», «Tria el teu so», «A prop teu» i «Les teves llistes» (2026-10-16) ----------
+   Les imatges fan de fons (mosaic) i el text va al damunt, com la cançó destacada d'un estil. Substitueix el collage de
+   caràtules girades de «La teva ràdio» i d'«A prop teu» (els blocs anteriors d'aquest fitxer queden sobreescrits a
+   Inici) i les tres fotos rodones petites de cada estil. */
+
+/* «La teva ràdio»: tres caràtules en mosaic a tot el fons, fosques a l'esquerra (on va el text) */
+#homePage.is-portada #ptRadio {
+    border-radius: var(--pt-radius-cover);
+}
+
+#homePage.is-portada #ptRadio .pt-radio__covers {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    display: grid;
+    grid-auto-columns: minmax(0, 1fr);
+    grid-auto-flow: column;
+    transform: none;
+}
+
+#homePage.is-portada #ptRadio .pt-radio__cover {
+    position: relative;
+    overflow: hidden;
+}
+
+#homePage.is-portada #ptRadio .pt-radio__covers img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    object-fit: cover;
+    /* hqdefault (4:3) amb franges negres d'un vídeo 16:9 */
+    transform: scale(1.34);
+}
+
+#homePage.is-portada #ptRadio .pt-radio__art::after {
+    z-index: 1;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(20, 22, 21, 0.95) 0%,
+            rgba(20, 22, 21, 0.86) 38%,
+            rgba(20, 22, 21, 0.45) 68%,
+            rgba(20, 22, 21, 0.2) 100%
+        ),
+        linear-gradient(180deg, rgba(20, 22, 21, 0) 55%, rgba(20, 22, 21, 0.55) 100%);
+}
+
+#homePage.is-portada #ptRadio .pt-radio__body {
+    position: relative;
+    z-index: 2;
+    max-width: 720px;
+    padding-right: 28px;
+}
+
+#homePage.is-portada #ptRadio :is(.pt-radio__title, .pt-radio__lead, .pt-eyebrow--brand) {
+    padding-right: 0;
+}
+
+/* Els modes: botons de vidre damunt la imatge; el triat, en llima */
+#homePage.is-portada #ptRadio .pt-mode__opt span {
+    background: rgba(20, 22, 21, 0.55);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+}
+
+#homePage.is-portada #ptRadio .pt-mode__opt input:checked + span {
+    background: var(--pt-accent);
+}
+
+@media (max-width: 768px) {
+    #homePage.is-portada #ptRadio .pt-radio__art::after {
+        background: linear-gradient(
+            180deg,
+            rgba(20, 22, 21, 0.45) 0%,
+            rgba(20, 22, 21, 0.82) 38%,
+            rgba(20, 22, 21, 0.94) 100%
+        );
+    }
+
+    #homePage.is-portada #ptRadio .pt-radio__body {
+        padding-right: 16px;
+    }
+}
+
+/* «Tria el teu so»: les fotos dels artistes de cada estil omplen la rajola, amb el nom en blanc al damunt */
+#homePage.is-portada .pt-style:not(.pt-style--add):not(.pt-style--more) {
+    position: relative;
+    isolation: isolate;
+    justify-content: flex-end;
+    min-height: 120px;
+    border: 2px solid #fff;
+    border-radius: var(--pt-radius-cover);
+    background: var(--pt-surface-2);
+    color: #fff;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.75);
+}
+
+#homePage.is-portada .pt-style__faces {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    display: grid;
+    grid-auto-columns: minmax(0, 1fr);
+    grid-auto-flow: column;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+}
+
+#homePage.is-portada .pt-style__faces img,
+#homePage.is-portada .pt-style:hover .pt-style__faces img {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    object-fit: cover;
+}
+
+#homePage.is-portada .pt-style__faces::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.35) 40%, rgba(0, 0, 0, 0.85) 100%);
+}
+
+#homePage.is-portada .pt-style:not(.pt-style--add):not(.pt-style--more) .pt-style__label {
+    color: #fff;
+}
+
+#homePage.is-portada .pt-style:not(.pt-style--add):not(.pt-style--more) .pt-style__count {
+    margin-top: 2px;
+    color: rgba(255, 255, 255, 0.88);
+}
+
+#homePage.is-portada .pt-style:not(.pt-style--add):not(.pt-style--more):hover {
+    border-color: var(--pt-accent);
+    background: var(--pt-surface-2);
+}
+
+/* «A prop teu» amb una zona desada: les caràtules dels tres artistes més propers fan de fons, amb els km */
+#homePage.is-portada .pt-near.has-place .pt-near__covers {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    display: grid;
+    grid-auto-columns: minmax(0, 1fr);
+    grid-auto-flow: column;
+    padding: 0;
+    transform: none;
+}
+
+#homePage.is-portada .pt-near.has-place .pt-near__covers li {
+    position: relative;
+    margin: 0;
+    overflow: hidden;
+}
+
+#homePage.is-portada .pt-near.has-place .pt-near__covers img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    object-fit: cover;
+    transform: none;
+}
+
+#homePage.is-portada .pt-near.has-place .pt-near__covers img[src*='/hqdefault.jpg'] {
+    transform: scale(1.34);
+}
+
+#homePage.is-portada .pt-near.has-place .pt-near__covers::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(20, 22, 21, 0.95) 0%,
+            rgba(20, 22, 21, 0.86) 38%,
+            rgba(20, 22, 21, 0.4) 70%,
+            rgba(20, 22, 21, 0.15) 100%
+        ),
+        linear-gradient(180deg, rgba(20, 22, 21, 0) 55%, rgba(20, 22, 21, 0.5) 100%);
+    pointer-events: none;
+}
+
+/* Els km, en una càpsula de vidre a dalt de cada caràtula */
+#homePage.is-portada .pt-near.has-place .pt-near__km {
+    top: 12px;
+    right: 12px;
+    bottom: auto;
+    left: auto;
+    z-index: 2;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    background: rgba(20, 22, 21, 0.6);
+    color: #fff;
+    transform: none;
+}
+
+#homePage.is-portada .pt-near.has-place .pt-near__body {
+    position: relative;
+    z-index: 2;
+    max-width: 720px;
+    padding-right: 0;
+}
+
+#homePage.is-portada .pt-near.has-place :is(.pt-near__title, .pt-eyebrow) {
+    padding-right: 0;
+}
+
+@media (max-width: 768px) {
+    #homePage.is-portada .pt-near.has-place .pt-near__covers::after {
+        background: linear-gradient(
+            180deg,
+            rgba(20, 22, 21, 0.4) 0%,
+            rgba(20, 22, 21, 0.82) 36%,
+            rgba(20, 22, 21, 0.94) 100%
+        );
+    }
+}
+
+/* «Les teves llistes»: cada llista és una caràtula quadrada (mosaic de les quatre primeres cançons) amb marc blanc */
+#homePlaylists .hp-item {
+    flex-basis: min(42vw, 180px);
+}
+
+#homePlaylists .hp-item > .hp-card {
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 0;
+    aspect-ratio: 1;
+    padding: 12px;
+    padding-right: 60px;
+    overflow: hidden;
+    border: 2px solid #fff;
+    border-radius: var(--pt-radius-cover);
+    background: var(--pt-surface-2);
+    color: #fff;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.75);
+}
+
+#homePlaylists .hp-card .hp-cover {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+#homePlaylists .hp-card .hp-cover::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 0.85) 100%);
+}
+
+/* El play, blanc i sempre visible, a baix a la dreta */
+#homePlaylists .hp-card .hp-play {
+    z-index: 1;
+    right: 10px;
+    bottom: 10px;
+    background-color: #fff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23141615' d='M8 5.5v13l11-6.5z'/%3E%3C/svg%3E");
+    opacity: 1;
+    transform: none;
+}
+
+#homePlaylists .hp-card .hp-name {
+    color: #fff;
+    font-weight: 800;
+}
+
+#homePlaylists .hp-card .hp-meta {
+    color: rgba(255, 255, 255, 0.88);
+}
+
+/* Compartir: vidre amb vora blanca, a dalt a la dreta */
+#homePlaylists .hp-share {
+    top: 8px;
+    right: 8px;
+    border-color: rgba(255, 255, 255, 0.7);
+    background: rgba(20, 22, 21, 0.55);
+    color: #fff;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    #homePlaylists .hp-item,
+    #homePage.is-portada .pt-style:not(.pt-style--add):not(.pt-style--more) {
+        transition:
+            transform 0.18s ease,
+            box-shadow 0.18s ease;
+    }
+
+    #homePlaylists .hp-item:is(:hover, :focus-within),
+    #homePage.is-portada .pt-style:not(.pt-style--add):not(.pt-style--more):is(:hover, :focus-visible) {
+        z-index: 3;
+        transform: scale(1.04);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #homePlaylists .hp-item:is(:hover, :focus-within),
+    #homePage.is-portada .pt-style:not(.pt-style--add):not(.pt-style--more):is(:hover, :focus-visible) {
+        transform: none;
+    }
+}
+
+/* «Les teves llistes»: sense subtítol explicatiu (continua per als lectors de pantalla) i botons de vidre */
+#homePlaylists .home-section-subtitle {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+#homePlaylists :is(.home-section-more, .home-section-arrow) {
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    background: rgba(20, 22, 21, 0.6);
+    color: #fff;
+}
+
+#homePlaylists :is(.home-section-more, .home-section-arrow):hover {
+    border-color: var(--pt-accent);
+    color: var(--pt-accent);
+}
+
+/* Mòbil: els km de les caràtules d'«A prop teu» van a dalt; el text de la targeta baixa una mica perquè no s'hi toquin */
+@media (max-width: 768px) {
+    #homePage.is-portada .pt-near.has-place .pt-near__body {
+        padding-top: 30px;
+    }
+}

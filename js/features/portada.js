@@ -390,7 +390,7 @@
         const name = esc(item.name || artistName(video));
         const song = esc(video.title || 'Cançó');
         const image = item.avatar
-            ? `<img src="${esc(avatarUrl(item.avatar, 240))}" alt="" loading="lazy" decoding="async" width="120" height="120">`
+            ? `<img src="${esc(avatarUrl(item.avatar, 400))}" alt="" loading="lazy" decoding="async" width="240" height="240">`
             : `<span class="pt-portrait__ph" aria-hidden="true">${esc(name.charAt(0).toUpperCase())}</span>`;
         const note = item.reason
             ? `<p class="pt-portrait__reason">${esc(item.reason)}</p>`
@@ -418,7 +418,7 @@
                 <button type="button" class="pt-quick__main" data-pt-artist="${esc(item.id)}" aria-label="Obre l’artista: ${name}">
                     <span class="pt-quick__thumb pt-quick__thumb--round">${
                         item.image
-                            ? `<img src="${esc(avatarUrl(item.image, 120))}" alt="" loading="lazy" decoding="async" width="56" height="56">`
+                            ? `<img src="${esc(avatarUrl(item.image, 400))}" alt="" loading="lazy" decoding="async" width="200" height="200">`
                             : ''
                     }</span>
                     <span class="pt-quick__text"><span class="pt-quick__kicker">Artista</span><span class="pt-quick__title">${name}</span></span>
@@ -443,7 +443,7 @@
         const artist = esc(item.subtitle);
         return `
             <button type="button" class="pt-quick__main" data-pt-play="${esc(item.id)}" aria-label="Reprodueix ${title}, de ${artist}">
-                <span class="pt-quick__thumb"><img src="${esc(cardThumbnail(item.image, true))}" alt="" loading="lazy" decoding="async" width="96" height="54"></span>
+                <span class="pt-quick__thumb"><img src="${esc(cardThumbnail(item.image, true))}" alt="" loading="lazy" decoding="async" width="200" height="200"></span>
                 <span class="pt-quick__text"><span class="pt-quick__kicker">${esc(item.reason || 'Cançó')}</span><span class="pt-quick__title">${title}</span><span class="pt-quick__sub">${artist}</span></span>
             </button>`;
     }
@@ -530,7 +530,7 @@
                         <span class="pt-style__faces" aria-hidden="true">${style.avatars
                             .map(
                                 src =>
-                                    `<img src="${esc(avatarUrl(src, 96))}" alt="" loading="lazy" decoding="async" width="28" height="28">`
+                                    `<img src="${esc(avatarUrl(src, 240))}" alt="" loading="lazy" decoding="async" width="120" height="120">`
                             )
                             .join('')}</span>
                         <span class="pt-style__label">${label}</span>
@@ -1008,10 +1008,11 @@
     function coversHtml(videos) {
         const covers = radioCovers(videos);
         if (!covers.length) return '';
+        // Cada caràtula va dins el seu requadre: fan de fons de la targeta en mosaic i es retallen sense franges negres
         return `<span class="pt-radio__covers">${covers
             .map(
                 video =>
-                    `<img src="${esc(cardThumbnail(video.thumbnail, true))}" alt="" loading="eager" decoding="async" width="96" height="54">`
+                    `<span class="pt-radio__cover"><img src="${esc(cardThumbnail(video.thumbnail))}" alt="" loading="eager" decoding="async" width="480" height="360"></span>`
             )
             .join('')}</span>`;
     }

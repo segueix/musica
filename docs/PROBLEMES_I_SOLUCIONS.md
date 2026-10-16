@@ -1,3 +1,11 @@
+## [2026-10-16] - Inici amb el llenguatge de caràtules
+
+**Petició:** que Inici s'assembli a la resta del disseny (fitxa d'artista, vista d'un estil, «Artistes i grups», «Per afinitat»).
+
+**Solució Implementada:** dos blocs CSS al final de `portada.css` (detall a `CLAUDE.md`, «Inici amb el llenguatge de caràtules») i canvis petits a `portada.js`: fotos dels artistes a 400 px («Fora del teu radar», «Torna-hi») i a 240 px (estils), i les caràtules de «La teva ràdio» dins `span.pt-radio__cover` a `hqdefault`.
+
+**Trampes:** (1) Les miniatures `hqdefault.jpg` són 4:3 amb franges negres d'un vídeo 16:9: en un quadrat es veuen. S'amplien `scale(1.34)` (4/3 ÷ 16/9); si fan de mosaic, cada imatge va dins un requadre amb `overflow: hidden` perquè l'ampliació no envaeixi la veïna (`portada.css` no pot fer servir `clip-path`). (2) `.pt-row` té `overflow-x: auto`, que també retalla en vertical: les files porten marge a dalt i a baix perquè l'ampliació en passar el ratolí no es talli. (3) Els blocs antics de «La teva ràdio» (`.pt-radio__covers` amb consultes de contenidor) i d'«A prop teu» (`.pt-near__covers`) continuen al fitxer (les proves en comproven parts) però a Inici queden sobreescrits pels selectors `#homePage.is-portada #ptRadio …` / `.pt-near.has-place …`. Proves: `tests/inici-caratules.test.js`; opt-in `node tests/browser/verificar-inici-caratules.js`.
+
 ## [2026-10-16] - Ordinador: «Descobreix» de la barra lateral no responia (el vídeo tapava l'app)
 
 **Símptoma:** a l'ordinador, l'opció «Descobreix» de la barra de l'esquerra «fallava bastant»: sovint no feia res.

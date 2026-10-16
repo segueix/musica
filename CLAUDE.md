@@ -535,6 +535,14 @@ const likes = ctx2.SegueixApp.features.likes;
 - El QR es genera a la mida en què es dibuixa i amb mòduls d'un nombre enter de píxels; mòduls foscos sobre crema, icona al mig. No el reescalis. Per sobre de `MAX_QR_URL_LENGTH` no hi ha QR.
 - Les imatges que carrega `share-card.js` es resolen respecte al seu `<script>` (l'app canvia la ruta de la URL en reproduir). Verificació opt-in: `node tests/browser/verificar-compartir.js`. Detall i trampes: `docs/PROBLEMES_I_SOLUCIONS.md` (2026-09-30, «Compartir una ràdio o una llista»).
 
+### Inici amb el llenguatge de caràtules (2026-10-16)
+
+- Inici fa servir el mateix llenguatge que la fitxa d'artista, la vista d'un estil, «Artistes i grups» i «Per afinitat»: **imatge plena, marc blanc de 2 px, cantonades `--pt-radius-cover` i text en blanc al damunt** amb un fosc suau. Tot és CSS a dos blocs al final de `portada.css` («Inici amb el llenguatge de caràtules» i «Inici, fases 2 i 3»), amb selectors `#homePage.is-portada …` i `#homePlaylists …`, sobre el marcatge de sempre de `portada.js` / `home-playlists.js` / `nearby-radio.js`: els clics no canvien.
+- **«Acabades de sortir» i «En directe»** (`.pt-card`): caràtula quadrada; durada (i «Gravat en directe») en càpsules de vidre a dalt a l'esquerra, cua i desar a dalt a la dreta, play blanc a baix a la dreta. Les miniatures `hqdefault` (4:3 amb franges d'un vídeo 16:9) s'amplien 1,34 (`img[src*='/hqdefault.jpg']`). **«Fora del teu radar»** (`.pt-portrait`): la foto del grup omple el requadre (a 400 px). **«Torna-hi»** (`.pt-quick`): caràtules quadrades (6 en una fila a ≥ 900 px; filera lateral al mòbil). **«Les teves llistes»**: caràtula quadrada amb el mosaic, play blanc i compartir de vidre.
+- **«La teva ràdio»** (`#ptRadio`): les tres caràtules fan de fons en mosaic (cada una dins `span.pt-radio__cover`, a `hqdefault` escalada), fosques a l'esquerra; ja no hi ha el collage girat (els blocs antics de `.pt-radio__covers` queden sobreescrits a Inici). **«A prop teu»** amb zona: les caràtules dels tres artistes més propers fan de fons i els km van en càpsules de vidre. **«Tria el teu so»**: les fotos dels artistes de l'estil (`avatarUrl(…, 240)`) omplen la rajola; «Tots els estils» i «Crea una categoria» no canvien.
+- **Sense subtítols explicatius visibles** a les seccions (`.pt-head__sub`, `.home-section-subtitle`): continuen a l'HTML per als lectors de pantalla. Botons de capçalera de vidre amb vora blanca.
+- Proves: `tests/inici-caratules.test.js`; opt-in `node tests/browser/verificar-inici-caratules.js` (amb `INICI_SHOTS=` fa captures).
+
 ### Portada de Segueix Música (2026-09-30)
 
 - La vista «Novetats» és **Inici** (la interfície no diu «Novetats»; l'id intern es conserva). `renderVideos()` crida `SegueixApp.features.portada.render(videosGrid, videos, { feed, all })`; si no hi és, cau a `homeSections` i a la graella.
