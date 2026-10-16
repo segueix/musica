@@ -50,7 +50,8 @@ describe('resoldre_canals_verificats: quota de l’API', () => {
     it('el workflow espera al cron o a una ordre manual i només escriu a main', () => {
         const workflow = readFileSync('.github/workflows/cercar-canals-youtube.yml', 'utf8');
         expect(workflow).not.toMatch(/^  push:/m);
-        expect(workflow).toContain('cron:');
+        // Estalvi d'octubre de 2026 (docs/ESTALVI_ACTIONS_OCTUBRE_2026.md): de moment només és manual.
+        expect(workflow).toMatch(/^\s+(cron:|workflow_dispatch:)/m);
         expect(workflow).toContain("if: github.ref == 'refs/heads/main'");
     });
 });
