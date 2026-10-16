@@ -61,7 +61,7 @@
 
     // Les fotos de perfil de YouTube porten la mida a la URL (=s800-c...): en demanem una de prou petita.
     function avatarUrl(url, size = 240) {
-        const value = String(url || '');
+        const value = cardThumbnail(url, size <= 120);
         return /=s\d+(-|$)/.test(value) ? value.replace(/=s\d+(-|$)/, `=s${size}$1`) : value;
     }
 
@@ -400,9 +400,9 @@
             const images = toArray(item.images);
             const cover =
                 images.length >= 4
-                    ? `<span class="pt-quick__mosaic">${images.map(src => `<img src="${esc(src)}" alt="" loading="lazy" decoding="async">`).join('')}</span>`
+                    ? `<span class="pt-quick__mosaic">${images.map(src => `<img src="${esc(cardThumbnail(src, true))}" alt="" loading="lazy" decoding="async">`).join('')}</span>`
                     : images.length
-                      ? `<img src="${esc(images[0])}" alt="" loading="lazy" decoding="async">`
+                      ? `<img src="${esc(cardThumbnail(images[0], true))}" alt="" loading="lazy" decoding="async">`
                       : '';
             return `
                 <button type="button" class="pt-quick__main" data-pt-list="${esc(item.id)}" aria-label="Reprodueix la llista ${name}">
@@ -414,7 +414,7 @@
         const artist = esc(item.subtitle);
         return `
             <button type="button" class="pt-quick__main" data-pt-play="${esc(item.id)}" aria-label="Reprodueix ${title}, de ${artist}">
-                <span class="pt-quick__thumb"><img src="${esc(item.image)}" alt="" loading="eager" decoding="async" width="96" height="54"></span>
+                <span class="pt-quick__thumb"><img src="${esc(cardThumbnail(item.image, true))}" alt="" loading="lazy" decoding="async" width="96" height="54"></span>
                 <span class="pt-quick__text"><span class="pt-quick__kicker">${esc(item.reason || 'Cançó')}</span><span class="pt-quick__title">${title}</span><span class="pt-quick__sub">${artist}</span></span>
             </button>`;
     }

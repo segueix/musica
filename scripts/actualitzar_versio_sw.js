@@ -54,6 +54,9 @@ function normalizeRel(value) {
 }
 
 function extractLocalAssets(html) {
+    // Una precàrrega de dades accelera la primera visita, però no forma part del shell.
+    // Feed i taxonomia han de conservar l’estratègia de dades i no versionar el cache de codi.
+    html = html.replace(/<link\b(?=[^>]*\brel=["']preload["'])(?=[^>]*\bas=["']fetch["'])[^>]*>/gi, '');
     const found = [];
     const seen = new Set();
     const re = /(?:src|href)\s*=\s*["']([^"']+)["']/gi;
@@ -137,3 +140,4 @@ function escapeRegex(str) {
 }
 
 main();
+

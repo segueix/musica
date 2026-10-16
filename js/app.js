@@ -3100,6 +3100,8 @@ async function bootstrapApp() {
     initLegalModal();
     initBackgroundPicker();
     initFontSizeControls();
+    bindCookieConsentUi();
+    window.dispatchEvent(new Event('segueix:consent-ready'));
     updateBootstrapProgress(50, "Configurant l'aplicació...");
 
     // Pre-carregar l'índex d'arxiu en segon pla (des de localStorage o fetch)
@@ -14311,7 +14313,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         await withStartupTimeout(
             (async () => {
                 await bootstrapApp();
-                bindCookieConsentUi();
                 bindTelegramDownloadButtons();
                 SupportModule.initModal();
                 await SupportModule.load();

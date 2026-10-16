@@ -62,3 +62,78 @@ describe('arrencada lleugera', () => {
         expect(scripts).toHaveLength(2);
     });
 });
+
+// L’avís inicial no depèn dels scripts grans ni de la resposta del feed.
+const earlyNotice = readFileSync('index.html', 'utf8').match(/<script id="earlyCookieNotice">([\s\S]*?)<\/script>/)[1];
+function earlyConsent(raw, blocked = false) {
+    const classes = new Set(['hidden']);
+    const handlers = new Map();
+    const banner = {
+        classList: { remove: key => classes.delete(key) },
+        addEventListener: (key, fn) => handlers.set(key, fn),
+        removeEventListener: key => handlers.delete(key),
+    };
+    let ready;
+    vm.runInNewContext(earlyNotice, {
+        document: { getElementById: () => banner },
+        localStorage: { getItem: () => { if (blocked) throw Error('blocked'); return raw; } },
+        window: { addEventListener: (_key, fn) => { ready = fn; } },
+    });
+    return { classes, handlers, ready: () => ready() };
+}
+
+describe('consentiment abans del catàleg', () => {
+    it.each([null, '{malformat', JSON.stringify({ status: 'unknown' })])('mostra l’avís sense un consentiment vàlid: %s', raw => {
+        expect(earlyConsent(raw).classes.has('hidden')).toBe(false);
+    });
+    it.each(['accepted', 'rejected', '"accepted"', '{"version":1,"status":"rejected","updatedAt":"2026-10-16"}'])('respecta la decisió anterior: %s', raw => {
+        expect(earlyConsent(raw).classes.has('hidden')).toBe(true);
+    });
+    it('mostra l’avís quan localStorage no és accessible', () => {
+        expect(earlyConsent(null, true).classes.has('hidden')).toBe(false);
+    });
+    it('conserva l’últim toc fins que el controlador estigui preparat i retira la captura', () => {
+        const state = earlyConsent(null);
+        const first = { click: vi.fn() }, last = { click: vi.fn() };
+        for (const button of [first, last]) state.handlers.get('click')({ target: { closest: () => button }, stopImmediatePropagation() {} });
+        expect(last.click).not.toHaveBeenCalled();
+        state.ready();
+        expect(first.click).not.toHaveBeenCalled();
+        expect(last.click).toHaveBeenCalledOnce();
+        expect(state.handlers.has('click')).toBe(false);
+    });
+    it('no injecta el complement antic de Shorts encara que en quedi HTML ocult', () => {
+        const fetch = vi.fn(), addEventListener = vi.fn();
+        const appendChild = vi.fn();
+        const document = { readyState: 'complete', getElementById: id => id === 'short-iframe' ? {} : null, createElement: vi.fn(() => ({})), head: { appendChild } };
+        const window = { document, SegueixApp: { features: {} }, fetch, addEventListener };
+        vm.runInNewContext(readFileSync('js/core/segueix-app.js', 'utf8'), { window });
+        expect(appendChild).not.toHaveBeenCalled();
+        expect(fetch).not.toHaveBeenCalled();
+        expect(addEventListener).not.toHaveBeenCalled();
+    });
+});
+
+describe('feed anticipat i fresc', () => {
+    it.each([false, true])('reutilitza la resposta una sola vegada i recupera una fallada inicial: %s', async failed => {
+        const response = { ok: true, json: async () => ({ videos: [], channels: {} }) };
+        const fetch = vi.fn().mockImplementationOnce(() => failed ? Promise.reject(Error('offline')) : Promise.resolve(response))
+            .mockResolvedValue(response);
+        const window = { appDataUrl: file => '/musica/' + file };
+        const ctx = { window, fetch, console, setTimeout };
+        const early = readFileSync('index.html', 'utf8').match(/<script id="earlyMusicFeed">([\s\S]*?)<\/script>/)[1];
+        vm.runInNewContext(early, ctx);
+        expect(fetch).toHaveBeenCalledWith('data/feed.json', { cache: 'no-store', priority: 'low' });
+        vm.runInNewContext(readFileSync('js/youtube.js', 'utf8') + '\nthis.api = YouTubeAPI;', ctx);
+        ctx.api.loadHiddenVideos = async () => {};
+        ctx.api.restoreFeedSnapshot = () => false;
+        ctx.api.applyFeedPayload = vi.fn(() => true);
+        await ctx.api.loadFeed();
+        expect(ctx.api.applyFeedPayload).toHaveBeenCalledOnce();
+        expect(fetch).toHaveBeenCalledTimes(failed ? 2 : 1);
+        expect(window).not.toHaveProperty('__segueixInitialFeed');
+        await ctx.api.loadFeed();
+        expect(fetch).toHaveBeenLastCalledWith('/musica/data/feed.json', { cache: 'no-store' });
+        expect(fetch).toHaveBeenCalledTimes(failed ? 3 : 2);
+    });
+});

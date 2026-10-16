@@ -307,7 +307,9 @@ const YouTubeAPI = {
 
         try {
             const feedUrl = window.appDataUrl?.(FEED_URL) || FEED_URL;
-            const response = await fetch(feedUrl, { cache: 'no-store' });
+            const earlyFeed = window.__segueixInitialFeed;
+            delete window.__segueixInitialFeed;
+            const response = (earlyFeed && await earlyFeed) || await fetch(feedUrl, { cache: 'no-store' });
             await filters;
             restoredFromSnapshot = this.restoreFeedSnapshot();
             if (!response.ok) {

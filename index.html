@@ -52,6 +52,13 @@
     <!-- CSS -->
     <link rel="stylesheet" href="css/styles.css?v=20260929-home-playlists-4">
     <link rel="stylesheet" href="css/portada.css?v=20261014-discos">
+
+    <!-- El catàleg es pot descarregar mentre arriben els scripts de la interfície. -->
+    <script id="earlyMusicFeed">
+        // Mateixa política de frescor que el client; evita reutilitzar una resposta HTTP antiga.
+        window.__segueixInitialFeed = fetch('data/feed.json', { cache: 'no-store', priority: 'low' }).catch(() => null);
+    </script>
+    <link rel="preload" as="fetch" href="data/music-taxonomy.json" crossorigin fetchpriority="low">
     
     <!-- Llibreries locals generades pel build; mantenen l’ordre sense bloquejar HTML. -->
     <script defer src="js/vendor/lucide.js"></script>
@@ -77,6 +84,34 @@
         </div>
     </div>
 
+
+    <script id="earlyCookieNotice">
+    (() => {
+        // El text del consentiment és HTML inicial: no espera el catàleg ni app.js.
+        // No s’activa cap reproductor ni es desa cap decisió sense una acció explícita.
+        let status;
+        try {
+            const raw = localStorage.getItem('segueix_cookie_consent_v2');
+            const value = raw === 'accepted' || raw === 'rejected' ? raw : JSON.parse(raw);
+            status = typeof value === 'string' ? value : value?.status;
+        } catch (_) { /* Sense emmagatzematge, es mostra l’avís. */ }
+        const banner = document.getElementById('cookieBanner');
+        if (status !== 'accepted' && status !== 'rejected') banner.classList.remove('hidden');
+        // Conserva un toc fet abans que arribin els controladors complets.
+        let pendingButton;
+        const remember = event => {
+            const button = event.target.closest('button');
+            if (!button) return;
+            pendingButton = button;
+            event.stopImmediatePropagation();
+        };
+        banner.addEventListener('click', remember, true);
+        window.addEventListener('segueix:consent-ready', () => {
+            banner.removeEventListener('click', remember, true);
+            pendingButton?.click();
+        }, { once: true });
+    })();
+    </script>
 
     <div id="youtubeConsentModal" class="playlist-modal hidden" aria-hidden="true">
         <div class="playlist-modal-backdrop" data-youtube-consent-close></div>

@@ -285,3 +285,18 @@ describe('HTML de les seccions', () => {
     });
 });
 
+
+
+describe('miniatures de portada', () => {
+    it('redueix totes les cobertes de màxima resolució i conserva les imatges alienes a YouTube', () => {
+        const model = portada.buildModel(context({ history: historyOf(['C2', 'C6', 'C10']) }));
+        model.lead.items = [{ type: 'song', id: 'v0001', title: 'Cançó', image: 'https://i.ytimg.com/vi/v0001/maxresdefault.jpg' },
+            { type: 'list', id: 'list', title: 'Llista', images: ['https://i.ytimg.com/vi/v0002/maxresdefault.jpg'] }];
+        if (model.radar.items[0]) model.radar.items[0].avatar = 'https://i.ytimg.com/vi/v0003/maxresdefault.jpg';
+        const html = portada.renderSections(model);
+        expect(html).not.toContain('maxresdefault');
+        expect(html).toContain('/v0001/mqdefault.jpg');
+        expect(html).toContain('/v0002/mqdefault.jpg');
+        expect(portada.cardHtml({ ...all[0], thumbnail: 'https://example.test/cover.png' })).toContain('https://example.test/cover.png');
+    });
+});
