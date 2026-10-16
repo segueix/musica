@@ -1686,3 +1686,12 @@ Es retiren les 38 Functions (middleware, SEO, sitemaps i administració). Les se
 S’eliminen les consultes i claus de YouTube Data API al client. El nom intern YouTubeAPI continua per compatibilitat: resol des del feed, historial i arxiu publicats. El build genera `data/video-channels.json` per localitzar una cançó només d’arxiu, i copia el panell i les pàgines de revisió. L’app conserva `?v=` també al domini propi, sense escriure rutes que necessitin servidor. No canvien la ingesta, la quota ni els calendaris.
 
 112 proves dirigides superades en 16 fitxers, amb conflictes/homònims, JSON, desat local fallit, consultes exclusivament a fitxers, enllaços i regressions de les fases 1–2. Generació completa del catàleg comprovada. Lint: cinc errors preexistents, cap error nou. Les proves dels handlers retirats s’han substituït per les de generació i runtime estàtics. No s’ha publicat; la integració del paquet al workflow continua a la fase 4. La comprovació visual i la reproducció real de YouTube continuen pendents.
+
+
+## [2026-10-16] - Les fitxes estàtiques podien substituir la portada offline
+
+**Causa:** el Service Worker desava qualsevol navegació HTML sota la clau d’`index.html`. Amb pàgines estàtiques reals d’artista, cançó i administració, visitar-les podia deixar una fitxa com a portada sense connexió.
+
+**Solució:** només l’arrel de l’app i `index.html` comparteixen la clau, ignorant els paràmetres `?v=`. La resta de pàgines té una còpia pel seu propi camí. No es desen errors 404 ni redireccions com a portada. El prefix `static-v2-` retira les còpies antigues en activar-se el SW; es manté l’activació ajornada per no interrompre la reproducció. Els índexs `static-routes.json` i `video-channels.json` utilitzen xarxa primer amb fallback local.
+
+**Verificació:** `tests/static-service-worker.test.js` cobreix arrel/subcarpeta, portada, artista, cançó, panell, errors, dades noves, ús offline i activació. El publicador regenera el hash sobre la sortida i `validar_paquet_estatic.cjs` el comprova abans de pujar l’artefacte. Pendent provar l’actualització real d’una PWA antiga a la fase 5.

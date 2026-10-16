@@ -19,7 +19,7 @@ El cron del feed és únic: `0 20 * * *`, amb `timezone: Europe/Madrid`. La peti
 | Feina | Quan s'executa |
 | --- | --- |
 | Actualitzar feed musical | Cada dia a les 20 h Europe/Madrid o petició manual expressa |
-| Publicar previsualitzacions Música | Canvis de fitxers del sistema a main; després d'una actualització diària correcta o del manteniment manual explícit |
+| Publicar web estàtica Música | Canvis de fitxers del sistema a main; després d'una actualització diària correcta o del manteniment manual explícit |
 | Validar base musical | Una única feina per PR de codi/configuració del sistema a main, o manual |
 | Revisar Shorts | Només manual durant l’estalvi d’octubre |
 | Cercar canals YouTube | Només manual durant l’estalvi d’octubre |
@@ -30,7 +30,7 @@ El cron del feed és únic: `0 20 * * *`, amb `timezone: Europe/Madrid`. La peti
 | Actualitzar feed només dels grups nous | Només petició manual expressa |
 | Manteniment musical manual | Una tasca triada expressament: arxiu, afinitats, ocults, aprimament o auditoria |
 
-Arxivament i afinitats es fan dins de l'actualització diària; l'aprimament ja forma part del generador. Service Worker, previsualitzacions i desplegament es fan dins de la mateixa feina de publicació. No es creen cadenes posteriors d'arxiu, aprimament, auditoria o cobertura. L'auditoria consulta Wikidata i queda només manual, no s'ha convertit en una feina local diària.
+Arxivament i afinitats es fan dins de l'actualització diària; l'aprimament ja forma part del generador. Service Worker, previsualitzacions i desplegament es fan dins de la mateixa feina de publicació. La fase 4 de la conversió estàtica genera i valida `_site/` a partir d’un únic checkout abans de pujar-lo, sense commits automàtics del publicador; els disparadors i la ingesta es conserven. No es creen cadenes posteriors d'arxiu, aprimament, auditoria o cobertura. L'auditoria consulta Wikidata i queda només manual, no s'ha convertit en una feina local diària.
 
 Una PR només de dades no activa CI. Una PR de sistema passa una sola validació amb proves rellevants; s'anul·len les versions antigues d'aquella validació. Les comprovacions de dades també es mantenen abans de la ingesta programada. No hi ha comparació duplicada automàtica contra la base ni repetició de CI sobre main. No s'han modificat proteccions de branca.
 
@@ -51,3 +51,4 @@ Inclou calendari local, filtres per dades i interfície, permisos, absència de 
 No es recupera la quota ja consumida, no s'esborren logs ni execucions anteriors i no s'engega el feed per comprovar aquesta configuració. Aquesta actuació no valida les 50 cançons ni genera el seu HTML; aquests treballs continuen separats.
 
 Referències tècniques oficials: https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows ; https://docs.github.com/en/billing/concepts/product-billing/github-actions
+

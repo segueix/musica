@@ -4,6 +4,7 @@ import { mkdtempSync, mkdirSync, writeFileSync, readFileSync, cpSync, existsSync
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 const { build, siteBase } = createRequire(import.meta.url)('../scripts/generar_web_estatica.cjs');
+const { validate } = createRequire(import.meta.url)('../scripts/validar_paquet_estatic.cjs');
 const dirs = [];
 afterEach(() => { for (const dir of dirs.splice(0)) rmSync(dir, { recursive: true, force: true }); });
 const C1 = 'UCaaaa111111111111111111';
@@ -105,5 +106,38 @@ describe('generació estàtica de Música', () => {
 
     it('rebutja dominis inadequats abans de generar', () => {
         for (const value of ['http://example.test/', 'https://user:password@example.test/', 'https://example.test/?x=1']) expect(() => siteBase(value)).toThrow();
+    });
+});
+
+
+describe('paquet publicable', () => {
+    it.each(['https://musica.example/', 'https://example.test/musica/'])('valida el mateix paquet i commit per a %s', siteUrl => {
+        const { root, out } = fixture();
+        const sourceCommit = 'a'.repeat(40);
+        build(root, { siteUrl, sourceCommit });
+        const report = validate(out, { siteUrl, sourceCommit });
+        expect(report.songs).toBe(3);
+        expect(report.files).toBeGreaterThan(report.pages);
+        expect(report.bytes).toBeGreaterThan(0);
+        expect(() => validate(out, { sourceCommit: 'b'.repeat(40) })).toThrow(/commit diferent/);
+        expect(() => validate(out, { siteUrl: 'https://altre.example/' })).toThrow(/URL diferent/);
+    });
+    it.each(['ruta', 'asset', 'hash', 'servidor', 'sitemap', 'index'])('refusa un paquet trencat: %s', defect => {
+        const { root, out } = fixture(); build(root);
+        if (defect === 'ruta') rmSync(join(out, 'compartir/canco/song0000001.html'));
+        if (defect === 'asset') rmSync(join(out, 'css/static-seo.css'));
+        if (defect === 'hash') writeFileSync(join(out, 'css/static-seo.css'), 'body { color: red; }');
+        if (defect === 'servidor') mkdirSync(join(out, 'functions'));
+        if (defect === 'sitemap') writeFileSync(join(out, 'sitemap.xml'), '<loc>https://altre.example/pages.xml</loc>');
+        if (defect === 'index') writeFileSync(join(out, 'data/video-channels.json'), '{}');
+        expect(() => validate(out)).toThrow(/Paquet estàtic:/);
+    });
+    it('reconstrueix rutes, HTML i índexs quan es retira una cançó', () => {
+        const { root, out, put } = fixture(); build(root); validate(out);
+        put('data/hidden-videos.json', { videoIds: ['song0000001', 'song0000002'] });
+        build(root);
+        expect(validate(out).songs).toBe(2);
+        expect(existsSync(join(out, 'compartir/canco/song0000001.html'))).toBe(false);
+        expect(JSON.parse(readFileSync(join(out, 'data/video-channels.json')))).not.toHaveProperty('song0000001');
     });
 });
