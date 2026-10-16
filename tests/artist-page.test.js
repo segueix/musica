@@ -1,6 +1,10 @@
 import { describe, it, expect } from 'vitest';
 import fs from 'node:fs';
+import { createRequire } from 'node:module';
 import { loadScript } from './setup.js';
+
+const require = createRequire(import.meta.url);
+const SegueixSongTitle = require('../js/song-title.js');
 
 const page = loadScript('js/features/artist-page.js', { SegueixApp: { features: {}, state: {}, utils: {} } }).SegueixApp
     .features.artistPage;
@@ -54,37 +58,37 @@ describe('fitxa d’artista: cançons per visualitzacions', () => {
     const songs = [
         { id: 'a', title: 'Poc', viewCount: 10, contentType: 'song' },
         { id: 'b', title: 'La més', viewCount: 5000, contentType: 'song', originalYear: 1998 },
-        { id: 'c', title: 'Clip 1', viewCount: 800, contentType: 'song', clip: true },
-        { id: 'd', title: 'Clip 2', viewCount: 900, contentType: 'song', clip: true },
-        { id: 'e', title: 'Viu 1', viewCount: 300, contentType: 'live_song' },
-        { id: 'f', title: 'Cançó (En directe)', viewCount: 200, contentType: 'song' },
-        { id: 'g', title: 'Mitjana', viewCount: 400, contentType: 'song' },
+        { id: 'c', title: 'Clip', viewCount: 800, contentType: 'song' },
+        { id: 'e', title: 'Viu', viewCount: 300, contentType: 'live_song' },
         { id: 'h', title: 'Short', viewCount: 9999, isShort: true },
         { id: 'b', title: 'La més (repetida)', viewCount: 5000 },
     ];
-    const isClip = video => Boolean(video.clip);
 
-    it('la més escoltada a part i la resta per visualitzacions, sense Shorts ni repetides', () => {
-        const model = page.songsModel(songs, { isClip });
+    it('la més escoltada a part i la resta per visualitzacions (també directes), sense Shorts ni repetides', () => {
+        const model = page.songsModel(songs);
         expect(model.best.id).toBe('b');
-        expect(model.total).toBe(7);
-        expect(model.all.map(v => v.id)).toEqual(['b', 'd', 'c', 'g', 'e', 'f', 'a']);
+        expect(model.total).toBe(4);
+        expect(model.all.map(v => v.id)).toEqual(['b', 'c', 'e', 'a']);
+        expect(model.rest.map(v => v.id)).toEqual(['c', 'e', 'a']);
+        expect(page.songsModel([]).best).toBeNull();
     });
 
-    it('separa videoclips i directes (també pel títol) i no els repeteix a la llista', () => {
-        const model = page.songsModel(songs, { isClip });
-        expect(model.clips.map(v => v.id)).toEqual(['d', 'c']);
-        expect(model.lives.map(v => v.id)).toEqual(['e', 'f']);
-        expect(model.rest.map(v => v.id)).toEqual(['g', 'a']);
-    });
-
-    it('una fila amb una sola cançó no és una secció: va a la llista', () => {
-        const model = page.songsModel(
-            songs.filter(v => v.id !== 'd'),
-            { isClip }
-        );
-        expect(model.clips).toEqual([]);
-        expect(model.rest.map(v => v.id)).toContain('c');
+    it('treu el nom del grup del títol (davant, darrere o entre parèntesis) però mai el deixa buit', () => {
+        const withCleaner = loadScript('js/features/artist-page.js', {
+            SegueixApp: { features: {}, state: {}, utils: {} },
+            SegueixSongTitle,
+        }).SegueixApp.features.artistPage;
+        const title = (raw, names = ['The Tyets']) => withCleaner.songTitle({ title: raw, originalTitle: raw }, names);
+        expect(title('The Tyets - Olívia')).toBe('Olívia');
+        expect(title('Coti x Coti - The Tyets')).toBe('Coti x Coti');
+        expect(title('Olívia (The Tyets)')).toBe('Olívia');
+        expect(title('Olívia [the tyets]')).toBe('Olívia');
+        expect(title('The Tyets, Cobla Sant Jordi - Coti x Coti (En Directe)')).toBe('Coti x Coti (En Directe)');
+        expect(title('The Tyets')).toBe('The Tyets');
+        // També el nom del canal del vídeo
+        expect(withCleaner.songTitle({ title: 'Txarango - Som Riu', channelTitle: 'Txarango' })).toBe('Som Riu');
+        // Sense song-title.js, el títol net que ja porta el vídeo
+        expect(page.songTitle({ title: 'Olívia', originalTitle: 'The Tyets - Olívia (Videoclip)' })).toBe('Olívia');
     });
 
     it('formata les xifres en català', () => {
@@ -120,14 +124,14 @@ describe('fitxa d’artista: cançons per visualitzacions', () => {
     it('cada cançó és una caràtula quadrada amb les dades al damunt, el play i la cua; el text s’escapa', () => {
         const html = page.cardHtml(
             { id: 'x"1', title: '<b>Hola</b>', viewCount: 1500, durationSeconds: 200, originalYear: 2001 },
-            { rank: 7, size: 'l' }
+            { rank: 7 }
         );
-        expect(html).toContain('class="ap-card ap-card--l"');
+        expect(html).toContain('class="ap-card"');
         expect(html).toContain('data-ap-play="x&quot;1"');
         expect(html).toContain('data-ap-queue="x&quot;1"');
         expect(html).toContain('&lt;b&gt;Hola&lt;/b&gt;');
         expect(html).not.toContain('<b>Hola');
-        expect(html).toContain('>#7<');
+        expect(html).toContain('<span class="ap-card__rank" aria-hidden="true">#7</span>');
         expect(html).toContain('1,5 k</span>');
         expect(html).toContain('2001 · 3:20');
         expect(html).toContain('aria-label="Ràdio a partir de «&lt;b&gt;Hola&lt;/b&gt;», 1,5 k visualitzacions, 2001"');
@@ -136,38 +140,17 @@ describe('fitxa d’artista: cançons per visualitzacions', () => {
         expect(page.cardHtml({ id: 'y', thumbnail: 'https://i.ytimg.com/vi/y/maxresdefault.jpg' })).toContain(
             'maxresdefault.jpg'
         );
-        expect(page.cardHtml({ id: 'y' }, { size: 'enorme' })).toContain('ap-card--s');
+        // Ja no hi ha adhesius de «Directe» ni mides diferents
+        expect(page.cardHtml({ id: 'z', contentType: 'live_song', title: 'Viu' })).not.toMatch(/Directe|ap-card--/);
     });
 
-    it('la mida de cada caràtula depèn de les visualitzacions', () => {
-        const views = [1000, 900, 700, 500, 300, 290, 100, 50, 10].map((viewCount, i) => ({
-            id: String(i),
-            viewCount,
-        }));
-        expect(page.sizeTiers(views)).toEqual(['xl', 'xl', 'xl', 'l', 'l', 'l', 's', 's', 's']);
-        // Com a molt tres de grans, encara que n'hi hagi més d'acostades a la primera
-        expect(page.sizeTiers([9, 9, 9, 9, 9].map((viewCount, i) => ({ id: String(i), viewCount })))).toEqual([
-            'xl',
-            'xl',
-            'xl',
-            'l',
-            'l',
-        ]);
-        expect(page.sizeTiers([])).toEqual([]);
-        // A la graella, les mides es calculen sobre tota la llista (no canvien amb «Mostra'n més»)
-        const html = page.songCardsHtml(views.slice(0, 7), { all: views });
-        expect(html.match(/ap-card--xl/g)).toHaveLength(3);
-        expect(html.match(/ap-card--l"/g)).toHaveLength(3);
-        expect(html.match(/ap-card--s"/g)).toHaveLength(1);
+    it('la resta de cançons segueixen la numeració a partir del #2', () => {
+        const html = page.songCardsHtml([{ id: 'a' }, { id: 'b' }, { id: 'c' }]);
+        expect(html.match(/#\d+</g)).toEqual(['#2<', '#3<', '#4<']);
+        expect(page.songCardsHtml([{ id: 'a' }], { start: 20 })).toContain('>#20<');
     });
 
-    it('un directe porta l’adhesiu «Directe» a la graella però no dins la fila de directes', () => {
-        const live = { id: 'z', title: 'Viu', contentType: 'live_song', viewCount: 10 };
-        expect(page.cardHtml(live, { from: 'list' })).toContain('ap-card__live');
-        expect(page.cardHtml(live, { from: 'lives' })).not.toContain('ap-card__live');
-    });
-
-    it('la més escoltada és la primera caràtula punk (#1), amb la cinta i les dades al damunt', () => {
+    it('la més escoltada és la caràtula #1, amb «La més escoltada» i les dades al damunt', () => {
         const html = page.bestHtml({
             id: 'b',
             title: 'La més',
@@ -175,38 +158,12 @@ describe('fitxa d’artista: cançons per visualitzacions', () => {
             originalYear: 1998,
             durationSeconds: 90,
         });
-        expect(html).toContain('class="ap-card ap-card--xl"');
         expect(html).toContain('>#1<');
         expect(html).toContain('<span class="ap-card__tag">La més escoltada</span>');
         expect(html).toContain('data-ap-play="b"');
         expect(html).toContain('5 k</span>');
         expect(html).toContain('1998 · 1:30');
         expect(page.bestHtml(null)).toBe('');
-    });
-
-    it('les files de videoclips i directes porten la seva ràdio i el títol en lletres retallades', () => {
-        const model = page.songsModel(songs, { isClip });
-        const html = page.shelvesHtml(model, { artist: 'Txarango' });
-        expect(html).toContain('data-ap-shelf-radio="clips"');
-        expect(html).toContain('data-ap-shelf-radio="lives"');
-        expect(html).toContain('<span class="pt-sr-only">Videoclips (2)</span>');
-        expect(page.shelvesHtml({ clips: [], lives: [] })).toBe('');
-    });
-
-    it('el títol punk: una lletra per peça, el text sencer per als lectors de pantalla i escapat', () => {
-        const html = page.punkTitleHtml('A<b', 3);
-        expect(html.match(/class="ap-punk__l"/g)).toHaveLength(3);
-        expect(html).toContain('>&lt;<');
-        expect(html).toContain('<span class="ap-punk__count" aria-hidden="true">3</span>');
-        expect(html).toContain('<span class="pt-sr-only">A&lt;b (3)</span>');
-        expect(page.punkTitleHtml('Dos mots')).toContain('ap-punk__gap');
-        expect(page.punkTitleHtml('Cançons')).not.toContain('ap-punk__count');
-    });
-
-    it('la cerca mira el títol i el de YouTube, sense accents', () => {
-        expect(page.matchesQuery({ title: 'Cançó', originalTitle: 'X - Cançó (Videoclip)' }, 'canco')).toBe(true);
-        expect(page.matchesQuery({ title: 'Cançó', originalTitle: 'X - Cançó (Videoclip)' }, 'videoclip')).toBe(true);
-        expect(page.matchesQuery({ title: 'Cançó', description: 'amor' }, 'amor')).toBe(false);
     });
 
     it('el play d’una cançó engega la ràdio de l’artista que hi comença', () => {
@@ -252,10 +209,8 @@ describe('fitxa d’artista: HTML i CSS', () => {
         expect(css).toMatch(/#channelPage \.ap-hero__img\.channel-profile-avatar\s*{[^}]*position:\s*absolute/);
     });
 
-    it('al costat de la capçalera, la més escoltada; després videoclips/directes i la graella de cançons', () => {
-        const order = ['id="apHero"', 'id="apBest"', 'id="apShelves"', 'id="apSongs"'].map(item =>
-            channelPage.indexOf(item)
-        );
+    it('al costat de la capçalera (a sota al mòbil), la més escoltada; després la graella de cançons', () => {
+        const order = ['id="apHero"', 'id="apBest"', 'id="apSongs"'].map(item => channelPage.indexOf(item));
         order.forEach(index => expect(index).toBeGreaterThan(-1));
         expect([...order].sort((a, b) => a - b)).toEqual(order);
         expect(css).toMatch(/#channelPage \.ap-head\s*{[^}]*grid-template-columns:\s*minmax\(0, 1fr\)/);
@@ -275,44 +230,45 @@ describe('fitxa d’artista: HTML i CSS', () => {
             'channelSupportBtn',
             'apBio',
             'apUserCats',
-            'apSongsTitle',
+            'apSongs',
         ].forEach(id => expect(channelPage, id).toContain(`id="${id}"`));
     });
 
-    it('la presentació comença plegada, amb botó per expandir-la', () => {
+    it('la presentació és una línia amb punts suspensius que es desplega tocant-la', () => {
         expect(channelPage).toMatch(/id="channelProfileDescription"[^>]*>/);
         expect(channelPage).toContain('is-collapsed');
-        expect(channelPage).toContain('id="apBioToggle"');
-        expect(channelPage).toContain('aria-expanded="false"');
-        expect(css).toMatch(/\.channel-profile-description\.is-collapsed\s*{[^}]*-webkit-line-clamp:\s*3/);
+        expect(channelPage).not.toContain('apBioToggle');
+        expect(css).toMatch(
+            /#channelPage \.channel-profile-description\.is-collapsed\s*{[^}]*white-space:\s*nowrap;[^}]*text-overflow:\s*ellipsis/
+        );
+        expect(css).toMatch(/\.channel-profile-description\.is-expandable\s*{[^}]*cursor:\s*pointer/);
     });
 
-    it('fora de la capçalera i de les caràtules només hi ha els títols: sense cerca ni text d’ajuda', () => {
+    it('fora de la capçalera i de les caràtules no hi ha cap text: ni títols de secció, ni cerca, ni ajuda', () => {
         const hero = channelPage.slice(channelPage.indexOf('id="apHero"'), channelPage.indexOf('id="apBest"'));
         expect(hero).toContain('id="apBio"');
         expect(hero).toContain('id="apUserCats"');
-        expect(channelPage).not.toContain('type="search"');
-        expect(channelPage).not.toContain('ap-songs-hint');
-        const after = channelPage.slice(channelPage.indexOf('id="apShelves"'));
+        const after = channelPage.slice(channelPage.indexOf('id="apBest"'));
+        expect(after).not.toContain('<h2');
         expect(after).not.toMatch(/<p(?![^>]*ap-songs-empty)[^>]*>/);
+        expect(channelPage).not.toContain('type="search"');
+        expect(channelPage).not.toMatch(/apShelves|apAlbums|>Discos</);
+        expect(css).not.toMatch(/\.ap-album|\.ap-punk|\.ap-shelf/);
         expect(css).toMatch(/\.ap-hero__chips \.uc-artist__head\s*{[^}]*display:\s*none/);
-        expect(css).toMatch(/#channelPage \.ap-punk__l\s*{[^}]*transform:/);
     });
 
-    it('no hi ha discos i les cançons són un mosaic de caràtules quadrades de mides diferents', () => {
-        expect(channelPage).not.toContain('apAlbums');
-        expect(channelPage).not.toContain('>Discos<');
-        expect(css).not.toContain('.ap-album');
+    it('la resta de cançons: tres columnes de caràtules quadrades iguals amb el mínim espai, tot en blanc', () => {
         expect(channelPage).toMatch(/<ul class="ap-grid" id="apSongs"/);
+        expect(css).toMatch(
+            /#channelPage \.ap-grid\s*{[^}]*grid-template-columns:\s*repeat\(3, minmax\(0, 1fr\)\);[^}]*gap:\s*4px/
+        );
         expect(css).toMatch(/#channelPage \.ap-card\s*{[^}]*aspect-ratio:\s*1;/);
-        expect(css).toMatch(/#channelPage \.ap-grid\s*{[^}]*grid-auto-flow:\s*dense/);
-        expect(css).toMatch(
-            /#channelPage \.ap-grid \.ap-card--xl\s*{[^}]*grid-column:\s*span 3;[^}]*grid-row:\s*span 3/
-        );
-        expect(css).toMatch(
-            /#channelPage \.ap-grid \.ap-card--l\s*{[^}]*grid-column:\s*span 2;[^}]*grid-row:\s*span 2/
-        );
-        expect(css).toMatch(/#channelPage \.ap-shelf__row\s*{[^}]*overflow-x:\s*auto/);
+        expect(css).toMatch(/#channelPage \.ap-card__rank\s*{[^}]*color:\s*#fff/);
+        // Les visualitzacions, sense fons
+        expect(css).not.toMatch(/#channelPage \.ap-card__views\s*{[^}]*background/);
+        // La #1 porta un marc blanc fi i res no gira
+        expect(css).toMatch(/#channelPage \.ap-best \.ap-card__art\s*{[^}]*border:\s*3px solid #fff/);
+        expect(css).not.toMatch(/#channelPage[^{]*\.ap-card[^{]*{[^}]*rotate\(/);
         expect(css).toMatch(/#channelPage \.ap-card__queue\s*{[^}]*width:\s*44px/);
     });
 

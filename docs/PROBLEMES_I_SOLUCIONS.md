@@ -1,3 +1,13 @@
+## [2026-10-16] - Fitxa d'artista: més blanca, tres columnes i títols sense el nom del grup
+
+**Petició:** la capçalera igual, però la presentació en una línia amb punts suspensius que es pugui tocar per veure-la sencera; la #1 a dalt a la dreta (a l'ordinador) amb el número i les visualitzacions en blanc i sense fons, un marc blanc fi i sense moviment; a sota, la resta de cançons per ordre en tres columnes de caràtules quadrades amb el mínim espai, sense videoclips/directes ni títols de secció (al mòbil, la #1 just sota la capçalera); treure el nom del grup dels títols; «tot més blanc i menys punk, però amb visuals grans».
+
+**Solució Implementada:** (1) `artist-page.js`: `songsModel()` només separa la més escoltada (`best`) de la resta (`rest`); `cardHtml()` sense mides, adhesius ni cintes; `songCardsHtml()` numera des del #2; `songTitle()` neteja el títol amb `SegueixSongTitle.cleanTitle()` i els noms de l'artista (`artistNames()`: fitxa + grup) i també treu «(Nom)» / «[Nom]»; la presentació és una línia (`measureBio()` / `setBioExpandable()` / `toggleBio()`, també amb Retorn i Espai). S'han tret `isLive()`, `sizeTiers()`, `shelvesHtml()`, `punkTitleHtml()`, la cerca (`matchesQuery()`) i la ràdio de les files. (2) `index.html`: fora `#apShelves`, el títol de «Cançons» i `#apBioToggle`. (3) `portada.css`: bloc «Caràtules quadrades amb les dades al damunt, en blanc» (graella `repeat(3, …)` amb `gap: 4px`, text blanc amb ombra, play blanc, cua sense fons; contenidor `inline-size` per escalar la lletra amb `cqi`), la #1 amb `border: 3px solid #fff`, la presentació d'una línia (`white-space: nowrap; text-overflow: ellipsis`); fora tot el CSS punk (girs, trama, cintes, títols retallats, files).
+
+**Trampes conegudes:** (1) La zona tàctil de la presentació fa 44 px (amb `padding`): per comptar-ne les línies cal restar-lo (`verificar-fitxa-artista.js`). (2) A les caràtules de 3 columnes del mòbil (~118 px) el play tapava el títol: a contenidors ≤ 520 px s'amaga el cercle (la caràtula sencera és el botó). (3) `cleanTitle()` és conservador i no treu el nom entre parèntesis; ho fa `songTitle()` només a la fitxa i mai deixa el títol buit (si el títol és el nom del grup, es queda). (4) Els radis literals de `portada.css` han de ser 2, 8, 10 o 12–16 px.
+
+---
+
 ## [2026-10-16] - Fitxa d'artista: només títols fora de les caràtules, títols d'anònim
 
 **Petició:** treure la cerca de cançons; posar la categoria a la primera secció, amb la primera caràtula; fora de les caràtules, només els títols de les secció, amb l'estètica punk i més juganers; cap text explicatiu fora de les caràtules.

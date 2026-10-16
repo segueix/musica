@@ -3408,9 +3408,10 @@ body .follow-btn-pill.is-followed:hover {
 /* ==========================================================================
    Fitxa d'artista (#channelPage) — redisseny 2026-10-16
    La foto de perfil fa de fons de la capçalera (.ap-hero) i al damunt hi van el nom, els subscriptors, les cançons,
-   l'origen (amb «Ràdio d'aquí»), els estils, les ràdios, seguir i compartir. Al costat (a sota al mòbil), la cançó
-   més escoltada (.ap-best). Després videoclips i directes (.ap-shelf), discos i totes les cançons per
-   visualitzacions (.ap-songs); cada play engega una ràdio de l'artista que comença per aquella cançó.
+   l'origen (amb «Ràdio d'aquí»), la presentació (una línia), els estils i les teves categories, les ràdios, seguir
+   i compartir. Al costat (a sota al mòbil), la cançó més escoltada (.ap-best, #1). A sota, la resta de cançons per
+   visualitzacions en tres columnes de caràtules quadrades (.ap-grid), sense títols de secció; cada caràtula engega
+   una ràdio de l'artista que comença per aquella cançó.
    Mobile first. Substitueix el disseny antic (.channel-profile-* de styles.css) amb selectors més específics.
    ========================================================================== */
 
@@ -3424,9 +3425,10 @@ body .follow-btn-pill.is-followed:hover {
 }
 
 /* ---------- Capçalera + la més escoltada ---------- */
+/* Al mòbil la #1 va just a sota de la capçalera, amb el mínim espai (com entre les caràtules) */
 #channelPage .ap-head {
     display: grid;
-    gap: 12px;
+    gap: 4px;
 }
 
 #channelPage .ap-hero {
@@ -3736,10 +3738,11 @@ body .follow-btn-pill.is-followed:hover {
     color: var(--pt-accent);
 }
 
-/* La presentació, dins la capçalera: tres línies i «Llegeix-ne més» */
+/* La presentació, dins la capçalera: una línia amb punts suspensius; si no hi cap, tocar-la la desplega */
 #channelPage .ap-hero .ap-bio {
+    width: 100%;
     max-width: 62ch;
-    margin: 2px 0 0;
+    margin: 0;
 }
 
 #channelPage .ap-hero .channel-profile-description {
@@ -3749,11 +3752,19 @@ body .follow-btn-pill.is-followed:hover {
     text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7);
 }
 
-#channelPage .ap-hero .ap-bio__toggle {
+#channelPage .ap-hero .channel-profile-description.is-expandable {
     min-height: 44px;
-    margin: 0;
-    font-size: 0.875rem;
-    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7);
+    padding: 11px 0;
+    cursor: pointer;
+}
+
+#channelPage .ap-hero .channel-profile-description.is-expandable:hover {
+    color: #fff;
+}
+
+#channelPage .ap-hero .channel-profile-description:focus-visible {
+    outline: 3px solid var(--pt-accent);
+    outline-offset: 2px;
 }
 
 /* Accions: ràdio de l'artista (llima), ràdio de l'estil, seguir i amagar */
@@ -3836,7 +3847,6 @@ body .follow-btn-pill.is-followed:hover {
 }
 
 .ap-radio:focus-visible,
-.ap-bio__toggle:focus-visible,
 #channelPage .channel-back-btn:focus-visible,
 #channelPage :is(.ap-chip-btn, .ap-card__art, .ap-card__queue, .ap-more, .uc-pill):focus-visible {
     outline: 3px solid var(--pt-accent);
@@ -3923,45 +3933,6 @@ body #channelPage .ap-hero .channel-profile-hide-btn.btn-round-icon {
     margin-left: 2px;
 }
 
-/* ---------- La més escoltada: la primera caràtula punk (#1), amb la cinta «La més escoltada» ---------- */
-#channelPage .ap-best {
-    display: block;
-    min-width: 0;
-    padding: 6px 8px 8px 2px;
-}
-
-#channelPage .ap-best__card {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-#channelPage .ap-best .ap-card {
-    --ap-t: clamp(1.4rem, 7vw, 2.1rem);
-    --ap-play: 64px;
-    --ap-tilt: -0.6deg;
-    width: 100%;
-}
-
-#channelPage .ap-best .ap-play svg {
-    width: 30px;
-    height: 30px;
-}
-
-#channelPage .ap-card__tag {
-    padding: 2px 8px;
-    background: var(--pt-terracotta);
-    color: #141615;
-    font-family: Impact, 'Arial Black', 'Helvetica Neue', sans-serif;
-    font-size: max(0.75rem, calc(var(--ap-t) * 0.5));
-    font-weight: 900;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.55);
-    transform: rotate(-2.5deg);
-}
-
 /* ---------- Presentació curta, expandible ---------- */
 .ap-bio {
     max-width: 68ch;
@@ -3977,159 +3948,12 @@ body #channelPage .ap-hero .channel-profile-hide-btn.btn-round-icon {
     overflow-wrap: anywhere;
 }
 
+/* Plegada: una sola línia amb punts suspensius (els salts de línia es tornen espais) */
 #channelPage .channel-profile-description.is-collapsed {
-    display: -webkit-box;
+    display: block;
     overflow: hidden;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-}
-
-.ap-bio__toggle {
-    min-height: 44px;
-    margin-top: 2px;
-    padding: 0;
-    border: 0;
-    background: none;
-    color: var(--pt-accent);
-    font: inherit;
-    font-size: 0.9375rem;
-    font-weight: 800;
-    cursor: pointer;
-}
-
-.ap-bio__toggle:hover {
-    text-decoration: underline;
-    text-underline-offset: 3px;
-}
-
-/* ---------- Capçaleres de secció i botons petits ---------- */
-#channelPage .ap-section-head {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px 16px;
-    margin: 0 0 12px;
-}
-
-/* Títols de secció com un anònim: cada lletra retallada d'un paper diferent, girada i desplaçada; el recompte en
-   un adhesiu rodó. Només hi ha aquests títols fora de les caràtules. */
-#channelPage .ap-section-title {
-    display: inline-flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin: 0;
-    color: var(--pt-text);
-}
-
-#channelPage .ap-punk {
-    display: inline-flex;
-    align-items: flex-end;
-    flex-wrap: wrap;
-    gap: 3px;
-    padding: 4px 2px;
-}
-
-#channelPage .ap-punk__l {
-    --ap-r: -4deg;
-    --ap-y: 0px;
-    display: inline-grid;
-    place-items: center;
-    min-width: 0.9em;
-    padding: 0.05em 0.16em 0;
-    background: var(--pt-text);
-    color: #141615;
-    font-family: Impact, 'Arial Black', 'Helvetica Neue', sans-serif;
-    font-size: clamp(1.7rem, 7.5vw, 2.6rem);
-    font-weight: 900;
-    line-height: 1.05;
-    text-transform: uppercase;
-    box-shadow: 3px 3px 0 #000;
-    transform: translateY(var(--ap-y)) rotate(var(--ap-r));
-    transition: transform 0.2s ease;
-}
-
-#channelPage .ap-punk__l:nth-child(5n + 2) {
-    --ap-r: 5deg;
-    --ap-y: -4px;
-    background: var(--pt-accent);
-    font-family: Georgia, 'Times New Roman', serif;
-    font-style: italic;
-}
-
-#channelPage .ap-punk__l:nth-child(5n + 3) {
-    --ap-r: -2deg;
-    --ap-y: 3px;
-    background: #141615;
-    color: var(--pt-accent);
-    outline: 2px solid var(--pt-text);
-    outline-offset: -2px;
-}
-
-#channelPage .ap-punk__l:nth-child(5n + 4) {
-    --ap-r: 3deg;
-    background: var(--pt-terracotta);
-    font-family: 'Courier New', Courier, monospace;
-}
-
-#channelPage .ap-punk__l:nth-child(5n) {
-    --ap-r: -6deg;
-    --ap-y: -2px;
-    background: var(--pt-text);
-    color: #141615;
-    font-family: Georgia, 'Times New Roman', serif;
-    font-weight: 700;
-    text-transform: lowercase;
-}
-
-#channelPage .ap-punk__gap {
-    width: 0.35em;
-}
-
-#channelPage .ap-section-head:hover .ap-punk__l {
-    --ap-r: 0deg;
-    --ap-y: 0px;
-}
-
-#channelPage .ap-punk__count {
-    display: inline-grid;
-    place-items: center;
-    min-width: 40px;
-    height: 40px;
-    padding: 0 6px;
-    border: 2px solid #141615;
-    border-radius: 50%;
-    background: var(--pt-accent);
-    color: #141615;
-    font-family: Impact, 'Arial Black', 'Helvetica Neue', sans-serif;
-    font-size: 1.05rem;
-    font-weight: 900;
-    box-shadow: 2px 2px 0 #000;
-    transform: rotate(12deg);
-}
-
-/* «Ràdio» de cada fila: un adhesiu punk */
-#channelPage .ap-section-head .ap-chip-btn {
-    border: 2px solid #141615;
-    border-radius: 2px;
-    background: var(--pt-accent);
-    color: #141615;
-    font-family: Impact, 'Arial Black', 'Helvetica Neue', sans-serif;
-    font-size: 1rem;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    box-shadow: 3px 3px 0 #000;
-    transform: rotate(-2deg);
-}
-
-#channelPage .ap-section-head .ap-chip-btn svg {
-    color: #141615;
-}
-
-#channelPage .ap-section-head .ap-chip-btn:hover {
-    color: #141615;
-    transform: rotate(0deg) translate(-1px, -1px);
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 #channelPage .ap-chip-btn {
@@ -4153,124 +3977,32 @@ body #channelPage .ap-hero .channel-profile-hide-btn.btn-round-icon {
     color: var(--pt-accent);
 }
 
-/* ---------- Caràtules quadrades, estil fanzín punk (2026-10-16) ----------
-   Cada cançó és una caràtula quadrada amb les dades al damunt: el número (posició per visualitzacions) en una cinta
-   negra, les visualitzacions en un adhesiu llima, «Directe» en terracota, el títol en cinta blanca i l'any i la
-   durada; la cua a dalt a la dreta i el play a baix a la dreta. La mida depèn de les visualitzacions (sizeTiers():
-   'xl' 3 × 3, 'l' 2 × 2, 's' 1 × 1). Vora clara, ombra dura negra, trama de punts i una mica de gir.
-   Videoclips i directes: una fila amb scroll lateral; totes les cançons: un mosaic (grid-auto-flow: dense). */
-#channelPage .ap-shelves {
-    display: grid;
-    gap: 30px;
-    margin-top: 30px;
-}
-
-#channelPage .ap-shelf__row {
-    display: flex;
-    align-items: flex-end;
-    gap: 16px;
-    margin: 0;
-    padding: 10px 10px 16px 4px;
-    overflow-x: auto;
-    overscroll-behavior-inline: contain;
-    scroll-snap-type: x proximity;
-    scrollbar-width: thin;
-    list-style: none;
-}
-
-#channelPage .ap-shelf__row .ap-card {
-    flex: none;
-    width: var(--ap-tile, 150px);
-    scroll-snap-align: start;
-}
-
-#channelPage .ap-shelf__row .ap-card--xl {
-    --ap-tile: clamp(220px, 62vw, 300px);
-}
-
-#channelPage .ap-shelf__row .ap-card--l {
-    --ap-tile: clamp(170px, 46vw, 230px);
-}
-
-#channelPage .ap-shelf__row .ap-card--s {
-    --ap-tile: clamp(130px, 36vw, 170px);
-}
-
-/* El mosaic: columnes quadrades (l'alçada de fila surt de l'ample del contenidor) */
+/* ---------- Caràtules quadrades amb les dades al damunt, en blanc (2026-10-16) ----------
+   La més escoltada (#1) i, a sota, la resta de cançons per visualitzacions en tres columnes de caràtules quadrades
+   iguals amb el mínim espai entre elles; sense títols de secció. Sobre la imatge, tot en blanc i sense fons: el
+   número a dalt a l'esquerra, la cua a dalt a la dreta i, a baix, les visualitzacions, el títol, l'any i la durada
+   i el play. Un fosc suau a baix perquè el text es llegeixi. Res no es mou ni gira. */
 #channelPage .ap-songs-wrap {
+    margin-top: 4px;
     container-type: inline-size;
 }
 
 #channelPage .ap-grid {
-    --ap-cols: 3;
-    --ap-gap: 10px;
     display: grid;
-    grid-template-columns: repeat(var(--ap-cols), minmax(0, 1fr));
-    grid-auto-rows: calc((100cqi - (var(--ap-cols) - 1) * var(--ap-gap)) / var(--ap-cols));
-    grid-auto-flow: dense;
-    gap: var(--ap-gap);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 4px;
     margin: 0;
-    padding: 4px 6px 8px 2px;
+    padding: 0;
     list-style: none;
 }
 
-#channelPage .ap-grid .ap-card--xl {
-    grid-column: span 3;
-    grid-row: span 3;
-}
-
-#channelPage .ap-grid .ap-card--l {
-    grid-column: span 2;
-    grid-row: span 2;
-}
-
 #channelPage .ap-card {
-    --ap-t: 0.8rem;
-    --ap-tilt: 0deg;
+    --ap-t: clamp(0.72rem, 3.4cqi, 1.35rem);
+    --ap-pad: clamp(6px, 1.6cqi, 14px);
+    --ap-play: clamp(32px, 7cqi, 56px);
     position: relative;
     min-width: 0;
     aspect-ratio: 1;
-    transform: rotate(var(--ap-tilt));
-    transition: transform 0.18s ease;
-}
-
-#channelPage .ap-card--xl {
-    --ap-t: clamp(1.15rem, 4.2cqi, 2rem);
-}
-
-#channelPage .ap-card--l {
-    --ap-t: clamp(0.95rem, 2.8cqi, 1.3rem);
-}
-
-#channelPage .ap-shelf__row .ap-card--xl {
-    --ap-t: 1.45rem;
-}
-
-#channelPage .ap-shelf__row .ap-card--l {
-    --ap-t: 1.1rem;
-}
-
-/* Cada caràtula una mica girada, com retallada i enganxada */
-#channelPage .ap-card:nth-child(4n + 1) {
-    --ap-tilt: -0.8deg;
-}
-
-#channelPage .ap-card:nth-child(4n + 2) {
-    --ap-tilt: 0.6deg;
-}
-
-#channelPage .ap-card:nth-child(4n + 3) {
-    --ap-tilt: -0.4deg;
-}
-
-#channelPage .ap-card:nth-child(4n) {
-    --ap-tilt: 1deg;
-}
-
-#channelPage .ap-card:hover,
-#channelPage .ap-card:focus-within {
-    z-index: 2;
-    transform: rotate(0deg) translate(-2px, -2px);
 }
 
 #channelPage .ap-card__art {
@@ -4281,19 +4013,13 @@ body #channelPage .ap-hero .channel-profile-hide-btn.btn-round-icon {
     height: 100%;
     padding: 0;
     overflow: hidden;
-    border: 2px solid var(--pt-text);
+    border: 0;
     border-radius: 2px;
     background: var(--pt-surface-2);
-    box-shadow: 5px 5px 0 #000;
-    color: var(--pt-text);
+    color: #fff;
     font: inherit;
     text-align: left;
     cursor: pointer;
-    transition: box-shadow 0.18s ease;
-}
-
-#channelPage .ap-card:hover .ap-card__art {
-    box-shadow: 8px 8px 0 #000;
 }
 
 #channelPage .ap-card__art img {
@@ -4303,73 +4029,69 @@ body #channelPage .ap-hero .channel-profile-hide-btn.btn-round-icon {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: grayscale(0.3) contrast(1.18);
-    transition: filter 0.2s ease;
-}
-
-#channelPage .ap-card:hover .ap-card__art img {
-    filter: none;
 }
 
 #channelPage .ap-card__art img.is-letterboxed {
     transform: scale(1.34);
 }
 
-/* Trama de punts (mitja tinta) i fosc a baix perquè les cintes es llegeixin */
-#channelPage .ap-card__ink {
+#channelPage .ap-card__shade {
     position: absolute;
     inset: 0;
-    background:
-        radial-gradient(rgba(0, 0, 0, 0.32) 0.9px, transparent 1.3px) 0 0 / 4px 4px,
-        linear-gradient(180deg, rgba(20, 22, 21, 0.35) 0%, rgba(20, 22, 21, 0) 28%, rgba(20, 22, 21, 0) 45%, rgba(20, 22, 21, 0.8) 100%);
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.42) 0%,
+        rgba(0, 0, 0, 0) 26%,
+        rgba(0, 0, 0, 0) 44%,
+        rgba(0, 0, 0, 0.78) 100%
+    );
     pointer-events: none;
+}
+
+#channelPage .ap-card__art:hover .ap-card__shade {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.15) 40%, rgba(0, 0, 0, 0.85) 100%);
 }
 
 #channelPage .ap-card__rank {
     position: absolute;
-    top: 8px;
-    left: 8px;
-    padding: 1px 7px 0;
-    background: #141615;
-    color: var(--pt-accent);
-    font-family: Impact, 'Arial Black', 'Helvetica Neue', sans-serif;
-    font-size: calc(var(--ap-t) * 1.05);
+    top: var(--ap-pad);
+    left: var(--ap-pad);
+    color: #fff;
+    font-size: calc(var(--ap-t) * 1.15);
     font-weight: 900;
-    line-height: 1.15;
-    letter-spacing: 0.01em;
-    transform: rotate(-3deg);
+    line-height: 1;
+    letter-spacing: -0.01em;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7);
 }
 
 #channelPage .ap-card__info {
     position: absolute;
-    left: 8px;
-    right: 8px;
-    bottom: 8px;
+    left: var(--ap-pad);
+    right: calc(var(--ap-pad) + var(--ap-play) + 6px);
+    bottom: var(--ap-pad);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 5px;
-    padding-right: calc(var(--ap-play, 44px) + 4px);
+    gap: 2px;
+    color: #fff;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.75);
 }
 
-#channelPage .ap-card__views,
-#channelPage .ap-card__live {
+#channelPage .ap-card__tag {
+    font-size: max(0.62rem, calc(var(--ap-t) * 0.55));
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+/* Visualitzacions: en blanc, sense fons */
+#channelPage .ap-card__views {
     display: inline-flex;
     align-items: center;
     gap: 4px;
-    padding: 2px 8px;
-    color: #141615;
-    font-family: Impact, 'Arial Black', 'Helvetica Neue', sans-serif;
-    font-size: max(0.72rem, calc(var(--ap-t) * 0.62));
-    font-weight: 900;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
-    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.55);
-}
-
-#channelPage .ap-card__views {
-    background: var(--pt-accent);
-    transform: rotate(2deg);
+    font-size: max(0.66rem, calc(var(--ap-t) * 0.66));
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
 }
 
 #channelPage .ap-card__views svg {
@@ -4377,169 +4099,117 @@ body #channelPage .ap-hero .channel-profile-hide-btn.btn-round-icon {
     height: 1.1em;
 }
 
-#channelPage .ap-card__live {
-    background: var(--pt-terracotta);
-    transform: rotate(-2deg);
-}
-
 #channelPage .ap-card__title {
     display: -webkit-box;
     max-width: 100%;
     overflow: hidden;
-    font-family: Impact, 'Arial Black', 'Helvetica Neue', sans-serif;
     font-size: var(--ap-t);
-    font-weight: 900;
-    line-height: 1.22;
-    letter-spacing: 0.01em;
-    text-transform: uppercase;
+    font-weight: 800;
+    line-height: 1.2;
     overflow-wrap: anywhere;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
-    transform: rotate(-1deg);
-}
-
-/* El títol, en cinta blanca (cada línia la seva tira) */
-#channelPage .ap-card__title span {
-    padding: 0 5px;
-    background: var(--pt-text);
-    color: #141615;
-    -webkit-box-decoration-break: clone;
-    box-decoration-break: clone;
 }
 
 #channelPage .ap-card__facts {
-    color: var(--pt-text);
-    font-size: max(0.7rem, calc(var(--ap-t) * 0.55));
-    font-weight: 800;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    text-shadow: 0 1px 4px #000;
+    font-size: max(0.62rem, calc(var(--ap-t) * 0.58));
+    font-weight: 600;
+    opacity: 0.85;
     font-variant-numeric: tabular-nums;
 }
 
 #channelPage .ap-card .ap-play {
-    z-index: 1;
-    right: 8px;
-    bottom: 8px;
-    width: var(--ap-play, 44px);
-    height: var(--ap-play, 44px);
-    border: 2px solid #141615;
-    box-shadow: 3px 3px 0 #000;
+    right: var(--ap-pad);
+    bottom: var(--ap-pad);
+    width: var(--ap-play);
+    height: var(--ap-play);
+    background: #fff;
+    color: #141615;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+    transition: none;
 }
 
-#channelPage .ap-card--xl {
-    --ap-play: 58px;
-}
-
-#channelPage .ap-card--xl .ap-play svg {
-    width: 28px;
-    height: 28px;
+#channelPage .ap-card .ap-play svg {
+    width: 45%;
+    height: 45%;
 }
 
 #channelPage .ap-card__queue {
     position: absolute;
-    top: 6px;
-    right: 6px;
+    top: 4px;
+    right: 4px;
     z-index: 1;
     display: grid;
     place-items: center;
     width: 44px;
     height: 44px;
     padding: 0;
-    border: 2px solid #141615;
+    border: 0;
     border-radius: 50%;
-    background: var(--pt-text);
-    color: #141615;
-    box-shadow: 2px 2px 0 #000;
+    background: transparent;
+    color: #fff;
+    filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.8));
     cursor: pointer;
 }
 
 #channelPage .ap-card__queue svg {
-    width: 20px;
-    height: 20px;
+    width: 22px;
+    height: 22px;
 }
 
 #channelPage .ap-card__queue:hover {
-    background: var(--pt-accent);
+    background: rgba(0, 0, 0, 0.35);
 }
 
-/* Les petites: només el número, el títol curt i les visualitzacions; la cua i les dades extra, a les grans */
-#channelPage .ap-grid .ap-card--s .ap-card__queue,
-#channelPage .ap-grid .ap-card--s .ap-card__facts,
-#channelPage .ap-grid .ap-card--s .ap-play {
-    display: none;
-}
-
-#channelPage .ap-grid .ap-card--s {
-    --ap-play: 0px;
-}
-
-#channelPage .ap-grid .ap-card--s .ap-card__title {
-    -webkit-line-clamp: 2;
-}
-
-#channelPage .ap-grid .ap-card--s .ap-card__info {
-    padding-right: 0;
-}
-
-@media (min-width: 520px) {
-    #channelPage .ap-grid {
-        --ap-cols: 4;
-        --ap-gap: 12px;
+/* Petites (mòbil, 3 columnes): sense l'any, la durada ni el cercle del play (tota la caràtula ja és el botó),
+   perquè el títol hi càpiga */
+@container (max-width: 520px) {
+    #channelPage .ap-grid .ap-card {
+        --ap-play: 0px;
     }
 
-    #channelPage .ap-grid .ap-card--s .ap-play {
-        display: grid;
-        width: 36px;
-        height: 36px;
+    #channelPage .ap-grid .ap-card__facts,
+    #channelPage .ap-grid .ap-play {
+        display: none;
     }
 
-    #channelPage .ap-grid .ap-card--s {
-        --ap-play: 36px;
+    #channelPage .ap-grid .ap-card__info {
+        right: var(--ap-pad);
     }
 
-    #channelPage .ap-grid .ap-card--s .ap-play svg {
+    #channelPage .ap-grid .ap-card__queue svg {
         width: 18px;
         height: 18px;
     }
 }
 
-@media (min-width: 900px) {
-    #channelPage .ap-grid {
-        --ap-cols: 6;
-        --ap-gap: 16px;
-    }
-
-    #channelPage .ap-grid .ap-card--s {
-        --ap-t: 0.85rem;
-    }
+/* ---------- La més escoltada (#1): marc blanc fi, el número i les visualitzacions en blanc ---------- */
+#channelPage .ap-best {
+    display: block;
+    min-width: 0;
+    container-type: inline-size;
 }
 
-@media (min-width: 1400px) {
-    #channelPage .ap-grid {
-        --ap-cols: 7;
-    }
+#channelPage .ap-best__card {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
-@media (prefers-reduced-motion: reduce) {
-    #channelPage .ap-card,
-    #channelPage .ap-card:hover,
-    #channelPage .ap-card:focus-within {
-        transform: none;
-        transition: none;
-    }
-
-    #channelPage .ap-card__art,
-    #channelPage .ap-card__art img {
-        transition: none;
-    }
+#channelPage .ap-best .ap-card {
+    --ap-t: clamp(1.1rem, 6.5cqi, 1.9rem);
+    --ap-pad: clamp(12px, 4.5cqi, 20px);
+    --ap-play: clamp(48px, 15cqi, 64px);
+    width: 100%;
 }
 
-/* ---------- Totes les cançons, per visualitzacions ---------- */
-#channelPage .ap-songs-wrap {
-    margin-top: 32px;
+#channelPage .ap-best .ap-card__art {
+    border: 3px solid #fff;
+    border-radius: 2px;
 }
 
+/* ---------- «Mostra'n més» i el missatge d'un artista sense cançons ---------- */
 #channelPage .ap-more {
     display: block;
     min-height: 44px;
@@ -4631,7 +4301,6 @@ body #channelPage .ap-hero .channel-profile-hide-btn.btn-round-icon {
 
     /* La caràtula omple la columna de dalt a baix (al costat de la capçalera) */
     #channelPage .ap-best .ap-card {
-        --ap-t: 1.6rem;
         height: 100%;
         aspect-ratio: auto;
         min-height: 320px;

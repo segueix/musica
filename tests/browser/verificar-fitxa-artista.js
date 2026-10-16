@@ -11,10 +11,12 @@
 // Comprova, a 390 px i a 1280 px:
 //   1) La foto de perfil ocupa tota la capçalera i el nom, les ràdios i compartir hi són al damunt.
 //   2) La més escoltada és la cançó amb més visualitzacions; a l'ordinador va al costat de la capçalera.
-//   3) Les cançons són caràtules quadrades amb les dades al damunt, per visualitzacions (de més a menys), de mida
-//      segons les visualitzacions, amb el play i la cua; no hi ha discos.
-//   4) El play d'una cançó engega una ràdio de l'artista que comença per aquella cançó.
-//   5) La pàgina no es desborda i no hi ha errors de JavaScript.
+//   3) La resta de cançons, per visualitzacions (#2, #3…), en tres columnes de caràtules quadrades iguals amb el
+//      mínim espai, les dades al damunt (sense el nom del grup al títol), el play i la cua; cap títol de secció,
+//      cap disc, cap cerca, cap text fora de les caràtules.
+//   4) La presentació és d'una línia i, si no hi cap, tocar-la la desplega.
+//   5) El play d'una cançó engega una ràdio de l'artista que comença per aquella cançó.
+//   6) La pàgina no es desborda i no hi ha errors de JavaScript.
 // Les imatges de YouTube (i.ytimg.com, yt3.ggpht.com) es deixen carregar si hi ha xarxa (per a les captures).
 
 const http = require('http');
@@ -132,8 +134,35 @@ const layout = page =>
             bestViews: views(best.querySelector('[data-ap-play]')?.dataset.apPlay || ''),
             maxViews,
             songViews: ids.map(views),
-            rowsWithPlay: songs.every(row => row.querySelector('.ap-play') && row.querySelector('[data-ap-queue]')),
-            shelves: [...document.querySelectorAll('#apShelves .ap-section-title')].map(el => el.textContent.trim()),
+            rowsWithPlay: songs.every(
+                row => row.querySelector('[data-ap-play]') && row.querySelector('[data-ap-queue]')
+            ),
+            headings: [...document.querySelectorAll('#channelPage h2')]
+                .filter(el => el.offsetParent)
+                .map(el => el.textContent.trim()),
+            ranks: songs.map(row => row.querySelector('.ap-card__rank')?.textContent.trim()),
+            columns: new Set(songs.map(row => Math.round(row.getBoundingClientRect().left))).size,
+            gap:
+                songs.length > 1
+                    ? Math.round(songs[1].getBoundingClientRect().left - songs[0].getBoundingClientRect().right)
+                    : 0,
+            sameSize: new Set(songs.map(row => Math.round(row.getBoundingClientRect().width))).size === 1,
+            // El nom del grup no ha de sortir dins del títol
+            titlesWithName: [...document.querySelectorAll('#apSongs .ap-card__title, #apBest .ap-card__title')]
+                .map(el => el.textContent)
+                .filter(title => title.toLowerCase().includes(currentChannelName.toLowerCase())),
+            bioLines: (() => {
+                const d = document.getElementById('channelProfileDescription');
+                if (!d || !d.offsetParent) return 0;
+                return Math.round(
+                    (d.clientHeight -
+                        parseFloat(getComputedStyle(d).paddingTop) -
+                        parseFloat(getComputedStyle(d).paddingBottom)) /
+                        parseFloat(getComputedStyle(d).lineHeight)
+                );
+            })(),
+            bioExpandable: Boolean(document.querySelector('#channelProfileDescription.is-expandable')),
+            bestRank: best.querySelector('.ap-card__rank')?.textContent.trim(),
             stats: document.getElementById('apStats').textContent,
             noSearch: !document.querySelector('#channelPage input[type="search"]'),
             bioInHero:
@@ -150,9 +179,6 @@ const layout = page =>
                 return r ? Math.round((r.width / r.height) * 100) / 100 : 0;
             })(),
             cardWidth: Math.round(document.querySelector('#apSongs .ap-card__art')?.getBoundingClientRect().width || 0),
-            sizes: [...document.querySelectorAll('#apSongs .ap-card')].map(card =>
-                Math.round(card.getBoundingClientRect().width)
-            ),
             pageWidth: document.documentElement.scrollWidth,
             viewport: window.innerWidth,
         };
@@ -196,30 +222,43 @@ async function check(browser, width, height, label) {
         info.songViews.slice(0, 8)
     );
     ok(`${label}: cada cançó té play i cua`, info.rowsWithPlay);
+    ok(`${label}: caràtules quadrades i iguals`, Math.abs(info.cardRatio - 1) < 0.03 && info.sameSize, [
+        info.cardRatio,
+        info.cardWidth,
+    ]);
+    ok(`${label}: tres columnes amb el mínim espai`, info.columns === 3 && info.gap <= 6, [info.columns, info.gap]);
     ok(
-        `${label}: caràtules quadrades (la primera, gran)`,
-        Math.abs(info.cardRatio - 1) < 0.03 && info.cardWidth >= 240,
-        [info.cardRatio, info.cardWidth]
+        `${label}: numeració seguida (#1 la més escoltada, després #2, #3…)`,
+        info.bestRank === '#1' && info.ranks.every((rank, i) => rank === `#${i + 2}`),
+        [info.bestRank, ...info.ranks.slice(0, 5)]
     );
+    ok(`${label}: cap títol de secció`, info.headings.length === 0, info.headings);
+    ok(`${label}: el nom del grup no surt dins dels títols`, info.titlesWithName.length === 0, info.titlesWithName);
+    ok(`${label}: presentació d'una línia`, info.bioLines <= 1, info.bioLines);
     ok(`${label}: sense discos`, info.noAlbums);
     ok(`${label}: sense cerca de cançons`, info.noSearch);
     ok(`${label}: presentació i categories a la primera secció`, info.bioInHero && info.catsInHero);
     ok(`${label}: cap text explicatiu fora de les caràtules`, info.looseText.length === 0, info.looseText);
-    ok(
-        `${label}: la mida de les caràtules depèn de les visualitzacions`,
-        new Set(info.sizes).size >= 2 && info.sizes[0] === Math.max(...info.sizes),
-        info.sizes
-    );
     ok(`${label}: la pàgina no es desborda`, info.pageWidth <= info.viewport, [info.pageWidth, info.viewport]);
-    console.log(`   ${label}: ${info.stats} · seccions: ${info.shelves.join(', ') || 'cap'}`);
+    console.log(`   ${label}: ${info.stats}`);
+    if (info.bioExpandable) {
+        await page.click('#channelProfileDescription');
+        const lines = await page.$eval('#channelProfileDescription', d =>
+            Math.round(
+                (d.clientHeight -
+                    parseFloat(getComputedStyle(d).paddingTop) -
+                    parseFloat(getComputedStyle(d).paddingBottom)) /
+                    parseFloat(getComputedStyle(d).lineHeight)
+            )
+        );
+        ok(`${label}: tocar la presentació la desplega sencera`, lines > 1, lines);
+        await page.click('#channelProfileDescription');
+    }
     if (OUT) {
         await page.screenshot({ path: path.join(OUT, `fitxa-${width}.png`) });
         await page.screenshot({ path: path.join(OUT, `fitxa-${width}-sencera.png`), fullPage: true });
         // El centre i la graella, amb les caràtules ja carregades (són lazy)
-        for (const [id, name] of [
-            ['apShelves', 'centre'],
-            ['apSongs', 'cancons'],
-        ]) {
+        for (const [id, name] of [['apSongs', 'cancons']]) {
             await page.evaluate(target => {
                 const el = document.getElementById(target);
                 window.scrollTo(0, el.getBoundingClientRect().top + window.scrollY - 90);

@@ -1,13 +1,15 @@
-// Fitxa d'artista: la foto de perfil de fons amb el nom, els subscriptors, l'origen, les ràdios i compartir al damunt;
-// al costat, la cançó més escoltada; a sota, caràtules de vídeo grans: els videoclips i els directes (si en té) i
-// totes les cançons per visualitzacions. Cada play engega una ràdio de l'artista que comença per aquella cançó.
-// La fitxa ja no mostra discos (2026-10-16).
+// Fitxa d'artista: la foto de perfil de fons amb el nom, els subscriptors, l'origen, la presentació (una línia que es
+// desplega), les ràdios i compartir al damunt; al costat (a sota al mòbil), la cançó més escoltada (#1); a sota, la
+// resta de cançons per visualitzacions en tres columnes de caràtules quadrades, amb les dades al damunt. Cada
+// caràtula engega una ràdio de l'artista que comença per aquella cançó. Sense discos, files de videoclips/directes,
+// cerca ni títols de secció (2026-10-16).
 // Implementació directa (patró 2); el que no toca el DOM és pur i testable:
 //  - artistStyles(): estils de l'artista (el principal primer) per a la «ràdio de l'estil»;
 //  - radiosModel(): quines ràdios es poden engegar i amb quin text;
 //  - bioModel(): presentació neta (sense text de farciment);
-//  - songsModel(): la més escoltada, videoclips, directes i la resta, per visualitzacions;
-//  - bestHtml(), shelvesHtml(), songCardsHtml(): HTML de cada bloc.
+//  - songsModel(): la més escoltada i la resta, per visualitzacions;
+//  - songTitle(): títol sense el nom del grup;
+//  - bestHtml(), songCardsHtml(): HTML de cada bloc.
 // La fitxa la pinta openChannelProfileLegacyImpl() (app.js), que crida showProfile(), setSongs() i renderSongs().
 (function (window) {
     const app = window.SegueixApp;
@@ -18,11 +20,9 @@
     // Una combinació de tres estils ja és una barreja prou àmplia; més la diluiria.
     const MAX_STYLES = 3;
     const MIN_SONGS = 2;
-    // Cançons de la llista que es veuen d'entrada i quantes més se n'hi afegeixen amb «Mostra'n més».
+    // Cançons de la graella (tres columnes) que es veuen d'entrada i quantes més s'hi afegeixen amb «Mostra'n més».
     const LIST_FIRST = 18;
     const LIST_STEP = 24;
-    // Videoclips i directes: una fila amb scroll lateral; més enllà d'aquest nombre van a la llista.
-    const SHELF_MAX = 24;
     const PLAY_ICON =
         '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 5.6v12.8a1 1 0 0 0 1.5.86l10.2-6.4a1 1 0 0 0 0-1.72L9.5 4.74A1 1 0 0 0 8 5.6Z"/></svg>';
     // El mateix símbol que «Afegeix a la cua» de la portada (el «+» sol és «afegeix a una llista»)
@@ -102,7 +102,7 @@
         return { text: clean, hasText: clean.length > 0 };
     }
 
-    // ---------- Cançons: la més escoltada, videoclips, directes i la resta ----------
+    // ---------- Cançons: la més escoltada i la resta, per visualitzacions ----------
 
     const viewsOf = video => Math.max(0, Number(video?.viewCount ?? video?.views) || 0);
 
@@ -166,17 +166,31 @@
     // `hqdefault` és 4:3 amb franges negres a dalt i a baix: en un requadre quadrat s'amplia per treure-les.
     const isLetterboxed = src => /\/hqdefault\.jpg$/i.test(src);
 
-    const LIVE_RE = /(\ben\s+directe\b|\(directe\)|\[directe\]|\blive\b|\ben\s+viu\b|\bconcert\b)/i;
+    const escapeRegExp = value => String(value).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const hasContent = value => /[\p{L}\p{N}]/u.test(value);
 
-    function isLive(video) {
-        const type = text(video?.contentType).toLowerCase().replace(/-/g, '_');
-        if (type === 'live_song') return true;
-        return LIVE_RE.test(text(video?.originalTitle) || text(video?.title));
+    // Títol que es veu a la caràtula, sense el nom del grup (si el grup el posa dins del títol, sobra i el tallaria):
+    // song-title.js treu el nom del davant o del darrere («The Tyets - Olívia») i les marques de videoclip; aquí
+    // també el nom entre parèntesis o claudàtors («Olívia (The Tyets)»). Mai deixa el títol buit.
+    function songTitle(video, names = []) {
+        const raw = text(video?.originalTitle) || text(video?.title);
+        const artists = [...(Array.isArray(names) ? names : []), video?.channelTitle, video?.originalChannelTitle]
+            .map(text)
+            .filter(Boolean);
+        const cleaner = window.SegueixSongTitle?.cleanTitle;
+        let title = text(typeof cleaner === 'function' ? cleaner(raw, { artists }) : video?.title) || raw;
+        for (const name of artists) {
+            const next = title
+                .replace(new RegExp(`\\s*[([]\\s*${escapeRegExp(name)}\\s*[)\\]]`, 'giu'), '')
+                .replace(/\s{2,}/g, ' ')
+                .trim();
+            if (hasContent(next)) title = next;
+        }
+        return title || 'Cançó';
     }
 
-    // Separa les cançons per visualitzacions: la més escoltada, els videoclips (`isClip`, el mateix criteri que
-    // «Videoclips oficials» de la portada), els directes i la resta. Cap cançó no surt dues vegades.
-    function songsModel(videos, { isClip = () => false, shelfMax = SHELF_MAX } = {}) {
+    // Cançons per visualitzacions (sense Shorts ni repetides): la més escoltada i la resta.
+    function songsModel(videos) {
         const seen = new Set();
         const list = (Array.isArray(videos) ? videos : [])
             .filter(video => {
@@ -188,108 +202,36 @@
             .map((video, index) => ({ video, index }))
             .sort((a, b) => viewsOf(b.video) - viewsOf(a.video) || a.index - b.index)
             .map(item => item.video);
-        const best = list[0] || null;
-        const others = list.slice(1);
-        const lives = [];
-        const clips = [];
-        const rest = [];
-        others.forEach(video => {
-            if (isLive(video)) lives.push(video);
-            else if (isClip(video)) clips.push(video);
-            else rest.push(video);
-        });
-        // Una fila amb una sola cançó no és una secció: va a la llista.
-        const shelf = items => (items.length >= 2 ? items.slice(0, shelfMax) : []);
-        const shown = new Set([...shelf(clips), ...shelf(lives)].map(video => text(video.id)));
-        return {
-            best,
-            clips: shelf(clips),
-            lives: shelf(lives),
-            rest: others.filter(video => !shown.has(text(video.id))),
-            all: list,
-            total: list.length,
-        };
-    }
-
-    // «La més escoltada»: la mateixa caràtula punk que la resta (#1), amb la cinta «La més escoltada» i totes les
-    // dades al damunt; tota la caràtula engega la ràdio de l'artista que hi comença.
-    function bestHtml(video) {
-        if (!video?.id) return '';
-        return `<ul class="ap-best__card">${cardHtml(video, { from: 'best', rank: 1, size: 'xl', tag: 'La més escoltada' })}</ul>`;
-    }
-
-    // Títol de secció com un anònim de lletres retallades: cada lletra amb el seu paper, color i gir (CSS per
-    // nth-child). El text sencer va a aria-label; les lletres són decoratives.
-    function punkTitleHtml(title, count = 0) {
-        const value = text(title);
-        const letters = [...value]
-            .map(char =>
-                char === ' '
-                    ? '<span class="ap-punk__gap"></span>'
-                    : `<span class="ap-punk__l">${escapeHtml(char)}</span>`
-            )
-            .join('');
-        const total = Math.max(0, Math.round(Number(count) || 0));
-        return `<span class="ap-punk" aria-hidden="true">${letters}</span>${
-            total ? `<span class="ap-punk__count" aria-hidden="true">${total}</span>` : ''
-        }<span class="pt-sr-only">${escapeHtml(value)}${total ? ` (${total})` : ''}</span>`;
+        return { best: list[0] || null, rest: list.slice(1), all: list, total: list.length };
     }
 
     const EYE_ICON =
         '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M1.5 12S5 5 12 5s10.5 7 10.5 7S19 19 12 19 1.5 12 1.5 12Z"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/></svg>';
 
-    // Mida de cada caràtula segons les visualitzacions (relatives a la més escoltada del conjunt): 'xl' (3 × 3) les
-    // que en tenen almenys el 60 %, 'l' (2 × 2) les que en tenen almenys el 28 % i 's' (1 × 1) la resta. La primera
-    // sempre és 'xl'; com a molt MAX_XL grans i un terç de mitjanes, perquè el mosaic no sigui tot igual.
-    const MAX_XL = 3;
-    function sizeTiers(videos) {
-        const list = Array.isArray(videos) ? videos : [];
-        const max = Math.max(1, ...list.map(viewsOf));
-        const maxL = Math.max(1, Math.ceil(list.length / 3));
-        let xl = 0;
-        let l = 0;
-        return list.map((video, index) => {
-            const ratio = viewsOf(video) / max;
-            if (index === 0 || (ratio >= 0.6 && xl < MAX_XL)) {
-                xl += 1;
-                return 'xl';
-            }
-            if (ratio >= 0.28 && l < maxL) {
-                l += 1;
-                return 'l';
-            }
-            return 's';
-        });
-    }
-
-    // Caràtula quadrada amb les dades al damunt (estil fanzín punk): el número (posició per visualitzacions), les
-    // visualitzacions en un adhesiu, el títol en cinta, l'any i la durada, «Afegeix a la cua» i el play. Tota la
-    // caràtula engega la ràdio que comença per la cançó. `size`: 'xl' | 'l' | 's' (sizeTiers()).
-    function cardHtml(video, { from = 'list', rank = 0, size = 's', tag = '' } = {}) {
+    // Caràtula quadrada amb les dades al damunt, en blanc: el número (posició per visualitzacions), les
+    // visualitzacions, el títol (sense el nom del grup), l'any i la durada, «Afegeix a la cua» i el play. Tota la
+    // caràtula engega la ràdio de l'artista que comença per la cançó.
+    function cardHtml(video, { rank = 0, tag = '', names = [] } = {}) {
         const id = escapeHtml(video.id);
-        const title = text(video.title) || 'Cançó';
+        const title = songTitle(video, names);
         const duration = formatDuration(video.durationSeconds);
         const views = viewsOf(video);
         const year = songYear(video);
         const art = artOf(video, { square: true, large: true });
-        const live = isLive(video) && from !== 'lives';
         const facts = [year ? String(year) : '', duration].filter(Boolean).join(' · ');
         const label = [`Ràdio a partir de «${title}»`, viewsLabel(views), year ? String(year) : '']
             .filter(Boolean)
             .join(', ');
-        const tier = ['xl', 'l', 's'].includes(size) ? size : 's';
         return `
-            <li class="ap-card ap-card--${tier}">
-                <button class="ap-card__art" type="button" data-ap-play="${id}" data-ap-from="${from}"
-                    aria-label="${escapeHtml(label)}">
+            <li class="ap-card">
+                <button class="ap-card__art" type="button" data-ap-play="${id}" aria-label="${escapeHtml(label)}">
                     <img src="${escapeHtml(art)}" alt="" loading="lazy" decoding="async"${isLetterboxed(art) ? ' class="is-letterboxed"' : ''}>
-                    <span class="ap-card__ink" aria-hidden="true"></span>
+                    <span class="ap-card__shade" aria-hidden="true"></span>
                     ${rank ? `<span class="ap-card__rank" aria-hidden="true">#${rank}</span>` : ''}
                     <span class="ap-card__info" aria-hidden="true">
                         ${tag ? `<span class="ap-card__tag">${escapeHtml(tag)}</span>` : ''}
                         ${views ? `<span class="ap-card__views">${EYE_ICON}${formatCount(views)}</span>` : ''}
-                        ${live ? '<span class="ap-card__live">Directe</span>' : ''}
-                        <span class="ap-card__title"><span>${escapeHtml(title)}</span></span>
+                        <span class="ap-card__title">${escapeHtml(title)}</span>
                         ${facts ? `<span class="ap-card__facts">${escapeHtml(facts)}</span>` : ''}
                     </span>
                     <span class="ap-play" aria-hidden="true">${PLAY_ICON}</span>
@@ -298,48 +240,18 @@
             </li>`;
     }
 
-    // Posició de cada cançó entre totes les de l'artista (per visualitzacions): «#1» és la més escoltada.
-    function rankFor(model) {
-        const ranks = new Map((model?.all || []).map((video, index) => [text(video.id), index + 1]));
-        return video => ranks.get(text(video?.id)) || 0;
+    // «La més escoltada»: la caràtula #1, amb l'etiqueta «La més escoltada».
+    function bestHtml(video, { names = [] } = {}) {
+        if (!video?.id) return '';
+        return `<ul class="ap-best__card">${cardHtml(video, { rank: 1, tag: 'La més escoltada', names })}</ul>`;
     }
 
-    function cardsHtml(videos, { from = 'list', rankOf = () => 0, tiers = null } = {}) {
-        const list = Array.isArray(videos) ? videos : [];
-        const sizes = tiers || sizeTiers(list);
-        return list.map((video, index) => cardHtml(video, { from, rank: rankOf(video), size: sizes[index] })).join('');
-    }
-
-    // Videoclips i directes: una fila de caràtules quadrades cadascun (només si n'hi ha almenys dos), de mida segons
-    // les visualitzacions, amb la ràdio només d'aquell tipus.
-    function shelvesHtml(model, { artist = '' } = {}) {
-        const who = text(artist) || 'l’artista';
-        const rankOf = rankFor(model);
-        return [
-            ['clips', 'Videoclips', model?.clips || [], `Ràdio dels videoclips de ${who}`],
-            ['lives', 'Directes', model?.lives || [], `Ràdio dels directes de ${who}`],
-        ]
-            .filter(([, , items]) => items.length)
-            .map(
-                ([key, title, items, radio]) => `
-            <section class="ap-shelf ap-shelf--${key}" aria-labelledby="apShelf-${key}">
-                <div class="ap-section-head">
-                    <h2 class="ap-section-title" id="apShelf-${key}">${punkTitleHtml(title, items.length)}</h2>
-                    <button class="ap-chip-btn" type="button" data-ap-shelf-radio="${key}" aria-label="${escapeHtml(radio)}">${PLAY_ICON}<span>Ràdio</span></button>
-                </div>
-                <ul class="ap-shelf__row">${cardsHtml(items, { from: key, rankOf })}</ul>
-            </section>`
-            )
+    // La resta de cançons, en l'ordre que rep (per visualitzacions). `start`: posició de la primera (la #2 si
+    // la #1 és la més escoltada).
+    function songCardsHtml(videos, { start = 2, names = [] } = {}) {
+        return (Array.isArray(videos) ? videos : [])
+            .map((video, index) => cardHtml(video, { rank: start + index, names }))
             .join('');
-    }
-
-    // Totes les cançons: mosaic de caràtules en l'ordre que rep (per visualitzacions). Les mides es calculen sobre
-    // tota la llista (no només la pàgina que es veu) perquè no canviïn en prémer «Mostra'n més».
-    function songCardsHtml(videos, { model = null, all = null, from = 'list' } = {}) {
-        const list = Array.isArray(videos) ? videos : [];
-        const full = Array.isArray(all) ? all : list;
-        const tiers = sizeTiers(full).slice(0, list.length);
-        return cardsHtml(list, { from, rankOf: rankFor(model), tiers });
     }
 
     // ---------- DOM ----------
@@ -456,25 +368,6 @@
 
     // ---------- Cançons de la fitxa ----------
 
-    // Videoclips: el mateix criteri que «Videoclips oficials» de la portada (home-sections.js).
-    function isClip(video) {
-        const fn = app.features.homeSections?.isOfficialClip;
-        return typeof fn === 'function' ? Boolean(fn(video)) : false;
-    }
-
-    const fold = value =>
-        text(value)
-            .toLowerCase()
-            .normalize('NFD')
-            .replace(/[\u0300-\u036f]/g, '');
-
-    // Cerca dins l'artista: pel títol que es veu i pel de YouTube (mai per la descripció).
-    function matchesQuery(video, query) {
-        const q = fold(query);
-        if (!q) return true;
-        return fold(video?.title).includes(q) || fold(video?.originalTitle).includes(q);
-    }
-
     function setHtml(node, html) {
         if (!node) return;
         // No es repinta si no canvia: les imatges no tornen a carregar quan arriba més historial.
@@ -490,7 +383,7 @@
         const more = $('apSongsMore');
         if (!list) return;
         const shown = state.list.slice(0, state.listLimit);
-        list.innerHTML = songCardsHtml(shown, { model: state.model, all: state.list });
+        list.innerHTML = songCardsHtml(shown, { names: artistNames() });
         list.hidden = !shown.length;
         if (more) {
             const remaining = state.list.length - shown.length;
@@ -499,15 +392,23 @@
         }
     }
 
-    // Pinta la més escoltada, els videoclips i directes, i la graella de cançons. `videos`: les cançons de
-    // l'artista (app.js ja n'ha tret el que no és música); `query`: cerca dins l'artista; `hidden`: artista amagat.
-    function renderSongs({ videos = [], query = '', hidden = false } = {}) {
-        const q = text(query);
-        const model = songsModel(videos, { isClip });
-        state.model = model;
+    // Noms de l'artista per treure'ls dels títols: el de la fitxa i els del grup (base d'artistes, àlies).
+    function artistNames() {
+        const api = typeof YouTubeAPI !== 'undefined' ? YouTubeAPI : window.YouTubeAPI;
+        const group = api?.getArtistGroupForChannel?.(state.channelId);
+        return [state.name, group?.name, ...(Array.isArray(group?.artists) ? group.artists : [])]
+            .map(text)
+            .filter(Boolean);
+    }
 
-        setHtml($('apBest'), hidden ? '' : bestHtml(model.best));
-        setHtml($('apShelves'), hidden || q ? '' : shelvesHtml(model, { artist: state.name }));
+    // Pinta la més escoltada i la graella amb la resta de cançons. `videos`: les cançons de l'artista (app.js ja
+    // n'ha tret el que no és música); `hidden`: artista amagat. (La fitxa ja no té cerca.)
+    function renderSongs({ videos = [], hidden = false } = {}) {
+        const model = songsModel(videos);
+        state.model = model;
+        const names = artistNames();
+
+        setHtml($('apBest'), hidden ? '' : bestHtml(model.best, { names }));
 
         const stats = $('apStats');
         if (stats) {
@@ -519,36 +420,20 @@
             stats.hidden = !total;
         }
 
-        let items;
-        let heading = 'Cançons';
-        // (La cerca dins l'artista ja no és a la fitxa; `query` es manté per si algun camí antic l'envia.)
-        if (hidden) items = [];
-        else if (q) {
-            // Cercant, totes les cançons que coincideixen (també videoclips i directes), per visualitzacions.
-            items = model.all.filter(video => matchesQuery(video, q));
-            heading = 'Resultats';
-        } else {
-            items = model.rest;
-        }
-
-        const title = $('apSongsTitle');
-        if (title) setHtml(title, items.length ? punkTitleHtml(heading, items.length) : '');
+        const items = hidden ? [] : model.rest;
         const empty = $('apSongsEmpty');
         if (empty) {
             const message = hidden
                 ? 'Has amagat aquest artista del feed.'
                 : !model.total
                   ? 'Encara no hi ha cançons d’aquest artista.'
-                  : !items.length && q
-                    ? `No hi ha cap cançó amb «${q}».`
-                    : '';
+                  : '';
             empty.textContent = message;
             empty.hidden = !message;
         }
 
-        const key = [state.channelId, q].join('|');
-        if (key !== state.listKey) {
-            state.listKey = key;
+        if (state.listKey !== state.channelId) {
+            state.listKey = state.channelId;
             state.listLimit = LIST_FIRST;
         }
         state.list = items;
@@ -586,19 +471,6 @@
         }
         toast('No s’ha pogut engegar la ràdio ara mateix.');
         return false;
-    }
-
-    // «Ràdio» d'una fila: només els videoclips o només els directes de l'artista.
-    function startShelfRadio(key) {
-        const items = key === 'lives' ? state.model?.lives : state.model?.clips;
-        const label = key === 'lives' ? 'Directes' : 'Videoclips';
-        const started = app.features.musicQueue?.startArtistRadio?.(items || [], {
-            name: state.name,
-            channelId: state.channelId,
-            title: `${label} de ${state.name}`,
-        });
-        if (!started) toast('No s’ha pogut engegar la ràdio ara mateix.');
-        return Boolean(started);
     }
 
     function enqueueSong(id) {
@@ -639,39 +511,46 @@
         });
     }
 
-    // Tres línies de presentació; el botó només hi és si el text no hi cap.
+    // Presentació: una sola línia amb punts suspensius. Si no hi cap, la mateixa línia és un botó (tocar-la o
+    // Retorn / Espai) que la desplega sencera i la torna a plegar.
     function measureBio() {
         const desc = $('channelProfileDescription');
-        const toggle = $('apBioToggle');
-        if (!desc || !toggle) return;
-        if (desc.classList.contains('is-collapsed')) {
-            toggle.hidden = !(desc.scrollHeight - desc.clientHeight > 1);
+        if (!desc || !desc.classList.contains('is-collapsed')) return;
+        const overflow = desc.scrollWidth - desc.clientWidth > 1 || desc.scrollHeight - desc.clientHeight > 1;
+        setBioExpandable(desc, overflow);
+    }
+
+    function setBioExpandable(desc, on) {
+        desc.classList.toggle('is-expandable', on);
+        if (on) {
+            desc.setAttribute('role', 'button');
+            desc.setAttribute('tabindex', '0');
+            desc.setAttribute('aria-expanded', String(!desc.classList.contains('is-collapsed')));
+            desc.title = desc.classList.contains('is-collapsed') ? 'Llegeix-la sencera' : 'Plega-la';
+        } else {
+            ['role', 'tabindex', 'aria-expanded'].forEach(name => desc.removeAttribute(name));
+            desc.removeAttribute('title');
         }
     }
 
     function setBio(description) {
         const section = $('apBio');
         const desc = $('channelProfileDescription');
-        const toggle = $('apBioToggle');
-        if (!section || !desc || !toggle) return;
+        if (!section || !desc) return;
         const bio = bioModel(description);
         desc.textContent = bio.text;
         desc.classList.add('is-collapsed');
-        toggle.setAttribute('aria-expanded', 'false');
-        toggle.textContent = 'Llegeix-ne més';
-        toggle.hidden = true;
+        setBioExpandable(desc, false);
         section.hidden = !bio.hasText;
         if (bio.hasText) window.requestAnimationFrame?.(measureBio);
     }
 
     function toggleBio() {
         const desc = $('channelProfileDescription');
-        const toggle = $('apBioToggle');
-        if (!desc || !toggle) return;
-        const expanded = desc.classList.toggle('is-collapsed') === false;
-        toggle.setAttribute('aria-expanded', String(expanded));
-        toggle.textContent = expanded ? 'Mostra’n menys' : 'Llegeix-ne més';
-        if (!expanded) measureBio();
+        if (!desc || !desc.classList.contains('is-expandable')) return false;
+        desc.classList.toggle('is-collapsed');
+        setBioExpandable(desc, true);
+        return true;
     }
 
     // Foto de perfil de fons de la capçalera (gran) i, desenfocada, per omplir els costats a l'ordinador.
@@ -711,12 +590,9 @@
         state.listKey = '';
         showPhoto(avatar);
         // Mentre arriben les cançons, cap bloc de la fitxa anterior.
-        ['apBest', 'apShelves'].forEach(id => setHtml($(id), ''));
+        setHtml($('apBest'), '');
         renderList();
-        const stats = $('apStats');
-        if (stats) stats.hidden = true;
-        setHtml($('apSongsTitle'), '');
-        ['apSongsEmpty'].forEach(id => {
+        ['apStats', 'apSongsEmpty'].forEach(id => {
             const node = $(id);
             if (node) node.hidden = true;
         });
@@ -763,8 +639,6 @@
         if (queueBtn) return enqueueSong(queueBtn.dataset.apQueue);
         const play = target?.closest?.('[data-ap-play]');
         if (play) return playFrom(play.dataset.apPlay);
-        const shelf = target?.closest?.('[data-ap-shelf-radio]');
-        if (shelf) return startShelfRadio(shelf.dataset.apShelfRadio);
         if (target?.closest?.('#apSongsMore')) return showMore();
         const place = target?.closest?.('[data-ap-place]');
         if (place) return startPlaceRadio(place.dataset.apPlace);
@@ -772,8 +646,15 @@
         if (radio && !radio.disabled) {
             return radio.dataset.apRadio === 'style' ? startStyleRadio() : startArtistRadio();
         }
-        if (target?.closest?.('#apBioToggle')) return toggleBio();
+        if (target?.closest?.('#channelProfileDescription')) return toggleBio();
         return undefined;
+    }
+
+    function onKeydown(event) {
+        if (event.key !== 'Enter' && event.key !== ' ') return;
+        if (!event.target?.closest?.('#channelProfileDescription.is-expandable')) return;
+        event.preventDefault();
+        toggleBio();
     }
 
     function bindOnce() {
@@ -782,6 +663,7 @@
         if (!page) return;
         bound = true;
         page.addEventListener('click', onClick);
+        page.addEventListener('keydown', onKeydown);
         window.addEventListener('resize', measureBio, { passive: true });
     }
 
@@ -799,15 +681,11 @@
         songYear,
         heroImage,
         artOf,
-        isLive,
+        songTitle,
         songsModel,
         bestHtml,
-        shelvesHtml,
-        sizeTiers,
-        punkTitleHtml,
         cardHtml,
         songCardsHtml,
-        matchesQuery,
         showProfile,
         renderSongs,
         playFrom,
@@ -815,5 +693,6 @@
         startArtistRadio,
         startStyleRadio,
         measureBio,
+        toggleBio,
     };
 })(window);
