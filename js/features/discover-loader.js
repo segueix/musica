@@ -3,7 +3,7 @@
     // Les dues vistes de Descobreix només es descarreguen quan se’n demana show().
     // Conserva la interfície síncrona de navegació i una única petició per mòdul.
     for (const [name, file] of [
-        ['artistMap', 'js/features/artist-map.js?v=20261013-mapa-6'],
+        ['artistMap', 'js/features/artist-map.js?v=20261016-mapa-zona'],
         ['affinity', 'js/features/affinity.js?v=20261016-afinitat-foto'],
     ]) {
         let pending, container, visible = false, restore = false, revision = 0;
