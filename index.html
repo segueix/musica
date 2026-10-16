@@ -51,7 +51,7 @@
     
     <!-- CSS -->
     <link rel="stylesheet" href="css/styles.css?v=20260929-home-playlists-4">
-    <link rel="stylesheet" href="css/portada.css?v=20261014-discos">
+    <link rel="stylesheet" href="css/portada.css?v=20261016-llista-artistes">
     <!-- Aquests retocs ja són necessaris al primer dibuix, no després d’app.js. -->
     <link id="categoryChipStylesheet" rel="stylesheet" href="css/category-chips.css">
     <link id="typographyPolishStylesheet" rel="stylesheet" href="css/typography-polish.css">
@@ -373,84 +373,87 @@
         </div>
 
         <div class="page hidden ap-page" id="channelPage">
-            <!-- Fitxa d'artista: barra superior amb enrere i les dues ràdios -->
-            <div class="ap-top">
-                <button class="channel-back-btn" id="channelBackBtn" type="button" aria-label="Tornar enrere">
-                    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M19 12H5M12 19l-7-7 7-7"/></svg>
-                </button>
-                <div class="ap-radios" id="apRadios" role="group" aria-label="Ràdios de l'artista">
-                    <button class="ap-radio ap-radio--artist" id="apRadioArtist" type="button" data-ap-radio="artist" disabled>
-                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M19 21v-1.5a4.5 4.5 0 0 0-4.5-4.5h-5A4.5 4.5 0 0 0 5 19.5V21M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"/></svg>
-                        <span class="ap-radio__long">Ràdio de l'artista</span><span class="ap-radio__short">Ràdio artista</span>
-                    </button>
-                    <button class="ap-radio ap-radio--style" id="apRadioStyle" type="button" data-ap-radio="style" disabled>
-                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M9 18V5l12-2v13M9 18a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm12-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/></svg>
-                        <span class="ap-radio__long">Ràdio de l'estil</span><span class="ap-radio__short">Ràdio estil</span>
-                    </button>
-                </div>
-            </div>
-            <header class="channel-profile-header ap-hero">
-                <div class="channel-profile-meta ap-hero__meta">
-                    <div class="channel-profile-text ap-hero__text">
-                        <p class="pt-eyebrow ap-hero__eyebrow">Artista</p>
-                        <div class="channel-profile-title-row">
-                            <h1 class="channel-profile-name" id="channelProfileName"></h1>
-                        </div>
-                        <div class="channel-profile-info-row">
-                            <div class="channel-profile-info-left">
-                                <p class="channel-profile-handle" id="channelProfileHandle"></p>
-                                <p class="channel-profile-subscribers" id="channelProfileSubscribers"></p>
-                                <details class="ap-origin" id="apOrigin" hidden></details>
-                            </div>
-                            <div id="channelSupportBtn" class="channel-support-wrap hidden"></div>
-                        </div>
-                        <div class="channel-profile-actions">
-                            <button class="follow-channel-btn channel-profile-follow-btn" id="channelProfileFollowBtn" type="button" data-follow-channel="" aria-pressed="false">
-                                Segueix
-                            </button>
-                            <button class="btn-round-icon channel-profile-hide-btn" id="channelProfileHideBtn" type="button" data-hide-channel="" aria-pressed="false" title="Amaga aquest canal del feed">
-                                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                                    <path d="M1.5 12s3.5-7 10.5-7 10.5 7 10.5 7-3.5 7-10.5 7S1.5 12 1.5 12Z"></path>
-                                    <circle cx="12" cy="12" r="3.5"></circle>
-                                </svg>
-                            </button>
-                            <button class="btn-round-icon channel-profile-share-btn" id="channelProfileShareBtn" type="button" data-share-channel-id="" title="Compartir canal" aria-label="Comparteix l'artista">
+            <!-- Fitxa d'artista (js/features/artist-page.js): la foto de perfil de fons amb el nom, les dades, les ràdios i
+                 compartir al damunt; al costat (a sota al mòbil), la cançó més escoltada (#1). A sota, la resta de
+                 cançons per visualitzacions, en tres columnes de caràtules quadrades. Cap títol de secció. -->
+            <div class="ap-head">
+                <header class="channel-profile-header ap-hero" id="apHero">
+                    <div class="ap-hero__photo" aria-hidden="true"></div>
+                    <img class="channel-profile-avatar ap-hero__img" id="channelProfileAvatar" alt="" decoding="async">
+                    <div class="ap-hero__shade" aria-hidden="true"></div>
+                    <div class="ap-top">
+                        <button class="channel-back-btn" id="channelBackBtn" type="button" aria-label="Tornar enrere">
+                            <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                        </button>
+                        <div class="ap-top__end">
+                            <a class="ap-yt" id="apYoutubeBtn" target="_blank" rel="noopener noreferrer" title="Obre el canal a YouTube" hidden>
+                                <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4a2.5 2.5 0 0 0-1.8 1.8C2 8.8 2 12 2 12s0 3.2.4 4.8a2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8c.4-1.6.4-4.8.4-4.8s0-3.2-.4-4.8ZM10 15V9l5.2 3L10 15Z"/></svg>
+                                <span>YouTube</span>
+                            </a>
+                            <button class="btn-round-icon channel-profile-share-btn" id="channelProfileShareBtn" type="button" data-share-channel-id="" title="Comparteix l'artista" aria-label="Comparteix l'artista">
                                 <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M18 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM6 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM18 22a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>
                             </button>
                         </div>
                     </div>
-                    <img class="channel-profile-avatar" id="channelProfileAvatar" alt="">
-                </div>
-            </header>
-            <!-- Presentació curta: tres línies i «Llegeix-ne més» si no hi cap -->
-            <section class="ap-bio" id="apBio" aria-label="Presentació" hidden>
-                <div class="channel-profile-description is-collapsed" id="channelProfileDescription"></div>
-                <button class="ap-bio__toggle" id="apBioToggle" type="button" aria-expanded="false" aria-controls="channelProfileDescription" hidden>Llegeix-ne més</button>
-            </section>
-            <!-- Les teves categories (js/features/user-categories.js): afegir o treure aquest grup de les categories pròpies -->
-            <section class="uc-artist" id="apUserCats" aria-label="Les teves categories" hidden></section>
-            <div id="channelProfileTags"></div>
-            <section class="ap-albums" id="apAlbums" aria-labelledby="apAlbumsTitle" hidden>
-                <div class="ap-albums-head">
-                    <h2 class="ap-albums-title" id="apAlbumsTitle">Discos</h2>
-                    <div class="ap-albums-views" aria-label="Vista del repertori">
-                        <button class="ap-albums-all" id="apAlbumsOverview" type="button" data-ap-album="__albums__" aria-pressed="false">Discos</button>
-                        <button class="ap-albums-all" id="apAlbumsAll" type="button" data-ap-album="" aria-pressed="false">Totes les cançons</button>
+                    <div class="channel-profile-meta ap-hero__meta">
+                        <div class="channel-profile-text ap-hero__text">
+                            <p class="pt-eyebrow ap-hero__eyebrow">Artista</p>
+                            <div class="channel-profile-title-row">
+                                <h1 class="channel-profile-name" id="channelProfileName"></h1>
+                            </div>
+                            <div class="channel-profile-info-row ap-hero__info">
+                                <div class="channel-profile-info-left">
+                                    <p class="channel-profile-subscribers" id="channelProfileSubscribers"></p>
+                                    <p class="ap-stats" id="apStats" hidden></p>
+                                    <p class="channel-profile-handle" id="channelProfileHandle"></p>
+                                </div>
+                                <div id="channelSupportBtn" class="channel-support-wrap hidden"></div>
+                            </div>
+                            <details class="ap-origin" id="apOrigin" hidden></details>
+                            <!-- Presentació: una línia amb punts suspensius; si no hi cap, tocar-la la desplega -->
+                            <section class="ap-bio" id="apBio" aria-label="Presentació" hidden>
+                                <div class="channel-profile-description is-collapsed" id="channelProfileDescription"></div>
+                            </section>
+                            <!-- Estils de l'artista i les teves categories (user-categories.js), en una sola filera de xips -->
+                            <div class="ap-hero__chips">
+                                <div id="channelProfileTags"></div>
+                                <section class="uc-artist" id="apUserCats" aria-label="Les teves categories" hidden></section>
+                            </div>
+                            <div class="ap-hero__actions">
+                                <div class="ap-radios" id="apRadios" role="group" aria-label="Ràdios de l'artista">
+                                    <button class="ap-radio ap-radio--artist" id="apRadioArtist" type="button" data-ap-radio="artist" disabled>
+                                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 5.6v12.8a1 1 0 0 0 1.5.86l10.2-6.4a1 1 0 0 0 0-1.72L9.5 4.74A1 1 0 0 0 8 5.6Z"/></svg>
+                                        <span class="ap-radio__long">Ràdio de l'artista</span><span class="ap-radio__short">Ràdio</span>
+                                    </button>
+                                    <button class="ap-radio ap-radio--style" id="apRadioStyle" type="button" data-ap-radio="style" disabled>
+                                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M9 18V5l12-2v13M9 18a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm12-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/></svg>
+                                        <span class="ap-radio__long">Ràdio de l'estil</span><span class="ap-radio__short">Estil</span>
+                                    </button>
+                                </div>
+                                <div class="channel-profile-actions">
+                                    <button class="follow-channel-btn channel-profile-follow-btn" id="channelProfileFollowBtn" type="button" data-follow-channel="" aria-pressed="false">
+                                        Segueix
+                                    </button>
+                                    <button class="btn-round-icon channel-profile-hide-btn" id="channelProfileHideBtn" type="button" data-hide-channel="" aria-pressed="false" title="Amaga aquest artista del feed">
+                                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                            <path d="M1.5 12s3.5-7 10.5-7 10.5 7 10.5 7-3.5 7-10.5 7S1.5 12 1.5 12Z"></path>
+                                            <circle cx="12" cy="12" r="3.5"></circle>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="ap-albums-grid" id="apAlbumsGrid"></div>
-                <!-- Ràdio del disc triat: només les seves cançons (artist-page.js, renderAlbums) -->
-                <div class="ap-album-radio" id="apAlbumRadio" hidden></div>
-            </section>
-            <div class="ap-songs-head">
-                <h2 class="ap-songs-title" id="apSongsTitle">Cançons</h2>
-                <div class="channel-search-wrap channel-search-wrap--desktop">
-                    <input id="channelSearchInputDesktop" class="channel-search-input" type="search" placeholder="Cerca dins del canal..." aria-label="Cerca vídeos dins del canal">
-                </div>
-                <div class="channel-search-wrap channel-search-wrap--mobile">
-                    <input id="channelSearchInputMobile" class="channel-search-input" type="search" placeholder="Cerca dins del canal..." aria-label="Cerca vídeos dins del canal">
-                </div>
+                </header>
+                <!-- La cançó amb més visualitzacions: la primera caràtula (ràdio de l'artista que hi comença) -->
+                <aside class="ap-best" id="apBest" aria-label="La més escoltada" hidden></aside>
             </div>
+            <section class="ap-songs-wrap" aria-label="Cançons per visualitzacions">
+                <ul class="ap-grid" id="apSongs" hidden></ul>
+                <p class="empty-state ap-songs-empty" id="apSongsEmpty" hidden></p>
+                <button class="ap-more" id="apSongsMore" type="button" hidden></button>
+            </section>
+            <!-- Perfil de programa (herència): la graella de vídeos de sempre -->
             <div id="channelVideosGrid" class="videos-grid"></div>
         </div>
     </main>
@@ -985,7 +988,7 @@
     <script defer src="js/features/music-affinities.js?v=20261013-subcategory-1"></script>
     <script defer src="js/features/music-selection.js?v=20261013-subcategory-1"></script>
     <script defer src="js/features/music-signals.js?v=20261007-auto-1"></script>
-    <script defer src="js/features/music-queue.js?v=20261014-radio-artista"></script>
+    <script defer src="js/features/music-queue.js?v=20261016-fitxa-youtube"></script>
     <script defer src="js/features/system-player.js"></script>
     <script defer src="js/features/drive-mode.js"></script>
     <script defer src="js/features/home-playlists.js?v=20261005-nomes-inici-1"></script>
@@ -994,7 +997,7 @@
     <script defer src="js/features/youtube-subscribe.js?v=20261008-subscriu-4"></script>
     <script defer src="js/features/nearby-radio.js?v=20261012-mapa-1"></script>
     <script defer src="js/features/portada.js?v=20261015-estils-esquerra"></script>
-    <script defer src="js/features/artist-page.js?v=20261014-discos"></script>
+    <script defer src="js/features/artist-page.js?v=20261016-fitxa-youtube"></script>
     <script defer src="js/features/user-categories.js?v=20261012-artistes-unics-1"></script>
     <script defer src="js/features/alphabet-index.js?v=20261004-az-1"></script>
     <script defer src="js/features/category-artists.js?v=20261005-artistes-categoria-1"></script>
@@ -1003,7 +1006,7 @@
     <script defer src="js/features/config-backup.js?v=20261016-json-1"></script>
 
     <!-- Main app entrypoint -->
-    <script defer src="js/app.js?v=20261016-static-2"></script>
+    <script defer src="js/app.js?v=20261016-llista-artistes"></script>
     <script defer src="js/features/tv-learning.js?v=20260924-learning-v1"></script>
     <script defer src="js/features/smart-feed.js?v=20261016-json-1"></script>
     <script defer src="js/features/tv-live-queue.js?v=20260924-live-session-v1"></script>

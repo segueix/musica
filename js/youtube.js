@@ -589,7 +589,8 @@ const YouTubeAPI = {
         return Array.from(mergedById.values())
             .sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt));
     },
-    // Un sol catàleg compartit amb la fitxa: inclou directes publicats en canals convidats.
+    // Catàleg de llançaments: la fitxa ja no mostra discos, però d'aquí surten els directes publicats en canals
+    // convidats (p. ex. Club Social Carme), que van a la fila «Directes» de cada artista.
     async loadAlbumsCatalog() {
         if (!this.albumsCatalogPromise) {
             this.albumsCatalogPromise = (async () => {

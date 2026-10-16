@@ -1,3 +1,101 @@
+## [2026-10-16] - Llista d'artistes amb la foto del grup; marc blanc perdut en ampliar les caràtules de les vores
+
+**Petició:** a «Artistes i grups», cada requadre ple amb la foto del grup i a dins el nom, «Segueix» i amagar (com les caràtules de la fitxa). A la fitxa, a l'ordinador, les caràtules dels costats no havien de perdre el marc blanc en ampliar-se.
+
+**Causa del marc perdut:** `#channelPage` té `contain: content` (inclou `paint`): retalla tot el que surt de la seva caixa. En ampliar-se un 4 % des del centre, les caràtules de la primera i la tercera columna sortien uns 7 px pels costats (la #1, també per dalt) i el marc blanc quedava tallat.
+
+**Solució Implementada:** (1) Fitxa: `transform-origin: var(--ap-ox) var(--ap-oy)` a `.ap-card` amb `--ap-ox: left` a `:nth-child(3n + 1)`, `right` a `:nth-child(3n)`, `--ap-oy: bottom` a `:nth-last-child(-n + 3)` (≥ 769 px) i `right top` a la #1: s'amplien cap a dins. (2) Llista: `renderFollowPage()` pinta `img.follow-avatar` com a fons del requadre (`followCardImage()`: avatars de YouTube a 400 px), `.follow-card__shade` i `.follow-card__info` (nom + «Segueix»); amagar a dalt a la dreta; el requadre és `role="link"` amb Retorn. CSS al final de `portada.css` (selectors `#followPage`, perquè la cerca continua fent servir les classes `.follow-*` amb l'estil antic). La graella té `padding: 6px`: amb columnes `auto-fill` no se sap quines són les de les vores.
+
+**Trampes conegudes:** (1) No treguis el `contain` de `#channelPage` per arreglar el marc: hi és pel rendiment. (2) `portada.css` no pot portar `clip-path` (`tests/player-controls.test.js`). (3) Les fotos de perfil (`yt3.ggpht.com`) donen 429 al navegador de l'entorn de prova si se'n demanen moltes: `verificar-llista-artistes.js` les baixa amb `curl`.
+
+---
+
+## [2026-10-16] - Icones de comentar i compartir buides (i sense arrossegar ni QR): js/vendor donava 404
+
+**Símptoma:** a la fitxa de la cançó, els botons «Comenta» i «Compartir» eren cercles buits, a l'ordinador i al mòbil (amb el «+» del costat, sí). També fallava `tests/browser/verificar-categories.js` en arrossegar rajoles.
+
+**Causa:** des de `94ce7232` (optimització del paquet estàtic) `index.html` demana `js/vendor/lucide.js`, `lz-string.js` i `sortable.js` (i `share-card.js`, `qr-code-styling.js`). Aquests fitxers només es generaven dins el paquet `_site` (`optimitzar_web_estatica.cjs`), no eren al repositori. La web publicada es construïa amb «pages build and deployment» **des d'una branca, servint el repositori tal qual** (sense `static-build.json` ni `sitemap.xml`): tots quatre donaven 404. Sense `lucide`, tot `<i data-lucide>` queda buit (el «+» ja era SVG integrat i per això es veia).
+
+**Solució Implementada:** (1) Els botons de comentar i compartir de la fitxa de la cançó (`app.js`, `.video-metadata-bar`) són ara SVG integrats, com el «+»: no depenen de cap llibreria. (2) `writeVendor()` (extret d'`optimize()` a `scripts/optimitzar_web_estatica.cjs`, que exclou `js/vendor` de la cerca d'icones) i `npm run vendor:sync` (`scripts/sincronitzar_vendor.cjs`) deixen `js/vendor/` al repositori, amb les mateixes 165 icones que el paquet. El paquet `_site` els torna a generar igual. (3) `tests/vendor-local.test.js` comprova que hi són tots els fitxers que demana `index.html` i que `lucide.js` porta totes les icones `data-lucide` del codi.
+
+**Trampes conegudes:** (1) Si s'afegeix una icona `data-lucide` nova cal tornar a executar `npm run vendor:sync` (la prova ho detecta). (2) Com que la web pot estar servida des d'una branca o des del paquet, no hi posis cap fitxer que només generi el paquet si `index.html` el necessita. (3) Amb la branca servida tal qual, `music-categories.js` llegeix `data/artistes-musica.json` (la taxonomia compacta `music-taxonomy.json` només és al paquet) i el CSS no va en un sol fitxer: funciona, però és més lent que el paquet.
+
+---
+
+## [2026-10-16] - Fitxa d'artista: botons dins la foto, «YouTube» i ampliació en passar el ratolí
+
+**Petició:** a l'ordinador, una petita ampliació de la caràtula en passar-hi el ratolí; els botons d'enrere i compartir de la foto del grup quedaven mig fora de la imatge (ordinador i mòbil); un botó dins la foto del grup per obrir-ne el perfil a YouTube.
+
+**Solució Implementada:** (1) `index.html`: dins `.ap-top`, el grup `.ap-top__end` amb `#apYoutubeBtn` (enllaç, logotip SVG en blanc i «YouTube») i compartir. (2) `portada.css`: `.ap-top` passa a `position: absolute` dins `.ap-hero` (a `--ap-edge` de les vores: 14 / 18 px) i la capçalera reserva l'espai amb `padding-top: calc(var(--ap-edge) + 58px)`; els tres botons, fons `rgba(20, 22, 21, 0.7)`, vora blanca i ombra; ampliació `scale(1.04)` de `.ap-card` a `@media (hover: hover) and (pointer: fine)` (i `:focus-within`), desactivada amb moviment reduït. (3) `app.js` calcula l'URL del canal (`youtubeChannelUrl`, ara fora del bloc de l'@handle) i la passa a `showProfile({ youtubeUrl })`; `artist-page.js` la valida (`youtubeLink()`) i la posa a `#apYoutubeBtn` (amagat als programes o sense URL vàlida).
+
+**Trampes conegudes:** (1) Una regla antiga amb més especificitat (`body #channelPage .ap-top .channel-profile-share-btn.btn-round-icon`) tornava a posar la vora fosca al botó de compartir: ara és `body #channelPage .ap-top :is(...)` amb vora blanca. (2) A l'entorn de prova, `yt3.ggpht.com` respon 429 al navegador (la portada demana moltes fotos): `verificar-fitxa-artista.js` bloqueja les fotos petites i baixa la gran (`=s800`) amb `curl`; les caràtules (`i.ytimg.com`) es baixen amb `route.fetch()` i se serveixen com a imatge (si no, ORB). Sense això, les captures no tenien foto i no es podia veure on queien els botons. (3) No s'ha pogut reproduir exactament el «mig fora» que veia l'usuari; la solució el fa impossible: els botons ja no depenen del flux de la capçalera.
+
+---
+
+## [2026-10-16] - Fitxa d'artista: marc blanc a totes les caràtules i una sola columna al mòbil
+
+**Petició:** el marc blanc fi a totes les caràtules; al mòbil, una caràtula sota l'altra (sense columnes: l'usuari ja fa scroll).
+
+**Solució Implementada:** `portada.css`: `.ap-grid` és d'una columna (mobile first) i de tres a ≥ 769 px; `.ap-card__art` porta `border: 2px solid #fff` (també la #1, que abans en tenia un de propi de 3 px). Cada `.ap-card` és un contenidor (`container-type: inline-size`) i `--ap-t`, `--ap-pad` i `--ap-play` es calculen amb `cqi` de la mateixa caràtula; el `@container` que amaga l'any, la durada i el play només actua en caràtules ≤ 220 px.
+
+**Trampes conegudes:** (1) Abans la lletra es calculava amb l'amplada de la graella (`.ap-songs-wrap` era el contenidor): amb una sola columna al mòbil hauria quedat petitíssima en caràtules grans. Les propietats personalitzades amb `cqi` es resolen on es fan servir (els fills de `.ap-card`), així que agafen la caràtula com a contenidor. (2) Un `@container` només estila els descendents del contenidor: per això la regla de les caràtules estretes apunta a `.ap-card__facts`, `.ap-play` i `.ap-card__info`, no a `.ap-card`.
+
+---
+
+## [2026-10-16] - Fitxa d'artista: més blanca, tres columnes i títols sense el nom del grup
+
+**Petició:** la capçalera igual, però la presentació en una línia amb punts suspensius que es pugui tocar per veure-la sencera; la #1 a dalt a la dreta (a l'ordinador) amb el número i les visualitzacions en blanc i sense fons, un marc blanc fi i sense moviment; a sota, la resta de cançons per ordre en tres columnes de caràtules quadrades amb el mínim espai, sense videoclips/directes ni títols de secció (al mòbil, la #1 just sota la capçalera); treure el nom del grup dels títols; «tot més blanc i menys punk, però amb visuals grans».
+
+**Solució Implementada:** (1) `artist-page.js`: `songsModel()` només separa la més escoltada (`best`) de la resta (`rest`); `cardHtml()` sense mides, adhesius ni cintes; `songCardsHtml()` numera des del #2; `songTitle()` neteja el títol amb `SegueixSongTitle.cleanTitle()` i els noms de l'artista (`artistNames()`: fitxa + grup) i també treu «(Nom)» / «[Nom]»; la presentació és una línia (`measureBio()` / `setBioExpandable()` / `toggleBio()`, també amb Retorn i Espai). S'han tret `isLive()`, `sizeTiers()`, `shelvesHtml()`, `punkTitleHtml()`, la cerca (`matchesQuery()`) i la ràdio de les files. (2) `index.html`: fora `#apShelves`, el títol de «Cançons» i `#apBioToggle`. (3) `portada.css`: bloc «Caràtules quadrades amb les dades al damunt, en blanc» (graella `repeat(3, …)` amb `gap: 4px`, text blanc amb ombra, play blanc, cua sense fons; contenidor `inline-size` per escalar la lletra amb `cqi`), la #1 amb `border: 3px solid #fff`, la presentació d'una línia (`white-space: nowrap; text-overflow: ellipsis`); fora tot el CSS punk (girs, trama, cintes, títols retallats, files).
+
+**Trampes conegudes:** (1) La zona tàctil de la presentació fa 44 px (amb `padding`): per comptar-ne les línies cal restar-lo (`verificar-fitxa-artista.js`). (2) A les caràtules de 3 columnes del mòbil (~118 px) el play tapava el títol: a contenidors ≤ 520 px s'amaga el cercle (la caràtula sencera és el botó). (3) `cleanTitle()` és conservador i no treu el nom entre parèntesis; ho fa `songTitle()` només a la fitxa i mai deixa el títol buit (si el títol és el nom del grup, es queda). (4) Els radis literals de `portada.css` han de ser 2, 8, 10 o 12–16 px.
+
+---
+
+## [2026-10-16] - Fitxa d'artista: només títols fora de les caràtules, títols d'anònim
+
+**Petició:** treure la cerca de cançons; posar la categoria a la primera secció, amb la primera caràtula; fora de les caràtules, només els títols de les secció, amb l'estètica punk i més juganers; cap text explicatiu fora de les caràtules.
+
+**Solució Implementada:** (1) `index.html`: fora els cercadors i el text d'ajuda de «Cançons»; `#apBio` i `#apUserCats` passen dins la capçalera (`.ap-hero__chips` amb els estils). (2) `artist-page.js`: `bestHtml()` és una caràtula punk més (#1, cinta «La més escoltada»); `punkTitleHtml()` fa els títols amb una peça per lletra (`aria-hidden`) i el text sencer en `.pt-sr-only`; el títol de «Cançons» es pinta així a `renderSongs()`. Si la foto de la capçalera falla, `is-broken` l'amaga. (3) CSS: xips de vidre per a estils i categories (el títol i l'ajuda de `user-categories.js` amagats amb `.uc-artist__head { display: none }`, els contenidors amb `display: contents`), lletres retallades (`.ap-punk__l`, 5 papers per `nth-child`), recompte en adhesiu, «Ràdio» de fila com a adhesiu, «La més escoltada» que omple la columna a l'ordinador.
+
+**Trampes conegudes:** (1) `user-categories.js` continua pintant el títol i l'ajuda (els fa servir el grup `aria-labelledby`): a la fitxa s'amaguen per CSS, no s'esborren. (2) A l'entorn de prova, `yt3.ggpht.com` a vegades respon amb `ERR_BLOCKED_BY_ORB` (també a la portada): la foto de la capçalera no surt; no és un error de l'app. (3) `tests/browser/verificar-categories.js` ja fallava abans en reordenar les rajoles d'Inici; la part de la fitxa passa.
+
+---
+
+## [2026-10-16] - Fitxa d'artista: caràtules quadrades estil punk, de mida segons les visualitzacions
+
+**Petició (després de la de sota):** «caràtules quadrades estil punk amb les dades del vídeo sobre les caràtules, jugar amb les mides de les caràtules segons el nombre de visualitzacions».
+
+**Solució Implementada:** `cardHtml()` fa una caràtula quadrada amb el número, les visualitzacions, «Directe», el títol, l'any i la durada **al damunt** (cintes i adhesius, Impact/Arial Black en majúscules), la cua i el play; `sizeTiers()` (pur) dona la mida per visualitzacions relatives ('xl' / 'l' / 's'); `songCardsHtml()` les calcula sobre tota la llista. CSS (bloc «Caràtules quadrades, estil fanzín punk»): mosaic amb `grid-auto-flow: dense` i files quadrades (`grid-auto-rows: calc((100cqi - …) / var(--ap-cols))`, amb `.ap-songs-wrap` com a contenidor), files de videoclips/directes amb `--ap-tile` per mida, vora clara, `box-shadow: 5px 5px 0 #000`, trama de punts (`radial-gradient`), gir per `nth-child` i filtre gris/contrast que es treu en passar-hi per sobre.
+
+**Trampes conegudes:** (1) `grid-column: span min(…)` no és vàlid: el span ha de ser un enter (`span 3`; el mosaic sempre té ≥ 3 columnes). (2) Una caràtula 'xl' de 3 × 3 només quadra si les files són quadrades: sense `grid-auto-rows` amb `cqi`, `aspect-ratio` i els spans de files no casen. (3) `hqdefault` té franges negres: s'amplia ×1,34 (`img.is-letterboxed`); la `maxresdefault` del feed no en té. (4) Els radis literals de `portada.css` han de ser 2, 8, 10 o 12–16 px (`tests/portada-assets.test.js`): la caràtula fa 2 px. (5) Amb el gir, una caràtula pot tapar 1–2 px de la veïna: en passar-hi per sobre puja (`z-index: 2`) i es posa recta.
+
+---
+
+## [2026-10-16] - Fitxa d'artista: sense discos i amb caràtules de vídeo grans
+
+**Petició:** refer la part central de la fitxa: cap disc («a partir d'ara no n'hi haurà»); el centre i la part de baix amb caràtules de vídeo més grans, amb directes i videoclips si n'hi ha, i les cançons ordenades per visualitzacions, més visual.
+
+**Solució Implementada:** (1) `artist-page.js`: `cardHtml()` (caràtula 16:9 amb visualitzacions, durada i play; títol, any i cua a sota) per a les files de Videoclips i Directes i per a la graella `songCardsHtml()`; s'han tret `albumsModel()`, `selectAlbum()`, `filterSongs()`, la ràdio del disc i la càrrega del catàleg de discos; `playFrom(id)` sempre fa la ràdio de l'artista. (2) `index.html`: fora `#apAlbums`; `#apSongs` és `<ul class="ap-grid">`. (3) `portada.css`: bloc «Caràtules grans» (fila amb scroll lateral, graella d'1/2/auto-fill columnes) i fora els estils de discos, de la llista en files i de les fileres petites. (4) `music-queue.js`: fora `startAlbumRadio()`. (5) `app.js`: el perfil de programa ja no passa per `filterSongs()`.
+
+**Trampes conegudes:** (1) **No** s'ha tret `YouTubeAPI.loadAlbumsCatalog()`: `getArtistVideosWithHistory()` el fa servir per afegir a cada artista les sessions en directe publicades en canals convidats (Club Social Carme), que ara surten a «Directes»; sense el fitxer, la fitxa continua funcionant. (2) El generador continua escrivint `data/albums-musica.json` (no s'ha tocat el pipeline). (3) Les caràtules grans fan servir la `maxresdefault` del feed si hi és i, si no, `hqdefault` (480 px): les pistes «Tema» hi surten amb la caràtula al mig i franges als costats (és la imatge de YouTube).
+
+**Fitxers Afectats:** `index.html`, `css/portada.css`, `js/features/artist-page.js`, `js/features/music-queue.js`, `js/app.js`, `js/youtube.js` (comentari), `sw.js`, `CLAUDE.md`, `tests/artist-page.test.js`, `tests/music-queue-selection.test.js`, `tests/club-social-carme.test.js`, `tests/browser/verificar-fitxa-artista.js`.
+
+---
+
+## [2026-10-16] - Fitxa d'artista redissenyada: foto de fons, la més escoltada i play que fa ràdio
+
+**Petició:** redissenyar l'interior de la fitxa dels grups i artistes: aprofitar la imatge de perfil i posar-hi al damunt el nom, els subscriptors i l'origen, adaptar-hi les ràdios i compartir; al costat, la caràtula de la cançó amb més visualitzacions; una secció de directes o videoclips si en tenen; i la resta de cançons per visualitzacions, sempre amb el botó de play que genera ràdios.
+
+**Solució Implementada:** (1) **HTML** (`index.html`, `#channelPage`): `.ap-head` = `.ap-hero` (foto `#channelProfileAvatar` absoluta a tot el requadre + `.ap-hero__photo` desenfocada + `.ap-hero__shade`; `.ap-top` amb enrere i compartir; el text i les accions a baix) + `#apBest`; després `#apBio`, `#apUserCats`, `#apShelves`, `#apAlbums` i `.ap-songs-wrap` (`#apSongs`, `#apSongsEmpty`, `#apSongsMore`). Es mantenen tots els ids que fa servir `app.js`. (2) **`artist-page.js`**: funcions pures `songsModel()` (ordre per `viewCount`, la més escoltada a part, videoclips i directes a files de ≥ 2, la resta a la llista, sense Shorts ni repetides), `formatCount()` («1,2 k», «2,5 M»), `subscribersLabel()`, `formatDuration()`, `songYear()` (any original si se sap), `heroImage()` (`=s800` i https), `artOf()`, `bestHtml()`, `shelvesHtml()`, `songRowsHtml()`, `matchesQuery()` (títol i títol de YouTube, sense accents); DOM `renderSongs()`, `playFrom()`, `startShelfRadio()`, `enqueueSong()` i l'origen amb «Ràdio d'aquí». (3) **`music-queue.js`**: `startArtistRadio()` i `startAlbumRadio()` accepten `seedId` (`poolWithSeed()`: la cançó triada és la primera; si el límit de 500 l'hagués deixat fora, s'hi afegeix) i `startArtistRadio()` accepta `title` (ràdios «Videoclips de …» / «Directes de …»). (4) **`app.js`**: `renderChannelVideosLegacyImpl()` delega a `renderSongs()` per a un artista (el programa continua amb la graella) i `showProfile()` rep l'avatar. (5) CSS: bloc «Fitxa d'artista (#channelPage) — redisseny 2026-10-16» de `portada.css` (substitueix l'anterior; s'han tret els estils de la vista resum de discos i l'`.ap-origin` antic).
+
+**Trampes conegudes:** (1) `styles.css` posa `.channel-profile-meta { flex: 1 }`: sense `flex: none; margin-top: auto` el text quedava a dalt de la foto, sobre la part clara, i el degradat fosc de baix no servia. (2) Les pistes «Tema» tenen `hqdefault` amb franges negres: a la caràtula gran s'amplia ×1,34 (`img.is-letterboxed`) i a la llista es fa servir `mqdefault` (16:9 sense franges; el centre quadrat és la caràtula). (3) Els fitxers d'arxiu no porten `topicTrack`: el videoclip es decideix per les marques del títol (`isOfficialClip()`), que ja descarta les pistes Tema del feed. (4) `#channelPage [hidden]` porta `display: none !important` perquè molts blocs nous tenen `display: grid/flex`. (5) Amb YouTube bloquejat (proves), engegar una ràdio dona «localStorage… Access is denied» de l'iframe buit: `verificar-fitxa-artista.js` el filtra, com `verificar-mapa.js`.
+
+**Fitxers Afectats:** `index.html`, `css/portada.css`, `js/features/artist-page.js`, `js/features/music-queue.js`, `js/app.js`, `sw.js`, `CLAUDE.md`, `tests/artist-page.test.js`, `tests/music-queue-selection.test.js`, `tests/browser/verificar-fitxa-artista.js` (nou).
+
+---
+
 ## [2026-10-12] - WhatsApp: l'enllaç d'una ràdio diu «Ràdio <nom>»
 
 **Problema:** en compartir l'enllaç d'una ràdio a WhatsApp, la previsualització era la genèrica de l'app: el robot de WhatsApp llegeix les etiquetes Open Graph de l'HTML i no executa JavaScript, i `?importData=` apunta a `index.html`. GitHub Pages és estàtic: no hi ha cap manera de canviar l'`og:title` segons el paràmetre.

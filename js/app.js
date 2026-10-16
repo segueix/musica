@@ -1898,12 +1898,12 @@ function buildWatchChannelInfoHtml(channel, avatar, watchUrl, video) {
                     </a>
                     ${supportBtnMobile}
                     <a href="${watchUrl}" target="_blank" rel="noopener noreferrer" class="btn-round-icon btn-comment-youtube--desktop" title="Comenta" aria-label="Comenta">
-                        <i data-lucide="message-circle"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg>
                     </a>
                 </div>
                 <div class="action-group">
                     <a href="${watchUrl}" target="_blank" rel="noopener noreferrer" class="btn-round-icon btn-comment-youtube--mobile" title="Comenta" aria-label="Comenta">
-                        <i data-lucide="message-circle"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg>
                     </a>
                     <button class="btn-round-icon" id="playlistBtn" title="Afegir a llista" aria-label="Afegir a llista">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
@@ -1912,7 +1912,7 @@ function buildWatchChannelInfoHtml(channel, avatar, watchUrl, video) {
                         </svg>
                     </button>
                     <button class="btn-round-icon" id="shareBtn" title="Compartir" aria-label="Compartir">
-                        <i data-lucide="share-2"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
                     </button>
                 </div>
             </div>
@@ -8938,8 +8938,9 @@ async function renderFollowPage() {
     followGrid.innerHTML = orderedChannels
         .map(channel => {
             const name = channel.name || 'Canal';
-            const avatar =
-                channel.avatar || channel.thumbnail || getFollowChannelAvatar(channel.id) || 'img/icon-192.png';
+            const avatar = followCardImage(
+                channel.avatar || channel.thumbnail || getFollowChannelAvatar(channel.id) || 'img/icon-192.png'
+            );
             const memberIds = memberIdsOf(channel);
             const followedMemberId = memberIds.find(id => followedIds.has(id));
             const followTargetId = followedMemberId || String(channel.id);
@@ -8951,19 +8952,21 @@ async function renderFollowPage() {
                 </button>
             `
                 : '';
+            // Requadre ple amb la foto del grup i, a dins, el nom, «Segueix» i amagar (com les caràtules de la fitxa)
             return `
-            <div class="follow-card" data-channel-id="${channel.id}">
-                <button class="follow-hide-btn" type="button" data-hide-channel="${channel.id}" aria-pressed="false">
+            <div class="follow-card" data-channel-id="${channel.id}" role="link" tabindex="0" aria-label="${escapeHtml(`Fitxa de ${name}`)}">
+                <img class="follow-avatar" src="${escapeHtml(avatar)}" alt="" loading="lazy" decoding="async">
+                <span class="follow-card__shade" aria-hidden="true"></span>
+                <button class="follow-hide-btn" type="button" data-hide-channel="${channel.id}" aria-pressed="false" aria-label="${escapeHtml(`Amaga ${name} del feed`)}" title="Amaga del feed">
                     <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                         <path d="M1.5 12s3.5-7 10.5-7 10.5 7 10.5 7-3.5 7-10.5 7S1.5 12 1.5 12Z"></path>
                         <circle cx="12" cy="12" r="3.5"></circle>
                     </svg>
                 </button>
-                <div class="follow-avatar-wrap">
-                    <img class="follow-avatar" src="${avatar}" alt="${escapeHtml(name)}" loading="lazy">
+                <div class="follow-card__info">
+                    <div class="follow-name">${escapeHtml(name)}</div>
+                    ${followButtonHtml}
                 </div>
-                <div class="follow-name">${escapeHtml(name)}</div>
-                ${followButtonHtml}
             </div>
         `;
         })
@@ -8976,6 +8979,12 @@ async function renderFollowPage() {
     SegueixApp.features.alphabetIndex?.attach?.(followGrid);
 }
 
+// Foto del requadre d'un artista: la dels avatars de YouTube a 400 px (porten «=s88…» o «=s240…»), sempre per https.
+function followCardImage(url) {
+    const src = String(url || '').replace(/^http:\/\//i, 'https://');
+    return /\/\/yt3\.(ggpht|googleusercontent)\.com\//i.test(src) ? src.replace(/=s\d+(?=-|$)/, '=s400') : src;
+}
+
 // Listener delegat persistent per followGrid (1 sol listener en lloc de N)
 function _bindFollowGridDelegated() {
     if (!followGrid || followGrid.dataset.delegated === 'true') return;
@@ -8986,6 +8995,12 @@ function _bindFollowGridDelegated() {
         if (card) {
             openChannelProfile(card.dataset.channelId);
         }
+    });
+    // El requadre és un enllaç a la fitxa: també amb Retorn des del teclat
+    followGrid.addEventListener('keydown', event => {
+        if (event.key !== 'Enter' || !event.target.classList?.contains('follow-card')) return;
+        event.preventDefault();
+        openChannelProfile(event.target.dataset.channelId);
     });
 }
 
@@ -13283,14 +13298,17 @@ async function openChannelProfileLegacyImpl(channelId) {
     if (channelProfileName) {
         channelProfileName.textContent = channelName;
     }
+    // Canal de YouTube del grup (el del grup és l'oficial si en té): per a l'@handle i el botó «YouTube» de la foto.
+    const profileHandle = String(channel?.handle || '').trim();
+    const youtubeChannelUrl =
+        profileHandle.startsWith('@') && profileId !== 'UCLyS6_AjQKIbL4C2BByWjmQ'
+            ? `https://www.youtube.com/${profileHandle}`
+            : `https://www.youtube.com/channel/${profileId}`;
     if (channelProfileHandle) {
         if (channel?.handle) {
-            const cleanHandle = String(channel.handle).trim();
+            const cleanHandle = profileHandle;
             // Nom visible editorial; l’enllaç conserva el canal real indexat.
             const displayHandle = profileId === 'UCLyS6_AjQKIbL4C2BByWjmQ' ? '@elspets' : cleanHandle;
-            const youtubeChannelUrl = cleanHandle.startsWith('@') && profileId !== 'UCLyS6_AjQKIbL4C2BByWjmQ'
-                ? `https://www.youtube.com/${cleanHandle}`
-                : `https://www.youtube.com/channel/${profileId}`;
             channelProfileHandle.innerHTML = `<a href="${youtubeChannelUrl}" class="channel-profile-handle-link" target="_blank" rel="noopener noreferrer">${escapeHtml(displayHandle)}</a>`;
             channelProfileHandle.classList.remove('hidden');
         } else {
@@ -13300,7 +13318,9 @@ async function openChannelProfileLegacyImpl(channelId) {
     }
     if (channelProfileSubscribers) {
         if (channel?.subscriberCount) {
-            channelProfileSubscribers.textContent = `${formatViews(channel.subscriberCount)} subscriptors`;
+            channelProfileSubscribers.textContent =
+                SegueixApp.features.artistPage?.subscribersLabel?.(channel.subscriberCount) ||
+                `${formatViews(channel.subscriberCount)} subscriptors`;
             channelProfileSubscribers.classList.remove('hidden');
         } else {
             channelProfileSubscribers.textContent = '';
@@ -13314,6 +13334,8 @@ async function openChannelProfileLegacyImpl(channelId) {
             name: channelName,
             description: channel?.description || '',
             categories: channel?.categories || [],
+            avatar: channelAvatar,
+            youtubeUrl: youtubeChannelUrl,
         });
     } else if (channelProfileDescription) {
         channelProfileDescription.textContent = channel?.description || 'No hi ha descripció disponible.';
@@ -13388,15 +13410,20 @@ function renderChannelVideos(query = '') {
 
 function renderChannelVideosLegacyImpl(query = '') {
     if (!channelVideosGrid) return;
-    // L'entrada al perfil presenta una caràtula per disc. La cerca continua sobre totes les cançons.
-    const albumOverview = SegueixApp.features.artistPage?.isAlbumsOverview?.(currentChannelId, query);
-    const songHeading = document.getElementById('apSongsTitle');
-    if (songHeading) songHeading.textContent = albumOverview ? 'Cerca una cançó' : 'Cançons';
-    channelVideosGrid.hidden = Boolean(albumOverview);
-    if (albumOverview) {
+    // Fitxa d'artista: la més escoltada, videoclips, directes i la llista de cançons per visualitzacions, cadascuna
+    // amb el play que engega una ràdio (js/features/artist-page.js). Un perfil de programa manté la graella.
+    const artistPage = SegueixApp.features.artistPage;
+    if (!isProgramProfileActive && artistPage?.renderSongs) {
         channelVideosGrid.innerHTML = '';
+        channelVideosGrid.hidden = true;
+        artistPage.renderSongs({
+            videos: (Array.isArray(currentChannelLongVideos) ? currentChannelLongVideos : []).filter(isSongVideo),
+            query,
+            hidden: isChannelHidden(currentChannelId),
+        });
         return;
     }
+    channelVideosGrid.hidden = false;
     if (isChannelHidden(currentChannelId)) {
         channelVideosGrid.innerHTML = '<div class="empty-state">Has ocultat aquest canal del feed.</div>';
         return;
@@ -13422,12 +13449,8 @@ function renderChannelVideosLegacyImpl(query = '') {
         );
     };
 
-    const albumPage = SegueixApp.features.artistPage;
-    const albumFilteredLongVideos = albumPage?.filterSongs
-        ? albumPage.filterSongs(currentChannelLongVideos, currentChannelId)
-        : currentChannelLongVideos;
     // Al perfil del canal també només cançons (no concerts complets, pel·lícules, entrevistes, ni Shorts).
-    const filteredLongVideos = albumFilteredLongVideos.filter(isSongVideo).filter(filterByQuery);
+    const filteredLongVideos = currentChannelLongVideos.filter(isSongVideo).filter(filterByQuery);
 
     if (normalizedQuery && filteredLongVideos.length === 0) {
         channelVideosGrid.innerHTML = '<div class="empty-state">No s\'han trobat resultats dins d\'aquest canal.</div>';

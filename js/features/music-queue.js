@@ -640,37 +640,33 @@
         return rankCandidates(pool)[0] || pool[0];
     }
 
+    // Cançó inicial triada per l'usuari (el play d'una cançó de la fitxa d'artista): la busca al conjunt i, si el
+    // motor l'hagués deixat fora del límit, l'hi afegeix al davant. Sense `seedId`, la tria el motor.
+    function poolWithSeed(pool, videos, options = {}) {
+        const id = String(options.seedId || '');
+        if (!id) return { pool, seed: pickPoolSeed(pool, options) };
+        const found = pool.find(item => String(item.id) === id);
+        if (found) return { pool, seed: found };
+        const extra = searchPool((Array.isArray(videos) ? videos : []).filter(item => String(item?.id) === id), 1)[0];
+        return extra ? { pool: [extra, ...pool], seed: extra } : { pool, seed: pickPoolSeed(pool, options) };
+    }
+
     // Ràdio només amb cançons d'un artista: `videos` són les seves cançons (el motor les ordena segons el gust i
     // permet cançons seguides del mateix artista, com a una ràdio de cerca) i «Barreja» es queda dins d'elles.
-    // Retorna true si ha començat (calen almenys dues cançons).
+    // `seedId`: comença per aquesta cançó (el play de cada cançó de la fitxa); `title`: nom fix de la ràdio
+    // («Videoclips de …»). Retorna true si ha començat (calen almenys dues cançons).
     function startArtistRadio(videos, options = {}) {
         if (typeof loadVideoInSequence !== 'function' || document.body.classList.contains('segueix-tv-active')) {
             return false;
         }
-        const pool = searchPool(videos, ARTIST_RADIO_POOL);
-        const name = String(options.name || '').trim() || String(pool[0]?.channelTitle || '').trim();
-        if (pool.length < 2 || !name) return false;
+        const base = searchPool(videos, ARTIST_RADIO_POOL);
+        const name = String(options.name || '').trim() || String(base[0]?.channelTitle || '').trim();
+        if (base.length < 2 || !name) return false;
+        const { pool, seed } = poolWithSeed(base, videos, options);
         return launchPoolRadio(
             pool,
-            pickPoolSeed(pool, options),
-            { artist: name, channelId: options.channelId },
-            options
-        );
-    }
-
-    // Ràdio d'un disc (fitxa d'artista): només les cançons del disc, ordenades pel motor com una ràdio d'artista;
-    // «Barreja» es queda dins del disc. Nom «Ràdio «<disc>»». Retorna true si ha començat (calen almenys dues cançons).
-    function startAlbumRadio(videos, options = {}) {
-        if (typeof loadVideoInSequence !== 'function' || document.body.classList.contains('segueix-tv-active')) {
-            return false;
-        }
-        const pool = searchPool(videos, ARTIST_RADIO_POOL);
-        const album = String(options.album || '').trim();
-        if (pool.length < 2 || !album) return false;
-        return launchPoolRadio(
-            pool,
-            pickPoolSeed(pool, options),
-            { title: `Ràdio «${album}»`, artist: String(options.artist || '').trim(), channelId: options.channelId },
+            seed,
+            { artist: name, title: String(options.title || '').trim(), channelId: options.channelId },
             options
         );
     }
@@ -1863,7 +1859,6 @@
         nearbyPool: videos => searchPool(videos, Infinity).filter(video => !unavailableVideos.has(String(video.id))),
         startFromSearch,
         startArtistRadio,
-        startAlbumRadio,
         startCategoryRadio,
         startStyleRadio,
         saveAsPlaylist,

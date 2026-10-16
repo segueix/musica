@@ -3406,44 +3406,429 @@ body .follow-btn-pill.is-followed:hover {
 }
 
 /* ==========================================================================
-   Fitxa d'artista (#channelPage)
-   Barra superior amb «enrere» i les dues ràdios; capçalera amb el nom a l'esquerra i la foto gran a la dreta;
-   presentació curta (tres línies) que s'expandeix. Mobile first. Substitueix el disseny antic
-   (.channel-profile-* de styles.css) amb selectors més específics.
+   Fitxa d'artista (#channelPage) — redisseny 2026-10-16
+   La foto de perfil fa de fons de la capçalera (.ap-hero) i al damunt hi van el nom, els subscriptors, les cançons,
+   l'origen (amb «Ràdio d'aquí»), la presentació (una línia), els estils i les teves categories, les ràdios, seguir
+   i compartir. Al costat (a sota al mòbil), la cançó més escoltada (.ap-best, #1). A sota, la resta de cançons per
+   visualitzacions en tres columnes de caràtules quadrades (.ap-grid), sense títols de secció; cada caràtula engega
+   una ràdio de l'artista que comença per aquella cançó.
+   Mobile first. Substitueix el disseny antic (.channel-profile-* de styles.css) amb selectors més específics.
    ========================================================================== */
 
-/* ---------- Barra superior: enrere + ràdios ---------- */
-#channelPage .ap-top {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 14px;
+#channelPage {
+    --ap-glass: rgba(20, 22, 21, 0.55);
+    --ap-glass-line: rgba(244, 240, 232, 0.26);
 }
 
-#channelPage .channel-back-btn {
+#channelPage [hidden] {
+    display: none !important;
+}
+
+/* ---------- Capçalera + la més escoltada ---------- */
+/* Al mòbil la #1 va just a sota de la capçalera, amb el mínim espai (com entre les caràtules) */
+#channelPage .ap-head {
+    display: grid;
+    gap: 4px;
+}
+
+#channelPage .ap-hero {
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 0;
+    min-height: clamp(480px, 140vw, 620px);
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid var(--pt-line);
+    border-radius: var(--pt-radius-lg);
+    background: var(--pt-surface);
+    text-align: left;
+}
+
+/* La mateixa foto, desenfocada, sota la nítida: omple els costats si la foto no arriba i mentre carrega */
+#channelPage .ap-hero__photo {
+    position: absolute;
+    inset: -40px;
+    z-index: -3;
+    background: var(--ap-photo, none) center / cover no-repeat;
+    filter: blur(32px) saturate(1.15);
+    opacity: 0.75;
+}
+
+#channelPage .ap-hero__img.channel-profile-avatar {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    object-fit: cover;
+    object-position: center 28%;
+    background: transparent;
+    /* Si la foto no carrega, que no s'hi vegi el text alternatiu (queda el fons) */
+    color: transparent;
+}
+
+#channelPage .ap-hero__img.is-broken {
+    visibility: hidden;
+}
+
+/* Fosc a dalt (enrere i compartir) i sobretot a baix (el text): contrast sobre qualsevol foto */
+#channelPage .ap-hero__shade {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(
+        180deg,
+        rgba(20, 22, 21, 0.5) 0%,
+        rgba(20, 22, 21, 0.12) 16%,
+        rgba(20, 22, 21, 0.45) 32%,
+        rgba(20, 22, 21, 0.86) 52%,
+        rgba(20, 22, 21, 0.96) 72%,
+        rgba(20, 22, 21, 0.98) 100%
+    );
+}
+
+/* Enrere, YouTube i compartir: fixats DINS la foto, a dalt, amb marge respecte de les vores (abans anaven al flux de
+   la capçalera, enganxats a la vora). La capçalera reserva l'espai de dalt (padding-top) perquè el text no hi passi
+   per sota. */
+#channelPage .ap-hero {
+    --ap-edge: 14px;
+    padding-top: calc(var(--ap-edge) + 58px);
+}
+
+#channelPage .ap-top {
+    position: absolute;
+    top: var(--ap-edge);
+    left: var(--ap-edge);
+    right: var(--ap-edge);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+}
+
+#channelPage .ap-top__end {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+}
+
+#channelPage .ap-top .channel-back-btn,
+#channelPage .ap-top .channel-profile-share-btn.btn-round-icon,
+#channelPage .ap-yt {
     flex: none;
     width: 44px;
     height: 44px;
-    border: 1px solid var(--pt-line);
-    background: var(--pt-surface);
-    color: var(--pt-text);
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    border-radius: 50%;
+    background: rgba(20, 22, 21, 0.7);
+    color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
     transition: background 0.15s ease;
 }
 
-#channelPage .channel-back-btn:hover {
-    background: var(--pt-surface-2);
+/* «YouTube»: obre el canal del grup a YouTube (càpsula amb el logotip, en blanc) */
+#channelPage .ap-yt {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    width: auto;
+    padding: 0 14px 0 12px;
+    border-radius: var(--pt-radius-pill);
+    font-size: 0.875rem;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+#channelPage .ap-yt svg {
+    width: 22px;
+    height: 22px;
+    flex: none;
+}
+
+#channelPage .ap-top .channel-back-btn:hover,
+#channelPage .ap-top .channel-profile-share-btn.btn-round-icon:hover,
+#channelPage .ap-yt:hover {
+    background: rgba(20, 22, 21, 0.9);
+    color: var(--pt-accent);
+}
+
+#channelPage .ap-yt:focus-visible {
+    outline: 3px solid var(--pt-accent);
+    outline-offset: 3px;
+}
+
+#channelPage .ap-hero__meta {
+    display: block;
+    flex: none;
+    margin-top: auto;
+    width: 100%;
+    min-width: 0;
+    padding: 0 16px 16px;
+    border: 0;
+    background: none;
+}
+
+#channelPage .ap-hero__text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    min-width: 0;
+}
+
+#channelPage .ap-hero__eyebrow {
+    margin: 0;
+    color: var(--pt-accent);
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
+}
+
+#channelPage .channel-profile-title-row {
+    display: block;
+    width: 100%;
+    min-width: 0;
+}
+
+#channelPage .channel-profile-name {
+    margin: 0;
+    font-family: var(--pt-display);
+    font-size: clamp(2.1rem, 10.5vw, 4.4rem);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.025em;
+    overflow-wrap: anywhere;
+    text-wrap: balance;
+    color: var(--pt-text);
+    text-shadow: 0 2px 18px rgba(0, 0, 0, 0.55);
+}
+
+#channelPage .ap-hero__info {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 14px;
+    width: 100%;
+}
+
+#channelPage .ap-hero__info .channel-profile-info-left {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2px 16px;
+}
+
+#channelPage .channel-profile-subscribers,
+#channelPage .ap-stats,
+#channelPage .channel-profile-handle {
+    margin: 0;
+    color: var(--pt-text);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
+}
+
+#channelPage .channel-profile-handle-link {
+    color: var(--pt-accent);
+    font-weight: 700;
+}
+
+#channelPage .channel-profile-handle-link:hover,
+#channelPage .channel-profile-handle-link:focus-visible {
+    color: #e2f49a;
+}
+
+/* Origen: un xip de vidre que es desplega amb el perquè, «Ràdio d'aquí» i les fonts */
+#channelPage .ap-origin {
+    max-width: 100%;
+    margin: 0;
+    color: var(--pt-text);
+    overflow-wrap: anywhere;
+}
+
+#channelPage .ap-origin summary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 44px;
+    padding: 0 16px 0 12px;
+    border: 1px solid var(--ap-glass-line);
+    border-radius: var(--pt-radius-pill);
+    background: var(--ap-glass);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    font-size: 0.875rem;
+    font-weight: 700;
+    list-style: none;
+    cursor: pointer;
+}
+
+#channelPage .ap-origin summary::-webkit-details-marker {
+    display: none;
+}
+
+#channelPage .ap-origin summary svg,
+#channelPage .ap-chip-btn svg {
+    width: 18px;
+    height: 18px;
+    flex: none;
+    color: var(--pt-accent);
+}
+
+#channelPage .ap-origin summary:focus-visible {
+    outline: 3px solid var(--pt-accent);
+    outline-offset: 3px;
+}
+
+#channelPage .ap-origin[open] summary {
+    border-color: var(--pt-accent);
+}
+
+#channelPage .ap-origin__details {
+    margin-top: 8px;
+    padding: 12px 14px 4px;
+    border: 1px solid var(--ap-glass-line);
+    border-radius: var(--pt-radius);
+    background: rgba(20, 22, 21, 0.82);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+#channelPage .ap-origin__details p {
+    margin: 0 0 8px;
+    color: var(--pt-muted);
+}
+
+#channelPage .ap-origin__radios {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 4px;
+}
+
+#channelPage .ap-origin__details ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 16px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#channelPage .ap-origin__details a {
+    display: inline-block;
+    padding: 10px 0;
+    color: var(--pt-accent);
+}
+
+/* Estils de l'artista i les teves categories: una sola filera de xips de vidre dins la capçalera.
+   «Les teves categories» (user-categories.js) hi va sense títol ni text d'ajuda: només els xips i «Nova categoria». */
+#channelPage .ap-hero__chips {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    max-width: 100%;
+}
+
+#channelPage .ap-hero__chips #channelProfileTags,
+#channelPage .ap-hero__chips .uc-artist,
+#channelPage .ap-hero__chips .uc-pills {
+    display: contents;
+    margin: 0;
+}
+
+#channelPage .ap-hero__chips .uc-artist__head {
+    display: none;
+}
+
+#channelPage #channelProfileTags .channel-category-btn,
+#channelPage .ap-hero__chips .uc-pill {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 14px;
+    border: 1px solid var(--ap-glass-line);
+    border-radius: var(--pt-radius-pill);
+    background: var(--ap-glass);
+    color: var(--pt-text);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    font-size: 0.8125rem;
+    font-weight: 800;
+}
+
+#channelPage .ap-hero__chips .uc-pill.is-on {
+    border-color: var(--pt-accent);
+    background: var(--pt-accent);
+    color: var(--pt-on-accent);
+}
+
+#channelPage .ap-hero__chips .uc-pill--new {
+    border-style: dashed;
+    color: var(--pt-accent);
+}
+
+/* La presentació, dins la capçalera: una línia amb punts suspensius; si no hi cap, tocar-la la desplega */
+#channelPage .ap-hero .ap-bio {
+    width: 100%;
+    max-width: 62ch;
+    margin: 0;
+}
+
+#channelPage .ap-hero .channel-profile-description {
+    color: var(--pt-text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7);
+}
+
+#channelPage .ap-hero .channel-profile-description.is-expandable {
+    min-height: 44px;
+    padding: 11px 0;
+    cursor: pointer;
+}
+
+#channelPage .ap-hero .channel-profile-description.is-expandable:hover {
+    color: #fff;
+}
+
+#channelPage .ap-hero .channel-profile-description:focus-visible {
+    outline: 3px solid var(--pt-accent);
+    outline-offset: 2px;
+}
+
+/* Accions: ràdio de l'artista (llima), ràdio de l'estil, seguir i amagar */
+#channelPage .ap-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    margin-top: 6px;
 }
 
 #channelPage .ap-radios {
     display: flex;
-    flex: 1;
+    flex: 1 1 100%;
     gap: 8px;
     min-width: 0;
-    justify-content: flex-end;
-}
-
-#channelPage .ap-radios[hidden] {
-    display: none;
 }
 
 .ap-radio {
@@ -3453,18 +3838,20 @@ body .follow-btn-pill.is-followed:hover {
     justify-content: center;
     gap: 8px;
     min-width: 0;
-    min-height: 44px;
-    padding: 0 12px;
-    border: 1px solid var(--pt-line);
-    border-radius: var(--pt-radius);
-    background: var(--pt-surface);
+    min-height: 48px;
+    padding: 0 16px;
+    border: 1px solid var(--ap-glass-line, var(--pt-line));
+    border-radius: var(--pt-radius-pill);
+    background: var(--ap-glass, var(--pt-surface));
     color: var(--pt-text);
     font: inherit;
-    font-size: 0.8125rem;
+    font-size: 0.9375rem;
     font-weight: 800;
     line-height: 1.1;
     white-space: nowrap;
     cursor: pointer;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
     transition:
         background 0.15s ease,
         border-color 0.15s ease,
@@ -3478,8 +3865,8 @@ body .follow-btn-pill.is-followed:hover {
 }
 
 .ap-radio:hover:not(:disabled) {
-    background: var(--pt-surface-2);
-    border-color: rgba(244, 240, 232, 0.32);
+    background: rgba(20, 22, 21, 0.78);
+    border-color: rgba(244, 240, 232, 0.45);
 }
 
 .ap-radio:active:not(:disabled) {
@@ -3499,16 +3886,16 @@ body .follow-btn-pill.is-followed:hover {
 }
 
 .ap-radio:disabled {
-    border-color: var(--pt-line);
-    background: var(--pt-surface);
+    border-color: var(--ap-glass-line, var(--pt-line));
+    background: var(--ap-glass, var(--pt-surface));
     color: var(--pt-muted);
-    opacity: 0.7;
+    opacity: 0.75;
     cursor: default;
 }
 
 .ap-radio:focus-visible,
-.ap-bio__toggle:focus-visible,
-#channelPage .channel-back-btn:focus-visible {
+#channelPage .channel-back-btn:focus-visible,
+#channelPage :is(.ap-chip-btn, .ap-card__art, .ap-card__queue, .ap-more, .uc-pill):focus-visible {
     outline: 3px solid var(--pt-accent);
     outline-offset: 3px;
 }
@@ -3517,147 +3904,89 @@ body .follow-btn-pill.is-followed:hover {
     display: none;
 }
 
-/* ---------- Capçalera: nom a l'esquerra, foto gran a la dreta ---------- */
-#channelPage .ap-hero {
-    display: block;
-    padding: 0;
-    text-align: left;
-}
-
-#channelPage .ap-hero__meta {
-    position: relative;
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
-    grid-template-areas:
-        'eyebrow photo'
-        'name photo'
-        'info photo'
-        'actions actions';
-    align-items: center;
-    column-gap: 16px;
-    row-gap: 6px;
-    width: 100%;
-    min-width: 0;
-    padding: 18px 16px 16px;
-    border: 1px solid var(--pt-line);
-    border-radius: var(--pt-radius-lg);
-    background: radial-gradient(90% 120% at 100% 0%, rgba(214, 237, 132, 0.1), transparent 60%), var(--pt-surface);
-}
-
-#channelPage .ap-hero__text {
-    display: contents;
-}
-
-#channelPage .ap-hero__eyebrow {
-    grid-area: eyebrow;
-    align-self: end;
-}
-
-#channelPage .channel-profile-title-row {
-    grid-area: name;
-    min-width: 0;
-}
-
-#channelPage .channel-profile-name {
-    margin: 0;
-    font-family: var(--pt-display);
-    font-size: clamp(1.75rem, 8vw, 3.4rem);
-    font-weight: 700;
-    line-height: 1.05;
-    letter-spacing: -0.02em;
-    overflow-wrap: anywhere;
-    text-wrap: balance;
-    color: var(--pt-text);
-}
-
-#channelPage .channel-profile-avatar {
-    grid-area: photo;
-    justify-self: end;
-    width: clamp(104px, 30vw, 208px);
-    height: clamp(104px, 30vw, 208px);
-    border: 3px solid var(--pt-surface-3);
-    border-radius: 50%;
-    object-fit: cover;
-    background: var(--pt-surface-2);
-    box-shadow:
-        0 0 0 1px var(--pt-line),
-        0 18px 40px rgba(0, 0, 0, 0.45);
-}
-
-#channelPage .channel-profile-info-row {
-    grid-area: info;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 6px;
-    min-width: 0;
-}
-
-#channelPage .channel-profile-info-left {
-    gap: 2px;
-}
-
-#channelPage .channel-profile-handle,
-#channelPage .channel-profile-subscribers {
-    font-size: 0.875rem;
-    color: var(--pt-muted);
-}
-
-#channelPage .channel-profile-handle-link {
-    color: var(--pt-accent);
-    font-weight: 600;
-}
-
-#channelPage .channel-profile-handle-link:hover,
-#channelPage .channel-profile-handle-link:focus-visible {
-    color: #e2f49a;
-}
-
-#channelPage .channel-profile-actions {
-    grid-area: actions;
+#channelPage .ap-hero .channel-profile-actions {
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
     gap: 8px;
-    margin-top: 10px;
 }
 
-#channelPage .channel-profile-follow-btn {
+#channelPage .ap-hero .channel-profile-follow-btn {
     min-height: 44px;
     padding: 0 22px;
+    border: 1px solid rgba(244, 240, 232, 0.6);
+    border-radius: var(--pt-radius-pill);
+    background: var(--ap-glass);
+    color: var(--pt-text);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
 }
 
-#channelPage .channel-profile-hide-btn.btn-round-icon,
-#channelPage .channel-profile-share-btn.btn-round-icon {
+#channelPage .ap-hero .channel-profile-follow-btn:hover {
+    border-color: var(--pt-text);
+    background: rgba(20, 22, 21, 0.78);
+}
+
+#channelPage .ap-hero .channel-profile-follow-btn.is-followed {
+    border-color: var(--pt-accent);
+    color: var(--pt-accent);
+}
+
+#channelPage .ap-hero .channel-profile-hide-btn.btn-round-icon {
     width: 44px;
     height: 44px;
-    border: 1px solid var(--pt-line);
-    background: transparent;
+    border: 1px solid var(--ap-glass-line);
+    background: var(--ap-glass);
     color: var(--pt-text);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
 }
 
-#channelPage .channel-profile-hide-btn.btn-round-icon:hover,
-#channelPage .channel-profile-share-btn.btn-round-icon:hover {
-    background: var(--pt-surface-2);
+#channelPage .ap-hero .channel-profile-hide-btn.btn-round-icon:hover {
+    background: rgba(20, 22, 21, 0.78);
 }
 
 #channelPage .channel-profile-hide-btn.is-hidden {
-    background: var(--pt-surface-2);
-    border-color: rgba(244, 240, 232, 0.4);
+    border-color: rgba(244, 240, 232, 0.5);
 }
 
 #channelPage .channel-profile-hide-btn.is-hidden::after {
     background: var(--pt-text);
 }
 
+body #channelPage .ap-hero .channel-profile-hide-btn.btn-round-icon {
+    border: 1px solid var(--ap-glass-line);
+}
+
+/* Els botons de dalt de la foto (enrere, YouTube, compartir): vora blanca (guanya als estils generals de botons) */
+body #channelPage .ap-top :is(.channel-back-btn, .channel-profile-share-btn, .ap-yt) {
+    border: 1px solid rgba(255, 255, 255, 0.55);
+}
+
+/* ---------- Play: el mateix cercle llima a tota la fitxa ---------- */
+#channelPage .ap-play {
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--pt-accent);
+    color: var(--pt-on-accent);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+    transition: transform 0.15s ease;
+}
+
+#channelPage .ap-play svg {
+    width: 22px;
+    height: 22px;
+    margin-left: 2px;
+}
+
 /* ---------- Presentació curta, expandible ---------- */
 .ap-bio {
     max-width: 68ch;
-    margin: 16px 0 0;
-}
-
-.ap-bio[hidden] {
-    display: none;
 }
 
 #channelPage .channel-profile-description {
@@ -3670,112 +3999,337 @@ body .follow-btn-pill.is-followed:hover {
     overflow-wrap: anywhere;
 }
 
+/* Plegada: una sola línia amb punts suspensius (els salts de línia es tornen espais) */
 #channelPage .channel-profile-description.is-collapsed {
-    display: -webkit-box;
+    display: block;
     overflow: hidden;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
-.ap-bio__toggle {
+#channelPage .ap-chip-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     min-height: 44px;
-    margin-top: 2px;
-    padding: 0;
-    border: 0;
-    background: none;
-    color: var(--pt-accent);
+    padding: 0 16px;
+    border: 1px solid var(--pt-line);
+    border-radius: var(--pt-radius-pill);
+    background: var(--pt-surface-2);
+    color: var(--pt-text);
     font: inherit;
-    font-size: 0.9375rem;
+    font-size: 0.875rem;
     font-weight: 800;
     cursor: pointer;
 }
 
-.ap-bio__toggle[hidden] {
-    display: none;
-}
-
-.ap-bio__toggle:hover {
-    text-decoration: underline;
-    text-underline-offset: 3px;
-}
-
-/* ---------- Estils de l'artista ---------- */
-#channelPage #channelProfileTags {
-    margin: 14px 0 0;
-}
-
-#channelPage .channel-category-btn {
-    padding: 8px 14px;
-    border: 1px solid var(--pt-line);
-    background: var(--pt-surface);
-    color: var(--pt-text);
-    font-size: 0.8125rem;
-    font-weight: 700;
-}
-
-/* ---------- Cançons de l'artista ---------- */
-.ap-songs-head {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px 16px;
-    margin: 22px 0 14px;
-}
-
-.ap-songs-title {
-    margin: 0;
-    font-family: var(--pt-display);
-    font-size: clamp(1.4rem, 4.6vw, 1.85rem);
-    font-weight: 700;
-    line-height: 1.15;
-    letter-spacing: -0.01em;
-    color: var(--pt-text);
-}
-
-#channelPage .channel-search-wrap--mobile {
-    flex: 1 1 100%;
-    margin: 0;
-}
-
-#channelPage .channel-search-input {
-    width: 100%;
-    min-height: 44px;
-    padding: 0 16px;
-    border: 1px solid var(--pt-line);
-    border-radius: var(--pt-radius);
-    background: var(--pt-surface);
-    color: var(--pt-text);
-    font-size: 0.9375rem;
-}
-
-#channelPage .channel-search-input::placeholder {
-    color: var(--pt-muted);
-}
-
-#channelPage .channel-search-input:focus {
+#channelPage .ap-chip-btn:hover {
     border-color: var(--pt-accent);
-    box-shadow: 0 0 0 2px rgba(214, 237, 132, 0.25);
+    color: var(--pt-accent);
+}
+
+/* ---------- Caràtules quadrades amb les dades al damunt, en blanc (2026-10-16) ----------
+   La més escoltada (#1) i, a sota, la resta de cançons per visualitzacions: al mòbil una caràtula sota l'altra (una
+   columna) i a partir de 769 px en tres columnes, sempre quadrades, iguals i amb el mínim espai; sense títols de
+   secció. Totes porten un marc blanc fi. Sobre la imatge, tot en blanc i sense fons: el número a dalt a l'esquerra,
+   la cua a dalt a la dreta i, a baix, les visualitzacions, el títol, l'any i la durada i el play. Un fosc suau a baix
+   perquè el text es llegeixi. Res no es mou ni gira. Cada caràtula és un contenidor: la lletra, els marges i el play
+   creixen amb la seva amplada (cqi), sigui d'una columna o de tres. */
+#channelPage .ap-songs-wrap {
+    margin-top: 4px;
+}
+
+#channelPage .ap-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 4px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 @media (min-width: 769px) {
-    #channelPage .channel-search-wrap--desktop {
-        flex: 0 1 340px;
+    #channelPage .ap-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+#channelPage .ap-card {
+    --ap-t: clamp(0.8rem, 6cqi, 1.9rem);
+    --ap-pad: clamp(8px, 4.5cqi, 20px);
+    --ap-play: clamp(36px, 15cqi, 64px);
+    position: relative;
+    min-width: 0;
+    aspect-ratio: 1;
+    container-type: inline-size;
+}
+
+#channelPage .ap-card__art {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    overflow: hidden;
+    /* El marc blanc fi, a totes les caràtules */
+    border: 2px solid #fff;
+    border-radius: 2px;
+    background: var(--pt-surface-2);
+    color: #fff;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+}
+
+#channelPage .ap-card__art img {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#channelPage .ap-card__art img.is-letterboxed {
+    transform: scale(1.34);
+}
+
+#channelPage .ap-card__shade {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.42) 0%,
+        rgba(0, 0, 0, 0) 26%,
+        rgba(0, 0, 0, 0) 44%,
+        rgba(0, 0, 0, 0.78) 100%
+    );
+    pointer-events: none;
+}
+
+#channelPage .ap-card__art:hover .ap-card__shade {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.15) 40%, rgba(0, 0, 0, 0.85) 100%);
+}
+
+#channelPage .ap-card__rank {
+    position: absolute;
+    top: var(--ap-pad);
+    left: var(--ap-pad);
+    color: #fff;
+    font-size: calc(var(--ap-t) * 1.15);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.01em;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7);
+}
+
+#channelPage .ap-card__info {
+    position: absolute;
+    left: var(--ap-pad);
+    right: calc(var(--ap-pad) + var(--ap-play) + 6px);
+    bottom: var(--ap-pad);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    color: #fff;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.75);
+}
+
+#channelPage .ap-card__tag {
+    font-size: max(0.62rem, calc(var(--ap-t) * 0.55));
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+/* Visualitzacions: en blanc, sense fons */
+#channelPage .ap-card__views {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: max(0.66rem, calc(var(--ap-t) * 0.66));
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+}
+
+#channelPage .ap-card__views svg {
+    width: 1.1em;
+    height: 1.1em;
+}
+
+#channelPage .ap-card__title {
+    display: -webkit-box;
+    max-width: 100%;
+    overflow: hidden;
+    font-size: var(--ap-t);
+    font-weight: 800;
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+#channelPage .ap-card__facts {
+    font-size: max(0.62rem, calc(var(--ap-t) * 0.58));
+    font-weight: 600;
+    opacity: 0.85;
+    font-variant-numeric: tabular-nums;
+}
+
+#channelPage .ap-card .ap-play {
+    right: var(--ap-pad);
+    bottom: var(--ap-pad);
+    width: var(--ap-play);
+    height: var(--ap-play);
+    background: #fff;
+    color: #141615;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+    transition: none;
+}
+
+#channelPage .ap-card .ap-play svg {
+    width: 45%;
+    height: 45%;
+}
+
+#channelPage .ap-card__queue {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    color: #fff;
+    filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.8));
+    cursor: pointer;
+}
+
+#channelPage .ap-card__queue svg {
+    width: 22px;
+    height: 22px;
+}
+
+#channelPage .ap-card__queue:hover {
+    background: rgba(0, 0, 0, 0.35);
+}
+
+/* Caràtules estretes (tres columnes en una finestra petita): sense l'any, la durada ni el cercle del play (tota la
+   caràtula ja és el botó), perquè el títol hi càpiga */
+@container (max-width: 220px) {
+    #channelPage .ap-card__facts,
+    #channelPage .ap-card .ap-play {
+        display: none;
     }
 
-    #channelPage .ap-top {
-        margin-bottom: 18px;
+    #channelPage .ap-card__info {
+        right: var(--ap-pad);
+    }
+}
+
+/* Ordinador (ratolí): en passar-hi per sobre, la caràtula s'amplia una mica i queda per damunt de les veïnes.
+   #channelPage té `contain: content`, que retalla el que en surt: les caràtules de les vores s'amplien cap a dins
+   (primera columna des de l'esquerra, tercera des de la dreta, darrera fila des de baix, la #1 des de dalt a la
+   dreta) perquè no perdin el marc blanc. */
+@media (hover: hover) and (pointer: fine) {
+    #channelPage .ap-card {
+        --ap-ox: center;
+        --ap-oy: center;
+        transform-origin: var(--ap-ox) var(--ap-oy);
+        transition:
+            transform 0.18s ease,
+            box-shadow 0.18s ease;
     }
 
+    #channelPage .ap-card:hover,
+    #channelPage .ap-card:focus-within {
+        z-index: 3;
+        transform: scale(1.04);
+        box-shadow: 0 14px 34px rgba(0, 0, 0, 0.55);
+    }
+
+    #channelPage .ap-best .ap-card {
+        --ap-ox: right;
+        --ap-oy: top;
+    }
+}
+
+@media (hover: hover) and (pointer: fine) and (min-width: 769px) {
+    #channelPage .ap-grid .ap-card:nth-child(3n + 1) {
+        --ap-ox: left;
+    }
+
+    #channelPage .ap-grid .ap-card:nth-child(3n) {
+        --ap-ox: right;
+    }
+
+    #channelPage .ap-grid .ap-card:nth-last-child(-n + 3) {
+        --ap-oy: bottom;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #channelPage .ap-card {
+        transition: none;
+    }
+
+    #channelPage .ap-card:hover,
+    #channelPage .ap-card:focus-within {
+        transform: none;
+    }
+}
+
+/* ---------- La més escoltada (#1): la mateixa caràtula, amb l'etiqueta «La més escoltada» ---------- */
+#channelPage .ap-best {
+    display: block;
+    min-width: 0;
+}
+
+#channelPage .ap-best__card {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#channelPage .ap-best .ap-card {
+    width: 100%;
+}
+
+/* ---------- «Mostra'n més» i el missatge d'un artista sense cançons ---------- */
+#channelPage .ap-more {
+    display: block;
+    min-height: 44px;
+    margin: 16px auto 0;
+    padding: 0 22px;
+    border: 1px solid var(--pt-line);
+    border-radius: var(--pt-radius-pill);
+    background: var(--pt-surface);
+    color: var(--pt-text);
+    font: inherit;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+#channelPage .ap-more:hover {
+    border-color: var(--pt-accent);
+    color: var(--pt-accent);
+}
+
+#channelPage .ap-songs-empty {
+    margin: 8px 0 0;
+}
+
+@media (min-width: 560px) {
     #channelPage .ap-radios {
         flex: 0 1 auto;
-        margin-left: auto;
-    }
-
-    .ap-radio {
-        flex: 0 1 auto;
-        padding: 0 20px;
-        font-size: 0.9375rem;
     }
 
     .ap-radio__long {
@@ -3785,36 +4339,79 @@ body .follow-btn-pill.is-followed:hover {
     .ap-radio__short {
         display: none;
     }
+}
 
-    #channelPage .ap-hero__meta {
-        grid-template-areas:
-            'eyebrow photo'
-            'name photo'
-            'info photo'
-            'actions photo';
-        column-gap: 32px;
-        padding: 28px 32px;
+@media (min-width: 769px) {
+    #channelPage .ap-hero {
+        min-height: 480px;
     }
 
-    #channelPage .channel-profile-avatar {
-        width: clamp(168px, 17vw, 232px);
-        height: clamp(168px, 17vw, 232px);
+    #channelPage .ap-hero__meta {
+        padding: 0 28px 26px;
+    }
+
+    /* El text va a l'esquerra: fosc a l'esquerra i a baix, la foto lliure a la dreta */
+    #channelPage .ap-hero__shade {
+        background:
+            linear-gradient(90deg, rgba(20, 22, 21, 0.9) 0%, rgba(20, 22, 21, 0.62) 45%, rgba(20, 22, 21, 0.1) 85%),
+            linear-gradient(
+                180deg,
+                rgba(20, 22, 21, 0.4) 0%,
+                rgba(20, 22, 21, 0) 22%,
+                rgba(20, 22, 21, 0.25) 55%,
+                rgba(20, 22, 21, 0.85) 100%
+            );
+    }
+
+    #channelPage .ap-hero__img.channel-profile-avatar {
+        object-position: 70% 28%;
+    }
+
+    #channelPage .ap-hero {
+        --ap-edge: 18px;
+    }
+
+    #channelPage .ap-hero__text {
+        max-width: 760px;
+    }
+
+    .ap-radio {
+        flex: 0 1 auto;
+        padding: 0 22px;
     }
 
     .ap-bio {
-        margin-top: 20px;
+        margin-top: 22px;
+    }
+}
+
+/* Ordinador: la més escoltada al costat de la capçalera, de la mateixa alçada */
+@media (min-width: 960px) {
+    #channelPage .ap-head {
+        grid-template-columns: minmax(0, 1fr) clamp(260px, 26vw, 340px);
+        align-items: stretch;
+        gap: 18px;
+    }
+
+    /* La caràtula omple la columna de dalt a baix (al costat de la capçalera) */
+    #channelPage .ap-best .ap-card {
+        height: 100%;
+        aspect-ratio: auto;
+        min-height: 320px;
     }
 }
 
 @media (prefers-reduced-motion: reduce) {
     .ap-radio,
-    .pt-chip {
+    .pt-chip,
+    #channelPage .ap-play {
         transition: none;
     }
 }
 
-/* Un programa (herència de la fitxa de canal) no té ràdios ni «Artista» */
-#channelPage.channel-page--program-profile .ap-hero__eyebrow {
+/* Un programa (herència de la fitxa de canal) no té ràdios, «Artista», la més escoltada ni la llista nova */
+#channelPage.channel-page--program-profile .ap-hero__eyebrow,
+#channelPage.channel-page--program-profile .ap-best {
     display: none;
 }
 
@@ -4530,136 +5127,6 @@ body.drive-mode .dm-info[hidden] {
 
 
 
-/* ---------- Discos dins la fitxa d'artista ---------- */
-#channelPage .ap-albums {
-    margin: 22px 0 12px;
-}
-#channelPage .ap-albums-head {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    margin-bottom: 10px;
-}
-#channelPage .ap-albums-title {
-    margin: 0;
-    font-size: 1.2rem;
-}
-#channelPage .ap-albums-all {
-    min-height: 36px;
-    padding: 0 14px;
-    border: 1px solid var(--pt-line);
-    border-radius: var(--pt-radius-pill);
-    background: var(--pt-surface-2);
-    color: var(--pt-text);
-    font: inherit;
-    cursor: pointer;
-}
-#channelPage .ap-albums-all.is-active {
-    border-color: var(--pt-accent);
-    color: var(--pt-accent);
-}
-#channelPage .ap-albums-grid {
-    display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: minmax(142px, 172px);
-    gap: 12px;
-    overflow-x: auto;
-    overscroll-behavior-inline: contain;
-    scroll-snap-type: x proximity;
-    scrollbar-width: none;
-    padding: 2px 2px 8px;
-}
-#channelPage .ap-albums-grid::-webkit-scrollbar {
-    display: none;
-}
-#channelPage .ap-album-card {
-    display: grid;
-    grid-template-rows: auto auto auto;
-    gap: 6px;
-    min-width: 0;
-    padding: 8px;
-    border: 1px solid transparent;
-    border-radius: 14px;
-    background: transparent;
-    color: var(--pt-text);
-    text-align: left;
-    cursor: pointer;
-    scroll-snap-align: start;
-}
-#channelPage .ap-album-card:is(:hover, :focus-visible, .is-active) {
-    border-color: var(--pt-line);
-    background: var(--pt-surface-2);
-}
-#channelPage .ap-album-card.is-active {
-    border-color: var(--pt-accent);
-}
-#channelPage .ap-album-cover,
-#channelPage .ap-album-other-icon {
-    width: 100%;
-    aspect-ratio: 1;
-    border-radius: 10px;
-}
-#channelPage .ap-album-cover {
-    display: block;
-    object-fit: cover;
-    background: var(--pt-surface-2);
-}
-#channelPage .ap-album-other-icon {
-    display: grid;
-    place-items: center;
-    background: var(--pt-surface-2);
-    font-size: 2.4rem;
-}
-#channelPage .ap-album-title {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    font-weight: 700;
-    font-size: 0.88rem;
-}
-#channelPage .ap-album-meta {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    color: var(--pt-text-muted);
-    font-size: 0.74rem;
-}
-@media (max-width: 768px) {
-    #channelPage .ap-albums {
-        margin-top: 16px;
-    }
-    #channelPage .ap-albums-grid {
-        grid-auto-columns: 138px;
-        gap: 8px;
-        margin-inline: -12px;
-        padding-inline: 12px;
-    }
-    #channelPage .ap-album-card {
-        padding: 6px;
-    }
-}
-
-#channelPage .ap-albums-views {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    justify-content: flex-end;
-}
-#channelPage .ap-albums-grid.is-overview {
-    grid-auto-flow: row;
-    grid-auto-columns: auto;
-    grid-template-columns: repeat(auto-fill, minmax(138px, 1fr));
-    overflow-x: visible;
-    margin-inline: 0;
-    padding-inline: 0;
-}
-#channelPage .ap-album-meta {
-    white-space: normal;
-}
-#channelPage .ap-album-card:disabled {
-    cursor: default;
-}
 #channelVideosGrid[hidden] {
     display: none;
 }
@@ -6403,14 +6870,6 @@ body.is-video-pip .video-placeholder.is-placeholder-hidden {
 .mq-play:disabled { cursor: default; opacity: 0.65; }
 
 /* Origen revisat, amb les fonts accessibles sense sortir de la fitxa. */
-.ap-origin { margin-top: 8px; color: var(--pt-text); overflow-wrap: anywhere; }
-.ap-origin[hidden] { display: none; }
-.ap-origin summary { min-height: 44px; padding: 10px 0; cursor: pointer; font-weight: 600; }
-.ap-origin summary:focus-visible { outline: 2px solid var(--pt-accent, #D6ED84); outline-offset: 3px; }
-.ap-origin__details { padding: 0 0 8px; font-size: 0.9rem; line-height: 1.5; }
-.ap-origin__details p { margin: 0; }
-.ap-origin__details ul { display: flex; flex-wrap: wrap; gap: 4px 16px; padding: 0; list-style: none; }
-.ap-origin__details a { display: inline-block; padding: 10px 0; color: var(--pt-accent, #D6ED84); }
 
 
 /* Llistes: cerca dins de l'editor. */
@@ -7275,47 +7734,6 @@ body.is-video-pip .video-placeholder.is-placeholder-hidden {
 }
 
 
-/* ---------- Fitxa d'artista: «Ràdio del disc» (2026-10-12) ----------
-   En triar un disc, sota les caràtules: el nom del disc, les cançons disponibles i el botó llima «Ràdio del disc»
-   (només les cançons d'aquell disc; artist-page.js renderAlbumRadio()). No surt amb «Singles i altres». */
-#channelPage .ap-album-radio {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    margin-top: 12px;
-    padding: 10px 10px 10px 14px;
-    border: 1px solid var(--pt-line);
-    border-radius: var(--pt-radius);
-    background: var(--pt-surface);
-}
-
-#channelPage .ap-album-radio[hidden] {
-    display: none;
-}
-
-#channelPage .ap-album-radio__text {
-    display: grid;
-    min-width: 0;
-}
-
-#channelPage .ap-album-radio__text strong {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-#channelPage .ap-album-radio__text span {
-    color: var(--pt-muted);
-    font-size: 0.8125rem;
-}
-
-#channelPage .ap-album-radio__btn {
-    flex: none;
-    padding: 0 16px;
-}
-
-
 /* ---------- «A prop teu»: primer la distància, després la cançó i el grup (2026-10-12) ----------
    A la llista del diàleg la càpsula dels km encapçala el text (abans anava a la dreta); a la cua de la ràdio, la
    línia «12 km · Vic» va abans del títol (music-queue.js nearbyLine()). */
@@ -8144,5 +8562,190 @@ body.am-full-open {
         grid-column: 1 / -1;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 10px;
+    }
+}
+
+/* ---------- Artistes i grups: requadres plens amb la foto del grup (2026-10-16) ----------
+   La mateixa idea que les caràtules de la fitxa d'artista: cada artista és un requadre quadrat ple amb la seva foto,
+   un marc blanc fi i, a dins i en blanc, el nom i «Segueix» a baix i amagar a dalt a la dreta. Mínim espai entre
+   requadres: 2 columnes al mòbil, 3 a ≥ 560 px i tantes de ≥ 190 px com hi càpiguen a l'ordinador. A l'ordinador,
+   en passar-hi el ratolí, el requadre s'amplia una mica. La graella deixa un marge perquè el requadre ampliat no
+   surti de la pàgina (que retalla el que en sobresurt) i el marc no es perdi. */
+#followPage .follow-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 4px;
+    padding: 6px;
+}
+
+@media (min-width: 560px) {
+    #followPage .follow-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 900px) {
+    #followPage .follow-grid {
+        grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    }
+}
+
+#followPage .follow-grid.has-az-index {
+    padding-right: 34px;
+}
+
+#followPage .follow-card {
+    --fc-t: clamp(0.95rem, 7.5cqi, 1.35rem);
+    --fc-pad: clamp(8px, 5cqi, 14px);
+    position: relative;
+    display: block;
+    aspect-ratio: 1;
+    height: auto;
+    padding: 0;
+    overflow: hidden;
+    border: 2px solid #fff;
+    border-radius: 2px;
+    background: var(--pt-surface-2);
+    color: #fff;
+    text-align: left;
+    container-type: inline-size;
+    cursor: pointer;
+}
+
+#followPage .follow-card:focus-visible {
+    outline: 3px solid var(--pt-accent);
+    outline-offset: 2px;
+}
+
+#followPage .follow-avatar {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    object-fit: cover;
+}
+
+#followPage .follow-card__shade {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.35) 0%,
+        rgba(0, 0, 0, 0) 28%,
+        rgba(0, 0, 0, 0) 45%,
+        rgba(0, 0, 0, 0.82) 100%
+    );
+    pointer-events: none;
+}
+
+#followPage .follow-card__info {
+    position: absolute;
+    left: var(--fc-pad);
+    right: var(--fc-pad);
+    bottom: var(--fc-pad);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+#followPage .follow-name {
+    display: -webkit-box;
+    max-width: 100%;
+    overflow: hidden;
+    color: #fff;
+    font-size: var(--fc-t);
+    font-weight: 800;
+    line-height: 1.15;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.75);
+    overflow-wrap: anywhere;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+/* «Segueix»: càpsula de vidre amb vora blanca; seguint, en llima */
+body #followPage .follow-card .follow-toggle-btn {
+    min-width: 0;
+    min-height: 36px;
+    height: auto;
+    margin: 0;
+    padding: 0 16px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: var(--pt-radius-pill);
+    background: rgba(20, 22, 21, 0.6);
+    color: #fff;
+    font-size: 0.8125rem;
+    font-weight: 800;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+
+body #followPage .follow-card .follow-toggle-btn:hover {
+    border-color: #fff;
+    background: rgba(20, 22, 21, 0.85);
+    color: #fff;
+}
+
+body #followPage .follow-card .follow-toggle-btn.is-followed {
+    border-color: var(--pt-accent);
+    background: rgba(20, 22, 21, 0.6);
+    color: var(--pt-accent);
+}
+
+/* Amagar: a dalt a la dreta, sense fons, en blanc (44 px de zona tàctil) */
+#followPage .follow-hide-btn {
+    top: 2px;
+    right: 2px;
+    z-index: 1;
+    width: 44px;
+    height: 44px;
+    border: 0;
+    background: transparent;
+    color: #fff;
+    filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.85));
+}
+
+#followPage .follow-hide-btn svg {
+    width: 22px;
+    height: 22px;
+}
+
+#followPage .follow-hide-btn:hover {
+    background: rgba(0, 0, 0, 0.35);
+}
+
+#followPage .follow-hide-btn.is-hidden {
+    border: 0;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+#followPage .follow-hide-btn.is-hidden::after {
+    height: 26px;
+}
+
+/* Ordinador: en passar-hi el ratolí, el requadre s'amplia una mica */
+@media (hover: hover) and (pointer: fine) {
+    #followPage .follow-card {
+        transition:
+            transform 0.18s ease,
+            box-shadow 0.18s ease;
+    }
+
+    #followPage .follow-card:hover,
+    #followPage .follow-card:focus-within {
+        z-index: 3;
+        transform: scale(1.04);
+        box-shadow: 0 14px 34px rgba(0, 0, 0, 0.55);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #followPage .follow-card {
+        transition: none;
+    }
+
+    #followPage .follow-card:hover,
+    #followPage .follow-card:focus-within {
+        transform: none;
     }
 }

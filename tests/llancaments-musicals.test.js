@@ -1,7 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import releases from '../scripts/lib/llancaments_musicals.js';
 import { canalsRevisats } from '../scripts/lib/canals_revisats.js';
-import { loadScript } from './setup.js';
 
 const release = { id: 'disc', status: 'validated', artist: 'Anna', title: 'Disc', type: 'album',
   sourceType: 'official_playlist', channelIds: ['official', 'topic'],
@@ -53,12 +52,5 @@ describe('llançaments prioritaris', () => {
     const base = { abans: {}, despres: {}, shortsAbans: {}, shortsDespres: {}, feed: {}, actuals: new Set(['official', 'topic', 'other']) };
     expect(canalsRevisats({ ...base, releasesDespres: registry })).toEqual(['official', 'topic']);
     expect(canalsRevisats({ ...base, releasesAbans: registry })).toEqual(['official', 'topic']);
-  });
-  it('mostra una sola versió disponible de cada pista en ordre', () => {
-    const ctx = loadScript('js/features/artist-page.js');
-    const catalog = releases.applyReleaseCatalog({ channels: {}, artists: {} }, registry, { channels });
-    const model = ctx.SegueixApp.features.artistPage.albumsModel(catalog, { channelId: 'official', videos: ['ccccccccccc', 'bbbbbbbbbbb', 'aaaaaaaaaaa'].map(id => ({ id })) });
-    expect(model.albums[0].visibleTrackIds).toEqual(['aaaaaaaaaaa', 'ccccccccccc']);
-    expect(model.otherIds).toEqual([]);
   });
 });
