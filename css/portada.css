@@ -4034,7 +4034,8 @@ body #channelPage .ap-top :is(.channel-back-btn, .channel-profile-share-btn, .ap
 
 /* ---------- Caràtules quadrades amb les dades al damunt, en blanc (2026-10-16) ----------
    La més escoltada (#1) i, a sota, la resta de cançons per visualitzacions: al mòbil una caràtula sota l'altra (una
-   columna) i a partir de 769 px en tres columnes, sempre quadrades, iguals i amb el mínim espai; sense títols de
+   columna), a la tauleta (769–1024 px) en tres columnes i a l'ordinador (≥ 1025 px) en quatre, sempre quadrades,
+   iguals i amb el mínim espai; sense títols de
    secció. Totes porten un marc blanc fi. Sobre la imatge, tot en blanc i sense fons: el número a dalt a l'esquerra,
    la cua a dalt a la dreta i, a baix, les visualitzacions, el títol, l'any i la durada i el play. Un fosc suau a baix
    perquè el text es llegeixi. Res no es mou ni gira. Cada caràtula és un contenidor: la lletra, els marges i el play
@@ -4055,6 +4056,12 @@ body #channelPage .ap-top :is(.channel-back-btn, .channel-profile-share-btn, .ap
 @media (min-width: 769px) {
     #channelPage .ap-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1025px) {
+    #channelPage .ap-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
     }
 }
 
@@ -4240,8 +4247,8 @@ body #channelPage .ap-top :is(.channel-back-btn, .channel-profile-share-btn, .ap
 
 /* Ordinador (ratolí): en passar-hi per sobre, la caràtula s'amplia una mica i queda per damunt de les veïnes.
    #channelPage té `contain: content`, que retalla el que en surt: les caràtules de les vores s'amplien cap a dins
-   (primera columna des de l'esquerra, tercera des de la dreta, darrera fila des de baix, la #1 des de dalt a la
-   dreta) perquè no perdin el marc blanc. */
+   (primera columna des de l'esquerra, la darrera — tercera a la tauleta, quarta a l'ordinador — des de la dreta,
+   darrera fila des de baix, la #1 des de dalt a la dreta) perquè no perdin el marc blanc. */
 @media (hover: hover) and (pointer: fine) {
     #channelPage .ap-card {
         --ap-ox: center;
@@ -4265,7 +4272,7 @@ body #channelPage .ap-top :is(.channel-back-btn, .channel-profile-share-btn, .ap
     }
 }
 
-@media (hover: hover) and (pointer: fine) and (min-width: 769px) {
+@media (hover: hover) and (pointer: fine) and (min-width: 769px) and (max-width: 1024px) {
     #channelPage .ap-grid .ap-card:nth-child(3n + 1) {
         --ap-ox: left;
     }
@@ -4275,6 +4282,20 @@ body #channelPage .ap-top :is(.channel-back-btn, .channel-profile-share-btn, .ap
     }
 
     #channelPage .ap-grid .ap-card:nth-last-child(-n + 3) {
+        --ap-oy: bottom;
+    }
+}
+
+@media (hover: hover) and (pointer: fine) and (min-width: 1025px) {
+    #channelPage .ap-grid .ap-card:nth-child(4n + 1) {
+        --ap-ox: left;
+    }
+
+    #channelPage .ap-grid .ap-card:nth-child(4n) {
+        --ap-ox: right;
+    }
+
+    #channelPage .ap-grid .ap-card:nth-last-child(-n + 4) {
         --ap-oy: bottom;
     }
 }
@@ -8836,7 +8857,7 @@ body #followPage .follow-card .follow-toggle-btn.is-followed {
    (1) la cançó destacada té la caràtula de fons a tot el requadre, amb el text a sobre i el nom del grup gran just sota
    el títol; (2) la filera d'artistes (#categoryArtists) no canvia; (3) les cançons, en caràtules quadrades plenes amb
    la imatge i un marc blanc fi, amb el títol, el grup i les visualitzacions a dins, en blanc: quatre columnes a
-   l'ordinador, tres a la tauleta i dues al mòbil, amb el mínim espai; a l'ordinador s'amplien una mica en passar-hi el
+   l'ordinador, tres a la tauleta i una al mòbil (una caràtula sota l'altra), amb el mínim espai; a l'ordinador s'amplien una mica en passar-hi el
    ratolí. Els clics (play, afegir a una llista, obrir el grup) són els de sempre: només canvia el CSS. */
 
 /* (1) Cançó destacada: la caràtula de fons */
@@ -9002,7 +9023,7 @@ body #followPage .follow-card .follow-toggle-btn.is-followed {
 
 @media (max-width: 768px) {
     #homePage.is-style-view #videosGrid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: minmax(0, 1fr);
         margin: 0 -6px;
     }
 }
@@ -9172,7 +9193,7 @@ body #followPage .follow-card .follow-toggle-btn.is-followed {
     color: var(--pt-accent);
 }
 
-/* Caràtula estreta (dues columnes al mòbil): sense la línia de visualitzacions */
+/* Caràtula estreta (tres columnes en una finestra petita): sense la línia de visualitzacions */
 @container (max-width: 200px) {
     #homePage.is-style-view #videosGrid .video-stats {
         display: none;

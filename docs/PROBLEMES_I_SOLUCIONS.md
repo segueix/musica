@@ -1,3 +1,11 @@
+## [2026-10-16] - Fitxa d'artista amb quatre columnes a l'ordinador; vista d'un estil amb una columna al mòbil
+
+**Petició:** al mòbil, la vista d'un estil amb una sola columna (com la fitxa d'artista); a l'ordinador, les cançons de la fitxa d'artista en quatre columnes en lloc de tres.
+
+**Solució Implementada:** (1) `portada.css`: `#channelPage .ap-grid` fa 3 columnes a 769–1024 px i 4 a ≥ 1025 px; la vista d'un estil (`#homePage.is-style-view #videosGrid`) fa una columna a ≤ 768 px. (2) L'ampliació en passar el ratolí: les regles de les vores (`--ap-ox` / `--ap-oy`) van per tram, `3n + 1` / `3n` / `nth-last-child(-n + 3)` a la tauleta i `4n + 1` / `4n` / `nth-last-child(-n + 4)` a l'ordinador; sense això la quarta columna s'ampliava des del centre i #channelPage (`contain: content`) en retallava el marc blanc. (3) `artist-page.js`: `LIST_FIRST` passa de 18 a 24 (files senceres amb 3 i 4 columnes).
+
+**Proves:** `tests/llista-artistes.test.js`, `tests/vista-estil.test.js`; opt-in `node tests/browser/verificar-fitxa-artista.js` (4 columnes i la quarta ampliada sense perdre el marc) i `node tests/browser/verificar-vista-estil.js` (una caràtula sota l'altra al mòbil).
+
 ## [2026-10-16] - Vista d'un estil: sense «Música TV», cançó destacada amb la caràtula de fons i cançons en caràtules
 
 **Petició:** treure «Segueix TV» / «Música TV» del selector «Estil» (és de l'altra plataforma); a la vista d'un estil, la cançó destacada amb la caràtula de fons a tot el requadre i el nom del grup més gran i ben situat; a sota, les cançons en quatre columnes amb l'estil de la fitxa d'artista (requadre blanc ple amb la imatge, una mica ampliable); la filera d'artistes, tal com era, abans de les cançons.

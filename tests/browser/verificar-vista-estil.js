@@ -12,8 +12,8 @@
 //   1) El selector «Estil» ja no té «Música TV» (herència de Segueix youtubers).
 //   2) La cançó destacada té la caràtula de fons a tot el requadre i el nom del grup just sota el títol.
 //   3) La filera d'artistes continua abans de les cançons.
-//   4) Les cançons: caràtules quadrades plenes amb la imatge i el marc blanc, quatre columnes a l'ordinador i dues al
-//      mòbil, amb el títol a baix i el play; a l'ordinador s'amplien una mica en passar-hi el ratolí.
+//   4) Les cançons: caràtules quadrades plenes amb la imatge i el marc blanc, quatre columnes a l'ordinador i una al
+//      mòbil (una sota l'altra), amb el títol a baix i el play; a l'ordinador s'amplien una mica en passar-hi el ratolí.
 //   5) Tocar una caràtula fa sonar la cançó; Inici i la cerca no porten l'estil nou.
 
 const http = require('http');
@@ -140,7 +140,10 @@ async function check(browser, width, height, label) {
                 return Math.abs(rect(thumb).width - (rect(first).width - 4)) < 2;
             })(),
             titleLow: rect(first.querySelector('.video-card-title')).top > rect(first).top + rect(first).height / 2,
-            gap: Math.round(rect(cards[1]).left - rect(cards[0]).right),
+            gap:
+                cards.length > 1 && Math.round(rect(cards[1]).top) === Math.round(rect(cards[0]).top)
+                    ? Math.round(rect(cards[1]).left - rect(cards[0]).right)
+                    : Math.round(rect(cards[1]).top - rect(cards[0]).bottom),
             pageWidth: document.documentElement.scrollWidth,
             viewport: window.innerWidth,
         };
@@ -153,8 +156,8 @@ async function check(browser, width, height, label) {
     ok(`${label}: el nom del grup es veu gran (≥ 18 px)`, info.channelSize >= 18, info.channelSize);
     ok(`${label}: la filera d'artistes abans de les cançons`, info.artistsBefore);
     ok(
-        `${label}: ${width >= 1025 ? 'quatre' : 'dues'} columnes amb el mínim espai`,
-        info.columns === (width >= 1025 ? 4 : 2) && info.gap <= 6,
+        `${label}: ${width >= 1025 ? 'quatre columnes' : 'una caràtula sota l’altra'} amb el mínim espai`,
+        info.columns === (width >= 1025 ? 4 : 1) && info.gap <= 6,
         [info.columns, info.gap]
     );
     ok(`${label}: caràtules quadrades, plenes i amb el marc blanc`, info.square && info.framed && info.fill);

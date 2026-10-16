@@ -41,5 +41,9 @@ describe('vista d’un estil', () => {
         );
         expect(block).toMatch(/\.video-card:hover,[^{]*\{[^}]*transform: scale\(1\.04\)/);
         expect(block).toMatch(/#homePage\.is-style-view \.grid-layout-controls \{\s*display: none;/);
+        // Mòbil: una caràtula sota l'altra
+        expect(block).toMatch(
+            /@media \(max-width: 768px\) \{\s*#homePage\.is-style-view #videosGrid \{\s*grid-template-columns: minmax\(0, 1fr\);/
+        );
     });
 });

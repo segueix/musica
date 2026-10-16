@@ -20,8 +20,9 @@
     // Una combinació de tres estils ja és una barreja prou àmplia; més la diluiria.
     const MAX_STYLES = 3;
     const MIN_SONGS = 2;
-    // Cançons de la graella (tres columnes) que es veuen d'entrada i quantes més s'hi afegeixen amb «Mostra'n més».
-    const LIST_FIRST = 18;
+    // Cançons de la graella que es veuen d'entrada i quantes més s'hi afegeixen amb «Mostra'n més»: 24 es reparteix
+    // en files senceres amb tres columnes (tauleta) i quatre (ordinador)
+    const LIST_FIRST = 24;
     const LIST_STEP = 24;
     const PLAY_ICON =
         '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 5.6v12.8a1 1 0 0 0 1.5.86l10.2-6.4a1 1 0 0 0 0-1.72L9.5 4.74A1 1 0 0 0 8 5.6Z"/></svg>';
