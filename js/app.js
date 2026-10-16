@@ -8938,8 +8938,9 @@ async function renderFollowPage() {
     followGrid.innerHTML = orderedChannels
         .map(channel => {
             const name = channel.name || 'Canal';
-            const avatar =
-                channel.avatar || channel.thumbnail || getFollowChannelAvatar(channel.id) || 'img/icon-192.png';
+            const avatar = followCardImage(
+                channel.avatar || channel.thumbnail || getFollowChannelAvatar(channel.id) || 'img/icon-192.png'
+            );
             const memberIds = memberIdsOf(channel);
             const followedMemberId = memberIds.find(id => followedIds.has(id));
             const followTargetId = followedMemberId || String(channel.id);
@@ -8951,19 +8952,21 @@ async function renderFollowPage() {
                 </button>
             `
                 : '';
+            // Requadre ple amb la foto del grup i, a dins, el nom, «Segueix» i amagar (com les caràtules de la fitxa)
             return `
-            <div class="follow-card" data-channel-id="${channel.id}">
-                <button class="follow-hide-btn" type="button" data-hide-channel="${channel.id}" aria-pressed="false">
+            <div class="follow-card" data-channel-id="${channel.id}" role="link" tabindex="0" aria-label="${escapeHtml(`Fitxa de ${name}`)}">
+                <img class="follow-avatar" src="${escapeHtml(avatar)}" alt="" loading="lazy" decoding="async">
+                <span class="follow-card__shade" aria-hidden="true"></span>
+                <button class="follow-hide-btn" type="button" data-hide-channel="${channel.id}" aria-pressed="false" aria-label="${escapeHtml(`Amaga ${name} del feed`)}" title="Amaga del feed">
                     <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                         <path d="M1.5 12s3.5-7 10.5-7 10.5 7 10.5 7-3.5 7-10.5 7S1.5 12 1.5 12Z"></path>
                         <circle cx="12" cy="12" r="3.5"></circle>
                     </svg>
                 </button>
-                <div class="follow-avatar-wrap">
-                    <img class="follow-avatar" src="${avatar}" alt="${escapeHtml(name)}" loading="lazy">
+                <div class="follow-card__info">
+                    <div class="follow-name">${escapeHtml(name)}</div>
+                    ${followButtonHtml}
                 </div>
-                <div class="follow-name">${escapeHtml(name)}</div>
-                ${followButtonHtml}
             </div>
         `;
         })
@@ -8976,6 +8979,12 @@ async function renderFollowPage() {
     SegueixApp.features.alphabetIndex?.attach?.(followGrid);
 }
 
+// Foto del requadre d'un artista: la dels avatars de YouTube a 400 px (porten «=s88…» o «=s240…»), sempre per https.
+function followCardImage(url) {
+    const src = String(url || '').replace(/^http:\/\//i, 'https://');
+    return /\/\/yt3\.(ggpht|googleusercontent)\.com\//i.test(src) ? src.replace(/=s\d+(?=-|$)/, '=s400') : src;
+}
+
 // Listener delegat persistent per followGrid (1 sol listener en lloc de N)
 function _bindFollowGridDelegated() {
     if (!followGrid || followGrid.dataset.delegated === 'true') return;
@@ -8986,6 +8995,12 @@ function _bindFollowGridDelegated() {
         if (card) {
             openChannelProfile(card.dataset.channelId);
         }
+    });
+    // El requadre és un enllaç a la fitxa: també amb Retorn des del teclat
+    followGrid.addEventListener('keydown', event => {
+        if (event.key !== 'Enter' || !event.target.classList?.contains('follow-card')) return;
+        event.preventDefault();
+        openChannelProfile(event.target.dataset.channelId);
     });
 }
 

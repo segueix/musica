@@ -4234,9 +4234,15 @@ body #channelPage .ap-top :is(.channel-back-btn, .channel-profile-share-btn, .ap
     }
 }
 
-/* Ordinador (ratolí): en passar-hi per sobre, la caràtula s'amplia una mica i queda per damunt de les veïnes */
+/* Ordinador (ratolí): en passar-hi per sobre, la caràtula s'amplia una mica i queda per damunt de les veïnes.
+   #channelPage té `contain: content`, que retalla el que en surt: les caràtules de les vores s'amplien cap a dins
+   (primera columna des de l'esquerra, tercera des de la dreta, darrera fila des de baix, la #1 des de dalt a la
+   dreta) perquè no perdin el marc blanc. */
 @media (hover: hover) and (pointer: fine) {
     #channelPage .ap-card {
+        --ap-ox: center;
+        --ap-oy: center;
+        transform-origin: var(--ap-ox) var(--ap-oy);
         transition:
             transform 0.18s ease,
             box-shadow 0.18s ease;
@@ -4247,6 +4253,25 @@ body #channelPage .ap-top :is(.channel-back-btn, .channel-profile-share-btn, .ap
         z-index: 3;
         transform: scale(1.04);
         box-shadow: 0 14px 34px rgba(0, 0, 0, 0.55);
+    }
+
+    #channelPage .ap-best .ap-card {
+        --ap-ox: right;
+        --ap-oy: top;
+    }
+}
+
+@media (hover: hover) and (pointer: fine) and (min-width: 769px) {
+    #channelPage .ap-grid .ap-card:nth-child(3n + 1) {
+        --ap-ox: left;
+    }
+
+    #channelPage .ap-grid .ap-card:nth-child(3n) {
+        --ap-ox: right;
+    }
+
+    #channelPage .ap-grid .ap-card:nth-last-child(-n + 3) {
+        --ap-oy: bottom;
     }
 }
 
@@ -8537,5 +8562,190 @@ body.am-full-open {
         grid-column: 1 / -1;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 10px;
+    }
+}
+
+/* ---------- Artistes i grups: requadres plens amb la foto del grup (2026-10-16) ----------
+   La mateixa idea que les caràtules de la fitxa d'artista: cada artista és un requadre quadrat ple amb la seva foto,
+   un marc blanc fi i, a dins i en blanc, el nom i «Segueix» a baix i amagar a dalt a la dreta. Mínim espai entre
+   requadres: 2 columnes al mòbil, 3 a ≥ 560 px i tantes de ≥ 190 px com hi càpiguen a l'ordinador. A l'ordinador,
+   en passar-hi el ratolí, el requadre s'amplia una mica. La graella deixa un marge perquè el requadre ampliat no
+   surti de la pàgina (que retalla el que en sobresurt) i el marc no es perdi. */
+#followPage .follow-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 4px;
+    padding: 6px;
+}
+
+@media (min-width: 560px) {
+    #followPage .follow-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 900px) {
+    #followPage .follow-grid {
+        grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    }
+}
+
+#followPage .follow-grid.has-az-index {
+    padding-right: 34px;
+}
+
+#followPage .follow-card {
+    --fc-t: clamp(0.95rem, 7.5cqi, 1.35rem);
+    --fc-pad: clamp(8px, 5cqi, 14px);
+    position: relative;
+    display: block;
+    aspect-ratio: 1;
+    height: auto;
+    padding: 0;
+    overflow: hidden;
+    border: 2px solid #fff;
+    border-radius: 2px;
+    background: var(--pt-surface-2);
+    color: #fff;
+    text-align: left;
+    container-type: inline-size;
+    cursor: pointer;
+}
+
+#followPage .follow-card:focus-visible {
+    outline: 3px solid var(--pt-accent);
+    outline-offset: 2px;
+}
+
+#followPage .follow-avatar {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    object-fit: cover;
+}
+
+#followPage .follow-card__shade {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.35) 0%,
+        rgba(0, 0, 0, 0) 28%,
+        rgba(0, 0, 0, 0) 45%,
+        rgba(0, 0, 0, 0.82) 100%
+    );
+    pointer-events: none;
+}
+
+#followPage .follow-card__info {
+    position: absolute;
+    left: var(--fc-pad);
+    right: var(--fc-pad);
+    bottom: var(--fc-pad);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+#followPage .follow-name {
+    display: -webkit-box;
+    max-width: 100%;
+    overflow: hidden;
+    color: #fff;
+    font-size: var(--fc-t);
+    font-weight: 800;
+    line-height: 1.15;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.75);
+    overflow-wrap: anywhere;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+/* «Segueix»: càpsula de vidre amb vora blanca; seguint, en llima */
+body #followPage .follow-card .follow-toggle-btn {
+    min-width: 0;
+    min-height: 36px;
+    height: auto;
+    margin: 0;
+    padding: 0 16px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: var(--pt-radius-pill);
+    background: rgba(20, 22, 21, 0.6);
+    color: #fff;
+    font-size: 0.8125rem;
+    font-weight: 800;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+
+body #followPage .follow-card .follow-toggle-btn:hover {
+    border-color: #fff;
+    background: rgba(20, 22, 21, 0.85);
+    color: #fff;
+}
+
+body #followPage .follow-card .follow-toggle-btn.is-followed {
+    border-color: var(--pt-accent);
+    background: rgba(20, 22, 21, 0.6);
+    color: var(--pt-accent);
+}
+
+/* Amagar: a dalt a la dreta, sense fons, en blanc (44 px de zona tàctil) */
+#followPage .follow-hide-btn {
+    top: 2px;
+    right: 2px;
+    z-index: 1;
+    width: 44px;
+    height: 44px;
+    border: 0;
+    background: transparent;
+    color: #fff;
+    filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.85));
+}
+
+#followPage .follow-hide-btn svg {
+    width: 22px;
+    height: 22px;
+}
+
+#followPage .follow-hide-btn:hover {
+    background: rgba(0, 0, 0, 0.35);
+}
+
+#followPage .follow-hide-btn.is-hidden {
+    border: 0;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+#followPage .follow-hide-btn.is-hidden::after {
+    height: 26px;
+}
+
+/* Ordinador: en passar-hi el ratolí, el requadre s'amplia una mica */
+@media (hover: hover) and (pointer: fine) {
+    #followPage .follow-card {
+        transition:
+            transform 0.18s ease,
+            box-shadow 0.18s ease;
+    }
+
+    #followPage .follow-card:hover,
+    #followPage .follow-card:focus-within {
+        z-index: 3;
+        transform: scale(1.04);
+        box-shadow: 0 14px 34px rgba(0, 0, 0, 0.55);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #followPage .follow-card {
+        transition: none;
+    }
+
+    #followPage .follow-card:hover,
+    #followPage .follow-card:focus-within {
+        transform: none;
     }
 }

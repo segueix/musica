@@ -306,6 +306,22 @@ async function check(browser, width, height, label) {
         await page.waitForTimeout(350);
         const after = await page.$eval(card, el => el.getBoundingClientRect().width);
         ok(`${label}: en passar-hi el ratolí, la caràtula s'amplia`, after > before * 1.02, [before, after]);
+        // Les de les vores s'amplien cap a dins: #channelPage (contain: content) retallaria el marc blanc
+        for (const sel of ['#apSongs .ap-card:nth-child(1)', '#apSongs .ap-card:nth-child(3)', '#apBest .ap-card']) {
+            await page.locator(sel).scrollIntoViewIfNeeded();
+            await page.hover(sel);
+            await page.waitForTimeout(350);
+            const res = await page.evaluate(sel => {
+                const box = document.querySelector(sel).getBoundingClientRect();
+                const clip = document.getElementById('channelPage').getBoundingClientRect();
+                return {
+                    inside: box.left >= clip.left - 0.5 && box.right <= clip.right + 0.5 && box.top >= clip.top - 0.5,
+                    box: [Math.round(box.left), Math.round(box.right), Math.round(box.top)],
+                    clip: [Math.round(clip.left), Math.round(clip.right), Math.round(clip.top)],
+                };
+            }, sel);
+            ok(`${label}: ${sel} ampliada no perd el marc`, res.inside, res);
+        }
         await page.mouse.move(0, 0);
     }
     if (info.bioExpandable) {

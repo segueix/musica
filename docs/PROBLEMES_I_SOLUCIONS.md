@@ -1,3 +1,15 @@
+## [2026-10-16] - Llista d'artistes amb la foto del grup; marc blanc perdut en ampliar les caràtules de les vores
+
+**Petició:** a «Artistes i grups», cada requadre ple amb la foto del grup i a dins el nom, «Segueix» i amagar (com les caràtules de la fitxa). A la fitxa, a l'ordinador, les caràtules dels costats no havien de perdre el marc blanc en ampliar-se.
+
+**Causa del marc perdut:** `#channelPage` té `contain: content` (inclou `paint`): retalla tot el que surt de la seva caixa. En ampliar-se un 4 % des del centre, les caràtules de la primera i la tercera columna sortien uns 7 px pels costats (la #1, també per dalt) i el marc blanc quedava tallat.
+
+**Solució Implementada:** (1) Fitxa: `transform-origin: var(--ap-ox) var(--ap-oy)` a `.ap-card` amb `--ap-ox: left` a `:nth-child(3n + 1)`, `right` a `:nth-child(3n)`, `--ap-oy: bottom` a `:nth-last-child(-n + 3)` (≥ 769 px) i `right top` a la #1: s'amplien cap a dins. (2) Llista: `renderFollowPage()` pinta `img.follow-avatar` com a fons del requadre (`followCardImage()`: avatars de YouTube a 400 px), `.follow-card__shade` i `.follow-card__info` (nom + «Segueix»); amagar a dalt a la dreta; el requadre és `role="link"` amb Retorn. CSS al final de `portada.css` (selectors `#followPage`, perquè la cerca continua fent servir les classes `.follow-*` amb l'estil antic). La graella té `padding: 6px`: amb columnes `auto-fill` no se sap quines són les de les vores.
+
+**Trampes conegudes:** (1) No treguis el `contain` de `#channelPage` per arreglar el marc: hi és pel rendiment. (2) `portada.css` no pot portar `clip-path` (`tests/player-controls.test.js`). (3) Les fotos de perfil (`yt3.ggpht.com`) donen 429 al navegador de l'entorn de prova si se'n demanen moltes: `verificar-llista-artistes.js` les baixa amb `curl`.
+
+---
+
 ## [2026-10-16] - Icones de comentar i compartir buides (i sense arrossegar ni QR): js/vendor donava 404
 
 **Símptoma:** a la fitxa de la cançó, els botons «Comenta» i «Compartir» eren cercles buits, a l'ordinador i al mòbil (amb el «+» del costat, sí). També fallava `tests/browser/verificar-categories.js` en arrossegar rajoles.
