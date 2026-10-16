@@ -49,4 +49,15 @@ describe('«La teva música» amb el llenguatge de caràtules', () => {
             /@media \(hover: hover\) and \(pointer: fine\) \{[\s\S]*?#playlistsPage :is\(\.mm-card, \.mm-artist\):is\(:hover, :focus-visible\) \{[^}]*border-color: #fff;[^}]*transform: scale\(1\.04\);/
         );
     });
+
+    it('llistes: les quatre primeres caràtules en mosaic', () => {
+        const app = fs.readFileSync('js/app.js', 'utf8');
+        expect(app).toMatch(/function playlistCoverMarkup\(list, fallback\)/);
+        expect(app).toMatch(/\$\{playlistCoverMarkup\(list, thumbnail\)\}/);
+        expect(app).toMatch(/<span class="playlist-mosaic__tile"><img src=/);
+        expect(block).toMatch(
+            /#playlistsPage \.playlist-mosaic \{[^}]*position: absolute;[^}]*inset: 0;[^}]*display: grid;/
+        );
+        expect(block).toMatch(/#playlistsPage \.playlist-mosaic__tile \{[^}]*overflow: hidden;/);
+    });
 });

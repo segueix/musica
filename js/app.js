@@ -8797,6 +8797,18 @@ function renderPlaylistVideoArtist(video) {
     return `<div class="playlist-video-artist channel-link" data-channel-id="${escapeHtml(channelId)}" role="link" tabindex="0">${escapeHtml(name)}</div>`;
 }
 
+// Caràtula d'una llista a «La teva música»: les quatre primeres caràtules en mosaic (com a Inici) o, amb menys
+// de quatre cançons, la de la primera.
+function playlistCoverMarkup(list, fallback) {
+    const thumbs = (list.videos || []).map(video => video?.thumbnail).filter(Boolean);
+    if (thumbs.length < 4) return `<img src="${escapeHtml(fallback)}" alt="${escapeHtml(list.name)}" loading="lazy">`;
+    const tiles = thumbs
+        .slice(0, 4)
+        .map(src => `<span class="playlist-mosaic__tile"><img src="${escapeHtml(src)}" alt="" loading="lazy"></span>`)
+        .join('');
+    return `<span class="playlist-mosaic" role="img" aria-label="${escapeHtml(list.name)}">${tiles}</span>`;
+}
+
 async function renderPlaylistsPageLegacyImpl() {
     if (!playlistsList) return;
     const storedPlaylists = getPlaylists();
@@ -8847,7 +8859,7 @@ async function renderPlaylistsPageLegacyImpl() {
         return `
             <div class="playlist-card">
                 <div class="playlist-card-thumb" onclick="startPlaylistPlayback('${list.id}')" title="Reproduir llista">
-                    <img src="${thumbnail}" alt="${escapeHtml(list.name)}" loading="lazy">
+                    ${playlistCoverMarkup(list, thumbnail)}
                     <div class="playlist-play-btn" style="pointer-events:none;">
                         <i data-lucide="play" style="width:16px; height:16px; margin-right:4px;"></i> Reproduir
                     </div>

@@ -10731,3 +10731,27 @@ body .mq .mq-item:not(.is-active):focus-within .mq-cover {
         border-color: #fff;
     }
 }
+
+/* «La teva música»: cada llista amb les quatre primeres caràtules en mosaic (2026-10-16), com a Inici. La
+   caràtula és 16:9 i cada cel·la també ho és. Les miniatures hqdefault s'amplien dins la seva cel·la. */
+#playlistsPage .playlist-mosaic {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+#playlistsPage .playlist-mosaic__tile {
+    display: block;
+    min-width: 0;
+    min-height: 0;
+    overflow: hidden;
+}
+
+#playlistsPage .playlist-mosaic__tile img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
