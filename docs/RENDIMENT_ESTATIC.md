@@ -175,3 +175,30 @@ Comparativa local amb Chromium, CPU ×4, 150 ms, 200.000 bytes/s, 390×844, perf
 **Límit:** menys bloqueig (−28%) i una tasca màxima més curta (−59%), però la portada completa arriba 245 ms més tard en aquesta passada. No és un Lighthouse local ni una nova puntuació PageSpeed. L’esdeveniment `startup-ready` ja no equival al model de portada pintat; es mesura també l’aparició real de les cançons. Les fonts i imatges externes bloquejades fan que aquest LCP no serveixi per predir el públic. La correcció queda pendent de fusió, publicació i un nou informe amb el mateix perfil mòbil.
 
 Verificació: 47 proves dirigides; suite completa 367/372 (les mateixes cinc fallades que la base 359/364); 98 proves natives aprovades. Lint conserva els cinc errors previs, cap de nou. Paquet complet construït i validat. Navegador mòbil: portada, selecció de Rock, cerca Obeses, Descobreix sota demanda, exportació/importació JSON i QR correctes, sense errors. No s’ha provat reproducció real de YouTube. Cap workflow afegit o executat manualment.
+
+## Sisè lot: estabilitat de la portada (2026-10-16)
+
+La PR 150 està integrada a `187e8e3`. L’informe `zzvsaqx34d` (15:38 CEST) arriba a **82 tant a mòbil com a ordinador**. Mòbil: FCP 1,2 s, LCP 3,2 s, TBT 80 ms, CLS 0,196. Ordinador: FCP/LCP 0,7 s, TBT 0 ms, CLS 0,325. El nou marge principal és el moviment durant la càrrega, especialment `videosGrid` i `homePlaylists`; l’auditoria també assenyala Roboto i Fraunces.
+
+Correcció:
+
+- El selector inicial d’estils ja és a l’HTML, amb els estils secundaris plegats. Un script breu prepara la disposició abans de pintar segons historial, m’agrades, seguits i estils locals. No escriu preferències ni activa la reproducció. Els controls s’habiliten quan portada.js té els seus listeners.
+- La reserva de càrrega ocupa com a mínim un plec de pantalla mentre hi ha l’esquelet. Les llistes i el peu ja no apareixen a mitja pàgina per després ser empesos pel catàleg. La reserva desapareix amb l’esquelet; no deixa un mínim permanent a la portada ni a les categories.
+- Les declaracions WOFF2 de Roboto i Fraunces són al CSS inicial, amb `font-display: optional`, els mateixos pesos i cobertura Unicode. S’elimina la càrrega tardana del CSS de Google Fonts i es conserva el marcador que evita reinjectar-lo des de navigation.js. Els fitxers de font continuen al CDN de Google Fonts; si arriben tard, es conserva la font de reserva durant aquella visita.
+
+Mesura local reproduïble sobre els paquets complets, CPU ×4 al mòbil (390×844) / ×1 a ordinador (1350×844), xarxa 150 ms i 200.000 bytes/s, perfils nous i SW bloquejat. Imatges externes bloquejades. En l’escenari de fonts, es serveixen WOFF2 reals descarregats de Google Fonts amb una demora controlada de 200 ms (500 ms per al CSS de Google de la base). S’observen 12 s després de DOMContentLoaded. **CLS és el màxim de les finestres de sessió de fins a 5 s amb separació màxima d’1 s entre salts; no la suma indiscriminada de tota la càrrega.**
+
+| Mesura local amb fonts retardades | Base PR 150 | Correcció |
+| --- | ---: | ---: |
+| CLS mòbil | 0,1883 | 0 |
+| CLS ordinador | 0,1338 | 0,00036 |
+| Primeres cançons al DOM, mòbil | 8.845 ms | 8.855 ms |
+| Primeres cançons al DOM, ordinador | 7.358 ms | 7.276 ms |
+| LCP local mòbil | 956 ms | 1.260 ms |
+| LCP local ordinador | 1.028 ms | 1.044 ms |
+
+Amb les fonts bloquejades, el CLS mòbil baixa de 0,0734 a 0; l’ordinador, de 0,1338 a 0,00036. El petit moviment restant és de 3 px a la barra lateral. Les fonts opcionals poden introduir una espera inicial curta: en la passada mòbil amb fonts retardades el primer contingut/LCP arriba 304 ms més tard, mentre que les cançons arriben al mateix temps. Cal valorar-ho al PageSpeed publicat; no s’atribueix cap puntuació nova a aquests assaigs locals.
+
+Verificació en navegador amb fonts reals ràpides: l’alçada de l’entrada es manté exactament entre HTML inicial i app preparada a mòbil i ordinador, amb primera visita, estils desats i usuaris amb seguits. «Més estils», selecció de Rock, cerca, Descobreix, exportació/importació JSON i QR funcionen, sense errors JS. Proves unitàries: dades buides/corruptes, storage bloquejat, historial/seguits/estils i equivalència de la disposició amb discovery/portada. S’actualitza la prova antiga que exigia ocultar el selector en l’HTML.
+
+Suite completa: 377/382, les mateixes cinc fallades prèvies que la base 367/372; lint amb els mateixos cinc errors. 98 proves natives aprovades; paquet complet validat, 19.566 fitxers. Increment gzip de l’HTML +949 bytes i del CSS inicial +1.719 bytes, amb una petició de CSS extern menys. SW regenerat sense canviar-ne l’activació. Pendent de fusió, desplegament i PageSpeed públic; no s’han afegit ni executat manualment workflows.
